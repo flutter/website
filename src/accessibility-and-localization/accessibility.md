@@ -89,10 +89,12 @@ and with the largest font setting selected in iOS accessibility settings.
 
 ## Screen readers
 
-For mobile, screen readers ([TalkBack][], [VoiceOver][]) enable visually
-impaired users to get spoken feedback about the contents of the screen 
-and interact with the UI via gestures on mobile and keyboard shortcuts on desktop. 
-Turn on VoiceOver or TalkBack on your mobile device and navigate around your app.
+For mobile, screen readers ([TalkBack][], [VoiceOver][])
+enable visually impaired users to get spoken feedback about
+the contents of the screen and interact with the UI by using
+gestures on mobile and keyboard shortcuts on desktop. 
+Turn on VoiceOver or TalkBack on your mobile device and
+navigate around your app.
 
 **To turn on the screen reader on your device, complete the following steps:**
 
@@ -122,7 +124,8 @@ Turn on VoiceOver or TalkBack on your mobile device and navigate around your app
 3. Turn 'Use TalkBack' on or off.
 4. Select Ok.
 
-To learn how to find and customize Android's accessibility features, view this video.
+To learn how to find and customize Android's
+accessibility features, view the following video.
 
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/FQyj_XTl01w" title="Customize accessibility features on Pixel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
@@ -134,7 +137,8 @@ To learn how to find and customize Android's accessibility features, view this v
 1. On your device, open **Settings > Accessibility > VoiceOver**
 2. Turn the VoiceOver setting on or off
 
-To learn how to find and customize iOS accessibility features, view this video.
+To learn how to find and customize iOS
+accessibility features, view the following video.
 
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/qDm7GiKra28" title="How to navigate your iPhone or iPad with VoiceOver" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
@@ -145,20 +149,22 @@ To learn how to find and customize iOS accessibility features, view this video.
 
 For web, the following screen readers are currently supported:
 
-Mobile Browsers:
+Mobile browsers:
 * iOS - VoiceOver
 * Android - TalkBack
 
-Desktop Browsers:
+Desktop browsers:
 * MacOS - VoiceOver
 * Windows - JAWs & NVDA
 
-Screen Readers users on web will need to toggle
+Screen readers users on web must toggle the
 "Enable accessibility" button to build the semantics tree.
 Users can skip this step if you programmatically auto-enable
 accessibility for your app using this API:
 
-`RendererBinding.instance.setSemanticsEnabled(true)`
+```dart
+SemanticsBinding.instance.ensureSemantics();
+```
 
 </div>
 
@@ -166,8 +172,11 @@ accessibility for your app using this API:
 
 Windows comes with a screen reader called Narrator
 but some developers recommend using the more popular
-NVDA screen reader. Learn about using NVDA to test
-Windows apps [here](https://get-evinced.com/blog/screen-readers-101-for-front-end-developers-windows/).
+NVDA screen reader. To learn about using NVDA to test
+Windows apps, check out
+[Screen Readers 101 For Front-End Developers (Windows)][nvda].
+
+[nvda]: https://get-evinced.com/blog/screen-readers-101-for-front-end-developers-windows
 
 On a Mac, you can use the desktop version of VoiceOver,
 which is included in macOS.
@@ -178,21 +187,33 @@ which is included in macOS.
 On Linux, a popular screen reader is called Orca.
 It comes pre-installed with some distributions
 and is available on package repositories such as `apt`.
-Learn about using Orca
-[here](https://www.a11yproject.com/posts/getting-started-with-orca/).
+To learn about using Orca, check out
+[Getting started with Orca screen reader on Gnome desktop][orca].
+
+[orca]: https://www.a11yproject.com/posts/getting-started-with-orca
 
 </div>
 </div>{% comment %} End: Tab panes. {% endcomment -%}
 
 <br/>
 
-Check out this [video demo][] to see 
+Check out the following [video demo][] to see 
 Victor Tsaran, who leads the Accessibility program for Material Design, 
 using VoiceOver with the Flutter Gallery web app.
 
 Flutter's standard widgets generate an accessibility tree automatically. 
-However, if your app needs something different, it can be customized 
-using the [`Semantics` widget][].
+However, if your app needs something different,
+it can be customized using the [`Semantics` widget][].
+
+When there is text in your app that should be voiced
+with a specific voice, inform the screen reader
+which voice to use by calling [`TextSpan.locale`][].
+Note that `MaterialApp.locale` and `Localizations.override`
+don't affect which voice the screen reader uses.
+Usually, the screen reader uses the system voice
+except where you explicitly set it with `TextSpan.locale`.
+
+[`TextSpan.locale`]: {{site.api}}/flutter/painting/TextSpan/locale.html
 
 ## Sufficient contrast
 
@@ -307,17 +328,18 @@ legible in colorblind and grayscale modes.
 large scale factors for text size and display scaling.
 
 
-## More information
+## Learn more
 
-For more information, particularly about how to configure
-the semantics tree,
-see the following articles written by community members:
+To learn more about Flutter and accessibility, check out
+the following articles written by community members:
 
 * [A deep dive into Flutter's accessibility widgets][]
 * [Semantics in Flutter][]
+* [Flutter: Crafting a great experience for screen readers][]
 
 [CRPD]: https://www.un.org/development/desa/disabilities/convention-on-the-rights-of-persons-with-disabilities/article-9-accessibility.html
 [A deep dive into Flutter's accessibility widgets]: {{site.medium}}/flutter-community/a-deep-dive-into-flutters-accessibility-widgets-eb0ef9455bc
+[Flutter: Crafting a great experience for screen readers]: https://blog.gskinner.com/archives/2022/09/flutter-crafting-a-great-experience-for-screen-readers.html
 [Accessibility Scanner]: https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor&hl=en
 [**Large fonts**]: #large-fonts
 [**Screen readers**]: #screen-readers

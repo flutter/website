@@ -8,13 +8,13 @@ renderers. This page describes both renderers and how to choose the best one for
 your needs. The two renderers are:
 
 **HTML renderer**
-: Uses a combination of HTML elements, CSS, Canvas elements, and SVG elements.
-  This renderer has a smaller download size.
+: This renderer, which has a smaller download size than the CanvasKit renderer, uses a combination of
+  HTML elements, CSS, Canvas elements, and SVG elements.
 
 **CanvasKit renderer**
-: This renderer is fully consistent with Flutter mobile and desktop, has
-  faster performance with higher widget density, but adds about 2MB in
-  download size.
+: This renderer is fully consistent with Flutter mobile and desktop, has faster
+  performance with higher widget density, but adds about 1.5MB in download size.
+  [CanvasKit][canvaskit] uses WebGL to render Skia paint commands.
 
 ## Command line options
 
@@ -29,8 +29,11 @@ The `--web-renderer` command line option takes one of three values, `auto`,
 
 This flag can be used with the `run` or `build` subcommands. For example:
 
-```
+```terminal
 flutter run -d chrome --web-renderer html
+```
+
+```terminal
 flutter build web --web-renderer canvaskit
 ```
 
@@ -45,21 +48,30 @@ To override the web renderer at runtime:
 * Prepare a configuration object with the `renderer` property set to
   `"canvaskit"` or `"html"`.
 * Pass that object to the `engineInitializer.initializeEngine(configuration);`
-  method on your [Flutter Web app initialization][web-app-init].
+  method in the [Flutter Web app initialization][web-app-init] script.
 
-```javascript
-let useHtml = // ...
-_flutter.loader.loadEntrypoint({
-  onEntrypointLoaded: async function(engineInitializer) {
-    // Run-time engine configuration
-    let config = {
-      renderer: useHtml ? "html" : "canvaskit",
-    }
-    let appRunner = await engineInitializer.initializeEngine(config);
+```html
+<body>
+  <script>
+    let useHtml = true;
 
-    await appRunner.runApp();
-  }
-});
+    window.addEventListener('load', function(ev) {
+    _flutter.loader.loadEntrypoint({
+      serviceWorker: {
+        serviceWorkerVersion: serviceWorkerVersion,
+      },
+      onEntrypointLoaded: function(engineInitializer) {
+        let config = {
+          renderer: useHtml ? "html" : "canvaskit",
+        };
+        engineInitializer.initializeEngine(config).then(function(appRunner) {
+          appRunner.runApp();
+        });
+      }
+    });
+  });
+  </script>
+</body>
 ```
 
 The web renderer can't be changed after the Flutter engine startup process
@@ -71,9 +83,6 @@ begins in `main.dart.js`.
   **deprecation notice** in the JS console. For more information,
   check out [Customizing web app initialization][web-app-init].
 {{site.alert.end}}
-
-[web-app-init]: {{site.url}}/platform-integration/web/initialization
-
 
 ## Choosing which option to use
 
@@ -112,4 +121,6 @@ Run  your app in profile mode using the HTML renderer:
 flutter run -d chrome --web-renderer html --profile
 ```
 
+[canvaskit]: https://skia.org/docs/user/modules/canvaskit/
 [file an issue]: {{site.repo.flutter}}/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
+[web-app-init]: {{site.url}}/platform-integration/web/initialization

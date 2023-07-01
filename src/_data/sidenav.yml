@@ -47,11 +47,9 @@
 
 - title: Samples & tutorials
   children:
-    - title: Flutter Gallery [running app]
+    - title: Flutter Gallery
       permalink: https://gallery.flutter.dev
-    - title: Flutter Gallery [repo]
-      permalink: https://github.com/flutter/gallery
-    - title: Sample apps on GitHub
+    - title: Samples and demos
       permalink: https://flutter.github.io/samples/
     - title: Cookbook
       permalink: /cookbook
@@ -64,6 +62,7 @@
 
 - title: User interface
   permalink: /ui
+  match-page-url-exactly: true
   children:
     - title: Introduction to widgets
       permalink: /ui/widgets-intro
@@ -172,58 +171,58 @@
   children:
     - title: Supported platforms
       permalink: /reference/supported-platforms
-    - title: Building desktop apps with Flutter
+    - title: Build desktop apps with Flutter
       permalink: /platform-integration/desktop
-    - title: Writing platform-specific code
+    - title: Write platform-specific code
       permalink: /platform-integration/platform-channels
     - title: Android
       permalink: /platform-integration/android
       children:
-        - title: Adding a splash screen
+        - title: Add a splash screen
           permalink: /platform-integration/android/splash-screen
-        - title: C interop
+        - title: Bind to native code
           permalink: /platform-integration/android/c-interop
-        - title: Hosting native Android views
+        - title: Host a native Android view
           permalink: /platform-integration/android/platform-views
         - title: Restore state on Android
           permalink: /platform-integration/android/restore-state-android
-        - title: Targeting ChromeOS with Android
+        - title: Target ChromeOS with Android
           permalink:  /platform-integration/android/chromeos
     - title: iOS
       permalink: /platform-integration/ios
       children:
-        - title: Leveraging Apple's system libraries
+        - title: Leverage Apple's system libraries
           permalink: /platform-integration/ios/apple-frameworks
-        - title: Adding a splash screen
-          permalink: /platform-integration/ios/splash-screen
-        - title: Adding iOS App Clip support
+        - title: Add a launch screen
+          permalink: /platform-integration/ios/launch-screen
+        - title: Add iOS App Clip support
           permalink: /platform-integration/ios/ios-app-clip
-        - title: Adding iOS app extensions
+        - title: Add iOS app extensions
           permalink: /platform-integration/ios/app-extensions
-        - title: C interop
+        - title: Bind to native code
           permalink: /platform-integration/ios/c-interop
-        - title: Hosting native iOS views
+        - title: Host a native iOS view
           permalink: /platform-integration/ios/platform-views
-        - title: iOS debugging
+        - title: Enable debugging on iOS
           permalink: /platform-integration/ios/ios-debugging
         - title: Restore state on iOS
           permalink: /platform-integration/ios/restore-state-ios
     - title: Linux
       permalink: /platform-integration/linux
       children:
-        - title: Building Linux apps
+        - title: Build a Linux app
           permalink: /platform-integration/linux/building
     - title: macOS
       permalink: /platform-integration/macos
       children:
-        - title: Building macOS apps
+        - title: Build a macOS app
           permalink: /platform-integration/macos/building
         - title: C interop
           permalink: /platform-integration/macos/c-interop
     - title: Web
       permalink: /platform-integration/web
       children:
-        - title: Building web apps
+        - title: Build a web app
           permalink: /platform-integration/web/building
         - title: Web FAQ
           permalink: /platform-integration/web/faq
@@ -236,14 +235,8 @@
     - title: Windows
       permalink: /platform-integration/windows
       children:
-        - title: Building Windows apps
+        - title: Build a Windows app
           permalink: /platform-integration/windows/building
-        - title: Run loop migration
-          permalink: /platform-integration/windows/run-loop-migration
-        - title: Version information migration
-          permalink: /platform-integration/windows/version-migration
-        - title: Dark mode migration
-          permalink: /platform-integration/windows/dark-mode-migration
 
 - title: Packages & plugins
   permalink: /packages-and-plugins
@@ -265,55 +258,6 @@
       permalink: /packages-and-plugins/using-packages
     - title: Package site
       permalink: https://pub.dev/flutter
-
-- title: Tools & features
-  permalink: /tools
-  children:
-    - title: Android Studio & IntelliJ
-      permalink: /tools/android-studio
-    - title: Visual Studio Code
-      permalink: /tools/vs-code
-    - title: DevTools
-      permalink: /tools/devtools
-      children:
-        - title: Overview
-          permalink: /tools/devtools/overview
-        - title: Install from Android Studio & IntelliJ
-          permalink: /tools/devtools/android-studio
-        - title: Install from VS Code
-          permalink: /tools/devtools/vscode
-        - title: Install from command line
-          permalink: /tools/devtools/cli
-        - title: Flutter inspector
-          permalink: /tools/devtools/inspector
-        - title: Performance view
-          permalink: /tools/devtools/performance
-        - title: CPU Profiler view
-          permalink: /tools/devtools/cpu-profiler
-        - title: Memory view
-          permalink: /tools/devtools/memory
-        - title: Debug console view
-          permalink: /tools/devtools/console
-        - title: Network view
-          permalink: /tools/devtools/network
-        - title: Debugger
-          permalink: /tools/devtools/debugger
-        - title: Logging view
-          permalink: /tools/devtools/logging
-        - title: App size tool
-          permalink: /tools/devtools/app-size
-        - title: Release notes
-          permalink: /tools/devtools/release-notes
-    - title: SDK overview
-      permalink: /tools/sdk
-    - title: Flutter and the pubspec file
-      permalink: /tools/pubspec
-    - title: Hot reload
-      permalink: /tools/hot-reload
-    - title: Flutter Fix
-      permalink: /tools/flutter-fix
-    - title: Code formatting
-      permalink: /tools/formatting
 
 - title: Testing & debugging
   permalink: /testing
@@ -373,9 +317,9 @@
 - title: Deployment
   permalink: /deployment
   children:
-    - title: Obfuscating Dart code
+    - title: Obfuscate Dart code
       permalink: /deployment/obfuscate
-    - title: Creating flavors for Flutter
+    - title: Create flavors of an app
       permalink: /deployment/flavors
     - title: Build and release an Android app
       permalink: /deployment/android
@@ -389,7 +333,7 @@
       permalink: /deployment/windows
     - title: Build and release a web app
       permalink: /deployment/web
-    - title: Continuous deployment
+    - title: Set up continuous deployment
       permalink: /deployment/cd
 
 - title: Add to an existing app
@@ -398,10 +342,10 @@
     - title: Introduction
       permalink: /add-to-app
       match-page-url-exactly: true
-    - title: Adding to an Android app
+    - title: Add to an Android app
       permalink: /add-to-app/android
       children:
-        - title: Project setup
+        - title: Set up Android project
           permalink: /add-to-app/android/project-setup
         - title: Add a single Flutter screen
           permalink: /add-to-app/android/add-flutter-screen
@@ -409,21 +353,70 @@
           permalink: /add-to-app/android/add-flutter-fragment
         - title: Add a Flutter View
           permalink: /add-to-app/android/add-flutter-view
-        - title: Plugin setup
+        - title: Use a Flutter plugin
           permalink: /add-to-app/android/plugin-setup
-    - title: Adding to an iOS app
+    - title: Add to an iOS app
       permalink: /add-to-app/ios
       children:
-        - title: Project setup
+        - title: Set up iOS project
           permalink: /add-to-app/ios/project-setup
         - title: Add a single Flutter screen
           permalink: /add-to-app/ios/add-flutter-screen
-    - title: Debugging & hot reload
+    - title: Debug embedded Flutter module
       permalink: /add-to-app/debugging
+    - title: Add multiple Flutter instances
+      permalink: /add-to-app/multiple-flutters
     - title: Loading sequence and performance
       permalink: /add-to-app/performance
-    - title: Multiple Flutter instances
-      permalink: /add-to-app/multiple-flutters
+
+- title: Tools & features
+  permalink: /tools
+  children:
+    - title: Android Studio & IntelliJ
+      permalink: /tools/android-studio
+    - title: Visual Studio Code
+      permalink: /tools/vs-code
+    - title: DevTools
+      permalink: /tools/devtools
+      children:
+        - title: Overview
+          permalink: /tools/devtools/overview
+        - title: Install from Android Studio & IntelliJ
+          permalink: /tools/devtools/android-studio
+        - title: Install from VS Code
+          permalink: /tools/devtools/vscode
+        - title: Install from command line
+          permalink: /tools/devtools/cli
+        - title: Flutter inspector
+          permalink: /tools/devtools/inspector
+        - title: Performance view
+          permalink: /tools/devtools/performance
+        - title: CPU Profiler view
+          permalink: /tools/devtools/cpu-profiler
+        - title: Memory view
+          permalink: /tools/devtools/memory
+        - title: Debug console view
+          permalink: /tools/devtools/console
+        - title: Network view
+          permalink: /tools/devtools/network
+        - title: Debugger
+          permalink: /tools/devtools/debugger
+        - title: Logging view
+          permalink: /tools/devtools/logging
+        - title: App size tool
+          permalink: /tools/devtools/app-size
+        - title: Release notes
+          permalink: /tools/devtools/release-notes
+    - title: SDK overview
+      permalink: /tools/sdk
+    - title: Flutter's pubspec options
+      permalink: /tools/pubspec
+    - title: Hot reload
+      permalink: /tools/hot-reload
+    - title: Automated fixes
+      permalink: /tools/flutter-fix
+    - title: Code formatting
+      permalink: /tools/formatting
 
 - divider
 
@@ -437,20 +430,20 @@
       permalink: /resources/platform-adaptations
     - title: Inside Flutter
       permalink: /resources/inside-flutter
-    - title: Flutter vs. Swift Concurrency
+    - title: Flutter versus Swift concurrency
       permalink: /resources/dart-swift-concurrency
     - header: Learning
     - title: Books
       permalink: /resources/books
     - title: Videos and online courses
       permalink: /resources/videos
-    - title: Dart resources
+    - title: Learn Dart
       permalink: /resources/bootstrap-into-dart
     - header: Contributing
-    - title: Creating useful bug reports
+    - title: Create useful bug reports
       permalink: /resources/bug-reports
-    - title: Contributing to Flutter
-      permalink: https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md
+    - title: Contribute to Flutter
+      permalink: https://github.com/flutter/flutter/blob/main/CONTRIBUTING.md
     - title: Design documents
       permalink: /resources/design-docs
     - header: Toolkits

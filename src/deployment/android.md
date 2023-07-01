@@ -115,16 +115,19 @@ If not, create one by either:
 * Following the [Android Studio key generation steps]({{site.android-dev}}/studio/publish/app-signing#sign-apk) 
 * Running the following at the command line:
 
-    On Mac/Linux, use the following command:
+    On macOS or Linux, use the following command:
 
     ```terminal
-    keytool -genkey -v -keystore ~/upload-keystore.jks -keyalg RSA -keysize 2048 -validity 10000 -alias upload
+    keytool -genkey -v -keystore ~/upload-keystore.jks -keyalg RSA \
+            -keysize 2048 -validity 10000 -alias upload
     ```
 
-    On Windows, use the following command:
+    On Windows, use the following command in PowerShell:
 
-    ```terminal
-    keytool -genkey -v -keystore %userprofile%\upload-keystore.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias upload
+    ```powershell
+    keytool -genkey -v -keystore %userprofile%\upload-keystore.jks ^
+            -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 ^
+            -alias upload
     ```
 
     This command stores the `upload-keystore.jks` file in your home
@@ -154,14 +157,20 @@ If not, create one by either:
 ### Reference the keystore from the app
 
 Create a file named `[project]/android/key.properties`
-that contains a reference to your keystore:
+that contains a reference to your keystore.
+Don't include the angle brackets (`< >`).
+They indicate that the text serves as a placeholder for your values.
 
-```
-storePassword=<password from previous step>
-keyPassword=<password from previous step>
+```properties
+storePassword=<password-from-previous-step>
+keyPassword=<password-from-previous-step>
 keyAlias=upload
-storeFile=<location of the key store file, such as /Users/<user name>/upload-keystore.jks or C:\\Users\\<user name>\\upload-keystore.jks>
+storeFile=<keystore-file-location>
 ```
+
+The `storeFile` might be located at
+`/Users/<user name>/upload-keystore.jks` on macOS
+or `C:\\Users\\<user name>\\upload-keystore.jks` on Windows.
 
 {{site.alert.warning}}
   Keep the `key.properties` file private;
@@ -515,8 +524,7 @@ as described in [build an APK](#build-an-apk) using the
 When building your application in release mode,
 Flutter apps can be compiled for [armeabi-v7a][] (ARM 32-bit),
 [arm64-v8a][] (ARM 64-bit), and [x86-64][] (x86 64-bit).
-Flutter does not currently support building for x86 Android
-(See [Issue 9253][]).
+Flutter supports building for x86 Android through ARM emulation.
 
 ### How do I sign the app bundle created by `flutter build appbundle`?
 

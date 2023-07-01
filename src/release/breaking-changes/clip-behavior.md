@@ -110,8 +110,8 @@ Code before migration:
             overflow: Overflow.visible,
             children: const <Widget>[
               SizedBox(
-                width: 100.0,
-                height: 100.0,
+                width: 100,
+                height: 100,
               ),
             ],
           ),

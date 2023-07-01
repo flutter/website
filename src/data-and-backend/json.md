@@ -251,20 +251,10 @@ dependency, and two _dev dependencies_. In short, _dev dependencies_
 are dependencies that are not included in our app source code&mdash;they
 are only used in the development environment.
 
-The latest versions of these required dependencies can be seen by
-following the [pubspec file][] in the JSON serializable example.
+To add the dependencies, run `flutter pub add`:
 
-**pubspec.yaml**
-
-```yaml
-dependencies:
-  # Your other regular dependencies here
-  json_annotation: <latest_version>
-
-dev_dependencies:
-  # Your other dev_dependencies here
-  build_runner: <latest_version>
-  json_serializable: <latest_version>
+```terminal
+$ flutter pub add json_annotation dev:build_runner dev:json_serializable
 ```
 
 Run `flutter pub get` inside your project root folder
@@ -540,8 +530,8 @@ For more information, see the following resources:
 [`JsonSerializable`]: {{site.pub}}/documentation/json_annotation/latest/json_annotation/JsonSerializable-class.html
 [`json_annotation`]: {{site.pub}}/packages/json_annotation
 [`json_serializable`]: {{site.pub}}/packages/json_serializable
-[`json_serializable` examples]: {{site.github}}/dart-lang/json_serializable/blob/master/example/lib/example.dart
-[pubspec file]: https://raw.githubusercontent.com/dart-lang/json_serializable/master/example/pubspec.yaml
+[`json_serializable` examples]: {{site.github}}/google/json_serializable.dart/blob/master/example/lib/example.dart
+[pubspec file]: https://raw.githubusercontent.com/google/json_serializable.dart/master/example/pubspec.yaml
 [reflection]: https://en.wikipedia.org/wiki/Reflection_(computer_programming)
 [Serializing JSON manually using dart:convert]: #manual-encoding
 [Serializing JSON using code generation libraries]: #code-generation

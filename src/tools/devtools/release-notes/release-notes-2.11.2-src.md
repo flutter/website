@@ -17,6 +17,6 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 
 ![debugger file explorer scrolling]({{site.url}}/tools/devtools/release-notes/images-2.11.2/image2.gif "debugger file explorer scrolling")
 
-## Changelog
-More details about changes and fixes are available in our
-[changelog](https://github.com/flutter/devtools/blob/master/CHANGELOG.md).
+## Full commit history
+More details about changes and fixes are available from the
+[DevTools git log.](https://github.com/flutter/devtools/commits/master).

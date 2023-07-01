@@ -75,7 +75,7 @@ To wrap up this application for distribution
 you need to include everything in the `bundle` directory,
 and make sure the Linux system you are installing
 it on has all of the system libraries required.
-This may be as simple as:
+This could be as simple as:
 
 ```terminal
 $ sudo apt-get install libgtk-3-0 libblkid1 liblzma5

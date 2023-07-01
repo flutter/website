@@ -195,7 +195,7 @@ Widget build(BuildContext context) {
     body: Center(
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          padding: const EdgeInsets.only(left: 20.0, right: 30.0),
+          padding: const EdgeInsets.only(left: 20, right: 30),
         ),
         onPressed: () {},
         child: const Text('Hello'),
@@ -373,7 +373,7 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
         child: FadeTransition(
           opacity: curve,
           child: const FlutterLogo(
-            size: 100.0,
+            size: 100,
           ),
         ),
       ),
@@ -396,14 +396,16 @@ and the [Animations overview][].
 
 ### How do I use a Canvas to draw/paint?
 
-In Android, you would use the `Canvas` and `Drawable` to draw images and shapes
-to the screen. Flutter has a similar `Canvas` API as well, since it is based
-on the same low-level rendering engine, Skia. As a result, painting to a
-canvas in Flutter is a very familiar task for Android developers.
+In Android, you would use the `Canvas` and `Drawable`
+to draw images and shapes to the screen.
+Flutter has a similar `Canvas` API as well,
+since it's based on the same low-level rendering engine, Skia.
+As a result, painting to a canvas in Flutter
+is a very familiar task for Android developers.
 
 Flutter has two classes that help you draw to the canvas: `CustomPaint`
-and `CustomPainter`, the latter of which implements your algorithm to draw to
-the canvas.
+and `CustomPainter`,
+the latter of which implements your algorithm to draw to the canvas.
 
 To learn how to implement a signature painter in Flutter,
 see Collin's answer on [Custom Paint][].
@@ -458,7 +460,7 @@ class SignaturePainter extends CustomPainter {
     var paint = Paint()
       ..color = Colors.black
       ..strokeCap = StrokeCap.round
-      ..strokeWidth = 5.0;
+      ..strokeWidth = 5;
     for (int i = 0; i < points.length - 1; i++) {
       if (points[i] != null && points[i + 1] != null) {
         canvas.drawLine(points[i]!, points[i + 1]!, paint);
@@ -471,6 +473,8 @@ class SignaturePainter extends CustomPainter {
       oldDelegate.points != points;
 }
 ```
+
+[Custom Paint]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 
 ### How do I build custom widgets?
 
@@ -843,7 +847,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int i) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10),
       child: Text("Row ${widgets[i]["title"]}"),
     );
   }
@@ -1044,7 +1048,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int i) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10),
       child: Text("Row ${widgets[i]["title"]}"),
     );
   }
@@ -1102,12 +1106,10 @@ While the http package doesn't have every feature found in OkHttp,
 it abstracts away much of the networking that you would normally implement
 yourself, making it a simple way to make network calls.
 
-To use the `http` package, add it to your dependencies in `pubspec.yaml`:
+To add the `http` package as a dependency, run `flutter pub add`:
 
-```yaml
-dependencies:
-  ...
-  http: ^0.11.3+16
+```terminal
+$ flutter pub add http
 ```
 
 To make a network call, call `await` on the `async` function `http.get()`:
@@ -1215,7 +1217,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int i) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10),
       child: Text("Row ${widgets[i]["title"]}"),
     );
   }
@@ -1595,7 +1597,7 @@ In Flutter there are two ways of adding touch listeners:
               developer.log('tap');
             },
             child: const FlutterLogo(
-              size: 200.0,
+              size: 200,
             ),
           ),
         ),
@@ -1694,7 +1696,7 @@ class _SampleAppState extends State<SampleApp>
           child: RotationTransition(
             turns: curve,
             child: const FlutterLogo(
-              size: 200.0,
+              size: 200,
             ),
           ),
         ),
@@ -1764,7 +1766,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     List<Widget> widgets = [];
     for (int i = 0; i < 100; i++) {
       widgets.add(Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10),
         child: Text('Row $i'),
       ));
     }
@@ -1831,7 +1833,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
             developer.log('row tapped');
           },
           child: Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(10),
             child: Text('Row $i'),
           ),
         ),
@@ -1921,7 +1923,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
         });
       },
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10),
         child: Text('Row $i'),
       ),
     );
@@ -2002,7 +2004,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
         });
       },
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10),
         child: Text('Row $i'),
       ),
     );
@@ -2377,7 +2379,6 @@ see the [`firebase_messaging`][] plugin documentation.
 [`cloud_firestore`]: {{site.pub}}/packages/cloud_firestore
 [composing]: {{site.url}}/resources/architectural-overview#composition
 [Cupertino widgets]: {{site.url}}/ui/widgets/cupertino
-[Custom Paint]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
 [developing packages and plugins]: {{site.url}}/packages-and-plugins/developing-packages
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
 [DevTools]: {{site.url}}/tools/devtools

@@ -1,12 +1,12 @@
 ---
 title: Continuous delivery with Flutter
-description: How to automate continuous building and releasing of your Flutter app.
+description: >
+  How to automate continuous building and releasing of your Flutter app.
 ---
 
 Follow continuous delivery best practices with Flutter to make sure your
 application is delivered to your beta testers and validated on a frequent basis
 without resorting to manual workflows.
-
 
 ## CI/CD Options
 
@@ -14,6 +14,7 @@ There are a number of continuous integration (CI) and continuous delivery (CD)
 options available to help automate the delivery of your application.
 
 ### All-in-one options with built-in Flutter functionality
+
 * [Codemagic][]
 * [Bitrise][]
 * [Appcircle][]
@@ -23,13 +24,13 @@ options available to help automate the delivery of your application.
 You can use fastlane with the following tooling:
 
 * [GitHub Actions][]
-    * Example: Flutter Gallery's [Github Actions workflows][]
-    * Example: [Github Action in Flutter Project][]
+  * Example: Flutter Gallery's [Github Actions workflows][]
+  * Example: [Github Action in Flutter Project][]
 * [Cirrus][]
 * [Travis][]
 * [GitLab][]
 * [CircleCI][]
-    * [Building and deploying Flutter apps with Fastlane][]
+   * [Building and deploying Flutter apps with Fastlane][]
 
 This guide shows how to set up fastlane and then integrate it with 
 your existing testing and continuous integration (CI) workflows. 
@@ -184,8 +185,8 @@ secrets in pull requests that you accept and merge.
          * Make sure the Flutter SDK is available and set in `PATH`.
          * For Android, ensure the Android SDK is available and the `ANDROID_SDK_ROOT`
            path is set.
-         * For iOS, you may have to specify a dependency on Xcode (for example
-           `osx_image: xcode9.2`).
+         * For iOS, you might have to specify a dependency on Xcode
+           (for example, `osx_image: xcode9.2`).
     * In the script phase of the CI task:
          * Run `flutter build appbundle` or
            `flutter build ios --release --no-codesign`,
@@ -251,6 +252,7 @@ exit 0
 ```
 
 This file should be added to your git repository and marked as executable.
+
 ```terminal
 $ git add --chmod=+x ios/ci_scripts/ci_post_clone.sh
 ```

@@ -146,7 +146,7 @@ Android APIs might be helpful:
 
 {% samplecode android-splash-alignment %}
 {% sample Java %}
-<!--code-excerpt "MainActivity.java" title-->
+<?code-excerpt title="MainActivity.java"?>
 ```java
 import android.os.Build;
 import android.os.Bundle;
@@ -176,7 +176,7 @@ public class MainActivity extends FlutterActivity {
 ```
 
 {% sample Kotlin %}
-<!--code-excerpt "MainActivity.kt" title-->
+<?code-excerpt title="MainActivity.kt"?>
 ```kotlin
 import android.os.Build
 import android.os.Bundle

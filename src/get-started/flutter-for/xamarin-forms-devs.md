@@ -369,7 +369,7 @@ Widget build(BuildContext context) {
     body: Center(
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          padding: const EdgeInsets.only(left: 20.0, right: 30.0),
+          padding: const EdgeInsets.only(left: 20, right: 30),
         ),
         onPressed: () {},
         child: const Text('Hello'),
@@ -547,7 +547,7 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
       body: Center(
         child: FadeTransition(
           opacity: curve,
-          child: const FlutterLogo(size: 100.0),
+          child: const FlutterLogo(size: 100),
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -568,17 +568,19 @@ the [Animations tutorial][], and the [Animations overview][].
 ### How do I draw/paint on the screen?
 
 Xamarin.Forms never had a built-in way to draw directly on the screen.
-Many would use SkiaSharp, if they needed a custom image drawn. In Flutter,
-you have direct access to the Skia Canvas and can easily draw on screen.
+Many would use SkiaSharp, if they needed a custom image drawn.
+In Flutter, you have direct access to the Skia Canvas
+and can easily draw on screen.
 
 Flutter has two classes that help you draw to the canvas: `CustomPaint`
 and `CustomPainter`, the latter of which implements your algorithm to draw to
 the canvas.
 
 To learn how to implement a signature painter in Flutter,
-see Collin's answer on [StackOverflow][].
+see Collin's answer on [Custom Paint][].
 
-[StackOverflow]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
+[Custom Paint]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
+
 
 <?code-excerpt "lib/draw.dart"?>
 ```dart
@@ -638,7 +640,7 @@ class SignaturePainter extends CustomPainter {
     final Paint paint = Paint()
       ..color = Colors.black
       ..strokeCap = StrokeCap.round
-      ..strokeWidth = 5.0;
+      ..strokeWidth = 5;
     for (int i = 0; i < points.length - 1; i++) {
       if (points[i] != null && points[i + 1] != null) {
         canvas.drawLine(points[i]!, points[i + 1]!, paint);
@@ -883,7 +885,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int index) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10),
       child: Text('Row ${data[index]['title']}'),
     );
   }
@@ -1111,7 +1113,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int index) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10),
       child: Text('Row ${data[index]['title']}'),
     );
   }
@@ -1139,7 +1141,7 @@ To use the `http` package, add it to your dependencies in `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  http: ^0.13.4
+  http: ^1.0.0
 ```
 
 To make a network request,
@@ -1248,7 +1250,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int index) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10),
       child: Text('Row ${data[index]['title']}'),
     );
   }
@@ -1583,14 +1585,14 @@ Widget build(BuildContext context) {
     children: <Widget>[
       Icon(
         Icons.add_box,
-        size: 24.0,
+        size: 24,
         color: Colors.black,
       ),
       Positioned(
-        left: 10.0,
+        left: 10,
         child: Icon(
           Icons.add_circle,
-          size: 24.0,
+          size: 24,
           color: Colors.black,
         ),
       ),
@@ -1690,7 +1692,7 @@ In Flutter there are two very similar ways:
              onTap: () {
                developer.log('tap');
              },
-             child: const FlutterLogo(size: 200.0),
+             child: const FlutterLogo(size: 200),
            ),
          ),
        );
@@ -1809,7 +1811,7 @@ class _RotatingFlutterDetectorState extends State<RotatingFlutterDetector>
           },
           child: RotationTransition(
             turns: curve,
-            child: const FlutterLogo(size: 200.0),
+            child: const FlutterLogo(size: 200),
           ),
         ),
       ),
@@ -1863,7 +1865,7 @@ class SampleAppPage extends StatelessWidget {
     return List<Widget>.generate(
       100,
       (index) => Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10),
         child: Text('Row $index'),
       ),
     );
@@ -1927,7 +1929,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
           developer.log('Row $index tapped');
         },
         child: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(10),
           child: Text('Row $index'),
         ),
       ),
@@ -2017,7 +2019,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
         });
       },
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10),
         child: Text('Row $index'),
       ),
     );
@@ -2089,7 +2091,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
         });
       },
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10),
         child: Text('Row $index'),
       ),
     );
@@ -2225,7 +2227,7 @@ class _MyFormState extends State<MyForm> {
     return Scaffold(
       appBar: AppBar(title: const Text('Retrieve Text Input')),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: TextField(controller: myController),
       ),
       floatingActionButton: FloatingActionButton(

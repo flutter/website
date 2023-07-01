@@ -224,7 +224,7 @@ GestureDectector(
 
 ### [#26238](https://github.com/flutter/flutter/pull/26238) Remove long-deprecated TwoLevelList
 
-Removed the long-deprecated TwoLevelList widget; use ListView with ExpansionTile instead. See [this example](https://github.com/flutter/flutter/blob/master/examples/catalog/lib/expansion_tile_sample.dart) for a sample that uses ExpansionTile.
+Removed the long-deprecated TwoLevelList widget; use ListView with ExpansionTile instead. See [this example](https://github.com/flutter/flutter/blob/v1.2.1/examples/catalog/lib/expansion_tile_sample.dart) for a sample that uses ExpansionTile.
 
 
 ###[#7442](https://github.com/flutter/engine/pull/7442) Move Picture.toImage rasterization to the GPU thread

@@ -1,7 +1,9 @@
 ---
-title: Managing plugins and dependencies in add-to-app
+title: Manage plugins and dependencies in add-to-app
 short-title: Plugin setup
-description: Learn how to use plugins and share your plugin's library dependencies with your existing app.
+description: >
+  Learn how to use plugins and share your 
+  plugin's library dependencies with your existing app.
 ---
 
 This guide describes how to set up your project to consume
@@ -71,9 +73,9 @@ your existing Android application already depends on the
 same Android library that your Flutter module
 does (transitively via a plugin).
 
-For instance, your existing app's Gradle may already have:
+For instance, your existing app's Gradle might already have:
 
-<!--code-excerpt "<existing app>/app/build.gradle" title-->
+<?code-excerpt title="ExistingApp/app/build.gradle"?>
 ```gradle
 …
 dependencies {
@@ -85,9 +87,9 @@ dependencies {
 ```
 
 And your Flutter module also depends on
-[firebase_crashlytics][] via pubspec.yaml:
+[firebase_crashlytics][] via `pubspec.yaml`:
 
-<!--code-excerpt "<Flutter module>/pubspec.yaml" title-->
+<?code-excerpt title="flutter_module/pubspec.yaml"?>
 ```yaml
 …
 dependencies:
@@ -100,7 +102,7 @@ dependencies:
 This plugin usage transitively adds a Gradle dependency again via
 firebase_crashlytics v0.1.3's own [Gradle file][]:
 
-<!--code-excerpt "<firebase_crashlytics via pub>/android/build.gradle" title-->
+<?code-excerpt title="firebase_crashlytics_via_pub/android/build.gradle"?>
 ```gradle
 …
 dependencies {
@@ -125,7 +127,7 @@ or implementation breaking changes between the versions.
 For example, you might use the new Crashlytics library
 in your existing app as follows:
 
-<!--code-excerpt "<existing app>/app/build.gradle" title-->
+<?code-excerpt title="ExistingApp/app/build.gradle"?>
 ```gradle
 …
 dependencies {

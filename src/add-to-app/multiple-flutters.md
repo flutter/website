@@ -1,17 +1,18 @@
 ---
 title: Multiple Flutter screens or views
-short-title: Adding multiple Flutters
-description: How to integrate multiple instances of Flutter engine, screens or views to your application.
+short-title: Add multiple Flutters
+description: >
+  How to integrate multiple instances of 
+  Flutter engine, screens, or views to your application.
 ---
-
-
 
 ## Scenarios
 
-
-If you're integrating Flutter into an existing app, or gradually migrating an
-existing app to use Flutter, you may find yourself wanting to add multiple
-Flutter instances to the same project. In particular, this can be useful in the
+If you're integrating Flutter into an existing app,
+or gradually migrating an existing app to use Flutter,
+you might find yourself wanting to add multiple
+Flutter instances to the same project.
+In particular, this can be useful in the
 following scenarios:
 
 * An application where the integrated Flutter screen is not a leaf node of
@@ -25,7 +26,7 @@ instance is independent and maintains its own internal navigation
 stack, UI, and application states. This simplifies the overall application code's
 responsibility for state keeping and improves modularity. More details on the
 scenarios motivating the usage of multiple Flutters can be found at
-[docs.flutter.dev/go/multiple-flutters][].
+[flutter.dev/go/multiple-flutters][].
 
 Flutter 2 and above are optimized for this scenario, with a low incremental
 memory cost (~180kB) for adding additional Flutter instances. This fixed cost
@@ -71,7 +72,7 @@ rendering latency and lower memory footprint.
 
 Communication between Flutter instances is handled using [platform channels][]
 (or [Pigeon][]) through the host platform. To see our roadmap on communication,
-or other planned work on enhancing multiple Flutter instances, see 
+or other planned work on enhancing multiple Flutter instances, check out
 [Issue 72009][].
 
 ## Samples
@@ -85,7 +86,7 @@ on both Android and iOS on [GitHub][].
 [`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
 [`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html
 [performance characteristics]: {{site.url}}/add-to-app/performance
-[docs.flutter.dev/go/multiple-flutters]: {{site.url}}/go/multiple-flutters
+[flutter.dev/go/multiple-flutters]: {{site.url}}/go/multiple-flutters
 [Issue 72009]: {{site.repo.flutter}}/issues/72009
 [Pigeon]: {{site.pub}}/packages/pigeon
 [platform channels]: {{site.url}}/platform-integration/platform-channels

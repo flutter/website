@@ -34,13 +34,12 @@ the following steps:
 ## 1. Add the `video_player` dependency
 
 This recipe depends on one Flutter plugin: `video_player`. First, add this
-dependency to your `pubspec.yaml`.
+dependency to your project.
 
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  video_player:
+To add the `video_player` package as a dev dependency, run `flutter pub add`:
+
+```terminal
+$ flutter pub add video_player
 ```
 
 ## 2. Add permissions to your app
@@ -79,8 +78,8 @@ For iOS, add the following to the `Info.plist` file found at
 ```
 
 {{site.alert.warning}}
-  The `video_player` plugin doesn't work on iOS simulators.
-  You must test videos on real iOS devices.
+  The `video_player` plugin can only play asset videos in iOS simulators.
+  You must test network-hosted videos on physical iOS devices.
 {{site.alert.end}}
 
 ## 3. Create and initialize a `VideoPlayerController`
@@ -123,8 +122,10 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     // Create and store the VideoPlayerController. The VideoPlayerController
     // offers several different constructors to play videos from assets, files,
     // or the internet.
-    _controller = VideoPlayerController.network(
-      'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
+    _controller = VideoPlayerController.networkUrl(
+      Uri.parse(
+        'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
+      ),
     );
 
     _initializeVideoPlayerFuture = _controller.initialize();
@@ -266,8 +267,10 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     // Create and store the VideoPlayerController. The VideoPlayerController
     // offers several different constructors to play videos from assets, files,
     // or the internet.
-    _controller = VideoPlayerController.network(
-      'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
+    _controller = VideoPlayerController.networkUrl(
+      Uri.parse(
+        'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
+      ),
     );
 
     // Initialize the controller and store the Future for later use.

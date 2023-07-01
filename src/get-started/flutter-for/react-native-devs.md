@@ -13,7 +13,7 @@ way to get started learning Flutter development.
 This document can be used as a cookbook by jumping around and finding
 questions that are most relevant to your needs.
 
-## Introduction to Dart for JavaScript Developers
+## Introduction to Dart for JavaScript Developers (ES6)
 
 Like React Native, Flutter uses reactive-style views. However, while RN
 transpiles to native widgets, Flutter compiles all the way to native code.
@@ -88,7 +88,7 @@ typed or the type system must infer the proper type automatically.
 
 ```js
 // JavaScript
-var name = 'JavaScript';
+let name = 'JavaScript';
 ```
 
 <?code-excerpt "lib/main.dart (Variables)"?>
@@ -119,7 +119,7 @@ numeric types have the value `null`.
 
 ```js
 // JavaScript
-var name; // == undefined
+let name; // == undefined
 ```
 
 <?code-excerpt "lib/main.dart (Null)"?>
@@ -141,11 +141,11 @@ are treated as `true` when using the `==` comparison operator.
 
 ```js
 // JavaScript
-var myNull = null;
+let myNull = null;
 if (!myNull) {
   console.log('null is treated as false');
 }
-var zero = 0;
+let zero = 0;
 if (!zero) {
   console.log('0 is treated as false');
 }
@@ -405,15 +405,13 @@ implements the render method by returning a view component.
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Hello world!</Text>
-      </View>
-    );
-  }
-}
+const App = () => {
+  return (
+    <View style={styles.container}>
+      <Text>Hello world!</Text>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -423,6 +421,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   }
 });
+
+export default App;
 ```
 
 In Flutter, you can create an identical "Hello world!" app using the
@@ -540,19 +540,17 @@ and then used inside a parent class.
 
 ```js
 // React Native
-class CustomCard extends React.Component {
-  render() {
-    return (
-      <View>
-        <Text> Card {this.props.index} </Text>
-        <Button
-          title="Press"
-          onPress={() => this.props.onPress(this.props.index)}
-        />
-      </View>
-    );
-  }
-}
+const CustomCard = ({ index, onPress }) => {
+  return (
+    <View>
+      <Text> Card {index} </Text>
+      <Button
+        title="Press"
+        onPress={() => onPress(index)}
+      />
+    </View>
+  );
+};
 
 // Usage
 <CustomCard onPress={this.onPress} index={item.key} />
@@ -707,6 +705,12 @@ in a source code directory and referencing it.
 
 ```js
 <Image source={require('./my-icon.png')} />
+// OR
+<Image
+  source={%raw%}{{
+    url: 'https://reactnative.dev/img/tiny_logo.png'
+  }}{%endraw%}
+/>
 ```
 
 In Flutter, add a static image to your app
@@ -746,16 +750,10 @@ from the command line.
 
 In Flutter, install a package using the following instructions:
 
-1. Add the package name and version to the `pubspec.yaml` dependencies section.
-   The example below shows how to add the `google_sign_in` Dart package to the
-   `pubspec.yaml` file. Check your spaces when working in the YAML file because
-   **white space matters**!
+1. To add the `google_sign_in` package as a dependency, run `flutter pub add`:
 
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  google_sign_in: ^3.0.3
+```terminal
+$ flutter pub add google_sign_in
 ```
 
 2. Install the package from the command line by using `flutter pub get`.
@@ -863,16 +861,16 @@ so third party libraries like `react-native-canvas` are used.
 
 ```js
 // React Native
-handleCanvas = canvas => {
-  const ctx = canvas.getContext('2d');
-  ctx.fillStyle = 'skyblue';
-  ctx.beginPath();
-  ctx.arc(75, 75, 50, 0, 2 * Math.PI);
-  ctx.fillRect(150, 100, 300, 300);
-  ctx.stroke();
-};
+const CanvasComp = () => {
+  const handleCanvas = (canvas) => {
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'skyblue';
+    ctx.beginPath();
+    ctx.arc(75, 75, 50, 0, 2 * Math.PI);
+    ctx.fillRect(150, 100, 300, 300);
+    ctx.stroke();
+  };
 
-render() {
   return (
     <View>
       <Canvas ref={this.handleCanvas} />
@@ -898,11 +896,11 @@ class MyCanvasPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final Paint paint = Paint()..color = Colors.amber;
-    canvas.drawCircle(const Offset(100.0, 200.0), 40.0, paint);
+    canvas.drawCircle(const Offset(100, 200), 40, paint);
     final Paint paintRect = Paint()..color = Colors.lightBlue;
     final Rect rect = Rect.fromPoints(
-      const Offset(150.0, 300.0),
-      const Offset(300.0, 400.0),
+      const Offset(150, 300),
+      const Offset(300, 400),
     );
     canvas.drawRect(rect, paintRect);
   }
@@ -968,18 +966,18 @@ Widget build(BuildContext context) {
       children: <Widget>[
         Container(
           color: Colors.red,
-          width: 100.0,
-          height: 100.0,
+          width: 100,
+          height: 100,
         ),
         Container(
           color: Colors.blue,
-          width: 100.0,
-          height: 100.0,
+          width: 100,
+          height: 100,
         ),
         Container(
           color: Colors.green,
-          width: 100.0,
-          height: 100.0,
+          width: 100,
+          height: 100,
         ),
       ],
     ),
@@ -1068,7 +1066,7 @@ style in multiple places, you can create a
 ```dart
 const TextStyle textStyle = TextStyle(
   color: Colors.cyan,
-  fontSize: 32.0,
+  fontSize: 32,
   fontWeight: FontWeight.w600,
 );
 
@@ -1077,10 +1075,10 @@ return const Center(
     children: <Widget>[
       Text('Sample text', style: textStyle),
       Padding(
-        padding: EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(20),
         child: Icon(
           Icons.lightbulb_outline,
-          size: 48.0,
+          size: 48,
           color: Colors.redAccent,
         ),
       ),
@@ -1357,7 +1355,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 'This execution will be done before you can blink.',
               ),
             Padding(
-              padding: const EdgeInsets.only(top: 70.0),
+              padding: const EdgeInsets.only(top: 70),
               child: ElevatedButton(
                 onPressed: toggleBlinkState,
                 child: toggleState
@@ -1467,38 +1465,34 @@ These parameters can be used in a child component using `this.props`.
 
 ```js
 // React Native
-class CustomCard extends React.Component {
-  render() {
-    return (
-      <View>
-        <Text> Card {this.props.index} </Text>
-        <Button
-          title='Press'
-          onPress={() => this.props.onPress(this.props.index)}
-        />
-      </View>
-    );
-  }
-}
-class App extends React.Component {
+const CustomCard = ({ index, onPress }) => {
+  return (
+    <View>
+      <Text> Card {index} </Text>
+      <Button
+        title='Press'
+        onPress={() => onPress(index)}
+      />
+    </View>
+  );
+};
 
-  onPress = index => {
+const App = () => {
+  const onPress = (index) => {
     console.log('Card ', index);
   };
 
-  render() {
-    return (
-      <View>
-        <FlatList
-          data={[ ... ]}
-          renderItem={({ item }) => (
-            <CustomCard onPress={this.onPress} index={item.key} />
-          )}
-        />
-      </View>
-    );
-  }
-}
+  return (
+    <View>
+      <FlatList
+        data={[ /* ... */ ]}
+        renderItem={({ item }) => (
+          <CustomCard onPress={onPress} index={item.key} />
+        )}
+      />
+    </View>
+  );
+};
 ```
 
 In Flutter, you assign a local variable or function marked
@@ -1567,10 +1561,12 @@ that is persistent and global to the app.
 
 ```js
 // React Native
+const [counter, setCounter] = useState(0)
+...
 await AsyncStorage.setItem( 'counterkey', json.stringify(++this.state.counter));
 AsyncStorage.getItem('counterkey').then(value => {
   if (value != null) {
-    this.setState({ counter: value });
+    setCounter(value);
   }
 });
 ```
@@ -1580,15 +1576,11 @@ store and retrieve key-value data that is persistent and global
 to the app. The `shared_preferences` plugin wraps
 `NSUserDefaults` on iOS and `SharedPreferences` on Android,
 providing a persistent store for simple data.
-To use the plugin,
-add `shared_preferences` as a dependency in the `pubspec.yaml`
-file then import the package in your Dart file.
 
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  shared_preferences: ^2.0.13
+To add the `shared_preferences` package as a dependency, run `flutter pub add`:
+
+```terminal
+$ flutter pub add shared_preferences
 ```
 
 <?code-excerpt "lib/examples.dart (SharedPrefs)"?>
@@ -1883,7 +1875,7 @@ widget provides the navigation on tap.
 @override
 Widget build(BuildContext context) {
   return Drawer(
-    elevation: 20.0,
+    elevation: 20,
     child: ListTile(
       leading: const Icon(Icons.change_history),
       title: const Text('Screen2'),
@@ -1906,7 +1898,7 @@ edge-swipe gesture to show the `Drawer`.
 Widget build(BuildContext context) {
   return Scaffold(
     drawer: Drawer(
-      elevation: 20.0,
+      elevation: 20,
       child: ListTile(
         leading: const Icon(Icons.change_history),
         title: const Text('Screen2'),
@@ -1959,10 +1951,11 @@ a single gesture, [`PanResponder`][] is used.
 
 ```js
 // React Native
-class App extends Component {
+const App = () => {
+  const panResponderRef = useRef(null);
 
-  componentWillMount() {
-    this._panResponder = PanResponder.create({
+  useEffect(() => {
+    panResponderRef.current = PanResponder.create({
       onMoveShouldSetPanResponder: (event, gestureState) =>
         !!getDirection(gestureState),
       onPanResponderMove: (event, gestureState) => true,
@@ -1971,18 +1964,16 @@ class App extends Component {
       },
       onPanResponderTerminationRequest: (event, gestureState) => true
     });
-  }
+  }, []);
 
-  render() {
-    return (
-      <View style={styles.container} {...this._panResponder.panHandlers}>
-        <View style={styles.center}>
-          <Text>Swipe Horizontally or Vertically</Text>
-        </View>
+  return (
+    <View style={styles.container} {...panResponderRef.current.panHandlers}>
+      <View style={styles.center}>
+        <Text>Swipe Horizontally or Vertically</Text>
       </View>
-    );
-  }
-}
+    </View>
+  );
+};
 ```
 
 In Flutter, to add a click (or press) listener to a widget,
@@ -2041,11 +2032,13 @@ and then receive the response to get the data.
 
 ```js
 // React Native
-_getIPAddress = () => {
+const [ipAddress, setIpAddress] = useState('')
+
+const _getIPAddress = () => {
   fetch('https://httpbin.org/ip')
     .then(response => response.json())
     .then(responseJson => {
-      this.setState({ _ipAddress: responseJson.origin });
+      setIpAddress(responseJson.origin);
     })
     .catch(error => {
       console.error(error);
@@ -2053,14 +2046,12 @@ _getIPAddress = () => {
 };
 ```
 
-Flutter uses the `http` package. To install the `http` package,
-add it to the dependencies' section of our pubspec.yaml.
+Flutter uses the `http` package. 
 
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  http: <latest_version>
+To add the `http` package as a dependency, run `flutter pub add`:
+
+```terminal
+$ flutter pub add http
 ```
 
 Flutter uses the [`dart:io`][] core HTTP support client.
@@ -2106,10 +2097,12 @@ input box and then use the callback to store the value in a variable.
 
 ```js
 // React Native
+const [password, setPassword] = useState('')
+...
 <TextInput
   placeholder="Enter your Password"
-  onChangeText={password => this.setState({ password })}
- />
+  onChangeText={password => setPassword(password)}
+/>
 <Button title="Submit" onPress={this.validate} />
 ```
 
@@ -2365,24 +2358,22 @@ and then, `start()` is called to start the animation.
 
 ```js
 // React Native
-class FadeInView extends React.Component {
-  state = {
-    fadeAnim: new Animated.Value(0) // Initial value for opacity: 0
-  };
-  componentDidMount() {
-    Animated.timing(this.state.fadeAnim, {
+const FadeInView = ({ style, children }) => {
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    Animated.timing(fadeAnim, {
       toValue: 1,
       duration: 10000
     }).start();
-  }
-  render() {
-    return (
-      <Animated.View style={%raw%}{{...this.props.style, opacity: this.state.fadeAnim }}{%endraw%} >
-        {this.props.children}
-      </Animated.View>
-    );
-  }
-}
+  }, []);
+
+  return (
+    <Animated.View style={%raw%}{{ ...style, opacity: fadeAnim }}{%endraw%}>
+      {children}
+    </Animated.View>
+  );
+};
     ...
 <FadeInView>
   <Text> Fading in </Text>
@@ -2469,8 +2460,8 @@ class _LogoFadeState extends State<LogoFade>
     return FadeTransition(
       opacity: animation,
       child: const SizedBox(
-        height: 300.0,
-        width: 300.0,
+        height: 300,
+        width: 300,
         child: FlutterLogo(),
       ),
     );

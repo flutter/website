@@ -1,7 +1,7 @@
 ---
-title: Adding a Flutter View to an Android app
+title: Add a Flutter View to an Android app
 short-title: Integrate via FlutterView
-description: Learn how to perform advanced integrations via Flutter Views
+description: Learn how to perform advanced integrations via Flutter Views.
 ---
 
 {{site.alert.warning}}
@@ -71,7 +71,7 @@ The reverse [detachFromFlutterEngine]({{site.api}}/javadoc/io/flutter/embedding/
 class must also be called to not leak resources when the FlutterView or Activity
 is no longer visible.
 
-In addition, see the remaining implementation in the [FlutterViewEngine]({{site.github}}/flutter/samples/blob/master/add_to_app/android_view/android_view/app/src/main/java/dev/flutter/example/androidView/FlutterViewEngine.kt)
+In addition, see the remaining implementation in the [FlutterViewEngine]({{site.github}}/flutter/samples/blob/main/add_to_app/android_view/android_view/app/src/main/java/dev/flutter/example/androidView/FlutterViewEngine.kt)
 demo class or in the [FlutterActivityAndFragmentDelegate](https://cs.opensource.google/flutter/engine/+/master:shell/platform/android/io/flutter/embedding/android/FlutterActivityAndFragmentDelegate.java)
 to ensure a correct functioning of other features such as clipboards, system
 UI overlay, plugins etc.

@@ -368,11 +368,11 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
 
   Widget _buildMenuList() {
     return ListView.separated(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16),
       itemCount: _items.length,
       separatorBuilder: (context, index) {
         return const SizedBox(
-          height: 12.0,
+          height: 12,
         );
       },
       itemBuilder: (context, index) {
@@ -405,8 +405,8 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
   Widget _buildPeopleRow() {
     return Container(
       padding: const EdgeInsets.symmetric(
-        horizontal: 8.0,
-        vertical: 20.0,
+        horizontal: 8,
+        vertical: 20,
       ),
       child: Row(
         children: _people.map(_buildPersonWithDropZone).toList(),
@@ -418,7 +418,7 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
     return Expanded(
       child: Padding(
         padding: const EdgeInsets.symmetric(
-          horizontal: 6.0,
+          horizontal: 6,
         ),
         child: DragTarget<Item>(
           builder: (context, candidateItems, rejectedItems) {
@@ -459,13 +459,13 @@ class CustomerCart extends StatelessWidget {
     return Transform.scale(
       scale: highlighted ? 1.075 : 1.0,
       child: Material(
-        elevation: highlighted ? 8.0 : 4.0,
-        borderRadius: BorderRadius.circular(22.0),
+        elevation: highlighted ? 8 : 4,
+        borderRadius: BorderRadius.circular(22),
         color: highlighted ? const Color(0xFFF64209) : Colors.white,
         child: Padding(
           padding: const EdgeInsets.symmetric(
-            horizontal: 12.0,
-            vertical: 24.0,
+            horizontal: 12,
+            vertical: 24,
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -480,7 +480,7 @@ class CustomerCart extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 8.0),
+              const SizedBox(height: 8),
               Text(
                 customer.name,
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
@@ -496,21 +496,21 @@ class CustomerCart extends StatelessWidget {
                 maintainSize: true,
                 child: Column(
                   children: [
-                    const SizedBox(height: 4.0),
+                    const SizedBox(height: 4),
                     Text(
                       customer.formattedTotalItemPrice,
                       style: Theme.of(context).textTheme.bodySmall!.copyWith(
                             color: textColor,
-                            fontSize: 16.0,
+                            fontSize: 16,
                             fontWeight: FontWeight.bold,
                           ),
                     ),
-                    const SizedBox(height: 4.0),
+                    const SizedBox(height: 4),
                     Text(
                       '${customer.items.length} item${customer.items.length != 1 ? 's' : ''}',
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
                             color: textColor,
-                            fontSize: 12.0,
+                            fontSize: 12,
                           ),
                     ),
                   ],
@@ -541,15 +541,15 @@ class MenuListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      elevation: 12.0,
+      elevation: 12,
       borderRadius: BorderRadius.circular(20),
       child: Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: const EdgeInsets.all(12),
         child: Row(
           mainAxisSize: MainAxisSize.max,
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.circular(12.0),
+              borderRadius: BorderRadius.circular(12),
               child: SizedBox(
                 width: 120,
                 height: 120,
@@ -567,7 +567,7 @@ class MenuListItem extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(width: 30.0),
+            const SizedBox(width: 30),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -575,15 +575,15 @@ class MenuListItem extends StatelessWidget {
                   Text(
                     name,
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          fontSize: 18.0,
+                          fontSize: 18,
                         ),
                   ),
-                  const SizedBox(height: 10.0),
+                  const SizedBox(height: 10),
                   Text(
                     price,
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
                           fontWeight: FontWeight.bold,
-                          fontSize: 18.0,
+                          fontSize: 18,
                         ),
                   ),
                 ],
@@ -612,7 +612,7 @@ class DraggingListItem extends StatelessWidget {
       translation: const Offset(-0.5, -0.5),
       child: ClipRRect(
         key: dragKey,
-        borderRadius: BorderRadius.circular(12.0),
+        borderRadius: BorderRadius.circular(12),
         child: SizedBox(
           height: 150,
           width: 150,

@@ -11,6 +11,13 @@ next:
 
 <?code-excerpt path-base="cookbook/persistence/sqlite/"?>
 
+{{site.alert.note}}
+  This guide uses the [sqflite package][].
+  This package only supports apps that run on macOS, iOS, or Android.
+{{site.alert.end}}
+
+[sqflite package]: {{site.pub-pkg}}/sqflite
+
 If you are writing an app that needs to persist and query large amounts of data on
 the local device, consider using a database instead of a local file or
 key-value store. In general, databases provide faster inserts, updates,
@@ -45,12 +52,11 @@ To work with SQLite databases, import the `sqflite` and `path` packages.
   * The `path` package provides functions to
     define the location for storing the database on disk.
 
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  sqflite:
-  path:
+To add the packages as a dependency,
+run `flutter pub add`:
+
+```terminal
+$ flutter pub add sqflite path
 ```
 
 Make sure to import the packages in the file you'll be working in.

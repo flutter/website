@@ -35,7 +35,7 @@ check out the [release notes][] page.
 {{site.alert.end}}
 
 {% comment %} Nav tabs {% endcomment -%}
-<ul class="nav nav-tabs" id="editor-setup" role="tablist">
+<ul class="nav nav-tabs" id="os-archive-tabs" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="windows-tab" href="#windows" role="tab" aria-controls="windows" aria-selected="true">Windows</a>
   </li>

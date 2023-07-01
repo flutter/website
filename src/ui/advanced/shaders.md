@@ -5,15 +5,17 @@ short-title: Fragment shaders
 ---
 
 {{site.alert.note}}
-  The `CanvasKit` backend supports this feature on the `beta` branch
-  and should support this API in the next stable release.
-  There are no current plans to support this feature in the HTML backend.
+  Both the Skia and [Impeller][] backends support writing a
+  custom shader. Except where noted, the same
+  instructions apply to both.
 {{site.alert.end}}
+
+[Impeller]: {{site.url}}/perf/impeller
 
 Custom shaders can be used to provide rich graphical effects
 beyond those provided by the Flutter SDK.
-A shader is a program authored in a small, Dart-like language,
-known as GLSL,
+A shader is a program authored in a small,
+Dart-like language, known as GLSL,
 and executed on the user's GPU.
 
 Custom shaders are added to a Flutter project
@@ -26,7 +28,8 @@ and obtained using the [`FragmentProgram`][] API.
 
 Shaders, in the form of GLSL files with the `.frag` extension,
 must be declared in the `shaders` section of your project's `pubspec.yaml` file.
-The Flutter command-line tool compiles the shader to its appropriate backend format,
+The Flutter command-line tool compiles the shader
+to its appropriate backend format,
 and generates its necessary runtime metadata.
 The compiled shader is then included in the application just like an asset.
 
@@ -48,7 +51,8 @@ with `packages/$pkgname` prefixed to the shader program's name
 
 To load a shader into a `FragmentProgram` object at runtime,
 use the [`FragmentProgram.fromAsset`][] constructor.
-The asset's name is the same as the path to the shader given in the `pubspec.yaml` file.
+The asset's name is the same as the path to the shader
+given in the `pubspec.yaml` file.
 
 [`FragmentProgram.fromAsset`]: {{site.api}}/flutter/dart-ui/FragmentProgram/fromAsset.html
 
@@ -58,7 +62,8 @@ void loadMyShader() async {
 }
 ```
 
-The `FragmentProgram` object can be used to create one or more [`FragmentShader`][] instances.
+The `FragmentProgram` object can be used to create
+one or more [`FragmentShader`][] instances.
 A `FragmentShader` object represents a fragment program
 along with a particular set of _uniforms_ (configuration parameters).
 The available uniforms depends on how the shader was defined.
@@ -75,16 +80,18 @@ void updateShader(Canvas canvas, Rect rect, FragmentProgram program) {
 
 ### Canvas API
 
-Fragment shaders can be used with most Canvas APIs by setting [`Paint.shader`][].
-For example, when using [`Canvas.drawRect`][] the shader is evaluated for all
-fragments within the rectangle. For an API like [`Canvas.drawPath`][] with a
-stroked path, the shader is evaluated for all fragments within the stroked
-line. Some APIs, such as [`Canvas.drawImage`][], ignore the value of the shader.
+Fragment shaders can be used with most Canvas APIs
+by setting [`Paint.shader`][].
+For example, when using [`Canvas.drawRect`][]
+the shader is evaluated for all fragments within the rectangle.
+For an API like [`Canvas.drawPath`][] with a stroked path,
+the shader is evaluated for all fragments within the stroked line.
+Some APIs, such as [`Canvas.drawImage`][], ignore the value of the shader.
 
 [`Canvas.drawImage`]:  {{site.api}}/flutter/dart-ui/Canvas/drawImage.html
-[`Canvas.drawRect`]:    {{site.api}}/flutter/dart-ui/Canvas/drawRect.html
-[`Canvas.drawPath`]:    {{site.api}}/flutter/dart-ui/Canvas/drawPath.html
-[`Paint.shader`]:          {{site.api}}/flutter/dart-ui/Paint/shader.html
+[`Canvas.drawRect`]:   {{site.api}}/flutter/dart-ui/Canvas/drawRect.html
+[`Canvas.drawPath`]:   {{site.api}}/flutter/dart-ui/Canvas/drawPath.html
+[`Paint.shader`]:      {{site.api}}/flutter/dart-ui/Paint/shader.html
 
 ```dart
 void paint(Canvas canvas, Size size, FragmentShader shader) {
@@ -110,25 +117,29 @@ void paint(Canvas canvas, Size size, FragmentShader shader) {
 
 Fragment shaders are authored as GLSL source files.
 By convention, these files have the `.frag` extension.
-(Flutter does not support vertex shaders, which would have the `.vert` extension.)
+(Flutter doesn't support vertex shaders,
+which would have the `.vert` extension.)
 
 Any GLSL version from 460 down to 100 is supported,
 though some available features are restricted.
 The rest of the examples in this document use version `460 core`.
 
-Shaders are subject to the following limitations when used with Flutter:
+Shaders are subject to the following limitations
+when used with Flutter:
 
-* UBOs and SSBOs aren't supported.
-* `sampler2D` is the only supported sampler type.
-* Only the two-argument version of `texture` (sampler and uv) is supported.
-* No additional varying inputs may be declared.
-* All precision hints are ignored when targeting Skia.
-* Unsigned integers and booleans aren't supported.
+* UBOs and SSBOs aren't supported
+* `sampler2D` is the only supported sampler type
+* Only the two-argument version of `texture` (sampler and uv) is supported
+* No additional varying inputs can be declared
+* All precision hints are ignored when targeting Skia
+* Unsigned integers and booleans aren't supported
 
 ### Uniforms
 
-A fragment program can be configured by defining `uniform` values in the GLSL shader source
-and then setting these values in Dart for each fragment shader instance.
+A fragment program can be configured by defining
+`uniform` values in the GLSL shader source
+and then setting these values in Dart for
+each fragment shader instance.
 
 Floating point uniforms with the GLSL types
 `float`, `vec2`, `vec3`, and `vec4`
@@ -141,8 +152,8 @@ that the uniform values are defined in the fragment program.
 For data types composed of multiple floats, such as a `vec4`,
 you must call [`FragmentShader.setFloat`][] once for each value.
 
-[`FragmentShader.setFloat`]: https://master-api.flutter.dev/flutter/dart-ui/FragmentShader/setFloat.html
-[`FragmentShader.setImageSampler`]: https://master-api.flutter.dev/flutter/dart-ui/FragmentShader/setImageSampler.html
+[`FragmentShader.setFloat`]: {{site.api}}/flutter/dart-ui/FragmentShader/setFloat.html
+[`FragmentShader.setImageSampler`]: {{site.api}}/flutter/dart-ui/FragmentShader/setImageSampler.html
 
 For example, given the following uniforms declarations in a GLSL fragment program:
 
@@ -197,20 +208,23 @@ void main() {
 
 The value returned from `FlutterFragCoord` is distinct from `gl_FragCoord`.
 `gl_FragCoord` provides the screen space coordinates and should generally be
-avoided to ensure that shaders are consistent across backends. When targeting a
-Skia backend, the calls to `gl_FragCoord` are rewritten to access local
+avoided to ensure that shaders are consistent across backends.
+When targeting a Skia backend,
+the calls to `gl_FragCoord` are rewritten to access local
 coordinates but this rewriting isn't possible with Impeller.
 
 #### Colors
 
-There isn't a built-in data type for colors. Instead they are commonly
-represented as a `vec4` with each component corresponding to one of the RGBA
+There isn't a built-in data type for colors.
+Instead they are commonly represented as a `vec4`
+with each component corresponding to one of the RGBA
 color channels.
 
-The single output `fragColor` expects that the color value is normalized to be
-in the range of `0.0` to `1.0` and that it has premultiplied alpha. This is
-different than typical Flutter colors which use a `0-255` value encoding and
-have unpremultipled alpha.
+The single output `fragColor` expects that the color value
+is normalized to be in the range of `0.0` to `1.0`
+and that it has premultiplied alpha.
+This is different than typical Flutter colors which use
+a `0-255` value encoding and have unpremultipled alpha.
 
 #### Samplers
 
@@ -219,8 +233,8 @@ This image can be acquired either from a decoded image
 or from part of the application using
 [`Scene.toImageSync`][] or [`Picture.toImageSync`][].
 
-[`Picture.toImageSync`]: https://master-api.flutter.dev/flutter/dart-ui/Picture/toImageSync.html
-[`Scene.toImageSync`]: https://master-api.flutter.dev/flutter/dart-ui/Scene/toImageSync.html
+[`Picture.toImageSync`]: {{site.api}}/flutter/dart-ui/Picture/toImageSync.html
+[`Scene.toImageSync`]: {{site.api}}/flutter/dart-ui/Scene/toImageSync.html
 
 ```glsl
 #include <flutter/runtime_effect.glsl>
@@ -236,21 +250,27 @@ void main() {
 }
 ```
 
-By default, the image uses [`TileMode.clamp`][] to determine how values outside
-of the range of `[0, 1]` behave. Customization of the tile mode is not
+By default, the image uses
+[`TileMode.clamp`][] to determine how values outside
+of the range of `[0, 1]` behave.
+Customization of the tile mode is not
 supported and needs to be emulated in the shader.
 
-[`TileMode.clamp`]: https://master-api.flutter.dev/flutter/dart-ui/TileMode.html
+[`TileMode.clamp`]: {{site.api}}/flutter/dart-ui/TileMode.html
 
 ### Performance considerations
 
-When targeting the Skia backend, loading the shader might be expensive since it
-must be compiled to the appropriate platform-specific shader at runtime. If you
-intend to use one or more shaders during an animation, consider precaching the
-fragment program objects before starting the animation.
+When targeting the Skia backend,
+loading the shader might be expensive since it
+must be compiled to the appropriate
+platform-specific shader at runtime.
+If you intend to use one or more shaders during an animation,
+consider precaching the fragment program objects before
+starting the animation.
 
 You can reuse a `FragmentShader` object across frames;
-this is more efficient than creating a new `FragmentShader` for each frame.
+this is more efficient than creating a new
+`FragmentShader` for each frame.
 
 For a more detailed guide on writing performant shaders,
 check out [Writing efficient shaders][] on GitHub.

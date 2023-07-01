@@ -18,6 +18,6 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 ## Logging View Updates
 * Fix a fatal error that occurred when filtering logs more than once - [#3588](https://github.com/flutter/devtools/pull/3588)
 
-## Changelog
-More details about changes and fixes are available in our
-[changelog](https://github.com/flutter/devtools/blob/master/CHANGELOG.md).
+## Full commit history
+More details about changes and fixes are available from the
+[DevTools git log.](https://github.com/flutter/devtools/commits/master).

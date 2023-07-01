@@ -118,7 +118,7 @@ You can do this by using the [`Navigator`][].
 When a user opens the drawer, Flutter adds the drawer to the navigation
 stack. Therefore, to close the drawer, call `Navigator.pop(context)`.
 
-<?code-excerpt "lib/main.dart (CloseDrawer)"?>
+<?code-excerpt "lib/drawer.dart (CloseDrawer)"?>
 ```dart
 ListTile(
   title: const Text('Item 1'),
@@ -132,6 +132,16 @@ ListTile(
 ```
 
 ## Interactive example
+
+This example shows a [`Drawer`][] as it is used within a [`Scaffold`][] widget.
+The [`Drawer`][] has three [`ListTile`][] items.
+The `_onItemTapped` function changes the selected item's index
+and displays the corresponding text in the center of the `Scaffold`.
+
+{{site.alert.note}}
+  For more information on implementing navigation,
+  check out the [Navigation][] section of the cookbook.
+{{site.alert.end}}
 
 <?code-excerpt "lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
@@ -153,17 +163,46 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
   final String title;
 
   @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _selectedIndex = 0;
+  static const TextStyle optionStyle =
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  static const List<Widget> _widgetOptions = <Widget>[
+    Text(
+      'Index 0: Home',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 1: Business',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 2: School',
+      style: optionStyle,
+    ),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(title)),
-      body: const Center(
-        child: Text('My Page!'),
+      appBar: AppBar(title: Text(widget.title)),
+      body: Center(
+        child: _widgetOptions[_selectedIndex],
       ),
       drawer: Drawer(
         // Add a ListView to the drawer. This ensures the user can scroll
@@ -180,19 +219,31 @@ class MyHomePage extends StatelessWidget {
               child: Text('Drawer Header'),
             ),
             ListTile(
-              title: const Text('Item 1'),
+              title: const Text('Home'),
+              selected: _selectedIndex == 0,
               onTap: () {
                 // Update the state of the app
-                // ...
+                _onItemTapped(0);
                 // Then close the drawer
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: const Text('Item 2'),
+              title: const Text('Business'),
+              selected: _selectedIndex == 1,
               onTap: () {
                 // Update the state of the app
-                // ...
+                _onItemTapped(1);
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('School'),
+              selected: _selectedIndex == 2,
+              onTap: () {
+                // Update the state of the app
+                _onItemTapped(2);
                 // Then close the drawer
                 Navigator.pop(context);
               },
@@ -218,3 +269,4 @@ class MyHomePage extends StatelessWidget {
 [material library]: {{site.api}}/flutter/material/material-library.html
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
+[Navigation]: {{site.url}}/cookbook#navigation
