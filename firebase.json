@@ -518,9 +518,9 @@
         ]
       },
       {
-        "source": "**/*.@(jpg|jpeg|gif|png|md)",
+        "source": "**/*.@(jpg|jpeg|gif|png|webp|webm|svg|md|json|css|js)",
         "headers": [
-          { "key": "Cache-Control", "value": "max-age=3600" },
+          { "key": "Cache-Control", "value": "max-age=86400" },
           { "key": "Access-Control-Allow-Origin", "value": "*" }
         ]
       }
