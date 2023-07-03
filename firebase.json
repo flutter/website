@@ -523,6 +523,13 @@
           { "key": "Cache-Control", "value": "max-age=3600" },
           { "key": "Access-Control-Allow-Origin", "value": "*" }
         ]
+      },
+      {
+        "source": "**",
+        "headers": [
+          { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},
+          { "key": "X-Content-Type-Options", "value": "nosniff"}
+        ]
       }
     ]
   },
