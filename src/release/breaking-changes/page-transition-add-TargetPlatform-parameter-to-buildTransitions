@@ -1,0 +1,68 @@
+---
+title: Add TargetPlatform parameter to PageTransitionsTheme.buildTransitions
+description: A TargetPlatform parameter is added to PageTransitionsTheme.buildTransitions so ...
+---
+
+## Summary
+
+## Context
+
+## Description of change
+
+## Migration guide
+
+Code before migration:
+
+```dart
+class AppPageTransitionsTheme extends PageTransitionsTheme {
+  @override
+  Widget buildTransitions<T>(
+    PageRoute<T> route,
+    BuildContext context,
+    Animation<double> animation,
+    Animation<double> secondaryAnimation,
+    Widget child,
+  ) {
+    final TargetPlatform platform = Theme.of(context).platform;
+    final PageTransitionsBuilder matchingBuilder = builders[platform] ?? const ZoomPageTransitionsBuilder();
+    return matchingBuilder.buildTransitions<T>(route, context, animation, secondaryAnimation, child);
+  }
+}
+```
+
+Code after migration:
+
+```dart
+class AppPageTransitionsTheme extends PageTransitionsTheme {
+  @override
+  Widget buildTransitions<T>(
+    PageRoute<T> route,
+    BuildContext context,
+    Animation<double> animation,
+    Animation<double> secondaryAnimation,
+    Widget child,
+    TargetPlatform platform,
+  ) {
+    final PageTransitionsBuilder matchingBuilder = builders[platform] ?? const ZoomPageTransitionsBuilder();
+    return matchingBuilder.buildTransitions<T>(route, context, animation, secondaryAnimation, child);
+  }
+}
+```
+
+## Timeline
+
+Landed in version: 3.11.0-0.0.pre<br>
+In stable release: TBD
+
+## References
+
+API documentation:
+
+* [`PageTransitionsTheme.buildTransitions`][]
+
+Relevant PRs:
+
+* [PR 114303][]
+
+[`PageTransitionsTheme.buildTransitions`]: {{site.api}}/flutter/material/PageTransitionsTheme/buildTransitions.html
+[PR 114303]: {{site.repo.flutter}}/pull/114303
