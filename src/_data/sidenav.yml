@@ -421,6 +421,7 @@
 - divider
 
 - title: Resources
+  permalink: /resources
   children:
     - title: Architectural overview
       permalink: /resources/architectural-overview
@@ -454,6 +455,7 @@
       permalink: /resources/videos
 
 - title: Reference
+  permalink: /reference
   expanded: true
   children:
     - title: Who is Dash?

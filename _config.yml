@@ -171,24 +171,24 @@ alert:
     **Bonus questions!**
   important: >-
     <aside class="alert alert-warning" role="alert" markdown="1">
-    <i class="fas fa-exclamation-circle"></i> **Important:**
+    <i class="material-icons" aria-hidden="true">error</i> **Important:**
   info: >-
     <aside class="alert alert-info" role="alert" markdown="1">
-    <i class="fas fa-info-circle"></i>
+    <i class="material-icons" aria-hidden="true">info</i>
   note: >-
     <aside class="alert alert-info" role="alert" markdown="1">
-    <i class="fas fa-info-circle"></i> **Note:**
+    <i class="material-icons" aria-hidden="true">info</i> **Note:**
   version-note: >-
     <aside class="alert alert-info" role="alert" markdown="1">
-    <i class="fas fa-code-branch"></i> **Version note:**
+    <i class="material-icons" aria-hidden="true">merge_type</i> **Version note:**
   secondary: >-
     <aside class="alert alert-secondary" role="alert" markdown="1">
   tip: >-
     <aside class="alert alert-success" role="alert" markdown="1">
-    <i class="far fa-lightbulb"></i> **Tip:**
+    <i class="material-icons" aria-hidden="true">tips_and_updates</i> **Tip:**
   warning: >-
     <aside class="alert alert-warning" role="alert" markdown="1">
-    <i class="fas fa-exclamation-triangle"></i> **Warning:**
+    <i class="material-icons" aria-hidden="true">report_problem</i> **Warning:**
   end: </aside>
 
 
