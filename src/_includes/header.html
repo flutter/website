@@ -2,35 +2,35 @@
 
 <header class="site-header">
   <nav class="navbar navbar-expand-md justify-content-start justify-content-md-between">
-    <button 
-      class="navbar-toggler" 
-      type="button" 
-      data-toggle="collapse" 
-      data-target="#navbarSupportedContent" 
-      aria-controls="navbarSupportedContent" 
-      aria-expanded="false" 
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
       aria-label="Toggle navigation">
       <i class="material-icons">menu</i>
     </button>
 
     <a class="navbar-brand" href="{{site.url}}">
-      <img 
-        src='/assets/images/shared/brand/flutter/logo/flutter-lockup.png' 
-        alt='Flutter logo' 
-        height="37" 
-        width="129" 
+      <img
+        src='/assets/images/shared/brand/flutter/logo/flutter-lockup.png'
+        alt='Flutter logo'
+        height="37"
+        width="129"
         class="align-middle">
     </a>
 
-    <div 
+    <div
       id="navbarSupportedContent"
       class="collapse navbar-collapse flex-grow-0">
-      <div 
-        class="site-header__sheet-bg" 
-        data-toggle="collapse" 
-        data-target="#navbarSupportedContent" 
-        aria-controls="navbarSupportedContent" 
-        aria-expanded="false" 
+      <div
+        class="site-header__sheet-bg"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
         aria-label="Toggle navigation">
       </div>
       <div class="site-header__sheet">
@@ -40,8 +40,8 @@
           </div>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="platform-navbar-dropdown"
-               href="{{site.main-url}}/multi-platform" 
-               role="button" data-toggle="dropdown" 
+               href="{{site.main-url}}/multi-platform"
+               role="button" data-toggle="dropdown"
                aria-haspopup="true" aria-expanded="false">
                Multi-Platform
             </a>
@@ -55,7 +55,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="dev-navbar-dropdown"
                href="{{site.main-url}}/"
-               role="button" data-toggle="dropdown" 
+               role="button" data-toggle="dropdown"
                aria-haspopup="true" aria-expanded="false">
                Development
             </a>
@@ -68,7 +68,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="ecosystem-navbar-dropdown"
                href="{{site.main-url}}/ecosystem"
-               role="button" data-toggle="dropdown" 
+               role="button" data-toggle="dropdown"
                aria-haspopup="true" aria-expanded="false">
                Ecosystem
             </a>
@@ -85,7 +85,7 @@
             <a class="nav-link dropdown-toggle{% if route == '/' %} active{% endif %}"
                id="docs-navbar-dropdown"
                href="/"
-               role="button" data-toggle="dropdown" 
+               role="button" data-toggle="dropdown"
                aria-haspopup="true" aria-expanded="false">
                Docs
             </a>
@@ -110,42 +110,47 @@
           </li>
         </ul>
         <form action="/search/" class="site-header__search form-inline">
-          <input 
-            class="site-header__searchfield form-control" 
-            type="search" name="q" id="q" autocomplete="off" 
+          <input
+            class="site-header__searchfield form-control"
+            type="search" name="q" id="q" autocomplete="off"
             placeholder="Search" aria-label="Search">
         </form>
       </div>
     </div>
     <div class="site-header__social navbar-nav flex-row">
-      <a 
+      <a
         class="nav-item nav-link nav-icon"
-        href="{{site.social.twitter}}" 
-        aria-label="Twitter">
+        href="{{site.social.twitter}}"
+        aria-label="Open Flutter's Twitter"
+        target="_blank" rel="noreferrer"
+        >
         <i class="fab fa-twitter fa-lg"></i>
       </a>
-      <a 
+      <a
         class="nav-item nav-link nav-icon"
-        href="{{site.social.youtube}}" 
-        aria-label="YouTube">
+        href="{{site.social.youtube}}"
+        aria-label="Open Flutter's YouTube"
+        target="_blank" rel="noreferrer">
         <i class="fab fa-youtube fa-lg"></i>
       </a>
       <a
         class="nav-item nav-link nav-icon"
         href="{{site.flutter-medium}}"
-        aria-label="Medium blog">
+        aria-label="Open Flutter's Medium blog"
+        target="_blank" rel="noreferrer">
         <i class="fab fa-medium fa-lg"></i>
       </a>
-      <a 
+      <a
         class="nav-item nav-link nav-icon"
-        href="{{site.repo.organization}}" 
-        aria-label="GitHub">
+        href="{{site.repo.organization}}"
+        aria-label="Open Flutter's GitHub"
+        target="_blank" rel="noreferrer">
         <i class="fab fa-github fa-lg"></i>
       </a>
     </div>
     {% if page.show-nav-get-started-button -%}
-      <a 
-        class="site-header__cta btn btn-primary" 
+      <a
+        class="site-header__cta btn btn-primary"
         href="/get-started/install/">Get started
       </a>
     {% endif -%}
