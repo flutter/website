@@ -4,7 +4,7 @@
   font-family: $site-font-family-alt;
   position: sticky;
   top: 0;
-  z-index: $site-z-header;
+  z-index: $zindex-fixed;
 
   .navbar {
     font-size: $font-size-lg;
@@ -66,7 +66,7 @@
     right: 0;
     top: 0;
     transition-duration: 0s;
-    z-index: $site-z-header;
+    z-index: $zindex-fixed;
 
     @include media-breakpoint-down(sm) {
       pointer-events: none;
@@ -90,6 +90,7 @@
       .navbar-nav {
         margin-bottom: bs-spacer(5);
         overflow-y: auto;
+        overscroll-behavior: contain;
       }
     }
 
@@ -100,6 +101,7 @@
 
   &__sheet {
     display: flex;
+    z-index: $zindex-modal;
 
     @include media-breakpoint-down(sm) {
       background: $site-color-white;
@@ -125,6 +127,7 @@
 
   &__sheet-bg {
     cursor: pointer; // needed for iOS to recognize the div as clickable
+    z-index: $zindex-modal-backdrop;
 
     @include media-breakpoint-down(sm) {
       background: rgba(0, 0, 0, .4);
@@ -178,10 +181,10 @@
     font-size: $font-size-sm;
     padding-left: bs-spacer(8);
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
       font-size: $font-size-lg;
       height: 66px;
-      width: 100%;
+      width: 100% !important;
     }
 
     @include media-breakpoint-up(md) {
