@@ -6,7 +6,7 @@
   left: $site-snackbar-padding;
   position: fixed;
   right: $site-snackbar-padding;
-  z-index: $site-z-snackbar;
+  z-index: $zindex-popover;
 
   &__container {
     align-items: center;
