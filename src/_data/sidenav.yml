@@ -462,6 +462,7 @@
       permalink: https://flutter.dev/brand
 
 - title: Reference
+  permalink: /reference
   expanded: true
   children:
     - title: Who is Dash?

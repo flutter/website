@@ -9,8 +9,6 @@
 {% else -%}
   - {{topic.title}}
 {% endif -%}
-{% elsif topic.permalink contains '://' -%}
-  - [{{topic.title}}<i class="fas fa-external-link-alt"></i>]({{topic.permalink}})
 {% else -%}
   - [{{topic.title}}]({{topic.permalink}})
 {% endif -%}

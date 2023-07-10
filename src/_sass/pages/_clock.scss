@@ -70,6 +70,7 @@
 
       i {
         margin-right: 5px;
+        vertical-align: text-bottom;
       }
 
       &:first-child {
@@ -723,6 +724,10 @@
         text-align: left;
         user-select: text;
         width: 100%;
+
+        .material-icons {
+          user-select: none;
+        }
       }
 
       .faqs_card {
