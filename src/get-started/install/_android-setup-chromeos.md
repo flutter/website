@@ -40,15 +40,17 @@ you need an Android device running Android 4.1 (API level 16) or higher.
  1. Enable **Developer options** and **USB debugging** on your device.
     Detailed instructions are available in the
     [Android documentation]({{site.android-dev}}/studio/debug/dev-options).
- 1. Using a USB cable, plug your phone into your computer. On your Chromebook,
-    you may see a notification for "USB device detected". Click on "Connect
-    to Linux" If prompted on your Android device, authorize your computer
-    to access your device.
- 1. In the terminal, run the `flutter devices` command to verify that
-    Flutter recognizes your connected Android device.  By default,
-    Flutter uses the version of the Android SDK where your `adb`
-    tool is based. If you want Flutter to use a different installation
-    of the Android SDK, you must set the `ANDROID_SDK_ROOT` environment
-    variable to that installation directory.
+ 1. Using a USB cable, plug your phone into your computer.
+    On your Chromebook, you might see a notification for
+    "USB device detected". Click on "Connect to Linux".
+    If prompted on your Android device,
+    authorize your computer to access your device.
+ 1. In the terminal, run the `flutter devices` command to verify
+    that Flutter recognizes your connected Android device.
+    By default, Flutter uses the version of the
+    Android SDK where your `adb` tool is based.
+    If you want Flutter to use a different installation
+    of the Android SDK, you must set the `ANDROID_SDK_ROOT`
+    environment variable to that installation directory.
 
 [Enable ADB]: https://support.google.com/chromebook/answer/9770692

@@ -25,9 +25,7 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter.
 
 ![alt_text]({{site.url}}/tools/devtools/release-notes/images-2.9.1/image3.png "Flutter frame tooltips")
 
-## Changelog
-
-More details about changes and fixes are available in our [changelog][].
-
-[changelog]: https://github.com/flutter/devtools/blob/master/CHANGELOG.md
+## Full commit history
+More details about changes and fixes are available from the
+[DevTools git log.](https://github.com/flutter/devtools/commits/master).
 

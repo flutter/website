@@ -138,8 +138,8 @@ header in the `firebase.json` file.
 
 If the image server cannot be configured to allow CORS
 requests from your application,
-you may still be able to load images by proxying the requests
-through another server. This requires that the
+you might still be able to load images by proxying
+the requests through another server. This requires that the
 intermediate server has sufficient access to load the images.
 
 This method can be used in situations when the original
@@ -161,7 +161,7 @@ limitations explained in the section
 "Flutter renderers on the web" above.
 
 [As of today][20], using too many HTML elements
-with the CanvasKit renderer may hurt performance.
+with the CanvasKit renderer might hurt performance.
 If images interleave non-image content Flutter needs to
 create extra WebGL contexts between the `<img>` elements.
 If your application needs to display a lot of images

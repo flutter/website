@@ -41,6 +41,13 @@
     }
   }
 
+  .nav-header {
+    font-weight: $font-weight-bolder;
+    font-size: $font-size-base;
+    user-select: none;
+    color: lighten($site-color-body-light, 20%);
+  }
+
   .nav-link {
     padding: bs-spacer(1) 0;
     position: relative;
@@ -74,7 +81,7 @@
 
   // Top-level nav item
   > .nav {
-    > .nav-item {
+    > .nav-item, > .nav-header {
       padding: 0 $site-sidebar-side-padding;
     }
 
@@ -100,6 +107,14 @@
   > .nav .nav {
     padding-left: bs-spacer(4);
     margin-bottom: bs-spacer(1);
+
+    .nav-header {
+      font-size: $font-size-sm;
+
+      &:not(:first-child) {
+        margin-top: bs-spacer(2);
+      }
+    }
 
     .nav-item {
       font-size: $font-size-sm;

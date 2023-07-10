@@ -17,6 +17,6 @@ learn more about these features - [#3934](https://github.com/flutter/devtools/pu
 
 ![enhance tracing documentation links]({{site.url}}/tools/devtools/release-notes/images-2.12.1/image1.png "enhance tracing documentation links")
 
-## Changelog
-More details about changes and fixes are available in our
-[changelog](https://github.com/flutter/devtools/blob/master/CHANGELOG.md).
+## Full commit history
+More details about changes and fixes are available from the
+[DevTools git log.](https://github.com/flutter/devtools/commits/master).

@@ -32,16 +32,20 @@ release, and listed in alphabetical order:
 ### Not yet released to stable
 
 * [Added AppLifecycleState.hidden][] enum value
+* [Deprecated API removed after v3.10][]
 * [Moved ReorderableListView's localized strings][]  from material to widgets localizations
 * [Removed `ignoringSemantics`][] properties
 * [Deprecated `RouteInformation.location`][] and its related APIs
 * [Customize tabs alignment using the new `TabBar.tabAlignment` property][]
+* [Updated EditableText scroll into view behavior][]
 
 [Added AppLifecycleState.hidden]: {{site.url}}/release/breaking-changes/add-applifecyclestate-hidden
+[Deprecated API removed after v3.10]: {{site.url}}/release/breaking-changes/3-10-deprecations
 [Moved ReorderableListView's localized strings]: {{site.url}}/release/breaking-changes/material-localized-strings
 [Removed `ignoringSemantics`]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
 [Deprecated `RouteInformation.location`]: {{site.url}}/release/breaking-changes/route-information-uri
 [Customize tabs alignment using the new `TabBar.tabAlignment` property]: {{site.url}}/release/breaking-changes/tab-alignment
+[Updated EditableText scroll into view behavior]: {{site.url}}/release/breaking-changes/editable-text-scroll-into-view
 
 ### Released in Flutter 3.10
 

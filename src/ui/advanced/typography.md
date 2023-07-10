@@ -96,7 +96,7 @@ Use the font's details page to learn more about its static fonts.
 1. Select the **Glyph** tab. This shows the glyphs that the
    font supports.
 
-Use the following API to programmaticaly alter a static font
+Use the following API to programmatically alter a static font
 (but remember that this only works if the font was _designed_
 to support the feature):
 

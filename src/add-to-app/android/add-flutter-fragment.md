@@ -369,7 +369,7 @@ val flutterFragment = FlutterFragment.withNewEngine()
 ## Run Flutter from a specified entrypoint
 
 Similar to varying initial routes, different
-`FlutterFragment`s may want to execute different
+`FlutterFragment`s might want to execute different
 Dart entrypoints. In a typical Flutter app, there is only one
 Dart entrypoint: `main()`, but you can define other entrypoints.
 
@@ -584,7 +584,7 @@ which allows Flutter and Flutter plugins to interact with the
 surrounding `Activity`.
 
 {{site.alert.note}}
-  Some plugins may expect or require an `Activity` reference.
+  Some plugins might expect or require an `Activity` reference.
   Ensure that none of your plugins require an `Activity`
   before you disable access.
 {{site.alert.end}}

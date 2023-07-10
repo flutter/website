@@ -1,5 +1,7 @@
 ## Get the Flutter SDK
 
+{% include_relative _help-link.md location='win-get-sdk' %}
+
  1. Download the following installation bundle to get the latest
     {{site.sdk.channel}} release of the Flutter SDK:
 
@@ -27,6 +29,8 @@ You are now ready to run Flutter commands in the Flutter Console.
 
 ### Update your path
 
+{% include_relative _help-link.md location='win-path' section='#unable-to-find-the-flutter-command' %}
+
 If you wish to run Flutter commands in the regular Windows console,
 take these steps to add Flutter to the `PATH` environment variable:
 
@@ -45,6 +49,8 @@ for these changes to take effect.
 {% include docs/dart-tool-win.md %}
 
 ### Run `flutter doctor`
+
+{% include_relative _help-link.md location='win-doctor' %}
 
 From a console window that has the Flutter directory in the
 path (see above), run the following command to see if there

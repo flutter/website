@@ -73,7 +73,7 @@ your existing Android application already depends on the
 same Android library that your Flutter module
 does (transitively via a plugin).
 
-For instance, your existing app's Gradle may already have:
+For instance, your existing app's Gradle might already have:
 
 <?code-excerpt title="ExistingApp/app/build.gradle"?>
 ```gradle

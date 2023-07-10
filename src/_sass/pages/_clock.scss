@@ -142,7 +142,7 @@
     &__texture {
       background-color: $site-color-white;
       background-image: (
-        url('/assets/images/clock/wtm__background-bottom.svg'), 
+        url('/assets/images/clock/wtm__background-bottom.svg'),
         url('/assets/images/clock/wtm__background-top.svg')
       );
       background-position: right top 200px, left top 50px;
@@ -357,7 +357,7 @@
     }
   }
 
-  // Shared styles for the winners sections, higlight reel
+  // Shared styles for the winners sections, highlight reel
   &__row {
     padding: 3rem 0;
   }
@@ -507,7 +507,7 @@
       margin: 1.25rem;
     }
   }
-  
+
   // Styles for section clock__getting (Getting Started)
   &__getting {
     ol {
@@ -661,13 +661,13 @@
     .title {
       font-family: $site-font-family-base;
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 500;
       margin: 40px 0 16px;
     }
 
     .code-font {
       color: $color-code-block;
-      font-family: $site-font-family-courier;
+      font-family: $site-font-family-monospace;
     }
 
     @include media-breakpoint-up(sm) {
@@ -785,7 +785,7 @@
 
   .code-font {
     color: $color-code-block;
-    font-family: $site-font-family-courier;
+    font-family: $site-font-family-monospace;
   }
 
   .dropdown__button[aria-expanded="true"] {

@@ -36,6 +36,6 @@ hover card - [#4090](https://github.com/flutter/devtools/pull/4090)
 * Warn users that the rendering layer toggles in the "More Debugging Options" menu are not available for profile mode 
 apps - [#4075](https://github.com/flutter/devtools/pull/4075)
 
-## Changelog
-More details about changes and fixes are available in our
-[changelog](https://github.com/flutter/devtools/blob/master/CHANGELOG.md).
+## Full commit history
+More details about changes and fixes are available from the
+[DevTools git log.](https://github.com/flutter/devtools/commits/master).

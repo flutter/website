@@ -61,7 +61,7 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 - Log messages from non-stdout sources are now shown -
   [#4487](https://github.com/flutter/devtools/pull/4487)
 
-## Changelog
+## Full commit history
+More details about changes and fixes are available from the
+[DevTools git log.](https://github.com/flutter/devtools/commits/master).
 
-More details about changes and fixes are available in the DevTools
-[changelog](https://github.com/flutter/devtools/blob/master/CHANGELOG.md).

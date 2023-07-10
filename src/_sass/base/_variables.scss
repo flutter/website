@@ -17,11 +17,10 @@ $site-color-primary: $flutter-color-blue-500;
 $twitter-color: #60CAF6;
 
 // Fonts
-$site-font-family-base: 'Roboto', sans-serif;
-$site-font-family-alt: 'Google Sans', 'Roboto', sans-serif;
+$site-font-family-base: 'Google Sans Text', 'Roboto', sans-serif;
+$site-font-family-alt: 'Google Sans', 'Google Sans Text', 'Roboto', sans-serif;
 $site-font-family-icon: 'Material Icons';
-$site-font-family-monospace: 'Roboto Mono', monospace;
-$site-font-family-courier: 'Courier', monospace;
+$site-font-family-monospace: 'Google Sans Mono', 'Roboto Mono', monospace;
 $site-font-icon: 24px/1 $site-font-family-icon;
 
 // Layout
