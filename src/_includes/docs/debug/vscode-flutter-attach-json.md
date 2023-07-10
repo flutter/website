@@ -1,4 +1,5 @@
-You can also create a `.vscode/launch.json` file in your Flutter module project. This enables you to attach using the **Run > Start Debugging** command or `F5`:
+You can also create a `.vscode/launch.json` file in your Flutter module project.
+This enables you to attach using the **Run > Start Debugging** command or `F5`:
 
 ```json
 {

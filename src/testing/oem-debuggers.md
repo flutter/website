@@ -4,6 +4,8 @@ short-title: debuggers
 description: How to connect a native debugger to your running Flutter app.
 ---
 
+<?code-excerpt path-base="testing/native_debugging"?>
+
 {{site.alert.note}}
   This guide presumes you understand general debugging,
   have installed Flutter and git, and have familiarity
@@ -142,7 +144,7 @@ The following screenshot and table explain the purpose of each tool.
 </div>
 
 To change where the panel (in **orange**) appears in VS Code,
-go to **View** -> **Appearance** -> **Panel Position**
+go to **View** > **Appearance** > **Panel Position**.
 
 #### VS Code Flutter debugging toolbar
 
@@ -177,7 +179,10 @@ test Flutter app. This update adds native code to debug.
 
 1. Replace the contents of `main.dart` with the following code.
 
-    <?code-excerpt title="main.dart"?>
+    <details>
+    <summary>Expand to see Flutter code for this example</summary>
+
+    <?code-excerpt title="lib/main.dart"?>
     ```dart
     // Parts are copyright 2017 The Chromium Authors. All rights reserved.
     // Use of this source code is governed by a BSD-style license that can be
@@ -300,6 +305,8 @@ test Flutter app. This update adds native code to debug.
     }
     ```
 
+    </details>
+
 1. To add the `url_launcher` dependency, run `flutter pub add`:
 
     ```terminal
@@ -348,8 +355,8 @@ test Flutter app. This update adds native code to debug.
       modified:   windows/flutter/generated_plugins.cmake
     ```
 
-    Installing `url_launcher` added config files and code files
-    for all target platforms in the Flutter app directory.
+Installing `url_launcher` added config files and code files
+for all target platforms in the Flutter app directory.
 
 ## Debug Dart and Native code
 
@@ -358,6 +365,7 @@ test Flutter app. This update adds native code to debug.
 To debug native Android code, you need a Flutter app that contains
 Android code. In this section, you learn how to connect
 the Dart and Android Gradle debuggers to your app.
+You don't need VS Code to debug both Dart and Android code.
 
 {{site.alert.note}}
   If you want to use the [GNU Project Debugger][] to debug the
@@ -367,6 +375,13 @@ the Dart and Android Gradle debuggers to your app.
 
 [GNU Project Debugger]: https://www.sourceware.org/gdb/
 [`flutter_gdb`]: https://github.com/flutter/engine/blob/main/sky/tools/flutter_gdb
+
+1. To generate the needed Android platform dependencies,
+   run the `flutter build` command.
+
+   ```terminal
+   $ flutter build appbundle --debug
+   ```
 
 1. Open the `lib/main.dart` file in Android Studio.
 
@@ -445,15 +460,23 @@ The Android debug pane with one breakpoint set in GeneratedPluginRegistrant.java
 
 To debug iOS code, you need a Flutter app that contains iOS code.
 In this section, you learn to connect two debuggers to your app:
-Flutter and Xcode. You can start from VS Code or Xcode.
+Flutter via VS Code and Xcode. You need to run both VS Code and Xcode.
 These procedures use the same example Flutter `url_launcher` app used
 elsewhere in this guide.
 
-1. Open `ios/Runner.xcworkspace` from your Flutter app directory.
-1. Run this Runner as a normal app in Xcode.
-{% include docs/debug/vscode-flutter-attach.md %}
+{% include docs/debug/vscode-flutter-attach-ios.md %}
 
-   !['Running the Debug: Attach to Flutter on Device command in VS Code.'](/assets/images/docs/development/add-to-app/debugging/vscode-attach.png)
+### Debug Dart and C# code using Visual Studio
+
+To debug C# code, you need a Flutter app that contains C# code.
+In this section, you learn to connect two debuggers to your app:
+Flutter via VS Code and Visual Studio.
+You need to run both VS Code and Visual Studio.
+These procedures use the same example Flutter `url_launcher` app used
+elsewhere in this guide.
+
+{% include docs/debug/vscode-flutter-attach-windows.md %}
+
 
 ## Resources
 
