@@ -1,5 +1,7 @@
 ## Get the Flutter SDK
 
+{% include docs/china-notice.md %}
+
 {% include_relative _help-link.md location='win-get-sdk' %}
 
  1. Download the following installation bundle to get the latest

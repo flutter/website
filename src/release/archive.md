@@ -13,10 +13,12 @@ toc: false
 </style>
 
 The {{site.sdk.channel | capitalize }} channel contains the
-most stable Flutter builds. 
-Check out [Flutter’s channels][] for details.
+most stable Flutter builds.
+To learn more, check out [Flutter’s channels][].
 
-For details about what's new in the major Flutter releases,
+{% include docs/china-notice.md %}
+
+To learn what's new in the major Flutter releases,
 check out the [release notes][] page.
 
 
