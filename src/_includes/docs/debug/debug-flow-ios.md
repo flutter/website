@@ -13,7 +13,7 @@ $ flutter build ios --config-only --no-codesign --debug
 1. Run this Runner as a normal app in Xcode.
 1. Select the correct device using the **Scheme** menu in the toolbar.
 
-    ![Selecting iPhone 14 in the Scheme menu in the Xcode toolbar](/assets/images/docs/testing/debugging/oem/xcode-select-device.png){:width="100%"}
+    ![Selecting iPhone 14 in the Scheme menu in the Xcode toolbar](/assets/images/docs/testing/debugging/native/xcode/select-device.png){:width="100%"}
 
 #### VS Code
 
