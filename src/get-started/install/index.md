@@ -31,8 +31,4 @@ Select the operating system on which you are installing Flutter:
 {% endfor %}
 </div>
 
-{{site.alert.important}}
-  If you're in China, first read [Using Flutter in China][].
-{{site.alert.end}}
-
-[Using Flutter in China]: {{site.url}}/community/china
+{% include docs/china-notice.md %}
