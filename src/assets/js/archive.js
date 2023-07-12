@@ -15,45 +15,97 @@ function updateTable(releases, os) {
   const releaseData = releases.releases;
 
   for (const channel in releases.current_release) {
-    const table = $(`#downloads-${os}-${channel}`);
-    table.addClass('collapsed').find('.loading').remove();
+    const table = document.getElementById(`downloads-${os}-${channel}`);
 
-    const releasesForChannel = releaseData.filter(function (release) {
+    //table is not present whtn channel is dev
+    if(!table) {
+      continue;
+    }
+
+    table.classList.add('collapsed');
+    const loadingElements = table.querySelectorAll('.loading');
+    loadingElements.forEach(function(element) {
+      element.remove();
+    });
+
+    const releasesForChannel = releaseData.filter(function(release) {
       return release.channel === channel;
     });
 
-    releasesForChannel.forEach(function (release, index) {
+    releasesForChannel.forEach(function(release, index) {
       // If this is the first row after the cut-off, insert the "Show more..." link.
       if (index === releasesToShow) {
-        const showAll = $('<a />').text('Show all...').attr('href', '#').click(function (event) {
-          $(this).closest('table').removeClass('collapsed');
-          $(this).closest('tr').remove();
+        const showAll = document.createElement('a');
+        showAll.textContent = 'Show all...';
+        showAll.href = '#';
+        showAll.addEventListener('click', function(event) {
+          this.closest('table').classList.remove('collapsed');
+          this.closest('tr').remove();
           event.preventDefault();
         });
-        $('<tr>').append($('<td colspan="6"></td></tr>').append(showAll)).appendTo(table);
+
+        const row = document.createElement('tr');
+        const cell = document.createElement('td');
+        cell.colSpan = 6;
+        cell.appendChild(showAll);
+        row.appendChild(cell);
+        table.appendChild(row);
       }
 
-      const className = index >= releasesToShow ? 'overflow' : '';
+      const row = document.createElement('tr');
+      if(index >= releasesToShow) {
+        row.classList.add('overflow');
+      }
       const url = releases.base_url + '/' + release.archive;
-      const row = $('<tr />').addClass(className).appendTo(table);
-      const hashLabel = $('<span />').text(release.hash.substr(0, 7)).addClass('git-hash');
-      const downloadLink = $('<a />').attr('href', url).text(release.version);
-      const dartSdkVersion = $('<span />').text(
-        release.dart_sdk_version ? release.dart_sdk_version.split(' ')[0] : '-',
-      );
-      const dartSdkArch = $('<span />').text(
-        release.dart_sdk_arch ? release.dart_sdk_arch : 'x64',
-      );
+      table.appendChild(row);
+
+      const hashLabel = document.createElement('span');
+      hashLabel.textContent = release.hash.substr(0, 7);
+      hashLabel.classList.add('git-hash');
+
+      const downloadLink = document.createElement('a');
+      downloadLink.href = url;
+      downloadLink.textContent = release.version;
+
+      const dartSdkVersion = document.createElement('span');
+      dartSdkVersion.textContent = release.dart_sdk_version ? release.dart_sdk_version.split(' ')[0] : '-';
+
+      const dartSdkArch = document.createElement('span');
+      dartSdkArch.textContent = release.dart_sdk_arch ? release.dart_sdk_arch : 'x64';
+
       const date = new Date(Date.parse(release.release_date));
+
       const provenance = getProvenanceLink(os, release, date, channel);
-      $('<td />').append(downloadLink).appendTo(row);
-      $('<td />').append(dartSdkArch).appendTo(row);
-      $('<td />').append(hashLabel).appendTo(row);
-      $('<td />').addClass('date').text(date.toLocaleDateString()).appendTo(row);
-      $('<td />').append(dartSdkVersion).appendTo(row);
-      $('<td />').append(provenance).appendTo(row);
+    
+      
+      const cells = [
+        createTableCell(downloadLink),
+        createTableCell(dartSdkArch),
+        createTableCell(hashLabel),
+        createTableCell(date.toLocaleDateString(), 'date'),
+        createTableCell(dartSdkVersion),
+        createTableCell(provenance)
+      ];
+      
+      cells.forEach(function(cell) {
+        row.appendChild(cell);
+      });
     });
   }
+}
+
+function createTableCell(content, dataClass) {
+  console.log({content});
+  const cell = document.createElement('td');
+  if (dataClass) {
+    cell.classList.add(dataClass);
+  }
+  if(typeof content === 'string') {
+    cell.textContent = content;
+  } else {
+    cell.appendChild(content);
+  }
+  return cell;
 }
 
 function updateTableFailed(os) {
@@ -156,20 +208,26 @@ function updateDownloadLinkFailed(os) {
 }
 
 function getProvenanceLink(os, release, date, channel) {
-  const baseUrl = 'https://storage.googleapis.com/flutter_infra_release/releases/'
+  const baseUrl = 'https://storage.googleapis.com/flutter_infra_release/releases/';
   if (os === 'windows' && date < new Date(Date.parse('4/3/2023'))) {
     // provenance not available before 4/3/2023 for Windows
-    return $('<span />').text('-');
+    const spanElement = document.createElement('span');
+    spanElement.textContent = '-';
+    return spanElement;
   } else if (date < new Date(Date.parse('12/15/2022'))) {
     // provenance not available before 12/15/2022 for macOS and Linux
-    return $('<span />').text('-');
+    const spanElement = document.createElement('span');
+    spanElement.textContent = '-';
+    return spanElement;
   }
+
   const extension = os === 'linux' ? 'tar.xz' : 'zip';
-  return $('<a />').attr('href',
-    `${baseUrl}${channel}/${os}/flutter_${os}_${release.version}-${channel}` +
-    `.${extension}.intoto.jsonl`
-  ).text(`${release.version} file`)
+  const aElement = document.createElement('a');
+  aElement.href = `${baseUrl}${channel}/${os}/flutter_${os}_${release.version}-${channel}.${extension}.intoto.jsonl`;
+  aElement.textContent = `${release.version} file`;
+  return aElement;
 }
+
 
 // Send requests to render the tables.
 $(function () {
