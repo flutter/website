@@ -88,7 +88,7 @@ Widget build(BuildContext context) {
 In the above example,
 the `Column` tries to be wider than the space the `Row`
 (its parent) can allocate to it, causing an overflow error.
- Why does the `Column` try to do that?
+Why does the `Column` try to do that?
 To understand this layout behavior, you need to know
 how Flutter framework performs layout:
 
@@ -97,7 +97,7 @@ and **passes down size constraints** from parent to child… Children respond by
 **passing up a size** to their parent object within the constraints the parent
 established._" – [Flutter architectural overview][]
 
-In this case, the `Row` widget 'oesn't constrain the
+In this case, the `Row` widget doesn't constrain the
 size of its children, nor does the `Column` widget.
 Lacking constraints from its parent widget, the second
 `Text` widget tries to be as wide as all the characters
@@ -145,7 +145,7 @@ The resources linked below provide further information about this error.
 * [How to debug layout issues with the Flutter Inspector][medium-article]
 * [Understanding constraints][]
 
-[its source code]: ({{site.repo.flutter}}/blob/127e67902e8bbb0dcbfb3351b8fd00f7cbdf0178/packages/flutter/lib/src/widgets/basic.dart#L4677-L4686)
+[its source code]: {{site.repo.flutter}}/blob/c8e42b47f5ea8b5ff7bf2f2b0a2a8e765f1aa51d/packages/flutter/lib/src/widgets/basic.dart#L5166-L5174
 [flexible-video]: ({{site.youtube-site}}/watch?v=CI7x0mAZiY0)
 [medium-article]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db#738b
 
@@ -178,10 +178,16 @@ caused by one of two other errors:
 * ‘Vertical viewport was given unbounded height’
 * ‘An InputDecorator...cannot have an unbounded width’
 
-## ‘Vertical viewport was given unbounded height’
+
+## <a href="unbounded">‘Vertical viewport was given unbounded height’</a>
 
 This is another common layout error you could run into 
 while creating a UI in your Flutter app.
+
+{{site.alert.note}}
+  You might be directed here if the framework
+  detects a problem involving box constraints.
+{{site.alert.end}}
 
 **What does the error look like?**
 
@@ -420,7 +426,7 @@ A common scenario where this error occurs is when
 attempting to trigger a `Dialog` from within the
 `build` method. This is often motivated by the need to
 immediately show information to the user,
-but setState should never be called from a `build` method.
+but `setState` should never be called from a `build` method.
 
 The following snippet seems to be a common culprit of this error:
 

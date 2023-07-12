@@ -9,7 +9,15 @@ js:
 
 <?code-excerpt path-base="layout/constraints/"?>
 
-<img src='/assets/images/docs/ui/layout/article-hero-image.png' class="mw-100" alt="Hero image from the article">
+<img src='/assets/images/docs/ui/layout/article-hero-image.png'
+     class="mw-100" alt="Hero image from the article">
+
+{{site.alert.note}}
+  If you are experiencing specific layout errors,
+  you might check out [Common Flutter errors][].
+{{site.alert.end}}
+
+[Common Flutter errors]: {{site.url}}/testing/common-errors
 
 When someone learning Flutter asks you why some widget
 with `width:100` isn't 100 pixels wide,
@@ -26,13 +34,6 @@ why that `Column` is overflowing, or what
 Instead, first tell them that Flutter layout is very different
 from HTML layout (which is probably where they’re coming from),
 and then make them memorize the following rule:
-
-{{site.alert.note}}
-  If you are experiencing specific layout errors,
-  you might check out [Common Flutter errors][].
-{{site.alert.end}}
-
-[Common Flutter errors]: {{site.url}}/testing/common-errors
 
 <center><font size="+2">
 <b>Constraints go down. Sizes go up. Parent sets position.</b>
@@ -120,40 +121,33 @@ but does result in a few limitations:
   then the child's size might be ignored.
   **Be specific when defining alignment.**
 
-{{site.alert.note}}
-  In Flutter, widgets are rendered by their underlying
-  [`RenderBox`][] objects.
-  Many boxes in Flutter,
-  especially those that just take a single child,
-  pass their constraint on to their children.
-  This means that if you nest a bunch of boxes inside each other
-  at the root of your application's render tree,
-  they'll all exactly fit in each other,
-  forced by these tight constraints.
+In Flutter, widgets are rendered by their underlying
+[`RenderBox`][] objects. Many boxes in Flutter,
+especially those that just take a single child,
+pass their constraint on to their children.
 
-  Generally, there are three kinds of boxes,
-  in terms of how they handle their constraints:
+Generally, there are three kinds of boxes,
+in terms of how they handle their constraints:
   
-  * Those that try to be as big as possible.
-    For example, the boxes used by [`Center`][] and
-    [`ListView`][].
-  * Those that try to be the same size as their children.
-    For example, the boxes used by [`Transform`][] and
-    [`Opacity`][].
-  * Those that try to be a particular size.
-    For example, the boxes used by [`Image`][] and
-    [`Text`][].
+* Those that try to be as big as possible.
+  For example, the boxes used by [`Center`][] and
+  [`ListView`][].
+* Those that try to be the same size as their children.
+  For example, the boxes used by [`Transform`][] and
+  [`Opacity`][].
+* Those that try to be a particular size.
+  For example, the boxes used by [`Image`][] and
+  [`Text`][].
 
-  Some widgets, for example [`Container`][],
-  vary from type to type based on their constructor arguments.
-  In the case of [`Container`][], it defaults
-  to trying to be as big as possible, but if you give it a `width`,
-  for instance, it tries to honor that and be that particular size.
+Some widgets, for example [`Container`][],
+vary from type to type based on their constructor arguments.
+The [`Container`][] constructor defaults
+to trying to be as big as possible, but if you give it a `width`,
+for instance, it tries to honor that and be that particular size.
 
-  Others, for example [`Row`][] and [`Column`][] (flex boxes)
-  vary based on the constraints they are given,
-  as described below in the "Flex" section. xxx
-{{site.alert.end}}
+Others, for example [`Row`][] and [`Column`][] (flex boxes)
+vary based on the constraints they are given,
+as described in the [Flex](#flex) section.
   
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
@@ -164,7 +158,6 @@ but does result in a few limitations:
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
 [`Text`]: {{site.api}}/flutter/widgets/Text-class.html
 [`Transform`]: {{site.api}}/flutter/widgets/Transform-class.html
-
 
 ## Examples
 
@@ -1417,8 +1410,8 @@ But why does the `Container` decide that?
 Simply because that’s a design decision by those who
 created the `Container` widget. It could have been
 created differently, and you have to read the
-[`Container`][] API to understand how it behaves,
-depending on the circumstances.
+[`Container`][] API documentation to understand
+how it behaves, depending on the circumstances.
 
 ### Example 7
 
@@ -1955,7 +1948,7 @@ Row(
 
 The only difference if you use `Flexible` instead of `Expanded`,
 is that `Flexible` lets its child have the same or smaller
-width than the `Flexible` itself, while `Expanded` forces
+width than the `` itself, while `Expanded` forces
 its child to have the exact same width of the `Expanded`.
 But both `Expanded` and `Flexible` ignore their children's width
 when sizing themselves.
@@ -2027,6 +2020,8 @@ as the `Scaffold` itself, you can wrap its child with
 It’s very common to hear that some constraint is
 "tight" or "loose", so what does that mean?
 
+### Tight constraints
+
 A _tight_ constraint offers a single possibility,
 an exact size. In other words, a tight constraint
 has its maximum width equal to its minimum width;
@@ -2038,6 +2033,11 @@ the box used by the child returned by the
 application's [`build`][] function is given a constraint
 that forces it to exactly fill the application's content area
 (typically, the entire screen).
+
+Another example: if you nest a bunch of boxes inside
+each other at the root of your application's render tree,
+they'll all exactly fit in each other,
+forced by the box's tight constraints.
 
 If you go to Flutter’s `box.dart` file and search for
 the `BoxConstraints` constructors,
@@ -2051,25 +2051,21 @@ BoxConstraints.tight(Size size)
      maxHeight = size.height;
 ```
 
-If you revisit [Example 2](#example-2) above,
+If you revisit [Example 2](#example-2),
 the screen forces the red `Container` to be
 exactly the same size as the screen.
 The screen achieves that, of course, by passing tight
 constraints to the `Container`.
 
-Some boxes _loosen_ the constraints,
+### Loose constraints
+
+A _loose_ constraint is one that has a minimum
+of zero and a maximum non-zero.
+
+Some boxes _loosen_ the incoming constraints,
 meaning the maximum is maintained but the
 minimum is removed, so the widget can have
 a **minimum** width and height both equal to **zero**.
-For example, [`Center`][]:
-
-```dart
-BoxConstraints.loose(Size size)
-   : minWidth = 0.0,
-     maxWidth = size.width,
-     minHeight = 0.0,
-     maxHeight = size.height;
-```
 
 Ultimately, `Center`'s purpose is to transform
 the tight constraints it received from its parent
