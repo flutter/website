@@ -24,7 +24,7 @@ To develop Flutter apps for iOS, you need a Mac with Xcode installed.
     either opening Xcode once and confirming or running
     `sudo xcodebuild -license` from the command line.
 
-Versions older than the latest stable version may still work,
+Versions older than the latest stable version might still work,
 but are not recommended for Flutter development.
 
 With Xcode, you’ll be able to run Flutter apps on

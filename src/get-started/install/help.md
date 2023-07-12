@@ -55,10 +55,11 @@ Please move the SDK to a location that is user-writable without Administration p
 
 __Explanation and suggestions__
 
-On Windows, this usually happens when Flutter is installed in a directory like
-`C:\Program Files\` that requires elevated privileges. Try relocating flutter to
-a different folder such as `C:\src\flutter`.
-
+On Windows, this usually happens when Flutter is installed
+in a directory like
+`C:\Program Files\` that requires elevated privileges.
+Try relocating Flutter to a different folder,
+such as `C:\src\flutter`.
 
 ## Android setup
 
@@ -67,8 +68,8 @@ a different folder such as `C:\src\flutter`.
 __What does this issue look like?__ 
 
 The command `flutter doctor --android-licenses` fails.
-Running `flutter doctor –verbose` gives an error message like 
-the following:
+Running `flutter doctor –verbose` gives an error message
+like the following:
 
 ```
 java.lang.UnsupportedClassVersionError: com/android/prefs/AndroidLocationsProvider 
@@ -78,26 +79,24 @@ this version of the Java Runtime only recognizes class file versions up to 52.0
 
 __Explanation and suggestions__
 
-The error occurs when an older version of the Java Development Kit (JDK)
+The error occurs when an older version of the
+Java Development Kit (JDK)
 is installed on your computer. 
 
 If you don’t need multiple versions of Java,
 uninstall existing JDKs from your computer.
-Flutter will automatically use the JDK included in Android Studio. 
+Flutter automatically uses the JDK included in Android Studio. 
 
 If you do need another version of Java,
-try the workaround described in [this GitHub issue][java binary path]
+try the workaround described in
+[this GitHub issue][java binary path]
 until a long-term solution is implemented.
 For more information,
 check out the [Android Java Gradle migration guide][]
 or [flutter doctor --android-licenses not working due to
     java.lang.UnsupportedClassVersionError - Stack Overflow][so java version].
 
-
-
-
 ### `cmdline-tools` component is missing
-
 
 __What does this issue look like?__
 
@@ -105,13 +104,11 @@ The `flutter doctor` command complains that the
 `cmdline-tools` are missing from the Android toolchain.
 For example:
 
-
 ```
 [!] Android toolchain - develop for Android devices (Android SDK version 33.0.2) 
     • Android SDK at C:\Users\My PC\AppData\Local\Android\sdk 
     X cmdline-tools component is missing 
 ```
-
 
 __Explanation and suggestions__
 
@@ -119,27 +116,23 @@ The easiest way to get the cmdline-tools is through the
 SDK Manager in Android Studio.
 To do this, use the following instructions:
 
-
 1. Open the SDK Manager from Android Studio,
-    by selecting **Tools > SDK Manager** from the menu bar.
-2. Select the latest Android SDK (or a specific version that your app requires),
-    Android SDK Command-line Tools, and Android SDK Build-Tools. 
+   by selecting **Tools > SDK Manager** from the menu bar.
+2. Select the latest Android SDK
+   (or a specific version that your app requires),
+   Android SDK Command-line Tools, and Android SDK Build-Tools. 
 3. Click **Apply** to install the selected artifacts.
 
 ![Android Studio SDK
 Manager](/assets/images/docs/get-started/install_android_tools.png)
 
-
 If you're not using Android Studio,
 you can download the tools using the
 [sdkmanager][] command-line tool.
 
-
 ## Other problems
 
-
 ### Exit code 69
-
 
 __What does this issue look like?__
 
@@ -165,18 +158,20 @@ exit code: 69
 
 __Explanation and suggestions__
 
-The issue is related to networking. 
+This issue is related to networking. 
 Try the following instructions to troubleshoot: 
 
-*   Check your internet connection. Make sure that you are connected to the
-    internet and that your connection is stable.
-*   Restart your devices, including your computer and networking equipment.
-*   Use a VPN to help to bypass any restrictions that might prevent
-    you from connecting to the network.
-*  If you have tried all of these steps and are still getting the error,
-    print out verbose logs with the `flutter doctor -v` command and ask for help in
-    one of the [community support channels][].
-
+* Check your internet connection.
+  Make sure that you are connected to the
+  internet and that your connection is stable.
+* Restart your devices, including your computer
+  and networking equipment.
+* Use a VPN to help to bypass any restrictions that
+  might prevent you from connecting to the network.
+* If you have tried all of these steps and are
+  still getting the error, print out verbose logs
+  with the `flutter doctor -v` command and ask for help in
+  one of the [community support channels][].
 
 ## Community support
 
@@ -184,11 +179,11 @@ The Flutter community is helpful and welcoming.
 If none of the above suggestions solves your installation issue,
 consider asking for support from one of the following channels:
 
-*   [/r/flutterhelp](https://www.reddit.com/r/flutterhelp/) on Reddit
-*   [/r/flutterdev](https://discord.gg/rflutterdev) on Discord,
-     particularly the `install-and-setup` channel on this server. 
-*   [StackOverflow](https://stackoverflow.com/), 
-    in particular, questions tagged with [#flutter][] or [#dart][].
+* [/r/flutterhelp](https://www.reddit.com/r/flutterhelp/) on Reddit
+* [/r/flutterdev](https://discord.gg/rflutterdev) on Discord,
+  particularly the `install-and-setup` channel on this server. 
+* [StackOverflow](https://stackoverflow.com/), 
+  in particular, questions tagged with [#flutter][] or [#dart][].
 
 To be respectful of everyone’s time,
 search the archive for a similar issue before posting a new one. 

@@ -1,6 +1,12 @@
 .alert {
   > p:last-child { margin-bottom: 0; }
   > ul:last-child { margin-bottom: 0; }
+
+  i.material-icons {
+    font-size: 20px;
+    user-select: none;
+    vertical-align: -4px;
+  }
 }
 
 a.card {

@@ -6,7 +6,7 @@
   padding: bs-spacer(5);
   position: relative;
   text-align: center;
-  z-index: 50;
+  z-index: $zindex-sticky;
 
   p {
     margin-bottom: bs-spacer(3);

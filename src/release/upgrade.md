@@ -45,7 +45,7 @@ Flutter has two release channels:
 We recommend the **stable** channel for new users
 and for production app releases.
 The team updates this channel about every three months.
-The channel may receive occasional hot fixes
+The channel might receive occasional hot fixes
 for high-severity or high-impact issues.
 
 The continuous integration for the Flutter team's plugins and packages

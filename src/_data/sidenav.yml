@@ -421,39 +421,48 @@
 - divider
 
 - title: Resources
+  permalink: /resources
   children:
+    - header: Concepts
     - title: Architectural overview
       permalink: /resources/architectural-overview
-    - title: Books
-      permalink: /resources/books
-    - title: Compatibility policy
-      permalink: /resources/compatibility
-    - title: Contribute to Flutter
-      permalink: https://github.com/flutter/flutter/blob/main/CONTRIBUTING.md
-    - title: Create useful bug reports
-      permalink: /resources/bug-reports
-    - title: Learn Dart
-      permalink: /resources/bootstrap-into-dart
-    - title: Design documents
-      permalink: /resources/design-docs
-    - title: FAQ
-      permalink: /resources/faq
-    - title: Casual Games Toolkit
-      permalink: /resources/games-toolkit
-    - title: Google Fonts package
-      permalink: https://pub.dev/packages/google_fonts
+    - title: Platform adaptations
+      permalink: /resources/platform-adaptations
     - title: Inside Flutter
       permalink: /resources/inside-flutter
     - title: Flutter versus Swift concurrency
       permalink: /resources/dart-swift-concurrency
-    - title: Official brand assets
-      permalink: https://flutter.dev/brand
-    - title: Platform adaptations
-      permalink: /resources/platform-adaptations
+    - header: Learning
+    - title: Books
+      permalink: /resources/books
     - title: Videos and online courses
       permalink: /resources/videos
+    - title: Learn Dart
+      permalink: /resources/bootstrap-into-dart
+    - header: Contributing
+    - title: Create useful bug reports
+      permalink: /resources/bug-reports
+    - title: Contribute to Flutter
+      permalink: https://github.com/flutter/flutter/blob/main/CONTRIBUTING.md
+    - title: Design documents
+      permalink: /resources/design-docs
+    - header: Toolkits
+    - title: Casual Games Toolkit
+      permalink: /resources/games-toolkit
+    - title: Flutter News Toolkit
+      permalink: /resources/news-toolkit
+    - header: General
+    - title: FAQ
+      permalink: /resources/faq
+    - title: Compatibility policy
+      permalink: /resources/compatibility
+    - title: Google Fonts package
+      permalink: https://pub.dev/packages/google_fonts
+    - title: Official brand assets
+      permalink: https://flutter.dev/brand
 
 - title: Reference
+  permalink: /reference
   expanded: true
   children:
     - title: Who is Dash?

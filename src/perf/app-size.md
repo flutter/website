@@ -3,11 +3,14 @@ title: Measuring your app's size
 description: How to measure app size for iOS and Android.
 ---
 
-Many developers are concerned with the size of their compiled app. As the APK,
-app bundle, or IPA version of a Flutter app is self-contained and holds all the
-code and assets needed to run the app, its size can be a concern. The larger an
-app, the more space it requires on a device, the longer it takes to download,
-and it may break the limit of useful features like Android instant apps.
+Many developers are concerned with the size of their compiled app.
+As the APK, app bundle, or IPA version of a Flutter app is
+self-contained and holds all the code and assets needed to run the app,
+its size can be a concern. The larger an app,
+the more space it requires on a device,
+the longer it takes to download,
+and it might break the limit of useful
+features like Android instant apps.
 
 ## Debug builds are not representative
 
@@ -56,7 +59,7 @@ View the application's download and install size in the **Android vitals** ->
 {% include docs/app-figure.md image="perf/vital-size.png" alt="App size tab in Google Play Console" %}
 
 The download size is calculated based on an XXXHDPI (~640dpi) device on an
-arm64-v8a architecture. Your end users' download sizes may vary depending on
+arm64-v8a architecture. Your end users' download sizes might vary depending on
 their hardware.
 
 The top tab has a toggle for download size and install size. The page also
