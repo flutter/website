@@ -5,15 +5,10 @@ const releasesToShow = 99999;
 function fetchFlutterReleases(os, callback, errorCallback) {
   // OS: windows, macos, linux
   const url = `https://storage.googleapis.com/flutter_infra_release/releases/releases_${os}.json`;
-  $.ajax({
-    type: 'GET',
-    url: url,
-    dataType: 'json',
-    success: function (data) { callback(data, os); },
-    error: function (xhr, textStatus, errorThrown) {
-      if (errorCallback) errorCallback(os);
-    }
-  })
+  fetch(url, { type: 'GET'})
+    .then(response => response.json())
+    .then(data => callback(data, os))
+    .catch(_ => { if (errorCallback) errorCallback(os) })
 }
 
 function updateTable(releases, os) {
@@ -70,11 +65,11 @@ let macOSArm64ArchiveFilename = '';
 
 // Listen for the macOS arm64 download link to be clicked and update
 // the example unzip command with correct arm64 filename
-$('.download-latest-link-macos-arm64').click(function() {
+$('.download-latest-link-macos-arm64').click(function () {
   // Update inlined filenames in <code> element text nodes with arm64 filename:
   const fileNamePrefix = 'flutter_';
   const code = $(`code:contains("${fileNamePrefix}")`);
-  const textNode = $(code).contents().filter(function() {
+  const textNode = $(code).contents().filter(function () {
     return this.nodeType === 3 && this.textContent.includes(fileNamePrefix);
   });
 
@@ -88,7 +83,7 @@ os: macos, windows, or linux
 [optional] arch: Only specify if there's additional architecture, such as arm64
 */
 function updateReleaseDownloadButton(releases, base_url, os, arch = '') {
-  const archString = !arch.length ? '': `-${arch}`;
+  const archString = !arch.length ? '' : `-${arch}`;
 
   const release = releases[0];
   const linkSegments = release.archive.split('/');
@@ -98,7 +93,7 @@ function updateReleaseDownloadButton(releases, base_url, os, arch = '') {
   if (os === 'macos' && arch === 'arm64') {
     macOSArm64ArchiveFilename = archiveFilename;
   }
-  
+
   downloadLink
     .text(archiveFilename)
     .attr('href', `${base_url}/${release.archive}`);
@@ -111,7 +106,7 @@ function updateReleaseDownloadButton(releases, base_url, os, arch = '') {
   // Update inlined filenames in <code> element text nodes:
   const fileNamePrefix = 'flutter_';
   const code = $(`code:contains("${fileNamePrefix}")`);
-  const textNode = $(code).contents().filter(function() {
+  const textNode = $(code).contents().filter(function () {
     return this.nodeType === 3 && this.textContent.includes(fileNamePrefix);
   });
   const text = $(textNode).text();
@@ -143,13 +138,13 @@ function updateDownloadLink(releases, os, arch) {
 
     // If no arm64 releases available, delete all apple silicon elements
     if (!releasesForArm64.length) {
-      $('.apple-silicon').each(function(){
+      $('.apple-silicon').each(function () {
         this.remove();
       })
-      
+
       return;
     }
-    
+
     updateReleaseDownloadButton(releasesForArm64, releases.base_url, os, 'arm64');
   } else {
     updateReleaseDownloadButton(releasesForChannel, releases.base_url, os);
@@ -171,7 +166,7 @@ function getProvenanceLink(os, release, date, channel) {
   }
   const extension = os === 'linux' ? 'tar.xz' : 'zip';
   return $('<a />').attr('href',
-    `${baseUrl}${channel}/${os}/flutter_${os}_${release.version}-${channel}`+
+    `${baseUrl}${channel}/${os}/flutter_${os}_${release.version}-${channel}` +
     `.${extension}.intoto.jsonl`
   ).text(`${release.version} file`)
 }
