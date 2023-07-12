@@ -458,7 +458,6 @@ removing references should have no effect on existing code bases.
 
 **Migration guide**
 
-[In-depth migration guide available]
 
 Code before migration:
 
@@ -469,7 +468,7 @@ testWidgets('Test', (_) {}, initialTimeout:  Duration(seconds: 5));
 Code after migration:
 
 ```dart
-testWidgets('Test', (_) {}, timeout:  Duration(seconds: 5));
+testWidgets('Test', (_) {}, timeout:  Timeout(Duration(seconds: 5)));
 ```
 
 **References**
