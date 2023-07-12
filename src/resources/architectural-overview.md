@@ -531,8 +531,7 @@ The Android system libraries provide the components
 responsible for drawing themselves to a `Canvas` object,
 which Android can then render with [Skia][],
 a graphics engine written in C/C++ that calls the
-CPU or GPU to complete the drawing on the device,
-or [Impeller][] (currently in preview behind a flag).
+CPU or GPU to complete the drawing on the device.
 
 Cross-platform frameworks _typically_ work by creating
 an abstraction layer over the underlying native
@@ -558,9 +557,9 @@ The same is true for Flutter on other native platforms,
 such as Windows or macOS.
 
 {{site.alert.note}}
-  As of Flutter 3.10, Impeller is the default
+  Flutter 3.10 set Impeller as the default
   rendering engine on iOS. It's in preview
-  for Android, behind a flag.
+  for Android behind a flag.
 {{site.alert.end}}
 
 ### From user input to the GPU

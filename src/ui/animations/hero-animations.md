@@ -477,7 +477,7 @@ provided example to your needs.** The heavy lifting is done for you.
     described in this guide.
 
   [radial_hero_animation_animate<wbr>_rectclip][]
-  : Extends radial_hero_animaton by also animating the size of the
+  : Extends radial_hero_animation by also animating the size of the
     rectangular clip. This more advanced example,
     provided for your reference, isn't described in this guide.
 {{site.alert.end}}

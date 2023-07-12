@@ -7,7 +7,7 @@ description: The platforms that Flutter supports by platform version.
 ## Support tiers
 
 We define three tiers of support for the platforms on
-which built Flutter might be deployed:
+which apps built with Flutter might be deployed:
 
 1. **Supported**<br>
    Google-tested platforms that

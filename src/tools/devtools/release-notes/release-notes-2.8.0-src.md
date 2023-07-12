@@ -85,7 +85,6 @@ The expected workflow is as such:
 * UI polish - [#3421](https://github.com/flutter/devtools/pull/3421),
   [#3449](https://github.com/flutter/devtools/pull/3449)
 
-## Changelog
-More details about changes and fixes are available in our [changelog][].
-
-[changelog]: https://github.com/flutter/devtools/blob/master/CHANGELOG.md
+## Full commit history
+More details about changes and fixes are available from the
+[DevTools git log.](https://github.com/flutter/devtools/commits/master).

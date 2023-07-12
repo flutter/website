@@ -1,4 +1,4 @@
-FROM ruby:3.2.2-slim-bookworm@sha256:249c66b933130178c8fe890d56568d680e9b3c93e7906b87e4e63bee2209a6d5 AS base
+FROM ruby:3.2.2-slim-bookworm@sha256:995aeea8fd8261662d7d9c157ca319ce009c7f99333b3358eb26e84b63e9f3c5 AS base
 
 ENV TZ=US/Pacific
 RUN apt-get update && apt-get install -yq --no-install-recommends \
@@ -67,7 +67,7 @@ RUN apt-get update -q && apt-get install -yq --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Install global Firebase CLI
-RUN npm install -g firebase-tools@11.27.0
+RUN npm install -g firebase-tools@12.4.0
 
 
 

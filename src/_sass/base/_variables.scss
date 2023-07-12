@@ -17,11 +17,10 @@ $site-color-primary: $flutter-color-blue-500;
 $twitter-color: #60CAF6;
 
 // Fonts
-$site-font-family-base: 'Roboto', sans-serif;
-$site-font-family-alt: 'Google Sans', 'Roboto', sans-serif;
+$site-font-family-base: 'Google Sans Text', 'Roboto', sans-serif;
+$site-font-family-alt: 'Google Sans', 'Google Sans Text', 'Roboto', sans-serif;
 $site-font-family-icon: 'Material Icons';
-$site-font-family-monospace: 'Roboto Mono', monospace;
-$site-font-family-courier: 'Courier', monospace;
+$site-font-family-monospace: 'Google Sans Mono', 'Roboto Mono', monospace;
 $site-font-icon: 24px/1 $site-font-family-icon;
 
 // Layout
@@ -33,15 +32,3 @@ $site-sidebar-top-padding: 24px;
 $site-sidebar-side-padding: 16px;
 $site-nav-mobile-side-padding: 20px;
 $site-snackbar-padding: 20px;
-
-// Layer stack
-$site-z-header: 100;
-$site-z-footer: 99;
-$site-z-snackbar: 150;
-$hero-layer-1-z: 40;
-$hero-layer-2-z: 41;
-$hero-layer-3-z: 42;
-$hero-layer-4-z: 43;
-$hero-layer-5-z: 44;
-$hero-phone-z: 50;
-$hero-text-z: 60;

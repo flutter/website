@@ -532,8 +532,7 @@ as described in [build an APK](#build-an-apk) using the
 When building your application in release mode,
 Flutter apps can be compiled for [armeabi-v7a][] (ARM 32-bit),
 [arm64-v8a][] (ARM 64-bit), and [x86-64][] (x86 64-bit).
-Flutter does not currently support building for x86 Android
-(See [Issue 9253][]).
+Flutter supports building for x86 Android through ARM emulation.
 
 ### How do I sign the app bundle created by `flutter build appbundle`?
 

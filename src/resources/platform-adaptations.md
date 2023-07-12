@@ -739,7 +739,73 @@ Scaffold(
                   .toList(),
             ));
 ```
+### Text fields
 
+Since Android 12, the default UI of text fields follows the design 
+guidelines defined in [Material 3][m3-text-field] (M3). 
+On iOS, Apple's [Human Interface Guidelines][hig-text-field] (HIG) define
+an equivalent component. 
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm text-center">
+      <figure class="figure">
+        <img src="/assets/images/docs/platform-adaptations/m3-text-field.png" 
+        class="figure-img img-fluid rounded" alt="Text Field in Material 3" />
+        <figcaption class="figure-caption">
+          Text Field in Material 3
+        </figcaption>
+      </figure>
+    </div>
+    <div class="col-sm">
+      <figure class="figure text-center">
+        <img src="/assets/images/docs/platform-adaptations/hig-text-field.png" 
+        class="figure-img img-fluid rounded" alt="Text Field in Human Interface Guidelines" />
+        <figcaption class="figure-caption">
+          Text Field in HIG
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+Since text fields require user input,  
+their design should follow platform conventions. 
+
+To implement a platform-specific `TextField` 
+in Flutter, you can adapt the styling of the 
+Material `TextField`.
+
+```dart
+Widget _createAdaptiveTextField() {
+  final _border = OutlineInputBorder(
+    borderSide: BorderSide(color: CupertinoColors.lightBackgroundGray),
+  );
+
+  final iOSDecoration = InputDecoration(
+    border: _border,
+    enabledBorder: _border,
+    focusedBorder: _border,
+    filled: true,
+    fillColor: CupertinoColors.white,
+    hoverColor: CupertinoColors.white,
+    contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+  );
+
+  return Platform.isIOS
+      ? SizedBox(
+          height: 36.0,
+          child: TextField(
+            decoration: iOSDecoration,
+          ),
+        )
+      : TextField();
+}
+```
+
+To learn more about adapting text fields, check out 
+[the GitHub discussion on text fields][text-field-post].
+You can leave feedback or ask questions in the discussion.
 
 ### Alert dialog
 
@@ -847,3 +913,6 @@ You can leave feedback or ask questions in the discussion.
 [UI Component section]: {{site.api}}/resources/platform-adaptations/#ui-components
 [mat-navbar]: https://m3.material.io/components/navigation-bar/overview
 [hig-tabbar]: https://developer.apple.com/design/human-interface-guidelines/components/navigation-and-search/tab-bars/
+[text-field-post]: {{site.repo.uxr}}/discussions/95 
+[m3-text-field]: https://m3.material.io/components/text-fields/overview
+[hig-text-field]: https://developer.apple.com/design/human-interface-guidelines/text-fields

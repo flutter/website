@@ -915,7 +915,7 @@ Docs added and updated since the last announcement include:
   (Moved from the wiki and updated as of 1.16.2.)
 * Added a page on using Xcode 11.4 and how to manually update
   your project. The tooling, which automatically updates your
-  configuration when possible, may direct you to this page
+  configuration when possible, might direct you to this page
   if it detects that it's needed.
 * Added a page on
   [Managing plugins and dependencies in add-to-app][add2app]

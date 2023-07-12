@@ -57,9 +57,11 @@ Import the [`sentry_flutter`][] package into the app.
 The sentry package makes it easier to send
 error reports to the Sentry error tracking service.
 
-```yaml
-dependencies:
-  sentry_flutter: <latest_version>
+To add the `sentry_flutter` package as a dependency,
+run `flutter pub add`:
+
+```terminal
+$ flutter pub add sentry_flutter
 ```
 
 ## 3. Initialize the Sentry SDK
@@ -90,7 +92,7 @@ Alternatively, you can pass the DSN to Flutter using the `dart-define` tag:
 This is all you need for Sentry to capture unhandled errors in Dart and native layers.  
 This includes Swift, Objective-C, C, and C++ on iOS, and Java, Kotlin, C, and C++ on Android.
 
-## 4. Capture errors programatically
+## 4. Capture errors programmatically
 
 Besides the automatic error reporting that Sentry generates by
 importing and initializing the SDK,

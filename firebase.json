@@ -128,6 +128,7 @@
       { "source": "/resources/rendering", "destination": "/resources/architectural-overview#rendering-and-layout", "type": 301 },
       { "source": "/resources/security-false-positives", "destination": "/reference/security-false-positives", "type": 301 },
       { "source": "/resources/technical-overview", "destination": "/resources/architectural-overview", "type": 301 },
+      { "source": "/resources/design-docs", "destination": "https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22design+doc%22", "type": 301 },
       { "source": "/testing/best-practices", "destination": "/perf/best-practices", "type": 301 },
       { "source": "/testing/integration-tests/migration", "destination": "/release/breaking-changes/flutter-driver-migration", "type": 301 },
       { "source": "/testing/ui-performance", "destination": "/perf/ui-performance", "type": 301 },
@@ -186,6 +187,7 @@
       { "source": "/go/actions-and-shortcuts-design-revision", "destination": "https://docs.google.com/document/d/1A9yald55O_C6Weqp4tOtyMisfOC1ZC0UMq7Yc-pNfVQ/edit", "type": 301 },
       { "source": "/go/adaptive", "destination": "/ui/layout/building-adaptive-apps", "type": 301 },
       { "source": "/go/adaptive-layout-foldables", "destination": "https://docs.google.com/document/d/1qhrpTWYs5f67X8v32NCCNTRMIjSrVHuaMEFAul-Q_Ms/edit?usp=sharing", "type": 301 },
+      { "source": "/go/add-missing-features-to-selection-controls", "destination": "https://docs.google.com/document/d/1QizXwBiO-2REIcEovl5pK06BaLPOWYmNwOE5jactJZA/edit?usp=sharing&resourcekey=0-1pb9mJiAq29Gesmt25GAug", "type": 301 },
       { "source": "/go/add-to-app-samples", "destination": "https://docs.google.com/document/d/1M_GsAL8C1NxbsmzI35w2Th1wvX1KMoPHY5yeeNbzjY0", "type": 301 },
       { "source": "/go/allow-datatable-row-height-to-expand", "destination": "https://docs.google.com/document/d/1qr1IgaU2z9eaM6zCa4u-Q8kJD5Zq7IcdxVyrgR7CwZc/edit?usp=sharing&resourcekey=0-1bNp0ocF4AwGBj6NvRfrEA", "type": 301 },
       { "source": "/go/android-assets-in-flutter", "destination": "https://docs.google.com/document/d/1jymgQYxRTe5rdprt74ERh7Jsa0lfnRuMnkOmJusLWsE/edit", "type": 301 },
@@ -225,6 +227,7 @@
       { "source": "/go/center-floating-label-inputdecoration", "destination": "https://docs.google.com/document/d/1sxP91vZiY7McmSMmzrboklIJWQ_6pSS9MBSCrQq016M/edit#", "type": 301 },
       { "source": "/go/change-default-textselectionhandlecolor-to-accentcolor", "destination": "https://docs.google.com/document/d/1RJQd5ABWJ_7DZN19aTZBCE7xHzlC4MYBP1bWE2FWcvc/edit", "type": 301 },
       { "source": "/go/chip-usedeletebuttontooltip-deprecation", "destination": "https://docs.google.com/document/d/1wc9ot7T2E7hJubYxEWMX230a79wYSiFey4BHxnEzHtw/edit?usp=sharing&resourcekey=0-Bo7KPqEtkWgZcSuRCqwQ5w", "type": 301 },
+      { "source": "/go/ci-post-test-analysis", "destination": "https://docs.google.com/document/d/1V0W6q7gkk2hHFLYb3t7JFr84Km5uhKl9T3Ksb1IpkLQ/edit?usp=sharing", "type": 301 },
       { "source": "/go/clip-behavior", "destination": "https://docs.google.com/document/d/1gC5Di4ykTCqupD77PWpy9D8xXo0Ide5CnrH0zzVIhKo/edit", "type": 301 },
       { "source": "/go/colorscheme-generation", "destination": "https://docs.google.com/document/d/1P7f-DGPWz6HCbwLoAruRuWtakPx4VY-e8nT_yuQ71sc/edit?usp=sharing&resourcekey=0-qxeub7yCKa_No0HlrzEk-g", "type": 301 },
       { "source": "/go/colorscheme-m3", "destination": "https://docs.google.com/document/d/1mY1ahBQEMAfsawGJMX5S34pXb7c8dHGatyotClReeas/edit#heading=h.cnnhzna3pz6d", "type": 301 },
@@ -329,6 +332,7 @@
       { "source": "/go/go-router-v6-breaking-changes", "destination": "https://docs.google.com/document/d/1CMJwd5Moq_scvHf-trRldy9RW5MU7_Y8IB1aTrny-6s/edit", "type": 301 },
       { "source": "/go/go-router-v7-breaking-changes", "destination": "https://docs.google.com/document/d/10Xbpifbs4E-zh6YE5akIO8raJq_m3FIXs6nUGdOspOg/edit?usp=sharing", "type": 301 },
       { "source": "/go/go-router-v8-breaking-changes", "destination": "https://docs.google.com/document/d/1VCuB85D5kYxPR3qYOjVmw8boAGKb7k62heFyfFHTOvw/edit?usp=sharing", "type": 301 },
+      { "source": "/go/go-router-v9-breaking-changes", "destination": "https://docs.google.com/document/d/16plvWc9ablQsUs7w6bWDpTZ7PwMP4YUhV-qMQ3iljE0/edit?usp=sharing", "type": 301 },
       { "source": "/go/handling-synchronous-keyboard-events", "destination": "https://docs.google.com/document/d/1rWXSjkb2ZKv-cpg26lVK0aZi4cVeXJ8j7YmSJdq2TOM/edit", "type": 301 },
       { "source": "/go/hermetic-xcode-installation", "destination": "https://docs.google.com/document/d/1EcXm4Woq48GR_ky07mEJka6NfV1vFBN2OHDEeGfPk34/edit?resourcekey=0-0Gjtt1I66mGJ8AwiCTlFNw", "type": 301 },
       { "source": "/go/hero-refactor", "destination": "https://docs.google.com/document/d/1JZVqykFjhDXcJyj_Ep5gfTmF-Eu4pQXXNRcLCN04tls/edit?usp=sharing", "type": 301 },
@@ -411,6 +415,7 @@
       { "source": "/go/plugins-team", "destination": "https://docs.google.com/forms/d/e/1FAIpQLSfpPqJYuL_RzLaTCjrWYw73Zrrei3YiU8B5eTrDBh4fuGhbXw/viewform?usp=sf_link", "type": 301 },
       { "source": "/go/profile-and-release-mode-for-custom-devices", "destination": "https://docs.google.com/document/d/1jcMyJvsWLizYOIJAdyosLSW-Io0-E_MGsU_uL_Q4Wt8/edit?usp=sharing", "type": 301 },
       { "source": "/go/programmatic-sheet", "destination": "https://docs.google.com/document/d/15A3q1QrcvEU82uG4heTCKV230depmaJZTIP5rEz7V8g/edit?usp=sharing&resourcekey=0-q-TH-9-LVmygnp6Ku4xKIg", "type": 301 },
+      { "source": "/go/publish-on-homebrew", "destination": "https://docs.google.com/document/d/1dk82qavQxT633LAonAM2xsqirWBmsqoHC4caJvYE584/edit?usp=sharing", "type": 301 },
       { "source": "/go/pull-request-revert-api", "destination": "https://docs.google.com/document/d/1mVVetlCjv9PM5gtg57nipDFd5TvWsd24rXPWS0FzVvE/edit?usp=sharing&resourcekey=0-McwG6wn0s6YQ7qxHffkcdw", "type": 301 },
       { "source": "/go/pull-request-revert-api-v2", "destination": "https://docs.google.com/document/d/1lfPVtrq_6YB-I6bEHEXRPeJCE32EvKxx-nSYmLpJIYI/edit?usp=sharing&resourcekey=0-BZghqoHCZBXuoQ2alTyRiw", "type": 301 },
       { "source": "/go/rasterizer-pipeline-improvements", "destination": "https://docs.google.com/document/d/1Hg5Wfx8JTgYmLboxFRr5DDd9EfdrdEuMbNGGMvDjd6E/edit?usp=sharing", "type": 301 },
@@ -449,6 +454,7 @@
       { "source": "/go/subpixel-antialiasing", "destination": "https://docs.google.com/document/d/1yEycgo5ivZ_lu2MAnMBLreZvROFdamy9-9q-QvMvL9U/edit?usp=sharing", "type": 301 },
       { "source": "/go/supporting-dart-callbacks", "destination": "https://docs.google.com/document/d/1k7OimxbxXzdv3U7-TfB88yG5hIScN3TH6Jcvdcl4izM/edit", "type": 301 },
       { "source": "/go/swift-package-manager-plugins", "destination": "https://docs.google.com/document/d/10S7anpgWdJ0wNCgsse8MvHY2PShrr9PeuufwYHi5v6U/edit", "type": 301 },
+      { "source": "/go/swift-package-manager-plugins-v2", "destination": "https://docs.google.com/document/d/1oUvM5e2a3QrKAk9pTPExPp3my4FD4lYz9Z-EXsUGuHI/edit?usp=sharing&resourcekey=0-Vu8vKukw0Dqqv7pW5aIxKQ", "type": 301 },
       { "source": "/go/synchronized-widgettester", "destination": "https://docs.google.com/document/d/1VumsuG6dEFUVpPQLqqKJnhI0CoIS9fCAMN-NFHIPmo0/edit", "type": 301 },
       { "source": "/go/system-mouse-cursor", "destination": "https://docs.google.com/document/d/1bJLRy6flZ0wDCbpl2QA8SURUWXIvRJKMRRemxlOo1cA/edit", "type": 301 },
       { "source": "/go/tabs-and-text-fields", "destination": "https://docs.google.com/document/d/1aHucsI0NWGWu2Dm_XFsBLxiTgJRM8h2XBB7PVAnVxlU/edit?usp=sharing&resourcekey=0-zLbXFlP_A2e_Yoi43vdiiw", "type": 301 },
@@ -512,10 +518,17 @@
         ]
       },
       {
-        "source": "**/*.@(jpg|jpeg|gif|png|md)",
+        "source": "**/*.@(jpg|jpeg|gif|png|webp|webm|svg|md|css|js)",
         "headers": [
           { "key": "Cache-Control", "value": "max-age=3600" },
           { "key": "Access-Control-Allow-Origin", "value": "*" }
+        ]
+      },
+      {
+        "source": "**",
+        "headers": [
+          { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},
+          { "key": "X-Content-Type-Options", "value": "nosniff"}
         ]
       }
     ]

@@ -33,7 +33,7 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 * Add a link to the DevTools [CONTRIBUTING](https://github.com/flutter/devtools/blob/master/CONTRIBUTING.md) guide to the About menu, and fixed the Discord link - [#4926](https://github.com/flutter/devtools/pull/4926)
 * Fix conflicting colors in light theme - [5067](https://github.com/flutter/devtools/pull/5067)
 
-## Changelog
+## Full commit history
+More details about changes and fixes are available from the
+[DevTools git log.](https://github.com/flutter/devtools/commits/master).
 
-More details about changes and fixes are available in the DevTools
-[changelog](https://github.com/flutter/devtools/blob/master/CHANGELOG.md).

@@ -76,7 +76,7 @@ by the Flutter team.
 If you own a package that has been designated as a Flutter Favorite,
 you must adhere to the following guidelines:
 
-* Flutter Favorite package authors may place the Flutter Favorite
+* Flutter Favorite package authors can place the Flutter Favorite
   logo in the package’s GitHub README, on the package’s
   pub.dev **Overview** tab,
   and on social media as related to posts about that package.
