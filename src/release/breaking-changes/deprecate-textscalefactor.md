@@ -39,7 +39,8 @@ abstract class TextScaler {
 
 Use the `scale` method to scale font sizes instead of `textScaleFactor`.
 The `textScaleFactor` getter provides an estimated `textScaleFactor` value, it 
-is for backward compatibility purposes and is already marked as deprecated.
+is for backward compatibility purposes and is already marked as deprecated, and
+will be removed in a future version of Flutter.
 
 The new class has replaced 
 `double textScaleFactor` (`double textScaleFactor` -> `TextScaler textScaler`),
@@ -235,6 +236,24 @@ MediaQuery.withClampedTextScaling(
   child: title,
 )
 ```
+
+**Disabling Nonlinear Text Scaling**
+If you want to temporarily opt-out of nonlinear text scaling on Android 14 until 
+your app is fully migrated, put a modified `MediaQuery` at the top of your app's 
+widget tree:
+
+```dart 
+runApp(
+  Builder(builder: (context) {
+    final mediaQueryData = MediaQuery.of(context);
+    final mediaQueryDataWithLinearTextScaling = mediaQueryData
+      .copyWith(textScaler: TextScaler.linear(mediaQueryData.textScaler.textScaleFactor));
+    return MediaQuery(data: mediaQueryDataWithLinearTextScaling, child: realWidgetTree);
+  }),
+);
+```
+This trick uses the deprecated `textScaleFactor` API and will stop working once
+it is removed from the Flutter API.
 
 ## Timeline
 
