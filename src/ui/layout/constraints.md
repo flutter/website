@@ -20,7 +20,7 @@ js:
 [Common Flutter errors]: {{site.url}}/testing/common-errors
 
 When someone learning Flutter asks you why some widget
-with `width:100` isn't 100 pixels wide,
+with `width: 100` isn't 100 pixels wide,
 the default answer is to tell them to put that widget
 inside of a `Center`, right?
 
@@ -2079,7 +2079,7 @@ but not bigger than the screen.
 [`build`]: {{site.api}}/flutter/widgets/State/build.html
 [`RenderView`]: {{site.api}}/flutter/rendering/RenderView-class.html
 
-## Unbounded constraints
+## <a name="unbounded">Unbounded constraints</a>
 
 In certain situations,
 a box's constraint is _unbounded_, or infinite.
