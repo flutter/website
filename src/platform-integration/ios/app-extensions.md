@@ -213,6 +213,4 @@ Flutter iOS app, check out the
 [read and write files]: {{site.url}}/cookbook/persistence/reading-writing-files
 [example from the community on GitHub]: {{site.github}}/flutter/engine/pull/39941
 [Deep Linking]:{{site.url}}/ui/navigation/deep-linking
-
-<!--  TO DO: add links when published -->
-[Adding Home Screen Widgets to your Flutter app]: {{site.codelabs}}/?product=flutter
+[Adding Home Screen Widgets to your Flutter app]: {{site.codelabs}}/flutter-home-screen-widgets#0
