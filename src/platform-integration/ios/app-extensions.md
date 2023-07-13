@@ -215,4 +215,4 @@ Flutter iOS app, check out the
 [Deep Linking]:{{site.url}}/ui/navigation/deep-linking
 
 <!--  TO DO: add links when published -->
-[Adding Home Screen Widgets to your Flutter app]: {{site.codelabs}}/?product=flutter
+[Adding Home Screen Widgets to your Flutter app]: {{site.codelabs}}/platform-integration/ios/app-extensions
