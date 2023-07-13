@@ -67,7 +67,7 @@ background with a new stateless widget called
 represent the full-screen gradient that should be
 applied to the bubble.
 
-<?code-excerpt "lib/main.dart (BubbleBackground)" replace="/return //g"?>
+<?code-excerpt "lib/bubble_background.dart (BubbleBackground)" replace="/return //g"?>
 ```dart
 BubbleBackground(
   // The colors of the gradient, which are different
@@ -196,7 +196,7 @@ of the bubble, configure a shader with the given colors,
 and then use a matrix translation to offset the shader
 based on the bubble’s position within the `Scrollable`.
 
-<?code-excerpt "lib/main.dart (BubblePainter)"?>
+<?code-excerpt "lib/bubble_background.dart (BubblePainter)"?>
 ```dart
 class BubblePainter extends CustomPainter {
   BubblePainter({
