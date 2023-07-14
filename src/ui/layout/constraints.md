@@ -2081,6 +2081,12 @@ but not bigger than the screen.
 
 ## <a name="unbounded">Unbounded constraints</a>
 
+{{site.alert.note}}
+  You might be directed here if the framework
+  detects a problem involving box constraints.
+  The `Flex` section below might also apply.
+{{site.alert.end}}
+
 In certain situations,
 a box's constraint is _unbounded_, or infinite.
 This means that either the maximum width or
@@ -2106,6 +2112,9 @@ inside a horizontally scrolling `ListView`,
 the inner list tries to be as wide as possible,
 which is infinitely wide,
 since the outer one is scrollable in that direction.
+
+The next section describes the error you might
+encounter with unbounded constraints in a `Flex` widget.
 
 ## Flex
 
