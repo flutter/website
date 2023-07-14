@@ -284,7 +284,7 @@ You might find the following docs useful:
 
 * [Performance best practices][]
 * [Flutter performance profiling][]
-* [Using an OEM debugger][]
+* [Using a native debugger][]
 * [Flutter's modes][]
 * [Debugging Flutter apps programmatically][]
 * [DevTools][]

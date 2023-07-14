@@ -170,6 +170,7 @@
       { "source": "/web", "destination": "/platform-integration/web", "type": 301 },
       { "source": "/whats-new-archive", "destination": "/release/whats-new", "type": 301 },
       { "source": "/whats-new", "destination": "/release/whats-new", "type": 301 },
+      { "source": "/testing/oem-debuggers", "destination": "/testing/native-debugging", "type": 301 },
 
       { "source": "/assets/images/docs/intellij/hot-reload.gif", "destination": "https://raw.githubusercontent.com/flutter/website/main/src/assets/images/docs/tools/android-studio/hot-reload.gif", "type": 301 },
       { "source": "/catalog/samples", "destination": "https://flutter.github.io/samples/#", "type": 301 },
