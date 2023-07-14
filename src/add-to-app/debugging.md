@@ -38,7 +38,7 @@ Run `flutter attach` or `flutter attach -d deviceId` to attach from the terminal
 
 #### VS Code
 
-{% include docs/debug/vscode-flutter-attach-ios.md %}
+{% include docs/debug/debug-flow-ios.md %}
 {% include docs/debug/vscode-flutter-attach-json.md %}
 
 #### IntelliJ / Android Studio
