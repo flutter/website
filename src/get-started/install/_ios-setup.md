@@ -6,6 +6,7 @@ To develop Flutter apps for iOS, you need a Mac with Xcode installed.
 
  1. Install the latest stable version of Xcode
     (using [web download][] or the [Mac App Store][]).
+
  1. Configure the Xcode command-line tools to use the
     newly-installed version of Xcode by
     running the following from the command line:
@@ -22,7 +23,7 @@ To develop Flutter apps for iOS, you need a Mac with Xcode installed.
 
  1. Make sure the Xcode license agreement is signed by
     either opening Xcode once and confirming or running
-    `sudo xcodebuild -license` from the command line.
+    `sudo xcodebuild --license` from the command line.
 
 Versions older than the latest stable version might still work,
 but are not recommended for Flutter development.
@@ -45,6 +46,7 @@ follow these steps:
  2. Make sure your simulator is using a 64-bit device
     (iPhone 5s or later).  You can check the device by viewing the settings in
     the simulator's **Hardware > Device** or **File > Open Simulator** menus.
+
  3. Depending on your development machine's screen size,
     simulated high-screen-density iOS devices
     might overflow your screen. Grab the corner of the
@@ -62,66 +64,77 @@ you will also need the third-party CocoaPods dependency manager.
 <ol markdown="1">
 <li markdown="1">
 <a name="connect"></a>
-To set up physical device deployment in Xcode, 
-connect your device to the USB port on your 
-computer. 
+To set up physical device deployment in Xcode,
+connect your device to the USB port on your
+computer.
 </li>
 <li markdown="1">
 <a name="wireless"></a>
-[Optional] To leverage wireless debugging, ensure that 
-your device is on the same network as your computer 
-and that the device has a set passcode.  
+[Optional] To leverage wireless debugging, ensure that
+your device is on the same network as your computer
+and that the device has a set passcode.
 
-While the device is attached, open **Xcode > Window > Devices and Simulators**. 
-Select your phone, and check **Connect via Network.** 
-For more details, check out 
+While the device is attached, open **Xcode > Window > Devices and Simulators**.
+Select your phone, and check **Connect via Network.**
+For more details, check out
 [Apple's documentation on pairing a wireless device with Xcode][].
 
-Once the network icon appears next to the device name, 
-you can unplug your device from USB. 
+Once the network icon appears next to the device name,
+you can unplug your device from USB.
 
-Sometimes it takes longer to find network devices. 
-If you don't see your device listed when using `flutter run`, 
+Sometimes it takes longer to find network devices.
+If you don't see your device listed when using `flutter run`,
 try extending the timeout: `flutter run --device-timeout 10`.
 
-For additional help troubleshooting, 
-check out [Apple's Developer Forums][]. For setting up 
-wireless debugging with `flutter attach`, 
+For additional help troubleshooting,
+check out [Apple's Developer Forums][]. For setting up
+wireless debugging with `flutter attach`,
 checkout [Debugging your add-to-app module][].
 </li>
 <li markdown="1">
 
 <a name="trust"></a>
-The first time you use an attached physical device for iOS
-development, you need to trust both your Mac and the
-Development Certificate on that device.
-On iOS 16 and higher you must also enable [Developer Mode][].
+The first time you attach a physical device for iOS development,
+you need to trust both your Mac and the Development Certificate
+on that device.
+On iOS 16 and later, you must also enable [Developer Mode][].
 
 Select **Trust** in the dialog prompt when
 first connecting the iOS device to your Mac.
 
 ![Trust Mac][]{:.mw-100}
+</li>
 
-Then, go to the Settings app on the iOS device,
-select **General > Device Management**
-and trust your Certificate.
-For first time users, you might need to select
-**General > Profiles > Device Management** instead.
-On iOS 16 and higher, navigate back to the top level
-of the Settings app, select **Privacy & Security > Developer Mode**,
-and toggle Developer Mode on.
+<li markdown="1">
+
+a. Open the **Settings** app on the iOS device.
+
+b. Go to **General** > **Device Management**.
+
+c. Trust your Certificate.
+
+**First time users:** You might need to go to
+**General** > **Profiles** > **Device Management**.
+
+**iOS 16 and later**
+
+a. Open the **Settings** app
+b. Select **Privacy & Security** > **Developer Mode**,
+c. Toggle **Developer Mode** to on.
 
 </li>
 
 <li markdown="1">
 
-You can skip this step if your apps do not depend on
-[Flutter plugins][] with native iOS code.
-[Install and set up CocoaPods][] by running the following commands:
+If your apps do not depend on [Flutter plugins][] with native iOS code,
+skip this step.
+
+To [Install and set up CocoaPods][], run the following commands:
 
 ```terminal
 $ sudo gem install cocoapods
 ```
+
 {{site.alert.note}}
   The default version of Ruby requires `sudo` to install the CocoaPods gem.
   If you are using a Ruby Version manager, you might need to run without `sudo`.
@@ -140,8 +153,8 @@ $ sudo gem install cocoapods
 Follow the Xcode signing flow to provision your project:
 
    {: type="a"}
-   1. Open the default Xcode workspace in your project by
-      running `open ios/Runner.xcworkspace` in a terminal
+   1. To open the default Xcode workspace in your project,
+      run `open ios/Runner.xcworkspace` in a terminal
       window from your Flutter project directory.
    1. Select the device you intend to deploy to in the device
       drop-down menu next to the run button.
