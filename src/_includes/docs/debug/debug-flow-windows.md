@@ -1,44 +1,52 @@
-#### PowerShell or Command Prompt
+#### In PowerShell or the Command Prompt
 
 To generate the needed Windows platform dependencies,
 run the `flutter build` command.
 
 ```terminal
-$ flutter build windows --debug
+C:\> flutter build windows --debug
 ```
 
-#### VS Code
+#### In VS Code
 
-1. Open the `lib/main.dart` file.
+{% include docs/debug/debug-flow-vscode-as-start.md %}
 
-1. Click the debug icon
-   (![VS Code's bug icon to trigger the debugging mode of a Flutter app](/assets/images/docs/testing/debugging/vscode-ui/icons/debug.png)).
-   This opens the **Debug** pane and launches the app.
-   Wait for the app to launch on the device and for the debug pane to
-   indicate **Connected**.
-   The debugger takes longer to launch the first time.
-   Subsequent launches start faster.
-
-   This Flutter app contains two buttons:
-
-   - **Launch in browser**: This button opens this page in the
-     default browser of your device.
-   - **Launch in app**: This button opens this page within your app.
-     This button only works for iOS or Android. Desktop apps launch a browser.
-
-     !['Flutter app showing two buttons to open flutter.dev in a browser or within the app'](/assets/images/docs/testing/debugging/native/windows/url-launcher-app.png){:width="50%"}
-     <div markdown="1">
-     Flutter app showing two buttons to open flutter.dev in a browser or within the app.
+{% comment %}
+     !['Flutter app generated as a Windows app. The app displays two buttons to open this page in a browser or in the app'](/assets/images/docs/testing/debugging/native/url-launcher-app/windows.png){:width="50%"}
+     <div markdown="1">{:.figure-caption}
+     Flutter app generated as a Windows app. The app displays two buttons to open this page in a browser or in the app.
      </div>
+{% endcomment %}
 
-#### Visual Studio
+#### In Visual Studio
 
-1. From the **Debug** menu, select **Attach to Process**.
+1. To open the project solution file, go to
+   **File** <span aria-label="and then">></span>
+   **Open** <span aria-label="and then">></span>
+   **Project/Solution…**
+
+   You can also press <kbd>Control</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd>.
+1. Choose the `build/windows/my_app.sln` file in your Flutter app directory.
+
+{% comment %}
+   ![Open Project/Solution dialog box in Visual Studio 2022 with my_app.sln file selected.](/assets/images/docs/testing/debugging/native/visual-studio/choose-solution.png){:width="100%"}
+   <div markdown="1">{:.figure-caption}
+   Open Project/Solution dialog box in Visual Studio 2022 with
+   `my_app.sln`` file selected.
+   </div>
+{% endcomment %}
+
+1. Go to **Debug** > **Attach to Process**.
+
    You can also press <kbd>Control</kbd> + <kbd>Alt</kbd> + <kbd>P</kbd>.
 1. From the **Attach to Process** dialog box, choose `my_app.exe`.
 
+{% comment %}
    ![Selecting my_app from the Attach to Process dialog box](/assets/images/docs/testing/debugging/native/visual-studio/attach-to-process-dialog.png){:width="100%"}
+{% endcomment %}
 
    Visual Studio starts monitoring the Flutter app.
 
+{% comment %}
    ![Visual Studio debugger running and monitoring the Flutter app](/assets/images/docs/testing/debugging/native/visual-studio/debugger-active.png){:width="100%"}
+{% endcomment %}

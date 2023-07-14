@@ -21,8 +21,9 @@ If you write a platform-specific plugin or
 using platform-specific libraries, you can debug
 that portion of your code with a native debugger.
 
-- To debug code written in Swift or ObjectiveC, you can use Xcode.
-- To debug code written in Java or Kotlin, you can use Android Gradle.
+- To debug iOS code written in Swift or ObjectiveC, you can use Xcode.
+- To debug Android code written in Java or Kotlin, you can use Gradle.
+- To debug Windows code written in C++, you can use Visual Studio.
 
 This guide shows you how you can connect _two_
 debuggers to your Dart app, one for Dart, and one for the native code.
@@ -43,13 +44,13 @@ debugging your own Flutter project as well.
 1. Create a basic Flutter app.
 
     ```terminal
-    $ flutter create main_test_app
+    $ flutter create my_app
     ```
 
     ```terminal
-    Creating project main_test_app...
-    Resolving dependencies in main_test_app... 
-    Got dependencies in main_test_app.
+    Creating project my_app...
+    Resolving dependencies in my_app... 
+    Got dependencies in my_app.
     Wrote 129 files.
 
     All done!
@@ -59,21 +60,21 @@ debugging your own Flutter project as well.
 
     In order to run your application, type:
 
-      $ cd main_test_app
+      $ cd my_app
       $ flutter run
 
-    Your application code is in main_test_app/lib/main.dart.
+    Your application code is in my_app/lib/main.dart.
     ```
 
     ```terminal
-    $ cd main_test_app
+    $ cd my_app
     ```
 
 1. Open the `lib\main.dart` file in the Flutter app using
    VS Code.
 
 1. Click the bug icon
-   (![VS Code's bug icon to trigger the debugging mode of a Flutter app](/assets/images/docs/testing/debugging/oem/vscode-bug.png)).
+   (![VS Code's bug icon to trigger the debugging mode of a Flutter app](/assets/images/docs/testing/debugging/vscode-ui/icons/debug.png)).
    This opens the following panes in VS Code:
 
    - **Debug**
@@ -82,7 +83,9 @@ debugging your own Flutter project as well.
 
    The first time you run the debugger takes the longest.
 
-   ![VS Code window with debug panes opened](/assets/images/docs/testing/debugging/oem/vscode-debugger.png){:width="100%"}
+{% comment %}
+   ![VS Code window with debug panes opened](/assets/images/docs/testing/debugging/vscode-ui/screens/vscode-debugger.png){:width="100%"}
+{% endcomment %}
 
 1. Test the debugger.
 
@@ -95,9 +98,14 @@ debugging your own Flutter project as well.
    c. In the app, click the **+** button
       to increment the counter. The app pauses.
 
-      ![Flutter test app paused](/assets/images/docs/testing/debugging/oem/paused-test-app.png){:width="50%"}
+{% comment %}
+      ![Flutter test app paused](/assets/images/docs/testing/debugging/native/macos/basic-app.png){:width="50%"}
+      <div markdown="1">{:.figure-caption}
+      Default Flutter app as rendered on macOS.
+      </div>
+{% endcomment %}
 
-    d. At this point, the app displays:
+    d. At this point, VS Code displays:
 
       - In the **Editor Groups**:
         - The highlighted breakpoint in `main.dart`
@@ -109,7 +117,9 @@ debugging your own Flutter project as well.
       - In the **panel**:
         - The log of the Flutter app in the **Debug console**
 
-      ![VS Code window with Flutter app paused](/assets/images/docs/testing/debugging/oem/vscode-debugger-paused.png){:width="100%"}
+{% comment %}
+      ![VS Code window with Flutter app paused](/assets/images/docs/testing/debugging/vscode-ui/screens/vscode-debugger-paused.png){:width="100%"}
+{% endcomment %}
 
 ### VS Code Flutter debugger
 
@@ -123,7 +133,7 @@ VS Code interface.
 
 The following screenshot and table explain the purpose of each tool.
 
-![VS Code with the Flutter plugin UI additions](/assets/images/docs/testing/debugging/vscode-debugger-parts.png)
+![VS Code with the Flutter plugin UI additions](/assets/images/docs/testing/debugging/vscode-ui/screens/debugger-parts.png)
 
 <div class="table-wrapper" markdown="1">
 | Highlight Color in Screenshot | Bar, Panel, or Tab  | Contents                                                                          |
@@ -151,7 +161,7 @@ go to **View** > **Appearance** > **Panel Position**.
 The toolbar allows you to debug as any debugger.
 You can step in, out, and over Dart statements, hot reload or resume the app.
 
-![Flutter debugger toolbar in VS Code](/assets/images/docs/testing/debugging/vscode-debug-toolbar.png)
+![Flutter debugger toolbar in VS Code](/assets/images/docs/testing/debugging/vscode-ui/screens/debug-toolbar.png)
 
 <div class="table-wrapper" markdown="1">
 | Icon                                                      | Action                | Keyboard Shortcut                                     |
@@ -184,14 +194,11 @@ test Flutter app. This update adds native code to debug.
 
     <?code-excerpt title="lib/main.dart"?>
     ```dart
-    // Parts are copyright 2017 The Chromium Authors. All rights reserved.
+    // Copyright 2023 The Flutter Authors. All rights reserved.
     // Use of this source code is governed by a BSD-style license that can be
     // found in the LICENSE file.
 
-    import 'dart:async';
-
     import 'package:flutter/material.dart';
-    import 'package:url_launcher/link.dart';
     import 'package:url_launcher/url_launcher.dart';
 
     void main() {
@@ -206,7 +213,9 @@ test Flutter app. This update adds native code to debug.
         return MaterialApp(
           title: 'URL Launcher',
           theme: ThemeData(
-            primarySwatch: Colors.purple,
+            useMaterial3: true,
+            colorSchemeSeed: Colors.purple,
+            brightness: Brightness.light,
           ),
           home: const MyHomePage(title: 'URL Launcher'),
         );
@@ -237,8 +246,6 @@ test Flutter app. This update adds native code to debug.
         if (!await launchUrl(
           url,
           mode: LaunchMode.inAppWebView,
-          webViewConfiguration: const WebViewConfiguration(
-              headers: <String, String>{'my_header_key': 'my_header_value'}),
         )) {
           throw Exception('Could not launch $url');
         }
@@ -270,30 +277,18 @@ test Flutter app. This update adds native code to debug.
                   padding: const EdgeInsets.all(16),
                   child: Text(toLaunch.toString()),
                 ),
-                ElevatedButton(
+                FilledButton(
                   onPressed: () => setState(() {
                     _launched = _launchInBrowser(toLaunch);
                   }),
                   child: const Text('Launch in browser'),
                 ),
                 const Padding(padding: EdgeInsets.all(16)),
-                ElevatedButton(
+                FilledButton(
                   onPressed: () => setState(() {
                     _launched = _launchInWebViewOrVC(toLaunch);
                   }),
                   child: const Text('Launch in app'),
-                ),
-                const Padding(padding: EdgeInsets.all(16.0)),
-                Link(
-                  uri: Uri.parse('https://flutter.dev/'),
-                  target: LinkTarget.blank,
-                  builder: (BuildContext ctx, FollowLink? openLink) {
-                    return TextButton.icon(
-                      onPressed: openLink,
-                      label: const Text('Flutter.dev'),
-                      icon: const Icon(Icons.read_more),
-                    );
-                  },
                 ),
                 const Padding(padding: EdgeInsets.all(16.0)),
                 FutureBuilder<void>(future: _launched, builder: _launchStatus),
@@ -364,119 +359,38 @@ for all target platforms in the Flutter app directory.
 
 To debug native Android code, you need a Flutter app that contains
 Android code. In this section, you learn how to connect
-the Dart and Android Gradle debuggers to your app.
+the Dart and Gradle debuggers to your app.
 You don't need VS Code to debug both Dart and Android code.
+This guide includes the VS Code instructions to be consistent
+with the Xcode and Visual Studio guides.
 
-{{site.alert.note}}
-  If you want to use the [GNU Project Debugger][] to debug the
-  Flutter engine running within an Android app process,
-  check out [`flutter_gdb`][].
-{{site.alert.end}}
+These section uses the same example Flutter `url_launcher` app created
+in [Update test Flutter app](#update-test-flutter-app).
 
-[GNU Project Debugger]: https://www.sourceware.org/gdb/
-[`flutter_gdb`]: https://github.com/flutter/engine/blob/main/sky/tools/flutter_gdb
-
-1. To generate the needed Android platform dependencies,
-   run the `flutter build` command.
-
-   ```terminal
-   $ flutter build appbundle --debug
-   ```
-
-1. Open the `lib/main.dart` file in Android Studio.
-
-1. Click the debug icon
-   (![Tiny green bug superimposed with a light green filled circle](/assets/images/docs/testing/debugging/oem/debug-run.png)).
-   This opens the **Debug** pane and launches the app.
-   Wait for the app to launch on the device and for the debug pane to
-   indicate **Connected**.
-   The debugger takes longer to launch the first time.
-   Subsequent launches start faster.
-
-   This Flutter app contains two buttons and one link:
-
-   - **Launch in browser**: This button opens this page in the
-     default browser of your device.
-   - **Launch in app**: This button opens this page within your app.
-   - **Flutter.dev**: This link opens https://flutter.dev within your app.
-
-     !['Flutter app showing two buttons to open flutter.dev in a browser or within the app'](/assets/images/docs/testing/debugging/oem/launch-flutter-dev.png){:width="50%"}
-     <div markdown="1">
-     Flutter app showing two buttons to open flutter.dev in a browser or within the app.
-     </div>
-
-1. Click the **Attach debugger to Android process** button.
-   (![Tiny green bug superimposed with a light grey arrow](/assets/images/docs/testing/debugging/oem/attach-process-button.png))
-
-    {{site.alert.tip}}
-      If this button doesn't appear in the **Projects** menu bar, verify that
-      you opened Flutter _application_ project but _not a Flutter plugin_.
-    {{site.alert.end}}
-
-1. The **process** dialog displays one entry for each connected device.
-   Select **show all processes** to display available processes for each
-   device.
-
-1. Choose the process to which you want to attach.
-   In following screenshot, the `com.example.my_app` process
-   using the **Emulator Pixel_5_API_33** was selected.
-
-   !['Flutter app in Android device displaying two buttons and a link.'](/assets/images/docs/testing/debugging/oem/choose-process-dialog.png){:width="50%"}
-   <div markdown="1">
-   Flutter app in Android device displaying two buttons and a link.
-   </div>
-
-1. Locate the tab for **Android Debugger** in the **Debug** pane.
-
-1. In the **Project** pane, expand
-   **_app_name__android > android > app > src > main > java > io.flutter plugins**.
-
-1. Double click **GeneratedProjectRegistrant** to open the
-   Java code in the **Edit** pane.
-   
-   !['The Android Project view highlighting the GeneratedPluginRegistrant.java file.'](/assets/images/docs/testing/debugging/oem/debug-open-java-code.png){:width="100%"}
-   <div markdown="1">
-   The Android Project view highlighting the `GeneratedPluginRegistrant.java` file.
-   </div>
-
-At the end of this procedure, both the Dart and Android debuggers interact
-with the same process.
-Use either, or both, to set breakpoints, examine stack, resume execution
-and the like. In other words, debug!
-
-![The Dart debug pane with two breakpoints set in `lib/main.dart`](/assets/images/docs/testing/debugging/oem/dart-debugger.png){:width="100%"}
-<div markdown="1">
-The Dart debug pane with two breakpoints set in `lib/main.dart`.
-</div>
-
-!['The Android debug pane with one breakpoint set in GeneratedPluginRegistrant.java.'](/assets/images/docs/testing/debugging/oem/android-debugger.png)
-<div markdown="1">
-The Android debug pane with one breakpoint set in GeneratedPluginRegistrant.java.
-</div>
-
-[`url_launcher`]: {{site.url}}/examples/testing/oem_debugging
+{% include docs/debug/debug-flow-android.md %}
 
 ### Debug Dart and iOS code using Xcode
 
 To debug iOS code, you need a Flutter app that contains iOS code.
 In this section, you learn to connect two debuggers to your app:
 Flutter via VS Code and Xcode. You need to run both VS Code and Xcode.
-These procedures use the same example Flutter `url_launcher` app used
-elsewhere in this guide.
 
-{% include docs/debug/vscode-flutter-attach-ios.md %}
+These section uses the same example Flutter `url_launcher` app created
+in [Update test Flutter app](#update-test-flutter-app).
 
-### Debug Dart and C# code using Visual Studio
+{% include docs/debug/debug-flow-ios.md %}
 
-To debug C# code, you need a Flutter app that contains C# code.
+### Debug Dart and C++ code using Visual Studio
+
+To debug C++ code, you need a Flutter app that contains C++ code.
 In this section, you learn to connect two debuggers to your app:
 Flutter via VS Code and Visual Studio.
 You need to run both VS Code and Visual Studio.
-These procedures use the same example Flutter `url_launcher` app used
-elsewhere in this guide.
 
-{% include docs/debug/vscode-flutter-attach-windows.md %}
+These section uses the same example Flutter `url_launcher` app created
+in [Update test Flutter app](#update-test-flutter-app).
 
+{% include docs/debug/debug-flow-windows.md %}
 
 ## Resources
 
