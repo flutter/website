@@ -1,11 +1,8 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
+// Copyright 2023 The Flutter Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:url_launcher/link.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
@@ -52,8 +49,6 @@ class _MyHomePageState extends State<MyHomePage> {
     if (!await launchUrl(
       url,
       mode: LaunchMode.inAppWebView,
-      webViewConfiguration: const WebViewConfiguration(
-          headers: <String, String>{'my_header_key': 'my_header_value'}),
     )) {
       throw Exception('Could not launch $url');
     }
@@ -97,18 +92,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 _launched = _launchInWebViewOrVC(toLaunch);
               }),
               child: const Text('Launch in app'),
-            ),
-            const Padding(padding: EdgeInsets.all(16.0)),
-            Link(
-              uri: Uri.parse('https://flutter.dev/'),
-              target: LinkTarget.blank,
-              builder: (BuildContext ctx, FollowLink? openLink) {
-                return TextButton.icon(
-                  onPressed: openLink,
-                  label: const Text('Flutter.dev'),
-                  icon: const Icon(Icons.read_more),
-                );
-              },
             ),
             const Padding(padding: EdgeInsets.all(16.0)),
             FutureBuilder<void>(future: _launched, builder: _launchStatus),
