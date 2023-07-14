@@ -184,11 +184,6 @@ caused by one of two other errors:
 This is another common layout error you could run into 
 while creating a UI in your Flutter app.
 
-{{site.alert.note}}
-  You might be directed here if the framework
-  detects a problem involving box constraints.
-{{site.alert.end}}
-
 **What does the error look like?**
 
 The message shown by the error looks like this: 
