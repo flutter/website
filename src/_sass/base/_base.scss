@@ -269,3 +269,13 @@ blockquote {
 summary {
   margin-bottom: 1rem;
 }
+
+ol + img, ul + img, ol + p, ul + p, p + p + img{
+  margin-bottom: 1rem;
+}
+
+.figure-caption {
+  font-size: .875rem;
+  font-style: italic;
+  color: #041E3C;
+}
