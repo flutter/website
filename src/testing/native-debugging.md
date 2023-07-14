@@ -21,7 +21,8 @@ If you write a platform-specific plugin or
 using platform-specific libraries, you can debug
 that portion of your code with a native debugger.
 
-- To debug iOS code written in Swift or ObjectiveC, you can use Xcode.
+- To debug iOS or macOS code written in Swift or ObjectiveC,
+  you can use Xcode.
 - To debug Android code written in Java or Kotlin, you can use Gradle.
 - To debug Windows code written in C++, you can use Visual Studio.
 
@@ -354,6 +355,11 @@ Installing `url_launcher` added config files and code files
 for all target platforms in the Flutter app directory.
 
 ## Debug Dart and native language code at the same time
+
+This section explains how to debug the Dart code in your Flutter app
+and any native code with its regular debugger.
+This capability allows you to leverage Flutter's hot reload
+when editing native code.
 
 ### Debug Dart and Android code using Android Studio
 

@@ -7,7 +7,7 @@
 [GNU Project Debugger]: https://www.sourceware.org/gdb/
 [`flutter_gdb`]: https://github.com/flutter/engine/blob/main/sky/tools/flutter_gdb
 
-#### In the Terminal
+#### Build the Android version of the Flutter app in the Terminal
 
 To generate the needed Android platform dependencies,
 run the `flutter build` command.
@@ -21,11 +21,13 @@ Running Gradle task 'bundleDebug'...                               27.1s
 ✓ Built build/app/outputs/bundle/debug/app-debug.aab.
 ```
 
-#### In VS Code
+#### Start debugging with VS Code first
+
+If you use VS Code to debug most of your code, start with this section.
 
 {% include docs/debug/debug-flow-vscode-as-start.md %}
 
-#### In Android Studio
+#### Attach to the Flutter process in Android Studio
 
 1. Click the **Attach debugger to Android process** button.
    (![Tiny green bug superimposed with a light grey arrow](/assets/images/docs/testing/debugging/native/android-studio/attach-process-button.png))

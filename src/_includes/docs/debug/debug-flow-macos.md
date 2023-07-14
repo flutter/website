@@ -1,4 +1,4 @@
-#### In the Terminal
+#### Build the macOS version of the Flutter app in the Terminal
 
 To generate the needed iOS platform dependencies,
 run the `flutter build` command.
@@ -11,8 +11,9 @@ $ flutter build macos --debug
 Building macOS application...
 ```
 
-#### Starting from Xcode
-##### In Xcode
+#### Start debugging with Xcode first
+
+##### Start the debugger in Xcode
 
 1. Open `macos/Runner.xcworkspace` from your Flutter app directory.
 
@@ -36,7 +37,7 @@ Building macOS application...
 
 1. Copy the Dart VM service URI.
 
-##### In VS Code
+##### Attach to the Dart VM in VS Code
 
 1. To open the command palette, go to **View** > **Command Palette...**
 
@@ -57,13 +58,13 @@ Building macOS application...
    ![Alt text](/assets/images/docs/testing/debugging/vscode-ui/screens/vscode-add-attach-uri-filled.png)
 {% endcomment %}
 
-#### Starting from VS Code
+#### Start debugging with VS Code first
 
-##### In VS Code
+##### Start the debugger in VS Code
 
 {% include docs/debug/debug-flow-vscode-as-start.md %}
 
-##### In Xcode
+##### Attach to the Flutter process in Xcode
 
 1. To attach to the Flutter app, go to
    **Debug** <span aria-label="and then">></span>
