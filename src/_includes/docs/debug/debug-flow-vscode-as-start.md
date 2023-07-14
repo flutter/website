@@ -1,14 +1,23 @@
-1. Open the Flutter app directory. 
-
-   a. Go to
-      **File** <span aria-label="and then">></span>
-      **Open Folder...**
-
-   b. Choose the `my_app` directory.
-
-   c. Click **Open**.
+1. To open the Flutter app directory, go to
+   **File** <span aria-label="and then">></span>
+   **Open Folder...** and choose the `my_app` directory.
 
 1. Open the `lib/main.dart` file.
+
+1. If you can build an app for more than one device,
+   you must select the device first.
+
+   Go to
+   **View** <span aria-label="and then">></span>
+   **Command Palette...**
+
+   You can also press <kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>.
+
+1. Type `flutter select`.
+
+1. Click the **Flutter: Select Device** command.
+
+1. Choose your target device.
 
 1. Click the debug icon
    (![VS Code's bug icon to trigger the debugging mode of a Flutter app](/assets/images/docs/testing/debugging/vscode-ui/icons/debug.png)).

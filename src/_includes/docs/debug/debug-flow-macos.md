@@ -4,29 +4,17 @@ To generate the needed iOS platform dependencies,
 run the `flutter build` command.
 
 ```terminal
-$ flutter build ios --config-only --no-codesign --debug
+$ flutter build macos --debug
 ```
 
 ```terminal
-Warning: Building for device with codesigning disabled. You will have to manually codesign before deploying to device.
-Building com.example.myApp for device (ios)...
+Building macOS application...
 ```
 
 #### Starting from Xcode
 ##### In Xcode
 
-1. Open `ios/Runner.xcworkspace` from your Flutter app directory.
-
-1. Select the correct device using the **Scheme** menu in the toolbar.
-
-   If you have no preference, choose **iPhone Pro 14**.
-
-{% comment %}
-    ![Selecting iPhone 14 in the Scheme menu in the Xcode toolbar](/assets/images/docs/testing/debugging/native/xcode/select-device.png){:width="100%"}
-   <div markdown="1">{:.figure-caption}
-   Selecting iPhone 14 in the Scheme menu in the Xcode toolbar.
-   </div>
-{% endcomment %}
+1. Open `macos/Runner.xcworkspace` from your Flutter app directory.
 
 1. Run this Runner as a normal app in Xcode.
 
@@ -50,9 +38,7 @@ Building com.example.myApp for device (ios)...
 
 ##### In VS Code
 
-1. To open the command palette, go to
-   **View** <span aria-label="and then">></span>
-   **Command Palette...**
+1. To open the command palette, go to **View** > **Command Palette...**
 
    You can also press <kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>.
 

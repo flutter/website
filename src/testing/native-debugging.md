@@ -1,5 +1,5 @@
 ---
-title: Use a native debugger
+title: Use a native language debugger
 short-title: debuggers
 description: How to connect a native debugger to your running Flutter app.
 ---
@@ -353,7 +353,7 @@ test Flutter app. This update adds native code to debug.
 Installing `url_launcher` added config files and code files
 for all target platforms in the Flutter app directory.
 
-## Debug Dart and Native code
+## Debug Dart and native language code at the same time
 
 ### Debug Dart and Android code using Android Studio
 
@@ -380,6 +380,17 @@ in [Update test Flutter app](#update-test-flutter-app).
 
 {% include docs/debug/debug-flow-ios.md %}
 
+### Debug Dart and macOS code using Xcode
+
+To debug macOS code, you need a Flutter app that contains macOS code.
+In this section, you learn to connect two debuggers to your app:
+Flutter via VS Code and Xcode. You need to run both VS Code and Xcode.
+
+These section uses the same example Flutter `url_launcher` app created
+in [Update test Flutter app](#update-test-flutter-app).
+
+{% include docs/debug/debug-flow-macos.md %}
+
 ### Debug Dart and C++ code using Visual Studio
 
 To debug C++ code, you need a Flutter app that contains C++ code.
@@ -399,8 +410,7 @@ Check out the following resources on debugging Flutter, iOS, and Android:
 ### Flutter
 
 - [Debugging Flutter apps][]
-- [Flutter inspector][], as well as the general
-  [DevTools][] docs.
+- [Flutter inspector][] and the [DevTools][] docs.
 - [Performance profiling][]
 
 [Debugging Flutter apps]: {{site.url}}/testing/debugging
@@ -414,13 +424,20 @@ You can find the following debugging resources on
 - [Debug your app][]
 - [Android Debug Bridge (adb)][]
 
-### iOS
+### iOS and macOS
 
 You can find the following debugging resources on
 [developer.apple.com][].
 
 - [Debugging][]
 - [Instruments Help][]
+
+### Windows
+
+You can find debugging resources on [Microsoft Learn][].
+
+- [Visual Studio Debugger][]
+- [Learn to debug C++ code using Visual Studio][]
 
 [Android Debug Bridge (adb)]: {{site.android-dev}}/studio/command-line/adb
 [Debug your app]: {{site.android-dev}}/studio/debug
@@ -429,5 +446,7 @@ You can find the following debugging resources on
 [developer.apple.com]: {{site.apple-dev}}
 [DevTools]: {{site.url}}/tools/devtools
 [Flutter inspector]: {{site.url}}/tools/devtools/inspector
-[Flutter's modes]: {{site.url}}/testing/build-modes
 [Instruments Help]: https://help.apple.com/instruments/mac/current/
+[Microsoft Learn]: https://learn.microsoft.com/en-us/visualstudio/
+[Visual Studio Debugger]: https://learn.microsoft.com/en-us/visualstudio/debugger/?view=vs-2022
+[Learn to debug C++ code using Visual Studio]: https://learn.microsoft.com/en-us/visualstudio/debugger/getting-started-with-the-debugger-cpp?view=vs-2022

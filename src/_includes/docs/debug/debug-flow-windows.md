@@ -26,6 +26,7 @@ C:\> flutter build windows --debug
    **Project/Solution…**
 
    You can also press <kbd>Control</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd>.
+
 1. Choose the `build/windows/my_app.sln` file in your Flutter app directory.
 
 {% comment %}
@@ -39,6 +40,7 @@ C:\> flutter build windows --debug
 1. Go to **Debug** > **Attach to Process**.
 
    You can also press <kbd>Control</kbd> + <kbd>Alt</kbd> + <kbd>P</kbd>.
+
 1. From the **Attach to Process** dialog box, choose `my_app.exe`.
 
 {% comment %}
