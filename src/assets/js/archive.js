@@ -28,7 +28,7 @@ function updateTable(releases, os) {
       element.remove();
     });
 
-    const releasesForChannel = releaseData.filter(function(release) {
+    const releasesForChannel = releaseData.filter(function (release) {
       return release.channel === channel;
     });
 
