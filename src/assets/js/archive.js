@@ -222,10 +222,10 @@ function getProvenanceLink(os, release, date, channel) {
   }
 
   const extension = os === 'linux' ? 'tar.xz' : 'zip';
-  const aElement = document.createElement('a');
-  aElement.href = `${baseUrl}${channel}/${os}/flutter_${os}_${release.version}-${channel}.${extension}.intoto.jsonl`;
-  aElement.textContent = `${release.version} file`;
-  return aElement;
+  const provenanceAnchor = document.createElement('a');
+  provenanceAnchor.href = `${baseUrl}${channel}/${os}/flutter_${os}_${release.version}-${channel}.${extension}.intoto.jsonl`;
+  provenanceAnchor.textContent = `${release.version} file`;
+  return provenanceAnchor;
 }
 
 
