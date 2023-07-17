@@ -149,6 +149,22 @@
           permalink: /data-and-backend/state-mgmt/options
     - title: Networking & http
       permalink: /data-and-backend/networking
+      children:
+          - title: Overview
+            permalink: /data-and-backend/networking
+            match-page-url-exactly: true
+          - title: Fetch data from the internet
+            permalink: /cookbook/networking/fetch-data
+          - title: Make authenticated requests
+            permalink: /cookbook/networking/authenticated-requests
+          - title: Send data to the internet
+            permalink: /cookbook/networking/send-data
+          - title: Update data over the internet
+            permalink: /cookbook/networking/update-data
+          - title: Delete data on the internet
+            permalink: /cookbook/networking/delete-data
+          - title: Communicate with WebSockets
+            permalink: /cookbook/networking/web-sockets
     - title: JSON and serialization
       permalink: /data-and-backend/json
     - title: Firebase

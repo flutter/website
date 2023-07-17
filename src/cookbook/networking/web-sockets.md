@@ -1,5 +1,5 @@
 ---
-title: Work with WebSockets
+title: Communicate with WebSockets
 description: How to connect to a web socket.
 prev:
   title: Update data over the internet
