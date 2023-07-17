@@ -100,7 +100,8 @@ function createTableCell(content, dataClass) {
   if (dataClass) {
     cell.classList.add(dataClass);
   }
-  if(typeof content === 'string') {
+
+  if (typeof content === 'string') {
     cell.textContent = content;
   } else {
     cell.appendChild(content);
