@@ -60,13 +60,13 @@ function updateTable(releases, os) {
       if (index >= releasesToShow) {
         row.classList.add('overflow');
       }
-      const url = releases.base_url + '/' + release.archive;
       table.appendChild(row);
-
+      
       const hashLabel = document.createElement('span');
       hashLabel.textContent = release.hash.substr(0, 7);
       hashLabel.classList.add('git-hash');
-
+      
+      const url = releases.base_url + '/' + release.archive;
       const downloadLink = document.createElement('a');
       downloadLink.href = url;
       downloadLink.textContent = release.version;
