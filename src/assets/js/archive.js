@@ -32,7 +32,7 @@ function updateTable(releases, os) {
       return release.channel === channel;
     });
 
-    releasesForChannel.forEach(function(release, index) {
+    releasesForChannel.forEach(function (release, index) {
       // If this is the first row after the cut-off, insert the "Show more..." link.
       if (index === releasesToShow) {
         const showAll = document.createElement('a');
