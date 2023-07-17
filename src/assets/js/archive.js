@@ -238,7 +238,7 @@ function getProvenanceLink(os, release, date, channel) {
   const provenanceAnchor = document.createElement('a');
   provenanceAnchor.href = `${baseUrl}${channel}/${os}/flutter_${os}_${release.version}-${channel}.${extension}.intoto.jsonl`;
   provenanceAnchor.textContent = `${release.version} file`;
-  provenanceAnchor.target='_blank';
+  provenanceAnchor.target = '_blank';
   return provenanceAnchor;
 }
 
