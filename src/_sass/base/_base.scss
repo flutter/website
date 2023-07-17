@@ -226,6 +226,24 @@ dd {
   }
 }
 
+.install-help {
+  text-align: right;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .material-icons {
+    font-size: 20px;
+    margin-right: 0.125rem;
+  }
+}
+
 blockquote {
   background-color: $site-color-codeblock-bg;
   padding: bs-spacer(3) bs-spacer(4);
