@@ -1,45 +1,41 @@
-
 // -- Vars/config
-@import 'base/variables';
-@import 'base/material_colors';
+@use 'base/variables';
+@use 'base/material-colors';
 
 // -- Vendor
-@import 'base/bootstrap_config';
-@import 'vendor/bootstrap';
-@import 'vendor/prettify';
+@use 'vendor/bootstrap';
+@use 'vendor/prettify';
 
 // -- Base
-@import 'base/base';
-@import 'base/bootstrap_adjust';
+@use 'base/base';
 
 // -- Components
 // (alpha ordered)
-@import 'components/animations';
-@import 'components/banner';
-@import 'components/books';
-@import 'components/code';
-@import 'components/content';
-@import 'components/cookie-notice';
-@import 'd2h';
-@import 'components/footer';
-@import 'components/header';
-@import 'components/juicy_button';
-@import 'components/next-prev-nav';
-@import 'components/sidebar';
-@import 'components/snackbar';
-@import 'components/toc';
+@use 'components/animations';
+@use 'components/banner';
+@use 'components/books';
+@use 'components/code';
+@use 'components/content';
+@use 'components/cookie-notice';
+@use 'components/d2h';
+@use 'components/footer';
+@use 'components/header';
+@use 'components/juicy-button';
+@use 'components/next-prev-nav';
+@use 'components/sidebar';
+@use 'components/snackbar';
+@use 'components/toc';
 
 // -- Pages
 
 // Page types
-@import 'pages/landing-page';
+@use 'pages/landing-page';
 
 // Marketing (alpha ordered)
-@import 'pages/404';
-@import 'pages/clock';
-@import 'pages/create';
-@import 'pages/subscribe';
+@use 'pages/not-found';
+@use 'pages/clock';
+@use 'pages/create';
+@use 'pages/subscribe';
 
 // -- Overrides
-@import 'base/site_overrides';
-@import 'base/print_overrides';
+@use 'base/print-overrides';
