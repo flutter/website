@@ -107,6 +107,7 @@ function updateTable(releases, os) {
  */
 function createTableCell(content, dataClass) {
   const cell = document.createElement('td');
+
   if (dataClass) {
     cell.classList.add(dataClass);
   }
@@ -116,6 +117,7 @@ function createTableCell(content, dataClass) {
   } else {
     cell.appendChild(content);
   }
+  
   return cell;
 }
 
