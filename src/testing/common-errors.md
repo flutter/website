@@ -178,8 +178,8 @@ caused by one of two other errors:
 * ‘Vertical viewport was given unbounded height’
 * ‘An InputDecorator...cannot have an unbounded width’
 
-
-## <a href="unbounded">‘Vertical viewport was given unbounded height’</a>
+<a id="unbounded"></a>
+## ‘Vertical viewport was given unbounded height’
 
 This is another common layout error you could run into 
 while creating a UI in your Flutter app.
@@ -276,7 +276,7 @@ Widget build(BuildContext context) {
 The resources linked below provide
 further information about this error.
 
-* [How to debug layout issues with the Flutter Inspector][medium-article]]
+* [How to debug layout issues with the Flutter Inspector][medium-article]
 * [Understanding constraints][]
 
 ## ‘An InputDecorator...cannot have an unbounded width’

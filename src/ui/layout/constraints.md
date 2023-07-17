@@ -2079,7 +2079,8 @@ but not bigger than the screen.
 [`build`]: {{site.api}}/flutter/widgets/State/build.html
 [`RenderView`]: {{site.api}}/flutter/rendering/RenderView-class.html
 
-## <a name="unbounded">Unbounded constraints</a>
+<a id="unbounded"></a>
+## Unbounded constraints
 
 {{site.alert.note}}
   You might be directed here if the framework
