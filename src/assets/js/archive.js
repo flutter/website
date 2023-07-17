@@ -17,7 +17,7 @@ function updateTable(releases, os) {
   for (const channel in releases.current_release) {
     const table = document.getElementById(`downloads-${os}-${channel}`);
 
-    //table is not present when channel is dev
+    // Table is not present when the channel is `dev`.
     if (!table) {
       continue;
     }
