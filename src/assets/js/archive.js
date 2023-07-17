@@ -5,7 +5,7 @@ const releasesToShow = 99999;
 function fetchFlutterReleases(os, callback, errorCallback) {
   // OS: windows, macos, linux
   const url = `https://storage.googleapis.com/flutter_infra_release/releases/releases_${os}.json`;
-  fetch(url, { type: 'GET'})
+  fetch(url, { method: 'GET'})
     .then(response => response.json())
     .then(data => callback(data, os))
     .catch(_ => { if (errorCallback) errorCallback(os) })
