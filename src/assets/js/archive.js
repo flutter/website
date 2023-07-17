@@ -8,7 +8,11 @@ function fetchFlutterReleases(os, callback, errorCallback) {
   fetch(url, { method: 'GET'})
     .then(response => response.json())
     .then(data => callback(data, os))
-    .catch(_ => { if (errorCallback) errorCallback(os) })
+    .catch(_ => {
+      if (errorCallback) {
+        errorCallback(os);
+      }
+    });
 }
 
 function updateTable(releases, os) {
