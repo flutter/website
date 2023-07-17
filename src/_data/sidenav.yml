@@ -80,8 +80,6 @@
           permalink: /ui/layout/building-adaptive-apps
         - title: Understanding constraints
           permalink: /ui/layout/constraints
-        - title: Box constraints
-          permalink: /ui/layout/box-constraints
     - title: Adding interactivity
       permalink: /ui/interactive
     - title: Assets and images

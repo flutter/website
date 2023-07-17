@@ -25,8 +25,8 @@ Flutter is in the process of migrating to Material 3.
     However, your UI might be inconsistent until
     _all_ of Flutter _and_ your code are migrated.
   * For the latest list of Flutter's widgets that
-    are affected by the [`useMaterial3`][] flag, see
-    [Affected widgets][].
+    are affected by the [`useMaterial3`][] flag,
+    check out [Affected widgets][].
   * The vast majority of Flutter widgets have similar
     behavior in M2 and M3, so those widget names are unchanged.
     However, a couple widgets have substantially different
