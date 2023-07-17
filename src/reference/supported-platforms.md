@@ -39,7 +39,7 @@ following table:
 <div class="table-wrapper" markdown="1">
 |Platform version|Supported|Best effort|Unsupported|
 |----------------|---------|-----------|-----------|
-| Android SDK    |21-31|19-20|18-|
+| Android SDK    |21-33|19-20|18-|
 | iOS            |16|11-15|10-, arm7v 32-bit|
 | Linux Debian   |10-11|9-|any 32-bit|
 | Linux Ubuntu   |18.04 LTS|20.04-22.04|any 32-bit|

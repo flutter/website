@@ -316,3 +316,5 @@ the symbols are stripped by Xcode.
 2. Change from **All Symbols** to **Non-Global Symbols**.
 
 {% endcomment %}
+
+{% include docs/resource-links/ffi-video-resources.md %}

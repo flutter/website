@@ -1,5 +1,7 @@
 ## Get the Flutter SDK {#get-sdk}
 
+{% include docs/china-notice.md %}
+
 On Linux, you have two ways you can install Flutter.
 
 ### Install Flutter using snapd

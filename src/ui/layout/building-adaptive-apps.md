@@ -38,8 +38,8 @@ Original demo code for adaptive app development techniques from [flutter-adaptiv
 
 ## Building adaptive layouts
 
-One of the first things you must consider when bringing
-your app to multiple platforms is how to adapt
+One of the first things you must consider when writing
+your app for multiple platforms is how to adapt
 it to the various sizes and shapes of the screens that
 it will run on. 
 
@@ -339,10 +339,10 @@ bool get isDesktopDeviceOrWeb => kIsWeb || isDesktopDevice;
 ```
 
 The `Platform` API can’t be accessed from web builds without 
-throwing an exception, because the `dart.io` package is not
+throwing an exception, because the `dart.io` package isn't
 supported on the web target. As a result, this code checks 
-for web first, and because of short-circuiting, Dart will 
-never call `Platform` on web targets.
+for web first, and because of short-circuiting,
+Dart never calls `Platform` on web targets.
 
 ### Single source of truth for styling
 
@@ -824,8 +824,8 @@ without any compromises.
 
 This can be difficult if you aren’t a regular user of the platform.
 You might be unaware of the specific idioms and can easily miss
-them completely. For example, a lifetime Android user will
-likely be unaware of platform conventions on iOS,
+them completely. For example, a lifetime Android user is
+likely unaware of platform conventions on iOS,
 and the same holds true for macOS, Linux, and Windows.
 These differences might be subtle to you,
 but be painfully obvious to an experienced user. 

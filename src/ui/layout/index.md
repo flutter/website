@@ -22,11 +22,13 @@ diff2html: true
   * Compose simple widgets to build complex widgets.
 {{site.alert.end}}
 
-The core of Flutter's layout mechanism is widgets. In Flutter, almost
-everything is a widget&mdash;even layout models are widgets.
-The images, icons, and text that you see in a Flutter app  are all widgets.
-But things you don't see are also widgets, such as the rows, columns,
-and grids that arrange, constrain, and align the visible widgets.
+The core of Flutter's layout mechanism is widgets.
+In Flutter, almost everything is a widget&mdash;even
+layout models are widgets. The images, icons,
+and text that you see in a Flutter app are all widgets.
+But things you don't see are also widgets,
+such as the rows, columns, and grids that arrange,
+constrain, and align the visible widgets.
 
 You create a layout by composing widgets to build more complex widgets.
 For example, the first screenshot below shows 3 icons with a label
@@ -1215,9 +1217,6 @@ The following resources might help when writing layout code.
 * [API reference docs][]
 : Reference documentation for all of the Flutter libraries.
 
-* [Dealing with Box Constraints in Flutter][]
-: Discusses how widgets are constrained by their render boxes.
-
 * [Adding assets and images][]
 : Explains how to add images and other assets to your app's package.
 
@@ -1236,7 +1235,6 @@ The following resources might help when writing layout code.
 [`Container`]: {{api}}/widgets/Container-class.html
 [`CrossAxisAlignment`]: {{api}}/rendering/CrossAxisAlignment.html
 [`DataTable`]: {{api}}/material/DataTable-class.html
-[Dealing with Box Constraints in Flutter]: {{site.url}}/ui/layout/box-constraints
 [Elevation]: {{site.material}}/styles/elevation
 [`Expanded`]: {{api}}/widgets/Expanded-class.html
 [Flutter in Focus]: {{site.youtube-site}}/watch?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2

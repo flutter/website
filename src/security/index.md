@@ -27,6 +27,13 @@ Flutter security strategy is based on five key pillars:
 
 ## Reporting vulnerabilities
 
+{{site.alert.warning}}
+  We are currently experiencing technical difficulties with the
+  `security@flutter.dev` e-mail alias. To ensure prompt attention
+  we ask that you cc `ian@hixie.ch` on such e-mails for the time
+  being. Thanks for your understanding.
+{{site.alert.end}}
+
 Before reporting a security vulnerability found
 by a static analysis tool,
 consider checking our list of [known false positives][].
