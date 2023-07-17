@@ -95,7 +95,6 @@ function updateTable(releases, os) {
 }
 
 function createTableCell(content, dataClass) {
-  console.log({content});
   const cell = document.createElement('td');
   if (dataClass) {
     cell.classList.add(dataClass);
