@@ -87,7 +87,7 @@ function updateTable(releases, os) {
         createTableCell(provenance)
       ];
       
-      cells.forEach(function(cell) {
+      cells.forEach(function (cell) {
         row.appendChild(cell);
       });
     });
