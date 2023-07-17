@@ -57,7 +57,7 @@ function updateTable(releases, os) {
       }
 
       const row = document.createElement('tr');
-      if(index >= releasesToShow) {
+      if (index >= releasesToShow) {
         row.classList.add('overflow');
       }
       const url = releases.base_url + '/' + release.archive;
