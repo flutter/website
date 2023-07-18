@@ -193,14 +193,11 @@ function updateReleaseDownloadButton(releases, base_url, os, arch = '') {
   $('.download-latest-link-filename').text(archiveFilename);
 
   // Update inlined filenames in <code> element text nodes:
-  const fileNamePrefix = 'flutter_';
-  const code = $(`code:contains("${fileNamePrefix}")`);
-  const textNode = $(code).contents().filter(function () {
-    return this.nodeType === 3 && this.textContent.includes(fileNamePrefix);
+  const filteredElements = filterCodeElements();
+  filteredElements.forEach(function (node) {
+    const newText = node.textContent.replace(new RegExp(`^(.*?)\\b${FILE_NAME_PREFIX}\\w+_v.*`), `$1${archiveFilename}`);
+    node.textContent = newText;
   });
-  const text = $(textNode).text();
-  const newText = text.replace(new RegExp(`^(.*?)\\b${fileNamePrefix}\\w+_v.*`), `$1${archiveFilename}`);
-  $(textNode).replaceWith(newText);
 }
 
 function updateDownloadLink(releases, os, arch) {
