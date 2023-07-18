@@ -1,12 +1,16 @@
+@use '../vendor/bootstrap';
+
 .book-img-with-details {
   margin-bottom: 1.5rem;
+
   img {
-    @include media-breakpoint-down(sm) { max-width: 200px; }
+    @include bootstrap.media-breakpoint-down(sm) { max-width: 200px; }
     width: 100%;
   }
+
   .details {
     .title {
-      @include media-breakpoint-up(sm) { margin-top: 0; }
+      @include bootstrap.media-breakpoint-up(sm) { margin-top: 0; }
       margin-bottom: 0;
     }
   }

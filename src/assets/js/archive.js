@@ -163,6 +163,7 @@ function filterCodeElements() {
   return filteredElements;
 }
 
+
 /**
  * Update the download button for the latest release.
  * @constructor
@@ -218,14 +219,14 @@ function updateDownloadLink(releases, os, arch) {
 
   // On macOS, update the download buttons for both architectures, x64 and arm64
   if (os === 'macos') {
-    // Filter releases by x64 architecture 
+    // Filter releases by x64 architecture
     const releasesForX64 = releasesForChannel.filter(function (release) {
       return release.dart_sdk_arch === 'x64';
     });
 
     updateReleaseDownloadButton(releasesForX64, releases.base_url, os);
 
-    // Filter releases by arm64 architecture 
+    // Filter releases by arm64 architecture
     const releasesForArm64 = releasesForChannel.filter(function (release) {
       return release.dart_sdk_arch === 'arm64';
     });
@@ -271,6 +272,7 @@ function getProvenanceLink(os, release, date, channel) {
   const provenanceAnchor = document.createElement('a');
   provenanceAnchor.href = `${baseUrl}${channel}/${os}/flutter_${os}_${release.version}-${channel}.${extension}.intoto.jsonl`;
   provenanceAnchor.textContent = `${release.version} file`;
+  provenanceAnchor.target = '_blank';
   return provenanceAnchor;
 }
 

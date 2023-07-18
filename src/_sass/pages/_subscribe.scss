@@ -31,7 +31,7 @@ $mobile-size: 640px;
   display: flex;
   flex-direction: row;
   max-width: 960px;
-  margin: 48px auto 0px auto;
+  margin: 48px auto 0 auto;
   padding: 48px 48px 0 48px;
 
   input {
@@ -97,7 +97,7 @@ $mobile-size: 640px;
 
     > label {
       margin-left: 12px;
-      margin-bottom: 0px;
+      margin-bottom: 0;
     }
   }
 

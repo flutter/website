@@ -1,3 +1,6 @@
+@use '../base/variables' as *;
+@use '../vendor/bootstrap';
+
 // Header clearance of top nav
 @mixin _header-clearance {
   $clearance: 100px;
@@ -15,7 +18,7 @@
 
 // Material design icons
 @mixin md-icon-content($icon-name, $width: '', $bottom: true) {
-  font-family: 'Material Icons';
+  font-family: $site-font-family-icon;
   content: $icon-name;
   @if $width != '' {
     max-width: $width; // Improves UX by minimizing flicker due to delay in font rendering
@@ -41,19 +44,19 @@
     }
   }
 
-  @include media-breakpoint-up(md) {
+  @include bootstrap.media-breakpoint-up(md) {
     border-left: 1px solid $site-color-light-grey;
     min-height: calc(100vh - #{$site-header-height} - #{$site-footer-md-default-height});
   }
 
   &__title {
-    margin-bottom: bs-spacer(12);
+    margin-bottom: bootstrap.bs-spacer(12);
 
     @at-root {
       #page-github-links {
         float: right;
         .btn {
-          padding: 0 ($btn-padding-x * 0.5);
+          padding: 0 (bootstrap.$btn-padding-x * 0.5);
           border: none;
           box-shadow: none;
 
