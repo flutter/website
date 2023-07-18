@@ -257,7 +257,7 @@ it is removed from the Flutter API.
 
 ## Timeline
 
-Landed in version: xxx<br>
+Landed in version: 3.13.0-4.0.pre<br>
 In stable release: not yet
 
 ## References
