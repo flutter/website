@@ -243,8 +243,10 @@ function getProvenanceLink(os, release, date, channel) {
 
 
 // Send requests to render the tables.
-$(function () {
-  if ($('#sdk-archives').length) {
+(() => {
+
+  const foundSdkArchivesElement = document.getElementById('sdk-archives') !== null;
+  if (foundSdkArchivesElement) {
     fetchFlutterReleases('windows', updateTable, updateTableFailed);
     fetchFlutterReleases('macos', updateTable, updateTableFailed);
     fetchFlutterReleases('linux', updateTable, updateTableFailed);
@@ -255,4 +257,4 @@ $(function () {
     fetchFlutterReleases('macos', updateDownloadLink, updateDownloadLinkFailed);
   if ($('.download-latest-link-linux').length)
     fetchFlutterReleases('linux', updateDownloadLink, updateDownloadLinkFailed);
-});
+})();
