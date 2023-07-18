@@ -122,8 +122,11 @@ function createTableCell(content, dataClass) {
 }
 
 function updateTableFailed(os) {
-  const tab = $(`#tab-os-${os}`);
-  tab.find('.loading').text('Failed to load releases. Refresh page to try again.');
+  const tab = document.getElementById(`tab-os-${os}`);
+  const loadingElements = tab.querySelectorAll('.loading');
+  loadingElements.forEach(function (element) {
+    element.textContent = 'Failed to load releases. Refresh page to try again.';
+  });
 }
 
 let macOSArm64ArchiveFilename = '';
