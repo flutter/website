@@ -2,8 +2,8 @@
 title: Persist data with SQLite
 description: How to use SQLite to store and retrieve data.
 prev:
-  title: Work with WebSockets
-  path: /cookbook/networking/web-sockets
+  title: Parse JSON in the background
+  path: /cookbook/networking/background-parsing
 next:
   title: Read and write files
   path: /cookbook/persistence/reading-writing-files

@@ -5,8 +5,8 @@ prev:
   title: Fetch data from the internet
   path: /cookbook/networking/fetch-data
 next:
-  title: Parse JSON in the background
-  path: /cookbook/networking/background-parsing
+  title: Send data to the internet
+  path: /cookbook/networking/send-data
 ---
 
 <?code-excerpt path-base="cookbook/networking/authenticated_requests/"?>

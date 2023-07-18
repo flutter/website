@@ -2,11 +2,11 @@
 title: Communicate with WebSockets
 description: How to connect to a web socket.
 prev:
-  title: Update data over the internet
-  path: /cookbook/networking/update-data
+  title: Delete data on the internet
+  path: /cookbook/networking/delete-data
 next:
-  title: Persist data with SQLite
-  path: /cookbook/persistence/sqlite
+  title: Parse JSON in the background
+  path: /cookbook/networking/background-parsing
 ---
 
 <?code-excerpt path-base="cookbook/networking/web_sockets/"?>

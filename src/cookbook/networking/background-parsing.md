@@ -2,11 +2,11 @@
 title: Parse JSON in the background
 description: How to perform a task in the background.
 prev:
-  title: Make authenticated requests
-  path: /cookbook/networking/authenticated-requests
+  title: Communicate with WebSockets
+  path: /cookbook/networking/web-sockets
 next:
-  title: Send data to the internet
-  path: /cookbook/networking/send-data
+  title: Persist data with SQLite
+  path: /cookbook/persistence/sqlite
 ---
 
 <?code-excerpt path-base="cookbook/networking/background_parsing/"?>

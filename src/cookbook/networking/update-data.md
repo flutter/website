@@ -5,8 +5,8 @@ prev:
   title: Send data to the internet
   path: /cookbook/networking/send-data
 next:
-  title: Work with WebSockets
-  path: /cookbook/networking/web-sockets
+  title: Delete data on the internet
+  path: /cookbook/networking/delete-data
 ---
 
 <?code-excerpt path-base="cookbook/networking/update_data/"?>
