@@ -220,7 +220,10 @@ function updateDownloadLink(releases, os, arch) {
 }
 
 function updateDownloadLinkFailed(os) {
-  $(`.download-latest-link-${os}`).text('(failed)');
+  const allDownloadLinks = document.querySelectorAll(`.download-latest-link-${os}`);
+  allDownloadLinks.forEach(function (link) {
+    link.textContent = '(failed)';
+  });
 }
 
 function getProvenanceLink(os, release, date, channel) {
