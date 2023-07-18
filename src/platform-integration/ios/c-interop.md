@@ -20,7 +20,6 @@ _native interface_ and _language bindings._
   This feature is not yet supported for web plugins.
 {{site.alert.end}}
 
-
 [android-ffi]: {{site.url}}/platform-integration/android/c-interop
 [macos-ffi]: {{site.url}}/platform-integration/macos/c-interop
 [dart:ffi]: {{site.dart.api}}/dev/dart-ffi/dart-ffi-library.html
@@ -218,3 +217,4 @@ the symbols are stripped by Xcode.
 1. In Xcode, go to **Target Runner > Build Settings > Strip Style**.
 2. Change from **All Symbols** to **Non-Global Symbols**.
 
+{% include docs/resource-links/ffi-video-resources.md %}
