@@ -1,6 +1,9 @@
 // Number of releases to show by default (rest will be behind a "show all" link).
 const releasesToShow = 99999;
 
+// The Flutter SDK archive filename prefix.
+const FILE_NAME_PREFIX = 'flutter_';
+
 // Fetches Flutter release JSON for the given OS and calls the callback once the data is available.
 function fetchFlutterReleases(os, callback, errorCallback) {
   // OS: windows, macos, linux
