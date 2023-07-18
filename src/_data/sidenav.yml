@@ -266,8 +266,8 @@
       permalink: /testing/plugins-in-tests
     - title: Debugging apps programmatically
       permalink: /testing/code-debugging
-    - title: Using an OEM debugger
-      permalink: /testing/oem-debuggers
+    - title: Using a native language debugger
+      permalink: /testing/native-debugging
     - title: Flutter's build modes
       permalink: /testing/build-modes
     - title: Common Flutter errors

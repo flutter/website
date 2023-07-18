@@ -21,7 +21,22 @@ Running Gradle task 'bundleDebug'...                               27.1s
 ✓ Built build/app/outputs/bundle/debug/app-debug.aab.
 ```
 
-#### Start debugging with VS Code first
+{% comment %} Nav tabs {% endcomment -%}
+<ul class="nav nav-tabs" id="vscode-to-android-studio-setup" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="from-vscode-to-android-studio-tab" href="#from-vscode-to-android-studio" role="tab" aria-controls="from-vscode-to-android-studio" aria-selected="true">Start from VS Code</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="from-android-studio-to-vscode-tab" href="#from-android-studio-to-vscode" role="tab" aria-controls="from-android-studio-to-vscode" aria-selected="false">Start from Android Studio</a>
+    </li>
+</ul>
+
+{% comment %} Tab panes {% endcomment -%}
+<div class="tab-content">
+
+<div class="tab-pane active" id="from-vscode-to-android-studio" role="tabpanel" aria-labelledby="from-vscode-to-android-studio-tab" markdown="1">
+
+#### Start debugging with VS Code first {#from-vscode-to-android-studio}
 
 If you use VS Code to debug most of your code, start with this section.
 
@@ -29,67 +44,40 @@ If you use VS Code to debug most of your code, start with this section.
 
 #### Attach to the Flutter process in Android Studio
 
-1. Click the **Attach debugger to Android process** button.
-   (![Tiny green bug superimposed with a light grey arrow](/assets/images/docs/testing/debugging/native/android-studio/attach-process-button.png))
-
-    {{site.alert.tip}}
-      If this button doesn't appear in the **Projects** menu bar, verify that
-      you opened Flutter _application_ project but _not a Flutter plugin_.
-    {{site.alert.end}}
-
-1. The **process** dialog displays one entry for each connected device.
-   Select **show all processes** to display available processes for each
-   device.
-
-1. Choose the process to which you want to attach.
-   For this guide, select the `com.example.my_app` process
-   using the **Emulator Pixel_5_API_33**.
-
-{% comment %}
-   ![Attach to Process dialog box open in Android Studio](/assets/images/docs/testing/debugging/native/android-studio/attach-process-dialog.png)
-   <div markdown="1">{:.figure-caption}
-   Flutter app in Android device displaying two buttons.
-   </div>
-{% endcomment %}
-
-1. Locate the tab for **Android Debugger** in the **Debug** pane.
-
-1. In the **Project** pane, expand
-   **my_app_android** <span aria-label="and then">></span>
-   **android** <span aria-label="and then">></span>
-   **app** <span aria-label="and then">></span>
-   **src** <span aria-label="and then">></span>
-   **main** <span aria-label="and then">></span>
-   **java** <span aria-label="and then">></span>
-   **io.flutter plugins**.
-
-1. Double click **GeneratedProjectRegistrant** to open the
-   Java code in the **Edit** pane.
-
-{% comment %}
-   !['The Android Project view highlighting the GeneratedPluginRegistrant.java file.'](/assets/images/docs/testing/debugging/native/android-studio/debug-open-java-code.png){:width="100%"}
-   <div markdown="1">{:.figure-caption}
-   The Android Project view highlighting the `GeneratedPluginRegistrant.java` file.
-   </div>
-{% endcomment %}
-
-At the end of this procedure, both the Dart and Android debuggers interact
-with the same process.
-Use either, or both, to set breakpoints, examine stack, resume execution
-and the like. In other words, debug!
-
-{% comment %}
-![The Dart debug pane with two breakpoints set in `lib/main.dart`](/assets/images/docs/testing/debugging/native/dart-debugger.png){:width="100%"}
-<div markdown="1">{:.figure-caption}
-The Dart debug pane with two breakpoints set in `lib/main.dart`.
-</div>
-{% endcomment %}
-
-{% comment %}
-!['The Android debug pane with one breakpoint set in GeneratedPluginRegistrant.java.'](/assets/images/docs/testing/debugging/native/android-studio/debugger-active.png)
-<div markdown="1">{:.figure-caption}
-The Android debug pane with one breakpoint set in GeneratedPluginRegistrant.java.
-</div>
-{% endcomment %}
+{% include docs/debug/debug-android-attach-process.md %}
 
 [`url_launcher`]: {{site.url}}/examples/testing/oem_debugging
+
+</div>
+
+<div class="tab-pane" id="from-android-studio-to-vscode" role="tabpanel" aria-labelledby="from-android-studio-to-vscode-tab" markdown="1">
+
+#### Start debugging with Android Studio first {#from-android-studio}
+
+If you use Android Studio to debug most of your code, start with this section.
+
+1. To open the Flutter app directory, go to
+   **File** <span aria-label="and then">></span>
+   **Open...** and choose the `my_app` directory.
+
+1. Open the `lib/main.dart` file.
+
+1. Choose a virtual Android device.
+   Go to the toolbar, open the leftmost dropdown menu, and click on
+   **Open Android Emulator: \<device\>**.
+
+   You can choose any installed emulator that's doesn't include `arm64`.
+
+1. From that same menu, select the virtual Android device.
+
+1. From the toolbar, click **Run main.dart**.
+
+   You can also press <kbd>Control</kbd> + <kbd>R</kbd>.
+
+   After the app displays in the emulator, continue to the next step.
+
+{% include docs/debug/debug-android-attach-process.md %}
+
+</div>
+</div>
+{% comment %} End: Tab panes. {% endcomment -%}

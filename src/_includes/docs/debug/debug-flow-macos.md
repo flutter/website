@@ -1,6 +1,6 @@
 #### Build the macOS version of the Flutter app in the Terminal
 
-To generate the needed iOS platform dependencies,
+To generate the needed macOS platform dependencies,
 run the `flutter build` command.
 
 ```terminal
@@ -11,7 +11,42 @@ $ flutter build macos --debug
 Building macOS application...
 ```
 
-#### Start debugging with Xcode first
+{% comment %} Nav tabs {% endcomment -%}
+<ul class="nav nav-tabs" id="vscode-to-xcode-macos-setup" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="from-vscode-to-xcode-macos-tab" href="#from-vscode-to-xcode-macos" role="tab" aria-controls="from-vscode-to-xcode-macos" aria-selected="true">Start from VS Code</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="from-xcode-macos-tab" href="#from-xcode-macos" role="tab" aria-controls="from-xcode-macos" aria-selected="false">Start from Xcode</a>
+    </li>
+</ul>
+
+{% comment %} Tab panes {% endcomment -%}
+<div class="tab-content">
+
+<div class="tab-pane active" id="from-vscode-to-xcode-macos" role="tabpanel" aria-labelledby="from-vscode-to-xcode-macos-tab" markdown="1">
+
+#### Start debugging with VS Code first {#vscode-macos}
+
+##### Start the debugger in VS Code
+
+{% include docs/debug/debug-flow-vscode-as-start.md %}
+
+##### Attach to the Flutter process in Xcode
+
+1. To attach to the Flutter app, go to
+   **Debug** <span aria-label="and then">></span>
+   **Attach to Process** <span aria-label="and then">></span>
+   **Runner**.
+
+   **Runner** should be at the top of the **Attach to Process** menu
+   under the **Likely Targets** heading.
+
+</div>
+
+<div class="tab-pane" id="from-xcode-macos" role="tabpanel" aria-labelledby="from-xcode-macos-tab" markdown="1">
+
+#### Start debugging with Xcode first {#xcode-macos}
 
 ##### Start the debugger in Xcode
 
@@ -58,18 +93,6 @@ Building macOS application...
    ![Alt text](/assets/images/docs/testing/debugging/vscode-ui/screens/vscode-add-attach-uri-filled.png)
 {% endcomment %}
 
-#### Start debugging with VS Code first
-
-##### Start the debugger in VS Code
-
-{% include docs/debug/debug-flow-vscode-as-start.md %}
-
-##### Attach to the Flutter process in Xcode
-
-1. To attach to the Flutter app, go to
-   **Debug** <span aria-label="and then">></span>
-   **Attach to Process** <span aria-label="and then">></span>
-   **Runner**.
-
-   **Runner** should be at the top of the **Attach to Process** menu
-   under the **Likely Targets** heading.
+</div>
+</div>
+{% comment %} End: Tab panes. {% endcomment -%}

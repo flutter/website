@@ -243,7 +243,7 @@ test Flutter app. This update adds native code to debug.
         }
       }
 
-      Future<void> _launchInWebViewOrVC(Uri url) async {
+      Future<void> _launchInWebView(Uri url) async {
         if (!await launchUrl(
           url,
           mode: LaunchMode.inAppWebView,
@@ -287,7 +287,7 @@ test Flutter app. This update adds native code to debug.
                 const Padding(padding: EdgeInsets.all(16)),
                 FilledButton(
                   onPressed: () => setState(() {
-                    _launched = _launchInWebViewOrVC(toLaunch);
+                    _launched = _launchInWebView(toLaunch);
                   }),
                   child: const Text('Launch in app'),
                 ),
@@ -365,7 +365,7 @@ when editing native code.
 
 To debug native Android code, you need a Flutter app that contains
 Android code. In this section, you learn how to connect
-the Dart and Gradle debuggers to your app.
+the Dart, Java, and Kotlin debuggers to your app.
 You don't need VS Code to debug both Dart and Android code.
 This guide includes the VS Code instructions to be consistent
 with the Xcode and Visual Studio guides.
@@ -411,7 +411,8 @@ in [Update test Flutter app](#update-test-flutter-app).
 
 ## Resources
 
-Check out the following resources on debugging Flutter, iOS, and Android:
+Check out the following resources on debugging Flutter, iOS, Android,
+macOS and Windows:
 
 ### Flutter
 
@@ -453,6 +454,6 @@ You can find debugging resources on [Microsoft Learn][].
 [DevTools]: {{site.url}}/tools/devtools
 [Flutter inspector]: {{site.url}}/tools/devtools/inspector
 [Instruments Help]: https://help.apple.com/instruments/mac/current/
-[Microsoft Learn]: https://learn.microsoft.com/en-us/visualstudio/
-[Visual Studio Debugger]: https://learn.microsoft.com/en-us/visualstudio/debugger/?view=vs-2022
-[Learn to debug C++ code using Visual Studio]: https://learn.microsoft.com/en-us/visualstudio/debugger/getting-started-with-the-debugger-cpp?view=vs-2022
+[Microsoft Learn]: https://learn.microsoft.com/visualstudio/
+[Visual Studio Debugger]: https://learn.microsoft.com/visualstudio/debugger/?view=vs-2022
+[Learn to debug C++ code using Visual Studio]: https://learn.microsoft.com/visualstudio/debugger/getting-started-with-the-debugger-cpp?view=vs-2022
