@@ -1,4 +1,5 @@
 #### Build the Windows version of the Flutter app in PowerShell or the Command Prompt
+{:.no_toc}
 
 To generate the needed Windows platform dependencies,
 run the `flutter build` command.
@@ -28,10 +29,12 @@ Building Windows application...                                    31.4s
 <div class="tab-pane active" id="from-vscode-to-vs" role="tabpanel" aria-labelledby="from-vscode-to-vs-tab" markdown="1">
 
 #### Start debugging with VS Code first {#vscode-windows}
+{:.no_toc}
 
 If you use VS Code to debug most of your code, start with this section.
 
 ##### Start the debugger in VS Code
+{:.no_toc}
 
 {% include docs/debug/debug-flow-vscode-as-start.md %}
 
@@ -82,10 +85,12 @@ If you use VS Code to debug most of your code, start with this section.
 <div class="tab-pane" id="from-vs-to-vscode" role="tabpanel" aria-labelledby="from-vs-to-vscode-tab" markdown="1">
 
 #### Start debugging with Visual Studio first
+{:.no_toc}
 
 If you use Visual Studio to debug most of your code, start with this section.
 
 ##### Start the local Windows debugger
+{:.no_toc}
 
 1. To open the project solution file, go to
    **File** <span aria-label="and then">></span>
@@ -122,6 +127,7 @@ If you use Visual Studio to debug most of your code, start with this section.
 1. Copy the Dart VM service URI.
 
 ##### Attach to the Dart VM in VS Code
+{:.no_toc}
 
 1. To open the command palette, go to
    **View** <span aria-label="and then">></span>

@@ -8,6 +8,7 @@
 [`flutter_gdb`]: https://github.com/flutter/engine/blob/main/sky/tools/flutter_gdb
 
 #### Build the Android version of the Flutter app in the Terminal
+{:.no_toc}
 
 To generate the needed Android platform dependencies,
 run the `flutter build` command.
@@ -44,6 +45,7 @@ If you use VS Code to debug most of your code, start with this section.
 {% include docs/debug/debug-flow-vscode-as-start.md %}
 
 #### Attach to the Flutter process in Android Studio
+{:.no_toc}
 
 {% include docs/debug/debug-android-attach-process.md %}
 
@@ -54,6 +56,7 @@ If you use VS Code to debug most of your code, start with this section.
 <div class="tab-pane" id="from-android-studio-to-vscode" role="tabpanel" aria-labelledby="from-android-studio-to-vscode-tab" markdown="1">
 
 #### Start debugging with Android Studio first {#from-android-studio}
+{:.no_toc}
 
 If you use Android Studio to debug most of your code, start with this section.
 

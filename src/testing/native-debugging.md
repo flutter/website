@@ -265,7 +265,7 @@ test Flutter app. This update adds native code to debug.
         final Uri toLaunch = Uri(
             scheme: 'https',
             host: 'docs.flutter.dev',
-            path: 'testing/oem-debuggers');
+            path: 'testing/native-debugging');
         return Scaffold(
           appBar: AppBar(
             title: Text(widget.title),

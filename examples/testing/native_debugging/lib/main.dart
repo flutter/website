@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
-  Future<void> _launchInWebViewOrVC(Uri url) async {
+  Future<void> _launchInWebView(Uri url) async {
     if (!await launchUrl(
       url,
       mode: LaunchMode.inAppWebView,
@@ -67,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
     final Uri toLaunch = Uri(
         scheme: 'https',
         host: 'docs.flutter.dev',
-        path: 'testing/oem-debuggers');
+        path: 'testing/native-debugging');
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -89,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
             const Padding(padding: EdgeInsets.all(16)),
             FilledButton(
               onPressed: () => setState(() {
-                _launched = _launchInWebViewOrVC(toLaunch);
+                _launched = _launchInWebView(toLaunch);
               }),
               child: const Text('Launch in app'),
             ),
