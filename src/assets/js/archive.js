@@ -189,8 +189,15 @@ function updateReleaseDownloadButton(releases, base_url, os, arch = '') {
   })
 
   //Update download-filename placeholders:
-  $(`.download-latest-link-filename-${os}${archString}`).text(archiveFilename);
-  $('.download-latest-link-filename').text(archiveFilename);
+  const downloadLinkOs = document.querySelectorAll(`.download-latest-link-filename-${os}${archString}`);
+  downloadLinkOs.forEach(function(element) {
+    element.textContent = archiveFilename;
+  });
+  
+  const genericDownloadLink = document.querySelectorAll('.download-latest-link-filename');
+  genericDownloadLink.forEach(function(element) {
+    element.textContent = archiveFilename;
+  });
 
   // Update inlined filenames in <code> element text nodes:
   const filteredElements = filterCodeElements();
@@ -229,7 +236,7 @@ function updateDownloadLink(releases, os, arch) {
       appleSilicons.forEach(function (element) {
         element.remove();
       });
-      
+
       return;
     }
 
