@@ -133,16 +133,24 @@ let macOSArm64ArchiveFilename = '';
 
 // Listen for the macOS arm64 download link to be clicked and update
 // the example unzip command with correct arm64 filename
-$('.download-latest-link-macos-arm64').click(function () {
-  // Update inlined filenames in <code> element text nodes with arm64 filename:
-  const fileNamePrefix = 'flutter_';
-  const code = $(`code:contains("${fileNamePrefix}")`);
-  const textNode = $(code).contents().filter(function () {
-    return this.nodeType === 3 && this.textContent.includes(fileNamePrefix);
-  });
+(() => {
+  document.querySelector('.download-latest-link-macos-arm64')
+    .addEventListener('click', function () {
+      // Update inlined filenames in <code> element text nodes with arm64 filename:
+      const fileNamePrefix = 'flutter_';
 
-  $(textNode).replaceWith(`unzip ~/Downloads/${macOSArm64ArchiveFilename}`);
-});
+      const codeElements = document.querySelectorAll('code');
+      const filteredElements = Array.from(codeElements).filter(function (element) {
+        return Array.from(element.childNodes).some(function (node) {
+          return node.nodeType === Node.TEXT_NODE && node.textContent.includes(fileNamePrefix);
+        });
+      });
+
+      filteredElements.forEach(function (node) {
+        node.textContent = `unzip ~/Downloads/${macOSArm64ArchiveFilename}`;
+      });
+    });
+})();
 
 /*
 releases: A list of Flutter releases 
