@@ -140,14 +140,28 @@ let macOSArm64ArchiveFilename = '';
   document.querySelector('.download-latest-link-macos-arm64')
     .addEventListener('click', function () {
       // Update inlined filenames in <code> element text nodes with arm64 filename:
-      const fileNamePrefix = 'flutter_';
+      const filteredElements = filterCodeElements();
 
-      const codeElements = document.querySelectorAll('code');
-      const filteredElements = Array.from(codeElements).filter(function (element) {
-        return Array.from(element.childNodes).some(function (node) {
-          return node.nodeType === Node.TEXT_NODE && node.textContent.includes(fileNamePrefix);
-        });
+      filteredElements.forEach(function (node) {
+        node.textContent = `unzip ~/Downloads/${macOSArm64ArchiveFilename}`;
       });
+    });
+})();
+
+/**
+ * Filters code elements that contain a specific prefix.
+ *
+ * @returns {Array<HTMLElement>} An array of filtered code elements.
+ */
+function filterCodeElements() {
+  const codeElements = document.querySelectorAll('code');
+  const filteredElements = Array.from(codeElements).filter(function (element) {
+    return Array.from(element.childNodes).some(function (node) {
+      return node.nodeType === Node.TEXT_NODE && node.textContent.includes(FILE_NAME_PREFIX);
+    });
+  });
+  return filteredElements;
+}
 
 /**
  * Update the download button for the latest release.
