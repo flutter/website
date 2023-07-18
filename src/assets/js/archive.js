@@ -160,16 +160,16 @@ function updateReleaseDownloadButton(releases, base_url, os, arch = '') {
   const release = releases[0];
   const linkSegments = release.archive.split('/');
   const archiveFilename = linkSegments[linkSegments.length - 1]; // Just the filename part of url
-  const downloadLink = $(`.download-latest-link-${os}${archString}`);
 
   if (os === 'macos' && arch === 'arm64') {
     macOSArm64ArchiveFilename = archiveFilename;
   }
 
-  downloadLink
-    .text(archiveFilename)
-    .attr('href', `${base_url}/${release.archive}`);
-
+  const downloadLink = document.querySelectorAll(`.download-latest-link-${os}${archString}`);
+  downloadLink.forEach((link) => {
+    link.textContent = archiveFilename;
+    link.setAttribute('href', `${base_url}/${release.archive}`);
+  })
 
   //Update download-filename placeholders:
   $(`.download-latest-link-filename-${os}${archString}`).text(archiveFilename);
