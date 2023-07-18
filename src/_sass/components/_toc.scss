@@ -1,5 +1,8 @@
+@use '../base/variables' as *;
+@use '../vendor/bootstrap';
+
 #site-toc--side {
-  $padding: map-get($spacers, 2);
+  $padding: bootstrap.bs-spacer(2);
 
   display: none;
   right: 0;
@@ -8,9 +11,9 @@
   .nav-link {
     padding-bottom: $padding;
 
-    color: theme-color('primary');
+    color: bootstrap.theme-color('primary');
     &.active {
-      color: theme-color('secondary'); // $gray-dark;
+      color: bootstrap.theme-color('secondary'); // $gray-dark;
       font-weight: 500;
     }
   }
@@ -24,7 +27,7 @@
 .site-toc {
   $line-height: normal;
 
-  @include media-breakpoint-up(xl) {
+  @include bootstrap.media-breakpoint-up(xl) {
     padding-bottom: $site-content-top-padding;
     padding-top: $site-content-top-padding;
 
@@ -35,7 +38,7 @@
   }
 
   .nav-item {
-    font-size: $font-size-sm;
+    font-size: bootstrap.$font-size-sm;
 
     .nav-link {
       color: $site-color-body-light;
@@ -46,13 +49,13 @@
 
   &__title {
     font-family: $site-font-family-alt;
-    font-size: $font-size-lg;
-    margin-bottom: bs-spacer(2);
+    font-size: bootstrap.$font-size-lg;
+    margin-bottom: bootstrap.bs-spacer(2);
   }
 
   &--button__page-top {
-    @include float-right;
-    font-size: $font-size-sm;
+    float: right !important;
+    font-size: bootstrap.$font-size-sm;
     line-height: $line-height;
     padding-top: 0;
     padding-right: 0;
@@ -60,6 +63,21 @@
     &::after {
       content: 'vertical_align_top'; // 'keyboard_arrow_up';
       font: $site-font-icon;
+    }
+  }
+}
+
+.site-toc--inline, .site-toc--side {
+  > ul {
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+
+    ul {
+      list-style: none;
+      margin-left: 15px;
+      padding-left: 0;
+      padding-top: 8px;
     }
   }
 }
