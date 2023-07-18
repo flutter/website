@@ -192,7 +192,8 @@ function updateReleaseDownloadButton(releases, base_url, os, arch = '') {
 
 function updateDownloadLink(releases, os, arch) {
   const channel = 'stable';
-  const releasesForChannel = releases.releases.filter(function (release) {
+  const releasesOrDefault = releases?.releases ?? [];
+  const releasesForChannel = Array.from(releasesOrDefault).filter(function (release) {
     return release.channel === channel;
   });
   if (!releasesForChannel.length)
@@ -214,10 +215,11 @@ function updateDownloadLink(releases, os, arch) {
 
     // If no arm64 releases available, delete all apple silicon elements
     if (!releasesForArm64.length) {
-      $('.apple-silicon').each(function () {
-        this.remove();
-      })
-
+      const appleSilicons = document.querySelectorAll('.apple-silicon');
+      appleSilicons.forEach(function (element) {
+        element.remove();
+      });
+      
       return;
     }
 
