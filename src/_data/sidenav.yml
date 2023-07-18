@@ -115,8 +115,9 @@
           permalink: /ui/advanced/gestures
         - title: Shaders
           permalink: /ui/advanced/shaders
+    - title: Scrolling
         - title: Slivers
-          permalink: /ui/advanced/slivers
+          permalink: /ui/scrolling/slivers
     - title: Widget catalog
       permalink: /ui/widgets
 
