@@ -58,6 +58,8 @@ module ActiveNavGenerator
         return
       end
 
+      first_generation = @last_sidenav_hash.nil?
+
       @last_sidenav_hash = new_sidenav_hash
 
       results = {}
@@ -66,6 +68,11 @@ module ActiveNavGenerator
 
       @last_activenav_results = results
       site.data['activenav'] = results
+
+      unless first_generation
+          puts('      Regenerating with new sidenav data!')
+          site.regenerator.clear
+      end
     end
   end
 end
