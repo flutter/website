@@ -146,18 +146,14 @@ let macOSArm64ArchiveFilename = '';
         });
       });
 
-      filteredElements.forEach(function (node) {
-        node.textContent = `unzip ~/Downloads/${macOSArm64ArchiveFilename}`;
-      });
-    });
-})();
-
-/*
-releases: A list of Flutter releases 
-base_url: link for sdk download link such as storage.googleapis.com...
-os: macos, windows, or linux
-[optional] arch: Only specify if there's additional architecture, such as arm64
-*/
+/**
+ * Update the download button for the latest release.
+ * @constructor
+ * @param {Array} releases - A list of Flutter releases 
+ * @param {string} base_url - link for sdk download link such as storage.googleapis.com...
+ * @param {string} os - macos, windows, or linux
+ * @param {string} [arch=''] - Only specify if there's additional architecture, such as arm64
+ */
 function updateReleaseDownloadButton(releases, base_url, os, arch = '') {
   const archString = !arch.length ? '' : `-${arch}`;
 
