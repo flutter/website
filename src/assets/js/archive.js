@@ -5,7 +5,7 @@ const releasesToShow = 99999;
 function fetchFlutterReleases(os, callback, errorCallback) {
   // OS: windows, macos, linux
   const url = `https://storage.googleapis.com/flutter_infra_release/releases/releases_${os}.json`;
-  fetch(url, { method: 'GET'})
+  fetch(url, { method: 'GET' })
     .then(response => response.json())
     .then(data => callback(data, os))
     .catch(_ => {
@@ -28,7 +28,7 @@ function updateTable(releases, os) {
 
     table.classList.add('collapsed');
     const loadingElements = table.querySelectorAll('.loading');
-    loadingElements.forEach(function(element) {
+    loadingElements.forEach(function (element) {
       element.remove();
     });
 
@@ -42,7 +42,7 @@ function updateTable(releases, os) {
         const showAll = document.createElement('a');
         showAll.textContent = 'Show all...';
         showAll.href = '#';
-        showAll.addEventListener('click', function(event) {
+        showAll.addEventListener('click', function (event) {
           this.closest('table').classList.remove('collapsed');
           this.closest('tr').remove();
           event.preventDefault();
@@ -61,11 +61,11 @@ function updateTable(releases, os) {
         row.classList.add('overflow');
       }
       table.appendChild(row);
-      
+
       const hashLabel = document.createElement('span');
       hashLabel.textContent = release.hash.substr(0, 7);
       hashLabel.classList.add('git-hash');
-      
+
       const url = releases.base_url + '/' + release.archive;
       const downloadLink = document.createElement('a');
       downloadLink.href = url;
@@ -80,8 +80,8 @@ function updateTable(releases, os) {
       const date = new Date(Date.parse(release.release_date));
 
       const provenance = getProvenanceLink(os, release, date, channel);
-    
-      
+
+
       const cells = [
         createTableCell(downloadLink),
         createTableCell(dartSdkArch),
@@ -90,7 +90,7 @@ function updateTable(releases, os) {
         createTableCell(dartSdkVersion),
         createTableCell(provenance)
       ];
-      
+
       cells.forEach(function (cell) {
         row.appendChild(cell);
       });
@@ -117,7 +117,7 @@ function createTableCell(content, dataClass) {
   } else {
     cell.appendChild(content);
   }
-  
+
   return cell;
 }
 
@@ -251,12 +251,20 @@ function getProvenanceLink(os, release, date, channel) {
     fetchFlutterReleases('macos', updateTable, updateTableFailed);
     fetchFlutterReleases('linux', updateTable, updateTableFailed);
   }
-  
+
   // The checks below come from getting started page. see https://github.com/flutter/website/issues/8889#issuecomment-1639033078
-  if ($('.download-latest-link-windows').length)
+  const foundLatestWindows = document.getElementsByClassName('download-latest-link-windows').length > 0;
+  if (foundLatestWindows) {
     fetchFlutterReleases('windows', updateDownloadLink, updateDownloadLinkFailed);
-  if ($('.download-latest-link-macos').length)
+  }
+
+  const foundLatestMacOS = document.getElementsByClassName('download-latest-link-macos').length > 0;
+  if (foundLatestMacOS) {
     fetchFlutterReleases('macos', updateDownloadLink, updateDownloadLinkFailed);
-  if ($('.download-latest-link-linux').length)
+  }
+
+  const foundLatestLinux = document.getElementsByClassName('download-latest-link-linux').length > 0;
+  if (foundLatestLinux) {
     fetchFlutterReleases('linux', updateDownloadLink, updateDownloadLinkFailed);
+  }
 })();
