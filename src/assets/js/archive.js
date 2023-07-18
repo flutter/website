@@ -251,6 +251,8 @@ function getProvenanceLink(os, release, date, channel) {
     fetchFlutterReleases('macos', updateTable, updateTableFailed);
     fetchFlutterReleases('linux', updateTable, updateTableFailed);
   }
+  
+  // The checks below come from getting started page. see https://github.com/flutter/website/issues/8889#issuecomment-1639033078
   if ($('.download-latest-link-windows').length)
     fetchFlutterReleases('windows', updateDownloadLink, updateDownloadLinkFailed);
   if ($('.download-latest-link-macos').length)
