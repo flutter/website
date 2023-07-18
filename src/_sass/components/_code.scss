@@ -1,8 +1,13 @@
+@use '../base/variables' as *;
+@use '../base/material-colors' as *;
+@use '../vendor/bootstrap';
+@use '../vendor/prettify';
+
 // NOTE moved from _code to a shared module since imports end
 // up being sneaky and messy in terms of ordering
 @mixin pre-defaults {
   background-color: $site-color-codeblock-bg;
-  padding: bs-spacer(3) bs-spacer(4);
+  padding: bootstrap.bs-spacer(3) bootstrap.bs-spacer(4);
 }
 
 //
@@ -83,8 +88,9 @@ pre.console-output {
   .nl { @extend .kwd; } /* Name.Label */
   .no { @extend .lit; } /* Name.Constant */
   .nt { @extend .tag; } /* Name.Tag */
-}
 
+  .gp { user-select: none; } /* Generic.Prompt */
+}
 
 code {
   color: #008f83;
@@ -96,7 +102,7 @@ pre {
 
 // Give code blocks the same margin-bottom as regular paragraphs.
 div.highlighter-rouge {
-  margin-bottom: bs-spacer(4);
+  margin-bottom: bootstrap.bs-spacer(4);
 }
 
 pre > span.strike { text-decoration: line-through; }
@@ -110,30 +116,30 @@ pre > span.strike { text-decoration: line-through; }
     display: table-row;
     padding-left: 8px;
     &:before {
-      font-family: $font-family-monospace;
+      font-family: bootstrap.$font-family-monospace;
       content: '/*' counter(code-note-counter) '*/' ;
       display: table-cell;
       text-align: right;
-      color: $teal;
-      padding-right: $font-size-base * 0.5;
+      color: bootstrap.$teal;
+      padding-right: bootstrap.$font-size-base * 0.5;
       // background-color: lightyellow;
     }
   }
 }
 
 @mixin code-excerpt-border($side: '') {
-  border#{$side}: $border-width solid $border-color;
+  border#{$side}: bootstrap.$border-width solid bootstrap.$border-color;
 }
 
 .code-excerpt {
   &__code {
-    margin-bottom: bs-spacer(4);
+    margin-bottom: bootstrap.bs-spacer(4);
     position: relative;
 
     pre {
       @include code-excerpt-border;
 
-      background-color: $gray-100;
+      background-color: bootstrap.$gray-100;
       margin-bottom: 0;
     }
   }
@@ -143,22 +149,20 @@ pre > span.strike { text-decoration: line-through; }
     border: none;
     cursor: pointer;
     color: lighten($site-color-body, 20%); // Offers better contrast on dark bg
-    margin-top: bs-spacer(2);
+    margin-top: bootstrap.bs-spacer(2);
     outline: none !important;
     position: absolute;
     right: 0;
   }
 
   &__header {
-    background-color: $gray-200;
+    background-color: bootstrap.$gray-200;
     @include code-excerpt-border('-top');
     @include code-excerpt-border('-left');
     @include code-excerpt-border('-right');
     font-size: $site-spacer * .875;
-    font-weight: $font-weight-bold;
-    padding-top: bs-spacer(3);
-    padding-left: bs-spacer(4);
-    padding-right: bs-spacer(2);
-    padding-bottom: 0.67rem;
+    font-weight: bootstrap.$font-weight-bold;
+    padding: bootstrap.bs-spacer(3) bootstrap.bs-spacer(2)
+            0.67rem bootstrap.bs-spacer(4);
   }
 }
