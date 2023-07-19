@@ -61,11 +61,11 @@ function updateTable(releases, os) {
         row.classList.add('overflow');
       }
       table.appendChild(row);
-      
+
       const hashLabel = document.createElement('span');
       hashLabel.textContent = release.hash.substr(0, 7);
       hashLabel.classList.add('git-hash');
-      
+
       const url = releases.base_url + '/' + release.archive;
       const downloadLink = document.createElement('a');
       downloadLink.href = url;
@@ -80,8 +80,8 @@ function updateTable(releases, os) {
       const date = new Date(Date.parse(release.release_date));
 
       const provenance = getProvenanceLink(os, release, date, channel);
-    
-      
+
+
       const cells = [
         createTableCell(downloadLink),
         createTableCell(dartSdkArch),
@@ -90,7 +90,7 @@ function updateTable(releases, os) {
         createTableCell(dartSdkVersion),
         createTableCell(provenance)
       ];
-      
+
       cells.forEach(function (cell) {
         row.appendChild(cell);
       });
@@ -117,7 +117,7 @@ function createTableCell(content, dataClass) {
   } else {
     cell.appendChild(content);
   }
-  
+
   return cell;
 }
 
@@ -142,7 +142,7 @@ $('.download-latest-link-macos-arm64').click(function () {
 });
 
 /*
-releases: A list of Flutter releases 
+releases: A list of Flutter releases
 base_url: link for sdk download link such as storage.googleapis.com...
 os: macos, windows, or linux
 [optional] arch: Only specify if there's additional architecture, such as arm64
@@ -189,14 +189,14 @@ function updateDownloadLink(releases, os, arch) {
 
   // On macOS, update the download buttons for both architectures, x64 and arm64
   if (os === 'macos') {
-    // Filter releases by x64 architecture 
+    // Filter releases by x64 architecture
     const releasesForX64 = releasesForChannel.filter(function (release) {
       return release.dart_sdk_arch === 'x64';
     });
 
     updateReleaseDownloadButton(releasesForX64, releases.base_url, os);
 
-    // Filter releases by arm64 architecture 
+    // Filter releases by arm64 architecture
     const releasesForArm64 = releasesForChannel.filter(function (release) {
       return release.dart_sdk_arch === 'arm64';
     });
@@ -238,6 +238,7 @@ function getProvenanceLink(os, release, date, channel) {
   const provenanceAnchor = document.createElement('a');
   provenanceAnchor.href = `${baseUrl}${channel}/${os}/flutter_${os}_${release.version}-${channel}.${extension}.intoto.jsonl`;
   provenanceAnchor.textContent = `${release.version} file`;
+  provenanceAnchor.target = '_blank';
   return provenanceAnchor;
 }
 
