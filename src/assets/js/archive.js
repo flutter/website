@@ -202,7 +202,7 @@ function updateReleaseDownloadButton(releases, base_url, os, arch = '') {
   // Update inlined filenames in <code> element text nodes:
   const filteredElements = filterCodeElements();
   filteredElements.forEach(function (node) {
-    const newText = node.textContent.replace(new RegExp(`^(.*?)\\b${FILE_NAME_PREFIX}\\w+_v.*`), `$1${archiveFilename}`);
+    const newText = node.textContent.replace(new RegExp(`^(.*?)\\b${FILE_NAME_PREFIX}\\w+_v.*`, 'm'), `$1${archiveFilename}`);
     node.textContent = newText;
   });
 }
