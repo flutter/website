@@ -936,7 +936,7 @@ For more information, see the [`GlobalKey`][] API.
 [`onTap()`]: {{api}}/widgets/GestureDetector-class.html#onTap
 [`Positioned`]: {{api}}/widgets/Positioned-class.html
 [`ElevatedButton`]: {{api}}/material/ElevatedButton-class.html
-[React]: https://reactjs.org
+[React]: https://react.dev
 [`RenderObject`]: {{api}}/rendering/RenderObject-class.html
 [`Row`]: {{api}}/widgets/Row-class.html
 [`runApp()`]: {{api}}/widgets/runApp.html
