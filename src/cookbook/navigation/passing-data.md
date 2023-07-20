@@ -5,8 +5,8 @@ prev:
   title: Return data from a screen
   path: /cookbook/navigation/returning-data
 next:
-  title: Fetch data from the internet
-  path: /cookbook/networking/fetch-data
+  title: Parse JSON in the background
+  path: /cookbook/networking/background-parsing
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

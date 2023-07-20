@@ -2,8 +2,8 @@
 title: Parse JSON in the background
 description: How to perform a task in the background.
 prev:
-  title: Communicate with WebSockets
-  path: /cookbook/networking/web-sockets
+  title: Send data to a new screen
+  path: /cookbook/navigation/passing-data
 next:
   title: Persist data with SQLite
   path: /cookbook/persistence/sqlite

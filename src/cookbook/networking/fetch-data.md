@@ -1,9 +1,6 @@
 ---
 title: Fetch data from the internet
 description: How to fetch data over the internet using the http package.
-prev:
-  title: Send data to a new screen
-  path: /cookbook/navigation/passing-data
 next:
   title: Make authenticated requests
   path: /cookbook/networking/authenticated-requests
