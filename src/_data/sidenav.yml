@@ -102,6 +102,11 @@
           permalink: /ui/animations/hero-animations
         - title: Staggered animations
           permalink: /ui/animations/staggered-animations
+    - title: Scrolling
+      permalink: /ui/scrolling
+      children:
+        - title: Slivers
+          permalink: /ui/scrolling/slivers
     - title: Advanced UI
       permalink: /ui/advanced
       children:
@@ -115,9 +120,6 @@
           permalink: /ui/advanced/gestures
         - title: Shaders
           permalink: /ui/advanced/shaders
-    - title: Scrolling
-        - title: Slivers
-          permalink: /ui/scrolling/slivers
     - title: Widget catalog
       permalink: /ui/widgets
 
