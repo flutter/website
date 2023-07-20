@@ -232,8 +232,8 @@ function updateDownloadLink(releases, os, arch) {
 
     // If no arm64 releases available, delete all apple silicon elements
     if (!releasesForArm64.length) {
-      const appleSilicons = document.querySelectorAll('.apple-silicon');
-      appleSilicons.forEach(function (element) {
+      const appleSiliconElements = document.querySelectorAll('.apple-silicon');
+      appleSiliconElements.forEach(function (element) {
         element.remove();
       });
 
