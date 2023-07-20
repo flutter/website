@@ -62,6 +62,7 @@
       { "source": "/ios-release", "destination": "/deployment/ios", "type": 301 },
       { "source": "/jobs/**", "destination": "/jobs", "type": 301 },
       { "source": "/json", "destination": "/data-and-backend/json", "type": 301 },
+      { "source": "/ui/advanced/slivers", "destination": "/ui/scrolling/slivers", "type": 301 },
       { "source": "/ui/layout/box-constraints", "destination": "/ui/layout/constraints#unbounded", "type": 301 },
       { "source": "/networking", "destination": "/data-and-backend/networking", "type": 301 },
       { "source": "/overview", "destination": "/resources/architectural-overview", "type": 301 },
