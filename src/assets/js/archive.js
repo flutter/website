@@ -166,7 +166,6 @@ function filterCodeElements() {
 
 /**
  * Update the download button for the latest release.
- * @constructor
  * @param {Array} releases - A list of Flutter releases 
  * @param {string} base_url - link for sdk download link such as storage.googleapis.com...
  * @param {string} os - macos, windows, or linux
