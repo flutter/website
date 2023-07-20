@@ -1948,7 +1948,7 @@ Row(
 
 The only difference if you use `Flexible` instead of `Expanded`,
 is that `Flexible` lets its child have the same or smaller
-width than the `` itself, while `Expanded` forces
+width than the `Flexible` itself, while `Expanded` forces
 its child to have the exact same width of the `Expanded`.
 But both `Expanded` and `Flexible` ignore their children's width
 when sizing themselves.

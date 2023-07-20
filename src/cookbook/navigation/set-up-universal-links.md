@@ -99,7 +99,7 @@ It provides a simple API to handle complex routing scenarios.
    {{site.alert.end}}
 
 7. Click the top-level **Runner**.
-8. Click **Sign & Signature**.
+8. Click **Signing & Capabilities**.
 9. Click **+ Capability** to add a new domain.
 10. Click **Associated Domains**.
 
