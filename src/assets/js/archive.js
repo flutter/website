@@ -126,6 +126,7 @@ function createTableCell(content, dataClass) {
 
 function updateTableFailed(os) {
   const tab = document.getElementById(`tab-os-${os}`);
+  if (!tab) return;
   const loadingElements = tab.querySelectorAll('.loading');
   loadingElements.forEach(function (element) {
     element.textContent = 'Failed to load releases. Refresh page to try again.';
