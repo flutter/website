@@ -137,15 +137,18 @@ let macOSArm64ArchiveFilename = '';
 // Listen for the macOS arm64 download link to be clicked and update
 // the example unzip command with correct arm64 filename
 (() => {
-  document.querySelector('.download-latest-link-macos-arm64')
-    .addEventListener('click', function () {
-      // Update inlined filenames in <code> element text nodes with arm64 filename:
-      const filteredElements = filterCodeElements();
+  const macDownload = document.querySelector('.download-latest-link-macos-arm64');
+  if (!macDownload) {
+    return;
+  }
+  macDownload.addEventListener('click', function () {
+    // Update inlined filenames in <code> element text nodes with arm64 filename:
+    const filteredElements = filterCodeElements();
 
-      filteredElements.forEach(function (node) {
-        node.textContent = `unzip ~/Downloads/${macOSArm64ArchiveFilename}`;
-      });
+    filteredElements.forEach(function (node) {
+      node.textContent = `unzip ~/Downloads/${macOSArm64ArchiveFilename}`;
     });
+  });
 })();
 
 /**
