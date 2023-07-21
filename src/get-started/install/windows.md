@@ -48,24 +48,22 @@ To install and run Flutter, your development environment must meet these minimum
      make sure you can run `git` commands from the
      command prompt or PowerShell.
 
-<a name="installation-methods"></a>
 ## Installation methods
 
-<a name="method-1-native-windows-installation"></a>
 ### Method 1: Native Windows installation
 
-{% assign os = 'windows' -%}
+{% assign os = 'windows' %}
+
 {% include_relative _get-sdk-win.md %}
+
 {% include_relative _android-setup.md %}
+
 {% include_relative _windows-desktop-setup.md %}
 
-<a name="method-2-installation-in-wsl2-with-ubuntu"></a>
 ### Method 2: Installation in WSL2 with Ubuntu
-
 
 {% include_relative _get-sdk-wsl.md %}
 
-<a name="next-step"></a>
 ## Next step
 
 Set up your preferred editor.
