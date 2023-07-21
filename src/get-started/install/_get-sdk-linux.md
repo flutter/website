@@ -6,7 +6,7 @@ Installing Flutter on Linux can be done via two methods. After installation, you
 
 ### Understanding Linux Commands
 
-Before we begin the installation, it would be useful to understand some common Linux commands. Refer to our [Glossary](#glossary) section for a brief overview of these commands.
+Before we begin the installation, it would be useful to understand some common Linux commands. Refer to our [Understanding Linux Commands](#understanding-linux-commands) section for a brief overview of these commands.
 
 ### Method 1: Install Flutter using snapd
 
