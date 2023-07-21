@@ -143,10 +143,7 @@ let macOSArm64ArchiveFilename = '';
   }
   macDownload.addEventListener('click', function () {
     // Update inlined filenames in <code> element text nodes with arm64 filename:
-    const code = filterCodeElement();
-    const textNode = [...code.childNodes].filter(function (node) {
-      return node.nodeType === 3 && node.textContent.includes(FILE_NAME_PREFIX);
-    })[0];
+    const textNode = filterTextNodeInCodeElement();
   
     textNode.textContent = `unzip ~/Downloads/${macOSArm64ArchiveFilename}`;
   });
@@ -209,11 +206,10 @@ function updateReleaseDownloadButton(releases, base_url, os, arch = '') {
   });
 
   // Update inlined filenames in <code> element text nodes:
-  const filteredElements = filterCodeElements();
-  filteredElements.forEach(function (node) {
-    const newText = node.textContent.replace(new RegExp(`^(.*?)\\b${FILE_NAME_PREFIX}\\w+_v.*`, 'm'), `$1${archiveFilename}`);
-    node.textContent = newText;
-  });
+  const textNode = filterTextNodeInCodeElement();
+  const text = textNode.textContent;
+  const newText = text.replace(new RegExp(`^(.*?)\\b${FILE_NAME_PREFIX}\\w+_v.*`, 'm'), `$1${archiveFilename}`);
+  textNode.textContent = newText;
 }
 
 function updateDownloadLink(releases, os, arch) {
