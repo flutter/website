@@ -105,6 +105,9 @@
     - title: Scrolling
       permalink: /ui/scrolling
       children:
+        - title: Introduction
+          permalink: /ui/scrolling
+          match-page-url-exactly: true
         - title: Slivers
           permalink: /ui/scrolling/slivers
     - title: Advanced UI
