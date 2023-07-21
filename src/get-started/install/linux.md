@@ -12,10 +12,10 @@ next:
 ## Table of Contents
 - System Requirements
 - Understanding Linux Commands
-- Installing Snap on Ubuntu
+- Installing Snap(optional)
 - Flutter Installation
 - Android Studio Setup
-- Chrome Setup
+- Chrome Setup(optional)
 - Additional Linux Configuration
 - Next Steps
 - Glossary
