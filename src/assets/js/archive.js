@@ -143,11 +143,12 @@ let macOSArm64ArchiveFilename = '';
   }
   macDownload.addEventListener('click', function () {
     // Update inlined filenames in <code> element text nodes with arm64 filename:
-    const filteredElements = filterCodeElements();
-
-    filteredElements.forEach(function (node) {
-      node.textContent = `unzip ~/Downloads/${macOSArm64ArchiveFilename}`;
-    });
+    const code = filterCodeElement();
+    const textNode = [...code.childNodes].filter(function (node) {
+      return node.nodeType === 3 && node.textContent.includes(FILE_NAME_PREFIX);
+    })[0];
+  
+    textNode.textContent = `unzip ~/Downloads/${macOSArm64ArchiveFilename}`;
   });
 })();
 
