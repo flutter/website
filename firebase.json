@@ -337,6 +337,7 @@
       { "source": "/go/go-router-v7-breaking-changes", "destination": "https://docs.google.com/document/d/10Xbpifbs4E-zh6YE5akIO8raJq_m3FIXs6nUGdOspOg/edit?usp=sharing", "type": 301 },
       { "source": "/go/go-router-v8-breaking-changes", "destination": "https://docs.google.com/document/d/1VCuB85D5kYxPR3qYOjVmw8boAGKb7k62heFyfFHTOvw/edit?usp=sharing", "type": 301 },
       { "source": "/go/go-router-v9-breaking-changes", "destination": "https://docs.google.com/document/d/16plvWc9ablQsUs7w6bWDpTZ7PwMP4YUhV-qMQ3iljE0/edit?usp=sharing", "type": 301 },
+      { "source": "/go/go-router-v10-breaking-changes", "destination": "https://docs.google.com/document/d/1vjupshmFJtfGSOppZxp7Tzkq7dotcLxCcpdluuNYe1o/edit?usp=sharing&resourcekey=0-aS66t4OcDTjJW50s-veSzQ", "type": 301 },
       { "source": "/go/handling-synchronous-keyboard-events", "destination": "https://docs.google.com/document/d/1rWXSjkb2ZKv-cpg26lVK0aZi4cVeXJ8j7YmSJdq2TOM/edit", "type": 301 },
       { "source": "/go/hermetic-xcode-installation", "destination": "https://docs.google.com/document/d/1EcXm4Woq48GR_ky07mEJka6NfV1vFBN2OHDEeGfPk34/edit?resourcekey=0-0Gjtt1I66mGJ8AwiCTlFNw", "type": 301 },
       { "source": "/go/hero-refactor", "destination": "https://docs.google.com/document/d/1JZVqykFjhDXcJyj_Ep5gfTmF-Eu4pQXXNRcLCN04tls/edit?usp=sharing", "type": 301 },
