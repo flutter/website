@@ -2,114 +2,78 @@
 
 {% include docs/china-notice.md %}
 
-On Linux, you have two ways you can install Flutter.
+Installing Flutter on Linux can be done via two methods. After installation, you should run the `flutter doctor` command to ensure that the environment is correctly set up.
 
-### Install Flutter using snapd
+### Understanding Linux Commands
 
-The easiest way to install Flutter on Linux is by
-using snapd. For more information,
-check out [Installing snapd][].
+Before we begin the installation, it would be useful to understand some common Linux commands. Refer to our [Glossary](#glossary) section for a brief overview of these commands.
 
-Once you have snapd, you can
-[install Flutter using the Snap Store][],
-or at the command line:
+### Method 1: Install Flutter using snapd
+
+This is the simplest way to install Flutter on Linux. For more information about using snapd, check [Installing snapd][].
+
+Once snapd is installed, you can install Flutter from the Snap Store or by using the following command:
 
 ```terminal
 $ sudo snap install flutter --classic
 ```
 
 {{site.alert.note}}
-  Once you install snap,
-  use the following command to display your Flutter SDK path:
+  Once snap is installed, you can display your Flutter SDK path by using the following command:
 
   ```terminal
   $ flutter sdk-path
   ```
 {{site.alert.end}}
 
-### Install Flutter manually
+### Method 2: Manual Installation
 
-If you don't have `snapd`, or can't use it,
-you can install Flutter using the following steps.
+If you do not have `snapd`, or if you can't use it, follow these steps to install Flutter manually:
 
- 1. Download the following installation bundle to get the latest
-    {{site.sdk.channel}} release of the Flutter SDK:
+1. Download the installation bundle for the latest {{site.sdk.channel}} release of the Flutter SDK:
 
     [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
 
-    For other release channels, and older builds,
-    check out the [SDK archive][].
+    You can find older builds and other release channels in the [SDK archive][].
 
- 1. Extract the file in the desired location. For example:
-
-    {% comment %}
-      Our JS also updates the filename in this template,
-      but it doesn't include the terminal formatting:
-
-      {% prettify shell %}
-      $ cd ~/development
-      $ tar xf ~/Downloads/[[download-latest-link-filename]]flutter_{{os}}_vX.X.X-{{site.sdk.channel}}.tar.xz[[/end]]
-      {% endprettify %}
-    {% endcomment -%}
+2. Extract the downloaded file to a location of your choice:
 
     ```terminal
     $ cd ~/development
     $ tar xf ~/Downloads/flutter_{{os}}_vX.X.X-{{site.sdk.channel}}.tar.xz
     ```
-    
- 1. Add the `flutter` tool to your path:
+
+3. Add the `flutter` tool to your path:
 
     ```terminal
     $ export PATH="$PATH:`pwd`/flutter/bin"
     ```
 
-    This command sets your `PATH` variable for the
-    _current_ terminal window only.
-    To permanently add Flutter to your path,
-    check out [Update your path][].
+    Note that this command sets your `PATH` variable for the current terminal window only. To add Flutter to your path permanently, refer to [Update your path][].
 
- 1. Optionally, pre-download development binaries:
-
-    The `flutter` tool downloads platform-specific
-    development binaries as needed. For scenarios
-    where pre-downloading these artifacts is preferable
-    (for example, in hermetic build environments,
-    or with intermittent network availability), iOS
-    and Android binaries can be downloaded ahead of time by running:
+4. (Optional) Pre-download development binaries:
 
     ```terminal
     $ flutter precache
     ```
 
-    For additional download options,
-    check out `flutter help precache`.
-
-You are now ready to run Flutter commands!
+    You can find additional download options by running `flutter help precache`.
 
 {{site.alert.note}}
-  To update an existing version of Flutter,
-  check out [Upgrading Flutter][].
+  To update an existing version of Flutter, see [Upgrading Flutter][].
 {{site.alert.end}}
 
+### Post Installation: Run flutter doctor
 
-### Run flutter doctor
+After installing Flutter, you should run `flutter doctor` to ensure that the environment is set up correctly. This command checks your environment and displays a report in the terminal window. The Dart SDK is bundled with Flutter; it isn't necessary to install Dart separately. Review the output carefully for any additional software you may need to install or further tasks to perform.
 
-Run the following command to see if there are any
-dependencies you need to install to complete the setup
-(for verbose output, add the `-v` flag):
+For verbose output, add the `-v` flag:
 
 ```terminal
 $ flutter doctor
 ```
 
-This command checks your environment and displays
-a report to the terminal window.
-The Dart SDK is bundled with Flutter;
-it isn't necessary to install Dart separately.
-Check the output carefully for other software you might
-need to install or further tasks to perform (shown in **bold** text).
-
-For example:
+Here is an example of what you might see:
 
 <pre>
 [-] Android toolchain - develop for Android devices
@@ -119,12 +83,7 @@ For example:
       visit {{site.url}}/setup/#android-setup for detailed instructions.
 </pre>
 
-The following sections describe how to perform
-these tasks and finish the setup process.
-
-Once you have installed any missing dependencies,
-run the `flutter doctor` command again to verify
-that you’ve set everything up correctly.
+After installing any missing dependencies, run the `flutter doctor` command again to verify that everything is set up correctly.
 
 {% include_relative _analytics.md %}
 
