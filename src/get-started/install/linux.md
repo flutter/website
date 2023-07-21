@@ -1,6 +1,6 @@
 ---
-title: Linux install
-description: How to install on Linux.
+title: Linux Installation Guide
+description: Comprehensive guide on how to install Flutter on Linux.
 short-title: Linux
 next:
   title: Set up an editor
@@ -9,15 +9,32 @@ next:
 
 {% assign os = 'linux' -%}
 
-## System requirements
+| Main Section                             | Subsection                                                         |
+|------------------------------------------|--------------------------------------------------------------------|
+| 1. [Prerequisites](#prerequisites)       | [Operating Systems](#operating-systems)                            |
+|                                          | [Tools](#tools)                                                    |
+| 2. [Get the Flutter SDK](#get-sdk)       | [Understanding Linux Commands](#understanding-linux-commands)      |
+|                                          | [Install Flutter using snapd](#install-flutter-using-snapd)        |
+|                                          | [Manual Installation](#manual-installation)                        |
+|                                          | [Run flutter doctor](#run-flutter-doctor)                          |
+| 3. [Update your path](#update-your-path) | [Temporarily update your path](#temporarily-update-your-path)      |
+|                                          | [Permanently update your path](#permanently-update-your-path)      |
+|                                          | [Update the path directly](#update-the-path-directly)              |
+| 4. [Android setup](#android-setup)       | [Install Android Studio](#install-android-studio)                  |
+|                                          | [Set up your Android device](#setup-android-device)                |
+|                                          | [Set up the Android emulator](#setup-android-emulator)             |
+|                                          | [Agree to Android licenses](#agree-android-licenses)               |
+|                                          | [Install Google Chrome](#install-google-chrome)                    |
+| 5. [Linux setup](#linux-setup)           | [Additional Linux requirements](#additional-linux-requirements)    |
+|                                          | [Understanding Linux Commands](#understanding-linux-commands)      |
 
-To install and run Flutter,
-your development environment must meet these minimum requirements:
 
-- **Operating Systems**: Linux (64-bit)
-- **Disk Space**: 600 MB (does not include disk space for IDE/tools).
-- **Tools**: Flutter depends on these command-line tools being available
-  in your environment.
+## System Requirements
+For installing and running Flutter, your Linux development environment needs to meet these minimum requirements:
+
+- **Operating System**: Linux (64-bit)
+- **Disk Space**: At least 600 MB (excluding disk space for IDE/tools).
+- **Tools**: Flutter relies on these command-line tools:
   - `bash`
   - `curl`
   - `file`
@@ -28,11 +45,7 @@ your development environment must meet these minimum requirements:
   - `which`
   - `xz-utils`
   - `zip`
-
-- **Shared libraries**: Flutter `test` command depends on this library
-  being available in your environment.
-  - `libGLU.so.1` - provided by mesa packages such as `libglu1-mesa` on
-     Ubuntu/Debian and `mesa-libGLU` on Fedora.
+- **Shared libraries**: To utilize the Flutter `test` command, your environment needs the library `libGLU.so.1`. This is typically provided by mesa packages, such as `libglu1-mesa` on Ubuntu/Debian and `mesa-libGLU` on Fedora.
 
 {% include_relative _get-sdk-linux.md %}
 
