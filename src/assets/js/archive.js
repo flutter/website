@@ -152,18 +152,18 @@ let macOSArm64ArchiveFilename = '';
 })();
 
 /**
- * Filters code elements that contain a specific prefix.
+ * Filters code element that contain a specific prefix.
  *
- * @returns {Array<HTMLElement>} An array of filtered code elements.
+ * @returns {HTMLElement} A filtered code element.
  */
-function filterCodeElements() {
+function filterCodeElement() {
   const codeElements = document.querySelectorAll('code');
   const filteredElements = Array.from(codeElements).filter(function (element) {
     return Array.from(element.childNodes).some(function (node) {
       return node.nodeType === Node.TEXT_NODE && node.textContent.includes(FILE_NAME_PREFIX);
     });
   });
-  return filteredElements;
+  return filteredElements[0];
 }
 
 
