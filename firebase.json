@@ -461,6 +461,7 @@
       { "source": "/go/swift-package-manager-plugins-v2", "destination": "https://docs.google.com/document/d/1oUvM5e2a3QrKAk9pTPExPp3my4FD4lYz9Z-EXsUGuHI/edit?usp=sharing&resourcekey=0-Vu8vKukw0Dqqv7pW5aIxKQ", "type": 301 },
       { "source": "/go/synchronized-widgettester", "destination": "https://docs.google.com/document/d/1VumsuG6dEFUVpPQLqqKJnhI0CoIS9fCAMN-NFHIPmo0/edit", "type": 301 },
       { "source": "/go/system-mouse-cursor", "destination": "https://docs.google.com/document/d/1bJLRy6flZ0wDCbpl2QA8SURUWXIvRJKMRRemxlOo1cA/edit", "type": 301 },
+      { "source": "/go/table-view", "destination": "https://docs.google.com/document/d/15ecTZE1g3WeswLGFWrnEgMP6SyL6jDRdxOgPsczOcV0/edit?usp=sharing&resourcekey=0-yNd_qFhiPjz6z2TgezWc0A", "type": 301 },
       { "source": "/go/tabs-and-text-fields", "destination": "https://docs.google.com/document/d/1aHucsI0NWGWu2Dm_XFsBLxiTgJRM8h2XBB7PVAnVxlU/edit?usp=sharing&resourcekey=0-zLbXFlP_A2e_Yoi43vdiiw", "type": 301 },
       { "source": "/go/take-flutter-home", "destination": "https://github.com/flutter/put-flutter-to-work", "type": 301 },
       { "source": "/go/table-development", "destination": "https://docs.google.com/document/d/1fCE-zQNql0nnqJXhycpg902lhL7jrOOz-6sT8s8tv5c/edit?usp=sharing", "type": 301 },

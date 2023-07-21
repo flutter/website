@@ -513,6 +513,6 @@ To learn more about how to debug errors,
 especially layout errors in Flutter, 
 check out the following resources: 
 
-* [How to debug layout issues with the Flutter Inspector][medium-article]]
+* [How to debug layout issues with the Flutter Inspector][medium-article]
 * [Understanding constraints][]
 * [Flutter architectural overview]({{site.url}}/resources/architectural-overview#layout-and-rendering)
