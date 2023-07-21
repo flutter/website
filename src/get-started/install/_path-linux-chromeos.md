@@ -26,7 +26,7 @@ To permanently add Flutter to your path for _any_ terminal session, follow these
 export PATH="$PATH:`pwd`/flutter/bin"
 ```
 
-4. Run `source $HOME/.&lt;rc file&gt;` to refresh the current window, or open a new terminal window to automatically source the file.
+4. Run `source $HOME/.<rc file>` to refresh the current window, or open a new terminal window to automatically source the file.
 5. Verify that the `flutter/bin` directory is now in your PATH by running:
 
 ```terminal
@@ -38,6 +38,7 @@ Verify that the `flutter` command is available by running:
 ```terminal
 $ which flutter
 ```
+{% include docs/dart-tool.md %}
 
 ### Update the path directly
 
