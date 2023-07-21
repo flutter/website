@@ -153,18 +153,23 @@ let macOSArm64ArchiveFilename = '';
 })();
 
 /**
- * Filters code element that contain a specific prefix.
+ * Filters node text that contain a specific prefix.
  *
- * @returns {HTMLElement} A filtered code element.
+ * @returns {ChildNode} A filtered Node Text.
  */
-function filterCodeElement() {
+function filterTextNodeInCodeElement() {
   const codeElements = document.querySelectorAll('code');
   const filteredElements = Array.from(codeElements).filter(function (element) {
     return Array.from(element.childNodes).some(function (node) {
       return node.nodeType === Node.TEXT_NODE && node.textContent.includes(FILE_NAME_PREFIX);
     });
   });
-  return filteredElements[0];
+
+  const code = filteredElements[0];
+  const textNode = [...code.childNodes].filter(function (node) {
+    return node.nodeType === Node.TEXT_NODE && node.textContent.includes(FILE_NAME_PREFIX);
+  })[0];
+  return textNode;
 }
 
 
