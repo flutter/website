@@ -53,11 +53,11 @@ Turn the scrollable area into a wheel! [`ListWheelScrollView`][]
 [scrolling page]: {{site.url}}/ui/widgets/scrolling
 [`SingleChildScrollView`]: {{site.api}}/flutter/widgets/SingleChildScrollView-class.html 
 
-{ % comment %}
+{% comment %}
   Not yet, but coming. Two dimensional scrolling:
   TableView and TreeView.
   Video: https://www.youtube.com/watch?v=UDZ0LPQq-n8
-{ % endcomment %}
+{% endcomment %}
 
 ## Fancy scrolling
 
