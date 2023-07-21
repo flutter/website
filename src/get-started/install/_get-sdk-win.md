@@ -2,94 +2,69 @@
 
 {% include docs/china-notice.md %}
 
-{% include_relative _help-link.md location='win-get-sdk' %}
+To get started with Flutter, follow these steps:
 
- 1. Download the following installation bundle to get the latest
-    {{site.sdk.channel}} release of the Flutter SDK:
+### Step 1: Download the Flutter SDK
 
-    [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
+1. Download the latest {{site.sdk.channel}} release of the Flutter SDK from
+   [(here)](#){:.download-latest-link-{{os}}.btn.btn-primary}
 
-    For other release channels, and older builds,
-    check out the [SDK archive][].
- 1. Extract the zip file and place the contained `flutter`
-    in the desired installation location for the Flutter SDK
-    (for example, `C:\src\flutter`).
+   > Tip: For other release channels or older builds, visit the [SDK archive][].
 
-{{site.alert.warning}}
-  Do not install Flutter to a path that contains special
-  characters or spaces.
-{{site.alert.end}}
+2. Extract the zip file and place the `flutter` folder in the desired location.
+   (e.g., `C:\src\flutter` on Windows).
 
 {{site.alert.warning}}
-  Do not install Flutter in a directory like 
-  `C:\Program Files\` that requires elevated privileges.
+
+Avoid installing Flutter in a path that includes special characters or spaces. 
+Also, avoid directories like `C:\Program Files\` that require elevated 
+privileges.
+
 {{site.alert.end}}
 
-You are now ready to run Flutter commands in the Flutter Console.
+### Step 2: Update your PATH
 
-[Flutter repo]: {{site.repo.flutter}}
+{% include_relative _help-link.md location='win-path' 
+section='#unable-to-find-the-flutter-command' %}
 
-### Update your path
+Adding Flutter to your `PATH` makes running Flutter commands in the console 
+easier. Here's how to do it:
 
-{% include_relative _help-link.md location='win-path' section='#unable-to-find-the-flutter-command' %}
+#### For Windows Users:
 
-If you wish to run Flutter commands in the regular Windows console,
-take these steps to add Flutter to the `PATH` environment variable:
+1. In the Start search bar, type 'env' and select **Edit environment variables 
+   for your account**.
+2. Check for an entry called **Path** in the **User variables** section.
+   - If it exists, click **Edit**. In the editor, click **New** and use the 
+     file browser to navigate to the `flutter\bin` directory in your Flutter 
+     SDK.
+   - If it doesn't exist, click **New** in the **User variables** section. Name 
+     the new variable `Path`, and use the file browser to select the 
+     `flutter\bin` directory in your Flutter SDK.
 
-* From the Start search bar, enter 'env'
-  and select **Edit environment variables for your account**.
-* Under **User variables** check if there is an entry called **Path**:
-  * If the entry exists, append the full path to `flutter\bin` using
-    `;` as a separator from existing values.
-  * If the entry doesn't exist,
-    create a new user variable named `Path` with
-    the full path to `flutter\bin` as its value.
+#### For WSL2 Users:
 
-You have to close and reopen any existing console windows
-for these changes to take effect.
+Follow the instructions provided in the [WSL2 setup guide](\_wsl-setup.md).
+
+> Note: You need to close and reopen console windows for these changes to take 
+  effect.
 
 {% include docs/dart-tool-win.md %}
 
-### Run `flutter doctor`
+### Step 3: Run `flutter doctor`
 
 {% include_relative _help-link.md location='win-doctor' %}
 
-From a console window that has the Flutter directory in the
-path (see above), run the following command to see if there
-are any platform dependencies you need to complete the setup:
+Verify your setup by running the `flutter doctor` command in the console:
 
-```batchfile
+```bash
 C:\src\flutter>flutter doctor
 ```
 
-This command checks your environment and displays a report of the status
-of your Flutter installation. Check the output carefully for other
-software you might need to install or further tasks to perform
-(shown in **bold** text).
-
-For example:
-
-<pre>
-[-] Android toolchain - develop for Android devices
-    • Android SDK at D:\Android\sdk
-    <strong>✗ Android SDK is missing command line tools; download from https://goo.gl/XxQghQ</strong>
-    • Try re-installing or updating your Android SDK,
-      visit {{site.url}}/setup/#android-setup for detailed instructions.
-</pre>
-
-The following sections describe how to perform these tasks and
-finish the setup process. Once you have installed any missing
-dependencies, you can run the `flutter doctor` command again to
-verify that you’ve set everything up correctly.
-
-{{site.alert.note}}
-  If `flutter doctor` returns that either the Flutter plugin
-  or  Dart plugin of Android Studio are not installed, move
-  on to [Set up an editor][] to resolve this issue.
-{{site.alert.end}}
+This command checks your environment and provides a status report of your 
+Flutter installation. It also alerts you if additional setup tasks are required. 
 
 {% include_relative _analytics.md %}
-
 
 [Flutter repo]: {{site.repo.flutter}}
 [SDK archive]: {{site.url}}/release/archive
