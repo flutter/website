@@ -257,7 +257,7 @@ flutter:
 The `lib/` is implied,
 so it should not be included in the asset path.
 
-If you are developing a package, to load an asset within the package, specify it in the 'pubspec.yaml' of the package:
+If you are developing a package, to load an asset within the package, specify it in the `pubspec.yaml` of the package:
 
 ```yaml
 flutter:
