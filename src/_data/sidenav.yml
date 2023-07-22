@@ -260,7 +260,7 @@
       permalink: /packages-and-plugins/plugins-in-tests
     - title: Using packages
       permalink: /packages-and-plugins/using-packages
-    - title: Package site
+    - title: Package repository
       permalink: https://pub.dev/flutter
 
 - title: Testing & debugging
@@ -479,5 +479,3 @@
       permalink: /reference/flutter-cli
     - title: Security false positives
       permalink: /reference/security-false-positives
-    - title: Package site
-      permalink: https://pub.dev/flutter
