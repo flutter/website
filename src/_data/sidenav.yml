@@ -245,22 +245,16 @@
 - title: Packages & plugins
   permalink: /packages-and-plugins
   children:
-    - title: Background processes
-      permalink: /packages-and-plugins/background-processes
-    - title: Developing packages & plugins
-      permalink: /packages-and-plugins/developing-packages
-    - title: Flutter Favorites program
-      permalink: /packages-and-plugins/favorites
-    - title: Happy paths project
-      permalink: /packages-and-plugins/happy-paths
-      match-page-url-exactly: true
-    - title: Happy paths recommendations
-      permalink: /packages-and-plugins/happy-paths/recommended
-    - title: Plugins in Flutter tests
-      permalink: /packages-and-plugins/plugins-in-tests
-    - title: Using packages
+    - title: Use packages & plugins
       permalink: /packages-and-plugins/using-packages
-    - title: Package site
+    - title: Develop packages & plugins
+      permalink: /packages-and-plugins/developing-packages
+    - divider
+    - title: Happy paths
+      permalink: /packages-and-plugins/happy-paths
+    - title: Flutter Favorites
+      permalink: /packages-and-plugins/favorites
+    - title: Package repository
       permalink: https://pub.dev/flutter
 
 - title: Testing & debugging
@@ -270,6 +264,8 @@
       permalink: /testing/debugging
     - title: Testing plugins
       permalink: /testing/testing-plugins
+    - title: Plugins in Flutter tests
+      permalink: /packages-and-plugins/plugins-in-tests
     - title: Debugging apps programmatically
       permalink: /testing/code-debugging
     - title: Using an OEM debugger
