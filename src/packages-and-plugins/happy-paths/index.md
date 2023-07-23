@@ -1,7 +1,7 @@
 ---
 title: Happy paths
 description: >
-  Lists areas of technology where we recommend specific Flutter 
+  Areas of technology where we recommend specific Flutter 
   packages and plugins that add functionality to your app.
 ---
 
