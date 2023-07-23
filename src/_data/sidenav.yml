@@ -265,7 +265,7 @@
     - title: Testing plugins
       permalink: /testing/testing-plugins
     - title: Plugins in Flutter tests
-      permalink: /packages-and-plugins/plugins-in-tests
+      permalink: /testing/plugins-in-tests
     - title: Debugging apps programmatically
       permalink: /testing/code-debugging
     - title: Using an OEM debugger
