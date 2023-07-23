@@ -475,5 +475,3 @@
       permalink: /reference/flutter-cli
     - title: Security false positives
       permalink: /reference/security-false-positives
-    - title: Package site
-      permalink: https://pub.dev/flutter
