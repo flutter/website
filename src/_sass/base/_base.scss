@@ -70,6 +70,10 @@ dd {
   color: $site-color-body;
 }
 
+.d-block.h1 > .material-icons {
+  font-size: 3rem;
+}
+
 .card-image-holder-material-3 {
   align-items: center;
   z-index: -1;
