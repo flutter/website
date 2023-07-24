@@ -23,7 +23,7 @@ membership options in Apple's
 ## Register your app on App Store Connect
 
 Manage your app's life cycle on
-[App Store Connect][appstoreconnect] (formerly iTunes Connect).
+[App Store Connect][appstoreconnect_login] (formerly iTunes Connect).
 You define your app name and description, add screenshots,
 set pricing, and manage releases to the App Store and TestFlight.
 
@@ -460,8 +460,8 @@ detailed overview of the process of releasing an app to the App Store.
 [codemagic_cli_tools]: {{site.github}}/codemagic-ci-cd/cli-tools
 [codesigning_guide]: {{site.apple-dev}}/library/content/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html
 [Core Foundation Keys]: {{site.apple-dev}}/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-[devportal_appids]: {{site.apple-dev}}/account/ios/identifier/bundle
-[devportal_certificates]: {{site.apple-dev}}/account/resources/certificates
+[devportal_appids]: {{site.apple-dev}}/account/resources/identifiers/list
+[devportal_certificates]: {{site.apple-dev}}/account/resources/certificates/list
 [devprogram]: {{site.apple-dev}}/programs/
 [devprogram_membership]: {{site.apple-dev}}/support/compare-memberships/
 [distributionguide]: https://help.apple.com/xcode/mac/current/#/dev8b4250b57
