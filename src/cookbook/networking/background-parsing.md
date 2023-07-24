@@ -1,12 +1,6 @@
 ---
 title: Parse JSON in the background
 description: How to perform a task in the background.
-prev:
-  title: Send data to a new screen
-  path: /cookbook/navigation/passing-data
-next:
-  title: Persist data with SQLite
-  path: /cookbook/persistence/sqlite
 ---
 
 <?code-excerpt path-base="cookbook/networking/background_parsing/"?>

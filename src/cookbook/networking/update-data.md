@@ -1,12 +1,6 @@
 ---
 title: Update data over the internet
 description: How to use the http package to update data over the internet.
-prev:
-  title: Send data to the internet
-  path: /cookbook/networking/send-data
-next:
-  title: Delete data on the internet
-  path: /cookbook/networking/delete-data
 ---
 
 <?code-excerpt path-base="cookbook/networking/update_data/"?>

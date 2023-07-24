@@ -1,12 +1,6 @@
 ---
 title: Send data to a new screen
 description: How to pass data to a new route.
-prev:
-  title: Return data from a screen
-  path: /cookbook/navigation/returning-data
-next:
-  title: Parse JSON in the background
-  path: /cookbook/networking/background-parsing
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

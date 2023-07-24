@@ -1,12 +1,6 @@
 ---
 title: Make authenticated requests
 description: How to fetch authorized data from a web service.
-prev:
-  title: Fetch data from the internet
-  path: /cookbook/networking/fetch-data
-next:
-  title: Send data to the internet
-  path: /cookbook/networking/send-data
 ---
 
 <?code-excerpt path-base="cookbook/networking/authenticated_requests/"?>

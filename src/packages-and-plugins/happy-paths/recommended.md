@@ -1,6 +1,7 @@
 ---
 title: Happy paths recommendations
-description: Recommended packages and plugins for adding functionality to your app.
+description: >
+  Recommended packages and plugins for adding functionality to your app.
 ---
 
 
@@ -54,7 +55,7 @@ Your tasks remain scheduled through app restarts and system reboots.
   **Is there a difference between a package and a plugin?**
   Yes, there is! Both are packages,
   but a plugin is a type of package that contains 
-  platform-specific code (such as Kotlin, Java, Swift, Objective C)
+  platform-specific code (such as Kotlin, Java, Swift, Objective-C)
   that communicates with the underlying platform.
   For more information, see [Using packages][].
 {{site.alert.end}}  

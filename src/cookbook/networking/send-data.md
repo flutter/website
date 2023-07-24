@@ -1,12 +1,6 @@
 ---
 title: Send data to the internet
 description: How to use the http package to send data over the internet.
-prev:
-  title: Make authenticated requests
-  path: /cookbook/networking/authenticated-requests
-next:
-  title: Update data over the internet
-  path: /cookbook/networking/update-data
 ---
 
 <?code-excerpt path-base="cookbook/networking/send_data/"?>

@@ -1,12 +1,6 @@
 ---
 title: Update the UI based on orientation
 description: Respond to a change in the screen's orientation.
-prev:
-  title: Export fonts from a package
-  path: /cookbook/design/package-fonts
-next:
-  title: Use a custom font
-  path: /cookbook/design/fonts
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
