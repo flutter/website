@@ -1,12 +1,6 @@
 ---
 title: Fade a widget in and out
 description: How to fade a widget in and out.
-prev:
-  title: Animate the properties of a container
-  path: /cookbook/animation/animated-container
-next:
-  title: Add a drawer to a screen
-  path: /cookbook/design/drawer
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

@@ -1,12 +1,6 @@
 ---
 title: Report errors to a service
 description: How to keep track of errors that users encounter.
-prev:
-  title: Work with long lists
-  path: /cookbook/lists/long-lists
-next:
-  title: Animate a widget across screens
-  path: /cookbook/navigation/hero-animations
 ---
 
 <?code-excerpt path-base="cookbook/maintenance/error_reporting/"?>

@@ -1,12 +1,6 @@
 ---
 title: Handle scrolling
 description: How to handle scrolling in a widget test.
-prev:
-  title: Find widgets
-  path: /cookbook/testing/widget/finders
-next:
-  title: Tap, drag, and enter text
-  path: /cookbook/testing/widget/tap-drag
 ---
 
 <?code-excerpt path-base="cookbook/testing/widget/scrolling/"?>

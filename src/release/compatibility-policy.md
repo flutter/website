@@ -16,9 +16,12 @@ those tests to (a) determine if the change is sufficiently valuable,
 and (b) provide fixes for the code so that the tests continue to pass.
 
 If you would like to provide tests as part of this program, please
-submit a PR to the [flutter/tests repository][]. The README.md file on
-that repository describes the process in detail.
+submit a PR to the [flutter/tests repository][]. 
+The [README][flutter-tests-readme] on that repository describes 
+the process in detail.
 
+[flutter/tests repository]: {{site.github}}/flutter/tests
+[flutter-tests-readme]: {{site.github}}/flutter/tests#adding-more-tests
 
 ## Announcements and migration guides
 
@@ -30,6 +33,8 @@ mailing list as well as in our release notes.
 We provide a list of [guides for migrating code][] affected by
 breaking changes.
 
+[flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
+[guides for migrating code]: {{site.url}}/release/breaking-changes
 
 ## Deprecation policy
 
@@ -61,9 +66,5 @@ would have changes that affect contributed tests.
 Such changes wouldn't necessarily be accompanied by a
 migration guide.
 
-
-[flutter/tests repository]: {{site.github}}/flutter/tests
-[flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
-[guides for migrating code]: {{site.url}}/release/breaking-changes
 [separate breaking-change policy]: {{site.github}}/dart-lang/sdk/blob/main/docs/process/breaking-changes.md
 [Dart announce]: https://groups.google.com/a/dartlang.org/g/announce
