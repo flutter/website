@@ -44,6 +44,8 @@
       permalink: /release/release-notes
     - title: Breaking changes
       permalink: /release/breaking-changes
+    - title: Compatibility policy
+      permalink: /release/compatibility-policy
 
 - title: Samples & codelabs
   children:
@@ -452,8 +454,6 @@
     - header: General
     - title: FAQ
       permalink: /resources/faq
-    - title: Compatibility policy
-      permalink: /resources/compatibility
     - title: Google Fonts package
       permalink: https://pub.dev/packages/google_fonts
     - title: Official brand assets

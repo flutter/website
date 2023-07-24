@@ -23,7 +23,7 @@ consider submitting your tests to our [test registry].
 The following guides are available. They are sorted by
 release, and listed in alphabetical order:
 
-[breaking change policy]: {{site.url}}/resources/compatibility
+[breaking change policy]: {{site.url}}/release/compatibility-policy
 [Flutter announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [Dart announce]: https://groups.google.com/a/dartlang.org/g/announce
 [`dart fix`]: {{site.url}}/tools/flutter-fix
