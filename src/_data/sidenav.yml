@@ -45,7 +45,7 @@
     - title: Breaking changes
       permalink: /release/breaking-changes
 
-- title: Samples & tutorials
+- title: Samples & codelabs
   children:
     - title: Flutter Gallery
       permalink: https://gallery.flutter.dev
@@ -55,8 +55,6 @@
       permalink: /cookbook
     - title: Codelabs
       permalink: /codelabs
-    - title: Tutorials
-      permalink: /reference/tutorials
 
 - divider
 
