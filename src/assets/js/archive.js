@@ -4,6 +4,8 @@ const releasesToShow = 99999;
 // The Flutter SDK archive filename prefix.
 const FILE_NAME_PREFIX = 'flutter_';
 
+const filenameReplacement = new RegExp(`^(.*?)\\b${FILE_NAME_PREFIX}\\w+_v?[X|0-9]+\\..*`, 'm');
+
 // Fetches Flutter release JSON for the given OS and calls the callback once the data is available.
 function fetchFlutterReleases(os, callback, errorCallback) {
   // OS: windows, macos, linux
@@ -144,30 +146,32 @@ let macOSArm64ArchiveFilename = '';
   }
   macDownload.addEventListener('click', function () {
     // Update inlined filenames in <code> element text nodes with arm64 filename:
-    const textNode = filterTextNodeInCodeElement();
-  
-    textNode.textContent = `unzip ~/Downloads/${macOSArm64ArchiveFilename}`;
+    replaceFilenameInCodeElements(macOSArm64ArchiveFilename);
   });
 })();
 
 /**
- * Filters node text that contain a specific prefix.
- *
- * @returns {ChildNode} A filtered Node Text.
+ * Replaces the placeholder text or the old filename in code blocks
+ * with the specified {@link archiveFilename}.
+ * 
+ * @param archiveFilename The new filename to replace the
+ *   old one in code blocks with
  */
-function filterTextNodeInCodeElement() {
+function replaceFilenameInCodeElements(archiveFilename) {
   const codeElements = document.querySelectorAll('code');
-  const filteredElements = Array.from(codeElements).filter(function (element) {
-    return Array.from(element.childNodes).some(function (node) {
-      return node.nodeType === Node.TEXT_NODE && node.textContent.includes(FILE_NAME_PREFIX);
+
+  codeElements.forEach((e) => {
+    e.childNodes.forEach((node) => {
+      if (node.nodeType === Node.TEXT_NODE &&
+          node.textContent.includes(FILE_NAME_PREFIX)) {
+        const text = node.textContent;
+        node.textContent = text.replace(
+            filenameReplacement,
+            `$1${archiveFilename}`
+        );
+      }
     });
   });
-
-  const code = filteredElements[0];
-  const textNode = [...code.childNodes].filter(function (node) {
-    return node.nodeType === Node.TEXT_NODE && node.textContent.includes(FILE_NAME_PREFIX);
-  })[0];
-  return textNode;
 }
 
 
@@ -197,20 +201,17 @@ function updateReleaseDownloadButton(releases, base_url, os, arch = '') {
 
   //Update download-filename placeholders:
   const downloadLinkOs = document.querySelectorAll(`.download-latest-link-filename-${os}${archString}`);
-  downloadLinkOs.forEach(function(element) {
+  downloadLinkOs.forEach(function (element) {
     element.textContent = archiveFilename;
   });
-  
+
   const genericDownloadLink = document.querySelectorAll('.download-latest-link-filename');
-  genericDownloadLink.forEach(function(element) {
+  genericDownloadLink.forEach(function (element) {
     element.textContent = archiveFilename;
   });
 
   // Update inlined filenames in <code> element text nodes:
-  const textNode = filterTextNodeInCodeElement();
-  const text = textNode.textContent;
-  const newText = text.replace(new RegExp(`^(.*?)\\b${FILE_NAME_PREFIX}\\w+_v.*`, 'm'), `$1${archiveFilename}`);
-  textNode.textContent = newText;
+  replaceFilenameInCodeElements(archiveFilename);
 }
 
 function updateDownloadLink(releases, os, arch) {
