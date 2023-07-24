@@ -45,7 +45,7 @@
     - title: Breaking changes
       permalink: /release/breaking-changes
 
-- title: Samples & tutorials
+- title: Samples & codelabs
   children:
     - title: Flutter Gallery
       permalink: https://gallery.flutter.dev
