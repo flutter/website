@@ -1,12 +1,6 @@
 ---
 title: Fade in images with a placeholder
 description: How to fade images into view.
-prev:
-  title: Display images from the internet
-  path: /cookbook/images/network-image
-next:
-  title: Work with cached images
-  path: /cookbook/images/cached-images
 ---
 
 <?code-excerpt path-base="cookbook/images/fading_in_images"?>

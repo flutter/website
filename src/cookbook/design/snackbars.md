@@ -1,12 +1,6 @@
 ---
 title: Display a snackbar
 description: How to implement a snackbar to display messages.
-prev:
-  title: Add a drawer to a screen
-  path: /cookbook/design/drawer
-next:
-  title: Export fonts from a package
-  path: /cookbook/design/package-fonts
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
