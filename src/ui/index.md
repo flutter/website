@@ -1,6 +1,6 @@
 ---
 layout: toc
-title: User interface
+title: Building user interfaces with Flutter
 short-title: UI
 description: Content covering user interface development in Flutter apps.
 js:
