@@ -1,12 +1,6 @@
 ---
 title: Return data from a screen
 description: How to return data from a new screen.
-prev:
-  title: Set up universal links for iOS
-  path: /cookbook/navigation/set-up-universal-links
-next:
-  title: Send data to a new screen
-  path: /cookbook/navigation/passing-data
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

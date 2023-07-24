@@ -2,12 +2,6 @@
 title: An introduction to integration testing
 description: Learn about integration testing in Flutter.
 short-title: Introduction
-prev:
-  title: Take a picture using the camera
-  path: /cookbook/plugins/picture-using-camera
-next:
-  title: Performance profiling
-  path: /cookbook/testing/integration/profiling
 ---
 
 <?code-excerpt path-base="cookbook/testing/integration/introduction/"?>

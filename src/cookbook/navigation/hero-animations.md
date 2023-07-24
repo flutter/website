@@ -1,12 +1,6 @@
 ---
 title: Animate a widget across screens
 description: How to animate a widget from one screen to another
-prev:
-  title: Report errors to a service
-  path: /cookbook/maintenance/error-reporting
-next:
-  title: Navigate to a new screen and back
-  path: /cookbook/navigation/navigation-basics
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
