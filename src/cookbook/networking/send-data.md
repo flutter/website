@@ -1,12 +1,6 @@
 ---
 title: Send data to the internet
 description: How to use the http package to send data over the internet.
-prev:
-  title: Parse JSON in the background
-  path: /cookbook/networking/background-parsing
-next:
-  title: Update data over the internet
-  path: /cookbook/networking/update-data
 ---
 
 <?code-excerpt path-base="cookbook/networking/send_data/"?>
