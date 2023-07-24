@@ -114,6 +114,7 @@
       { "source": "/layout", "destination": "/ui/layout", "type": 301 },
       { "source": "/packages-and-plugins/androidx-compatibility", "destination": "/platform-integration/android/androidx-migration", "type": 301 },
       { "source": "/packages-and-plugins/c-interop", "destination": "/platform-integration/android/c-interop", "type": 301 },
+      { "source": "/packages-and-plugins/plugins-in-tests", "destination": "/testing/plugins-in-tests", "type": 301 },
       { "source": "/packages-and-plugins/plugin-api-migration", "destination": "/release/breaking-changes/plugin-api-migration", "type": 301 },
       { "source": "/platform-integration/android/androidx-migration", "destination": "/release/breaking-changes/androidx-migration", "type": 301 },
       { "source": "/platform-integration/android/splash-screen-migration", "destination": "/release/breaking-changes/splash-screen-migration", "type": 301 },
