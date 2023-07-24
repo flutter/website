@@ -2,7 +2,7 @@
 layout: toc
 title: Building user interfaces with Flutter
 short-title: UI
-description: Content covering user interface development in Flutter apps.
+description: Introduction to user interface development in Flutter.
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
