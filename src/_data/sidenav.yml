@@ -371,7 +371,9 @@
     - title: Loading sequence and performance
       permalink: /add-to-app/performance
 
-- title: Tools & features
+- divider
+
+- title: Tools & editors
   permalink: /tools
   children:
     - title: Android Studio & IntelliJ
@@ -419,8 +421,6 @@
       permalink: /tools/flutter-fix
     - title: Code formatting
       permalink: /tools/formatting
-
-- divider
 
 - title: Resources
   permalink: /resources
