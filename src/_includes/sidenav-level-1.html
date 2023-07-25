@@ -1,6 +1,4 @@
-{% comment %} Canonicalize page URL path {% endcomment -%}
-
-{% assign active_entries = include.nav | active_nav_entry_index_array: include.page_url_path -%}
+{% assign active_entries = include.page_url_path | active_nav_for_page: site.data.activenav -%}
 
 <ul class="nav flex-column">
   {%- for entry in include.nav -%}
