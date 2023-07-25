@@ -1,12 +1,6 @@
 ---
 title: Set up universal links for iOS
 description: How set up universal links for an iOS application built with Flutter
-prev:
-  title: Set up app links for Android
-  path: /cookbook/navigation/set-up-app-links
-next:
-  title: Return data from a screen
-  path: /cookbook/navigation/returning-data
 js:
 - defer: true
   url: https://dartpad.dev/inject_embed.dart.js

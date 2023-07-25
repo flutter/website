@@ -761,7 +761,7 @@ to your app.
 
 [Gestures][], a section in the [Flutter cookbook][].
 
-[Handling gestures][], a section in [Introduction to widgets][]
+[Handling gestures][]
 : How to create a button and make it respond to input.
 
 [Gestures in Flutter][]
@@ -796,12 +796,11 @@ Flutter Gallery [running app][], [repo][]
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
 [Gestures]: {{site.url}}/cookbook/gestures
 [Gestures in Flutter]: {{site.url}}/ui/advanced/gestures
-[Handling gestures]: {{site.url}}/ui/widgets-intro#handling-gestures
+[Handling gestures]: {{site.url}}/ui#handling-gestures
 [new-flutter-app]: {{site.url}}/get-started/test-drive
 [`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
 [`Icon`]: {{site.api}}/flutter/widgets/Icon-class.html
 [`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
-[Introduction to widgets]: {{site.url}}/ui/widgets-intro
 [iOS simulator]: {{site.url}}/get-started/install/macos#set-up-the-ios-simulator
 [building layouts tutorial]: {{site.url}}/ui/layout/tutorial
 [building layouts tutorial (step 6)]: {{site.url}}/ui/layout/tutorial#step-6-final-touch
