@@ -319,6 +319,8 @@
     - title: Handle errors
       permalink: /testing/errors
       match-page-url-exactly: true
+    - title: Report errors to a service
+      permalink: /cookbook/maintenance/error-reporting
 
 - title: Performance & optimization
   permalink: /perf
