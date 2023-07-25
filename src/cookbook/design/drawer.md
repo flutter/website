@@ -1,12 +1,6 @@
 ---
 title: Add a drawer to a screen
 description: How to implement a Material Drawer.
-prev:
-  title: Fade a widget in and out
-  path: /cookbook/animation/opacity-animation
-next:
-  title: Display a snackbar
-  path: /cookbook/design/snackbars
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
