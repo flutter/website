@@ -171,6 +171,15 @@
           permalink: /cookbook/networking/web-sockets
     - title: JSON and serialization
       permalink: /data-and-backend/json
+    - title: Persistence
+      permalink: /data-and-backend/persistence
+      children: 
+        - title: Store key-value data on disk
+          permalink: /cookbook/persistence/key-value
+        - title: Read and write files
+          permalink: /cookbook/persistence/reading-writing-files
+        - title: Persist data with SQLite
+          permalink: /cookbook/persistence/sqlite
     - title: Firebase
       permalink: /data-and-backend/firebase
     - title: Google APIs
