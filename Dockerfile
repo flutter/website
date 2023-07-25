@@ -90,6 +90,7 @@ FROM node AS dev
 
 ENV JEKYLL_ENV=development
 RUN gem install bundler
+RUN gem uninstall ffi
 COPY Gemfile Gemfile.lock ./
 RUN bundle config set force_ruby_platform true
 RUN bundle config build.ffi "--disable-system-libffi"
@@ -117,6 +118,7 @@ FROM node AS build
 
 ENV JEKYLL_ENV=production
 RUN gem install bundler
+RUN gem uninstall ffi
 COPY Gemfile Gemfile.lock ./
 RUN bundle config set force_ruby_platform true
 RUN bundle config build.ffi "--disable-system-libffi"
