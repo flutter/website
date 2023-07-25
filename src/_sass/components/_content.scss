@@ -81,6 +81,8 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+    
     // Invisible pre-element to avoid modifying styles on headings.
     &[id]:not(.no_toc)::before { @include header-clearance; }
 
