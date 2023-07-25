@@ -44,8 +44,10 @@
       permalink: /release/release-notes
     - title: Breaking changes
       permalink: /release/breaking-changes
+    - title: Compatibility policy
+      permalink: /release/compatibility-policy
 
-- title: Samples & tutorials
+- title: Samples & codelabs
   children:
     - title: Flutter Gallery
       permalink: https://gallery.flutter.dev
@@ -55,8 +57,6 @@
       permalink: /cookbook
     - title: Codelabs
       permalink: /codelabs
-    - title: Tutorials
-      permalink: /reference/tutorials
 
 - divider
 
@@ -64,8 +64,6 @@
   permalink: /ui
   match-page-url-exactly: true
   children:
-    - title: Introduction to widgets
-      permalink: /ui/widgets-intro
     - title: Building layouts
       permalink: /ui/layout
       children:
@@ -155,6 +153,22 @@
           permalink: /data-and-backend/state-mgmt/options
     - title: Networking & http
       permalink: /data-and-backend/networking
+      children:
+        - title: Overview
+          permalink: /data-and-backend/networking
+          match-page-url-exactly: true
+        - title: Fetch data from the internet
+          permalink: /cookbook/networking/fetch-data
+        - title: Make authenticated requests
+          permalink: /cookbook/networking/authenticated-requests
+        - title: Send data to the internet
+          permalink: /cookbook/networking/send-data
+        - title: Update data over the internet
+          permalink: /cookbook/networking/update-data
+        - title: Delete data on the internet
+          permalink: /cookbook/networking/delete-data
+        - title: Communicate with WebSockets
+          permalink: /cookbook/networking/web-sockets
     - title: JSON and serialization
       permalink: /data-and-backend/json
     - title: Firebase
@@ -245,22 +259,16 @@
 - title: Packages & plugins
   permalink: /packages-and-plugins
   children:
-    - title: Background processes
-      permalink: /packages-and-plugins/background-processes
-    - title: Developing packages & plugins
-      permalink: /packages-and-plugins/developing-packages
-    - title: Flutter Favorites program
-      permalink: /packages-and-plugins/favorites
-    - title: Happy paths project
-      permalink: /packages-and-plugins/happy-paths
-      match-page-url-exactly: true
-    - title: Happy paths recommendations
-      permalink: /packages-and-plugins/happy-paths/recommended
-    - title: Plugins in Flutter tests
-      permalink: /packages-and-plugins/plugins-in-tests
-    - title: Using packages
+    - title: Use packages & plugins
       permalink: /packages-and-plugins/using-packages
-    - title: Package site
+    - title: Develop packages & plugins
+      permalink: /packages-and-plugins/developing-packages
+    - divider
+    - title: Happy paths
+      permalink: /packages-and-plugins/happy-paths
+    - title: Flutter Favorites
+      permalink: /packages-and-plugins/favorites
+    - title: Package repository
       permalink: https://pub.dev/flutter
 
 - title: Testing & debugging
@@ -398,7 +406,9 @@
     - title: Loading sequence and performance
       permalink: /add-to-app/performance
 
-- title: Tools & features
+- divider
+
+- title: Tools & editors
   permalink: /tools
   children:
     - title: Android Studio & IntelliJ
@@ -447,8 +457,6 @@
     - title: Code formatting
       permalink: /tools/formatting
 
-- divider
-
 - title: Resources
   permalink: /resources
   children:
@@ -483,8 +491,6 @@
     - header: General
     - title: FAQ
       permalink: /resources/faq
-    - title: Compatibility policy
-      permalink: /resources/compatibility
     - title: Google Fonts package
       permalink: https://pub.dev/packages/google_fonts
     - title: Official brand assets
@@ -506,5 +512,3 @@
       permalink: /reference/flutter-cli
     - title: Security false positives
       permalink: /reference/security-false-positives
-    - title: Package site
-      permalink: https://pub.dev/flutter

@@ -1,12 +1,6 @@
 ---
 title: Fetch data from the internet
 description: How to fetch data over the internet using the http package.
-prev:
-  title: Delete data on the internet
-  path: /cookbook/networking/delete-data
-next:
-  title: Make authenticated requests
-  path: /cookbook/networking/authenticated-requests
 ---
 
 <?code-excerpt path-base="cookbook/networking/fetch_data/"?>

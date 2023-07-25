@@ -1,6 +1,8 @@
 ---
-title: Happy paths project
-description: The Happy paths page lists areas of technology where we recommend specific Flutter packages and plugins that add functionality to your app.
+title: Happy paths
+description: >
+  Areas of technology where we recommend specific Flutter 
+  packages and plugins that add functionality to your app.
 ---
 
 ![Header image for Happy Paths](/assets/images/docs/happy-paths/HappyPaths_HeaderImage_003.png){:width="100%"}
@@ -35,7 +37,7 @@ developers as you ramp up to building larger and more complex apps.
 Keep in mind that these are not the _only_ paths that you can choose,
 but are solutions that we can recommend.  
   
-In future, we plan to add more happy path recommendations
+In the future, we plan to add more happy path recommendations
 for different areas of functionality. If there’s a specific
 happy path recommendation that you would like to see, 
 [file an issue][] to let us know.  

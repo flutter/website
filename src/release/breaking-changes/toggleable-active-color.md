@@ -17,7 +17,7 @@ The Material widgets `Switch`, `SwitchListTile`, `Checkbox`,
 The migration of widgets that depend on `ThemeData.toggleableActiveColor`
 to `ColorScheme.secondary` caused  the `toggleableActiveColor` property
 to be unnecessary. This property will eventually be removed, as per Flutter's
-[deprecation policy]({{site.url}}/resources/compatibility#deprecation-policy).
+[deprecation policy]({{site.url}}/release/compatibility-policy#deprecation-policy).
 
 ## Description of change
 
