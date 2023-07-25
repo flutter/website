@@ -307,9 +307,9 @@ declaration:
 
 <?code-excerpt "lib/main.dart (textSection)" title?>
 ```dart
-Widget textSection = const Padding(
-  padding: EdgeInsets.all(32),
-  child: Text(
+Widget textSection = Container(
+  padding: const EdgeInsets.all(32),
+  child: const Text(
     'Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese '
     'Alps. Situated 1,578 meters above sea level, it is one of the '
     'larger Alpine Lakes. A gondola ride from Kandersteg, followed by a '
