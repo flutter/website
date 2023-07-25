@@ -87,25 +87,26 @@ you need to do the following:
 
 - Create an [Apple Developer][] account.
 - Set up physical device deployment in Xcode.
-- Provision your Flutter app.
+- Create a development provisioning profile to self-sign certificates.
 - Install the third-party CocoaPods dependency manager
   if your app uses Flutter plugins.
 
 #### Create your Apple ID and Apple Developer account
 
-To test deploy to a physical iOS device, you need an Apple ID.
+To test deploying to a physical iOS device, you need an Apple ID.
 
 To distribute your app to the App Store,
 you must enroll in the Apple Developer Program.
 
-If you only need to test your app, complete the first step and move on
-to the next section.
+If you only need to test deploying your app,
+complete the first step and move on to the next section.
 
 1. If you don't have an [Apple ID][], create one.
 
 1. If you haven't enrolled in the [Apple Developer][] program, enroll now.
 
-   To learn more about membership types, see [Choosing a Membership][].
+   To learn more about membership types,
+   check out [Choosing a Membership][].
 
 [Apple ID]: https://support.apple.com/en-us/HT204316
 
@@ -116,7 +117,7 @@ Configure your physical iOS device to connect to Xcode.
 1. Attach your iOS device to the USB port on your Mac.
 
 1. On first connecting your iOS device to your Mac,
-   your iOS device displays the **Trust this computer?** modal.
+   your iOS device displays the **Trust this computer?** dialog.
 
 1. Click **Trust**.
 
@@ -127,7 +128,8 @@ Configure your physical iOS device to connect to Xcode.
 To deploy to a physical iOS device, you need to establish trust with your
 Mac and the iOS device.
 This requires you to load signed developer certificates to your iOS device.
-To sign an app in Xcode, you need to create a development provisioning profile.
+To sign an app in Xcode,
+you need to create a development provisioning profile.
 
 Follow the Xcode signing flow to provision your project.
 
