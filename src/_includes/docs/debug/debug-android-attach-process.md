@@ -15,6 +15,16 @@
    using the **Emulator Pixel_5_API_33**.
 
 {% comment %}
+
+   @atsansone - 2023-07-24
+
+   These screenshots were commented out for two reasons known for most docs:
+
+   1. The docs should stand on their own.
+   2. These screenshots would be painful to maintain.
+
+   If reader feedback urges their return, these will be uncommented.
+
    ![Attach to Process dialog box open in Android Studio](/assets/images/docs/testing/debugging/native/android-studio/attach-process-dialog.png)
    <div markdown="1">{:.figure-caption}
    Flutter app in Android device displaying two buttons.
