@@ -10,7 +10,7 @@ description: How to connect a native debugger to your running Flutter app.
   This guide presumes you understand general debugging,
   have installed Flutter and git, and have familiarity
   with the Dart language as well as one of the following
-  languages: Java, Kotlin, Swift, or ObjectiveC.
+  languages: Java, Kotlin, Swift, or Objective-C.
 {{site.alert.end}}
 
 If you write Flutter apps only with Dart code,
@@ -18,10 +18,10 @@ you can debug your code using your IDE's debugger.
 The Flutter team recommends VS Code.
 
 If you write a platform-specific plugin or
-using platform-specific libraries, you can debug
+use platform-specific libraries, you can debug
 that portion of your code with a native debugger.
 
-- To debug iOS or macOS code written in Swift or ObjectiveC,
+- To debug iOS or macOS code written in Swift or Objective-C,
   you can use Xcode.
 - To debug Android code written in Java or Kotlin, you can use Gradle.
 - To debug Windows code written in C++, you can use Visual Studio.
@@ -145,9 +145,9 @@ The following screenshot and table explain the purpose of each tool.
 |                               | Breakpoints         | List of exceptions and set breakpoints that you set                               |
 | **Green**                     | `<Flutter files>`   | Files that you are editing                                                        |
 | **Pink**                      | Widget Inspector    | Hierarchy of widgets in the running Flutter app                                   |
-| **Blue**                      | Layout Explorer     | Visual of how the Flutter placed the widget you selected in the Widget Inspector  |
+| **Blue**                      | Layout Explorer     | Visual of how Flutter placed the widget you selected in the Widget Inspector  |
 |                               | Widget Details Tree | List of properties of the widget selected in the Widget Inspector                 |
-| **Orange**                    | Problems            | List of issues the Flutter linter found in the current Flutter file               |
+| **Orange**                    | Problems            | List of issues the Dart analyzer found in the current Dart file               |
 |                               | Output              | Response that the Flutter app                                                     |
 |                               | Debug Console       | Logs or error messages that the Flutter app generates while debugging             |
 |                               | Terminal            | System shell prompt contained in VS Code                                          |
@@ -159,8 +159,8 @@ go to **View** > **Appearance** > **Panel Position**.
 
 #### VS Code Flutter debugging toolbar
 
-The toolbar allows you to debug as any debugger.
-You can step in, out, and over Dart statements, hot reload or resume the app.
+The toolbar allows you to debug using any debugger.
+You can step in, out, and over Dart statements, hot reload, or resume the app.
 
 ![Flutter debugger toolbar in VS Code](/assets/images/docs/testing/debugging/vscode-ui/screens/debug-toolbar.png)
 
@@ -303,7 +303,8 @@ test Flutter app. This update adds native code to debug.
 
     </details>
 
-1. To add the `url_launcher` dependency, run `flutter pub add`:
+1. To add the `url_launcher` package as a dependency, 
+   run `flutter pub add`:
 
     ```terminal
     $ flutter pub add url_launcher
@@ -417,7 +418,7 @@ macOS and Windows:
 ### Flutter
 
 - [Debugging Flutter apps][]
-- [Flutter inspector][] and the [DevTools][] docs.
+- [Flutter inspector][] and the [DevTools][] docs
 - [Performance profiling][]
 
 [Debugging Flutter apps]: {{site.url}}/testing/debugging

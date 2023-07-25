@@ -37,6 +37,7 @@ Running Gradle task 'bundleDebug'...                               27.1s
 <div class="tab-pane active" id="from-vscode-to-android-studio" role="tabpanel" aria-labelledby="from-vscode-to-android-studio-tab" markdown="1">
 
 #### Start debugging with VS Code first {#from-vscode-to-android-studio}
+{:.no_toc}
 
 If you use VS Code to debug most of your code, start with this section.
 

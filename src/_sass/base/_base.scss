@@ -275,7 +275,7 @@ ol + img, ul + img, ol + p, ul + p, p + p + img {
 }
 
 .figure-caption {
-  font-size: .875rem;
+  font-size: bootstrap.$font-size-sm;
   font-style: italic;
   color: #041E3C;
 }
