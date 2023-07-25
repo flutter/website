@@ -152,7 +152,7 @@ objects to and from the JSON format.
 [`freezed`]: {{site.pub-pkg}}/freezed#how-to-use
 [`json_serializable`]: {{site.pub-api}}/json_serializable/latest/
 [json-example]: {{site.github}}/google/json_serializable.dart/tree/master/example
-[Serializing JSON using json_serializable]: {{site.url}}/data-and-backend/json#serializing-json-using-code-generation-libraries
+[Serializing JSON using json_serializable]: {{site.url}}/data-and-backend/serialization/json#serializing-json-using-code-generation-libraries
 
 ## Structured local storage ![Structured local storage happy path image](/assets/images/docs/happy-paths/HappyPaths_Icon_Storage_3d_001.png){:width="20%"}
 

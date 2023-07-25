@@ -173,7 +173,7 @@
       permalink: /data-and-backend/serialization
       children:
         - title: JSON serialization
-          permalink: /data-and-backend/json
+          permalink: /data-and-backend/serialization/json
         - title: Parse JSON in the background
           permalink: /cookbook/networking/background-parsing
     - title: Firebase
