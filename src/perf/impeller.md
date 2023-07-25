@@ -79,14 +79,14 @@ include a small reproducible test case.
 Impeller is available for macOS in preview as of the 
 Flutter 3.13 stable release.
 
-* To _enable_ Impeller on iOS when debugging,
+* To _enable_ Impeller on macOS when debugging,
   pass `--enable-impeller` to the `flutter run` command.
 
   ```terminal
   $ flutter run --enable-impeller
   ```
 
-* To _enable_ Impeller on iOS when deploying your app,
+* To _enable_ Impeller on macOS when deploying your app,
   add the following tags under the top-level `<dict>` tag in your
   app's `Info.plist` file.
 
