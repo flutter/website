@@ -90,7 +90,11 @@ debugging your own Flutter project as well.
 
 1. Test the debugger.
 
-   a. In `main.dart`, click on line 67.
+   a. In `main.dart`, click on this line:
+
+      ```dart
+      _counter++;
+      ```
 
    b. Type <kbd>Shift</kbd> + <kbd>F9</kbd>.
       This adds a breakpoint where the
@@ -145,10 +149,10 @@ The following screenshot and table explain the purpose of each tool.
 |                               | Breakpoints         | List of exceptions and set breakpoints that you set                               |
 | **Green**                     | `<Flutter files>`   | Files that you are editing                                                        |
 | **Pink**                      | Widget Inspector    | Hierarchy of widgets in the running Flutter app                                   |
-| **Blue**                      | Layout Explorer     | Visual of how Flutter placed the widget you selected in the Widget Inspector  |
+| **Blue**                      | Layout Explorer     | Visual of how Flutter placed the widget you selected in the Widget Inspector      |
 |                               | Widget Details Tree | List of properties of the widget selected in the Widget Inspector                 |
-| **Orange**                    | Problems            | List of issues the Dart analyzer found in the current Dart file               |
-|                               | Output              | Response that the Flutter app                                                     |
+| **Orange**                    | Problems            | List of issues the Dart analyzer found in the current Dart file                   |
+|                               | Output              | Response that the Flutter app returns when building an app                        |
 |                               | Debug Console       | Logs or error messages that the Flutter app generates while debugging             |
 |                               | Terminal            | System shell prompt contained in VS Code                                          |
 {:.table.table-striped}
@@ -165,7 +169,7 @@ You can step in, out, and over Dart statements, hot reload, or resume the app.
 ![Flutter debugger toolbar in VS Code](/assets/images/docs/testing/debugging/vscode-ui/screens/debug-toolbar.png)
 
 <div class="table-wrapper" markdown="1">
-| Icon                                                      | Action                | Keyboard Shortcut                                     |
+| Icon                                                      | Action                | Default Keyboard Shortcut                             |
 |-----------------------------------------------------------|-----------------------|-------------------------------------------------------|
 | {% include_relative vscode-flutter-bar/_play.md %}        | Start or Resume       | <kbd>F5</kbd>                                         |
 | {% include_relative vscode-flutter-bar/_pause.md %}       | Pause                 | <kbd>F5</kbd>                                         |
@@ -178,8 +182,6 @@ You can step in, out, and over Dart statements, hot reload, or resume the app.
 | {% include_relative vscode-flutter-bar/_inspector.md %}   | Open Widget Inspector |                                                       |
 {:.table.table-striped}
 </div>
-
-[Test drive]: {{site.url}}/get-started/test-drive
 
 ## Update test Flutter app
 
@@ -303,7 +305,7 @@ test Flutter app. This update adds native code to debug.
 
     </details>
 
-1. To add the `url_launcher` package as a dependency, 
+1. To add the `url_launcher` package as a dependency,
    run `flutter pub add`:
 
     ```terminal
@@ -331,26 +333,76 @@ test Flutter app. This update adds native code to debug.
     Changed 10 dependencies!
     ```
 
-1. To check what changed with the codebase, run `git status`.
+1. To check what changed with the codebase:
 
-    ```terminal
-    $ git status
-    On branch main
-    Changes not staged for commit:
-      (use "git add <file>..." to update what will be committed)
-      (use "git restore <file>..." to discard changes in working directory)
-      modified:   ios/Flutter/Debug.xcconfig
-      modified:   ios/Flutter/Release.xcconfig
-      modified:   linux/flutter/generated_plugin_registrant.cc
-      modified:   linux/flutter/generated_plugins.cmake
-      modified:   macos/Flutter/Flutter-Debug.xcconfig
-      modified:   macos/Flutter/Flutter-Release.xcconfig
-      modified:   macos/Flutter/GeneratedPluginRegistrant.swift
-      modified:   pubspec.lock
-      modified:   pubspec.yaml
-      modified:   windows/flutter/generated_plugin_registrant.cc
-      modified:   windows/flutter/generated_plugins.cmake
-    ```
+   {: type="a"}
+   1. In Linux or macOS, run this `find` command.
+
+      ```terminal
+      $ find ./ -mmin -120 
+      ```
+
+      ```terminal
+      ./ios/Flutter/Debug.xcconfig
+      ./ios/Flutter/Release.xcconfig
+      ./linux/flutter/generated_plugin_registrant.cc
+      ./linux/flutter/generated_plugins.cmake
+      ./macos/Flutter/Flutter-Debug.xcconfig
+      ./macos/Flutter/Flutter-Release.xcconfig
+      ./macos/Flutter/GeneratedPluginRegistrant.swift
+      ./pubspec.lock
+      ./pubspec.yaml
+      ./windows/flutter/generated_plugin_registrant.cc
+      ./windows/flutter/generated_plugins.cmake
+      ```
+   1. In Windows, run this command in the command prompt.
+
+      ```posh
+      Get-ChildItem C:\dev\example\ -Rescurse | Where-Object {$_.LastWriteTime -gt (Get-Date).AddDays(-1)}
+      ```
+
+      ```posh
+      C:\dev\example\ios\Flutter\
+
+
+      Mode                LastWriteTime         Length Name
+      ----                -------------         ------ ----
+                      8/1/2025   9:15 AM                Debug.xcconfig
+                      8/1/2025   9:15 AM                Release.xcconfig
+
+      C:\dev\example\linux\flutter\
+
+
+      Mode                LastWriteTime         Length Name
+      ----                -------------         ------ ----
+                      8/1/2025   9:15 AM                generated_plugin_registrant.cc
+                      8/1/2025   9:15 AM                generated_plugins.cmake
+
+      C:\dev\example\macos\Flutter\
+
+
+      Mode                LastWriteTime         Length Name
+      ----                -------------         ------ ----
+                      8/1/2025   9:15 AM                Flutter-Debug.xcconfig
+                      8/1/2025   9:15 AM                Flutter-Release.xcconfig
+                      8/1/2025   9:15 AM                GeneratedPluginRegistrant.swift
+
+      C:\dev\example\
+
+
+      Mode                LastWriteTime         Length Name
+      ----                -------------         ------ ----
+                      8/1/2025   9:15 AM                pubspec.lock
+                      8/1/2025   9:15 AM                pubspec.yaml
+
+      C:\dev\example\windows\flutter\
+
+
+      Mode                LastWriteTime         Length Name
+      ----                -------------         ------ ----
+                      8/1/2025   9:15 AM                generated_plugin_registrant.cc
+                      8/1/2025   9:15 AM                generated_plugins.cmake
+      ```
 
 Installing `url_launcher` added config files and code files
 for all target platforms in the Flutter app directory.
