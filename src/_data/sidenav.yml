@@ -276,7 +276,7 @@
   children:
     - header: Testing
     - title: Testing overview
-      permalink: /testing
+      permalink: /testing/overview
       match-page-url-exactly: true
     - title: Widget testing
       children:

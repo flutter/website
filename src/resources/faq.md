@@ -211,7 +211,7 @@ We use our own testing capabilities to test our SDK,
 and we measure our [test coverage][] on every commit.
 
 [test coverage]: https://coveralls.io/github/flutter/flutter?branch=master
-[testing with Flutter]: {{site.url}}/testing
+[testing with Flutter]: {{site.url}}/testing/overview
 
 ### Does Flutter come with debugging tools?
 
