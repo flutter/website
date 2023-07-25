@@ -27,7 +27,17 @@ If you set this parameter to true in these widgets, consider using
 Code before migration:
 
 ```dart
-IgnorePointer(``
+IgnorePointer(
+  ignoringSemantics: true,
+  child: const PlaceHolder(),
+);
+
+AbsorbPointer(
+  ignoringSemantics: true,
+  child: const PlaceHolder(),
+);
+
+SliverIgnorePointer(
   ignoringSemantics: true,
   child: const PlaceHolder(),
 );
@@ -41,10 +51,22 @@ ExcludeSemantics(
     child: const PlaceHolder(),
   ),
 );
+
+ExcludeSemantics(
+  child: AbsorbPointer(
+    child: const PlaceHolder(),
+  ),
+);
+
+SliverIgnorePointer(
+  child: ExcludeSemantics(
+    child: const PlaceHolder(),
+  ),
+);
 ```
 
-The behavior of setting `ignoringSemantics` to false is no longer supported.
-Consider creating your own custom widget.
+The behaviors of setting `ignoringSemantics` to false are no longer supported.
+Consider creating your own custom widgets.
 
 ```dart
 /// A widget ignores pointer event but still keeps semantics actions.
@@ -61,6 +83,46 @@ class _IgnorePointerWithSemantics extends SingleChildRenderObjectWidget {
 
 class _RenderIgnorePointerWithSemantics extends RenderProxyBox {
   _RenderIgnorePointerWithSemantics();
+
+  @override
+  bool hitTest(BoxHitTestResult result, { required Offset position }) => false;
+}
+
+/// A widget absorbs pointer event but still keeps semantics actions.
+class _AbsorbPointerWithSemantics extends SingleChildRenderObjectWidget {
+  const _AbsorbPointerWithSemantics({
+    super.child,
+  });
+
+  @override
+  _RenderAbsorbPointerWithSemantics createRenderObject(BuildContext context) {
+    return _RenderAbsorbPointerWithSemantics();
+  }
+}
+
+class _RenderAbsorbPointerWithSemantics extends RenderProxyBox {
+  _RenderAbsorbPointerWithSemantics();
+
+  @override
+  bool hitTest(BoxHitTestResult result, { required Offset position }) {
+    return size.contains(position);
+  }
+}
+
+/// A sliver ignores pointer event but still keeps semantics actions.
+class _SliverIgnorePointerWithSemantics extends SingleChildRenderObjectWidget {
+  const _SliverIgnorePointerWithSemantics({
+    super.child,
+  });
+
+  @override
+  _RenderSliverIgnorePointerWithSemantics createRenderObject(BuildContext context) {
+    return _RenderSliverIgnorePointerWithSemantics();
+  }
+}
+
+class _RenderSliverIgnorePointerWithSemantics extends RenderProxySliver {
+  _RenderSliverIgnorePointerWithSemantics();
 
   @override
   bool hitTest(BoxHitTestResult result, { required Offset position }) => false;
