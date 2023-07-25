@@ -38,6 +38,7 @@ release, and listed in alphabetical order:
 * [Deprecated `RouteInformation.location`][] and its related APIs
 * [Customize tabs alignment using the new `TabBar.tabAlignment` property][]
 * [Updated EditableText scroll into view behavior][]
+* [Deprecate `textScaleFactor` in favor of `TextScaler`][]
 
 [Added AppLifecycleState.hidden]: {{site.url}}/release/breaking-changes/add-applifecyclestate-hidden
 [Deprecated API removed after v3.10]: {{site.url}}/release/breaking-changes/3-10-deprecations
@@ -46,6 +47,7 @@ release, and listed in alphabetical order:
 [Deprecated `RouteInformation.location`]: {{site.url}}/release/breaking-changes/route-information-uri
 [Customize tabs alignment using the new `TabBar.tabAlignment` property]: {{site.url}}/release/breaking-changes/tab-alignment
 [Updated EditableText scroll into view behavior]: {{site.url}}/release/breaking-changes/editable-text-scroll-into-view
+[Deprecate `textScaleFactor` in favor of `TextScaler`]: {{site.url}}/release/breaking-changes/deprecate-textscalefactor
 
 ### Released in Flutter 3.10
 
