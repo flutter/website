@@ -634,7 +634,7 @@ If you are writing tests for your Flutter app
 and plugins are causing crashes,
 check out [Flutter in plugin tests][].
 
-[Flutter in plugin tests]: {{site.url}}/packages-and-plugins/plugins-in-tests
+[Flutter in plugin tests]: {{site.url}}/testing/plugins-in-tests
 [Testing plugins]: {{site.url}}/testing/testing-plugins
 
 ## Developing FFI plugin packages {#plugin-ffi}

@@ -1,12 +1,6 @@
 ---
 title: Focus and text fields
 description: How focus works with text fields.
-prev:
-  title: Retrieve the value of a text field
-  path: /cookbook/forms/retrieve-input
-next:
-  title: Add Material touch ripples
-  path: /cookbook/gestures/ripples
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

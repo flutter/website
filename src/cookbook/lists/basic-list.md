@@ -1,12 +1,6 @@
 ---
 title: Use lists
 description: How to implement a list.
-prev:
-  title: Work with cached images
-  path: /cookbook/images/cached-images
-next:
-  title: Create a horizontal list
-  path: /cookbook/lists/horizontal-list
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

@@ -9,7 +9,7 @@ can define to behave in a special way.
 You can use slivers to achieve custom scrolling effects,
 such as elastic scrolling.
 
-For a free, instructor-led video workshop that also uses DartPad,
+For a free, instructor-led video workshop that uses DartPad,
 check out the following video about using slivers:
 
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/YY-_yrZdjGc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -27,7 +27,7 @@ in Flutter, see the following resources:
     using the sliver classes.
 </dd>
 
-<dt markdown="1"> **[SliverAppBar][]**
+<dt markdown="1"> **[SliverAppBar][sliver-app-bar-video]**
 </dt>
 <dd markdown="1">A one-minute Widget-of-the-week
     video that gives an overview of the
@@ -59,12 +59,14 @@ in Flutter, see the following resources:
 
 Here some links to relevant API docs:
 
+* [`CustomScrollView`][]
 * [`SliverAppBar`][]
 * [`SliverGrid`][]
 * [`SliverList`][]
 
 
-[SliverAppBar]: {{site.youtube-site}}/watch?v=R9C5KMJKluE
+[`CustomScrollView`]: {{site.api}}/flutter/widgets/CustomScrollView-class.html`
+[sliver-app-bar-video]: {{site.youtube-site}}/watch?v=R9C5KMJKluE
 [`SliverAppBar`]: {{site.api}}/flutter/material/SliverAppBar-class.html
 [`SliverGrid`]: {{site.api}}/flutter/widgets/SliverGrid-class.html
 [SliverList and SliverGrid]: {{site.youtube-site}}/watch?v=ORiTTaVY6mM

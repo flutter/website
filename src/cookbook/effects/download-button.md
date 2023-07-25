@@ -1,12 +1,6 @@
 ---
 title: Create a download button
 description: How to implement a download button.
-prev:
-  title: Work with tabs
-  path: /cookbook/design/tabs
-next:
-  title: Create a nested navigation flow
-  path: /cookbook/effects/nested-nav
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
