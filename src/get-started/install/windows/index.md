@@ -2,7 +2,7 @@
 title: Choose your first type of app
 description: Configure your system to develop Flutter on Windows.
 short-title: Windows
-target-list: [Web, Mobile, Desktop]
+target-list: [Desktop, Mobile, Web]
 ---
 
 {% assign os = 'windows' -%}
