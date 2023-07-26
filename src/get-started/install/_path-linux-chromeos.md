@@ -9,7 +9,8 @@ or for all sessions going forward.
 
 #### Update your path for the current session only
 
-You can update your PATH variable for the current session at the command line:
+To update your `PATH` variable for the current session,
+enter this command in your terminal:
 
 ```terminal
 $ export PATH="$PATH:[PATH_TO_FLUTTER_GIT_DIRECTORY]/flutter/bin"
