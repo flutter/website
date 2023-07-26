@@ -184,6 +184,20 @@ public class MyActivity extends FragmentActivity {
     }
 
     @Override
+    public void onActivityResult(
+        int requestCode,
+        int resultCode,
+        @Nullable Intent data
+    ) {
+        super.onActivityResult(requestCode, resultCode, data);
+        flutterFragment.onActivityResult(
+            requestCode,
+            resultCode,
+            data
+      );
+    }
+
+    @Override
     public void onUserLeaveHint() {
         flutterFragment.onUserLeaveHint();
     }
@@ -221,6 +235,19 @@ class MyActivity : FragmentActivity() {
       requestCode,
       permissions,
       grantResults
+    )
+  }
+
+  override fun onActivityResult(
+    requestCode: Int,
+    resultCode: Int,
+    data: Intent?
+  ) {
+    super.onActivityResult(requestCode, resultCode, data)
+    flutterFragment!!.onActivityResult(
+      requestCode,
+      resultCode,
+      data
     )
   }
 
