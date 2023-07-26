@@ -329,7 +329,7 @@ we also aim to help lower app development and maintenance costs.
 
 
 [catalog of Flutter's widgets]: {{site.url}}/ui/widgets
-[gesture system]: {{site.url}}/ui/advanced/gestures
+[gesture system]: {{site.url}}/ui/interactivity/gestures
 
 ### What happens when my mobile OS updates and introduces new widgets?
 
