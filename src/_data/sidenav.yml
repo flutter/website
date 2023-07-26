@@ -64,6 +64,8 @@
   permalink: /ui
   match-page-url-exactly: true
   children:
+    - title: Introduction
+      permalink: /ui
     - title: Building layouts
       permalink: /ui/layout
       children:
@@ -84,22 +86,6 @@
       permalink: /ui/assets-and-images
     - title: Material Design
       permalink: /ui/material
-    - title: Animations
-      permalink: /ui/animations
-      children:
-        - title: Introduction
-          permalink: /ui/animations
-          match-page-url-exactly: true
-        - title: Overview
-          permalink: /ui/animations/overview
-        - title: Tutorial
-          permalink: /ui/animations/tutorial
-        - title: Implicit animations
-          permalink: /ui/animations/implicit-animations
-        - title: Hero animations
-          permalink: /ui/animations/hero-animations
-        - title: Staggered animations
-          permalink: /ui/animations/staggered-animations
     - title: Scrolling
       permalink: /ui/scrolling
       children:
@@ -134,6 +120,23 @@
       permalink: /ui/navigation/deep-linking
     - title: Configure URL strategies
       permalink: /ui/navigation/url-strategies
+      
+- title: Animations & transitions
+  permalink: /ui/animations
+  children:
+    - title: Introduction
+      permalink: /ui/animations
+      match-page-url-exactly: true
+    - title: Overview
+      permalink: /ui/animations/overview
+    - title: Tutorial
+      permalink: /ui/animations/tutorial
+    - title: Implicit animations
+      permalink: /ui/animations/implicit-animations
+    - title: Hero animations
+      permalink: /ui/animations/hero-animations
+    - title: Staggered animations
+      permalink: /ui/animations/staggered-animations
 
 - title: Data & backend
   permalink: /data-and-backend
@@ -153,6 +156,22 @@
           permalink: /data-and-backend/state-mgmt/options
     - title: Networking & http
       permalink: /data-and-backend/networking
+      children:
+        - title: Overview
+          permalink: /data-and-backend/networking
+          match-page-url-exactly: true
+        - title: Fetch data from the internet
+          permalink: /cookbook/networking/fetch-data
+        - title: Make authenticated requests
+          permalink: /cookbook/networking/authenticated-requests
+        - title: Send data to the internet
+          permalink: /cookbook/networking/send-data
+        - title: Update data over the internet
+          permalink: /cookbook/networking/update-data
+        - title: Delete data on the internet
+          permalink: /cookbook/networking/delete-data
+        - title: Communicate with WebSockets
+          permalink: /cookbook/networking/web-sockets
     - title: JSON and serialization
       permalink: /data-and-backend/json
     - title: Firebase
