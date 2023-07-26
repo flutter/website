@@ -164,7 +164,7 @@
     - title: Staggered animations
       permalink: /ui/animations/staggered-animations
     - title: Create a staggered menu animation
-      permalink: /ui/effects/staggered-menu-animation
+      permalink: /cookbook/effects/staggered-menu-animation
     - title: API overview
       permalink: /ui/animations/overview
 
