@@ -20,7 +20,7 @@ In this command,
 replace `[PATH_TO_FLUTTER_GIT_DIRECTORY]`
 with the path to your Flutter SDK install.
 
-#### Permanently update your path
+#### Update your path for all future sessions
 
 To permanently add Flutter to your path for _any_ terminal session, follow these steps:
 
