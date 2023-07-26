@@ -105,7 +105,7 @@ function updateTable(releases, os) {
 
 /**
  * Create a new individual cell for HTML table.
- * @constructor
+ * 
  * @param {string | Node} content - The content to be set in the cell.
  * @param {string | null | undefined} dataClass - The class to be set in the cell.
  * @returns {HTMLElement} The created table cell element.
