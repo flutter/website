@@ -25,8 +25,11 @@
           permalink: /get-started/flutter-for/web-devs
         - title: Flutter for Xamarin.Forms devs
           permalink: /get-started/flutter-for/xamarin-forms-devs
+        - divider
         - title: Introduction to declarative UI
           permalink: /get-started/flutter-for/declarative
+        - title: Flutter versus Swift concurrency
+          permalink: /resources/dart-swift-concurrency
     - title: "Dart language overview"
       permalink: https://dart.dev/overview
 
@@ -78,8 +81,6 @@
           permalink: /ui/layout/adaptive-responsive
         - title: Building adaptive apps
           permalink: /ui/layout/building-adaptive-apps
-        - title: Understanding constraints
-          permalink: /ui/layout/constraints
     - title: Material Design
       permalink: /ui/material
     - title: Scrolling
@@ -504,25 +505,29 @@
       permalink: /tools/sdk
     - title: Flutter's pubspec options
       permalink: /tools/pubspec
-    - title: Hot reload
-      permalink: /tools/hot-reload
     - title: Automated fixes
       permalink: /tools/flutter-fix
     - title: Code formatting
       permalink: /tools/formatting
 
+- title: Flutter concepts & features
+  children:
+    - title: Architectural overview
+      permalink: /resources/architectural-overview
+    - title: Inside Flutter
+      permalink: /resources/inside-flutter
+    - title: Understanding constraints
+      permalink: /ui/layout/constraints
+    - title: Flutter's build modes
+      permalink: /testing/build-modes
+    - title: Hot reload
+      permalink: /tools/hot-reload
+    - title: Platform adaptations
+      permalink: /resources/platform-adaptations
+
 - title: Resources
   permalink: /resources
   children:
-    - header: Concepts
-    - title: Architectural overview
-      permalink: /resources/architectural-overview
-    - title: Platform adaptations
-      permalink: /resources/platform-adaptations
-    - title: Inside Flutter
-      permalink: /resources/inside-flutter
-    - title: Flutter versus Swift concurrency
-      permalink: /resources/dart-swift-concurrency
     - header: Learning
     - title: Books
       permalink: /resources/books
@@ -560,8 +565,6 @@
       permalink: /reference/widgets
     - title: API reference
       permalink: https://api.flutter.dev
-    - title: Flutter's build modes
-      permalink: /testing/build-modes
     - title: flutter CLI reference
       permalink: /reference/flutter-cli
     - title: Security false positives
