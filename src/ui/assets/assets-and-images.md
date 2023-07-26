@@ -427,10 +427,13 @@ Flutter renders the first frame of your application.
 {{site.alert.note}}
   This implies that if you don't call [`runApp()`][] in the
   `main()` function of your app (or more specifically,
-  if you don't call [`window.render()`][] in response to
-  [`window.onDrawFrame`][]),
+  if you don't call [`FlutterView.render()`][] in response to
+  [`PlatformDispatcher.onDrawFrame`][]),
   the launch screen persists forever.
 {{site.alert.end}}
+
+[`FlutterView.render()`]: {{site.api}}/flutter/dart-ui/FlutterView/render.html
+[`PlatformDispatcher.onDrawFrame`]: {{site.api}}/flutter/dart-ui/PlatformDispatcher/onDrawFrame.html
 
 #### Android
 
@@ -485,7 +488,7 @@ For more details, see
 [`FlutterPluginRegistrar`]: {{site.api}}/objcdoc/Protocols/FlutterPluginRegistrar.html
 [`FlutterView`]: {{site.api}}/javadoc/io/flutter/view/FlutterView.html
 [`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html
-[Human Interface Guidelines]: {{site.apple-dev}}/ios/human-interface-guidelines/graphics/app-icon
+[Human Interface Guidelines]: {{site.apple-dev}}/design/human-interface-guidelines/app-icons
 [`ios_platform_images`]: {{site.pub}}/packages/ios_platform_images
 [layer list drawable]: {{site.android-dev}}/guide/topics/resources/drawable-resource#LayerList
 [`mainBundle`]: {{site.apple-dev}}/documentation/foundation/nsbundle/1410786-mainbundle
@@ -497,8 +500,6 @@ For more details, see
 [`rootBundle`]: {{site.api}}/flutter/services/rootBundle.html
 [`runApp()`]: {{site.api}}/flutter/widgets/runApp.html
 [`video_player` plugin]: {{site.pub}}/packages/video_player
-[`window.onDrawFrame`]: {{site.api}}/flutter/dart-ui/Window/onDrawFrame.html
-[`window.render()`]: {{site.api}}/flutter/dart-ui/Window/render.html
 [MediaQueryData.size]: {{site.api}}/flutter/widgets/MediaQueryData/size.html
 [MaterialApp]: {{site.api}}/flutter/material/MaterialApp-class.html
 [CupertinoApp]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
