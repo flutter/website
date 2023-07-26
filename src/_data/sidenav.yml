@@ -95,8 +95,6 @@
       children:
         - title: Fonts & typography
           permalink: /ui/advanced/typography
-        - title: Gestures
-          permalink: /ui/advanced/gestures
         - title: Shaders
           permalink: /ui/advanced/shaders
     - title: Widget catalog
@@ -108,6 +106,20 @@
     - title: Add interactivity to your app
       permalink: /ui/interactivity
       match-page-url-exactly: true
+    - title: Gestures
+      permalink: /ui/interactivity/gestures
+      children:
+        - title: Introduction
+          permalink: /ui/interactivity/gestures
+          match-page-url-exactly: true
+        - title: Handle taps
+          permalink: /cookbook/gestures/handling-taps
+        - title: Drag a UI element
+          permalink: /cookbook/effects/drag-a-widget
+        - title: Add Material touch ripples
+          permalink: /cookbook/gestures/ripples
+        - title: Implement swipe to dismiss
+          permalink: /cookbook/gestures/dismissible
     - title: Input & forms
       permalink: /ui/interactivity/input
       children:

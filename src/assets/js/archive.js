@@ -1,11 +1,16 @@
 // Number of releases to show by default (rest will be behind a "show all" link).
 const releasesToShow = 99999;
 
+// The Flutter SDK archive filename prefix.
+const FILE_NAME_PREFIX = 'flutter_';
+
+const filenameReplacement = new RegExp(`^(.*?)\\b${FILE_NAME_PREFIX}\\w+_v?[X|0-9]+\\..*`, 'm');
+
 // Fetches Flutter release JSON for the given OS and calls the callback once the data is available.
 function fetchFlutterReleases(os, callback, errorCallback) {
   // OS: windows, macos, linux
   const url = `https://storage.googleapis.com/flutter_infra_release/releases/releases_${os}.json`;
-  fetch(url, { method: 'GET'})
+  fetch(url, { method: 'GET' })
     .then(response => response.json())
     .then(data => callback(data, os))
     .catch(_ => {
@@ -28,7 +33,7 @@ function updateTable(releases, os) {
 
     table.classList.add('collapsed');
     const loadingElements = table.querySelectorAll('.loading');
-    loadingElements.forEach(function(element) {
+    loadingElements.forEach(function (element) {
       element.remove();
     });
 
@@ -42,7 +47,7 @@ function updateTable(releases, os) {
         const showAll = document.createElement('a');
         showAll.textContent = 'Show all...';
         showAll.href = '#';
-        showAll.addEventListener('click', function(event) {
+        showAll.addEventListener('click', function (event) {
           this.closest('table').classList.remove('collapsed');
           this.closest('tr').remove();
           event.preventDefault();
@@ -100,7 +105,7 @@ function updateTable(releases, os) {
 
 /**
  * Create a new individual cell for HTML table.
- * @constructor
+ * 
  * @param {string | Node} content - The content to be set in the cell.
  * @param {string | null | undefined} dataClass - The class to be set in the cell.
  * @returns {HTMLElement} The created table cell element.
@@ -122,66 +127,97 @@ function createTableCell(content, dataClass) {
 }
 
 function updateTableFailed(os) {
-  const tab = $(`#tab-os-${os}`);
-  tab.find('.loading').text('Failed to load releases. Refresh page to try again.');
+  const tab = document.getElementById(`tab-os-${os}`);
+  if (!tab) return;
+  const loadingElements = tab.querySelectorAll('.loading');
+  loadingElements.forEach(function (element) {
+    element.textContent = 'Failed to load releases. Refresh page to try again.';
+  });
 }
 
 let macOSArm64ArchiveFilename = '';
 
 // Listen for the macOS arm64 download link to be clicked and update
 // the example unzip command with correct arm64 filename
-$('.download-latest-link-macos-arm64').click(function () {
-  // Update inlined filenames in <code> element text nodes with arm64 filename:
-  const fileNamePrefix = 'flutter_';
-  const code = $(`code:contains("${fileNamePrefix}")`);
-  const textNode = $(code).contents().filter(function () {
-    return this.nodeType === 3 && this.textContent.includes(fileNamePrefix);
+(() => {
+  const macDownload = document.querySelector('.download-latest-link-macos-arm64');
+  if (!macDownload) {
+    return;
+  }
+  macDownload.addEventListener('click', function () {
+    // Update inlined filenames in <code> element text nodes with arm64 filename:
+    replaceFilenameInCodeElements(macOSArm64ArchiveFilename);
   });
+})();
 
-  $(textNode).replaceWith(`unzip ~/Downloads/${macOSArm64ArchiveFilename}`);
-});
+/**
+ * Replaces the placeholder text or the old filename in code blocks
+ * with the specified {@link archiveFilename}.
+ * 
+ * @param archiveFilename The new filename to replace the
+ *   old one in code blocks with
+ */
+function replaceFilenameInCodeElements(archiveFilename) {
+  const codeElements = document.querySelectorAll('code');
 
-/*
-releases: A list of Flutter releases
-base_url: link for sdk download link such as storage.googleapis.com...
-os: macos, windows, or linux
-[optional] arch: Only specify if there's additional architecture, such as arm64
-*/
+  codeElements.forEach((e) => {
+    e.childNodes.forEach((node) => {
+      if (node.nodeType === Node.TEXT_NODE &&
+          node.textContent.includes(FILE_NAME_PREFIX)) {
+        const text = node.textContent;
+        node.textContent = text.replace(
+            filenameReplacement,
+            `$1${archiveFilename}`
+        );
+      }
+    });
+  });
+}
+
+
+/**
+ * Update the download button for the latest release.
+ * @param {Array} releases - A list of Flutter releases 
+ * @param {string} base_url - link for sdk download link such as storage.googleapis.com...
+ * @param {string} os - macos, windows, or linux
+ * @param {string} [arch=''] - Only specify if there's additional architecture, such as arm64
+ */
 function updateReleaseDownloadButton(releases, base_url, os, arch = '') {
   const archString = !arch.length ? '' : `-${arch}`;
 
   const release = releases[0];
   const linkSegments = release.archive.split('/');
   const archiveFilename = linkSegments[linkSegments.length - 1]; // Just the filename part of url
-  const downloadLink = $(`.download-latest-link-${os}${archString}`);
 
   if (os === 'macos' && arch === 'arm64') {
     macOSArm64ArchiveFilename = archiveFilename;
   }
 
-  downloadLink
-    .text(archiveFilename)
-    .attr('href', `${base_url}/${release.archive}`);
-
+  const downloadLink = document.querySelectorAll(`.download-latest-link-${os}${archString}`);
+  downloadLink.forEach((link) => {
+    link.textContent = archiveFilename;
+    link.setAttribute('href', `${base_url}/${release.archive}`);
+  })
 
   //Update download-filename placeholders:
-  $(`.download-latest-link-filename-${os}${archString}`).text(archiveFilename);
-  $('.download-latest-link-filename').text(archiveFilename);
+  const downloadLinkOs = document.querySelectorAll(`.download-latest-link-filename-${os}${archString}`);
+  downloadLinkOs.forEach(function (element) {
+    element.textContent = archiveFilename;
+  });
+
+  const genericDownloadLink = document.querySelectorAll('.download-latest-link-filename');
+  genericDownloadLink.forEach(function (element) {
+    element.textContent = archiveFilename;
+  });
 
   // Update inlined filenames in <code> element text nodes:
-  const fileNamePrefix = 'flutter_';
-  const code = $(`code:contains("${fileNamePrefix}")`);
-  const textNode = $(code).contents().filter(function () {
-    return this.nodeType === 3 && this.textContent.includes(fileNamePrefix);
-  });
-  const text = $(textNode).text();
-  const newText = text.replace(new RegExp(`^(.*?)\\b${fileNamePrefix}\\w+_v.*`), `$1${archiveFilename}`);
-  $(textNode).replaceWith(newText);
+  replaceFilenameInCodeElements(archiveFilename);
 }
 
 function updateDownloadLink(releases, os, arch) {
   const channel = 'stable';
-  const releasesForChannel = releases.releases.filter(function (release) {
+  const releasesOrDefault = releases?.releases ?? [];
+  const releasesForChannel = Array.from(releasesOrDefault).filter(function (release) {
     return release.channel === channel;
   });
   if (!releasesForChannel.length)
@@ -194,8 +230,6 @@ function updateDownloadLink(releases, os, arch) {
       return release.dart_sdk_arch === 'x64';
     });
 
-    updateReleaseDownloadButton(releasesForX64, releases.base_url, os);
-
     // Filter releases by arm64 architecture
     const releasesForArm64 = releasesForChannel.filter(function (release) {
       return release.dart_sdk_arch === 'arm64';
@@ -203,21 +237,26 @@ function updateDownloadLink(releases, os, arch) {
 
     // If no arm64 releases available, delete all apple silicon elements
     if (!releasesForArm64.length) {
-      $('.apple-silicon').each(function () {
-        this.remove();
-      })
+      const appleSiliconElements = document.querySelectorAll('.apple-silicon');
+      appleSiliconElements.forEach(function (element) {
+        element.remove();
+      });
 
       return;
     }
 
     updateReleaseDownloadButton(releasesForArm64, releases.base_url, os, 'arm64');
+    updateReleaseDownloadButton(releasesForX64, releases.base_url, os);
   } else {
     updateReleaseDownloadButton(releasesForChannel, releases.base_url, os);
   }
 }
 
 function updateDownloadLinkFailed(os) {
-  $(`.download-latest-link-${os}`).text('(failed)');
+  const allDownloadLinks = document.querySelectorAll(`.download-latest-link-${os}`);
+  allDownloadLinks.forEach(function (link) {
+    link.textContent = '(failed)';
+  });
 }
 
 function getProvenanceLink(os, release, date, channel) {
@@ -244,16 +283,28 @@ function getProvenanceLink(os, release, date, channel) {
 
 
 // Send requests to render the tables.
-$(function () {
-  if ($('#sdk-archives').length) {
+(() => {
+
+  const foundSdkArchivesElement = document.getElementById('sdk-archives') !== null;
+  if (foundSdkArchivesElement) {
     fetchFlutterReleases('windows', updateTable, updateTableFailed);
     fetchFlutterReleases('macos', updateTable, updateTableFailed);
     fetchFlutterReleases('linux', updateTable, updateTableFailed);
   }
-  if ($('.download-latest-link-windows').length)
+
+  // The checks below come from getting started page. see https://github.com/flutter/website/issues/8889#issuecomment-1639033078
+  const foundLatestWindows = document.getElementsByClassName('download-latest-link-windows').length > 0;
+  if (foundLatestWindows) {
     fetchFlutterReleases('windows', updateDownloadLink, updateDownloadLinkFailed);
-  if ($('.download-latest-link-macos').length)
+  }
+
+  const foundLatestMacOS = document.getElementsByClassName('download-latest-link-macos').length > 0;
+  if (foundLatestMacOS) {
     fetchFlutterReleases('macos', updateDownloadLink, updateDownloadLinkFailed);
-  if ($('.download-latest-link-linux').length)
+  }
+
+  const foundLatestLinux = document.getElementsByClassName('download-latest-link-linux').length > 0;
+  if (foundLatestLinux) {
     fetchFlutterReleases('linux', updateDownloadLink, updateDownloadLinkFailed);
-});
+  }
+})();
