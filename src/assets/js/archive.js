@@ -230,8 +230,6 @@ function updateDownloadLink(releases, os, arch) {
       return release.dart_sdk_arch === 'x64';
     });
 
-    updateReleaseDownloadButton(releasesForX64, releases.base_url, os);
-
     // Filter releases by arm64 architecture
     const releasesForArm64 = releasesForChannel.filter(function (release) {
       return release.dart_sdk_arch === 'arm64';
@@ -248,6 +246,7 @@ function updateDownloadLink(releases, os, arch) {
     }
 
     updateReleaseDownloadButton(releasesForArm64, releases.base_url, os, 'arm64');
+    updateReleaseDownloadButton(releasesForX64, releases.base_url, os);
   } else {
     updateReleaseDownloadButton(releasesForChannel, releases.base_url, os);
   }
