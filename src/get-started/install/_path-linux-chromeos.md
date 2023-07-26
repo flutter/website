@@ -7,7 +7,7 @@ or for all sessions going forward.
 
 {% include docs/dart-tool.md %}
 
-#### Temporarily update your path
+#### Update your path for the current session only
 
 You can update your PATH variable for the current session at the command line:
 
