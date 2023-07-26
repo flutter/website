@@ -80,8 +80,6 @@
           permalink: /ui/layout/building-adaptive-apps
         - title: Understanding constraints
           permalink: /ui/layout/constraints
-    - title: Adding interactivity
-      permalink: /ui/interactive
     - title: Material Design
       permalink: /ui/material
     - title: Scrolling
@@ -95,18 +93,25 @@
     - title: Advanced UI
       permalink: /ui/advanced
       children:
-        - title: Actions & shortcuts
-          permalink: /ui/advanced/actions-and-shortcuts
         - title: Fonts & typography
           permalink: /ui/advanced/typography
-        - title: Keyboard focus system
-          permalink: /ui/advanced/focus
         - title: Gestures
           permalink: /ui/advanced/gestures
         - title: Shaders
           permalink: /ui/advanced/shaders
     - title: Widget catalog
       permalink: /ui/widgets
+      
+- title: Interactivity
+  permalink: /ui/interactivity
+  children:
+    - title: Add interactivity to your app
+      permalink: /ui/interactivity
+      match-page-url-exactly: true
+    - title: Implement actions & shortcuts
+      permalink: /ui/interactivity/actions-and-shortcuts
+    - title: Manage keyboard focus
+      permalink: /ui/interactivity/focus
 
 - title: Assets & media
   permalink: /ui/assets

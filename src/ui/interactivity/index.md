@@ -1,7 +1,7 @@
 ---
-title: Adding interactivity to your Flutter app
+title: Add interactivity to your Flutter app
 description: How to implement a stateful widget that responds to taps.
-short-title: Adding interactivity
+short-title: Interactivity
 diff2html: true
 ---
 
