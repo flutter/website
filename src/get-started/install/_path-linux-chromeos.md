@@ -24,9 +24,21 @@ with the path to your Flutter SDK install.
 
 To add Flutter to your `PATH` for _any_ terminal session, follow these steps:
 
-1. Determine the path of your Flutter SDK installation. You'll need this in Step 3.
-2. Open (or create) the `rc` file for your shell. This file runs whenever you open a new terminal window. If you're using the Bash shell, for example, edit `$HOME/.bashrc`.
-3. Add this line, replacing `[PATH_TO_FLUTTER_GIT_DIRECTORY]` with your Flutter SDK path:
+1. Find your Flutter SDK installation path.
+
+  ```terminal
+  $ find / -type d -name "flutter/bin" 2>/dev/null
+  ```
+
+  ```terminal
+  /usr/<example>dev/flutter/bin
+  ```
+
+1. Append the following line to your `rc` shell file.
+  Linux reads the `rc` shell "resource" file each
+  time it opens a terminal.
+
+  Replace `<path_to_flutter_directory>` with your Flutter path.
 
 ```terminal
 export PATH="$PATH:`pwd`/flutter/bin"
