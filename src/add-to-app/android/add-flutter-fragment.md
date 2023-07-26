@@ -194,7 +194,7 @@ public class MyActivity extends FragmentActivity {
             requestCode,
             resultCode,
             data
-      );
+        );
     }
 
     @Override
