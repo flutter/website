@@ -522,7 +522,7 @@
     - title: Code formatting
       permalink: /tools/formatting
 
-- title: Flutter concepts & features
+- title: Flutter concepts
   children:
     - title: Architectural overview
       permalink: /resources/architectural-overview
