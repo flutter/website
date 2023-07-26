@@ -8,7 +8,7 @@ plugin packages as well, but because plugins contain
 native code they often also require other kinds of tests
 to test all of their functionality.
 
-[usual types of Flutter tests]: {{site.url}}/testing
+[usual types of Flutter tests]: {{site.url}}/testing/overview
 
 {{site.alert.note}}
   To learn how to test your plugin code, read on.
@@ -203,7 +203,7 @@ Some extra considerations for plugin testing:
     then call the plugin’s public API and validate the results.
 
 [Android Studio test UI]: https://developer.android.com/studio/test/test-in-android-studio
-[general advice]: {{site.url}}/testing
+[general advice]: {{site.url}}/testing/overview
 [Visual Studio test UI]: https://learn.microsoft.com/en-us/visualstudio/test/getting-started-with-unit-testing?view=vs-2022&tabs=dotnet%2Cmstest#run-unit-tests
 [Xcode Test UI]: https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/05-running_tests.html
 

@@ -64,6 +64,8 @@
   permalink: /ui
   match-page-url-exactly: true
   children:
+    - title: Introduction
+      permalink: /ui
     - title: Building layouts
       permalink: /ui/layout
       children:
@@ -80,26 +82,8 @@
           permalink: /ui/layout/constraints
     - title: Adding interactivity
       permalink: /ui/interactive
-    - title: Assets and images
-      permalink: /ui/assets-and-images
     - title: Material Design
       permalink: /ui/material
-    - title: Animations
-      permalink: /ui/animations
-      children:
-        - title: Introduction
-          permalink: /ui/animations
-          match-page-url-exactly: true
-        - title: Overview
-          permalink: /ui/animations/overview
-        - title: Tutorial
-          permalink: /ui/animations/tutorial
-        - title: Implicit animations
-          permalink: /ui/animations/implicit-animations
-        - title: Hero animations
-          permalink: /ui/animations/hero-animations
-        - title: Staggered animations
-          permalink: /ui/animations/staggered-animations
     - title: Scrolling
       permalink: /ui/scrolling
       children:
@@ -124,16 +108,55 @@
     - title: Widget catalog
       permalink: /ui/widgets
 
+- title: Assets & media
+  permalink: /ui/assets
+  children:
+    - title: Add assets and images
+      permalink: /ui/assets/assets-and-images
+    - title: Display images from the internet
+      permalink: /cookbook/images/network-image
+    - title: Fade in images with a placeholder
+      permalink: /cookbook/images/fading-in-images
+    - title: Play and pause a video
+      permalink: /cookbook/plugins/play-video
+
 - title: Navigation & routing
   permalink: /ui/navigation
   children:
     - title: Overview
       permalink: /ui/navigation
       match-page-url-exactly: true
+    - title: Navigate to a new screen and back
+      permalink: /cookbook/navigation/navigation-basics
+    - title: Send data to a new screen
+      permalink: /cookbook/navigation/passing-data
+    - title: Return data from a screen
+      permalink: /cookbook/navigation/returning-data
     - title: Setup deep linking
       permalink: /ui/navigation/deep-linking
-    - title: Configure URL strategies
+    - title: Setup app links for Android
+      permalink: /cookbook/navigation/set-up-app-links
+    - title: Setup universal links for iOS
+      permalink: /cookbook/navigation/set-up-universal-links
+    - title: Configure web URL strategies
       permalink: /ui/navigation/url-strategies
+      
+- title: Animations & transitions
+  permalink: /ui/animations
+  children:
+    - title: Introduction
+      permalink: /ui/animations
+      match-page-url-exactly: true
+    - title: Overview
+      permalink: /ui/animations/overview
+    - title: Tutorial
+      permalink: /ui/animations/tutorial
+    - title: Implicit animations
+      permalink: /ui/animations/implicit-animations
+    - title: Hero animations
+      permalink: /ui/animations/hero-animations
+    - title: Staggered animations
+      permalink: /ui/animations/staggered-animations
 
 - title: Data & backend
   permalink: /data-and-backend
@@ -153,8 +176,38 @@
           permalink: /data-and-backend/state-mgmt/options
     - title: Networking & http
       permalink: /data-and-backend/networking
-    - title: JSON and serialization
-      permalink: /data-and-backend/json
+      children:
+        - title: Overview
+          permalink: /data-and-backend/networking
+          match-page-url-exactly: true
+        - title: Fetch data from the internet
+          permalink: /cookbook/networking/fetch-data
+        - title: Make authenticated requests
+          permalink: /cookbook/networking/authenticated-requests
+        - title: Send data to the internet
+          permalink: /cookbook/networking/send-data
+        - title: Update data over the internet
+          permalink: /cookbook/networking/update-data
+        - title: Delete data on the internet
+          permalink: /cookbook/networking/delete-data
+        - title: Communicate with WebSockets
+          permalink: /cookbook/networking/web-sockets
+    - title: Serialization
+      permalink: /data-and-backend/serialization
+      children:
+        - title: JSON serialization
+          permalink: /data-and-backend/serialization/json
+        - title: Parse JSON in the background
+          permalink: /cookbook/networking/background-parsing
+    - title: Persistence
+      permalink: /data-and-backend/persistence
+      children: 
+        - title: Store key-value data on disk
+          permalink: /cookbook/persistence/key-value
+        - title: Read and write files
+          permalink: /cookbook/persistence/reading-writing-files
+        - title: Persist data with SQLite
+          permalink: /cookbook/persistence/sqlite
     - title: Firebase
       permalink: /data-and-backend/firebase
     - title: Google APIs
@@ -258,28 +311,53 @@
 - title: Testing & debugging
   permalink: /testing
   children:
+    - header: Testing
+    - title: Testing overview
+      permalink: /testing/overview
+      match-page-url-exactly: true
+    - title: Widget testing
+      children:
+        - title: Introduction
+          permalink: /cookbook/testing/widget/introduction
+        - title: Find widgets
+          permalink: /cookbook/testing/widget/finders
+        - title: Simulate scrolling
+          permalink: /cookbook/testing/widget/scrolling
+        - title: Simulate user interaction
+          permalink: /cookbook/testing/widget/tap-drag
+    - title: Integration testing
+      children:
+        - title: Introduction
+          permalink: /testing/integration-tests
+          match-page-url-exactly: true
+        - title: Write and run an integration test
+          permalink: /cookbook/testing/integration/introduction
+        - title: Profile an integration test
+          permalink: /cookbook/testing/integration/profiling
+    - title: Unit testing
+      children:
+        - title: Introduction
+          permalink: /cookbook/testing/unit/introduction
+        - title: Mock dependencies
+          permalink: /cookbook/testing/unit/mocking
+    - title: Test a plugin
+      permalink: /testing/testing-plugins
+    - title: Handle plugin code in tests
+      permalink: /testing/plugins-in-tests
+    - header: Debugging
     - title: Debugging tools
       permalink: /testing/debugging
-    - title: Testing plugins
-      permalink: /testing/testing-plugins
-    - title: Plugins in Flutter tests
-      permalink: /testing/plugins-in-tests
-    - title: Debugging apps programmatically
+    - title: Debug your app programmatically
       permalink: /testing/code-debugging
-    - title: Using an OEM debugger
+    - title: Debug native app code
       permalink: /testing/oem-debuggers
-    - title: Flutter's build modes
-      permalink: /testing/build-modes
-    - title: Common Flutter errors
+    - title: Fix common errors
       permalink: /testing/common-errors
-    - title: Handling errors
+    - title: Handle errors
       permalink: /testing/errors
-    - title: Testing
-      permalink: /testing
       match-page-url-exactly: true
-    - title: Integration testing
-      permalink: /testing/integration-tests
-      match-page-url-exactly: true
+    - title: Report errors to a service
+      permalink: /cookbook/maintenance/error-reporting
 
 - title: Performance & optimization
   permalink: /perf
@@ -467,6 +545,8 @@
       permalink: /reference/widgets
     - title: API reference
       permalink: https://api.flutter.dev
+    - title: Flutter's build modes
+      permalink: /testing/build-modes
     - title: flutter CLI reference
       permalink: /reference/flutter-cli
     - title: Security false positives

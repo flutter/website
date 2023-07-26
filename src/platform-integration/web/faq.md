@@ -155,7 +155,7 @@ Not currently.
 [Preparing a web app for release]: {{site.url}}/deployment/web
 [Running Flutter inspector]: {{site.url}}/tools/devtools/inspector
 [Upgrading from package:flutter_web to the Flutter SDK]: {{site.repo.flutter}}/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
-[widget tests]: {{site.url}}/testing#widget-tests
+[widget tests]: {{site.url}}/testing/overview#widget-tests
 [Web support for Flutter]: {{site.url}}/platform-integration/web
 [web workers]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
 [run your web apps in any supported browser]: {{site.url}}/platform-integration/web/building#create-and-run
