@@ -163,6 +163,7 @@
       { "source": "/ui/advanced/actions_and_shortcuts", "destination": "/ui/interactivity/actions-and-shortcuts", "type": 301 },
       { "source": "/ui/advanced/actions-and-shortcuts", "destination": "/ui/interactivity/actions-and-shortcuts", "type": 301 },
       { "source": "/ui/advanced/focus", "destination": "/ui/interactivity/focus", "type": 301 },
+      { "source": "/ui/advanced/gestures", "destination": "/ui/interactivity/gestures", "type": 301 },
       { "source": "/ui/advanced/slivers", "destination": "/ui/scrolling/slivers", "type": 301 },
       { "source": "/ui/advanced/splash-screen", "destination": "/platform-integration/android/splash-screen", "type": 301 },
       { "source": "/ui/assets-and-images", "destination": "/ui/assets/assets-and-images", "type": 301 },
