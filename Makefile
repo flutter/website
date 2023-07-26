@@ -154,7 +154,7 @@ ifndef FIREBASE_TOKEN
 			--project ${FIREBASE_ALIAS}
     endif
 else
-	firebase use ${FIREBASE_ALIAS}
+	firebase use ${FIREBASE_ALIAS} --token ${FIREBASE_TOKEN}
 	firebase deploy -m ${BUILD_COMMIT} \
 		--only hosting \
 		--non-interactive \
