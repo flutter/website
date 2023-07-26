@@ -947,7 +947,7 @@ void main() {
 }
 ```
 
-Then open DevTools' [Timeline events chart][] while connected to your app, 
+Then open DevTools' [Timeline events tab][] while connected to your app, 
 verify the **Dart** recording option is checked in the **Performance settings**,
 and perform the function you want to measure.
 
