@@ -1,6 +1,9 @@
 ### Update your path
 
-Whether you've installed Flutter using `snapd` or manually, you'll need to add the Flutter SDK to your PATH. The procedure varies depending on your shell and whether you want to add it to the PATH temporarily (for the current terminal session only) or permanently.
+Independent of how you installed Flutter,
+you need to add the Flutter SDK to your PATH.
+You can add Flutter to your `PATH` either for the current session
+or for all sessions going forward.
 
 {% include docs/dart-tool.md %}
 
