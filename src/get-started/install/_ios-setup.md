@@ -123,6 +123,46 @@ Configure your physical iOS device to connect to Xcode.
 
    ![Trust Mac][]{:.mw-100}
 
+1. When prompted, unlock your iOS device.
+
+#### Enable Developer Mode on iOS 16 or later
+{:.no_toc}
+
+Starting with iOS 16, Apple requires you to enable **[Developer Mode][]**
+to protect against malicious software.
+Enable Developer Mode before deploying to a device running iOS 16 or later.
+
+1. Tap on **Settings** <span aria-label="and then">></span>
+   **Privacy & Security** <span aria-label="and then">></span>
+   **Developer Mode**.
+
+1. Tap to toggle **Developer Mode** to **On**.
+
+1. Tap **Restart**.
+
+1. After the iOS device restarts, unlock your iOS device.
+
+1. When the **Turn on Developer Mode?** dialog appears, tap **Turn On**.
+
+   The dialog explains that Developer Mode requires reducing the security
+   of the iOS device.
+
+1. Unlock your iOS device.
+
+1. Go to **Privacy & Security** <span aria-label="and then">></span>
+    **Developer Mode**.
+
+1. Tap to toggle **Developer Mode** to on.
+   iOS displays a prompt to restart your device.
+
+1. Click **Restart**.
+
+1. After your device restarts and you unlock your device,
+   iOS asks if you want to **Turn On Developer Mode?**
+   Tap **Turn On**.
+
+1. Unlock your iOS device.
+
 #### Enable developer code signing certificates
 
 To deploy to a physical iOS device, you need to establish trust with your
@@ -135,7 +175,17 @@ Follow the Xcode signing flow to provision your project.
 
 1. Open Xcode.
 
-1. Sign in to Xcode with your Apple ID. ![Xcode account add][]{:.mw-100}
+1. Sign in to Xcode with your Apple ID.
+
+   {: type="a"}
+   1. Go to **Xcode** <span aria-label="and then">></span>
+      **Settings...*
+   1. Click **Accounts**.
+   1. Click **+**.
+   1. Select **Apple ID** and click **Continue**.
+   1. When prompted, enter your **Apple ID** and **Password**.
+   1. Close the **Settings** dialog.
+
    Development and testing supports any Apple ID.
 
 1. Go to **File** <span aria-label="and then">></span> **Open...**
@@ -148,6 +198,8 @@ Follow the Xcode signing flow to provision your project.
 
 1. Select the physical iOS device you intend to deploy to in the device
    drop-down menu to the right of the run button.
+
+   It should appear under the **iOS devices** heading.
 
 1. In the left navigation panel under **Targets**, select **Runner**.
 
@@ -164,6 +216,8 @@ Follow the Xcode signing flow to provision your project.
    If you have not created a team, you can choose a _personal team_.
 
    The **Team** dropdown displays that option as **Your Name (Personal Team)**.
+
+   ![Xcode account add][]{:.mw-100}
 
    After you select a team, Xcode performs the following tasks:
 
@@ -214,10 +268,10 @@ Enabling certificates varies in different versions of iOS.
 
 1. Open the **Settings** app on the iOS device.
 
-1. Go to **General** <span aria-label="and then">></span>
+1. Tap on **General** <span aria-label="and then">></span>
    **Profiles & Device Management**.
 
-1. Toggle your Certificate to **Enable**
+1. Tap to toggle your Certificate to **Enable**
 
 </div>
 
@@ -225,10 +279,10 @@ Enabling certificates varies in different versions of iOS.
 
 1. Open the **Settings** app on the iOS device.
 
-1. Go to **General** <span aria-label="and then">></span>
+1. Tap on **General** <span aria-label="and then">></span>
     **VPN & Device Management**.
 
-1. Toggle your Certificate to **Enable**.
+1. Tap to toggle your Certificate to **Enable**.
 
 </div>
 
@@ -236,23 +290,22 @@ Enabling certificates varies in different versions of iOS.
 
 1. Open the **Settings** app on the iOS device.
 
-1. Go to **Privacy & Security** <span aria-label="and then">></span>
-    **Developer Mode**.
+1. Tap on **General** <span aria-label="and then">></span>
+    **VPN and Device Management**.
 
-1. Toggle **Developer Mode** to on.
-    iOS displays a prompt to restart your device.
+1. Under the **Developer App** heading, you should find your certificate.
 
-1. Click **Restart**.
+1. Tap your Certificate.
 
-1. After your device restarts and you unlock your device,
-    iOS asks if you want to **Turn On Developer Mode?**
-    Click **Turn On**.
+1. Tap **Trust "\<certificate\>"**.
 
-1. Go to **General** <span aria-label="and then">></span>
-    **Device Management**.
+1. When the dialog displays, tap **Trust**.
 
 </div>
 </div>{% comment %} End: Tab panes. {% endcomment -%}
+
+If prompted, enter your Mac password into the
+**codesign wants to access key...** dialog and tap **Always Allow**.
 
 #### Optional deployment procedures
 
@@ -269,12 +322,17 @@ To use wireless debugging:
 
 After you connect your iOS device to your Mac:
 
-1. Go to
-   **Xcode** <span aria-label="and then">></span>
-   **Window** <span aria-label="and then">></span>
+1. Open **Xcode**.
+
+1. Go to **Window** <span aria-label="and then">></span>
    **Devices and Simulators**.
+
+   You can also press <kbd>Shift</kbd> + <kbd>Command</kbd> + <kbd>2</kbd>.
+
 1. Select your iOS device.
-1. Check **Connect via Network**.
+
+1. Select **Connect via Network**.
+
 1. Once the network icon appears next to the device name,
    unplug your iOS device from your Mac.
 
@@ -327,7 +385,7 @@ $ sudo gem install cocoapods
 [web download]: {{site.apple-dev}}/xcode/
 [Xcode account add]: {{site.url}}/assets/images/docs/setup/xcode-account.png
 [Apple Silicon Mac]: https://support.apple.com/en-us/HT211814
-[Developer Mode]: https://developer.apple.com/documentation/xcode/enabling-developer-mode-on-a-device
+[Developer Mode]: {{site.apple-dev}}/documentation/xcode/enabling-developer-mode-on-a-device
 [Apple's Developer Forums]: {{site.apple-dev}}/forums/
 [Debugging your add-to-app module]: {{site.url}}/add-to-app/debugging/#wireless-debugging
 [Apple's documentation on pairing a wireless device with Xcode]: https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/devbc48d1bad
