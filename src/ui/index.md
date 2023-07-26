@@ -901,7 +901,7 @@ retrieve the state associated with a widget.
 For more information, check out the [`GlobalKey`][] API.
 
 [`actions`]: {{api}}/material/AppBar-class.html#actions
-[adding interactivity to your Flutter app]: {{site.url}}/ui/interactive
+[adding interactivity to your Flutter app]: {{site.url}}/ui/interactivity
 [`AppBar`]: {{api}}/material/AppBar-class.html
 [basic layout codelab]: {{site.url}}/codelabs/layout-basics
 [`BoxDecoration`]: {{api}}/painting/BoxDecoration-class.html
