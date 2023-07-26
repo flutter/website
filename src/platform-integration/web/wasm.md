@@ -159,7 +159,7 @@ In the meantime, to experiment with Wasm support in Flutter, avoid these APIs.
 
 #### Only build support
 
-Neither `flutter run` nor [DevTools]({{site.main-url}}/tools/devtools) support
+Neither `flutter run` nor [DevTools]({{site.url}}/tools/devtools) support
 Wasm at the moment.
 
 ### Learn more
