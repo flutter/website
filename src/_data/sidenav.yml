@@ -108,6 +108,19 @@
     - title: Add interactivity to your app
       permalink: /ui/interactivity
       match-page-url-exactly: true
+    - title: Input & forms
+      permalink: /ui/interactivity/input
+      children:
+        - title: Create and style a text field
+          permalink: /cookbook/forms/text-input
+        - title: Retrieve the value of a text field
+          permalink: /cookbook/forms/retrieve-input
+        - title: Handle changes to a text field
+          permalink: /cookbook/forms/text-field-changes
+        - title: Manage focus in text fields
+          permalink: /cookbook/forms/focus
+        - title: Build a form with validation
+          permalink: /cookbook/forms/validation
     - title: Implement actions & shortcuts
       permalink: /ui/interactivity/actions-and-shortcuts
     - title: Manage keyboard focus
