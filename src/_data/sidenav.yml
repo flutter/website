@@ -64,6 +64,8 @@
   permalink: /ui
   match-page-url-exactly: true
   children:
+    - title: Introduction
+      permalink: /ui
     - title: Building layouts
       permalink: /ui/layout
       children:
