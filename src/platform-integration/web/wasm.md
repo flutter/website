@@ -124,7 +124,7 @@ Wasm support has some limitations. The following list covers the common issues.
 
 #### Chrome or Firefox nightly, with flags
 
-As mentioned in [Load it in a browser](#load-it-an-a-browser), 
+As mentioned in [Load it in a browser](#load-it-in-a-browser), 
 to run Flutter web apps compiled to Wasm, 
 use _Chrome 113 or later_ or a _Firefox nightly build_ with 
 experimental flags enabled.
