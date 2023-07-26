@@ -64,6 +64,8 @@
   permalink: /ui
   match-page-url-exactly: true
   children:
+    - title: Introduction
+      permalink: /ui
     - title: Building layouts
       permalink: /ui/layout
       children:
@@ -84,22 +86,6 @@
       permalink: /ui/assets-and-images
     - title: Material Design
       permalink: /ui/material
-    - title: Animations
-      permalink: /ui/animations
-      children:
-        - title: Introduction
-          permalink: /ui/animations
-          match-page-url-exactly: true
-        - title: Overview
-          permalink: /ui/animations/overview
-        - title: Tutorial
-          permalink: /ui/animations/tutorial
-        - title: Implicit animations
-          permalink: /ui/animations/implicit-animations
-        - title: Hero animations
-          permalink: /ui/animations/hero-animations
-        - title: Staggered animations
-          permalink: /ui/animations/staggered-animations
     - title: Scrolling
       permalink: /ui/scrolling
       children:
@@ -144,6 +130,23 @@
       permalink: /cookbook/navigation/set-up-universal-links
     - title: Configure web URL strategies
       permalink: /ui/navigation/url-strategies
+      
+- title: Animations & transitions
+  permalink: /ui/animations
+  children:
+    - title: Introduction
+      permalink: /ui/animations
+      match-page-url-exactly: true
+    - title: Overview
+      permalink: /ui/animations/overview
+    - title: Tutorial
+      permalink: /ui/animations/tutorial
+    - title: Implicit animations
+      permalink: /ui/animations/implicit-animations
+    - title: Hero animations
+      permalink: /ui/animations/hero-animations
+    - title: Staggered animations
+      permalink: /ui/animations/staggered-animations
 
 - title: Data & backend
   permalink: /data-and-backend
