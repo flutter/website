@@ -126,9 +126,19 @@
     - title: Overview
       permalink: /ui/navigation
       match-page-url-exactly: true
+    - title: Navigate to a new screen and back
+      permalink: /cookbook/navigation/navigation-basics
+    - title: Send data to a new screen
+      permalink: /cookbook/navigation/passing-data
+    - title: Return data from a screen
+      permalink: /cookbook/navigation/returning-data
     - title: Setup deep linking
       permalink: /ui/navigation/deep-linking
-    - title: Configure URL strategies
+    - title: Setup app links for Android
+      permalink: /cookbook/navigation/set-up-app-links
+    - title: Setup universal links for iOS
+      permalink: /cookbook/navigation/set-up-universal-links
+    - title: Configure web URL strategies
       permalink: /ui/navigation/url-strategies
       
 - title: Animations & transitions
