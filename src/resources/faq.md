@@ -739,7 +739,7 @@ and many other utilities and formats.
 For a detailed writeup on using JSON with Flutter,
 check out the [JSON tutorial][].
 
-[JSON tutorial]: {{site.url}}/data-and-backend/json
+[JSON tutorial]: {{site.url}}/data-and-backend/serialization/json
 [pub.dev]: {{site.pub}}
 
 ### Can I build 3D (OpenGL) apps with Flutter?

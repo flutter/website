@@ -182,8 +182,13 @@
           permalink: /cookbook/networking/delete-data
         - title: Communicate with WebSockets
           permalink: /cookbook/networking/web-sockets
-    - title: JSON and serialization
-      permalink: /data-and-backend/json
+    - title: Serialization
+      permalink: /data-and-backend/serialization
+      children:
+        - title: JSON serialization
+          permalink: /data-and-backend/serialization/json
+        - title: Parse JSON in the background
+          permalink: /cookbook/networking/background-parsing
     - title: Firebase
       permalink: /data-and-backend/firebase
     - title: Google APIs

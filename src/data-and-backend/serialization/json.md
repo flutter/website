@@ -1,5 +1,6 @@
 ---
 title: JSON and serialization
+short-title: JSON
 description: How to use JSON with Flutter.
 ---
 
