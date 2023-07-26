@@ -795,7 +795,7 @@ Flutter Gallery [running app][], [repo][]
 [`foundation` library]: {{site.api}}/flutter/foundation/foundation-library.html
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
 [Gestures]: {{site.url}}/cookbook/gestures
-[Gestures in Flutter]: {{site.url}}/ui/advanced/gestures
+[Gestures in Flutter]: {{site.url}}/ui/interactivity/gestures
 [Handling gestures]: {{site.url}}/ui#handling-gestures
 [new-flutter-app]: {{site.url}}/get-started/test-drive
 [`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
