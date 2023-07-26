@@ -132,7 +132,7 @@
     - title: Fade in images with a placeholder
       permalink: /cookbook/images/fading-in-images
     - title: Play and pause a video
-      permalink: /cookbook/images/play-video
+      permalink: /cookbook/plugins/play-video
 
 - title: Navigation & routing
   permalink: /ui/navigation
