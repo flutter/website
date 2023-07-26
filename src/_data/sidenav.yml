@@ -199,6 +199,15 @@
           permalink: /data-and-backend/serialization/json
         - title: Parse JSON in the background
           permalink: /cookbook/networking/background-parsing
+    - title: Persistence
+      permalink: /data-and-backend/persistence
+      children: 
+        - title: Store key-value data on disk
+          permalink: /cookbook/persistence/key-value
+        - title: Read and write files
+          permalink: /cookbook/persistence/reading-writing-files
+        - title: Persist data with SQLite
+          permalink: /cookbook/persistence/sqlite
     - title: Firebase
       permalink: /data-and-backend/firebase
     - title: Google APIs
