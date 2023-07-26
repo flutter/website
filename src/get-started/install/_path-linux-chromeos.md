@@ -22,7 +22,7 @@ with the path to your Flutter SDK install.
 
 #### Update your path for all future sessions
 
-To permanently add Flutter to your path for _any_ terminal session, follow these steps:
+To add Flutter to your `PATH` for _any_ terminal session, follow these steps:
 
 1. Determine the path of your Flutter SDK installation. You'll need this in Step 3.
 2. Open (or create) the `rc` file for your shell. This file runs whenever you open a new terminal window. If you're using the Bash shell, for example, edit `$HOME/.bashrc`.
