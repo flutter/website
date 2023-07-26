@@ -82,8 +82,6 @@
           permalink: /ui/layout/constraints
     - title: Adding interactivity
       permalink: /ui/interactive
-    - title: Assets and images
-      permalink: /ui/assets-and-images
     - title: Material Design
       permalink: /ui/material
     - title: Scrolling
@@ -109,6 +107,18 @@
           permalink: /ui/advanced/shaders
     - title: Widget catalog
       permalink: /ui/widgets
+
+- title: Assets & media
+  permalink: /ui/assets
+  children:
+    - title: Add assets and images
+      permalink: /ui/assets/assets-and-images
+    - title: Display images from the internet
+      permalink: /cookbook/images/network-image
+    - title: Fade in images with a placeholder
+      permalink: /cookbook/images/fading-in-images
+    - title: Play and pause a video
+      permalink: /cookbook/plugins/play-video
 
 - title: Navigation & routing
   permalink: /ui/navigation
