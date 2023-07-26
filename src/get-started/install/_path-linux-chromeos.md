@@ -40,22 +40,40 @@ To add Flutter to your `PATH` for _any_ terminal session, follow these steps:
 
   Replace `<path_to_flutter_directory>` with your Flutter path.
 
-```terminal
-export PATH="$PATH:`pwd`/flutter/bin"
-```
+  ```terminal
+  $ echo 'export PATH="$PATH:<path_to_flutter_directory>/flutter/bin"' >> $HOME/.bashrc
+  ```
 
-4. Run `source $HOME/.<rc file>` to refresh the current window, or open a new terminal window to automatically source the file.
-5. Verify that the `flutter/bin` directory is now in your PATH by running:
+1. Reload the current shell profile.
 
-```terminal
-$ echo $PATH
-```
+  ```terminal
+  source $HOME/.<rc file>
+  ```
 
-Verify that the `flutter` command is available by running:
+1. Verify that the `flutter/bin` directory exists in your PATH.
 
-```terminal
-$ which flutter
-```
+  ```terminal
+  $ echo $PATH
+  ```
+
+  Response should resemble:
+  
+  ```terminal
+  /usr/<example>/dev/flutter/bin:/usr/local/git/git-google/bin:/usr/local/git/current/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:
+  ```
+
+1. Verify that you can now use the `flutter` command.
+
+  ```terminal
+  $ which flutter
+  ```
+
+  Response should resemble:
+  
+  ```
+  /usr/<example>/dev/flutter/bin/flutter
+  ```
+
 {% include docs/dart-tool.md %}
 
 ### Update the path directly
