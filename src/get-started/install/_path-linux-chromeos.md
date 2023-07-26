@@ -16,7 +16,9 @@ enter this command in your terminal:
 $ export PATH="$PATH:[PATH_TO_FLUTTER_GIT_DIRECTORY]/flutter/bin"
 ```
 
-In this command, replace `[PATH_TO_FLUTTER_GIT_DIRECTORY]` with your actual Flutter SDK path.
+In this command,
+replace `[PATH_TO_FLUTTER_GIT_DIRECTORY]`
+with the path to your Flutter SDK install.
 
 #### Permanently update your path
 
