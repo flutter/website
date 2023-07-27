@@ -12,7 +12,7 @@ Choose from the following:
 : How to build layouts using Flutter's layout mechanism. Once you've learned
   basic principles, you'll build the layout for a sample screenshot.
 
-* [Adding interactivity to your Flutter app]({{site.url}}/ui/interactive)
+* [Adding interactivity to your Flutter app]({{site.url}}/ui/interactivity)
 : You'll extend the simple layout app created in
   "Building Layouts in Flutter" to make an icon tappable.
   Different ways of managing a widget's state are also discussed.

@@ -2575,7 +2575,7 @@ and common widget properties.
 
 
 [`AboutDialog`]: {{site.api}}/flutter/material/AboutDialog-class.html
-[Adding Assets and Images in Flutter]: {{site.url}}/ui/assets-and-images
+[Adding Assets and Images in Flutter]: {{site.url}}/ui/assets/assets-and-images
 [`AlertDialog`]: {{site.api}}/flutter/material/AlertDialog-class.html
 [`Align`]: {{site.api}}/flutter/widgets/Align-class.html
 [`Animation`]: {{site.api}}/flutter/animation/Animation-class.html

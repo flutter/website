@@ -2542,7 +2542,7 @@ For more information on using the Firebase Cloud Messaging API, see the
 [`firebase_messaging`][] plugin documentation.
 
 
-[Adding assets and images]: {{site.url}}/ui/assets-and-images
+[Adding assets and images]: {{site.url}}/ui/assets/assets-and-images
 [Animation & Motion widgets]: {{site.url}}/ui/widgets/animation
 [Animations overview]: {{site.url}}/ui/animations
 [Animations tutorial]: {{site.url}}/ui/animations/tutorial

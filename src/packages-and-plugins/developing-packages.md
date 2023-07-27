@@ -1010,6 +1010,6 @@ PENDING
 [publishing is forever]: {{site.dart-site}}/tools/pub/publishing#publishing-is-forever
 [supported-platforms]: #plugin-platforms
 [test your plugin]: #testing-your-plugin
-[unit tests]: {{site.url}}/testing#unit-tests
+[unit tests]: {{site.url}}/testing/overview#unit-tests
 [`url_launcher`]: {{site.pub}}/packages/url_launcher
 [Writing a good plugin]: {{site.flutter-medium}}/writing-a-good-flutter-plugin-1a561b986c9c

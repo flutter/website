@@ -15,6 +15,8 @@ $(function () {
   setupTabs($('#editor-setup'), 'io.flutter.tool-id');
   setupTabs($('.sample-code-tabs'), 'io.flutter.tool-id');
 
+  setupTabs($('#ios-versions'), 'dev.flutter.ios-versions');
+
   prettyPrint();
 });
 

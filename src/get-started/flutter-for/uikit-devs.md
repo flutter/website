@@ -2148,7 +2148,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 [Flutter for SwiftUI developers]: {{site.url}}/get-started/flutter-for/swiftui-devs
 [Add Flutter to existing app]: {{site.url}}/add-to-app
-[Adding Assets and Images in Flutter]: {{site.url}}/ui/assets-and-images
+[Adding Assets and Images in Flutter]: {{site.url}}/ui/assets/assets-and-images
 [Animation & Motion widgets]: {{site.url}}/ui/widgets/animation
 [Animations overview]: {{site.url}}/ui/animations
 [Animations tutorial]: {{site.url}}/ui/animations/tutorial
