@@ -14,10 +14,10 @@ The `ignoringSemantics` properties are removed in [`IgnorePointer`][],
 The `ignoreSemantics` was introduced as a workaround to mitigate the result of
 `IgnorePointer` and its related widgets dropping entire semantics subtrees.
 Setting `ignoreSemantics` to false was the only way to preserve the semantics
-subtree while using the `IgnorePointer`.
+subtree while using the `IgnorePointer` widget.
 
-After v3.10.0-2.0.pre, the `IgnorePointer` no longer drops the entire semantics
-subtree but only removing the pointer related semantics actions. Therefore, this
+After v3.10.0-2.0.pre, the `IgnorePointer` widget no longer drops the entire semantics
+subtree but only removes the pointer-related semantics actions. Therefore, this
 workaround is no longer needed.
 
 ## Description of change
@@ -70,7 +70,7 @@ SliverIgnorePointer(
 );
 ```
 
-The behaviors of setting `ignoringSemantics` to false are no longer supported.
+Setting `ignoringSemantics` to false is no longer supported.
 Consider creating your own custom widgets.
 
 ```dart
@@ -93,7 +93,7 @@ class _RenderIgnorePointerWithSemantics extends RenderProxyBox {
   bool hitTest(BoxHitTestResult result, { required Offset position }) => false;
 }
 
-/// A widget absorbs pointer event but still keeps semantics actions.
+/// A widget absorbs pointer events but still keeps semantics actions.
 class _AbsorbPointerWithSemantics extends SingleChildRenderObjectWidget {
   const _AbsorbPointerWithSemantics({
     super.child,
@@ -114,7 +114,7 @@ class _RenderAbsorbPointerWithSemantics extends RenderProxyBox {
   }
 }
 
-/// A sliver ignores pointer event but still keeps semantics actions.
+/// A sliver ignores pointer events but still keeps semantics actions.
 class _SliverIgnorePointerWithSemantics extends SingleChildRenderObjectWidget {
   const _SliverIgnorePointerWithSemantics({
     super.child,
