@@ -776,7 +776,7 @@ the `value` property to a new value.
 [performance profiling]: {{site.url}}/perf/ui-performance
 [implicit animations]: {{site.url}}/ui/animations/implicit-animations
 [make a Flutter app]: {{site.codelabs}}/codelabs/flutter-codelab-first
-[stateful widgets]: {{site.url}}/ui/interactive#stateful-and-stateless-widgets
+[stateful widgets]: {{site.url}}/ui/interactivity#stateful-and-stateless-widgets
 [step 1]: #1-use-a-tickerprovider-mixin
 [`SingleTickerProviderStateMixin`]: {{site.api}}/flutter/widgets/SingleTickerProviderStateMixin-mixin.html
 
