@@ -118,7 +118,9 @@
           permalink: /cookbook/design/fonts
         - title: Export fonts from a package
           permalink: /cookbook/design/package-fonts
-    - title: Custom drawing & graphics
+    # Consider renaming this 'Custom drawing & graphics'
+    # once more docs are added
+    - title: Custom graphics
       permalink: /ui/design/graphics
       children:
         - title: Use custom fragment shaders
