@@ -74,7 +74,7 @@ Setting `ignoringSemantics` to false is no longer supported.
 Consider creating your own custom widgets.
 
 ```dart
-/// A widget ignores pointer event but still keeps semantics actions.
+/// A widget ignores pointer event without modifying the semantics tree.
 class _IgnorePointerWithSemantics extends SingleChildRenderObjectWidget {
   const _IgnorePointerWithSemantics({
     super.child,
@@ -93,7 +93,7 @@ class _RenderIgnorePointerWithSemantics extends RenderProxyBox {
   bool hitTest(BoxHitTestResult result, { required Offset position }) => false;
 }
 
-/// A widget absorbs pointer events but still keeps semantics actions.
+/// A widget absorbs pointer events without modifying the semantics tree.
 class _AbsorbPointerWithSemantics extends SingleChildRenderObjectWidget {
   const _AbsorbPointerWithSemantics({
     super.child,
@@ -114,7 +114,7 @@ class _RenderAbsorbPointerWithSemantics extends RenderProxyBox {
   }
 }
 
-/// A sliver ignores pointer events but still keeps semantics actions.
+/// A sliver ignores pointer events without modifying the semantics tree.
 class _SliverIgnorePointerWithSemantics extends SingleChildRenderObjectWidget {
   const _SliverIgnorePointerWithSemantics({
     super.child,
