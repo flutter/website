@@ -90,8 +90,8 @@ FROM node AS dev
 
 ENV JEKYLL_ENV=development
 RUN gem install bundler
-RUN gem uninstall ffi
 COPY Gemfile Gemfile.lock ./
+RUN bundle config set disable_shared_gems true
 RUN bundle config set force_ruby_platform true
 RUN bundle config build.ffi "--disable-system-libffi"
 RUN bundle install
@@ -118,8 +118,8 @@ FROM node AS build
 
 ENV JEKYLL_ENV=production
 RUN gem install bundler
-RUN gem uninstall ffi
 COPY Gemfile Gemfile.lock ./
+RUN bundle config set disable_shared_gems true
 RUN bundle config set force_ruby_platform true
 RUN bundle config build.ffi "--disable-system-libffi"
 RUN BUNDLE_WITHOUT="test development" bundle install --jobs=4 --retry=2
