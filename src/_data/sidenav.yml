@@ -81,8 +81,6 @@
           permalink: /ui/layout/adaptive-responsive
         - title: Building adaptive apps
           permalink: /ui/layout/building-adaptive-apps
-    - title: Material Design
-      permalink: /ui/material
     - title: Scrolling
       permalink: /ui/scrolling
       children:
@@ -108,7 +106,7 @@
         - title: Add a drawer to a screen
           permalink: /cookbook/design/drawer
         - title: Display a snackbar
-          permalink: /cookbook/design/snackbar
+          permalink: /cookbook/design/snackbars
         - title: Add tabs to your app
           permalink: /cookbook/design/tabs
     - title: Text
