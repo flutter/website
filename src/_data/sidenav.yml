@@ -62,9 +62,9 @@
       permalink: /codelabs
 
 - divider
+- header: User interface
       
-# TODO(parlough): Rename to Layouts      
-- title: User interface
+- title: Layout
   permalink: /ui/layout
   children:
     # TODO(parlough): Move to top-level entry
@@ -244,6 +244,7 @@
       permalink: /ui/animations/overview
 
 - divider
+- header: Development
 
 - title: Data & backend
   permalink: /data-and-backend

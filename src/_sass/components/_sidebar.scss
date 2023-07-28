@@ -98,6 +98,10 @@
       padding: 0 $site-sidebar-side-padding;
     }
 
+    > .nav-header {
+      padding-top: bootstrap.bs-spacer(1);
+    }
+
     > .nav-item {
       &:first-child {
         > .nav-link {
