@@ -5,20 +5,22 @@ description: Removal of ignoringSemantics in IgnorePointer and related classes.
 
 ## Summary
 
-The `ignoringSemantics` properties are removed in [`IgnorePointer`][],
-[`AbsorbPointer`][], [`SliverIgnorePointer`][], [`RenderSliverIgnorePointer`][],
-[`RenderIgnorePointer`][], and [`RenderAbsorbPointer`][].
+The `IgnoringPointer` widget allows you to designate an area of the UI
+where you don't want to accept pointer events, for example, when
+you don't want to allow the user to enter text in a text field.
 
-## Context
+Previously, the `IgnorePointer` not only blocked pointer events but also
+dropped its subtree from the semantics tree. The `ignoreSemantics` parameter
+was introduced as a workaround to preserve the semantics tree when using
+`IgnorePointer`s.
 
-The `ignoreSemantics` was introduced as a workaround to mitigate the result of
-`IgnorePointer` and its related widgets dropping entire semantics subtrees.
-Setting `ignoreSemantics` to false was the only way to preserve the semantics
-subtree while using the `IgnorePointer` widget.
+The `IgnorePointer` behavior has changed that it no longer drops
+the entire semantics subtree but merely blocks semantics actions in the 
+subtree. The `ignoringSemantics` workaround is no longer needed and is
+deprecated.
 
-After v3.10.0-2.0.pre, the `IgnorePointer` widget no longer drops the entire semantics
-subtree but only removes the pointer-related semantics actions. Therefore, this
-workaround is no longer needed.
+This change also applies to the AbsorbPointer and
+SliverIgnorePointer widgets.
 
 ## Description of change
 
@@ -70,11 +72,12 @@ SliverIgnorePointer(
 );
 ```
 
-Setting `ignoringSemantics` to false is no longer supported.
-Consider creating your own custom widgets.
+If you are previously using `IgnorePointer`s with `ignoringSemantics` set to `false`,
+you can achieve the same behvavior by copying the follow widgets directly into your
+code and use.
 
 ```dart
-/// A widget ignores pointer event without modifying the semantics tree.
+/// A widget ignores pointer events without modifying the semantics tree.
 class _IgnorePointerWithSemantics extends SingleChildRenderObjectWidget {
   const _IgnorePointerWithSemantics({
     super.child,
