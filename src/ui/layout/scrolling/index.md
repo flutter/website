@@ -79,7 +79,7 @@ and the [Sliver classes][].
 
 [`CustomScrollView`]: {{site.api}}/flutter/widgets/CustomScrollView-class.html
 [Sliver classes]: {{site.url}}/ui/widgets/layout#Sliver%20widgets
-[Using slivers to achieve fancy scrolling]: {{site.url}}/ui/scrolling/slivers
+[Using slivers to achieve fancy scrolling]: {{site.url}}/ui/layout/scrolling/slivers
 
 ## Nested scrolling widgets
 
