@@ -87,6 +87,8 @@ function adjustToc() {
   const tocHeader = document.querySelector(tocId + ' header');
 
   if (tocHeader) {
+    //Shouldn't it be a "to top" button? 
+    //Its doesn't make sense, it's not intutive.
     tocHeader.addEventListener('click', (_) => {
       _scrollToTop();
     });
