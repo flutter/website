@@ -1,4 +1,4 @@
-$(function () {
+(() => {
   adjustToc();
   initFixedColumns();
   scrollSidebarIntoView();
@@ -16,7 +16,7 @@ $(function () {
   setupTabs($('.sample-code-tabs'), 'io.flutter.tool-id');
 
   prettyPrint();
-});
+})();
 
 function _getOSForArchive() {
   const os = getOS();
