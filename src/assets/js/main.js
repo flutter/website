@@ -87,12 +87,21 @@ function adjustToc() {
   const tocHeader = document.querySelector(tocId + ' header');
 
   if (tocHeader) {
-    tocHeader.addEventListener('click', function (_) {
-      $('html, body').animate({scrollTop: 0}, 'fast');
+    tocHeader.addEventListener('click', (_) => {
+      _scrollToTop();
     });
   }
 
   $('body').scrollspy({ offset: 100, target: tocId });
+
+  function _scrollToTop() {
+    const distanceBetweenTop = document.documentElement.scrollTop || document.body.scrollTop;
+    if (distanceBetweenTop > 0) {
+      window.requestAnimationFrame(_scrollToTop);
+      const divisorToMakeAnimationFast = 4;
+      window.scrollTo(0, distanceBetweenTop - distanceBetweenTop / divisorToMakeAnimationFast);
+    }
+  }
 }
 
 function initFixedColumns() {
