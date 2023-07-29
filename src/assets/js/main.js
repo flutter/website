@@ -94,7 +94,12 @@ function adjustToc() {
     });
   }
 
-  $('body').scrollspy({ offset: 100, target: tocId });
+  //Appear not to be used anywhere
+  //'class' active dont make any effect on toc
+  const tocElement = document.querySelector(tocId);
+  if(tocElement){
+    window.addEventListener('scroll', _spyOnScroll);
+  }
 
   function _scrollToTop() {
     const distanceBetweenTop = document.documentElement.scrollTop || document.body.scrollTop;
@@ -102,6 +107,17 @@ function adjustToc() {
       window.requestAnimationFrame(_scrollToTop);
       const divisorToMakeAnimationFast = 4;
       window.scrollTo(0, distanceBetweenTop - distanceBetweenTop / divisorToMakeAnimationFast);
+    }
+  }
+
+  function _spyOnScroll() {
+    const scrollDistance = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollDistanceToActivate = 100;
+    if (scrollDistance > scrollDistanceToActivate) {
+      tocElement.classList.add('active');
+    } else {
+      tocElement.classList.remove('active');
+
     }
   }
 }
