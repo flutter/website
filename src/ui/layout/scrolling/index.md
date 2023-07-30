@@ -22,7 +22,7 @@ You can check out more of these widgets on the
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/KJpkjHGiI5A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-## Infinite scrolling
+### Infinite scrolling
 
 When you have a long list of items
 in your `ListView` or `GridView` (including an _infinite_ list),
