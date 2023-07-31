@@ -436,9 +436,11 @@
       permalink: /testing/debugging
     - title: Debug your app programmatically
       permalink: /testing/code-debugging
-    - title: Debug native app code
-      permalink: /testing/oem-debuggers
-    - title: Fix common errors
+    - title: Use a native language debugger
+      permalink: /testing/native-debugging
+    - title: Flutter's build modes
+      permalink: /testing/build-modes
+    - title: Common Flutter errors
       permalink: /testing/common-errors
     - title: Handle errors
       permalink: /testing/errors
