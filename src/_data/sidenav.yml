@@ -62,44 +62,88 @@
       permalink: /codelabs
 
 - divider
-
+      
+# TODO(parlough): Rename to Layouts      
 - title: User interface
-  permalink: /ui
-  match-page-url-exactly: true
+  permalink: /ui/layout
   children:
-    - title: Introduction
+    # TODO(parlough): Move to top-level entry
+    - title: Building user interfaces
       permalink: /ui
-    - title: Building layouts
+    - title: Layout introduction
       permalink: /ui/layout
+      match-page-url-exactly: true
+    - title: Build a layout
+      permalink: /ui/layout/tutorial
+    - title: Lists & grids
+      permalink: /ui/layout/lists
       children:
-        - title: Layouts in Flutter
-          permalink: /ui/layout
-          match-page-url-exactly: true
-        - title: Tutorial
-          permalink: /ui/layout/tutorial
-        - title: Creating adaptive and responsive apps
-          permalink: /ui/layout/adaptive-responsive
-        - title: Building adaptive apps
-          permalink: /ui/layout/building-adaptive-apps
-    - title: Material Design
-      permalink: /ui/material
+        - title: Create and use lists
+          permalink: /cookbook/lists/basic-list
+        - title: Create a horizontal list
+          permalink: /cookbook/lists/horizontal-list
+        - title: Create a grid view
+          permalink: /cookbook/lists/grid-lists
+        - title: Create lists with different types of items
+          permalink: /cookbook/lists/mixed-list
+        - title: Work with long lists
+          permalink: /cookbook/lists/long-lists
     - title: Scrolling
-      permalink: /ui/scrolling
+      permalink: /ui/layout/scrolling
       children:
-        - title: Introduction
-          permalink: /ui/scrolling
+        - title: Overview
+          permalink: /ui/layout/scrolling
+        - title: Use slivers to achieve fancy scrolling
+          permalink: /ui/layout/scrolling/slivers
+        - title: Place a floating app bar above a list
+          permalink: /cookbook/lists/floating-app-bar
+        - title: Create a scrolling parallax effect
+          permalink: /cookbook/effects/parallax-scrolling
+    # TODO(parlough): Rename this to 'Responsive design'
+    # and add 'Adaptive design' under 'Design & theming'.
+    - title: Adaptive design
+      permalink: /ui/layout/responsive
+      children:
+        - title: Adaptive and responsive app design
+          permalink: /ui/layout/responsive/adaptive-responsive
+        - title: Build an adaptive app
+          permalink: /ui/layout/responsive/building-adaptive-apps
+        - title: Update app UI based on orientation
+          permalink: /cookbook/design/orientation
+      
+- title: Design & theming
+  permalink: /ui/design
+  children:
+    - title: Material design
+      permalink: /ui/design/material
+      children:
+        - title: Overview
+          permalink: /ui/design/material
           match-page-url-exactly: true
-        - title: Slivers
-          permalink: /ui/scrolling/slivers
-    - title: Advanced UI
-      permalink: /ui/advanced
+        - title: Use themes to share styles
+          permalink: /cookbook/design/themes
+        - title: Add a drawer to a screen
+          permalink: /cookbook/design/drawer
+        - title: Display a snackbar
+          permalink: /cookbook/design/snackbars
+        - title: Add tabs to your app
+          permalink: /cookbook/design/tabs
+    - title: Text
+      permalink: /ui/design/text
       children:
         - title: Fonts & typography
-          permalink: /ui/advanced/typography
-        - title: Shaders
-          permalink: /ui/advanced/shaders
-    - title: Widget catalog
-      permalink: /ui/widgets
+          permalink: /ui/design/text/typography
+        - title: Use a custom font
+          permalink: /cookbook/design/fonts
+        - title: Export fonts from a package
+          permalink: /cookbook/design/package-fonts
+      # Consider renaming this 'Custom drawing & graphics'
+      # once more docs are added
+    - title: Custom graphics
+      permalink: /ui/design/graphics
+      children:
+        - title: Use custom fragment shaders
+          permalink: /ui/design/graphics/fragment-shaders
       
 - title: Interactivity
   permalink: /ui/interactivity
@@ -198,6 +242,8 @@
       permalink: /cookbook/effects/staggered-menu-animation
     - title: API overview
       permalink: /ui/animations/overview
+
+- divider
 
 - title: Data & backend
   permalink: /data-and-backend
@@ -588,6 +634,8 @@
   children:
     - title: Who is Dash?
       permalink: /dash
+    - title: Widget catalog
+      permalink: /ui/widgets
     - title: Widget index
       permalink: /reference/widgets
     - title: API reference

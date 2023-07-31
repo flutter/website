@@ -142,7 +142,7 @@ Not currently.
 [Analyzing performance]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance
 [building a web app with Flutter]: {{site.url}}/platform-integration/web/building
 [Chrome DevTools]: {{site.developers}}/web/tools/chrome-devtools
-[Creating responsive apps]: {{site.url}}/ui/layout/adaptive-responsive
+[Creating responsive apps]: {{site.url}}/ui/layout/responsive/adaptive-responsive
 [Debugging]: {{site.url}}/tools/devtools/debugger
 [file an issue]: {{site.repo.flutter}}/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [Flutter DevTools]: {{site.url}}/tools/devtools/overview
