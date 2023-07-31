@@ -4,7 +4,9 @@
   {%- for entry in include.nav -%}
     {% if entry == 'divider' -%}
       <li aria-hidden="true"><div class="sidebar-primary-divider"></div></li>
-    {% else -%}
+    {% elsif entry contains 'header' -%}
+      <li class="nav-header">{{entry.header}}</li>
+    {% elsif entry contains 'children' -%}
       {% assign id = 'sidenav-' | append: forloop.index -%}
       {% if forloop.index == active_entries[0] -%}
         {% assign isActive = true -%}
