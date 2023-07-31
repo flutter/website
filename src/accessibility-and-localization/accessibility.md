@@ -163,7 +163,14 @@ Users can skip this step if you programmatically auto-enable
 accessibility for your app using this API:
 
 ```dart
-SemanticsBinding.instance.ensureSemantics();
+import 'package:flutter/material.dart';
+import 'package:flutter/semantics.dart';
+
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SemanticsBinding.instance.ensureSemantics();
+  runApp(const MyApp());
+}
 ```
 
 </div>
