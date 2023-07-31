@@ -18,7 +18,7 @@ being "Item 0" at the top, and "Item 3" at the bottom.
 At the same time, you might want to allow users
 to scroll through the list when the list of items won't fit,
 maybe because a device is too small, a user resized a window,
-or the items are larger.
+or the number of items exceeds the screen size.
 
 ![Scrollable items]({{site.url}}/assets/images/docs/cookbook/spaced-items-2.png){:.site-mobile-screenshot}
 
@@ -38,172 +38,187 @@ using the following steps:
 
 ## 1. Add a `LayoutBuilder` with a `SingleChildScrollView`
 
+Start by creating a `LayoutBuilder`. You need to provide
+a `builder` callback function with two parameters:
 
+  1. The `BuildContext` provided by the `LayoutBuilder`.
+  2. The `BoxConstraints` of the parent widget.
 
-To create a floating app bar, place the app bar inside a
-`CustomScrollView` that also contains the list of items.
-This synchronizes the scroll position of the app bar and the list of items.
-You might think of the `CustomScrollView` widget as a `ListView`
-that allows you to mix and match different types of scrollable lists
-and widgets together.
+In this recipe, you will not be using the `BuildContext`,
+but you will need the `BoxConstraints` in the next step.
 
-The scrollable lists and widgets provided to the
-`CustomScrollView` are known as _slivers_. There are several types
-of slivers, such as `SliverList`, `SliverGridList`, and `SliverAppBar`.
-In fact, the `ListView` and `GridView` widgets use the `SliverList` and
-`SliverGrid` widgets to implement scrolling.
+Inside the `builder` function, return a `SingleChildScrollView`.
+This widget will ensure that the child widget can be scrolled
+even when the parent container gets too small.
 
-For this example, create a `CustomScrollView` that contains a
-`SliverAppBar` and a `SliverList`. In addition, remove any app bars
-that you provide to the `Scaffold` widget.
-
-<?code-excerpt "lib/starter.dart (CustomScrollView)" replace="/^return //g"?>
+<?code-excerpt "lib/spaced_list.dart (builder)"?>
 ```dart
-Scaffold(
-  // No appBar property provided, only the body.
-  body: CustomScrollView(
-      // Add the app bar and list of items as slivers in the next steps.
-      slivers: <Widget>[]),
-);
+LayoutBuilder(builder: (context, constraints) {
+  return SingleChildScrollView(
+    child: Placeholder(),
+  );
+});
 ```
 
-### 2. Use `SliverAppBar` to add a floating app bar
+## 2. Add a `ConstrainedBox` inside the `SingleChildScrollView`
 
-Next, add an app bar to the [`CustomScrollView`][].
-Flutter provides the [`SliverAppBar`][] widget which,
-much like the normal `AppBar` widget,
-uses the `SliverAppBar` to display a title,
-tabs, images and more.
+In this step, add a `ConstrainedBox`
+as the child of the `SingleChildScrollView`.
 
-However, the `SliverAppBar` also gives you the ability to create a "floating"
-app bar that scrolls offscreen as the user scrolls down the list.
-Furthermore, you can configure the `SliverAppBar` to shrink and
-expand as the user scrolls.
+The `ConstrainedBox` widget imposed aditional constraints to its child.
 
-To create this effect:
+Configure the constraint by setting the `minHeight` parameter to be
+the `maxHeight` of the `LayoutBuilder` constraints.
 
-  1. Start with an app bar that displays only a title.
-  2. Set the `floating` property to `true`.
-     This allows users to quickly reveal the app bar when
-     they scroll up the list.
-  3. Add a `flexibleSpace` widget that fills the available
-     `expandedHeight`.
+This ensures, that the child widget (the items list)
+will be constrained to have a minimum height equal to the available
+space provided by the `LayoutBuilder` constraints,
+namely the maximum height of the `BoxConstraints`.
+Making sure that the items can be spaced equally within this constraint.
 
-<?code-excerpt "lib/step2.dart (SliverAppBar)" replace="/^body: //g;/,$//g"?>
+<?code-excerpt "lib/spaced_list.dart (constrainedBox)"?>
 ```dart
-CustomScrollView(
-  slivers: [
-    // Add the app bar to the CustomScrollView.
-    const SliverAppBar(
-      // Provide a standard title.
-      title: Text(title),
-      // Allows the user to reveal the app bar if they begin scrolling
-      // back up the list of items.
-      floating: true,
-      // Display a placeholder widget to visualize the shrinking size.
-      flexibleSpace: Placeholder(),
-      // Make the initial height of the SliverAppBar larger than normal.
-      expandedHeight: 200,
+LayoutBuilder(builder: (context, constraints) {
+  return SingleChildScrollView(
+    child: ConstrainedBox(
+      constraints: BoxConstraints(minHeight: constraints.maxHeight),
+      child: Placeholder(),
     ),
-  ],
-)
+  );
+});
+```
+
+However, you don't set the `maxHeight` parameter,
+because you need to allow the child to be larger
+than the `LayoutBuilder` size,
+in case the items don't fit the screen.
+
+## 3. Create a `Column` with spaced items
+
+Finally, add a `Column` as the child of the `ConstrainedBox`.
+
+To space the items evenly, 
+set the `mainAxisAlignment` to `MainAxisAlignment.spaceBetween`.
+
+<?code-excerpt "lib/spaced_list.dart (column)"?>
+```dart
+LayoutBuilder(builder: (context, constraints) {
+  return SingleChildScrollView(
+    child: ConstrainedBox(
+      constraints: BoxConstraints(minHeight: constraints.maxHeight),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          ItemWidget(text: 'Item 1'),
+          ItemWidget(text: 'Item 2'),
+          ItemWidget(text: 'Item 3'),
+        ],
+      ),
+    ),
+  );
+});
+```
+
+Alternatively, you can use the `Spacer` widget 
+to tune the spacing between the items,
+or the `Expanded` widget, if you want one widget to take more space than others.
+
+For that, you have to wrap the `Column` with the `IntrinsicHeight` widget,
+which forces the `Column` widget to size itself to a minimum height,
+instead of expanding infinitely.
+
+<?code-excerpt "lib/spaced_list.dart (intrinsic)"?>
+```dart
+LayoutBuilder(builder: (context, constraints) {
+  return SingleChildScrollView(
+    child: ConstrainedBox(
+      constraints: BoxConstraints(minHeight: constraints.maxHeight),
+      child: IntrinsicHeight(
+        child: Column(
+          children: [
+            ItemWidget(text: 'Item 1'),
+            Spacer(),
+            ItemWidget(text: 'Item 2'),
+            Expanded(
+              child: ItemWidget(text: 'Item 3'),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
+});
 ```
 
 {{site.alert.tip}}
-  Play around with the
-  [various properties you can pass to the `SliverAppBar` widget][],
-  and use hot reload to see the results. For example, use an `Image`
-  widget for the `flexibleSpace` property to create a background image that
-  shrinks in size as it's scrolled offscreen.
+  Play around with different devices, resizing the app,
+  or resizing the browser window, and see how the item list adapts
+  to the available space.
 {{site.alert.end}}
 
-
-### 3. Add a list of items using a `SliverList`
-
-Now that you have the app bar in place, add a list of items to the
-`CustomScrollView`. You have two options: a [`SliverList`][]
-or a [`SliverGrid`][].  If you need to display a list of items one after the other,
-use the `SliverList` widget.
-If you need to display a grid list, use the `SliverGrid` widget.
-
-The `SliverList` and `SliverGrid` widgets take one required parameter: a
-[`SliverChildDelegate`][], which provides a list
-of widgets to `SliverList` or `SliverGrid`.
-For example, the [`SliverChildBuilderDelegate`][]
-allows you to create a list of items that are built lazily as you scroll,
-just like the `ListView.builder` widget.
-
-<?code-excerpt "lib/main.dart (SliverList)" replace="/,$//g"?>
-```dart
-// Next, create a SliverList
-SliverList(
-  // Use a delegate to build items as they're scrolled on screen.
-  delegate: SliverChildBuilderDelegate(
-    // The builder function returns a ListTile with a title that
-    // displays the index of the current item.
-    (context, index) => ListTile(title: Text('Item #$index')),
-    // Builds 1000 ListTiles
-    childCount: 1000,
-  ),
-)
-```
-
 ## Interactive example
+
+This example shows a list of items that are spaced evenly within a column.
+The list can be scrolled up and down when the items don't fit the screen.
+The number of items is defined by the variable `items`,
+change this value to see what happens when the items won't fit the screen.
 
 <?code-excerpt "lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(const SpacedItemsList());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class SpacedItemsList extends StatelessWidget {
+  const SpacedItemsList({super.key});
 
   @override
   Widget build(BuildContext context) {
-    const title = 'Floating App Bar';
+    const items = 4;
 
     return MaterialApp(
-      title: title,
-      home: Scaffold(
-        // No appbar provided to the Scaffold, only a body with a
-        // CustomScrollView.
-        body: CustomScrollView(
-          slivers: [
-            // Add the app bar to the CustomScrollView.
-            const SliverAppBar(
-              // Provide a standard title.
-              title: Text(title),
-              // Allows the user to reveal the app bar if they begin scrolling
-              // back up the list of items.
-              floating: true,
-              // Display a placeholder widget to visualize the shrinking size.
-              flexibleSpace: Placeholder(),
-              // Make the initial height of the SliverAppBar larger than normal.
-              expandedHeight: 200,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        cardTheme: CardTheme(color: Colors.blue.shade50),
+        useMaterial3: true,
+      ),
+      home: LayoutBuilder(builder: (context, constraints) {
+        return SingleChildScrollView(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(minHeight: constraints.maxHeight),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: List.generate(
+                  items, (index) => ItemWidget(text: 'Item $index')),
             ),
-            // Next, create a SliverList
-            SliverList(
-              // Use a delegate to build items as they're scrolled on screen.
-              delegate: SliverChildBuilderDelegate(
-                // The builder function returns a ListTile with a title that
-                // displays the index of the current item.
-                (context, index) => ListTile(title: Text('Item #$index')),
-                // Builds 1000 ListTiles
-                childCount: 1000,
-              ),
-            ),
-          ],
-        ),
+          ),
+        );
+      }),
+    );
+  }
+}
+
+class ItemWidget extends StatelessWidget {
+  const ItemWidget({
+    super.key,
+    required this.text,
+  });
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: SizedBox(
+        height: 100,
+        child: Center(child: Text(text)),
       ),
     );
   }
 }
 ```
-
-<noscript>
-  <img src="/assets/images/docs/cookbook/floating-app-bar.gif" alt="Use list demo" class="site-mobile-screenshot"/> 
-</noscript>
 
 
 [`CustomScrollView`]: {{site.api}}/flutter/widgets/CustomScrollView-class.html
