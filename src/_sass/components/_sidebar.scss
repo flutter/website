@@ -59,6 +59,14 @@
 
     &.active {
       font-weight: bootstrap.$font-weight-bold;
+
+      &:not(.collapsable) {
+        color: $site-color-primary;
+
+        &:hover {
+          color: $flutter-color-dark-blue;
+        }
+      }
     }
 
     @include nav-link-not-active-hover;
@@ -110,12 +118,17 @@
       }
 
       > .nav-link {
-        padding: bootstrap.bs-spacer(2) 0;
-        color: $site-color-body;
+        // Special for non-collapsable top-level link
+        padding-top: bootstrap.bs-spacer(2);
+        
+        &.collapsable {
+          padding: bootstrap.bs-spacer(2) 0;
+          color: $site-color-body;
 
-        @include collapsable();
+          @include collapsable();
 
-        @include nav-link-not-active-hover;
+          @include nav-link-not-active-hover;
+        }
       }
     }
   }
@@ -138,16 +151,6 @@
 
       > .nav-link {
         color: $site-color-body-light;
-
-        &.active {
-          &:not(.collapsable) {
-            color: $site-color-primary;
-
-            &:hover {
-              color: $flutter-color-dark-blue;
-            }
-          }
-        }
 
         @include nav-link-not-active-hover;
 
