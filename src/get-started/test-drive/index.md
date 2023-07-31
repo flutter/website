@@ -10,11 +10,24 @@ next:
 toc: false
 ---
 
-This page describes how to create a new Flutter app from templates, run it,
-and experience "hot reload" after you make changes to the app.
+This page describes the following procedures:
 
-Select your development tool of choice for writing, building, and running
-Flutter apps.
+1. How to create a new Flutter app from templates.
+1. How to run the created Flutter app.
+1. How to use "hot reload" after you make changes to the app.
+
+Details for these procedures vary according to the IDE you use.
+
+The first two options listed rely on the Flutter plugin for
+the respective IDE.
+Flutter supports language plugins for Visual Studio Code,
+Android Studio, and IntelliJ IDEA Community, Educational, and
+Ultimate editions.
+
+The third option explains how to use an IDE of your choice and the terminal
+to run the procedures.
+
+Select your development tool of choice for Flutter apps.
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">
@@ -35,10 +48,3 @@ Flutter apps.
   {% include_relative _androidstudio.md %}
   {% include_relative _terminal.md %}
 </div>
-
-
-
-[Install]: {{site.url}}/get-started/install
-[Main IntelliJ toolbar]: {{site.url}}/assets/images/docs/tools/android-studio/main-toolbar.png
-[Managing AVDs]: {{site.android-dev}}/studio/run/managing-avds
-[Material Components]: {{site.material}}/components
