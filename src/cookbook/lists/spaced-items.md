@@ -29,7 +29,7 @@ because they need a finite height constraint.
 
 This recipe demonstrates how to use `LayourBuilder` and `ConstrainedBox`
 to space out list items evently when there is enough space, and to allow
-users to scrolll when there is not enough space,
+users to scroll when there is not enough space,
 using the following steps:
 
   1. Add a `LayoutBuilder` with a `SingleChildScrollView`.
@@ -65,12 +65,12 @@ LayoutBuilder(builder: (context, constraints) {
 In this step, add a `ConstrainedBox`
 as the child of the `SingleChildScrollView`.
 
-The `ConstrainedBox` widget imposed aditional constraints to its child.
+The `ConstrainedBox` widget imposes aditional constraints to its child.
 
 Configure the constraint by setting the `minHeight` parameter to be
 the `maxHeight` of the `LayoutBuilder` constraints.
 
-This ensures, that the child widget (the items list)
+This ensures, that the child widget 
 will be constrained to have a minimum height equal to the available
 space provided by the `LayoutBuilder` constraints,
 namely the maximum height of the `BoxConstraints`.
