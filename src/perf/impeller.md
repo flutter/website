@@ -101,12 +101,13 @@ with Impeller on macOS, file an issue in the [GitHub tracker][file-issue].
 Prefix the issue title with `[Impeller]` and
 include a small reproducible test case.
 
-It's helpful to include the following information when 
+Please include the following information when 
 submitting an issue for Impeller on macOS:
 
 - The device you are running on, including the chip information.
 - Screenshots or recordings of any visible issues.
-- An [export of the performance trace][]. Please add it to the Github issue by zipping the file.
+- An [export of the performance trace][].
+  Zip the file and attach it to the GitHub issue.
 
 
 [file-issue]: {{site.github}}/flutter/flutter/issues/new/choose
