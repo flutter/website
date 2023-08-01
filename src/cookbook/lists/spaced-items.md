@@ -22,32 +22,32 @@ or the number of items exceeds the screen size.
 
 ![Scrollable items]({{site.url}}/assets/images/docs/cookbook/spaced-items-2.png){:.site-mobile-screenshot}
 
-Typically, you use `Spacer` to tune the spacing between widgets,
-or `Expanded` to expand a widget to fill the available space.
+Typically, you use [`Spacer`][] to tune the spacing between widgets,
+or [`Expanded`][] to expand a widget to fill the available space.
 However, these solutions are not possible inside scrollable widgets,
 because they need a finite height constraint.
 
-This recipe demonstrates how to use `LayourBuilder` and `ConstrainedBox`
+This recipe demonstrates how to use [`LayoutBuilder`][] and [`ConstrainedBox`][]
 to space out list items evently when there is enough space, and to allow
 users to scroll when there is not enough space,
 using the following steps:
 
-  1. Add a `LayoutBuilder` with a `SingleChildScrollView`.
-  2. Add a `ConstrainedBox` inside the `SingleChildScrollView`.
-  3. Create a `Column` with spaced items.
+  1. Add a [`LayoutBuilder`][] with a [`SingleChildScrollView`][].
+  2. Add a [`ConstrainedBox`][] inside the [`SingleChildScrollView`][].
+  3. Create a [`Column`][] with spaced items.
 
 ## 1. Add a `LayoutBuilder` with a `SingleChildScrollView`
 
-Start by creating a `LayoutBuilder`. You need to provide
+Start by creating a [`LayoutBuilder`][]. You need to provide
 a `builder` callback function with two parameters:
 
-  1. The `BuildContext` provided by the `LayoutBuilder`.
-  2. The `BoxConstraints` of the parent widget.
+  1. The [`BuildContext`][] provided by the [`LayoutBuilder`][].
+  2. The [`BoxConstraints`][] of the parent widget.
 
-In this recipe, you will not be using the `BuildContext`,
-but you will need the `BoxConstraints` in the next step.
+In this recipe, you will not be using the [`BuildContext`][],
+but you will need the [`BoxConstraints`][] in the next step.
 
-Inside the `builder` function, return a `SingleChildScrollView`.
+Inside the `builder` function, return a [`SingleChildScrollView`][].
 This widget will ensure that the child widget can be scrolled
 even when the parent container gets too small.
 
@@ -62,18 +62,18 @@ LayoutBuilder(builder: (context, constraints) {
 
 ## 2. Add a `ConstrainedBox` inside the `SingleChildScrollView`
 
-In this step, add a `ConstrainedBox`
-as the child of the `SingleChildScrollView`.
+In this step, add a [`ConstrainedBox`][]
+as the child of the [`SingleChildScrollView`][].
 
-The `ConstrainedBox` widget imposes aditional constraints to its child.
+The [`ConstrainedBox`][] widget imposes aditional constraints to its child.
 
 Configure the constraint by setting the `minHeight` parameter to be
-the `maxHeight` of the `LayoutBuilder` constraints.
+the `maxHeight` of the [`LayoutBuilder`][] constraints.
 
 This ensures, that the child widget 
 will be constrained to have a minimum height equal to the available
-space provided by the `LayoutBuilder` constraints,
-namely the maximum height of the `BoxConstraints`.
+space provided by the [`LayoutBuilder`][] constraints,
+namely the maximum height of the [`BoxConstraints`][].
 Making sure that the items can be spaced equally within this constraint.
 
 <?code-excerpt "lib/spaced_list.dart (constrainedBox)"?>
@@ -90,12 +90,12 @@ LayoutBuilder(builder: (context, constraints) {
 
 However, you don't set the `maxHeight` parameter,
 because you need to allow the child to be larger
-than the `LayoutBuilder` size,
+than the [`LayoutBuilder`][] size,
 in case the items don't fit the screen.
 
 ## 3. Create a `Column` with spaced items
 
-Finally, add a `Column` as the child of the `ConstrainedBox`.
+Finally, add a [`Column`][] as the child of the [`ConstrainedBox`][].
 
 To space the items evenly, 
 set the `mainAxisAlignment` to `MainAxisAlignment.spaceBetween`.
@@ -119,12 +119,12 @@ LayoutBuilder(builder: (context, constraints) {
 });
 ```
 
-Alternatively, you can use the `Spacer` widget 
+Alternatively, you can use the [`Spacer`][] widget 
 to tune the spacing between the items,
-or the `Expanded` widget, if you want one widget to take more space than others.
+or the [`Expanded`][] widget, if you want one widget to take more space than others.
 
-For that, you have to wrap the `Column` with the `IntrinsicHeight` widget,
-which forces the `Column` widget to size itself to a minimum height,
+For that, you have to wrap the [`Column`] with an [`IntrinsicHeight`][] widget,
+which forces the [`Column`][] widget to size itself to a minimum height,
 instead of expanding infinitely.
 
 <?code-excerpt "lib/spaced_list.dart (intrinsic)"?>
@@ -178,24 +178,27 @@ class SpacedItemsList extends StatelessWidget {
 
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         cardTheme: CardTheme(color: Colors.blue.shade50),
         useMaterial3: true,
       ),
-      home: LayoutBuilder(builder: (context, constraints) {
-        return SingleChildScrollView(
-          child: ConstrainedBox(
-            constraints: BoxConstraints(minHeight: constraints.maxHeight),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: List.generate(
-                  items, (index) => ItemWidget(text: 'Item $index')),
+      home: Scaffold(
+        body: LayoutBuilder(builder: (context, constraints) {
+          return SingleChildScrollView(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(minHeight: constraints.maxHeight),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: List.generate(
+                    items, (index) => ItemWidget(text: 'Item $index')),
+              ),
             ),
-          ),
-        );
-      }),
+          );
+        }),
+      ),
     );
   }
 }
@@ -220,11 +223,12 @@ class ItemWidget extends StatelessWidget {
 }
 ```
 
-
-[`CustomScrollView`]: {{site.api}}/flutter/widgets/CustomScrollView-class.html
-[`SliverAppBar`]: {{site.api}}/flutter/material/SliverAppBar-class.html
-[`SliverChildBuilderDelegate`]: {{site.api}}/flutter/widgets/SliverChildBuilderDelegate-class.html
-[`SliverChildDelegate`]: {{site.api}}/flutter/widgets/SliverChildDelegate-class.html
-[`SliverGrid`]: {{site.api}}/flutter/widgets/SliverGrid-class.html
-[`SliverList`]: {{site.api}}/flutter/widgets/SliverList-class.html
-[various properties you can pass to the `SliverAppBar` widget]: {{site.api}}/flutter/material/SliverAppBar/SliverAppBar.html
+[`BoxConstraints`]: {{site.api}}/flutter/rendering/BoxConstraints-class.html
+[`BuildContext`]: {{site.api}}/flutter/widgets/BuildContext-class.html
+[`Column`]: {{site.api}}/flutter/widgets/Column-class.html
+[`ConstrainedBox`]: {{site.api}}/flutter/widgets/ConstrainedBox-class.html
+[`Expanded`]: {{site.api}}/flutter/widgets/Expanded-class.html
+[`IntrinsicHeight`]: {{site.api}}/flutter/widgets/IntrinsicHeight-class.html
+[`LayoutBuilder`]: {{site.api}}/flutter/widgets/LayoutBuilder-class.html
+[`SingleChildScrollView`]: {{site.api}}/flutter/widgets/SingleChildScrollView-class.html
+[`Spacer`]: {{site.api}}/flutter/widgets/Spacer-class.html
