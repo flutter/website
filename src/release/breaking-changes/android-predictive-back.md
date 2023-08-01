@@ -8,18 +8,18 @@ description: >
 
 ## Summary
 
-Flutter's just-in-time navigation APIs, like `WillPopScope` and
-`Navigator.willPop`, are being replaced with a set of ahead-of-time APIs in
-order to support Android 14's Predictive Back feature.
+To support Android 14's Predictive Back feature, a set of ahead-of-time APIs
+have replaced just-in-time navigation APIs, like `WillPopScope` and
+`Navigator.willPop`.
 
 ## Background
 
 Android 14 introduced the
 [Predictive Back feature](https://developer.android.com/guide/navigation/predictive-back-gesture),
 which allows the user to peek behind the current route during a valid back
-gesture and decide whether or not to continue back or to cancel the gesture.
-This was incompatible with Flutter's navigation APIs that allow the developer to
-cancel a back gesture after it is received.
+gesture and decide whether to continue back or to cancel the gesture. This was
+incompatible with Flutter's navigation APIs that allow the developer to cancel a
+back gesture after it is received.
 
 With predictive back, the back animation begins immediately when the
 user initiates the gesture and before it has been committed. There is no
@@ -35,10 +35,9 @@ both cases, the app developer is informed that a back was attempted and whether
 or not it was successful.
 
 ### `PopScope`
-`PopScope` is a direct replacement for `WillPopScope`. Instead of deciding
-whether or not a pop is possible at the time it occurs, this is set ahead of
-time with the `canPop` boolean. It's also still possible to listen to pops by
-using `onPopInvoked`.
+The `PopScope` class directly replaces `WillPopScope`. Instead of deciding
+whether a pop is possible at the time it occurs, this is set ahead of time with
+the `canPop` boolean. You can still listen to pops by using `onPopInvoked`.
 
 ```dart
 PopScope(
@@ -74,9 +73,9 @@ if (myRoute.popDisposition == RoutePopDisposition.doNotPop) {
 ```
 
 ### `ModalRoute.registerPopInterface` and `ModalRoute.unregisterPopInterface`
-These are used internally to register `PopScope` widgets, so that they are taken
-into consideration when the route decides whether or not it can pop. This may be
-used if implementing a custom `PopScope` widget.
+Use these methods to register `PopScope` widgets, to be evaluated when the route
+decides whether it can pop. This functionality might be used when implementing a
+custom `PopScope` widget.
 
 ```dart
 @override
@@ -178,10 +177,10 @@ NavigatorPopHandler(
 ```
 
 ### Migrating from `Form.onWillPop` to `Form.canPop` and `Form.onPopInvoked`
-`Form` used to use a `WillPopScope` under the hood and expose its `onWillPop`
-method. It has been replaced with a `PopScope` and has exposed its `canPop` and
-`onPopInvoked` methods. Migrating is identical to migrating from `WillPopScope`
-to `PopScope`, detailed above.
+Previously, `Form` used a `WillPopScope` instance under the hood and exposed its
+`onWillPop` method. This has been replaced with a `PopScope` that exposes its
+`canPop` and `onPopInvoked` methods. Migrating is identical to migrating from
+`WillPopScope` to `PopScope`, detailed above.
 
 ### Migrating from `Route.willPop` to `Route.popDisposition`
 `Route`'s `willPop` method returned a `Future<RoutePopDisposition>` to
@@ -207,8 +206,8 @@ if (myRoute.popDisposition == RoutePopDisposition.doNotPop) {
 ### Migrating from `ModalRoute.add/removeScopedWillPopCallback` to `ModalRoute.(un)registerPopInterface`
 Internally, `ModalRoute` kept track of the existence of `WillPopScope`s in its
 widget subtree by registering them with `addScopedWillPopCallback` and
-`removeScopedWillPopCallback`. Since `WillPopScope` has been replaced by
-`PopScope`, these methods have been replaced by `registerPopInterface` and
+`removeScopedWillPopCallback`. Since `PopScope` replaces `WillPopScope`, these
+methods have been replaced by `registerPopInterface` and
 `unregisterPopInterface`, respectively.
 
 `PopInterface` is implemented by `PopScope` in order to expose only the minimal
