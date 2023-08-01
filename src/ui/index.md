@@ -1,5 +1,4 @@
 ---
-layout: toc
 title: Building user interfaces with Flutter
 short-title: UI
 description: Introduction to user interface development in Flutter.
