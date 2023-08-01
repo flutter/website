@@ -32,11 +32,11 @@
     }
 
     .nav-link {
-      color: $site-color-nav-links;
       padding: bootstrap.bs-spacer(5) 0;
       position: relative;
 
       @include bootstrap.media-breakpoint-up(md) {
+        color: $site-color-nav-links;
         padding: 0 bootstrap.bs-spacer(4);
       }
 
