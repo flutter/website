@@ -32,11 +32,11 @@
     }
 
     .nav-link {
+      color: $site-color-body-light;
       padding: bootstrap.bs-spacer(5) 0;
       position: relative;
 
       @include bootstrap.media-breakpoint-up(md) {
-        color: $site-color-nav-links;
         padding: 0 bootstrap.bs-spacer(4);
       }
 
@@ -208,6 +208,19 @@
         padding: 0 bootstrap.bs-spacer(1);
         font-size: smaller;
       }
+
+      &.nav-icon {
+        color: $site-color-nav-links;
+
+        &:hover {
+          color: $site-color-body-light;
+        }
+
+        svg {
+          height: 24px;
+          width: 24px;
+        }
+      }
     }
   }
 }
@@ -268,17 +281,6 @@ header.site-header {
   @include bootstrap.media-breakpoint-down(lg) {
     .site-header__sheet .navbar-nav .nav-item.docs-item {
       display: none;
-    }
-  }
-
-  .nav-icon {
-    &:hover {
-      color: $site-color-body-light;
-    }
-
-    svg {
-      height: 24px;
-      width: 24px;
     }
   }
 }
