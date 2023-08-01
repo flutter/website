@@ -42,7 +42,7 @@ After you define a Theme, use it within your own widgets.
 Flutter's Material widgets use your Theme to set the background
 colors and font styles for AppBars, Buttons, Checkboxes, and more.
 
-## Creating an app theme
+## Create an app theme
 
 To share a Theme across your entire app, add a `theme` property
 to your `MaterialApp` constructor.
@@ -56,26 +56,32 @@ Flutter creates a default theme for you.
 
 [`useMaterial3`]: {{site.api}}/flutter/material/ThemeData/useMaterial3.html
 
-
-<?code-excerpt "lib/main.dart (MaterialApp)" replace="/return //g"?>
-
+<?code-excerpt "lib/theme.dart (MaterialApp)" replace="/return //g"?>
 ```dart
-ThemeData(
-  useMaterial3: true,
+return MaterialApp(
+  title: appName,
+  theme: ThemeData(
+    useMaterial3: true,
 
-  // Define the default brightness and colors.
-  colorScheme: ColorScheme.fromSwatch(
-    primarySwatch: Colors.purple,
-    brightness: Brightness.dark,  
+    // Define the default brightness and colors.
+    colorScheme: ColorScheme.fromSwatch(
+      primarySwatch: Colors.purple,
+      brightness: Brightness.dark,
+    ),
+
+    // Define the default `TextTheme`. Use this to specify the default
+    // text styling for headlines, titles, bodies of text, and more.
+    textTheme: TextTheme(
+      displayLarge:
+          const TextStyle(fontSize: 72, fontWeight: FontWeight.bold),
+      titleLarge:
+          GoogleFonts.oswald(fontSize: 30, fontStyle: FontStyle.italic),
+      bodyMedium: GoogleFonts.merriweather(),
+      displaySmall: GoogleFonts.pacifico(),
+    ),
   ),
-
-  // Define the default `TextTheme`. Use this to specify the default
-  // text styling for headlines, titles, bodies of text, and more.
-  textTheme: TextTheme(
-    displayLarge: const TextStyle(fontSize: 72, fontWeight: FontWeight.bold),
-    titleLarge: GoogleFonts.oswald(fontSize: 30, fontStyle: FontStyle.italic),
-    bodyMedium: GoogleFonts.merriweather(),
-    displaySmall: GoogleFonts.pacifico(),
+  home: const MyHomePage(
+    title: appName,
   ),
 );
 ```
@@ -91,14 +97,14 @@ Most `ThemeData` objects include two properties.
 To learn what colors and fonts you can define,
 check out the [`ThemeData`][] documentation.
 
-## Themes for part of an application
+## Override a theme
 
 To override the overall theme in part of an app,
-wrap a section of the app in a `Theme` widget.
+wrap that section of the app in a `Theme` widget.
 
-Two ways exist to implement this override:
+You can override a theme in two ways:
 
-1. Create a unique `ThemeData`
+1. Create a unique `ThemeData` instance.
 2. Extend the parent theme.
 
 {{site.alert.note}}
@@ -107,19 +113,18 @@ Two ways exist to implement this override:
   <iframe class="full-width" src="{{site.youtube-site}}/embed/oTvQDJOBXmM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {{site.alert.end}}
 
-### Creating unique `ThemeData`
+### Set a unique `ThemeData` instance
 
-If you don't want your app to inherit any colors or font styles,
+If you want a component of your app to ignore the overall theme,
 create a `ThemeData()` instance.
 Pass that instance to the `Theme` widget.
 
 <?code-excerpt "lib/theme.dart (Theme)"?>
-
 ```dart
 Theme(
   // Create a unique theme with `ThemeData`
   data: ThemeData(
-    primarySwatch: Colors.yellow,
+    primarySwatch: Colors.pink,
   ),
   child: FloatingActionButton(
     onPressed: () {},
@@ -128,17 +133,20 @@ Theme(
 );
 ```
 
-### Extending the parent theme
+### Extend the parent theme
 
-Rather than overriding everything, it often makes sense to extend the parent
-theme. You can handle this by using the [`copyWith()`][] method.
+Instead of overriding everything, consider extending the parent theme.
+To extend a theme, use the [`copyWith()`][] method.
 
 <?code-excerpt "lib/theme.dart (ThemeCopyWith)"?>
 ```dart
 Theme(
   // Find and extend the parent theme using `copyWith`. See the next
   // section for more info on `Theme.of`.
-  data: Theme.of(context).copyWith(splashColor: Colors.yellow),
+
+  data: Theme.of(context).copyWith(
+    colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)
+  ),
   child: const FloatingActionButton(
     onPressed: null,
     child: Icon(Icons.add),
@@ -146,15 +154,15 @@ Theme(
 );
 ```
 
-## Using a Theme
+## Apply a Theme
 
-Now that you've defined a theme, use it within the widgets' `build()`
-methods by using the `Theme.of(context)` method.
+To apply your new theme, add the `Theme.of(context)` method within the
+widgets' `build()` methods.
 
-The `Theme.of(context)` method looks up the widget tree and returns
+The `Theme.of(context)` method looks up the widget tree and applies
 the nearest `Theme` in the tree. If you have a standalone
-`Theme` defined above your widget, that's returned.
-If not, the app's theme is returned.
+`Theme` as defined in the previous example, that's applied.
+If not, Flutter applies the app's theme.
 
 In fact, the `FloatingActionButton` uses this technique to find the
 `accentColor`.
@@ -198,18 +206,26 @@ class MyApp extends StatelessWidget {
         // Define the default brightness and colors.
         colorScheme: ColorScheme.fromSwatch(
           primarySwatch: Colors.purple,
-          brightness: Brightness.dark,  
+          brightness: Brightness.dark,
+          // TRY THIS: Change to "Brightness.light"
+          //           and see that all colors change
+          //           to better contrast a light background
         ),
 
         // Define the default `TextTheme`. Use this to specify the default
         // text styling for headlines, titles, bodies of text, and more.
         textTheme: TextTheme(
-          displayLarge: const TextStyle(fontSize: 72, fontWeight: FontWeight.bold),
-          titleLarge: GoogleFonts.oswald(fontSize: 30, fontStyle: FontStyle.italic),
+          displayLarge:
+              const TextStyle(fontSize: 72, fontWeight: FontWeight.bold),
+          titleLarge:
+              GoogleFonts.oswald(fontSize: 30, fontStyle: FontStyle.italic),
           bodyMedium: GoogleFonts.merriweather(),
           displaySmall: GoogleFonts.pacifico(),
+          // TRY THIS: Change one of the GoogleFonts
+          //           to "lato", "poppins", or "lora"
+          //           The title uses "titleLarge"
+          //           and the middle text uses "bodyMedium"
         ),
-        
       ),
       home: const MyHomePage(
         title: appName,
@@ -225,8 +241,8 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    
+    final theme = Theme.of(context); // Simplifies later use of Theme context
+
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
@@ -238,13 +254,18 @@ class MyHomePage extends StatelessWidget {
           child: Text(
             'Text with a background color',
             style: theme.textTheme.bodyMedium,
+            // TRY THIS: Change the Text value
+            //           or change the theme.textTheme
+            //           to "displayLarge" or "displaySmall"
           ),
         ),
       ),
       floatingActionButton: Theme(
-        data: ThemeData(
-          primarySwatch: Colors.yellow,
-        ),
+        data: theme.copyWith(
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)
+            // TRY THIS: Change the seedColor to "Colors.red" or
+            //           "Colors.blue"
+            ),
         child: FloatingActionButton(
           onPressed: () {},
           child: const Icon(Icons.add),
@@ -253,6 +274,7 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }
+
 ```
 
 <noscript>
