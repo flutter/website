@@ -1,20 +1,23 @@
+@use '../base/variables' as *;
+@use '../vendor/bootstrap';
+
 .landing-page {
   background-color: $site-color-codeblock-bg;
 
   h2 {
     font-size: 2rem;
     margin-top: 0;
-    @include media-breakpoint-up(lg) {
+    @include bootstrap.media-breakpoint-up(lg) {
       font-size: 2.25rem;
     }
-    @include media-breakpoint-up(xl) {
+    @include bootstrap.media-breakpoint-up(xl) {
       font-size: 2.75rem;
     }
   }
 
   h3 {
     font-size: 1.25rem;
-    @include media-breakpoint-up(lg) {
+    @include bootstrap.media-breakpoint-up(lg) {
       font-size: 1.75rem;
     }
 
@@ -24,38 +27,38 @@
   }
 
   .card {
-    margin-bottom: bs-spacer(8);
+    margin-bottom: bootstrap.bs-spacer(8);
 
     .card-body {
       padding: 40px 20px;
-      @include media-breakpoint-up(md) {
+      @include bootstrap.media-breakpoint-up(md) {
         padding: 40px;
       }
-      @include media-breakpoint-up(lg) {
+      @include bootstrap.media-breakpoint-up(lg) {
         padding: 60px;
       }
-      @include media-breakpoint-up(xl) {
+      @include bootstrap.media-breakpoint-up(xl) {
         padding: 80px;
       }
     }
   }
 
   .card.card--case-study {
-    margin-bottom: bs-spacer(6);
-    padding: bs-spacer(8) bs-spacer(6);
+    margin-bottom: bootstrap.bs-spacer(6);
+    padding: bootstrap.bs-spacer(8) bootstrap.bs-spacer(6);
 
     .card-header {
       align-items: center;
       border: none;
       background-color: transparent;
       display: flex;
-      margin-bottom: bs-spacer(8);
+      margin-bottom: bootstrap.bs-spacer(8);
       min-height: 46px;
       padding: 0;
     }
 
     .card-body {
-      margin-bottom: bs-spacer(4);
+      margin-bottom: bootstrap.bs-spacer(4);
       padding: 0;
     }
 
@@ -65,8 +68,8 @@
   }
 
   &__card-graphic {
-    margin-bottom: bs-spacer(5);
-    @include media-breakpoint-up(lg) {
+    margin-bottom: bootstrap.bs-spacer(5);
+    @include bootstrap.media-breakpoint-up(lg) {
       margin-bottom: 0;
     }
 
@@ -84,7 +87,7 @@
 
     &__logo-row {
       &:not(:last-child) {
-        margin-bottom: bs-spacer(2);
+        margin-bottom: bootstrap.bs-spacer(2);
       }
     }
   }
@@ -98,20 +101,20 @@
     position: relative;
     right: 50%;
     width: 100vw;
-    @include media-breakpoint-up(md) {
+    @include bootstrap.media-breakpoint-up(md) {
       margin-bottom: 80px;
     }
 
     .card {
       .card-body {
-        padding: bs-spacer(6);
+        padding: bootstrap.bs-spacer(6);
       }
 
       .card-category {
         color: $site-color-primary;
-        font-size: $font-size-base;
-        font-weight: $font-weight-base;
-        margin-bottom: bs-spacer(4);
+        font-size: bootstrap.$font-size-base;
+        font-weight: bootstrap.$font-weight-base;
+        margin-bottom: bootstrap.bs-spacer(4);
       }
 
       .btn.btn-link {
@@ -132,37 +135,37 @@
     }
 
     .card-deck {
-      margin-top: bs-spacer(12);
+      margin-top: bootstrap.bs-spacer(12);
 
       .col-lg-4 {
-        padding-left: bs-spacer(3);
-        padding-right: bs-spacer(3);
+        padding-left: bootstrap.bs-spacer(3);
+        padding-right: bootstrap.bs-spacer(3);
       }
     }
   }
 
   &__cta {
     &__headline {
-      margin-bottom: bs-spacer(2);
-      @include media-breakpoint-up(md) {
-        margin-bottom: bs-spacer(4);
+      margin-bottom: bootstrap.bs-spacer(2);
+      @include bootstrap.media-breakpoint-up(md) {
+        margin-bottom: bootstrap.bs-spacer(4);
       }
     }
 
     &__body {
       font-size: 1.25rem;
-      @include media-breakpoint-up(md) {
+      @include bootstrap.media-breakpoint-up(md) {
         font-size: 1.35rem;
       }
-      @include media-breakpoint-up(lg) {
+      @include bootstrap.media-breakpoint-up(lg) {
         font-size: 1.5rem;
       }
     }
 
     &__button {
-      margin-top: bs-spacer(4);
-      @include media-breakpoint-up(md) {
-        margin-top: bs-spacer(8);
+      margin-top: bootstrap.bs-spacer(4);
+      @include bootstrap.media-breakpoint-up(md) {
+        margin-top: bootstrap.bs-spacer(8);
       }
     }
   }

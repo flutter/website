@@ -15,8 +15,9 @@ remains ongoing.
 
 You can preview Wasm and WebAssembly garbage collection (WasmGC) in the
 [`master` channel](https://github.com/flutter/flutter/wiki/flutter-build-release-channels#master).
-As Flutter provides these features as previews, ongoing development may result
-in frequent changes. Revisit this page for the latest updates.
+As Flutter provides these features as previews,
+ongoing development might result in frequent changes.
+Revisit this page for the latest updates.
 
 **_Last updated {{page.last-update}}_**
 
@@ -53,7 +54,7 @@ Experimental options
     --wasm                                              Compile to WebAssembly rather than JavaScript.
                                                         See https://flutter.dev/wasm for more information.
     --omit-type-checks                                  Omit type checks in Wasm output.
-                                                        Reduces code size and improves performance, but may affect runtime correctness. Use with care.
+                                                        Reduces code size and improves performance, but might affect runtime correctness. Use with care.
     --wasm-opt                                          Optimize output wasm using the Binaryen (https://github.com/WebAssembly/binaryen) tool.
 
           [debug]                                       Similar to `full`, but member names are preserved. Debugging is easier, but size is a bit bigger.
@@ -123,7 +124,7 @@ Wasm support has some limitations. The following list covers the common issues.
 
 #### Chrome or Firefox nightly, with flags
 
-As mentioned in [Load it in a browser](#load-it-an-a-browser), 
+As mentioned in [Load it in a browser](#load-it-in-a-browser), 
 to run Flutter web apps compiled to Wasm, 
 use _Chrome 113 or later_ or a _Firefox nightly build_ with 
 experimental flags enabled.
@@ -158,7 +159,7 @@ In the meantime, to experiment with Wasm support in Flutter, avoid these APIs.
 
 #### Only build support
 
-Neither `flutter run` nor [DevTools]({{site.main-url}}/tools/devtools) support
+Neither `flutter run` nor [DevTools]({{site.url}}/tools/devtools) support
 Wasm at the moment.
 
 ### Learn more

@@ -1,18 +1,12 @@
 ---
 title: Read and write files
 description: How to read from and write to files on disk.
-prev:
-  title: Persist data with SQLite
-  path: /cookbook/persistence/sqlite
-next:
-  title: Store key-value data on disk
-  path: /cookbook/persistence/key-value
 ---
 
 <?code-excerpt path-base="cookbook/persistence/reading_writing_files/"?>
 
 In some cases, you need to read and write files to disk.
-For example, you may need to persist data across app launches,
+For example, you might need to persist data across app launches,
 or download data from the internet and save it for later offline use.
 
 To save files to disk on mobile or desktop apps,

@@ -1,12 +1,6 @@
 ---
 title: Report errors to a service
 description: How to keep track of errors that users encounter.
-prev:
-  title: Work with long lists
-  path: /cookbook/lists/long-lists
-next:
-  title: Animate a widget across screens
-  path: /cookbook/navigation/hero-animations
 ---
 
 <?code-excerpt path-base="cookbook/maintenance/error_reporting/"?>
@@ -92,7 +86,7 @@ Alternatively, you can pass the DSN to Flutter using the `dart-define` tag:
 This is all you need for Sentry to capture unhandled errors in Dart and native layers.  
 This includes Swift, Objective-C, C, and C++ on iOS, and Java, Kotlin, C, and C++ on Android.
 
-## 4. Capture errors programatically
+## 4. Capture errors programmatically
 
 Besides the automatic error reporting that Sentry generates by
 importing and initializing the SDK,

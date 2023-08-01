@@ -1,3 +1,6 @@
+@use '../base/variables' as *;
+@use '../vendor/bootstrap';
+
 .clock {
   $clock-color-dark: #212c34;
   $clock-color-blue: #01579b;
@@ -22,7 +25,7 @@
   &__category-winner {
     margin-top: 3rem;
 
-    @include media-breakpoint-up(md) {
+    @include bootstrap.media-breakpoint-up(md) {
       h3 {
         font-size: 1.9rem;
       }
@@ -70,6 +73,7 @@
 
       i {
         margin-right: 5px;
+        vertical-align: text-bottom;
       }
 
       &:first-child {
@@ -96,20 +100,20 @@
       background-size: 320px, 280px, 270px, 90px, 310px;
     }
 
-    @include media-breakpoint-up(sm) {
+    @include bootstrap.media-breakpoint-up(sm) {
       .heading {
         font-size: 38px;
       }
     }
 
-    @include media-breakpoint-up(md) {
+    @include bootstrap.media-breakpoint-up(md) {
       &__texture {
         background-position: top 43px right -70%, bottom 20px right -20px, bottom -30% left 30px, top -40px center,top 30px left -60%;
         background-size: 55%, 30%, 25%, 14%, 50%;
       }
     }
 
-    @include media-breakpoint-up(lg) {
+    @include bootstrap.media-breakpoint-up(lg) {
       .heading {
         font-size: 72px;
         margin: 120px auto 40px;
@@ -122,7 +126,7 @@
       }
     }
 
-    @include media-breakpoint-up(xl) {
+    @include bootstrap.media-breakpoint-up(xl) {
       &__texture {
         background-size: 30%, 22%, 15%, 8%, 25%;
       }
@@ -142,7 +146,7 @@
     &__texture {
       background-color: $site-color-white;
       background-image: (
-        url('/assets/images/clock/wtm__background-bottom.svg'), 
+        url('/assets/images/clock/wtm__background-bottom.svg'),
         url('/assets/images/clock/wtm__background-top.svg')
       );
       background-position: right top 200px, left top 50px;
@@ -154,14 +158,14 @@
       margin: 80px 0;
     }
 
-    @include media-breakpoint-up(sm) {
+    @include bootstrap.media-breakpoint-up(sm) {
       &__texture {
         background-position: right top 450px, left top 50px;
         background-size: 15%, 25%;
       }
     }
 
-    @include media-breakpoint-up(lg) {
+    @include bootstrap.media-breakpoint-up(lg) {
 
       &_container {
         margin: 100px 0;
@@ -192,13 +196,13 @@
       margin: 0;
     }
 
-    @include media-breakpoint-up(sm) {
+    @include bootstrap.media-breakpoint-up(sm) {
       .subheading {
         font-size: 32px;
       }
     }
 
-    @include media-breakpoint-up(lg) {
+    @include bootstrap.media-breakpoint-up(lg) {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -266,7 +270,7 @@
       }
     }
 
-    @include media-breakpoint-up(sm) {
+    @include bootstrap.media-breakpoint-up(sm) {
       .heading {
         font-size: 24px;
       }
@@ -283,7 +287,7 @@
       }
     }
 
-    @include media-breakpoint-up(lg) {
+    @include bootstrap.media-breakpoint-up(lg) {
       margin-top: 72px;
 
       &_container {
@@ -342,7 +346,7 @@
       display: block;
       margin: 45px auto 0;
 
-      @include media-breakpoint-up(md) {
+      @include bootstrap.media-breakpoint-up(md) {
         display: inline;
         margin: 0 30px;
 
@@ -357,7 +361,7 @@
     }
   }
 
-  // Shared styles for the winners sections, higlight reel
+  // Shared styles for the winners sections, highlight reel
   &__row {
     padding: 3rem 0;
   }
@@ -365,7 +369,7 @@
   &__reel {
     padding-top: 3rem;
 
-    @include media-breakpoint-up(lg) {
+    @include bootstrap.media-breakpoint-up(lg) {
       padding-top: 0;
     }
   }
@@ -441,7 +445,7 @@
       text-decoration: underline;
     }
 
-    @include media-breakpoint-up(sm) {
+    @include bootstrap.media-breakpoint-up(sm) {
       &_container {
         margin: 160px 0 80px;
       }
@@ -455,7 +459,7 @@
       }
     }
 
-    @include media-breakpoint-up(lg) {
+    @include bootstrap.media-breakpoint-up(lg) {
 
       &_container {
         margin: 160px 0;
@@ -507,7 +511,7 @@
       margin: 1.25rem;
     }
   }
-  
+
   // Styles for section clock__getting (Getting Started)
   &__getting {
     ol {
@@ -552,7 +556,7 @@
       padding-bottom: 0;
     }
 
-    @include media-breakpoint-up(sm) {
+    @include bootstrap.media-breakpoint-up(sm) {
       .subheading {
         font-size: 32px;
       }
@@ -562,7 +566,7 @@
       }
     }
 
-    @include media-breakpoint-up(lg) {
+    @include bootstrap.media-breakpoint-up(lg) {
 
       .subheading {
         font-size: 56px;
@@ -606,13 +610,13 @@
       padding: 16px 24px;
     }
 
-    @include media-breakpoint-up(sm) {
+    @include bootstrap.media-breakpoint-up(sm) {
       .subheading {
         font-size: 32px;
       }
     }
 
-    @include media-breakpoint-up(lg) {
+    @include bootstrap.media-breakpoint-up(lg) {
       margin: 0 0 80px 0;
 
       &_container {
@@ -661,22 +665,22 @@
     .title {
       font-family: $site-font-family-base;
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 500;
       margin: 40px 0 16px;
     }
 
     .code-font {
       color: $color-code-block;
-      font-family: $site-font-family-courier;
+      font-family: $site-font-family-monospace;
     }
 
-    @include media-breakpoint-up(sm) {
+    @include bootstrap.media-breakpoint-up(sm) {
       .subheading {
         font-size: 24px;
       }
     }
 
-    @include media-breakpoint-up(lg) {
+    @include bootstrap.media-breakpoint-up(lg) {
       li {
         font-size: 18px;
       }
@@ -723,6 +727,10 @@
         text-align: left;
         user-select: text;
         width: 100%;
+
+        .material-icons {
+          user-select: none;
+        }
       }
 
       .faqs_card {
@@ -754,13 +762,13 @@
       padding: 0 24px 24px 0;
     }
 
-    @include media-breakpoint-up(sm) {
+    @include bootstrap.media-breakpoint-up(sm) {
       .subheading {
         font-size: 32px;
       }
     }
 
-    @include media-breakpoint-up(lg) {
+    @include bootstrap.media-breakpoint-up(lg) {
       margin-top: 100px;
 
       .subheading {
@@ -785,7 +793,7 @@
 
   .code-font {
     color: $color-code-block;
-    font-family: $site-font-family-courier;
+    font-family: $site-font-family-monospace;
   }
 
   .dropdown__button[aria-expanded="true"] {

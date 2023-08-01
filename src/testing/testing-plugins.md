@@ -8,7 +8,7 @@ plugin packages as well, but because plugins contain
 native code they often also require other kinds of tests
 to test all of their functionality.
 
-[usual types of Flutter tests]: {{site.url}}/testing
+[usual types of Flutter tests]: {{site.url}}/testing/overview
 
 {{site.alert.note}}
   To learn how to test your plugin code, read on.
@@ -17,7 +17,7 @@ to test all of their functionality.
   [Plugins in Flutter tests][].
 {{site.alert.end}}
 
-[Plugins in Flutter tests]: {{site.url}}/packages-and-plugins/plugins-in-tests
+[Plugins in Flutter tests]: {{site.url}}/testing/plugins-in-tests
 
 ## Types of plugin tests
 
@@ -90,11 +90,11 @@ native UI interactions.
 [GoogleTest]: {{site.github}}/google/googletest
 [integration tests]: {{site.url}}/cookbook/testing/integration/introduction
 [JUnit]: {{site.github}}/junit-team/junit4/wiki/Getting-started
-[mocked in tests]: {{site.url}}/packages-and-plugins/plugins-in-tests#mock-the-platform-channel
+[mocked in tests]: {{site.url}}/testing/plugins-in-tests#mock-the-platform-channel
 [plugin-tests]: {{site.url}}/packages-and-plugins/developing-packages#step-1-create-the-package-1
 [unit tests]: {{site.url}}/cookbook/testing/unit/introduction
 [widget tests]: {{site.url}}/cookbook/testing/widget/introduction
-[won't be loaded]: {{site.url}}/packages-and-plugins/plugins-in-tests
+[won't be loaded]: {{site.url}}/testing/plugins-in-tests
 [XCTest]: https://developer.apple.com/documentation/xctest
 [XCUITest]: https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/09-ui_testing.html
 
@@ -203,7 +203,7 @@ Some extra considerations for plugin testing:
     then call the plugin’s public API and validate the results.
 
 [Android Studio test UI]: https://developer.android.com/studio/test/test-in-android-studio
-[general advice]: {{site.url}}/testing
+[general advice]: {{site.url}}/testing/overview
 [Visual Studio test UI]: https://learn.microsoft.com/en-us/visualstudio/test/getting-started-with-unit-testing?view=vs-2022&tabs=dotnet%2Cmstest#run-unit-tests
 [Xcode Test UI]: https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/05-running_tests.html
 

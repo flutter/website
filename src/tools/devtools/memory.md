@@ -237,7 +237,7 @@ owned by the widget, should never be referenced
 from the state’s fields, as the state won't be garbage
 collected together with the widget, and can significantly outlive it.
 
-[interactive]: {{site.url}}/ui/interactive#creating-a-stateful-widget
+[interactive]: {{site.url}}/ui/interactivity#creating-a-stateful-widget
 
 ### Memory leak vs memory bloat
 

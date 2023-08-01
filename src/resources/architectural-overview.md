@@ -188,14 +188,15 @@ pieces of a Flutter app.
 
 ## Reactive user interfaces
 
-On the surface, Flutter is [a reactive, pseudo-declarative UI
-framework]({{site.url}}/resources/faq#what-programming-paradigm-does-flutters-framework-use),
+On the surface, Flutter is [a reactive, declarative UI framework][faq],
 in which the developer provides a mapping from application state to interface
 state, and the framework takes on the task of updating the interface at runtime
-when the application state changes. This model is inspired by [work that came
-from Facebook for their own React
-framework]({{site.youtube-site}}/watch?time_continue=2&v=x7cQ3mrcKaY&feature=emb_logo),
+when the application state changes. This model is inspired by
+[work that came from Facebook for their own React framework][fb],
 which includes a rethinking of many traditional design principles.
+
+[faq]: {{site.url}}/resources/faq#what-programming-paradigm-does-flutters-framework-use
+[fb]: {{site.youtube-site}}/watch?time_continue=2&v=x7cQ3mrcKaY&feature=emb_logo
 
 In most traditional UI frameworks, the user interface's initial state is
 described once and then separately updated by user code at runtime, in response
@@ -531,8 +532,7 @@ The Android system libraries provide the components
 responsible for drawing themselves to a `Canvas` object,
 which Android can then render with [Skia][],
 a graphics engine written in C/C++ that calls the
-CPU or GPU to complete the drawing on the device,
-or [Impeller][] (currently in preview behind a flag).
+CPU or GPU to complete the drawing on the device.
 
 Cross-platform frameworks _typically_ work by creating
 an abstraction layer over the underlying native
@@ -558,9 +558,9 @@ The same is true for Flutter on other native platforms,
 such as Windows or macOS.
 
 {{site.alert.note}}
-  As of Flutter 3.10, Impeller is the default
+  Flutter 3.10 set Impeller as the default
   rendering engine on iOS. It's in preview
-  for Android, behind a flag.
+  for Android behind a flag.
 {{site.alert.end}}
 
 ### From user input to the GPU

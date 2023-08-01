@@ -1,12 +1,6 @@
 ---
 title: Navigate to a new screen and back
 description: How to navigate between routes.
-prev:
-  title: Animate a widget across screens
-  path: /cookbook/navigation/hero-animations
-next:
-  title: Navigate with named routes
-  path: /cookbook/navigation/named-routes
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

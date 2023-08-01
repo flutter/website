@@ -53,18 +53,14 @@ Coming from another platform? Check out Flutter for:
 [Adding interactivity to your Flutter app][interactivity]
 : Learn how to add a stateful widget to your app.
 
-[A tour of the Flutter widget framework][]
-: Learn more about Flutter's react-style framework.
-
 [FAQ][]
 : Get the answers to frequently asked questions.
 
-[A tour of the Flutter widget framework]: {{site.url}}/ui/widgets-intro
 [Android]: {{site.url}}/get-started/flutter-for/android-devs
 [Building layouts]: {{site.url}}/ui/layout
 [FAQ]: {{site.url}}/resources/faq
 [Get started]: {{site.url}}/get-started/install
-[interactivity]: {{site.url}}/ui/interactive
+[interactivity]: {{site.url}}/ui/interactivity
 [SwiftUI]: {{site.url}}/get-started/flutter-for/swiftui-devs
 [UIKit]: {{site.url}}/get-started/flutter-for/uikit-devs
 [React Native]: {{site.url}}/get-started/flutter-for/react-native-devs

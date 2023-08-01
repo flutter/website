@@ -12,10 +12,10 @@ The integration flow can be done using the Android Studio
 IDE with the [Flutter plugin][] or manually.
 
 {{site.alert.warning}}
-  Your existing Android app may support architectures such as `mips`
-  or `x86`. Flutter currently [only supports][]
+  Your existing Android app might support architectures
+  such as `mips` or `x86`. Flutter currently [only supports][]
   building ahead-of-time (AOT) compiled libraries
-  for `x86_64`, `armeabi-v7a` and `arm64-v8a`.
+  for `x86_64`, `armeabi-v7a`, and `arm64-v8a`.
 
   Consider using the [`abiFilters`][] Android Gradle
   Plugin API to limit the supported architectures in your APK.

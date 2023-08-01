@@ -23,7 +23,7 @@ consider submitting your tests to our [test registry].
 The following guides are available. They are sorted by
 release, and listed in alphabetical order:
 
-[breaking change policy]: {{site.url}}/resources/compatibility
+[breaking change policy]: {{site.url}}/release/compatibility-policy
 [Flutter announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [Dart announce]: https://groups.google.com/a/dartlang.org/g/announce
 [`dart fix`]: {{site.url}}/tools/flutter-fix
@@ -32,17 +32,23 @@ release, and listed in alphabetical order:
 ### Not yet released to stable
 
 * [Added AppLifecycleState.hidden][] enum value
+* [Deprecated API removed after v3.10][]
 * [Moved ReorderableListView's localized strings][]  from material to widgets localizations
 * [Removed `ignoringSemantics`][] properties
 * [Deprecated `RouteInformation.location`][] and its related APIs
 * [Customize tabs alignment using the new `TabBar.tabAlignment` property][]
+* [Updated EditableText scroll into view behavior][]
+* [Deprecate `textScaleFactor` in favor of `TextScaler`][]
 * [Deprecated just-in-time navigation pop APIs for Android Predictive Back][]
 
 [Added AppLifecycleState.hidden]: {{site.url}}/release/breaking-changes/add-applifecyclestate-hidden
+[Deprecated API removed after v3.10]: {{site.url}}/release/breaking-changes/3-10-deprecations
 [Moved ReorderableListView's localized strings]: {{site.url}}/release/breaking-changes/material-localized-strings
 [Removed `ignoringSemantics`]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
 [Deprecated `RouteInformation.location`]: {{site.url}}/release/breaking-changes/route-information-uri
 [Customize tabs alignment using the new `TabBar.tabAlignment` property]: {{site.url}}/release/breaking-changes/tab-alignment
+[Updated EditableText scroll into view behavior]: {{site.url}}/release/breaking-changes/editable-text-scroll-into-view
+[Deprecate `textScaleFactor` in favor of `TextScaler`]: {{site.url}}/release/breaking-changes/deprecate-textscalefactor
 [Deprecated just-in-time navigation pop APIs for Android Predictive Back]: {{site.url}}/release/breaking-changes/android-predictive-back
 
 ### Released in Flutter 3.10

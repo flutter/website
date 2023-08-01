@@ -16,7 +16,7 @@ The `FadeUpwardsPageTransitionsBuilder` (provided with the first
 Flutter release), defined a page transition that's
 similar to the one provided by Android O. This page transitions builder
 will eventually be deprecated on Android, as per Flutter's
-[deprecation policy]({{site.url}}/resources/compatibility#deprecation-policy).
+[deprecation policy]({{site.url}}/release/compatibility-policy#deprecation-policy).
 
 `ZoomPageTransitionsBuilder`, the new page transition builder for
 Android, Linux, and Windows, defines a page transition that's similar to
