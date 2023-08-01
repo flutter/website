@@ -1405,7 +1405,7 @@ DispatchQueue.main.async {
 [`MethodChannel`]: {{site.api}}/flutter/services/MethodChannel-class.html
 [`MethodChannelAndroid`]: {{site.api}}/javadoc/io/flutter/plugin/common/MethodChannel.html
 [`MethodChanneliOS`]: {{site.api}}/objcdoc/Classes/FlutterMethodChannel.html
-[Platform adaptations]: {{site.url}}/resources/platform-adaptations
+[Platform adaptations]: {{site.url}}/platform-integration/platform-adaptations
 [publishing packages]: {{site.url}}/packages-and-plugins/developing-packages#publish
 [`quick_actions`]: {{site.pub}}/packages/quick_actions
 [section on threading]: #channels-and-platform-threading

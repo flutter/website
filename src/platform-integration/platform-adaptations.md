@@ -910,7 +910,7 @@ You can leave feedback or ask questions in the discussion.
 [`Switch.adaptive()`]: {{site.api}}/flutter/material/Switch/Switch.adaptive.html
 [`Slider.adaptive()`]: {{site.api}}/flutter/material/Slider/Slider.adaptive.html
 [`CircularProgressIndicator.adaptive()`]: {{site.api}}/flutter/material/CircularProgressIndicator/CircularProgressIndicator.adaptive.html
-[UI Component section]: {{site.api}}/resources/platform-adaptations/#ui-components
+[UI Component section]: {{site.api}}/platform-integration/platform-adaptations/#ui-components
 [mat-navbar]: https://m3.material.io/components/navigation-bar/overview
 [hig-tabbar]: https://developer.apple.com/design/human-interface-guidelines/components/navigation-and-search/tab-bars/
 [text-field-post]: {{site.repo.uxr}}/discussions/95 

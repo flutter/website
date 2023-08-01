@@ -26,7 +26,7 @@
       { "source": "/subscribe/**", "destination": "https://flutter.dev#newsletter", "type": 301 },
 
       { "source": "/accessibility", "destination": "/accessibility-and-localization/accessibility", "type": 301 },
-      { "source": "/adaptations", "destination": "/resources/platform-adaptations", "type": 301 },
+      { "source": "/adaptations", "destination": "/platform-integration/platform-adaptations", "type": 301 },
       { "source": "/adaptive*", "destination": "/ui/layout/responsive/adaptive-responsive", "type": 301 },
       { "source": "/android-release", "destination": "/deployment/android", "type": 301 },
       { "source": "/animations", "destination": "/ui/animations", "type": 301 },
