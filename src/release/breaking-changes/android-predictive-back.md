@@ -81,9 +81,12 @@ used if implementing a custom `PopScope` widget.
 @override
 void didChangeDependencies() {
   super.didChangeDependencies();
-  _route?.unregisterPopInterface(this);
-  _route = ModalRoute.of(context);
-  _route?.registerPopInterface(this);
+  final ModalRoute<dynamic>? nextRoute = ModalRoute.of(context);
+  if (nextRoute != _route) {
+    _route?.unregisterPopInterface(this);
+    _route = nextRoute;
+    _route?.registerPopInterface(this);
+  }
 }
 ```
 
@@ -269,7 +272,7 @@ if (_route.popDisposition == RoutePopDisposition.doNotPop) {
 
 ## Timeline
 
-Landed in version: xxx<br>
+Landed in version: 3.13<br>
 In stable release: not yet
 
 ## References
