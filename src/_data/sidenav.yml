@@ -63,14 +63,13 @@
 
 - divider
 - header: User interface
+- title: Introduction
+  permalink: /ui
       
 - title: Layout
   permalink: /ui/layout
   children:
-    # TODO(parlough): Move to top-level entry (https://github.com/flutter/website/issues/9160)
-    - title: Building user interfaces
-      permalink: /ui
-    - title: Layout introduction
+    - title: Introduction
       permalink: /ui/layout
       match-page-url-exactly: true
     - title: Build a layout
