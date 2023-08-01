@@ -23,8 +23,8 @@ cancel a back gesture after it is received.
 
 With predictive back, the back animation begins immediately when the
 user initiates the gesture and before it has been committed. There is no
-opportunity for the Flutter app to decide whether or not it is allowed to happen
-at that time. It must be known ahead of time.
+opportunity for the Flutter app to decide whether it's allowed to happen at that
+time. It must be known ahead of time.
 
 For this reason, all APIs that allow a Flutter app developer to cancel a back
 navigation at the time that a back gesture is received are now deprecated. They
@@ -50,8 +50,9 @@ PopScope(
 ```
 
 ### `Form.canPop` and `Form.onPopInvoked`
-These replace parameters that corresponded with `WillPopScope` and now are used
-with `PopScope` in the same was as above.
+These two new parameters are based on `PopScope` and replace the deprecated
+`Form.onWillPop` parameter. They are used with `PopScope` in the same way as
+above.
 
 ```dart
 Form(
