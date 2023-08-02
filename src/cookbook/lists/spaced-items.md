@@ -28,7 +28,7 @@ However, these solutions are not possible inside scrollable widgets,
 because they need a finite height constraint.
 
 This recipe demonstrates how to use [`LayoutBuilder`][] and [`ConstrainedBox`][]
-to space out list items evently when there is enough space, and to allow
+to space out list items evenly when there is enough space, and to allow
 users to scroll when there is not enough space,
 using the following steps:
 
