@@ -14,7 +14,7 @@ dropped its subtree from the semantics tree. The `ignoreSemantics` parameter
 was introduced as a workaround to preserve the semantics tree when using
 `IgnorePointer`s.
 
-The `IgnorePointer` behavior has changed that it no longer drops
+The `IgnorePointer` behavior has changed in that it no longer drops
 the entire semantics subtree but merely blocks semantics actions in the 
 subtree. The `ignoringSemantics` workaround is no longer needed and is
 deprecated.
@@ -73,7 +73,7 @@ SliverIgnorePointer(
 ```
 
 If you are previously using `IgnorePointer`s with `ignoringSemantics` set to `false`,
-you can achieve the same behvavior by copying the follow widgets directly into your
+you can achieve the same behavior by copying the follow widgets directly into your
 code and use.
 
 ```dart
