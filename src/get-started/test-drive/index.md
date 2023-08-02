@@ -24,8 +24,8 @@ Flutter supports language plugins for Visual Studio Code,
 Android Studio, and IntelliJ IDEA Community, Educational, and
 Ultimate editions.
 
-The third option explains how to use an IDE of your choice and the terminal
-to run the procedures.
+The third option explains how to use an editor of your choice and
+the terminal to run the procedures.
 
 Select your development tool of choice for Flutter apps.
 

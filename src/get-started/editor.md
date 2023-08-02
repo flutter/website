@@ -14,7 +14,7 @@ You can build apps with Flutter using any text editor or
 integrated development environment (IDE)
 combined with Flutter's command-line tools.
 The Flutter team recommends using an editor that supports
-a Flutter extension, like VS Code, or plugin, like Android Studio.
+a Flutter extension or plugin, like VS Code and Android Studio.
 These plugins provide code completion, syntax highlighting,
 widget editing assists, run & debug support, and more.
 
@@ -26,7 +26,7 @@ Android Studio and IntelliJ IDEA.
 
 (The [JetBrains' Dart plugin][] supports eight additional IDEs.)
 
-[Flutter plugin from JetBrains]: https://plugins.jetbrains.com/plugin/9212-flutter/versions
+[Flutter plugin from JetBrains]: https://plugins.jetbrains.com/plugin/9212-flutter
 [JetBrains' Dart plugin]: https://plugins.jetbrains.com/plugin/6351-dart
 
 Follow these procedures to add the Flutter plugin to VS Code,
@@ -51,7 +51,7 @@ If you choose another IDE, skip ahead to the [next step: Test drive][].
 ## Install VS Code
 
 [VS Code][] is a code editor to build and debug apps.
-With the Flutter plugin installed, you can compile, deploy, and debug
+With the Flutter extension installed, you can compile, deploy, and debug
 Flutter apps.
 
 To install the latest version of VS Code,
@@ -66,7 +66,7 @@ follow Microsoft's instructions for the relevant platform:
 [Install on Windows]: https://code.visualstudio.com/docs/setup/windows
 [Install on Linux]: https://code.visualstudio.com/docs/setup/linux
 
-## Install the VS Code Flutter plugin
+## Install the VS Code Flutter extension
 
 1. Start **VS Code**.
 
@@ -85,9 +85,9 @@ follow Microsoft's instructions for the relevant platform:
 1. Select **Flutter** in the list.
 
 1. Click **Install**.
-   Installing the Flutter plugin also installs the Dart plugin.
+   Installing the Flutter extension also installs the Dart extension.
 
-## Validate your VS Code setup with the Flutter Doctor
+## Validate your VS Code setup
 
 1. Go to **View** <span aria-label="and then">></span>
    **Command Palette...**.
@@ -108,10 +108,10 @@ follow Microsoft's instructions for the relevant platform:
 
 ## Install Android Studio or IntelliJ IDEA
 
-Android Studio and IntelliJ IDEA offer complete,
+Android Studio and IntelliJ IDEA offer a complete,
 integrated IDE experience once you install the Flutter plugin.
 
-To install of the following IDEs, follow their instructions:
+To install one of the following IDEs, follow their instructions:
 
 - [Android Studio][], version 2020.3.1 (Arctic Fox) or later
 - [IntelliJ IDEA Community][], version 2021.2 or later
@@ -125,7 +125,7 @@ The installation instructions vary by platform.
 
 Use the following instructions for macOS:
 
-1. Start Android Studio.
+1. Start Android Studio or IntelliJ.
 
 1. Go to **App menu** <span aria-label="and then">></span>
    **Settings**.
