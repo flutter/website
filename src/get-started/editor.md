@@ -21,13 +21,13 @@ widget editing assists, run & debug support, and more.
 You can add a supported plugin for Visual Studio Code,
 Android Studio, or IntelliJ IDEA Community, Educational,
 and Ultimate editions.
-The [Flutter plugin from JetBrains][] _only_ works with
-Android Studio and IntelliJ IDEA.
+The [Flutter plugin][] _only_ works with
+Android Studio and the listed editions of IntelliJ IDEA.
 
-(The [JetBrains' Dart plugin][] supports eight additional IDEs.)
+(The [Dart plugin][] supports eight additional IDEs.)
 
-[Flutter plugin from JetBrains]: https://plugins.jetbrains.com/plugin/9212-flutter
-[JetBrains' Dart plugin]: https://plugins.jetbrains.com/plugin/6351-dart
+[Flutter plugin]: https://plugins.jetbrains.com/plugin/9212-flutter
+[Dart plugin]: https://plugins.jetbrains.com/plugin/6351-dart
 
 Follow these procedures to add the Flutter plugin to VS Code,
 Android Studio, or IntelliJ.
@@ -70,24 +70,23 @@ follow Microsoft's instructions for the relevant platform:
 
 1. Start **VS Code**.
 
-1. Go to **View** <span aria-label="and then">></span>
-   **Command Palette...**.
-
-   You can also press <kbd>Control</kbd> / <kbd>Command</kbd> +
-   <kbd>Shift</kbd> + <kbd>P</kbd>.
-
-1. Type `install`.
-
-1. Select **Extensions: Install Extensions**.
-
-1. Type `flutter` in the extensions search field.
-
-1. Select **Flutter** in the list.
+1. Open a browser and go to the [Flutter extension][] page
+   on the Visual Studio Marketplace.
 
 1. Click **Install**.
    Installing the Flutter extension also installs the Dart extension.
 
+[Flutter extension]: https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter
+
 ## Validate your VS Code setup
+
+1. Go to **View** <span aria-label="and then">></span> **Output**.
+
+   You can also press <kbd>Control</kbd> / <kbd>Command</kbd> +
+   <kbd>Shift</kbd> + <kbd>U</kbd>.
+
+1. In the dropdown on the upper right of the **Output** panel, 
+   select **flutter (flutter)**.
 
 1. Go to **View** <span aria-label="and then">></span>
    **Command Palette...**.
@@ -98,10 +97,7 @@ follow Microsoft's instructions for the relevant platform:
 1. Type `doctor`.
 
 1. Select the **Flutter: Run Flutter Doctor**.
-
-1. Review the output in the **OUTPUT** pane for any issues.
-   Make sure to select Flutter from the dropdown
-   in the different Output Options.
+   Flutter Doctor runs and its response displays in the **Output** panel.
 
 </div>
 <div class="tab-pane" id="androidstudio" role="tabpanel" aria-labelledby="androidstudio-tab" markdown="1">
@@ -109,7 +105,7 @@ follow Microsoft's instructions for the relevant platform:
 ## Install Android Studio or IntelliJ IDEA
 
 Android Studio and IntelliJ IDEA offer a complete,
-integrated IDE experience once you install the Flutter plugin.
+IDE experience once you install the Flutter plugin.
 
 To install one of the following IDEs, follow their instructions:
 

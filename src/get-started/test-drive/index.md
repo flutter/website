@@ -10,24 +10,25 @@ next:
 toc: false
 ---
 
-This page describes the following procedures:
+This page describes the following tasks:
 
 1. How to create a new Flutter app from templates.
 1. How to run the created Flutter app.
 1. How to use "hot reload" after you make changes to the app.
 
-Details for these procedures vary according to the IDE you use.
+Details for these tasks depend on the integrated development environment
+(IDE) you use.
 
 The first two options listed rely on the Flutter plugin for
 the respective IDE.
-Flutter supports language plugins for Visual Studio Code,
-Android Studio, and IntelliJ IDEA Community, Educational, and
-Ultimate editions.
+Visual Studio Code, Android Studio, and IntelliJ IDEA Community,
+Educational, and Ultimate editions support Flutter development
+through plugins.
 
 The third option explains how to use an editor of your choice and
-the terminal to run the procedures.
+the terminal to run the commands.
 
-Select your development tool of choice for Flutter apps.
+Select your preferred IDE for Flutter apps.
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">
