@@ -211,7 +211,7 @@ We use our own testing capabilities to test our SDK,
 and we measure our [test coverage][] on every commit.
 
 [test coverage]: https://coveralls.io/github/flutter/flutter?branch=master
-[testing with Flutter]: {{site.url}}/testing
+[testing with Flutter]: {{site.url}}/testing/overview
 
 ### Does Flutter come with debugging tools?
 
@@ -329,7 +329,7 @@ we also aim to help lower app development and maintenance costs.
 
 
 [catalog of Flutter's widgets]: {{site.url}}/ui/widgets
-[gesture system]: {{site.url}}/ui/advanced/gestures
+[gesture system]: {{site.url}}/ui/interactivity/gestures
 
 ### What happens when my mobile OS updates and introduces new widgets?
 
@@ -739,7 +739,7 @@ and many other utilities and formats.
 For a detailed writeup on using JSON with Flutter,
 check out the [JSON tutorial][].
 
-[JSON tutorial]: {{site.url}}/data-and-backend/json
+[JSON tutorial]: {{site.url}}/data-and-backend/serialization/json
 [pub.dev]: {{site.pub}}
 
 ### Can I build 3D (OpenGL) apps with Flutter?

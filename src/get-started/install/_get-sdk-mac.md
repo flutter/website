@@ -1,5 +1,7 @@
 ## Get the Flutter SDK {#get-sdk}
 
+{% include docs/china-notice.md %}
+
  1. Download the following installation bundle to get the latest
     {{site.sdk.channel}} release of the Flutter SDK:
 

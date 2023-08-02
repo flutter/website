@@ -1,12 +1,6 @@
 ---
 title: Navigate with named routes
 description: How to implement named routes for navigating between screens.
-prev:
-  title: Navigate to a new screen and back
-  path: /cookbook/navigation/navigation-basics
-next:
-  title: Pass arguments to a named route
-  path: /cookbook/navigation/navigate-with-arguments
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

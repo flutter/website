@@ -1,10 +1,13 @@
+@use '../base/variables' as *;
+@use '../vendor/bootstrap';
+
 .create {
   h4 {
-    margin-bottom: bs-spacer(8);
+    margin-bottom: bootstrap.bs-spacer(8);
   }
 
   &__row {
-    padding: bs-spacer(12) 0;
+    padding: bootstrap.bs-spacer(12) 0;
   }
 
   &__cta {
@@ -13,7 +16,7 @@
 
     background-color: $flutter-cta-color;
     border-color: $flutter-cta-color;
-    padding: bs-spacer(3) bs-spacer(10);
+    padding: bootstrap.bs-spacer(3) bootstrap.bs-spacer(10);
 
     &:hover {
       background-color: $flutter-cta-color-hover;
@@ -30,47 +33,47 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    @include media-breakpoint-up(sm) {
+    @include bootstrap.media-breakpoint-up(sm) {
       columns: 2;
     }
 
     &__icon {
       display: block;
-      margin-bottom: bs-spacer(2);
+      margin-bottom: bootstrap.bs-spacer(2);
     }
 
     li {
       font-size: 1.25rem;
-      margin-bottom: bs-spacer(8);
-      @include media-breakpoint-up(xl) {
+      margin-bottom: bootstrap.bs-spacer(8);
+      @include bootstrap.media-breakpoint-up(xl) {
         font-size: 1.5rem;
       }
     }
   }
 
   &__center-block {
-    text-align:center;
-    margin-bottom: bs-spacer(6);
+    text-align: center;
+    margin-bottom: bootstrap.bs-spacer(6);
   }
 
   &__video {
-    margin-top: bs-spacer(6);
-    overflow:hidden;
-    padding-bottom:56.25%;
-    position:relative;
-    height:0;
+    margin-top: bootstrap.bs-spacer(6);
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
   }
 
   &__video iframe{
-    left:0;
-    top:0;
-    height:100%;
-    width:100%;
-    position:absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
   }
 
   &__category-winner {
-    margin-top: bs-spacer(12);
+    margin-top: bootstrap.bs-spacer(12);
   }
 
   &__grandprize {
@@ -78,26 +81,26 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    @include media-breakpoint-up(sm) {
+    @include bootstrap.media-breakpoint-up(sm) {
       columns: 4;
     }
 
     &__icon {
       display: block;
-      margin-bottom: bs-spacer(2);
+      margin-bottom: bootstrap.bs-spacer(2);
     }
 
     li {
       font-size: 1.25rem;
-      margin-bottom: bs-spacer(8);
-      @include media-breakpoint-up(xl) {
+      margin-bottom: bootstrap.bs-spacer(8);
+      @include bootstrap.media-breakpoint-up(xl) {
         font-size: 1.5rem;
       }
     }
   }
 
   &__text-columns {
-    @include media-breakpoint-up(sm) {
+    @include bootstrap.media-breakpoint-up(sm) {
       columns: 2;
     }
   }
@@ -107,7 +110,7 @@
       align-items: flex-end;
       display: flex;
       height: 226px;
-      margin-bottom: bs-spacer(4);
+      margin-bottom: bootstrap.bs-spacer(4);
 
       img {
         width: 100%;
@@ -116,8 +119,8 @@
 
     h3 {
       font-size: 1.6rem;
-      margin-bottom: bs-spacer(1);
-      margin-top: bs-spacer(4);
+      margin-bottom: bootstrap.bs-spacer(1);
+      margin-top: bootstrap.bs-spacer(4);
     }
   }
 }

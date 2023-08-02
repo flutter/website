@@ -72,14 +72,14 @@ You might also check out [Introducing Dart 3][].
 [WebAssembly support]: {{site.url}}/platform-integration/web/wasm
 [adding iOS app extensions]: {{site.url}}/platform-integration/ios/app-extensions
 [testing Flutter plugins]: {{site.url}}/testing/testing-plugins
-[fonts and typography]: {{site.url}}/ui/advanced/typography
+[fonts and typography]: {{site.url}}/ui/design/text/typography
 [Android]: {{site.url}}/platform-integration/android/restore-state-android
 [iOS]: {{site.url}}/platform-integration/ios/restore-state-ios
 [sharing iOS and macOS plugin implementations]: {{site.url}}/packages-and-plugins/developing-packages#shared-ios-and-macos-implementations
-[alert dialog]: {{site.url}}/resources/platform-adaptations#alert-dialog
-[top app bar and navigation bar]: {{site.url}}/resources/platform-adaptations#top-aoo-bar-and-navigation-bar
-[bottom navigation bar]: {{site.url}}/resources/platform-adaptations#bottom-navigation-bars
-[some widgets]: {{site.url}}/resources/platform-adaptations#ui-components
+[alert dialog]: {{site.url}}/platform-integration/platform-adaptations#alert-dialog
+[top app bar and navigation bar]: {{site.url}}/platform-integration/platform-adaptations#top-aoo-bar-and-navigation-bar
+[bottom navigation bar]: {{site.url}}/platform-integration/platform-adaptations#bottom-navigation-bars
+[some widgets]: {{site.url}}/platform-integration/platform-adaptations#ui-components
 [Anatomy of an app]: {{site.url}}/resources/architectural-overview#anatomy-of-an-app
 [SDK archive page]: {{site.url}}/release/archive
 
@@ -207,7 +207,7 @@ and [Introducing Dart 3 alpha][].
 [Adding an iOS clip target]: {{site.url}}/platform-integration/ios/ios-app-clip
 [Creating Flavors for Flutter]: {{site.url}}/deployment/flavors
 [Customizing web app initialization]: {{site.url}}/platform-integration/web/initialization
-[Flutter concurrency for Swift developers]: {{site.url}}/resources/dart-swift-concurrency
+[Flutter concurrency for Swift developers]: {{site.url}}/get-started/flutter-for/dart-swift-concurrency
 [Flutter FAQ]: {{site.url}}/resources/faq
 [Flutter for SwiftUI developers]: {{site.url}}/get-started/flutter-for/swiftui-devs
 [Impeller]: {{site.github}}/flutter/flutter/wiki/Impeller
@@ -216,7 +216,7 @@ and [Introducing Dart 3 alpha][].
 [Learning Dart as a Swift developer]: {{site.dart-site}}/guides/language/coming-from/swift-to-dart
 [Security false positives]: {{site.url}}/reference/security-false-positives
 [Using the memory view]: {{site.url}}/tools/devtools/memory
-[Writing and using fragment shaders]: {{site.url}}/ui/advanced/shaders
+[Writing and using fragment shaders]: {{site.url}}/ui/design/graphics/fragment-shaders
 [Writing custom platform-specific code]: {{site.url}}/platform-integration/platform-channels
 
 **Codelabs and workshops**
@@ -492,7 +492,7 @@ publication since the last stable release:
 [Improving Platform Channel Performance in Flutter]: {{site.flutter-medium}}/improving-platform-channel-performance-in-flutter-e5b4e5df04af
 [Raster thread performance optimization tips]: {{site.flutter-medium}}/raster-thread-performance-optimization-tips-e949b9dbcf06
 [README]: {{site.repo.this}}/#flutter-website
-[Using Actions and Shortcuts]: {{site.url}}/ui/advanced/actions_and_shortcuts
+[Using Actions and Shortcuts]: {{site.url}}/ui/interactivity/actions-and-shortcuts
 [What can we do to better improve Flutter?]: {{site.flutter-medium}}/what-can-we-do-better-to-improve-flutter-q2-2021-user-survey-results-1037fb8f057b
 [Writing a good code sample]: {{site.flutter-medium}}/writing-a-good-code-sample-323358edd9f3
 
@@ -570,7 +570,7 @@ publication since the last stable release:
 
 [Adding in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases
 [Announcing Flutter 2.2]: {{site.flutter-medium}}/announcing-flutter-2-2-at-google-i-o-2021-92f0fcbd7ef9
-[Building adaptive apps]: {{site.url}}/ui/layout/building-adaptive-apps
+[Building adaptive apps]: {{site.url}}/ui/layout/responsive/building-adaptive-apps
 [Build Voice Bots for Android with Dialogflow Essentials & Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter
 [Building your first Flutter app]: {{site.youtube-site}}/watch?v=Z6KZ3cTGBWw
 [DartPad Sharing Guide (using a Gist file)]: {{site.github}}/dart-lang/dart-pad/wiki/Sharing-Guide
@@ -675,7 +675,7 @@ publication since the last stable release:
 [Announcing Flutter 2]: {{site.google-blog}}/2021/03/announcing-flutter-2.html
 [comp]: {{site.flutter-medium}}/providing-operating-system-compatibility-on-a-large-scale-374cc2fb0dad
 [Configuring the URL strategy on the web]: {{site.url}}/ui/navigation/url-strategies
-[Creating responsive and adaptive apps]: {{site.url}}/ui/layout/adaptive-responsive
+[Creating responsive and adaptive apps]: {{site.url}}/ui/layout/responsive/adaptive-responsive
 [Dart sound null safety: technical preview 2]: {{site.flutter-medium}}/null-safety-flutter-tech-preview-cb5c98aba187
 [Deprecation Lifetime in Flutter]: {{site.flutter-medium}}/deprecation-lifetime-in-flutter-e4d76ee738ad
 [Desktop support for Flutter]: {{site.url}}/platform-integration/desktop
@@ -1102,7 +1102,7 @@ Happy Fluttering!
 [building a web application]: {{site.url}}/platform-integration/web/building
 [`ColorFiltered`]: {{site.api}}/flutter/widgets/ColorFiltered-class.html
 [ColorFiltered demo]: {{site.github}}/csells/flutter_color_filter
-[creating responsive apps]: {{site.url}}/ui/layout/adaptive-responsive
+[creating responsive apps]: {{site.url}}/ui/layout/responsive/adaptive-responsive
 [Flutter Medium publication]: {{site.medium}}/flutter
 [Flutter for web]: {{site.url}}/platform-integration/web
 [Flutter news from GDD China: uniting Flutter on web and mobile, and introducing Flutter 1.9]: {{site.google-blog}}/2019/09/flutter-news-from-gdd-china-flutter1.9.html?m=1

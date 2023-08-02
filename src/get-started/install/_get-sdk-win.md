@@ -1,5 +1,7 @@
 ## Get the Flutter SDK
 
+{% include docs/china-notice.md %}
+
 {% include_relative _help-link.md location='win-get-sdk' %}
 
  1. Download the following installation bundle to get the latest
@@ -11,7 +13,7 @@
     check out the [SDK archive][].
  1. Extract the zip file and place the contained `flutter`
     in the desired installation location for the Flutter SDK
-    (for example, `C:\src\flutter`).
+    (for example, `%USERPROFILE%\flutter`, `D:\dev\flutter`).
 
 {{site.alert.warning}}
   Do not install Flutter to a path that contains special

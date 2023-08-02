@@ -1,9 +1,6 @@
 ---
 title: Tap, drag, and enter text
 description: How to test widgets for user interaction.
-prev:
-  title: Handle scrolling
-  path: /cookbook/testing/widget/scrolling
 ---
 
 <?code-excerpt path-base="cookbook/testing/widget/tap_drag/"?>
