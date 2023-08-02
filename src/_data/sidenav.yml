@@ -62,35 +62,53 @@
       permalink: /codelabs
 
 - divider
-
-- title: User interface
+- header: User interface
+- title: Introduction
   permalink: /ui
-  match-page-url-exactly: true
+      
+- title: Layout
+  permalink: /ui/layout
   children:
     - title: Introduction
-      permalink: /ui
-    - title: Building layouts
       permalink: /ui/layout
+      match-page-url-exactly: true
+    - title: Build a layout
+      permalink: /ui/layout/tutorial
+    - title: Lists & grids
+      permalink: /ui/layout/lists
       children:
-        - title: Layouts in Flutter
-          permalink: /ui/layout
-          match-page-url-exactly: true
-        - title: Tutorial
-          permalink: /ui/layout/tutorial
-        - title: Creating adaptive and responsive apps
-          permalink: /ui/layout/adaptive-responsive
-        - title: Building adaptive apps
-          permalink: /ui/layout/building-adaptive-apps
+        - title: Create and use lists
+          permalink: /cookbook/lists/basic-list
+        - title: Create a horizontal list
+          permalink: /cookbook/lists/horizontal-list
+        - title: Create a grid view
+          permalink: /cookbook/lists/grid-lists
+        - title: Create lists with different types of items
+          permalink: /cookbook/lists/mixed-list
+        - title: Work with long lists
+          permalink: /cookbook/lists/long-lists
     - title: Scrolling
-      permalink: /ui/scrolling
+      permalink: /ui/layout/scrolling
       children:
-        - title: Introduction
-          permalink: /ui/scrolling
-          match-page-url-exactly: true
-        - title: Slivers
-          permalink: /ui/scrolling/slivers
-    - title: Widget catalog
-      permalink: /ui/widgets
+        - title: Overview
+          permalink: /ui/layout/scrolling
+        - title: Use slivers to achieve fancy scrolling
+          permalink: /ui/layout/scrolling/slivers
+        - title: Place a floating app bar above a list
+          permalink: /cookbook/lists/floating-app-bar
+        - title: Create a scrolling parallax effect
+          permalink: /cookbook/effects/parallax-scrolling
+    # TODO(parlough): Rename this to 'Responsive design'
+    # and add 'Adaptive design' under 'Design & theming'.
+    - title: Adaptive design
+      permalink: /ui/layout/responsive
+      children:
+        - title: Adaptive and responsive app design
+          permalink: /ui/layout/responsive/adaptive-responsive
+        - title: Build an adaptive app
+          permalink: /ui/layout/responsive/building-adaptive-apps
+        - title: Update app UI based on orientation
+          permalink: /cookbook/design/orientation
       
 - title: Design & theming
   permalink: /ui/design
@@ -118,8 +136,8 @@
           permalink: /cookbook/design/fonts
         - title: Export fonts from a package
           permalink: /cookbook/design/package-fonts
-    # Consider renaming this 'Custom drawing & graphics'
-    # once more docs are added
+      # Consider renaming this 'Custom drawing & graphics'
+      # once more docs are added
     - title: Custom graphics
       permalink: /ui/design/graphics
       children:
@@ -223,6 +241,9 @@
       permalink: /cookbook/effects/staggered-menu-animation
     - title: API overview
       permalink: /ui/animations/overview
+
+- divider
+- header: Development
 
 - title: Data & backend
   permalink: /data-and-backend
@@ -415,9 +436,11 @@
       permalink: /testing/debugging
     - title: Debug your app programmatically
       permalink: /testing/code-debugging
-    - title: Debug native app code
-      permalink: /testing/oem-debuggers
-    - title: Fix common errors
+    - title: Use a native language debugger
+      permalink: /testing/native-debugging
+    - title: Flutter's build modes
+      permalink: /testing/build-modes
+    - title: Common Flutter errors
       permalink: /testing/common-errors
     - title: Handle errors
       permalink: /testing/errors
@@ -611,6 +634,8 @@
   children:
     - title: Who is Dash?
       permalink: /dash
+    - title: Widget catalog
+      permalink: /ui/widgets
     - title: Widget index
       permalink: /reference/widgets
     - title: API reference
