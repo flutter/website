@@ -6,9 +6,10 @@ toc: true
 
 {% assign path = 'flutter_infra_release/releases/stable/windows/flutter_windows_3.3.0-stable.zip' -%}
 
-The Flutter community has made a Simplified Chinese version of the
-Flutter website available at
-[https://flutter.cn](https://flutter.cn).
+The Flutter community has made a Simplified Chinese version
+of the Flutter website available at
+[https://flutter.cn](https://flutter.cn),
+maintained by [The China Flutter User Group (CFUG)][].
 
 If you’d like to install Flutter using an 
 [installation bundle]({{site.url}}/release/archive),
@@ -42,7 +43,6 @@ Taking macOS or Linux as an example, here are the first few steps in
 the setup process for using a mirror site. Run the following in a Bash
 shell from the directory where you wish to store your local Flutter clone:
 
-
 ```terminal
 $ export PUB_HOSTED_URL=https://pub.flutter-io.cn
 $ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
@@ -59,15 +59,21 @@ downloaded from `flutter-io.cn` in any shell where `PUB_HOSTED_URL`
 and `FLUTTER_STORAGE_BASE_URL` are set.
 
 The `flutter-io.cn` server is a provisional mirror for Flutter
-dependencies and packages maintained by [GDG China]().
+dependencies and packages maintained by [The China Flutter User Group (CFUG)][].
 The Flutter team cannot guarantee long-term availability of this service.
-You’re free to use other mirrors if they become available. If you’re
-interested in setting up your own mirror in China, contact
-[flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com)
+You’re free to use other mirrors if they become available.
+If you’re interested in setting up your own mirror in China,
+contact [flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com)
 for assistance.
+
+If you are running into issues that only occur when using the `flutter-io.cn` server,
+consider reporting the issue to
+[the issue tracker (镜像问题)](https://github.com/cfug/flutter.cn/issues/new/choose).
 
 ## Community-run mirror sites
 
 * Shanghai Jiao Tong University Linux User Group
   * `FLUTTER_STORAGE_BASE_URL`: [https://mirror.sjtu.edu.cn/](https://mirror.sjtu.edu.cn)
   * `PUB_HOSTED_URL`: [https://mirror.sjtu.edu.cn/dart-pub/](https://mirror.sjtu.edu.cn/dart-pub)
+
+[The China Flutter User Group (CFUG)]: https://flutter.cn/about
