@@ -44,12 +44,12 @@ a `builder` callback function with two parameters:
   1. The [`BuildContext`][] provided by the [`LayoutBuilder`][].
   2. The [`BoxConstraints`][] of the parent widget.
 
-In this recipe, you will not be using the [`BuildContext`][],
+In this recipe, you won't be using the [`BuildContext`][],
 but you will need the [`BoxConstraints`][] in the next step.
 
 Inside the `builder` function, return a [`SingleChildScrollView`][].
-This widget will ensure that the child widget can be scrolled
-even when the parent container gets too small.
+This widget ensures that the child widget can be scrolled,
+even when the parent container is too small.
 
 <?code-excerpt "lib/spaced_list.dart (builder)"?>
 ```dart
