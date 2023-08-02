@@ -41,6 +41,8 @@ uses [Material Components][].
 {% include_relative _try-hot-reload.md save_changes=save_changes %}
 {% include docs/run-profile.md ide_profile=ide_profile %}
 
-[trusted your computer]: {{site.url}}/get-started/install/macos#trust
 </div>
 
+[Main IntelliJ toolbar]: {{site.url}}/assets/images/docs/tools/android-studio/main-toolbar.png
+[Managing AVDs]: {{site.android-dev}}/studio/run/managing-avds
+[Material Components]: {{site.material}}/components

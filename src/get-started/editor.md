@@ -109,9 +109,9 @@ IDE experience once you install the Flutter plugin.
 
 To install one of the following IDEs, follow their instructions:
 
-- [Android Studio][], version 2020.3.1 (Arctic Fox) or later
-- [IntelliJ IDEA Community][], version 2021.2 or later
-- [IntelliJ IDEA Ultimate][], version 2021.2 or later
+- [Android Studio][], version 2022.2 or later
+- [IntelliJ IDEA Community][], version 2022.2 or later
+- [IntelliJ IDEA Ultimate][], version 2022.2 or later
 
 ## Install the Flutter plugin
 
