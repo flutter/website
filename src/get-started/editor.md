@@ -123,9 +123,8 @@ Use the following instructions for macOS:
 
 1. Start Android Studio or IntelliJ.
 
-1. Go to **Android Studio** (or **IntelliJ**)
-   <span aria-label="and then">></span>
-   **Settings...**.
+1. From the macOS menu bar, go to **Android Studio** (or **IntelliJ**)
+   <span aria-label="and then">></span> **Settings...**.
 
    You can also press <kbd>Command</kbd> + <kbd>,</kbd>.
 
