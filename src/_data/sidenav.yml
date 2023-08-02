@@ -606,8 +606,10 @@
     - header: Learning
     - title: Books
       permalink: /resources/books
-    - title: Videos and online courses
+    - title: Videos
       permalink: /resources/videos
+    - title: Courses
+      permalink: /resources/courses
     - title: Learn Dart
       permalink: /resources/bootstrap-into-dart
     - header: Contributing
