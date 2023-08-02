@@ -8,10 +8,10 @@ js:
 
 <?code-excerpt path-base="cookbook/lists/spaced_items/"?>
 
-When working with lists, you might want to show all
-items spaced evently, so that the items take the whole screen.
-In the following screen, the four items are spaced evently,
-being "Item 0" at the top, and "Item 3" at the bottom.
+Perhaps you want to create a list where all list items
+are spaced evenly, so that the items take up the visible space.
+For example, the four items in the following image are spaced evenly,
+with "Item 0" at the top, and "Item 3" at the bottom.
 
 ![Spaced items]({{site.url}}/assets/images/docs/cookbook/spaced-items-1.png){:.site-mobile-screenshot}
 
