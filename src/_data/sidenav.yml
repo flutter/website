@@ -29,7 +29,7 @@
         - title: Introduction to declarative UI
           permalink: /get-started/flutter-for/declarative
         - title: Flutter versus Swift concurrency
-          permalink: /resources/dart-swift-concurrency
+          permalink: /get-started/flutter-for/dart-swift-concurrency
     - title: "Dart language overview"
       permalink: https://dart.dev/overview
 
@@ -319,6 +319,8 @@
       permalink: /platform-integration/desktop
     - title: Write platform-specific code
       permalink: /platform-integration/platform-channels
+    - title: Automatic platform adaptations
+      permalink: /platform-integration/platform-adaptations
     - title: Android
       permalink: /platform-integration/android
       children:
@@ -597,8 +599,6 @@
       permalink: /testing/build-modes
     - title: Hot reload
       permalink: /tools/hot-reload
-    - title: Platform adaptations
-      permalink: /resources/platform-adaptations
 
 - title: Resources
   permalink: /resources
