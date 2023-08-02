@@ -76,10 +76,10 @@ You might also check out [Introducing Dart 3][].
 [Android]: {{site.url}}/platform-integration/android/restore-state-android
 [iOS]: {{site.url}}/platform-integration/ios/restore-state-ios
 [sharing iOS and macOS plugin implementations]: {{site.url}}/packages-and-plugins/developing-packages#shared-ios-and-macos-implementations
-[alert dialog]: {{site.url}}/resources/platform-adaptations#alert-dialog
-[top app bar and navigation bar]: {{site.url}}/resources/platform-adaptations#top-aoo-bar-and-navigation-bar
-[bottom navigation bar]: {{site.url}}/resources/platform-adaptations#bottom-navigation-bars
-[some widgets]: {{site.url}}/resources/platform-adaptations#ui-components
+[alert dialog]: {{site.url}}/platform-integration/platform-adaptations#alert-dialog
+[top app bar and navigation bar]: {{site.url}}/platform-integration/platform-adaptations#top-aoo-bar-and-navigation-bar
+[bottom navigation bar]: {{site.url}}/platform-integration/platform-adaptations#bottom-navigation-bars
+[some widgets]: {{site.url}}/platform-integration/platform-adaptations#ui-components
 [Anatomy of an app]: {{site.url}}/resources/architectural-overview#anatomy-of-an-app
 [SDK archive page]: {{site.url}}/release/archive
 
@@ -207,7 +207,7 @@ and [Introducing Dart 3 alpha][].
 [Adding an iOS clip target]: {{site.url}}/platform-integration/ios/ios-app-clip
 [Creating Flavors for Flutter]: {{site.url}}/deployment/flavors
 [Customizing web app initialization]: {{site.url}}/platform-integration/web/initialization
-[Flutter concurrency for Swift developers]: {{site.url}}/resources/dart-swift-concurrency
+[Flutter concurrency for Swift developers]: {{site.url}}/get-started/flutter-for/dart-swift-concurrency
 [Flutter FAQ]: {{site.url}}/resources/faq
 [Flutter for SwiftUI developers]: {{site.url}}/get-started/flutter-for/swiftui-devs
 [Impeller]: {{site.github}}/flutter/flutter/wiki/Impeller

@@ -163,5 +163,5 @@ in the following resources:
 [Flutter gallery app]: {{site.gallery}}
 [Folio source code]: {{site.github}}/gskinnerTeam/flutter-folio
 [gskinner blog]: https://blog.gskinner.com/
-[Platform-specific behaviors and adaptations]: {{site.url}}/resources/platform-adaptations
+[Platform-specific behaviors and adaptations]: {{site.url}}/platform-integration/platform-adaptations
 [repo]: {{site.repo.gallery}}

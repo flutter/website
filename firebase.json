@@ -26,7 +26,7 @@
       { "source": "/subscribe/**", "destination": "https://flutter.dev#newsletter", "type": 301 },
 
       { "source": "/accessibility", "destination": "/accessibility-and-localization/accessibility", "type": 301 },
-      { "source": "/adaptations", "destination": "/resources/platform-adaptations", "type": 301 },
+      { "source": "/adaptations", "destination": "/platform-integration/platform-adaptations", "type": 301 },
       { "source": "/adaptive*", "destination": "/ui/layout/responsive/adaptive-responsive", "type": 301 },
       { "source": "/android-release", "destination": "/deployment/android", "type": 301 },
       { "source": "/animations", "destination": "/ui/animations", "type": 301 },
@@ -134,6 +134,8 @@
       { "source": "/reference/widgets/widgetindex", "destination": "/reference/widgets", "type": 301 },
       { "source": "/release/breaking-changes/scrollable_alert_dialog", "destination": "/release/breaking-changes/scrollable-alert-dialog", "type": 301 },
       { "source": "/resources/compatibility", "destination": "/release/compatibility-policy", "type": 301 },
+      { "source": "/resources/dart-swift-concurrency", "destination": "/get-started/flutter-for/dart-swift-concurrency", "type": 301 },
+      { "source": "/resources/platform-adaptations", "destination": "/platform-integration/platform-adaptations", "type": 301 },
       { "source": "/resources/rendering", "destination": "/resources/architectural-overview#rendering-and-layout", "type": 301 },
       { "source": "/resources/security-false-positives", "destination": "/reference/security-false-positives", "type": 301 },
       { "source": "/resources/technical-overview", "destination": "/resources/architectural-overview", "type": 301 },

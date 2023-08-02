@@ -29,7 +29,7 @@
         - title: Introduction to declarative UI
           permalink: /get-started/flutter-for/declarative
         - title: Flutter versus Swift concurrency
-          permalink: /resources/dart-swift-concurrency
+          permalink: /get-started/flutter-for/dart-swift-concurrency
     - title: "Dart language overview"
       permalink: https://dart.dev/overview
 
@@ -85,6 +85,8 @@
           permalink: /cookbook/lists/grid-lists
         - title: Create lists with different types of items
           permalink: /cookbook/lists/mixed-list
+        - title: Create lists with spaced items
+          permalink: /cookbook/lists/spaced-items
         - title: Work with long lists
           permalink: /cookbook/lists/long-lists
     - title: Scrolling
@@ -319,6 +321,8 @@
       permalink: /platform-integration/desktop
     - title: Write platform-specific code
       permalink: /platform-integration/platform-channels
+    - title: Automatic platform adaptations
+      permalink: /platform-integration/platform-adaptations
     - title: Android
       permalink: /platform-integration/android
       children:
@@ -597,8 +601,6 @@
       permalink: /testing/build-modes
     - title: Hot reload
       permalink: /tools/hot-reload
-    - title: Platform adaptations
-      permalink: /resources/platform-adaptations
 
 - title: Resources
   permalink: /resources
@@ -608,8 +610,10 @@
       permalink: /resources/faq
     - title: Books
       permalink: /resources/books
-    - title: Videos and online courses
+    - title: Videos
       permalink: /resources/videos
+    - title: Courses
+      permalink: /resources/courses
     - title: Learn Dart
       permalink: /resources/bootstrap-into-dart
     - header: Contributing
