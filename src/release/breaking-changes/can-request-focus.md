@@ -1,13 +1,13 @@
 ---
 title: TextField.canRequestFocus Deprecated
 description: >
-  `TextField`'s `canRequestFocus` parameter has been deprecated and replaced by
-  the `canRequestFocus` parameter of its `FocusNode`.
+  `TextField`'s `canRequestFocus` parameter is deprecated and replaced by the
+  `canRequestFocus` parameter of its `FocusNode`.
 ---
 
 ## Summary
 
-`TextField.canRequestFocus` has been deprecated. The same functionality can be
+`TextField.canRequestFocus` is deprecated. The same functionality can be
 achieved by setting the `canRequestFocus` parameter of the `TextField`'s
 `FocusNode`.
 
@@ -60,21 +60,7 @@ class _MyWidgetState extends State<MyWidget> {
 
 ## Timeline
 
-{% comment %}
-  The version # of the SDK where this change was
-  introduced.  If there is a deprecation window,
-  the version # to which we guarantee to maintain
-  the old API. Use the following template:
-
-  If a breaking change has been reverted in a
-  subsequent release, move that item to the
-  "Reverted" section of the index.md file.
-  Also add the "Reverted in version" line,
-  shown as optional below. Otherwise, delete
-  that line.
-{% endcomment %}
-
-Landed in version: xxx<br>
+Landed in version: 3.13.0-15.0.pre<br>
 In stable release: not yet
 
 ## References
