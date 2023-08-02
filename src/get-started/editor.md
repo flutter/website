@@ -24,7 +24,7 @@ and Ultimate editions.
 The [Flutter plugin][] _only_ works with
 Android Studio and the listed editions of IntelliJ IDEA.
 
-(The [Dart plugin][] supports eight additional IDEs.)
+(The [Dart plugin][] supports eight additional JetBrains IDEs.)
 
 [Flutter plugin]: https://plugins.jetbrains.com/plugin/9212-flutter
 [Dart plugin]: https://plugins.jetbrains.com/plugin/6351-dart
@@ -109,7 +109,7 @@ IDE experience once you install the Flutter plugin.
 
 To install one of the following IDEs, follow their instructions:
 
-- [Android Studio][], version 2022.2 or later
+- [Android Studio][], version 2022.2 (Flamingo) or later
 - [IntelliJ IDEA Community][], version 2022.2 or later
 - [IntelliJ IDEA Ultimate][], version 2022.2 or later
 
