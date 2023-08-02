@@ -85,6 +85,8 @@
           permalink: /cookbook/lists/grid-lists
         - title: Create lists with different types of items
           permalink: /cookbook/lists/mixed-list
+        - title: Create lists with spaced items
+          permalink: /cookbook/lists/spaced-items
         - title: Work with long lists
           permalink: /cookbook/lists/long-lists
     - title: Scrolling
