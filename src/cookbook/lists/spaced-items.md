@@ -70,11 +70,10 @@ The [`ConstrainedBox`][] widget imposes aditional constraints to its child.
 Configure the constraint by setting the `minHeight` parameter to be
 the `maxHeight` of the [`LayoutBuilder`][] constraints.
 
-This ensures, that the child widget 
-will be constrained to have a minimum height equal to the available
+This ensures that the child widget 
+is constrained to have a minimum height equal to the available
 space provided by the [`LayoutBuilder`][] constraints,
 namely the maximum height of the [`BoxConstraints`][].
-Making sure that the items can be spaced equally within this constraint.
 
 <?code-excerpt "lib/spaced_list.dart (constrainedBox)"?>
 ```dart
