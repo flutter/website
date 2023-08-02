@@ -66,7 +66,7 @@ If you’re interested in setting up your own mirror in China,
 contact [flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com)
 for assistance.
 
-If you are running into issues that only occur when using the `flutter-io.cn` server,
+If you're running into issues that only occur when using the `flutter-io.cn` server,
 consider reporting the issue to
 [the issue tracker (镜像问题)](https://github.com/cfug/flutter.cn/issues/new/choose).
 
@@ -76,4 +76,4 @@ consider reporting the issue to
   * `FLUTTER_STORAGE_BASE_URL`: [https://mirror.sjtu.edu.cn/](https://mirror.sjtu.edu.cn)
   * `PUB_HOSTED_URL`: [https://mirror.sjtu.edu.cn/dart-pub/](https://mirror.sjtu.edu.cn/dart-pub)
 
-[The China Flutter User Group (CFUG)]: https://flutter.cn/about
+[The China Flutter User Group (CFUG)]: https://github.com/cfug
