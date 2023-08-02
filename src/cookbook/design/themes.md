@@ -174,7 +174,10 @@ Container(
   color: Theme.of(context).colorScheme.primary,
   child: Text(
     'Text with a background color',
-    style: Theme.of(context).textTheme.bodyMedium,
+    style: theme.textTheme.bodyMedium,
+    // TRY THIS: Change the Text value
+    //           or change the theme.textTheme
+    //           to "displayLarge" or "displaySmall"
   ),
 ),
 ```

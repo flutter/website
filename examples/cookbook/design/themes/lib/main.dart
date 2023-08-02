@@ -63,6 +63,7 @@ class MyHomePage extends StatelessWidget {
         title: Text(title),
       ),
       body: Center(
+        // #docregion Container
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
           color: theme.colorScheme.primary,
@@ -74,6 +75,7 @@ class MyHomePage extends StatelessWidget {
             //           to "displayLarge" or "displaySmall"
           ),
         ),
+        // #enddocregion Container
       ),
       floatingActionButton: Theme(
         data: theme.copyWith(
