@@ -49,7 +49,7 @@ release, and listed in alphabetical order:
 [Customize tabs alignment using the new `TabBar.tabAlignment` property]: {{site.url}}/release/breaking-changes/tab-alignment
 [Updated EditableText scroll into view behavior]: {{site.url}}/release/breaking-changes/editable-text-scroll-into-view
 [Deprecate `textScaleFactor` in favor of `TextScaler`]: {{site.url}}/release/breaking-changes/deprecate-textscalefactor
-[Deprecate TextField.canRequestFocus]: {{site.url}}/release/breaking-changes/can-request-focus.md
+[Deprecate TextField.canRequestFocus]: {{site.url}}/release/breaking-changes/can-request-focus
 
 ### Released in Flutter 3.10
 
