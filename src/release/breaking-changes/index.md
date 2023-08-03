@@ -40,6 +40,7 @@ release, and listed in alphabetical order:
 * [Updated EditableText scroll into view behavior][]
 * [Deprecate `textScaleFactor` in favor of `TextScaler`][]
 * [Deprecate TextField.canRequestFocus][]
+* [Deprecate describeEnum and update EnumProperty to be type strict][]
 
 [Added AppLifecycleState.hidden]: {{site.url}}/release/breaking-changes/add-applifecyclestate-hidden
 [Deprecated API removed after v3.10]: {{site.url}}/release/breaking-changes/3-10-deprecations
@@ -50,6 +51,7 @@ release, and listed in alphabetical order:
 [Updated EditableText scroll into view behavior]: {{site.url}}/release/breaking-changes/editable-text-scroll-into-view
 [Deprecate `textScaleFactor` in favor of `TextScaler`]: {{site.url}}/release/breaking-changes/deprecate-textscalefactor
 [Deprecate TextField.canRequestFocus]: {{site.url}}/release/breaking-changes/can-request-focus
+[Deprecate describeEnum and update EnumProperty to be type strict]: {{site.url}}/release/breaking-changes/describe-enum
 
 ### Released in Flutter 3.10
 

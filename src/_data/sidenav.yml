@@ -138,6 +138,8 @@
           permalink: /cookbook/design/fonts
         - title: Export fonts from a package
           permalink: /cookbook/design/package-fonts
+        - title: Google Fonts package
+          permalink: https://pub.dev/packages/google_fonts
       # Consider renaming this 'Custom drawing & graphics'
       # once more docs are added
     - title: Custom graphics
@@ -604,6 +606,8 @@
   permalink: /resources
   children:
     - header: Learning
+    - title: FAQ
+      permalink: /resources/faq
     - title: Books
       permalink: /resources/books
     - title: Videos
@@ -624,13 +628,6 @@
       permalink: /resources/games-toolkit
     - title: Flutter News Toolkit
       permalink: /resources/news-toolkit
-    - header: General
-    - title: FAQ
-      permalink: /resources/faq
-    - title: Google Fonts package
-      permalink: https://pub.dev/packages/google_fonts
-    - title: Official brand assets
-      permalink: https://flutter.dev/brand
 
 - title: Reference
   permalink: /reference
@@ -646,5 +643,3 @@
       permalink: https://api.flutter.dev
     - title: flutter CLI reference
       permalink: /reference/flutter-cli
-    - title: Security false positives
-      permalink: /reference/security-false-positives
