@@ -167,9 +167,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  SemanticsBinding.instance.ensureSemantics();
   runApp(const MyApp());
+  SemanticsBinding.instance.ensureSemantics();
 }
 ```
 
