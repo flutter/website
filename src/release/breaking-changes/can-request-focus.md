@@ -13,8 +13,8 @@ achieved by setting the `canRequestFocus` parameter of the `TextField`'s
 
 ## Background
 
-`TextField.canRequestFocus` was added in order to support `DropdownMenu`, which
-has a TextField that sometimes is not interactive. However, the same
+`TextField.canRequestFocus` was added to support `DropdownMenu`, which
+has a `TextField` that sometimes isn't interactive. However, the same
 functionality can be achieved by setting the `canRequestFocus` parameter of a
 `TextField`'s `FocusNode`. `DropdownMenu` has been migrated to this approach,
 and other use cases should follow the same pattern.
