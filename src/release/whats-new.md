@@ -21,6 +21,11 @@ and review the [Dart changelog][].
 
 ## 16 August 2023: 3.13 release
 
+Flutter 3.13 is live!
+
+In addition to the release, we have recently released a revamped
+version of the docs.flutter.dev website.
+
 ## 10 May 2023: Google I/O 2023: 3.10 release
 
 Flutter 3.10 is live! This release contains many updates
