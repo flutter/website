@@ -5,10 +5,9 @@ void main() {
   final firebaseFile = File('firebase.json');
 
   if (!(firebaseFile.existsSync())) {
-    stderr.writeln(
+    _errorAndExit(
       'Error: Cannot find the firebase.json file in the current directory.',
     );
-    exit(1);
   }
 
   try {
@@ -18,10 +17,9 @@ void main() {
     final hostingConfig = firebaseConfig['hosting'];
 
     if (hostingConfig == null) {
-      stderr.writeln(
-        "Error: The firebase.json file is missing a top-level 'hosting' entry.",
+      _errorAndExit(
+        "The firebase.json file is missing a top-level 'hosting' entry.",
       );
-      exit(1);
     }
 
     final redirects = hostingConfig['redirects'];
@@ -34,10 +32,9 @@ void main() {
     }
 
     if (redirects is! List<dynamic>) {
-      stderr.writeln(
-        "Error: The firebase.json file's 'redirect' entry is not a list.",
+      _errorAndExit(
+        "The firebase.json file's 'redirect' entry is not a list.",
       );
-      exit(1);
     }
 
     if (redirects.isEmpty) {
@@ -51,29 +48,29 @@ void main() {
     for (final redirect in redirects) {
       final source = redirect['source'] ?? redirect['regex'];
       if (source == null) {
-        stderr.writeln(
-          "Error: The firebase.json file has a redirect missing a 'source' or 'regex'.",
+        _errorAndExit(
+          "The firebase.json file has a "
+          "redirect missing a 'source' or 'regex'.",
         );
-        exit(1);
       }
 
       if (source is! String) {
-        stderr.writeln(
-          "Error: The firebase.json redirect $redirect has a 'source' or 'regex' specified which is not a string.",
+        _errorAndExit(
+          "The firebase.json redirect $redirect has a "
+          "'source' or 'regex' specified which is not a string.",
         );
-        exit(1);
       }
 
       if (source.isEmpty) {
-        stderr.writeln(
-          "Error: The firebase.json redirect $redirect has an empty 'source' or 'regex'.",
+        _errorAndExit(
+          "The firebase.json redirect $redirect has an "
+          "empty 'source' or 'regex'.",
         );
-        exit(1);
       }
 
       if (sources.contains(source)) {
         stderr.writeln(
-          "Error: Multiple redirects share the '$source' source.",
+          "Multiple redirects share the '$source' source.",
         );
         duplicatesFound += 1;
       }
@@ -83,38 +80,46 @@ void main() {
       final destination = redirect['destination'];
 
       if (destination == null) {
-        stderr.writeln(
-          "Error: The firebase.json file has a redirect missing a 'destination'.",
+        _errorAndExit(
+          "The firebase.json file has a "
+          "redirect missing a 'destination'.",
         );
-        exit(1);
       }
 
       if (destination is! String) {
-        stderr.writeln(
-          "Error: The firebase.json redirect $redirect has a 'destination' specified which is not a string.",
+        _errorAndExit(
+          "The firebase.json redirect $redirect has a "
+          "'destination' specified which is not a string.",
         );
-        exit(1);
       }
 
       if (destination.isEmpty) {
-        stderr.writeln(
-          "Error: The firebase.json redirect $redirect has an empty 'destination'.",
+        _errorAndExit(
+          "The firebase.json redirect $redirect has "
+          "an empty 'destination'.",
         );
-        exit(1);
       }
     }
 
     if (duplicatesFound > 0) {
-      stderr.writeln(
-        'Error: $duplicatesFound duplicate sources found in the firebase.json redirects.',
+      _errorAndExit(
+        '$duplicatesFound duplicate sources found'
+        'in the firebase.json redirects.',
       );
-      exit(1);
     }
   } catch (e) {
-    stderr.writeln(
-      'Error: Encountered an error when loading the firebase.json file:',
+    _errorAndExit(
+      'Encountered an error when loading the firebase.json file:',
+      e,
     );
-    print(e.toString());
-    exit(1);
   }
+}
+
+void _errorAndExit(String error, [Object? exception]) {
+  stderr.write('Error: ');
+  stderr.writeln(error);
+  if (exception != null) {
+    stderr.writeln(exception.toString());
+  }
+  exit(1);
 }
