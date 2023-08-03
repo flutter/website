@@ -39,7 +39,7 @@
   .container {
     max-width: $site-content-max-width;
 
-    img {
+    img, iframe {
       max-width: 100%;
     }
   }

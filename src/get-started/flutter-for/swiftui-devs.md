@@ -1350,10 +1350,10 @@ To review a complete walkthrough, check out the [video_player example][].
 [Add Flutter to existing app]: {{site.url}}/add-to-app
 [Animations overview]: {{site.url}}/ui/animations
 [Cupertino widgets]: {{site.url}}/ui/widgets/cupertino
-[Flutter concurrency for Swift developers]: {{site.url}}/resources/dart-swift-concurrency
+[Flutter concurrency for Swift developers]: {{site.url}}/get-started/flutter-for/dart-swift-concurrency
 [Navigation and routing]: {{site.url}}/ui/navigation
 [Material]: {{site.material}}/develop/flutter/
-[Platform adaptations]: {{site.url}}/resources/platform-adaptations
+[Platform adaptations]: {{site.url}}/platform-integration/platform-adaptations
 [`url_launcher`]: {{site.pub-pkg}}/url_launcher
 [widget catalog]: {{site.url}}/ui/widgets/layout
 [Understanding constraints]: {{site.url}}/ui/layout/constraints

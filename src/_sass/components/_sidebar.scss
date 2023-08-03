@@ -16,10 +16,11 @@
     > .nav > .nav-item,
     > .nav > .nav-item .nav .nav-item {
       .nav-link {
-        padding-bottom: bootstrap.bs-spacer(2);
         padding-top: bootstrap.bs-spacer(2);
+        padding-bottom: bootstrap.bs-spacer(1);
 
         &.collapsable {
+          padding-bottom: bootstrap.bs-spacer(2);
           &::before {
             top: 6px;
           }
@@ -34,6 +35,20 @@
     margin-bottom: bootstrap.bs-spacer(1);
     overflow: hidden;
     border-top: 1px solid $site-color-light-grey;
+  }
+  
+  @mixin nav-link-active-style {
+    &.active {
+      font-weight: bootstrap.$font-weight-bold;
+
+      &:not(.collapsable) {
+        color: $site-color-primary;
+
+        &:hover {
+          color: $flutter-color-dark-blue;
+        }
+      }
+    }
   }
 
   @mixin nav-link-not-active-hover {
@@ -57,9 +72,7 @@
     color: inherit;
     &.disabled { opacity: 0.5; }
 
-    &.active {
-      font-weight: bootstrap.$font-weight-bold;
-    }
+    @include nav-link-active-style;
 
     @include nav-link-not-active-hover;
 
@@ -103,19 +116,26 @@
     }
 
     > .nav-item {
+      > .nav-link {
+        @include nav-link-active-style;
+        
+        &.collapsable {
+          padding: bootstrap.bs-spacer(2) 0;
+
+          @include collapsable();
+
+          @include nav-link-not-active-hover;
+        }
+        
+        &:not(.collapsable) {
+          padding-top: bootstrap.bs-spacer(2);
+        }
+      }
+
       &:first-child {
         > .nav-link {
           padding-top: 0;
         }
-      }
-
-      > .nav-link {
-        padding: bootstrap.bs-spacer(2) 0;
-        color: $site-color-body;
-
-        @include collapsable();
-
-        @include nav-link-not-active-hover;
       }
     }
   }
@@ -139,17 +159,8 @@
       > .nav-link {
         color: $site-color-body-light;
 
-        &.active {
-          &:not(.collapsable) {
-            color: $site-color-primary;
-
-            &:hover {
-              color: $flutter-color-dark-blue;
-            }
-          }
-        }
-
         @include nav-link-not-active-hover;
+        @include nav-link-active-style;
 
         &.collapsable {
           &::before{
