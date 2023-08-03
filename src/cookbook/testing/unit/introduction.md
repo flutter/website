@@ -2,12 +2,6 @@
 title: An introduction to unit testing
 description: How to write unit tests.
 short-title: Introduction
-prev:
-  title: Performance profiling
-  path: /cookbook/testing/integration/profiling
-next:
-  title: Mock dependencies using Mockito
-  path: /cookbook/testing/unit/mocking
 ---
 
 <?code-excerpt path-base="cookbook/testing/unit/counter_app"?>
@@ -40,9 +34,11 @@ The `test` package provides the core functionality for
 writing tests in Dart. This is the best approach when
 writing packages consumed by web, server, and Flutter apps.
 
-```yaml
-dev_dependencies:
-  test: <latest_version>
+To add the `test` package as a dev dependency,
+run `flutter pub add`:
+
+```terminal
+$ flutter pub add dev:test
 ```
 
 ## 2. Create a test file

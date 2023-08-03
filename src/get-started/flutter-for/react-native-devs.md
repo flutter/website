@@ -750,16 +750,10 @@ from the command line.
 
 In Flutter, install a package using the following instructions:
 
-1. Add the package name and version to the `pubspec.yaml` dependencies section.
-   The example below shows how to add the `google_sign_in` Dart package to the
-   `pubspec.yaml` file. Check your spaces when working in the YAML file because
-   **white space matters**!
+1. To add the `google_sign_in` package as a dependency, run `flutter pub add`:
 
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  google_sign_in: ^3.0.3
+```terminal
+$ flutter pub add google_sign_in
 ```
 
 2. Install the package from the command line by using `flutter pub get`.
@@ -1582,15 +1576,11 @@ store and retrieve key-value data that is persistent and global
 to the app. The `shared_preferences` plugin wraps
 `NSUserDefaults` on iOS and `SharedPreferences` on Android,
 providing a persistent store for simple data.
-To use the plugin,
-add `shared_preferences` as a dependency in the `pubspec.yaml`
-file then import the package in your Dart file.
 
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  shared_preferences: ^2.0.13
+To add the `shared_preferences` package as a dependency, run `flutter pub add`:
+
+```terminal
+$ flutter pub add shared_preferences
 ```
 
 <?code-excerpt "lib/examples.dart (SharedPrefs)"?>
@@ -2056,14 +2046,12 @@ const _getIPAddress = () => {
 };
 ```
 
-Flutter uses the `http` package. To install the `http` package,
-add it to the dependencies' section of our pubspec.yaml.
+Flutter uses the `http` package. 
 
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  http: <latest_version>
+To add the `http` package as a dependency, run `flutter pub add`:
+
+```terminal
+$ flutter pub add http
 ```
 
 Flutter uses the [`dart:io`][] core HTTP support client.
@@ -2587,7 +2575,7 @@ and common widget properties.
 
 
 [`AboutDialog`]: {{site.api}}/flutter/material/AboutDialog-class.html
-[Adding Assets and Images in Flutter]: {{site.url}}/ui/assets-and-images
+[Adding Assets and Images in Flutter]: {{site.url}}/ui/assets/assets-and-images
 [`AlertDialog`]: {{site.api}}/flutter/material/AlertDialog-class.html
 [`Align`]: {{site.api}}/flutter/widgets/Align-class.html
 [`Animation`]: {{site.api}}/flutter/animation/Animation-class.html

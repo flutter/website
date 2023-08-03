@@ -310,7 +310,7 @@ can position their children in that extra space.
 
 `MainAxisAlignment.spaceAround`
 : Similar to `MainAxisAlignment.spaceEvenly`,
-  but reduces half of the space before the first
+  but reduces the space before the first
   child and after the last child
   to half of the width between the children.
 

@@ -8,9 +8,11 @@ description: >
 
 ## Scenarios
 
-If you're integrating Flutter into an existing app, or gradually migrating an
-existing app to use Flutter, you may find yourself wanting to add multiple
-Flutter instances to the same project. In particular, this can be useful in the
+If you're integrating Flutter into an existing app,
+or gradually migrating an existing app to use Flutter,
+you might find yourself wanting to add multiple
+Flutter instances to the same project.
+In particular, this can be useful in the
 following scenarios:
 
 * An application where the integrated Flutter screen is not a leaf node of

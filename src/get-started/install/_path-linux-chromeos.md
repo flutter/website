@@ -1,14 +1,15 @@
 ### Update your path
 
 You can update your PATH variable for the current session at
-the command line, as shown in [Get the Flutter SDK][].
-You'll probably want to update this variable permanently,
-so you can run `flutter` commands in any terminal session.
+the command line, as shown in step 3 of [Get the Flutter SDK][].
+To update this variable permanently so you can run
+`flutter` commands in _any_ terminal session,
+use the following instructions.
 
-The steps for modifying this variable permanently for
-all terminal sessions are machine-specific.
-Typically you add a line to a file that is executed
-whenever you open a new window. For example:
+The steps for modifying the `PATH` variable
+_all_ subsequent terminal sessions are machine-specific.
+Typically, you add a line to a shell script file that
+executes whenever you open a new window. For example:
 
  1. Determine the path of your clone of the Flutter SDK.
     You need this in Step 3.
@@ -17,9 +18,9 @@ whenever you open a new window. For example:
     so edit `$HOME/.bashrc`.
     If you are using a different shell, the file path
     and filename will be different on your machine.
- 3. Add the following line and change
-    `[PATH_OF_FLUTTER_GIT_DIRECTORY]` to be
-    the path of your clone of the Flutter git repo:
+ 3. Add the following line, changing the
+    `[PATH_OF_FLUTTER_GIT_DIRECTORY]` to
+    the path of your copy of the Flutter SDK:
 
     ```terminal
     $ export PATH="$PATH:[PATH_OF_FLUTTER_GIT_DIRECTORY]/bin"
@@ -35,6 +36,7 @@ whenever you open a new window. For example:
     ```terminal
     $ echo $PATH
     ```
+
     Verify that the `flutter` command is available by running:
 
     ```terminal
@@ -43,10 +45,10 @@ whenever you open a new window. For example:
 
 {% include docs/dart-tool.md %}
 
-### Update path directly
+### Update the path directly
 
-In some cases, your distribution may not permanently acquire
-the path when using the above directions. When this occurs,
+In some cases, your distribution might not permanently acquire
+the path when using the previous directions. When this occurs,
 you can change the environment variables file directly.
 These instructions require administrator privileges:
 

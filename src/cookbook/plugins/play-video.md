@@ -1,12 +1,6 @@
 ---
 title: Play and pause a video
 description: How to use the video_player plugin.
-prev:
-  title: Store key-value data on disk
-  path: /cookbook/persistence/key-value
-next:
-  title: Take a picture using the camera
-  path: /cookbook/plugins/picture-using-camera
 ---
 
 <?code-excerpt path-base="cookbook/plugins/play_video/"?>
@@ -16,6 +10,12 @@ and Flutter apps are no exception. To play videos,
 the Flutter team provides the [`video_player`][] plugin.
 You can use the `video_player` plugin to play videos
 stored on the file system, as an asset, or from the internet.
+
+{{site.alert.warning}}
+  At this time,
+  the `video_player` plugin doesn't work with any desktop platform.
+  To learn more, check out the [`video_player`][] package.
+{{site.alert.end}}
 
 On iOS, the `video_player` plugin makes use of
 [`AVPlayer`][] to handle playback. On Android,
@@ -34,13 +34,12 @@ the following steps:
 ## 1. Add the `video_player` dependency
 
 This recipe depends on one Flutter plugin: `video_player`. First, add this
-dependency to your `pubspec.yaml`.
+dependency to your project.
 
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  video_player:
+To add the `video_player` package as a dev dependency, run `flutter pub add`:
+
+```terminal
+$ flutter pub add video_player
 ```
 
 ## 2. Add permissions to your app
@@ -79,8 +78,8 @@ For iOS, add the following to the `Info.plist` file found at
 ```
 
 {{site.alert.warning}}
-  The `video_player` plugin doesn't work on iOS simulators.
-  You must test videos on real iOS devices.
+  The `video_player` plugin can only play asset videos in iOS simulators.
+  You must test network-hosted videos on physical iOS devices.
 {{site.alert.end}}
 
 ## 3. Create and initialize a `VideoPlayerController`
@@ -123,8 +122,10 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     // Create and store the VideoPlayerController. The VideoPlayerController
     // offers several different constructors to play videos from assets, files,
     // or the internet.
-    _controller = VideoPlayerController.network(
-      'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
+    _controller = VideoPlayerController.networkUrl(
+      Uri.parse(
+        'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
+      ),
     );
 
     _initializeVideoPlayerFuture = _controller.initialize();
@@ -266,8 +267,10 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     // Create and store the VideoPlayerController. The VideoPlayerController
     // offers several different constructors to play videos from assets, files,
     // or the internet.
-    _controller = VideoPlayerController.network(
-      'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
+    _controller = VideoPlayerController.networkUrl(
+      Uri.parse(
+        'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
+      ),
     );
 
     // Initialize the controller and store the Future for later use.

@@ -1,13 +1,8 @@
 ---
 title: Mock dependencies using Mockito
-description: Use the Mockito package to mimic the behavior of services for testing.
+description: >
+  Use the Mockito package to mimic the behavior of services for testing.
 short-title: Mocking
-prev:
-  title: An introduction to unit testing
-  path: /cookbook/testing/unit/introduction
-next:
-  title: An introduction to widget testing
-  path: /cookbook/testing/widget/introduction
 ---
 
 <?code-excerpt path-base="cookbook/testing/unit/mocking"?>
@@ -54,14 +49,10 @@ so define that dependency in the `dependencies` section.
 To run the required code generation, add the `build_runner` dependency
 in the `dev_dependencies` section.
 
-```yaml
-dependencies:
-  http: <newest_version>
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  mockito: <newest_version>
-  build_runner: <newest_version>
+To add the dependencies, run `flutter pub add`:
+
+```terminal
+$ flutter pub add http dev:mockito dev:build_runner
 ```
 
 ## 2. Create a function to test

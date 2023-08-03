@@ -1,12 +1,6 @@
 ---
 title: Build a form with validation
 description: How to build a form that validates input.
-prev:
-  title: Drag a UI element
-  path: /cookbook/effects/drag-a-widget
-next:
-  title: Create and style a text field
-  path: /cookbook/forms/text-input
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
@@ -249,7 +243,11 @@ class MyCustomFormState extends State<MyCustomForm> {
   <img src="/assets/images/docs/cookbook/form-validation.gif" alt="Form Validation Demo" class="site-mobile-screenshot" />
 </noscript>
 
+To learn how to retrieve these values, check out the
+[Retrieve the value of a text field][] recipe.
 
+
+[Retrieve the value of a text field]: {{site.url}}/cookbook/forms/retrieve-input
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [`Form.of()`]: {{site.api}}/flutter/widgets/Form/of.html
 [`FormState`]: {{site.api}}/flutter/widgets/FormState-class.html

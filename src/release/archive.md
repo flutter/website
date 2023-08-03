@@ -13,10 +13,12 @@ toc: false
 </style>
 
 The {{site.sdk.channel | capitalize }} channel contains the
-most stable Flutter builds. 
-Check out [Flutter’s channels][] for details.
+most stable Flutter builds.
+To learn more, check out [Flutter’s channels][].
 
-For details about what's new in the major Flutter releases,
+{% include docs/china-notice.md %}
+
+To learn what's new in the major Flutter releases,
 check out the [release notes][] page.
 
 
@@ -35,7 +37,7 @@ check out the [release notes][] page.
 {{site.alert.end}}
 
 {% comment %} Nav tabs {% endcomment -%}
-<ul class="nav nav-tabs" id="editor-setup" role="tablist">
+<ul class="nav nav-tabs" id="os-archive-tabs" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="windows-tab" href="#windows" role="tab" aria-controls="windows" aria-selected="true">Windows</a>
   </li>

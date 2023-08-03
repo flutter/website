@@ -30,6 +30,6 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 
 ![frame_analysis]({{site.url}}/tools/devtools/release-notes/images-2.17.0/frame_analysis.png "frame analysis")
 
-## Changelog
-More details about changes and fixes are available in the DevTools
-[changelog](https://github.com/flutter/devtools/blob/master/CHANGELOG.md).
+## Full commit history
+More details about changes and fixes are available from the
+[DevTools git log.](https://github.com/flutter/devtools/commits/master).

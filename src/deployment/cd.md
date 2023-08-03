@@ -185,8 +185,8 @@ secrets in pull requests that you accept and merge.
          * Make sure the Flutter SDK is available and set in `PATH`.
          * For Android, ensure the Android SDK is available and the `ANDROID_SDK_ROOT`
            path is set.
-         * For iOS, you may have to specify a dependency on Xcode (for example
-           `osx_image: xcode9.2`).
+         * For iOS, you might have to specify a dependency on Xcode
+           (for example, `osx_image: xcode9.2`).
     * In the script phase of the CI task:
          * Run `flutter build appbundle` or
            `flutter build ios --release --no-codesign`,

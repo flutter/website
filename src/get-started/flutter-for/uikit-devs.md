@@ -2021,11 +2021,10 @@ use the popular [`http` package][]. This abstracts
 away a lot of the networking that you might normally
 implement yourself, making it simple to make network calls.
 
-To use the `http` package, add it to your dependencies in `pubspec.yaml`:
+To add the `http` package as a dependency, run `flutter pub add`:
 
-```yaml
-dependencies:
-  http: ^1.0.0
+```terminal
+$ flutter pub add http
 ```
 
 To make a network call,
@@ -2149,7 +2148,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
 [Flutter for SwiftUI developers]: {{site.url}}/get-started/flutter-for/swiftui-devs
 [Add Flutter to existing app]: {{site.url}}/add-to-app
-[Adding Assets and Images in Flutter]: {{site.url}}/ui/assets-and-images
+[Adding Assets and Images in Flutter]: {{site.url}}/ui/assets/assets-and-images
 [Animation & Motion widgets]: {{site.url}}/ui/widgets/animation
 [Animations overview]: {{site.url}}/ui/animations
 [Animations tutorial]: {{site.url}}/ui/animations/tutorial
@@ -2162,7 +2161,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 [Cupertino widgets]: {{site.url}}/ui/widgets/cupertino
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
 [existing plugin]: {{site.pub}}/flutter
-[Flutter concurrency for Swift developers]: {{site.url}}/resources/dart-swift-concurrency
+[Flutter concurrency for Swift developers]: {{site.url}}/get-started/flutter-for/dart-swift-concurrency
 [Flutter cookbook]: {{site.url}}/cookbook
 [`http` package]: {{site.pub-pkg}}/http
 [Human Interface Guidelines]: {{site.apple-dev}}/ios/human-interface-guidelines/overview/themes/
@@ -2175,7 +2174,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 [Material Components]: {{site.material}}/develop/flutter/
 [Material Design guidelines]: {{site.material}}/styles/
 [optimized for all platforms]: {{site.material2}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
-[Platform adaptations]: {{site.url}}/resources/platform-adaptations
+[Platform adaptations]: {{site.url}}/platform-integration/platform-adaptations
 [platform channel]: {{site.url}}/platform-integration/platform-channels
 [pub.dev]: {{site.pub}}/flutter/packages
 [Retrieve the value of a text field]: {{site.url}}/cookbook/forms/retrieve-input

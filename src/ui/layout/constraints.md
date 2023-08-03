@@ -9,17 +9,18 @@ js:
 
 <?code-excerpt path-base="layout/constraints/"?>
 
+<img src='/assets/images/docs/ui/layout/article-hero-image.png'
+     class="mw-100" alt="Hero image from the article">
+
 {{site.alert.note}}
-  To better understand how Flutter implements layout
-  constraints, check out the following 5-minute video:
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/jckqXR5CrPI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  <p>Decoding Flutter: Unbounded height and width</p>
+  If you are experiencing specific layout errors,
+  you might check out [Common Flutter errors][].
 {{site.alert.end}}
 
-<img src='/assets/images/docs/ui/layout/article-hero-image.png' class="mw-100" alt="Hero image from the article">
+[Common Flutter errors]: {{site.url}}/testing/common-errors
 
 When someone learning Flutter asks you why some widget
-with `width:100` isn't 100 pixels wide,
+with `width: 100` isn't 100 pixels wide,
 the default answer is to tell them to put that widget
 inside of a `Center`, right?
 
@@ -97,13 +98,14 @@ The negotiation goes something like this:
 
 ## Limitations
 
-As a result of the layout rule mentioned above,
-Flutter’s layout engine has a few important limitations:
+Flutter's layout engine is designed to be a one-pass process.
+This means that Flutter lays out its widgets very efficiently,
+but does result in a few limitations:
 
 * A widget can decide its own size only within the
   constraints given to it by its parent.
-  This means a widget usually **can't have any
-  size it wants**.
+  This means a widget usually
+  **can't have any size it wants**.
 
 * A widget **can’t know and doesn’t decide its own position
   in the screen**, since it’s the widget’s parent who decides
@@ -118,7 +120,45 @@ Flutter’s layout engine has a few important limitations:
   the parent doesn't have enough information to align it,
   then the child's size might be ignored.
   **Be specific when defining alignment.**
+
+In Flutter, widgets are rendered by their underlying
+[`RenderBox`][] objects. Many boxes in Flutter,
+especially those that just take a single child,
+pass their constraint on to their children.
+
+Generally, there are three kinds of boxes,
+in terms of how they handle their constraints:
   
+* Those that try to be as big as possible.
+  For example, the boxes used by [`Center`][] and
+  [`ListView`][].
+* Those that try to be the same size as their children.
+  For example, the boxes used by [`Transform`][] and
+  [`Opacity`][].
+* Those that try to be a particular size.
+  For example, the boxes used by [`Image`][] and
+  [`Text`][].
+
+Some widgets, for example [`Container`][],
+vary from type to type based on their constructor arguments.
+The [`Container`][] constructor defaults
+to trying to be as big as possible, but if you give it a `width`,
+for instance, it tries to honor that and be that particular size.
+
+Others, for example [`Row`][] and [`Column`][] (flex boxes)
+vary based on the constraints they are given,
+as described in the [Flex](#flex) section.
+  
+[`Center`]: {{site.api}}/flutter/widgets/Center-class.html
+[`Column`]: {{site.api}}/flutter/widgets/Column-class.html
+[`Container`]: {{site.api}}/flutter/widgets/Container-class.html
+[`Image`]: {{site.api}}/flutter/dart-ui/Image-class.html
+[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
+[`Opacity`]: {{site.api}}/flutter/widgets/Opacity-class.html
+[`Row`]: {{site.api}}/flutter/widgets/Row-class.html
+[`Text`]: {{site.api}}/flutter/widgets/Text-class.html
+[`Transform`]: {{site.api}}/flutter/widgets/Transform-class.html
+
 ## Examples
 
 For an interactive experience, use the following DartPad.
@@ -1257,6 +1297,8 @@ If you prefer, you can grab the code from
 
 The examples are explained in the following sections.
 
+[this GitHub repo]: {{site.github}}/marcglasberg/flutter_layout_article
+
 ### Example 1
 
 <img src='/assets/images/docs/ui/layout/layout-1.png' class="mw-100" alt="Example 1 layout">
@@ -1368,8 +1410,8 @@ But why does the `Container` decide that?
 Simply because that’s a design decision by those who
 created the `Container` widget. It could have been
 created differently, and you have to read the
-[`Container` documentation][] to understand how it
-behaves, depending on the circumstances.
+[`Container`][] API documentation to understand
+how it behaves, depending on the circumstances.
 
 ### Example 7
 
@@ -1973,26 +2015,33 @@ If you want the `Scaffold`'s child to be exactly the same size
 as the `Scaffold` itself, you can wrap its child with
 `SizedBox.expand`.
 
-{{site.alert.note}}
-  When a widget tells its child that it must be of
-  a certain size, we say the widget supplies _tight_
-  constraints to its child.
-{{site.alert.end}}
-
-
-## Tight vs. loose constraints
+## Tight vs loose constraints
 
 It’s very common to hear that some constraint is
-"tight" or "loose", so it’s worth knowing what that means.
+"tight" or "loose", so what does that mean?
+
+### Tight constraints
 
 A _tight_ constraint offers a single possibility,
 an exact size. In other words, a tight constraint
 has its maximum width equal to its minimum width;
 and has its maximum height equal to its minimum height.
 
+An example of this is the `App` widget,
+which is contained by the [`RenderView`][] class:
+the box used by the child returned by the
+application's [`build`][] function is given a constraint
+that forces it to exactly fill the application's content area
+(typically, the entire screen).
+
+Another example: if you nest a bunch of boxes inside
+each other at the root of your application's render tree,
+they'll all exactly fit in each other,
+forced by the box's tight constraints.
+
 If you go to Flutter’s `box.dart` file and search for
-the `BoxConstraints` constructors, you'll find the
-following:
+the `BoxConstraints` constructors,
+you'll find the following:
 
 ```dart
 BoxConstraints.tight(Size size)
@@ -2002,41 +2051,106 @@ BoxConstraints.tight(Size size)
      maxHeight = size.height;
 ```
 
-If you revisit [Example 2](#example-2) above,
-it tells us that the screen forces the red
-`Container` to be exactly the same size as the screen.
-The screen does that, of course, by passing tight
+If you revisit [Example 2](#example-2),
+the screen forces the red `Container` to be
+exactly the same size as the screen.
+The screen achieves that, of course, by passing tight
 constraints to the `Container`.
 
-A _loose_ constraint, on the other hand,
-sets the **maximum** width and height, but lets the widget
-be as small as it wants. In other words,
-a loose constraint has a **minimum** width and height
-both equal to **zero**:
+### Loose constraints
 
-```dart
-BoxConstraints.loose(Size size)
-   : minWidth = 0.0,
-     maxWidth = size.width,
-     minHeight = 0.0,
-     maxHeight = size.height;
-```
+A _loose_ constraint is one that has a minimum
+of zero and a maximum non-zero.
 
-If you revisit [Example 3](#example-3), it tells us that the
-`Center` lets the red `Container` be smaller,
-but not bigger than the screen. The `Center` does that,
-of course, by passing loose constraints to the `Container`.
-Ultimately, the `Center`'s very purpose is to transform
-the tight constraints it got from its parent
+Some boxes _loosen_ the incoming constraints,
+meaning the maximum is maintained but the
+minimum is removed, so the widget can have
+a **minimum** width and height both equal to **zero**.
+
+Ultimately, `Center`'s purpose is to transform
+the tight constraints it received from its parent
 (the screen) to loose constraints for its child
 (the `Container`).
+
+If you revisit [Example 3](#example-3), 
+the `Center` allows the red `Container` to be smaller,
+but not bigger than the screen.
+
+[`build`]: {{site.api}}/flutter/widgets/State/build.html
+[`RenderView`]: {{site.api}}/flutter/rendering/RenderView-class.html
+
+<a id="unbounded"></a>
+## Unbounded constraints
+
+{{site.alert.note}}
+  You might be directed here if the framework
+  detects a problem involving box constraints.
+  The `Flex` section below might also apply.
+{{site.alert.end}}
+
+In certain situations,
+a box's constraint is _unbounded_, or infinite.
+This means that either the maximum width or
+the maximum height is set to [`double.infinity`][].
+
+A box that tries to be as big as possible won't
+function usefully when given an unbounded constraint and,
+in debug mode, throws an exception.
+
+The most common case where a render box ends up
+with an unbounded constraint is within a flex box
+([`Row`][] or [`Column`][]),
+and **within a scrollable region**
+(such as [`ListView`][] and other [`ScrollView`][] subclasses).
+
+[`ListView`][], for example,
+tries to expand to fit the space available
+in its cross-direction
+(perhaps it's a vertically-scrolling block and
+tries to be as wide as its parent).
+If you nest a vertically scrolling [`ListView`][]
+inside a horizontally scrolling `ListView`,
+the inner list tries to be as wide as possible,
+which is infinitely wide,
+since the outer one is scrollable in that direction.
+
+The next section describes the error you might
+encounter with unbounded constraints in a `Flex` widget.
+
+## Flex
+
+A flex box ([`Row`][] and [`Column`][]) behaves
+differently depending on whether its
+constraint is bounded or unbounded in
+its primary direction.
+
+A flex box with a bounded constraint in its
+primary direction tries to be as big as possible.
+
+A flex box with an unbounded constraint
+in its primary direction tries to fit its children
+in that space. Each child's `flex` value must be
+set to zero, meaning that you can't use
+[`Expanded`][] when the flex box is inside
+another flex box or a scrollable;
+otherwise it throws an exception.
+
+The _cross_ direction
+(width for [`Column`][] or height for [`Row`][]),
+must _never_ be unbounded,
+or it can't reasonably align its children.
+
+[`double.infinity`]: {{site.api}}/flutter/dart-core/double/infinity-constant.html
+[`Expanded`]: {{site.api}}/flutter/widgets/Expanded-class.html
+[`RenderBox`]: {{site.api}}/flutter/rendering/RenderBox-class.html
+[`ScrollView`]: {{site.api}}/flutter/widgets/ScrollView-class.html
 
 ## Learning the layout rules for specific widgets
 
 Knowing the general layout rule is necessary, but it’s not enough.
 
 Each widget has a lot of freedom when applying the general rule,
-so there is no way of knowing what it will do by just reading
+so there is no way of knowing how it behaves by just reading
 the widget’s name.
 
 If you try to guess, you’ll probably guess wrong.
@@ -2049,7 +2163,7 @@ However, if you decide to study the layout source-code,
 you can easily find it by using the navigating capabilities
 of your IDE.
 
-Here is an example:
+Here's an example:
 
 * Find a `Column` in your code and navigate to its
   source code. To do this, use `command+B` (macOS)
@@ -2075,10 +2189,10 @@ Here is an example:
 
 ---
 
-Article by Marcelo Glasberg
+Original article by Marcelo Glasberg
 
 Marcelo originally published this content as
-[Flutter: The Advanced Layout Rule Even Beginners Must Know][]
+[Flutter: The Advanced Layout Rule Even Beginners Must Know][article]
 on Medium. We loved it and asked that he allow us to publish
 in on docs.flutter.dev, to which he graciously agreed. Thanks, Marcelo!
 You can find Marcelo on [GitHub][] and [pub.dev][].
@@ -2086,11 +2200,15 @@ You can find Marcelo on [GitHub][] and [pub.dev][].
 Also, thanks to [Simon Lightfoot][] for creating the
 header image at the top of the article.
 
-
-[`Container` documentation]: {{site.api}}/flutter/widgets/Container-class.html
-[DartPad instance]: {{site.dartpad}}/60174a95879612e500203084a0588f94
-[Flutter: The Advanced Layout Rule Even Beginners Must Know]: {{site.medium}}/flutter-community/flutter-the-advanced-layout-rule-even-beginners-must-know-edc9516d1a2
+[article]: {{site.medium}}/flutter-community/flutter-the-advanced-layout-rule-even-beginners-must-know-edc9516d1a2
 [GitHub]: {{site.github}}/marcglasberg
 [pub.dev]: {{site.pub}}/publishers/glasberg.dev/packages
 [Simon Lightfoot]: {{site.github}}/slightfoot
-[this GitHub repo]: {{site.github}}/marcglasberg/flutter_layout_article
+
+{{site.alert.note}}
+  To better understand how Flutter implements layout
+  constraints, check out the following 5-minute video:
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/jckqXR5CrPI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <p>Decoding Flutter: Unbounded height and width</p>
+{{site.alert.end}}
+

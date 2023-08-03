@@ -130,7 +130,7 @@ var httpClient = (await _googleSignIn.authenticatedClient())!;
 ```
 
 This [`Client`]({{site.pub-api}}/http/latest/http/Client-class.html) instance
-includes the nessesary credentials when invoking Google API classes.
+includes the necessary credentials when invoking Google API classes.
 
 ## 5. Create and use the desired API class
 

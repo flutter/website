@@ -513,4 +513,4 @@ here are some suggestions for where to go next:
 [Shape-shifting effect]: #example-shape-shifting-effect
 [shape-shifting starter code]: #shape-shifting-starter-code
 [staggered animations]: {{site.url}}/ui/animations/staggered-animations
-[stateful widgets]: {{site.url}}/ui/interactive#stateful-and-stateless-widgets
+[stateful widgets]: {{site.url}}/ui/interactivity#stateful-and-stateless-widgets

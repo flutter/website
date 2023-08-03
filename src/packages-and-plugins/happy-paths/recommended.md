@@ -1,6 +1,7 @@
 ---
 title: Happy paths recommendations
-description: Recommended packages and plugins for adding functionality to your app.
+description: >
+  Recommended packages and plugins for adding functionality to your app.
 ---
 
 
@@ -54,7 +55,7 @@ Your tasks remain scheduled through app restarts and system reboots.
   **Is there a difference between a package and a plugin?**
   Yes, there is! Both are packages,
   but a plugin is a type of package that contains 
-  platform-specific code (such as Kotlin, Java, Swift, Objective C)
+  platform-specific code (such as Kotlin, Java, Swift, Objective-C)
   that communicates with the underlying platform.
   For more information, see [Using packages][].
 {{site.alert.end}}  
@@ -151,7 +152,7 @@ objects to and from the JSON format.
 [`freezed`]: {{site.pub-pkg}}/freezed#how-to-use
 [`json_serializable`]: {{site.pub-api}}/json_serializable/latest/
 [json-example]: {{site.github}}/google/json_serializable.dart/tree/master/example
-[Serializing JSON using json_serializable]: {{site.url}}/data-and-backend/json#serializing-json-using-code-generation-libraries
+[Serializing JSON using json_serializable]: {{site.url}}/data-and-backend/serialization/json#serializing-json-using-code-generation-libraries
 
 ## Structured local storage ![Structured local storage happy path image](/assets/images/docs/happy-paths/HappyPaths_Icon_Storage_3d_001.png){:width="20%"}
 

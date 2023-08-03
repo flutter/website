@@ -1,12 +1,6 @@
 ---
 title: Set up universal links for iOS
 description: How set up universal links for an iOS application built with Flutter
-prev:
-  title: Set up app links for Android
-  path: /cookbook/navigation/set-up-app-links
-next:
-  title: Return data from a screen
-  path: /cookbook/navigation/returning-data
 js:
 - defer: true
   url: https://dartpad.dev/inject_embed.dart.js
@@ -39,14 +33,11 @@ It provides a simple API to handle complex routing scenarios.
     $ flutter create deeplink_cookbook
     ```
 
-2. To include `go_router` package in your app, add a dependency for
-`go_router` in the `pubspec.yaml` file.
+2. To include the `go_router` package as a dependency, 
+   run `flutter pub add`:
 
-    ```yaml
-    dependencies:
-      flutter:
-        sdk: flutter
-      go_router: ^6.0.9
+    ```terminal
+    $ flutter pub add go_router
     ```
 
 3. To handle the routing, create a `GoRouter` object in the `main.dart` file:
@@ -102,7 +93,7 @@ It provides a simple API to handle complex routing scenarios.
    {{site.alert.end}}
 
 7. Click the top-level **Runner**.
-8. Click **Sign & Signature**.
+8. Click **Signing & Capabilities**.
 9. Click **+ Capability** to add a new domain.
 10. Click **Associated Domains**.
 

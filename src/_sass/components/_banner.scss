@@ -1,15 +1,18 @@
+@use '../base/variables' as *;
+@use '../vendor/bootstrap';
+
 .site-banner {
   background-color: $flutter-color-dark-blue;
   color: $site-color-white;
   font-family: $site-font-family-alt;
-  font-size: $font-size-lg;
-  padding: bs-spacer(5);
+  font-size: bootstrap.$font-size-lg;
+  padding: bootstrap.bs-spacer(5);
   position: relative;
   text-align: center;
-  z-index: 50;
+  z-index: bootstrap.$zindex-sticky;
 
   p {
-    margin-bottom: bs-spacer(3);
+    margin-bottom: bootstrap.bs-spacer(3);
 
     &:last-of-type {
       margin-bottom: 0;

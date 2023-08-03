@@ -1,3 +1,6 @@
+@use 'variables' as *;
+@use '../vendor/bootstrap';
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -9,16 +12,16 @@ body {
 }
 
 h1 {
-  margin-bottom: bs-spacer(12);
+  margin-bottom: bootstrap.bs-spacer(12);
 }
 
 h2 {
-  margin: bs-spacer(12) 0 bs-spacer(8);
+  margin: bootstrap.bs-spacer(12) 0 bootstrap.bs-spacer(8);
   clear: both;
 }
 
 h3 {
-  margin: bs-spacer(8) 0 bs-spacer(4);
+  margin: bootstrap.bs-spacer(8) 0 bootstrap.bs-spacer(4);
 }
 
 dd {
@@ -27,8 +30,8 @@ dd {
 
 .card-deck.card-deck--responsive {
   .card {
-    flex: 0 0 calc((100% / 3) - #{bs-spacer(4)});
-    margin-bottom: bs-spacer(4);
+    flex: 0 0 calc((100% / 3) - #{bootstrap.bs-spacer(4)});
+    margin-bottom: bootstrap.bs-spacer(4);
   }
 }
 
@@ -40,7 +43,7 @@ dd {
 
 .card-footer.card-footer--links {
   > *:not(:last-child) {
-    margin-right: bs-spacer(4);
+    margin-right: bootstrap.bs-spacer(4);
   }
 }
 
@@ -70,7 +73,7 @@ dd {
 .card-image-holder-material-3 {
   align-items: center;
   z-index: -1;
-  background-size: 0%;
+  background-size: 0;
   opacity: .999;
   background-color: var(--bg-color, white);
 
@@ -92,13 +95,12 @@ dd {
   transition: .25s ease;
   z-index: -1;
 
- img {
+  img {
     max-width: 100%;
     max-height: 100%;
     width: auto;
-   z-index: -1;
-
-   }
+    z-index: -1;
+  }
 }
 
 .card-image-holder-material-3:hover .card-image-material-3-hover {
@@ -120,7 +122,7 @@ dd {
 }
 
 .fixed-col {
-  @include media-breakpoint-up(md) {
+  @include bootstrap.media-breakpoint-up(md) {
     bottom: 0;
     overflow-y: auto;
     position: absolute; // position will be fixed once js has initialized
@@ -137,7 +139,9 @@ dd {
   margin: 0 auto;
   max-height: none;
   max-width: 100%;
-  @include media-breakpoint-up(xs) { max-width: breakpoint-min(xxs); }
+  @include bootstrap.media-breakpoint-up(xs) {
+    max-width: bootstrap.breakpoint-min(xxs);
+  }
 
   &--border { border: 1px solid $site-color-light-grey; }
 }
@@ -152,11 +156,11 @@ dd {
     max-height: none;
   }
 
-  @include media-breakpoint-up(md) {
+  @include bootstrap.media-breakpoint-up(md) {
     float: right;
-    margin: 0 0 bs-spacer(10) bs-spacer(10);
+    margin: 0 0 bootstrap.bs-spacer(10) bootstrap.bs-spacer(10);
     max-height: none;
-    max-width: calc((100%/2.5) - #{bs-spacer(10)});
+    max-width: calc((100%/2.5) - #{bootstrap.bs-spacer(10)});
   }
 }
 
@@ -170,7 +174,7 @@ dd {
     img { width: 100%; }
 
     figcaption {
-      margin-top: bs-spacer(4);
+      margin-top: bootstrap.bs-spacer(4);
       text-align: center;
     }
   }
@@ -182,16 +186,16 @@ dd {
   justify-content: center;
 
   .material-icons {
-    margin-right: bs-spacer(2);
+    margin-right: bootstrap.bs-spacer(2);
   }
 }
 
 .btn.btn-cta {
     font-size: 18px;
     font-weight: 500;
-    padding: bs-spacer(4) bs-spacer(6);
+    padding: bootstrap.bs-spacer(4) bootstrap.bs-spacer(6);
 
-    @include media-breakpoint-up(sm) {
+    @include bootstrap.media-breakpoint-up(sm) {
       min-width: 250px;
     }
   }
@@ -226,11 +230,29 @@ dd {
   }
 }
 
+.install-help {
+  text-align: right;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .material-icons {
+    font-size: 20px;
+    margin-right: 0.125rem;
+  }
+}
+
 blockquote {
   background-color: $site-color-codeblock-bg;
-  padding: bs-spacer(3) bs-spacer(4);
-  border-left: solid 5px $border-color;
-  margin-bottom: bs-spacer(4);
+  padding: bootstrap.bs-spacer(3) bootstrap.bs-spacer(4);
+  border-left: solid 5px bootstrap.$border-color;
+  margin-bottom: bootstrap.bs-spacer(4);
 
   p {
     margin-bottom: 0;
@@ -242,4 +264,18 @@ blockquote {
   th:not(:first-child), td:not(:first-child) {
     text-align: center;
   }
+}
+
+summary {
+  margin-bottom: 1rem;
+}
+
+ol + img, ul + img, ol + p, ul + p, p + p + img {
+  margin-bottom: 1rem;
+}
+
+.figure-caption {
+  font-size: bootstrap.$font-size-sm;
+  font-style: italic;
+  color: #041E3C;
 }
