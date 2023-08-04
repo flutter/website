@@ -194,7 +194,28 @@ class SecondRoute extends StatelessWidget {
 
 In the previous example you learned how to navigate between screens
 using the [`MaterialPageRoute`][] from [Material Components][].
+However, in Flutter you are not limited to Material design language,
+instead, you also have access to [Cupertino][] (iOS-style) widgets.
 
+Implementing navigation with Cupertino widgets follows the same steps
+as when using [`MaterialPageRoute`][], 
+but instead you use [`CupertinoPageRoute`][]
+which provides an iOS-style transition animation.
+
+In the following example, these widgets have been replaced:
+
+- [`MaterialApp`][] replaced by [`CupertinoApp`].
+- [`Scaffold`][] replaced by [`CupertinoPageScaffold`][].
+- [`ElevatedButton`][] replaced by [`CupertinoButton`][].
+
+This way, the example follows the current iOS design language.
+
+{{site.alert.secondary}}
+  You don't need to replace all Material widgets with Cupertino 
+  to use [`CupertinoPageRoute`][]
+  since Flutter allows you to mix and match Material and Cupertino widgets
+  depending on your needs
+{{site.alert.end}}
 
 <?code-excerpt "lib/main_cupertino.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
@@ -253,9 +274,16 @@ class SecondRoute extends StatelessWidget {
 }
 ```
 
-
+[Cupertino]: {{site.docs}}/ui/widgets/cupertino
 [Material Components]: {{site.docs}}/ui/widgets/material
+[`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
+[`CupertinoButton`]: {{site.api}}/flutter/cupertino/CupertinoButton-class.html
+[`CupertinoPageRoute`]: {{site.api}}/flutter/cupertino/CupertinoPageRoute-class.html
+[`CupertinoPageScaffold`]: {{site.api}}/flutter/cupertino/CupertinoPageScaffold-class.html
+[`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
+[`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
 [`MaterialPageRoute`]: {{site.api}}/flutter/material/MaterialPageRoute-class.html
-[`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`Navigator.pop()`]: {{site.api}}/flutter/widgets/Navigator/pop.html
 [`Navigator.push()`]: {{site.api}}/flutter/widgets/Navigator/push.html
+[`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
+[`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
