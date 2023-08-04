@@ -190,7 +190,71 @@ class SecondRoute extends StatelessWidget {
   <img src="/assets/images/docs/cookbook/navigation-basics.gif" alt="Navigation Basics Demo" class="site-mobile-screenshot" />
 </noscript>
 
+## Navigation with CupertinoPageRoute
 
+In the previous example you learned how to navigate between screens
+using the [`MaterialPageRoute`][] from [Material Components][].
+
+
+<?code-excerpt "lib/main_cupertino.dart"?>
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+import 'package:flutter/cupertino.dart';
+
+void main() {
+  runApp(const CupertinoApp(
+    title: 'Navigation Basics',
+    home: FirstRoute(),
+  ));
+}
+
+class FirstRoute extends StatelessWidget {
+  const FirstRoute({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoPageScaffold(
+      navigationBar: const CupertinoNavigationBar(
+        middle: Text('First Route'),
+      ),
+      child: Center(
+        child: CupertinoButton(
+          child: const Text('Open route'),
+          onPressed: () {
+            Navigator.push(
+              context,
+              CupertinoPageRoute(builder: (context) => const SecondRoute()),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class SecondRoute extends StatelessWidget {
+  const SecondRoute({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoPageScaffold(
+      navigationBar: const CupertinoNavigationBar(
+        middle: Text('Second Route'),
+      ),
+      child: Center(
+        child: CupertinoButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: const Text('Go back!'),
+        ),
+      ),
+    );
+  }
+}
+```
+
+
+[Material Components]: {{site.docs}}/ui/widgets/material
 [`MaterialPageRoute`]: {{site.api}}/flutter/material/MaterialPageRoute-class.html
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`Navigator.pop()`]: {{site.api}}/flutter/widgets/Navigator/pop.html
