@@ -53,7 +53,7 @@ function getOS() {
   }
 
   if ((userAgent.indexOf('Linux') !== -1 || userAgent.indexOf("X11") !== -1)
-      && userAgent.indexOf('Android') !== -1) {
+    && userAgent.indexOf('Android') !== -1) {
     // Linux, but not Android
     return 'linux';
   }
@@ -151,7 +151,7 @@ function initFixedColumns() {
       var bannerOffset = $(bannerSelector).offset().top;
       var bannerPosition = bannerOffset - $(window).scrollTop();
       bannerVisibleHeight =
-          Math.max(bannerHeight - (headerHeight - bannerPosition), 0);
+        Math.max(bannerHeight - (headerHeight - bannerPosition), 0);
     }
     var topOffset = headerHeight + bannerVisibleHeight;
 
@@ -315,7 +315,7 @@ function initCookieNotice() {
 
   agreeBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    Cookies.set(cookieKey, cookieConsentValue, {sameSite: 'strict', expires: 30});
+    Cookies.set(cookieKey, cookieConsentValue, { sameSite: 'strict', expires: 30 });
     notice.classList.remove(activeClass);
   });
 }
