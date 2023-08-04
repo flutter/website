@@ -114,9 +114,7 @@ function adjustTOC() {
   function _scrollToTop() {
     const distanceBetweenTop = document.documentElement.scrollTop || document.body.scrollTop;
     if (distanceBetweenTop > 0) {
-      window.requestAnimationFrame(_scrollToTop);
-      const divisorToMakeAnimationFast = 4;
-      window.scrollTo(0, distanceBetweenTop - distanceBetweenTop / divisorToMakeAnimationFast);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }
 
