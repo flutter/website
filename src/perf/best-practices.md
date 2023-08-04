@@ -143,7 +143,7 @@ your scene uses `saveLayer` by checking the
 `PerformanceOverlayLayer.checkerboardOffscreenLayers`
 switch in the [DevTools Performance view][].
 
-[DevTools timeline]: {{site.url}}/tools/devtools/performance#timeline-events-chart
+[DevTools timeline]: {{site.url}}/tools/devtools/performance#timeline-events-tab
 
 #### Minimizing calls to saveLayer
 

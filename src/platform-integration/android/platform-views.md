@@ -174,6 +174,7 @@ package dev.flutter.example
 
 import android.content.Context
 import android.graphics.Color
+import android.view.View
 import android.widget.TextView
 import io.flutter.plugin.platform.PlatformView
 
@@ -203,7 +204,6 @@ Create a factory class that creates an instance of the
 package dev.flutter.example
 
 import android.content.Context
-import android.view.View
 import io.flutter.plugin.common.StandardMessageCodec
 import io.flutter.plugin.platform.PlatformView
 import io.flutter.plugin.platform.PlatformViewFactory

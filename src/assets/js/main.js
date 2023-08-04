@@ -14,6 +14,12 @@
   setupTabs($('#os-archive-tabs'), 'dev.flutter.tab-os', _getOSForArchive);
   setupTabs($('#editor-setup'), 'io.flutter.tool-id');
   setupTabs($('.sample-code-tabs'), 'io.flutter.tool-id');
+  setupTabs($('#vscode-to-xcode-ios-setup'), 'dev.flutter.debug.vscode-to-xcode-ios');
+  setupTabs($('#vscode-to-xcode-macos-setup'), 'dev.flutter.debug.vscode-to-xcode-macos');
+  setupTabs($('#vscode-to-android-studio-setup'), 'dev.flutter.debug.vscode-to-as');
+  setupTabs($('#vscode-to-vs-setup'), 'dev.flutter.debug.vscode-to-vs');
+
+  setupTabs($('#ios-versions'), 'dev.flutter.ios-versions');
 
   prettyPrint();
 })();
