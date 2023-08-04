@@ -111,7 +111,7 @@ function adjustTOC() {
   //Appear not to be used anywhere
   //'class' active dont make any effect on toc
   const tocElement = document.querySelector(tocId);
-  if(tocElement){
+  if (tocElement){
     window.addEventListener('scroll', _spyOnScroll);
   }
 
