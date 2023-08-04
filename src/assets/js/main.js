@@ -88,7 +88,8 @@ function scrollSidebarIntoView() {
 /**
  * Adjusts the behavior of the table of contents (TOC) on the page.
  * 
- * This function enables a "scrollspy" feature on the TOC, where the active link in the TOC is updated
+ * This function enables a "scrollspy" feature on the TOC, 
+ * where the active link in the TOC is updated
  * based on the currently visible section in the page.
  * 
  * Enables a "back to top" button in the TOC header.
