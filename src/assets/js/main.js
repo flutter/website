@@ -93,7 +93,6 @@ function scrollSidebarIntoView() {
  * based on the currently visible section in the page.
  * 
  * Enables a "back to top" button in the TOC header.
- * returns {void}
  */
 function adjustTOC() {
 
