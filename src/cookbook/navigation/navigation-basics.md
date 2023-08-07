@@ -274,6 +274,10 @@ class SecondRoute extends StatelessWidget {
 }
 ```
 
+<noscript>
+  <img src="/assets/images/docs/cookbook/navigation-basics-cupertino.gif" alt="Navigation Basics Cupertino Demo" class="site-mobile-screenshot" />
+</noscript>
+
 [Cupertino]: {{site.docs}}/ui/widgets/cupertino
 [Material Components]: {{site.docs}}/ui/widgets/material
 [`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
