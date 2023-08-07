@@ -56,7 +56,7 @@ the following video:
 
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/HAstl_NkXl0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<a name="web"></a>
+<a id="web"></a>
 ## Resources
 
 The following resources can help you get started:
