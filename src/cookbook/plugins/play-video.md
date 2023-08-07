@@ -1,6 +1,9 @@
 ---
 title: Play and pause a video
 description: How to use the video_player plugin.
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/plugins/play_video/"?>
@@ -33,10 +36,10 @@ the following steps:
 
 ## 1. Add the `video_player` dependency
 
-This recipe depends on one Flutter plugin: `video_player`. First, add this
-dependency to your project.
+This recipe depends on one Flutter plugin: `video_player`. 
+First, add this dependency to your project.
 
-To add the `video_player` package as a dev dependency, run `flutter pub add`:
+To add the `video_player` package as a dependency, run `flutter pub add`:
 
 ```terminal
 $ flutter pub add video_player
@@ -229,7 +232,7 @@ FloatingActionButton(
 ## Complete example
 
 <?code-excerpt "lib/main.dart"?>
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'dart:async';
 
 import 'package:flutter/material.dart';
