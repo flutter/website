@@ -4,6 +4,15 @@
   display: none;
   right: 0;
 
+
+  @mixin nav-link-not-active-hover {
+    &:not(.disabled) {
+      &:hover {
+        color: $flutter-color-dark-blue;
+      }
+    }
+  }
+
   .nav { display: block; }
   .nav-link {
     padding-bottom: $padding;
@@ -13,6 +22,8 @@
       color: theme-color('secondary'); // $gray-dark;
       font-weight: 500;
     }
+
+    @include nav-link-not-active-hover;
   }
 
   > ul > li {
