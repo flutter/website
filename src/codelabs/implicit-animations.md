@@ -89,10 +89,10 @@ Wrap the `Column` widget in an `AnimatedOpacity` widget:
 ```diff
 --- opacity1/lib/main.dart
 +++ opacity2/lib/main.dart
-@@ -21,12 +21,14 @@
-             style: TextStyle(color: Colors.blueAccent),
-           ),
-           onPressed: () => {}),
+@@ -22,12 +22,14 @@
+         ),
+         onPressed: () => {},
+       ),
 -      const Column(
 -        children: [
 -          Text('Type: Owl'),
@@ -135,9 +135,9 @@ the starting value for `opacity` to zero:
    @override
    Widget build(BuildContext context) {
      return Column(children: <Widget>[
-@@ -22,6 +24,7 @@
-           ),
-           onPressed: () => {}),
+@@ -23,6 +25,7 @@
+         onPressed: () => {},
+       ),
        AnimatedOpacity(
 +        opacity: opacity,
          child: const Column(
@@ -155,9 +155,9 @@ you can start with 2 seconds:
 ```diff
 --- opacity3/lib/main.dart
 +++ opacity4/lib/main.dart
-@@ -24,6 +24,7 @@
-           ),
-           onPressed: () => {}),
+@@ -25,6 +25,7 @@
+         onPressed: () => {},
+       ),
        AnimatedOpacity(
 +        duration: const Duration(seconds: 2),
          opacity: opacity,
@@ -177,26 +177,17 @@ to set `opacity` to 1:
 ```diff
 --- opacity4/lib/main.dart
 +++ opacity5/lib/main.dart
-@@ -18,11 +18,14 @@
-     return Column(children: <Widget>[
-       Image.network(owlUrl),
-       TextButton(
--          child: const Text(
--            'Show Details',
--            style: TextStyle(color: Colors.blueAccent),
--          ),
--          onPressed: () => {}),
-+        child: const Text(
-+          'Show Details',
-+          style: TextStyle(color: Colors.blueAccent),
-+        ),
+@@ -22,7 +22,9 @@
+           'Show Details',
+           style: TextStyle(color: Colors.blueAccent),
+         ),
+-        onPressed: () => {},
 +        onPressed: () => setState(() {
 +          opacity = 1;
 +        }),
-+      ),
+       ),
        AnimatedOpacity(
          duration: const Duration(seconds: 2),
-         opacity: opacity,
 ```
 
 {{site.alert.secondary}}
