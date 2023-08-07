@@ -6,11 +6,9 @@
 
 
   @mixin nav-link-not-active-hover {
-    &:not(.disabled) {
       &:hover {
         color: $flutter-color-dark-blue;
       }
-    }
   }
 
   .nav { display: block; }
