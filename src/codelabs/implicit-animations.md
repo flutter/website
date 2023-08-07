@@ -1,6 +1,8 @@
 ---
 title: "Implicit animations"
-description: "A codelab that uses interactive examples and exercises to teach  how to use Flutter's implicitly animated widgets."
+description: >
+  Learn how to use Flutter's implicitly animated widgets
+  through interactive examples and exercises.
 toc: true
 diff2html: true
 js:
@@ -19,8 +21,8 @@ widgets that make it easy to create animations for a specific set of properties.
 
 To get the most out of this codelab, you should have basic knowledge about:
 
-* How to [make a Flutter app].
-* How to use [stateful widgets].
+* How to [make a Flutter app][].
+* How to use [stateful widgets][].
 
 This codelab covers the following material:
 
@@ -32,13 +34,13 @@ This codelab covers the following material:
 
 ## What are implicit animations?
 
-With Flutter's [animation library],
+With Flutter's [animation library][],
 you can add motion and create visual effects
 for the widgets in your UI.
 One widget set in the library manages animations for you.
 These widgets are collectively referred to as _implicit animations_,
 or _implicitly animated widgets_, deriving their name from the
-[ImplicitlyAnimatedWidget] class that they implement.
+[ImplicitlyAnimatedWidget][] class that they implement.
 With implicit animations,
 you can animate a widget property by setting a target value;
 whenever that target value changes,
@@ -49,9 +51,9 @@ manage animation effects so that you don't have to.
 ## Example: Fade-in text effect
 
 The following example shows how to add a fade-in effect to existing UI
-using an implicitly animated widget called [AnimatedOpacity].
+using an implicitly animated widget called [AnimatedOpacity][].
 **The example begins with no animation code**&mdash;it
-consists of a [Material App] home screen containing:
+consists of a [Material App][] home screen containing:
 
 * A photograph of an owl.
 * One **Show details** button that does nothing when clicked.
@@ -67,8 +69,8 @@ Click the **Run** button to run the example:
 
   This section contains a list of steps you can use to add an
   implicit animation to the
-  [fade-in starter code]. After the steps, you can also run the
-  [fade-in complete] code with the changes already made.
+  [fade-in starter code][]. After the steps, you can also run the
+  [fade-in complete][] code with the changes already made.
   The steps outline how to use the `AnimatedOpacity`
   widget to add the following animation feature:
 
@@ -87,16 +89,7 @@ To create a fade-in effect, you can animate the `opacity` property using the
 ```diff
 --- opacity1/lib/main.dart
 +++ opacity2/lib/main.dart
-@@ -2,6 +2,8 @@
- // Use of this source code is governed by a BSD-style license
- // that can be found in the LICENSE file.
-
-+// ignore_for_file: missing_required_argument
-+
- import 'package:flutter/material.dart';
-
- const owlUrl =
-@@ -25,12 +27,14 @@
+@@ -21,12 +21,14 @@
              style: TextStyle(color: Colors.blueAccent),
            ),
            onPressed: () => {}),
@@ -120,8 +113,8 @@ To create a fade-in effect, you can animate the `opacity` property using the
 ```
 
 {{site.alert.info}}
-  You can reference the line numbers in the example code to help track
-  where to make these changes.
+  You can reference the line numbers in the example code to help track where
+  to make these changes in the [fade-in starter code][].
 {{site.alert.end}}
 
 #### 2. Initialize a state variable for the animated property
@@ -133,29 +126,19 @@ the starting value for `opacity` to zero:
 ```diff
 --- opacity2/lib/main.dart
 +++ opacity3/lib/main.dart
-@@ -2,8 +2,6 @@
- // Use of this source code is governed by a BSD-style license
- // that can be found in the LICENSE file.
-
--// ignore_for_file: missing_required_argument
--
- import 'package:flutter/material.dart';
-
- const owlUrl =
-@@ -17,6 +15,8 @@
+@@ -11,6 +11,8 @@
  }
 
  class _FadeInDemoState extends State<FadeInDemo> {
-+  double opacity = 0.0;
++  double opacity = 0;
 +
    @override
    Widget build(BuildContext context) {
      return Column(children: <Widget>[
-@@ -28,6 +28,8 @@
+@@ -22,6 +24,7 @@
            ),
            onPressed: () => {}),
        AnimatedOpacity(
-+        duration: const Duration(seconds: 3),
 +        opacity: opacity,
          child: const Column(
            children: [
@@ -165,18 +148,17 @@ the starting value for `opacity` to zero:
 #### 3. Set the duration of the animation
 
 In addition to an `opacity` parameter, `AnimatedOpacity` requires a
-[duration] to use for its animation. For this example,
+[duration][] to use for its animation. For this example,
 you can start with 2 seconds:
 
 <?code-excerpt "opacity{3,4}/lib/main.dart"?>
 ```diff
 --- opacity3/lib/main.dart
 +++ opacity4/lib/main.dart
-@@ -28,7 +28,7 @@
+@@ -24,6 +24,7 @@
            ),
            onPressed: () => {}),
        AnimatedOpacity(
--        duration: const Duration(seconds: 3),
 +        duration: const Duration(seconds: 2),
          opacity: opacity,
          child: const Column(
@@ -195,7 +177,7 @@ to set `opacity` to 1:
 ```diff
 --- opacity4/lib/main.dart
 +++ opacity5/lib/main.dart
-@@ -22,11 +22,14 @@
+@@ -18,11 +18,14 @@
      return Column(children: <Widget>[
        Image.network(owlUrl),
        TextButton(
@@ -231,7 +213,7 @@ example and click the **Show details** button to trigger the animation.
 
 ### Putting it all together
 
-The [Fade-in text effect] example demonstrates the following features
+The [Fade-in text effect][] example demonstrates the following features
 of `AnimatedOpacity`:
 
 * `AnimatedOpacity` listens for state changes in its `opacity` property.
@@ -241,7 +223,7 @@ of `AnimatedOpacity`:
   to animate the transition between an old `opacity` value and a new one.
 
 {{site.alert.secondary}}
-  Note that Implicit animations can only animate properties of a parent
+  Note that implicit animations can only animate properties of a parent
   `StatefulWidget`, so this example begins with the `FadeInDemo` widget that
   extends `StatefulWidget`.
 
@@ -252,11 +234,11 @@ of `AnimatedOpacity`:
 
 ## Example: Shape-shifting effect
 
-The following example shows how to use the [AnimatedContainer] widget to
+The following example shows how to use the [AnimatedContainer][] widget to
 animate multiple properties (`margin`, `borderRadius`, and `color`) with
 different types (`double` and `Color`).
 **The example begins with no animation code**&mdash;it starts with a
-[Material App] home screen that contains:
+[Material App][] home screen that contains:
 
 * A `Container` with `borderRadius`, `margin`, and `color` properties that are
   different each time you run the example.
@@ -272,11 +254,11 @@ Click the **Run** button to run the example:
 ### Animate color, borderRadius, and margin with AnimatedContainer
 
   This section contains a list of steps you can use to add an
-  implicit animation to the [shape-shifting starter code].
+  implicit animation to the [shape-shifting starter code][].
   After the steps, you can also run the
-  [shape-shifting complete] example with the changes already made.
+  [shape-shifting complete][] example with the changes already made.
 
-In the [shape-shifting starter code],
+In the [shape-shifting starter code][],
 each property in the `Container` widget (`color`,
 `borderRadius`, and `margin`)
 is assigned a value by an associated function (`randomColor()`,
@@ -297,16 +279,7 @@ Change the `Container` widget to an `AnimatedContainer` widget:
 ```diff
 --- container1/lib/main.dart
 +++ container2/lib/main.dart
-@@ -2,6 +2,8 @@
- // Use of this source code is governed by a BSD-style license
- // that can be found in the LICENSE file.
-
-+// ignore_for_file: missing_required_argument
-+
- import 'dart:math';
-
- import 'package:flutter/material.dart';
-@@ -47,7 +49,7 @@
+@@ -43,7 +43,7 @@
              SizedBox(
                width: 128,
                height: 128,
@@ -316,9 +289,10 @@ Change the `Container` widget to an `AnimatedContainer` widget:
                  decoration: BoxDecoration(
                    color: color,
 ```
+
 {{site.alert.info}}
   You can reference the line numbers in the example code to help track where to
-  make these changes in [shape-shifting starter code]
+  make these changes in the [shape-shifting starter code][].
 {{site.alert.end}}
 
 #### 2. Set starting values for animated properties
@@ -333,7 +307,7 @@ for the `color`, `borderRadius`, and `margin` state variables:
 ```diff
 --- container2/lib/main.dart
 +++ container3/lib/main.dart
-@@ -40,6 +40,14 @@
+@@ -34,6 +34,14 @@
      margin = randomMargin();
    }
 
@@ -351,6 +325,7 @@ for the `color`, `borderRadius`, and `margin` state variables:
 ```
 
 #### 3. Set up a trigger for the animation
+
 To set the animation to trigger whenever the user presses the **Change** button,
 invoke the `change()` method in the `onPressed()` handler:
 
@@ -358,10 +333,10 @@ invoke the `change()` method in the `onPressed()` handler:
 ```diff
 --- container3/lib/main.dart
 +++ container4/lib/main.dart
-@@ -67,7 +67,7 @@
+@@ -61,7 +61,7 @@
              ),
              ElevatedButton(
-               child: const Text('change'),
+               child: const Text('Change'),
 -              onPressed: () => {},
 +              onPressed: () => change(),
              ),
@@ -370,19 +345,15 @@ invoke the `change()` method in the `onPressed()` handler:
 ```
 
 #### 4. Set duration
+
 Finally, set the `duration` of the animation that powers the transition
 between the old and new values:
+
 <?code-excerpt "container{4,5}/lib/main.dart"?>
 ```diff
 --- container4/lib/main.dart
 +++ container5/lib/main.dart
-@@ -2,12 +2,12 @@
- // Use of this source code is governed by a BSD-style license
- // that can be found in the LICENSE file.
-
--// ignore_for_file: missing_required_argument
--
- import 'dart:math';
+@@ -2,6 +2,8 @@
 
  import 'package:flutter/material.dart';
 
@@ -391,7 +362,7 @@ between the old and new values:
  double randomBorderRadius() {
    return Random().nextDouble() * 64;
  }
-@@ -63,6 +63,7 @@
+@@ -57,6 +59,7 @@
                    color: color,
                    borderRadius: BorderRadius.circular(borderRadius),
                  ),
@@ -417,19 +388,19 @@ changes in values for specific widget properties, and how the
 `duration` parameter allows you to set the amount of time an
 animation takes to complete. Implicit animations also allow you to
 control changes to __the rate__ of an animation within the `duration`.
-The parameter you use to define this change in rate is [curve].
+The parameter you use to define this change in rate is [curve][].
 
 The preceding examples do not specify a `curve`,
-so the implicit animations apply a [linear animation curve] by default.
-Add a `curve` parameter to the [shape-shifting complete]
+so the implicit animations apply a [linear animation curve][] by default.
+Add a `curve` parameter to the [shape-shifting complete][]
 and watch how the animation changes when you pass the
-[easeInOutBack] constant for `curve`:
+[easeInOutBack][] constant for `curve`:
 
 <?code-excerpt "container{5,6}/lib/main.dart"?>
 ```diff
 --- container5/lib/main.dart
 +++ container6/lib/main.dart
-@@ -64,6 +64,7 @@
+@@ -60,6 +60,7 @@
                    borderRadius: BorderRadius.circular(borderRadius),
                  ),
                  duration: _duration,
@@ -458,13 +429,13 @@ Now that you have passed `easeInOutBack` as the value for `curve` to
 
 ### Putting it all together
 
-The [shape-shifting complete] example animates transitions between values for
+The [shape-shifting complete][] example animates transitions between values for
 `margin`, `borderRadius`, and `color` properties.
 Note that `AnimatedContainer` animates changes to any of its properties,
 including those you didn't use such as `padding`, `transform`,
 and even `child` and `alignment`!
-The [shape-shifting complete] example builds upon [fade-in complete] by showing
-additional capabilities of implicit animations:
+The [shape-shifting complete][] example builds upon [fade-in complete][] by 
+showing additional capabilities of implicit animations:
 
 * Some implicit animations (for example,
   `AnimatedOpacity`) only animate a single
@@ -474,19 +445,17 @@ additional capabilities of implicit animations:
   new values of properties when they change using the provided
   `curve` and `duration`.
 * If you do not specify a `curve`,
-  implicit animations default to a [linear curve].
+  implicit animations default to a [linear curve][].
 
 ## What's next?
 
 Congratulations, you've finished the codelab! If you'd like to learn more,
 here are some suggestions for where to go next:
 
-* Try the [animations tutorial].
-* Learn about [hero animations] and [staggered animations].
-* Checkout the [animation library].
-* Try another [codelab].
-
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfTcB884FuPXukPEEewU5pgphZyF2Ue0pOWoIHvRp-4D-xYjw/viewform?embedded=true" width="100%" height="1726" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+* Try the [animations tutorial][].
+* Learn about [hero animations][] and [staggered animations][].
+* Checkout the [animation library][].
+* Try another [codelab][].
 
 [AnimatedContainer]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
 [AnimatedOpacity]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html

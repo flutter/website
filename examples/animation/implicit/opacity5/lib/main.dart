@@ -1,7 +1,3 @@
-// Copyright 2019 the Dart project authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license
-// that can be found in the LICENSE file.
-
 import 'package:flutter/material.dart';
 
 const owlUrl =
@@ -15,7 +11,7 @@ class FadeInDemo extends StatefulWidget {
 }
 
 class _FadeInDemoState extends State<FadeInDemo> {
-  double opacity = 0.0;
+  double opacity = 0;
 
   @override
   Widget build(BuildContext context) {
