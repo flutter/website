@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
         title: appName,
       ),
     );
-    // #docregion MaterialApp
+    // #enddocregion MaterialApp
 }
 
 void theme(BuildContext context) {
