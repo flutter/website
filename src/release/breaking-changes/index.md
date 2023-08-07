@@ -41,6 +41,7 @@ release, and listed in alphabetical order:
 * [Deprecate `textScaleFactor` in favor of `TextScaler`][]
 * [Deprecate TextField.canRequestFocus][]
 * [Deprecate describeEnum and update EnumProperty to be type strict][]
+* [Deprecated just-in-time navigation pop APIs for Android Predictive Back][]
 
 [Added AppLifecycleState.hidden]: {{site.url}}/release/breaking-changes/add-applifecyclestate-hidden
 [Deprecated API removed after v3.10]: {{site.url}}/release/breaking-changes/3-10-deprecations
@@ -52,6 +53,7 @@ release, and listed in alphabetical order:
 [Deprecate `textScaleFactor` in favor of `TextScaler`]: {{site.url}}/release/breaking-changes/deprecate-textscalefactor
 [Deprecate TextField.canRequestFocus]: {{site.url}}/release/breaking-changes/can-request-focus
 [Deprecate describeEnum and update EnumProperty to be type strict]: {{site.url}}/release/breaking-changes/describe-enum
+[Deprecated just-in-time navigation pop APIs for Android Predictive Back]: {{site.url}}/release/breaking-changes/android-predictive-back
 
 ### Released in Flutter 3.10
 
