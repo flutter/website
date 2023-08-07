@@ -13,7 +13,7 @@ within the [Implicit animations codelab][].
   steps of "Fade-in text effect" portion.
 - `opacity1` is also used for the runnable starter sample and
   `opacity5` for the complete sample.
-- The severity of `missing_required_argument` is reduced to `info`
+- The severity of `missing_required_argument` is ignored manually
   in the [`analysis_options.yaml`](analysis_options.yaml) file since the
   diffing infrastructure currently can't handle the `ignore` for it.
 

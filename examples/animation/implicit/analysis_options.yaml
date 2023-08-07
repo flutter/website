@@ -6,5 +6,5 @@ include: ../../analysis_options.yaml
 
 analyzer:
   errors:
-    # Reduced since ignore_for_files can't be hidden in diff excerpts
-    missing_required_argument: info
+    # Ignored since ignore_for_files can't be hidden in diff excerpts yet
+    missing_required_argument: ignore
