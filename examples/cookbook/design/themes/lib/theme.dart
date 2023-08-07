@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+void main() {
+  runApp(const MyApp());
+}
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -36,6 +40,7 @@ class MyApp extends StatelessWidget {
       ),
     );
     // #enddocregion MaterialApp
+  }
 }
 
 void theme(BuildContext context) {
@@ -68,4 +73,10 @@ void theme(BuildContext context) {
     ),
   );
   // #enddocregion ThemeCopyWith
+}
+
+class MyHomePage extends StatelessWidget {
+  final String title;
+
+  const MyHomePage({super.key, required this.title});
 }
