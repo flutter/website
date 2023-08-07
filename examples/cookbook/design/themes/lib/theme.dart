@@ -79,4 +79,41 @@ class MyHomePage extends StatelessWidget {
   final String title;
 
   const MyHomePage({super.key, required this.title});
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context); // Simplifies later use of Theme context
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(title),
+      ),
+      body: Center(
+        // #docregion Container
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+          color: theme.colorScheme.primary,
+          child: Text(
+            'Text with a background color',
+            style: theme.textTheme.bodyMedium,
+            // TRY THIS: Change the Text value
+            //           or change the theme.textTheme
+            //           to "displayLarge" or "displaySmall"
+          ),
+        ),
+        // #enddocregion Container
+      ),
+      floatingActionButton: Theme(
+        data: theme.copyWith(
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)
+            // TRY THIS: Change the seedColor to "Colors.red" or
+            //           "Colors.blue"
+            ),
+        child: FloatingActionButton(
+          onPressed: () {},
+          child: const Icon(Icons.add),
+        ),
+      ),
+    );
+  }
 }

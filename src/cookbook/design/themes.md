@@ -169,7 +169,7 @@ If not, Flutter applies the app's theme.
 In fact, the `FloatingActionButton` uses this technique to find the
 `accentColor`.
 
-<?code-excerpt "lib/main.dart (Container)" replace="/^child: //g"?>
+<?code-excerpt "lib/theme.dart (Container)" replace="/^child: //g"?>
 ```dart
 Container(
   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
