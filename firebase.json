@@ -97,6 +97,7 @@
       { "source": "/widgets/:rest*", "destination": "/ui/widgets/:rest*", "type": 301 },
 
       { "source": "/add-to-app/android/add-splash-screen", "destination": "/platform-integration/android/splash-screen", "type": 301 },
+      { "source": "/codelabs/explicit-animations", "destination": "/ui/animations/tutorial", "type": 301 },
       { "source": "/cookbook/networking/named-routes", "destination": "/cookbook/navigation/named-routes", "type": 301 },
       { "source": "/cookbook/testing/integration-test-introduction", "destination": "/cookbook/testing/integration", "type": 301 },
       { "source": "/cookbook/testing/integration-test-profiling", "destination": "/cookbook/testing/integration/profiling", "type": 301 },
