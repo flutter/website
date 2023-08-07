@@ -1,5 +1,9 @@
 <?code-excerpt "animation/implicit/container5/lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:split-60:width-100%:height-500px:ga_id-shape_shifting_complete
+// Copyright 2019 the Dart project authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license
+// that can be found in the LICENSE file.
+
 import 'dart:math';
 
 import 'package:flutter/material.dart';

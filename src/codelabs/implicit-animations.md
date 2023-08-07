@@ -89,7 +89,7 @@ Wrap the `Column` widget in an `AnimatedOpacity` widget:
 ```diff
 --- opacity1/lib/main.dart
 +++ opacity2/lib/main.dart
-@@ -22,12 +22,14 @@
+@@ -26,12 +26,14 @@
          ),
          onPressed: () => {},
        ),
@@ -126,7 +126,7 @@ the starting value for `opacity` to zero:
 ```diff
 --- opacity2/lib/main.dart
 +++ opacity3/lib/main.dart
-@@ -11,6 +11,8 @@
+@@ -15,6 +15,8 @@
  }
 
  class _FadeInDemoState extends State<FadeInDemo> {
@@ -135,7 +135,7 @@ the starting value for `opacity` to zero:
    @override
    Widget build(BuildContext context) {
      return Column(children: <Widget>[
-@@ -23,6 +25,7 @@
+@@ -27,6 +29,7 @@
          onPressed: () => {},
        ),
        AnimatedOpacity(
@@ -155,7 +155,7 @@ you can start with 2 seconds:
 ```diff
 --- opacity3/lib/main.dart
 +++ opacity4/lib/main.dart
-@@ -25,6 +25,7 @@
+@@ -29,6 +29,7 @@
          onPressed: () => {},
        ),
        AnimatedOpacity(
@@ -177,7 +177,7 @@ to set `opacity` to 1:
 ```diff
 --- opacity4/lib/main.dart
 +++ opacity5/lib/main.dart
-@@ -22,7 +22,9 @@
+@@ -26,7 +26,9 @@
            'Show Details',
            style: TextStyle(color: Colors.blueAccent),
          ),
@@ -270,7 +270,7 @@ Change the `Container` widget to an `AnimatedContainer` widget:
 ```diff
 --- container1/lib/main.dart
 +++ container2/lib/main.dart
-@@ -43,7 +43,7 @@
+@@ -47,7 +47,7 @@
              SizedBox(
                width: 128,
                height: 128,
@@ -298,7 +298,7 @@ for the `color`, `borderRadius`, and `margin` state variables:
 ```diff
 --- container2/lib/main.dart
 +++ container3/lib/main.dart
-@@ -34,6 +34,14 @@
+@@ -38,6 +38,14 @@
      margin = randomMargin();
    }
 
@@ -324,7 +324,7 @@ invoke the `change()` method in the `onPressed()` handler:
 ```diff
 --- container3/lib/main.dart
 +++ container4/lib/main.dart
-@@ -61,7 +61,7 @@
+@@ -65,7 +65,7 @@
              ),
              ElevatedButton(
                child: const Text('Change'),
@@ -344,7 +344,7 @@ between the old and new values:
 ```diff
 --- container4/lib/main.dart
 +++ container5/lib/main.dart
-@@ -2,6 +2,8 @@
+@@ -6,6 +6,8 @@
 
  import 'package:flutter/material.dart';
 
@@ -353,7 +353,7 @@ between the old and new values:
  double randomBorderRadius() {
    return Random().nextDouble() * 64;
  }
-@@ -57,6 +59,7 @@
+@@ -61,6 +63,7 @@
                    color: color,
                    borderRadius: BorderRadius.circular(borderRadius),
                  ),
@@ -391,7 +391,7 @@ and watch how the animation changes when you pass the
 ```diff
 --- container5/lib/main.dart
 +++ container6/lib/main.dart
-@@ -60,6 +60,7 @@
+@@ -64,6 +64,7 @@
                    borderRadius: BorderRadius.circular(borderRadius),
                  ),
                  duration: _duration,
