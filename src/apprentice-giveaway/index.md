@@ -19,10 +19,9 @@ description: This event is ended.
 
 ---
 
-<a name="videos"></a>
+<a id="videos"></a>
 ## Book club replay videos
 
-<a name="videos"></a>
 You can find replays of the book club videos on YouTube.
 
 <div class="table-wrapper" markdown="1">
