@@ -58,38 +58,61 @@ Flutter creates a default theme for you.
 
 <?code-excerpt "lib/theme.dart (MaterialApp)" replace="/return //g"?>
 ```dart
-return MaterialApp(
-  title: appName,
-  theme: ThemeData(
-    useMaterial3: true,
+    MaterialApp(
+      title: appName,
+      theme: ThemeData(
+        useMaterial3: true,
 
-    // Define the default brightness and colors.
-    colorScheme: ColorScheme.fromSwatch(
-      primarySwatch: Colors.purple,
-      brightness: Brightness.dark,
+        // Define the default brightness and colors.
+        colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: Colors.purple,
+          brightness: Brightness.dark,
+        ),
+
+        // Define the default `TextTheme`. Use this to specify the default
+        // text styling for headlines, titles, bodies of text, and more.
+        textTheme: TextTheme(
+          displayLarge:
+              const TextStyle(fontSize: 72, fontWeight: FontWeight.bold),
+          titleLarge:
+              GoogleFonts.oswald(fontSize: 30, fontStyle: FontStyle.italic),
+          bodyMedium: GoogleFonts.merriweather(),
+          displaySmall: GoogleFonts.pacifico(),
+        ),
+      ),
+      home: const MyHomePage(
+        title: appName,
+      ),
+    );
+}
+
+void theme(BuildContext context) {
+  Theme(
+    // Create a unique theme with `ThemeData`
+    data: ThemeData(
+      primarySwatch: Colors.pink,
     ),
-
-    // Define the default `TextTheme`. Use this to specify the default
-    // text styling for headlines, titles, bodies of text, and more.
-    textTheme: TextTheme(
-      displayLarge:
-          const TextStyle(fontSize: 72, fontWeight: FontWeight.bold),
-      titleLarge:
-          GoogleFonts.oswald(fontSize: 30, fontStyle: FontStyle.italic),
-      bodyMedium: GoogleFonts.merriweather(),
-      displaySmall: GoogleFonts.pacifico(),
+    child: FloatingActionButton(
+      onPressed: () {},
+      child: const Icon(Icons.add),
     ),
-  ),
+  );
 
-  // Define the default `TextTheme`. Use this to specify the default
-  // text styling for headlines, titles, bodies of text, and more.
-  textTheme: TextTheme(
-    displayLarge: const TextStyle(fontSize: 72, fontWeight: FontWeight.bold),
-    titleLarge: GoogleFonts.oswald(fontSize: 30, fontStyle: FontStyle.italic),
-    bodyMedium: GoogleFonts.merriweather(),
-    displaySmall: GoogleFonts.pacifico(),
-  ),
-);
+  Theme(
+    // Find and extend the parent theme using `copyWith`.
+    // To learn more, check out the next
+    // section on `Theme.of`.
+    data: Theme.of(context)
+        .copyWith(colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)
+            // TRY THIS: Change the seedColor to "Colors.red" or
+            //           "Colors.blue"
+            ),
+    child: const FloatingActionButton(
+      onPressed: null,
+      child: Icon(Icons.add),
+    ),
+  );
+}
 ```
 
 Most `ThemeData` objects include two properties.
@@ -148,12 +171,14 @@ To extend a theme, use the [`copyWith()`][] method.
 <?code-excerpt "lib/theme.dart (ThemeCopyWith)"?>
 ```dart
 Theme(
-  // Find and extend the parent theme using `copyWith`. See the next
-  // section for more info on `Theme.of`.
-
-  data: Theme.of(context).copyWith(
-    colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)
-  ),
+  // Find and extend the parent theme using `copyWith`.
+  // To learn more, check out the next
+  // section on `Theme.of`.
+  data: Theme.of(context)
+      .copyWith(colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)
+          // TRY THIS: Change the seedColor to "Colors.red" or
+          //           "Colors.blue"
+          ),
   child: const FloatingActionButton(
     onPressed: null,
     child: Icon(Icons.add),
@@ -178,7 +203,7 @@ In fact, the `FloatingActionButton` uses this technique to find the
 ```dart
 Container(
   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-  color: Theme.of(context).colorScheme.primary,
+  color: theme.colorScheme.primary,
   child: Text(
     'Text with a background color',
     style: theme.textTheme.bodyMedium,
@@ -284,7 +309,6 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }
-
 ```
 
 <noscript>
