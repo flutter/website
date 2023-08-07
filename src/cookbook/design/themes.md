@@ -10,7 +10,7 @@ js:
 <?code-excerpt path-base="cookbook/design/themes"?>
 
 {{site.alert.note}}
-This recipe uses the [Material 3 design specification][] and the [google_fonts] package.
+  This recipe uses the [Material 3 design specification][] and the [google_fonts] package.
 {{site.alert.end}}
 
 [Material 3 design specification]: https://m3.material.io
@@ -35,23 +35,23 @@ width, height, padding, and other positioning choices.
 [`TextButtonThemeData`]: {{site.api}}/flutter/material/TextButtonThemeData-class.html
 
 If a widget doesn't use a specific theme, the visual properties fall back
-to the main theme. Precedence in Themes rank from the specific widget,
-to the widget type theme, to the general Theme.
+to the main theme. Precedence in themes rank from the specific widget,
+to the widget type theme, to the general theme.
 
-After you define a Theme, use it within your own widgets.
-Flutter's Material widgets use your Theme to set the background
-colors and font styles for AppBars, Buttons, Checkboxes, and more.
+After you define a `Theme`, use it within your own widgets.
+Flutter's Material widgets use your theme to set the background
+colors and font styles for app bars, buttons, checkboxes, and more.
 
 ## Create an app theme
 
-To share a Theme across your entire app, add a `theme` property
+To share a `Theme` across your entire app, add a `theme` property
 to your `MaterialApp` constructor.
 This property takes a takes a [`ThemeData`][] widget.
 
 To enable Material 3, add the [`useMaterial3`][] property
 to the `ThemeData` widget.
 
-If you don't add a `theme` to the constructor,
+If you don't add a theme to the constructor,
 Flutter creates a default theme for you.
 
 [`useMaterial3`]: {{site.api}}/flutter/material/ThemeData/useMaterial3.html
