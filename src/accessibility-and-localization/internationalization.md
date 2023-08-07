@@ -142,7 +142,7 @@ structured, is covered in this page.
 
 [113 languages]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
 
-<a name="overriding-locale"></a>
+<a id="overriding-locale"></a>
 ### Overriding the locale
 
 `Localizations.override` is a factory constructor
@@ -194,7 +194,7 @@ Widget build(BuildContext context) {
 Hot reload the app and the `CalendarDatePicker`
 widget should re-render in Spanish.
 
-<a name="adding-localized-messages"></a>
+<a id="adding-localized-messages"></a>
 ### Adding your own localized messages
 
 After adding the `flutter_localizations` package,
@@ -633,7 +633,7 @@ AppLocalizations.of(context).helloWorldOn(DateTime.utc(1959, 7, 9))
 
 [`DateFormat`]: {{site.api}}/flutter/intl/DateFormat-class.html
 
-<a name="ios-specifics"></a>
+<a id="ios-specifics"></a>
 ### Localizing for iOS: Updating the iOS app bundle
 
 Typically, iOS applications define key application metadata,
@@ -660,13 +660,13 @@ use the following instructions:
 
 5. Once all supported locales have been added, save the file.
 
-<a name="advanced-customization">
+<a id="advanced-customization">
 ## Advanced topics for further customization
 
 This section covers additional ways to customize a
 localized Flutter application.
 
-<a name="advanced-locale"></a>
+<a id="advanced-locale"></a>
 ### Advanced locale definition
 
 Some languages with multiple variants require more than just a
@@ -725,7 +725,7 @@ should also be fully differentiated for more nuanced localization.
 
 [`Localizations`]: {{site.api}}/flutter/widgets/WidgetsApp/supportedLocales.html
 
-<a name="tracking-locale"></a>
+<a id="tracking-locale"></a>
 ### Tracking the locale: The Locale class and the Localizations widget
 
 The [`Locale`][] class identifies the user's language.
@@ -753,7 +753,7 @@ Locale myLocale = Localizations.localeOf(context);
 [`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
 [widgets-global]: {{site.api}}/flutter/flutter_localizations/GlobalWidgetsLocalizations-class.html
 
-<a name="specifying-supportedlocales"></a>
+<a id="specifying-supportedlocales"></a>
 ### Specifying the app's supported&shy;Locales parameter
 
 Although the `flutter_localizations` library currently supports
@@ -835,7 +835,7 @@ in Flutter. If you're planning on supporting your own set of localized
 messages, the following content would be helpful.
 Otherwise, you can skip this section.
 
-<a name="loading-and-retrieving"></a>
+<a id="loading-and-retrieving"></a>
 ### Loading and retrieving localized values
 
 The `Localizations` widget is used to load and
@@ -897,7 +897,7 @@ tooltip: MaterialLocalizations.of(context).backButtonTooltip,
 [`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
 [`MaterialLocalizations`]: {{site.api}}/flutter/material/MaterialLocalizations-class.html
 
-<a name="defining-class"></a>
+<a id="defining-class"></a>
 ### Defining a class for the app's localized resources
 
 Putting together an internationalized Flutter app usually
@@ -965,7 +965,7 @@ In this case that would just be the `DemoLocalizations` class.
 [`intl`]: {{site.pub-pkg}}/intl
 [`Intl.message()`]: {{site.pub-api}}/intl/latest/intl/Intl/message.html
 
-<a name="adding-language"></a>
+<a id="adding-language"></a>
 ### Adding support for a new language
 
 An app that needs to support a language that's not included in
@@ -1152,13 +1152,13 @@ const MaterialApp(
 [flutter_localizations README]: {{site.repo.flutter}}/blob/master/packages/flutter_localizations/lib/src/l10n/README.md
 [`GlobalMaterialLocalizations`]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
 
-<a name="alternative-internationalization-workflows">
+<a id="alternative-internationalization-workflows">
 ## Alternative internationalization workflows
 
 This section describes different approaches to internationalize
 your Flutter application.
 
-<a name="alternative-class"></a>
+<a id="alternative-class"></a>
 ### An alternative class for the app's localized resources
 
 The previous example was defined in terms of the Dart `intl`
@@ -1228,7 +1228,7 @@ class DemoLocalizationsDelegate
 
 [`SynchronousFuture`]: {{site.api}}/flutter/foundation/SynchronousFuture-class.html
 
-<a name="dart-tools"></a>
+<a id="dart-tools"></a>
 ### Using the Dart intl tools
 
 Before building an API using the Dart [`intl`][] package,
