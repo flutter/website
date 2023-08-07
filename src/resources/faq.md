@@ -708,8 +708,8 @@ Learn more about a11y in the
 [accessibility documentation][].
 
 
-[accessibility documentation]: {{site.url}}/accessibility-and-localization/accessibility
-[internationalization tutorial]: {{site.url}}/accessibility-and-localization/internationalization
+[accessibility documentation]: {{site.url}}/ui/accessibility-and-localization/accessibility
+[internationalization tutorial]: {{site.url}}/ui/accessibility-and-localization/internationalization
 
 ### How do I write parallel and/or concurrent apps for Flutter?
 
