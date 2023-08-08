@@ -2165,7 +2165,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 [Flutter cookbook]: {{site.url}}/cookbook
 [`http` package]: {{site.pub-pkg}}/http
 [Human Interface Guidelines]: {{site.apple-dev}}/ios/human-interface-guidelines/overview/themes/
-[internationalization guide]: {{site.url}}/accessibility-and-localization/internationalization
+[internationalization guide]: {{site.url}}/ui/accessibility-and-localization/internationalization
 [`intl`]: {{site.pub-pkg}}/intl
 [`intl_translation`]: {{site.pub-pkg}}/intl_translation
 [Introduction to declarative UI]: {{site.url}}/get-started/flutter-for/declarative

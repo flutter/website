@@ -245,6 +245,14 @@
       permalink: /cookbook/effects/staggered-menu-animation
     - title: API overview
       permalink: /ui/animations/overview
+      
+- title: Accessibility & localization
+  permalink: /ui/accessibility-and-localization
+  children:
+    - title: Accessibility
+      permalink: /ui/accessibility-and-localization/accessibility
+    - title: Internationalization
+      permalink: /ui/accessibility-and-localization/internationalization
 
 - divider
 - header: Beyond UI
@@ -303,14 +311,6 @@
       permalink: /data-and-backend/firebase
     - title: Google APIs
       permalink: /data-and-backend/google-apis
-
-- title: Accessibility & localization
-  permalink: /accessibility-and-localization
-  children:
-    - title: Accessibility
-      permalink: /accessibility-and-localization/accessibility
-    - title: Internationalization
-      permalink: /accessibility-and-localization/internationalization
 
 - title: Platform integration
   permalink: /platform-integration
