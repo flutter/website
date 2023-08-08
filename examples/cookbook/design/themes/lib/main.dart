@@ -21,22 +21,22 @@ class MyApp extends StatelessWidget {
 
         // Define the default brightness and colors.
         colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: Colors.purple,
           // TRY THIS: Change to "Brightness.light"
           //           and see that all colors change
           //           to better contrast a light background
-          primarySwatch: Colors.purple,
           brightness: Brightness.dark,
         ),
 
         // Define the default `TextTheme`. Use this to specify the default
         // text styling for headlines, titles, bodies of text, and more.
         textTheme: TextTheme(
+          displayLarge:
+              const TextStyle(fontSize: 72, fontWeight: FontWeight.bold),
           // TRY THIS: Change one of the GoogleFonts
           //           to "lato", "poppins", or "lora"
           //           The title uses "titleLarge"
           //           and the middle text uses "bodyMedium"
-          displayLarge:
-              const TextStyle(fontSize: 72, fontWeight: FontWeight.bold),
           titleLarge:
               GoogleFonts.oswald(fontSize: 30, fontStyle: FontStyle.italic),
           bodyMedium: GoogleFonts.merriweather(),

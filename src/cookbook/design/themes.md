@@ -224,13 +224,13 @@ class MyApp extends StatelessWidget {
         textTheme: TextTheme(
           displayLarge:
               const TextStyle(fontSize: 72, fontWeight: FontWeight.bold),
-          titleLarge:
-              GoogleFonts.oswald(fontSize: 30, fontStyle: FontStyle.italic),
-          bodyMedium: GoogleFonts.merriweather(),
           // TRY THIS: Change one of the GoogleFonts
           //           to "lato", "poppins", or "lora"
           //           The title uses "titleLarge"
           //           and the middle text uses "bodyMedium"
+          titleLarge:
+              GoogleFonts.oswald(fontSize: 30, fontStyle: FontStyle.italic),
+          bodyMedium: GoogleFonts.merriweather(),
           displaySmall: GoogleFonts.pacifico(),
         ),
       ),
