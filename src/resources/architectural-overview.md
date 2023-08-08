@@ -1059,23 +1059,23 @@ provides a useful guide to the framework’s design philosophy.
 
 **Footnotes:**
 
-<sup><a name="a1">1</a></sup> While the `build` function returns a fresh tree,
+<sup><a id="a1">1</a></sup> While the `build` function returns a fresh tree,
 you only need to return something _different_ if there's some new
 configuration to incorporate. If the configuration is in fact the same, you can
 just return the same widget.
 
-<sup><a name="a2">2</a></sup> This is a slight simplification for ease of
+<sup><a id="a2">2</a></sup> This is a slight simplification for ease of
 reading. In practice, the tree might be more complex.
 
-<sup><a name="a3">3</a></sup> While work is underway on Linux and Windows,
+<sup><a id="a3">3</a></sup> While work is underway on Linux and Windows,
 examples for those platforms can be found in the [Flutter desktop embedding
 repository]({{site.github}}/google/flutter-desktop-embedding/tree/master/plugins).
 As development on those platforms reaches maturity, this content will be
 gradually migrated into the main Flutter repository.
 
-<sup><a name="a4">4</a></sup> There are some limitations with this approach, for
+<sup><a id="a4">4</a></sup> There are some limitations with this approach, for
 example, transparency doesn’t composite the same way for a platform view as it
 would for other Flutter widgets.
 
-<sup><a name="a5">5</a></sup> One example is shadows, which have to be
+<sup><a id="a5">5</a></sup> One example is shadows, which have to be
 approximated with DOM-equivalent primitives at the cost of some fidelity.
