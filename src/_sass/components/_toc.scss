@@ -8,10 +8,10 @@
   right: 0;
 
 
-  @mixin nav-link-not-active-hover {
-      &:hover {
-        color: $flutter-color-dark-blue;
-      }
+  @mixin nav-link-hover {
+    &:hover {
+      color: $flutter-color-dark-blue;
+    }
   }
 
   .nav { display: block; }
@@ -24,7 +24,7 @@
       font-weight: 500;
     }
 
-    @include nav-link-not-active-hover;
+    @include nav-link-hover;
   }
 
   > ul > li {
