@@ -2,7 +2,7 @@ name: google_sign_in_example
 publish_to: none
 
 environment:
-  sdk: ^3.0.3
+  sdk: ^3.1.0-0
 
 dependencies:
   collection: ^1.18.0
