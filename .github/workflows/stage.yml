@@ -4,6 +4,7 @@ on:
   pull_request:
     branches:
       - main
+      - v3.13
 
 # Declare default permissions as read only.
 permissions: read-all
