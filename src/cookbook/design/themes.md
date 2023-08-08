@@ -225,9 +225,9 @@ class MyApp extends StatelessWidget {
           displayLarge:
               const TextStyle(fontSize: 72, fontWeight: FontWeight.bold),
           // TRY THIS: Change one of the GoogleFonts
-          //           to "lato", "poppins", or "lora"
+          //           to "lato", "poppins", or "lora".
           //           The title uses "titleLarge"
-          //           and the middle text uses "bodyMedium"
+          //           and the middle text uses "bodyMedium".
           titleLarge:
               GoogleFonts.oswald(fontSize: 30, fontStyle: FontStyle.italic),
           bodyMedium: GoogleFonts.merriweather(),
@@ -248,7 +248,7 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context); // Simplifies later use of Theme context
+    final theme = Theme.of(context); // Simplifies later use of Theme context.
 
     return Scaffold(
       appBar: AppBar(
@@ -262,7 +262,7 @@ class MyHomePage extends StatelessWidget {
             'Text with a background color',
             // TRY THIS: Change the Text value
             //           or change the theme.textTheme
-            //           to "displayLarge" or "displaySmall"
+            //           to "displayLarge" or "displaySmall".
             style: theme.textTheme.bodyMedium,
           ),
         ),
@@ -270,7 +270,7 @@ class MyHomePage extends StatelessWidget {
       floatingActionButton: Theme(
         data: theme.copyWith(
             // TRY THIS: Change the seedColor to "Colors.red" or
-            //           "Colors.blue"
+            //           "Colors.blue".
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)
             ),
         child: FloatingActionButton(
