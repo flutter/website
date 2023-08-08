@@ -62,11 +62,10 @@ void theme(BuildContext context) {
     // Find and extend the parent theme using `copyWith`.
     // To learn more, check out the next
     // section on `Theme.of`.
-    data: Theme.of(context)
-        .copyWith(colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)
-            // TRY THIS: Change the seedColor to "Colors.red" or
-            //           "Colors.blue"
-            ),
+    data: Theme.of(context).copyWith(
+        // TRY THIS: Change the seedColor to "Colors.red" or
+        //           "Colors.blue"
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)),
     child: const FloatingActionButton(
       onPressed: null,
       child: Icon(Icons.add),
@@ -95,20 +94,19 @@ class MyHomePage extends StatelessWidget {
           color: theme.colorScheme.primary,
           child: Text(
             'Text with a background color',
-            style: theme.textTheme.bodyMedium,
             // TRY THIS: Change the Text value
             //           or change the theme.textTheme
             //           to "displayLarge" or "displaySmall"
+            style: theme.textTheme.bodyMedium,
           ),
         ),
         // #enddocregion Container
       ),
       floatingActionButton: Theme(
         data: theme.copyWith(
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)
             // TRY THIS: Change the seedColor to "Colors.red" or
             //           "Colors.blue"
-            ),
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)),
         child: FloatingActionButton(
           onPressed: () {},
           child: const Icon(Icons.add),

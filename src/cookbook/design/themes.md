@@ -144,11 +144,11 @@ Theme(
   // Find and extend the parent theme using `copyWith`.
   // To learn more, check out the next
   // section on `Theme.of`.
-  data: Theme.of(context)
-      .copyWith(colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)
+  data: Theme.of(context).copyWith(
           // TRY THIS: Change the seedColor to "Colors.red" or
           //           "Colors.blue"
-          ),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)
+        ),
   child: const FloatingActionButton(
     onPressed: null,
     child: Icon(Icons.add),
@@ -175,11 +175,11 @@ Container(
   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
   color: theme.colorScheme.primary,
   child: Text(
-    'Text with a background color',
-    style: theme.textTheme.bodyMedium,
     // TRY THIS: Change the Text value
     //           or change the theme.textTheme
     //           to "displayLarge" or "displaySmall"
+    'Text with a background color',
+    style: theme.textTheme.bodyMedium,
   ),
 ),
 ```
@@ -211,10 +211,10 @@ class MyApp extends StatelessWidget {
         // Define the default brightness and colors.
         colorScheme: ColorScheme.fromSwatch(
           primarySwatch: Colors.purple,
-          brightness: Brightness.dark,
           // TRY THIS: Change to "Brightness.light"
           //           and see that all colors change
           //           to better contrast a light background
+          brightness: Brightness.dark,
         ),
 
         // Define the default `TextTheme`. Use this to specify the default
@@ -225,11 +225,11 @@ class MyApp extends StatelessWidget {
           titleLarge:
               GoogleFonts.oswald(fontSize: 30, fontStyle: FontStyle.italic),
           bodyMedium: GoogleFonts.merriweather(),
-          displaySmall: GoogleFonts.pacifico(),
           // TRY THIS: Change one of the GoogleFonts
           //           to "lato", "poppins", or "lora"
           //           The title uses "titleLarge"
           //           and the middle text uses "bodyMedium"
+          displaySmall: GoogleFonts.pacifico(),
         ),
       ),
       home: const MyHomePage(
@@ -258,18 +258,18 @@ class MyHomePage extends StatelessWidget {
           color: theme.colorScheme.primary,
           child: Text(
             'Text with a background color',
-            style: theme.textTheme.bodyMedium,
             // TRY THIS: Change the Text value
             //           or change the theme.textTheme
             //           to "displayLarge" or "displaySmall"
+            style: theme.textTheme.bodyMedium,
           ),
         ),
       ),
       floatingActionButton: Theme(
         data: theme.copyWith(
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)
             // TRY THIS: Change the seedColor to "Colors.red" or
             //           "Colors.blue"
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)
             ),
         child: FloatingActionButton(
           onPressed: () {},
