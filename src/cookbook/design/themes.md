@@ -124,7 +124,7 @@ Pass that instance to the `Theme` widget.
 <?code-excerpt "lib/theme.dart (Theme)"?>
 ```dart
 Theme(
-  // Create a unique theme with `ThemeData`
+  // Create a unique theme with `ThemeData`.
   data: ThemeData(
     primarySwatch: Colors.pink,
   ),
@@ -148,7 +148,7 @@ Theme(
   // section on `Theme.of`.
   data: Theme.of(context).copyWith(
           // TRY THIS: Change the seedColor to "Colors.red" or
-          //           "Colors.blue"
+          //           "Colors.blue".
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)
         ),
   child: const FloatingActionButton(
@@ -179,7 +179,7 @@ Container(
   child: Text(
     // TRY THIS: Change the Text value
     //           or change the theme.textTheme
-    //           to "displayLarge" or "displaySmall"
+    //           to "displayLarge" or "displaySmall".
     'Text with a background color',
     style: theme.textTheme.bodyMedium,
   ),
@@ -215,7 +215,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.purple,
           // TRY THIS: Change to "Brightness.light"
           //           and see that all colors change
-          //           to better contrast a light background
+          //           to better contrast a light background.
           brightness: Brightness.dark,
         ),
 
