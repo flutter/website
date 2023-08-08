@@ -1,5 +1,5 @@
 (() => {
-  adjustTOC();
+  adjustToc();
   initFixedColumns();
   scrollSidebarIntoView();
   initVideoModal();
@@ -94,8 +94,7 @@ function scrollSidebarIntoView() {
  * 
  * Enables a "back to top" button in the TOC header.
  */
-function adjustTOC() {
-
+function adjustToc() {
   const tocId = '#site-toc--side';
 
   const tocHeader = document.querySelector(tocId + ' header');
