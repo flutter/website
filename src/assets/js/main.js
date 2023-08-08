@@ -106,26 +106,15 @@ function adjustTOC() {
     });
   }
 
-  const tocElement = document.querySelector(tocId);
-  if (tocElement) {
-    window.addEventListener('scroll', _spyOnScroll);
-  }
+  // This will not be migrated for now until we migrate 
+  // the entire site to Bootstrap 5.
+  // see https://github.com/flutter/website/pull/9167#discussion_r1286457246
+  $('body').scrollspy({ offset: 100, target: tocId });
 
   function _scrollToTop() {
     const distanceBetweenTop = document.documentElement.scrollTop || document.body.scrollTop;
     if (distanceBetweenTop > 0) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  }
-
-  function _spyOnScroll() {
-    const scrollDistance = document.documentElement.scrollTop || document.body.scrollTop;
-    const scrollDistanceToActivate = 100;
-    if (scrollDistance > scrollDistanceToActivate) {
-      tocElement.classList.add('active');
-    } else {
-      tocElement.classList.remove('active');
-
     }
   }
 }
