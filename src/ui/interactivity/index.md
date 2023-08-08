@@ -126,7 +126,7 @@ or you've launched the [iOS simulator][]
 [Android emulator][] (part of the Android Studio
 install), you are good to go!
 
-<a name="step-1"></a>
+<a id="step-1"></a>
 ### Step 1: Decide which object manages the widget's state
 
 A widget's state can be managed in several ways,
@@ -139,7 +139,7 @@ the UI, so the widget can handle its state internally.
 Learn more about the separation of widget and state,
 and how state might be managed, in [Managing state][].
 
-<a name="step-2"></a>
+<a id="step-2"></a>
 ### Step 2: Subclass StatefulWidget
 
 The `FavoriteWidget` class manages its own state,
@@ -168,7 +168,7 @@ class FavoriteWidget extends StatefulWidget {
   [Dart language documentation][].
 {{site.alert.end}}
 
-<a name="step-3"></a>
+<a id="step-3"></a>
 ### Step 3: Subclass State
 
 The `_FavoriteWidgetState` class stores the mutable data
@@ -261,7 +261,7 @@ void _toggleFavorite() {
 }
 ```
 
-<a name="step-4"></a>
+<a id="step-4"></a>
 ### Step 4: Plug the stateful widget into the widget tree
 
 Add your custom stateful widget to the widget tree in
@@ -371,7 +371,7 @@ color: green for active or grey for inactive.
 These examples use [`GestureDetector`][] to capture activity
 on the `Container`.
 
-<a name="self-managed"></a>
+<a id="self-managed"></a>
 ### The widget manages its own state
 
 Sometimes it makes the most sense for the widget
@@ -462,7 +462,7 @@ class MyApp extends StatelessWidget {
 
 <hr>
 
-<a name="parent-managed"></a>
+<a id="parent-managed"></a>
 ### The parent widget manages the widget's state
 
 Often it makes the most sense for the parent widget
@@ -565,7 +565,7 @@ class TapboxB extends StatelessWidget {
 
 <hr>
 
-<a name="mix-and-match"></a>
+<a id="mix-and-match"></a>
 ### A mix-and-match approach
 
 For some widgets, a mix-and-match approach makes

@@ -31,7 +31,7 @@ triggered by setting a beginning and ending point.
 They are simpler to implement
 than custom explicit animations, which are described here.
 
-<a name="concepts"></a>
+<a id="concepts"></a>
 ## Essential animation concepts and classes
 
 {{site.alert.secondary}}
@@ -61,7 +61,7 @@ changes or they can use the animations as the basis of
 more elaborate animations that they pass along to
 other widgets.
 
-<a name="animation-class"></a>
+<a id="animation-class"></a>
 ### Animation<wbr>\<double>
 
 In Flutter, an `Animation` object knows nothing about what
@@ -543,7 +543,7 @@ and it passes the `Animation` object to `AnimatedLogo`:
 
 **App source:** [animate2][]
 
-<a name="monitoring"></a>
+<a id="monitoring"></a>
 ### Monitoring the progress of the animation
 
 {{site.alert.secondary}}

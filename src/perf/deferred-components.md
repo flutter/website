@@ -314,7 +314,7 @@ any issues and guides you through suggested changes to fix them.
 {{site.alert.end}}
 
 <ol markdown="1">
-<li markdown="1"><a name="step-3.1"></a>The
+<li markdown="1"><a id="step-3.1"></a>The
     `flutter build appbundle` command
     runs the validator and attempts to build the app with
     `gen_snapshot` instructed to produce split AOT shared libraries
@@ -413,7 +413,7 @@ validator passes.
     changes to your `android/` directory automatically.
 </li>
 
-<li markdown="1"><a name="step-3.3"></a>Once the available
+<li markdown="1"><a id="step-3.3"></a>Once the available
     loading units are generated and logged in
     `<projectDirectory>/deferred_components_loading_units.yaml`,
     it is possible to fully configure the pubspec’s

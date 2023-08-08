@@ -7,6 +7,13 @@
   display: none;
   right: 0;
 
+
+  @mixin nav-link-hover {
+    &:hover {
+      color: $flutter-color-dark-blue;
+    }
+  }
+
   .nav { display: block; }
   .nav-link {
     padding-bottom: $padding;
@@ -16,6 +23,8 @@
       color: bootstrap.theme-color('secondary'); // $gray-dark;
       font-weight: 500;
     }
+
+    @include nav-link-hover;
   }
 
   > ul > li {
