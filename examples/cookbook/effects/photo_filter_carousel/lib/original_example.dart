@@ -1,8 +1,5 @@
 // ignore_for_file: unused_element
 
-// Original example from flutter/codelabs
-// https://github.com/flutter/codelabs/blob/7638c086a53d8434b23f102ec6694f6ece178a18/cookbook/lib/examples/instagram_filter.dart
-
 import 'package:flutter/material.dart';
 
 @immutable
@@ -58,7 +55,8 @@ class _ExampleInstagramFilterSelectionState
       valueListenable: _filterColor,
       builder: (context, color, child) {
         return Image.network(
-          'https://flutter.dev/docs/cookbook/img-files/effects/instagram-buttons/millenial-dude.jpg',
+          'https://docs.flutter.dev/cookbook/img-files'
+          '/effects/instagram-buttons/millennial-dude.jpg',
           color: color.withOpacity(0.5),
           colorBlendMode: BlendMode.color,
           fit: BoxFit.cover,
@@ -270,7 +268,7 @@ class FilterItem extends StatelessWidget {
           child: ClipOval(
             child: Image.network(
               'https://docs.flutter.dev/cookbook/img-files'
-              '/effects/instagram-buttons/millenial-texture.jpg',
+              '/effects/instagram-buttons/millennial-texture.jpg',
               color: color.withOpacity(0.5),
               colorBlendMode: BlendMode.hardLight,
             ),
