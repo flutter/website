@@ -32,6 +32,11 @@ add the extension point *target* to your Xcode project.
    extension point, check out the resources in
    [Apple's documentation][].
 
+To learn how to add a home screen widget to your iOS device,
+check out the [Adding a Home Screen widget to your Flutter App] codelab.
+
+[Adding a Home Screen widget to your Flutter App]: https://codelabs.developers.google.com/flutter-home-screen-widgets#0
+
 ## How do Flutter apps interact with App Extensions? 
 Flutter apps interact with app extensions using the same
 techniques as UIKit or SwiftUI apps.

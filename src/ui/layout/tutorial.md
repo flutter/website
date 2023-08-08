@@ -307,9 +307,9 @@ declaration:
 
 <?code-excerpt "lib/main.dart (textSection)" title?>
 ```dart
-Widget textSection = const Padding(
-  padding: EdgeInsets.all(32),
-  child: Text(
+Widget textSection = Container(
+  padding: const EdgeInsets.all(32),
+  child: const Text(
     'Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese '
     'Alps. Situated 1,578 meters above sea level, it is one of the '
     'larger Alpine Lakes. A gondola ride from Kandersteg, followed by a '
@@ -448,7 +448,7 @@ You can add interactivity to this layout by following
 [Adding Interactivity to Your Flutter App][].
 
 
-[Adding Interactivity to Your Flutter App]: {{site.url}}/ui/interactive
+[Adding Interactivity to Your Flutter App]: {{site.url}}/ui/interactivity
 [automatic reformatting support]: {{site.url}}/tools/formatting
 [available online]: https://images.unsplash.com/photo-1471115853179-bb1d604434e0?dpr=1&amp;auto=format&amp;fit=crop&amp;w=767&amp;h=583&amp;q=80&amp;cs=tinysrgb&amp;crop=
 [Flutter's approach to layout]: {{site.url}}/ui/layout

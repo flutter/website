@@ -78,7 +78,7 @@ dev_dependencies:
   [[highlight]]flutter_test:[[/highlight]]
     [[highlight]]sdk: flutter[[/highlight]] # Required for a Flutter project that includes tests
 
-  [[highlight]]flutter_lints: ^2.0.0[[/highlight]] # Contains a set of recommended lints for Flutter code
+  [[highlight]]flutter_lints: ^2.0.2[[/highlight]] # Contains a set of recommended lints for Flutter code
 
 [[highlight]]flutter:[[/highlight]]
 
@@ -120,9 +120,9 @@ dependencies, see the
 [asset images in package dependencies][]
 section in the same page.
 
-[Assets and images]: {{site.url}}/ui/assets-and-images
-[asset images in package dependencies]: {{site.url}}/ui/assets-and-images#from-packages
-[resolution aware]: {{site.url}}/ui/assets-and-images#resolution-aware
+[Assets and images]: {{site.url}}/ui/assets/assets-and-images
+[asset images in package dependencies]: {{site.url}}/ui/assets/assets-and-images#from-packages
+[resolution aware]: {{site.url}}/ui/assets/assets-and-images#resolution-aware
 
 ## Fonts
 

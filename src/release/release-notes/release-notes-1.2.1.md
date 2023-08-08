@@ -58,7 +58,7 @@ To integrate more fully with desktop form-factors like Android tablets and Chrom
 
 [#24830](https://github.com/flutter/flutter/pull/24830) Implement hover support for mouse pointers
 
-As widgets are the core way to interact with users in Flutter, this release continues to add features and fixes to the Flutter widget set with particular attention paid to the [SliverAppBar](https://docs.flutter.io/flutter/material/SliverAppBar-class.html):
+As widgets are the core way to interact with users in Flutter, this release continues to add features and fixes to the Flutter widget set with particular attention paid to the [SliverAppBar](https://api.flutter.dev/flutter/material/SliverAppBar-class.html):
 
 [#26021](https://github.com/flutter/flutter/pull/26021) Fix SliverAppBar title opacity and test all cases
 

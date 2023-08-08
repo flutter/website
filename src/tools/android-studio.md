@@ -18,7 +18,7 @@ description: >
 Follow the [Set up an editor]({{site.url}}/get-started/editor?tab=androidstudio)
 instructions to install the Dart and Flutter plugins.
 
-### Updating the plugins<a name="updating"/>
+### Updating the plugins {#updating}
 
 Updates to the plugins are shipped on a regular basis.
 You should be prompted in the IDE when an update is available.

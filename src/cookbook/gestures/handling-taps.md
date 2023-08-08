@@ -1,12 +1,6 @@
 ---
 title: Handle taps
 description: How to handle tapping and dragging.
-prev:
-  title: Add Material touch ripples
-  path: /cookbook/gestures/ripples
-next:
-  title: Implement swipe to dismiss
-  path: /cookbook/gestures/dismissible
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

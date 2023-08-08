@@ -1141,7 +1141,7 @@ To use the `http` package, add it to your dependencies in `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  http: ^1.0.0
+  http: ^1.1.0
 ```
 
 To make a network request,
@@ -2542,7 +2542,7 @@ For more information on using the Firebase Cloud Messaging API, see the
 [`firebase_messaging`][] plugin documentation.
 
 
-[Adding assets and images]: {{site.url}}/ui/assets-and-images
+[Adding assets and images]: {{site.url}}/ui/assets/assets-and-images
 [Animation & Motion widgets]: {{site.url}}/ui/widgets/animation
 [Animations overview]: {{site.url}}/ui/animations
 [Animations tutorial]: {{site.url}}/ui/animations/tutorial

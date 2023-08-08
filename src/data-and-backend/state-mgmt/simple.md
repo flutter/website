@@ -460,4 +460,4 @@ master these skills.
 [declarative UI programming]: {{site.url}}/data-and-backend/state-mgmt/declarative
 [ephemeral and app state]: {{site.url}}/data-and-backend/state-mgmt/ephemeral-vs-app
 [options page]: {{site.url}}/data-and-backend/state-mgmt/options
-[widget testing]: {{site.url}}/testing#widget-tests
+[widget testing]: {{site.url}}/testing/overview#widget-tests
