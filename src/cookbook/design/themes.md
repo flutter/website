@@ -147,10 +147,9 @@ Theme(
   // To learn more, check out the next
   // section on `Theme.of`.
   data: Theme.of(context).copyWith(
-          // TRY THIS: Change the seedColor to "Colors.red" or
-          //           "Colors.blue".
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)
-        ),
+      // TRY THIS: Change the seedColor to "Colors.red" or
+      //           "Colors.blue".
+      colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)),
   child: const FloatingActionButton(
     onPressed: null,
     child: Icon(Icons.add),
@@ -177,10 +176,10 @@ Container(
   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
   color: theme.colorScheme.primary,
   child: Text(
+    'Text with a background color',
     // TRY THIS: Change the Text value
     //           or change the theme.textTheme
     //           to "displayLarge" or "displaySmall".
-    'Text with a background color',
     style: theme.textTheme.bodyMedium,
   ),
 ),
@@ -191,7 +190,8 @@ Container(
 <?code-excerpt "lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
-//Import the font package
+// Include the Google Fonts package to provide more text format options
+// https://pub.dev/packages/google_fonts
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -271,8 +271,7 @@ class MyHomePage extends StatelessWidget {
         data: theme.copyWith(
             // TRY THIS: Change the seedColor to "Colors.red" or
             //           "Colors.blue".
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)
-            ),
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)),
         child: FloatingActionButton(
           onPressed: () {},
           child: const Icon(Icons.add),
