@@ -10,7 +10,8 @@ js:
 <?code-excerpt path-base="cookbook/design/themes"?>
 
 {{site.alert.note}}
-  This recipe uses the [Material 3 design specification][] and the [google_fonts] package.
+  This recipe uses the [Material 3 design specification][] and
+  the [google_fonts][] package.
 {{site.alert.end}}
 
 [Material 3 design specification]: https://m3.material.io
@@ -18,11 +19,12 @@ js:
 
 To share colors and font styles throughout an app, use themes.
 
-You can define app-wide themes, add widget `Theme` widgets, or both.
+You can define app-wide themes, add widget [`Theme`][] widgets, or both.
 Each theme defines the colors, type style, and other parameters applicable
 for the type of Material component.
 
-Many Material 3 widgets have their own `Theme` widget and related `ThemeData` data class.
+Many Material 3 widgets have their own `Theme` widget and
+related `ThemeData` data class.
 The `Theme` widget itself applies to the whole `MaterialApp`.
 
 For example: [`TextButton`][] can use both [`TextButtonTheme`][] to apply a theme
@@ -288,3 +290,4 @@ class MyHomePage extends StatelessWidget {
 
 [`copyWith()`]: {{site.api}}/flutter/material/ThemeData/copyWith.html
 [`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html
+[`Theme`]: {{site.api}}/flutter/material/Theme-class.html
