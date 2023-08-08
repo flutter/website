@@ -78,7 +78,7 @@ dev_dependencies:
   [[highlight]]flutter_test:[[/highlight]]
     [[highlight]]sdk: flutter[[/highlight]] # Required for a Flutter project that includes tests
 
-  [[highlight]]flutter_lints: ^2.0.0[[/highlight]] # Contains a set of recommended lints for Flutter code
+  [[highlight]]flutter_lints: ^2.0.2[[/highlight]] # Contains a set of recommended lints for Flutter code
 
 [[highlight]]flutter:[[/highlight]]
 

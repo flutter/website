@@ -12,15 +12,15 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  cupertino_icons: ^1.0.2
-  http: ^1.0.0
-  shared_preferences: ^2.0.15
-  url_launcher: ^6.1.6
+  cupertino_icons: ^1.0.5
+  http: ^1.1.0
+  shared_preferences: ^2.2.0
+  url_launcher: ^6.1.12
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^2.0.2
 
 
 flutter:

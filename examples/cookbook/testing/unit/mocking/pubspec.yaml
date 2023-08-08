@@ -9,14 +9,14 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  http: ^1.0.0
+  http: ^1.1.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  mockito: ^5.0.1
-  build_runner: ^2.1.7
-  flutter_lints: ^2.0.1
+  mockito: ^5.4.2
+  build_runner: ^2.4.6
+  flutter_lints: ^2.0.2
 
 flutter:
   uses-material-design: true

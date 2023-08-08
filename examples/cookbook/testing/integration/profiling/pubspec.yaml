@@ -7,13 +7,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  path_provider: ^2.0.1
-  path: ^1.8.0
+  path_provider: ^2.0.15
+  path: ^1.8.3
   flutter_test:
     sdk: flutter
 
 dev_dependencies:
-  flutter_lints: ^2.0.1
+  flutter_lints: ^2.0.2
   integration_test:
     sdk: flutter
   flutter_driver:

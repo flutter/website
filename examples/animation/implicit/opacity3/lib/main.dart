@@ -15,20 +15,20 @@ class FadeInDemo extends StatefulWidget {
 }
 
 class _FadeInDemoState extends State<FadeInDemo> {
-  double opacity = 0.0;
+  double opacity = 0;
 
   @override
   Widget build(BuildContext context) {
     return Column(children: <Widget>[
       Image.network(owlUrl),
       TextButton(
-          child: const Text(
-            'Show Details',
-            style: TextStyle(color: Colors.blueAccent),
-          ),
-          onPressed: () => {}),
+        child: const Text(
+          'Show Details',
+          style: TextStyle(color: Colors.blueAccent),
+        ),
+        onPressed: () => {},
+      ),
       AnimatedOpacity(
-        duration: const Duration(seconds: 3),
         opacity: opacity,
         child: const Column(
           children: [

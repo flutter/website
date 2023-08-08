@@ -7,9 +7,9 @@ environment:
   sdk: ^3.1.0-0
 
 dependencies:
-  json_annotation: ^4.0.1
+  json_annotation: ^4.8.1
 
 dev_dependencies:
-  build_runner: ^2.1.7
-  json_serializable: ^6.1.4
-  flutter_lints: ^2.0.1
+  build_runner: ^2.4.6
+  json_serializable: ^6.7.1
+  flutter_lints: ^2.0.2
