@@ -624,11 +624,11 @@ widgets on demand when they become visible.
 ---
 **Footnotes:**
 
-<sup><a name="a1">1</a></sup> For layout, at least. It might be revisited
+<sup><a id="a1">1</a></sup> For layout, at least. It might be revisited
   for painting, for building the accessibility tree if necessary,
   and for hit testing if necessary.
 
-<sup><a name="a2">2</a></sup> Reality, of course, is a bit more
+<sup><a id="a2">2</a></sup> Reality, of course, is a bit more
   complicated. Some layouts involve intrinsic dimensions or baseline
   measurements, which do involve an additional walk of the relevant subtree
   (aggressive caching is used to mitigate the potential for quadratic
@@ -636,7 +636,7 @@ widgets on demand when they become visible.
   rare. In particular, intrinsic dimensions are not required for the
   common case of shrink-wrapping.
 
-<sup><a name="a3">3</a></sup> Technically, the child's position is not
+<sup><a id="a3">3</a></sup> Technically, the child's position is not
   part of its RenderBox geometry and therefore need not actually be
   calculated during layout. Many render objects implicitly position
   their single child at 0,0 relative to their own origin, which
@@ -645,7 +645,7 @@ widgets on demand when they become visible.
   possible moment (for example, during the paint phase), to avoid
   the computation entirely if they are not subsequently painted.
 
-<sup><a name="a4">4</a></sup>  There exists one exception to this rule.
+<sup><a id="a4">4</a></sup>  There exists one exception to this rule.
   As discussed in the [Building widgets on demand](#building-widgets-on-demand)
   section, some widgets can be rebuilt as a result of a change in layout
   constraints. If a widget marked itself dirty for unrelated reasons in
@@ -653,19 +653,19 @@ widgets on demand when they become visible.
   it will be updated twice. This redundant build is limited to the
   widget itself and does not impact its descendants.
 
-<sup><a name="a5">5</a></sup> A key is an opaque object optionally
+<sup><a id="a5">5</a></sup> A key is an opaque object optionally
   associated with a widget whose equality operator is used to influence
   the reconciliation algorithm.
 
-<sup><a name="a6">6</a></sup>  For accessibility, and to give applications
+<sup><a id="a6">6</a></sup>  For accessibility, and to give applications
   a few extra milliseconds between when a widget is built and when it
   appears on the screen, the viewport creates (but does not paint)
   widgets for a few hundred pixels before and after the visible widgets.
 
-<sup><a name="a7">7</a></sup>  This approach was first made popular by
+<sup><a id="a7">7</a></sup>  This approach was first made popular by
   Facebook's React library.
 
-<sup><a name="a8">8</a></sup>  In practice, the _t_ value is allowed
+<sup><a id="a8">8</a></sup>  In practice, the _t_ value is allowed
   to extend past the 0.0-1.0 range, and does so for some curves. For
   example, the "elastic" curves overshoot briefly in order to represent
   a bouncing effect. The interpolation logic typically can extrapolate

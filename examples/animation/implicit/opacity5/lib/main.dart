@@ -15,7 +15,7 @@ class FadeInDemo extends StatefulWidget {
 }
 
 class _FadeInDemoState extends State<FadeInDemo> {
-  double opacity = 0.0;
+  double opacity = 0;
 
   @override
   Widget build(BuildContext context) {

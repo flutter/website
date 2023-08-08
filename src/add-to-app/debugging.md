@@ -38,19 +38,8 @@ Run `flutter attach` or `flutter attach -d deviceId` to attach from the terminal
 
 #### VS Code
 
-Select the correct device using the status bar in VS Code, then run the **Flutter: Attach to Flutter on Device** command from the command palette.
-
-{% include docs/app-figure.md image="development/add-to-app/debugging/vscode-attach.png" caption="flutter attach via VS Code" %}
-
-Alternatively, create a `.vscode/launch.json` file in your Flutter module project to enable attaching using the **Run > Start Debugging** command or `F5`:
-
-```js
-{
-  name: "Flutter: Attach",
-  request: "attach",
-  type: "dart",
-}
-```
+{% include docs/debug/debug-flow-ios.md %}
+{% include docs/debug/vscode-flutter-attach-json.md %}
 
 #### IntelliJ / Android Studio
 
@@ -58,23 +47,21 @@ Select the device on which the Flutter module runs so `flutter attach` filters f
 
 {% include docs/app-figure.md image="development/add-to-app/debugging/intellij-attach.png" caption="flutter attach via IntelliJ" %}
 
-
 [debugging functionalities]: {{site.url}}/testing/debugging
 
 ### Wireless debugging
 
-You can debug your app wirelessly on an iOS or Android device 
+You can debug your app wirelessly on an iOS or Android device
 using `flutter attach`.
-
 
 #### iOS
 
-On iOS, you must follow the steps below: 
+On iOS, you must follow the steps below:
 
 <ol markdown="1">
 <li markdown="1">
 
-Ensure that your device is wirelessly connected to Xcode 
+Ensure that your device is wirelessly connected to Xcode
 as described in the [iOS setup guide][].
 
 </li>
@@ -85,7 +72,7 @@ Open **Xcode > Product > Scheme > Edit Scheme**
 </li>
 <li markdown="1">
 
-Select the **Arguments** tab 
+Select the **Arguments** tab
 
 </li>
 <li markdown="1">

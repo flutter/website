@@ -329,7 +329,7 @@ we also aim to help lower app development and maintenance costs.
 
 
 [catalog of Flutter's widgets]: {{site.url}}/ui/widgets
-[gesture system]: {{site.url}}/ui/advanced/gestures
+[gesture system]: {{site.url}}/ui/interactivity/gestures
 
 ### What happens when my mobile OS updates and introduces new widgets?
 
@@ -708,8 +708,8 @@ Learn more about a11y in the
 [accessibility documentation][].
 
 
-[accessibility documentation]: {{site.url}}/accessibility-and-localization/accessibility
-[internationalization tutorial]: {{site.url}}/accessibility-and-localization/internationalization
+[accessibility documentation]: {{site.url}}/ui/accessibility-and-localization/accessibility
+[internationalization tutorial]: {{site.url}}/ui/accessibility-and-localization/internationalization
 
 ### How do I write parallel and/or concurrent apps for Flutter?
 

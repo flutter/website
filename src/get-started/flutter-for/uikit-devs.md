@@ -2161,11 +2161,11 @@ class _SampleAppPageState extends State<SampleAppPage> {
 [Cupertino widgets]: {{site.url}}/ui/widgets/cupertino
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
 [existing plugin]: {{site.pub}}/flutter
-[Flutter concurrency for Swift developers]: {{site.url}}/resources/dart-swift-concurrency
+[Flutter concurrency for Swift developers]: {{site.url}}/get-started/flutter-for/dart-swift-concurrency
 [Flutter cookbook]: {{site.url}}/cookbook
 [`http` package]: {{site.pub-pkg}}/http
 [Human Interface Guidelines]: {{site.apple-dev}}/ios/human-interface-guidelines/overview/themes/
-[internationalization guide]: {{site.url}}/accessibility-and-localization/internationalization
+[internationalization guide]: {{site.url}}/ui/accessibility-and-localization/internationalization
 [`intl`]: {{site.pub-pkg}}/intl
 [`intl_translation`]: {{site.pub-pkg}}/intl_translation
 [Introduction to declarative UI]: {{site.url}}/get-started/flutter-for/declarative
@@ -2174,7 +2174,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 [Material Components]: {{site.material}}/develop/flutter/
 [Material Design guidelines]: {{site.material}}/styles/
 [optimized for all platforms]: {{site.material2}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
-[Platform adaptations]: {{site.url}}/resources/platform-adaptations
+[Platform adaptations]: {{site.url}}/platform-integration/platform-adaptations
 [platform channel]: {{site.url}}/platform-integration/platform-channels
 [pub.dev]: {{site.pub}}/flutter/packages
 [Retrieve the value of a text field]: {{site.url}}/cookbook/forms/retrieve-input

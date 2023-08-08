@@ -25,8 +25,11 @@
           permalink: /get-started/flutter-for/web-devs
         - title: Flutter for Xamarin.Forms devs
           permalink: /get-started/flutter-for/xamarin-forms-devs
+        - divider
         - title: Introduction to declarative UI
           permalink: /get-started/flutter-for/declarative
+        - title: Flutter versus Swift concurrency
+          permalink: /get-started/flutter-for/dart-swift-concurrency
     - title: "Dart language overview"
       permalink: https://dart.dev/overview
 
@@ -59,54 +62,129 @@
       permalink: /codelabs
 
 - divider
-
-- title: User interface
+- header: User interface
+- title: Introduction
   permalink: /ui
-  match-page-url-exactly: true
+      
+- title: Layout
+  permalink: /ui/layout
   children:
     - title: Introduction
-      permalink: /ui
-    - title: Building layouts
       permalink: /ui/layout
+      match-page-url-exactly: true
+    - title: Build a layout
+      permalink: /ui/layout/tutorial
+    - title: Lists & grids
+      permalink: /ui/layout/lists
       children:
-        - title: Layouts in Flutter
-          permalink: /ui/layout
-          match-page-url-exactly: true
-        - title: Tutorial
-          permalink: /ui/layout/tutorial
-        - title: Creating adaptive and responsive apps
-          permalink: /ui/layout/adaptive-responsive
-        - title: Building adaptive apps
-          permalink: /ui/layout/building-adaptive-apps
-        - title: Understanding constraints
-          permalink: /ui/layout/constraints
-    - title: Adding interactivity
-      permalink: /ui/interactive
-    - title: Material Design
-      permalink: /ui/material
+        - title: Create and use lists
+          permalink: /cookbook/lists/basic-list
+        - title: Create a horizontal list
+          permalink: /cookbook/lists/horizontal-list
+        - title: Create a grid view
+          permalink: /cookbook/lists/grid-lists
+        - title: Create lists with different types of items
+          permalink: /cookbook/lists/mixed-list
+        - title: Create lists with spaced items
+          permalink: /cookbook/lists/spaced-items
+        - title: Work with long lists
+          permalink: /cookbook/lists/long-lists
     - title: Scrolling
-      permalink: /ui/scrolling
+      permalink: /ui/layout/scrolling
+      children:
+        - title: Overview
+          permalink: /ui/layout/scrolling
+        - title: Use slivers to achieve fancy scrolling
+          permalink: /ui/layout/scrolling/slivers
+        - title: Place a floating app bar above a list
+          permalink: /cookbook/lists/floating-app-bar
+        - title: Create a scrolling parallax effect
+          permalink: /cookbook/effects/parallax-scrolling
+    # TODO(parlough): Rename this to 'Responsive design'
+    # and add 'Adaptive design' under 'Design & theming'.
+    - title: Adaptive design
+      permalink: /ui/layout/responsive
+      children:
+        - title: Adaptive and responsive app design
+          permalink: /ui/layout/responsive/adaptive-responsive
+        - title: Build an adaptive app
+          permalink: /ui/layout/responsive/building-adaptive-apps
+        - title: Update app UI based on orientation
+          permalink: /cookbook/design/orientation
+      
+- title: Design & theming
+  permalink: /ui/design
+  children:
+    - title: Material design
+      permalink: /ui/design/material
+      children:
+        - title: Overview
+          permalink: /ui/design/material
+          match-page-url-exactly: true
+        - title: Use themes to share styles
+          permalink: /cookbook/design/themes
+        - title: Add a drawer to a screen
+          permalink: /cookbook/design/drawer
+        - title: Display a snackbar
+          permalink: /cookbook/design/snackbars
+        - title: Add tabs to your app
+          permalink: /cookbook/design/tabs
+    - title: Text
+      permalink: /ui/design/text
+      children:
+        - title: Fonts & typography
+          permalink: /ui/design/text/typography
+        - title: Use a custom font
+          permalink: /cookbook/design/fonts
+        - title: Export fonts from a package
+          permalink: /cookbook/design/package-fonts
+        - title: Google Fonts package
+          permalink: https://pub.dev/packages/google_fonts
+      # Consider renaming this 'Custom drawing & graphics'
+      # once more docs are added
+    - title: Custom graphics
+      permalink: /ui/design/graphics
+      children:
+        - title: Use custom fragment shaders
+          permalink: /ui/design/graphics/fragment-shaders
+      
+- title: Interactivity
+  permalink: /ui/interactivity
+  children:
+    - title: Add interactivity to your app
+      permalink: /ui/interactivity
+      match-page-url-exactly: true
+    - title: Gestures
+      permalink: /ui/interactivity/gestures
       children:
         - title: Introduction
-          permalink: /ui/scrolling
+          permalink: /ui/interactivity/gestures
           match-page-url-exactly: true
-        - title: Slivers
-          permalink: /ui/scrolling/slivers
-    - title: Advanced UI
-      permalink: /ui/advanced
+        - title: Handle taps
+          permalink: /cookbook/gestures/handling-taps
+        - title: Drag a UI element
+          permalink: /cookbook/effects/drag-a-widget
+        - title: Add Material touch ripples
+          permalink: /cookbook/gestures/ripples
+        - title: Implement swipe to dismiss
+          permalink: /cookbook/gestures/dismissible
+    - title: Input & forms
+      permalink: /ui/interactivity/input
       children:
-        - title: Actions & shortcuts
-          permalink: /ui/advanced/actions-and-shortcuts
-        - title: Fonts & typography
-          permalink: /ui/advanced/typography
-        - title: Keyboard focus system
-          permalink: /ui/advanced/focus
-        - title: Gestures
-          permalink: /ui/advanced/gestures
-        - title: Shaders
-          permalink: /ui/advanced/shaders
-    - title: Widget catalog
-      permalink: /ui/widgets
+        - title: Create and style a text field
+          permalink: /cookbook/forms/text-input
+        - title: Retrieve the value of a text field
+          permalink: /cookbook/forms/retrieve-input
+        - title: Handle changes to a text field
+          permalink: /cookbook/forms/text-field-changes
+        - title: Manage focus in text fields
+          permalink: /cookbook/forms/focus
+        - title: Build a form with validation
+          permalink: /cookbook/forms/validation
+    - title: Implement actions & shortcuts
+      permalink: /ui/interactivity/actions-and-shortcuts
+    - title: Manage keyboard focus
+      permalink: /ui/interactivity/focus
 
 - title: Assets & media
   permalink: /ui/assets
@@ -147,16 +225,37 @@
     - title: Introduction
       permalink: /ui/animations
       match-page-url-exactly: true
-    - title: Overview
-      permalink: /ui/animations/overview
     - title: Tutorial
       permalink: /ui/animations/tutorial
     - title: Implicit animations
       permalink: /ui/animations/implicit-animations
+    - title: Animate the properties of a container
+      permalink: /cookbook/animation/animated-container
+    - title: Fade a widget in and out
+      permalink: /cookbook/animation/opacity-animation
     - title: Hero animations
       permalink: /ui/animations/hero-animations
+    - title: Animate a page route transition
+      permalink: /cookbook/animation/page-route-animation
+    - title: Animate using a physic simulation
+      permalink: /cookbook/animation/physics-simulation
     - title: Staggered animations
       permalink: /ui/animations/staggered-animations
+    - title: Create a staggered menu animation
+      permalink: /cookbook/effects/staggered-menu-animation
+    - title: API overview
+      permalink: /ui/animations/overview
+      
+- title: Accessibility & localization
+  permalink: /ui/accessibility-and-localization
+  children:
+    - title: Accessibility
+      permalink: /ui/accessibility-and-localization/accessibility
+    - title: Internationalization
+      permalink: /ui/accessibility-and-localization/internationalization
+
+- divider
+- header: Beyond UI
 
 - title: Data & backend
   permalink: /data-and-backend
@@ -199,18 +298,19 @@
           permalink: /data-and-backend/serialization/json
         - title: Parse JSON in the background
           permalink: /cookbook/networking/background-parsing
+    - title: Persistence
+      permalink: /data-and-backend/persistence
+      children: 
+        - title: Store key-value data on disk
+          permalink: /cookbook/persistence/key-value
+        - title: Read and write files
+          permalink: /cookbook/persistence/reading-writing-files
+        - title: Persist data with SQLite
+          permalink: /cookbook/persistence/sqlite
     - title: Firebase
       permalink: /data-and-backend/firebase
     - title: Google APIs
       permalink: /data-and-backend/google-apis
-
-- title: Accessibility & localization
-  permalink: /accessibility-and-localization
-  children:
-    - title: Accessibility
-      permalink: /accessibility-and-localization/accessibility
-    - title: Internationalization
-      permalink: /accessibility-and-localization/internationalization
 
 - title: Platform integration
   permalink: /platform-integration
@@ -221,6 +321,8 @@
       permalink: /platform-integration/desktop
     - title: Write platform-specific code
       permalink: /platform-integration/platform-channels
+    - title: Automatic platform adaptations
+      permalink: /platform-integration/platform-adaptations
     - title: Android
       permalink: /platform-integration/android
       children:
@@ -340,9 +442,11 @@
       permalink: /testing/debugging
     - title: Debug your app programmatically
       permalink: /testing/code-debugging
-    - title: Debug native app code
-      permalink: /testing/oem-debuggers
-    - title: Fix common errors
+    - title: Use a native language debugger
+      permalink: /testing/native-debugging
+    - title: Flutter's build modes
+      permalink: /testing/build-modes
+    - title: Common Flutter errors
       permalink: /testing/common-errors
     - title: Handle errors
       permalink: /testing/errors
@@ -480,30 +584,36 @@
       permalink: /tools/sdk
     - title: Flutter's pubspec options
       permalink: /tools/pubspec
-    - title: Hot reload
-      permalink: /tools/hot-reload
     - title: Automated fixes
       permalink: /tools/flutter-fix
     - title: Code formatting
       permalink: /tools/formatting
 
+- title: Flutter concepts
+  children:
+    - title: Architectural overview
+      permalink: /resources/architectural-overview
+    - title: Inside Flutter
+      permalink: /resources/inside-flutter
+    - title: Understanding constraints
+      permalink: /ui/layout/constraints
+    - title: Flutter's build modes
+      permalink: /testing/build-modes
+    - title: Hot reload
+      permalink: /tools/hot-reload
+
 - title: Resources
   permalink: /resources
   children:
-    - header: Concepts
-    - title: Architectural overview
-      permalink: /resources/architectural-overview
-    - title: Platform adaptations
-      permalink: /resources/platform-adaptations
-    - title: Inside Flutter
-      permalink: /resources/inside-flutter
-    - title: Flutter versus Swift concurrency
-      permalink: /resources/dart-swift-concurrency
     - header: Learning
+    - title: FAQ
+      permalink: /resources/faq
     - title: Books
       permalink: /resources/books
-    - title: Videos and online courses
+    - title: Videos
       permalink: /resources/videos
+    - title: Courses
+      permalink: /resources/courses
     - title: Learn Dart
       permalink: /resources/bootstrap-into-dart
     - header: Contributing
@@ -518,13 +628,6 @@
       permalink: /resources/games-toolkit
     - title: Flutter News Toolkit
       permalink: /resources/news-toolkit
-    - header: General
-    - title: FAQ
-      permalink: /resources/faq
-    - title: Google Fonts package
-      permalink: https://pub.dev/packages/google_fonts
-    - title: Official brand assets
-      permalink: https://flutter.dev/brand
 
 - title: Reference
   permalink: /reference
@@ -532,13 +635,11 @@
   children:
     - title: Who is Dash?
       permalink: /dash
+    - title: Widget catalog
+      permalink: /ui/widgets
     - title: Widget index
       permalink: /reference/widgets
     - title: API reference
       permalink: https://api.flutter.dev
-    - title: Flutter's build modes
-      permalink: /testing/build-modes
     - title: flutter CLI reference
       permalink: /reference/flutter-cli
-    - title: Security false positives
-      permalink: /reference/security-false-positives

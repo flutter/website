@@ -1125,7 +1125,7 @@ add a dependency for `cupertino_icons` in your project's
 ```yaml
 name: my_awesome_application
 dependencies:
-  cupertino_icons: ^0.1.0
+  cupertino_icons: ^1.0.5
 ```
 
 To globally customize the colors and styles of components,

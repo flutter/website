@@ -1,5 +1,4 @@
 ---
-layout: toc
 title: Building user interfaces with Flutter
 short-title: UI
 description: Introduction to user interface development in Flutter.
@@ -901,7 +900,7 @@ retrieve the state associated with a widget.
 For more information, check out the [`GlobalKey`][] API.
 
 [`actions`]: {{api}}/material/AppBar-class.html#actions
-[adding interactivity to your Flutter app]: {{site.url}}/ui/interactive
+[adding interactivity to your Flutter app]: {{site.url}}/ui/interactivity
 [`AppBar`]: {{api}}/material/AppBar-class.html
 [basic layout codelab]: {{site.url}}/codelabs/layout-basics
 [`BoxDecoration`]: {{api}}/painting/BoxDecoration-class.html
@@ -920,7 +919,7 @@ For more information, check out the [`GlobalKey`][] API.
 [`final`]: {{site.dart-site}}/language/variables#final-and-const
 [`flex`]: {{api}}/widgets/Expanded-class.html#flex
 [`FloatingActionButton`]: {{api}}/material/FloatingActionButton-class.html
-[Gestures in Flutter]: {{site.url}}/ui/advanced/gestures
+[Gestures in Flutter]: {{site.url}}/ui/interactivity/gestures
 [`GestureDetector`]: {{api}}/widgets/GestureDetector-class.html
 [`GlobalKey`]: {{api}}/widgets/GlobalKey-class.html
 [`IconButton`]: {{api}}/material/IconButton-class.html
