@@ -786,11 +786,5 @@ class NnMaterialLocalizations extends GlobalMaterialLocalizations {
   String get expansionTileExpandedTapHint => 'Collapse';
 
   @override
-  String get lookUpButtonLabel => 'Look Up';
-
-  @override
-  String get menuDismissLabel => 'Dismiss menu';
-
-  @override
   String get scanTextButtonLabel => 'Scan text';
 }
