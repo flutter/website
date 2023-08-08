@@ -24,8 +24,10 @@ contains a simple demo app that uses [Material Components][].
 1. Locate the VS Code status bar
    (the blue bar at the bottom of the window):<br>
    ![status bar][]{:.mw-100.pt-1.pb-2}
+
 1. Select a device from the **Device Selector** area.
    For details, see [Quickly switching between Flutter devices][].
+
    - If no device is available, and you want to use a device simulator,
      click **No Devices** and click
      **Start iOS Simulator** to launch a simulator.
@@ -37,14 +39,17 @@ contains a simple demo app that uses [Material Components][].
        in terminal to launch a simulator.
 
        ```terminal
-   $ open -a simulator
+       $ open -a simulator
        ```
+
        On Windows or Linux, it's not possible to launch an iOS simulator.
      {{site.alert.end}}
 
    - To setup a real device, follow the device-specific instructions
      on the [Install][] page for your OS.
+
 1. Invoke **Run > Start Debugging** or press <kbd>F5</kbd>.
+
 1. Wait for the app to launch&mdash;progress is printed
    in the **Debug Console** view.
 
@@ -60,6 +65,5 @@ contains a simple demo app that uses [Material Components][].
 [Material Components]: {{site.material}}/components
 [Quickly switching between Flutter devices]: https://dartcode.org/docs/quickly-switching-between-flutter-devices
 [status bar]: {{site.url}}/assets/images/docs/tools/vs-code/device_status_bar.png
-[trusted your computer]: {{site.url}}/get-started/install/macos#trust
 
 </div>

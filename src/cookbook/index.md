@@ -67,6 +67,7 @@ reference to help you build up an application.
 - [Place a floating app bar above a list]({{site.url}}/cookbook/lists/floating-app-bar)
 - [Use lists]({{site.url}}/cookbook/lists/basic-list)
 - [Work with long lists]({{site.url}}/cookbook/lists/long-lists)
+- [Create a list with spaced items]({{site.url}}/cookbook/lists/spaced-items)
 
 
 ## Maintenance
