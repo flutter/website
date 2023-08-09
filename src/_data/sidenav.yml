@@ -394,8 +394,6 @@
     - title: Develop packages & plugins
       permalink: /packages-and-plugins/developing-packages
     - divider
-    - title: Happy paths
-      permalink: /packages-and-plugins/happy-paths
     - title: Flutter Favorites
       permalink: /packages-and-plugins/favorites
     - title: Package repository
