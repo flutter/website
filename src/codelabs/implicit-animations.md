@@ -463,7 +463,7 @@ To learn more, check out these suggestions:
 [codelab]: {{site.url}}/codelabs
 [Curves]: {{site.api}}/flutter/animation/Curve-class.html
 [duration]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget/duration.html
-[`easeInOutBack``]: {{site.api}}/flutter/animation/Curves/easeInOutBack-constant.html
+[`easeInOutBack`]: {{site.api}}/flutter/animation/Curves/easeInOutBack-constant.html
 [fade-in complete]: #fade-in-complete
 [fade-in starter code]: #fade-in-starter-code
 [Fade-in text effect]: #example-fade-in-text-effect
