@@ -1,6 +1,3 @@
-// This example was from the flutter codelabs repo.
-// https://github.com/flutter/codelabs/blob/7638c086a53d8434b23f102ec6694f6ece178a18/cookbook/lib/examples/ui_loading_animation.dart
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -294,8 +291,8 @@ class CircleListItem extends StatelessWidget {
         ),
         child: ClipOval(
           child: Image.network(
-            'https://flutter'
-            '.dev/docs/cookbook/img-files/effects/split-check/Avatar1.jpg',
+            'https://docs.flutter.dev/cookbook'
+            '/img-files/effects/split-check/Avatar1.jpg',
             fit: BoxFit.cover,
           ),
         ),
@@ -339,8 +336,8 @@ class CardListItem extends StatelessWidget {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(16),
           child: Image.network(
-            'https://flutter'
-            '.dev/docs/cookbook/img-files/effects/split-check/Food1.jpg',
+            'https://docs.flutter.dev/cookbook'
+            '/img-files/effects/split-check/Food1.jpg',
             fit: BoxFit.cover,
           ),
         ),
