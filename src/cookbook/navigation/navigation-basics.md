@@ -211,7 +211,7 @@ In the following example, these widgets have been replaced:
 This way, the example follows the current iOS design language.
 
 {{site.alert.secondary}}
-  You don't need to replace all Material widgets with Cupertino 
+  You don't need to replace all Material widgets with Cupertino versions
   to use [`CupertinoPageRoute`][]
   since Flutter allows you to mix and match Material and Cupertino widgets
   depending on your needs.
