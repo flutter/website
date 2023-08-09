@@ -72,8 +72,8 @@ class WidgetsLocalizationsMyLanguage extends WidgetsLocalizationsEn {
 
 ## Timeline
 
-Landed in version: v3.10.0-2.0.pre
-In stable release: TBD
+Landed in version: v3.10.0-2.0.pre<br>
+In stable release: 3.13
 
 ## References
 

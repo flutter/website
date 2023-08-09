@@ -87,7 +87,7 @@ TabBar(
 ## Timeline
 
 Landed in version: 3.11.0-0.0.pre<br>
-In stable release: TBD
+In stable release: 3.13
 
 ## References
 

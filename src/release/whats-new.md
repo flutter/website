@@ -38,39 +38,48 @@ recipes into the sidenav.
   [Use a native language debugger][oem] page.
   This page covers how to connect both a native
   debugger and a Dart debugger to your app
-  for Android _and_ iOS.
+  for Android _and_ iOS. (The previous
+  version of this page was out of date and
+  didn't cover iOS.)
 * A new [Layout/Scrolling][scrolling-overview] overview page.
   (In fact, scrolling is also a new section of the IA.)
+* We have sunsetted the Happy Paths recommendations in
+  favor of the [Flutter Favorites program][].
+  Look for additions to Flutter Favorites very soon!
+* As always, this release includes a few [breaking changes][breaking-changes].
+  (Note that, as Flutter matures, the number of breaking changes decreases.)
+  The following links have more information, including info on how to migrate
+  to the new APIs:
+  * [Removing the `ignoreSemantics` property from
+    `IgnorePointer`, `AbsorbPointer`, and `SliverIgnorePointer`][pointer]
+  * [A new `tabAlignment` property is added to `TabBar`][tab-alignment]
+  * [The `Editable.onCaretChanged` callback is removed][editable-onCaretChanged]
+  * [The global `describeEnum` function is deprecated][describe-enum]
+  * Also check out the [deprecated APIs since 3.10][deprecated-3.10]
+
+[breaking-changes]: {{site.url}}/release/breaking-changes
+[deprecated-3.10]: {{site.url}}/release/breaking-changes/3-10-deprecations
+[describe-enum]: {{site.url}}/release/breaking-changes/describe-enum
+[editable-onCaretChanged]: {{site.url}}/release/breaking-changes/editable-text-scroll-into-view
+[oem]: {{site.url}}/testing/native-debugging?tab=from-vscode-to-xcode-ios
+[pointer]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
+[scrolling-overview]: {{site.url}}/ui/layout/scrolling
+[tab-alignment]: {{site.url}}/release/breaking-changes/tab-alignment
 
 
-3.13
+3.13 - notes
 - 2D scrolling (new docs?)
 - new iOS page on flutter.dev (MAYBE released for 3.13)
   https://flutter-staging-21e61.web.app/multi-platform/ios
 - renaming "runner" on iOS - don't advertise!
-- new scrolling index page
 - impeller changes are there (Leigha)
-- predictive back (Justin)
-  https://docs.flutter.dev/release/breaking-changes/android-predictive-back
 - spellcheck for Android??? (Mariam) - NO
-- remove Happy Paths
-- chun's breaking change for accessibility
 - new codelab:
   https://codelabs.developers.google.com/flutter-home-screen-widgets
 
-3.16 (?)
-- mac video player - mini SDK to 19
-- material 3  by default
-- Android impeller preview
-- non-linear font scaling
-- updated Games toolkit
-- getting started
-- Polina is making tooling changes that will auto download VS code plugin
-- meet with accessibility requirements on the website
-  (significant progress over completion, color stuff first - Tony)
+**Codelabs**
 
-[scrolling-overview]: {{site.url}}/ui/layout/scrolling
-[oem]: {{site.url}}/testing/native-debugging?tab=from-vscode-to-xcode-ios
+The following codelab has been published since Flutter 3.10:
 
 ## 10 May 2023: Google I/O 2023: 3.10 release
 
@@ -91,7 +100,7 @@ You might also check out [Introducing Dart 3][].
   add-to-app module guide.
   You can debug your iOS or Android app on a physical device over Wi-Fi.
 * Updated the [Material Widget Catalog][] to cover Material 3.
-* Add the new [canvasKitVariant runtime configuration][] setting.
+* Added the new [canvasKitVariant runtime configuration][] setting.
   This web initialization option lets you configure which version of
   CanvasKit to download.
 * Updated the [Impeller][] reference.

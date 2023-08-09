@@ -273,7 +273,7 @@ if (_route.popDisposition == RoutePopDisposition.doNotPop) {
 ## Timeline
 
 Landed in version: 3.13<br>
-In stable release: 3.13
+In stable release: not yet (not in 3.13)
 
 ## References
 

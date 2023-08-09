@@ -31,43 +31,42 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
-* [Moved ReorderableListView's localized strings][]
-  from material to widgets localizations
-* [Removed `ignoringSemantics`][] properties
-* [Customize tabs alignment using the new `TabBar.tabAlignment` property][]
-* [Updated EditableText scroll into view behavior][]
 * [Deprecate `textScaleFactor` in favor of `TextScaler`][]
 * [Deprecate TextField.canRequestFocus][]
-* [Deprecate describeEnum and update EnumProperty to be type strict][]
+* [Deprecated just-in-time navigation pop APIs for Android Predictive Back][]
 
-[Moved ReorderableListView's localized strings]: {{site.url}}/release/breaking-changes/material-localized-strings
-[Removed `ignoringSemantics`]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
-[Customize tabs alignment using the new `TabBar.tabAlignment` property]: {{site.url}}/release/breaking-changes/tab-alignment
-[Updated EditableText scroll into view behavior]: {{site.url}}/release/breaking-changes/editable-text-scroll-into-view
 [Deprecate `textScaleFactor` in favor of `TextScaler`]: {{site.url}}/release/breaking-changes/deprecate-textscalefactor
 [Deprecate TextField.canRequestFocus]: {{site.url}}/release/breaking-changes/can-request-focus
-[Deprecate describeEnum and update EnumProperty to be type strict]: {{site.url}}/release/breaking-changes/describe-enum
+[Deprecated just-in-time navigation pop APIs for Android Predictive Back]: {{site.url}}/release/breaking-changes/android-predictive-back
 
 ### Released in Flutter 3.13
 
 * [Added AppLifecycleState.hidden][] enum value
+* [Customize tab alignment using the new `TabBar.tabAlignment` property][]
+* [Deprecate describeEnum and update EnumProperty to be type strict][]
 * [Deprecated API removed after v3.10][]
-* [Deprecated just-in-time navigation pop APIs for Android Predictive Back][]
+* [Moved ReorderableListView's localized strings][] from material to widgets localizations
+* [Removed `ignoringSemantics`][] properties
+* [Updated EditableText scroll into view behavior][]
 
 [Added AppLifecycleState.hidden]: {{site.url}}/release/breaking-changes/add-applifecyclestate-hidden
+[Customize tab alignment using the new `TabBar.tabAlignment` property]: {{site.url}}/release/breaking-changes/tab-alignment
+[Deprecate describeEnum and update EnumProperty to be type strict]: {{site.url}}/release/breaking-changes/describe-enum
 [Deprecated API removed after v3.10]: {{site.url}}/release/breaking-changes/3-10-deprecations
-[Deprecated just-in-time navigation pop APIs for Android Predictive Back]: {{site.url}}/release/breaking-changes/android-predictive-back
+[Moved ReorderableListView's localized strings]: {{site.url}}/release/breaking-changes/material-localized-strings
+[Removed `ignoringSemantics`]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
+[Updated EditableText scroll into view behavior]: {{site.url}}/release/breaking-changes/editable-text-scroll-into-view
 
 ### Released in Flutter 3.10
 
 * [Dart 3 changes in Flutter v3.10 and later][]
 * [Deprecated API removed after v3.7][]
-* [Insert content text input client][]
+* [Deprecated `RouteInformation.location`][] and its related APIs
 * [Deprecated the window singleton][]
+* [Insert content text input client][]
 * [Resolve the Android Java Gradle error][]
 * [Require one data variant for `ClipboardData` constructor][]
 * ["Zone mismatch" message][]
-* [Deprecated `RouteInformation.location`][] and its related APIs
 
 [Dart 3 changes in Flutter v3.10 and later]: {{site.dart-site}}/resources/dart-3-migration
 [Deprecated API removed after v3.7]: {{site.url}}/release/breaking-changes/3-7-deprecations
