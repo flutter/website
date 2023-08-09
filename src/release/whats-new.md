@@ -23,8 +23,54 @@ and review the [Dart changelog][].
 
 Flutter 3.13 is live!
 
-In addition to the release, we have recently released a revamped
+In addition to new docs since the last release,
+we have been incrementally releasing a revamped
 version of the docs.flutter.dev website.
+Specifically, we have reorganized (flattened) the 
+information architecture (IA) and have
+incorporated some of our most popular cookbook
+recipes into the sidenav.
+[Let us know what you think!][file-issue]
+
+**Docs updated or added since the 3.10 release**
+
+* A rewrite and rename that completes the
+  [Use a native language debugger][oem] page.
+  This page covers how to connect both a native
+  debugger and a Dart debugger to your app
+  for Android _and_ iOS.
+* A new [Layout/Scrolling][scrolling-overview] overview page.
+  (In fact, scrolling is also a new section of the IA.)
+
+
+3.13
+- 2D scrolling (new docs?)
+- new iOS page on flutter.dev (MAYBE released for 3.13)
+  https://flutter-staging-21e61.web.app/multi-platform/ios
+- renaming "runner" on iOS - don't advertise!
+- new scrolling index page
+- impeller changes are there (Leigha)
+- predictive back (Justin)
+  https://docs.flutter.dev/release/breaking-changes/android-predictive-back
+- spellcheck for Android??? (Mariam) - NO
+- remove Happy Paths
+- chun's breaking change for accessibility
+- new codelab:
+  https://codelabs.developers.google.com/flutter-home-screen-widgets
+
+3.16 (?)
+- mac video player - mini SDK to 19
+- material 3  by default
+- Android impeller preview
+- non-linear font scaling
+- updated Games toolkit
+- getting started
+- Polina is making tooling changes that will auto download VS code plugin
+- meet with accessibility requirements on the website
+  (significant progress over completion, color stuff first - Tony)
+
+[scrolling-overview]: {{site.url}}/ui/layout/scrolling
+[oem]: {{site.url}}/testing/native-debugging?tab=from-vscode-to-xcode-ios
 
 ## 10 May 2023: Google I/O 2023: 3.10 release
 
@@ -1221,13 +1267,13 @@ In addition, here are some recent new and updated docs:
   the new Dart DevTools UI.
 
 If you have questions or comments about any of these docs,
-[file an issue][].
+[file an issue][file-issue].
 
 [Android Studio/IntelliJ]: {{site.url}}/tools/android-studio
 [different state management options]: {{site.url}}/data-and-backend/state-mgmt/options
 [download the release]: {{site.url}}/release/archive
 [ephemeral vs app state]: {{site.url}}/data-and-backend/state-mgmt/ephemeral-vs-app
-[file an issue]: {{site.repo.this}}/issues
+[file-issue]: {{site.repo.this}}/issues
 [introduction]: {{site.url}}/data-and-backend/state-mgmt/intro
 [Performance profiling]: {{site.url}}/perf/ui-performance
 [1.2.1 release notes]: {{site.url}}/release/release-notes/release-notes-1.2.1

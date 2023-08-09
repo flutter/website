@@ -91,7 +91,7 @@ SystemNavigator.routeInformationUpdated(uri: Uri.parse('/myLocation'));
 ## Timeline
 
 Landed in version: 3.9.0-18.0.pre-93-gf9095ef022<br>
-In stable release: TBD
+In stable release: 3.10
 
 ## References
 

@@ -74,13 +74,13 @@ default case or conditional will still need to be evaluated to decide if the
 ## Timeline
 
 Landed in version: 3.11.0-16.0.pre
-In stable release: TBD
+In stable release: 3.13
 
 ## References
 
 Relevant PRs:
 
-* [PR 42418][]: Adds `AppLifecycleState.hidden` enum value.
+* [PR 42418][]: Adds `AppLifecycleState.hidden` enum value
 
 [PR 42418]: {{site.repo.engine}}/pull/42418
 [`WidgetsBindingObserver.didChangeAppLifecycleState`]: {{site.api}}/flutter/widgets/WidgetsBindingObserver/didChangeAppLifecycleState.html
