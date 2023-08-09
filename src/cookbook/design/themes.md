@@ -10,16 +10,17 @@ js:
 <?code-excerpt path-base="cookbook/design/themes"?>
 
 {{site.alert.note}}
-  This recipe uses the [Material 3 design specification][] and
+  This recipe uses Flutter's support for [Material 3][] and
   the [google_fonts][] package.
 {{site.alert.end}}
 
-[Material 3 design specification]: https://m3.material.io
+[Material 3]: https://m3.material.io
 [google_fonts]: {{site.pub-pkg}}/google_fonts
 
 To share colors and font styles throughout an app, use themes.
 
-You can define app-wide themes, add widget [`Theme`][] widgets, or both.
+You can define app-wide themes, add [`Theme`][] widgets
+to other component widgets, or both.
 Each theme defines the colors, type style, and other parameters applicable
 for the type of Material component.
 
@@ -48,10 +49,10 @@ colors and font styles for app bars, buttons, checkboxes, and more.
 
 To share a `Theme` across your entire app, add a `theme` property
 to your `MaterialApp` constructor.
-This property takes a takes a [`ThemeData`][] widget.
+This property takes a [`ThemeData`][] instance.
 
-To enable Material 3, add the [`useMaterial3`][] property
-to the `ThemeData` widget.
+To enable Material 3, add the [`useMaterial3`][] property,
+set to a value of `true`, to the `ThemeData` instance.
 
 If you don't add a theme to the constructor,
 Flutter creates a default theme for you.
@@ -88,7 +89,7 @@ MaterialApp(
 );
 ```
 
-Most `ThemeData` objects include two properties.
+Most instances of `ThemeData` set values for two properties.
 
 1. [`colorScheme`][] defines colors.
 1. [`textTheme`][] defines text styling.
@@ -144,8 +145,7 @@ To extend a theme, use the [`copyWith()`][] method.
 ```dart
 Theme(
   // Find and extend the parent theme using `copyWith`.
-  // To learn more, check out the next
-  // section on `Theme.of`.
+  // To learn more, check out the next section on `Theme.of`.
   data: Theme.of(context).copyWith(
       // TRY THIS: Change the seedColor to "Colors.red" or
       //           "Colors.blue".
@@ -162,7 +162,7 @@ Theme(
 To apply your new theme, add the `Theme.of(context)` method within the
 widgets' `build()` methods.
 
-The `Theme.of(context)` method looks up the widget tree and applies
+The `Theme.of(context)` method looks up the widget tree and retrieves
 the nearest `Theme` in the tree. If you have a standalone
 `Theme` as defined in the previous example, that's applied.
 If not, Flutter applies the app's theme.
@@ -248,7 +248,7 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context); // Simplifies later use of Theme context.
+    final theme = Theme.of(context); // Simplifies later use of Theme data.
 
     return Scaffold(
       appBar: AppBar(

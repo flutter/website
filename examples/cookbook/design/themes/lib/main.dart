@@ -57,7 +57,7 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context); // Simplifies later use of Theme context.
+    final theme = Theme.of(context); // Simplifies later use of Theme data.
 
     return Scaffold(
       appBar: AppBar(

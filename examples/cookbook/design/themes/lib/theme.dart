@@ -60,8 +60,7 @@ void theme(BuildContext context) {
   // #docregion ThemeCopyWith
   Theme(
     // Find and extend the parent theme using `copyWith`.
-    // To learn more, check out the next
-    // section on `Theme.of`.
+    // To learn more, check out the next section on `Theme.of`.
     data: Theme.of(context).copyWith(
         // TRY THIS: Change the seedColor to "Colors.red" or
         //           "Colors.blue".
