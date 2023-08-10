@@ -89,7 +89,7 @@ Wrap the `Column` widget in an `AnimatedOpacity` widget:
 ```diff
 --- opacity1/lib/main.dart
 +++ opacity2/lib/main.dart
-@@ -26,12 +26,14 @@
+@@ -27,12 +27,14 @@
          ),
          onPressed: () => {},
        ),
@@ -134,8 +134,8 @@ the starting value for `opacity` to zero:
 +
    @override
    Widget build(BuildContext context) {
-     return Column(children: <Widget>[
-@@ -27,6 +29,7 @@
+     double height = MediaQuery.of(context).size.height;
+@@ -28,6 +30,7 @@
          onPressed: () => {},
        ),
        AnimatedOpacity(
@@ -155,7 +155,7 @@ you can start with 2 seconds:
 ```diff
 --- opacity3/lib/main.dart
 +++ opacity4/lib/main.dart
-@@ -29,6 +29,7 @@
+@@ -30,6 +30,7 @@
          onPressed: () => {},
        ),
        AnimatedOpacity(
@@ -177,7 +177,7 @@ to set `opacity` to 1:
 ```diff
 --- opacity4/lib/main.dart
 +++ opacity5/lib/main.dart
-@@ -26,7 +26,9 @@
+@@ -27,7 +27,9 @@
            'Show Details',
            style: TextStyle(color: Colors.blueAccent),
          ),
@@ -207,34 +207,37 @@ example and click the **Show details** button to trigger the animation.
 The [Fade-in text effect][] example demonstrates the following features
 of the `AnimatedOpacity` widget.
 
-- It listens for state changes in its `opacity` property.
-- It animates the transition to the new value for `opacity`
-  when the `opacity` property changes.
-- It requires a `duration` parameter to define how long it should take
-  to animate the transition.
+- It listens for state changes to its `opacity` property.
+- When the `opacity` property changes,
+  it animates the transition to the new value for `opacity`.
+- It requires a `duration` parameter to define how long
+  the transition between the values should take.
 
-{{site.alert.secondary}}
+{{site.alert.note}}
 
-- Implicit animations can only animate properties of a parent
-  `StatefulWidget` widget. The following example shows this as it begins
-  with the `FadeInDemo` widget that extends `StatefulWidget` widget.
+  - Implicit animations can only animate the
+    properties of a parent stateful widget.
+    The preceding example enables this with the
+    `FadeInDemo` widget that extends `StatefulWidget`.
 
-- The `AnimatedOpacity` widget only animates the `opacity` property.
-  Some implicitly animated widgets can animate many properties
-  at the same time. The following example illustrates this.
+  - The `AnimatedOpacity` widget only animates the `opacity` property.
+    Some implicitly animated widgets can animate many properties
+    at the same time. The following example illustrates this.
 
 {{site.alert.end}}
 
 ## Example: Shape-shifting effect
 
-The following example shows how to use the [AnimatedContainer][] widget to
+The following example shows how to use the [`AnimatedContainer`][] widget to
 animate multiple properties (`margin`, `borderRadius`, and `color`) with
 different types (`double` and `Color`).
-**The example begins with no animation code** .It starts with a
-[Material App][] home screen that contains:
+**The example begins with no animation code**.
+It starts with a [Material App][] home screen that contains:
 
-- A `Container` widget with `borderRadius`, `margin`, and `color` properties
-  These properties change each time you run the example.
+- A `Container` widget configured with a
+ `borderRadius`, `margin`, and `color`.
+  These properties are setup to be regenerated 
+  each time you run the example.
 - A **Change** button that does nothing when clicked.
 
 ### Shape-shifting (starter code)
@@ -247,18 +250,21 @@ To start the example, click **Run**.
 
 This section contains a list of steps you can use to add an
 implicit animation to the [shape-shifting starter code][].
-After the steps, you can also run the
-[shape-shifting complete][] example with the changes already made.
+After completing each step, you can also run the
+[complete shape-shifting example][] with the changes already made.
 
 The [shape-shifting starter code][] assigns
 each property in the `Container` widget a random value.
-Associated methods set the assigned values.
+Associated functions generate the relevant values:
 
-- The `randomColor()` method sets the `color` property.
-- The `randomBorderRadius()` method sets `borderRadius` property.
-- The `randomMargin()` method sets the `margin` property.
+- The `randomColor()` function generates a
+  `Color` for the `color` property
+- The `randomBorderRadius()` function generates a
+  `double` for the `borderRadius` property.
+- The `randomMargin()` function generates a
+  `double` for the `margin` property.
 
-To refactor this code, use an `AnimatedContainer` widget to:
+This section uses the `AnimatedContainer` widget to:
 
 - Transition to new values for `color`, `borderRadius`,
   and `margin` whenever the user clicks **Change**.
@@ -292,8 +298,8 @@ Change the `Container` widget to an `AnimatedContainer` widget:
 #### 2. Set starting values for animated properties
 
 The `AnimatedContainer` widget transitions between old and new values of
-its properties when someone triggers a change.
-To define the behavior triggered when the user clicks **Change**,
+its properties when they change.
+To contain the behavior triggered when the user clicks **Change**,
 create a `change()` method.
 The `change()` method can use the `setState()` method to set new values
 for the `color`, `borderRadius`, and `margin` state variables:
@@ -386,15 +392,16 @@ The preceding examples show how:
   takes to complete.
 
 Implicit animations also allow you to control changes to **the rate**
-of an animation that the `duration` parameter set.
-To define this rate of change,
-set the value of the `curve` parameter to a constant in the [Curves][] class.
+of an animation that occurs during the set `duration`.
+To define this change in rate,
+set the value of the `curve` parameter to 
+a [`Curve`][], such as one declared in the [`Curves`][] class.
 
-The preceding examples did not specify a constant for the `curve` parameter.
-Without a defined curve constant,
+The preceding examples did not specify a value for the `curve` parameter.
+Without a specified curve value,
 the implicit animations apply a [linear animation curve][].
 
-Add a `curve` parameter to the [shape-shifting complete][].
+Add a `curve` parameter to the [complete shape-shifting example][].
 Watch how the animation changes when you pass the
 [`easeInOutBack`][] constant for `curve`,
 
@@ -413,7 +420,7 @@ Watch how the animation changes when you pass the
 ```
 
 When you pass the `Curves.easeInOutBack` constant to the `curve` property
-of the `AnimatedContainer` widget,
+of the `AnimatedContainer` widget, watch how
 the rates of change for `margin`, `borderRadius`, and `color`
 follow the curve that constant defined.
 
@@ -422,15 +429,9 @@ follow the curve that constant defined.
   <source src="{{site.flutter-assets}}/animation/curve_ease_in_out_back.mp4" type="video/mp4">
 </video>
 
-{{site.alert.secondary}}
-  You can pass other curve constants to the `curve` property.
-  To discover more uses of `curve` to modify your animations,
-  check out the [list of curve constants].
-{{site.alert.end}}
-
 ### Putting it all together
 
-The [shape-shifting complete][] example animates transitions between
+The [complete shape-shifting example][] animates transitions between
 values for `margin`, `borderRadius`, and `color` properties.
 The `AnimatedContainer` widget animates changes to any of its properties.
 These include those you didn't use such as `padding`, `transform`,
@@ -438,11 +439,13 @@ and even `child` and `alignment`!
 By showing additional capabilities of implicit animations,
 the [shape-shifting complete][] example builds upon [fade-in complete][].
 
+To summarize implicit animations:
+
 - Some implicit animations, like the `AnimatedOpacity` widget,
   only animate one property.
   Others, like the `AnimatedContainer` widget, can animate many properties.
-- Implicit animations transition between the old and new property values
-  using the provided `curve` and `duration`.
+- Implicit animations transition between the old and new value of a property
+  when it changes using the provided `curve` and `duration`.
 - If you do not specify a `curve`,
   implicit animations default to a [linear curve][].
 
