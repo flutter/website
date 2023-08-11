@@ -15,7 +15,7 @@
 {% include docs/help-link.md location='android-device' section='#android-setup' %}
 
 To configure your Flutter app to run on a physical Android device,
-you need an Android device running Android 4.1 (API level 16) or higher.
+you need an Android device running {{site.min.target.android}} or later.
 
 1. Enable **Developer options** and **USB debugging** on your device
    as described in the
@@ -95,25 +95,49 @@ follow these steps:
       </span> (**More Actions**) <span aria-label="and then">></span>
       **Virtual Device Manager** and select **Create Device...**
 
-1. Choose a device definition.
+1. Select either **Phone** or **Tablet** under **Category**.
+
+1. Select a device definition. You can browse or search for the device.
 
 1. Click **Next**.
 
-1. Select one or more system images for the Android versions you want
-   to emulate. An _x86_ or _x86\_64_ image is recommended.
+1. Click **Other Images**.
+
+1. Click one system image for the Android version you want to emulate.
+   Choose an image with an ABI of **x86_64**.
+
+   {:type="a"}
+   1. If the desired image has a **Download** link to the right
+      of the **Release Name**, click **Download**.
+
+      The **SDK Quickfix Installation** dialog displays with a
+      completion meter.
+
+   1. When the download completes, click **Finish**.
 
 1. Click **Next**.
 
-1. Under Emulated Performance, select **Hardware - GLES 2.0** to enable
-   [hardware
-   acceleration]({{site.android-dev}}/studio/run/emulator-acceleration).
+   The **Virtual Device Configuration** displays its **Verify Configuation**
+   step.
 
-1. Verify the AVD configuration is correct, and select **Finish**.
+1. To rename the Android Virtual Device (AVD), change the value in the
+   **AVD Name** box.
 
-   For details on the above steps, see [Managing
-   AVDs]({{site.android-dev}}/studio/run/managing-avds).
+1. Click **Show Advanced Settings**.
 
-1. In Android Virtual Device Manager, click **Run** in the toolbar.
+1. Scroll to **Emulated Performance**.
+
+1. From the **Graphics** dropdown menu, select **Hardware - GLES 2.0**.
+
+   This enables [hardware acceleration]({{site.android-dev}}/studio/run/emulator-acceleration).
+
+1. Verify your AVD configuration. If it is correct, click **Finish**.
+
+   To learn more about AVDs, check out
+   [Managing AVDs]({{site.android-dev}}/studio/run/managing-avds).
+
+1. In the **Device Manager** dialog, click **Run** icon to the right
+   of your desired AVD.
    The emulator starts up and displays the default canvas for your
    selected OS version and device.
 
@@ -148,7 +172,7 @@ agree to the licenses of the Android SDK platform.
 {:no_toc}
 
 <details markdown="1">
-<summary>**How to fix the error of finding Java install**</summary>
+<summary>How to fix the error of finding Java install</summary>
 
 You may have an issue with the Android SDK locating the Java SDK.
 

@@ -54,6 +54,29 @@ groups: https://groups.google.com
 firebase: https://firebase.google.com
 youtube-site: https://youtube.com
 
+## Software minimum versions
+
+min:
+  github_win: 2.4
+  vscode: 1.75
+  android_studio: '2022.2 (Flamingo)'
+  android_sdk: 19
+  powershell: 5.0
+  dev:
+    windows: '64-bit version of Microsoft Windows 10'
+    macos: '10.14 (Mojave)'
+    linux: 
+      debian: 10
+      ubuntu: '18.04 LTS'
+  target:
+    windows: 'Microsoft Windows 7'
+    macos: '10.13 (High Sierra)'
+    linux:
+      debian: 9
+      ubuntu: '18.04 LTS'
+    ios: 11
+    android: 'Android API level 19'
+
 
 ########### Jekyll ###########
 

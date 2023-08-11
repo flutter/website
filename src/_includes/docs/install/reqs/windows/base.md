@@ -5,6 +5,9 @@ your {{include.os}} environment must meet these requirements:
 
 ### Hardware requirements
 
+Your Flutter development environment must meet the following minimum hardware
+requirements. The optimal requirements are recommended.
+
 <div class="table-wrapper" markdown="1">
 |     Requirement              |                                    Minimum                               |      Optimal        |
 |:-----------------------------|:------------------------------------------------------------------------:|:-------------------:|
@@ -24,21 +27,23 @@ software packages.
 #### Operating system
 {:.no_toc}
 
-Flutter supports the 64-bit version of Microsoft Windows 10 or later.
-These versions of Windows should include [Windows PowerShell 5.0][].
+Flutter supports {{site.min.dev.windows}} or later.
+These versions of Windows should include the required
+[Windows PowerShell][] {{site.min.powershell}} or later.
 
 #### Development tools
 {:.no_toc}
 
 Download and install the Windows version of the following packages:
 
-- [Git for Windows][] 2.4 or later to manage source code.
-- [Visual Studio Code][] 1.75 or later to edit and debug Flutter code.
+- [Git for Windows][] {{site.min.github_win}} or later to manage source code.
+- [Visual Studio Code][] {{site.min.vscode}} or later
+  to edit and debug Flutter code.
 {% include docs/install/reqs/windows/software.md target=include.target %}
 
 Flutter doesn't support any of these packages.
 To troubleshoot installation issues, consult that product's documentation.
 
 [Visual Studio Code]: https://code.visualstudio.com/docs/setup/windows
-[Windows PowerShell 5.0]: https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell
+[Windows PowerShell]: https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell
 [Git for Windows]: https://gitforwindows.org/
