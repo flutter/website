@@ -27,17 +27,17 @@ software packages.
 #### Operating system
 {:.no_toc}
 
-Flutter supports {{site.min.dev.windows}} or later.
+Flutter supports {{site.devmin.windows}} or later.
 These versions of Windows should include the required
-[Windows PowerShell][] {{site.min.powershell}} or later.
+[Windows PowerShell][] {{site.appmin.powershell}} or later.
 
 #### Development tools
 {:.no_toc}
 
 Download and install the Windows version of the following packages:
 
-- [Git for Windows][] {{site.min.github_win}} or later to manage source code.
-- [Visual Studio Code][] {{site.min.vscode}} or later
+- [Git for Windows][] {{site.appmin.github_win}} or later to manage source code.
+- [Visual Studio Code][] {{site.appmin.vscode}} or later
   to edit and debug Flutter code.
 {% include docs/install/reqs/windows/software.md target=include.target %}
 

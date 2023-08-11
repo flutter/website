@@ -10,136 +10,34 @@
    This installs the required Android components listed under
    [Development tools](#development-tools).
 
-### Set up your target Android device
+### Configure your target Android device
 
-{% include docs/help-link.md location='android-device' section='#android-setup' %}
+{% comment %} Nav tabs {% endcomment -%}
+<ul class="nav nav-tabs" id="android-devices-vp" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="virtual-tab" href="#virtual" role="tab" aria-controls="virtual" aria-selected="true">Virtual Device</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="physical-tab" href="#physical" role="tab" aria-controls="physical" aria-selected="false">Physical Device</a>
+    </li>
+</ul>
 
-To configure your Flutter app to run on a physical Android device,
-you need an Android device running {{site.min.target.android}} or later.
+{% comment %} Tab panes {% endcomment -%}
+<div class="tab-content">
 
-1. Enable **Developer options** and **USB debugging** on your device
-   as described in the
-   [Android documentation]({{site.android-dev}}/studio/debug/dev-options).
+<div class="tab-pane active" id="virtual" role="tabpanel" aria-labelledby="virtual-tab" markdown="1">
 
-1. [Optional] To leverage wireless debugging,
-   enable **Wireless debugging** on your device as described in the
-   [Android documentation]({{site.android-dev}}/studio/run/device#wireless).
+{% include docs/install/devices/android-emulator.md %}
 
-{%- if include.os == 'Windows' %}
+</div>
 
-1. Install the [Google USB Driver]({{site.android-dev}}/studio/run/win-usb).
+<div class="tab-pane active" id="physical" role="tabpanel" aria-labelledby="physical-tab" markdown="1">
 
-{% endif %}
+{% include docs/install/devices/android-physical.md %}
 
-1. Plug your device into your {{include.os}} computer.
-   If your device prompts you, authorize your computer to access your device.
-
-1. Verify that Flutter recognizes your connected Android device.
-
-   {%- if include.os == 'Windows' %}
-
-   In PowerShell, run:
-
-   ```terminal
-   c:\> flutter devices
-   ```
-
-   {% elsif include.os == 'macOS' %}
-
-   In the Terminal, run:
-
-   ```terminal
-   $ flutter devices
-   ```
-
-   {% endif %}
-
-
-   By default, Flutter uses the version of the Android
-   SDK where your `adb` tool is based.
-   To use a different Android SDK installation path with Flutter,
-   set the `ANDROID_SDK_ROOT` environment variable
-   to that installation directory.
-
-### Set up the Android emulator
-
-{% include docs/help-link.md location='android-emulator' section='#android-setup' %}
-
-To configure your Flutter app to run in the Android emulator,
-follow these steps:
-
-1. Enable
-    [VM acceleration]({{site.android-dev}}/studio/run/emulator-acceleration#accel-vm)
-    on your development computer.
-
-1. Launch **Android Studio**.
-
-1. Go to **Tools** <span aria-label="and then">></span> **Device Manager**.
-
-1. Click **Virtual**.
-
-1. Click **Create Device**.
-
-   The **Virtual Device Configuration** dialog displays.
-
-    - In older versions of Android Studio, go to **Tools**
-      <span aria-label="and then">></span> **Android**
-      <span aria-label="and then">></span> **AVD Manager**.
-
-      Click **Create Virtual Device...**.
-      The **Android** submenu appears only when inside an Android project.
-
-    - If you do not have a project open, you can choose
-      <span class="material-icons-outlined">
-      more_vert
-      </span> (**More Actions**) <span aria-label="and then">></span>
-      **Virtual Device Manager** and select **Create Device...**
-
-1. Select either **Phone** or **Tablet** under **Category**.
-
-1. Select a device definition. You can browse or search for the device.
-
-1. Click **Next**.
-
-1. Click **Other Images**.
-
-1. Click one system image for the Android version you want to emulate.
-   Choose an image with an ABI of **x86_64**.
-
-   {:type="a"}
-   1. If the desired image has a **Download** link to the right
-      of the **Release Name**, click **Download**.
-
-      The **SDK Quickfix Installation** dialog displays with a
-      completion meter.
-
-   1. When the download completes, click **Finish**.
-
-1. Click **Next**.
-
-   The **Virtual Device Configuration** displays its **Verify Configuation**
-   step.
-
-1. To rename the Android Virtual Device (AVD), change the value in the
-   **AVD Name** box.
-
-1. Click **Show Advanced Settings**.
-
-1. Scroll to **Emulated Performance**.
-
-1. From the **Graphics** dropdown menu, select **Hardware - GLES 2.0**.
-
-   This enables [hardware acceleration]({{site.android-dev}}/studio/run/emulator-acceleration).
-
-1. Verify your AVD configuration. If it is correct, click **Finish**.
-
-   To learn more about AVDs, check out
-   [Managing AVDs]({{site.android-dev}}/studio/run/managing-avds).
-
-1. In the **Device Manager** dialog, click **Run** icon to the right
-   of your desired AVD.
-   The emulator starts up and displays the default canvas for your
-   selected OS version and device.
+</div>
+</div>
+{% comment %} End: Tab panes. {% endcomment -%}
 
 ### Agree to Android Licenses
 
@@ -169,7 +67,7 @@ agree to the licenses of the Android SDK platform.
    read each with care.
 
 #### Troubleshooting licensing issues
-{:no_toc}
+{:.no_toc}
 
 <details markdown="1">
 <summary>How to fix the error of finding Java install</summary>
