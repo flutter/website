@@ -77,7 +77,6 @@ min:
     ios: 11
     android: 'Android API level 19'
 
-
 ########### Jekyll ###########
 
 source: src
