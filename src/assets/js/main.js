@@ -1,4 +1,4 @@
-(() => {
+document.addEventListener("DOMContentLoaded", function(_) {
   adjustToc();
   initFixedColumns();
   scrollSidebarIntoView();
@@ -22,7 +22,7 @@
   setupTabs($('#ios-versions'), 'dev.flutter.ios-versions');
 
   prettyPrint();
-})();
+});
 
 function _getOSForArchive() {
   const os = getOS();
