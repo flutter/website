@@ -12,18 +12,19 @@ to match the Material 3 specification.
 
 ## Context
 
-The default text style for `MenuItemButton`, a widget for use
-in a `MenuBar`, in a menu created with `MenuAnchor`, and `DropdownMenuEntry`
-in the `DropdownMenu` is updated to match the Material 3 specification.
+The default text style for `MenuItemButton` (a widget used
+in a `MenuBar`, and in a menu created with `MenuAnchor`), and `DropdownMenuEntry`
+(in the `DropdownMenu`) is updated to match the Material 3 specification.
 
-The default text style for the `DropdownMenu`s `TextField` is updated to match
+Likewise, the default text style for the `DropdownMenu`s `TextField` is updated to match
 the Material 3 specification.
 
 ## Description of change
 
-The default text style for the `MenuItemButton`, widget for use in a`MenuBar`,
-in a menu created with `MenuAnchor`, and `DropdownMenuEntry`in the `DropdownMenu`
-is updated from`TextTheme.bodyLarge` to `TextTheme.labelLarge` for Material 3.
+The default text style for `MenuItemButton` (a widget used
+in a `MenuBar`, and in a menu created with `MenuAnchor`), and `DropdownMenuEntry`
+(in the `DropdownMenu`) is updated from `TextTheme.bodyLarge` to `TextTheme.labelLarge`
+for Material 3.
 
 The default text style for the `DropdownMenu`s `TextField` is updated from
 `TextTheme.labelLarge` to `TextTheme.bodyLarge` for Material 3.
@@ -164,6 +165,7 @@ menuButtonTheme: MenuButtonThemeData(
     textStyle: Theme.of(context).textTheme.bodyLarge,
   ),
 ),
+```
 
 ## Timeline
 
