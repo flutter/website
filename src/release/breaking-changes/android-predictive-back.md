@@ -270,6 +270,41 @@ if (_route.popDisposition == RoutePopDisposition.doNotPop) {
 }
 ```
 
+### Migrating a back confirmation dialog
+WillPopScope was sometimes used to show a confirmation dialog when a back
+gesture was received. This can still be done with PopScope in a similar pattern.
+
+Code before migration:
+
+```dart
+WillPopScope(
+  onWillPop: () async {
+    final bool? shouldPop = await _showBackDialog();
+    return shouldPop ?? false;
+  },
+  child: child,
+)
+```
+
+Code after migration:
+
+```dart
+return PopScope(
+  canPop: false,
+  onPopInvoked: (bool didPop) async {
+    if (didPop) {
+      return;
+    }
+    final NavigatorState navigator = Navigator.of(context);
+    final bool? shouldPop = await _showBackDialog();
+    if (shouldPop ?? false) {
+      navigator.pop();
+    }
+  },
+  child: child,
+)
+```
+
 ## Timeline
 
 Landed in version: 3.13<br>
