@@ -9,7 +9,4 @@ you need the following in addition to the Flutter SDK:
 
 Run the following command
 
-```terminal
-$ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev
-```
-
+{% include docs/linux-requirements-command.md %}

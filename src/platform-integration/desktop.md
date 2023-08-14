@@ -103,9 +103,7 @@ $ sudo snap install flutter --classic
 Alternatively, if you prefer not to use `snapd`,
 you can use the following command:
 
-```terminal
-$ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev libstdc++-12-dev
-```
+{% include docs/linux-requirements-command.md %}
 
 [Snap Store]: https://snapcraft.io/store
 [snapd]: https://snapcraft.io/flutter
