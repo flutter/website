@@ -31,7 +31,7 @@
 
 </div>
 
-<div class="tab-pane active" id="physical" role="tabpanel" aria-labelledby="physical-tab" markdown="1">
+<div class="tab-pane" id="physical" role="tabpanel" aria-labelledby="physical-tab" markdown="1">
 
 {% include docs/install/devices/android-physical.md %}
 

@@ -2,6 +2,9 @@
 title: Start building Flutter Android apps on Windows
 description: Configure your system to develop Flutter mobile apps on Windows.
 short-title: Android app
+next:
+  title: Create a test app
+  path: /get-started/test-drive
 ---
 
 {% include docs/install/reqs/windows/base.md target='mobile' os='Windows' %}

@@ -20,19 +20,6 @@ follow these steps:
 
    The **Virtual Device Configuration** dialog displays.
 
-    - In older versions of Android Studio, go to **Tools**
-      <span aria-label="and then">></span> **Android**
-      <span aria-label="and then">></span> **AVD Manager**.
-
-      Click **Create Virtual Device...**.
-      The **Android** submenu appears only when inside an Android project.
-
-    - If you do not have a project open, you can choose
-      <span class="material-icons-outlined">
-      more_vert
-      </span> (**More Actions**) <span aria-label="and then">></span>
-      **Virtual Device Manager** and select **Create Device...**
-
 1. Select either **Phone** or **Tablet** under **Category**.
 
 1. Select a device definition. You can browse or search for the device.

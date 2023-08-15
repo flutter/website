@@ -38,12 +38,13 @@ Download and install the Windows version of the following packages:
 
 - [Git for Windows][] {{site.appmin.github_win}} or later to manage source code.
 - [Visual Studio Code][] {{site.appmin.vscode}} or later
-  to edit and debug Flutter code.
+  and the [Flutter extension][] to edit and debug Flutter code.
 {% include docs/install/reqs/windows/software.md target=include.target %}
 
 Flutter doesn't support any of these packages.
 To troubleshoot installation issues, consult that product's documentation.
 
 [Visual Studio Code]: https://code.visualstudio.com/docs/setup/windows
+[Flutter extension]: https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter
 [Windows PowerShell]: https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell
 [Git for Windows]: https://gitforwindows.org/

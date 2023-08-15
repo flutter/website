@@ -235,6 +235,7 @@ dd {
 
 .install-help {
   text-align: right;
+  margin-top: -2.5rem;
 
   a {
     display: inline-flex;
@@ -273,7 +274,7 @@ summary {
   margin-bottom: 1rem;
 }
 
-ol + img, ul + img, ol + p, ul + p, p + p + img {
+ol + img, ul + img, ol + p, ul + p, p + p + img, ul + p:last-child {
   margin-bottom: 1rem;
 }
 
