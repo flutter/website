@@ -2,77 +2,46 @@
 
 {% include docs/help-link.md location='win-doctor' %}
 
+{% if include.os == 'Windows' -%}
+   {% assign path='C:\src\flutter' %}
+   {% assign terminal='PowerShell' %}
+   {% assign prompt1='C:>' %}
+   {% assign prompt2=path | append: '>' %}
+{% elsif include.os == "macOS" -%}
+   {% assign path='~/Applications/flutter' %}
+   {% assign terminal='the Terminal' %}
+   {% assign prompt1='$' %}
+   {% assign prompt2='$' %}
+{% else -%}
+   {% assign path='/usr/bin/flutter' %}
+   {% assign terminal='a shell' %}
+   {% assign prompt1='$' %}
+   {% assign prompt2='$' %}
+{% endif -%}
+
 ### Run Flutter Doctor
 
-{% if include.os == 'Windows' -%}
-
-1. Open PowerShell.
-
-{% elsif include.os == "macOS" -%}
-
-1. Open the Terminal.
-
-{% else -%}
-
-1. Open a shell.
-
-{% endif -%}
+1. Open {{terminal}}.
 
 1. Navigate to your Flutter installation directory.
 
    You set this in your `PATH` environment variable.
 
-   {% if include.os == 'Windows' -%}
-
-   This example installed Flutter in `c:\src\flutter`.
-
-   ```batchfile
-   C:\> cd C:\src\flutter
-   C:\src\flutter>
-   ```
-
-   {% elsif include.os == "macOS" -%}
-
-   This example installed Flutter in `~/Applications/flutter`.
+   This example installed Flutter in `{{path}}`.
 
    ```terminal
-   $ cd ~/Applications/flutter
+   {{prompt1}} cd {{path}}
+   {{prompt2}}
    ```
 
-   {% else -%}
-
-   This example installed Flutter in `/usr/bin/flutter`.
-
-   ```terminal
-   $ cd /usr/bin/flutter
-   ```
-
-   {% endif -%}
-
-   The Flutter directory is now your working directory.
+   The Flutter directory `{{path}}` is now your working directory.
 
 1. To verify your installation of all the components,
    run the following command.
 
-   {% if include.os == 'Windows' -%}
-
-   ```batchfile
-   C:\src\flutter> flutter doctor -v
-   ```
-
-   {% elsif include.os == "macOS" -%}
-
    ```terminal
-   $ flutter doctor -v
+   {{prompt2}} flutter doctor -v
    ```
-
-   {% else -%}
-
-   ```terminal
-   $ flutter doctor -v
-   ```
-
-   {% endif -%}
 
    The `flutter doctor` command validates that all components of a
    complete Flutter development environment for {{include.os}}.
@@ -95,12 +64,13 @@ The `flutter doctor` should report success for the following components:
 Android toolchain
 VS Code
 
-{% elsif include.platform == 'desktop' %}
+{% elsif include.platform == 'mobile' %}
 
 Visual Studio
 VS Code
 
-{% else include.platform == 'desktop' %}
+{% else include.platform == 'web' %}
+
 
 
 {% endif %}

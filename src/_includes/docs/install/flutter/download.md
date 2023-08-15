@@ -2,16 +2,28 @@
 {:.no_toc}
 
 {% assign os = include.os %}
+{% assign osl = include.os | downcase %}
+{% if os == 'Windows' -%}
+   {% assign unzip='Extract-Archive' %}
+{% elsif os == "macOS" -%}
+   {% assign unzip='unzip' %}
+{% else -%}
+   {% assign unzip='unzip' %}
+{% endif -%}
 
 1. Download the following installation bundle to get the latest
    {{site.sdk.channel}} release of the Flutter SDK:
 
-   [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
+   [(loading...)](#){:.download-latest-link-{{osl}}.btn.btn-primary}
 
    For other release channels, and older builds,
    check out the [SDK archive][].
 
 1. Extract the zip file.
+
+   ```terminal
+   {{unzip}} [(loading...)](#){:.download-latest-link-{{osl}}}
+   ```
 
 1. Move the contained `flutter` directory
    to where you want to store the Flutter SDK.
@@ -37,7 +49,7 @@
 To run Flutter commands in PowerShell,
 add Flutter to the `PATH` environment variable.
 
-1. In the **Start** search bar, type `env``.
+1. In the **Start** search bar, type `env`.
 
 1. Select **Edit environment variables for your account**.
 
