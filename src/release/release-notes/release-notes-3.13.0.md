@@ -569,7 +569,7 @@ see [Hotfixes to the Stable Channel][].
 * @fabiancrx made their first contribution in [128810](https://github.com/flutter/flutter/pull/128810)
 * @HenriqueNas made their first contribution in [128132](https://github.com/flutter/flutter/pull/128132)
 
-**Full Changelog**: https://github.com/flutter/flutter/compare/3.10.0...3.13.0-0.4.pre
+**Full Changelog**: https://github.com/flutter/flutter/compare/3.10.0...3.13.0
 
 ## Engine
 
@@ -809,5 +809,5 @@ see [Hotfixes to the Stable Channel][].
 * @marcianx made their first contribution in [42258](https://github.com/flutter/engine/pull/42258)
 * @mk12 made their first contribution in [42667](https://github.com/flutter/engine/pull/42667)
 
-**Full Changelog**: https://github.com/flutter/engine/compare/3.10.0...3.13.0-0.4.pre
+**Full Changelog**: https://github.com/flutter/engine/compare/3.10.0...3.13.0
 
