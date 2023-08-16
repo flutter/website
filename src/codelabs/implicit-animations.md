@@ -61,7 +61,7 @@ consists of a [Material App][] home screen containing:
 
 ### Fade-in (starter code)
 
-Click the **Run** button to run the example:
+To view the example, Click **Run**:
 
 {% include docs/implicit-animations/fade-in-starter-code.md %}
 
@@ -74,9 +74,9 @@ implicit animation to the
 The steps outline how to use the `AnimatedOpacity`
 widget to add the following animation feature:
 
-- The owl's description text remains hidden until the user clicks the
-  **Show details** button.
-- When the user clicks the **Show details** button,
+- The owl's description text remains hidden until the user clicks
+  **Show details**.
+- When the user clicks **Show details**,
   the owl's description text fades in.
 
 #### 1. Pick a widget property to animate
@@ -165,12 +165,12 @@ you can start with 2 seconds:
            children: [
 ```
 
-#### 4. Set up a trigger for the animation, and choose an end value
+#### 4. Set up a trigger for animation and choose an end value
 
-Configure the animation to trigger when the user clicks the **Show details**
-button. To do this, change `opacity` state using the `onPressed()` handler for
+Configure the animation to trigger when the user clicks **Show details**.
+To do this, change `opacity` state using the `onPressed()` handler for
 `TextButton`. To make the `FadeInDemo` widget become fully visible when
-the user clicks the **Show details** button, use the `onPressed()` handler
+the user clicks **Show details**, use the `onPressed()` handler
 to set `opacity` to 1:
 
 <?code-excerpt "opacity{4,5}/lib/main.dart"?>
@@ -197,8 +197,8 @@ to set `opacity` to 1:
 
 ### Fade-in (complete)
 
-Here's the example with the completed changes you've made&mdash;run this
-example and click the **Show details** button to trigger the animation.
+Here's the example with the completed changes you've made.
+Run this example then click **Show details** to trigger the animation.
 
 {% include docs/implicit-animations/fade-in-complete.md %}
 
