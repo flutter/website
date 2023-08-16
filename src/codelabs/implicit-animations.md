@@ -394,7 +394,7 @@ The preceding examples show how:
 Implicit animations also allow you to control changes to **the rate**
 of an animation that occurs during the set `duration`.
 To define this change in rate,
-set the value of the `curve` parameter to 
+set the value of the `curve` parameter to
 a [`Curve`][], such as one declared in the [`Curves`][] class.
 
 The preceding examples did not specify a value for the `curve` parameter.
@@ -437,7 +437,8 @@ The `AnimatedContainer` widget animates changes to any of its properties.
 These include those you didn't use such as `padding`, `transform`,
 and even `child` and `alignment`!
 By showing additional capabilities of implicit animations,
-the [shape-shifting complete][] example builds upon [fade-in complete][].
+the [complete shape-shifting example][] builds upon
+[fade-in complete][] example.
 
 To summarize implicit animations:
 
@@ -459,12 +460,13 @@ To learn more, check out these suggestions:
 - Checkout the [animation library][].
 - Try another [codelab][].
 
-[AnimatedContainer]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
+[`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
 [AnimatedOpacity]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html
 [animation library]: {{site.api}}/flutter/animation/animation-library.html
 [animations tutorial]: {{site.url}}/ui/animations/tutorial
 [codelab]: {{site.url}}/codelabs
-[Curves]: {{site.api}}/flutter/animation/Curve-class.html
+[`Curve`]: {{site.api}}/flutter/animation/Curve-class.html
+[`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
 [duration]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget/duration.html
 [`easeInOutBack`]: {{site.api}}/flutter/animation/Curves/easeInOutBack-constant.html
 [fade-in complete]: #fade-in-complete
@@ -474,10 +476,9 @@ To learn more, check out these suggestions:
 [ImplicitlyAnimatedWidget]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html
 [linear animation curve]: {{site.api}}/flutter/animation/Curves/linear-constant.html
 [linear curve]: {{site.api}}/flutter/animation/Curves/linear-constant.html
-[list of curve constants]: {{site.api}}/flutter/animation/Curves-class.html
 [make a Flutter app]: {{site.codelabs}}/codelabs/flutter-codelab-first
 [Material App]: {{site.api}}/flutter/material/MaterialApp-class.html
-[shape-shifting complete]: #shape-shifting-complete
+[complete shape-shifting example]: #shape-shifting-complete
 [shape-shifting starter code]: #shape-shifting-starter-code
 [staggered animations]: {{site.url}}/ui/animations/staggered-animations
 [stateful widgets]: {{site.url}}/ui/interactivity#stateful-and-stateless-widgets
