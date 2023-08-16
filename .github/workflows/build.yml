@@ -56,7 +56,7 @@ jobs:
       - name: Build site and check links
         run: make build
       - name: Install Node for Firebase install
-        uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8
+        uses: actions/setup-node@bea5baf987ba7aa777a8a0b4ace377a21c45c381
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Install Firebase CLI
