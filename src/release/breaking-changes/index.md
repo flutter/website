@@ -31,7 +31,6 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
-* [Customize tabs alignment using the new `TabBar.tabAlignment` property][]
 * [Deprecate `textScaleFactor` in favor of `TextScaler`][]
 * [Deprecate TextField.canRequestFocus][]
 * [Deprecate `describeEnum` and update `EnumProperty` to be type strict][]
@@ -51,6 +50,7 @@ release, and listed in alphabetical order:
 * [Removed `ignoringSemantics`][] properties
 * [Deprecated `RouteInformation.location`][] and its related APIs
 * [Updated EditableText scroll into view behavior][]
+* [Customize tabs alignment using the new `TabBar.tabAlignment` property][]
 
 [Deprecated API removed after v3.10]: {{site.url}}/release/breaking-changes/3-10-deprecations
 [Added AppLifecycleState.hidden]: {{site.url}}/release/breaking-changes/add-applifecyclestate-hidden
