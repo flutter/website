@@ -4,11 +4,9 @@ on:
   push:
     branches:
       - main
-      - v3.13
   pull_request:
     branches:
       - main
-      - v3.13
   schedule:
     - cron: "0 0 * * 0"
 
