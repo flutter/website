@@ -1,6 +1,8 @@
 ---
 title: Deprecate textScaleFactor in favor of TextScaler
-description: The new class, `TextScaler`, replaces the `textScaleFactor` scalar in preparation for Android 14 nonlinear text scaling support.
+description: >
+  The new class, `TextScaler`, replaces the `textScaleFactor` scalar in
+  preparation for Android 14 nonlinear text scaling support.
 ---
 
 ## Summary
