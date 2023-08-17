@@ -55,21 +55,18 @@ recipes into the sidenav.
   including info on how to migrate to the new APIs:
   * [Removing the `ignoreSemantics` property from
     `IgnorePointer`, `AbsorbPointer`, and `SliverIgnorePointer`][pointer]
-  * [A new `tabAlignment` property is added to `TabBar`][tab-alignment]
   * [The `Editable.onCaretChanged` callback is removed][editable-onCaretChanged]
-  * [The global `describeEnum` function is deprecated][describe-enum]
   * Also check out the [deprecated APIs since 3.10][deprecated-3.10]
 
 [blog-general]: {{site.flutter-medium}}/whats-new-in-flutter-3-13-479d9b11df4d
+[Flutter Favorites program]: /packages-and-plugins/favorites
 [breaking-changes]: {{site.url}}/release/breaking-changes
 [deprecated-3.10]: {{site.url}}/release/breaking-changes/3-10-deprecations
-[describe-enum]: {{site.url}}/release/breaking-changes/describe-enum
 [editable-onCaretChanged]: {{site.url}}/release/breaking-changes/editable-text-scroll-into-view
 [impeller]: {{site.url}}/perf/impeller
 [oem]: {{site.url}}/testing/native-debugging?tab=from-vscode-to-xcode-ios
 [pointer]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
 [scrolling-overview]: {{site.url}}/ui/layout/scrolling
-[tab-alignment]: {{site.url}}/release/breaking-changes/tab-alignment
 
 **Codelabs and workshops**
 
@@ -100,7 +97,7 @@ Things that are coming soon-ish to a stable release:
 
 You've probably heard by now that [Material 3][] is coming.
 It's been available on Flutter for some time now,
-by setting `useMaterial3:true` in your code.
+by setting `useMaterial3: true` in your code.
 By the next stable release in Q4,
 Material 3 will be enabled by default. Now would
 be a good time to start migrating your code.
@@ -109,8 +106,8 @@ has been updated to use Material 3.
 
 For more information,
 check out the following resources:
+
 * [Flutter 3.13 blog post][blog-material]
-* [Material Flutter][]
 * [Material Design for Flutter][] page.
 
 **Impeller for Android**
@@ -125,7 +122,7 @@ We have been working on updating our scrolling APIs.
 The rework will eventually result in 2D scrolling
 support for trees and tables, even diagonal scrolling!. 
 Flutter 3.13 also provides new Sliver classes for fancy scrolling.
-For more information, checkk out the
+For more information, check out the
 [Flutter 3.13 blog post][blog-scrolling].
 
 **Updates to the Games toolkit**
