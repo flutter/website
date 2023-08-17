@@ -28,7 +28,7 @@ changing selection from collapsed to non-collapsed using
 ## Timeline
 
 Landed in version: 3.12.0-4.0.pre<br>
-In stable release: 3.13
+In stable release: 3.13.0
 
 ## References
 

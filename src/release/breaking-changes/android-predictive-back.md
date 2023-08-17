@@ -272,8 +272,8 @@ if (_route.popDisposition == RoutePopDisposition.doNotPop) {
 
 ## Timeline
 
-Landed in version: 3.13<br>
-In stable release: not yet (not in 3.13)
+Landed in version: 3.14.0-0.0.pre<br>
+In stable release: not yet
 
 ## References
 
@@ -300,8 +300,6 @@ Relevant PRs:
 
 * [Predictive Back support for root routes][]
 * [Platform channel for predictive back][]
-
-{% include docs/master-api.md %}
 
 [`PopScope`]: {{site.master-api}}/flutter/widgets/PopScope-class.html
 [`NavigatorPopHandler`]: {{site.master-api}}/flutter/widgets/NavigatorPopHandler-class.html

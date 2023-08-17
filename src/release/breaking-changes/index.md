@@ -31,46 +31,46 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Customize tabs alignment using the new `TabBar.tabAlignment` property][]
 * [Deprecate `textScaleFactor` in favor of `TextScaler`][]
 * [Deprecate TextField.canRequestFocus][]
+* [Deprecate `describeEnum` and update `EnumProperty` to be type strict][]
 * [Deprecated just-in-time navigation pop APIs for Android Predictive Back][]
 
+[Customize tabs alignment using the new `TabBar.tabAlignment` property]: {{site.url}}/release/breaking-changes/tab-alignment
 [Deprecate `textScaleFactor` in favor of `TextScaler`]: {{site.url}}/release/breaking-changes/deprecate-textscalefactor
 [Deprecate TextField.canRequestFocus]: {{site.url}}/release/breaking-changes/can-request-focus
+[Deprecate `describeEnum` and update `EnumProperty` to be type strict]: {{site.url}}/release/breaking-changes/describe-enum
 [Deprecated just-in-time navigation pop APIs for Android Predictive Back]: {{site.url}}/release/breaking-changes/android-predictive-back
 
 ### Released in Flutter 3.13
 
-* [Added AppLifecycleState.hidden][] enum value
-* [Customize tab alignment using the new `TabBar.tabAlignment` property][]
-* [Deprecate describeEnum and update EnumProperty to be type strict][]
 * [Deprecated API removed after v3.10][]
+* [Added AppLifecycleState.hidden][] enum value
 * [Moved ReorderableListView's localized strings][] from material to widgets localizations
 * [Removed `ignoringSemantics`][] properties
+* [Deprecated `RouteInformation.location`][] and its related APIs
 * [Updated EditableText scroll into view behavior][]
 
-[Added AppLifecycleState.hidden]: {{site.url}}/release/breaking-changes/add-applifecyclestate-hidden
-[Customize tab alignment using the new `TabBar.tabAlignment` property]: {{site.url}}/release/breaking-changes/tab-alignment
-[Deprecate describeEnum and update EnumProperty to be type strict]: {{site.url}}/release/breaking-changes/describe-enum
 [Deprecated API removed after v3.10]: {{site.url}}/release/breaking-changes/3-10-deprecations
+[Added AppLifecycleState.hidden]: {{site.url}}/release/breaking-changes/add-applifecyclestate-hidden
 [Moved ReorderableListView's localized strings]: {{site.url}}/release/breaking-changes/material-localized-strings
 [Removed `ignoringSemantics`]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
+[Deprecated `RouteInformation.location`]: {{site.url}}/release/breaking-changes/route-information-uri
 [Updated EditableText scroll into view behavior]: {{site.url}}/release/breaking-changes/editable-text-scroll-into-view
 
 ### Released in Flutter 3.10
 
 * [Dart 3 changes in Flutter v3.10 and later][]
 * [Deprecated API removed after v3.7][]
-* [Deprecated `RouteInformation.location`][] and its related APIs
-* [Deprecated the window singleton][]
 * [Insert content text input client][]
+* [Deprecated the window singleton][]
 * [Resolve the Android Java Gradle error][]
 * [Require one data variant for `ClipboardData` constructor][]
 * ["Zone mismatch" message][]
 
 [Dart 3 changes in Flutter v3.10 and later]: {{site.dart-site}}/resources/dart-3-migration
 [Deprecated API removed after v3.7]: {{site.url}}/release/breaking-changes/3-7-deprecations
-[Deprecated `RouteInformation.location`]: {{site.url}}/release/breaking-changes/route-information-uri
 [Insert Content Text Input Client]: {{site.url}}/release/breaking-changes/insert-content-text-input-client
 [Deprecated the window singleton]: {{site.url}}/release/breaking-changes/window-singleton
 [Resolve the Android Java Gradle error]: {{site.url}}/release/breaking-changes/android-java-gradle-migration-guide

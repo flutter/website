@@ -9,8 +9,10 @@ The global method `describeEnum` has been deprecated. Previous uses
 of `describeEnum(Enum.something)` should use
 `Enum.something.name` instead.
 
-The class EnumProperty was modified to extend `<T extends Enum?>` instead of `<T>`.
-Existing uses of `EnumProperty<NotAnEnum>` should use `DiagnosticsProperty<NotAnEnum>` instead.
+The class `EnumProperty` was modified to
+extend `<T extends Enum?>` instead of `<T>`. 
+Existing uses of `EnumProperty<NotAnEnum>` should
+use `DiagnosticsProperty<NotAnEnum>` instead.
 
 ## Context
 
@@ -66,8 +68,8 @@ properties.add(DiagnosticsProperty<TextInputType>( ... ));
 
 ## Timeline
 
-Landed in version: 3.13<br>
-In stable release: 3.13
+Landed in version: 3.14.0-2.0.pre<br>
+In stable release: not yet
 
 ## References
 
@@ -88,18 +90,9 @@ Relevant PRs:
 * [Deprecate `describeEnum` PR][]
 
 [`describeEnum` stable]: {{site.api}}/flutter/lib/src/foundation/describeEnum.html
-
 [`EnumProperty` stable]: {{site.api}}/flutter/lib/src/foundation/EnumProperty.html
-
-<!-- Master channel link: -->
-{% include docs/master-api.md %}
-
 [`describeEnum` main]: {{site.master-api}}/flutter/lib/src/foundation/describeEnum.html
-
 [`EnumProperty` main]: {{site.master-api}}/flutter/lib/src/foundation/describeEnum.html
 
-[Cleanup SemanticsFlag and SemanticsAction issue][cleanup-issue]
-
-[cleanup-issue]: {{site.repo.flutter}}/issues/123346
-
+[Cleanup SemanticsFlag and SemanticsAction issue]: {{site.repo.flutter}}/issues/123346
 [Deprecate `describeEnum` PR]: {{site.repo.flutter}}/pull/125016

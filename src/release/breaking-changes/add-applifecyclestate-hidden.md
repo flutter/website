@@ -74,7 +74,7 @@ default case or conditional will still need to be evaluated to decide if the
 ## Timeline
 
 Landed in version: 3.11.0-16.0.pre<br>
-In stable release: 3.13
+In stable release: 3.13.0
 
 ## References
 

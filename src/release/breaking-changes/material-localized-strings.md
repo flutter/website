@@ -73,7 +73,7 @@ class WidgetsLocalizationsMyLanguage extends WidgetsLocalizationsEn {
 ## Timeline
 
 Landed in version: v3.10.0-2.0.pre<br>
-In stable release: 3.13
+In stable release: 3.13.0
 
 ## References
 
