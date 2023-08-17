@@ -16,14 +16,9 @@ You can see the complete list of
 [Flutter Favorite packages][] on pub.dev.
 
 {{site.alert.note}}
-  Looking to add more functionality to your app?
-  The [Happy paths project][] guides you with
-  opinionated recommendations for 
-  plugins and packages that can take your app
-  to the next level.
+  If you came here looking for the Happy Paths recommendations,
+  we have discontinued that project in favor of Flutter Favorites.
 {{site.alert.end}}
-
-[Happy paths project]: {{site.url}}/packages-and-plugins/happy-paths
 
 ## Metrics
 

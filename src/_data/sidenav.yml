@@ -115,20 +115,10 @@
 - title: Design & theming
   permalink: /ui/design
   children:
+    - title: Share styles with themes
+      permalink: /cookbook/design/themes
     - title: Material design
       permalink: /ui/design/material
-      children:
-        - title: Overview
-          permalink: /ui/design/material
-          match-page-url-exactly: true
-        - title: Use themes to share styles
-          permalink: /cookbook/design/themes
-        - title: Add a drawer to a screen
-          permalink: /cookbook/design/drawer
-        - title: Display a snackbar
-          permalink: /cookbook/design/snackbars
-        - title: Add tabs to your app
-          permalink: /cookbook/design/tabs
     - title: Text
       permalink: /ui/design/text
       children:
@@ -181,6 +171,8 @@
           permalink: /cookbook/forms/focus
         - title: Build a form with validation
           permalink: /cookbook/forms/validation
+    - title: Display a snackbar
+      permalink: /cookbook/design/snackbars
     - title: Implement actions & shortcuts
       permalink: /ui/interactivity/actions-and-shortcuts
     - title: Manage keyboard focus
@@ -204,12 +196,16 @@
     - title: Overview
       permalink: /ui/navigation
       match-page-url-exactly: true
+    - title: Add tabs to your app
+      permalink: /cookbook/design/tabs
     - title: Navigate to a new screen and back
       permalink: /cookbook/navigation/navigation-basics
     - title: Send data to a new screen
       permalink: /cookbook/navigation/passing-data
     - title: Return data from a screen
       permalink: /cookbook/navigation/returning-data
+    - title: Add a drawer to a screen
+      permalink: /cookbook/design/drawer
     - title: Setup deep linking
       permalink: /ui/navigation/deep-linking
     - title: Setup app links for Android
@@ -245,9 +241,17 @@
       permalink: /cookbook/effects/staggered-menu-animation
     - title: API overview
       permalink: /ui/animations/overview
+      
+- title: Accessibility & localization
+  permalink: /ui/accessibility-and-localization
+  children:
+    - title: Accessibility
+      permalink: /ui/accessibility-and-localization/accessibility
+    - title: Internationalization
+      permalink: /ui/accessibility-and-localization/internationalization
 
 - divider
-- header: Development
+- header: Beyond UI
 
 - title: Data & backend
   permalink: /data-and-backend
@@ -303,14 +307,6 @@
       permalink: /data-and-backend/firebase
     - title: Google APIs
       permalink: /data-and-backend/google-apis
-
-- title: Accessibility & localization
-  permalink: /accessibility-and-localization
-  children:
-    - title: Accessibility
-      permalink: /accessibility-and-localization/accessibility
-    - title: Internationalization
-      permalink: /accessibility-and-localization/internationalization
 
 - title: Platform integration
   permalink: /platform-integration
@@ -394,8 +390,6 @@
     - title: Develop packages & plugins
       permalink: /packages-and-plugins/developing-packages
     - divider
-    - title: Happy paths
-      permalink: /packages-and-plugins/happy-paths
     - title: Flutter Favorites
       permalink: /packages-and-plugins/favorites
     - title: Package repository

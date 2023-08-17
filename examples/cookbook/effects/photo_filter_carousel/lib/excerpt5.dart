@@ -95,7 +95,7 @@ class FilterItem extends StatelessWidget {
           child: ClipOval(
             child: Image.network(
               'https://docs.flutter.dev/cookbook/img-files'
-              '/effects/instagram-buttons/millenial-texture.jpg',
+              '/effects/instagram-buttons/millennial-texture.jpg',
               color: color.withOpacity(0.5),
               colorBlendMode: BlendMode.hardLight,
             ),

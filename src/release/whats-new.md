@@ -211,7 +211,7 @@ and [Introducing Dart 3 alpha][].
 [Flutter FAQ]: {{site.url}}/resources/faq
 [Flutter for SwiftUI developers]: {{site.url}}/get-started/flutter-for/swiftui-devs
 [Impeller]: {{site.github}}/flutter/flutter/wiki/Impeller
-[Internationalizing Flutter apps]: {{site.url}}/accessibility-and-localization/internationalization
+[Internationalizing Flutter apps]: {{site.url}}/ui/accessibility-and-localization/internationalization
 [Introducing isolate background channels]: {{site.medium}}/flutter/introducing-background-isolate-channels-7a299609cad8
 [Learning Dart as a Swift developer]: {{site.dart-site}}/guides/language/coming-from/swift-to-dart
 [Security false positives]: {{site.url}}/reference/security-false-positives
@@ -365,7 +365,9 @@ and the [Flutter 3 release notes][].
 * Are you struggling to level up as a Flutter
   developer? We have created the Happy paths
   project to help. Learn more on the 
-  [Happy paths page][].
+  Happy paths page.
+  (Note, this program has been discontinued
+  in favor of the [Flutter Favorite Program][].)
 * Are you a web developer who would like more
   control over your app's launch process?
   Check out the new page,
@@ -402,7 +404,6 @@ and the [Flutter 3 release notes][].
 [Flutter Firebase get started guide]: https://firebase.google.com/docs/flutter/setup
 [Games page]: {{site.main-url}}/games
 [Games doc page]: {{site.url}}/resources/games-toolkit
-[Happy paths page]: {{site.url}}/packages-and-plugins/happy-paths
 [js-to-dart]: {{site.dart-site}}/guides/language/coming-from/js-to-dart
 [macOS install page]: {{site.url}}/get-started/install/macos
 
@@ -686,7 +687,7 @@ publication since the last stable release:
 [Flutter inspector]: {{site.url}}/tools/devtools/inspector
 [Flutter web support hits the stable milestone]: {{site.flutter-medium}}/flutter-web-support-hits-the-stable-milestone-d6b84e83b425
 [implement deep linking]: {{site.url}}/ui/navigation/deep-linking
-[internationalization]: {{site.url}}/accessibility-and-localization/internationalization
+[internationalization]: {{site.url}}/ui/accessibility-and-localization/internationalization
 [Join us for #30DaysOfFlutter]: {{site.flutter-medium}}/join-us-for-30daysofflutter-9993e3ec847b
 [More thoughts about performance]: {{site.url}}/perf/appendix
 [New ad formats for Flutter]: {{site.flutter-medium}}/new-ads-beta-inline-banner-and-native-support-for-the-flutter-mobile-ads-plugin-e48a7e9a0e64

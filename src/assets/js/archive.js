@@ -283,8 +283,7 @@ function getProvenanceLink(os, release, date, channel) {
 
 
 // Send requests to render the tables.
-(() => {
-
+document.addEventListener("DOMContentLoaded", function(_) {
   const foundSdkArchivesElement = document.getElementById('sdk-archives') !== null;
   if (foundSdkArchivesElement) {
     fetchFlutterReleases('windows', updateTable, updateTableFailed);
@@ -307,4 +306,4 @@ function getProvenanceLink(os, release, date, channel) {
   if (foundLatestLinux) {
     fetchFlutterReleases('linux', updateDownloadLink, updateDownloadLinkFailed);
   }
-})();
+});
