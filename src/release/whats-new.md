@@ -21,7 +21,8 @@ and review the [Dart changelog][].
 
 ## 16 August 2023: 3.13 release
 
-Flutter 3.13 is live!
+Flutter 3.13 is live! For more information,
+check out the [Flutter 3.13 blog post][blog-general].
 
 In addition to new docs since the last release,
 we have been incrementally releasing a revamped
@@ -46,10 +47,12 @@ recipes into the sidenav.
 * We have sunsetted the Happy Paths recommendations in
   favor of the [Flutter Favorites program][].
   Look for additions to Flutter Favorites very soon!
+* The Impeller runtime is now available for macOS
+  behind a flag. For more information, check out
+  the [Impeller rendering engine][impeller] page.
 * As always, this release includes a few [breaking changes][breaking-changes].
-  (Note that, as Flutter matures, the number of breaking changes decreases.)
-  The following links have more information, including info on how to migrate
-  to the new APIs:
+  The following links have more information,
+  including info on how to migrate to the new APIs:
   * [Removing the `ignoreSemantics` property from
     `IgnorePointer`, `AbsorbPointer`, and `SliverIgnorePointer`][pointer]
   * [A new `tabAlignment` property is added to `TabBar`][tab-alignment]
@@ -57,29 +60,91 @@ recipes into the sidenav.
   * [The global `describeEnum` function is deprecated][describe-enum]
   * Also check out the [deprecated APIs since 3.10][deprecated-3.10]
 
+[blog-general]: {{site.flutter-medium}}/whats-new-in-flutter-3-13-479d9b11df4d
 [breaking-changes]: {{site.url}}/release/breaking-changes
 [deprecated-3.10]: {{site.url}}/release/breaking-changes/3-10-deprecations
 [describe-enum]: {{site.url}}/release/breaking-changes/describe-enum
 [editable-onCaretChanged]: {{site.url}}/release/breaking-changes/editable-text-scroll-into-view
+[impeller]: {{site.url}}/perf/impeller
 [oem]: {{site.url}}/testing/native-debugging?tab=from-vscode-to-xcode-ios
 [pointer]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
 [scrolling-overview]: {{site.url}}/ui/layout/scrolling
 [tab-alignment]: {{site.url}}/release/breaking-changes/tab-alignment
 
-
-3.13 - notes
-- 2D scrolling (new docs?)
-- new iOS page on flutter.dev (MAYBE released for 3.13)
-  https://flutter-staging-21e61.web.app/multi-platform/ios
-- renaming "runner" on iOS - don't advertise!
-- impeller changes are there (Leigha)
-- spellcheck for Android??? (Mariam) - NO
-- new codelab:
-  https://codelabs.developers.google.com/flutter-home-screen-widgets
-
-**Codelabs**
+**Codelabs and workshops**
 
 The following codelab has been published since Flutter 3.10:
+
+* [Adding a Home Screen widget to your Flutter app][home-screen]
+
+[home-screen]:   {{site.codelabs}}/flutter-home-screen-widgets
+
+**Articles**
+
+The following articles were published on the [Flutter Medium][]
+publication since Flutter 3.10:
+
+* [The Future of iOS development with Flutter][]
+* [How it's made: I/O Flip][]
+* [Flutter 2023 Q1 survey results][]
+
+[Flutter 2023 Q1 survey results]: {{site.flutter-medium}}/flutter-2023-q1-survey-api-breaking-changes-deep-linking-and-more-7ff692f974e0
+[How it's made: I/O Flip]: {{site.flutter-medium}}/how-its-made-i-o-flip-da9d8184ef57
+[The Future of iOS development with Flutter]: {site.flutter-medium}}/the-future-of-ios-development-with-flutter-833aa9779fac
+
+**What's coming**
+
+Things that are coming soon-ish to a stable release:
+
+**Material 3**
+
+You've probably heard by now that [Material 3][] is coming.
+It's been available on Flutter for some time now,
+by setting `useMaterial3:true` in your code.
+By the next stable release in Q4,
+Material 3 will be enabled by default. Now would
+be a good time to start migrating your code.
+Most all of the example code on this website
+has been updated to use Material 3.
+
+For more information,
+check out the following resources:
+* [Flutter 3.13 blog post][blog-material]
+* [Material Flutter][]
+* [Material Design for Flutter][] page.
+
+**Impeller for Android**
+
+Progress continues on Impeller for Android.
+For more information, check out the
+[Flutter 3.13 blog post][blog-impeller].
+
+**New scrolling APIs**
+
+We have been working on updating our scrolling APIs.
+The rework will eventually result in 2D scrolling
+support for trees and tables, even diagonal scrolling!. 
+Flutter 3.13 also provides new Sliver classes for fancy scrolling.
+For more information, checkk out the
+[Flutter 3.13 blog post][blog-scrolling].
+
+**Updates to the Games toolkit**
+
+We are working on updates to the Flutter Games toolkit,
+including the sample code, additional docs, and a new video.
+The Games toolkit is developed independently of the
+Flutter SDK, so stay tuned for updates as they are ready.
+For  more information,
+check out the [Flutter 3.13 blog post][blog-games].
+
+[blog-games]:     {{site.flutter-medium}}/whats-new-in-flutter-3-13-479d9b11df4d#30b2
+[blog-impeller]:  {{site.flutter-medium}}/whats-new-in-flutter-3-13-479d9b11df4d#a7be
+[blog-material]:  {{site.flutter-medium}}/whats-new-in-flutter-3-13-479d9b11df4d#4c90
+[blog-scrolling]: {{site.flutter-medium}}/whats-new-in-flutter-3-13-479d9b11df4d#02dc
+[Material 3]: https://m3.material.io/
+[Material Design for Flutter]: {{site.url}}/ui/design/material
+
+<hr>
 
 ## 10 May 2023: Google I/O 2023: 3.10 release
 
@@ -263,7 +328,6 @@ and [Introducing Dart 3 alpha][].
     Nope, nothing available
   * Font asset hot reload - Jonah
 {% endcomment -%}
-
 
 [Add a Flutter screen to an iOS app]: {{site.url}}/add-to-app/ios/add-flutter-screen
 [Adding an iOS clip target]: {{site.url}}/platform-integration/ios/ios-app-clip

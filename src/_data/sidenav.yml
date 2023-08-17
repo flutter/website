@@ -460,7 +460,7 @@
     - title: Overview
       permalink: /perf
       match-page-url-exactly: true
-    - title: Impeller **NEW**
+    - title: Impeller
       permalink: /perf/impeller
     - title: Performance best practices
       permalink: /perf/best-practices
