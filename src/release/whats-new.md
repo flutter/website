@@ -87,7 +87,7 @@ publication since Flutter 3.10:
 
 [Flutter 2023 Q1 survey results]: {{site.flutter-medium}}/flutter-2023-q1-survey-api-breaking-changes-deep-linking-and-more-7ff692f974e0
 [How it's made: I/O Flip]: {{site.flutter-medium}}/how-its-made-i-o-flip-da9d8184ef57
-[The Future of iOS development with Flutter]: {site.flutter-medium}}/the-future-of-ios-development-with-flutter-833aa9779fac
+[The Future of iOS development with Flutter]: {{site.flutter-medium}}/the-future-of-ios-development-with-flutter-833aa9779fac
 
 **What's coming**
 
