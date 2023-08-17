@@ -56,21 +56,20 @@
    While initializing, the **Output** panel displays the following:
 
    ```terminal
-   
    Building flutter tool...
    Running pub upgrade...
    Resolving dependencies...
    Got dependencies.
-   Downloading Material fonts
-   Downloading Gradle Wrapper
-   Downloading package sky_engine
+   Downloading Material fonts...
+   Downloading Gradle Wrapper...
+   Downloading package sky_engine...
    Downloading flutter_patched_sdk tools...
    Downloading flutter_patched_sdk_product tools...
    Downloading windows-x64 tools...
    Downloading windows-x64/font-subset tools...
    ```
 
-   This process also runs `flutter doctor -v`. Ignore this output.
+   This process also runs `flutter doctor -v`. _Ignore this output._
 
    When the Flutter install succeeds, a notification displays:
 
@@ -91,7 +90,7 @@
 
    If you agree, click **OK**.
 
-### Troubleshoot Flutter install
+### Troubleshoot Flutter VS Code install
 {:.no_toc}
 
 If you receive the following error, you need to login to your GitHub account,

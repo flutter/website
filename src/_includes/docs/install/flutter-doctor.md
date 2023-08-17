@@ -2,12 +2,14 @@
 
 {% include docs/help-link.md location='win-doctor' %}
 
-{% if include.os == 'Windows' -%}
+{% assign os = include.os %}
+{% assign target = include.target %}
+{% if os == 'Windows' -%}
    {% assign path='C:\src\flutter' %}
    {% assign terminal='PowerShell' %}
    {% assign prompt1='C:>' %}
    {% assign prompt2=path | append: '>' %}
-{% elsif include.os == "macOS" -%}
+{% elsif os == "macOS" -%}
    {% assign path='~/Applications/flutter' %}
    {% assign terminal='the Terminal' %}
    {% assign prompt1='$' %}
@@ -18,10 +20,54 @@
    {% assign prompt1='$' %}
    {% assign prompt2='$' %}
 {% endif -%}
+{% if target == 'web' %}
+{% assign limiter = '--no-enable-linux-desktop --no-enable-macos-desktop --no-enable-windows-desktop --no-enable-android --no-enable-ios' %}
+{% capture limitresponse -%}
+   Setting "enable-linux-desktop" value to "false".
+   Setting "enable-macos-desktop" value to "false".
+   Setting "enable-windows-desktop" value to "false".
+   Setting "enable-android" value to "false".
+   Setting "enable-ios" value to "false".
+{% endcapture %}
+{% elsif target == 'mobile' %}
+{% assign limiter = '--no-enable-web --no-enable-linux-desktop --no-enable-macos-desktop --no-enable-windows-desktop' %}
+{% capture limitresponse -%}
+   Setting "enable-web" value to "false".
+   Setting "enable-linux-desktop" value to "false".
+   Setting "enable-macos-desktop" value to "false".
+   Setting "enable-windows-desktop" value to "false".
+{% endcapture %}
+{% elsif target == 'desktop' %}
+{% assign limiter = '--no-enable-web --no-enable-android --no-enable-ios' %}
+{% capture limitresponse -%}
+   Setting "enable-web" value to "false".
+   Setting "enable-android" value to "false".
+   Setting "enable-ios" value to "false".
+{% endcapture %}
+{% endif %}
 
 ### Run Flutter Doctor
 
+The `flutter doctor` command validates that all components of a
+complete Flutter development environment for {{include.os}}.
+
 1. Open {{terminal}}.
+
+1. Exclude development targets that do not apply to {{target}} development.
+   This hides issues that don't impact your chosen configuration.
+
+   ```terminal
+   {{prompt2}} flutter config {{limiter}}
+   ```
+
+   The command response should resemble the following:
+
+   ```terminal
+   {{limitresponse}}
+   You may need to restart any open editors for them to read new settings.
+   ```
+
+   You can re-enable these targets later.
 
 1. Navigate to your Flutter installation directory.
 
@@ -40,48 +86,28 @@
    run the following command.
 
    ```terminal
-   {{prompt2}} flutter doctor -v
+   {{prompt2}} flutter doctor
    ```
 
-   The `flutter doctor` command validates that all components of a
-   complete Flutter development environment for {{include.os}}.
+As you chose to develop for {{include.target}},
+you do not need _all_ components.
+If you followed this guide, result of your command should resemble:
 
-   As you chose to develop for {{include.target}},
-   you do not need _all_ components.
-   You can ignore the following warnings:
+```terminal
+{% include docs/install/flutter-doctor-success.md %}
+```
 
 ### Troubleshoot Flutter Doctor issues
 
-The `flutter doctor` command reports on the status of
-your Flutter development environment.
-Check the output for other software you might need to install
-or further tasks to perform.
-
-The `flutter doctor` should report success for the following components:
-
-{% if include.platform == 'desktop' %}
-
-Android toolchain
-VS Code
-
-{% elsif include.platform == 'mobile' %}
-
-Visual Studio
-VS Code
-
-{% else include.platform == 'web' %}
-
-
-
-{% endif %}
+If the `flutter doctor` command returns an error,
+run it again with the verbose flag.
 
 ```terminal
-[-] Android toolchain - develop for Android devices
-    • Android SDK at D:\Android\sdk
-    ✗ Android SDK is missing command line tools; download from https://goo.gl/XxQghQ
-    • Try re-installing or updating your Android SDK,
-    visit {{site.url}}/setup/#android-setup for detailed instructions.
+{{prompt2}} flutter doctor -v
 ```
+
+Check the output for other software you might need to install
+or further tasks to perform.
 
 If you change the configuration of your Flutter SDK or its related components,
 run `flutter doctor` again to verify the install again.
