@@ -1,6 +1,7 @@
 ---
 title: What’s new
-description: A list of what’s new on flutter.dev and related documentation sites.
+description: >
+  A list of what’s new on docs.flutter.dev and related documentation sites.
 ---
 
 This page contains current and previous announcements of
@@ -23,6 +24,9 @@ and review the [Dart changelog][].
 
 Flutter 3.13 is live! For more information,
 check out the [Flutter 3.13 blog post][blog-general].
+
+You might also check out 
+[Dart 3.1 & a retrospective on functional style programming in Dart 3][].
 
 In addition to new docs since the last release,
 we have been incrementally releasing a revamped
@@ -59,6 +63,7 @@ recipes into the sidenav.
   * Also check out the [deprecated APIs since 3.10][deprecated-3.10]
 
 [blog-general]: {{site.flutter-medium}}/whats-new-in-flutter-3-13-479d9b11df4d
+[Dart 3.1 & a retrospective on functional style programming in Dart 3]: {{site.medium}}/dartlang/dart-3-1-a-retrospective-on-functional-style-programming-in-dart-3-a1f4b3a7cdda
 [Flutter Favorites program]: /packages-and-plugins/favorites
 [breaking-changes]: {{site.url}}/release/breaking-changes
 [deprecated-3.10]: {{site.url}}/release/breaking-changes/3-10-deprecations
@@ -108,7 +113,7 @@ For more information,
 check out the following resources:
 
 * [Flutter 3.13 blog post][blog-material]
-* [Material Design for Flutter][] page.
+* [Material Design for Flutter][] page
 
 **Impeller for Android**
 
@@ -120,7 +125,7 @@ For more information, check out the
 
 We have been working on updating our scrolling APIs.
 The rework will eventually result in 2D scrolling
-support for trees and tables, even diagonal scrolling!. 
+support for trees and tables, even diagonal scrolling!
 Flutter 3.13 also provides new Sliver classes for fancy scrolling.
 For more information, check out the
 [Flutter 3.13 blog post][blog-scrolling].
