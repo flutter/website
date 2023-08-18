@@ -1,6 +1,7 @@
 ---
 title: What’s new
-description: A list of what’s new on flutter.dev and related documentation sites.
+description: >
+  A list of what’s new on docs.flutter.dev and related documentation sites.
 ---
 
 This page contains current and previous announcements of
@@ -18,6 +19,134 @@ and review the [Dart changelog][].
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [Dart Announce]: https://groups.google.com/a/dartlang.org/g/announce
 [Dart changelog]: {{site.github}}/dart-lang/sdk/blob/main/CHANGELOG.md
+
+## 16 August 2023: 3.13 release
+
+Flutter 3.13 is live! For more information,
+check out the [Flutter 3.13 blog post][blog-general].
+
+You might also check out 
+[Dart 3.1 & a retrospective on functional style programming in Dart 3][].
+
+In addition to new docs since the last release,
+we have been incrementally releasing a revamped
+version of the docs.flutter.dev website.
+Specifically, we have reorganized (flattened) the 
+information architecture (IA) and have
+incorporated some of our most popular cookbook
+recipes into the sidenav.
+[Let us know what you think!][file-issue]
+
+**Docs updated or added since the 3.10 release**
+
+* A rewrite and rename that completes the
+  [Use a native language debugger][oem] page.
+  This page covers how to connect both a native
+  debugger and a Dart debugger to your app
+  for Android _and_ iOS. (The previous
+  version of this page was out of date and
+  didn't cover iOS.)
+* A new [Layout/Scrolling][scrolling-overview] overview page.
+  (In fact, scrolling is also a new section of the IA.)
+* We have sunsetted the Happy Paths recommendations in
+  favor of the [Flutter Favorites program][].
+  Look for additions to Flutter Favorites very soon!
+* The Impeller runtime is now available for macOS
+  behind a flag. For more information, check out
+  the [Impeller rendering engine][impeller] page.
+* As always, this release includes a few [breaking changes][breaking-changes].
+  The following links have more information,
+  including info on how to migrate to the new APIs:
+  * [Removing the `ignoreSemantics` property from
+    `IgnorePointer`, `AbsorbPointer`, and `SliverIgnorePointer`][pointer]
+  * [The `Editable.onCaretChanged` callback is removed][editable-onCaretChanged]
+  * Also check out the [deprecated APIs since 3.10][deprecated-3.10]
+
+[blog-general]: {{site.flutter-medium}}/whats-new-in-flutter-3-13-479d9b11df4d
+[Dart 3.1 & a retrospective on functional style programming in Dart 3]: {{site.medium}}/dartlang/dart-3-1-a-retrospective-on-functional-style-programming-in-dart-3-a1f4b3a7cdda
+[Flutter Favorites program]: /packages-and-plugins/favorites
+[breaking-changes]: {{site.url}}/release/breaking-changes
+[deprecated-3.10]: {{site.url}}/release/breaking-changes/3-10-deprecations
+[editable-onCaretChanged]: {{site.url}}/release/breaking-changes/editable-text-scroll-into-view
+[impeller]: {{site.url}}/perf/impeller
+[oem]: {{site.url}}/testing/native-debugging?tab=from-vscode-to-xcode-ios
+[pointer]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
+[scrolling-overview]: {{site.url}}/ui/layout/scrolling
+
+**Codelabs and workshops**
+
+The following codelab has been published since Flutter 3.10:
+
+* [Adding a Home Screen widget to your Flutter app][home-screen]
+
+[home-screen]:   {{site.codelabs}}/flutter-home-screen-widgets
+
+**Articles**
+
+The following articles were published on the [Flutter Medium][]
+publication since Flutter 3.10:
+
+* [The Future of iOS development with Flutter][]
+* [How it's made: I/O Flip][]
+* [Flutter 2023 Q1 survey results][]
+
+[Flutter 2023 Q1 survey results]: {{site.flutter-medium}}/flutter-2023-q1-survey-api-breaking-changes-deep-linking-and-more-7ff692f974e0
+[How it's made: I/O Flip]: {{site.flutter-medium}}/how-its-made-i-o-flip-da9d8184ef57
+[The Future of iOS development with Flutter]: {{site.flutter-medium}}/the-future-of-ios-development-with-flutter-833aa9779fac
+
+**What's coming**
+
+Things that are coming soon-ish to a stable release:
+
+**Material 3**
+
+You've probably heard by now that [Material 3][] is coming.
+It's been available on Flutter for some time now,
+by setting `useMaterial3: true` in your code.
+By the next stable release in Q4,
+Material 3 will be enabled by default. Now would
+be a good time to start migrating your code.
+Most all of the example code on this website
+has been updated to use Material 3.
+
+For more information,
+check out the following resources:
+
+* [Flutter 3.13 blog post][blog-material]
+* [Material Design for Flutter][] page
+
+**Impeller for Android**
+
+Progress continues on Impeller for Android.
+For more information, check out the
+[Flutter 3.13 blog post][blog-impeller].
+
+**New scrolling APIs**
+
+We have been working on updating our scrolling APIs.
+The rework will eventually result in 2D scrolling
+support for trees and tables, even diagonal scrolling!
+Flutter 3.13 also provides new Sliver classes for fancy scrolling.
+For more information, check out the
+[Flutter 3.13 blog post][blog-scrolling].
+
+**Updates to the Games toolkit**
+
+We are working on updates to the Flutter Games toolkit,
+including the sample code, additional docs, and a new video.
+The Games toolkit is developed independently of the
+Flutter SDK, so stay tuned for updates as they are ready.
+For  more information,
+check out the [Flutter 3.13 blog post][blog-games].
+
+[blog-games]:     {{site.flutter-medium}}/whats-new-in-flutter-3-13-479d9b11df4d#30b2
+[blog-impeller]:  {{site.flutter-medium}}/whats-new-in-flutter-3-13-479d9b11df4d#a7be
+[blog-material]:  {{site.flutter-medium}}/whats-new-in-flutter-3-13-479d9b11df4d#4c90
+[blog-scrolling]: {{site.flutter-medium}}/whats-new-in-flutter-3-13-479d9b11df4d#02dc
+[Material 3]: https://m3.material.io/
+[Material Design for Flutter]: {{site.url}}/ui/design/material
+
+<hr>
 
 ## 10 May 2023: Google I/O 2023: 3.10 release
 
@@ -38,7 +167,7 @@ You might also check out [Introducing Dart 3][].
   add-to-app module guide.
   You can debug your iOS or Android app on a physical device over Wi-Fi.
 * Updated the [Material Widget Catalog][] to cover Material 3.
-* Add the new [canvasKitVariant runtime configuration][] setting.
+* Added the new [canvasKitVariant runtime configuration][] setting.
   This web initialization option lets you configure which version of
   CanvasKit to download.
 * Updated the [Impeller][] reference.
@@ -201,7 +330,6 @@ and [Introducing Dart 3 alpha][].
     Nope, nothing available
   * Font asset hot reload - Jonah
 {% endcomment -%}
-
 
 [Add a Flutter screen to an iOS app]: {{site.url}}/add-to-app/ios/add-flutter-screen
 [Adding an iOS clip target]: {{site.url}}/platform-integration/ios/ios-app-clip
@@ -1215,13 +1343,13 @@ In addition, here are some recent new and updated docs:
   the new Dart DevTools UI.
 
 If you have questions or comments about any of these docs,
-[file an issue][].
+[file an issue][file-issue].
 
 [Android Studio/IntelliJ]: {{site.url}}/tools/android-studio
 [different state management options]: {{site.url}}/data-and-backend/state-mgmt/options
 [download the release]: {{site.url}}/release/archive
 [ephemeral vs app state]: {{site.url}}/data-and-backend/state-mgmt/ephemeral-vs-app
-[file an issue]: {{site.repo.this}}/issues
+[file-issue]: {{site.repo.this}}/issues
 [introduction]: {{site.url}}/data-and-backend/state-mgmt/intro
 [Performance profiling]: {{site.url}}/perf/ui-performance
 [1.2.1 release notes]: {{site.url}}/release/release-notes/release-notes-1.2.1

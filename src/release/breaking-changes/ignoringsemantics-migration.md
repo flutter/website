@@ -19,8 +19,8 @@ the entire semantics subtree but merely blocks semantics actions in the
 subtree. The `ignoringSemantics` workaround is no longer needed and is
 deprecated.
 
-This change also applies to the AbsorbPointer and
-SliverIgnorePointer widgets.
+This change also applies to the `AbsorbPointer` and
+`SliverIgnorePointer` widgets.
 
 ## Description of change
 
