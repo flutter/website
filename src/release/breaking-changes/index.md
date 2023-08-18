@@ -51,6 +51,7 @@ release, and listed in alphabetical order:
 * [Removed `ignoringSemantics`][] properties
 * [Deprecated `RouteInformation.location`][] and its related APIs
 * [Updated EditableText scroll into view behavior][]
+* [Migrate a Windows project to ensure the window is shown][]
 
 [Deprecated API removed after v3.10]: {{site.url}}/release/breaking-changes/3-10-deprecations
 [Added AppLifecycleState.hidden]: {{site.url}}/release/breaking-changes/add-applifecyclestate-hidden
@@ -58,6 +59,7 @@ release, and listed in alphabetical order:
 [Removed `ignoringSemantics`]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
 [Deprecated `RouteInformation.location`]: {{site.url}}/release/breaking-changes/route-information-uri
 [Updated EditableText scroll into view behavior]: {{site.url}}/release/breaking-changes/editable-text-scroll-into-view
+[Migrate a Windows project to ensure the window is shown]: {{site.url}}/release/breaking-changes/windows-show-window-migration
 
 ### Released in Flutter 3.10
 
