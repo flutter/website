@@ -58,16 +58,12 @@ that calls `loadEntrypoint` from the `flutter.js` file:
 </html>
 ```
 
-
-
 {{site.alert.note}}
   In Flutter 2.10 or earlier,
   this script doesn't support customization.
   To upgrade your `index.html` file to the latest version,
   see [Upgrading an older project](#upgrading-an-older-project).
 {{site.alert.end}}
-
-
 
 The `loadEntrypoint` function calls the `onEntrypointLoaded` callback
 once the Service Worker is initialized, and the `main.dart.js` entrypoint
@@ -143,7 +139,6 @@ You can add any of the following optional parameters:
 
 [jsflutterconfig-source]: {{site.github}}/flutter/engine/blob/main/lib/web_ui/lib/src/engine/configuration.dart#L247-L259
 [web-renderers]: {{site.url}}/platform-integration/web/renderers
-[web-renderers]: {{site.url}}/platform-integration/web/renderers
 
 {{site.alert.note}}
   Some of the parameters described above might have been overridden
@@ -177,7 +172,7 @@ For a more detailed explanation of each parameter, take a look at the
 **"Runtime parameters"** documentation section of the [`configuration.dart`][config-dart]
 file of the web engine.
 
-[config-dart]: {{site.github}}/flutter/engine/blob/main/lib/web_ui/lib/src/engine/configuration.dart#L150
+[config-dart]: {{site.github}}/flutter/engine/blob/main/lib/web_ui/lib/src/engine/configuration.dart#L174
 
 #### Skipping this step
 
@@ -185,7 +180,6 @@ Instead of calling `initializeEngine()` on the engine initializer (and then
 `runApp()` on the application runner), you can call `autoStart()` to
 initialize the engine with its default configuration, and then start the app
 immediately after the initialization is complete:
-
 
 ```js
 _flutter.loader.loadEntrypoint({
@@ -203,7 +197,6 @@ _flutter.loader.loadEntrypoint({
 To give the user of your application feedback
 during the initialization process,
 use the hooks provided for each stage to update the DOM:
-
 
 ```html
 <html>
@@ -234,7 +227,6 @@ use the hooks provided for each stage to update the DOM:
   </body>
 </html>
 ```
-
 
 For a more practical example using CSS animations,
 see the [initialization code][gallery-init] for the Flutter Gallery.
