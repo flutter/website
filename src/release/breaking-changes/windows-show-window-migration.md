@@ -3,9 +3,11 @@ title: Migrate a Windows project to ensure the window is shown
 description: How to update a Windows project to ensure the window is shown
 ---
 
-Flutter 3.13 fixed an issue that could result in the window not being shown.
+Flutter 3.13 fixed a [bug][] that could result in the window not being shown.
 Windows projects created using Flutter 3.7 or Flutter 3.10 need to be migrated
 to fix this issue.
+
+[bug]: {{site.github}}/flutter/flutter/issues/119415
 
 ## Migration steps
 
