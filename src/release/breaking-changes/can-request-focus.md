@@ -61,7 +61,7 @@ class _MyWidgetState extends State<MyWidget> {
 ## Timeline
 
 Landed in version: 3.13.0-15.0.pre<br>
-In stable release: not yet
+In stable release: not yet (not in 3.13)
 
 ## References
 
