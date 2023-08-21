@@ -337,8 +337,6 @@ Relevant PRs:
 * [Predictive Back support for root routes][]
 * [Platform channel for predictive back][]
 
-{% include docs/master-api.md %}
-
 [`PopScope`]: {{site.master-api}}/flutter/widgets/PopScope-class.html
 [`NavigatorPopHandler`]: {{site.master-api}}/flutter/widgets/NavigatorPopHandler-class.html
 [`PopInterface`]: {{site.master-api}}/flutter/widgets/PopInterface-class.html

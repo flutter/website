@@ -9,7 +9,10 @@ The global method `describeEnum` has been deprecated. Previous uses
 of `describeEnum(Enum.something)` should use
 `Enum.something.name` instead.
 
-The class EnumProperty was modified to extend `<T extends Enum?>` instead of `<T>`. Existing uses of `EnumProperty<NotAnEnum>` should use `DiagnosticsProperty<NotAnEnum>` instead.
+The class `EnumProperty` was modified to
+extend `<T extends Enum?>` instead of `<T>`. 
+Existing uses of `EnumProperty<NotAnEnum>` should
+use `DiagnosticsProperty<NotAnEnum>` instead.
 
 ## Context
 
@@ -22,7 +25,8 @@ The `describeEnum` method was used to convert an enum value to a string,
 since `Enum.something.toString()` would produce `Enum.something` instead
 of `something`, which a lot of users wanted. Now, the `name` getter does this.
 
-The `describeEnum` function is being deprecated, so the `EnumProperty` class is updated to only accept `Enum` objects.
+The `describeEnum` function is being deprecated,
+so the `EnumProperty` class is updated to only accept `Enum` objects.
 
 ## Description of change
 
@@ -64,7 +68,7 @@ properties.add(DiagnosticsProperty<TextInputType>( ... ));
 
 ## Timeline
 
-Landed in version: TBD<br>
+Landed in version: 3.14.0-2.0.pre<br>
 In stable release: not yet
 
 ## References
@@ -75,7 +79,7 @@ API documentation:
 * [`describeEnum` main][]
 * [`EnumProperty` stable][]
 * [`EnumProperty` main][]
-* [enhanced enums]: https://github.com/dart-lang/language/blob/main/working/0158%20-%20Enhanced%20Enum/proposal.md
+* [enhanced enums]: {{site.github}}/dart-lang/language/blob/main/working/0158%20-%20Enhanced%20Enum/proposal.md
 
 Relevant issues:
 
@@ -86,18 +90,9 @@ Relevant PRs:
 * [Deprecate `describeEnum` PR][]
 
 [`describeEnum` stable]: {{site.api}}/flutter/lib/src/foundation/describeEnum.html
-
 [`EnumProperty` stable]: {{site.api}}/flutter/lib/src/foundation/EnumProperty.html
-
-<!-- Master channel link: -->
-{% include docs/master-api.md %}
-
 [`describeEnum` main]: {{site.master-api}}/flutter/lib/src/foundation/describeEnum.html
-
 [`EnumProperty` main]: {{site.master-api}}/flutter/lib/src/foundation/describeEnum.html
 
-[Cleanup SemanticsFlag and SemanticsAction issue][cleanup-issue]
-
-[cleanup-issue]: {{site.repo.flutter}}/issues/123346
-
+[Cleanup SemanticsFlag and SemanticsAction issue]: {{site.repo.flutter}}/issues/123346
 [Deprecate `describeEnum` PR]: {{site.repo.flutter}}/pull/125016

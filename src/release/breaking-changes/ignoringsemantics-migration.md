@@ -19,8 +19,8 @@ the entire semantics subtree but merely blocks semantics actions in the
 subtree. The `ignoringSemantics` workaround is no longer needed and is
 deprecated.
 
-This change also applies to the AbsorbPointer and
-SliverIgnorePointer widgets.
+This change also applies to the `AbsorbPointer` and
+`SliverIgnorePointer` widgets.
 
 ## Description of change
 
@@ -140,7 +140,7 @@ class _RenderSliverIgnorePointerWithSemantics extends RenderProxySliver {
 ## Timeline
 
 Landed in version: 3.10.0-2.0.pre<br>
-In stable release: TBD
+In stable release: 3.13.0
 
 ## References
 
