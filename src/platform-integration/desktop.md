@@ -106,6 +106,7 @@ you can use the following command:
 {% include docs/linux-requirements-command.md %}
 
 [Snap Store]: https://snapcraft.io/store
+[Installing snapd]: https://snapcraft.io/docs/installing-snapd
 [snapd]: https://snapcraft.io/flutter
 
 ## Create a new project
