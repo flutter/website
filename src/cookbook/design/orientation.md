@@ -137,15 +137,14 @@ class OrientationList extends StatelessWidget {
 
 ## Locking device orientation
 
-In the previous section you have learned 
+In the previous section, you learned 
 how to adapt the app UI to device orientation changes.
 
-However, Flutter also allows you define the specific preferred orientations
-that your app will support.
-This allows you to lock the app to single orientation 
-(e.g. only portrait up position)
-or to allow multiple orientations 
-(e.g. both portrait up and down, but not lanscape).
+Flutter also allows you define the specific preferred orientations
+that your app supports. You can either:
+
+- lock the app to single orientation like only portrait up position or
+- allow multiple orientations like both portrait up and down, but not landscape.
 
 In the application `main()` method,
 call to [`SystemChrome.setPreferredOrientations()`]
@@ -154,7 +153,7 @@ with the list of preferred orientations that your app supports.
 You can also pass a list with a single item
 to lock the device to that specific device orientation.
 
-Check [`DeviceOrientation`] for a list of all the possible values.
+For a list of all the possible values, check out [`DeviceOrientation`].
 
 <?code-excerpt "lib/orientation.dart (PreferredOrientations)"?>
 ```dart
