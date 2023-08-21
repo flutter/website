@@ -306,6 +306,19 @@ return PopScope(
 )
 ```
 
+### Supporting predictive back
+
+  1. Run Android 33 or above.
+  1. Enable the feature flag for predictive back on the device under "Developer
+     options". This will be unnecessary on future versions of Android.
+  1. Set `android:enableOnBackInvokedCallback="true"` in
+     android/app/src/main/AndroidManifest.xml. If needed, refer to
+     [Android's full guide](https://developer.android.com/guide/navigation/custom-back/predictive-back-gesture)
+     for migrating Android apps to support predictive back.
+  1. Make sure you're using version 3.14.0-7.0.pre of Flutter or greater.
+  1. Run the app. Perform a back gesture (swipe from the left side of the
+     screen).
+
 ## Timeline
 
 Landed in version: 3.14.0-7.0.pre<br>
