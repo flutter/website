@@ -87,12 +87,7 @@ you need the following in addition to the Flutter SDK:
 For Linux desktop development,
 you need the following in addition to the Flutter SDK:
 
-* [Clang][]
-* [CMake][]
-* [GTK development headers][]
-* [Ninja build][]
-* [pkg-config][]
-* [liblzma-dev][] This dependency might be required
+{% include docs/linux-requirements-list.md %}
 
 One easy way to install the Flutter SDK along with the necessary
 dependencies is by using [snapd][].
@@ -108,17 +103,8 @@ $ sudo snap install flutter --classic
 Alternatively, if you prefer not to use `snapd`,
 you can use the following command:
 
-```terminal
-$ sudo apt-get install clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev libstdc++-12-dev
-```
+{% include docs/linux-requirements-command.md %}
 
-[Clang]: https://clang.llvm.org/
-[CMake]: https://cmake.org/
-[GTK development headers]: https://developer.gnome.org/gtk3/3.2/gtk-getting-started.html
-[Installing snapd]: https://snapcraft.io/docs/installing-snapd
-[Ninja build]: https://ninja-build.org/
-[pkg-config]: https://www.freedesktop.org/wiki/Software/pkg-config/
-[liblzma-dev]: https://packages.debian.org/sid/liblzma-dev
 [Snap Store]: https://snapcraft.io/store
 [snapd]: https://snapcraft.io/flutter
 

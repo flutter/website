@@ -28,10 +28,10 @@ jobs:
         include:
           - name: "Beta channel"
             branch: beta
-            experimental: true
+            experimental: false
           - name: "Stable channel"
             branch: stable
-            experimental: false
+            experimental: true
     steps:
       - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
@@ -54,7 +54,7 @@ jobs:
       - name: Build site and check links
         run: make build
       - name: Install Node for Firebase install
-        uses: actions/setup-node@bea5baf987ba7aa777a8a0b4ace377a21c45c381
+        uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Install Firebase CLI
