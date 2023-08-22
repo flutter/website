@@ -61,16 +61,13 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Simplifies later use of the nearest parent theme data.
-    final theme = Theme.of(context);
-
     return Scaffold(
       appBar: AppBar(
         title: Text(title,
-            style: theme.textTheme.titleLarge!.copyWith(
-              color: theme.colorScheme.onSecondary,
-            )),
-        backgroundColor: theme.colorScheme.secondary,
+            style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                  color: Theme.of(context).colorScheme.onSecondary,
+                )),
+        backgroundColor: Theme.of(context).colorScheme.secondary,
       ),
       body: Center(
         // #docregion Container
@@ -79,21 +76,21 @@ class MyHomePage extends StatelessWidget {
             horizontal: 12,
             vertical: 12,
           ),
-          color: theme.colorScheme.primary,
+          color: Theme.of(context).colorScheme.primary,
           child: Text(
             'Text with a background color',
             // TRY THIS: Change the Text value
-            //           or change the theme.textTheme
+            //           or change the Theme.of(context).textTheme
             //           to "displayLarge" or "displaySmall".
-            style: theme.textTheme.bodyMedium!.copyWith(
-              color: theme.colorScheme.onPrimary,
-            ),
+            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                  color: Theme.of(context).colorScheme.onPrimary,
+                ),
           ),
         ),
         // #enddocregion Container
       ),
       floatingActionButton: Theme(
-        data: theme.copyWith(
+        data: Theme.of(context).copyWith(
             // TRY THIS: Change the seedColor to "Colors.red" or
             //           "Colors.blue".
             colorScheme: ColorScheme.fromSeed(

@@ -70,9 +70,9 @@ void theme(BuildContext context) {
     // Find and extend the parent theme using `copyWith`.
     // To learn more, check out the next section on `Theme.of`.
     data: Theme.of(context).copyWith(
-        // TRY THIS: Change the seedColor to "Colors.red" or
-        //           "Colors.blue".
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)),
+        colorScheme: ColorScheme.fromSeed(
+      seedColor: Colors.pink,
+    )),
     child: const FloatingActionButton(
       onPressed: null,
       child: Icon(Icons.add),
@@ -88,8 +88,6 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context); // Simplifies later use of Theme context.
-
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
@@ -97,23 +95,25 @@ class MyHomePage extends StatelessWidget {
       body: Center(
         // #docregion Container
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-          color: theme.colorScheme.primary,
+          padding: const EdgeInsets.symmetric(
+            horizontal: 12,
+            vertical: 12,
+          ),
+          color: Theme.of(context).colorScheme.primary,
           child: Text(
             'Text with a background color',
-            // TRY THIS: Change the Text value
-            //           or change the theme.textTheme
-            //           to "displayLarge" or "displaySmall".
-            style: theme.textTheme.bodyMedium,
+            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                  color: Theme.of(context).colorScheme.onPrimary,
+                ),
           ),
         ),
         // #enddocregion Container
       ),
       floatingActionButton: Theme(
-        data: theme.copyWith(
-            // TRY THIS: Change the seedColor to "Colors.red" or
-            //           "Colors.blue".
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)),
+        data: Theme.of(context).copyWith(
+            colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.pink,
+        )),
         child: FloatingActionButton(
           onPressed: () {},
           child: const Icon(Icons.add),
