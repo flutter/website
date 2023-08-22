@@ -20,8 +20,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
 
         // Define the default brightness and colors.
-        colorScheme: ColorScheme.fromSwatch(
-          primarySwatch: Colors.purple,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.purple,
           // TRY THIS: Change to "Brightness.light"
           //           and see that all colors change
           //           to better contrast a light background.
@@ -31,14 +31,18 @@ class MyApp extends StatelessWidget {
         // Define the default `TextTheme`. Use this to specify the default
         // text styling for headlines, titles, bodies of text, and more.
         textTheme: TextTheme(
-          displayLarge:
-              const TextStyle(fontSize: 72, fontWeight: FontWeight.bold),
+          displayLarge: const TextStyle(
+            fontSize: 72,
+            fontWeight: FontWeight.bold,
+          ),
           // TRY THIS: Change one of the GoogleFonts
           //           to "lato", "poppins", or "lora".
           //           The title uses "titleLarge"
           //           and the middle text uses "bodyMedium".
-          titleLarge:
-              GoogleFonts.oswald(fontSize: 30, fontStyle: FontStyle.italic),
+          titleLarge: GoogleFonts.oswald(
+            fontSize: 30,
+            fontStyle: FontStyle.italic,
+          ),
           bodyMedium: GoogleFonts.merriweather(),
           displaySmall: GoogleFonts.pacifico(),
         ),
@@ -57,23 +61,33 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context); // Simplifies later use of Theme data.
+    // Simplifies later use of the nearest parent theme data.
+    final theme = Theme.of(context);
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(title,
+            style: theme.textTheme.titleLarge!.copyWith(
+              color: theme.colorScheme.onSecondary,
+            )),
+        backgroundColor: theme.colorScheme.secondary,
       ),
       body: Center(
         // #docregion Container
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+          padding: const EdgeInsets.symmetric(
+            horizontal: 12,
+            vertical: 12,
+          ),
           color: theme.colorScheme.primary,
           child: Text(
             'Text with a background color',
             // TRY THIS: Change the Text value
             //           or change the theme.textTheme
             //           to "displayLarge" or "displaySmall".
-            style: theme.textTheme.bodyMedium,
+            style: theme.textTheme.bodyMedium!.copyWith(
+              color: theme.colorScheme.onPrimary,
+            ),
           ),
         ),
         // #enddocregion Container
@@ -82,7 +96,10 @@ class MyHomePage extends StatelessWidget {
         data: theme.copyWith(
             // TRY THIS: Change the seedColor to "Colors.red" or
             //           "Colors.blue".
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)),
+            colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.pink,
+          brightness: Brightness.dark,
+        )),
         child: FloatingActionButton(
           onPressed: () {},
           child: const Icon(Icons.add),
