@@ -28,6 +28,8 @@ of `something`, which a lot of users wanted. Now, the `name` getter does this.
 The `describeEnum` function is being deprecated,
 so the `EnumProperty` class is updated to only accept `Enum` objects.
 
+[enhanced enums]: {{site.dart-site}}/language/enums#declaring-enhanced-enums
+
 ## Description of change
 
 Remove `describeEnum`.
@@ -92,7 +94,6 @@ Relevant PRs:
 [`EnumProperty` stable]: {{site.api}}/flutter/lib/src/foundation/EnumProperty.html
 [`describeEnum` main]: {{site.master-api}}/flutter/lib/src/foundation/describeEnum.html
 [`EnumProperty` main]: {{site.master-api}}/flutter/lib/src/foundation/describeEnum.html
-[enhanced enums]: {{site.dart-site}}/language/enums#declaring-enhanced-enums
 
 [Cleanup SemanticsFlag and SemanticsAction issue]: {{site.repo.flutter}}/issues/123346
 [Deprecate `describeEnum` PR]: {{site.repo.flutter}}/pull/125016
