@@ -2,31 +2,32 @@
 title: Updated `Checkbox.fillColor` behavior
 description: >
   Improved `Checkbox.fillColor` behavior applies the fill color to the
-  checkbox's background when it is unchecked.
+  background when the checkbox is unselected.
 ---
 
 ## Summary
 
 The `Checkbox.fillColor` is now applied to the checkbox's background when
-it is unchecked.
+the checkbox is unselected.
 
 ## Context
 
 Previously, the `Checkbox.fillColor` was applied to the checkbox's border
-when it is unchecked and the background was transparent. With this change,
-the `Checkbox.fillColor` is applied to the checkbox's background and the
-border uses the `Checkbox.side` color when it is unchecked.
+when the checkbox was unselected and its background was transparent.
+With this change, the `Checkbox.fillColor` is applied to the checkbox's
+background and the border uses the `Checkbox.side` color when the checkbox
+is unselected.
 
 ## Description of change
 
 The `Checkbox.fillColor` is now applied to the checkbox's background when
-it is unchecked instead of the border.
+the checkbox is unselected instead of being used as the border color.
 
 ## Migration guide
 
-Updated `Checkbox.fillColor` behavior applies the fill color to the
-checkbox's background in the unchecked state. To get the previous behavior,
-set `Checbox.fillColor` to `Colors.transparent` in the unchecked state and
+The updated `Checkbox.fillColor` behavior applies the fill color to the
+checkbox's background in the unselected state. To get the previous behavior,
+set `Checbox.fillColor` to `Colors.transparent` in the unselected state and
 set `Checkbox.side` to the desired color.
 
 If you use the `Checkbox.fillColor` property to customize the checkbox.
@@ -36,13 +37,6 @@ Code before migration:
 ```dart
 Checkbox(
   fillColor: MaterialStateProperty.resolveWith((states) {
-    // Disabled and unchecked state.
-    if (states.contains(MaterialState.disabled)) {
-      if (!states.contains(MaterialState.selected)) {
-        return Colors.red;
-      }
-    }
-    // Enabled and unchecked state.
     if (!states.contains(MaterialState.selected)) {
       return Colors.red;
     }
@@ -64,13 +58,6 @@ Code after migration:
 ```dart
 Checkbox(
   fillColor: MaterialStateProperty.resolveWith((states) {
-    // Disabled and unchecked state.
-    if (states.contains(MaterialState.disabled)) {
-      if (!states.contains(MaterialState.selected)) {
-        return Colors.transparent;
-      }
-    }
-    // Enabled and unchecked state.
     if (!states.contains(MaterialState.selected)) {
       return Colors.transparent;
     }
@@ -95,13 +82,6 @@ Code before migration:
 ```dart
 checkboxTheme: CheckboxThemeData(
   fillColor: MaterialStateProperty.resolveWith((states) {
-    // Disabled and unchecked state.
-    if (states.contains(MaterialState.disabled)) {
-      if (!states.contains(MaterialState.selected)) {
-        return Colors.red;
-      }
-    }
-    // Enabled and unchecked state.
     if (!states.contains(MaterialState.selected)) {
       return Colors.red;
     }
@@ -115,13 +95,6 @@ Code after migration:
 ```dart
 checkboxTheme: CheckboxThemeData(
   fillColor: MaterialStateProperty.resolveWith((states) {
-    // Disabled and unchecked state.
-    if (states.contains(MaterialState.disabled)) {
-      if (!states.contains(MaterialState.selected)) {
-        return Colors.transparent;
-      }
-    }
-    // Enabled and unchecked state.
     if (!states.contains(MaterialState.selected)) {
       return Colors.transparent;
     }
