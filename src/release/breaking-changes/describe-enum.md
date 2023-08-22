@@ -79,7 +79,6 @@ API documentation:
 * [`describeEnum` main][]
 * [`EnumProperty` stable][]
 * [`EnumProperty` main][]
-* [enhanced enums]: {{site.github}}/dart-lang/language/blob/main/working/0158%20-%20Enhanced%20Enum/proposal.md
 
 Relevant issues:
 
@@ -93,6 +92,7 @@ Relevant PRs:
 [`EnumProperty` stable]: {{site.api}}/flutter/lib/src/foundation/EnumProperty.html
 [`describeEnum` main]: {{site.master-api}}/flutter/lib/src/foundation/describeEnum.html
 [`EnumProperty` main]: {{site.master-api}}/flutter/lib/src/foundation/describeEnum.html
+[enhanced enums]: {{site.dart-site}}/language/enums#declaring-enhanced-enums
 
 [Cleanup SemanticsFlag and SemanticsAction issue]: {{site.repo.flutter}}/issues/123346
 [Deprecate `describeEnum` PR]: {{site.repo.flutter}}/pull/125016
