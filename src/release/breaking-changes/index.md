@@ -52,6 +52,7 @@ release, and listed in alphabetical order:
 * [Deprecated `RouteInformation.location`][] and its related APIs
 * [Updated EditableText scroll into view behavior][]
 * [Migrate a Windows project to ensure the window is shown][]
+* [Updated `Checkbox.fillColor` behavior][]
 
 [Deprecated API removed after v3.10]: {{site.url}}/release/breaking-changes/3-10-deprecations
 [Added AppLifecycleState.hidden]: {{site.url}}/release/breaking-changes/add-applifecyclestate-hidden
@@ -60,6 +61,7 @@ release, and listed in alphabetical order:
 [Deprecated `RouteInformation.location`]: {{site.url}}/release/breaking-changes/route-information-uri
 [Updated EditableText scroll into view behavior]: {{site.url}}/release/breaking-changes/editable-text-scroll-into-view
 [Migrate a Windows project to ensure the window is shown]: {{site.url}}/release/breaking-changes/windows-show-window-migration
+[Updated `Checkbox.fillColor` behavior]: {{site.url}}/release/breaking-changes/checkbox-fillColor
 
 ### Released in Flutter 3.10
 
