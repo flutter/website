@@ -35,13 +35,24 @@ With Xcode, you can run Flutter apps on an iOS device or on the simulator.
 To prepare to run and test your Flutter app on the iOS simulator,
 follow this procedure.
 
+ 1. If using Xcode 15 or greater, download and install the iOS Simulator 
+    by running the following command:
+
+    ```terminal
+    $ xcodebuild -downloadPlatform iOS
+    ```
+
+    If you want to use a different method of downloading and installing the 
+    iOS Simulator, check out 
+    [Apple's documentation on installing Simulators][] for more options.
+
  1. To start the Simulator, run the following command:
 
     ```terminal
     $ open -a Simulator
     ```
 
- 2. Set your Simulator to use a 64-bit device (iPhone 5s or later).
+ 1. Set your Simulator to use a 64-bit device (iPhone 5s or later).
 
     - From Xcode, choose a simulator device type. Go to
       **Product** <span aria-label="and then">></span>
@@ -58,7 +69,7 @@ follow this procedure.
       **General** <span aria-label="and then">></span>
       **About**.
 
- 3. The simulated high-screen density iOS devices might overflow your screen.
+ 1. The simulated high-screen density iOS devices might overflow your screen.
     If that appears true on your Mac, change the presented size in the
     Simulator app
 
@@ -391,3 +402,4 @@ $ sudo gem install cocoapods
 [Apple's documentation on pairing a wireless device with Xcode]: https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/devbc48d1bad
 [Apple Developer]: {{site.apple-dev}}/programs/
 [Apple Developer Account]: {{site.apple-dev}}/account
+[Apple's documentation on installing Simulators]: {{site.apple-dev}}/documentation/xcode/installing-additional-simulator-runtimes
