@@ -30,8 +30,6 @@ To develop Flutter apps for iOS, you need a Mac with Xcode installed.
        $ sudo xcodebuild -license
        ```
 
-       The single dash for the `license` option was introduced in Xcode 14.
-
 Versions older than the latest stable version might still work,
 but are not recommended for Flutter development.
 
