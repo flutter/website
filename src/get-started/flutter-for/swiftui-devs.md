@@ -48,6 +48,8 @@ You can test full working examples on DartPad or view them on GitHub.
 Flutter and SwiftUI code describes how the UI looks and works.
 Developers call this type of code a _declarative framework_.
 
+<iframe class="full-width" src="{{site.youtube-site}}/embed/ceMsPBbcEGg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ### Views vs. Widgets
 
 **SwiftUI** represents UI components as _views_.
