@@ -214,7 +214,6 @@ of the `AnimatedOpacity` widget.
   the transition between the values should take.
 
 {{site.alert.note}}
-
   - Implicit animations can only animate the
     properties of a parent stateful widget.
     The preceding example enables this with the
@@ -222,7 +221,7 @@ of the `AnimatedOpacity` widget.
 
   - The `AnimatedOpacity` widget only animates the `opacity` property.
     Some implicitly animated widgets can animate many properties
-    at the same time. The following example illustrates this.
+    at the same time. The following example showcases this.
 
 {{site.alert.end}}
 
@@ -264,7 +263,7 @@ Associated functions generate the relevant values:
 - The `randomMargin()` function generates a
   `double` for the `margin` property.
 
-This section uses the `AnimatedContainer` widget to:
+The following steps use the `AnimatedContainer` widget to:
 
 - Transition to new values for `color`, `borderRadius`,
   and `margin` whenever the user clicks **Change**.
@@ -297,8 +296,8 @@ Change the `Container` widget to an `AnimatedContainer` widget:
 
 #### 2. Set starting values for animated properties
 
-The `AnimatedContainer` widget transitions between old and new values of
-its properties when they change.
+The `AnimatedContainer` widget transitions between
+old and new values of its properties when they change.
 To contain the behavior triggered when the user clicks **Change**,
 create a `change()` method.
 The `change()` method can use the `setState()` method to set new values
@@ -386,8 +385,8 @@ for `margin`, `borderRadius`, and `color`.
 
 The preceding examples show how:
 
-- Implicit animations allow you to transition between values for
-  specific widget properties.
+- Implicit animations allow you to animate the transition between
+  values for specific widget properties.
 - The `duration` parameter allows you to set how long the animation
   takes to complete.
 
@@ -401,8 +400,9 @@ The preceding examples did not specify a value for the `curve` parameter.
 Without a specified curve value,
 the implicit animations apply a [linear animation curve][].
 
-Add a `curve` parameter to the [complete shape-shifting example][].
-Watch how the animation changes when you pass the
+Specify a value for the `curve` parameter in
+the [complete shape-shifting example][].
+The animation changes when you pass the
 [`easeInOutBack`][] constant for `curve`,
 
 <?code-excerpt "container{5,6}/lib/main.dart"?>
@@ -445,8 +445,9 @@ To summarize implicit animations:
 - Some implicit animations, like the `AnimatedOpacity` widget,
   only animate one property.
   Others, like the `AnimatedContainer` widget, can animate many properties.
-- Implicit animations transition between the old and new value of a property
-  when it changes using the provided `curve` and `duration`.
+- Implicit animations animate the transition between the
+  old and new value of a property when it
+  changes using the provided `curve` and `duration`.
 - If you do not specify a `curve`,
   implicit animations default to a [linear curve][].
 
