@@ -290,6 +290,7 @@
       { "source": "/go/deprecations-removed-after-3-3", "destination": "https://docs.google.com/spreadsheets/d/13cZzXz3_yMhnMH3Fyv2TKR_3974el103xlZuNWdevZM/edit?usp=sharing", "type": 301 },
       { "source": "/go/deprecations-removed-after-3-7", "destination": "https://docs.google.com/spreadsheets/d/1WCQmKobsgslfhqf6uL7I2BKk5KKhGX-n_xfk9g3CTEE/edit?usp=sharing", "type": 301 },
       { "source": "/go/deprecations-removed-after-3-10", "destination": "https://docs.google.com/spreadsheets/d/1gs2tvYBuwycP1XAZsDbMuqP5jUa6gWH1a0ZQGrzjXvw/edit?usp=sharing", "type": 301 },
+      { "source": "/go/deprecations-removed-after-3-13", "destination": "https://docs.google.com/spreadsheets/d/1zzyBRdIkqiEcpv_njEQA7pyG7X8PcNhvXFYrEAB8P78/edit?usp=sharing", "type": 301 },
       { "source": "/go/desktop-multi-window-support", "destination": "https://docs.google.com/document/d/11_4wntz_9IJTQOo_Qhp7QF4RfpIMTfVygtOTxQ4OGHY/edit", "type": 301 },
       { "source": "/go/desktop-release-conductor", "destination": "https://docs.google.com/document/d/15AwPXNd5FvItAqM0wa2VK0tRrqtRTgM8vR5LQeT2Mag/edit?usp=sharing&resourcekey=0-yZ2FAN-wEKwKT-ymdisetA", "type": 301 },
       { "source": "/go/desktop-resize-macos", "destination": "https://docs.google.com/document/d/1slGllp1Jhde7wkF6snqGhdrZwHV1VVmXeIF3f0t24JU/edit?usp=sharing", "type": 301 },
