@@ -21,8 +21,7 @@ following components:
 
 * [Ubuntu][] OS, 18.04 LTS (or higher)
 * [Snapcraft][] command line tool
-* [Multipass virtualization manager][] or
-  [LXD container manager][]
+* [LXD container manager][]
 
 ## Set up the build environment
 
@@ -33,30 +32,8 @@ Use the following instructions to set up your build environment.
 At the command line, run the following:
 
 ```terminal
-$ sudo snap install snapcraft --classic
+$ sudo snap install snapcraft --classics
 ```
-
-### Install Multipass
-
-Also at the command line, run the following:
-
-```terminal
-$ sudo snap install multipass --classic
-```
-
-To work correctly, Multipass requires access to the CPU
-virtualization extensions. If the extensions are not
-available for your CPU architecture, not enabled in BIOS,
-or not accessible (for instance if you are running a
-virtual machine without nested virtualization),
-you won't be able to use Multipass.
-
-If you see the following error, you should use LXD:
-
-```terminal
-launch failed: CPU does not support KVM extensions
-```
-
 ### Install LXD
 
 To install LXD, use the following command:
@@ -65,7 +42,7 @@ To install LXD, use the following command:
 $ sudo snap install lxd
 ```
 
-LXD can be used as an alternative backend during the
+LXD is required for core22 during the
 snap build process. Once installed, LXD needs to be
 configured for use. The default answers are suitable
 for most use cases.
@@ -128,7 +105,7 @@ summary: Super Cool App
 description: Super Cool App that does everything!
 
 confinement: strict
-base: core18
+base: core22
 grade: stable
 
 slots:
@@ -140,7 +117,7 @@ slots:
 apps:
   super-cool-app:
     command: super_cool_app
-    extensions: [flutter-master] # Where "master" defines which Flutter channel to use for the build
+    extensions: [gnome] # gnome includes the libraries required by flutter
     plugs:
     - network
     slots:
@@ -204,7 +181,7 @@ has a single application&mdash;super_cool_app.
 apps:
   super-cool-app:
     command: super_cool_app
-    extensions: [flutter-master]
+    extensions: [gnome]
 ```
 
 **Command**
@@ -216,13 +193,10 @@ apps:
   are reusable components that can expose sets of libraries
   and tools to a snap at build and runtime,
   without the developer needing to have specific knowledge
-  of included frameworks. The `flutter-master` extension exposes
+  of included frameworks. The `gnome` extension exposes
   the GTK 3 libraries to the Flutter snap. This ensures a
   smaller footprint and better integration with the system.
 
-  The `flutter-master` extension sets your flutter channel
-  to `master`.  If you would like to build your app with the `dev`
-  channel simply use the `flutter-dev` extension.
 
 **Plugs**
 : A list of one or more plugs for system interfaces.
@@ -305,7 +279,7 @@ Place the .desktop file in your Flutter project
 under `<project root>/snap/gui/super-cool-app.desktop`.
 
 **Notice**: icon and .desktop file name must be the 
-same as your app name in yaml file!
+same as your app name in yaml file! Also, your icon file must be world readable.
 
 For example:
 
@@ -342,10 +316,18 @@ To use the LXD container backend:
 $ snapcraft --use-lxd
 ```
 
-## Publish
+Once the `snapcraft.yaml` file is complete,
+
+## Test the snap
 
 Once the snap is built, you'll have a `<name>.snap` file
-in your root project directory. You can now publish the snap.
+in your root project directory. 
+
+$ sudo snap install ./super-cool-app_0.1.0_amd64.snap --devmode
+
+## Publish
+
+You can now publish the snap.
 The process consists of the following:
 
 1. Create a developer account at [snapcraft.io][], if you
