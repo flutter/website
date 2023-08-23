@@ -360,7 +360,7 @@ There are two ways of running the code generator.
 
 #### One-time code generation
 
-By running `flutter pub run build_runner build --delete-conflicting-outputs` in the project root,
+By running `dart run build_runner build --delete-conflicting-outputs` in the project root,
 you generate JSON serialization code for your models whenever they are needed.
 This triggers a one-time build that goes through the source files, picks the
 relevant ones, and generates the necessary serialization code for them.
@@ -373,7 +373,7 @@ build manually every time you make changes in your model classes.
 A _watcher_ makes our source code generation process more convenient. It
 watches changes in our project files and automatically builds the necessary
 files when needed. Start the watcher by running
-`flutter pub run build_runner watch --delete-conflicting-outputs` in the project root.
+`dart run build_runner watch --delete-conflicting-outputs` in the project root.
 
 It is safe to start the watcher once and leave it running in the background.
 
@@ -453,7 +453,7 @@ class User {
 ```
 
 Running 
-`flutter pub run build_runner build --delete-conflicting-outputs`
+`dart run build_runner build --delete-conflicting-outputs`
 in the terminal creates
 the `*.g.dart` file, but the private `_$UserToJson()` function
 looks something like the following:

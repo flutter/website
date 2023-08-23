@@ -19,11 +19,16 @@ To develop Flutter apps for iOS, you need a Mac with Xcode installed.
     If you need to use a different version, specify that path instead.
 
  1. Sign the Xcode license agreement.
-    To sign the SLA, either open Xcode once and confirm or run:
+    To sign the SLA, either:
 
-    ```terminal
-    $ sudo xcodebuild --license
-    ```
+    {: type="a"}
+    1. Open Xcode and confirm.
+
+    1. Open the Terminal and run:
+
+       ```terminal
+       $ sudo xcodebuild -license
+       ```
 
 Versions older than the latest stable version might still work,
 but are not recommended for Flutter development.
