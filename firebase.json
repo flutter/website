@@ -254,6 +254,7 @@
       { "source": "/go/build-dashboard-v2", "destination": "https://docs.google.com/document/d/1kwh48xYuoVtadYFb2I2t6BJMGEW07K7T5WYcieAZZiY", "type": 301 },
       { "source": "/go/build-flows", "destination": "https://docs.google.com/document/d/1imsVxbeAsttTi90EFpbnbVzov9z0xXd7tLCAr_QAJ38", "type": 301 },
       { "source": "/go/buildtextspan-buildcontext", "destination": "https://docs.google.com/document/d/1nr-g45gXcWTYoW9UmChZV7Ije3lKP4pEvDQCdz6NFdI/edit?usp=sharing", "type": 301 },
+      { "source": "/go/cacheless-shared-preferences", "destination": "https://docs.google.com/document/d/1DNhUYIJaDA10g2cOqipKyPuPkgL_FYPfgkF9Coqcc6k/edit?usp=sharing", "type": 301 },
       { "source": "/go/calculating-flutter-frame-rate", "destination": "https://docs.google.com/document/d/1YGLELXWdC6YIN03QzEzcIRJc56gCnabPBW8BHCAFR58/edit", "type": 301 },
       { "source": "/go/camera-privacy", "destination": "https://docs.google.com/document/d/1t_5FYzOTlBWC6arHc4_8VuG0BUOtIyP9xWvbDER5Y9I/edit", "type": 301 },
       { "source": "/go/cascading-menus", "destination": "https://docs.google.com/document/d/17XOSGzLzqbpNcCUwakM_WQ2ZOMcUOXcPC__7nPORwms/edit?usp=sharing&resourcekey=0-hg74S2vAAqwJFN984ZXQHg", "type": 301 },
