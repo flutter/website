@@ -29,7 +29,7 @@ Here are some of the things you can do with DevTools:
 We expect you to use DevTools in conjunction with
 your existing IDE or command-line based development workflow.
 
-<a name="install-devtools"></a>
+<a id="install-devtools"></a>
 ## How do I install DevTools?
 
 See the [VS Code][], [Android Studio/IntelliJ][], or
@@ -64,7 +64,7 @@ without performance impact.
 
 [CPU profiler]: {{site.url}}/tools/devtools/cpu-profiler
 [Performance]: {{site.url}}/perf
-[Performance > Timeline]: {{site.url}}/tools/devtools/performance#timeline-events-chart 
+[Performance > Timeline]: {{site.url}}/tools/devtools/performance#timeline-events-tab
 [UI frames]: {{site.url}}/perf/ui-performance
 
 

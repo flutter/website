@@ -10,7 +10,7 @@ Learn more about the Flutter framework from the following pages:
 
 ## Flutter basics
 
-* [Introduction to widgets][]
+* [Introduction to Flutter's UI][]
 * [Building layouts][] tutorial
 * [Add interactivity][] tutorial
 
@@ -36,7 +36,7 @@ Reach out to us at our [mailing list][]. We'd love to hear from you!
 
 Happy Fluttering!
 
-[Add interactivity]: {{site.url}}/ui/interactive
+[Add interactivity]: {{site.url}}/ui/interactivity
 [Bootstrap into Dart: learn more about the language]: {{site.url}}/resources/bootstrap-into-dart
 [Building layouts]: {{site.url}}/ui/layout/tutorial
 [The Complete Flutter Developer Bootcamp Using Dart]: https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart
@@ -49,6 +49,6 @@ Happy Fluttering!
 [Flutter samples]: https://flutter.github.io/samples
 [Flutter for web developers]: {{site.url}}/get-started/flutter-for/web-devs
 [Flutter for Xamarin.Forms developers]: {{site.url}}/get-started/flutter-for/xamarin-forms-devs
-[Introduction to widgets]: {{site.url}}/ui/widgets-intro
+[Introduction to Flutter's UI]: {{site.url}}/ui
 [mailing list]: mailto:{{site.email}}
 [Udacity online Flutter training]: https://www.udacity.com/course/build-native-mobile-apps-with-flutter--ud905

@@ -2,8 +2,6 @@
 // Use of this source code is governed by a BSD-style license
 // that can be found in the LICENSE file.
 
-// ignore_for_file: missing_required_argument
-
 import 'package:flutter/material.dart';
 
 const owlUrl =
@@ -19,14 +17,16 @@ class FadeInDemo extends StatefulWidget {
 class _FadeInDemoState extends State<FadeInDemo> {
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
     return Column(children: <Widget>[
-      Image.network(owlUrl),
+      Image.network(owlUrl, height: height * 0.8),
       TextButton(
-          child: const Text(
-            'Show Details',
-            style: TextStyle(color: Colors.blueAccent),
-          ),
-          onPressed: () => {}),
+        child: const Text(
+          'Show Details',
+          style: TextStyle(color: Colors.blueAccent),
+        ),
+        onPressed: () => {},
+      ),
       AnimatedOpacity(
         child: const Column(
           children: [

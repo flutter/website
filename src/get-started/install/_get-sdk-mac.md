@@ -124,7 +124,6 @@ For additional download options, check out `flutter help precache`.
 {% include_relative _analytics.md %}
 
 [Flutter repo]: {{site.repo.flutter}}
-[Installing snapd]: https://snapcraft.io/docs/installing-snapd
 [SDK archive]: {{site.url}}/release/archive
 [Snap Store]: https://snapcraft.io/store
 [snapd]: https://snapcraft.io/flutter

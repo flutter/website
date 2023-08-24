@@ -1,12 +1,6 @@
 ---
 title: Pass arguments to a named route
 description: How to pass arguments to a named route.
-prev:
-  title: Navigate with named routes
-  path: /cookbook/navigation/named-routes
-next:
-  title: Set up app links for Android
-  path: /cookbook/navigation/set-up-app-links
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

@@ -1,24 +1,12 @@
 ---
 title: Add Material touch ripples
 description: How to implement ripple animations.
-prev:
-  title: Retrieve the value of a text field
-  path: /cookbook/forms/retrieve-input
-next:
-  title: Handle taps
-  path: /cookbook/gestures/handling-taps
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/gestures/ripples/"?>
-
-{% comment %}
-prev:
-  title: Focus and text fields
-  path: /cookbook/forms/focus
-{% endcomment %}
 
 Widgets that follow the Material Design guidelines display
 a ripple animation when tapped.

@@ -86,7 +86,7 @@ TabBar(
 
 ## Timeline
 
-Landed in version: 3.11.0-0.0.pre<br>
+Landed in version: 3.13.0-17.0.pre<br>
 In stable release: TBD
 
 ## References
@@ -107,4 +107,4 @@ Relevant PRs:
 [`TabAlignment`]: {{site.api}}/flutter/material/TabAlignment.html
 
 [Introduce `TabBar.tabAlignment`]: {{site.repo.flutter}}/pull/125036
-[Fix Material 3 Scrollable `TabBar`]: {{site.repo.flutter}}/pull/125974
+[Fix Material 3 Scrollable `TabBar`]: {{site.repo.flutter}}/pull/131409

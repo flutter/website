@@ -1,6 +1,7 @@
 ---
 title: Embedded support for Flutter
-description: "Details of how Flutter supports the creation of embedded experiences."
+description: >
+  Details of how Flutter supports the creation of embedded experiences.
 ---
 
 If you would like to embed Flutter engine into a car,
@@ -27,8 +28,10 @@ resources.
 * The doc comments in the
   [Flutter engine `embedder.h` file][] on GitHub.
 * The [Flutter architectural overview][] on docs.flutter.dev.
-* A small, self contained [Flutter Embedder Engine GLFW example][]
+* A small, self-contained [Flutter Embedder Engine GLFW example][]
   in the Flutter engine GitHub repo.
+* An exploration into [embedding Flutter in a terminal][] by
+  implementing Flutter's custom embedder API.
 * [Issue 31043][]: _Questions for porting flutter engine to
   a new os_ might also be helpful.
 
@@ -39,6 +42,7 @@ resources.
 [Flutter architectural overview]: {{site.url}}/resources/architectural-overview
 [Flutter engine `embedder.h` file]: {{site.github}}/flutter/engine/blob/main/shell/platform/embedder/embedder.h
 [Flutter Embedder Engine GLFW example]: {{site.github}}/flutter/engine/tree/main/examples/glfw#flutter-embedder-engine-glfw-example
+[embedding Flutter in a terminal]: https://github.com/jiahaog/flt
 [Issue 31043]: {{site.repo.flutter}}/issues/31043
 
 
