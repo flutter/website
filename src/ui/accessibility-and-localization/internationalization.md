@@ -346,7 +346,9 @@ return MaterialApp(
 
 ### Placeholders, plurals, and selects
 {{site.alert.note}}
-  When using VS Code, the [arb-editor](https://marketplace.visualstudio.com/items?itemName=Google.arb-editor) extension can help with editing `.arb` templates file through syntax hightlighting, snippets, diagnostics, and quick fixes.
+  When using VS Code, the [arb-editor](https://marketplace.visualstudio.com/items?itemName=Google.arb-editor)
+  extension can help with editing `.arb` templates file through syntax
+  hightlighting, snippets, diagnostics, and quick fixes.
 {{site.alert.end}}
 
 You can also include application values in a message with
