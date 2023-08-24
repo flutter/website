@@ -28,6 +28,8 @@ of `something`, which a lot of users wanted. Now, the `name` getter does this.
 The `describeEnum` function is being deprecated,
 so the `EnumProperty` class is updated to only accept `Enum` objects.
 
+[enhanced enums]: {{site.dart-site}}/language/enums#declaring-enhanced-enums
+
 ## Description of change
 
 Remove `describeEnum`.
@@ -79,7 +81,6 @@ API documentation:
 * [`describeEnum` main][]
 * [`EnumProperty` stable][]
 * [`EnumProperty` main][]
-* [enhanced enums]: {{site.github}}/dart-lang/language/blob/main/working/0158%20-%20Enhanced%20Enum/proposal.md
 
 Relevant issues:
 
