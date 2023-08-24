@@ -41,64 +41,85 @@ android {
   the Flutter module still runs correctly.
 {{site.alert.end}}
 
-## Using Android Studio
+## Integrate your Flutter module
 
-The Android Studio IDE is a convenient way of integrating
-your Flutter module automatically. With Android Studio,
-you can co-edit both your Android code and your Flutter code
-in the same project. You can also continue to use your normal
-IntelliJ Flutter plugin functionalities such as Dart code
-completion, hot reload, and widget inspector.
+{% comment %} Nav tabs {% endcomment -%}
+<ul class="nav nav-tabs" id="add-to-app-android" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="with-android-studio-tab" href="#with-android-studio" role="tab" aria-controls="with-android-studio" aria-selected="true">With Android Studio</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="without-android-studio-tab" href="#without-android-studio" role="tab" aria-controls="without-android-studio" aria-selected="false">Without Android Studio</a>
+    </li>
+</ul>
 
-Add-to-app flows with Android Studio are only supported on
-Android Studio 3.6 with version 42+ of the [Flutter plugin][]
-for IntelliJ. The Android Studio integration also only
-supports integrating using a source code Gradle subproject,
-rather than using AARs. See below for more details on
-the distinction.
+{% comment %} Tab panes {% endcomment -%}
+<div class="tab-content">
 
-Using the **File > New > New Module...** menu in
-Android Studio in your existing Android project,
-you can either create a new Flutter module to integrate,
-or select an existing Flutter module that was created previously.
+<div class="tab-pane active" id="with-android-studio" role="tabpanel" aria-labelledby="with-android-studio-tab" markdown="1">
 
-{% include docs/app-figure.md image="development/add-to-app/android/project-setup/ide-new-module.png" %}
+### Integrate with Android Studio
+{:.no_toc}
 
-If you create a new module, you can use a wizard to
-select the module name, location, and so on.
+The Android Studio IDE can help integrate your Flutter module.
+Using Android Studio, you can edit both your Android and Flutter code
+in the same IDE.
 
-{% include docs/app-figure.md image="development/add-to-app/android/project-setup/ide-wizard.png" %}
+You can also use your IntelliJ Flutter plugin functionality like
+Dart code completion, hot reload, and widget inspector.
 
-The Android Studio plugin automatically configures your
-Android project to add your Flutter module as a dependency,
-and your app is ready to build.
+Android Studio supports add-to-app flows on Android Studio 2022.1 or later
+with version 42 or later of the [Flutter plugin][] for IntelliJ.
+The Android Studio integration only supports integrating using
+a source code Gradle subproject.
 
-{{site.alert.note}}
-  To see the changes that were automatically made to your
-  Android project by the IDE plugin, consider using
-  source control for your Android project before performing
-  any steps. A local diff shows the changes.
-{{site.alert.end}}
+1. Open your Android project in Android Studio.
+
+1. Go to **File** > **New** > **New Project...**.
+    The **New Project** dialog displays.
+
+1. Click **Flutter**.
+
+1. If asked to provide your **Flutter SDK path**, do so and click **Next**.
+
+1. Complete the configuration of your Flutter module.
+
+    - If you have an existing project:
+
+        {: type="a"}
+        1. To choose an existing project, click **...**.
+        to the right of the **Project location** box.
+        1. Navigate to your Flutter project directory.
+        1. Click **Open**.
+
+    - If you need to create a new Flutter project:
+
+        {: type="a"}
+        1. Complete the configuration dialog.
+        1. In the **Project type** menu, select **Module**.
+
+1. Click **Finish**.
 
 {{site.alert.tip}}
-  By default, your project's Project pane is probably
-  showing the 'Android' view. If you can't see your new
-  Flutter files in the Project pane, ensure that
-  your Project pane is set to display 'Project Files',
-  which shows all files without filtering.
+    By default, your project's Project pane may show the 'Android' view.
+    If you can't see your new Flutter files in the Project pane,
+    set your Project pane to display **Project Files**.
+    This shows all files without filtering.
 {{site.alert.end}}
 
-Your app now includes the Flutter module as a dependency.
-You can jump to the [Adding a Flutter screen to an Android app][]
-to follow the next steps.
+</div>
 
-## Manual integration
+<div class="tab-pane" id="without-android-studio" role="tabpanel" aria-labelledby="without-android-studio-tab" markdown="1">
+
+### Integrate without Android Studio
+{:.no_toc}
 
 To integrate a Flutter module with an existing Android app
 manually, without using Flutter's Android Studio plugin,
 follow these steps:
 
-### Create a Flutter module
+#### Create a Flutter module
+{:.no_toc}
 
 Let's assume that you have an existing Android app at
 `some/path/MyApp`, and that you want your Flutter
@@ -137,7 +158,8 @@ module an embeddable Android library.
   To avoid Dex merging issues, `flutter.androidPackage` should not be identical to your host app's package name
 {{site.alert.end}}
 
-### Java 11 requirement
+#### Java 11 requirement
+{:.no_toc}
 
 The Flutter Android engine uses Java 11 features.
 
@@ -158,7 +180,13 @@ android {
 }
 ```
 
-### Add the Flutter module as a dependency
+
+</div>
+</div>
+{% comment %} End: Tab panes. {% endcomment -%}
+
+## Add the Flutter module as a dependency
+{:.no_toc}
 
 Next, add the Flutter module as a dependency of your
 existing app in Gradle. There are two ways to achieve this.
@@ -172,7 +200,8 @@ The source code subproject mechanism is a convenient
 one-click build process, but requires the Flutter SDK.
 This is the mechanism used by the Android Studio IDE plugin.
 
-#### Option A - Depend on the Android Archive (AAR)
+### Option A - Depend on the Android Archive (AAR)
+{:.no_toc}
 
 This option packages your Flutter library as a generic local
 Maven repository composed of AARs and POMs artifacts.
@@ -266,7 +295,8 @@ dependencies {
   You can follow the next steps in the
   [Adding a Flutter screen to an Android app][].
 
-#### Option B - Depend on the module's source code
+### Option B - Depend on the module's source code
+{:.no_toc}
 
 This option enables a one-step build for both your
 Android project and Flutter project. This option is
@@ -314,8 +344,8 @@ dependencies {
 ```
 
 Your app now includes the Flutter module as a dependency.
-You can follow the next steps in the [Adding a Flutter screen to an Android app][].
 
+Continue to the [Adding a Flutter screen to an Android app][] guide.
 
 [`abiFilters`]: https://developer.android.com/reference/tools/gradle-api/4.2/com/android/build/api/dsl/Ndk#abiFilters:kotlin.collections.MutableSet
 [Adding a Flutter screen to an Android app]: {{site.url}}/add-to-app/android/add-flutter-screen
