@@ -37,10 +37,15 @@ To learn how, see [Platform adaptations][].
   check out [Add Flutter to existing app][].
 {{site.alert.end}}
 
-This document can be used as a cookbook by jumping around
-and finding questions that are most relevant to your needs.
+Use this guide as a cookbook.
+Jump around and find questions that address your most relevant needs.
 
 ## Overview
+
+As an introduction, watch the following video.
+It outlines how Flutter works on iOS and how to use Flutter to build iOS apps.
+
+<iframe class="full-width" src="{{site.youtube-site}}/embed/ceMsPBbcEGg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Views vs. Widgets
 
