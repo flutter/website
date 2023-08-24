@@ -45,10 +45,13 @@ You can test full working examples on DartPad or view them on GitHub.
 
 ## Overview
 
-Flutter and SwiftUI code describes how the UI looks and works.
-Developers call this type of code a _declarative framework_.
+As an introduction, watch the following video.
+It outlines how Flutter works on iOS and how to use Flutter to build iOS apps.
 
 <iframe class="full-width" src="{{site.youtube-site}}/embed/ceMsPBbcEGg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Flutter and SwiftUI code describes how the UI looks and works.
+Developers call this type of code a _declarative framework_.
 
 ### Views vs. Widgets
 
