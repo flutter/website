@@ -394,6 +394,7 @@
       { "source": "/go/ios-platform-view-focus", "destination": "https://docs.google.com/document/d/1GG8VfYeuVtTQHiMWQXbrSG5HEUorzqU8IGbNySVJ-bY", "type": 301 },
       { "source": "/go/ios-plugins-swift-migration", "destination": "https://docs.google.com/document/d/1XsaulkJA6_ZSpM7chkQLhQY25sQqhEMiqHMYzw8H85o/edit?resourcekey=0-_cUjF1c0iBvRLKfV-3gK5A", "type": 301 },
       { "source": "/go/ios-platform-view-engine-overview", "destination": "https://docs.google.com/document/d/1G6RNt_5y20g2SfI_V25c02PAXHGH9PgfGnk5dOmBdVI/", "type": 301 },
+      { "source": "/go/ios-platform-view-hittest-blocking", "destination": "https://docs.google.com/document/d/1jVBK6fqLdN7qA8jGM8PryQeUYMYBNvP-808w4K6KBGw/edit?usp=sharing&resourcekey=0-D8jiTjjIZjFSiA20osvrHw", "type": 301 },
       { "source": "/go/ios-pull-to-refresh", "destination": "https://docs.google.com/document/d/1oUgNd3fsJ1QVuEmA6ENBT8vq3o6QKCRUPGCB6q91VgI/edit", "type": 301 },
       { "source": "/go/ios-scribble", "destination": "https://docs.google.com/document/d/1mjQbsSRQnHuAgMNdouaSgTS-Xv-w57fdKfOUUafWpRo", "type": 301 },
       { "source": "/go/ios-spell-check", "destination": "https://docs.google.com/document/d/10Lvkz802QpzAGFi3Q9WVTMVUV-SPJyG3_xs8XfxG59Q/edit?usp=sharing", "type": 301 },
