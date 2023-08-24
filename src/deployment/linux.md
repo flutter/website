@@ -323,7 +323,7 @@ Once the `snapcraft.yaml` file is complete,
 Once the snap is built, you'll have a `<name>.snap` file
 in your root project directory. 
 
-$ sudo snap install ./super-cool-app_0.1.0_amd64.snap --devmode
+$ sudo snap install ./super-cool-app_0.1.0_amd64.snap --dangerous
 
 ## Publish
 
