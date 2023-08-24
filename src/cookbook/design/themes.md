@@ -110,14 +110,16 @@ In fact, the `Container` uses this technique to find its `color``.
 <?code-excerpt "lib/theme.dart (Container)" replace="/^child: //g"?>
 ```dart
 Container(
-  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-  color: myTheme.colorScheme.primary,
+  padding: const EdgeInsets.symmetric(
+    horizontal: 12,
+    vertical: 12,
+  ),
+  color: Theme.of(context).colorScheme.primary,
   child: Text(
     'Text with a background color',
-    // TRY THIS: Change the Text value
-    //           or change the myTheme.textTheme
-    //           to "displayLarge" or "displaySmall".
-    style: myTheme.textTheme.bodyMedium,
+    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+          color: Theme.of(context).colorScheme.onPrimary,
+        ),
   ),
 ),
 ```
@@ -164,9 +166,9 @@ Theme(
   // Find and extend the parent theme using `copyWith`.
   // To learn more, check out the next section on `Theme.of`.
   data: Theme.of(context).copyWith(
-      // TRY THIS: Change the seedColor to "Colors.red" or
-      //           "Colors.blue".
-      colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)),
+      colorScheme: ColorScheme.fromSeed(
+    seedColor: Colors.pink,
+  )),
   child: const FloatingActionButton(
     onPressed: null,
     child: Icon(Icons.add),
@@ -247,16 +249,13 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Simplifies later use of the nearest parent theme data.
-    final myTheme = Theme.of(context);
-
     return Scaffold(
       appBar: AppBar(
         title: Text(title,
-            style: myTheme.textTheme.titleLarge!.copyWith(
-              color: myTheme.colorScheme.onSecondary,
-            )),
-        backgroundColor: myTheme.colorScheme.secondary,
+            style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                  color: Theme.of(context).colorScheme.onSecondary,
+                )),
+        backgroundColor: Theme.of(context).colorScheme.secondary,
       ),
       body: Center(
         child: Container(
@@ -264,20 +263,20 @@ class MyHomePage extends StatelessWidget {
             horizontal: 12,
             vertical: 12,
           ),
-          color: myTheme.colorScheme.primary,
+          color: Theme.of(context).colorScheme.primary,
           child: Text(
             'Text with a background color',
             // TRY THIS: Change the Text value
-            //           or change the myTheme.textTheme
+            //           or change the Theme.of(context).textTheme
             //           to "displayLarge" or "displaySmall".
-            style: myTheme.textTheme.bodyMedium!.copyWith(
-              color: myTheme.colorScheme.onPrimary,
-            ),
+            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                  color: Theme.of(context).colorScheme.onPrimary,
+                ),
           ),
         ),
       ),
       floatingActionButton: Theme(
-        data: myTheme.copyWith(
+        data: Theme.of(context).copyWith(
             // TRY THIS: Change the seedColor to "Colors.red" or
             //           "Colors.blue".
             colorScheme: ColorScheme.fromSeed(
