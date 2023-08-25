@@ -634,7 +634,7 @@ If you are writing tests for your Flutter app
 and plugins are causing crashes,
 check out [Flutter in plugin tests][].
 
-[Flutter in plugin tests]: {{site.url}}/packages-and-plugins/plugins-in-tests
+[Flutter in plugin tests]: {{site.url}}/testing/plugins-in-tests
 [Testing plugins]: {{site.url}}/testing/testing-plugins
 
 ## Developing FFI plugin packages {#plugin-ffi}
@@ -733,7 +733,7 @@ To avoid writing these by hand, they are generated from the header file
 Regenerate the bindings by running the following:
 
 ```terminal
-$  flutter pub run ffigen --config ffigen.yaml
+$  dart run ffigen --config ffigen.yaml
 ```
 
 ### Step 4: Invoking native code
@@ -1010,6 +1010,6 @@ PENDING
 [publishing is forever]: {{site.dart-site}}/tools/pub/publishing#publishing-is-forever
 [supported-platforms]: #plugin-platforms
 [test your plugin]: #testing-your-plugin
-[unit tests]: {{site.url}}/testing#unit-tests
+[unit tests]: {{site.url}}/testing/overview#unit-tests
 [`url_launcher`]: {{site.pub}}/packages/url_launcher
 [Writing a good plugin]: {{site.flutter-medium}}/writing-a-good-flutter-plugin-1a561b986c9c

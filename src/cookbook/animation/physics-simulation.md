@@ -2,12 +2,6 @@
 title: Animate a widget using a physics simulation
 description: How to implement a physics animation.
 diff2html: true
-prev:
-  title: Animate a page route transition
-  path: /cookbook/animation/page-route-animation
-next:
-  title: Animate the properties of a container
-  path: /cookbook/animation/animated-container
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

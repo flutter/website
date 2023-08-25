@@ -1,6 +1,6 @@
 ---
 title: Deep linking
-description: Navigate to routes when the app receives a new URL
+description: Navigate to routes when the app receives a new URL.
 ---
 
 Flutter supports deep linking on iOS, Android, and web browsers.
@@ -82,7 +82,8 @@ is opened while the app is running.
 
 ## For more information
 
-[Learning Flutter’s new navigation and routing system][] provides an introduction to the Router system.
+[Learning Flutter’s new navigation and routing system][] provides an 
+introduction to the Router system.
 
 [Learning Flutter’s new navigation and routing system]: {{site.flutter-medium}}/learning-flutters-new-navigation-and-routing-system-7c9068155ade
 [switching-channels]: {{site.url}}/release/upgrade#switching-flutter-channels

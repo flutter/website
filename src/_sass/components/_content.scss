@@ -39,7 +39,7 @@
   .container {
     max-width: $site-content-max-width;
 
-    img {
+    img, iframe {
       max-width: 100%;
     }
   }
@@ -50,7 +50,7 @@
   }
 
   &__title {
-    margin-bottom: bootstrap.bs-spacer(12);
+    margin-bottom: bootstrap.bs-spacer(8);
 
     @at-root {
       #page-github-links {
@@ -81,6 +81,8 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+    
     // Invisible pre-element to avoid modifying styles on headings.
     &[id]:not(.no_toc)::before { @include header-clearance; }
 

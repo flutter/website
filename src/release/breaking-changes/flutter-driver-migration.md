@@ -299,5 +299,5 @@ testWidgets('scroll, tap on the last item (Zedoary), verify selected',
 ```
 
 [Integration testing]: {{site.url}}/testing/integration-tests
-[widget testing]: {{site.url}}/testing#widget-tests
+[widget testing]: {{site.url}}/testing/overview#widget-tests
 [Example Project]: {{site.repo.this}}/tree/{{site.branch}}/examples/integration_test_migration

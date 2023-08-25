@@ -53,7 +53,7 @@ one of the following codelabs:
 
 ## Next steps
 
-* [Records and Patterns in Dart 3][]<br> **NEW**
+* [Records and Patterns in Dart 3][]<br>
   Discover Dart 3's new records and patterns features.
   Learn how you can use them in a Flutter app to help you
   write more readable and maintainable Dart code.
@@ -135,7 +135,7 @@ like layout and animations:
   platform that it's running on, be that Android, iOS, 
   the web, Windows, macOS, or Linux.
 
-* [Building next generation UIs in Flutter][]<br> **NEW**
+* [Building next generation UIs in Flutter][]<br>
   Learn how to build a Flutter app that uses the power of `flutter_animate`,
   fragment shaders, and particle fields. You will craft a user interface that
   evokes those science fiction movies and TV shows we all love
@@ -258,7 +258,7 @@ Learn how to use Flutter with other technologies.
   existing native libraries that provide a
   C interface.
 
-* [Create haikus about Google products with the PaLM API and Flutter][]<br> **NEW**
+* [Create haikus about Google products with the PaLM API and Flutter][]<br>
   Learn how to build an app that uses the PaLM API to 
   generate haikus based on Google product names. The 
   PaLM API gives you access to Google's 
@@ -302,8 +302,8 @@ like iOS, Android, desktop, or the web.
 
 * [Using a plugin with a Flutter web app][]<br>
   Finish an app that reports the number of stars on a GitHub repository.
-  use Dart DevTools to do some simple debugging, and
-  Host your app on Firebase and, finally, use a Flutter plugin to
+  Use Dart DevTools to do some simple debugging, and
+  host your app on Firebase and, finally, use a Flutter plugin to
   launch the app and open the hosted privacy policy.
 
 * [Write a Flutter desktop application][]<br>
@@ -313,7 +313,13 @@ like iOS, Android, desktop, or the web.
   create and use plugins to interact with native APIs and desktop applications,
   and use code generation to build type-safe client libraries for GitHub's APIs.
 
+* [Adding a Home Screen widget to your Flutter app][home-screen]<br> **NEW**
+  Learn how to add a Home Screen widget to your Flutter app
+  on iOS. This applies to your home screen, lock screen, or the
+  today view.
+
 [Building a Cupertino app with Flutter]: {{site.codelabs}}/codelabs/flutter-cupertino
+[home-screen]:   {{site.codelabs}}/flutter-home-screen-widgets
 [How to write a Flutter plugin]: {{site.codelabs}}/codelabs/write-flutter-plugin
 [provider]: {{site.pub}}/packages/provider
 [Using a plugin with a Flutter web app]: {{site.codelabs}}/codelabs/web-url-launcher

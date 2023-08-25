@@ -1,24 +1,12 @@
 ---
 title: Retrieve the value of a text field
 description: How to retrieve text from a text field.
-prev:
-  title: Create an expandable FAB
-  path: /cookbook/effects/expandable-fab
-next:
-  title: Focus and text fields
-  path: /cookbook/forms/focus
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/forms/retrieve_input"?>
-
-{% comment %}
-prev:
-  title: Handle changes to a text field
-  path: /cookbook/forms/text-field-changes
-{% endcomment %}
 
 In this recipe,
 learn how to retrieve the text a user has entered into a text field

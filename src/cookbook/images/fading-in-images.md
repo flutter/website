@@ -1,12 +1,6 @@
 ---
 title: Fade in images with a placeholder
 description: How to fade images into view.
-prev:
-  title: Display images from the internet
-  path: /cookbook/images/network-image
-next:
-  title: Work with cached images
-  path: /cookbook/images/cached-images
 ---
 
 <?code-excerpt path-base="cookbook/images/fading_in_images"?>
@@ -138,7 +132,7 @@ class MyApp extends StatelessWidget {
 ![Asset fade-in]({{site.url}}/assets/images/docs/cookbook/fading-in-asset-demo.gif){:.site-mobile-screenshot}
 
 
-[Adding assets and images]: {{site.url}}/ui/assets-and-images
+[Adding assets and images]: {{site.url}}/ui/assets/assets-and-images
 [`FadeInImage`]: {{site.api}}/flutter/widgets/FadeInImage-class.html
 [`FadeInImage.assetNetwork()`]: {{site.api}}/flutter/widgets/FadeInImage/FadeInImage.assetNetwork.html
 [`transparent_image`]: {{site.pub-pkg}}/transparent_image
