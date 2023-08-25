@@ -20,7 +20,7 @@ env:
 jobs:
 
   test:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     if: github.repository == 'flutter/website'
     strategy:
       fail-fast: false
