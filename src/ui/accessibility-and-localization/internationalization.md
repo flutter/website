@@ -346,10 +346,10 @@ return MaterialApp(
 
 ### Placeholders, plurals, and selects
 
-{{site.alert.note}}
+{{site.alert.tip}}
   When using VS Code, add the [arb-editor extension][].
-  This extension adds syntax hightlighting, snippets, diagnostics, and quick fixes.
-  to help edit `.arb` template files.
+  This extension adds syntax highlighting, snippets, 
+  diagnostics, and quick fixes to help edit `.arb` template files.
 {{site.alert.end}}
 
 [arb-editor extension]: https://marketplace.visualstudio.com/items?itemName=Google.arb-editor
