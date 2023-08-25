@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
 WORKDIR /app
 
 # Replace all files from CRLF to LF in case they are copied from the Windows environment.
-ENV REPLACE_CRLF find . -type f -not -name "*.bat" -not -path "*/.git/*" -not -path "*/flutter/bin/internal/shared.sh" -exec sed -i 's/\r$//' {} \;
+ENV REPLACE_CRLF find . -type f -not -name "*.bat" -not -path "*/.git/*" -exec sed -i 's/\r$//' {} \;
 
 
 # ============== INSTALL FLUTTER ==============
