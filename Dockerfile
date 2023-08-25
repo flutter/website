@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
 WORKDIR /app
 
 
-ENV REPLACE_CRLF="find . -not \( -name .git -prune \) -type f -exec perl -pi -e 's/\r\n|\n|\r/\n/g' {} \;"
+RUN alias REPLACE_CRLF='find . -not \( -name .git -prune \) -type f -exec perl -pi -e "s/\r\n|\n|\r/\n/g" {} \;'
 # ============== INSTALL FLUTTER ==============
 # NOTE that this will fail if you have not cloned the repo with --recurse-submodules
 # or run `git submodule update --init --recursive` after cloning.
