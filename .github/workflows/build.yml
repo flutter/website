@@ -20,7 +20,6 @@ env:
 jobs:
 
   test:
-    runs-on: ${{ matrix.os }}
     if: github.repository == 'flutter/website'
     strategy:
       fail-fast: false
@@ -33,6 +32,7 @@ jobs:
             branch: stable
             experimental: false
         os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     steps:
       - run: git config --global core.autocrlf true
       - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
