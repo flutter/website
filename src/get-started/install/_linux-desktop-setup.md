@@ -1,7 +1,8 @@
 ## Linux Setup
 
-### Additional Linux Requirements
-In addition to the Flutter SDK, these additional tools are required for desktop development on Linux:
+### Linux Prerequisites
+
+To develop Flutter apps on Linux, install the following tools:
 
 - [Clang](https://clang.llvm.org/)
 - [CMake](https://cmake.org/)
