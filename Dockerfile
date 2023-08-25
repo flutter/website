@@ -26,6 +26,7 @@ FROM base AS flutter
 
 # This Flutter install uses/requires the local ./flutter submodule
 COPY ./flutter ./flutter
+RUN find . -not \( -name .git -prune \) -type f -exec perl -pi -e 's/\r\n|\n|\r/\n/g' {} \;
 COPY ./site-shared ./site-shared
 COPY pubspec.yaml ./
 
