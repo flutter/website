@@ -345,11 +345,14 @@ return MaterialApp(
 [`MaterialApp.onGenerateTitle`]: {{site.api}}/flutter/material/MaterialApp/onGenerateTitle.html
 
 ### Placeholders, plurals, and selects
+
 {{site.alert.note}}
-  When using VS Code, the [arb-editor](https://marketplace.visualstudio.com/items?itemName=Google.arb-editor)
-  extension can help with editing `.arb` templates file through syntax
-  hightlighting, snippets, diagnostics, and quick fixes.
+  When using VS Code, add the [arb-editor extension][].
+  This extension adds syntax hightlighting, snippets, diagnostics, and quick fixes.
+  to help edit `.arb` template files.
 {{site.alert.end}}
+
+[arb-editor extension]: https://marketplace.visualstudio.com/items?itemName=Google.arb-editor
 
 You can also include application values in a message with
 special syntax that uses a _placeholder_ to generate a method
