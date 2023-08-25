@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
 WORKDIR /app
 
 
-
+ENV REPLACE_CRLF='find . -not \( -name .git -prune \) -type f -exec perl -pi -e 's/\r\n|\n|\r/\n/g' {} \;'
 # ============== INSTALL FLUTTER ==============
 # NOTE that this will fail if you have not cloned the repo with --recurse-submodules
 # or run `git submodule update --init --recursive` after cloning.
@@ -26,9 +26,9 @@ FROM base AS flutter
 
 # This Flutter install uses/requires the local ./flutter submodule
 COPY ./flutter ./flutter
-RUN find . -not \( -name .git -prune \) -type f -exec perl -pi -e 's/\r\n|\n|\r/\n/g' {} \;
 COPY ./site-shared ./site-shared
 COPY pubspec.yaml ./
+RUN $REPLACE_CRLF
 
 ARG FLUTTER_BUILD_BRANCH
 ENV FLUTTER_BUILD_BRANCH=$FLUTTER_BUILD_BRANCH
@@ -76,6 +76,7 @@ RUN npm install -g firebase-tools@12.4.0
 FROM flutter AS tests
 
 COPY ./ ./
+RUN $REPLACE_CRLF
 
 ARG FLUTTER_TEST_BRANCH=stable
 ENV FLUTTER_TEST_BRANCH=$FLUTTER_TEST_BRANCH
@@ -101,6 +102,7 @@ COPY package.json package-lock.json ./
 RUN npm install
 
 COPY ./ ./
+RUN $REPLACE_CRLF
 
 # Jekyl ports
 EXPOSE 35730
@@ -126,6 +128,7 @@ COPY package.json package-lock.json ./
 RUN npm ci
 
 COPY ./ ./
+RUN $REPLACE_CRLF
 
 RUN echo 'User-agent: *\nDisallow:\n\nSitemap: https://docs.flutter.dev/sitemap.xml' > src/robots.txt
 
