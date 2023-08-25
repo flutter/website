@@ -78,7 +78,6 @@ RUN npm install -g firebase-tools@12.4.0
 FROM flutter AS tests
 
 COPY ./ ./
-RUN $REPLACE_CRLF
 
 ARG FLUTTER_TEST_BRANCH=stable
 ENV FLUTTER_TEST_BRANCH=$FLUTTER_TEST_BRANCH
@@ -104,7 +103,6 @@ COPY package.json package-lock.json ./
 RUN npm install
 
 COPY ./ ./
-RUN $REPLACE_CRLF
 
 # Jekyl ports
 EXPOSE 35730
