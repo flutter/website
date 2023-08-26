@@ -346,6 +346,14 @@ return MaterialApp(
 
 ### Placeholders, plurals, and selects
 
+{{site.alert.tip}}
+  When using VS Code, add the [arb-editor extension][].
+  This extension adds syntax highlighting, snippets, 
+  diagnostics, and quick fixes to help edit `.arb` template files.
+{{site.alert.end}}
+
+[arb-editor extension]: https://marketplace.visualstudio.com/items?itemName=Google.arb-editor
+
 You can also include application values in a message with
 special syntax that uses a _placeholder_ to generate a method
 instead of a getter.
