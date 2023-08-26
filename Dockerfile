@@ -17,9 +17,6 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
 
 WORKDIR /app
 
-# Replace all files from CRLF to LF in case they are copied from the Windows environment.
-ENV REPLACE_CRLF find . -type f -not -name "*.bat" -not -path "*/.git/*" -exec sed -i 's/\r$//' {} \;
-
 
 # ============== INSTALL FLUTTER ==============
 # NOTE that this will fail if you have not cloned the repo with --recurse-submodules
@@ -30,7 +27,8 @@ FROM base AS flutter
 COPY ./flutter ./flutter
 COPY ./site-shared ./site-shared
 COPY pubspec.yaml ./
-RUN $REPLACE_CRLF
+# Replace files from CRLF to LF (*.bat and .git directories are excluded) in case they are copied from the Windows environment.
+RUN find . -type f -not -name "*.bat" -not -path "*/.git/*" -exec sed -i 's/\r$//' {} \;
 
 ARG FLUTTER_BUILD_BRANCH
 ENV FLUTTER_BUILD_BRANCH=$FLUTTER_BUILD_BRANCH
@@ -128,7 +126,6 @@ COPY package.json package-lock.json ./
 RUN npm ci
 
 COPY ./ ./
-RUN $REPLACE_CRLF
 
 RUN echo 'User-agent: *\nDisallow:\n\nSitemap: https://docs.flutter.dev/sitemap.xml' > src/robots.txt
 
