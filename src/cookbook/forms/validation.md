@@ -1,12 +1,6 @@
 ---
 title: Build a form with validation
 description: How to build a form that validates input.
-prev:
-  title: Drag a UI element
-  path: /cookbook/effects/drag-a-widget
-next:
-  title: Create and style a text field
-  path: /cookbook/forms/text-input
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

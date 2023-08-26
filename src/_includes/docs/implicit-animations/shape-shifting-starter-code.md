@@ -1,5 +1,9 @@
+<?code-excerpt "animation/implicit/container1/lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:split-60:width-100%:height-500px:ga_id-shape_shifting_starter_code
-{$ begin main.dart $}
+// Copyright 2019 the Dart project authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license
+// that can be found in the LICENSE file.
+
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -17,7 +21,7 @@ Color randomColor() {
 }
 
 class AnimatedContainerDemo extends StatefulWidget {
-  const AnimatedContainerDemo({Key? key}) : super(key: key);
+  const AnimatedContainerDemo({super.key});
 
   @override
   State<AnimatedContainerDemo> createState() => _AnimatedContainerDemoState();
@@ -29,7 +33,7 @@ class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
   late double margin;
 
   @override
-  initState() {
+  void initState() {
     super.initState();
     color = randomColor();
     borderRadius = randomBorderRadius();
@@ -54,7 +58,7 @@ class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
               ),
             ),
             ElevatedButton(
-              child: const Text('change'),
+              child: const Text('Change'),
               onPressed: () => {},
             ),
           ],
@@ -65,7 +69,7 @@ class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -81,5 +85,4 @@ void main() {
     const MyApp(),
   );
 }
-{$ end main.dart $}
 ```

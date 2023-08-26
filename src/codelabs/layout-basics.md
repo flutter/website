@@ -310,7 +310,7 @@ can position their children in that extra space.
 
 `MainAxisAlignment.spaceAround`
 : Similar to `MainAxisAlignment.spaceEvenly`,
-  but reduces half of the space before the first
+  but reduces the space before the first
   child and after the last child
   to half of the width between the children.
 
@@ -621,7 +621,7 @@ the widget becomes the `Flexible` widget's child
 and is considered *flexible*.
 After inflexible widgets are laid out,
 the widgets are resized according to their
-`flex` and `fit` properties.:
+`flex` and `fit` properties:
 
 `flex`
 : Compares itself against other `flex`

@@ -1,12 +1,9 @@
 ---
 title: Play and pause a video
 description: How to use the video_player plugin.
-prev:
-  title: Store key-value data on disk
-  path: /cookbook/persistence/key-value
-next:
-  title: Take a picture using the camera
-  path: /cookbook/plugins/picture-using-camera
+js:
+  - defer: true
+    url: https://dartpad.dev/inject_embed.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/plugins/play_video/"?>
@@ -16,6 +13,12 @@ and Flutter apps are no exception. To play videos,
 the Flutter team provides the [`video_player`][] plugin.
 You can use the `video_player` plugin to play videos
 stored on the file system, as an asset, or from the internet.
+
+{{site.alert.warning}}
+  At this time,
+  the `video_player` plugin doesn't work with any desktop platform.
+  To learn more, check out the [`video_player`][] package.
+{{site.alert.end}}
 
 On iOS, the `video_player` plugin makes use of
 [`AVPlayer`][] to handle playback. On Android,
@@ -33,10 +36,10 @@ the following steps:
 
 ## 1. Add the `video_player` dependency
 
-This recipe depends on one Flutter plugin: `video_player`. First, add this
-dependency to your project.
+This recipe depends on one Flutter plugin: `video_player`. 
+First, add this dependency to your project.
 
-To add the `video_player` package as a dev dependency, run `flutter pub add`:
+To add the `video_player` package as a dependency, run `flutter pub add`:
 
 ```terminal
 $ flutter pub add video_player
@@ -229,7 +232,7 @@ FloatingActionButton(
 ## Complete example
 
 <?code-excerpt "lib/main.dart"?>
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'dart:async';
 
 import 'package:flutter/material.dart';

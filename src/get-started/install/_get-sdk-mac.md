@@ -1,5 +1,7 @@
 ## Get the Flutter SDK {#get-sdk}
 
+{% include docs/china-notice.md %}
+
  1. Download the following installation bundle to get the latest
     {{site.sdk.channel}} release of the Flutter SDK:
 
@@ -122,7 +124,6 @@ For additional download options, check out `flutter help precache`.
 {% include_relative _analytics.md %}
 
 [Flutter repo]: {{site.repo.flutter}}
-[Installing snapd]: https://snapcraft.io/docs/installing-snapd
 [SDK archive]: {{site.url}}/release/archive
 [Snap Store]: https://snapcraft.io/store
 [snapd]: https://snapcraft.io/flutter

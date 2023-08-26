@@ -1,12 +1,6 @@
 ---
 title: Set up app links for Android
 description: How set up universal links for an iOS application built with Flutter
-prev:
-  title: Pass arguments to a named route
-  path: /cookbook/navigation/navigate-with-arguments
-next:
-  title: Set up universal links for iOS
-  path: /cookbook/navigation/set-up-universal-links
 js:
 - defer: true
   url: https://dartpad.dev/inject_embed.dart.js

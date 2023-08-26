@@ -2,12 +2,6 @@
 title: Use themes to share colors and font styles
 short-title: Themes
 description: How to share colors and font styles throughout an app using Themes.
-prev:
-  title: Use a custom font
-  path: /cookbook/design/fonts
-next:
-  title: Work with tabs
-  path: /cookbook/design/tabs
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

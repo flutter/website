@@ -1141,7 +1141,7 @@ To use the `http` package, add it to your dependencies in `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  http: ^1.0.0
+  http: ^1.1.0
 ```
 
 To make a network request,
@@ -2542,7 +2542,7 @@ For more information on using the Firebase Cloud Messaging API, see the
 [`firebase_messaging`][] plugin documentation.
 
 
-[Adding assets and images]: {{site.url}}/ui/assets-and-images
+[Adding assets and images]: {{site.url}}/ui/assets/assets-and-images
 [Animation & Motion widgets]: {{site.url}}/ui/widgets/animation
 [Animations overview]: {{site.url}}/ui/animations
 [Animations tutorial]: {{site.url}}/ui/animations/tutorial
@@ -2569,7 +2569,7 @@ For more information on using the Firebase Cloud Messaging API, see the
 [`geolocator`]: {{site.pub}}/packages/geolocator
 [`camera`]: {{site.pub-pkg}}/camera
 [`http` package]: {{site.pub}}/packages/http
-[internationalization guide]: {{site.url}}/accessibility-and-localization/internationalization
+[internationalization guide]: {{site.url}}/ui/accessibility-and-localization/internationalization
 [`intl`]: {{site.pub}}/packages/intl
 [`intl_translation`]: {{site.pub}}/packages/intl_translation
 [Introduction to declarative UI]: {{site.url}}/get-started/flutter-for/declarative

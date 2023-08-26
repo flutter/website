@@ -20,10 +20,11 @@ primary source to aid in migration. A
 
 ## Changes
 
-This section lists the deprecations, listed by the affected class.
+This section lists the deprecations, listed by the package and affected class.
 
 ### ThemeData.fixTextFieldOutlineLabel
 
+Package: flutter
 Supported by Flutter Fix: yes
 
 `ThemeData.fixTextFieldOutlineLabel` was deprecated in v2.5.
@@ -71,6 +72,7 @@ Relevant PRs:
 
 ### OverscrollIndicatorNotification.disallowGlow
 
+Package: flutter
 Supported by Flutter Fix: yes
 
 `OverscrollIndicatorNotification.disallowGlow` was deprecated in v2.5.
@@ -126,6 +128,7 @@ Relevant PRs:
 
 ### ColorScheme primaryVariant & secondaryVariant
 
+Package: flutter
 Supported by Flutter Fix: yes
 
 `ColorScheme.primaryVariant` and `ColorScheme.secondaryVariant` were deprecated
@@ -186,6 +189,7 @@ Relevant PRs:
 
 ### ThemeData.primaryColorBrightness
 
+Package: flutter
 Supported by Flutter Fix: yes
 
 `ThemeData.primaryColorBrightness` was deprecated in v2.6, and has not been used
@@ -245,6 +249,7 @@ Relevant PRs:
 
 ### RawScrollbar & subclasses updates
 
+Package: flutter
 Supported by Flutter Fix: yes
 
 The `isAlwaysShown` property of `RawScrollbar`, `Scrollbar`,
@@ -336,6 +341,160 @@ Relevant PRs:
 
 ---
 
+### AnimationSheetBuilder display & sheetSize
+
+Package: flutter_test
+Supported by Flutter Fix: yes
+
+The `display` and `sheetSize` methods of `AnimationSheetBuilder` were deprecated
+in v2.3. The replacement is the `collate` method.
+
+`AnimationSheetBuilder`'s output step previously required these two methods to
+be called, but is now streamlined through a single call to `collate`.
+
+The `collate` function directly puts the images together and asynchronously
+returns an image. It requires less boilerplate, and outputs smaller images
+without any compromise to quality.
+
+**Migration guide**
+
+[In-depth migration guide available]
+
+Code before migration:
+
+```dart
+final AnimationSheetBuilder animationSheet = AnimationSheetBuilder(
+    frameSize: const Size(40, 40)
+);
+
+await tester.pumpFrames(animationSheet.record(
+  const Directionality(
+    textDirection: TextDirection.ltr,
+    child: Padding(
+      padding: EdgeInsets.all(4),
+      child: CircularProgressIndicator(),
+    ),
+  ),
+), const Duration(seconds: 2));
+
+tester.binding.setSurfaceSize(animationSheet.sheetSize());
+
+final Widget display = await animationSheet.display();
+await tester.pumpWidget(display);
+
+await expectLater(
+  find.byWidget(display),
+  matchesGoldenFile('material.circular_progress_indicator.indeterminate.png'),
+);
+```
+
+Code after migration:
+
+```dart
+final AnimationSheetBuilder animationSheet = AnimationSheetBuilder(
+    frameSize: const Size(40, 40)
+);
+
+await tester.pumpFrames(animationSheet.record(
+  const Directionality(
+    textDirection: TextDirection.ltr,
+    child: Padding(
+      padding: EdgeInsets.all(4),
+      child: CircularProgressIndicator(),
+    ),
+  ),
+), const Duration(seconds: 2));
+
+await expectLater(
+  animationSheet.collate(20),
+  matchesGoldenFile('material.circular_progress_indicator.indeterminate.png'),
+);
+```
+
+[In-depth migration guide available]: {{site.url}}/release/breaking-changes/animation-sheet-builder-display
+
+**References**
+
+API documentation:
+
+* [`AnimationSheetBuilder`][]
+
+Relevant PRs:
+
+* Deprecated in [#83337][]
+* Removed in [#129657][]
+
+[`AnimationSheetBuilder`]: {{site.api}}/flutter/flutter_test/AnimationSheetBuilder-class.html
+
+[#83337]: {{site.repo.flutter}}/pull/83337
+[#129657]: {{site.repo.flutter}}/pull/129657
+
+---
+
+---
+
+### flutter_test timeout logic
+
+Package: flutter_test
+Supported by Flutter Fix: no
+
+The following APIs related to timeout logic in tests were deprecated
+in v2.6. There are no replacements, and references should be removed, except for
+the `initialTimeout` parameter of `testWidgets`, which is replaced by using
+`timeout`.
+
+* `TestWidgetsFlutterBinding.addTime`
+* `TestWidgetsFlutterBinding.runAsync` method - `additionalTime` parameter
+* `TestWidgetsFlutterBinding.runTest` method - `timeout` parameter
+* `AutomatedTestWidgetsFlutterBinding.runTest` method - `timeout` parameter
+* `LiveTestWidgetsFlutterBinding.runTest` method - `timeout` parameter
+* `testWidgets` method - `initialTime` parameter
+
+These were found to cause flakiness in testing, and were not in use by tested
+customers.
+
+Since being deprecated, use of these parameters have had no effect on tests, so
+removing references should have no effect on existing code bases.
+
+**Migration guide**
+
+
+Code before migration:
+
+```dart
+testWidgets('Test', (_) {}, initialTimeout:  Duration(seconds: 5));
+```
+
+Code after migration:
+
+```dart
+testWidgets('Test', (_) {}, timeout:  Timeout(Duration(seconds: 5)));
+```
+
+**References**
+
+API documentation:
+
+* [`testWidgets`][]
+* [`TestWidgetsFlutterBinding`][]
+* [`AutomatedTestWidgetsFlutterBinding`][]
+* [`LiveTestWidgetsFlutterBinding`][]
+
+Relevant PRs:
+
+* Deprecated in [#89952][]
+* Removed in [#129663][]
+
+[`testWidgets`]: {{site.api}}/flutter/flutter_test/testWidgets.html
+[`TestWidgetsFlutterBinding`]: {{site.api}}/flutter/flutter_test/TestWidgetsFlutterBinding-class.html
+[`AutomatedTestWidgetsFlutterBinding`]: {{site.api}}/flutter/flutter_test/AutomatedTestWidgetsFlutterBinding-class.html
+[`LiveTestWidgetsFlutterBinding`]: {{site.api}}/flutter/flutter_test/LiveTestWidgetsFlutterBinding-class.html
+
+[#89952]: {{site.repo.flutter}}/pull/89952
+[#129663]: {{site.repo.flutter}}/pull/129663
+
+---
+
 ## Timeline
 
-In stable release: TBD
+In stable release: 3.13.0

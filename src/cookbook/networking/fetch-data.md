@@ -1,12 +1,6 @@
 ---
 title: Fetch data from the internet
 description: How to fetch data over the internet using the http package.
-prev:
-  title: Delete data on the internet
-  path: /cookbook/networking/delete-data
-next:
-  title: Make authenticated requests
-  path: /cookbook/networking/authenticated-requests
 ---
 
 <?code-excerpt path-base="cookbook/networking/fetch_data/"?>
@@ -349,5 +343,5 @@ class _MyAppState extends State<MyApp> {
 [Introduction to unit testing]: {{site.url}}/cookbook/testing/unit/introduction
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html
 [Mock dependencies using Mockito]: {{site.url}}/cookbook/testing/unit/mocking
-[JSON and serialization]: {{site.url}}/data-and-backend/json
+[JSON and serialization]: {{site.url}}/data-and-backend/serialization/json
 [`State`]: {{site.api}}/flutter/widgets/State-class.html

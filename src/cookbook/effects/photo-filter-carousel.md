@@ -1,12 +1,6 @@
 ---
 title: Create a photo filter carousel
-description: How to implement a photo filter carousel.
-prev:
-  title: Create a nested navigation flow
-  path: /cookbook/effects/nested-nav
-next:
-  title: Create a scrolling parallax effect
-  path: /cookbook/effects/parallax-scrolling
+description: How to implement a photo filter carousel in Flutter.
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
@@ -192,7 +186,7 @@ class FilterItem extends StatelessWidget {
           child: ClipOval(
             child: Image.network(
               'https://docs.flutter.dev/cookbook/img-files'
-              '/effects/instagram-buttons/millenial-texture.jpg',
+              '/effects/instagram-buttons/millennial-texture.jpg',
               color: color.withOpacity(0.5),
               colorBlendMode: BlendMode.hardLight,
             ),
@@ -575,7 +569,8 @@ class _ExampleInstagramFilterSelectionState
       valueListenable: _filterColor,
       builder: (context, color, child) {
         return Image.network(
-          'https://docs.flutter.dev/cookbook/img-files/effects/instagram-buttons/millenial-dude.jpg',
+          'https://docs.flutter.dev/cookbook/img-files'
+          '/effects/instagram-buttons/millennial-dude.jpg',
           color: color.withOpacity(0.5),
           colorBlendMode: BlendMode.color,
           fit: BoxFit.cover,
@@ -831,7 +826,8 @@ class FilterItem extends StatelessWidget {
           padding: const EdgeInsets.all(8),
           child: ClipOval(
             child: Image.network(
-              'https://docs.flutter.dev/cookbook/img-files/effects/instagram-buttons/millenial-texture.jpg',
+              'https://docs.flutter.dev/cookbook/img-files'
+              '/effects/instagram-buttons/millennial-texture.jpg',
               color: color.withOpacity(0.5),
               colorBlendMode: BlendMode.hardLight,
             ),

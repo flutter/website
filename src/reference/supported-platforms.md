@@ -39,11 +39,11 @@ following table:
 <div class="table-wrapper" markdown="1">
 |Platform version|Supported|Best effort|Unsupported|
 |----------------|---------|-----------|-----------|
-| Android SDK    |21-31|19-20|18-|
+| Android SDK    |21-34|19-20|18-|
 | iOS            |16|11-15|10-, arm7v 32-bit|
-| Linux Debian   |10-11|9-|any 32-bit|
-| Linux Ubuntu   |18.04 LTS|20.04-22.04|any 32-bit|
-| macOS          |Monterey (12+)|Mojave (10.14) to Big Sur (11)|High Sierra (10.13-) |
+| Linux Debian   |10-12|9-|any 32-bit|
+| Linux Ubuntu   |18.04 LTS|20.04-23.04|any 32-bit|
+| macOS          |Ventura (13+)|Mojave (10.14) to Monterey (12)|High Sierra (10.13-) |
 | web - Chrome   |latest 2 releases|96+| |
 | web - Firefox  |latest 2 releases|99+| |
 | web - Safari   |latest 2 releases|14+| |

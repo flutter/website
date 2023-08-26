@@ -1125,7 +1125,7 @@ add a dependency for `cupertino_icons` in your project's
 ```yaml
 name: my_awesome_application
 dependencies:
-  cupertino_icons: ^0.1.0
+  cupertino_icons: ^1.0.5
 ```
 
 To globally customize the colors and styles of components,
@@ -2575,7 +2575,7 @@ and common widget properties.
 
 
 [`AboutDialog`]: {{site.api}}/flutter/material/AboutDialog-class.html
-[Adding Assets and Images in Flutter]: {{site.url}}/ui/assets-and-images
+[Adding Assets and Images in Flutter]: {{site.url}}/ui/assets/assets-and-images
 [`AlertDialog`]: {{site.api}}/flutter/material/AlertDialog-class.html
 [`Align`]: {{site.api}}/flutter/widgets/Align-class.html
 [`Animation`]: {{site.api}}/flutter/animation/Animation-class.html

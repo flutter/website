@@ -1,12 +1,6 @@
 ---
 title: Send data to the internet
 description: How to use the http package to send data over the internet.
-prev:
-  title: Parse JSON in the background
-  path: /cookbook/networking/background-parsing
-next:
-  title: Update data over the internet
-  path: /cookbook/networking/update-data
 ---
 
 <?code-excerpt path-base="cookbook/networking/send_data/"?>
@@ -374,5 +368,5 @@ class _MyAppState extends State<MyApp> {
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html
 [JSONPlaceholder]: https://jsonplaceholder.typicode.com/
 [Mock dependencies using Mockito]: {{site.url}}/cookbook/testing/unit/mocking
-[JSON and serialization]: {{site.url}}/data-and-backend/json
+[JSON and serialization]: {{site.url}}/data-and-backend/serialization/json
 [`State`]: {{site.api}}/flutter/widgets/State-class.html

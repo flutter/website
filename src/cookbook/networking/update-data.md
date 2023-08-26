@@ -1,12 +1,6 @@
 ---
 title: Update data over the internet
 description: How to use the http package to update data over the internet.
-prev:
-  title: Send data to the internet
-  path: /cookbook/networking/send-data
-next:
-  title: Work with WebSockets
-  path: /cookbook/networking/web-sockets
 ---
 
 <?code-excerpt path-base="cookbook/networking/update_data/"?>
@@ -403,6 +397,6 @@ class _MyAppState extends State<MyApp> {
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [Introduction to unit testing]: {{site.url}}/cookbook/testing/unit/introduction
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html
-[JSON and serialization]: {{site.url}}/data-and-backend/json
+[JSON and serialization]: {{site.url}}/data-and-backend/serialization/json
 [Mock dependencies using Mockito]: {{site.url}}/cookbook/testing/unit/mocking
 [`State`]: {{site.api}}/flutter/widgets/State-class.html
