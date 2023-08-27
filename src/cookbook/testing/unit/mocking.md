@@ -126,7 +126,7 @@ void main() {
 Next, generate the mocks running the following command:
 
 ```terminal
-$ flutter pub run build_runner build
+$ dart run build_runner build
 ```
 
 ## 4. Write a test for each condition
