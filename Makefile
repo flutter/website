@@ -89,7 +89,7 @@ emulate:
 # WARNING this can take a while to run!
 # Usage: `make test FLUTTER_TEST_BRANCH=<channel>`
 test:
-	DOCKER_BUILDKIT=1 time docker build --rm --target tests -t flt-test .
+	DOCKER_BUILDKIT=1 docker build --rm --target tests -t flt-test .
 	docker run --rm --name flt-tests -t flt-test --target ${FLUTTER_TEST_BRANCH}
 
 # Stop long running tests
@@ -110,13 +110,13 @@ debug-tests:
 # those will be run on the Github action.
 # Usage: `make build-image`
 build-image:
-	DOCKER_BUILDKIT=1 time docker build --rm --no-cache --target build \
+	DOCKER_BUILDKIT=1 docker build --rm --no-cache --target build \
 		--build-arg BUILD_CONFIGS=${BUILD_CONFIGS} -t ${BUILD_TAG} .
 
 # Build the production site & Run the link checker
 # Usage: `make check-links`
 build-image-and-check-links:
-	DOCKER_BUILDKIT=1 time docker build --rm --no-cache --target checklinks \
+	DOCKER_BUILDKIT=1 docker build --rm --no-cache --target checklinks \
 		--build-arg BUILD_CONFIGS=${BUILD_CONFIGS} -t ${BUILD_TAG} .
 	docker run --rm -t ${BUILD_TAG}
 
