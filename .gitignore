@@ -10,6 +10,7 @@ _site
 *.swp
 build
 node_modules
+flutter/
 
 # Dart and Flutter, build related
 .dart_tool
