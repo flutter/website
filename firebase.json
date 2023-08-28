@@ -135,6 +135,7 @@
       { "source": "/platform-integration/windows/version-migration", "destination": "/release/breaking-changes/windows-version-information", "type": 301 },
       { "source": "/platform-integration/windows/dark-mode-migration", "destination": "/release/breaking-changes/windows-dark-mode", "type": 301 },
       { "source": "/release/release-notes/changelogs/changelog-1.17.0", "destination": "/release/release-notes/release-notes-1.17.0", "type": 301 },
+      { "source": "/release/release-notes/supported-platforms ", "destination": "/reference/supported-platforms", "type": 301 },
       { "source": "/reference/widgets/:catalogpage+", "destination": "/ui/widgets/:catalogpage+", "type": 301 },
       { "source": "/reference/widgets/widgetindex", "destination": "/reference/widgets", "type": 301 },
       { "source": "/release/breaking-changes/scrollable_alert_dialog", "destination": "/release/breaking-changes/scrollable-alert-dialog", "type": 301 },
