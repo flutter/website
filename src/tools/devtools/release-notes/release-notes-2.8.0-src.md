@@ -1,8 +1,9 @@
 # DevTools 2.8.0 release notes
 
-Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
+Dart & Flutter DevTools&mdash;A suite of performance tools
+for Dart and Flutter
 
-## General Updates
+## General updates
 
 * Improvements for initial page load time -
   [#3325](https://github.com/flutter/devtools/pull/3325)
@@ -17,66 +18,64 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
   If you see this warning,
   be sure to open DevTools via `dart devtools` instead of from pub:
 
-![alt_text]({{site.url}}/tools/devtools/release-notes/images-2.8.0/image1.png "dart devtools warning dialog")
+  ![dart devtools warning dialog]({{site.url}}/tools/devtools/release-notes/images-2.8.0/image1.png "dart devtools warning dialog")
 
-## Performance Updates
+## Performance updates
 
 * Added a new “Enhance Tracing” feature to help users diagnose UI jank
   stemming from expensive Build, Layout, and Paint operations.
 
-![alt_text]({{site.url}}/tools/devtools/release-notes/images-2.8.0/image2.png "Enhance tracing")
+  ![Enhance tracing]({{site.url}}/tools/devtools/release-notes/images-2.8.0/image2.png "Enhance tracing")
+  
+  The expected workflow is as such:
+  
+  1. User is investigating UI jank in the performance page
+  2. User notices a long Build, Layout, and/or Paint event
+  3. User turns on the respective tracking toggle in the “Enhance Tracing” feature
+  4. User reproduces the UI jank in their app
+  5. User looks at the new set of Timeline events, which should now have
+     additional child events for widgets built, render objects laid out,
+     and/or render objects painted
 
-The expected workflow is as such:
-
-1. User is investigating UI jank in the performance page
-2. User notices a long Build, Layout, and/or Paint event
-3. User turns on the respective tracking toggle in the “Enhance Tracing” feature
-4. User reproduces the UI jank in their app
-5. User looks at the new set of Timeline events, which should now have
-   additional child events for widgets built, render objects laid out,
-   and/or render objects painted
-
-![alt_text]({{site.url}}/tools/devtools/release-notes/images-2.8.0/image3.png "Timeline events")
-
+  ![Timeline events]({{site.url}}/tools/devtools/release-notes/images-2.8.0/image3.png "Timeline events")
 
 * Added new “More debugging options” feature to allow for disabling
   rendering layers for Clip, Opacity, and Physical Shapes.
 
-![alt_text]({{site.url}}/tools/devtools/release-notes/images-2.8.0/image4.png "More debugging options")
+  ![More debugging options]({{site.url}}/tools/devtools/release-notes/images-2.8.0/image4.png "More debugging options")
+  
+  The expected workflow is as such:
+  
+  1. User is investigating UI jank in the performance page
+  2. User notices a lot of janky frames and suspects it could be due to
+     excessive use of clipping, opacity, or physical shapes.
+  3. User turns off the respective render layer toggle in the “More
+     debugging options” feature
+  4. User reproduces the UI jank in their app
+  5. If the UI jank is reduced with a rendering layer turned off,
+     the user should try to optimize their app to use
+     less clipping/opacity/physical shape effects.
+     If the UI jank is not reduced,
+     the user now knows that the performance problem
+     is not due to these UI effects.
 
-The expected workflow is as such:
-
-1. User is investigating UI jank in the performance page
-2. User notices a lot of janky frames and suspects it could be due to
-   excessive use of clipping, opacity, or physical shapes.
-3. User turns off the respective render layer toggle in the “More
-   debugging options” feature
-4. User reproduces the UI jank in their app
-5. If the UI jank is reduced with a rendering layer turned off,
-   the user should try to optimize their app to use
-   less clipping/opacity/physical shape effects.
-   If the UI jank is not reduced,
-   the user now knows that the performance problem
-   is not due to these UI effects.
-
-
-## Debugger Updates
+## Debugger updates
 
 * Replaced the “Libraries” pane with a “File Explorer” pane -
-  [#3448](https://github.com/flutter/devtools/pull/3448). The “File
-  Explorer” pane has two components:
+  [#3448](https://github.com/flutter/devtools/pull/3448). 
+  The “File Explorer” pane has two components:
 
-1. A tree view of the libraries present in your application.
-   You can use the File Explorer to find and open a library,
-   or you can use the existing `Ctrl/Cmd + P` keyboard shortcut
-   to search for a file.
-2. A new “Outline” view that shows the structure of the selected library.
-   This view will show classes, members, methods, etc.,
-   and when an item is selected,
-   the source view will jump to the respective line of code
-   for the selected item.
+  1. A tree view of the libraries present in your application.
+     You can use the File Explorer to find and open a library,
+     or you can use the existing `Ctrl/Cmd + P` keyboard shortcut
+     to search for a file.
+  2. A new “Outline” view that shows the structure of the selected library.
+     This view will show classes, members, methods, etc.,
+     and when an item is selected,
+     the source view will jump to the respective line of code
+     for the selected item.
 
-![alt_text]({{site.url}}/tools/devtools/release-notes/images-2.8.0/image5.png "Outline view selected library")
+  ![Outline view selected library]({{site.url}}/tools/devtools/release-notes/images-2.8.0/image5.png "Outline view selected library")
 
 * Performance improvements to expression evaluation auto complete -
   [#3463](https://github.com/flutter/devtools/pull/3463)
@@ -86,5 +85,6 @@ The expected workflow is as such:
   [#3449](https://github.com/flutter/devtools/pull/3449)
 
 ## Full commit history
+
 More details about changes and fixes are available from the
-[DevTools git log.](https://github.com/flutter/devtools/commits/master).
+[DevTools git log](https://github.com/flutter/devtools/commits/master).

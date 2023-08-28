@@ -1,11 +1,13 @@
 ---
 title: DevTools release notes
-short-title: DevTools release notes
-description: Release notes for Flutter and Dart DevTools
+description: Learn about the latest changes in Dart and Flutter DevTools.
 ---
 
-This page links to announcements and release notes for
-Flutter and Dart DevTools
+The following is an index of release notes for
+select DevTools releases.
+
+To determine which version of DevTools you are using,
+run `flutter --version`.
 
 * [2.26.1 release notes][]
 * [2.25.0 release notes][]

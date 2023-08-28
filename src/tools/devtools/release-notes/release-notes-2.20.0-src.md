@@ -1,6 +1,6 @@
 # DevTools 2.20.0 release notes
 
-Dart & Flutter DevTools&emdash;A suite of performance tools
+Dart & Flutter DevTools&mdash;A suite of performance tools
 for Dart and Flutter
 
 ## CPU profiler updates
@@ -29,7 +29,7 @@ for Dart and Flutter
 
 * Add a new tab, **Diff**, to enable memory leak detection
   and troubleshooting by comparing heap snapshots,
-  and providing insights about the number of instances,
+  providing insights about the number of instances,
   shallow size, retained size, and retaining paths -
   [#4714](https://github.com/flutter/devtools/pull/4714)
 
@@ -37,11 +37,9 @@ for Dart and Flutter
 
 ## Debugger updates
 
-* Support for inspecting more types of instances in the
-  variables viewer (Expandos, Types, TypeArguments,
-  Parameters, Closures + closure Contexts,
-  WeakProperty, Function, FunctionType, ReceivePort,
-  Closure, RegExp) -
+* Support for inspecting more types of instances in the variables viewer
+  (Expandos, Types, TypeArguments, Parameters, Closures + closure Contexts, 
+  WeakProperty, Function, FunctionType, ReceivePort, Closure, RegExp) -
   [#4760](https://github.com/flutter/devtools/pull/4760)
 
 * Add support for displaying coverage in CodeView -
@@ -52,10 +50,10 @@ for Dart and Flutter
 ## Network updates
 
 * Display request data if content type is not json
-  (thanks to leungpuikuen@!) -
+  (thanks to @leungpuikuen!) -
   [#4602](https://github.com/flutter/devtools/pull/4602)
 
 ## Full commit history
-More details about changes and fixes are available from the
-[DevTools git log.](https://github.com/flutter/devtools/commits/master).
 
+More details about changes and fixes are available from the
+[DevTools git log](https://github.com/flutter/devtools/commits/master).

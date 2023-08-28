@@ -1,15 +1,17 @@
 # DevTools 2.19.0 release notes
 
-Dart & Flutter DevTools&emdash;A suite of performance tools
+Dart & Flutter DevTools&mdash;A suite of performance tools
 for Dart and Flutter
 
 ## Performance updates
 
-* Added a button to toggle the visibility of the Flutter Frames
-  chart - [#4577](https://github.com/flutter/devtools/pull/4577) 
+* Added a button to toggle the visibility of the Flutter Frames chart -
+  [#4577](https://github.com/flutter/devtools/pull/4577)
+
   ![diff]({{site.url}}/tools/devtools/release-notes/images-2.19.0/4577.png "Flutter Frames")
-* Polish the debug mode warning to better describe which data
-  is accurate in debug mode and which data may be misleading -
+
+* Polish the debug mode warning to better describe which data is
+  accurate in debug mode and which data may be misleading -
   [#3537](https://github.com/flutter/devtools/pull/3537) 
 * Reorder performance tool tabs and only show the CPU profiler
   for the “Timeline Events” tab -
@@ -22,7 +24,7 @@ for Dart and Flutter
 
 ## Debugger updates
 
-* Fix an issue with hovercards where they were appearing
+* Fix an issue with hover cards where they were appearing
   but never disappearing -
   [#4627](https://github.com/flutter/devtools/pull/4627) 
 * Fix a bug with the file search autocomplete dialog -
@@ -35,6 +37,7 @@ for Dart and Flutter
   [#4509](https://github.com/flutter/devtools/pull/4509) 
 
 ## Full commit history
+
 More details about changes and fixes are available from the
-[DevTools git log.](https://github.com/flutter/devtools/commits/master).
+[DevTools git log](https://github.com/flutter/devtools/commits/master).
 
