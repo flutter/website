@@ -558,6 +558,9 @@
           permalink: /tools/devtools/inspector
         - title: Performance view
           permalink: /tools/devtools/performance
+          children:
+          - title: Performance profiling for web
+            permalink: /tools/devtools/web-performance
         - title: CPU Profiler view
           permalink: /tools/devtools/cpu-profiler
         - title: Memory view

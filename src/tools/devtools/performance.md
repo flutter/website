@@ -4,12 +4,10 @@ description: Learn how to use the DevTools performance view.
 ---
 
 {{site.alert.note}}
-  The performance view works with Flutter mobile, Flutter desktop,
-  Use [Chrome DevTools][] to debug performance for a Dart or
-  Flutter web app.
+  The DevTools performance view works with Flutter mobile and Flutter desktop. For web, Flutter adds timeline events to the performance panel of Chrome DevTools instead. See [Debugging web performance][] for more details.
 {{site.alert.end}}
 
-[Chrome DevTools]: https://developer.chrome.com/docs/devtools/
+[Debugging web performance]: {{site.url}}/tools/devtools/web-performance
 
 The performance page can help you diagnose performance
 problems and UI jank in your application.
