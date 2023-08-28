@@ -60,6 +60,8 @@ shell:
 # overcome inconsistent bugs with missing packages at runtime.
 setup:
 	make clean
+	dart pub get
+	dart run ./tool/handle_symlinks.dart find
 	docker-compose build --no-cache site
 	docker-compose run --rm site npm install
 	docker-compose run --rm site bundle config set force_ruby_platform true
