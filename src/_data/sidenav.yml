@@ -115,20 +115,10 @@
 - title: Design & theming
   permalink: /ui/design
   children:
+    - title: Share styles with themes
+      permalink: /cookbook/design/themes
     - title: Material design
       permalink: /ui/design/material
-      children:
-        - title: Overview
-          permalink: /ui/design/material
-          match-page-url-exactly: true
-        - title: Use themes to share styles
-          permalink: /cookbook/design/themes
-        - title: Add a drawer to a screen
-          permalink: /cookbook/design/drawer
-        - title: Display a snackbar
-          permalink: /cookbook/design/snackbars
-        - title: Add tabs to your app
-          permalink: /cookbook/design/tabs
     - title: Text
       permalink: /ui/design/text
       children:
@@ -181,6 +171,8 @@
           permalink: /cookbook/forms/focus
         - title: Build a form with validation
           permalink: /cookbook/forms/validation
+    - title: Display a snackbar
+      permalink: /cookbook/design/snackbars
     - title: Implement actions & shortcuts
       permalink: /ui/interactivity/actions-and-shortcuts
     - title: Manage keyboard focus
@@ -204,12 +196,16 @@
     - title: Overview
       permalink: /ui/navigation
       match-page-url-exactly: true
+    - title: Add tabs to your app
+      permalink: /cookbook/design/tabs
     - title: Navigate to a new screen and back
       permalink: /cookbook/navigation/navigation-basics
     - title: Send data to a new screen
       permalink: /cookbook/navigation/passing-data
     - title: Return data from a screen
       permalink: /cookbook/navigation/returning-data
+    - title: Add a drawer to a screen
+      permalink: /cookbook/design/drawer
     - title: Setup deep linking
       permalink: /ui/navigation/deep-linking
     - title: Setup app links for Android
@@ -458,7 +454,7 @@
     - title: Overview
       permalink: /perf
       match-page-url-exactly: true
-    - title: Impeller **NEW**
+    - title: Impeller
       permalink: /perf/impeller
     - title: Performance best practices
       permalink: /perf/best-practices

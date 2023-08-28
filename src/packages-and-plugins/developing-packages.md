@@ -733,7 +733,7 @@ To avoid writing these by hand, they are generated from the header file
 Regenerate the bindings by running the following:
 
 ```terminal
-$  flutter pub run ffigen --config ffigen.yaml
+$  dart run ffigen --config ffigen.yaml
 ```
 
 ### Step 4: Invoking native code
