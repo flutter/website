@@ -4,10 +4,12 @@ environment:
   sdk: ^3.1.0-0
 
 dev_dependencies:
+  archive: ^3.3.7
   build_runner: ^2.4.6
   code_excerpt_updater:
     path: site-shared/packages/code_excerpt_updater
   code_excerpter:
     path: site-shared/packages/code_excerpter
   linkcheck: ^3.0.0
+  lints: any
   path: ^1.8.3
