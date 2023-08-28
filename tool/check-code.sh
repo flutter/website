@@ -42,10 +42,10 @@ flutter --version
 if [[ $REFRESH ]]; then
   echo "=> Refreshing code excerpts..."
   (
-    set -x;
+    set -x
     tool/refresh-code-excerpts.sh --keep-dart-tool
   ) || (
-    echo "=> ERROR: some code excerpts were not refreshed!";
+    echo "=> ERROR: some code excerpts were not refreshed!"
     exit 1
   )
 fi
@@ -97,12 +97,12 @@ for sample in $EXAMPLE_ROOT/*/*{,/*}; do
     # Does it match our filter?
     if [[ -n "$FILTER" && ! $sample =~ $FILTER ]]; then
       echo "=> Example: $sample - skipped because of filter"
-      continue;
+      continue
     
     # Skip submodules
-    elif [[ "$(cd $sample ; git rev-parse --show-superproject-working-tree)" ]]; then
+    elif [[ "$(cd $sample; git rev-parse --show-superproject-working-tree)" ]]; then
       echo "=> Example: $sample - skipped because it's in a submodule."
-      continue;
+      continue
     
     else
       echo "=> Example: $sample"
@@ -111,24 +111,24 @@ for sample in $EXAMPLE_ROOT/*/*{,/*}; do
     # Only hydrate the sample if we're going to test it.
     if [[ -n $TEST && -d "$sample/test" ]]; then
       (
-        set -x;
-        cd $ROOT;
+        set -x
+        cd $ROOT
         flutter create --no-overwrite $sample
         rm -rf $sample/integration_test # Remove unneeded integration test stubs.
       )
     fi
 
     (
-      set -x;
+      set -x
       cd $sample
-      flutter packages get;
-      flutter analyze .;
+      flutter pub get
+      flutter analyze .
     )
 
     if [[ -n $TEST && -d "$sample/test" ]]; then
       (
-        cd $sample;
-        set -x;
+        cd $sample
+        set -x
         echo "=> Running tests..."
         flutter test
       )
