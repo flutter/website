@@ -1,39 +1,41 @@
 ---
-title: Updated default text styles for the menus
+title: Updated default text styles for menus
 description: >
-  The default text styles for the menus are updated to
+  The default text styles for menus are updated to
   match the Material 3 specification.
 ---
 
 ## Summary
 
-The default text styles used for the menus are updated
+The default text styles used for menus are updated
 to match the Material 3 specification.
 
 ## Context
 
 The default text style for `MenuItemButton` (a widget used
-in a `MenuBar`, and in a menu created with `MenuAnchor`), and `DropdownMenuEntry`
-(in the `DropdownMenu`) is updated to match the Material 3 specification.
+in a `MenuBar`, and in a menu created with `MenuAnchor`), 
+and `DropdownMenuEntry` (in the `DropdownMenu`) is
+updated to match the Material 3 specification.
 
-Likewise, the default text style for the `DropdownMenu`s `TextField` is updated to match
-the Material 3 specification.
+Likewise, the default text style for the `DropdownMenu`s `TextField` is updated
+to match the Material 3 specification.
 
 ## Description of change
 
 The default text style for `MenuItemButton` (a widget used
-in a `MenuBar`, and in a menu created with `MenuAnchor`), and `DropdownMenuEntry`
-(in the `DropdownMenu`) is updated from `TextTheme.bodyLarge` to `TextTheme.labelLarge`
-for Material 3.
+in a `MenuBar`, and in a menu created with `MenuAnchor`), 
+and `DropdownMenuEntry` (in the `DropdownMenu`) is updated from
+`TextTheme.bodyLarge` to `TextTheme.labelLarge` for Material 3.
 
 The default text style for the `DropdownMenu`s `TextField` is updated from
 `TextTheme.labelLarge` to `TextTheme.bodyLarge` for Material 3.
 
 ## Migration guide
 
-A `MenuItemButton` for Material 3 uses `TextTheme.labelLarge` as the default
-text style. To use the previous default text style, set the `TextTheme.bodyLarge`
-text style in the `MenuItemButton.style`, or `MenuButtonThemeData.style` property.
+A `MenuItemButton` for Material 3 uses
+`TextTheme.labelLarge` as the default text style. 
+To use the previous default text style, set the `TextTheme.bodyLarge` text style
+in the `MenuItemButton.style` or `MenuButtonThemeData.style` properties.
 
 Code before migration:
 
@@ -72,10 +74,11 @@ menuButtonTheme: MenuButtonThemeData(
 ),
 ```
 
-A `DropdownMenu`'s `TextField` for Material 3 uses `TextTheme.bodyLarge`
-as the default text style. To use the previous default text style, set the
-`TextTheme.labelLarge` text style in `DropdownMenu.style` property, or the
-`DropdownMenuThemeData.style`.
+A `DropdownMenu`'s `TextField` for Material 3 
+uses `TextTheme.bodyLarge` as the default text style. 
+To use the previous default text style, 
+set the `TextTheme.labelLarge` text style in 
+the `DropdownMenu.textStyle` or `DropdownMenuThemeData.textStyle` properties.
 
 Code before migration:
 
@@ -125,10 +128,11 @@ dropdownMenuTheme: DropdownMenuThemeData(
 ),
 ```
 
-A `DropdownMenu`'s `DropdownMenuEntry` for Material 3 uses `TextTheme.labelLarge`
-as the default text style. To use the previous default text style, set the
-`TextTheme.bodyLarge` text style in `DropdownMenuEntry.style` property, or the
-`MenuButtonThemeData.style`.
+A `DropdownMenu`'s `DropdownMenuEntry` for Material 3 
+uses `TextTheme.labelLarge` as the default text style. 
+To use the previous default text style, set the
+`TextTheme.bodyLarge` text style in
+the `DropdownMenuEntry.style` or `MenuButtonThemeData.style` properties.
 
 Code before migration:
 
