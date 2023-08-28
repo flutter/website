@@ -1,10 +1,10 @@
 name: flutter_io_dev_tools
 
 environment:
-  sdk: ^3.0.1
+  sdk: ^3.1.0-0
 
 dev_dependencies:
-  build_runner: ^2.4.4
+  build_runner: ^2.4.6
   code_excerpt_updater:
     path: site-shared/packages/code_excerpt_updater
   code_excerpter:

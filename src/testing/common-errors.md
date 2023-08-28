@@ -15,15 +15,6 @@ future revisions, and your contributions are welcomed.
 Feel free to [open an issue][] or [submit a pull request][] to
 make this page more useful to you and the Flutter community. 
 
-{{site.alert.important}}
-  You might be directed to this page if the
-  framework detects a problem involving box constraints.
-  For a deeper look into Flutter's box constraints,
-  check out [Understanding constraints][].
-{{site.alert.end}}
-
-[Understanding constraints]: {{site.url}}/ui/layout/constraints
-
 [open an issue]: {{site.github}}/flutter/website/issues/new/choose
 [submit a pull request]: {{site.github}}/flutter/website/pulls
 
@@ -148,6 +139,7 @@ The resources linked below provide further information about this error.
 [its source code]: {{site.repo.flutter}}/blob/c8e42b47f5ea8b5ff7bf2f2b0a2a8e765f1aa51d/packages/flutter/lib/src/widgets/basic.dart#L5166-L5174
 [flexible-video]: ({{site.youtube-site}}/watch?v=CI7x0mAZiY0)
 [medium-article]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db#738b
+[Understanding constraints]: {{site.url}}/ui/layout/constraints
 
 ## ‘RenderBox was not laid out’
 
@@ -498,12 +490,29 @@ class FirstScreen extends StatelessWidget {
 }
 ```
 
+## `The ScrollController is attached to multiple scroll views`
+
+This error can occur when multiple scrolling
+widgets (such as `ListView`) appear on the
+screen at the same time. It's more likely for
+this error to occur on a web or desktop app,
+than a mobile app since it's rare to encounter
+this scenario on mobile.
+
+For more information and to learn how to fix,
+check out the following video on
+[`PrimaryScrollController`][controller-video]:
+
+[controller-video]: <iframe width="560" height="315" src="https://www.youtube.com/embed/33_0ABjFJUU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
+
+[`PrimaryScrollController`]: {{site.api}}/flutter/widgets/PrimaryScrollController-class.html
+
 ## References
 
 To learn more about how to debug errors,
 especially layout errors in Flutter, 
 check out the following resources: 
 
-* [How to debug layout issues with the Flutter Inspector][medium-article]]
+* [How to debug layout issues with the Flutter Inspector][medium-article]
 * [Understanding constraints][]
 * [Flutter architectural overview]({{site.url}}/resources/architectural-overview#layout-and-rendering)

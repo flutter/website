@@ -10,17 +10,29 @@ next:
 toc: false
 ---
 
-You can build apps with Flutter using any text editor
+You can build apps with Flutter using any text editor or
+integrated development environment (IDE)
 combined with Flutter's command-line tools.
-However, we recommend using one of our editor
-plugins for an even better experience.
-These plugins provide you with code completion, syntax
-highlighting, widget editing assists, run & debug support, and more.
+The Flutter team recommends using an editor that supports
+a Flutter extension or plugin, like VS Code and Android Studio.
+These plugins provide code completion, syntax highlighting,
+widget editing assists, run & debug support, and more.
 
-Use the following steps to add an editor plugin for VS Code,
-Android Studio, IntelliJ, or Emacs.
-If you want to use a different editor,
-that's OK, skip ahead to the [next step: Test drive][].
+You can add a supported plugin for Visual Studio Code,
+Android Studio, or IntelliJ IDEA Community, Educational,
+and Ultimate editions.
+The [Flutter plugin][] _only_ works with
+Android Studio and the listed editions of IntelliJ IDEA.
+
+(The [Dart plugin][] supports eight additional JetBrains IDEs.)
+
+[Flutter plugin]: https://plugins.jetbrains.com/plugin/9212-flutter
+[Dart plugin]: https://plugins.jetbrains.com/plugin/6351-dart
+
+Follow these procedures to add the Flutter plugin to VS Code,
+Android Studio, or IntelliJ.
+
+If you choose another IDE, skip ahead to the [next step: Test drive][].
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">
@@ -30,9 +42,6 @@ that's OK, skip ahead to the [next step: Test drive][].
   <li class="nav-item">
     <a class="nav-link" id="androidstudio-tab" href="#androidstudio" role="tab" aria-controls="androidstudio" aria-selected="false">Android Studio and IntelliJ</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" id="emacs-tab" href="#emacs" role="tab" aria-controls="emacs" aria-selected="false">Emacs</a>
-  </li>
 </ul>
 
 {% comment %} Tab panes {% endcomment -%}
@@ -41,92 +50,128 @@ that's OK, skip ahead to the [next step: Test drive][].
 
 ## Install VS Code
 
-VS Code is a lightweight editor with complete Flutter
-app execution and debug support.
+[VS Code][] is a code editor to build and debug apps.
+With the Flutter extension installed, you can compile, deploy, and debug
+Flutter apps.
 
-* [VS Code][], latest stable version
+To install the latest version of VS Code,
+follow Microsoft's instructions for the relevant platform:
 
-## Install the Flutter and Dart plugins
+- [Install on macOS][]
+- [Install on Windows][]
+- [Install on Linux][]
 
- 1. Start VS Code.
- 1. Invoke **View > Command Palette...**.
- 1. Type "install", and select
-    **Extensions: Install Extensions**.
- 1. Type "flutter" in the extensions search field,
-    select **Flutter** in the list, and click **Install**.
-    This also installs the required Dart plugin.
+[VS Code]: https://code.visualstudio.com/
+[Install on macOS]: https://code.visualstudio.com/docs/setup/mac
+[Install on Windows]: https://code.visualstudio.com/docs/setup/windows
+[Install on Linux]: https://code.visualstudio.com/docs/setup/linux
 
-## Validate your setup with the Flutter Doctor
+## Install the VS Code Flutter extension
 
- 1. Invoke **View > Command Palette...**.
- 1. Type "doctor", and select the
-    **Flutter: Run Flutter Doctor**.
- 1. Review the output in the **OUTPUT** pane for any issues.
-    Make sure to select Flutter from the dropdown
-    in the different Output Options.
+1. Start **VS Code**.
+
+1. Open a browser and go to the [Flutter extension][] page
+   on the Visual Studio Marketplace.
+
+1. Click **Install**.
+   Installing the Flutter extension also installs the Dart extension.
+
+[Flutter extension]: https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter
+
+## Validate your VS Code setup
+
+1. Go to **View** <span aria-label="and then">></span> **Output**.
+
+   You can also press <kbd>Control</kbd> / <kbd>Command</kbd> +
+   <kbd>Shift</kbd> + <kbd>U</kbd>.
+
+1. In the dropdown on the upper right of the **Output** panel, 
+   select **flutter (flutter)**.
+
+1. Go to **View** <span aria-label="and then">></span>
+   **Command Palette...**.
+
+   You can also press <kbd>Control</kbd> / <kbd>Command</kbd> +
+   <kbd>Shift</kbd> + <kbd>P</kbd>.
+
+1. Type `doctor`.
+
+1. Select the **Flutter: Run Flutter Doctor**.
+   Flutter Doctor runs and its response displays in the **Output** panel.
 
 </div>
 <div class="tab-pane" id="androidstudio" role="tabpanel" aria-labelledby="androidstudio-tab" markdown="1">
 
-## Install Android Studio
+## Install Android Studio or IntelliJ IDEA
 
-Android Studio offers a complete,
-integrated IDE experience for Flutter.
+Android Studio and IntelliJ IDEA offer a complete,
+IDE experience once you install the Flutter plugin.
 
-* [Android Studio][], version 2020.3.1 (Arctic Fox) or later
+To install one of the following IDEs, follow their instructions:
 
-Alternatively, you can also use IntelliJ:
+- [Android Studio][], version 2022.2 (Flamingo) or later
+- [IntelliJ IDEA Community][], version 2022.2 or later
+- [IntelliJ IDEA Ultimate][], version 2022.2 or later
 
-* [IntelliJ IDEA Community][], version 2021.2 or later
-* [IntelliJ IDEA Ultimate][], version 2021.2 or later
-
-## Install the Flutter and Dart plugins
+## Install the Flutter plugin
 
 The installation instructions vary by platform.
 
-### Mac
+### macOS
 
-Use the following instructions for macos:
+Use the following instructions for macOS:
 
-  1. Start Android Studio.
-  1. Open plugin preferences (**Preferences > Plugins** as of
-     v3.6.3.0 or later).
-  1. Select the Flutter plugin and
-     click **Install**.
-  1. Click **Yes** when prompted to install the Dart plugin.
-  1. Click **Restart** when prompted.
+1. Start Android Studio or IntelliJ.
+
+1. From the macOS menu bar, go to **Android Studio** (or **IntelliJ**)
+   <span aria-label="and then">></span> **Settings...**.
+
+   You can also press <kbd>Command</kbd> + <kbd>,</kbd>.
+
+   The **Preferences** dialog opens.
+
+1. From the list at the left, select **Plugins**.
+
+1. From the top of this panel, select **Marketplace**.
+
+1. Type `flutter` in the plugins search field.
+
+1. Select the **Flutter** plugin.
+
+1. Click **Install**.
+
+1. Click **Yes** when prompted to install the plugin.
+
+1. Click **Restart** when prompted.
 
 ### Linux or Windows
 
 Use the following instructions for Linux or Windows:
 
-   1. Open plugin preferences (**File > Settings > Plugins**).
-   1. Select **Marketplace**,  select the Flutter plugin and click
-      **Install**.
+1. Go to **File** <span aria-label="and then">></span> **Settings**.
 
-</div>
-<div class="tab-pane" id="emacs" role="tabpanel" aria-labelledby="emacs-tab" markdown="1">
+   You can also press <kbd>Control</kbd> + <kbd>Alt</kbd> + <kbd>S</kbd>.
 
-## Install Emacs
+   The **Preferences** dialog opens.
 
-Emacs is a lightweight editor with support for Flutter and Dart.
+1. From the list at the left, select **Plugins**.
 
-* [Emacs][], latest stable version
+1. From the top of this panel, select **Marketplace**.
 
-## Install the lsp-dart package
+1. Type `flutter` in the plugins search field.
 
-For information on how to install and use the package,
-see the [lsp-dart documentation][].
+1. Select the **Flutter** plugin.
+
+1. Click **Install**.
+
+1. Click **Yes** when prompted to install the plugin.
+
+1. Click **Restart** when prompted.
 
 </div>
 </div>{% comment %} End: Tab panes. {% endcomment -%}
 
-
-
-[Android Studio]: {{site.android-dev}}/studio
+[Android Studio]: {{site.android-dev}}/studio/install
 [IntelliJ IDEA Community]: https://www.jetbrains.com/idea/download/
 [IntelliJ IDEA Ultimate]: https://www.jetbrains.com/idea/download/
 [next step: Test drive]: {{site.url}}/get-started/test-drive
-[VS Code]: https://code.visualstudio.com/
-[Emacs]: https://www.gnu.org/software/emacs/download.html
-[lsp-dart documentation]: https://emacs-lsp.github.io/lsp-dart/

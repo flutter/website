@@ -1,13 +1,8 @@
 ---
 title: Mock dependencies using Mockito
-description: Use the Mockito package to mimic the behavior of services for testing.
+description: >
+  Use the Mockito package to mimic the behavior of services for testing.
 short-title: Mocking
-prev:
-  title: An introduction to unit testing
-  path: /cookbook/testing/unit/introduction
-next:
-  title: An introduction to widget testing
-  path: /cookbook/testing/widget/introduction
 ---
 
 <?code-excerpt path-base="cookbook/testing/unit/mocking"?>
@@ -131,7 +126,7 @@ void main() {
 Next, generate the mocks running the following command:
 
 ```terminal
-$ flutter pub run build_runner build
+$ dart run build_runner build
 ```
 
 ## 4. Write a test for each condition

@@ -92,7 +92,7 @@
 - title: What language(s) should the clock use?
   content: >
     Any. If you have words in your clock, consider
-    <a href="https://docs.flutter.dev/accessibility-and-localization/internationalization" target="_blank" rel="noopener noreferrer"> internationalizing
+    <a href="https://docs.flutter.dev/ui/accessibility-and-localization/internationalization" target="_blank" rel="noopener noreferrer"> internationalizing
     them<a/>. Note that written parts of your submission must be in English to be eligible for judging, and your submission must, at a minimum,  support English language
     evaluation. However, we will not judge your clock face for language inclusion. Please ensure that your clock face’s
     text does not include profanity in any language, and is built and submitted in accordance with the
@@ -102,7 +102,7 @@
 - title: What accessibility requirements should I add?
   content: >
     Google values accessibility, and it will be a consideration in your submission as part of the “overall execution”
-    criteria. Check the <a href="https://docs.flutter.dev/accessibility-and-localization/accessibility" target="_blank" rel="noopener noreferrer">
+    criteria. Check the <a href="https://docs.flutter.dev/ui/accessibility-and-localization/accessibility" target="_blank" rel="noopener noreferrer">
     Flutter accessibility</a> page for details.
 
 - title: >

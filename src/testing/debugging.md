@@ -284,7 +284,7 @@ You might find the following docs useful:
 
 * [Performance best practices][]
 * [Flutter performance profiling][]
-* [Using an OEM debugger][]
+* [Use a native debugger][]
 * [Flutter's modes][]
 * [Debugging Flutter apps programmatically][]
 * [DevTools][]
@@ -304,7 +304,7 @@ You might find the following docs useful:
 [Flutter's modes]: {{site.url}}/testing/build-modes
 [Flutter performance profiling]: {{site.url}}/perf/ui-performance
 [Performance best practices]: {{site.url}}/perf/best-practices
-[Using an OEM debugger]: {{site.url}}/testing/oem-debuggers
+[Use a native debugger]: {{site.url}}/testing/native-debugging
 
 [The Layer Cake]: {{site.medium}}/flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401
 

@@ -37,8 +37,9 @@ high-end user experiences. Fast Company described
 Flutter as [one of the top design ideas of the decade][] for
 its ability to turn concepts into production code
 without the compromises imposed by typical frameworks.
-It also acts as a productive prototyping tool,
-with [CodePen][] support for sharing your ideas with others.
+It also acts as a productive prototyping tool
+with drag-and-drop tools like [FlutterFlow][]
+and web-based IDEs like [Zapp!][].
 
 For engineering managers and businesses,
 Flutter allows the unification of app
@@ -48,8 +49,8 @@ apps for multiple platforms out of a single codebase.
 Flutter speeds feature development and synchronizes
 release schedules across the entire customer base.
 
-
-[CodePen]: https://codepen.io/topic/flutter
+[FlutterFlow]: https://flutterflow.io/
+[Zapp!]: https://zapp.run/
 [one of the top design ideas of the decade]: https://www.fastcompany.com/90442092/the-14-most-important-design-ideas-of-the-decade-according-to-the-experts
 
 ### How much development experience do I need to use Flutter?
@@ -211,7 +212,7 @@ We use our own testing capabilities to test our SDK,
 and we measure our [test coverage][] on every commit.
 
 [test coverage]: https://coveralls.io/github/flutter/flutter?branch=master
-[testing with Flutter]: {{site.url}}/testing
+[testing with Flutter]: {{site.url}}/testing/overview
 
 ### Does Flutter come with debugging tools?
 
@@ -329,7 +330,7 @@ we also aim to help lower app development and maintenance costs.
 
 
 [catalog of Flutter's widgets]: {{site.url}}/ui/widgets
-[gesture system]: {{site.url}}/ui/advanced/gestures
+[gesture system]: {{site.url}}/ui/interactivity/gestures
 
 ### What happens when my mobile OS updates and introduces new widgets?
 
@@ -708,8 +709,8 @@ Learn more about a11y in the
 [accessibility documentation][].
 
 
-[accessibility documentation]: {{site.url}}/accessibility-and-localization/accessibility
-[internationalization tutorial]: {{site.url}}/accessibility-and-localization/internationalization
+[accessibility documentation]: {{site.url}}/ui/accessibility-and-localization/accessibility
+[internationalization tutorial]: {{site.url}}/ui/accessibility-and-localization/internationalization
 
 ### How do I write parallel and/or concurrent apps for Flutter?
 
@@ -739,7 +740,7 @@ and many other utilities and formats.
 For a detailed writeup on using JSON with Flutter,
 check out the [JSON tutorial][].
 
-[JSON tutorial]: {{site.url}}/data-and-backend/json
+[JSON tutorial]: {{site.url}}/data-and-backend/serialization/json
 [pub.dev]: {{site.pub}}
 
 ### Can I build 3D (OpenGL) apps with Flutter?

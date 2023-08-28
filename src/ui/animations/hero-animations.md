@@ -105,7 +105,7 @@ to learn how to structure hero animation code,
 and [behind the scenes](#behind-the-scenes) to understand
 how Flutter performs a hero animation.
 
-<a name="basic-structure"></a>
+<a id="basic-structure"></a>
 ## Basic structure of a hero animation
 
 {{site.alert.secondary}}
@@ -269,7 +269,7 @@ implement hero animations:
     image in a layout widget. These examples use `Container`.
 {{site.alert.end}}
 
-<a name="standard-hero-animation-code"></a>
+<a id="standard-hero-animation-code"></a>
 {{site.alert.secondary}}
   **Standard hero animation code**
 
@@ -460,7 +460,7 @@ in the Material motion spec.
 This animation might seem complex (and it is), but you can **customize the
 provided example to your needs.** The heavy lifting is done for you.
 
-<a name="radial-hero-animation-code"></a>
+<a id="radial-hero-animation-code"></a>
 {{site.alert.secondary}}
   **Radial hero animation code**
 
