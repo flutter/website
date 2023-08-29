@@ -30,7 +30,7 @@ for Dart and Flutter
 
 * Added functionality to load an app startup profile for Flutter apps.
   This profile will contain CPU samples from the initialization
-  of the Dart VM up until the first Flutter frame has been rendered. -
+  of the Dart VM up until the first Flutter frame has been rendered -
   [#3357](https://github.com/flutter/devtools/pull/3357)
 
   ![Profile button]({{site.url}}/tools/devtools/release-notes/images-2.7.0/image3.png "Profile button")
@@ -45,7 +45,7 @@ for Dart and Flutter
 
 * Added multi-isolate support.
   Select which isolate you want to profile
-  from the isolate selector at the bottom of the page. -
+  from the isolate selector at the bottom of the page -
   [#3362](https://github.com/flutter/devtools/pull/3362)
 
   ![isolate selector]({{site.url}}/tools/devtools/release-notes/images-2.7.0/image5.png "isolate selector")
