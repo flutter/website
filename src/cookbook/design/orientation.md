@@ -1,12 +1,6 @@
 ---
 title: Update the UI based on orientation
 description: Respond to a change in the screen's orientation.
-prev:
-  title: Export fonts from a package
-  path: /cookbook/design/package-fonts
-next:
-  title: Use a custom font
-  path: /cookbook/design/fonts
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
@@ -141,7 +135,40 @@ class OrientationList extends StatelessWidget {
   <img src="/assets/images/docs/cookbook/orientation.gif" alt="Orientation Demo" class="site-mobile-screenshot" />
 </noscript>
 
+## Locking device orientation
+
+In the previous section, you learned 
+how to adapt the app UI to device orientation changes.
+
+Flutter also allows you to specify the orientations your app supports 
+using the values of [`DeviceOrientation`]. You can either:
+
+- Lock the app to a single orientation, like only the `portraitUp` position, or...
+- Allow multiple orientations, like both `portraitUp` and `portraitDown`, but not landscape.
+
+In the application `main()` method,
+call [`SystemChrome.setPreferredOrientations()`]
+with the list of preferred orientations that your app supports.
+
+To lock the device to a single orientation, 
+you can pass a list with a single item.
+
+For a list of all the possible values, check out [`DeviceOrientation`].
+
+<?code-excerpt "lib/orientation.dart (PreferredOrientations)"?>
+```dart
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
+  runApp(const MyApp());
+}
+```
+
 
 [Creating a grid list]: {{site.url}}/cookbook/lists/grid-lists
-[`Orientation`]: {{site.api}}/flutter/widgets/Orientation.html
+[`DeviceOrientation`]: {{site.api}}/flutter/services/DeviceOrientation.html
 [`OrientationBuilder`]: {{site.api}}/flutter/widgets/OrientationBuilder-class.html
+[`Orientation`]: {{site.api}}/flutter/widgets/Orientation.html
+[`SystemChrome.setPreferredOrientations()`]: {{site.api}}/flutter/services/SystemChrome/setPreferredOrientations.html

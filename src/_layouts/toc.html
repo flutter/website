@@ -1,6 +1,7 @@
 ---
 layout: default
 toc: false
+sitemap: false
 ---
 
 {% assign url = page.url | regex_replace: '/index$|/index.html$|/$' -%}
@@ -17,7 +18,7 @@ toc: false
   {% else -%}
     {% assign path = path | append: '/' | append: path_part -%}
   {% endif -%}
-  {% if forloop.index0 > 0 -%}
+  {% if forloop.index0 > 0 and path != '/ui' -%}
     {% assign topics = topics | where: "permalink", path -%}
     {% assign topics = topics[0].children | where_exp:"item", "item != 'divider'" -%}
   {% endif -%}

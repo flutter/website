@@ -1,12 +1,16 @@
+<?code-excerpt "animation/implicit/opacity1/lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:split-60:width-100%:height-532px:ga_id-fade_in_starter_code
-{$ begin main.dart $}
+// Copyright 2019 the Dart project authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license
+// that can be found in the LICENSE file.
+
 import 'package:flutter/material.dart';
 
 const owlUrl =
     'https://raw.githubusercontent.com/flutter/website/main/src/assets/images/docs/owl.jpg';
 
 class FadeInDemo extends StatefulWidget {
-  const FadeInDemo({Key? key}) : super(key: key);
+  const FadeInDemo({super.key});
 
   @override
   State<FadeInDemo> createState() => _FadeInDemoState();
@@ -15,15 +19,17 @@ class FadeInDemo extends StatefulWidget {
 class _FadeInDemoState extends State<FadeInDemo> {
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
     return Column(children: <Widget>[
-      Image.network(owlUrl),
+      Image.network(owlUrl, height: height * 0.8),
       TextButton(
-          child: const Text(
-            'Show Details',
-            style: TextStyle(color: Colors.blueAccent),
-          ),
-          onPressed: () => {}),
-    const Column(
+        child: const Text(
+          'Show Details',
+          style: TextStyle(color: Colors.blueAccent),
+        ),
+        onPressed: () => {},
+      ),
+      const Column(
         children: [
           Text('Type: Owl'),
           Text('Age: 39'),
@@ -35,7 +41,7 @@ class _FadeInDemoState extends State<FadeInDemo> {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -54,5 +60,4 @@ void main() {
     const MyApp(),
   );
 }
-{$ end main.dart $}
 ```

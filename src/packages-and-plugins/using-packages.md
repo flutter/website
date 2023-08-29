@@ -51,7 +51,7 @@ whether stored in files or packages,
 see [Adding assets and images][].
 
 
-[Adding assets and images]: {{site.url}}/ui/assets-and-images
+[Adding assets and images]: {{site.url}}/ui/assets/assets-and-images
 [`battery_plus`]: {{site.pub-pkg}}/battery_plus
 [developing packages]: {{site.url}}/packages-and-plugins/developing-packages
 [FlutterFire]: {{site.github}}/firebase/flutterfire

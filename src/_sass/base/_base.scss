@@ -212,13 +212,6 @@ dd {
   }
 }
 
-.fa-external-link-alt:before {
-  font-size: 0.25rem;
-  margin-left: 3px;
-  opacity: 0.5;
-  vertical-align: top;
-}
-
 .table-wrapper {
   overflow-x: auto;
 }
@@ -264,4 +257,18 @@ blockquote {
   th:not(:first-child), td:not(:first-child) {
     text-align: center;
   }
+}
+
+summary {
+  margin-bottom: 1rem;
+}
+
+ol + img, ul + img, ol + p, ul + p, p + p + img {
+  margin-bottom: 1rem;
+}
+
+.figure-caption {
+  font-size: bootstrap.$font-size-sm;
+  font-style: italic;
+  color: #041E3C;
 }

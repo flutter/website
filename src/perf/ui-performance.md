@@ -429,11 +429,9 @@ you can generate metrics to track the following:
 Tracking these benchmarks allows you to be informed when a
 regression is introduced that adversely affects performance.
 
-For more information, see [Integration testing][],
-a section in [Testing Flutter apps][].
+For more information, check out [Integration testing][].
 
-[Integration testing]: {{site.url}}/testing#integration-tests
-[Testing Flutter apps]: {{site.url}}/testing
+[Integration testing]: {{site.url}}/testing/integration-tests
 
 ## Other resources
 

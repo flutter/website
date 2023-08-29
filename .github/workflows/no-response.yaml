@@ -31,4 +31,4 @@ jobs:
           # Number of days of inactivity before an issue is closed for lack of response.
           daysUntilClose: 21
           # Label requiring a response.
-          responseRequiredLabel: "waiting for customer response"
+          responseRequiredLabel: "act.wait-for-customer"
