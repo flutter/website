@@ -76,7 +76,7 @@ If you use Android Studio to debug most of your code, start with this section.
 
 1. From the toolbar, click **Run main.dart**.
 
-   You can also press <kbd>Control</kbd> + <kbd>R</kbd>.
+   You can also press <kbd>Ctrl</kbd> + <kbd>R</kbd>.
 
    After the app displays in the emulator, continue to the next step.
 

@@ -17,7 +17,7 @@ onto that part of an application by tapping or clicking the desired UI element.
 Once that happens, text entered with the keyboard flows to that part of the
 application until the focus moves to another part of the application.  Focus can
 also be moved by pressing a particular keyboard shortcut, which is typically
-bound to the **Tab** key, so it is sometimes called "tab traversal".
+bound to the <kbd>Tab</kbd> key, so it is sometimes called "tab traversal".
 
 This page explores the APIs used to perform these operations on a Flutter
 application, and how the focus system works. We have noticed that there is some
@@ -30,36 +30,36 @@ creating `FocusNode` objects](#best-practices-for-creating-focusnode-objects).
 Some examples of situations where you might need to know how to use the focus
 system:
 
- - [Receiving/handling key events](#key-events)
- - [Implementing a custom component that needs to be focusable](#focus-widget)
- - [Receiving notifications when the focus changes](#change-notifications)
- - [Changing or defining the "tab order" of focus traversal in an application ](#focustraversalpolicy)
- - [Defining groups of controls that should be traversed together](#focustraversalgroup-widget)
- - [Preventing some controls in an application from being focusable](#controlling-what-gets-focus)
+- [Receiving/handling key events](#key-events)
+- [Implementing a custom component that needs to be focusable](#focus-widget)
+- [Receiving notifications when the focus changes](#change-notifications)
+- [Changing or defining the "tab order" of focus traversal in an application ](#focustraversalpolicy)
+- [Defining groups of controls that should be traversed together](#focustraversalgroup-widget)
+- [Preventing some controls in an application from being focusable](#controlling-what-gets-focus)
 
 ## Glossary
 
 Below are terms, as Flutter uses them, for elements of the focus system. The
 various classes that implement some of these concepts are introduced below.
 
- - **Focus tree** - A tree of focus nodes that typically sparsely mirrors the
-   widget tree, representing all the widgets that can receive focus.
- - **Focus node** - A single node in a focus tree. This node can receive the
-   focus, and is said to "have focus" when it is part of the focus chain. It
-   participates in handling key events only when it has focus.
- - **Primary focus** - The farthest focus node from the root of the focus tree
-   that has focus. This is the focus node where key events start propagating to
-   the primary focus node and its ancestors.
- - **Focus chain** - An ordered list of focus nodes that starts at the primary
-   focus node and follows the branches of the focus tree to the root of the
-   focus tree.
- - **Focus scope** - A special focus node whose job is to contain a group of
-   other focus nodes, and allow only those nodes to receive focus. It contains
-   information about which nodes were previously focused in its subtree.
- - **Focus traversal** - The process of moving from one focusable node to
-   another in a predictable order. This is typically seen in applications when
-   the user presses the **Tab** key to move to the next focusable control or
-   field.
+- **Focus tree** - A tree of focus nodes that typically sparsely mirrors the
+  widget tree, representing all the widgets that can receive focus.
+- **Focus node** - A single node in a focus tree. This node can receive the
+  focus, and is said to "have focus" when it is part of the focus chain. It
+  participates in handling key events only when it has focus.
+- **Primary focus** - The farthest focus node from the root of the focus tree
+  that has focus. This is the focus node where key events start propagating to
+  the primary focus node and its ancestors.
+- **Focus chain** - An ordered list of focus nodes that starts at the primary
+  focus node and follows the branches of the focus tree to the root of the
+  focus tree.
+- **Focus scope** - A special focus node whose job is to contain a group of
+  other focus nodes, and allow only those nodes to receive focus. It contains
+  information about which nodes were previously focused in its subtree.
+- **Focus traversal** - The process of moving from one focusable node to
+  another in a predictable order. This is typically seen in applications when
+  the user presses the <kbd>Tab</kbd> to move to the next focusable control or
+  field.
 
 ## FocusNode and FocusScopeNode
 
@@ -422,7 +422,7 @@ your custom controls.
 Once an application has the ability to focus, the next thing many apps want to
 do is to allow the user to control the focus using the keyboard or another input
 device. The most common example of this is "tab traversal" where the user
-presses the **Tab** key to go to the "next" control. Controlling what "next"
+presses the <kbd>Tab</kbd> to go to the "next" control. Controlling what "next"
 means is the subject of this section. This kind of traversal is provided by
 Flutter by default.
 

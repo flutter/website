@@ -80,21 +80,21 @@ follow this procedure.
 
     - To display the Simulator at a small size, go to
       **Window** <span aria-label="and then">></span>
-      **Physical Size** or<br>press <kbd>Command</kbd> + <kbd>1</kbd>.
+      **Physical Size** or<br>press <kbd>Cmd</kbd> + <kbd>1</kbd>.
 
     - To display the Simulator at a moderate size, go to
       **Window** <span aria-label="and then">></span>
-      **Point Accurate** or<br>press <kbd>Command</kbd> + <kbd>2</kbd>.
+      **Point Accurate** or<br>press <kbd>Cmd</kbd> + <kbd>2</kbd>.
 
     - To display the Simulator at an HD representation, go to
       **Window** <span aria-label="and then">></span>
-      **Pixel Accurate** or<br>press <kbd>Command</kbd> + <kbd>3</kbd>.
+      **Pixel Accurate** or<br>press <kbd>Cmd</kbd> + <kbd>3</kbd>.
       _The Simulator defaults to this size._
 
     - The Simulator defaults to **Fit Screen**.
       If you need to return to that size, go to
       **Window** <span aria-label="and then">></span>
-      **Fit Screen** or press <kbd>Command</kbd> + <kbd>4</kbd>.
+      **Fit Screen** or press <kbd>Cmd</kbd> + <kbd>4</kbd>.
 
 ### Deploy to physical iOS devices
 
@@ -206,7 +206,7 @@ Follow the Xcode signing flow to provision your project.
 
 1. Go to **File** <span aria-label="and then">></span> **Open...**
 
-   You can also press <kbd>Command</kbd> + <kbd>O</kbd>.
+   You can also press <kbd>Cmd</kbd> + <kbd>O</kbd>.
 
 1. Navigate to your Flutter project directory.
 
@@ -343,7 +343,7 @@ After you connect your iOS device to your Mac:
 1. Go to **Window** <span aria-label="and then">></span>
    **Devices and Simulators**.
 
-   You can also press <kbd>Shift</kbd> + <kbd>Command</kbd> + <kbd>2</kbd>.
+   You can also press <kbd>Shift</kbd> + <kbd>Cmd</kbd> + <kbd>2</kbd>.
 
 1. Select your iOS device.
 

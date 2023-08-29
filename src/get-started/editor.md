@@ -82,7 +82,7 @@ follow Microsoft's instructions for the relevant platform:
 
 1. Go to **View** <span aria-label="and then">></span> **Output**.
 
-   You can also press <kbd>Control</kbd> / <kbd>Command</kbd> +
+   You can also press <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +
    <kbd>Shift</kbd> + <kbd>U</kbd>.
 
 1. In the dropdown on the upper right of the **Output** panel, 
@@ -91,7 +91,7 @@ follow Microsoft's instructions for the relevant platform:
 1. Go to **View** <span aria-label="and then">></span>
    **Command Palette...**.
 
-   You can also press <kbd>Control</kbd> / <kbd>Command</kbd> +
+   You can also press <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +
    <kbd>Shift</kbd> + <kbd>P</kbd>.
 
 1. Type `doctor`.
@@ -126,7 +126,7 @@ Use the following instructions for macOS:
 1. From the macOS menu bar, go to **Android Studio** (or **IntelliJ**)
    <span aria-label="and then">></span> **Settings...**.
 
-   You can also press <kbd>Command</kbd> + <kbd>,</kbd>.
+   You can also press <kbd>Cmd</kbd> + <kbd>,</kbd>.
 
    The **Preferences** dialog opens.
 
@@ -150,7 +150,7 @@ Use the following instructions for Linux or Windows:
 
 1. Go to **File** <span aria-label="and then">></span> **Settings**.
 
-   You can also press <kbd>Control</kbd> + <kbd>Alt</kbd> + <kbd>S</kbd>.
+   You can also press <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>S</kbd>.
 
    The **Preferences** dialog opens.
 

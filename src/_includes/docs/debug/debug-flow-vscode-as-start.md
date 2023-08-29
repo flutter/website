@@ -11,7 +11,7 @@
    **View** <span aria-label="and then">></span>
    **Command Palette...**
 
-   You can also press <kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>.
+   You can also press <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>.
 
 1. Type `flutter select`.
 
