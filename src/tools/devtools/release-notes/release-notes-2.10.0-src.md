@@ -37,5 +37,6 @@ To learn more about DevTools, check out the
 
 ## Full commit history
 
-More details about changes and fixes are available from the
-[DevTools git log](https://github.com/flutter/devtools/commits/master).
+To find a complete list of changes since the previous release,
+check out
+[the diff on GitHub](https://github.com/flutter/devtools/compare/v2.9.2...v2.10.0).
