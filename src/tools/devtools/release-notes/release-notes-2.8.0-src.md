@@ -1,7 +1,9 @@
 # DevTools 2.8.0 release notes
 
-Dart & Flutter DevTools&mdash;A suite of performance tools
-for Dart and Flutter
+The 2.8.0 release of the Dart and Flutter DevTools
+includes the following changes among other general improvements.
+To learn more about DevTools, check out the
+[DevTools overview](https://docs.flutter.dev/tools/devtools/overview).
 
 ## General updates
 
