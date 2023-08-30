@@ -276,8 +276,8 @@ Specification version 1.1.
 Place the .desktop file in your Flutter project 
 under `<project root>/snap/gui/super-cool-app.desktop`.
 
-**Notice**: icon and .desktop file name must be the 
-same as your app name in yaml file! Also, your icon file must be world readable.
+**Notice**: icon and .desktop file name must be the same as your app name in
+yaml file!
 
 For example:
 
