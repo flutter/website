@@ -32,7 +32,7 @@ Use the following instructions to set up your build environment.
 At the command line, run the following:
 
 ```terminal
-$ sudo snap install snapcraft --classics
+$ sudo snap install snapcraft --classic
 ```
 ### Install LXD
 
@@ -42,10 +42,8 @@ To install LXD, use the following command:
 $ sudo snap install lxd
 ```
 
-LXD is required for core22 during the
-snap build process. Once installed, LXD needs to be
-configured for use. The default answers are suitable
-for most use cases.
+LXD is required during the snap build process. Once installed, LXD needs to be
+configured for use. The default answers are suitable for most use cases.
 
 ```terminal
 $ sudo lxd init
@@ -321,7 +319,7 @@ Once the `snapcraft.yaml` file is complete,
 ## Test the snap
 
 Once the snap is built, you'll have a `<name>.snap` file
-in your root project directory. 
+in your root project directory.
 
 $ sudo snap install ./super-cool-app_0.1.0_amd64.snap --dangerous
 
