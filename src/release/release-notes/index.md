@@ -12,6 +12,10 @@ releases to the stable channel.
   [Hotfixes to the Stable Channel][] on the Flutter wiki.
 {{site.alert.end}}
 
+* 3.13.0
+  * [3.13.0 announcement][]
+  * [3.13.0 release notes & change log][]
+  * [3.13.0 breaking changes & migrations][]
 * 3.10.0
   * [3.10.0 announcement][]
   * [3.10.0 release notes & change log][]
@@ -65,6 +69,9 @@ releases to the stable channel.
 * Earlier
   * [Archived release notes][]
 
+[3.13.0 announcement]: {{site.flutter-medium}}/whats-new-in-flutter-3-13-479d9b11df4d
+[3.13.0 release notes & change log]: {{site.url}}/release/release-notes/release-notes-3.13.0
+[3.13.0 breaking changes & migrations]: {{site.url}}/release/breaking-changes#released-in-flutter-313
 [3.10.0 announcement]: {{site.flutter-medium}}/whats-new-in-flutter-3-10-b21db2c38c73
 [3.10.0 release notes & change log]: {{site.url}}/release/release-notes/release-notes-3.10.0
 [3.10.0 breaking changes & migrations]: {{site.url}}/release/breaking-changes#released-in-flutter-310
@@ -96,7 +103,7 @@ releases to the stable channel.
 [1.22.0 breaking changes & migrations]: {{site.url}}/release/breaking-changes#released-in-flutter-122
 [1.20.0 announcement]: {{site.flutter-medium}}/announcing-flutter-1-20-2aaf68c89c75
 [1.20.0 release notes & change log]: {{site.url}}/release/release-notes/release-notes-1.20.0
-[1.20.0 breaking changes & migrations]: {{site.url}}/release/breaking-changes#released-in-flutter-12
+[1.20.0 breaking changes & migrations]: {{site.url}}/release/breaking-changes#released-in-flutter-120
 [1.17.0 announcement]: {{site.flutter-medium}}/announcing-flutter-1-17-4182d8af7f8e
 [1.17.0 release notes and change log]: {{site.url}}/release/release-notes/release-notes-1.17.0
 [1.17.0 breaking changes & migrations]: {{site.url}}/release/breaking-changes#released-in-flutter-117

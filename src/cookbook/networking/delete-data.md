@@ -1,12 +1,6 @@
 ---
 title: Delete data on the internet
 description: How to use the http package to delete data on the internet.
-prev:
-  title: Send data to a new screen
-  path: /cookbook/navigation/passing-data
-next:
-  title: Fetch data from the internet
-  path: /cookbook/networking/fetch-data
 ---
 
 <?code-excerpt path-base="cookbook/networking/delete_data/"?>
@@ -286,5 +280,5 @@ class _MyAppState extends State<MyApp> {
 [Introduction to unit testing]: {{site.url}}/cookbook/testing/unit/introduction
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html
 [Mock dependencies using Mockito]: {{site.url}}/cookbook/testing/unit/mocking
-[JSON and serialization]: {{site.url}}/data-and-backend/json
+[JSON and serialization]: {{site.url}}/data-and-backend/serialization/json
 [`State`]: {{site.api}}/flutter/widgets/State-class.html

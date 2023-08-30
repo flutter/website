@@ -1,6 +1,6 @@
 ---
-title: Animations overview
-short-title: Overview
+title: Animations API overview
+short-title: API overview
 description: An overview of animation concepts.
 ---
 

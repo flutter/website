@@ -6,9 +6,6 @@ body_class: clock
 image: /assets/images/docs/flutter-clock-social.png
 description: See the winners of Flutter's clock challenge!
 ---
-{% assign url_links = "&url=https://docs.flutter.dev/clock" %}
-{% assign hashtags = "hashtags=FlutterClock" %}
-{% assign twitter_url = "https://twitter.com/intent/tweet?" | append: hashtags | append: url_links  %}
 {% assign window_options = "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600" %}
 
 <section class="clock__hero clock__closed">
@@ -30,20 +27,11 @@ description: See the winners of Flutter's clock challenge!
         <div class="col-12 col-md-10">
             <h1 class="heading">Flutter Clock Challenge</h1>
             <p>
-                <a
-                    class="twitter-link"
-                    href="#"
-                    title="Share to Twitter"
-                    onclick="javascript:window.open(encodeURI('{{ twitter_url }}'), '', '{{ window_options }}');">
-                    <i class="fab fa-twitter"></i> Share #FlutterClock with friends
-                </a>
-            </p>
-            <p>
                 <a class="youtube-link" href="#" data-video="rxs69_szCkE" data-toggle="modal" data-target="#videoModal">
-                    <i class="fas fa-play-circle"></i> Watch video
+                    <i class="material-icons">play_circle_filled</i> Watch video
                 </a>
                 <a class="results-link" href="https://medium.com/p/dcebe2eb3957" target="_blank">
-                    <i class="fas fa-trophy"></i> Results
+                    <i class="material-icons">emoji_events</i> Results
                 </a>
             </p>
         </div>
@@ -212,7 +200,7 @@ description: See the winners of Flutter's clock challenge!
                         <div class="faqs_card-header" id="faq-heading{{forloop.index}}">
                             <button class="faqs_button dropdown__button btn btn-link" data-toggle="collapse" data-target="#faq-collapse{{forloop.index}}" aria-expanded="false" aria-controls="faq-collapse{{forloop.index}}">
                                 {{ faq.title }}
-                                <i class="fas fa-chevron-down fa-xs"></i>
+                                <i class="material-icons">keyboard_arrow_down</i>
                             </button>
                         </div>
                         <div id="faq-collapse{{forloop.index}}" class="collapse" aria-labelledby="faq-heading{{forloop.index}}" data-parent="#accordion{{forloop.index}}">

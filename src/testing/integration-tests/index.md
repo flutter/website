@@ -269,4 +269,4 @@ from the command line.
 [iOS Device Testing]: {{site.repo.flutter}}/tree/main/packages/integration_test#ios-device-testing
 [Migrating from flutter_drive]: {{site.url}}/release/breaking-changes/flutter-driver-migration
 [Running Flutter driver tests with web]: {{site.repo.flutter}}/wiki/Running-Flutter-Driver-tests-with-Web
-[widget tests]: {{site.url}}/testing#widget-tests
+[widget tests]: {{site.url}}/testing/overview#widget-tests

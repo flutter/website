@@ -1,4 +1,4 @@
-FROM ruby:3.2.2-slim-bookworm@sha256:249c66b933130178c8fe890d56568d680e9b3c93e7906b87e4e63bee2209a6d5 AS base
+FROM ruby:3.2.2-slim-bookworm@sha256:9654f1d43acae3032456fa89381076d3b997ea35d53259cf78a7db65b2e2121e AS base
 
 ENV TZ=US/Pacific
 RUN apt-get update && apt-get install -yq --no-install-recommends \

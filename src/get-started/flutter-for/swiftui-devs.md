@@ -45,6 +45,11 @@ You can test full working examples on DartPad or view them on GitHub.
 
 ## Overview
 
+As an introduction, watch the following video.
+It outlines how Flutter works on iOS and how to use Flutter to build iOS apps.
+
+<iframe class="full-width" src="{{site.youtube-site}}/embed/ceMsPBbcEGg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Flutter and SwiftUI code describes how the UI looks and works.
 Developers call this type of code a _declarative framework_.
 
@@ -1350,10 +1355,10 @@ To review a complete walkthrough, check out the [video_player example][].
 [Add Flutter to existing app]: {{site.url}}/add-to-app
 [Animations overview]: {{site.url}}/ui/animations
 [Cupertino widgets]: {{site.url}}/ui/widgets/cupertino
-[Flutter concurrency for Swift developers]: {{site.url}}/resources/dart-swift-concurrency
+[Flutter concurrency for Swift developers]: {{site.url}}/get-started/flutter-for/dart-swift-concurrency
 [Navigation and routing]: {{site.url}}/ui/navigation
 [Material]: {{site.material}}/develop/flutter/
-[Platform adaptations]: {{site.url}}/resources/platform-adaptations
+[Platform adaptations]: {{site.url}}/platform-integration/platform-adaptations
 [`url_launcher`]: {{site.pub-pkg}}/url_launcher
 [widget catalog]: {{site.url}}/ui/widgets/layout
 [Understanding constraints]: {{site.url}}/ui/layout/constraints
@@ -1378,7 +1383,7 @@ To review a complete walkthrough, check out the [video_player example][].
 [Wonderous]: https://flutter.gskinner.com/wonderous/?utm_source=flutterdocs&utm_medium=docs&utm_campaign=iosdevs
 [video_player]: {{site.pub-pkg}}/video_player
 [video_player example]: {{site.pub-pkg}}/video_player/example
-[Creating responsive and adaptive apps]: {{site.url}}/ui/layout/adaptive-responsive
+[Creating responsive and adaptive apps]: {{site.url}}/ui/layout/responsive/adaptive-responsive
 [`MediaQuery.of()`]: {{site.api}}/flutter/widgets/MediaQuery-class.html
 [`CustomPaint`]: {{site.api}}/flutter/widgets/CustomPaint-class.html
 [`CustomPainter`]: {{site.api}}/flutter/rendering/CustomPainter-class.html

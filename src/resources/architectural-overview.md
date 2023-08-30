@@ -188,14 +188,15 @@ pieces of a Flutter app.
 
 ## Reactive user interfaces
 
-On the surface, Flutter is [a reactive, pseudo-declarative UI
-framework]({{site.url}}/resources/faq#what-programming-paradigm-does-flutters-framework-use),
+On the surface, Flutter is [a reactive, declarative UI framework][faq],
 in which the developer provides a mapping from application state to interface
 state, and the framework takes on the task of updating the interface at runtime
-when the application state changes. This model is inspired by [work that came
-from Facebook for their own React
-framework]({{site.youtube-site}}/watch?time_continue=2&v=x7cQ3mrcKaY&feature=emb_logo),
+when the application state changes. This model is inspired by
+[work that came from Facebook for their own React framework][fb],
 which includes a rethinking of many traditional design principles.
+
+[faq]: {{site.url}}/resources/faq#what-programming-paradigm-does-flutters-framework-use
+[fb]: {{site.youtube-site}}/watch?time_continue=2&v=x7cQ3mrcKaY&feature=emb_logo
 
 In most traditional UI frameworks, the user interface's initial state is
 described once and then separately updated by user code at runtime, in response
@@ -531,8 +532,7 @@ The Android system libraries provide the components
 responsible for drawing themselves to a `Canvas` object,
 which Android can then render with [Skia][],
 a graphics engine written in C/C++ that calls the
-CPU or GPU to complete the drawing on the device,
-or [Impeller][] (currently in preview behind a flag).
+CPU or GPU to complete the drawing on the device.
 
 Cross-platform frameworks _typically_ work by creating
 an abstraction layer over the underlying native
@@ -558,9 +558,9 @@ The same is true for Flutter on other native platforms,
 such as Windows or macOS.
 
 {{site.alert.note}}
-  As of Flutter 3.10, Impeller is the default
+  Flutter 3.10 set Impeller as the default
   rendering engine on iOS. It's in preview
-  for Android, behind a flag.
+  for Android behind a flag.
 {{site.alert.end}}
 
 ### From user input to the GPU
@@ -1059,23 +1059,23 @@ provides a useful guide to the framework’s design philosophy.
 
 **Footnotes:**
 
-<sup><a name="a1">1</a></sup> While the `build` function returns a fresh tree,
+<sup><a id="a1">1</a></sup> While the `build` function returns a fresh tree,
 you only need to return something _different_ if there's some new
 configuration to incorporate. If the configuration is in fact the same, you can
 just return the same widget.
 
-<sup><a name="a2">2</a></sup> This is a slight simplification for ease of
+<sup><a id="a2">2</a></sup> This is a slight simplification for ease of
 reading. In practice, the tree might be more complex.
 
-<sup><a name="a3">3</a></sup> While work is underway on Linux and Windows,
+<sup><a id="a3">3</a></sup> While work is underway on Linux and Windows,
 examples for those platforms can be found in the [Flutter desktop embedding
 repository]({{site.github}}/google/flutter-desktop-embedding/tree/master/plugins).
 As development on those platforms reaches maturity, this content will be
 gradually migrated into the main Flutter repository.
 
-<sup><a name="a4">4</a></sup> There are some limitations with this approach, for
+<sup><a id="a4">4</a></sup> There are some limitations with this approach, for
 example, transparency doesn’t composite the same way for a platform view as it
 would for other Flutter widgets.
 
-<sup><a name="a5">5</a></sup> One example is shadows, which have to be
+<sup><a id="a5">5</a></sup> One example is shadows, which have to be
 approximated with DOM-equivalent primitives at the cost of some fidelity.
