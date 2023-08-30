@@ -65,7 +65,8 @@
 - header: User interface
 - title: Introduction
   permalink: /ui
-      
+- title: Widget catalog
+  permalink: /ui/widgets      
 - title: Layout
   permalink: /ui/layout
   children:
@@ -632,8 +633,6 @@
   children:
     - title: Who is Dash?
       permalink: /dash
-    - title: Widget catalog
-      permalink: /ui/widgets
     - title: Widget index
       permalink: /reference/widgets
     - title: API reference
