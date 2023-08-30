@@ -13,6 +13,7 @@ select DevTools releases.
   run `dart devtools --version`.
 {{site.alert.end}}
 
+* [2.27.0 release notes][]
 * [2.26.1 release notes][]
 * [2.25.0 release notes][]
 * [2.24.0 release notes][]
@@ -38,6 +39,7 @@ To view a complete list of changes, fixes, and enhancements to DevTools,
 check out the
 [DevTools git log](https://github.com/flutter/devtools/commits/master).
 
+[2.27.0 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.27.0
 [2.26.1 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.26.1
 [2.25.0 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.25.0
 [2.24.0 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.24.0
