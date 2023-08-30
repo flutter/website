@@ -50,7 +50,7 @@ Flutter creates a default theme for you.
 
 [`useMaterial3`]: {{site.api}}/flutter/material/ThemeData/useMaterial3.html
 
-<?code-excerpt "lib/theme.dart (MaterialApp)" replace="/return //g"?>
+<?code-excerpt "lib/main.dart (MaterialApp)" replace="/return //g"?>
 ```dart
 MaterialApp(
   title: appName,
@@ -60,6 +60,7 @@ MaterialApp(
     // Define the default brightness and colors.
     colorScheme: ColorScheme.fromSeed(
       seedColor: Colors.purple,
+      // ···
       brightness: Brightness.dark,
     ),
 
@@ -70,6 +71,7 @@ MaterialApp(
         fontSize: 72,
         fontWeight: FontWeight.bold,
       ),
+      // ···
       titleLarge: GoogleFonts.oswald(
         fontSize: 30,
         fontStyle: FontStyle.italic,
@@ -107,7 +109,7 @@ If not, Flutter applies the app's theme.
 
 In fact, the `Container` uses this technique to find its `color``.
 
-<?code-excerpt "lib/theme.dart (Container)" replace="/^child: //g"?>
+<?code-excerpt "lib/main.dart (Container)" replace="/^child: //g"?>
 ```dart
 Container(
   padding: const EdgeInsets.symmetric(
@@ -117,6 +119,7 @@ Container(
   color: Theme.of(context).colorScheme.primary,
   child: Text(
     'Text with a background color',
+    // ···
     style: Theme.of(context).textTheme.bodyMedium!.copyWith(
           color: Theme.of(context).colorScheme.onPrimary,
         ),
@@ -140,7 +143,7 @@ If you want a component of your app to ignore the overall theme,
 create a `ThemeData()` instance.
 Pass that instance to the `Theme` widget.
 
-<?code-excerpt "lib/theme.dart (Theme)"?>
+<?code-excerpt "lib/main.dart (Theme)"?>
 ```dart
 Theme(
   // Create a unique theme with `ThemeData`.
@@ -160,7 +163,7 @@ Theme(
 Instead of overriding everything, consider extending the parent theme.
 To extend a theme, use the [`copyWith()`][] method.
 
-<?code-excerpt "lib/theme.dart (ThemeCopyWith)"?>
+<?code-excerpt "lib/main.dart (ThemeCopyWith)"?>
 ```dart
 Theme(
   // Find and extend the parent theme using `copyWith`.
@@ -290,6 +293,33 @@ class MyHomePage extends StatelessWidget {
       ),
     );
   }
+}
+
+void theme(BuildContext context) {
+  Theme(
+    // Create a unique theme with `ThemeData`.
+    data: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+      seedColor: Colors.pink,
+    )),
+    child: FloatingActionButton(
+      onPressed: () {},
+      child: const Icon(Icons.add),
+    ),
+  );
+
+  Theme(
+    // Find and extend the parent theme using `copyWith`.
+    // To learn more, check out the next section on `Theme.of`.
+    data: Theme.of(context).copyWith(
+        colorScheme: ColorScheme.fromSeed(
+      seedColor: Colors.pink,
+    )),
+    child: const FloatingActionButton(
+      onPressed: null,
+      child: Icon(Icons.add),
+    ),
+  );
 }
 ```
 
