@@ -7,6 +7,7 @@ description: Release notes for Flutter and Dart DevTools
 This page links to announcements and release notes for
 Flutter and Dart DevTools
 
+* [2.27.0 release notes][]
 * [2.25.0 release notes][]
 * [2.24.0 release notes][]
 * [2.23.1 release notes][]
