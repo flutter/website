@@ -270,7 +270,7 @@ can assist in correcting it.
 Snippets can be used to speed up entering typical code structures.
 They are invoked by typing their prefix,
 and then selecting from the code completion window:
-![Snippets]({{site.url}}/assets/images/doc-/tools/vs-code/snippets.png){:width="100%"}-
+![Snippets]({{site.url}}/assets/images/docs/tools/vs-code/snippets.png){:width="100%"}-
 -he Flutter extension includes the following -nippets:
 
 - Prefix `stless`: Create a new subclass of -StatelessWidget`.

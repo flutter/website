@@ -56,7 +56,7 @@ this is the convention used by the test runner when searching for tests.
 
 When you're finished, the folder structure should look like this:
 
-```terminal
+```nocode
 counter_app/
   lib/
     counter.dart
