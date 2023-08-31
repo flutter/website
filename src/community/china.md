@@ -11,7 +11,7 @@ of the Flutter website available at
 [https://flutter.cn](https://flutter.cn),
 maintained by [The China Flutter User Group (CFUG)][].
 
-If you'd like to install Flutter using an 
+If you’d like to install Flutter using an
 [installation bundle]({{site.url}}/release/archive),
 you can replace the domain of the original URL with a trusted mirror
 to speed it up. For example:
@@ -66,9 +66,18 @@ If you're interested in setting up your own mirror in China,
 contact [flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com)
 for assistance.
 
-If you're running into issues that only occur when using the `flutter-io.cn` server,
-consider reporting the issue to
+If you're running into issues that only occur when
+using the `flutter-io.cn` server, consider reporting the issue to
 [the issue tracker (镜像问题)](https://github.com/cfug/flutter.cn/issues/new/choose).
+
+## Publishing apps
+
+If you receive errors when attempting to publish your package,
+you might need to configure a proxy. 
+
+To configure a proxy, check out the [Dart documentation on proxies][].
+
+[Dart documentation on proxies]: {{dart-site}}/tools/pub/troubleshoot#pub-get-fails-from-behind-a-corporate-firewall
 
 ## Community-run mirror sites
 
