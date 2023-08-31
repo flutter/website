@@ -206,7 +206,7 @@ Column(
 ```
 
 On pressing the **Update Data** button, a network request
-sends the data in the `TextField` to the server as a `POST` request.
+sends the data in the `TextField` to the server as a `PUT` request.
 The `_futureAlbum` variable is used in the next step.
 
 ## 5. Display the response on screen
