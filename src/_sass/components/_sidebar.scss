@@ -111,10 +111,6 @@
       padding: 0 $site-sidebar-side-padding;
     }
 
-    > .nav-header {
-      padding-top: bootstrap.bs-spacer(1);
-    }
-
     > .nav-item {
       > .nav-link {
         @include nav-link-active-style;
@@ -128,13 +124,25 @@
         }
         
         &:not(.collapsable) {
-          padding-top: bootstrap.bs-spacer(2);
+          padding: bootstrap.bs-spacer(1) 0;
         }
       }
 
       &:first-child {
         > .nav-link {
           padding-top: 0;
+        }
+      }
+    }
+
+    > .nav-header {
+      padding-top: bootstrap.bs-spacer(1);
+
+      & + .nav-item {
+        // The first item after a top-level header should have
+        // consistent padding, no matter if it's a link or collapsible.
+        .nav-link {
+          padding-top: bootstrap.bs-spacer(2);
         }
       }
     }

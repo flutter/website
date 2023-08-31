@@ -1,12 +1,12 @@
 ## Linux setup
 
-### Additional Linux requirements
+### Linux prerequisites
 
-For Linux desktop development,
-you need the following in addition to the Flutter SDK:
+To develop Linux desktop apps with Flutter, you need the following tools:
 
 {% include docs/linux-requirements-list.md %}
 
-Run the following command
+To install each of the tools, run the following command:
 
 {% include docs/linux-requirements-command.md %}
+
