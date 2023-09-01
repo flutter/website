@@ -4,14 +4,16 @@ description: Learn about the latest changes in Dart and Flutter DevTools.
 toc: false
 ---
 
-The following is an index of release notes for
-select DevTools releases.
+This page summarizes the changes between official stable releases of the DevTools.
+To view a complete list of changes, check out the
+[DevTools git log](https://github.com/flutter/devtools/commits/master).
 
-{{site.alert.note}}
-  DevTools is bundled as part of the Dart and Flutter SDKs.
-  To determine which version of DevTools you are using,
-  run `dart devtools --version`.
-{{site.alert.end}}
+The Dart and Flutter SDKs include the DevTools.
+To check your version of DevTools, run the following on your command line:
+
+```terminal
+dart devtools --version
+```
 
 * [2.27.0 release notes][]
 * [2.26.1 release notes][]
