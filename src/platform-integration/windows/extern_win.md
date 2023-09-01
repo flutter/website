@@ -1,6 +1,6 @@
 ---
 title: External windows in Flutter Windows apps
-desription: Special considerations for adding external windows to Flutter apps
+description: Special considerations for adding external windows to Flutter apps
 ---
 
 ## Windows lifecycle
