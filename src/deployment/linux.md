@@ -314,8 +314,6 @@ To use the LXD container backend:
 $ snapcraft --use-lxd
 ```
 
-Once the `snapcraft.yaml` file is complete,
-
 ## Test the snap
 
 Once the snap is built, you'll have a `<name>.snap` file
