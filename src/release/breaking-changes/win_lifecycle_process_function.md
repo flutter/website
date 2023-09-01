@@ -5,15 +5,25 @@ description: External windows shall call ProcessExternalWindowMessage to be cons
 
 ## Summary
 
-In order to be included in the logic for app lifecycle on Windows, any external windows added to a Flutter app shall invoke `FlutterEngine::ProcessExternalWindowMessage` from its `WndProc` function.
+In order to be included in the logic for app lifecycle on Windows, any
+external windows added to a Flutter app shall invoke
+`FlutterEngine::ProcessExternalWindowMessage` from its `WndProc` function.
 
 ## Description of change
 
-Implementing application lifecycle on Windows involves listening for Window messages in order to update the lifecycle state. In order for additional non-Flutter windows to affect the lifecycle state, they must forward their window messages to `FlutterEngine::ProcessExternalWindowMessage` from their `WndProc` functions. This function returns an `std::optional<LRESULT>`, which is `std::nullopt` when the message is received, but not consumed. When the returned result has a value, the message has been consumed, and further processing in `WndProc` should cease.
+Implementing application lifecycle on Windows involves listening for Window
+messages in order to update the lifecycle state. In order for additional
+non-Flutter windows to affect the lifecycle state, they must forward their
+window messages to `FlutterEngine::ProcessExternalWindowMessage` from their
+`WndProc` functions. This function returns an `std::optional<LRESULT>`, which
+is `std::nullopt` when the message is received, but not consumed. When the
+returned result has a value, the message has been consumed, and further
+processing in `WndProc` should cease.
 
 ## Migration guide
 
-An example `WndProc` procedure that invokes `FlutterEngine::ProcessExternalWindowMessage` is provided below:
+An example `WndProc` procedure that invokes
+`FlutterEngine::ProcessExternalWindowMessage` is provided below:
 
 ```
 CALLBACK LRESULT WndProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam) {
