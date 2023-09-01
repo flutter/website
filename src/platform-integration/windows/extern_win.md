@@ -12,6 +12,10 @@ state will not appropriately update to inactive or hidden. In order to add the
 external window to this application logic, the window's `WndProc` procedure
 must invoke `FlutterEngine::ProcessExternalWindowMessage`.
 
-An example procedure may be found on the [documentation of this breaking change.][]
+Callbacks can be registered to app lifecycle state changes through
+[WidgetsBindingObserver.didChangeAppLifecycle][].
+
+An example procedure can be found on the [documentation of this breaking change.][]
 
 [documentation of this breaking change.]: {{site.url}}/release/breaking-changes/win_lifecycle_process_function
+[WidgetsBindingObserver.didChangeAppLifecycle]: https://api.flutter.dev/flutter/widgets/WidgetsBindingObserver/didChangeAppLifecycleState.html
