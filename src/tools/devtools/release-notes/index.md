@@ -16,6 +16,8 @@ run the following on your command line:
 $ dart devtools --version
 ```
 
+### Release notes
+
 * [2.27.0 release notes][]
 * [2.26.1 release notes][]
 * [2.25.0 release notes][]
