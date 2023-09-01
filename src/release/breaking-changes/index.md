@@ -37,6 +37,7 @@ release, and listed in alphabetical order:
 * [Deprecate `describeEnum` and update `EnumProperty` to be type strict][]
 * [Deprecated just-in-time navigation pop APIs for Android Predictive Back][]
 * [Updated default text styles for menus][]
+* [Introduce FlutterEngine::ProcessExternalWindowMessage][]
 
 [Customize tabs alignment using the new `TabBar.tabAlignment` property]: {{site.url}}/release/breaking-changes/tab-alignment
 [Deprecate `textScaleFactor` in favor of `TextScaler`]: {{site.url}}/release/breaking-changes/deprecate-textscalefactor
@@ -44,6 +45,7 @@ release, and listed in alphabetical order:
 [Deprecate `describeEnum` and update `EnumProperty` to be type strict]: {{site.url}}/release/breaking-changes/describe-enum
 [Deprecated just-in-time navigation pop APIs for Android Predictive Back]: {{site.url}}/release/breaking-changes/android-predictive-back
 [Updated default text styles for menus]: {{site.url}}/release/breaking-changes/menus-text-style
+[Introduce FlutterEngine::ProcessExternalWindowMessage]: {{site.url}}/release/breaking-changes/win_lifecycle_process_function
 
 ### Released in Flutter 3.13
 
