@@ -7,14 +7,15 @@ description: >
 
 ## Summary
 
-Flutter Window's build path was updated to include the target architecture.
+Built executables for Flutter Windows apps are now located in architecture
+dependent folders
 
 ## Context
 
 In preparation for supporting Windows Arm64, the Windows build path was
 updated to add the build's target architecture.
 
-Previously, Flutter Windows build assumed an x64 target architecture.
+Previously, Flutter builds for Windows assumed an x64 target architecture.
 
 ## Migration guide
 
@@ -26,7 +27,6 @@ Example build path before the migration:
 ```
 build\windows\runner\Release\hello_world.exe
 ```
-
 
 Example build path after the migration if targeting x64:
 
