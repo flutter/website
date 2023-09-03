@@ -24,12 +24,10 @@ You can extend a theme to change a theme style for one component.
 Each theme defines the colors, type style, and other parameters
 applicable for the type of Material component.
 
-If a widget doesn't use a specific theme,
-the visual properties fall back to the main theme.
 Flutter applies styling in the following order:
 
 1. Styles applied to the specific widget.
-1. Themes that override the main theme.
+1. Themes that override the immediate parent theme.
 1. Main theme for the entire app.
 
 After you define a `Theme`, use it within your own widgets.
@@ -42,7 +40,7 @@ To share a `Theme` across your entire app, set the `theme` property
 to your `MaterialApp` constructor.
 This property takes a [`ThemeData`][] instance.
 
-To enable Material 3, set the [`useMaterial3`][] argument
+To enable Material 3, set the [`useMaterial3`][] property
 to `true` in the `ThemeData` constructor.
 
 If you don't specify a theme in the constructor,
@@ -94,7 +92,7 @@ Most instances of `ThemeData` set values for the following two properties. These
 [`colorScheme`]: {{site.api}}/flutter/material/ThemeData/colorScheme.html
 [`textTheme`]: {{site.api}}/flutter/material/ThemeData/textTheme.html
 
-To learn what colors and fonts you can define,
+To learn what colors, fonts, and other properties, you can define,
 check out the [`ThemeData`][] documentation.
 
 ## Apply a theme
@@ -105,11 +103,10 @@ These can include, but are not limited to, `style` and `color`.
 
 The `Theme.of(context)` method looks up the widget tree and retrieves
 the nearest `Theme` in the tree.
-If you have a standalone `Theme` as defined in the previous example,
-that's applied.
+If you have a standalone `Theme`, that's applied.
 If not, Flutter applies the app's theme.
 
-In fact, the `Container` uses this technique to find its `color``.
+In the following example, the `Container` constructor uses this technique to set its `color`.
 
 <?code-excerpt "lib/main.dart (Container)" replace="/^child: //g"?>
 ```dart
@@ -169,7 +166,7 @@ To extend a theme, use the [`copyWith()`][] method.
 ```dart
 Theme(
   // Find and extend the parent theme using `copyWith`.
-  // To learn more, check out the next section on `Theme.of`.
+  // To learn more, check out the section on `Theme.of`.
   data: Theme.of(context).copyWith(
       colorScheme: ColorScheme.fromSeed(
     seedColor: Colors.pink,
