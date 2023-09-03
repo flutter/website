@@ -147,9 +147,10 @@ Pass that instance to the `Theme` widget.
 Theme(
   // Create a unique theme with `ThemeData`.
   data: ThemeData(
-      colorScheme: ColorScheme.fromSeed(
-    seedColor: Colors.pink,
-  )),
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: Colors.pink,
+    ),
+  ),
   child: FloatingActionButton(
     onPressed: () {},
     child: const Icon(Icons.add),
@@ -168,9 +169,10 @@ Theme(
   // Find and extend the parent theme using `copyWith`.
   // To learn more, check out the section on `Theme.of`.
   data: Theme.of(context).copyWith(
-      colorScheme: ColorScheme.fromSeed(
-    seedColor: Colors.pink,
-  )),
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: Colors.pink,
+    ),
+  ),
   child: const FloatingActionButton(
     onPressed: null,
     child: Icon(Icons.add),
@@ -279,12 +281,13 @@ class MyHomePage extends StatelessWidget {
       ),
       floatingActionButton: Theme(
         data: Theme.of(context).copyWith(
-            // TRY THIS: Change the seedColor to "Colors.red" or
-            //           "Colors.blue".
-            colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.pink,
-          brightness: Brightness.dark,
-        )),
+          // TRY THIS: Change the seedColor to "Colors.red" or
+          //           "Colors.blue".
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: Colors.pink,
+            brightness: Brightness.dark,
+          ),
+        ),
         child: FloatingActionButton(
           onPressed: () {},
           child: const Icon(Icons.add),
@@ -292,33 +295,6 @@ class MyHomePage extends StatelessWidget {
       ),
     );
   }
-}
-
-void theme(BuildContext context) {
-  Theme(
-    // Create a unique theme with `ThemeData`.
-    data: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-      seedColor: Colors.pink,
-    )),
-    child: FloatingActionButton(
-      onPressed: () {},
-      child: const Icon(Icons.add),
-    ),
-  );
-
-  Theme(
-    // Find and extend the parent theme using `copyWith`.
-    // To learn more, check out the next section on `Theme.of`.
-    data: Theme.of(context).copyWith(
-        colorScheme: ColorScheme.fromSeed(
-      seedColor: Colors.pink,
-    )),
-    child: const FloatingActionButton(
-      onPressed: null,
-      child: Icon(Icons.add),
-    ),
-  );
 }
 ```
 
