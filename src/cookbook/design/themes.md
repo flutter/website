@@ -14,7 +14,7 @@ js:
   the [google_fonts][] package.
 {{site.alert.end}}
 
-[Material 3]: /ui/design/material
+[Material 3]: {{site.url}}/ui/design/material
 [google_fonts]: {{site.pub-pkg}}/google_fonts
 
 To share colors and font styles throughout an app, use themes.
@@ -28,7 +28,7 @@ If a widget doesn't use a specific theme,
 the visual properties fall back to the main theme.
 Flutter applies styling in the following order:
 
-1. Style applied to the specific widget.
+1. Styles applied to the specific widget.
 1. Themes that override the main theme.
 1. Main theme for the entire app.
 
@@ -99,7 +99,9 @@ check out the [`ThemeData`][] documentation.
 
 ## Apply a theme
 
-To apply your new theme, add the `Theme.of(context)` method within a widget's styling properties. These include, but are not limited to, `style` and `color`.
+To apply your new theme, use the `Theme.of(context)` method 
+when specifying a widget's styling properties.
+These can include, but are not limited to, `style` and `color`.
 
 The `Theme.of(context)` method looks up the widget tree and retrieves
 the nearest `Theme` in the tree.
@@ -140,7 +142,7 @@ You can override a theme in two ways:
 ### Set a unique `ThemeData` instance
 
 If you want a component of your app to ignore the overall theme,
-create a `ThemeData()` instance.
+create a `ThemeData` instance.
 Pass that instance to the `Theme` widget.
 
 <?code-excerpt "lib/main.dart (Theme)"?>
@@ -181,7 +183,7 @@ Theme(
 
 ## Watch a video on `Theme`
 
-To learn more, watch this short Widget of the Week video on the Theme widget:
+To learn more, watch this short Widget of the Week video on the `Theme` widget:
 
 <iframe class="full-width" src="{{site.youtube-site}}/embed/oTvQDJOBXmM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
