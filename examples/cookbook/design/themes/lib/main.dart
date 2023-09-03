@@ -1,3 +1,4 @@
+// #docregion FullApp
 import 'package:flutter/material.dart';
 // Include the Google Fonts package to provide more text format options
 // https://pub.dev/packages/google_fonts
@@ -114,6 +115,7 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }
+// #enddocregion FullApp
 
 void theme(BuildContext context) {
   // #docregion Theme
