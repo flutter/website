@@ -26,8 +26,8 @@ An example `WndProc` procedure that invokes
 `FlutterEngine::ProcessExternalWindowMessage` is provided below:
 
 ```
-CALLBACK LRESULT WndProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam) {
-    std::optional<LRESULT> result = FlutterEngine::ProcessExternalWindowMessage(hwnd, msg, wparam, lparam);
+LRESULT Window::Messagehandler(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam) {
+    std::optional<LRESULT> result = flutter_controller_->engine()->ProcessExternalWindowMessage(hwnd, msg, wparam, lparam);
     if (result.has_value()) {
         return *result;
     }
