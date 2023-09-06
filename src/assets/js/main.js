@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function(_) {
   setupTabs($('#ios-versions'), 'dev.flutter.ios-versions');
 
   prettyPrint();
+  searchInputFocus();
 });
 
 function _getOSForArchive() {
@@ -305,5 +306,22 @@ function initCookieNotice() {
     e.preventDefault();
     Cookies.set(cookieKey, cookieConsentValue, { sameSite: 'strict', expires: 30 });
     notice.classList.remove(activeClass);
+  });
+}
+
+function searchInputFocus() {
+  const searchIcon = document.querySelector('.site-header__search svg');
+  const searchInput = document.querySelector('.site-header__searchfield');
+
+  searchInput.addEventListener('focus', () => {
+    searchIcon.style.pointerEvents = "none";
+  });
+
+  searchInput.addEventListener('blur', () => {
+    searchIcon.style.pointerEvents = "auto";
+  });
+  
+  searchIcon.addEventListener('click', () => {
+    searchInput.focus();
   });
 }

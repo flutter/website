@@ -154,10 +154,9 @@
   &__search {
     position: relative;
 
-    &::before {
-      content: 'search';
-      font: $site-font-icon;
-      pointer-events: none;
+    svg {
+      width: 24px;
+      height: 24px;
       position: absolute;
       left: bootstrap.bs-spacer(1);
     }
@@ -169,13 +168,17 @@
       order: -1;
       padding: 0 $site-nav-mobile-side-padding;
 
-      &::before {
+      svg {
         left: $site-nav-mobile-side-padding;
       }
     }
 
     @include bootstrap.media-breakpoint-up(md) {
       margin-left: bootstrap.bs-spacer(4);
+      
+      svg {
+        cursor: pointer;
+      }
     }
   }
 
@@ -192,7 +195,7 @@
 
     @include bootstrap.media-breakpoint-up(md) {
       transition: width .35s ease-in-out;
-      width: 24px !important;
+      width: 0 !important;
 
       &:focus {
         width: 220px !important;
