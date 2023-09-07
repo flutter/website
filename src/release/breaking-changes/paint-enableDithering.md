@@ -127,4 +127,4 @@ Relevant PRs:
 [Issue 112498]: {{site.repo.flutter}}/issues/112498
 [Issue 118073]: {{site.repo.flutter}}/issues/118073
 [Writing and using fragment shaders]: {{site.url}}/ui/design/graphics/fragment-shaders
-[`hsl_linear_gradient.frag`]: https://github.com/jonahwilliams/awesome_gradients/blob/main/shaders/hsl_linear_gradient.frag
+[`hsl_linear_gradient.frag`]: https://github.com/jonahwilliams/awesome_gradients/blob/a4e09c47ef1760bd7073beb60f49dad8ede5bb2e/shaders/hsl_linear_gradient.frag
