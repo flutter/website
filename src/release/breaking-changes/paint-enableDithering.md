@@ -28,7 +28,9 @@ visible banding artifacts:
 ![Example of banding](https://user-images.githubusercontent.com/30870216/210907719-4f4a1a8d-e28a-4d39-9e99-3635a26a0c74.png)
 
 [Issue 118073][] reported that gradients in our new [Impeller][]
-backend that banding artifacts were visible in some gradients, and later
+backend displayed visible banding artifacts in some gradients.
+It was later discovered that Impeller didn't support the (rarely used)
+[`Paint.enableDithering`][1] property.
 
 After adding dithering support to Impeller ([PR 44181][], [PR 44331][],
 [PR 44522][]), and reviewing the perfomance impact of dithering (negligble),
