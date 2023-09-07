@@ -91,6 +91,7 @@ In your project, create a new directory
 <?code-excerpt "integration_test/counter_test.dart" replace="/IntegrationTestWidgetsFlutterBinding\.ensureInitialized\(\); \/\/ NEW\n\n//g"?>
 ```dart
 import 'package:flutter_test/flutter_test.dart';
+import 'package:how_to/main.dart';
 import 'package:integration_test/integration_test.dart';
 
 void main() {
@@ -183,6 +184,7 @@ Then add `IntegrationTestWidgetsFlutterBinding.ensureInitialized()` in your
 <?code-excerpt "integration_test/counter_test.dart"?>
 ```dart
 import 'package:flutter_test/flutter_test.dart';
+import 'package:how_to/main.dart';
 import 'package:integration_test/integration_test.dart';
 
 void main() {
