@@ -86,6 +86,8 @@ migration guide, but you can find some resources and examples:
 - [Writing and using fragment shaders][]
 - [`hsl_linear_gradient.frag`][]
 
+**NOTE**: Flutter web does not support dithering: [Issue 134250][].
+
 ## Timeline
 
 Landed in version: `3.14.0-0.1.pre`.
@@ -126,5 +128,6 @@ Relevant PRs:
 [Issue 44134]: {{site.repo.flutter}}/issues/44134
 [Issue 112498]: {{site.repo.flutter}}/issues/112498
 [Issue 118073]: {{site.repo.flutter}}/issues/118073
+[Issue 134250]: {{site.repo.flutter}}/issues/134250
 [Writing and using fragment shaders]: {{site.url}}/ui/design/graphics/fragment-shaders
 [`hsl_linear_gradient.frag`]: https://github.com/jonahwilliams/awesome_gradients/blob/a4e09c47ef1760bd7073beb60f49dad8ede5bb2e/shaders/hsl_linear_gradient.frag
