@@ -1,0 +1,130 @@
+---
+title: [`Paint.enableDithering`][] is now `true` by default.
+description: >
+  Deprecation of user-configurable [`Paint.enableDithering`][].
+---
+
+## Summary
+
+[`Paint.enableDithering`][] is now `true` by default (previously, `false`),
+and is _deprecated_ pending removal - we no longer support user-configurable
+dithering settings.
+
+In addition, we've clarified that dithering support is _only_ for gradients.
+
+## Background
+
+[`Paint.enableDithering`][] was added as a global option in [PR 13868][] as
+a response to [Issue 44134][], which reported that gradients in Flutter had
+visible banding artifacts:
+
+> Gradients currently have a lot of color banding on all devices, and it looks
+> very weird when using the pulse animation too. A solution is to make the
+> gradients opaque, and to use dithered gradients with Skia. Dithered gradients
+> aren't currently exposed, so adding a dither parameter to dart:ui's Paint
+> class would be nice. We'd be able to manually draw our gradients with a
+> CustomPainter.
+
+![Example of banding](https://user-images.githubusercontent.com/30870216/210907719-4f4a1a8d-e28a-4d39-9e99-3635a26a0c74.png)
+
+In [Issue 118073][], it was reported that gradients in our new [Impeller][]
+backend that banding artifacts were visible in some gradients, and later
+discovered the (rarely used) [`Paint.enableDithering`][] setting was not
+supported in Impeller.
+
+After adding dithering support to Impeller ([PR 44181][], [PR 44331][],
+[PR 44522][]), and reviewing the perfomance impact of dithering (i.e. minimal),
+and:
+
+1. Consensus that gradients look good by default: [Issue 112498][].
+1. Having a global option was intended to be deprecated: [PR 13868][].
+
+... it was decided that we should:
+
+1. Make dithering enabled by default.
+1. Deprecate the global option.
+1. Remove the global option in a future release.
+
+As part of that process, we removed the ability for dithering to effect anything
+other than gradients ([PR 44730][], [PR 44912][]). That was done to ease the
+process of migrating, because Impeller will never support dithering for anything
+but gradients.
+
+## Migration guide
+
+We expect that most users and libraries will not need to make any changes.
+
+For users that maintain golden tests, you may need to update your golden images
+to reflect the new default. For example, if you use [`matchesGoldenFile`][]
+to test a widget that contains a gradient:
+
+```shell
+flutter test --update-goldens
+```
+
+We don't expect this to be a common case, but if you do need to disable
+dithering temporarily, you can do so by setting the `enableDithering` property
+in your `main()` (either in an app or test):
+
+```diff
+void main() {
++ // TODO: Remove this after XYZ.
++ Paint.enableDithering = false;
+
+  runApp(MyApp());
+}
+```
+
+As the plan is to _permanently_ remove the `enableDithering` property, please
+provide feedback in [Issue 112498][] if you have a use case that requires
+disabling dithering (i.e. due to performance, crashes).
+
+If for some reason you _must_ draw gradients without dithering, you'll need to
+write your own custom shader. Describing that is out of the scope of this
+migration guide, but you can find some resources and examples:
+
+- [Writing and using fragment shaders][]
+- [`linear_gradient_ssbo_fill.frag`]
+
+## Timeline
+
+Landed in version: `3.14.0-0.1.pre`.
+
+Not yet in a stable release.
+
+## References
+
+API documentation:
+
+- [`Paint.enableDithering`][]
+- [`matchesGoldenFile`]
+
+Relevant issues:
+
+- [Issue 44134][]
+- [Issue 112498][]
+- [Issue 118073][]
+
+Relevant PRs:
+
+- [PR 13868][]
+- [PR 44181][]
+- [PR 44331][]
+- [PR 44522][]
+- [PR 44730][]
+- [PR 44912][]
+
+[`Paint.enableDithering`]: {{site.api}}/flutter/dart-ui/Paint/enableDithering.html
+[`matchesGoldenFile`]: {{site.api}}/flutter_test/matchesGoldenFile.html
+[Impeller]: {{site.url}}/perf/impeller
+[PR 13868]: {{site.repo.engine}}/pull/13868
+[PR 44181]: {{site.repo.engine}}/pull/44181
+[PR 44331]: {{site.repo.engine}}/pull/44331
+[PR 44522]: {{site.repo.engine}}/pull/44522
+[PR 44730]: {{site.repo.engine}}/pull/44730
+[PR 44912]: {{site.repo.engine}}/pull/44912
+[Issue 44134]: {{site.repo.flutter}}/issues/44134
+[Issue 112498]: {{site.repo.flutter}}/issues/112498
+[Issue 118073]: {{site.repo.flutter}}/issues/118073
+[Writing and using fragment shaders]: {{site.url}}/ui/design/graphics/fragment-shaders
+[`linear_gradient_ssbo_fill.frag`]: {{site.repo.engine}}blob/main/impeller/entity/shaders/linear_gradient_ssbo_fill.frag
