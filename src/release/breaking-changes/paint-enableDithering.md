@@ -30,7 +30,7 @@ visible banding artifacts:
 [Issue 118073][] reported that gradients in our new [Impeller][]
 backend displayed visible banding artifacts in some gradients.
 It was later discovered that Impeller didn't support the (rarely used)
-[`Paint.enableDithering`][1] property.
+[`Paint.enableDithering`][] property.
 
 After adding dithering support to Impeller ([PR 44181][], [PR 44331][],
 [PR 44522][]), and reviewing the perfomance impact of dithering (negligible),
