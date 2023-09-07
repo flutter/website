@@ -7,10 +7,10 @@ description: >
 ## Summary
 
 [`Paint.enableDithering`][] is now `true` by default (previously, `false`),
-and is _deprecated_ pending removal - we no longer support user-configurable
-dithering settings.
+and is _deprecated_ pending removal - Flutter no longer supports
+user-configurable dithering settings.
 
-In addition, we've clarified that dithering support is _only_ for gradients.
+In addition, the dithering documentation states support is _only_ for gradients.
 
 ## Background
 
@@ -33,20 +33,20 @@ discovered the (rarely used) [`Paint.enableDithering`][] setting was not
 supported in Impeller.
 
 After adding dithering support to Impeller ([PR 44181][], [PR 44331][],
-[PR 44522][]), and reviewing the perfomance impact of dithering (i.e. minimal),
+[PR 44522][]), and reviewing the perfomance impact of dithering (negligble),
 and:
 
 1. Consensus that gradients look good by default: [Issue 112498][].
 1. Having a global option was intended to be deprecated: [PR 13868][].
 
-... it was decided that we should:
+... it was decided that Flutter would:
 
 1. Make dithering enabled by default.
 1. Deprecate the global option.
 1. Remove the global option in a future release.
 
-As part of that process, we removed the ability for dithering to effect anything
-other than gradients ([PR 44730][], [PR 44912][]). That was done to ease the
+As part of that process, the ability for dithering to effect anything other than
+gradients was removed in [PR 44730][], [PR 44912][]. That was done to ease the
 process of migrating, because Impeller will never support dithering for anything
 but gradients.
 
@@ -77,7 +77,7 @@ void main() {
 
 As the plan is to _permanently_ remove the `enableDithering` property, please
 provide feedback in [Issue 112498][] if you have a use case that requires
-disabling dithering (i.e. due to performance, crashes).
+disabling dithering (due to performance, crashes).
 
 If for some reason you _must_ draw gradients without dithering, you'll need to
 write your own custom shader. Describing that is out of the scope of this
