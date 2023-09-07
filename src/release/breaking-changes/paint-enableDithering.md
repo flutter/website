@@ -84,7 +84,7 @@ write your own custom shader. Describing that is out of the scope of this
 migration guide, but you can find some resources and examples:
 
 - [Writing and using fragment shaders][]
-- [`linear_gradient_ssbo_fill.frag`]
+- [`hsl_linear_gradient.frag`]
 
 ## Timeline
 
@@ -127,4 +127,4 @@ Relevant PRs:
 [Issue 112498]: {{site.repo.flutter}}/issues/112498
 [Issue 118073]: {{site.repo.flutter}}/issues/118073
 [Writing and using fragment shaders]: {{site.url}}/ui/design/graphics/fragment-shaders
-[`linear_gradient_ssbo_fill.frag`]: {{site.repo.engine}}blob/main/impeller/entity/shaders/linear_gradient_ssbo_fill.frag
+[`hsl_linear_gradient.frag`]: https://github.com/jonahwilliams/awesome_gradients/blob/main/shaders/hsl_linear_gradient.frag
