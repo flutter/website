@@ -84,7 +84,7 @@ write your own custom shader. Describing that is out of the scope of this
 migration guide, but you can find some resources and examples:
 
 - [Writing and using fragment shaders][]
-- [`hsl_linear_gradient.frag`]
+- [`hsl_linear_gradient.frag`][]
 
 ## Timeline
 
