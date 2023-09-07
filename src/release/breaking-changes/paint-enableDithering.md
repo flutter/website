@@ -45,7 +45,7 @@ This resulted in the following decisions:
 1. Deprecate the global option.
 1. Remove the global option in a future release.
 
-As part of that process, the ability for dithering to effect anything other than
+As part of that process, the ability for dithering to affect anything other than
 gradients was removed in [PR 44730][], [PR 44912][]. That was done to ease the
 process of migrating, because Impeller will never support dithering for anything
 but gradients.
