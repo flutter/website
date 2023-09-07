@@ -1,5 +1,5 @@
 ---
-title: `Paint.enableDithering` is now `true` by default.
+title: Paint.enableDithering is now true by default.
 description: >
   Deprecation of user-configurable [`Paint.enableDithering`][].
 ---
