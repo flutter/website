@@ -1,7 +1,7 @@
 ---
 title: Paint.enableDithering is now true by default.
 description: >
-  Deprecation of user-configurable [`Paint.enableDithering`][].
+  Deprecation of user-configurable `Paint.enableDithering`.
 ---
 
 ## Summary
