@@ -31,14 +31,14 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
-- [Customize tabs alignment using the new `TabBar.tabAlignment` property][]
-- [Deprecate `textScaleFactor` in favor of `TextScaler`][]
-- [Deprecate TextField.canRequestFocus][]
-- [Deprecate `describeEnum` and update `EnumProperty` to be type strict][]
-- [Deprecated just-in-time navigation pop APIs for Android Predictive Back][]
-- [Deprecated `Paint.enableDithering`][]
-- [Updated default text styles for menus][]
-- [Windows build path changed to add the target architecture][]
+* [Customize tabs alignment using the new `TabBar.tabAlignment` property][]
+* [Deprecate `textScaleFactor` in favor of `TextScaler`][]
+* [Deprecate TextField.canRequestFocus][]
+* [Deprecate `describeEnum` and update `EnumProperty` to be type strict][]
+* [Deprecated just-in-time navigation pop APIs for Android Predictive Back][]
+* [Deprecated `Paint.enableDithering`][]
+* [Updated default text styles for menus][]
+* [Windows build path changed to add the target architecture][]
 
 [Customize tabs alignment using the new `TabBar.tabAlignment` property]: {{site.url}}/release/breaking-changes/tab-alignment
 [Deprecate `textScaleFactor` in favor of `TextScaler`]: {{site.url}}/release/breaking-changes/deprecate-textscalefactor
@@ -51,14 +51,14 @@ release, and listed in alphabetical order:
 
 ### Released in Flutter 3.13
 
-- [Deprecated API removed after v3.10][]
-- [Added AppLifecycleState.hidden][] enum value
-- [Moved ReorderableListView's localized strings][] from material to widgets localizations
-- [Removed `ignoringSemantics`][] properties
-- [Deprecated `RouteInformation.location`][] and its related APIs
-- [Updated EditableText scroll into view behavior][]
-- [Migrate a Windows project to ensure the window is shown][]
-- [Updated `Checkbox.fillColor` behavior][]
+* [Deprecated API removed after v3.10][]
+* [Added AppLifecycleState.hidden][] enum value
+* [Moved ReorderableListView's localized strings][] from material to widgets localizations
+* [Removed `ignoringSemantics`][] properties
+* [Deprecated `RouteInformation.location`][] and its related APIs
+* [Updated EditableText scroll into view behavior][]
+* [Migrate a Windows project to ensure the window is shown][]
+* [Updated `Checkbox.fillColor` behavior][]
 
 [Deprecated API removed after v3.10]: {{site.url}}/release/breaking-changes/3-10-deprecations
 [Added AppLifecycleState.hidden]: {{site.url}}/release/breaking-changes/add-applifecyclestate-hidden
@@ -71,13 +71,13 @@ release, and listed in alphabetical order:
 
 ### Released in Flutter 3.10
 
-- [Dart 3 changes in Flutter v3.10 and later][]
-- [Deprecated API removed after v3.7][]
-- [Insert content text input client][]
-- [Deprecated the window singleton][]
-- [Resolve the Android Java Gradle error][]
-- [Require one data variant for `ClipboardData` constructor][]
-- ["Zone mismatch" message][]
+* [Dart 3 changes in Flutter v3.10 and later][]
+* [Deprecated API removed after v3.7][]
+* [Insert content text input client][]
+* [Deprecated the window singleton][]
+* [Resolve the Android Java Gradle error][]
+* [Require one data variant for `ClipboardData` constructor][]
+* ["Zone mismatch" message][]
 
 [Dart 3 changes in Flutter v3.10 and later]: {{site.dart-site}}/resources/dart-3-migration
 [Deprecated API removed after v3.7]: {{site.url}}/release/breaking-changes/3-7-deprecations
@@ -89,13 +89,13 @@ release, and listed in alphabetical order:
 
 ### Released in Flutter 3.7
 
-- [Deprecated API removed after v3.3][]
-- [Replaced parameters for customizing context menus with a generic widget builder][]
-- [iOS FlutterViewController splashScreenView made nullable][]
-- [Migrate `of` to non-nullable return values, and add `maybeOf`][]
-- [Removed RouteSettings.copyWith][]
-- [ThemeData's toggleableActiveColor property has been deprecated][]
-- [Migrate a Windows project to support dark title bars][]
+* [Deprecated API removed after v3.3][]
+* [Replaced parameters for customizing context menus with a generic widget builder][]
+* [iOS FlutterViewController splashScreenView made nullable][]
+* [Migrate `of` to non-nullable return values, and add `maybeOf`][]
+* [Removed RouteSettings.copyWith][]
+* [ThemeData's toggleableActiveColor property has been deprecated][]
+* [Migrate a Windows project to support dark title bars][]
 
 [Replaced parameters for customizing context menus with a generic widget builder]: {{site.url}}/release/breaking-changes/context-menus
 [Deprecated API removed after v3.3]: {{site.url}}/release/breaking-changes/3-3-deprecations
@@ -107,10 +107,10 @@ release, and listed in alphabetical order:
 
 ### Released in Flutter 3.3
 
-- [Adding ImageProvider.loadBuffer][]
-- [Default PrimaryScrollController on Desktop][]
-- [Trackpad gestures can trigger GestureRecognizer][]
-- [Migrate a Windows project to set version information][]
+* [Adding ImageProvider.loadBuffer][]
+* [Default PrimaryScrollController on Desktop][]
+* [Trackpad gestures can trigger GestureRecognizer][]
+* [Migrate a Windows project to set version information][]
 
 [Adding ImageProvider.loadBuffer]: {{site.url}}/release/breaking-changes/image-provider-load-buffer
 [Default PrimaryScrollController on Desktop]: {{site.url}}/release/breaking-changes/primary-scroll-controller-desktop
@@ -119,9 +119,9 @@ release, and listed in alphabetical order:
 
 ### Released in Flutter 3
 
-- [Deprecated API removed after v2.10][]
-- [Migrate useDeleteButtonTooltip to deleteButtonTooltipMessage of Chips][]
-- [Page transitions replaced by ZoomPageTransitionsBuilder][]
+* [Deprecated API removed after v2.10][]
+* [Migrate useDeleteButtonTooltip to deleteButtonTooltipMessage of Chips][]
+* [Page transitions replaced by ZoomPageTransitionsBuilder][]
 
 [Deprecated API removed after v2.10]: {{site.url}}/release/breaking-changes/2-10-deprecations
 [Page transitions replaced by ZoomPageTransitionsBuilder]: {{site.url}}/release/breaking-changes/page-transition-replaced-by-ZoomPageTransitionBuilder
@@ -129,10 +129,10 @@ release, and listed in alphabetical order:
 
 ### Released in Flutter 2.10
 
-- [Deprecated API removed after v2.5][]
-- [Raw images on Web uses correct origin and colors][]
-- [Required Kotlin version][]
-- [Scribble Text Input Client][]
+* [Deprecated API removed after v2.5][]
+* [Raw images on Web uses correct origin and colors][]
+* [Required Kotlin version][]
+* [Scribble Text Input Client][]
 
 [Deprecated API removed after v2.5]: {{site.url}}/release/breaking-changes/2-5-deprecations
 [Raw images on Web uses correct origin and colors]: {{site.url}}/release/breaking-changes/raw-images-on-web-uses-correct-origin-and-colors
@@ -141,16 +141,16 @@ release, and listed in alphabetical order:
 
 ### Released in Flutter 2.5
 
-- [Default drag scrolling devices][]
-- [Deprecated API removed after v2.2][]
-- [Change the enterText method to move the caret to the end of the input text][]
-- [GestureRecognizer cleanup][]
-- [Introducing package:flutter_lints][]
-- [Replace AnimationSheetBuilder.display with collate][]
-- [ThemeData's accent properties have been deprecated][]
-- [Transition of platform channel test interfaces to flutter_test package][]
-- [Using HTML slots to render platform views in the web][]
-- [Migrate a Windows project to the idiomatic run loop][]
+* [Default drag scrolling devices][]
+* [Deprecated API removed after v2.2][]
+* [Change the enterText method to move the caret to the end of the input text][]
+* [GestureRecognizer cleanup][]
+* [Introducing package:flutter_lints][]
+* [Replace AnimationSheetBuilder.display with collate][]
+* [ThemeData's accent properties have been deprecated][]
+* [Transition of platform channel test interfaces to flutter_test package][]
+* [Using HTML slots to render platform views in the web][]
+* [Migrate a Windows project to the idiomatic run loop][]
 
 [Change the enterText method to move the caret to the end of the input text]: {{site.url}}/release/breaking-changes/enterText-trailing-caret
 [Default drag scrolling devices]: {{site.url}}/release/breaking-changes/default-scroll-behavior-drag
@@ -168,31 +168,31 @@ release, and listed in alphabetical order:
 The following breaking change was reverted in release 2.2:
 
 <b>[Network Policy on iOS and Android][]</b><br>
-: Introduced in version: 2.0.0<br>
-Reverted in version: 2.2.0 (proposed)
+:  Introduced in version: 2.0.0<br>
+   Reverted in version:   2.2.0 (proposed)
 
 [Network Policy on iOS and Android]: {{site.url}}/release/breaking-changes/network-policy-ios-android
 
 ### Released in Flutter 2.2
 
-- [Default Scrollbars on Desktop][]
+* [Default Scrollbars on Desktop][]
 
 [Default Scrollbars on Desktop]: {{site.url}}/release/breaking-changes/default-desktop-scrollbars
 
 ### Released in Flutter 2
 
-- [Added BuildContext parameter to TextEditingController.buildTextSpan][]
-- [Android ActivityControlSurface attachToActivity signature change][]
-- [Android FlutterMain.setIsRunningInRobolectricTest testing API removed][]
-- [Clip behavior][]
-- [Deprecated API removed after v1.22][]
-- [Dry layout support for RenderBox][]
-- [Eliminating nullOk Parameters][]
-- [Material Chip button semantics][]
-- [SnackBars managed by the ScaffoldMessenger][]
-- [TextSelectionTheme migration][]
-- [Transition of platform channel test interfaces to flutter_test package][]
-- [Use maxLengthEnforcement instead of maxLengthEnforced][]
+* [Added BuildContext parameter to TextEditingController.buildTextSpan][]
+* [Android ActivityControlSurface attachToActivity signature change][]
+* [Android FlutterMain.setIsRunningInRobolectricTest testing API removed][]
+* [Clip behavior][]
+* [Deprecated API removed after v1.22][]
+* [Dry layout support for RenderBox][]
+* [Eliminating nullOk Parameters][]
+* [Material Chip button semantics][]
+* [SnackBars managed by the ScaffoldMessenger][]
+* [TextSelectionTheme migration][]
+* [Transition of platform channel test interfaces to flutter_test package][]
+* [Use maxLengthEnforcement instead of maxLengthEnforced][]
 
 [Added BuildContext parameter to TextEditingController.buildTextSpan]: {{site.url}}/release/breaking-changes/buildtextspan-buildcontext
 [Android ActivityControlSurface attachToActivity signature change]: {{site.url}}/release/breaking-changes/android-activity-control-surface-attach
@@ -209,9 +209,10 @@ Reverted in version: 2.2.0 (proposed)
 
 ### Released in Flutter 1.22
 
-- [Android v1 embedding app and plugin creation deprecation][]
-- [Cupertino icons 1.0.0][]
-- [The new Form, FormField auto-validation API][]
+* [Android v1 embedding app and plugin creation deprecation][]
+* [Cupertino icons 1.0.0][]
+* [The new Form, FormField auto-validation API][]
+
 
 [Android v1 embedding app and plugin creation deprecation]: {{site.url}}/release/breaking-changes/android-v1-embedding-create-deprecation
 [Cupertino icons 1.0.0]: {{site.url}}/release/breaking-changes/cupertino-icons-1.0.0
@@ -219,18 +220,18 @@ Reverted in version: 2.2.0 (proposed)
 
 ### Released in Flutter 1.20
 
-- [Actions API revision][]
-- [Adding TextInputClient.currentAutofillScope property][]
-- [New Buttons and Button Themes][]
-- [Dialogs' Default BorderRadius][]
-- [More Strict Assertions in the Navigator and the Hero Controller Scope][]
-- [The Route Transition record and Transition delegate updates][]
-- [The RenderEditable needs to be laid out before hit testing][]
-- [Reversing the dependency between the scheduler and services layer][]
-- [Semantics Order of the Overlay Entries in Modal Routes][]
-- [showAutocorrectionPromptRect method added to TextInputClient][]
-- [TestWidgetsFlutterBinding.clock][]
-- [TextField requires MaterialLocalizations][]
+* [Actions API revision][]
+* [Adding TextInputClient.currentAutofillScope property][]
+* [New Buttons and Button Themes][]
+* [Dialogs' Default BorderRadius][]
+* [More Strict Assertions in the Navigator and the Hero Controller Scope][]
+* [The Route Transition record and Transition delegate updates][]
+* [The RenderEditable needs to be laid out before hit testing][]
+* [Reversing the dependency between the scheduler and services layer][]
+* [Semantics Order of the Overlay Entries in Modal Routes][]
+* [showAutocorrectionPromptRect method added to TextInputClient][]
+* [TestWidgetsFlutterBinding.clock][]
+* [TextField requires MaterialLocalizations][]
 
 [Actions API revision]: {{site.url}}/release/breaking-changes/actions-api-revision
 [Adding TextInputClient.currentAutofillScope property]: {{site.url}}/release/breaking-changes/add-currentAutofillScope-to-TextInputClient
@@ -247,23 +248,23 @@ Reverted in version: 2.2.0 (proposed)
 
 ### Released in Flutter 1.17
 
-- [Adding 'linux' and 'windows' to TargetPlatform enum][]
-- [Annotations return local position relative to object][]
-- [Container color optimization][]
-- [CupertinoTabBar requires Localizations parent][]
-- [Generic type of ParentDataWidget changed to ParentData][]
-- [ImageCache and ImageProvider changes][]
-- [ImageCache large images][]
-- [MouseTracker moved to rendering][]
-- [MouseTracker no longer attaches annotations][]
-- [Nullable CupertinoTheme.brightness][]
-- [Rebuild optimization for OverlayEntries and Routes][]
-- [Scrollable AlertDialog][]
-- [TestTextInput state reset][]
-- [TextInputClient currentTextEditingValue][]
-- [The forgetChild() method must call super][]
-- [The Route and Navigator refactoring][]
-- [FloatingActionButton and ThemeData's accent properties][]
+* [Adding 'linux' and 'windows' to TargetPlatform enum][]
+* [Annotations return local position relative to object][]
+* [Container color optimization][]
+* [CupertinoTabBar requires Localizations parent][]
+* [Generic type of ParentDataWidget changed to ParentData][]
+* [ImageCache and ImageProvider changes][]
+* [ImageCache large images][]
+* [MouseTracker moved to rendering][]
+* [MouseTracker no longer attaches annotations][]
+* [Nullable CupertinoTheme.brightness][]
+* [Rebuild optimization for OverlayEntries and Routes][]
+* [Scrollable AlertDialog][]
+* [TestTextInput state reset][]
+* [TextInputClient currentTextEditingValue][]
+* [The forgetChild() method must call super][]
+* [The Route and Navigator refactoring][]
+* [FloatingActionButton and ThemeData's accent properties][]
 
 [Adding 'linux' and 'windows' to TargetPlatform enum]: {{site.url}}/release/breaking-changes/target-platform-linux-windows
 [Annotations return local position relative to object]: {{site.url}}/release/breaking-changes/annotations-return-local-position-relative-to-object
