@@ -62,8 +62,8 @@ to test a widget that contains a gradient:
 flutter test --update-goldens
 ```
 
-Not expected to be a common case, but to disable dithering temporarily, you can
-do so by setting the `enableDithering` property in your `main()` (either in an
+Not expected to be a common case, but you can disable dithering temporarily
+by setting the `enableDithering` property in your `main()` method (either in an
 app or test):
 
 ```diff
