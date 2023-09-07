@@ -33,7 +33,8 @@ It was later discovered that Impeller didn't support the (rarely used)
 [`Paint.enableDithering`][1] property.
 
 After adding dithering support to Impeller ([PR 44181][], [PR 44331][],
-[PR 44522][]), and reviewing the perfomance impact of dithering (negligble),
+[PR 44522][]), and reviewing the perfomance impact of dithering (negligible),
+the following observations were made:
 and:
 
 1. Consensus that gradients look good by default: [Issue 112498][].
