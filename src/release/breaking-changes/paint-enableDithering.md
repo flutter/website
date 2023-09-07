@@ -54,7 +54,7 @@ but gradients.
 
 Most users and libraries will not need to make any changes.
 
-For users that maintain golden tests, you may need to update your golden images
+For users that maintain golden tests, you might need to update your golden images
 to reflect the new default. For example, if you use [`matchesGoldenFile`][]
 to test a widget that contains a gradient:
 
