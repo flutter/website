@@ -70,8 +70,7 @@ Dart code completion, hot reload, and widget inspector.
 
 Android Studio supports add-to-app flows on Android Studio 2022.1 or later
 with version 42 or later of the [Flutter plugin][] for IntelliJ.
-The Android Studio integration only supports integrating using
-a source code Gradle subproject.
+The Android Studio integration requires a source code Gradle subproject.
 
 1. Open your Android project in Android Studio.
 
@@ -84,7 +83,7 @@ a source code Gradle subproject.
 
 1. Complete the configuration of your Flutter module.
 
-    - If you have an existing project:
+    * If you have an existing project:
 
         {: type="a"}
         1. To choose an existing project, click **...**.
@@ -92,7 +91,7 @@ a source code Gradle subproject.
         1. Navigate to your Flutter project directory.
         1. Click **Open**.
 
-    - If you need to create a new Flutter project:
+    * If you need to create a new Flutter project:
 
         {: type="a"}
         1. Complete the configuration dialog.
@@ -101,10 +100,10 @@ a source code Gradle subproject.
 1. Click **Finish**.
 
 {{site.alert.tip}}
-    By default, your project's Project pane may show the 'Android' view.
-    If you can't see your new Flutter files in the Project pane,
-    set your Project pane to display **Project Files**.
-    This shows all files without filtering.
+  By default, your project's Project pane might show the 'Android' view.
+  If you can't see your new Flutter files in the Project pane,
+  set your Project pane to display **Project Files**.
+  This shows all files without filtering.
 {{site.alert.end}}
 
 </div>
@@ -161,7 +160,7 @@ module an embeddable Android library.
 #### Java 11 requirement
 {:.no_toc}
 
-The Flutter Android engine uses Java 11 features.
+The Flutter Android Gradle plugin uses Java 11 features.
 
 Before attempting to connect your Flutter module project
 to your host Android app, ensure that your host Android
@@ -180,27 +179,43 @@ android {
 }
 ```
 
-
 </div>
 </div>
 {% comment %} End: Tab panes. {% endcomment -%}
 
 ## Add the Flutter module as a dependency
-{:.no_toc}
 
-Next, add the Flutter module as a dependency of your
-existing app in Gradle. There are two ways to achieve this.
-The AAR mechanism creates generic Android AARs as
-intermediaries that packages your Flutter module.
-This is good when your downstream app builders don't
-want to have the Flutter SDK installed. But,
-it adds one more build step if you build frequently.
+Add the Flutter module as a dependency of your
+existing app in Gradle. You can achieve this in two ways.
 
-The source code subproject mechanism is a convenient
-one-click build process, but requires the Flutter SDK.
-This is the mechanism used by the Android Studio IDE plugin.
+1. **Android archive**
+    The AAR mechanism creates generic Android AARs as
+    intermediaries that packages your Flutter module.
+    This is good when your downstream app builders don't
+    want to have the Flutter SDK installed. But,
+    it adds one more build step if you build frequently.
 
-### Option A - Depend on the Android Archive (AAR)
+1. **Module source code**
+    The source code subproject mechanism is a convenient
+    one-click build process, but requires the Flutter SDK.
+    This is the mechanism used by the Android Studio IDE plugin.
+
+{% comment %} Nav tabs {% endcomment -%}
+<ul class="nav nav-tabs" id="add-to-app-android-deps" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="android-archive-tab" href="#android-archive" role="tab" aria-controls="android-archive" aria-selected="true">Android Archive</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="module-source-tab" href="#module-source" role="tab" aria-controls="module-source" aria-selected="false">Module source code</a>
+    </li>
+</ul>
+
+{% comment %} Tab panes {% endcomment -%}
+<div class="tab-content">
+
+<div class="tab-pane active" id="android-archive" role="tabpanel" aria-labelledby="android-archive-tab" markdown="1">
+
+### Depend on the Android Archive (AAR)
 {:.no_toc}
 
 This option packages your Flutter library as a generic local
@@ -288,14 +303,14 @@ dependencies {
   You can also build an AAR for your Flutter module in Android Studio using
   the `Build > Flutter > Build AAR` menu.
 
-{% include docs/app-figure.md image="development/add-to-app/android/project-setup/ide-build-aar.png" %}
+  {% include docs/app-figure.md image="development/add-to-app/android/project-setup/ide-build-aar.png" %}
 {{site.alert.end}}
 
-  Your app now includes the Flutter module as a dependency.
-  You can follow the next steps in the
-  [Adding a Flutter screen to an Android app][].
+</div>
 
-### Option B - Depend on the module's source code
+<div class="tab-pane" id="module-source" role="tabpanel" aria-labelledby="module-source-tab" markdown="1">
+
+### Depend on the module's source code
 {:.no_toc}
 
 This option enables a one-step build for both your
@@ -308,8 +323,8 @@ Flutter SDK to build the host app.
   By default, the host app provides the `:app` Gradle project.
   To change the name of this project, set
   `flutter.hostAppProjectName` in the Flutter module's
-  `gradle.properties` file. Finally, include this project
-  in the host app's `settings.gradle` file mentioned below.
+  `gradle.properties` file.
+  Include this project in the host app's `settings.gradle` file.
 {{site.alert.end}}
 
 Include the Flutter module as a subproject in the host app's
@@ -322,8 +337,8 @@ exist in the same directory
 include ':app'                                    // assumed existing content
 setBinding(new Binding([gradle: this]))                                // new
 evaluate(new File(                                                     // new
-  settingsDir.parentFile,                                              // new
-  'flutter_module/.android/include_flutter.groovy'                         // new
+    settingsDir.parentFile,                                            // new
+    'flutter_module/.android/include_flutter.groovy'                   // new
 ))                                                                     // new
 ```
 
@@ -339,9 +354,13 @@ module from your app:
 <?code-excerpt title="MyApp/app/build.gradle"?>
 ```groovy
 dependencies {
-  implementation project(':flutter')
+    implementation project(':flutter')
 }
 ```
+
+</div>
+</div>
+{% comment %} End: Tab panes. {% endcomment -%}
 
 Your app now includes the Flutter module as a dependency.
 
