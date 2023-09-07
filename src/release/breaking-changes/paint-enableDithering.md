@@ -39,7 +39,7 @@ the following observations were made:
 1. Consensus that gradients look good by default: [Issue 112498][].
 1. Having a global option was intended to be deprecated: [PR 13868][].
 
-... it was decided that Flutter would:
+This resulted in the following decisions:
 
 1. Make dithering enabled by default.
 1. Deprecate the global option.
