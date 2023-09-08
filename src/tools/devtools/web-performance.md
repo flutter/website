@@ -7,7 +7,9 @@ description: Learn how to use Chrome DevTools to debug web performance issues.
   The following requires Flutter version 3.14 or later.
 {{site.alert.end}}
 
-The Flutter framework emits timeline events as it works to build frames, draw scenes, and track other activity such as garbage collections. These events are exposed in the 
+The Flutter framework emits timeline events as it works to build frames,
+draw scenes, and track other activity such as garbage collections.
+These events are exposed in the 
 [Chrome DevTools performance panel][] for debugging.
 
 You can also emit your own timeline events using the `dart:developer` [Timeline][] and [TimelineTask][] APIs for further performance analysis.
