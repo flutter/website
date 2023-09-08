@@ -4,7 +4,7 @@ description: Learn how to use Chrome DevTools to debug web performance issues.
 ---
 
 {{site.alert.note}}
-The following requires Flutter version 3.14 or later.
+  The following requires Flutter version 3.14 or later.
 {{site.alert.end}}
 
 The Flutter framework emits timeline events as it works to build frames, draw scenes, and track other activity such as garbage collections. These events are exposed in the 
