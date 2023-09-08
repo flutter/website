@@ -16,7 +16,7 @@ Select the operating system on which you are installing Flutter:
       <header class="card-title text-center m-0">
         <span class="d-block h1">
           {% assign icon = os | downcase -%}
-            <object data="/assets/images/docs/brand-svg/{{icon}}.svg" width="72" height="72"> </object>
+            <img src="/assets/images/docs/brand-svg/{{icon}}.svg" width="72" height="72" aria-hidden="true" alt="{{os}} logo"> 
         </span>
         <span class="text-muted text-nowrap">{{os}}</span>
       </header>
