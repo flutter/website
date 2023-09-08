@@ -12,7 +12,8 @@ draw scenes, and track other activity such as garbage collections.
 These events are exposed in the 
 [Chrome DevTools performance panel][] for debugging.
 
-You can also emit your own timeline events using the `dart:developer` [Timeline][] and [TimelineTask][] APIs for further performance analysis.
+You can also emit your own timeline events using the `dart:developer`
+[Timeline][] and [TimelineTask][] APIs for further performance analysis.
 
 [Chrome DevTools performance panel]: https://developer.chrome.com/docs/devtools/performance
 [Timeline]: https://api.flutter.dev/flutter/dart-developer/Timeline-class.html
