@@ -1,8 +1,11 @@
 # DevTools 2.7.0 release notes
 
-Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
+The 2.7.0 release of the Dart and Flutter DevTools
+includes the following changes among other general improvements.
+To learn more about DevTools, check out the
+[DevTools overview](https://docs.flutter.dev/tools/devtools/overview).
 
-## General Updates
+## General updates
 
 * Improvements for initial page load time -
   [#3309](https://github.com/flutter/devtools/pull/3309)
@@ -10,49 +13,52 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
   [#3393](https://github.com/flutter/devtools/pull/3393),
   [#3401](https://github.com/flutter/devtools/pull/3401)
 
-## Debugger Updates
+## Debugger updates
+
 * Add an open file dialog (ctrl / cmd + p) -
   [#3342](https://github.com/flutter/devtools/pull/3342),
   [#3354](https://github.com/flutter/devtools/pull/3354),
   [#3371](https://github.com/flutter/devtools/pull/3371),
   [#3384](https://github.com/flutter/devtools/pull/3384)
 
-![Open file dialog]({{site.url}}/tools/devtools/release-notes/images-2.7.0/image1.gif "Open file dialog")
+  ![Open file dialog]({{site.url}}/tools/devtools/release-notes/images-2.7.0/image1.gif "Open file dialog")
 
 * Add a copy button to the call stack view -
   [#3334](https://github.com/flutter/devtools/pull/3334)
 
-![Call stack view]({{site.url}}/tools/devtools/release-notes/images-2.7.0/image2.png "Call stack view")
+  ![Call stack view]({{site.url}}/tools/devtools/release-notes/images-2.7.0/image2.png "Call stack view")
 
-## CPU Profiler Updates
+## CPU profiler updates
 
 * Added functionality to load an app startup profile for Flutter apps.
   This profile will contain CPU samples from the initialization
-  of the Dart VM up until the first Flutter frame has been rendered. -
+  of the Dart VM up until the first Flutter frame has been rendered -
   [#3357](https://github.com/flutter/devtools/pull/3357)
 
-![Profile button]({{site.url}}/tools/devtools/release-notes/images-2.7.0/image3.png "Profile button")
+  ![Profile button]({{site.url}}/tools/devtools/release-notes/images-2.7.0/image3.png "Profile button")
 
-When the app startup profile has been loaded,
-you will see that the "AppStartUp" user tag is selected for the profile.
-You can also load the app startup profile
-by selecting this user tag filter, when present,
-in the list of available user tags.
-
-![User tag example]({{site.url}}/tools/devtools/release-notes/images-2.7.0/image4.png "User tag examplel")
+  When the app startup profile has been loaded,
+  you will see that the "AppStartUp" user tag is selected for the profile.
+  You can also load the app startup profile
+  by selecting this user tag filter, when present,
+  in the list of available user tags.
+  
+  ![User tag example]({{site.url}}/tools/devtools/release-notes/images-2.7.0/image4.png "User tag example")
 
 * Added multi-isolate support.
   Select which isolate you want to profile
-  from the isolate selector at the bottom of the page. -
+  from the isolate selector at the bottom of the page -
   [#3362](https://github.com/flutter/devtools/pull/3362)
 
-![isolate selector]({{site.url}}/tools/devtools/release-notes/images-2.7.0/image5.png "isolate selector")
+  ![isolate selector]({{site.url}}/tools/devtools/release-notes/images-2.7.0/image5.png "isolate selector")
 
 * Add class names to CPU stack frames in the profiler -
   [#3385](https://github.com/flutter/devtools/pull/3385)
 
-![Class names]({{site.url}}/tools/devtools/release-notes/images-2.7.0/image6.png "Class names")
+  ![Class names]({{site.url}}/tools/devtools/release-notes/images-2.7.0/image6.png "Class names")
 
 ## Full commit history
-More details about changes and fixes are available from the
-[DevTools git log.](https://github.com/flutter/devtools/commits/master).
+
+To find a complete list of changes since the previous release,
+check out 
+[the diff on GitHub](https://github.com/flutter/devtools/compare/v2.6.0...v2.7.0).
