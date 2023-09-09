@@ -248,6 +248,44 @@ dependencies {
   releaseImplementation 'com.example.flutter_module:flutter_release:1.0'
 }
 ```
+</br>
+
+##### Kotlin DSL
+
+<?code-excerpt title="MyApp/app/build.gradle.kts"?>
+```gradle
+android {
+    buildTypes {
+        release {
+      ...
+        }
+        debug {
+          ...
+        }
+
+        create("profile") {
+            initWith(getByName("debug"))
+        }
+}
+
+dependencies {
+  // ...
+  debugImplementation 'com.example.flutter_module:flutter_debug:1.0'
+  releaseImplementation 'com.example.flutter_module:flutter_release:1.0'
+}
+```
+
+<?code-excerpt title="MyApp/settings.gradle.kts"?>
+```gradle
+include(":app")
+
+dependencyResolutionManagement {
+    repositories {
+        maven(url = "https://storage.googleapis.com/download.flutter.io")
+        maven(url = "/Users/shivam/StudioProjects/flutter_module/build/host/outputs/repo")
+    }
+}
+```
 
 {{site.alert.important}}
   If you're located in China, use a mirror site rather than the
