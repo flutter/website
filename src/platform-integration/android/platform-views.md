@@ -406,7 +406,7 @@ android {
 }
 ```
 
-#### Multithreaded draw calls
+#### Manual view invalidation
 
 Certain Android Views do not invalidate themselves when their content changes.
 Some example views include `SurfaceView` and `SurfaceTexture`.
