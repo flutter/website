@@ -406,6 +406,10 @@ android {
 }
 ```
 
+#### Multi threaded draw calls
+
+Android's PlatformView implementation requires that the view is manually invalidated when the Android View draws using a separate thread. 
+
 [`AndroidViewSurface`]: {{site.api}}/flutter/widgets/AndroidViewSurface-class.html
 
 {% include docs/platform-view-perf.md %}
