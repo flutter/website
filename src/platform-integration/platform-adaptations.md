@@ -1,12 +1,11 @@
 ---
-title: Platform-specific behaviors and adaptations
+title: Automatic platform adaptations
 description: Learn more about Flutter's platform adaptiveness.
 ---
 
-
 ## Adaptation philosophy
 
-There are generally two cases of platform adaptiveness:
+In general, two cases of platform adaptiveness exist:
 
 1. Things that are behaviors of the OS environment
    (such as text editing and scrolling) and that
@@ -89,14 +88,9 @@ On **iOS**:
 
 ### Platform-specific transition details
 
-On **Android**,
-two page transition animation styles exist depending
-on your OS version:
-
-* Pre API 28 uses a bottom-up animation that
-  [slides up and fades in][].
-* On API 28 and later, the bottom-up animation
-  [slides and clip-reveals up][].
+On **Android**, Flutter uses the [`ZoomPageTransitionsBuilder`][] animation.
+When the user taps on an item, the UI zooms in to a screen that features that item.
+When the user taps to go back, the UI zooms out to the previous screen.
 
 On **iOS** when the push style transition is used,
 Flutter's bundled [`CupertinoNavigationBar`][]
@@ -107,19 +101,11 @@ subcomponent on the next or previous page's
 
 <div class="container">
   <div class="row">
-    <div class="col-sm text-center">
-      <figure class="figure">
-        <img style="border-radius: 12px;" src="/assets/images/docs/platform-adaptations/navigation-android.gif" class="figure-img img-fluid" alt="An animation of the page transition on Android pre-Android P" />
-        <figcaption class="figure-caption">
-          Android Pre-P
-        </figcaption>
-      </figure>
-    </div>
     <div class="col-sm">
       <figure class="figure text-center">
-        <img style="border-radius: 12px;" src="/assets/images/docs/platform-adaptations/navigation-android-p.gif" class="figure-img img-fluid" alt="An animation of the page transition on Android on Android P" />
+      <object style="border-radius: 12px; height: 400px;" class="figure-img img-fluid" height="400" width="185" alt="An animation of the page transition on Android" data="/assets/images/docs/platform-adaptations/android-zoom-animation.png"></object>
         <figcaption class="figure-caption">
-          Android Post-P
+          Android
         </figcaption>
       </figure>
     </div>
@@ -284,11 +270,11 @@ There is no equivalent behavior on **Android**.
 When using the Material package,
 the typography automatically defaults to the
 font family appropriate for the platform.
-On Android, the Roboto font is used.
-On iOS, the OS's San Francisco font family is used.
+Android uses the Roboto font.
+iOS uses the San Francisco font.
 
 When using the Cupertino package, the [default theme][]
-always uses the San Francisco font.
+uses the San Francisco font.
 
 The San Francisco font license limits its usage to
 software running on iOS, macOS, or tvOS only.
@@ -741,8 +727,8 @@ Scaffold(
 ```
 ### Text fields
 
-Since Android 12, the default UI of text fields follows the design 
-guidelines defined in [Material 3][m3-text-field] (M3). 
+Since Android 12, text fields follow the
+[Material 3][m3-text-field] (M3) design guidelines. 
 On iOS, Apple's [Human Interface Guidelines][hig-text-field] (HIG) define
 an equivalent component. 
 
@@ -884,6 +870,7 @@ You can leave feedback or ask questions in the discussion.
 
 [issue #8410]: {{site.repo.flutter}}/issues/8410#issuecomment-468034023
 [android.app.AlertDialog]: {{site.android-dev}}/reference/android/app/AlertDialog.html
+[`ZoomPageTransitionsBuilder`]: {{site.api}}/flutter/material/ZoomPageTransitionsBuilder-class.html
 [`CupertinoNavigationBar`]: {{site.api}}/flutter/cupertino/CupertinoNavigationBar-class.html
 [`CupertinoSliverNavigationBar`]: {{site.api}}/flutter/cupertino/CupertinoSliverNavigationBar-class.html
 [default theme]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/cupertino/text_theme.dart
