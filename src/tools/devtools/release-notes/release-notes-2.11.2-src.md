@@ -1,22 +1,35 @@
 # DevTools 2.11.2 release notes
 
-Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
+The 2.11.2 release of the Dart and Flutter DevTools
+includes the following changes among other general improvements.
+To learn more about DevTools, check out the
+[DevTools overview](https://docs.flutter.dev/tools/devtools/overview).
 
-## General Updates
-* This release included a lot of cleanup and reduction in technical debt. Please see our
-[changelog](https://github.com/flutter/devtools/blob/master/CHANGELOG.md) for a detailed list of commits.
+## General updates
 
-## CPU Profiler Updates
-* Added the source line number to file uris in CPU profiles - [#3718](https://github.com/flutter/devtools/pull/3718)
+* This release included a lot of cleanup and reduction in technical debt.
 
-![cpu stack frame line numbers]({{site.url}}/tools/devtools/release-notes/images-2.11.2/image1.png "cpu stack frame line numbers")
+## CPU profiler updates
 
-## Debugger Updates
-* File opener UX improvements, including support for clicking the source file name to open the file search window - [#3612](https://github.com/flutter/devtools/pull/3612), [#3758](https://github.com/flutter/devtools/pull/3758)
-* Added support for auto-scrolling the File Explorer to the selected file - [#3786](https://github.com/flutter/devtools/pull/3786), [#3794](https://github.com/flutter/devtools/pull/3794)
+* Added the source line number to file uris in CPU profiles -
+  [#3718](https://github.com/flutter/devtools/pull/3718)
 
-![debugger file explorer scrolling]({{site.url}}/tools/devtools/release-notes/images-2.11.2/image2.gif "debugger file explorer scrolling")
+  ![cpu stack frame line numbers]({{site.url}}/tools/devtools/release-notes/images-2.11.2/image1.png "cpu stack frame line numbers")
+
+## Debugger updates
+
+* File opener UX improvements, including support for clicking
+  the source file name to open the file search window -
+  [#3612](https://github.com/flutter/devtools/pull/3612),
+  [#3758](https://github.com/flutter/devtools/pull/3758)
+* Added support for auto-scrolling the File Explorer to the selected file -
+  [#3786](https://github.com/flutter/devtools/pull/3786),
+  [#3794](https://github.com/flutter/devtools/pull/3794)
+
+  ![debugger file explorer scrolling]({{site.url}}/tools/devtools/release-notes/images-2.11.2/image2.gif "debugger file explorer scrolling")
 
 ## Full commit history
-More details about changes and fixes are available from the
-[DevTools git log.](https://github.com/flutter/devtools/commits/master).
+
+To find a complete list of changes since the previous release,
+check out
+[the diff on GitHub](https://github.com/flutter/devtools/compare/v2.10.0...v2.11.2).
