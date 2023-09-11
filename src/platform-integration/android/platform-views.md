@@ -406,11 +406,15 @@ android {
 }
 ```
 
-#### Multi threaded draw calls
+#### Multithreaded draw calls
 
-When the Android View draws using a separate thread,
-you must invalidate the view according to 
-Android's PlatformView implementation. 
+Certain Android Views do not invalidate themselves when their content changes.
+Some example views include `SurfaceView` and `SurfaceTexture`.
+When your Platform View includes these views you are required to
+manually invalidate the viewafter they have been drawn to
+(or more specifically: after the swap chain is flipped).
+Manual view invalidation is done by calling `invalidate` on the View 
+or one of its parent views.
 
 [`AndroidViewSurface`]: {{site.api}}/flutter/widgets/AndroidViewSurface-class.html
 
