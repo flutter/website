@@ -1,6 +1,6 @@
 ---
 short-title: 2.27.0 release notes
-description: Release notes for Flutter and Dart DevTools 2.27.0
+description: Release notes for Dart and Flutter DevTools version 2.27.0.
 toc: false
 ---
 
