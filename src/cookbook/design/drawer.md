@@ -50,6 +50,7 @@ which adheres to the Material Design spec.
 <?code-excerpt "lib/drawer.dart (DrawerEmpty)" replace="/null, //g"?>
 ```dart
 Scaffold(
+  appBar: AppBar(),
   drawer: Drawer(
     child: // Populate the Drawer in the next step.
   ),
