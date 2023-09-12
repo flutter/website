@@ -16,8 +16,8 @@ You can also emit your own timeline events using the `dart:developer`
 [Timeline][] and [TimelineTask][] APIs for further performance analysis.
 
 [Chrome DevTools performance panel]: https://developer.chrome.com/docs/devtools/performance
-[Timeline]: https://api.flutter.dev/flutter/dart-developer/Timeline-class.html
-[TimelineTask]: https://api.flutter.dev/flutter/dart-developer/TimelineTask-class.html
+[Timeline]: {{site.api}}/flutter/dart-developer/Timeline-class.html
+[TimelineTask]: {{site.api}}/flutter/dart-developer/TimelineTask-class.html
 
 ![Screenshot of the Chrome DevTools performance panel]({{site.url}}/assets/images/docs/tools/devtools/chrome-devtools-performance-panel.png)
 
