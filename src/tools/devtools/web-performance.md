@@ -23,10 +23,10 @@ You can also emit your own timeline events using the `dart:developer`
 
 ## Optional flags to enhance tracing
 
-- [debugProfileBuildsEnabled][]: Adds Timeline events for every Widget built.
-- [debugProfileBuildsEnabledUserWidgets][]: Adds Timeline events for every user-created Widget built.
-- [debugProfileLayoutsEnabled][]: Adds Timeline events for every RenderObject layout.
-- [debugProfilePaintsEnabled][]: Adds Timeline events for every RenderObject painted.
+- [debugProfileBuildsEnabled][]: Adds `Timeline` events for every `Widget` built.
+- [debugProfileBuildsEnabledUserWidgets][]: Adds `Timeline` events for every user-created `Widget` built.
+- [debugProfileLayoutsEnabled][]: Adds `Timeline` events for every `RenderObject` layout.
+- [debugProfilePaintsEnabled][]: Adds `Timeline` events for every `RenderObject` painted.
 
 [debugProfileBuildsEnabled]: {{site.api}}/flutter/widgets/debugProfileBuildsEnabled.html
 [debugProfileBuildsEnabledUserWidgets]: {{site.api}}/flutter/widgets/debugProfileBuildsEnabledUserWidgets.html
