@@ -28,10 +28,10 @@ You can also emit your own timeline events using the `dart:developer`
 - [debugProfileLayoutsEnabled][]: Adds Timeline events for every RenderObject layout.
 - [debugProfilePaintsEnabled][]: Adds Timeline events for every RenderObject painted.
 
-[debugProfileBuildsEnabled]: https://api.flutter.dev/flutter/widgets/debugProfileBuildsEnabled.html
-[debugProfileBuildsEnabledUserWidgets]: https://api.flutter.dev/flutter/widgets/debugProfileBuildsEnabledUserWidgets.html
-[debugProfileLayoutsEnabled]: https://api.flutter.dev/flutter/rendering/debugProfileLayoutsEnabled.html
-[debugProfilePaintsEnabled]: https://api.flutter.dev/flutter/rendering/debugProfilePaintsEnabled.html
+[debugProfileBuildsEnabled]: {{site.api}}/flutter/widgets/debugProfileBuildsEnabled.html
+[debugProfileBuildsEnabledUserWidgets]: {{site.api}}/flutter/widgets/debugProfileBuildsEnabledUserWidgets.html
+[debugProfileLayoutsEnabled]: {{site.api}}/flutter/rendering/debugProfileLayoutsEnabled.html
+[debugProfilePaintsEnabled]: {{site.api}}/flutter/rendering/debugProfilePaintsEnabled.html
 
 ## Instructions
 
