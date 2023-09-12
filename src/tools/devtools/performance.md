@@ -10,7 +10,7 @@ description: Learn how to use the DevTools performance view.
   To learn about profiling web apps, check out [Debugging web performance][].
 {{site.alert.end}}
 
-[Debugging web performance]: {{site.url}}/tools/devtools/web-performance
+[Debugging web performance]: {{site.url}}/perf/web-performance
 
 The performance page can help you diagnose performance
 problems and UI jank in your application.

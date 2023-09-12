@@ -23,6 +23,9 @@ You can also emit your own timeline events using the `dart:developer`
 
 ## Optional flags to enhance tracing
 
+To configure which timeline events are tracked, set any of the following top-level properties to `true`
+in your app's `main` method.
+
 - [debugProfileBuildsEnabled][]: Adds `Timeline` events for every `Widget` built.
 - [debugProfileBuildsEnabledUserWidgets][]: Adds `Timeline` events for every user-created `Widget` built.
 - [debugProfileLayoutsEnabled][]: Adds `Timeline` events for every `RenderObject` layout.
@@ -38,7 +41,9 @@ You can also emit your own timeline events using the `dart:developer`
 1. _[Optional]_ Set any desired tracing flags to true from your app's main method.
 2. Run your Flutter web app in [profile mode][].
 3. Open up the [Chrome DevTools Performance panel][] for your application,
-    and start recording to capture timeline events.
+    and [start recording][] to capture timeline events.
+
+[start recording]: https://developer.chrome.com/docs/devtools/performance/#record
 
 [profile mode]: {{site.url}}/testing/build-modes#profile
 [Chrome DevTools performance panel]: https://developer.chrome.com/docs/devtools/performance
