@@ -35,6 +35,7 @@ In this example, create a `Scaffold` with a `drawer`:
 <?code-excerpt "lib/drawer.dart (DrawerStart)" replace="/null, //g"?>
 ```dart
 Scaffold(
+  appBar: AppBar(), // Show the hamburger button.
   drawer: // Add a Drawer here in the next step.
 );
 ```
