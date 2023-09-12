@@ -89,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
               // identifying the widget from inside the test suite,
               // and reading the text.
               key: const Key('counter'),
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
         ),
@@ -111,15 +111,28 @@ class _MyHomePageState extends State<MyHomePage> {
 
 Next, use the `integration_test` and `flutter_test` packages
 to write integration tests. Add these dependencies to the `dev_dependencies`
-section of the app's `pubspec.yaml` file, specifying the Flutter SDK as the
-location of the package.
+section of the app's `pubspec.yaml` file.
 
-```yaml
-dev_dependencies:
-  integration_test:
-    sdk: flutter
-  flutter_test:
-    sdk: flutter
+```console
+$ flutter pub add 'dev:flutter_test:{"sdk":"flutter"}'  'dev:integration_test:{"sdk":"flutter"}'
+"flutter_test" is already in "dev_dependencies". Will try to update the constraint.
+Resolving dependencies... 
+  collection 1.17.2 (1.18.0 available)
++ file 6.1.4 (7.0.0 available)
++ flutter_driver 0.0.0 from sdk flutter
++ fuchsia_remote_debug_protocol 0.0.0 from sdk flutter
++ integration_test 0.0.0 from sdk flutter
+  material_color_utilities 0.5.0 (0.8.0 available)
+  meta 1.9.1 (1.10.0 available)
++ platform 3.1.0 (3.1.2 available)
++ process 4.2.4 (5.0.0 available)
+  stack_trace 1.11.0 (1.11.1 available)
+  stream_channel 2.1.1 (2.1.2 available)
++ sync_http 0.3.1
+  test_api 0.6.0 (0.6.1 available)
++ vm_service 11.7.1 (11.10.0 available)
++ webdriver 3.0.2
+Changed 9 dependencies!
 ```
 
 ### 3. Create the test files

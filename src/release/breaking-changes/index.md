@@ -36,14 +36,18 @@ release, and listed in alphabetical order:
 * [Deprecate TextField.canRequestFocus][]
 * [Deprecate `describeEnum` and update `EnumProperty` to be type strict][]
 * [Deprecated just-in-time navigation pop APIs for Android Predictive Back][]
+* [Deprecated `Paint.enableDithering`][]
 * [Updated default text styles for menus][]
+* [Windows build path changed to add the target architecture][]
 
 [Customize tabs alignment using the new `TabBar.tabAlignment` property]: {{site.url}}/release/breaking-changes/tab-alignment
 [Deprecate `textScaleFactor` in favor of `TextScaler`]: {{site.url}}/release/breaking-changes/deprecate-textscalefactor
 [Deprecate TextField.canRequestFocus]: {{site.url}}/release/breaking-changes/can-request-focus
 [Deprecate `describeEnum` and update `EnumProperty` to be type strict]: {{site.url}}/release/breaking-changes/describe-enum
 [Deprecated just-in-time navigation pop APIs for Android Predictive Back]: {{site.url}}/release/breaking-changes/android-predictive-back
+[Deprecated `Paint.enableDithering`]: {{site.url}}/release/breaking-changes/paint-enableDithering
 [Updated default text styles for menus]: {{site.url}}/release/breaking-changes/menus-text-style
+[Windows build path changed to add the target architecture]: {{site.url}}/release/breaking-changes/windows-build-architecture
 
 ### Released in Flutter 3.13
 

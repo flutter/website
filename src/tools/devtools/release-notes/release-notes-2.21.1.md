@@ -1,6 +1,6 @@
 ---
 short-title: 2.21.1 release notes
-description: Release notes for Flutter and Dart DevTools 2.21.1
+description: Release notes for Dart and Flutter DevTools version 2.21.1.
 toc: false
 ---
 
