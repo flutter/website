@@ -61,27 +61,60 @@ guide.
 
 ## Project setup
 
-Add `integration_test` and `flutter_test` to your pubspec.yaml file:
+Add `integration_test` and `flutter_test` to your `pubspec.yaml` file:
 
-```yaml
-dev_dependencies:
-  integration_test:
-    sdk: flutter
-  flutter_test:
-    sdk: flutter
+```console
+$ flutter pub add 'dev:flutter_test:{"sdk":"flutter"}'  'dev:integration_test:{"sdk":"flutter"}'
+"flutter_test" is already in "dev_dependencies". Will try to update the constraint.
+Resolving dependencies... 
+  collection 1.17.2 (1.18.0 available)
++ file 6.1.4 (7.0.0 available)
++ flutter_driver 0.0.0 from sdk flutter
++ fuchsia_remote_debug_protocol 0.0.0 from sdk flutter
++ integration_test 0.0.0 from sdk flutter
+  material_color_utilities 0.5.0 (0.8.0 available)
+  meta 1.9.1 (1.10.0 available)
++ platform 3.1.0 (3.1.2 available)
++ process 4.2.4 (5.0.0 available)
+  stack_trace 1.11.0 (1.11.1 available)
+  stream_channel 2.1.1 (2.1.2 available)
++ sync_http 0.3.1
+  test_api 0.6.0 (0.6.1 available)
++ vm_service 11.7.1 (11.10.0 available)
++ webdriver 3.0.2
+Changed 9 dependencies!
 ```
 
 In your project, create a new directory
-`integration_test/` with a new file, `<name>_test.dart`:
+`integration_test` with a new file, `<name>_test.dart`:
 
 <?code-excerpt "integration_test/counter_test.dart" replace="/IntegrationTestWidgetsFlutterBinding\.ensureInitialized\(\); \/\/ NEW\n\n//g"?>
 ```dart
 import 'package:flutter_test/flutter_test.dart';
+import 'package:how_to/main.dart';
 import 'package:integration_test/integration_test.dart';
 
 void main() {
-    testWidgets('failing test example', (tester) async {
-    expect(2 + 2, equals(5));
+    testWidgets('tap on the floating action button, verify counter',
+      (tester) async {
+    // Load app widget.
+    await tester.pumpWidget(const MyApp());
+
+    // Verify the counter starts at 0.
+    expect(find.text('0'), findsOneWidget);
+
+    // Finds the floating action button to tap on.
+    final Finder fab = find.byTooltip('Increment');
+
+    // Emulate a tap on the floating action button.
+    await tester.tap(fab);
+
+    // Trigger a frame.
+    await tester.pumpAndSettle();
+
+    // Verify the counter increments by 1.
+    expect(find.text('0'), findsNothing);
+    expect(find.text('1'), findsOneWidget);
   });
 }
 ```
@@ -151,13 +184,32 @@ Then add `IntegrationTestWidgetsFlutterBinding.ensureInitialized()` in your
 <?code-excerpt "integration_test/counter_test.dart"?>
 ```dart
 import 'package:flutter_test/flutter_test.dart';
+import 'package:how_to/main.dart';
 import 'package:integration_test/integration_test.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized(); // NEW
 
-  testWidgets('failing test example', (tester) async {
-    expect(2 + 2, equals(5));
+  testWidgets('tap on the floating action button, verify counter',
+      (tester) async {
+    // Load app widget.
+    await tester.pumpWidget(const MyApp());
+
+    // Verify the counter starts at 0.
+    expect(find.text('0'), findsOneWidget);
+
+    // Finds the floating action button to tap on.
+    final Finder fab = find.byTooltip('Increment');
+
+    // Emulate a tap on the floating action button.
+    await tester.tap(fab);
+
+    // Trigger a frame.
+    await tester.pumpAndSettle();
+
+    // Verify the counter increments by 1.
+    expect(find.text('0'), findsNothing);
+    expect(find.text('1'), findsOneWidget);
   });
 }
 ```
