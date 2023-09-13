@@ -24,6 +24,8 @@ jobs:
         run: make build BUILD_CONFIGS=_config.yml,_config_stage.yml
       - name: Stage site on Firebase
         if: ${{
+          github.repository == 'flutter/website' &&
+          github.event.pull_request.head.repo.full_name == github.repository &&
           github.event.pull_request.user.login != 'dependabot[bot]'
           }}
         uses: FirebaseExtended/action-hosting-deploy@120e124148ab7016bec2374e5050f15051255ba2
