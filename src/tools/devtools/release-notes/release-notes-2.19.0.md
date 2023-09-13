@@ -1,6 +1,6 @@
 ---
 short-title: 2.19.0 release notes
-description: Release notes for Flutter and Dart DevTools 2.19.0
+description: Release notes for Dart and Flutter DevTools version 2.19.0.
 toc: false
 ---
 
