@@ -471,6 +471,8 @@
       permalink: /perf/rendering-performance
     - title: Performance profiling
       permalink: /perf/ui-performance
+    - title: Performance profiling for web
+      permalink: /perf/web-performance
     - title: Shader compilation jank
       permalink: /perf/shader
     - title: Performance metrics
