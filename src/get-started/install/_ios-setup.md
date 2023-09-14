@@ -273,7 +273,7 @@ Enabling certificates varies in different versions of iOS.
         <a class="nav-link" id="ios15-tab" href="#ios15" role="tab" aria-controls="ios15" aria-selected="false">iOS 15</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link active" id="ios16-tab" href="#ios16" role="tab" aria-controls="ios16" aria-selected="false">iOS 16</a>
+        <a class="nav-link active" id="ios16-tab" href="#ios16" role="tab" aria-controls="ios16" aria-selected="false">iOS 16 or later</a>
     </li>
 </ul>
 
@@ -307,7 +307,7 @@ Enabling certificates varies in different versions of iOS.
 1. Open the **Settings** app on the iOS device.
 
 1. Tap on **General** <span aria-label="and then">></span>
-    **VPN and Device Management**.
+    **VPN & Device Management**.
 
 1. Under the **Developer App** heading, you should find your certificate.
 
