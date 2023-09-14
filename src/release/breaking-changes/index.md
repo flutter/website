@@ -31,6 +31,7 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Add missed `dispose()` for some disposable objects in Flutter][]
 * [Customize tabs alignment using the new `TabBar.tabAlignment` property][]
 * [Deprecate `textScaleFactor` in favor of `TextScaler`][]
 * [Deprecate TextField.canRequestFocus][]
@@ -38,8 +39,8 @@ release, and listed in alphabetical order:
 * [Deprecated just-in-time navigation pop APIs for Android Predictive Back][]
 * [Deprecated `Paint.enableDithering`][]
 * [Updated default text styles for menus][]
-* [Added missed `dispose()` for some disposable objects in Flutter][]
 
+[Add missed `dispose()` for some disposable objects in Flutter]: {{site.url}}/release/breaking-changes/dispose
 [Customize tabs alignment using the new `TabBar.tabAlignment` property]: {{site.url}}/release/breaking-changes/tab-alignment
 [Deprecate `textScaleFactor` in favor of `TextScaler`]: {{site.url}}/release/breaking-changes/deprecate-textscalefactor
 [Deprecate TextField.canRequestFocus]: {{site.url}}/release/breaking-changes/can-request-focus
@@ -48,7 +49,6 @@ release, and listed in alphabetical order:
 [Deprecated `Paint.enableDithering`]: {{site.url}}/release/breaking-changes/paint-enableDithering
 [Updated default text styles for menus]: {{site.url}}/release/breaking-changes/menus-text-style
 [Windows build path changed to add the target architecture]: {{site.url}}/release/breaking-changes/windows-build-architecture
-[Added missed `dispose()` for some disposable objects in Flutter]: {{site.url}}/release/breaking-changes/dispose
 
 ### Released in Flutter 3.13
 
