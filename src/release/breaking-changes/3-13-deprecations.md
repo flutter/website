@@ -141,12 +141,12 @@ Relevant PRs:
 Package: flutter
 Supported by Flutter Fix: no
 
-The static method `synchronizeToNativeViewHierarchy` of PlatformsViewsService
+The static method `synchronizeToNativeViewHierarchy` of `PlatformsViewsService`
 was deprecated in v2.11.
 
 During the deprecation period, the method was a no-op function as it was no
 longer required to call for performance improvements. References to the method
-should be removed without impacting you application.
+should be removed without impacting the application.
 
 **Migration guide**
 
