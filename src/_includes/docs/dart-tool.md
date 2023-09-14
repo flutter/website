@@ -33,4 +33,4 @@
   from the command line, or see the [dart tool][] page.
 {{site.alert.end}}
 
-[dart tool]: {{site.dart-site}}/tools/dart-vm
+[dart tool]: {{site.dart-site}}/tools/dart-tool
