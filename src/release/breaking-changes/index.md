@@ -31,7 +31,6 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
-* [Add missed `dispose()` for some disposable objects in Flutter][]
 * [Customize tabs alignment using the new `TabBar.tabAlignment` property][]
 * [Deprecate `textScaleFactor` in favor of `TextScaler`][]
 * [Deprecate TextField.canRequestFocus][]
@@ -40,7 +39,6 @@ release, and listed in alphabetical order:
 * [Deprecated `Paint.enableDithering`][]
 * [Updated default text styles for menus][]
 
-[Add missed `dispose()` for some disposable objects in Flutter]: {{site.url}}/release/breaking-changes/dispose
 [Customize tabs alignment using the new `TabBar.tabAlignment` property]: {{site.url}}/release/breaking-changes/tab-alignment
 [Deprecate `textScaleFactor` in favor of `TextScaler`]: {{site.url}}/release/breaking-changes/deprecate-textscalefactor
 [Deprecate TextField.canRequestFocus]: {{site.url}}/release/breaking-changes/can-request-focus
@@ -52,6 +50,7 @@ release, and listed in alphabetical order:
 
 ### Released in Flutter 3.13
 
+* [Add missed `dispose()` for some disposable objects in Flutter][]
 * [Deprecated API removed after v3.10][]
 * [Added AppLifecycleState.hidden][] enum value
 * [Moved ReorderableListView's localized strings][] from material to widgets localizations
@@ -61,6 +60,7 @@ release, and listed in alphabetical order:
 * [Migrate a Windows project to ensure the window is shown][]
 * [Updated `Checkbox.fillColor` behavior][]
 
+[Add missed `dispose()` for some disposable objects in Flutter]: {{site.url}}/release/breaking-changes/dispose
 [Deprecated API removed after v3.10]: {{site.url}}/release/breaking-changes/3-10-deprecations
 [Added AppLifecycleState.hidden]: {{site.url}}/release/breaking-changes/add-applifecyclestate-hidden
 [Moved ReorderableListView's localized strings]: {{site.url}}/release/breaking-changes/material-localized-strings
