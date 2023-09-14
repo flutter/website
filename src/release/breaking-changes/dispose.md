@@ -7,7 +7,7 @@ description: >
 ## Summary
 
 Missed 'dispose()' are added for some disposable objects. If some other code
-also invoked 'dispose()' for these objects, and the class is protected from double
+also invokes 'dispose()' for the objects, and the object is protected from double
 disposal, the second 'dispose()' will fail with error message:
 
 `Once you have called dispose() on a <class name>, it can no longer be used.` 
@@ -16,7 +16,7 @@ disposal, the second 'dispose()' will fail with error message:
 
 There is a rule that owner of an object should dispose it.
 
-This rule was broken: some owners were not disposing the disposable objects.
+This rule was broken in some places in Flutter Framework: owners were not disposing the disposable objects.
 The issue was fixed by adding `dispose()`. The added `dispose()` can cause failures in debug mode,
 if there is another `dispose()`, and the object is protected from double disposal.
 
