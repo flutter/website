@@ -1,61 +1,43 @@
 ---
 title: Added missed `dispose()` for some disposable objects in Flutter
 description: >
-  'dispose()' may fail because of usage after disposal.
+  'dispose()' may fail because of double disposal.
 ---
 
 ## Summary
 
-{% comment %}
-  Missed 'dispose()' are added for some disposable objects. If some other code
-  also invoked 'dispose()' for these objects, and the class is protected from double
-  disposal, the second 'dispose()' will fail with error message:
+Missed 'dispose()' are added for some disposable objects. If some other code
+also invoked 'dispose()' for these objects, and the class is protected from double
+disposal, the second 'dispose()' will fail with error message:
 
-  Once you have called dispose() on a <class name>, it can no longer be used.  
-{% endcomment %}
+`Once you have called dispose() on a <class name>, it can no longer be used.` 
 
 ## Background
 
-{% comment %}
-  High-level description of what API changed and why.
-  Should be clear enough to be understandable to someone
-  who has no context about this breaking change,
-  such as someone who doesn't know the underlying API.
-  This section should also answer the question
-  "what is the problem that led to considering making
-  a breaking change?"
+There is a rule that owner of an object should dispose it.
 
-  Include a technical description of the actual change,
-  with code samples showing how the API changed.
-
-  Include examples of the error messages that are produced
-  in code that has not been migrated. This helps the search
-  engine find the migration guide when people search for those
-  error messages. THIS IS VERY IMPORTANT FOR DISCOVERY!
-{% endcomment %}
+This rule was broken in number of places: some owners did not dispose disposable objects.
+The issue was fixed by adding `dispose()`. The added `dispose()` can cause failures in debug mode,
+if there is another `dispose()`, and the class is protected from double disposal.
 
 ## Migration guide
 
-{% comment %}
-  A description of how to make the change.
-  If a migration tool is available,
-  discuss it here. Even if there is a tool,
-  a description of how to make the change manually
-  must be provided. This section needs before and
-  after code examples that are relevant to the
-  developer.
-{% endcomment %}
+If you got error like `Once you have called dispose() on a <class name>, it can no longer be used.`,
+and the error is raised for your code, 
+update the code to call `dispose()' only in cases when your code created the object.
 
 Code before migration:
 
 ```dart
-// Example of code before the change.
+x.dispose();
 ```
 
 Code after migration:
 
 ```dart
-// Example of code after the change.
+if (xIsCreatedByMe) {
+  x.dispose();
+}
 ```
 
 {% comment %}
