@@ -1,5 +1,5 @@
 {{site.alert.note}}
-  The Flutter SDK  contains the `dart` command alongside the `flutter` command 
+  The Flutter SDK contains the `dart` command alongside the `flutter` command 
   so that you can more easily run Dart command-line programs. 
   Downloading the Flutter SDK also downloads the compatible version of Dart,
   but if you've downloaded the Dart SDK separately,
