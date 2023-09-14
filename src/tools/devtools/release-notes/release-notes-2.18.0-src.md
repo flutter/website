@@ -1,13 +1,17 @@
 # DevTools 2.18.0 release notes
 
-Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
+The 2.18.0 release of the Dart and Flutter DevTools
+includes the following changes among other general improvements.
+To learn more about DevTools, check out the
+[DevTools overview](https://docs.flutter.dev/tools/devtools/overview).
 
 ## Inspector updates
 
 - Auto scrolling behavior improved when snapping a widget into focus -
   [#4283](https://github.com/flutter/devtools/pull/4283)
-- Fix issue where widget inspector wouldn't load when connecting to a paused
-  app - [#4527](https://github.com/flutter/devtools/pull/4527)
+- Fix issue where widget inspector wouldn't load when
+  connecting to a paused app -
+  [#4527](https://github.com/flutter/devtools/pull/4527)
 - Improve widget inspector hover cards to show progress while waiting for data -
   [#4488](https://github.com/flutter/devtools/pull/4488)
 
@@ -20,7 +24,7 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 - Add 'Rendering time' column to Raster Metrics tab -
   [#4474](https://github.com/flutter/devtools/pull/4474)
 
-  ![render-time-column]({{site.url}}/tools/devtools/release-notes/images-2.18.0/render-time-column.png "Rendering time column in the Raster Meterics tab")
+  ![render-time-column]({{site.url}}/tools/devtools/release-notes/images-2.18.0/render-time-column.png "Rendering time column in the Raster Metrics tab")
 
 ## CPU profiler updates
 
@@ -46,15 +50,16 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
 
 - Fix bug for file opener and search -
   [#4525](https://github.com/flutter/devtools/pull/4525)
-- Fix the codeview's scrollable area -
+- Fix the code view's scrollable area -
   [#4448](https://github.com/flutter/devtools/pull/4448)
 - Allow syntax highlighting on nested captures in parser -
   [#4427](https://github.com/flutter/devtools/pull/4427)
 
 ## Network profiler updates
 
-- When on the Network tab, network recordings now continue working after the app
-  hot restarts - [#4438](https://github.com/flutter/devtools/pull/4438)
+- When on the Network tab, network recordings now continue working
+  after the app hot restarts -
+  [#4438](https://github.com/flutter/devtools/pull/4438)
 
 ## Logging updates
 
@@ -62,6 +67,7 @@ Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
   [#4487](https://github.com/flutter/devtools/pull/4487)
 
 ## Full commit history
-More details about changes and fixes are available from the
-[DevTools git log.](https://github.com/flutter/devtools/commits/master).
 
+To find a complete list of changes since the previous release,
+check out
+[the diff on GitHub](https://github.com/flutter/devtools/compare/v2.17.0...v2.18.0).

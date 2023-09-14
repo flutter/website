@@ -1018,7 +1018,7 @@ rendering Flutter content on the web: HTML and WebGL.
 In HTML mode, Flutter uses HTML, CSS, Canvas, and SVG.
 To render to WebGL, Flutter uses a version of Skia
 compiled to WebAssembly called
-[CanvasKit](https://skia.org/user/modules/canvaskit).
+[CanvasKit](https://skia.org/docs/user/modules/canvaskit/).
 While HTML mode offers the best code size characteristics,
 `CanvasKit` provides the fastest path to the
 browser's graphics stack,
