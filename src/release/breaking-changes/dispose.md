@@ -47,13 +47,13 @@ if (xIsCreatedByMe) {
 ```
 
 To locate the wrong disposal, check the call stack of the error. If the call stack points to `dispose`
-in your code, this disposal it wrong and it should be fixed.
+in your code, this disposal is incorrect and should be fixed.
 
-If the error is for Flutter code, this means the wrong `dispose()` happened first, and the error was raised
-for correct `dispose()` that happened second.
+If the error occurs in Flutter code, `dispose()` was
+called incorrectly the first time.
 
-You can locate the wrong `dispose()` by temporary adding `print(StackTrace.current)`
-to the body of the failed method `dispose`.
+You can locate the incorrect call by temporary calling `print(StackTrace.current)`
+in the body of the failed method `dispose`.
 
 ## Timeline
 
