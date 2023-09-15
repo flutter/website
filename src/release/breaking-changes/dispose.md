@@ -6,7 +6,7 @@ description: >
 
 ## Summary
 
-Missing 'dispose()' are added for some disposable objects.
+Missing calls to 'dispose()' are added for some disposable objects.
 If some other code also invokes 'dispose()' for the objects,
 and the object is protected from double disposal,
 the second 'dispose()' fails with the following error message:
