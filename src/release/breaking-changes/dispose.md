@@ -1,12 +1,12 @@
 ---
-title: Added missed `dispose()` for some disposable objects in Flutter
+title: Added missing `dispose()` for some disposable objects in Flutter
 description: >
   'dispose()' might fail because of double disposal.
 ---
 
 ## Summary
 
-Missed 'dispose()' are added for some disposable objects.
+Missing 'dispose()' are added for some disposable objects.
 If some other code also invokes 'dispose()' for the objects,
 and the object is protected from double disposal,
 the second 'dispose()' fails with the following error message:
