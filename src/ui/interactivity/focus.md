@@ -17,7 +17,7 @@ onto that part of an application by tapping or clicking the desired UI element.
 Once that happens, text entered with the keyboard flows to that part of the
 application until the focus moves to another part of the application.  Focus can
 also be moved by pressing a particular keyboard shortcut, which is typically
-bound to the <kbd>Tab</kbd> key, so it is sometimes called "tab traversal".
+bound to <kbd>Tab</kbd>, so it is sometimes called "tab traversal".
 
 This page explores the APIs used to perform these operations on a Flutter
 application, and how the focus system works. We have noticed that there is some
@@ -58,7 +58,7 @@ various classes that implement some of these concepts are introduced below.
   information about which nodes were previously focused in its subtree.
 - **Focus traversal** - The process of moving from one focusable node to
   another in a predictable order. This is typically seen in applications when
-  the user presses the <kbd>Tab</kbd> to move to the next focusable control or
+  the user presses <kbd>Tab</kbd> to move to the next focusable control or
   field.
 
 ## FocusNode and FocusScopeNode
@@ -84,32 +84,32 @@ version of them.
 
 Some dos and don'ts around using these objects include:
 
- -  Don't allocate a new `FocusNode` for each build.  This can cause
-    memory leaks, and occasionally causes a loss of focus when the widget
-    rebuilds while the node has focus.
- -  Do create `FocusNode` and `FocusScopeNode` objects in a stateful widget.
-    `FocusNode` and `FocusScopeNode` need to be disposed of when you're done
-    using them, so they should only be created inside of a stateful widget's
-    state object, where you can override `dispose` to dispose of them.
- -  Don't use the same `FocusNode` for multiple widgets. If you do, the
-    widgets will fight over managing the attributes of the node, and you
-    probably won't get what you expect.
- -  Do set the `debugLabel` of a focus node widget to help with diagnosing
-    focus issues.
- -  Don't set the `onKey` callback on a `FocusNode` or `FocusScopeNode` if
-    they are being managed by a `Focus` or `FocusScope` widget. If you want an
-    `onKey` handler, then add a new `Focus` widget around the widget subtree you
-    would like to listen to, and set the `onKey` attribute of the widget to your
-    handler. Set `canRequestFocus: false` on the widget if you also don't want
-    it to be able to take primary focus. This is because the `onKey` attribute
-    on the `Focus` widget can be set to something else in a subsequent build,
-    and if that happens, it overwrites the `onKey` handler you set on the node.
- -  Do call `requestFocus()` on a node to request that it receives the
-    primary focus, especially from an ancestor that has passed a node it owns to
-    a descendant where you want to focus.
- -  Do use `focusNode.requestFocus()`. It is not necessary to call
-    `FocusScope.of(context).requestFocus(focusNode)`. The
-    `focusNode.requestFocus()` method is  equivalent and more performant.
+- Don't allocate a new `FocusNode` for each build.  This can cause
+  memory leaks, and occasionally causes a loss of focus when the widget
+  rebuilds while the node has focus.
+- Do create `FocusNode` and `FocusScopeNode` objects in a stateful widget.
+  `FocusNode` and `FocusScopeNode` need to be disposed of when you're done
+  using them, so they should only be created inside of a stateful widget's
+  state object, where you can override `dispose` to dispose of them.
+- Don't use the same `FocusNode` for multiple widgets. If you do, the
+  widgets will fight over managing the attributes of the node, and you
+  probably won't get what you expect.
+- Do set the `debugLabel` of a focus node widget to help with diagnosing
+  focus issues.
+- Don't set the `onKey` callback on a `FocusNode` or `FocusScopeNode` if
+  they are being managed by a `Focus` or `FocusScope` widget. If you want an
+  `onKey` handler, then add a new `Focus` widget around the widget subtree you
+  would like to listen to, and set the `onKey` attribute of the widget to your
+  handler. Set `canRequestFocus: false` on the widget if you also don't want
+  it to be able to take primary focus. This is because the `onKey` attribute
+  on the `Focus` widget can be set to something else in a subsequent build,
+  and if that happens, it overwrites the `onKey` handler you set on the node.
+- Do call `requestFocus()` on a node to request that it receives the
+  primary focus, especially from an ancestor that has passed a node it owns to
+  a descendant where you want to focus.
+- Do use `focusNode.requestFocus()`. It is not necessary to call
+  `FocusScope.of(context).requestFocus(focusNode)`. The
+  `focusNode.requestFocus()` method is  equivalent and more performat.
 
 ### Unfocusing
 
@@ -422,7 +422,7 @@ your custom controls.
 Once an application has the ability to focus, the next thing many apps want to
 do is to allow the user to control the focus using the keyboard or another input
 device. The most common example of this is "tab traversal" where the user
-presses the <kbd>Tab</kbd> to go to the "next" control. Controlling what "next"
+presses <kbd>Tab</kbd> to go to the "next" control. Controlling what "next"
 means is the subject of this section. This kind of traversal is provided by
 Flutter by default.
 

@@ -85,7 +85,7 @@ follow Microsoft's instructions for the relevant platform:
    You can also press <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +
    <kbd>Shift</kbd> + <kbd>U</kbd>.
 
-1. In the dropdown on the upper right of the **Output** panel, 
+1. In the dropdown on the upper right of the **Output** panel,
    select **flutter (flutter)**.
 
 1. Go to **View** <span aria-label="and then">></span>
@@ -148,9 +148,11 @@ Use the following instructions for macOS:
 
 Use the following instructions for Linux or Windows:
 
-1. Go to **File** <span aria-label="and then">></span> **Settings**.
+1. Go to **File** <span aria-label="and then">></span>
+   **Settings**.
 
-   You can also press <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>S</kbd>.
+   You can also press <kbd>Ctrl</kbd> + <kbd>Alt</kbd> +
+   <kbd>S</kbd>.
 
    The **Preferences** dialog opens.
 

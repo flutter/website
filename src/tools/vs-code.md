@@ -41,12 +41,11 @@ There are a couple ways to create a new project.
 To create a new Flutter project from the Flutter
 starter app template:
 
-1. Open the Command Palette.
+1. Go to **View** <span aria-label="and then">></span>
+   **Command Palette...**.
 
-   - On Windows or Linux,
-     press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>.
-   - On macOS,
-     press <kbd>Cmd</kbd> + <kbd>Shift</kbd>+<kbd>P<kbd>.
+   You can also press <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +
+   <kbd>Shift</kbd> + <kbd>P</kbd>.
 
 1. Tyoe `flutter`.
 1. Select the **Flutter: New Project**.
@@ -60,42 +59,51 @@ starter app template:
 
 To open an existing Flutter project:
 
-1. From the main IDE window, go to **File** > **Open**.
+1. Go to **File** <span aria-label="and then">></span> **Open**.
+
+   You can also press <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> + <kbd>O</kbd>
+
 1. Browse to the directory holding your existing
    Flutter source code files.
 1. Click **Open**.
 
 ## Editing code and viewing issues
 
-The Flutter extension performs code analysis that
-enables the following:
+The Flutter extension performs code analysis.
+The code analysis can:
 
-- Syntax highlighting
-- Code completions based on rich type analysis
-- Navigating to type declarations
-  (**Go to Definition** or press <kbd>F12</kbd>),
-  and finding type usages
-  (**Find All References** or press <kbd>Shift</kbd> + <kbd>F12</kbd>)
-- Viewing all current source code problems
-  (**View** > **Problems**
-  or <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd>
-  or <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd> on macOS)
-  Any analysis issues are shown in the Problems pane:<br>
-  ![Problems pane]({{site.url}}/assets/images/docs/tools/vs-code/problems.png){:.mw-100.pt-1}
+- Highlight language syntax
+- Complete code based on rich type analysis
+- Navigate to type declarations
+
+  - Go to **Go** <span aria-label="and then">></span> **Go to Definition**.
+  - You can also press <kbd>F12</kbd>.
+
+- Find type usages.
+
+  - Press <kbd>Shift</kbd> + <kbd>F12</kbd>.
+
+- View all current source code problems.
+
+  - Go to **View** <span aria-label="and then">></span> **Problems**.
+  - You can also press <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +
+    <kbd>Shift</kbd> + <kbd>M</kbd>.
+  - The Problems pane displays any analysis issues:<br>
+    ![Problems pane]({{site.url}}/assets/images/docs/tools/vs-code/problems.png){:.mw-100.pt-1}
 
 ## Running and debugging
 
 {{site.alert.note}}
-You can debug your app in a couple of ways.
+  You can debug your app in a couple of ways.
 
-- Using [DevTools][], a suite of debugging and profiling
-  tools that run in a browser.
-- Using VS Code's built-in debugging features,
-  such as setting breakpoints.
+  - Using [DevTools][], a suite of debugging and profiling
+    tools that run in a browser.
+  - Using VS Code's built-in debugging features,
+    such as setting breakpoints.
 
-The instructions below describe features available in VS Code.
-For information on using launching DevTools, see
-[Running DevTools from VS Code][] in the [DevTools][] docs.
+  The instructions below describe features available in VS Code.
+  For information on using launching DevTools, see
+  [Running DevTools from VS Code][] in the [DevTools][] docs.
 {{site.alert.end}}
 
 Start debugging by clicking **Run > Start Debugging**
@@ -111,14 +119,14 @@ device name (or the message **No Devices**):<br>
 
 {{site.alert.note}}
 
-- If you do not see a Flutter version number or device info,
-  your project might not have been detected as a Flutter project.
-  Ensure that the folder that contains your `pubspec.yaml` is
-  inside a VS Code **Workspace Folder**.
-- If the status bar reads **No Devices**, Flutter has not been
-  able to discover any connected iOS or Android devices or simulators.
-  You need to connect a device, or start a simulator or emulator,
-  to proceed.
+  - If you do not see a Flutter version number or device info,
+    your project might not have been detected as a Flutter project.
+    Ensure that the folder that contains your `pubspec.yaml` is
+    inside a VS Code **Workspace Folder**.
+  - If the status bar reads **No Devices**, Flutter has not been
+    able to discover any connected iOS or Android devices or simulators.
+    You need to connect a device, or start a simulator or emulator,
+    to proceed.
 
 {{site.alert.end}}
 
@@ -139,15 +147,15 @@ running or debugging.
 
 ### Run app without breakpoints
 
-Go to **Run** > **Start Without Debugging** in the main IDE window.
+Go to **Run** > **Start Without Debugging**.
 
-You can also press `<kbd>Ctrl</kbd>`+`<kbd>F5</kbd>`.
+You can also press <kbd>Ctrl</kbd> + <kbd>F5</kbd>.
 
 ### Run app with breakpoints
 
 1. If desired, set breakpoints in your source code.
-1. Click **Run > Start Debugging** in the main IDE window,
-   or press <kbd>F5</kbd>.
+1. Click **Run** <span aria-label="and then">></span> **Start Debugging**.
+   You can also press <kbd>F5</kbd>.
    The status bar turns orange to show you are in a debug session.<br>
    ![Debug console]({{site.url}}/assets/images/docs/tools/vs-code/debug_console.png){:.mw-100.pt-1}
 
@@ -165,8 +173,17 @@ You can read more about them in [Flutter's build modes][].
 
 1. Open the `launch.json` file in VS Code.
 
-   If you do not have a `launch.json` file, go to
-   the **Run** view in VS Code and click **create a launch.json file**.
+   If you don't have a `launch.json` file:
+
+   {: type="a"}
+   1. Go to **View** <span aria-label="and then">></span> **Run**.
+
+      You can also press <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +
+      <kbd>Shift</kbd> + <kbd>D</kbd>
+
+      The **Run and Debug** panel displays.
+
+   1. Click **create a launch.json file**.
 
 1. In the `configurations` section,
    change the `flutterMode` property to
@@ -186,7 +203,7 @@ You can read more about them in [Flutter's build modes][].
     ]
     ```
 
-1. Run the app through the **Run** view.
+1. Run the app through the **Run** panel.
 
 ## Fast edit and refresh development cycle
 
@@ -235,13 +252,11 @@ If you have additional tips we should share, [let us know][]!
 Assists are code changes related to a certain code identifier.
 A number of these are available when the cursor is placed on a
 Flutter widget identifier, as indicated by the yellow lightbulb icon.
-To invoke the assist, click the lightbulb.
-
-You can also press <kbd>Ctrl</kbd> + <kbd>.</kbd>
-(<kbd>Cmd</kbd> + <kbd>.</kbd> on macOS)
-as shown in the following screenshot:
+To invoke the assist, click the lightbulb as shown in the following screenshot:
 
 ![Code assists]({{site.url}}/assets/images/docs/tools/vs-code/assists.png){:width="467px"}
+
+You can also press <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> + <kbd>.</kbd>
 
 Quick fixes are similar,
 only they are shown with a piece of code has an error and they

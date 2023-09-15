@@ -69,8 +69,8 @@ To learn more about DevTools, check out the
 
   1. A tree view of the libraries present in your application.
      You can use the File Explorer to find and open a library,
-     or you can use the existing `Ctrl/Cmd + P` keyboard shortcut
-     to search for a file.
+     or you can use the existing <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +
+     <kbd>P</kbd> keyboard shortcut to search for a file.
   2. A new “Outline” view that shows the structure of the selected library.
      This view will show classes, members, methods, etc.,
      and when an item is selected,
