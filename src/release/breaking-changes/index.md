@@ -38,6 +38,7 @@ release, and listed in alphabetical order:
 * [Deprecated just-in-time navigation pop APIs for Android Predictive Back][]
 * [Deprecated `Paint.enableDithering`][]
 * [Updated default text styles for menus][]
+* [Windows build path changed to add the target architecture][]
 
 [Customize tabs alignment using the new `TabBar.tabAlignment` property]: {{site.url}}/release/breaking-changes/tab-alignment
 [Deprecate `textScaleFactor` in favor of `TextScaler`]: {{site.url}}/release/breaking-changes/deprecate-textscalefactor
