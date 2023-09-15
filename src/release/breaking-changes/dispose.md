@@ -15,7 +15,7 @@ the second 'dispose()' fails with the following error message:
 
 ## Background
 
-There is a rule that owner of an object should dispose it.
+The convention is that the owner of an object should dispose of it.
 
 This rule was broken in some places in Flutter Framework: owners were not disposing the disposable objects.
 The issue was fixed by adding `dispose()`. The added `dispose()` can cause failures in debug mode,
