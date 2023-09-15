@@ -68,9 +68,10 @@ in the same IDE.
 You can also use your IntelliJ Flutter plugin functionality like
 Dart code completion, hot reload, and widget inspector.
 
-Android Studio supports add-to-app flows on Android Studio 2022.1 or later
-with version 42 or later of the [Flutter plugin][] for IntelliJ.
-The Android Studio integration requires a source code Gradle subproject.
+Android Studio supports add-to-app flows on Android Studio 2022.2 or later
+with version 75.1.1 or later of the [Flutter plugin][] for IntelliJ.
+To build your app, the Android Studio plugin configures your
+Android project to add your Flutter module as a dependency.
 
 1. Open your Android project in Android Studio.
 
@@ -86,8 +87,8 @@ The Android Studio integration requires a source code Gradle subproject.
     * If you have an existing project:
 
         {: type="a"}
-        1. To choose an existing project, click **...**.
-        to the right of the **Project location** box.
+        1. To choose an existing project, click **...**
+           to the right of the **Project location** box.
         1. Navigate to your Flutter project directory.
         1. Click **Open**.
 
@@ -154,7 +155,8 @@ module an embeddable Android library.
 {{site.alert.end}}
 
 {{site.alert.note}}
-  To avoid Dex merging issues, `flutter.androidPackage` should not be identical to your host app's package name
+  To avoid Dex merging issues, `flutter.androidPackage` should
+  not be identical to your host app's package name.
 {{site.alert.end}}
 
 #### Java 11 requirement
