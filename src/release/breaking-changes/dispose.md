@@ -46,7 +46,7 @@ if (xIsCreatedByMe) {
 }
 ```
 
-To locate the wrong disposal, check the call stack of the error. If the call stack points to `dispose`
+To locate the incorrect disposal, check the call stack of the error. If the call stack points to `dispose`
 in your code, this disposal is incorrect and should be fixed.
 
 If the error occurs in Flutter code, `dispose()` was
