@@ -16,13 +16,7 @@ Select the operating system on which you are installing Flutter:
       <header class="card-title text-center m-0">
         <span class="d-block h1">
           {% assign icon = os | downcase -%}
-          {% if icon == 'macos' -%}
-            <i class="fab fa-apple"></i>
-          {% elsif icon == 'chromeos' -%}
-            <i class="fab fa-chrome"></i>
-          {% else -%}
-            <i class="fab fa-{{icon}}"></i>
-          {% endif -%}
+            <img src="/assets/images/docs/brand-svg/{{icon}}.svg" width="72" height="72" aria-hidden="true" alt="{{os}} logo"> 
         </span>
         <span class="text-muted text-nowrap">{{os}}</span>
       </header>

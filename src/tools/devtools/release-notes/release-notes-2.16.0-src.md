@@ -1,13 +1,17 @@
 # DevTools 2.16.0 release notes
 
-Dart & Flutter DevTools - A Suite of Performance Tools for Dart and Flutter
+The 2.16.0 release of the Dart and Flutter DevTools
+includes the following changes among other general improvements.
+To learn more about DevTools, check out the
+[DevTools overview](https://docs.flutter.dev/tools/devtools/overview).
 
-## General Updates
-This release included several bug fixes and improvements, as well work
-towards some new features that are coming soon!
-See the full list of commits for DevTools 2.16.0
-[in the changelog](https://github.com/flutter/devtools/blob/master/CHANGELOG.md#2160).
+## General updates
+
+This release includes several bug fixes and improvements, as well as
+work towards some new features that are coming soon!
 
 ## Full commit history
-More details about changes and fixes are available from the
-[DevTools git log.](https://github.com/flutter/devtools/commits/master).
+
+To find a complete list of changes since the previous release,
+check out
+[the diff on GitHub](https://github.com/flutter/devtools/compare/v2.15.0...v2.16.0).
