@@ -228,6 +228,9 @@ Create a file at `ios/ci_scripts/ci_post_clone.sh` and add the content below.
 ```sh
 #!/bin/sh
 
+# Fail this script if any subcommand fails.
+set -e
+
 # The default execution directory of this script is the ci_scripts directory.
 cd $CI_WORKSPACE # change working directory to the root of your cloned repo.
 

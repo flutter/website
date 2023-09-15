@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
       curl \
       diffutils \
       git \
+      gnupg \
       lsof \
       make \
       unzip \
@@ -60,11 +61,12 @@ RUN dart pub get
 # ============== NODEJS INTSALL ==============
 FROM flutter AS node
 
-RUN curl -sL https://deb.nodesource.com/setup_18.x -o node_setup.sh && \
-      bash node_setup.sh 1> /dev/null
-RUN apt-get update -q && apt-get install -yq --no-install-recommends \
-      nodejs \
-    && rm -rf /var/lib/apt/lists/*
+RUN mkdir -p /etc/apt/keyrings \
+    && curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg \
+    && echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_18.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list \
+    && apt-get update -yq \
+    && apt-get install nodejs -yq \
+    && npm install -g npm # Ensure latest npm
 
 # Install global Firebase CLI
 RUN npm install -g firebase-tools@12.4.0
