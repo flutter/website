@@ -1,7 +1,7 @@
 ---
 title: Added missed `dispose()` for some disposable objects in Flutter
 description: >
-  'dispose()' may fail because of double disposal.
+  'dispose()' might fail because of double disposal.
 ---
 
 ## Summary
@@ -17,15 +17,20 @@ the second 'dispose()' fails with the following error message:
 
 The convention is that the owner of an object should dispose of it.
 
-This rule was broken in some places in Flutter Framework: owners were not disposing the disposable objects.
-The issue was fixed by adding `dispose()`. The added `dispose()` can cause failures in debug mode,
-if there is another `dispose()`, and the object is protected from double disposal.
+This convention was broken in some places:
+owners were not disposing the disposable objects.
+The issue was fixed by adding a call to `dispose()`.
+However, if the object is protected from double disposal,
+this can cause failures when running in debug mode
+and `dispose()` is called elsewhere on the object.
 
 ## Migration guide
 
-If you got error like `Once you have called dispose() on a <class name>, it can no longer be used.`,
-and the error is raised for your code, 
-update the code to call `dispose()' only in cases when your code created the object.
+If you encounter the following error, update your code to call `dispose()' only in cases when your code created the object.
+
+```
+Once you have called dispose() on a <class name>, it can no longer be used.
+```
 
 Code before migration:
 
@@ -41,7 +46,10 @@ if (xIsCreatedByMe) {
 }
 ```
 
-If the error is for Flutter code, this means wrong `dispose()` happened first, and the error was raised
+To locate the wrong disposal, check the call stack of the error. If the call stack points to `dispose`
+in your code, this disposal it wrong and it should be fixed.
+
+If the error is for Flutter code, this means the wrong `dispose()` happened first, and the error was raised
 for correct `dispose()` that happened second.
 
 You can locate the wrong `dispose()` by temporary adding `print(StackTrace.current)`
