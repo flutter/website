@@ -159,24 +159,23 @@ module an embeddable Android library.
   not be identical to your host app's package name.
 {{site.alert.end}}
 
-#### Java 11 requirement
+#### Java version requirement
 {:.no_toc}
 
-The Flutter Android Gradle plugin uses Java 11 features.
+The Flutter Android Gradle plugin uses features found in Java 11 or later.
 
-Before attempting to connect your Flutter module project
+Before attempting to connect your Flutter module project 
 to your host Android app, ensure that your host Android
 app declares the following source compatibility within your
-app's `build.gradle` file, under the `android { }`
-block, such as:
+app's `build.gradle` file, under the `android { }` block.
 
 <?code-excerpt title="MyApp/app/build.gradle"?>
 ```gradle
 android {
   //...
   compileOptions {
-    sourceCompatibility 11
-    targetCompatibility 11
+    sourceCompatibility 11 # The minimum value
+    targetCompatibility 11 # The minimum value
   }
 }
 ```
