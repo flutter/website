@@ -6,9 +6,10 @@ description: >
 
 ## Summary
 
-Missed 'dispose()' are added for some disposable objects. If some other code
-also invokes 'dispose()' for the objects, and the object is protected from double
-disposal, the second 'dispose()' will fail with error message:
+Missed 'dispose()' are added for some disposable objects.
+If some other code also invokes 'dispose()' for the objects,
+and the object is protected from double disposal,
+the second 'dispose()' fails with the following error message:
 
 `Once you have called dispose() on a <class name>, it can no longer be used.` 
 
