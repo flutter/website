@@ -42,7 +42,7 @@ flutter --version
 if [[ $REFRESH ]]; then
   echo "=> Refreshing code excerpts..."
   (
-    commitHash=`git reflog -n1 --format='%h'`
+    commitHash=$(git reflog -n1 --format='%h')
     git add .
     git commit -m "Temporary add /doc"
     set -x
