@@ -33,7 +33,7 @@ ENV FLUTTER_BUILD_BRANCH=$FLUTTER_BUILD_BRANCH
 ENV FLUTTER_ROOT=flutter
 ENV FLUTTER_BIN=$FLUTTER_ROOT/bin
 ENV DART_BIN=$FLUTTER_BIN/cache/dart-sdk/bin
-ENV PATH="$FLUTTER_BIN:$DART_BIN:$PATH"
+ENV PATH="/app/flutter/bin:$FLUTTER_BIN:$DART_BIN:$PATH"
 
 RUN git clone --branch $FLUTTER_BUILD_BRANCH --single-branch https://github.com/flutter/flutter ./flutter
 
