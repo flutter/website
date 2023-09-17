@@ -342,6 +342,7 @@
       { "source": "/go/flutter-lints", "destination": "https://docs.google.com/document/d/1b0X0HOzvFY3WxI363U8BXx6Am13qFm96KlbS72mmFAk/edit", "type": 301 },
       { "source": "/go/flutter-migrate", "destination": "https://docs.google.com/document/d/1fPnpUI6gXE9PkNWuFoAW20m_sQ87ZSC1rrn_D7fxBvs", "type": 301 },
       { "source": "/go/flutter-nonhost", "destination": "https://docs.google.com/document/d/1rTLxAxsshEir-B2vE6DU_MaqMMusOdCgLGEGpBYG3CM", "type": 301 },
+      { "source": "/go/flutter-pigeon-native-wrapper", "destination": "https://docs.google.com/document/d/1Sw6F8GbNiO_lvS2fFjXrRYk2Go5RNDHudDT6kIX6Sm0/edit?usp=sharing", "type": 301 },
       { "source": "/go/flutter-platform-idling", "destination": "https://docs.google.com/document/d/1RhSluOcHED6wEckY8CGK1mowRcWGAEGWraN6REPaORs/edit", "type": 301 },
       { "source": "/go/flutter-plugin-languages", "destination": "https://docs.google.com/document/d/1Ok_mUPgmw8_l-ynLueEKtXm2Fs48lEVB0JqZd7M7uyA/edit", "type": 301 },
       { "source": "/go/flutter-plugins-repo-migration", "destination": "https://docs.google.com/document/d/1VihAgx1e-X_H8VRc9WmUv_7qqsi81eeHrrhwhHgwtjQ/edit?usp=sharing", "type": 301 },

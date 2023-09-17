@@ -102,16 +102,8 @@ Install the following tools, if you don't have them already:
 > The GitHub documentation has general help on
 > [forking][] and [cloning][] repos.
 
-If you are working in the Windows desktop environment,
-make sure you have Git `autocrlf` set to `input`
-**before** initializing the submodules.
-This ensures that line endings are handled correctly
-_before_ any Bash scripts are executed within the submodules.
-See [issue 6201][] for details.
-
 [cloning]: https://help.github.com/articles/cloning-a-repository
 [forking]: https://docs.github.com/en/get-started/quickstart/fork-a-repo
-[issue 6201]: https://github.com/flutter/website/issues/6201
 
 If you're outside of the Flutter organization, 
 we recommend you **create a fork** of the repo under your own account, 
@@ -127,7 +119,7 @@ _choose one_ of the following submodule-cloning techniques:
   ```
 
   OR
-  
+
 - If you've already cloned the repo without its submodule, 
   then run this command from the repo root:<br>
   ```bash
@@ -148,7 +140,7 @@ _choose one_ of the following submodule-cloning techniques:
    ```bash
    $ git checkout -b <BRANCH_NAME>
    ```
-   
+
 1. If the Docker Desktop application isn't already running,
    start it. Look at its status icon: 
    if it has an exclamation point (`!`),
@@ -196,7 +188,7 @@ _choose one_ of the following submodule-cloning techniques:
    ```bash
    $ make down
    ```
-   
+
 > **Tip:** To find additional commands, read the [`Makefile`][]. 
 > For example, if you need to debug the Docker infrastructure, 
 > you can run `make debug`.  
