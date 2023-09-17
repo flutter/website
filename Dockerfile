@@ -18,21 +18,22 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
 
 WORKDIR /app
 
-
+# Replace symlinks with the real file.
+# Note: This should be only executed before an actual test/build happened.
+# Otherwise, `COPY`s will be broken by it.
+ENV REPLACE_SYMLINKS dart pub get && dart run tool/handle_symlinks.dart replace
 
 # ============== INSTALL FLUTTER ==============
 # NOTE that this will fail if you have not cloned the repo with --recurse-submodules
 # or run `git submodule update --init --recursive` after cloning.
 FROM base AS flutter
 
-COPY ./site-shared ./site-shared
-COPY pubspec.yaml ./
-
 ARG FLUTTER_BUILD_BRANCH=stable
 ENV FLUTTER_BUILD_BRANCH=$FLUTTER_BUILD_BRANCH
 ENV FLUTTER_ROOT=flutter
-ENV FLUTTER_BIN=flutter/bin
-ENV PATH="/app/flutter/bin:$PATH"
+ENV FLUTTER_BIN=$FLUTTER_ROOT/bin
+ENV DART_BIN=$FLUTTER_BIN/cache/dart-sdk/bin
+ENV PATH="$FLUTTER_BIN:$DART_BIN:$PATH"
 
 RUN git clone --branch $FLUTTER_BUILD_BRANCH --single-branch https://github.com/flutter/flutter ./flutter
 
@@ -41,6 +42,9 @@ RUN git clone --branch $FLUTTER_BUILD_BRANCH --single-branch https://github.com/
 # and this is to be disregarded since this image is never deployed to production.
 RUN flutter doctor
 RUN flutter --version
+
+COPY ./site-shared ./site-shared
+COPY pubspec.yaml ./
 RUN dart pub get
 
 
@@ -64,6 +68,7 @@ RUN npm install -g firebase-tools@12.4.0
 FROM flutter AS tests
 
 COPY ./ ./
+RUN $REPLACE_SYMLINKS
 
 ARG FLUTTER_TEST_BRANCH=stable
 ENV FLUTTER_TEST_BRANCH=$FLUTTER_TEST_BRANCH
@@ -89,6 +94,7 @@ COPY package.json package-lock.json ./
 RUN npm install
 
 COPY ./ ./
+RUN $REPLACE_SYMLINKS
 
 # Jekyl ports
 EXPOSE 35730
@@ -114,6 +120,7 @@ COPY package.json package-lock.json ./
 RUN npm ci
 
 COPY ./ ./
+RUN $REPLACE_SYMLINKS
 
 RUN echo 'User-agent: *\nDisallow:\n\nSitemap: https://docs.flutter.dev/sitemap.xml' > src/robots.txt
 
