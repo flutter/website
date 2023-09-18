@@ -9,6 +9,10 @@ In order to be included in the logic for app lifecycle on Windows, any
 external windows added to a Flutter app should invoke
 `FlutterEngine::ProcessExternalWindowMessage` from its `WndProc` function.
 
+## Who is affected
+
+Windows applications built against Flutter version > 3.13 that open non-Flutter windows.
+
 ## Description of change
 
 Implementing application lifecycle on Windows involves listening for Window
