@@ -1,3 +1,4 @@
+// ignore_for_file: prefer_final_fields
 import 'package:flutter/material.dart';
 
 // #docregion WelcomeScreen
@@ -129,4 +130,4 @@ class _SignUpFormState extends State<SignUpForm> {
 }
 
 // Avoid warning on "double _formProgress = 0;"
-// ignore_for_file: prefer_final_fields
+//_ignore_for_file: prefer_final_fields
