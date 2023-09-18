@@ -65,7 +65,7 @@ class _SignUpFormState extends State<SignUpForm> {
   final _lastNameTextController = TextEditingController();
   final _usernameTextController = TextEditingController();
 
-  final double _formProgress = 0;
+  double _formProgress = 0;
 
   // #docregion showWelcomeScreen
   void _showWelcomeScreen() {
@@ -127,3 +127,6 @@ class _SignUpFormState extends State<SignUpForm> {
     );
   }
 }
+
+// Avoid warning on "double _formProgress = 0;"
+// ignore_for_file: prefer_final_fields

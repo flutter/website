@@ -47,7 +47,7 @@ class _SignUpFormState extends State<SignUpForm> {
   final _lastNameTextController = TextEditingController();
   final _usernameTextController = TextEditingController();
 
-  final double _formProgress = 0;
+  double _formProgress = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -104,5 +104,5 @@ class _SignUpFormState extends State<SignUpForm> {
 /* {$ end main.dart $} */
 /* {$ begin test.dart $} */
 // Avoid warning on "double _formProgress = 0;"
-//_ignore_for_file: prefer_final_fields
+// ignore_for_file: prefer_final_fields
 /* {$ end test.dart $} */
