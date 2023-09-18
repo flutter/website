@@ -7,7 +7,10 @@ description: >
 ## Summary
 
 Missing calls to 'dispose()' are added for some disposable objects.
-If some other code also invokes 'dispose()' for the objects,
+For example, ContextMenuController did not dispose OverlayEntry, 
+and EditableTextState did not dispose TextSelectionOverlay.
+
+If some other code also invokes 'dispose()' for the object,
 and the object is protected from double disposal,
 the second 'dispose()' fails with the following error message:
 
