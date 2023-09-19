@@ -7,7 +7,7 @@ description: How to internationalize your Flutter app.
 <?code-excerpt path-base="internationalization"?>
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What you’ll learn</h4>
+  <h4 class="no_toc">What you'll learn</h4>
 
   * How to track the device's locale (the user's preferred language).
   * How to enable locale-specific Material or Cupertino widgets.
@@ -580,7 +580,7 @@ following `NumberFormat` constructors:
 The starred `NumberFormat` constructors in the table
 offer optional, named parameters.
 Those parameters can be specified as the value
-of the placeholder’s `optionalParameters` object.
+of the placeholder's `optionalParameters` object.
 For example, to specify the optional `decimalDigits`
 parameter for `compactCurrency`,
 make the following changes to the `lib/l10n/app_en.arg` file:
@@ -607,7 +607,7 @@ make the following changes to the `lib/l10n/app_en.arg` file:
 ### Messages with dates
 
 Dates strings are formatted in many different ways
-depending both the locale and the app’s needs.  
+depending both the locale and the app's needs.  
 
 Placeholder values with type `DateTime` are formatted with
 [`DateFormat`][] in the `intl` package.
@@ -632,8 +632,8 @@ formatted with `DateFormat.yMd`:
 ```
 
 In an app where the locale is US English,
-the following expression would produce  “7/9/1959”.
-In a Russian locale, it would produce “9.07.1959”.
+the following expression would produce  "7/9/1959".
+In a Russian locale, it would produce "9.07.1959".
 
 ```dart
 AppLocalizations.of(context).helloWorldOn(DateTime.utc(1959, 7, 9))
@@ -823,7 +823,7 @@ at the command line or refer to the following table:
 | `preferred-supported-locales`       | The list of preferred supported locales for the application. By default, the tool generates the supported locales list in alphabetical order. Use this flag to default to a different locale.<br /><br />For example, pass in `[ en_US ]` to default to American English if a device supports it. |
 | `header`                            | The header to prepend to the generated Dart localizations files. This option takes in a string.<br /><br />For example, pass in `"/// All localized files."` to prepend this string to the generated Dart file.<br /><br />Alternatively, check out the `header-file` option to pass in a text file for longer headers. |
 | `header-file`                       | The header to prepend to the generated Dart localizations files. The value of this option is the name of the file that contains the header text that is inserted at the top of each generated Dart file. <br /><br /> Alternatively, check out the `header` option to pass in a string for a simpler header.<br /><br />This file should be placed in the directory specified in `arb-dir`. |
-| `[no-]use-deferred-loading`         | Specifies whether to generate the Dart localization file with locales imported as deferred, allowing for lazy loading of each locale in Flutter web.<br /><br />This can reduce a web app’s initial startup time by decreasing the size of the JavaScript bundle. When this flag is set to true, the messages for a particular locale are only downloaded and loaded by the Flutter app as they are needed. For projects with a lot of different locales and many localization strings, it can improve performance to defer loading. For projects with a small number of locales, the difference is negligible, and might slow down the start up compared to bundling the localizations with the rest of the application.<br /><br />Note that this flag doesn't affect other platforms such as mobile or desktop. |
+| `[no-]use-deferred-loading`         | Specifies whether to generate the Dart localization file with locales imported as deferred, allowing for lazy loading of each locale in Flutter web.<br /><br />This can reduce a web app's initial startup time by decreasing the size of the JavaScript bundle. When this flag is set to true, the messages for a particular locale are only downloaded and loaded by the Flutter app as they are needed. For projects with a lot of different locales and many localization strings, it can improve performance to defer loading. For projects with a small number of locales, the difference is negligible, and might slow down the start up compared to bundling the localizations with the rest of the application.<br /><br />Note that this flag doesn't affect other platforms such as mobile or desktop. |
 | `gen-inputs-and-outputs-list`      | When specified, the tool generates a JSON file containing the tool's inputs and outputs, named `gen_l10n_inputs_and_outputs.json`.<br /><br />This can be useful for keeping track of which files of the Flutter project were used when generating the latest set of localizations.  For example, the Flutter tool's build system uses this file to keep track of when to call gen_l10n during hot reload.<br /><br />The value of this option is the directory where the JSON file is generated.  When null, the JSON file won't be generated. |
 | `synthetic-package`                 | Determines  whether the generated output files are generated as a synthetic package or at a specified directory in the Flutter project. This flag is `true` by default. When `synthetic-package` is set to `false`, it generates the localizations files in the directory specified by `arb-dir` by default. If `output-dir` is specified, files are generated there. |
 | `project-dir`                       | When specified, the tool uses the path passed into this option as the directory of the root Flutter project.<br /><br />When null, the relative path to the present working directory is used. |

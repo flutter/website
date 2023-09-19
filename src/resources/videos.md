@@ -53,7 +53,7 @@ Flutter Forward.
 
 [Season 2]: {{site.youtube-site}}/watch?v=ILTx1Wa33Z0
 
-Follow along with Khanh’s journey as she learns Flutter.
+Follow along with Khanh's journey as she learns Flutter.
 From ideation down to the moments of confusion,
 learn alongside her as she asks important questions like: 
 "What is the best way to build out a theme? How to approach using fonts?"

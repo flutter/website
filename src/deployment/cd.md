@@ -284,7 +284,7 @@ To create a new workflow in Xcode, use the following instructions:
 #### Branch changes
 
 By default Xcode suggests the Branch Changes condition that starts a new build
-for every change to your Git repository’s default branch.
+for every change to your Git repository's default branch.
 
 For your app's iOS variant, it's reasonable that you would want Xcode Cloud to
 trigger your workflow after you've made changes to your flutter packages, or

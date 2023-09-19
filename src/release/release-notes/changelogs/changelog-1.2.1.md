@@ -346,7 +346,7 @@ From Fri Nov 29 19:41:00 2018 -0800 to Thu Feb 21 20:22:00 2019 -0800
 
 [25718](https://github.com/flutter/flutter/pull/25718) Fix merge conflict. (cla: yes, f: material design, framework)
 
-[25788](https://github.com/flutter/flutter/pull/25788) Add Robert Penner’s easing functions (a: animation, cla: yes, framework)
+[25788](https://github.com/flutter/flutter/pull/25788) Add Robert Penner's easing functions (a: animation, cla: yes, framework)
 
 [25790](https://github.com/flutter/flutter/pull/25790) Clarify doc for AnimatedContainer (a: animation, cla: yes, d: api docs, framework)
 
@@ -1939,7 +1939,7 @@ From Fri Nov 29 19:41:00 2018 -0800 to Thu Feb 21 20:22:00 2019 -0800
 
 [1202](https://github.com/flutter/plugins/pull/1202) Fix IllegalStateException for cloud_firestore transactions (cla: yes)
 
-[1203](https://github.com/flutter/plugins/pull/1203) Don’t send empty cloud_firestore snapshots on iOS when encountering errors (cla: yes)
+[1203](https://github.com/flutter/plugins/pull/1203) Don't send empty cloud_firestore snapshots on iOS when encountering errors (cla: yes)
 
 [1204](https://github.com/flutter/plugins/pull/1204) Remove assertion for firebase_core that can interfere with hot-restart (cla: yes)
 

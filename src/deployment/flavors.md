@@ -22,7 +22,7 @@ In contrast, the paid version has basic app functionality, extra features,
 different styles for paid users, and no ads.
 
 You also might use flavors for feature development.
-If you’ve built a new feature and want to try it out,
+If you've built a new feature and want to try it out,
 you could set up a flavor to test it out.
 Your production code remains unaffected
 until you're ready to deploy your new feature.
@@ -40,7 +40,7 @@ Prerequisites:
 * Xcode installed
 * An existing Flutter project
 
-To set up flavors in iOS, you’ll define build configurations in Xcode.
+To set up flavors in iOS, you'll define build configurations in Xcode.
 
 ## Creating flavors in iOS
 
@@ -92,7 +92,7 @@ Change the `free` scheme to match the build configurations already created.
 
 * In the **Runner** project, click **Manage Schemes…** and a pop up window opens.
 * Double click the free scheme. In the next step
-  (as shown in the screenshot), you’ll modify each scheme
+  (as shown in the screenshot), you'll modify each scheme
   to match its free build configuration:
 
 ![Step 5 Xcode image](/assets/images/docs/flavors/step-5-ios-scheme-free.png){:width="100%"}
@@ -102,7 +102,7 @@ Change the `free` scheme to match the build configurations already created.
 
 ## Using flavors in iOS
 
-Now that you’ve set up your free flavor,
+Now that you've set up your free flavor,
 you can, for example, add different product bundle identifiers per flavor.
 A _bundle identifier_ uniquely identifies your application.
 In this example, we set the **Debug-free** value to equal

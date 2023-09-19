@@ -21,8 +21,6 @@ WORKDIR /app
 
 
 # ============== INSTALL FLUTTER ==============
-# NOTE that this will fail if you have not cloned the repo with --recurse-submodules
-# or run `git submodule update --init --recursive` after cloning.
 FROM base AS flutter
 
 COPY ./site-shared ./site-shared
@@ -32,9 +30,10 @@ ARG FLUTTER_BUILD_BRANCH=stable
 ENV FLUTTER_BUILD_BRANCH=$FLUTTER_BUILD_BRANCH
 ENV FLUTTER_ROOT=flutter
 ENV FLUTTER_BIN=flutter/bin
-ENV PATH="/app/flutter/bin:$PATH"
+ENV PATH="/flutter/bin:$PATH"
 
-RUN git clone --branch $FLUTTER_BUILD_BRANCH --single-branch https://github.com/flutter/flutter ./flutter
+RUN git clone --branch $FLUTTER_BUILD_BRANCH --single-branch https://github.com/flutter/flutter /flutter/
+VOLUME /flutter
 
 # Set up Flutter
 # NOTE You will get a warning "Woah! You appear to be trying to run flutter as root."
@@ -65,13 +64,8 @@ FROM flutter AS tests
 
 COPY ./ ./
 
-ARG FLUTTER_TEST_BRANCH=stable
-ENV FLUTTER_TEST_BRANCH=$FLUTTER_TEST_BRANCH
-
 # Only test the code here, checking links is purely for site deployment
-# NOTE bash scripts will switch the Flutter branch based on $FLUTTER_TEST_BRANCH
 ENTRYPOINT ["tool/test.sh"]
-
 
 
 # ============== DEV / JEKYLL SETUP ==============

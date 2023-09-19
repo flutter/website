@@ -37,7 +37,9 @@ jobs:
         with:
           submodules: recursive
       - name: Test
-        run: make test FLUTTER_TEST_BRANCH=${{ matrix.branch }}
+        env:
+          FLUTTER_BUILD_BRANCH: ${{ matrix.branch }}
+        run: make test
         continue-on-error: ${{ matrix.experimental }}
 
   deploy:
