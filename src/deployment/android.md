@@ -503,7 +503,7 @@ Android apps.
 
 The Google Play Store recommends that you deploy app bundles
 over APKs because they allow a more efficient delivery of the
-application to your users. However, if you’re distributing
+application to your users. However, if you're distributing
 your application by means other than the Play Store,
 an APK might be your only option.
 
@@ -533,7 +533,7 @@ See [Signing the app](#signing-the-app).
 ### How do I build a release from within Android Studio?
 
 In Android Studio, open the existing `android/`
-folder under your app’s folder. Then,
+folder under your app's folder. Then,
 select **build.gradle (Module: app)** in the project panel:
 
 <img src='/assets/images/docs/deployment/android/gradle-script-menu.png' width="100%" alt='screenshot of gradle build script menu'>

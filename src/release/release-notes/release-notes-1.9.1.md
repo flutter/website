@@ -4,7 +4,7 @@ short-title: 1.9.1 release notes
 description: Release notes for Flutter 1.9.1.
 ---
 
-Hello and welcome to another stable release of Flutter. So far this year, we’ve been right on target with one stable release each quarter, as per [our plan](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels) (well, less of a plan and more of a goal, but still, it’s been working out pretty well so far…). This release is our biggest yet, with 620 Pull Requests merged from 116 contributors. As always, the interesting PRs are listed below. And there are lots of interesting things to discuss in this release, including:
+Hello and welcome to another stable release of Flutter. So far this year, we've been right on target with one stable release each quarter, as per [our plan](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels) (well, less of a plan and more of a goal, but still, it's been working out pretty well so far…). This release is our biggest yet, with 620 Pull Requests merged from 116 contributors. As always, the interesting PRs are listed below. And there are lots of interesting things to discuss in this release, including:
 
 *   One regression fixed but also one added
 *   Some breaking API changes
@@ -13,17 +13,17 @@ Hello and welcome to another stable release of Flutter. So far this year, we’v
 *   A number of new features
 *   And more!
 
-And to be clear, when I say “we,” I mean the Flutter community as a whole. The Flutter team couldn’t possibly continue to scale as we have without all of our contributors, no matter who your employer is. Thanks everyone for your contributions!
+And to be clear, when I say "we," I mean the Flutter community as a whole. The Flutter team couldn't possibly continue to scale as we have without all of our contributors, no matter who your employer is. Thanks everyone for your contributions!
 
 
 ## Regressions
 
-In this release, we fixed one regression ([37955](https://github.com/flutter/flutter/pull/37955) Update shader warm-up for recent Skia changes) and caused another ([38167](https://github.com/dart-lang/sdk/issues/38167) Incremental compiler re-issuing of errors from constant evaluator). The new regression is fixed after the 1.9.1 stable release ([00d14e7](https://github.com/dart-lang/sdk/commit/00d14e7) [CFE] Always start constant evaluation error where we are asked to evaluate), so if you’re seeing it, you can choose a more recent build to bring it into your Flutter apps.
+In this release, we fixed one regression ([37955](https://github.com/flutter/flutter/pull/37955) Update shader warm-up for recent Skia changes) and caused another ([38167](https://github.com/dart-lang/sdk/issues/38167) Incremental compiler re-issuing of errors from constant evaluator). The new regression is fixed after the 1.9.1 stable release ([00d14e7](https://github.com/dart-lang/sdk/commit/00d14e7) [CFE] Always start constant evaluation error where we are asked to evaluate), so if you're seeing it, you can choose a more recent build to bring it into your Flutter apps.
 
 
 ## Breaking API Changes
 
-We try hard not to make breaking changes, but we also don’t want to create unintuitive APIs as we move Flutter forward to new scenarios and new platforms. These are the breaking changes in this release. Please see the associated announcements so you can move your code forward.
+We try hard not to make breaking changes, but we also don't want to create unintuitive APIs as we move Flutter forward to new scenarios and new platforms. These are the breaking changes in this release. Please see the associated announcements so you can move your code forward.
 
 [33281](https://github.com/flutter/flutter/pull/33281) ([announcement](https://groups.google.com/forum/#!msg/flutter-announce/ZmnseDOW9Wc/5K7xD0V8BwAJ)) Update TextStyle and StrutStyle height docs
 
@@ -35,7 +35,7 @@ We try hard not to make breaking changes, but we also don’t want to create uni
 
 [35136](https://github.com/flutter/flutter/pull/35136) ([announcement](https://groups.google.com/forum/#!searchin/flutter-announce/35136%7Csort:date/flutter-announce/UrhJwkaKaSc/ONoMzKrtAwAJ)) Update Dark Theme disabledColor to White38
 
-[35785](https://github.com/flutter/flutter/pull/35785) ([announcement](https://groups.google.com/forum/#!searchin/flutter-announce/35785%7Csort:date/flutter-announce/AL5ure2NWNI/4gPoziQSBAAJ)) Remove reverseDuration from implicitly animated widgets, since it’s ignored.
+[35785](https://github.com/flutter/flutter/pull/35785) ([announcement](https://groups.google.com/forum/#!searchin/flutter-announce/35785%7Csort:date/flutter-announce/AL5ure2NWNI/4gPoziQSBAAJ)) Remove reverseDuration from implicitly animated widgets, since it's ignored.
 
 [36030](https://github.com/flutter/flutter/pull/36030) ([announcement](https://groups.google.com/forum/#!searchin/flutter-announce/36030%7Csort:date/flutter-announce/bN6vFnoVpmk/7UCOxj6LCwAJ)) [Material] Implement TooltipTheme and Tooltip.textStyle, fix Tooltip debugLabel, update Tooltip defaults
 
@@ -108,7 +108,7 @@ This release also brings with it two new Material widgets: the ToggleButtons wid
 
 ## macOS Catalina Support
 
-With the release of macOS Catalina just around the corner, we’ve made sure that our tooling continues to work smoothly as you migrate to Catalina, iOS 13 and Xcode 11. I should note that **you’ll want to upgrade to the Flutter 1.9.1 stable release before upgrading to Catalina**. The other order works, too, but you’ll see an error when you do it that way (the [error](https://github.com/flutter/flutter/issues/33890) is benign, but still…). 
+With the release of macOS Catalina just around the corner, we've made sure that our tooling continues to work smoothly as you migrate to Catalina, iOS 13 and Xcode 11. I should note that **you'll want to upgrade to the Flutter 1.9.1 stable release before upgrading to Catalina**. The other order works, too, but you'll see an error when you do it that way (the [error](https://github.com/flutter/flutter/issues/33890) is benign, but still…). 
 
 [38325](https://github.com/flutter/flutter/pull/38325) refactor flutter upgrade to be 2 part, with the second part re-entrant
 
@@ -242,7 +242,7 @@ With over 50 PRs in this release, iOS support continues to be a big focus for Fl
 
 ## Android
 
-The biggest addition to Android this release is support for a new flutter command: ‘flutter build aar’. This new build command works just like ‘flutter build apk’ or ‘flutter build appbundle’, but for plugins and module projects. By building the plugins as [AARs](https://developer.android.com/studio/projects/android-library), the Android Gradle plugin can use Jetifier to translate support libraries into AndroidX libraries for all the plugin's native code, which reduces the error rate when using AndroidX in apps.
+The biggest addition to Android this release is support for a new flutter command: 'flutter build aar'. This new build command works just like 'flutter build apk' or 'flutter build appbundle', but for plugins and module projects. By building the plugins as [AARs](https://developer.android.com/studio/projects/android-library), the Android Gradle plugin can use Jetifier to translate support libraries into AndroidX libraries for all the plugin's native code, which reduces the error rate when using AndroidX in apps.
 
 [35217](https://github.com/flutter/flutter/pull/35217) Add flutter build aar
 

@@ -5,7 +5,7 @@ short-title: Hero
 ---
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What you’ll learn</h4>
+  <h4 class="no_toc">What you'll learn</h4>
 
   * The _hero_ refers to the widget that flies between screens.
   * Create a hero animation using Flutter's Hero widget.
@@ -41,7 +41,7 @@ during flight.
 {{site.alert.secondary}}
   **New to Flutter?**
   This page assumes you know how to create a layout
-  using Flutter’s widgets. For more information, see
+  using Flutter's widgets. For more information, see
   [Building Layouts in Flutter][].
 {{site.alert.end}}
 
@@ -113,8 +113,8 @@ how Flutter performs a hero animation.
 
   * Use two hero widgets in different routes but with matching tags to
     implement the animation.
-  * The Navigator manages a stack containing the app’s routes.
-  * Pushing a route on or popping a route from the Navigator’s stack
+  * The Navigator manages a stack containing the app's routes.
+  * Pushing a route on or popping a route from the Navigator's stack
     triggers the animation.
   * The Flutter framework calculates a rectangle tween,
     [`RectTween`][] that defines the hero's boundary
@@ -132,7 +132,7 @@ how Flutter performs a hero animation.
 Hero animations are implemented using two [`Hero`][]
 widgets: one describing the widget in the source route,
 and another describing the widget in the destination route.
-From the user’s point of view, the hero appears to be shared, and
+From the user's point of view, the hero appears to be shared, and
 only the programmer needs to understand this implementation detail.
 Hero animation code has the following structure:
 
@@ -299,10 +299,10 @@ update it using the files from the [hero_animation][].
 
 To run the example:
 
-* Tap on the home route’s photo to fly the image to a new route
+* Tap on the home route's photo to fly the image to a new route
   showing the same photo at a different location and scale.
 * Return to the previous route by tapping the image, or by using the
-  device’s back-to-the-previous-route gesture.
+  device's back-to-the-previous-route gesture.
 * You can slow the transition further using the `timeDilation`
   property.
 
@@ -419,12 +419,12 @@ Key information:
 
 * When the user taps the `InkWell` containing the source hero,
   the code creates the destination route using `MaterialPageRoute`.
-  Pushing the destination route to the `Navigator`’s stack triggers
+  Pushing the destination route to the `Navigator`'s stack triggers
   the animation.
 * The `Container` positions the `PhotoHero` in the destination
   route's top-left corner, below the `AppBar`.
 * The `onTap()` method for the destination `PhotoHero`
-  pops the `Navigator`’s stack, triggering the animation
+  pops the `Navigator`'s stack, triggering the animation
   that flies the `Hero` back to the original route.
 * Use the `timeDilation` property to slow the transition
   while debugging.
@@ -519,7 +519,7 @@ To run the example:
   to a larger square positioned in the middle of a new route that
   obscures the original route.
 * Return to the previous route by tapping the image, or by using the
-  device’s back-to-the-previous-route gesture.
+  device's back-to-the-previous-route gesture.
 * You can slow the transition further using the `timeDilation`
   property.
 

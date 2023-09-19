@@ -987,7 +987,7 @@ sudo apt install libupower-glib-dev
 
 Start by opening the Linux host portion of your Flutter app in the editor
 of your choice. The instructions below are for Visual Studio Code with the
-“C/C++” and “CMake” extensions installed, but can be adjusted for other IDEs.
+"C/C++" and "CMake" extensions installed, but can be adjusted for other IDEs.
 
 1. Launch Visual Studio Code.
 

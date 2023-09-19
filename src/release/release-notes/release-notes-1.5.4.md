@@ -4,7 +4,7 @@ short-title: 1.5.4 release notes
 description: Release notes for Flutter 1.5.4.
 ---
 
-In addition to continuing to focus on quality and stability since the 1.2 release, the Flutter 1.5.4 stable release adds a set of new features as we approach the Google I/O conference. Further, [Apple has a deadline for building against the 12.1 version of their iOS SDK](https://developer.apple.com/news/?id=03202019a), which we now do in this update. You can meet Apple’s requirements simply by pulling down the 1.5.4 stable release, building and updating your Flutter app in the Apple Store.
+In addition to continuing to focus on quality and stability since the 1.2 release, the Flutter 1.5.4 stable release adds a set of new features as we approach the Google I/O conference. Further, [Apple has a deadline for building against the 12.1 version of their iOS SDK](https://developer.apple.com/news/?id=03202019a), which we now do in this update. You can meet Apple's requirements simply by pulling down the 1.5.4 stable release, building and updating your Flutter app in the Apple Store.
 
 Also, this build sees fixes for the two regressions we saw in Flutter 1.2:
 
@@ -54,7 +54,7 @@ In this release, we fixed several severe performance and crash issues.
 
 ## iOS Changes
 
-Supporting iOS is just as important to the Flutter team as support Android, which you can see in the huge volume of changes we’ve made in this release to make the iOS experience even better.  
+Supporting iOS is just as important to the Flutter team as support Android, which you can see in the huge volume of changes we've made in this release to make the iOS experience even better.  
 
 
 
@@ -248,7 +248,7 @@ Further, the IDE plugins for Flutter have had a number of updates since the last
 
 ## Dynamic Update (aka Code Push)
 
-As a final note, we’re nearly at the midpoint of the year, when it’s time to reassess the areas where we can have the most important, we've decided to drop plans for dynamic updates (aka code push) from our 2019 roadmap. If you’re interested in the reasons why, you can read [the detailed explanation](https://github.com/flutter/flutter/issues/14330#issuecomment-485565194). Dropping this work allows us to increase our focus on quality as well as our experiments in Flutter for web and Flutter for desktop.
+As a final note, we're nearly at the midpoint of the year, when it's time to reassess the areas where we can have the most important, we've decided to drop plans for dynamic updates (aka code push) from our 2019 roadmap. If you're interested in the reasons why, you can read [the detailed explanation](https://github.com/flutter/flutter/issues/14330#issuecomment-485565194). Dropping this work allows us to increase our focus on quality as well as our experiments in Flutter for web and Flutter for desktop.
 
 
 ## Full Issue List
