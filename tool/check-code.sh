@@ -44,7 +44,7 @@ if [[ $REFRESH ]]; then
   (
     commitHash=$(git reflog -n1 --format='%h')
     git add .
-    git commit -m "Temporary add /doc"
+    git commit -m "Temporarily commit code excerpt changes"
     set -x
     tool/refresh-code-excerpts.sh --keep-dart-tool
     git reset --soft $commitHash
