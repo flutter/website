@@ -38,7 +38,7 @@ release, and listed in alphabetical order:
 * [Deprecated just-in-time navigation pop APIs for Android Predictive Back][]
 * [Deprecated `Paint.enableDithering`][]
 * [Updated default text styles for menus][]
-* [[Windows] External windows should notify Flutter engine of lifecycle changes][]
+* [Windows: External windows should notify Flutter engine of lifecycle changes][]
 * [Windows build path changed to add the target architecture][]
 
 [Customize tabs alignment using the new `TabBar.tabAlignment` property]: {{site.url}}/release/breaking-changes/tab-alignment
@@ -48,7 +48,7 @@ release, and listed in alphabetical order:
 [Deprecated just-in-time navigation pop APIs for Android Predictive Back]: {{site.url}}/release/breaking-changes/android-predictive-back
 [Deprecated `Paint.enableDithering`]: {{site.url}}/release/breaking-changes/paint-enableDithering
 [Updated default text styles for menus]: {{site.url}}/release/breaking-changes/menus-text-style
-[[Windows] External windows should notify Flutter engine of lifecycle changes]: {{site.url}}/release/breaking-changes/win_lifecycle_process_function
+[Windows: External windows should notify Flutter engine of lifecycle changes]: {{site.url}}/release/breaking-changes/win_lifecycle_process_function
 [Windows build path changed to add the target architecture]: {{site.url}}/release/breaking-changes/windows-build-architecture
 
 ### Released in Flutter 3.13
