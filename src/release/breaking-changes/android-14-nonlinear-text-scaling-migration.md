@@ -12,7 +12,7 @@ looks when the user changes the accessiblity text scaling in system preferences.
 ## Background
 
 The [Android 14 nonlinear font scaling][] feature prevents excessive accessibility 
-font scaling by scaling larger text at a lesser rate when the user tunes up the 
+font scaling by scaling larger text at a lesser rate when the user increases the 
 text scaling value in system preferences.
 
 ## Migration guide
