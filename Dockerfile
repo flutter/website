@@ -32,9 +32,10 @@ ARG FLUTTER_BUILD_BRANCH=stable
 ENV FLUTTER_BUILD_BRANCH=$FLUTTER_BUILD_BRANCH
 ENV FLUTTER_ROOT=flutter
 ENV FLUTTER_BIN=flutter/bin
-ENV PATH="/app/flutter/bin:$PATH"
+ENV PATH="/flutter/bin:$PATH"
 
-RUN git clone --branch $FLUTTER_BUILD_BRANCH --single-branch https://github.com/flutter/flutter ./flutter
+RUN git clone --branch $FLUTTER_BUILD_BRANCH --single-branch https://github.com/flutter/flutter /flutter/
+VOLUME /flutter
 
 # Set up Flutter
 # NOTE You will get a warning "Woah! You appear to be trying to run flutter as root."
