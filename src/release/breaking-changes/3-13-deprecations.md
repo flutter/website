@@ -1,8 +1,8 @@
 ---
 title: Deprecated API removed after v3.13
 description: >
-After reaching end of life, the following deprecated APIs
-were removed from Flutter.
+  After reaching end of life, the following deprecated APIs
+  were removed from Flutter.
 ---
 
 ## Summary
@@ -12,15 +12,16 @@ deprecated APIs that reached end of life after the
 3.13 stable release have been removed.
 
 All affected APIs have been compiled into this
-primary source to aid in migration. A
-[quick reference sheet][] is available as well.
+primary source to aid in migration.
+To further aid your migration, check out this
+[quick reference sheet][].
 
 [Deprecation Policy]: {{site.repo.flutter}}/wiki/Tree-hygiene#deprecation
 [quick reference sheet]: {{site.url}}/go/deprecations-removed-after-3-13
 
 ## Changes
 
-This section lists the deprecations, listed by the package and affected class.
+This section lists the deprecations by the package and affected class.
 
 ### Chip classes' useDeleteButtonTooltip
 
@@ -35,18 +36,18 @@ in v2.10:
 * `RawChip`
 * `InputChip`
 
-The replacement is the `deleteButtonTooltipMessage`. This change simplified the
+`deleteButtonTooltipMessage` replaces `useDeleteButtonTooltip`. This change simplified the
 API, as providing an empty String to `deleteButtonTooltipMessage` achieves the
 same result as setting the original property `useDeleteButtonTooltip` to false.
 When `deleteButtonTooltipMessage` is unset, the
 `MaterialLocalizations.deleteButtonTooltip` is used by default.
 
-This update to chips & tooltips are covered more extensively in
-the [Deprecate useDeleteButtonTooltip for Chips][] design document. An
-[in-depth migration guide is also available][].
+The [Deprecate `useDeleteButtonTooltip` for Chips][] design document 
+covers this update to chips and tooltips in greater depth.
+To learn more, check out the [chips and tooltips migration guide][].
 
-[Deprecate useDeleteButtonTooltip for Chips]: https://docs.google.com/document/d/1wc9ot7T2E7hJubYxEWMX230a79wYSiFey4BHxnEzHtw/edit?usp=sharing&resourcekey=0-Bo7KPqEtkWgZcSuRCqwQ5w
-[in-depth migration guide is also available]: {{site.url}}/release/breaking-changes/chip-usedeletebuttontooltip-migration
+[Deprecate `useDeleteButtonTooltip` for Chips]: https://docs.google.com/document/d/1wc9ot7T2E7hJubYxEWMX230a79wYSiFey4BHxnEzHtw/edit?usp=sharing&resourcekey=0-Bo7KPqEtkWgZcSuRCqwQ5w
+[chips and tooltips migration guide]: {{site.url}}/release/breaking-changes/chip-usedeletebuttontooltip-migration
 
 **Migration guide**
 
@@ -101,10 +102,10 @@ Supported by Flutter Fix: no
 
 The `MaterialButtonWithIconMixin` property was deprecated in v2.11.
 
-This mixin was no longer in use with the introduction of new button classes
-`TextButton`, `OutlinedButton` and `ElevatedButton`. Old button classes that
-used this mixin were removed in an earlier release, resulting in this mixin no
-longer having an effect on any classes that might mix it in.
+With the introduction of new button classes `TextButton`, `OutlinedButton` and `ElevatedButton`,
+this mixin is no longer used.
+An earlier release removed old button classes that used this mixin.
+As a result, this mixin no longer affects any classes that might mix it in.
 
 **Migration guide**
 
@@ -145,8 +146,8 @@ The static method `synchronizeToNativeViewHierarchy` of `PlatformsViewsService`
 was deprecated in v2.11.
 
 During the deprecation period, the method was a no-op function as it was no
-longer required to call for performance improvements. References to the method
-should be removed without impacting the application.
+longer required to call for performance improvements.
+References to the method should be removed and won't impact the application.
 
 **Migration guide**
 
@@ -187,10 +188,9 @@ Supported by Flutter Fix: yes
 The static `fadeDuration` property of `TextSelectionOverlay` was deprecated
 in v2.12.
 
-The replacement is to configure this property through the
-`SelectionOverlay.fadeDuration` instead. This change was made as part of a
-refactor to `TextSelectionOverlay`, which added `SelectionOverlay` as a more
-generic widget that does not depend specifically on `RenderEditable`.
+The `SelectionOverlay.fadeDuration` property replaces `TextSelectionOverlay.fadeDuration`.
+With the `TextSelectionOverlay` refactor,
+`SelectionOverlay` was added as a more generic widget without the specific dependency on `RenderEditable`.
 
 **Migration guide**
 
@@ -239,13 +239,13 @@ deprecated in v2.13:
 * `ThemeData`
 
 This flag was introduced to allow users to configure scrolling widgets to use
-the `GlowingOverscrollIndicator` or the `StretchingOvercrollIndicator`. It was
-deprecated in favor of the `ThemeData.useMaterial3` flag as the framework
-introduced more support for Material 3 styled widgets.
+the `GlowingOverscrollIndicator` or the `StretchingOvercrollIndicator`.
+It was deprecated in favor of the `ThemeData.useMaterial3` flag
+as the framework introduced more support for Material 3-styled widgets.
 
-Since `ThemeData.useMaterial3` is true by default, the
-`StretchingOverscrollIndicator` is applied by default. Setting this value to
-false will instead apply a `GlowingOverscrollIndicator`.
+Since `ThemeData.useMaterial3` is `true` by default,
+the `StretchingOverscrollIndicator` is applied by default.
+Setting this value to `false` will apply a `GlowingOverscrollIndicator` instead.
 
 Alternatively, the `buildOverscrollIndicator` method of `ScrollBehavior` or
 `MaterialScrollBehavior` can be overridden to further alter the appearance of
@@ -326,9 +326,12 @@ The `instantiateImageCodec` method of `PaintingBinding`, as well as the `load`
 method of `ImageProvider` and the associated `DecoderCallback` were all
 deprecated in v2.13.
 
-The replacement respective replacements are
-`PaintingBinding.instantiateImageCodecFromBuffer`, `ImageProvider.loadBuffer`
-and `DecoderBufferCallback`.
+The respective replacements are
+| Deprecated Method                       | Current Method                                    |
+|-----------------------------------------|---------------------------------------------------|
+| `PaintingBinding.instantiateImageCodec` | `PaintingBinding.instantiateImageCodecFromBuffer` |
+| `ImageProvider.load`                    | `ImageProvider.loadBuffer`                        |
+| `DecoderCallback`                       | `DecoderBufferCallback`                           |
 
 This change enabled faster performance in image loading by using a buffer.
 
@@ -373,11 +376,11 @@ Relevant PRs:
 Package: flutter_test
 Supported by Flutter Fix: no
 
-In preparation for multi-window support, many deprecated properties from
-`TestWindow`, which itself is entirely deprecated, has been removed. While the
-deprecation timeframe on `TestWindow` has not yet elapsed, migrating the
-expired properties this cycle will be excellent preparation for fully migrating
-off of `TestWindow`.
+To prepare for multi-window support,
+many deprecated properties of `TestWindow` have been removed.
+While `TestWindow` has been deprecated, it does not qualify
+for removal at this time.
+Migrating the expired properties now will help in migrating from `TestWindow`.
 
 The following properties were removed:
 
@@ -400,10 +403,10 @@ The following properties were removed:
 * `accessibilityFeaturesTestValue`
 * `clearAccessibilityFeaturesTestValue`
 
-This update to `TestWindow` is covered more extensively in the
-[in-depth migration guide][].
+To learn more about this `TestWindow` update, check out
+[`TestWindow` migration guide][].
 
-[in-depth migration guide is also available]: {{site.url}}/release/breaking-changes/window-singleton
+[`TestWindow` migration guide]: {{site.url}}/release/breaking-changes/window-singleton
 
 **Migration guide**
 
