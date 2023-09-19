@@ -181,7 +181,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
 
 In this case, all the animations are delayed by 50 ms.
 After that, list items begin to appear.
-Each list item’s appearance is delayed by 50 ms after the 
+Each list item's appearance is delayed by 50 ms after the 
 previous list item begins to slide in.
 Each list item takes 250 ms to slide from right to left.
 After the last list item begins to slide in,
@@ -201,12 +201,12 @@ Flutter provides the `Interval` class.
 An `Interval` takes a start time percentage and an end 
 time percentage. That `Interval` can then be used to
 animate a value between those start and end times,
-instead of using the entire animation’s start and 
+instead of using the entire animation's start and 
 end times. For example, given an animation that takes 1 second, 
 an interval from 0.2 to 0.5 would start at 200 ms
 (20%) and end at 500 ms (50%). 
 
-Declare and calculate each list item’s `Interval` and the 
+Declare and calculate each list item's `Interval` and the 
 bottom button `Interval`.
 
 <?code-excerpt "lib/step3.dart (step3)" replace="/\/\/code-excerpt-close-bracket/\n}/g;"?>
@@ -274,7 +274,7 @@ void initState() {
 Each list item slides from right to left and
 fades in at the same time.
 
-Use the list item’s `Interval` and an `easeOut`
+Use the list item's `Interval` and an `easeOut`
 curve to animate the opacity and translation
 values for each list item.
 

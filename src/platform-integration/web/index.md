@@ -4,7 +4,7 @@ short-title: Web
 description: Details of how Flutter supports the creation of web experiences.
 ---
 
-Flutter’s web support delivers the same experiences on the web as on mobile.
+Flutter's web support delivers the same experiences on the web as on mobile.
 Building on the portability of Dart, the power of the web platform and the
 flexibility of the Flutter framework, you can now build apps for iOS, Android,
 and the browser from the same codebase. You can compile existing Flutter code
@@ -28,15 +28,15 @@ into a single, minified source file that can be deployed to
 any web server.
 
 While you can do a lot on the web,
-Flutter’s web support is most valuable in the
+Flutter's web support is most valuable in the
 following scenarios:
 
 **A [Progressive Web Application][] built with Flutter**
-: Flutter delivers high-quality PWAs that are integrated with a user’s
+: Flutter delivers high-quality PWAs that are integrated with a user's
   environment, including installation, offline support, and tailored UX.
 
 **Single Page Application**
-: Flutter’s web support enables complex standalone web apps that are rich with
+: Flutter's web support enables complex standalone web apps that are rich with
   graphics and interactive content to reach end users on a wide variety of
   devices.
 

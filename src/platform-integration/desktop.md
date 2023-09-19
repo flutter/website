@@ -261,7 +261,7 @@ to your project, as with any other platform.
 ### Writing a plugin
 
 When you start building your own plugins,
-you’ll want to keep federation in mind.
+you'll want to keep federation in mind.
 Federation is the ability to define several
 different packages, each targeted at a
 different set of platforms, brought together

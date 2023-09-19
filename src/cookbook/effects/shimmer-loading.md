@@ -40,13 +40,13 @@ You can draw shapes that precisely match the outlines
 of those images.
 
 On the other hand, consider the text that appears beneath the
-rounded rectangle images. You won’t know how many lines of
+rounded rectangle images. You won't know how many lines of
 text exist until the text loads. 
 Therefore, there is no point in trying to draw a rectangle
 for every line of text. Instead, while the data is loading,
 you draw a couple of very thin rounded rectangles that
 represent the text that will appear. The shape and size 
-doesn’t quite match, but that is OK.
+doesn't quite match, but that is OK.
 
 Start with the circular list items at the top of the screen.
 Ensure that each `CircleListItem` widget displays a circle
@@ -175,7 +175,7 @@ class CardListItem extends StatelessWidget {
 ```
 
 Your UI now renders itself differently depending on
-whether it’s loading or loaded.
+whether it's loading or loaded.
 By temporarily commenting out the image URLs,
 you can see the two ways your UI renders.
 
@@ -191,7 +191,7 @@ The key to the effect achieved in this recipe is to use a widget
 called [`ShaderMask`][]. The `ShaderMask` widget, as the name suggests,
 applies a shader to its child, but only in the areas where
 the child already painted something. For example,
-you’ll apply a shader to only the black shapes that you 
+you'll apply a shader to only the black shapes that you 
 configured earlier.
 
 Define a chrome-colored, linear gradient that gets applied to the 
@@ -288,7 +288,7 @@ the shimmer gradient that is
 returned from the `shaderCallback`.
 
 This is a big step in the right direction,
-but there’s a problem with this gradient display.
+but there's a problem with this gradient display.
 Each `CircleListItem` widget and each `CardListItem` widget 
 displays a new version of the gradient.
 For this recipe, the entire screen should 
@@ -307,7 +307,7 @@ To be more precise, rather than assume that the shimmer
 should take up the entire screen,
 there should be some area that shares the shimmer.
 Maybe that area takes up the entire screen,
-or maybe it doesn’t. The way to solve this 
+or maybe it doesn't. The way to solve this 
 kind of problem in Flutter is to define another widget
 that sits above all of the `ShimmerLoading` widgets
 in the widget tree, and call it `Shimmer`. 
@@ -349,9 +349,9 @@ class ShimmerState extends State<Shimmer> {
 
 Add methods to the `ShimmerState` class in order
 to provide access to the `linearGradient`,
-the size of the `ShimmerState`’s `RenderBox`,
+the size of the `ShimmerState`'s `RenderBox`,
 and look up the position of a descendant within the
-`ShimmerState`’s `RenderBox`.
+`ShimmerState`'s `RenderBox`.
 
 <?code-excerpt "lib/shimmer_state.dart (ShimmerState)"?>
 ```dart
@@ -382,7 +382,7 @@ class ShimmerState extends State<Shimmer> {
 }
 ```
 
-Wrap all of your screen’s content with the `Shimmer` widget.
+Wrap all of your screen's content with the `Shimmer` widget.
 
 <?code-excerpt "lib/main.dart (ExampleUiAnimationState)"?>
 ```dart
@@ -416,7 +416,7 @@ class _ShimmerLoadingState extends State<ShimmerLoading> {
     // Collect ancestor shimmer information.
     final shimmer = Shimmer.of(context)!;
     if (!shimmer.isSized) {
-      // The ancestor Shimmer widget isn’t laid
+      // The ancestor Shimmer widget isn't laid
       // out yet. Return an empty box.
       return const SizedBox();
     }
@@ -504,7 +504,7 @@ class ShimmerState extends State<Shimmer> with SingleTickerProviderStateMixin {
 ```
 
 Apply the `_SlidingGradientTransform` to the `gradient`
-by using the `_shimmerController`’s `value` as the `slidePercent`.
+by using the `_shimmerController`'s `value` as the `slidePercent`.
 
 <?code-excerpt "lib/original_example.dart (LinearGradient)"?>
 ```dart
@@ -519,7 +519,7 @@ LinearGradient get gradient => LinearGradient(
 ```
 
 The gradient now animates, but your individual
-`ShimmerLoading` widgets don’t repaint themselves
+`ShimmerLoading` widgets don't repaint themselves
 as the gradient changes. Therefore, it looks like nothing 
 is happening.
 
@@ -532,7 +532,7 @@ Listenable get shimmerChanges => _shimmerController;
 ```
 
 In `ShimmerLoading`, listen for changes to the ancestor
-`ShimmerState`’s `shimmerChanges` property,
+`ShimmerState`'s `shimmerChanges` property,
 and repaint the shimmer gradient.
 
 <?code-excerpt "lib/original_example.dart (ShimmerLoadingState)" replace="/\/\/ code-excerpt-closing-bracket/}/g"?>
