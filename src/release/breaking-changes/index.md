@@ -33,6 +33,7 @@ release, and listed in alphabetical order:
 
 * [Customize tabs alignment using the new `TabBar.tabAlignment` property][]
 * [Deprecate `textScaleFactor` in favor of `TextScaler`][]
+* [Android 14 nonlinear font scaling enabled after v3.14][]
 * [Deprecate TextField.canRequestFocus][]
 * [Deprecate `describeEnum` and update `EnumProperty` to be type strict][]
 * [Deprecated just-in-time navigation pop APIs for Android Predictive Back][]
@@ -42,6 +43,7 @@ release, and listed in alphabetical order:
 
 [Customize tabs alignment using the new `TabBar.tabAlignment` property]: {{site.url}}/release/breaking-changes/tab-alignment
 [Deprecate `textScaleFactor` in favor of `TextScaler`]: {{site.url}}/release/breaking-changes/deprecate-textscalefactor
+[Android 14 nonlinear font scaling enabled after v3.14]: {{site.url}}/release/breaking-changes/android-14-nonlinear-text-scaling-migration
 [Deprecate TextField.canRequestFocus]: {{site.url}}/release/breaking-changes/can-request-focus
 [Deprecate `describeEnum` and update `EnumProperty` to be type strict]: {{site.url}}/release/breaking-changes/describe-enum
 [Deprecated just-in-time navigation pop APIs for Android Predictive Back]: {{site.url}}/release/breaking-changes/android-predictive-back
