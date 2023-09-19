@@ -310,7 +310,7 @@ check out the official [Android documentation][multidex-docs].
 
 Review the default [App Manifest][manifest] file, `AndroidManifest.xml`.
 This file is located in `[project]/android/app/src/main`.
-Verify that the following values:
+Verify the following values:
 
 `application`
 : Edit the `android:label` in the
@@ -333,7 +333,7 @@ to verify that the values are correct.
 #### Under the `defaultConfig` block
 
 `applicationId`
-: Specify the final, unique [application ID][]
+: Specify the final, unique [application ID][].
   
 `minSdkVersion`
 : Specify the [minimum API level][] on which you designed the app to run.
@@ -355,10 +355,9 @@ to verify that the values are correct.
   a reference to a string resource.
 
 `buildToolsVersion`
-: If you're using [Android plugin for Gradle][] 3.0.0 or higher,
-  your project automatically uses the default version of the
-  build tools that the plugin specifies. Alternatively,
-  you can specify a version of the build tools.
+: The Gradle plugin specifies the default version of the
+  build tools that your project uses.
+  You can use this option to specify a different version of the build tools.
 
 #### Under the `android` block
   
@@ -551,7 +550,6 @@ The resulting app bundle or APK files are located in
 ### Are there any special considerations with add-to-app?
 {% endcomment %}
 
-[Android plugin for Gradle]: {{site.android-dev}}/studio/releases/gradle-plugin
 [apk-deploy]: {{site.android-dev}}/studio/command-line/bundletool#deploy_with_bundletool
 [apk-set]: {{site.android-dev}}/studio/command-line/bundletool#generate_apks
 [application ID]: {{site.android-dev}}/studio/build/application-id
@@ -569,7 +567,7 @@ The resulting app bundle or APK files are located in
 [internal version number]: {{site.android-dev}}/studio/publish/versioning
 [launchericons]: {{site.material}}/styles/icons
 [manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
-[minimum API level]: {{site.android-dev}}/studio/publish/versioning#minsdkversion
+[minimum API level]: {{site.android-dev}}/studio/publish/versioning#minsdk
 [multidex-docs]: {{site.android-dev}}/studio/build/multidex
 [multidex-keep]: {{site.android-dev}}/studio/build/multidex#keep
 [obfuscating your Dart code]: {{site.url}}/deployment/obfuscate
