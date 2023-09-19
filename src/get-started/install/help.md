@@ -34,8 +34,8 @@ Did you add Flutter to the `PATH` environment variable for your platform?
 On Windows, follow these [instructions for adding a command
 to your path][windows path].
 
-If you’ve already [set up VS Code][] for Flutter development,
-you can use the Flutter extension’s **Locate SDK** prompt
+If you've already [set up VS Code][] for Flutter development,
+you can use the Flutter extension's **Locate SDK** prompt
 to identify the location of your `flutter` folder.
 
 See also: [Configuring PATH and Environment Variables - Dart Code][config path]
@@ -83,7 +83,7 @@ The error occurs when an older version of the
 Java Development Kit (JDK)
 is installed on your computer. 
 
-If you don’t need multiple versions of Java,
+If you don't need multiple versions of Java,
 uninstall existing JDKs from your computer.
 Flutter automatically uses the JDK included in Android Studio. 
 
@@ -136,7 +136,7 @@ you can download the tools using the
 
 __What does this issue look like?__
 
-Running a `flutter` command produces an “exit code: 69” error,
+Running a `flutter` command produces an "exit code: 69" error,
 as shown in the following example:
 
 ```
@@ -185,7 +185,7 @@ consider asking for support from one of the following channels:
 * [StackOverflow](https://stackoverflow.com/), 
   in particular, questions tagged with [#flutter][] or [#dart][].
 
-To be respectful of everyone’s time,
+To be respectful of everyone's time,
 search the archive for a similar issue before posting a new one. 
 
 [#dart]:  https://stackoverflow.com/questions/tagged/dart
