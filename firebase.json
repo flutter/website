@@ -263,6 +263,7 @@
       { "source": "/go/change-default-textselectionhandlecolor-to-accentcolor", "destination": "https://docs.google.com/document/d/1RJQd5ABWJ_7DZN19aTZBCE7xHzlC4MYBP1bWE2FWcvc/edit", "type": 301 },
       { "source": "/go/chip-usedeletebuttontooltip-deprecation", "destination": "https://docs.google.com/document/d/1wc9ot7T2E7hJubYxEWMX230a79wYSiFey4BHxnEzHtw/edit?usp=sharing&resourcekey=0-Bo7KPqEtkWgZcSuRCqwQ5w", "type": 301 },
       { "source": "/go/ci-post-test-analysis", "destination": "https://docs.google.com/document/d/1V0W6q7gkk2hHFLYb3t7JFr84Km5uhKl9T3Ksb1IpkLQ/edit?usp=sharing", "type": 301 },
+      { "source": "/go/clean-up-not-disposed-disposables-in-ff", "destination": "https://docs.google.com/document/d/1bXannXQ8rEtfwxEVd7LDo7xiVu5-QxRoall28MIIFss", "type": 301 },
       { "source": "/go/clip-behavior", "destination": "https://docs.google.com/document/d/1gC5Di4ykTCqupD77PWpy9D8xXo0Ide5CnrH0zzVIhKo/edit", "type": 301 },
       { "source": "/go/colorscheme-generation", "destination": "https://docs.google.com/document/d/1P7f-DGPWz6HCbwLoAruRuWtakPx4VY-e8nT_yuQ71sc/edit?usp=sharing&resourcekey=0-qxeub7yCKa_No0HlrzEk-g", "type": 301 },
       { "source": "/go/colorscheme-m3", "destination": "https://docs.google.com/document/d/1mY1ahBQEMAfsawGJMX5S34pXb7c8dHGatyotClReeas/edit#heading=h.cnnhzna3pz6d", "type": 301 },
