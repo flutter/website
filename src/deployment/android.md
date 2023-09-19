@@ -301,16 +301,16 @@ A [multidex keep file][multidex-keep] must be specified to include:
 io/flutter/embedding/engine/loader/FlutterLoader.class
 io/flutter/util/PathUtils.class
 ```
+
 Also, include any other classes used in app startup.
 For more detailed guidance on adding multidex support manually,
 check out the official [Android documentation][multidex-docs].
 
 ## Reviewing the app manifest
 
-Review the default [App Manifest][manifest] file,
-`AndroidManifest.xml`,
-located in `[project]/android/app/src/main` and
-verify that the values are correct, especially the following:
+Review the default [App Manifest][manifest] file, `AndroidManifest.xml`.
+This file is located in `[project]/android/app/src/main`.
+Verify the following values:
 
 `application`
 : Edit the `android:label` in the
@@ -333,20 +333,20 @@ to verify that the values are correct.
 #### Under the `defaultConfig` block
 
 `applicationId`
-: Specify the final, unique [application ID][]
+: Specify the final, unique [application ID][].
   
 `minSdkVersion`
-: Specify the minimum API level on which the app is designed to run.
+: Specify the [minimum API level][] on which you designed the app to run.
   Defaults to `flutter.minSdkVersion`.
 
 `targetSdkVersion`
-: Specify the target API level on which the app is designed to run.
+: Specify the target API level on which on which you designed the app to run.
   Defaults to `flutter.targetSdkVersion`.
   
 `versionCode`
-: A positive integer used as an internal version number. This number
-  is used only to determine whether one version is more recent than
-  another, with higher numbers indicating more recent versions.
+: A positive integer used as an [internal version number][].
+  This number is used only to determine whether one version is more recent
+  than another, with higher numbers indicating more recent versions.
   This version isn't shown to users.
 
 `versionName`
@@ -355,10 +355,9 @@ to verify that the values are correct.
   a reference to a string resource.
 
 `buildToolsVersion`
-: If you're using Android plugin for Gradle 3.0.0 or higher,
-  your project automatically uses the default version of the
-  build tools that the plugin specifies. Alternatively,
-  you can specify a version of the build tools.
+: The Gradle plugin specifies the default version of the
+  build tools that your project uses.
+  You can use this option to specify a different version of the build tools.
 
 #### Under the `android` block
   
@@ -408,8 +407,8 @@ runtime compiled for [armeabi-v7a][] (ARM 32-bit), [arm64-v8a][]
 
 ### Test the app bundle
 
-An app bundle can be tested in multiple ways&mdash;this section
-describes two.
+An app bundle can be tested in multiple ways.
+This section describes two.
 
 #### Offline using the bundle tool
 
@@ -433,16 +432,16 @@ Although app bundles are preferred over APKs, there are stores
 that don't yet support app bundles. In this case, build a release
 APK for each target ABI (Application Binary Interface).
 
-If you completed the signing steps,
-the APK will be signed.
+If you completed the signing steps, the APK will be signed.
 At this point, you might consider [obfuscating your Dart code][]
 to make it more difficult to reverse engineer. Obfuscating
 your code involves adding a couple flags to your build command.
 
 From the command line:
 
-1. Enter `cd [project]`<br>
-1. Run `flutter build apk --split-per-abi`<br>
+1. Enter `cd [project]`.
+
+1. Run `flutter build apk --split-per-abi`.
    (The `flutter build` command defaults to `--release`.)
 
 This command results in three APK files:
@@ -559,31 +558,25 @@ The resulting app bundle or APK files are located in
 [armeabi-v7a]: {{site.android-dev}}/ndk/guides/abis#v7a
 [bundle]: {{site.android-dev}}/guide/app-bundle
 [configuration qualifiers]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
-[crash-issue]: https://issuetracker.google.com/issues/147096055
 [fat APK]: https://en.wikipedia.org/wiki/Fat_binary
-[Flutter wiki]: {{site.repo.flutter}}/wiki
 [flutter_launcher_icons]: {{site.pub}}/packages/flutter_launcher_icons
 [Getting Started guide for Android]: {{site.material}}/develop/android/mdc-android
 [GitHub repository]: {{site.github}}/google/bundletool/releases/latest
 [Google Maven]: https://maven.google.com/web/index.html#com.google.android.material:material
 [gradlebuild]: {{site.android-dev}}/studio/build/#module-level
-[Issue 9253]: {{site.github}}/flutter/flutter/issues/9253
-[Issue 18494]: {{site.github}}/flutter/flutter/issues/18494
+[internal version number]: {{site.android-dev}}/studio/publish/versioning
 [launchericons]: {{site.material}}/styles/icons
 [manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
-[manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
+[minimum API level]: {{site.android-dev}}/studio/publish/versioning#minsdk
 [multidex-docs]: {{site.android-dev}}/studio/build/multidex
 [multidex-keep]: {{site.android-dev}}/studio/build/multidex#keep
 [obfuscating your Dart code]: {{site.url}}/deployment/obfuscate
 [official Play Store documentation]: https://support.google.com/googleplay/android-developer/answer/7384423?hl=en
 [permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
 [Platform Views]: {{site.url}}/platform-integration/android/platform-views
-[play]: {{site.android-dev}}/distribute/googleplay/start
-[plugin]: {{site.android-dev}}/studio/releases/gradle-plugin
+[play]: {{site.android-dev}}/distribute
 [R8]: {{site.android-dev}}/studio/build/shrink-code
 [Sign your app]: https://developer.android.com/studio/publish/app-signing.html#generate-key
 [upload-bundle]: {{site.android-dev}}/studio/publish/upload-bundle
 [Version your app]: {{site.android-dev}}/studio/publish/versioning
-[versions]: {{site.android-dev}}/studio/publish/versioning
-[versions-minsdk]: {{site.android-dev}}/studio/publish/versioning#minsdkversion
 [x86-64]: {{site.android-dev}}/ndk/guides/abis#86-64
