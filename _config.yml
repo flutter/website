@@ -77,6 +77,18 @@ targetmin:
   ios: 11
   android: 'Android API level 19'
 
+## Software current versions
+
+appnow:
+  flutter: '3.13.4'
+  github_win: 2.4
+  vscode: '1.81.1'
+  android_studio: '2022.3.1 (Giraffe)'
+  android_sdk: '33.0.0'
+  powershell: 5.0
+  xcode: '15'
+  ios: '17'
+
 ########### Jekyll ###########
 
 source: src
