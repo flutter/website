@@ -18,7 +18,7 @@ Flutter is an open source project hosted [on GitHub][]
 and the API docs (generated from the source code) are
 hosted on [api.flutter.dev][].
 Adopting a widget and improving its documentation helps everyone!
-So, for the month of November, we’re extending a special
+So, for the month of November, we're extending a special
 invitation to contribute to the Flutter project by choosing
 a Widget and improving its API documentation.
 
