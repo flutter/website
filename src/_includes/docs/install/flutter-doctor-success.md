@@ -1,45 +1,48 @@
 Running flutter doctor...
 Doctor summary (to see all details, run flutter doctor -v):
-[✓] Flutter (Channel stable, 3.13.2, on {{os}} A.B chipset, locale en)
+[✓] Flutter (Channel stable, {{site.appnow.flutter}}, on {{os}} A.B chipset, locale en)
 {% if os=='Windows' -%}
     [✓] Windows version (Installed version of Windows is version 10 or higher)
 {% endif -%}
 {% if target=='mobile' -%}
-    [✓] Android toolchain - develop for Android devices (Android SDK version 33.0.0)
+    [✓] Android toolchain - develop for Android devices (Android SDK version {{site.appnow.android_sdk}})
 {% else -%}
     [✗] Android toolchain - develop for Android devices
-        Unable to locate Android SDK.
-        Install Android Studio from: https://developer.android.com/studio/index.html
-        On first launch it will assist you in installing the Android SDK components.
-        (or visit https://developer.android.com/studio/install#windows for detailed instructions).
-        If the Android SDK has been installed to a custom location, please use
-        `flutter config --android-sdk` to update to that location.
+    Unable to locate Android SDK.
+    Install Android Studio from: https://developer.android.com/studio/index.html
+    On first launch it will assist you in installing the Android SDK components.
+    (or visit https://developer.android.com/studio/install#windows for detailed instructions).
+    If the Android SDK has been installed to a custom location, please use
+    `flutter config --android-sdk` to update to that location.
 {% endif -%}
 {% if target=='web' -%}
     [✓] Chrome - develop for the web
 {% endif -%}
 {% if os=='macOS' -%}
-    [✓] Xcode - develop for iOS and macOS (Xcode 14.3.1)
+    [✓] Xcode - develop for iOS and macOS (Xcode {{site.appnow.xcode}})
 {% endif -%}
 {% if os=='Windows' -%}
-    {% if target=='desktop' -%}
-        [✓] Visual Studio - develop Windows apps (version 2022)
-    {% else -%}
-        [✗] Visual Studio - develop Windows apps
-            Visual Studio not installed; this is necessary to develop Windows apps.
-            Download at https://visualstudio.microsoft.com/downloads/.
-            Please install the Desktop development with C++ workload, including all of its default components
-    {% endif -%}
+{% if target=='desktop' -%}
+    [✓] Visual Studio - develop Windows apps (version 2022)
+{% else -%}
+    [✗] Visual Studio - develop Windows apps
+    Visual Studio not installed; this is necessary to develop Windows apps.
+    Download at https://visualstudio.microsoft.com/downloads/.
+    Please install the Desktop development with C++ workload, including all of its default components
+{% endif -%}
 {% endif -%}
 {% if target=='mobile' -%}
-    [✓] Android Studio (version 2022.1)
+    [✓] Android Studio (version {{site.appnow.android_studio}})
 {% else -%}
-    [✗] Android toolchain - develop for Android devices
-        Android Studio not found; download from https://developer.android.com/studio/index.html
-        (or visit https://developer.android.com/studio/install#windows for detailed instructions).
+    [✗] Android Studio not found; download from https://developer.android.com/studio/index.html
+    (or visit https://developer.android.com/studio/install#windows for detailed instructions).
 {% endif -%}
-[✓] VS Code (version 1.81.1)
+[✓] VS Code (version {{site.appnow.vscode}})
 [✓] Connected device (1 available)
 [✓] Network resources
 
-• No issues found!
+{% if target=='desktop' -%}
+• 2 issues found.
+{% elsif target=='mobile' -%}
+• 1 issue found.
+{% endif -%}
