@@ -21,29 +21,29 @@
    {% assign prompt2='$' %}
 {% endif -%}
 {% if target == 'web' %}
-{% assign limiter = '--no-enable-linux-desktop --no-enable-macos-desktop --no-enable-windows-desktop --no-enable-android --no-enable-ios' %}
-{% capture limitresponse -%}
-   Setting "enable-linux-desktop" value to "false".
-   Setting "enable-macos-desktop" value to "false".
-   Setting "enable-windows-desktop" value to "false".
-   Setting "enable-android" value to "false".
-   Setting "enable-ios" value to "false".
-{% endcapture %}
+   {% assign limiter = '--no-enable-linux-desktop --no-enable-macos-desktop --no-enable-windows-desktop --no-enable-android --no-enable-ios' %}
+   {% capture limitresponse -%}
+      Setting "enable-linux-desktop" value to "false".
+      Setting "enable-macos-desktop" value to "false".
+      Setting "enable-windows-desktop" value to "false".
+      Setting "enable-android" value to "false".
+      Setting "enable-ios" value to "false".
+   {% endcapture %}
 {% elsif target == 'mobile' %}
-{% assign limiter = '--no-enable-web --no-enable-linux-desktop --no-enable-macos-desktop --no-enable-windows-desktop' %}
-{% capture limitresponse -%}
-   Setting "enable-web" value to "false".
-   Setting "enable-linux-desktop" value to "false".
-   Setting "enable-macos-desktop" value to "false".
-   Setting "enable-windows-desktop" value to "false".
-{% endcapture %}
+   {% assign limiter = '--no-enable-web --no-enable-linux-desktop --no-enable-macos-desktop --no-enable-windows-desktop' %}
+   {% capture limitresponse -%}
+      Setting "enable-web" value to "false".
+      Setting "enable-linux-desktop" value to "false".
+      Setting "enable-macos-desktop" value to "false".
+      Setting "enable-windows-desktop" value to "false".
+   {% endcapture %}
 {% elsif target == 'desktop' %}
-{% assign limiter = '--no-enable-web --no-enable-android --no-enable-ios' %}
-{% capture limitresponse -%}
-   Setting "enable-web" value to "false".
-   Setting "enable-android" value to "false".
-   Setting "enable-ios" value to "false".
-{% endcapture %}
+   {% assign limiter = '--no-enable-web --no-enable-android --no-enable-ios' %}
+   {% capture limitresponse -%}
+      Setting "enable-web" value to "false".
+      Setting "enable-android" value to "false".
+      Setting "enable-ios" value to "false".
+   {% endcapture %}
 {% endif %}
 
 ### Run Flutter Doctor
@@ -52,22 +52,6 @@ The `flutter doctor` command validates that all components of a
 complete Flutter development environment for {{include.os}}.
 
 1. Open {{terminal}}.
-
-1. Exclude development targets that do not apply to {{target}} development.
-   This hides issues that don't impact your chosen configuration.
-
-   ```terminal
-   {{prompt2}} flutter config {{limiter}}
-   ```
-
-   The command response should resemble the following:
-
-   ```terminal
-   {{limitresponse}}
-   You may need to restart any open editors for them to read new settings.
-   ```
-
-   You can re-enable these targets later.
 
 1. Navigate to your Flutter installation directory.
 

@@ -8,8 +8,8 @@ next:
   path: /get-started/test-drive
 ---
 
-{% include docs/install/reqs/windows/base.md target='desktop' os='Windows' %}
+{% include docs/install/reqs/windows/base.md target='desktop' os='Windows' -%}
 
-{% include docs/install/flutter-sdk.md target='desktop' os='Windows' %}
+{% include docs/install/flutter-sdk.md target='desktop' os='Windows' -%}
 
-{% include docs/install/flutter-doctor.md target='desktop' os='Windows' platform='desktop' %}
+{% include docs/install/flutter-doctor.md target='desktop' os='Windows' platform='desktop' -%}

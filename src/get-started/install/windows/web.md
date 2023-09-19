@@ -7,8 +7,8 @@ next:
   path: /get-started/test-drive
 ---
 
-{% include docs/install/reqs/windows/base.md target='web' os='Windows' %}
+{% include docs/install/reqs/windows/base.md target='web' os='Windows' -%}
 
-{% include docs/install/flutter-sdk.md target='web' os='Windows' %}
+{% include docs/install/flutter-sdk.md target='web' os='Windows' -%}
 
-{% include docs/install/flutter-doctor.md target='web' os='Windows' %}
+{% include docs/install/flutter-doctor.md target='web' os='Windows' -%}

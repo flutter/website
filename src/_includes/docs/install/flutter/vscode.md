@@ -4,8 +4,6 @@
 #### Start Flutter install
 {:.no_toc}
 
-1. Login to GitHub.
-
 1. To open the Command Palette,
    press <kbd>Control</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>.
 
@@ -89,17 +87,5 @@
 1. The notification displays the Google Analytics notice.
 
    If you agree, click **OK**.
-
-### Troubleshoot Flutter VS Code install
-{:.no_toc}
-
-If you receive the following error, you need to login to your GitHub account,
-then try again.
-
-```terminal
-Failed to clone Flutter: Cloning into 'flutter' ... fatal: unable
-to access 'https://github.com/flutter/flutter.git/': Could not resolve
-host: github.com.
-```
 
 [development tools prerequisites]: #development-tools
