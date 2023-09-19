@@ -25,29 +25,16 @@ WORKDIR /app
 # or run `git submodule update --init --recursive` after cloning.
 FROM base AS flutter
 
-# This Flutter install uses/requires the local ./flutter submodule
-COPY ./flutter ./flutter
 COPY ./site-shared ./site-shared
 COPY pubspec.yaml ./
 
-ARG FLUTTER_BUILD_BRANCH
+ARG FLUTTER_BUILD_BRANCH=stable
 ENV FLUTTER_BUILD_BRANCH=$FLUTTER_BUILD_BRANCH
 ENV FLUTTER_ROOT=flutter
 ENV FLUTTER_BIN=flutter/bin
 ENV PATH="/app/flutter/bin:$PATH"
 
-# Used if wanting to build the container with a different branch, this
-# would change the current branch of and update the mirrored submodule
-# e.g. `make build FLUTTER_BUILD_BRANCH=beta`
-# This is not to be confused with the $FLUTTER_TEST_BRANCH
-RUN if test -n "$FLUTTER_BUILD_BRANCH" -a "$FLUTTER_BUILD_BRANCH" != "stable" ; then \
-      cd flutter && \
-      git fetch && \
-      git remote set-branches origin "$FLUTTER_BUILD_BRANCH" && \
-      git fetch --depth 1 origin "$FLUTTER_BUILD_BRANCH" && \
-      git checkout "$FLUTTER_BUILD_BRANCH" -- && \
-      git pull; \
-    fi
+RUN git clone --branch $FLUTTER_BUILD_BRANCH --single-branch https://github.com/flutter/flutter ./flutter
 
 # Set up Flutter
 # NOTE You will get a warning "Woah! You appear to be trying to run flutter as root."
