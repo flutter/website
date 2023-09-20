@@ -5,9 +5,10 @@ description: External windows should call ProcessExternalWindowMessage to be con
 
 ## Summary
 
-In order to be included in the logic for app lifecycle on Windows, any
-external windows added to a Flutter app should invoke
-`FlutterEngine::ProcessExternalWindowMessage` from its `WndProc` function.
+When you add any external windows to your Flutter app,
+you need to include them in the Window's app lifecycle logic.
+To include the window, its `WndProc` function should invoke
+`FlutterEngine::ProcessExternalWindowMessage`.
 
 ## Who is affected
 
