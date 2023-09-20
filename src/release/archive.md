@@ -14,7 +14,7 @@ toc: false
 
 The {{site.sdk.channel | capitalize }} channel contains the
 most stable Flutter builds.
-To learn more, check out [Flutter’s channels][].
+To learn more, check out [Flutter's channels][].
 
 {% include docs/china-notice.md %}
 
@@ -71,7 +71,7 @@ $ ./flutter/bin/flutter --version
 For additional details on how our installation bundles are structured,
 see [Installation bundles][].
 
-[Flutter’s channels]: {{site.repo.flutter}}/wiki/Flutter-build-release-channels
+[Flutter's channels]: {{site.repo.flutter}}/wiki/Flutter-build-release-channels
 [release notes]: {{site.url}}/release/release-notes
 [GitHub repo]: {{site.repo.flutter}}
 [Installation bundles]: {{site.repo.flutter}}/wiki/Flutter-Installation-Bundles

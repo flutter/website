@@ -140,7 +140,7 @@ The rest of this overview broadly navigates down the layers, starting with the
 reactive paradigm of UI development. Then, we describe how widgets are composed
 together and converted into objects that can be rendered as part of an
 application. We describe how Flutter interoperates with other code at a platform
-level, before giving a brief summary of how Flutter’s web support differs from
+level, before giving a brief summary of how Flutter's web support differs from
 other targets.
 
 ## Anatomy of an app
@@ -250,7 +250,7 @@ task]({{site.flutter-medium}}/flutter-dont-fear-the-garbage-collector-d69b3ff1ca
 ## Widgets
 
 As mentioned, Flutter emphasizes widgets as a unit of composition. Widgets are
-the building blocks of a Flutter app’s user interface, and each widget is an
+the building blocks of a Flutter app's user interface, and each widget is an
 immutable declaration of part of the user interface.
 
 Widgets form a hierarchy based on composition. Each widget nests inside its
@@ -354,7 +354,7 @@ widget.
 
 There are widgets for padding, alignment, rows, columns, and grids. These layout
 widgets do not have a visual representation of their own. Instead, their sole
-purpose is to control some aspect of another widget’s layout. Flutter also
+purpose is to control some aspect of another widget's layout. Flutter also
 includes utility widgets that take advantage of this compositional approach.
 
 For example, [`Container`]({{site.api}}/flutter/widgets/Container-class.html), a
@@ -377,7 +377,7 @@ and other widgets in novel ways, or just create a new widget using
 As mentioned earlier, you determine the visual representation of a widget by
 overriding the
 [`build()`]({{site.api}}/flutter/widgets/StatelessWidget/build.html) function to
-return a new element tree. This tree represents the widget’s part of the user
+return a new element tree. This tree represents the widget's part of the user
 interface in more concrete terms. For example, a toolbar widget might have a
 build function that returns a [horizontal
 layout]({{site.api}}/flutter/widgets/Row-class.html) of some
@@ -390,7 +390,7 @@ objects]({{site.api}}/flutter/widgets/RenderObjectWidget-class.html). The
 framework then stitches together the renderable objects into a renderable object
 tree.
 
-A widget’s build function should be free of side effects. Whenever the function
+A widget's build function should be free of side effects. Whenever the function
 is asked to build, the widget should return a new tree of widgets<sup><a
 href="#a1">1</a></sup>, regardless of what the widget previously returned. The
 framework does the heavy lifting work to determine which build methods need to
@@ -399,7 +399,7 @@ information about this process can be found in the [Inside Flutter
 topic]({{site.url}}/resources/inside-flutter#linear-reconciliation).
 
 On each rendered frame, Flutter can recreate just the parts of the UI where the
-state has changed by calling that widget’s `build()` method. Therefore it is
+state has changed by calling that widget's `build()` method. Therefore it is
 important that build methods should return quickly, and heavy computational work
 should be done in some asynchronous manner and then stored as part of the state
 to be used by a build method.
@@ -415,7 +415,7 @@ state to another.
 The framework introduces two major classes of widget: _stateful_ and _stateless_
 widgets.
 
-Many widgets have no mutable state: they don’t have any properties that change
+Many widgets have no mutable state: they don't have any properties that change
 over time (for example, an icon or a label). These widgets subclass
 [`StatelessWidget`]({{site.api}}/flutter/widgets/StatelessWidget-class.html).
 
@@ -427,19 +427,19 @@ widget needs to be rebuilt to update its part of the UI. These widgets subclass
 [`StatefulWidget`]({{site.api}}/flutter/widgets/StatefulWidget-class.html), and
 (because the widget itself is immutable) they store mutable state in a separate
 class that subclasses [`State`]({{site.api}}/flutter/widgets/State-class.html).
-`StatefulWidget`s don’t have a build method; instead, their user interface is
+`StatefulWidget`s don't have a build method; instead, their user interface is
 built through their `State` object.
 
 Whenever you mutate a `State` object (for example, by incrementing the counter),
 you must call [`setState()`]({{site.api}}/flutter/widgets/State/setState.html)
-to signal the framework to update the user interface by calling the `State`’s
+to signal the framework to update the user interface by calling the `State`'s
 build method again.
 
 Having separate state and widget objects lets other widgets treat both stateless
 and stateful widgets in exactly the same way, without being concerned about
 losing state. Instead of needing to hold on to a child to preserve its state,
 the parent can create a new instance of the child at any time without losing the
-child’s persistent state. The framework does all the work of finding and reusing
+child's persistent state. The framework does all the work of finding and reusing
 existing state objects when appropriate.
 
 ### State management
@@ -482,7 +482,7 @@ that matches the `StudentState` type. `InheritedWidget`s also offer an
 change should trigger a rebuild of child widgets that use it.
 
 Flutter itself uses `InheritedWidget` extensively as part of the framework for
-shared state, such as the application’s _visual theme_, which includes
+shared state, such as the application's _visual theme_, which includes
 [properties like color and type
 styles]({{site.api}}/flutter/material/ThemeData-class.html) that are
 pervasive throughout an application. The `MaterialApp` `build()` method inserts
@@ -510,7 +510,7 @@ As applications grow, more advanced state management approaches that reduce the
 ceremony of creating and using stateful widgets become more attractive. Many
 Flutter apps use utility packages like
 [provider]({{site.pub}}/packages/provider), which provides a wrapper around
-`InheritedWidget`. Flutter’s layered architecture also enables alternative
+`InheritedWidget`. Flutter's layered architecture also enables alternative
 approaches to implement the transformation of state into UI, such as the
 [flutter_hooks]({{site.pub}}/packages/flutter_hooks) package.
 
@@ -520,12 +520,12 @@ This section describes the rendering pipeline, which is the series of steps that
 Flutter takes to convert a hierarchy of widgets into the actual pixels painted
 onto a screen.
 
-### Flutter’s rendering model
+### Flutter's rendering model
 
 You may be wondering: if Flutter is a cross-platform framework, then how can it
 offer comparable performance to single-platform frameworks?
 
-It’s useful to start by thinking about how traditional
+It's useful to start by thinking about how traditional
 Android apps work. When drawing,
 you first call the Java code of the Android framework.
 The Android system libraries provide the components
@@ -548,12 +548,12 @@ interaction between the UI and the app logic.
 By contrast, Flutter minimizes those abstractions,
 bypassing the system UI widget libraries in favor
 of its own widget set. The Dart code that paints
-Flutter’s visuals is compiled into native code,
+Flutter's visuals is compiled into native code,
 which uses Skia (or, in future, Impeller) for rendering.
 Flutter also embeds its own copy of Skia as part of the engine,
 allowing the developer to upgrade their app to stay
 updated with the latest performance improvements
-even if the phone hasn’t been updated with a new Android version.
+even if the phone hasn't been updated with a new Android version.
 The same is true for Flutter on other native platforms,
 such as Windows or macOS.
 
@@ -572,7 +572,7 @@ the system, as shown in the following sequencing diagram:
 ![Render pipeline sequencing
 diagram]({{site.url}}/assets/images/docs/arch-overview/render-pipeline.png){:width="100%"}
 
-Let’s take a look at some of these phases in greater detail.
+Let's take a look at some of these phases in greater detail.
 
 ### Build: from Widget to Element
 
@@ -632,7 +632,7 @@ hierarchy. There are two basic types of elements:
 diagram]({{site.url}}/assets/images/docs/arch-overview/widget-element.png){:width="85%"}
 
 `RenderObjectElement`s are an intermediary between their widget analog and the
-underlying `RenderObject`, which we’ll come to later.
+underlying `RenderObject`, which we'll come to later.
 
 The element for any widget can be referenced through its `BuildContext`, which
 is a handle to the location of a widget in the tree. This is the `context` in a
@@ -642,7 +642,7 @@ method as a parameter.
 Because widgets are immutable, including the parent/child relationship between
 nodes, any change to the widget tree (such as changing `Text('A')` to
 `Text('B')` in the preceding example) causes a new set of widget objects to be
-returned. But that doesn’t mean the underlying representation must be rebuilt.
+returned. But that doesn't mean the underlying representation must be rebuilt.
 The element tree is persistent from frame to frame, and therefore plays a
 critical performance role, allowing Flutter to act as if the widget hierarchy is
 fully disposable while caching its underlying representation. By only walking
@@ -695,7 +695,7 @@ the parent established.
 up]({{site.url}}/assets/images/docs/arch-overview/constraints-sizes.png){:width="80%"}
 
 At the end of this single walk through the tree, every object has a defined size
-within its parent’s constraints and is ready to be painted by calling the
+within its parent's constraints and is ready to be painted by calling the
 [`paint()`]({{site.api}}/flutter/rendering/RenderObject/paint.html)
 method.
 
@@ -707,7 +707,7 @@ time:
   phone app constrains its child to be the size of the screen. (Children can
   choose how to use that space. For example, they might just center what they
   want to render within the dictated constraints.)
-- A parent can dictate the child’s width but give the child flexibility over
+- A parent can dictate the child's width but give the child flexibility over
   height (or dictate height but offer flexible over width). A real-world example
   is flow text, which might have to fit a horizontal constraint but vary
   vertically depending on the quantity of text.
@@ -755,7 +755,7 @@ pipeline]({{site.youtube-site}}/watch?v=UUfXWzp0-DU).
 
 ## Platform embedding
 
-As we’ve seen, rather than being translated into the equivalent OS widgets,
+As we've seen, rather than being translated into the equivalent OS widgets,
 Flutter user interfaces are built, laid out, composited, and painted by Flutter
 itself. The mechanism for obtaining the texture and participating in the app
 lifecycle of the underlying operating system inevitably varies depending on the
@@ -798,7 +798,7 @@ platform-specific notes:
 
 ## Integrating with other code
 
-Flutter provides a variety of interoperability mechanisms, whether you’re
+Flutter provides a variety of interoperability mechanisms, whether you're
 accessing code or APIs written in a language like Kotlin or Swift, calling a
 native C-based API, embedding native controls in a Flutter app, or embedding
 Flutter in an existing application.
@@ -872,7 +872,7 @@ serves an equivalent purpose.
 
 To use FFI, you create a `typedef` for each of the Dart and unmanaged method
 signatures, and instruct the Dart VM to map between them. As an example,
-here’s a fragment of code to call the traditional Win32 `MessageBox()` API:
+here's a fragment of code to call the traditional Win32 `MessageBox()` API:
 
 <?code-excerpt "lib/ffi.dart (FFI)"?>
 ```dart
@@ -911,7 +911,7 @@ void exampleFfi() {
 
 Because Flutter content is drawn to a texture and its widget tree is entirely
 internal, there's no place for something like an Android view to exist within
-Flutter's internal model or render interleaved within Flutter widgets. That’s a
+Flutter's internal model or render interleaved within Flutter widgets. That's a
 problem for developers that would like to include existing platform components
 in their Flutter apps, such as a browser control.
 
@@ -933,7 +933,7 @@ example, on Android, `AndroidView` serves three primary functions:
 
 Inevitably, there is a certain amount of overhead associated with this
 synchronization. In general, therefore, this approach is best suited for complex
-controls like Google Maps where reimplementing in Flutter isn’t practical.
+controls like Google Maps where reimplementing in Flutter isn't practical.
 
 Typically, a Flutter app instantiates these widgets in a `build()` method based
 on a platform test. As an example, from the
@@ -964,7 +964,7 @@ return Text(
 Communicating with the native code underlying the `AndroidView` or `UiKitView`
 typically occurs using the platform channels mechanism, as previously described.
 
-At present, platform views aren’t available for desktop platforms, but this is
+At present, platform views aren't available for desktop platforms, but this is
 not an architectural limitation; support might be added in the future.
 
 ### Hosting Flutter content in a parent app
@@ -983,9 +983,9 @@ without requiring every developer to have Flutter installed.
 The Flutter engine takes a short while to initialize, because it needs to load
 Flutter shared libraries, initialize the Dart runtime, create and run a Dart
 isolate, and attach a rendering surface to the UI. To minimize any UI delays
-when presenting Flutter content, it’s best to initialize the Flutter engine
+when presenting Flutter content, it's best to initialize the Flutter engine
 during the overall app initialization sequence, or at least ahead of the first
-Flutter screen, so that users don’t experience a sudden pause while the first
+Flutter screen, so that users don't experience a sudden pause while the first
 Flutter code is loaded. In addition, separating the Flutter engine allows it to
 be reused across multiple Flutter screens and share the memory overhead involved
 with loading the necessary libraries.
@@ -997,7 +997,7 @@ topic]({{site.url}}/add-to-app/performance).
 ## Flutter web support
 
 While the general architectural concepts apply to all platforms that Flutter
-supports, there are some unique characteristics of Flutter’s web support that
+supports, there are some unique characteristics of Flutter's web support that
 are worthy of comment.
 
 Dart has been compiling to JavaScript for as long as the language has existed,
@@ -1033,7 +1033,7 @@ architecture]({{site.url}}/assets/images/docs/arch-overview/web-arch.png){:width
 Perhaps the most notable difference compared to other platforms on which Flutter
 runs is that there is no need for Flutter to provide a Dart runtime. Instead,
 the Flutter framework (along with any code you write) is compiled to JavaScript.
-It’s also worthy to note that Dart has very few language semantic differences
+It's also worthy to note that Dart has very few language semantic differences
 across all its modes (JIT versus AOT, native versus web compilation), and most
 developers will never write a line of code that runs into such a difference.
 
@@ -1041,7 +1041,7 @@ During development time, Flutter web uses
 [`dartdevc`]({{site.dart-site}}/tools/dartdevc), a compiler that supports
 incremental compilation and therefore allows hot restart (although not currently
 hot reload) for apps. Conversely, when you are ready to create a production app
-for the web, [`dart2js`]({{site.dart-site}}/tools/dart2js), Dart’s
+for the web, [`dart2js`]({{site.dart-site}}/tools/dart2js), Dart's
 highly-optimized production JavaScript compiler is used, packaging the Flutter
 core and framework along with your application into a minified source file that
 can be deployed to any web server. Code can be offered in a single file or split
@@ -1053,7 +1053,7 @@ into multiple files through [deferred imports][].
 
 For those interested in more information about the internals of Flutter, the
 [Inside Flutter]({{site.url}}/resources/inside-flutter) whitepaper
-provides a useful guide to the framework’s design philosophy.
+provides a useful guide to the framework's design philosophy.
 
 ---
 
@@ -1074,7 +1074,7 @@ As development on those platforms reaches maturity, this content will be
 gradually migrated into the main Flutter repository.
 
 <sup><a id="a4">4</a></sup> There are some limitations with this approach, for
-example, transparency doesn’t composite the same way for a platform view as it
+example, transparency doesn't composite the same way for a platform view as it
 would for other Flutter widgets.
 
 <sup><a id="a5">5</a></sup> One example is shadows, which have to be

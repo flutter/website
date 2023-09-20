@@ -1,7 +1,7 @@
 ---
-title: What’s new
+title: What's new
 description: >
-  A list of what’s new on docs.flutter.dev and related documentation sites.
+  A list of what's new on docs.flutter.dev and related documentation sites.
 ---
 
 This page contains current and previous announcements of
@@ -277,7 +277,7 @@ and [Introducing Dart 3 alpha][].
   completely overhauled and the corresponding 
   page, [Using the memory view][], is rewritten.
 * This release includes numerous improvements to
-  Flutter’s support for custom fragment shaders. 
+  Flutter's support for custom fragment shaders. 
   For more information, see the new
   [Writing and using fragment shaders][] page.
 * Some security tools falsely report security
@@ -411,7 +411,7 @@ publication since the last stable release:
 * [How can we improve the Flutter experience for desktop?][]
 * [What we learned from the Flutter Q3 2022 survey][]
 * [Supporting six platforms with two keyboards][]
-* [Studying developer’s usage of IDEs for Flutter development][]
+* [Studying developer's usage of IDEs for Flutter development][]
 
 
 [Announcing the Flutter News Toolkit]: {{site.flutter-medium}}/announcing-the-flutter-news-toolkit-180a0d32c012
@@ -421,7 +421,7 @@ publication since the last stable release:
 [Introducing background isolate channels]: {{site.flutter-medium}}/introducing-background-isolate-channels-7a299609cad8
 [Material 3 for Flutter]: {{site.flutter-medium}}/material-3-for-flutter-d417a8a65564
 [Playful typography with Flutter]: {{site.medium}}/flutter/playful-typography-with-flutter-f030385058b4
-[Studying developer’s usage of IDEs for Flutter development]: {{site.medium}}/flutter/studying-developers-usage-of-ides-for-flutter-development-4c0a648a48
+[Studying developer's usage of IDEs for Flutter development]: {{site.medium}}/flutter/studying-developers-usage-of-ides-for-flutter-development-4c0a648a48
 [Supporting six platforms with two keyboards]: {{site.medium}}/flutter/what-we-learned-from-the-flutter-q3-2022-survey-9b78803accd2
 [What we learned from the Flutter Q3 2022 survey]: {{site.medium}}/flutter/what-we-learned-from-the-flutter-q3-2022-survey-9b78803accd2
 
@@ -695,7 +695,7 @@ We've published the following articles on the [Flutter Medium][]
 publication since the last stable release:
 
 * [How It's Made: I/O Photo Booth][]
-* [Which factors affected users’ decisions to adopt Flutter? - Q1 2021 user survey results][Q1 2021 survey]
+* [Which factors affected users' decisions to adopt Flutter? - Q1 2021 user survey results][Q1 2021 survey]
 
 [Adding in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases
 [Announcing Flutter 2.2]: {{site.flutter-medium}}/announcing-flutter-2-2-at-google-i-o-2021-92f0fcbd7ef9
@@ -1060,7 +1060,7 @@ Other newness:
   * [When should I use AnimatedBuilder or AnimatedWidget?][]
   * [Improving Flutter with your opinion - Q4 2019 survey results][]
   * [How to write a Flutter web plugin, Part 2][]
-  * [It’s Time: The Flutter Clock contest results][]
+  * [It's Time: The Flutter Clock contest results][]
   * [How to float an overlay widget over a (possibly transformed) UI widget][]
   * [How to embed a Flutter application in a website using DartPad][]
   * [Flutter web: Navigating URLs using named routes][]
@@ -1095,7 +1095,7 @@ Other newness:
 [How to write a Flutter web plugin, Part 2]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
 [Improving Flutter with your opinion - Q4 2019 survey results]: {{site.flutter-medium}}/improving-flutter-with-your-opinion-q4-2019-survey-results-ba0e6721bf23
 [Introducing Google Fonts for Flutter v 1.0.0!]: {{site.flutter-medium}}/introducing-google-fonts-for-flutter-v-1-0-0-c0e993617118
-[It’s Time: The Flutter Clock contest results]: {{site.flutter-medium}}/its-time-the-flutter-clock-contest-results-dcebe2eb3957
+[It's Time: The Flutter Clock contest results]: {{site.flutter-medium}}/its-time-the-flutter-clock-contest-results-dcebe2eb3957
 [Obfuscating Dart code]: {{site.url}}/deployment/obfuscate
 [package for pre-canned Material widget animations]: {{site.pub}}/packages/animations
 [Modern Flutter plugin development]: {{site.flutter-medium}}/modern-flutter-plugin-development-4c3ee015cf5a

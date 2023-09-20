@@ -374,7 +374,7 @@ between the old and new values:
 
 ### Shape-shifting (complete)
 
-Here’s the example with the completed changes you’ve made.
+Here's the example with the completed changes you've made.
 Run the code and click **Change** to trigger the animation.
 Each time you click **Change**, the shape animates to its new values
 for `margin`, `borderRadius`, and `color`.

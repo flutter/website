@@ -51,9 +51,9 @@ Case 1: An app depends on `pop()` returning a boolean value.
 TextField(
   onTap: () {
     if (Navigator.pop(context))
-      print(‘There still is at least one route after pop’);
+      print('There still is at least one route after pop');
     else
-      print(‘Oops! No more routes.’);
+      print('Oops! No more routes.');
   }
 )
 ```
@@ -65,9 +65,9 @@ You could use `Navigator.canPop()` in combination with
 TextField(
   onTap: () {
     if (Navigator.canPop(context))
-      print(‘There still is at least one route after pop’);
+      print('There still is at least one route after pop');
     else
-      print(‘Oops! No more routes.’);
+      print('Oops! No more routes.');
     // Our navigator pops the route anyway.
     Navigator.pop(context);
   }
@@ -95,9 +95,9 @@ for the route name.
 
 ```dart
 MaterialApp(
-  initialRouteName: ‘fakeSplash’,
+  initialRouteName: 'fakeSplash',
   onGenerateRoute: (RouteSetting setting) {
-    if (setting.name == ‘fakeSplash’)
+    if (setting.name == 'fakeSplash')
       return FakeSplashRoute();
     else
       return RealRoute(setting);

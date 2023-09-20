@@ -230,7 +230,7 @@ PWA; the settings signaling that your Flutter app is a PWA are provided by
 `manifest.json`, which is produced by `flutter create` in the `web` directory.
 
 PWA support remains a work in progress,
-so please [give us feedback][] if you see something that doesn’t look right.
+so please [give us feedback][] if you see something that doesn't look right.
 
 [dhttpd]: {{site.pub}}/packages/dhttpd
 [Displaying images on the web]: {{site.url}}/platform-integration/web/web-images

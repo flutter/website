@@ -75,7 +75,7 @@ It provides a simple API to handle complex routing scenarios.
 ## 2. Adjust iOS build settings
 
 1. Launch Xcode.
-2. Open the `ios/Runner.xcworkspace` file inside the project’s `ios` folder.
+2. Open the `ios/Runner.xcworkspace` file inside the project's `ios` folder.
 3. Navigate to the `Info` Plist file in the `ios/Runner` folder.
 
     <img src="/assets/images/docs/cookbook/set-up-universal-links-info-plist.png" alt="Xcode info.Plist screenshot" width="100%" />
@@ -156,11 +156,11 @@ The hosted file should have the following content:
 
 ## Testing
 {{site.alert.note}}
-  It might take up to 24 hours before Apple’s
+  It might take up to 24 hours before Apple's
   [Content Delivery Network](https://en.wikipedia.org/wiki/Content_delivery_network) (CDN)
   requests the apple-app-site-association (AASA) file from your web domain.
-  The universal link won’t work until the CDN requests the file.
-  To bypass Apple’s CDN, check out the [alternate mode section][].
+  The universal link won't work until the CDN requests the file.
+  To bypass Apple's CDN, check out the [alternate mode section][].
 {{site.alert.end}}
 
 You can use a real device or the Simulator to test a universal link,

@@ -39,6 +39,7 @@ release, and listed in alphabetical order:
 * [Deprecated `Paint.enableDithering`][]
 * [Updated default text styles for menus][]
 * [Windows build path changed to add the target architecture][]
+* [Deprecated API removed after v3.13][]
 
 [Customize tabs alignment using the new `TabBar.tabAlignment` property]: {{site.url}}/release/breaking-changes/tab-alignment
 [Deprecate `textScaleFactor` in favor of `TextScaler`]: {{site.url}}/release/breaking-changes/deprecate-textscalefactor
@@ -48,6 +49,8 @@ release, and listed in alphabetical order:
 [Deprecated `Paint.enableDithering`]: {{site.url}}/release/breaking-changes/paint-enableDithering
 [Updated default text styles for menus]: {{site.url}}/release/breaking-changes/menus-text-style
 [Windows build path changed to add the target architecture]: {{site.url}}/release/breaking-changes/windows-build-architecture
+[Deprecated API removed after v3.13]: {{site.url}}/release/breaking-changes/3-13-deprecations
+
 
 ### Released in Flutter 3.13
 
