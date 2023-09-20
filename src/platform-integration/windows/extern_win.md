@@ -20,8 +20,9 @@ may receive incorrect lifecycle state changes through
 
 # What do I need to do?
 
-In order to add the external window to this application logic, the window's
-`WndProc` procedure must invoke `FlutterEngine::ProcessExternalWindowMessage`.
+To add the external window to this application logic,
+the window's `WndProc` procedure
+must invoke `FlutterEngine::ProcessExternalWindowMessage`.
 
 The following may be added to a window message handler function to achieve this:
 
