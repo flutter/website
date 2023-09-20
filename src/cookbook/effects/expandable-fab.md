@@ -29,7 +29,7 @@ This widget displays the primary FAB and coordinates the expansion
 and collapse of the other action buttons. The widget takes
 in parameters for whether or not the `ExpandedFab` begins in
 the expanded position, what the maximum distance of each action button is,
-and a list of children. You’ll use the list later to provide
+and a list of children. You'll use the list later to provide
 the other action buttons.
 
 <?code-excerpt "lib/excerpt1.dart (ExpandableFab)"?>
@@ -159,16 +159,16 @@ The open button scales down and fades out when the `ExpandableFab`
 goes from collapsed to expanded. Then, the open button scales up
 and fades in when the `ExpandableFab` goes from expanded to collapsed.
 
-You’ll notice that the open button is wrapped with an
+You'll notice that the open button is wrapped with an
 `IgnorePointer` widget. This is because the open button always exists,
-even when it’s transparent. Without the `IgnorePointer`,
+even when it's transparent. Without the `IgnorePointer`,
 the open button always receives the tap event,
 even when the close button is visible.
 
 ## Create an ActionButton widget
 
 Each of the buttons that expand from the `ExpandableFab`
-have the same design. They’re  blue circles with white icons.
+have the same design. They're  blue circles with white icons.
 More precisely, the button background color is the `ColorScheme.secondary`
 color, and the icon color is `ColorScheme.onSecondary`.
 

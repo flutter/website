@@ -40,13 +40,24 @@ With Xcode, you can run Flutter apps on an iOS device or on the simulator.
 To prepare to run and test your Flutter app on the iOS simulator,
 follow this procedure.
 
+ 1. If using Xcode 15 or greater, download and install the iOS Simulator 
+    by running the following command:
+
+    ```terminal
+    $ xcodebuild -downloadPlatform iOS
+    ```
+
+    If you want to use a different method of downloading and installing the 
+    iOS Simulator, check out 
+    [Apple's documentation on installing Simulators][] for more options.
+
  1. To start the Simulator, run the following command:
 
     ```terminal
     $ open -a Simulator
     ```
 
- 2. Set your Simulator to use a 64-bit device (iPhone 5s or later).
+ 1. Set your Simulator to use a 64-bit device (iPhone 5s or later).
 
     - From Xcode, choose a simulator device type. Go to
       **Product** <span aria-label="and then">></span>
@@ -63,27 +74,27 @@ follow this procedure.
       **General** <span aria-label="and then">></span>
       **About**.
 
- 3. The simulated high-screen density iOS devices might overflow your screen.
+ 1. The simulated high-screen density iOS devices might overflow your screen.
     If that appears true on your Mac, change the presented size in the
     Simulator app
 
     - To display the Simulator at a small size, go to
       **Window** <span aria-label="and then">></span>
-      **Physical Size** or<br>press <kbd>Command</kbd> + <kbd>1</kbd>.
+      **Physical Size** or<br>press <kbd>Cmd</kbd> + <kbd>1</kbd>.
 
     - To display the Simulator at a moderate size, go to
       **Window** <span aria-label="and then">></span>
-      **Point Accurate** or<br>press <kbd>Command</kbd> + <kbd>2</kbd>.
+      **Point Accurate** or<br>press <kbd>Cmd</kbd> + <kbd>2</kbd>.
 
     - To display the Simulator at an HD representation, go to
       **Window** <span aria-label="and then">></span>
-      **Pixel Accurate** or<br>press <kbd>Command</kbd> + <kbd>3</kbd>.
+      **Pixel Accurate** or<br>press <kbd>Cmd</kbd> + <kbd>3</kbd>.
       _The Simulator defaults to this size._
 
     - The Simulator defaults to **Fit Screen**.
       If you need to return to that size, go to
       **Window** <span aria-label="and then">></span>
-      **Fit Screen** or press <kbd>Command</kbd> + <kbd>4</kbd>.
+      **Fit Screen** or press <kbd>Cmd</kbd> + <kbd>4</kbd>.
 
 ### Deploy to physical iOS devices
 
@@ -195,7 +206,7 @@ Follow the Xcode signing flow to provision your project.
 
 1. Go to **File** <span aria-label="and then">></span> **Open...**
 
-   You can also press <kbd>Command</kbd> + <kbd>O</kbd>.
+   You can also press <kbd>Cmd</kbd> + <kbd>O</kbd>.
 
 1. Navigate to your Flutter project directory.
 
@@ -332,7 +343,7 @@ After you connect your iOS device to your Mac:
 1. Go to **Window** <span aria-label="and then">></span>
    **Devices and Simulators**.
 
-   You can also press <kbd>Shift</kbd> + <kbd>Command</kbd> + <kbd>2</kbd>.
+   You can also press <kbd>Shift</kbd> + <kbd>Cmd</kbd> + <kbd>2</kbd>.
 
 1. Select your iOS device.
 
@@ -396,3 +407,4 @@ $ sudo gem install cocoapods
 [Apple's documentation on pairing a wireless device with Xcode]: https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/devbc48d1bad
 [Apple Developer]: {{site.apple-dev}}/programs/
 [Apple Developer Account]: {{site.apple-dev}}/account
+[Apple's documentation on installing Simulators]: {{site.apple-dev}}/documentation/xcode/installing-additional-simulator-runtimes

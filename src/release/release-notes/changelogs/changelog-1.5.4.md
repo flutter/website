@@ -1389,7 +1389,7 @@ From Thu Feb 21 20:22:00 2019 -0800 to Wed May 1 16:56:00 2019 -0700
 
 [8145](https://github.com/flutter/engine/pull/8145) Reland "Add support for trace counters with variable arguments and instrument the raster cache." (cla: yes)
 
-[8147](https://github.com/flutter/engine/pull/8147) Add “full-dart-debug” that disabled optimizations in the Dart VM. (cla: yes)
+[8147](https://github.com/flutter/engine/pull/8147) Add "full-dart-debug" that disabled optimizations in the Dart VM. (cla: yes)
 
 [8148](https://github.com/flutter/engine/pull/8148) Add dump-shader-skp switch to help ShaderWarmUp (cla: yes)
 

@@ -21,8 +21,7 @@ following components:
 
 * [Ubuntu][] OS, 18.04 LTS (or higher)
 * [Snapcraft][] command line tool
-* [Multipass virtualization manager][] or
-  [LXD container manager][]
+* [LXD container manager][]
 
 ## Set up the build environment
 
@@ -35,28 +34,6 @@ At the command line, run the following:
 ```terminal
 $ sudo snap install snapcraft --classic
 ```
-
-### Install Multipass
-
-Also at the command line, run the following:
-
-```terminal
-$ sudo snap install multipass --classic
-```
-
-To work correctly, Multipass requires access to the CPU
-virtualization extensions. If the extensions are not
-available for your CPU architecture, not enabled in BIOS,
-or not accessible (for instance if you are running a
-virtual machine without nested virtualization),
-you won't be able to use Multipass.
-
-If you see the following error, you should use LXD:
-
-```terminal
-launch failed: CPU does not support KVM extensions
-```
-
 ### Install LXD
 
 To install LXD, use the following command:
@@ -65,10 +42,8 @@ To install LXD, use the following command:
 $ sudo snap install lxd
 ```
 
-LXD can be used as an alternative backend during the
-snap build process. Once installed, LXD needs to be
-configured for use. The default answers are suitable
-for most use cases.
+LXD is required during the snap build process. Once installed, LXD needs to be
+configured for use. The default answers are suitable for most use cases.
 
 ```terminal
 $ sudo lxd init
@@ -82,8 +57,8 @@ Size in GB of the new loop device (1GB minimum) [default=5GB]:
 Would you like to connect to a MAAS server? (yes/no) [default=no]:
 Would you like to create a new local network bridge? (yes/no) [default=yes]:
 What should the new bridge be called? [default=lxdbr0]:
-What IPv4 address should be used? (CIDR subnet notation, “auto” or “none”) [default=auto]:
-What IPv6 address should be used? (CIDR subnet notation, “auto” or “none”) [default=auto]:
+What IPv4 address should be used? (CIDR subnet notation, "auto" or "none") [default=auto]:
+What IPv6 address should be used? (CIDR subnet notation, "auto" or "none") [default=auto]:
 Would you like LXD to be available over the network? (yes/no) [default=no]:
 Would you like stale cached images to be updated automatically? (yes/no) [default=yes]
 Would you like a YAML "lxd init" preseed to be printed? (yes/no) [default=no]:
@@ -128,7 +103,7 @@ summary: Super Cool App
 description: Super Cool App that does everything!
 
 confinement: strict
-base: core18
+base: core22
 grade: stable
 
 slots:
@@ -140,7 +115,7 @@ slots:
 apps:
   super-cool-app:
     command: super_cool_app
-    extensions: [flutter-master] # Where "master" defines which Flutter channel to use for the build
+    extensions: [gnome] # gnome includes the libraries required by flutter
     plugs:
     - network
     slots:
@@ -204,11 +179,11 @@ has a single application&mdash;super_cool_app.
 apps:
   super-cool-app:
     command: super_cool_app
-    extensions: [flutter-master]
+    extensions: [gnome]
 ```
 
 **Command**
-: Points to the binary, relative to the snap’s root,
+: Points to the binary, relative to the snap's root,
   and runs when the snap is invoked.
 
 **Extensions**
@@ -216,13 +191,10 @@ apps:
   are reusable components that can expose sets of libraries
   and tools to a snap at build and runtime,
   without the developer needing to have specific knowledge
-  of included frameworks. The `flutter-master` extension exposes
+  of included frameworks. The `gnome` extension exposes
   the GTK 3 libraries to the Flutter snap. This ensures a
   smaller footprint and better integration with the system.
 
-  The `flutter-master` extension sets your flutter channel
-  to `master`.  If you would like to build your app with the `dev`
-  channel simply use the `flutter-dev` extension.
 
 **Plugs**
 : A list of one or more plugs for system interfaces.
@@ -235,7 +207,7 @@ apps:
   communicate over DBus. The snap providing the DBus 
   service declares a slot with the well-known DBus name 
   and which bus it uses. Snaps wanting to communicate 
-  with the providing snap’s service declare a plug for 
+  with the providing snap's service declare a plug for 
   the providing snap. Note that a snap declaration is 
   needed for your snap to be delivered via the snap store 
   and claim this well-known DBus name (simply upload the 
@@ -246,13 +218,13 @@ apps:
   generate security policy that will allow it to 
   listen on the well-known DBus name on the specified 
   bus. If the system bus is specified, snapd will also 
-  generate DBus bus policy that allows ‘root’ to own 
+  generate DBus bus policy that allows 'root' to own 
   the name and any user to communicate with the 
   service. Non-snap processes are allowed to 
   communicate with the providing snap following 
   traditional permissions checks. Other (consuming) 
   snaps might only communicate with the providing 
-  snap by connecting the snaps’ interface.
+  snap by connecting the snaps' interface.
   
 ```
 dbus-super-cool-app: # adjust accordingly to your app name
@@ -304,8 +276,8 @@ Specification version 1.1.
 Place the .desktop file in your Flutter project 
 under `<project root>/snap/gui/super-cool-app.desktop`.
 
-**Notice**: icon and .desktop file name must be the 
-same as your app name in yaml file!
+**Notice**: icon and .desktop file name must be the same as your app name in
+yaml file!
 
 For example:
 
@@ -342,10 +314,16 @@ To use the LXD container backend:
 $ snapcraft --use-lxd
 ```
 
-## Publish
+## Test the snap
 
 Once the snap is built, you'll have a `<name>.snap` file
-in your root project directory. You can now publish the snap.
+in your root project directory.
+
+$ sudo snap install ./super-cool-app_0.1.0_amd64.snap --dangerous
+
+## Publish
+
+You can now publish the snap.
 The process consists of the following:
 
 1. Create a developer account at [snapcraft.io][], if you
