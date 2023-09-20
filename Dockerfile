@@ -28,13 +28,13 @@ FROM base AS flutter
 
 ARG FLUTTER_BUILD_BRANCH=stable
 ENV FLUTTER_BUILD_BRANCH=$FLUTTER_BUILD_BRANCH
-ENV FLUTTER_ROOT=flutter
+ENV FLUTTER_ROOT=/flutter
 ENV FLUTTER_BIN=$FLUTTER_ROOT/bin
 ENV DART_BIN=$FLUTTER_BIN/cache/dart-sdk/bin
 ENV PATH="$FLUTTER_BIN:$DART_BIN:$PATH"
 
-RUN git clone --branch $FLUTTER_BUILD_BRANCH --single-branch https://github.com/flutter/flutter /flutter/
-VOLUME /flutter
+RUN git clone --branch $FLUTTER_BUILD_BRANCH --single-branch https://github.com/flutter/flutter $FLUTTER_ROOT
+VOLUME $FLUTTER_ROOT
 
 # Set up Flutter
 # NOTE You will get a warning "Woah! You appear to be trying to run flutter as root."
