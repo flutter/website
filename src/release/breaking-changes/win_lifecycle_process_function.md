@@ -27,8 +27,8 @@ processing in `WndProc` should cease.
 
 ## Migration guide
 
-An example `WndProc` procedure that invokes
-`FlutterEngine::ProcessExternalWindowMessage` is provided below:
+The following example `WndProc` procedure invokes
+`FlutterEngine::ProcessExternalWindowMessage`:
 
 ```
 LRESULT Window::Messagehandler(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam) {
