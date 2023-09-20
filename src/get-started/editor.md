@@ -107,11 +107,11 @@ follow Microsoft's instructions for the relevant platform:
 Android Studio and IntelliJ IDEA offer a complete,
 IDE experience once you install the Flutter plugin.
 
-To install one of the following IDEs, follow their instructions:
+To install the latest version of the following IDEs, follow their instructions:
 
-- [Android Studio][], version 2022.2 (Flamingo) or later
-- [IntelliJ IDEA Community][], version 2022.2 or later
-- [IntelliJ IDEA Ultimate][], version 2022.2 or later
+- [Android Studio][]
+- [IntelliJ IDEA Community][]
+- [IntelliJ IDEA Ultimate][]
 
 ## Install the Flutter plugin
 

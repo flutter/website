@@ -11,7 +11,7 @@ diff2html: true
 <?code-excerpt path-base="animation"?>
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What you’ll learn</h4>
+  <h4 class="no_toc">What you'll learn</h4>
 
   * How to use the fundamental classes from the
     animation library to add animation to a widget.
@@ -116,8 +116,8 @@ animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
 
 `CurvedAnimation` and `AnimationController` (described in the next section)
 are both of type `Animation<double>`, so you can pass them interchangeably.
-The `CurvedAnimation` wraps the object it’s modifying&mdash;you
-don’t subclass `AnimationController` to implement a curve.
+The `CurvedAnimation` wraps the object it's modifying&mdash;you
+don't subclass `AnimationController` to implement a curve.
 
 ### Animation&shy;Controller
 
@@ -192,7 +192,7 @@ tween = Tween<double>(begin: -200, end: 0);
 A `Tween` is a stateless object that takes only `begin` and `end`.
 The sole job of a `Tween` is to define a mapping from an
 input range to an output range. The input range is commonly
-0.0 to 1.0, but that’s not a requirement.
+0.0 to 1.0, but that's not a requirement.
 
 A `Tween` inherits from `Animatable<T>`, not from `Animation<T>`.
 An `Animatable`, like `Animation`, doesn't have to output double.
@@ -344,7 +344,7 @@ The changes from the non-animated example are highlighted:
 +    animation = Tween<double>(begin: 0, end: 300).animate(controller)
 +      ..addListener(() {
 +        setState(() {
-+          // The state that has changed here is the animation object’s value.
++          // The state that has changed here is the animation object's value.
 +        });
 +      });
 +    controller.forward();
@@ -384,7 +384,7 @@ Dispose of the controller when the `State` object is
 discarded to prevent memory leaks.
 
 With these few changes,
-you’ve created your first animation in Flutter!
+you've created your first animation in Flutter!
 
 {{site.alert.secondary}}
   **Dart language tricks:**
@@ -514,7 +514,7 @@ and it passes the `Animation` object to `AnimatedLogo`:
 -    animation = Tween<double>(begin: 0, end: 300).animate(controller)
 -      ..addListener(() {
 -        setState(() {
--          // The state that has changed here is the animation object’s value.
+-          // The state that has changed here is the animation object's value.
 -        });
 -      });
 +    animation = Tween<double>(begin: 0, end: 300).animate(controller);
@@ -556,7 +556,7 @@ and it passes the `Animation` object to `AnimatedLogo`:
     the animation has either completed or returned to its starting state.
 {{site.alert.end}}
 
-It’s often helpful to know when an animation changes state,
+It's often helpful to know when an animation changes state,
 such as finishing, moving forward, or reversing.
 You can get notifications for this with `addStatusListener()`.
 The following code modifies the previous example so that

@@ -10394,7 +10394,7 @@ There were 1421 pull requests.
 
 [16208](https://github.com/flutter/engine/pull/16208) Fix safe area reporting with transparent FlutterActivitys. (#46060) (cla: yes)
 
-[16210](https://github.com/flutter/engine/pull/16210) In the test harness, don’t attempt to load AOT snapshots from non-existent dylibs. (cla: yes)
+[16210](https://github.com/flutter/engine/pull/16210) In the test harness, don't attempt to load AOT snapshots from non-existent dylibs. (cla: yes)
 
 [16211](https://github.com/flutter/engine/pull/16211) Copied Apple's semantics for switches, made checkboxes the same. (cla: yes)
 
@@ -11768,7 +11768,7 @@ There were 1421 pull requests.
 
 [17257](https://github.com/flutter/engine/pull/17257) Roll src/third_party/dart b7455646f90d..cbd67124d10e (3 commits) (cla: yes, waiting for tree to go green)
 
-[17258](https://github.com/flutter/engine/pull/17258) Don’t depend on an implicit transaction when no external view embedder is present. (cla: yes)
+[17258](https://github.com/flutter/engine/pull/17258) Don't depend on an implicit transaction when no external view embedder is present. (cla: yes)
 
 [17260](https://github.com/flutter/engine/pull/17260) Roll src/third_party/skia 538e358b0d82..f04f21a5c913 (2 commits) (cla: yes, waiting for tree to go green)
 

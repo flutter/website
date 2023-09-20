@@ -13,13 +13,13 @@ This allows apps to reduce install apk size and download
 features and assets when needed by the user.
 
 We refer to each uniquely downloadable bundle of Dart
-libraries and assets as a “deferred component”.
-This is achieved by using Dart’s deferred imports,
+libraries and assets as a "deferred component".
+This is achieved by using Dart's deferred imports,
 which can be compiled into split AOT shared libraries.
 
 {{site.alert.note}}
   This feature is currently only available on Android,
-  taking advantage of Android and Google Play Stores’
+  taking advantage of Android and Google Play Stores'
   [dynamic feature modules][] to deliver the
   deferred components packaged as Android modules.
   Deferred code does not impact other platforms,
@@ -55,7 +55,7 @@ Android app for deferred loading.
 ### Step 1: Dependencies and initial project setup
 
 <ol markdown="1">
-<li markdown="1">Add Play Core to the Android app’s
+<li markdown="1">Add Play Core to the Android app's
     build.gradle dependencies.
     In `android/app/build.gradle` add the following:
 
@@ -156,7 +156,7 @@ FlutterInjector.setInstance(new FlutterInjector.Builder()
 </li>
     
 <li markdown="1">Opt into deferred components by adding
-    the `deferred-components` entry to the app’s `pubspec.yaml`
+    the `deferred-components` entry to the app's `pubspec.yaml`
     under the `flutter` entry:
 
   ```yaml
@@ -179,7 +179,7 @@ FlutterInjector.setInstance(new FlutterInjector.Builder()
 ### Step 2: Implementing deferred Dart libraries
 
 Next, implement deferred loaded Dart libraries in your
-app’s Dart code. The implementation does not need
+app's Dart code. The implementation does not need
 to be feature complete yet. The example in the
 rest of this page adds a new simple deferred widget
 as a placeholder. You can also convert existing code
@@ -282,7 +282,7 @@ The `loadLibrary()` function can also be called early to
 trigger a pre-load to help mask the loading time.
 
 You can find another example of deferred import loading in
-[Flutter Gallery’s lib/deferred_widget.dart][].
+[Flutter Gallery's lib/deferred_widget.dart][].
 </li>
 </ol>
 
@@ -379,7 +379,7 @@ The validator also checks for the following in the
     Contains a meta-data entry that encodes
     the mapping between loading units and component name the
     loading unit is associated with. This mapping is used by the
-    embedder to convert Dart’s internal loading unit id
+    embedder to convert Dart's internal loading unit id
     to the name of a deferred component to install. For example:
 ```js
     ...
@@ -406,7 +406,7 @@ validator passes.
     `<projectDir>/build/android_deferred_components_setup_files` directory.
     It is recommended that the changes be applied by
     copying and overwriting the same files in the
-    project’s `android` directory. Before overwriting,
+    project's `android` directory. Before overwriting,
     the current project state should be committed to
     source control and the recommended changes should be
     reviewed to be appropriate. The tool won't make any
@@ -416,7 +416,7 @@ validator passes.
 <li markdown="1"><a id="step-3.3"></a>Once the available
     loading units are generated and logged in
     `<projectDirectory>/deferred_components_loading_units.yaml`,
-    it is possible to fully configure the pubspec’s
+    it is possible to fully configure the pubspec's
     `deferred-components` section so that the loading units
     are assigned to deferred components as desired.
     To continue with the box example, the generated
@@ -428,9 +428,9 @@ loading-units:
       - package:MyAppName/box.Dart
 ```
 
-The loading unit id (‘2’ in this case) is used
+The loading unit id ('2' in this case) is used
 internally by Dart, and can be ignored.
-The base loading unit (id ‘1’) is not listed
+The base loading unit (id '1') is not listed
 and contains everything not explicitly contained
 in another loading unit.
 
@@ -563,7 +563,7 @@ $ java -jar bundletool.jar build-apks --bundle=<your_app_project_dir>/build/app/
 $ java -jar bundletool.jar install-apks --apks=<your_temp_dir>/app.apks
 ```
 
-Where `<your_app_project_dir>` is the path to your app’s
+Where `<your_app_project_dir>` is the path to your app's
 project directory and `<your_temp_dir>` is any temporary
 directory used to store the outputs of bundletool.
 This unpacks your `.aab` file into an `.apks` file and
@@ -598,7 +598,7 @@ Play store's delivery feature.
 [Deferred Components]: {{site.repo.flutter}}/wiki/Deferred-Components
 [`DeferredComponent`]: {{site.api}}/flutter/services/DeferredComponent-class.html
 [dynamic feature modules]: {{site.android-dev}}/guide/playcore/feature-delivery
-[Flutter Gallery’s lib/deferred_widget.dart]: {{site.repo.gallery}}/blob/main/lib/deferred_widget.dart
+[Flutter Gallery's lib/deferred_widget.dart]: {{site.repo.gallery}}/blob/main/lib/deferred_widget.dart
 [Flutter wiki]: {{site.repo.flutter}}/wiki
 [github.com/google/bundletool/releases]: {{site.github}}/google/bundletool/releases
 [lazily loading a library]: {{site.dart-site}}/language/libraries#lazily-loading-a-library

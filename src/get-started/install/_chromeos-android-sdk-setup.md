@@ -11,7 +11,7 @@ $ sudo apt install default-jdk
 ### Install the Android SDKs
 
 Download the [Android SDK tools][] and
-select the “Command Line Tools only” option.
+select the "Command Line Tools only" option.
 
 Drag and drop the downloaded zip into your Linux Files folder through the
 ChromeOS Files app. This moves the file to the home directory,

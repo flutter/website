@@ -15,7 +15,6 @@ BUILD_NAME = tmpbuild
 BUILD_TAG = "fltbuild:${BUILD_COMMIT}"
 FIREBASE_ALIAS ?= default
 FLUTTER_BUILD_BRANCH ?= stable
-FLUTTER_TEST_BRANCH ?= stable
 JEKYLL_SITE_HOST ?= 0.0.0.0
 JEKYLL_SITE_PORT ?= 4002
 STAGE_NAME ?= docs
@@ -85,12 +84,15 @@ emulate:
 # =================== Build / Test / Deploy Commands ==================
 
 # Run all tests that would be run inside the container for the 
-# given target channel on the Github action `test` job.
+# given target channel on the GitHub action `test` job.
 # WARNING this can take a while to run!
-# Usage: `make test FLUTTER_TEST_BRANCH=<channel>`
+# Usage: `FLUTTER_BUILD_BRANCH=<channel> make test`
 test:
-	DOCKER_BUILDKIT=1 docker build --rm --target tests -t flt-test .
-	docker run --rm --name flt-tests -t flt-test --target ${FLUTTER_TEST_BRANCH}
+	DOCKER_BUILDKIT=1 docker build --rm \
+	    --target tests \
+	    -t flt-test \
+	    --build-arg FLUTTER_BUILD_BRANCH=${FLUTTER_BUILD_BRANCH} .
+	docker run --rm --name flt-tests -t flt-test
 
 # Stop long running tests
 # Usage `make stop-tests`

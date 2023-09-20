@@ -1,4 +1,4 @@
-FROM ruby:3.2.2-slim-bookworm@sha256:b86f08332ea5f9b73c427018f28af83628c139567cc72823270cac6ab056c4dc AS base
+FROM ruby:3.2.2-slim-bookworm@sha256:c672c463585283353df4bd5c712e80b7454dbb2c26808fafc8e10e2fdf17c301 AS base
 
 ENV TZ=US/Pacific
 RUN apt-get update && apt-get install -yq --no-install-recommends \
@@ -21,33 +21,19 @@ WORKDIR /app
 
 
 # ============== INSTALL FLUTTER ==============
-# NOTE that this will fail if you have not cloned the repo with --recurse-submodules
-# or run `git submodule update --init --recursive` after cloning.
 FROM base AS flutter
 
-# This Flutter install uses/requires the local ./flutter submodule
-COPY ./flutter ./flutter
 COPY ./site-shared ./site-shared
 COPY pubspec.yaml ./
 
-ARG FLUTTER_BUILD_BRANCH
+ARG FLUTTER_BUILD_BRANCH=stable
 ENV FLUTTER_BUILD_BRANCH=$FLUTTER_BUILD_BRANCH
 ENV FLUTTER_ROOT=flutter
 ENV FLUTTER_BIN=flutter/bin
-ENV PATH="/app/flutter/bin:$PATH"
+ENV PATH="/flutter/bin:$PATH"
 
-# Used if wanting to build the container with a different branch, this
-# would change the current branch of and update the mirrored submodule
-# e.g. `make build FLUTTER_BUILD_BRANCH=beta`
-# This is not to be confused with the $FLUTTER_TEST_BRANCH
-RUN if test -n "$FLUTTER_BUILD_BRANCH" -a "$FLUTTER_BUILD_BRANCH" != "stable" ; then \
-      cd flutter && \
-      git fetch && \
-      git remote set-branches origin "$FLUTTER_BUILD_BRANCH" && \
-      git fetch --depth 1 origin "$FLUTTER_BUILD_BRANCH" && \
-      git checkout "$FLUTTER_BUILD_BRANCH" -- && \
-      git pull; \
-    fi
+RUN git clone --branch $FLUTTER_BUILD_BRANCH --single-branch https://github.com/flutter/flutter /flutter/
+VOLUME /flutter
 
 # Set up Flutter
 # NOTE You will get a warning "Woah! You appear to be trying to run flutter as root."
@@ -78,13 +64,8 @@ FROM flutter AS tests
 
 COPY ./ ./
 
-ARG FLUTTER_TEST_BRANCH=stable
-ENV FLUTTER_TEST_BRANCH=$FLUTTER_TEST_BRANCH
-
 # Only test the code here, checking links is purely for site deployment
-# NOTE bash scripts will switch the Flutter branch based on $FLUTTER_TEST_BRANCH
 ENTRYPOINT ["tool/test.sh"]
-
 
 
 # ============== DEV / JEKYLL SETUP ==============

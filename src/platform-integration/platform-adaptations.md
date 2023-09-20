@@ -578,7 +578,7 @@ Therefore, we recommend that you follow platform conventions.
 Since Android 12, the default UI for top app 
 bars follows the design guidelines defined in [Material 3][mat-appbar]. 
 On iOS, an equivalent component called "Navigation Bars" 
-is defined in [Apple’s Human Interface Guidelines][hig-appbar] (HIG). 
+is defined in [Apple's Human Interface Guidelines][hig-appbar] (HIG). 
 
 <div class="container">
   <div class="row">
@@ -650,7 +650,7 @@ additional code samples and a further explanation in
 Since Android 12, the default UI for bottom navigation 
 bars follow the design guidelines defined in [Material 3][mat-navbar]. 
 On iOS, an equivalent component called "Tab Bars" 
-is defined in [Apple’s Human Interface Guidelines][hig-tabbar] (HIG). 
+is defined in [Apple's Human Interface Guidelines][hig-tabbar] (HIG). 
 
 <div class="container">
   <div class="row">
@@ -681,7 +681,7 @@ styling on Android, you might consider adapting to the default iOS
 tab bars.
 
 To implement platform-specific bottom navigation bars, 
-you can use Flutter’s `NavigationBar` widget on Android 
+you can use Flutter's `NavigationBar` widget on Android 
 and the `CupertinoTabBar` widget on iOS. 
 Below is a code snippet you can 
 adapt to show a platform-specific navigation bars.
@@ -798,7 +798,7 @@ You can leave feedback or ask questions in the discussion.
 Since Android 12, the default UI of alert dialogs 
 (also known as a "basic dialog") follows the design guidelines 
 defined in [Material 3][m3-dialog] (M3). 
-On iOS, an equivalent component called “alert” is defined in Apple’s 
+On iOS, an equivalent component called "alert" is defined in Apple's 
 [Human Interface Guidelines][hig-alert] (HIG).
 
 <div class="container">
@@ -832,7 +832,7 @@ permanently). As an exception, a branded alert dialog design can be used on
 non-critical user flows to highlight specific information or messages.
 
 To implement platform-specific alert dialogs, 
-you can use Flutter’s `AlertDialog` widget on Android 
+you can use Flutter's `AlertDialog` widget on Android 
 and the `CupertinoAlertDialog` widget on iOS. Below is a code snippet you can 
 adapt to show a platform-specific alert dialog.
 
