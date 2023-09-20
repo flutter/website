@@ -32,7 +32,7 @@ using the following metrics:
 * GitHub **version tag** matches the current version from
   pub.dev, so you can see exactly what source is in the package
 * Feature **completeness**&mdash;and not marked as incomplete
-  (for example, with labels like “beta” or “under construction”)
+  (for example, with labels like "beta" or "under construction")
 * [Verified publisher][]
 * General **usability** when it comes to the overview,
   docs, sample/example code, and API quality
@@ -72,7 +72,7 @@ If you own a package that has been designated as a Flutter Favorite,
 you must adhere to the following guidelines:
 
 * Flutter Favorite package authors can place the Flutter Favorite
-  logo in the package’s GitHub README, on the package’s
+  logo in the package's GitHub README, on the package's
   pub.dev **Overview** tab,
   and on social media as related to posts about that package.
 * We encourage you to use the **#FlutterFavorite**
@@ -83,13 +83,13 @@ you must adhere to the following guidelines:
 * If a Flutter Favorite package loses its Flutter Favorite status,
   the author will be notified,
   at which point the author must immediately remove all uses
-  of “Flutter Favorite” and the Flutter Favorite logo from
+  of "Flutter Favorite" and the Flutter Favorite logo from
   the affected package.
-* Don’t alter, distort,
+* Don't alter, distort,
   or modify the Flutter Favorite logo in any way,
   including displaying the logo with color variations
   or unapproved visual elements.
-* Don’t display the Flutter Favorite logo in a manner that
+* Don't display the Flutter Favorite logo in a manner that
   is misleading, unfair, defamatory, infringing, libelous,
   disparaging, obscene, or otherwise objectionable to Google.
 
@@ -103,7 +103,7 @@ ecosystem that could benefit from the Flutter Favorite program,
 such as tools, consulting firms, and prolific Flutter contributors.
 
 As the Flutter ecosystem grows,
-we’ll be looking at expanding the set of metrics,
+we'll be looking at expanding the set of metrics,
 which might include the following:
 
 * Use of the [pubspec.yaml format][] that clearly

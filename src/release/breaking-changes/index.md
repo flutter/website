@@ -39,6 +39,7 @@ release, and listed in alphabetical order:
 * [Deprecated `Paint.enableDithering`][]
 * [Updated default text styles for menus][]
 * [Windows build path changed to add the target architecture][]
+* [Deprecated API removed after v3.13][]
 
 [Customize tabs alignment using the new `TabBar.tabAlignment` property]: {{site.url}}/release/breaking-changes/tab-alignment
 [Deprecate `textScaleFactor` in favor of `TextScaler`]: {{site.url}}/release/breaking-changes/deprecate-textscalefactor
@@ -48,9 +49,12 @@ release, and listed in alphabetical order:
 [Deprecated `Paint.enableDithering`]: {{site.url}}/release/breaking-changes/paint-enableDithering
 [Updated default text styles for menus]: {{site.url}}/release/breaking-changes/menus-text-style
 [Windows build path changed to add the target architecture]: {{site.url}}/release/breaking-changes/windows-build-architecture
+[Deprecated API removed after v3.13]: {{site.url}}/release/breaking-changes/3-13-deprecations
+
 
 ### Released in Flutter 3.13
 
+* [Added missing `dispose()` for some disposable objects in Flutter][]
 * [Deprecated API removed after v3.10][]
 * [Added AppLifecycleState.hidden][] enum value
 * [Moved ReorderableListView's localized strings][] from material to widgets localizations
@@ -60,6 +64,7 @@ release, and listed in alphabetical order:
 * [Migrate a Windows project to ensure the window is shown][]
 * [Updated `Checkbox.fillColor` behavior][]
 
+[Added missing `dispose()` for some disposable objects in Flutter]: {{site.url}}/release/breaking-changes/dispose
 [Deprecated API removed after v3.10]: {{site.url}}/release/breaking-changes/3-10-deprecations
 [Added AppLifecycleState.hidden]: {{site.url}}/release/breaking-changes/add-applifecyclestate-hidden
 [Moved ReorderableListView's localized strings]: {{site.url}}/release/breaking-changes/material-localized-strings

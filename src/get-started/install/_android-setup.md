@@ -25,7 +25,7 @@
 {% include_relative _help-link.md location='android-device' section='#android-setup' %}
 
 To prepare to run and test your Flutter app on an Android device,
-you need an Android device running Android 4.1 (API level 16) or higher.
+you need an Android device running Android 5.0 (API level 21) or higher.
 
  1. Enable **Developer options** and **USB debugging** on your device.
     Detailed instructions are available in the

@@ -29,7 +29,7 @@ behind the available filters, which helps the contrast
 between the filters and any photo that you choose.
 
 Create a new stateful widget called
-`FilterSelector` that you’ll use to 
+`FilterSelector` that you'll use to 
 implement the selector.
 
 <?code-excerpt "lib/excerpt1.dart (FilterSelector)"?>
@@ -146,11 +146,11 @@ depends on the size of an individual filter in the carousel
 called `itemSize`. The `itemSize` depends on the available width.
 Therefore, a `LayoutBuilder` widget is used to determine the
 available space, and then you calculate the size of an 
-individual filter’s `itemSize`.
+individual filter's `itemSize`.
 
 The selector ring includes an `IgnorePointer` widget
 because when carousel interactivity is added,
-the selector ring shouldn’t interfere with 
+the selector ring shouldn't interfere with 
 tap and drag events.
 
 ## Create a filter carousel item
@@ -296,12 +296,12 @@ and the `FilterItem` widgets need to shrink and
 fade as they move farther from the center of the screen.
 
 The solution to both of these issues is to introduce
-a `PageViewController`. The `PageViewController`’s
+a `PageViewController`. The `PageViewController`'s
 `viewportFraction` property is used to display 
 multiple `FilterItem` widgets on the screen at
 the same time. Rebuilding each `FilterItem` widget
 as the `PageViewController` changes allows you to 
-change each `FilterItem` widget’s size and opacity
+change each `FilterItem` widget's size and opacity
 as the user scrolls.
 
 Create a `PageViewController` and connect it to the
@@ -419,7 +419,7 @@ Widget _buildCarousel(double itemSize) {
             builder: (context, child) {
               if (!_controller.hasClients ||
                   !_controller.position.hasContentDimensions) {
-                // The PageViewController isn’t connected to the
+                // The PageViewController isn't connected to the
                 // PageView widget yet. Return an empty box.
                 return const SizedBox();
               }
