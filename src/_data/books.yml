@@ -115,7 +115,6 @@
   cover: programming-flutter.jpg
   link: "https://pragprog.com/book/czflutr"
   desc: "Native, Cross-Platform Apps the Easy Way. Doesn't require previous Dart knowledge."
-
 - title: 'Flutter Architectures'
   authors:
     - Atul Vashisht
