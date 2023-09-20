@@ -12,7 +12,7 @@ you run normal Android or iOS apps.
 However, Flutter is now powering the UI in places where you're showing a
 `FlutterActivity` or `FlutterViewController`.
 
-## Debugging
+## Overview
 
 You might be used to having your suite of favorite Flutter debugging tools
 available to you automatically when running `flutter run` or an equivalent
@@ -34,7 +34,20 @@ the next available Dart VM that is hosted by your engine.
 
 Run `flutter attach` or `flutter attach -d deviceId` to attach from the terminal.
 
-{% include docs/app-figure.md image="development/add-to-app/debugging/cli-attach.png" caption="flutter attach via terminal" %}
+```terminal
+$ flutter attach
+Syncing files to device iPhone 14 Pro...
+ 7,738ms (!)
+
+:fire: To hot reload changes while running, press "r". To hot restart (and
+rebuild state), press "R".
+
+An Observatory debugger and profiler on iPhone 14 Pro is available at:
+http://127.0.0.1:65525/EXmCgco5zjo=/
+For a more detailed help message, press "h". To detach, press "d"; to quit,
+press "q"
+
+```
 
 ## Debug in iOS code in VS Code and Xcode
 
@@ -46,7 +59,7 @@ Run `flutter attach` or `flutter attach -d deviceId` to attach from the terminal
 
 [debugging functionalities]: {{site.url}}/testing/debugging
 
-## Debug without USB
+## Debug without USB connection
 
 You can debug your app wirelessly on an iOS or Android device
 using `flutter attach`.
