@@ -65,11 +65,11 @@ The Android Studio IDE can help integrate your Flutter module.
 Using Android Studio, you can edit both your Android and Flutter code
 in the same IDE.
 
-You can also use your IntelliJ Flutter plugin functionality like
+You can also use IntelliJ Flutter plugin functionality like
 Dart code completion, hot reload, and widget inspector.
 
 Android Studio supports add-to-app flows on Android Studio 2022.2 or later
-with version 75.1.1 or later of the [Flutter plugin][] for IntelliJ.
+with the [Flutter plugin][] for IntelliJ.
 To build your app, the Android Studio plugin configures your
 Android project to add your Flutter module as a dependency.
 
@@ -162,9 +162,9 @@ module an embeddable Android library.
 #### Java version requirement
 {:.no_toc}
 
-The Flutter Android Gradle plugin uses features found in Java 11 or later.
+Flutter requires your project to declare compatibility with Java 11 or later.
 
-Before attempting to connect your Flutter module project 
+Before attempting to connect your Flutter module project
 to your host Android app, ensure that your host Android
 app declares the following source compatibility within your
 app's `build.gradle` file, under the `android { }` block.
