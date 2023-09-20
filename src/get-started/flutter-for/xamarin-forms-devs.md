@@ -261,7 +261,7 @@ If you want to dynamically change the UI based on data received
 after making an HTTP call or a user interaction,
 then you have to work with `StatefulWidget`
 and tell the Flutter framework that
-the widget’s `State` has been updated,
+the widget's `State` has been updated,
 so it can update that widget.
 
 The important thing to note here is at the core
@@ -271,7 +271,7 @@ the `StatefulWidget` has a `State` object
 that stores state data across frames and restores it.
 
 If you are in doubt, then always remember this rule: if a widget changes
-(because of user interactions, for example) it’s stateful.
+(because of user interactions, for example) it's stateful.
 However, if a widget reacts to change, the containing parent widget can
 still be stateless if it doesn't itself react to change.
 
@@ -772,7 +772,7 @@ you might do the following:
 Object? coordinates = await Navigator.of(context).pushNamed('/location');
 ```
 
-And then, inside your ‘location’ route, once the user has selected their
+And then, inside your 'location' route, once the user has selected their
 location, pop the stack with the result:
 
 <?code-excerpt "lib/navigation.dart (PopLocation)"?>
@@ -952,7 +952,7 @@ to do long-running or computationally intensive tasks.
 Isolates are separate execution threads that
 do not share any memory with the main execution memory heap.
 This is a difference between `Task.Run()`.
-This means you can’t access variables from the main thread,
+This means you can't access variables from the main thread,
 or update your UI by calling `setState()`.
 
 The following example shows, in a simple isolate,

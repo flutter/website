@@ -149,7 +149,7 @@ to access it.
 ## Accessing the state
 
 When a user clicks on one of the items in the catalog,
-it’s added to the cart. But since the cart lives above `MyListItem`,
+it's added to the cart. But since the cart lives above `MyListItem`,
 how do we do that?
 
 A simple option is to provide a callback that `MyListItem` can call

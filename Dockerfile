@@ -24,8 +24,6 @@ WORKDIR /app
 ENV REPLACE_SYMLINKS dart pub get && dart run tool/handle_symlinks.dart replace
 
 # ============== INSTALL FLUTTER ==============
-# NOTE that this will fail if you have not cloned the repo with --recurse-submodules
-# or run `git submodule update --init --recursive` after cloning.
 FROM base AS flutter
 
 ARG FLUTTER_BUILD_BRANCH=stable
@@ -33,9 +31,10 @@ ENV FLUTTER_BUILD_BRANCH=$FLUTTER_BUILD_BRANCH
 ENV FLUTTER_ROOT=flutter
 ENV FLUTTER_BIN=$FLUTTER_ROOT/bin
 ENV DART_BIN=$FLUTTER_BIN/cache/dart-sdk/bin
-ENV PATH="/app/flutter/bin:$FLUTTER_BIN:$DART_BIN:$PATH"
+ENV PATH="$FLUTTER_BIN:$DART_BIN:$PATH"
 
-RUN git clone --branch $FLUTTER_BUILD_BRANCH --single-branch https://github.com/flutter/flutter ./flutter
+RUN git clone --branch $FLUTTER_BUILD_BRANCH --single-branch https://github.com/flutter/flutter /flutter/
+VOLUME /flutter
 
 # Set up Flutter
 # NOTE You will get a warning "Woah! You appear to be trying to run flutter as root."
@@ -70,13 +69,8 @@ FROM flutter AS tests
 COPY ./ ./
 RUN $REPLACE_SYMLINKS
 
-ARG FLUTTER_TEST_BRANCH=stable
-ENV FLUTTER_TEST_BRANCH=$FLUTTER_TEST_BRANCH
-
 # Only test the code here, checking links is purely for site deployment
-# NOTE bash scripts will switch the Flutter branch based on $FLUTTER_TEST_BRANCH
 ENTRYPOINT ["tool/test.sh"]
-
 
 
 # ============== DEV / JEKYLL SETUP ==============
