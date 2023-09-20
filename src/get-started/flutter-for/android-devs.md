@@ -44,11 +44,11 @@ acquainted with how Flutter works you can think of them as
 
 However, these have a few differences to a `View`. To start, widgets have a
 different lifespan: they are immutable and only exist until they need to be
-changed. Whenever widgets or their state change, Flutter’s framework creates
+changed. Whenever widgets or their state change, Flutter's framework creates
 a new tree of widget instances. In comparison, an Android view is drawn once
 and does not redraw until `invalidate` is called.
 
-Flutter’s widgets are lightweight, in part due to their immutability.
+Flutter's widgets are lightweight, in part due to their immutability.
 Because they aren't views themselves, and aren't directly drawing anything,
 but rather are a description of the UI and its semantics that get "inflated"
 into actual view objects under the hood.
@@ -83,7 +83,7 @@ so use a `StatelessWidget` in Flutter.
 
 If you want to dynamically change the UI based on data received
 after making an HTTP call or user interaction then you have to work
-with `StatefulWidget` and tell the Flutter framework that the widget’s
+with `StatefulWidget` and tell the Flutter framework that the widget's
 `State` has been updated so it can update that widget.
 
 The important thing to note here is at the core both stateless and stateful
@@ -92,7 +92,7 @@ widgets behave the same. They rebuild every frame, the difference is the
 and restores it.
 
 If you are in doubt, then always remember this rule: if a widget changes
-(because of user interactions, for example) it’s stateful.
+(because of user interactions, for example) it's stateful.
 However, if a widget reacts to change, the containing parent widget can
 still be stateless if it doesn't itself react to change.
 
@@ -534,7 +534,7 @@ Flutter doesn't really have a direct equivalent to activities and fragments;
 rather, in Flutter you navigate between screens, using a `Navigator` and
 `Route`s, all within the same `Activity`.
 
-A `Route` is an abstraction for a “screen” or “page” of an app, and a
+A `Route` is an abstraction for a "screen" or "page" of an app, and a
 `Navigator` is a widget that manages routes. A route roughly maps to an
 `Activity`, but it does not carry the same meaning. A navigator can push
 and pop routes to move from screen to screen. Navigators work like a stack
@@ -908,7 +908,7 @@ your UI hangs. In Flutter, use `Isolate`s to take advantage of
 multiple CPU cores to do long-running or computationally intensive tasks.
 
 Isolates are separate execution threads that do not share any memory
-with the main execution memory heap. This means you can’t access variables from
+with the main execution memory heap. This means you can't access variables from
 the main thread, or update your UI by calling `setState()`.
 Unlike Android threads,
 Isolates are true to their name, and cannot share memory

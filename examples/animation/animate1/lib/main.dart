@@ -23,7 +23,7 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
       ..addListener(() {
         // #enddocregion addListener
         setState(() {
-          // The state that has changed here is the animation object’s value.
+          // The state that has changed here is the animation object's value.
         });
         // #docregion addListener
       });
