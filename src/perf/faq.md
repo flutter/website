@@ -77,7 +77,7 @@ about evaluating and debugging Flutter's performance.
 
 [Get the display refresh rate]: {{site.repo.flutter}}/wiki/Engine-specific-Service-Protocol-extensions#get-the-display-refresh-rate-_fluttergetdisplayrefreshrate
 
-* How to solve my app’s poor animations caused by an expensive
+* How to solve my app's poor animations caused by an expensive
   Dart async function call that is blocking the UI thread?
   * Spawn another isolate using the [`compute()`][] method,
     as demonstrated in [Parse JSON in the background][] cookbook.
@@ -85,7 +85,7 @@ about evaluating and debugging Flutter's performance.
 [`compute()`]: {{site.api}}/flutter/foundation/compute-constant.html
 [Parse JSON in the background]: {{site.url}}/cookbook/networking/background-parsing
 
-* How do I determine my Flutter app’s package size that a
+* How do I determine my Flutter app's package size that a
   user will download?
   * See [Measuring your app's size][]
 
@@ -103,7 +103,7 @@ about evaluating and debugging Flutter's performance.
   as a SKP file?
   * Run `flutter screenshot --type=skia --observatory-uri=...`
   * Note a known issue viewing screenshots:
-    * [Issue 21237][]: Doesn’t record images in real devices.
+    * [Issue 21237][]: Doesn't record images in real devices.
   * To analyze and visualize the SKP file,
     check out the [Skia WASM debugger][].
 

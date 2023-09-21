@@ -62,8 +62,8 @@ class _TypingIndicatorState extends State<TypingIndicator> {
 
 ## Make room for the typing indicator
 
-The typing indicator doesn’t occupy any space when it
-isn’t displayed. Therefore, the indicator needs to grow
+The typing indicator doesn't occupy any space when it
+isn't displayed. Therefore, the indicator needs to grow
 in height when it appears, and shrink in height
 when it disappears.
 

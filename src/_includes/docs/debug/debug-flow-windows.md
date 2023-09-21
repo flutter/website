@@ -52,7 +52,7 @@ If you use VS Code to debug most of your code, start with this section.
    **Open** <span aria-label="and then">></span>
    **Project/Solution…**
 
-   You can also press <kbd>Control</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd>.
+   You can also press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd>.
 
 1. Choose the `build/windows/my_app.sln` file in your Flutter app directory.
 
@@ -66,7 +66,7 @@ If you use VS Code to debug most of your code, start with this section.
 
 1. Go to **Debug** > **Attach to Process**.
 
-   You can also press <kbd>Control</kbd> + <kbd>Alt</kbd> + <kbd>P</kbd>.
+   You can also press <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>P</kbd>.
 
 1. From the **Attach to Process** dialog box, choose `my_app.exe`.
 
@@ -97,7 +97,7 @@ If you use Visual Studio to debug most of your code, start with this section.
    **Open** <span aria-label="and then">></span>
    **Project/Solution…**
 
-   You can also press <kbd>Control</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd>.
+   You can also press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd>.
 
 1. Choose the `build/windows/my_app.sln` file in your Flutter app directory.
 
@@ -133,7 +133,7 @@ If you use Visual Studio to debug most of your code, start with this section.
    **View** <span aria-label="and then">></span>
    **Command Palette...**
 
-   You can also press <kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>.
+   You can also press <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>.
 
 1. Type `debug`.
 

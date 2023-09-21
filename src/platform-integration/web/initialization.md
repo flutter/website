@@ -83,7 +83,7 @@ single method, `runApp()`, that runs the Flutter app.
 ## Customizing web app initialization
 
 In this section,
-learn how to customize each stage of your app’s initialization.
+learn how to customize each stage of your app's initialization.
 
 ### Loading the entrypoint
 
@@ -95,7 +95,7 @@ The `loadEntrypoint` method accepts these parameters:
 |-|-|-|
 |`entrypointUrl`| The URL of your Flutter app's entrypoint. Defaults to `"main.dart.js"`. |`String`|
 |`onEntrypointLoaded`| The function called when the engine is ready to be initialized. Receives an `engineInitializer` object as its only parameter. |`Function`|
-|`serviceWorker`| The configuration for the `flutter_service_worker.js` loader. (If not set, the service worker won’t be used.) |`Object`|
+|`serviceWorker`| The configuration for the `flutter_service_worker.js` loader. (If not set, the service worker won't be used.) |`Object`|
 {:.table}
 
 </div>
