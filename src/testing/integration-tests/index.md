@@ -88,7 +88,7 @@ Changed 9 dependencies!
 In your project, create a new directory
 `integration_test` with a new file, `<name>_test.dart`:
 
-<?code-excerpt "integration_test/counter_test.dart" replace="/IntegrationTestWidgetsFlutterBinding\.ensureInitialized\(\); \/\/ NEW\n\n//g"?>
+<?code-excerpt "integration_test/counter_test.dart (initial)" plaster="none"?>
 ```dart
 import 'package:flutter_test/flutter_test.dart';
 import 'package:how_to/main.dart';
