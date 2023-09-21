@@ -95,7 +95,7 @@ import 'package:how_to/main.dart';
 import 'package:integration_test/integration_test.dart';
 
 void main() {
-    testWidgets('tap on the floating action button, verify counter',
+  testWidgets('tap on the floating action button, verify counter',
       (tester) async {
     // Load app widget.
     await tester.pumpWidget(const MyApp());
