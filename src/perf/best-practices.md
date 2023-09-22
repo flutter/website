@@ -220,11 +220,11 @@ Here are some tips you might find to be useful:
   bits in the to-be-drawn shape.)
 * To implement fading in an image, consider using the
   [`FadeInImage`][] widget, which applies a gradual
-  opacity using the GPU’s fragment shader.
+  opacity using the GPU's fragment shader.
   For more information, check out the [`Opacity`][] docs.
-* **Clipping** doesn’t call `saveLayer()` (unless
+* **Clipping** doesn't call `saveLayer()` (unless
   explicitly requested with `Clip.antiAliasWithSaveLayer`),
-  so these operations aren’t as expensive as `Opacity`,
+  so these operations aren't as expensive as `Opacity`,
   but clipping is still costly, so use with caution.
   By default, clipping is disabled (`Clip.none`),
   so you must explicitly enable it when needed.
@@ -353,7 +353,7 @@ for a total of 16ms or less.
 
 If your frames are rendering in well under
 16ms total in [profile mode][],
-you likely don’t have to worry about performance
+you likely don't have to worry about performance
 even if some performance pitfalls apply,
 but you should still aim to build and
 render a frame as fast as possible. Why?
@@ -363,7 +363,7 @@ render a frame as fast as possible. Why?
 * It might run fine on your device, but consider performance for the
   lowest device you are targeting.
 * As 120fps devices become more widely available,
-  you’ll want to render frames in under 8ms (total)
+  you'll want to render frames in under 8ms (total)
   in order to provide the smoothest experience.
 
 If you are wondering why 60fps leads to a smooth visual experience,
@@ -374,7 +374,7 @@ check out the video [Why 60fps?][]
 
 ## Pitfalls
 
-If you need to tune your app’s performance,
+If you need to tune your app's performance,
 or perhaps the UI isn't as smooth as you expect,
 the [DevTools Performance view][] can help!
 
@@ -397,7 +397,7 @@ your app's performance.
 
 * When using an `AnimatedBuilder`,
   avoid putting a subtree in the builder
-  function that builds widgets that don’t
+  function that builds widgets that don't
   depend on the animation. This subtree is
   rebuilt for every tick of the animation.
   Instead, build that part of the subtree

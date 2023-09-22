@@ -27,13 +27,6 @@ Flutter security strategy is based on five key pillars:
 
 ## Reporting vulnerabilities
 
-{{site.alert.warning}}
-  We are currently experiencing technical difficulties with the
-  `security@flutter.dev` e-mail alias. To ensure prompt attention
-  we ask that you cc `ian@hixie.ch` on such e-mails for the time
-  being. Thanks for your understanding.
-{{site.alert.end}}
-
 Before reporting a security vulnerability found
 by a static analysis tool,
 consider checking our list of [known false positives][].
@@ -45,7 +38,7 @@ affected versions, and if known, mitigations for the issue.
 
 We should reply within three working days.
 
-We use GitHub’s security advisory feature to track
+We use GitHub's security advisory feature to track
 open security issues. You should expect a close collaboration
 as we work to resolve the issue that you have reported. 
 
@@ -106,7 +99,7 @@ technical release blog post.
   defects discovered in previous versions. Check the Flutter
   [change log][] for security-related updates.
 
-* **Keep your application’s dependencies up to date.**
+* **Keep your application's dependencies up to date.**
   Make sure you [upgrade your package dependencies][]
   to keep the dependencies up to date.
   Avoid pinning to specific versions

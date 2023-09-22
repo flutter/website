@@ -83,7 +83,7 @@ Building macOS application...
 
 1. To open the command palette, go to **View** > **Command Palette...**
 
-   You can also press <kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>.
+   You can also press <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>.
 
 1. Type `debug`.
 

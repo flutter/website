@@ -16,7 +16,7 @@ To learn more about DevTools, check out the
   accurate in debug mode and which data may be misleading -
   [#3537](https://github.com/flutter/devtools/pull/3537) 
 * Reorder performance tool tabs and only show the CPU profiler
-  for the “Timeline Events” tab -
+  for the "Timeline Events" tab -
   [#4629](https://github.com/flutter/devtools/pull/4629) 
 
 ## Memory updates
@@ -34,7 +34,7 @@ To learn more about DevTools, check out the
 
 ## Network profiler updates
 
-* Added a “Copy” button in the Network Request view
+* Added a "Copy" button in the Network Request view
   (thanks to @netos23) -
   [#4509](https://github.com/flutter/devtools/pull/4509) 
 
