@@ -110,9 +110,10 @@ with the location of your hosted HTML page:
 <iframe src="URL"></iframe>
 ```
 
-Another way of embedding is In your HTML file where you want to embed the Flutter app,
-create a container using a <div> element. Give it an id so that you can reference it in
-JavaScript. 
+You can also embed your Flutter app using a `<div>` element as a container. In the HTML file you want to embed your Flutter-generated JavaScript, make the following changes.
+
+1. Create a `<div>` tag with a unique `id` attribute.
+   You will reference this `id` in a later step. 
 
 ```html
 <div id="flutter-container"></div>
