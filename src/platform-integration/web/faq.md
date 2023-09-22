@@ -119,25 +119,24 @@ You can also embed your Flutter app using a `<div>` element as a container. In t
    ```html
    <div id="flutter-container"></div>
 
-Add JavaScript code to initialize your Flutter app inside a <script> tag below the Flutter script includes. Use the flutter.runApp 
-function to specify the entry point of your Flutter app.
+1. To initialize your Flutter app, add the following JavaScript code.
+   Place this code in a `<script>` tag after the `<script>` tags from the previous step.
+   To specify the entry point of your Flutter app, use the `flutter.runApp` 
+function.
+    Use the `id` you set in the second step of this procedure.
 
-```html
-<script>
-  flutter.runApp(
-    {
-      element: document.getElementById('flutter-container'),
-      initialRoute: '/',
-      routes: {
-        '/': (_) => MyApp(),
-      },
-    },
-  );
-</script>
-```
-
-In the code above, replace '/' with the appropriate initial route of your Flutter app, and replace MyApp()
-with the main widget of your Flutter app.
+   ```html
+    <script>
+     flutter.runApp(
+       {
+         element: document.getElementById('flutter-container'),
+         initialRoute: '/',
+         routes: {
+           '/': (_) => MyApp(),
+         },
+       },
+     );
+   </script>
 
 1. If your container doesn't fit within your page layout, adjust it using CSS. [Optional]
 
