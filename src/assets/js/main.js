@@ -18,6 +18,9 @@ document.addEventListener("DOMContentLoaded", function(_) {
   setupTabs($('#vscode-to-xcode-macos-setup'), 'dev.flutter.debug.vscode-to-xcode-macos');
   setupTabs($('#vscode-to-android-studio-setup'), 'dev.flutter.debug.vscode-to-as');
   setupTabs($('#vscode-to-vs-setup'), 'dev.flutter.debug.vscode-to-vs');
+  setupTabs($('#add-to-app-android'), 'dev.flutter.add-to-app.android');
+  setupTabs($('#add-to-app-android-deps'), 'dev.flutter.add-to-app.android.deps');
+
 
   setupTabs($('#ios-versions'), 'dev.flutter.ios-versions');
 

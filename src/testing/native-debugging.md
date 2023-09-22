@@ -96,7 +96,7 @@ debugging your own Flutter project as well.
       _counter++;
       ```
 
-   b. Type <kbd>Shift</kbd> + <kbd>F9</kbd>.
+   b. Press <kbd>Shift</kbd> + <kbd>F9</kbd>.
       This adds a breakpoint where the
       `_counter` variable increments.
 
@@ -176,7 +176,7 @@ You can step in, out, and over Dart statements, hot reload, or resume the app.
 | {% include_relative vscode-flutter-bar/_step-over.md %}   | Step Over             | <kbd>F10</kbd>                                        |
 | {% include_relative vscode-flutter-bar/_step-into.md %}   | Step Into             | <kbd>F11</kbd>                                        |
 | {% include_relative vscode-flutter-bar/_step-out.md %}    | Step Out              | <kbd>Shift</kbd> + <kbd>F11</kbd>                     |
-| {% include_relative vscode-flutter-bar/_hot-reload.md %}  | Hot Reload            | <kbd>Control</kbd> + <kbd>F5</kbd>                    |
+| {% include_relative vscode-flutter-bar/_hot-reload.md %}  | Hot Reload            | <kbd>Ctrl</kbd> + <kbd>F5</kbd>                    |
 | {% include_relative vscode-flutter-bar/_hot-restart.md %} | Hot Restart           | <kbd>Shift</kbd> + <kbd>Special</kbd> + <kbd>F5</kbd> |
 | {% include_relative vscode-flutter-bar/_stop.md %}        | Stop                  | <kbd>F5</kbd>                                         |
 | {% include_relative vscode-flutter-bar/_inspector.md %}   | Open Widget Inspector |                                                       |

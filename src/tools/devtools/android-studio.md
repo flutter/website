@@ -34,8 +34,9 @@ you can start DevTools using one of the following:
 
 You can also open DevTools from an IntelliJ action.
 Open the **Find Action...** dialog
-(on a Mac, press `Command+Shift+A)`, and search for the
-**Open DevTools** action. When you select that action,
+(on macOS, press <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>A</kbd>,
+and search for the **Open DevTools** action.
+When you select that action,
 DevTools is installed (if it isn't already), the DevTools server
 launches, and a browser instance opens pointing to the DevTools app.
 
@@ -43,4 +44,3 @@ When opened with an IntelliJ action, DevTools is not connected
 to a Flutter app. You'll need to provide a service protocol port
 for a currently running app. You can do this using the inline
 **Connect to a running app** dialog.
-

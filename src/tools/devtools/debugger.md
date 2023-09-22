@@ -26,8 +26,9 @@ When you open the debugger tab, you should see the source for the main
 entry-point for your app loaded in the debugger.
 
 In order to browse around more of your application sources, click **Libraries**
-(top right) or use the hot key command `⌘ + P` / `ctrl + P`. This will open the
-libraries window and allow you to search for other source files.
+(top right) or press <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> + <kbd>P</kbd>.
+This opens the libraries window and allows you
+to search for other source files.
 
 ![Screenshot of the debugger tab]({{site.url}}/assets/images/docs/tools/devtools/debugger_screenshot.png){:width="100%"}
 
