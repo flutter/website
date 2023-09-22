@@ -100,43 +100,52 @@ although no such support is built in.
 
 ### How do I embed a Flutter web app in a web page?
 
-You can embed a Flutter web app,
-as you would embed other content,
-in an [`iframe`][] tag of an HTML file.
-In the following example, replace "URL"
-with the location of your hosted HTML page:
+You have two embed options: embed in an `iframe` and embed in a `div` container.
+
+#### Use an `iframe`
+
+To embed a Flutter web app in an [`iframe`][] tag of your HTML file,
+add the tag and link to the HTML file that contains your Flutter app.
+
+In the following example, replace `URL` with the location of your HTML page.
 
 ```html
 <iframe src="URL"></iframe>
 ```
 
-You can also embed your Flutter app using a `<div>` element as a container. In the HTML file you want to embed your Flutter-generated JavaScript, make the following changes.
+#### Use an `div` container
+
+To embed your Flutter app using a `<div>` element as a container,
+you need to create the element and add some JavaScript in your HTML page.
+
+In the HTML file you want to embed your Flutter-generated JavaScript,
+make the following changes.
 
 1. Create a `<div>` tag with a unique `id` attribute.
    You will reference this `id` in a later step. 
 
-
    ```html
    <div id="flutter-container"></div>
+   ```
 
 1. To initialize your Flutter app, add the following JavaScript code.
    Place this code in a `<script>` tag after the `<script>` tags from the previous step.
-   To specify the entry point of your Flutter app, use the `flutter.runApp` 
-function.
-    Use the `id` you set in the second step of this procedure.
+   To specify the entry point of your Flutter app, use the `flutter.runApp` function.
+   Use the `id` you set in the previous step of this procedure.
 
    ```html
-    <script>
-     flutter.runApp(
-       {
-         element: document.getElementById('flutter-container'),
-         initialRoute: '/',
-         routes: {
-           '/': (_) => MyApp(),
-         },
-       },
-     );
+   <script>
+    flutter.runApp(
+      {
+        element: document.getElementById('flutter-container'),
+        initialRoute: '/',
+        routes: {
+          '/': (_) => MyApp(),
+        },
+      },
+    );
    </script>
+   ```
 
 1. If your container doesn't fit within your page layout, adjust it using CSS. [Optional]
 
@@ -149,8 +158,7 @@ function.
    </style>
    ```
 
-
-If you encounter problems, please [file an issue][].
+If you encounter problems, [file an issue][].
 
 ### How do I debug a web app?
 
