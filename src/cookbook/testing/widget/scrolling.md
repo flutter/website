@@ -95,7 +95,7 @@ items in the list can change depending on the device.
 
 Rather than assuming that you know the height of all the items
 in a list, or that a particular widget is rendered on all devices,
-the `scrollUntilVisible()` method trepeatedly scrolls through
+the `scrollUntilVisible()` method repeatedly scrolls through
 a list of items until it finds what it's looking for.
 
 The following code shows how to use the `scrollUntilVisible()` method
