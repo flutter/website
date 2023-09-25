@@ -253,7 +253,7 @@ you call `toStringDeep()` on the root of the widget tree.)
 You'll see a lot of widgets in there that don't appear in your
 application's source, because they are inserted by the framework's
 widgets' build functions. For example,
-[`InkFeature`][] is an implementation detail of the [`Material`][] widget.
+[`_InkFeature_`][] is an implementation detail of the [`Material`][] widget.
 
 Since the `debugDumpApp()` call is invoked when the button changes
 from being pressed to being released, it coincides with the
@@ -646,7 +646,7 @@ If you are trying to debug a compositing issue, you can use
 [`debugDumpLayerTree()`][].
 For the previous example, it would output:
 
-```
+```nocode
 I/flutter : TransformLayer
 I/flutter :  │ creator: [root]
 I/flutter :  │ offset: Offset(0.0, 0.0)
@@ -682,7 +682,7 @@ using [`debugDumpFocusTree()`][].
 
 For example:
 
-```
+```nocode
 I/flutter : FocusManager#6fb59
 I/flutter :  │ primaryFocus: FocusScopeNode#3c26f(_ModalScopeState<dynamic>
 I/flutter :  │   Focus Scope [PRIMARY FOCUS])
@@ -766,7 +766,7 @@ enabling a system accessibility tool or the `SemanticsDebugger`.
 
 For the previous example, it would output the following:
 
-```
+```nocode
 I/flutter : SemanticsNode(0; Rect.fromLTRB(0.0, 0.0, 411.4, 683.4))
 I/flutter :  ├SemanticsNode(1; Rect.fromLTRB(0.0, 0.0, 411.4, 683.4))
 I/flutter :  │ └SemanticsNode(2; Rect.fromLTRB(0.0, 0.0, 411.4, 683.4); canBeTapped)
@@ -785,7 +785,7 @@ beginning and end of the frames to the console.
 
 For example:
 
-```
+```nocode
 I/flutter : ▄▄▄▄▄▄▄▄ Frame 12         30s 437.086ms ▄▄▄▄▄▄▄▄
 I/flutter : Debug print: Am I performing this work more than once per frame?
 I/flutter : Debug print: Am I performing this work more than once per frame?
@@ -886,41 +886,45 @@ You can set these flags either by editing the framework code,
 or by importing the module and setting the value in your
 `main()` method, following by a hot restart.
 
-<dl markdown="1">
-<dt markdown="1">[`debugDumpRenderTree()`][]</dt>
-<dd markdown="1">
-  Call this function when not in a layout or repaint
+[`debugDumpRenderTree()`][]</dt>
+: Call this function when not in a layout or repaint
   phase to dump the rendering tree to the console.
   (Pressing **t** from `flutter run` calls this command.)
   Search for "RepaintBoundary" to see diagnostics
   on how useful a boundary is.
+
 {% comment %} Feature is not yet added to DevTools:
     Rather than using this flag to dump the render tree
     to a file, view the render tree in the Flutter inspector.
     To do so, bring up the Flutter inspector and select the
-    **Render Tree** tab. {% endcomment %}
-<dt markdown="1">[`debugPaintLayerBordersEnabled`][]</dt>
-<dd markdown="1">PENDING
-<dt markdown="1">[`debugRepaintRainbowEnabled`][]</dt>
-<dd markdown="1">You can enable this flag in the Flutter
-    inspector by selecting the **Highlight Repaints** button.
-    If any static widgets are rotating through the colors of the rainbow
-    (for example, a static header), those areas are candidates for adding
-    repaint boundaries.
-<dt markdown="1">[`debugPrintMarkNeedsLayoutStacks`][]</dt>
-<dd markdown="1">Enable this flag if you're seeing more layouts
-    than you expect (for example, on the timeline, on a profile,
-    or from a `print` statement inside a layout method).
-    Once enabled, the console is flooded with stack traces
-    showing why each render object is being marked dirty for
-    layout. You can use the `debugPrintStack()` method from the
-    `services` library to print your own stack traces on demand,
-    if this kind of approach is useful to you.
-<dt markdown="1">[`debugPrintMarkNeedsPaintStacks`][]</dt>
-<dd markdown="1">Similar to `debugPrintMarkNeedsLayoutStacks`,
-    but for excess painting. You can use the `debugPrintStack()`
-    method from the `services` library to print your own stack
-    traces on demand, if this kind of approach is useful to you.
+    **Render Tree** tab.
+{% endcomment %}
+
+[`debugPaintLayerBordersEnabled`][]</dt>
+: PENDING
+
+[`debugRepaintRainbowEnabled`][]</dt>
+: You can enable this flag in the Flutter
+  inspector by selecting the **Highlight Repaints** button.
+  If any static widgets are rotating through the colors of the rainbow
+  (for example, a static header), those areas are candidates for adding
+  repaint boundaries.
+
+[`debugPrintMarkNeedsLayoutStacks`][]</dt>
+: Enable this flag if you're seeing more layouts
+  than you expect (for example, on the timeline, on a profile,
+  or from a `print` statement inside a layout method).
+  Once enabled, the console is flooded with stack traces
+  showing why each render object is being marked dirty for
+  layout. You can use the `debugPrintStack()` method from the
+  `services` library to print your own stack traces on demand,
+  if this kind of approach is useful to you.
+
+[`debugPrintMarkNeedsPaintStacks`][]</dt>
+: Similar to `debugPrintMarkNeedsLayoutStacks`,
+  but for excess painting. You can use the `debugPrintStack()`
+  method from the `services` library to print your own stack
+  traces on demand, if this kind of approach is useful to you.
 
 ### Tracing Dart code performance
 
@@ -1053,7 +1057,7 @@ effect by using a [`GridPaper`][] widget directly.
 [widget-fill]: {{site.api}}/flutter/widgets/Widget/debugFillProperties.html
 [DiagnosticsProperty]: {{site.api}}/flutter/foundation/DiagnosticsProperty-class.html
 [`setState()`]: {{site.api}}/flutter/widgets/State/setState.html
-[`InkFeature`]: {{site.api}}/flutter/material/InkFeature-class.html
+[`_InkFeature_`]: {{site.api}}/flutter/material/InkFeature-class.html
 [`Material`]: {{site.api}}/flutter/material/Material-class.html
 [Flutter's modes]: {{site.url}}/testing/build-modes
 [profile mode]: {{site.url}}/testing/build-modes#profile
