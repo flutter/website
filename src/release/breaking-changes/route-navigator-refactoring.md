@@ -88,16 +88,16 @@ MaterialApp(
 ```
 
 There are different ways to migrate this change.
-One way is to set the initial route name
-to a fixed value and generate a specific route
-(`FakeSplashRoute` in the above example)
-for the route name.
+One way is to set an explicit value for `MaterialApp.initialRoute`.
+You can then test for this value in place of `isInitialRoute`.
+As `initialRoute` inherits its default value outside of Flutter's scope,
+you must set an explicit value for it.
 
 ```dart
 MaterialApp(
-  initialRouteName: 'fakeSplash',
+  initialRoute: '/', // default value cannot be guaranteed at runtime
   onGenerateRoute: (RouteSetting setting) {
-    if (setting.name == 'fakeSplash')
+    if (setting.name == '/')
       return FakeSplashRoute();
     else
       return RealRoute(setting);
