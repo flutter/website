@@ -6,8 +6,9 @@ description: >
 
 ## Summary
 
-Android 14 introduced nonlinear font scaling to 200%. It may change how your app 
-looks when the user changes the accessiblity text scaling in system preferences.
+Android 14 introduced nonlinear font scaling up to 200%.
+It may change how your app looks when the user changes
+the accessibility text scaling in system preferences.
 
 ## Background
 
@@ -17,20 +18,19 @@ text scaling value in system preferences.
 
 ## Migration guide
 
-As suggested by the 
-[Android 14 feature overview][Android 14 nonlinear font scaling], perform UI 
-testing with the maximum font size enabled (200%) to ensure that your app 
-applies the font sizes correctly and can accommodate larger font sizes without
-impacting usability.
+As the [Android 14 feature overview][Android 14 nonlinear font scaling] suggests,
+test your UI with the maximum font size enabled (200%).
+This should verify that your app can apply the font sizes correctly
+and can accommodate larger font sizes without impacting usability.
 
-Consider migrating from `textScaleFactor` to `TextScaler` following this 
-migration guide: [Deprecate `textScaleFactor` in favor of `TextScaler`][], to
-adopt nonlinear font scaling in your app and custom widgets.
+To adopt nonlinear font scaling in your app and custom widgets,
+consider migrating from `textScaleFactor` to `TextScaler`.
+This migration guide outlines the process:
+[Deprecate `textScaleFactor` in favor of `TextScaler`][], .
 
 **Temporarily Opting Out**
-If you want to temporarily opt-out of nonlinear text scaling on Android 14 until 
-your app is fully migrated, put a modified `MediaQuery` at the top of your app's 
-widget tree:
+To opt-out of nonlinear text scaling on Android 14 until you migrate your app,
+add a modified `MediaQuery` at the top of your app's widget tree:
 
 ```dart 
 runApp(
@@ -42,8 +42,8 @@ runApp(
   }),
 );
 ```
-This trick uses the deprecated `textScaleFactor` API and will stop working once
-it's removed from the Flutter API.
+This uses the deprecated `textScaleFactor` API.
+It will stop working once that API is removed from the Flutter API.
 
 ## Timeline
 
