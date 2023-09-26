@@ -170,7 +170,7 @@ storeFile=<keystore-file-location>
 
 The `storeFile` might be located at
 `/Users/<user name>/upload-keystore.jks` on macOS
-or `C:\\Users\\<user name>\\upload-keystore.jks` on Windows.
+or `C:/Users/<user name>/upload-keystore.jks` on Windows.
 
 {{site.alert.warning}}
   Keep the `key.properties` file private;
