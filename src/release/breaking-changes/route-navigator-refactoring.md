@@ -95,7 +95,7 @@ you must set an explicit value for it.
 
 ```dart
 MaterialApp(
-  initialRoute: '/', // default value cannot be guaranteed at runtime
+  initialRoute: '/', // Set this value explicitly. Default might be altered.
   onGenerateRoute: (RouteSetting setting) {
     if (setting.name == '/')
       return FakeSplashRoute();
