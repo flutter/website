@@ -36,17 +36,15 @@ Run `flutter attach` or `flutter attach -d deviceId` to attach from the terminal
 
 ```terminal
 $ flutter attach
-Syncing files to device iPhone 14 Pro...
+Syncing files to device iPhone 15 Pro...
  7,738ms (!)
 
-:fire: To hot reload changes while running, press "r". To hot restart (and
-rebuild state), press "R".
-
-An Observatory debugger and profiler on iPhone 14 Pro is available at:
+To hot reload the changes while running, press "r".
+To hot restart (and rebuild state). press "R".
+An Observatory debugger and profiler on iPhone 15 Pro is available at:
 http://127.0.0.1:65525/EXmCgco5zjo=/
-For a more detailed help message, press "h". To detach, press "d"; to quit,
-press "q"
-
+For a more detailed help message, press "h".
+To detach, press "d"; to quit, press "q".
 ```
 
 ## Debug in iOS code in VS Code and Xcode
