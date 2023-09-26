@@ -253,7 +253,7 @@ you call `toStringDeep()` on the root of the widget tree.)
 You'll see a lot of widgets in there that don't appear in your
 application's source, because they are inserted by the framework's
 widgets' build functions. For example,
-[`_InkFeature_`][] is an implementation detail of the [`Material`][] widget.
+[`_InkFeature`][] is an implementation detail of the [`Material`][] widget.
 
 Since the `debugDumpApp()` call is invoked when the button changes
 from being pressed to being released, it coincides with the
@@ -287,7 +287,7 @@ To call `debugDumpRenderTree()`, you need to add `import
 The output for the previous tiny example would look something like
 the following:
 
-```
+```nocode
 I/flutter ( 6559): RenderView
 I/flutter ( 6559):  │ debug mode enabled - android
 I/flutter ( 6559):  │ window size: Size(1080.0, 1794.0) (in physical pixels)
@@ -760,7 +760,7 @@ extensive logging when the focus changes.
 
 You can also obtain a dump of the Semantics tree
 (the tree presented to the system accessibility APIs) using
-[`debugDumpSemanticsTree()`][].  To use this,
+[`debugDumpSemanticsTree()`][]. To use this,
 you have to have first enable accessibility, for example, by
 enabling a system accessibility tool or the `SemanticsDebugger`.
 
@@ -878,18 +878,19 @@ result in asserts and generally interfere with your efforts.
 Flutter provides a wide variety of debug flags and functions
 to help you debug your app at various points along the
 development cycle. To use these features, you must compile
-in debug mode.  The following list, while not complete,
+in debug mode. The following list, while not complete,
 highlights some of flags (and one function) from the
 [rendering library][] for debugging performance issues.
 
-You can set these flags either by editing the framework code,
-or by importing the module and setting the value in your
-`main()` method, following by a hot restart.
+To set these flags either:
 
-[`debugDumpRenderTree()`][]</dt>
+* edit the framework code
+* import the module and set the value in your `main()` method then hot restart.
+
+[`debugDumpRenderTree()`][]
 : Call this function when not in a layout or repaint
   phase to dump the rendering tree to the console.
-  (Pressing **t** from `flutter run` calls this command.)
+  (Press <kbd>t</kbd> from `flutter run` to call this command.)
   Search for "RepaintBoundary" to see diagnostics
   on how useful a boundary is.
 
@@ -900,27 +901,26 @@ or by importing the module and setting the value in your
     **Render Tree** tab.
 {% endcomment %}
 
-[`debugPaintLayerBordersEnabled`][]</dt>
-: PENDING
+[`debugPaintLayerBordersEnabled`][]
+: Enable this flag if you need to see the boundaries of each layer.
+  When enabled, each layer paints a box around its boundary.
 
-[`debugRepaintRainbowEnabled`][]</dt>
-: You can enable this flag in the Flutter
-  inspector by selecting the **Highlight Repaints** button.
-  If any static widgets are rotating through the colors of the rainbow
-  (for example, a static header), those areas are candidates for adding
-  repaint boundaries.
+[`debugRepaintRainbowEnabled`][]
+: To enable this flag in the Flutter inspector, click **Highlight Repaints**.
+  If any static widgets are rotating through the colors of the rainbow,
+  consider adding repaint boundaries to those areas.
 
-[`debugPrintMarkNeedsLayoutStacks`][]</dt>
+[`debugPrintMarkNeedsLayoutStacks`][]
 : Enable this flag if you're seeing more layouts
   than you expect (for example, on the timeline, on a profile,
   or from a `print` statement inside a layout method).
-  Once enabled, the console is flooded with stack traces
-  showing why each render object is being marked dirty for
-  layout. You can use the `debugPrintStack()` method from the
+  When enabled, the console shows stack traces that explain why each
+  the inspector marked each render object as dirty for layout.
+  You can use the `debugPrintStack()` method from the
   `services` library to print your own stack traces on demand,
-  if this kind of approach is useful to you.
+  if this helps you.
 
-[`debugPrintMarkNeedsPaintStacks`][]</dt>
+[`debugPrintMarkNeedsPaintStacks`][]
 : Similar to `debugPrintMarkNeedsLayoutStacks`,
   but for excess painting. You can use the `debugPrintStack()`
   method from the `services` library to print your own stack
@@ -999,7 +999,7 @@ or `WidgetsApp`, you can get the same effect by wrapping your
 application in a stack and putting a widget on your stack that was
 created by calling [`PerformanceOverlay.allEnabled()`][].)
 
-For information on how to interpret the graphs in the overlay,
+TO learn how to interpret the graphs in the overlay,
 see [The performance overlay][] in
 [Profiling Flutter performance][].
 
@@ -1016,14 +1016,12 @@ effect by using a [`GridPaper`][] widget directly.
 
 
 [`GridPaper`]: {{site.api}}/flutter/widgets/GridPaper-class.html
-[Material Design]: {{site.material}}/styles
 [`MaterialApp` constructor]: {{site.api}}/flutter/material/MaterialApp/MaterialApp.html
 [Material Design baseline grid]: {{site.material}}/foundations/layout/understanding-layout/spacing
 [`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp/MaterialApp.html
 [`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
 [`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
 [`PerformanceOverlay.allEnabled()`]: {{site.api}}/flutter/widgets/PerformanceOverlay/PerformanceOverlay.allEnabled.html
-[tracing tool]: https://www.chromium.org/developers/how-tos/trace-event-profiling-tool
 [systrace]: {{site.android-dev}}/studio/profile/systrace
 [Timeline]: {{site.dart.api}}/stable/dart-developer/Timeline-class.html
 [`timeDilation`]: {{site.api}}/flutter/scheduler/timeDilation.html
@@ -1057,16 +1055,13 @@ effect by using a [`GridPaper`][] widget directly.
 [widget-fill]: {{site.api}}/flutter/widgets/Widget/debugFillProperties.html
 [DiagnosticsProperty]: {{site.api}}/flutter/foundation/DiagnosticsProperty-class.html
 [`setState()`]: {{site.api}}/flutter/widgets/State/setState.html
-[`_InkFeature_`]: {{site.api}}/flutter/material/InkFeature-class.html
+[`_InkFeature`]: {{site.api}}/flutter/material/InkFeature-class.html
 [`Material`]: {{site.api}}/flutter/material/Material-class.html
-[Flutter's modes]: {{site.url}}/testing/build-modes
 [profile mode]: {{site.url}}/testing/build-modes#profile
 [debug mode]: {{site.url}}/testing/build-modes#debug
-[release mode]: {{site.url}}/testing/build-modes#release
 [DevTools]: {{site.url}}/tools/devtools
 [Flutter inspector]: {{site.url}}/tools/devtools/inspector
 [Logging view]: {{site.url}}/tools/devtools/logging
-[Flutter enabled IDE/editor]: {{site.url}}/get-started/editor
 [`log()`]: {{site.api}}/flutter/dart-developer/log.html
 [Timeline events tab]: {{site.url}}/tools/devtools/performance#timeline-events-tab
 [Debugger]: {{site.url}}/tools/devtools/debugger
@@ -1076,3 +1071,9 @@ effect by using a [`GridPaper`][] widget directly.
 [Debugging]: {{site.url}}/testing/debugging
 [file an issue]: {{site.github}}/flutter/devtools/issues
 [rendering library]: {{site.api}}/flutter/rendering/rendering-library.html
+
+[Flutter's modes]: {{site.url}}/testing/build-modes
+[Material Design]: {{site.material}}/styles
+[tracing tool]: https://www.chromium.org/developers/how-tos/trace-event-profiling-tool
+[release mode]: {{site.url}}/testing/build-modes#release
+[Flutter enabled IDE/editor]: {{site.url}}/get-started/editor
