@@ -167,11 +167,14 @@ class AppHome extends StatelessWidget {
 }
 ```
 
-The previous app outputs something like the following
-(the precise details vary by the version of the framework,
-the size of the device, and so forth):
+The previous app outputs resembles the following.
+The precise details vary by the version of the framework,
+the size of the device, and so forth.
 
-```
+<details>
+<summary>Layer Tree for previous example</summary>
+
+```nocode
 I/flutter ( 6559): WidgetsFlutterBinding - CHECKED MODE
 I/flutter ( 6559): RenderObjectToWidgetAdapter<RenderBox>([GlobalObjectKey RenderView(497039273)]; renderObject: RenderView)
 I/flutter ( 6559): └MaterialApp(state: _MaterialAppState(1009803148))
@@ -225,7 +228,7 @@ I/flutter ( 6559):                                       └DecoratedBox(renderO
 I/flutter ( 6559):                                        └Container(bg: BoxDecoration(backgroundColor: Color(0xfffafafa)))
 I/flutter ( 6559):                                         └DecoratedBox(renderObject: RenderDecoratedBox)
 I/flutter ( 6559):                                          └NotificationListener<LayoutChangedNotification>()
-I/flutter ( 6559):                                           └_InkFeature([GlobalKey ink renderer]; renderObject: _RenderInkFeatures)
+I/flutter ( 6559):                                           └_InkFeatures([GlobalKey ink renderer]; renderObject: _RenderInkFeatures)
 I/flutter ( 6559):                                            └AnimatedDefaultTextStyle(duration: 200ms; inherit: false; color: Color(0xdd000000); family: "Roboto"; size: 14.0; weight: 400; baseline: alphabetic; state: _AnimatedDefaultTextStyleState(427742350; ticker inactive))
 I/flutter ( 6559):                                             └DefaultTextStyle(inherit: false; color: Color(0xdd000000); family: "Roboto"; size: 14.0; weight: 400; baseline: alphabetic)
 I/flutter ( 6559):                                              └Center(alignment: Alignment.center; renderObject: RenderPositionedBox)
@@ -246,6 +249,7 @@ I/flutter ( 6559):                                                            �
 I/flutter ( 6559):                                                             └Text("Dump App")
 I/flutter ( 6559):                                                              └RichText(renderObject: RenderParagraph relayoutBoundary=up6)
 ```
+</details>
 
 This is the "flattened" tree, showing all the widgets projected
 through their various build functions. (This is the tree you obtain if
@@ -253,7 +257,7 @@ you call `toStringDeep()` on the root of the widget tree.)
 You'll see a lot of widgets in there that don't appear in your
 application's source, because they are inserted by the framework's
 widgets' build functions. For example,
-[`_InkFeature`][] is an implementation detail of the [`Material`][] widget.
+[`_InkFeatures`][] is an implementation detail of the [`Material`][] widget.
 
 Since the `debugDumpApp()` call is invoked when the button changes
 from being pressed to being released, it coincides with the
@@ -286,6 +290,9 @@ To call `debugDumpRenderTree()`, you need to add `import
 
 The output for the previous tiny example would look something like
 the following:
+
+<details>
+<summary>Layer Tree for previous example</summary>
 
 ```nocode
 I/flutter ( 6559): RenderView
@@ -498,7 +505,7 @@ I/flutter ( 6559):            ╎               │   PlatformAssetBundle@367106
 I/flutter ( 6559):            ╎               │   platform: android)
 I/flutter ( 6559):            ╎               │
 I/flutter ( 6559):            ╎               └─child: _RenderInkFeatures
-I/flutter ( 6559):            ╎                 │ creator: _InkFeature-[GlobalKey ink renderer] ←
+I/flutter ( 6559):            ╎                 │ creator: _InkFeatures-[GlobalKey ink renderer] ←
 I/flutter ( 6559):            ╎                 │   NotificationListener<LayoutChangedNotification> ← DecoratedBox
 I/flutter ( 6559):            ╎                 │   ← Container ← DecoratedBox ← Container ← AnimatedContainer ←
 I/flutter ( 6559):            ╎                 │   Material ← AppHome ← _ModalScopeStatus ← PageStorage-[GlobalKey
@@ -509,7 +516,7 @@ I/flutter ( 6559):            ╎                 │ size: Size(411.4, 683.4)
 I/flutter ( 6559):            ╎                 │
 I/flutter ( 6559):            ╎                 └─child: RenderPositionedBox
 I/flutter ( 6559):            ╎                   │ creator: Center ← DefaultTextStyle ← AnimatedDefaultTextStyle ←
-I/flutter ( 6559):            ╎                   │   _InkFeature-[GlobalKey ink renderer] ←
+I/flutter ( 6559):            ╎                   │   _InkFeatures-[GlobalKey ink renderer] ←
 I/flutter ( 6559):            ╎                   │   NotificationListener<LayoutChangedNotification> ← DecoratedBox
 I/flutter ( 6559):            ╎                   │   ← Container ← DecoratedBox ← Container ← AnimatedContainer ←
 I/flutter ( 6559):            ╎                   │   Material ← AppHome ← ⋯
@@ -523,7 +530,7 @@ I/flutter ( 6559):            ╎                   │
 I/flutter ( 6559):            ╎                   └─child: RenderConstrainedBox relayoutBoundary=up1
 I/flutter ( 6559):            ╎                     │ creator: ConstrainedBox ← MaterialButton ← TextButton ← Center ←
 I/flutter ( 6559):            ╎                     │   DefaultTextStyle ← AnimatedDefaultTextStyle ←
-I/flutter ( 6559):            ╎                     │   _InkFeature-[GlobalKey ink renderer] ←
+I/flutter ( 6559):            ╎                     │   _InkFeatures-[GlobalKey ink renderer] ←
 I/flutter ( 6559):            ╎                     │   NotificationListener<LayoutChangedNotification> ← DecoratedBox
 I/flutter ( 6559):            ╎                     │   ← Container ← DecoratedBox ← Container ← ⋯
 I/flutter ( 6559):            ╎                     │ parentData: offset=Offset(156.7, 323.7)
@@ -594,6 +601,7 @@ I/flutter ( 6559):            ╎
 I/flutter ( 6559):            └╌no offstage children
 
 ```
+</details>
 
 This is the output of the root `RenderObject` object's
 `toStringDeep()` function.
@@ -644,7 +652,9 @@ objects to the method's argument, and call the superclass method.
 
 If you are trying to debug a compositing issue, you can use
 [`debugDumpLayerTree()`][].
-For the previous example, it would output:
+
+<details>
+<summary>Layer Tree for previous example</summary>
 
 ```nocode
 I/flutter : TransformLayer
@@ -746,6 +756,8 @@ I/flutter :                    └─Child 1: FocusScopeNode#3c26f(_ModalScopeSt
 I/flutter :                        context: FocusScope
 I/flutter :                        PRIMARY FOCUS
 ```
+
+</details>
 
 The focused node is labeled `PRIMARY FOCUS`. Ancestors of the focus nodes are
 labeled `IN FOCUS PATH`.
@@ -1055,7 +1067,7 @@ effect by using a [`GridPaper`][] widget directly.
 [widget-fill]: {{site.api}}/flutter/widgets/Widget/debugFillProperties.html
 [DiagnosticsProperty]: {{site.api}}/flutter/foundation/DiagnosticsProperty-class.html
 [`setState()`]: {{site.api}}/flutter/widgets/State/setState.html
-[`_InkFeature`]: {{site.api}}/flutter/material/InkFeature-class.html
+[`_InkFeatures`]: {{site.api}}/flutter/material/InkFeature-class.html
 [`Material`]: {{site.api}}/flutter/material/Material-class.html
 [profile mode]: {{site.url}}/testing/build-modes#profile
 [debug mode]: {{site.url}}/testing/build-modes#debug
