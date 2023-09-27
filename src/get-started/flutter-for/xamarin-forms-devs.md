@@ -2419,7 +2419,7 @@ To log in with Facebook, use the
 Most Firebase functions are covered by [first party plugins][].
 These plugins are first-party integrations, maintained by the Flutter team:
 
- * [`google_mobile_ads `][] for Google Mobile Ads for Flutter
+ * [`google_mobile_ads`][] for Google Mobile Ads for Flutter
  * [`firebase_analytics`][] for Firebase Analytics
  * [`firebase_auth`][] for Firebase Auth
  * [`firebase_database`][] for Firebase RTDB
