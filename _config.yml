@@ -85,6 +85,7 @@ appnow:
   vscode: '1.81.1'
   android_studio: '2022.3.1 (Giraffe)'
   android_sdk: '33.0.0'
+  intellij: '2023.1'
   powershell: 5.0
   xcode: '15'
   ios: '17'

@@ -23,6 +23,9 @@ target-list: [Desktop, Mobile, Web]
           {% endif -%}
         </span>
         <span class="text-muted text-nowrap">{{target}}</span>
+        {% if icon == 'mobile' -%}
+           Recommended
+        {% endif -%}
       </header>
     </div>
   </a>

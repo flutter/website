@@ -20,31 +20,6 @@
    {% assign prompt1='$' %}
    {% assign prompt2='$' %}
 {% endif -%}
-{% if target == 'web' %}
-   {% assign limiter = '--no-enable-linux-desktop --no-enable-macos-desktop --no-enable-windows-desktop --no-enable-android --no-enable-ios' %}
-   {% capture limitresponse -%}
-      Setting "enable-linux-desktop" value to "false".
-      Setting "enable-macos-desktop" value to "false".
-      Setting "enable-windows-desktop" value to "false".
-      Setting "enable-android" value to "false".
-      Setting "enable-ios" value to "false".
-   {% endcapture %}
-{% elsif target == 'mobile' %}
-   {% assign limiter = '--no-enable-web --no-enable-linux-desktop --no-enable-macos-desktop --no-enable-windows-desktop' %}
-   {% capture limitresponse -%}
-      Setting "enable-web" value to "false".
-      Setting "enable-linux-desktop" value to "false".
-      Setting "enable-macos-desktop" value to "false".
-      Setting "enable-windows-desktop" value to "false".
-   {% endcapture %}
-{% elsif target == 'desktop' %}
-   {% assign limiter = '--no-enable-web --no-enable-android --no-enable-ios' %}
-   {% capture limitresponse -%}
-      Setting "enable-web" value to "false".
-      Setting "enable-android" value to "false".
-      Setting "enable-ios" value to "false".
-   {% endcapture %}
-{% endif %}
 
 ### Run Flutter Doctor
 
