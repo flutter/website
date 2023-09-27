@@ -134,7 +134,8 @@ the middle of running a build phase (in other words, not anywhere inside a
 `build()` method), if the app has built at least once and is in debug mode
 (in other words, any time after calling `runApp()`).
 
-For example, the following application:
+#### Example 1
+{:.no_toc}
 
 <?code-excerpt "lib/dump_app.dart"?>
 ```dart
@@ -167,12 +168,15 @@ class AppHome extends StatelessWidget {
 }
 ```
 
-The previous app outputs resembles the following.
+This application produces the following widget tree.
+
+<details markdown="1">
+<summary><strong>
+Expand the widget tree for Example 1
+</strong></summary>
+
 The precise details vary by the version of the framework,
 the size of the device, and so forth.
-
-<details>
-<summary>Layer Tree for previous example</summary>
 
 ```nocode
 I/flutter ( 6559): WidgetsFlutterBinding - CHECKED MODE
@@ -249,6 +253,7 @@ I/flutter ( 6559):                                                            �
 I/flutter ( 6559):                                                             └Text("Dump App")
 I/flutter ( 6559):                                                              └RichText(renderObject: RenderParagraph relayoutBoundary=up6)
 ```
+
 </details>
 
 This is the "flattened" tree, showing all the widgets projected
@@ -278,8 +283,8 @@ widget's description.
 ### Render tree
 
 If you are trying to debug a layout issue, then the Widgets layer's
-tree might be insufficiently detailed. In that case, you can dump the
-rendering tree by calling [`debugDumpRenderTree()`][].
+tree might be insufficiently detailed. To dump the rendering tree,
+call the [`debugDumpRenderTree()`][] method.
 As with `debugDumpApp()`, you can call this more or less any time
 except during a layout or paint phase. As a general rule,
 calling it from a [frame callback][]
@@ -288,11 +293,10 @@ or an event handler is the best solution.
 To call `debugDumpRenderTree()`, you need to add `import
 'package:flutter/rendering.dart';` to your source file.
 
-The output for the previous tiny example would look something like
-the following:
-
-<details>
-<summary>Layer Tree for previous example</summary>
+<details markdown="1">
+<summary><strong>
+Expand the render tree for Example 1
+</strong></summary>
 
 ```nocode
 I/flutter ( 6559): RenderView
@@ -599,8 +603,8 @@ I/flutter ( 6559):            ╎                                 ║   "Dump Ap
 I/flutter ( 6559):            ╎                                 ╚═══════════
 I/flutter ( 6559):            ╎
 I/flutter ( 6559):            └╌no offstage children
-
 ```
+
 </details>
 
 This is the output of the root `RenderObject` object's
@@ -653,8 +657,8 @@ objects to the method's argument, and call the superclass method.
 If you are trying to debug a compositing issue, you can use
 [`debugDumpLayerTree()`][].
 
-<details>
-<summary>Layer Tree for previous example</summary>
+<details markdown="1">
+<summary>Expand the layer tree for Example 1</summary>
 
 ```nocode
 I/flutter : TransformLayer
@@ -675,6 +679,8 @@ I/flutter :  │
 I/flutter :  └─child 2: PictureLayer
 ```
 
+</details>
+
 This is the output of calling `toStringDeep` on the root `Layer` object.
 
 The transform at the root is the transform that applies the device
@@ -687,10 +693,16 @@ used to reduce how much needs to be repainted.
 
 ### Focus tree
 
-To debug a focus or shortcut issue, you can dump the focus tree
-using [`debugDumpFocusTree()`][].
+To debug a focus or shortcut issue, dump the focus tree
+using the [`debugDumpFocusTree()`][] method.
 
-For example:
+#### Example 4: Focus tree dump
+{:.no_toc}
+
+The `debugDumpFocusTree()` method returns the focus tree for the app.
+
+<details markdown="1">
+<summary>Expand the focus tree for Example 1</summary>
 
 ```nocode
 I/flutter : FocusManager#6fb59
@@ -770,13 +782,17 @@ extensive logging when the focus changes.
 
 ### Semantics tree
 
-You can also obtain a dump of the Semantics tree
-(the tree presented to the system accessibility APIs) using
-[`debugDumpSemanticsTree()`][]. To use this,
-you have to have first enable accessibility, for example, by
-enabling a system accessibility tool or the `SemanticsDebugger`.
+To obtain a dump of the Semantics tree
+(the tree presented to the system accessibility APIs), use the
+[`debugDumpSemanticsTree()`][] method.
+To use this, first enable accessibility.
+To enable accessibility, use a system accessibility tool
+or the `SemanticsDebugger`.
 
-For the previous example, it would output the following:
+The `debugDumpSemanticsTree()` method returns the semantic tree for the app.
+
+<details markdown="1">
+<summary><strong>Expand the semantic tree for Example 1</strong></summary>
 
 ```nocode
 I/flutter : SemanticsNode(0; Rect.fromLTRB(0.0, 0.0, 411.4, 683.4))
@@ -785,6 +801,8 @@ I/flutter :  │ └SemanticsNode(2; Rect.fromLTRB(0.0, 0.0, 411.4, 683.4); canB
 I/flutter :  └SemanticsNode(3; Rect.fromLTRB(0.0, 0.0, 411.4, 683.4))
 I/flutter :    └SemanticsNode(4; Rect.fromLTRB(0.0, 0.0, 82.0, 36.0); canBeTapped; "Dump App")
 ```
+
+</details>
 
 <!-- this tree is bad, see {{site.repo.flutter}}/issues/2476 -->
 
@@ -795,7 +813,7 @@ begin/end, you can toggle the [`debugPrintBeginFrameBanner`][]
 and the [`debugPrintEndFrameBanner`][] booleans to print the
 beginning and end of the frames to the console.
 
-For example:
+**The print frame banner log for Example 1**
 
 ```nocode
 I/flutter : ▄▄▄▄▄▄▄▄ Frame 12         30s 437.086ms ▄▄▄▄▄▄▄▄
@@ -814,7 +832,12 @@ You can also debug a layout problem visually, by setting
 This is a boolean from the `rendering` library. It can be
 enabled at any time and affects all painting while it is true.
 The easiest way to set it is at the top of your `void main()`
-entry point. See an example in the following code:
+entry point.
+
+#### Example 2
+{:.no_toc}
+
+See an example in the following code:
 
 <?code-excerpt "lib/debug_flags.dart (debugPaintSizeEnabled)"?>
 ```dart
@@ -985,8 +1008,11 @@ setting the `showPerformanceOverlay` property to `true` on the
 [`MaterialApp`][], [`CupertinoApp`][], or [`WidgetsApp`][]
 constructor:
 
+#### Example 3
+{:.no_toc}
+
 <?code-excerpt "lib/performance_overlay.dart (PerfOverlay)" replace="/showPerformanceOverlay: true,/[[highlight]]$&[[\/highlight]]/g"?>
-{% prettify dart %}
+```dart
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -1004,7 +1030,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-{% endprettify %}
+```
 
 (If you're not using `MaterialApp`, `CupertinoApp`,
 or `WidgetsApp`, you can get the same effect by wrapping your
@@ -1026,66 +1052,59 @@ help verify alignments by using the
 In non-Material applications, you can achieve a similar
 effect by using a [`GridPaper`][] widget directly.
 
-
+[Debugger]: {{site.url}}/tools/devtools/debugger
+[Debugging]: {{site.url}}/testing/debugging
+[DevTools]: {{site.url}}/tools/devtools
+[DiagnosticsProperty]: {{site.api}}/flutter/foundation/DiagnosticsProperty-class.html
+[Flutter inspector]: {{site.url}}/tools/devtools/inspector
+[Inspector view]: {{site.url}}/tools/devtools/inspector
+[Logging view]: {{site.url}}/tools/devtools/logging
+[Material Design baseline grid]: {{site.material}}/foundations/layout/understanding-layout/spacing
+[Profiling Flutter performance]: {{site.url}}/perf/ui-performance
+[The performance overlay]: {{site.url}}/perf/ui-performance#the-performance-overlay
+[Timeline events tab]: {{site.url}}/tools/devtools/performance#timeline-events-tab
+[Timeline]: {{site.dart.api}}/stable/dart-developer/Timeline-class.html
+[`Center`]: {{site.api}}/flutter/widgets/Center-class.html
+[`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
+[`Focus`]: {{site.api}}/flutter/widgets/Focus-class.html
 [`GridPaper`]: {{site.api}}/flutter/widgets/GridPaper-class.html
 [`MaterialApp` constructor]: {{site.api}}/flutter/material/MaterialApp/MaterialApp.html
-[Material Design baseline grid]: {{site.material}}/foundations/layout/understanding-layout/spacing
 [`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp/MaterialApp.html
-[`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
-[`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
+[`Material`]: {{site.api}}/flutter/material/Material-class.html
 [`PerformanceOverlay.allEnabled()`]: {{site.api}}/flutter/widgets/PerformanceOverlay/PerformanceOverlay.allEnabled.html
-[systrace]: {{site.android-dev}}/studio/profile/systrace
-[Timeline]: {{site.dart.api}}/stable/dart-developer/Timeline-class.html
-[`timeDilation`]: {{site.api}}/flutter/scheduler/timeDilation.html
-[`Focus`]: {{site.api}}/flutter/widgets/Focus-class.html
-[`debugLabel`]: {{site.api}}/flutter/widgets/Focus/debugLabel.html
-[`debugPrintMarkNeedsLayoutStacks`]: {{site.api}}/flutter/rendering/debugPrintMarkNeedsLayoutStacks.html
-[`debugPrintMarkNeedsPaintStacks`]: {{site.api}}/flutter/rendering/debugPrintMarkNeedsPaintStacks.html
-[`debugRepaintRainbowEnabled`]: {{site.api}}/flutter/rendering/debugRepaintRainbowEnabled.html
-[`debugPaintLayerBordersEnabled`]: {{site.api}}/flutter/rendering/debugPaintLayerBordersEnabled.html
-[`debugPaintPointersEnabled`]: {{site.api}}/flutter/rendering/debugPaintPointersEnabled.html
-[`debugPaintBaselinesEnabled`]: {{site.api}}/flutter/rendering/debugPaintBaselinesEnabled.html
-[`debugPaintSizeEnabled`]: {{site.api}}/flutter/rendering/debugPaintSizeEnabled.html
-[`debugPrintScheduleFrameStacks`]: {{site.api}}/flutter/scheduler/debugPrintScheduleFrameStacks.html
-[`debugPrintBeginFrameBanner`]: {{site.api}}/flutter/scheduler/debugPrintBeginFrameBanner.html
-[`debugPrintEndFrameBanner`]: {{site.api}}/flutter/scheduler/debugPrintEndFrameBanner.html
-[`debugFocusChanges`]: {{site.api}}/flutter/widgets/debugFocusChanges.html
-[`debugDumpSemanticsTree()`]: {{site.api}}/flutter/rendering/debugDumpSemanticsTree.html
-[`debugDumpRenderTree()`]: {{site.api}}/flutter/rendering/debugDumpRenderTree.html
-[`debugDumpLayerTree()`]: {{site.api}}/flutter/rendering/debugDumpLayerTree.html
-[`debugDumpFocusTree()`]: {{site.api}}/flutter/widgets/debugDumpFocusTree.html
-[`debugDumpApp()`]: {{site.api}}/flutter/widgets/debugDumpApp.html
-[`debugPrint()`]: {{site.api}}/flutter/foundation/debugPrint.html
+[`RenderConstrainedBox`]: {{site.api}}/flutter/rendering/RenderConstrainedBox-class.html
+[`RenderPadding`]: {{site.api}}/flutter/rendering/RenderPadding-class.html
 [`RenderParagraph`]: {{site.api}}/flutter/rendering/RenderParagraph-class.html
 [`RenderPositionedBox`]: {{site.api}}/flutter/rendering/RenderPositionedBox-class.html
-[`Center`]: {{site.api}}/flutter/widgets/Center-class.html
-[`RenderPadding`]: {{site.api}}/flutter/rendering/RenderPadding-class.html
-[`RenderConstrainedBox`]: {{site.api}}/flutter/rendering/RenderConstrainedBox-class.html
 [`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
-[frame callback]: {{site.api}}/flutter/scheduler/SchedulerBinding/addPersistentFrameCallback.html
-[render-fill]: {{site.api}}/flutter/rendering/Layer/debugFillProperties.html
-[widget-fill]: {{site.api}}/flutter/widgets/Widget/debugFillProperties.html
-[DiagnosticsProperty]: {{site.api}}/flutter/foundation/DiagnosticsProperty-class.html
-[`setState()`]: {{site.api}}/flutter/widgets/State/setState.html
+[`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
 [`_InkFeatures`]: {{site.api}}/flutter/material/InkFeature-class.html
-[`Material`]: {{site.api}}/flutter/material/Material-class.html
-[profile mode]: {{site.url}}/testing/build-modes#profile
-[debug mode]: {{site.url}}/testing/build-modes#debug
-[DevTools]: {{site.url}}/tools/devtools
-[Flutter inspector]: {{site.url}}/tools/devtools/inspector
-[Logging view]: {{site.url}}/tools/devtools/logging
+[`debugDumpApp()`]: {{site.api}}/flutter/widgets/debugDumpApp.html
+[`debugDumpFocusTree()`]: {{site.api}}/flutter/widgets/debugDumpFocusTree.html
+[`debugDumpLayerTree()`]: {{site.api}}/flutter/rendering/debugDumpLayerTree.html
+[`debugDumpRenderTree()`]: {{site.api}}/flutter/rendering/debugDumpRenderTree.html
+[`debugDumpSemanticsTree()`]: {{site.api}}/flutter/rendering/debugDumpSemanticsTree.html
+[`debugFocusChanges`]: {{site.api}}/flutter/widgets/debugFocusChanges.html
+[`debugLabel`]: {{site.api}}/flutter/widgets/Focus/debugLabel.html
+[`debugPaintBaselinesEnabled`]: {{site.api}}/flutter/rendering/debugPaintBaselinesEnabled.html
+[`debugPaintLayerBordersEnabled`]: {{site.api}}/flutter/rendering/debugPaintLayerBordersEnabled.html
+[`debugPaintPointersEnabled`]: {{site.api}}/flutter/rendering/debugPaintPointersEnabled.html
+[`debugPaintSizeEnabled`]: {{site.api}}/flutter/rendering/debugPaintSizeEnabled.html
+[`debugPrint()`]: {{site.api}}/flutter/foundation/debugPrint.html
+[`debugPrintBeginFrameBanner`]: {{site.api}}/flutter/scheduler/debugPrintBeginFrameBanner.html
+[`debugPrintEndFrameBanner`]: {{site.api}}/flutter/scheduler/debugPrintEndFrameBanner.html
+[`debugPrintMarkNeedsLayoutStacks`]: {{site.api}}/flutter/rendering/debugPrintMarkNeedsLayoutStacks.html
+[`debugPrintMarkNeedsPaintStacks`]: {{site.api}}/flutter/rendering/debugPrintMarkNeedsPaintStacks.html
+[`debugPrintScheduleFrameStacks`]: {{site.api}}/flutter/scheduler/debugPrintScheduleFrameStacks.html
+[`debugRepaintRainbowEnabled`]: {{site.api}}/flutter/rendering/debugRepaintRainbowEnabled.html
 [`log()`]: {{site.api}}/flutter/dart-developer/log.html
-[Timeline events tab]: {{site.url}}/tools/devtools/performance#timeline-events-tab
-[Debugger]: {{site.url}}/tools/devtools/debugger
-[Inspector view]: {{site.url}}/tools/devtools/inspector
-[The performance overlay]: {{site.url}}/perf/ui-performance#the-performance-overlay
-[Profiling Flutter performance]: {{site.url}}/perf/ui-performance
-[Debugging]: {{site.url}}/testing/debugging
+[`setState()`]: {{site.api}}/flutter/widgets/State/setState.html
+[`timeDilation`]: {{site.api}}/flutter/scheduler/timeDilation.html
+[debug mode]: {{site.url}}/testing/build-modes#debug
 [file an issue]: {{site.github}}/flutter/devtools/issues
+[frame callback]: {{site.api}}/flutter/scheduler/SchedulerBinding/addPersistentFrameCallback.html
+[profile mode]: {{site.url}}/testing/build-modes#profile
+[render-fill]: {{site.api}}/flutter/rendering/Layer/debugFillProperties.html
 [rendering library]: {{site.api}}/flutter/rendering/rendering-library.html
-
-[Flutter's modes]: {{site.url}}/testing/build-modes
-[Material Design]: {{site.material}}/styles
-[tracing tool]: https://www.chromium.org/developers/how-tos/trace-event-profiling-tool
-[release mode]: {{site.url}}/testing/build-modes#release
-[Flutter enabled IDE/editor]: {{site.url}}/get-started/editor
+[systrace]: {{site.android-dev}}/studio/profile/systrace
+[widget-fill]: {{site.api}}/flutter/widgets/Widget/debugFillProperties.html
