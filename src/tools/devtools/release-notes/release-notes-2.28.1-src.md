@@ -7,11 +7,13 @@ To learn more about DevTools, check out the
 
 ## General updates
 
-* Added support for DevTools extensions. This means if you are debugging an app that
-depends on `package:foo`, and `package:foo` provides a DevTools extension, you will
-see a "Foo" tab show up in DevTools that you can use to debug your app. To provide a
-DevTools extension for your pub package, see the getting started guide for 
-[package:devtools_extensions](https://pub.dev/packages/devtools_extensions)!
+* Added support for DevTools extensions.
+  This means if you are debugging an app that depends on `package:foo`, and `package:foo`
+  provides a DevTools extension, you will see a "Foo" tab display in DevTools
+  that you can use to debug your app.
+  To provide a DevTools extension for your pub package,
+  see the getting started guide for
+  [package:devtools_extensions](https://pub.dev/packages/devtools_extensions)!
 
 ![Example DevTools extension](images-2.28.1/example_devtools_extension.png "Example DevTools extension for package:foo_package")
 
