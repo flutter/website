@@ -19,7 +19,7 @@ To learn more about DevTools, check out the
 
 * Fixed theming bug in isolate selector -
   [#6403](https://github.com/flutter/devtools/pull/6403)
-* Fixed multiple isolate bug where main isolate was not reselecting on hot restart - 
+* Fixed isolate bug where main isolate was not reselecting on hot restart - 
   [#6436](https://github.com/flutter/devtools/pull/6436)
 * Show the hot reload button for Dart server apps that support hot reload -
   [#6341](https://github.com/flutter/devtools/pull/6341)
