@@ -4,4 +4,4 @@ steps:
     args:
       - -c
       - |
-        echo "HEY"
+        echo "Updates work"
