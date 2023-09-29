@@ -91,6 +91,9 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        // Provide a Key to this button. This allows finding this
+        // specific button inside the test suite, and tapping it.
+        key: const Key('increment'),
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
