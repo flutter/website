@@ -90,6 +90,7 @@ In your project, create a new directory
 
 <?code-excerpt "integration_test/counter_test.dart (initial)" plaster="none"?>
 ```dart
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:how_to/main.dart';
 import 'package:integration_test/integration_test.dart';
