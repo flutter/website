@@ -12,32 +12,26 @@
 {% endif -%}
 
 1. Download the following installation bundle to get the latest
-   {{site.sdk.channel}} release of the Flutter SDK:
+   {{site.sdk.channel}} release of the Flutter SDK.
 
    [(loading...)](#){:.download-latest-link-{{osl}}.btn.btn-primary}
 
    For other release channels, and older builds,
    check out the [SDK archive][].
 
+1. Create a folder where you can install Flutter.
+
+   Consider `%USERPROFILE%` or `D:\dev`.
+
+   {% include docs/install/admonitions/install-paths.md %}
+
+1. Move the zip file into the directory you want to store the Flutter SDK.
+
 1. Extract the zip file.
 
    ```terminal
-   {{unzip}} [(loading...)](#){:.download-latest-link-{{osl}}}
+   {{unzip}} {:.download-latest-link-{{osl}}}
    ```
-
-1. Move the contained `flutter` directory
-   to where you want to store the Flutter SDK.
-
-   {{site.alert.warning}}
-   Do not install Flutter to a directory or path that meets
-   one or both of the following conditions:
-
-   - The path contains special characters or spaces.
-   - The path requires elevated privileges.
-
-   As an example, `C:\Program Files\` fails both conditions.
-   You could use `%USERPROFILE%\flutter` or `D:\dev\flutter`.
-   {{site.alert.end}}
 
 [SDK archive]: {{site.url}}/release/archive
 
