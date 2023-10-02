@@ -150,8 +150,7 @@ You can learn more about creating platform adaptive apps
 in the following resources:
 
 * [Platform-specific behaviors and adaptations][], a page on this site.
-* [Designing truly adaptive user interfaces][] a blog post and video
-  by Aloïs Deniel, presented at this year's FlutterViking conference.
+* [Designing truly adaptive user interfaces][] a blog post and video by Aloïs Deniel, presented at Flutter Viking 2020 conference.
 * The [Flutter gallery app][] ([repo][]) has been written as an
   adaptive app.
 
@@ -159,7 +158,7 @@ in the following resources:
 [Adaptive layouts, part 2]: {{site.youtube-site}}/watch?v=eikOZzfc0l4&t=11s
 [Building adaptive apps]: {{site.url}}/ui/layout/responsive/building-adaptive-apps
 
-[Designing truly adaptive user interfaces]: https://aloisdeniel.com/#/posts/adaptative-ui
+[Designing truly adaptive user interfaces]: https://www.aloisdeniel.com/blog/designing-truly-adaptative-user-interfaces
 [Flutter gallery app]: {{site.gallery}}
 [Folio source code]: {{site.github}}/gskinnerTeam/flutter-folio
 [gskinner blog]: https://blog.gskinner.com/
