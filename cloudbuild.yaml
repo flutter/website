@@ -4,4 +4,7 @@ steps:
     args:
       - -c
       - |
-        echo "Updates work"
+        echo "$_HEAD_BRANCH, $_BASE_BRANCH, $_HEAD_REPO_URL, $_PR_NUMBER"
+  # - name: gcr.io/flutter-docs-prod/firebase
+  #   entrypoint: bash
+  #   args: ['hosting:channel:deploy', '--project=flutter-docs-prod', '--only=hosting']
