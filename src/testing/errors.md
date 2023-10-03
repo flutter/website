@@ -117,8 +117,8 @@ For example:
 OutlinedButton(
   child: const Text('Click me!'),
   onPressed: () async {
-    const channel = MethodChannel('crashy-custom-channel')
-    await channel.invokeMethod('blah')
+    const channel = MethodChannel('crashy-custom-channel');
+    await channel.invokeMethod('blah');
   },
 )
 ```
