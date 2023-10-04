@@ -9,8 +9,7 @@
 
 - [Android Studio][] {{site.appmin.android_studio}} to debug and compile
   Java or Kotlin code for Android.
-  Flutter requires the full version of Android Studio, the Android SDK,
-  and the Android emulator.
+  Flutter requires the full version of Android Studio.
 
 {% elsif include.target == 'web' -%}
 
@@ -24,8 +23,7 @@
   **Visual Studio** is an IDE separate from **[Visual Studio _Code_][]**.
 - [Android Studio][] {{site.appmin.android_studio}} to debug and compile
   Java or Kotlin code for Android.
-  Flutter requires the full version of Android Studio, the Android SDK,
-  and the Android emulator.
+  Flutter requires the full version of Android Studio.
 - The latest version of [Google Chrome][] to debug JavaScript code for web apps.
 
 {% endif -%}

@@ -28,12 +28,13 @@ follow these steps:
 
 1. Click **Other Images**.
 
+1. Click **x86 Images**.
+
 1. Click one system image for the Android version you want to emulate.
-   Choose an image with an ABI of **x86_64**.
 
    {:type="a"}
-   1. If the desired image has a **Download** link to the right
-      of the **Release Name**, click **Download**.
+   1. If the desired image has a **Download** icon to the right
+      of the **Release Name**, click it.
 
       The **SDK Quickfix Installation** dialog displays with a
       completion meter.

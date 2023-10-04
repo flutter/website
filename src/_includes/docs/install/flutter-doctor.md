@@ -28,19 +28,6 @@ complete Flutter development environment for {{include.os}}.
 
 1. Open {{terminal}}.
 
-1. Navigate to your Flutter installation directory.
-
-   You set this in your `PATH` environment variable.
-
-   This example installed Flutter in `{{path}}`.
-
-   ```terminal
-   {{prompt1}} cd {{path}}
-   {{prompt2}}
-   ```
-
-   The Flutter directory `{{path}}` is now your working directory.
-
 1. To verify your installation of all the components,
    run the following command.
 

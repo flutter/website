@@ -42,7 +42,7 @@ Download and install the Windows version of the following packages:
 The developers of the preceding software provide support for those products.
 To troubleshoot installation issues, consult that product's documentation.
 
-Install the [Flutter extension for VS Code][] to edit and debug Flutter code.
+To edit and debug Flutter code, install the [Flutter extension for VS Code][].
 
 [Visual Studio Code]: https://code.visualstudio.com/docs/setup/windows
 [Flutter extension for VS Code]: https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter

@@ -24,12 +24,17 @@ target-list: [Desktop, Mobile, Web]
         </span>
         <span class="text-muted text-nowrap">{{target}}</span>
         {% if icon == 'mobile' -%}
-           Recommended
+           <br>Recommended
         {% endif -%}
       </header>
     </div>
   </a>
 {% endfor %}
 </div>
+
+Your choice informs which parts of Flutter tooling you configure
+to run your first Flutter app.
+You can set up additional platforms later.
+If you don’t have a preference, choose mobile.
 
 {% include docs/china-notice.md %}

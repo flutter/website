@@ -6,9 +6,16 @@
 
 1. Start **Android Studio**.
 
-1. Go through the **Android Studio Setup Wizard**.
-   This installs the required Android components listed under
-   [Development tools](#development-tools).
+1. If this is the first time you have launched Android Studio,
+   follow the **Android Studio Setup Wizard**.
+
+1. Make sure that you install the following components:
+
+   * Android SDK Platform, API {{ site.appnow.android_sdk }}
+   * Android SDK Command-line Tools
+   * Android SDK Build-Tools
+   * Android SDK Platform-Tools
+   * Android Emulator
 
 ### Configure your target Android device
 
@@ -58,7 +65,8 @@ agree to the licenses of the Android SDK platform.
    this command returns:
 
    ```terminal
-   All SDK package licenses accepted.======] 100% Computing updates...
+   [========================================] 100% Computing updates...
+   All SDK package licenses accepted.
    ```
 
    You can skip the next step.
@@ -108,4 +116,5 @@ This example uses the `zsh` resource file.
 ```terminal
 source ~/.zshrc
 ```
+
 </details>
