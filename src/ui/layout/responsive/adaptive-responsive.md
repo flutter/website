@@ -151,7 +151,7 @@ in the following resources:
 
 * [Platform-specific behaviors and adaptations][], a page on this site.
 * [Designing truly adaptive user interfaces][] a blog post and video by
-  Aloïs Deniel, presented at Flutter Viking 2020 conference.
+  Aloïs Deniel, presented at the Flutter Vikings 2020 conference.
 * The [Flutter gallery app][] ([repo][]) has been written as an
   adaptive app.
 
