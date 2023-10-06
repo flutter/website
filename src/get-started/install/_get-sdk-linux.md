@@ -2,8 +2,7 @@
 
 {% include docs/china-notice.md %}
 
-Install Flutter on Linux using one of the following two methods.
-After installation, verify your environment setup.
+To install the Flutter SDK on your Linux system, use one of the following methods.
 
 ### Method 1: Install Flutter using snapd
 
