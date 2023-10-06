@@ -7,11 +7,12 @@ After installation, verify your environment setup.
 
 ### Method 1: Install Flutter using snapd
 
-This offers the most direct method to install Flutter on Linux.
+This offers the most direct method to install the Flutter SDK on your Linux system.
+
 To learn about using snapd, check [Installing snapd][].
 
-After you install `snapd`, install Flutter from the Snap Store or
-use the following command:
+After you install `snapd`, [install Flutter from the Snap Store][] or
+run the following command:
 
 ```terminal
 $ sudo snap install flutter --classic
@@ -29,7 +30,7 @@ $ sudo snap install flutter --classic
 
 ### Method 2: Manual installation
 
-If you don't have or can't use `snapd`, follow these steps to install Flutter.
+If you aren't using `snapd`, follow these steps to install Flutter.
 
 1. Download the installation bundle for the latest
    {{site.sdk.channel}} release of the Flutter SDK:
@@ -38,14 +39,14 @@ If you don't have or can't use `snapd`, follow these steps to install Flutter.
 
    You can find older builds and other release channels in the [SDK archive][].
 
-2. Extract the downloaded file to a location of your choice:
+1. Extract the downloaded file to a location of your choice:
 
     ```terminal
     $ cd ~/development
     $ tar xf ~/Downloads/flutter_{{os}}_vX.X.X-{{site.sdk.channel}}.tar.xz
     ```
 
-3. Add the `flutter` tool to your path:
+1. Add the `flutter` tool to your path:
 
     ```terminal
     $ export PATH="$PATH:`pwd`/flutter/bin"
@@ -56,7 +57,7 @@ If you don't have or can't use `snapd`, follow these steps to install Flutter.
     To add Flutter as permenant part of your path,
     check out [Update your path][].
 
-4. (Optional) Pre-download development binaries:
+1. (Optional) Pre-download development binaries:
 
     ```terminal
     $ flutter precache
@@ -68,18 +69,23 @@ If you don't have or can't use `snapd`, follow these steps to install Flutter.
   To update an existing version of Flutter, see [Upgrading Flutter][].
 {{site.alert.end}}
 
-### Post installation: Run flutter doctor
+### Verify your install with `flutter doctor`
 
 After installing Flutter, run `flutter doctor`.
+
+```terminal
+$ flutter doctor
+```
+
 This command checks your environment and displays a report in the
 terminal window.
 Flutter bundles the Dart SDK. You don't need to install Dart.
 Review the output for further tasks to perform.
 
-For verbose output, add the `-v` flag:
+To get greater detail on what you need to fix, add the `-v` flag:
 
 ```terminal
-$ flutter doctor
+$ flutter doctor -v
 ```
 
 The output might resemble the following:
@@ -87,7 +93,7 @@ The output might resemble the following:
 ```nocode
 [-] Android toolchain - develop for Android devices
     • Android SDK at /Users/dash/Library/Android/sdk
-    <strong>✗ Android SDK is missing command line tools; download from https://goo.gl/XxQghQ</strong>
+      ✗ Android SDK is missing command line tools; download from https://goo.gl/XxQghQ
     • Try re-installing or updating your Android SDK,
       visit {{site.url}}/setup/#android-setup for detailed instructions.
 ```
@@ -98,7 +104,7 @@ run the `flutter doctor` command again.
 {% include_relative _analytics.md %}
 
 [Flutter repo]: {{site.repo.flutter}}
-[install Flutter using the Snap Store]: https://snapcraft.io/flutter
+[install Flutter from the Snap Store]: https://snapcraft.io/flutter
 [Installing snapd]: https://snapcraft.io/docs/installing-snapd
 [SDK archive]: {{site.url}}/release/archive
 [Update your path]: #update-your-path
