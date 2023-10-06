@@ -79,7 +79,6 @@ $ flutter doctor
 This command checks your environment and displays a report in the
 terminal window.
 Flutter bundles the Dart SDK. You don't need to install Dart.
-Review the output for further tasks to perform.
 
 To get greater detail on what you need to fix, add the `-v` flag:
 
@@ -87,15 +86,25 @@ To get greater detail on what you need to fix, add the `-v` flag:
 $ flutter doctor -v
 ```
 
-The output might resemble the following:
+Review the output for further tasks to perform.
+An example would be the text shown in **bold**.
 
-```nocode
+The `flutter doctor -v` output might resemble the following:
+
+{% comment %}
+Need to use HTML for this code block to get the replacements
+and boldface to work.
+{% endcomment -%}
+
+<pre>
 [-] Android toolchain - develop for Android devices
     • Android SDK at /Users/dash/Library/Android/sdk
-      ✗ Android SDK is missing command line tools; download from https://goo.gl/XxQghQ
+    <strong>✗ Android SDK is missing command line tools; download from https://goo.gl/XxQghQ</strong>
     • Try re-installing or updating your Android SDK,
       visit {{site.url}}/setup/#android-setup for detailed instructions.
-```
+</pre>
+
+The following sections describe how to perform these tasks and finish the setup process.
 
 After installing any missing dependencies,
 run the `flutter doctor` command again.
