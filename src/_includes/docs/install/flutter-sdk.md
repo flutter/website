@@ -1,7 +1,7 @@
 ## Install the Flutter SDK
 
-To install the Flutter SDK, you can use the Flutter plugin
-within VS Code or download and install the Flutter bundle.
+To install the Flutter SDK, you can use the VS Code Flutter extension
+or download and install the Flutter bundle yourself.
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="flutter-install" role="tablist">

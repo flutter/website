@@ -30,7 +30,7 @@
 1. Extract the zip file.
 
    ```terminal
-   {{unzip}} {:.download-latest-link-filename}
+   {{unzip}} flutter_windows_3.13.6.zip
    ```
 
 [SDK archive]: {{site.url}}/release/archive

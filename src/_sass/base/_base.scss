@@ -274,7 +274,7 @@ summary {
   margin-bottom: 1rem;
 }
 
-ol + img, ul + img, ol + p, ul + p, p + p + img, ul + p:last-child {
+ol + img, ul + img, ol + p, ul + p, p + p + img, li:last-child, ul + p:last-child {
   margin-bottom: 1rem;
 }
 

@@ -59,7 +59,7 @@ youtube-site: https://youtube.com
 appmin:
   github_win: 2.4
   vscode: 1.75
-  android_studio: '2022.2 (Flamingo)'
+  android_studio: '2022.3 (Giraffe) or later'
   android_sdk: 19
   powershell: 5.0
 devmin:
