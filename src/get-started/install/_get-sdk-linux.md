@@ -18,7 +18,7 @@ $ sudo snap install flutter --classic
 ```
 
 {{site.alert.note}}
-  After you install `snapd`,
+  After you install Flutter with `snapd`,
   display your Flutter SDK path with the following command:
 
   ```terminal
@@ -27,7 +27,7 @@ $ sudo snap install flutter --classic
 
 {{site.alert.end}}
 
-### Method 2: Manual Installation
+### Method 2: Manual installation
 
 If you don't have or can't use `snapd`, follow these steps to install Flutter.
 
@@ -68,7 +68,7 @@ If you don't have or can't use `snapd`, follow these steps to install Flutter.
   To update an existing version of Flutter, see [Upgrading Flutter][].
 {{site.alert.end}}
 
-### Post Installation: Run flutter doctor
+### Post installation: Run flutter doctor
 
 After installing Flutter, run `flutter doctor`.
 This command checks your environment and displays a report in the
@@ -84,7 +84,7 @@ $ flutter doctor
 
 The output might resemble the following:
 
-```terminal
+```nocode
 [-] Android toolchain - develop for Android devices
     • Android SDK at /Users/dash/Library/Android/sdk
     <strong>✗ Android SDK is missing command line tools; download from https://goo.gl/XxQghQ</strong>

@@ -1,6 +1,6 @@
 ---
 title: Linux Installation Guide
-description: Comprehensive guide on how to install Flutter on Linux.
+description: Learn how to install Flutter on Linux.
 short-title: Linux
 next:
   title: Set up an editor
@@ -9,7 +9,7 @@ next:
 
 {% assign os = 'linux' -%}
 
-## System Requirements
+## System requirements
 
 To install and run Flutter,
 your Linux development environment needs to meet these minimum requirements:
@@ -27,7 +27,7 @@ your Linux development environment needs to meet these minimum requirements:
   - `which`
   - `xz-utils`
   - `zip`
-- **Shared libraries**: To utilize the Flutter `test` command,
+- **Shared libraries**: To utilize the `flutter test` command,
   your environment needs the library `libGLU.so.1`.
   The `mesa` packages provide this library:
   `libglu1-mesa` on Ubuntu/Debian and `mesa-libGLU` on Fedora.
