@@ -162,7 +162,7 @@ function replaceFilenameInCodeElements(archiveFilename) {
 
   codeElements.forEach((e) => {
     e.childNodes.forEach((node) => {
-      if (node.nodeType === Node.TEXT_NODE &&
+      if (node.nodeType === Node.ELEMENT_NODE &&
           node.textContent.includes(FILE_NAME_PREFIX)) {
         const text = node.textContent;
         node.textContent = text.replace(

@@ -30,7 +30,7 @@
 1. Extract the zip file.
 
    ```terminal
-   {{unzip}} flutter_windows_3.13.6.zip
+   {{unzip}} flutter_sdk_v1.0.0.zip
    ```
 
 [SDK archive]: {{site.url}}/release/archive
