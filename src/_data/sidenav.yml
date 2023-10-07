@@ -416,10 +416,10 @@
     - title: Integration testing
       children:
         - title: Introduction
-          permalink: /testing/integration-tests
+          permalink: /cookbook/testing/integration/introduction
           match-page-url-exactly: true
         - title: Write and run an integration test
-          permalink: /cookbook/testing/integration/introduction
+          permalink: /testing/integration-tests
         - title: Profile an integration test
           permalink: /cookbook/testing/integration/profiling
     - title: Unit testing
