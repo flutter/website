@@ -12,7 +12,7 @@ description: Learn how to use the DevTools CPU profiler view.
 The CPU profiler view allows you to record and profile a
 session from your Dart or Flutter application.
 The profiler can help you solve performance problems
-or generally understand your app’s CPU activity.
+or generally understand your app's CPU activity.
 The Dart VM collects CPU samples
 (a snapshot of the CPU call stack at a single point in time)
 and sends the data to DevTools for visualization.

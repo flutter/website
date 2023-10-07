@@ -32,14 +32,14 @@ why that `Column` is overflowing, or what
 `IntrinsicWidth` is supposed to be doing.
 
 Instead, first tell them that Flutter layout is very different
-from HTML layout (which is probably where they’re coming from),
+from HTML layout (which is probably where they're coming from),
 and then make them memorize the following rule:
 
 <center><font size="+2">
 <b>Constraints go down. Sizes go up. Parent sets position.</b>
 </font></center>
 
-Flutter layout can’t really be understood without knowing
+Flutter layout can't really be understood without knowing
 this rule, so Flutter developers should learn it early on.
 
 In more detail:
@@ -93,7 +93,7 @@ The negotiation goes something like this:
 **Widget**: "Very well. My first child has position `x: 5` and `y: 5`,
    and my second child has `x: 80` and `y: 25`."
 
-**Widget**: "Hey parent, I’ve decided that my size is going to be `300`
+**Widget**: "Hey parent, I've decided that my size is going to be `300`
    pixels wide, and `60` pixels tall."
 
 ## Limitations
@@ -107,12 +107,12 @@ but does result in a few limitations:
   This means a widget usually
   **can't have any size it wants**.
 
-* A widget **can’t know and doesn’t decide its own position
-  in the screen**, since it’s the widget’s parent who decides
+* A widget **can't know and doesn't decide its own position
+  in the screen**, since it's the widget's parent who decides
   the position of the widget.
 
-* Since the parent’s size and position, in its turn,
-  also depends on its own parent, it’s impossible to
+* Since the parent's size and position, in its turn,
+  also depends on its own parent, it's impossible to
   precisely define the size and position of any widget
   without taking into consideration the tree as a whole.
 
@@ -1323,7 +1323,7 @@ Container(width: 100, height: 100, color: red)
 ```
 
 The red `Container` wants to be 100 × 100,
-but it can’t, because the screen forces it to be
+but it can't, because the screen forces it to be
 exactly the same size as the screen.
 
 So the `Container` fills the screen.
@@ -1383,7 +1383,7 @@ same size as the screen, so the `Center` fills the screen.
 
 The `Center` tells the `Container` that it can be any size it wants,
 but not bigger than the screen. The `Container` wants to be
-of infinite size, but since it can’t be bigger than the screen,
+of infinite size, but since it can't be bigger than the screen,
 it just fills the screen.
 
 ### Example 6
@@ -1407,7 +1407,7 @@ it decides it wants to be as big as possible,
 so it fills the whole screen.
 
 But why does the `Container` decide that?
-Simply because that’s a design decision by those who
+Simply because that's a design decision by those who
 created the `Container` widget. It could have been
 created differently, and you have to read the
 [`Container`][] API documentation to understand
@@ -1572,8 +1572,8 @@ screen size. The `ConstrainedBox` imposes **additional**
 constraints from its `constraints` parameter onto its child.
 
 The `Container` must be between 70 and 150 pixels.
-It wants to have 100 pixels, and that’s the size it has,
-since that’s between 70 and 150.
+It wants to have 100 pixels, and that's the size it has,
+since that's between 70 and 150.
 
 ### Example 13
 
@@ -1631,8 +1631,8 @@ size as the screen, and `OverflowBox` lets its child `Container`
 be any size it wants.
 
 `OverflowBox` is similar to `UnconstrainedBox`;
-the difference is that it won’t display any warnings
-if the child doesn’t fit the space.
+the difference is that it won't display any warnings
+if the child doesn't fit the space.
 
 In this case, the `Container` has 4000 pixels of width,
 and is too big to fit in the `OverflowBox`,
@@ -1650,12 +1650,12 @@ UnconstrainedBox(
 )
 ```
 
-This won’t render anything, and you'll see an error in the console.
+This won't render anything, and you'll see an error in the console.
 
 The `UnconstrainedBox` lets its child be any size it wants,
 however its child is a `Container` with infinite size.
 
-Flutter can’t render infinite sizes, so it throws an error with
+Flutter can't render infinite sizes, so it throws an error with
 the following message: `BoxConstraints forces an infinite width.`
 
 ### Example 17
@@ -1676,7 +1676,7 @@ UnconstrainedBox(
 )
 ```
 
-Here you won’t get an error anymore,
+Here you won't get an error anymore,
 because when the `LimitedBox` is given an
 infinite size by the `UnconstrainedBox`;
 it passes a maximum width of 100 down to its child.
@@ -1790,7 +1790,7 @@ FittedBox(
 
 `FittedBox` can only scale a widget that is bounded
 (has non-infinite width and height). Otherwise,
-it won’t render anything,
+it won't render anything,
 and you'll see an error in the console.
 
 
@@ -1811,7 +1811,7 @@ Row(
 The screen forces the `Row` to be exactly the same size
 as the screen.
 
-Just like an `UnconstrainedBox`, the `Row` won’t
+Just like an `UnconstrainedBox`, the `Row` won't
 impose any constraints onto its children,
 and instead lets them be any size they want.
 The `Row` then puts them side-by-side,
@@ -1838,8 +1838,8 @@ Row(
 )
 ```
 
-Since `Row` won’t impose any constraints onto its children,
-it’s quite possible that the children might be too big to fit
+Since `Row` won't impose any constraints onto its children,
+it's quite possible that the children might be too big to fit
 the available width of the `Row`. In this case, just like an
 `UnconstrainedBox`, the `Row` displays the "overflow warning".
 
@@ -1876,7 +1876,7 @@ other children, and only then the `Expanded` widget forces
 the original child to have the `Expanded`'s width.
 
 In other words, once you use `Expanded`,
-the original child’s width becomes irrelevant, and is ignored.
+the original child's width becomes irrelevant, and is ignored.
 
 ### Example 26
 
@@ -1954,9 +1954,9 @@ But both `Expanded` and `Flexible` ignore their children's width
 when sizing themselves.
 
 {{site.alert.note}}
-  This means that it’s impossible to expand `Row` children
+  This means that it's impossible to expand `Row` children
   proportionally to their sizes. The `Row` either uses
-  the exact child’s width, or ignores it completely
+  the exact child's width, or ignores it completely
   when you use `Expanded` or `Flexible`.
 {{site.alert.end}}
 
@@ -2017,7 +2017,7 @@ as the `Scaffold` itself, you can wrap its child with
 
 ## Tight vs loose constraints
 
-It’s very common to hear that some constraint is
+It's very common to hear that some constraint is
 "tight" or "loose", so what does that mean?
 
 ### Tight constraints
@@ -2039,7 +2039,7 @@ each other at the root of your application's render tree,
 they'll all exactly fit in each other,
 forced by the box's tight constraints.
 
-If you go to Flutter’s `box.dart` file and search for
+If you go to Flutter's `box.dart` file and search for
 the `BoxConstraints` constructors,
 you'll find the following:
 
@@ -2147,18 +2147,18 @@ or it can't reasonably align its children.
 
 ## Learning the layout rules for specific widgets
 
-Knowing the general layout rule is necessary, but it’s not enough.
+Knowing the general layout rule is necessary, but it's not enough.
 
 Each widget has a lot of freedom when applying the general rule,
 so there is no way of knowing how it behaves by just reading
-the widget’s name.
+the widget's name.
 
-If you try to guess, you’ll probably guess wrong.
-You can’t know exactly how a widget behaves unless
-you’ve read its documentation, or studied its source-code.
+If you try to guess, you'll probably guess wrong.
+You can't know exactly how a widget behaves unless
+you've read its documentation, or studied its source-code.
 
 The layout source-code is usually complex,
-so it’s probably better to just read the documentation.
+so it's probably better to just read the documentation.
 However, if you decide to study the layout source-code,
 you can easily find it by using the navigating capabilities
 of your IDE.
@@ -2168,7 +2168,7 @@ Here's an example:
 * Find a `Column` in your code and navigate to its
   source code. To do this, use `command+B` (macOS)
   or `control+B` (Windows/Linux) in Android Studio or IntelliJ.
-  You’ll be taken to the `basic.dart` file.
+  You'll be taken to the `basic.dart` file.
   Since `Column` extends `Flex`, navigate to the `Flex`
   source code (also in `basic.dart`).
 

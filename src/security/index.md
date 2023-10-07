@@ -38,7 +38,7 @@ affected versions, and if known, mitigations for the issue.
 
 We should reply within three working days.
 
-We use GitHub’s security advisory feature to track
+We use GitHub's security advisory feature to track
 open security issues. You should expect a close collaboration
 as we work to resolve the issue that you have reported. 
 
@@ -99,7 +99,7 @@ technical release blog post.
   defects discovered in previous versions. Check the Flutter
   [change log][] for security-related updates.
 
-* **Keep your application’s dependencies up to date.**
+* **Keep your application's dependencies up to date.**
   Make sure you [upgrade your package dependencies][]
   to keep the dependencies up to date.
   Avoid pinning to specific versions

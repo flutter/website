@@ -171,7 +171,7 @@ class _FilterSelectorState extends State<FilterSelector> {
               builder: (context, child) {
                 if (!_controller.hasClients ||
                     !_controller.position.hasContentDimensions) {
-                  // The PageViewController isn’t connected to the
+                  // The PageViewController isn't connected to the
                   // PageView widget yet. Return an empty box.
                   return const SizedBox();
                 }

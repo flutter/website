@@ -102,7 +102,7 @@ number][] for iPhone 11)
 and iPhone11,8 (iPhone XR) running iOS 13.0.
 
 To measure an iOS app exactly,
-you have to upload a release IPA to Apple’s
+you have to upload a release IPA to Apple's
 App Store Connect ([instructions][])
 and obtain the size report from there.
 IPAs are commonly larger than APKs as explained

@@ -82,10 +82,10 @@ is opened while the app is running.
 
 ## For more information
 
-[Learning Flutter’s new navigation and routing system][] provides an 
+[Learning Flutter's new navigation and routing system][] provides an 
 introduction to the Router system.
 
-[Learning Flutter’s new navigation and routing system]: {{site.flutter-medium}}/learning-flutters-new-navigation-and-routing-system-7c9068155ade
+[Learning Flutter's new navigation and routing system]: {{site.flutter-medium}}/learning-flutters-new-navigation-and-routing-system-7c9068155ade
 [switching-channels]: {{site.url}}/release/upgrade#switching-flutter-channels
 [routes]: {{site.api}}/flutter/material/MaterialApp/routes.html
 [onGenerateRoute]: {{site.api}}/flutter/material/MaterialApp/onGenerateRoute.html

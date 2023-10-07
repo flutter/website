@@ -167,10 +167,15 @@ Follow these steps:
    Right-click the one that has the same name as the Flutter app,
    and choose **Set as Startup Project**.
 
-1. Run **Build / Build Solution** (or press Ctrl+Shift+B)
-   to generate the necessary dependencies.
-   You should now be able to run **Debug / Start Debugging**
-   (or press F5) to run the Windows app from Visual Studio.
+1. To generate the necessary dependencies,
+   run **Build** > **Build Solution**
+
+   You can also press/
+   <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd>.
+
+   To run the Windows app from Visual Studio, go to **Debug** > **Start Debugging**.
+
+   You can also press <kbd>F5</kbd>.
 
 1. Use the toolbar to switch between Debug and Release
    configurations as appropriate.

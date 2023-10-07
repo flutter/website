@@ -403,7 +403,7 @@ colors. The new `TextButton`, `ElevatedButton`, and `OutlinedButton` classes
 use a single `MaterialStateProperty<Color>` parameter instead. The new
 buttons allow one to specify state-dependent values for all of the
 colors, the original buttons only supported specifying what's now
-called the “overlayColor”.
+called the "overlayColor".
 
 ```dart
 FlatButton(
