@@ -16,12 +16,16 @@ Before beginning the process of releasing your app,
 ensure that it meets
 Apple's [App Review Guidelines][appreview].
 
-In order to publish your app to the App Store,
+To publish your app to the App Store,
 you must first enroll in the
 [Apple Developer Program][devprogram].
 You can read more about the various
 membership options in Apple's
 [Choosing a Membership][devprogram_membership] guide.
+
+## Video overview
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iE2bpP56QKc?si=tHqWYKNTN1H8H9mC" title="Release an iOS app with Flutter in 7 steps" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Register your app on App Store Connect
 
