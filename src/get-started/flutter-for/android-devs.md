@@ -2212,7 +2212,7 @@ Most Firebase functions are covered by
 These plugins are first-party integrations,
 maintained by the Flutter team:
 
- * [`firebase_admob`][] for Firebase AdMob
+ * [`google_mobile_ads`][] for Google Mobile Ads for Flutter
  * [`firebase_analytics`][] for Firebase Analytics
  * [`firebase_auth`][] for Firebase Auth
  * [`firebase_database`][] for Firebase RTDB
@@ -2384,7 +2384,7 @@ see the [`firebase_messaging`][] plugin documentation.
 [DevTools]: {{site.url}}/tools/devtools
 [existing plugin]: {{site.pub}}/flutter/
 [`flutter_facebook_login`]: {{site.pub}}/packages/flutter_facebook_login
-[`firebase_admob`]: {{site.pub}}/packages/firebase_admob
+[`google_mobile_ads`]: {{site.pub}}/packages/google_mobile_ads
 [`firebase_analytics`]: {{site.pub}}/packages/firebase_analytics
 [`firebase_auth`]: {{site.pub}}/packages/firebase_auth
 [`firebase_database`]: {{site.pub}}/packages/firebase_database
