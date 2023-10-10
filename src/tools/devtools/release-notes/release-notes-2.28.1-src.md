@@ -8,18 +8,19 @@ To learn more about DevTools, check out the
 ## General updates
 
 * Added support for DevTools extensions.
-  This means if you are debugging an app that depends on `package:foo`, and `package:foo`
-  provides a DevTools extension, you will see a "Foo" tab display in DevTools
+  This means if you are debugging an app that depends on `package:foo`,
+  and `package:foo` provides a DevTools extension,
+  you will see a "Foo" tab display in DevTools
   that you can use to debug your app.
   To provide a DevTools extension for your pub package,
-  see the getting started guide for
+  check out the getting started guide for
   [package:devtools_extensions](https://pub.dev/packages/devtools_extensions)!
 
 ![Example DevTools extension]({{site.url}}/tools/devtools/release-notes/images-2.28.1/example_devtools_extension.png "Example DevTools extension for package:foo_package")
 
 * Fixed theming bug in isolate selector -
   [#6403](https://github.com/flutter/devtools/pull/6403)
-* Fixed isolate bug where main isolate was not reselecting on hot restart - 
+* Fixed isolate bug where main isolate was not reselecting on hot restart -
   [#6436](https://github.com/flutter/devtools/pull/6436)
 * Show the hot reload button for Dart server apps that support hot reload -
   [#6341](https://github.com/flutter/devtools/pull/6341)
@@ -29,7 +30,8 @@ To learn more about DevTools, check out the
 
 ## Inspector updates
 
-* Fixed bug where inspector service calls were done on the selected isolate, instead of the main isolate -
+* Fixed bug where inspector service calls were done on the selected isolate,
+  instead of the main isolate -
   [#6434](https://github.com/flutter/devtools/pull/6434)
 
 ## Logging updates
