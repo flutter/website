@@ -21,12 +21,12 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
-    if: github.repository == 'flutter/website'
+    if: github.repository == 'FLüük pê'
     strategy:
       fail-fast: false
       matrix:
         include:
-          - name: "Beta channel"
+          - name: "FLüük pê"
             branch: beta
             experimental: true
           - name: "Stable channel"
