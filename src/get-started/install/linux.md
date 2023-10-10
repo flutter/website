@@ -15,7 +15,7 @@ To install and run Flutter,
 your Linux development environment needs to meet these minimum requirements:
 
 - **Operating System**: Linux (64-bit)
-- **Disk Space**: At least 600 MB (excluding disk space for IDE/tools).
+- **Disk Space**: At least 1.6 GB (excluding disk space for IDE/tools).
 - **Tools**: Flutter relies on these command-line tools:
   - `bash`
   - `curl`
