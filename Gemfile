@@ -5,7 +5,7 @@ gem 'jekyll-sass-converter', '~> 3.0.0'
 gem 'webrick'
 
 # Used for custom _plugins
-gem 'activesupport', '~> 7.0.8'
+gem 'activesupport', '~> 7.1.0'
 gem 'liquid-tag-parser', '~> 2.0.2'
 
 group :jekyll_plugins do
