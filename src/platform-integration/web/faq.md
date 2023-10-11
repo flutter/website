@@ -129,8 +129,9 @@ Add the following scripts:
 Replace `path/to/flutter.js` and `path/to/flutter_assets/main.dart.js` with the paths to your
 Flutter-generated JavaScript files.
 
-Add JavaScript code to initialize your Flutter app inside a <script> tag below the Flutter script includes. Use the flutter.runApp 
-function to specify the entry point of your Flutter app.
+Add JavaScript code to initialize your Flutter app.
+Place this code within a `<script>` tag after the included Flutter JavaScript files.
+To specify the entry point of your Flutter app, use the `flutter.runApp()` function .
 
 ```html
 <script>
