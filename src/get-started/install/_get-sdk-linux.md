@@ -2,11 +2,13 @@
 
 {% include docs/china-notice.md %}
 
-To install the Flutter SDK on your Linux system, use one of the following methods.
+To install the Flutter SDK on your Linux system,
+use one of the following methods.
 
 ### Method 1: Install Flutter using snapd
 
-This offers the most direct method to install the Flutter SDK on your Linux system.
+This offers the most direct method to install
+the Flutter SDK on your Linux system.
 
 To learn about using snapd, check [Installing snapd][].
 
@@ -24,7 +26,6 @@ $ sudo snap install flutter --classic
   ```terminal
   $ flutter sdk-path
   ```
-
 {{site.alert.end}}
 
 ### Method 2: Manual installation
@@ -53,7 +54,7 @@ If you aren't using `snapd`, follow these steps to install Flutter.
 
     This command sets your `PATH` environment variable for the current
     terminal window only.
-    To add Flutter as permenant part of your path,
+    To add Flutter as permanent part of your path,
     check out [Update your path][].
 
 1. (Optional) Pre-download development binaries:
@@ -104,9 +105,10 @@ and boldface to work.
       visit {{site.url}}/setup/#android-setup for detailed instructions.
 </pre>
 
-The following sections describe how to perform these tasks and finish the setup process.
+The following sections describe how to perform these tasks
+and finish the setup process.
 
-After installing any missing dependencies,
+After completing the outlined tasks,
 run the `flutter doctor` command again.
 
 {% include_relative _analytics.md %}
