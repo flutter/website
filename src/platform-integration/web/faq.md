@@ -147,8 +147,10 @@ To specify the entry point of your Flutter app, use the `flutter.runApp()` funct
 </script>
 ```
 
-In the code above, replace '/' with the appropriate initial route of your Flutter app, and replace MyApp()
-with the main widget of your Flutter app.
+Using the previous code, make the following substitutions:
+
+1. Replace `/` with the appropriate initial route of your Flutter app
+1. Replace `MyApp()` with the main widget of your Flutter app.
 
 To fit it properly within your web page layout,
 you might need to style the container and adjust its dimensions using CSS.
