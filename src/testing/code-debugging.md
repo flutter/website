@@ -172,7 +172,7 @@ This application produces the following widget tree.
 
 <details markdown="1">
 <summary><strong>
-Expand the widget tree for Example 1
+Expand to view the widget tree for Example 1
 </strong></summary>
 
 The precise details vary by the version of the framework,
@@ -284,7 +284,7 @@ widget's description.
 
 If you are trying to debug a layout issue, then the Widgets layer's
 tree might be insufficiently detailed. To dump the rendering tree,
-call the [`debugDumpRenderTree()`][] method.
+call the [`debugDumpRenderTree()`][] function.
 As with `debugDumpApp()`, you can call this more or less any time
 except during a layout or paint phase. As a general rule,
 calling it from a [frame callback][]
@@ -295,7 +295,7 @@ To call `debugDumpRenderTree()`, you need to add `import
 
 <details markdown="1">
 <summary><strong>
-Expand the render tree for Example 1
+Expand to view the output render tree for Example 1
 </strong></summary>
 
 ```nocode
@@ -658,7 +658,7 @@ If you are trying to debug a compositing issue, you can use
 [`debugDumpLayerTree()`][].
 
 <details markdown="1">
-<summary>Expand the layer tree for Example 1</summary>
+<summary>Expand to view the output layer tree for Example 1</summary>
 
 ```nocode
 I/flutter : TransformLayer
@@ -694,7 +694,7 @@ used to reduce how much needs to be repainted.
 ### Focus tree
 
 To debug a focus or shortcut issue, dump the focus tree
-using the [`debugDumpFocusTree()`][] method.
+using the [`debugDumpFocusTree()`][] function.
 
 #### Example 4: Focus tree dump
 {:.no_toc}
@@ -702,7 +702,7 @@ using the [`debugDumpFocusTree()`][] method.
 The `debugDumpFocusTree()` method returns the focus tree for the app.
 
 <details markdown="1">
-<summary>Expand the focus tree for Example 1</summary>
+<summary>Expand to view the focus tree for Example 1</summary>
 
 ```nocode
 I/flutter : FocusManager#6fb59
@@ -789,7 +789,7 @@ To use this, first enable accessibility.
 To enable accessibility, use a system accessibility tool
 or the `SemanticsDebugger`.
 
-The `debugDumpSemanticsTree()` method returns the semantic tree for the app.
+The `debugDumpSemanticsTree()` function prints the semantic tree for the app.
 
 <details markdown="1">
 <summary><strong>Expand the semantic tree for Example 1</strong></summary>
@@ -949,16 +949,16 @@ To set these flags either:
 : Enable this flag if you're seeing more layouts
   than you expect (for example, on the timeline, on a profile,
   or from a `print` statement inside a layout method).
-  When enabled, the console shows stack traces that explain why each
-  the inspector marked each render object as dirty for layout.
-  You can use the `debugPrintStack()` method from the
+  When enabled, the framework outputs stack traces to the console
+  to explain why each render object is being marked as needing layout.
+  You can use the `debugPrintStack()` function from the
   `services` library to print your own stack traces on demand,
   if this helps you.
 
 [`debugPrintMarkNeedsPaintStacks`][]
 : Similar to `debugPrintMarkNeedsLayoutStacks`,
   but for excess painting. You can use the `debugPrintStack()`
-  method from the `services` library to print your own stack
+  function from the `services` library to print your own stack
   traces on demand, if this kind of approach is useful to you.
 
 ### Tracing Dart code performance
@@ -1037,7 +1037,7 @@ or `WidgetsApp`, you can get the same effect by wrapping your
 application in a stack and putting a widget on your stack that was
 created by calling [`PerformanceOverlay.allEnabled()`][].)
 
-TO learn how to interpret the graphs in the overlay,
+To learn how to interpret the graphs in the overlay,
 see [The performance overlay][] in
 [Profiling Flutter performance][].
 
