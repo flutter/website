@@ -149,9 +149,9 @@ function to specify the entry point of your Flutter app.
 In the code above, replace '/' with the appropriate initial route of your Flutter app, and replace MyApp()
 with the main widget of your Flutter app.
 
-Style Your Container:
-You may need to style the container and adjust its dimensions using CSS to fit it properly within your 
-web page layout.
+To fit it properly within your web page layout,
+you might need to style the container and adjust its dimensions using CSS.
+
 ```html
 <style>
   #flutter-container {
