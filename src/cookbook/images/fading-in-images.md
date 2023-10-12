@@ -75,7 +75,7 @@ class MyApp extends StatelessWidget {
 ## From asset bundle
 
 You can also consider using local assets for placeholders.
-First, add the asset to the project’s `pubspec.yaml` file
+First, add the asset to the project's `pubspec.yaml` file
 (for more details, see [Adding assets and images][]):
 
 ```diff

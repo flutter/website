@@ -66,7 +66,7 @@ of the text against the background.
 Implement a stateless widget called `LocationListItem`
 that consists of the previously mentioned visuals.
 For now, use a static `Image` widget for the background.
-Later, you’ll replace that widget with a parallax version.
+Later, you'll replace that widget with a parallax version.
 
 <?code-excerpt "lib/excerpt2.dart (LocationListItem)"?>
 ```dart
@@ -197,13 +197,13 @@ Conversely, as the list items slide down the screen,
 each background image slides slightly upward. 
 Visually, this results in parallax.
 
-The parallax effect depends on the list item’s
+The parallax effect depends on the list item's
 current position within its ancestor `Scrollable`.
-As the list item’s scroll position changes, the position
-of the list item’s background image must also change.
+As the list item's scroll position changes, the position
+of the list item's background image must also change.
 This is an interesting problem to solve. The position
-of a list item within the `Scrollable` isn’t 
-available until Flutter’s layout phase is complete.
+of a list item within the `Scrollable` isn't 
+available until Flutter's layout phase is complete.
 This means that the position of the background image
 must be determined in the paint phase, which comes after 
 the layout phase. Fortunately, Flutter provides a widget
@@ -314,14 +314,14 @@ background image:
 
  * The bounds of the ancestor `Scrollable`
  * The bounds of the individual list item
- * The size of the image after it’s scaled down
+ * The size of the image after it's scaled down
    to fit in the list item
 
 To look up the bounds of the `Scrollable`,
 you pass a `ScrollableState` into your `FlowDelegate`.
 
 To look up the bounds of your individual list item,
-you pass your list item’s `BuildContext` into your `FlowDelegate`.
+you pass your list item's `BuildContext` into your `FlowDelegate`.
 
 To look up the final size of your background image,
 you assign a `GlobalKey` to your `Image` widget,
@@ -497,7 +497,7 @@ void paintChildren(FlowPaintingContext context) {
 
 Using `childRect`, paint the background image with
 the desired translation transformation.
-It’s this transformation over time that gives you the 
+It's this transformation over time that gives you the 
 parallax effect.
 
 <?code-excerpt "lib/excerpt5.dart (PaintChildrenPt5)" replace="/  \/\/ code-excerpt-closing-bracket/}/g"?>
@@ -542,10 +542,10 @@ void paintChildren(FlowPaintingContext context) {
 
 You need one final detail to achieve the parallax effect.
 The `ParallaxFlowDelegate` repaints when the inputs change,
-but the `ParallaxFlowDelegate` doesn’t repaint every time
+but the `ParallaxFlowDelegate` doesn't repaint every time
 the scroll position changes.
 
-Pass the `ScrollableState`’s `ScrollPosition` to
+Pass the `ScrollableState`'s `ScrollPosition` to
 the `FlowDelegate` superclass so that the `FlowDelegate`
 repaints every time the `ScrollPosition` changes.
 

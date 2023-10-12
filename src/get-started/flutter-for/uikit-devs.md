@@ -70,12 +70,12 @@ However, these have a few differences to a `UIView`.
 To start, widgets have a different lifespan: they are immutable
 and only exist until they need to be changed.
 Whenever widgets or their state change,
-Flutter’s framework creates a new tree of widget instances.
+Flutter's framework creates a new tree of widget instances.
 In comparison, a UIKit view is not recreated when it changes,
 but rather it's a mutable entity that is drawn once
 and doesn't redraw until it is invalidated using `setNeedsDisplay()`.
 
-Furthermore, unlike `UIView`, Flutter’s widgets are lightweight,
+Furthermore, unlike `UIView`, Flutter's widgets are lightweight,
 in part due to their immutability.
 Because they aren't views themselves,
 and aren't directly drawing anything,
@@ -98,7 +98,7 @@ to produce an interface that looks like
 
 To update your views in UIKit, you directly mutate them.
 In Flutter, widgets are immutable and not updated directly.
-Instead, you have to manipulate the widget’s state.
+Instead, you have to manipulate the widget's state.
 
 This is where the concept of Stateful vs Stateless widgets
 comes in. A `StatelessWidget` is just what it sounds
@@ -115,7 +115,7 @@ use a `StatelessWidget` in Flutter.
 If you want to dynamically change the UI based on data received
 after making an HTTP call, use a `StatefulWidget`.
 After the HTTP call has completed, tell the Flutter framework
-that the widget’s `State` is updated, so it can update the UI.
+that the widget's `State` is updated, so it can update the UI.
 
 The important difference between stateless and
 stateful widgets is that `StatefulWidget`s have a `State` object
@@ -125,10 +125,10 @@ so it's not lost.
 If you are in doubt, remember this rule:
 if a widget changes outside of the `build` method
 (because of runtime user interactions, for example),
-it’s stateful.
+it's stateful.
 If the widget never changes, once built, it's stateless.
 However, even if a widget is stateful, the containing parent widget
-can still be stateless if it isn’t itself reacting to those changes
+can still be stateless if it isn't itself reacting to those changes
 (or other inputs).
 
 The following example shows how to use a `StatelessWidget`.
@@ -558,7 +558,7 @@ to display.
 
 Flutter has a similar implementation,
 using a `Navigator` and `Routes`.
-A `Route` is an abstraction for a “screen” or “page” of an app,
+A `Route` is an abstraction for a "screen" or "page" of an app,
 and a `Navigator` is a [widget][]
 that manages routes. A route roughly maps to a
 `UIViewController`. The navigator works in a similar way to the iOS
@@ -735,7 +735,7 @@ with and without the `intl` package.
 ### Managing dependencies
 
 In iOS, you add dependencies with CocoaPods by adding to your `Podfile`.
-Flutter uses Dart’s build system and the Pub package manager
+Flutter uses Dart's build system and the Pub package manager
 to handle dependencies. The tools delegate the building of the
 native Android and iOS wrapper apps to the
 respective build systems.
@@ -811,7 +811,7 @@ In UIKit, these views have delegate methods
 for deciding the number of rows,
 the cell for each index path, and the size of the cells.
 
-Due to Flutter’s immutable widget pattern,
+Due to Flutter's immutable widget pattern,
 you pass a list of widgets to your `ListView`,
 and Flutter takes care of making sure that
 scrolling is fast and smooth.
@@ -1686,7 +1686,7 @@ with support for `Isolate`s
 an event loop, and asynchronous programming.
 Unless you spawn an `Isolate`,
 your Dart code runs in the main UI thread and is
-driven by an event loop. Flutter’s event loop is
+driven by an event loop. Flutter's event loop is
 equivalent to the iOS main loop&mdash;that is,
 the `Looper` that is attached to the main thread.
 
@@ -1830,7 +1830,7 @@ computationally intensive tasks.
 
 Isolates are separate execution threads that do not share
 any memory with the main execution memory heap.
-This means you can’t access variables from the main thread,
+This means you can't access variables from the main thread,
 or update your UI by calling `setState()`.
 Isolates are true to their name, and cannot share memory
 (in the form of static fields, for example).

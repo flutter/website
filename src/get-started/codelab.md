@@ -11,7 +11,7 @@ next:
 toc: false
 ---
 
-You are now ready to start the “First Flutter app” codelab.
+You are now ready to start the "First Flutter app" codelab.
 In about an hour and a half,
 you will learn the basics of Flutter
 by creating an app

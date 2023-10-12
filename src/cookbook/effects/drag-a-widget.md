@@ -11,7 +11,7 @@ js:
 Drag and drop is a common mobile app interaction.
 As the user long presses (sometimes called _touch & hold_)
 on a widget, another widget appears beneath the
-user’s finger, and the user drags the widget to a
+user's finger, and the user drags the widget to a
 final location and releases it.
 In this recipe, you'll build a drag-and-drop interaction
 where the user long presses on a choice of food,
@@ -33,8 +33,8 @@ Flutter provides a widget called [`LongPressDraggable`][]
 that provides the exact behavior that you need to begin
 a drag-and-drop interaction. A `LongPressDraggable`
 widget recognizes when a long press occurs and then 
-displays a new widget near the user’s finger.
-As the user drags, the widget follows the user’s finger.
+displays a new widget near the user's finger.
+As the user drags, the widget follows the user's finger.
 `LongPressDraggable` gives you full control over the 
 widget that the user drags.
 
@@ -74,13 +74,13 @@ In this case, when the user long presses on the
 widget displays a `DraggingListItem`.
 This `DraggingListItem` displays a photo of the
 selected food item, centered beneath 
-the user’s finger.
+the user's finger.
 
 The `dragAnchorStrategy` property is set to
 [`pointerDragAnchorStrategy`][].
 This property value instructs `LongPressDraggable`
-to base the `DraggableListItem`’s position on the 
-user’s finger. As the user moves a finger,
+to base the `DraggableListItem`'s position on the 
+user's finger. As the user moves a finger,
 the `DraggableListItem` moves with it.
 
 Dragging and dropping is of little use if no information
@@ -93,18 +93,18 @@ food menu item that the user pressed on.
 The `data` associated with a `LongPressDraggable`
 is sent to a special widget called `DragTarget`,
 where the user releases the drag gesture.
-You’ll implement the drop behavior next.
+You'll implement the drop behavior next.
 
 ## Drop the draggable
 
 The user can drop a `LongPressDraggable` wherever they choose,
-but dropping the draggable has no effect unless it’s dropped
+but dropping the draggable has no effect unless it's dropped
 on top of a `DragTarget`. When the user drops a draggable on
 top of a `DragTarget` widget, the `DragTarget` widget 
 can either accept or reject the data from the draggable.
 
 In this recipe, the user should drop a menu item on a
-`CustomerCart` widget to add the menu item to the user’s cart.
+`CustomerCart` widget to add the menu item to the user's cart.
 
 <?code-excerpt "lib/main.dart (CustomerCart)" replace="/^return //g;/,$//g"?>
 ```dart
@@ -160,14 +160,14 @@ different decision.
 Notice that the type of item dropped on `DragTarget`
 must match the type of the item dragged from `LongPressDraggable`.
 If the types are not compatible, then 
-the `onAccept` method isn’t invoked.
+the `onAccept` method isn't invoked.
 
 With a `DragTarget` widget configured to accept your
 desired data, you can now transmit data from one part
 of your UI to another by dragging and dropping.
 
 In the next step,
-you update the customer’s cart with the dropped menu item.
+you update the customer's cart with the dropped menu item.
 
 ## Add a menu item to a cart
 
@@ -195,10 +195,10 @@ class Customer {
 }
 ```
 
-The `CustomerCart` widget displays the customer’s photo,
+The `CustomerCart` widget displays the customer's photo,
 name, total, and item count based on a `Customer` instance.
 
-To update a customer’s cart when a menu item is dropped,
+To update a customer's cart when a menu item is dropped,
 add the dropped item to the associated `Customer` object.
 
 <?code-excerpt "lib/main.dart (AddCart)"?>
@@ -217,11 +217,11 @@ The `_itemDroppedOnCustomerCart` method is invoked in
 `onAccept()` when the user drops a menu item on a
 `CustomerCart` widget. By adding the dropped item to the 
 `customer` object, and invoking `setState()` to cause a
-layout update, the UI refreshes with the new customer’s
+layout update, the UI refreshes with the new customer's
 price total and item count.
 
 Congratulations! You have a drag-and-drop interaction
-that adds food items to a customer’s shopping cart.
+that adds food items to a customer's shopping cart.
 
 ## Interactive example
 

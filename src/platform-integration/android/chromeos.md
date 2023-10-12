@@ -10,7 +10,7 @@ Android apps that support ChromeOS with Flutter.
 
 For the current versions of ChromeOS, only certain ports from
 Linux are exposed to the rest of the environment.
-Here’s an example of how to launch
+Here's an example of how to launch
 Flutter DevTools for an Android app with ports
 that will work:
 
@@ -34,7 +34,7 @@ Flutter has ChromeOS-specific lint analysis checks
 to make sure that the app that you're building
 works well on ChromeOS. It looks for things
 like required hardware in your Android Manifest
-that aren’t available on ChromeOS devices,
+that aren't available on ChromeOS devices,
 permissions that imply requests for unsupported
 hardware, as well as other properties or code
 that would bring a lesser experience on these devices.

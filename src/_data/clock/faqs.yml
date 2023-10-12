@@ -31,20 +31,20 @@
   content: >
     <span>1 Grand prize winner receives:</span>
     <p>A loaded Apple iMac Pro valued at ~$10,000 USD (detailed specifications may vary based on availability and
-    applicable law in the potential winner’s country of residence).</p>
+    applicable law in the potential winner's country of residence).</p>
     <span>4 Winners each receive:</span>
     <p>A Lenovo 10" Smart Display with the Google Assistant valued at ~$249.00 USD (based on availability and applicable
-    law in the potential winner’s country of residence).</p>
+    law in the potential winner's country of residence).</p>
     <span>Up to 25 Winners each receive:</span>
     <p>A Lenovo Smart Clock with the Google Assistant valued at ~$79.00 USD (based on availability and applicable law
-    in the potential winner’s country of residence).</p>
+    in the potential winner's country of residence).</p>
     <p>In addition, all participants who submit complete and valid entries will receive a digital certificate of
     completion when their code repository is made public by February 5th, 2020. Also, some submissions may be integrated
     into the Lenovo Smart Clock's lineup of clock faces, or may be used as inspiration for future clock faces.</p>
 
 - title: What do I submit?
   content: >
-    See the submission instructions in the ‘Getting Started’ section, and the
+    See the submission instructions in the 'Getting Started' section, and the
     <a href="https://docs.google.com/document/d/1ybyQCK8Sy7vrD9wuc6pbgwVkyrVZ7Rd_41r5NXGqlt8/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
     Official Rules</a> for more details.
 
@@ -64,7 +64,7 @@
 - title: Does the clock have to show the time?
   content: >
     The viewer should be able to tell the time. Whether that be with digits, clock hands, a sundial shadow, or colors
-    flashing in Morse code, there should be some way for a user to reliably determine the time. (It’s OK if telling the
+    flashing in Morse code, there should be some way for a user to reliably determine the time. (It's OK if telling the
     time requires some thinking.)
 - title: Do I need to add any extra functionality like alarms or stopwatches?
   content: >
@@ -94,14 +94,14 @@
     Any. If you have words in your clock, consider
     <a href="https://docs.flutter.dev/ui/accessibility-and-localization/internationalization" target="_blank" rel="noopener noreferrer"> internationalizing
     them<a/>. Note that written parts of your submission must be in English to be eligible for judging, and your submission must, at a minimum,  support English language
-    evaluation. However, we will not judge your clock face for language inclusion. Please ensure that your clock face’s
+    evaluation. However, we will not judge your clock face for language inclusion. Please ensure that your clock face's
     text does not include profanity in any language, and is built and submitted in accordance with the
     <a href="https://docs.google.com/document/d/1ybyQCK8Sy7vrD9wuc6pbgwVkyrVZ7Rd_41r5NXGqlt8/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
     Official Rules</a>.
 
 - title: What accessibility requirements should I add?
   content: >
-    Google values accessibility, and it will be a consideration in your submission as part of the “overall execution”
+    Google values accessibility, and it will be a consideration in your submission as part of the "overall execution"
     criteria. Check the <a href="https://docs.flutter.dev/ui/accessibility-and-localization/accessibility" target="_blank" rel="noopener noreferrer">
     Flutter accessibility</a> page for details.
 
@@ -179,7 +179,7 @@
 
 - title: How can I share my clock face online?
   content: >
-    We’re glad you asked! Flutter’s web support is in technical preview and you can use to share your clock face online.
+    We're glad you asked! Flutter's web support is in technical preview and you can use to share your clock face online.
     Once you <a href="https://docs.flutter.dev/platform-integration/web/building" target="_blank" rel="noopener noreferrer">enable web support</a>, test your app by selecting
     Chrome as the target device in your IDE, or at the command line with <em>flutter run -d chrome</em>. Build a web
     version of your app for deployment using <em>flutter build web</em>. Then, you can host it using

@@ -188,7 +188,7 @@ Supported values:
 
 Layout Explorer supports 7 flex options in the UI
 (null, 0, 1, 2, 3, 4, 5), but technically the flex
-factor of a flex widget’s child can be any int.
+factor of a flex widget's child can be any int.
 
 ###### Flexible.fit
 
@@ -217,7 +217,7 @@ The Flutter Inspector provides several options for visually debugging your app.
 When enabled, this option runs animations 5 times slower for easier visual
 inspection.
 This can be useful if you want to carefully observe and tweak an animation that
-doesn’t look quite right.
+doesn't look quite right.
 
 This can also be set in code:
 
@@ -265,7 +265,7 @@ void showLayoutGuidelines() {
 #### Render boxes
 
 Widgets that draw to the screen create a [render box][], the 
-building blocks of Flutter layouts. They’re shown with a bright blue border:
+building blocks of Flutter layouts. They're shown with a bright blue border:
 
 ![Screenshot of render box guidelines]({{site.url}}/assets/images/docs/tools/devtools/debug-toggle-guideline-render-box.png)
 
@@ -273,7 +273,7 @@ building blocks of Flutter layouts. They’re shown with a bright blue border:
 
 Alignments are shown with yellow arrows. These arrows show the vertical
 and horizontal offsets of a widget relative to its parent.
-For example, this button’s icon is shown as being centered by the four arrows:
+For example, this button's icon is shown as being centered by the four arrows:
 
 ![Screenshot of alignment guidelines]({{site.url}}/assets/images/docs/tools/devtools/debug-toggle-guidelines-alignment.png)
 
@@ -433,9 +433,9 @@ Images are deemed too large if they use at least 128KB more than required.
 #### Fixing images
 
 Wherever possible, the best way to fix this problem is resizing
-the image asset file so it’s smaller.
+the image asset file so it's smaller.
 
-If this isn’t possible, you can use the `cacheHeight` and `cacheWidth`
+If this isn't possible, you can use the `cacheHeight` and `cacheWidth`
 parameters on the `Image` constructor:
 
 <?code-excerpt "lib/oversized_images.dart (ResizedImage)"?>

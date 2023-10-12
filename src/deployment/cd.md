@@ -232,7 +232,7 @@ Create a file at `ios/ci_scripts/ci_post_clone.sh` and add the content below.
 set -e
 
 # The default execution directory of this script is the ci_scripts directory.
-cd $CI_WORKSPACE # change working directory to the root of your cloned repo.
+cd $CI_PRIMARY_REPOSITORY_PATH # change working directory to the root of your cloned repo.
 
 # Install Flutter using git.
 git clone https://github.com/flutter/flutter.git --depth 1 -b stable $HOME/flutter
@@ -284,7 +284,7 @@ To create a new workflow in Xcode, use the following instructions:
 #### Branch changes
 
 By default Xcode suggests the Branch Changes condition that starts a new build
-for every change to your Git repository’s default branch.
+for every change to your Git repository's default branch.
 
 For your app's iOS variant, it's reasonable that you would want Xcode Cloud to
 trigger your workflow after you've made changes to your flutter packages, or

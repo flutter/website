@@ -57,8 +57,8 @@ Size in GB of the new loop device (1GB minimum) [default=5GB]:
 Would you like to connect to a MAAS server? (yes/no) [default=no]:
 Would you like to create a new local network bridge? (yes/no) [default=yes]:
 What should the new bridge be called? [default=lxdbr0]:
-What IPv4 address should be used? (CIDR subnet notation, “auto” or “none”) [default=auto]:
-What IPv6 address should be used? (CIDR subnet notation, “auto” or “none”) [default=auto]:
+What IPv4 address should be used? (CIDR subnet notation, "auto" or "none") [default=auto]:
+What IPv6 address should be used? (CIDR subnet notation, "auto" or "none") [default=auto]:
 Would you like LXD to be available over the network? (yes/no) [default=no]:
 Would you like stale cached images to be updated automatically? (yes/no) [default=yes]
 Would you like a YAML "lxd init" preseed to be printed? (yes/no) [default=no]:
@@ -183,7 +183,7 @@ apps:
 ```
 
 **Command**
-: Points to the binary, relative to the snap’s root,
+: Points to the binary, relative to the snap's root,
   and runs when the snap is invoked.
 
 **Extensions**
@@ -207,7 +207,7 @@ apps:
   communicate over DBus. The snap providing the DBus 
   service declares a slot with the well-known DBus name 
   and which bus it uses. Snaps wanting to communicate 
-  with the providing snap’s service declare a plug for 
+  with the providing snap's service declare a plug for 
   the providing snap. Note that a snap declaration is 
   needed for your snap to be delivered via the snap store 
   and claim this well-known DBus name (simply upload the 
@@ -218,13 +218,13 @@ apps:
   generate security policy that will allow it to 
   listen on the well-known DBus name on the specified 
   bus. If the system bus is specified, snapd will also 
-  generate DBus bus policy that allows ‘root’ to own 
+  generate DBus bus policy that allows 'root' to own 
   the name and any user to communicate with the 
   service. Non-snap processes are allowed to 
   communicate with the providing snap following 
   traditional permissions checks. Other (consuming) 
   snaps might only communicate with the providing 
-  snap by connecting the snaps’ interface.
+  snap by connecting the snaps' interface.
   
 ```
 dbus-super-cool-app: # adjust accordingly to your app name

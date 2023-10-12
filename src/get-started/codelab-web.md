@@ -26,13 +26,13 @@ This is a guide to creating your first Flutter **web** app.
 If you are familiar with object-oriented programming,
 and concepts such as variables, loops, and conditionals,
 you can complete this tutorial.
-You don’t need previous experience with Dart,
+You don't need previous experience with Dart,
 mobile, or web programming.
 
 ## What you'll build
 {:.no_toc}
 
-You’ll implement a simple web app that displays a sign in screen.
+You'll implement a simple web app that displays a sign in screen.
 The screen contains three text fields:  first name,
 last name, and username. As the user fills out the fields,
 a progress bar animates along the top of the sign in area.
@@ -45,7 +45,7 @@ to animate in from the bottom of the screen.
 The animated GIF shows how the app works at the completion of this lab.
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What you’ll learn</h4>
+  <h4 class="no_toc">What you'll learn</h4>
 
   * How to write a Flutter app that looks natural on the web.
   * Basic structure of a Flutter app.
@@ -94,7 +94,7 @@ Doctor summary (to see all details, run flutter doctor -v):
 
 If you see "flutter: command not found",
 then make sure that you have installed the
-[Flutter SDK][] and that it’s in your path.
+[Flutter SDK][] and that it's in your path.
 
 It's okay if the Android toolchain, Android Studio,
 and the Xcode tools aren't installed,
@@ -278,7 +278,7 @@ From your IDE, editor, or at the command line,
 * If you know Java, the Dart language should feel very familiar.
 * All of the app's UI is created in Dart code.
   For more information, see [Introduction to declarative UI][].
-* The app’s UI adheres to [Material Design][],
+* The app's UI adheres to [Material Design][],
   a visual design language that runs on any device or platform.
   You can customize the Material Design widgets,
   but if you prefer something else,
@@ -287,7 +287,7 @@ From your IDE, editor, or at the command line,
   Or you can create your own custom widget library.
 * In Flutter, almost everything is a [Widget][].
   Even the app itself is a widget.
-  The app’s UI can be described as a widget tree.
+  The app's UI can be described as a widget tree.
 
 ## Step 1: Show the Welcome screen
 
@@ -295,7 +295,7 @@ The `SignUpForm` class is a stateful widget.
 This simply means that the widget stores information
 that can change, such as user input, or data from a feed.
 Since widgets themselves are immutable
-(can’t be modified once created),
+(can't be modified once created),
 Flutter stores state information in a companion class,
 called the `State` class. In this lab,
 all of your edits will be made to the private
@@ -338,7 +338,7 @@ and create a method to display it.
 `_SignUpFormState` class. This is the part of the code
 that builds the SignUp button.
 Notice how the button is defined:
-It’s a `TextButton` with a blue background,
+It's a `TextButton` with a blue background,
 white text that says **Sign up** and, when pressed,
 does nothing.
 </li>
@@ -394,24 +394,24 @@ You get that behavior for free.
 * The `_showWelcomeScreen()` function is used in the `build()`
   method as a callback function. Callback functions are often
   used in Dart code and, in this case, this means
-  “call this method when the button is pressed”.
+  "call this method when the button is pressed".
 * The `const` keyword in front of the constructor is very
   important. When Flutter encounters a constant widget, it
   short-circuits most of the rebuilding work under the hood 
   making the rendering more efficient.
 * Flutter has only one `Navigator` object.
-  This widget manages Flutter’s screens
+  This widget manages Flutter's screens
   (also called _routes_ or _pages_) inside a stack.
   The screen at the top of the stack is the view that
   is currently displayed. Pushing a new screen to this
   stack switches the display to that new screen.
   This is why the `_showWelcomeScreen` function pushes
-  the `WelcomeScreen` onto the Navigator’s stack.
+  the `WelcomeScreen` onto the Navigator's stack.
   The user clicks the button and, voila,
   the welcome screen appears. Likewise,
   calling `pop()` on the `Navigator` returns to the
-  previous screen. Because Flutter’s navigation is
-  integrated into the browser’s navigation,
+  previous screen. Because Flutter's navigation is
+  integrated into the browser's navigation,
   this happens implicitly when clicking the browser's
   back arrow button.
 
@@ -419,8 +419,8 @@ You get that behavior for free.
 
 This sign in screen has three fields.
 Next, you will enable the ability to track the
-user’s progress on filling in the form fields,
-and update the app’s UI when the form is complete.
+user's progress on filling in the form fields,
+and update the app's UI when the form is complete.
 
 {{site.alert.note}}
   This example does **not** validate the accuracy of the user input.
@@ -513,7 +513,7 @@ but becomes enabled when all three text fields contain
 ### Observations
 {:.no_toc}
 
-* Calling a widget’s `setState()` method tells Flutter that the
+* Calling a widget's `setState()` method tells Flutter that the
   widget needs to be updated on screen.
   The framework then disposes of the previous immutable widget
   (and its children), creates a new one
@@ -555,18 +555,18 @@ but becomes enabled when all three text fields contain
 ## Step 2.5: Launch Dart DevTools
 
 How do you debug a Flutter web app?
-It’s not too different from debugging any Flutter app.
+It's not too different from debugging any Flutter app.
 You want to use [Dart DevTools][]!
 (Not to be confused with Chrome DevTools.)
 
-Our app currently has no bugs, but let’s check it out anyway.
+Our app currently has no bugs, but let's check it out anyway.
 The following instructions for launching DevTools applies to any workflow,
-but there is a short cut if you’re using IntelliJ.
+but there is a short cut if you're using IntelliJ.
 See the tip at the end of this section for more information.
 
 <ol markdown="1">
 <li markdown="1">Run the app.<br>
-If your app isn’t currently running, launch it.
+If your app isn't currently running, launch it.
 Select the **Chrome** device from the pull down
 and launch it from your IDE or,
 from the command line, use `flutter run -d chrome`,
@@ -696,8 +696,8 @@ see the [DevTools documentation][].
 
 ## Step 3: Add animation for sign in progress
 
-It’s time to add animation! In this final step,
-you’ll create the animation for the
+It's time to add animation! In this final step,
+you'll create the animation for the
 `LinearProgressIndicator` at the top of the sign in
 area. The animation has the following behavior:
 
@@ -1038,7 +1038,7 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
 Congratulations!
 You have created your first web app using Flutter!
 
-If you’d like to continue playing with this example,
+If you'd like to continue playing with this example,
 perhaps you could add form validation.
 For advice on how to do this,
 see the [Building a form with validation][]

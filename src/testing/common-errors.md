@@ -18,7 +18,7 @@ make this page more useful to you and the Flutter community.
 [open an issue]: {{site.github}}/flutter/website/issues/new/choose
 [submit a pull request]: {{site.github}}/flutter/website/pulls
 
-## ‘A RenderFlex overflowed…’
+## 'A RenderFlex overflowed…'
 
 RenderFlex overflow is one of the most frequently
 encountered Flutter framework errors,
@@ -101,7 +101,7 @@ the `Row` widget, can provide.
 
 **How to fix it?**
 
-Well, you need to make sure the `Column` won’t attempt
+Well, you need to make sure the `Column` won't attempt
 to be wider than it can be. To achieve this,
 you need to constrain its width. One way to do it is to
 wrap the `Column` in an `Expanded` widget:
@@ -141,7 +141,7 @@ The resources linked below provide further information about this error.
 [medium-article]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db#738b
 [Understanding constraints]: {{site.url}}/ui/layout/constraints
 
-## ‘RenderBox was not laid out’
+## 'RenderBox was not laid out'
 
 While this error is pretty common,
 it's often a side effect of a primary error 
@@ -160,18 +160,18 @@ RenderViewport#5a477 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
 
 Usually, the issue is related to violation of box constraints,
 and it needs to be solved by providing more information
-to Flutter about how you’d like to constrain the widgets in question.
+to Flutter about how you'd like to constrain the widgets in question.
 You can learn more about how constraints work
 in Flutter on the [Understanding constraints][] page. 
 
 The `RenderBox was not laid out` error is often
 caused by one of two other errors:
 
-* ‘Vertical viewport was given unbounded height’
-* ‘An InputDecorator...cannot have an unbounded width’
+* 'Vertical viewport was given unbounded height'
+* 'An InputDecorator...cannot have an unbounded width'
 
 <a id="unbounded"></a>
-## ‘Vertical viewport was given unbounded height’
+## 'Vertical viewport was given unbounded height'
 
 This is another common layout error you could run into 
 while creating a UI in your Flutter app.
@@ -198,7 +198,7 @@ The error is often caused when a `ListView`
 is placed inside a `Column`. A `ListView` takes all
 the vertical space available to it,
 unless it's constrained by its parent widget.
-However, a `Column` doesn’t impose any constraint
+However, a `Column` doesn't impose any constraint
 on its children's height by default.
 The combination of the two behaviors leads to the failure of
 determining the size of the `ListView`. 
@@ -271,7 +271,7 @@ further information about this error.
 * [How to debug layout issues with the Flutter Inspector][medium-article]
 * [Understanding constraints][]
 
-## ‘An InputDecorator...cannot have an unbounded width’
+## 'An InputDecorator...cannot have an unbounded width'
 
 The error message suggests that it's also related
 to box constraints, which are important to understand
@@ -341,7 +341,7 @@ Widget build(BuildContext context) {
 }
 ```
 
-## ‘Incorrect use of ParentData widget’
+## 'Incorrect use of ParentData widget'
 
 This error is about missing an expected parent widget.
 
@@ -359,7 +359,7 @@ listed above is not placed directly inside a compatible ancestor widget.
 
 **How might you run into the error?**
 
-While Flutter’s widgets are generally flexible
+While Flutter's widgets are generally flexible
 in how they can be composed together in a UI,
 a small subset of those widgets expect specific parent widgets.
 When this expectation can't be satisfied in your widget tree,
@@ -382,7 +382,7 @@ the top right corner of the page) to expand this list.
 The fix should be obvious once you know
 which parent widget is missing. 
 
-## ‘setState called during build’
+## 'setState called during build'
 
 The `build` method in your Flutter code isn't
 a good place to call `setState`,

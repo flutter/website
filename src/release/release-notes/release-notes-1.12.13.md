@@ -5,7 +5,7 @@ description: Release notes for Flutter 1.12.13.
 ---
 
 Welcome to Flutter 1.12, our biggest stable release so far!
-In this release, we’ve merged 1,905 Pull Requests
+In this release, we've merged 1,905 Pull Requests
 from 188 contributors, including both Googlers and
 non-Google contributors! Please see the chart below
 for the number of PRs in each release. Over the past year,
@@ -18,7 +18,7 @@ Flutter is listed as one of the top 3 active repos on GitHub!
 As the holiday season is upon us, we would like to express
 our sincerest appreciation to our amazing developer community
 who believe in Flutter, advocate for Flutter, and contribute to Flutter.
-It’s been an incredible year for us all! We look forward to
+It's been an incredible year for us all! We look forward to
 working with you in the years to come.
 
 As always, you can find interesting PRs listed below.
@@ -151,7 +151,7 @@ and the ability to configure a stretch effect for a SliverAppBar.
 ## iOS support
 
 iOS continues to be a big investment area for Flutter.
-With this release, we’ve made a visual refresh to our
+With this release, we've made a visual refresh to our
 Cupertino library to match the iOS 13 look. We now support
 dark mode in the Cupertino widgets, added two new widgets called
 [CupertinoContextMenu]({{site.api}}/flutter/cupertino/CupertinoContextMenu-class.html)
@@ -288,7 +288,7 @@ and [CupertinoDatePicker]({{site.api}}/flutter/cupertino/CupertinoDatePicker-cla
 
 [13029]({{site.github}}/flutter/engine/pull/13029) Minimal test harness for iOS
 
-[13051]({{site.github}}/flutter/engine/pull/13051) Don’t bump iOS deployment target for Metal builds.
+[13051]({{site.github}}/flutter/engine/pull/13051) Don't bump iOS deployment target for Metal builds.
 
 [13093]({{site.github}}/flutter/engine/pull/13093) iOS Platform View: Fixed overrelease of the observer.
 
@@ -329,7 +329,7 @@ and [CupertinoDatePicker]({{site.api}}/flutter/cupertino/CupertinoDatePicker-cla
 
 ## Android
 
-In this release, we’ve merged a list of changes to support Android 10, including a new activity zoom transition. 
+In this release, we've merged a list of changes to support Android 10, including a new activity zoom transition. 
 
 [37526]({{site.github}}/flutter/flutter/pull/37526) catch errors during gradle update
 
@@ -398,7 +398,7 @@ In this release, we’ve merged a list of changes to support Android 10, includi
 
 ## Add to App feature
 
-We’ve made a significant upgrade to Add-to-App, the feature that allows you to integrate a Flutter module into your Android or iOS app. Can’t wait to try it? Check out the [Add-to-App documentation]({{site.url}}/add-to-app). 
+We've made a significant upgrade to Add-to-App, the feature that allows you to integrate a Flutter module into your Android or iOS app. Can't wait to try it? Check out the [Add-to-App documentation]({{site.url}}/add-to-app). 
 
 [41666]({{site.github}}/flutter/flutter/pull/41666) Generate projects using the new Android embedding
 
@@ -1475,7 +1475,7 @@ enabling it in the dev channel. For more details, see the
 
 ## Framework
 
-We’ve fixed many bugs in this release to improve the quality and stability of our framework. 
+We've fixed many bugs in this release to improve the quality and stability of our framework. 
 
 [38643]({{site.github}}/flutter/flutter/pull/38643) PlatformViewLink handles focus
 
@@ -2632,7 +2632,7 @@ and made some bug fixes.
 
 ## Tooling
 
-Flutter tooling is another big investment in this release. We launched a new version of [DartPad](http://dartpad.dev) that allows you to play with Flutter directly in your browser without installing anything, released a new feature “Hot UI” (in preview) that allows you to interact with widgets directly in the IDE, enhanced Dart DevTools with a new visual layout view, enabled simultaneous multi-device debugging in Visual Studio Code, and added support for “golden” image testing.
+Flutter tooling is another big investment in this release. We launched a new version of [DartPad](http://dartpad.dev) that allows you to play with Flutter directly in your browser without installing anything, released a new feature "Hot UI" (in preview) that allows you to interact with widgets directly in the IDE, enhanced Dart DevTools with a new visual layout view, enabled simultaneous multi-device debugging in Visual Studio Code, and added support for "golden" image testing.
 
 In addition to the PRs listed below, please also check out the following releases for the IntelliJ and Android Studio Flutter plugin, the VS Code Flutter plugin and Dart DevTools:
 
