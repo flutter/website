@@ -403,31 +403,32 @@
     - title: Testing overview
       permalink: /testing/overview
       match-page-url-exactly: true
-    - title: Widget testing
       children:
-        - title: Introduction
-          permalink: /cookbook/testing/widget/introduction
-        - title: Find widgets
-          permalink: /cookbook/testing/widget/finders
-        - title: Simulate scrolling
-          permalink: /cookbook/testing/widget/scrolling
-        - title: Simulate user interaction
-          permalink: /cookbook/testing/widget/tap-drag
-    - title: Integration testing
-      children:
-        - title: Introduction
-          permalink: /testing/integration-tests
-          match-page-url-exactly: true
-        - title: Write and run an integration test
-          permalink: /cookbook/testing/integration/introduction
-        - title: Profile an integration test
-          permalink: /cookbook/testing/integration/profiling
-    - title: Unit testing
-      children:
-        - title: Introduction
-          permalink: /cookbook/testing/unit/introduction
-        - title: Mock dependencies
-          permalink: /cookbook/testing/unit/mocking
+        - title: Widget testing
+          children:
+            - title: Introduction
+              permalink: /cookbook/testing/widget/introduction
+            - title: Find widgets
+              permalink: /cookbook/testing/widget/finders
+            - title: Simulate scrolling
+              permalink: /cookbook/testing/widget/scrolling
+            - title: Simulate user interaction
+              permalink: /cookbook/testing/widget/tap-drag
+        - title: Integration testing
+          children:
+            - title: Introduction
+              permalink: /testing/integration-tests
+              match-page-url-exactly: true
+            - title: Write and run an integration test
+              permalink: /cookbook/testing/integration/introduction
+            - title: Profile an integration test
+              permalink: /cookbook/testing/integration/profiling
+        - title: Unit testing
+          children:
+            - title: Introduction
+              permalink: /cookbook/testing/unit/introduction
+            - title: Mock dependencies
+              permalink: /cookbook/testing/unit/mocking
     - title: Test a plugin
       permalink: /testing/testing-plugins
     - title: Handle plugin code in tests
