@@ -58,7 +58,7 @@ To integrate more fully with desktop form-factors like Android tablets and Chrom
 
 [#24830](https://github.com/flutter/flutter/pull/24830) Implement hover support for mouse pointers
 
-As widgets are the core way to interact with users in Flutter, this release continues to add features and fixes to the Flutter widget set with particular attention paid to the [SliverAppBar](https://docs.flutter.io/flutter/material/SliverAppBar-class.html):
+As widgets are the core way to interact with users in Flutter, this release continues to add features and fixes to the Flutter widget set with particular attention paid to the [SliverAppBar](https://api.flutter.dev/flutter/material/SliverAppBar-class.html):
 
 [#26021](https://github.com/flutter/flutter/pull/26021) Fix SliverAppBar title opacity and test all cases
 
@@ -224,7 +224,7 @@ GestureDectector(
 
 ### [#26238](https://github.com/flutter/flutter/pull/26238) Remove long-deprecated TwoLevelList
 
-Removed the long-deprecated TwoLevelList widget; use ListView with ExpansionTile instead. See [this example](https://github.com/flutter/flutter/blob/master/examples/catalog/lib/expansion_tile_sample.dart) for a sample that uses ExpansionTile.
+Removed the long-deprecated TwoLevelList widget; use ListView with ExpansionTile instead. See [this example](https://github.com/flutter/flutter/blob/v1.2.1/examples/catalog/lib/expansion_tile_sample.dart) for a sample that uses ExpansionTile.
 
 
 ###[#7442](https://github.com/flutter/engine/pull/7442) Move Picture.toImage rasterization to the GPU thread

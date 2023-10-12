@@ -10,14 +10,13 @@ Learn more about the Flutter framework from the following pages:
 
 ## Flutter basics
 
-* [Introduction to widgets][]
+* [Introduction to Flutter's UI][]
 * [Building layouts][] tutorial
 * [Add interactivity][] tutorial
 
 ## Apply your existing knowledge
 
 * [Flutter for Android developers][]
-* [From Java to Dart][] codelab
 * [Flutter for SwiftUI developers][]
 * [Flutter for UIKit developers][]
 * [Flutter for React Native developers][]
@@ -37,9 +36,9 @@ Reach out to us at our [mailing list][]. We'd love to hear from you!
 
 Happy Fluttering!
 
-[Add interactivity]: {{site.url}}/development/ui/interactive
+[Add interactivity]: {{site.url}}/ui/interactivity
 [Bootstrap into Dart: learn more about the language]: {{site.url}}/resources/bootstrap-into-dart
-[Building layouts]: {{site.url}}/development/ui/layout/tutorial
+[Building layouts]: {{site.url}}/ui/layout/tutorial
 [The Complete Flutter Developer Bootcamp Using Dart]: https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart
 [Flutter API Docs]: {{site.api}}
 [Flutter cookbook]: {{site.url}}/cookbook
@@ -50,7 +49,6 @@ Happy Fluttering!
 [Flutter samples]: https://flutter.github.io/samples
 [Flutter for web developers]: {{site.url}}/get-started/flutter-for/web-devs
 [Flutter for Xamarin.Forms developers]: {{site.url}}/get-started/flutter-for/xamarin-forms-devs
-[From Java to Dart]: {{site.codelabs}}/codelabs/from-java-to-dart
-[Introduction to widgets]: {{site.url}}/development/ui/widgets-intro
+[Introduction to Flutter's UI]: {{site.url}}/ui
 [mailing list]: mailto:{{site.email}}
 [Udacity online Flutter training]: https://www.udacity.com/course/build-native-mobile-apps-with-flutter--ud905

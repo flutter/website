@@ -1,12 +1,6 @@
 ---
 title: Take a picture using the camera
 description: How to use a camera plugin on mobile.
-prev:
-  title: Play and pause a video
-  path: /cookbook/plugins/play-video
-next:
-  title: An introduction to integration testing
-  path: /cookbook/testing/integration/introduction
 ---
 
 <?code-excerpt path-base="cookbook/plugins/picture_using_camera/"?>
@@ -40,14 +34,12 @@ To complete this recipe, you need to add three dependencies to your app:
 [`path`][]
 : Creates paths that work on any platform.
 
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  camera:
-  path_provider:
-  path:
+To add the packages as dependencies, run `flutter pub add`:
+
+```terminal
+$ flutter pub add camera path_provider path
 ```
+
 {{site.alert.tip}}
   - For android, You must update `minSdkVersion` to 21 (or higher).
   - On iOS, lines below have to be added inside `ios/Runner/Info.plist` in order the access the camera and microphone.

@@ -1,6 +1,8 @@
 ---
 title: Adding 'linux' and 'windows' to TargetPlatform enum
-description: Two new values were added to the TargetPlatform enum that could require additional cases in switch statements that switch on a TargetPlatform.
+description: >
+  Two new values were added to the TargetPlatform enum that could
+  require additional cases in switch statements that switch on a TargetPlatform.
 ---
 
 ## Summary
@@ -74,17 +76,17 @@ can then help you find any cases that aren't handled.
 In order to migrate to the new enum, and avoid the analyzer's
 `missing_enum_constant_in_switch` error, which looks like:
 
-```
+```nocode
 warning: Missing case clause for 'linux'. (missing_enum_constant_in_switch at [package] path/to/file.dart:111)
 ```
 
-or 
+or:
 
-```
+```nocode
 warning: Missing case clause for 'windows'. (missing_enum_constant_in_switch at [package] path/to/file.dart:111)
 ```
 
-Modify your code as follows: 
+Modify your code as follows:
 
 Code before migration:
 
@@ -150,12 +152,15 @@ In stable release: 1.17
 ## References
 
 API documentation:
+
 * [`TargetPlatform`][]
 
 Relevant issues:
+
 * [Issue #31366][]
 
 Relevant PR:
+
 * [Add Windows, and Linux as TargetPlatforms][]
 
 [Add Windows, and Linux as TargetPlatforms]: {{site.repo.flutter}}/pull/51519

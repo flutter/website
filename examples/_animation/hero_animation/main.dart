@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// Tap on the source route’s photo to push a new route,
+// Tap on the source route's photo to push a new route,
 // containing the same photo at a different location and scale.
 // Return to the previous route by tapping the image, or by using the
-// device’s back-to-the-previous-screen gesture.
+// device's back-to-the-previous-screen gesture.
 // You can slow the transition using the timeDilation property.
 
 import 'package:flutter/material.dart';
@@ -58,7 +58,7 @@ class HeroAnimation extends StatelessWidget {
       body: Center(
         child: PhotoHero(
           photo: 'images/flippers-alpha.png',
-          width: 300.0,
+          width: 300,
           onTap: () {
             Navigator.of(context)
                 .push(MaterialPageRoute<void>(builder: (context) {
@@ -69,11 +69,11 @@ class HeroAnimation extends StatelessWidget {
                 body: Container(
                   // Set background to blue to emphasize that it's a new route.
                   color: Colors.lightBlueAccent,
-                  padding: const EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(16),
                   alignment: Alignment.topLeft,
                   child: PhotoHero(
                     photo: 'images/flippers-alpha.png',
-                    width: 100.0,
+                    width: 100,
                     onTap: () {
                       Navigator.of(context).pop();
                     },

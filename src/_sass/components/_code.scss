@@ -1,3 +1,97 @@
+@use '../base/variables' as *;
+@use '../base/material-colors' as *;
+@use '../vendor/bootstrap';
+@use '../vendor/prettify';
+
+// NOTE moved from _code to a shared module since imports end
+// up being sneaky and messy in terms of ordering
+@mixin pre-defaults {
+  background-color: $site-color-codeblock-bg;
+  padding: bootstrap.bs-spacer(3) bootstrap.bs-spacer(4);
+}
+
+//
+// Code-prettyprint overrides
+//
+
+pre {
+  &.prettyprint {
+    @include pre-defaults;
+    border: none;
+  }
+
+  .highlight {
+    background: #ffe600;
+    padding: 2px;
+  }
+}
+
+.pln { color: #222 }  /* plain text */
+
+@media screen {
+  .str { color: #1b87c9 }  /* string content */
+  .kwd { color: #1FBAAC }  /* a keyword */
+  .com { color: #999999 }  /* a comment */
+  /* punctuation, lisp open bracket, lisp close bracket */
+  .pun, .opn, .clo { color: #222 }
+}
+
+//
+// Rouge / pygments classes -- https://github.com/jneen/rouge
+//
+// For CSS class names, see
+// - https://github.com/rouge-ruby/rouge/blob/master/lib/rouge/token.rb
+// - https://github.com/rouge-ruby/rouge/wiki/List-of-tokens, doc page,
+//   but doesn't seem to be as complete as token.rb.
+//
+
+$generic-output-color: white;
+
+@mixin console-base($color: $light-green-A700) {
+  background: $grey-900;
+  color: $color;
+}
+
+.language-console .highlight {
+  @include console-base;
+  .go { color: $generic-output-color; } /* Generic.Output */
+}
+
+pre.console-output {
+  @include console-base($generic-output-color)
+}
+
+// `terminal` is like `console` with prompts and output colored differently
+.language-terminal .highlight {
+  @include console-base;
+  .gp { color: $grey-500; } /* Generic.Prompt */
+  .go { color: $generic-output-color; } /* Generic.Output */
+  .nb, .nt { color: #99BB00; } /* Name.Builtin, Name.Tag */
+  .nv { color: #03bbbb; }
+  .o { color: $grey-500; font-weight: bold; } /* Operator */
+  .s, .s1, .s2 { color: #00CCEE; } /* String, .Single, .Double quotes */
+  .sb { color: #f56b78; } /* String.Backtick */
+}
+
+// Match code-prettify classes to the extent possible.
+.highlight {
+  .s, .s1, .s2 { @extend .str; } /* Literal.String.* */
+  .k, .kc, .kd, .kn, .kp, .kr, .kt { @extend .kwd; } /* Keyword.* */
+  .p { @extend .pun; } /* Punctuation */
+  .c, .c1, .cm { @extend .com; } /* Comment */
+  .cp { @extend .typ; } /* Comment.Preproc */
+  .l, .m, .mb, .mf, .mh, .mi, .mo, .mx { @extend .lit; } /* Literal.* */
+  .o { @extend .opn; } /* Operator */
+  .n { @extend .typ; } /* Name */
+  .na { @extend .kwd; } /* Name.Attribute */
+  .nb { @extend .typ; } /* Name.Builtin */
+  .nl { @extend .kwd; } /* Name.Label */
+  .no { @extend .lit; } /* Name.Constant */
+  .nt { @extend .tag; } /* Name.Tag */
+
+  .gp { user-select: none; } /* Generic.Prompt */
+}
+
 code {
   color: #008f83;
 }
@@ -8,7 +102,7 @@ pre {
 
 // Give code blocks the same margin-bottom as regular paragraphs.
 div.highlighter-rouge {
-  margin-bottom: bs-spacer(4);
+  margin-bottom: bootstrap.bs-spacer(4);
 }
 
 pre > span.strike { text-decoration: line-through; }
@@ -22,30 +116,30 @@ pre > span.strike { text-decoration: line-through; }
     display: table-row;
     padding-left: 8px;
     &:before {
-      font-family: $font-family-monospace;
+      font-family: bootstrap.$font-family-monospace;
       content: '/*' counter(code-note-counter) '*/' ;
       display: table-cell;
       text-align: right;
-      color: $teal;
-      padding-right: $font-size-base * 0.5;
+      color: bootstrap.$teal;
+      padding-right: bootstrap.$font-size-base * 0.5;
       // background-color: lightyellow;
     }
   }
 }
 
 @mixin code-excerpt-border($side: '') {
-  border#{$side}: $border-width solid $border-color;
+  border#{$side}: bootstrap.$border-width solid bootstrap.$border-color;
 }
 
 .code-excerpt {
   &__code {
-    margin-bottom: bs-spacer(4);
+    margin-bottom: bootstrap.bs-spacer(4);
     position: relative;
 
     pre {
       @include code-excerpt-border;
 
-      background-color: $gray-100;
+      background-color: bootstrap.$gray-100;
       margin-bottom: 0;
     }
   }
@@ -55,22 +149,20 @@ pre > span.strike { text-decoration: line-through; }
     border: none;
     cursor: pointer;
     color: lighten($site-color-body, 20%); // Offers better contrast on dark bg
-    margin-top: bs-spacer(2);
+    margin-top: bootstrap.bs-spacer(2);
     outline: none !important;
     position: absolute;
     right: 0;
   }
 
   &__header {
-    background-color: $gray-200;
+    background-color: bootstrap.$gray-200;
     @include code-excerpt-border('-top');
     @include code-excerpt-border('-left');
     @include code-excerpt-border('-right');
     font-size: $site-spacer * .875;
-    font-weight: $font-weight-bold;
-    padding-top: bs-spacer(3);
-    padding-left: bs-spacer(4);
-    padding-right: bs-spacer(2);
-    padding-bottom: 0.67rem;
+    font-weight: bootstrap.$font-weight-bold;
+    padding: bootstrap.bs-spacer(3) bootstrap.bs-spacer(2)
+            0.67rem bootstrap.bs-spacer(4);
   }
 }

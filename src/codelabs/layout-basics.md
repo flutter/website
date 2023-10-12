@@ -310,7 +310,7 @@ can position their children in that extra space.
 
 `MainAxisAlignment.spaceAround`
 : Similar to `MainAxisAlignment.spaceEvenly`,
-  but reduces half of the space before the first
+  but reduces the space before the first
   child and after the last child
   to half of the width between the children.
 
@@ -621,7 +621,7 @@ the widget becomes the `Flexible` widget's child
 and is considered *flexible*.
 After inflexible widgets are laid out,
 the widgets are resized according to their
-`flex` and `fit` properties.:
+`flex` and `fit` properties:
 
 `flex`
 : Compares itself against other `flex`
@@ -1997,7 +1997,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16),
           child: Center(
             child: Container(
               decoration: BoxDecoration(
@@ -2010,7 +2010,7 @@ class MyApp extends StatelessWidget {
                   ),
                 ],
               ),
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8),
               child: MyWidget(),
             ),
           ),
@@ -2100,7 +2100,7 @@ Future<void> main() async {
   A `Padding` widget that creates a space of 8
   pixels around the `Icon` widget.
 
-  To do this, you can specify `const EdgeInsets.all(8.0)`
+  To do this, you can specify `const EdgeInsets.all(8)`
   for the `padding` property.
 
   The `Row` should look like this:
@@ -2111,7 +2111,7 @@ Future<void> main() async {
      Row(
        children: [
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8),
           child: Icon(Icons.account_circle, size: 50),
         ),
         Column( ... ), // <--- The Column you first implemented
@@ -2154,7 +2154,7 @@ class MyWidget extends StatelessWidget {
     return Row(
       children: [
         const Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(8),
           child: Icon(Icons.account_circle, size: 50),
         ),
         Column(
@@ -2189,7 +2189,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16),
           child: Center(
             child: Container(
               decoration: BoxDecoration(
@@ -3334,7 +3334,7 @@ You can download Flutter from the [install][] page.
 
 
 
-[Building layouts]: {{site.url}}/development/ui/layout
+[Building layouts]: {{site.url}}/ui/layout
 [Cupertino]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
 [DartPad issue]: {{site.github}}/dart-lang/dart-pad/issues/new
 [Flutter's YouTube channel]: {{site.social.youtube}}

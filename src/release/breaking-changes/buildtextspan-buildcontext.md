@@ -1,6 +1,8 @@
 ---
 title: Added BuildContext parameter to TextEditingController.buildTextSpan
-description: A BuildContext parameter is added to TextEditingController.buildTextSpan so inheritors that override buildTextSpan can access inherited widgets.
+description: >
+  A BuildContext parameter is added to TextEditingController.buildTextSpan so
+  inheritors that override buildTextSpan can access inherited widgets.
 ---
 
 ## Summary
@@ -90,7 +92,7 @@ class MyTextEditingController {
 
 Example error message before migration:
 
-```
+```nocode
 'MyTextEditingController.buildTextSpan' ('TextSpan Function({TextStyle? style, required bool withComposing})') isn't a valid override of 'TextEditingController.buildTextSpan' ('TextSpan Function({required BuildContext context, TextStyle? style, required bool withComposing})').
 ```
 
@@ -119,7 +121,7 @@ TextSpan span = controller.buildTextSpan(withComposing: false);
 
 Error message before migration:
 
-```
+```nocode
 The named parameter 'context' is required, but there's no corresponding argument.
 Try adding the required argument.
 ```

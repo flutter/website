@@ -1,12 +1,14 @@
 ---
 title: Trackpad gestures can trigger GestureRecognizer
-description: Trackpad gestures on most platforms now send `PointerPanZoom` sequences and can trigger pan, drag, and scale `GestureRecognizer` callbacks. 
+description: >
+  Trackpad gestures on most platforms now send `PointerPanZoom` sequences and
+  can trigger pan, drag, and scale `GestureRecognizer` callbacks. 
 ---
 
 ## Summary
 
 Trackpad gestures on most platforms now send `PointerPanZoom` sequences and
-can trigger pan, drag, and scale `GestureRecognizer` callbacks. 
+can trigger pan, drag, and scale `GestureRecognizer` callbacks.
 
 ## Context
 
@@ -14,13 +16,14 @@ Scrolling on Flutter Desktop prior to version 3.3.0 used `PointerScrollEvent`
 messages to represent discrete scroll deltas. This system worked well for mouse
 scroll wheels, but wasn't a good fit for trackpad scrolling. Trackpad scrolling
 is expected to cause momentum, which depends not only on the scroll deltas, but
-also the timing of when fingers are released from the trackpad. In addition, trackpad
-pinching-to-zoom could not be represented.
+also the timing of when fingers are released from the trackpad.
+In addition, trackpad pinching-to-zoom could not be represented.
 
 Three new `PointerEvent`s have been introduced: `PointerPanZoomStartEvent`,
-`PointerPanZoomUpdateEvent`, and `PointerPanZoomEndEvent`. Relevant `GestureRecognizer`s
-have been updated to register interest in trackpad gesture sequences, and will
-emit `onDrag`, `onPan`, and/or `onScale` callbacks in response to movements
+`PointerPanZoomUpdateEvent`, and `PointerPanZoomEndEvent`.
+Relevant `GestureRecognizer`s have been updated to register interest in
+trackpad gesture sequences, and will emit `onDrag`, `onPan`, and/or
+`onScale` callbacks in response to movements
 of two or more fingers on the trackpad.
 
 This means both that code designed only for touch interactions might trigger upon
@@ -38,15 +41,15 @@ Depending on the platform and specific trackpad model, the new system might not
 be used, if not enough data is provided to the Flutter engine by platform APIs.
 This includes on Windows, where trackpad gesture support is dependent on the
 trackpad's driver, and the Web platform, where not enough data is provided by
-browser APIs, and trackpad scrolling must still use the old `PointerScrollSignal
-system.
+browser APIs, and trackpad scrolling must still
+use the old `PointerScrollSignal` system.
 
-Developers should be prepared to receive both types of events and ensure their apps
-or packages handle them in the appropriate manner.
+Developers should be prepared to receive both types of events and
+ensure their apps or packages handle them in the appropriate manner.
 
 `Listener` now has three new callbacks: `onPointerPanZoomStart`,
-`onPointerPanZoomUpdate`, and `onPointerPanZoomEnd` which can be used to observe
-trackpad scrolling and zooming events.
+`onPointerPanZoomUpdate`, and `onPointerPanZoomEnd` which can
+be used to observe trackpad scrolling and zooming events.
 
 ```dart
 void main() => runApp(Foo());
@@ -76,10 +79,10 @@ class Foo extends StatelessWidget {
 ```
 
 `PointerPanZoomUpdateEvent` contains a `pan` field to represent the cumulative
-pan of the current gesture, a `panDelta` field to represent the difference in pan
-since the last event, a `scale` event to represent the cumulative zoom of the
-current gesture, and a `rotation` event to represent the cumulative rotation
-(in radians) of the current gesture.
+pan of the current gesture, a `panDelta` field to represent the difference in
+pan since the last event, a `scale` event to represent the cumulative zoom
+of the current gesture, and a `rotation` event to
+represent the cumulative rotation (in radians) of the current gesture.
 
 `GestureRecognizer`s now have methods to all the trackpad events from one
 continuous trackpad gesture. Calling the `addPointerPanZoom` method on a
@@ -170,8 +173,9 @@ gesture events and triggers callbacks if recognized.
 
 #### Using `GestureRecognizer` and `Listener`
 
-Ensure that `onPointerPanZoomStart` is passed through to each recognizer from the
-`Listener`. The `addPointerPanZoom` method of `GestureRecognizer must be called
+Ensure that `onPointerPanZoomStart` is passed through to
+each recognizer from the `Listener`.
+The `addPointerPanZoom` method of `GestureRecognizer must be called
 for it to show interest and start tracking each trackpad gesture.
 
 Code before migration:
@@ -279,7 +283,7 @@ class Foo extends StatelessWidget {
 }
 ```
 
-Code after
+Code after migration:
 
 ```dart
 void main() => runApp(Foo());
@@ -302,18 +306,20 @@ class Foo extends StatelessWidget {
 }
 ```
 
-Please note: Use of raw `Listener` in this way could cause conflicts with other
-gesture interactions as it doesn't participate in the gesture disambiguation arena.
+Please note: Use of raw `Listener` in this way could
+cause conflicts with other gesture interactions as it
+doesn't participate in the gesture disambiguation arena.
 
 ### For gesture interactions not suitable for trackpad usage
 
 #### Using `GestureDetector`
 
-If using Flutter 3.3.0, `RawGestureDetector` could be used instead of `GestureDetector`
-to ensure each `GestureRecognizer` created by the `GestureDetector` has
-`supportedDevices` set to exclude `PointerDeviceKind.trackpad`. Starting in
-version 3.4.0, there is a `supportedDevices` parameter directly on
-`GestureDetector`.
+If using Flutter 3.3.0, `RawGestureDetector` could be used
+instead of `GestureDetector` to ensure each `GestureRecognizer` created
+by the `GestureDetector` has `supportedDevices` set to
+exclude `PointerDeviceKind.trackpad`.
+Starting in version 3.4.0, there is a `supportedDevices` parameter
+directly on `GestureDetector`.
 
 Code before migration:
 
@@ -550,7 +556,8 @@ API documentation:
 * [`RawGestureDetector`][]
 * [`GestureRecognizer`][]
 
-Design Document
+Design document:
+
 * [Flutter Trackpad Gestures][]
 
 Relevant issues:

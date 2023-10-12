@@ -1,3 +1,6 @@
+@use '../base/variables' as *;
+@use '../vendor/bootstrap';
+
 .snackbar {
   align-items: center;
   bottom: $site-snackbar-padding;
@@ -6,7 +9,7 @@
   left: $site-snackbar-padding;
   position: fixed;
   right: $site-snackbar-padding;
-  z-index: $site-z-snackbar;
+  z-index: bootstrap.$zindex-popover;
 
   &__container {
     align-items: center;
@@ -14,11 +17,11 @@
     color: $site-color-white;
     display: inline-flex;
     justify-content: space-between;
-    padding: bs-spacer(2) bs-spacer(4);
+    padding: bootstrap.bs-spacer(2) bootstrap.bs-spacer(4);
   }
 
   &__action {
-    margin-left: bs-spacer(4);
+    margin-left: bootstrap.bs-spacer(4);
     position: relative;
     top: 1px;
   }

@@ -16,12 +16,20 @@ Before beginning the process of releasing your app,
 ensure that it meets
 Apple's [App Review Guidelines][appreview].
 
-In order to publish your app to the App Store,
+To publish your app to the App Store,
 you must first enroll in the
 [Apple Developer Program][devprogram].
 You can read more about the various
 membership options in Apple's
 [Choosing a Membership][devprogram_membership] guide.
+
+## Video overview
+
+For those who prefer video over text,
+the following video covers the same material as this guide.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iE2bpP56QKc?si=tHqWYKNTN1H8H9mC" title="Release an iOS app with Flutter in 7 steps" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+[Release an iOS app with Flutter in 7 steps](https://www.youtube.com/watch?v=iE2bpP56QKc)
 
 ## Register your app on App Store Connect
 
@@ -142,11 +150,14 @@ app's icons:
 
 ## Add a launch image
 
-Similar to the app icon, you may also want to replace the placeholder launch image: 
+Similar to the app icon,
+you can also replace the placeholder launch image: 
 
-1. In the Xcode project navigator, select `Assets.xcassets` in the
-   `Runner` folder. Update the placeholder launch image with your own launch image. 
-1. Verify the new launch image by hot restarting your app. (Don't use `hot reload`.)
+1. In the Xcode project navigator,
+   select `Assets.xcassets` in the `Runner` folder.
+   Update the placeholder launch image with your own launch image. 
+1. Verify the new launch image by hot restarting your app.
+   (Don't use `hot reload`.)
 
 ## Create a build archive and upload to App Store Connect
 
@@ -175,7 +186,7 @@ while `build-number` uses `CFBundleVersion`.
 Read more about iOS versioning at [Core Foundation Keys][]
 on the Apple Developer's site.
 
-You may also override the `pubspec.yaml` build name and number in Xcode:
+You can also override the `pubspec.yaml` build name and number in Xcode:
 
 1. Open `Runner.xcworkspace` in your app's `ios` folder.
 1. Select **Runner** in the Xcode project navigator, then select the
@@ -477,7 +488,7 @@ The [Distribute your app][distributionguide] guide provides a
 detailed overview of the process of releasing an app to the App Store.
 
 
-[appicon]: {{site.apple-dev}}/ios/human-interface-guidelines/icons-and-images/app-icon/
+[appicon]: {{site.apple-dev}}/design/human-interface-guidelines/app-icons/
 [appreview]: {{site.apple-dev}}/app-store/review/
 [appsigning]: https://help.apple.com/xcode/mac/current/#/dev154b28f09
 [appstore]: {{site.apple-dev}}/app-store/submissions/

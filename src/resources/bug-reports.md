@@ -1,6 +1,8 @@
 ---
-title: Creating useful bug reports
-description: Where to file bug reports and enhancement requests for flutter and the website.
+title: Create useful bug reports
+description: >
+  Where to file bug reports and enhancement requests for 
+  flutter and the website.
 ---
 
 The instructions in this document detail the current steps

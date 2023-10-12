@@ -1,9 +1,12 @@
 ---
 title: A new way to customize context menus
-description: Several hard-coded parameters for customizing context menus have now been replaced by a generic widget builder.
+description: >
+  Several hard-coded parameters for customizing context menus have 
+  now been replaced by a generic widget builder.
 ---
 
 ## Summary
+
 Context menus, or text selection toolbars, are the menus that show up when long
 pressing or right clicking on text in Flutter, and they show options like
 **Cut**, **Copy**, **Paste**, and **Select all**. Previously, it was only
@@ -13,6 +16,7 @@ like everything else in Flutter, and the specific configuration parameters have
 been deprecated.
 
 ## Context
+
 Previously, it was possible to disable buttons from the context menus using
 `TextSelectionControls`, but any customization beyond that required copying and
 editing hundreds of lines of custom classes in the framework. Now, all of this
@@ -20,6 +24,7 @@ has been replaced by a simple builder function, `contextMenuBuilder`, which
 allows any Flutter widget to be used as a context menu.
 
 ## Description of change
+
 Context menus are now built from the `contextMenuBuilder` parameter, which has
 been added to all text-editing and text-selection widgets. If one is not
 provided, then Flutter just sets it to a default that builds the correct context
@@ -59,14 +64,15 @@ TextField(
 )
 ```
 
-A large number of examples of different custom context menus are available [in
-the samples repo]({{site.github}}/flutter/samples/tree/main/experimental/context_menus)
+A large number of examples of different custom context menus are available
+[in the samples repo]({{site.github}}/flutter/samples/tree/main/experimental/context_menus)
 on GitHub.
 
 All related deprecated features were flagged with the deprecation warning "Use
 `contextMenuBuilder` instead."
 
 ## Migration guide
+
 In general, any previous changes to context menus that have been deprecated now
 require the use of the `contextMenuBuilder` parameter on the relevant
 text-editing or text-selection widget (
@@ -80,6 +86,7 @@ To transition to `contextMenuBuilder`, the following parameters and classes have
 been deprecated.
 
 ### [`ToolbarOptions`]({{site.api}}/flutter/widgets/ToolbarOptions-class.html)
+
 This class was previously used to explicitly enable or disable certain buttons
 in a context menu. Before this change, you might have passed it into `TextField`
 or other widgets like this:
@@ -134,6 +141,7 @@ TextField(
 ```
 
 ### [`TextSelectionControls.canCut`]({{site.api}}/flutter/widgets/TextSelectionControls/canCut.html) and other button booleans
+
 These booleans previously had the same effect of enabling and disabling certain
 buttons as `ToolbarOptions.cut`, and so on had. Before this change, you might
 have been hiding and showing buttons by overriding `TextSelectionControls` and
@@ -151,6 +159,7 @@ See the previous section on `ToolbarOptions` for how to achieve a similar effect
 with `contextMenuBuilder`.
 
 ### [`TextSelectionControls.handleCut`]({{site.api}}/flutter/widgets/TextSelectionControls/handleCut.html) and other button callbacks
+
 These functions allowed the modification of the callback called when the buttons
 were pressed. Before this change, you might have been modifying context menu
 button callbacks by overriding these handler methods like this:
@@ -214,6 +223,7 @@ samples repository in
 on GitHub.
 
 ### [`buildToolbar`]({{site.api}}/flutter/widgets/TextSelectionControls/buildToolbar.html)
+
 This function generated the context menu widget similarly to
 `contextMenuBuilder`, but required more setup to use. Before this change, you
 might have been overriding `buildToolbar` as a part of `TextSelectionControls`,
@@ -264,8 +274,8 @@ class _MyContextMenu extends StatelessWidget {
           top: anchor.dy,
           left: anchor.dx,
           child: Container(
-            width: 200.0,
-            height: 200.0,
+            width: 200,
+            height: 200,
             color: Colors.amberAccent,
             child: Column(
               children: children,

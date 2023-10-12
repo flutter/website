@@ -1,12 +1,6 @@
 ---
 title: Create a download button
 description: How to implement a download button.
-prev:
-  title: Work with tabs
-  path: /cookbook/design/tabs
-next:
-  title: Create a nested navigation flow
-  path: /cookbook/effects/nested-nav
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
@@ -18,7 +12,7 @@ Apps are filled with buttons that execute long-running behaviors.
 For example, a button might trigger a download,
 which starts a download process, receives data over time,
 and then provides access to the downloaded asset. 
-It’s helpful to show the user the progress of a
+It's helpful to show the user the progress of a
 long-running process, and the button itself is a good place
 to provide this feedback. In this recipe,
 you'll build a download button that transitions through
@@ -52,9 +46,9 @@ class DownloadButton extends StatelessWidget {
 }
 ```
 
-## Define the button’s possible visual states
+## Define the button's possible visual states
 
-The download button’s visual presentation is based on a
+The download button's visual presentation is based on a
 given download status. Define the possible states of
 the download, and then update `DownloadButton` to accept
 a `DownloadStatus` and a `Duration` for how long the button
@@ -122,7 +116,7 @@ build an `AnimatedContainer` with a
 `ShapeDecoration` that displays a rounded
 rectangle or a circle.
 
-Consider defining the shape’s widget tree in a separated 
+Consider defining the shape's widget tree in a separated 
 `Stateless` widget so that the main `build()`
 method remains simple, allowing for the additions 
 that follow. Instead of creating a function to return a widget,
@@ -190,7 +184,7 @@ class ButtonShapeWidget extends StatelessWidget {
     if (isDownloading || isFetching) {
       shape = ShapeDecoration(
         shape: const CircleBorder(),
-        color: Colors.white.withOpacity(0.0),
+        color: Colors.white.withOpacity(0),
       );
     }
 
@@ -206,7 +200,7 @@ class ButtonShapeWidget extends StatelessWidget {
 ```
 
 You might wonder why you need a `ShapeDecoration`
-widget for a transparent circle, given that it’s invisible.
+widget for a transparent circle, given that it's invisible.
 The purpose of the invisible circle is to orchestrate
 the desired animation. The `AnimatedContainer` begins with a rounded 
 rectangle. When the `DownloadStatus` changes to `fetchingDownload`,
@@ -214,7 +208,7 @@ the `AnimatedContainer` needs to animate from a rounded rectangle
 to a circle, and then fade out as the animation takes place.
 The only way to implement this animation is to define both
 the beginning shape of a rounded rectangle and the 
-ending shape of a circle. But, you don’t want the final
+ending shape of a circle. But, you don't want the final
 circle to be visible, so you make it transparent,
 which causes an animated fade-out.
 
@@ -225,7 +219,7 @@ The `DownloadButton` displays `GET` during the
 phase, and no text in between. 
 
 Add widgets to display text during each download phase,
-and animate the text’s opacity in between. Add the text
+and animate the text's opacity in between. Add the text
 widget tree as a child of the `AnimatedContainer` in the
 button wrapper widget.
 
@@ -256,7 +250,7 @@ class ButtonShapeWidget extends StatelessWidget {
     if (isDownloading || isFetching) {
       shape = ShapeDecoration(
         shape: const CircleBorder(),
-        color: Colors.white.withOpacity(0.0),
+        color: Colors.white.withOpacity(0),
       );
     }
 
@@ -397,7 +391,7 @@ button behavior. The button must do things when the user taps it.
 Add widget properties for callbacks to start a download,
 cancel a download, and open a download. 
 
-Finally, wrap `DownloadButton`’s existing widget tree
+Finally, wrap `DownloadButton`'s existing widget tree
 with a `GestureDetector` widget, and forward the
 tap event to the corresponding callback property.
 
@@ -408,7 +402,7 @@ class DownloadButton extends StatelessWidget {
   const DownloadButton({
     super.key,
     required this.status,
-    this.downloadProgress = 0.0,
+    this.downloadProgress = 0,
     required this.onDownload,
     required this.onCancel,
     required this.onOpen,
@@ -449,7 +443,7 @@ class DownloadButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: _onPressed,
-      child: Stack(
+      child: const Stack(
         children: [
           /* ButtonShapeWidget and progress indicator */
         ],

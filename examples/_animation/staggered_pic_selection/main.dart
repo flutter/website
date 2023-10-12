@@ -59,11 +59,11 @@ class PhotoCheck extends StatelessWidget {
     return DecoratedBox(
       decoration: BoxDecoration(
         color: Theme.of(context).primaryColor,
-        borderRadius: const BorderRadius.all(Radius.circular(16.0)),
+        borderRadius: const BorderRadius.all(Radius.circular(16)),
       ),
       child: const Icon(
         Icons.check,
-        size: 32.0,
+        size: 32,
         color: Colors.white,
       ),
     );
@@ -237,7 +237,7 @@ class _PhotoItemState extends State<PhotoItem> with TickerProviderStateMixin {
                         PositionedTransition(
                           rect: _imagePositionAnimation,
                           child: Container(
-                            margin: const EdgeInsets.all(8.0),
+                            margin: const EdgeInsets.all(8),
                             alignment: Alignment.topRight,
                             child: Text(
                               widget.photo.id.toString(),
@@ -313,9 +313,9 @@ class _ImagesDemoState extends State<ImagesDemo>
         final int photoIndex = startPhotoIndex + frameIndex;
         rowChildren.add(
           Expanded(
-            flex: (frame.width * 100.0).toInt(),
+            flex: (frame.width * 100).toInt(),
             child: Container(
-              padding: const EdgeInsets.all(4.0),
+              padding: const EdgeInsets.all(4),
               height: frame.height * _photoBlockHeight,
               child: PhotoItem(
                 photo: allPhotos[photoIndex],
@@ -359,7 +359,7 @@ class _ImagesDemoState extends State<ImagesDemo>
       ),
       body: SizedBox.expand(
         child: ListView.builder(
-          padding: const EdgeInsets.all(4.0),
+          padding: const EdgeInsets.all(4),
           itemExtent: _photoBlockHeight,
           itemCount: (allPhotos.length / photoBlockFrameCount).floor(),
           itemBuilder: (context, blockIndex) {

@@ -8,7 +8,7 @@ Widget LayoutBuilderWidget() {
   // #docregion LayoutBuilder
   Widget foo = LayoutBuilder(
       builder: (context, constraints) {
-    bool useVerticalLayout = constraints.maxWidth < 400.0;
+    bool useVerticalLayout = constraints.maxWidth < 400;
     return Flex(
       children: [
         Text('Hello'),

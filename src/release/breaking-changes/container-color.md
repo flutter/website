@@ -1,6 +1,8 @@
 ---
 title: Container with color optimization
-description: A container with a color and no other background decoration no longer builds the same child widgets.
+description: >
+  A container with a color and no other background decoration
+  no longer builds the same child widgets.
 ---
 
 ## Summary
@@ -76,15 +78,18 @@ In stable release: 1.17
 ## References
 
 API documentation:
+
 * [`Container`][]
 * [`ColoredBox`][]
 * [`BoxDecoration`][]
 
 Relevant issues:
+
 * [Issue 9672][]
 * [Issue 28753][]
 
-Relevant PRs:
+Relevant PR:
+
 * [Colored box and container optimization #50979][]
 
 [`Container`]: {{site.api}}/flutter/widgets/Container-class.html

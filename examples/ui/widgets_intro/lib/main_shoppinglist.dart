@@ -98,7 +98,7 @@ class _ShoppingListState extends State<ShoppingList> {
         title: const Text('Shopping List'),
       ),
       body: ListView(
-        padding: const EdgeInsets.symmetric(vertical: 8.0),
+        padding: const EdgeInsets.symmetric(vertical: 8),
         children: widget.products.map((product) {
           return ShoppingListItem(
             product: product,

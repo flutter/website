@@ -45,6 +45,11 @@ You can test full working examples on DartPad or view them on GitHub.
 
 ## Overview
 
+As an introduction, watch the following video.
+It outlines how Flutter works on iOS and how to use Flutter to build iOS apps.
+
+<iframe class="full-width" src="{{site.youtube-site}}/embed/ceMsPBbcEGg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Flutter and SwiftUI code describes how the UI looks and works.
 Developers call this type of code a _declarative framework_.
 
@@ -104,7 +109,7 @@ SwiftUI nests Views while Flutter nests Widgets.
       its constraints.
 
 Flutter differs from SwiftUI because the parent component can override
-the child’s desired size. The widget cannot have any size it wants.
+the child's desired size. The widget cannot have any size it wants.
 It also cannot know or decide its position on screen as its parent
 makes that decision.
 
@@ -113,7 +118,7 @@ the parent must set tight constraints.
 A constraint becomes tight when its constraint's minimum size value
 equals its maximum size value.
 
-In **SwiftUI**, views may expand to the available space or
+In **SwiftUI**, views might expand to the available space or
 limit their size to that of its content.
 **Flutter** widgets behave in similar manner.
 
@@ -145,7 +150,7 @@ see [Understanding constraints][].
 
 ### Design system
 
-Because Flutter targets multiple platforms, your app doesn’t need
+Because Flutter targets multiple platforms, your app doesn't need
 to conform to any design system.
 Though this guide features [Material][] widgets,
 your Flutter app can use many different design systems:
@@ -153,7 +158,7 @@ your Flutter app can use many different design systems:
 - Custom Material widgets
 - Community built widgets
 - Your own custom widgets
-- [Cupertino widgets][] that follow Apple’s Human Interface Guidelines
+- [Cupertino widgets][] that follow Apple's Human Interface Guidelines
 
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/3PdUaidHc-E?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -216,7 +221,7 @@ void main() {
 
 `App` is a widget. The build method describes the part of the
 user interface it represents.
-It’s common to begin your app with a [`WidgetApp`][] class,
+It's common to begin your app with a [`WidgetApp`][] class,
 like [`CupertinoApp`][].
 
 <nav class="navbar bg-primary">
@@ -280,8 +285,8 @@ class HomePage extends StatelessWidget {
 
 Note how Flutter uses the [`Center`][] widget.
 SwiftUI renders a view's contents in its center by default.
-That’s not always the case with Flutter.
-`Scaffold` doesn’t render its `body` widget at the center of the screen.
+That's not always the case with Flutter.
+`Scaffold` doesn't render its `body` widget at the center of the screen.
 To center the text, wrap it in a `Center` widget.
 To learn about different widgets and their default behaviors, check out
 the [Widget catalog][].
@@ -361,9 +366,9 @@ HStack {
 
 <?code-excerpt "lib/row.dart (row)"?>
 ```dart
-Row(
+    Row(
   mainAxisAlignment: MainAxisAlignment.center,
-  children: const [
+  children: [
     Icon(CupertinoIcons.globe),
     Text('Hello, world!'),
   ],
@@ -407,9 +412,9 @@ except it swaps [`Column`][] for `Row`:
 
 <?code-excerpt "lib/column.dart (column)"?>
 ```dart
-Column(
+    Column(
   mainAxisAlignment: MainAxisAlignment.center,
-  children: const [
+  children: [
     Icon(CupertinoIcons.globe),
     Text('Hello, world!'),
   ],
@@ -568,7 +573,7 @@ class HomePage extends StatelessWidget {
       body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
-          mainAxisExtent: 40.0,
+          mainAxisExtent: 40,
         ),
         itemCount: widgets.length,
         itemBuilder: (context, index) => widgets[index],
@@ -679,7 +684,7 @@ Implement a stateful widget with the following two classes:
 - a subclass of `State`
 
 The `State` object stores the widget's state.
-To change a widget’s state, call `setState()` from the `State` subclass
+To change a widget's state, call `setState()` from the `State` subclass
 to tell the framework to redraw the widget.
 
 The following example shows a part of a counter app:
@@ -746,7 +751,7 @@ animation.
 
 {:.include-lang}
 ```swift
-Button(“Tap me!”){
+Button("Tap me!"){
    angle += 45
 }
 .rotationEffect(.degrees(angle))
@@ -773,7 +778,7 @@ This animates the `Transform.rotate` widget.
 
 <?code-excerpt "lib/simple_animation.dart (AnimatedButton)"?>
 ```dart
-AnimatedRotation(
+    AnimatedRotation(
   duration: const Duration(seconds: 1),
   turns: turns,
   curve: Curves.easeIn,
@@ -826,7 +831,7 @@ with two classes that help you draw:
 
     <?code-excerpt "lib/canvas.dart (CustomPaint)"?>
     ```dart
-    CustomPaint(
+        CustomPaint(
       painter: SignaturePainter(_points),
       size: Size.infinite,
     ),
@@ -857,7 +862,7 @@ with two classes that help you draw:
         final Paint paint = Paint()
           ..color = Colors.black
           ..strokeCap = StrokeCap.round
-          ..strokeWidth = 5.0;
+          ..strokeWidth = 5;
         for (int i = 0; i < points.length - 1; i++) {
           if (points[i] != null && points[i + 1] != null) {
             canvas.drawLine(points[i]!, points[i + 1]!, paint);
@@ -965,7 +970,7 @@ call your navigation routes using their names.
 
     <?code-excerpt "lib/navigation.dart (ListView)"?>
     ```dart
-    ListView.builder(
+        ListView.builder(
       itemCount: mockPersons.length,
       itemBuilder: (context, index) {
         final person = mockPersons.elementAt(index);
@@ -1102,15 +1107,15 @@ In **Flutter**, use the [`url_launcher`][] plugin.
 
 <?code-excerpt "lib/openapp.dart (OpenAppExample)"?>
 ```dart
- CupertinoButton(
-   onPressed: () async {
-     await launchUrl(
-       Uri.parse('https://google.com'),
-     );
-   },
-   child: const Text(
-     'Open website',
-   ),
+    CupertinoButton(
+  onPressed: () async {
+    await launchUrl(
+      Uri.parse('https://google.com'),
+    );
+  },
+  child: const Text(
+    'Open website',
+  ),
 ),
 ```
 
@@ -1143,7 +1148,7 @@ of the `App` class:
 
 <?code-excerpt "lib/cupertino_themes.dart (Theme)"?>
 ```dart
-CupertinoApp(
+    CupertinoApp(
   theme: CupertinoThemeData(
     brightness: Brightness.dark,
   ),
@@ -1180,7 +1185,7 @@ of the `style` parameter of the `Text` widget.
 
 <?code-excerpt "lib/cupertino_themes.dart (StylingTextExample)"?>
 ```dart
-Text(
+    Text(
   'Hello, world!',
   style: TextStyle(
     fontSize: 30,
@@ -1290,7 +1295,7 @@ following example:
 
 <?code-excerpt "lib/stylingbutton.dart (CustomFont)"?>
 ```dart
-Text(
+        Text(
   'Cupertino',
   style: TextStyle(
     fontSize: 40,
@@ -1347,16 +1352,16 @@ Android, iOS, and on the web from the same codebase.
 To review a complete walkthrough, check out the [video_player example][].
 
 [Flutter for UIKit developers]: {{site.url}}/get-started/flutter-for/uikit-devs
-[Add Flutter to existing app]: {{site.url}}/development/add-to-app
-[Animations overview]: {{site.url}}/development/ui/animations
-[Cupertino widgets]: {{site.url}}/development/ui/widgets/cupertino
-[Flutter concurrency for Swift developers]: {{site.url}}/resources/dart-swift-concurrency
-[Navigation and routing]: {{site.url}}/development/ui/navigation
+[Add Flutter to existing app]: {{site.url}}/add-to-app
+[Animations overview]: {{site.url}}/ui/animations
+[Cupertino widgets]: {{site.url}}/ui/widgets/cupertino
+[Flutter concurrency for Swift developers]: {{site.url}}/get-started/flutter-for/dart-swift-concurrency
+[Navigation and routing]: {{site.url}}/ui/navigation
 [Material]: {{site.material}}/develop/flutter/
-[Platform adaptations]: {{site.url}}/resources/platform-adaptations
+[Platform adaptations]: {{site.url}}/platform-integration/platform-adaptations
 [`url_launcher`]: {{site.pub-pkg}}/url_launcher
-[widget catalog]: {{site.url}}/development/ui/widgets/layout
-[Understanding constraints]: {{site.url}}/development/ui/layout/constraints
+[widget catalog]: {{site.url}}/ui/widgets/layout
+[Understanding constraints]: {{site.url}}/ui/layout/constraints
 [`WidgetApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
 [`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
@@ -1374,11 +1379,11 @@ To review a complete walkthrough, check out the [video_player example][].
 [`RotationTransition`]: {{site.api}}/flutter/widgets/RotationTransition-class.html
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
-[State management]:  {{site.url}}/development/data-and-backend/state-mgmt
+[State management]:  {{site.url}}/data-and-backend/state-mgmt
 [Wonderous]: https://flutter.gskinner.com/wonderous/?utm_source=flutterdocs&utm_medium=docs&utm_campaign=iosdevs
 [video_player]: {{site.pub-pkg}}/video_player
 [video_player example]: {{site.pub-pkg}}/video_player/example
-[Creating responsive and adaptive apps]: {{site.url}}/development/ui/layout/adaptive-responsive
+[Creating responsive and adaptive apps]: {{site.url}}/ui/layout/responsive/adaptive-responsive
 [`MediaQuery.of()`]: {{site.api}}/flutter/widgets/MediaQuery-class.html
 [`CustomPaint`]: {{site.api}}/flutter/widgets/CustomPaint-class.html
 [`CustomPainter`]: {{site.api}}/flutter/rendering/CustomPainter-class.html

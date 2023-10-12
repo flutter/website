@@ -1,12 +1,6 @@
 ---
-title: Work with WebSockets
+title: Communicate with WebSockets
 description: How to connect to a web socket.
-prev:
-  title: Update data over the internet
-  path: /cookbook/networking/update-data
-next:
-  title: Persist data with SQLite
-  path: /cookbook/persistence/sqlite
 ---
 
 <?code-excerpt path-base="cookbook/networking/web_sockets/"?>
@@ -158,7 +152,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

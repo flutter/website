@@ -1,12 +1,6 @@
 ---
 title: Send data to a new screen
 description: How to pass data to a new route.
-prev:
-  title: Return data from a screen
-  path: /cookbook/navigation/returning-data
-next:
-  title: Delete data on the internet
-  path: /cookbook/networking/delete-data
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
@@ -149,7 +143,7 @@ class DetailScreen extends StatelessWidget {
         title: Text(todo.title),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: Text(todo.description),
       ),
     );
@@ -270,7 +264,7 @@ class DetailScreen extends StatelessWidget {
         title: Text(todo.title),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: Text(todo.description),
       ),
     );
@@ -301,7 +295,7 @@ class DetailScreen extends StatelessWidget {
         title: Text(todo.title),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: Text(todo.description),
       ),
     );
@@ -426,7 +420,7 @@ class DetailScreen extends StatelessWidget {
         title: Text(todo.title),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: Text(todo.description),
       ),
     );

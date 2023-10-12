@@ -62,4 +62,4 @@ app on the web:
 [images]: {{site.flutter-medium}}/improving-perceived-performance-with-image-placeholders-precaching-and-disabled-navigation-6b3601087a2b
 [Performance best practices]: {{site.url}}/perf/best-practices
 [shaking]: {{site.flutter-medium}}/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674
-[Show performance data]: {{site.url}}/development/tools/android-studio#show-performance-data
+[Show performance data]: {{site.url}}/tools/android-studio#show-performance-data

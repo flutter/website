@@ -1,12 +1,6 @@
 ---
 title: Fade in images with a placeholder
 description: How to fade images into view.
-prev:
-  title: Display images from the internet
-  path: /cookbook/images/network-image
-next:
-  title: Work with cached images
-  path: /cookbook/images/cached-images
 ---
 
 <?code-excerpt path-base="cookbook/images/fading_in_images"?>
@@ -81,7 +75,7 @@ class MyApp extends StatelessWidget {
 ## From asset bundle
 
 You can also consider using local assets for placeholders.
-First, add the asset to the project’s `pubspec.yaml` file
+First, add the asset to the project's `pubspec.yaml` file
 (for more details, see [Adding assets and images][]):
 
 ```diff
@@ -138,7 +132,7 @@ class MyApp extends StatelessWidget {
 ![Asset fade-in]({{site.url}}/assets/images/docs/cookbook/fading-in-asset-demo.gif){:.site-mobile-screenshot}
 
 
-[Adding assets and images]: {{site.url}}/development/ui/assets-and-images
+[Adding assets and images]: {{site.url}}/ui/assets/assets-and-images
 [`FadeInImage`]: {{site.api}}/flutter/widgets/FadeInImage-class.html
 [`FadeInImage.assetNetwork()`]: {{site.api}}/flutter/widgets/FadeInImage/FadeInImage.assetNetwork.html
 [`transparent_image`]: {{site.pub-pkg}}/transparent_image

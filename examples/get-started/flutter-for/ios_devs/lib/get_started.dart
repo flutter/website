@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Returns a CupertinoApp that, by default, 
+    // Returns a CupertinoApp that, by default,
     // has the look and feel of an iOS app.
     return const CupertinoApp(
       home: HomePage(),

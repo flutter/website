@@ -9,8 +9,10 @@ dart --disable-analytics
 
 echo "Checking for valid link references..."
 # Check for invalid link references before checking for links
-dart run tool/check_link_references.dart
+dart run tool/dart_tools/bin/check_link_references.dart
 echo $'No invalid link references found!\n'
+dart run tool/dart_tools/bin/verify_firebase_json.dart
+echo $'firebase.json successfully validated!\n'
 
 trap clean_up EXIT
 

@@ -1,6 +1,7 @@
 ---
 title: Route transition record and transition delegate updates
-description: Changes to the rule on how transition delegate resolve route transition.
+description: >
+  Changes to the rule on how transition delegate resolve route transition.
 ---
 
 ## Summary
@@ -25,8 +26,8 @@ this is not always true. If a route is popped,
 but is still waiting for the popping animation to finish,
 this route would sit in the navigator routes stack until
 the animation was done. If a page update occurred during this time,
-this route exits but doesn't requires a decision
-on how to transition off the screen. Therefore, 
+this route exits but doesn't require a decision
+on how to transition off the screen. Therefore,
 `isWaitingForExitingDecision` was added to cover that case.
 
 The `isEntering` getter is also renamed to
@@ -127,14 +128,17 @@ In stable release: 1.20
 ## References
 
 API documentation:
+
 * [`Navigator`][]
 * [`TransitionDelegate`][]
 * [`RouteTransitionRecord`][]
 
 Relevant issue:
+
 * [Issue 45938: Navigator 2.0][]
 
 Relevant PR:
+
 * [PR 55998][]: Fixes the navigator pages update crash
   when there is still a route waiting
 

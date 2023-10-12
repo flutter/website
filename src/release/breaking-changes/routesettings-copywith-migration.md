@@ -32,7 +32,6 @@ Code after migration:
 RouteSettings newSettings = RouteSettings(name: 'new name', arguments: oldSettings.arguments);
 ```
 
-
 ## Timeline
 
 Landed in version: 3.5.0-9.0.pre-137-gc6f6095acd<br>

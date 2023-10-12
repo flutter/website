@@ -261,7 +261,7 @@ If you want to dynamically change the UI based on data received
 after making an HTTP call or a user interaction,
 then you have to work with `StatefulWidget`
 and tell the Flutter framework that
-the widget’s `State` has been updated,
+the widget's `State` has been updated,
 so it can update that widget.
 
 The important thing to note here is at the core
@@ -271,7 +271,7 @@ the `StatefulWidget` has a `State` object
 that stores state data across frames and restores it.
 
 If you are in doubt, then always remember this rule: if a widget changes
-(because of user interactions, for example) it’s stateful.
+(because of user interactions, for example) it's stateful.
 However, if a widget reacts to change, the containing parent widget can
 still be stateless if it doesn't itself react to change.
 
@@ -369,7 +369,7 @@ Widget build(BuildContext context) {
     body: Center(
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          padding: const EdgeInsets.only(left: 20.0, right: 30.0),
+          padding: const EdgeInsets.only(left: 20, right: 30),
         ),
         onPressed: () {},
         child: const Text('Hello'),
@@ -547,7 +547,7 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
       body: Center(
         child: FadeTransition(
           opacity: curve,
-          child: const FlutterLogo(size: 100.0),
+          child: const FlutterLogo(size: 100),
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -568,17 +568,19 @@ the [Animations tutorial][], and the [Animations overview][].
 ### How do I draw/paint on the screen?
 
 Xamarin.Forms never had a built-in way to draw directly on the screen.
-Many would use SkiaSharp, if they needed a custom image drawn. In Flutter,
-you have direct access to the Skia Canvas and can easily draw on screen.
+Many would use SkiaSharp, if they needed a custom image drawn.
+In Flutter, you have direct access to the Skia Canvas
+and can easily draw on screen.
 
 Flutter has two classes that help you draw to the canvas: `CustomPaint`
 and `CustomPainter`, the latter of which implements your algorithm to draw to
 the canvas.
 
 To learn how to implement a signature painter in Flutter,
-see Collin's answer on [StackOverflow][].
+see Collin's answer on [Custom Paint][].
 
-[StackOverflow]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
+[Custom Paint]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
+
 
 <?code-excerpt "lib/draw.dart"?>
 ```dart
@@ -638,7 +640,7 @@ class SignaturePainter extends CustomPainter {
     final Paint paint = Paint()
       ..color = Colors.black
       ..strokeCap = StrokeCap.round
-      ..strokeWidth = 5.0;
+      ..strokeWidth = 5;
     for (int i = 0; i < points.length - 1; i++) {
       if (points[i] != null && points[i + 1] != null) {
         canvas.drawLine(points[i]!, points[i + 1]!, paint);
@@ -770,7 +772,7 @@ you might do the following:
 Object? coordinates = await Navigator.of(context).pushNamed('/location');
 ```
 
-And then, inside your ‘location’ route, once the user has selected their
+And then, inside your 'location' route, once the user has selected their
 location, pop the stack with the result:
 
 <?code-excerpt "lib/navigation.dart (PopLocation)"?>
@@ -883,7 +885,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int index) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10),
       child: Text('Row ${data[index]['title']}'),
     );
   }
@@ -950,7 +952,7 @@ to do long-running or computationally intensive tasks.
 Isolates are separate execution threads that
 do not share any memory with the main execution memory heap.
 This is a difference between `Task.Run()`.
-This means you can’t access variables from the main thread,
+This means you can't access variables from the main thread,
 or update your UI by calling `setState()`.
 
 The following example shows, in a simple isolate,
@@ -1111,7 +1113,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int index) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10),
       child: Text('Row ${data[index]['title']}'),
     );
   }
@@ -1139,7 +1141,7 @@ To use the `http` package, add it to your dependencies in `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  http: ^0.13.4
+  http: ^1.1.0
 ```
 
 To make a network request,
@@ -1248,7 +1250,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int index) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10),
       child: Text('Row ${data[index]['title']}'),
     );
   }
@@ -1281,7 +1283,7 @@ Flutter follows a simple density-based format like iOS.
 Assets might be `1.0x`, `2.0x`, `3.0x`, or any other multiplier.
 Flutter doesn't have `dp`s but there are logical pixels,
 which are basically the same as device-independent pixels.
-The so-called [`devicePixelRatio`][] expresses the ratio
+Flutter's [`devicePixelRatio`][] expresses the ratio
 of physical pixels in a single logical pixel.
 
 The equivalent to Android's density buckets are:
@@ -1511,9 +1513,9 @@ that can change overtime with the same children.
 ```dart
 @override
 Widget build(BuildContext context) {
-  return Row(
+  return const Row(
     mainAxisAlignment: MainAxisAlignment.center,
-    children: const <Widget>[
+    children: <Widget>[
       Text('Row One'),
       Text('Row Two'),
       Text('Row Three'),
@@ -1527,9 +1529,9 @@ Widget build(BuildContext context) {
 ```dart
 @override
 Widget build(BuildContext context) {
-  return Column(
+  return const Column(
     mainAxisAlignment: MainAxisAlignment.center,
-    children: const <Widget>[
+    children: <Widget>[
       Text('Column One'),
       Text('Column Two'),
       Text('Column Three'),
@@ -1579,18 +1581,18 @@ This sample creates two icons that overlap each other.
 ```dart
 @override
 Widget build(BuildContext context) {
-  return Stack(
-    children: const <Widget>[
+  return const Stack(
+    children: <Widget>[
       Icon(
         Icons.add_box,
-        size: 24.0,
+        size: 24,
         color: Colors.black,
       ),
       Positioned(
-        left: 10.0,
+        left: 10,
         child: Icon(
           Icons.add_circle,
-          size: 24.0,
+          size: 24,
           color: Colors.black,
         ),
       ),
@@ -1690,7 +1692,7 @@ In Flutter there are two very similar ways:
              onTap: () {
                developer.log('tap');
              },
-             child: const FlutterLogo(size: 200.0),
+             child: const FlutterLogo(size: 200),
            ),
          ),
        );
@@ -1809,7 +1811,7 @@ class _RotatingFlutterDetectorState extends State<RotatingFlutterDetector>
           },
           child: RotationTransition(
             turns: curve,
-            child: const FlutterLogo(size: 200.0),
+            child: const FlutterLogo(size: 200),
           ),
         ),
       ),
@@ -1863,7 +1865,7 @@ class SampleAppPage extends StatelessWidget {
     return List<Widget>.generate(
       100,
       (index) => Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10),
         child: Text('Row $index'),
       ),
     );
@@ -1927,7 +1929,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
           developer.log('Row $index tapped');
         },
         child: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(10),
           child: Text('Row $index'),
         ),
       ),
@@ -2017,7 +2019,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
         });
       },
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10),
         child: Text('Row $index'),
       ),
     );
@@ -2089,7 +2091,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
         });
       },
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(10),
         child: Text('Row $index'),
       ),
     );
@@ -2225,7 +2227,7 @@ class _MyFormState extends State<MyForm> {
     return Scaffold(
       appBar: AppBar(title: const Text('Retrieve Text Input')),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: TextField(controller: myController),
       ),
       floatingActionButton: FloatingActionButton(
@@ -2417,7 +2419,7 @@ To log in with Facebook, use the
 Most Firebase functions are covered by [first party plugins][].
 These plugins are first-party integrations, maintained by the Flutter team:
 
- * [`firebase_admob`][] for Firebase AdMob
+ * [`google_mobile_ads`][] for Google Mobile Ads for Flutter
  * [`firebase_analytics`][] for Firebase Analytics
  * [`firebase_auth`][] for Firebase Auth
  * [`firebase_database`][] for Firebase RTDB
@@ -2540,21 +2542,21 @@ For more information on using the Firebase Cloud Messaging API, see the
 [`firebase_messaging`][] plugin documentation.
 
 
-[Adding assets and images]: {{site.url}}/development/ui/assets-and-images
-[Animation & Motion widgets]: {{site.url}}/development/ui/widgets/animation
-[Animations overview]: {{site.url}}/development/ui/animations
-[Animations tutorial]: {{site.url}}/development/ui/animations/tutorial
+[Adding assets and images]: {{site.url}}/ui/assets/assets-and-images
+[Animation & Motion widgets]: {{site.url}}/ui/widgets/animation
+[Animations overview]: {{site.url}}/ui/animations
+[Animations tutorial]: {{site.url}}/ui/animations/tutorial
 [Apple's iOS design language]: {{site.apple-dev}}/design/resources/
 [arb]: {{site.github}}/google/app-resource-bundle
 [Async UI]: #async-ui
 [`cloud_firestore`]: {{site.pub}}/packages/cloud_firestore
 [composing]: {{site.url}}/resources/architectural-overview#composition
-[Cupertino widgets]: {{site.url}}/development/ui/widgets/cupertino
+[Cupertino widgets]: {{site.url}}/ui/widgets/cupertino
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
-[developing packages and plugins]: {{site.url}}/development/packages-and-plugins/developing-packages
-[DevTools]: {{site.url}}/development/tools/devtools/overview
+[developing packages and plugins]: {{site.url}}/packages-and-plugins/developing-packages
+[DevTools]: {{site.url}}/tools/devtools/overview
 [existing plugin]: {{site.pub}}/flutter
-[`firebase_admob`]: {{site.pub}}/packages/firebase_admob
+[`google_mobile_ads`]: {{site.pub}}/packages/google_mobile_ads
 [`firebase_analytics`]: {{site.pub}}/packages/firebase_analytics
 [`firebase_auth`]: {{site.pub}}/packages/firebase_auth
 [`firebase_database`]: {{site.pub}}/packages/firebase_database
@@ -2567,27 +2569,27 @@ For more information on using the Firebase Cloud Messaging API, see the
 [`geolocator`]: {{site.pub}}/packages/geolocator
 [`camera`]: {{site.pub-pkg}}/camera
 [`http` package]: {{site.pub}}/packages/http
-[internationalization guide]: {{site.url}}/development/accessibility-and-localization/internationalization
+[internationalization guide]: {{site.url}}/ui/accessibility-and-localization/internationalization
 [`intl`]: {{site.pub}}/packages/intl
 [`intl_translation`]: {{site.pub}}/packages/intl_translation
 [Introduction to declarative UI]: {{site.url}}/get-started/flutter-for/declarative
 [`Localizations`]: {{site.api}}/flutter/widgets/Localizations-class.html
-[Material Components]: {{site.url}}/development/ui/widgets/material
-[Material Design]: {{site.material}}/design
-[Material Design guidelines]: {{site.material}}/design
+[Material Components]: {{site.url}}/ui/widgets/material
+[Material Design]: {{site.material}}/styles
+[Material Design guidelines]: {{site.material}}/styles
 [`Opacity` widget]: {{site.api}}/flutter/widgets/Opacity-class.html
-[optimized for all platforms]: {{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
-[platform channels]: {{site.url}}/development/platform-integration/platform-channels
-[plugins]: {{site.url}}/development/packages-and-plugins/using-packages
+[optimized for all platforms]: {{site.material2}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines
+[platform channels]: {{site.url}}/platform-integration/platform-channels
+[plugins]: {{site.url}}/packages-and-plugins/using-packages
 [pub.dev]: {{site.pub}}
-[publish it on pub.dev]: {{site.url}}/development/packages-and-plugins/developing-packages#publish
+[publish it on pub.dev]: {{site.url}}/packages-and-plugins/developing-packages#publish
 [Retrieve the value of a text field]: {{site.url}}/cookbook/forms/retrieve-input
 [`shared_preferences`]: {{site.pub}}/packages/shared_preferences
 [`sqflite`]: {{site.pub}}/packages/sqflite
 [`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html
 [`url_launcher`]: {{site.pub}}/packages/url_launcher
 [widget]: {{site.url}}/resources/architectural-overview#widgets
-[widget catalog]: {{site.url}}/development/ui/widgets/layout
+[widget catalog]: {{site.url}}/ui/widgets/layout
 [`Window.locale`]: {{site.api}}/flutter/dart-ui/Window/locale.html
 [first_codelab]: {{site.codelabs}}/codelabs/flutter-codelab-first
-[write your own]: {{site.url}}/development/packages-and-plugins/developing-packages
+[write your own]: {{site.url}}/packages-and-plugins/developing-packages

@@ -1,12 +1,6 @@
 ---
 title: Create and style a text field
 description: How to implement a text field.
-prev:
-  title: Build a form with validation
-  path: /cookbook/forms/validation
-next:
-  title: Handle changes to a text field
-  path: /cookbook/forms/text-field-changes
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

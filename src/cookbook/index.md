@@ -1,6 +1,7 @@
 ---
 title: Cookbook
-description: The Flutter cookbook provides recipes for many commonly performed tasks.
+description: >
+  The Flutter cookbook provides recipes for many commonly performed tasks.
 show_breadcrumbs: false
 ---
 
@@ -66,6 +67,7 @@ reference to help you build up an application.
 - [Place a floating app bar above a list]({{site.url}}/cookbook/lists/floating-app-bar)
 - [Use lists]({{site.url}}/cookbook/lists/basic-list)
 - [Work with long lists]({{site.url}}/cookbook/lists/long-lists)
+- [Create a list with spaced items]({{site.url}}/cookbook/lists/spaced-items)
 
 
 ## Maintenance
@@ -87,11 +89,11 @@ reference to help you build up an application.
 ## Networking
 - [Fetch data from the internet]({{site.url}}/cookbook/networking/fetch-data)
 - [Make authenticated requests]({{site.url}}/cookbook/networking/authenticated-requests)
-- [Parse JSON in the background]({{site.url}}/cookbook/networking/background-parsing)
 - [Send data to the internet]({{site.url}}/cookbook/networking/send-data)
 - [Update data over the internet]({{site.url}}/cookbook/networking/update-data)
 - [Delete data on the internet]({{site.url}}/cookbook/networking/delete-data)
-- [Work with WebSockets]({{site.url}}/cookbook/networking/web-sockets)
+- [Communicate with WebSockets]({{site.url}}/cookbook/networking/web-sockets)
+- [Parse JSON in the background]({{site.url}}/cookbook/networking/background-parsing)
 
 
 ## Persistence

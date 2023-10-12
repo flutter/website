@@ -1,12 +1,6 @@
 ---
 title: Create a staggered menu animation
 description: How to implement a staggered menu animation.
-prev:
-  title: Create a shimmer loading effect
-  path: /cookbook/effects/shimmer-loading
-next:
-  title: Create a typing indicator
-  path: /cookbook/effects/typing-indicator
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
@@ -92,7 +86,7 @@ class _MenuState extends State<Menu> {
     for (var i = 0; i < _menuTitles.length; ++i) {
       listItems.add(
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 36.0, vertical: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 36, vertical: 16),
           child: Text(
             _menuTitles[i],
             textAlign: TextAlign.left,
@@ -111,7 +105,7 @@ class _MenuState extends State<Menu> {
     return SizedBox(
       width: double.infinity,
       child: Padding(
-        padding: const EdgeInsets.all(24.0),
+        padding: const EdgeInsets.all(24),
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             shape: const StadiumBorder(),
@@ -187,7 +181,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
 
 In this case, all the animations are delayed by 50 ms.
 After that, list items begin to appear.
-Each list item’s appearance is delayed by 50 ms after the 
+Each list item's appearance is delayed by 50 ms after the 
 previous list item begins to slide in.
 Each list item takes 250 ms to slide from right to left.
 After the last list item begins to slide in,
@@ -207,12 +201,12 @@ Flutter provides the `Interval` class.
 An `Interval` takes a start time percentage and an end 
 time percentage. That `Interval` can then be used to
 animate a value between those start and end times,
-instead of using the entire animation’s start and 
+instead of using the entire animation's start and 
 end times. For example, given an animation that takes 1 second, 
 an interval from 0.2 to 0.5 would start at 200 ms
 (20%) and end at 500 ms (50%). 
 
-Declare and calculate each list item’s `Interval` and the 
+Declare and calculate each list item's `Interval` and the 
 bottom button `Interval`.
 
 <?code-excerpt "lib/step3.dart (step3)" replace="/\/\/code-excerpt-close-bracket/\n}/g;"?>
@@ -280,7 +274,7 @@ void initState() {
 Each list item slides from right to left and
 fades in at the same time.
 
-Use the list item’s `Interval` and an `easeOut`
+Use the list item's `Interval` and an `easeOut`
 curve to animate the opacity and translation
 values for each list item.
 
@@ -308,7 +302,7 @@ List<Widget> _buildListItems() {
           );
         },
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 36.0, vertical: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 36, vertical: 16),
           child: Text(
             _menuTitles[i],
             textAlign: TextAlign.left,
@@ -335,7 +329,7 @@ Widget _buildGetStartedButton() {
   return SizedBox(
     width: double.infinity,
     child: Padding(
-      padding: const EdgeInsets.all(24.0),
+      padding: const EdgeInsets.all(24),
       child: AnimatedBuilder(
         animation: _staggeredController,
         builder: (context, child) {
@@ -638,7 +632,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
             );
           },
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 36.0, vertical: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 36, vertical: 16),
             child: Text(
               _menuTitles[i],
               textAlign: TextAlign.left,
@@ -658,7 +652,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
     return SizedBox(
       width: double.infinity,
       child: Padding(
-        padding: const EdgeInsets.all(24.0),
+        padding: const EdgeInsets.all(24),
         child: AnimatedBuilder(
           animation: _staggeredController,
           builder: (context, child) {

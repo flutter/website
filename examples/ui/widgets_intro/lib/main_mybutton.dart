@@ -10,11 +10,11 @@ class MyButton extends StatelessWidget {
         print('MyButton was tapped!');
       },
       child: Container(
-        height: 50.0,
-        padding: const EdgeInsets.all(8.0),
-        margin: const EdgeInsets.symmetric(horizontal: 8.0),
+        height: 50,
+        padding: const EdgeInsets.all(8),
+        margin: const EdgeInsets.symmetric(horizontal: 8),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5.0),
+          borderRadius: BorderRadius.circular(5),
           color: Colors.lightGreen[500],
         ),
         child: const Center(

@@ -13,7 +13,7 @@ way to get started learning Flutter development.
 This document can be used as a cookbook by jumping around and finding
 questions that are most relevant to your needs.
 
-## Introduction to Dart for JavaScript Developers
+## Introduction to Dart for JavaScript Developers (ES6)
 
 Like React Native, Flutter uses reactive-style views. However, while RN
 transpiles to native widgets, Flutter compiles all the way to native code.
@@ -74,8 +74,8 @@ Try it out in [DartPad][DartPadB].
 ### Variables
 
 Dart is type safe&mdash;it uses a combination of static type checking
-and runtime checks to ensure that a variable’s value always matches
-the variable’s static type. Although types are mandatory,
+and runtime checks to ensure that a variable's value always matches
+the variable's static type. Although types are mandatory,
 some type annotations are optional because
 Dart performs type inference.
 
@@ -88,7 +88,7 @@ typed or the type system must infer the proper type automatically.
 
 ```js
 // JavaScript
-var name = 'JavaScript';
+let name = 'JavaScript';
 ```
 
 <?code-excerpt "lib/main.dart (Variables)"?>
@@ -119,7 +119,7 @@ numeric types have the value `null`.
 
 ```js
 // JavaScript
-var name; // == undefined
+let name; // == undefined
 ```
 
 <?code-excerpt "lib/main.dart (Null)"?>
@@ -141,11 +141,11 @@ are treated as `true` when using the `==` comparison operator.
 
 ```js
 // JavaScript
-var myNull = null;
+let myNull = null;
 if (!myNull) {
   console.log('null is treated as false');
 }
-var zero = 0;
+let zero = 0;
 if (!zero) {
   console.log('0 is treated as false');
 }
@@ -157,9 +157,6 @@ In Dart, only the boolean value `true` is treated as true.
 ```dart
 /// Dart
 var myNull;
-if (myNull == null) {
-  print('use "== null" to check null');
-}
 var zero = 0;
 if (zero == 0) {
   print('use "== 0" to check zero');
@@ -408,15 +405,13 @@ implements the render method by returning a view component.
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Hello world!</Text>
-      </View>
-    );
-  }
-}
+const App = () => {
+  return (
+    <View style={styles.container}>
+      <Text>Hello world!</Text>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -426,6 +421,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   }
 });
+
+export default App;
 ```
 
 In Flutter, you can create an identical "Hello world!" app using the
@@ -468,7 +465,7 @@ You compose widgets into a hierarchy, called a widget tree.
 Each widget nests inside a parent widget
 and inherits properties from its parent.
 Even the application object itself is a widget.
-There is no separate “application” object.
+There is no separate "application" object.
 Instead, the root widget serves this role.
 
 A widget can define:
@@ -543,19 +540,17 @@ and then used inside a parent class.
 
 ```js
 // React Native
-class CustomCard extends React.Component {
-  render() {
-    return (
-      <View>
-        <Text> Card {this.props.index} </Text>
-        <Button
-          title="Press"
-          onPress={() => this.props.onPress(this.props.index)}
-        />
-      </View>
-    );
-  }
-}
+const CustomCard = ({ index, onPress }) => {
+  return (
+    <View>
+      <Text> Card {index} </Text>
+      <Button
+        title="Press"
+        onPress={() => onPress(index)}
+      />
+    </View>
+  );
+};
 
 // Usage
 <CustomCard onPress={this.onPress} index={item.key} />
@@ -698,7 +693,7 @@ best practice to place them in the `assets` directory.
 
 During a build, Flutter places assets into a special archive
 called the *asset bundle*, which apps read from at runtime.
-When an asset’s path is specified in the assets' section of `pubspec.yaml`,
+When an asset's path is specified in the assets' section of `pubspec.yaml`,
 the build process looks for any files
 with the same name in adjacent subdirectories.
 These files are also included in the asset bundle
@@ -710,10 +705,16 @@ in a source code directory and referencing it.
 
 ```js
 <Image source={require('./my-icon.png')} />
+// OR
+<Image
+  source={%raw%}{{
+    url: 'https://reactnative.dev/img/tiny_logo.png'
+  }}{%endraw%}
+/>
 ```
 
 In Flutter, add a static image to your app
-using the `Image.asset` constructor in a widget’s build method.
+using the `Image.asset` constructor in a widget's build method.
 
 <?code-excerpt "lib/examples.dart (ImageAsset)" replace="/return //g"?>
 ```dart
@@ -749,16 +750,10 @@ from the command line.
 
 In Flutter, install a package using the following instructions:
 
-1. Add the package name and version to the `pubspec.yaml` dependencies section.
-   The example below shows how to add the `google_sign_in` Dart package to the
-   `pubspec.yaml` file. Check your spaces when working in the YAML file because
-   **white space matters**!
+1. To add the `google_sign_in` package as a dependency, run `flutter pub add`:
 
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  google_sign_in: ^3.0.3
+```terminal
+$ flutter pub add google_sign_in
 ```
 
 2. Install the package from the command line by using `flutter pub get`.
@@ -796,8 +791,8 @@ To center a widget, wrap it in a `Center` widget and then use layout
 widgets for alignment, row, columns, and grids.
 These layout widgets do not have a visual representation of their own.
 Instead, their sole purpose is to control some aspect of another
-widget’s layout. To understand why a widget renders in a
-certain way, it’s often helpful to inspect the neighboring widgets.
+widget's layout. To understand why a widget renders in a
+certain way, it's often helpful to inspect the neighboring widgets.
 
 For more information, see the [Flutter Technical Overview][].
 
@@ -866,16 +861,16 @@ so third party libraries like `react-native-canvas` are used.
 
 ```js
 // React Native
-handleCanvas = canvas => {
-  const ctx = canvas.getContext('2d');
-  ctx.fillStyle = 'skyblue';
-  ctx.beginPath();
-  ctx.arc(75, 75, 50, 0, 2 * Math.PI);
-  ctx.fillRect(150, 100, 300, 300);
-  ctx.stroke();
-};
+const CanvasComp = () => {
+  const handleCanvas = (canvas) => {
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'skyblue';
+    ctx.beginPath();
+    ctx.arc(75, 75, 50, 0, 2 * Math.PI);
+    ctx.fillRect(150, 100, 300, 300);
+    ctx.stroke();
+  };
 
-render() {
   return (
     <View>
       <Canvas ref={this.handleCanvas} />
@@ -901,11 +896,11 @@ class MyCanvasPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final Paint paint = Paint()..color = Colors.amber;
-    canvas.drawCircle(const Offset(100.0, 200.0), 40.0, paint);
+    canvas.drawCircle(const Offset(100, 200), 40, paint);
     final Paint paintRect = Paint()..color = Colors.lightBlue;
     final Rect rect = Rect.fromPoints(
-      const Offset(150.0, 300.0),
-      const Offset(300.0, 400.0),
+      const Offset(150, 300),
+      const Offset(300, 400),
     );
     canvas.drawRect(rect, paintRect);
   }
@@ -971,18 +966,18 @@ Widget build(BuildContext context) {
       children: <Widget>[
         Container(
           color: Colors.red,
-          width: 100.0,
-          height: 100.0,
+          width: 100,
+          height: 100,
         ),
         Container(
           color: Colors.blue,
-          width: 100.0,
-          height: 100.0,
+          width: 100,
+          height: 100,
         ),
         Container(
           color: Colors.green,
-          width: 100.0,
-          height: 100.0,
+          width: 100,
+          height: 100,
         ),
       ],
     ),
@@ -1071,19 +1066,19 @@ style in multiple places, you can create a
 ```dart
 const TextStyle textStyle = TextStyle(
   color: Colors.cyan,
-  fontSize: 32.0,
+  fontSize: 32,
   fontWeight: FontWeight.w600,
 );
 
-return Center(
+return const Center(
   child: Column(
-    children: const <Widget>[
+    children: <Widget>[
       Text('Sample text', style: textStyle),
       Padding(
-        padding: EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(20),
         child: Icon(
           Icons.lightbulb_outline,
-          size: 48.0,
+          size: 48,
           color: Colors.redAccent,
         ),
       ),
@@ -1130,7 +1125,7 @@ add a dependency for `cupertino_icons` in your project's
 ```yaml
 name: my_awesome_application
 dependencies:
-  cupertino_icons: ^0.1.0
+  cupertino_icons: ^1.0.5
 ```
 
 To globally customize the colors and styles of components,
@@ -1360,7 +1355,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 'This execution will be done before you can blink.',
               ),
             Padding(
-              padding: const EdgeInsets.only(top: 70.0),
+              padding: const EdgeInsets.only(top: 70),
               child: ElevatedButton(
                 onPressed: toggleBlinkState,
                 child: toggleState
@@ -1387,7 +1382,7 @@ In Flutter, widgets are either Stateful or Stateless—depending on whether
 they depend on a state change.
 
 * If a widget changes&mdash;the user interacts with it or
-  a data feed interrupts the UI, then it’s *Stateful*.
+  a data feed interrupts the UI, then it's *Stateful*.
 * If a widget is final or immutable, then it's *Stateless*.
 
 2. Determine which object manages the widget's state (for a `StatefulWidget`).
@@ -1395,7 +1390,7 @@ they depend on a state change.
 In Flutter, there are three primary ways to manage state:
 
 * The widget manages its own state
-* The parent widget manages the widget’s state
+* The parent widget manages the widget's state
 * A mix-and-match approach
 
 When deciding which approach to use, consider the following principles:
@@ -1442,7 +1437,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 4. Add the StatefulWidget into the widget tree.
 
 Add your custom `StatefulWidget` to the widget tree
-in the app’s build method.
+in the app's build method.
 
 <?code-excerpt "lib/best_practices.dart (UseStatefulWidget)"?>
 ```dart
@@ -1470,38 +1465,34 @@ These parameters can be used in a child component using `this.props`.
 
 ```js
 // React Native
-class CustomCard extends React.Component {
-  render() {
-    return (
-      <View>
-        <Text> Card {this.props.index} </Text>
-        <Button
-          title='Press'
-          onPress={() => this.props.onPress(this.props.index)}
-        />
-      </View>
-    );
-  }
-}
-class App extends React.Component {
+const CustomCard = ({ index, onPress }) => {
+  return (
+    <View>
+      <Text> Card {index} </Text>
+      <Button
+        title='Press'
+        onPress={() => onPress(index)}
+      />
+    </View>
+  );
+};
 
-  onPress = index => {
+const App = () => {
+  const onPress = (index) => {
     console.log('Card ', index);
   };
 
-  render() {
-    return (
-      <View>
-        <FlatList
-          data={[ ... ]}
-          renderItem={({ item }) => (
-            <CustomCard onPress={this.onPress} index={item.key} />
-          )}
-        />
-      </View>
-    );
-  }
-}
+  return (
+    <View>
+      <FlatList
+        data={[ /* ... */ ]}
+        renderItem={({ item }) => (
+          <CustomCard onPress={onPress} index={item.key} />
+        )}
+      />
+    </View>
+  );
+};
 ```
 
 In Flutter, you assign a local variable or function marked
@@ -1570,10 +1561,12 @@ that is persistent and global to the app.
 
 ```js
 // React Native
+const [counter, setCounter] = useState(0)
+...
 await AsyncStorage.setItem( 'counterkey', json.stringify(++this.state.counter));
 AsyncStorage.getItem('counterkey').then(value => {
   if (value != null) {
-    this.setState({ counter: value });
+    setCounter(value);
   }
 });
 ```
@@ -1583,15 +1576,11 @@ store and retrieve key-value data that is persistent and global
 to the app. The `shared_preferences` plugin wraps
 `NSUserDefaults` on iOS and `SharedPreferences` on Android,
 providing a persistent store for simple data.
-To use the plugin,
-add `shared_preferences` as a dependency in the `pubspec.yaml`
-file then import the package in your Dart file.
 
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  shared_preferences: ^2.0.13
+To add the `shared_preferences` package as a dependency, run `flutter pub add`:
+
+```terminal
+$ flutter pub add shared_preferences
 ```
 
 <?code-excerpt "lib/examples.dart (SharedPrefs)"?>
@@ -1679,8 +1668,8 @@ The following example specifies named routes in the `MaterialApp` widget.
   [Limitations][] in the [navigation overview][] page.
 {{site.alert.end}}
 
-[Limitations]: {{site.url}}/development/ui/navigation#limitations
-[navigation overview]: {{site.url}}/development/ui/navigation
+[Limitations]: {{site.url}}/ui/navigation#limitations
+[navigation overview]: {{site.url}}/ui/navigation
 
 <?code-excerpt "lib/navigation.dart (Navigator)"?>
 ```dart
@@ -1813,7 +1802,7 @@ classes to obtain a suitable `TickerProvider`.
 The [`Scaffold`][] widget wraps a new `TabBar` widget and
 creates two tabs. The `TabBarView` widget
 is passed as the `body` parameter of the `Scaffold` widget.
-All screens corresponding to the `TabBar` widget’s tabs are
+All screens corresponding to the `TabBar` widget's tabs are
 children to the `TabBarView` widget along with the same `TabController`.
 
 <?code-excerpt "lib/navigation.dart (NavigationHomePageState)"?>
@@ -1886,7 +1875,7 @@ widget provides the navigation on tap.
 @override
 Widget build(BuildContext context) {
   return Drawer(
-    elevation: 20.0,
+    elevation: 20,
     child: ListTile(
       leading: const Icon(Icons.change_history),
       title: const Text('Screen2'),
@@ -1909,7 +1898,7 @@ edge-swipe gesture to show the `Drawer`.
 Widget build(BuildContext context) {
   return Scaffold(
     drawer: Drawer(
-      elevation: 20.0,
+      elevation: 20,
       child: ListTile(
         leading: const Icon(Icons.change_history),
         title: const Text('Screen2'),
@@ -1962,10 +1951,11 @@ a single gesture, [`PanResponder`][] is used.
 
 ```js
 // React Native
-class App extends Component {
+const App = () => {
+  const panResponderRef = useRef(null);
 
-  componentWillMount() {
-    this._panResponder = PanResponder.create({
+  useEffect(() => {
+    panResponderRef.current = PanResponder.create({
       onMoveShouldSetPanResponder: (event, gestureState) =>
         !!getDirection(gestureState),
       onPanResponderMove: (event, gestureState) => true,
@@ -1974,18 +1964,16 @@ class App extends Component {
       },
       onPanResponderTerminationRequest: (event, gestureState) => true
     });
-  }
+  }, []);
 
-  render() {
-    return (
-      <View style={styles.container} {...this._panResponder.panHandlers}>
-        <View style={styles.center}>
-          <Text>Swipe Horizontally or Vertically</Text>
-        </View>
+  return (
+    <View style={styles.container} {...panResponderRef.current.panHandlers}>
+      <View style={styles.center}>
+        <Text>Swipe Horizontally or Vertically</Text>
       </View>
-    );
-  }
-}
+    </View>
+  );
+};
 ```
 
 In Flutter, to add a click (or press) listener to a widget,
@@ -2000,10 +1988,10 @@ Widget build(BuildContext context) {
   return GestureDetector(
     child: Scaffold(
       appBar: AppBar(title: const Text('Gestures')),
-      body: Center(
+      body: const Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: const <Widget>[
+        children: <Widget>[
           Text('Tap, Long Press, Swipe Horizontally or Vertically'),
         ],
       )),
@@ -2044,11 +2032,13 @@ and then receive the response to get the data.
 
 ```js
 // React Native
-_getIPAddress = () => {
+const [ipAddress, setIpAddress] = useState('')
+
+const _getIPAddress = () => {
   fetch('https://httpbin.org/ip')
     .then(response => response.json())
     .then(responseJson => {
-      this.setState({ _ipAddress: responseJson.origin });
+      setIpAddress(responseJson.origin);
     })
     .catch(error => {
       console.error(error);
@@ -2056,14 +2046,12 @@ _getIPAddress = () => {
 };
 ```
 
-Flutter uses the `http` package. To install the `http` package,
-add it to the dependencies' section of our pubspec.yaml.
+Flutter uses the `http` package. 
 
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  http: <latest_version>
+To add the `http` package as a dependency, run `flutter pub add`:
+
+```terminal
+$ flutter pub add http
 ```
 
 Flutter uses the [`dart:io`][] core HTTP support client.
@@ -2109,10 +2097,12 @@ input box and then use the callback to store the value in a variable.
 
 ```js
 // React Native
+const [password, setPassword] = useState('')
+...
 <TextInput
   placeholder="Enter your Password"
-  onChangeText={password => this.setState({ password })}
- />
+  onChangeText={password => setPassword(password)}
+/>
 <Button title="Submit" onPress={this.validate} />
 ```
 
@@ -2289,7 +2279,7 @@ you can debug your application using the IDE's debugger.
 
 ### How do I perform a hot reload?
 
-Flutter’s Stateful Hot Reload feature helps you quickly and easily experiment,
+Flutter's Stateful Hot Reload feature helps you quickly and easily experiment,
 build UIs, add features, and fix bugs. Instead of recompiling your app
 every time you make a change, you can hot reload your app instantly.
 The app is updated to reflect your change,
@@ -2337,7 +2327,7 @@ in the terminal window, or type the following shortcuts:
 Well-designed animation makes a UI feel intuitive,
 contributes to the look and feel of a polished app,
 and improves the user experience.
-Flutter’s animation support makes it easy
+Flutter's animation support makes it easy
 to implement simple and complex animations.
 The Flutter SDK includes many Material Design widgets
 that include standard motion effects,
@@ -2368,24 +2358,22 @@ and then, `start()` is called to start the animation.
 
 ```js
 // React Native
-class FadeInView extends React.Component {
-  state = {
-    fadeAnim: new Animated.Value(0) // Initial value for opacity: 0
-  };
-  componentDidMount() {
-    Animated.timing(this.state.fadeAnim, {
+const FadeInView = ({ style, children }) => {
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    Animated.timing(fadeAnim, {
       toValue: 1,
       duration: 10000
     }).start();
-  }
-  render() {
-    return (
-      <Animated.View style={%raw%}{{...this.props.style, opacity: this.state.fadeAnim }}{%endraw%} >
-        {this.props.children}
-      </Animated.View>
-    );
-  }
-}
+  }, []);
+
+  return (
+    <Animated.View style={%raw%}{{ ...style, opacity: fadeAnim }}{%endraw%}>
+      {children}
+    </Animated.View>
+  );
+};
     ...
 <FadeInView>
   <Text> Fading in </Text>
@@ -2472,8 +2460,8 @@ class _LogoFadeState extends State<LogoFade>
     return FadeTransition(
       opacity: animation,
       child: const SizedBox(
-        height: 300.0,
-        width: 300.0,
+        height: 300,
+        width: 300,
         child: FlutterLogo(),
       ),
     );
@@ -2587,7 +2575,7 @@ and common widget properties.
 
 
 [`AboutDialog`]: {{site.api}}/flutter/material/AboutDialog-class.html
-[Adding Assets and Images in Flutter]: {{site.url}}/development/ui/assets-and-images
+[Adding Assets and Images in Flutter]: {{site.url}}/ui/assets/assets-and-images
 [`AlertDialog`]: {{site.api}}/flutter/material/AlertDialog-class.html
 [`Align`]: {{site.api}}/flutter/widgets/Align-class.html
 [`Animation`]: {{site.api}}/flutter/animation/Animation-class.html
@@ -2596,7 +2584,7 @@ and common widget properties.
 [`Axis`]: {{site.api}}/flutter/painting/Axis.html
 [`BuildContext`]: {{site.api}}/flutter/widgets/BuildContext-class.html
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
-[color palette]: {{site.material}}/design/color
+[color palette]: {{site.material2}}/design/color/the-color-system.html#color-theme-creation
 [colors]: {{site.api}}/flutter/material/Colors-class.html
 [`Colors`]: {{site.api}}/flutter/material/Colors-class.html
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
@@ -2604,7 +2592,7 @@ and common widget properties.
 [`Checkbox`]: {{site.api}}/flutter/material/Checkbox-class.html
 [`CircleAvatar`]: {{site.api}}/flutter/material/CircleAvatar-class.html
 [`CircularProgressIndicator`]: {{site.api}}/flutter/material/CircularProgressIndicator-class.html
-[Cupertino (iOS-style)]: {{site.url}}/development/ui/widgets/cupertino
+[Cupertino (iOS-style)]: {{site.url}}/ui/widgets/cupertino
 [`CustomPaint`]: {{site.api}}/flutter/widgets/CustomPaint-class.html
 [`CustomPainter`]: {{site.api}}/flutter/rendering/CustomPainter-class.html
 [Dart]: {{site.dart-site}}/dart-2
@@ -2617,15 +2605,15 @@ and common widget properties.
 [DartPadD]: {{site.dartpad}}/57ec21faa8b6fe2326ffd74e9781a2c7
 [DartPadE]: {{site.dartpad}}/c85038ad677963cb6dc943eb1a0b72e6
 [DartPadF]: {{site.dartpad}}/5454e8bfadf3000179d19b9bc6be9918
-[Developing Packages & Plugins]: {{site.url}}/development/packages-and-plugins/developing-packages
-[DevTools]: {{site.url}}/development/tools/devtools
+[Developing Packages & Plugins]: {{site.url}}/packages-and-plugins/developing-packages
+[DevTools]: {{site.url}}/tools/devtools
 [`Dismissible`]: {{site.api}}/flutter/widgets/Dismissible-class.html
 [`FadeTransition`]: {{site.api}}/flutter/widgets/FadeTransition-class.html
 [Flutter packages]: {{site.pub}}/flutter/
 [Flutter Architectural Overview]: {{site.url}}/resources/architectural-overview
-[Flutter Basic Widgets]: {{site.url}}/development/ui/widgets/basics
+[Flutter Basic Widgets]: {{site.url}}/ui/widgets/basics
 [Flutter Technical Overview]: {{site.url}}/resources/architectural-overview
-[Flutter Widget Catalog]: {{site.url}}/development/ui/widgets
+[Flutter Widget Catalog]: {{site.url}}/ui/widgets
 [Flutter Widget Index]: {{site.url}}/reference/widgets
 [`FlutterLogo`]: {{site.api}}/flutter/material/FlutterLogo-class.html
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
@@ -2638,12 +2626,12 @@ and common widget properties.
 [`IndexedWidgetBuilder`]: {{site.api}}/flutter/widgets/IndexedWidgetBuilder.html
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
-[Layout Widgets]: {{site.url}}/development/ui/widgets/layout
+[Layout Widgets]: {{site.url}}/ui/widgets/layout
 [`LinearProgressIndicator`]: {{site.api}}/flutter/material/LinearProgressIndicator-class.html
 [`ListTile`]: {{site.api}}/flutter/material/ListTile-class.html
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
 [`ListView.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
-[Material Design]: {{site.material}}/design
+[Material Design]: {{site.material}}/styles
 [Material icons]: {{site.api}}/flutter/material/Icons-class.html
 [`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
 [`MaterialPageRoute`]: {{site.api}}/flutter/material/MaterialPageRoute-class.html
@@ -2668,7 +2656,7 @@ and common widget properties.
 [`SingleTickerProviderStateMixin`]: {{site.api}}/flutter/widgets/SingleTickerProviderStateMixin-mixin.html
 [`Slider`]: {{site.api}}/flutter/material/Slider-class.html
 [`Stack`]: {{site.api}}/flutter/widgets/Stack-class.html
-[State management]: {{site.url}}/development/data-and-backend/state-mgmt
+[State management]: {{site.url}}/data-and-backend/state-mgmt
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
 [`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
 [`Switch`]: {{site.api}}/flutter/material/Switch-class.html
@@ -2689,7 +2677,7 @@ and common widget properties.
 [`TickerProvider`]: {{site.api}}/flutter/scheduler/TickerProvider-class.html
 [`TickerProviderStateMixin`]: {{site.api}}/flutter/widgets/TickerProviderStateMixin-mixin.html
 [`Tween`]: {{site.api}}/flutter/animation/Tween-class.html
-[Using Packages]: {{site.url}}/development/packages-and-plugins/using-packages
+[Using Packages]: {{site.url}}/packages-and-plugins/using-packages
 [variables]: {{site.dart-site}}/language/variables
 [`WidgetBuilder`]: {{site.api}}/flutter/widgets/WidgetBuilder.html
 [infinite_list]: {{site.repo.samples}}/tree/main/infinite_list

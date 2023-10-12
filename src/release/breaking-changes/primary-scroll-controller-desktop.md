@@ -1,6 +1,8 @@
 ---
 title: Default `PrimaryScrollController` on Desktop
-description: The `PrimaryScrollController` will no longer attach to vertical `ScrollView`s automatically on Desktop.
+description: >
+  The `PrimaryScrollController` will no longer attach to
+  vertical `ScrollView`s automatically on Desktop.
 ---
 
 ## Summary
@@ -16,7 +18,7 @@ had not already been provided. This allowed for common UI patterns, like the
 scroll-to-top function on iOS to work out of the box for Flutter apps.
 On desktop however, this default would often cause the following assertion error:
 
-```
+```nocode
 ScrollController attached to multiple ScrollViews.
 ```
 
@@ -180,19 +182,23 @@ In stable release: 3.3
 ## References
 
 API documentation:
+
 * [`PrimaryScrollController`][]
 * [`ScrollView`][]
 * [`ScrollAction`][]
 * [`ScrollIntent`][]
 * [`Scrollbar`][]
 
-Design Document
+Design document:
+
 * [Updating PrimaryScrollController][]
 
 Relevant issues:
+
 * [Issue #100264][]
 
 Relevant PRs:
+
 * [Updating PrimaryScrollController for Desktop][]
 
 [`PrimaryScrollController`]: {{site.api}}/flutter/widgets/PrimaryScrollController-class.html

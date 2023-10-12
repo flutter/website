@@ -26,14 +26,14 @@ class BasicHeroAnimation extends StatelessWidget {
                       title: const Text('Flippers Page'),
                     ),
                     body: Container(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8),
                       alignment: Alignment.topLeft,
                       // Use background color to emphasize that it's a new route.
                       color: Colors.lightBlueAccent,
                       child: Hero(
                         tag: 'flippers',
                         child: SizedBox(
-                          width: 100.0,
+                          width: 100,
                           child: Image.asset(
                             'images/flippers-alpha.png',
                           ),

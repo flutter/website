@@ -1,12 +1,6 @@
 ---
 title: Drag a UI element
 description: How to implement a draggable UI element.
-prev:
-  title: Create gradient chat bubbles
-  path: /cookbook/effects/gradient-bubbles
-next:
-  title: Build a form with validation
-  path: /cookbook/forms/validation
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
@@ -17,7 +11,7 @@ js:
 Drag and drop is a common mobile app interaction.
 As the user long presses (sometimes called _touch & hold_)
 on a widget, another widget appears beneath the
-user’s finger, and the user drags the widget to a
+user's finger, and the user drags the widget to a
 final location and releases it.
 In this recipe, you'll build a drag-and-drop interaction
 where the user long presses on a choice of food,
@@ -39,8 +33,8 @@ Flutter provides a widget called [`LongPressDraggable`][]
 that provides the exact behavior that you need to begin
 a drag-and-drop interaction. A `LongPressDraggable`
 widget recognizes when a long press occurs and then 
-displays a new widget near the user’s finger.
-As the user drags, the widget follows the user’s finger.
+displays a new widget near the user's finger.
+As the user drags, the widget follows the user's finger.
 `LongPressDraggable` gives you full control over the 
 widget that the user drags.
 
@@ -80,13 +74,13 @@ In this case, when the user long presses on the
 widget displays a `DraggingListItem`.
 This `DraggingListItem` displays a photo of the
 selected food item, centered beneath 
-the user’s finger.
+the user's finger.
 
 The `dragAnchorStrategy` property is set to
 [`pointerDragAnchorStrategy`][].
 This property value instructs `LongPressDraggable`
-to base the `DraggableListItem`’s position on the 
-user’s finger. As the user moves a finger,
+to base the `DraggableListItem`'s position on the 
+user's finger. As the user moves a finger,
 the `DraggableListItem` moves with it.
 
 Dragging and dropping is of little use if no information
@@ -99,18 +93,18 @@ food menu item that the user pressed on.
 The `data` associated with a `LongPressDraggable`
 is sent to a special widget called `DragTarget`,
 where the user releases the drag gesture.
-You’ll implement the drop behavior next.
+You'll implement the drop behavior next.
 
 ## Drop the draggable
 
 The user can drop a `LongPressDraggable` wherever they choose,
-but dropping the draggable has no effect unless it’s dropped
+but dropping the draggable has no effect unless it's dropped
 on top of a `DragTarget`. When the user drops a draggable on
 top of a `DragTarget` widget, the `DragTarget` widget 
 can either accept or reject the data from the draggable.
 
 In this recipe, the user should drop a menu item on a
-`CustomerCart` widget to add the menu item to the user’s cart.
+`CustomerCart` widget to add the menu item to the user's cart.
 
 <?code-excerpt "lib/main.dart (CustomerCart)" replace="/^return //g;/,$//g"?>
 ```dart
@@ -166,14 +160,14 @@ different decision.
 Notice that the type of item dropped on `DragTarget`
 must match the type of the item dragged from `LongPressDraggable`.
 If the types are not compatible, then 
-the `onAccept` method isn’t invoked.
+the `onAccept` method isn't invoked.
 
 With a `DragTarget` widget configured to accept your
 desired data, you can now transmit data from one part
 of your UI to another by dragging and dropping.
 
 In the next step,
-you update the customer’s cart with the dropped menu item.
+you update the customer's cart with the dropped menu item.
 
 ## Add a menu item to a cart
 
@@ -201,10 +195,10 @@ class Customer {
 }
 ```
 
-The `CustomerCart` widget displays the customer’s photo,
+The `CustomerCart` widget displays the customer's photo,
 name, total, and item count based on a `Customer` instance.
 
-To update a customer’s cart when a menu item is dropped,
+To update a customer's cart when a menu item is dropped,
 add the dropped item to the associated `Customer` object.
 
 <?code-excerpt "lib/main.dart (AddCart)"?>
@@ -223,11 +217,11 @@ The `_itemDroppedOnCustomerCart` method is invoked in
 `onAccept()` when the user drops a menu item on a
 `CustomerCart` widget. By adding the dropped item to the 
 `customer` object, and invoking `setState()` to cause a
-layout update, the UI refreshes with the new customer’s
+layout update, the UI refreshes with the new customer's
 price total and item count.
 
 Congratulations! You have a drag-and-drop interaction
-that adds food items to a customer’s shopping cart.
+that adds food items to a customer's shopping cart.
 
 ## Interactive example
 
@@ -368,11 +362,11 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
 
   Widget _buildMenuList() {
     return ListView.separated(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16),
       itemCount: _items.length,
       separatorBuilder: (context, index) {
         return const SizedBox(
-          height: 12.0,
+          height: 12,
         );
       },
       itemBuilder: (context, index) {
@@ -405,8 +399,8 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
   Widget _buildPeopleRow() {
     return Container(
       padding: const EdgeInsets.symmetric(
-        horizontal: 8.0,
-        vertical: 20.0,
+        horizontal: 8,
+        vertical: 20,
       ),
       child: Row(
         children: _people.map(_buildPersonWithDropZone).toList(),
@@ -418,7 +412,7 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
     return Expanded(
       child: Padding(
         padding: const EdgeInsets.symmetric(
-          horizontal: 6.0,
+          horizontal: 6,
         ),
         child: DragTarget<Item>(
           builder: (context, candidateItems, rejectedItems) {
@@ -459,13 +453,13 @@ class CustomerCart extends StatelessWidget {
     return Transform.scale(
       scale: highlighted ? 1.075 : 1.0,
       child: Material(
-        elevation: highlighted ? 8.0 : 4.0,
-        borderRadius: BorderRadius.circular(22.0),
+        elevation: highlighted ? 8 : 4,
+        borderRadius: BorderRadius.circular(22),
         color: highlighted ? const Color(0xFFF64209) : Colors.white,
         child: Padding(
           padding: const EdgeInsets.symmetric(
-            horizontal: 12.0,
-            vertical: 24.0,
+            horizontal: 12,
+            vertical: 24,
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -480,7 +474,7 @@ class CustomerCart extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 8.0),
+              const SizedBox(height: 8),
               Text(
                 customer.name,
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
@@ -496,21 +490,21 @@ class CustomerCart extends StatelessWidget {
                 maintainSize: true,
                 child: Column(
                   children: [
-                    const SizedBox(height: 4.0),
+                    const SizedBox(height: 4),
                     Text(
                       customer.formattedTotalItemPrice,
                       style: Theme.of(context).textTheme.bodySmall!.copyWith(
                             color: textColor,
-                            fontSize: 16.0,
+                            fontSize: 16,
                             fontWeight: FontWeight.bold,
                           ),
                     ),
-                    const SizedBox(height: 4.0),
+                    const SizedBox(height: 4),
                     Text(
                       '${customer.items.length} item${customer.items.length != 1 ? 's' : ''}',
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
                             color: textColor,
-                            fontSize: 12.0,
+                            fontSize: 12,
                           ),
                     ),
                   ],
@@ -541,15 +535,15 @@ class MenuListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      elevation: 12.0,
+      elevation: 12,
       borderRadius: BorderRadius.circular(20),
       child: Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: const EdgeInsets.all(12),
         child: Row(
           mainAxisSize: MainAxisSize.max,
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.circular(12.0),
+              borderRadius: BorderRadius.circular(12),
               child: SizedBox(
                 width: 120,
                 height: 120,
@@ -567,7 +561,7 @@ class MenuListItem extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(width: 30.0),
+            const SizedBox(width: 30),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -575,15 +569,15 @@ class MenuListItem extends StatelessWidget {
                   Text(
                     name,
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          fontSize: 18.0,
+                          fontSize: 18,
                         ),
                   ),
-                  const SizedBox(height: 10.0),
+                  const SizedBox(height: 10),
                   Text(
                     price,
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
                           fontWeight: FontWeight.bold,
-                          fontSize: 18.0,
+                          fontSize: 18,
                         ),
                   ),
                 ],
@@ -612,7 +606,7 @@ class DraggingListItem extends StatelessWidget {
       translation: const Offset(-0.5, -0.5),
       child: ClipRRect(
         key: dragKey,
-        borderRadius: BorderRadius.circular(12.0),
+        borderRadius: BorderRadius.circular(12),
         child: SizedBox(
           height: 150,
           width: 150,

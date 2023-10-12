@@ -35,8 +35,10 @@ Future<void> step4() async {
 
 void testing() {
   // #docregion Testing
-  const MethodChannel('plugins.flutter.io/shared_preferences')
-      .setMockMethodCallHandler((methodCall) async {
+  TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+      .setMockMethodCallHandler(
+          const MethodChannel('plugins.flutter.io/shared_preferences'),
+          (methodCall) async {
     if (methodCall.method == 'getAll') {
       return <String, dynamic>{}; // set initial values here if desired
     }

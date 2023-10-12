@@ -1,12 +1,6 @@
 ---
 title: Parse JSON in the background
 description: How to perform a task in the background.
-prev:
-  title: Make authenticated requests
-  path: /cookbook/networking/authenticated-requests
-next:
-  title: Send data to the internet
-  path: /cookbook/networking/send-data
 ---
 
 <?code-excerpt path-base="cookbook/networking/background_parsing/"?>
@@ -38,9 +32,11 @@ First, add the [`http`][] package to your project.
 The `http` package makes it easier to perform network
 requests, such as fetching data from a JSON endpoint.
 
-```yaml
-dependencies:
-  http: <latest_version>
+To add the `http` package as a dependency,
+run `flutter pub add`:
+
+```terminal
+$ flutter pub add http
 ```
 
 ## 2. Make a network request

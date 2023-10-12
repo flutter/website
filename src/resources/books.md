@@ -6,11 +6,15 @@ toc: false
 
 Here's a collection of books about Flutter, in alphabetical order.
 If you find another one that we should add,
-[file an issue][] and (optionally)
+[file an issue][] and (feel free to)
 submit a PR ([sample][]) to add it yourself.
+Also, check the Flutter version that the book
+was written under. See the [what's new][]
+page to view Flutter's latest release.
 
 [file an issue]: {{site.repo.this}}/issues/new
 [sample]: {{site.repo.this}}/pull/6019
+[what's new]: {{site.url}}/release/whats-new
 
 {% for book in site.data.books -%}
 * [{{book.title}}]({{book.link}})

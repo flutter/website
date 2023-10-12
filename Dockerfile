@@ -1,4 +1,4 @@
-FROM ruby:3.2-2-slim-bullseye@sha256:d8e5caa21b5ebc425828af1eb43a678afceaca80681cac26b457063a18488e10 AS base
+FROM ruby:3.2.2-slim-bookworm@sha256:17de1131ceb018ab30cbb76505559baa49a4c1b125e03c90dd10220bf863783c AS base
 
 ENV TZ=US/Pacific
 RUN apt-get update && apt-get install -yq --no-install-recommends \
@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
       curl \
       diffutils \
       git \
+      gnupg \
       lsof \
       make \
       unzip \
@@ -20,36 +21,22 @@ WORKDIR /app
 
 
 # ============== INSTALL FLUTTER ==============
-# NOTE that this will fail if you have not cloned the repo with --recurse-submodules 
-# or run `git submodule update --init --recursive` after cloning.
 FROM base AS flutter
 
-# This Flutter install uses/requires the local ./flutter submodule
-COPY ./flutter ./flutter
 COPY ./site-shared ./site-shared
 COPY pubspec.yaml ./
 
-ARG FLUTTER_BUILD_BRANCH
+ARG FLUTTER_BUILD_BRANCH=stable
 ENV FLUTTER_BUILD_BRANCH=$FLUTTER_BUILD_BRANCH
 ENV FLUTTER_ROOT=flutter
 ENV FLUTTER_BIN=flutter/bin
-ENV PATH="/app/flutter/bin:$PATH"
+ENV PATH="/flutter/bin:$PATH"
 
-# Used if wanting to build the container with a different branch, this 
-# would change the current branch of and update the mirrored submodule
-# e.g. `make build FLUTTER_BUILD_BRANCH=beta`
-# This is not to be confused with the $FLUTTER_TEST_BRANCH
-RUN if test -n "$FLUTTER_BUILD_BRANCH" -a "$FLUTTER_BUILD_BRANCH" != "stable" ; then \
-      cd flutter && \
-      git fetch && \
-      git remote set-branches origin "$FLUTTER_BUILD_BRANCH" && \
-      git fetch --depth 1 origin "$FLUTTER_BUILD_BRANCH" && \
-      git checkout "$FLUTTER_BUILD_BRANCH" -- && \
-      git pull; \
-    fi
+RUN git clone --branch $FLUTTER_BUILD_BRANCH --single-branch https://github.com/flutter/flutter /flutter/
+VOLUME /flutter
 
 # Set up Flutter
-# NOTE You will get a warning "Woah! You appear to be trying to run flutter as root."  
+# NOTE You will get a warning "Woah! You appear to be trying to run flutter as root."
 # and this is to be disregarded since this image is never deployed to production.
 RUN flutter doctor
 RUN flutter --version
@@ -60,14 +47,15 @@ RUN dart pub get
 # ============== NODEJS INTSALL ==============
 FROM flutter AS node
 
-RUN curl -sL https://deb.nodesource.com/setup_18.x -o node_setup.sh && \
-      bash node_setup.sh 1> /dev/null
-RUN apt-get update -q && apt-get install -yq --no-install-recommends \
-      nodejs \
-    && rm -rf /var/lib/apt/lists/*
+RUN mkdir -p /etc/apt/keyrings \
+    && curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg \
+    && echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_18.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list \
+    && apt-get update -yq \
+    && apt-get install nodejs -yq \
+    && npm install -g npm # Ensure latest npm
 
 # Install global Firebase CLI
-RUN npm install -g firebase-tools@11.27.0
+RUN npm install -g firebase-tools@12.4.0
 
 
 
@@ -76,13 +64,8 @@ FROM flutter AS tests
 
 COPY ./ ./
 
-ARG FLUTTER_TEST_BRANCH=stable
-ENV FLUTTER_TEST_BRANCH=$FLUTTER_TEST_BRANCH
-
 # Only test the code here, checking links is purely for site deployment
-# NOTE bash scripts will switch the Flutter branch based on $FLUTTER_TEST_BRANCH
 ENTRYPOINT ["tool/test.sh"]
-
 
 
 # ============== DEV / JEKYLL SETUP ==============

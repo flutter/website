@@ -1,5 +1,5 @@
 ---
-title: Obfuscating Dart code
+title: Obfuscate Dart code
 description: How to remove function and class names from your Dart binary.
 ---
 
@@ -35,7 +35,7 @@ It only renames symbols with more obscure names.
 ## Supported targets
 
 The following build targets
-support the obfuscation process 
+support the obfuscation process
 described on this page:
 
 * `aar`
@@ -60,7 +60,7 @@ described on this page:
 [Build and release a web app]: {{site.url}}/deployment/web
 [minified]: https://en.wikipedia.org/wiki/Minification_(programming)
 
-## Obfuscating your app
+## Obfuscate your app
 
 To obfuscate your app, use the `flutter build` command
 in release mode
@@ -96,7 +96,7 @@ $ flutter build apk -h
 If these flags are not listed in the output,
 run `flutter --version` to check your version of Flutter.
 
-## Reading an obfuscated stack trace
+## Read an obfuscated stack trace
 
 To debug a stack trace created by an obfuscated app,
 use the following steps to make it human readable:
@@ -116,6 +116,25 @@ use the following steps to make it human readable:
    For more information on the `symbolize` command,
    run `flutter symbolize -h`.
 
+## Read an obfuscated name
+
+To make the name that an app obfuscated human readable,
+use the following steps:
+
+1. To save the name obfuscation map at app build time,
+   use `--extra-gen-snapshot-options=--save-obfuscation-map=/<your-path>`.
+   For example:
+
+   ```terminal
+   $ flutter build apk --obfuscate --split-debug-info=/<project-name>/<directory> --extra-gen-snapshot-options=--save-obfuscation-map=/<your-path>
+   ```
+
+1. To recover the name, use the generated obfuscation map.
+   The obfuscation map is a flat JSON array with pairs of
+   original names and obfuscated names. For example,
+   `["MaterialApp", "ex", "Scaffold", "ey"]`, where `ex`
+   is the obfuscated name of `MaterialApp`.
+
 ## Caveat
 
 Be aware of the following when coding an app that will
@@ -130,3 +149,5 @@ eventually be an obfuscated binary.
 ```dart
 expect(foo.runtimeType.toString(), equals('Foo'));
 ```
+
+* Enum names are not obfuscated currently.

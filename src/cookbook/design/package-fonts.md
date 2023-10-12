@@ -1,12 +1,6 @@
 ---
 title: Export fonts from a package
 description: How to export fonts from a package.
-prev:
-  title: Display a snackbar
-  path: /cookbook/design/snackbars
-next:
-  title: Update the UI based on orientation
-  path: /cookbook/design/orientation
 ---
 
 <?code-excerpt path-base="cookbook/design/package_fonts"?>
@@ -52,9 +46,11 @@ updating the `pubspec.yaml` in the *app's* root directory.
 
 ### Add the package to the app
 
-```yaml
-dependencies:
-  awesome_package: <latest_version>
+To add the `awesome_package` package as a dependency,
+run `flutter pub add`:
+
+```terminal
+$ flutter pub add awesome_package
 ```
 
 ### Declare the font assets

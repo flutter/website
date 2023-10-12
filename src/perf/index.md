@@ -14,7 +14,7 @@ picture-in-picture" allowfullscreen></iframe>
   on [Using the Performance view][].
 {{site.alert.end}}
 
-[Using the Performance view]: {{site.url}}/development/tools/devtools/performance
+[Using the Performance view]: {{site.url}}/tools/devtools/performance
 
 What is performance? Why is performance important? How do I improve performance?
 

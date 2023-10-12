@@ -1,6 +1,8 @@
 ---
 title: New CupertinoIcons has icon glyph changes
-description: Once you update to cupertino_icons 1.0.0, some old glyphs are automapped to the new glyphs. Consider double-checking visually.
+description: >
+  Once you update to cupertino_icons 1.0.0, some old glyphs are
+  automapped to the new glyphs. Consider double-checking visually.
 ---
 
 ## Summary
@@ -112,7 +114,7 @@ All your `CupertinoIcons` should automatically
 update to the new aesthetic (except for the
 [unchanged icons](#unchanged-icons) listed above).
 
-At this point, you can also explore [`CupertinoIcons`][] 
+At this point, you can also explore [`CupertinoIcons`][]
 for new icons to use in your application.
 
 You're encouraged to verify your application after

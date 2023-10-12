@@ -1,6 +1,7 @@
 ---
 title: Actions API revision
-description: Removes need for FocusNode in invocations, map Intent types to Actions.
+description: >
+  Removes need for FocusNode in invocations, map Intent types to Actions.
 ---
 
 ## Summary
@@ -27,7 +28,7 @@ widgets, and having those actions act in the context of the widget.
 Teams have been using actions, and found several limitations in that
 design that needed to be addressed:
 
-1. Actions couldn’t be invoked from outside of the widget hierarchy.
+1. Actions couldn't be invoked from outside of the widget hierarchy.
    Examples of this include processing a script of commands,
    some undo architectures, and some controller architectures.
 
@@ -47,7 +48,7 @@ design that needed to be addressed:
 To address these issues, we made some significant changes to the API.
 The mapping of actions was made more intuitive,
 and the enabled interface was moved to the `Action` class.
-Some unnecessary arguments were removed from the `Action`’s
+Some unnecessary arguments were removed from the `Action`'s
 `invoke` method and its constructor, and actions were allowed
 to return results from their invoke method.
 Actions were made into generics, accepting the type of `Intent`
@@ -93,7 +94,7 @@ outdated use of the Actions API might be the cause of the problem. The specifics
 of the error might differ, and there may be other failures caused by these
 changes.
 
-```
+```nocode
 error: MyActionDispatcher.invokeAction' ('bool Function(Action<Intent>, Intent, {FocusNode focusNode})') isn't a valid override of 'ActionDispatcher.invokeAction' ('Object Function(Action<Intent>, Intent, [BuildContext])'). (invalid_override at [main] lib/main.dart:74)
 
 error: MyAction.invoke' ('void Function(FocusNode, Intent)') isn't a valid override of 'Action.invoke' ('Object Function(Intent)'). (invalid_override at [main] lib/main.dart:231)
@@ -312,16 +313,19 @@ In stable release: 1.20
 ## References
 
 API documentation:
+
 * [`Action`][]
 * [`ActionDispatcher`][]
 * [`Actions`][]
 * [`Intent`][]
 * [`Shortcuts`][]
 
-Relevant issues:
+Relevant issue:
+
 * [Issue 53276][]
 
 Relevant PRs:
+
 * [Revise Action API][]
 * [Make Action.enabled be isEnabled(Intent intent) instead][]
 

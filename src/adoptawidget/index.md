@@ -11,14 +11,14 @@ description: >
 {{site.alert.note}}
   The Adopt a Widget program ran during the month of
   November 2020. Thanks so much for your participation!
-  We may do something similar in the future.
+  We might do something similar in the future.
 {{site.alert.end}}
 
 Flutter is an open source project hosted [on GitHub][]
 and the API docs (generated from the source code) are
 hosted on [api.flutter.dev][].
 Adopting a widget and improving its documentation helps everyone!
-So, for the month of November, we’re extending a special
+So, for the month of November, we're extending a special
 invitation to contribute to the Flutter project by choosing
 a Widget and improving its API documentation.
 
@@ -331,7 +331,7 @@ To view the generated docs, open `dev/docs/doc/api/index.html`.
 
 {{site.alert.note}}
   Flutter API docs cannot be generated on Windows.
-  If you are using Windows, you may need to download
+  If you are using Windows, you might need to download
   the Linux version of the SDK and use the
   [Windows Subsystem for Linux][].
 {{site.alert.end}}

@@ -49,8 +49,8 @@ Code before migration:
 class FrogSize extends ParentDataWidget<FrogJar> {
   FrogSize({
     Key key,
-    @required this.size,
-    @required Widget child,
+    required this.size,
+    required Widget child,
   }) : assert(child != null),
         assert(size != null),
         super(key: key, child: child);
@@ -83,8 +83,8 @@ Code after migration:
 class FrogSize extends ParentDataWidget<FrogJarParentData> { // FrogJar changed to FrogJarParentData
   FrogSize({
     Key key,
-    @required this.size,
-    @required Widget child,
+    required this.size,
+    required Widget child,
   }) : assert(child != null),
         assert(size != null),
         super(key: key, child: child);
@@ -125,9 +125,11 @@ In stable release: 1.17
 ## References
 
 API documentation:
+
 * [`ParentDataWidget`][]
 
 Relevant PR:
+
 * [Make ParentDataWidget usable with different ancestor RenderObjectWidget types][]
 
 

@@ -1,6 +1,8 @@
 ---
 title: Deprecated API removed after v3.3
-description: After reaching end of life, the following deprecated APIs were removed from Flutter.
+description: >
+  After reaching end of life, the following deprecated APIs
+  were removed from Flutter.
 ---
 
 ## Summary
@@ -12,7 +14,6 @@ deprecated APIs that reached end of life after the
 All affected APIs have been compiled into this
 primary source to aid in migration. A
 [quick reference sheet][] is available as well.
-
 
 [Deprecation Policy]: {{site.repo.flutter}}/wiki/Tree-hygiene#deprecation
 [quick reference sheet]: {{site.url}}/go/deprecations-removed-after-3-3
@@ -31,12 +32,13 @@ Use `RenderConstraintsTransformBox` instead.
 Where unconstrained in both axes, provide `ConstraintsTransformBox.unconstrained`
 to `constraintsTransform`.
 
-If `RenderUnconstrainedBox.constrainedAxis` was previously set, replace respectively:
+If `RenderUnconstrainedBox.constrainedAxis` was previously set,
+replace respectively:
 
 - Where `constrainedAxis` was previously `Axis.horizontal`, set
-  `constraintsTransform` to `ConstraintsTransformBox.widthUnconstrained`
-- - Where `constrainedAxis` was previously `Axis.vertical`, set
-    `constraintsTransform` to `ConstraintsTransformBox.heightUnconstrained`
+  `constraintsTransform` to `ConstraintsTransformBox.widthUnconstrained`.
+- Where `constrainedAxis` was previously `Axis.vertical`, set
+  `constraintsTransform` to `ConstraintsTransformBox.heightUnconstrained`.
 
 This change allowed for the introduction of several more types of constraint
 transformations through `ConstraintsTransformBox`. Other parameters of the old
@@ -45,6 +47,7 @@ API are compatible with the new API.
 **Migration guide**
 
 Code before migration:
+
 ```dart
 // Unconstrained
 final RenderUnconstrainedBox unconstrained = RenderUnconstrainedBox(
@@ -79,6 +82,7 @@ final RenderUnconstrainedBox unconstrained = RenderUnconstrainedBox(
 ```
 
 Code after migration:
+
 ```dart
 // Unconstrained
 final RenderConstraintsTransformBox unconstrained = RenderConstraintsTransformBox(
@@ -116,10 +120,12 @@ final RenderConstraintsTransformBox unconstrained = RenderConstraintsTransformBo
 **References**
 
 API documentation:
+
 * [`RenderConstraintsTransformBox`][]
 * [`ConstraintsTransformBox`][]
 
 Relevant PRs:
+
 * Deprecated in [#78673][]
 * Removed in [#111711][]
 
@@ -144,6 +150,7 @@ in conjunction with other widgets like `Stack` and `InteractiveViewer`.
 **Migration guide**
 
 Code before migration:
+
 ```dart
 Draggable draggable = Draggable();
 draggable = Draggable(dragAnchor: DragAnchor.child);
@@ -155,6 +162,7 @@ longPressDraggable = LongPressDraggable(dragAnchor: DragAnchor.pointer);
 ```
 
 Code after migration:
+
 ```dart
 Draggable draggable = Draggable();
 draggable = Draggable(dragAnchorStrategy: childDragAnchorStrategy);
@@ -168,14 +176,17 @@ longPressDraggable = LongPressDraggable(dragAnchorStrategy: pointerDragAnchorStr
 **References**
 
 API documentation:
+
 * [`Draggable`][]
 * [`LongPressDraggable`][]
 * [`DragAnchorStrategy`][]
 
 Relevant issues:
+
 * [#73143][]
 
 Relevant PRs:
+
 * Deprecated in [#79160][]
 * Removed in [#111713][]
 
@@ -208,12 +219,14 @@ code in order to maintain one or the other.
 [In-depth migration guide available][]
 
 Code before migration:
+
 ```dart
 final ScrollBehavior scrollBehavior = ScrollBehavior();
 scrollBehavior.buildViewportChrome(context, child, axisDirection);
 ```
 
 Code after migration:
+
 ```dart
 final ScrollBehavior scrollBehavior = ScrollBehavior();
 scrollBehavior.buildOverscrollIndicator(context, child, axisDirection);
@@ -222,15 +235,19 @@ scrollBehavior.buildOverscrollIndicator(context, child, axisDirection);
 **References**
 
 Design document:
+
 * [Exposing & Updating ScrollBehaviors][]
 
 API documentation:
+
 * [`ScrollBehavior`][]
 
 Relevant issues:
+
 * [Scrollbars should be always visible and instantiated by default on web and desktop][]
 
 Relevant PRs:
+
 * [#76739][]
 * Deprecated in [#78588][]
 * Removed in [#111715][]
@@ -242,7 +259,6 @@ Relevant PRs:
 [#76739]: {{site.repo.flutter}}/pull/76739
 [#78588]: {{site.repo.flutter}}/pull/78588
 [#111715]: {{site.repo.flutter}}/pull/111715
-
 
 ---
 

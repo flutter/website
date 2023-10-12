@@ -1,6 +1,8 @@
 ---
 title: showAutocorrectionPromptRect method added to TextInputClient 
-description: A new method, void showAutocorrectionPromptRect(int start, int end), was added to the TextInputClient interface
+description: >
+  A new method, void showAutocorrectionPromptRect(int start, int end), 
+  was added to the TextInputClient interface
 ---
 
 ## Summary
@@ -86,12 +88,15 @@ In stable release: 1.20
 ## References
 
 API documentation:
+
 * [`TextInputClient`][]
 
-Relevant issues:
+Relevant issue:
+
 * [Issue 12920][]
 
-Relevant PRs:
+Relevant PR:
+
 * [iOS UITextInput autocorrection prompt][]
 
 

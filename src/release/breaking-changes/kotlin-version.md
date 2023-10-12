@@ -1,6 +1,8 @@
 ---
 title: Required Kotlin version 
-description: Flutter apps built for the Android platform require Kotlin 1.5.31 or greater.
+description: >
+    Flutter apps built for the Android platform
+    require Kotlin 1.5.31 or greater.
 ---
 
 ## Summary
@@ -10,7 +12,7 @@ To build a Flutter app for Android, Kotlin 1.5.31 or greater is required.
 If your app uses a lower version,
 you will receive the following error message:
 
-```
+```nocode
 ┌─ Flutter Fix ────────────────────────────────────────────────────────────┐
 │                                                                          │
 │ [!] Your project requires a newer version of the Kotlin Gradle plugin.   │
@@ -30,7 +32,7 @@ requires apps to use Kotlin 1.5.31 or greater.
 
 ## Description of change
 
-A Flutter app compiled for Android now includes the Gradle dependency 
+A Flutter app compiled for Android now includes the Gradle dependency
 `androidx.window:window-java`.
 
 ## Migration guide
@@ -50,7 +52,7 @@ In stable release: 2.10
 
 ## References
 
-Relevant PRs:
+Relevant PR:
 
 * [PR 29585: Display Features support][]
 

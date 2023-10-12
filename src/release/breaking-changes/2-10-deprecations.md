@@ -1,6 +1,8 @@
 ---
 title: Deprecated API removed after v2.10
-description: After reaching end of life, the following deprecated APIs were removed from Flutter.
+description: >
+  After reaching end of life, the following deprecated APIs
+  were removed from Flutter.
 ---
 
 ## Summary
@@ -47,6 +49,7 @@ The following classes all have the same change of API:
 [In-depth migration guide available][]
 
 Code before migration:
+
 ```dart
 const TextField textField = TextField(maxLengthEnforced: true);
 const TextField textField = TextField(maxLengthEnforced: false);
@@ -62,6 +65,7 @@ final lengthEnforced = cupertinoTextField.maxLengthEnforced;
 ```
 
 Code after migration:
+
 ```dart
 const TextField textField = TextField(maxLengthEnforcement: MaxLengthEnforcement.enforce);
 const TextField textField = TextField(maxLengthEnforcement: MaxLengthEnforcement.none);
@@ -79,14 +83,17 @@ final lengthEnforced = cupertinoTextField.maxLengthEnforcement;
 **References**
 
 API documentation:
+
 * [`TextField`][]
 * [`TextFormField`][]
 * [`CupertinoTextField`][]
 
 Relevant issues:
+
 * [Issue 67898]({{site.repo.flutter}}/issues/67898)
 
 Relevant PRs:
+
 * Deprecated in [#68086]({{site.repo.flutter}}/pull/68086)
 * Removed in [#98539]({{site.repo.flutter}}/pull/98539)
 
@@ -110,11 +117,13 @@ The `VelocityTracker.withKind()` should be used instead. This allows for a
 **Migration guide**
 
 Code before migration:
+
 ```dart
 final VelocityTracker tracker = VelocityTracker();
 ```
 
 Code after migration:
+
 ```dart
 final VelocityTracker tracker = VelocityTracker.withKind(PointerDeviceKind.touch);
 ```
@@ -122,10 +131,12 @@ final VelocityTracker tracker = VelocityTracker.withKind(PointerDeviceKind.touch
 **References**
 
 API documentation:
+
 * [`VelocityTracker`][]
 * [`PointerDeviceKind`][]
 
 Relevant PRs:
+
 * Deprecated in [#66043]({{site.repo.flutter}}/pull/66043)
 * Removed in [#98541]({{site.repo.flutter}}/pull/98541)
 
@@ -150,16 +161,20 @@ their final removal should not necessitate further action.
 **References**
 
 Design document:
+
 * [Material Date Picker Redesign][]
 
 API documentation:
+
 * [`CalendarDatePicker`][]
 * [`showDatePicker`][]
 
 Relevant issues:
+
 * [Issue 50133]({{site.repo.flutter}}/issues/50133)
 
 Relevant PRs:
+
 * Deprecated in [#50546]({{site.repo.flutter}}/issues/50546)
 * Removed in [#98543]({{site.repo.flutter}}/issues/98543)
 
@@ -195,6 +210,7 @@ the generic `ButtonTheme`.
 [In-depth migration guide available for detailed styling][]
 
 Code before migration:
+
 ```dart
 FlatButton(
   onPressed: onPressed,
@@ -216,6 +232,7 @@ OutlineButton(
 ```
 
 Code after migration:
+
 ```dart
 TextButton(
   onPressed: onPressed,
@@ -239,9 +256,11 @@ OutlinedButton(
 **References**
 
 Design document:
+
 * [New Material buttons and themes][]
 
 API documentation:
+
 * [`ButtonStyle`][]
 * [`ButtonStyleButton`][]
 * [`ElevatedButton`][]
@@ -255,6 +274,7 @@ API documentation:
 * [`TextButtonThemeData`][]
 
 Relevant PRs:
+
 * New API added in [#59702]({{site.repo.flutter}}/issues/59702)
 * Deprecated in [#73352]({{site.repo.flutter}}/issues/73352)
 * Removed in [#98546]({{site.repo.flutter}}/issues/98546)
@@ -293,6 +313,7 @@ default `ScaffoldMessenger` is already created in every `MaterialApp`.
 [In-depth migration guide available][]
 
 Code before migration:
+
 ```dart
 Scaffold.of(context).showSnackBar(mySnackBar);
 Scaffold.of(context).removeCurrentSnackBar(mySnackBar);
@@ -300,6 +321,7 @@ Scaffold.of(context).hideCurrentSnackBar(mySnackBar);
 ```
 
 Code after migration:
+
 ```dart
 ScaffoldMessenger.of(context).showSnackBar(mySnackBar);
 ScaffoldMessenger.of(context).removeCurrentSnackBar(mySnackBar);
@@ -308,22 +330,26 @@ ScaffoldMessenger.of(context).hideCurrentSnackBar(mySnackBar);
 
 **References**
 
-Design Document
+Design document:
 * [ScaffoldMessenger Design][]
 
-Video Content
+Video content:
+
 * [SnackBar Delivery][]
 * [Widget of the Week][]
 
 API documentation:
+
 * [`ScaffoldMessenger`][]
 * [`SnackBar`][]
 
 Relevant issues:
+
 * [Issue 57218]({{site.repo.flutter}}/issues/57218)
 * [Issue 62921]({{site.repo.flutter}}/issues/62921)
 
 Relevant PRs:
+
 * New API added in [#64101]({{site.repo.flutter}}/issues/64101)
 * Deprecated in [#67947]({{site.repo.flutter}}/issues/67947)
 * Removed in [#98549]({{site.repo.flutter}}/issues/98549)
@@ -422,19 +448,23 @@ ThemeData(
 
 **References**
 
-Design Document
+Design document:
+
 * [Text Selection Theme][]
 
 API documentation:
+
 * [`ThemeData`][]
 * [`TextSelectionThemeData`][]
 
 Relevant issues:
+
 * [Issue 17635]({{site.repo.flutter}}/issues/17635)
 * [Issue 56082]({{site.repo.flutter}}/issues/56082)
 * [Issue 61227]({{site.repo.flutter}}/issues/61227)
 
 Relevant PRs:
+
 * New API added in [#62014]({{site.repo.flutter}}/issues/62014)
 * Deprecated in [#66485]({{site.repo.flutter}}/issues/66482)
 * Removed in [#98578]({{site.repo.flutter}}/issues/98578)
@@ -475,13 +505,16 @@ textSelectionDelegate.userUpdateTextEditingValue(value, cause);
 **References**
 
 API documentation:
+
 * [`RenderEditable`][]
 * [`TextSelectionDelegate`][]
 
 Relevant issues:
+
 * Resolved [#75505]({{site.repo.flutter}}/issues/75502)
 
 Relevant PRs:
+
 * Deprecated in [#75541]({{site.repo.flutter}}/issues/75541)
 * Removed in [#98582]({{site.repo.flutter}}/issues/98582)
 
@@ -521,13 +554,16 @@ const Stack stack = Stack(clipBehavior: Clip.hardEdge);
 **References**
 
 API documentation:
+
 * [`Stack`][]
 * [`Clip`][]
 
 Relevant issues:
+
 * Resolved [#66030]({{site.repo.flutter}}/issues/66030)
 
 Relevant PRs:
+
 * Deprecated in [#66305]({{site.repo.flutter}}/issues/66305)
 * Removed in [#98583]({{site.repo.flutter}}/issues/98583)
 
@@ -550,9 +586,11 @@ removed.
 **References**
 
 API documentation:
+
 * [`SemanticsEvent`][]
 
 Relevant PRs:
+
 * Deprecated in [#45940]({{site.repo.flutter}}/issues/45940)
 * Removed in [#98615]({{site.repo.flutter}}/issues/98615)
 
@@ -600,12 +638,15 @@ element.removeRenderObjectChild(child, slot);
 **References**
 
 API documentation:
+
 * [`RenderObjectElement`][]
 
 Relevant issues:
+
 * [Issue 63269]({{site.repo.flutter}}/issues/63269)
 
 Relevant PRs:
+
 * Deprecated in [#64254]({{site.repo.flutter}}/issues/64254)
 * Removed in [#98616]({{site.repo.flutter}}/issues/98616)
 
@@ -616,4 +657,3 @@ Relevant PRs:
 ## Timeline
 
 In stable release: 3.0.0
-

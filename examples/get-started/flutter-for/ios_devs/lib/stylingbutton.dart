@@ -31,15 +31,15 @@ class HomePage extends StatelessWidget {
     return CupertinoPageScaffold(
       navigationBar: const CupertinoNavigationBar(
           middle:
-            // #docregion CustomFont
-            Text(
-              'Cupertino',
-              style: TextStyle(
-                fontSize: 40,
-                fontFamily: 'BungeeSpice',
-              ),
-            )
-            // #enddocregion CustomFont
+              // #docregion CustomFont
+              Text(
+        'Cupertino',
+        style: TextStyle(
+          fontSize: 40,
+          fontFamily: 'BungeeSpice',
+        ),
+      )
+          // #enddocregion CustomFont
           ),
       child: Center(
         // #docregion StylingButtonExample

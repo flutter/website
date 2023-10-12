@@ -40,7 +40,8 @@ flutter-medium: https://medium.com/flutter
 medium: https://medium.com
 dartpad: https://dartpad.dev
 gallery: https://gallery.flutter.dev
-material: https://material.io
+material: https://m3.material.io
+material2: https://m2.material.io
 so: https://stackoverflow.com
 github: https://github.com
 flutter-assets: https://flutter.github.io/assets-for-api-docs/assets
@@ -100,17 +101,25 @@ defaults:
     values:
       toc: true
   - scope:
+      path: 'accessibility-and-localization'
+    values:
+      show_breadcrumbs: true
+  - scope:
+      path: 'add-to-app'
+    values:
+      show_breadcrumbs: true
+  - scope:
       path: 'cookbook'
     values:
       show_breadcrumbs: true
   - scope:
-      path: 'development'
+      path: 'data-and-backend'
     values:
       show_breadcrumbs: true
   - scope:
-      path: 'development/ui/widgets'
+      path: 'deployment'
     values:
-      toc: false
+      show_breadcrumbs: true
   - scope:
       path: 'get-started'
     values:
@@ -120,9 +129,37 @@ defaults:
     values:
       show_breadcrumbs: false
   - scope:
+      path: 'packages-and-plugins'
+    values:
+      show_breadcrumbs: true
+  - scope:
+      path: 'perf'
+    values:
+      show_breadcrumbs: true
+  - scope:
+      path: 'platform-integration'
+    values:
+      show_breadcrumbs: true
+  - scope:
       path: 'release'
     values:
       show_breadcrumbs: true
+  - scope:
+      path: 'testing'
+    values:
+      show_breadcrumbs: true
+  - scope:
+      path: 'tools'
+    values:
+      show_breadcrumbs: true
+  - scope:
+      path: 'ui'
+    values:
+      show_breadcrumbs: true
+  - scope:
+      path: 'ui/widgets'
+    values:
+      toc: false
 
 
 ########### Alerts ###########
@@ -134,24 +171,24 @@ alert:
     **Bonus questions!**
   important: >-
     <aside class="alert alert-warning" role="alert" markdown="1">
-    <i class="fas fa-exclamation-circle"></i> **Important:**
+    <i class="material-icons" aria-hidden="true">error</i> **Important:**
   info: >-
     <aside class="alert alert-info" role="alert" markdown="1">
-    <i class="fas fa-info-circle"></i>
+    <i class="material-icons" aria-hidden="true">info</i>
   note: >-
     <aside class="alert alert-info" role="alert" markdown="1">
-    <i class="fas fa-info-circle"></i> **Note:**
+    <i class="material-icons" aria-hidden="true">info</i> **Note:**
   version-note: >-
     <aside class="alert alert-info" role="alert" markdown="1">
-    <i class="fas fa-code-branch"></i> **Version note:**
+    <i class="material-icons" aria-hidden="true">merge_type</i> **Version note:**
   secondary: >-
     <aside class="alert alert-secondary" role="alert" markdown="1">
   tip: >-
     <aside class="alert alert-success" role="alert" markdown="1">
-    <i class="far fa-lightbulb"></i> **Tip:**
+    <i class="material-icons" aria-hidden="true">tips_and_updates</i> **Tip:**
   warning: >-
     <aside class="alert alert-warning" role="alert" markdown="1">
-    <i class="fas fa-exclamation-triangle"></i> **Warning:**
+    <i class="material-icons" aria-hidden="true">report_problem</i> **Warning:**
   end: </aside>
 
 

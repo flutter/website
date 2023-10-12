@@ -1,11 +1,14 @@
 {% if entries -%}
-Topics:
+### Topics
 
 {% for topic in entries -%}
 {% if topic.permalink == nil -%}
+{% if topic contains 'header' %}
+#### {{topic.header}}
+
+{% else -%}
   - {{topic.title}}
-{% elsif topic.permalink contains '://' -%}
-  - [{{topic.title}}<i class="fas fa-external-link-alt"></i>]({{topic.permalink}})
+{% endif -%}
 {% else -%}
   - [{{topic.title}}]({{topic.permalink}})
 {% endif -%}

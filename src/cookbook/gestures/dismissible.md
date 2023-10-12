@@ -2,12 +2,6 @@
 title: Implement swipe to dismiss
 description: How to implement swiping to dismiss or delete.
 diff2html: true
-prev:
-  title: Handle taps
-  path: /cookbook/gestures/handling-taps
-next:
-  title: Display images from the internet
-  path: /cookbook/images/network-image
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

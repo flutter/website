@@ -33,16 +33,16 @@ class HomePage extends StatelessWidget {
           child:
               // #docregion OpenAppExample
               CupertinoButton(
-                onPressed: () async {
-                  await launchUrl(
-                    Uri.parse('https://google.com'),
-                  );
-                },
-                child: const Text(
-                  'Open website',
-                ),
-             ),
-             // #enddocregion OpenAppExample
+            onPressed: () async {
+              await launchUrl(
+                Uri.parse('https://google.com'),
+              );
+            },
+            child: const Text(
+              'Open website',
+            ),
+          ),
+          // #enddocregion OpenAppExample
         ),
       ),
     );

@@ -1,12 +1,6 @@
 ---
 title: Update data over the internet
 description: How to use the http package to update data over the internet.
-prev:
-  title: Send data to the internet
-  path: /cookbook/networking/send-data
-next:
-  title: Work with WebSockets
-  path: /cookbook/networking/web-sockets
 ---
 
 <?code-excerpt path-base="cookbook/networking/update_data/"?>
@@ -25,15 +19,11 @@ This recipe uses the following steps:
 
 ## 1. Add the `http` package
 
-To install the `http` package,
-add it to the dependencies section
-of the `pubspec.yaml` file.
-You can find the latest version of the
-[`http` package][] on pub.dev.
+To add the `http` package as a dependency,
+run `flutter pub add`:
 
-```yaml
-dependencies:
-  http: <latest_version>
+```terminal
+$ flutter pub add http
 ```
 
 Import the `http` package.
@@ -197,7 +187,7 @@ Column(
   mainAxisAlignment: MainAxisAlignment.center,
   children: <Widget>[
     Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8),
       child: TextField(
         controller: _controller,
         decoration: const InputDecoration(hintText: 'Enter Title'),
@@ -216,7 +206,7 @@ Column(
 ```
 
 On pressing the **Update Data** button, a network request
-sends the data in the `TextField` to the server as a `POST` request.
+sends the data in the `TextField` to the server as a `PUT` request.
 The `_futureAlbum` variable is used in the next step.
 
 ## 5. Display the response on screen
@@ -354,7 +344,7 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Container(
           alignment: Alignment.center,
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8),
           child: FutureBuilder<Album>(
             future: _futureAlbum,
             builder: (context, snapshot) {
@@ -407,6 +397,6 @@ class _MyAppState extends State<MyApp> {
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [Introduction to unit testing]: {{site.url}}/cookbook/testing/unit/introduction
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html
-[JSON and serialization]: {{site.url}}/development/data-and-backend/json
+[JSON and serialization]: {{site.url}}/data-and-backend/serialization/json
 [Mock dependencies using Mockito]: {{site.url}}/cookbook/testing/unit/mocking
 [`State`]: {{site.api}}/flutter/widgets/State-class.html

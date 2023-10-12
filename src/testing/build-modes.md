@@ -18,8 +18,13 @@ A quick summary for when to use which mode is as follows:
 * Use [release](#release) mode when you are ready to release
   your app.
 
-The rest of the page goes into more detail about these modes.
-For information on headless testing, see the [Flutter wiki][].
+The rest of the page details these modes.
+
+* To learn about headless testing, see the [Flutter wiki][].
+* To learn how to detect the build mode, see the
+[Check for Debug/Release Mode in Flutter Apps] blog post.
+
+[Check for Debug/Release Mode in Flutter Apps]: https://retroportalstudio.medium.com/check-for-debug-release-mode-in-flutter-apps-d8d545f20da3
 
 ## Debug
 
@@ -123,9 +128,9 @@ For more information on the build modes, see
 [Assertions]: {{site.dart-site}}/language/control-flow#assert
 [dart2js]: {{site.dart-site}}/tools/dart2js
 [dartdevc]: {{site.dart-site}}/tools/dartdevc
-[DevTools]: {{site.url}}/development/tools/devtools
+[DevTools]: {{site.url}}/tools/devtools
 [Flutter wiki]: {{site.repo.flutter}}/wiki/Flutter's-modes
 [Flutter's build modes]: {{site.repo.flutter}}/wiki/Flutter%27s-modes
 [generate timeline events]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
-[hot reload]: {{site.url}}/development/tools/hot-reload
+[hot reload]: {{site.url}}/tools/hot-reload
 [iOS]: {{site.url}}/deployment/ios

@@ -61,7 +61,6 @@ The following table shows which commands you can use with the `flutter` tool:
 | downgrade | `flutter downgrade` | Downgrade Flutter to the last active version for the current channel. |
 | drive | `flutter drive` | Runs Flutter Driver tests for the current project. |
 | emulators | `flutter emulators` | List, launch and create emulators. |
-| format  | `flutter format <DIRECTORY|DART_FILE>` | Formats Flutter source code.<br>Deprecated, instead use [`dart format`][]. |
 | gen-l10n | `flutter gen-l10n <DIRECTORY>` | Generate localizations for the Flutter project. |
 | install | `flutter install -d <DEVICE_ID>` | Install a Flutter app on an attached device. |
 | logs | `flutter logs` | Show log output for running Flutter apps. |

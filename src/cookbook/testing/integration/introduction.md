@@ -2,12 +2,6 @@
 title: An introduction to integration testing
 description: Learn about integration testing in Flutter.
 short-title: Introduction
-prev:
-  title: Take a picture using the camera
-  path: /cookbook/plugins/picture-using-camera
-next:
-  title: Performance profiling
-  path: /cookbook/testing/integration/profiling
 ---
 
 <?code-excerpt path-base="cookbook/testing/integration/introduction/"?>
@@ -91,11 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              // Provide a Key to this specific Text widget. This allows
-              // identifying the widget from inside the test suite,
-              // and reading the text.
-              key: const Key('counter'),
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
         ),
@@ -117,15 +107,28 @@ class _MyHomePageState extends State<MyHomePage> {
 
 Next, use the `integration_test` and `flutter_test` packages
 to write integration tests. Add these dependencies to the `dev_dependencies`
-section of the app's `pubspec.yaml` file, specifying the Flutter SDK as the
-location of the package.
+section of the app's `pubspec.yaml` file.
 
-```yaml
-dev_dependencies:
-  integration_test:
-    sdk: flutter
-  flutter_test:
-    sdk: flutter
+```console
+$ flutter pub add 'dev:flutter_test:{"sdk":"flutter"}'  'dev:integration_test:{"sdk":"flutter"}'
+"flutter_test" is already in "dev_dependencies". Will try to update the constraint.
+Resolving dependencies... 
+  collection 1.17.2 (1.18.0 available)
++ file 6.1.4 (7.0.0 available)
++ flutter_driver 0.0.0 from sdk flutter
++ fuchsia_remote_debug_protocol 0.0.0 from sdk flutter
++ integration_test 0.0.0 from sdk flutter
+  material_color_utilities 0.5.0 (0.8.0 available)
+  meta 1.9.1 (1.10.0 available)
++ platform 3.1.0 (3.1.2 available)
++ process 4.2.4 (5.0.0 available)
+  stack_trace 1.11.0 (1.11.1 available)
+  stream_channel 2.1.1 (2.1.2 available)
++ sync_http 0.3.1
+  test_api 0.6.0 (0.6.1 available)
++ vm_service 11.7.1 (11.10.0 available)
++ webdriver 3.0.2
+Changed 9 dependencies!
 ```
 
 ### 3. Create the test files
@@ -149,12 +152,12 @@ Now you can write tests. This involves three steps:
   2. Interact and tests widgets using the `WidgetTester` class.
   3. Test the important scenarios.
 
-<?code-excerpt "lib/integration_test/app_test.dart (IntegrationTest)"?>
+<?code-excerpt "integration_test/app_test.dart (IntegrationTest)"?>
 ```dart
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
-
-import 'package:counter_app/main.dart' as app;
+import 'package:introduction/main.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
@@ -162,14 +165,14 @@ void main() {
   group('end-to-end test', () {
     testWidgets('tap on the floating action button, verify counter',
         (tester) async {
-      app.main();
-      await tester.pumpAndSettle();
+      // Load app widget.
+      await tester.pumpWidget(const MyApp());
 
       // Verify the counter starts at 0.
       expect(find.text('0'), findsOneWidget);
 
       // Finds the floating action button to tap on.
-      final Finder fab = find.byTooltip('Increment');
+      final fab = find.byKey(const Key('increment'));
 
       // Emulate a tap on the floating action button.
       await tester.tap(fab);
@@ -231,7 +234,7 @@ To get started testing in a web browser, [Download ChromeDriver][].
 Next, create a new directory named `test_driver` containing a new file
 named `integration_test.dart`:
 
-<?code-excerpt "lib/test_driver/integration_test.dart"?>
+<?code-excerpt "test_driver/integration_test.dart"?>
 ```dart
 import 'package:integration_test/integration_test_driver.dart';
 

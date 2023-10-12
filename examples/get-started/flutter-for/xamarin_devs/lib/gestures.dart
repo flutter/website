@@ -29,7 +29,7 @@ class SampleApp extends StatelessWidget {
           onTap: () {
             developer.log('tap');
           },
-          child: const FlutterLogo(size: 200.0),
+          child: const FlutterLogo(size: 200),
         ),
       ),
     );
@@ -75,7 +75,7 @@ class _RotatingFlutterDetectorState extends State<RotatingFlutterDetector>
           },
           child: RotationTransition(
             turns: curve,
-            child: const FlutterLogo(size: 200.0),
+            child: const FlutterLogo(size: 200),
           ),
         ),
       ),

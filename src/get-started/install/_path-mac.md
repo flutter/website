@@ -1,14 +1,15 @@
 ### Update your path
 
 You can update your PATH variable for the current session at
-the command line, as shown in [Get the Flutter SDK][].
-You'll probably want to update this variable permanently,
-so you can run `flutter` commands in any terminal session.
+the command line, as shown in step 3 of [Get the Flutter SDK][].
+To update this variable permanently so you can run
+`flutter` commands in _any_ terminal session,
+use the following instructions.
 
-The steps for modifying this variable permanently for
-all terminal sessions are machine-specific.
-Typically you add a line to a file that is executed
-whenever you open a new window. For example:
+The steps for modifying the `PATH` variable
+_all_ subsequent terminal sessions are machine-specific.
+Typically, you add a line to a shell script file that
+executes whenever you open a new window. For example:
 
  1. Determine the path of your clone of the Flutter SDK.
     You need this in Step 3.

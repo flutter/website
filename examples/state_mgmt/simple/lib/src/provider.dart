@@ -127,8 +127,8 @@ class MyHomepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Column(
-        children: const [
+      body: const Column(
+        children: [
           MyCatalog(),
           MyCartUsingWidget(),
           MyCartTotalWidget(),

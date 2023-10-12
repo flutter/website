@@ -31,7 +31,7 @@ class SampleTapApp extends StatelessWidget {
             developer.log('tap');
           },
           child: const FlutterLogo(
-            size: 200.0,
+            size: 200,
           ),
         ),
       ),
@@ -81,7 +81,7 @@ class _SampleAppState extends State<SampleApp>
           child: RotationTransition(
             turns: curve,
             child: const FlutterLogo(
-              size: 200.0,
+              size: 200,
             ),
           ),
         ),

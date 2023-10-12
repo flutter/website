@@ -1,6 +1,8 @@
 ---
 title: Semantics Order of the Overlay Entries in Modal Routes
-description: The scope of the modal route has a higher semantics traverse order than its modal barrier.
+description: >
+  The scope of the modal route has a higher semantics
+  traverse order than its modal barrier.
 ---
 
 ## Summary
@@ -21,8 +23,10 @@ first before the modal barrier.
 
 ## Description of change
 
-We added additional semantics node above both the overlay entries of modal routes.
-Those semantics nodes denote the semantics traverse order of these two overlay entries.
+We added additional semantics node above both
+the overlay entries of modal routes.
+Those semantics nodes denote the semantics
+traverse order of these two overlay entries.
 This also changed the structure of semantics tree.
 
 ## Migration guide
@@ -133,19 +137,22 @@ SemanticsNode getChild(SemanticsNode node) {
 
 ## Timeline
 
-Landed in version: 1.19.0
+Landed in version: 1.19.0<br>
 In stable release: 1.20
 
 ## References
 
 API documentation:
+
 * [`ModalRoute`][]
 * [`OverlayEntry`][]
 
 Relevant issue:
+
 * [Issue 46625][]
 
-Relevant PRs:
+Relevant PR:
+
 * [PR 59290][]
 
 [`ModalRoute`]: {{site.api}}/flutter/widgets/ModalRoute-class.html

@@ -2,12 +2,6 @@
 title: An introduction to widget testing
 description: Learn more about widget testing in Flutter.
 short-title: Introduction
-prev:
-  title: Mock dependencies using Mockito
-  path: /cookbook/testing/unit/mocking
-next:
-  title: Find widgets
-  path: /cookbook/testing/widget/finders
 ---
 
 <?code-excerpt path-base="cookbook/testing/widget/introduction/"?>

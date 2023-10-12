@@ -1,23 +1,26 @@
+@use '../base/variables' as *;
+@use '../vendor/bootstrap';
+
 .site-footer {
   background-color: $site-color-footer;
   color: $site-color-white;
-  padding: bs-spacer(5) 0;
+  padding: bootstrap.bs-spacer(5) 0;
   position: relative;
-  z-index: $zindex-sticky;
+  z-index: bootstrap.$zindex-sticky;
 
   &__wrapper {
     align-items: center;
     display: flex;
     flex-direction: column;
 
-    @include media-breakpoint-up(sm) {
+    @include bootstrap.media-breakpoint-up(sm) {
       flex-direction: row;
     }
   }
 
   &__content {
-    font-size: $font-size-sm;
-    margin: bs-spacer(5) 0;
+    font-size: bootstrap.$font-size-sm;
+    margin: bootstrap.bs-spacer(5) 0;
 
     a {
       color: $site-color-white;
@@ -27,8 +30,8 @@
       font-size: 10px;
     }
 
-    @include media-breakpoint-up(sm) {
-      margin: 0 bs-spacer(5);
+    @include bootstrap.media-breakpoint-up(sm) {
+      margin: 0 bootstrap.bs-spacer(5);
       flex-grow: 1;
     }
   }
@@ -40,10 +43,10 @@
     li {
       &:not(:last-child):after {
         content: '\2022'; // &bull;
-        padding-left: bs-spacer(1);
+        padding-left: bootstrap.bs-spacer(1);
       }
       display: inline;
-      padding-right: bs-spacer(1);
+      padding-right: bootstrap.bs-spacer(1);
     }
   }
 }

@@ -1,12 +1,6 @@
 ---
 title: Fade a widget in and out
 description: How to fade a widget in and out.
-prev:
-  title: Animate the properties of a container
-  path: /cookbook/animation/animated-container
-next:
-  title: Add a drawer to a screen
-  path: /cookbook/design/drawer
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
@@ -36,8 +30,8 @@ draw a green box on screen.
 <?code-excerpt "lib/main.dart (Container)" replace="/^child: //g;/,$//g"?>
 ```dart
 Container(
-  width: 200.0,
-  height: 200.0,
+  width: 200,
+  height: 200,
   color: Colors.green,
 )
 ```
@@ -142,8 +136,8 @@ AnimatedOpacity(
   duration: const Duration(milliseconds: 500),
   // The green box must be a child of the AnimatedOpacity widget.
   child: Container(
-    width: 200.0,
-    height: 200.0,
+    width: 200,
+    height: 200,
     color: Colors.green,
   ),
 )
@@ -204,8 +198,8 @@ class _MyHomePageState extends State<MyHomePage> {
           duration: const Duration(milliseconds: 500),
           // The green box must be a child of the AnimatedOpacity widget.
           child: Container(
-            width: 200.0,
-            height: 200.0,
+            width: 200,
+            height: 200,
             color: Colors.green,
           ),
         ),

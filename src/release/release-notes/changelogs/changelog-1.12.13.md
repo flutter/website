@@ -2860,7 +2860,7 @@ From Sun Aug 19 17:37:00 2019 -0700 to Mon Nov 25 12:05:00 2019 -0800
 
 [13049](https://github.com/flutter/engine/pull/13049) Ignore thread leaks from Dart VM in tsan instrumented builds. (cla: yes)
 
-[13051](https://github.com/flutter/engine/pull/13051) Don’t bump iOS deployment target for Metal builds. (cla: yes)
+[13051](https://github.com/flutter/engine/pull/13051) Don't bump iOS deployment target for Metal builds. (cla: yes)
 
 [13053](https://github.com/flutter/engine/pull/13053) Set the Cirrus badge to only display status of the master branch. (cla: yes)
 

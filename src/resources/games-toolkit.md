@@ -10,6 +10,8 @@ speed up development of casual games on mobile.
 This page outlines what resources are available and
 where you can find them.
 
+For instructions on how to use the game template, please review the [game template readme][game-template-readme].
+
 ## How Flutter can help
 
 In the beginning, four engineers had a vision of
@@ -100,7 +102,7 @@ on top of the normal $300 credit. For the Ads offer,
 Are you ready? To get started:
 
 1. [Watch the Quick Start video][game-video]
-1. [Clone the games template repo][game-template]
+1. [Clone the games template repo][game-template], and review the [template readme][game-template-readme]
 1. [Join the Flutter Games community on Discord][game-discord]
    (use the [direct link][direct-discord] if you already
    have a Discord account).
@@ -112,6 +114,8 @@ Are you ready? To get started:
 [game-discord]: https://discord.com/invite/WY5NwwjBQz
 [game-template]: {{site.github}}/flutter/samples/tree/main/game_template
 [game-video]: {{site.youtube-site}}/watch?v=zGgeBNiRy-8&t=3s
+[game-template-readme]: {{site.github}}/flutter/samples/tree/main/game_template#readme
+
 
 ## Video games
 
@@ -125,7 +129,7 @@ join the [Flame community on Discord][flame-discord],
 and play with the [Flame demo app on DartPad][flame-demo].
 You might also check out the [Flutter + Flame codelab][].
 
-[Flutter + Flame codelab]: {{site.codelabs}}/flutter-flame-game
+[Flutter + Flame codelab]: {{site.codelabs}}/codelabs/flutter-flame-game
 
 In fact, the people at Very Good Ventures wrote a
 [Pinball game][pinball-game] for Google I/O 2022

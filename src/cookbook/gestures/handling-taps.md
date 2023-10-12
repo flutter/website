@@ -1,12 +1,6 @@
 ---
 title: Handle taps
 description: How to handle tapping and dragging.
-prev:
-  title: Add Material touch ripples
-  path: /cookbook/gestures/ripples
-next:
-  title: Implement swipe to dismiss
-  path: /cookbook/gestures/dismissible
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
@@ -43,10 +37,10 @@ GestureDetector(
   },
   // The custom button
   child: Container(
-    padding: const EdgeInsets.all(12.0),
+    padding: const EdgeInsets.all(12),
     decoration: BoxDecoration(
       color: Colors.lightBlue,
-      borderRadius: BorderRadius.circular(8.0),
+      borderRadius: BorderRadius.circular(8),
     ),
     child: const Text('My Button'),
   ),
@@ -117,10 +111,10 @@ class MyButton extends StatelessWidget {
       },
       // The custom button
       child: Container(
-        padding: const EdgeInsets.all(12.0),
+        padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
           color: Colors.lightBlue,
-          borderRadius: BorderRadius.circular(8.0),
+          borderRadius: BorderRadius.circular(8),
         ),
         child: const Text('My Button'),
       ),

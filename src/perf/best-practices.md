@@ -143,7 +143,7 @@ your scene uses `saveLayer` by checking the
 `PerformanceOverlayLayer.checkerboardOffscreenLayers`
 switch in the [DevTools Performance view][].
 
-[DevTools timeline]: {{site.url}}/development/tools/devtools/performance#timeline-events-chart
+[DevTools timeline]: {{site.url}}/tools/devtools/performance#timeline-events-tab
 
 #### Minimizing calls to saveLayer
 
@@ -220,11 +220,11 @@ Here are some tips you might find to be useful:
   bits in the to-be-drawn shape.)
 * To implement fading in an image, consider using the
   [`FadeInImage`][] widget, which applies a gradual
-  opacity using the GPU’s fragment shader.
+  opacity using the GPU's fragment shader.
   For more information, check out the [`Opacity`][] docs.
-* **Clipping** doesn’t call `saveLayer()` (unless
+* **Clipping** doesn't call `saveLayer()` (unless
   explicitly requested with `Clip.antiAliasWithSaveLayer`),
-  so these operations aren’t as expensive as `Opacity`,
+  so these operations aren't as expensive as `Opacity`,
   but clipping is still costly, so use with caution.
   By default, clipping is disabled (`Clip.none`),
   so you must explicitly enable it when needed.
@@ -333,10 +333,10 @@ section in the [Flutter architectural overview][].
 
 
 [Flutter architectural overview]: {{site.url}}/resources/architectural-overview
-[how layout and constraints work]: {{site.url}}/development/ui/layout/constraints
+[how layout and constraints work]: {{site.url}}/ui/layout/constraints
 [layout and rendering]: {{site.url}}/resources/architectural-overview#layout-and-rendering
-[stack trace]: {{site.url}}/development/tools/devtools/cpu-profiler#flame-chart
-[Track layouts option]: {{site.url}}/development/tools/devtools/performance#track-layouts
+[stack trace]: {{site.url}}/tools/devtools/cpu-profiler#flame-chart
+[Track layouts option]: {{site.url}}/tools/devtools/performance#track-layouts
 
 ---
 
@@ -353,7 +353,7 @@ for a total of 16ms or less.
 
 If your frames are rendering in well under
 16ms total in [profile mode][],
-you likely don’t have to worry about performance
+you likely don't have to worry about performance
 even if some performance pitfalls apply,
 but you should still aim to build and
 render a frame as fast as possible. Why?
@@ -363,7 +363,7 @@ render a frame as fast as possible. Why?
 * It might run fine on your device, but consider performance for the
   lowest device you are targeting.
 * As 120fps devices become more widely available,
-  you’ll want to render frames in under 8ms (total)
+  you'll want to render frames in under 8ms (total)
   in order to provide the smoothest experience.
 
 If you are wondering why 60fps leads to a smooth visual experience,
@@ -374,7 +374,7 @@ check out the video [Why 60fps?][]
 
 ## Pitfalls
 
-If you need to tune your app’s performance,
+If you need to tune your app's performance,
 or perhaps the UI isn't as smooth as you expect,
 the [DevTools Performance view][] can help!
 
@@ -397,7 +397,7 @@ your app's performance.
 
 * When using an `AnimatedBuilder`,
   avoid putting a subtree in the builder
-  function that builds widgets that don’t
+  function that builds widgets that don't
   depend on the animation. This subtree is
   rebuilt for every tick of the animation.
   Instead, build that part of the subtree
@@ -414,7 +414,7 @@ your app's performance.
   on screen to avoid the build cost.
   
 * Avoid overriding `operator ==` on `Widget` objects.
-  While it may seem like it would help by avoiding unnecessary rebuilds,
+  While it might seem like it would help by avoiding unnecessary rebuilds,
   in practice it hurts performance because it results in O(N²) behavior.
   The only exception to this rule is leaf widgets (widgets with no children),
   in the specific case where comparing the properties of the widget
@@ -440,7 +440,7 @@ For more performance info, check out the following resources:
 
 [Child elements' lifecycle]: {{site.api}}/flutter/widgets/ListView-class.html#child-elements-lifecycle
 [`CustomPainter`]: {{site.api}}/flutter/rendering/CustomPainter-class.html
-[DevTools Performance view]: {{site.url}}/development/tools/devtools/performance
+[DevTools Performance view]: {{site.url}}/tools/devtools/performance
 [Performance optimizations]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html#performance-optimizations
 [Performance considerations for opacity animation]: {{site.api}}/flutter/widgets/Opacity-class.html#performance-considerations-for-opacity-animation
 [`RenderObject`]: {{site.api}}/flutter/rendering/RenderObject-class.html

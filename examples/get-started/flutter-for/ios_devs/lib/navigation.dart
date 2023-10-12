@@ -67,32 +67,32 @@ class HomePage extends StatelessWidget {
       ),
       child: Material(
         child:
-          // #docregion ListView
-          ListView.builder(
-            itemCount: mockPersons.length,
-            itemBuilder: (context, index) {
-              final person = mockPersons.elementAt(index);
-              final age = '${person.age} years old';
-              return ListTile(
-                title: Text(person.name),
-                subtitle: Text(age),
-                trailing: const Icon(
-                  Icons.arrow_forward_ios,
-                ),
-                onTap: () {
-                  // When a [ListTile] that represents a person is
-                  // tapped, push the detailsPageRouteName route
-                  // to the Navigator and pass the person's instance
-                  // to the route.
-                  Navigator.of(context).pushNamed(
-                    detailsPageRouteName,
-                    arguments: person,
-                  );
-                },
-              );
-            },
-          ),
-          // #enddocregion ListView
+            // #docregion ListView
+            ListView.builder(
+          itemCount: mockPersons.length,
+          itemBuilder: (context, index) {
+            final person = mockPersons.elementAt(index);
+            final age = '${person.age} years old';
+            return ListTile(
+              title: Text(person.name),
+              subtitle: Text(age),
+              trailing: const Icon(
+                Icons.arrow_forward_ios,
+              ),
+              onTap: () {
+                // When a [ListTile] that represents a person is
+                // tapped, push the detailsPageRouteName route
+                // to the Navigator and pass the person's instance
+                // to the route.
+                Navigator.of(context).pushNamed(
+                  detailsPageRouteName,
+                  arguments: person,
+                );
+              },
+            );
+          },
+        ),
+        // #enddocregion ListView
       ),
     );
   }

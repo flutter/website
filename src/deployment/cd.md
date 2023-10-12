@@ -1,12 +1,12 @@
 ---
 title: Continuous delivery with Flutter
-description: How to automate continuous building and releasing of your Flutter app.
+description: >
+  How to automate continuous building and releasing of your Flutter app.
 ---
 
 Follow continuous delivery best practices with Flutter to make sure your
 application is delivered to your beta testers and validated on a frequent basis
 without resorting to manual workflows.
-
 
 ## CI/CD Options
 
@@ -14,6 +14,7 @@ There are a number of continuous integration (CI) and continuous delivery (CD)
 options available to help automate the delivery of your application.
 
 ### All-in-one options with built-in Flutter functionality
+
 * [Codemagic][]
 * [Bitrise][]
 * [Appcircle][]
@@ -23,13 +24,13 @@ options available to help automate the delivery of your application.
 You can use fastlane with the following tooling:
 
 * [GitHub Actions][]
-    * Example: Flutter Gallery's [Github Actions workflows][]
-    * Example: [Github Action in Flutter Project][]
+  * Example: Flutter Gallery's [Github Actions workflows][]
+  * Example: [Github Action in Flutter Project][]
 * [Cirrus][]
 * [Travis][]
 * [GitLab][]
 * [CircleCI][]
-    * [Building and deploying Flutter apps with Fastlane][]
+   * [Building and deploying Flutter apps with Fastlane][]
 
 This guide shows how to set up fastlane and then integrate it with 
 your existing testing and continuous integration (CI) workflows. 
@@ -184,8 +185,8 @@ secrets in pull requests that you accept and merge.
          * Make sure the Flutter SDK is available and set in `PATH`.
          * For Android, ensure the Android SDK is available and the `ANDROID_SDK_ROOT`
            path is set.
-         * For iOS, you may have to specify a dependency on Xcode (for example
-           `osx_image: xcode9.2`).
+         * For iOS, you might have to specify a dependency on Xcode
+           (for example, `osx_image: xcode9.2`).
     * In the script phase of the CI task:
          * Run `flutter build appbundle` or
            `flutter build ios --release --no-codesign`,
@@ -227,8 +228,11 @@ Create a file at `ios/ci_scripts/ci_post_clone.sh` and add the content below.
 ```sh
 #!/bin/sh
 
+# Fail this script if any subcommand fails.
+set -e
+
 # The default execution directory of this script is the ci_scripts directory.
-cd $CI_WORKSPACE # change working directory to the root of your cloned repo.
+cd $CI_PRIMARY_REPOSITORY_PATH # change working directory to the root of your cloned repo.
 
 # Install Flutter using git.
 git clone https://github.com/flutter/flutter.git --depth 1 -b stable $HOME/flutter
@@ -251,6 +255,7 @@ exit 0
 ```
 
 This file should be added to your git repository and marked as executable.
+
 ```terminal
 $ git add --chmod=+x ios/ci_scripts/ci_post_clone.sh
 ```
@@ -279,7 +284,7 @@ To create a new workflow in Xcode, use the following instructions:
 #### Branch changes
 
 By default Xcode suggests the Branch Changes condition that starts a new build
-for every change to your Git repository’s default branch.
+for every change to your Git repository's default branch.
 
 For your app's iOS variant, it's reasonable that you would want Xcode Cloud to
 trigger your workflow after you've made changes to your flutter packages, or

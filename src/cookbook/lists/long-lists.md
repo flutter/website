@@ -1,12 +1,6 @@
 ---
 title: Work with long lists
 description: Use ListView.builder to implement a long or infinite list.
-prev:
-  title: Place a floating app bar above a list
-  path: /cookbook/lists/floating-app-bar
-next:
-  title: Report errors to a service
-  path: /cookbook/maintenance/error-reporting
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

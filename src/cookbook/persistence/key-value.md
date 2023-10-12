@@ -1,12 +1,6 @@
 ---
 title: Store key-value data on disk
 description: How to use the shared_preferences package to store key-value data.
-prev:
-  title: Read and write files
-  path: /cookbook/persistence/reading-writing-files
-next:
-  title: Play and pause a video
-  path: /cookbook/plugins/play-video
 ---
 
 <?code-excerpt path-base="cookbook/persistence/key_value/"?>
@@ -37,14 +31,13 @@ This recipe uses the following steps:
 
 ## 1. Add the dependency
 
-Before starting, add the [`shared_preferences`][]
-plugin to the `pubspec.yaml` file:
+Before starting, add the [`shared_preferences`][] package as a dependency.
 
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  shared_preferences: "<newest version>"
+To add the `shared_preferences` package as a dependency,
+run `flutter pub add`:
+
+```terminal
+$ flutter pub add shared_preferences
 ```
 
 ## 2. Save data
@@ -115,8 +108,10 @@ your test files:
 
 <?code-excerpt "lib/partial_excerpts.dart (Testing)"?>
 ```dart
-const MethodChannel('plugins.flutter.io/shared_preferences')
-    .setMockMethodCallHandler((methodCall) async {
+TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+    .setMockMethodCallHandler(
+        const MethodChannel('plugins.flutter.io/shared_preferences'),
+        (methodCall) async {
   if (methodCall.method == 'getAll') {
     return <String, dynamic>{}; // set initial values here if desired
   }

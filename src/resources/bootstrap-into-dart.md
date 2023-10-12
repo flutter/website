@@ -28,11 +28,6 @@ you to learn, too.
   Learn about the key similarities and differences between the languages
   as well as concepts and conventions not present in vanilla JavaScript.
 
-[Intro to Dart for Java Developers][] codelab
-: Use your Java knowledge to get up and running quickly with Dart.
-  Learn about classes, constructors, parameters,
-  and interfaces with examples from the Java Tutorial.
-
 [Effective Dart][]
 : Guides for style, authoring documentation, usage,
   and more.
@@ -58,6 +53,5 @@ Check out the [Dart community][].
 [Effective Dart]: {{site.dart-site}}/guides/language/effective-dart
 [`File`]: {{site.api}}/flutter/dart-io/File-class.html
 [Learning Dart as a JavaScript developer]: {{site.dart-site}}/guides/language/coming-from/js-to-dart
-[Intro to Dart for Java Developers]: {{site.codelabs}}/codelabs/from-java-to-dart
 [Language tour]: {{site.dart-site}}/language
 [Library tour]: {{site.dart-site}}/guides/libraries/library-tour

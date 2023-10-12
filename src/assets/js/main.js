@@ -1,4 +1,4 @@
-$(function () {
+document.addEventListener("DOMContentLoaded", function(_) {
   adjustToc();
   initFixedColumns();
   scrollSidebarIntoView();
@@ -11,11 +11,64 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip();
   setupClipboardJS();
 
+  setupTabs($('#os-archive-tabs'), 'dev.flutter.tab-os', _getOSForArchive);
   setupTabs($('#editor-setup'), 'io.flutter.tool-id');
   setupTabs($('.sample-code-tabs'), 'io.flutter.tool-id');
+  setupTabs($('#vscode-to-xcode-ios-setup'), 'dev.flutter.debug.vscode-to-xcode-ios');
+  setupTabs($('#vscode-to-xcode-macos-setup'), 'dev.flutter.debug.vscode-to-xcode-macos');
+  setupTabs($('#vscode-to-android-studio-setup'), 'dev.flutter.debug.vscode-to-as');
+  setupTabs($('#vscode-to-vs-setup'), 'dev.flutter.debug.vscode-to-vs');
+  setupTabs($('#add-to-app-android'), 'dev.flutter.add-to-app.android');
+  setupTabs($('#add-to-app-android-deps'), 'dev.flutter.add-to-app.android.deps');
+
+
+  setupTabs($('#ios-versions'), 'dev.flutter.ios-versions');
 
   prettyPrint();
 });
+
+function _getOSForArchive() {
+  const os = getOS();
+  // The archive doesn't have chromeos, fall back to linux.
+  if (os === 'chromeos') {
+    return 'linux';
+  }
+
+  return os;
+}
+
+/**
+ * Get the user's current operating system, or
+ * `null` if not of one "macos", "windows", "linux", or "chromeos".
+ *
+ * @returns {'macos'|'linux'|'windows'|'chromeos'|null}
+ */
+function getOS() {
+  const userAgent = window.navigator.userAgent;
+  if (userAgent.indexOf('Mac') !== -1) {
+    // macOS or iPhone
+    return 'macos';
+  }
+
+  if (userAgent.indexOf('Win')) {
+    // Windows
+    return 'windows';
+  }
+
+  if ((userAgent.indexOf('Linux') !== -1 || userAgent.indexOf("X11") !== -1)
+    && userAgent.indexOf('Android') !== -1) {
+    // Linux, but not Android
+    return 'linux';
+  }
+
+  if (userAgent.indexOf('CrOS') !== -1) {
+    // ChromeOS
+    return 'chromeos';
+  }
+
+  // Anything else
+  return null;
+}
 
 function scrollSidebarIntoView() {
   const fixedSidebar = document.querySelector('.site-sidebar--fixed');
@@ -35,20 +88,37 @@ function scrollSidebarIntoView() {
   }
 }
 
+/**
+ * Adjusts the behavior of the table of contents (TOC) on the page.
+ * 
+ * This function enables a "scrollspy" feature on the TOC, 
+ * where the active link in the TOC is updated
+ * based on the currently visible section in the page.
+ * 
+ * Enables a "back to top" button in the TOC header.
+ */
 function adjustToc() {
-  // Adjustments to the jekyll-toc TOC.
-
   const tocId = '#site-toc--side';
 
   const tocHeader = document.querySelector(tocId + ' header');
 
   if (tocHeader) {
-    tocHeader.addEventListener('click', function (_) {
-      $('html, body').animate({scrollTop: 0}, 'fast');
+    tocHeader.addEventListener('click', (_) => {
+      _scrollToTop();
     });
   }
 
+  // This will not be migrated for now until we migrate 
+  // the entire site to Bootstrap 5.
+  // see https://github.com/flutter/website/pull/9167#discussion_r1286457246
   $('body').scrollspy({ offset: 100, target: tocId });
+
+  function _scrollToTop() {
+    const distanceBetweenTop = document.documentElement.scrollTop || document.body.scrollTop;
+    if (distanceBetweenTop > 0) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
 }
 
 function initFixedColumns() {
@@ -72,7 +142,7 @@ function initFixedColumns() {
       var bannerOffset = $(bannerSelector).offset().top;
       var bannerPosition = bannerOffset - $(window).scrollTop();
       bannerVisibleHeight =
-          Math.max(bannerHeight - (headerHeight - bannerPosition), 0);
+        Math.max(bannerHeight - (headerHeight - bannerPosition), 0);
     }
     var topOffset = headerHeight + bannerVisibleHeight;
 
@@ -236,7 +306,7 @@ function initCookieNotice() {
 
   agreeBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    Cookies.set(cookieKey, cookieConsentValue, {sameSite: 'strict', expires: 30});
+    Cookies.set(cookieKey, cookieConsentValue, { sameSite: 'strict', expires: 30 });
     notice.classList.remove(activeClass);
   });
 }

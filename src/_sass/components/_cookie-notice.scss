@@ -1,3 +1,5 @@
+@use '../vendor/bootstrap';
+
 #cookie-notice {
   background-color: white;
   padding: 2.5rem 0;
@@ -8,7 +10,7 @@
   box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.3);
   opacity: 0;
   display: none;
-  z-index: $zindex-popover;
+  z-index: bootstrap.$zindex-popover;
 
   @keyframes fadein {
       0% { opacity: 0; }

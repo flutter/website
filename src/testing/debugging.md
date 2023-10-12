@@ -284,7 +284,7 @@ You might find the following docs useful:
 
 * [Performance best practices][]
 * [Flutter performance profiling][]
-* [Using an OEM debugger][]
+* [Use a native debugger][]
 * [Flutter's modes][]
 * [Debugging Flutter apps programmatically][]
 * [DevTools][]
@@ -304,7 +304,7 @@ You might find the following docs useful:
 [Flutter's modes]: {{site.url}}/testing/build-modes
 [Flutter performance profiling]: {{site.url}}/perf/ui-performance
 [Performance best practices]: {{site.url}}/perf/best-practices
-[Using an OEM debugger]: {{site.url}}/testing/oem-debuggers
+[Use a native debugger]: {{site.url}}/testing/native-debugging
 
 [The Layer Cake]: {{site.medium}}/flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401
 
@@ -312,24 +312,24 @@ You might find the following docs useful:
 [Using the Dart analyzer]: {{site.repo.flutter}}/wiki/Using-the-Dart-analyzer
 [The Framework architecture]: {{site.repo.flutter}}/wiki/The-Framework-architecture
 
-[Android Studio/IntelliJ]: {{site.url}}/development/tools/android-studio#run-app-with-breakpoints
-[VS Code]: {{site.url}}/development/tools/vs-code#run-app-with-breakpoints
-[DevTools]: {{site.url}}/development/tools/devtools
-[Flutter inspector]: {{site.url}}/development/tools/devtools/inspector
-[DevTools debugger]: {{site.url}}/development/tools/devtools/debugger
-[logging view]: {{site.url}}/development/tools/devtools/logging
-[Timeline view]: {{site.url}}/development/tools/devtools/performance
+[Android Studio/IntelliJ]: {{site.url}}/tools/android-studio#run-app-with-breakpoints
+[VS Code]: {{site.url}}/tools/vs-code#run-app-with-breakpoints
+[DevTools]: {{site.url}}/tools/devtools
+[Flutter inspector]: {{site.url}}/tools/devtools/inspector
+[DevTools debugger]: {{site.url}}/tools/devtools/debugger
+[logging view]: {{site.url}}/tools/devtools/logging
+[Timeline view]: {{site.url}}/tools/devtools/performance
 [The performance overlay]: {{site.url}}/perf/ui-performance#the-performance-overlay
 [Flutter performance profiling]: {{site.url}}/perf/ui-performance
 [overlay]: {{site.url}}/testing/code-debugging#performance-overlay
 [debug mode]: {{site.url}}/testing/build-modes#debug
 [profile mode]: {{site.url}}/testing/build-modes#profile
 [release mode]: {{site.url}}/testing/build-modes#release
-[how the Widget Inspector uses widget creation tracking]: {{site.url}}/development/tools/devtools/inspector#track-widget-creation
+[how the Widget Inspector uses widget creation tracking]: {{site.url}}/tools/devtools/inspector#track-widget-creation
 
 [Assert]: {{site.dart-site}}/language/control-flow#assert
 [Dart language documentation]: {{site.dart-site}}/language
 
 [WidgetInspectorService.isWidgetCreationTracked]: {{site.api}}/flutter/widgets/WidgetInspectorService/isWidgetCreationTracked.html
 [widget_inspector.dart]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/widget_inspector.dart
-[kernel transform that implements this feature]: {{site.github}}/dart-lang/sdk/blob/master/pkg/kernel/lib/transformations/track_widget_constructor_locations.dart
+[kernel transform that implements this feature]: {{site.github}}/dart-lang/sdk/blob/main/pkg/kernel/lib/transformations/track_widget_constructor_locations.dart

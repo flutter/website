@@ -1,6 +1,7 @@
 ---
 title: SnackBars managed by the ScaffoldMessenger
-description: SnackBars are now managed by the ScaffoldMessenger, and persist across routes.
+description: >
+  SnackBars are now managed by the ScaffoldMessenger, and persist across routes.
 ---
 
 ## Summary
@@ -27,8 +28,7 @@ The `ScaffoldMessenger` now handles `SnackBar`s in order to
 persist across routes and always be displayed on the current `Scaffold`.
 By default, a root `ScaffoldMessenger` is included in the `MaterialApp`,
 but you can create your own controlled scope for the `ScaffoldMessenger`
-to further control _which_ `Scaffold`s receive your `SnackBar`s. 
-
+to further control _which_ `Scaffold`s receive your `SnackBar`s.
 
 ## Description of change
 
@@ -92,7 +92,7 @@ When using the root `ScaffoldMessenger` provided by the
 `MaterialApp`, all descendant `Scaffold`s receive `SnackBar`s,
 unless a new `ScaffoldMessenger` scope is created further down the tree.
 By instantiating your own `ScaffoldMessenger`,
-you can control which `Scaffold`s receive `SnackBar`s, and which do not based
+you can control which `Scaffold`s receive `SnackBar`s, and which are not baseds
 on the context of your application.
 
 The method `debugCheckHasScaffoldMessenger` is available to assert
@@ -100,7 +100,7 @@ that a given context has a `ScaffoldMessenger` ancestor.
 Trying to present  a `SnackBar` without a `ScaffoldMessenger` ancestor
 present results in an assertion such as the following:
 
-```
+```nocode
 No ScaffoldMessenger widget found.
 Scaffold widgets require a ScaffoldMessenger widget ancestor.
 Typically, the ScaffoldMessenger widget is introduced by the MaterialApp
@@ -178,16 +178,19 @@ In stable release: 2.0.0
 ## References
 
 API documentation:
+
 * [`Scaffold`][]
 * [`ScaffoldMessenger`][]
 * [`SnackBar`][]
 * [`MaterialApp`][]
 
 Relevant issues:
+
 * [Issue #57218][]
 * [Issue #62921][]
 
 Relevant PRs:
+
 * [ScaffoldMessenger][]
 * [ScaffoldMessenger Migration][]
 

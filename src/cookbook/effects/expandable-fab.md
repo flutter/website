@@ -1,12 +1,6 @@
 ---
 title: Create an expandable FAB
 description: How to implement a FAB that expands to multiple buttons when tapped.
-prev:
-  title: Create a typing indicator
-  path: /cookbook/effects/typing-indicator
-next:
-  title: Create gradient chat bubbles
-  path: /cookbook/effects/gradient-bubbles
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js
@@ -35,7 +29,7 @@ This widget displays the primary FAB and coordinates the expansion
 and collapse of the other action buttons. The widget takes
 in parameters for whether or not the `ExpandedFab` begins in
 the expanded position, what the maximum distance of each action button is,
-and a list of children. You’ll use the list later to provide
+and a list of children. You'll use the list later to provide
 the other action buttons.
 
 <?code-excerpt "lib/excerpt1.dart (ExpandableFab)"?>
@@ -106,17 +100,17 @@ class _ExpandableFabState extends State<ExpandableFab> {
 
   Widget _buildTapToCloseFab() {
     return SizedBox(
-      width: 56.0,
-      height: 56.0,
+      width: 56,
+      height: 56,
       child: Center(
         child: Material(
           shape: const CircleBorder(),
           clipBehavior: Clip.antiAlias,
-          elevation: 4.0,
+          elevation: 4,
           child: InkWell(
             onTap: _toggle,
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8),
               child: Icon(
                 Icons.close,
                 color: Theme.of(context).primaryColor,
@@ -165,16 +159,16 @@ The open button scales down and fades out when the `ExpandableFab`
 goes from collapsed to expanded. Then, the open button scales up
 and fades in when the `ExpandableFab` goes from expanded to collapsed.
 
-You’ll notice that the open button is wrapped with an
+You'll notice that the open button is wrapped with an
 `IgnorePointer` widget. This is because the open button always exists,
-even when it’s transparent. Without the `IgnorePointer`,
+even when it's transparent. Without the `IgnorePointer`,
 the open button always receives the tap event,
 even when the close button is visible.
 
 ## Create an ActionButton widget
 
 Each of the buttons that expand from the `ExpandableFab`
-have the same design. They’re  blue circles with white icons.
+have the same design. They're  blue circles with white icons.
 More precisely, the button background color is the `ColorScheme.secondary`
 color, and the icon color is `ColorScheme.onSecondary`.
 
@@ -201,7 +195,7 @@ class ActionButton extends StatelessWidget {
       shape: const CircleBorder(),
       clipBehavior: Clip.antiAlias,
       color: theme.colorScheme.secondary,
-      elevation: 4.0,
+      elevation: 4,
       child: IconButton(
         onPressed: onPressed,
         icon: icon,
@@ -218,7 +212,7 @@ Pass a few instances of this new `ActionButton` widget into your
 <?code-excerpt "lib/main.dart (FloatingActionButton)"?>
 ```dart
 floatingActionButton: ExpandableFab(
-  distance: 112.0,
+  distance: 112,
   children: [
     ActionButton(
       onPressed: () => _showAction(context, 0),
@@ -460,14 +454,14 @@ class ExampleExpandableFab extends StatelessWidget {
         title: const Text('Expandable Fab'),
       ),
       body: ListView.builder(
-        padding: const EdgeInsets.symmetric(vertical: 8.0),
+        padding: const EdgeInsets.symmetric(vertical: 8),
         itemCount: 25,
         itemBuilder: (context, index) {
           return FakeItem(isBig: index.isOdd);
         },
       ),
       floatingActionButton: ExpandableFab(
-        distance: 112.0,
+        distance: 112,
         children: [
           ActionButton(
             onPressed: () => _showAction(context, 0),
@@ -560,17 +554,17 @@ class _ExpandableFabState extends State<ExpandableFab>
 
   Widget _buildTapToCloseFab() {
     return SizedBox(
-      width: 56.0,
-      height: 56.0,
+      width: 56,
+      height: 56,
       child: Center(
         child: Material(
           shape: const CircleBorder(),
           clipBehavior: Clip.antiAlias,
-          elevation: 4.0,
+          elevation: 4,
           child: InkWell(
             onTap: _toggle,
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8),
               child: Icon(
                 Icons.close,
                 color: Theme.of(context).primaryColor,
@@ -685,7 +679,7 @@ class ActionButton extends StatelessWidget {
       shape: const CircleBorder(),
       clipBehavior: Clip.antiAlias,
       color: theme.colorScheme.secondary,
-      elevation: 4.0,
+      elevation: 4,
       child: IconButton(
         onPressed: onPressed,
         icon: icon,
@@ -707,10 +701,10 @@ class FakeItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 24.0),
-      height: isBig ? 128.0 : 36.0,
+      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 24),
+      height: isBig ? 128 : 36,
       decoration: BoxDecoration(
-        borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+        borderRadius: const BorderRadius.all(Radius.circular(8)),
         color: Colors.grey.shade300,
       ),
     );

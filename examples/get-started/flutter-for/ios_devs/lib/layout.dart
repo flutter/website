@@ -77,7 +77,7 @@ class MyWidget extends StatelessWidget {
       body: Center(
         child: CupertinoButton(
           onPressed: () {},
-          padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+          padding: const EdgeInsets.only(left: 10, right: 10),
           child: const Text('Hello'),
         ),
       ),
@@ -92,9 +92,9 @@ class RowExample extends StatelessWidget {
   // #docregion Row
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: const <Widget>[
+      children: <Widget>[
         Text('Row One'),
         Text('Row Two'),
         Text('Row Three'),
@@ -111,9 +111,9 @@ class ColumnExample extends StatelessWidget {
   // #docregion Column
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: const <Widget>[
+      children: <Widget>[
         Text('Column One'),
         Text('Column Two'),
         Text('Column Three'),

@@ -1,12 +1,6 @@
 ---
 title: Work with cached images
 description: How to work with cached images.
-prev:
-  title: Fade in images with a placeholder
-  path: /cookbook/images/fading-in-images
-next:
-  title: Use lists
-  path: /cookbook/lists/basic-list
 ---
 
 <?code-excerpt path-base="cookbook/images/cached_images"?>

@@ -1,6 +1,9 @@
 ---
 title: MouseTracker no longer attaches annotations
-description: MouseTracker no longer relies on annotation attachment to perform the mounted-exit check; therefore, all three related methods are removed.
+description: >
+  MouseTracker no longer relies on annotation attachment to
+  perform the mounted-exit check; therefore, 
+  all three related methods are removed.
 ---
 
 ## Summary
@@ -33,7 +36,6 @@ a stateful widget, so that it can perform the mounted-exit
 check by itself by blocking the callback when unmounted.
 Therefore, these methods have been removed, and `MouseTracker`
 no longer tracks all annotations on the screen.
-
 
 ## Description of change
 
@@ -139,12 +141,14 @@ In stable release: 1.17
 ## References
 
 API documentation:
+
 * [`MouseRegion`][]
 * [`MouseTracker`][]
 * [`MouseTrackerAnnotation`][]
 * [`RenderMouseRegion`][]
 
 Relevant PRs:
+
 * [MouseTracker no longer requires annotations attached][],
   which made the change
 * [Improve MouseTracker lifecycle: Move checks to post-frame][],
@@ -153,7 +157,7 @@ Relevant PRs:
 
 
 [Improve MouseTracker lifecycle: Move checks to post-frame]: {{site.repo.flutter}}/issues/44631
-[Issue #44631]: {{site.repo.flutter}}/pull/44631)
+[Issue #44631]: {{site.repo.flutter}}/pull/44631
 [`MouseRegion`]: {{site.api}}/flutter/widgets/MouseRegion-class.html
 [`MouseTracker`]: {{site.api}}/flutter/gestures/MouseTracker-class.html
 [MouseTracker no longer requires annotations attached]: {{site.repo.flutter}}/issues/48453

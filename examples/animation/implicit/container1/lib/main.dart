@@ -31,7 +31,7 @@ class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
   late double margin;
 
   @override
-  initState() {
+  void initState() {
     super.initState();
     color = randomColor();
     borderRadius = randomBorderRadius();
@@ -56,7 +56,7 @@ class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
               ),
             ),
             ElevatedButton(
-              child: const Text('change'),
+              child: const Text('Change'),
               onPressed: () => {},
             ),
           ],

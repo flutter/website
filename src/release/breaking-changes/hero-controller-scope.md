@@ -1,6 +1,8 @@
 ---
 title: More Strict Assertions in the Navigator and the Hero Controller Scope
-description: Added additional assertions to guarantee that one hero controller scope can only subscribe to one navigator at a time.
+description: >
+  Added additional assertions to guarantee that
+  one hero controller scope can only subscribe to one navigator at a time.
 ---
 
 ## Summary
@@ -21,7 +23,6 @@ it means the code was already broken even before this change.
 Multiple navigators may be registered under the same hero
 controller scope, and they can not trigger hero animations when
 their route changes. This change only surfaced this problem.
-
 
 ## Migration guide
 
@@ -115,20 +116,23 @@ void main() {
 
 ## Timeline
 
-Landed in version: 1.20.0
+Landed in version: 1.20.0<br>
 In stable release: 1.20
 
 ## References
 
 API documentation:
+
 * [`Navigator`][]
 * [`HeroController`][]
 * [`HeroControllerScope`][]
 
 Relevant issue:
+
 * [Issue 45938][]
 
 Relevant PR:
+
 * [Clean up hero controller scope][]
 
 [Clean up hero controller scope]: {{site.repo.flutter}}/pull/60655

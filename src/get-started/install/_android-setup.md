@@ -8,6 +8,8 @@
 
 ### Install Android Studio
 
+{% include_relative _help-link.md location='android-studio' section='#android-setup' %}
+
  1. Download and install [Android Studio]({{site.android-dev}}/studio).
  1. Start Android Studio, and go through the 'Android Studio Setup Wizard'.
     This installs the latest Android SDK, Android SDK Command-line Tools,
@@ -20,12 +22,17 @@
 
 ### Set up your Android device
 
+{% include_relative _help-link.md location='android-device' section='#android-setup' %}
+
 To prepare to run and test your Flutter app on an Android device,
-you need an Android device running Android 4.1 (API level 16) or higher.
+you need an Android device running Android 5.0 (API level 21) or higher.
 
  1. Enable **Developer options** and **USB debugging** on your device.
     Detailed instructions are available in the
     [Android documentation]({{site.android-dev}}/studio/debug/dev-options).
+ 1. [Optional] To leverage wireless debugging, enable **Wireless debugging** 
+    on your device. Detailed instructions are available in the 
+    [Android documentation]({{site.android-dev}}/studio/run/device#wireless).
  1. Windows-only: Install the [Google USB
     Driver]({{site.android-dev}}/studio/run/win-usb).
  1. Using a USB cable, plug your phone into your computer. If prompted on your
@@ -38,6 +45,8 @@ you need an Android device running Android 4.1 (API level 16) or higher.
     variable to that installation directory.
 
 ### Set up the Android emulator
+
+{% include_relative _help-link.md location='android-emulator' section='#android-setup' %}
 
 To prepare to run and test your Flutter app on the Android emulator,
 follow these steps:
@@ -70,15 +79,12 @@ follow these steps:
 
 ### Agree to Android Licenses
 
+{% include_relative _help-link.md location='android-licenses' section='#android-setup' %}
+
 Before you can use Flutter, you must agree to the
 licenses of the Android SDK platform. This step should be done after
 you have installed the tools listed above.
 
- 1. Make sure that you have a version of Java 11 installed and that your 
-    `JAVA_HOME` environment variable is set to the JDK's folder.
-    
-    Android Studio versions 2.2 and higher come with a JDK, so this should
-    already be done.
  1. Open an elevated console window and run the following command to begin
     signing licenses.
     ```terminal

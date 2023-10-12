@@ -1,6 +1,7 @@
 ---
 title: ImageCache large images
-description: Stop increasing the ImageCache maxByteSize to accommodate large images.
+description: >
+  Stop increasing the ImageCache maxByteSize to accommodate large images.
 ---
 
 ## Summary
@@ -76,15 +77,19 @@ In stable release: 1.17
 ## References
 
 API documentation:
+
 * [`ImageCache`][]
 
 Relevant issue:
+
 * [Issue 45643][]
 
 Relevant PR:
+
 * [Stopped increasing the cache size to accommodate large images][]
 
 Other:
+
 * [`ImageCache` source][]
 
 

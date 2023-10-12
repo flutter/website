@@ -1,7 +1,8 @@
 ---
 title: Raw images on Web uses correct origin and colors
-description: Raw images directly decoded by calling the Web engine functions now uses the correct pixel format and starts from the top left corner.
-
+description: >
+  Raw images directly decoded by calling the Web engine functions now
+  uses the correct pixel format and starts from the top left corner.
 ---
 
 ## Summary
@@ -166,7 +167,6 @@ Relevant PRs:
 * [Web: Reland: Fix BMP encoder][]
 * [Clarify ImageDescriptor.raw pixel order and add version detector][]
 
-<!-- Stable channel link: -->
 [`decodeImageFromPixels`]: {{site.api}}/flutter/dart-ui/decodeImageFromPixels.html
 [`ImageDescriptor.raw`]: {{site.api}}/flutter/dart-ui/ImageDescriptor/ImageDescriptor.raw.html
 

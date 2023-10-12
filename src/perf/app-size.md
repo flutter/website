@@ -3,11 +3,14 @@ title: Measuring your app's size
 description: How to measure app size for iOS and Android.
 ---
 
-Many developers are concerned with the size of their compiled app. As the APK,
-app bundle, or IPA version of a Flutter app is self-contained and holds all the
-code and assets needed to run the app, its size can be a concern. The larger an
-app, the more space it requires on a device, the longer it takes to download,
-and it may break the limit of useful features like Android instant apps.
+Many developers are concerned with the size of their compiled app.
+As the APK, app bundle, or IPA version of a Flutter app is
+self-contained and holds all the code and assets needed to run the app,
+its size can be a concern. The larger an app,
+the more space it requires on a device,
+the longer it takes to download,
+and it might break the limit of useful
+features like Android instant apps.
 
 ## Debug builds are not representative
 
@@ -56,7 +59,7 @@ View the application's download and install size in the **Android vitals** ->
 {% include docs/app-figure.md image="perf/vital-size.png" alt="App size tab in Google Play Console" %}
 
 The download size is calculated based on an XXXHDPI (~640dpi) device on an
-arm64-v8a architecture. Your end users' download sizes may vary depending on
+arm64-v8a architecture. Your end users' download sizes might vary depending on
 their hardware.
 
 The top tab has a toggle for download size and install size. The page also
@@ -99,7 +102,7 @@ number][] for iPhone 11)
 and iPhone11,8 (iPhone XR) running iOS 13.0.
 
 To measure an iOS app exactly,
-you have to upload a release IPA to Apple’s
+you have to upload a release IPA to Apple's
 App Store Connect ([instructions][])
 and obtain the size report from there.
 IPAs are commonly larger than APKs as explained
@@ -194,4 +197,4 @@ Some other things you can do to make your app smaller are:
 [Write your first Flutter app]: {{site.url}}/get-started/codelab
 [Play Console's instructions]: https://support.google.com/googleplay/android-developer/answer/9302563?hl=en
 [Google Play Console]: https://play.google.com/apps/publish/
-[DevTools documentation]: {{site.url}}/development/tools/devtools/app-size
+[DevTools documentation]: {{site.url}}/tools/devtools/app-size

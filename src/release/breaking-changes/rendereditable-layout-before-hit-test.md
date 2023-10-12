@@ -1,6 +1,8 @@
 ---
 title: The RenderEditable needs to be laid out before hit testing
-description: The hit testing of RenderEditable requires additional information that is only available after the layout.
+description: >
+  The hit testing of RenderEditable requires additional information
+  that is only available after the layout.
 ---
 
 ## Summary
@@ -9,7 +11,9 @@ Instances of `RenderEditable` must be laid out before processing hit
 testing. Trying to hit-test a `RenderEditable` object before layout
 results in an assertion such as the following:
 
-`Failed assertion: line 123 pos 45: '!debugNeedsLayout': is not true.`
+```nocode
+Failed assertion: line 123 pos 45: '!debugNeedsLayout': is not true.
+```
 
 ## Context
 
@@ -113,13 +117,16 @@ In stable release: 1.20
 ## References
 
 API documentation:
+
 * [`RenderEditable`][]
 
 Relevant issue:
+
 * [Issue 43494][]: SelectableText.rich used along with
   TapGestureRecognizer isn't working
 
 Relevant PR:
+
 * [PR 54479: Enable gesture recognizer in selectable rich text][]
 
 

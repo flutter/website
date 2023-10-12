@@ -1,12 +1,6 @@
 ---
 title: Find widgets
 description: How to use the Finder classes for testing widgets.
-prev:
-  title: An introduction to widget testing
-  path: /cookbook/testing/widget/introduction
-next:
-  title: Handle scrolling
-  path: /cookbook/testing/widget/scrolling
 ---
 
 <?code-excerpt path-base="cookbook/testing/widget/finders/"?>

@@ -1,6 +1,7 @@
 ---
 title: TextSelectionTheme migration
-description: The default properties for text selection are migrating to TextSelectionTheme.
+description: >
+  The default properties for text selection are migrating to TextSelectionTheme.
 ---
 
 ## Summary
@@ -95,8 +96,8 @@ but have failing golden file tests, you
 can update your master golden files using the
 following command:
 
-```bash
-flutter test --update-goldens
+```terminal
+$ flutter test --update-goldens
 ```
 
 ## Timeline
@@ -107,10 +108,12 @@ In stable release: 2.0.0
 ## References
 
 API documentation:
+
 * [`TextSelectionThemeData`][]
 * [`ThemeData`][]
 
 Relevant PRs:
+
 * [PR 62014: TextSelectionTheme support][]
 
 [Material Theme Updates]: {{site.url}}/go/material-theme-system-updates

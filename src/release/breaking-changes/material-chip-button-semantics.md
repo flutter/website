@@ -152,15 +152,16 @@ Relevant PRs:
 * [PR 60141][]: Tweaking Material Chip a11y semantics
   to match buttons
 * [PR 60645][]: Revert "Tweaking Material Chip a11y
-  semantics to match buttons (#60141)"
-* [PR 61048][]: Re-land "Tweaking Material Chip a11y semantics to match buttons (#60141)"
+  semantics to match buttons (#60141)
+* [PR 61048][]: Re-land "Tweaking Material Chip a11y
+  semantics to match buttons (#60141)
 
 [`ActionChip`]: {{site.api}}/flutter/material/ActionChip-class.html
 [`Chip`]: {{site.api}}/flutter/material/Chip-class.html
 [`ChoiceChip`]: {{site.api}}/flutter/material/ChoiceChip-class.html
 [`FilterChip`]: {{site.api}}/flutter/material/FilterChip-class.html
 [`InputChip`]: {{site.api}}/flutter/material/InputChip-class.html
-[Material Buttons]: {{site.material}}/components/buttons
+[Material Buttons]: {{site.material}}/components/all-buttons
 [Material Chips]: {{site.material}}/components/chips
 [`Semantics`]: {{site.api}}/flutter/widgets/Semantics-class.html
 [`SemanticsProperties.button`]: {{site.api}}/flutter/semantics/SemanticsProperties/button.html

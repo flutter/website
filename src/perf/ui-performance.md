@@ -7,7 +7,7 @@ description: Diagnosing UI performance issues in Flutter.
 {% include docs/performance.md %}
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What you’ll learn</h4>
+  <h4 class="no_toc">What you'll learn</h4>
 
   * Flutter aims to provide 60 frames per second (fps) performance,
     or 120 fps performance on devices capable of 120Hz updates.
@@ -64,22 +64,22 @@ on the slowest device that your users might reasonably use._
 {{site.alert.secondary}}
   <h4 class="no_toc" markdown="1">**Why you should run on a real device:**</h4>
 
-* Simulators and emulators don’t use the same hardware, so their
+* Simulators and emulators don't use the same hardware, so their
   performance characteristics are different&mdash;some operations are
   faster on simulators than real devices, and some are slower.
-* Debug mode enables additional checks (such as asserts) that don’t run
+* Debug mode enables additional checks (such as asserts) that don't run
   in profile or release builds, and these checks can be expensive.
 * Debug mode also executes code in a different way than release mode.
   The debug build compiles the Dart code "just in time" (JIT) as the
   app runs, but profile and release builds are pre-compiled to native
-  instructions (also called “ahead of time”, or AOT) before the app is
+  instructions (also called "ahead of time", or AOT) before the app is
   loaded onto the device. JIT can cause the app to pause for JIT
   compilation, which itself can cause jank.
 {{site.alert.end}}
 
 ### Run in profile mode
 
-Flutter’s profile mode compiles and launches your application
+Flutter's profile mode compiles and launches your application
 almost identically to release mode, but with just enough additional
 functionality to allow debugging performance problems.
 For example, profile mode provides tracing information to the
@@ -137,15 +137,15 @@ UI performance of your application on a frame-by-frame basis.
 Once your app is running in profile mode,
 [launch DevTools][].
 
-[launch DevTools]: {{site.url}}/development/tools/devtools
-[Timeline view]: {{site.url}}/development/tools/devtools/performance
+[launch DevTools]: {{site.url}}/tools/devtools
+[Timeline view]: {{site.url}}/tools/devtools/performance
 
 ## The performance overlay
 
 The performance overlay displays statistics in two graphs
 that show where time is being spent in your app. If the UI
 is janky (skipping frames), these graphs help you figure out why.
-The graphs display on top of your running app, but they aren’t
+The graphs display on top of your running app, but they aren't
 drawn like a normal widget&mdash;the Flutter engine itself
 paints the overlay and only minimally impacts performance.
 Each graph represents the last 300 frames for that thread.
@@ -223,11 +223,13 @@ on other threads.
     it by talking to the GPU (graphic processing unit).
     You cannot directly access the raster thread or its data but,
     if this thread is slow, it's a result of something you've done
-    in the Dart code. Skia, the graphics library, runs on this thread.
+    in the Dart code. Skia and Impeller, the graphics libraries,
+    run on this thread.
     Shown in the top row of the performance overlay.
     This thread was previously known as the "GPU thread" because it
-    rasterizes for the GPU. But it is running on the CPU. We renamed it
-    to "raster thread" because many developers wrongly (but understandably)
+    rasterizes for the GPU. But it is running on the CPU.
+    We renamed it to "raster thread" because many developers wrongly
+    (but understandably)
     assumed the thread runs on the GPU unit.
 </dd>
 <dt markdown="1">**I/O thread**</dt>
@@ -264,7 +266,7 @@ from the Flutter inspector, which is available in the
 **Performance Overlay** button to toggle the overlay
 on your running app.
 
-[Inspector view]: {{site.url}}/development/tools/devtools/inspector
+[Inspector view]: {{site.url}}/tools/devtools/inspector
 
 #### From the command line
 
@@ -291,7 +293,7 @@ also shows red.
 Sometimes a scene results in a layer tree that is easy to construct,
 but expensive to render on the raster thread. When this happens,
 the UI graph has no red, but the GPU graph shows red.
-In this case, you’ll need to figure out what your code is doing
+In this case, you'll need to figure out what your code is doing
 that is causing rendering code to be slow. Specific kinds of workloads
 are more difficult for the GPU. They might involve unnecessary calls
 to [`saveLayer`][], intersecting opacities with multiple objects,
@@ -318,9 +320,9 @@ manipulated, a [`RepaintBoundary`][] might help.
 #### Checking for offscreen layers
 
 The [`saveLayer`][] method is one of the most expensive methods in
-the Flutter framework. It’s useful when applying post-processing
+the Flutter framework. It's useful when applying post-processing
 to the scene, but it can slow your app and should be avoided if
-you don’t need it.  Even if you don’t call `saveLayer` explicitly,
+you don't need it.  Even if you don't call `saveLayer` explicitly,
 implicit calls might happen on your behalf. You can check whether
 your scene is using `saveLayer` with the
 [`PerformanceOverlayLayer.checkerboardOffscreenLayers`][] switch.
@@ -386,7 +388,7 @@ At this point, disable the graphs and checkerboardOffScreenLayers.]
 Run the app and look for images rendered with a randomly colored
 checkerboard, indicating that the image is cached.
 As you interact with the scene, the checkerboarded images
-should remain constant&mdash;you don’t want to see flickering,
+should remain constant&mdash;you don't want to see flickering,
 which would indicate that the cached image is being re-cached.
 
 In most cases, you want to see checkerboards on static images,
@@ -410,11 +412,11 @@ You can view the widget rebuilt counts for the current screen and
 frame in the Flutter plugin for Android Studio and IntelliJ.
 For details on how to do this, see [Show performance data][]
 
-[Show performance data]: {{site.url}}/development/tools/android-studio#show-performance-data
+[Show performance data]: {{site.url}}/tools/android-studio#show-performance-data
 
 ## Benchmarking
 
-You can measure and track your app’s performance by writing
+You can measure and track your app's performance by writing
 benchmark tests. The Flutter Driver library provides support
 for benchmarking. Using this integration test framework,
 you can generate metrics to track the following:
@@ -427,11 +429,9 @@ you can generate metrics to track the following:
 Tracking these benchmarks allows you to be informed when a
 regression is introduced that adversely affects performance.
 
-For more information, see [Integration testing][],
-a section in [Testing Flutter apps][].
+For more information, check out [Integration testing][].
 
-[Integration testing]: {{site.url}}/testing#integration-tests
-[Testing Flutter apps]: {{site.url}}/testing
+[Integration testing]: {{site.url}}/testing/integration-tests
 
 ## Other resources
 
@@ -448,9 +448,9 @@ Flutter's tools and debugging in Flutter:
   and the [dart:developer][] package
 
 [dart:developer]: {{site.api}}/flutter/dart-developer/dart-developer-library.html
-[devtools]: {{site.url}}/development/tools/devtools
+[devtools]: {{site.url}}/tools/devtools
 [Flutter API]: {{site.api}}
-[Flutter inspector]: {{site.url}}/development/tools/devtools/inspector
+[Flutter inspector]: {{site.url}}/tools/devtools/inspector
 [Flutter inspector talk]: {{site.youtube-site}}/watch?v=JIcmJNT9DNI
 [`PerformanceOverlay`]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
 [video]: {{site.youtube-site}}/watch?v=5F-6n_2XWR8

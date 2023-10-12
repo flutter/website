@@ -23,7 +23,7 @@ membership options in Apple's
 ## Register your app on App Store Connect
 
 Manage your app's life cycle on
-[App Store Connect][appstoreconnect] (formerly iTunes Connect).
+[App Store Connect][appstoreconnect_login] (formerly iTunes Connect).
 You define your app name and description, add screenshots,
 set pricing, and manage releases to the App Store and TestFlight.
 
@@ -94,7 +94,7 @@ In the **Identity** section:
 In the **Deployment info** section:
 
 `Deployment Target`
-: The minimum macOS version that your app supports. Flutter supports macOS 10.11 and later.
+: The minimum macOS version that your app supports. Flutter supports macOS 10.14 and later.
 
 In the **Signing & Capabilities** section:
 
@@ -137,7 +137,7 @@ The version number is three numbers separated by dots,
 such as `1.0.0` in the example above, followed by an optional
 build number such as `1` in the example above, separated by a `+`.
 
-Both the version and the build number may be overridden in Flutter's
+Both the version and the build number can be overridden in Flutter's
 build by specifying `--build-name` and `--build-number`,
 respectively.
 
@@ -414,10 +414,24 @@ keychain use-login
 </li>
 </ol>
 
+## Release your app on TestFlight
+
+[TestFlight][] allows developers to push their apps
+to internal and external testers. This optional step
+covers releasing your build on TestFlight.
+
+1. Navigate to the TestFlight tab of your app's application
+   details page on [App Store Connect][appstoreconnect_login].
+1. Select **Internal Testing** in the sidebar.
+1. Select the build to publish to testers, then click **Save**.
+1. Add the email addresses of any internal testers.
+   You can add additional internal users in the **Users and Roles**
+   page of App Store Connect,
+   available from the dropdown menu at the top of the page.
+
 ## Distribute to registered devices
 
-[TestFlight][] is not available for distributing macOS apps
-to internal and external testers. See [distribution guide][distributionguide_macos] 
+See [distribution guide][distributionguide_macos] 
 to prepare an archive for distribution to designated Mac computers.
 
 ## Release your app to the App Store
@@ -460,8 +474,8 @@ detailed overview of the process of releasing an app to the App Store.
 [codemagic_cli_tools]: {{site.github}}/codemagic-ci-cd/cli-tools
 [codesigning_guide]: {{site.apple-dev}}/library/content/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html
 [Core Foundation Keys]: {{site.apple-dev}}/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-[devportal_appids]: {{site.apple-dev}}/account/ios/identifier/bundle
-[devportal_certificates]: {{site.apple-dev}}/account/resources/certificates
+[devportal_appids]: {{site.apple-dev}}/account/resources/identifiers/list
+[devportal_certificates]: {{site.apple-dev}}/account/resources/certificates/list
 [devprogram]: {{site.apple-dev}}/programs/
 [devprogram_membership]: {{site.apple-dev}}/support/compare-memberships/
 [distributionguide]: https://help.apple.com/xcode/mac/current/#/dev8b4250b57

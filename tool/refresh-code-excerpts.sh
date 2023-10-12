@@ -37,8 +37,8 @@ if [[ ${diffVersion:0:1} != "3" ]]; then
 fi
 
 if [[ -e "$FRAG" ]]; then 
-  echo "=> Deleting old $FRAG"; 
-  rm -Rf "$FRAG"; 
+  echo "=> Deleting old $FRAG"
+  rm -Rf "$FRAG"
 fi
 
 # Ensure package_config.json is generated

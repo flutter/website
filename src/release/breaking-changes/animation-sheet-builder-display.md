@@ -1,6 +1,8 @@
 ---
 title: Replace AnimationSheetBuilder.display with collate
-description: AnimationSheetBuilder.display and sheetSize are deprecated in favor of collate.
+description: >
+  AnimationSheetBuilder.display and sheetSize
+  are deprecated in favor of collate.
 ---
 
 ## Summary
@@ -149,7 +151,7 @@ API documentation:
 * [`AnimationSheetBuilder`][]
 * [`AnimationSheetBuilder.collate`][]
 
-Relevant PRs:
+Relevant PR:
 
 * [Test WidgetTester handling test pointers][]
 

@@ -1,12 +1,6 @@
 ---
 title: Display images from the internet
 description: How to display images from the internet.
-prev:
-  title: Implement swipe to dismiss
-  path: /cookbook/gestures/dismissible
-next:
-  title: Fade in images with a placeholder
-  path: /cookbook/images/fading-in-images
 js:
   - defer: true
     url: https://dartpad.dev/inject_embed.dart.js

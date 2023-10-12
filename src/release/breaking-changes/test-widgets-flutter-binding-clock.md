@@ -30,7 +30,7 @@ testWidgets('some test', (WidgetTester tester) {
 
 The error you might see after this change looks something like this:
 
-```
+```nocode
 Error: The argument type 'Clock/*1*/' can't be assigned to the parameter type 'Clock/*2*/'.
  - 'Clock/*1*/' is from 'package:clock/src/clock.dart' ('<pub-cache>/clock/lib/src/clock.dart').
  - 'Clock/*2*/' is from 'package:quiver/time.dart' ('<pub-cache>/quiver/lib/time.dart').
@@ -103,9 +103,11 @@ In stable release: 1.20
 ## References
 
 API documentation:
+
 * [`TestWidgetsFlutterBinding`][]
 
 Relevant PRs:
+
 * [PR 54125][]: remove flutter_test quiver dep,
   use fake_async and clock instead
 

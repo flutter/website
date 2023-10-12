@@ -68,11 +68,11 @@ class MyCanvasPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final Paint paint = Paint()..color = Colors.amber;
-    canvas.drawCircle(const Offset(100.0, 200.0), 40.0, paint);
+    canvas.drawCircle(const Offset(100, 200), 40, paint);
     final Paint paintRect = Paint()..color = Colors.lightBlue;
     final Rect rect = Rect.fromPoints(
-      const Offset(150.0, 300.0),
-      const Offset(300.0, 400.0),
+      const Offset(150, 300),
+      const Offset(300, 400),
     );
     canvas.drawRect(rect, paintRect);
   }
@@ -101,19 +101,19 @@ class TextStyleExample extends StatelessWidget {
     // #docregion TextStyle
     const TextStyle textStyle = TextStyle(
       color: Colors.cyan,
-      fontSize: 32.0,
+      fontSize: 32,
       fontWeight: FontWeight.w600,
     );
 
-    return Center(
+    return const Center(
       child: Column(
-        children: const <Widget>[
+        children: <Widget>[
           Text('Sample text', style: textStyle),
           Padding(
-            padding: EdgeInsets.all(20.0),
+            padding: EdgeInsets.all(20),
             child: Icon(
               Icons.lightbulb_outline,
-              size: 48.0,
+              size: 48,
               color: Colors.redAccent,
             ),
           ),
@@ -246,7 +246,7 @@ class DrawerExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      elevation: 20.0,
+      elevation: 20,
       child: ListTile(
         leading: const Icon(Icons.change_history),
         title: const Text('Screen2'),
@@ -267,7 +267,7 @@ class ScaffoldExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Drawer(
-        elevation: 20.0,
+        elevation: 20,
         child: ListTile(
           leading: const Icon(Icons.change_history),
           title: const Text('Screen2'),
@@ -292,10 +292,10 @@ class GestureDetectorExample extends StatelessWidget {
     return GestureDetector(
       child: Scaffold(
         appBar: AppBar(title: const Text('Gestures')),
-        body: Center(
+        body: const Center(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
+          children: <Widget>[
             Text('Tap, Long Press, Swipe Horizontally or Vertically'),
           ],
         )),

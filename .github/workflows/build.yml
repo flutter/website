@@ -33,11 +33,13 @@ jobs:
             branch: stable
             experimental: false
     steps:
-      - uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab
+      - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
         with:
           submodules: recursive
       - name: Test
-        run: make test FLUTTER_TEST_BRANCH=${{ matrix.branch }}
+        env:
+          FLUTTER_BUILD_BRANCH: ${{ matrix.branch }}
+        run: make test
         continue-on-error: ${{ matrix.experimental }}
 
   deploy:
@@ -48,17 +50,17 @@ jobs:
       && github.ref == 'refs/heads/main'
       && github.repository == 'flutter/website'
     steps:
-      - uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab
+      - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
         with:
           submodules: recursive
       - name: Build site and check links
         run: make build
       - name: Install Node for Firebase install
-        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c
+        uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Install Firebase CLI
-        run: npm install -g firebase-tools@11.27.0
+        run: npm install -g firebase-tools@12.4.0
       - name: Deploy to Firebase hosting
         run: make deploy
         env:

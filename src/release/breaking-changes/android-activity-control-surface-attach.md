@@ -1,6 +1,8 @@
 ---
 title: Android ActivityControlSurface attachToActivity signature change
-description: attachToActivity activity parameter changed to ExclusiveAppComponent instead of Activity
+description: >
+  attachToActivity activity parameter changed to
+  ExclusiveAppComponent instead of Activity.
 ---
 
 ## Summary
@@ -76,8 +78,6 @@ is now expected instead of an `Activity`.
 The `ExclusiveAppComponent<Activity>` provides a callback
 in case your exclusive activity is being replaced by
 another activity attaching itself to the `FlutterEngine`.
-
-The
 
 ```java
 void detachFromActivity();

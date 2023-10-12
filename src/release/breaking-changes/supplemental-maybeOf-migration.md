@@ -1,6 +1,8 @@
 ---
 title: Migrate `of` to non-nullable return values, and add `maybeOf`
-description: To eliminate nullOk parameters to help with API sanity in the face of null safety.
+description: >
+  To eliminate nullOk parameters to help with API sanity
+  in the face of null safety.
 ---
 
 ## Summary
@@ -34,9 +36,9 @@ present (a new method called `maybeOf`).
 
 ## Description of change
 
-The change modified these static `of` APIs to return non-nullable values. If a
-value is not found, they will also now assert in debug mode, and throw an
-exception in release mode.
+The change modified these static `of` APIs to return non-nullable values.
+If a value is not found, they will also now assert in debug mode, and
+throw an exception in release mode.
 
 * [`AutofillGroup.of`]
 * [`DefaultTabController.of`]
@@ -52,9 +54,9 @@ exception in release mode.
 * [`Scrollable.of`]
 * [`ScrollNotificationObserver.of`]
 
-This change also introduced new static `maybeOf` APIs alongside the above functions,
-which return a nullable version of the same value, and simply return null if the
-value is not found, without throwing any exceptions.
+This change also introduced new static `maybeOf` APIs alongside
+the above functions, which return a nullable version of the same value, and
+simply return null if the value is not found, without throwing any exceptions.
 
 * [`AutofillGroup.maybeOf`]
 * [`DefaultTabController.maybeOf`]
@@ -88,9 +90,9 @@ Code after migration:
 ScrollController? controller = Scrollable.maybeOf(context);
 ```
 
-Then, for instances where the code calls the `of` API followed by an exclamation
-point, just remove the exclamation point: it can no longer return a nullable
-value.
+Then, for instances where the code calls the `of` API followed by
+an exclamation point, just remove the exclamation point: it can
+no longer return a nullable value.
 
 Code before migration:
 
@@ -164,4 +166,3 @@ Relevant PRs:
 [`ScrollNotificationObserver.of`]: {{site.api}}/flutter/widgets/ScrollNotificationObserver/of.html
 [Add `maybeOf` for all the cases when `of` returns nullable]: {{site.repo.flutter}}/pull/114120
 [Add `Overlay.maybeOf`, make `Overlay.of` return a non-nullable instance]: {{site.repo.flutter}}/pull/110811
-

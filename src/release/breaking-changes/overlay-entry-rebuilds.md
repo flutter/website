@@ -5,7 +5,7 @@ description: OverlayEntries only rebuild on explicit state changes.
 
 ## Summary
 
-This  optimization improves performance for route transitions,
+This optimization improves performance for route transitions,
 but it may uncover missing calls to `setState` in your app.
 
 ## Context
@@ -91,6 +91,7 @@ In stable release: 1.17
 ## References
 
 API documentation:
+
 * [`setState`][]
 * [`OverlayEntry`][]
 * [`Overlay`][]
@@ -99,9 +100,11 @@ API documentation:
 * [`OverlayRoute`][]
 
 Relevant issues:
+
 * [Issue 45797][]
 
 Relevant PRs:
+
 * [Do not rebuild Routes when a new opaque Route is pushed on top][]
 * [Reland "Do not rebuild Routes when a new opaque Route is pushed on top"][]
 

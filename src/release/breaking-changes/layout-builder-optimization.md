@@ -1,23 +1,27 @@
 ---
 title: LayoutBuilder optimization
-description: LayoutBuilder and SliverLayoutBuilder call the builder function less often.
+description: >
+  LayoutBuilder and SliverLayoutBuilder call the builder function less often.
 ---
 
 ## Summary
 
-This guide explains how to migrate Flutter applications after [the LayoutBuilder
-optimization][1].
+This guide explains how to migrate Flutter applications after
+[the LayoutBuilder optimization][1].
 
 ## Context
 
-[LayoutBuilder][2] and [SliverLayoutBuilder][3] call the [builder][4] function
-more often than necessary to fulfill their primary goal of allowing apps to adapt
-their widget structure to parent layout constraints. This has led to less
-efficient and jankier applications because widgets are rebuilt unnecessarily.
+[LayoutBuilder][2] and [SliverLayoutBuilder][3] call
+the [builder][4] function more often than necessary to
+fulfill their primary goal of allowing apps to adapt their
+widget structure to parent layout constraints.
+This has led to less efficient and jankier applications
+because widgets are rebuilt unnecessarily.
 
 This transitively affects [OrientationBuilder][5] as well.
 
-In order to improve app performance the [LayoutBuilder optimization][1] was made,
+In order to improve app performance
+the [LayoutBuilder optimization][1] was made,
 which results in calling the `builder` function less often.
 
 Apps that rely on this function to be called with a certain frequency may break.
@@ -33,9 +37,9 @@ The app may exhibit some combination of the following symptoms:
 Prior to the optimization the builder function passed to `LayoutBuilder` or
 `SliverLayoutBuilder` was called when any one of the following happened:
 
-1. `LayoutBuilder` is rebuilt due to a widget configuration change (this typically
-   happens when the widget that uses `LayoutBuilder` rebuilds due to `setState`,
-   `didUpdateWidget` or `didChangeDependencies`).
+1. `LayoutBuilder` is rebuilt due to a widget configuration change
+   (this typically happens when the widget that uses `LayoutBuilder` rebuilds
+   due to `setState`, `didUpdateWidget` or `didChangeDependencies`).
 1. `LayoutBuilder` is laid out and receives layout constraints from its parent
    that are _different_ from the last received constraints.
 1. `LayoutBuilder` is laid out and receives layout constraints from its parent
@@ -281,13 +285,16 @@ This change was released in Flutter v1.20.0.
 ## References
 
 API documentation:
+
 * [`LayoutBuilder`][2]
 * [`SliverLayoutBuilder`][3]
 
-Relevant issues:
+Relevant issue:
+
 * [Issue 6469][8]
 
-Relevant PRs:
+Relevant PR:
+
 * [LayoutBuilder: skip calling builder when constraints are the same][6]
 
 [1]: {{site.url}}/go/layout-builder-optimization

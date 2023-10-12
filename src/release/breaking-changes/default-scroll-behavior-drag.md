@@ -1,6 +1,8 @@
 ---
 title: Default drag scrolling devices
-description: ScrollBehaviors will now configure what PointerDeviceKinds can drag Scrollables.
+description: >
+  ScrollBehaviors will now configure what
+  PointerDeviceKinds can drag Scrollables.
 ---
 
 ## Summary
@@ -21,7 +23,6 @@ Now, the inherited `ScrollBehavior` manages which devices can drag scrolling wid
 as specified by `ScrollBehavior.dragDevices`. This set of `PointerDeviceKind`s are
 allowed to drag.
 
-
 ## Description of change
 
 This change fixed the unexpected ability to scroll by dragging with a mouse.
@@ -32,31 +33,34 @@ control and configure this feature.
 - Extend `ScrollBehavior`, `MaterialScrollBehavior`, or `CupertinoScrollBehavior`
 to modify the default behavior, overriding `ScrollBehavior.dragDevices`.
   
-    - With your own `ScrollBehavior`, you can apply it app-wide by setting
-      `MaterialApp.scrollBehavior` or `CupertinoApp.scrollBehavior`.
-    - Or, if you wish to only apply it to specific widgets, add a
-      `ScrollConfiguration` above the widget in question with your
-      custom `ScrollBehavior`.
-      
+  - With your own `ScrollBehavior`, you can apply it app-wide by setting
+    `MaterialApp.scrollBehavior` or `CupertinoApp.scrollBehavior`.
+  - Or, if you wish to only apply it to specific widgets, add a
+    `ScrollConfiguration` above the widget in question with your
+    custom `ScrollBehavior`.
+ 
 Your scrollable widgets then inherit and reflect this behavior.
 
 - Instead of creating your own `ScrollBehavior`, another option for changing
 the default behavior is to copy the existing `ScrollBehavior`, and set different
 `dragDevices`.
+  - Create a `ScrollConfiguration` in your widget tree, and provide a modified copy
+    of the existing `ScrollBehavior` in the current context using `copyWith`.
 
-    - Create a `ScrollConfiguration` in your widget tree, and provide a modified copy
-      of the existing `ScrollBehavior` in the current context using `copyWith`.
-      
 To accommodate the new configuration of drag devices in `ScrollBehavior`,
-`GestureDetector.kind` has been deprecated along with all subclassed instances of the parameter.
-A flutter fix is available to migrate existing code for all gesture detectors from `kind`
-to `supportedDevices`. The previous parameter `kind` only allowed one `PointerDeviceKind` to
-be used to filter gestures. The introduction of `supportedDevices` makes it possible for more
+`GestureDetector.kind` has been deprecated along with
+all subclassed instances of the parameter.
+A flutter fix is available to migrate existing code
+for all gesture detectors from `kind` to `supportedDevices`.
+The previous parameter `kind` only allowed one `PointerDeviceKind` to
+be used to filter gestures.
+The introduction of `supportedDevices` makes it possible for more
 than one valid `PointerDeviceKind`.
 
 ## Migration guide
 
 ### Setting a custom `ScrollBehavior` for your application
+
 Code before migration:
 
 ```dart
@@ -86,6 +90,7 @@ MaterialApp(
 ```
 
 ### Setting a custom `ScrollBehavior` for a specific widget
+
 Code before migration:
 
 ```dart
@@ -125,6 +130,7 @@ ScrollConfiguration(
 ```
 
 ### Copy and modify existing `ScrollBehavior`
+
 Code before migration:
 
 ```dart
@@ -156,8 +162,8 @@ ScrollConfiguration(
 );
 ```
 
-
 ### Migrate `GestureDetector`s from `kind` to `supportedDevices`
+
 Code before migration:
 
 ```dart
@@ -182,6 +188,7 @@ In stable release: 2.5
 ## References
 
 API documentation:
+
 * [`ScrollConfiguration`][]
 * [`ScrollBehavior`][]
 * [`MaterialScrollBehavior`][]
@@ -189,10 +196,12 @@ API documentation:
 * [`PointerDeviceKind`][]
 * [`GestureDetector`][]
 
-Relevant issues:
+Relevant issue:
+
 * [Issue #71322][]
 
 Relevant PRs:
+
 * [Reject mouse drags by default in scrollables][]
 * [Deprecate GestureDetector.kind in favor of new supportedDevices][]
 

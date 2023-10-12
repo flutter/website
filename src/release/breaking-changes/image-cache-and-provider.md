@@ -1,6 +1,8 @@
 ---
 title: ImageCache and ImageProvider changes
-description: ImageCache requires implementers to override containsKey, and ImageProvider has marked resolve as @nonVirtual.
+description: >
+  ImageCache requires implementers to override containsKey, and
+  ImageProvider has marked resolve as @nonVirtual.
 ---
 
 ## Summary
@@ -137,7 +139,6 @@ Relevant PRs:
 
 * [Defer image decoding when scrolling fast #49389][]
 
-[Stopped increasing the cache size to accommodate large images]: {{site.repo.flutter}}/pull/47387
 [`ImageCache`]: {{site.api}}/flutter/painting/ImageCache-class.html
 [`ImageProvider`]: {{site.api}}/flutter/painting/ImageProvider-class.html
 [`ScrollAwareImageProvider`]: {{site.api}}/flutter/widgets/ScrollAwareImageProvider-class.html

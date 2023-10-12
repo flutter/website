@@ -1,12 +1,6 @@
 ---
 title: Make authenticated requests
 description: How to fetch authorized data from a web service.
-prev:
-  title: Fetch data from the internet
-  path: /cookbook/networking/fetch-data
-next:
-  title: Parse JSON in the background
-  path: /cookbook/networking/background-parsing
 ---
 
 <?code-excerpt path-base="cookbook/networking/authenticated_requests/"?>

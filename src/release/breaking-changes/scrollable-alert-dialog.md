@@ -17,7 +17,7 @@ An `AlertDialog` now scrolls automatically when it overflows.
 ## Context
 
 Before this change,
-when an `AlertDialog` widget’s contents were too tall,
+when an `AlertDialog` widget's contents were too tall,
 the display overflowed, causing the contents to be clipped.
 This resulted in the following issues:
 
@@ -38,7 +38,7 @@ Column(
   children: <Widget>[
     if (title != null)
       Padding(
-        padding: titlePadding ?? EdgeInsets.fromLTRB(24.0, 24.0, 24.0, content == null ? 20.0 : 0.0),
+        padding: titlePadding ?? EdgeInsets.fromLTRB(24, 24, 24, content == null ? 20 : 0),
         child: DefaultTextStyle(
           style: titleTextStyle ?? dialogTheme.titleTextStyle ?? theme.textTheme.title,
           child: Semantics(
@@ -176,15 +176,19 @@ In stable release: 1.17
 ## References
 
 Design doc:
+
 * [Scrollable `AlertDialog`][]
 
 API documentation:
+
 * [`AlertDialog`][]
 
 Relevant issue:
+
 * [Overflow exceptions with maximum accessibility font size][]
 
 Relevant PRs:
+
 * [Update to `AlertDialog.scrollable`][]
 * [Original attempt to implement scrollable `AlertDialog`][]
 * [Revert of original attempt to implement scrollable `AlertDialog`][]

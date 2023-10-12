@@ -17,8 +17,8 @@ class CircleListItem extends StatelessWidget {
         ),
         child: ClipOval(
           child: Image.network(
-            'https://flutter'
-            '.dev/docs/cookbook/img-files/effects/split-check/Avatar1.jpg',
+            'https://docs.flutter.dev/cookbook'
+            '/img-files/effects/split-check/Avatar1.jpg',
             fit: BoxFit.cover,
           ),
         ),
@@ -64,8 +64,8 @@ class CardListItem extends StatelessWidget {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(16),
           child: Image.network(
-            'https://flutter'
-            '.dev/docs/cookbook/img-files/effects/split-check/Food1.jpg',
+            'https://docs.flutter.dev/cookbook'
+            '/img-files/effects/split-check/Food1.jpg',
             fit: BoxFit.cover,
           ),
         ),
@@ -99,7 +99,7 @@ class CardListItem extends StatelessWidget {
       );
     } else {
       return const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 8.0),
+        padding: EdgeInsets.symmetric(horizontal: 8),
         child: Text(
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do '
           'eiusmod tempor incididunt ut labore et dolore magna aliqua.',

@@ -1,6 +1,8 @@
 ---
 title: Dry layout support for RenderBox
-description: The method "computeDryLayout" was added to the RenderBox protocol to correctly calculate its intrinsic size in certain situations.
+description: >
+  The method "computeDryLayout" was added to the RenderBox protocol to
+  correctly calculate its intrinsic size in certain situations.
 ---
 
 ## Summary
@@ -101,9 +103,11 @@ API documentation:
 * [`RenderParagraph`][]
 
 Relevant issues:
+
 * [Issue 48679][]
 
 Relevant PRs:
+
 * [Fixes Intrinsics for RenderParagraph and RenderWrap][]
 
 [`RenderBox`]: {{site.api}}/flutter/rendering/RenderBox-class.html
