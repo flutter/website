@@ -25,9 +25,10 @@ over time. A crash report might contain the following information:
 Google handles all data reported by this tool in accordance with the 
 [Google Privacy Policy][].
 
-Additionally, you may review the recently reported data in the 
-`.dart-tool/dart-flutter-telemetry.log` file under the home directory
-`~/` (macOS/Linux) or the `<username>\AppData` (Windows) directory. 
+You may review the recently reported data in the 
+`.dart-tool/dart-flutter-telemetry.log` file.
+In macOS or Linux, this log is located in the home directory (`~/`).
+In Windows, this log is located in the Roaming AppData directory in Windows (`%APPDATA%`). 
 
 ## Disabling analytics reporting
 
