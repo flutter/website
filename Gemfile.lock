@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (7.1.0)
+    activesupport (7.1.1)
       base64
       bigdecimal
       concurrent-ruby (~> 1.0, >= 1.0.2)
@@ -101,7 +101,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activesupport (~> 7.1.0)
+  activesupport (~> 7.1.1)
   jekyll (= 4.3.2)
   jekyll-include-cache (~> 0.2.1)
   jekyll-sass-converter (~> 3.0.0)
