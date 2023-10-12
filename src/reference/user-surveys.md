@@ -9,14 +9,12 @@ If you have not opted-out of Flutter’s
 you may receive a survey announcement in your IDE. 
 
 We run two types of surveys:
-1. Quarterly surveys - For these surveys, we notify all active
- Flutter and Dart users to optionally take the survey.
-2. Ad-hoc surveys (experimental): We design and deploy these 
-surveys when we want to learn more about specific topics. 
-You may see a survey announcement if you meet the criteria of 
-the survey  based on data stored in the 
-`.dart-tool/dart-flutter-telemetry.log` file under the home directory
-`~/` (macOS/Linux) or the `<username>\AppData` (Windows) directory. 
+1. **Each quarter.** We give all active Flutter and Dart users
+  the option to take this survey.
+2. **Ad-hoc.** We design and deploy experimental surveys
+  when we want to learn more about specific topics. 
+  If your telemetry data meets the survey criteria,
+  you might see a survey announcement. 
 
 ## How will my responses be used?
 
