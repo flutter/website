@@ -28,7 +28,7 @@ and look in the indicated directories.
 * <strong>Dart [unit tests][] and [widget tests][]</strong>.
   These tests allow you to test the Dart portion of your plugin
   just as you would test the Dart code of a non-plugin package.
-  However, the plugin’s native code [won't be loaded][],
+  However, the plugin's native code [won't be loaded][],
   so any calls to platform channels need to be [mocked in tests][].
 
   See the `test` directory for an example.
@@ -42,7 +42,7 @@ and look in the indicated directories.
   code that needs to run in a browser.
 
   These are often the most important tests for a plugin.
-  However, Dart integration tests can’t interact with native UI,
+  However, Dart integration tests can't interact with native UI,
   such as native dialogs or the contents of platform views.
 
   See the  `example/integration_test` directory for an example.
@@ -57,7 +57,7 @@ and look in the indicated directories.
 
   Native unit tests can be especially valuable
   if you need to mock out APIs wrapped by your plugin code,
-  which isn’t possible in a Dart integration test.
+  which isn't possible in a Dart integration test.
 
   You can set up and use any native test frameworks
   you are familiar with for each platform,
@@ -77,12 +77,12 @@ and look in the indicated directories.
     [GoogleTest][] tests can be found in `linux/test/`
     and `windows/test/`, respectively.
 
-Other types of tests, which aren’t currently pre-configured
+Other types of tests, which aren't currently pre-configured
 in the template, are <strong>native UI tests</strong>.
 Running your application under a native UI testing framework,
 such as [Espresso][] or [XCUITest][],
 enables tests that interact with both native and Flutter UI elements,
-so can be useful if your plugin can’t be tested without
+so can be useful if your plugin can't be tested without
 native UI interactions.
 
 
@@ -154,14 +154,14 @@ For iOS tests, you might need to first open
 
 To run the tests from the command line,
 use the following command in the example directory,
-replacing “my_plugin” with your plugin project name:
+replacing "my_plugin" with your plugin project name:
 
 ```sh
 build/linux/plugins/x64/debug/my_plugin/my_plugin_test
 ```
 
 If you built the example app in release mode rather than
-debug, replace “debug” with “release”.
+debug, replace "debug" with "release".
 
 <strong>Windows GoogleTest</strong><br>
 
@@ -170,14 +170,14 @@ you can run the unit tests using the [Visual Studio test UI][].
 
 To run the tests from the command line,
 use the following command in the example directory,
-replacing “my_plugin” with your plugin project name:
+replacing "my_plugin" with your plugin project name:
 
 ```sh
 build/windows/plugins/my_plugin/Debug/my_plugin_test.exe
 ```
 
 If you built the example app in release mode rather
-than debug, replace “Debug” with “Release”.
+than debug, replace "Debug" with "Release".
 
 ## What types of tests to add
 
@@ -190,17 +190,17 @@ Some extra considerations for plugin testing:
   try to have at least one integration test of each
   platform channel call.
 
-* If some flows can’t be tested using integration
+* If some flows can't be tested using integration
   tests—for example if they require interacting with
   native UI or mocking device state—consider writing
-  “end to end” tests of the two halves using unit tests:
+  "end to end" tests of the two halves using unit tests:
 
   * Native unit tests that set up the necessary mocks,
     then call into the method channel entry point
     with a synthesized call and validate the method response.
 
   * Dart unit tests that mock the platform channel,
-    then call the plugin’s public API and validate the results.
+    then call the plugin's public API and validate the results.
 
 [Android Studio test UI]: https://developer.android.com/studio/test/test-in-android-studio
 [general advice]: {{site.url}}/testing/overview

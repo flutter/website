@@ -1,7 +1,7 @@
 ---
 title: Bottom Navigation Title To Label
 description: >
-  Deprecated BottomNavigationBarItem’s title (a Widget) in
+  Deprecated BottomNavigationBarItem's title (a Widget) in
   favor of label (a String). 
 ---
 

@@ -28,7 +28,7 @@ widgets, and having those actions act in the context of the widget.
 Teams have been using actions, and found several limitations in that
 design that needed to be addressed:
 
-1. Actions couldn’t be invoked from outside of the widget hierarchy.
+1. Actions couldn't be invoked from outside of the widget hierarchy.
    Examples of this include processing a script of commands,
    some undo architectures, and some controller architectures.
 
@@ -48,7 +48,7 @@ design that needed to be addressed:
 To address these issues, we made some significant changes to the API.
 The mapping of actions was made more intuitive,
 and the enabled interface was moved to the `Action` class.
-Some unnecessary arguments were removed from the `Action`’s
+Some unnecessary arguments were removed from the `Action`'s
 `invoke` method and its constructor, and actions were allowed
 to return results from their invoke method.
 Actions were made into generics, accepting the type of `Intent`

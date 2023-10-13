@@ -110,7 +110,7 @@ the time a method spent executing only its own code.
 
 Selecting a method from the table on the left shows
 the call graph for that method. The call graph shows
-a method’s callers and callees and their respective
+a method's callers and callees and their respective
 caller / callee percentages.
 
 ### Flame chart

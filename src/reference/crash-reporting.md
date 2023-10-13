@@ -25,18 +25,28 @@ over time. A crash report might contain the following information:
 Google handles all data reported by this tool in accordance with the 
 [Google Privacy Policy][].
 
+You may review the recently reported data in the 
+`.dart-tool/dart-flutter-telemetry.log` file.
+In macOS or Linux, this log is located in the home directory (`~/`).
+In Windows, this log is located in the Roaming AppData directory in Windows (`%APPDATA%`). 
+
 ## Disabling analytics reporting
 
-You can opt out of anonymous crash reporting and feature
-usage statistics from Flutter by running the following command:
+To opt out of anonymous crash reporting and feature
+usage statistics, run the following command:
 
 ```terminal
-$ flutter config --no-analytics
+$ flutter --disable-telemetry
 ```
 
-If you opt out of analytics, an opt-out event will be sent,
-and then no further information will be sent by that
-installation of Flutter. 
+If you opt out of analytics, Flutter sends an opt-out event.
+This Flutter installation neither sends nor stores any further information. 
+
+To opt into analytics, run the following command: 
+
+```terminal
+$ flutter --enable-telemetry
+```
 
 To display the current setting, you can run the following command:
 

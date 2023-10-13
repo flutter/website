@@ -5,7 +5,7 @@ short-title: Staggered
 ---
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What you’ll learn</h4>
+  <h4 class="no_toc">What you'll learn</h4>
 
   * A staggered animation consists of sequential or overlapping
     animations.
@@ -82,7 +82,7 @@ After running forward, the animation runs in reverse.
 
 {{site.alert.secondary}}
   **New to Flutter?**
-  This page assumes you know how to create a layout using Flutter’s
+  This page assumes you know how to create a layout using Flutter's
   widgets.  For more information, see [Building Layouts in Flutter][].
 {{site.alert.end}}
 

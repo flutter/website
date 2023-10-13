@@ -623,7 +623,7 @@ For information about subsequent bug-fix releases, see
 [62803](https://github.com/flutter/flutter/pull/62803) Address misc time picker design issues (a: internationalization, cla: yes, f: material design, framework, waiting for tree to go green)
 
 
-[62805](https://github.com/flutter/flutter/pull/62805) Add “See also” links to favorite class API docs (cla: yes, d: api docs, documentation, f: material design, framework, waiting for tree to go green)
+[62805](https://github.com/flutter/flutter/pull/62805) Add "See also" links to favorite class API docs (cla: yes, d: api docs, documentation, f: material design, framework, waiting for tree to go green)
 
 
 [62809](https://github.com/flutter/flutter/pull/62809) [null-safety] remove some usages of mockito (a: tests, cla: yes, framework, waiting for tree to go green)
@@ -3041,7 +3041,7 @@ For information about subsequent bug-fix releases, see
 [62803](https://github.com/flutter/flutter/pull/62803) Address misc time picker design issues (a: internationalization, cla: yes, f: material design, framework, waiting for tree to go green)
 
 
-[62805](https://github.com/flutter/flutter/pull/62805) Add “See also” links to favorite class API docs (cla: yes, d: api docs, documentation, f: material design, framework, waiting for tree to go green)
+[62805](https://github.com/flutter/flutter/pull/62805) Add "See also" links to favorite class API docs (cla: yes, d: api docs, documentation, f: material design, framework, waiting for tree to go green)
 
 
 [62840](https://github.com/flutter/flutter/pull/62840) [ExpansionPanelList] adds elevation property (f: material design, framework, waiting for tree to go green, will affect goldens)
@@ -3614,7 +3614,7 @@ For information about subsequent bug-fix releases, see
 [62755](https://github.com/flutter/flutter/pull/62755) Add punctuation for unterminated sentences in doc comments (a: accessibility, a: internationalization, a: tests, cla: yes, d: api docs, documentation, f: cupertino, f: material design, framework, tool)
 
 
-[62805](https://github.com/flutter/flutter/pull/62805) Add “See also” links to favorite class API docs (cla: yes, d: api docs, documentation, f: material design, framework, waiting for tree to go green)
+[62805](https://github.com/flutter/flutter/pull/62805) Add "See also" links to favorite class API docs (cla: yes, d: api docs, documentation, f: material design, framework, waiting for tree to go green)
 
 
 [62859](https://github.com/flutter/flutter/pull/62859) Add gaplessPlayback docs default discussion (d: api docs, documentation, framework, waiting for tree to go green)
@@ -3807,7 +3807,7 @@ For information about subsequent bug-fix releases, see
 [62755](https://github.com/flutter/flutter/pull/62755) Add punctuation for unterminated sentences in doc comments (a: accessibility, a: internationalization, a: tests, cla: yes, d: api docs, documentation, f: cupertino, f: material design, framework, tool)
 
 
-[62805](https://github.com/flutter/flutter/pull/62805) Add “See also” links to favorite class API docs (cla: yes, d: api docs, documentation, f: material design, framework, waiting for tree to go green)
+[62805](https://github.com/flutter/flutter/pull/62805) Add "See also" links to favorite class API docs (cla: yes, d: api docs, documentation, f: material design, framework, waiting for tree to go green)
 
 
 [62859](https://github.com/flutter/flutter/pull/62859) Add gaplessPlayback docs default discussion (d: api docs, documentation, framework, waiting for tree to go green)
@@ -6164,7 +6164,7 @@ There were 934 pull requests.
 
 [62803](https://github.com/flutter/flutter/pull/62803) Address misc time picker design issues (a: internationalization, cla: yes, f: material design, framework, waiting for tree to go green)
 
-[62805](https://github.com/flutter/flutter/pull/62805) Add “See also” links to favorite class API docs (cla: yes, d: api docs, documentation, f: material design, framework, waiting for tree to go green)
+[62805](https://github.com/flutter/flutter/pull/62805) Add "See also" links to favorite class API docs (cla: yes, d: api docs, documentation, f: material design, framework, waiting for tree to go green)
 
 [62809](https://github.com/flutter/flutter/pull/62809) [null-safety] remove some usages of mockito (a: tests, cla: yes, framework, waiting for tree to go green)
 

@@ -8,14 +8,14 @@ description: What is performance, and why is performance important
 Performance is a set of quantifiable properties of a performer.
 
 In this context, performance isn't the execution of an action itself;
-it’s how well something or someone performs. Therefore, we use the adjective
+it's how well something or someone performs. Therefore, we use the adjective
  _performant_.
 
 While the _how well_ part can, in general, be described in natural languages,
 in our limited scope, the focus is on something that is quantifiable as a real
 number. Real numbers include integers and 0/1 binaries as special cases.
 Natural language descriptions are still very important. For example, a news
-article that heavily criticizes Flutter’s performance by just using words
+article that heavily criticizes Flutter's performance by just using words
 without any numbers (a quantifiable value) could still be meaningful, and it
 could have great impacts. The limited scope is chosen only because of our
 limited resources.
@@ -46,8 +46,8 @@ who find the API doc useful.
 
 Answering this question is not only crucial for validating the work in
 performance, but also for guiding the performance work in order to be more
-useful. The answer to “why is performance important?” often is also the answer
-to “how is performance useful?”
+useful. The answer to "why is performance important?" often is also the answer
+to "how is performance useful?"
 
 Simply speaking, performance is important and useful because, in the scope,
 performance must have quantifiable properties or metrics. This implies:
@@ -67,7 +67,7 @@ passage. For example, it probably takes an engineer 1 second to consume the
 performance rating as a number from 1 to 5. It probably takes the same engineer
 at least 1 minute to read the full, 500-word feedback summary.
 
-If there are many numbers, it’s easy to summarize or visualize them for quick
+If there are many numbers, it's easy to summarize or visualize them for quick
 consumption. For example, you can quickly consume millions of numbers by
 looking at its histogram, average, quantiles, and so on. If a metric has a
 history of thousands of data points, then you can easily plot a timeline to
@@ -81,9 +81,9 @@ thousands of historical descriptions, each having 500 words.
 
 Another advantage of having performance as a set of numbers is its unambiguity.
 When you want an animation to have a performance of 20 ms per frame or
-50 fps, there’s little room for different interpretations about the numbers. On
+50 fps, there's little room for different interpretations about the numbers. On
 the other hand, to describe the same animation in words, someone might call it
-good, while someone else might complain that it’s bad. Similarly, the same
+good, while someone else might complain that it's bad. Similarly, the same
 word or phrase could be interpreted differently by different people. You might
 interpret an OK frame rate to be 60 fps, while someone else might interpret it
 to be 30 fps.
@@ -91,7 +91,7 @@ to be 30 fps.
 Numbers can still be noisy. For example, the measured time per frame might
 be a true computation time of this frame, plus a random amount of time (noise)
 that CPU/GPU spends on some unrelated work. Hence, the metric fluctuates.
-Nevertheless, there’s no ambiguity of what the number means. And, there are
+Nevertheless, there's no ambiguity of what the number means. And, there are
 also rigorous theory and testing tools to handle such noise. For example, you
 could take multiple measurements to estimate the distribution of a random
 variable, or you could take the average of many measurements to eliminate the
@@ -100,11 +100,11 @@ noise by [the law of large numbers][1].
 ### 3. Performance is comparable and convertible
 
 Performance numbers not only have unambiguous meanings, but they also have
-unambiguous comparisons. For example, there’s no doubt that 5 is greater than 4.
+unambiguous comparisons. For example, there's no doubt that 5 is greater than 4.
 On the other hand, it might be subjective to figure out whether excellent is
 better or worse than superb. Similarly, could you figure out whether epic is
 better than legendary? Actually, the phrase _strongly exceeds expectations_
-could be better than _superb_ in someone’s interpretation. It only becomes
+could be better than _superb_ in someone's interpretation. It only becomes
 unambiguous and comparable after a definition that maps strongly exceeds
 expectations to 4 and superb to 5.
 
@@ -140,7 +140,7 @@ perspective:
 
 2. Make performance metrics as unambiguous as possible. Define the unit that the
    number is using. Precisely describe how the number is measured. Make the
-   number easily reproducible. When there’s a lot of noise, try to show the full
+   number easily reproducible. When there's a lot of noise, try to show the full
    distribution, or eliminate the noise as much as possible by aggregating many
    noisy measurements.
 

@@ -23,7 +23,7 @@ we saw an almost 2x speedup from 35ms/frame to 17.5ms/frame.
 The following two images are not visible.
 ![](https://lh5.googleusercontent.com/Pn8FxuW2W3Cgvw9kIUvLLenrwXti7WRm_zPif3VJILa325d1Njm8aP47DXfK1r2Du-FwLKhI9umw5nMG6eNqn5fLnQBIt6VIPZ7Q2ETiCuXgQPD1cUYOeA-2Ph_DpvL27fK7m_Af)
 
-Here’s a comparison of transition with and without clips.
+Here's a comparison of transition with and without clips.
 
 ![](https://lh5.googleusercontent.com/gSFKigrEoekji0juxTVjj29PlIizjuxJsetHsIegLt85zCHknRIUOeICjMdEBjBhPZDZXcEzFh1WCOrdmZa9KZ5vghgS7Uo9IDAKyBtEJ7h3tKfIHXf6A4vxrHfj1a_0kuT6f4r2)
 {% endcomment %}
@@ -40,7 +40,7 @@ it creates an offscreen render target, and a render target switch
 can sometimes cost about 1ms.
 
 Even without `saveLayer` call, a clip is still expensive
-because it applies to all subsequent draws until it’s restored.
+because it applies to all subsequent draws until it's restored.
 Therefore a single clip may slow down the performance on
 hundreds of draw operations.
 
@@ -69,13 +69,13 @@ for most widgets to save performance, except the following:
 You have 4 choices for migrating your code:
 
 1. Leave your code as is if your content does not need
-   to be clipped (for example, none of the widgets’ children
-   expand outside their parent’s boundary).
+   to be clipped (for example, none of the widgets' children
+   expand outside their parent's boundary).
    This will likely have a positive impact on your app's
    overall performance.
 2. Add `clipBehavior: Clip.hardEdge` if you need clipping,
    and clipping without anti-alias is good enough for your
-   (and your clients’) eyes. This is the common case
+   (and your clients') eyes. This is the common case
    when you clip rectangles or shapes with very small curved areas
    (such as the corners of rounded rectangles).
 3. Add `clipBehavior: Clip.antiAlias` if you need
@@ -83,7 +83,7 @@ You have 4 choices for migrating your code:
    at a slightly higher cost. This is the common case when
    dealing with circles and arcs.
 4. Add `clip.antiAliasWithSaveLayer` if you want the exact
-   same behavior as before (May 2018). Be aware that it’s
+   same behavior as before (May 2018). Be aware that it's
    very costly in performance. This is likely to be only
    rarely needed. One case where you might need this is if
    you have an image overlaid on a very different background color.

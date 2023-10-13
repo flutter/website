@@ -394,7 +394,7 @@ high performance, but now the language does because the Dart team
 built it for Flutter. Similarly, the Dart VM has
 previously been optimized for throughput but the
 team is now optimizing the VM for latency, which is more
-important for Flutter’s workload.
+important for Flutter's workload.
 
 Dart scores highly for us on the following primary criteria:
 
@@ -468,12 +468,12 @@ These numbers were measured using [apkanalyzer][],
 which is also [built into Android Studio][].
 
 On iOS, a release IPA of the same app has a download
-size of 10.9 MB on an iPhone X, as reported by Apple’s
+size of 10.9 MB on an iPhone X, as reported by Apple's
 App Store Connect. The IPA is larger than the APK mainly
 because Apple encrypts binaries within the IPA, making the
 compression less efficient (see the
 [iOS App Store Specific Considerations][]
-section of Apple’s [QA1795][]).
+section of Apple's [QA1795][]).
 
 {{site.alert.note}}
   The release engine binary used to include LLVM IR (bitcode).
