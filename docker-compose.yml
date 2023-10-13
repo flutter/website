@@ -1,23 +1,36 @@
-version: "3.9"
+version: '3.10'
+name: website
 services:
-
-  site:
+  website:
     image: flt-dev
     build:
       context: .
+      dockerfile: Dockerfile
       target: dev
-    command: ["make", "serve"]
+    command:
+    - make
+    - serve
     env_file: .env
     environment:
       - NODE_ENV=development
       - JEKYLL_ENV=development
     ports:
-      - "4002:4002"
-      - "35730:35730"
-      - "5502:5502"
+      - mode: ingress
+        target: 4002
+        published: 4002
+        protocol: tcp
+      - mode: ingress
+        target: 35730
+        published: 35730
+        protocol: tcp
+      - mode: ingress
+        target: 5502
+        published: 5502
+        protocol: tcp
     volumes:
       - ./:/app
       - site_bundle:/usr/local/bundle
 
 volumes:
   site_bundle:
+    name: website_site_bundle

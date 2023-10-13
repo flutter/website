@@ -1,8 +1,12 @@
 {
-	"name": "Flutter.dev",
-	"dockerComposeFile": "../docker-compose.yml",
-	"extensions": [
-		"dart-code.dart-code",
-    "dart-code.flutter"
-	]
+  "name": "docs.flutter.dev",
+  "dockerComposeFile": ["../docker-compose.yml","docker-compose-extended.yml"],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dart-code.dart-code",
+        "dart-code.flutter"
+      ]
+    }
+  }
 }

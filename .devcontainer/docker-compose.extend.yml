@@ -1,0 +1,8 @@
+version: '0.1'
+name: website
+services:
+  website:
+    environment:
+      - FLUTTER_BUILD_BRANCH=stable
+      - FIREBASE_ALIAS=default
+      - FIREBASE_TOKEN=
