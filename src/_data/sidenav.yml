@@ -243,8 +243,8 @@
     - title: API overview
       permalink: /ui/animations/overview
       
-- title: Accessibility & localization
-  permalink: /ui/accessibility-and-localization
+- title: Accessibility & internationalization
+  permalink: /ui/accessibility-and-internationalization
   children:
     - title: Accessibility
       permalink: /ui/accessibility-and-localization/accessibility
