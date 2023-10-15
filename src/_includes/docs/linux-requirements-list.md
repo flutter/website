@@ -8,6 +8,7 @@
 
 * [Clang][]
 * [CMake][]
+* [git][]
 * [GTK development headers][]
 * [Ninja build][]
 * [pkg-config][]
@@ -16,6 +17,7 @@
 
 [Clang]: https://clang.llvm.org/
 [CMake]: https://cmake.org/
+[git]: https://git-scm.com/
 [GTK development headers]: https://www.gtk.org/docs/installations/linux#installing-gtk3-from-packages
 [Ninja build]: https://ninja-build.org/
 [pkg-config]: https://www.freedesktop.org/wiki/Software/pkg-config/
