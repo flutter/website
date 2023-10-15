@@ -100,7 +100,6 @@
 
       { "source": "/accessibility-and-localization", "destination": "/ui/accessibility-and-internationalization", "type": 301 },
       { "source": "/accessibility-and-localization/:rest*", "destination": "/ui/accessibility-and-internationalization/:rest*", "type": 301 },
-      { "source": "/ui/accessibility-and-localization/:rest*", "destination": "/ui/accessibility-and-internationalization/:rest*", "type": 301 },
       { "source": "/add-to-app/android/add-splash-screen", "destination": "/platform-integration/android/splash-screen", "type": 301 },
       { "source": "/codelabs/explicit-animations", "destination": "/ui/animations/tutorial", "type": 301 },
       { "source": "/cookbook/networking/named-routes", "destination": "/cookbook/navigation/named-routes", "type": 301 },
@@ -170,6 +169,8 @@
       { "source": "/tutorials/interactive", "destination": "/ui/interactive", "type": 301 },
       { "source": "/tutorials/internationalization", "destination": "/ui/accessibility-and-internationalization/internationalization", "type": 301 },
       { "source": "/tutorials/layout", "destination": "/ui/layout", "type": 301 },
+      { "source": "/ui/accessibility-and-localization", "destination": "/ui/accessibility-and-internationalization", "type": 301 },
+      { "source": "/ui/accessibility-and-localization/:rest*", "destination": "/ui/accessibility-and-internationalization/:rest*", "type": 301 },
       { "source": "/ui/advanced", "destination": "/ui", "type": 301 },
       { "source": "/ui/advanced/actions_and_shortcuts", "destination": "/ui/interactivity/actions-and-shortcuts", "type": 301 },
       { "source": "/ui/advanced/actions-and-shortcuts", "destination": "/ui/interactivity/actions-and-shortcuts", "type": 301 },
