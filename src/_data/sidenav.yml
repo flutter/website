@@ -247,9 +247,9 @@
   permalink: /ui/accessibility-and-internationalization
   children:
     - title: Accessibility
-      permalink: /ui/accessibility-and-localization/accessibility
+      permalink: /ui/accessibility-and-internationalization/accessibility
     - title: Internationalization
-      permalink: /ui/accessibility-and-localization/internationalization
+      permalink: /ui/accessibility-and-internationalization/internationalization
 
 - divider
 - header: Beyond UI
