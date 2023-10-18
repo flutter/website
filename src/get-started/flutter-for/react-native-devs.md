@@ -576,15 +576,16 @@ class CustomCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-        child: Column(
-      children: <Widget>[
-        Text('Card $index'),
-        TextButton(
-          onPressed: onPress,
-          child: const Text('Press'),
-        ),
-      ],
-    ));
+      child: Column(
+        children: <Widget>[
+          Text('Card $index'),
+          TextButton(
+            onPressed: onPress,
+            child: const Text('Press'),
+          ),
+        ],
+      ),
+    );
   }
 }
 
@@ -1514,15 +1515,16 @@ class CustomCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-        child: Column(
-      children: <Widget>[
-        Text('Card $index'),
-        TextButton(
-          onPressed: onPress,
-          child: const Text('Press'),
-        ),
-      ],
-    ));
+      child: Column(
+        children: <Widget>[
+          Text('Card $index'),
+          TextButton(
+            onPressed: onPress,
+            child: const Text('Press'),
+          ),
+        ],
+      ),
+    );
   }
 }
 
