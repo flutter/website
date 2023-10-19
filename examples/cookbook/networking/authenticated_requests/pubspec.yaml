@@ -10,7 +10,7 @@ dependencies:
   http: ^1.1.0
 
 dev_dependencies:
-  flutter_lints: ^2.0.2
+  flutter_lints: ^3.0.0
 
 flutter:
   uses-material-design: true
