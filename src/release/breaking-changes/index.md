@@ -42,6 +42,7 @@ release, and listed in alphabetical order:
 * [Windows: External windows should notify Flutter engine of lifecycle changes][]
 * [Windows build path changed to add the target architecture][]
 * [Deprecated API removed after v3.13][]
+* [Accessibility traversal order of tooltip changed][]
 
 [Customize tabs alignment using the new `TabBar.tabAlignment` property]: {{site.url}}/release/breaking-changes/tab-alignment
 [Deprecate `textScaleFactor` in favor of `TextScaler`]: {{site.url}}/release/breaking-changes/deprecate-textscalefactor
