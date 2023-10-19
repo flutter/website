@@ -19,15 +19,16 @@ the button.
 
 The `Tooltip` widget originally put`Tooltip.message` on an `OverlayEntry` when 
 long pressed.
-As a result, the generated semantics tree does not put `Tooltip.message` 
-immediately after `Tooltip.child`.
-
-You may see accessibility test failures when a tooltip message is visible.
-This is because this update moved the tooltip message in the semantics tree.
+As a result, `Tooltip.message` was not immediately after `Tooltip.child` in the
+semantics tree.
 
 ## Migration guide
 
-Update your failing accessibility tests. 
+This change moved the tooltip message in the semantics tree.
+You may see accessibility test failures if your tests expect a tooltip message to
+appear in a specific location in the semantics tree, when it is visible.
+Update your failing accessibility tests to adopt the new tooltip semantics order.
+
 For example, if you constructed the following widget tree in your test:
 
 ```dart
@@ -56,7 +57,8 @@ Directionality(
 );
 ```
 
-The corresponding semantics tree before this change should look like:
+When the tooltip message is visible, the corresponding semantics tree before this 
+change should look like this:
 
 ```dart
 SemanticsNode#0
