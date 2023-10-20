@@ -103,6 +103,7 @@ reference to help you build up an application.
 
 
 ## Plugins
+- [Add achievements and leaderboards to your mobile game]({{site.url}}/cookbook/plugins/achievements-leaderboard)
 - [Play and pause a video]({{site.url}}/cookbook/plugins/play-video)
 - [Take a picture using the camera]({{site.url}}/cookbook/plugins/picture-using-camera)
 
