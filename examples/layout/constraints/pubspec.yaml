@@ -8,7 +8,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_lints: ^2.0.2
+
+dev_dependencies:
+  example_utils:
+    path: ../../example_utils
 
 flutter:
   uses-material-design: true
