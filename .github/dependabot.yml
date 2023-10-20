@@ -1,5 +1,5 @@
 # See Dependabot documentation for all configuration options:
-# https://help.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
 
 version: 2
 updates:
@@ -45,6 +45,7 @@ updates:
       - "auto.dependencies"
       - "auto.submodules"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/"
     schedule:
       interval: "daily"
@@ -52,6 +53,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/example"
     schedule:
       interval: "daily"
@@ -59,6 +61,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/animation/animate0"
     schedule:
       interval: "daily"
@@ -66,6 +69,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/animation/animate1"
     schedule:
       interval: "daily"
@@ -73,6 +77,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/animation/animate2"
     schedule:
       interval: "daily"
@@ -80,6 +85,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/animation/animate3"
     schedule:
       interval: "daily"
@@ -87,6 +93,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/animation/animate4"
     schedule:
       interval: "daily"
@@ -94,6 +101,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/animation/animate5"
     schedule:
       interval: "daily"
@@ -101,6 +109,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/_animation/basic_hero_animation"
     schedule:
       interval: "daily"
@@ -108,6 +117,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/_animation/basic_radial_hero_animation"
     schedule:
       interval: "daily"
@@ -115,6 +125,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/_animation/basic_staggered_animation"
     schedule:
       interval: "daily"
@@ -122,6 +133,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/animation/explicit"
     schedule:
       interval: "daily"
@@ -129,6 +141,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/_animation/hero_animation"
     schedule:
       interval: "daily"
@@ -136,6 +149,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/animation/implicit"
     schedule:
       interval: "daily"
@@ -143,6 +157,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/_animation/radial_hero_animation"
     schedule:
       interval: "daily"
@@ -150,6 +165,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/_animation/radial_hero_animation_animate_rectclip"
     schedule:
       interval: "daily"
@@ -157,6 +173,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/_animation/staggered_pic_selection"
     schedule:
       interval: "daily"
@@ -164,6 +181,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/basics"
     schedule:
       interval: "daily"
@@ -171,6 +189,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/animation/animated_container"
     schedule:
       interval: "daily"
@@ -178,6 +197,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/animation/opacity_animation"
     schedule:
       interval: "daily"
@@ -185,6 +205,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/animation/page_route_animation"
     schedule:
       interval: "daily"
@@ -192,6 +213,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/animation/physics_simulation"
     schedule:
       interval: "daily"
@@ -199,6 +221,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/design/drawer"
     schedule:
       interval: "daily"
@@ -206,6 +229,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/design/fonts"
     schedule:
       interval: "daily"
@@ -213,6 +237,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/design/orientation"
     schedule:
       interval: "daily"
@@ -220,6 +245,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/design/package_fonts"
     schedule:
       interval: "daily"
@@ -227,6 +253,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/design/snackbars"
     schedule:
       interval: "daily"
@@ -234,6 +261,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/design/tabs"
     schedule:
       interval: "daily"
@@ -241,6 +269,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/design/themes"
     schedule:
       interval: "daily"
@@ -248,6 +277,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/effects/download_button"
     schedule:
       interval: "daily"
@@ -255,6 +285,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/effects/drag_a_widget"
     schedule:
       interval: "daily"
@@ -262,6 +293,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/effects/expandable_fab"
     schedule:
       interval: "daily"
@@ -269,6 +301,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/effects/gradient_bubbles"
     schedule:
       interval: "daily"
@@ -276,6 +309,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/effects/nested_nav"
     schedule:
       interval: "daily"
@@ -283,6 +317,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/effects/parallax_scrolling"
     schedule:
       interval: "daily"
@@ -290,6 +325,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/effects/photo_filter_carousel"
     schedule:
       interval: "daily"
@@ -297,6 +333,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/effects/shimmer_loading"
     schedule:
       interval: "daily"
@@ -304,6 +341,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/effects/staggered_menu_animation"
     schedule:
       interval: "daily"
@@ -311,6 +349,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/effects/typing_indicator"
     schedule:
       interval: "daily"
@@ -318,6 +357,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/forms/focus"
     schedule:
       interval: "daily"
@@ -325,6 +365,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/forms/retrieve_input"
     schedule:
       interval: "daily"
@@ -332,6 +373,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/forms/text_field_changes"
     schedule:
       interval: "daily"
@@ -339,6 +381,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/forms/text_input"
     schedule:
       interval: "daily"
@@ -346,6 +389,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/forms/validation"
     schedule:
       interval: "daily"
@@ -353,6 +397,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/gestures/dismissible"
     schedule:
       interval: "daily"
@@ -360,6 +405,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/gestures/handling_taps"
     schedule:
       interval: "daily"
@@ -367,6 +413,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/gestures/ripples"
     schedule:
       interval: "daily"
@@ -374,6 +421,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/images/cached_images"
     schedule:
       interval: "daily"
@@ -381,6 +429,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/images/fading_in_images"
     schedule:
       interval: "daily"
@@ -388,6 +437,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/images/network_image"
     schedule:
       interval: "daily"
@@ -395,6 +445,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/lists/basic_list"
     schedule:
       interval: "daily"
@@ -402,6 +453,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/lists/floating_app_bar"
     schedule:
       interval: "daily"
@@ -409,6 +461,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/lists/grid_lists"
     schedule:
       interval: "daily"
@@ -416,6 +469,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/lists/horizontal_list"
     schedule:
       interval: "daily"
@@ -423,6 +477,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/lists/long_lists"
     schedule:
       interval: "daily"
@@ -430,6 +485,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/lists/mixed_list"
     schedule:
       interval: "daily"
@@ -437,6 +493,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/maintenance/error_reporting"
     schedule:
       interval: "daily"
@@ -444,6 +501,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/navigation/hero_animations"
     schedule:
       interval: "daily"
@@ -451,6 +509,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/navigation/named_routes"
     schedule:
       interval: "daily"
@@ -458,6 +517,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/navigation/navigate_with_arguments"
     schedule:
       interval: "daily"
@@ -465,6 +525,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/navigation/navigation_basics"
     schedule:
       interval: "daily"
@@ -472,6 +533,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/navigation/passing_data"
     schedule:
       interval: "daily"
@@ -479,6 +541,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/navigation/returning_data"
     schedule:
       interval: "daily"
@@ -486,6 +549,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/networking/authenticated_requests"
     schedule:
       interval: "daily"
@@ -493,6 +557,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/networking/background_parsing"
     schedule:
       interval: "daily"
@@ -500,6 +565,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/networking/delete_data"
     schedule:
       interval: "daily"
@@ -507,6 +573,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/networking/fetch_data"
     schedule:
       interval: "daily"
@@ -514,6 +581,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/networking/send_data"
     schedule:
       interval: "daily"
@@ -521,6 +589,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/networking/update_data"
     schedule:
       interval: "daily"
@@ -528,6 +597,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/networking/web_sockets"
     schedule:
       interval: "daily"
@@ -535,6 +605,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/persistence/key_value"
     schedule:
       interval: "daily"
@@ -542,6 +613,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/persistence/reading_writing_files"
     schedule:
       interval: "daily"
@@ -549,6 +621,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/persistence/sqlite"
     schedule:
       interval: "daily"
@@ -556,6 +629,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/plugins/picture_using_camera"
     schedule:
       interval: "daily"
@@ -563,6 +637,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/plugins/play_video"
     schedule:
       interval: "daily"
@@ -570,6 +645,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/testing/integration/introduction"
     schedule:
       interval: "daily"
@@ -577,6 +653,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/testing/integration/profiling"
     schedule:
       interval: "daily"
@@ -584,6 +661,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/testing/unit/counter_app"
     schedule:
       interval: "daily"
@@ -591,6 +669,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/testing/unit/mocking"
     schedule:
       interval: "daily"
@@ -598,6 +677,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/testing/widget/finders"
     schedule:
       interval: "daily"
@@ -605,6 +685,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/testing/widget/introduction"
     schedule:
       interval: "daily"
@@ -612,6 +693,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/testing/widget/scrolling"
     schedule:
       interval: "daily"
@@ -619,6 +701,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/cookbook/testing/widget/tap_drag"
     schedule:
       interval: "daily"
@@ -626,6 +709,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/deployment/obfuscate"
     schedule:
       interval: "daily"
@@ -633,6 +717,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/development/data-and-backend/json"
     schedule:
       interval: "daily"
@@ -640,6 +725,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/development/platform_integration"
     schedule:
       interval: "daily"
@@ -647,6 +733,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/development/plugin_api_migration"
     schedule:
       interval: "daily"
@@ -654,6 +741,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/development/tools"
     schedule:
       interval: "daily"
@@ -661,6 +749,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/development/ui/interactive"
     schedule:
       interval: "daily"
@@ -668,6 +757,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/googleapis"
     schedule:
       interval: "daily"
@@ -675,6 +765,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/integration_test"
     schedule:
       interval: "daily"
@@ -682,6 +773,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/integration_test_migration"
     schedule:
       interval: "daily"
@@ -689,6 +781,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/internationalization/add_language"
     schedule:
       interval: "daily"
@@ -696,6 +789,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/internationalization/gen_l10n_example"
     schedule:
       interval: "daily"
@@ -703,6 +797,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/internationalization/intl_example"
     schedule:
       interval: "daily"
@@ -710,6 +805,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/internationalization/minimal"
     schedule:
       interval: "daily"
@@ -717,6 +813,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/layout/base"
     schedule:
       interval: "daily"
@@ -724,6 +821,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/layout/card_and_stack"
     schedule:
       interval: "daily"
@@ -731,6 +829,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/layout/constraints"
     schedule:
       interval: "daily"
@@ -738,6 +837,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/layout/container"
     schedule:
       interval: "daily"
@@ -745,6 +845,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/layout/grid_and_list"
     schedule:
       interval: "daily"
@@ -752,6 +853,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/layout/lakes/interactive"
     schedule:
       interval: "daily"
@@ -759,6 +861,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/layout/lakes/step2"
     schedule:
       interval: "daily"
@@ -766,6 +869,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/layout/lakes/step3"
     schedule:
       interval: "daily"
@@ -773,6 +877,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/layout/lakes/step4"
     schedule:
       interval: "daily"
@@ -780,6 +885,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/layout/lakes/step5"
     schedule:
       interval: "daily"
@@ -787,6 +893,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/layout/lakes/step6"
     schedule:
       interval: "daily"
@@ -794,6 +901,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/layout/non_material"
     schedule:
       interval: "daily"
@@ -801,6 +909,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/layout/pavlova"
     schedule:
       interval: "daily"
@@ -808,6 +917,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/layout/row_column"
     schedule:
       interval: "daily"
@@ -815,6 +925,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/layout/sizing"
     schedule:
       interval: "daily"
@@ -822,6 +933,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/resources/architectural_overview"
     schedule:
       interval: "daily"
@@ -829,6 +941,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/state_mgmt/simple"
     schedule:
       interval: "daily"
@@ -836,6 +949,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/testing/code_debugging"
     schedule:
       interval: "daily"
@@ -843,6 +957,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/testing/common_errors"
     schedule:
       interval: "daily"
@@ -850,6 +965,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/testing/debugging"
     schedule:
       interval: "daily"
@@ -857,6 +973,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/testing/errors"
     schedule:
       interval: "daily"
@@ -864,6 +981,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/testing/integration_tests/how_to"
     schedule:
       interval: "daily"
@@ -871,6 +989,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/ui/advanced/actions_and_shortcuts"
     schedule:
       interval: "daily"
@@ -878,6 +997,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/ui/advanced/focus"
     schedule:
       interval: "daily"
@@ -885,6 +1005,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/ui/assets_and_images"
     schedule:
       interval: "daily"
@@ -892,6 +1013,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/ui/layout/adaptive_app_demos"
     schedule:
       interval: "daily"
@@ -899,6 +1021,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/ui/widgets_intro"
     schedule:
       interval: "daily"
@@ -906,6 +1029,7 @@ updates:
       - "auto.code-examples"
       - "lang.dart"
   - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/visual_debugging"
     schedule:
       interval: "daily"
