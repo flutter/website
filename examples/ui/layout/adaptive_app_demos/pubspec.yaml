@@ -19,7 +19,7 @@ dependencies:
 
 dev_dependencies:
   example_utils:
-    path: ../../example_utils
+    path: ../../../example_utils
   flutter_test:
     sdk: flutter
     

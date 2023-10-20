@@ -4,7 +4,6 @@
 
 include: package:example_utils/analysis.yaml
 
-
 linter:
   rules:
     avoid_print: false

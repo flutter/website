@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class ShortcutsExample extends StatelessWidget {
-// #docregion ShortcutsExample
+  const ShortcutsExample({super.key});
+
+  // #docregion ShortcutsExample
   @override
   Widget build(BuildContext context) {
     return Shortcuts(
       shortcuts: <LogicalKeySet, Intent>{
         LogicalKeySet(LogicalKeyboardKey.control, LogicalKeyboardKey.keyA):
-            SelectAllIntent(),
+            const SelectAllIntent(),
       },
       child: Actions(
         dispatcher: LoggingActionDispatcher(),
@@ -17,17 +19,17 @@ class ShortcutsExample extends StatelessWidget {
         },
         child: Builder(
           builder: (context) => TextButton(
-            child: const Text('SELECT ALL'),
             onPressed: Actions.handler<SelectAllIntent>(
               context,
-              SelectAllIntent(),
+              const SelectAllIntent(),
             ),
+            child: const Text('SELECT ALL'),
           ),
         ),
       ),
     );
   }
-// #enddocregion ShortcutsExample
+  // #enddocregion ShortcutsExample
 }
 
 // #docregion LoggingShortcutManager
@@ -73,7 +75,7 @@ void callbackActionSample() {
 }
 
 class SelectAllExample extends StatelessWidget {
-  SelectAllExample({required this.child});
+  const SelectAllExample({super.key, required this.child});
 
   final Widget child;
 
@@ -100,7 +102,8 @@ void findAndInvokeExample() {
 // #docregion InvokeActionExample
   Object? result;
   if (selectAll != null) {
-    result = Actions.of(context).invokeAction(selectAll, SelectAllIntent());
+    result =
+        Actions.of(context).invokeAction(selectAll, const SelectAllIntent());
   }
 // #enddocregion InvokeActionExample
   print('$result');
@@ -109,17 +112,17 @@ void findAndInvokeExample() {
 void maybeInvokeExample() {
 // #docregion MaybeInvokeExample
   Object? result =
-      Actions.maybeInvoke<SelectAllIntent>(context, SelectAllIntent());
+      Actions.maybeInvoke<SelectAllIntent>(context, const SelectAllIntent());
 // #enddocregion MaybeInvokeExample
   print('$result');
 }
 
 class HandlerExample extends StatelessWidget {
-  HandlerExample(this.controller);
+  const HandlerExample(this.controller, {super.key});
 
   final TextEditingController controller;
 
-// #docregion HandlerExample
+  // #docregion HandlerExample
   @override
   Widget build(BuildContext context) {
     return Actions(
@@ -128,16 +131,16 @@ class HandlerExample extends StatelessWidget {
       },
       child: Builder(
         builder: (context) => TextButton(
-          child: const Text('SELECT ALL'),
           onPressed: Actions.handler<SelectAllIntent>(
             context,
             SelectAllIntent(controller: controller),
           ),
+          child: const Text('SELECT ALL'),
         ),
       ),
     );
   }
-// #enddocregion HandlerExample
+  // #enddocregion HandlerExample
 }
 
 // #docregion LoggingActionDispatcher
@@ -157,7 +160,9 @@ class LoggingActionDispatcher extends ActionDispatcher {
 // #enddocregion LoggingActionDispatcher
 
 class LoggingActionDispatcherExample extends StatelessWidget {
-// #docregion LoggingActionDispatcherExample
+  const LoggingActionDispatcherExample({super.key});
+
+  // #docregion LoggingActionDispatcherExample
   @override
   Widget build(BuildContext context) {
     return Actions(
@@ -167,24 +172,24 @@ class LoggingActionDispatcherExample extends StatelessWidget {
       },
       child: Builder(
         builder: (context) => TextButton(
-          child: const Text('SELECT ALL'),
           onPressed: Actions.handler<SelectAllIntent>(
             context,
-            SelectAllIntent(),
+            const SelectAllIntent(),
           ),
+          child: const Text('SELECT ALL'),
         ),
       ),
     );
   }
-// #enddocregion LoggingActionDispatcherExample
+  // #enddocregion LoggingActionDispatcherExample
 }
-
 
 class CallbackShortcutsExample extends StatefulWidget {
   const CallbackShortcutsExample({super.key});
 
   @override
-  State<CallbackShortcutsExample> createState() => _CallbackShortcutsExampleState();
+  State<CallbackShortcutsExample> createState() =>
+      _CallbackShortcutsExampleState();
 }
 
 class _CallbackShortcutsExampleState extends State<CallbackShortcutsExample> {

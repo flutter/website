@@ -11,13 +11,13 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.5
+  flutter_test:
+    sdk: flutter
 
 dev_dependencies:
   example_utils:
     path: ../../example_utils
   integration_test:
-    sdk: flutter
-  flutter_test:
     sdk: flutter
 
 

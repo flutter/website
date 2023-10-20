@@ -40,13 +40,13 @@ class MyPage extends StatelessWidget {
 class AnotherPage extends StatelessWidget {
   const AnotherPage({super.key});
 
-  goToPage(BuildContext context) {
+  void goToPage(BuildContext context) {
     // #docregion PushNamed
     Navigator.of(context).pushNamed('/b');
     // #enddocregion PushNamed
   }
 
-  goToAnotherPage(BuildContext context) async {
+  Future<void> goToAnotherPage(BuildContext context) async {
     // #docregion await
     Object? coordinates = await Navigator.of(context).pushNamed('/location');
     // #enddocregion await
@@ -56,7 +56,7 @@ class AnotherPage extends StatelessWidget {
     }
   }
 
-  popLocation(BuildContext context) {
+  void popLocation(BuildContext context) {
     // #docregion PopLocation
     Navigator.of(context).pop({'lat': 43.821757, 'long': -79.226392});
     // #enddocregion PopLocation

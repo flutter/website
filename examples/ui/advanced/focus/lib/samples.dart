@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class AbsorbKeysExample extends StatelessWidget {
-  AbsorbKeysExample({required this.child});
+  const AbsorbKeysExample({super.key, required this.child});
+
   final Widget child;
 
-// #docregion AbsorbKeysExample
+  // #docregion AbsorbKeysExample
   @override
   Widget build(BuildContext context) {
     return Focus(
@@ -14,11 +15,13 @@ class AbsorbKeysExample extends StatelessWidget {
       child: child,
     );
   }
-// #enddocregion AbsorbKeysExample
+  // #enddocregion AbsorbKeysExample
 }
 
 class NoAExample extends StatelessWidget {
-// #docregion NoAExample
+  const NoAExample({super.key});
+
+  // #docregion NoAExample
   @override
   Widget build(BuildContext context) {
     return Focus(
@@ -27,14 +30,16 @@ class NoAExample extends StatelessWidget {
             ? KeyEventResult.handled
             : KeyEventResult.ignored;
       },
-      child: TextField(),
+      child: const TextField(),
     );
   }
-// #enddocregion NoAExample
+  // #enddocregion NoAExample
 }
 
 class BuilderExample extends StatelessWidget {
-// #docregion BuilderExample
+  const BuilderExample({super.key});
+
+  // #docregion BuilderExample
   @override
   Widget build(BuildContext context) {
     return Focus(
@@ -47,7 +52,7 @@ class BuilderExample extends StatelessWidget {
       ),
     );
   }
-// #enddocregion BuilderExample
+  // #enddocregion BuilderExample
 }
 
 // #docregion OrderedButtonRowExample
@@ -62,7 +67,7 @@ class OrderedButtonRow extends StatelessWidget {
         children: <Widget>[
           const Spacer(),
           FocusTraversalOrder(
-            order: NumericFocusOrder(2),
+            order: const NumericFocusOrder(2),
             child: TextButton(
               child: const Text('ONE'),
               onPressed: () {},
@@ -70,7 +75,7 @@ class OrderedButtonRow extends StatelessWidget {
           ),
           const Spacer(),
           FocusTraversalOrder(
-            order: NumericFocusOrder(1),
+            order: const NumericFocusOrder(1),
             child: TextButton(
               child: const Text('TWO'),
               onPressed: () {},
@@ -78,7 +83,7 @@ class OrderedButtonRow extends StatelessWidget {
           ),
           const Spacer(),
           FocusTraversalOrder(
-            order: NumericFocusOrder(3),
+            order: const NumericFocusOrder(3),
             child: TextButton(
               child: const Text('THREE'),
               onPressed: () {},
