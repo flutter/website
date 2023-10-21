@@ -319,8 +319,10 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child:
-            Text('Welcome!', style: Theme.of(context).textTheme.displayMedium,),
+        child: Text(
+          'Welcome!',
+          style: Theme.of(context).textTheme.displayMedium,
+        ),
       ),
     );
   }
@@ -481,14 +483,12 @@ screen only when the form is completely filled in:
 ```dart
 TextButton(
   style: ButtonStyle(
-    foregroundColor: MaterialStateProperty.resolveWith(
-        (Set<MaterialState> states) {
+    foregroundColor: MaterialStateProperty.resolveWith((states) {
       return states.contains(MaterialState.disabled)
           ? null
           : Colors.white;
     }),
-    backgroundColor: MaterialStateProperty.resolveWith(
-        (Set<MaterialState> states) {
+    backgroundColor: MaterialStateProperty.resolveWith((states) {
       return states.contains(MaterialState.disabled)
           ? null
           : Colors.blue;
@@ -863,8 +863,10 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child:
-            Text('Welcome!', style: Theme.of(context).textTheme.displayMedium,),
+        child: Text(
+          'Welcome!',
+          style: Theme.of(context).textTheme.displayMedium,
+        ),
       ),
     );
   }

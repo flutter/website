@@ -79,8 +79,7 @@ use the following instructions:
 
      return PlatformViewLink(
        viewType: viewType,
-       surfaceFactory:
-           (context, controller) {
+       surfaceFactory: (context, controller) {
          return AndroidViewSurface(
            controller: controller as AndroidViewController,
            gestureRecognizers: const <Factory<OneSequenceGestureRecognizer>>{},
