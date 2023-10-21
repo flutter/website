@@ -7,7 +7,7 @@ class AdaptiveDataTablePage extends StatelessWidget {
   AdaptiveDataTablePage({super.key});
 
   final List<int> items = List.generate(100, (index) => index);
-  
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(

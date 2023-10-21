@@ -22,8 +22,7 @@ void main() {
   // #enddocregion Test1
 
   // #docregion Test2
-  testWidgets('tap on the first item (Alder), verify selected',
-      (tester) async {
+  testWidgets('tap on the first item (Alder), verify selected', (tester) async {
     await tester.pumpWidget(const PlantsApp());
 
     // wait for data to load

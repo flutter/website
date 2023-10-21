@@ -46,7 +46,7 @@ class RadialExpansion extends StatelessWidget {
     super.key,
     required this.maxRadius,
     this.child,
-  })  : clipRectSize = 2.0 * (maxRadius / math.sqrt2);
+  }) : clipRectSize = 2.0 * (maxRadius / math.sqrt2);
 
   final double maxRadius;
   final double clipRectSize;
@@ -135,9 +135,7 @@ class RadialExpansionDemo extends StatelessWidget {
             onTap: () {
               Navigator.of(context).push(
                 PageRouteBuilder<void>(
-                  pageBuilder: (context,
-                      animation,
-                      secondaryAnimation) {
+                  pageBuilder: (context, animation, secondaryAnimation) {
                     return AnimatedBuilder(
                         animation: animation,
                         builder: (context, child) {
