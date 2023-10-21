@@ -45,7 +45,7 @@ class DemoLocalizations {
     },
   };
 
-  static List<String> languages ()=> _localizedValues.keys.toList();
+  static List<String> languages() => _localizedValues.keys.toList();
 
   String get title {
     return _localizedValues[locale.languageCode]!['title']!;
@@ -59,8 +59,8 @@ class DemoLocalizationsDelegate
   const DemoLocalizationsDelegate();
 
   @override
-  bool isSupported(Locale locale) => DemoLocalizations.languages().contains(locale.languageCode);
-
+  bool isSupported(Locale locale) =>
+      DemoLocalizations.languages().contains(locale.languageCode);
 
   @override
   Future<DemoLocalizations> load(Locale locale) {
@@ -96,8 +96,7 @@ class Demo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      onGenerateTitle: (context) =>
-          DemoLocalizations.of(context).title,
+      onGenerateTitle: (context) => DemoLocalizations.of(context).title,
       localizationsDelegates: const [
         DemoLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,

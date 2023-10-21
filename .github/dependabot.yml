@@ -758,6 +758,14 @@ updates:
       - "lang.dart"
   - package-ecosystem: "pub"
     versioning-strategy: "increase-if-necessary"
+    directory: "/examples/example_utils"
+    schedule:
+      interval: "daily"
+    labels:
+      - "auto.code-examples"
+      - "lang.dart"
+  - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/googleapis"
     schedule:
       interval: "daily"

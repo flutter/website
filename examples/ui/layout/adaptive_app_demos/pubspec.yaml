@@ -18,8 +18,11 @@ dependencies:
   platform: ^3.1.0
 
 dev_dependencies:
+  example_utils:
+    path: ../../../example_utils
   flutter_test:
     sdk: flutter
+    
 
 flutter:
   uses-material-design: true

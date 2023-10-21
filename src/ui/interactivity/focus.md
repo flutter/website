@@ -192,9 +192,9 @@ class MyApp extends StatelessWidget {
       title: _title,
       home: Scaffold(
         appBar: AppBar(title: const Text(_title)),
-        body: Column(
+        body: const Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[MyCustomWidget(), MyCustomWidget()],
+          children: <Widget>[MyCustomWidget(), MyCustomWidget()],
         ),
       ),
     );
@@ -282,7 +282,7 @@ Widget build(BuildContext context) {
           ? KeyEventResult.handled
           : KeyEventResult.ignored;
     },
-    child: TextField(),
+    child: const TextField(),
   );
 }
 ```
@@ -474,7 +474,7 @@ class OrderedButtonRow extends StatelessWidget {
         children: <Widget>[
           const Spacer(),
           FocusTraversalOrder(
-            order: NumericFocusOrder(2),
+            order: const NumericFocusOrder(2),
             child: TextButton(
               child: const Text('ONE'),
               onPressed: () {},
@@ -482,7 +482,7 @@ class OrderedButtonRow extends StatelessWidget {
           ),
           const Spacer(),
           FocusTraversalOrder(
-            order: NumericFocusOrder(1),
+            order: const NumericFocusOrder(1),
             child: TextButton(
               child: const Text('TWO'),
               onPressed: () {},
@@ -490,7 +490,7 @@ class OrderedButtonRow extends StatelessWidget {
           ),
           const Spacer(),
           FocusTraversalOrder(
-            order: NumericFocusOrder(3),
+            order: const NumericFocusOrder(3),
             child: TextButton(
               child: const Text('THREE'),
               onPressed: () {},

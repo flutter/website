@@ -19,11 +19,9 @@ class Photo {
   final int id;
 
   @override
-  bool operator ==(dynamic other) {
-    if (runtimeType != other.runtimeType) return false;
-    final Photo typedOther = other;
-    return id == typedOther.id;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Photo && runtimeType == other.runtimeType && id == other.id;
 
   @override
   int get hashCode => id.hashCode;

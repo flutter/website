@@ -11,8 +11,8 @@ const jsonString = '''
 
 void exampleJson() {
   // #docregion fromJson
-  Map<String, dynamic> userMap = jsonDecode(jsonString);
-  var user = User.fromJson(userMap);
+  final userMap = jsonDecode(jsonString) as Map<String, dynamic>;
+  final user = User.fromJson(userMap);
   // #enddocregion fromJson
 
   print('Howdy, ${user.name}!');
