@@ -10,7 +10,7 @@ there are four major motivations:
 No matter the game you build, some players want to *achieve* in it. This
 could be trophies won or secrets unlocked. Some players want to
 *compete* in it. This could be hitting high scores or accomplishing
-speedruns. These two map to the concepts of *achievements* and
+speedruns. These two ideas map to the concepts of *achievements* and
 *leaderboards*.
 
 ![A simple graphic representing the four types of motivation explained above](/assets/images/docs/cookbook/types-of-gamer-motivations.png)
