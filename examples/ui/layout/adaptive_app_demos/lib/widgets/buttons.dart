@@ -3,19 +3,25 @@ import 'package:flutter/material.dart';
 import '../global/device_type.dart';
 
 class StyledTextButton extends StatelessWidget {
-  const StyledTextButton(
-      {super.key, required this.onPressed, required this.child});
+  const StyledTextButton({
+    super.key,
+    required this.onPressed,
+    required this.child,
+  });
+
   final VoidCallback onPressed;
   final Widget child;
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
-        style: ButtonStyle(
-            padding: MaterialStateProperty.all(EdgeInsets.all(Insets.small)),
-            textStyle: MaterialStateProperty.all(TextStyles.buttonText2)),
-        onPressed: onPressed,
-        child: child);
+      style: ButtonStyle(
+        padding: MaterialStateProperty.all(const EdgeInsets.all(Insets.small)),
+        textStyle: MaterialStateProperty.all(TextStyles.buttonText2),
+      ),
+      onPressed: onPressed,
+      child: child,
+    );
   }
 }
 
@@ -29,7 +35,7 @@ class SecondaryMenuButton extends StatelessWidget {
       onPressed: () {},
       child: Container(
         width: double.infinity,
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Text(label),
       ),
     );
@@ -54,7 +60,7 @@ class SelectedPageButton extends StatelessWidget {
         onPressed: onPressed,
         child: Container(
           width: double.infinity,
-          padding: EdgeInsets.all(Insets.large),
+          padding: const EdgeInsets.all(Insets.large),
           child: Text(label, style: TextStyles.buttonText1, maxLines: 1),
         ),
       ),

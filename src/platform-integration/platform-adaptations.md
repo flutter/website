@@ -362,7 +362,7 @@ the content of text fields to match the current platform.
 ### Keyboard gesture navigation
 
 On **Android**,
-horizontal swipes can be made on the soft keyboard's spacebar
+horizontal swipes can be made on the soft keyboard's <kbd>space</kbd> key
 to move the cursor in Material and Cupertino text fields.
 
 On **iOS** devices with 3D Touch capabilities,

@@ -23,7 +23,7 @@ that portion of your code with a native debugger.
 
 - To debug iOS or macOS code written in Swift or Objective-C,
   you can use Xcode.
-- To debug Android code written in Java or Kotlin, you can use Gradle.
+- To debug Android code written in Java or Kotlin, you can use Android Studio.
 - To debug Windows code written in C++, you can use Visual Studio.
 
 This guide shows you how you can connect _two_
@@ -96,7 +96,7 @@ debugging your own Flutter project as well.
       _counter++;
       ```
 
-   b. Type <kbd>Shift</kbd> + <kbd>F9</kbd>.
+   b. Press <kbd>Shift</kbd> + <kbd>F9</kbd>.
       This adds a breakpoint where the
       `_counter` variable increments.
 
@@ -172,13 +172,13 @@ You can step in, out, and over Dart statements, hot reload, or resume the app.
 | Icon                                                      | Action                | Default Keyboard Shortcut                             |
 |-----------------------------------------------------------|-----------------------|-------------------------------------------------------|
 | {% include_relative vscode-flutter-bar/_play.md %}        | Start or Resume       | <kbd>F5</kbd>                                         |
-| {% include_relative vscode-flutter-bar/_pause.md %}       | Pause                 | <kbd>F5</kbd>                                         |
+| {% include_relative vscode-flutter-bar/_pause.md %}       | Pause                 | <kbd>F6</kbd>                                         |
 | {% include_relative vscode-flutter-bar/_step-over.md %}   | Step Over             | <kbd>F10</kbd>                                        |
 | {% include_relative vscode-flutter-bar/_step-into.md %}   | Step Into             | <kbd>F11</kbd>                                        |
 | {% include_relative vscode-flutter-bar/_step-out.md %}    | Step Out              | <kbd>Shift</kbd> + <kbd>F11</kbd>                     |
-| {% include_relative vscode-flutter-bar/_hot-reload.md %}  | Hot Reload            | <kbd>Control</kbd> + <kbd>F5</kbd>                    |
+| {% include_relative vscode-flutter-bar/_hot-reload.md %}  | Hot Reload            | <kbd>Ctrl</kbd> + <kbd>F5</kbd>                       |
 | {% include_relative vscode-flutter-bar/_hot-restart.md %} | Hot Restart           | <kbd>Shift</kbd> + <kbd>Special</kbd> + <kbd>F5</kbd> |
-| {% include_relative vscode-flutter-bar/_stop.md %}        | Stop                  | <kbd>F5</kbd>                                         |
+| {% include_relative vscode-flutter-bar/_stop.md %}        | Stop                  | <kbd>Shilft</kbd> + <kbd>F5</kbd>                     |
 | {% include_relative vscode-flutter-bar/_inspector.md %}   | Open Widget Inspector |                                                       |
 {:.table.table-striped}
 </div>

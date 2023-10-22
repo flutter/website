@@ -57,7 +57,8 @@ in Flutter, see the following resources:
 
 ## API docs
 
-Here some links to relevant API docs:
+To learn more about the available sliver APIs,
+check out these related API docs:
 
 * [`CustomScrollView`][]
 * [`SliverAppBar`][]
@@ -65,7 +66,7 @@ Here some links to relevant API docs:
 * [`SliverList`][]
 
 
-[`CustomScrollView`]: {{site.api}}/flutter/widgets/CustomScrollView-class.html`
+[`CustomScrollView`]: {{site.api}}/flutter/widgets/CustomScrollView-class.html
 [sliver-app-bar-video]: {{site.youtube-site}}/watch?v=R9C5KMJKluE
 [`SliverAppBar`]: {{site.api}}/flutter/material/SliverAppBar-class.html
 [`SliverGrid`]: {{site.api}}/flutter/widgets/SliverGrid-class.html

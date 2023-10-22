@@ -248,9 +248,9 @@ Future<List<Dog>> dogs() async {
   // Convert the List<Map<String, dynamic> into a List<Dog>.
   return List.generate(maps.length, (i) {
     return Dog(
-      id: maps[i]['id'],
-      name: maps[i]['name'],
-      age: maps[i]['age'],
+      id: maps[i]['id'] as int,
+      name: maps[i]['name'] as String,
+      age: maps[i]['age'] as int,
     );
   });
 }
@@ -407,9 +407,9 @@ void main() async {
     // Convert the List<Map<String, dynamic> into a List<Dog>.
     return List.generate(maps.length, (i) {
       return Dog(
-        id: maps[i]['id'],
-        name: maps[i]['name'],
-        age: maps[i]['age'],
+        id: maps[i]['id'] as int,
+        name: maps[i]['name'] as String,
+        age: maps[i]['age'] as int,
       );
     });
   }

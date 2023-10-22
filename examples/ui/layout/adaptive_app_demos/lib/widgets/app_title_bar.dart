@@ -6,6 +6,8 @@ import '../app_model.dart';
 import '../global/device_type.dart';
 
 class AppTitleBar extends StatelessWidget {
+  const AppTitleBar({super.key});
+
   @override
   Widget build(BuildContext context) {
     bool isLinuxOrWindows = DeviceType.isWindows || DeviceType.isLinux;
@@ -23,8 +25,10 @@ class AppTitleBar extends StatelessWidget {
           if (hideTitle == false)
             Positioned.fill(
               child: Center(
-                child: Text('Adaptive Scaffold',
-                    style: style.copyWith(color: Colors.white)),
+                child: Text(
+                  'Adaptive Scaffold',
+                  style: style.copyWith(color: Colors.white),
+                ),
               ),
             ),
 
@@ -37,9 +41,10 @@ class AppTitleBar extends StatelessWidget {
                 DeviceType.isMacOS ? TextDirection.rtl : TextDirection.ltr,
             children: [
               IconButton(
-                  onPressed: () => context.read<AppModel>().toggleTouchMode(),
-                  icon: Icon(enableTouch ? Icons.mouse : Icons.fingerprint)),
-              Spacer(),
+                onPressed: () => context.read<AppModel>().toggleTouchMode(),
+                icon: Icon(enableTouch ? Icons.mouse : Icons.fingerprint),
+              ),
+              const Spacer(),
             ],
           ),
 
@@ -47,7 +52,7 @@ class AppTitleBar extends StatelessWidget {
           if (isLinuxOrWindows) ...[
             Row(
               children: [
-                Spacer(),
+                const Spacer(),
                 MinimizeWindowButton(colors: buttonColors),
                 MaximizeWindowButton(colors: buttonColors),
                 CloseWindowButton(colors: closeButtonColors),

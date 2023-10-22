@@ -228,7 +228,7 @@ main();
 
 <?code-excerpt "lib/futures.dart"?>
 ```dart
-/// Dart
+// Dart
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
@@ -237,7 +237,7 @@ class Example {
   Future<String> _getIPAddress() {
     final url = Uri.https('httpbin.org', '/ip');
     return http.get(url).then((response) {
-      String ip = jsonDecode(response.body)['origin'];
+      final ip = jsonDecode(response.body)['origin'] as String;
       return ip;
     });
   }
@@ -302,7 +302,7 @@ class Example {
   Future<String> _getIPAddress() async {
     final url = Uri.https('httpbin.org', '/ip');
     final response = await http.get(url);
-    String ip = jsonDecode(response.body)['origin'];
+    final ip = jsonDecode(response.body)['origin'] as String;
     return ip;
   }
 }
@@ -432,7 +432,7 @@ the `Text` widget.
 
 <?code-excerpt "lib/hello_world.dart"?>
 ```dart
-/// Flutter
+// Flutter
 import 'package:flutter/material.dart';
 
 void main() {
@@ -480,7 +480,7 @@ Material library. In this example, the widget tree is nested inside the
 
 <?code-excerpt "lib/widget_tree.dart"?>
 ```dart
-/// Flutter
+// Flutter
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -576,15 +576,16 @@ class CustomCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-        child: Column(
-      children: <Widget>[
-        Text('Card $index'),
-        TextButton(
-          onPressed: onPress,
-          child: const Text('Press'),
-        ),
-      ],
-    ));
+      child: Column(
+        children: <Widget>[
+          Text('Card $index'),
+          TextButton(
+            onPressed: onPress,
+            child: const Text('Press'),
+          ),
+        ],
+      ),
+    );
   }
 }
 
@@ -1514,15 +1515,16 @@ class CustomCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-        child: Column(
-      children: <Widget>[
-        Text('Card $index'),
-        TextButton(
-          onPressed: onPress,
-          child: const Text('Press'),
-        ),
-      ],
-    ));
+      child: Column(
+        children: <Widget>[
+          Text('Card $index'),
+          TextButton(
+            onPressed: onPress,
+            child: const Text('Press'),
+          ),
+        ],
+      ),
+    );
   }
 }
 
@@ -2074,7 +2076,7 @@ Future<void> getIPAddress() async {
   final request = await httpClient.getUrl(url);
   final response = await request.close();
   final responseBody = await response.transform(utf8.decoder).join();
-  final String ip = jsonDecode(responseBody)['origin'];
+  final ip = jsonDecode(responseBody)['origin'] as String;
   setState(() {
     _ipAddress = ip;
   });

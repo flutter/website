@@ -95,7 +95,7 @@ items in the list can change depending on the device.
 
 Rather than assuming that you know the height of all the items
 in a list, or that a particular widget is rendered on all devices,
-the `scrollUntilVisible()` method trepeatedly scrolls through
+the `scrollUntilVisible()` method repeatedly scrolls through
 a list of items until it finds what it's looking for.
 
 The following code shows how to use the `scrollUntilVisible()` method
@@ -118,7 +118,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:scrolling/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (tester) async {
+  testWidgets('finds a deep item in a long list', (tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(MyApp(
       items: List<String>.generate(10000, (i) => 'Item $i'),

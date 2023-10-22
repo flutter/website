@@ -48,7 +48,7 @@ class RadialExpansion extends StatelessWidget {
     required this.minRadius,
     required this.maxRadius,
     this.child,
-  })  : clipTween = Tween<double>(
+  }) : clipTween = Tween<double>(
           begin: 2.0 * minRadius,
           end: 2.0 * (maxRadius / math.sqrt2),
         );
@@ -149,9 +149,7 @@ class RadialExpansionDemo extends StatelessWidget {
             onTap: () {
               Navigator.of(context).push(
                 PageRouteBuilder<void>(
-                  pageBuilder: (context,
-                      animation,
-                      secondaryAnimation) {
+                  pageBuilder: (context, animation, secondaryAnimation) {
                     return AnimatedBuilder(
                       animation: animation,
                       builder: (context, child) {

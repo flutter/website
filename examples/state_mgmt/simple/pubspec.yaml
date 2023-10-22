@@ -15,10 +15,10 @@ dependencies:
   provider: ^6.0.5
 
 dev_dependencies:
+  example_utils:
+    path: ../../example_utils
   flutter_test:
     sdk: flutter
-
-  flutter_lints: ^2.0.2
   test: ^1.24.1
 
 flutter:

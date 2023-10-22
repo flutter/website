@@ -14,7 +14,7 @@ Future<Album> fetchAlbum() async {
     },
   );
   // #enddocregion get
-  final responseJson = jsonDecode(response.body);
+  final responseJson = jsonDecode(response.body) as Map<String, dynamic>;
 
   return Album.fromJson(responseJson);
 }
@@ -32,9 +32,9 @@ class Album {
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(
-      userId: json['userId'],
-      id: json['id'],
-      title: json['title'],
+      userId: json['userId'] as int,
+      id: json['id'] as int,
+      title: json['title'] as String,
     );
   }
 }

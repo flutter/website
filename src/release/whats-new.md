@@ -206,7 +206,7 @@ You might also check out [Introducing Dart 3][].
 [iOS]: {{site.url}}/platform-integration/ios/restore-state-ios
 [sharing iOS and macOS plugin implementations]: {{site.url}}/packages-and-plugins/developing-packages#shared-ios-and-macos-implementations
 [alert dialog]: {{site.url}}/platform-integration/platform-adaptations#alert-dialog
-[top app bar and navigation bar]: {{site.url}}/platform-integration/platform-adaptations#top-aoo-bar-and-navigation-bar
+[top app bar and navigation bar]: {{site.url}}/platform-integration/platform-adaptations#top-app-bar-and-navigation-bar
 [bottom navigation bar]: {{site.url}}/platform-integration/platform-adaptations#bottom-navigation-bars
 [some widgets]: {{site.url}}/platform-integration/platform-adaptations#ui-components
 [Anatomy of an app]: {{site.url}}/resources/architectural-overview#anatomy-of-an-app
@@ -339,7 +339,7 @@ and [Introducing Dart 3 alpha][].
 [Flutter FAQ]: {{site.url}}/resources/faq
 [Flutter for SwiftUI developers]: {{site.url}}/get-started/flutter-for/swiftui-devs
 [Impeller]: {{site.github}}/flutter/flutter/wiki/Impeller
-[Internationalizing Flutter apps]: {{site.url}}/ui/accessibility-and-localization/internationalization
+[Internationalizing Flutter apps]: {{site.url}}/ui/accessibility-and-internationalization/internationalization
 [Introducing isolate background channels]: {{site.medium}}/flutter/introducing-background-isolate-channels-7a299609cad8
 [Learning Dart as a Swift developer]: {{site.dart-site}}/guides/language/coming-from/swift-to-dart
 [Security false positives]: {{site.url}}/reference/security-false-positives
@@ -815,7 +815,7 @@ publication since the last stable release:
 [Flutter inspector]: {{site.url}}/tools/devtools/inspector
 [Flutter web support hits the stable milestone]: {{site.flutter-medium}}/flutter-web-support-hits-the-stable-milestone-d6b84e83b425
 [implement deep linking]: {{site.url}}/ui/navigation/deep-linking
-[internationalization]: {{site.url}}/ui/accessibility-and-localization/internationalization
+[internationalization]: {{site.url}}/ui/accessibility-and-internationalization/internationalization
 [Join us for #30DaysOfFlutter]: {{site.flutter-medium}}/join-us-for-30daysofflutter-9993e3ec847b
 [More thoughts about performance]: {{site.url}}/perf/appendix
 [New ad formats for Flutter]: {{site.flutter-medium}}/new-ads-beta-inline-banner-and-native-support-for-the-flutter-mobile-ads-plugin-e48a7e9a0e64

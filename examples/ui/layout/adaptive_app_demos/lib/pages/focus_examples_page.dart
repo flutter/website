@@ -5,28 +5,30 @@ import 'package:flutter/services.dart';
 import '../global/device_type.dart';
 
 class FocusExamplesPage extends StatelessWidget {
+  const FocusExamplesPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(Insets.extraLarge),
+      padding: const EdgeInsets.all(Insets.extraLarge),
       child: Center(
         child: SeparatedColumn(
-          separatorBuilder: () => SizedBox(height: 5),
+          separatorBuilder: () => const SizedBox(height: 5),
           mainAxisSize: MainAxisSize.min,
           children: [
             // Basic widget that can accept traversal, built with FocusableActionDetector
-            Text('BasicActionDetector:'),
-            BasicActionDetector(),
-            SizedBox(height: 10),
+            const Text('BasicActionDetector:'),
+            const BasicActionDetector(),
+            const SizedBox(height: 10),
 
             // Clickable widget that can accept traversal, built with FocusableActionDetector
-            Text('AdvancedActionDetector:'),
-            ClickableActionDetector(),
-            SizedBox(height: 10),
+            const Text('AdvancedActionDetector:'),
+            const ClickableActionDetector(),
+            const SizedBox(height: 10),
 
             // A totally custom control, built by stacking together various widgets
-            Text('CustomControl:'),
-            ClickableControl(),
+            const Text('CustomControl:'),
+            const ClickableControl(),
             _TextListener(),
           ],
         ),
@@ -54,8 +56,8 @@ class __TextListenerState extends State<_TextListener> {
         return KeyEventResult.ignored;
       },
       child: ConstrainedBox(
-        constraints: BoxConstraints(maxWidth: 400),
-        child: TextField(
+        constraints: const BoxConstraints(maxWidth: 400),
+        child: const TextField(
           decoration: InputDecoration(
             border: OutlineInputBorder(),
           ),
@@ -67,6 +69,8 @@ class __TextListenerState extends State<_TextListener> {
 // #enddocregion FocusRawKeyboardListener
 
 class BasicActionDetector extends StatefulWidget {
+  const BasicActionDetector({super.key});
+
   @override
   State<BasicActionDetector> createState() => _BasicActionDetectorState();
 }
@@ -87,15 +91,16 @@ class _BasicActionDetectorState extends State<BasicActionDetector> {
       child: Stack(
         clipBehavior: Clip.none,
         children: [
-          FlutterLogo(size: 100),
+          const FlutterLogo(size: 100),
           // Position focus in the negative margin for a cool effect
           if (_hasFocus)
             Positioned(
-                left: -4,
-                top: -4,
-                bottom: -4,
-                right: -4,
-                child: _roundedBorder())
+              left: -4,
+              top: -4,
+              bottom: -4,
+              right: -4,
+              child: _roundedBorder(),
+            )
         ],
       ),
     );
@@ -105,14 +110,16 @@ class _BasicActionDetectorState extends State<BasicActionDetector> {
 
 /// Uses [FocusableActionDetector]
 class ClickableActionDetector extends StatefulWidget {
+  const ClickableActionDetector({super.key});
+
   @override
-  _ClickableActionDetectorState createState() =>
+  State<ClickableActionDetector> createState() =>
       _ClickableActionDetectorState();
 }
 
 class _ClickableActionDetectorState extends State<ClickableActionDetector> {
   bool _hasFocus = false;
-  late FocusNode _focusNode = FocusNode();
+  late final FocusNode _focusNode = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -141,8 +148,10 @@ class _ClickableActionDetectorState extends State<ClickableActionDetector> {
 
 // Example of a custom focus widget from scratch
 class ClickableControl extends StatelessWidget {
+  const ClickableControl({super.key});
+
   @override
-  Widget build(BuildContext _) {
+  Widget build(BuildContext context) {
     return Focus(
       // Process keyboard event
       onKey: _handleKeyDown,
@@ -192,7 +201,7 @@ class Logo extends StatelessWidget {
       clipBehavior: Clip.none,
       children: [
         // Content
-        FlutterLogo(size: 100),
+        const FlutterLogo(size: 100),
         // Focus effect:
         if (showBorder)
           Positioned(
@@ -203,26 +212,17 @@ class Logo extends StatelessWidget {
 }
 
 Widget _roundedBorder() => Container(
-    decoration: BoxDecoration(
+      decoration: BoxDecoration(
         border: Border.all(color: Colors.orange),
-        borderRadius: BorderRadius.circular(6)));
+        borderRadius: BorderRadius.circular(6),
+      ),
+    );
 
 class MyFocusTraversalWidget extends StatelessWidget {
-  Widget MyFormWithMultipleColumnsAndRows() {
-    return Form(
-      child: Container(),
-    );
-  }
-
-  Widget SubmitButton() {
-    return ElevatedButton(
-      onPressed: () => {DoNothingAction /* Submit */},
-      child: Text('Submit'),
-    );
-  }
+  const MyFocusTraversalWidget({super.key});
 
   @override
-  build(BuildContext context) {
+  Widget build(BuildContext context) {
     // #docregion FocusTraversalGroup
     return Column(children: [
       FocusTraversalGroup(
@@ -234,13 +234,38 @@ class MyFocusTraversalWidget extends StatelessWidget {
   }
 }
 
+class MyFormWithMultipleColumnsAndRows extends StatelessWidget {
+  // ignore: prefer_const_constructors_in_immutables
+  MyFormWithMultipleColumnsAndRows({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      child: Container(),
+    );
+  }
+}
+
+class SubmitButton extends StatelessWidget {
+  // ignore: prefer_const_constructors_in_immutables
+  SubmitButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () => {DoNothingAction /* Submit */},
+      child: const Text('Submit'),
+    );
+  }
+}
+
 class MyHoverWidget extends StatefulWidget {
-  MyHoverWidget({super.key, required this.title});
+  const MyHoverWidget({super.key, required this.title});
 
   final String title;
 
   @override
-  _MyHoverWidgetState createState() => _MyHoverWidgetState();
+  State<MyHoverWidget> createState() => _MyHoverWidgetState();
 }
 
 class _MyHoverWidgetState extends State<MyHoverWidget> {
