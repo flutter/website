@@ -6,7 +6,7 @@ description: >
 
 Gamers have various motivations for playing games. In broad strokes,
 there are four major motivations: 
-[immersion, achievement, cooperation and competition](https://meditations.metavert.io/p/game-player-motivations).
+[immersion, achievement, cooperation, and competition](https://meditations.metavert.io/p/game-player-motivations).
 No matter the game you build, some players want to *achieve* in it. This
 could be trophies won or secrets unlocked. Some players want to
 *compete* in it. This could be hitting high scores or accomplishing
