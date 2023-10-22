@@ -33,7 +33,7 @@ Games Services* on Android.
 To enable Game Center (GameKit) on iOS:
 
 1.  Open your Flutter project in Xcode.
-    open `ios/Runner.xcworkspace`
+    Open `ios/Runner.xcworkspace`
 
 2.  Select the root **Runner** project.
 
