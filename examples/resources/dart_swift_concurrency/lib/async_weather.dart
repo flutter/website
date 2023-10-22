@@ -36,8 +36,9 @@ class HomePageViewModel {
 
 // #docregion HomePageWidget
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   final HomePageViewModel viewModel = const HomePageViewModel();
-  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
