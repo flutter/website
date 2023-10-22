@@ -18,7 +18,7 @@ speedruns. These two ideas map to the concepts of *achievements* and
 Ecosystems such as the App Store and Google Play provide centralized
 services for achievements and leaderboards. Players have achievements
 from all the games in one place and developers don't need to
-re-implement the wheel for every game.
+re-implement them for every game.
 
 This recipe demonstrates how to use the `games_services` package to add
 achievements and leaderboard functionality to your mobile game.
