@@ -950,6 +950,14 @@ updates:
       - "lang.dart"
   - package-ecosystem: "pub"
     versioning-strategy: "increase-if-necessary"
+    directory: "/examples/resources/dart_swift_concurrency"
+    schedule:
+      interval: "daily"
+    labels:
+      - "auto.code-examples"
+      - "lang.dart" 
+  - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
     directory: "/examples/state_mgmt/simple"
     schedule:
       interval: "daily"
