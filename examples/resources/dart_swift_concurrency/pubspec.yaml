@@ -1,5 +1,5 @@
-name: state_mgmt
-description: Sample state management code.
+name: dart_swift_concurrency
+description: Examples for the Flutter concurrency for Swift developers article.
 publish_to: none
 
 environment:
@@ -9,14 +9,9 @@ dependencies:
   flutter:
     sdk: flutter
 
-  provider: ^6.0.5
-
 dev_dependencies:
   example_utils:
     path: ../../example_utils
-  flutter_test:
-    sdk: flutter
-  test: ^1.24.1
 
 flutter:
   uses-material-design: true
