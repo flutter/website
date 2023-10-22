@@ -4,7 +4,7 @@ import 'dart:io';
 void main() {
   final firebaseFile = File('firebase.json');
 
-  if (!(firebaseFile.existsSync())) {
+  if (!firebaseFile.existsSync()) {
     _errorAndExit(
       'Error: Cannot find the firebase.json file in the current directory.',
     );
@@ -12,9 +12,10 @@ void main() {
 
   try {
     final firebaseConfigString = firebaseFile.readAsStringSync();
-    final firebaseConfig = jsonDecode(firebaseConfigString);
+    final firebaseConfig =
+        jsonDecode(firebaseConfigString) as Map<String, Object?>;
 
-    final hostingConfig = firebaseConfig['hosting'];
+    final hostingConfig = firebaseConfig['hosting'] as Map<String, Object?>?;
 
     if (hostingConfig == null) {
       _errorAndExit(
@@ -31,7 +32,7 @@ void main() {
       return;
     }
 
-    if (redirects is! List<dynamic>) {
+    if (redirects is! List<Object?>) {
       _errorAndExit(
         "The firebase.json file's 'redirect' entry is not a list.",
       );
@@ -46,24 +47,30 @@ void main() {
     var duplicatesFound = 0;
 
     for (final redirect in redirects) {
+      if (redirect is! Map<String, Object?>) {
+        _errorAndExit(
+          "Each redirect must be a map containing a 'source' or 'regex' field.",
+        );
+      }
+
       final source = redirect['source'] ?? redirect['regex'];
       if (source == null) {
         _errorAndExit(
-          "The firebase.json file has a "
+          'The firebase.json file has a '
           "redirect missing a 'source' or 'regex'.",
         );
       }
 
       if (source is! String) {
         _errorAndExit(
-          "The firebase.json redirect $redirect has a "
+          'The firebase.json redirect $redirect has a '
           "'source' or 'regex' specified which is not a string.",
         );
       }
 
       if (source.isEmpty) {
         _errorAndExit(
-          "The firebase.json redirect $redirect has an "
+          'The firebase.json redirect $redirect has an '
           "empty 'source' or 'regex'.",
         );
       }
@@ -81,21 +88,21 @@ void main() {
 
       if (destination == null) {
         _errorAndExit(
-          "The firebase.json file has a "
+          'The firebase.json file has a '
           "redirect missing a 'destination'.",
         );
       }
 
       if (destination is! String) {
         _errorAndExit(
-          "The firebase.json redirect $redirect has a "
+          'The firebase.json redirect $redirect has a '
           "'destination' specified which is not a string.",
         );
       }
 
       if (destination.isEmpty) {
         _errorAndExit(
-          "The firebase.json redirect $redirect has "
+          'The firebase.json redirect $redirect has '
           "an empty 'destination'.",
         );
       }
@@ -115,7 +122,7 @@ void main() {
   }
 }
 
-void _errorAndExit(String error, [Object? exception]) {
+Never _errorAndExit(String error, [Object? exception]) {
   stderr.write('Error: ');
   stderr.writeln(error);
   if (exception != null) {

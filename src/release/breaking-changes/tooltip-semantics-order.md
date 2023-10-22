@@ -1,14 +1,14 @@
 ---
 title: Accessibility traversal order of tooltip changed 
-description: >
-  the Tooltip widget's message immedately follows the Tooltip widget's child 
-  during accessibility traversal.
+description: >-
+  The Tooltip widget's message now immediately follows the
+  Tooltip widget's child during accessibility traversal.
 ---
 
 ## Summary
 
-During accessibility traversal, `Tooltip.message` is visited immedately after
-`Tooltip.child`.
+During accessibility focus traversal, `Tooltip.message` is visited immediately 
+after `Tooltip.child`.
 
 ## Background
 
@@ -17,17 +17,19 @@ and shows a help message when long pressed.
 When the message is visible, assistive technologies should announce it after
 the button.
 
-The `Tooltip` widget originally put`Tooltip.message` on an `OverlayEntry` when 
-long pressed.
-As a result, the generated semantics tree does not put `Tooltip.message` 
-immediately after `Tooltip.child`.
-
-You may see accessibility test failures when a tooltip message is visible.
-This is because this update moved the tooltip message in the semantics tree.
+The `Tooltip` widget originally put `Tooltip.message` on
+an `OverlayEntry` when long pressed.
+As a result, `Tooltip.message` was not immediately after
+`Tooltip.child` in the semantics tree.
 
 ## Migration guide
 
-Update your failing accessibility tests. For the following widget tree:
+This change moved the tooltip message in the semantics tree.
+You may see accessibility test failures if your tests expect a tooltip message to
+appear in a specific location in the semantics tree, when it is visible.
+Update your failing accessibility tests to adopt the new tooltip semantics order.
+
+For example, if you constructed the following widget tree in your test:
 
 ```dart
 Directionality(
@@ -55,7 +57,8 @@ Directionality(
 );
 ```
 
-Generated semantics tree before migration:
+When the tooltip message is visible, the corresponding semantics tree before this 
+change should look like this:
 
 ```dart
 SemanticsNode#0
@@ -87,8 +90,8 @@ SemanticsNode#0
      textDirection: ltr
 ```
 
-Generated semantics tree after migration, notice how node #6 is moved behind 
-node #3:
+After this change, the same widget tree generates a slightly different semantics
+tree, as shown below. Node #6 becomes a child of node #3, instead of node #0.
 
 ```dart
 SemanticsNode#0
@@ -122,7 +125,7 @@ SemanticsNode#0
 
 ## Timeline
 
-Landed in version: 3.15.0-7.0.pre<br>
+Landed in version: 3.16.0-11.0.pre<br>
 In stable release: not yet
 
 ## References
@@ -135,5 +138,5 @@ Relevant PRs:
 
 * [OverlayPortal.overlayChild contributes semantics to OverlayPortal instead of Overlay][]
 
-[`Tooltip`]: {{site.api}}/flutter/material/Tooltip-class
+[`Tooltip`]: {{site.api}}/flutter/material/Tooltip-class.html
 [OverlayPortal.overlayChild contributes semantics to OverlayPortal instead of Overlay]: {{site.repo.flutter}}/pull/134921
