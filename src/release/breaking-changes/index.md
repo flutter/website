@@ -55,6 +55,7 @@ release, and listed in alphabetical order:
 [Windows: External windows should notify Flutter engine of lifecycle changes]: {{site.url}}/release/breaking-changes/win_lifecycle_process_function
 [Windows build path changed to add the target architecture]: {{site.url}}/release/breaking-changes/windows-build-architecture
 [Deprecated API removed after v3.13]: {{site.url}}/release/breaking-changes/3-13-deprecations
+[Accessibility traversal order of tooltip changed]: {{site.url}}/release/breaking-changes/tooltip-semantics-order
 
 
 ### Released in Flutter 3.13
