@@ -1,12 +1,9 @@
 name: assets_and_images
-description: A new Flutter project.
-
-publish_to: 'none'
-
-version: 1.0.0+1
+description: An example project showing how to declare and load assets.
+publish_to: none
 
 environment:
-  sdk: ^3.1.0-0
+  sdk: ^3.1.0
 
 dependencies:
   flutter:

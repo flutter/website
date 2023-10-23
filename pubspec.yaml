@@ -1,4 +1,5 @@
-name: flutter_io_dev_tools
+name: docs_flutter_dev
+publish_to: none
 
 environment:
   sdk: ^3.1.0

@@ -1,16 +1,13 @@
-name: state_mgmt
-description: Sample state management code.
-
-version: 1.0.0+1
+name: deferred_components
+description: Samples to showcase deferred component imports/loading.
+publish_to: none
 
 environment:
-  sdk: ^3.1.0-0
+  sdk: ^3.1.0
 
 dependencies:
   flutter:
     sdk: flutter
-
-  cupertino_icons: ^1.0.5
 
   provider: ^6.0.5
 
