@@ -15,6 +15,7 @@ import 'package:flutter/scheduler.dart' show timeDilation;
 
 class Photo {
   const Photo(this.asset, this.id);
+
   final String asset;
   final int id;
 
@@ -33,6 +34,7 @@ final List<Photo> allPhotos = List<Photo>.generate(30, (index) {
 
 class PhotoFrame {
   const PhotoFrame(this.width, this.height);
+
   final double width;
   final double height;
 }
@@ -43,10 +45,10 @@ class PhotoFrame {
 // Each photoBlockFrames[i] item defines the layout of one row of photos
 // in terms  of their relative widgets and heights. In a row: widths must
 // sum to 1.0, heights must be the same.
-final List<List<PhotoFrame>> photoBlockFrames = [
-  [const PhotoFrame(1.0, 0.4)],
-  [const PhotoFrame(0.25, 0.3), const PhotoFrame(0.75, 0.3)],
-  [const PhotoFrame(0.75, 0.3), const PhotoFrame(0.25, 0.3)],
+const List<List<PhotoFrame>> photoBlockFrames = [
+  [PhotoFrame(1.0, 0.4)],
+  [PhotoFrame(0.25, 0.3), PhotoFrame(0.75, 0.3)],
+  [PhotoFrame(0.75, 0.3), PhotoFrame(0.25, 0.3)],
 ];
 
 class PhotoCheck extends StatelessWidget {
@@ -87,16 +89,16 @@ class PhotoItem extends StatefulWidget {
 }
 
 class _PhotoItemState extends State<PhotoItem> with TickerProviderStateMixin {
-  late AnimationController _selectController;
-  late Animation<double> _stackScaleAnimation;
-  late Animation<RelativeRect> _imagePositionAnimation;
-  late Animation<double> _checkScaleAnimation;
-  late Animation<double> _checkSelectedOpacityAnimation;
+  late final AnimationController _selectController;
+  late final Animation<double> _stackScaleAnimation;
+  late final Animation<RelativeRect> _imagePositionAnimation;
+  late final Animation<double> _checkScaleAnimation;
+  late final Animation<double> _checkSelectedOpacityAnimation;
 
-  late AnimationController _replaceController;
-  late Animation<Offset> _replaceNewPhotoAnimation;
-  late Animation<Offset> _replaceOldPhotoAnimation;
-  late Animation<double> _removeCheckAnimation;
+  late final AnimationController _replaceController;
+  late final Animation<Offset> _replaceNewPhotoAnimation;
+  late final Animation<Offset> _replaceOldPhotoAnimation;
+  late final Animation<double> _removeCheckAnimation;
 
   late Photo _oldPhoto;
   Photo? _newPhoto; // non-null during a remove animation
@@ -301,14 +303,14 @@ class _ImagesDemoState extends State<ImagesDemo>
       BuildContext context, int blockIndex, int blockFrameCount) {
     final List<Widget> rows = [];
 
-    int startPhotoIndex = blockIndex * blockFrameCount;
-    final Color photoColor = Colors.grey[500]!;
+    var startPhotoIndex = blockIndex * blockFrameCount;
+    final photoColor = Colors.grey[500]!;
     for (int rowIndex = 0; rowIndex < photoBlockFrames.length; rowIndex += 1) {
       final List<Widget> rowChildren = [];
       final int rowLength = photoBlockFrames[rowIndex].length;
-      for (int frameIndex = 0; frameIndex < rowLength; frameIndex += 1) {
-        final PhotoFrame frame = photoBlockFrames[rowIndex][frameIndex];
-        final int photoIndex = startPhotoIndex + frameIndex;
+      for (var frameIndex = 0; frameIndex < rowLength; frameIndex += 1) {
+        final frame = photoBlockFrames[rowIndex][frameIndex];
+        final photoIndex = startPhotoIndex + frameIndex;
         rowChildren.add(
           Expanded(
             flex: (frame.width * 100).toInt(),
@@ -348,7 +350,7 @@ class _ImagesDemoState extends State<ImagesDemo>
     return Scaffold(
       appBar: AppBar(
         title: const Text('Images Demo'),
-        actions: <Widget>[
+        actions: [
           IconButton(
             icon: const Icon(Icons.delete),
             onPressed: _removeSelectedPhoto,
