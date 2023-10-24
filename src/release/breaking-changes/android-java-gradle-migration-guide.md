@@ -71,18 +71,16 @@ Update to a Gradle release between 7.3 through 7.6.1, inclusive.
 
 Do the following from the top of your Flutter project.
 
-**Step 1**: Go to the gradle directory for your project:
+**Step 1**: Go to the android directory for your project:
 
 ```sh
-cd android/gradle/wrapper
+cd android
 ```
 
-**Step 2**: Edit the `gradle-wrapper.properties` file to
-  change the `distributionUrl` field to the preferred
-  Gradle version (7.3 through 7.6.1, inclusive):
+**Step 2**: Update Gradle to the preferred version (7.3 through 7.6.1, inclusive):
 
-```properties
-distributionUrl=https\://services.gradle.org/distributions/gradle-7.6.1-all.zip 
+```sh
+./gradlew wrapper --gradle-version=7.6.1
 ```
 
 ## Notes
