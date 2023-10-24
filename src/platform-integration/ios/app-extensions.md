@@ -105,34 +105,35 @@ To have a URL open a specified route in your app, you can use
 
 ## Creating app extension UIs with Flutter
 Some app extensions display a user interface.
-For example, iMessage extensions allow users to access your app's
-content directly from the **Messages** app.
+For example, Share Extensions allow users to conveniently share content with other apps. One example of Share Extension is to share a picture and post a comment on a social media app.
 
 <figure class="site-figure {{include.class}}">
     <div class="site-figure-container">
-        <img src='/assets/images/docs/development/platform-integration/app-extensions/imessage-extension.png'
+        <img src='/assets/images/docs/development/platform-integration/app-extensions/share-extension.png'
         height='300'>
     </div>
 </figure>
 
-Flutter does **not** support 
-building Flutter UI for app extensions. 
-To create the UI for 
-an app extension using Flutter, you must compile 
-a custom engine and embed the `FlutterViewController`
+Starting from this [commit](https://github.com/flutter/flutter/commit/3ad9998cf07098d58429aeac242e47a0156ae29c) Flutter supports
+building Flutter UI for app extensions.
+To create the UI for
+an app extension using Flutter, you must use a extension-safe Flutter.xcframework and embed the `FlutterViewController`
 as described in the following section.
 
 {{site.alert.note}}
-  Creating an app extension user interface with Flutter
-  requires you to compile a custom build of the Flutter engine.
-  The Flutter team cautions that only advanced users
-  should try to create a custom build.
-  To learn more, check out [Compiling the engine][].
+  Due to the memory limits of app extensions, it is only recommanded to use Flutter to build app extension UI for extension types that have memory limits larger than 100mb, Share Extensions for example, which has a 120mb memory limit. In addition, Flutter uses extra memories in debug mode. Thus Flutter does not fully support running app extension in debug mode on physical devices when used to build extension UI. Alternatively, use simulator to test in debug mode.
 {{site.alert.end}}
 
-1. Create a custom build of the Flutter engine that removes uses of
-   `sharedApplication` and corrects the path for the bundle.
-   Check out an [example from the community on GitHub][].
+1. Locate the Extension Safe Flutter.xcframework, at <path_to_flutter_sdk>/bin/cache/artifacts/engine/ios/extension_safe/Flutter.xcframework.
+    * If you would like to build for release or profile mode, find the framework under ios-profile or ios-release folder
+
+1. Drag and drop the Flutter.xcframework file into the Share Extension's frameworks and libraries list. Make sure the embed column says Embed & Sign
+<figure class="site-figure {{include.class}}">
+    <div class="site-figure-container">
+        <img src='/assets/images/docs/development/platform-integration/app-extensions/embed-framework.png'
+        height='300'>
+    </div>
+</figure>
 
 1. Open the Flutter app project settings in Xcode to share build
    configurations. 
@@ -154,52 +155,58 @@ as described in the following section.
 1. (Optional) Replace any storyboard files with an extension class if needed.
     1. In the **Info.plist** file, delete the **NSExtensionMainStoryboard** property.
     1. Add the **NSExtensionPrincipalClass** property.
-    1. Set this value for this property to the name of your `ViewController`.
-        For example, in an iMessage extension you would use `MessageViewController`. 
-    
+    1. Set this value for this property to the entry point of the extension. For example, for Share Extension, it is usually {$YourShareExtensionTargetName}.ShareViewController. If you use Objective-C as the programming language of the extension, you should omit the {$YourShareExtensionTargetName}. part.
+
     <figure class="site-figure {{include.class}}">
         <div class="site-figure-container">
-            <img src='/assets/images/docs/development/platform-integration/app-extensions/extension-info.png'
+            <img src='/assets/images/docs/development/platform-integration/app-extensions/share-extension-info.png'
             height='300'>
         </div>
     </figure>
 
 
 1. Embed the `FlutterViewController` as described in
-   [Adding a Flutter Screen][]. For example, you can display a 
-   specific route in your Flutter app within an iMessage extension.
+   [Adding a Flutter Screen][]. For example, you can display a
+   specific route in your Flutter app within an Share Extension.
 
     ```swift
-    //This attribute tells the compiler that this piece of Swift code can be accessed from Objective-C.
-    @objc(MessagesViewController)
+    import UIKit
+    import Flutter
 
-    class MessagesViewController: MSMessagesAppViewController {
+    class ShareViewController: UIViewController {
+
         override func viewDidLoad() {
             super.viewDidLoad()
             showFlutter()
         }
-    
-        @objc func showFlutter() {
-            // Create a FlutterViewController with an implicit FlutterEngine
-            let flutterViewController = FlutterViewController(project: nil, initialRoute: "/ext", nibName: nil, bundle: nil)
-            present(flutterViewController, animated: true, completion: nil)
+
+        func showFlutter() {
+            let flutterViewController = FlutterViewController(project: nil, nibName: nil, bundle: nil)
+            addChild(flutterViewController)
+            view.addSubview(flutterViewController.view)
+            flutterViewController.view.frame = view.bounds
         }
+    }
     ```
+## Test extensions
 
-{{site.alert.important}}
-  Commenting out `sharedApplication` disables
-  many features in the Flutter framework.
-  This hasn't been tested in App Store submissions
-  and might not work for some app extensions.
+Testing extensions on simulators and physical devices have a slightly different flow due to some bugs in XCode.
 
-  For example, home screen Widgets and Live Activities can't use some
-  lower-level APIs needed to draw Flutter UI.
-{{site.alert.end}}
+### Testing on simulators:
+1. Build and run the main application target.
+1. After the app is launched on the simulator, press cmd+shift+h to minimize the app, which shows the home screen.
+1. Launch an app that supports Share Extension, for example the Photos app.
+1. Select a photo, tap the share button, then tap on the share extension icon of your app.
+
+### Testing on devices: (You can also use the same flow of testing on simulator to test on device. )
+1. Launch the Share Extension target.
+1. In the popup window that says “Choose an app to run”, select an app that can be used to test Share Extension. For example, the Photos app.
+1. Select a photo, tap the share button, then tap on the Share Extension icon of your app.
 
 {% comment %}
 ## Tutorials
 For step-by-step instruction for using app extensions with your
-Flutter iOS app, check out the 
+Flutter iOS app, check out the
 [Adding Home Screen Widgets and Live Activities to your Flutter app][] codelab.
 {% endcomment %}
 
