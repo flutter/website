@@ -1127,7 +1127,7 @@ structured, typesafe manner.
 
 With [Pigeon][pigeon], the messaging protocol is defined
 in a subset of Dart that then generates messaging
-code for Android, iOS, macOS or Windows. You can find a more complete
+code for Android, iOS, macOS, or Windows. You can find a more complete
 example and more information on the [`pigeon`][pigeon]
 page on pub.dev.
 
