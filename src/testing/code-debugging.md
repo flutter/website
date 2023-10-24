@@ -517,10 +517,11 @@ class AppHome extends StatelessWidget {
 
 ### Scheduling
 
-To find out where your events happen relative to the frame's
-begin and end, toggle the [`debugPrintBeginFrameBanner`][]
-and the [`debugPrintEndFrameBanner`][] to print the
-beginning and end of the frames to the console.
+If you want to find out where your events happen relative to the frame's
+begin and end, you can set prints to log these events.
+To print the beginning and end of the frames to the console,
+toggle the [`debugPrintBeginFrameBanner`][]
+and the [`debugPrintEndFrameBanner`][].
 
 **The print frame banner log for Example 1**
 
