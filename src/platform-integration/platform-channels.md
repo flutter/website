@@ -1140,7 +1140,7 @@ asynchronous wrapper code and sending messages
 in either direction. The generated code is readable
 and guarantees there are no conflicts between
 multiple clients of different versions.
-Supported languages are Objective-C, Java, Kotlin, C++
+Supported languages are Objective-C, Java, Kotlin, C++,
 and Swift (with Objective-C interop).
 
 ### Pigeon example
