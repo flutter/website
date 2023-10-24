@@ -1127,7 +1127,7 @@ structured, typesafe manner.
 
 With [Pigeon][pigeon], the messaging protocol is defined
 in a subset of Dart that then generates messaging
-code for Android or iOS. You can find a more complete
+code for Android, iOS, macOS or Windows. You can find a more complete
 example and more information on the [`pigeon`][pigeon]
 page on pub.dev.
 
@@ -1140,7 +1140,7 @@ asynchronous wrapper code and sending messages
 in either direction. The generated code is readable
 and guarantees there are no conflicts between
 multiple clients of different versions.
-Supported languages are Objective-C, Java, Kotlin,
+Supported languages are Objective-C, Java, Kotlin, C++
 and Swift (with Objective-C interop).
 
 ### Pigeon example
