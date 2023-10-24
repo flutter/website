@@ -1,0 +1,7 @@
+@use '../base/variables' as *;
+@use '../vendor/bootstrap';
+
+aside.alert-icon > p {
+  padding-left: 1.25rem;
+  text-indent: -0.75rem;
+}

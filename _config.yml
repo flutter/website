@@ -60,6 +60,7 @@ appmin:
   github_win: 2.4
   vscode: 1.75
   android_studio: '2022.3 (Giraffe) or later'
+  intellij_idea: '2022.3 or later'
   android_sdk: 19
   powershell: 5.0
 devmin:
@@ -215,6 +216,9 @@ alert:
   version-note: >-
     <aside class="alert alert-info" role="alert" markdown="1">
     <i class="material-icons" aria-hidden="true">merge_type</i> **Version note:**
+  recommend: >-
+    <aside class="alert alert-success alert-icon" role="alert" markdown="1">
+    <i class="material-icons" aria-hidden="true">bolt</i>
   secondary: >-
     <aside class="alert alert-secondary" role="alert" markdown="1">
   tip: >-
