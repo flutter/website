@@ -17,7 +17,7 @@ For a full list of debugging and profiling tools, check out the
 
 [`flutter_gdb`]: https://github.com/flutter/engine/blob/main/sky/tools/flutter_gdb
 
-## Logging
+## Log your application
 
 {{site.alert.note}}
   You can view logs in DevTools' [Logging view][]
@@ -90,7 +90,7 @@ DevTool's logging view interprets the JSON encoded error parameter
 as a data object.
 DevTool renders in the details view for that log entry.
 
-## Setting breakpoints
+## Set breakpoints
 
 You can set breakpoints in DevTools' [Debugger][] or
 in the built-in debugger of your IDE.
@@ -117,7 +117,7 @@ void someFunction(double offset) {
 }
 ```
 
-## Debug flags: application layers
+## Set flags to debug app layers
 
 Each layer of the Flutter framework provides a function to dump its
 current state or events to the console using the `debugPrint` property.
@@ -128,7 +128,7 @@ current state or events to the console using the `debugPrint` property.
   development machine prints.
 {{site.alert.end}}
 
-### Widget tree
+### Print the widget tree
 
 To dump the state of the Widgets library,
 call the [`debugDumpApp()`][] function.
@@ -216,7 +216,7 @@ Add [DiagnosticsProperty][] objects to the method's argument
 and call the superclass method.
 The `toString` method uses this function to fill in the widget's description.
 
-### Render tree
+### Print the render tree
 
 When debugging a layout issue, the Widgets layer's tree might lack detail.
 The next level of debugging might require a render tree.
@@ -314,7 +314,7 @@ dump by overriding [`debugFillProperties()`][render-fill].
 Add [DiagnosticsProperty][] objects to the method's argument
 then call the superclass method.
 
-### Layer tree
+### Print the layer tree
 
 To debug a compositing issue, use [`debugDumpLayerTree()`][].
 
@@ -396,7 +396,7 @@ The `RepaintBoundary` widget creates:
 
 This reduces how much needs to be repainted.
 
-### Focus tree
+### Print the focus tree
 
 To debug a focus or shortcut issue, dump the focus tree
 using the [`debugDumpFocusTree()`][] function.
@@ -455,7 +455,7 @@ class AppHome extends StatelessWidget {
 
 </details>
 
-### Semantics tree
+### Print the semantics tree
 
 The `debugDumpSemanticsTree()` function prints the semantic tree for the app.
 
@@ -466,7 +466,7 @@ To obtain a dump of the Semantics tree:
    or the `SemanticsDebugger`
 1. Use the [`debugDumpSemanticsTree()`][] function.
 
-#### Example 7: Call `debugDumpSemanticsTree()`
+#### Example 8: Call `debugDumpSemanticsTree()`
 {:.no_toc}
 
 <?code-excerpt "lib/dump_semantic_tree.dart"?>
@@ -505,17 +505,14 @@ class AppHome extends StatelessWidget {
 }
 ```
 
-
 <details markdown="1">
-<summary><strong>Expand the semantic tree for Example 4</strong></summary>
+<summary><strong>Expand the semantic tree for Example 8</strong></summary>
 
 {% include_relative trees/semantic-tree.md -%}
 
 </details>
 
-<!-- this tree is bad, see {{site.repo.flutter}}/issues/2476 -->
-
-### Scheduling
+### Print event timings
 
 If you want to find out where your events happen relative to the frame's
 begin and end, you can set prints to log these events.
@@ -535,7 +532,7 @@ I/flutter : ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀�
 To print the call stack causing the current frame to be scheduled,
 use the [`debugPrintScheduleFrameStacks`][] flag.
 
-## Debug flags: layout
+## Debug layout issues
 
 To debug a layout problem using a GUI, set
 [`debugPaintSizeEnabled`][] to `true`.
@@ -589,7 +586,7 @@ These flags only work in [debug mode][].
 Any function or method in the Flutter framework that starts with
 "`debug...`" only works in debug mode.
 
-## Debugging animations
+## Debug animation issues
 
 {{site.alert.note}}
   To debug animations with the least effort, slow them down.
@@ -606,7 +603,7 @@ animations are running, it's possible that the framework
 will observe time going backwards, which will probably
 result in asserts and generally interfere with your efforts.
 
-## Debug flags: performance
+## Debug performance issues
 
 {{site.alert.note}}
   You can achieve similar results to some of these debug
@@ -614,61 +611,63 @@ result in asserts and generally interfere with your efforts.
   [file an issue][].
 {{site.alert.end}}
 
-Flutter provides a wide variety of debug flags and functions
+Flutter provides a wide variety of top-level properties and functions
 to help you debug your app at various points along the
 development cycle.
-To use these features, you must compile your app in debug mode.
-The following list, while not complete,
-highlights some of flags and one function from the
+To use these features, compile your app in debug mode.
+
+The following list highlights some of flags and one function from the
 [rendering library][] for debugging performance issues.
 
 [`debugDumpRenderTree()`][]
-: Call this function when not in a layout or repaint
-  phase to dump the rendering tree to the console.
-  (Press <kbd>t</kbd> from `flutter run` to call this command.)
-  Search for "RepaintBoundary" to see diagnostics
-  on how useful a boundary is.
+: To dump the rendering tree to the console,
+  call this function when not in a layout or repaint phase.
+  To call this command, press <kbd>t</kbd> after invoking `flutter run`.
+  Search for `RepaintBoundary` to see diagnostics on boundary utility.
 
-{% comment %}
-  Feature is not yet added to DevTools:
-  Rather than using this flag to dump the render tree
-  to a file, view the render tree in the Flutter inspector.
-  To do so, bring up the Flutter inspector and select the
-  **Render Tree** tab.
-{% endcomment %}
+  {% comment %}
+    Feature is not yet added to DevTools:
+    Rather than using this flag to dump the render tree
+    to a file, view the render tree in the Flutter inspector.
+    To do so, bring up the Flutter inspector and select the
+    **Render Tree** tab.
+  {% endcomment %}
 
-To set these flags either:
+  To set these flags either:
 
-* edit the framework code
-* import the module, set the value in your `main()` function,
-  then hot restart.
+  * edit the framework code
+  * import the module, set the value in your `main()` function,
+    then hot restart.
 
 [`debugPaintLayerBordersEnabled`][]
-: Enable this flag if you need to see the boundaries of each layer.
-  When enabled, each layer paints a box around its boundary.
+: To display the boundaries of each layer, set this property to `true`.
+  When set, each layer paints a box around its boundary.
 
 [`debugRepaintRainbowEnabled`][]
-: To enable this flag in the Flutter inspector, click **Highlight Repaints**.
-  If any static widgets are rotating through the colors of the rainbow,
+: To display a colored border around each widget, set this property to `true`.
+  These borders change color as the app user scrolls in the app.
+  To set this flag, add `debugRepaintRainbowEnabled = true;` as a top-level
+  property in your app.
+  If any static widgets rotate through colors after setting this flag,
   consider adding repaint boundaries to those areas.
 
 [`debugPrintMarkNeedsLayoutStacks`][]
-: Enable this flag if you're seeing more layouts
-  than you expect (for example, on the timeline, on a profile,
-  or from a `print` statement inside a layout method).
-  When enabled, the framework outputs stack traces to the console
-  to explain why each render object is being marked as needing layout.
-  You can use the `debugPrintStack()` function from the
-  `services` library to print your own stack traces on demand,
-  if this helps you.
+: To determine if your app creates more layouts than expected,
+  set this property to `true`.
+  This layout issue could happen on the timeline, on a profile,
+  or from a `print` statement inside a layout method.
+  When set, the framework outputs stack traces to the console
+  to explain why your app marks each render object to be laid out.
 
 [`debugPrintMarkNeedsPaintStacks`][]
-: Similar to `debugPrintMarkNeedsLayoutStacks`,
-  but for excess painting. You can use the `debugPrintStack()`
-  function from the `services` library to print your own stack
-  traces on demand, if this kind of approach is useful to you.
+: To determine if your app paints more layouts than expected,
+  set this property to `true`.
 
-### Tracing Dart code performance
+You can generate stack traces on demand as well.
+To print your own stack traces, add the `debugPrintStack()`
+function to your app.
+
+### Trace Dart code performance
 
 {{site.alert.note}}
   You can use the DevTools [Timeline events tab][] to perform traces.
@@ -677,12 +676,12 @@ To set these flags either:
 {{site.alert.end}}
 
 To perform custom performance traces and
-measure wall/CPU time of arbitrary segments of Dart code
+measure wall or CPU time of arbitrary segments of Dart code
 like Android does with [systrace][],
 use `dart:developer` [Timeline][] utilities.
 
 1. Open your source code.
-1. Wrap the code you want to measure.
+1. Wrap the code you want to measure in `Timeline` methods.
 
     <?code-excerpt "lib/perf_trace.dart"?>
     ```dart
@@ -702,7 +701,7 @@ use `dart:developer` [Timeline][] utilities.
 To ensure that the runtime performance characteristics closely match that
 of your final product, run your app in [profile mode][].
 
-## Performance overlay
+### Add performance overlay
 
 {{site.alert.note}}
   You can toggle display of the performance overlay on
@@ -711,8 +710,8 @@ of your final product, run your app in [profile mode][].
   use the following instructions.
 {{site.alert.end}}
 
-You can programmatically enable the `PerformanceOverlay`` widget by
-setting the `showPerformanceOverlay` property to `true` on the
+To enable the `PerformanceOverlay` widget in your code,
+set the `showPerformanceOverlay` property to `true` on the
 [`MaterialApp`][], [`CupertinoApp`][], or [`WidgetsApp`][]
 constructor:
 
@@ -749,16 +748,13 @@ To learn how to interpret the graphs in the overlay,
 see [The performance overlay][] in
 [Profiling Flutter performance][].
 
-## Widget alignment grid
+## Add widget alignment grid
 
-You can programmatically overlay a
-[Material Design baseline grid][] on top of your app to
-help verify alignments by using the
-`debugShowMaterialGrid` argument in the
+To add an overlay to a [Material Design baseline grid][] on your app to
+help verify alignments, add the `debugShowMaterialGrid` argument in the
 [`MaterialApp` constructor][].
 
-In non-Material applications, you can achieve a similar
-effect by using a [`GridPaper`][] widget directly.
+To add an overlay to non-Material applications, add a [`GridPaper`][] widget.
 
 [Debugger]: {{site.url}}/tools/devtools/debugger
 [Debugging]: {{site.url}}/testing/debugging
