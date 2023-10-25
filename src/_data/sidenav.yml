@@ -154,8 +154,7 @@
         - title: Handle taps
           permalink: /cookbook/gestures/handling-taps
         - title: Drag an object outside an app
-          permalink: /ui/interactivity/drag
-          permalink: /cookbook/effects/drag-a-widget
+          permalink: /ui/interactivity/gestures/drag-outside
         - title: Drag a UI element within an app
           permalink: /cookbook/effects/drag-a-widget
         - title: Add Material touch ripples
