@@ -95,13 +95,16 @@ To find out the latest version, visit [Google Maven][].
 +<style name="NormalTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 ```
 
+<a id="signing-the-app"></a>
 ## Sign the app
 
-To publish on the Play Store, you sign your app with a digital signature.
+To publish on the Play Store, you need to
+sign your app with a digital certificate.
 
 Android uses two signing keys: _upload_ and _app signing_.
 
-* Developers upload an `.aab` or `.apk` file signed with an _upload key_ to the Play Store.
+* Developers upload an `.aab` or `.apk` file signed with
+  an _upload key_ to the Play Store.
 * The end-users download the `.apk` file signed with an _app signing key_.
 
 To create your app signing key, use Play App Signing
