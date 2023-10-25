@@ -153,7 +153,10 @@
           match-page-url-exactly: true
         - title: Handle taps
           permalink: /cookbook/gestures/handling-taps
-        - title: Drag a UI element
+        - title: Drag an object outside an app
+          permalink: /ui/interactivity/drag
+          permalink: /cookbook/effects/drag-a-widget
+        - title: Drag a UI element within an app
           permalink: /cookbook/effects/drag-a-widget
         - title: Add Material touch ripples
           permalink: /cookbook/gestures/ripples
