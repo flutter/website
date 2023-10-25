@@ -651,8 +651,8 @@ The following list highlights some of flags and one function from the
 
   To set these flags either:
 
-  * edit the framework code
-  * import the module, set the value in your `main()` function,
+* edit the framework code
+* import the module, set the value in your `main()` function,
     then hot restart.
 
 [`debugPaintLayerBordersEnabled`][]
@@ -785,7 +785,6 @@ To add an overlay to non-Material applications, add a [`GridPaper`][] widget.
 [Timeline events tab]: {{site.url}}/tools/devtools/performance#timeline-events-tab
 [Timeline]: {{site.dart.api}}/stable/dart-developer/Timeline-class.html
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
-[`ConstrainedBox`]: https://api.flutter.dev/flutter/widgets/ConstrainedBox-class.html
 [`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
 [`Focus`]: {{site.api}}/flutter/widgets/Focus-class.html
 [`GridPaper`]: {{site.api}}/flutter/widgets/GridPaper-class.html
@@ -793,8 +792,6 @@ To add an overlay to non-Material applications, add a [`GridPaper`][] widget.
 [`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp/MaterialApp.html
 [`Material`]: {{site.api}}/flutter/material/Material-class.html
 [`PerformanceOverlay.allEnabled()`]: {{site.api}}/flutter/widgets/PerformanceOverlay/PerformanceOverlay.allEnabled.html
-[`RenderConstrainedBox`]: {{site.api}}/flutter/rendering/RenderConstrainedBox-class.html
-[`RenderPadding`]: {{site.api}}/flutter/rendering/RenderPadding-class.html
 [`RenderParagraph`]: {{site.api}}/flutter/rendering/RenderParagraph-class.html
 [`RenderPositionedBox`]: {{site.api}}/flutter/rendering/RenderPositionedBox-class.html
 [`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
