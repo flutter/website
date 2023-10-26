@@ -262,7 +262,7 @@ complete the following instructions:
    }
    ```
 
-6. Now, run `flutter run` and codegen takes place automatically.
+6. Now, run `flutter pub get` or `flutter run` and codegen takes place automatically.
    You should find generated files in
    `${FLUTTER_PROJECT}/.dart_tool/flutter_gen/gen_l10n`.
    Alternatively, you can also run `flutter gen-l10n` to
