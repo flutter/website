@@ -13,8 +13,6 @@ dependencies:
   flutter_test:
     sdk: flutter
   cupertino_icons: ^1.0.5
-  flutter_test:
-    sdk: flutter
 
 dev_dependencies:
   example_utils:
