@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 class ErrorHandler {
-  initialize() async {
+  Future<void> initialize() async {
     // initialize error handler
   }
 
-  onError(Object error, Object stack) {
+  void onError(Object error, Object stack) {
     // do something when there's an error
   }
 
-  onErrorDetails(FlutterErrorDetails details) {
+  void onErrorDetails(FlutterErrorDetails details) {
     // do something with FlutterErrorDetails
   }
 }

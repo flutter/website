@@ -60,27 +60,28 @@ class HeroAnimation extends StatelessWidget {
           photo: 'images/flippers-alpha.png',
           width: 300,
           onTap: () {
-            Navigator.of(context)
-                .push(MaterialPageRoute<void>(builder: (context) {
-              return Scaffold(
-                appBar: AppBar(
-                  title: const Text('Flippers Page'),
-                ),
-                body: Container(
-                  // Set background to blue to emphasize that it's a new route.
-                  color: Colors.lightBlueAccent,
-                  padding: const EdgeInsets.all(16),
-                  alignment: Alignment.topLeft,
-                  child: PhotoHero(
-                    photo: 'images/flippers-alpha.png',
-                    width: 100,
-                    onTap: () {
-                      Navigator.of(context).pop();
-                    },
+            Navigator.of(context).push(MaterialPageRoute<void>(
+              builder: (context) {
+                return Scaffold(
+                  appBar: AppBar(
+                    title: const Text('Flippers Page'),
                   ),
-                ),
-              );
-            }));
+                  body: Container(
+                    // Set background to blue to emphasize that it's a new route.
+                    color: Colors.lightBlueAccent,
+                    padding: const EdgeInsets.all(16),
+                    alignment: Alignment.topLeft,
+                    child: PhotoHero(
+                      photo: 'images/flippers-alpha.png',
+                      width: 100,
+                      onTap: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                  ),
+                );
+              },
+            ));
           },
         ),
       ),

@@ -229,10 +229,10 @@ to determine the device type:
 ScreenType getFormFactor(BuildContext context) {
   // Use .shortestSide to detect device type regardless of orientation
   double deviceWidth = MediaQuery.of(context).size.shortestSide;
-  if (deviceWidth > FormFactor.desktop) return ScreenType.Desktop;
-  if (deviceWidth > FormFactor.tablet) return ScreenType.Tablet;
-  if (deviceWidth > FormFactor.handset) return ScreenType.Handset;
-  return ScreenType.Watch;
+  if (deviceWidth > FormFactor.desktop) return ScreenType.desktop;
+  if (deviceWidth > FormFactor.tablet) return ScreenType.tablet;
+  if (deviceWidth > FormFactor.handset) return ScreenType.handset;
+  return ScreenType.watch;
 }
 ```
 
@@ -241,14 +241,14 @@ and define it in terms of small to large:
 
 <?code-excerpt "lib/global/device_size.dart (ScreenSize)"?>
 ```dart
-enum ScreenSize { Small, Normal, Large, ExtraLarge }
+enum ScreenSize { small, normal, large, extraLarge }
 
 ScreenSize getSize(BuildContext context) {
   double deviceWidth = MediaQuery.of(context).size.shortestSide;
-  if (deviceWidth > 900) return ScreenSize.ExtraLarge;
-  if (deviceWidth > 600) return ScreenSize.Large;
-  if (deviceWidth > 300) return ScreenSize.Normal;
-  return ScreenSize.Small;
+  if (deviceWidth > 900) return ScreenSize.extraLarge;
+  if (deviceWidth > 600) return ScreenSize.large;
+  if (deviceWidth > 300) return ScreenSize.normal;
+  return ScreenSize.small;
 }
 ```
  
@@ -265,8 +265,9 @@ from a vertical to a horizontal layout when the user isn't on a handset:
 ```dart
 bool isHandset = MediaQuery.of(context).size.width < 600;
 return Flex(
-    children: [Text('Foo'), Text('Bar'), Text('Baz')],
-    direction: isHandset ? Axis.vertical : Axis.horizontal);
+  direction: isHandset ? Axis.vertical : Axis.horizontal,
+  children: const [Text('Foo'), Text('Bar'), Text('Baz')],
+);
 ```
 In another widget,
 you might swap some of the children completely: 
@@ -298,15 +299,14 @@ The previous example could be rewritten using `LayoutBuilder`:
 
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (LayoutBuilder)"?>
 ```dart
-Widget foo = LayoutBuilder(
-    builder: (context, constraints) {
+Widget foo = LayoutBuilder(builder: (context, constraints) {
   bool useVerticalLayout = constraints.maxWidth < 400;
   return Flex(
-    children: [
+    direction: useVerticalLayout ? Axis.vertical : Axis.horizontal,
+    children: const [
       Text('Hello'),
       Text('World'),
     ],
-    direction: useVerticalLayout ? Axis.vertical : Axis.horizontal,
   );
 });
 ```
@@ -368,16 +368,18 @@ class Fonts {
 }
 
 class TextStyles {
-  static const TextStyle raleway = const TextStyle(
+  static const TextStyle raleway = TextStyle(
     fontFamily: Fonts.raleway,
   );
   static TextStyle buttonText1 =
-      TextStyle(fontWeight: FontWeight.bold, fontSize: 14);
+      const TextStyle(fontWeight: FontWeight.bold, fontSize: 14);
   static TextStyle buttonText2 =
-      TextStyle(fontWeight: FontWeight.normal, fontSize: 11);
-  static TextStyle h1 = TextStyle(fontWeight: FontWeight.bold, fontSize: 22);
-  static TextStyle h2 = TextStyle(fontWeight: FontWeight.bold, fontSize: 16);
-  static late TextStyle body1 = raleway.copyWith(color: Color(0xFF42A5F5));
+      const TextStyle(fontWeight: FontWeight.normal, fontSize: 11);
+  static TextStyle h1 =
+      const TextStyle(fontWeight: FontWeight.bold, fontSize: 22);
+  static TextStyle h2 =
+      const TextStyle(fontWeight: FontWeight.bold, fontSize: 16);
+  static TextStyle body1 = raleway.copyWith(color: const Color(0xFF42A5F5));
   // etc
 }
 ```
@@ -387,7 +389,7 @@ These constants can then be used in place of hard-coded numeric values:
 <?code-excerpt "lib/global/device_type.dart (UseConstants)"?>
 ```dart
 return Padding(
-  padding: EdgeInsets.all(Insets.small),
+  padding: const EdgeInsets.all(Insets.small),
   child: Text('Hello!', style: TextStyles.body1),
 );
 ```
@@ -500,10 +502,11 @@ customize how your UI reacts to the scroll wheel.
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (PointerScroll)"?>
 ```dart
 return Listener(
-    onPointerSignal: (event) {
-      if (event is PointerScrollEvent) print(event.scrollDelta.dy);
-    },
-    child: ListView());
+  onPointerSignal: (event) {
+    if (event is PointerScrollEvent) print(event.scrollDelta.dy);
+  },
+  child: ListView(),
+);
 ```
 
 [`Listener`]: {{site.api}}/flutter/widgets/Listener-class.html
@@ -546,15 +549,16 @@ class _BasicActionDetectorState extends State<BasicActionDetector> {
       child: Stack(
         clipBehavior: Clip.none,
         children: [
-          FlutterLogo(size: 100),
+          const FlutterLogo(size: 100),
           // Position focus in the negative margin for a cool effect
           if (_hasFocus)
             Positioned(
-                left: -4,
-                top: -4,
-                bottom: -4,
-                right: -4,
-                child: _roundedBorder())
+              left: -4,
+              top: -4,
+              bottom: -4,
+              right: -4,
+              child: _roundedBorder(),
+            )
         ],
       ),
     );
@@ -625,8 +629,8 @@ already has a focus node, you can wrap it in a
         return KeyEventResult.ignored;
       },
       child: ConstrainedBox(
-        constraints: BoxConstraints(maxWidth: 400),
-        child: TextField(
+        constraints: const BoxConstraints(maxWidth: 400),
+        child: const TextField(
           decoration: InputDecoration(
             border: OutlineInputBorder(),
           ),
@@ -650,7 +654,7 @@ class CreateNewItemIntent extends Intent {
 Widget build(BuildContext context) {
   return Shortcuts(
     // Bind intents to key combinations
-    shortcuts: <ShortcutActivator, Intent>{
+    shortcuts: const <ShortcutActivator, Intent>{
       SingleActivator(LogicalKeyboardKey.keyN, control: true):
           CreateNewItemIntent(),
     },
@@ -658,7 +662,8 @@ Widget build(BuildContext context) {
       // Bind intents to an actual method in your code
       actions: <Type, Action<Intent>>{
         CreateNewItemIntent: CallbackAction<CreateNewItemIntent>(
-            onInvoke: (intent) => _createNewItem()),
+          onInvoke: (intent) => _createNewItem(),
+        ),
       },
       // Your sub-tree must be wrapped in a focusNode, so it can take focus.
       child: Focus(
@@ -682,6 +687,7 @@ is easy with [`RawKeyboard`][]:
 
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (RawKeyboard)"?>
 ```dart
+@override
 void initState() {
   super.initState();
   RawKeyboard.instance.addListener(_handleKey);
@@ -893,11 +899,12 @@ return Scrollbar(
   thumbVisibility: DeviceType.isDesktop,
   controller: _scrollController,
   child: GridView.count(
-      controller: _scrollController,
-      padding: EdgeInsets.all(Insets.extraLarge),
-      childAspectRatio: 1,
-      crossAxisCount: colCount,
-      children: listChildren),
+    controller: _scrollController,
+    padding: const EdgeInsets.all(Insets.extraLarge),
+    childAspectRatio: 1,
+    crossAxisCount: colCount,
+    children: listChildren,
+  ),
 );
 ```
 
@@ -924,10 +931,12 @@ static bool get isMultiSelectModifierDown {
   bool isDown = false;
   if (Platform.isMacOS) {
     isDown = isKeyDown(
-        {LogicalKeyboardKey.metaLeft, LogicalKeyboardKey.metaRight});
+      {LogicalKeyboardKey.metaLeft, LogicalKeyboardKey.metaRight},
+    );
   } else {
     isDown = isKeyDown(
-        {LogicalKeyboardKey.controlLeft, LogicalKeyboardKey.controlRight});
+      {LogicalKeyboardKey.controlLeft, LogicalKeyboardKey.controlRight},
+    );
   }
   return isDown;
 }
@@ -963,14 +972,14 @@ Luckily, this is easy to support with the [`SelectableText`][] widget:
 
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (SelectableText)"?>
 ```dart
-return SelectableText('Select me!');
+return const SelectableText('Select me!');
 ```
 
 To support rich text, then use `TextSpan`: 
 
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (RichTextSpan)"?>
 ```dart
-return SelectableText.rich(
+return const SelectableText.rich(
   TextSpan(
     children: [
       TextSpan(text: 'Hello'),
@@ -1089,15 +1098,18 @@ TextDirection btnDirection =
     DeviceType.isWindows ? TextDirection.rtl : TextDirection.ltr;
 return Row(
   children: [
-    Spacer(),
+    const Spacer(),
     Row(
       textDirection: btnDirection,
       children: [
         DialogButton(
-            label: 'Cancel',
-            onPressed: () => Navigator.pop(context, false)),
+          label: 'Cancel',
+          onPressed: () => Navigator.pop(context, false),
+        ),
         DialogButton(
-            label: 'Ok', onPressed: () => Navigator.pop(context, true)),
+          label: 'Ok',
+          onPressed: () => Navigator.pop(context, true),
+        ),
       ],
     ),
   ],

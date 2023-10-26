@@ -10,6 +10,12 @@ for Dart and Flutter.
 
 ![Dart DevTools Screens]({{site.url}}/assets/images/docs/tools/devtools/dart-devtools.gif){:width="100%"}
 
+For a video introduction to DevTools, check out
+the following deep dive and use case walkthrough:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_EYk-E29edo" title="YouTube video player - Dive in to DevTools" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[Dive in to DevTools](https://www.youtube.com/watch?v=_EYk-E29edo)
+
 ## What can I do with DevTools?
 
 Here are some of the things you can do with DevTools:

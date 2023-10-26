@@ -1,20 +1,21 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'dart:io' show Platform;
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-Widget LayoutBuilderWidget() {
+Widget layoutBuilderWidget() {
   // #docregion LayoutBuilder
-  Widget foo = LayoutBuilder(
-      builder: (context, constraints) {
+  Widget foo = LayoutBuilder(builder: (context, constraints) {
     bool useVerticalLayout = constraints.maxWidth < 400;
     return Flex(
-      children: [
+      direction: useVerticalLayout ? Axis.vertical : Axis.horizontal,
+      children: const [
         Text('Hello'),
         Text('World'),
       ],
-      direction: useVerticalLayout ? Axis.vertical : Axis.horizontal,
     );
   });
   // #enddocregion LayoutBuilder
@@ -23,13 +24,16 @@ Widget LayoutBuilderWidget() {
 }
 
 class ScrollListen extends StatelessWidget {
-  Widget scrollListener(BuildContext) {
+  const ScrollListen({super.key});
+
+  Widget scrollListener(BuildContext context) {
     // #docregion PointerScroll
     return Listener(
-        onPointerSignal: (event) {
-          if (event is PointerScrollEvent) print(event.scrollDelta.dy);
-        },
-        child: ListView());
+      onPointerSignal: (event) {
+        if (event is PointerScrollEvent) print(event.scrollDelta.dy);
+      },
+      child: ListView(),
+    );
     // #enddocregion PointerScroll
   }
 
@@ -49,7 +53,7 @@ class CreateNewItemIntent extends Intent {
 Widget build(BuildContext context) {
   return Shortcuts(
     // Bind intents to key combinations
-    shortcuts: <ShortcutActivator, Intent>{
+    shortcuts: const <ShortcutActivator, Intent>{
       SingleActivator(LogicalKeyboardKey.keyN, control: true):
           CreateNewItemIntent(),
     },
@@ -57,7 +61,8 @@ Widget build(BuildContext context) {
       // Bind intents to an actual method in your code
       actions: <Type, Action<Intent>>{
         CreateNewItemIntent: CallbackAction<CreateNewItemIntent>(
-            onInvoke: (intent) => _createNewItem()),
+          onInvoke: (intent) => _createNewItem(),
+        ),
       },
       // Your sub-tree must be wrapped in a focusNode, so it can take focus.
       child: Focus(
@@ -75,12 +80,12 @@ void _createNewItem() {
 }
 
 class MyWidget extends StatefulWidget {
-  MyWidget({super.key, required this.title});
+  const MyWidget({super.key, required this.title});
 
   final String title;
 
   @override
-  _MyWidgetState createState() => _MyWidgetState();
+  State<MyWidget> createState() => _MyWidgetState();
 }
 
 class _MyWidgetState extends State<MyWidget> {
@@ -94,10 +99,12 @@ class _MyWidgetState extends State<MyWidget> {
     bool isDown = false;
     if (Platform.isMacOS) {
       isDown = isKeyDown(
-          {LogicalKeyboardKey.metaLeft, LogicalKeyboardKey.metaRight});
+        {LogicalKeyboardKey.metaLeft, LogicalKeyboardKey.metaRight},
+      );
     } else {
       isDown = isKeyDown(
-          {LogicalKeyboardKey.controlLeft, LogicalKeyboardKey.controlRight});
+        {LogicalKeyboardKey.controlLeft, LogicalKeyboardKey.controlRight},
+      );
     }
     return isDown;
   }
@@ -124,6 +131,7 @@ class _MyWidgetState extends State<MyWidget> {
   // #enddocregion KeysPressed
 
   // #docregion RawKeyboard
+  @override
   void initState() {
     super.initState();
     RawKeyboard.instance.addListener(_handleKey);
@@ -141,19 +149,19 @@ class _MyWidgetState extends State<MyWidget> {
     isSpanSelectModifierDown;
     isMultiSelectModifierDown;
 
-    return Text('Hello World!');
+    return const Text('Hello World!');
   }
 }
 
 Widget SelectableTextWidget() {
   // #docregion SelectableText
-  return SelectableText('Select me!');
+  return const SelectableText('Select me!');
   // #enddocregion SelectableText
 }
 
 Widget RichTextSpan() {
   // #docregion RichTextSpan
-  return SelectableText.rich(
+  return const SelectableText.rich(
     TextSpan(
       children: [
         TextSpan(text: 'Hello'),

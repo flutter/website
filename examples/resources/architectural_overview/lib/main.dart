@@ -102,7 +102,7 @@ Future<void> exampleChannels() async {
   // #docregion MethodChannel
   // Dart side
   const channel = MethodChannel('foo');
-  final String greeting = await channel.invokeMethod('bar', 'world');
+  final greeting = await channel.invokeMethod('bar', 'world') as String;
   print(greeting);
   // #enddocregion MethodChannel
 }

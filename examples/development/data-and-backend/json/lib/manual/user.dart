@@ -5,8 +5,8 @@ class User {
   User(this.name, this.email);
 
   User.fromJson(Map<String, dynamic> json)
-      : name = json['name'],
-        email = json['email'];
+      : name = json['name'] as String,
+        email = json['email'] as String;
 
   Map<String, dynamic> toJson() => {
         'name': name,

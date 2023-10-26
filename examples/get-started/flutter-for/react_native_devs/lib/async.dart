@@ -7,7 +7,7 @@ class Example {
   Future<String> _getIPAddress() async {
     final url = Uri.https('httpbin.org', '/ip');
     final response = await http.get(url);
-    String ip = jsonDecode(response.body)['origin'];
+    final ip = jsonDecode(response.body)['origin'] as String;
     return ip;
   }
 }

@@ -824,7 +824,7 @@ event handler in Kotlin (Android) or Swift (iOS):
 ```dart
 // Dart side
 const channel = MethodChannel('foo');
-final String greeting = await channel.invokeMethod('bar', 'world');
+final greeting = await channel.invokeMethod('bar', 'world') as String;
 print(greeting);
 ```
 

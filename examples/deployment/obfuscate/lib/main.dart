@@ -8,4 +8,6 @@ void main() {
   // #enddocregion Expect
 }
 
-class Foo {}
+class Foo {
+  Foo();
+}

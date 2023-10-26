@@ -177,8 +177,7 @@ function with the `findsNothing` matcher.
 
 <?code-excerpt "integration_test/main_test.dart (Test2)"?>
 ```dart
-testWidgets('tap on the first item (Alder), verify selected',
-    (tester) async {
+testWidgets('tap on the first item (Alder), verify selected', (tester) async {
   await tester.pumpWidget(const PlantsApp());
 
   // wait for data to load

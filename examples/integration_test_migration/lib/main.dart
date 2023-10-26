@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
         .then((data) {
       setState(() {
         final jsonResult = jsonDecode(data);
-        final birdsJson = jsonResult['plants'];
+        final birdsJson = jsonResult['plants'] as List<dynamic>;
         for (final birdJson in birdsJson) {
           final name = birdJson['name'] as String;
           final species = birdJson['species'] as String;

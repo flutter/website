@@ -2,7 +2,7 @@
 @use '../vendor/bootstrap';
 
 .site-banner {
-  background-color: $flutter-color-dark-blue;
+  background-color: $flutter-color-blue;
   color: $site-color-white;
   font-family: $site-font-family-alt;
   font-size: bootstrap.$font-size-lg;
@@ -20,10 +20,10 @@
   }
 
   a {
-    color: $flutter-color-teal;
+    color: $flutter-color-blue-on-dark;
 
     &:hover {
-      color: $flutter-color-teal;
+      color: $flutter-color-blue-on-dark;
     }
   }
 

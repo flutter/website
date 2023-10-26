@@ -2419,7 +2419,7 @@ To log in with Facebook, use the
 Most Firebase functions are covered by [first party plugins][].
 These plugins are first-party integrations, maintained by the Flutter team:
 
- * [`firebase_admob`][] for Firebase AdMob
+ * [`google_mobile_ads`][] for Google Mobile Ads for Flutter
  * [`firebase_analytics`][] for Firebase Analytics
  * [`firebase_auth`][] for Firebase Auth
  * [`firebase_database`][] for Firebase RTDB
@@ -2556,7 +2556,7 @@ For more information on using the Firebase Cloud Messaging API, see the
 [developing packages and plugins]: {{site.url}}/packages-and-plugins/developing-packages
 [DevTools]: {{site.url}}/tools/devtools/overview
 [existing plugin]: {{site.pub}}/flutter
-[`firebase_admob`]: {{site.pub}}/packages/firebase_admob
+[`google_mobile_ads`]: {{site.pub}}/packages/google_mobile_ads
 [`firebase_analytics`]: {{site.pub}}/packages/firebase_analytics
 [`firebase_auth`]: {{site.pub}}/packages/firebase_auth
 [`firebase_database`]: {{site.pub}}/packages/firebase_database
@@ -2569,7 +2569,7 @@ For more information on using the Firebase Cloud Messaging API, see the
 [`geolocator`]: {{site.pub}}/packages/geolocator
 [`camera`]: {{site.pub-pkg}}/camera
 [`http` package]: {{site.pub}}/packages/http
-[internationalization guide]: {{site.url}}/ui/accessibility-and-localization/internationalization
+[internationalization guide]: {{site.url}}/ui/accessibility-and-internationalization/internationalization
 [`intl`]: {{site.pub}}/packages/intl
 [`intl_translation`]: {{site.pub}}/packages/intl_translation
 [Introduction to declarative UI]: {{site.url}}/get-started/flutter-for/declarative
