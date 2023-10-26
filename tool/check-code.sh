@@ -42,9 +42,14 @@ flutter --version
 if [[ $REFRESH ]]; then
   echo "=> Refreshing code excerpts..."
   (
+    commitHash=$(git reflog -n1 --format='%h')
+    git add .
+    git commit -m "Temporarily commit code excerpt changes"
     set -x
     tool/refresh-code-excerpts.sh --keep-dart-tool
+    git reset --soft $commitHash
   ) || (
+    git --no-pager diff
     echo "=> ERROR: some code excerpts were not refreshed!"
     exit 1
   )
