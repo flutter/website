@@ -1,25 +1,44 @@
-name: Site appearance or accessibility issue
-description: How can we improve the CSS or page design of flutter.dev?
-labels: [design]
+name: Site design or user experience issue
+description: How can we improve the page design, style, or structure of dart.dev?
+labels: [infra.design, from.user]
 body:
   - type: textarea
     id: problem
     attributes:
       label: Describe the problem
-      placeholder: A clear and concise description of the issue, preferably with a screenshot.
+      placeholder: Provide a clear and concise description of the issue. What did you expect to happen? Screenshots are recommended.
     validations:
       required: true
   - type: textarea
     id: fix
     attributes:
       label: Expected fix
-      placeholder: A clear and concise description of how you think we should fix the problem.
+      placeholder: Provide a clear and concise description of how you think this problem should be fixed.
     validations:
       required: false
+  - type: dropdown
+    id: platform
+    attributes:
+      label: On which browser(s) did you experience this issue?
+      multiple: true
+      options:
+        - Firefox
+        - Chrome
+        - Safari
+        - Microsoft Edge
+        - Other
   - type: textarea
     id: additional-info
     attributes:
       label: Additional context
-      placeholder: Helpful examples, screenshots, or descriptions go here. If you're interested in helping us fix the issue, let us know!
+      placeholder: Provide examples, screenshots, configurations, or descriptions that could help.
     validations:
       required: false
+  - type: checkboxes
+    id: volunteer
+    attributes:
+      label: I would like to fix this problem.
+      description: Let us know if you want to try fixing this yourself.
+      options:
+        - label: I will try and fix this problem on dart.dev.
+          required: false

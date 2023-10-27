@@ -1,22 +1,32 @@
 name: Site infrastructure issue
 description: |
-    Report a problem with the build, repo, or something else that's a problem for people who work on flutter.dev
-labels: [infrastructure]
+    Report a problem with the build, repo, or tooling for dart.dev
+labels: [infra.structure, from.user]
 body:
   - type: textarea
     id: problem
     attributes:
       label: Describe the problem
-      placeholder: A clear and concise description of the issue.
+      placeholder: Provide a clear and concise description of the issue. What did you expect to happen? Screenshots are recommended.
     validations:
       required: true
   - type: textarea
     id: fix
     attributes:
       label: Expected fix
-      placeholder: A clear and concise description of how you think we should fix the problem.
+      placeholder: Provide a clear and concise description of how you think this problem should be fixed.
     validations:
       required: false
+  - type: dropdown
+    id: platform
+    attributes:
+      label: On which platform(s) did you experience this issue?
+      multiple: true
+      options:
+        - macOS
+        - Windows
+        - Linux
+        - ChromeOS
   - type: textarea
     id: additional-info
     attributes:
