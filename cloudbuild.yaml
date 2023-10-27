@@ -2,6 +2,8 @@
 # dashboard docker image to artifact registry.
 
 steps:
+  - name: gcr.io/cloud-builders/git
+    args: ['submodule', 'update', '--init', '--recursive']
   - name: gcr.io/cloud-builders/docker
     entrypoint: '/bin/bash'
     args:
