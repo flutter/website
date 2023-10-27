@@ -2,14 +2,16 @@
 # dashboard docker image to artifact registry.
 
 steps:
+  - name: gcr.io/cloud-builders/gcloud
+    entrypoint: '/bin/bash'
+      - '-c'
+      - |-
+        make build BUILD_CONFIGS=_config.yml,_config_stage.yml
   - name: gcr.io/flutter-dev-230821/firebase
     entrypoint: '/bin/bash'
     args:
       - '-c'
       - |-
-        apt update && apt install -y make
-        make build BUILD_CONFIGS=_config.yml,_config_stage.yml
-
         firebase hosting:channel:deploy --expires 7d pr$_PR_NUMBER-$_HEAD_BRANCH --project=$PROJECT_ID
         firebase hosting:channel:list --json > firebase_channels.json
   - name: gcr.io/cloud-builders/gcloud
