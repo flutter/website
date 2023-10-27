@@ -4,6 +4,7 @@
 steps:
   - name: gcr.io/cloud-builders/gcloud
     entrypoint: '/bin/bash'
+    args:
       - '-c'
       - |-
         make build BUILD_CONFIGS=_config.yml,_config_stage.yml
