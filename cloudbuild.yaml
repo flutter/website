@@ -2,7 +2,7 @@
 # dashboard docker image to artifact registry.
 
 steps:
-  - name: gcr.io/cloud-builders/gcloud
+  - name: gcr.io/cloud-builders/docker
     entrypoint: '/bin/bash'
     args:
       - '-c'
