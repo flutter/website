@@ -7,6 +7,7 @@ steps:
     args:
       - '-c'
       - |-
+        apt update && apt install -y make
         make build BUILD_CONFIGS=_config.yml,_config_stage.yml
 
         firebase hosting:channel:deploy --expires 7d pr$_PR_NUMBER-$_HEAD_BRANCH --project=$PROJECT_ID
