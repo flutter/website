@@ -3,7 +3,7 @@ title: Support for WebAssembly (Wasm)
 description: >-
   Current status of Flutter's experimental support for WebAssembly (Wasm).
 short-title: Wasm
-last-update: October 26, 2023
+last-update: October 27, 2023
 ---
 
 The Flutter and Dart teams are excited to add
@@ -53,10 +53,10 @@ the `master` channel, check out the
 To then ensure you are running the latest version,
 run `flutter upgrade`.
 
-To verify that you correctly set your environment to the `master` channel,
+To verify if your Flutter install supports Wasm,
 run `flutter build web --help`.
 
-At the bottom of the output, you should find experimental wasm options like:
+At the bottom of the output, you should find experimental Wasm options like:
 
 ```console
 Experimental options
@@ -110,15 +110,15 @@ Server started on port 8080
 #### Load it in a browser
 
 As of {{page.last-update}},
-there are two known browser types that should run
+two browser families should be able to run
 Flutter/Wasm content:
 
 - Chromium-based browsers
-  - Version 119 or greater.
+  - Version 119 or later.
 - Firefox
-  - Version 120 or greater.
-    This currently includes the beta, nightly, and developer
-    [preview channels][ff-preview].
+  - Version 120 or later.
+    The beta, nightly, and developer [preview channels][ff-preview]
+    all should work.
 
 {{site.alert.note}}
   This does not include versions of these browsers on iOS.
