@@ -6,15 +6,83 @@ toc: true
 
 {% assign path = 'flutter_infra_release/releases/stable/windows/flutter_windows_3.3.0-stable.zip' -%}
 
-The Flutter community has made a Simplified Chinese version
-of the Flutter website available at
-[https://flutter.cn](https://flutter.cn),
-maintained by [The China Flutter User Group (CFUG)][].
+To speed the download and installation of Flutter in China,
+consider using a mirror site.
 
-If you’d like to install Flutter using an
-[installation bundle]({{site.url}}/release/archive),
-you can replace the domain of the original URL with a trusted mirror
-to speed it up. For example:
+{{site.alert.important}}
+  Use mirror sites only if you _trust_ the provider.
+  The Flutter team cannot verify their reliability or security.
+{{site.alert.end}}
+
+## Use a Flutter mirror site
+
+The [China Flutter User Group][] (CFUG) maintains a Simplified Chinese
+Flutter website [https://flutter.cn](https://flutter.cn) and a mirror.
+Other mirrors can be found at the [end of this guide](#known-trusted-community-run-mirror-sites).
+
+### Configure your machine to use a mirror site
+
+To install or use Flutter in China,
+use a trustworthy Flutter mirror site.
+This requires setting two environment variables on your machine.
+
+_All examples that follow presume that you are using the CFUG mirror._
+
+To set your machine to use a mirror site on macOS or Linux:
+
+1. Create and change into the directory where you plan
+   to store your local Flutter clone.
+
+1. Set your pub URL to your mirror site.
+
+   ```terminal
+   $ export PUB_HOSTED_URL=https://pub.flutter-io.cn
+   ```
+
+1. Set your Flutter storage URL to your mirror site.
+
+   ```terminal
+   $ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+   ```
+
+1. Clone the Flutter repo from your mirror site.
+
+   ```terminal
+   $ git clone -b dev {{site.repo.flutter}}.git
+   ```
+
+1. Add Flutter to your `PATH` environment variable.
+
+   ```terminal
+   $ export PATH="$PWD/flutter/bin:$PATH"
+   ```
+
+1. Run Flutter Doctor to verify your installation.
+
+   ```terminal
+   $ flutter doctor
+   ```
+
+1. Return to the [setting up Flutter]({{site.url}}/get-started/editor)
+   guide and continue from that procedure.
+
+From this example, `flutter pub get` fetches packages from `flutter-io.cn`.
+in any terminal where you set `PUB_HOSTED_URL` and `FLUTTER_STORAGE_BASE_URL`.
+
+Any environment variables set using `export` in this procedure
+only apply to the current terminal window.
+To set these values on a permanent basis,
+add those three `export` commands to the bottom of the `*rc` or `*_profile`
+file that your preferred shell uses.
+
+### Download other versions of Flutter
+
+To install a different version of Flutter found in the
+[archive]({{site.url}}/release/archive),
+replace `storage.googleapis.com` with that of your trusted mirror.
+This should improve download speed.
+
+For example:
 
 * Original URL:<br>
   [`https://storage.googleapis.com/{{path}}`](https://storage.googleapis.com/{{path}})
@@ -22,67 +90,87 @@ to speed it up. For example:
 * Mirrored URL:<br>
   [`https://storage.flutter-io.cn/{{path}}`](https://storage.flutter-io.cn/{{path}})
 
-You must also set two environment variables to upgrade Flutter and use the pub
-package repository in China. Instructions are below.
+## Configure your machine to publish your package
 
-{{site.alert.important}}
-  Use mirror sites only if you _trust_ the provider.
-  The Flutter team cannot verify their reliability or security.
-{{site.alert.end}}
+If you receive errors when attempting to publish your package,
+try one of the following solutions:
 
-## Configuring Flutter to use a mirror site
+  {% comment %}
+  From https://github.com/flutter/website/pull/9338#discussion_r1328077020
+  {% endcomment %}
 
-If you're installing or using Flutter in China,
-it might be helpful to use a trustworthy local
-mirror site that hosts Flutter's dependencies.
-To instruct the Flutter tool to use an alternate storage location,
-you need to set two environment variables, `PUB_HOSTED_URL` and
-`FLUTTER_STORAGE_BASE_URL`, before running the `flutter` command.
+1. Clear your `PUB_HOSTED_URL` environment variable.
 
-Taking macOS or Linux as an example, here are the first few steps in
-the setup process for using a mirror site. Run the following in a Bash
-shell from the directory where you wish to store your local Flutter clone:
+   ```terminal
+   $ unset PUB_HOSTED_URL
+   ```
 
-```terminal
-$ export PUB_HOSTED_URL=https://pub.flutter-io.cn
-$ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
-$ git clone -b dev {{site.repo.flutter}}.git
-$ export PATH="$PWD/flutter/bin:$PATH"
-$ cd ./flutter
-$ flutter doctor
-```
+   Remember to reset this environment variable after you publish.
 
-After these steps, you should be able to continue
-[setting up Flutter]({{site.url}}/get-started/editor) normally.
-From here on, packages fetched by `flutter pub get` are
-downloaded from `flutter-io.cn` in any shell where `PUB_HOSTED_URL`
-and `FLUTTER_STORAGE_BASE_URL` are set.
+   ```terminal
+   export PUB_HOSTED_URL=https://pub.flutter-io.cn
+   ```
 
-The `flutter-io.cn` server is a provisional mirror for Flutter
-dependencies and packages maintained by [The China Flutter User Group (CFUG)][].
-The Flutter team cannot guarantee long-term availability of this service.
-You're free to use other mirrors if they become available.
+1. Configure a proxy.
+   To configure a proxy, check out the [Dart documentation on proxies][].
+
+  {% comment %}
+  From https://github.com/flutter/website/issues/2556#issuecomment-481566476
+  {% endcomment %}
+
+1. Enable your VPN without adding a `credentials.json` file.
+
+1. Disable your proxy and add a `credentials.json` file.
+
+[Dart documentation on proxies]: {{site.dart-site}}/tools/pub/troubleshoot#pub-get-fails-from-behind-a-corporate-firewall
+
+## Details on mirror sites
+
+### Support for mirror sites
+
+The Flutter team cannot guarantee long-term availability of any mirrors.
+You can use other mirrors if they become available.
+
+### New mirror sites in China
+
 If you're interested in setting up your own mirror in China,
 contact [flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com)
 for assistance.
 
+### Known, trusted community-run mirror sites
+
+#### China Flutter User Group
+
+[China Flutter User Group][] maintains the `flutter-io.cn` mirror.
+It includes Flutter and packages.
+
 If you're running into issues that only occur when
-using the `flutter-io.cn` server, consider reporting the issue to
-[the issue tracker (镜像问题)](https://github.com/cfug/flutter.cn/issues/new/choose).
+using the `flutter-io.cn` mirror, report the issue to their
+[issue tracker (镜像问题)]({{site.github}}/cfug/flutter.cn/issues/new/choose).
 
-## Publishing apps
+To set your machine to use this mirror, use these commands:
 
-If you receive errors when attempting to publish your package,
-you might need to configure a proxy. 
+```bash
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+```
 
-To configure a proxy, check out the [Dart documentation on proxies][].
+#### Shanghai Jiao Tong University *nix User Group
 
-[Dart documentation on proxies]: {{dart-site}}/tools/pub/troubleshoot#pub-get-fails-from-behind-a-corporate-firewall
+[Shanghai Jiao Tong University *nix User Group][]
+maintains the `mirror.sjtu.edu.cn` mirror.
+It includes Flutter and packages.
 
-## Community-run mirror sites
+If you're running into issues that only occur when
+using the `mirror.sjtu.edu.cn` mirror, report the issue to their
+[issue tracker (议题)](https://git.sjtu.edu.cn/sjtug/flutter-sdk/-/issues).
 
-* Shanghai Jiao Tong University Linux User Group
-  * `FLUTTER_STORAGE_BASE_URL`: [https://mirror.sjtu.edu.cn/](https://mirror.sjtu.edu.cn)
-  * `PUB_HOSTED_URL`: [https://mirror.sjtu.edu.cn/dart-pub/](https://mirror.sjtu.edu.cn/dart-pub)
+To set your machine to use this mirror, use these commands:
 
-[The China Flutter User Group (CFUG)]: https://github.com/cfug
+```bash
+export FLUTTER_STORAGE_BASE_URL=https://mirror.sjtu.edu.cn
+export PUB_HOSTED_URL=https://mirror.sjtu.edu.cn/flutter-infra
+```
+
+[China Flutter User Group]: https://github.com/cfug
+[Shanghai Jiao Tong University *nix User Group]: https://github.com/sjtug
