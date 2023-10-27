@@ -15,7 +15,7 @@ steps:
     args:
       - '-c'
       - |-
-        firebase hosting:channel:deploy --expires 7d pr$_PR_NUMBER-$_HEAD_BRANCH --project=$PROJECT_ID
+        firebase hosting:channel:deploy --expires 7d pr$_PR_NUMBER-$_HEAD_BRANCH --project=$PROJECT_ID --no-authorized-domains
         firebase hosting:channel:list --json > firebase_channels.json
   - name: gcr.io/cloud-builders/gcloud
     entrypoint: '/bin/bash'
