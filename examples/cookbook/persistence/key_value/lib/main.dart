@@ -6,7 +6,6 @@ void main() => runApp(const MyApp());
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of the application.
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
@@ -34,15 +33,17 @@ class _MyHomePageState extends State<MyHomePage> {
     _loadCounter();
   }
 
-  //Loading counter value on start
+  /// Load the initial counter value from persistent storage on start,
+  /// or fallback to 0 if it doesn't exist.
   Future<void> _loadCounter() async {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
-      _counter = (prefs.getInt('counter') ?? 0);
+      _counter = prefs.getInt('counter') ?? 0;
     });
   }
 
-  //Incrementing counter after click
+  /// After a click, increment the counter state and
+  /// asynchronously save it to persistent storage.
   Future<void> _incrementCounter() async {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
@@ -62,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              'You have pushed the button this many times:',
+              'You have pushed the button this many times: ',
             ),
             Text(
               '$_counter',
@@ -75,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }
