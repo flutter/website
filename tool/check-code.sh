@@ -112,16 +112,6 @@ for sample in $EXAMPLE_ROOT/*/*{,/*}; do
       echo "=> Example: $sample"
     fi
 
-    # Only hydrate the sample if we're going to test it.
-    if [[ -n $TEST && -d "$sample/test" ]]; then
-      (
-        set -x
-        cd $ROOT
-        flutter create --no-overwrite $sample
-        rm -rf $sample/integration_test # Remove unneeded integration test stubs.
-      )
-    fi
-
     (
       set -x
       cd $sample
