@@ -89,56 +89,44 @@ function check_formatting() {
   fi
 }
 
-# Extract snippets, analyze and check formatting
+# Extract snippets, analyze, and check formatting.
 EXAMPLE_ROOT="examples"
 echo "=> ANALYZING and testing apps in $EXAMPLE_ROOT/*"
 
-for sample in $EXAMPLE_ROOT/*/*{,/*}; do
+# Find all pubspec.yaml files within /examples that are not in the
+# codelabs directory or nested within a hidden directory.
+# Then loop through each one, get their directory,
+# and run analysis and tests on each one.
+find $EXAMPLE_ROOT -not \( -type d -path "*/.*" -prune \) \
+  -not \( -type d -path "$EXAMPLE_ROOT/codelabs" -prune \) \
+  -type f -name "pubspec.yaml" | sort | while read -r PUBSPEC_FILE; do
+  sample=$(dirname "$PUBSPEC_FILE")
 
-  # Does it have a pubspec?
-  if [[ -d "$sample" && -e "$sample/pubspec.yaml" ]]; then
+  # Does it match our filter?
+  if [[ -n "$FILTER" && ! $sample =~ $FILTER ]]; then
+    echo "=> Example: $sample - skipped because of filter"
+    continue
 
-    # Does it match our filter?
-    if [[ -n "$FILTER" && ! $sample =~ $FILTER ]]; then
-      echo "=> Example: $sample - skipped because of filter"
-      continue
-    
-    # Skip submodules
-    elif [[ "$(cd $sample; git rev-parse --show-superproject-working-tree)" ]]; then
-      echo "=> Example: $sample - skipped because it's in a submodule."
-      continue
-    
-    else
-      echo "=> Example: $sample"
-    fi
-
-    # Only hydrate the sample if we're going to test it.
-    if [[ -n $TEST && -d "$sample/test" ]]; then
-      (
-        set -x
-        cd $ROOT
-        flutter create --no-overwrite $sample
-        rm -rf $sample/integration_test # Remove unneeded integration test stubs.
-      )
-    fi
-
-    (
-      set -x
-      cd $sample
-      flutter pub get
-      flutter analyze .
-    )
-
-    if [[ -n $TEST && -d "$sample/test" ]]; then
-      (
-        cd $sample
-        set -x
-        echo "=> Running tests..."
-        flutter test
-      )
-    elif [[ -n $TEST ]]; then
-      echo "=> Sample has no tests"
-    fi
-    echo ""
+  else
+    echo "=> Example: $sample"
   fi
+
+  (
+    set -x
+    cd $sample
+    flutter pub get > /dev/null # Get dependencies, but ignore stdout.
+    flutter analyze .
+  )
+
+  if [[ -n $TEST && -d "$sample/test" ]]; then
+    (
+      cd $sample
+      set -x
+      echo "=> Running tests..."
+      flutter test -r expanded
+    )
+  elif [[ -n $TEST ]]; then
+    echo "=> Sample has no tests"
+  fi
+  echo ""
 done
