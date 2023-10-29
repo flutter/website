@@ -48,7 +48,7 @@ To set your machine to use a mirror site on macOS or Linux:
 1. Clone the Flutter repo from your mirror site.
 
    ```terminal
-   $ git clone -b dev {{site.repo.flutter}}.git
+   $ git clone -b stable {{site.repo.flutter}}.git
    ```
 
 1. Add Flutter to your `PATH` environment variable.
@@ -72,7 +72,7 @@ in any terminal where you set `PUB_HOSTED_URL` and `FLUTTER_STORAGE_BASE_URL`.
 Any environment variables set using `export` in this procedure
 only apply to the current terminal window.
 To set these values on a permanent basis,
-add those three `export` commands to the bottom of the `*rc` or `*_profile`
+add those three `export` commands to the bottom of the `*rc` or `*profile`
 file that your preferred shell uses.
 
 ### Download other versions of Flutter
@@ -92,8 +92,8 @@ For example:
 
 ## Configure your machine to publish your package
 
-If you receive errors when attempting to publish your package,
-try one of the following solutions:
+Before publishing your packages to pub.dev, reset your environments
+to defaults to complete the process:
 
   {% comment %}
   From https://github.com/flutter/website/pull/9338#discussion_r1328077020
