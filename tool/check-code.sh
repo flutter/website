@@ -41,18 +41,21 @@ flutter --version
 
 if [[ $REFRESH ]]; then
   echo "=> Refreshing code excerpts..."
+  TEMP_DIRECTORY=$(mktemp -d)
   (
-    commitHash=$(git reflog -n1 --format='%h')
-    git add .
-    git commit -m "Temporarily commit code excerpt changes"
-    set -x
+    # Copy the non hidden fies in the src directory to a temp directory
+    # so that we can diff the changes after refreshing code excerpts.
+    rsync -a --exclude '_*' "$ROOT/src" "$TEMP_DIRECTORY"
     tool/refresh-code-excerpts.sh --keep-dart-tool
-    git reset --soft $commitHash
   ) || (
-    git --no-pager diff
-    echo "=> ERROR: some code excerpts were not refreshed!"
+    # If there were excerpts needing updates,
+    # compare the temp copied directory with the updated source directory.
+    diff --no-dereference --exclude '_*' --color -U2 -r "$TEMP_DIRECTORY/src" "$ROOT/src" || :
+    echo "=> ERROR: The above code excerpts needed to be updated!"
+    rm -rf "$TEMP_DIRECTORY"
     exit 1
   )
+  rm -rf "$TEMP_DIRECTORY"
 fi
 
 
