@@ -123,7 +123,7 @@ find $EXAMPLE_ROOT -not \( -type d -path "*/.*" -prune \) \
       cd $sample
       set -x
       echo "=> Running tests..."
-      flutter test
+      flutter test -r expanded
     )
   elif [[ -n $TEST ]]; then
     echo "=> Sample has no tests"
