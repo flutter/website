@@ -36,14 +36,16 @@ if [[ ${diffVersion:0:1} != "3" ]]; then
   exit 1
 fi
 
+echo "::group::Generate code excerpt fragments"
 if [[ -e "$FRAG" ]]; then 
   echo "=> Deleting old $FRAG"
   rm -Rf "$FRAG"
 fi
 
-# Ensure package_config.json is generated
+# Ensure the package_config.json is generated.
 dart pub get --disable-analytics
 dart run build_runner build --delete-conflicting-outputs --config excerpt --output="$FRAG"
+echo "::endgroup::"
 
 
 if [[ ! -e "$FRAG/examples" ]]; then
@@ -72,8 +74,6 @@ ARGS+='/\x20*\/\/\s+ignore:[^\n]+//g;'                 # Remove analyzer ignore-
 
 echo "-------------------------------"
 echo "=> Source:     $SRC"
-# During the migration, all excerpt paths start here, meaning null safe 
-# excerpt paths begin whatever. After migration, this will not be necessary.
 echo "=> Fragments:  $FRAG/examples"
 echo "=> Other args: $ARGS"
 echo "-------------------------------"
