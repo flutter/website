@@ -1376,7 +1376,7 @@ package to use i10n machinery, such as date/time formatting.
 dependencies:
   flutter_localizations:
     sdk: flutter
-  intl: '^0.17.0'
+  intl: any # Use version of intl from flutter_localizations.
 ```
 
 To use the `flutter_localizations` package,
