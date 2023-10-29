@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
       gnupg \
       lsof \
       make \
+      rsync \
       unzip \
       xdg-user-dirs \
     && rm -rf /var/lib/apt/lists/*
