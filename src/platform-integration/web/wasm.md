@@ -3,7 +3,7 @@ title: Support for WebAssembly (Wasm)
 description: >-
   Current status of Flutter's experimental support for WebAssembly (Wasm).
 short-title: Wasm
-last-update: October 27, 2023
+last-update: October 31, 2023
 ---
 
 The Flutter and Dart teams are excited to add
@@ -125,7 +125,7 @@ Flutter/Wasm content:
 {{site.alert.end}}
 
 If your configured browser meets the requirements, open
-`localhost:8080` in the browser to view the app.
+[`localhost:8080`](http://localhost:8080) in the browser to view the app.
 
 If the application doesn't load:
 
