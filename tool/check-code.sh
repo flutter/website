@@ -94,7 +94,7 @@ EXAMPLE_ROOT="examples"
 echo "=> ANALYZING and testing apps in $EXAMPLE_ROOT/*"
 
 # Find all pubspec.yaml files within /examples that are not in the
-# codelabs directory codelabs or a hidden directory.
+# codelabs directory or nested within a hidden directory.
 # Then loop through each one, get their directory,
 # and run analysis and tests on each one.
 find $EXAMPLE_ROOT -not \( -type d -path "*/.*" -prune \) \
