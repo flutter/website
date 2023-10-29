@@ -1,6 +1,6 @@
 name: Site infrastructure issue
 description: |
-    Report a problem with the build, repo, or tooling for dart.dev
+    Report a problem with the build, repo, or tooling for docs.flutter.dev
 labels: [infra.structure, from.user]
 body:
   - type: textarea
