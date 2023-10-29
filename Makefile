@@ -88,10 +88,12 @@ emulate:
 # WARNING this can take a while to run!
 # Usage: `FLUTTER_BUILD_BRANCH=<channel> make test`
 test:
+	@echo "::group::Setting up container"
 	DOCKER_BUILDKIT=1 docker build --rm \
 	    --target tests \
 	    -t flt-test \
 	    --build-arg FLUTTER_BUILD_BRANCH=${FLUTTER_BUILD_BRANCH} .
+	@echo "::endgroup::"
 	docker run --rm --name flt-tests -t flt-test
 
 # Stop long running tests
