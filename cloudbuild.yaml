@@ -1,6 +1,3 @@
-# Provide instructions for google Cloud Build to build and upload the flutter
-# dashboard docker image to artifact registry.
-
 steps:
   - name: gcr.io/cloud-builders/git
     args: ['submodule', 'update', '--init', '--recursive']
@@ -9,13 +6,17 @@ steps:
     args:
       - '-c'
       - |-
+        echo "Building the website using a makefile..."
         make build BUILD_CONFIGS=_config.yml,_config_stage.yml
   - name: gcr.io/flutter-dev-230821/firebase
     entrypoint: '/bin/bash'
     args:
       - '-c'
       - |-
+        echo "Deploying website to a staging channel on firebase..."
         firebase hosting:channel:deploy --expires 7d pr$_PR_NUMBER-$_HEAD_BRANCH --project=$PROJECT_ID
+
+        echo "Saving list of channels to a local file..."
         firebase use default
         firebase hosting:channel:list --json > firebase_channels.json
   - name: gcr.io/cloud-builders/gcloud
