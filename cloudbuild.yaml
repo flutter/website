@@ -16,6 +16,7 @@ steps:
       - '-c'
       - |-
         firebase hosting:channel:deploy --expires 7d pr$_PR_NUMBER-$_HEAD_BRANCH --project=$PROJECT_ID
+        firebase use default
         firebase hosting:channel:list --json
         firebase hosting:channel:list --json > firebase_channels.json
   - name: gcr.io/cloud-builders/gcloud
