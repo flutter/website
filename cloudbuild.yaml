@@ -17,7 +17,6 @@ steps:
       - |-
         firebase hosting:channel:deploy --expires 7d pr$_PR_NUMBER-$_HEAD_BRANCH --project=$PROJECT_ID
         firebase use default
-        firebase hosting:channel:list --json
         firebase hosting:channel:list --json > firebase_channels.json
   - name: gcr.io/cloud-builders/gcloud
     entrypoint: '/bin/bash'
@@ -44,11 +43,10 @@ steps:
         gh auth login --with-token < token
 
         echo "Commenting staging url on PR..."
-
         PR_BODY=\
-        "Visit the preview URL for this PR (updated for commit $COMMIT_SHA):
+          "Visit the preview URL for this PR (updated for commit $COMMIT_SHA):
 
-        $$STAGING_URL"
+          $$STAGING_URL"
 
         gh pr comment $_PR_NUMBER --edit-last --body "$$PR_BODY" --repo $REPO_FULL_NAME || \
           gh pr comment $_PR_NUMBER --body "$$PR_BODY" --repo $REPO_FULL_NAME
