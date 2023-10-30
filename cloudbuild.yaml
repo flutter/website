@@ -13,6 +13,8 @@ steps:
     args:
       - '-c'
       - |-
+        set -e
+
         echo "Deploying website to a staging channel on firebase..."
         firebase hosting:channel:deploy --expires 7d pr$_PR_NUMBER-$_HEAD_BRANCH --project=$PROJECT_ID
 
