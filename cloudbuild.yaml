@@ -44,9 +44,9 @@ steps:
 
         echo "Commenting staging url on PR..."
         PR_BODY=\
-          "Visit the preview URL for this PR (updated for commit $COMMIT_SHA):
+        "Visit the preview URL for this PR (updated for commit $COMMIT_SHA):
 
-          $$STAGING_URL"
+        $$STAGING_URL"
 
         gh pr comment $_PR_NUMBER --edit-last --body "$$PR_BODY" --repo $REPO_FULL_NAME || \
           gh pr comment $_PR_NUMBER --body "$$PR_BODY" --repo $REPO_FULL_NAME
