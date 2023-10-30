@@ -1,4 +1,5 @@
-// Basic Flutter widget test. Learn more at https://flutter.io/docs/testing.
+// Basic Flutter widget test.
+// Learn more at https://docs.flutter.dev/testing/overview#widget-tests.
 
 import 'package:animation/main.dart';
 import 'package:flutter/material.dart';
