@@ -6,7 +6,7 @@ body:
     id: problem
     attributes:
       label: What information needs to be added?
-      placeholder: Provide a clear and concise description of what you expected to find on dart.dev, but didn't.
+      placeholder: Provide a clear and concise description of what you expected to find on docs.flutter.dev, but didn't.
     validations:
       required: true
   - type: textarea
