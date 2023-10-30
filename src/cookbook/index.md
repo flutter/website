@@ -48,6 +48,11 @@ reference to help you build up an application.
 - [Retrieve the value of a text field]({{site.url}}/cookbook/forms/retrieve-input)
 
 
+## Games
+
+- [Add achievements and leaderboards to your mobile game]({{site.url}}/cookbook/games/achievements-leaderboard)
+
+
 ## Gestures
 - [Add Material touch ripples]({{site.url}}/cookbook/gestures/ripples)
 - [Handle taps]({{site.url}}/cookbook/gestures/handling-taps)
@@ -103,7 +108,6 @@ reference to help you build up an application.
 
 
 ## Plugins
-- [Add achievements and leaderboards to your mobile game]({{site.url}}/cookbook/plugins/achievements-leaderboard)
 - [Play and pause a video]({{site.url}}/cookbook/plugins/play-video)
 - [Take a picture using the camera]({{site.url}}/cookbook/plugins/picture-using-camera)
 
