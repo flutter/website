@@ -48,6 +48,10 @@ reference to help you build up an application.
 - [Retrieve the value of a text field]({{site.url}}/cookbook/forms/retrieve-input)
 
 
+## Games
+- [Show ads]({{site.url}}/cookbook/plugins/google-mobile-ads)
+
+
 ## Gestures
 - [Add Material touch ripples]({{site.url}}/cookbook/gestures/ripples)
 - [Handle taps]({{site.url}}/cookbook/gestures/handling-taps)
@@ -104,6 +108,7 @@ reference to help you build up an application.
 
 ## Plugins
 - [Play and pause a video]({{site.url}}/cookbook/plugins/play-video)
+- [Show ads]({{site.url}}/cookbook/plugins/google-mobile-ads)
 - [Take a picture using the camera]({{site.url}}/cookbook/plugins/picture-using-camera)
 
 
