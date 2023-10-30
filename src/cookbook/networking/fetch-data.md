@@ -9,6 +9,13 @@ Fetching data from the internet is necessary for most apps.
 Luckily, Dart and Flutter provide tools, such as the
 `http` package, for this type of work.
 
+{{site.alert.note}}
+  Flutter API docs cannot be generated on Windows.
+  If you are using Windows, you might need to download
+  the Linux version of the SDK and use the
+  [Windows Subsystem for Linux][].
+{{site.alert.end}}
+
 This recipe uses the following steps:
 
   1. Add the `http` package.
