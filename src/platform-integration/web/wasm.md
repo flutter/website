@@ -15,8 +15,8 @@ applications for the web.
   
   You can preview Wasm and WebAssembly garbage collection (WasmGC)
   on the [`master` channel][].
-  As Flutter provides these features as previews,
-  ongoing development might result in frequent changes.
+  Flutter is previewing these features.
+  Ongoing development might result in frequent changes.
   Revisit this page for the latest updates.
   
   **_Last updated {{page.last-update}}_**
