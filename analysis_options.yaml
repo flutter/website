@@ -1,2 +1,0 @@
-analyzer:
-  exclude: [flutter, site-shared, src, tmp]
