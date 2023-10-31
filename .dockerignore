@@ -1,9 +1,0 @@
-.dockerignore
-.gitignore
-AUTHORS
-CONTRIBUTING.md
-docker-compose.yml
-LICENSE
-node_modules/
-README.md
-flutter/
