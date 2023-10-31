@@ -68,12 +68,6 @@ For example:
 To publish your packages to pub.dev,
 you need to access the pub.dev site.
 
-This procedure works even if you have set permanent values for your machine.
-
-1. Open a new terminal window.
-
-1. Set your machine to use the default environment variables.
-
   {% comment %}
   From https://github.com/flutter/website/pull/9338#discussion_r1328077020
   {% endcomment %}
@@ -87,11 +81,42 @@ To access pub.dev, you can use one of three options:
   From https://github.com/flutter/website/issues/2556#issuecomment-481566476
   {% endcomment %}
 
-1. Make sure the `PUB_HOSTED_URL` environment variable is unset or is empty.
+1. Verify that your `PUB_HOSTED_URL` environment variable is either unset
+   or empty.
 
-1. Enable your proxy and get authorized through Google OAuth with pub.dev by publishing the package.
+   On macOS, Linux, or ChromeOS, run this command:
+
+   ```bash
+   echo $PUB_HOSTED_URL
+   ```
+
+   If this command returns any value, unset it.
+
+   ```bash
+   unset $PUB_HOSTED_URL
+   ```
+
+   On Windows, run this command:
+
+   ```powershell
+   echo $env:PUB_HOSTED_URL
+   ```
+
+   If this command returns any value, unset it.
+
+   ```powershell
+   Remove-Item $env:PUB_HOSTED_URL
+   ```
+
+1. Enable your proxy then publish your package and get authorized
+   through Google OAuth with pub.dev.
+
+To learn more about publishing packages, check out
+[Dart documentation on publishing packages][]
 
 [Dart documentation on proxies]: {{site.dart-site}}/tools/pub/troubleshoot#pub-get-fails-from-behind-a-corporate-firewall
+
+[Dart documentation on publishing packages]: {{site.dart-site}}/tools/pub/publishing
 
 ## Details on mirror sites
 
