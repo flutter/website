@@ -102,9 +102,7 @@ import 'package:test/test.dart';
 void main() {
   test('Counter value should be incremented', () {
     final counter = Counter();
-
     counter.increment();
-
     expect(counter.value, 1);
   });
 }
@@ -112,8 +110,10 @@ void main() {
 
 ## 5. Combine multiple tests in a `group`
 
-If you have several tests that are related to one another,
-combine them using the `group` function provided by the `test` package.
+If you want to run a series of related tests,
+use the `flutter_test` package [`group`][] function to categorize the tests.
+Once put into a group, you can call `flutter test` on all tests in
+that group with one command.
 
 <?code-excerpt "test/group.dart"?>
 ```dart
@@ -121,24 +121,20 @@ import 'package:counter_app/counter.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('Counter', () {
+  group('Test start, increment, decrement', () {
     test('value should start at 0', () {
       expect(Counter().value, 0);
     });
 
     test('value should be incremented', () {
       final counter = Counter();
-
       counter.increment();
-
       expect(counter.value, 1);
     });
 
     test('value should be decremented', () {
       final counter = Counter();
-
       counter.decrement();
-
       expect(counter.value, -1);
     });
   });
@@ -170,19 +166,29 @@ fastest feedback loop as well as the ability to set breakpoints.
 
 ### Run tests in a terminal
 
-You can also use a terminal to run the tests by executing the following
-command from the root of the project:
+To run the all tests from the terminal,
+run the following command from the root of the project:
 
 ```terminal
 flutter test test/counter_test.dart
 ```
 
-For more options regarding unit tests, you can execute this command:
+To run all tests you put into one `group`,
+run the following command from the root of the project:
+
+```terminal
+flutter test --plain-name "Test start, increment, decrement"
+```
+
+This example uses the `group` created in **section 5**.
+
+To learn more about unit tests, you can execute this command:
 
 ```terminal
 flutter test --help
 ```
 
+[`group`]: {{site.api}}/flutter/flutter_test/group.html
 [`flutter_test`]: {{site.api}}/flutter/flutter_test/flutter_test-library.html
 [`test`]: {{site.pub-pkg}}/test
 [test package documentation]: {{site.pub}}/packages/test
