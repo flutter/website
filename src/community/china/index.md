@@ -48,12 +48,16 @@ To set your machine to use a mirror site:
 {% include_relative _os-settings.md os="ChromeOS" %}
 </div>
 
-### Download other versions of Flutter
+### Download Flutter archives based on a mirrored URL
 
-To install a different version of Flutter found in the
-[archive]({{site.url}}/release/archive),
-replace `storage.googleapis.com` with that of your trusted mirror.
-This should improve download speed.
+To download Flutter archives from a mirrored URL,
+replace `storage.googleapis.com` with the URL of your trusted mirror.
+This should improve download speed and the replaced URL
+can be used to download other software.
+
+{{site.alert.note}}
+  Not every mirror supports downloading artifacts using a replaced URL.
+{{site.alert.end}}
 
 For example:
 
@@ -66,13 +70,13 @@ For example:
 ## Configure your machine to publish your package
 
 To publish your packages to pub.dev,
-you need to access the pub.dev site.
+you need to be able to access both Google Auth and the pub.dev site.
 
   {% comment %}
   From https://github.com/flutter/website/pull/9338#discussion_r1328077020
   {% endcomment %}
 
-To access pub.dev, you can use one of three options:
+To publish packages to pub.dev:
 
 1. Configure a proxy.
    To configure a proxy, check out the [Dart documentation on proxies][].
@@ -108,11 +112,8 @@ To access pub.dev, you can use one of three options:
    Remove-Item $env:PUB_HOSTED_URL
    ```
 
-1. Enable your proxy then publish your package and get authorized
-   through Google OAuth with pub.dev.
-
 To learn more about publishing packages, check out
-[Dart documentation on publishing packages][]
+[Dart documentation on publishing packages][].
 
 [Dart documentation on proxies]: {{site.dart-site}}/tools/pub/troubleshoot#pub-get-fails-from-behind-a-corporate-firewall
 
@@ -125,7 +126,7 @@ To learn more about publishing packages, check out
 The Flutter team cannot guarantee long-term availability of any mirrors.
 You can use other mirrors if they become available.
 
-### New mirror sites
+### Host new mirror sites
 
 If you're interested in setting up your own mirror,
 contact [flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com)
