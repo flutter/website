@@ -130,8 +130,7 @@ class _FlutterLayoutArticleState extends State<FlutterLayoutArticle> {
                           for (int i = 0; i < widget.examples.length; i++)
                             Container(
                               width: 58,
-                              padding:
-                                  const EdgeInsets.only(left: 4, right: 4),
+                              padding: const EdgeInsets.only(left: 4, right: 4),
                               child: button(i + 1),
                             ),
                         ],

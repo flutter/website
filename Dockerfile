@@ -11,8 +11,8 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
       gnupg \
       lsof \
       make \
+      rsync \
       unzip \
-      vim-nox \
       xdg-user-dirs \
     && rm -rf /var/lib/apt/lists/*
 
@@ -32,7 +32,7 @@ ENV FLUTTER_ROOT=flutter
 ENV FLUTTER_BIN=flutter/bin
 ENV PATH="/flutter/bin:$PATH"
 
-RUN git clone --branch $FLUTTER_BUILD_BRANCH --single-branch https://github.com/flutter/flutter /flutter/
+RUN git clone --branch $FLUTTER_BUILD_BRANCH --single-branch --filter=tree:0 https://github.com/flutter/flutter /flutter/
 VOLUME /flutter
 
 # Set up Flutter
@@ -55,7 +55,7 @@ RUN mkdir -p /etc/apt/keyrings \
     && npm install -g npm # Ensure latest npm
 
 # Install global Firebase CLI
-RUN npm install -g firebase-tools@12.4.0
+RUN npm install -g firebase-tools@12.7.0
 
 
 

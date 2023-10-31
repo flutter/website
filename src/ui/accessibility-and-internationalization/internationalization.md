@@ -262,7 +262,7 @@ complete the following instructions:
    }
    ```
 
-6. Now, run `flutter run` and codegen takes place automatically.
+6. Now, run `flutter pub get` or `flutter run` and codegen takes place automatically.
    You should find generated files in
    `${FLUTTER_PROJECT}/.dart_tool/flutter_gen/gen_l10n`.
    Alternatively, you can also run `flutter gen-l10n` to
@@ -1200,7 +1200,7 @@ class DemoLocalizations {
     },
   };
 
-  static List<String> languages ()=> _localizedValues.keys.toList();
+  static List<String> languages() => _localizedValues.keys.toList();
 
   String get title {
     return _localizedValues[locale.languageCode]!['title']!;
@@ -1219,8 +1219,8 @@ class DemoLocalizationsDelegate
   const DemoLocalizationsDelegate();
 
   @override
-  bool isSupported(Locale locale) => DemoLocalizations.languages().contains(locale.languageCode);
-
+  bool isSupported(Locale locale) =>
+      DemoLocalizations.languages().contains(locale.languageCode);
 
   @override
   Future<DemoLocalizations> load(Locale locale) {

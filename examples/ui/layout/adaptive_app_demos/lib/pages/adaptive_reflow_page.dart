@@ -1,26 +1,34 @@
+// ignore_for_file: non_constant_identifier_names
+
+/// Shows 3 types of layout:
+/// - A vertical for narrow screens
+/// - Wide for wide screens
+/// - A mixed mode
+library;
+
 import 'package:flextras/flextras.dart';
 import 'package:flutter/material.dart';
 
 import '../global/device_type.dart';
 import '../widgets/scroll_view_with_scrollbars.dart';
 
-/// Shows 3 types of layout, a vertical for narrow screens, wide for wide screens, and a mixed mode.
-
-enum ReflowMode { Vertical, Horizontal, Mixed }
+enum ReflowMode { vertical, horizontal, mixed }
 
 class AdaptiveReflowPage extends StatelessWidget {
+  const AdaptiveReflowPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (_, constraints) {
       /// Decide which mode to show in
-      ReflowMode reflowMode = ReflowMode.Mixed;
+      ReflowMode reflowMode = ReflowMode.mixed;
       if (constraints.maxWidth < 800) {
-        reflowMode = ReflowMode.Vertical;
+        reflowMode = ReflowMode.vertical;
       } else if (constraints.maxHeight < 800) {
-        reflowMode = ReflowMode.Horizontal;
+        reflowMode = ReflowMode.horizontal;
       }
       // In mixed mode, use a mix of Colum and Row
-      if (reflowMode == ReflowMode.Mixed) {
+      if (reflowMode == ReflowMode.mixed) {
         return Column(
           children: [
             Expanded(
@@ -37,7 +45,7 @@ class AdaptiveReflowPage extends StatelessWidget {
       }
       // In vertical or horizontal mode, use a ExpandedScrollingFlex with the same set of children
       else {
-        Axis direction = reflowMode == ReflowMode.Horizontal
+        Axis direction = reflowMode == ReflowMode.horizontal
             ? Axis.horizontal
             : Axis.vertical;
         return ExpandedScrollingFlex(
@@ -55,9 +63,9 @@ class AdaptiveReflowPage extends StatelessWidget {
 }
 
 /// For demo purposes, simulate 3 different content areas
-Widget _ContentPanel1() => _ContentPanel('Panel 1');
-Widget _ContentPanel2() => _ContentPanel('Panel 2');
-Widget _ContentPanel3() => _ContentPanel('Panel 3');
+Widget _ContentPanel1() => const _ContentPanel('Panel 1');
+Widget _ContentPanel2() => const _ContentPanel('Panel 2');
+Widget _ContentPanel3() => const _ContentPanel('Panel 3');
 
 class _ContentPanel extends StatelessWidget {
   const _ContentPanel(this.label);
@@ -69,7 +77,7 @@ class _ContentPanel extends StatelessWidget {
     VisualDensity density = Theme.of(context).visualDensity;
     // #enddocregion VisualDensityOwnView
     return ConstrainedBox(
-      constraints: BoxConstraints(minHeight: 300, minWidth: 300),
+      constraints: const BoxConstraints(minHeight: 300, minWidth: 300),
       child: Padding(
         padding: EdgeInsets.all(Insets.large + density.vertical * 6),
         child: Container(

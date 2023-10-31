@@ -1,11 +1,9 @@
 name: adaptive_app_demos
 description: Demo code for adaptive app development techniques.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-
-version: 1.0.0+1
+publish_to: none
 
 environment:
-  sdk: ^3.1.0-0
+  sdk: ^3.1.0
 
 dependencies:
   flutter:
@@ -18,8 +16,10 @@ dependencies:
   platform: ^3.1.0
 
 dev_dependencies:
+  example_utils:
+    path: ../../../example_utils
   flutter_test:
     sdk: flutter
-
+    
 flutter:
   uses-material-design: true

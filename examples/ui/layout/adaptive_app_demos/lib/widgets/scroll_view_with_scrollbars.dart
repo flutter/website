@@ -4,17 +4,22 @@ import 'package:provider/provider.dart';
 import '../app_model.dart';
 
 class ScrollViewWithScrollbars extends StatefulWidget {
-  const ScrollViewWithScrollbars(
-      {super.key, required this.child, this.axis = Axis.vertical});
+  const ScrollViewWithScrollbars({
+    super.key,
+    required this.child,
+    this.axis = Axis.vertical,
+  });
+
   final Widget child;
   final Axis axis;
+
   @override
-  _ScrollViewWithScrollbarsState createState() =>
+  State<ScrollViewWithScrollbars> createState() =>
       _ScrollViewWithScrollbarsState();
 }
 
 class _ScrollViewWithScrollbarsState extends State<ScrollViewWithScrollbars> {
-  ScrollController _scrollController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
 
   @override
   Widget build(BuildContext context) {

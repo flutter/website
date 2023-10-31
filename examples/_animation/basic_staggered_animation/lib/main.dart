@@ -150,7 +150,9 @@ class _StaggerDemoState extends State<StaggerDemo>
     super.initState();
 
     _controller = AnimationController(
-        duration: const Duration(milliseconds: 2000), vsync: this);
+      duration: const Duration(milliseconds: 2000),
+      vsync: this,
+    );
   }
 
   @override
@@ -164,7 +166,7 @@ class _StaggerDemoState extends State<StaggerDemo>
       await _controller.forward().orCancel;
       await _controller.reverse().orCancel;
     } on TickerCanceled {
-      // the animation got canceled, probably because we were disposed
+      // The animation got canceled, probably because we were disposed.
     }
   }
 

@@ -1,3 +1,4 @@
+// ignore_for_file: unused_local_variable
 // #docregion ShakeCurve
 import 'dart:math';
 
@@ -76,7 +77,7 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
 
 class UsedInTutorialTextOnly extends _LogoAppState {
   UsedInTutorialTextOnly() {
-    // ignore: unused_local_variable, prefer_typing_uninitialized_variables
+    // ignore: prefer_typing_uninitialized_variables
     var animation, sizeAnimation, opacityAnimation, tween, colorTween;
 
     // #docregion CurvedAnimation
@@ -97,16 +98,15 @@ class UsedInTutorialTextOnly extends _LogoAppState {
     // #enddocregion colorTween
   }
 
-  usedInTutorialOnly1() {
+  void usedInTutorialOnly1() {
     // #docregion IntTween
     AnimationController controller = AnimationController(
         duration: const Duration(milliseconds: 500), vsync: this);
     Animation<int> alpha = IntTween(begin: 0, end: 255).animate(controller);
     // #enddocregion IntTween
-    return alpha;
   }
 
-  usedInTutorialOnly2() {
+  void usedInTutorialOnly2() {
     // #docregion IntTween-curve
     AnimationController controller = AnimationController(
         duration: const Duration(milliseconds: 500), vsync: this);
@@ -114,7 +114,6 @@ class UsedInTutorialTextOnly extends _LogoAppState {
         CurvedAnimation(parent: controller, curve: Curves.easeOut);
     Animation<int> alpha = IntTween(begin: 0, end: 255).animate(curve);
     // #enddocregion IntTween-curve
-    return alpha;
   }
 }
 
@@ -123,3 +122,4 @@ class ShakeCurve extends Curve {
   @override
   double transform(double t) => sin(t * pi * 2);
 }
+// #enddocregion ShakeCurve
