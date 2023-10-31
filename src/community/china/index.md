@@ -87,9 +87,9 @@ To access pub.dev, you can use one of three options:
   From https://github.com/flutter/website/issues/2556#issuecomment-481566476
   {% endcomment %}
 
-1. Enable your VPN without adding a `credentials.json` file.
+1. Make sure the `PUB_HOSTED_URL` environment variable is unset or is empty.
 
-1. Disable your proxy and add a `credentials.json` file.
+1. Enable your proxy and get authorized through Google OAuth with pub.dev by publishing the package.
 
 [Dart documentation on proxies]: {{site.dart-site}}/tools/pub/troubleshoot#pub-get-fails-from-behind-a-corporate-firewall
 
