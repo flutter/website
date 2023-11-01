@@ -52,8 +52,8 @@ To set your machine to use a mirror site:
 
 To download Flutter archives from a mirrored URL,
 replace `storage.googleapis.com` with the URL of your trusted mirror.
-This should improve download speed and the replaced URL
-can be used to download other software.
+This should improve download speed.
+ You can use the replaced URL in other applications to download software.
 
 {{site.alert.note}}
   Not every mirror supports downloading artifacts using a replaced URL.
