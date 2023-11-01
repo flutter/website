@@ -10,8 +10,11 @@ targets:
       exclude:
         - '**/.*/**'
         - '**/android/**'
-        - '**/build/**'
         - '**/ios/**'
+        - '**/linux/**'
+        - '**/macos/**'
+        - '**/windows/**'
+        - '**/build/**'
         - '**/node_modules/**'
         - '**/*.jar'
         - '**/codelab_rebuild.yaml'

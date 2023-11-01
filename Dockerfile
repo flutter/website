@@ -11,8 +11,8 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
       gnupg \
       lsof \
       make \
+      rsync \
       unzip \
-      vim-nox \
       xdg-user-dirs \
     && rm -rf /var/lib/apt/lists/*
 
@@ -33,8 +33,8 @@ ENV FLUTTER_BIN=$FLUTTER_ROOT/bin
 ENV DART_BIN=$FLUTTER_BIN/cache/dart-sdk/bin
 ENV PATH="$FLUTTER_BIN:$DART_BIN:$PATH"
 
-RUN git clone --branch $FLUTTER_BUILD_BRANCH --single-branch https://github.com/flutter/flutter $FLUTTER_ROOT
-VOLUME $FLUTTER_ROOT
+RUN git clone --branch $FLUTTER_BUILD_BRANCH --single-branch --filter=tree:0 https://github.com/flutter/flutter /flutter/
+VOLUME /flutter
 
 # Set up Flutter
 # NOTE You will get a warning "Woah! You appear to be trying to run flutter as root."
@@ -59,7 +59,7 @@ RUN mkdir -p /etc/apt/keyrings \
     && npm install -g npm # Ensure latest npm
 
 # Install global Firebase CLI
-RUN npm install -g firebase-tools@12.4.0
+RUN npm install -g firebase-tools@12.7.0
 
 
 
