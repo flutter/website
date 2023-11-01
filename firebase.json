@@ -105,7 +105,7 @@
       { "source": "/cookbook/games", "destination": "https://flutter.dev/games", "type": 301 },
       { "source": "/cookbook/games/achievements-leaderboard", "destination": "https://flutter.dev/games", "type": 301 },
       { "source": "/cookbook/games/firestore-multiplayer", "destination": "https://flutter.dev/games", "type": 301 },
-      { "source": "/cookbook/games/google-mobile-ads", "destination": "https://flutter.dev/games", "type": 301 },
+      { "source": "/cookbook/games/google-mobile-ads", "destination": "/cookbook/plugins/google-mobile-ads", "type": 301 },
       { "source": "/cookbook/networking/named-routes", "destination": "/cookbook/navigation/named-routes", "type": 301 },
       { "source": "/cookbook/testing/integration-test-introduction", "destination": "/cookbook/testing/integration", "type": 301 },
       { "source": "/cookbook/testing/integration-test-profiling", "destination": "/cookbook/testing/integration/profiling", "type": 301 },
