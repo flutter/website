@@ -5,7 +5,7 @@
 {% assign prompt = 'C:\>' -%}
 {% assign envvarset = 'C:\> $env:' -%}
 {% assign setpath = 'C:\> $env:PATH = $pwd.PATH + "/flutter/bin",$env:PATH -join ";"' -%}
-{% assign comtoset = 'env:' -%}
+{% assign comtoset = '$env:' -%}
 {% assign unzip='Extract-Archive' %}
 {% capture permaddexample -%}
 $newPath = $pwd.PATH + "/flutter/bin",$env:PATH -join ";"
@@ -33,17 +33,16 @@ EOT
   {%- if id == 'windows' %} active {% endif %}"
   role="tabpanel" aria-labelledby="{{id}}-tab" markdown="1">
 
-1. Create and change into the directory where you plan
-   to store your local Flutter clone.
+1. Open a new Terminal window to prepare running scripts.
 
-1. Set your pub URL to your mirror site.
+1. Set `PUB_HOSTED_URL` to your mirror site.
    In {{shell}}, run the following command:
 
    ```terminal
    {{envvarset}}PUB_HOSTED_URL="https://pub.flutter-io.cn"
    ```
 
-1. Set your Flutter storage URL to your mirror site.
+1. Set `FLUTTER_STORAGE_BASE_URL` to your mirror site.
    In {{shell}}, run the following command:
 
    ```terminal
@@ -51,7 +50,8 @@ EOT
    ```
 
 1. Download the Flutter archive from your mirror site.
-   In your preferred browser, go to https://flutter.cn/docs/release/archive.
+   In your preferred browser, go to
+   [Flutter SDK archive](https://flutter.cn/docs/release/archive?tab={{id}}).
 
 1. Create a folder where you can install Flutter.
 
