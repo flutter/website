@@ -75,9 +75,7 @@ and decrementing a `value` starting at `0`.
 ```dart
 class Counter {
   int value = 0;
-
   void increment() => value++;
-
   void decrement() => value--;
 }
 ```
@@ -117,8 +115,8 @@ that group with one command.
 
 <?code-excerpt "test/group.dart"?>
 ```dart
-import 'package:counter_app/counter.dart';
-import 'package:test/test.dart';
+import "package:counter_app/counter.dart";
+import "package:test/test.dart";
 
 void main() {
   group('Test start, increment, decrement', () {
