@@ -185,5 +185,33 @@ $env:PUB_HOSTED_URL="https://mirror.sjtu.edu.cn"
 $env:FLUTTER_STORAGE_BASE_URL="https://mirror.sjtu.edu.cn/flutter-infra"
 ```
 
+#### Tsinghua University TUNA Association
+
+[Tsinghua University TUNA Association][]
+maintains the `mirrors.tuna.tsinghua.edu.cn` mirror.
+It includes Flutter and packages.
+
+If you're running into issues that only occur when
+using the `mirror.sjtu.edu.cn` mirror, report the issue to their
+[issue tracker](https://github.com/tuna/issues).
+
+To set your machine to use this mirror, use these commands.
+
+On macOS, Linux, or ChromeOS:
+
+```bash
+export FLUTTER_STORAGE_BASE_URL=https://mirrors.tuna.tsinghua.edu.cn/flutter
+export PUB_HOSTED_URL=https://mirrors.tuna.tsinghua.edu.cn/dart-pub
+```
+
+On Windows:
+
+```powershell
+$env:PUB_HOSTED_URL="https://mirrors.tuna.tsinghua.edu.cn/dart-pub"
+$env:FLUTTER_STORAGE_BASE_URL="https://mirrors.tuna.tsinghua.edu.cn/flutter"
+```
+
+[Tsinghua University TUNA Association]: https://tuna.moe
+
 [China Flutter User Group]: https://github.com/cfug
 [Shanghai Jiao Tong University *nix User Group]: https://github.com/sjtug
