@@ -1149,7 +1149,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-          primarySwatch: Colors.blue,
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           textSelectionTheme:
               const TextSelectionThemeData(selectionColor: Colors.red)),
       home: const SampleAppPage(),
