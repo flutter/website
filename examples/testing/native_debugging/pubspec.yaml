@@ -1,6 +1,6 @@
 name: native_debugging
 description: Demonstration of native code debugging
-publish_to: 'none'
+sdk: ^3.1.0'
 
 version: 1.0.0+1
 
