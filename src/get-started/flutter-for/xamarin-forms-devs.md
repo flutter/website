@@ -2474,7 +2474,7 @@ but is not as rich as `MaterialApp`.
 To customize the colors and styles of any child components,
 pass a `ThemeData` object to the `MaterialApp` widget.
 For example, in the following code,
-the primary swatch is set to blue and text selection color is red.
+the color scheme from seed is set to deepPurple and text selection color is red.
 
 <?code-excerpt "lib/theme.dart (Theme)"?>
 ```dart
