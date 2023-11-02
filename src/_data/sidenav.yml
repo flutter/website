@@ -254,6 +254,29 @@
 - divider
 - header: Beyond UI
 
+- title: Build by category
+  children:
+    - title: Games
+      children:
+        - title: Create a casual game
+          permalink: /resources/games-toolkit
+        - title: Build a game with Flame
+          permalink: https://codelabs.developers.google.com/codelabs/flutter-flame-game
+    - title: News
+      children:
+        - title: Build a news app
+          permalink: /resources/news-toolkit
+    - title: Monetization
+      children:
+        - title: Overview
+          permalink: https://flutter.dev/monetization
+        - title: Add in-app purchases
+          permalink: https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases#0
+    - title: Maps & navigation
+      children:
+        - title: Add maps to your app
+          permalink: https://developers.google.com/maps/flutter-package
+
 - title: Data & backend
   permalink: /data-and-backend
   children:
@@ -620,11 +643,6 @@
       permalink: https://github.com/flutter/flutter/blob/main/CONTRIBUTING.md
     - title: Design documents
       permalink: /resources/design-docs
-    - header: Toolkits
-    - title: Casual Games Toolkit
-      permalink: /resources/games-toolkit
-    - title: Flutter News Toolkit
-      permalink: /resources/news-toolkit
 
 - title: Reference
   permalink: /reference
