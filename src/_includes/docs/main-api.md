@@ -15,4 +15,4 @@
 {{site.alert.end}}
 
 [api.flutter.dev]: {{site.api}}
-[latest docs]: {{site.master-api}}
+[latest docs]: {{site.main-api}}
