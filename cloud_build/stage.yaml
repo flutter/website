@@ -1,0 +1,24 @@
+steps:
+  - name: gcr.io/cloud-builders/git
+    args: ['submodule', 'update', '--init', '--recursive']
+  - name: gcr.io/cloud-builders/docker
+    entrypoint: '/bin/bash'
+    args:
+      - '-c'
+      - |-
+        set -e
+
+        echo "Building the website using a makefile..."
+        make build BUILD_CONFIGS=_config.yml,_config_stage.yml
+  - name: gcr.io/$PROJECT_ID/firebase-staging
+    entrypoint: '/bin/bash'
+    args:
+      - '-c'
+      - |-
+        cloud_build/scripts/stage_site_and_comment_on_github.sh $_PR_NUMBER $_HEAD_BRANCH $PROJECT_ID $COMMIT_SHA $REPO_FULL_NAME $$GH_PAT_TOKEN
+    secretEnv: ['GH_PAT_TOKEN']
+availableSecrets:
+  secretManager:
+  - versionName: projects/$PROJECT_ID/secrets/gh_token_comment/versions/latest
+    env: 'GH_PAT_TOKEN'
+timeout: 1200s
