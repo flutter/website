@@ -22,3 +22,5 @@ availableSecrets:
   - versionName: projects/$PROJECT_ID/secrets/gh_token_comment/versions/latest
     env: 'GH_PAT_TOKEN'
 timeout: 1200s
+options:
+  logging: CLOUD_LOGGING_ONLY
