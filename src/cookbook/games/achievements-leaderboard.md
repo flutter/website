@@ -26,8 +26,8 @@ to add achievements and leaderboard functionality to your mobile game.
 
 ## 1. Enable platform services
 
-To enable games services, set up *Game Center* on iOS and *Google Play
-Games Services* on Android.
+To enable games services, set up *Game Center* on iOS and
+*Google Play Games Services* on Android.
 
 ### iOS
 
