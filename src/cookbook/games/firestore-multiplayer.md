@@ -26,7 +26,6 @@ These games can simulate much of what happens
 in between player interactions on local machines.
 Therefore, they don't need to synchronize game states that often.
 
-XXX START HERE - gather illustrations and screenshots and gifs
 \[TODO ILLUSTRATION of two mobile phones and a two-way arrow between them\]
 
 If you can choose low tick rates as a developer, you should.
@@ -66,8 +65,8 @@ $ git clone https://github.com/flutter/games.git
 ```
 
 {% comment %}
-If/when we have a "sample_extractor" tool, or any other easier way
-to get the code, mention that here.
+  If/when we have a "sample_extractor" tool, or any other easier way
+  to get the code, mention that here.
 {% endcomment %}
 
 Open the project in `templates/card_game`.
@@ -106,10 +105,10 @@ As soon as you get the step of writing Dart code in that guide,
 return to this recipe.
 
 {% comment %}
-Revisit to see if we can inline the steps here:
-https://firebase.google.com/docs/flutter/setup
-... followed by the first 2 steps here:
-https://firebase.google.com/docs/firestore/quickstart
+  Revisit to see if we can inline the steps here:
+  https://firebase.google.com/docs/flutter/setup
+  ... followed by the first 2 steps here:
+  https://firebase.google.com/docs/firestore/quickstart
 {% endcomment %}
 
 
@@ -201,13 +200,13 @@ class FirestoreController {
       .collection('areas')
       .doc('area_one')
       .withConverter<List<PlayingCard>>(
-      fromFirestore: _cardsFromFirestore, toFirestore: _cardsToFirestore);
+          fromFirestore: _cardsFromFirestore, toFirestore: _cardsToFirestore);
 
   late final _areaTwoRef = _matchRef
       .collection('areas')
       .doc('area_two')
       .withConverter<List<PlayingCard>>(
-      fromFirestore: _cardsFromFirestore, toFirestore: _cardsToFirestore);
+          fromFirestore: _cardsFromFirestore, toFirestore: _cardsToFirestore);
 
   StreamSubscription? _areaOneFirestoreSubscription;
   StreamSubscription? _areaTwoFirestoreSubscription;
