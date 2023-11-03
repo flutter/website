@@ -61,6 +61,29 @@
     - title: Codelabs
       permalink: /codelabs
 
+- title: App solutions
+  children:
+    - title: Games
+      children:
+        - title: Create a casual game
+          permalink: /resources/games-toolkit
+        - title: Build a game with Flame
+          permalink: https://codelabs.developers.google.com/codelabs/flutter-flame-game
+    - title: News
+      children:
+        - title: Build a news app
+          permalink: /resources/news-toolkit
+    - title: Monetization
+      children:
+        - title: Overview
+          permalink: https://flutter.dev/monetization
+        - title: Add in-app purchases
+          permalink: https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases#0
+    - title: Maps
+      children:
+        - title: Add maps to your app
+          permalink: https://developers.google.com/maps/flutter-package
+
 - divider
 - header: User interface
 - title: Introduction
@@ -253,29 +276,6 @@
 
 - divider
 - header: Beyond UI
-
-- title: Build by category
-  children:
-    - title: Games
-      children:
-        - title: Create a casual game
-          permalink: /resources/games-toolkit
-        - title: Build a game with Flame
-          permalink: https://codelabs.developers.google.com/codelabs/flutter-flame-game
-    - title: News
-      children:
-        - title: Build a news app
-          permalink: /resources/news-toolkit
-    - title: Monetization
-      children:
-        - title: Overview
-          permalink: https://flutter.dev/monetization
-        - title: Add in-app purchases
-          permalink: https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases#0
-    - title: Maps & navigation
-      children:
-        - title: Add maps to your app
-          permalink: https://developers.google.com/maps/flutter-package
 
 - title: Data & backend
   permalink: /data-and-backend
