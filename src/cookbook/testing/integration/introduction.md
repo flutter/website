@@ -85,10 +85,6 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              // Provide a Key to this specific Text widget. This allows
-              // identifying the widget from inside the test suite,
-              // and reading the text.
-              key: const Key('counter'),
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
@@ -158,6 +154,7 @@ Now you can write tests. This involves three steps:
 
 <?code-excerpt "integration_test/app_test.dart (IntegrationTest)"?>
 ```dart
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:introduction/main.dart';
@@ -175,7 +172,7 @@ void main() {
       expect(find.text('0'), findsOneWidget);
 
       // Finds the floating action button to tap on.
-      final Finder fab = find.byTooltip('Increment');
+      final fab = find.byKey(const Key('increment'));
 
       // Emulate a tap on the floating action button.
       await tester.tap(fab);

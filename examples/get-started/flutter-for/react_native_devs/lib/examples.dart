@@ -144,7 +144,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-          primarySwatch: Colors.blue,
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           textSelectionTheme:
               const TextSelectionThemeData(selectionColor: Colors.red)),
       home: const SampleAppPage(),
@@ -334,7 +334,7 @@ class _HttpExampleState extends State<HttpExample> {
     final request = await httpClient.getUrl(url);
     final response = await request.close();
     final responseBody = await response.transform(utf8.decoder).join();
-    final String ip = jsonDecode(responseBody)['origin'];
+    final ip = jsonDecode(responseBody)['origin'] as String;
     setState(() {
       _ipAddress = ip;
     });

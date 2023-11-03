@@ -11,7 +11,7 @@ js:
 Traditional chat apps display messages in chat bubbles
 with solid color backgrounds. Modern chat apps display
 chat bubbles with gradients that are based 
-on the bubbles’ position on the screen.
+on the bubbles' position on the screen.
 In this recipe, you'll modernize the chat UI by implementing
 gradient backgrounds for the chat bubbles.
 
@@ -32,20 +32,20 @@ combined with bubbles scrolling up and down the screen,
 requires an approach that allows you to make painting 
 decisions based on layout information.
 
-Each bubble’s gradient requires knowledge of the
-bubble’s location on the screen. This means that
+Each bubble's gradient requires knowledge of the
+bubble's location on the screen. This means that
 the painting behavior requires access to layout information.
-Such painting behavior isn’t possible with typical widgets 
+Such painting behavior isn't possible with typical widgets 
 because widgets like `Container` and `DecoratedBox`
 make decisions about background colors before layout occurs,
 not after. In this case, because you require custom painting
-behavior, but you don’t require custom layout behavior 
+behavior, but you don't require custom layout behavior 
 or custom hit test behavior, a [`CustomPainter`][] is
 a great choice to get the job done. 
 
 {{site.alert.note}}
   In cases where you need control over the child layout,
-  but you don’t need control over the painting or hit testing,
+  but you don't need control over the painting or hit testing,
   consider using a [`Flow`][] widget.
 
   In cases where you need control over the layout,
@@ -138,10 +138,10 @@ class BubblePainter extends CustomPainter {
 ## Provide access to scrolling information
 
 The `CustomPainter` requires the information necessary
-to determine where its bubble is within the `ListView`’s bounds,
+to determine where its bubble is within the `ListView`'s bounds,
 also known as the `Viewport`. Determining the location requires
 a reference to the ancestor `ScrollableState` 
-and a reference to the `BubbleBackground`’s
+and a reference to the `BubbleBackground`'s
 `BuildContext`. Provide each of those to the `CustomPainter`.
 
 <?code-excerpt "lib/bubble_painter.dart (ScrollableContext)" replace="/painter: //g"?>
@@ -182,13 +182,13 @@ class BubblePainter extends CustomPainter {
 
 The `CustomPainter` now has the desired gradient colors,
 a reference to the containing `ScrollableState`,
-and a reference to this bubble’s `BuildContext`.
+and a reference to this bubble's `BuildContext`.
 This is all the information that the `CustomPainter` needs to 
 paint the full-screen bubble gradients.
 Implement the `paint()` method to calculate the position
 of the bubble, configure a shader with the given colors, 
 and then use a matrix translation to offset the shader
-based on the bubble’s position within the `Scrollable`.
+based on the bubble's position within the `Scrollable`.
 
 <?code-excerpt "lib/bubble_background.dart (BubblePainter)"?>
 ```dart
@@ -237,7 +237,7 @@ class BubblePainter extends CustomPainter {
 Congratulations! You now have a modern, chat bubble UI.
 
 {{site.alert.note}}
-  Each bubble’s gradient changes as the user
+  Each bubble's gradient changes as the user
   scrolls because the `BubbleBackground` widget
   invokes `Scrollable.of(context)`. This method 
   sets up an implicit dependency on the ancestor

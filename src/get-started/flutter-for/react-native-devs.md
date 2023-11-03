@@ -74,8 +74,8 @@ Try it out in [DartPad][DartPadB].
 ### Variables
 
 Dart is type safe&mdash;it uses a combination of static type checking
-and runtime checks to ensure that a variable’s value always matches
-the variable’s static type. Although types are mandatory,
+and runtime checks to ensure that a variable's value always matches
+the variable's static type. Although types are mandatory,
 some type annotations are optional because
 Dart performs type inference.
 
@@ -228,7 +228,7 @@ main();
 
 <?code-excerpt "lib/futures.dart"?>
 ```dart
-/// Dart
+// Dart
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
@@ -237,7 +237,7 @@ class Example {
   Future<String> _getIPAddress() {
     final url = Uri.https('httpbin.org', '/ip');
     return http.get(url).then((response) {
-      String ip = jsonDecode(response.body)['origin'];
+      final ip = jsonDecode(response.body)['origin'] as String;
       return ip;
     });
   }
@@ -302,7 +302,7 @@ class Example {
   Future<String> _getIPAddress() async {
     final url = Uri.https('httpbin.org', '/ip');
     final response = await http.get(url);
-    String ip = jsonDecode(response.body)['origin'];
+    final ip = jsonDecode(response.body)['origin'] as String;
     return ip;
   }
 }
@@ -432,7 +432,7 @@ the `Text` widget.
 
 <?code-excerpt "lib/hello_world.dart"?>
 ```dart
-/// Flutter
+// Flutter
 import 'package:flutter/material.dart';
 
 void main() {
@@ -465,7 +465,7 @@ You compose widgets into a hierarchy, called a widget tree.
 Each widget nests inside a parent widget
 and inherits properties from its parent.
 Even the application object itself is a widget.
-There is no separate “application” object.
+There is no separate "application" object.
 Instead, the root widget serves this role.
 
 A widget can define:
@@ -480,7 +480,7 @@ Material library. In this example, the widget tree is nested inside the
 
 <?code-excerpt "lib/widget_tree.dart"?>
 ```dart
-/// Flutter
+// Flutter
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -576,15 +576,16 @@ class CustomCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-        child: Column(
-      children: <Widget>[
-        Text('Card $index'),
-        TextButton(
-          onPressed: onPress,
-          child: const Text('Press'),
-        ),
-      ],
-    ));
+      child: Column(
+        children: <Widget>[
+          Text('Card $index'),
+          TextButton(
+            onPressed: onPress,
+            child: const Text('Press'),
+          ),
+        ],
+      ),
+    );
   }
 }
 
@@ -693,7 +694,7 @@ best practice to place them in the `assets` directory.
 
 During a build, Flutter places assets into a special archive
 called the *asset bundle*, which apps read from at runtime.
-When an asset’s path is specified in the assets' section of `pubspec.yaml`,
+When an asset's path is specified in the assets' section of `pubspec.yaml`,
 the build process looks for any files
 with the same name in adjacent subdirectories.
 These files are also included in the asset bundle
@@ -714,7 +715,7 @@ in a source code directory and referencing it.
 ```
 
 In Flutter, add a static image to your app
-using the `Image.asset` constructor in a widget’s build method.
+using the `Image.asset` constructor in a widget's build method.
 
 <?code-excerpt "lib/examples.dart (ImageAsset)" replace="/return //g"?>
 ```dart
@@ -791,8 +792,8 @@ To center a widget, wrap it in a `Center` widget and then use layout
 widgets for alignment, row, columns, and grids.
 These layout widgets do not have a visual representation of their own.
 Instead, their sole purpose is to control some aspect of another
-widget’s layout. To understand why a widget renders in a
-certain way, it’s often helpful to inspect the neighboring widgets.
+widget's layout. To understand why a widget renders in a
+certain way, it's often helpful to inspect the neighboring widgets.
 
 For more information, see the [Flutter Technical Overview][].
 
@@ -1135,7 +1136,7 @@ Set the theme property in `MaterialApp` to the `ThemeData` object.
 The [`Colors`][] class provides colors
 from the Material Design [color palette][].
 
-The following example sets the primary swatch to `blue`
+The following example sets the color scheme from seed to `deepPurple`
 and the text selection to `red`.
 
 <?code-excerpt "lib/examples.dart (Swatch)"?>
@@ -1148,7 +1149,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-          primarySwatch: Colors.blue,
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           textSelectionTheme:
               const TextSelectionThemeData(selectionColor: Colors.red)),
       home: const SampleAppPage(),
@@ -1382,7 +1383,7 @@ In Flutter, widgets are either Stateful or Stateless—depending on whether
 they depend on a state change.
 
 * If a widget changes&mdash;the user interacts with it or
-  a data feed interrupts the UI, then it’s *Stateful*.
+  a data feed interrupts the UI, then it's *Stateful*.
 * If a widget is final or immutable, then it's *Stateless*.
 
 2. Determine which object manages the widget's state (for a `StatefulWidget`).
@@ -1390,7 +1391,7 @@ they depend on a state change.
 In Flutter, there are three primary ways to manage state:
 
 * The widget manages its own state
-* The parent widget manages the widget’s state
+* The parent widget manages the widget's state
 * A mix-and-match approach
 
 When deciding which approach to use, consider the following principles:
@@ -1437,7 +1438,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 4. Add the StatefulWidget into the widget tree.
 
 Add your custom `StatefulWidget` to the widget tree
-in the app’s build method.
+in the app's build method.
 
 <?code-excerpt "lib/best_practices.dart (UseStatefulWidget)"?>
 ```dart
@@ -1514,15 +1515,16 @@ class CustomCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-        child: Column(
-      children: <Widget>[
-        Text('Card $index'),
-        TextButton(
-          onPressed: onPress,
-          child: const Text('Press'),
-        ),
-      ],
-    ));
+      child: Column(
+        children: <Widget>[
+          Text('Card $index'),
+          TextButton(
+            onPressed: onPress,
+            child: const Text('Press'),
+          ),
+        ],
+      ),
+    );
   }
 }
 
@@ -1802,7 +1804,7 @@ classes to obtain a suitable `TickerProvider`.
 The [`Scaffold`][] widget wraps a new `TabBar` widget and
 creates two tabs. The `TabBarView` widget
 is passed as the `body` parameter of the `Scaffold` widget.
-All screens corresponding to the `TabBar` widget’s tabs are
+All screens corresponding to the `TabBar` widget's tabs are
 children to the `TabBarView` widget along with the same `TabController`.
 
 <?code-excerpt "lib/navigation.dart (NavigationHomePageState)"?>
@@ -2074,7 +2076,7 @@ Future<void> getIPAddress() async {
   final request = await httpClient.getUrl(url);
   final response = await request.close();
   final responseBody = await response.transform(utf8.decoder).join();
-  final String ip = jsonDecode(responseBody)['origin'];
+  final ip = jsonDecode(responseBody)['origin'] as String;
   setState(() {
     _ipAddress = ip;
   });
@@ -2279,7 +2281,7 @@ you can debug your application using the IDE's debugger.
 
 ### How do I perform a hot reload?
 
-Flutter’s Stateful Hot Reload feature helps you quickly and easily experiment,
+Flutter's Stateful Hot Reload feature helps you quickly and easily experiment,
 build UIs, add features, and fix bugs. Instead of recompiling your app
 every time you make a change, you can hot reload your app instantly.
 The app is updated to reflect your change,
@@ -2327,7 +2329,7 @@ in the terminal window, or type the following shortcuts:
 Well-designed animation makes a UI feel intuitive,
 contributes to the look and feel of a polished app,
 and improves the user experience.
-Flutter’s animation support makes it easy
+Flutter's animation support makes it easy
 to implement simple and complex animations.
 The Flutter SDK includes many Material Design widgets
 that include standard motion effects,

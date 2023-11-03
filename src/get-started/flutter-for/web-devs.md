@@ -223,7 +223,7 @@ To mimic that effect in Flutter,
 use the `constraints` property of the Container.
 Create a new [`BoxConstraints`][] widget with a `minWidth` or `maxWidth`.
 
-For nested Containers, if the parent’s width is less than the child’s width,
+For nested Containers, if the parent's width is less than the child's width,
 the child Container sizes itself to match the parent.
 
 <div class="lefthighlight">
@@ -355,7 +355,7 @@ final container = Container(
 ### Rotating components
 
 To rotate a widget, nest it in a [`Transform`][] widget.
-Use the `Transform` widget’s `alignment` and `origin` properties
+Use the `Transform` widget's `alignment` and `origin` properties
 to specify the transform origin (fulcrum) in relative and absolute terms,
 respectively.
 
@@ -423,7 +423,7 @@ final container = Container(
 ### Scaling components
 
 To scale a widget up or down, nest it in a [`Transform`][] widget.
-Use the Transform widget’s `alignment` and `origin` properties
+Use the Transform widget's `alignment` and `origin` properties
 to specify the transform origin (fulcrum) in relative or absolute terms,
 respectively.
 
@@ -494,11 +494,11 @@ final container = Container(
 
 To apply a linear gradient to a widget's background,
 nest it in a [`Container`][] widget.
-Then use the `Container` widget’s `decoration` property to create a
+Then use the `Container` widget's `decoration` property to create a
 [`BoxDecoration`][] object, and use `BoxDecoration`'s `gradient`
 property to transform the background fill.
 
-The gradient “angle” is based on the Alignment (x, y) values:
+The gradient "angle" is based on the Alignment (x, y) values:
 
 * If the beginning and ending x values are equal,
   the gradient is vertical (0° | 180°).

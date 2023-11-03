@@ -6,7 +6,9 @@ Future<void> main() {
   return integrationDriver(
     responseDataCallback: (data) async {
       if (data != null) {
-        final timeline = driver.Timeline.fromJson(data['scrolling_timeline']);
+        final timeline = driver.Timeline.fromJson(
+          data['scrolling_timeline'] as Map<String, dynamic>,
+        );
 
         // Convert the Timeline into a TimelineSummary that's easier to
         // read and understand.

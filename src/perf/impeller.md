@@ -36,7 +36,7 @@ Impeller has the following objectives:
   You can author shaders once and convert them to backend-specific
   formats as necessary.
 * **Leverages modern graphics APIs**:
-  Impeller uses, but doesn’t depend on, features available in
+  Impeller uses, but doesn't depend on, features available in
   modern APIs like Metal and Vulkan.
 * **Leverages concurrency**:
   Impeller can distribute single-frame workloads across multiple

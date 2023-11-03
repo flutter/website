@@ -56,7 +56,7 @@ this is the convention used by the test runner when searching for tests.
 
 When you're finished, the folder structure should look like this:
 
-```
+```nocode
 counter_app/
   lib/
     counter.dart
@@ -156,31 +156,30 @@ The Flutter plugins for IntelliJ and VSCode support running tests.
 This is often the best option while writing tests because it provides the
 fastest feedback loop as well as the ability to set breakpoints.
 
-  * **IntelliJ**
-    1. Open the `counter_test.dart` file
-    2. Select the `Run` menu
-    3. Click the `Run 'tests in counter_test.dart'` option
-    4. *Alternatively, use the appropriate keyboard shortcut
-       for your platform.*
-  * **VSCode**
-    1. Open the `counter_test.dart` file
-    2. Select the `Run` menu
-    3. Click the `Start Debugging` option
-    4. *Alternatively, use the appropriate keyboard shortcut
-       for your platform.*
+- **IntelliJ**
+
+  1. Open the `counter_test.dart` file
+  1. Go to **Run** > **Run 'tests in counter_test.dart'**.
+     You can also press the appropriate keyboard shortcut for your platform.
+
+- **VSCode**
+
+  1. Open the `counter_test.dart` file
+  1. Go to **Run** > **Start Debugging**.
+     You can also press the appropriate keyboard shortcut for your platform.
 
 ### Run tests in a terminal
 
 You can also use a terminal to run the tests by executing the following
 command from the root of the project:
 
-```
+```terminal
 flutter test test/counter_test.dart
 ```
 
 For more options regarding unit tests, you can execute this command:
 
-```
+```terminal
 flutter test --help
 ```
 

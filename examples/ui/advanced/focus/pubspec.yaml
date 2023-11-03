@@ -1,16 +1,17 @@
 name: focus
 description: Sample focus system code.
-
-version: 1.0.0+1
+publish_to: none
 
 environment:
-  sdk: ^3.1.0-0
+  sdk: ^3.1.0
 
 dependencies:
   flutter:
     sdk: flutter
-
-  cupertino_icons: ^1.0.5
+  
+dev_dependencies:
+  example_utils:
+    path: ../../../example_utils
 
 flutter:
   uses-material-design: true

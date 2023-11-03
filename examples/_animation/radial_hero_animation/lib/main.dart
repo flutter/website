@@ -2,14 +2,13 @@
 // Use of this source code is governed by a BSD-style license that
 // can be found in the LICENSE file.
 
-// A "radial transition" that slightly differs from the Material
-// motion spec:
-// - The circular *and* the rectangular clips change as t goes from
-//   0.0 to 1.0. (The rectangular clip doesn't change in the
-//   Material motion spec.)
-// - This requires adding LayoutBuilders and computing t.
-// - The key is that the rectangular clip grows more slowly than the
-//   circular clip.
+// A "radial transformation" as defined here:
+// https://m1.material.io/motion/transforming-material.html#transforming-material-radial-transformation
+
+// In this example, the destination route (which completely obscures
+// the source route once the page transition has finished),
+// displays the Hero image in a Card containing a column of two
+// widgets: the image, and some descriptive text.
 
 import 'dart:math' as math;
 
@@ -43,40 +42,28 @@ class Photo extends StatelessWidget {
 }
 
 class RadialExpansion extends StatelessWidget {
-  RadialExpansion({
+  const RadialExpansion({
     super.key,
-    required this.minRadius,
     required this.maxRadius,
     this.child,
-  })  : clipTween = Tween<double>(
-          begin: 2.0 * minRadius,
-          end: 2.0 * (maxRadius / math.sqrt2),
-        );
+  }) : clipRectSize = 2.0 * (maxRadius / math.sqrt2);
 
-  final double minRadius;
   final double maxRadius;
-  final Tween<double> clipTween;
+  final double clipRectSize;
   final Widget? child;
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, size) {
-        final double t =
-            (size.biggest.width / 2.0 - minRadius) / (maxRadius - minRadius);
-        final double rectClipExtent = clipTween.transform(t);
-        return ClipOval(
-          child: Center(
-            child: SizedBox(
-              width: rectClipExtent,
-              height: rectClipExtent,
-              child: ClipRect(
-                child: child,
-              ),
-            ),
+    return ClipOval(
+      child: Center(
+        child: SizedBox(
+          width: clipRectSize,
+          height: clipRectSize,
+          child: ClipRect(
+            child: child,
           ),
-        );
-      },
+        ),
+      ),
     );
   }
 }
@@ -84,15 +71,16 @@ class RadialExpansion extends StatelessWidget {
 class RadialExpansionDemo extends StatelessWidget {
   const RadialExpansionDemo({super.key});
 
-  static const double kMinRadius = 32.0;
-  static const double kMaxRadius = 128.0;
-  static const opacityCurve = Interval(0.0, 0.75, curve: Curves.fastOutSlowIn);
+  static double kMinRadius = 32.0;
+  static double kMaxRadius = 128.0;
+  static Interval opacityCurve =
+      const Interval(0.0, 0.75, curve: Curves.fastOutSlowIn);
 
-  RectTween _createRectTween(Rect? begin, Rect? end) {
+  static RectTween _createRectTween(Rect? begin, Rect? end) {
     return MaterialRectCenterArcTween(begin: begin, end: end);
   }
 
-  Widget _buildPage(
+  static Widget _buildPage(
       BuildContext context, String imageName, String description) {
     return Container(
       color: Theme.of(context).canvasColor,
@@ -109,7 +97,6 @@ class RadialExpansionDemo extends StatelessWidget {
                   createRectTween: _createRectTween,
                   tag: imageName,
                   child: RadialExpansion(
-                    minRadius: kMinRadius,
                     maxRadius: kMaxRadius,
                     child: Photo(
                       photo: imageName,
@@ -134,7 +121,10 @@ class RadialExpansionDemo extends StatelessWidget {
   }
 
   Widget _buildHero(
-      BuildContext context, String imageName, String description) {
+    BuildContext context,
+    String imageName,
+    String description,
+  ) {
     return SizedBox(
       width: kMinRadius * 2.0,
       height: kMinRadius * 2.0,
@@ -142,16 +132,13 @@ class RadialExpansionDemo extends StatelessWidget {
         createRectTween: _createRectTween,
         tag: imageName,
         child: RadialExpansion(
-          minRadius: kMinRadius,
           maxRadius: kMaxRadius,
           child: Photo(
             photo: imageName,
             onTap: () {
               Navigator.of(context).push(
                 PageRouteBuilder<void>(
-                  pageBuilder: (context,
-                      animation,
-                      secondaryAnimation) {
+                  pageBuilder: (context, animation, secondaryAnimation) {
                     return AnimatedBuilder(
                       animation: animation,
                       builder: (context, child) {
@@ -173,7 +160,7 @@ class RadialExpansionDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    timeDilation = 15.0; // 1.0 is normal animation speed.
+    timeDilation = 5.0; // 1.0 is normal animation speed.
 
     return Scaffold(
       appBar: AppBar(

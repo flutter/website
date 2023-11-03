@@ -54,7 +54,7 @@ The following sections describe how to perform these tasks and finish the setup
 process.
 
 Once you have installed any missing dependencies, run the `flutter doctor`
-command again to verify that you’ve set everything up correctly.
+command again to verify that you've set everything up correctly.
 
 {% include_relative _analytics.md %}
 

@@ -4,7 +4,7 @@ description: >
   Leverage your Swift concurrency knowledge while learning Flutter and Dart.
 ---
 
-<?code-excerpt path-base="resources"?>
+<?code-excerpt path-base="resources/dart_swift_concurrency"?>
 
 Both Dart and Swift support concurrent programming. 
 This guide should help you understand how
@@ -33,11 +33,11 @@ with support for `Isolates`, an event loop, and asynchronous code.
 An `Isolate` is Dart's implementation of a lightweight thread.
 Unless you spawn an `Isolate`, your Dart code runs in the 
 main UI thread driven by an event loop. 
-Flutter’s event loop is 
+Flutter's event loop is 
 equivalent to the iOS main loop—in other words, 
 the Looper attached to the main thread.
 
-Dart’s single-threaded model doesn’t mean 
+Dart's single-threaded model doesn't mean 
 you are required to run everything 
 as a blocking operation that causes the UI to freeze. 
 Instead, use the asynchronous 
@@ -65,7 +65,7 @@ thread is where the application begins running.
 Rendering the user interface always happens on the main thread. 
 One difference between Swift and Dart is that  
 Swift might use different threads for different tasks, 
-and Swift doesn’t guarantee which thread is used. 
+and Swift doesn't guarantee which thread is used. 
 So, when dispatching UI updates in Swift, 
 you might need to ensure that the work occurs on the main thread. 
 
@@ -208,8 +208,9 @@ The following example uses a `FutureBuilder`:
 <?code-excerpt "lib/async_weather.dart (HomePageWidget)"?>
 ```dart
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   final HomePageViewModel viewModel = const HomePageViewModel();
-  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

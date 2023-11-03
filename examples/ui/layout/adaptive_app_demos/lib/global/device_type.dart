@@ -45,26 +45,30 @@ class Fonts {
 }
 
 class TextStyles {
-  static const TextStyle raleway = const TextStyle(
+  static const TextStyle raleway = TextStyle(
     fontFamily: Fonts.raleway,
   );
   static TextStyle buttonText1 =
-      TextStyle(fontWeight: FontWeight.bold, fontSize: 14);
+      const TextStyle(fontWeight: FontWeight.bold, fontSize: 14);
   static TextStyle buttonText2 =
-      TextStyle(fontWeight: FontWeight.normal, fontSize: 11);
-  static TextStyle h1 = TextStyle(fontWeight: FontWeight.bold, fontSize: 22);
-  static TextStyle h2 = TextStyle(fontWeight: FontWeight.bold, fontSize: 16);
-  static late TextStyle body1 = raleway.copyWith(color: Color(0xFF42A5F5));
+      const TextStyle(fontWeight: FontWeight.normal, fontSize: 11);
+  static TextStyle h1 =
+      const TextStyle(fontWeight: FontWeight.bold, fontSize: 22);
+  static TextStyle h2 =
+      const TextStyle(fontWeight: FontWeight.bold, fontSize: 16);
+  static TextStyle body1 = raleway.copyWith(color: const Color(0xFF42A5F5));
   // etc
 }
 // #enddocregion Styling
 
 class MyWidget extends StatelessWidget {
+  const MyWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     // #docregion UseConstants
     return Padding(
-      padding: EdgeInsets.all(Insets.small),
+      padding: const EdgeInsets.all(Insets.small),
       child: Text('Hello!', style: TextStyles.body1),
     );
     // #enddocregion UseConstants

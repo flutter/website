@@ -728,8 +728,12 @@ The native build systems that are invoked by FFI
 
 To use the native code, bindings in Dart are needed.
 
-To avoid writing these by hand, they are generated from the header file
+To avoid writing these by hand,
+they are generated from the header file
 (`src/hello.h`) by [`package:ffigen`][].
+Reference the [ffigen docs][] for information
+on how to install this package.
+
 Regenerate the bindings by running the following:
 
 ```terminal
@@ -989,6 +993,7 @@ PENDING
 [`device_info`]: {{site.pub-api}}/device_info/latest
 [Effective Dart Documentation]: {{site.dart-site}}/guides/language/effective-dart/documentation
 [federated plugins]: #federated-plugins
+[ffigen docs]: {{site.pub-pkg}}/ffigen/install
 [Android]: {{site.url}}/platform-integration/android/c-interop
 [iOS]: {{site.url}}/platform-integration/ios/c-interop
 [macOS]: {{site.url}}/platform-integration/macos/c-interop

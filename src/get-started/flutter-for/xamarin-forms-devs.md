@@ -261,7 +261,7 @@ If you want to dynamically change the UI based on data received
 after making an HTTP call or a user interaction,
 then you have to work with `StatefulWidget`
 and tell the Flutter framework that
-the widget’s `State` has been updated,
+the widget's `State` has been updated,
 so it can update that widget.
 
 The important thing to note here is at the core
@@ -271,7 +271,7 @@ the `StatefulWidget` has a `State` object
 that stores state data across frames and restores it.
 
 If you are in doubt, then always remember this rule: if a widget changes
-(because of user interactions, for example) it’s stateful.
+(because of user interactions, for example) it's stateful.
 However, if a widget reacts to change, the containing parent widget can
 still be stateless if it doesn't itself react to change.
 
@@ -772,7 +772,7 @@ you might do the following:
 Object? coordinates = await Navigator.of(context).pushNamed('/location');
 ```
 
-And then, inside your ‘location’ route, once the user has selected their
+And then, inside your 'location' route, once the user has selected their
 location, pop the stack with the result:
 
 <?code-excerpt "lib/navigation.dart (PopLocation)"?>
@@ -952,7 +952,7 @@ to do long-running or computationally intensive tasks.
 Isolates are separate execution threads that
 do not share any memory with the main execution memory heap.
 This is a difference between `Task.Run()`.
-This means you can’t access variables from the main thread,
+This means you can't access variables from the main thread,
 or update your UI by calling `setState()`.
 
 The following example shows, in a simple isolate,
@@ -2419,7 +2419,7 @@ To log in with Facebook, use the
 Most Firebase functions are covered by [first party plugins][].
 These plugins are first-party integrations, maintained by the Flutter team:
 
- * [`firebase_admob`][] for Firebase AdMob
+ * [`google_mobile_ads`][] for Google Mobile Ads for Flutter
  * [`firebase_analytics`][] for Firebase Analytics
  * [`firebase_auth`][] for Firebase Auth
  * [`firebase_database`][] for Firebase RTDB
@@ -2474,7 +2474,7 @@ but is not as rich as `MaterialApp`.
 To customize the colors and styles of any child components,
 pass a `ThemeData` object to the `MaterialApp` widget.
 For example, in the following code,
-the primary swatch is set to blue and text selection color is red.
+the color scheme from seed is set to deepPurple and text selection color is red.
 
 <?code-excerpt "lib/theme.dart (Theme)"?>
 ```dart
@@ -2487,7 +2487,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         textSelectionTheme:
             const TextSelectionThemeData(selectionColor: Colors.red),
       ),
@@ -2556,7 +2556,7 @@ For more information on using the Firebase Cloud Messaging API, see the
 [developing packages and plugins]: {{site.url}}/packages-and-plugins/developing-packages
 [DevTools]: {{site.url}}/tools/devtools/overview
 [existing plugin]: {{site.pub}}/flutter
-[`firebase_admob`]: {{site.pub}}/packages/firebase_admob
+[`google_mobile_ads`]: {{site.pub}}/packages/google_mobile_ads
 [`firebase_analytics`]: {{site.pub}}/packages/firebase_analytics
 [`firebase_auth`]: {{site.pub}}/packages/firebase_auth
 [`firebase_database`]: {{site.pub}}/packages/firebase_database
@@ -2569,7 +2569,7 @@ For more information on using the Firebase Cloud Messaging API, see the
 [`geolocator`]: {{site.pub}}/packages/geolocator
 [`camera`]: {{site.pub-pkg}}/camera
 [`http` package]: {{site.pub}}/packages/http
-[internationalization guide]: {{site.url}}/ui/accessibility-and-localization/internationalization
+[internationalization guide]: {{site.url}}/ui/accessibility-and-internationalization/internationalization
 [`intl`]: {{site.pub}}/packages/intl
 [`intl_translation`]: {{site.pub}}/packages/intl_translation
 [Introduction to declarative UI]: {{site.url}}/get-started/flutter-for/declarative

@@ -17,7 +17,7 @@ An `AlertDialog` now scrolls automatically when it overflows.
 ## Context
 
 Before this change,
-when an `AlertDialog` widget’s contents were too tall,
+when an `AlertDialog` widget's contents were too tall,
 the display overflowed, causing the contents to be clipped.
 This resulted in the following issues:
 

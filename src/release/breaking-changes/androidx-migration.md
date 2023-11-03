@@ -23,7 +23,7 @@ more frequently than the Android platform.
 ### How do I migrate my existing app, plugin or host-editable module project to AndroidX?
 
 _You will need Android Studio 3.2 or higher.
-If you don’t have it installed,
+If you don't have it installed,
 you can download the latest version from the
 [Android Studio][] site_.
 
@@ -32,7 +32,7 @@ you can download the latest version from the
 3. Open the `android` directory within your app.
 4. Wait until the project has been synced successfully.
    (This happens automatically once you open the project,
-   but if it doesn’t, select **Sync Project with Gradle Files**
+   but if it doesn't, select **Sync Project with Gradle Files**
    from the **File** menu).
 5. Select **Migrate to AndroidX** from the Refactor menu.
 6. If you are asked to backup the project before proceeding,
@@ -113,7 +113,7 @@ android.useAndroidX=true
 android.enableJetifier=true
 ```
 
-### What if I don’t migrate my app or module to AndroidX?
+### What if I don't migrate my app or module to AndroidX?
 
 Your app might continue to work. However,
 combining AndroidX and Support artifacts
@@ -129,7 +129,7 @@ to cause build failures.
 The Flutter tool uses Jetifier to automatically
 migrate Flutter plugins using the Support Library
 to AndroidX, so you can use the same plugins even
-if they haven’t been migrated to AndroidX yet.
+if they haven't been migrated to AndroidX yet.
 
 ### I'm having issues migrating to AndroidX
 

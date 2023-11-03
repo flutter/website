@@ -95,64 +95,69 @@ To find out the latest version, visit [Google Maven][].
 +<style name="NormalTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 ```
 
-## Signing the app
+<a id="signing-the-app"></a>
+## Sign the app
 
-To publish on the Play Store, you need to give your app a digital
-signature. Use the following instructions to sign your app.
+To publish on the Play Store, you need to
+sign your app with a digital certificate.
 
-On Android, there are two signing keys: deployment and upload. The end-users 
-download the .apk signed with the 'deployment key'. An 'upload key' is used to 
-authenticate the .aab / .apk uploaded by developers onto the Play Store and is 
-re-signed with the deployment key once in the Play Store.
-* It's highly recommended to use the automatic cloud managed signing for
-  the deployment key. For more information,
-  check out the [official Play Store documentation][].
+Android uses two signing keys: _upload_ and _app signing_.
+
+* Developers upload an `.aab` or `.apk` file signed with
+  an _upload key_ to the Play Store.
+* The end-users download the `.apk` file signed with an _app signing key_.
+
+To create your app signing key, use Play App Signing
+as described in the [official Play Store documentation][].
+
+To sign your app, use the following instructions.
 
 ### Create an upload keystore
 
 If you have an existing keystore, skip to the next step.
-If not, create one by either:
-* Following the [Android Studio key generation steps]({{site.android-dev}}/studio/publish/app-signing#sign-apk) 
-* Running the following at the command line:
+If not, create one using one of the following methods:
 
-    On macOS or Linux, use the following command:
+1. Follow the [Android Studio key generation steps]({{site.android-dev}}/studio/publish/app-signing#generate-key)
+1. Run the following command at the command line:
 
-    ```terminal
-    keytool -genkey -v -keystore ~/upload-keystore.jks -keyalg RSA \
-            -keysize 2048 -validity 10000 -alias upload
-    ```
+   On macOS or Linux, use the following command:
 
-    On Windows, use the following command in PowerShell:
+   ```terminal
+   keytool -genkey -v -keystore ~/upload-keystore.jks -keyalg RSA \
+           -keysize 2048 -validity 10000 -alias upload
+   ```
 
-    ```powershell
-    keytool -genkey -v -keystore %userprofile%\upload-keystore.jks ^
-            -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 ^
-            -alias upload
-    ```
+   On Windows, use the following command in PowerShell:
 
-    This command stores the `upload-keystore.jks` file in your home
-    directory. If you want to store it elsewhere, change
-    the argument you pass to the `-keystore` parameter.
-    **However, keep the `keystore` file private;
-    don't check it into public source control!**
+   ```powershell
+   keytool -genkey -v -keystore %userprofile%\upload-keystore.jks ^
+           -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 ^
+           -alias upload
+   ```
+
+   This command stores the `upload-keystore.jks` file in your home
+   directory. If you want to store it elsewhere, change
+   the argument you pass to the `-keystore` parameter.
+   **However, keep the `keystore` file private;
+   don't check it into public source control!**
     
-    {{site.alert.note}}
-    * The `keytool` command might not be in your path&mdash;it's
-      part of Java, which is installed as part of
-      Android Studio.  For the concrete path,
-      run `flutter doctor -v` and locate the path printed after
-      'Java binary at:'. Then use that fully qualified path
-      replacing `java` (at the end) with `keytool`.
-      If your path includes space-separated names,
-      such as `Program Files`, use platform-appropriate
-      notation for the names. For example, on Mac/Linux
-      use `Program\ Files`, and on Windows use
-      `"Program Files"`.
+   {{site.alert.note}}
+     * The `keytool` command might not be in your path&mdash;it's
+       part of Java, which is installed as part of
+       Android Studio.  For the concrete path,
+       run `flutter doctor -v` and locate the path printed after
+       'Java binary at:'. Then use that fully qualified path
+       replacing `java` (at the end) with `keytool`.
+       If your path includes space-separated names,
+       such as `Program Files`, use platform-appropriate
+       notation for the names. For example, on Mac/Linux
+       use `Program\ Files`, and on Windows use
+       `"Program Files"`.
     
-    * The `-storetype JKS` tag is only required for Java 9
-      or newer. As of the Java 9 release,
-      the keystore type defaults to PKS12.
-    {{site.alert.end}}
+     * The `-storetype JKS` tag is only required for Java 9
+       or newer. As of the Java 9 release,
+       the keystore type defaults to PKS12.
+   {{site.alert.end}}
 
 ### Reference the keystore from the app
 
@@ -301,16 +306,16 @@ A [multidex keep file][multidex-keep] must be specified to include:
 io/flutter/embedding/engine/loader/FlutterLoader.class
 io/flutter/util/PathUtils.class
 ```
+
 Also, include any other classes used in app startup.
 For more detailed guidance on adding multidex support manually,
 check out the official [Android documentation][multidex-docs].
 
 ## Reviewing the app manifest
 
-Review the default [App Manifest][manifest] file,
-`AndroidManifest.xml`,
-located in `[project]/android/app/src/main` and
-verify that the values are correct, especially the following:
+Review the default [App Manifest][manifest] file, `AndroidManifest.xml`.
+This file is located in `[project]/android/app/src/main`.
+Verify the following values:
 
 `application`
 : Edit the `android:label` in the
@@ -333,20 +338,20 @@ to verify that the values are correct.
 #### Under the `defaultConfig` block
 
 `applicationId`
-: Specify the final, unique [application ID][]
+: Specify the final, unique [application ID][].
   
 `minSdkVersion`
-: Specify the minimum API level on which the app is designed to run.
+: Specify the [minimum API level][] on which you designed the app to run.
   Defaults to `flutter.minSdkVersion`.
 
 `targetSdkVersion`
-: Specify the target API level on which the app is designed to run.
+: Specify the target API level on which on which you designed the app to run.
   Defaults to `flutter.targetSdkVersion`.
   
 `versionCode`
-: A positive integer used as an internal version number. This number
-  is used only to determine whether one version is more recent than
-  another, with higher numbers indicating more recent versions.
+: A positive integer used as an [internal version number][].
+  This number is used only to determine whether one version is more recent
+  than another, with higher numbers indicating more recent versions.
   This version isn't shown to users.
 
 `versionName`
@@ -355,10 +360,9 @@ to verify that the values are correct.
   a reference to a string resource.
 
 `buildToolsVersion`
-: If you're using Android plugin for Gradle 3.0.0 or higher,
-  your project automatically uses the default version of the
-  build tools that the plugin specifies. Alternatively,
-  you can specify a version of the build tools.
+: The Gradle plugin specifies the default version of the
+  build tools that your project uses.
+  You can use this option to specify a different version of the build tools.
 
 #### Under the `android` block
   
@@ -408,8 +412,8 @@ runtime compiled for [armeabi-v7a][] (ARM 32-bit), [arm64-v8a][]
 
 ### Test the app bundle
 
-An app bundle can be tested in multiple ways&mdash;this section
-describes two.
+An app bundle can be tested in multiple ways.
+This section describes two.
 
 #### Offline using the bundle tool
 
@@ -433,16 +437,16 @@ Although app bundles are preferred over APKs, there are stores
 that don't yet support app bundles. In this case, build a release
 APK for each target ABI (Application Binary Interface).
 
-If you completed the signing steps,
-the APK will be signed.
+If you completed the signing steps, the APK will be signed.
 At this point, you might consider [obfuscating your Dart code][]
 to make it more difficult to reverse engineer. Obfuscating
 your code involves adding a couple flags to your build command.
 
 From the command line:
 
-1. Enter `cd [project]`<br>
-1. Run `flutter build apk --split-per-abi`<br>
+1. Enter `cd [project]`.
+
+1. Run `flutter build apk --split-per-abi`.
    (The `flutter build` command defaults to `--release`.)
 
 This command results in three APK files:
@@ -503,7 +507,7 @@ Android apps.
 
 The Google Play Store recommends that you deploy app bundles
 over APKs because they allow a more efficient delivery of the
-application to your users. However, if you’re distributing
+application to your users. However, if you're distributing
 your application by means other than the Play Store,
 an APK might be your only option.
 
@@ -533,7 +537,7 @@ See [Signing the app](#signing-the-app).
 ### How do I build a release from within Android Studio?
 
 In Android Studio, open the existing `android/`
-folder under your app’s folder. Then,
+folder under your app's folder. Then,
 select **build.gradle (Module: app)** in the project panel:
 
 <img src='/assets/images/docs/deployment/android/gradle-script-menu.png' width="100%" alt='screenshot of gradle build script menu'>
@@ -559,31 +563,25 @@ The resulting app bundle or APK files are located in
 [armeabi-v7a]: {{site.android-dev}}/ndk/guides/abis#v7a
 [bundle]: {{site.android-dev}}/guide/app-bundle
 [configuration qualifiers]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
-[crash-issue]: https://issuetracker.google.com/issues/147096055
 [fat APK]: https://en.wikipedia.org/wiki/Fat_binary
-[Flutter wiki]: {{site.repo.flutter}}/wiki
 [flutter_launcher_icons]: {{site.pub}}/packages/flutter_launcher_icons
 [Getting Started guide for Android]: {{site.material}}/develop/android/mdc-android
 [GitHub repository]: {{site.github}}/google/bundletool/releases/latest
 [Google Maven]: https://maven.google.com/web/index.html#com.google.android.material:material
 [gradlebuild]: {{site.android-dev}}/studio/build/#module-level
-[Issue 9253]: {{site.github}}/flutter/flutter/issues/9253
-[Issue 18494]: {{site.github}}/flutter/flutter/issues/18494
+[internal version number]: {{site.android-dev}}/studio/publish/versioning
 [launchericons]: {{site.material}}/styles/icons
 [manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
-[manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
+[minimum API level]: {{site.android-dev}}/studio/publish/versioning#minsdk
 [multidex-docs]: {{site.android-dev}}/studio/build/multidex
 [multidex-keep]: {{site.android-dev}}/studio/build/multidex#keep
 [obfuscating your Dart code]: {{site.url}}/deployment/obfuscate
 [official Play Store documentation]: https://support.google.com/googleplay/android-developer/answer/7384423?hl=en
 [permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
 [Platform Views]: {{site.url}}/platform-integration/android/platform-views
-[play]: {{site.android-dev}}/distribute/googleplay/start
-[plugin]: {{site.android-dev}}/studio/releases/gradle-plugin
+[play]: {{site.android-dev}}/distribute
 [R8]: {{site.android-dev}}/studio/build/shrink-code
 [Sign your app]: https://developer.android.com/studio/publish/app-signing.html#generate-key
 [upload-bundle]: {{site.android-dev}}/studio/publish/upload-bundle
 [Version your app]: {{site.android-dev}}/studio/publish/versioning
-[versions]: {{site.android-dev}}/studio/publish/versioning
-[versions-minsdk]: {{site.android-dev}}/studio/publish/versioning#minsdkversion
 [x86-64]: {{site.android-dev}}/ndk/guides/abis#86-64

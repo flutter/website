@@ -87,7 +87,7 @@ and finish the setup process.
 
 Once you have installed any missing dependencies,
 run the `flutter doctor` command again
-to verify that you’ve set everything up correctly.
+to verify that you've set everything up correctly.
 
 ### Downloading straight from GitHub instead of using an archive
 

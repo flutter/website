@@ -3,3 +3,11 @@
 
 # Allow dart files in examples/ to be detectable
 examples/**/*.dart -linguist-documentation
+
+# Handles files and normalization
+*       text=auto
+*.sh    text eol=lf
+*.bat   text eol=crlf
+*.dart  text eol=lf
+dart    text eol=lf
+flutter text eol=lf

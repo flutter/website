@@ -23,7 +23,7 @@ to get automatic formatting of code in VS Code.
 
 To automatically format the code in the current source code window,
 right-click in the code window and select `Format Document`.
-You can add a keyboard shortcut to this VS Code Preferences.
+You can add a keyboard shortcut to this VS Code **Preferences**.
 
 To automatically format code whenever you save a file, set the
 `editor.formatOnSave` setting to `true`.
@@ -33,20 +33,25 @@ To automatically format code whenever you save a file, set the
 Install the `Dart` plugin (see
 [Editor setup]({{site.url}}/get-started/editor))
 to get automatic formatting of code in Android Studio and IntelliJ.
-To automatically format your code in the current source code window,
-use `Cmd+Option+L` (on Mac) or `Ctrl+Alt+L` (on Windows and Linux).
-Android Studio and IntelliJ also provide a check box named
-**Format code on save** on the Flutter page in Preferences
-(on Mac) or Settings (on Windows and Linux)
-which formats the current file automatically when you save it.
+To format your code in the current source code window:
+
+* In macOS,
+  press <kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>L</kbd>.
+* In Windows and Linux,
+  press <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>L</kbd>.
+
+Android Studio and IntelliJ also provide a checkbox named
+**Format code on save** on the Flutter page in **Preferences**
+on macOS or **Settings** on Windows and Linux.
+This option corrects formatting in the current file when you save it.
 
 ## Automatically formatting code with the `dart` command
 
-You can also automatically format code in the command line interface
-(CLI) using the `dart format` command:
+To correct code formatting in the command line interface (CLI),
+run the `dart format` command:
 
 ```terminal
-$ dart format path1 path2 ...
+$ dart format path1 path2 [...]
 ```
 
 ## Using trailing commas

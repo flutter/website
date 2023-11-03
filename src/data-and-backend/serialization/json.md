@@ -127,7 +127,7 @@ you'll see that you can decode the JSON by calling the
 
 <?code-excerpt "lib/manual/main.dart (manual)"?>
 ```dart
-Map<String, dynamic> user = jsonDecode(jsonString);
+final user = jsonDecode(jsonString) as Map<String, dynamic>;
 
 print('Howdy, ${user['name']}!');
 print('We sent the verification link to ${user['email']}.');
@@ -168,8 +168,8 @@ class User {
   User(this.name, this.email);
 
   User.fromJson(Map<String, dynamic> json)
-      : name = json['name'],
-        email = json['email'];
+      : name = json['name'] as String,
+        email = json['email'] as String;
 
   Map<String, dynamic> toJson() => {
         'name': name,
@@ -183,8 +183,8 @@ itself. With this new approach, you can decode a user easily.
 
 <?code-excerpt "lib/manual/main.dart (fromJson)"?>
 ```dart
-Map<String, dynamic> userMap = jsonDecode(jsonString);
-var user = User.fromJson(userMap);
+final userMap = jsonDecode(jsonString) as Map<String, dynamic>;
+final user = User.fromJson(userMap);
 
 print('Howdy, ${user.name}!');
 print('We sent the verification link to ${user.email}.');
@@ -384,8 +384,8 @@ you do not have actually to make any changes to our previous code.
 
 <?code-excerpt "lib/serializable/main.dart (fromJson)"?>
 ```dart
-Map<String, dynamic> userMap = jsonDecode(jsonString);
-var user = User.fromJson(userMap);
+final userMap = jsonDecode(jsonString) as Map<String, dynamic>;
+final user = User.fromJson(userMap);
 ```
 The same goes for encoding. The calling API is the same as before.
 

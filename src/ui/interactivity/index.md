@@ -8,7 +8,7 @@ diff2html: true
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What you’ll learn</h4>
+  <h4 class="no_toc">What you'll learn</h4>
 
   * How to respond to taps.
   * How to create a custom widget.
@@ -238,7 +238,7 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
 The `_toggleFavorite()` method, which is called when the
 `IconButton` is pressed, calls `setState()`.
 Calling `setState()` is critical, because this
-tells the framework that the widget’s state has
+tells the framework that the widget's state has
 changed and that the widget should be redrawn.
 The function argument to `setState()` toggles the
 UI between these two states:

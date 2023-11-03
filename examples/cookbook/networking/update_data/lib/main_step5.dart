@@ -12,7 +12,7 @@ Future<Album> fetchAlbum() async {
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
     // then parse the JSON.
-    return Album.fromJson(jsonDecode(response.body));
+    return Album.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
@@ -34,7 +34,7 @@ Future<Album> updateAlbum(String title) async {
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
     // then parse the JSON.
-    return Album.fromJson(jsonDecode(response.body));
+    return Album.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
@@ -50,8 +50,8 @@ class Album {
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(
-      id: json['id'],
-      title: json['title'],
+      id: json['id'] as int,
+      title: json['title'] as String,
     );
   }
 }
@@ -84,7 +84,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Update Data Example',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: Scaffold(
         appBar: AppBar(
