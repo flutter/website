@@ -224,11 +224,9 @@ leaderboards.
 
 There's more to the `games_services` plugin. With this plugin, you can:
 
--   get the player's icon, name or unique ID
-
--   save and load game states
-
--   sign out of the game service
+- Get the player's icon, name or unique ID
+- Save and load game states
+- Sign out of the game service
 
 Some achievements can be incremental. For example: "You have collected
 all 10 pieces of the McGuffin.".
