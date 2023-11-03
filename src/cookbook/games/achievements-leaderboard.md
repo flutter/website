@@ -223,7 +223,7 @@ leaderboards.
     
 [`GamesServices.loadLeaderboardScores()`]: {{site.pub-api}}/games_services/latest/games_services/GamesServices/loadLeaderboardScores.html
 
-## 5. Complete example
+## 5. Next steps
 
 There's more to the `games_services` plugin. With this plugin, you can:
 
@@ -236,7 +236,8 @@ all 10 pieces of the McGuffin."
 
 Each game has different needs from game services.
 
-To start, you might want to create this controller:
+To start, you might want to create this controller 
+in order to keep all achievements & leaderboards logic in one place:
 
 ```dart
 import 'dart:async';
