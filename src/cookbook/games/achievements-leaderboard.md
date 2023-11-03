@@ -20,8 +20,9 @@ services for achievements and leaderboards. Players have achievements
 from all the games in one place and developers don't need to
 re-implement them for every game.
 
-This recipe demonstrates how to use the `games_services` package to add
-achievements and leaderboard functionality to your mobile game.
+This recipe demonstrates how to use the 
+[`games_services` package](https://pub.dev/packages/games_services) 
+to add achievements and leaderboard functionality to your mobile game.
 
 ## 1. Enable platform services
 
@@ -118,8 +119,8 @@ have your achievement & leaderboard IDs ready, it's finally Dart time.
 
 1.  Add a dependency on the [`games_services` package]({{site.pub-pkg}}/games_services).
 
-    ```shell
-    flutter pub add games_services
+    ```terminal
+    $ flutter pub add games_services
     ```
 
 2.  Before you can do anything else, you have to sign the player into
