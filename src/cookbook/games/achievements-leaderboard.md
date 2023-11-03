@@ -15,10 +15,10 @@ These two ideas map to the concepts of *achievements* and *leaderboards*.
 
 ![A simple graphic representing the four types of motivation explained above](/assets/images/docs/cookbook/types-of-gamer-motivations.png)
 
-Ecosystems such as the App Store and Google Play provide centralized
-services for achievements and leaderboards. Players have achievements
-from all the games in one place and developers don't need to
-re-implement them for every game.
+Ecosystems such as the App Store and Google Play provide
+centralized services for achievements and leaderboards.
+Players can view achievements from all their games in one place and
+developers don't need to re-implement them for every game.
 
 This recipe demonstrates how to use the 
 [`games_services` package](https://pub.dev/packages/games_services) 
