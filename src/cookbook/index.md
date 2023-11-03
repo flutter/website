@@ -56,6 +56,11 @@ reference to help you build up an application.
   Until then, check out the [Casual Games Toolkit]({{site.main-url}}/games).
 {{site.alert.end}}
 
+## Games
+
+- [Add achievements and leaderboards to your mobile game]({{site.url}}/cookbook/games/achievements-leaderboard)
+
+
 ## Gestures
 - [Add Material touch ripples]({{site.url}}/cookbook/gestures/ripples)
 - [Handle taps]({{site.url}}/cookbook/gestures/handling-taps)
