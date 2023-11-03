@@ -116,7 +116,7 @@ To enable *Play Games Services* on Android:
 Now that you have set up *Game Center* and *Play Games Services*, and
 have your achievement & leaderboard IDs ready, it's finally Dart time.
 
-1.  Add a dependency on the [`games_services` package](https://pub.dev/packages/games_services).
+1.  Add a dependency on the [`games_services` package]({{site.pub-pkg}}/games_services).
 
     ```shell
     flutter pub add games_services
