@@ -322,7 +322,7 @@ and [Introducing Dart 3 alpha][].
   * Global selection improvements - ChunHeng Tai (chtai)
   * magnification property (who owns this? - I asked Justin)
     No docs yet (other than API docs)
-    https://master-api.flutter.dev/flutter/material/TextField/magnifierConfiguration.html
+    https://main-api.flutter.dev/flutter/material/TextField/magnifierConfiguration.html
   * Implementing iOS PlatformView BackdropFilter. (Blur) - Leigha and Chris Yang
     https://docs.google.com/document/d/1V7Jc_RGaknrBBPPBBKB8lT7f3PKhYr8sin35MSMFAf4/edit
   * Memory management updates - Zach Anderson
