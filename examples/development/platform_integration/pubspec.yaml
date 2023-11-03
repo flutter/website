@@ -1,7 +1,7 @@
 name: platform_integration
 description: Examples for documenting platform integration.
 
-publish_to: 'none'
+publish_to: none
 
 version: 1.0.0+1
 
@@ -11,7 +11,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  pigeon: ^12.0.1
+  pigeon: ^13.0.0
 
   cupertino_icons: ^1.0.6
 

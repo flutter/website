@@ -1136,7 +1136,7 @@ Set the theme property in `MaterialApp` to the `ThemeData` object.
 The [`Colors`][] class provides colors
 from the Material Design [color palette][].
 
-The following example sets the primary swatch to `blue`
+The following example sets the color scheme from seed to `deepPurple`
 and the text selection to `red`.
 
 <?code-excerpt "lib/examples.dart (Swatch)"?>
@@ -1149,7 +1149,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-          primarySwatch: Colors.blue,
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           textSelectionTheme:
               const TextSelectionThemeData(selectionColor: Colors.red)),
       home: const SampleAppPage(),

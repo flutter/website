@@ -1,7 +1,7 @@
 name: horizontal_list
 description: Example for horizontal_list cookbook recipe
 
-publish_to: 'none'
+publish_to: none
 
 version: 1.0.0+1
 

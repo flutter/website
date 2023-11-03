@@ -1,5 +1,5 @@
 name: integration_test_example
-publish_to: 'none'
+publish_to: none
 version: 0.0.1
 
 environment:

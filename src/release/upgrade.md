@@ -81,7 +81,7 @@ We do not recommend using this channel as
 it is more likely to contain serious regressions.
 
 The latest documentation for the **master** branch
-is at: <https://master-api.flutter.dev>
+is at: <https://main-api.flutter.dev>
 
 ### Changing channels
 

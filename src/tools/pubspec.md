@@ -59,7 +59,7 @@ The Flutter only fields are highlighted.
 name: <project name>
 description: A new Flutter project.
 
-publish_to: 'none'
+publish_to: none
 
 version: 1.0.0+1
 

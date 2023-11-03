@@ -1,6 +1,7 @@
 name: animation
-description: >
-  Sample app from "Building Layouts", https://flutter.io/docs/development/ui/layout.
+description: >-
+  Sample app from "Animations tutorial":
+  https://docs.flutter.dev/ui/animations/tutorial.
 version: 1.0.0
 
 environment:

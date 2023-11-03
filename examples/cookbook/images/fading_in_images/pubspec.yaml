@@ -1,7 +1,7 @@
 name: fading_in_images
 description: Example for fading_in_images cookbook recipe
 
-publish_to: 'none'
+publish_to: none
 
 version: 1.0.0+1
 
