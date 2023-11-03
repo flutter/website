@@ -56,8 +56,8 @@ reference to help you build up an application.
 {{site.alert.tip}}
   Check back soon for more recipes that
   can help you build games with Flutter!
-
-  Until then, check out the [Casual Games Toolkit]({{site.main-url}}/games).
+  
+  You can also check out the [Casual Games Toolkit]({{site.main-url}}/games).
 {{site.alert.end}}
 
 
