@@ -15,7 +15,7 @@ Some platforms require additional steps, as detailed below.
 ### Android
 
 Android apps must [declare their use of the internet][declare] in the Android
-manifest (`AndroidManifest.xml `):
+manifest (`AndroidManifest.xml`):
 
 ```
 <manifest xmlns:android...>
