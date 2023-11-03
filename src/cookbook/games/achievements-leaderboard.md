@@ -232,7 +232,7 @@ There's more to the `games_services` plugin. With this plugin, you can:
 - Sign out of the game service
 
 Some achievements can be incremental. For example: "You have collected
-all 10 pieces of the McGuffin.".
+all 10 pieces of the McGuffin."
 
 Each game has different needs from game services.
 
