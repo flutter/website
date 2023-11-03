@@ -177,7 +177,9 @@ handling for clarity.
     This displays the platform achievements UI as an overlay on your game.
 
 3.  To display the achievements in your own UI, use
-    `GamesServices.loadAchievements()`.
+    [`GamesServices.loadAchievements()`][].
+    
+[`GamesServices.loadAchievements()`]: {{site.pub-api}}/games_services/latest/games_services/GamesServices/loadAchievements.html
 
 ## 4. Submit scores
 
