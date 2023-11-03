@@ -219,7 +219,9 @@ leaderboards.
     ```
 
 3.  If you want to display the leaderboard scores in your own UI, you
-    can fetch them with `GamesServices.loadLeaderboardScores()`.
+    can fetch them with [`GamesServices.loadLeaderboardScores()`][].
+    
+[`GamesServices.loadLeaderboardScores()`]: {{site.pub-api}}/games_services/latest/games_services/GamesServices/loadLeaderboardScores.html
 
 ## 5. Complete example
 
