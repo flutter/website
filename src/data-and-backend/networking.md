@@ -27,7 +27,7 @@ manifest (`AndroidManifest.xml `):
 
 ### macOS
 
-macOS apps must allow network access in the relevant `.entitlements` files. 
+macOS apps must allow network access in the relevant `*.entitlements` files. 
 
 ```
 <key>com.apple.security.network.client</key>
