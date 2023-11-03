@@ -12,7 +12,7 @@ class FadeAppTest extends StatelessWidget {
     return MaterialApp(
       title: 'Fade Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const MyFadeTest(title: 'Fade Demo'),
     );
