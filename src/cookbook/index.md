@@ -56,6 +56,8 @@ reference to help you build up an application.
   Until then, check out the [Casual Games Toolkit]({{site.main-url}}/games).
 {{site.alert.end}}
 
+- [Add multiplayer support via Firestore]({{site.url}}/cookbook/games/firestore-multiplayer)
+
 ## Gestures
 - [Add Material touch ripples]({{site.url}}/cookbook/gestures/ripples)
 - [Handle taps]({{site.url}}/cookbook/gestures/handling-taps)
