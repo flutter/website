@@ -117,7 +117,7 @@ void someFunction(double offset) {
 }
 ```
 
-## Set flags to debug app layers
+## Debug app layers using flags
 
 Each layer of the Flutter framework provides a function to dump its
 current state or events to the console using the `debugPrint` property.
@@ -128,12 +128,12 @@ current state or events to the console using the `debugPrint` property.
   development machine prints.
 {{site.alert.end}}
 
+{% include docs/admonitions/tip-hashCode-tree.md %}
+
 ### Print the widget tree
 
 To dump the state of the Widgets library,
 call the [`debugDumpApp()`][] function.
-
-To dump the state of the Widgets Library or widget tree in your app:
 
 1. Open your source file.
 1. Import `package:flutter/rendering.dart`.
@@ -189,8 +189,8 @@ the root of the widget tree. It returns a "flattened" tree.
   The framework's widgets' build functions insert them during the build.
 
   The following tree, for example, shows [`_InkFeatures`][].
-  That class is an implementation detail of the [`Material`][] widget.
-  That class doesn't appear anywhere in the code in **Example 4**.
+  That class implements part of the [`Material`][] widget.
+  It doesn't appear anywhere in the code in **Example 4**.
 
 <details markdown="1">
 <summary><strong>Expand to view the widget tree for Example 4</strong></summary>
@@ -204,7 +204,7 @@ this invokes the `debugDumpApp()` function.
 It also coincides with the [`TextButton`][] object calling [`setState()`][]
 and thus marking itself dirty.
 This explains why a Flutter marks a specific object as "dirty".
-When you review the widget tree, look for this example:
+When you review the widget tree, look for a line that resembles the following:
 
 ```nocode
 └TextButton(dirty, dependencies: [MediaQuery, _InheritedTheme, _LocalizationsScope-[GlobalKey#5880d]], state: _ButtonStyleState#ab76e)
@@ -220,7 +220,6 @@ The `toString` method uses this function to fill in the widget's description.
 
 When debugging a layout issue, the Widgets layer's tree might lack detail.
 The next level of debugging might require a render tree.
-
 To dump the render tree:
 
 1. Open your source file.
@@ -269,7 +268,7 @@ When debugging layout issues, look at the `size` and `constraints` fields.
 The constraints flow down the tree and the sizes flow back up.
 
 <details markdown="1">
-<summary><strong>Expand for the render tree for Example 5</strong></summary>
+<summary><strong>Expand to view the render tree for Example 5</strong></summary>
 
 {% include_relative trees/render-tree.md -%}
 
@@ -277,40 +276,59 @@ The constraints flow down the tree and the sizes flow back up.
 
 In the render tree for **Example 5**:
 
-* The window size, set as `Size(800.0, 600.0)`, limits all containers up to and
-  including [`RenderPositionedBox`][] widget to the size of the screen.
-* Each child has constraints of `BoxConstraints(w=800.0, h=600.0)`.
-* According to the `RenderPositionedBox` widget, it has a `creator` of 
-[`Center`][] widget.
-sets its child's constraints to a loose version of this:
-`BoxConstraints(0.0<=w<=411.4, 0.0<=h<=683.4)`. The child, a
-[`RenderPadding`][], further inserts these constraints to ensure
-there is room for the padding, and thus the [`RenderConstrainedBox`][]
-has a loose constraint of `BoxConstraints(0.0<=w<=395.4,
-0.0<=h<=667.4)`. This object, which the `creator` field tells us is
+* The `RenderView`, or window size, limits all render objects up to and
+  including [`RenderPositionedBox`][]`#dc1df` render object
+  to the size of the screen.
+  This example sets the size to `Size(800.0, 600.0)`
+
+* The `constraints` property of each render object limits the size
+  of each child. This property takes the [`BoxConstraints`][] render object as a value.
+  Starting with the `RenderSemanticsAnnotations#fe6b5`, the constraint equals
+  `BoxConstraints(w=800.0, h=600.0)`.
+
+* The [`Center`][] widget created the `RenderPositionedBox#dc1df` render object
+  under the `RenderSemanticsAnnotations#8187b` sub-tree.
+
+* Each child under this render object has `BoxConstraints` with both
+  minimum and maximum values. For example, `RenderSemanticsAnnotations#a0a4b`
+  uses `BoxConstraints(0.0<=w<=800.0, 0.0<=h<=600.0)`.
+
+* All children of the `RenderPhysicalShape#8e171` render object use
+  `BoxConstraints(BoxConstraints(56.0<=w<=800.0, 28.0<=h<=600.0))`.
+
+* The child `RenderPadding#8455f` sets a `padding` value of
+  `EdgeInsets(8.0, 0.0, 8.0, 0.0)`.
+  This sets a left and right padding of 8 to all subsequent children of
+  this render object.
+  They now have new constraints:
+  `BoxConstraints(40.0<=w<=784.0, 28.0<=h<=600.0)`.
+
+This object, which the `creator` field tells us is
 probably part of the [`TextButton`][]'s definition,
 sets a minimum width of 88 pixels on its contents and a
 specific height of 36.0. This is the `TextButton` class implementing
 the Material Design guidelines regarding button dimensions.
 
-The inner-most `RenderPositionedBox` loosens the constraints again,
-this time to center the text within the button. The
-[`RenderParagraph`][] picks its size based on its contents.
-If you now follow the sizes back up the chain,
-you'll see how the text's size is what influences the
-width of all the boxes that form the button, as they all take their
-child's dimensions to size themselves.
+`RenderPositionedBox#80b8d` render object loosens the constraints again
+to center the text within the button.
+The [`RenderParagraph`][]#59bc2 render object picks its size based on
+its contents.
+If you follow the sizes back up the tree,
+you see how the size of the text influences the width of all the boxes
+that form the button.
+All parents take their child's dimensions to size themselves.
 
-Another way to notice this is by looking at the "relayoutSubtreeRoot"
-part of the descriptions of each box, which essentially tells you how
-many ancestors depend on this element's size in some way.
-Thus the `RenderParagraph` has a `relayoutSubtreeRoot=up8`,
-meaning that when the `RenderParagraph` is dirtied,
-eight ancestors also have to be dirtied because they might be
-affected by the new dimensions.
+Another way to notice this is by looking at the `relayoutBoundary`
+attribute of in the descriptions of each box.
+This tells you how many ancestors depend on this element's size.
 
-If you write your own render objects, you can add information to the
-dump by overriding [`debugFillProperties()`][render-fill].
+For example, the innermost `RenderPositionedBox` line has a `relayoutBoundary=up13`.
+This means that when Flutter marks the `RenderConstrainedBox` as dirty,
+it also marks box's 13 ancestors as dirty because the new dimensions
+might affect those ancestors.
+
+To add information to the dump if you write your own render objects,
+override [`debugFillProperties()`][render-fill].
 Add [DiagnosticsProperty][] objects to the method's argument
 then call the superclass method.
 
@@ -353,7 +371,7 @@ class AppHome extends StatelessWidget {
 ```
 
 <details markdown="1">
-<summary><strong>Expand for the output of layer tree for Example 6</strong></summary>
+<summary><strong>Expand to view the output of layer tree for Example 6</strong></summary>
 
 {% include_relative trees/layer-tree.md -%}
 
@@ -506,7 +524,7 @@ class AppHome extends StatelessWidget {
 ```
 
 <details markdown="1">
-<summary><strong>Expand the semantic tree for Example 8</strong></summary>
+<summary><strong>Expand to view the semantic tree for Example 8</strong></summary>
 
 {% include_relative trees/semantic-tree.md -%}
 
@@ -622,8 +640,6 @@ The following list highlights some of flags and one function from the
 [`debugDumpRenderTree()`][]
 : To dump the rendering tree to the console,
   call this function when not in a layout or repaint phase.
-  To call this command, press <kbd>t</kbd> after invoking `flutter run`.
-  Search for `RepaintBoundary` to see diagnostics on boundary utility.
 
   {% comment %}
     Feature is not yet added to DevTools:
@@ -769,6 +785,7 @@ To add an overlay to non-Material applications, add a [`GridPaper`][] widget.
 [Timeline events tab]: {{site.url}}/tools/devtools/performance#timeline-events-tab
 [Timeline]: {{site.dart.api}}/stable/dart-developer/Timeline-class.html
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
+[`ConstrainedBox`]: https://api.flutter.dev/flutter/widgets/ConstrainedBox-class.html
 [`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
 [`Focus`]: {{site.api}}/flutter/widgets/Focus-class.html
 [`GridPaper`]: {{site.api}}/flutter/widgets/GridPaper-class.html
@@ -812,3 +829,4 @@ To add an overlay to non-Material applications, add a [`GridPaper`][] widget.
 [rendering library]: {{site.api}}/flutter/rendering/rendering-library.html
 [systrace]: {{site.android-dev}}/studio/profile/systrace
 [widget-fill]: {{site.api}}/flutter/widgets/Widget/debugFillProperties.html
+[`BoxConstraints`]: {{site.api}}/flutter/rendering/BoxConstraints-class.html
