@@ -12,7 +12,7 @@ void main() => runApp(const MyApp());
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  final int anInt = 3; // Cannot be null.
+  final int anInt = 3; // Can't be null.
   final int? aNullableInt = null; // Can be null.
 
   @override
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Nullable Fields Demo'),
         ),
-        body: Center(
+        body: const Center(
           child: Column(
             children: [
               Text('anInt is $anInt.'),

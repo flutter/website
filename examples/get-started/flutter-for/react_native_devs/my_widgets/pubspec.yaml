@@ -1,5 +1,5 @@
 name: my_widgets
-description: A library for `react_native_devs` to import
+description: A library for `react_native_devs` to import.
 version: 1.0.0
 
 environment:

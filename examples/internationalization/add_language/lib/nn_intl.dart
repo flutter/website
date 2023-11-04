@@ -787,4 +787,16 @@ class NnMaterialLocalizations extends GlobalMaterialLocalizations {
 
   @override
   String get scanTextButtonLabel => 'Scan text';
+
+  @override
+  String get lookUpButtonLabel => 'Look Up';
+
+  @override
+  String get menuDismissLabel => 'Dismiss menu';
+
+  @override
+  String get searchWebButtonLabel => 'Search web';
+
+  @override
+  String get shareButtonLabel => 'Share...';
 }
