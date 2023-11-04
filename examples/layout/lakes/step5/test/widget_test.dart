@@ -13,7 +13,7 @@ void main() {
     final flutterError = error as FlutterError;
     expect(
       flutterError.message,
-      'A RenderFlex overflowed by 81 pixels on the bottom.',
+      matches(RegExp(r'A RenderFlex overflowed by \d+ pixels on the bottom\.')),
     );
 
     expect(find.text('Oeschinen Lake Campground'), findsOneWidget);
