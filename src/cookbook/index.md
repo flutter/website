@@ -56,7 +56,9 @@ reference to help you build up an application.
   Until then, check out the [Casual Games Toolkit]({{site.main-url}}/games).
 {{site.alert.end}}
 
+- [Add achievements and leaderboards to your mobile game]({{site.url}}/cookbook/games/achievements-leaderboard)
 - [Add multiplayer support via Firestore]({{site.url}}/cookbook/games/firestore-multiplayer)
+
 
 ## Gestures
 - [Add Material touch ripples]({{site.url}}/cookbook/gestures/ripples)
