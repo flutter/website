@@ -15,6 +15,7 @@
 {% endcomment -%}
 
 {% if toc contains "<li" -%}
+  {% assign toc = toc | replace: 'id="toc" ', '' %}
   {% assign toc = toc | replace: '<ul>', '<ul class="nav">' %}
   {% assign toc = toc | replace: '<ul class="section-nav">', '<ul class="section-nav nav">' %}
   {% assign toc = toc | replace: 'class="toc-entry', 'class="toc-entry nav-item' %}
