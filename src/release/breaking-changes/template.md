@@ -145,11 +145,11 @@ Reverted in version: xxx  (OPTIONAL, delete if not used)
   These links are commented out because they
   cause the GitHubActions (GHA) linkcheck to fail.
   Remove the comment tags once you fill this in with
-  real links. Only use the "master-api" include if
-  you link to "master-api.flutter.dev"; prefer our
+  real links. Only use the "main-api" include if
+  you link to "main-api.flutter.dev"; prefer our
   stable documentation if possible.
 
-{% include docs/master-api.md %}
+{% include docs/main-api.md %}
 
 API documentation:
 
@@ -173,21 +173,21 @@ Relevant PRs:
   but please remove the comment tags before you commit!
 
   If you are sharing new API that hasn't landed in
-  the stable channel yet, use the master channel link.
-  To link to docs on the master channel,
+  the stable channel yet, use the main channel link.
+  To link to docs on the main channel,
   include the following note and make sure that
-  the URL includes the master link (as shown below).
+  the URL includes the main link (as shown below).
 
   Here's an example of defining a stable (site.api) link
-  and a master channel (master-api) link.
+  and a main channel (main-api) link.
 
 <!-- Stable channel link: -->
 [`ClassName`]: {{site.api}}/flutter/[link_to_relevant_page].html
 
 <!-- Master channel link: -->
-{% include docs/master-api.md %}
+{% include docs/main-api.md %}
 
-[`ClassName`]: {{site.master-api}}/flutter/[link_to_relevant_page].html
+[`ClassName`]: {{site.main-api}}/flutter/[link_to_relevant_page].html
 
 [Issue xxxx]: {{site.repo.flutter}}/issues/[link_to_actual_issue]
 [Issue yyyy]: {{site.repo.flutter}}/issues/[link_to_actual_issue]
