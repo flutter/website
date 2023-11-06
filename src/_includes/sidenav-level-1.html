@@ -7,7 +7,7 @@
     {% elsif entry contains 'header' -%}
       <li class="nav-header">{{entry.header}}</li>
     {% else -%}
-      {% assign id = 'sidenav-' | append: forloop.index -%}
+      {% assign id = include.base_id | append: '-sidenav-' | append: forloop.index -%}
       {% if forloop.index == active_entries[0] -%}
         {% assign isActive = true -%}
         {% assign class = 'active' -%}
