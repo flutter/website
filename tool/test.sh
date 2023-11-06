@@ -6,6 +6,6 @@ echo $'\n================== Running Tests =================='
 
 rm -rf **/*.log tmp example.g .dart_tool
 
-time tool/check-code.sh --refresh
+dart run flutter_site check-all
 
 echo $'\nDone!\n'

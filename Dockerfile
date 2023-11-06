@@ -40,7 +40,6 @@ VOLUME /flutter
 # and this is to be disregarded since this image is never deployed to production.
 RUN flutter doctor
 RUN flutter --version
-RUN dart pub get
 
 
 
@@ -65,7 +64,7 @@ FROM flutter AS tests
 COPY ./ ./
 
 # Only test the code here, checking links is purely for site deployment
-ENTRYPOINT ["tool/test.sh"]
+ENTRYPOINT ["dart", "run", "flutter_site", "check-all"]
 
 
 # ============== DEV / JEKYLL SETUP ==============
@@ -120,4 +119,4 @@ RUN bundle exec jekyll build --config $BUILD_CONFIGS
 # ============== TEST BUILT SITE LINKS ==============
 FROM build as checklinks
 
-CMD ["tool/check-links.sh"]
+CMD ["dart", "run", "flutter_site", "check-links"]

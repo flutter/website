@@ -1,4 +1,4 @@
-name: dart_tools
+name: flutter_site
 description: Dart-based tools for flutter/website.
 publish_to: none
 
@@ -6,9 +6,11 @@ environment:
   sdk: ^3.1.0
 
 dependencies:
-  logging: ^1.2.0
+  args: ^2.4.2
+  io: ^1.0.4
+  linkcheck: ^3.0.0
   path: ^1.8.3
-
+  
 dev_dependencies:
   analysis_defaults:
     path: ../../site-shared/packages/analysis_defaults
