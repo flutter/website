@@ -36,7 +36,7 @@ codelab and the
 [fb-auth]: https://firebase.google.com/docs/auth/flutter/start
 [Gmail]: {{site.pub-api}}/googleapis/latest/gmail_v1/gmail_v1-library.html
 [Google APIs package]: {{site.pub-pkg}}/googleapis
-[service accounts]: https://cloud.google.com/iam/docs/service-accounts
+[service accounts]: https://cloud.google.com/iam/docs/service-account-overview
 [YouTube]: {{site.pub-api}}/googleapis/latest/youtube_v3/youtube_v3-library.html
 
 ## Overview
