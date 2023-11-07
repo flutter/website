@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
       showPerformanceOverlay: true,
       title: 'My Awesome App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const MyHomePage(title: 'My Awesome App'),
     );

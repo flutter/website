@@ -47,7 +47,7 @@ starter app template:
    You can also press <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +
    <kbd>Shift</kbd> + <kbd>P</kbd>.
 
-1. Tyoe `flutter`.
+1. Type `flutter`.
 1. Select the **Flutter: New Project**.
 1. Press <kbd>Enter</kbd>.
 1. Select **Application**.

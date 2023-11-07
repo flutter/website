@@ -1,4 +1,4 @@
-FROM ruby:3.2.2-slim-bookworm@sha256:6ff55a14560f94d6c199033e4aa90cc7f0b7afaea5a50bc91cfbc4905f366f39 AS base
+FROM ruby:3.2.2-slim-bookworm@sha256:adc7f93df5b83c8627b3fadcc974ce452ef9999603f65f637e32b8acec096ae1 AS base
 
 ENV TZ=US/Pacific
 RUN apt-get update && apt-get install -yq --no-install-recommends \
@@ -11,8 +11,8 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
       gnupg \
       lsof \
       make \
+      rsync \
       unzip \
-      vim-nox \
       xdg-user-dirs \
     && rm -rf /var/lib/apt/lists/*
 
@@ -32,7 +32,7 @@ ENV FLUTTER_ROOT=flutter
 ENV FLUTTER_BIN=flutter/bin
 ENV PATH="/flutter/bin:$PATH"
 
-RUN git clone --branch $FLUTTER_BUILD_BRANCH --single-branch https://github.com/flutter/flutter /flutter/
+RUN git clone --branch $FLUTTER_BUILD_BRANCH --single-branch --filter=tree:0 https://github.com/flutter/flutter /flutter/
 VOLUME /flutter
 
 # Set up Flutter
@@ -49,13 +49,13 @@ FROM flutter AS node
 
 RUN mkdir -p /etc/apt/keyrings \
     && curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg \
-    && echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_18.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list \
+    && echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list \
     && apt-get update -yq \
     && apt-get install nodejs -yq \
     && npm install -g npm # Ensure latest npm
 
 # Install global Firebase CLI
-RUN npm install -g firebase-tools@12.4.0
+RUN npm install -g firebase-tools@12.7.0
 
 
 

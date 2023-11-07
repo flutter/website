@@ -128,7 +128,7 @@ Widget build(BuildContext context) {
   return Shortcuts(
     shortcuts: <LogicalKeySet, Intent>{
       LogicalKeySet(LogicalKeyboardKey.control, LogicalKeyboardKey.keyA):
-          SelectAllIntent(),
+          const SelectAllIntent(),
     },
     child: Actions(
       dispatcher: LoggingActionDispatcher(),
@@ -137,11 +137,11 @@ Widget build(BuildContext context) {
       },
       child: Builder(
         builder: (context) => TextButton(
-          child: const Text('SELECT ALL'),
           onPressed: Actions.handler<SelectAllIntent>(
             context,
-            SelectAllIntent(),
+            const SelectAllIntent(),
           ),
+          child: const Text('SELECT ALL'),
         ),
       ),
     ),
@@ -278,7 +278,8 @@ To invoke the action (if it exists), call:
 ```dart
 Object? result;
 if (selectAll != null) {
-  result = Actions.of(context).invokeAction(selectAll, SelectAllIntent());
+  result =
+      Actions.of(context).invokeAction(selectAll, const SelectAllIntent());
 }
 ```
 
@@ -287,7 +288,7 @@ Combine that into one call with the following:
 <?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (MaybeInvokeExample)"?>
 ```dart
 Object? result =
-    Actions.maybeInvoke<SelectAllIntent>(context, SelectAllIntent());
+    Actions.maybeInvoke<SelectAllIntent>(context, const SelectAllIntent());
 ```
 
 Sometimes you want to invoke an action as a result of pressing a button or
@@ -306,11 +307,11 @@ Widget build(BuildContext context) {
     },
     child: Builder(
       builder: (context) => TextButton(
-        child: const Text('SELECT ALL'),
         onPressed: Actions.handler<SelectAllIntent>(
           context,
           SelectAllIntent(controller: controller),
         ),
+        child: const Text('SELECT ALL'),
       ),
     ),
   );
@@ -389,11 +390,11 @@ Widget build(BuildContext context) {
     },
     child: Builder(
       builder: (context) => TextButton(
-        child: const Text('SELECT ALL'),
         onPressed: Actions.handler<SelectAllIntent>(
           context,
-          SelectAllIntent(),
+          const SelectAllIntent(),
         ),
+        child: const Text('SELECT ALL'),
       ),
     ),
   );
@@ -590,7 +591,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: title,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: Shortcuts(
         shortcuts: <LogicalKeySet, Intent>{

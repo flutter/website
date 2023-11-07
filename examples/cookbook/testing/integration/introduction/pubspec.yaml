@@ -1,10 +1,10 @@
 name: introduction
 description: A new Flutter project.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: none # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.1.0-0
+  sdk: ^3.1.0
 
 dependencies:
   flutter:
@@ -15,8 +15,9 @@ dependencies:
     sdk: flutter
 
 dev_dependencies:
+  example_utils:
+    path: ../../../../example_utils
   test: any
-  flutter_lints: ^2.0.2
 
 flutter:
   uses-material-design: true

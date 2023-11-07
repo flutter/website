@@ -12,9 +12,9 @@ class MyApp extends StatelessWidget {
       title: _title,
       home: Scaffold(
         appBar: AppBar(title: const Text(_title)),
-        body: Column(
+        body: const Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[MyCustomWidget(), MyCustomWidget()],
+          children: <Widget>[MyCustomWidget(), MyCustomWidget()],
         ),
       ),
     );

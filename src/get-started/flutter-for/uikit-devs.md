@@ -1353,7 +1353,7 @@ but is not as rich as `MaterialApp`.
 To customize the colors and styles of any child components,
 pass a `ThemeData` object to the `MaterialApp` widget.
 For example, in the code below,
-the primary swatch is set to blue and divider color is grey.
+the color scheme from seed is set to deepPurple and divider color is grey.
 
 <?code-excerpt "lib/theme.dart (Theme)"?>
 ```dart
@@ -1367,7 +1367,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         dividerColor: Colors.grey,
       ),
       home: const SampleAppPage(),
@@ -2170,7 +2170,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 [Flutter cookbook]: {{site.url}}/cookbook
 [`http` package]: {{site.pub-pkg}}/http
 [Human Interface Guidelines]: {{site.apple-dev}}/ios/human-interface-guidelines/overview/themes/
-[internationalization guide]: {{site.url}}/ui/accessibility-and-localization/internationalization
+[internationalization guide]: {{site.url}}/ui/accessibility-and-internationalization/internationalization
 [`intl`]: {{site.pub-pkg}}/intl
 [`intl_translation`]: {{site.pub-pkg}}/intl_translation
 [Introduction to declarative UI]: {{site.url}}/get-started/flutter-for/declarative

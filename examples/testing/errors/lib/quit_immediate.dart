@@ -18,4 +18,3 @@ void main() {
 
 // rest of `flutter create` code...
 // #enddocregion Main
-

@@ -135,7 +135,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const SampleAppPage(),
     );
@@ -237,7 +237,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const SampleAppPage(),
     );
@@ -331,7 +331,7 @@ class FadeAppTest extends StatelessWidget {
     return MaterialApp(
       title: 'Fade Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const MyFadeTest(title: 'Fade Demo'),
     );
@@ -689,7 +689,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample Shared App Handler',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const SampleAppPage(),
     );
@@ -807,7 +807,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const SampleAppPage(),
     );
@@ -991,7 +991,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const SampleAppPage(),
     );
@@ -1160,7 +1160,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const SampleAppPage(),
     );
@@ -1737,7 +1737,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const SampleAppPage(),
     );
@@ -1799,7 +1799,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const SampleAppPage(),
     );
@@ -1878,7 +1878,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const SampleAppPage(),
     );
@@ -1955,7 +1955,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const SampleAppPage(),
     );
@@ -2128,7 +2128,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const SampleAppPage(),
     );
@@ -2212,7 +2212,7 @@ Most Firebase functions are covered by
 These plugins are first-party integrations,
 maintained by the Flutter team:
 
- * [`firebase_admob`][] for Firebase AdMob
+ * [`google_mobile_ads`][] for Google Mobile Ads for Flutter
  * [`firebase_analytics`][] for Firebase Analytics
  * [`firebase_auth`][] for Firebase Auth
  * [`firebase_database`][] for Firebase RTDB
@@ -2271,7 +2271,7 @@ same functionality, but is not as rich as `MaterialApp`.
 
 To customize the colors and styles of any child components, pass a
 `ThemeData` object to the `MaterialApp` widget. For example, in the code below,
-the primary swatch is set to blue and text selection color is red.
+the color scheme from seed is set to deepPurple and text selection color is red.
 
 <?code-excerpt "lib/theme.dart (Theme)"?>
 ```dart
@@ -2285,7 +2285,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         textSelectionTheme:
             const TextSelectionThemeData(selectionColor: Colors.red),
       ),
@@ -2384,7 +2384,7 @@ see the [`firebase_messaging`][] plugin documentation.
 [DevTools]: {{site.url}}/tools/devtools
 [existing plugin]: {{site.pub}}/flutter/
 [`flutter_facebook_login`]: {{site.pub}}/packages/flutter_facebook_login
-[`firebase_admob`]: {{site.pub}}/packages/firebase_admob
+[`google_mobile_ads`]: {{site.pub}}/packages/google_mobile_ads
 [`firebase_analytics`]: {{site.pub}}/packages/firebase_analytics
 [`firebase_auth`]: {{site.pub}}/packages/firebase_auth
 [`firebase_database`]: {{site.pub}}/packages/firebase_database
