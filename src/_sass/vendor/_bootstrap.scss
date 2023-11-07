@@ -12,9 +12,6 @@
   $font-weight-bold: 500,
   $headings-font-family: $site-font-family-alt,
   $headings-font-weight: $font-size-base-weight,
-  $h1-font-size: 3rem,
-  $h2-font-size: 2.5rem,
-  $h3-font-size: 2rem,
   $dt-font-weight: $font-size-base-weight,
 
   // Layout config
@@ -91,6 +88,10 @@
     font-size: 20px;
     user-select: none;
     vertical-align: -4px;
+  }
+  
+  &.alert-secondary {
+    background-color: $flutter-color-grey-500;
   }
 }
 

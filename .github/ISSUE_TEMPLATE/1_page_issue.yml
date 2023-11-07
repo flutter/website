@@ -1,42 +1,68 @@
 name: Page issue
-description: Help improve a flutter.dev page
+description: Help improve the content or quality of a docs.flutter.dev page
+labels: [from.page-issue]
 body:
   - type: markdown
     attributes:
       value: |
-          _Found a typo? You can fix it yourself by going to the page source and clicking the pencil icon. Or finish creating this issue._
+          Found a typo? You can fix it yourself!
+
+          1. Click the page icon to the left of the bug icon you clicked
+             to come to this form. The GitHub page source should display.
+          1. Click the pencil icon displayed above the source code.
+          1. Fix the typo.
+          1. Click **Commit changes...**.
+          1. Update the commit message and add a description.
+          1. Click **Propose changes**.
+
+          If you want another contributor to fix this issue, complete this form.
   - type: input
     id: page-url
     attributes:
       label: Page URL
-      placeholder: "Example: https://docs.flutter.dev"
+      placeholder: "Add the address of this page. An example would be https://docs.flutter.dev/guides"
     validations:
       required: true
   - type: input
     id: page-source
     attributes:
       label: Page source
-      placeholder: (Provided automatically by the in-page bug link)
+      placeholder: The bug link provides this information.
     validations:
       required: false
   - type: textarea
     id: problem
     attributes:
       label: Describe the problem
-      placeholder: A clear and concise description of what's wrong.
+      placeholder: Provide a clear and concise description of you believe to be in error.
     validations:
       required: true
   - type: textarea
     id: fix
     attributes:
       label: Expected fix
-      placeholder: A clear and concise description of how you think we should fix the problem.
+      placeholder: Provide a clear and concise description of how you think this problem should be fixed.
     validations:
       required: false
   - type: textarea
     id: additional-info
     attributes:
       label: Additional context
-      placeholder: Anything else we should know about the problem?
+      placeholder: |
+        Provide anything else that should be known about the problem. 
+        This could include:
+
+        * when in your workflow this occurred
+        * what platform and browser you are using
+        * other configuration or circumstantial information that you think
+          could impact fixing your issue
     validations:
       required: false
+  - type: checkboxes
+    id: volunteer
+    attributes:
+      label: I would like to fix this problem.
+      description: Let us know if you want to try fixing this yourself.
+      options:
+        - label: I will try and fix this problem on docs.flutter.dev.
+          required: false

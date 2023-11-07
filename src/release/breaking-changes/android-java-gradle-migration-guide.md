@@ -56,34 +56,32 @@ using one of the following approaches.**
 Upgrade the Gradle version in Android Studio Flamingo
 as follows:
 
-**Step 1**: In Android Studio Flamingo, open the `android` folder,
-  which should bring up the following dialog: 
+1. In Android Studio, open the `android` folder.
+   This should bring up the following dialog: 
 
-![Dialog prompting you to upgrade Gradle]({{site.url}}/assets/images/docs/releaseguide/android-studio-flamingo-upgrade-alert.png){:width="50%"}
+   ![Dialog prompting you to upgrade Gradle]({{site.url}}/assets/images/docs/releaseguide/android-studio-flamingo-upgrade-alert.png){:width="50%"}
 
-Update to a Gradle release between 7.3 through 7.6.1, inclusive.
+   Update to a Gradle release between 7.3 through 7.6.1, inclusive.
 
-**Step 2**: Follow the guided workflow to update Gradle:
+1. Follow the guided workflow to update Gradle.
 
-![Workflow to upgrade Gradle]({{site.url}}/assets/images/docs/releaseguide/android-studio-flamingo-gradle-upgrade.png){:width="85%"}
+   ![Workflow to upgrade Gradle]({{site.url}}/assets/images/docs/releaseguide/android-studio-flamingo-gradle-upgrade.png){:width="85%"}
 
 ## Solution #2: Manual fix at the command line
 
 Do the following from the top of your Flutter project.
 
-**Step 1**: Go to the gradle directory for your project:
+1. Go to the Android directory for your project.
 
-```sh
-cd android/gradle/wrapper
-```
+   ```terminal
+   $ cd android
+   ```
 
-**Step 2**: Edit the `gradle-wrapper.properties` file to
-  change the `distributionUrl` field to the preferred
-  Gradle version (7.3 through 7.6.1, inclusive):
+1. Update Gradle to the preferred version. Choose between 7.3 through 7.6.1, inclusive.
 
-```properties
-distributionUrl=https\://services.gradle.org/distributions/gradle-7.6.1-all.zip 
-```
+   ```terminal
+   $ ./gradlew wrapper --gradle-version=7.6.1
+   ```
 
 ## Notes
 

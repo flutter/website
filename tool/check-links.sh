@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 # Check for non-200 links in built Jekyll site
 # first looking for invalid link references then
-# using Firebase emulator and Dart linkcheck utility
+# using Firebase emulator and Dart linkcheck utility.
+# Must be run from root of repository.
 set -eu -o pipefail
 
 # Eliminate clutter
 dart --disable-analytics
+dart pub get --directory=tool/dart_tools
 
 echo "Checking for valid link references..."
 # Check for invalid link references before checking for links

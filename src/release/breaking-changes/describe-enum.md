@@ -92,8 +92,8 @@ Relevant PRs:
 
 [`describeEnum` stable]: {{site.api}}/flutter/lib/src/foundation/describeEnum.html
 [`EnumProperty` stable]: {{site.api}}/flutter/lib/src/foundation/EnumProperty.html
-[`describeEnum` main]: {{site.master-api}}/flutter/lib/src/foundation/describeEnum.html
-[`EnumProperty` main]: {{site.master-api}}/flutter/lib/src/foundation/describeEnum.html
+[`describeEnum` main]: {{site.main-api}}/flutter/lib/src/foundation/describeEnum.html
+[`EnumProperty` main]: {{site.main-api}}/flutter/lib/src/foundation/describeEnum.html
 
 [Cleanup SemanticsFlag and SemanticsAction issue]: {{site.repo.flutter}}/issues/123346
 [Deprecate `describeEnum` PR]: {{site.repo.flutter}}/pull/125016
