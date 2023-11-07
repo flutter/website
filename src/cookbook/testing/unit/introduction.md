@@ -74,7 +74,6 @@ and decrementing a `value` starting at `0`.
 <?code-excerpt "lib/counter.dart"?>
 ```dart
 class Counter {
-
   int value = 0;
 
   void increment() => value++;
