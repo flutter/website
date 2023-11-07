@@ -56,7 +56,7 @@ each API as a separate Dart library&emdash;in a
 `name_version` format.
 Check out [`youtube_v3`][] as an example.
 
-Each library may provide many types,
+Each library might provide many types,
 but there is one _root_ class that ends in `Api`.
 For YouTube, it's [`YouTubeApi`][].
 
