@@ -88,7 +88,7 @@ To use Google APIs you must have a Google account
 and a Google project. You also
 need to enable your desired API.
 
-This example enables [YouTube Data API v3][]:
+This example enables [YouTube Data API v3][].
 For details, see the [getting started instructions][].
 
 [getting started instructions]: https://cloud.google.com/apis/docs/getting-started
