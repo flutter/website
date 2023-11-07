@@ -74,8 +74,11 @@ and decrementing a `value` starting at `0`.
 <?code-excerpt "lib/counter.dart"?>
 ```dart
 class Counter {
+
   int value = 0;
+
   void increment() => value++;
+
   void decrement() => value--;
 }
 ```
@@ -100,7 +103,9 @@ import 'package:test/test.dart';
 void main() {
   test('Counter value should be incremented', () {
     final counter = Counter();
+
     counter.increment();
+
     expect(counter.value, 1);
   });
 }
@@ -115,8 +120,8 @@ that group with one command.
 
 <?code-excerpt "test/group.dart"?>
 ```dart
-import "package:counter_app/counter.dart";
-import "package:test/test.dart";
+import 'package:counter_app/counter.dart';
+import 'package:test/test.dart';
 
 void main() {
   group('Test start, increment, decrement', () {
@@ -126,13 +131,17 @@ void main() {
 
     test('value should be incremented', () {
       final counter = Counter();
+
       counter.increment();
+
       expect(counter.value, 1);
     });
 
     test('value should be decremented', () {
       final counter = Counter();
+
       counter.decrement();
+
       expect(counter.value, -1);
     });
   });
