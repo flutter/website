@@ -92,7 +92,7 @@ This example enables [YouTube Data API v3][]:
 For details, see the [getting started instructions][].
 
 [getting started instructions]: https://cloud.google.com/apis/docs/getting-started
-[YouTube Data API v3]: https://console.cloud.google.com/apis/api/youtube.googleapis.com
+[YouTube Data API v3]: https://console.cloud.google.com/apis/library/youtube.googleapis.com
 
 ## 3. Authenticate the user with the required scopes
 
