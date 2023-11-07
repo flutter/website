@@ -1,5 +1,6 @@
 {{site.alert.important}}
-  If you're in China, read [Using Flutter in China][].
+  如果你正在中国的网络环境下配置 Flutter，
+  请参考 [在中国网络环境下使用 Flutter][] 文档。
 {{site.alert.end}}
 
-[Using Flutter in China]: {{site.url}}/community/china
+[在中国网络环境下使用 Flutter]: https://flutter.cn/community/china
