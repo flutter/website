@@ -55,6 +55,7 @@
       { "source": "/flutter-for-:platform*", "destination": "/get-started/flutter-for/:platform*-devs", "type": 301 },
       { "source": "/formatting", "destination": "/tools/formatting", "type": 301 },
       { "source": "/gestures", "destination": "/ui/advanced/gestures", "type": 301 },
+      { "source": "/games-revenue", "destination": "https://docs.google.com/presentation/d/1mWy7PzuWYLeeB8EEc4z9LqO8584nWTPqXmpswppt_3Y/edit#slide=id.g1f9fbfe3213_0_0", "type": 301 },
       { "source": "/hot-reload", "destination": "/tools/hot-reload", "type": 301 },
       { "source": "/ide-setup", "destination": "/get-started/editor", "type": 301 },
       { "source": "/images/catalog-widget-placeholder.png", "destination": "/assets/images/docs/catalog-widget-placeholder.png", "type": 301 },
