@@ -118,7 +118,7 @@ final _googleSignIn = GoogleSignIn(
 ```
 
 Follow the instructions provided by
-[package:google_sign_in][gsi-pkg]
+[`package:google_sign_in`][gsi-pkg]
 to allow a user to authenticate.
 
 Once authenticated,
