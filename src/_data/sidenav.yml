@@ -308,6 +308,8 @@
       permalink: /data-and-backend/firebase
     - title: Google APIs
       permalink: /data-and-backend/google-apis
+    - title: Concurrency and Isolates
+      permalink: data-and-backend/isolates
 
 - title: Platform integration
   permalink: /platform-integration
