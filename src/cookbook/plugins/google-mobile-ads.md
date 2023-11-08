@@ -51,7 +51,7 @@ package to add a banner ad to your app or game.
 
 4.  Get the AdMob *App IDs* for both the Android app and the iOS app.
     They resemble `ca-app-pub-1234567890123456~1234567890`. Note the
-    tilde between the two numbers.
+    tilde (`~`) between the two numbers.
     {% comment %} https://support.google.com/admob/answer/7356431 for future reference {% endcomment %}
 
     ![Screenshot from AdMob showing the location of the App ID]({{site.url}}/assets/images/docs/cookbook/ads-app-id.png)
