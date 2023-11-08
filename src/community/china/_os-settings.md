@@ -1,49 +1,68 @@
-{% assign id =  include.os | downcase -%}
+{% assign id = include.ref-os | downcase -%}
+{% assign jsonurl = 'https://storage.googleapis.com/flutter_infra_release/releases/releases_{{id}}.json' %}
+{% assign os = include.ref-os -%}
+{% assign sdk = include.sdk -%}
 
 {% if id == 'windows' -%}
-{% assign shell = 'Powershell' -%}
-{% assign prompt = 'C:\>' -%}
-{% assign envvarset = 'C:\> $env:' -%}
-{% assign setpath = 'C:\> $env:PATH = $pwd.PATH + "/flutter/bin",$env:PATH -join ";"' -%}
-{% assign comtoset = '$env:' -%}
-{% assign unzip='Extract-Archive' %}
-{% capture permaddexample -%}
+   {% assign shell = 'Powershell' -%}
+   {% assign prompt = 'C:\>' -%}
+   {% assign comtoset = '$env:' -%}
+   {% assign installdirsuggestion = '%USERPROFILE%\dev' %}
+   {% capture envvarset -%}{{prompt}} {{comtoset}}{% endcapture -%}
+   {% capture setpath -%}{{envvarset}}PATH = $pwd.PATH + "/flutter/bin",$env:PATH -join ";"{% endcapture -%}
+   {% capture newdir -%}{{prompt}} New-Item -Path '{{installdirsuggestion}}' -ItemType Directory{% endcapture -%}
+   {% capture unzip -%} {{prompt}} Extract-Archive:{% endcapture -%}
+   {% capture permaddexample -%}
 $newPath = $pwd.PATH + "/flutter/bin",$env:PATH -join ";"
 [System.Environment]::SetEnvironmentVariable('Path',$newPath,User)
 [System.Environment]::SetEnvironmentVariable('PUB_HOSTED_URL','https://pub.flutter-io.cn',User)
 [System.Environment]::SetEnvironmentVariable('FLUTTER_STORAGE_BASE_URL','https://storage.flutter-io.cn',User)
-{% endcapture -%}
+   {% endcapture -%}
 {% else -%}
-{% assign shell = 'your terminal' -%}
-{% assign prompt = '$' -%}
-{% assign envvarset = '$ export ' -%}
-{% assign setpath = '$ export PATH="$PWD/flutter/bin:$PATH"' -%}
-{% assign comtoset = 'export' -%}
-{% assign unzip='unzip' %}
-{% capture permaddexample -%}
+   {% assign shell = 'your terminal' -%}
+   {% assign prompt = '$' -%}
+   {% assign comtoset = 'export ' -%}
+   {% assign installdirsuggestion = '`~/dev`' %}
+   {% capture envvarset -%}{{prompt}} {{comtoset}}{% endcapture -%}
+   {% capture setpath -%}{{envvarset}}PATH="$PWD/flutter/bin:$PATH"{% endcapture -%}
+   {% capture newdir -%}{{prompt}} mkdir ~/dev{% endcapture -%}
+   {% if id == 'macos' %}
+      {% capture unzip -%} {{prompt}} unzip{% endcapture -%}
+   {% else %}
+      {% capture unzip -%} {{prompt}} tar -xf{% endcapture -%}
+   {% endif %}
+   {% capture permaddexample -%}
 cat <<EOT >> ~/.zprofile
 {{envvarset}}PUB_HOSTED_URL="https://pub.flutter-io.cn"
 {{envvarset}}FLUTTER_STORAGE_BASE_URL="https://storage.flutter-io.cn"
 {{setpath}}
 EOT
-{% endcapture -%}
+   {% endcapture -%}
 {% endif -%}
+{%- case id %}
+   {% when 'windows','macos' %}
+      {%- assign file-format = 'zip' %}
+      {%- assign download-os = id %}
+   {% when 'linux','chromeos' %}
+      {%- assign download-os = 'linux' %}
+      {%- assign file-format = 'tar.xz' %}
+{% endcase %}
 
 <div id="{{id}}" class="tab-pane
   {%- if id == 'windows' %} active {% endif %}"
   role="tabpanel" aria-labelledby="{{id}}-tab" markdown="1">
 
-1. Open a new Terminal window to prepare running scripts.
+This procedure requires using {{shell}}.
+
+1. Open a new window in {{shell}} to prepare running scripts.
 
 1. Set `PUB_HOSTED_URL` to your mirror site.
-   In {{shell}}, run the following command:
 
    ```terminal
    {{envvarset}}PUB_HOSTED_URL="https://pub.flutter-io.cn"
    ```
 
 1. Set `FLUTTER_STORAGE_BASE_URL` to your mirror site.
-   In {{shell}}, run the following command:
 
    ```terminal
    {{envvarset}}FLUTTER_STORAGE_BASE_URL="https://storage.flutter-io.cn"
@@ -53,30 +72,29 @@ EOT
    In your preferred browser, go to
    [Flutter SDK archive](https://flutter.cn/docs/release/archive?tab={{id}}).
 
-1. Create a folder where you can install Flutter.
+1. Create a folder where you can install Flutter. then change into it.
 
-   Consider
-   {% if id == 'windows' -%}
-   `%USERPROFILE%` or `D:\dev`.
-   {% else -%}
-   `~/dev`.
-   {% endif %}
-
-1. Extract the zip file.
+   Consider a path like {{installdirsuggestion}}.
 
    ```terminal
-   {{unzip}} flutter_sdk_v1.0.0.zip
+   {{newdir}}; cd {{installdirsuggestion}}
+   ```
+
+1. Extract the the SDK from the {{file-format}} archive file.
+
+   This example assumes you downloaded the {{os}} version of the Flutter SDK.
+
+   ```terminal
+   {{unzip}} {{sdk | replace: "opsys", download-os}}{{file-format}}
    ```
 
 1. Add Flutter to your `PATH` environment variable.
-   In {{shell}}, run the following command:
 
    ```terminal
    {{setpath}}
    ```
 
 1. Run Flutter Doctor to verify your installation.
-   In {{shell}}, run the following command:
 
    ```terminal
    {{prompt}} flutter doctor

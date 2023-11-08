@@ -5,15 +5,18 @@ toc: true
 os-list: [Windows, macOS, Linux, ChromeOS]
 ---
 
-{% assign path = 'flutter_infra_release/releases/stable/windows/flutter_windows_3.3.0-stable.zip' -%}
+{% assign flutter-sdk = 'flutter_opsys_v3.13.0-stable.' %}
+{% capture sdk-path -%}flutter_infra_release/releases/stable/opsys/{{flutter-sdk}}{%- endcapture %}
 
 To speed the download and installation of Flutter in China,
-consider using a mirror site.
+consider using a [mirror site][].
 
 {{site.alert.important}}
-  Use mirror sites only if you _trust_ the provider.
-  The Flutter team cannot verify their reliability or security.
+  Use mirror sites _only_ if you _trust_ the provider.
+  The Flutter team can't verify their reliability or security.
 {{site.alert.end}}
+
+[mirror site]: https://en.wikipedia.org/wiki/Mirror_site
 
 ## Use a Flutter mirror site
 
@@ -35,17 +38,16 @@ To set your machine to use a mirror site:
 {% for os in page.os-list %}
 {% assign id = os | downcase -%}
   <li class="nav-item">
-    <a class="nav-link {%- if id == 'windows' %} active {% endif %}" id="{{id}}-tab" href="#{{id}}" role="tab" aria-controls="{{id}}" aria-selected="true">{{os}}</a>
+    <a class="nav-link {%- if id == 'windows' %} active {% endif %}" id="{{id}}-tab" href="#{{id}}" role="tab" aria-controls="{{id}} {{id}}-dl {{id}}-pub" aria-selected="true">{{os}}</a>
   </li>
 {% endfor -%}
 </ul>
 
 {% comment %} Tab panes {% endcomment -%}
 <div class="tab-content">
-{% include_relative _os-settings.md os="Windows" %}
-{% include_relative _os-settings.md os="macOS" %}
-{% include_relative _os-settings.md os="Linux" %}
-{% include_relative _os-settings.md os="ChromeOS" %}
+{% for os in page.os-list %}
+{% include_relative _os-settings.md ref-os=os sdk=flutter-sdk %}
+{% endfor -%}
 </div>
 
 ### Download Flutter archives based on a mirrored URL
@@ -53,64 +55,60 @@ To set your machine to use a mirror site:
 To download Flutter archives from a mirrored URL,
 replace `storage.googleapis.com` with the URL of your trusted mirror.
 This should improve download speed.
- You can use the replaced URL in other applications to download software.
+You can use the mirror URL in other applications to download software.
+
+To change a Google storage site to a CFUG storage site, replace the example
+original URL with the example mirror URL.
+
+{% comment %} Nav tabs {% endcomment -%}
+<ul class="nav nav-tabs" id="china-os-dl-tabs" role="tablist">
+{% for os in page.os-list %}
+{% assign id = os | downcase -%}
+  <li class="nav-item">
+    <a class="nav-link {%- if id == 'windows' %} active {% endif %}" id="{{id}}-dl-tab" href="#{{id}}-dl" role="tab" aria-controls="{{id}} {{id}}-dl {{id}}-pub" aria-selected="true">{{os}}</a>
+  </li>
+{% endfor -%}
+</ul>
+
+{% comment %} Tab panes {% endcomment -%}
+<div class="tab-content">
+{% for os in page.os-list %}
+{% include_relative _download-urls.md ref-os=os filepath=sdk-path %}
+{% endfor -%}
+</div>
 
 {{site.alert.note}}
-  Not every mirror supports downloading artifacts using a replaced URL.
+  Not every mirror supports downloading artifacts using their direct URL.
 {{site.alert.end}}
-
-For example:
-
-* Original URL:<br>
-  [`https://storage.googleapis.com/{{path}}`](https://storage.googleapis.com/{{path}})
-
-* Mirrored URL:<br>
-  [`https://storage.flutter-io.cn/{{path}}`](https://storage.flutter-io.cn/{{path}})
 
 ## Configure your machine to publish your package
 
-To publish your packages to pub.dev,
-you need to be able to access both Google Auth and the pub.dev site.
+To publish your packages to `pub.dev`,
+you need to be able to access both Google Auth and the `pub.dev` site.
 
-  {% comment %}
-  From https://github.com/flutter/website/pull/9338#discussion_r1328077020
-  {% endcomment %}
+{% comment %}
+From https://github.com/flutter/website/pull/9338#discussion_r1328077020
+{% endcomment %}
 
-To publish packages to pub.dev:
+To enable access to `pub.dev`:
 
-1. Configure a proxy.
-   To configure a proxy, check out the [Dart documentation on proxies][].
+{% comment %} Nav tabs {% endcomment -%}
+<ul class="nav nav-tabs" id="china-os-pub-tabs" role="tablist">
+{% for os in page.os-list %}
+{% assign id = os | downcase -%}
+  <li class="nav-item">
+    <a class="nav-link {%- if id == 'windows' %} active {% endif %}" id="{{id}}-pub-tab" href="#{{id}}-pub" role="tab" aria-controls="{{id}} {{id}}-pub" aria-selected="true">{{os}}</a>
+  </li>
+{% endfor -%}
+</ul>
 
-  {% comment %}
-  From https://github.com/flutter/website/issues/2556#issuecomment-481566476
-  {% endcomment %}
-
-1. Verify that your `PUB_HOSTED_URL` environment variable is either unset
-   or empty.
-
-   On macOS, Linux, or ChromeOS, run this command:
-
-   ```bash
-   echo $PUB_HOSTED_URL
-   ```
-
-   If this command returns any value, unset it.
-
-   ```bash
-   unset $PUB_HOSTED_URL
-   ```
-
-   On Windows, run this command:
-
-   ```powershell
-   echo $env:PUB_HOSTED_URL
-   ```
-
-   If this command returns any value, unset it.
-
-   ```powershell
-   Remove-Item $env:PUB_HOSTED_URL
-   ```
+{% comment %} Tab panes {% endcomment -%}
+<div class="tab-content">
+{% include_relative _pub-settings.md os="Windows" filepath=path %}
+{% include_relative _pub-settings.md os="macOS" filepath=path %}
+{% include_relative _pub-settings.md os="Linux" filepath=path %}
+{% include_relative _pub-settings.md os="ChromeOS" filepath=path %}
+</div>
 
 To learn more about publishing packages, check out
 [Dart documentation on publishing packages][].
@@ -119,99 +117,54 @@ To learn more about publishing packages, check out
 
 [Dart documentation on publishing packages]: {{site.dart-site}}/tools/pub/publishing
 
-## Details on mirror sites
-
-### Support for mirror sites
+## Known, trusted community-run mirror sites
 
 The Flutter team cannot guarantee long-term availability of any mirrors.
 You can use other mirrors if they become available.
 
-### Host new mirror sites
+{% for mirror in site.data.mirrors %}
+
+<hr>
+
+### {{mirror.group}}
+
+[{{mirror.group}}][] maintains the `{{mirror.mirror}}` mirror.
+It includes the Flutter SDK and pub packages.
+
+#### Configure your machine to use this mirror
+{:.no_toc}
+
+To set your machine to use this mirror, use these commands.
+
+On macOS, Linux, or ChromeOS:
+
+```terminal
+export PUB_HOSTED_URL={{mirror.urls.pubhosted}};
+export FLUTTER_STORAGE_BASE_URL={{mirror.urls.flutterstorage}}
+```
+
+On Windows:
+
+```terminal
+$env:PUB_HOSTED_URL="{{mirror.urls.pubhosted}}";
+$env:FLUTTER_STORAGE_BASE_URL="{{mirror.urls.flutterstorage}}"
+```
+
+#### Get support for this mirror
+{:.no_toc}
+
+If you're running into issues that only occur when
+using the `{{mirror.mirror}}` mirror, report the issue to their
+[issue tracker]({{mirror.urls.issues}}).
+
+{% endfor %}
+
+{% for mirror in site.data.mirrors %}
+[{{mirror.group}}]: {{mirror.urls.group}}
+{% endfor %}
+
+## Offer to host a new mirror site
 
 If you're interested in setting up your own mirror,
 contact [flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com)
 for assistance.
-
-### Known, trusted community-run mirror sites
-
-#### China Flutter User Group
-
-[China Flutter User Group][] maintains the `flutter-io.cn` mirror.
-It includes Flutter and packages.
-
-If you're running into issues that only occur when
-using the `flutter-io.cn` mirror, report the issue to their
-[issue tracker (镜像问题)]({{site.github}}/cfug/flutter.cn/issues/new/choose).
-
-To set your machine to use this mirror, use these commands.
-
-On macOS, Linux, or ChromeOS:
-
-```bash
-export PUB_HOSTED_URL=https://pub.flutter-io.cn
-export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
-```
-
-On Windows:
-
-```powershell
-$env:PUB_HOSTED_URL="https://pub.flutter-io.cn"
-$env:FLUTTER_STORAGE_BASE_URL="https://storage.flutter-io.cn"
-```
-
-#### Shanghai Jiao Tong University *nix User Group
-
-[Shanghai Jiao Tong University *nix User Group][]
-maintains the `mirror.sjtu.edu.cn` mirror.
-It includes Flutter and packages.
-
-If you're running into issues that only occur when
-using the `mirror.sjtu.edu.cn` mirror, report the issue to their
-[issue tracker (议题)](https://github.com/sjtug/mirror-requests).
-
-To set your machine to use this mirror, use these commands.
-
-On macOS, Linux, or ChromeOS:
-
-```bash
-export FLUTTER_STORAGE_BASE_URL=https://mirror.sjtu.edu.cn
-export PUB_HOSTED_URL=https://mirror.sjtu.edu.cn/flutter-infra
-```
-
-On Windows:
-
-```powershell
-$env:PUB_HOSTED_URL="https://mirror.sjtu.edu.cn"
-$env:FLUTTER_STORAGE_BASE_URL="https://mirror.sjtu.edu.cn/flutter-infra"
-```
-
-#### Tsinghua University TUNA Association
-
-[Tsinghua University TUNA Association][]
-maintains the `mirrors.tuna.tsinghua.edu.cn` mirror.
-It includes Flutter and packages.
-
-If you're running into issues that only occur when
-using the `mirror.sjtu.edu.cn` mirror, report the issue to their
-[issue tracker](https://github.com/tuna/issues).
-
-To set your machine to use this mirror, use these commands.
-
-On macOS, Linux, or ChromeOS:
-
-```bash
-export FLUTTER_STORAGE_BASE_URL=https://mirrors.tuna.tsinghua.edu.cn/flutter
-export PUB_HOSTED_URL=https://mirrors.tuna.tsinghua.edu.cn/dart-pub
-```
-
-On Windows:
-
-```powershell
-$env:PUB_HOSTED_URL="https://mirrors.tuna.tsinghua.edu.cn/dart-pub"
-$env:FLUTTER_STORAGE_BASE_URL="https://mirrors.tuna.tsinghua.edu.cn/flutter"
-```
-
-[Tsinghua University TUNA Association]: https://tuna.moe
-
-[China Flutter User Group]: https://github.com/cfug
-[Shanghai Jiao Tong University *nix User Group]: https://github.com/sjtug
