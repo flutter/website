@@ -95,7 +95,7 @@ Add your AdMob app ID to your Android app.
 
 ### iOS
 
-Add your AdMob app ID to your Android app.
+Add your AdMob app ID to your iOS app.
 
 1.  Open your app's `ios/Runner/Info.plist` file.
 
