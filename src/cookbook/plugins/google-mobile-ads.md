@@ -145,7 +145,7 @@ You need to initialize the Mobile Ads SDK before loading ads.
     ```dart
     void main() {
       WidgetsFlutterBinding.ensureInitialized();
-      MobileAds.instance.initialize();
+      unawaited(MobileAds.instance.initialize());
     
       runApp(MyApp());
     }
