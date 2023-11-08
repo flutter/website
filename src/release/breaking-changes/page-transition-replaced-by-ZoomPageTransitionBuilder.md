@@ -50,7 +50,7 @@ Code before migration:
 
 ```dart
 MaterialApp(
-  theme: ThemeData(primarySwatch: Colors.blue),
+  theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)),
 )
 ```
 

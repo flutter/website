@@ -70,7 +70,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Fetch Data Example',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: Scaffold(
         appBar: AppBar(

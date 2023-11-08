@@ -23,7 +23,7 @@ class PlantsApp extends StatelessWidget {
     return MaterialApp(
       title: 'Plants by common name',
       theme: ThemeData(
-        primarySwatch: Colors.lightGreen,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightGreen),
       ),
       home: const HomePage(title: 'Plants by common name'),
     );
