@@ -267,7 +267,7 @@ To show anything beyond test ads, you have to register ad units.
 
     ![Screenshot of an Ad Unit ID in AdMob web UI]({{site.url}}/assets/images/docs/cookbook/ads-ad-unit-id.png)
 
-5.  Include these *Ad unit IDs* to the constructor of `BannerAd`,
+5.  Add these *Ad unit IDs* to the constructor of `BannerAd`,
     depending on the target app platform.
 
     ```dart
