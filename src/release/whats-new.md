@@ -20,6 +20,24 @@ and review the [Dart changelog][].
 [Dart Announce]: https://groups.google.com/a/dartlang.org/g/announce
 [Dart changelog]: {{site.github}}/dart-lang/sdk/blob/main/CHANGELOG.md
 
+## 15 November 2023: 3.15 release ??
+
+Flutter 3.13 is live! For more information,
+check out the xxx[Flutter 3.13 blog post][blog-general].
+
+You might also check out 
+xxx[Dart 3.1 & a retrospective on functional style programming in Dart 3][].
+
+**Docs updated or added since the 3.13 release**
+
+- new games packages/page
+- new recipes for games
+- 
+- M3 by default
+* The Impeller runtime is now available for Android
+  behind a flag. For more information, check out
+  the [Impeller rendering engine][impeller] page.
+
 ## 16 August 2023: 3.13 release
 
 Flutter 3.13 is live! For more information,
