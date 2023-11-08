@@ -102,7 +102,7 @@ Add your AdMob app ID to your iOS app.
 2.  Enclose `GADApplicationIdentifier` with a `key` tag.
 
 3.  Enclose your AdMob app ID with a `string` tag. You created this AdMob
-    App ID in the previous step.
+    App ID in [step 1](#1-get-admob-app-ids).
 
     ```xml
     <key>GADApplicationIdentifier</key>
