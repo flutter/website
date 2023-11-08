@@ -262,7 +262,7 @@ To show anything beyond test ads, you have to register ad units.
 4.  Get the *Ad unit IDs* for both the Android app and the iOS app.
     You can find these in the **Ad units** section. They look something
     like `ca-app-pub-1234567890123456/1234567890`. The format resembles
-    the *App ID* but with a slash between the two numbers. This
+    the *App ID* but with a slash (`/`) between the two numbers. This
     distinguishes an *Ad unit ID* from an *App ID*.
 
     ![Screenshot of an Ad Unit ID in AdMob web UI]({{site.url}}/assets/images/docs/cookbook/ads-ad-unit-id.png)
