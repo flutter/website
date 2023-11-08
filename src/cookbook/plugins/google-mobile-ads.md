@@ -289,7 +289,7 @@ testing scenarios), your app must meet additional requirements:
     For example, your app must be listed on at least one of the
     supported stores such as Google Play Store or Apple App Store.
 
-2.  You must [create an app-ads.txt](https://support.google.com/admob/answer/9363762?hl=en&ref_topic=7384409&sjid=520087467257593855-NA#)
+2.  You must [create an `app-ads.txt`](https://support.google.com/admob/answer/9363762)
     file and publish it on your developer website.
 
 ![An illustration of a smartphone showing an ad]({{site.url}}/assets/images/docs/cookbook/ads-device.jpg){:.site-illustration}
