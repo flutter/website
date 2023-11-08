@@ -285,7 +285,7 @@ testing scenarios), your app must meet additional requirements:
 
 1.  Your app must be reviewed and approved before it can fully serve
     ads.
-    Follow AdMob's [app readiness guidelines](https://support.google.com/admob/answer/10564477?hl=en&ref_topic=7384409&sjid=520087467257593855-NA).
+    Follow AdMob's [app readiness guidelines](https://support.google.com/admob/answer/10564477).
     For example, your app must be listed on at least one of the
     supported stores such as Google Play Store or Apple App Store.
 
