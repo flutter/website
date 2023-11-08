@@ -395,7 +395,7 @@ class _MyBannerAdWidgetState extends State<MyBannerAdWidget> {
 }
 ```
 
-{{site.alert.note}}
+{{site.alert.tip}}
   In many cases, you   will want to load the ad _outside_ a widget.
   
   For example, you can load it in a `ChangeNotifier`, a BLoC, a controller,
