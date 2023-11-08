@@ -1,16 +1,14 @@
 ---
 title: Casual Games Toolkit
-description: Learn more about creating app-like games in Flutter.
+description: Free & open source multiplatform 2D game development in Flutter
 ---
 
-The Flutter Casual Games Toolkit, announced at Google I/O 2022,
-pulls together new and existing resources that enable you to
-speed up development of casual games on mobile.
+The Flutter Casual Games Toolkit pulls together new and existing resources
+so you can accelerate development of games on mobile platforms.
 
-This page outlines what resources are available and
-where you can find them.
+This page outlines where you can find these available resources.
 
-For instructions on how to use the game template, please review the [game template readme][game-template-readme].
+To learn how to use the game template, review the [game template readme][game-template-readme].
 
 ## How Flutter can help
 
@@ -45,8 +43,11 @@ referring to app-like games in this context.
 
 The Casual Games Toolkit provides the following free resources:
 
-* A [game template app][game-template], available in Flutter's
-  [samples repo][], includes the following prebuilt features:
+* A repository that includes the following game templates:
+  * A [basic][game-template]
+  * A [card-based game][card-template]
+  * An [endless runner game][runner-template]
+* All templates include the following prebuilt features:
   * Main menu
   * Sound & music
   * Ads
@@ -68,29 +69,32 @@ The Casual Games Toolkit provides the following free resources:
 [on Android]: https://play.google.com/store/apps/details?id=dev.flutter.tictactoe
 [samples repo]: {{site.github}}/flutter/samples
 
-The game template is opinionated (it pretty
-much has to be), so it uses specific packages,
+These game templates make certain choices to accelerate development.
+They include specific packages,
 like `provider`, `google_mobile_ads`, `in_app_purchase`,
 `audioplayers`, `crashlytics`, and `games_services`.
 Feel free to change the code
 to use other packages, if you prefer.
 
-And, yes, the game template assumes that **you'll
-want to earn money for your mobile game**,
-so the ads and in-app purchase packages are already
-integrated with the template and ready to be configured.
+The game template assumes that
+**you'll want to earn money for your mobile game**.
+The templates integrate both ads and in-app purchase packages
+into the templates. They're all ready to be configured.
 
 As explained on the [Games][] page,
 you can also take advantage of up to $900
 in offers when you integrate Google services,
 such as [Cloud, Firebase][], and [Ads][],
 into your game.
-(Terms and conditions apply: You must connect your
+
+{% site.alert.important %}
+Terms and conditions apply: You must connect your
 Firebase and GCP accounts to use credits for
 Firebase services and verify your business
 email during sign up to earn an additional $100
-on top of the normal $300 credit. For the Ads offer,
-[check your region's eligibility][]).
+on top of the normal $300 credit.
+For the Ads offer, [check your region's eligibility][].
+{% site.alert.end %}
 
 [Ads]: https://ads.google.com/intl/en_us/home/flutter/#!/
 [check your region's eligibility]: https://www.google.com/intl/en/ads/coupons/terms/flutter/
@@ -111,8 +115,9 @@ Are you ready? To get started:
 1. Deploy to both the Google and Apple stores
 
 [direct-discord]: https://discord.com/login?redirect_to=%2Fchannels%2F420324994703163402%2F964110538986651658
-[game-discord]: https://discord.com/invite/WY5NwwjBQz
-[game-template]: {{site.github}}/flutter/samples/tree/main/game_template
+[game-template]: {{site.github}}/flutter/games/tree/main/basic
+[card-template]: {{site.github}}/flutter/games/tree/main/card
+[runner-template]: {{site.github}}/flutter/games/tree/main/endless_runner
 [game-video]: {{site.youtube-site}}/watch?v=zGgeBNiRy-8&t=3s
 [game-template-readme]: {{site.github}}/flutter/samples/tree/main/game_template#readme
 
