@@ -114,7 +114,7 @@ For example, Share Extensions allow users to conveniently share content with oth
     </div>
 </figure>
 
-Starting from this [commit](https://github.com/flutter/flutter/commit/3ad9998cf07098d58429aeac242e47a0156ae29c) Flutter supports
+Starting from version 3.16.0, Flutter supports
 building Flutter UI for app extensions.
 To create the UI for
 an app extension using Flutter, you must use a extension-safe Flutter.xcframework and embed the `FlutterViewController`
