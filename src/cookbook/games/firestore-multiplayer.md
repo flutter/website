@@ -134,11 +134,11 @@ return to this recipe.
     in `lib/main.dart`:
 
     ```dart
-     WidgetsFlutterBinding.ensureInitialized();
+    WidgetsFlutterBinding.ensureInitialized();
     
-      await Firebase.initializeApp(
-        options: DefaultFirebaseOptions.currentPlatform,
-      );
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
     ```
 
     This ensures that Firebase is initialized on game startup.
