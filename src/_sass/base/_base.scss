@@ -180,6 +180,12 @@ dd {
   }
 }
 
+.site-illustration {
+  // Illustrations should be visible in their entirety without the need
+  // for scrolling up and down.
+  max-height: 60vh;
+}
+
 .btn.btn-icon {
   align-items: center;
   display: flex;
