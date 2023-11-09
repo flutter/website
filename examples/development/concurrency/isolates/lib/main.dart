@@ -34,6 +34,8 @@ class MyApp extends StatelessWidget {
 }
 
 // #docregion isolate-run
+// Produces a list of 211,640 photo objects.
+// (The JSON file is ~20MB.)
 Future<List<Photo>> getPhotos() async {
   String jsonString = await rootBundle.loadString('assets/photos.json');
 
