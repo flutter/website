@@ -195,7 +195,7 @@ Platform channel isolates use the [BackgroundIsolateBinaryMessenger][] API. The
 following snippet shows an example of using the shared_preferences package in a
 background isolate.
 
-<?code-excerpt "lib/main.dart"?>
+<?code-excerpt "lib/isolate_binary_messenger.dart"?>
 ```dart
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
