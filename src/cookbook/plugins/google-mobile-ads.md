@@ -137,19 +137,17 @@ $ flutter pub add google_mobile_ads
 
 ## 4. Initialize the Mobile Ads SDK
 
-You need to initialize the Mobile Ads SDK before loading ads.
+You need to initialize the Mobile Ads SDK before loading ads. 
+Call `MobileAds.instance.initialize()` to initialize the Mobile Ads SDK.
 
-1.  Call `MobileAds.instance.initialize()` to initialize the Mobile Ads
-    SDK.
+```dart
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  MobileAds.instance.initialize();
 
-    ```dart
-    void main() {
-      WidgetsFlutterBinding.ensureInitialized();
-      MobileAds.instance.initialize();
-    
-      runApp(MyApp());
-    }
-    ```
+  runApp(MyApp());
+}
+```
 
 Run the initialization step at startup, as shown above, 
 so that the AdMob SDK has enough time to initialize before it is needed.
