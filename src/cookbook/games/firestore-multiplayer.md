@@ -437,7 +437,7 @@ It lacks actual game rules:
 what cards can be played when, and with what results.
 This depends on the game itself and left to you to try.
 
-\[TODO SOME ILLUSTRATION\]
+![An illustration of two mobile phones and a two-way arrow between them](/assets/images/docs/cookbook/multiplayer-two-mobiles.jpg){:.site-illustration}
 
 At this point, the shared state of the match only includes
 the two playing areas and the cards within them.
