@@ -205,14 +205,15 @@ void main() {
   RootIsolateToken rootIsolateToken = RootIsolateToken.instance!;
   Isolate.spawn(_isolateMain, rootIsolateToken);
 }
+
 void _isolateMain(RootIsolateToken rootIsolateToken) async {
   // Register the background isolate with the root isolate.
   BackgroundIsolateBinaryMessenger.ensureInitialized(rootIsolateToken);
-  
- // You can now use the shared_preferences plugin.
- SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-  
- print(sharedPreferences.getBool('isDebug'));
+
+  // You can now use the shared_preferences plugin.
+  SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+
+  print(sharedPreferences.getBool('isDebug'));
 }
 ```
 
