@@ -147,6 +147,9 @@ return to this recipe.
     That way, any widget can access this instance.
     Widgets can also react to the instance missing if needed.
 
+    To do this with the `card` template, you can use
+    the `provider` package (which is already installed as a dependency).
+
     Replace the usual `runApp(MyApp())` with the following:
 
     ```dart
@@ -160,6 +163,14 @@ return to this recipe.
 
     Put the provider above `MyApp`, not inside it.
     This enables you to test the app without Firebase.
+
+    {{ site.alert.note }}
+      In case you are _not_ working with the `card` template,
+      you will have to either 
+      [install the `provider` package](https://pub.dev/packages/provider/install)
+      or you will need to use your own method of accessing
+      the `FirebaseFirestore` instance from various parts of your codebase.
+    {{ site.alert.end }}
 
 
 ## 4. Create a Firestore controller class
