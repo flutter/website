@@ -55,11 +55,9 @@ reference to help you build up an application.
 {{site.alert.tip}}
   Check back soon for more recipes that
   can help you build games with Flutter!
-  
-  You can also check out the [Casual Games Toolkit]({{site.main-url}}/games).
-{{site.alert.end}}
 
-- [Add multiplayer support via Firestore]({{site.url}}/cookbook/games/firestore-multiplayer)
+  Until then, check out the [Casual Games Toolkit]({{site.main-url}}/games).
+{{site.alert.end}}
 
 ## Gestures
 - [Add Material touch ripples]({{site.url}}/cookbook/gestures/ripples)
