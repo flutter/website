@@ -65,8 +65,14 @@
   children:
     - title: Games
       children:
-        - title: Create a casual game
+        - title: Overview
           permalink: /resources/games-toolkit
+        - title: Add achievements and leaderboards
+          permalink: /cookbook/games/achievements-leaderboard
+        - title: Add advertising
+          permalink: /cookbook/plugins/google-mobile-ads
+        - title: Add multiplayer support
+          permalink: /cookbook/games/firestore-multiplayer
         - title: Build a game with Flame
           permalink: https://codelabs.developers.google.com/codelabs/flutter-flame-game
     - title: News
