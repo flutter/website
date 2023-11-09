@@ -2,14 +2,15 @@ name: finders
 description: A new Flutter project.
 
 environment:
-  sdk: ^3.1.0-0
+  sdk: ^3.1.0
 
 dependencies:
   flutter:
     sdk: flutter
 
 dev_dependencies:
-  flutter_lints: ^3.0.0
+  example_utils:
+    path: ../../../../example_utils
   flutter_test:
     sdk: flutter
 

@@ -7,13 +7,15 @@ import '../global/targeted_actions.dart';
 import '../widgets/buttons.dart';
 
 class AdaptiveGridPage extends StatefulWidget {
+  const AdaptiveGridPage({super.key});
+
   @override
-  _AdaptiveGridPageState createState() => _AdaptiveGridPageState();
+  State<AdaptiveGridPage> createState() => _AdaptiveGridPageState();
 }
 
 class _AdaptiveGridPageState extends State<AdaptiveGridPage> {
-  List<int> _listItems = List.generate(100, (index) => index);
-  ScrollController _scrollController = ScrollController();
+  final List<int> _listItems = List.generate(100, (index) => index);
+  final ScrollController _scrollController = ScrollController();
 
   List<int> _selectedItems = [];
 
@@ -26,23 +28,25 @@ class _AdaptiveGridPageState extends State<AdaptiveGridPage> {
     List<Widget> listChildren = _listItems.map(buildGridItem).toList();
     return TargetedActionBinding(
       actions: {
-        SelectAllIntent: CallbackAction(
-            onInvoke: (intent) => this._handleSelectAllPressed()),
-        SelectNoneIntent: CallbackAction(
-            onInvoke: (intent) => this._handleSelectNonePressed()),
+        SelectAllIntent:
+            CallbackAction(onInvoke: (intent) => _handleSelectAllPressed()),
+        SelectNoneIntent:
+            CallbackAction(onInvoke: (intent) => _handleSelectNonePressed()),
         DeleteIntent: CallbackAction(
-            onInvoke: (intent) => this._handleDeleteSelectedPressed()),
+            onInvoke: (intent) => _handleDeleteSelectedPressed()),
       },
       child: Column(
         children: [
           Row(
             children: [
               StyledTextButton(
-                  onPressed: _handleSelectAllPressed,
-                  child: Text('Select All')),
+                onPressed: _handleSelectAllPressed,
+                child: const Text('Select All'),
+              ),
               StyledTextButton(
-                  onPressed: _handleSelectNonePressed,
-                  child: Text('Select None')),
+                onPressed: _handleSelectNonePressed,
+                child: const Text('Select None'),
+              ),
             ],
           ),
           Expanded(
@@ -55,11 +59,12 @@ class _AdaptiveGridPageState extends State<AdaptiveGridPage> {
                   thumbVisibility: DeviceType.isDesktop,
                   controller: _scrollController,
                   child: GridView.count(
-                      controller: _scrollController,
-                      padding: EdgeInsets.all(Insets.extraLarge),
-                      childAspectRatio: 1,
-                      crossAxisCount: colCount,
-                      children: listChildren),
+                    controller: _scrollController,
+                    padding: const EdgeInsets.all(Insets.extraLarge),
+                    childAspectRatio: 1,
+                    crossAxisCount: colCount,
+                    children: listChildren,
+                  ),
                 );
                 // #enddocregion ScrollbarAlwaysShown
               },
@@ -77,10 +82,11 @@ class _AdaptiveGridPageState extends State<AdaptiveGridPage> {
 
   void _handleItemPressed(int index) {
     setState(() {
-      if (_selectedItems.contains(index))
+      if (_selectedItems.contains(index)) {
         _selectedItems.remove(index);
-      else
+      } else {
         _selectedItems.add(index);
+      }
     });
   }
 }
@@ -96,11 +102,11 @@ class _GridItem extends StatelessWidget {
   Widget build(BuildContext context) {
     double borderWidth = isSelected ? 6 : 0;
     return Padding(
-      padding: EdgeInsets.all(Insets.large),
+      padding: const EdgeInsets.all(Insets.large),
       child: TextButton(
         onPressed: () => onPressed.call(index),
         child: Stack(children: [
-          Center(child: FlutterLogo(size: 64)),
+          const Center(child: FlutterLogo(size: 64)),
           Container(color: Colors.grey.withOpacity(isSelected ? .5 : .7)),
           Align(
               alignment: Alignment.bottomCenter,
@@ -110,7 +116,7 @@ class _GridItem extends StatelessWidget {
                   height: 50,
                   alignment: Alignment.center,
                   child: Text('Grid Item $index',
-                      style: TextStyle(color: Colors.white)))),
+                      style: const TextStyle(color: Colors.white)))),
           // Selected border
           Container(
               decoration: BoxDecoration(

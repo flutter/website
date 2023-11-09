@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -6,7 +8,7 @@ import 'app_model.dart';
 import 'main_app_scaffold.dart';
 
 void main() {
-  runApp(AppScaffold());
+  runApp(const AppScaffold());
 
   // Required when using bits_dojo for custom TitleBars
   doWhenWindowReady(() {
@@ -16,6 +18,8 @@ void main() {
 }
 
 class AppScaffold extends StatelessWidget {
+  const AppScaffold({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<AppModel>(

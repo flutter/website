@@ -19,8 +19,7 @@ class HybridCompositionWidget extends StatelessWidget {
 
     return PlatformViewLink(
       viewType: viewType,
-      surfaceFactory:
-          (context, controller) {
+      surfaceFactory: (context, controller) {
         return AndroidViewSurface(
           controller: controller as AndroidViewController,
           gestureRecognizers: const <Factory<OneSequenceGestureRecognizer>>{},

@@ -2,7 +2,7 @@ name: web_sockets
 description: Web Sockets
 
 environment:
-  sdk: ^3.1.0-0
+  sdk: ^3.1.0
 
 dependencies:
   flutter:
@@ -10,7 +10,8 @@ dependencies:
   web_socket_channel: ^2.1.0
 
 dev_dependencies:
-  flutter_lints: ^2.0.2
+  example_utils:
+    path: ../../../example_utils
 
 flutter:
   uses-material-design: true

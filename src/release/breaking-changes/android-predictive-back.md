@@ -328,7 +328,7 @@ In stable release: not yet
 
 ## References
 
-{% include docs/master-api.md %}
+{% include docs/main-api.md %}
 
 API documentation:
 
@@ -352,14 +352,14 @@ Relevant PRs:
 * [Predictive Back support for root routes][]
 * [Platform channel for predictive back][]
 
-[`PopScope`]: {{site.master-api}}/flutter/widgets/PopScope-class.html
-[`NavigatorPopHandler`]: {{site.master-api}}/flutter/widgets/NavigatorPopHandler-class.html
-[`PopInterface`]: {{site.master-api}}/flutter/widgets/PopInterface-class.html
-[`Form.canPop`]: {{site.master-api}}/flutter/widgets/Form/canPop.html
-[`Form.onPopInvoked`]: {{site.master-api}}/flutter/widgets/Form/onPopInvoked.html
-[`Route.popDisposition`]: {{site.master-api}}/flutter/widgets/Route/popDisposition.html
-[`ModalRoute.registerPopInterface`]: {{site.master-api}}/flutter/widgets/ModalRoute/registerPopInterface.html
-[`ModalRoute.unregisterPopInterface`]: {{site.master-api}}/flutter/widgets/ModalRoute/unregisterPopInterface.html
+[`PopScope`]: {{site.main-api}}/flutter/widgets/PopScope-class.html
+[`NavigatorPopHandler`]: {{site.main-api}}/flutter/widgets/NavigatorPopHandler-class.html
+[`PopInterface`]: {{site.main-api}}/flutter/widgets/PopInterface-class.html
+[`Form.canPop`]: {{site.main-api}}/flutter/widgets/Form/canPop.html
+[`Form.onPopInvoked`]: {{site.main-api}}/flutter/widgets/Form/onPopInvoked.html
+[`Route.popDisposition`]: {{site.main-api}}/flutter/widgets/Route/popDisposition.html
+[`ModalRoute.registerPopInterface`]: {{site.main-api}}/flutter/widgets/ModalRoute/registerPopInterface.html
+[`ModalRoute.unregisterPopInterface`]: {{site.main-api}}/flutter/widgets/ModalRoute/unregisterPopInterface.html
 
 [Issue 109513]: {{site.repo.flutter}}/issues/109513
 [Predictive back support for root routes]: {{site.repo.flutter}}/pull/120385

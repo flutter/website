@@ -930,8 +930,7 @@ Widget _buildList() {
       const Divider(),
       _tile('K\'s Kitchen', '757 Monterey Blvd', Icons.restaurant),
       _tile('Emmy\'s Restaurant', '1923 Ocean Ave', Icons.restaurant),
-      _tile(
-          'Chaiya Thai Restaurant', '272 Claremont Blvd', Icons.restaurant),
+      _tile('Chaiya Thai Restaurant', '272 Claremont Blvd', Icons.restaurant),
       _tile('La Ciccia', '291 30th St', Icons.restaurant),
     ],
   );

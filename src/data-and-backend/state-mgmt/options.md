@@ -49,7 +49,7 @@ It offers compile safety and testing without depending on the Flutter SDK.
 * [Getting started with Riverpod][]
 
 
-[Getting started with Riverpod]: https://riverpod.dev/docs/getting_started
+[Getting started with Riverpod]: https://riverpod.dev/docs/introduction/getting_started
 [Riverpod]: https://riverpod.dev/
 
 ## setState
