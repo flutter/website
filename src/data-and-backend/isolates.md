@@ -157,9 +157,9 @@ receive a new message, they call a provided callback with the message as an
 argument.
 
 For an in-depth explanation on setting up two-way communication between the main
-isolate and a worker isolate, follow the example in the [Dart documentation][].
+isolate and a worker isolate, follow the examples in the [Dart documentation][].
 
-[Dart documentation]: {{site.dart}}/language/isolates
+[Dart documentation]: {{site.dart}}/language/concurrency
 
 ## Common use cases for isolates
 
