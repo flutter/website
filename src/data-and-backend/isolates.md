@@ -94,7 +94,7 @@ converts that JSON into custom Dart objects. If the json decoding process wasnâ€
 off loaded to a new isolate, this method would cause the UI to become
 unresponsive for several seconds.
 
-<?code-excerpt "lib/main.dart"?>
+<?code-excerpt "lib/main.dart (isolate-run)"?>
 ```dart
 // Produces a list of 211,640 photo objects.
 // (The JSON file is ~20MB.)
