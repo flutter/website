@@ -26,7 +26,7 @@ These games can simulate much of what happens
 in between player interactions on local machines.
 Therefore, they don't need to synchronize game states that often.
 
-\[TODO ILLUSTRATION of two mobile phones and a two-way arrow between them\]
+![An illustration of two mobile phones and a two-way arrow between them](/assets/images/docs/cookbook/multiplayer-two-mobiles.jpg){:.site-illustration}
 
 If you can choose low tick rates as a developer, you should.
 Low tick lowers latency requirements and server costs.
@@ -53,10 +53,10 @@ local events and remote events.
 A local event could be a player action or some game logic.
 A remote event could be a world update coming from the server.
 
-\[TODO SCREENSHOT of card game\]
+![Screenshot of the card game](/assets/images/docs/cookbook/multiplayer-card-game.jpg){:.site-mobile-screenshot .site-illustration}
 
 To simplify this cookbook recipe, start with
-the `card_game` template that you'll find
+the `card` template that you'll find
 in the [`flutter/games` repository](https://github.com/flutter/games).
 Run the following command to clone that repository:
 
@@ -69,12 +69,13 @@ $ git clone https://github.com/flutter/games.git
   to get the code, mention that here.
 {% endcomment %}
 
-Open the project in `templates/card_game`.
+Open the project in `templates/card`.
 
 {{ site.alert.note }}
-You can ignore this step and follow the recipe with your own game
-project. Adapt the code at appropriate places.
+  You can ignore this step and follow the recipe with your own game
+  project. Adapt the code at appropriate places.
 {{ site.alert.end }}
+
 
 ## 2. Install Firestore
 
@@ -165,11 +166,11 @@ to make the code more readable and maintainable.
 
 How you implement the controller depends on your game
 and on the exact design of your multiplayer experience.
-For the case of the `card_game` template,
+For the case of the `card` template,
 you could synchronize the contents of the two circular playing areas.
 It's not enough for a full multiplayer experience, but it's a good start.
 
-\[TODO SCREENSHOT of the card game, with arrows pointing to playing areas\]
+![Screenshot of the card game, with arrows pointing to playing areas](/assets/images/docs/cookbook/multiplayer-areas.jpg){:.site-mobile-screenshot .site-illustration}
 
 To create a controller, copy, then paste the following code into a new file:
 `lib/multiplayer/firestore_controller.dart`.
@@ -345,7 +346,7 @@ Notice the following features of this code:
 
 1.  Open the file responsible for starting the play session:
     `lib/play_session/play_session_screen.dart` in the case of the
-    `card_game` template.
+    `card` template.
     You instantiate the Firestore controller from this file.
 
 2.  Import Firebase and the controller:
@@ -397,7 +398,9 @@ Notice the following features of this code:
 2.  Watch how adding a card to an area on one device
     makes it appear on the other one.
 
-    \[TODO: GIF of multiplayer working\]
+    {% comment %}
+      TBA: GIF of multiplayer working
+    {% endcomment %}
 
 3.  Open the [Firebase web console](https://console.firebase.google.com/)
     and navigate to your project's Firestore Database.

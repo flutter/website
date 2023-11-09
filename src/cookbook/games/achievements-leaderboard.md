@@ -13,7 +13,7 @@ Some players want to *compete* in it.
 This could be hitting high scores or accomplishing speedruns.
 These two ideas map to the concepts of *achievements* and *leaderboards*.
 
-![A simple graphic representing the four types of motivation explained above](/assets/images/docs/cookbook/types-of-gamer-motivations.png)
+![A simple graphic representing the four types of motivation explained above](/assets/images/docs/cookbook/types-of-gamer-motivations.png){:.site-illustration}
 
 Ecosystems such as the App Store and Google Play provide
 centralized services for achievements and leaderboards.
