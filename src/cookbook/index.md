@@ -47,17 +47,20 @@ reference to help you build up an application.
 - [Handle changes to a text field]({{site.url}}/cookbook/forms/text-field-changes)
 - [Retrieve the value of a text field]({{site.url}}/cookbook/forms/retrieve-input)
 
+
 ## Games
 
 - [Add achievements and leaderboards to your mobile game]({{site.url}}/cookbook/games/achievements-leaderboard)
+- [Add multiplayer support via Firestore]({{site.url}}/cookbook/games/firestore-multiplayer)
 - [Show ads]({{site.url}}/cookbook/plugins/google-mobile-ads)
 
 {{site.alert.tip}}
   Check back soon for more recipes that
   can help you build games with Flutter!
-  
-  You can also check out the [Casual Games Toolkit]({{site.main-url}}/games).
+
+  Until then, check out the [Casual Games Toolkit]({{site.main-url}}/games).
 {{site.alert.end}}
+
 
 ## Gestures
 - [Add Material touch ripples]({{site.url}}/cookbook/gestures/ripples)
