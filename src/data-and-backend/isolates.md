@@ -197,6 +197,8 @@ background isolate.
 
 <?code-excerpt "lib/isolate_binary_messenger.dart"?>
 ```dart
+import 'dart:isolate';
+
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
