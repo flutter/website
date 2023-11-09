@@ -167,8 +167,9 @@ so that the AdMob SDK has enough time to initialize before it is needed.
 
 To show an ad, you need to request it from AdMob.
 
-To load a banner ad, construct a `BannerAd` instance, and
-call `load()` on it.
+To load a banner ad, construct a 
+[`BannerAd`](https://pub.dev/documentation/google_mobile_ads/latest/google_mobile_ads/BannerAd-class.html)
+instance, and call `load()` on it.
 
 {{site.alert.note}}
   In the following code snippet, `adSize` and `adUnitId` have not been
