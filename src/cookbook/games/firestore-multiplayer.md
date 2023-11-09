@@ -94,7 +94,11 @@ watch the following video:
 To add Firestore to your Flutter project,
 follow the first two steps of the
 [Get started with Cloud Firestore](https://firebase.google.com/docs/firestore/quickstart)
-guide.
+guide:
+
+- [Create a Cloud Firestore database](https://firebase.google.com/docs/firestore/quickstart#create)
+- [Set up your development environment](https://firebase.google.com/docs/firestore/quickstart#set_up_your_development_environment)
+
 The desired outcomes include:
 
 -   A Firestore database ready in the cloud, in **Test mode**
