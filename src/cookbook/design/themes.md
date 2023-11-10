@@ -40,13 +40,11 @@ To share a `Theme` across your entire app, set the `theme` property
 to your `MaterialApp` constructor.
 This property takes a [`ThemeData`][] instance.
 
-To enable Material 3, set the [`useMaterial3`][] property
-to `true` in the `ThemeData` constructor.
+As of the Flutter 3.16 release, Material 3 is Flutter's
+default theme.
 
 If you don't specify a theme in the constructor,
 Flutter creates a default theme for you.
-
-[`useMaterial3`]: {{site.api}}/flutter/material/ThemeData/useMaterial3.html
 
 <?code-excerpt "lib/main.dart (MaterialApp)" replace="/return //g"?>
 ```dart
