@@ -31,7 +31,7 @@ These games are well suited for Flutter.
 _Arcade-style games_ cover games a series of actions that repeat throughout
 a game. This repetition is known as a game loop.
 These include endless runner games, racing games, and so on.
-You may want to create a game with advanced features like collison detection,
+You might want to create a game with advanced features like collison detection,
 camera views, game loops, and the like.
 These types of games could use an open source game engine like the
 [Flame game engine][] built using Flutter.
@@ -90,11 +90,11 @@ you can leverage up to $900 in offers when you integrate Google services,
 such as [Cloud, Firebase][], and [Ads][], into your game.
 
 {{ site.alert.important }}
-**Terms and conditions apply.**
-You must connect your Firebase and GCP accounts to use credits for
-Firebase services and verify your business email during sign up to earn
-an additional $100 on top of the normal $300 credit.
-For the Ads offer, [check your region's eligibility][].
+  **Terms and conditions apply.**
+  You must connect your Firebase and GCP accounts to use credits for
+  Firebase services and verify your business email during sign up to earn
+  an additional $100 on top of the normal $300 credit.
+  For the Ads offer, [check your region's eligibility][].
 {{ site.alert.end }}
 
 ## Get started
@@ -152,7 +152,7 @@ built with Flutter and Flame include
 ## Other resources
 
 Once you feel ready to go beyond these games templates,
-investigate other resources that our community recommended.
+investigate other resources that our community recommends.
 
 {% assign pkg-icon = '<span class="material-symbols-outlined">package_2</span>' %}
 {% assign doc-icon = '<span class="material-symbols-outlined">quick_reference_all</span>' %}
