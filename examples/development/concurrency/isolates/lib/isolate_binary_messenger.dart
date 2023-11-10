@@ -9,7 +9,7 @@ void main() {
   Isolate.spawn(_isolateMain, rootIsolateToken);
 }
 
-void _isolateMain(RootIsolateToken rootIsolateToken) async {
+Future<void> _isolateMain(RootIsolateToken rootIsolateToken) async {
   // Register the background isolate with the root isolate.
   BackgroundIsolateBinaryMessenger.ensureInitialized(rootIsolateToken);
 

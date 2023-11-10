@@ -1,6 +1,7 @@
 // Copyright 2021 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
+
 import 'dart:convert';
 import 'dart:isolate';
 
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
 Future<List<Photo>> getPhotos() async {
   String jsonString = await rootBundle.loadString('assets/photos.json');
 
-  final List<Photo> photos = await Isolate.run(() {
+  final dynamic photos = await Isolate.run(() {
     final photoData = jsonDecode(jsonString);
     return photoData.map((dynamic element) {
       final data = element as Map<String, dynamic>;
@@ -47,7 +48,7 @@ Future<List<Photo>> getPhotos() async {
     }).toList();
   });
 
-  return photos;
+  return photos as List<Photo>;
 }
 // #enddocregion isolate-run
 
