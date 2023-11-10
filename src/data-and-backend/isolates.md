@@ -42,7 +42,7 @@ You can read more about how isolates and the event loop work in Dart on
 the [concurrency page][] of the Dart
 documentation.
 
-[concurrency page]: {{site.dart}}/language/concurrency
+[concurrency page]: {{site.dart-site}}/language/concurrency
 
 <iframe width="560" height="315" src="{{site.youtube-site}}/embed/vl_AaCgudcY" 
  frameborder="0" allow="accelerometer; autoplay;encrypted-media; gyroscope; picture-in-picture" 
@@ -159,7 +159,7 @@ argument.
 For an in-depth explanation on setting up two-way communication between the main
 isolate and a worker isolate, follow the examples in the [Dart documentation][].
 
-[Dart documentation]: {{site.dart}}/language/concurrency
+[Dart documentation]: {{site.dart-site}}/language/concurrency
 
 ## Common use cases for isolates
 
@@ -240,7 +240,7 @@ Dart web platforms, including Flutter web, don’t support isolates.
 Using `compute` in a web application calls the callback on the main isolate. For
 more information, check out the [concurrency documentation][] on dart.dev.
 
-[concurrency documentation]: {{site.dart}}/language/concurrency
+[concurrency documentation]: {{site.dart-site}}/language/concurrency
 
 ### No `rootBundle` access or `dart:ui` methods
 
