@@ -13,58 +13,77 @@ This page outlines where you can find these available resources.
 The Flutter framework can create performant apps for six target platforms
 from the desktop to mobile devices to the web.
 
-The benefits of cross-platform development and performance make Flutter
-a great choice for games.
+With Flutter's benefits of cross-platform development, performance, and
+open source licensing, it makes a great choice for games.
 
-Video games fall into two categories: hobbyist games and casual games.
+Casual games fall into two categories: "point and tap" games
+and arcade-style games.
 You may be familiar with both types of games,
 though you might not have thought about them in quite this way.
 
-_Hobbyist games_ cover games for those who dedicate time to the playing of games
-with complex interfaces, rules, and controllers.
-These players are also known as core, hardcore, or professional gamers.
-These include arcade-style games: shooters, racing games, and so on.
-These types of games could use the [Flame game engine][] built using Flutter.
-
-_Casual games_ cover games meant for a mass market with simple rules
-and gameplay.
+_Point-and-tap games_ cover games meant for a mass market with
+simple rules and gameplay.
 This includes board games, card games, puzzles, and strategy games.
 These games respond to simple user input,
 like tapping on a card or entering a number or letter.
 These games are well suited for Flutter.
 
+_Arcade-style games_ cover games a series of actions that repeat throughout
+a game. This repetition is known as a game loop.
+These include endless runner games, racing games, and so on.
+You may want to create a game with advanced features like collison detection,
+camera views, game loops, and the like.
+These types of games could use an open source game engine like the
+[Flame game engine][] built using Flutter.
+
 ## What's included in the toolkit
 
-The Casual Games Toolkit provides the following free resources:
+The Casual Games Toolkit provides the following free resources.
 
-* A repository that includes the following game templates:
-  * A [basic game][basic-template]
-  * A [card-based game][card-template]
-  * An [endless runner game][runner-template]
-* All templates include the following prebuilt features:
-  * Main menu
-  * Sound and music
-  * Ads
-  * In-app purchases
-  * Achievements and leaderboards
-  * Crashlytics support
-* The [Build your own game in Flutter][game-video] video that explains
-  how to use the basic template.
-* The source code for a [finished tic tac toe game][],
-  built using the [basic game template][basic-template].
-  This game has been released on [Android][and-tic-tac] and [iOS][ios-tic-tac].
+* A repository that includes three new game templates that provide
+  a starting point for building a casual game.
+
+  1. A [base game template][basic-template].
+     It includes the basics for:
+
+     * Main menu
+     * Navigation
+     * Settings
+     * Level selection
+     * Player progress
+     * Play session management
+     * Sound
+     * Themes
+
+  1. A [card game template][card-template].
+     It includes everything in the base template plus:
+
+     * Drag and drop
+     * Game state management
+     * Multiplayer integration hooks
+
+  1. An [endless runner template][runner-template] created in partnership
+     with the open source game engine Flame. It implements:
+
+     * A FlameGame base template
+     * Player steering
+     * Collision detection
+     * Parallax effects
+     * Spawning
+     * Different visual effects
+
+* Developer guides for integrating needed services.
 * A link to a [Flame Discord][game-discord] channel.
   If you have a Discord account, use this [direct link][discord-direct].
 
-These game templates make certain choices to accelerate development.
+The included game templates and cookbook recipes make certain choices
+to accelerate development.
 They include specific packages, like `provider`, `google_mobile_ads`,
 `in_app_purchase`, `audioplayers`, `crashlytics`, and `games_services`.
 If you prefer other packages, you can change the code to use them.
 
-The game templates assume that
-**you'll want to earn money for your mobile game**.
-The templates integrate both ads and in-app purchase packages
-into the templates. They're all ready to be configured.
+The Flutter team understands that monetization might be a future consideration.
+Cookbook recipes for advertising and in-app purchases have been added.
 
 As explained on the [Games][] page,
 you can leverage up to $900 in offers when you integrate Google services,
@@ -82,7 +101,7 @@ For the Ads offer, [check your region's eligibility][].
 
 Are you ready? To get started:
 
-1. [Watch the Quick Start video][game-video]
+1. If you haven't done so, [install Flutter][].
 1. [Clone the games repo][game-repo].
 1. Review the `README` file for the first type of game you want to create.
 
@@ -93,19 +112,21 @@ Are you ready? To get started:
 1. [Join the Flame community on Discord][game-discord]
    (use the [direct link][discord-direct] if you already
    have a Discord account).
-1. Set up accounts on AdMob, Firebase, and Cloud, as needed
+1. Review the codelabs and cookbook recipes.
+
+   * Build a [multiplayer game][multiplayer-recipe] with Cloud Firestore.
+   * Make your games more engaging
+     with [leaderboards and achievements][leaderboard-recipe].
+   * Monetize your games with [in-game ads][ads-recipe]
+     and [in-app purchases][iap-recipe].
+   * Add user authentication flow to your game via
+     [Firebase Authentication][firebase-auth].
+   * Collect analytics about crashes and errors inside your game
+     with [Firebase Crashlytics][firebase-crashlytics].
+
+1. Set up accounts on AdMob, Firebase, and Cloud, as needed.
 1. Write your game!
-1. Deploy to both the Google and Apple stores
-
-## Advanced game development
-
-Perhaps you want to write a hobbyist video game?
-The game template still provides value for
-the advanced interface and structure of such games.
-
-For hobbyist games, check out the
-[Flame package][flame-package] and join the
-[Flame community on Discord][discord-flame].
+1. Deploy to both the Google Play and Apple stores.
 
 ## Example games
 
@@ -143,15 +164,13 @@ investigate other resources that our community recommended.
 {% assign api-icon = '<span class="material-symbols-outlined">api</span>' %}
 
 {{ site.alert.secondary }}
-{{pkg-icon}} Flutter package<br>
-&nbsp;&nbsp;Packages included in the templates in **bold**<br>
-{{api-icon}} API documentation<br>
-{{codelab}} Codelab <br>
-{{recipe-icon}} Cookbook recipe<br>
-{{tool-icon}} Desktop application<br>
-{{assets-icon}} Game assets<br>
-{{engine}} Game engine<br>
-{{doc-icon}} Guide<br>
+  {{pkg-icon}} Flutter package<br>
+  {{api-icon}} API documentation<br>
+  {{codelab}} Codelab <br>
+  {{recipe-icon}} Cookbook recipe<br>
+  {{tool-icon}} Desktop application<br>
+  {{assets-icon}} Game assets<br>
+  {{doc-icon}} Guide<br>
 {{ site.alert.end }}
 
 <table class="table table-striped" markdown="1">
@@ -185,7 +204,7 @@ investigate other resources that our community recommended.
 <td>Audio</td>
 <td markdown="1">
 
-{{pkg-icon}} **[audioplayers][]**
+{{pkg-icon}} [audioplayers][]
 
 </td>
 </tr>
@@ -194,7 +213,7 @@ investigate other resources that our community recommended.
 <td>Authentication</td>
 <td markdown="1">
 
-{{codelab}} [User Authentication using Firebase][]
+{{codelab}} [User Authentication using Firebase][firebase-auth]
 
 </td>
 </tr>
@@ -212,8 +231,8 @@ investigate other resources that our community recommended.
 <td>Debugging</td>
 <td markdown="1">
 
-{{doc-icon}} [Firebase Crashlytics overview][]<br>
-{{pkg-icon}} **[firebase_crashlytics][]**
+{{doc-icon}} [Firebase Crashlytics overview][firebase-crashlytics]<br>
+{{pkg-icon}} [firebase_crashlytics][]
 
 </td>
 </tr>
@@ -228,7 +247,7 @@ investigate other resources that our community recommended.
 </tr>
 
 <tr>
-<td>Game assets and asset tools</td>
+<td>Game assets<br>and asset tools</td>
 <td markdown="1">
 
 {{assets-icon}} [CraftPix][]<br>
@@ -242,8 +261,8 @@ investigate other resources that our community recommended.
 <td>Game engines</td>
 <td markdown="1">
 
-{{engine}} [Flame][]<br>
-{{engine}} [Bonfire][]<br>
+{{pkg-icon}} [Flame][flame-pkg]<br>
+{{pkg-icon}} [Bonfire][bonfire-pkg]<br>
 {{pkg-icon}} [forge2d][]
 
 </td>
@@ -253,17 +272,17 @@ investigate other resources that our community recommended.
 <td>Game features</td>
 <td markdown="1">
 
-{{recipe-icon}} [Add achievements and leaderboards to your mobile game][]<br>
-{{recipe-icon}} [Add multiplayer support to your mobile game][]
+{{recipe-icon}} [Add achievements and leaderboards to your game][leaderboard-recipe]<br>
+{{recipe-icon}} [Add multiplayer support to your game][multiplayer-recipe]
 
 </td>
 </tr>
 
 <tr>
-<td>Games services</td>
+<td>Games services integration</td>
 <td markdown="1">
 
-{{pkg-icon}} **[games_services][]**
+{{pkg-icon}} [games_services][game-svc-pkg]
 
 </td>
 </tr>
@@ -281,9 +300,9 @@ investigate other resources that our community recommended.
 <td>Monetization</td>
 <td markdown="1">
 
-{{recipe-icon}} [Add advertising to your Flutter game][]<br>
+{{recipe-icon}} [Add advertising to your Flutter game][ads-recipe]<br>
 {{codelab}} [Add AdMob ads to a Flutter app][]<br>
-{{codelab}} [Add in-app purchases to your Flutter app][]
+{{codelab}} [Add in-app purchases to your Flutter app][iap-recipe]
 
 </td>
 </tr>
@@ -292,7 +311,7 @@ investigate other resources that our community recommended.
 <td>Persistence</td>
 <td markdown="1">
 
-{{pkg-icon}} **[shared_preferences][]**<br>
+{{pkg-icon}} [shared_preferences][]<br>
 {{pkg-icon}} [sqflite][]<br>
 {{pkg-icon}} [cbl_flutter][]<br>
 
@@ -321,48 +340,40 @@ investigate other resources that our community recommended.
 
 [Ads]: https://ads.google.com/intl/en_us/home/flutter/#!/
 [Air Hockey]: https://play.google.com/store/apps/details?id=com.ignacemaes.airhockey
+[CCG]: https://en.wikipedia.org/wiki/Collectible_card_game
 [Cloud, Firebase]: https://cloud.google.com/free
 [Flame game engine]: https://flame-engine.org/
 [Games]: {{site.main-url}}/games
 [I/O Pinball Powered by Flutter and Firebase]: {{site.medium}}/flutter/di-o-pinball-powered-by-flutter-and-firebase-d22423f3f5d
+[install Flutter]: https://docs.flutter.dev/get-started/install
 [Tomb Toad]: https://play.google.com/store/apps/details?id=com.crescentmoongames.tombtoad
-[and-tic-tac]: https://play.google.com/store/apps/details?id=dev.flutter.tictactoe
 [basic-template-readme]: {{site.github}}/flutter/samples/tree/main/templates/basic/README.md
 [basic-template]: {{site.github}}/flutter/games/tree/main/templates/basic
 [card-template-readme]: {{site.github}}/flutter/samples/tree/main/templates/card/README.md
 [card-template]: {{site.github}}/flutter/games/tree/main/templates/card
 [check your region's eligibility]: https://www.google.com/intl/en/ads/coupons/terms/flutter/
 [discord-direct]: https://discord.com/login?redirect_to=%2Fchannels%2F509714518008528896%2F788415774938103829
-[discord-flame]: https://discord.gg/5unKpdQD78
-[finished tic tac toe game]: {{site.github}}/filiph/tictactoe
 [firebase_crashlytics]: {{site.pub}}/packages/firebase_crashlytics
-[flame-demo]: https://dartpad.dev/?id=3e52ca7b51ba15f989ad880b8b3314a2
-[flame-package]: {{site.pub}}/packages/flame
+[flame-pkg]: {{site.pub}}/packages/flame
+[flip-blog]: {site.google-blog}/2023/05/how-its-made-io-flip-adds-twist-to.html
+[flip-game]: https://flip.withgoogle.com/#/
 [game-discord]: https://discord.gg/qUyQFVbV45
 [game-repo]: {{site.github}}/flutter/games
-[game-video]: {{site.youtube-site}}/watch?v=zGgeBNiRy-8&t=3s
-[ios-tic-tac]: https://apps.apple.com/us/app/tic-tac-toe-puzzle-game/id1611729977
 [pinball-game]: https://pinball.flutter.dev/#/
 [runner-template-readme]: {{site.github}}/flutter/samples/tree/main/templates/endless_runner/README.md
 [runner-template]: {{site.github}}/flutter/games/tree/main/templates/endless_runner
-[samples repo]: {{site.github}}/flutter/games
-[flip-game]: https://flip.withgoogle.com/#/
-[CCG]: https://en.wikipedia.org/wiki/Collectible_card_game
-[flip-blog]: {site.google-blog}/2023/05/how-its-made-io-flip-adds-twist-to.html
 
 [Add AdMob ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter
-[Building a game with Flutter and Flame]: {{site.codelabs}}/codelabs/flutter-flame-game
 [Build next generation UIs in Flutter]: {{site.codelabs}}/codelabs/flutter-next-gen-uis
-[Firebase Crashlytics overview]: {{site.flutterfire}}/docs/crashlytics/overview/
-[Add advertising to your Flutter game]: /cookbook/plugins/google-mobile-ads
-[Add in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases#0
-[Add achievements and leaderboards to your mobile game]: /cookbook/games/achievements-leaderboard
-[Add multiplayer support to your mobile game]: /cookbook/games/firestore-multiplayer
-[User Authentication using Firebase]: {{site.firebase}}/codelabs/firebase-auth-in-flutter-apps#0
+[firebase-crashlytics]: {{site.flutterfire}}/docs/crashlytics/overview/
+[ads-recipe]: /cookbook/plugins/google-mobile-ads
+[iap-recipe]: {{site.codelabs}}/codelabs/flutter-in-app-purchases#0
+[leaderboard-recipe]: /cookbook/games/achievements-leaderboard
+[multiplayer-recipe]: /cookbook/games/firestore-multiplayer
+[firebase-auth]: {{site.firebase}}/codelabs/firebase-auth-in-flutter-apps#0
 [Use the Foreign Function Interface in a Flutter plugin]: {{site.codelabs}}/codelabs/flutter-ffigen
-[Bonfire]: https://bonfire-engine.github.io
+[bonfire-pkg]: {{site.pub}}/packages/bonfire
 [CraftPix]: https://craftpix.net
-[Flame]: https://docs.flame-engine.org
 [Add Firebase to your Flutter game]: {{site.firebase}}/docs/flutter/setup
 [GIMP]: https://www.gimp.org
 [Game Developer Studio]: https://www.gamedeveloperstudio.com
@@ -374,7 +385,7 @@ investigate other resources that our community recommended.
 [cbl_flutter]: Couchbase Lite, {{site.pub-pkg}}/cbl_flutter
 [firebase_crashlytics]: {{site.pub-pkg}}/firebase_crashlytics
 [forge2d]: {{site.pub-pkg}}/forge2d
-[games_services]: {{site.pub-pkg}}/games_services
+[game-svc-pkg]: {{site.pub-pkg}}/games_services
 [rive]: {{site.pub-pkg}}/rive
 [shared_preferences]: {{site.pub-pkg}}/shared_preferences
 [spriteWidget]: {{site.pub-pkg}}/spritewidget
