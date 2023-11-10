@@ -5,7 +5,7 @@ description: Multithreading in Flutter using Dart isolates.
 
 <?code-excerpt path-base="development/concurrency/isolates/"?>
 
-All Dart code runs in [isolates](https://dart.dev/language/concurrency), which
+All Dart code runs in [isolates]({{site.dart-site}}/language/concurrency), which
 are similar to threads, but differ in that isolates have their own isolated
 memory. They do not share state in any way, and can only communicate by
 messaging. By default, Flutter apps do all of their work on a single isolate –
@@ -157,9 +157,9 @@ receive a new message, they call a provided callback with the message as an
 argument.
 
 For an in-depth explanation on setting up two-way communication between the main
-isolate and a worker isolate, follow the example in the [Dart documentation][].
+isolate and a worker isolate, follow the examples in the [Dart documentation][].
 
-[Dart documentation]: {{site.dart-site}}/language/isolates
+[Dart documentation]: {{site.dart-site}}/language/concurrency
 
 ## Common use cases for isolates
 
