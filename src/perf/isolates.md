@@ -99,17 +99,17 @@ unresponsive for several seconds.
 // Produces a list of 211,640 photo objects.
 // (The JSON file is ~20MB.)
 Future<List<Photo>> getPhotos() async {
-  String jsonString = await rootBundle.loadString('assets/photos.json');
+ String jsonString = await rootBundle.loadString('assets/photos.json');
 
-  final List<Photo> photos = await Isolate.run(() {
-    final photoData = jsonDecode(jsonString);
-    return photoData.map((dynamic element) {
-      final data = element as Map<String, dynamic>;
-      return Photo.fromJson(data);
-    }).toList();
-  });
+ final dynamic photos = await Isolate.run(() {
+  final photoData = jsonDecode(jsonString);
+  return photoData.map((dynamic element) {
+   final data = element as Map<String, dynamic>;
+   return Photo.fromJson(data);
+  }).toList();
+ });
 
-  return photos;
+ return photos as List<Photo>;
 }
 ```
 
