@@ -286,7 +286,7 @@ You can add Guideline API tests
 in `test/widget_test.dart` of your app directory, or as a separate test
 file (such as `test/a11y_test.dart` in the case of the Name Generator).
 
-[Accessibility Guideline API]: https://api.flutter.dev/flutter/flutter_test/AccessibilityGuideline-class.html
+[Accessibility Guideline API]: {{site.api}}/flutter/flutter_test/AccessibilityGuideline-class.html
 
 ## Testing accessibility on web
 
