@@ -426,6 +426,12 @@
     - title: Testing overview
       permalink: /testing/overview
       match-page-url-exactly: true
+    - title: Unit testing
+      children:
+        - title: Introduction
+          permalink: /cookbook/testing/unit/introduction
+        - title: Mock dependencies
+          permalink: /cookbook/testing/unit/mocking
     - title: Widget testing
       children:
         - title: Introduction
@@ -439,18 +445,12 @@
     - title: Integration testing
       children:
         - title: Introduction
-          permalink: /testing/integration-tests
+          permalink: /cookbook/testing/integration/introduction
           match-page-url-exactly: true
         - title: Write and run an integration test
-          permalink: /cookbook/testing/integration/introduction
+          permalink: /testing/integration-tests
         - title: Profile an integration test
           permalink: /cookbook/testing/integration/profiling
-    - title: Unit testing
-      children:
-        - title: Introduction
-          permalink: /cookbook/testing/unit/introduction
-        - title: Mock dependencies
-          permalink: /cookbook/testing/unit/mocking
     - title: Test a plugin
       permalink: /testing/testing-plugins
     - title: Handle plugin code in tests
