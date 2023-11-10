@@ -26,7 +26,7 @@ These games can simulate much of what happens
 in between player interactions on local machines.
 Therefore, they don't need to synchronize game states that often.
 
-![An illustration of two mobile phones and a two-way arrow between them](/assets/images/docs/cookbook/multiplayer-two-mobiles.jpg){:.site-illustration}
+![An illustration of two mobile phones and a two-way arrow between them]({{site.url}}/assets/images/docs/cookbook/multiplayer-two-mobiles.jpg){:.site-illustration}
 
 If you can choose low tick rates as a developer, you should.
 Low tick lowers latency requirements and server costs.
@@ -34,13 +34,13 @@ Sometimes, a game requires high tick rates of synchronization.
 For those cases, solutions such as Firestore *don't make a good fit*.
 Pick a dedicated multiplayer server solution such as
 [Nakama](https://heroiclabs.com/nakama/).
-Nakama has a [Dart package](https://pub.dev/packages/nakama).
+Nakama has a [Dart package]({{site.pub-pkg}}/nakama).
 
 If you expect that your game requires a low tick rate of synchronization,
 continue reading.
 
 This recipe demonstrates how to use the
-[`cloud_firestore` package](https://pub.dev/packages/cloud_firestore)
+[`cloud_firestore` package]({{site.pub-pkg}}/cloud_firestore)
 to implement multiplayer capabilities in your game.
 This recipe doesn't require a server.
 It uses two or more clients sharing game state via Cloud Firestore.
@@ -53,7 +53,7 @@ local events and remote events.
 A local event could be a player action or some game logic.
 A remote event could be a world update coming from the server.
 
-![Screenshot of the card game](/assets/images/docs/cookbook/multiplayer-card-game.jpg){:.site-mobile-screenshot .site-illustration}
+![Screenshot of the card game]({{site.url}}/assets/images/docs/cookbook/multiplayer-card-game.jpg){:.site-mobile-screenshot .site-illustration}
 
 To simplify this cookbook recipe, start with
 the `card` template that you'll find
@@ -167,7 +167,7 @@ return to this recipe.
     {{ site.alert.note }}
       In case you are _not_ working with the `card` template,
       you will have to either 
-      [install the `provider` package](https://pub.dev/packages/provider/install)
+      [install the `provider` package]({{site.pub-pkg}}/provider/install)
       or you will need to use your own method of accessing
       the `FirebaseFirestore` instance from various parts of your codebase.
     {{ site.alert.end }}
@@ -185,7 +185,7 @@ For the case of the `card` template,
 you could synchronize the contents of the two circular playing areas.
 It's not enough for a full multiplayer experience, but it's a good start.
 
-![Screenshot of the card game, with arrows pointing to playing areas](/assets/images/docs/cookbook/multiplayer-areas.jpg){:.site-mobile-screenshot .site-illustration}
+![Screenshot of the card game, with arrows pointing to playing areas]({{site.url}}/assets/images/docs/cookbook/multiplayer-areas.jpg){:.site-mobile-screenshot .site-illustration}
 
 To create a controller, copy, then paste the following code into a new file:
 `lib/multiplayer/firestore_controller.dart`.
@@ -440,7 +440,7 @@ include the following:
 -   **The game doesn't communicate with Firebase on macOS.**
     -   By default, macOS apps do not have internet access.
         Enable
-        [internet entitlement](https://docs.flutter.dev/data-and-backend/networking#macos)
+        [internet entitlement]({{site.url}}/data-and-backend/networking#macos)
         first.
 
 
@@ -452,7 +452,7 @@ It lacks actual game rules:
 what cards can be played when, and with what results.
 This depends on the game itself and left to you to try.
 
-![An illustration of two mobile phones and a two-way arrow between them](/assets/images/docs/cookbook/multiplayer-two-mobiles.jpg){:.site-illustration}
+![An illustration of two mobile phones and a two-way arrow between them]({{site.url}}/assets/images/docs/cookbook/multiplayer-two-mobiles.jpg){:.site-illustration}
 
 At this point, the shared state of the match only includes
 the two playing areas and the cards within them.
@@ -475,7 +475,7 @@ you can populate the matches collection with as many records as needed.
 
 An online match can start in a "waiting" state,
 with only the first player present.
-Other players can see the "waiting" matches in some kind of a lobby.
+Other players can see the "waiting" matches in some kind of lobby.
 Once enough players join a match, it becomes "active".
 Once again, the exact implementation depends on
 the kind of online experience you want.
