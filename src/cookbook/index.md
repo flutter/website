@@ -52,14 +52,7 @@ reference to help you build up an application.
 
 - [Add achievements and leaderboards to your mobile game]({{site.url}}/cookbook/games/achievements-leaderboard)
 - [Add multiplayer support via Firestore]({{site.url}}/cookbook/games/firestore-multiplayer)
-- [Show ads]({{site.url}}/cookbook/plugins/google-mobile-ads)
-
-{{site.alert.tip}}
-  Check back soon for more recipes that
-  can help you build games with Flutter!
-
-  Until then, check out the [Casual Games Toolkit]({{site.main-url}}/games).
-{{site.alert.end}}
+- [Add ads to your mobile Flutter app or game]({{site.url}}/cookbook/plugins/google-mobile-ads)
 
 
 ## Gestures
@@ -117,8 +110,9 @@ reference to help you build up an application.
 
 
 ## Plugins
+
 - [Play and pause a video]({{site.url}}/cookbook/plugins/play-video)
-- [Show ads]({{site.url}}/cookbook/plugins/google-mobile-ads)
+- [Add ads to your mobile Flutter app or game]({{site.url}}/cookbook/plugins/google-mobile-ads)
 - [Take a picture using the camera]({{site.url}}/cookbook/plugins/picture-using-camera)
 
 
