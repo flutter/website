@@ -277,6 +277,11 @@ td ol, td ul, td dl, td p {
   margin-bottom: 0rem;
 }
 
+p + ul, p + ol, p + dl {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
 .figure-caption {
   font-size: bootstrap.$font-size-sm;
   font-style: italic;
