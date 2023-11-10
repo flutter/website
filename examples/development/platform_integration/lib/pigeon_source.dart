@@ -1,4 +1,5 @@
 // Used to generate `generated_pigeon.dart` with:
+// ignore_for_file: one_member_abstracts
 // dart run pigeon --input lib/pigeon_source.dart --dart_out lib/generated_pigeon.dart
 
 // #docregion Search

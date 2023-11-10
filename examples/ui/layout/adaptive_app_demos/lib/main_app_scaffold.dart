@@ -19,7 +19,7 @@ import 'widgets/ok_cancel_dialog.dart';
 List<Widget> getMainMenuChildren(BuildContext context) {
   // Define a method to change pages in the AppModel
   void changePage(int value) => context.read<AppModel>().selectedIndex = value;
-  int index = context.select<AppModel,int>((m) => m.selectedIndex);
+  int index = context.select<AppModel, int>((m) => m.selectedIndex);
   return [
     SelectedPageButton(
         onPressed: () => changePage(0),
@@ -42,17 +42,20 @@ List<Widget> getMainMenuChildren(BuildContext context) {
 
 // Uses a tab navigation + drawer,  or a side-menu that combines both
 class MainAppScaffold extends StatefulWidget {
+  const MainAppScaffold({super.key});
+
   @override
-  _MainAppScaffoldState createState() => _MainAppScaffoldState();
+  State<MainAppScaffold> createState() => _MainAppScaffoldState();
 }
 
 class _MainAppScaffoldState extends State<MainAppScaffold> {
-  GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     bool useTabs = MediaQuery.of(context).size.width < FormFactor.tablet;
-    bool isLoggedOut = context.select<AppModel,bool>((m) => m.isLoggedIn) == false;
+    bool isLoggedOut =
+        context.select<AppModel, bool>((m) => m.isLoggedIn) == false;
     return TargetedActionScope(
       shortcuts: <LogicalKeySet, Intent>{
         LogicalKeySet(LogicalKeyboardKey.keyA, LogicalKeyboardKey.control):
@@ -66,18 +69,18 @@ class _MainAppScaffoldState extends State<MainAppScaffold> {
         child: Material(
           child: Column(
             children: [
-              AppTitleBar(),
+              const AppTitleBar(),
               Expanded(
                 child: isLoggedOut
                     // If logged out, show just the login page with no menus
-                    ? LoginPage()
+                    ? const LoginPage()
                     // Otherwise, show the full application with dynamic scaffold
                     : Focus(
                         autofocus: true,
                         child: Scaffold(
                           key: _scaffoldKey,
                           drawer: useTabs
-                              ? _SideMenu(showPageButtons: false)
+                              ? const _SideMenu(showPageButtons: false)
                               : null,
                           appBar: useTabs
                               ? AppBar(backgroundColor: Colors.blue.shade300)
@@ -96,7 +99,7 @@ class _MainAppScaffoldState extends State<MainAppScaffold> {
                             else ...[
                               Row(
                                 children: [
-                                  _SideMenu(),
+                                  const _SideMenu(),
                                   Expanded(child: _PageStack()),
                                 ],
                               ),
@@ -116,12 +119,12 @@ class _MainAppScaffoldState extends State<MainAppScaffold> {
 class _PageStack extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    int index = context.select<AppModel,int>((model) => model.selectedIndex);
+    int index = context.select<AppModel, int>((model) => model.selectedIndex);
     Widget? page;
-    if (index == 0) page = AdaptiveGridPage();
+    if (index == 0) page = const AdaptiveGridPage();
     if (index == 1) page = AdaptiveDataTablePage();
-    if (index == 2) page = AdaptiveReflowPage();
-    if (index == 3) page = FocusExamplesPage();
+    if (index == 2) page = const AdaptiveReflowPage();
+    if (index == 3) page = const FocusExamplesPage();
     return FocusTraversalGroup(child: page ?? Container());
   }
 }
@@ -133,11 +136,14 @@ class _SideMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Future<void> _handleLogoutPressed() async {
+    Future<void> handleLogoutPressed() async {
       String message = 'Are you sure you want to logout?';
       bool? doLogout = await showDialog(
-          context: context, builder: (_) => OkCancelDialog(message: message));
+        context: context,
+        builder: (_) => OkCancelDialog(message: message),
+      );
       if (doLogout ?? false) {
+        if (!context.mounted) return;
         context.read<AppModel>().logout();
       }
     }
@@ -149,16 +155,18 @@ class _SideMenu extends StatelessWidget {
         children: [
           // Buttons
           Column(children: [
-            SizedBox(height: Insets.extraLarge),
+            const SizedBox(height: Insets.extraLarge),
             if (showPageButtons) ...getMainMenuChildren(context),
-            SizedBox(height: Insets.extraLarge),
-            SecondaryMenuButton(label: 'Submenu Item 1'),
-            SecondaryMenuButton(label: 'Submenu Item 2'),
-            SecondaryMenuButton(label: 'Submenu Item 3'),
-            Spacer(),
+            const SizedBox(height: Insets.extraLarge),
+            const SecondaryMenuButton(label: 'Submenu Item 1'),
+            const SecondaryMenuButton(label: 'Submenu Item 2'),
+            const SecondaryMenuButton(label: 'Submenu Item 3'),
+            const Spacer(),
             OutlinedButton(
-                child: Text('Logout'), onPressed: _handleLogoutPressed),
-            SizedBox(height: Insets.large),
+              onPressed: handleLogoutPressed,
+              child: const Text('Logout'),
+            ),
+            const SizedBox(height: Insets.large),
           ]),
           // Divider
           Align(

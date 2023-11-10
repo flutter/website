@@ -9,5 +9,5 @@ void main() {
 }
 
 class Foo {
-  Foo() {}
+  Foo();
 }

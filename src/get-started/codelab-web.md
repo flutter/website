@@ -137,7 +137,7 @@ import 'package:flutter/material.dart';
 void main() => runApp(const SignUpApp());
 
 class SignUpApp extends StatelessWidget {
-  const SignUpApp();
+  const SignUpApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -150,7 +150,7 @@ class SignUpApp extends StatelessWidget {
 }
 
 class SignUpScreen extends StatelessWidget {
-  const SignUpScreen();
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -169,7 +169,7 @@ class SignUpScreen extends StatelessWidget {
 }
 
 class SignUpForm extends StatefulWidget {
-  const SignUpForm();
+  const SignUpForm({super.key});
 
   @override
   State<SignUpForm> createState() => _SignUpFormState();
@@ -213,14 +213,12 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           TextButton(
             style: ButtonStyle(
-              foregroundColor: MaterialStateProperty.resolveWith(
-                  (Set<MaterialState> states) {
+              foregroundColor: MaterialStateProperty.resolveWith((states) {
                 return states.contains(MaterialState.disabled)
                     ? null
                     : Colors.white;
               }),
-              backgroundColor: MaterialStateProperty.resolveWith(
-                  (Set<MaterialState> states) {
+              backgroundColor: MaterialStateProperty.resolveWith((states) {
                 return states.contains(MaterialState.disabled)
                     ? null
                     : Colors.blue;
@@ -315,14 +313,16 @@ add the following class definition for the
 <?code-excerpt "lib/step1.dart (WelcomeScreen)"?>
 ```dart
 class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen();
+  const WelcomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child:
-            Text('Welcome!', style: Theme.of(context).textTheme.displayMedium),
+        child: Text(
+          'Welcome!',
+          style: Theme.of(context).textTheme.displayMedium,
+        ),
       ),
     );
   }
@@ -483,14 +483,12 @@ screen only when the form is completely filled in:
 ```dart
 TextButton(
   style: ButtonStyle(
-    foregroundColor: MaterialStateProperty.resolveWith(
-        (Set<MaterialState> states) {
+    foregroundColor: MaterialStateProperty.resolveWith((states) {
       return states.contains(MaterialState.disabled)
           ? null
           : Colors.white;
     }),
-    backgroundColor: MaterialStateProperty.resolveWith(
-        (Set<MaterialState> states) {
+    backgroundColor: MaterialStateProperty.resolveWith((states) {
       return states.contains(MaterialState.disabled)
           ? null
           : Colors.blue;
@@ -724,6 +722,7 @@ class AnimatedProgressIndicator extends StatefulWidget {
   final double value;
 
   const AnimatedProgressIndicator({
+    super.key,
     required this.value,
   });
 
@@ -743,7 +742,9 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
   void initState() {
     super.initState();
     _controller = AnimationController(
-        duration: Duration(milliseconds: 1200), vsync: this);
+      duration: const Duration(milliseconds: 1200),
+      vsync: this,
+    );
 
     final colorTween = TweenSequence([
       TweenSequenceItem(
@@ -823,7 +824,7 @@ import 'package:flutter/material.dart';
 void main() => runApp(const SignUpApp());
 
 class SignUpApp extends StatelessWidget {
-  const SignUpApp();
+  const SignUpApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -837,13 +838,13 @@ class SignUpApp extends StatelessWidget {
 }
 
 class SignUpScreen extends StatelessWidget {
-  const SignUpScreen();
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      body: Center(
+      body: const Center(
         child: SizedBox(
           width: 400,
           child: Card(
@@ -856,20 +857,24 @@ class SignUpScreen extends StatelessWidget {
 }
 
 class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen();
+  const WelcomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child:
-            Text('Welcome!', style: Theme.of(context).textTheme.displayMedium),
+        child: Text(
+          'Welcome!',
+          style: Theme.of(context).textTheme.displayMedium,
+        ),
       ),
     );
   }
 }
 
 class SignUpForm extends StatefulWidget {
+  const SignUpForm({super.key});
+
   @override
   State<SignUpForm> createState() => _SignUpFormState();
 }
@@ -936,14 +941,12 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           TextButton(
             style: ButtonStyle(
-              foregroundColor: MaterialStateProperty.resolveWith(
-                  (Set<MaterialState> states) {
+              foregroundColor: MaterialStateProperty.resolveWith((states) {
                 return states.contains(MaterialState.disabled)
                     ? null
                     : Colors.white;
               }),
-              backgroundColor: MaterialStateProperty.resolveWith(
-                  (Set<MaterialState> states) {
+              backgroundColor: MaterialStateProperty.resolveWith((states) {
                 return states.contains(MaterialState.disabled)
                     ? null
                     : Colors.blue;
@@ -962,6 +965,7 @@ class AnimatedProgressIndicator extends StatefulWidget {
   final double value;
 
   const AnimatedProgressIndicator({
+    super.key,
     required this.value,
   });
 

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-enum ScreenType { Handset, Tablet, Desktop, Watch }
+enum ScreenType { handset, tablet, desktop, watch }
 
 // #docregion FormFactor
 class FormFactor {
@@ -15,43 +15,45 @@ class FormFactor {
 ScreenType getFormFactor(BuildContext context) {
   // Use .shortestSide to detect device type regardless of orientation
   double deviceWidth = MediaQuery.of(context).size.shortestSide;
-  if (deviceWidth > FormFactor.desktop) return ScreenType.Desktop;
-  if (deviceWidth > FormFactor.tablet) return ScreenType.Tablet;
-  if (deviceWidth > FormFactor.handset) return ScreenType.Handset;
-  return ScreenType.Watch;
+  if (deviceWidth > FormFactor.desktop) return ScreenType.desktop;
+  if (deviceWidth > FormFactor.tablet) return ScreenType.tablet;
+  if (deviceWidth > FormFactor.handset) return ScreenType.handset;
+  return ScreenType.watch;
 }
 // #enddocregion getFormFactor
 
 // #docregion ScreenSize
-enum ScreenSize { Small, Normal, Large, ExtraLarge }
+enum ScreenSize { small, normal, large, extraLarge }
 
 ScreenSize getSize(BuildContext context) {
   double deviceWidth = MediaQuery.of(context).size.shortestSide;
-  if (deviceWidth > 900) return ScreenSize.ExtraLarge;
-  if (deviceWidth > 600) return ScreenSize.Large;
-  if (deviceWidth > 300) return ScreenSize.Normal;
-  return ScreenSize.Small;
+  if (deviceWidth > 900) return ScreenSize.extraLarge;
+  if (deviceWidth > 600) return ScreenSize.large;
+  if (deviceWidth > 300) return ScreenSize.normal;
+  return ScreenSize.small;
 }
 // #enddocregion ScreenSize
 
-class widgetWithBreakPoints extends StatelessWidget {
+class WidgetWithBreakPoints extends StatelessWidget {
+  const WidgetWithBreakPoints({super.key});
+
   List<Widget> _getHandsetChildren() {
     return ([
-      Text('Handset Child 1'),
-      Text('Handset Child 2'),
-      Text('Handset Child 3'),
+      const Text('Handset Child 1'),
+      const Text('Handset Child 2'),
+      const Text('Handset Child 3'),
     ]);
   }
 
   List<Widget> _getNormalChildren() {
     return ([
-      Text('Normal Child 1'),
-      Text('Normal Child 2'),
-      Text('Normal Child 3'),
+      const Text('Normal Child 1'),
+      const Text('Normal Child 2'),
+      const Text('Normal Child 3'),
     ]);
   }
 
-  Widget WidgetSwap(BuildContext context) {
+  Widget widgetSwap(BuildContext context) {
     bool isHandset = MediaQuery.of(context).size.width < 600;
 
     // #docregion WidgetSwap
@@ -70,8 +72,9 @@ class widgetWithBreakPoints extends StatelessWidget {
     // #docregion MediaQuery
     bool isHandset = MediaQuery.of(context).size.width < 600;
     return Flex(
-        children: [Text('Foo'), Text('Bar'), Text('Baz')],
-        direction: isHandset ? Axis.vertical : Axis.horizontal);
+      direction: isHandset ? Axis.vertical : Axis.horizontal,
+      children: const [Text('Foo'), Text('Bar'), Text('Baz')],
+    );
     // #enddocregion MediaQuery
   }
 }

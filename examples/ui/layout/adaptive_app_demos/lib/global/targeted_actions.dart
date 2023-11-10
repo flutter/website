@@ -15,7 +15,11 @@ import 'package:provider/provider.dart';
 /// binding is activated with the intent. If no action is defined for a scope
 /// for that intent, then nothing happens.
 class TargetedActionScope extends StatefulWidget {
-  TargetedActionScope({super.key, required this.child, required this.shortcuts});
+  const TargetedActionScope({
+    super.key,
+    required this.child,
+    required this.shortcuts,
+  });
 
   final Widget child;
   final Map<LogicalKeySet, Intent> shortcuts;
@@ -82,7 +86,7 @@ class _TargetedActionScopeState extends State<TargetedActionScope> {
 /// respect to build order, but arbitrary.
 // This is a stateful widget because we need to be able to implement deactivate.
 class TargetedActionBinding extends StatefulWidget {
-  TargetedActionBinding({super.key, required this.child, this.actions});
+  const TargetedActionBinding({super.key, required this.child, this.actions});
 
   final Widget child;
   final Map<Type, Action<Intent>>? actions;
@@ -100,7 +104,7 @@ class _TargetedActionBindingState extends State<TargetedActionBinding> {
     Provider.of<_TargetedActionRegistry>(context).addTarget(_subtreeKey);
     Widget result = KeyedSubtree(
       key: _subtreeKey,
-      child: this.widget.child,
+      child: widget.child,
     );
     if (widget.actions != null) {
       result = Actions(actions: widget.actions!, child: result);

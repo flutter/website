@@ -4,7 +4,7 @@ description: >
   Leverage your Swift concurrency knowledge while learning Flutter and Dart.
 ---
 
-<?code-excerpt path-base="resources"?>
+<?code-excerpt path-base="resources/dart_swift_concurrency"?>
 
 Both Dart and Swift support concurrent programming. 
 This guide should help you understand how
@@ -208,8 +208,9 @@ The following example uses a `FutureBuilder`:
 <?code-excerpt "lib/async_weather.dart (HomePageWidget)"?>
 ```dart
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   final HomePageViewModel viewModel = const HomePageViewModel();
-  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

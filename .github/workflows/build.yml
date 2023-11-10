@@ -15,7 +15,7 @@ permissions: read-all
 
 env:
   NODE_ENV: production
-  NODE_VERSION: 18
+  NODE_VERSION: 20
 
 jobs:
 
@@ -33,7 +33,7 @@ jobs:
             branch: stable
             experimental: false
     steps:
-      - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           submodules: recursive
       - name: Test
@@ -50,17 +50,17 @@ jobs:
       && github.ref == 'refs/heads/main'
       && github.repository == 'flutter/website'
     steps:
-      - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           submodules: recursive
       - name: Build site and check links
         run: make build
       - name: Install Node for Firebase install
-        uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d
+        uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Install Firebase CLI
-        run: npm install -g firebase-tools@12.4.0
+        run: npm install -g firebase-tools@12.7.0
       - name: Deploy to Firebase hosting
         run: make deploy
         env:

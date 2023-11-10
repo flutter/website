@@ -110,8 +110,8 @@ class Album {
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(
-      id: json['id'],
-      title: json['title'],
+      id: json['id'] as int,
+      title: json['title'] as String,
     );
   }
 }
@@ -150,7 +150,7 @@ Future<Album> createAlbum(String title) async {
   if (response.statusCode == 201) {
     // If the server did return a 201 CREATED response,
     // then parse the JSON.
-    return Album.fromJson(jsonDecode(response.body));
+    return Album.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   } else {
     // If the server did not return a 201 CREATED response,
     // then throw an exception.
@@ -259,7 +259,7 @@ Future<Album> createAlbum(String title) async {
   if (response.statusCode == 201) {
     // If the server did return a 201 CREATED response,
     // then parse the JSON.
-    return Album.fromJson(jsonDecode(response.body));
+    return Album.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   } else {
     // If the server did not return a 201 CREATED response,
     // then throw an exception.
@@ -275,8 +275,8 @@ class Album {
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(
-      id: json['id'],
-      title: json['title'],
+      id: json['id'] as int,
+      title: json['title'] as String,
     );
   }
 }
@@ -303,7 +303,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Create Data Example',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: Scaffold(
         appBar: AppBar(

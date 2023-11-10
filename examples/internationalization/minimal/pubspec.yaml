@@ -2,7 +2,7 @@ name: l10n_example
 description: A minimal example of a localized Flutter app
 
 environment:
-  sdk: ^3.1.0-0
+  sdk: ^3.1.0
 
 dependencies:
   flutter:
@@ -11,7 +11,8 @@ dependencies:
     sdk: flutter
 
 dev_dependencies:
-  flutter_lints: ^2.0.2
+  example_utils:
+    path: ../../example_utils
 
 flutter:
   uses-material-design: true
