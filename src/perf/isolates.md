@@ -24,13 +24,13 @@ these events can be anything from handling a user tapping in the UI, to
 executing a function, to painting a frame on the screen. The following figure
 shows an example event queue with 4 events waiting to be processed.
 
-![The main isolate diagram]({{site.url}}/assets/images/docs/development/concurrency/basics-main-isolate.png)
+![The main isolate diagram]({{site.url}}/assets/images/docs/development/concurrency/basics-main-isolate.png){:width="50%"}
 
 For smooth rendering, Flutter adds a “paint frame” event to the event queue 60
 times per second (for a 60Hz device). If these events aren’t processed on time,
 the application experiences UI jank, or worse, become unresponsive altogether.
 
-![Event jank diagram]({{site.url}}/assets/images/docs/development/concurrency/event-jank.png)
+![Event jank diagram]({{site.url}}/assets/images/docs/development/concurrency/event-jank.png){:width="50%"}
 
 Whenever a process can’t be completed in a frame gap, or the time between two
 frames, it's a good idea to offload the work to another isolate to ensure that
@@ -82,7 +82,7 @@ the spawned isolate to start some computation, returns a value from the
 computation, and then shuts the isolate down when the computation is complete.
 This all happens concurrently with the main isolate, and doesn’t block it.
 
-![Isolate diagram]({{site.url}}/assets/images/docs/development/concurrency/isolate-bg-worker.png)
+![Isolate diagram]({{site.url}}/assets/images/docs/development/concurrency/isolate-bg-worker.png){:width="50%"}
 
 The `Isolate.run` method requires a single argument, a callback function, that
 is run on the new isolate. This callback’s function signature must have exactly
@@ -168,7 +168,7 @@ large computations are causing your Flutter application to experience UI jank.
 This jank happens when there is any computation that takes longer than the
 Flutter’s frame gap.
 
-![Event jank diagram]({{site.url}}/assets/images/docs/development/concurrency/event-jank.png)
+![Event jank diagram]({{site.url}}/assets/images/docs/development/concurrency/event-jank.png){:width="50%"}
 
 Any process _could_ take longer to complete, depending on the implementation and the input data, making it impossible to create an exhaustive list of when you need to consider using isolates.
 
