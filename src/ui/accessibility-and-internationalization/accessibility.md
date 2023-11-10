@@ -248,8 +248,7 @@ widgets to offer a dramatically more accessible experience.
 
 ## Testing accessibility on mobile
 
-Test your app using Flutter's
-<a href="https://api.flutter.dev/flutter/flutter_test/AccessibilityGuideline-class.html">Accessibility Guideline API</a>.
+Test your app using Flutter's [Accessibility Guideline API][].
 This API checks if your app's UI meets Flutter's accessibility recommendations.
 These cover recommendations for text contrast, target size, and target labels.
 
@@ -287,6 +286,7 @@ You can add Guideline API tests
 in `test/widget_test.dart` of your app directory, or as a separate test
 file (such as `test/a11y_test.dart` in the case of the Name Generator).
 
+[Accessibility Guideline API]: https://api.flutter.dev/flutter/flutter_test/AccessibilityGuideline-class.html
 
 ## Testing accessibility on web
 
