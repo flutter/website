@@ -27,7 +27,7 @@ To add ads to your Flutter project, use
 [AdMob](https://admob.google.com/home/), 
 Google's mobile advertising platform.
 This recipe demonstrates how to use the
-[`google_mobile_ads`](https://pub.dev/packages/google_mobile_ads)
+[`google_mobile_ads`]({{site.pub-pkg}}/google_mobile_ads)
 package to add a banner ad to your app or game.
 
 {{site.alert.note}}
