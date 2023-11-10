@@ -403,14 +403,13 @@
     - title: Testing overview
       permalink: /testing/overview
       match-page-url-exactly: true
-      children:
-        - title: Unit testing
+      - title: Unit testing
           children:
             - title: Introduction
               permalink: /cookbook/testing/unit/introduction
             - title: Mock dependencies
               permalink: /cookbook/testing/unit/mocking
-        - title: Widget testing
+      - title: Widget testing
           children:
             - title: Introduction
               permalink: /cookbook/testing/widget/introduction
@@ -420,7 +419,7 @@
               permalink: /cookbook/testing/widget/scrolling
             - title: Simulate user interaction
               permalink: /cookbook/testing/widget/tap-drag
-        - title: Integration testing
+      - title: Integration testing
           children:
             - title: Introduction
               permalink: /cookbook/testing/integration/introduction
