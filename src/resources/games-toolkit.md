@@ -354,7 +354,7 @@ investigate other resources that our community recommends.
 [discord-direct]: https://discord.com/login?redirect_to=%2Fchannels%2F509714518008528896%2F788415774938103829
 [firebase_crashlytics]: {{site.pub}}/packages/firebase_crashlytics
 [flame-pkg]: {{site.pub}}/packages/flame
-[flip-blog]: {site.google-blog}/2023/05/how-its-made-io-flip-adds-twist-to.html
+[flip-blog]: {{site.google-blog}}/2023/05/how-its-made-io-flip-adds-twist-to.html
 [flip-game]: https://flip.withgoogle.com/#/
 [game-discord]: https://discord.gg/qUyQFVbV45
 [game-repo]: {{site.github}}/flutter/games
