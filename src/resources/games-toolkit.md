@@ -16,20 +16,19 @@ from the desktop to mobile devices to the web.
 With Flutter's benefits of cross-platform development, performance, and
 open source licensing, it makes a great choice for games.
 
-Casual games fall into two categories: "point and tap" games
-and arcade-style games.
+Casual games fall into two categories: turn-based games
+and real-time games.
 You may be familiar with both types of games,
 though you might not have thought about them in quite this way.
 
-_Point-and-tap games_ cover games meant for a mass market with
+_Turn-based games_ cover games meant for a mass market with
 simple rules and gameplay.
 This includes board games, card games, puzzles, and strategy games.
 These games respond to simple user input,
 like tapping on a card or entering a number or letter.
 These games are well suited for Flutter.
 
-_Arcade-style games_ cover games a series of actions that repeat throughout
-a game. This repetition is known as a game loop.
+_Real-time games_ cover games a series of actions require real time responses.
 These include endless runner games, racing games, and so on.
 You might want to create a game with advanced features like collison detection,
 camera views, game loops, and the like.
