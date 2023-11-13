@@ -9,7 +9,7 @@ on:
 permissions: read-all
 
 jobs:
-  stage:
+  build:
     runs-on: ubuntu-latest
     if: ${{ github.ref != 'refs/heads/main' }}
     steps:
