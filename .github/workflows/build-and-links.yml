@@ -1,0 +1,20 @@
+name: Check build and links
+
+on:
+  pull_request:
+    branches:
+      - main
+
+# Declare default permissions as read only.
+permissions: read-all
+
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    if: ${{ github.ref != 'refs/heads/main' }}
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        with:
+          submodules: recursive
+      - name: Build site and check links
+        run: make build BUILD_CONFIGS=_config.yml,_config_stage.yml
