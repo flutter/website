@@ -48,6 +48,27 @@ documentation.
  frameborder="0" allow="accelerometer; autoplay;encrypted-media; gyroscope; picture-in-picture" 
  allowfullscreen></iframe>
 
+## Common use cases for isolates
+
+There is only one hard rule for when you should use isolates, and that’s when
+large computations are causing your Flutter application to experience UI jank.
+This jank happens when there is any computation that takes longer than the
+Flutter’s frame gap.
+
+![Event jank diagram]({{site.url}}/assets/images/docs/development/concurrency/event-jank.png){:width="50%"}
+
+Any process _could_ take longer to complete, depending on the implementation and the input data, making it impossible to create an exhaustive list of when you need to consider using isolates.
+
+That said, isolates are commonly used for the following:
+
+- Reading data from a local database
+- Sending push notifications
+- Parsing and decoding large data files
+- Processing or compressing photos, audio files, and video files
+- Converting audio and video files
+- When you need asynchronous support while using FFI
+- Applying filtering to complex lists or filesystems
+
 ## Message passing between isolates
 
 Dart's isolates are an implementation of the [Actor model][]. They can only
@@ -71,8 +92,6 @@ The two lowest-level primitives that send messages are `SendPort.send`, which
 makes a copy of a mutable message as it sends, and `Isolate.exit`, which
 sends the reference to the message. Both `Isolate.run` and `compute`
 use `Isolate.exit` under the hood.
-
-
 
 ## Short-lived isolates
 
@@ -127,7 +146,9 @@ equivalent to `await Isolate.run(() => fun(message))`.
 
 ## Stateful, longer-lived isolates
 
-- [`compute()`][] abstracts a handful of lower-level, isolate-related APIs to  simplify isolate management:
+[`compute()`][] abstracts a handful of lower-level, 
+isolate-related APIs to  simplify isolate management:
+ 
 - [`Isolate.spawn()`][] and [`Isolate.exit()`][]
 - [`ReceivePort`][] and [`SendPort`][]
 - [`send()`][] method
@@ -161,28 +182,7 @@ isolate and a worker isolate, follow the example in the [Dart documentation][].
 
 [Dart documentation]: {{site.dart-site}}/language/isolates
 
-## Common use cases for isolates
-
-There is only one hard rule for when you should use isolates, and that’s when
-large computations are causing your Flutter application to experience UI jank.
-This jank happens when there is any computation that takes longer than the
-Flutter’s frame gap.
-
-![Event jank diagram]({{site.url}}/assets/images/docs/development/concurrency/event-jank.png){:width="50%"}
-
-Any process _could_ take longer to complete, depending on the implementation and the input data, making it impossible to create an exhaustive list of when you need to consider using isolates.
-
-That said, isolates are commonly used for the following:
-
-- Reading data from a local database
-- Sending push notifications
-- Parsing and decoding large data files
-- Processing or compressing photos, audio files, and video files
-- Converting audio and video files
-- When you need asynchronous support while using FFI
-- Applying filtering to complex lists or filesystems
-
-### Using platform plugins in isolates
+## Using platform plugins in isolates
 
 As of Flutter 3.7, you can use platform plugins in background isolates. This
 opens many possibilities to offload heavy, platform-dependent computations to an
