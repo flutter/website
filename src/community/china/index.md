@@ -1,6 +1,6 @@
 ---
 title: Using Flutter in China
-description: Where to find a version of the Flutter site that is localized to Simplified Chinese.
+description: How to use, access, and learn about Flutter in China.
 toc: true
 os-list: [Windows, macOS, Linux, ChromeOS]
 ---
@@ -9,7 +9,7 @@ os-list: [Windows, macOS, Linux, ChromeOS]
 {% capture sdk-path -%}flutter_infra_release/releases/stable/opsys/{{flutter-sdk}}{%- endcapture %}
 
 To speed the download and installation of Flutter in China,
-consider using a [mirror site][].
+consider using a [mirror site][] or _mirror_.
 
 {{site.alert.important}}
   Use mirror sites _only_ if you _trust_ the provider.
@@ -110,7 +110,7 @@ To enable access to `pub.dev`:
 {% include_relative _pub-settings.md os="ChromeOS" filepath=path %}
 </div>
 
-To learn more about publishing packages, check out
+To learn more about publishing packages, check out the
 [Dart documentation on publishing packages][].
 
 [Dart documentation on proxies]: {{site.dart-site}}/tools/pub/troubleshoot#pub-get-fails-from-behind-a-corporate-firewall
@@ -119,7 +119,7 @@ To learn more about publishing packages, check out
 
 ## Known, trusted community-run mirror sites
 
-The Flutter team cannot guarantee long-term availability of any mirrors.
+The Flutter team can't guarantee long-term availability of any mirrors.
 You can use other mirrors if they become available.
 
 {% for mirror in site.data.mirrors %}
