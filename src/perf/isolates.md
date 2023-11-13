@@ -1,5 +1,5 @@
 ---
-title: Concurrency and Isolates
+title: Concurrency and isolates
 description: Multithreading in Flutter using Dart isolates.
 ---
 
@@ -13,20 +13,20 @@ the main isolate. In most cases, this model allows for simpler programming and
 is fast enough that the application's UI doesn’t become unresponsive.
 
 Sometimes, though, applications need to perform exceptionally large computations
-that can cause “UI jank” (jerky motion). If your app is experiencing jank for
-this reason, you can move these computations to a helper isolate; allowing the
+that can cause "UI jank" (jerky motion). If your app is experiencing jank for
+this reason, you can move these computations to a helper isolate. This allows the
 underlying runtime environment to run the computation concurrently with the main
 UI isolate's work and takes advantage of multi-core devices.
 
 Each isolate has its own memory and its own event loop. The event loop processes
-events in the order that they’re added to an event queue. On the main isolate,
+events in the order that they're added to an event queue. On the main isolate,
 these events can be anything from handling a user tapping in the UI, to
 executing a function, to painting a frame on the screen. The following figure
 shows an example event queue with 4 events waiting to be processed.
 
 ![The main isolate diagram]({{site.url}}/assets/images/docs/development/concurrency/basics-main-isolate.png){:width="50%"}
 
-For smooth rendering, Flutter adds a “paint frame” event to the event queue 60
+For smooth rendering, Flutter adds a "paint frame" event to the event queue 60
 times per second (for a 60Hz device). If these events aren’t processed on time,
 the application experiences UI jank, or worse, become unresponsive altogether.
 
@@ -50,26 +50,26 @@ documentation.
 
 ## Message passing between isolates
 
-Dart’s isolates are an implementation of the [Actor model][]. They can only
-communicate with each other by message passing. When messages are “passed”
+Dart's isolates are an implementation of the [Actor model][]. They can only
+communicate with each other by message passing. When messages are "passed"
 between each other, they are generally copied from the sending isolate to the
 receiving isolate. This means that any value passed to an isolate, even if
-mutated on that isolate, doesn’t change the value on the original isolate.
+mutated on that isolate, doesn't change the value on the original isolate.
 
-The only objects that aren’t copied when passed to an isolate are immutable
+The only objects that aren't copied when passed to an isolate are immutable
 objects that can’t be changed anyway, such a String or an unmodifiable byte.
 When you pass an immutable object between isolates, it is transferred, rather
 than copied, in order to save CPU memory. Because immutable objects can’t be
 updated, this effectively retains the actor model behavior.
 
 An exception to this rule is when an isolate exits when it sends a message using
-the `Isolate.exit` method. Because the sending isolate will not exist after
+the `Isolate.exit` method. Because the sending isolate won't exist after
 sending the message, it can pass the reference to the message while ensuring
 that only one isolate can access the message.
 
 The two lowest-level primitives that send messages are `SendPort.send`, which
-will make a copy of a mutable message as it sends, and `Isolate.exit`, which
-will send the reference to the message. Both `Isolate.run` and `compute`
+makes a copy of a mutable message as it sends, and `Isolate.exit`, which
+sends the reference to the message. Both `Isolate.run` and `compute`
 use `Isolate.exit` under the hood.
 
 
@@ -120,7 +120,7 @@ For a complete walkthrough of using Isolates to parse JSON in the background, se
 ### Isolates on the web
 
 Dart doesn’t support isolates on web platforms. If you’re targeting the web with
-your Flutter app, you should use the compute method. The [`compute()`][] method
+your Flutter app, you should use the `compute` method. The [`compute()`][] method
 runs the computation on the main thread on the web, but spawns a new thread on
 mobile devices. On mobile and desktop platforms `await compute(fun, message)` is
 equivalent to `await Isolate.run(() => fun(message))`.
@@ -149,10 +149,10 @@ Set up long-lived communication between isolates with two classes (in addition
 to Isolate): [`ReceivePort`][] and [`SendPort`][]. These ports are the only way isolates can
 communicate with each other.
 
-Ports behave similarly to Streams, in which the StreamController or Sink is
+`Ports` behave similarly to `Streams`, in which the `StreamController` or `Sink` is
 created in one isolate, and the listener is set up in the other isolate. In this
-analogy, the StreamConroller is called a SendPort, and you can “add” messages
-with the send() method. ReceivePorts are the listeners, and when these listeners
+analogy, the `StreamConroller` is called a `SendPort`, and you can "add" messages
+with the `send()` method. `ReceivePort`s are the listeners, and when these listeners
 receive a new message, they call a provided callback with the message as an
 argument.
 
@@ -191,7 +191,7 @@ using a native host API (such as an Android API on Android, an iOS API on iOS,
 and so on). Previously, [marshaling data][] to the host platform could waste UI
 thread time, and can now be done in a background isolate.
 
-Platform channel isolates use the [BackgroundIsolateBinaryMessenger][] API. The
+Platform channel isolates use the [`BackgroundIsolateBinaryMessenger`][] API. The
 following snippet shows an example of using the shared_preferences package in a
 background isolate.
 
@@ -245,12 +245,12 @@ more information, check out the [concurrency documentation][] on dart.dev.
 ### No `rootBundle` access or `dart:ui` methods
 
 All UI tasks and Flutter itself are coupled to the main isolate. Therefore, you
-can’t access assets using rootBundle in spawned isolates, nor can you perform
+can't access assets using `rootBundle` in spawned isolates, nor can you perform
 any widget or UI work in spawned isolates.
 
 ### Limited plugin messages from host platform to Flutter
 
-With background isolate platform channels,you can use platform channels in
+With background isolate platform channels, you can use platform channels in
 isolates to send messages to the host platform (for example Android or iOS), and
 receive responses to those messages. However, you can’t receive unsolicited
 messages from the host platform.
@@ -268,7 +268,7 @@ For more information on isolates, check out the following resources:
 or the pub package that clones the functionality for Dart applications not using
 Flutter. 
 - Dart’s Isolates are an implementation of the [Actor model][]. 
-- Read more about the BackgroundIsolateBinaryMessenger API [announcement][].
+- Read more about the `BackgroundIsolateBinaryMessenger` API [announcement][].
 
 [announcement]: https://medium.com/flutter/introducing-background-isolate-channels-7a299609cad8
 [technical design proposal]: https://docs.google.com/document/d/1yAFw-6kBefuurXWTur9jdEUAckWiWJVukP1Iay8ehyU/edit#heading=h.722pnbmlqbkx
@@ -282,5 +282,5 @@ Flutter.
 [`ReceivePort`]: {{site.dart.api}}/stable/dart-isolate/ReceivePort-class.html
 [`SendPort`]: {{site.dart.api}}/stable/dart-isolate/SendPort-class.html
 [`send()`]: {{site.dart.api}}/stable/dart-isolate/SendPort/send.html
-[BackgroundIsolateBinaryMessenger]: {{site.api}}/flutter/services/BackgroundIsolateBinaryMessenger-class.html
+[`BackgroundIsolateBinaryMessenger`]: {{site.api}}/flutter/services/BackgroundIsolateBinaryMessenger-class.html
 [IsolateNameServer]: {{site.api}}/flutter/dart-ui/IsolateNameServer-class.html
