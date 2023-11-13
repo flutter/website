@@ -5,38 +5,56 @@ description: Multithreading in Flutter using Dart isolates.
 
 <?code-excerpt path-base="development/concurrency/isolates/"?>
 
-All Dart code runs in [isolates]({{site.dart-site}}/language/concurrency), which
-are similar to threads, but differ in that isolates have their own isolated
-memory. They do not share state in any way, and can only communicate by
-messaging. By default, Flutter apps do all of their work on a single isolate –
-the main isolate. In most cases, this model allows for simpler programming and
+All Dart code runs in [isolates]({{site.dart-site}}/language/concurrency),
+which are similar to threads,
+but differ in that isolates have their own isolated memory.
+They do not share state in any way,
+and can only communicate by messaging.
+By default,
+Flutter apps do all of their work on a single isolate –
+the main isolate.
+In most cases, this model allows for simpler programming and
 is fast enough that the application's UI doesn’t become unresponsive.
 
-Sometimes, though, applications need to perform exceptionally large computations
-that can cause “UI jank” (jerky motion). If your app is experiencing jank for
-this reason, you can move these computations to a helper isolate; allowing the
-underlying runtime environment to run the computation concurrently with the main
-UI isolate's work and takes advantage of multi-core devices.
+Sometimes, though, 
+applications need to perform exceptionally large computations
+that can cause “UI jank” (jerky motion).
+If your app is experiencing jank for this reason,
+you can move these computations to a helper isolate;
+allowing the underlying runtime environment to run the computation concurrently
+with the main UI isolate's work
+and takes advantage of multi-core devices.
 
-Each isolate has its own memory and its own event loop. The event loop processes
-events in the order that they’re added to an event queue. On the main isolate,
-these events can be anything from handling a user tapping in the UI, to
-executing a function, to painting a frame on the screen. The following figure
-shows an example event queue with 4 events waiting to be processed.
+Each isolate has its own memory
+and its own event loop.
+The event loop processes
+events in the order that they’re added to an event queue.
+On the main isolate,
+these events can be anything from handling a user tapping in the UI,
+to executing a function,
+to painting a frame on the screen.
+The following figure shows an example event queue
+with 4 events waiting to be processed.
 
 ![The main isolate diagram]({{site.url}}/assets/images/docs/development/concurrency/basics-main-isolate.png){:width="50%"}
 
-For smooth rendering, Flutter adds a “paint frame” event to the event queue 60
-times per second (for a 60Hz device). If these events aren’t processed on time,
-the application experiences UI jank, or worse, become unresponsive altogether.
+For smooth rendering,
+Flutter adds a “paint frame” event to the event queue
+60 times per second(for a 60Hz device).
+If these events aren’t processed on time,
+the application experiences UI jank,
+or worse,
+become unresponsive altogether.
 
 ![Event jank diagram]({{site.url}}/assets/images/docs/development/concurrency/event-jank.png){:width="50%"}
 
-Whenever a process can’t be completed in a frame gap, or the time between two
-frames, it's a good idea to offload the work to another isolate to ensure that
-the main isolate can produce 60 frames per second. When you spawn an isolate in
-Dart, it can process the work concurrently with the main isolate, without
-blocking it.
+Whenever a process can’t be completed in a frame gap,
+or the time between two frames,
+it's a good idea to offload the work to another isolate
+to ensure that the main isolate can produce 60 frames per second.
+When you spawn an isolate in Dart,
+it can process the work concurrently with the main isolate,
+without blocking it.
 
 You can read more about how isolates and the event loop work in Dart on
 the [concurrency page][] of the Dart
@@ -127,7 +145,8 @@ equivalent to `await Isolate.run(() => fun(message))`.
 
 ## Stateful, longer-lived isolates
 
-- [`compute()`][] abstracts a handful of lower-level, isolate-related APIs to  simplify isolate management:
+- [`compute()`][] abstracts a handful of lower-level, isolate-related APIs to
+  simplify isolate management:
 - [`Isolate.spawn()`][] and [`Isolate.exit()`][]
 - [`ReceivePort`][] and [`SendPort`][]
 - [`send()`][] method
@@ -146,8 +165,8 @@ return values to the main isolate.
 ### ReceivePorts and SendPorts
 
 Set up long-lived communication between isolates with two classes (in addition
-to Isolate): [`ReceivePort`][] and [`SendPort`][]. These ports are the only way isolates can
-communicate with each other.
+to Isolate): [`ReceivePort`][] and [`SendPort`][]. These ports are the only way
+isolates can communicate with each other.
 
 Ports behave similarly to Streams, in which the StreamController or Sink is
 created in one isolate, and the listener is set up in the other isolate. In this
@@ -170,7 +189,9 @@ Flutter’s frame gap.
 
 ![Event jank diagram]({{site.url}}/assets/images/docs/development/concurrency/event-jank.png){:width="50%"}
 
-Any process _could_ take longer to complete, depending on the implementation and the input data, making it impossible to create an exhaustive list of when you need to consider using isolates.
+Any process **could** take longer to complete, depending on the implementation and
+the input data, making it impossible to create an exhaustive list of when you
+need to consider using isolates.
 
 That said, isolates are commonly used for the following:
 
@@ -264,15 +285,14 @@ background.
 
 For more information on isolates, check out the following resources:
 
-- If you’re using many isolates, consider the [IsolateNameServer][] class in Flutter,
-or the pub package that clones the functionality for Dart applications not using
-Flutter. 
-- Dart’s Isolates are an implementation of the [Actor model][]. 
+- If you’re using many isolates, consider the [IsolateNameServer][] class in
+  Flutter, or the pub package that clones the functionality for Dart
+  applications not using Flutter.
+- Dart’s Isolates are an implementation of the [Actor model][].
 - Read more about the BackgroundIsolateBinaryMessenger API [announcement][].
 
 [announcement]: https://medium.com/flutter/introducing-background-isolate-channels-7a299609cad8
 [technical design proposal]: https://docs.google.com/document/d/1yAFw-6kBefuurXWTur9jdEUAckWiWJVukP1Iay8ehyU/edit#heading=h.722pnbmlqbkx
-
 [Actor model]: https://en.wikipedia.org/wiki/Actor_model
 [marshaling data]: https://en.wikipedia.org/wiki/Marshalling_(computer_science)
 [Dart `Isolate`]: {{site.dart.api}}/stable/dart-isolate/Isolate-class.html
