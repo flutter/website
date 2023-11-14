@@ -331,8 +331,6 @@
       permalink: /data-and-backend/firebase
     - title: Google APIs
       permalink: /data-and-backend/google-apis
-    - title: Concurrency and Isolates
-      permalink: data-and-backend/isolates
 
 - title: Platform integration
   permalink: /platform-integration
@@ -502,6 +500,8 @@
       permalink: /perf/shader
     - title: Performance metrics
       permalink: /perf/metrics
+    - title: Concurrency and isolates
+      permalink: /perf/isolates
     - title: Performance FAQ
       permalink: /perf/faq
     - title: Appendix
