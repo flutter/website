@@ -39,7 +39,9 @@ As of this release, useMaterial3 is true by default.
 You can still opt out of the M3 version of the Material library by
 specifying useMaterial3: false in your MaterialApp theme.
 
-Notef: that Material 2 will eventually be deprecated and removed.
+{{site.alert.note}}
+  Support for Material 2 will eventually be deprecated and removed.
+{{site.alert.end}}
 
 Also, some of the widgets couldn’t merely be updated, but needed a whole new implementation.
 For this reason, your UI might look a little strange when you see it running as Material 3.
@@ -50,14 +52,18 @@ For more details, check out the [Material 3 umbrella issue][] on GitHub.
 
 ## Timeline
 
-Landed in version: 3.10
+Landed in version: 3.13.0-4.0.pre
 In stable release: 3.16
 
 ## References
 
-API documentation:
+Documentation:
 
 * [Material Design for Flutter][]
+
+API documentation:
+
+* [`ThemeData.useMaterial3`][]
 
 Relevant issues:
 
@@ -66,12 +72,15 @@ Relevant issues:
 
 Relevant PRs:
 
-* [Updated ThemeData.useMaterial3 API doc, default is true][]
+* [Change the default for `ThemeData.useMaterial3` to true][]
+* [Updated `ThemeData.useMaterial3` API doc, default is true][]
 
 
-[Material 3 gallery]: https://flutter.github.io/samples/material_3.html
+[Material 3 gallery]: https://flutter.github.io/samples/web/material_3_demo/
 [Material 3 umbrella issue]: {{site.repo.flutter}}/issues/91605
 [Material Design for Flutter]: {{site.url}}/ui/design/material
+[`ThemeData.useMaterial3`]: {{site.api}}/flutter/material/ThemeData/useMaterial3.html
 [Add support for M3 motion]: {{site.repo.flutter}}/issues/129942
-[Updated ThemeData.useMaterial3 API doc, default is true]: {{site.repo.engine}}/pull/130764
+[Change the default for `ThemeData.useMaterial3` to true]: {{site.repo.flutter}}/pull/129724
+[Updated `ThemeData.useMaterial3` API doc, default is true]: {{site.repo.flutter}}/pull/130764
 
