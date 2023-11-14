@@ -31,6 +31,7 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [The `ThemeData.useMaterial3` property is now set to true by default][]
 * [Customize tabs alignment using the new `TabBar.tabAlignment` property][]
 * [Deprecate `textScaleFactor` in favor of `TextScaler`][]
 * [Android 14 nonlinear font scaling enabled after v3.14][]
@@ -44,6 +45,7 @@ release, and listed in alphabetical order:
 * [Deprecated API removed after v3.13][]
 * [Accessibility traversal order of tooltip changed][]
 
+[The `ThemeData.useMaterial3` property is now set to true by default]: {{site.url}}/release/breaking-changes/material-3-default
 [Customize tabs alignment using the new `TabBar.tabAlignment` property]: {{site.url}}/release/breaking-changes/tab-alignment
 [Deprecate `textScaleFactor` in favor of `TextScaler`]: {{site.url}}/release/breaking-changes/deprecate-textscalefactor
 [Android 14 nonlinear font scaling enabled after v3.14]: {{site.url}}/release/breaking-changes/android-14-nonlinear-text-scaling-migration
