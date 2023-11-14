@@ -6,29 +6,29 @@ description: >-
 
 ## Summary
 
-The Material library has been updated to match the 
-latest Material Design spec. Changes include new components 
-and component themes, and updated component visuals. 
+The Material library has been updated to match the
+latest Material Design spec. Changes include new components
+and component themes, and updated component visuals.
 As of this release, useMaterial3 is true by default.
 
 ## Background
 
-Flutter's Material widgets now fully support Material 3 and, 
-in Flutter 3.16, Material 3 is now the default style. 
+Flutter's Material widgets now fully support Material 3 and,
+in Flutter 3.16, Material 3 is now the default style.
 
-The appearance of Material 3 components are primarily determined by 
+The appearance of Material 3 components are primarily determined by
 the values for [ThemeData.colorScheme] and [ThemeData.textTheme].
-ColorScheme makes it easier to create dark and light schemes so that your app is 
-both aesthetically pleasing and compliant with accessibility requirements. 
-To further customize the appearance of Material 3 components, 
-add component themes to your ThemeData, 
-such as [ThemeData.segmentedButtonTheme] or [ThemeData.snackBarTheme]. 
+ColorScheme makes it easier to create dark and light schemes so that your app is
+both aesthetically pleasing and compliant with accessibility requirements.
+To further customize the appearance of Material 3 components,
+add component themes to your ThemeData,
+such as [ThemeData.segmentedButtonTheme] or [ThemeData.snackBarTheme].
 
-Additionally, Material 3 improves motion by using easing and duration tokens. 
-This means that Material 2 curves have been renamed to include the word "legacy" and
-will eventually be deprecated and removed. 
+Additionally, Material 3 improves motion by using easing and duration tokens.
+This means that Material 2 curves have been renamed to include
+the word "legacy" and will eventually be deprecated and removed.
 
-Check out the [Material 3 gallery][] to test out 
+Check out the [Material 3 gallery][] to test out
 all the new components and compare them with Material 2.
 
 
@@ -39,11 +39,11 @@ As of this release, useMaterial3 is true by default.
 You can still opt out of the M3 version of the Material library by
 specifying useMaterial3: false in your MaterialApp theme.
 
-Notef: that Material 2 will eventually be deprecated and removed. 
+Notef: that Material 2 will eventually be deprecated and removed.
 
-Also, some of the widgets couldn’t merely be updated, but needed a whole new implementation. 
-For this reason, your UI might look a little strange when you see it running as Material 3. 
-To fix this, manually migrate to the new widgets, such as NavigationBar. 
+Also, some of the widgets couldn’t merely be updated, but needed a whole new implementation.
+For this reason, your UI might look a little strange when you see it running as Material 3.
+To fix this, manually migrate to the new widgets, such as NavigationBar.
 
 For more details, check out the [Material 3 umbrella issue][] on GitHub.
 
