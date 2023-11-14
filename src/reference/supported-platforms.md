@@ -43,7 +43,7 @@ following table:
 | iOS            |16|11-15, 17|10-, arm7v 32-bit|
 | Linux Debian   |10-12|9-|any 32-bit|
 | Linux Ubuntu   |20.04 LTS|20.10-23.04|any 32-bit|
-| macOS          |Ventura (13+)|Mojave (10.14) to Monterey (12), Sonoma (14)|High Sierra (10.13-) |
+| macOS          |Ventura (13)|Mojave (10.14) to Monterey (12), Sonoma (14)|High Sierra (10.13-) |
 | web - Chrome   |latest 2 releases|96+| |
 | web - Firefox  |latest 2 releases|99+| |
 | web - Safari   |latest 2 releases|14+| |
