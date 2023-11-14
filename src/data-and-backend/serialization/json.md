@@ -61,6 +61,12 @@ manual serialization might be the way you want to start.
 For an example of manual encoding, see
 [Serializing JSON manually using dart:convert][].
 
+{{site.alert.tip}}
+  For hands-on practice deserializing JSON and
+  taking advantage of Dart 3's new features,
+  check out the [Dive into Dart's patterns and records][] codelab.
+{{site.alert.end}}
+
 ### Use code generation for medium to large projects
 
 JSON serialization with code generation means having an external library
@@ -519,6 +525,7 @@ For more information, see the following resources:
 * The [`dart:convert`][] and [`JsonCodec`][] documentation
 * The [`json_serializable`][] package on pub.dev
 * The [`json_serializable` examples][] on GitHub
+* The [Dive into Dart's patterns and records][] codelab
 
 
 [`built_value`]: {{site.pub}}/packages/built_value
@@ -537,3 +544,4 @@ For more information, see the following resources:
 [Serializing JSON manually using dart:convert]: #manual-encoding
 [Serializing JSON using code generation libraries]: #code-generation
 [tree shaking]: https://en.wikipedia.org/wiki/Tree_shaking
+[Dive into Dart's patterns and records]: {{site.codelabs}}/codelabs/dart-patterns-records
