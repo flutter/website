@@ -165,20 +165,6 @@ Enable Developer Mode before deploying to a device running iOS 16 or later.
 
 1. Unlock your iOS device.
 
-1. Go to **Privacy & Security** <span aria-label="and then">></span>
-    **Developer Mode**.
-
-1. Tap to toggle **Developer Mode** to on.
-   iOS displays a prompt to restart your device.
-
-1. Click **Restart**.
-
-1. After your device restarts and you unlock your device,
-   iOS asks if you want to **Turn On Developer Mode?**
-   Tap **Turn On**.
-
-1. Unlock your iOS device.
-
 #### Enable developer code signing certificates
 
 To deploy to a physical iOS device, you need to establish trust with your
