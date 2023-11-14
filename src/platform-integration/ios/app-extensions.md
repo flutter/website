@@ -91,6 +91,7 @@ data to the same source. Choose one of the following sources for your data.
   [`sqflite`][] plugin.
 
 ### Background updates
+
 Background tasks provide a means to update your extension through code
 regardless of the status of your app.
 
@@ -104,7 +105,9 @@ To have a URL open a specified route in your app, you can use
 [Deep Linking][].
 
 ## Creating app extension UIs with Flutter
+
 Some app extensions display a user interface.
+
 For example, Share Extensions allow users to conveniently share content with other apps. One example of Share Extension is to share a picture and post a comment on a social media app.
 
 <figure class="site-figure {{include.class}}">
@@ -114,14 +117,18 @@ For example, Share Extensions allow users to conveniently share content with oth
     </div>
 </figure>
 
-Starting from version 3.16.0, Flutter supports
+Starting from version 3.16, Flutter supports
 building Flutter UI for app extensions.
 To create the UI for
-an app extension using Flutter, you must use a extension-safe Flutter.xcframework and embed the `FlutterViewController`
+an app extension using Flutter, you must use an extension-safe
+`Flutter.xcframework` and embed the `FlutterViewController`
 as described in the following section.
 
 {{site.alert.note}}
-  Due to the memory limits of app extensions, it is only recommanded to use Flutter to build app extension UI for extension types that have memory limits larger than 100mb, Share Extensions for example, which has a 120mb memory limit. In addition, Flutter uses extra memories in debug mode. Thus Flutter does not fully support running app extension in debug mode on physical devices when used to build extension UI. Alternatively, use simulator to test in debug mode.
+  Due to the memory limitations of app extensions,
+  it is only recommended to use Flutter to build app extension UI
+  for extension types that have memory limits larger than 100mb.
+  Share Extensions for example, which has a 120mb memory limit. In addition, Flutter uses extra memories in debug mode. Thus Flutter does not fully support running app extension in debug mode on physical devices when used to build extension UI. Alternatively, use simulator to test in debug mode.
 {{site.alert.end}}
 
 1. Locate the Extension Safe Flutter.xcframework, at <path_to_flutter_sdk>/bin/cache/artifacts/engine/ios/extension_safe/Flutter.xcframework.
@@ -167,7 +174,7 @@ as described in the following section.
 
 1. Embed the `FlutterViewController` as described in
    [Adding a Flutter Screen][]. For example, you can display a
-   specific route in your Flutter app within an Share Extension.
+   specific route in your Flutter app within a Share Extension.
 
     ```swift
     import UIKit
@@ -188,23 +195,44 @@ as described in the following section.
         }
     }
     ```
+
 ## Test extensions
 
-Testing extensions on simulators and physical devices have a slightly different flow due to some bugs in XCode.
+Testing extensions on simulators and physical devices
+have slightly different procedures.
 
-### Testing on simulators:
+{% comment %}
+The different procedures are necessary due to bugs(which bugs?) in Xcode.
+Revisit these docs after future Xcode releases to see if they are fixed.
+{% endcomment -%}
+
+### Test on a simulator
+
 1. Build and run the main application target.
-1. After the app is launched on the simulator, press cmd+shift+h to minimize the app, which shows the home screen.
-1. Launch an app that supports Share Extension, for example the Photos app.
-1. Select a photo, tap the share button, then tap on the share extension icon of your app.
+1. After the app is launched on the simulator,
+   press <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>H</kbd> to minimize the app,
+   which switches to the home screen.
+1. Launch an app that supports Share Extension,
+   such as the Photos app.
+1. Select a photo, tap the share button, then tap
+   on the share extension icon of your app.
 
-### Testing on devices: (You can also use the same flow of testing on simulator to test on device. )
+### Test on a physical device
+
+You can use the following procedure or the
+[Testing on simulators](#test-on-a-simulator) instructions
+to test on physical devices.
+
 1. Launch the Share Extension target.
-1. In the popup window that says “Choose an app to run”, select an app that can be used to test Share Extension. For example, the Photos app.
-1. Select a photo, tap the share button, then tap on the Share Extension icon of your app.
+1. In the popup window that says “Choose an app to run”,
+   select an app that can be used to test Share Extension,
+   such as the Photos app.
+1. Select a photo, tap the share button,
+   then tap on the Share Extension icon of your app.
 
 {% comment %}
 ## Tutorials
+
 For step-by-step instruction for using app extensions with your
 Flutter iOS app, check out the
 [Adding Home Screen Widgets and Live Activities to your Flutter app][] codelab.
