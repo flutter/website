@@ -1,5 +1,5 @@
 ---
-title: Migrate ShortcutActivator and ShortcutManager to KeyEvent system.
+title: Migrate ShortcutActivator and ShortcutManager to KeyEvent system
 description: >
   The raw key event subsystem has been superseded by the key event subsystem,
   and APIs that use RawKeyEvent and RawKeyboard are converted to KeyEvent and
@@ -29,12 +29,19 @@ the quality of the API.
 
 ## Description of change
 
+Summary of APIs that have been affected:
+
+- `ShortcutActivator.accepts` now takes a `KeyEvent` and `HardwareKeyboard`.
+- `ShortcutActivator.isActivatedBy` is now deprecated. Just call `accepts` instead.
+- `ShortcutActivator.triggers` is now optional, and returns null if not implemented.
+- `ShortcutManager.handleKeypress` now takes a `KeyEvent`.
+
 The change modifies the `ShortcutActivator.accepts` method to take a `KeyEvent`
 and `HardwareKeyboard` instead of the previous `RawKeyEvent` and `RawKeyboard`.
 
 The meaning of `ShortcutActivator.accepts` has changed slightly. Before the
 change, it was assumed that `accepts` was only called if
-`ShortcutActivator.triggers` returned null, or if the key event sent to accepts
+`ShortcutActivator.triggers` returned null, or if the key event sent to `accepts`
 had a logical key that was in the `triggers` list. Now it is always called, and
 may use the `triggers` list as a performance improvement, but is not required
 to. Flutter subclasses such as `SingleActivator` and `CharacterActivator`
