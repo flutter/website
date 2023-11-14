@@ -63,7 +63,7 @@ For more details, check out the [Material 3 umbrella issue][] on GitHub.
 
 ## Timeline
 
-Landed in version: 3.13.0-4.0.pre
+Landed in version: 3.13.0-4.0.pre<br>
 In stable release: 3.16
 
 ## References
