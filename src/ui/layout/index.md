@@ -222,12 +222,11 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.light,
         primaryColor: CupertinoColors.systemBlue,
       ),
-      child: CupertinoPageScaffold(
+      home: CupertinoPageScaffold(
         navigationBar: CupertinoNavigationBar(
           backgroundColor: CupertinoColors.systemGrey,
           middle: Text('Flutter layout demo'),
         ),
-        child: Center(
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
