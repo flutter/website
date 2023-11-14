@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (7.1.1)
+    activesupport (7.1.2)
       base64
       bigdecimal
       concurrent-ruby (~> 1.0, >= 1.0.2)
@@ -13,12 +13,12 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
-    base64 (0.1.1)
+    base64 (0.2.0)
     bigdecimal (3.1.4)
     colorator (1.1.0)
     concurrent-ruby (1.2.2)
     connection_pool (2.4.1)
-    drb (2.1.1)
+    drb (2.2.0)
       ruby2_keywords
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
@@ -71,7 +71,7 @@ GEM
     mercenary (0.4.0)
     mini_portile2 (2.8.5)
     minitest (5.20.0)
-    mutex_m (0.1.2)
+    mutex_m (0.2.0)
     nokogiri (1.15.4)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
@@ -101,7 +101,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activesupport (~> 7.1.1)
+  activesupport (~> 7.1.2)
   jekyll (= 4.3.2)
   jekyll-include-cache (~> 0.2.1)
   jekyll-sass-converter (~> 3.0.0)

@@ -180,6 +180,12 @@ dd {
   }
 }
 
+.site-illustration {
+  // Illustrations should be visible in their entirety without the need
+  // for scrolling up and down.
+  max-height: 60vh;
+}
+
 .btn.btn-icon {
   align-items: center;
   display: flex;
@@ -267,8 +273,26 @@ ol + img, ul + img, ol + p, ul + p, p + p + img {
   margin-bottom: 1rem;
 }
 
+td ol, td ul, td dl, td p {
+  margin-bottom: 0rem;
+}
+
+p + ul, p + ol, p + dl {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
 .figure-caption {
   font-size: bootstrap.$font-size-sm;
   font-style: italic;
   color: #041E3C;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+  vertical-align: middle;
 }
