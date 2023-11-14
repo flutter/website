@@ -62,7 +62,7 @@ For an example of manual encoding, see
 [Serializing JSON manually using dart:convert][].
 
 {{site.alert.tip}}
-  For hands-on practice manually deserializing JSON and
+  For hands-on practice deserializing JSON and
   taking advantage of Dart 3's new features,
   check out the [Dive into Dart's patterns and records][] codelab.
 {{site.alert.end}}
