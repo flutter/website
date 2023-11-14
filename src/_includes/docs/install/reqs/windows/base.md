@@ -1,3 +1,5 @@
+Complete this guide in sequence. Skipping steps is the primary source of errors.
+
 ## System requirements
 
 To install and run Flutter,
