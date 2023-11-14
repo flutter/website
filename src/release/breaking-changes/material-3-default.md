@@ -1,7 +1,7 @@
 ---
-title: useMaterial3 flag is true by default
-description: >
-   In v3.16 useMaterial3 flag is set to true by default.
+title: The ThemeData.useMaterial3 flag is true by default
+description: >-
+   The ThemeData.useMaterial3 flag is now set to true by default.
 ---
 
 ## Summary
