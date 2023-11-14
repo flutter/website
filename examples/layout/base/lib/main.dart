@@ -1,4 +1,4 @@
-// Copyright 2021 The Flutter team. All rights reserved.
+// Copyright 2021-2023 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -13,11 +13,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const String appTitle = 'Flutter layout demo';
     return MaterialApp(
-      title: 'Flutter layout demo',
+      title: appTitle,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Flutter layout demo'),
+          title: const Text(appTitle),
         ),
         // #docregion centered-text
         body: const Center(
@@ -30,4 +31,5 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 // #enddocregion all
