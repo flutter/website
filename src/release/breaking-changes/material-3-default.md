@@ -40,21 +40,26 @@ all the new components and compare them with Material 2.
 
 ## Migration guide
 
-Prior to the 3.16 release, the changes were "opt-in" using the useMaterial3 theme flag.
-As of this release, useMaterial3 is true by default.
-You can still opt out of the M3 version of the Material library by
-specifying useMaterial3: false in your MaterialApp theme.
+Prior to the 3.16 release, the changes were "opt-in"
+using the `useMaterial3` theme property on `ThemeData`.
+As of this release, `useMaterial3` is `true` by default.
+You can still opt out of the Material 3 version of the Material library by
+specifying `useMaterial3: false` in your `MaterialApp` theme.
 
 {{site.alert.note}}
-  Support for Material 2 will eventually be deprecated and removed.
+  Support for this property and Material 2 will
+  eventually be deprecated and removed.
 {{site.alert.end}}
 
-Also, some of the widgets couldn’t merely be updated, but needed a whole new implementation.
-For this reason, your UI might look a little strange when you see it running as Material 3.
-To fix this, manually migrate to the new widgets, such as NavigationBar.
+Also, some of the widgets couldn't merely be updated,
+but needed a whole new implementation.
+For this reason, your UI might look a little strange when
+you see it running with Material 3.
+To fix this, manually migrate to the new widgets, such as [`NavigationBar`][].
 
 For more details, check out the [Material 3 umbrella issue][] on GitHub.
 
+[`NavigationBar`]: {{site.api}}/flutter/material/NavigationBar-class.html
 
 ## Timeline
 
