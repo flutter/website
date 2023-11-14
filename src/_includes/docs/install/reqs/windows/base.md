@@ -41,8 +41,7 @@ Download and install the Windows version of the following packages:
 The developers of the preceding software provide support for those products.
 To troubleshoot installation issues, consult that product's documentation.
 
-#### Text editor or integrated development environment
-{:.no_toc}
+## Configure a text editor or IDE
 
 You can build apps with Flutter using any text editor or
 integrated development environment (IDE) combined with
@@ -61,10 +60,9 @@ Popular options include:
   with the [Flutter extension for VS Code][].
 
 {{site.alert.recommend}}
-    The Flutter team recommends installing
-    [Visual Studio Code][] {{site.appmin.vscode}} or later and the
-    [Flutter extension for VS Code][].
-    This combination simplifies installing the Flutter SDK.
+  The Flutter team recommends installing [Visual Studio Code][]
+  {{site.appmin.vscode}} or later and the [Flutter extension for VS Code][].
+  This combination simplifies installing the Flutter SDK.
 {{site.alert.end}}
 
 [Android Studio]: https://developer.android.com/studio/install

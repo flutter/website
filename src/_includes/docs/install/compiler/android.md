@@ -1,6 +1,6 @@
 ## Configure Android development
 
-### Configure Android Studio
+### Configure the Android toolchain in Android Studio
 
 {% include docs/help-link.md location='android-studio' section='#android-setup' %}
 
