@@ -14,7 +14,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample Shared App Handler',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const SampleAppPage(),
     );

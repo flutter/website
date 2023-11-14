@@ -89,6 +89,10 @@
     user-select: none;
     vertical-align: -4px;
   }
+  
+  &.alert-secondary {
+    background-color: $flutter-color-grey-500;
+  }
 }
 
 a.card {
