@@ -4,6 +4,7 @@ void main() {
   runApp(const MyApp());
 }
 
+// #docregion MyApp
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -22,14 +23,14 @@ class MyApp extends StatelessWidget {
         ),
         child: Center(
           child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                // #docregion text
-                Text('Hello World'),
-                // #enddocregion text
-              ]),
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text('Hello World'),
+            ],
+          ),
         ),
       ),
     );
   }
 }
+// #docregion MyApp
