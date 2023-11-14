@@ -7,7 +7,7 @@
    {% assign shell = 'Powershell' -%}
    {% assign prompt = 'C:\>' -%}
    {% assign comtoset = '$env:' -%}
-   {% assign installdirsuggestion = '%USERPROFILE%\dev' %}
+   {% assign installdirsuggestion = '`%USERPROFILE%\dev`' %}
    {% capture envvarset -%}{{prompt}} {{comtoset}}{% endcapture -%}
    {% capture setpath -%}{{envvarset}}PATH = $pwd.PATH + "/flutter/bin",$env:PATH -join ";"{% endcapture -%}
    {% capture newdir -%}{{prompt}} New-Item -Path '{{installdirsuggestion}}' -ItemType Directory{% endcapture -%}

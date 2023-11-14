@@ -1,14 +1,19 @@
 
 {% assign id = include.ref-os | downcase -%}
 {% assign mainpath = include.filepath -%}
-{% capture filepath -%}{{mainpath | replace: "opsys", id}}{{file-format}} {% endcapture -%}
-
 {%- case id %}
 {% when 'windows','macos' %}
 {%- assign file-format = 'zip' %}
 {% else %}
 {%- assign file-format = 'tar.xz' %}
 {% endcase %}
+{%- if id == 'chromeos' %}
+{% assign plat = 'linux' %}
+{%- else %}
+{% assign plat = id %}
+{% endif %}
+{% capture filepath -%}{{mainpath | replace: "opsys", plat}}{{file-format}} {% endcapture -%}
+
 
 <div id="{{id}}-dl" class="tab-pane
   {%- if id == 'windows' %} active {% endif %}"

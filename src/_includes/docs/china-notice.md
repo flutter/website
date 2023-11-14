@@ -1,8 +1,5 @@
 {{site.alert.important}}
-  如果你正在中国的网络环境下配置 Flutter，
-  请参考 [在中国网络环境下使用 Flutter][] 文档.
-  <br>This site provides [this guide in English].
+  If you develop apps in China, check out [using Flutter in China][].
 {{site.alert.end}}
 
-[在中国网络环境下使用 Flutter]: https://flutter.cn/community/china
-[this guide in English]: {{site.url}}/community/china
+[using Flutter in China]: {{site.url}}/community/china

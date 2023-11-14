@@ -8,6 +8,8 @@ os-list: [Windows, macOS, Linux, ChromeOS]
 {% assign flutter-sdk = 'flutter_opsys_v3.13.0-stable.' %}
 {% capture sdk-path -%}flutter_infra_release/releases/stable/opsys/{{flutter-sdk}}{%- endcapture %}
 
+{% include docs/china-notice-cn.md %}
+
 To speed the download and installation of Flutter in China,
 consider using a [mirror site][] or _mirror_.
 
@@ -26,7 +28,7 @@ Other mirrors can be found at the [end of this guide](#known-trusted-community-r
 
 ### Configure your machine to use a mirror site
 
-To install or use Flutter in China, use a trustworthy Flutter mirror site.
+To install or use Flutter in China, use a trustworthy Flutter mirror.
 This requires setting two environment variables on your machine.
 
 _All examples that follow presume that you are using the CFUG mirror._
@@ -50,15 +52,18 @@ To set your machine to use a mirror site:
 {% endfor -%}
 </div>
 
-### Download Flutter archives based on a mirrored URL
+### Download Flutter archives based on a mirror site
 
-To download Flutter archives from a mirrored URL,
+To download Flutter from the [SDK archive][] from a mirror,
 replace `storage.googleapis.com` with the URL of your trusted mirror.
+Use your mirror site in the browser or in other applications
+like IDM or Thunder.
 This should improve download speed.
-You can use the mirror URL in other applications to download software.
 
-To change a Google storage site to a CFUG storage site, replace the example
-original URL with the example mirror URL.
+[SDK archive]: {{site.url}}/release/archive
+
+The following example shows how to change the URL for Flutter's download site
+from Google's archive to CFUG's mirror.
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="china-os-dl-tabs" role="tablist">
