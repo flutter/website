@@ -42,6 +42,11 @@ check out the [WebAssembly roadmap][].
 
 ### Try it out
 
+To try a pre-built Flutter web app using Wasm, check out the
+[Material 3 WasmGC preview demo](https://flutterweb-wasm.web.app/).
+
+To experiment with Wasm in your own apps, follow the steps below.
+
 #### Switch to the Flutter `master` channel and upgrade
 
 Wasm compilation is only available on the latest builds of the `master` channel.
