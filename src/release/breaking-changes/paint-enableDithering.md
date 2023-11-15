@@ -91,8 +91,7 @@ migration guide, but you can find some resources and examples:
 ## Timeline
 
 Landed in version: `3.14.0-0.1.pre`.
-
-Not yet in a stable release.
+In stable release: 3.16
 
 ## References
 

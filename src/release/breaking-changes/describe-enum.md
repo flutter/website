@@ -71,7 +71,7 @@ properties.add(DiagnosticsProperty<TextInputType>( ... ));
 ## Timeline
 
 Landed in version: 3.14.0-2.0.pre<br>
-In stable release: not yet
+In stable release: 3.16
 
 ## References
 

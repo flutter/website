@@ -40,7 +40,7 @@ release, and listed in alphabetical order:
 ### Released in Flutter 3.16
 
 * [The `ThemeData.useMaterial3` property is now set to true by default][]
-* [Deprecated API removed after v3.13]: {{site.url}}/release/breaking-changes/3-13-deprecations
+* [Deprecated API removed after v3.13][]
 * [Customize tabs alignment using the new `TabBar.tabAlignment` property][]
 * [Deprecate `textScaleFactor` in favor of `TextScaler`][]
 * [Android 14 nonlinear font scaling enabled][]

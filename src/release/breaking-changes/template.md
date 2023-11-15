@@ -1,6 +1,6 @@
 ---
 title: Replace with title of breaking change
-description: >
+description: >-
   Brief description similar to the "context" section below. 
   Text should break at 80 chars or less.
 ---

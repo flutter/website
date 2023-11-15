@@ -1,6 +1,6 @@
 ---
 title: Deprecated API removed after v3.13
-description: >
+description: >-
   After reaching end of life, the following deprecated APIs
   were removed from Flutter.
 ---
@@ -456,4 +456,4 @@ Relevant PRs:
 
 ## Timeline
 
-In stable release: TBD
+In stable release: 3.16

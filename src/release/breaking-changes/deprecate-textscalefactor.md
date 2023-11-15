@@ -1,6 +1,6 @@
 ---
 title: Deprecate textScaleFactor in favor of TextScaler
-description: >
+description: >-
   The new class, `TextScaler`, replaces the `textScaleFactor` scalar in
   preparation for Android 14 nonlinear text scaling support.
 ---
@@ -260,7 +260,7 @@ it's removed from the Flutter API.
 ## Timeline
 
 Landed in version: 3.13.0-4.0.pre<br>
-In stable release: not yet (Not in 3.13)
+In stable release: 3.16
 
 ## References
 

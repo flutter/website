@@ -1,6 +1,6 @@
 ---
 title: Windows build path changed to add the target architecture
-description: >
+description: >-
   In preparation for supporting Windows Arm64, 
   the Windows build path was updated to include the target architecture.
 ---
@@ -46,9 +46,8 @@ If you use [`package:msix`][], update to version 3.15.0 or newer.
 
 ## Timeline
 
-Landed in version: TBD
-
-In stable release: TBD
+Landed in version: 3.15.0-0.0.pre<br>
+In stable release: 3.16
 
 ## References
 

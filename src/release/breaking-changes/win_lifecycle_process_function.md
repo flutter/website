@@ -40,6 +40,11 @@ LRESULT Window::Messagehandler(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam
 }
 ```
 
+## Timeline
+
+Landed in version: 3.14.0-3.0.pre<br>
+In stable release: 3.16
+
 ## References
 
 Relevant PRs:

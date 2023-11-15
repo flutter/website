@@ -174,7 +174,7 @@ menuButtonTheme: MenuButtonThemeData(
 ## Timeline
 
 Landed in version: 3.14.0-11.0.pre<br>
-In stable release: TBD
+In stable release: 3.16
 
 ## References
 

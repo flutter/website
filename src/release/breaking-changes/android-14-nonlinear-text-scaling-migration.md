@@ -48,7 +48,7 @@ It will stop working once that API is removed from the Flutter API.
 ## Timeline
 
 Landed in version: 3.14.0-11.0.pre<br>
-In stable release: not yet (Not in 3.13)
+In stable release: 3.16
 
 ## References
 
@@ -64,7 +64,7 @@ Relevant PRs:
 
 * [Implementing TextScaler for nonlinear text scaling][]
 
-Seealso: 
+See also: 
 
 * [Deprecate `textScaleFactor` in favor of `TextScaler`][]
 

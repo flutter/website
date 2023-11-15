@@ -324,7 +324,7 @@ return PopScope(
 ## Timeline
 
 Landed in version: 3.14.0-7.0.pre<br>
-In stable release: not yet
+In stable release: 3.16
 
 ## References
 
