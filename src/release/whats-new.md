@@ -6,7 +6,7 @@ description: >
 
 This page contains current and previous announcements of
 what's new on the Flutter website and blog.
-For details about what's new in the Flutter releases
+For details about what's new in the Flutter releases,
 see the [release notes][] page.
 
 To stay on top of Flutter announcements including breaking changes,
@@ -62,11 +62,21 @@ You might also check out [Dart 3.2 release][].
 The following articles were published on the [Flutter Medium][]
 publication since Flutter 3.13:
 
+* [How IBM is creating a Flutter Center of Excellence][ibm]
+* [Introducing the Flutter Consulting Directory][fcd]
+* [Developing Flutter apps for large screens][ls]
+* [Dart & Flutter DevTools Extensions][dt-ext]
+* [Building your next casual game with Flutter][games-2]
 
 [3.16-umbrella]: {{site.flutter-medium}}/flutter-3-16-dart-3-2-high-level-umbrella-post-b9218b17f0f7
 [Casual Games Toolkit]: {{site.url}}/resources/games-toolkit
 [Dart 3.2 release]: {{site.medium}}/dartlang/dart-3-2-c8de8fe1b91f
+[dt-ext]: {{site.flutter-medium}}/dart-flutter-devtools-extensions-c8bc1aaf8e5f
+[fcd]: {{site.flutter-medium}}/introducing-the-flutter-consulting-directory-f6fc4c1d2ba3
+[games-2]: {{site.flutter-medium}}/building-your-next-casual-game-with-flutter-716ef457e440
+[ibm]: {{site.flutter-medium}}/how-ibm-is-creating-a-flutter-center-of-excellence-3c6a3c025441
 [impeller]: {{site.url}}/perf/impeller
+[ls]: {{site.flutter-medium}}/developing-flutter-apps-for-large-screens-53b7b0e17f10
 [ios-app-ext]: {{site.url}}/platform-integration/ios/app-extensions
 [What's new in Flutter. 3.16]: {{site.flutter-medium}}/whats-new-in-flutter-3-16-dba6cb1015d1
 
