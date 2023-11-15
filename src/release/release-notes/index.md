@@ -13,7 +13,6 @@ releases to the stable channel.
 {{site.alert.end}}
 
 * 3.16.0
-  * [3.16.0 announcement][]
   * [3.16.0 release notes & change log][]
   * [3.16.0 breaking changes & migrations][]
 * 3.13.0
