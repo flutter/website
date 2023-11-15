@@ -3,6 +3,7 @@ title: Flutter 3.16.0 release notes
 short-title: 3.16.0 release notes
 description: Release notes for Flutter 3.16.0.
 ---
+
 This page has release notes for 3.16.0.
 For information about subsequent bug-fix releases,
 see [Hotfixes to the Stable Channel][].
@@ -12,6 +13,7 @@ see [Hotfixes to the Stable Channel][].
 ## Framework
 
 ### Framework
+
 * Super tiny code optimization: No need to redundantly check whether value has changed by @fzyzcjy in [130050](https://github.com/flutter/flutter/pull/130050)
 * Revert "fix a bug when android uses CupertinoPageTransitionsBuilder..." by @HansMuller in [130144](https://github.com/flutter/flutter/pull/130144)
 * Tiny one space formatting fix by @fzyzcjy in [130053](https://github.com/flutter/flutter/pull/130053)
@@ -498,7 +500,9 @@ see [Hotfixes to the Stable Channel][].
 * Remove assertions on getOffsetToReveal by @Piinks in [135634](https://github.com/flutter/flutter/pull/135634)
 * Cherry-pick package:web update to version 0.3.0 from 0.2.1-beta by @srujzs in [137195](https://github.com/flutter/flutter/pull/137195)
 * [flutter release cp] Reland "Fixes ability to call nextFocus() on a node to focus its desc… by @XilaiZhang in [138014](https://github.com/flutter/flutter/pull/138014)
+
 ### Tooling
+
 * Add debugging for iOS startup test flakes by @vashworth in [130099](https://github.com/flutter/flutter/pull/130099)
 * Fix XCode download link by @CaiqueR in [129795](https://github.com/flutter/flutter/pull/129795)
 * fix: duplicated Intellij IDE message when running flutter doctor by @cychiang in [129030](https://github.com/flutter/flutter/pull/129030)
@@ -626,6 +630,7 @@ see [Hotfixes to the Stable Channel][].
 * [CP][Android] Update Java/AGP/Gradle warning compatible Java range by @camsim99 in [136766](https://github.com/flutter/flutter/pull/136766)
 
 ## New Contributors
+
 * @CaiqueR made their first contribution in [129795](https://github.com/flutter/flutter/pull/129795)
 * @cychiang made their first contribution in [129030](https://github.com/flutter/flutter/pull/129030)
 * @ttanimichi made their first contribution in [129891](https://github.com/flutter/flutter/pull/129891)
@@ -663,6 +668,7 @@ see [Hotfixes to the Stable Channel][].
 ## Engine
 
 ### Android
+
 * Eagerly remove the PlatformView from the view hierarchy on Android by @johnmccutchan in [43423](https://github.com/flutter/engine/pull/43423)
 * Make updating window metrics multi-view by @dkwingsmt in [43366](https://github.com/flutter/engine/pull/43366)
 * remove include of SkPicture files from non-Fuchsia sources by @flar in [43542](https://github.com/flutter/engine/pull/43542)
@@ -734,7 +740,9 @@ see [Hotfixes to the Stable Channel][].
 * [Android] Rename `allowChannelBufferOverflow` to `setWarnsOnChannelOv… by @bleroux in [46361](https://github.com/flutter/engine/pull/46361)
 * Fix damage calculation when not providing populate_existing_damage for gl embedder by @ajihyf in [45611](https://github.com/flutter/engine/pull/45611)
 * Cherrypick disable hardware buffer platform views for 3.16 by @johnmccutchan in [46968](https://github.com/flutter/engine/pull/46968)
+
 ### iOS
+
 * [iOS] Fix FlutterViewController retain cycle by @LinXunFeng in [43379](https://github.com/flutter/engine/pull/43379)
 * Revert "[iOS][Keyboard] Wait vsync on UI thread and update viewport inset to avoid jitter." by @cyanglaz in [43422](https://github.com/flutter/engine/pull/43422)
 * Add Look Up to iOS selection controls by @LouiseHsu in [43308](https://github.com/flutter/engine/pull/43308)
@@ -796,7 +804,9 @@ see [Hotfixes to the Stable Channel][].
 * Reverts "[ios] Fix app extension not able to find assets from unloaded bundle" by @auto-submit in [46328](https://github.com/flutter/engine/pull/46328)
 * Reland "[ios] Fix app extension not able to find assets from… by @cyanglaz in [46329](https://github.com/flutter/engine/pull/46329)
 * [cp][ios] Link PlatformView back to semantics tree (#46471) by @cyanglaz in [46715](https://github.com/flutter/engine/pull/46715)
+
 ### Web
+
 * Add a flag to `ParagraphBuilder` for rounding hack migration by @LongCatIsLooong in [43118](https://github.com/flutter/engine/pull/43118)
 * Reland "Refactor JSNumber.toDart and Object.toJS" by @srujzs in [43363](https://github.com/flutter/engine/pull/43363)
 * Apply the transform of an image filter layer to paint bounds in the CanvasKit backend by @jason-simmons in [43353](https://github.com/flutter/engine/pull/43353)
@@ -884,7 +894,9 @@ see [Hotfixes to the Stable Channel][].
 * [canvaskit] Use DirectionalLight_Shadow flag for drawing shadows by @harryterkelsen in [46292](https://github.com/flutter/engine/pull/46292)
 * Update to use GrDirectContexts::MakeGL by @kjlubick in [46308](https://github.com/flutter/engine/pull/46308)
 * [canvaskit] Do not double-apply ImageFilter transform to children by @harryterkelsen in [46336](https://github.com/flutter/engine/pull/46336)
+
 ### Desktop
+
 * [Windows] Fix `FlutterWindow::GetNativeViewAccessible` crash by @loic-sharma in [43368](https://github.com/flutter/engine/pull/43368)
 * Use Windows Display Language by @yaakovschectman in [43341](https://github.com/flutter/engine/pull/43341)
 * [macOS] Fix assertion typo by @loic-sharma in [43179](https://github.com/flutter/engine/pull/43179)
@@ -921,6 +933,7 @@ see [Hotfixes to the Stable Channel][].
 * Reland: [macOS] performKeyEquivalent cleanup by @knopp in [46377](https://github.com/flutter/engine/pull/46377)
 
 ## New Contributors
+
 * @dballard made their first contribution in [42555](https://github.com/flutter/engine/pull/42555)
 * @gmittert made their first contribution in [43567](https://github.com/flutter/engine/pull/43567)
 * @XuanTung95 made their first contribution in [43807](https://github.com/flutter/engine/pull/43807)
