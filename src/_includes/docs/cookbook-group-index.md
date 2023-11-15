@@ -6,4 +6,4 @@
 
 {% for recipe in recipes -%}
 - [{{ recipe.title }}]({{ recipe.url }})
-{% endfor %}
+{% endfor -%}

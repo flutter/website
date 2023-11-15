@@ -20,9 +20,10 @@ document.addEventListener("DOMContentLoaded", function(_) {
   setupTabs($('#vscode-to-vs-setup'), 'dev.flutter.debug.vscode-to-vs');
   setupTabs($('#add-to-app-android'), 'dev.flutter.add-to-app.android');
   setupTabs($('#add-to-app-android-deps'), 'dev.flutter.add-to-app.android.deps');
-
-
   setupTabs($('#ios-versions'), 'dev.flutter.ios-versions');
+  setupTabs($('#china-os-tabs'), 'dev.flutter.china-os');
+  setupTabs($('#china-os-dl-tabs'), 'dev.flutter.china-os-dl');
+  setupTabs($('#china-os-pub-tabs'), 'dev.flutter.china-os-pub');
 
   prettyPrint();
 });

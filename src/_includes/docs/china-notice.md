@@ -1,5 +1,5 @@
 {{site.alert.important}}
-  If you're in China, read [Using Flutter in China][].
+  If you develop apps in China, check out [using Flutter in China][].
 {{site.alert.end}}
 
-[Using Flutter in China]: {{site.url}}/community/china
+[using Flutter in China]: {{site.url}}/community/china
