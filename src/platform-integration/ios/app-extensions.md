@@ -108,7 +108,9 @@ To have a URL open a specified route in your app, you can use
 
 Some app extensions display a user interface.
 
-For example, Share Extensions allow users to conveniently share content with other apps. One example of Share Extension is to share a picture and post a comment on a social media app.
+For example, share extensions allow users to conveniently
+share content with other apps,
+such as sharing a picture to create a new post on a social media app.
 
 <figure class="site-figure {{include.class}}">
     <div class="site-figure-container">
@@ -127,20 +129,31 @@ as described in the following section.
 {{site.alert.note}}
   Due to the memory limitations of app extensions,
   it is only recommended to use Flutter to build app extension UI
-  for extension types that have memory limits larger than 100mb.
-  Share Extensions for example, which has a 120mb memory limit. In addition, Flutter uses extra memories in debug mode. Thus Flutter does not fully support running app extension in debug mode on physical devices when used to build extension UI. Alternatively, use simulator to test in debug mode.
+  for extension types that have memory limits larger than 100MB.
+  For example, share extensions which have a 120MB memory limit.
+
+  In addition, Flutter uses extra memory in debug mode.
+  Therefore, Flutter does not fully support running app extensions in
+  debug mode on physical devices when used to build extension UI.
+  As an alternative, use an iOS simulator to test your extension in debug mode.
 {{site.alert.end}}
 
-1. Locate the Extension Safe Flutter.xcframework, at <path_to_flutter_sdk>/bin/cache/artifacts/engine/ios/extension_safe/Flutter.xcframework.
-    * If you would like to build for release or profile mode, find the framework under ios-profile or ios-release folder
+1. Locate the extension-safe `Flutter.xcframework` file,
+   at `<path_to_flutter_sdk>/bin/cache/artifacts/engine/ios/extension_safe/Flutter.xcframework`.
+   
+    * If you would like to build for release or profile mode, find the
+      framework file under the `ios-profile` or `ios-release` folder.
 
-1. Drag and drop the Flutter.xcframework file into the Share Extension's frameworks and libraries list. Make sure the embed column says Embed & Sign
-<figure class="site-figure {{include.class}}">
-    <div class="site-figure-container">
-        <img src='/assets/images/docs/development/platform-integration/app-extensions/embed-framework.png'
-        height='300'>
-    </div>
-</figure>
+1. Drag and drop the `Flutter.xcframework` file into your
+   share extension's frameworks and libraries list.
+   Make sure the embed column says "Embed & Sign".
+
+   <figure class="site-figure {{include.class}}">
+       <div class="site-figure-container">
+           <img src='/assets/images/docs/development/platform-integration/app-extensions/embed-framework.png'
+           height='300'>
+       </div>
+   </figure>
 
 1. Open the Flutter app project settings in Xcode to share build
    configurations. 
@@ -149,8 +162,8 @@ as described in the following section.
    1. Expand the **Configurations** group. 
    1. Expand the **Debug**, **Profile**, and **Release** entries.
    1. For each of these configurations, make sure the value in the
-       **Based on configuration file** drop-down menu for your
-       extension matches the one selected for the normal app target.
+      **Based on configuration file** drop-down menu for your
+      extension matches the one selected for the normal app target.
 
     <figure class="site-figure {{include.class}}">
         <div class="site-figure-container">
@@ -160,9 +173,15 @@ as described in the following section.
     </figure>
 
 1. (Optional) Replace any storyboard files with an extension class if needed.
-    1. In the **Info.plist** file, delete the **NSExtensionMainStoryboard** property.
+   
+    1. In the `Info.plist` file,
+       delete the **NSExtensionMainStoryboard** property.
     1. Add the **NSExtensionPrincipalClass** property.
-    1. Set this value for this property to the entry point of the extension. For example, for Share Extension, it is usually {$YourShareExtensionTargetName}.ShareViewController. If you use Objective-C as the programming language of the extension, you should omit the {$YourShareExtensionTargetName}. part.
+    1. Set the value for this property to the entry point of the extension.
+       For example, for share extensions, it is usually
+       `<YourShareExtensionTargetName>.ShareViewController`.
+       If you use Objective-C to implement the extension,
+       you should omit the `<YourShareExtensionTargetName>.` portion.<br>
 
     <figure class="site-figure {{include.class}}">
         <div class="site-figure-container">
@@ -174,14 +193,13 @@ as described in the following section.
 
 1. Embed the `FlutterViewController` as described in
    [Adding a Flutter Screen][]. For example, you can display a
-   specific route in your Flutter app within a Share Extension.
+   specific route in your Flutter app within a share extension.
 
     ```swift
     import UIKit
     import Flutter
 
     class ShareViewController: UIViewController {
-
         override func viewDidLoad() {
             super.viewDidLoad()
             showFlutter()
