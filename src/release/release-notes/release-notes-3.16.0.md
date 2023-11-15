@@ -10,7 +10,7 @@ see [Hotfixes to the Stable Channel][].
 
 [Hotfixes to the Stable Channel]: {{site.github}}/flutter/flutter/wiki/Hotfixes-to-the-Stable-Channel
 
-## Framework
+## Flutter
 
 ### Framework
 
