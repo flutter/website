@@ -31,8 +31,8 @@ You might also check out [Dart 3.2 release][].
 
 **Docs updated or added since the 3.13 release**
 
-* As of this release, the <b>default theme for
-  Material Flutter apps is Material 3</b>.
+* As of this release, the **default theme for
+  Material Flutter apps is Material 3**.
   Unless you explicitly specify Material 2
   (with `useMaterial3: false`)
   in your app's theme, your app _will_ look
@@ -48,7 +48,7 @@ You might also check out [Dart 3.2 release][].
   check out [Casual Games Toolkit][] and
   make sure to look at the side nav!
 * The Impeller runtime is now
-  <b>available for Android on Vulkan devices</b>
+  **available for Android on Vulkan devices**
   behind the `--enable-impeller` flag.
   For more information, check out
   the [Impeller rendering engine][impeller] page.
