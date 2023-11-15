@@ -18,3 +18,11 @@ jobs:
           submodules: recursive
       - name: Build site and check links
         run: make build BUILD_CONFIGS=_config.yml,_config_stage.yml
+      - uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65
+        with:
+          node-version: 20
+      - run: npm install -g firebase-tools@12.9.1
+      - uses: dart-lang/setup-dart@b64355ae6ca0b5d484f0106a033dd1388965d06d
+        with:
+         sdk: stable
+      - run: tool/check-links.sh  

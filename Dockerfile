@@ -54,10 +54,6 @@ RUN mkdir -p /etc/apt/keyrings \
     && apt-get install nodejs -yq \
     && npm install -g npm # Ensure latest npm
 
-# Install global Firebase CLI
-RUN npm install -g firebase-tools@12.7.0
-
-
 
 # ============== FLUTTER CODE TESTS ==============
 FROM flutter AS tests
@@ -115,9 +111,3 @@ ARG BUILD_CONFIGS=_config.yml
 ENV BUILD_CONFIGS=$BUILD_CONFIGS
 RUN bundle exec jekyll build --config $BUILD_CONFIGS
 
-
-
-# ============== TEST BUILT SITE LINKS ==============
-FROM build as checklinks
-
-CMD ["tool/check-links.sh"]
