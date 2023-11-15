@@ -190,7 +190,8 @@ in v2.12.
 
 The `SelectionOverlay.fadeDuration` property replaces `TextSelectionOverlay.fadeDuration`.
 With the `TextSelectionOverlay` refactor,
-`SelectionOverlay` was added as a more generic widget without the specific dependency on `RenderEditable`.
+`SelectionOverlay` was added as a more generic widget without
+the specific dependency on `RenderEditable`.
 
 **Migration guide**
 

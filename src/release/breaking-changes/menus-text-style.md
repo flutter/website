@@ -1,6 +1,6 @@
 ---
 title: Updated default text styles for menus
-description: >
+description: >-
   The default text styles for menus are updated to
   match the Material 3 specification.
 ---
