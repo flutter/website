@@ -580,7 +580,7 @@ of 5 star icons, and text:
 
 <?code-excerpt "layout/pavlova/lib/main.dart (ratings)" replace="/ratings/[!$&!]/g"?>
 ```dart
-var stars = Row(
+final stars = Row(
   mainAxisSize: MainAxisSize.min,
   children: [
     Icon(Icons.star, color: Colors.green[500]),
