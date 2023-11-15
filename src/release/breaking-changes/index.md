@@ -31,34 +31,37 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Deprecate `TextField.canRequestFocus`][]
+* [Accessibility traversal order of tooltip changed][]
+
+[Deprecate `TextField.canRequestFocus`]: {{site.url}}/release/breaking-changes/can-request-focus
+[Accessibility traversal order of tooltip changed]: {{site.url}}/release/breaking-changes/tooltip-semantics-order
+
+### Released in Flutter 3.16
+
 * [The `ThemeData.useMaterial3` property is now set to true by default][]
+* [Deprecated API removed after v3.13][]
 * [Customize tabs alignment using the new `TabBar.tabAlignment` property][]
 * [Deprecate `textScaleFactor` in favor of `TextScaler`][]
-* [Android 14 nonlinear font scaling enabled after v3.14][]
-* [Deprecate TextField.canRequestFocus][]
+* [Android 14 nonlinear font scaling enabled][]
 * [Deprecate `describeEnum` and update `EnumProperty` to be type strict][]
 * [Deprecated just-in-time navigation pop APIs for Android Predictive Back][]
 * [Deprecated `Paint.enableDithering`][]
 * [Updated default text styles for menus][]
 * [Windows: External windows should notify Flutter engine of lifecycle changes][]
 * [Windows build path changed to add the target architecture][]
-* [Deprecated API removed after v3.13][]
-* [Accessibility traversal order of tooltip changed][]
 
 [The `ThemeData.useMaterial3` property is now set to true by default]: {{site.url}}/release/breaking-changes/material-3-default
+[Deprecated API removed after v3.13]: {{site.url}}/release/breaking-changes/3-13-deprecations
 [Customize tabs alignment using the new `TabBar.tabAlignment` property]: {{site.url}}/release/breaking-changes/tab-alignment
 [Deprecate `textScaleFactor` in favor of `TextScaler`]: {{site.url}}/release/breaking-changes/deprecate-textscalefactor
-[Android 14 nonlinear font scaling enabled after v3.14]: {{site.url}}/release/breaking-changes/android-14-nonlinear-text-scaling-migration
-[Deprecate TextField.canRequestFocus]: {{site.url}}/release/breaking-changes/can-request-focus
+[Android 14 nonlinear font scaling enabled]: {{site.url}}/release/breaking-changes/android-14-nonlinear-text-scaling-migration
 [Deprecate `describeEnum` and update `EnumProperty` to be type strict]: {{site.url}}/release/breaking-changes/describe-enum
 [Deprecated just-in-time navigation pop APIs for Android Predictive Back]: {{site.url}}/release/breaking-changes/android-predictive-back
 [Deprecated `Paint.enableDithering`]: {{site.url}}/release/breaking-changes/paint-enableDithering
 [Updated default text styles for menus]: {{site.url}}/release/breaking-changes/menus-text-style
-[Windows: External windows should notify Flutter engine of lifecycle changes]: {{site.url}}/release/breaking-changes/win_lifecycle_process_function
+[Windows: External windows should notify Flutter engine of lifecycle changes]: {{site.url}}/release/breaking-changes/win-lifecycle-process-function
 [Windows build path changed to add the target architecture]: {{site.url}}/release/breaking-changes/windows-build-architecture
-[Deprecated API removed after v3.13]: {{site.url}}/release/breaking-changes/3-13-deprecations
-[Accessibility traversal order of tooltip changed]: {{site.url}}/release/breaking-changes/tooltip-semantics-order
-
 
 ### Released in Flutter 3.13
 

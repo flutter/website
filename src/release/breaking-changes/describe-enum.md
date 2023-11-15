@@ -1,6 +1,6 @@
 ---
 title: Migration guide for describeEnum and EnumProperty
-description: Removal of describeEnum and how to migrate
+description: Learn about the removal of describeEnum and how to migrate.
 ---
 
 ## Summary
@@ -41,10 +41,11 @@ you can no longer pass it a non-`Enum` class.
 
 ## Migration guide
 
-If you previously used `describeEnum(Enum.field)` to access the string value from
-an enum, you can now call `Enum.field.name`.
+If you previously used `describeEnum(Enum.field)` to access the
+string value from an enum, you can now call `Enum.field.name`.
 
-If you previously used `EnumProperty<NotAnEnum>`, you can now use the generic `DiagnosticsProperty<NotAnEnum>`.
+If you previously used `EnumProperty<NotAnEnum>`, you can
+now use the generic `DiagnosticsProperty<NotAnEnum>`.
 
 Code before migration:
 
@@ -71,16 +72,14 @@ properties.add(DiagnosticsProperty<TextInputType>( ... ));
 ## Timeline
 
 Landed in version: 3.14.0-2.0.pre<br>
-In stable release: not yet
+In stable release: 3.16
 
 ## References
 
 API documentation:
 
-* [`describeEnum` stable][]
-* [`describeEnum` main][]
-* [`EnumProperty` stable][]
-* [`EnumProperty` main][]
+* [`describeEnum`][]
+* [`EnumProperty`][]
 
 Relevant issues:
 
@@ -90,10 +89,8 @@ Relevant PRs:
 
 * [Deprecate `describeEnum` PR][]
 
-[`describeEnum` stable]: {{site.api}}/flutter/lib/src/foundation/describeEnum.html
-[`EnumProperty` stable]: {{site.api}}/flutter/lib/src/foundation/EnumProperty.html
-[`describeEnum` main]: {{site.main-api}}/flutter/lib/src/foundation/describeEnum.html
-[`EnumProperty` main]: {{site.main-api}}/flutter/lib/src/foundation/describeEnum.html
+[`describeEnum`]: {{site.api}}/flutter/lib/src/foundation/describeEnum.html
+[`EnumProperty`]: {{site.api}}/flutter/lib/src/foundation/EnumProperty.html
 
 [Cleanup SemanticsFlag and SemanticsAction issue]: {{site.repo.flutter}}/issues/123346
 [Deprecate `describeEnum` PR]: {{site.repo.flutter}}/pull/125016
