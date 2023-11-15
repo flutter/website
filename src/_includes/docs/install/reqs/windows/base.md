@@ -1,4 +1,6 @@
-Complete this guide in sequence. Skipping steps is the primary source of errors.
+{{site.alert.important}}
+Perform this guide in sequence. Skipping steps can cause errors.
+{{site.alert.end}}
 
 ## System requirements
 
@@ -54,12 +56,12 @@ syntax highlighting, widget editing assists, debugging, and other features.
 
 Popular options include:
 
+* [Visual Studio Code][] {{site.appmin.vscode}} or later
+  with the [Flutter extension for VS Code][].
 * [Android Studio][] {{site.appmin.android_studio}} or later
   with the [Flutter plugin for IntelliJ][].
 * [IntelliJ IDEA][] {{site.appmin.intellij_idea}} or later
   with the [Flutter plugin for IntelliJ][].
-* [Visual Studio Code][] {{site.appmin.vscode}} or later
-  with the [Flutter extension for VS Code][].
 
 {{site.alert.recommend}}
   The Flutter team recommends installing [Visual Studio Code][]
