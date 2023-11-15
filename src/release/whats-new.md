@@ -78,7 +78,7 @@ publication since Flutter 3.13:
 [impeller]: {{site.url}}/perf/impeller
 [ls]: {{site.flutter-medium}}/developing-flutter-apps-for-large-screens-53b7b0e17f10
 [ios-app-ext]: {{site.url}}/platform-integration/ios/app-extensions
-[What's new in Flutter. 3.16]: {{site.flutter-medium}}/whats-new-in-flutter-3-16-dba6cb1015d1
+[What's new in Flutter 3.16]: {{site.flutter-medium}}/whats-new-in-flutter-3-16-dba6cb1015d1
 
 ## 16 August 2023: 3.13 release
 
