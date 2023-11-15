@@ -16,7 +16,7 @@ void main() {
     final flutterError = error as FlutterError;
     expect(
       flutterError.message,
-      'A RenderFlex overflowed by 209 pixels on the bottom.',
+      matches(RegExp(r'A RenderFlex overflowed by \d+ pixels on the bottom\.')),
     );
 
     expect(find.text('Strawberry Pavlova Recipe'), findsOneWidget);

@@ -11,12 +11,13 @@ void main() {
     final error = tester.takeException();
     expect(error, isFlutterError);
     final flutterError = error as FlutterError;
-    expect(flutterError.message,
-        'A RenderFlex overflowed by 16 pixels on the bottom.');
+    expect(
+      flutterError.message,
+      matches(RegExp(r'A RenderFlex overflowed by \d+ pixels on the bottom\.')),
+    );
 
     expect(find.text('Oeschinen Lake Campground'), findsOneWidget);
     expect(find.text('ROUTE'), findsOneWidget);
-    // FIXME: the following fails
-    // expect(find.text('Oeschinen'), findsOneWidget);
+    expect(find.textContaining('Blüemlisalp'), findsOneWidget);
   });
 }

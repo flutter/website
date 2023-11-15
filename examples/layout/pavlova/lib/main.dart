@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
 
 void main() {
-  debugPaintSizeEnabled = false; // Set to true for visual layout
+  debugPaintSizeEnabled = false; // Set to true for visual layout.
   runApp(const MyApp());
 }
 
@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
     );
 
     // #docregion ratings, stars
-    var stars = Row(
+    final stars = Row(
       mainAxisSize: MainAxisSize.min,
       children: [
         Icon(Icons.star, color: Colors.green[500]),
