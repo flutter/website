@@ -19,7 +19,7 @@ env:
 
 jobs:
   test:
-    name: Check code excerpts and run tests
+    name: Check excerpts and run tests
     runs-on: ubuntu-latest
     if: github.repository == 'flutter/website'
     strategy:
@@ -64,7 +64,7 @@ jobs:
       - run: tool/check-links.sh
 
   deploy:
-    name: Deploy to production Firebase instance
+    name: Deploy to production
     needs: test
     runs-on: ubuntu-latest
     if: |
