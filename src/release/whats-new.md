@@ -20,23 +20,55 @@ and review the [Dart changelog][].
 [Dart Announce]: https://groups.google.com/a/dartlang.org/g/announce
 [Dart changelog]: {{site.github}}/dart-lang/sdk/blob/main/CHANGELOG.md
 
-## 15 November 2023: 3.15 release ??
+## 15 November 2023: 3.16 release
 
-Flutter 3.13 is live! For more information,
-check out the xxx[Flutter 3.13 blog post][blog-general].
+Flutter 3.16 is live! For more information,
+check out the [Flutter 3.16 blog post][3.16-umbrella]
+and the technical [What's new in Flutter 3.16][]
+blog post.
 
-You might also check out 
-xxx[Dart 3.1 & a retrospective on functional style programming in Dart 3][].
+You might also check out [Dart 3.2 release][].
 
 **Docs updated or added since the 3.13 release**
 
-- new games packages/page
-- new recipes for games
-- 
-- M3 by default
-* The Impeller runtime is now available for Android
-  behind a flag. For more information, check out
+* As of this release, the <b>default theme for
+  Material Flutter apps is Material 3</b>.
+  Unless you explicitly specify Material 2
+  (with `useMaterial3: false`)
+  in your app's theme, your app _will_ look
+  different once you've updated.
+* While the Flutter Casual Games Toolkit isn't
+  technically _part_ of the 3.16 release, 
+  we've release a significant update of
+  the toolkit _alongside_ the 3.16 release.
+  This update includes three completely new
+  games code templates, three new games cookbook
+  recipes, and a general reorganization of
+  our games toolkit docs. For more information,
+  check out [Casual Games Toolkit][] and
+  make sure to look at the side nav!
+* The Impeller runtime is now
+  <b>available for Android on Vulkan devices</b>
+  behind the `--enable-impeller` flag.
+  For more information, check out
   the [Impeller rendering engine][impeller] page.
+* You can now add Apple iOS app extensions to
+  your Flutter app when running on iOS.
+  To learn more, check out
+  [Adding iOS app extensions][ios-app-ext].
+
+**Articles**
+
+The following articles were published on the [Flutter Medium][]
+publication since Flutter 3.13:
+
+
+[3.16-umbrella]: {{site.flutter-medium}}/flutter-3-16-dart-3-2-high-level-umbrella-post-b9218b17f0f7
+[Casual Games Toolkit]: {{site.url}}/resources/games-toolkit
+[Dart 3.2 release]: {{site.medium}}/dartlang/dart-3-2-c8de8fe1b91f
+[impeller]: {{site.url}}/perf/impeller
+[ios-app-ext]: {{site.url}}/platform-integration/ios/app-extensions
+[What's new in Flutter. 3.16]: {{site.flutter-medium}}/whats-new-in-flutter-3-16-dba6cb1015d1
 
 ## 16 August 2023: 3.13 release
 
@@ -86,7 +118,6 @@ recipes into the sidenav.
 [breaking-changes]: {{site.url}}/release/breaking-changes
 [deprecated-3.10]: {{site.url}}/release/breaking-changes/3-10-deprecations
 [editable-onCaretChanged]: {{site.url}}/release/breaking-changes/editable-text-scroll-into-view
-[impeller]: {{site.url}}/perf/impeller
 [oem]: {{site.url}}/testing/native-debugging?tab=from-vscode-to-xcode-ios
 [pointer]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
 [scrolling-overview]: {{site.url}}/ui/layout/scrolling
