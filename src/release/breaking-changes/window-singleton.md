@@ -96,7 +96,7 @@ Code before migration:
 Widget build(BuildContext context) {
   final double dpr = WidgetsBinding.instance.window.devicePixelRatio;
   final Locale locale = WidgetsBinding.instance.window.locale;
-  return Text('The device pixel ratio is $pdr and the locale is $locale.');
+  return Text('The device pixel ratio is $dpr and the locale is $locale.');
 }
 ```
 
@@ -106,7 +106,7 @@ Code after migration:
 Widget build(BuildContext context) {
   final double dpr = View.of(context).devicePixelRatio;
   final Locale locale = View.of(context).platformDispatcher.locale;
-  return Text('The device pixel ratio is $pdr and the locale is $locale.');
+  return Text('The device pixel ratio is $dpr and the locale is $locale.');
 }
 ```
 

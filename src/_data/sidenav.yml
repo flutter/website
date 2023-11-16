@@ -65,10 +65,20 @@
   children:
     - title: Games
       children:
-        - title: Create a casual game
+        - title: Overview
           permalink: /resources/games-toolkit
-        - title: Build a game with Flame
-          permalink: https://codelabs.developers.google.com/codelabs/flutter-flame-game
+        - title: Add achievements and leaderboards
+          permalink: /cookbook/games/achievements-leaderboard
+        - title: Add advertising
+          permalink: /cookbook/plugins/google-mobile-ads
+        - title: Add multiplayer support
+          permalink: /cookbook/games/firestore-multiplayer
+        - title: Add in-app purchases
+          permalink: https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases#0
+        - title: Add user authentication
+          permalink: https://firebase.google.com/codelabs/firebase-auth-in-flutter-apps#0
+        - title: Debug using Crashlytics
+          permalink: https://firebase.flutter.dev/docs/crashlytics/overview/
     - title: News
       children:
         - title: Build a news app

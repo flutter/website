@@ -39,7 +39,9 @@ VOLUME /flutter
 # NOTE You will get a warning "Woah! You appear to be trying to run flutter as root."
 # and this is to be disregarded since this image is never deployed to production.
 RUN flutter doctor
-RUN flutter --version
+RUN flutter config --no-analytics  \
+    && flutter config --no-cli-animations  \
+    && flutter --version
 RUN dart pub get
 
 
@@ -53,10 +55,6 @@ RUN mkdir -p /etc/apt/keyrings \
     && apt-get update -yq \
     && apt-get install nodejs -yq \
     && npm install -g npm # Ensure latest npm
-
-# Install global Firebase CLI
-RUN npm install -g firebase-tools@12.7.0
-
 
 
 # ============== FLUTTER CODE TESTS ==============
@@ -115,9 +113,3 @@ ARG BUILD_CONFIGS=_config.yml
 ENV BUILD_CONFIGS=$BUILD_CONFIGS
 RUN bundle exec jekyll build --config $BUILD_CONFIGS
 
-
-
-# ============== TEST BUILT SITE LINKS ==============
-FROM build as checklinks
-
-CMD ["tool/check-links.sh"]

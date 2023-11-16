@@ -1,6 +1,6 @@
 ---
 title: Android Predictive Back
-description: >
+description: >-
   The ability to control back navigation at the time that a back gesture is
   received has been replaced with an ahead-of-time navigation API in order to
   support Android 14's Predictive Back feature.
@@ -31,10 +31,11 @@ navigation at the time that a back gesture is received are now deprecated. They
 have been replaced with equivalent APIs that maintain a boolean state at all
 times that dictates whether or not back navigation is possible. When it is, the
 predictive back animation happens as usual. Otherwise, navigation is stopped. In
-both cases, the app developer is informed that a back was attempted and whether
-or not it was successful.
+both cases, the app developer is informed that a back was attempted and
+whether it was successful.
 
 ### `PopScope`
+
 The `PopScope` class directly replaces `WillPopScope`. Instead of deciding
 whether a pop is possible at the time it occurs, this is set ahead of time with
 the `canPop` boolean. You can still listen to pops by using `onPopInvoked`.
@@ -49,6 +50,7 @@ PopScope(
 ```
 
 ### `Form.canPop` and `Form.onPopInvoked`
+
 These two new parameters are based on `PopScope` and replace the deprecated
 `Form.onWillPop` parameter. They are used with `PopScope` in the same way as
 above.
@@ -63,6 +65,7 @@ Form(
 ```
 
 ### `Route.popDisposition`
+
 This getter synchronously returns the `RoutePopDisposition` for the route, which
 describes how pops will behave.
 
@@ -73,6 +76,7 @@ if (myRoute.popDisposition == RoutePopDisposition.doNotPop) {
 ```
 
 ### `ModalRoute.registerPopInterface` and `ModalRoute.unregisterPopInterface`
+
 Use these methods to register `PopScope` widgets, to be evaluated when the route
 decides whether it can pop. This functionality might be used when implementing a
 custom `PopScope` widget.
@@ -93,6 +97,7 @@ void didChangeDependencies() {
 ## Migration guide
 
 ### Migrating from `WillPopScope` to `PopScope`
+
 The direct replacement of the `WillPopScope` widget is the `PopScope` widget.
 In many cases, logic that was being run at the time of the back gesture in
 `onWillPop` can be done at build time and set to `canPop`.
@@ -147,6 +152,7 @@ PopScope(
 ```
 
 ### Migrating from `WillPopScope` to `NavigatorPopHandler` for nested `Navigator`s
+
 A very common use case of `WillPopScope` was to properly handle back gestures
 when using nested `Navigator` widgets. It's possible to do this using `PopScope`
 as well, but there is now a wrapper widget that makes this even easier:
@@ -177,12 +183,14 @@ NavigatorPopHandler(
 ```
 
 ### Migrating from `Form.onWillPop` to `Form.canPop` and `Form.onPopInvoked`
+
 Previously, `Form` used a `WillPopScope` instance under the hood and exposed its
 `onWillPop` method. This has been replaced with a `PopScope` that exposes its
 `canPop` and `onPopInvoked` methods. Migrating is identical to migrating from
 `WillPopScope` to `PopScope`, detailed above.
 
 ### Migrating from `Route.willPop` to `Route.popDisposition`
+
 `Route`'s `willPop` method returned a `Future<RoutePopDisposition>` to
 accommodate the fact that pops could be canceled.  Now that that's no longer
 true, this logic has been simplified to a synchronous getter.
@@ -204,6 +212,7 @@ if (myRoute.popDisposition == RoutePopDisposition.doNotPop) {
 ```
 
 ### Migrating from `ModalRoute.add/removeScopedWillPopCallback` to `ModalRoute.(un)registerPopInterface`
+
 Internally, `ModalRoute` kept track of the existence of `WillPopScope`s in its
 widget subtree by registering them with `addScopedWillPopCallback` and
 `removeScopedWillPopCallback`. Since `PopScope` replaces `WillPopScope`, these
@@ -244,6 +253,7 @@ void didChangeDependencies() {
 ```
 
 ### Migrating from `ModalRoute.hasScopedWillPopCallback` to `ModalRoute.popDisposition`
+
 This method was previously used for a use-case very similar to Predictive Back
 but in the Cupertino library, where certain back transitions allowed canceling
 the navigation. The route transition was disabled when there was even the
@@ -324,11 +334,9 @@ return PopScope(
 ## Timeline
 
 Landed in version: 3.14.0-7.0.pre<br>
-In stable release: not yet
+In stable release: 3.16
 
 ## References
-
-{% include docs/main-api.md %}
 
 API documentation:
 
@@ -352,14 +360,14 @@ Relevant PRs:
 * [Predictive Back support for root routes][]
 * [Platform channel for predictive back][]
 
-[`PopScope`]: {{site.main-api}}/flutter/widgets/PopScope-class.html
-[`NavigatorPopHandler`]: {{site.main-api}}/flutter/widgets/NavigatorPopHandler-class.html
-[`PopInterface`]: {{site.main-api}}/flutter/widgets/PopInterface-class.html
-[`Form.canPop`]: {{site.main-api}}/flutter/widgets/Form/canPop.html
-[`Form.onPopInvoked`]: {{site.main-api}}/flutter/widgets/Form/onPopInvoked.html
-[`Route.popDisposition`]: {{site.main-api}}/flutter/widgets/Route/popDisposition.html
-[`ModalRoute.registerPopInterface`]: {{site.main-api}}/flutter/widgets/ModalRoute/registerPopInterface.html
-[`ModalRoute.unregisterPopInterface`]: {{site.main-api}}/flutter/widgets/ModalRoute/unregisterPopInterface.html
+[`PopScope`]: {{site.api}}/flutter/widgets/PopScope-class.html
+[`NavigatorPopHandler`]: {{site.api}}/flutter/widgets/NavigatorPopHandler-class.html
+[`PopInterface`]: {{site.api}}/flutter/widgets/PopInterface-class.html
+[`Form.canPop`]: {{site.api}}/flutter/widgets/Form/canPop.html
+[`Form.onPopInvoked`]: {{site.api}}/flutter/widgets/Form/onPopInvoked.html
+[`Route.popDisposition`]: {{site.api}}/flutter/widgets/Route/popDisposition.html
+[`ModalRoute.registerPopInterface`]: {{site.api}}/flutter/widgets/ModalRoute/registerPopInterface.html
+[`ModalRoute.unregisterPopInterface`]: {{site.api}}/flutter/widgets/ModalRoute/unregisterPopInterface.html
 
 [Issue 109513]: {{site.repo.flutter}}/issues/109513
 [Predictive back support for root routes]: {{site.repo.flutter}}/pull/120385
