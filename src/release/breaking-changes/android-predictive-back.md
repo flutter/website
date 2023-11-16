@@ -144,7 +144,7 @@ Code after migration:
 ```dart
 PopScope(
   canPop: true,
-  onPopInvoked (bool didPop) {
+  onPopInvoked: (bool didPop) {
     _myHandleOnPopMethod();
   },
   child: ...
