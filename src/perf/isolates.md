@@ -179,21 +179,9 @@ parse JSON in the background, see [this cookbook recipe][].
 
 [this cookbook recipe]: {{site.url}}/cookbook/networking/background-parsing
 
-### Isolates on the web
-
-Dart doesn't support isolates on web platforms.
-If you're targeting the web with your Flutter app,
-you should use the `compute` method.
-The [`compute()`][] method runs the computation on
-the main thread on the web,
-but spawns a new thread on mobile devices.
-On mobile and desktop platforms
-`await compute(fun, message)`
-is equivalent to `await Isolate.run(() => fun(message))`.
-
 ## Stateful, longer-lived isolates
 
-[`compute()`][] abstracts a handful of lower-level, 
+[`Isolate.run`][] abstracts a handful of lower-level, 
 isolate-related APIs to  simplify isolate management:
 
 - [`Isolate.spawn()`][] and [`Isolate.exit()`][]
@@ -298,12 +286,20 @@ to the new isolate.
 This is how isolates are meant to function,
 and it's important to keep in mind when you're considering using isolates.
 
-### Web platforms
+### Web platforms and compute
 
 Dart web platforms, including Flutter web,
 don't support isolates.
-Using `compute` in a web application calls the callback on the main isolate.
-For more information,
+If you're targeting the web with your Flutter app,
+you can use the `compute` method to ensure your code compiles. 
+The [`compute()`][] method runs the computation on
+the main thread on the web,
+but spawns a new thread on mobile devices.
+On mobile and desktop platforms
+`await compute(fun, message)`
+is equivalent to `await Isolate.run(() => fun(message))`.
+
+For more information on concurrency on the web,
 check out the [concurrency documentation][] on dart.dev.
 
 [concurrency documentation]: {{site.dart-site}}/language/concurrency
