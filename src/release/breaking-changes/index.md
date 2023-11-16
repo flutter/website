@@ -39,6 +39,7 @@ release, and listed in alphabetical order:
 
 ### Released in Flutter 3.16
 
+* [Migrate ShortcutActivator and ShortcutManager to KeyEvent system][]
 * [The `ThemeData.useMaterial3` property is now set to true by default][]
 * [Deprecated API removed after v3.13][]
 * [Customize tabs alignment using the new `TabBar.tabAlignment` property][]
@@ -51,6 +52,7 @@ release, and listed in alphabetical order:
 * [Windows: External windows should notify Flutter engine of lifecycle changes][]
 * [Windows build path changed to add the target architecture][]
 
+[Migrate ShortcutActivator and ShortcutManager to KeyEvent system]: {{site.url}}/release/breaking-changes/shortcut-key-event-migration
 [The `ThemeData.useMaterial3` property is now set to true by default]: {{site.url}}/release/breaking-changes/material-3-default
 [Deprecated API removed after v3.13]: {{site.url}}/release/breaking-changes/3-13-deprecations
 [Customize tabs alignment using the new `TabBar.tabAlignment` property]: {{site.url}}/release/breaking-changes/tab-alignment
