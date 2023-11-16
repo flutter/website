@@ -35,7 +35,7 @@ these events can be anything from handling a user tapping in the UI,
 to executing a function,
 to painting a frame on the screen.
 The following figure shows an example event queue
-with 4 events waiting to be processed.
+with 3 events waiting to be processed.
 
 ![The main isolate diagram]({{site.url}}/assets/images/docs/development/concurrency/basics-main-isolate.png){:width="50%"}
 
@@ -161,17 +161,12 @@ become unresponsive for several seconds.
 // Produces a list of 211,640 photo objects.
 // (The JSON file is ~20MB.)
 Future<List<Photo>> getPhotos() async {
-  String jsonString = await rootBundle.loadString('assets/photos.json');
-
-  final dynamic photos = await Isolate.run(() {
-    final photoData = jsonDecode(jsonString);
-    return photoData.map((dynamic element) {
-      final data = element as Map<String, dynamic>;
-      return Photo.fromJson(data);
-    }).toList();
+  final String jsonString = await rootBundle.loadString('assets/photos.json');
+  final List<Photo> photos = await Isolate.run<List<Photo>>(() {
+    final List<Object?> photoData = jsonDecode(jsonString) as List<Object?>;
+    return photoData.cast<Map<String, Object?>>().map(Photo.fromJson).toList();
   });
-
-  return photos as List<Photo>;
+  return photos;
 }
 ```
 For a complete walkthrough of using Isolates to 
@@ -181,14 +176,14 @@ parse JSON in the background, see [this cookbook recipe][].
 
 ## Stateful, longer-lived isolates
 
-[`Isolate.run`][] abstracts a handful of lower-level, 
+[`Isolate.run`][] and `Compute` abstract a handful of lower-level, 
 isolate-related APIs to  simplify isolate management:
 
 - [`Isolate.spawn()`][] and [`Isolate.exit()`][]
 - [`ReceivePort`][] and [`SendPort`][]
 - [`send()`][] method
 
-When you use the compute method,
+When you use `Isolate.run` method,
 the new isolate immediately shuts down after it
 returns a single message to the main isolate.
 Sometimes, you'll need isolates that are long lived,

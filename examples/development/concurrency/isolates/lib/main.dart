@@ -38,17 +38,12 @@ class MyApp extends StatelessWidget {
 // Produces a list of 211,640 photo objects.
 // (The JSON file is ~20MB.)
 Future<List<Photo>> getPhotos() async {
-  String jsonString = await rootBundle.loadString('assets/photos.json');
-
-  final dynamic photos = await Isolate.run(() {
-    final photoData = jsonDecode(jsonString);
-    return photoData.map((dynamic element) {
-      final data = element as Map<String, dynamic>;
-      return Photo.fromJson(data);
-    }).toList();
+  final String jsonString = await rootBundle.loadString('assets/photos.json');
+  final List<Photo> photos = await Isolate.run<List<Photo>>(() {
+    final List<Object?> photoData = jsonDecode(jsonString) as List<Object?>;
+    return photoData.cast<Map<String, Object?>>().map(Photo.fromJson).toList();
   });
-
-  return photos as List<Photo>;
+  return photos;
 }
 // #enddocregion isolate-run
 
