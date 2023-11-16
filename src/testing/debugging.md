@@ -327,7 +327,7 @@ You might find the following docs useful:
 [release mode]: {{site.url}}/testing/build-modes#release
 [how the Widget Inspector uses widget creation tracking]: {{site.url}}/tools/devtools/inspector#track-widget-creation
 
-[Assert]: {{site.dart-site}}/language/control-flow#assert
+[Assert]: {{site.dart-site}}/language/error-handling#assert
 [Dart language documentation]: {{site.dart-site}}/language
 
 [WidgetInspectorService.isWidgetCreationTracked]: {{site.api}}/flutter/widgets/WidgetInspectorService/isWidgetCreationTracked.html
