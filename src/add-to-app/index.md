@@ -136,5 +136,5 @@ see our API usage guides at the following links:
 [`FlutterPlugin`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html
 [`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html
 [iOS Framework]: {{site.apple-dev}}/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html
-[maintained by the Flutter team]: {{site.repo.plugins}}/tree/main/packages
+[maintained by the Flutter team]: {{site.repo.packages}}/tree/main/packages
 [multiple Flutters]: {{site.url}}/add-to-app/multiple-flutters

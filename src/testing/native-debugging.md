@@ -216,7 +216,6 @@ test Flutter app. This update adds native code to debug.
         return MaterialApp(
           title: 'URL Launcher',
           theme: ThemeData(
-            useMaterial3: true,
             colorSchemeSeed: Colors.purple,
             brightness: Brightness.light,
           ),

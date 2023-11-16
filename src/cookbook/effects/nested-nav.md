@@ -127,7 +127,7 @@ class SetupFlow extends StatefulWidget {
   final String setupPageRoute;
 
   @override
-  SetupFlowState createState() => SetupFlowState();
+  State<SetupFlow> createState() => SetupFlowState();
 }
 
 class SetupFlowState extends State<SetupFlow> {
@@ -214,8 +214,15 @@ void _exitSetup() {
 
 @override
 Widget build(BuildContext context) {
-  return WillPopScope(
-    onWillPop: _isExitDesired,
+  return PopScope(
+    canPop: false,
+    onPopInvoked: (didPop) async {
+      if (didPop) return;
+
+      if (await _isExitDesired() && context.mounted) {
+        _exitSetup();
+      }
+    },
     child: Scaffold(
       appBar: _buildFlowAppBar(),
       body: const SizedBox(),
@@ -274,8 +281,15 @@ void _onConnectionEstablished() {
 
 @override
 Widget build(BuildContext context) {
-  return WillPopScope(
-    onWillPop: _isExitDesired,
+  return PopScope(
+    canPop: false,
+    onPopInvoked: (didPop) async {
+      if (didPop) return;
+
+      if (await _isExitDesired() && context.mounted) {
+        _exitSetup();
+      }
+    },
     child: Scaffold(
       appBar: _buildFlowAppBar(),
       body: Navigator(
@@ -510,8 +524,15 @@ class SetupFlowState extends State<SetupFlow> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: _isExitDesired,
+    return PopScope(
+      canPop: false,
+      onPopInvoked: (didPop) async {
+        if (didPop) return;
+
+        if (await _isExitDesired() && context.mounted) {
+          _exitSetup();
+        }
+      },
       child: Scaffold(
         appBar: _buildFlowAppBar(),
         body: Navigator(

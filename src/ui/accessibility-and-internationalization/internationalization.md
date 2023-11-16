@@ -1299,7 +1299,7 @@ check out the following examples.
 * [`minimal`][]<br>
   The `minimal` example is designed to be as
   simple as possible.
-* [`intl_example`]<br>
+* [`intl_example`][]<br>
   uses APIs and tools provided by the [`intl`][] package.
 
 If Dart's `intl` package is new to you,
