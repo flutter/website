@@ -39,7 +39,9 @@ VOLUME /flutter
 # NOTE You will get a warning "Woah! You appear to be trying to run flutter as root."
 # and this is to be disregarded since this image is never deployed to production.
 RUN flutter doctor
-RUN flutter --version
+RUN flutter config --no-analytics  \
+    && flutter config --no-cli-animations  \
+    && flutter --version
 RUN dart pub get
 
 

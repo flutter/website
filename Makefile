@@ -121,7 +121,8 @@ build-image:
 # Usage: `make check-links`
 build-image-and-check-links:
 	DOCKER_BUILDKIT=1 docker build --rm --no-cache --target checklinks \
-		--build-arg BUILD_CONFIGS=${BUILD_CONFIGS} -t ${BUILD_TAG} .
+		--build-arg BUILD_CONFIGS=${BUILD_CONFIGS} -t ${BUILD_TAG} \
+		--build-arg FLUTTER_BUILD_BRANCH=${FLUTTER_BUILD_BRANCH} .
 	docker run --rm -t ${BUILD_TAG}
 
 # Hit the shell on the built site imag
