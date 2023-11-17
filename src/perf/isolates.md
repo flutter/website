@@ -176,7 +176,7 @@ parse JSON in the background, see [this cookbook recipe][].
 
 ## Stateful, longer-lived isolates
 
-[`Isolate.run`][] and `Compute` abstract a handful of lower-level, 
+[`Isolate.run()`][] and `compute()` abstract a handful of lower-level, 
 isolate-related APIs to  simplify isolate management:
 
 - [`Isolate.spawn()`][] and [`Isolate.exit()`][]
@@ -338,6 +338,7 @@ Flutter.
 [Dart `Isolate`]: {{site.dart.api}}/stable/dart-isolate/Isolate-class.html
 [`compute()`]: {{site.api}}/flutter/foundation/compute.html
 [`Isolate.spawn()`]: {{site.dart.api}}/stable/dart-isolate/Isolate/spawn.html
+[`Isolate.run()`]: {{site.dart.api}}/stable/dart-isolate/Isolate/spawn.html
 [`Isolate.exit()`]: {{site.dart.api}}/stable/dart-isolate/Isolate/exit.html
 [`ReceivePort`]: {{site.dart.api}}/stable/dart-isolate/ReceivePort-class.html
 [`SendPort`]: {{site.dart.api}}/stable/dart-isolate/SendPort-class.html
