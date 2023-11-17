@@ -76,7 +76,7 @@ First, create an `Album` class that contains the data from the
 network request. It includes a factory constructor that
 creates an `Album` from JSON.
 
-Converting JSON by hand is only one option.
+Converting JSON using pattern matching is only one option.
 For more information, see the full article on
 [JSON and serialization][].
 
@@ -94,11 +94,19 @@ class Album {
   });
 
   factory Album.fromJson(Map<String, dynamic> json) {
-    return Album(
-      userId: json['userId'] as int,
-      id: json['id'] as int,
-      title: json['title'] as String,
-    );
+    return switch (json) {
+      {
+        'userId': int userId,
+        'id': int id,
+        'title': String title,
+      } =>
+        Album(
+          userId: userId,
+          id: id,
+          title: title,
+        ),
+      _ => throw 'Failed to load album',
+    };
   }
 }
 ```
