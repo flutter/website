@@ -366,7 +366,7 @@ investigate other resources that our community recommends.
 
 [Add AdMob ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter
 [Build next generation UIs in Flutter]: {{site.codelabs}}/codelabs/flutter-next-gen-uis
-[firebase-crashlytics]: {{site.flutterfire}}/docs/crashlytics/overview/
+[firebase-crashlytics]: {{site.firebase}}/docs/crashlytics/get-started?platform=flutter
 [ads-recipe]: /cookbook/plugins/google-mobile-ads
 [iap-recipe]: {{site.codelabs}}/codelabs/flutter-in-app-purchases#0
 [leaderboard-recipe]: /cookbook/games/achievements-leaderboard
