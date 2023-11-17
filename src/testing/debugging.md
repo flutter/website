@@ -8,9 +8,7 @@ description: How to debug your app using the DevTools suite.
 There's a wide variety of tools and features to help debug
 Flutter applications. Here are some of the available tools:
 
-* [DevTools][], a suite of performance and profiling
-  tools that run in a browser.
-* [Android Studio/IntelliJ][], and [VS Code][]
+* [VS Code][] and [Android Studio/IntelliJ][], 
   (enabled with the Flutter and Dart plugins)
   support a built-in source-level debugger with
   the ability to set breakpoints, step through code,
@@ -25,6 +23,9 @@ Flutter applications. Here are some of the available tools:
 * If you are looking for a way to use GDB to remotely debug the
   Flutter engine running within an Android app process,
   check out [`flutter_gdb`][].
+* [DevTools][], a suite of performance and profiling
+  tools that run in a browser.
+
 
 [`flutter_gdb`]: https://github.com/flutter/engine/blob/main/sky/tools/flutter_gdb
 
