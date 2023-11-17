@@ -78,7 +78,7 @@
         - title: Add user authentication
           permalink: https://firebase.google.com/codelabs/firebase-auth-in-flutter-apps#0
         - title: Debug using Crashlytics
-          permalink: https://firebase.flutter.dev/docs/crashlytics/overview/
+          permalink: https://firebase.google.com/docs/crashlytics/get-started?platform=flutter
     - title: News
       children:
         - title: Build a news app
