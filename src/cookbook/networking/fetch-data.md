@@ -76,7 +76,7 @@ First, create an `Album` class that contains the data from the
 network request. It includes a factory constructor that
 creates an `Album` from JSON.
 
-Converting JSON using pattern matching is only one option.
+Converting JSON using [pattern matching][] is only one option.
 For more information, see the full article on
 [JSON and serialization][].
 
@@ -360,4 +360,5 @@ class _MyAppState extends State<MyApp> {
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html
 [Mock dependencies using Mockito]: {{site.url}}/cookbook/testing/unit/mocking
 [JSON and serialization]: {{site.url}}/data-and-backend/serialization/json
+[pattern matching]: https://dart.dev/language/patterns
 [`State`]: {{site.api}}/flutter/widgets/State-class.html
