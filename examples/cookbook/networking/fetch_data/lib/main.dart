@@ -47,7 +47,7 @@ class Album {
           id: id,
           title: title,
         ),
-      _ => throw FormatException('Failed to load album.'),
+      _ => throw const FormatException('Failed to load album.'),
     };
   }
 }

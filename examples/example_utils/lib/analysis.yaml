@@ -21,6 +21,7 @@ linter:
     - package_api_docs
     - prefer_relative_imports
     - prefer_single_quotes
+    - only_throw_errors
     - sort_unnamed_constructors_first
     - test_types_in_equals
     - throw_in_finally
