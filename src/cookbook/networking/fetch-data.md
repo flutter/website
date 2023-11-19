@@ -105,7 +105,7 @@ class Album {
           id: id,
           title: title,
         ),
-      _ => throw 'Failed to load album',
+      _ => throw const FormatException('Failed to load album.'),
     };
   }
 }
@@ -292,7 +292,7 @@ class Album {
           id: id,
           title: title,
         ),
-      _ => throw 'Failed to load album',
+      _ => throw const FormatException('Failed to load album.'),
     };
   }
 }
