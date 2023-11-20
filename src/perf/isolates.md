@@ -50,7 +50,7 @@ become unresponsive altogether.
 ![Event jank diagram]({{site.url}}/assets/images/docs/development/concurrency/event-jank.png){:width="50%"}
 
 Whenever a process can't be completed in a frame gap,
-or the time between two frames,
+the time between two frames,
 it's a good idea to offload the work to another isolate
 to ensure that the main isolate can produce 60 frames per second.
 When you spawn an isolate in Dart,
@@ -97,7 +97,8 @@ That said, isolates are commonly used for the following:
 ## Message passing between isolates
 
 Dart's isolates are an implementation of the [Actor model][].
-They can only communicate with each other by message passing.
+They can only communicate with each other by message passing, 
+which is done with [`Port` objects][]. 
 When messages are "passed" between each other,
 they are generally copied from the sending isolate to the
 receiving isolate.
@@ -105,19 +106,23 @@ This means that any value passed to an isolate,
 even if mutated on that isolate,
 doesn't change the value on the original isolate.
 
-The only objects that aren't copied when passed to an isolate
+The only [objects that aren't copied when passed][] to an isolate
 are immutable objects that can't be changed anyway,
 such a String or an unmodifiable byte.
 When you pass an immutable object between isolates,
-it is transferred, rather than copied,
+a reference to that object is sent across the port, 
+rather than the object being copied,
 for better performance.
 Because immutable objects can't be updated,
 this effectively retains the actor model behavior.
 
+[`Port` objects]: {{site.dart.api}}/stable/dart-isolate/ReceivePort-class.html
+[objects that aren't copied when passed]: https://api.dart.dev/stable/3.2.0/dart-isolate/SendPort/send.html
+
 An exception to this rule is
 when an isolate exits when it sends a message using the `Isolate.exit` method.
 Because the sending isolate won't exist after sending the message,
-it can pass the reference to the message while
+it can pass ownership of the message from one isolate to the other,
 ensuring that only one isolate can access the message.
 
 The two lowest-level primitives that send messages are `SendPort.send`,
@@ -169,6 +174,7 @@ Future<List<Photo>> getPhotos() async {
   return photos;
 }
 ```
+
 For a complete walkthrough of using Isolates to 
 parse JSON in the background, see [this cookbook recipe][].
 
@@ -176,8 +182,14 @@ parse JSON in the background, see [this cookbook recipe][].
 
 ## Stateful, longer-lived isolates
 
-[`Isolate.run()`][] and `compute()` abstract a handful of lower-level, 
-isolate-related APIs to  simplify isolate management:
+Short-live isolates are convenient to use,
+but there is performance overhead required to spawn new isolates,
+and to copy objects from one isolate to another.
+If you're doing the same computation using `Isolate.run` repeatedly,
+you might better performance by creating isolates that don't exit immediately.
+
+To do this, you can use a handful of lower-level isolate-related APIs that 
+`Isolate.run` abstracts:
 
 - [`Isolate.spawn()`][] and [`Isolate.exit()`][]
 - [`ReceivePort`][] and [`SendPort`][]
@@ -235,7 +247,7 @@ and can now be done in a background isolate.
 
 Platform channel isolates use the [`BackgroundIsolateBinaryMessenger`][] API.
 The following snippet shows an example of using 
-the shared_preferences package in a background isolate.
+the `shared_preferences` package in a background isolate.
 
 <?code-excerpt "lib/isolate_binary_messenger.dart"?>
 ```dart
@@ -329,11 +341,13 @@ For more information on isolates, check out the following resources:
 or the pub package that clones the functionality for Dart applications not using
 Flutter. 
 - Dart's Isolates are an implementation of the [Actor model][].
+- [isolate_agents][] is a package that abstracts Ports and make it easier to create long-lived isolates.  
 - Read more about the `BackgroundIsolateBinaryMessenger` API [announcement][].
 
 [announcement]: https://medium.com/flutter/introducing-background-isolate-channels-7a299609cad8
 [technical design proposal]: https://docs.google.com/document/d/1yAFw-6kBefuurXWTur9jdEUAckWiWJVukP1Iay8ehyU/edit#heading=h.722pnbmlqbkx
 [Actor model]: https://en.wikipedia.org/wiki/Actor_model
+[isolate_agents]: https://medium.com/@gaaclarke/isolate-agents-easy-isolates-for-flutter-6d75bf69a2e7
 [marshaling data]: https://en.wikipedia.org/wiki/Marshalling_(computer_science)
 [Dart `Isolate`]: {{site.dart.api}}/stable/dart-isolate/Isolate-class.html
 [`compute()`]: {{site.api}}/flutter/foundation/compute.html
