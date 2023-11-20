@@ -370,5 +370,5 @@ class _MyAppState extends State<MyApp> {
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html
 [Mock dependencies using Mockito]: {{site.url}}/cookbook/testing/unit/mocking
 [JSON and serialization]: {{site.url}}/data-and-backend/serialization/json
-[pattern matching]: https://dart.dev/language/patterns
+[pattern matching]: {{site.dart-site}}/language/patterns
 [`State`]: {{site.api}}/flutter/widgets/State-class.html

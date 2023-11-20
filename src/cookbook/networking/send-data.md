@@ -383,5 +383,5 @@ class _MyAppState extends State<MyApp> {
 [JSONPlaceholder]: https://jsonplaceholder.typicode.com/
 [JSON and serialization]: {{site.url}}/data-and-backend/serialization/json
 [Mock dependencies using Mockito]: {{site.url}}/cookbook/testing/unit/mocking
-[pattern matching]: https://dart.dev/language/patterns
+[pattern matching]: {{site.dart-site}}/language/patterns
 [`State`]: {{site.api}}/flutter/widgets/State-class.html
