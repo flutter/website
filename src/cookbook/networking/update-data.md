@@ -76,7 +76,7 @@ First, create an `Album` class that contains the data from the
 network request. It includes a factory constructor that
 creates an `Album` from JSON.
 
-Converting JSON by hand is only one option.
+Converting JSON with [pattern matching][] is only one option.
 For more information, see the full article on
 [JSON and serialization][].
 
@@ -404,13 +404,14 @@ class _MyAppState extends State<MyApp> {
 [Fetch data]: {{site.url}}/cookbook/networking/fetch-data
 [`Future`]: {{site.api}}/flutter/dart-async/Future-class.html
 [`FutureBuilder`]: {{site.api}}/flutter/widgets/FutureBuilder-class.html
-[JSONPlaceholder]: https://jsonplaceholder.typicode.com/
 [`http`]: {{site.pub-pkg}}/http
 [`http.put()`]: {{site.pub-api}}/http/latest/http/put.html
 [`http` package]: {{site.pub}}/packages/http/install
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [Introduction to unit testing]: {{site.url}}/cookbook/testing/unit/introduction
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html
+[JSONPlaceholder]: https://jsonplaceholder.typicode.com/
 [JSON and serialization]: {{site.url}}/data-and-backend/serialization/json
 [Mock dependencies using Mockito]: {{site.url}}/cookbook/testing/unit/mocking
+[pattern matching]: https://dart.dev/language/patterns
 [`State`]: {{site.api}}/flutter/widgets/State-class.html
