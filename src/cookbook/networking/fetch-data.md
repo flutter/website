@@ -35,12 +35,22 @@ Import the http package.
 import 'package:http/http.dart' as http;
 ```
 
-Additionally, in your AndroidManifest.xml file, 
+If you are deploying to Android, edit your `AndroidManifest.xml` file to 
 add the Internet permission.
 
 ```xml
 <!-- Required to fetch data from the internet. -->
 <uses-permission android:name="android.permission.INTERNET" />
+```
+
+Likewise, if you are deploying to macOS, edit your 
+`macos/Runner/DebugProfile.entitlements` and `macos/Runner/Release.entitlements`
+files to include the network client entitlement.
+
+```xml
+<!-- Required to fetch data from the internet. -->
+<key>com.apple.security.network.client</key>
+<true/>
 ```
 
 ## 2. Make a network request
@@ -76,7 +86,7 @@ First, create an `Album` class that contains the data from the
 network request. It includes a factory constructor that
 creates an `Album` from JSON.
 
-Converting JSON by hand is only one option.
+Converting JSON using [pattern matching][] is only one option.
 For more information, see the full article on
 [JSON and serialization][].
 
@@ -94,11 +104,19 @@ class Album {
   });
 
   factory Album.fromJson(Map<String, dynamic> json) {
-    return Album(
-      userId: json['userId'] as int,
-      id: json['id'] as int,
-      title: json['title'] as String,
-    );
+    return switch (json) {
+      {
+        'userId': int userId,
+        'id': int id,
+        'title': String title,
+      } =>
+        Album(
+          userId: userId,
+          id: id,
+          title: title,
+        ),
+      _ => throw const FormatException('Failed to load album.'),
+    };
   }
 }
 ```
@@ -273,11 +291,19 @@ class Album {
   });
 
   factory Album.fromJson(Map<String, dynamic> json) {
-    return Album(
-      userId: json['userId'] as int,
-      id: json['id'] as int,
-      title: json['title'] as String,
-    );
+    return switch (json) {
+      {
+        'userId': int userId,
+        'id': int id,
+        'title': String title,
+      } =>
+        Album(
+          userId: userId,
+          id: id,
+          title: title,
+        ),
+      _ => throw const FormatException('Failed to load album.'),
+    };
   }
 }
 
@@ -344,4 +370,5 @@ class _MyAppState extends State<MyApp> {
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html
 [Mock dependencies using Mockito]: {{site.url}}/cookbook/testing/unit/mocking
 [JSON and serialization]: {{site.url}}/data-and-backend/serialization/json
+[pattern matching]: {{site.dart-site}}/language/patterns
 [`State`]: {{site.api}}/flutter/widgets/State-class.html
