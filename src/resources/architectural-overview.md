@@ -852,7 +852,7 @@ channel.setMethodCallHandler {
 ```
 
 Further examples of using platform channels, including examples for macOS, can
-be found in the [flutter/plugins]({{site.repo.plugins}})
+be found in the [flutter/packages]({{site.repo.packages}})
 repository<sup><a href="#a3">3</a></sup>. There are also [thousands of plugins
 already available]({{site.pub}}/flutter) for Flutter that cover many common
 scenarios, ranging from Firebase to ads to device hardware like camera and

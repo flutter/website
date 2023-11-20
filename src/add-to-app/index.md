@@ -131,10 +131,10 @@ see our API usage guides at the following links:
 [`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
 [java-engine]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html
 [ios-engine]: {{site.api}}/objcdoc/Classes/FlutterEngine.html
-[FlutterFire]: {{site.github}}/FirebaseExtended/flutterfire/tree/master/packages
+[FlutterFire]: {{site.github}}/firebase/flutterfire/tree/master/packages
 [`FlutterFragment`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterFragment.html
 [`FlutterPlugin`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html
 [`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html
 [iOS Framework]: {{site.apple-dev}}/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html
-[maintained by the Flutter team]: {{site.repo.plugins}}/tree/main/packages
+[maintained by the Flutter team]: {{site.repo.packages}}/tree/main/packages
 [multiple Flutters]: {{site.url}}/add-to-app/multiple-flutters
