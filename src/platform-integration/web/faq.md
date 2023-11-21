@@ -113,7 +113,7 @@ In the following example, replace `URL` with the location of your HTML page.
 <iframe src="URL"></iframe>
 ```
 
-#### Use an `div` container
+#### Use a `div` container
 
 To embed your Flutter app using a `<div>` element as a container,
 you need to create the element and add some JavaScript in your HTML page.
