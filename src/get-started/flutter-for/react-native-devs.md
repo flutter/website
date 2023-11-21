@@ -1126,7 +1126,7 @@ add a dependency for `cupertino_icons` in your project's
 ```yaml
 name: my_awesome_application
 dependencies:
-  cupertino_icons: ^1.0.5
+  cupertino_icons: ^1.0.6
 ```
 
 To globally customize the colors and styles of components,
@@ -1136,7 +1136,7 @@ Set the theme property in `MaterialApp` to the `ThemeData` object.
 The [`Colors`][] class provides colors
 from the Material Design [color palette][].
 
-The following example sets the primary swatch to `blue`
+The following example sets the color scheme from seed to `deepPurple`
 and the text selection to `red`.
 
 <?code-excerpt "lib/examples.dart (Swatch)"?>
@@ -1149,7 +1149,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-          primarySwatch: Colors.blue,
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           textSelectionTheme:
               const TextSelectionThemeData(selectionColor: Colors.red)),
       home: const SampleAppPage(),
@@ -2654,7 +2654,7 @@ and common widget properties.
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
 [`ScrollController`]: {{site.api}}/flutter/widgets/ScrollController-class.html
-[`shared_preferences`]: {{site.repo.plugins}}/tree/main/packages/shared_preferences
+[`shared_preferences`]: {{site.repo.packages}}/tree/main/packages/shared_preferences/shared_preferences
 [`SingleTickerProviderStateMixin`]: {{site.api}}/flutter/widgets/SingleTickerProviderStateMixin-mixin.html
 [`Slider`]: {{site.api}}/flutter/material/Slider-class.html
 [`Stack`]: {{site.api}}/flutter/widgets/Stack-class.html

@@ -6,7 +6,7 @@ description: >
 
 This page contains current and previous announcements of
 what's new on the Flutter website and blog.
-For details about what's new in the Flutter releases
+For details about what's new in the Flutter releases,
 see the [release notes][] page.
 
 To stay on top of Flutter announcements including breaking changes,
@@ -19,6 +19,66 @@ and review the [Dart changelog][].
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [Dart Announce]: https://groups.google.com/a/dartlang.org/g/announce
 [Dart changelog]: {{site.github}}/dart-lang/sdk/blob/main/CHANGELOG.md
+
+## 15 November 2023: 3.16 release
+
+Flutter 3.16 is live! For more information,
+check out the [Flutter 3.16 blog post][3.16-umbrella]
+and the technical [What's new in Flutter 3.16][]
+blog post.
+
+You might also check out [Dart 3.2 release][].
+
+**Docs updated or added since the 3.13 release**
+
+* As of this release, the **default theme for
+  Material Flutter apps is Material 3**.
+  Unless you explicitly specify Material 2
+  (with `useMaterial3: false`)
+  in your app's theme, your app _will_ look
+  different once you've updated.
+* While the Flutter Casual Games Toolkit isn't
+  technically _part_ of the 3.16 release, 
+  we've release a significant update of
+  the toolkit _alongside_ the 3.16 release.
+  This update includes three completely new
+  games code templates, three new games cookbook
+  recipes, and a general reorganization of
+  our games toolkit docs. For more information,
+  check out [Casual Games Toolkit][] and
+  make sure to look at the side nav!
+* The Impeller runtime is now
+  **available for Android on Vulkan devices**
+  behind the `--enable-impeller` flag.
+  For more information, check out
+  the [Impeller rendering engine][impeller] page.
+* You can now add Apple iOS app extensions to
+  your Flutter app when running on iOS.
+  To learn more, check out
+  [Adding iOS app extensions][ios-app-ext].
+
+**Articles**
+
+The following articles were published on the [Flutter Medium][]
+publication since Flutter 3.13:
+
+* [How IBM is creating a Flutter Center of Excellence][ibm]
+* [Introducing the Flutter Consulting Directory][fcd]
+* [Developing Flutter apps for large screens][ls]
+* [Dart & Flutter DevTools Extensions][dt-ext]
+* [Building your next casual game with Flutter][games-2]
+
+[3.16-umbrella]: {{site.flutter-medium}}/flutter-3-16-dart-3-2-high-level-umbrella-post-b9218b17f0f7
+[Casual Games Toolkit]: {{site.url}}/resources/games-toolkit
+[Dart 3.2 release]: {{site.medium}}/dartlang/dart-3-2-c8de8fe1b91f
+[dt-ext]: {{site.flutter-medium}}/dart-flutter-devtools-extensions-c8bc1aaf8e5f
+[fcd]: {{site.flutter-medium}}/introducing-the-flutter-consulting-directory-f6fc4c1d2ba3
+[games-2]: {{site.flutter-medium}}/building-your-next-casual-game-with-flutter-716ef457e440
+[ibm]: {{site.flutter-medium}}/how-ibm-is-creating-a-flutter-center-of-excellence-3c6a3c025441
+[impeller]: {{site.url}}/perf/impeller
+[ls]: {{site.flutter-medium}}/developing-flutter-apps-for-large-screens-53b7b0e17f10
+[ios-app-ext]: {{site.url}}/platform-integration/ios/app-extensions
+[What's new in Flutter 3.16]: {{site.flutter-medium}}/whats-new-in-flutter-3-16-dba6cb1015d1
 
 ## 16 August 2023: 3.13 release
 
@@ -68,7 +128,6 @@ recipes into the sidenav.
 [breaking-changes]: {{site.url}}/release/breaking-changes
 [deprecated-3.10]: {{site.url}}/release/breaking-changes/3-10-deprecations
 [editable-onCaretChanged]: {{site.url}}/release/breaking-changes/editable-text-scroll-into-view
-[impeller]: {{site.url}}/perf/impeller
 [oem]: {{site.url}}/testing/native-debugging?tab=from-vscode-to-xcode-ios
 [pointer]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
 [scrolling-overview]: {{site.url}}/ui/layout/scrolling
@@ -322,7 +381,7 @@ and [Introducing Dart 3 alpha][].
   * Global selection improvements - ChunHeng Tai (chtai)
   * magnification property (who owns this? - I asked Justin)
     No docs yet (other than API docs)
-    https://master-api.flutter.dev/flutter/material/TextField/magnifierConfiguration.html
+    https://main-api.flutter.dev/flutter/material/TextField/magnifierConfiguration.html
   * Implementing iOS PlatformView BackdropFilter. (Blur) - Leigha and Chris Yang
     https://docs.google.com/document/d/1V7Jc_RGaknrBBPPBBKB8lT7f3PKhYr8sin35MSMFAf4/edit
   * Memory management updates - Zach Anderson

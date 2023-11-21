@@ -36,11 +36,19 @@ class Album {
   });
 
   factory Album.fromJson(Map<String, dynamic> json) {
-    return Album(
-      userId: json['userId'] as int,
-      id: json['id'] as int,
-      title: json['title'] as String,
-    );
+    return switch (json) {
+      {
+        'userId': int userId,
+        'id': int id,
+        'title': String title,
+      } =>
+        Album(
+          userId: userId,
+          id: id,
+          title: title,
+        ),
+      _ => throw const FormatException('Failed to load album.'),
+    };
   }
 }
 // #enddocregion Album
@@ -70,7 +78,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Fetch Data Example',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: Scaffold(
         appBar: AppBar(

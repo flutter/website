@@ -262,7 +262,7 @@ complete the following instructions:
    }
    ```
 
-6. Now, run `flutter run` and codegen takes place automatically.
+6. Now, run `flutter pub get` or `flutter run` and codegen takes place automatically.
    You should find generated files in
    `${FLUTTER_PROJECT}/.dart_tool/flutter_gen/gen_l10n`.
    Alternatively, you can also run `flutter gen-l10n` to
@@ -1299,7 +1299,7 @@ check out the following examples.
 * [`minimal`][]<br>
   The `minimal` example is designed to be as
   simple as possible.
-* [`intl_example`]<br>
+* [`intl_example`][]<br>
   uses APIs and tools provided by the [`intl`][] package.
 
 If Dart's `intl` package is new to you,

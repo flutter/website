@@ -1,4 +1,4 @@
-FROM ruby:3.2.2-slim-bookworm@sha256:17de1131ceb018ab30cbb76505559baa49a4c1b125e03c90dd10220bf863783c AS base
+FROM ruby:3.2.2-slim-bookworm@sha256:7d4af98c727848ff96b8941e37415425905a2776df27be9916a7ef2c20256d3c AS base
 
 ENV TZ=US/Pacific
 RUN apt-get update && apt-get install -yq --no-install-recommends \
@@ -11,8 +11,8 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
       gnupg \
       lsof \
       make \
+      rsync \
       unzip \
-      vim-nox \
       xdg-user-dirs \
     && rm -rf /var/lib/apt/lists/*
 
@@ -32,14 +32,16 @@ ENV FLUTTER_ROOT=flutter
 ENV FLUTTER_BIN=flutter/bin
 ENV PATH="/flutter/bin:$PATH"
 
-RUN git clone --branch $FLUTTER_BUILD_BRANCH --single-branch https://github.com/flutter/flutter /flutter/
+RUN git clone --branch $FLUTTER_BUILD_BRANCH --single-branch --filter=tree:0 https://github.com/flutter/flutter /flutter/
 VOLUME /flutter
 
 # Set up Flutter
 # NOTE You will get a warning "Woah! You appear to be trying to run flutter as root."
 # and this is to be disregarded since this image is never deployed to production.
 RUN flutter doctor
-RUN flutter --version
+RUN flutter config --no-analytics  \
+    && flutter config --no-cli-animations  \
+    && flutter --version
 RUN dart pub get
 
 
@@ -53,10 +55,6 @@ RUN mkdir -p /etc/apt/keyrings \
     && apt-get update -yq \
     && apt-get install nodejs -yq \
     && npm install -g npm # Ensure latest npm
-
-# Install global Firebase CLI
-RUN npm install -g firebase-tools@12.4.0
-
 
 
 # ============== FLUTTER CODE TESTS ==============
@@ -115,9 +113,3 @@ ARG BUILD_CONFIGS=_config.yml
 ENV BUILD_CONFIGS=$BUILD_CONFIGS
 RUN bundle exec jekyll build --config $BUILD_CONFIGS
 
-
-
-# ============== TEST BUILT SITE LINKS ==============
-FROM build as checklinks
-
-CMD ["tool/check-links.sh"]

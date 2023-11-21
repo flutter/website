@@ -110,7 +110,7 @@ class RadialExpansionDemo extends StatelessWidget {
               Text(
                 description,
                 style: const TextStyle(fontWeight: FontWeight.bold),
-                textScaleFactor: 3,
+                textScaler: const TextScaler.linear(3),
               ),
               const SizedBox(height: 16),
             ],

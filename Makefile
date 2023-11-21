@@ -3,7 +3,7 @@
 
 
 all: gen-env up down debug shell setup serve emulate test debug-tests \
-		 stop-tests build-image build build-image-and-check-links debug-build \ 
+		 stop-tests build-image build debug-build \ 
 		 deploy stage-channel stage-local clean reinstall purge
 
 .DEFAULT_GOAL := up
@@ -88,10 +88,12 @@ emulate:
 # WARNING this can take a while to run!
 # Usage: `FLUTTER_BUILD_BRANCH=<channel> make test`
 test:
+	@echo "::group::Setting up container"
 	DOCKER_BUILDKIT=1 docker build --rm \
 	    --target tests \
 	    -t flt-test \
 	    --build-arg FLUTTER_BUILD_BRANCH=${FLUTTER_BUILD_BRANCH} .
+	@echo "::endgroup::"
 	docker run --rm --name flt-tests -t flt-test
 
 # Stop long running tests
@@ -115,13 +117,6 @@ build-image:
 	DOCKER_BUILDKIT=1 docker build --rm --no-cache --target build \
 		--build-arg BUILD_CONFIGS=${BUILD_CONFIGS} -t ${BUILD_TAG} .
 
-# Build the production site & Run the link checker
-# Usage: `make check-links`
-build-image-and-check-links:
-	DOCKER_BUILDKIT=1 docker build --rm --no-cache --target checklinks \
-		--build-arg BUILD_CONFIGS=${BUILD_CONFIGS} -t ${BUILD_TAG} .
-	docker run --rm -t ${BUILD_TAG}
-
 # Hit the shell on the built site imag
 # This requires that a build:commit image has been built
 # Usage: `make debug-build`
@@ -131,11 +126,12 @@ debug-build:
 # Build the production image and copy site build to local. 
 # This will reset and also clean up after finished. 
 # NOTE important to disable tests with the local build as 
-# those will be run on the Github action.
+# those will be run on the GitHub action.
 # Usage: `make build`
 build:
 	make clean
-	make build-image-and-check-links
+	DOCKER_BUILDKIT=1 docker build --rm --no-cache --target build \
+  		--build-arg BUILD_CONFIGS=${BUILD_CONFIGS} -t ${BUILD_TAG} .
 	docker run --rm -d --name ${BUILD_NAME} -t ${BUILD_TAG}
 	docker cp ${BUILD_NAME}:/app/_site _site
 	docker stop ${BUILD_NAME}
