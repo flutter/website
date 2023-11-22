@@ -1,5 +1,5 @@
 --- 
-title: "State restoration on iOS"
+title: "Restore state on iOS"
 description: "How to restore the state of your iOS app after it's been killed by the OS."
 ---
 

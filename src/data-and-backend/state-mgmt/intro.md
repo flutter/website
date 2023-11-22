@@ -6,6 +6,16 @@ next:
   path: /development/data-and-backend/state-mgmt/declarative
 ---
 
+{{site.alert.note}}
+  If you have written a mobile app using Flutter
+  and wonder why your app's state is lost
+  on a restart, check out [Restore state on Android][]
+  or [Restore state on iOS][].
+{{site.alert.end}}
+
+[Restore state on Android]: {{site.url}}/platform-integration/ios/restore-state-android
+[Restore state on iOS]: {{site.url}}/platform-integration/ios/restore-state-ios
+
 _If you are already familiar with state management in reactive apps,
 you can skip this section, though you might want to review the
 [list of different approaches][]._

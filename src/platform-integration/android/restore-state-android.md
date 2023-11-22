@@ -1,5 +1,5 @@
 --- 
-title: "State restoration for Android apps"
+title: "Restore state on Android"
 description: "How to restore the state of your Android app after it's been killed by the OS."
 ---
 
