@@ -13,7 +13,7 @@ next:
   or [Restore state on iOS][].
 {{site.alert.end}}
 
-[Restore state on Android]: {{site.url}}/platform-integration/ios/restore-state-android
+[Restore state on Android]: {{site.url}}/platform-integration/android/restore-state-android
 [Restore state on iOS]: {{site.url}}/platform-integration/ios/restore-state-ios
 
 _If you are already familiar with state management in reactive apps,
