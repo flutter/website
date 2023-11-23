@@ -535,18 +535,20 @@ In order to show other widgets, a parent directory of theirs must be added to th
 For example:
 Imagine your project directory structure looks something like this:
 ```
-~/project_foo/pkgs/project_foo_app
-~/project_foo/pkgs/widgets_A
-~/project_foo/pkgs/widgets_B
+project_foo
+  pkgs
+    project_foo_app
+    widgets_A
+    widgets_B
 ```
 
-If you run your app from `~/project_foo/pkgs/project_foo_app`, then only widgets from  `~/project_foo/pkgs/project_foo_app` will show up in the widget inspector.
+If you run your app from `project_foo_app`, then only widgets from  `project_foo/pkgs/project_foo_app` will show up in the widget inspector.
 
-You can show widgets from `widget_package_A` in your widget tree by adding `~/project_foo/pkgs/widgets_A` to the package directories.
+You can show widgets from `widgets_A` in your widget tree by adding `project_foo/pkgs/widgets_A` to the package directories.
 
-If you wanted all widgets from your project root to be included then you could add `~/project_foo` to the package directories.
+If you wanted all widgets from your project root to be included then you could add `project_foo` to the package directories.
 
-Changes to your Package Directories should be persisted for the next time the  Widget Inspector is opened for the app.
+Changes to your package directories should be persisted for the next time the  widget inspector is opened for the app.
 
 
 ## Other resources
