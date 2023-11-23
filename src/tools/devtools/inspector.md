@@ -553,7 +553,6 @@ add `project_foo` to the package directories.
 Changes to your package directories should be persisted for the next time the
 widget inspector is opened for the app.
 
-
 ## Other resources
 
 For a demonstration of what's generally possible with the inspector,
