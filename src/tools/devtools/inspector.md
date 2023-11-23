@@ -532,8 +532,7 @@ By default DevTools limits the visible Widgets in the widget tree, to those from
 
 In order to show other widgets, a parent directory of theirs must be added to the Package Directories.
 
-For example:
-Imagine your project directory structure looks something like this:
+For example, if your project directory structure looks something like this:
 ```
 project_foo
   pkgs
