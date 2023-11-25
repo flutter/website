@@ -36,6 +36,7 @@ release, and listed in alphabetical order:
 
 [Deprecate `TextField.canRequestFocus`]: {{site.url}}/release/breaking-changes/can-request-focus
 [Accessibility traversal order of tooltip changed]: {{site.url}}/release/breaking-changes/tooltip-semantics-order
+[Deprecate imperative apply of Flutter Gradle Plugin]: ${{ site.url }}/release/breaking-changes/flutter-gradle-plugin-apply
 
 ### Released in Flutter 3.16
 
