@@ -56,7 +56,7 @@ Android provides the concept of a [launch screen][] to
 display a `Drawable` while the app is initializing.
 
 A `Drawable` is an Android graphic.
-For information on adding a `Drawable` to your
+To learn how to add a `Drawable` to your
 Flutter project in Android Studio,
 check out [Import drawables into your project][drawables]
 in the Android developer documentation.
