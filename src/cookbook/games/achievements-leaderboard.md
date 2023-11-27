@@ -4,9 +4,9 @@ description: >
   How to use the games_services plugin to add functionality to your game.
 ---
 
-Gamers have various motivations for playing games. In broad strokes,
-there are four major motivations: 
-[immersion, achievement, cooperation, and competition](https://meditations.metavert.io/p/game-player-motivations).
+Gamers have various motivations for playing games.
+In broad strokes, there are four major motivations: 
+[immersion, achievement, cooperation, and competition][].
 No matter the game you build, some players want to *achieve* in it.
 This could be trophies won or secrets unlocked.
 Some players want to *compete* in it.
@@ -20,9 +20,11 @@ centralized services for achievements and leaderboards.
 Players can view achievements from all their games in one place and
 developers don't need to re-implement them for every game.
 
-This recipe demonstrates how to use the 
-[`games_services` package]({{site.pub-pkg}}/games_services) 
+This recipe demonstrates how to use the [`games_services` package][] 
 to add achievements and leaderboard functionality to your mobile game.
+
+[`games_services` package]: {{site.pub-pkg}}/games_services
+[immersion, achievement, cooperation, and competition]: https://meditations.metavert.io/p/game-player-motivations
 
 ## 1. Enable platform services
 
@@ -44,8 +46,8 @@ To enable Game Center (GameKit) on iOS:
 
 5.  Close Xcode.
 
-6.  If you haven't already, register your game 
-    in [App Store Connect](https://appstoreconnect.apple.com/)
+6.  If you haven't already,
+    register your game in [App Store Connect][]
     and from the **My App** section press the `+` icon.
 
     ![Screenshot of the + button in App Store Connect]({{site.url}}/assets/images/docs/cookbook/app-store-add-app-button.png)
@@ -56,12 +58,13 @@ To enable Game Center (GameKit) on iOS:
     achievements, depending on your game. Take note of the IDs of the
     leaderboards and achievements you create.
 
+[App Store Connect]: https://appstoreconnect.apple.com/
+
 ### Android
 
 To enable *Play Games Services* on Android:
 
-1.  If you haven't already, 
-    go to [Google Play Console](https://play.google.com/console/) 
+1.  If you haven't already, go to [Google Play Console][]
     and register your game there.  
     
     ![Screenshot of the 'Create app' button in Google Play Console]({{site.url}}/assets/images/docs/cookbook/google-play-create-app.png)
@@ -70,10 +73,11 @@ To enable *Play Games Services* on Android:
     and management* → *Configuration* from the navigation menu and
     follow their instructions.
 
-    -   This takes a significant amount of time and patience. Among
-        other things, you'll need to set up an OAuth consent screen in
-        Google Cloud Console. If at any point you feel lost, consult the
-        official [Play Games Services guide](https://developers.google.com/games/services/console/enabling).    
+      * This takes a significant amount of time and patience.
+        Among other things, you'll need to set up an
+        OAuth consent screen in Google Cloud Console.
+        If at any point you feel lost, consult the
+        official [Play Games Services guide][].    
          
         ![Screenshot showing the Games Services section in Google Play Console]({{site.url}}/assets/images/docs/cookbook/play-console-play-games-services.png)
 
@@ -91,8 +95,8 @@ To enable *Play Games Services* on Android:
 6.  Go to **Play Games Services** **→ Setup and management →
     Configuration → Credentials**.
 
-7.  Find the **Get resources** button. It returns an XML file with the
-    Play Games Services IDs.
+7.  Find the **Get resources** button.
+    It returns an XML file with the Play Games Services IDs.
 
     ```xml
     <!-- THIS IS JUST AN EXAMPLE -->
@@ -111,6 +115,9 @@ To enable *Play Games Services* on Android:
 
 8.  Add a file at `android/app/src/main/res/values/games-ids.xml`
     containing the XML you received in the previous step.
+
+[Google Play Console]: https://play.google.com/console/
+[Play Games Services guide]: https://developers.google.com/games/services/console/enabling
 
 ## 2. Sign in to the game service
 
@@ -354,3 +361,17 @@ class GamesServicesController {
   }
 }
 ```
+
+## More information
+
+The Flutter Casual Games Toolkit includes the following templates:
+
+* [basic][]: basic starter game
+* [card][]: starter card game
+* [endless runner][]: starter game (using Flame)
+  where the player endlessly runs, avoiding pitfalls
+  and gaining rewards
+
+[basic]: {{site.github}}/flutter/games/tree/main/templates/basic#readme
+[card]: {{site.github}}/flutter/games/tree/main/templates/card#readme
+[endless runner]: {{site.github}}/flutter/games/tree/main/templates/endless_runner#readme
