@@ -112,9 +112,8 @@ The following example is for CSS, but illustrates the concept:
 <img src='/assets/images/docs/development/ui/typography/feature-tag-example.png'
 class="mw-100" alt="Example feature tags in CSS">
 
-
 [`FontFeature`]: {{site.api}}/flutter/dart-ui/FontFeature-class.html
-[`FontStyle`]: {{site.api}}/flutter/dart-ui/FontStyle-class.html
+[`FontStyle`]: {{site.api}}/flutter/dart-ui/FontStyle.html
 [`FontWeight`]: {{site.api}}/flutter/dart-ui/FontWeight-class.html
 [OpenType feature tag]: https://learn.microsoft.com/en-us/typography/opentype/spec/featuretags
 
@@ -133,7 +132,6 @@ customizing variable fonts and animating them as they
 morph (and was the basis for the above video),
 check out [Playful typography with Flutter][article],
 a free article on Medium. The associated example also
-uses a custom shader. 
+uses a custom shader.
 
 [article]: {{site.flutter-medium}}/playful-typography-with-flutter-f030385058b4
-
