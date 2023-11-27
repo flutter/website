@@ -46,6 +46,11 @@ an app can be both, or neither.
   using platform-specific features (such as
   top-level windows), and more.
 
+You might also find the following video helpful:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HD5gYnspYzk?si=dsA37QUjHBb2Zh_-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[Adaptive vs Responsive][]
+
 ## Creating a responsive Flutter app
 
 Flutter allows you to create apps that self-adapt
@@ -157,6 +162,7 @@ in the following resources:
 
 [Adaptive layouts]: {{site.youtube-site}}/watch?v=n6Awpg1MO6M&t=694s
 [Adaptive layouts, part 2]: {{site.youtube-site}}/watch?v=eikOZzfc0l4&t=11s
+[Adaptive vs Responsive]: {{site.youtube-site}}/HD5gYnspYzk?si=5ItDD7UjXvGCRM0K
 [Building adaptive apps]: {{site.url}}/ui/layout/responsive/building-adaptive-apps
 
 [Designing truly adaptive user interfaces]: https://www.aloisdeniel.com/blog/designing-truly-adaptative-user-interfaces
