@@ -2339,10 +2339,11 @@ Future<void> _incrementCounter() async {
 
 ### How do I access SQLite in Flutter?
 
-In Android, you use SQLite to store structured data that you can query
-using SQL.
+In Android, you use SQLite to store structured data
+that you can query using SQL.
 
-In Flutter, access this functionality using the
+In Flutter, for macOS, Android, or iOS,
+access this functionality using the
 [SQFlite][] plugin.
 
 ## Debugging

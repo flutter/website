@@ -8,15 +8,15 @@ description: >
 Multiplayer games need a way to synchronize game states between players.
 Broadly speaking, two types of multiplayer games exist:
 
-1.**High tick rate**.
-  These games need to synchronize game states many times per second
-  with low latency.
-  These would include action games, sports games, fighting games.
+1. **High tick rate**.
+   These games need to synchronize game states many times per second
+   with low latency.
+   These would include action games, sports games, fighting games.
 
-2.**Low tick rate**.
-  These games only need to synchronize game states occasionally
-  with latency having less impact.
-  These would include card games, strategy games, puzzle games.
+2. **Low tick rate**.
+   These games only need to synchronize game states occasionally
+   with latency having less impact.
+   These would include card games, strategy games, puzzle games.
 
 This resembles the differentiation between real-time versus turn-based
 games, though the analogy falls short.

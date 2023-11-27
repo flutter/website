@@ -312,7 +312,7 @@ investigate other resources that our community recommends.
 
 {{pkg-icon}} [shared_preferences][]<br>
 {{pkg-icon}} [sqflite][]<br>
-{{pkg-icon}} [cbl_flutter][]<br>
+{{pkg-icon}} [cbl_flutter][] (Couchbase Lite)<br>
 
 </td>
 </tr>
@@ -383,7 +383,7 @@ investigate other resources that our community recommends.
 [Spriter Pro]: https://store.steampowered.com/app/332360/Spriter_Pro/
 [app_review]: {{site.pub-pkg}}/app_review
 [audioplayers]: {{site.pub-pkg}}/audioplayers
-[cbl_flutter]: Couchbase Lite, {{site.pub-pkg}}/cbl_flutter
+[cbl_flutter]: {{site.pub-pkg}}/cbl_flutter
 [firebase_crashlytics]: {{site.pub-pkg}}/firebase_crashlytics
 [forge2d]: {{site.pub-pkg}}/forge2d
 [game-svc-pkg]: {{site.pub-pkg}}/games_services

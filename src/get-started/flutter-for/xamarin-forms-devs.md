@@ -2514,7 +2514,8 @@ equivalent, `SharedPreferences`.
 In Xamarin.Forms most applications would use the `sqlite-net-pcl`
 plugin to access SQLite databases.
 
-In Flutter, access this functionality using the
+In Flutter, on macOS, Android, and iOS,
+access this functionality using the
 [`sqflite`][] plugin.
 
 ## Debugging
