@@ -37,7 +37,7 @@ complete Flutter development environment for {{include.os}}.
 
 As you chose to develop for {{include.target}},
 you do not need _all_ components.
-If you followed this guide, result of your command should resemble:
+If you followed this guide, the result of your command should resemble:
 
 ```terminal
 {% include docs/install/flutter-doctor-success.md %}
@@ -56,4 +56,4 @@ Check the output for other software you might need to install
 or further tasks to perform.
 
 If you change the configuration of your Flutter SDK or its related components,
-run `flutter doctor` again to verify the install again.
+run `flutter doctor` again to verify the install.

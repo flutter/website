@@ -205,7 +205,7 @@ function updateReleaseDownloadButton(releases, base_url, os, arch = '') {
     element.textContent = archiveFilename;
   });
 
-  const genericDownloadLink = document.querySelectorAll(`.download-latest-link-filename`);
+  const genericDownloadLink = document.querySelectorAll('.download-latest-link-filename');
   genericDownloadLink.forEach(function (element) {
     element.textContent = archiveFilename;
   });
