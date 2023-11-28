@@ -345,7 +345,7 @@ to verify that the values are correct.
   Defaults to `flutter.minSdkVersion`.
 
 `targetSdkVersion`
-: Specify the target API level on which on which you designed the app to run.
+: Specify the target API level on which you designed the app to run.
   Defaults to `flutter.targetSdkVersion`.
   
 `versionCode`

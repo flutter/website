@@ -1,18 +1,18 @@
 ---
 title: Windows build path changed to add the target architecture
-description: >
-  In preparation for supporting Windows Arm64, 
+description: >-
+  In preparation for supporting Windows on Arm64,
   the Windows build path was updated to include the target architecture.
 ---
 
 ## Summary
 
 Built executables for Flutter Windows apps are now located in architecture
-dependent folders
+dependent folders.
 
 ## Context
 
-In preparation for supporting Windows Arm64, the Windows build path was
+In preparation for supporting Windows on Arm64, the Windows build path was
 updated to add the build's target architecture.
 
 Previously, Flutter builds for Windows assumed an x64 target architecture.
@@ -46,17 +46,18 @@ If you use [`package:msix`][], update to version 3.15.0 or newer.
 
 ## Timeline
 
-Landed in version: TBD
-
-In stable release: TBD
+Landed in version: 3.15.0-0.0.pre<br>
+In stable release: 3.16
 
 ## References
 
 Design document:
-*  [https://flutter.dev/go/windows-arm64][]
+
+*  [flutter.dev/go/windows-arm64][]
 
 Relevant pull requests:
+
 * [Introduce architecture subdirectory for Windows build][]
 
-[https://flutter.dev/go/windows-arm64]: {{site.main-url}}/go/windows-arm64
+[flutter.dev/go/windows-arm64]: {{site.main-url}}/go/windows-arm64
 [Introduce architecture subdirectory for Windows build]: {{site.github}}/flutter/flutter/pull/131843

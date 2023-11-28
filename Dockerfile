@@ -1,4 +1,4 @@
-FROM ruby:3.2.2-slim-bookworm@sha256:adc7f93df5b83c8627b3fadcc974ce452ef9999603f65f637e32b8acec096ae1 AS base
+FROM ruby:3.2.2-slim-bookworm@sha256:02a091c83d1aa1070c0f6fefcbd2aff58ddd3430e2d5661c6ef2142b1383349b AS base
 
 ENV TZ=US/Pacific
 RUN apt-get update && apt-get install -yq --no-install-recommends \
@@ -39,7 +39,9 @@ VOLUME /flutter
 # NOTE You will get a warning "Woah! You appear to be trying to run flutter as root."
 # and this is to be disregarded since this image is never deployed to production.
 RUN flutter doctor
-RUN flutter --version
+RUN flutter config --no-analytics  \
+    && flutter config --no-cli-animations  \
+    && flutter --version
 RUN dart pub get
 
 
@@ -53,10 +55,6 @@ RUN mkdir -p /etc/apt/keyrings \
     && apt-get update -yq \
     && apt-get install nodejs -yq \
     && npm install -g npm # Ensure latest npm
-
-# Install global Firebase CLI
-RUN npm install -g firebase-tools@12.7.0
-
 
 
 # ============== FLUTTER CODE TESTS ==============
@@ -115,9 +113,3 @@ ARG BUILD_CONFIGS=_config.yml
 ENV BUILD_CONFIGS=$BUILD_CONFIGS
 RUN bundle exec jekyll build --config $BUILD_CONFIGS
 
-
-
-# ============== TEST BUILT SITE LINKS ==============
-FROM build as checklinks
-
-CMD ["tool/check-links.sh"]

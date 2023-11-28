@@ -2339,10 +2339,11 @@ Future<void> _incrementCounter() async {
 
 ### How do I access SQLite in Flutter?
 
-In Android, you use SQLite to store structured data that you can query
-using SQL.
+In Android, you use SQLite to store structured data
+that you can query using SQL.
 
-In Flutter, access this functionality using the
+In Flutter, for macOS, Android, or iOS,
+access this functionality using the
 [SQFlite][] plugin.
 
 ## Debugging
@@ -2391,7 +2392,7 @@ see the [`firebase_messaging`][] plugin documentation.
 [`firebase_messaging`]: {{site.pub}}/packages/firebase_messaging
 [`firebase_storage`]: {{site.pub}}/packages/firebase_storage
 [`flutter_firebase_ui`]: {{site.pub}}/packages/flutter_firebase_ui
-[Firebase Messaging]: {{site.github}}/FirebaseExtended/flutterfire/tree/master/packages/firebase_messaging
+[Firebase Messaging]: {{site.github}}/firebase/flutterfire/tree/master/packages/firebase_messaging
 [first party plugins]: {{site.pub}}/flutter/packages?q=firebase
 [Flutter cookbook]: {{site.url}}/cookbook
 [Flutter for Android Developers: How to design LinearLayout in Flutter]: https://proandroiddev.com/flutter-for-android-developers-how-to-design-linearlayout-in-flutter-5d819c0ddf1a

@@ -2,7 +2,7 @@ name: themes
 description: Sample code for themes cookbook recipe.
 
 environment:
-  sdk: ^3.1.0
+  sdk: ^3.2.0
 
 dependencies:
   flutter:

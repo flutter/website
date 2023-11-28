@@ -3,7 +3,7 @@ title: Support for WebAssembly (Wasm)
 description: >-
   Current status of Flutter's experimental support for WebAssembly (Wasm).
 short-title: Wasm
-last-update: October 31, 2023
+last-update: November 21, 2023
 ---
 
 The Flutter and Dart teams are excited to add
@@ -32,15 +32,23 @@ The Wasm standard plans to add WasmGC to help garbage-collected languages
 like Dart execute code in an efficient manner.
 
 [Chromium and V8][] released stable support for WasmGC in Chromium 119,
-and the Firefox team plans to release stable support in Firefox 120.
+and the Firefox team announced stable support in Firefox 120.
+Note that Chrome on iOS uses WebKit, which doesn't yet 
+[support WasmGC][].
 To see the current status of WasmGC and other proposals,
 check out the [WebAssembly roadmap][].
 
 [WasmGC]: https://github.com/WebAssembly/gc/tree/main/proposals/gc
 [Chromium and V8]: https://chromestatus.com/feature/6062715726462976
 [WebAssembly roadmap]: https://webassembly.org/roadmap/
+[support WasmGC]: https://bugs.webkit.org/show_bug.cgi?id=247394
 
 ### Try it out
+
+To try a pre-built Flutter web app using Wasm, check out the
+[Material 3 WasmGC preview demo](https://flutterweb-wasm.web.app/).
+
+To experiment with Wasm in your own apps, follow the steps below.
 
 #### Switch to the Flutter `master` channel and upgrade
 
@@ -117,8 +125,6 @@ Flutter/Wasm content:
   - Version 119 or later.
 - Firefox
   - Version 120 or later.
-    The beta, nightly, and developer [preview channels][ff-preview]
-    all should work.
 
 {{site.alert.note}}
   This does not include versions of these browsers on iOS.

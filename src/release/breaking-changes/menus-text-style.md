@@ -1,6 +1,6 @@
 ---
 title: Updated default text styles for menus
-description: >
+description: >-
   The default text styles for menus are updated to
   match the Material 3 specification.
 ---
@@ -174,7 +174,7 @@ menuButtonTheme: MenuButtonThemeData(
 ## Timeline
 
 Landed in version: 3.14.0-11.0.pre<br>
-In stable release: TBD
+In stable release: 3.16
 
 ## References
 

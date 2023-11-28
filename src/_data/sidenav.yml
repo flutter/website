@@ -61,6 +61,39 @@
     - title: Codelabs
       permalink: /codelabs
 
+- title: App solutions
+  children:
+    - title: Games
+      children:
+        - title: Overview
+          permalink: /resources/games-toolkit
+        - title: Add achievements and leaderboards
+          permalink: /cookbook/games/achievements-leaderboard
+        - title: Add advertising
+          permalink: /cookbook/plugins/google-mobile-ads
+        - title: Add multiplayer support
+          permalink: /cookbook/games/firestore-multiplayer
+        - title: Add in-app purchases
+          permalink: https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases#0
+        - title: Add user authentication
+          permalink: https://firebase.google.com/codelabs/firebase-auth-in-flutter-apps#0
+        - title: Debug using Crashlytics
+          permalink: https://firebase.google.com/docs/crashlytics/get-started?platform=flutter
+    - title: News
+      children:
+        - title: Build a news app
+          permalink: /resources/news-toolkit
+    - title: Monetization
+      children:
+        - title: Overview
+          permalink: https://flutter.dev/monetization
+        - title: Add in-app purchases
+          permalink: https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases#0
+    - title: Maps
+      children:
+        - title: Add maps to your app
+          permalink: https://developers.google.com/maps/flutter-package
+
 - divider
 - header: User interface
 - title: Introduction
@@ -153,7 +186,9 @@
           match-page-url-exactly: true
         - title: Handle taps
           permalink: /cookbook/gestures/handling-taps
-        - title: Drag a UI element
+        - title: Drag an object outside an app
+          permalink: /ui/interactivity/gestures/drag-outside
+        - title: Drag a UI element within an app
           permalink: /cookbook/effects/drag-a-widget
         - title: Add Material touch ripples
           permalink: /cookbook/gestures/ripples
@@ -403,6 +438,12 @@
     - title: Testing overview
       permalink: /testing/overview
       match-page-url-exactly: true
+    - title: Unit testing
+      children:
+        - title: Introduction
+          permalink: /cookbook/testing/unit/introduction
+        - title: Mock dependencies
+          permalink: /cookbook/testing/unit/mocking
     - title: Widget testing
       children:
         - title: Introduction
@@ -416,18 +457,12 @@
     - title: Integration testing
       children:
         - title: Introduction
-          permalink: /testing/integration-tests
+          permalink: /cookbook/testing/integration/introduction
           match-page-url-exactly: true
         - title: Write and run an integration test
-          permalink: /cookbook/testing/integration/introduction
+          permalink: /testing/integration-tests
         - title: Profile an integration test
           permalink: /cookbook/testing/integration/profiling
-    - title: Unit testing
-      children:
-        - title: Introduction
-          permalink: /cookbook/testing/unit/introduction
-        - title: Mock dependencies
-          permalink: /cookbook/testing/unit/mocking
     - title: Test a plugin
       permalink: /testing/testing-plugins
     - title: Handle plugin code in tests
@@ -620,11 +655,6 @@
       permalink: https://github.com/flutter/flutter/blob/main/CONTRIBUTING.md
     - title: Design documents
       permalink: /resources/design-docs
-    - header: Toolkits
-    - title: Casual Games Toolkit
-      permalink: /resources/games-toolkit
-    - title: Flutter News Toolkit
-      permalink: /resources/news-toolkit
 
 - title: Reference
   permalink: /reference
