@@ -55,6 +55,12 @@ operating system sets up the app's process.
 Android provides the concept of a [launch screen][] to
 display a `Drawable` while the app is initializing.
 
+A `Drawable` is an Android graphic.
+To learn how to add a `Drawable` to your
+Flutter project in Android Studio,
+check out [Import drawables into your project][drawables]
+in the Android developer documentation.
+
 The default Flutter project template includes a definition
 of a launch theme and a launch background. You can customize
 this by editing `styles.xml`, where you can define a theme
@@ -81,6 +87,8 @@ background color of the Flutter UI.
     <item name="android:windowBackground">@drawable/normal_background</item>
 </style>
 ```
+
+[drawables]: {{site.android-dev}}/studio/write/resource-manager#import
 
 ## Set up the FlutterActivity in AndroidManifest.xml
 
