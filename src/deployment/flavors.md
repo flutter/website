@@ -262,9 +262,9 @@ flutter:
 
 In this example, files within the `assets/common/` directory will always be bundled
 when app is built during `flutter run` or `flutter build`. Files within the
-`assets/free/` directory will be bundled only when the `--flavor` option is set
-to `free`. Similarly, files within the `assets/premium` directory will be
-bundled only if `--flavor` is set to `premium`.
+`assets/free/` directory are bundled _only_ when the `--flavor` option is set
+to `free`. Similarly, files within the `assets/premium` directory are
+bundled _only_ if `--flavor` is set to `premium`.
 
 ## More information
 
