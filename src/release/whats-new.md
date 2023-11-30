@@ -1253,7 +1253,7 @@ New and updated docs on the site include:
 * The Flutter layout codelab has been rewritten and
   uses the updated DartPad, the browser-based tool for
   running Dart code. DartPad now supports Flutter!
-  [Try it out] and let us know what you think.
+  [Try it out]({{site.dartpad}}) and let us know what you think.
 * A new page on [using the dart:ffi library][]
   to bind your app to native code (a feature currently under
   development).
@@ -1301,7 +1301,6 @@ Happy Fluttering!
 [Showcase]: {{site.main-url}}/showcase
 [`ToggleButtons`]: {{site.api}}/flutter/material/ToggleButtons-class.html
 [ToggleButtons demo]: {{site.github}}/csells/flutter_toggle_buttons
-[Try it out]: {{site.url}}/codelabs/layout-basics
 [Upgrading from package:flutter_web to the Flutter SDK]: {{site.repo.flutter}}/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
 [using the dart:ffi library]: {{site.url}}/platform-integration/android/c-interop
 [web FAQ]: {{site.url}}/platform-integration/web/faq
@@ -1364,10 +1363,9 @@ component and how to customize it, see
 For more information on updates, see the [1.5.4 release notes][]
 or [download the release][].
 
-We are updating DartPad to work with Flutter. Try our new
-[Basic Flutter layout codelab][] and tell us what you think!
+We are updating DartPad to work with Flutter. Try the new
+Basic Flutter layout codelab and tell us what you think!
 
-[Basic Flutter layout codelab]: {{site.url}}/codelabs/layout-basics
 [download the release]: {{site.url}}/release/archive
 [Flutter 1.5]: {{site.google-blog}}/2019/05/Flutter-io19.html
 [1.5.4 release notes]: {{site.url}}/release/release-notes/release-notes-1.5.4
