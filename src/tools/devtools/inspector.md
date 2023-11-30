@@ -517,22 +517,27 @@ This feature prevents otherwise-identical `const` Widgets from
 being considered equal in debug builds. For more details, see
 the discussion on [common problems when debugging][].
 
-## Inspector Settings
+## Inspector settings
 ![The Flutter Inspector Settings dialog]({{site.url}}/assets/images/docs/tools/devtools/flutter_inspector_settings.png){:width="100%"}
 
-### Enable Hover Inspection
+### Enable hover inspection
 
 Hovering over any widget displays its properties and values.
 
-Toggling this value, will enable or disable the hover inspection functionality.
+Toggling this value enables or disables the hover inspection functionality.
 
-### Package Directories
+### Package directories
 
-By default DevTools limits the visible Widgets in the widget tree, to those from the project's root directory and those from Flutter. 
+By default, DevTools limits the widgets displayed in the widget tree
+to those from the project's root directory, and those from Flutter. This
+filtering only applies to the widgets in the Inspector Widget Tree (left side
+of the Inspector) -- not the Widget Details Tree (right side of the Inspector
+in the same tab view as the Layout Explorer). In the Widget Details Tree, you
+will be able to see all widgets in the tree from all packages.
 
 In order to show other widgets, a parent directory of theirs must be added to the Package Directories.
 
-For example, if your project directory structure looks something like this:
+For example, consider the following directory structure:
 ```
 project_foo
   pkgs
@@ -541,16 +546,16 @@ project_foo
     widgets_B
 ```
 
-If you run your app from `project_foo_app`, then only widgets from
-`project_foo/pkgs/project_foo_app` will show up in the widget inspector.
+Running your app from `project_foo_app` displays only widgets from
+`project_foo/pkgs/project_foo_app` in the widget inspector tree.
 
-You can show widgets from `widgets_A` in your widget tree by adding
-`project_foo/pkgs/widgets_A` to the package directories.
+To show widgets from `widgets_A` in the widget tree,
+add `project_foo/pkgs/widgets_A` to the package directories.
 
-If you wanted all widgets from your project root to be included then you could
+To display _all_ widgets from your project root in the widget tree,
 add `project_foo` to the package directories.
 
-Changes to your package directories should be persisted for the next time the
+Changes to your package directories persist the next time the
 widget inspector is opened for the app.
 
 ## Other resources
