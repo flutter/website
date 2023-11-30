@@ -98,5 +98,3 @@ class _SignUpFormState extends State<SignUpForm> {
     );
   }
 }
-
-// ignore_for_file: prefer_final_fields
