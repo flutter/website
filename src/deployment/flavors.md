@@ -242,7 +242,7 @@ check out the integration test samples in the [Flutter repo][].
 If you aren't familiar with how to add assets to your app, see
 [Adding assets and images][].
 
-If you have assets that are only used in specific flavor in your app, you can
+If you have assets that are only used in a specific flavor in your app, you can
 configure them to only be bundled into your app when building for that flavor.
 You can utilize this to prevent your app bundle sizes from being bloated by
 unused assets.
