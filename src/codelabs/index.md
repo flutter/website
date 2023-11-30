@@ -84,10 +84,6 @@ one of the following codelabs:
 Learn about Material Design and basic Flutter concepts,
 like layout and animations:
 
-* [Basic Flutter layout concepts][]<br>
-  Use DartPad in a browser (no downloads required!)
-  to learn the basics of creating a Flutter layout.
-
 * [How to debug layout issues with the Flutter Inspector][]<br>
   Not an official codelab, but step-by-step instructions on
   how to debug common layout problems using the Flutter 
@@ -145,7 +141,6 @@ like layout and animations:
 [Building next generation UIs in Flutter]: {{site.codelabs}}/codelabs/flutter-next-gen-uis#0
 [Adaptive Apps in Flutter]: {{site.codelabs}}/codelabs/flutter-adaptive-app
 [animations]: {{site.pub}}/packages/animations
-[Basic Flutter layout concepts]: {{site.url}}/codelabs/layout-basics
 [Building Beautiful Transitions with Material Motion for Flutter]: {{site.codelabs}}/codelabs/material-motion-flutter
 [Building scrolling experiences in Flutter]: {{site.youtube-site}}/watch?v=YY-_yrZdjGc
 [How to debug layout issues with the Flutter Inspector]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
