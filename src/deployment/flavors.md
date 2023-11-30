@@ -244,8 +244,7 @@ If you aren't familiar with how to add assets to your app, see
 
 If you have assets that are only used in a specific flavor in your app, you can
 configure them to only be bundled into your app when building for that flavor.
-You can utilize this to prevent your app bundle sizes from being bloated by
-unused assets.
+This prevents your app bundle size from being bloated by unused assets.
 
 Here is an example:
 
