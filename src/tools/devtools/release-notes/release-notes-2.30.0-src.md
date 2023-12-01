@@ -8,12 +8,12 @@ To learn more about DevTools, check out the
 ## Performance updates
 
 * Add an indicator of the rendering engine to the Flutter Frames chart. -
-[#6771](https://github.com/flutter/devtools/pull/6771)
+  [#6771](https://github.com/flutter/devtools/pull/6771)
 
   ![Flutter rendering engine text]({{site.url}}/tools/devtools/release-notes/images-2.30.0/flutter_frames_engine_text.png "Text describing the current flutter rendering engine")
 
-* Improve messaging when we do not have analysis data available for a Flutter
-frame. - [#6768](https://github.com/flutter/devtools/pull/6768)
+* Improve messaging when we do not have analysis data available for a
+  Flutter frame. - [#6768](https://github.com/flutter/devtools/pull/6768)
 
 ## VS Code Sidebar updates
 
@@ -22,7 +22,7 @@ frame. - [#6768](https://github.com/flutter/devtools/pull/6768)
   the current project. This also requires a corresponding Dart extension for
   VS Code update to appear. - [#6688](https://github.com/flutter/devtools/pull/6688)
 
-* The DevTools menu in the sidebar now has now has an entry "Open in Browser"
+* The DevTools menu in the sidebar now has an entry "Open in Browser"
   that opens DevTools in an external browser window even when VS Code settings
   are set to usually use embedded DevTools. - [#6736](https://github.com/flutter/devtools/pull/6736)
 
