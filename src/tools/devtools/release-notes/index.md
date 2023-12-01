@@ -18,6 +18,10 @@ $ dart devtools --version
 
 ### Release notes
 
+* [2.30.0 release notes][]
+* [2.29.0 release notes][]
+* [2.28.3 release notes][]
+* [2.28.2 release notes][]
 * [2.28.1 release notes][]
 * [2.27.0 release notes][]
 * [2.26.1 release notes][]
@@ -41,6 +45,10 @@ $ dart devtools --version
 * [2.8.0 release notes][]
 * [2.7.0 release notes][]
 
+[2.30.0 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.30.0
+[2.29.0 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.29.0
+[2.28.3 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.28.3
+[2.28.2 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.28.2
 [2.28.1 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.28.1
 [2.27.0 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.27.0
 [2.26.1 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.26.1

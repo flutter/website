@@ -18,8 +18,8 @@ open source licensing, it makes a great choice for games.
 
 Casual games fall into two categories: turn-based games
 and real-time games.
-You may be familiar with both types of games,
-though you might not have thought about them in quite this way.
+You might be familiar with both types of games,
+though perhaps you didn't think about them in quite this way.
 
 _Turn-based games_ cover games meant for a mass market with
 simple rules and gameplay.
@@ -42,8 +42,8 @@ The Casual Games Toolkit provides the following free resources.
 * A repository that includes three new game templates that provide
   a starting point for building a casual game.
 
-  1. A [base game template][basic-template].
-     It includes the basics for:
+  1. A [base game template][basic-template]
+     that includes the basics for:
 
      * Main menu
      * Navigation
@@ -54,15 +54,15 @@ The Casual Games Toolkit provides the following free resources.
      * Sound
      * Themes
 
-  1. A [card game template][card-template].
-     It includes everything in the base template plus:
+  1. A [card game template][card-template]
+     that includes everything in the base template plus:
 
      * Drag and drop
      * Game state management
      * Multiplayer integration hooks
 
   1. An [endless runner template][runner-template] created in partnership
-     with the open source game engine Flame. It implements:
+     with the open source game engine, Flame. It implements:
 
      * A FlameGame base template
      * Player steering
@@ -70,6 +70,11 @@ The Casual Games Toolkit provides the following free resources.
      * Parallax effects
      * Spawning
      * Different visual effects
+
+  1. A sample game built on top of the endless runner template,
+     called SuperDash. You can play the game on iOS, Android,
+     or [web][], [view the open source code repo][], or 
+     [read how the game was created in 6 days][].
 
 * Developer guides for integrating needed services.
 * A link to a [Flame Discord][game-discord] channel.
@@ -392,3 +397,7 @@ investigate other resources that our community recommends.
 [spriteWidget]: {{site.pub-pkg}}/spritewidget
 [sqflite]: {{site.pub-pkg}}/sqflite
 [win32_gamepad]: {{site.pub-pkg}}/win32_gamepad
+[read how the game was created in 6 days]: {{site.flutter-medium}}/how-we-built-the-new-super-dash-demo-in-flutter-and-flame-in-just-six-weeks-9c7aa2a5ad31
+[view the open source code repo]: {{site.github}}/flutter/super_dash
+[web]: https://superdash.flutter.dev/
+
