@@ -186,7 +186,7 @@ Short-live isolates are convenient to use,
 but there is performance overhead required to spawn new isolates,
 and to copy objects from one isolate to another.
 If you're doing the same computation using `Isolate.run` repeatedly,
-you might better performance by creating isolates that don't exit immediately.
+you might have better performance by creating isolates that don't exit immediately.
 
 To do this, you can use a handful of lower-level isolate-related APIs that 
 `Isolate.run` abstracts:
@@ -195,7 +195,7 @@ To do this, you can use a handful of lower-level isolate-related APIs that
 - [`ReceivePort`][] and [`SendPort`][]
 - [`send()`][] method
 
-When you use `Isolate.run` method,
+When you use the `Isolate.run` method,
 the new isolate immediately shuts down after it
 returns a single message to the main isolate.
 Sometimes, you'll need isolates that are long lived,
@@ -285,13 +285,13 @@ in a single isolate.
 Therefore, isolates are limited by their access to their own memory.
 For example,
 if you have an application with a global mutable variable called `configuration`,
-it will be copied as a new global field in a spawned isolate.
+it is copied as a new global field in a spawned isolate.
 If you mutate that variable in the spawned isolate,
-it will remain untouched in the main isolate.
+it remains untouched in the main isolate.
 This is true even if you pass the `configuration` object as a message
 to the new isolate.
 This is how isolates are meant to function,
-and it's important to keep in mind when you're considering using isolates.
+and it's important to keep in mind when you consider using isolates.
 
 ### Web platforms and compute
 
