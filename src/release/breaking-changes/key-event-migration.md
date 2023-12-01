@@ -1,0 +1,287 @@
+---
+title: Migrate RawKeyEvent/RawKeyboard system to KeyEvent/HardwareKeyboard system
+description: >
+  The raw key event subsystem has been superseded by the key event subsystem,
+  and APIs that use RawKeyEvent and RawKeyboard are converted to KeyEvent and
+  HardwareKeyboard.
+---
+
+## Summary
+
+For some time now (years), Flutter has had two key event systems implemented.
+The new system reached parity with the old platform-specific raw key event
+system, and the raw system has been deprecated.
+
+## Context
+
+In the original key event subsystem handling each platform's quirks in the
+framework and in client apps caused overly complex code, and the old system
+didn't properly represent the true state of key events on the system.
+
+[RawKeyboard] is the legacy API, and has been deprecated and will be removed in
+the future. The replacements are [HardwareKeyboard] and [KeyEvent]
+APIs (such as [FocusNode.onKeyEvent]).
+
+Behavior-wise, [RawKeyboard] provided a less unified, less regular
+event model than [HardwareKeyboard] does. For example:
+
+* Down events were not always matched with an up event, and vice versa (the
+  set of pressed keys was silently updated).
+* The logical key of the down event was not always the same as that of the up
+  event.
+* Down events and repeat events were not easily distinguishable (had to be
+  tracked manually).
+* Lock modes (such as CapsLock) only had their "enabled" state recorded.
+  There was no way to acquire their pressed state.
+
+So, the new [`KeyEvent`][]/[`HardwareKeyboard`][]-based system was born and, to
+minimize breaking changes, was implemented in parallel with the old system with
+the intention of eventually deprecating the raw system. That time has arrived,
+and application developers should migrate their code to avoid breaking changes
+that will occur when the deprecated APIs are removed.
+
+## Description of change
+
+Summary of APIs that have been deprecated:
+
+* [`Focus.onKey`][]
+* [`FocusNode.attach`][]'s `onKey` argument.
+* [`FocusNode.onKey`][]
+* [`FocusOnKeyCallback`][]
+* [`FocusScope.onKey`][]
+* [`FocusScopeNode.onKey`][]
+* [`GLFWKeyHelper`][]
+* [`GtkKeyHelper`][]
+* [`KeyboardSide`][]
+* [`KeyDataTransitMode`][]
+* [`KeyEventManager`][]
+* [`KeyHelper`][]
+* [`KeyMessage`][]
+* [`KeyMessageHandler`][]
+* [`ModifierKey`][]
+* [`RawKeyboard`][]
+* [`RawKeyboardListener`][]
+* [`RawKeyDownEvent`][]
+* [`RawKeyEvent`][]
+* [`RawKeyEventData`][]
+* [`RawKeyEventDataAndroid`][]
+* [`RawKeyEventDataFuchsia`][]
+* [`RawKeyEventDataIos`][]
+* [`RawKeyEventDataLinux`][]
+* [`RawKeyEventDataMacOs`][]
+* [`RawKeyEventDataWeb`][]
+* [`RawKeyEventDataWindows`][]
+* [`RawKeyEventHandler`][]
+* [`RawKeyUpEvent`][]
+* [`ServicesBinding.keyEventManager`][]
+* [`KeySimulatorTransitModeVariant`][]
+* [`debugKeyEventSimulatorTransitModeOverride`][]
+
+## Migration guide
+
+APIs provided by the Flutter framework are already migrated. Migration is needed
+only if any of the classes or methods listed in the previous section are used.
+
+### Migrating your code that uses `RawKeyEvent`
+
+For the most part, there are equivalent `KeyEvent` APIs available for all of the
+`RawKeyEvent` APIs.
+
+Some APIs relating to platform specific information contained in
+[`RawKeyEventData`][] objects or their subclasses has been removed and is no
+longer supported. One exception is that [`RawKeyEventDataAndroid.eventSource`][]
+information is accessible now as [`KeyEvent.deviceType`][] in a more
+platform independent form.
+
+#### Migrating `IsKeyPressed` and related functions
+
+If the legacy code used the [`RawKeyEvent.isKeyPressed`][],
+[`RawKeyEvent.isControlPressed`][], [`RawKeyEvent.isShiftPressed`][],
+[`RawKeyEvent.isAltPressed`][], or [`RawKeyEvent.isMetaPressed`][] APIs, there
+are equivalent functions on the [`HardwareKeyboard`][] singleton instance.
+
+Before:
+
+```dart
+KeyEventResult _handleKeyEvent(RawKeyEvent keyEvent) {
+  if (keyEvent.isControlPressed ||
+      keyEvent.isShiftPressed ||
+      keyEvent.isAltPressed ||
+      keyEvent.isMetaPressed) {
+    print('Modifier pressed: $keyEvent');
+  }
+  if (keyEvent.isKeyPressed(LogicalKeyboardKey.keyA)) {
+    print('Key A pressed.');
+  }
+  return KeyEventResult.ignored;
+}
+```
+
+After:
+
+```dart
+KeyEventResult _handleKeyEvent(KeyEvent _) {
+  if (HardwareKeyboard.instance.isControlPressed ||
+      HardwareKeyboard.instance.isShiftPressed ||
+      HardwareKeyboard.instance.isAltPressed ||
+      HardwareKeyboard.instance.isMetaPressed) {
+    print('Modifier pressed: $keyEvent');
+  }
+  if (HardwareKeyboard.instance.isLogicalKeyPressed(LogicalKeyboardKey.keyA)) {
+    print('Key A pressed.');
+  }
+  return KeyEventResult.ignored;
+}
+```
+
+#### Setting `onKey` for focus
+
+If you were setting the `onKey` parameter of the `Focus`, `FocusScope`,
+`FocusNode`, or `FocusScopeNode` classes, then there is an equivalent
+`onKeyEvent` parameter that supplies `KeyEvent`s instead of `RawKeyEvent`.
+
+```dart
+Widget build(BuildContext context) {
+  return Focus(
+    onKey: (RawKeyEvent keyEvent) {
+      print('Key event: $keyEvent');
+      return KeyEventResult.ignored;
+    }
+    child: child,
+  );
+}
+```
+
+After:
+
+```dart
+Widget build(BuildContext context) {
+  return Focus(
+    onKeyEvent: (KeyEvent keyEvent) {
+      print('Key event: $keyEvent');
+      return KeyEventResult.ignored;
+    }
+    child: child,
+  );
+}
+```
+
+#### Repeat key event handling
+
+If you were relying on the [`RawKeyEvent.repeat`][] attribute to determine if a
+key was a repeated key event, that has now been separated into a separate
+[`KeyRepeatEvent`][] type.
+
+Before:
+
+```dart
+KeyEventResult _handleKeyEvent(RawKeyEvent keyEvent) {
+  if (keyEvent is RawKeyDownEvent) {
+    print('Key down: ${keyEvent.data.logicalKey.keyLabel}(${keyEvent.repeat ? ' (repeated)' : ''})');
+  }
+  return KeyEventResult.ignored;
+}
+```
+
+After:
+
+```dart
+KeyEventResult _handleKeyEvent(KeyEvent _) {
+  if (keyEvent is KeyDownEvent || keyEvent is KeyRepeatEvent) {
+    print('Key down: ${keyEvent.logicalKey.keyLabel}(${keyEvent is KeyRepeatEvent ? ' (repeated)' : ''})');
+  }
+  return KeyEventResult.ignored;
+}
+```
+
+Be careful to check conditionals: a `KeyRepeatEvent` is also a key down event,
+but it is a different type (and it is not a subclass of `KeyDownEvent`), so
+don't assume that `keyEvent is! KeyDownEvent` only allows key up events, because
+both `KeyDownEvent` and `KeyRepeatEvent` need to be checked.
+
+## Timeline
+
+Landed in version: 3.17.0-18.0.pre<br>
+In stable release: not yet (Not in 3.17)
+
+## References
+
+Replacement API documentation:
+
+* [`Focus.onKeyEvent`][]
+* [`FocusNode.onKeyEvent`][]
+* [`FocusOnKeyEventCallback`][]
+* [`FocusScope.onKeyEvent`][]
+* [`FocusScopeNode.onKeyEvent`][]
+* [`HardwareKeyboard`][]
+* [`KeyboardListener`][]
+* [`KeyDownEvent`][]
+* [`KeyRepeatEvent`][]
+* [`KeyEvent`][]
+* [`KeyEventHandler`][]
+* [`KeyUpEvent`][]
+
+Relevant issues:
+
+* [`RawKeyEvent` and `RawKeyboard`, et al should be deprecated and removed (Issue 136419)][]
+
+Relevant PRs:
+
+* [Deprecate RawKeyEvent, et al. and exempt uses in the framework.][]
+* [Prepare ShortcutActivator and ShortcutManager to migrate to KeyEvent from RawKeyEvent.][]
+
+[`debugKeyEventSimulatorTransitModeOverride`]: {{site.main-api}}/flutter/services/debugKeyEventSimulatorTransitModeOverride-class.html
+[`Focus.onKey`]: {{site.main-api}}/flutter/services/Focus/onKey.html
+[`FocusNode.attach`]: {{site.main-api}}/flutter/services/FocusNode/attach.html
+[`FocusNode.onKey`]: {{site.main-api}}/flutter/services/FocusNode/onKey.html
+[`FocusOnKeyCallback`]: {{site.main-api}}/flutter/services/FocusOnKeyCallback-class.html
+[`FocusScope.onKey`]: {{site.main-api}}/flutter/services/FocusScope/onKey.html
+[`FocusScopeNode.onKey`]: {{site.main-api}}/flutter/services/FocusScopeNode/onKey.html
+[`GLFWKeyHelper`]: {{site.main-api}}/flutter/services/GLFWKeyHelper-class.html
+[`GtkKeyHelper`]: {{site.main-api}}/flutter/services/GtkKeyHelper-class.html
+[`KeyboardSide`]: {{site.main-api}}/flutter/services/KeyboardSide-class.html
+[`KeyDataTransitMode`]: {{site.main-api}}/flutter/services/KeyDataTransitMode-class.html
+[`KeyEventManager`]: {{site.main-api}}/flutter/services/KeyEventManager-class.html
+[`KeyHelper`]: {{site.main-api}}/flutter/services/KeyHelper-class.html
+[`KeyMessage`]: {{site.main-api}}/flutter/services/KeyMessage-class.html
+[`KeyMessageHandler`]: {{site.main-api}}/flutter/services/KeyMessageHandler-class.html
+[`KeySimulatorTransitModeVariant`]: {{site.main-api}}/flutter/services/KeySimulatorTransitModeVariant-class.html
+[`ModifierKey`]: {{site.main-api}}/flutter/services/ModifierKey-class.html
+[`RawKeyboard`]: {{site.main-api}}/flutter/services/RawKeyboard-class.html
+[`RawKeyboardListener`]: {{site.main-api}}/flutter/services/RawKeyboardListener-class.html
+[`RawKeyDownEvent`]: {{site.main-api}}/flutter/services/RawKeyDownEvent-class.html
+[`RawKeyEvent`]: {{site.main-api}}/flutter/services/RawKeyEvent-class.html
+[`RawKeyEventData`]: {{site.main-api}}/flutter/services/RawKeyEventData-class.html
+[`RawKeyEventDataAndroid`]: {{site.main-api}}/flutter/services/RawKeyEventDataAndroid-class.html
+[`RawKeyEventDataFuchsia`]: {{site.main-api}}/flutter/services/RawKeyEventDataFuchsia-class.html
+[`RawKeyEventDataIos`]: {{site.main-api}}/flutter/services/RawKeyEventDataIos-class.html
+[`RawKeyEventDataLinux`]: {{site.main-api}}/flutter/services/RawKeyEventDataLinux-class.html
+[`RawKeyEventDataMacOs`]: {{site.main-api}}/flutter/services/RawKeyEventDataMacOs-class.html
+[`RawKeyEventDataWeb`]: {{site.main-api}}/flutter/services/RawKeyEventDataWeb-class.html
+[`RawKeyEventDataWindows`]: {{site.main-api}}/flutter/services/RawKeyEventDataWindows-class.html
+[`RawKeyEventHandler`]: {{site.main-api}}/flutter/services/RawKeyEventHandler-class.html
+[`RawKeyUpEvent`]: {{site.main-api}}/flutter/services/RawKeyUpEvent-class.html
+[`ServicesBinding.keyEventManager`]: {{site.main-api}}/flutter/services/ServicesBinding/keyEventManager.html
+[`Focus.onKeyEvent`]: {{site.main-api}}/flutter/services/Focus/onKeyEvent.html
+[`FocusNode.onKeyEvent`]: {{site.main-api}}/flutter/services/FocusNode/onKeyEvent.html
+[`FocusOnKeyEventCallback`]: {{site.main-api}}/flutter/services/FocusOnKeyEventCallback-class.html
+[`FocusScope.onKeyEvent`]: {{site.main-api}}/flutter/services/FocusScope/onKeyEvent.html
+[`FocusScopeNode.onKeyEvent`]: {{site.main-api}}/flutter/services/FocusScopeNode/onKeyEvent.html
+[`HardwareKeyboard`]: {{site.main-api}}/flutter/services/HardwareKeyboard-class.html
+[`KeyboardListener`]: {{site.main-api}}/flutter/services/KeyboardListener-class.html
+[`KeyDownEvent`]: {{site.main-api}}/flutter/services/KeyDownEvent-class.html
+[`KeyRepeatEvent`]: {{site.main-api}}/flutter/services/KeyRepeatEvent-class.html
+[`KeyEvent`]: {{site.main-api}}/flutter/services/KeyEvent-class.html
+[`KeyEventHandler`]: {{site.main-api}}/flutter/services/KeyEventHandler-class.html
+[`KeyUpEvent`]: {{site.main-api}}/flutter/services/KeyUpEvent-class.html
+[`RawKeyEvent.isKeyPressed`]: {{site.main-api}}/flutter/services/RawKeyEvent/isKeyPressed.html
+[`RawKeyEvent.isControlPressed`]: {{site.main-api}}/flutter/services/RawKeyEvent/isControlPressed.html
+[`RawKeyEvent.isShiftPressed`]: {{site.main-api}}/flutter/services/RawKeyEvent/isShiftPressed.html
+[`RawKeyEvent.isAltPressed`]: {{site.main-api}}/flutter/services/RawKeyEvent/isAltPressed.html
+[`RawKeyEvent.isMetaPressed`]: {{site.main-api}}/flutter/services/RawKeyEvent/isMetaPressed.html
+[`RawKeyEvent.repeat`]: {{site.main-api}}/flutter/services/RawKeyEvent/repeat.html
+[`RawKeyEventDataAndroid.eventSource`]: {{site.main-api}}/flutter/services/RawKeyEventDataAndroid/eventSource.html
+[`KeyEvent.deviceType`]: {{site.main-api}}/flutter/services/KeyEvent/deviceType.html
+[`RawKeyEvent` and `RawKeyboard`, et al should be deprecated and removed (Issue 136419)]: {{site.repo.flutter}}/issues/136419
+[Prepare ShortcutActivator and ShortcutManager to migrate to KeyEvent from RawKeyEvent.]: {{site.repo.flutter}}/pull/136854
+[Deprecate RawKeyEvent, et al. and exempt uses in the framework.]: {{site.repo.flutter}}/pull/136677
