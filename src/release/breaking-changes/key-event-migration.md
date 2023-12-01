@@ -19,20 +19,20 @@ framework and in client apps caused overly complex code, and the old system
 didn't properly represent the true state of key events on the system.
 
 [RawKeyboard] is the legacy API, and has been deprecated and will be removed in
-the future. The replacements are [HardwareKeyboard] and [KeyEvent]
-APIs (such as [FocusNode.onKeyEvent]).
+the future. The replacements are [HardwareKeyboard] and [KeyEvent] APIs (such as
+[FocusNode.onKeyEvent]).
 
-Behavior-wise, [RawKeyboard] provided a less unified, less regular
-event model than [HardwareKeyboard] does. For example:
+Behavior-wise, [RawKeyboard] provided a less unified, less regular event model
+than [HardwareKeyboard] does. For example:
 
-* Down events were not always matched with an up event, and vice versa (the
-  set of pressed keys was silently updated).
+* Down events were not always matched with an up event, and vice versa (the set
+  of pressed keys was silently updated).
 * The logical key of the down event was not always the same as that of the up
   event.
 * Down events and repeat events were not easily distinguishable (had to be
   tracked manually).
-* Lock modes (such as CapsLock) only had their "enabled" state recorded.
-  There was no way to acquire their pressed state.
+* Lock modes (such as CapsLock) only had their "enabled" state recorded. There
+  was no way to acquire their pressed state.
 
 So, the new [`KeyEvent`][]/[`HardwareKeyboard`][]-based system was born and, to
 minimize breaking changes, was implemented in parallel with the old system with
@@ -42,14 +42,28 @@ that will occur when the deprecated APIs are removed.
 
 ## Description of change
 
-Summary of APIs that have been deprecated:
+Below are the APIs that have been deprecated.
 
-* [`Focus.onKey`][]
-* [`FocusNode.attach`][]'s `onKey` argument.
-* [`FocusNode.onKey`][]
-* [`FocusOnKeyCallback`][]
-* [`FocusScope.onKey`][]
-* [`FocusScopeNode.onKey`][]
+### Deprecated APIs That Have an Equivalent
+
+* [`Focus.onKey`][] => [`Focus.onKeyEvent`][]
+* [`FocusNode.attach`][]'s `onKey` argument => `onKeyEvent` argument
+* [`FocusNode.onKey`][] => [`FocusNode.onKeyEvent`][]
+* [`FocusOnKeyCallback`][] => [`FocusOnKeyEventCallback`][]
+* [`FocusScope.onKey`][] => [`FocusScope.onKeyEvent`][]
+* [`FocusScopeNode.onKey`][] => [`FocusScopeNode.onKeyEvent`][]
+* [`RawKeyboard`][] => [`HardwareKeyboard`][]
+* [`RawKeyboardListener`][] => [`KeyboardListener`][]
+* [`RawKeyDownEvent`][] => [`KeyDownEvent`][]
+* [`RawKeyEvent`][] => [`KeyEvent`][]
+* [`RawKeyUpEvent`][] => [`KeyUpEvent`][]
+
+### APIs That Have Been Discontinued
+
+These APIs are no longer needed once there is only one key event system, or
+their functionality is no longer offered.
+
+* [`debugKeyEventSimulatorTransitModeOverride`][]
 * [`GLFWKeyHelper`][]
 * [`GtkKeyHelper`][]
 * [`KeyboardSide`][]
@@ -58,11 +72,8 @@ Summary of APIs that have been deprecated:
 * [`KeyHelper`][]
 * [`KeyMessage`][]
 * [`KeyMessageHandler`][]
+* [`KeySimulatorTransitModeVariant`][]
 * [`ModifierKey`][]
-* [`RawKeyboard`][]
-* [`RawKeyboardListener`][]
-* [`RawKeyDownEvent`][]
-* [`RawKeyEvent`][]
 * [`RawKeyEventData`][]
 * [`RawKeyEventDataAndroid`][]
 * [`RawKeyEventDataFuchsia`][]
@@ -72,10 +83,7 @@ Summary of APIs that have been deprecated:
 * [`RawKeyEventDataWeb`][]
 * [`RawKeyEventDataWindows`][]
 * [`RawKeyEventHandler`][]
-* [`RawKeyUpEvent`][]
 * [`ServicesBinding.keyEventManager`][]
-* [`KeySimulatorTransitModeVariant`][]
-* [`debugKeyEventSimulatorTransitModeOverride`][]
 
 ## Migration guide
 
@@ -88,7 +96,7 @@ For the most part, there are equivalent `KeyEvent` APIs available for all of the
 `RawKeyEvent` APIs.
 
 Some APIs relating to platform specific information contained in
-[`RawKeyEventData`][] objects or their subclasses has been removed and is no
+[`RawKeyEventData`][] objects or their subclasses have been removed and are no
 longer supported. One exception is that [`RawKeyEventDataAndroid.eventSource`][]
 information is accessible now as [`KeyEvent.deviceType`][] in a more
 platform independent form.
@@ -98,7 +106,9 @@ platform independent form.
 If the legacy code used the [`RawKeyEvent.isKeyPressed`][],
 [`RawKeyEvent.isControlPressed`][], [`RawKeyEvent.isShiftPressed`][],
 [`RawKeyEvent.isAltPressed`][], or [`RawKeyEvent.isMetaPressed`][] APIs, there
-are equivalent functions on the [`HardwareKeyboard`][] singleton instance.
+are now equivalent functions on the [`HardwareKeyboard`][] singleton instance,
+but are not available on [KeyEvent]. [`RawKeyEvent.isKeyPressed`][] is available
+as [`HardwareKeyboard.isLogicalKeyPressed`][].
 
 Before:
 
@@ -136,9 +146,11 @@ KeyEventResult _handleKeyEvent(KeyEvent _) {
 
 #### Setting `onKey` for focus
 
-If you were setting the `onKey` parameter of the `Focus`, `FocusScope`,
-`FocusNode`, or `FocusScopeNode` classes, then there is an equivalent
-`onKeyEvent` parameter that supplies `KeyEvent`s instead of `RawKeyEvent`.
+If the legacy code was using the [`Focus.onKey`][], [`FocusScope.onKey`][],
+[`FocusNode.onKey`][], or [`FocusScopeNode.onKey`][] parameters, then there is
+an equivalent [`Focus.onKeyEvent`][], [`FocusScope.onKeyEvent`][],
+[`FocusNode.onKeyEvent`][], or [`FocusScopeNode.onKeyEvent`][] parameter that
+supplies `KeyEvent`s instead of `RawKeyEvent`s.
 
 ```dart
 Widget build(BuildContext context) {
@@ -194,8 +206,8 @@ KeyEventResult _handleKeyEvent(KeyEvent _) {
 }
 ```
 
-Be careful to check conditionals: a `KeyRepeatEvent` is also a key down event,
-but it is a different type (and it is not a subclass of `KeyDownEvent`), so
+Be careful to check conditionals: a [`KeyRepeatEvent`][] is also a key down event,
+but it is a different type (it is not a subclass of [`KeyDownEvent`][]), so
 don't assume that `keyEvent is! KeyDownEvent` only allows key up events, because
 both `KeyDownEvent` and `KeyRepeatEvent` need to be checked.
 
@@ -228,7 +240,6 @@ Relevant issues:
 Relevant PRs:
 
 * [Deprecate RawKeyEvent, et al. and exempt uses in the framework.][]
-* [Prepare ShortcutActivator and ShortcutManager to migrate to KeyEvent from RawKeyEvent.][]
 
 [`debugKeyEventSimulatorTransitModeOverride`]: {{site.main-api}}/flutter/services/debugKeyEventSimulatorTransitModeOverride-class.html
 [`Focus.onKey`]: {{site.main-api}}/flutter/services/Focus/onKey.html
@@ -268,6 +279,7 @@ Relevant PRs:
 [`FocusScope.onKeyEvent`]: {{site.main-api}}/flutter/services/FocusScope/onKeyEvent.html
 [`FocusScopeNode.onKeyEvent`]: {{site.main-api}}/flutter/services/FocusScopeNode/onKeyEvent.html
 [`HardwareKeyboard`]: {{site.main-api}}/flutter/services/HardwareKeyboard-class.html
+[`HardwareKeyboard.isLogicalKeyPressed`]: {{site.main-api}}/flutter/services/HardwareKeyboard/isLogicalKeyPressed.html
 [`KeyboardListener`]: {{site.main-api}}/flutter/services/KeyboardListener-class.html
 [`KeyDownEvent`]: {{site.main-api}}/flutter/services/KeyDownEvent-class.html
 [`KeyRepeatEvent`]: {{site.main-api}}/flutter/services/KeyRepeatEvent-class.html
@@ -283,5 +295,4 @@ Relevant PRs:
 [`RawKeyEventDataAndroid.eventSource`]: {{site.main-api}}/flutter/services/RawKeyEventDataAndroid/eventSource.html
 [`KeyEvent.deviceType`]: {{site.main-api}}/flutter/services/KeyEvent/deviceType.html
 [`RawKeyEvent` and `RawKeyboard`, et al should be deprecated and removed (Issue 136419)]: {{site.repo.flutter}}/issues/136419
-[Prepare ShortcutActivator and ShortcutManager to migrate to KeyEvent from RawKeyEvent.]: {{site.repo.flutter}}/pull/136854
 [Deprecate RawKeyEvent, et al. and exempt uses in the framework.]: {{site.repo.flutter}}/pull/136677
