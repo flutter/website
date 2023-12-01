@@ -397,7 +397,7 @@ investigate other resources that our community recommends.
 [spriteWidget]: {{site.pub-pkg}}/spritewidget
 [sqflite]: {{site.pub-pkg}}/sqflite
 [win32_gamepad]: {{site.pub-pkg}}/win32_gamepad
-[read how the game was created in 6 days]: {site.flutter-medium}}/how-we-built-the-new-super-dash-demo-in-flutter-and-flame-in-just-six-weeks-9c7aa2a5ad31
+[read how the game was created in 6 days]: {{site.flutter-medium}}/how-we-built-the-new-super-dash-demo-in-flutter-and-flame-in-just-six-weeks-9c7aa2a5ad31
 [view the open source code repo]: {{site.github}}/flutter/super_dash
 [web]: https://superdash.flutter.dev/
 
