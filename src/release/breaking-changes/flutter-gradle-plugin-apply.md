@@ -17,6 +17,9 @@ Flutter 3.16, projects generated with `flutter create` use the new apply method
 of applying Gradle plugins. Projects created with versions of Flutter prior to
 3.16 need to be migrated manually.
 
+Applying Gradle plugins using the `plugins {}` executes the same code as before
+and should produce equivalent app binaries.
+
 To learn about advantages the new declarative apply syntax has over the old
 imperative apply syntax, see [Gradle docs about plugins {} block][plugins block].
 
