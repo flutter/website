@@ -7,21 +7,21 @@ description: >
 
 ## Summary
 
-To build a Flutter app for Android, the Flutter Gradle plugin must be applied.
+To build a Flutter app for Android, Flutter's Gradle plugins must be applied.
 Historically, this was done imperatively with Gradle's
-[legacy, imperative apply method][].
+[legacy, imperative apply script method][].
 
 In Flutter 3.16, support has been added for applying these plugins with Gradle's
-[declarative plugins {} block][], and it is the recommended approach. Since
-Flutter 3.16, projects generated with `flutter create` use the new apply method
-of applying Gradle plugins. Projects created with versions of Flutter prior to
-3.16 need to be migrated manually.
+[declarative plugins {} block][] (also called the plugin DSL) and it is now the
+recommended approach. Since Flutter 3.16, projects generated with `flutter
+create` use the plugin DSL to apply Gradle plugins. Projects created with
+versions of Flutter prior to 3.16 need to be migrated manually.
 
-Applying Gradle plugins using the `plugins {}` executes the same code as before
-and should produce equivalent app binaries.
+Applying Gradle plugins using the `plugins {}` block executes the same code as
+before and should produce equivalent app binaries.
 
-To learn about advantages the new declarative apply syntax has over the old
-imperative apply syntax, see [Gradle docs about plugins {} block][plugins block].
+To learn about advantages the new plugin DSL syntax has over the legacy `apply`
+script syntax, see [Gradle docs][plugins block].
 
 Migrating the app ecosystem to use the new approach will also make it easier for
 Flutter team to develop Flutter's Gradle plugins, and to enable exciting new
