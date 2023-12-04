@@ -14,8 +14,8 @@ Historically, this was done imperatively with Gradle's
 In Flutter 3.16, support has been added for applying these plugins with Gradle's
 [declarative plugins {} block][], and it is the recommended approach. Since
 Flutter 3.16, projects generated with `flutter create` use the new apply method
-of applying Gradle plugins. Older projects, however, should be migrated
-manually.
+of applying Gradle plugins. Projects created with versions of Flutter prior to
+3.16 need to be migrated manually.
 
 To learn about advantages the new declarative apply syntax has over the old
 imperative apply syntax, see [Gradle docs about plugins {} block][plugins block].
