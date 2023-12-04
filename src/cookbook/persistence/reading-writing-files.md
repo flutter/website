@@ -27,7 +27,7 @@ on the `path_provider` package:
 {{site.alert.note}}
   This recipe doesn't work with web apps at this time.
   To follow the discussion on this issue,
-  check out `flutter/flutter` [issue #45296]({{site.github}}/flutter/flutter/issues/45296).
+  check out `flutter/flutter` [issue #45296]({{site.repo.flutter}}/issues/45296).
 {{site.alert.end}}
 
 ## 1. Find the correct local path

@@ -327,9 +327,9 @@ information.
 [Match]: https://docs.fastlane.tools/actions/match/
 [Supply setup steps]: https://docs.fastlane.tools/getting-started/android/setup/#setting-up-supply
 [Travis]: https://travis-ci.org/
-[Apple Developer Program]: https://developer.apple.com/programs
-[Xcode Cloud]: https://developer.apple.com/xcode-cloud
-[Xcode Cloud workflow]: https://developer.apple.com/documentation/xcode/xcode-cloud-workflow-reference
-[custom build scripts]: https://developer.apple.com/documentation/xcode/writing-custom-build-scripts
-[predefined environment variables]: https://developer.apple.com/documentation/xcode/environment-variable-reference
-[Setting the next build number for Xcode Cloud builds]: https://developer.apple.com/documentation/xcode/setting-the-next-build-number-for-xcode-cloud-builds#Set-the-next-build-number-to-a-custom-value
+[Apple Developer Program]: {{site.apple-dev}}/programs
+[Xcode Cloud]: {{site.apple-dev}}/xcode-cloud
+[Xcode Cloud workflow]: {{site.apple-dev}}/documentation/xcode/xcode-cloud-workflow-reference
+[custom build scripts]: {{site.apple-dev}}/documentation/xcode/writing-custom-build-scripts
+[predefined environment variables]: {{site.apple-dev}}/documentation/xcode/environment-variable-reference
+[Setting the next build number for Xcode Cloud builds]: {{site.apple-dev}}/documentation/xcode/setting-the-next-build-number-for-xcode-cloud-builds#Set-the-next-build-number-to-a-custom-value

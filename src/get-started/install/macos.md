@@ -50,7 +50,7 @@ to be able to build and run your first Flutter app.
 Set up your preferred editor.
 
 [Apple Silicon Mac]: https://support.apple.com/en-us/HT211814
-[some ancillary tools]: https://github.com/flutter/website/pull/7119#issuecomment-1124537969
+[some ancillary tools]: {{site.repo.this}}/pull/7119#issuecomment-1124537969
 [these supplementary notes]: {{site.repo.flutter}}/wiki/Developing-with-Flutter-on-Apple-Silicon
 [Xcode]: {{site.apple-dev}}/xcode/
 [install `git` separately]: https://git-scm.com/download/mac

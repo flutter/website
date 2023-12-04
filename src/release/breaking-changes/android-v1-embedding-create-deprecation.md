@@ -20,7 +20,7 @@ to migrate following the instructions in
 [Supporting the new Android plugins APIs][].
 
 [Android Migration Summary]: {{site.url}}/go/android-migration-summary
-[Upgrading pre 1.12 Android projects]: {{site.github}}/flutter/flutter/wiki/Upgrading-pre-1.12-Android-projects
+[Upgrading pre 1.12 Android projects]: {{site.repo.flutter}}/wiki/Upgrading-pre-1.12-Android-projects
 [Supporting the new Android plugins APIs]: {{site.url}}/release/breaking-changes/plugin-api-migration
 
 ## Context

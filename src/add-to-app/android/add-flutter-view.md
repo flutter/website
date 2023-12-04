@@ -32,7 +32,7 @@ class="mw-100" alt="Add Flutter View sample video">
 Unlike the guides for FlutterActivity and FlutterFragment, the FlutterView
 integration could be better demonstrated with a sample project.
 
-A sample project is at [{{site.github}}/flutter/samples/tree/main/add_to_app/android_view]({{site.github}}/flutter/samples/tree/main/add_to_app/android_view)
+A sample project is at [https://github.com/flutter/samples/tree/main/add_to_app/android_view]({{site.repo.samples}}/tree/main/add_to_app/android_view)
 to document a simple FlutterView integration where FlutterViews are used
 for some of the cells in a RecycleView list of cards as seen in the gif above.
 
@@ -50,7 +50,7 @@ in this case is being added to an Activity or Fragment in your application,
 you must recreate the connections manually. Otherwise, the [FlutterView]({{site.api}}/javadoc/io/flutter/embedding/android/FlutterView.html)
 will not render anything or have other missing functionalities.
 
-A sample [FlutterViewEngine]({{site.github}}/flutter/samples/blob/master/add_to_app/android_view/android_view/app/src/main/java/dev/flutter/example/androidView/FlutterViewEngine.kt)
+A sample [FlutterViewEngine]({{site.repo.samples}}/blob/master/add_to_app/android_view/android_view/app/src/main/java/dev/flutter/example/androidView/FlutterViewEngine.kt)
 class shows one such possible implementation of an application-specific
 connection between an Activity, a [FlutterView]({{site.api}}/javadoc/io/flutter/embedding/android/FlutterView.html)
 and a [FlutterEngine]({{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html).
@@ -71,7 +71,7 @@ The reverse [detachFromFlutterEngine]({{site.api}}/javadoc/io/flutter/embedding/
 class must also be called to not leak resources when the FlutterView or Activity
 is no longer visible.
 
-In addition, see the remaining implementation in the [FlutterViewEngine]({{site.github}}/flutter/samples/blob/main/add_to_app/android_view/android_view/app/src/main/java/dev/flutter/example/androidView/FlutterViewEngine.kt)
+In addition, see the remaining implementation in the [FlutterViewEngine]({{site.repo.samples}}/blob/main/add_to_app/android_view/android_view/app/src/main/java/dev/flutter/example/androidView/FlutterViewEngine.kt)
 demo class or in the [FlutterActivityAndFragmentDelegate](https://cs.opensource.google/flutter/engine/+/master:shell/platform/android/io/flutter/embedding/android/FlutterActivityAndFragmentDelegate.java)
 to ensure a correct functioning of other features such as clipboards, system
 UI overlay, plugins etc.
