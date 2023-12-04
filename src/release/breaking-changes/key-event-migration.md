@@ -14,7 +14,7 @@ system, and the raw system has been deprecated.
 
 ## Context
 
-In the original key event subsystem handling each platform's quirks in the
+In the original key event subsystem, handling each platform's quirks in the
 framework and in client apps caused overly complex code, and the old system
 didn't properly represent the true state of key events on the system.
 
