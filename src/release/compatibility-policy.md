@@ -67,4 +67,4 @@ Such changes wouldn't necessarily be accompanied by a
 migration guide.
 
 [separate breaking-change policy]: {{site.github}}/dart-lang/sdk/blob/main/docs/process/breaking-changes.md
-[Dart announce]: https://groups.google.com/a/dartlang.org/g/announce
+[Dart announce]: {{site.groups}}/a/dartlang.org/g/announce

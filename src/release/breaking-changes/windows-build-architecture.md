@@ -60,4 +60,4 @@ Relevant pull requests:
 * [Introduce architecture subdirectory for Windows build][]
 
 [flutter.dev/go/windows-arm64]: {{site.main-url}}/go/windows-arm64
-[Introduce architecture subdirectory for Windows build]: {{site.github}}/flutter/flutter/pull/131843
+[Introduce architecture subdirectory for Windows build]: {{site.repo.flutter}}/pull/131843

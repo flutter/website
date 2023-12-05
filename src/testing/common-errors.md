@@ -15,8 +15,8 @@ future revisions, and your contributions are welcomed.
 Feel free to [open an issue][] or [submit a pull request][] to
 make this page more useful to you and the Flutter community. 
 
-[open an issue]: {{site.github}}/flutter/website/issues/new/choose
-[submit a pull request]: {{site.github}}/flutter/website/pulls
+[open an issue]: {{site.repo.this}}/issues/new/choose
+[submit a pull request]: {{site.repo.this}}/pulls
 
 ## 'A RenderFlex overflowed…'
 

@@ -6,7 +6,7 @@ toc: false
 
 This page summarizes the changes in official stable releases of DevTools.
 To view a complete list of changes, check out the
-[DevTools git log](https://github.com/flutter/devtools/commits/master).
+[DevTools git log]({{site.repo.organization}}/devtools/commits/master).
 
 The Dart and Flutter SDKs include DevTools.
 To check your current version of DevTools, 

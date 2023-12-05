@@ -301,7 +301,7 @@ Relevant PRs:
 * [Replaces `textScaleFactor` with `TextScaler`][]
 
 
-[Android 14 nonlinear font scaling]: https://developer.android.com/about/versions/14/features#non-linear-font-scaling
+[Android 14 nonlinear font scaling]: {{site.android-dev}}/about/versions/14/features#non-linear-font-scaling
 [`TextScaler`]: {{site.api}}/flutter/painting/TextScaler-class.html
 [`MediaQuery.textScalerOf`]: {{site.api}}/flutter/widgets/MediaQuery/textScalerOf.html
 [`MediaQuery.maybeTextScalerOf`]: {{site.api}}/flutter/widgets/MediaQuery/maybeTextScalerOf.html

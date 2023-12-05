@@ -17,7 +17,7 @@ and review the [Dart changelog][].
 
 [release notes]: {{site.url}}/release/release-notes
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
-[Dart Announce]: https://groups.google.com/a/dartlang.org/g/announce
+[Dart Announce]: {{site.groups}}/a/dartlang.org/g/announce
 [Dart changelog]: {{site.github}}/dart-lang/sdk/blob/main/CHANGELOG.md
 
 ## 15 November 2023: 3.16 release
@@ -202,7 +202,7 @@ check out the [Flutter 3.13 blog post][blog-games].
 [blog-impeller]:  {{site.flutter-medium}}/whats-new-in-flutter-3-13-479d9b11df4d#a7be
 [blog-material]:  {{site.flutter-medium}}/whats-new-in-flutter-3-13-479d9b11df4d#4c90
 [blog-scrolling]: {{site.flutter-medium}}/whats-new-in-flutter-3-13-479d9b11df4d#02dc
-[Material 3]: https://m3.material.io/
+[Material 3]: {{site.material}}
 [Material Design for Flutter]: {{site.url}}/ui/design/material
 
 <hr>
@@ -397,7 +397,7 @@ and [Introducing Dart 3 alpha][].
 [Flutter concurrency for Swift developers]: {{site.url}}/get-started/flutter-for/dart-swift-concurrency
 [Flutter FAQ]: {{site.url}}/resources/faq
 [Flutter for SwiftUI developers]: {{site.url}}/get-started/flutter-for/swiftui-devs
-[Impeller]: {{site.github}}/flutter/flutter/wiki/Impeller
+[Impeller]: {{site.repo.flutter}}/wiki/Impeller
 [Internationalizing Flutter apps]: {{site.url}}/ui/accessibility-and-internationalization/internationalization
 [Introducing isolate background channels]: {{site.medium}}/flutter/introducing-background-isolate-channels-7a299609cad8
 [Learning Dart as a Swift developer]: {{site.dart-site}}/guides/language/coming-from/swift-to-dart
@@ -447,10 +447,10 @@ codelabs to support multiplatform.
 The [codelabs & workshops][] page is updated
 to reflect the latest available codelabs.
 
-[Add a user authentication flow to a Flutter app using FirebaseUI]: https://firebase.google.com/codelabs/firebase-auth-in-flutter-apps
+[Add a user authentication flow to a Flutter app using FirebaseUI]: {{site.firebase}}/codelabs/firebase-auth-in-flutter-apps
 [Building a game with Flutter and Flame]: {{site.codelabs}}/codelabs/flutter-flame-game
 [codelabs & workshops]: {{site.url}}/codelabs
-[Local development for your Flutter apps using the Firebase Emulator Suite]: https://firebase.google.com/codelabs/get-started-firebase-emulators-and-flutter
+[Local development for your Flutter apps using the Firebase Emulator Suite]: {{site.firebase}}/codelabs/get-started-firebase-emulators-and-flutter
 [Using FFI in a Flutter plugin]: {{site.codelabs}}/codelabs/flutter-ffigen
 [Your first Flutter app]: {{site.codelabs}}/codelabs/flutter-codelab-first
 
@@ -523,7 +523,7 @@ and the [Flutter 3.3 release notes][3.3 release notes].
   page has been updated with this advice.
 
 [Build and release a Windows desktop app]: {{site.url}}/deployment/windows
-[Developer mode]: https://developer.apple.com/documentation/xcode/enabling-developer-mode-on-a-device
+[Developer mode]: {{site.apple-dev}}/documentation/xcode/enabling-developer-mode-on-a-device
 [Handling errors in Flutter]: {{site.url}}/testing/errors
 [macOS install]: {{site.url}}/get-started/install/macos#install-xcode
 [navigation and routing overview]: {{site.url}}/ui/navigation
@@ -588,7 +588,7 @@ and the [Flutter 3 release notes][].
 [dart-whats-new]: {{site.dart-site}}/guides/whats-new
 [dart.dev]: {{site.dart-site}}
 [Desktop]: {{site.url}}/platform-integration/desktop
-[Flutter Firebase get started guide]: https://firebase.google.com/docs/flutter/setup
+[Flutter Firebase get started guide]: {{site.firebase}}/docs/flutter/setup
 [Games page]: {{site.main-url}}/games
 [Games doc page]: {{site.url}}/resources/games-toolkit
 [js-to-dart]: {{site.dart-site}}/guides/language/coming-from/js-to-dart

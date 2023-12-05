@@ -348,7 +348,7 @@ Configure, update and communicate with Widgets
 [`firebase_messaging`]: {{site.pub-pkg}}/firebase_messaging
 [`google_maps_flutter`]: {{site.pub-pkg}}/google_maps_flutter
 [`google_ml_kit`]: {{site.pub-pkg}}/google_ml_kit
-[Use a custom TensorFlow Lite model with Flutter]: https://firebase.google.com/docs/ml/flutter/use-custom-models
+[Use a custom TensorFlow Lite model with Flutter]: {{site.firebase}}/docs/ml/flutter/use-custom-models
 [`speech_to_text`]: {{site.pub-pkg}}/speech_to_text
 [`ar_flutter_plugin`]: {{site.pub-pkg}}/ar_flutter_plugin
 [`weather`]: {{site.pub-pkg}}/weather

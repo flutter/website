@@ -1073,6 +1073,6 @@ Dart DevTools, or Flutter animations, see the following:
 [Material Design]: {{site.material}}/get-started
 [TextButton]: {{site.api}}/flutter/material/TextButton-class.html
 [VS Code]: {{site.url}}/tools/devtools/vscode
-[Web samples]: {{site.github}}/flutter/samples/tree/main/web
+[Web samples]: {{site.repo.samples}}/tree/main/web
 [Widget]: {{site.api}}/flutter/widgets/Widget-class.html
 [first_flutter_codelab]: {{site.url}}/get-started/codelab

@@ -35,7 +35,7 @@ add the extension point *target* to your Xcode project.
 To learn how to add a home screen widget to your iOS device,
 check out the [Adding a Home Screen widget to your Flutter App] codelab.
 
-[Adding a Home Screen widget to your Flutter App]: https://codelabs.developers.google.com/flutter-home-screen-widgets#0
+[Adding a Home Screen widget to your Flutter App]: {{site.codelabs}}/flutter-home-screen-widgets#0
 
 ## How do Flutter apps interact with App Extensions? 
 Flutter apps interact with app extensions using the same
@@ -256,12 +256,12 @@ Flutter iOS app, check out the
 [Adding Home Screen Widgets and Live Activities to your Flutter app][] codelab.
 {% endcomment %}
 
-[Apple's documentation]: https://developer.apple.com/app-extensions/
-[Core Spotlight]: https://developer.apple.com/documentation/corespotlight
-[WidgetKit]: https://developer.apple.com/documentation/widgetkit
+[Apple's documentation]: {{site.apple-dev}}/app-extensions/
+[Core Spotlight]: {{site.apple-dev}}/documentation/corespotlight
+[WidgetKit]: {{site.apple-dev}}/documentation/widgetkit
 [Leveraging Apple's System APIs and Frameworks]: {{site.url}}/platform-integration/ios/apple-frameworks
 [pub.dev]: {{site.pub-pkg}}
-[App Group]: https://developer.apple.com/documentation/xcode/configuring-app-groups
+[App Group]: {{site.apple-dev}}/documentation/xcode/configuring-app-groups
 [Adding a Flutter Screen]: {{site.url}}/add-to-app/ios/add-flutter-screen?tab=vc-uikit-swift-tab#alternatively---create-a-flutterviewcontroller-with-an-implicit-flutterengine
 [`shared_preference_app_group`]: {{site.pub-pkg}}/shared_preference_app_group
 [Compiling the Engine]: https://github.com/flutter/flutter/wiki/Compiling-the-engine
@@ -269,6 +269,6 @@ Flutter iOS app, check out the
 [`sqflite`]: {{site.pub-pkg}}/sqflite
 [`workmanager`]: {{site.pub-pkg}}/workmanager
 [read and write files]: {{site.url}}/cookbook/persistence/reading-writing-files
-[example from the community on GitHub]: {{site.github}}/flutter/engine/pull/39941
+[example from the community on GitHub]: {{site.repo.engine}}/pull/39941
 [Deep Linking]:{{site.url}}/ui/navigation/deep-linking
 [Adding Home Screen Widgets to your Flutter app]: {{site.codelabs}}/flutter-home-screen-widgets#0

@@ -86,7 +86,7 @@ so can be useful if your plugin can't be tested without
 native UI interactions.
 
 
-[Espresso]: {{site.github}}/flutter/packages/tree/main/packages/espresso
+[Espresso]: {{site.repo.packages}}/tree/main/packages/espresso
 [GoogleTest]: {{site.github}}/google/googletest
 [integration tests]: {{site.url}}/cookbook/testing/integration/introduction
 [JUnit]: {{site.github}}/junit-team/junit4/wiki/Getting-started
@@ -95,8 +95,8 @@ native UI interactions.
 [unit tests]: {{site.url}}/cookbook/testing/unit/introduction
 [widget tests]: {{site.url}}/cookbook/testing/widget/introduction
 [won't be loaded]: {{site.url}}/testing/plugins-in-tests
-[XCTest]: https://developer.apple.com/documentation/xctest
-[XCUITest]: https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/09-ui_testing.html
+[XCTest]: {{site.apple-dev}}/documentation/xctest
+[XCUITest]: {{site.apple-dev}}/library/archive/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/09-ui_testing.html
 
 ## Running tests
 
@@ -202,8 +202,8 @@ Some extra considerations for plugin testing:
   * Dart unit tests that mock the platform channel,
     then call the plugin's public API and validate the results.
 
-[Android Studio test UI]: https://developer.android.com/studio/test/test-in-android-studio
+[Android Studio test UI]: {{site.android-dev}}/studio/test/test-in-android-studio
 [general advice]: {{site.url}}/testing/overview
 [Visual Studio test UI]: https://learn.microsoft.com/en-us/visualstudio/test/getting-started-with-unit-testing?view=vs-2022&tabs=dotnet%2Cmstest#run-unit-tests
-[Xcode Test UI]: https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/05-running_tests.html
+[Xcode Test UI]: {{site.apple-dev}}/library/archive/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/05-running_tests.html
 
