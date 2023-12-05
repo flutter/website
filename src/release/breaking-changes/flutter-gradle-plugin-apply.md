@@ -12,15 +12,15 @@ Historically, this was done imperatively with Gradle's
 [legacy, imperative apply script method][].
 
 In Flutter 3.16, support has been added for applying these plugins with Gradle's
-[declarative plugins {} block method][] (also called the plugin DSL) and it is
+[declarative plugins {} block method][] (also called the Plugin DSL) and it is
 now the recommended approach. Since Flutter 3.16, projects generated with
-`flutter create` use the plugin DSL to apply Gradle plugins. Projects created
+`flutter create` use the Plugin DSL to apply Gradle plugins. Projects created
 with versions of Flutter prior to 3.16 need to be migrated manually.
 
 Applying Gradle plugins using the `plugins {}` block executes the same code as
 before and should produce equivalent app binaries.
 
-To learn about advantages the new plugin DSL syntax has over the legacy `apply`
+To learn about advantages the new Plugin DSL syntax has over the legacy `apply`
 script syntax, see [Gradle docs][plugins block].
 
 Migrating the app ecosystem to use the new approach will also make it easier for
@@ -32,7 +32,7 @@ buildscripts.
 
 ### android/settings.gradle
 
-Replace the contents of `android/settings.gradle` with:
+Replace the contents of `<app-src>/android/settings.gradle` with:
 
 ```gradle
 pluginManagement {
@@ -65,7 +65,23 @@ include ":app"
 
 ### android/build.gradle
 
-Replace contents with:
+Remove the whole `buildscript` block from `<app-src/android/build.gradle`:
+
+```diff
+-buildscript {
+-    ext.kotlin_version = '1.7.10'
+-    repositories {
+-        google()
+-        mavenCentral()
+-    }
+-
+-    dependencies {
+-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+-    }
+-}
+```
+
+Here's how that file will likely end up:
 
 ```gradle
 allprojects {
@@ -90,7 +106,24 @@ tasks.register("clean", Delete) {
 
 ### android/app/build.gradle
 
-Modify this file like so:
+Most changes have to be made in the `<app-src>/android/app/build.gradle`. First,
+remove these 2 chunks of code that use the legacy imperative apply method:
+
+```diff
+-def flutterRoot = localProperties.getProperty('flutter.sdk')
+-if (flutterRoot == null) {
+-    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+-}
+```
+
+```diff
+-apply plugin: 'com.android.application'
+-apply plugin: 'kotlin-android'
+-apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+```
+
+Now apply the plugins again, but this time using the Plugin DSL syntax. At the
+very top of your file, add:
 
 ```diff
 +plugins {
@@ -98,41 +131,6 @@ Modify this file like so:
 +    id "kotlin-android"
 +    id "dev.flutter.flutter-gradle-plugin"
 +}
-
- def localProperties = new Properties()
- def localPropertiesFile = rootProject.file('local.properties')
- if (localPropertiesFile.exists()) {
-     localPropertiesFile.withReader('UTF-8') { reader ->
-         localProperties.load(reader)
-     }
- }
-
--def flutterRoot = localProperties.getProperty('flutter.sdk')
--if (flutterRoot == null) {
--    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
--}
-
- def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
- if (flutterVersionCode == null) {
-     flutterVersionCode = '1'
- }
-
- def flutterVersionName = localProperties.getProperty('flutter.versionName')
- if (flutterVersionName == null) {
-     flutterVersionName = '1.0'
- }
-
--apply plugin: 'com.android.application'
--apply plugin: 'kotlin-android'
--apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
-
-android {
-    // ...
-}
-
-flutter {
-    source '../..'
-}
 ```
 
 ## Examples
