@@ -31,15 +31,16 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Migrate RawKeyEvent/RawKeyboard system to KeyEvent/HardwareKeyboard system][]
 * [Deprecate `TextField.canRequestFocus`][]
 * [Accessibility traversal order of tooltip changed][]
 
+[Migrate RawKeyEvent/RawKeyboard system to KeyEvent/HardwareKeyboard system]: {{site.url}}/release/breaking-changes/key-event-migration
 [Deprecate `TextField.canRequestFocus`]: {{site.url}}/release/breaking-changes/can-request-focus
 [Accessibility traversal order of tooltip changed]: {{site.url}}/release/breaking-changes/tooltip-semantics-order
 
 ### Released in Flutter 3.16
 
-* [Migrate RawKeyEvent/RawKeyboard system to KeyEvent/HardwareKeyboard system][]
 * [Migrate ShortcutActivator and ShortcutManager to KeyEvent system][]
 * [The `ThemeData.useMaterial3` property is now set to true by default][]
 * [Deprecated API removed after v3.13][]
@@ -53,7 +54,6 @@ release, and listed in alphabetical order:
 * [Windows: External windows should notify Flutter engine of lifecycle changes][]
 * [Windows build path changed to add the target architecture][]
 
-[Migrate RawKeyEvent/RawKeyboard system to KeyEvent/HardwareKeyboard system]: {{site.url}}/release/breaking-changes/key-event-migration
 [Migrate ShortcutActivator and ShortcutManager to KeyEvent system]: {{site.url}}/release/breaking-changes/shortcut-key-event-migration
 [The `ThemeData.useMaterial3` property is now set to true by default]: {{site.url}}/release/breaking-changes/material-3-default
 [Deprecated API removed after v3.13]: {{site.url}}/release/breaking-changes/3-13-deprecations

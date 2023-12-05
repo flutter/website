@@ -213,8 +213,8 @@ both `KeyDownEvent` and `KeyRepeatEvent` need to be checked.
 
 ## Timeline
 
-Landed in version: 3.17.0-18.0.pre<br>
-In stable release: not yet (Not in 3.17)
+Landed in version: 3.18.0-2.0.pre<br>
+In stable release: not yet (Not in 3.18)
 
 ## References
 
