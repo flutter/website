@@ -117,7 +117,7 @@ Because immutable objects can't be updated,
 this effectively retains the actor model behavior.
 
 [`Port` objects]: {{site.dart.api}}/stable/dart-isolate/ReceivePort-class.html
-[objects that aren't copied when passed]: https://api.dart.dev/stable/3.2.0/dart-isolate/SendPort/send.html
+[objects that aren't copied when passed]: {{site.dart.api}}/stable/3.2.0/dart-isolate/SendPort/send.html
 
 An exception to this rule is
 when an isolate exits when it sends a message using the `Isolate.exit` method.
@@ -344,10 +344,10 @@ Flutter.
 - [isolate_agents][] is a package that abstracts Ports and make it easier to create long-lived isolates.  
 - Read more about the `BackgroundIsolateBinaryMessenger` API [announcement][].
 
-[announcement]: https://medium.com/flutter/introducing-background-isolate-channels-7a299609cad8
+[announcement]: {{site.flutter-medium}}/introducing-background-isolate-channels-7a299609cad8
 [technical design proposal]: https://docs.google.com/document/d/1yAFw-6kBefuurXWTur9jdEUAckWiWJVukP1Iay8ehyU/edit#heading=h.722pnbmlqbkx
 [Actor model]: https://en.wikipedia.org/wiki/Actor_model
-[isolate_agents]: https://medium.com/@gaaclarke/isolate-agents-easy-isolates-for-flutter-6d75bf69a2e7
+[isolate_agents]: {{site.medium}}/@gaaclarke/isolate-agents-easy-isolates-for-flutter-6d75bf69a2e7
 [marshaling data]: https://en.wikipedia.org/wiki/Marshalling_(computer_science)
 [Dart `Isolate`]: {{site.dart.api}}/stable/dart-isolate/Isolate-class.html
 [`compute()`]: {{site.api}}/flutter/foundation/compute.html

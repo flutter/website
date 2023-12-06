@@ -35,7 +35,7 @@ package to add a banner ad to your app or game.
   Ad Manager, a platform intended for large publishers. Integrating Ad
   Manager resembles integrating AdMob, but it won't be covered in this
   cookbook recipe. To use Ad Manager, follow the
-  [Ad Manager documentation](https://developers.google.com/ad-manager/mobile-ads-sdk/flutter/quick-start).
+  [Ad Manager documentation]({{site.developers}}/ad-manager/mobile-ads-sdk/flutter/quick-start).
 {{site.alert.end}}
 
 ## 1. Get AdMob App IDs
@@ -253,7 +253,7 @@ To show anything beyond test ads, you have to register ad units.
     beyond banner ads --- interstitials, rewarded ads, app open ads, and
     so on. 
     The API for those is similar, and documented in the 
-    [AdMob documentation](https://developers.google.com/admob/flutter/quick-start)
+    [AdMob documentation]({{site.developers}}/admob/flutter/quick-start)
     and through 
     [official samples](https://github.com/googleads/googleads-mobile-flutter/tree/main/samples/admob).
 

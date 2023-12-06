@@ -40,7 +40,7 @@ Example build path after the migration if targeting Arm64:
 build\windows\arm64\runner\Release\hello_world.exe
 ```
 
-If you use [`package:msix`][], update to version 3.15.0 or newer.
+If you use [`package:msix`][], update to version 3.16.7 or newer.
 
 [`package:msix`]: {{site.pub-pkg}}/msix
 
@@ -60,4 +60,4 @@ Relevant pull requests:
 * [Introduce architecture subdirectory for Windows build][]
 
 [flutter.dev/go/windows-arm64]: {{site.main-url}}/go/windows-arm64
-[Introduce architecture subdirectory for Windows build]: {{site.github}}/flutter/flutter/pull/131843
+[Introduce architecture subdirectory for Windows build]: {{site.repo.flutter}}/pull/131843

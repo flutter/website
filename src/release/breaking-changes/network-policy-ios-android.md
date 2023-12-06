@@ -121,5 +121,5 @@ Relevant PRs:
 * [PR 20218: Plumbing for setting domain network policy][]
 * [Introduce per-domain policy for strict secure connections][]
 
-[PR 20218: Plumbing for setting domain network policy]: {{site.github}}/flutter/engine/pull/20218
+[PR 20218: Plumbing for setting domain network policy]: {{site.repo.engine}}/pull/20218
 [Introduce per-domain policy for strict secure connections]: {{site.github}}/dart-lang/sdk/commit/d878cfbf20375befa09f9bf85f0ba2b87b319427

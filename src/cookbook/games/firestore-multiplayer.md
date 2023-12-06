@@ -120,9 +120,9 @@ Dart code in that guide, return to this recipe.
 {% endcomment %}
 
 [Cloud Firestore]: https://cloud.google.com/firestore/
-[Create a Cloud Firestore database]: https://firebase.google.com/docs/firestore/quickstart#create
-[Get started with Cloud Firestore]: https://firebase.google.com/docs/firestore/quickstart
-[Set up your development environment]: https://firebase.google.com/docs/firestore/quickstart#set_up_your_development_environment
+[Create a Cloud Firestore database]: {{site.firebase}}/docs/firestore/quickstart#create
+[Get started with Cloud Firestore]: {{site.firebase}}/docs/firestore/quickstart
+[Set up your development environment]: {{site.firebase}}/docs/firestore/quickstart#set_up_your_development_environment
 
 ## 3. Initialize Firestore
 
@@ -494,5 +494,5 @@ The basics remain the same:
 a large collection of documents,
 each representing one active or potential match.
 
-[a Firestore codelab or two]: https://codelabs.developers.google.com/?product=flutter&text=firestore
-[built-in way to authenticate users]: https://firebase.google.com/docs/auth/flutter/start
+[a Firestore codelab or two]: {{site.codelabs}}/?product=flutter&text=firestore
+[built-in way to authenticate users]: {{site.firebase}}/docs/auth/flutter/start

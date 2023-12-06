@@ -11,8 +11,8 @@ The Flutter team's believes this solves Flutter's
 Impeller precompiles a [smaller, simpler set of shaders][]
 at Engine build time so they don't compile at runtime.
 
-[early-onset jank]: {{site.github}}/flutter/flutter/projects/188
-[smaller, simpler set of shaders]: {{site.github}}/flutter/flutter/issues/77412
+[early-onset jank]: {{site.repo.flutter}}/projects/188
+[smaller, simpler set of shaders]: {{site.repo.flutter}}/issues/77412
 
 For a video introduction to Impeller, check out the following
 talk from Google I/O 2023.
@@ -72,7 +72,7 @@ with Impeller on iOS, file an issue in the [GitHub tracker][file-issue].
 Prefix the issue title with `[Impeller]` and
 include a small reproducible test case.
 
-[file-issue]: {{site.github}}/flutter/flutter/issues/new/choose
+[file-issue]: {{site.repo.flutter}}/issues/new/choose
 
 ### macOS
 
@@ -149,7 +149,7 @@ submitting an issue for Impeller:
   Zip the file and attach it to the GitHub issue.
 
 [export of the performance trace]:{{site.url}}/tools/devtools/performance#import-and-export
-[file-issue]: {{site.github}}/flutter/flutter/issues/new/choose
+[file-issue]: {{site.repo.flutter}}/issues/new/choose
 [Impeller project board]: {{site.github}}/orgs/flutter/projects/21
 
 ## Architecture
@@ -157,16 +157,16 @@ submitting an issue for Impeller:
 To learn more details about Impeller's design and architecture,
 check out the [README.md][] file in the source tree.
 
-[README.md]: {{site.github}}/flutter/engine/blob/main/impeller/README.md
+[README.md]: {{site.repo.engine}}/blob/main/impeller/README.md
 
 ## Additional Information
 
-* [Frequently asked questions]({{site.github}}/flutter/engine/blob/main/impeller/docs/faq.md)
-* [Impeller's coordinate system]({{site.github}}/flutter/engine/blob/main/impeller/docs/coordinate_system.md)
-* [How to set up Xcode for GPU frame captures with metal]({{site.github}}/flutter/engine/blob/main/impeller/docs/xcode_frame_capture.md)
-* [Learning to read GPU frame captures]({{site.github}}/flutter/engine/blob/main/impeller/docs/read_frame_captures.md)
-* [How to enable metal validation for command line apps]({{site.github}}/flutter/engine/blob/main/impeller/docs/metal_validation.md)
-* [How Impeller works around the lack of uniform buffers in Open GL ES 2.0]({{site.github}}/flutter/engine/blob/main/impeller/docs/ubo_gles2.md)
-* [Guidance for writing efficient shaders]({{site.github}}/flutter/engine/blob/main/impeller/docs/shader_optimization.md)
-* [How color blending works in Impeller]({{site.github}}/flutter/engine/blob/main/impeller/docs/blending.md)
+* [Frequently asked questions]({{site.repo.engine}}/blob/main/impeller/docs/faq.md)
+* [Impeller's coordinate system]({{site.repo.engine}}/blob/main/impeller/docs/coordinate_system.md)
+* [How to set up Xcode for GPU frame captures with metal]({{site.repo.engine}}/blob/main/impeller/docs/xcode_frame_capture.md)
+* [Learning to read GPU frame captures]({{site.repo.engine}}/blob/main/impeller/docs/read_frame_captures.md)
+* [How to enable metal validation for command line apps]({{site.repo.engine}}/blob/main/impeller/docs/metal_validation.md)
+* [How Impeller works around the lack of uniform buffers in Open GL ES 2.0]({{site.repo.engine}}/blob/main/impeller/docs/ubo_gles2.md)
+* [Guidance for writing efficient shaders]({{site.repo.engine}}/blob/main/impeller/docs/shader_optimization.md)
+* [How color blending works in Impeller]({{site.repo.engine}}/blob/main/impeller/docs/blending.md)
 

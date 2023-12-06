@@ -15,7 +15,7 @@ have replaced just-in-time navigation APIs, like `WillPopScope` and
 ## Background
 
 Android 14 introduced the
-[Predictive Back feature](https://developer.android.com/guide/navigation/predictive-back-gesture),
+[Predictive Back feature]({{site.android-dev}}/guide/navigation/predictive-back-gesture),
 which allows the user to peek behind the current route during a valid back
 gesture and decide whether to continue back or to cancel the gesture. This was
 incompatible with Flutter's navigation APIs that allow the developer to cancel a
@@ -325,7 +325,7 @@ return PopScope(
      This will be unnecessary on future versions of Android.
   1. Set `android:enableOnBackInvokedCallback="true"` in
      `android/app/src/main/AndroidManifest.xml`. If needed, refer to
-     [Android's full guide](https://developer.android.com/guide/navigation/custom-back/predictive-back-gesture)
+     [Android's full guide]({{site.android-dev}}/guide/navigation/custom-back/predictive-back-gesture)
      for migrating Android apps to support predictive back.
   1. Make sure you're using version `3.14.0-7.0.pre` of Flutter or greater.
   1. Run the app and perform a back gesture (swipe from the left side of

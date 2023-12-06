@@ -85,7 +85,7 @@ API documentation:
 
 Relevant issues:
 
-* [Issue 61278]({{site.github}}/flutter/flutter/issues/61278)
+* [Issue 61278]({{site.repo.flutter}}/issues/61278)
 
 Relevant PRs:
 
@@ -93,6 +93,6 @@ Relevant PRs:
 * [75472: Support Scribble Handwriting][]
 * [97437: Re-land Support Scribble Handwriting][]
 
-[24224: Support Scribble Handwriting (engine)]: {{site.github}}/flutter/engine/pull/24224
-[97437: Re-land Support Scribble Handwriting]: {{site.github}}/flutter/flutter/pull/97437
-[75472: Support Scribble Handwriting]: {{site.github}}/flutter/flutter/pull/75472
+[24224: Support Scribble Handwriting (engine)]: {{site.repo.engine}}/pull/24224
+[97437: Re-land Support Scribble Handwriting]: {{site.repo.flutter}}/pull/97437
+[75472: Support Scribble Handwriting]: {{site.repo.flutter}}/pull/75472

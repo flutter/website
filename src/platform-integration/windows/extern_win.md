@@ -38,4 +38,4 @@ LRESULT Window::Messagehandler(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam
 ```
 
 [documentation of this breaking change.]: {{site.url}}/release/breaking-changes/win_lifecycle_process_function
-[WidgetsBindingObserver.didChangeAppLifecycle]: https://api.flutter.dev/flutter/widgets/WidgetsBindingObserver/didChangeAppLifecycleState.html
+[WidgetsBindingObserver.didChangeAppLifecycle]: {{site.api}}/flutter/widgets/WidgetsBindingObserver/didChangeAppLifecycleState.html
