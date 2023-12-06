@@ -63,6 +63,10 @@ plugins {
 include ":app"
 ```
 
+If you made some changes to this file, make sure they're placed after
+`pluginManagement {}` and `plugins {}` blocks, since Gradle enforces that no
+other code may be placed before these blocks.
+
 ### android/build.gradle
 
 Remove the whole `buildscript` block from `<app-src/android/build.gradle`:
