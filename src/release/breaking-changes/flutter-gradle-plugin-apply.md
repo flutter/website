@@ -12,7 +12,7 @@ Historically, this was done imperatively with Gradle's
 [legacy, imperative apply script method][].
 
 In Flutter 3.16, support has been added for applying these plugins with Gradle's
-[declarative plugins {} block method][] (also called the Plugin DSL) and it is
+[declarative plugins {} block][] (also called the Plugin DSL) and it is
 now the recommended approach. Since Flutter 3.16, projects generated with
 `flutter create` use the Plugin DSL to apply Gradle plugins. Projects created
 with versions of Flutter prior to 3.16 need to be migrated manually.
@@ -191,6 +191,6 @@ For a detailed overview, see [issue #135392][]. You should consider using the
 latest versions of build files.
 
 [legacy, imperative apply script method]: https://docs.gradle.org/8.5/userguide/plugins.html#sec:script_plugins
-[declarative plugins {} block method]: https://docs.gradle.org/8.5/userguide/plugins.html#sec:plugins_block
+[declarative plugins {} block]: https://docs.gradle.org/8.5/userguide/plugins.html#sec:plugins_block
 [plugins block]: https://docs.gradle.org/current/userguide/plugins.html#plugins_dsl_limitations
 [issue #135392]: https://github.com/flutter/flutter/issues/135392
