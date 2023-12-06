@@ -33,9 +33,11 @@ release, and listed in alphabetical order:
 
 * [Deprecate `TextField.canRequestFocus`][]
 * [Accessibility traversal order of tooltip changed][]
+* [Default multitouch scrolling][]
 
 [Deprecate `TextField.canRequestFocus`]: {{site.url}}/release/breaking-changes/can-request-focus
 [Accessibility traversal order of tooltip changed]: {{site.url}}/release/breaking-changes/tooltip-semantics-order
+[Default multitouch scrolling]: {{site.url}}/release/breaking-changes/multi-touch-scrolling
 
 ### Released in Flutter 3.16
 
