@@ -150,23 +150,24 @@ the following section.
 
 {{site.alert.note}}
   Due to the memory limitations of app extensions,
-  it's only recommended to use Flutter to build app extension UI
-  for extension types that have memory limits larger than 100MB.
-  For example, share extensions has a 120MB memory limit.
+  use Flutter to build an app extension UI for extension
+  types that have memory limits larger than 100MB.
+  For example, Share extensions have a 120MB memory limit.
 
   In addition, Flutter uses extra memory in debug mode.
   Therefore, Flutter doesn't fully support running
   app extensions in debug mode on physical devices
-  when used to build extension UI. As an alternative,
+  when used to build extension UI; it might run out of memory.
+  As an alternative,
   use an iOS simulator to test your extension in debug mode.
 {{site.alert.end}}
 
 1. Locate the extension-safe `Flutter.xcframework` file,
    at `<path_to_flutter_sdk>/bin/cache/artifacts/engine/ios/extension_safe/Flutter.xcframework`.
    
-    * To build for release or profile mode, find the
-      framework file under the `ios-profile` or `ios-release`
-      folder, respectively.
+    * To build for release or profile modes,
+      find the framework file under the
+      `ios-release` or `ios-profile` folder, respectively.
 
 1. Drag and drop the `Flutter.xcframework` file into your
    share extension's frameworks and libraries list.
@@ -179,7 +180,7 @@ the following section.
        </div>
    </figure>
 
-1. Open the Flutter app project settings in Xcode
+1. {: type="a"}Open the Flutter app project settings in Xcode
    to share build configurations. 
 
    1. Navigate to the **Info** tab.
@@ -254,7 +255,7 @@ Revisit these docs after future Xcode releases to see if they are fixed.
 1. After the app is launched on the simulator,
    press <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>H</kbd>
    to minimize the app, which switches to the home screen.
-1. Launch an app that supports the Share Extension,
+1. Launch an app that supports the share extension,
    such as the Photos app.
 1. Select a photo, tap the share button, then tap
    on the share extension icon of your app.
@@ -265,12 +266,12 @@ You can use the following procedure or the
 [Testing on simulators](#test-on-a-simulator) instructions
 to test on physical devices.
 
-1. Launch the Share Extension target.
+1. Launch the share extension target.
 1. In the popup window that says “Choose an app to run”,
-   select an app that can be used to test Share Extension,
+   select an app that can be used to test share extension,
    such as the Photos app.
 1. Select a photo, tap the share button,
-   then tap on the Share Extension icon of your app.
+   then tap on the share extension icon of your app.
 
 ## Tutorials
 
