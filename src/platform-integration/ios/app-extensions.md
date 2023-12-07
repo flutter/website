@@ -92,6 +92,8 @@ To add a target to an App Group:
 1. Select **+ Capability** then **App Groups**.
 1. Choose which App Group you want to add the target from
    one of two options:
+
+    {: type="a"}
     1. Select an App Group from the list.
     1. Click **+** to add a new App Group.
 
@@ -180,9 +182,10 @@ the following section.
        </div>
    </figure>
 
-1. {: type="a"}Open the Flutter app project settings in Xcode
+1. Open the Flutter app project settings in Xcode
    to share build configurations. 
 
+   {: type="a"}
    1. Navigate to the **Info** tab.
    1. Expand the **Configurations** group. 
    1. Expand the **Debug**, **Profile**, and **Release** entries.
@@ -198,7 +201,8 @@ the following section.
     </figure>
 
 1. (Optional) Replace any storyboard files with an extension class, if needed.
-   
+
+    {: type="a"}
     1. In the `Info.plist` file,
        delete the **NSExtensionMainStoryboard** property.
     1. Add the **NSExtensionPrincipalClass** property.
