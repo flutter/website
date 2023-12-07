@@ -31,9 +31,9 @@ To add authentication to Firebase explicitly, check out the
 codelab and the
 [Get Started with Firebase Authentication on Flutter][fb-auth] docs.
  
-[fb-lab]: https://firebase.google.com/codelabs/firebase-auth-in-flutter-apps
+[fb-lab]: {{site.firebase}}/codelabs/firebase-auth-in-flutter-apps
 [Calendar]: {{site.pub-api}}/googleapis/latest/calendar_v3/calendar_v3-library.html
-[fb-auth]: https://firebase.google.com/docs/auth/flutter/start
+[fb-auth]: {{site.firebase}}/docs/auth/flutter/start
 [Gmail]: {{site.pub-api}}/googleapis/latest/gmail_v1/gmail_v1-library.html
 [Google APIs package]: {{site.pub-pkg}}/googleapis
 [service accounts]: https://cloud.google.com/iam/docs/service-account-overview

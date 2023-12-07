@@ -25,18 +25,22 @@ release, and listed in alphabetical order:
 
 [breaking change policy]: {{site.url}}/release/compatibility-policy
 [Flutter announce]: {{site.groups}}/forum/#!forum/flutter-announce
-[Dart announce]: https://groups.google.com/a/dartlang.org/g/announce
+[Dart announce]: {{site.groups}}/a/dartlang.org/g/announce
 [`dart fix`]: {{site.url}}/tools/flutter-fix
 [test registry]: {{site.github}}/flutter/tests
 
 ### Not yet released to stable
 
+* [Migrate RawKeyEvent/RawKeyboard system to KeyEvent/HardwareKeyboard system][]
 * [Deprecate `TextField.canRequestFocus`][]
 * [Accessibility traversal order of tooltip changed][]
+* [Default multitouch scrolling][]
 
+[Migrate RawKeyEvent/RawKeyboard system to KeyEvent/HardwareKeyboard system]: {{site.url}}/release/breaking-changes/key-event-migration
 [Deprecate `TextField.canRequestFocus`]: {{site.url}}/release/breaking-changes/can-request-focus
 [Accessibility traversal order of tooltip changed]: {{site.url}}/release/breaking-changes/tooltip-semantics-order
-[Deprecate imperative apply of Flutter Gradle Plugin]: ${{ site.url }}/release/breaking-changes/flutter-gradle-plugin-apply
+[Default multitouch scrolling]: {{site.url}}/release/breaking-changes/multi-touch-scrolling
+[Deprecate imperative apply of Flutter's Gradle plugins]: ${{ site.url }}/release/breaking-changes/flutter-gradle-plugin-apply
 
 ### Released in Flutter 3.16
 

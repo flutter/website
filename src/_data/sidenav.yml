@@ -512,6 +512,8 @@
       permalink: /perf/shader
     - title: Performance metrics
       permalink: /perf/metrics
+    - title: Concurrency and isolates
+      permalink: /perf/isolates
     - title: Performance FAQ
       permalink: /perf/faq
     - title: Appendix

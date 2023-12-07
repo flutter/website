@@ -117,7 +117,7 @@ To enable *Play Games Services* on Android:
     containing the XML you received in the previous step.
 
 [Google Play Console]: https://play.google.com/console/
-[Play Games Services guide]: https://developers.google.com/games/services/console/enabling
+[Play Games Services guide]: {{site.developers}}/games/services/console/enabling
 
 ## 2. Sign in to the game service
 

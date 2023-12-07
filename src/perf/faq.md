@@ -34,7 +34,7 @@ about evaluating and debugging Flutter's performance.
   * [Perfetto](https://ui.perfetto.dev/)
   * [speedscope](https://www.speedscope.app/)
 
-[systrace]: https://developer.android.com/studio/profile/systrace
+[systrace]: {{site.android-dev}}/studio/profile/systrace
 [tracing]: https://www.chromium.org/developers/how-tos/trace-event-profiling-tool
 [traceutil]: https://fuchsia.dev/fuchsia-src/development/tracing/usage-guide
 
@@ -97,7 +97,7 @@ about evaluating and debugging Flutter's performance.
     [GitHub engine repository commits][].
 
 [binary size dashboard]: https://storage.googleapis.com/flutter_infra_release/flutter/241c87ad800beeab545ab867354d4683d5bfb6ce/android-arm-release/sizes/index.html
-[GitHub engine repository commits]: {{site.github}}/flutter/engine/commits
+[GitHub engine repository commits]: {{site.repo.engine}}/commits
 
 * How can I take a screenshot of an app that is running and export it
   as a SKP file?

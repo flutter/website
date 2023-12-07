@@ -84,10 +84,6 @@ one of the following codelabs:
 Learn about Material Design and basic Flutter concepts,
 like layout and animations:
 
-* [Basic Flutter layout concepts][]<br>
-  Use DartPad in a browser (no downloads required!)
-  to learn the basics of creating a Flutter layout.
-
 * [How to debug layout issues with the Flutter Inspector][]<br>
   Not an official codelab, but step-by-step instructions on
   how to debug common layout problems using the Flutter 
@@ -145,7 +141,6 @@ like layout and animations:
 [Building next generation UIs in Flutter]: {{site.codelabs}}/codelabs/flutter-next-gen-uis#0
 [Adaptive Apps in Flutter]: {{site.codelabs}}/codelabs/flutter-adaptive-app
 [animations]: {{site.pub}}/packages/animations
-[Basic Flutter layout concepts]: {{site.url}}/codelabs/layout-basics
 [Building Beautiful Transitions with Material Motion for Flutter]: {{site.codelabs}}/codelabs/material-motion-flutter
 [Building scrolling experiences in Flutter]: {{site.youtube-site}}/watch?v=YY-_yrZdjGc
 [How to debug layout issues with the Flutter Inspector]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
@@ -248,9 +243,11 @@ Learn how to use Flutter with other technologies.
   can interact with the text interface or stream a voice
   interaction via the built-in microphone of a mobile device.
 
-* [Building a game with Flutter and Flame][]<br> 
-  Learn how to create a platform game (featuring
-  Dash or Sparky), using the Flame package.
+* [Introduction to Flame with Flutter][]<br> 
+  Build a Breakout clone using the Flame 2D game engine and
+  embed it in a Flutter wrapper. You will use Flame's Effects
+  to animate and remove components, along with the `google_fonts` and
+  `flutter_animate` packages, to make the whole game look well designed.
 
 * [Using FFI in a Flutter plugin][]<br> 
   Learn how to use Dart's FFI (foreign function interface)
@@ -268,7 +265,7 @@ Learn how to use Flutter with other technologies.
 [Adding WebView to your Flutter app]: {{site.codelabs}}/codelabs/flutter-webview
 [Build voice bots for Android with Dialogflow and Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter
 [Build voice bots for mobile with Dialogflow and Flutter]: {{site.youtube-site}}/watch?v=O7JfSF3CJ84
-[Building a game with Flutter and Flame]: {{site.codelabs}}/codelabs/flutter-flame-game
+[Introduction to Flame with Flutter]: {{site.codelabs}}/codelabs/flutter-flame-brick-breaker
 [Using FFI in a Flutter plugin]: {{site.codelabs}}/codelabs/flutter-ffigen
 [Create haikus about Google products with the PaLM API and Flutter]: {{site.codelabs}}/haiku-generator
 

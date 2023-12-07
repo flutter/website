@@ -137,7 +137,7 @@ You can add any of the following optional parameters:
 
 </div>
 
-[jsflutterconfig-source]: {{site.github}}/flutter/engine/blob/main/lib/web_ui/lib/src/engine/configuration.dart#L247-L259
+[jsflutterconfig-source]: {{site.repo.engine}}/blob/main/lib/web_ui/lib/src/engine/configuration.dart#L247-L259
 [web-renderers]: {{site.url}}/platform-integration/web/renderers
 
 {{site.alert.note}}
@@ -172,7 +172,7 @@ For a more detailed explanation of each parameter, take a look at the
 **"Runtime parameters"** documentation section of the [`configuration.dart`][config-dart]
 file of the web engine.
 
-[config-dart]: {{site.github}}/flutter/engine/blob/main/lib/web_ui/lib/src/engine/configuration.dart#L174
+[config-dart]: {{site.repo.engine}}/blob/main/lib/web_ui/lib/src/engine/configuration.dart#L174
 
 #### Skipping this step
 
@@ -231,7 +231,7 @@ use the hooks provided for each stage to update the DOM:
 For a more practical example using CSS animations,
 see the [initialization code][gallery-init] for the Flutter Gallery.
 
-[gallery-init]: {{site.github}}/flutter/gallery/blob/master/web/index.html
+[gallery-init]: {{site.repo.gallery}}/blob/master/web/index.html
 
 ## Upgrading an older project
 

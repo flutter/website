@@ -364,7 +364,7 @@ The quantities plotted on the y-axis are as follows:
   For more information, see [Dart VM internals][].
 
 [Command-line and server apps]: {{site.dart-site}}/server
-[Custom Flutter engine embedders]: {{site.github}}/flutter/flutter/wiki/Custom-Flutter-Engine-Embedders
+[Custom Flutter engine embedders]: {{site.repo.flutter}}/wiki/Custom-Flutter-Engine-Embedders
 [Dart VM internals]: https://mrale.ph/dartvm/
 [DevTools Performance view]: {{site.url}}/tools/devtools/performance
 [Flutter architectural overview]: {{site.url}}/resources/architectural-overview

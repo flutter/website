@@ -121,7 +121,7 @@ Relevant PRs:
 * [Add flutter_lints package][]
 * [Integrate package:flutter_lints into templates][]
 
-[Add flutter_lints package]: {{site.github}}/flutter/packages/pull/343
+[Add flutter_lints package]: {{site.repo.packages}}/pull/343
 [`analysis_options_user.yaml`]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/analysis_options_user.yaml
 [Customizing static analysis]: {{site.dart-site}}/guides/language/analysis-options
 [dart analyzer]: {{site.dart-site}}/guides/language/analysis-options

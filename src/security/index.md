@@ -54,7 +54,7 @@ in public that could put users at risk,
 For more details on how we handle security vulnerabilities,
 see our [security policy][].
 
-[Discord chat channels]: {{site.github}}/flutter/flutter/wiki/Chat
+[Discord chat channels]: {{site.repo.flutter}}/wiki/Chat
 [known false positives]: {{site.url}}/reference/security-false-positives
 [security policy]: {{site.repo.flutter}}/security/policy
 
@@ -90,7 +90,7 @@ The best way to receive security updates is to subscribe to the
 technical release blog post.
 
 [Discord channel]: https://discord.gg/BS8KZyg
-[flutter-announce]: https://groups.google.com/forum/#!forum/flutter-announce)
+[flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 
 ## Best practices
 
