@@ -274,11 +274,12 @@ the following layout.
     ```diff
     --- ../base/lib/main.dart
     +++ step2/lib/main.dart
-    @@ -23 +19,5 @@
+    @@ -23 +19,6 @@
     +            children: [
     +              TitleSection(
-    +                  name: 'Oeschinen Lake Campground',
-    +                  location: 'Kandersteg, Switzerland'),
+    +                name: 'Oeschinen Lake Campground',
+    +                location: 'Kandersteg, Switzerland',
+    +              ),
     +            ],
     ```
 
@@ -317,6 +318,7 @@ class ButtonSection extends StatelessWidget {
     final Color color = Theme.of(context).primaryColor;
 // ···
   }
+}
 // ···
 }
 ```
@@ -331,14 +333,27 @@ two children: the `Icon` and the `Text`.
 A `Padding` widget separates these children.
 The helper also paints these children in the given color.
 
-Add the following code into the `ButtonSection` widget.
+Add the following code after the `ButtonSection` widget.
 
-<?code-excerpt "lib/main.dart (_buildButtonColumn)" title?>
+<?code-excerpt "lib/main.dart (BuildButtonColumn)" title?>
 ```dart
 class ButtonSection extends StatelessWidget {
   const ButtonSection({super.key});
 // ···
-  Column _buildButtonColumn(Color color, IconData icon, String label) {
+class BuildButtonColumn extends StatelessWidget {
+  const BuildButtonColumn({
+    super.key,
+    required this.color,
+    required this.icon,
+    required this.label,
+  });
+
+  final Color color;
+  final IconData icon;
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -370,8 +385,7 @@ use the `MainAxisAlignment.spaceEvenly` method.
 This method arranges the free space evenly before, between,
 and after each column.
 
-1. Add the following code into the `ButtonSection` widget before
-   the `_buildButtonColumn` widget.
+1. Add the following code into the `ButtonSection` widget.
 
     <?code-excerpt "lib/main.dart (ButtonSection)" title?>
     ```dart
@@ -385,15 +399,41 @@ and after each column.
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              _buildButtonColumn(color, Icons.call, 'CALL'),
-              _buildButtonColumn(color, Icons.near_me, 'ROUTE'),
-              _buildButtonColumn(color, Icons.share, 'SHARE'),
+              BuildButtonColumn(
+                color: color,
+                icon: Icons.call,
+                label: 'CALL',
+              ),
+              BuildButtonColumn(
+                color: color,
+                icon: Icons.near_me,
+                label: 'ROUTE',
+              ),
+              BuildButtonColumn(
+                color: color,
+                icon: Icons.share,
+                label: 'SHARE',
+              ),
             ],
           ),
         );
       }
+    }
 
-      Column _buildButtonColumn(Color color, IconData icon, String label) {
+    class BuildButtonColumn extends StatelessWidget {
+      const BuildButtonColumn({
+        super.key,
+        required this.color,
+        required this.icon,
+        required this.label,
+      });
+
+      final Color color;
+      final IconData icon;
+      final String label;
+
+      @override
+      Widget build(BuildContext context) {
         return Column(
     // ···
         );
@@ -408,10 +448,10 @@ and after each column.
     ```diff
     --- step2/lib/main.dart (addWidget)
     +++ step3/lib/main.dart (addWidget)
-    @@ -4,6 +4,7 @@
-           TitleSection(
-               name: 'Oeschinen Lake Campground',
-               location: 'Kandersteg, Switzerland'),
+    @@ -5,6 +5,7 @@
+             name: 'Oeschinen Lake Campground',
+             location: 'Kandersteg, Switzerland',
+           ),
     +      ButtonSection(),
          ],
        ),
@@ -463,18 +503,19 @@ Add the text description to this app.
     ```diff
     --- step3/lib/main.dart (addWidget)
     +++ step4/lib/main.dart (addWidget)
-    @@ -5,6 +5,15 @@
-               name: 'Oeschinen Lake Campground',
-               location: 'Kandersteg, Switzerland'),
+    @@ -6,6 +6,16 @@
+             location: 'Kandersteg, Switzerland',
+           ),
            ButtonSection(),
     +      TextSection(
     +        description:
-    +            'Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese '
-    +            'Alps. Situated 1,578 meters above sea level, it is one of the '
-    +            'larger Alpine Lakes. A gondola ride from Kandersteg, followed by a '
-    +            'half-hour walk through pastures and pine forest, leads you to the '
-    +            'lake, which warms to 20 degrees Celsius in the summer. Activities '
-    +            'enjoyed here include rowing, and riding the summer toboggan run.',
+    +            'Lake Oeschinen lies at the foot of the Blüemlisalp in the '
+    +            'Bernese Alps. Situated 1,578 meters above sea level, it '
+    +            'is one of the larger Alpine Lakes. A gondola ride from '
+    +            'Kandersteg, followed by a half-hour walk through pastures '
+    +            'and pine forest, leads you to the lake, which warms to 20 '
+    +            'degrees Celsius in the summer. Activities enjoyed here '
+    +            'include rowing, and riding the summer toboggan run.',
     +      ),
          ],
        ),
@@ -567,8 +608,8 @@ This allows you to reference the image from your code.
     +        image: 'images/lake.jpg',
     +      ),
            TitleSection(
-               name: 'Oeschinen Lake Campground',
-               location: 'Kandersteg, Switzerland'),
+             name: 'Oeschinen Lake Campground',
+             location: 'Kandersteg, Switzerland',
     ```
 
 **Dart code:** [`main.dart`][]<br>

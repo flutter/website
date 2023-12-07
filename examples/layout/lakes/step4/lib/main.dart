@@ -22,17 +22,19 @@ class MyApp extends StatelessWidget {
           child: Column(
             children: [
               TitleSection(
-                  name: 'Oeschinen Lake Campground',
-                  location: 'Kandersteg, Switzerland'),
+                name: 'Oeschinen Lake Campground',
+                location: 'Kandersteg, Switzerland',
+              ),
               ButtonSection(),
               TextSection(
                 description:
-                    'Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese '
-                    'Alps. Situated 1,578 meters above sea level, it is one of the '
-                    'larger Alpine Lakes. A gondola ride from Kandersteg, followed by a '
-                    'half-hour walk through pastures and pine forest, leads you to the '
-                    'lake, which warms to 20 degrees Celsius in the summer. Activities '
-                    'enjoyed here include rowing, and riding the summer toboggan run.',
+                    'Lake Oeschinen lies at the foot of the Blüemlisalp in the '
+                    'Bernese Alps. Situated 1,578 meters above sea level, it '
+                    'is one of the larger Alpine Lakes. A gondola ride from '
+                    'Kandersteg, followed by a half-hour walk through pastures '
+                    'and pine forest, leads you to the lake, which warms to 20 '
+                    'degrees Celsius in the summer. Activities enjoyed here '
+                    'include rowing, and riding the summer toboggan run.',
               ),
             ],
           ),
@@ -106,15 +108,41 @@ class ButtonSection extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          _buildButtonColumn(color, Icons.call, 'CALL'),
-          _buildButtonColumn(color, Icons.near_me, 'ROUTE'),
-          _buildButtonColumn(color, Icons.share, 'SHARE'),
+          BuildButtonColumn(
+            color: color,
+            icon: Icons.call,
+            label: 'CALL',
+          ),
+          BuildButtonColumn(
+            color: color,
+            icon: Icons.near_me,
+            label: 'ROUTE',
+          ),
+          BuildButtonColumn(
+            color: color,
+            icon: Icons.share,
+            label: 'SHARE',
+          ),
         ],
       ),
     );
   }
+}
 
-  Column _buildButtonColumn(Color color, IconData icon, String label) {
+class BuildButtonColumn extends StatelessWidget {
+  const BuildButtonColumn({
+    super.key,
+    required this.color,
+    required this.icon,
+    required this.label,
+  });
+
+  final Color color;
+  final IconData icon;
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,

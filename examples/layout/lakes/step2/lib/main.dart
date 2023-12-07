@@ -19,8 +19,9 @@ class MyApp extends StatelessWidget {
           child: Column(
             children: [
               TitleSection(
-                  name: 'Oeschinen Lake Campground',
-                  location: 'Kandersteg, Switzerland'),
+                name: 'Oeschinen Lake Campground',
+                location: 'Kandersteg, Switzerland',
+              ),
             ],
           ),
         ),

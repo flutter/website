@@ -19,8 +19,9 @@ class MyApp extends StatelessWidget {
           child: Column(
             children: [
               TitleSection(
-                  name: 'Oeschinen Lake Campground',
-                  location: 'Kandersteg, Switzerland'),
+                name: 'Oeschinen Lake Campground',
+                location: 'Kandersteg, Switzerland',
+              ),
               ButtonSection(),
             ],
           ),
@@ -85,10 +86,10 @@ class TitleSection extends StatelessWidget {
 
 // #docregion ButtonStart
 // #docregion ButtonSection
-// #docregion _buildButtonColumn
+// #docregion BuildButtonColumn
 class ButtonSection extends StatelessWidget {
   const ButtonSection({super.key});
-// #enddocregion _buildButtonColumn
+// #enddocregion BuildButtonColumn
 
   @override
   Widget build(BuildContext context) {
@@ -98,18 +99,44 @@ class ButtonSection extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          _buildButtonColumn(color, Icons.call, 'CALL'),
-          _buildButtonColumn(color, Icons.near_me, 'ROUTE'),
-          _buildButtonColumn(color, Icons.share, 'SHARE'),
+          BuildButtonColumn(
+            color: color,
+            icon: Icons.call,
+            label: 'CALL',
+          ),
+          BuildButtonColumn(
+            color: color,
+            icon: Icons.near_me,
+            label: 'ROUTE',
+          ),
+          BuildButtonColumn(
+            color: color,
+            icon: Icons.share,
+            label: 'SHARE',
+          ),
         ],
       ),
     );
 // #docregion ButtonStart
   }
+}
 // #enddocregion ButtonStart
 
-// #docregion _buildButtonColumn
-  Column _buildButtonColumn(Color color, IconData icon, String label) {
+// #docregion BuildButtonColumn
+class BuildButtonColumn extends StatelessWidget {
+  const BuildButtonColumn({
+    super.key,
+    required this.color,
+    required this.icon,
+    required this.label,
+  });
+
+  final Color color;
+  final IconData icon;
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
     return Column(
 // #enddocregion ButtonSection
       mainAxisSize: MainAxisSize.min,
@@ -131,7 +158,7 @@ class ButtonSection extends StatelessWidget {
 // #docregion ButtonSection
     );
   }
-// #enddocregion _buildButtonColumn
+// #enddocregion BuildButtonColumn
 // #docregion ButtonStart
 }
 // #enddocregion ButtonSection
