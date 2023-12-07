@@ -243,9 +243,11 @@ Learn how to use Flutter with other technologies.
   can interact with the text interface or stream a voice
   interaction via the built-in microphone of a mobile device.
 
-* [Building a game with Flutter and Flame][]<br> 
-  Learn how to create a platform game (featuring
-  Dash or Sparky), using the Flame package.
+* [Introduction to Flame with Flutter][]<br> 
+  Build a Breakout clone using the Flame 2D game engine and
+  embedded it in a Flutter wrapper. You will use Flame's Effects
+  to animate and remove components, along with the Google Fonts and
+  Flutter Animate packages to make the whole game look well designed.
 
 * [Using FFI in a Flutter plugin][]<br> 
   Learn how to use Dart's FFI (foreign function interface)
@@ -263,7 +265,7 @@ Learn how to use Flutter with other technologies.
 [Adding WebView to your Flutter app]: {{site.codelabs}}/codelabs/flutter-webview
 [Build voice bots for Android with Dialogflow and Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter
 [Build voice bots for mobile with Dialogflow and Flutter]: {{site.youtube-site}}/watch?v=O7JfSF3CJ84
-[Building a game with Flutter and Flame]: {{site.codelabs}}/codelabs/flutter-flame-game
+[Building a game with Flutter and Flame]: {{site.codelabs}}/codelabs/flutter-flame-brick-breaker
 [Using FFI in a Flutter plugin]: {{site.codelabs}}/codelabs/flutter-ffigen
 [Create haikus about Google products with the PaLM API and Flutter]: {{site.codelabs}}/haiku-generator
 
