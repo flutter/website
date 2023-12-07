@@ -89,8 +89,8 @@ final ScrollController controller = ScrollController();
 ListView.builder(
   controller: controller,
   itemBuilder: (BuildContext context, int index) {
-   return Text('Item $index');
- }
+    return Text('Item $index');
+  },
 );
 ```
 
@@ -110,8 +110,8 @@ ScrollConfiguration(
   child: ListView.builder(
     controller: controller,
     itemBuilder: (BuildContext context, int index) {
-     return Text('Item $index');
-    }
+      return Text('Item $index');
+    },
   ),
 );
 ```
@@ -125,8 +125,8 @@ final ScrollController controller = ScrollController();
 ListView.builder(
   controller: controller,
   itemBuilder: (BuildContext context, int index) {
-   return Text('Item $index');
- }
+    return Text('Item $index');
+  },
 );
 ```
 
@@ -142,8 +142,8 @@ ScrollConfiguration(
   child: ListView.builder(
     controller: controller,
     itemBuilder: (BuildContext context, int index) {
-     return Text('Item $index');
-    }
+      return Text('Item $index');
+    },
   ),
 );
 ```
