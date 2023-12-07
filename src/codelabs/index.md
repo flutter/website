@@ -246,8 +246,8 @@ Learn how to use Flutter with other technologies.
 * [Introduction to Flame with Flutter][]<br> 
   Build a Breakout clone using the Flame 2D game engine and
   embed it in a Flutter wrapper. You will use Flame's Effects
-  to animate and remove components, along with the Google Fonts and
-  Flutter Animate packages to make the whole game look well designed.
+  to animate and remove components, along with the `google_fonts` and
+  `flutter_animate` packages, to make the whole game look well designed.
 
 * [Using FFI in a Flutter plugin][]<br> 
   Learn how to use Dart's FFI (foreign function interface)
