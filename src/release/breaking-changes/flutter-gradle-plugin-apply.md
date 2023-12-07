@@ -32,7 +32,9 @@ buildscripts.
 
 ### android/settings.gradle
 
-Replace the contents of `<app-src>/android/settings.gradle` with:
+Replace the contents of `<app-src>/android/settings.gradle` with the below,
+remembering to replace `{{agpVersion}}` and `{{kotlinVersion}}` with previously
+used values:
 
 ```gradle
 pluginManagement {
@@ -56,8 +58,8 @@ pluginManagement {
 
 plugins {
     id "dev.flutter.flutter-plugin-loader" version "1.0.0"
-    id "com.android.application" version "7.3.0" apply false
-    id "org.jetbrains.kotlin.android" version "1.7.10" apply false
+    id "com.android.application" version "{{agpVersion}}" apply false
+    id "org.jetbrains.kotlin.android" version "{{kotlinVersion}}" apply false
 }
 
 include ":app"
@@ -73,7 +75,7 @@ Remove the whole `buildscript` block from `<app-src/android/build.gradle`:
 
 ```diff
 -buildscript {
--    ext.kotlin_version = '1.7.10'
+-    ext.kotlin_version = '{{kotlinVersion}}'
 -    repositories {
 -        google()
 -        mavenCentral()
@@ -174,14 +176,15 @@ the following lines to `<app-src>/android/settings.gradle`:
 ```diff
  plugins {
      id "dev.flutter.flutter-plugin-loader" version "1.0.0"
-     id "com.android.application" version "7.3.0" apply false
-     id "org.jetbrains.kotlin.android" version "1.7.10" apply false
+     id "com.android.application" version "{{agpVersion}}" apply false
+     id "org.jetbrains.kotlin.android" version "{{kotlinVersion}}" apply false
 +    id "com.google.gms.google-services" version "4.4.0" apply false
 +    id "com.google.firebase.crashlytics" version "2.9.9" apply false
  }
 ```
 
-and the following lines to `<app-src>/android/app/build.gradle`:
+and the following lines to `<app-src>/android/app/build.gradle` (remembering to
+replace `{{agpVersion}}` and `{{kotlinVersion}}` with previously used values):
 
 ```diff
  plugins {
