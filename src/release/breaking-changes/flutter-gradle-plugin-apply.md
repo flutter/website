@@ -137,6 +137,11 @@ very top of your file, add:
 +}
 ```
 
+### Validation
+
+Execute `flutter run` to confirm your app builds and launches on a connected
+Android device or emulator.
+
 ## Examples
 
 ### Google Mobile Services and Crashlytics
