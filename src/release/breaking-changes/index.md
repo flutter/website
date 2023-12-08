@@ -35,6 +35,7 @@ release, and listed in alphabetical order:
 * [Deprecate `TextField.canRequestFocus`][]
 * [Accessibility traversal order of tooltip changed][]
 * [Default multitouch scrolling][]
+* [Deprecate imperative apply of Flutter's Gradle plugins][]
 
 [Migrate RawKeyEvent/RawKeyboard system to KeyEvent/HardwareKeyboard system]: {{site.url}}/release/breaking-changes/key-event-migration
 [Deprecate `TextField.canRequestFocus`]: {{site.url}}/release/breaking-changes/can-request-focus
