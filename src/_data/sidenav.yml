@@ -650,13 +650,40 @@
       permalink: /resources/courses
     - title: Learn Dart
       permalink: /resources/bootstrap-into-dart
-    - header: Contributing
-    - title: Create useful bug reports
-      permalink: /resources/bug-reports
     - title: Contribute to Flutter
       permalink: https://github.com/flutter/flutter/blob/main/CONTRIBUTING.md
     - title: Design documents
       permalink: /resources/design-docs
+
+- title: Contribute
+  permalink: /contribute
+  children:
+    - title: Contribute to Flutter
+      permalink: /contribute
+    - title: Create useful bug reports
+      permalink: /resources/bug-reports
+    - title: Review design documents
+      permalink: /resources/design-docs
+    - title: Contribute to the docs
+      permalink: /contribute/docs
+      children:
+        - title: Overview
+          permalink: /contribute/docs
+        - title: Create content
+          permalink: /contribute/docs/create
+        - title: Write docs
+          permalink: /contribute/docs/write
+        - title: Share code
+          permalink: /contribute/docs/content
+        - title: Complete tasks
+          permalink: /contribute/docs/task
+        - title: Follow processes
+          permalink: /contribute/docs/process
+        - title: Ensure accessibility
+          permalink: /contribute/docs/accessibility
+        - title: Syntax reference
+          permalink: /contribute/docs/reference
+
 
 - title: Reference
   permalink: /reference
