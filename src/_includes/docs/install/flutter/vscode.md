@@ -1,3 +1,11 @@
+{% assign os=include.os %}
+{% assign terminal=include.terminal %}
+{%- if os=='macOS' -%}
+{% assign special = 'Command' %}
+{% else %}
+{% assign special = 'Control' %}
+{%- endif %}
+
 ### Use VS Code to install Flutter
 {:.no_toc}
 
@@ -7,7 +15,7 @@
 1. Open VS Code.
 
 1. To open the Command Palette,
-   press <kbd>Control</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>.
+   press <kbd>{{special}}</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>.
 
 1. In the Command Palette, type `flutter`.
 
@@ -36,9 +44,13 @@
    VS Code places you in your user profile to start.
    Choose a different location.
 
+   {% if os == "Windows" -%}
    Consider `%USERPROFILE%` or `D:\dev`.
 
    {% include docs/install/admonitions/install-paths.md %}
+   {% else -%}
+   Consider `~/projects/`
+   {% endif %}
 
 1. Click **Clone Flutter**.
 
@@ -105,10 +117,10 @@
 
    If you agree, click **OK**.
 
-1. To enable `flutter` in all terminal windows:
+1. To enable `flutter` in all {{terminal}} windows:
 
    {:type="a"}
-   1. Close, then reopen all Powershell windows.
+   1. Close, then reopen all {{terminal}} windows.
    1. Restart VS Code.
 
 [development tools prerequisites]: #development-tools

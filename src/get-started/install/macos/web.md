@@ -9,6 +9,6 @@ next:
 
 {% include docs/install/reqs/macos/base.md target='web' os='macOS' -%}
 
-{% include docs/install/flutter-sdk.md target='web' os='macOS' -%}
+{% include docs/install/flutter-sdk.md target='web' os='macOS' terminal='Terminal' -%}
 
 {% include docs/install/flutter-doctor.md target='web' os='macOS' -%}

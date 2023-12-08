@@ -9,7 +9,7 @@ next:
 
 {% include docs/install/reqs/windows/base.md target='mobile' os='Windows' -%}
 
-{% include docs/install/flutter-sdk.md target='mobile' os='Windows' -%}
+{% include docs/install/flutter-sdk.md target='mobile' os='Windows' terminal='PowerShell' -%}
 
 {% include docs/install/compiler/android.md target='mobile' os='Windows' -%}
 

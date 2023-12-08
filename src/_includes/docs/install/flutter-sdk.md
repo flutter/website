@@ -1,3 +1,6 @@
+{% assign os=include.os %}
+{% assign terminal=include.terminal %}
+
 ## Install the Flutter SDK
 
 To install the Flutter SDK, you can use the VS Code Flutter extension
@@ -18,13 +21,13 @@ or download and install the Flutter bundle yourself.
 
 <div class="tab-pane active" id="vscode" role="tabpanel" aria-labelledby="vscode-tab" markdown="1">
 
-{% include docs/install/flutter/vscode.md os=include.os %}
+{% include docs/install/flutter/vscode.md os=os terminal=terminal %}
 
 </div>
 
 <div class="tab-pane" id="download" role="tabpanel" aria-labelledby="download-tab" markdown="1">
 
-{% include docs/install/flutter/download.md os=include.os %}
+{% include docs/install/flutter/download.md os=os terminal=terminal %}
 
 </div>
 </div>

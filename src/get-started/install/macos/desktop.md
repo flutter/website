@@ -10,6 +10,6 @@ next:
 
 {% include docs/install/reqs/macos/base.md target='desktop' os='macOS' -%}
 
-{% include docs/install/flutter-sdk.md target='desktop' os='macOS' -%}
+{% include docs/install/flutter-sdk.md target='desktop' os='macOS' terminal='Terminal' -%}
 
 {% include docs/install/flutter-doctor.md target='desktop' os='macOS' platform='desktop' -%}

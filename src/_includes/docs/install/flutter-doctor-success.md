@@ -4,40 +4,43 @@ Doctor summary (to see all details, run flutter doctor -v):
 {% if os=='Windows' -%}
 [✓] Windows version (Installed version of Windows is version 10 or higher)
 {% endif -%}
-{% if target=='mobile' -%}
+{% case target -%}
+{% when 'mobile','mobile-android' -%}
 [✓] Android toolchain - develop for Android devices (Android SDK version {{site.appnow.android_sdk}})
 {% else -%}
 [!] Android toolchain - develop for Android devices
-{% endif -%}
-{% if target=='web' -%}
-[✓] Chrome - develop for the web
-{% else -%}
-[!] Chrome - develop for the web
-{% endif -%}
-{% if os=='macOS' -%}
+{% endcase -%}
+{% if target=='web' -%}[✓]{% else -%}[!]{% endif %} Chrome - develop for the web
+{%- if os=='macOS' -%}
+{% case target %}
+{%- when 'desktop', 'mobile-ios' %}
 [✓] Xcode - develop for iOS and macOS (Xcode {{site.appnow.xcode}})
+{%- else %}
+[!] Xcode - develop for iOS and macOS (Xcode not installed)
+{%- endcase %}
 {% endif -%}
-{% if os=='Windows' -%}
+{% if os=='Windows' %}
 {% if target=='desktop' -%}
 [✓] Visual Studio - develop Windows apps (version 2022)
 {% else -%}
 [!] Visual Studio - develop Windows apps
 {% endif -%}
 {% endif -%}
-{% if target=='mobile' -%}
+{% if target=='mobile' or target=='mobile-android' -%}
 [✓] Android Studio (version {{site.appnow.android_studio}})
 {% else -%}
 [!] Android Studio (not installed)
-[!] IntelliJ IDEA Community Edition (version {{site.appnow.intellij}})
+[!] IntelliJ IDEA Community Edition (not installed)
 {% endif -%}
 [✓] VS Code (version {{site.appnow.vscode}})
 [✓] Connected device (1 available)
 [✓] Network resources
 
-{% if target=='desktop' -%}
-! Doctor found issues in 4 categories.
-{% elsif target=='mobile' -%}
+{% case target %}
+{% when 'desktop','mobile-ios' -%}
 ! Doctor found issues in 3 categories.
-{% elsif target=='web' -%}
+{% when 'mobile', 'mobile-android' -%}
+! Doctor found issues in 2 categories.
+{% when 'web' -%}
 ! Doctor found issues in 4 categories.
-{% endif -%}
+{% endcase -%}
