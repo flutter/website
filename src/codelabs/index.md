@@ -53,7 +53,7 @@ one of the following codelabs:
 
 * [Dart null safety in Action][] (workshop)<br>
   An instructor-led workshop introducing the features
-  that support Dart's [null-safe][] type system.
+  that enable Dart's [null-safe][] type system.
 
 * [How to manage application states using inherited widgets][inherited-widget-ws] (workshop)<br>
   Learn how to manage the state of your app's data by
