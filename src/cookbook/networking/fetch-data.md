@@ -10,13 +10,6 @@ Luckily, Dart and Flutter provide tools, such as the
 `http` package, for this type of work.
 
 {{site.alert.note}}
-  Flutter API docs cannot be generated on Windows.
-  If you are using Windows, you might need to download
-  the Linux version of the SDK and use the
-  [Windows Subsystem for Linux][].
-{{site.alert.end}}
-
-{{site.alert.note}}
   You should avoid directly using `dart:io` or `dart:html`
   to make HTTP requests.
   Those libraries are platform-dependent
