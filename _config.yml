@@ -16,7 +16,7 @@ repo:
   this: https://github.com/flutter/website
   flutter: https://github.com/flutter/flutter
   samples: https://github.com/flutter/samples
-  plugins: https://github.com/flutter/plugins
+  packages: https://github.com/flutter/packages
   gallery: https://github.com/flutter/gallery
   engine: https://github.com/flutter/engine
   uxr: https://github.com/flutter/uxr
@@ -32,7 +32,7 @@ social:
 dart-site: https://dart.dev
 news: https://news.dartlang.org
 api: https://api.flutter.dev
-master-api: https://master-api.flutter.dev
+main-api: https://main-api.flutter.dev
 pub: https://pub.dev
 pub-api: https://pub.dev/documentation
 pub-pkg: https://pub.dev/packages
@@ -52,7 +52,6 @@ developers: https://developers.google.com
 codelabs: https://codelabs.developers.google.com
 groups: https://groups.google.com
 firebase: https://firebase.google.com
-flutterfire: https://firebase.flutter.dev
 youtube-site: https://youtube.com
 
 

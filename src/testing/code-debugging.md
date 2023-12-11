@@ -15,7 +15,7 @@ For a full list of debugging and profiling tools, see the
   check out [`flutter_gdb`][].
 {{site.alert.end}}
 
-[`flutter_gdb`]: https://github.com/flutter/engine/blob/main/sky/tools/flutter_gdb
+[`flutter_gdb`]: {{site.repo.engine}}/blob/main/sky/tools/flutter_gdb
 
 ## Logging
 
@@ -982,7 +982,7 @@ class MyApp extends StatelessWidget {
       [[highlight]]showPerformanceOverlay: true,[[/highlight]]
       title: 'My Awesome App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const MyHomePage(title: 'My Awesome App'),
     );

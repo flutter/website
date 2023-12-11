@@ -1,4 +1,5 @@
-// Basic Flutter widget test. Learn more at https://flutter.io/docs/testing.
+// Basic Flutter widget test.
+// Learn more at https://docs.flutter.dev/testing/overview#widget-tests.
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -15,7 +16,7 @@ void main() {
     final flutterError = error as FlutterError;
     expect(
       flutterError.message,
-      'A RenderFlex overflowed by 209 pixels on the bottom.',
+      matches(RegExp(r'A RenderFlex overflowed by \d+ pixels on the bottom\.')),
     );
 
     expect(find.text('Strawberry Pavlova Recipe'), findsOneWidget);

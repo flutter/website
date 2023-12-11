@@ -7,7 +7,7 @@ This page has release notes for 3.0.0.
 For information about subsequent bug-fix releases,
 see [Hotfixes to the Stable Channel][].
 
-[Hotfixes to the Stable Channel]: {{site.github}}/flutter/flutter/wiki/Hotfixes-to-the-Stable-Channel
+[Hotfixes to the Stable Channel]: {{site.repo.flutter}}/wiki/Hotfixes-to-the-Stable-Channel
 
 ## If you see warnings about bindings
 
@@ -86,7 +86,7 @@ If the error messages do not point to one of your dependencies,
 and `dart fix --apply` doesn't fix the issue,
 or if the warnings are fatal
 (for example, your application refuses to run), please
-[file a bug]({{site.github}}/flutter/flutter/issues/new/choose).
+[file a bug]({{site.repo.flutter}}/issues/new/choose).
 
 ## What's Changed
 

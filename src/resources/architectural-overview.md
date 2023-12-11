@@ -90,7 +90,7 @@ and compile toolchain.
 [Impeller]: {{site.url}}/perf/impeller
 
 The engine is exposed to the Flutter framework through
-[`dart:ui`]({{site.github}}/flutter/engine/tree/main/lib/ui),
+[`dart:ui`]({{site.repo.engine}}/tree/main/lib/ui),
 which wraps the underlying C++ code in Dart classes. This library
 exposes the lowest-level primitives, such as classes for driving input,
 graphics, and text rendering subsystems.
@@ -160,20 +160,20 @@ pieces of a Flutter app.
 * Implements business logic.
 * Owned by app developer.
 
-**Framework** ([source code]({{site.github}}/flutter/flutter/tree/main/packages/flutter/lib))
+**Framework** ([source code]({{site.repo.flutter}}/tree/main/packages/flutter/lib))
 * Provides higher-level API to build high-quality apps
   (for example, widgets, hit-testing, gesture detection,
   accessibility, text input).
 * Composites the app's widget tree into a scene.
 
-**Engine** ([source code]({{site.github}}/flutter/engine/tree/main/shell/common))
+**Engine** ([source code]({{site.repo.engine}}/tree/main/shell/common))
 * Responsible for rasterizing composited scenes.
 * Provides low-level implementation of Flutter's core APIs
   (for example, graphics, text layout, Dart runtime).
 * Exposes its functionality to the framework using the **dart:ui API**.
 * Integrates with a specific platform using the Engine's **Embedder API**.
 
-**Embedder** ([source code](https://github.com/flutter/engine/tree/main/shell/platform))
+**Embedder** ([source code]({{site.repo.engine}}/tree/main/shell/platform))
 * Coordinates with the underlying operating system
   for access to services like rendering surfaces,
   accessibility, and input.
@@ -761,7 +761,7 @@ itself. The mechanism for obtaining the texture and participating in the app
 lifecycle of the underlying operating system inevitably varies depending on the
 unique concerns of that platform. The engine is platform-agnostic, presenting a
 [stable ABI (Application Binary
-Interface)]({{site.github}}/flutter/engine/blob/main/shell/platform/embedder/embedder.h)
+Interface)]({{site.repo.engine}}/blob/main/shell/platform/embedder/embedder.h)
 that provides a _platform embedder_ with a way to set up and use Flutter.
 
 The platform embedder is the native OS application that hosts all Flutter
@@ -852,7 +852,7 @@ channel.setMethodCallHandler {
 ```
 
 Further examples of using platform channels, including examples for macOS, can
-be found in the [flutter/plugins]({{site.repo.plugins}})
+be found in the [flutter/packages]({{site.repo.packages}})
 repository<sup><a href="#a3">3</a></sup>. There are also [thousands of plugins
 already available]({{site.pub}}/flutter) for Flutter that cover many common
 scenarios, ranging from Firebase to ads to device hardware like camera and

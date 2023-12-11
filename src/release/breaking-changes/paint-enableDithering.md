@@ -1,6 +1,6 @@
 ---
 title: Paint.enableDithering is now true by default.
-description: >
+description: >-
   Deprecation of user-configurable `Paint.enableDithering`.
 ---
 
@@ -33,7 +33,7 @@ It was later discovered that Impeller didn't support the (rarely used)
 [`Paint.enableDithering`][] property.
 
 After adding dithering support to Impeller ([PR 44181][], [PR 44331][],
-[PR 44522][]), and reviewing the perfomance impact of dithering (negligible),
+[PR 44522][]), and reviewing the performance impact of dithering (negligible),
 the following observations were made:
 
 1. Consensus that gradients look good by default: [Issue 112498][].
@@ -45,26 +45,27 @@ This resulted in the following decisions:
 1. Deprecate the global option.
 1. Remove the global option in a future release.
 
-As part of that process, the ability for dithering to affect anything other than
-gradients was removed in [PR 44730][], [PR 44912][]. That was done to ease the
-process of migrating, because Impeller will never support dithering for anything
-but gradients.
+As part of that process, the ability for dithering to affect anything
+other than gradients was removed in [PR 44730][] and [PR 44912][].
+That was done to ease the process of migrating, because
+Impeller will never support dithering for anything but gradients.
 
 ## Migration guide
 
 Most users and libraries will not need to make any changes.
 
-For users that maintain golden tests, you might need to update your golden images
-to reflect the new default. For example, if you use [`matchesGoldenFile`][]
-to test a widget that contains a gradient:
+For users that maintain golden tests, you might
+need to update your golden images to reflect the new default.
+For example, if you use [`matchesGoldenFile`][] to
+test a widget that contains a gradient:
 
-```shell
-flutter test --update-goldens
+```terminal
+$ flutter test --update-goldens
 ```
 
-Not expected to be a common case, but you can disable dithering temporarily
-by setting the `enableDithering` property in your `main()` method (either in an
-app or test):
+While this is not expected to be a common case, you can
+disable dithering temporarily by setting the `enableDithering` property in
+your `main()` method (either in an app or test):
 
 ```diff
 void main() {
@@ -90,9 +91,8 @@ migration guide, but you can find some resources and examples:
 
 ## Timeline
 
-Landed in version: `3.14.0-0.1.pre`.
-
-Not yet in a stable release.
+Landed in version: 3.14.0-0.1.pre<br>
+In stable release: 3.16
 
 ## References
 

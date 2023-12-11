@@ -3,6 +3,12 @@ title: Automatic platform adaptations
 description: Learn more about Flutter's platform adaptiveness.
 ---
 
+{{site.alert.note}}
+  As of the Flutter 3.16 release, Material 3
+  replaces Material 2 as the default theme
+  on all Flutter apps that use Material.
+{{site.alert.end}}
+
 ## Adaptation philosophy
 
 In general, two cases of platform adaptiveness exist:
@@ -879,27 +885,27 @@ You can leave feedback or ask questions in the discussion.
 [overscroll glow indicator]: {{site.api}}/flutter/widgets/GlowingOverscrollIndicator-class.html
 [overscrolls]: {{site.api}}/flutter/widgets/BouncingScrollPhysics-class.html
 [`PageRoute.fullscreenDialog`]: {{site.api}}/flutter/widgets/PageRoute-class.html
-[platform_design code samples]: {{site.github}}/flutter/samples/tree/main/platform_design
+[platform_design code samples]: {{site.repo.samples}}/tree/main/platform_design
 [`Icons.adaptive`]: {{site.api}}/flutter/material/PlatformAdaptiveIcons-class.html
 [slides and clip-reveals up]: {{site.api}}/flutter/material/OpenUpwardsPageTransitionsBuilder-class.html
 [slides up and fades in]: {{site.api}}/flutter/material/FadeUpwardsPageTransitionsBuilder-class.html
 [`startActivity()`]: {{site.android-dev}}/reference/android/app/Activity.html#startActivity(android.content.Intent
 [`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
 [issue #8427]: {{site.repo.this}}/issues/8427
-[m3-dialog]: https://m3.material.io/components/dialogs/overview
-[hig-alert]: https://developer.apple.com/design/human-interface-guidelines/components/presentation/alerts/
+[m3-dialog]: {{site.material}}/components/dialogs/overview
+[hig-alert]: {{site.apple-dev}}/design/human-interface-guidelines/components/presentation/alerts/
 [alert-post]: {{site.repo.uxr}}/discussions/92
 [appbar-post]: {{site.repo.uxr}}/discussions/93
-[mat-appbar]: https://m3.material.io/components/top-app-bar/overview
-[hig-appbar]: https://developer.apple.com/design/human-interface-guidelines/components/navigation-and-search/navigation-bars/
+[mat-appbar]: {{site.material}}/components/top-app-bar/overview
+[hig-appbar]: {{site.apple-dev}}/design/human-interface-guidelines/components/navigation-and-search/navigation-bars/
 [`Checkbox.adaptive()`]: {{site.api}}/flutter/material/Checkbox/Checkbox.adaptive.html
 [`Radio.adaptive()`]: {{site.api}}/flutter/material/Radio/Radio.adaptive.html
 [`Switch.adaptive()`]: {{site.api}}/flutter/material/Switch/Switch.adaptive.html
 [`Slider.adaptive()`]: {{site.api}}/flutter/material/Slider/Slider.adaptive.html
 [`CircularProgressIndicator.adaptive()`]: {{site.api}}/flutter/material/CircularProgressIndicator/CircularProgressIndicator.adaptive.html
 [UI Component section]: {{site.api}}/platform-integration/platform-adaptations/#ui-components
-[mat-navbar]: https://m3.material.io/components/navigation-bar/overview
-[hig-tabbar]: https://developer.apple.com/design/human-interface-guidelines/components/navigation-and-search/tab-bars/
+[mat-navbar]: {{site.material}}/components/navigation-bar/overview
+[hig-tabbar]: {{site.apple-dev}}/design/human-interface-guidelines/components/navigation-and-search/tab-bars/
 [text-field-post]: {{site.repo.uxr}}/discussions/95 
-[m3-text-field]: https://m3.material.io/components/text-fields/overview
-[hig-text-field]: https://developer.apple.com/design/human-interface-guidelines/text-fields
+[m3-text-field]: {{site.material}}/components/text-fields/overview
+[hig-text-field]: {{site.apple-dev}}/design/human-interface-guidelines/text-fields

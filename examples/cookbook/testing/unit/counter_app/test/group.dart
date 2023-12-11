@@ -2,7 +2,7 @@ import 'package:counter_app/counter.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('Counter', () {
+  group('Test start, increment, decrement', () {
     test('value should start at 0', () {
       expect(Counter().value, 0);
     });

@@ -253,7 +253,7 @@ Run the app:
 
 * Scroll up and down to observe the gradient effect.
 * Chat bubbles located at the bottom of the screen
-have a darker gradient color than the ones at the top.
+  have a darker gradient color than the ones at the top.
 
 <!-- start dartpad -->
 <?code-excerpt "lib/main.dart"?>

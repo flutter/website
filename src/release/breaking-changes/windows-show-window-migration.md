@@ -7,7 +7,7 @@ Flutter 3.13 fixed a [bug][] that could result in the window not being shown.
 Windows projects created using Flutter 3.7 or Flutter 3.10 need to be migrated
 to fix this issue.
 
-[bug]: {{site.github}}/flutter/flutter/issues/119415
+[bug]: {{site.repo.flutter}}/issues/119415
 
 ## Migration steps
 
@@ -47,5 +47,5 @@ flutter_controller_->ForceRedraw();
 [PR 995][] shows the migration work for the
 [Flutter Gallery][] app.
 
-[PR 995]: {{site.github}}/flutter/gallery/pull/995/files
-[Flutter Gallery]: https://gallery.flutter.dev/
+[PR 995]: {{site.repo.gallery}}/pull/995/files
+[Flutter Gallery]: {{site.gallery}}

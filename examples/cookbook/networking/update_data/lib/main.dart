@@ -56,10 +56,17 @@ class Album {
   const Album({required this.id, required this.title});
 
   factory Album.fromJson(Map<String, dynamic> json) {
-    return Album(
-      id: json['id'] as int,
-      title: json['title'] as String,
-    );
+    return switch (json) {
+      {
+        'id': int id,
+        'title': String title,
+      } =>
+        Album(
+          id: id,
+          title: title,
+        ),
+      _ => throw const FormatException('Failed to load album.'),
+    };
   }
 }
 // #enddocregion Album
@@ -92,7 +99,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Update Data Example',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: Scaffold(
         appBar: AppBar(
