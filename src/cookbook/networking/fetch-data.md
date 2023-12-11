@@ -16,6 +16,13 @@ Luckily, Dart and Flutter provide tools, such as the
   [Windows Subsystem for Linux][].
 {{site.alert.end}}
 
+{{site.alert.note}}
+  You should avoid directly using `dart:io` or `dart:html`
+  to make HTTP requests.
+  Those libraries are platform-dependent
+  and tied to a single implementation.
+{{site.alert.end}}
+
 This recipe uses the following steps:
 
   1. Add the `http` package.
