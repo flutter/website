@@ -5,6 +5,8 @@ description: Learn how Flutter's layout mechanism works and how to build a layou
 diff2html: true
 ---
 
+{% include docs/yt_shims.liquid %}
+
 {% assign api = site.api | append: '/flutter' -%}
 {% capture code -%} {{site.repo.this}}/tree/{{site.branch}}/src/_includes/code {%- endcapture -%}
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
@@ -17,9 +19,9 @@ diff2html: true
 {{site.alert.secondary}}
   <h4 class="no_toc">What's the point?</h4>
 
-  * Widgets are classes used to build UIs.
-  * Widgets are used for both layout and UI elements.
-  * Compose simple widgets to build complex widgets.
+* Widgets are classes used to build UIs.
+* Widgets are used for both layout and UI elements.
+* Compose simple widgets to build complex widgets.
 {{site.alert.end}}
 
 The core of Flutter's layout mechanism is widgets.
@@ -98,6 +100,7 @@ horizontally and vertically.
 For example, create a [`Text`][] widget:
 
 <?code-excerpt "layout/base/lib/main.dart (text)" replace="/child: //g"?>
+
 ```dart
 Text('Hello World'),
 ```
@@ -105,6 +108,7 @@ Text('Hello World'),
 Create an [`Image`][] widget:
 
 <?code-excerpt "layout/lakes/step5/lib/main.dart (Image-asset)" remove="/width|height/"?>
+
 ```dart
 Image.asset(
   'images/lake.jpg',
@@ -115,6 +119,7 @@ Image.asset(
 Create an [`Icon`][] widget:
 
 <?code-excerpt "layout/lakes/step5/lib/main.dart (Icon)"?>
+
 ```dart
 Icon(
   Icons.star,
@@ -136,6 +141,7 @@ All layout widgets have either of the following:
 Add the `Text` widget to the `Center` widget:
 
 <?code-excerpt "lib/main.dart (centered-text)" replace="/body: //g"?>
+
 ```dart
 const Center(
   child: Text('Hello World'),
@@ -158,6 +164,7 @@ property for the home page.
 
 <?code-excerpt path-base="layout/base"?>
 <?code-excerpt "lib/main.dart (MyApp)" title?>
+
 ```dart
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -210,6 +217,7 @@ To learn what other UI components you can add, check out the
 [Cupertino library][].
 
 <?code-excerpt "lib/cupertino.dart (MyApp)" title?>
+
 ```dart
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -262,6 +270,7 @@ For a non-Material app, you can add the `Center` widget to the app's
 
 <?code-excerpt path-base="layout/non_material"?>
 <?code-excerpt "lib/main.dart (MyApp)" title?>
+
 ```dart
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -295,8 +304,10 @@ color to white and the text to dark grey to mimic a Material app.
   That's it! When you run the app, you should see _Hello World_.
 
   App source code:
-  - [Material app]({{examples}}/layout/base)
-  - [Non-Material app]({{examples}}/layout/non_material)
+
+* [Material app]({{examples}}/layout/base)
+* [Non-Material app]({{examples}}/layout/non_material)
+
 </div>
 <div class="col-md-6">
   {% include docs/app-figure.md img-class="site-mobile-screenshot border w-75"
@@ -318,14 +329,14 @@ and a `Column` widget to arrange widgets vertically.
 {{site.alert.secondary}}
   <h4 class="no_toc">What's the point?</h4>
 
-  * `Row` and `Column` are two of the most commonly used layout patterns.
-  * `Row` and `Column` each take a list of child widgets.
-  * A child widget can itself be a `Row`, `Column`,
+* `Row` and `Column` are two of the most commonly used layout patterns.
+* `Row` and `Column` each take a list of child widgets.
+* A child widget can itself be a `Row`, `Column`,
     or other complex widget.
-  * You can specify how a `Row` or `Column` aligns its children,
+* You can specify how a `Row` or `Column` aligns its children,
     both vertically and horizontally.
-  * You can stretch or constrain specific child widgets.
-  * You can specify how child widgets use the `Row`'s or
+* You can stretch or constrain specific child widgets.
+* You can specify how child widgets use the `Row`'s or
     `Column`'s available space.
 {{site.alert.end}}
 
@@ -579,6 +590,7 @@ The `ratings` variable creates a row containing a smaller row
 of 5 star icons, and text:
 
 <?code-excerpt "layout/pavlova/lib/main.dart (ratings)" replace="/ratings/[!$&!]/g"?>
+
 ```dart
 final stars = Row(
   mainAxisSize: MainAxisSize.min,
@@ -628,6 +640,7 @@ as you can see in its widget tree:
 The `iconList` variable defines the icons row:
 
 <?code-excerpt "layout/pavlova/lib/main.dart (iconList)" replace="/iconList/[!$&!]/g"?>
+
 ```dart
 const descTextStyle = TextStyle(
   color: Colors.black,
@@ -678,6 +691,7 @@ The `leftColumn` variable contains the ratings and icons rows,
 as well as the title and text that describes the Pavlova:
 
 <?code-excerpt "layout/pavlova/lib/main.dart (leftColumn)" replace="/leftColumn/[!$&!]/g"?>
+
 ```dart
 final [!leftColumn!] = Container(
   padding: const EdgeInsets.fromLTRB(20, 30, 20, 20),
@@ -703,6 +717,7 @@ added to the [pubspec file][], and accessed using `Images.asset()`.
 For more information, see [Adding assets and images][].
 
 <?code-excerpt "layout/pavlova/lib/main.dart (body)"?>
+
 ```dart
 body: Center(
   child: Container(
@@ -786,10 +801,11 @@ color or image.
 <div class="col-lg-6" markdown="1">
   <h4 class="no_toc">Summary (Container)</h4>
 
-  * Add padding, margins, borders
-  * Change background color or image
-  * Contains a single child widget, but that child can be a Row,
+* Add padding, margins, borders
+* Change background color or image
+* Contains a single child widget, but that child can be a Row,
     Column, or even the root of a widget tree
+
 </div>
 <div class="col-lg-6 text-center">
   <img src='/assets/images/docs/ui/layout/margin-padding-border.png' class="mb-4 mw-100"
@@ -799,6 +815,7 @@ color or image.
 </div>
 
 #### Examples (Container)
+
 {:.no_toc}
 
 This layout consists of a column with two rows, each containing
@@ -834,6 +851,7 @@ A `Container` is also used to add a rounded border and margins
 to each image:
 
 <?code-excerpt "layout/container/lib/main.dart (row)" replace="/\bContainer/[!$&!]/g;"?>
+
 ```dart
 Widget _buildDecoratedImage(int imageIndex) => Expanded(
       child: [!Container!](
@@ -870,6 +888,7 @@ detects that its contents are too long to fit the render box,
 it automatically scrolls.
 
 #### Summary (GridView)
+
 {:.no_toc}
 
 * Lays widgets out in a grid
@@ -893,6 +912,7 @@ it automatically scrolls.
 {{site.alert.end}}
 
 #### Examples (GridView)
+
 {:.no_toc}
 
 <div class="row">
@@ -921,6 +941,7 @@ it automatically scrolls.
 </div>
 
 <?code-excerpt "layout/grid_and_list/lib/main.dart (grid)" replace="/\GridView/[!$&!]/g;"?>
+
 ```dart
 Widget _buildGrid() => [!GridView!].extent(
     maxCrossAxisExtent: 150,
@@ -945,6 +966,7 @@ provides scrolling when its content is too long for
 its render box.
 
 #### Summary (ListView)
+
 {:.no_toc}
 
 * A specialized [`Column`][] for organizing a list of boxes
@@ -954,6 +976,7 @@ its render box.
   supports scrolling
 
 #### Examples (ListView)
+
 {:.no_toc}
 
 <div class="row">
@@ -983,6 +1006,7 @@ its render box.
 </div>
 
 <?code-excerpt "layout/grid_and_list/lib/main.dart (list)" replace="/\ListView/[!$&!]/g;"?>
+
 ```dart
 Widget _buildList() {
   return [!ListView!](
@@ -1028,6 +1052,7 @@ widget&mdash;often an image. The widgets can completely
 or partially overlap the base widget.
 
 #### Summary (Stack)
+
 {:.no_toc}
 
 * Use for widgets that overlap another widget
@@ -1037,6 +1062,7 @@ or partially overlap the base widget.
 * You can choose to clip children that exceed the render box
 
 #### Examples (Stack)
+
 {:.no_toc}
 
 <div class="row">
@@ -1064,6 +1090,7 @@ or partially overlap the base widget.
 </div>
 
 <?code-excerpt "layout/card_and_stack/lib/main.dart (Stack)" replace="/\bStack/[!$&!]/g;"?>
+
 ```dart
 Widget _buildStack() {
   return [!Stack!](
@@ -1115,6 +1142,7 @@ For a list of supported elevation values, see [Elevation][] in the
 Specifying an unsupported value disables the drop shadow entirely.
 
 #### Summary (Card)
+
 {:.no_toc}
 
 * Implements a [Material card][]
@@ -1126,6 +1154,7 @@ Specifying an unsupported value disables the drop shadow entirely.
 * From the [Material library][]
 
 #### Examples (Card)
+
 {:.no_toc}
 
 <div class="row">
@@ -1152,6 +1181,7 @@ Specifying an unsupported value disables the drop shadow entirely.
 </div>
 
 <?code-excerpt "layout/card_and_stack/lib/main.dart (Card)" replace="/\bCard/[!$&!]/g;"?>
+
 ```dart
 Widget _buildCard() {
   return SizedBox(
@@ -1194,6 +1224,7 @@ Widget _buildCard() {
   );
 }
 ```
+
 <hr>
 
 ### ListTile
@@ -1205,6 +1236,7 @@ and trailing icons. `ListTile` is most commonly used in
 [`Card`][] or [`ListView`][], but can be used elsewhere.
 
 #### Summary (ListTile)
+
 {:.no_toc}
 
 * A specialized row that contains up to 3 lines of text and
@@ -1213,6 +1245,7 @@ and trailing icons. `ListTile` is most commonly used in
 * From the [Material library][]
 
 #### Examples (ListTile)
+
 {:.no_toc}
 
 <div class="row">
@@ -1250,17 +1283,18 @@ The following videos, part of the
 [Flutter in Focus][] series,
 explain `Stateless` and `Stateful` widgets.
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/wE7khGHVkYY?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <iframe width="560" height="315" src="{{site.youtube-site}}/embed/AqCMFXEmf3w?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-[Flutter in Focus playlist]({{site.youtube-site}}/watch?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)
+<iframe width="560" height="315" src="{{yt-embed}}/wE7khGHVkYY?rel=0" title="Learn how to create stateless widgets" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{yt-embed}}/AqCMFXEmf3w?rel=0" title="Learn the best times to use stateful widgets" {{yt-set}}></iframe>
+[Flutter in Focus playlist]({{yt-playlist}}PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)
 
 ---
 
 Each episode of the
-[Widget of the Week series]({{site.youtube-site}}/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
+[Widget of the Week series]({{yt-playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 focuses on a widget. Several of them includes layout widgets.
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/b_sQ9bMltGU?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-[Flutter Widget of the Week playlist]({{site.youtube-site}}/watch?v=yI-8QHpGIP4&index=5&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
+<iframe width="560" height="315" src="{{yt-embed}}/b_sQ9bMltGU?rel=0" title="Watch the Widget of the Week playlist" {{yt-set}}></iframe>
+[Flutter Widget of the Week playlist]({{yt-playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 
 ## Other resources
 
@@ -1304,7 +1338,7 @@ The following resources might help when writing layout code.
 [`DataTable`]: {{api}}/material/DataTable-class.html
 [Elevation]: {{site.material}}/styles/elevation
 [`Expanded`]: {{api}}/widgets/Expanded-class.html
-[Flutter in Focus]: {{site.youtube-site}}/watch?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
+[Flutter in Focus]: {{yt-watch}}?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 [`GridView`]: {{api}}/widgets/GridView-class.html
 [`GridTile`]: {{api}}/material/GridTile-class.html
 [HTML/CSS Analogs in Flutter]: {{site.url}}/get-started/flutter-for/web-devs
@@ -1335,5 +1369,4 @@ The following resources might help when writing layout code.
 [Debugging layout issues visually]: {{site.url}}/tools/devtools/inspector#debugging-layout-issues-visually
 [Understanding constraints]: {{site.url}}/ui/layout/constraints
 [Using the Flutter inspector]: {{site.url}}/tools/devtools/inspector
-[Widget of the Week series]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG
 [Zero to One with Flutter]: {{site.medium}}/@mravn/zero-to-one-with-flutter-43b13fd7b354

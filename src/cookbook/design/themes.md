@@ -7,6 +7,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+{% include docs/yt_shims.liquid %}
+
 <?code-excerpt path-base="cookbook/design/themes"?>
 
 {{site.alert.note}}
@@ -48,6 +50,7 @@ If you don't specify a theme in the constructor,
 Flutter creates a default theme for you.
 
 <?code-excerpt "lib/main.dart (MaterialApp)" replace="/return //g"?>
+
 ```dart
 MaterialApp(
   title: appName,
@@ -96,7 +99,7 @@ check out the [`ThemeData`][] documentation.
 
 ## Apply a theme
 
-To apply your new theme, use the `Theme.of(context)` method 
+To apply your new theme, use the `Theme.of(context)` method
 when specifying a widget's styling properties.
 These can include, but are not limited to, `style` and `color`.
 
@@ -108,6 +111,7 @@ If not, Flutter applies the app's theme.
 In the following example, the `Container` constructor uses this technique to set its `color`.
 
 <?code-excerpt "lib/main.dart (Container)" replace="/^child: //g"?>
+
 ```dart
 Container(
   padding: const EdgeInsets.symmetric(
@@ -142,6 +146,7 @@ create a `ThemeData` instance.
 Pass that instance to the `Theme` widget.
 
 <?code-excerpt "lib/main.dart (Theme)"?>
+
 ```dart
 Theme(
   // Create a unique theme with `ThemeData`.
@@ -163,6 +168,7 @@ Instead of overriding everything, consider extending the parent theme.
 To extend a theme, use the [`copyWith()`][] method.
 
 <?code-excerpt "lib/main.dart (ThemeCopyWith)"?>
+
 ```dart
 Theme(
   // Find and extend the parent theme using `copyWith`.
@@ -183,11 +189,12 @@ Theme(
 
 To learn more, watch this short Widget of the Week video on the `Theme` widget:
 
-<iframe class="full-width" src="{{site.youtube-site}}/embed/oTvQDJOBXmM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="full-width" src="{{yt-embed}}/oTvQDJOBXmM" title="Learn about the Theme Flutter Widget" {{yt-set}}></iframe>
 
 ## Try an interactive example
 
 <?code-excerpt "lib/main.dart (FullApp)"?>
+
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 // Include the Google Fonts package to provide more text format options
@@ -301,7 +308,5 @@ class MyHomePage extends StatelessWidget {
   <img src="/assets/images/docs/cookbook/themes.png" alt="Themes Demo" class="site-mobile-screenshot" />
 </noscript>
 
-
 [`copyWith()`]: {{site.api}}/flutter/material/ThemeData/copyWith.html
 [`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html
-[`Theme`]: {{site.api}}/flutter/material/Theme-class.html

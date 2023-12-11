@@ -24,9 +24,9 @@ To include your course, [submit a PR][]:
 [The Complete 2021 Flutter Development Bootcamp Using Dart]: https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart/
 [Flutter Crash Course]: https://fluttercrashcourse.com/
 [Flutter leicht gemacht 2022 - Zero to Mastery!]: https://www.udemy.com/course/dart-flutter-leicht-gemacht/
-[Flutter Zero to Hero]: {{site.youtube-site}}/watch?v=lpvuM9lo3HU&list=PL1k5oWAuBhgXdw1BbxVGxxWRmkGB1C11l
+[Flutter Zero to Hero]: {{yt-watch}}?v=lpvuM9lo3HU&list=PL1k5oWAuBhgXdw1BbxVGxxWRmkGB1C11l
 [Flutter Bootcamp]: https://flutterbootcamp.com.br
-[Flutter para iniciantes]: {{site.youtube-site}}/playlist?list=PLS4cqF1_X2syzBpkoSwtmKoREgnp1MhTn
+[Flutter para iniciantes]: {{yt-playlist}}PLS4cqF1_X2syzBpkoSwtmKoREgnp1MhTn
 [Dart & Flutter - Zero to Mastery 2023 + Clean Architecture]: https://www.udemy.com/course/flutter-made-easy-zero-to-mastery/?referralCode=CCBFCD16CC71F359EE3C
 [Dart & Flutter - Zero to Mastery 2023 - Keiko Corp. Food Reviews App]: https://academy.zerotomastery.io/courses/2092303/lectures/47623876
 [Sticky Grouped Headers in Flutter]: https://academy.droidcon.com/course/sticky-grouped-headers-in-flutter

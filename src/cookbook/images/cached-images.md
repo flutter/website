@@ -3,6 +3,8 @@ title: Work with cached images
 description: How to work with cached images.
 ---
 
+{% include docs/yt_shims.liquid %}
+
 <?code-excerpt path-base="cookbook/images/cached_images"?>
 
 In some cases, it's handy to cache images as they're downloaded from the
@@ -12,7 +14,7 @@ use the [`cached_network_image`][] package.
 {{site.alert.note}}
   To learn more, watch this short Package of the Week video on the cached_network_image package:
 
-  <iframe class="full-width" src="{{site.youtube-site}}/embed/fnHr_rsQwDA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe class="full-width" src="{{yt-embed}}/fnHr_rsQwDA" title="Learn about the cached_network_image Flutter Package" {{yt-set}}></iframe>
 {{site.alert.end}}
 
 In addition to caching, the `cached_network_image`
@@ -20,6 +22,7 @@ package also supports placeholders and fading images
 in as they're loaded.
 
 <?code-excerpt "lib/simple.dart (SimpleCachedImage)" replace="/^return //g"?>
+
 ```dart
 CachedNetworkImage(
   imageUrl: 'https://picsum.photos/250?image=9',
@@ -32,6 +35,7 @@ The `cached_network_image` package allows you to use any widget as a
 placeholder. In this example, display a spinner while the image loads.
 
 <?code-excerpt "lib/main.dart (CachedNetworkImage)" replace="/^child\: //g"?>
+
 ```dart
 CachedNetworkImage(
   placeholder: (context, url) => const CircularProgressIndicator(),
@@ -42,6 +46,7 @@ CachedNetworkImage(
 ## Complete example
 
 <?code-excerpt "lib/main.dart"?>
+
 ```dart
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -74,6 +79,5 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
-
 
 [`cached_network_image`]: {{site.pub-pkg}}/cached_network_image

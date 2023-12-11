@@ -3,6 +3,8 @@ title: Common Flutter errors
 description: How to recognize and resolve common Flutter framework errors.
 ---
 
+{% include docs/yt_shims.liquid %}
+
 <?code-excerpt path-base="testing/common_errors"?>
 
 ## Introduction
@@ -13,7 +15,7 @@ on how to resolve them.
 This is a living document with more errors to be added in
 future revisions, and your contributions are welcomed.
 Feel free to [open an issue][] or [submit a pull request][] to
-make this page more useful to you and the Flutter community. 
+make this page more useful to you and the Flutter community.
 
 [open an issue]: {{site.repo.this}}/issues/new/choose
 [submit a pull request]: {{site.repo.this}}/pulls
@@ -28,7 +30,7 @@ and you've probably run into it already.
 
 When it happens, yellow and black stripes appear,
 indicating the area of overflow in the app UI.
-In addition, an error message displays in the debug console: 
+In addition, an error message displays in the debug console:
 
 ```
 The following assertion was thrown during layout:
@@ -36,7 +38,7 @@ A RenderFlex overflowed by 1146 pixels on the right.
 
 The relevant error-causing widget was
 
-    Row 	    lib/errors/renderflex_overflow_column.dart:23
+    Row      lib/errors/renderflex_overflow_column.dart:23
 
 The overflowing RenderFlex has an orientation of Axis.horizontal.
 The edge of the RenderFlex that is overflowing has been marked in the rendering 
@@ -53,6 +55,7 @@ For example,
 the code snippet below demonstrates a common scenario:
 
 <?code-excerpt "lib/renderflex_overflow.dart (Problem)"?>
+
 ```dart
 Widget build(BuildContext context) {
   return Row(
@@ -107,6 +110,7 @@ you need to constrain its width. One way to do it is to
 wrap the `Column` in an `Expanded` widget:
 
 <?code-excerpt "lib/renderflex_overflow.dart (Fix)"?>
+
 ```dart
 return const Row(
   children: [
@@ -130,26 +134,26 @@ on the `Flexible` widget.
 
 **Further information:**
 
-The resources linked below provide further information about this error. 
+The resources linked below provide further information about this error.
 
 * [Flexible (Flutter Widget of the Week)][flexible-video]
 * [How to debug layout issues with the Flutter Inspector][medium-article]
 * [Understanding constraints][]
 
 [its source code]: {{site.repo.flutter}}/blob/c8e42b47f5ea8b5ff7bf2f2b0a2a8e765f1aa51d/packages/flutter/lib/src/widgets/basic.dart#L5166-L5174
-[flexible-video]: {{site.youtube-site}}/watch?v=CI7x0mAZiY0
+[flexible-video]: {{yt-watch}}?v=CI7x0mAZiY0
 [medium-article]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db#738b
 [Understanding constraints]: {{site.url}}/ui/layout/constraints
 
 ## 'RenderBox was not laid out'
 
 While this error is pretty common,
-it's often a side effect of a primary error 
+it's often a side effect of a primary error
 occurring earlier in the rendering pipeline.
 
 **What does the error look like?**
 
-The message shown by the error looks like this: 
+The message shown by the error looks like this:
 
 ```
 RenderBox was not laid out: 
@@ -162,7 +166,7 @@ Usually, the issue is related to violation of box constraints,
 and it needs to be solved by providing more information
 to Flutter about how you'd like to constrain the widgets in question.
 You can learn more about how constraints work
-in Flutter on the [Understanding constraints][] page. 
+in Flutter on the [Understanding constraints][] page.
 
 The `RenderBox was not laid out` error is often
 caused by one of two other errors:
@@ -171,14 +175,15 @@ caused by one of two other errors:
 * 'An InputDecorator...cannot have an unbounded width'
 
 <a id="unbounded"></a>
+
 ## 'Vertical viewport was given unbounded height'
 
-This is another common layout error you could run into 
+This is another common layout error you could run into
 while creating a UI in your Flutter app.
 
 **What does the error look like?**
 
-The message shown by the error looks like this: 
+The message shown by the error looks like this:
 
 ```
 The following assertion was thrown during performResize():
@@ -201,9 +206,10 @@ unless it's constrained by its parent widget.
 However, a `Column` doesn't impose any constraint
 on its children's height by default.
 The combination of the two behaviors leads to the failure of
-determining the size of the `ListView`. 
+determining the size of the `ListView`.
 
 <?code-excerpt "lib/unbounded_height.dart (Problem)"?>
+
 ```dart
 Widget build(BuildContext context) {
   return Center(
@@ -237,6 +243,7 @@ Otherwise, specify an absolute height using a `SizedBox`
 widget or a relative height using a `Flexible` widget.
 
 <?code-excerpt "lib/unbounded_height.dart (Fix)"?>
+
 ```dart
 Widget build(BuildContext context) {
   return Center(
@@ -275,11 +282,11 @@ further information about this error.
 
 The error message suggests that it's also related
 to box constraints, which are important to understand
-to avoid many of the most common Flutter framework errors. 
+to avoid many of the most common Flutter framework errors.
 
 **What does the error look like?**
 
-The message shown by the error looks like this: 
+The message shown by the error looks like this:
 
 ```
 The following assertion was thrown during performLayout():
@@ -299,6 +306,7 @@ This error occurs, for example, when a `Row` contains a
 no width constraint.
 
 <?code-excerpt "lib/unbounded_width.dart (Problem)"?>
+
 ```dart
 Widget build(BuildContext context) {
   return MaterialApp(
@@ -324,6 +332,7 @@ using either an `Expanded` or `SizedBox` widget.
 The following example demonstrates using an `Expanded` widget:
 
 <?code-excerpt "lib/unbounded_width.dart (Fix)"?>
+
 ```dart
 Widget build(BuildContext context) {
   return MaterialApp(
@@ -347,7 +356,7 @@ This error is about missing an expected parent widget.
 
 **What does the error look like?**
 
-The message shown by the error looks like this: 
+The message shown by the error looks like this:
 
 ```
 The following assertion was thrown while looking for parent data:
@@ -363,7 +372,7 @@ While Flutter's widgets are generally flexible
 in how they can be composed together in a UI,
 a small subset of those widgets expect specific parent widgets.
 When this expectation can't be satisfied in your widget tree,
-you're likely to encounter this error. 
+you're likely to encounter this error.
 
 Here is an _incomplete_ list of widgets that expect
 specific parent widgets within the Flutter framework.
@@ -380,13 +389,13 @@ the top right corner of the page) to expand this list.
 **How to fix it?**
 
 The fix should be obvious once you know
-which parent widget is missing. 
+which parent widget is missing.
 
 ## 'setState called during build'
 
 The `build` method in your Flutter code isn't
 a good place to call `setState`,
-either directly or indirectly. 
+either directly or indirectly.
 
 **What does the error look like?**
 
@@ -407,7 +416,7 @@ is already in the process of building widgets.
 **How might you run into the error?**
 
 In general, this error occurs when the `setState`
-method is called within the `build` method. 
+method is called within the `build` method.
 
 A common scenario where this error occurs is when
 attempting to trigger a `Dialog` from within the
@@ -418,6 +427,7 @@ but `setState` should never be called from a `build` method.
 The following snippet seems to be a common culprit of this error:
 
 <?code-excerpt "lib/set_state_build.dart (Problem)"?>
+
 ```dart
 Widget build(BuildContext context) {
   // Don't do this.
@@ -457,6 +467,7 @@ the `Navigator` pushes two routes–one
 for the second page and another for the dialog.
 
 <?code-excerpt "lib/set_state_build.dart (Fix)"?>
+
 ```dart
 class FirstScreen extends StatelessWidget {
   const FirstScreen({super.key});
@@ -503,15 +514,13 @@ For more information and to learn how to fix,
 check out the following video on
 [`PrimaryScrollController`][controller-video]:
 
-[controller-video]: <iframe width="560" height="315" src="https://www.youtube.com/embed/33_0ABjFJUU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
-
-[`PrimaryScrollController`]: {{site.api}}/flutter/widgets/PrimaryScrollController-class.html
+[controller-video]: <iframe width="560" height="315" src="{{yt-embed}}/33_0ABjFJUU" title="Learn about the PrimaryScrollController Flutter Widget" {{yt-set}}></iframe>`
 
 ## References
 
 To learn more about how to debug errors,
-especially layout errors in Flutter, 
-check out the following resources: 
+especially layout errors in Flutter,
+check out the following resources:
 
 * [How to debug layout issues with the Flutter Inspector][medium-article]
 * [Understanding constraints][]

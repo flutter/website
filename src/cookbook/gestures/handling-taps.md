@@ -6,6 +6,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+{% include docs/yt_shims.liquid %}
+
 <?code-excerpt path-base="cookbook/gestures/handling_taps/"?>
 
 You not only want to display information to users,
@@ -16,7 +18,7 @@ to fundamental actions, such as tapping and dragging.
 {{site.alert.note}}
   To learn more, watch this short Widget of the Week video on the GestureDetector widget:
 
-  <iframe class="full-width" src="{{site.youtube-site}}/embed/WhVXkCFPmK4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe class="full-width" src="{{yt-embed}}/WhVXkCFPmK4" title="Learn about the GestureDetector Flutter Widget" {{yt-set}}></iframe>
 {{site.alert.end}}
 
 This recipe shows how to make a custom button that shows
@@ -26,6 +28,7 @@ a snackbar when tapped with the following steps:
   2. Wrap it in a `GestureDetector` that an `onTap()` callback.
 
 <?code-excerpt "lib/main.dart (GestureDetector)" replace="/return //g;/;$//g"?>
+
 ```dart
 // The GestureDetector wraps the button.
 GestureDetector(
@@ -59,6 +62,7 @@ GestureDetector(
 ## Interactive example
 
 <?code-excerpt "lib/main.dart"?>
+
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
@@ -126,7 +130,6 @@ class MyButton extends StatelessWidget {
 <noscript>
   <img src="/assets/images/docs/cookbook/handling-taps.gif" alt="Handle taps demo" class="site-mobile-screenshot" />
 </noscript>
-
 
 [Add Material touch ripples]: {{site.url}}/cookbook/gestures/ripples
 [`CupertinoButton`]: {{site.api}}/flutter/cupertino/CupertinoButton-class.html

@@ -3,6 +3,8 @@ title: Flutter for SwiftUI Developers
 description: Learn how to apply SwiftUI developer knowledge when building Flutter apps.
 ---
 
+{% include docs/yt_shims.liquid %}
+
 <?code-excerpt path-base="get-started/flutter-for/ios_devs"?>
 
 {% assign sample_path = "blob/main/examples/get-started/flutter-for/ios_devs" %}
@@ -34,7 +36,7 @@ to app behavior when running on iOS and macOS.
 To learn how, see [Platform adaptations][].
 
 {{site.alert.info}}
-  To integrate Flutter code into an **existing** iOS app, 
+  To integrate Flutter code into an **existing** iOS app,
   check out [Add Flutter to existing app][].
 {{site.alert.end}}
 
@@ -48,7 +50,7 @@ You can test full working examples on DartPad or view them on GitHub.
 As an introduction, watch the following video.
 It outlines how Flutter works on iOS and how to use Flutter to build iOS apps.
 
-<iframe class="full-width" src="{{site.youtube-site}}/embed/ceMsPBbcEGg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="full-width" src="{{yt-embed}}/ceMsPBbcEGg" title="Learn how to develop with Flutter as an iOS developer" {{yt-set}}></iframe>
 
 Flutter and SwiftUI code describes how the UI looks and works.
 Developers call this type of code a _declarative framework_.
@@ -72,6 +74,7 @@ By contrast, Flutter uses widgets for both UI components and
 their properties.
 
 {:.include-lang}
+
 ```dart
 Padding(                         // <-- This is a Widget
   padding: EdgeInsets.all(10.0), // <-- So is this
@@ -97,7 +100,8 @@ SwiftUI nests Views while Flutter nests Widgets.
 
 1. The parent widget passes constraints down to its children.
    Constraints include minimum and maximum values for height and width.
-1. The child tries to decide its size. It repeats the same process with its own list of children:
+1. The child tries to decide its size. It repeats the same process with its own
+   list of children:
     - It informs its child of the child's constraints.
     - It asks its child what size it wishes to be.
 
@@ -126,6 +130,7 @@ However, in Flutter parent widgets can offer unbounded constraints.
 Unbounded constraints set their maximum values to infinity.
 
 {:.include-lang}
+
 ```dart
 UnboundedBox(
   child: Container(
@@ -137,6 +142,7 @@ If the child expands and it has unbounded constraints,
 Flutter returns an overflow warning:
 
 {:.include-lang}
+
 ```dart
 UnconstrainedBox(
   child: Container(color: red, width: 4000, height: 50),
@@ -160,7 +166,7 @@ your Flutter app can use many different design systems:
 - Your own custom widgets
 - [Cupertino widgets][] that follow Apple's Human Interface Guidelines
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/3PdUaidHc-E?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{yt-embed}}/3PdUaidHc-E?rel=0" title="Learn about the Cupertino Flutter Package" {{yt-set}}></iframe>
 
 If you're looking for a great reference app that features a
 custom design system, check out [Wonderous][].
@@ -213,6 +219,7 @@ the `runApp` function.
 </nav>
 
 <?code-excerpt "lib/get_started.dart (main)"?>
+
 ```dart
 void main() {
   runApp(const MyApp());
@@ -236,6 +243,7 @@ like [`CupertinoApp`][].
 </nav>
 
 <?code-excerpt "lib/get_started.dart (myapp)"?>
+
 ```dart
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -266,6 +274,7 @@ The widget used in `HomePage` might begin with the `Scaffold` class.
 </nav>
 
 <?code-excerpt "lib/get_started.dart (homepage)"?>
+
 ```dart
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -296,6 +305,7 @@ the [Widget catalog][].
 In **SwiftUI**, you use the `Button` struct to create a button.
 
 {:.include-lang}
+
 ```swift
 Button("Do something") {
   // this closure gets called when your
@@ -318,6 +328,7 @@ use the `CupertinoButton` class:
 </nav>
 
 <?code-excerpt "lib/text_button.dart (textbutton)"?>
+
 ```dart
         CupertinoButton(
   onPressed: () {
@@ -344,6 +355,7 @@ The following SwiftUI view adds a globe image and
 text to a horizontal stack view:
 
 {:.include-lang}
+
 ```swift
 HStack {
   Image(systemName: "globe")
@@ -365,6 +377,7 @@ HStack {
 </nav>
 
 <?code-excerpt "lib/row.dart (row)"?>
+
 ```dart
     Row(
   mainAxisAlignment: MainAxisAlignment.center,
@@ -389,6 +402,7 @@ In **SwiftUI**, you use `VStack` to arrange the components into a
 vertical pillar.
 
 {:.include-lang}
+
 ```swift
 VStack {
   Image(systemName: "globe")
@@ -411,6 +425,7 @@ except it swaps [`Column`][] for `Row`:
 </nav>
 
 <?code-excerpt "lib/column.dart (column)"?>
+
 ```dart
     Column(
   mainAxisAlignment: MainAxisAlignment.center,
@@ -430,6 +445,7 @@ identify your model objects.
 To make an object identifiable, use the `Identifiable` protocol.
 
 {:.include-lang}
+
 ```swift
 struct Person: Identifiable {
   var name: String
@@ -469,6 +485,7 @@ You set the number of items to display then build a widget for each item.
 </nav>
 
 <?code-excerpt "lib/list.dart (SimpleList)"?>
+
 ```dart
 class Person {
   String name;
@@ -522,6 +539,7 @@ When constructing non-conditional grids in **SwiftUI**,
 you use `Grid` with `GridRow`.
 
 {:.include-lang}
+
 ```swift
 Grid {
   GridRow {
@@ -554,6 +572,7 @@ The following example uses the `.builder()` initializer:
 </nav>
 
 <?code-excerpt "lib/grid.dart (GridExample)"?>
+
 ```dart
 const widgets = [
   Text('Row 1'),
@@ -600,6 +619,7 @@ The following example displays a series of `PersonView` instances
 in a scrollable fashion.
 
 {:.include-lang}
+
 ```swift
 ScrollView {
   VStack(alignment: .leading) {
@@ -626,6 +646,7 @@ of the `Person` class to create the custom `PersonView` widget.
 </nav>
 
 <?code-excerpt "lib/scroll.dart (ScrollExample)"?>
+
 ```dart
     SingleChildScrollView(
   child: Column(
@@ -645,15 +666,17 @@ of the `Person` class to create the custom `PersonView` widget.
 In **SwiftUI**, you use `GeometryReader` to create relative view sizes.
 
 For example, you could:
-* Multiply `geometry.size.width` by some factor to set the _width_.
-* Use `GeometryReader` as a breakpoint to change the design of your app.
+
+- Multiply `geometry.size.width` by some factor to set the _width_.
+- Use `GeometryReader` as a breakpoint to change the design of your app.
 
 You can also see if the size class has `.regular` or `.compact`
 using `horizontalSizeClass`.
 
 To create relative views in **Flutter**, you can use one of two options:
-* Get the `BoxConstraints` object in the [`LayoutBuilder`][] class.
-* Use the [`MediaQuery.of()`][] in your build functions
+
+- Get the `BoxConstraints` object in the [`LayoutBuilder`][] class.
+- Use the [`MediaQuery.of()`][] in your build functions
   to get the size and orientation of your current app.
 
 To learn more, check out [Creating responsive and adaptive apps][].
@@ -664,6 +687,7 @@ In **SwiftUI**, you use the `@State` property wrapper to represent the
 internal state of a SwiftUI view.
 
 {:.include-lang}
+
 ```swift
 struct ContentView: View {
   @State private var counter = 0;
@@ -680,6 +704,7 @@ management such as the `ObservableObject` protocol.
 
 **Flutter** manages local state using a [`StatefulWidget`][].
 Implement a stateful widget with the following two classes:
+
 - a subclass of `StatefulWidget`
 - a subclass of `State`
 
@@ -701,6 +726,7 @@ The following example shows a part of a counter app:
 </nav>
 
 <?code-excerpt "lib/state.dart (State)"?>
+
 ```dart
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -738,6 +764,7 @@ To learn more ways to manage state, check out [State management][].
 ### Animations
 
 Two main types of UI animations exist.
+
 - Implicit that animated from a current value to a new target.
 - Explicit that animates when asked.
 
@@ -750,6 +777,7 @@ In **SwiftUI**, you use the `animate()` modifier to handle implicit
 animation.
 
 {:.include-lang}
+
 ```swift
 Button("Tap me!"){
    angle += 45
@@ -777,6 +805,7 @@ This animates the `Transform.rotate` widget.
 </nav>
 
 <?code-excerpt "lib/simple_animation.dart (AnimatedButton)"?>
+
 ```dart
     AnimatedRotation(
   duration: const Duration(seconds: 1),
@@ -830,6 +859,7 @@ with two classes that help you draw:
     </nav>
 
     <?code-excerpt "lib/canvas.dart (CustomPaint)"?>
+
     ```dart
         CustomPaint(
       painter: SignaturePainter(_points),
@@ -851,6 +881,7 @@ with two classes that help you draw:
     </nav>
 
     <?code-excerpt "lib/canvas.dart (CustomPainter)"?>
+
     ```dart
     class SignaturePainter extends CustomPainter {
       SignaturePainter(this.points);
@@ -893,6 +924,7 @@ To display a person's details in a new navigation link,
 tap on that person.
 
 {:.include-lang}
+
 ```swift
 NavigationStack(path: $path) {
       List {
@@ -929,6 +961,7 @@ call your navigation routes using their names.
     </nav>
 
     <?code-excerpt "lib/navigation.dart (Routes)"?>
+
     ```dart
     // Defines the route name as a constant
     // so that it's reusable.
@@ -969,6 +1002,7 @@ call your navigation routes using their names.
     </nav>
 
     <?code-excerpt "lib/navigation.dart (ListView)"?>
+
     ```dart
         ListView.builder(
       itemCount: mockPersons.length,
@@ -1013,6 +1047,7 @@ call your navigation routes using their names.
     </nav>
 
     <?code-excerpt "lib/navigation.dart (DetailsPage)"?>
+
     ```dart
     class DetailsPage extends StatelessWidget {
       const DetailsPage({super.key});
@@ -1044,6 +1079,7 @@ In **SwiftUI**, you use the `dismiss` environment value to pop-back to
 the previous screen.
 
 {:.include-lang}
+
 ```swift
 Button("Pop back") {
         dismiss()
@@ -1064,6 +1100,7 @@ In **Flutter**, use the `pop()` function of the `Navigator` class:
 </nav>
 
 <?code-excerpt "lib/popback.dart (PopBackExample)"?>
+
 ```dart
 TextButton(
   onPressed: () {
@@ -1081,6 +1118,7 @@ In **SwiftUI**, you use the `openURL` environment variable to open a
 URL to another application.
 
 {:.include-lang}
+
 ```swift
 @Environment(\.openURL) private var openUrl
 
@@ -1106,6 +1144,7 @@ In **Flutter**, use the [`url_launcher`][] plugin.
 </nav>
 
 <?code-excerpt "lib/openapp.dart (OpenAppExample)"?>
+
 ```dart
     CupertinoButton(
   onPressed: () async {
@@ -1147,6 +1186,7 @@ of the `App` class:
 </nav>
 
 <?code-excerpt "lib/cupertino_themes.dart (Theme)"?>
+
 ```dart
     CupertinoApp(
   theme: CupertinoThemeData(
@@ -1163,6 +1203,7 @@ For example, to change the font of a `Text` string,
 use the `font()` modifier:
 
 {:.include-lang}
+
 ```swift
 Text("Hello, world!")
   .font(.system(size: 30, weight: .heavy))
@@ -1184,6 +1225,7 @@ of the `style` parameter of the `Text` widget.
 </nav>
 
 <?code-excerpt "lib/cupertino_themes.dart (StylingTextExample)"?>
+
 ```dart
     Text(
   'Hello, world!',
@@ -1200,6 +1242,7 @@ of the `style` parameter of the `Text` widget.
 In **SwiftUI**, you use modifier functions to style buttons.
 
 {:.include-lang}
+
 ```swift
 Button("Do something") {
     // do something when button is tapped
@@ -1214,6 +1257,7 @@ To style button widgets in **Flutter**, set the style of its child,
 or modify properties on the button itself.
 
 In the following example:
+
 - The `color` property of `CupertinoButton` sets its `color`.
 - The `color` property of the child `Text` widget sets the button
   text color.
@@ -1230,6 +1274,7 @@ In the following example:
 </nav>
 
 <?code-excerpt "lib/stylingbutton.dart (StylingButtonExample)"?>
+
 ```dart
 child: CupertinoButton(
   color: CupertinoColors.systemYellow,
@@ -1253,6 +1298,7 @@ First, add the font file to your SwiftUI project. After adding the file,
 use the `.font()` modifier to apply it to your UI components.
 
 {:.include-lang}
+
 ```swift
 Text("Hello")
   .font(
@@ -1294,6 +1340,7 @@ following example:
 </nav>
 
 <?code-excerpt "lib/stylingbutton.dart (CustomFont)"?>
+
 ```dart
         Text(
   'Cupertino',
@@ -1316,6 +1363,7 @@ then use the `Image` view to display the images.
 
 To add images in **Flutter**, follow a method similar to how you added
 custom fonts.
+
 1. Add an `images` folder to the root directory.
 1. Add this asset to the `pubspec.yaml` file.
 
@@ -1327,6 +1375,7 @@ custom fonts.
 
 After adding your image, display it using the `Image` widget's
 `.asset()` constructor. This constructor:
+
 1. Instantiates the given image using the provided path.
 1. Reads the image from the assets bundled with your app.
 1. Displays the image on the screen.

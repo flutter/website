@@ -7,6 +7,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+{% include docs/yt_shims.liquid %}
+
 <?code-excerpt path-base="layout/constraints/"?>
 
 <img src='/assets/images/docs/ui/layout/article-hero-image.png'
@@ -116,7 +118,7 @@ but does result in a few limitations:
   precisely define the size and position of any widget
   without taking into consideration the tree as a whole.
 
-* If a child wants a different size from its parent and 
+* If a child wants a different size from its parent and
   the parent doesn't have enough information to align it,
   then the child's size might be ignored.
   **Be specific when defining alignment.**
@@ -166,6 +168,7 @@ Use the numbered horizontal scrolling bar to switch between
 29 different examples.
 
 <?code-excerpt "lib/main.dart"?>
+
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code
 import 'package:flutter/material.dart';
 
@@ -1303,6 +1306,7 @@ The examples are explained in the following sections.
 <img src='/assets/images/docs/ui/layout/layout-1.png' class="mw-100" alt="Example 1 layout">
 
 <?code-excerpt "lib/main.dart (Example1)" replace="/(return |;)//g"?>
+
 ```dart
 Container(color: red)
 ```
@@ -1317,6 +1321,7 @@ So the `Container` fills the screen and paints it red.
 <img src='/assets/images/docs/ui/layout/layout-2.png' class="mw-100" alt="Example 2 layout">
 
 <?code-excerpt "lib/main.dart (Example2)" replace="/(return |;)//g"?>
+
 ```dart
 Container(width: 100, height: 100, color: red)
 ```
@@ -1332,6 +1337,7 @@ So the `Container` fills the screen.
 <img src='/assets/images/docs/ui/layout/layout-3.png' class="mw-100" alt="Example 3 layout">
 
 <?code-excerpt "lib/main.dart (Example3)" replace="/(return |;)//g"?>
+
 ```dart
 Center(
   child: Container(width: 100, height: 100, color: red),
@@ -1350,6 +1356,7 @@ can indeed be 100 × 100.
 <img src='/assets/images/docs/ui/layout/layout-4.png' class="mw-100" alt="Example 4 layout">
 
 <?code-excerpt "lib/main.dart (Example4)" replace="/(return |;)//g"?>
+
 ```dart
 Align(
   alignment: Alignment.bottomRight,
@@ -1370,6 +1377,7 @@ available space.
 <img src='/assets/images/docs/ui/layout/layout-5.png' class="mw-100" alt="Example 5 layout">
 
 <?code-excerpt "lib/main.dart (Example5)" replace="/(return |;)//g"?>
+
 ```dart
 Center(
   child: Container(
@@ -1390,6 +1398,7 @@ it just fills the screen.
 <img src='/assets/images/docs/ui/layout/layout-6.png' class="mw-100" alt="Example 6 layout">
 
 <?code-excerpt "lib/main.dart (Example6)" replace="/(return |;)//g"?>
+
 ```dart
 Center(
   child: Container(color: red),
@@ -1417,6 +1426,7 @@ how it behaves, depending on the circumstances.
 <img src='/assets/images/docs/ui/layout/layout-7.png' class="mw-100" alt="Example 7 layout">
 
 <?code-excerpt "lib/main.dart (Example7)" replace="/(return |;)//g"?>
+
 ```dart
 Center(
   child: Container(
@@ -1448,6 +1458,7 @@ entirely covers the red `Container`.
 <img src='/assets/images/docs/ui/layout/layout-8.png' class="mw-100" alt="Example 8 layout">
 
 <?code-excerpt "lib/main.dart (Example8)" replace="/(return |;)//g"?>
+
 ```dart
 Center(
   child: Container(
@@ -1465,12 +1476,12 @@ The red color is visible because of the padding,
 and the green `Container` has the same size as
 in the previous example.
 
-
 ### Example 9
 
 <img src='/assets/images/docs/ui/layout/layout-9.png' class="mw-100" alt="Example 9 layout">
 
 <?code-excerpt "lib/main.dart (Example9)" replace="/(return |;)//g"?>
+
 ```dart
 ConstrainedBox(
   constraints: const BoxConstraints(
@@ -1498,6 +1509,7 @@ to also assume the size of the screen, thus ignoring its
 <img src='/assets/images/docs/ui/layout/layout-10.png' class="mw-100" alt="Example 10 layout">
 
 <?code-excerpt "lib/main.dart (Example10)" replace="/(return |;)//g"?>
+
 ```dart
 Center(
   child: ConstrainedBox(
@@ -1525,6 +1537,7 @@ so it ends up having 70 (the minimum).
 <img src='/assets/images/docs/ui/layout/layout-11.png' class="mw-100" alt="Example 11 layout">
 
 <?code-excerpt "lib/main.dart (Example11)" replace="/(return |;)//g"?>
+
 ```dart
 Center(
   child: ConstrainedBox(
@@ -1552,6 +1565,7 @@ so it ends up having 150 (the maximum).
 <img src='/assets/images/docs/ui/layout/layout-12.png' class="mw-100" alt="Example 12 layout">
 
 <?code-excerpt "lib/main.dart (Example12)" replace="/(return |;)//g"?>
+
 ```dart
 Center(
   child: ConstrainedBox(
@@ -1579,6 +1593,7 @@ since that's between 70 and 150.
 <img src='/assets/images/docs/ui/layout/layout-13.png' class="mw-100" alt="Example 13 layout">
 
 <?code-excerpt "lib/main.dart (Example13)" replace="/(return |;)//g"?>
+
 ```dart
 UnconstrainedBox(
   child: Container(color: red, width: 20, height: 50),
@@ -1589,12 +1604,12 @@ The screen forces the `UnconstrainedBox` to be exactly
 the same size as the screen. However, the `UnconstrainedBox`
 lets its child `Container` be any size it wants.
 
-
 ### Example 14
 
 <img src='/assets/images/docs/ui/layout/layout-14.png' class="mw-100" alt="Example 14 layout">
 
 <?code-excerpt "lib/main.dart (Example14)" replace="/(return |;)//g"?>
+
 ```dart
 UnconstrainedBox(
   child: Container(color: red, width: 4000, height: 50),
@@ -1615,6 +1630,7 @@ the much dreaded "overflow warning".
 <img src='/assets/images/docs/ui/layout/layout-15.png' class="mw-100" alt="Example 15 layout">
 
 <?code-excerpt "lib/main.dart (Example15)" replace="/(return |;)//g"?>
+
 ```dart
 OverflowBox(
   minWidth: 0,
@@ -1643,6 +1659,7 @@ with no warnings given.
 <img src='/assets/images/docs/ui/layout/layout-16.png' class="mw-100" alt="Example 16 layout">
 
 <?code-excerpt "lib/main.dart (Example16)" replace="/(return |;)//g"?>
+
 ```dart
 UnconstrainedBox(
   child: Container(color: Colors.red, width: double.infinity, height: 100),
@@ -1662,6 +1679,7 @@ the following message: `BoxConstraints forces an infinite width.`
 <img src='/assets/images/docs/ui/layout/layout-17.png' class="mw-100" alt="Example 17 layout">
 
 <?code-excerpt "lib/main.dart (Example17)" replace="/(return |;)//g"?>
+
 ```dart
 UnconstrainedBox(
   child: LimitedBox(
@@ -1694,6 +1712,7 @@ and a `ConstrainedBox`.
 <img src='/assets/images/docs/ui/layout/layout-18.png' class="mw-100" alt="Example 18 layout">
 
 <?code-excerpt "lib/main.dart (Example18)" replace="/(return |;)//g"?>
+
 ```dart
 const FittedBox(
   child: Text('Some Example Text.'),
@@ -1715,6 +1734,7 @@ the available width.
 <img src='/assets/images/docs/ui/layout/layout-19.png' class="mw-100" alt="Example 19 layout">
 
 <?code-excerpt "lib/main.dart (Example19)" replace="/(return |;)//g"?>
+
 ```dart
 const Center(
   child: FittedBox(
@@ -1737,6 +1757,7 @@ no scaling happens.
 <img src='/assets/images/docs/ui/layout/layout-20.png' class="mw-100" alt="Example 20 layout">
 
 <?code-excerpt "lib/main.dart (Example20)" replace="/(return |;)//g"?>
+
 ```dart
 const Center(
   child: FittedBox(
@@ -1754,12 +1775,12 @@ but it can't be bigger than the screen.
 It then assumes the screen size,
 and resizes `Text` so that it fits the screen, too.
 
-
 ### Example 21
 
 <img src='/assets/images/docs/ui/layout/layout-21.png' class="mw-100" alt="Example 21 layout">
 
 <?code-excerpt "lib/main.dart (Example21)" replace="/(return |;)//g"?>
+
 ```dart
 const Center(
   child: Text(
@@ -1771,12 +1792,12 @@ If, however, you remove the `FittedBox`, the `Text`
 gets its maximum width from the screen,
 and breaks the line so that it fits the screen.
 
-
 ### Example 22
 
 <img src='/assets/images/docs/ui/layout/layout-22.png' class="mw-100" alt="Example 22 layout">
 
 <?code-excerpt "lib/main.dart (Example22)" replace="/(return |;)//g"?>
+
 ```dart
 FittedBox(
   child: Container(
@@ -1792,12 +1813,12 @@ FittedBox(
 it won't render anything,
 and you'll see an error in the console.
 
-
 ### Example 23
 
 <img src='/assets/images/docs/ui/layout/layout-23.png' class="mw-100" alt="Example 23 layout">
 
 <?code-excerpt "lib/main.dart (Example23)" replace="/(return |;)//g"?>
+
 ```dart
 Row(
   children: [
@@ -1821,6 +1842,7 @@ and any extra space remains empty.
 <img src='/assets/images/docs/ui/layout/layout-24.png' class="mw-100" alt="Example 24 layout">
 
 <?code-excerpt "lib/main.dart (Example24)" replace="/(return |;)//g"?>
+
 ```dart
 Row(
   children: [
@@ -1842,12 +1864,12 @@ it's quite possible that the children might be too big to fit
 the available width of the `Row`. In this case, just like an
 `UnconstrainedBox`, the `Row` displays the "overflow warning".
 
-
 ### Example 25
 
 <img src='/assets/images/docs/ui/layout/layout-25.png' class="mw-100" alt="Example 25 layout">
 
 <?code-excerpt "lib/main.dart (Example25)" replace="/(return |;)//g"?>
+
 ```dart
 Row(
   children: [
@@ -1882,6 +1904,7 @@ the original child's width becomes irrelevant, and is ignored.
 <img src='/assets/images/docs/ui/layout/layout-26.png' class="mw-100" alt="Example 26 layout">
 
 <?code-excerpt "lib/main.dart (Example26)" replace="/(return |;)//g"?>
+
 ```dart
 Row(
   children: [
@@ -1920,6 +1943,7 @@ its children.
 <img src='/assets/images/docs/ui/layout/layout-27.png' class="mw-100" alt="Example 27 layout">
 
 <?code-excerpt "lib/main.dart (Example27)" replace="/(return |;)//g"?>
+
 ```dart
 Row(
   children: [
@@ -1964,6 +1988,7 @@ when sizing themselves.
 <img src='/assets/images/docs/ui/layout/layout-28.png' class="mw-100" alt="Example 28 layout">
 
 <?code-excerpt "lib/main.dart (Example28)" replace="/(return |;)//g"?>
+
 ```dart
 Scaffold(
   body: Container(
@@ -1994,6 +2019,7 @@ but not bigger than the screen.
 <img src='/assets/images/docs/ui/layout/layout-29.png' class="mw-100" alt="Example 29 layout">
 
 <?code-excerpt "lib/main.dart (Example29)" replace="/(return |;)//g"?>
+
 ```dart
 Scaffold(
   body: SizedBox.expand(
@@ -2071,7 +2097,7 @@ the tight constraints it received from its parent
 (the screen) to loose constraints for its child
 (the `Container`).
 
-If you revisit [Example 3](#example-3), 
+If you revisit [Example 3](#example-3),
 the `Center` allows the red `Container` to be smaller,
 but not bigger than the screen.
 
@@ -2079,6 +2105,7 @@ but not bigger than the screen.
 [`RenderView`]: {{site.api}}/flutter/rendering/RenderView-class.html
 
 <a id="unbounded"></a>
+
 ## Unbounded constraints
 
 {{site.alert.note}}
@@ -2184,8 +2211,6 @@ Here's an example:
 
 <img src='/assets/images/docs/ui/layout/layout-final.png' class="mw-100" alt="A goodbye layout">
 
-
-
 ---
 
 Original article by Marcelo Glasberg
@@ -2207,7 +2232,6 @@ header image at the top of the article.
 {{site.alert.note}}
   To better understand how Flutter implements layout
   constraints, check out the following 5-minute video:
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/jckqXR5CrPI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="{{yt-embed}}/jckqXR5CrPI" title="Learn how Flutter implements layout constraints" {{yt-set}}></iframe>
   <p>Decoding Flutter: Unbounded height and width</p>
 {{site.alert.end}}
-

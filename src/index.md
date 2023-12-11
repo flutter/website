@@ -4,6 +4,8 @@ short-title: Docs
 description: Get started with Flutter. Widgets, examples, updates, and API docs to help you write your first Flutter app.
 ---
 
+{% include docs/yt_shims.liquid %}
+
 {% for card in site.data.docs_cards -%}
   {% capture index0Modulo3 -%}{{ forloop.index0 | modulo:3 }}{% endcapture -%}
   {% capture indexModulo3 -%}{{ forloop.index | modulo:3 }}{% endcapture -%}
@@ -65,7 +67,6 @@ Coming from another platform? Check out Flutter for:
 [UIKit]: {{site.url}}/get-started/flutter-for/uikit-devs
 [React Native]: {{site.url}}/get-started/flutter-for/react-native-devs
 [Understanding constraints]: {{site.url}}/ui/layout/constraints
-[web]: {{site.url}}/get-started/flutter-for/web-devs
 [Xamarin.Forms]: {{site.url}}/get-started/flutter-for/xamarin-forms-devs
 
 ### Videos
@@ -80,12 +81,12 @@ widgets in [What is State?][]
 <div class="card-deck card-deck--responsive">
     <div class="video-card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.youtube-site}}/embed/xWV71C2kp38" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" title="Create your first Flutter app"></iframe>
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{yt-embed}}/xWV71C2kp38" title="Create your first Flutter app" {{yt-set}}></iframe>
         </div>
     </div>
     <div class="video-card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.youtube-site}}/embed/QlwiL_yLh6E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" title="What is state?"></iframe>
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{yt-embed}}/QlwiL_yLh6E" title="What is state?" {{yt-set}}></iframe>
         </div>
     </div>
 </div>
@@ -97,7 +98,7 @@ widgets in [What is State?][]
 <b>Only have 60 seconds? Learn how to build and deploy a Flutter App!</b>
 
 <div style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
-  <iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/ZnufaryH43s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe style="max-width: 100%" width="560" height="315" src="{{yt-embed}}/ZnufaryH43s" title="Learn how to build and deploy a Flutter app in 60 seconds" {{yt-set}}></iframe>
 </div>
 
 ## Want to skill up?
@@ -110,17 +111,17 @@ using helper methods][standalone-widgets] or
 <div class="card-deck card-deck--responsive">
     <div class="video-card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.youtube-site}}/embed/IOyq-eTRhvo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{yt-embed}}/IOyq-eTRhvo" title="Learn the difference between Widgets and Helper Methods" {{yt-set}}></iframe>
         </div>
     </div>
     <div class="video-card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.youtube-site}}/embed/rIaaH87z1-g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{yt-embed}}/rIaaH87z1-g" title="Learn how to demystify BuildContext" {{yt-set}}></iframe>
         </div>
     </div>
 </div>
 
-[standalone-widgets]: {{site.youtube-site}}/watch?v=IOyq-eTRhvo   
+[standalone-widgets]: {{site.youtube-site}}/watch?v=IOyq-eTRhvo
 [buildcontext]: {{site.youtube-site}}/watch?v=rIaaH87z1-g
 
 To learn about all of the Flutter video series,

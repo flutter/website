@@ -4,6 +4,8 @@ description: >-
   Learn how to use the shared_preferences package to store key-value data.
 ---
 
+{% include docs/yt_shims.liquid %}
+
 <?code-excerpt path-base="cookbook/persistence/key_value/"?>
 
 If you have a relatively small collection of key-values
@@ -25,7 +27,7 @@ This recipe uses the following steps:
   To learn more, watch this short Package of the Week video
   on the `shared_preferences` package:
 
-  <iframe class="full-width" src="{{site.youtube-site}}/embed/sa_U0jffQII" title="YouTube video player - shared_preferences (Package of the Week)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+  <iframe class="full-width" src="{{yt-embed}}/sa_U0jffQII" title="Learn about the shared_preferences Flutter package" {{yt-set}}></iframe>
 {{site.alert.end}}
 
 ## 1. Add the dependency
@@ -36,7 +38,7 @@ To add the `shared_preferences` package as a dependency,
 run `flutter pub add`:
 
 ```terminal
-$ flutter pub add shared_preferences
+flutter pub add shared_preferences
 ```
 
 ## 2. Save data
@@ -49,6 +51,7 @@ Setter methods do two things: First, synchronously update the
 key-value pair in memory. Then, persist the data to disk.
 
 <?code-excerpt "lib/partial_excerpts.dart (Step2)"?>
+
 ```dart
 // Load and obtain the shared preferences for this app.
 final prefs = await SharedPreferences.getInstance();
@@ -64,6 +67,7 @@ To read data, use the appropriate getter method provided by the
 For example, you can use the `getInt`, `getBool`, and `getString` methods.
 
 <?code-excerpt "lib/partial_excerpts.dart (Step3)"?>
+
 ```dart
 final prefs = await SharedPreferences.getInstance();
 
@@ -80,6 +84,7 @@ has a different type than the getter method expects.
 To delete data, use the `remove()` method.
 
 <?code-excerpt "lib/partial_excerpts.dart (Step4)"?>
+
 ```dart
 final prefs = await SharedPreferences.getInstance();
 
@@ -109,6 +114,7 @@ a `setUpAll()` method in your test files.
 Pass in a map of key-value pairs to use as the initial values.
 
 <?code-excerpt "test/prefs_test.dart (setup)"?>
+
 ```dart
 SharedPreferences.setMockInitialValues(<String, Object>{
   'counter': 2,
@@ -118,6 +124,7 @@ SharedPreferences.setMockInitialValues(<String, Object>{
 ## Complete example
 
 <?code-excerpt "lib/main.dart"?>
+
 ```dart
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -202,6 +209,5 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 ```
-
 
 [`shared_preferences`]: {{site.pub-pkg}}/shared_preferences
