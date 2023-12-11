@@ -1,24 +1,12 @@
 ---
-title: Codelabs & workshops
-description: "Codelabs and workshops help you quickly get started programming Flutter."
+title: Codelabs
+description: >-
+  Codelabs to help you quickly get started programming Flutter.
 ---
 
 The Flutter codelabs provide a guided,
 hands-on coding experience. Some codelabs
 run in DartPad&mdash;no downloads required!
-
-Flutter workshops are similar to the codelabs,
-but are instructor led and always use DartPad.
-The provided workshop link takes you to the relevant YouTube video,
-which tells you where to find the associated DartPad link.
-
-{{site.alert.secondary}}
-  You might want to check out the workshops
-  created by our Google Developer Experts (GDEs).
-  You can find them on the [Flutter community blog][].
-{{site.alert.end}}
-
-[Flutter community blog]: {{site.medium}}/flutter-community/dartpad-workshops-from-flutter-gdes-622b52f70173
 
 ## Good for beginners
 
@@ -64,8 +52,8 @@ one of the following codelabs:
   by using slivers.
 
 * [Dart null safety in Action][] (workshop)<br>
-  An instructor-led workshop based on the [Null safety codelab][]
-  on the dart.dev site.
+  An instructor-led workshop introducing the features
+  that enable Dart's [null-safe][] type system.
 
 * [How to manage application states using inherited widgets][inherited-widget-ws] (workshop)<br>
   Learn how to manage the state of your app's data by
@@ -75,9 +63,9 @@ one of the following codelabs:
 
 [Records and Patterns in Dart 3]: {{site.codelabs}}/codelabs/dart-patterns-records
 [Dart null safety in Action]: {{site.youtube-site}}/watch?v=HdKwuHQvArY
+[null-safe]: {{site.dart-site}}/null-safety
 [inherited-widget-ws]: {{site.youtube-site}}/watch?v=LFcGPS6cGrY
 [low-level state management]: {{site.url}}/data-and-backend/state-mgmt/options#inheritedwidget--inheritedmodel
-[Null safety codelab]: {{site.dart-site}}/codelabs/null-safety
 
 ## Designing a Flutter UI
 
@@ -217,7 +205,7 @@ Learn how to use Flutter with other technologies.
 
 * [Train a comment-spam detection model with TensorFlow Lite Model Maker][]<br>
   Learn how to install the TensorFlow Lite Model Maker with Colab,
-  How to use a data loader, and how to build a model.
+  how to use a data loader, and how to build a model.
 
 [Create a custom text-classification model with TensorFlow Lite Model Maker]: {{site.developers}}/codelabs/classify-text-update-tensorflow-serving
 [Create a Flutter app to classify texts with TensorFlow]: {{site.developers}}/codelabs/classify-texts-flutter-tensorflow-serving
@@ -316,9 +304,9 @@ like iOS, Android, desktop, or the web.
   today view.
 
 [Building a Cupertino app with Flutter]: {{site.codelabs}}/codelabs/flutter-cupertino
-[home-screen]:   {{site.codelabs}}/flutter-home-screen-widgets
+[home-screen]: {{site.codelabs}}/flutter-home-screen-widgets
 [How to write a Flutter plugin]: {{site.codelabs}}/codelabs/write-flutter-plugin
-[provider]: {{site.pub}}/packages/provider
+[provider]: {{site.pub-pkg}}/provider
 [Using a plugin with a Flutter web app]: {{site.codelabs}}/codelabs/web-url-launcher
 [Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-client
 
