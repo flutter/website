@@ -41,5 +41,5 @@ Flutter SDK
 [Flutter Gallery][] app.
 
 [run loop migration guide]: {{site.url}}/release/breaking-changes/windows-run-loop
-[PR 862]: {{site.github}}/flutter/gallery/pull/862/files
-[Flutter Gallery]: https://gallery.flutter.dev/
+[PR 862]: {{site.repo.gallery}}/pull/862/files
+[Flutter Gallery]: {{site.gallery}}

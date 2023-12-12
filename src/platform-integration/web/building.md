@@ -30,7 +30,7 @@ you need the following software:
   within an editor. See [setting up an editor][]
   for more details.
 
-[Android Studio]: https://developer.android.com/studio
+[Android Studio]: {{site.android-dev}}/studio
 [IntelliJ IDEA]: https://www.jetbrains.com/idea/
 [Visual Studio Code]: https://code.visualstudio.com/
 

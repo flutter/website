@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Nullable Fields Demo'),
         ),
-        body: const Center(
+        body: Center(
           child: Column(
             children: [
               Text('anInt is $anInt.'),

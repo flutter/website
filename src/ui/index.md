@@ -22,8 +22,7 @@ tree to transition from one state to the next.
 
 {{site.alert.note}}
   If you would like to become better acquainted with Flutter by diving
-  into some code, check out [basic layout codelab][],
-  [building layouts][],
+  into some code, check out [building layouts][],
   and [adding interactivity to your Flutter app][].
 {{site.alert.end}}
 
@@ -902,7 +901,6 @@ For more information, check out the [`GlobalKey`][] API.
 [`actions`]: {{api}}/material/AppBar-class.html#actions
 [adding interactivity to your Flutter app]: {{site.url}}/ui/interactivity
 [`AppBar`]: {{api}}/material/AppBar-class.html
-[basic layout codelab]: {{site.url}}/codelabs/layout-basics
 [`BoxDecoration`]: {{api}}/painting/BoxDecoration-class.html
 [`build()`]: {{api}}/widgets/StatelessWidget/build.html
 [building layouts]: {{site.url}}/ui/layout

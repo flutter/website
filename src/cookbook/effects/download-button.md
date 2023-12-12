@@ -122,7 +122,7 @@ method remains simple, allowing for the additions
 that follow. Instead of creating a function to return a widget,
 like `Widget _buildSomething() {}`, always prefer creating a
 `StatelessWidget` or a `StatefulWidget` which is more performant. More
-considerations on this can be found in the [documentation](https://api.flutter.dev/flutter/widgets/StatelessWidget-class.html)
+considerations on this can be found in the [documentation]({{site.api}}/flutter/widgets/StatelessWidget-class.html)
 or in a dedicated video in the Flutter [YouTube channel](https://www.youtube.com/watch?v=IOyq-eTRhvo).
 
 For now, the `AnimatedContainer` child is just a `SizedBox` because we will come back at it in another step.
