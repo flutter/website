@@ -35,7 +35,6 @@ creates this visual structure and ensures that important
 widgets don't overlap.
 
 <?code-excerpt "lib/partial.dart (Scaffold)"?>
-
 ```dart
 return MaterialApp(
   title: 'SnackBar Demo',
@@ -54,7 +53,6 @@ With the `Scaffold` in place, display a `SnackBar`.
 First, create a `SnackBar`, then display it using `ScaffoldMessenger`.
 
 <?code-excerpt "lib/partial.dart (DisplaySnackBar)"?>
-
 ```dart
 const snackBar = SnackBar(
   content: Text('Yay! A SnackBar!'),
@@ -83,7 +81,6 @@ Here's an example of providing
 an additional `action` to the `SnackBar` widget:
 
 <?code-excerpt "lib/main.dart (SnackBarAction)"?>
-
 ```dart
 final snackBar = SnackBar(
   content: const Text('Yay! A SnackBar!'),
@@ -105,7 +102,6 @@ final snackBar = SnackBar(
 {{site.alert.end}}
 
 <?code-excerpt "lib/main.dart"?>
-
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 

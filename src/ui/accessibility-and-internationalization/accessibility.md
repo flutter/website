@@ -263,7 +263,6 @@ with text represented in 18 point.
 
 <?code-excerpt path-base="codelabs/namer/step_08"?>
 <?code-excerpt "test/a11y_test.dart (insideTest)" indent-by="2"?>
-
 ```dart
   final SemanticsHandle handle = tester.ensureSemantics();
   await tester.pumpWidget(MyApp());

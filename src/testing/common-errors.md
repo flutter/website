@@ -55,7 +55,6 @@ For example,
 the code snippet below demonstrates a common scenario:
 
 <?code-excerpt "lib/renderflex_overflow.dart (Problem)"?>
-
 ```dart
 Widget build(BuildContext context) {
   return Row(
@@ -110,7 +109,6 @@ you need to constrain its width. One way to do it is to
 wrap the `Column` in an `Expanded` widget:
 
 <?code-excerpt "lib/renderflex_overflow.dart (Fix)"?>
-
 ```dart
 return const Row(
   children: [
@@ -209,7 +207,6 @@ The combination of the two behaviors leads to the failure of
 determining the size of the `ListView`.
 
 <?code-excerpt "lib/unbounded_height.dart (Problem)"?>
-
 ```dart
 Widget build(BuildContext context) {
   return Center(
@@ -243,7 +240,6 @@ Otherwise, specify an absolute height using a `SizedBox`
 widget or a relative height using a `Flexible` widget.
 
 <?code-excerpt "lib/unbounded_height.dart (Fix)"?>
-
 ```dart
 Widget build(BuildContext context) {
   return Center(
@@ -306,7 +302,6 @@ This error occurs, for example, when a `Row` contains a
 no width constraint.
 
 <?code-excerpt "lib/unbounded_width.dart (Problem)"?>
-
 ```dart
 Widget build(BuildContext context) {
   return MaterialApp(
@@ -332,7 +327,6 @@ using either an `Expanded` or `SizedBox` widget.
 The following example demonstrates using an `Expanded` widget:
 
 <?code-excerpt "lib/unbounded_width.dart (Fix)"?>
-
 ```dart
 Widget build(BuildContext context) {
   return MaterialApp(
@@ -427,7 +421,6 @@ but `setState` should never be called from a `build` method.
 The following snippet seems to be a common culprit of this error:
 
 <?code-excerpt "lib/set_state_build.dart (Problem)"?>
-
 ```dart
 Widget build(BuildContext context) {
   // Don't do this.
@@ -467,7 +460,6 @@ the `Navigator` pushes two routes–one
 for the second page and another for the dialog.
 
 <?code-excerpt "lib/set_state_build.dart (Fix)"?>
-
 ```dart
 class FirstScreen extends StatelessWidget {
   const FirstScreen({super.key});

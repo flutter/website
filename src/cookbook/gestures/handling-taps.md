@@ -28,7 +28,6 @@ a snackbar when tapped with the following steps:
   2. Wrap it in a `GestureDetector` that an `onTap()` callback.
 
 <?code-excerpt "lib/main.dart (GestureDetector)" replace="/return //g;/;$//g"?>
-
 ```dart
 // The GestureDetector wraps the button.
 GestureDetector(
@@ -62,7 +61,6 @@ GestureDetector(
 ## Interactive example
 
 <?code-excerpt "lib/main.dart"?>
-
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 

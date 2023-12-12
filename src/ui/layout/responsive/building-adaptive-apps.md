@@ -156,7 +156,6 @@ To set a custom visual density, inject the density into
 your `MaterialApp` theme:
 
 <?code-excerpt "lib/main.dart (VisualDensity)"?>
-
 ```dart
 double densityAmt = touchMode ? 0.0 : -1.0;
 VisualDensity density =
@@ -172,7 +171,6 @@ To use `VisualDensity` inside your own views,
 you can look it up:
 
 <?code-excerpt "lib/pages/adaptive_reflow_page.dart (VisualDensityOwnView)"?>
-
 ```dart
 VisualDensity density = Theme.of(context).visualDensity;
 ```
@@ -217,7 +215,6 @@ There are no hard and fast rules for the sizes to use
 here, but these are general values:
 
 <?code-excerpt "lib/global/device_size.dart (FormFactor)"?>
-
 ```dart
 class FormFactor {
   static double desktop = 900;
@@ -230,7 +227,6 @@ Using breakpoints, you can set up a simple system
 to determine the device type:
 
 <?code-excerpt "lib/global/device_size.dart (getFormFactor)"?>
-
 ```dart
 ScreenType getFormFactor(BuildContext context) {
   // Use .shortestSide to detect device type regardless of orientation
@@ -246,7 +242,6 @@ As an alternative, you could abstract it more
 and define it in terms of small to large:
 
 <?code-excerpt "lib/global/device_size.dart (ScreenSize)"?>
-
 ```dart
 enum ScreenSize { small, normal, large, extraLarge }
 
@@ -269,7 +264,6 @@ top-level widget trees. For example, you could switch
 from a vertical to a horizontal layout when the user isn't on a handset:
 
 <?code-excerpt "lib/global/device_size.dart (MediaQuery)"?>
-
 ```dart
 bool isHandset = MediaQuery.of(context).size.width < 600;
 return Flex(
@@ -282,7 +276,6 @@ In another widget,
 you might swap some of the children completely:
 
 <?code-excerpt "lib/global/device_size.dart (WidgetSwap)"?>
-
 ```dart
 Widget foo = Row(
   children: [
@@ -308,7 +301,6 @@ depended on a global value.
 The previous example could be rewritten using `LayoutBuilder`:
 
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (LayoutBuilder)"?>
-
 ```dart
 Widget foo = LayoutBuilder(builder: (context, constraints) {
   bool useVerticalLayout = constraints.maxWidth < 400;
@@ -341,7 +333,6 @@ you can use the [`Platform`][] API along with the `kIsWeb` value:
 [`Platform`]: {{site.api}}/flutter/package-platform_platform/Platform-class.html
 
 <?code-excerpt "lib/global/device_type.dart (Platforms)"?>
-
 ```dart
 bool get isMobileDevice => !kIsWeb && (Platform.isIOS || Platform.isAndroid);
 bool get isDesktopDevice =>
@@ -364,7 +355,6 @@ like padding, spacing, corner shape, font sizes, and so on.
 This can be done easily with some helper classes:
 
 <?code-excerpt "lib/global/device_type.dart (Styling)"?>
-
 ```dart
 class Insets {
   static const double xsmall = 3;
@@ -400,7 +390,6 @@ class TextStyles {
 These constants can then be used in place of hard-coded numeric values:
 
 <?code-excerpt "lib/global/device_type.dart (UseConstants)"?>
-
 ```dart
 return Padding(
   padding: const EdgeInsets.all(Insets.small),
@@ -514,7 +503,6 @@ you can use the [`Listener`][] widget, which lets you
 customize how your UI reacts to the scroll wheel.
 
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (PointerScroll)"?>
-
 ```dart
 return Listener(
   onPointerSignal: (event) {
@@ -548,7 +536,6 @@ and key bindings, and provides callbacks for handling focus
 and hover highlights.
 
 <?code-excerpt "lib/pages/focus_examples_page.dart (_BasicActionDetectorState)"?>
-
 ```dart
 class _BasicActionDetectorState extends State<BasicActionDetector> {
   bool _hasFocus = false;
@@ -599,7 +586,6 @@ For example, you might to tab through all the fields in
 a form before tabbing to the submit button:
 
 <?code-excerpt "lib/pages/focus_examples_page.dart (FocusTraversalGroup)"?>
-
 ```dart
 return Column(children: [
   FocusTraversalGroup(
@@ -635,7 +621,6 @@ already has a focus node, you can wrap it in a
 [`RawKeyboardListener`][] and listen for keyboard events:
 
 <?code-excerpt "lib/pages/focus_examples_page.dart (FocusRawKeyboardListener)"?>
-
 ```dart
   @override
   Widget build(BuildContext context) {
@@ -663,7 +648,6 @@ If you'd like to apply a set of keyboard shortcuts to a
 large section of the tree, you can use the [`Shortcuts`][] widget:
 
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (Shortcuts)"?>
-
 ```dart
 // Define a class for each type of shortcut action you want
 class CreateNewItemIntent extends Intent {
@@ -705,7 +689,6 @@ panels that can accept shortcuts whenever they're visible
 is easy with [`RawKeyboard`][]:
 
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (RawKeyboard)"?>
-
 ```dart
 @override
 void initState() {
@@ -726,7 +709,6 @@ For example, a method like the following can check whether any
 of the provided keys are being held down:
 
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (KeysPressed)"?>
-
 ```dart
 static bool isKeyDown(Set<LogicalKeyboardKey> keys) {
   return keys.intersection(RawKeyboard.instance.keysPressed).isNotEmpty;
@@ -737,7 +719,6 @@ Putting these two things together,
 you can fire an action when `Shift+N` is pressed:
 
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (HandleKey)"?>
-
 ```dart
 void _handleKey(event) {
   if (event is RawKeyDownEvent) {
@@ -779,7 +760,6 @@ To change the cursor from within your own widgets,
 use [`MouseRegion`][]:
 
 <?code-excerpt "lib/pages/focus_examples_page.dart (MouseRegion)"?>
-
 ```dart
 // Show hand cursor
 return MouseRegion(
@@ -799,7 +779,6 @@ return MouseRegion(
 rollover and hover effects:
 
 <?code-excerpt "lib/pages/focus_examples_page.dart (MouseOver)"?>
-
 ```dart
 return MouseRegion(
   onEnter: (_) => setState(() => _isMouseOver = true),
@@ -913,7 +892,6 @@ current platform. The one tweak you might want to make is to
 toggle `alwaysShown` when on a desktop platform:
 
 <?code-excerpt "lib/pages/adaptive_grid_page.dart (ScrollbarAlwaysShown)"?>
-
 ```dart
 return Scrollbar(
   thumbVisibility: DeviceType.isDesktop,
@@ -937,7 +915,6 @@ Dealing with multi-select within a list is another area
 with subtle differences across platforms:
 
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (MultiSelectShift)"?>
-
 ```dart
 static bool get isSpanSelectModifierDown =>
     isKeyDown({LogicalKeyboardKey.shiftLeft, LogicalKeyboardKey.shiftRight});
@@ -947,7 +924,6 @@ To perform a platform-aware check for control or command,
 you can write something like this:
 
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (MultiSelectModifierDown)"?>
-
 ```dart
 static bool get isMultiSelectModifierDown {
   bool isDown = false;
@@ -993,7 +969,6 @@ users on the web tend to have an adverse reaction.
 Luckily, this is easy to support with the [`SelectableText`][] widget:
 
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (SelectableText)"?>
-
 ```dart
 return const SelectableText('Select me!');
 ```
@@ -1001,7 +976,6 @@ return const SelectableText('Select me!');
 To support rich text, then use `TextSpan`:
 
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (RichTextSpan)"?>
-
 ```dart
 return const SelectableText.rich(
   TextSpan(
@@ -1065,7 +1039,6 @@ To show basic tooltips in Flutter,
 use the built-in [`Tooltip`][] widget:
 
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (Tooltip)"?>
-
 ```dart
 return const Tooltip(
   message: 'I am a Tooltip',
@@ -1115,7 +1088,6 @@ This can be easily handled in Flutter using the
 `TextDirection` property on `Row`:
 
 <?code-excerpt "lib/widgets/ok_cancel_dialog.dart (RowTextDirection)"?>
-
 ```dart
 TextDirection btnDirection =
     DeviceType.isWindows ? TextDirection.rtl : TextDirection.ltr;

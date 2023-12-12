@@ -39,7 +39,6 @@ Within `ParallaxRecipe`, build a widget tree with a
 a list.
 
 <?code-excerpt "lib/excerpt1.dart (ParallaxRecipe)"?>
-
 ```dart
 class ParallaxRecipe extends StatelessWidget {
   const ParallaxRecipe({super.key});
@@ -72,7 +71,6 @@ For now, use a static `Image` widget for the background.
 Later, you'll replace that widget with a parallax version.
 
 <?code-excerpt "lib/excerpt2.dart (LocationListItem)"?>
-
 ```dart
 @immutable
 class LocationListItem extends StatelessWidget {
@@ -164,7 +162,6 @@ class LocationListItem extends StatelessWidget {
 Next, add the list items to your `ParallaxRecipe` widget.
 
 <?code-excerpt "lib/excerpt3.dart (ParallaxRecipeItems)"?>
-
 ```dart
 class ParallaxRecipe extends StatelessWidget {
   const ParallaxRecipe({super.key});
@@ -238,7 +235,6 @@ Wrap your background `Image` widget with a
 [`Flow`][] widget.
 
 <?code-excerpt "lib/excerpt4.dart (BuildParallaxBackground)" replace="/\n    delegate: ParallaxFlowDelegate\(\),//g"?>
-
 ```dart
 Widget _buildParallaxBackground(BuildContext context) {
   return Flow(
@@ -255,7 +251,6 @@ Widget _buildParallaxBackground(BuildContext context) {
 Introduce a new `FlowDelegate` called `ParallaxFlowDelegate`.
 
 <?code-excerpt "lib/excerpt4.dart (BuildParallaxBackground)"?>
-
 ```dart
 Widget _buildParallaxBackground(BuildContext context) {
   return Flow(
@@ -271,7 +266,6 @@ Widget _buildParallaxBackground(BuildContext context) {
 ```
 
 <?code-excerpt "lib/excerpt4.dart (ParallaxFlowDelegate)" replace="/\n    return constraints;//g"?>
-
 ```dart
 class ParallaxFlowDelegate extends FlowDelegate {
   ParallaxFlowDelegate();
@@ -302,7 +296,6 @@ image. That image must be exactly as wide as the `Flow` widget.
 Return tight width constraints for your background image child.
 
 <?code-excerpt "lib/main.dart (TightWidth)"?>
-
 ```dart
 @override
 BoxConstraints getConstraintsForChild(int i, BoxConstraints constraints) {
@@ -340,7 +333,6 @@ and then you pass that `GlobalKey` into your
 Make this information available to `ParallaxFlowDelegate`.
 
 <?code-excerpt "lib/excerpt5.dart (GlobalKey)" replace="/\/\/ code-excerpt-closing-bracket/}/g"?>
-
 ```dart
 @immutable
 class LocationListItem extends StatelessWidget {
@@ -366,7 +358,6 @@ class LocationListItem extends StatelessWidget {
 ```
 
 <?code-excerpt "lib/excerpt5.dart (ParallaxFlowDelegateGK)" replace="/\/\/ code-excerpt-closing-bracket/}/g"?>
-
 ```dart
 class ParallaxFlowDelegate extends FlowDelegate {
   ParallaxFlowDelegate({
@@ -385,7 +376,6 @@ Having all the information needed to implement
 parallax scrolling, implement the `shouldRepaint()` method.
 
 <?code-excerpt "lib/main.dart (ShouldRepaint)"?>
-
 ```dart
 @override
 bool shouldRepaint(ParallaxFlowDelegate oldDelegate) {
@@ -401,7 +391,6 @@ First, calculate the pixel position of a list
 item within its ancestor `Scrollable`.
 
 <?code-excerpt "lib/excerpt5.dart (PaintChildren)" replace="/  \/\/ code-excerpt-closing-bracket/}/g"?>
-
 ```dart
 @override
 void paintChildren(FlowPaintingContext context) {
@@ -421,7 +410,6 @@ produce 0%, and a list item at the bottom of the
 scrollable area should produce 100%.
 
 <?code-excerpt "lib/excerpt5.dart (PaintChildrenPt2)" replace="/  \/\/ code-excerpt-closing-bracket/}/g"?>
-
 ```dart
 @override
 void paintChildren(FlowPaintingContext context) {
@@ -448,7 +436,6 @@ These coordinates correspond to top and bottom
 alignment, respectively.
 
 <?code-excerpt "lib/excerpt5.dart (PaintChildrenPt3)" replace="/  \/\/ code-excerpt-closing-bracket/}/g"?>
-
 ```dart
 @override
 void paintChildren(FlowPaintingContext context) {
@@ -478,7 +465,6 @@ to produce a `Rect` that determines where the
 background image should be positioned.
 
 <?code-excerpt "lib/excerpt5.dart (PaintChildrenPt4)" replace="/  \/\/ code-excerpt-closing-bracket/}/g"?>
-
 ```dart
 @override
 void paintChildren(FlowPaintingContext context) {
@@ -517,7 +503,6 @@ It's this transformation over time that gives you the
 parallax effect.
 
 <?code-excerpt "lib/excerpt5.dart (PaintChildrenPt5)" replace="/  \/\/ code-excerpt-closing-bracket/}/g"?>
-
 ```dart
 @override
 void paintChildren(FlowPaintingContext context) {
@@ -567,7 +552,6 @@ the `FlowDelegate` superclass so that the `FlowDelegate`
 repaints every time the `ScrollPosition` changes.
 
 <?code-excerpt "lib/main.dart (SuperScrollPosition)" replace="/;\n/;\n}/g"?>
-
 ```dart
 class ParallaxFlowDelegate extends FlowDelegate {
   ParallaxFlowDelegate({
@@ -591,7 +575,6 @@ Run the app:
 <!-- Start DartPad -->
 
 <?code-excerpt "lib/main.dart"?>
-
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';

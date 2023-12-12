@@ -22,7 +22,6 @@ package also supports placeholders and fading images
 in as they're loaded.
 
 <?code-excerpt "lib/simple.dart (SimpleCachedImage)" replace="/^return //g"?>
-
 ```dart
 CachedNetworkImage(
   imageUrl: 'https://picsum.photos/250?image=9',
@@ -35,7 +34,6 @@ The `cached_network_image` package allows you to use any widget as a
 placeholder. In this example, display a spinner while the image loads.
 
 <?code-excerpt "lib/main.dart (CachedNetworkImage)" replace="/^child\: //g"?>
-
 ```dart
 CachedNetworkImage(
   placeholder: (context, url) => const CircularProgressIndicator(),
@@ -46,7 +44,6 @@ CachedNetworkImage(
 ## Complete example
 
 <?code-excerpt "lib/main.dart"?>
-
 ```dart
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';

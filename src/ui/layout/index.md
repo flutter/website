@@ -100,7 +100,6 @@ horizontally and vertically.
 For example, create a [`Text`][] widget:
 
 <?code-excerpt "layout/base/lib/main.dart (text)" replace="/child: //g"?>
-
 ```dart
 Text('Hello World'),
 ```
@@ -108,7 +107,6 @@ Text('Hello World'),
 Create an [`Image`][] widget:
 
 <?code-excerpt "layout/lakes/step5/lib/main.dart (Image-asset)" remove="/width|height/"?>
-
 ```dart
 Image.asset(
   'images/lake.jpg',
@@ -119,7 +117,6 @@ Image.asset(
 Create an [`Icon`][] widget:
 
 <?code-excerpt "layout/lakes/step5/lib/main.dart (Icon)"?>
-
 ```dart
 Icon(
   Icons.star,
@@ -141,7 +138,6 @@ All layout widgets have either of the following:
 Add the `Text` widget to the `Center` widget:
 
 <?code-excerpt "lib/main.dart (centered-text)" replace="/body: //g"?>
-
 ```dart
 const Center(
   child: Text('Hello World'),
@@ -164,7 +160,6 @@ property for the home page.
 
 <?code-excerpt path-base="layout/base"?>
 <?code-excerpt "lib/main.dart (MyApp)" title?>
-
 ```dart
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -217,7 +212,6 @@ To learn what other UI components you can add, check out the
 [Cupertino library][].
 
 <?code-excerpt "lib/cupertino.dart (MyApp)" title?>
-
 ```dart
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -270,7 +264,6 @@ For a non-Material app, you can add the `Center` widget to the app's
 
 <?code-excerpt path-base="layout/non_material"?>
 <?code-excerpt "lib/main.dart (MyApp)" title?>
-
 ```dart
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -590,7 +583,6 @@ The `ratings` variable creates a row containing a smaller row
 of 5 star icons, and text:
 
 <?code-excerpt "layout/pavlova/lib/main.dart (ratings)" replace="/ratings/[!$&!]/g"?>
-
 ```dart
 final stars = Row(
   mainAxisSize: MainAxisSize.min,
@@ -640,7 +632,6 @@ as you can see in its widget tree:
 The `iconList` variable defines the icons row:
 
 <?code-excerpt "layout/pavlova/lib/main.dart (iconList)" replace="/iconList/[!$&!]/g"?>
-
 ```dart
 const descTextStyle = TextStyle(
   color: Colors.black,
@@ -691,7 +682,6 @@ The `leftColumn` variable contains the ratings and icons rows,
 as well as the title and text that describes the Pavlova:
 
 <?code-excerpt "layout/pavlova/lib/main.dart (leftColumn)" replace="/leftColumn/[!$&!]/g"?>
-
 ```dart
 final [!leftColumn!] = Container(
   padding: const EdgeInsets.fromLTRB(20, 30, 20, 20),
@@ -717,7 +707,6 @@ added to the [pubspec file][], and accessed using `Images.asset()`.
 For more information, see [Adding assets and images][].
 
 <?code-excerpt "layout/pavlova/lib/main.dart (body)"?>
-
 ```dart
 body: Center(
   child: Container(
@@ -851,7 +840,6 @@ A `Container` is also used to add a rounded border and margins
 to each image:
 
 <?code-excerpt "layout/container/lib/main.dart (row)" replace="/\bContainer/[!$&!]/g;"?>
-
 ```dart
 Widget _buildDecoratedImage(int imageIndex) => Expanded(
       child: [!Container!](
@@ -941,7 +929,6 @@ it automatically scrolls.
 </div>
 
 <?code-excerpt "layout/grid_and_list/lib/main.dart (grid)" replace="/\GridView/[!$&!]/g;"?>
-
 ```dart
 Widget _buildGrid() => [!GridView!].extent(
     maxCrossAxisExtent: 150,
@@ -1006,7 +993,6 @@ its render box.
 </div>
 
 <?code-excerpt "layout/grid_and_list/lib/main.dart (list)" replace="/\ListView/[!$&!]/g;"?>
-
 ```dart
 Widget _buildList() {
   return [!ListView!](
@@ -1090,7 +1076,6 @@ or partially overlap the base widget.
 </div>
 
 <?code-excerpt "layout/card_and_stack/lib/main.dart (Stack)" replace="/\bStack/[!$&!]/g;"?>
-
 ```dart
 Widget _buildStack() {
   return [!Stack!](
@@ -1181,7 +1166,6 @@ Specifying an unsupported value disables the drop shadow entirely.
 </div>
 
 <?code-excerpt "layout/card_and_stack/lib/main.dart (Card)" replace="/\bCard/[!$&!]/g;"?>
-
 ```dart
 Widget _buildCard() {
   return SizedBox(

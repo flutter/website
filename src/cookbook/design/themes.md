@@ -50,7 +50,6 @@ If you don't specify a theme in the constructor,
 Flutter creates a default theme for you.
 
 <?code-excerpt "lib/main.dart (MaterialApp)" replace="/return //g"?>
-
 ```dart
 MaterialApp(
   title: appName,
@@ -111,7 +110,6 @@ If not, Flutter applies the app's theme.
 In the following example, the `Container` constructor uses this technique to set its `color`.
 
 <?code-excerpt "lib/main.dart (Container)" replace="/^child: //g"?>
-
 ```dart
 Container(
   padding: const EdgeInsets.symmetric(
@@ -146,7 +144,6 @@ create a `ThemeData` instance.
 Pass that instance to the `Theme` widget.
 
 <?code-excerpt "lib/main.dart (Theme)"?>
-
 ```dart
 Theme(
   // Create a unique theme with `ThemeData`.
@@ -168,7 +165,6 @@ Instead of overriding everything, consider extending the parent theme.
 To extend a theme, use the [`copyWith()`][] method.
 
 <?code-excerpt "lib/main.dart (ThemeCopyWith)"?>
-
 ```dart
 Theme(
   // Find and extend the parent theme using `copyWith`.
@@ -194,7 +190,6 @@ To learn more, watch this short Widget of the Week video on the `Theme` widget:
 ## Try an interactive example
 
 <?code-excerpt "lib/main.dart (FullApp)"?>
-
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 // Include the Google Fonts package to provide more text format options

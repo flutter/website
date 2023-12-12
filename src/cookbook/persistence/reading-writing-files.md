@@ -60,7 +60,6 @@ This example stores information in the documents directory.
 You can find the path to the documents directory as follows:
 
 <?code-excerpt "lib/main.dart (localPath)"?>
-
 ```dart
 Future<String> get _localPath async {
   final directory = await getApplicationDocumentsDirectory();
@@ -76,7 +75,6 @@ file's full location. You can use the [`File`][]
 class from the [`dart:io`][] library to achieve this.
 
 <?code-excerpt "lib/main.dart (localFile)"?>
-
 ```dart
 Future<File> get _localFile async {
   final path = await _localPath;
@@ -93,7 +91,6 @@ The counter is an integer, but is written to the
 file as a string using the `'$counter'` syntax.
 
 <?code-excerpt "lib/main.dart (writeCounter)"?>
-
 ```dart
 Future<File> writeCounter(int counter) async {
   final file = await _localFile;
@@ -109,7 +106,6 @@ Now that you have some data on disk, you can read it.
 Once again, use the `File` class.
 
 <?code-excerpt "lib/main.dart (readCounter)"?>
-
 ```dart
 Future<int> readCounter() async {
   try {
@@ -129,7 +125,6 @@ Future<int> readCounter() async {
 ## Complete example
 
 <?code-excerpt "lib/main.dart"?>
-
 ```dart
 import 'dart:async';
 import 'dart:io';

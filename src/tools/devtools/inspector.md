@@ -223,7 +223,6 @@ doesn't look quite right.
 This can also be set in code:
 
 <?code-excerpt "lib/slow_animations.dart"?>
-
 ```dart
 import 'package:flutter/scheduler.dart';
 
@@ -256,7 +255,6 @@ by finding unwanted padding or understanding widget alignment.
 You can also enable this in code:
 
 <?code-excerpt "lib/layout_guidelines.dart"?>
-
 ```dart
 import 'package:flutter/rendering.dart';
 
@@ -328,7 +326,6 @@ alphabetic baselines are shown as green and ideographic as yellow.
 You can also enable this in code:
 
 <?code-excerpt "lib/show_baselines.dart"?>
-
 ```dart
 import 'package:flutter/rendering.dart';
 
@@ -357,7 +354,6 @@ the repainting to just the animation.
 Here the progress indicator causes its container to repaint:
 
 <?code-excerpt "lib/highlight_repaints.dart (EverythingRepaints)"?>
-
 ```dart
 class EverythingRepaintsPage extends StatelessWidget {
   const EverythingRepaintsPage({super.key});
@@ -380,7 +376,6 @@ Wrapping the progress indicator in a `RepaintBoundary` causes
 only that section of the screen to repaint:
 
 <?code-excerpt "lib/highlight_repaints.dart (AreaRepaints)"?>
-
 ```dart
 class AreaRepaintsPage extends StatelessWidget {
   const AreaRepaintsPage({super.key});
@@ -408,7 +403,6 @@ which uses additional memory.
 You can also enable this option in code:
 
 <?code-excerpt "lib/highlight_repaints.dart (Toggle)"?>
-
 ```dart
 import 'package:flutter/rendering.dart';
 
@@ -447,7 +441,6 @@ If this isn't possible, you can use the `cacheHeight` and `cacheWidth`
 parameters on the `Image` constructor:
 
 <?code-excerpt "lib/oversized_images.dart (ResizedImage)"?>
-
 ```dart
 class ResizedImage extends StatelessWidget {
   const ResizedImage({super.key});
@@ -472,7 +465,6 @@ regardless of these parameters.
 This property can also be set in code:
 
 <?code-excerpt "lib/oversized_images.dart (Toggle)"?>
-
 ```dart
 void showOversizedImages() {
   debugInvertOversizedImages = true;

@@ -178,7 +178,6 @@ control focusable. It creates a container with text that reacts to receiving the
 focus.
 
 <?code-excerpt "ui/advanced/focus/lib/custom_control_example.dart"?>
-
 ```dart
 import 'package:flutter/material.dart';
 
@@ -257,7 +256,6 @@ Here's an example of a `Focus` widget that absorbs every key that its subtree
 doesn't handle, without being able to be the primary focus:
 
 <?code-excerpt "ui/advanced/focus/lib/samples.dart (AbsorbKeysExample)"?>
-
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -277,7 +275,6 @@ Here's an example of a widget that won't allow the letter "a" to be typed into
 the text field:
 
 <?code-excerpt "ui/advanced/focus/lib/samples.dart (NoAExample)"?>
-
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -359,7 +356,6 @@ widget within the same build function, use a [`Builder`][] to make sure you have
 the correct context. This is shown in the following example:
 
 <?code-excerpt "ui/advanced/focus/lib/samples.dart (BuilderExample)"?>
-
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -468,7 +464,6 @@ Here's an example of how to use the `FocusTraversalOrder` widget to traverse a
 row of buttons in the order TWO, ONE, THREE using `NumericFocusOrder`.
 
 <?code-excerpt "ui/advanced/focus/lib/samples.dart (OrderedButtonRowExample)"?>
-
 ```dart
 class OrderedButtonRow extends StatelessWidget {
   const OrderedButtonRow({super.key});

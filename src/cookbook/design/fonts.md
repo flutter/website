@@ -132,7 +132,6 @@ as part of the app's `theme`. The value provided to
 name declared in the `pubspec.yaml`.
 
 <?code-excerpt "lib/main.dart (MaterialApp)"?>
-
 ```dart
 return MaterialApp(
   title: 'Custom Fonts',
@@ -156,7 +155,6 @@ Once again, the `fontFamily` must match the `family` name declared in the
 `pubspec.yaml`.
 
 <?code-excerpt "lib/main.dart (Text)"?>
-
 ```dart
 child: Text(
   'Roboto Mono sample',
@@ -211,7 +209,6 @@ flutter:
 ### `main.dart`
 
 <?code-excerpt "lib/main.dart"?>
-
 ```dart
 import 'package:flutter/material.dart';
 

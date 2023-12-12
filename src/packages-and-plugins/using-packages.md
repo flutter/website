@@ -389,7 +389,6 @@ To use this package:
 1. Open `lib/main.dart` and replace its full contents with:
 
     <?code-excerpt "lib/css_colors.dart (CssColors)"?>
-
     ```dart
     import 'package:css_colors/css_colors.dart';
     import 'package:flutter/material.dart';
@@ -453,7 +452,6 @@ To use this plugin:
    following:
 
     <?code-excerpt "lib/url_launcher.dart (UrlLauncher)"?>
-
     ```dart
     import 'package:flutter/material.dart';
     import 'package:path/path.dart' as p;

@@ -162,7 +162,6 @@ this method would cause the UI to
 become unresponsive for several seconds.
 
 <?code-excerpt "lib/main.dart (isolate-run)"?>
-
 ```dart
 // Produces a list of 211,640 photo objects.
 // (The JSON file is ~20MB.)
@@ -251,7 +250,6 @@ The following snippet shows an example of using
 the `shared_preferences` package in a background isolate.
 
 <?code-excerpt "lib/isolate_binary_messenger.dart"?>
-
 ```dart
 import 'dart:isolate';
 
