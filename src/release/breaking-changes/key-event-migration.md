@@ -101,7 +101,7 @@ longer supported. One exception is that [`RawKeyEventDataAndroid.eventSource`][]
 information is accessible now as [`KeyEvent.deviceType`][] in a more
 platform independent form.
 
-#### Migrating `IsKeyPressed` and related functions
+#### Migrating `isKeyPressed` and related functions
 
 If the legacy code used the [`RawKeyEvent.isKeyPressed`][],
 [`RawKeyEvent.isControlPressed`][], [`RawKeyEvent.isShiftPressed`][],
@@ -151,6 +151,8 @@ If the legacy code was using the [`Focus.onKey`][], [`FocusScope.onKey`][],
 an equivalent [`Focus.onKeyEvent`][], [`FocusScope.onKeyEvent`][],
 [`FocusNode.onKeyEvent`][], or [`FocusScopeNode.onKeyEvent`][] parameter that
 supplies `KeyEvent`s instead of `RawKeyEvent`s.
+
+Before:
 
 ```dart
 Widget build(BuildContext context) {
@@ -213,7 +215,7 @@ both `KeyDownEvent` and `KeyRepeatEvent` need to be checked.
 
 ## Timeline
 
-Landed in version: 3.18.0-2.0.pre<br>
+Landed in version: 3.18.0-7.0.pre<br>
 In stable release: not yet (Not in 3.18)
 
 ## References
