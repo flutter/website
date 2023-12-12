@@ -248,29 +248,30 @@ see the [`url_launcher`][] package), as
 well as a list of all prior versions
 (see [`url_launcher` versions][]).
 
-To ensure that the app doesn't break when a
-package is updated,
-specify a version range using one of the
-following formats:
+To ensure that the app doesn't break when you update a package,
+specify a version range using one of the following formats.
 
-* Range constraints: Specify a minimum and maximum version. For example:
+* **Ranged constraints:** Specify a minimum and maximum version.
 
   ```yaml
   dependencies:
     url_launcher: '>=5.4.0 <6.0.0'
   ```
 
-* Range constraints with [_caret syntax_][]
-  are similar to regular range constraints:
+* **Ranged constraints using the [caret syntax][]:**
+  Specify the version that serves as the inclusive minimum version.
+  This covers all versions from that version to the next major version.
 
   ```yaml
   dependencies:
     collection: '^5.4.0'
   ```
 
-For additional details,
-see the [package versioning guide][].
+  This syntax means the same as the one noted in the first bullet.
 
+To learn more, check out the [package versioning guide][].
+
+[caret syntax]: {{site.dart-site}}/tools/pub/dependencies#caret-syntax
 [package versioning guide]: {{site.dart-site}}/tools/pub/versioning
 [`url_launcher` versions]: {{site.pub-pkg}}/url_launcher/versions
 
