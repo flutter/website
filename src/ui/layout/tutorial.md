@@ -143,7 +143,6 @@ In this section, shell out the basic Flutter app code to start your app.
    on the app's `appBar`. This decision simplifies the code.
 
    <?code-excerpt "lib/main.dart (all)" title?>
-
    ```dart
    import 'package:flutter/material.dart';
 
@@ -186,7 +185,6 @@ the following layout.
 Add the following code after the `MyApp` class.
 
 <?code-excerpt "step2/lib/main.dart (titleSection)" title?>
-
 ```dart
 class TitleSection extends StatelessWidget {
   const TitleSection({
@@ -260,7 +258,6 @@ Within the `SingleChildScrollView` widget, replace the `Text` widget with a
 `Column` widget.
 
 <?code-excerpt "{../base,step2}/lib/main.dart" from="body:" to="children: ["?>
-
 ```diff
 --- ../base/lib/main.dart
 +++ step2/lib/main.dart
@@ -289,7 +286,6 @@ This places it at the top of the screen.
 Pass the provided name and location to the `TitleSection` constructor.
 
 <?code-excerpt "{../base,step2}/lib/main.dart" from="children:" to="],"?>
-
 ```diff
 --- ../base/lib/main.dart
 +++ step2/lib/main.dart
@@ -333,7 +329,6 @@ Add the following code after the `TitleSection` widget to contain the code
 to build the row of buttons.
 
 <?code-excerpt "lib/main.dart (ButtonStart)" title?>
-
 ```dart
 class ButtonSection extends StatelessWidget {
   const ButtonSection({super.key});
@@ -361,7 +356,6 @@ The helper also paints these children in the given color.
 Add the following code after the `ButtonSection` widget.
 
 <?code-excerpt "lib/main.dart (BuildButtonColumn)" title?>
-
 ```dart
 class ButtonSection extends StatelessWidget {
   const ButtonSection({super.key});
@@ -413,7 +407,6 @@ Add the following code into the `ButtonSection` widget.
    and after each column.
 
 <?code-excerpt "lib/main.dart (ButtonSection)" title?>
-
 ```dart
 class ButtonSection extends StatelessWidget {
   const ButtonSection({super.key});
@@ -472,8 +465,8 @@ class BuildButtonColumn extends StatelessWidget {
 Add the button section to the `children` array.
 
     <?code-excerpt path-base="layout/lakes"?>
+    
     <?code-excerpt "step{2,3}/lib/main.dart (addWidget)" title?>
-
     ```diff
     --- step2/lib/main.dart (addWidget)
     +++ step3/lib/main.dart (addWidget)
@@ -502,7 +495,6 @@ In this section, add the text description to this app.
 Add the following code as a separate widget after the `ButtonSection` widget.
 
 <?code-excerpt "step4/lib/main.dart (TextSection)" title?>
-
 ```dart
 class TextSection extends StatelessWidget {
   const TextSection({
@@ -535,7 +527,6 @@ This call needs `description` variable set to the text of the
 location description.
 
 <?code-excerpt "step{3,4}/lib/main.dart (addWidget)" title?>
-
 ```diff
 --- step3/lib/main.dart (addWidget)
 +++ step4/lib/main.dart (addWidget)
@@ -581,7 +572,6 @@ In this section, configure your app to reference images in your Flutter project.
    This change makes the image available to your code.
 
    <?code-excerpt "{step4,step5}/pubspec.yaml"?>
-
    ```diff
    --- step4/pubspec.yaml
    +++ step5/pubspec.yaml
@@ -608,7 +598,6 @@ display the image.
 Add the following `ImageSection` widget to the end of your app code.
 
 <?code-excerpt "step5/lib/main.dart (ImageSection)" title?>
-
 ```dart
 class ImageSection extends StatelessWidget {
   const ImageSection({super.key, required this.image});
@@ -637,7 +626,6 @@ Insert the `ImageSection` call as the first child in the `children` array.
 This call needs `image` variable set to the path of the image file.
 
 <?code-excerpt "step{4,5}/lib/main.dart (addWidget)" title?>
-
 ```diff
 --- step4/lib/main.dart (addWidget)
 +++ step5/lib/main.dart (addWidget)
