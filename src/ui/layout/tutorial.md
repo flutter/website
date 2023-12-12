@@ -339,8 +339,6 @@ class ButtonSection extends StatelessWidget {
 // ···
   }
 }
-// ···
-}
 ```
 
 ### Create a helper method to make buttons
@@ -360,6 +358,8 @@ Add the following code after the `ButtonSection` widget.
 class ButtonSection extends StatelessWidget {
   const ButtonSection({super.key});
 // ···
+}
+
 class BuildButtonColumn extends StatelessWidget {
   const BuildButtonColumn({
     super.key,
@@ -531,9 +531,9 @@ location description.
 --- step3/lib/main.dart (addWidget)
 +++ step4/lib/main.dart (addWidget)
 @@ -6,6 +6,16 @@
-          location: 'Kandersteg, Switzerland',
-        ),
-        ButtonSection(),
+         location: 'Kandersteg, Switzerland',
+       ),
+       ButtonSection(),
 +      TextSection(
 +        description:
 +            'Lake Oeschinen lies at the foot of the Blüemlisalp in the '
@@ -544,9 +544,9 @@ location description.
 +            'degrees Celsius in the summer. Activities enjoyed here '
 +            'include rowing, and riding the summer toboggan run.',
 +      ),
-      ],
-    ),
-  ),
+     ],
+   ),
+ ),
 ```
 
 ## Add the Image section
@@ -630,15 +630,15 @@ This call needs `image` variable set to the path of the image file.
 --- step4/lib/main.dart (addWidget)
 +++ step5/lib/main.dart (addWidget)
 @@ -1,6 +1,9 @@
-  body: const SingleChildScrollView(
-    child: Column(
-      children: [
+ body: const SingleChildScrollView(
+   child: Column(
+     children: [
 +      ImageSection(
 +        image: 'images/lake.jpg',
 +      ),
-        TitleSection(
-          name: 'Oeschinen Lake Campground',
-          location: 'Kandersteg, Switzerland',
+       TitleSection(
+         name: 'Oeschinen Lake Campground',
+         location: 'Kandersteg, Switzerland',
 ```
 
 ## Congratulations
