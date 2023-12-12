@@ -119,10 +119,10 @@ class ButtonSection extends StatelessWidget {
     );
 // #docregion ButtonStart
   }
+// #docregion BuildButtonColumn
 }
 // #enddocregion ButtonStart
 
-// #docregion BuildButtonColumn
 class BuildButtonColumn extends StatelessWidget {
   const BuildButtonColumn({
     super.key,
@@ -159,7 +159,5 @@ class BuildButtonColumn extends StatelessWidget {
     );
   }
 // #enddocregion BuildButtonColumn
-// #docregion ButtonStart
 }
 // #enddocregion ButtonSection
-// #enddocregion ButtonStart
