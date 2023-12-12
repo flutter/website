@@ -51,8 +51,12 @@ To add support for other languages,
 an application must specify additional
 `MaterialApp` (or `CupertinoApp`) properties,
 and include a package called `flutter_localizations`.
-As of June 2023, this package supports [113 languages][]
+As of December 2023, this package supports [115 languages][]
 and language variants.
+
+{% comment %}
+Consider updating the number of languages when touching this page.
+{% endcomment %}
 
 To begin, start by creating a new Flutter application
 in a directory of your choice with the `flutter create` command.
@@ -308,7 +312,8 @@ complete the following instructions:
    );
    ```
 
-8. Now you can use `AppLocalizations` anywhere in your app:
+8. Once the Material app has started,
+   you can use `AppLocalizations` anywhere in your app:
 
    <?code-excerpt "gen_l10n_example/lib/main.dart (InternationalizedTitle)"?>
    ```dart
@@ -320,6 +325,13 @@ complete the following instructions:
      title: Text(AppLocalizations.of(context)!.helloWorld),
    ),
    ```
+
+{{site.alert.note}}
+  The Material app has to actually be started to initialize
+  `AppLocalizations`. If the app hasn't yet started,
+  `AppLocalizations.of(context)!.helloWorld` causes a
+  null exception.
+{{site.alert.end}}
 
    This code generates a `Text` widget that displays "Hello World!"
    if the target device's locale is set to English,
