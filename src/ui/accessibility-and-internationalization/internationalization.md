@@ -51,7 +51,7 @@ To add support for other languages,
 an application must specify additional
 `MaterialApp` (or `CupertinoApp`) properties,
 and include a package called `flutter_localizations`.
-As of December 2023, this package supports [115 languages][]
+As of December 2023, this package supports [115 languages][language-count]
 and language variants.
 
 {% comment %}
@@ -116,7 +116,7 @@ After introducing the `flutter_localizations` package
 and adding the previous code,
 the `Material` and `Cupertino`
 packages should now be correctly localized in
-one of the 113 supported locales.
+one of the 115 supported locales.
 Widgets should be adapted to the localized messages,
 along with correct left-to-right or right-to-left layout.
 
@@ -144,7 +144,7 @@ More information about these app properties, the types they
 depend on, and how internationalized Flutter apps are typically
 structured, is covered in this page.
 
-[113 languages]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
+[language-count]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
 
 <a id="overriding-locale"></a>
 ### Overriding the locale
