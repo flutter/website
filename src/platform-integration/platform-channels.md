@@ -1393,7 +1393,7 @@ DispatchQueue.main.async {
 [`BasicMessageChannel`]: {{site.api}}/flutter/services/BasicMessageChannel-class.html
 [`BinaryCodec`]: {{site.api}}/flutter/services/BinaryCodec-class.html
 [block]: {{site.apple-dev}}/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithBlocks/WorkingwithBlocks.html
-[`cloud_firestore`]: {{site.github}}/FirebaseExtended/flutterfire/blob/master/packages/cloud_firestore/cloud_firestore_platform_interface/lib/src/method_channel/utils/firestore_message_codec.dart
+[`cloud_firestore`]: {{site.github}}/firebase/flutterfire/blob/master/packages/cloud_firestore/cloud_firestore_platform_interface/lib/src/method_channel/utils/firestore_message_codec.dart
 [`dart:html` library]: {{site.dart.api}}/dart-html/dart-html-library.html
 [developing packages]: {{site.url}}/packages-and-plugins/developing-packages
 [plugins]: {{site.url}}/packages-and-plugins/developing-packages#plugin

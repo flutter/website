@@ -326,7 +326,7 @@ Flokk [announcement blogpost][gskinner-flokk-blogpost], [repo][gskinner-flokk-re
 : A sample application built as a desktop application that
   uses desktop-supported plugins.
 
-[Photo Search app]: {{site.repo.organization}}/samples/tree/main/desktop_photo_search
+[Photo Search app]: {{site.repo.samples}}/tree/main/desktop_photo_search
 [running web app]: {{site.gallery}}
 [flutter-gallery-repo]: {{site.repo.gallery}}
 [README]: {{site.repo.gallery}}#readme

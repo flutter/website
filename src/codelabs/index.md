@@ -1,24 +1,12 @@
 ---
-title: Codelabs & workshops
-description: "Codelabs and workshops help you quickly get started programming Flutter."
+title: Codelabs
+description: >-
+  Codelabs to help you quickly get started programming Flutter.
 ---
 
 The Flutter codelabs provide a guided,
 hands-on coding experience. Some codelabs
 run in DartPad&mdash;no downloads required!
-
-Flutter workshops are similar to the codelabs,
-but are instructor led and always use DartPad.
-The provided workshop link takes you to the relevant YouTube video,
-which tells you where to find the associated DartPad link.
-
-{{site.alert.secondary}}
-  You might want to check out the workshops
-  created by our Google Developer Experts (GDEs).
-  You can find them on the [Flutter community blog][].
-{{site.alert.end}}
-
-[Flutter community blog]: {{site.medium}}/flutter-community/dartpad-workshops-from-flutter-gdes-622b52f70173
 
 ## Good for beginners
 
@@ -64,8 +52,8 @@ one of the following codelabs:
   by using slivers.
 
 * [Dart null safety in Action][] (workshop)<br>
-  An instructor-led workshop based on the [Null safety codelab][]
-  on the dart.dev site.
+  An instructor-led workshop introducing the features
+  that enable Dart's [null-safe][] type system.
 
 * [How to manage application states using inherited widgets][inherited-widget-ws] (workshop)<br>
   Learn how to manage the state of your app's data by
@@ -75,18 +63,14 @@ one of the following codelabs:
 
 [Records and Patterns in Dart 3]: {{site.codelabs}}/codelabs/dart-patterns-records
 [Dart null safety in Action]: {{site.youtube-site}}/watch?v=HdKwuHQvArY
+[null-safe]: {{site.dart-site}}/null-safety
 [inherited-widget-ws]: {{site.youtube-site}}/watch?v=LFcGPS6cGrY
 [low-level state management]: {{site.url}}/data-and-backend/state-mgmt/options#inheritedwidget--inheritedmodel
-[Null safety codelab]: {{site.dart-site}}/codelabs/null-safety
 
 ## Designing a Flutter UI
 
 Learn about Material Design and basic Flutter concepts,
 like layout and animations:
-
-* [Basic Flutter layout concepts][]<br>
-  Use DartPad in a browser (no downloads required!)
-  to learn the basics of creating a Flutter layout.
 
 * [How to debug layout issues with the Flutter Inspector][]<br>
   Not an official codelab, but step-by-step instructions on
@@ -145,7 +129,6 @@ like layout and animations:
 [Building next generation UIs in Flutter]: {{site.codelabs}}/codelabs/flutter-next-gen-uis#0
 [Adaptive Apps in Flutter]: {{site.codelabs}}/codelabs/flutter-adaptive-app
 [animations]: {{site.pub}}/packages/animations
-[Basic Flutter layout concepts]: {{site.url}}/codelabs/layout-basics
 [Building Beautiful Transitions with Material Motion for Flutter]: {{site.codelabs}}/codelabs/material-motion-flutter
 [Building scrolling experiences in Flutter]: {{site.youtube-site}}/watch?v=YY-_yrZdjGc
 [How to debug layout issues with the Flutter Inspector]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
@@ -222,7 +205,7 @@ Learn how to use Flutter with other technologies.
 
 * [Train a comment-spam detection model with TensorFlow Lite Model Maker][]<br>
   Learn how to install the TensorFlow Lite Model Maker with Colab,
-  How to use a data loader, and how to build a model.
+  how to use a data loader, and how to build a model.
 
 [Create a custom text-classification model with TensorFlow Lite Model Maker]: {{site.developers}}/codelabs/classify-text-update-tensorflow-serving
 [Create a Flutter app to classify texts with TensorFlow]: {{site.developers}}/codelabs/classify-texts-flutter-tensorflow-serving
@@ -248,9 +231,11 @@ Learn how to use Flutter with other technologies.
   can interact with the text interface or stream a voice
   interaction via the built-in microphone of a mobile device.
 
-* [Building a game with Flutter and Flame][]<br> 
-  Learn how to create a platform game (featuring
-  Dash or Sparky), using the Flame package.
+* [Introduction to Flame with Flutter][]<br> 
+  Build a Breakout clone using the Flame 2D game engine and
+  embed it in a Flutter wrapper. You will use Flame's Effects
+  to animate and remove components, along with the `google_fonts` and
+  `flutter_animate` packages, to make the whole game look well designed.
 
 * [Using FFI in a Flutter plugin][]<br> 
   Learn how to use Dart's FFI (foreign function interface)
@@ -268,7 +253,7 @@ Learn how to use Flutter with other technologies.
 [Adding WebView to your Flutter app]: {{site.codelabs}}/codelabs/flutter-webview
 [Build voice bots for Android with Dialogflow and Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter
 [Build voice bots for mobile with Dialogflow and Flutter]: {{site.youtube-site}}/watch?v=O7JfSF3CJ84
-[Building a game with Flutter and Flame]: {{site.codelabs}}/codelabs/flutter-flame-game
+[Introduction to Flame with Flutter]: {{site.codelabs}}/codelabs/flutter-flame-brick-breaker
 [Using FFI in a Flutter plugin]: {{site.codelabs}}/codelabs/flutter-ffigen
 [Create haikus about Google products with the PaLM API and Flutter]: {{site.codelabs}}/haiku-generator
 
@@ -319,9 +304,9 @@ like iOS, Android, desktop, or the web.
   today view.
 
 [Building a Cupertino app with Flutter]: {{site.codelabs}}/codelabs/flutter-cupertino
-[home-screen]:   {{site.codelabs}}/flutter-home-screen-widgets
+[home-screen]: {{site.codelabs}}/flutter-home-screen-widgets
 [How to write a Flutter plugin]: {{site.codelabs}}/codelabs/write-flutter-plugin
-[provider]: {{site.pub}}/packages/provider
+[provider]: {{site.pub-pkg}}/provider
 [Using a plugin with a Flutter web app]: {{site.codelabs}}/codelabs/web-url-launcher
 [Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-client
 

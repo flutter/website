@@ -148,8 +148,8 @@ by using the same major semantic version in your
 existing app and Flutter module plugin.
 
 
-[ExoPlayer from the video_player plugin]: {{site.repo.plugins}}/blob/master/packages/video_player/video_player/android/build.gradle
+[ExoPlayer from the video_player plugin]: {{site.repo.packages}}/blob/main/packages/video_player/video_player_android/android/build.gradle
 [firebase_crashlytics]: {{site.pub}}/packages/firebase_crashlytics
-[Gradle file]: {{site.github}}/FirebaseExtended/flutterfire/blob/bdb95fcacf7cf077d162d2f267eee54a8b0be3bc/packages/firebase_crashlytics/android/build.gradle#L40
+[Gradle file]: {{site.github}}/firebase/flutterfire/blob/bdb95fcacf7cf077d162d2f267eee54a8b0be3bc/packages/firebase_crashlytics/android/build.gradle#L40
 [resolves dependency version conflicts]: https://docs.gradle.org/current/userguide/dependency_resolution.html#sub:resolution-strategy
 

@@ -15,7 +15,7 @@ For a full list of debugging and profiling tools, check out the
   check out [`flutter_gdb`][].
 {{site.alert.end}}
 
-[`flutter_gdb`]: https://github.com/flutter/engine/blob/main/sky/tools/flutter_gdb
+[`flutter_gdb`]: {{site.repo.engine}}/blob/main/sky/tools/flutter_gdb
 
 ## Log your application
 

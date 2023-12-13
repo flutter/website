@@ -124,7 +124,7 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
   final response = await client
       .get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
 
-  // Use the compute function to run parsePhotos in a separate isolate.
+  // Synchronously run parsePhotos in the main isolate.
   return parsePhotos(response.body);
 }
 ```
@@ -289,7 +289,7 @@ class PhotosList extends StatelessWidget {
 
 ![Isolate demo]({{site.url}}/assets/images/docs/cookbook/isolate.gif){:.site-mobile-screenshot}
 
-[`compute()`]: {{site.api}}/flutter/foundation/compute-constant.html
+[`compute()`]: {{site.api}}/flutter/foundation/compute.html
 [Fetch data from the internet]: {{site.url}}/cookbook/networking/fetch-data
 [`http`]: {{site.pub-pkg}}/http
 [`http.get()`]: {{site.pub-api}}/http/latest/http/get.html

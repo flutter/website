@@ -55,6 +55,12 @@ operating system sets up the app's process.
 Android provides the concept of a [launch screen][] to
 display a `Drawable` while the app is initializing.
 
+A `Drawable` is an Android graphic.
+To learn how to add a `Drawable` to your
+Flutter project in Android Studio,
+check out [Import drawables into your project][drawables]
+in the Android developer documentation.
+
 The default Flutter project template includes a definition
 of a launch theme and a launch background. You can customize
 this by editing `styles.xml`, where you can define a theme
@@ -81,6 +87,8 @@ background color of the Flutter UI.
     <item name="android:windowBackground">@drawable/normal_background</item>
 </style>
 ```
+
+[drawables]: {{site.android-dev}}/studio/write/resource-manager#import
 
 ## Set up the FlutterActivity in AndroidManifest.xml
 
@@ -209,6 +217,6 @@ For an example of this, check out the
 [Android Splash Screens]: {{site.android-dev}}/about/versions/12/features/splash-screen
 [launch screen]: {{site.android-dev}}/topic/performance/vitals/launch-time#themed
 [pre-warming a `FlutterEngine`]: {{site.url}}/add-to-app/android/add-flutter-fragment#using-a-pre-warmed-flutterengine
-[Android splash screen sample app]: {{site.github}}/flutter/samples/tree/main/android_splash_screen
+[Android splash screen sample app]: {{site.repo.samples}}/tree/main/android_splash_screen
 [Deprecated Splash Screen API Migration guide]: {{site.url}}/release/breaking-changes/splash-screen-migration
 [Customizing web app initialization guide]: {{site.url}}/platform-integration/web/initialization

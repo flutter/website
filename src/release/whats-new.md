@@ -6,7 +6,7 @@ description: >
 
 This page contains current and previous announcements of
 what's new on the Flutter website and blog.
-For details about what's new in the Flutter releases
+For details about what's new in the Flutter releases,
 see the [release notes][] page.
 
 To stay on top of Flutter announcements including breaking changes,
@@ -17,8 +17,68 @@ and review the [Dart changelog][].
 
 [release notes]: {{site.url}}/release/release-notes
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
-[Dart Announce]: https://groups.google.com/a/dartlang.org/g/announce
+[Dart Announce]: {{site.groups}}/a/dartlang.org/g/announce
 [Dart changelog]: {{site.github}}/dart-lang/sdk/blob/main/CHANGELOG.md
+
+## 15 November 2023: 3.16 release
+
+Flutter 3.16 is live! For more information,
+check out the [Flutter 3.16 blog post][3.16-umbrella]
+and the technical [What's new in Flutter 3.16][]
+blog post.
+
+You might also check out [Dart 3.2 release][].
+
+**Docs updated or added since the 3.13 release**
+
+* As of this release, the **default theme for
+  Material Flutter apps is Material 3**.
+  Unless you explicitly specify Material 2
+  (with `useMaterial3: false`)
+  in your app's theme, your app _will_ look
+  different once you've updated.
+* While the Flutter Casual Games Toolkit isn't
+  technically _part_ of the 3.16 release, 
+  we've release a significant update of
+  the toolkit _alongside_ the 3.16 release.
+  This update includes three completely new
+  games code templates, three new games cookbook
+  recipes, and a general reorganization of
+  our games toolkit docs. For more information,
+  check out [Casual Games Toolkit][] and
+  make sure to look at the side nav!
+* The Impeller runtime is now
+  **available for Android on Vulkan devices**
+  behind the `--enable-impeller` flag.
+  For more information, check out
+  the [Impeller rendering engine][impeller] page.
+* You can now add Apple iOS app extensions to
+  your Flutter app when running on iOS.
+  To learn more, check out
+  [Adding iOS app extensions][ios-app-ext].
+
+**Articles**
+
+The following articles were published on the [Flutter Medium][]
+publication since Flutter 3.13:
+
+* [How IBM is creating a Flutter Center of Excellence][ibm]
+* [Introducing the Flutter Consulting Directory][fcd]
+* [Developing Flutter apps for large screens][ls]
+* [Dart & Flutter DevTools Extensions][dt-ext]
+* [Building your next casual game with Flutter][games-2]
+
+[3.16-umbrella]: {{site.flutter-medium}}/flutter-3-16-dart-3-2-high-level-umbrella-post-b9218b17f0f7
+[Casual Games Toolkit]: {{site.url}}/resources/games-toolkit
+[Dart 3.2 release]: {{site.medium}}/dartlang/dart-3-2-c8de8fe1b91f
+[dt-ext]: {{site.flutter-medium}}/dart-flutter-devtools-extensions-c8bc1aaf8e5f
+[fcd]: {{site.flutter-medium}}/introducing-the-flutter-consulting-directory-f6fc4c1d2ba3
+[games-2]: {{site.flutter-medium}}/building-your-next-casual-game-with-flutter-716ef457e440
+[ibm]: {{site.flutter-medium}}/how-ibm-is-creating-a-flutter-center-of-excellence-3c6a3c025441
+[impeller]: {{site.url}}/perf/impeller
+[ls]: {{site.flutter-medium}}/developing-flutter-apps-for-large-screens-53b7b0e17f10
+[ios-app-ext]: {{site.url}}/platform-integration/ios/app-extensions
+[What's new in Flutter 3.16]: {{site.flutter-medium}}/whats-new-in-flutter-3-16-dba6cb1015d1
 
 ## 16 August 2023: 3.13 release
 
@@ -68,7 +128,6 @@ recipes into the sidenav.
 [breaking-changes]: {{site.url}}/release/breaking-changes
 [deprecated-3.10]: {{site.url}}/release/breaking-changes/3-10-deprecations
 [editable-onCaretChanged]: {{site.url}}/release/breaking-changes/editable-text-scroll-into-view
-[impeller]: {{site.url}}/perf/impeller
 [oem]: {{site.url}}/testing/native-debugging?tab=from-vscode-to-xcode-ios
 [pointer]: {{site.url}}/release/breaking-changes/ignoringsemantics-migration
 [scrolling-overview]: {{site.url}}/ui/layout/scrolling
@@ -143,7 +202,7 @@ check out the [Flutter 3.13 blog post][blog-games].
 [blog-impeller]:  {{site.flutter-medium}}/whats-new-in-flutter-3-13-479d9b11df4d#a7be
 [blog-material]:  {{site.flutter-medium}}/whats-new-in-flutter-3-13-479d9b11df4d#4c90
 [blog-scrolling]: {{site.flutter-medium}}/whats-new-in-flutter-3-13-479d9b11df4d#02dc
-[Material 3]: https://m3.material.io/
+[Material 3]: {{site.material}}
 [Material Design for Flutter]: {{site.url}}/ui/design/material
 
 <hr>
@@ -338,7 +397,7 @@ and [Introducing Dart 3 alpha][].
 [Flutter concurrency for Swift developers]: {{site.url}}/get-started/flutter-for/dart-swift-concurrency
 [Flutter FAQ]: {{site.url}}/resources/faq
 [Flutter for SwiftUI developers]: {{site.url}}/get-started/flutter-for/swiftui-devs
-[Impeller]: {{site.github}}/flutter/flutter/wiki/Impeller
+[Impeller]: {{site.repo.flutter}}/wiki/Impeller
 [Internationalizing Flutter apps]: {{site.url}}/ui/accessibility-and-internationalization/internationalization
 [Introducing isolate background channels]: {{site.medium}}/flutter/introducing-background-isolate-channels-7a299609cad8
 [Learning Dart as a Swift developer]: {{site.dart-site}}/guides/language/coming-from/swift-to-dart
@@ -388,10 +447,10 @@ codelabs to support multiplatform.
 The [codelabs & workshops][] page is updated
 to reflect the latest available codelabs.
 
-[Add a user authentication flow to a Flutter app using FirebaseUI]: https://firebase.google.com/codelabs/firebase-auth-in-flutter-apps
+[Add a user authentication flow to a Flutter app using FirebaseUI]: {{site.firebase}}/codelabs/firebase-auth-in-flutter-apps
 [Building a game with Flutter and Flame]: {{site.codelabs}}/codelabs/flutter-flame-game
 [codelabs & workshops]: {{site.url}}/codelabs
-[Local development for your Flutter apps using the Firebase Emulator Suite]: https://firebase.google.com/codelabs/get-started-firebase-emulators-and-flutter
+[Local development for your Flutter apps using the Firebase Emulator Suite]: {{site.firebase}}/codelabs/get-started-firebase-emulators-and-flutter
 [Using FFI in a Flutter plugin]: {{site.codelabs}}/codelabs/flutter-ffigen
 [Your first Flutter app]: {{site.codelabs}}/codelabs/flutter-codelab-first
 
@@ -464,7 +523,7 @@ and the [Flutter 3.3 release notes][3.3 release notes].
   page has been updated with this advice.
 
 [Build and release a Windows desktop app]: {{site.url}}/deployment/windows
-[Developer mode]: https://developer.apple.com/documentation/xcode/enabling-developer-mode-on-a-device
+[Developer mode]: {{site.apple-dev}}/documentation/xcode/enabling-developer-mode-on-a-device
 [Handling errors in Flutter]: {{site.url}}/testing/errors
 [macOS install]: {{site.url}}/get-started/install/macos#install-xcode
 [navigation and routing overview]: {{site.url}}/ui/navigation
@@ -529,7 +588,7 @@ and the [Flutter 3 release notes][].
 [dart-whats-new]: {{site.dart-site}}/guides/whats-new
 [dart.dev]: {{site.dart-site}}
 [Desktop]: {{site.url}}/platform-integration/desktop
-[Flutter Firebase get started guide]: https://firebase.google.com/docs/flutter/setup
+[Flutter Firebase get started guide]: {{site.firebase}}/docs/flutter/setup
 [Games page]: {{site.main-url}}/games
 [Games doc page]: {{site.url}}/resources/games-toolkit
 [js-to-dart]: {{site.dart-site}}/guides/language/coming-from/js-to-dart
@@ -1194,7 +1253,7 @@ New and updated docs on the site include:
 * The Flutter layout codelab has been rewritten and
   uses the updated DartPad, the browser-based tool for
   running Dart code. DartPad now supports Flutter!
-  [Try it out] and let us know what you think.
+  [Try it out]({{site.dartpad}}) and let us know what you think.
 * A new page on [using the dart:ffi library][]
   to bind your app to native code (a feature currently under
   development).
@@ -1242,7 +1301,6 @@ Happy Fluttering!
 [Showcase]: {{site.main-url}}/showcase
 [`ToggleButtons`]: {{site.api}}/flutter/material/ToggleButtons-class.html
 [ToggleButtons demo]: {{site.github}}/csells/flutter_toggle_buttons
-[Try it out]: {{site.url}}/codelabs/layout-basics
 [Upgrading from package:flutter_web to the Flutter SDK]: {{site.repo.flutter}}/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
 [using the dart:ffi library]: {{site.url}}/platform-integration/android/c-interop
 [web FAQ]: {{site.url}}/platform-integration/web/faq
@@ -1305,10 +1363,9 @@ component and how to customize it, see
 For more information on updates, see the [1.5.4 release notes][]
 or [download the release][].
 
-We are updating DartPad to work with Flutter. Try our new
-[Basic Flutter layout codelab][] and tell us what you think!
+We are updating DartPad to work with Flutter. Try the new
+Basic Flutter layout codelab and tell us what you think!
 
-[Basic Flutter layout codelab]: {{site.url}}/codelabs/layout-basics
 [download the release]: {{site.url}}/release/archive
 [Flutter 1.5]: {{site.google-blog}}/2019/05/Flutter-io19.html
 [1.5.4 release notes]: {{site.url}}/release/release-notes/release-notes-1.5.4

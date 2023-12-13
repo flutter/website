@@ -39,7 +39,7 @@ To improve the input experience in these scenarios,
 a new tri-state enum, `MaxLengthEnforcement`, was introduced.
 Its values describe supported strategies for handling
 active composing regions when applying a
-`LengthLimitingTextInutFormatter`.
+`LengthLimitingTextInputFormatter`.
 A new `maxLengthEnforcement` parameter that uses
 this enum has been added to text fields to replace
 the boolean `maxLengthEnforced` parameter.
@@ -244,7 +244,7 @@ Relevant PR:
 * [PR 68086][]: Introduce `MaxLengthEnforcement`
 
 [`MaxLengthEnforcement` design doc]: {{site.url}}/go/max-length-enforcement
-[`MaxLengthEnforcement`]: {{site.api}}/flutter/services/MaxLengthEnforcement-class.html
+[`MaxLengthEnforcement`]: {{site.api}}/flutter/services/MaxLengthEnforcement.html
 [`LengthLimitingTextInputFormatter`]: {{site.api}}/flutter/services/LengthLimitingTextInputFormatter-class.html
 [`maxLength`]: {{site.api}}/flutter/services/LengthLimitingTextInputFormatter/maxLength.html
 [Issue 63753]: {{site.repo.flutter}}/issues/63753

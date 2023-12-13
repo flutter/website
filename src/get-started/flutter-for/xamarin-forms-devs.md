@@ -1376,7 +1376,7 @@ package to use i10n machinery, such as date/time formatting.
 dependencies:
   flutter_localizations:
     sdk: flutter
-  intl: '^0.17.0'
+  intl: any # Use version of intl from flutter_localizations.
 ```
 
 To use the `flutter_localizations` package,
@@ -2514,7 +2514,8 @@ equivalent, `SharedPreferences`.
 In Xamarin.Forms most applications would use the `sqlite-net-pcl`
 plugin to access SQLite databases.
 
-In Flutter, access this functionality using the
+In Flutter, on macOS, Android, and iOS,
+access this functionality using the
 [`sqflite`][] plugin.
 
 ## Debugging
