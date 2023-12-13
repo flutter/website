@@ -1,6 +1,6 @@
 ---
 title: Migrate RawKeyEvent/RawKeyboard system to KeyEvent/HardwareKeyboard system
-description: >
+description: >-
   The raw key event subsystem has been superseded by the key event subsystem,
   and APIs that use RawKeyEvent and RawKeyboard are converted to KeyEvent and
   HardwareKeyboard.
@@ -18,12 +18,14 @@ In the original key event subsystem, handling each platform's quirks in the
 framework and in client apps caused overly complex code, and the old system
 didn't properly represent the true state of key events on the system.
 
-[RawKeyboard] is the legacy API, and has been deprecated and will be removed in
-the future. The replacements are [HardwareKeyboard] and [KeyEvent] APIs (such as
-[FocusNode.onKeyEvent]).
+[`RawKeyboard`][] is the legacy API, and has been deprecated and
+will be removed in the future.
+The replacements are [`HardwareKeyboard`][] and [`KeyEvent`][] APIs
+(such as [`FocusNode.onKeyEvent`][]).
 
-Behavior-wise, [RawKeyboard] provided a less unified, less regular event model
-than [HardwareKeyboard] does. For example:
+Behavior-wise, [`RawKeyboard`][] provided a
+less unified,less regular event model than [`HardwareKeyboard`][] does.
+For example:
 
 * Down events were not always matched with an up event, and vice versa (the set
   of pressed keys was silently updated).
@@ -44,7 +46,7 @@ that will occur when the deprecated APIs are removed.
 
 Below are the APIs that have been deprecated.
 
-### Deprecated APIs That Have an Equivalent
+### Deprecated APIs that have an equivalent
 
 * [`Focus.onKey`][] => [`Focus.onKeyEvent`][]
 * [`FocusNode.attach`][]'s `onKey` argument => `onKeyEvent` argument
@@ -58,7 +60,7 @@ Below are the APIs that have been deprecated.
 * [`RawKeyEvent`][] => [`KeyEvent`][]
 * [`RawKeyUpEvent`][] => [`KeyUpEvent`][]
 
-### APIs That Have Been Discontinued
+### APIs that have been discontinued
 
 These APIs are no longer needed once there is only one key event system, or
 their functionality is no longer offered.
@@ -87,8 +89,9 @@ their functionality is no longer offered.
 
 ## Migration guide
 
-APIs provided by the Flutter framework are already migrated. Migration is needed
-only if any of the classes or methods listed in the previous section are used.
+APIs provided by the Flutter framework are already migrated.
+Migration is needed only if any of the classes or methods listed in
+the previous section are used.
 
 ### Migrating your code that uses `RawKeyEvent`
 
@@ -208,10 +211,11 @@ KeyEventResult _handleKeyEvent(KeyEvent _) {
 }
 ```
 
-Be careful to check conditionals: a [`KeyRepeatEvent`][] is also a key down event,
-but it is a different type (it is not a subclass of [`KeyDownEvent`][]), so
-don't assume that `keyEvent is! KeyDownEvent` only allows key up events, because
-both `KeyDownEvent` and `KeyRepeatEvent` need to be checked.
+Be careful to check conditionals:
+a [`KeyRepeatEvent`][] is also a key down event, but
+it is a different type (it is not a subclass of [`KeyDownEvent`][]), so
+don't assume that `keyEvent is! KeyDownEvent` only allows key up events,
+because both `KeyDownEvent` and `KeyRepeatEvent` need to be checked.
 
 ## Timeline
 
