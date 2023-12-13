@@ -3,6 +3,8 @@ title: Use a custom font
 description: How to use custom fonts.
 ---
 
+{% include docs/yt_shims.liquid %}
+
 <?code-excerpt path-base="cookbook/design/fonts/"?>
 
 Although Android and iOS offer high quality system fonts,
@@ -14,12 +16,12 @@ or perhaps you downloaded a font from [Google Fonts][].
   Check out the [google_fonts][] package for direct access
   to over 1,000 open-sourced font families.
 
-  <iframe class="full-width" src="{{site.youtube-site}}/embed/8Vzv2CdbEY0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe class="full-width" src="{{yt-embed}}/8Vzv2CdbEY0" title="Learn about the google_fonts Flutter Package" {{yt-set}}></iframe>
 {{site.alert.end}}
 
 {{site.alert.note}}
-  For another approach to using custom fonts, 
-  especially if you want to re-use one font over multiple projects, 
+  For another approach to using custom fonts,
+  especially if you want to re-use one font over multiple projects,
   see [Export fonts from a package][].
 {{site.alert.end}}
 
@@ -95,25 +97,25 @@ these files are included in the app's asset bundle.
 A single font can reference many different files with different
 outline weights and styles:
 
-  * The `weight` property specifies the weight of the outlines in
+* The `weight` property specifies the weight of the outlines in
     the file as an integer multiple of 100, between 100 and 900.
     These values correspond to the [`FontWeight`][] and can be used in the
-    [`fontWeight`][fontWeight property] property of a [`TextStyle`][] object. 
-    For example, if you want to use the `RobotoMono-Bold` font defined above, 
+    [`fontWeight`][fontWeight property] property of a [`TextStyle`][] object.
+    For example, if you want to use the `RobotoMono-Bold` font defined above,
     you would set `fontWeight` to `FontWeight.w700` in your `TextStyle`.
-    
+
     Note that defining the `weight` property does not
     override the actual weight of the font. You would not be able to
     access `RobotoMono-Bold` with `FontWeight.w100`, even if its `weight`
     was set to 100.
 
-  * The `style` property specifies whether the outlines in the file are
-    `italic` or `normal`. 
+* The `style` property specifies whether the outlines in the file are
+    `italic` or `normal`.
     These values correspond to the [`FontStyle`][] and can be used in the
-    [`fontStyle`][fontStyle property] property of a [`TextStyle`][] object. 
-    For example, if you want to use the `Raleway-Italic` font defined above, 
+    [`fontStyle`][fontStyle property] property of a [`TextStyle`][] object.
+    For example, if you want to use the `Raleway-Italic` font defined above,
     you would set `fontStyle` to `FontStyle.italic` in your `TextStyle`.
-    
+
     Note that defining the `style` property does not
     override the actual style of the font; You would not be able to
     access `Raleway-Italic` with `FontStyle.normal`, even if its `style`
@@ -247,7 +249,6 @@ class MyHomePage extends StatelessWidget {
 ```
 
 ![Custom Fonts Demo]({{site.url}}/assets/images/docs/cookbook/fonts.png){:.site-mobile-screenshot}
-
 
 [Export fonts from a package]: {{site.url}}/cookbook/design/package-fonts
 [`fontFamily`]: {{site.api}}/flutter/painting/TextStyle/fontFamily.html

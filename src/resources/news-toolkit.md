@@ -55,5 +55,5 @@ You might also check out:
 
 [toolkit]: https://flutter.github.io/news_toolkit/
 [blog]: {{site.flutter-medium}}/announcing-the-flutter-news-toolkit-180a0d32c012
-[video]: {{site.youtube-site}}/watch?v=dukRAS-OUMM
+[video]: {{yt-watch}}?v=dukRAS-OUMM
 [file an issue]: {{site.repo.flutter}}/issues

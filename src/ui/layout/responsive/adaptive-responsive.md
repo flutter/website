@@ -4,6 +4,8 @@ description: It's important to create apps, whether for mobile or web, so that t
 short-title: Responsive and adaptive
 ---
 
+{% include docs/yt_shims.liquid %}
+
 One of Flutter's primary goals is to create a framework
 that allows you to develop apps from a single codebase
 that look and feel great on any platform.
@@ -14,7 +16,7 @@ phone with two screens, to a high def monitor.
 
 Two terms that describe concepts for this
 scenario are _adaptive_ and _responsive_. Ideally,
-you'd want your app to be _both_ but what, 
+you'd want your app to be _both_ but what,
 exactly, does this mean?
 These terms are similar, but they are not the same.
 
@@ -48,7 +50,7 @@ an app can be both, or neither.
 
 Learn more in the following 5-minute video:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/HD5gYnspYzk?si=dsA37QUjHBb2Zh_-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{yt-embed}}/HD5gYnspYzk?si=dsA37QUjHBb2Zh_-" title="Learn the difference between adaptive and responsive Flutter apps" {{yt-set}}></iframe>
 [Adaptive vs Responsive][]
 
 ## Creating a responsive Flutter app
@@ -105,7 +107,6 @@ including contributions from the Flutter community:
 * [How to make flutter app responsive according to different screen
   size?][], a question on StackOverflow
 
-
 [`AspectRatio`]: {{site.api}}/flutter/widgets/AspectRatio-class.html
 [`BoxConstraints`]: {{site.api}}/flutter/rendering/BoxConstraints-class.html
 [Build Responsive UIs in Flutter]: {{site.medium}}/flutter-community/build-responsive-uis-in-flutter-fd450bd59158
@@ -134,17 +135,17 @@ Learn more about creating an adaptive Flutter app with
 You might also check out the following episodes
 of The Boring Show:
 
-<iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/n6Awpg1MO6M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{yt-embed}}/n6Awpg1MO6M" title="Learn about adaptative layouts on the Boring Show" {{yt-set}}></iframe>
 [Adaptive layouts][]
 
-<iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/eikOZzfc0l4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{yt-embed}}/eikOZzfc0l4" title="Continue to learn about adaptative layouts on the Boring Show" {{yt-set}}></iframe>
 [Adaptive layouts, part 2][]
 
 For an excellent example of an adaptive app,
-check out Flutter Folio, a scrapbooking app created 
+check out Flutter Folio, a scrapbooking app created
 in collaboration with gskinner and the Flutter team:
 
-<iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/yytBENOnF0w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{yt-embed}}/yytBENOnF0w" title="Watch a demonstration of the Flutter Folio app" {{yt-set}}></iframe>
 
 The [Folio source code][] is also available on GitHub.
 Learn more on the [gskinner blog][].
@@ -160,8 +161,8 @@ in the following resources:
 * The [Flutter gallery app][] ([repo][]) has been written as an
   adaptive app.
 
-[Adaptive layouts]: {{site.youtube-site}}/watch?v=n6Awpg1MO6M&t=694s
-[Adaptive layouts, part 2]: {{site.youtube-site}}/watch?v=eikOZzfc0l4&t=11s
+[Adaptive layouts]: {{yt-watch}}?v=n6Awpg1MO6M&t=694s
+[Adaptive layouts, part 2]: {{yt-watch}}?v=eikOZzfc0l4&t=11s
 [Adaptive vs Responsive]: {{site.youtube-site}}/HD5gYnspYzk?si=5ItDD7UjXvGCRM0K
 [Building adaptive apps]: {{site.url}}/ui/layout/responsive/building-adaptive-apps
 
