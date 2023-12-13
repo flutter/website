@@ -4,15 +4,17 @@ description: How to write a staggered animation in Flutter.
 short-title: Staggered
 ---
 
+{% include docs/yt_shims.liquid %}
+
 {{site.alert.secondary}}
   <h4 class="no_toc">What you'll learn</h4>
 
-  * A staggered animation consists of sequential or overlapping
+* A staggered animation consists of sequential or overlapping
     animations.
-  * To create a staggered animation, use multiple `Animation` objects.
-  * One `AnimationController` controls all of the `Animation`s.
-  * Each `Animation` object specifies the animation during an `Interval`.
-  * For each property being animated, create a `Tween`.
+* To create a staggered animation, use multiple `Animation` objects.
+* One `AnimationController` controls all of the `Animation`s.
+* Each `Animation` object specifies the animation during an `Interval`.
+* For each property being animated, create a `Tween`.
 {{site.alert.end}}
 
 {{site.alert.secondary}}
@@ -40,7 +42,7 @@ This guide shows how to build a staggered animation in Flutter.
   : Shows a series of sequential and overlapping animations
     of a single widget. Tapping the screen begins an animation
     that changes opacity, size, shape, color, and padding.
-    
+
   [staggered_pic_selection][]
   : Shows deleting an image from a list of images displayed
     in one of three sizes. This example uses two
@@ -61,12 +63,7 @@ This guide shows how to build a staggered animation in Flutter.
 The following video demonstrates the animation performed by
 basic_staggered_animation:
 
-<div class="embedded-video-wrapper">
-  <iframe class="embedded-video-wrapper__frame"
-    src="{{site.youtube-site}}/embed/0fFvnZemmh8?rel=0"
-    frameborder="0" allowfullscreen>
-  </iframe>
-</div>
+<iframe width="560" height="315" src="{{yt-embed}}/0fFvnZemmh8" title="Watch this example of a staggered animation in Flutter" {{yt-set-short}}></iframe>
 
 In the video, you see the following animation of a single widget,
 which begins as a bordered blue square with slightly rounded corners.
@@ -91,16 +88,16 @@ After running forward, the animation runs in reverse.
 {{site.alert.secondary}}
   <h4 class="no_toc">What's the point?</h4>
 
-  * All of the animations are driven by the same
+* All of the animations are driven by the same
     [`AnimationController`][].
-  * Regardless of how long the animation lasts in real time,
+* Regardless of how long the animation lasts in real time,
     the controller's values must be between 0.0 and 1.0, inclusive.
-  * Each animation has an [`Interval`][]
+* Each animation has an [`Interval`][]
     between 0.0 and 1.0, inclusive.
-  * For each property that animates in an interval, create a
+* For each property that animates in an interval, create a
     [`Tween`][]. The `Tween` specifies the start and end
     values for that property.
-  * The `Tween` produces an [`Animation`][]
+* The `Tween` produces an [`Animation`][]
     object that is managed by the controller.
 {{site.alert.end}}
 
@@ -298,7 +295,7 @@ The animation runs forward, then backward.
 
 class _StaggerDemoState extends State<StaggerDemo>
     with TickerProviderStateMixin {
-  late AnimationController _controller;
+  late AnimationController_controller;
 
   @override
   void initState() {
@@ -343,7 +340,7 @@ class _StaggerDemoState extends State<StaggerDemo>
                 color:  Colors.black.withOpacity(0.5),
               ),
             ),
-            child: StaggerAnimation(controller: _controller.view),
+            child: StaggerAnimation(controller:_controller.view),
           ),
         ),
       ),
@@ -351,7 +348,6 @@ class _StaggerDemoState extends State<StaggerDemo>
   }
 }
 {% endprettify %}
-
 
 [`Animation`]: {{site.api}}/flutter/animation/Animation-class.html
 [animation controllers]: {{site.api}}/flutter/animation/AnimationController-class.html
@@ -363,9 +359,6 @@ class _StaggerDemoState extends State<StaggerDemo>
 [staggered_pic_selection]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/staggered_pic_selection
 [`CurvedAnimation`]: {{site.api}}/flutter/animation/CurvedAnimation-class.html
 [`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
-[flutter_sequence_animation]: {{site.pub}}/packages/flutter_sequence_animation
 [Full code for basic_staggered_animation's main.dart]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/basic_staggered_animation/main.dart
 [`Interval`]: {{site.api}}/flutter/animation/Interval-class.html
-[Material motion spec]: {{site.material}}/styles/motion/overview
-[pub.dev]: {{site.pub}}/packages
 [`Tween`]: {{site.api}}/flutter/animation/Tween-class.html

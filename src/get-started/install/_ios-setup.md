@@ -11,8 +11,8 @@ To develop Flutter apps for iOS, you need a Mac with Xcode installed.
     installed version, run the following commands.
 
     ```terminal
-    $ sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
-    $ sudo xcodebuild -runFirstLaunch
+    sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+    sudo xcodebuild -runFirstLaunch
     ```
 
     To use the latest version of Xcode, use this path.
@@ -27,7 +27,7 @@ To develop Flutter apps for iOS, you need a Mac with Xcode installed.
     1. Open the Terminal and run:
 
        ```terminal
-       $ sudo xcodebuild -license
+       sudo xcodebuild -license
        ```
 
 Versions older than the latest stable version might still work,
@@ -40,21 +40,21 @@ With Xcode, you can run Flutter apps on an iOS device or on the simulator.
 To prepare to run and test your Flutter app on the iOS simulator,
 follow this procedure.
 
- 1. If using Xcode 15 or greater, download and install the iOS Simulator 
+ 1. If using Xcode 15 or greater, download and install the iOS Simulator
     by running the following command:
 
     ```terminal
-    $ xcodebuild -downloadPlatform iOS
+    xcodebuild -downloadPlatform iOS
     ```
 
-    If you want to use a different method of downloading and installing the 
-    iOS Simulator, check out 
+    If you want to use a different method of downloading and installing the
+    iOS Simulator, check out
     [Apple's documentation on installing Simulators][] for more options.
 
  1. To start the Simulator, run the following command:
 
     ```terminal
-    $ open -a Simulator
+    open -a Simulator
     ```
 
  1. Set your Simulator to use a 64-bit device (iPhone 5s or later).
@@ -354,7 +354,6 @@ flutter run --device-timeout 60
 - To learn how to configure wireless debugging with `flutter attach`,
   check out [Debugging your add-to-app module][].
 
-
 ##### Install CocoaPods
 
 Follow this procedure if your apps depend on [Flutter plugins][]
@@ -363,7 +362,7 @@ with native iOS code.
 To [Install and set up CocoaPods][], run the following commands:
 
 ```terminal
-$ sudo gem install cocoapods
+sudo gem install cocoapods
 ```
 
 {{site.alert.note}}
@@ -374,7 +373,7 @@ $ sudo gem install cocoapods
   run the command:
 
   ```terminal
-  $ sudo gem uninstall ffi && sudo gem install ffi -- --enable-libffi-alloc
+  sudo gem uninstall ffi && sudo gem install ffi -- --enable-libffi-alloc
   ```
 {{site.alert.end}}
 

@@ -789,7 +789,7 @@ Flutter Gallery [running app][], [repo][]
 [`FloatingActionButton`]: {{site.api}}/flutter/material/FloatingActionButton-class.html
 [Flutter API documentation]: {{site.api}}
 [Flutter cookbook]: {{site.url}}/cookbook
-[Flutter's Layered Design]: {{site.youtube-site}}/watch?v=dkyY9WCGMi0
+[Flutter's Layered Design]: {{yt-watch}}?v=dkyY9WCGMi0
 [`FormField`]: {{site.api}}/flutter/widgets/FormField-class.html
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [`foundation` library]: {{site.api}}/flutter/foundation/foundation-library.html

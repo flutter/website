@@ -196,7 +196,7 @@ when the application state changes. This model is inspired by
 which includes a rethinking of many traditional design principles.
 
 [faq]: {{site.url}}/resources/faq#what-programming-paradigm-does-flutters-framework-use
-[fb]: {{site.youtube-site}}/watch?time_continue=2&v=x7cQ3mrcKaY&feature=emb_logo
+[fb]: {{yt-watch}}?time_continue=2&v=x7cQ3mrcKaY&feature=emb_logo
 
 In most traditional UI frameworks, the user interface's initial state is
 described once and then separately updated by user code at runtime, in response
@@ -751,7 +751,7 @@ GPU to render it.
 Further details of the composition and rasterization stages of the pipeline are
 beyond the scope of this high-level article, but more information can be found
 [in this talk on the Flutter rendering
-pipeline]({{site.youtube-site}}/watch?v=UUfXWzp0-DU).
+pipeline]({{yt-watch}}?v=UUfXWzp0-DU).
 
 ## Platform embedding
 

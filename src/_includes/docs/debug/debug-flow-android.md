@@ -14,7 +14,7 @@ To generate the needed Android platform dependencies,
 run the `flutter build` command.
 
 ```terminal
-$ flutter build appbundle --debug
+flutter build appbundle --debug
 ```
 
 ```terminal
@@ -48,8 +48,6 @@ If you use VS Code to debug most of your code, start with this section.
 {:.no_toc}
 
 {% include docs/debug/debug-android-attach-process.md %}
-
-[`url_launcher`]: {{site.url}}/examples/testing/oem_debugging
 
 </div>
 
