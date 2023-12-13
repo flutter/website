@@ -92,7 +92,7 @@ To publish your packages to `pub.dev`,
 you need to be able to access both Google Auth and the `pub.dev` site.
 
 {% comment %}
-From https://github.com/flutter/website/pull/9338#discussion_r1328077020
+From <https://github.com/flutter/website/pull/9338#discussion_r1328077020>
 {% endcomment %}
 
 To enable access to `pub.dev`:
@@ -117,8 +117,6 @@ To enable access to `pub.dev`:
 
 To learn more about publishing packages, check out the
 [Dart documentation on publishing packages][].
-
-[Dart documentation on proxies]: {{site.dart-site}}/tools/pub/troubleshoot#pub-get-fails-from-behind-a-corporate-firewall
 
 [Dart documentation on publishing packages]: {{site.dart-site}}/tools/pub/publishing
 

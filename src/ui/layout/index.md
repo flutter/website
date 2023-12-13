@@ -804,7 +804,6 @@ color or image.
 </div>
 
 #### Examples (Container)
-
 {:.no_toc}
 
 This layout consists of a column with two rows, each containing
@@ -876,7 +875,6 @@ detects that its contents are too long to fit the render box,
 it automatically scrolls.
 
 #### Summary (GridView)
-
 {:.no_toc}
 
 * Lays widgets out in a grid
@@ -900,7 +898,6 @@ it automatically scrolls.
 {{site.alert.end}}
 
 #### Examples (GridView)
-
 {:.no_toc}
 
 <div class="row">
@@ -953,7 +950,6 @@ provides scrolling when its content is too long for
 its render box.
 
 #### Summary (ListView)
-
 {:.no_toc}
 
 * A specialized [`Column`][] for organizing a list of boxes
@@ -963,7 +959,6 @@ its render box.
   supports scrolling
 
 #### Examples (ListView)
-
 {:.no_toc}
 
 <div class="row">
@@ -1038,7 +1033,6 @@ widget&mdash;often an image. The widgets can completely
 or partially overlap the base widget.
 
 #### Summary (Stack)
-
 {:.no_toc}
 
 * Use for widgets that overlap another widget
@@ -1048,7 +1042,6 @@ or partially overlap the base widget.
 * You can choose to clip children that exceed the render box
 
 #### Examples (Stack)
-
 {:.no_toc}
 
 <div class="row">
@@ -1127,7 +1120,6 @@ For a list of supported elevation values, see [Elevation][] in the
 Specifying an unsupported value disables the drop shadow entirely.
 
 #### Summary (Card)
-
 {:.no_toc}
 
 * Implements a [Material card][]
@@ -1139,7 +1131,6 @@ Specifying an unsupported value disables the drop shadow entirely.
 * From the [Material library][]
 
 #### Examples (Card)
-
 {:.no_toc}
 
 <div class="row">
@@ -1220,7 +1211,6 @@ and trailing icons. `ListTile` is most commonly used in
 [`Card`][] or [`ListView`][], but can be used elsewhere.
 
 #### Summary (ListTile)
-
 {:.no_toc}
 
 * A specialized row that contains up to 3 lines of text and
@@ -1229,7 +1219,6 @@ and trailing icons. `ListTile` is most commonly used in
 * From the [Material library][]
 
 #### Examples (ListTile)
-
 {:.no_toc}
 
 <div class="row">

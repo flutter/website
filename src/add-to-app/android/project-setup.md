@@ -58,7 +58,6 @@ android {
 <div class="tab-pane active" id="with-android-studio" role="tabpanel" aria-labelledby="with-android-studio-tab" markdown="1">
 
 ### Integrate with Android Studio
-
 {:.no_toc}
 
 The Android Studio IDE can help integrate your Flutter module.
@@ -112,7 +111,6 @@ Android project to add your Flutter module as a dependency.
 <div class="tab-pane" id="without-android-studio" role="tabpanel" aria-labelledby="without-android-studio-tab" markdown="1">
 
 ### Integrate without Android Studio
-
 {:.no_toc}
 
 To integrate a Flutter module with an existing Android app
@@ -120,7 +118,6 @@ manually, without using Flutter's Android Studio plugin,
 follow these steps:
 
 #### Create a Flutter module
-
 {:.no_toc}
 
 Let's assume that you have an existing Android app at
@@ -162,7 +159,6 @@ module an embeddable Android library.
 {{site.alert.end}}
 
 #### Java version requirement
-
 {:.no_toc}
 
 Flutter requires your project to declare compatibility with Java 11 or later.
@@ -220,7 +216,6 @@ existing app in Gradle. You can achieve this in two ways.
 <div class="tab-pane active" id="android-archive" role="tabpanel" aria-labelledby="android-archive-tab" markdown="1">
 
 ### Depend on the Android Archive (AAR)
-
 {:.no_toc}
 
 This option packages your Flutter library as a generic local
@@ -316,7 +311,6 @@ dependencies {
 <div class="tab-pane" id="module-source" role="tabpanel" aria-labelledby="module-source-tab" markdown="1">
 
 ### Depend on the module's source code
-
 {:.no_toc}
 
 This option enables a one-step build for both your
