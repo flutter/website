@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 void main() {
   runApp(
@@ -24,7 +25,7 @@ class AppHome extends StatelessWidget {
                 debugDumpSemanticsTree();
                 print('Clicked!');
               },
-              child: Text('Click Me!', style: TextStyle(fontSize: 56))),
+              child: const Text('Click Me!', style: TextStyle(fontSize: 56))),
         ),
       ),
     );
