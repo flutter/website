@@ -489,6 +489,7 @@ To obtain a dump of the Semantics tree:
 
 <?code-excerpt "lib/dump_semantic_tree.dart"?>
 ```dart
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
@@ -514,7 +515,9 @@ class AppHome extends StatelessWidget {
           child: GestureDetector(
               onTap: () {
                 debugDumpSemanticsTree();
-                print('Clicked!');
+                if (kDebugMode) {
+                  print('Clicked!');
+                }
               },
               child: const Text('Click Me!', style: TextStyle(fontSize: 56))),
         ),
