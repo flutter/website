@@ -3,6 +3,8 @@ title: Using the Flutter inspector
 description: Learn how to use the Flutter inspector to explore a Flutter app's widget tree.
 ---
 
+{% include docs/yt_shims.liquid %}
+
 <?code-excerpt path-base="../examples/visual_debugging/"?>
 
 {{site.alert.note}}
@@ -70,7 +72,6 @@ used as the visual version of the label.
 [Highlight repaints]: #highlight-repaints
 [Highlight oversized images]: #highlight-oversized-images
 
-
 ## Inspecting a widget
 
 You can browse the interactive widget tree to view nearby
@@ -97,7 +98,7 @@ Flutter layouts.
 For an overview of what you can do with this tool, see
 the Flutter Explorer video:
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/Jakrc3Tn_y4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{yt-embed}}/Jakrc3Tn_y4" title="Learn about the Layout Explorer in Flutter DevTools" {{yt-set}}></iframe>
 
 You might also find the following step-by-step article useful:
 
@@ -112,6 +113,7 @@ supports both [flex layouts][] and fixed size layouts, and has
 specific tooling for both kinds.
 
 #### Flex layouts
+
 When you select a flex widget (for example, [`Row`][], [`Column`][], [`Flex`][])
 or a direct child of a flex widget, the flex layout tool will
 appear in the Layout Explorer.
@@ -169,7 +171,6 @@ Supported values:
 * `MainAxisAlignment.spaceAround`
 * `MainAxisAlignment.spaceEvenly`
 
-
 ###### crossAxisAlignment
 
 ![The Layout Explorer changing cross axis alignment]({{site.url}}/assets/images/docs/tools/devtools/layout_explorer_cross_axis_alignment.gif){:width="100%"}
@@ -180,7 +181,6 @@ Supported values:
 * `CrossAxisAlignment.center`
 * `CrossAxisAlignment.end`
 * `CrossAxisAlignment.stretch`
-
 
 ###### FlexParentData.flex
 
@@ -198,6 +198,7 @@ Layout Explorer supports the two different types of
 [`FlexFit`][]: `loose` and `tight`.
 
 #### Fixed size layouts
+
 When you select a fixed size widget that is not a child
 of a flex widget, fixed size layout information will appear
 in the Layout Explorer. You can see size, constraint, and padding
@@ -229,14 +230,14 @@ void setSlowAnimations() {
   timeDilation = 5.0;
 }
 ```
- 
+
 This slows the animations by 5x.
 
 #### See also
 
 The following links provide more info.
 
-* [Flutter documentation: timeDilation property]({{site.api}}/flutter/scheduler/timeDilation.html) 
+* [Flutter documentation: timeDilation property]({{site.api}}/flutter/scheduler/timeDilation.html)
 
 The following screen recordings show before and after slowing an animation.
 
@@ -264,7 +265,7 @@ void showLayoutGuidelines() {
 
 #### Render boxes
 
-Widgets that draw to the screen create a [render box][], the 
+Widgets that draw to the screen create a [render box][], the
 building blocks of Flutter layouts. They're shown with a bright blue border:
 
 ![Screenshot of render box guidelines]({{site.url}}/assets/images/docs/tools/devtools/debug-toggle-guideline-render-box.png)
@@ -332,6 +333,7 @@ void showBaselines() {
   debugPaintBaselinesEnabled = true;
 }
 ```
+
 ### Highlight repaints
 
 This option draws a border around all [render boxes][]
@@ -458,7 +460,7 @@ This makes the engine decode this image at the specified size,
 and reduces memory usage (decoding and storage is still more expensive
 than if the image asset itself was shrunk).
 The image is rendered to the constraints of the layout or width and height
-regardless of these parameters. 
+regardless of these parameters.
 
 This property can also be set in code:
 
@@ -473,10 +475,9 @@ void showOversizedImages() {
 
 You can learn more at the following link:
 
-- [Flutter documentation: debugInvertOversizedImages]({{site.api}}/flutter/painting/debugInvertOversizedImages.html)
+* [Flutter documentation: debugInvertOversizedImages]({{site.api}}/flutter/painting/debugInvertOversizedImages.html)
 
 [render box]: {{site.api}}/flutter/rendering/RenderBox-class.html
-
 
 ## Details Tree
 
@@ -485,7 +486,6 @@ selected widget. From here, you can gather useful information about a
 widget's properties, render object, and children.
 
 ![The Details Tree view]({{site.url}}/assets/images/docs/tools/devtools/inspector_details_tree.png){:width="100%"}
-
 
 ## Track widget creation
 
@@ -518,6 +518,7 @@ being considered equal in debug builds. For more details, see
 the discussion on [common problems when debugging][].
 
 ## Inspector settings
+
 ![The Flutter Inspector Settings dialog]({{site.url}}/assets/images/docs/tools/devtools/flutter_inspector_settings.png){:width="100%"}
 
 ### Enable hover inspection
@@ -538,6 +539,7 @@ will be able to see all widgets in the tree from all packages.
 In order to show other widgets, a parent directory of theirs must be added to the Package Directories.
 
 For example, consider the following directory structure:
+
 ```
 project_foo
   pkgs
@@ -571,20 +573,16 @@ using DevTools, check out a guided
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
 [common problems when debugging]: {{site.url}}/testing/debugging#common-problems
 [`crossAxisAlignment`]: {{site.api}}/flutter/widgets/Flex/crossAxisAlignment.html
-[DartConf 2018 talk]: {{site.youtube-site}}/watch?v=JIcmJNT9DNI
+[DartConf 2018 talk]: {{yt-watch}}?v=JIcmJNT9DNI
 [debug mode]: {{site.url}}/testing/build-modes#debug
-[Debugging Flutter apps]: {{site.url}}/testing/debugging
-[DevTools written in Flutter]: {{site.url}}/tools/devtools/overview#how-do-i-try-devtools-written-in-flutter
 [`Flex`]: {{site.api}}/flutter/widgets/Flex-class.html
 [flex layouts]: {{site.api}}/flutter/widgets/Flex-class.html
 [`FlexFit`]: {{site.api}}/flutter/rendering/FlexFit.html
 [`FlexParentData.fit`]: {{site.api}}/flutter/rendering/FlexParentData/fit.html
 [`FlexParentData.flex`]: {{site.api}}/flutter/rendering/FlexParentData/flex.html
-[Flutter performance profiling]: {{site.url}}/perf/ui-performance
 [`mainAxisAlignment`]: {{site.api}}/flutter/widgets/Flex/mainAxisAlignment.html
 [`mainAxisSize`]: {{site.api}}/flutter/widgets/Flex/mainAxisSize.html
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
 [`textDirection`]: {{site.api}}/flutter/widgets/Flex/textDirection.html
-[the performance overlay]: {{site.url}}/perf/ui-performance#the-performance-overlay
 [Understanding constraints]: {{site.url}}/ui/layout/constraints
 [inspector-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-flutter-inspector-part-2-of-8-bbff40692fc7

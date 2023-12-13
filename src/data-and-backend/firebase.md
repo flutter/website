@@ -31,8 +31,8 @@ videos that you might find useful. Here are a few:
 [codelab1]: {{site.codelabs}}/codelabs/firebase-get-to-know-flutter
 [Firebase plugins]: {{site.firebase}}/docs/flutter/setup#available-plugins
 [started]: {{site.firebase}}/docs/flutter/setup
-[video]: {{site.youtube-site}}/watch?v=DqJ_KjFzL9I&t=38s
-[video2]: {{site.youtube-site}}/watch?v=OlcYP6UXlm8
-[video3]: {{site.youtube-site}}/watch?v=u_Lyx8KJWpg
-[video4]: {{site.youtube-site}}/watch?v=13-jNF984C0
-[workshop]: {{site.youtube-site}}/watch?v=4wunbF29Kkg
+[video]: {{yt-watch}}?v=DqJ_KjFzL9I&t=38s
+[video2]: {{yt-watch}}?v=OlcYP6UXlm8
+[video3]: {{yt-watch}}?v=u_Lyx8KJWpg
+[video4]: {{yt-watch}}?v=13-jNF984C0
+[workshop]: {{yt-watch}}?v=4wunbF29Kkg

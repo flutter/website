@@ -7,6 +7,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+{% include docs/yt_shims.liquid %}
+
 <?code-excerpt path-base="cookbook/design/themes"?>
 
 {{site.alert.note}}
@@ -96,7 +98,7 @@ check out the [`ThemeData`][] documentation.
 
 ## Apply a theme
 
-To apply your new theme, use the `Theme.of(context)` method 
+To apply your new theme, use the `Theme.of(context)` method
 when specifying a widget's styling properties.
 These can include, but are not limited to, `style` and `color`.
 
@@ -183,7 +185,7 @@ Theme(
 
 To learn more, watch this short Widget of the Week video on the `Theme` widget:
 
-<iframe class="full-width" src="{{site.youtube-site}}/embed/oTvQDJOBXmM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="full-width" src="{{yt-embed}}/oTvQDJOBXmM" title="Learn about the Theme Flutter Widget" {{yt-set}}></iframe>
 
 ## Try an interactive example
 
@@ -301,7 +303,5 @@ class MyHomePage extends StatelessWidget {
   <img src="/assets/images/docs/cookbook/themes.png" alt="Themes Demo" class="site-mobile-screenshot" />
 </noscript>
 
-
 [`copyWith()`]: {{site.api}}/flutter/material/ThemeData/copyWith.html
 [`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html
-[`Theme`]: {{site.api}}/flutter/material/Theme-class.html

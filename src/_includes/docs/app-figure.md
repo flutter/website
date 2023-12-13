@@ -13,7 +13,7 @@
 
 {% comment %}
 NOTE possibly sneaky introspection, feeling like this should be removed
-NOTE(rearch) We second that, never a good idea. 
+NOTE(rearch) We second that, never a good idea.
 {% endcomment %}
 {% if include.path-prefix -%}
   {% assign path = include.path-prefix | append: '/' -%}

@@ -5,7 +5,7 @@ To generate the needed macOS platform dependencies,
 run the `flutter build` command.
 
 ```terminal
-$ flutter build macos --debug
+flutter build macos --debug
 ```
 
 ```terminal

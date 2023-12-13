@@ -23,7 +23,6 @@ IDE with the [Flutter plugin][] or manually.
   for example:
 
 <?code-excerpt title="MyApp/app/build.gradle"?>
-
 ```gradle
 android {
   //...
@@ -126,8 +125,8 @@ Let's assume that you have an existing Android app at
 project as a sibling:
 
 ```terminal
-$ cd some/path/
-$ flutter create -t module --org com.example flutter_module
+cd some/path/
+flutter create -t module --org com.example flutter_module
 ```
 
 This creates a `some/path/flutter_module/` Flutter module project
@@ -229,8 +228,8 @@ Let's assume you built a Flutter module at
 `some/path/flutter_module`, and then run:
 
 ```terminal
-$ cd some/path/flutter_module
-$ flutter build aar
+cd some/path/flutter_module
+flutter build aar
 ```
 
 Then, follow the on-screen instructions to integrate.

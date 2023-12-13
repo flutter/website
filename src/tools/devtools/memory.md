@@ -369,7 +369,7 @@ The quantities plotted on the y-axis are as follows:
 [DevTools Performance view]: {{site.url}}/tools/devtools/performance
 [Flutter architectural overview]: {{site.url}}/resources/architectural-overview
 [frog]: https://dartfrog.vgv.dev/
-[heroku]: {{site.youtube-site}}/watch?v=nkTUMVNelXA
+[heroku]: {{yt-watch}}?v=nkTUMVNelXA
 
 ### Profile Memory tab
 

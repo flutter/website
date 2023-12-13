@@ -3,6 +3,8 @@ title: Deep linking
 description: Navigate to routes when the app receives a new URL.
 ---
 
+{% include docs/yt_shims.liquid %}
+
 Flutter supports deep linking on iOS, Android, and web browsers.
 Opening a URL displays that screen in your app. With the following
 steps, you can launch and display routes by using named routes
@@ -27,8 +29,8 @@ the pattern: `/#/path/to/app/screen`, but this can be changed by
 
 If you are a visual learner, check out the following video:
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/KNAb2XL7k2g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-<b>Deep linking in Flutter</b>
+<iframe width="560" height="315" src="{{yt-embed}}/KNAb2XL7k2g" title="Learn how to create and link to routes in your Flutter app" {{yt-set}}></iframe>
+**Deep linking in Flutter**
 
 ## Get started
 
@@ -82,18 +84,13 @@ is opened while the app is running.
 
 ## For more information
 
-[Learning Flutter's new navigation and routing system][] provides an 
+[Learning Flutter's new navigation and routing system][] provides an
 introduction to the Router system.
 
 [Learning Flutter's new navigation and routing system]: {{site.flutter-medium}}/learning-flutters-new-navigation-and-routing-system-7c9068155ade
-[switching-channels]: {{site.url}}/release/upgrade#switching-flutter-channels
 [routes]: {{site.api}}/flutter/material/MaterialApp/routes.html
 [onGenerateRoute]: {{site.api}}/flutter/material/MaterialApp/onGenerateRoute.html
 [Router]: {{site.api}}/flutter/widgets/Router-class.html
-[Navigator 2.0]: {{site.flutter-medium}}/learning-flutters-new-navigation-and-routing-system-7c9068155ade
-[intent filter]: {{site.android-dev}}/guide/components/intents-filters
 [plugin-linking]: {{site.medium}}/flutter-community/deep-links-and-flutter-applications-how-to-handle-them-properly-8c9865af9283
-[verify-android-links]: {{site.android-dev}}/training/app-links/verify-android-applinks
-[router-sample]: {{site.repo.samples}}/tree/main/navigation_and_routing
 
 [configuring the URL strategy]: {{site.url}}/ui/navigation/url-strategies
