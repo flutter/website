@@ -742,7 +742,7 @@ constructor:
 #### Example 10
 {:.no_toc}
 
-<?code-excerpt "lib/performance_overlay.dart (PerfOverlay)" ?>
+<?code-excerpt "lib/performance_overlay.dart (PerfOverlay)"?>
 ```dart
 import 'package:flutter/material.dart';
 
