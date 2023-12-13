@@ -17,7 +17,7 @@ For a full list of debugging and profiling tools, check out the
 
 [`flutter_gdb`]: {{site.repo.engine}}/blob/main/sky/tools/flutter_gdb
 
-## Log your application
+## Add logging to your application
 
 {{site.alert.note}}
   You can view logs in DevTools' [Logging view][]
@@ -124,7 +124,7 @@ current state or events to the console using the `debugPrint` property.
 
 {{site.alert.note}}
   All of the following examples were run as macOS native apps on
-  a MacBook Pro M1 Pro. These will differ from any dumps your
+  a MacBook Pro M1. These will differ from any dumps your
   development machine prints.
 {{site.alert.end}}
 
@@ -184,7 +184,7 @@ the root of the widget tree. It returns a "flattened" tree.
 
 **Example 4** produces the following widget tree. It includes:
 
-* All the widgets projected through their various build functions
+* All the widgets projected through their various build functions.
 * Many widgets that don't appear in your app's source.
   The framework's widgets' build functions insert them during the build.
 
@@ -360,9 +360,9 @@ class AppHome extends StatelessWidget {
       child: Center(
         child: TextButton(
           onPressed: () {
-            debugDumpApp();
+            debugDumpLayerTree();
           },
-          child: const Text('Dump Widget Tree'),
+          child: const Text('Dump Layer Tree'),
         ),
       ),
     );
@@ -576,39 +576,46 @@ void main() {
 
 When enabled, Flutter displays the following changes to your app:
 
-* all boxes in a bright teal border
-* all padding, from widgets like `Padding`,
-  as a box with a faded blue fill and blue border around the child widget
-* all alignment, from widgets like `Center` and `Align`, with yellow arrows
-* all spacers, from widgets like `Container` when they have no child, in gray
+* Displays all boxes in a bright teal border.
+* Displays all padding as a box with a faded blue fill and blue border
+  around the child widget.
+* Displays all alignment positioning with yellow arrows.
+* Displays all spacers in gray, when they have no child.
 
 The [`debugPaintBaselinesEnabled`][] flag
 does something similar but for objects with baselines.
-The app displays the alphabetic baseline in bright green and the
-ideographic baseline in orange.
+The app displays the baseline for alphabetic characters in bright green
+and the baseline for ideographic characters in orange.
+Alphabetic characters "sit" on the alphabetic baseline,
+but that baseline "cuts" through the bottom of [CJK characters][cjk].
+Flutter positions the ideographic baseline at the very bottom of the text line.
 
-The [`debugPaintPointersEnabled`][] flag turns on a special mode where any objects that you tap get highlighted in teal.
+The [`debugPaintPointersEnabled`][] flag turns on a special mode that
+highlights any objects that you tap in teal.
 This can help you determine if an object fails to hit test.
 This might happen if the object falls outside the bounds of its parent
 and thus not considered for hit testing in the first place.
 
-If you're trying to debug compositor layers, for example
-to determine whether and where to add `RepaintBoundary`
-widgets, you can use the [`debugPaintLayerBordersEnabled`][]
-flag, which outlines each layer's bounds in orange,
-or the [`debugRepaintRainbowEnabled`][] flag,
-which causes layers to be overlayed with a rotating set of
-colors whenever they are repainted.
+If you're trying to debug compositor layers, consider using the following flags.
 
-These flags only work in [debug mode][].
+* Use the [`debugPaintLayerBordersEnabled`][] flag to find the boundaries
+  of each layer. This flag results in outlining each layer's bounds in orange.
+
+* Use the [`debugRepaintRainbowEnabled`][] flag to display a repainted layer.
+  Whenever a layer repaints, it overlays with a rotating set of colors.
+
 Any function or method in the Flutter framework that starts with
-"`debug...`" only works in debug mode.
+`debug...` only works in [debug mode][].
+
+[cjk]: https://en.wikipedia.org/wiki/CJK_characters
 
 ## Debug animation issues
 
 {{site.alert.note}}
   To debug animations with the least effort, slow them down.
-  To slow down the animation, click **Slow Animations** in DevTools' [Inspector view][]. This reduces the animation to 20% speed.
+  To slow down the animation,
+  click **Slow Animations** in DevTools' [Inspector view][].
+  This reduces the animation to 20% speed.
   If you want more control over the amount of slowness,
   use the following instructions.
 {{site.alert.end}}
@@ -625,7 +632,8 @@ result in asserts and generally interfere with your efforts.
 
 {{site.alert.note}}
   You can achieve similar results to some of these debug
-  flags using [DevTools][]. Some of the debug flags provide little benefit. If you find a flag with functionality you would like to add to [DevTools][],
+  flags using [DevTools][]. Some of the debug flags provide little benefit.
+  If you find a flag with functionality you would like to add to [DevTools][],
   [file an issue][].
 {{site.alert.end}}
 
@@ -653,7 +661,7 @@ The following list highlights some of flags and one function from the
 
 * edit the framework code
 * import the module, set the value in your `main()` function,
-    then hot restart.
+  then hot restart.
 
 [`debugPaintLayerBordersEnabled`][]
 : To display the boundaries of each layer, set this property to `true`.
@@ -734,7 +742,7 @@ constructor:
 #### Example 10
 {:.no_toc}
 
-<?code-excerpt "lib/performance_overlay.dart (PerfOverlay)" replace="/showPerformanceOverlay: true,/[[highlight]]$&[[\/highlight]]/g"?>
+<?code-excerpt "lib/performance_overlay.dart (PerfOverlay)" ?>
 ```dart
 import 'package:flutter/material.dart';
 
@@ -744,7 +752,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      [[highlight]]showPerformanceOverlay: true,[[/highlight]]
+      showPerformanceOverlay: true,
       title: 'My Awesome App',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -761,7 +769,7 @@ application in a stack and putting a widget on your stack that was
 created by calling [`PerformanceOverlay.allEnabled()`][].)
 
 To learn how to interpret the graphs in the overlay,
-see [The performance overlay][] in
+check out [The performance overlay][] in
 [Profiling Flutter performance][].
 
 ## Add widget alignment grid
