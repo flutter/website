@@ -17,9 +17,9 @@ class AppHome extends StatelessWidget {
       child: Center(
         child: TextButton(
           onPressed: () {
-            debugDumpApp();
+            debugDumpLayerTree();
           },
-          child: const Text('Dump Widget Tree'),
+          child: const Text('Dump Layer Tree'),
         ),
       ),
     );
