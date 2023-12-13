@@ -31,15 +31,13 @@ Image.network(
     'https://docs.flutter.dev/assets/images/dash/dash-fainting.gif');
 ```
 
-## Placeholders and caching
+## Image fade in with placeholders
 
 The default `Image.network` constructor doesn't handle more advanced
-functionality, such as fading images in after loading, or caching images
-to the device after they're downloaded. To accomplish these tasks, see
-the following recipes:
+functionality, such as fading images in after loading. To accomplish this task, see
+the following recipe:
 
 * [Fade in images with a placeholder][]
-* [Work with cached images][]
 
 ## Interactive example
 
@@ -77,4 +75,3 @@ class MyApp extends StatelessWidget {
 [Fade in images with a placeholder]: {{site.url}}/cookbook/images/fading-in-images
 [`Image`]: {{site.api}}/flutter/widgets/Image-class.html
 [`Image.network()`]: {{site.api}}/flutter/widgets/Image/Image.network.html
-[Work with cached images]: {{site.url}}/cookbook/images/cached-images
