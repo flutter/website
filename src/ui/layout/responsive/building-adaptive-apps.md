@@ -349,7 +349,7 @@ Use `Platform`/`kIsWeb` when the logic absolutely <i>must</i>
 run for a given platform. For example,
 talking to a plugin that only works on iOS,
 or displaying a widget that only conforms to
-Play Store policy and not App Store.
+Play Store policy and not the App Store's.
 
 [`Platform`]: {{site.api}}/flutter/package-platform_platform/Platform-class.html
 
@@ -406,12 +406,6 @@ return Padding(
 Use `Theme.of(context).platform` for theming and
 design choices, like what kind of switches to show
 and general Cupertino/Material adaptions.
-It also helps an app work well on mobile web.
-
-Use `defaultTargetPlatform` if you're implementing
-platform logic in flutter/widgets, or are otherwise
-trying to avoid a dependency on Flutter's theming
-classes—like parts of the Flutter SDK "below" the theme layers.
 
 With all views referencing the same shared-design system rules,
 they tend to look better and more consistent.
