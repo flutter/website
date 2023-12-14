@@ -324,13 +324,11 @@ There are times when you want to make layout decisions
 based on the actual platform you're running on,
 regardless of size. For example, when building a
 custom title bar, you might need to check the operating
-system type and tweak the layout of your title bar, so
-it doesn't get covered by the native window buttons.
+system type and tweak the layout of your title bar,
+so it doesn't get covered by the native window buttons.
 
 To determine which combination of platforms you're on,
 you can use the [`Platform`][] API along with the `kIsWeb` value:
-
-[`Platform`]: {{site.api}}/flutter/package-platform_platform/Platform-class.html
 
 <?code-excerpt "lib/global/device_type.dart (Platforms)"?>
 ```dart
@@ -343,9 +341,17 @@ bool get isDesktopDeviceOrWeb => kIsWeb || isDesktopDevice;
 
 The `Platform` API can't be accessed from web builds without
 throwing an exception, because the `dart.io` package isn't
-supported on the web target. As a result, this code checks
+supported on the web target. As a result, the above code checks
 for web first, and because of short-circuiting,
 Dart never calls `Platform` on web targets.
+
+Use `Platform`/`kIsWeb` when the logic absolutely <i>must</i>
+run for a given platform. For example,
+talking to a plugin that only works on iOS,
+or displaying a widget that only conforms to
+Play Store policy and not App Store.
+
+[`Platform`]: {{site.api}}/flutter/package-platform_platform/Platform-class.html
 
 ### Single source of truth for styling
 
@@ -396,6 +402,16 @@ return Padding(
   child: Text('Hello!', style: TextStyles.body1),
 );
 ```
+
+Use `Theme.of(context).platform` for theming and
+design choices, like what kind of switches to show
+and general Cupertino/Material adaptions.
+It also helps an app work well on mobile web.
+
+Use `defaultTargetPlatform` if you're implementing
+platform logic in flutter/widgets, or are otherwise
+trying to avoid a dependency on Flutter's theming
+classes—like parts of the Flutter SDK "below" the theme layers.
 
 With all views referencing the same shared-design system rules,
 they tend to look better and more consistent.
