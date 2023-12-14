@@ -1,6 +1,6 @@
 ---
 title: Adding iOS app extensions
-description: Learn how to add app extensions to your Flutter apps
+description: Learn how to add app extensions to your Flutter apps.
 ---
 
 iOS app extensions allow you to expand functionality
