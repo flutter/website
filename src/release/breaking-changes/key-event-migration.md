@@ -18,14 +18,16 @@ In the original key event subsystem, handling each platform's quirks in the
 framework and in client apps caused overly complex code, and the old system
 didn't properly represent the true state of key events on the system.
 
-[`RawKeyboard`][] is the legacy API, and has been deprecated and
-will be removed in the future.
-The replacements are [`HardwareKeyboard`][] and [`KeyEvent`][] APIs
-(such as [`FocusNode.onKeyEvent`][]).
+The legacy API [`RawKeyboard`][] has been deprecated
+and will be removed in the future.
+The [`HardwareKeyboard`][] and [`KeyEvent`][] APIs replace this legacy API.
+An example of this change is [`FocusNode.onKeyEvent`][]
+replacing `FocusNode.onKey`.
 
-Behavior-wise, [`RawKeyboard`][] provided a
-less unified,less regular event model than [`HardwareKeyboard`][] does.
-For example:
+The behavior of [`RawKeyboard`][] provided a
+less unified and less regular event model
+than [`HardwareKeyboard`][] does.
+Consider the following examples:
 
 * Down events were not always matched with an up event, and vice versa (the set
   of pressed keys was silently updated).
@@ -89,9 +91,9 @@ their functionality is no longer offered.
 
 ## Migration guide
 
-APIs provided by the Flutter framework are already migrated.
-Migration is needed only if any of the classes or methods listed in
-the previous section are used.
+The Flutter framework libraries have already been migrated.
+If your code uses any of the classes or methods listed in
+the previous section, migrate to these new APIs.
 
 ### Migrating your code that uses `RawKeyEvent`
 
@@ -211,11 +213,10 @@ KeyEventResult _handleKeyEvent(KeyEvent _) {
 }
 ```
 
-Be careful to check conditionals:
-a [`KeyRepeatEvent`][] is also a key down event, but
-it is a different type (it is not a subclass of [`KeyDownEvent`][]), so
-don't assume that `keyEvent is! KeyDownEvent` only allows key up events,
-because both `KeyDownEvent` and `KeyRepeatEvent` need to be checked.
+Though it is not a subclass of [`KeyDownEvent`][],
+a [`KeyRepeatEvent`][] is also a key down event.
+Don't assume that `keyEvent is! KeyDownEvent` only allows key up events.
+Check both `KeyDownEvent` and `KeyRepeatEvent`.
 
 ## Timeline
 
