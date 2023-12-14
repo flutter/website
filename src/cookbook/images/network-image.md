@@ -34,8 +34,9 @@ Image.network(
 ## Image fade in with placeholders
 
 The default `Image.network` constructor doesn't handle more advanced
-functionality, such as fading images in after loading. To accomplish this task, see
-the following recipe:
+functionality, such as fading images in after loading.
+To accomplish this task,
+check out [Fade in images with a placeholder][].
 
 * [Fade in images with a placeholder][]
 
