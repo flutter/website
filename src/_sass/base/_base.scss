@@ -170,6 +170,7 @@ dd {
 
   .site-figure-container {
     flex: 0 1 auto;
+    max-width: 100%;
 
     img { width: 100%; }
 
@@ -296,3 +297,8 @@ p + ul, p + ol, p + dl {
   'opsz' 24;
   vertical-align: middle;
 }
+
+aside.alert h2, aside.alert h3, aside.alert h4, aside.alert h5, aside.alert h6 {
+  margin: 0.5rem 0;
+  font-size: 1.5rem;
+}  
