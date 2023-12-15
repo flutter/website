@@ -298,7 +298,9 @@ p + ul, p + ol, p + dl {
   vertical-align: middle;
 }
 
-aside.alert h2, aside.alert h3, aside.alert h4, aside.alert h5, aside.alert h6 {
-  margin: 0.5rem 0;
-  font-size: 1.5rem;
-}  
+aside.alert {
+  h2, h3, h4, h5, h6 {
+    margin: 0.5rem 0;
+    font-size: 1.5rem;
+  }  
+}

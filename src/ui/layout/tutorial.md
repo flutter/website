@@ -1,6 +1,6 @@
 ---
-title: Create a layout
-short-title: Tutorial
+title: Build a Flutter layout
+short-title: Layout tutorial
 description: Learn how to build a layout in Flutter.
 diff2html: true
 ---
@@ -31,8 +31,10 @@ If you use the example code provided, you can build the following app.
    caption="The finished app"
    width="50%" %}
 
-**Credits:** Photo by [Dino Reichmuth][ch-photo] on [Unsplash][].
-Text by [Switzerland Tourism][].
+<caption>
+  **Credits:** Photo by [Dino Reichmuth][ch-photo] on [Unsplash][].
+  Text by [Switzerland Tourism][].
+</caption>
 
 To get a better overview of the layout mechanism, start with
 [Flutter's approach to layout][].
@@ -254,7 +256,7 @@ class TitleSection extends StatelessWidget {
 
 In the `body` property, replace the `Center` widget with a
 `SingleChildScrollView` widget.
-Within the `SingleChildScrollView` widget, replace the `Text` widget with a
+Within the [`SingleChildScrollView`][] widget, replace the `Text` widget with a
 `Column` widget.
 
 <?code-excerpt "{../base,step2}/lib/main.dart" from="body:" to="children: ["?>
@@ -274,14 +276,16 @@ These code updates change the app in the following ways.
 * A `SingleChildScrollView` widget can scroll.
   This allows elements that don't fit on the current screen to display.
 * A `Column` widget displays any elements within its `children` property
-  in a stack.
-  The first element listed in the `children` array displays at
-  the top of the stack. Elements in the `children` array display
+  in the order listed.
+  The first element listed in the `children` list displays at
+  the top of the stack. Elements in the `children` list display
   in array order on the screen from top to bottom.
+
+[`SingleChildScrollView`]: {{api}}/widgets/SingleChildScrollView-class.html
 
 ### Update the app to display the title section
 
-Add the `TitleSection` widget as the first element in the `children` array.
+Add the `TitleSection` widget as the first element in the `children` list.
 This places it at the top of the screen.
 Pass the provided name and location to the `TitleSection` constructor.
 
@@ -309,7 +313,7 @@ Pass the provided name and location to the `TitleSection` constructor.
 
 ## Add the Button section
 
-In this section, add the Buttons that will add functionality to your app.
+In this section, add the buttons that will add functionality to your app.
 
 <?code-excerpt path-base="layout/lakes/step3"?>
 
@@ -341,17 +345,17 @@ class ButtonSection extends StatelessWidget {
 }
 ```
 
-### Create a helper method to make buttons
+### Create a widget to make buttons
 
 As the code for each column could use the same syntax,
-create a helper method named `ButtonSection()`.
+create a widget named `BuildButtonColumn()`.
 Each call to this method passes a color, an `Icon` widget and a `Text` widget.
 Given these parameters, the helper returns a `Column` widget.
 Each contains two children: the `Icon` and the `Text`.
 A `Padding` widget separates these children.
 The helper also paints these children in the given color.
 
-Add the following code after the `ButtonSection` widget.
+Add the following code after the `ButtonSection` class.
 
 <?code-excerpt "lib/main.dart (BuildButtonColumn)" title?>
 ```dart
@@ -399,12 +403,14 @@ class BuildButtonColumn extends StatelessWidget {
 
 Add the following code into the `ButtonSection` widget.
 
-1. Call the helper method three times, once for each button.
+1. Call the `BuildButtonColumn` widget three times, once for each button.
 1. Pass the color, `Icon`, and text for that specific button.
 1. Align the columns along the main axis with the
-   `MainAxisAlignment.spaceEvenly` method.
-   This arranges the free space in equal amounts before, between,
-   and after each column.
+   `MainAxisAlignment.spaceEvenly` enumerated value or `enum`.
+   The main axis for a `Row` widget is horizontal and the main axis for a
+   `Column` widget is vertical.
+   This method, then, arranges the free space in equal amounts before, between,
+   and after each column along the `Row`.
 
 <?code-excerpt "lib/main.dart (ButtonSection)" title?>
 ```dart
@@ -462,23 +468,23 @@ class BuildButtonColumn extends StatelessWidget {
 
 ### Update the app to display the button section
 
-Add the button section to the `children` array.
+Add the button section to the `children` list.
 
-    <?code-excerpt path-base="layout/lakes"?>
-    
-    <?code-excerpt "step{2,3}/lib/main.dart (addWidget)" title?>
-    ```diff
-    --- step2/lib/main.dart (addWidget)
-    +++ step3/lib/main.dart (addWidget)
-    @@ -5,6 +5,7 @@
-             name: 'Oeschinen Lake Campground',
-             location: 'Kandersteg, Switzerland',
-           ),
-    +      ButtonSection(),
-         ],
+<?code-excerpt path-base="layout/lakes"?>
+
+<?code-excerpt "step{2,3}/lib/main.dart (addWidget)" title?>
+```diff
+--- step2/lib/main.dart (addWidget)
++++ step3/lib/main.dart (addWidget)
+@@ -5,6 +5,7 @@
+         name: 'Oeschinen Lake Campground',
+         location: 'Kandersteg, Switzerland',
        ),
-     ),
-    ```
++      ButtonSection(),
+     ],
+   ),
+ ),
+```
 
 ## Add the Text section
 
@@ -517,14 +523,16 @@ class TextSection extends StatelessWidget {
 }
 ```
 
-By setting `softwrap` to `true`, text lines fill the column width before
+By setting [`softWrap`][] to `true`, text lines fill the column width before
 wrapping at a word boundary.
+
+[`softWrap`]: {{api}}/widgets/Text/softWrap.html
 
 ### Update the app to display the text section
 
-Insert the `TextSection` call into the `body` property.
-This call needs `description` variable set to the text of the
-location description.
+Add a new `TextSection` widget as a child after the `ButtonSection`.
+When adding the `TextSection` widget, set its `description` property to
+the text of the location description.
 
 <?code-excerpt "step{3,4}/lib/main.dart (addWidget)" title?>
 ```diff
@@ -555,11 +563,11 @@ In this section, add the image file to complete your layout.
 
 ### Configure your app to use supplied images
 
-In this section, configure your app to reference images in your Flutter project.
+To configure your app to reference images, modify its `pubspec.yaml` file.
 
 1. Create an `images` directory at the top of the project.
 
-1. Add [`lake.jpg`][].
+1. Download the [`lake.jpg`][] image and add it to the new `images` directory.
 
    {{site.alert.info}}
      You can't use `wget` to save this binary file.
@@ -567,9 +575,10 @@ In this section, configure your app to reference images in your Flutter project.
      under the Unsplash License. The small size comes in at 94.4 kB.
    {{site.alert.end}}
 
-1. Update the `pubspec.yaml` file at the root directory of your app
-   to include an `assets` tag.
-   This change makes the image available to your code.
+1. To include images, add an `assets` tag to the `pubspec.yaml` file
+   at the root directory of your app.
+   When you add `assets`, it serves as the set of pointers to the images
+   available to your code.
 
    <?code-excerpt "{step4,step5}/pubspec.yaml"?>
    ```diff
@@ -586,7 +595,7 @@ In this section, configure your app to reference images in your Flutter project.
 {{site.alert.tip}}
 
 Text in the `pubspec.yaml` respects whitespace and text case.
-Write the changes to the app as given in the previous example.
+Write the changes to the file as given in the previous example.
 
 This change might require you to restart the running program to
 display the image.
@@ -595,7 +604,7 @@ display the image.
 
 ### Create the `ImageSection` widget
 
-Add the following `ImageSection` widget to the end of your app code.
+Define the following `ImageSection` widget after the other declarations.
 
 <?code-excerpt "step5/lib/main.dart (ImageSection)" title?>
 ```dart
@@ -616,14 +625,15 @@ class ImageSection extends StatelessWidget {
 }
 ```
 
-The `BoxFit.cover` method tells Flutter to display the image with
+The `BoxFit.cover` value tells Flutter to display the image with
 two constraints. First, display the image as small as possible.
 Second, cover all the space that the layout allotted, called the render box.
 
 ### Update the app to display the image section
 
-Insert the `ImageSection` call as the first child in the `children` array.
-This call needs `image` variable set to the path of the image file.
+Add an `ImageSection` widget as the first child in the `children` list.
+Set the `image` property to the path of the image you added in
+[Configure your app to use supplied images](#configure-your-app-to-use-supplied-images).
 
 <?code-excerpt "step{4,5}/lib/main.dart (addWidget)" title?>
 ```diff
