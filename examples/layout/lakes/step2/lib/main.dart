@@ -7,44 +7,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const String appTitle = 'Flutter layout demo';
-    return MaterialApp(
-      title: appTitle,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text(appTitle),
-        ),
-        // #docregion addWidget
-        body: const SingleChildScrollView(
-          child: Column(
-            children: [
-              TitleSection(
-                name: 'Oeschinen Lake Campground',
-                location: 'Kandersteg, Switzerland',
-              ),
-            ],
-          ),
-        ),
-        // #enddocregion addWidget
-      ),
-    );
-  }
-}
-
-// #docregion titleSection
-class TitleSection extends StatelessWidget {
-  const TitleSection({
-    super.key,
-    required this.name,
-    required this.location,
-  });
-
-  final String name;
-  final String location;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
+    // #docregion titleSection
+    Widget titleSection = Container(
       padding: const EdgeInsets.all(32),
       child: Row(
         children: [
@@ -54,17 +18,17 @@ class TitleSection extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 /*2*/
-                Padding(
+                Container(
                   padding: const EdgeInsets.only(bottom: 8),
-                  child: Text(
-                    name,
-                    style: const TextStyle(
+                  child: const Text(
+                    'Oeschinen Lake Campground',
+                    style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
                 Text(
-                  location,
+                  'Kandersteg, Switzerland',
                   style: TextStyle(
                     color: Colors.grey[500],
                   ),
@@ -81,6 +45,20 @@ class TitleSection extends StatelessWidget {
         ],
       ),
     );
+    // #enddocregion titleSection
+
+    return MaterialApp(
+      title: 'Flutter layout demo',
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Flutter layout demo'),
+        ),
+        body: Column(
+          children: [
+            titleSection,
+          ],
+        ),
+      ),
+    );
   }
 }
-// #enddocregion titleSection

@@ -74,7 +74,7 @@ The Casual Games Toolkit provides the following free resources.
   1. A sample game built on top of the endless runner template,
      called SuperDash. You can play the game on iOS, Android,
      or [web][], [view the open source code repo][], or 
-     [read how the game was created in 6 days][].
+     [read how the game was created in 6 weeks][].
 
 * Developer guides for integrating needed services.
 * A link to a [Flame Discord][game-discord] channel.
@@ -397,7 +397,7 @@ investigate other resources that our community recommends.
 [spriteWidget]: {{site.pub-pkg}}/spritewidget
 [sqflite]: {{site.pub-pkg}}/sqflite
 [win32_gamepad]: {{site.pub-pkg}}/win32_gamepad
-[read how the game was created in 6 days]: {{site.flutter-medium}}/how-we-built-the-new-super-dash-demo-in-flutter-and-flame-in-just-six-weeks-9c7aa2a5ad31
+[read how the game was created in 6 weeks]: {{site.flutter-medium}}/how-we-built-the-new-super-dash-demo-in-flutter-and-flame-in-just-six-weeks-9c7aa2a5ad31
 [view the open source code repo]: {{site.github}}/flutter/super_dash
 [web]: https://superdash.flutter.dev/
 
