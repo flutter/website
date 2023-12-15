@@ -305,8 +305,9 @@ investigate other resources that our community recommends.
 <td markdown="1">
 
 {{recipe-icon}} [Add advertising to your Flutter game][ads-recipe]<br>
-{{codelab}} [Add AdMob ads to a Flutter app][]<br>
-{{codelab}} [Add in-app purchases to your Flutter app][iap-recipe]
+{{codelab}}  [Add AdMob ads to a Flutter app][]<br>
+{{codelab}}  [Add in-app purchases to your Flutter app][iap-recipe]
+{{doc-icon}} [Gaming UX and Revenue Optimizations for Apps][] (PDF)
 
 </td>
 </tr>
