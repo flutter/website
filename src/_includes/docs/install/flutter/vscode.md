@@ -49,12 +49,12 @@
 
    {% include docs/install/admonitions/install-paths.md %}
    {% else -%}
-   Consider `~/projects/`
+   Consider `~/development/`
    {% endif %}
 
 1. Click **Clone Flutter**.
 
-   While downloading Flutter, a notification displays:
+   While downloading Flutter, VS Code displays this pop-up notification:
 
    ```terminal
    Downloading the Flutter SDK. This may take a few minutes.
@@ -72,7 +72,7 @@
    Expanding downloaded archive...
    ```
 
-   When successful, a notification displays:
+   When successful, VS Code displays this pop-up notification:
 
    ```terminal
    Initializing the Flutter SDK. This may take a few minutes.
@@ -98,12 +98,14 @@
    At this point in the procedure, _ignore this output._
    Flutter Doctor might show errors that don't apply to this quick start.
 
-   When the Flutter install succeeds, a notification displays:
+   When the Flutter install succeeds, VS Code displays this pop-up notification:
 
    ```terminal
    Do you want to add the Flutter SDK to PATH so it's accessible
    in external terminals?
    ```
+
+{% if os=='Windows' %}
 
 1. Click **Add SDK to PATH**.
 
@@ -113,7 +115,9 @@
    The Flutter SDK was added to your PATH
    ```
 
-1. The notification displays the Google Analytics notice.
+{% endif %}
+
+1. VS Code may display a Google Analytics notice.
 
    If you agree, click **OK**.
 

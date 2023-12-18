@@ -3,11 +3,13 @@
 {% case target %}
 {% when 'desktop','mobile-ios' -%}
 
-* [Xcode][] to debug and compile native Swift or ObjectiveC code.
-* [CocoaPods][] to compile native code and Dart code together.
+* [Xcode][] {{site.appnow.xcode}} to debug and compile native Swift or ObjectiveC code.
+* [CocoaPods][] {{site.appnow.cocoapods}} to compile enable Flutter plugins in your native apps.
 * Git {{site.appmin.github_mac}} or later to manage source code.
   This installs as part of the Xcode installation.
-  To verify that you have `git` installed, type `git version` in your Terminal.
+  * To check if you have `git` installed, type `git version` in your Terminal.
+  * If you don't have `git` installed, use [Homebrew][].
+  * If you have `homebrew` installed, type `brew install git`.
 
 {% when 'mobile-android' -%}
 
@@ -29,8 +31,8 @@
 
 {% else -%}
 
-* [Xcode][] to debug and compile native Swift or ObjectiveC code.
-* [CocoaPods][] to compile native code and Dart code together.
+* [Xcode][] {{site.appnow.xcode}} to debug and compile native Swift or ObjectiveC code.
+* [CocoaPods][] {{site.appnow.cocoapods}} to compile enable Flutter plugins in your native apps.
 * [Android Studio][] {{site.appmin.android_studio}} to debug and compile
   Java or Kotlin code for Android.
   Flutter requires the full version of Android Studio.

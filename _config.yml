@@ -91,6 +91,7 @@ appnow:
   powershell: 5.0
   xcode: '15'
   ios: '17'
+  cocoapods: '1.12'
 
 ########### Jekyll ###########
 

@@ -1,5 +1,13 @@
 {% assign os=include.os %}
 {% assign terminal=include.terminal %}
+{% case target %}
+{% when 'mobile-ios' %}
+   {% assign v-target = 'iOS' %}
+{% when 'mobile-android' %}
+   {% assign v-target = 'Android' %}
+{% else %}
+   {% assign v-target = target %}
+{% endcase %}
 
 ## Install the Flutter SDK
 

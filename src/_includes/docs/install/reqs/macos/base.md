@@ -29,7 +29,9 @@ software packages.
 #### Operating system
 {:.no_toc}
 
-Flutter supports {{site.devmin.macOS}} or later.
+Flutter supports macOS {{site.devmin.macos}} or later.
+
+{% include docs/install/reqs/macos/apple-silicon.md %}
 
 #### Development tools
 {:.no_toc}
@@ -53,12 +55,13 @@ syntax highlighting, widget editing assists, debugging, and other features.
 
 Popular options include:
 
+* [Visual Studio Code][] {{site.appmin.vscode}} or later
+  with the [Flutter extension for VS Code][].
 * [Android Studio][] {{site.appmin.android_studio}} or later
   with the [Flutter plugin for IntelliJ][].
 * [IntelliJ IDEA][] {{site.appmin.intellij_idea}} or later
-  with the [Flutter plugin for IntelliJ][].
-* [Visual Studio Code][] {{site.appmin.vscode}} or later
-  with the [Flutter extension for VS Code][].
+  with both the [Flutter plugin for IntelliJ][] and
+  the [Android plugin for IntelliJ][].
 
 {{site.alert.recommend}}
   The Flutter team recommends installing
@@ -72,3 +75,4 @@ Popular options include:
 [Visual Studio Code]: https://code.visualstudio.com/docs/setup/mac
 [Flutter extension for VS Code]: https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter
 [Flutter plugin for IntelliJ]: https://plugins.jetbrains.com/plugin/9212-flutter
+[Android plugin for IntelliJ]: https://plugins.jetbrains.com/plugin/22989-android

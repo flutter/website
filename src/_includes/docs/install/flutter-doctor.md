@@ -4,6 +4,7 @@
 
 {% assign os = include.os %}
 {% assign target = include.target %}
+{% assign compiler = include.compiler %}
 
 {% case target %}
 {% when 'mobile-ios' %}
@@ -16,12 +17,12 @@
 
 {% case os %}
 {% when 'Windows' -%}
-   {% assign path='C:\src\flutter' %}
+   {% assign path='D:\dev\flutter' %}
    {% assign terminal='PowerShell' %}
-   {% assign prompt1='C:>' %}
+   {% assign prompt1='D:>' %}
    {% assign prompt2=path | append: '>' %}
 {% when "macOS" -%}
-   {% assign path='~/Applications/flutter' %}
+   {% assign path='~/development/flutter' %}
    {% assign terminal='the Terminal' %}
    {% assign prompt1='$' %}
    {% assign prompt2='$' %}
@@ -56,7 +57,10 @@ If you followed this guide, the result of your command should resemble:
 
 ### Troubleshoot Flutter Doctor issues
 
-If the `flutter doctor` command returns an error,
+When the `flutter doctor` command returns an error, it could be for Flutter,
+VS Code, {{compiler}}, the connected device, or network resources.
+
+If the `flutter doctor` command returns an error for any of these components,
 run it again with the verbose flag.
 
 ```terminal

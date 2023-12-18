@@ -13,4 +13,4 @@ next:
 
 {% include docs/install/compiler/android.md target='mobile' os='Windows' -%}
 
-{% include docs/install/flutter-doctor.md target='mobile' os='Windows' -%}
+{% include docs/install/flutter-doctor.md target='mobile' os='Windows' compiler='Android Studio' -%}

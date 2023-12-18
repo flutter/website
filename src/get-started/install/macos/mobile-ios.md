@@ -13,4 +13,4 @@ next:
 
 {% include docs/install/compiler/xcode.md target='mobile-ios' os='macOS' -%}
 
-{% include docs/install/flutter-doctor.md target='mobile-ios' os='macOS' -%}
+{% include docs/install/flutter-doctor.md target='mobile-ios' os='macOS' compiler='Xcode' -%}
