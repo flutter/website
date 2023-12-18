@@ -1,0 +1,12 @@
+{
+  "_comments": [
+    "uniqueId must be updated with each new survey so DevTools knows to re-prompt users.",
+    "title should not exceed 45 characters.",
+    "startDate and endDate should follow ISO 8601 standard with a timezone offset."
+  ],
+  "uniqueId": "2023-Q4",
+  "title": "Take our survey to help us improve DevTools!",
+  "url": "https://google.qualtrics.com/jfe/form/SV_bkqzW25DzKz56nA",
+  "startDate": "2023-10-25T09:00:00-07:00",
+  "endDate": "2023-11-08T09:00:00-07:00"
+}
