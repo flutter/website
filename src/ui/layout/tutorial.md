@@ -28,13 +28,13 @@ If you use the example code provided, you can build the following app.
 {% include docs/app-figure.md
    img-class="site-mobile-screenshot border"
    image="ui/layout/layout-demo-app.png"
-   caption="The finished app"
+   caption="The finished app."
    width="50%" %}
 
-<caption>
-  **Credits:** Photo by [Dino Reichmuth][ch-photo] on [Unsplash][].
-  Text by [Switzerland Tourism][].
-</caption>
+<figcaption class="figure-caption" markdown="1">
+Photo by [Dino Reichmuth][ch-photo] on [Unsplash][].
+Text by [Switzerland Tourism][].
+</figcaption>
 
 To get a better overview of the layout mechanism, start with
 [Flutter's approach to layout][].
@@ -677,8 +677,8 @@ To add interactivity to this layout, follow the
 [Adding Interactivity to Your Flutter App]: {{site.url}}/ui/interactivity
 [automatic reformatting support]: {{site.url}}/tools/formatting
 [ch-photo]: https://unsplash.com/photos/red-and-gray-tents-in-grass-covered-mountain-5Rhl-kSRydQ
-[Unsplash]: https://unsplash.com/
-[Switzerland Tourism]: https://www.myswitzerland.com/en-us/destinations/lake-oeschinen/
+[Unsplash]: https://unsplash.com
+[Switzerland Tourism]: https://www.myswitzerland.com/en-us/destinations/lake-oeschinen
 [Flutter's approach to layout]: {{site.url}}/ui/layout
 [new-flutter-app]: {{site.url}}/get-started/test-drive
 [`lake.jpg`]: {{rawExFile}}/layout/lakes/step5/images/lake.jpg
