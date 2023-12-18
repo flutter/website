@@ -384,6 +384,7 @@ investigate other resources that our community recommends.
 [Add Firebase to your Flutter game]: {{site.firebase}}/docs/flutter/setup
 [GIMP]: https://www.gimp.org
 [Game Developer Studio]: https://www.gamedeveloperstudio.com
+[Gaming UX and Revenue Optimizations for Apps]: {{site.main-url}}/go/games-revenue
 [Paint API]: {{site.api}}/flutter/dart-ui/Paint-class.html
 [Special effects]: {{site.url}}/cookbook/effects
 [Spriter Pro]: https://store.steampowered.com/app/332360/Spriter_Pro/
