@@ -106,7 +106,8 @@ a column which then contains an icon and text.
 
 {% include docs/app-figure.liquid
     image="ui/layout/layout-sketch-button-block.svg"
-    caption="The Button section with three labeled buttons" %}
+    caption="The Button section with three labeled buttons"
+    width="50%" %}
 
   </li>
 
