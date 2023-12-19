@@ -109,17 +109,17 @@ class ButtonSection extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          BuildButtonColumn(
+          ButtonWithText(
             color: color,
             icon: Icons.call,
             label: 'CALL',
           ),
-          BuildButtonColumn(
+          ButtonWithText(
             color: color,
             icon: Icons.near_me,
             label: 'ROUTE',
           ),
-          BuildButtonColumn(
+          ButtonWithText(
             color: color,
             icon: Icons.share,
             label: 'SHARE',
@@ -130,8 +130,8 @@ class ButtonSection extends StatelessWidget {
   }
 }
 
-class BuildButtonColumn extends StatelessWidget {
-  const BuildButtonColumn({
+class ButtonWithText extends StatelessWidget {
+  const ButtonWithText({
     super.key,
     required this.color,
     required this.icon,

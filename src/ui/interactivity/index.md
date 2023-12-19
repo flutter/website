@@ -10,9 +10,9 @@ diff2html: true
 {{site.alert.secondary}}
   <h4 class="no_toc">What you'll learn</h4>
 
-  * How to respond to taps.
-  * How to create a custom widget.
-  * The difference between stateless and stateful widgets.
+* How to respond to taps.
+* How to create a custom widget.
+* The difference between stateless and stateful widgets.
 {{site.alert.end}}
 
 How do you modify your app to make it react to user input?
@@ -82,11 +82,11 @@ telling the framework to redraw the widget.
 {{site.alert.secondary}}
   <h4 class="no_toc">What's the point?</h4>
 
-  * A stateful widget is implemented by two classes:
+* A stateful widget is implemented by two classes:
     a subclass of `StatefulWidget` and a subclass of `State`.
-  * The state class contains the widget's mutable state and
+* The state class contains the widget's mutable state and
     the widget's `build()` method.
-  * When the widget's state changes, the state object calls
+* When the widget's state changes, the state object calls
     `setState()`, telling the framework to redraw the widget.
 {{site.alert.end}}
 
@@ -110,7 +110,7 @@ managed for `FavoriteWidget`.
 ### Step 0: Get ready
 
 If you've already built the app in the
-[building layouts tutorial (step 6)][],
+[building layouts tutorial][],
 skip to the next section.
 
  1. Make sure you've [set up][] your environment.
@@ -127,6 +127,7 @@ or you've launched the [iOS simulator][]
 install), you are good to go!
 
 <a id="step-1"></a>
+
 ### Step 1: Decide which object manages the widget's state
 
 A widget's state can be managed in several ways,
@@ -140,6 +141,7 @@ Learn more about the separation of widget and state,
 and how state might be managed, in [Managing state][].
 
 <a id="step-2"></a>
+
 ### Step 2: Subclass StatefulWidget
 
 The `FavoriteWidget` class manages its own state,
@@ -169,6 +171,7 @@ class FavoriteWidget extends StatefulWidget {
 {{site.alert.end}}
 
 <a id="step-3"></a>
+
 ### Step 3: Subclass State
 
 The `_FavoriteWidgetState` class stores the mutable data
@@ -262,6 +265,7 @@ void _toggleFavorite() {
 ```
 
 <a id="step-4"></a>
+
 ### Step 4: Plug the stateful widget into the widget tree
 
 Add your custom stateful widget to the widget tree in
@@ -402,11 +406,10 @@ be managed, and lists other available interactive widgets.
 {{site.alert.secondary}}
   <h4 class="no_toc">What's the point?</h4>
 
-  * There are different approaches for managing state.
-  * You, as the widget designer, choose which approach to use.
-  * If in doubt, start by managing state in the parent widget.
+* There are different approaches for managing state.
+* You, as the widget designer, choose which approach to use.
+* If in doubt, start by managing state in the parent widget.
 {{site.alert.end}}
-
 
 Who manages the stateful widget's state? The widget itself?
 The parent widget?  Both? Another object?
@@ -451,6 +454,7 @@ These examples use [`GestureDetector`][] to capture activity
 on the `Container`.
 
 <a id="self-managed"></a>
+
 ### The widget manages its own state
 
 Sometimes it makes the most sense for the widget
@@ -542,6 +546,7 @@ class MyApp extends StatelessWidget {
 <hr>
 
 <a id="parent-managed"></a>
+
 ### The parent widget manages the widget's state
 
 Often it makes the most sense for the parent widget
@@ -645,6 +650,7 @@ class TapboxB extends StatelessWidget {
 <hr>
 
 <a id="mix-and-match"></a>
+
 ### A mix-and-match approach
 
 For some widgets, a mix-and-match approach makes
@@ -857,7 +863,6 @@ Flutter Gallery [running app][], [repo][]
 : This video includes information about state and
   stateless widgets.  Presented by Google engineer, Ian Hickson.
 
-
 [Android emulator]: {{site.url}}/get-started/install/windows#set-up-the-android-emulator
 [`Checkbox`]: {{site.api}}/flutter/material/Checkbox-class.html
 [`Cupertino`]: {{site.api}}/flutter/cupertino/cupertino-library.html
@@ -871,7 +876,6 @@ Flutter Gallery [running app][], [repo][]
 [Flutter's Layered Design]: {{yt-watch}}?v=dkyY9WCGMi0
 [`FormField`]: {{site.api}}/flutter/widgets/FormField-class.html
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
-[`foundation` library]: {{site.api}}/flutter/foundation/foundation-library.html
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
 [Gestures]: {{site.url}}/cookbook/gestures
 [Gestures in Flutter]: {{site.url}}/ui/interactivity/gestures
@@ -882,7 +886,6 @@ Flutter Gallery [running app][], [repo][]
 [`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
 [iOS simulator]: {{site.url}}/get-started/install/macos#set-up-the-ios-simulator
 [building layouts tutorial]: {{site.url}}/ui/layout/tutorial
-[building layouts tutorial (step 6)]: {{site.url}}/ui/layout/tutorial#step-6-final-touch
 [community]: {{site.main-url}}/community
 [Handle taps]: {{site.url}}/cookbook/gestures/handling-taps
 [`lake.jpg`]: {{examples}}/layout/lakes/step6/images/lake.jpg
@@ -891,7 +894,6 @@ Flutter Gallery [running app][], [repo][]
 [`main.dart`]: {{examples}}/layout/lakes/step6/lib/main.dart
 [Managing state]: #managing-state
 [Material Design guidelines]: {{site.material}}/styles
-[`meta.dart`]: {{site.pub}}/packages/meta
 [`pubspec.yaml`]: {{examples}}/layout/lakes/step6/pubspec.yaml
 [`Radio`]: {{site.api}}/flutter/material/Radio-class.html
 [`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html

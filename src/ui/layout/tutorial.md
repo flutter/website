@@ -5,7 +5,7 @@ description: Learn how to build a layout in Flutter.
 diff2html: true
 ---
 
-{% assign api = '{{site.api}}/flutter' -%}
+{% assign api = site.api | append: '/flutter' -%}
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
 {% assign rawExFile = '<https://raw.githubusercontent.com/flutter/website/main/examples>' -%}
 {% capture demo -%} {{site.repo.flutter}}/tree/{{site.branch}}/examples/flutter_gallery/lib/demo {%- endcapture -%}
@@ -25,7 +25,7 @@ This tutorial explains how to design and build layouts in Flutter.
 
 If you use the example code provided, you can build the following app.
 
-{% include docs/app-figure.md
+{% include docs/app-figure.liquid
    img-class="site-mobile-screenshot border"
    image="ui/layout/layout-demo-app.png"
    caption="The finished app."
@@ -72,7 +72,7 @@ Ask these questions to break the layout down to its basic elements.
 Identify the larger elements. In this example, you arrange the image, title,
 buttons, and description into a column.
 
-{% include docs/app-figure.md
+{% include docs/app-figure.liquid
     img-class="site-mobile-screenshot border"
     image="ui/layout/layout-sketch-intro.svg"
     caption="Major elements in the layout: image, row, row, and text block"
@@ -92,7 +92,7 @@ a column of text, a star icon, and a number.
 Its first child, the column, contains two lines of text.
 That first column might need more space.
 
-{% include docs/app-figure.md
+{% include docs/app-figure.liquid
    image="ui/layout/layout-sketch-title-block.svg"
    caption="Title section with text blocks and an icon"
    -%}
@@ -104,7 +104,7 @@ That first column might need more space.
 Row 2, the **Button** section, has three children: each child contains
 a column which then contains an icon and text.
 
-{% include docs/app-figure.md
+{% include docs/app-figure.liquid
     image="ui/layout/layout-sketch-button-block.svg"
     caption="The Button section with three labeled buttons" %}
 
@@ -178,7 +178,7 @@ the following layout.
 
 <?code-excerpt path-base="layout/lakes"?>
 
-{% include docs/app-figure.md
+{% include docs/app-figure.liquid
    image="ui/layout/layout-sketch-title-block-unlabeled.svg"
    caption="The Title section as sketch and prototype UI" %}
 
@@ -278,7 +278,7 @@ These code updates change the app in the following ways.
 * A `Column` widget displays any elements within its `children` property
   in the order listed.
   The first element listed in the `children` list displays at
-  the top of the stack. Elements in the `children` list display
+  the top of the list. Elements in the `children` list display
   in array order on the screen from top to bottom.
 
 [`SingleChildScrollView`]: {{api}}/widgets/SingleChildScrollView-class.html
@@ -320,7 +320,7 @@ In this section, add the buttons that will add functionality to your app.
 The **Button** section contains three columns that use the same layout:
 an icon over a row of text.
 
-{% include docs/app-figure.md
+{% include docs/app-figure.liquid
    image="ui/layout/layout-sketch-button-block-unlabeled.svg"
    caption="The Button section as sketch and prototype UI" %}
 
@@ -348,24 +348,24 @@ class ButtonSection extends StatelessWidget {
 ### Create a widget to make buttons
 
 As the code for each column could use the same syntax,
-create a widget named `BuildButtonColumn()`.
-Each call to this method passes a color, an `Icon` widget and a `Text` widget.
-Given these parameters, the helper returns a `Column` widget.
-Each contains two children: the `Icon` and the `Text`.
-A `Padding` widget separates these children.
-The helper also paints these children in the given color.
+create a widget named `ButtonWithText`.
+The widget's constructor accepts a color, icon data, and a label for the button.
+Using these values, the widget builds a `Column` with an `Icon` and a stylized
+`Text` widget as its children.
+To help separate these children, a `Padding` widget the `Text` widget
+is wrapped with a `Padding` widget.
 
 Add the following code after the `ButtonSection` class.
 
-<?code-excerpt "lib/main.dart (BuildButtonColumn)" title?>
+<?code-excerpt "lib/main.dart (ButtonWithText)" title?>
 ```dart
 class ButtonSection extends StatelessWidget {
   const ButtonSection({super.key});
 // ···
 }
 
-class BuildButtonColumn extends StatelessWidget {
-  const BuildButtonColumn({
+class ButtonWithText extends StatelessWidget {
+  const ButtonWithText({
     super.key,
     required this.color,
     required this.icon,
@@ -403,14 +403,14 @@ class BuildButtonColumn extends StatelessWidget {
 
 Add the following code into the `ButtonSection` widget.
 
-1. Call the `BuildButtonColumn` widget three times, once for each button.
+1. Add three instances of the `ButtonWithText` widget, once for each button.
 1. Pass the color, `Icon`, and text for that specific button.
 1. Align the columns along the main axis with the
-   `MainAxisAlignment.spaceEvenly` enumerated value or `enum`.
+   `MainAxisAlignment.spaceEvenly` value.
    The main axis for a `Row` widget is horizontal and the main axis for a
    `Column` widget is vertical.
-   This method, then, arranges the free space in equal amounts before, between,
-   and after each column along the `Row`.
+   This value, then, tells Flutter to arrange the free space in equal amounts
+   before, between, and after each column along the `Row`.
 
 <?code-excerpt "lib/main.dart (ButtonSection)" title?>
 ```dart
@@ -424,17 +424,17 @@ class ButtonSection extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          BuildButtonColumn(
+          ButtonWithText(
             color: color,
             icon: Icons.call,
             label: 'CALL',
           ),
-          BuildButtonColumn(
+          ButtonWithText(
             color: color,
             icon: Icons.near_me,
             label: 'ROUTE',
           ),
-          BuildButtonColumn(
+          ButtonWithText(
             color: color,
             icon: Icons.share,
             label: 'SHARE',
@@ -445,8 +445,8 @@ class ButtonSection extends StatelessWidget {
   }
 }
 
-class BuildButtonColumn extends StatelessWidget {
-  const BuildButtonColumn({
+class ButtonWithText extends StatelessWidget {
+  const ButtonWithText({
     super.key,
     required this.color,
     required this.icon,
@@ -490,7 +490,7 @@ Add the button section to the `children` list.
 
 In this section, add the text description to this app.
 
-{% include docs/app-figure.md
+{% include docs/app-figure.liquid
    image="ui/layout/layout-sketch-add-text-block.svg"
    caption="The text block as sketch and prototype UI" %}
 
@@ -655,7 +655,7 @@ Set the `image` property to the path of the image you added in
 
 That's it! When you hot reload the app, your app should look like this.
 
-{% include docs/app-figure.md
+{% include docs/app-figure.liquid
    img-class="site-mobile-screenshot border"
    image="ui/layout/layout-demo-app.png"
    caption="The finished app"
