@@ -17,7 +17,7 @@
 
 {% case os %}
 {% when 'Windows' -%}
-   {% assign path='D:\dev\flutter' %}
+   {% assign path='C:\dev\flutter' %}
    {% assign terminal='PowerShell' %}
    {% assign prompt1='D:>' %}
    {% assign prompt2=path | append: '>' %}

@@ -8,12 +8,12 @@
 {% case os %}
 {% when 'Windows' -%}
    {% assign unzip='Extract-Archive' %}
-   {% assign path='D:\dev\' %}
+   {% assign path='C:\dev\' %}
    {% assign terminal='PowerShell' %}
    {% assign prompt1='D:>' %}
    {% assign prompt2=path | append: '>' %}
-   {% assign diroptions='`%USERPROFILE%` or `D:\dev`' %}
-   {% assign dirinstall='`D:\dev\`' %}
+   {% assign diroptions='`%USERPROFILE%` or `C:\dev`' %}
+   {% assign dirinstall='`C:\dev\`' %}
    {% assign dirdl='%CSIDL_DEFAULT_DOWNLOADS%\' %}
    {% assign mv1 = 'Move-Item –Path ' | append: dirdl %}
    {% assign mv2 = '-Destination ' %}

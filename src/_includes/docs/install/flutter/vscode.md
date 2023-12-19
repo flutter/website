@@ -45,7 +45,7 @@
    Choose a different location.
 
    {% if os == "Windows" -%}
-   Consider `%USERPROFILE%` or `D:\dev`.
+   Consider `%USERPROFILE%` or `C:\dev`.
 
    {% include docs/install/admonitions/install-paths.md %}
    {% else -%}
