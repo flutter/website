@@ -12,4 +12,6 @@ next:
 
 {% include docs/install/flutter-sdk.md target='desktop' os='macOS' terminal='Terminal' -%}
 
+{% include docs/install/compiler/xcode.md target='desktop' os='macOS' -%}
+
 {% include docs/install/flutter-doctor.md target='desktop' os='macOS' platform='desktop' compiler='Xcode' -%}

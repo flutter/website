@@ -1,10 +1,11 @@
 ## Configure iOS development
 
 {% assign prompt1='$' %}
+{% assign os = include.os %}
 
 ### Configure Xcode
 
-To develop Flutter apps for iOS, install Xcode to compile to native bytecode.
+To develop Flutter apps for {{os}}, install Xcode to compile to native bytecode.
 
 1. To configure the Xcode command-line tools to use the installed version,
    run the following commands.
@@ -16,11 +17,15 @@ To develop Flutter apps for iOS, install Xcode to compile to native bytecode.
    To use the latest version of Xcode, use this path.
    If you need to use a different version, specify that path instead.
 
+{% if os=="iOS" %}
+
 1. To install the iOS Simulator, run the following command.
 
     ```terminal
     {{prompt1}} xcodebuild -downloadPlatform iOS
     ```
+
+{% endif %}
 
 1. Sign the Xcode license agreement.
 
@@ -29,6 +34,8 @@ To develop Flutter apps for iOS, install Xcode to compile to native bytecode.
     ```
 
 Try to keep to the current version of Xcode.
+
+{% if os=="iOS" %}
 
 ### Configure your target iOS device
 
@@ -61,31 +68,36 @@ With Xcode, you can run Flutter apps on an iOS device or on the simulator.
 </div>
 {% comment %} End: Tab panes. {% endcomment -%}
 
+{% endif %}
+
 ### Install CocoaPods
 
-If your apps depend on [Flutter plugins][] with native iOS code,
-install CocoaPods. CocoaPods handles the bundling of various dependencies
-across Flutter and iOS code.
+If your apps depend on [Flutter plugins][] with native {{os}} code,
+install CocoaPods. Built using Ruby,
+CocoaPods handles the bundling of various dependencies across Flutter
+and {{os}} code.
 
-To [Install and set up CocoaPods][], run the following commands:
+To [install and set up CocoaPods][cocoapods], run the following commands:
 
-```terminal
-{{prompt1}} sudo gem install cocoapods
-```
+1. Install Homebrew if necessary.
 
-{{site.alert.note}}
-  The default version of Ruby requires `$ {{prompt1}} sudo` to install the CocoaPods gem.
-  If you are using a Ruby Version manager, you might need to run without `$ {{prompt1}} sudo`.
+   ```terminal
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
 
-  Additionally, if you are installing on an [Apple Silicon Mac][],
-  run the command:
+1. Install `ruby` using Homebrew.
 
-  ```terminal
-  {{prompt1}} sudo gem uninstall ffi && $ {{prompt1}} sudo gem install ffi -- --enable-libffi-alloc
-  ```
+   ```terminal
+   {{prompt1}} brew install ruby
+   ```
 
-{{site.alert.end}}
+1. Install `cocoapods` using Homebrew.
+
+   ```terminal
+   {{prompt1}} brew install cocoapods
+   ```
+
+Using Homebrew reduces potential issues with chipsets and install permissions.
 
 [Flutter plugins]: {{site.url}}/packages-and-plugins/developing-packages#types
-[Install and set up CocoaPods]: https://guides.cocoapods.org/using/getting-started.html#installation
-[Apple Silicon Mac]: https://support.apple.com/en-us/HT211814
+[cocoapods]: https://formulae.brew.sh/formula/cocoapods
