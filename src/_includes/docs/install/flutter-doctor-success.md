@@ -30,7 +30,6 @@ Doctor summary (to see all details, run flutter doctor -v):
 [✓] Android Studio (version {{site.appnow.android_studio}})
 {% else -%}
 [!] Android Studio (not installed)
-[!] IntelliJ IDEA Community Edition (not installed)
 {% endif -%}
 [✓] VS Code (version {{site.appnow.vscode}})
 [✓] Connected device (1 available)

@@ -38,8 +38,8 @@
 #### Download the Flutter SDK
 {:.no_toc}
 
-1. Choose which folder to install Flutter
-   using the **Select Folder for Flutter SDK** dialog.
+1. When the **Select Folder for Flutter SDK** dialog displays,
+   choose where you want to install Flutter.
 
    VS Code places you in your user profile to start.
    Choose a different location.

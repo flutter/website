@@ -2,6 +2,7 @@
 
 {% assign prompt1='$' %}
 {% assign os = include.os %}
+{% assign target = include.target %}
 
 ### Configure Xcode
 
@@ -17,7 +18,7 @@ To develop Flutter apps for {{os}}, install Xcode to compile to native bytecode.
    To use the latest version of Xcode, use this path.
    If you need to use a different version, specify that path instead.
 
-{% if os=="iOS" %}
+{% if target=="mobile-ios" %}
 
 1. To install the iOS Simulator, run the following command.
 
@@ -35,7 +36,7 @@ To develop Flutter apps for {{os}}, install Xcode to compile to native bytecode.
 
 Try to keep to the current version of Xcode.
 
-{% if os=="iOS" %}
+{% if target=="mobile-ios" %}
 
 ### Configure your target iOS device
 
