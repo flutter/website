@@ -851,9 +851,9 @@ channel.setMethodCallHandler {
 }
 ```
 
-Further examples of using platform channels, including examples for macOS, can
-be found in the [flutter/packages]({{site.repo.packages}})
-repository<sup><a href="#a3">3</a></sup>. There are also [thousands of plugins
+Further examples of using platform channels, including examples for desktop
+platforms, can be found in the [flutter/packages]({{site.repo.packages}})
+repository. There are also [thousands of plugins
 already available]({{site.pub}}/flutter) for Flutter that cover many common
 scenarios, ranging from Firebase to ads to device hardware like camera and
 Bluetooth.
@@ -919,7 +919,7 @@ Flutter solves this by introducing platform view widgets
 ([`AndroidView`]({{site.api}}/flutter/widgets/AndroidView-class.html)
 and [`UiKitView`]({{site.api}}/flutter/widgets/UiKitView-class.html))
 that let you embed this kind of content on each platform. Platform views can be
-integrated with other Flutter content<sup><a href="#a4">4</a></sup>. Each of
+integrated with other Flutter content<sup><a href="#a3">3</a></sup>. Each of
 these widgets acts as an intermediary to the underlying operating system. For
 example, on Android, `AndroidView` serves three primary functions:
 
@@ -1023,7 +1023,7 @@ While HTML mode offers the best code size characteristics,
 `CanvasKit` provides the fastest path to the
 browser's graphics stack,
 and offers somewhat higher graphical fidelity with the
-native mobile targets<sup><a href="#a5">5</a></sup>.
+native mobile targets<sup><a href="#a4">4</a></sup>.
 
 The web version of the architectural layer diagram is as follows:
 
@@ -1067,15 +1067,9 @@ just return the same widget.
 <sup><a id="a2">2</a></sup> This is a slight simplification for ease of
 reading. In practice, the tree might be more complex.
 
-<sup><a id="a3">3</a></sup> While work is underway on Linux and Windows,
-examples for those platforms can be found in the [Flutter desktop embedding
-repository]({{site.github}}/google/flutter-desktop-embedding/tree/master/plugins).
-As development on those platforms reaches maturity, this content will be
-gradually migrated into the main Flutter repository.
-
-<sup><a id="a4">4</a></sup> There are some limitations with this approach, for
+<sup><a id="a3">3</a></sup> There are some limitations with this approach, for
 example, transparency doesn't composite the same way for a platform view as it
 would for other Flutter widgets.
 
-<sup><a id="a5">5</a></sup> One example is shadows, which have to be
+<sup><a id="a4">4</a></sup> One example is shadows, which have to be
 approximated with DOM-equivalent primitives at the cost of some fidelity.
