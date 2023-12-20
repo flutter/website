@@ -16,12 +16,12 @@ foldable devices run on Android.
 
 When your app supports large screens, they will also receive the
 following benefits.
-* Increases your business metrics. They would show increased user 
-engagement on tablets for apps with layouts optimized to fill the full screen.
-* Improves the [technical quality][] to increase visibility for your
-app in the Play Store on these devices. Recent [Play Store updates][] show 
-ratings by device type and notify users when an app lacks large screen support. 
 
+* Increases your business metrics. They would show increased user 
+  engagement on tablets for apps with layouts optimized to fill the full screen.
+* Improves the [technical quality][] to increase visibility for your
+  app in the Play Store on these devices. Recent [Play Store updates][] show 
+  ratings by device type and notify users when an app lacks large screen support. 
 
 ## Common issues with large screens
 
@@ -37,11 +37,14 @@ most of these recommendations can also make your app run and feel better on
 iPads, desktop browsers, and desktop devices.
 
 ### App continuity and configuration changes
-**Requirement:**
+
+#### Requirement
+
 Apps should change orientation and retain or restore [app state][] as the 
 device rotates, changes window size or folds and unfolds. 
 
-**Best practice: Check plugins/native extensions**
+#### Best practice: Check plugins/native extensions
+
 Your app shouldn’t lose state when the device changes viewable size, 
 Flutter should maintain state by default. 
 
@@ -49,7 +52,8 @@ If your app loses state during device configuration, verify that the
 plugins you use support large screen devices. A native extension could 
 lose state when the device changes position.
 
-**Best practice: Use key:PageStorageKey class**
+#### Best practice: Use key:PageStorageKey class
+
 To maintain scroll position for lists that keep their layout the same when
 device orientation changes, use the key:PageStorageKey class. 
 By adding a [PageStorageKey to the collections page][] in the Wonderous app, 
@@ -61,7 +65,9 @@ In this case, you might have to [do a bit of math and change the scroll position
 screen rotation][].
 
 ### Multi-window & split screen
-**Requirement:**
+
+#### Requirement
+
 App can run with full functionality in multi-window mode. 
 This could include the app updating its UI or continuing to play media when 
 the app doesn’t have top focus.
@@ -71,7 +77,8 @@ two inches of vertical space. In some cases, like Wonderous, the app can get [le
 If you use the MediaQuery class to determine the size of the device then disable 
 landscape on smaller screens, the app gets letterboxed. 
 
-**Best practice: Use the Display API**
+#### Best practice: Use the Display API
+
 The [MediaQuery][] class doesn’t give you the screen size when you’re in split-screen mode.
 It mistakes large devices with split-screens as small devices.
 
@@ -86,13 +93,16 @@ When disabling landscape on smaller devices using SystemChrome.setPreferredOrien
 use the Display class to determine the device size rather than the MediaQuery class.
 
 ### Keyboard, mouse and trackpad input
-**Requirement:** 
+
+#### Requirement
+
 Apps should support basic mice, trackpads, and keyboard shortcuts. 
 Main user flows should support keyboard navigation to ensure accessibility. 
 
 Your app must handle navigation and provide accessible Best practices for keyboards on large devices.
 
-**Best practice: Implement Focus state for custom widgets**
+#### Best practice: Implement Focus state for custom widgets
+
 Flutter’s Material buttons handle basic focus states, unless you change the default styling of
 the Material buttons like Wonderous did to set the overlayColor to transparent. 
 
@@ -103,22 +113,27 @@ an outline when the button has focus. To fix it, gSkinner used the FocusNode [ha
 check when the button node had focus input and added a border to the button.
 
 ### App UX layout
-**Requirement:**
+
+#### Requirement
+
 Apps should provide adaptive layouts and responsive visual elements that change for 
 available screen space or device orientation.
 
-**Best practice: Use Navigation rail**
+#### Best practice: Use Navigation rail
 
 Verify that your app’s layouts and navigation can function in large screen devices and
 ~2” of vertical space if the screen works in split-mode. To make this feasible, 
 use [adaptive widgets][] like the NavigationRail widget.
 
 ### Use camera preview and media projection
-**Requirement:**
+
+#### Requirement
+
 Your app must support camera preview and media projection in 
 different orientations, screen sizes, and in multi-window mode.
 
-**Best practice: Use a JetPack CameraX library**
+#### Best practice: Use a JetPack CameraX library
+
 [Showing camera previews][] can be quite complex. You can use the [Jetpack CameraX library][] to
 handle many of these details. In Flutter 3.10, the preliminary support was added for 
 CameraX to our Flutter camera plugin. To try it, add the following lines to your pubspec.yaml file.
