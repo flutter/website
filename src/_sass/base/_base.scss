@@ -70,6 +70,10 @@ dd {
   color: $site-color-body;
 }
 
+.d-block.h1 > .material-icons {
+  font-size: 3rem;
+}
+
 .card-image-holder-material-3 {
   align-items: center;
   z-index: -1;
@@ -243,6 +247,7 @@ dd {
 
 .install-help {
   text-align: right;
+  margin-top: -2.5rem;
 
   a {
     display: inline-flex;
@@ -281,7 +286,7 @@ summary {
   margin-bottom: 1rem;
 }
 
-ol + img, ul + img, ol + p, ul + p, p + p + img {
+ol + img, ul + img, ol + p, ul + p, p + p + img, li:last-child, ul + p:last-child {
   margin-bottom: 1rem;
 }
 
@@ -292,6 +297,14 @@ td ol, td ul, td dl, td p {
 p + ul, p + ol, p + dl {
   margin-top: .5rem;
   margin-bottom: .5rem;
+}
+
+li.breadcrumb-item:last-child {
+  margin-bottom: 0px;
+}
+
+td ol, td ul, td dl, td p {
+  margin-bottom: 0rem;
 }
 
 .figure-caption {
