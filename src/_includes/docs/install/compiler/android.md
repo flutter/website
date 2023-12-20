@@ -128,7 +128,7 @@
 </div>
 {% comment %} End: Tab panes. {% endcomment -%}
 
-### Agree to Android Licenses
+### Agree to Android licenses
 
 {% include docs/help-link.md location='android-licenses' section='#android-setup' %}
 
@@ -162,7 +162,7 @@ agree to the licenses of the Android SDK platform.
 <details markdown="1">
 <summary>How to fix the error of finding Java install</summary>
 
-You may have an issue with the Android SDK locating the Java SDK.
+You might have an issue with the Android SDK locating the Java SDK.
 
 ```terminal
 $ flutter doctor --android-licenses

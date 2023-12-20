@@ -33,7 +33,7 @@
    {% assign prompt2='$' %}
 {% endcase -%}
 
-### Run Flutter Doctor
+### Run Flutter doctor
 
 The `flutter doctor` command validates that all components of a
 complete Flutter development environment for {{os}}.
@@ -55,7 +55,7 @@ If you followed this guide, the result of your command should resemble:
 {% include docs/install/flutter-doctor-success.md %}
 ```
 
-### Troubleshoot Flutter Doctor issues
+### Troubleshoot Flutter doctor issues
 
 When the `flutter doctor` command returns an error, it could be for Flutter,
 VS Code, {{compiler}}, the connected device, or network resources.
