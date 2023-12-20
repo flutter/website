@@ -108,10 +108,10 @@ Create an [`Image`][] widget:
 
 <?code-excerpt "layout/lakes/step5/lib/main.dart (Image-asset)" remove="/width|height/"?>
 ```dart
-Image.asset(
-  'images/lake.jpg',
+return Image.asset(
+  image,
   fit: BoxFit.cover,
-),
+);
 ```
 
 Create an [`Icon`][] widget:
@@ -166,11 +166,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const String appTitle = 'Flutter layout demo';
     return MaterialApp(
-      title: 'Flutter layout demo',
+      title: appTitle,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Flutter layout demo'),
+          title: const Text(appTitle),
         ),
         body: const Center(
           child: Text('Hello World'),

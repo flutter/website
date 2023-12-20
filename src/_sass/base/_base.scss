@@ -170,6 +170,18 @@ dd {
 
   .site-figure-container {
     flex: 0 1 auto;
+    max-width: 100%;
+
+    img { width: 100%; }
+
+    figcaption {
+      margin-top: bootstrap.bs-spacer(4);
+      text-align: center;
+    }
+  }
+  .site-figure-container-lg {
+    flex: 0 1 auto;
+    width: 100%;
 
     img { width: 100%; }
 
@@ -295,4 +307,11 @@ p + ul, p + ol, p + dl {
   'GRAD' 0,
   'opsz' 24;
   vertical-align: middle;
+}
+
+aside.alert {
+  h2, h3, h4, h5, h6 {
+    margin: 0.5rem 0;
+    font-size: 1.5rem;
+  }  
 }
