@@ -1,0 +1,19 @@
+name: games_services_example
+description: Games services
+
+environment:
+  sdk: ^3.2.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  games_services: ^4.0.0
+  logging: ^1.2.0
+
+dev_dependencies:
+  example_utils:
+    path: ../../../example_utils
+
+flutter:
+  uses-material-design: true
