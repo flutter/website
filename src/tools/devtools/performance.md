@@ -3,10 +3,12 @@ title: Using the Performance view
 description: Learn how to use the DevTools performance view.
 ---
 
+{% include docs/yt_shims.liquid %}
+
 {{site.alert.note}}
   The DevTools performance view works for Flutter mobile and desktop apps.
   For web apps, Flutter adds timeline events to the
-  performance panel of Chrome DevTools instead. 
+  performance panel of Chrome DevTools instead.
   To learn about profiling web apps, check out [Debugging web performance][].
 {{site.alert.end}}
 
@@ -45,7 +47,7 @@ Flutter is designed to render its UI at 60 frames per second
 Each render is called a _frame_.
 This means that, approximately every 16ms, the UI updates
 to reflect animations or other changes to the UI. A frame
-that takes longer than 16ms to render causes jank 
+that takes longer than 16ms to render causes jank
 (jerky motion) on the display device.
 
 ## Flutter frames chart
@@ -71,7 +73,7 @@ The flutter frames chart updates when new frames
 are drawn in your app. To pause updates to this chart,
 click the pause button to the right of the chart.
 This chart can be collapsed to provide more viewing space
-for data below by clicking the **Flutter frames** button above the chart. 
+for data below by clicking the **Flutter frames** button above the chart.
 
 ![Screenshot of a Flutter frames chart]({{site.url}}/assets/images/docs/tools/devtools/flutter-frames-chart.png)
 
@@ -195,7 +197,7 @@ your application, click the refresh button
 
 ## Advanced debugging tools
 
-### Enhance tracing 
+### Enhance tracing
 
 To view more detailed tracing in the timeline events chart,
 use the options in the enhance tracing dropdown:
@@ -218,6 +220,8 @@ The name of the widget is shown in the timeline event.
 
 ![Screenshot of track widget builds]({{site.url}}/assets/images/docs/tools/devtools/track-widget-builds.png)
 
+[Watch this video for an example of tracking widget builds][track-widgets]
+
 ### Track layouts
 
 To see render object layout events in the timeline,
@@ -225,12 +229,16 @@ enable the **Track Layouts** option:
 
 ![Screenshot of track layouts]({{site.url}}/assets/images/docs/tools/devtools/track-layouts.png)
 
+[Watch this video for an example of tracking layouts][track-layouts]
+
 ### Track paints
 
 To see render object paint events in the timeline,
 enable the **Track Paints** option:
 
 ![Screenshot of track paints]({{site.url}}/assets/images/docs/tools/devtools/track-paints.png)
+
+[Watch this video for an example of tracking paints][track-paints]
 
 ## More debugging options
 
@@ -288,3 +296,6 @@ detect jank using DevTools, check out a guided
 [Reduce shader compilation jank on mobile]: {{site.url}}/perf/shader
 [Import and export]: #import-and-export
 [performance-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-performance-view-part-8-of-8-4ae762f91230
+[track-widgets]: {{yt-watch}}/_EYk-E29edo?t=621
+[track-layouts]: {{yt-watch}}/_EYk-E29edo?t=675
+[track-paints]: {{yt-watch}}/_EYk-E29edo?t=747
