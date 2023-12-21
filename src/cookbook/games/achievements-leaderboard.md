@@ -143,7 +143,6 @@ have your achievement & leaderboard IDs ready, it's finally Dart time.
       // ... deal with failures ...
     }
     ```
-    <
 
 The sign in happens in the background. It takes several seconds, so
 don't call `signIn()` before `runApp()` or the players will be forced to
