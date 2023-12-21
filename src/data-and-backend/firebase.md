@@ -5,42 +5,42 @@ description: How to use Firebase and Firestore with Flutter.
 
 {% include docs/yt_shims.liquid %}
 
-== Introduction
+## Introduction
 
 Firebase is a Backend-as-a-Service (BaaS) app development platform
 that provides hosted backend services such as a realtime database,
 cloud storage, authentication, crash reporting, machine learning,
 remote configuration, and hosting for your static files.
 
-== Flutter and Firebase resources
+## Flutter and Firebase resources
 
 Firebase supports Flutter. To learn more,
 check out the following resources.
 
-=== Documentation
+### Documentation
 
 * [Getting started with Firebase and Flutter][started]
 * [Firebase plugins][]
 
-=== Blog Posts
+### Blog Posts
 
 [Use Firebase to host your Flutter app on the web][article]
 
-=== Tutorials
+### Tutorials
 
 Get to know Firebase for Flutter
 * [tutorial][codelab1]
 * [video workshop][workshop]
 
-== Flutter and Firebase community resources
+## Flutter and Firebase community resources
 
 The Flutter community created the following useful resources.
 
-=== Blog Posts
+### Blog Posts
 
 [Building chat app with Flutter and Firebase][chat app]
 
-=== Videos
+### Videos
 
 * [Using Firestore as a backend to your Flutter app][video]
 * [Live Coding Firebase Authentication with Flutter][video2]
@@ -52,8 +52,8 @@ The Flutter community created the following useful resources.
 [codelab1]: {{site.codelabs}}/codelabs/firebase-get-to-know-flutter
 [Firebase plugins]: {{site.firebase}}/docs/flutter/setup#available-plugins
 [started]: {{site.firebase}}/docs/flutter/setup
-[video]: {{yt-watch}}?v=DqJ_KjFzL9I&t=38s
-[video2]: {{yt-watch}}?v=OlcYP6UXlm8
-[video3]: {{yt-watch}}?v=u_Lyx8KJWpg
-[video4]: {{yt-watch}}?v=13-jNF984C0
-[workshop]: {{yt-watch}}?v=4wunbF29Kkg
+[video]: {{yt-watch}}?v#DqJ_KjFzL9I&t#38s
+[video2]: {{yt-watch}}?v#OlcYP6UXlm8
+[video3]: {{yt-watch}}?v#u_Lyx8KJWpg
+[video4]: {{yt-watch}}?v#13-jNF984C0
+[workshop]: {{yt-watch}}?v#4wunbF29Kkg
