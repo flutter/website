@@ -322,9 +322,14 @@ td ol, td ul, td dl, td p {
   vertical-align: middle;
 }
 
-aside.alert {
-  h2, h3, h4, h5, h6 {
-    margin: 0.5rem 0;
-    font-size: 1.5rem;
-  }  
+aside {
+  .alert {
+    h2, h3, h4, h5, h6 {
+      margin: 0.5rem 0;
+      font-size: 1.5rem;
+    }  
+  }
+  .code-excerpt__code:last-child, div.highlighter-rouge {
+    margin-bottom: 0rem;
+  }
 }

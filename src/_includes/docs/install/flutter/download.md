@@ -1,80 +1,89 @@
+{% assign terminal=include.terminal %}
+
 ### Download then install Flutter
 {:.no_toc}
 
 {% assign os = include.os %}
 {% assign osl = include.os | downcase %}
-{% if os == 'Windows' -%}
+{% case os %}
+{% when 'Windows' -%}
    {% assign unzip='Extract-Archive' %}
-{% elsif os == "macOS" -%}
+   {% assign path='C:\dev\' %}
+   {% assign terminal='PowerShell' %}
+   {% assign prompt1='D:>' %}
+   {% assign prompt2=path | append: '>' %}
+   {% assign diroptions='`%USERPROFILE%` or `C:\dev`' %}
+   {% assign dirinstall='`C:\dev\`' %}
+   {% assign dirdl='%CSIDL_DEFAULT_DOWNLOADS%\' %}
+   {% assign mv1 = 'Move-Item –Path ' | append: dirdl %}
+   {% assign mv2 = '-Destination ' %}
+{% when "macOS" -%}
+   {% assign diroptions='`~/development/`' %}
+   {% assign dirinstall='`~/development/`' %}
    {% assign unzip='unzip' %}
+   {% assign path='~/development/' %}
+   {% assign terminal='the Terminal' %}
+   {% assign prompt1='$' %}
+   {% assign prompt2='$' %}
+   {% assign dirdl='~/Downloads/' %}
+   {% assign mv1 = 'mv ' | append: dirdl %}
 {% else -%}
+   {% assign diroptions='`~/development/`' %}
+   {% assign dirinstall='`~/development/`' %}
    {% assign unzip='unzip' %}
-{% endif -%}
+   {% assign path='/usr/bin/' %}
+   {% assign terminal='a shell' %}
+   {% assign prompt1='$' %}
+   {% assign prompt2='$' %}
+   {% assign dirdl='~/Downloads/' %}
+   {% assign mv1 = 'mv ' | append: dirdl %}
+{% endcase -%}
 
 1. Download the following installation bundle to get the latest
    {{site.sdk.channel}} release of the Flutter SDK.
 
+   {% if os=='macOS' %}
+
+   | Intel | | <span class="apple-silicon">Apple Silicon</span> |
+   |-------| | ---------------|
+   | [(loading...)](#){:.download-latest-link-{{osl}}.btn.btn-primary} | | [(loading...)](#){:.download-latest-link-{{osl}}-arm64.apple-silicon.btn.btn-primary} |
+
+   {% else %}
+
    [(loading...)](#){:.download-latest-link-{{osl}}.btn.btn-primary}
+
+   {% endif -%}
 
    For other release channels, and older builds,
    check out the [SDK archive][].
 
+   This guide presumes that you downloaded your Flutter SDK to the
+   default download directory for {{os}}: `{{dirdl}}`.
+
 1. Create a folder where you can install Flutter.
 
-   Consider `%USERPROFILE%` or `D:\dev`.
-
+   Consider {{diroptions}}.
+   {% if os == "Windows" -%}
    {% include docs/install/admonitions/install-paths.md %}
+   {% endif %}
 
 1. Move the zip file into the directory you want to store the Flutter SDK.
+
+   ```terminal
+   {{prompt2}} {{mv1}}flutter_sdk_v1.0.0.zip {{mv2}}{{path}}
+   ```
 
 1. Extract the zip file.
 
    ```terminal
-   {{unzip}} flutter_sdk_v1.0.0.zip
+   {{prompt2}} {{unzip}} flutter_sdk_v1.0.0.zip
    ```
+
+   When finished, the Flutter SDK should be in the {{dirinstall}}`flutter`
+   directory.
 
 [SDK archive]: {{site.url}}/release/archive
 
-### Update your Windows PATH variable
-{:.no_toc}
-
-{% include docs/help-link.md location='win-path' section='#unable-to-find-the-flutter-command' %}
-
-To run Flutter commands in PowerShell,
-add Flutter to the `PATH` environment variable.
-
-1. Press <kbd>Windows</kbd> + <kbd>S</kbd>.
-
-1. Type `environment`.
-
-1. When **Edit the system environment variables** displays
-   as the **Best match**, click **Open** under
-   **Edit the system environment variables**.
-
-1. Click **About**.
-
-1. Click **Advanced System Settings**.
-
-1. Click **Environment Variables...**
-
-   The **Environment Variables** dialog displays.
-
-1. Under **User variables for \<user\>** check for the **Path** entry.
-
-   {:type="a"}
-   1. If the entry exists, click **Edit...**.
-
-   1. If the entry doesn't exist, click **New...**.
-
-   1. Click **New**.
-
-   1. Type `<install-directory>\flutter\bin`.
-
-   1. Click the **\<install-directory\>\flutter\bin** entry.
-
-   1. Click **Move Up** until the Flutter entry sits at the top of the list.
-
-   1. Click **OK**.
-
-1. To enable these changes,
-   close and reopen any existing command prompts and PowerShell instances.
+{% if os == 'Windows' %}
+{% include docs/install/reqs/windows/set-path.md terminal=terminal %}
+{% endif %}

@@ -4,9 +4,9 @@
 {% include docs/help-link.md location='android-emulator' section='#android-setup' %}
 
 {% if include.os=='Windows' -%}
-{% assign images = 'x86' -%}
+{% assign images = '**x86 Images**' -%}
 {% elsif include.os=='macOS' -%}
-{% assign images = 'x86' -%}
+{% assign images = '**x86 Images** if your Mac runs on an Intel CPU or **ARM Images** if your Mac runs on an Apple CPU' -%}
 {% endif -%}
 
 To configure your Flutter app to run in the Android emulator,
@@ -40,7 +40,7 @@ follow these steps:
 
 1. Click **Next**.
 
-1. Click **{{images}} Images**.
+1. Click {{images}}.
 
 1. Click one system image for the Android version you want to emulate.
 

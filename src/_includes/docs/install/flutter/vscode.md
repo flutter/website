@@ -1,3 +1,11 @@
+{% assign os=include.os %}
+{% assign terminal=include.terminal %}
+{%- if os=='macOS' -%}
+{% assign special = 'Command' %}
+{% else %}
+{% assign special = 'Control' %}
+{%- endif %}
+
 ### Use VS Code to install Flutter
 {:.no_toc}
 
@@ -7,7 +15,7 @@
 1. Open VS Code.
 
 1. To open the Command Palette,
-   press <kbd>Control</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>.
+   press <kbd>{{special}}</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>.
 
 1. In the Command Palette, type `flutter`.
 
@@ -30,19 +38,23 @@
 #### Download the Flutter SDK
 {:.no_toc}
 
-1. Choose which folder to install Flutter
-   using the **Select Folder for Flutter SDK** dialog.
+1. When the **Select Folder for Flutter SDK** dialog displays,
+   choose where you want to install Flutter.
 
    VS Code places you in your user profile to start.
    Choose a different location.
 
-   Consider `%USERPROFILE%` or `D:\dev`.
+   {% if os == "Windows" -%}
+   Consider `%USERPROFILE%` or `C:\dev`.
 
    {% include docs/install/admonitions/install-paths.md %}
+   {% else -%}
+   Consider `~/development/`
+   {% endif %}
 
 1. Click **Clone Flutter**.
 
-   While downloading Flutter, a notification displays:
+   While downloading Flutter, VS Code displays this pop-up notification:
 
    ```terminal
    Downloading the Flutter SDK. This may take a few minutes.
@@ -60,7 +72,7 @@
    Expanding downloaded archive...
    ```
 
-   When successful, a notification displays:
+   When successful, VS Code displays this pop-up notification:
 
    ```terminal
    Initializing the Flutter SDK. This may take a few minutes.
@@ -86,12 +98,14 @@
    At this point in the procedure, _ignore this output._
    Flutter Doctor might show errors that don't apply to this quick start.
 
-   When the Flutter install succeeds, a notification displays:
+   When the Flutter install succeeds, VS Code displays this pop-up notification:
 
    ```terminal
    Do you want to add the Flutter SDK to PATH so it's accessible
    in external terminals?
    ```
+
+{% if os=='Windows' %}
 
 1. Click **Add SDK to PATH**.
 
@@ -101,14 +115,16 @@
    The Flutter SDK was added to your PATH
    ```
 
-1. The notification displays the Google Analytics notice.
+{% endif %}
+
+1. VS Code may display a Google Analytics notice.
 
    If you agree, click **OK**.
 
-1. To enable `flutter` in all terminal windows:
+1. To enable `flutter` in all {{terminal}} windows:
 
    {:type="a"}
-   1. Close, then reopen all Powershell windows.
+   1. Close, then reopen all {{terminal}} windows.
    1. Restart VS Code.
 
 [development tools prerequisites]: #development-tools

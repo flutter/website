@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function(_) {
   setupTabs($('#android-devices-vp'), 'dev.flutter.install.android-devices-vp');
   setupTabs($('#android-studio-start'), 'dev.flutter.install.android-studio-start');
   setupTabs($('#flutter-install'), 'dev.flutter.install.options');
+  setupTabs($('#ios-devices-vp'), 'dev.flutter.install.ios-devices-vp');
   setupTabs($('#china-os-tabs'), 'dev.flutter.china-os');
   setupTabs($('#china-os-dl-tabs'), 'dev.flutter.china-os-dl');
   setupTabs($('#china-os-pub-tabs'), 'dev.flutter.china-os-pub');

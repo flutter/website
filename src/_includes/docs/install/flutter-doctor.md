@@ -4,13 +4,25 @@
 
 {% assign os = include.os %}
 {% assign target = include.target %}
-{% if os == 'Windows' -%}
-   {% assign path='C:\src\flutter' %}
+{% assign compiler = include.compiler %}
+
+{% case target %}
+{% when 'mobile-ios' %}
+   {% assign v-target = 'iOS' %}
+{% when 'mobile-android' %}
+   {% assign v-target = 'Android' %}
+{% else %}
+   {% assign v-target = target %}
+{% endcase %}
+
+{% case os %}
+{% when 'Windows' -%}
+   {% assign path='C:\dev\flutter' %}
    {% assign terminal='PowerShell' %}
-   {% assign prompt1='C:>' %}
+   {% assign prompt1='D:>' %}
    {% assign prompt2=path | append: '>' %}
-{% elsif os == "macOS" -%}
-   {% assign path='~/Applications/flutter' %}
+{% when "macOS" -%}
+   {% assign path='~/development/flutter' %}
    {% assign terminal='the Terminal' %}
    {% assign prompt1='$' %}
    {% assign prompt2='$' %}
@@ -19,12 +31,12 @@
    {% assign terminal='a shell' %}
    {% assign prompt1='$' %}
    {% assign prompt2='$' %}
-{% endif -%}
+{% endcase -%}
 
-### Run Flutter Doctor
+### Run Flutter doctor
 
 The `flutter doctor` command validates that all components of a
-complete Flutter development environment for {{include.os}}.
+complete Flutter development environment for {{os}}.
 
 1. Open {{terminal}}.
 
@@ -35,7 +47,7 @@ complete Flutter development environment for {{include.os}}.
    {{prompt2}} flutter doctor
    ```
 
-As you chose to develop for {{include.target}},
+As you chose to develop for {{v-target}},
 you do not need _all_ components.
 If you followed this guide, the result of your command should resemble:
 
@@ -43,9 +55,12 @@ If you followed this guide, the result of your command should resemble:
 {% include docs/install/flutter-doctor-success.md %}
 ```
 
-### Troubleshoot Flutter Doctor issues
+### Troubleshoot Flutter doctor issues
 
-If the `flutter doctor` command returns an error,
+When the `flutter doctor` command returns an error, it could be for Flutter,
+VS Code, {{compiler}}, the connected device, or network resources.
+
+If the `flutter doctor` command returns an error for any of these components,
 run it again with the verbose flag.
 
 ```terminal

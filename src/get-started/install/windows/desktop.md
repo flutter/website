@@ -10,6 +10,6 @@ next:
 
 {% include docs/install/reqs/windows/base.md target='desktop' os='Windows' -%}
 
-{% include docs/install/flutter-sdk.md target='desktop' os='Windows' -%}
+{% include docs/install/flutter-sdk.md target='desktop' os='Windows' terminal='PowerShell' -%}
 
-{% include docs/install/flutter-doctor.md target='desktop' os='Windows' platform='desktop' -%}
+{% include docs/install/flutter-doctor.md target='desktop' os='Windows' platform='desktop' compiler='Visual Studio' -%}

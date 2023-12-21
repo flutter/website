@@ -58,6 +58,7 @@ youtube-site: https://youtube.com
 
 appmin:
   github_win: 2.4
+  github_mac: 2.4
   vscode: 1.75
   android_studio: '2022.3 (Giraffe) or later'
   intellij_idea: '2022.3 or later'
@@ -71,7 +72,7 @@ devmin:
     ubuntu: '18.04 LTS'
 targetmin:
   windows: 'Microsoft Windows 7'
-  macos: '10.13 (High Sierra)'
+  macos: '10.13 (Ventura)'
   linux:
     debian: 9
     ubuntu: '18.04 LTS'
@@ -90,6 +91,7 @@ appnow:
   powershell: 5.0
   xcode: '15'
   ios: '17'
+  cocoapods: '1.12'
 
 ########### Jekyll ###########
 
