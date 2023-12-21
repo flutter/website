@@ -296,6 +296,6 @@ detect jank using DevTools, check out a guided
 [Reduce shader compilation jank on mobile]: {{site.url}}/perf/shader
 [Import and export]: #import-and-export
 [performance-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-performance-view-part-8-of-8-4ae762f91230
-[track-widgets]: {{yt-watch}}/_EYk-E29edo?t=621
-[track-layouts]: {{yt-watch}}/_EYk-E29edo?t=675
-[track-paints]: {{yt-watch}}/_EYk-E29edo?t=747
+[track-widgets]: {{yt-watch}}/_EYk-E29edo?t=623
+[track-layouts]: {{yt-watch}}/_EYk-E29edo?t=676
+[track-paints]: {{yt-watch}}/_EYk-E29edo?t=748
