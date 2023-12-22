@@ -173,8 +173,8 @@ app's `build.gradle` file, under the `android { }` block.
 android {
   //...
   compileOptions {
-    sourceCompatibility 11 # The minimum value
-    targetCompatibility 11 # The minimum value
+    sourceCompatibility 11 // The minimum value
+    targetCompatibility 11 // The minimum value
   }
 }
 ```
