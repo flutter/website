@@ -47,8 +47,12 @@ ListView(
 
 ## Interactive example
 
-{{site.alert.note}}
-  **Desktop and web only:** This example works in the browser and on the desktop. However, as it scrolls on the horizontal axis (left to right or right to left), hold <kbd>Shift</kbd> when hovering your mouse pointer over the list to scroll it.
+{{site.alert.secondary}}
+  **Desktop and web only:**
+  This example works in the browser and on the desktop.
+  However, as this list scrolls on the horizontal axis
+  (left to right or right to left),
+  hold <kbd>Shift</kbd> while using the mouse scroll wheel to scroll the list.
 
   To learn more, read the [breaking change][] page on the
   default drag for scrolling devices.
