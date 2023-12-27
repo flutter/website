@@ -11,10 +11,10 @@ GEM
       minitest (>= 5.1)
       mutex_m
       tzinfo (~> 2.0)
-    addressable (2.8.5)
+    addressable (2.8.6)
       public_suffix (>= 2.0.2, < 6.0)
     base64 (0.2.0)
-    bigdecimal (3.1.4)
+    bigdecimal (3.1.5)
     colorator (1.1.0)
     concurrent-ruby (1.2.2)
     connection_pool (2.4.1)
@@ -28,11 +28,11 @@ GEM
       forwardable-extended (~> 2.5)
     ffi (1.16.3)
     forwardable-extended (2.6.0)
-    google-protobuf (3.25.0)
+    google-protobuf (3.25.1)
     http_parser.rb (0.8.0)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
-    jekyll (4.3.2)
+    jekyll (4.3.3)
       addressable (~> 2.4)
       colorator (~> 1.0)
       em-websocket (~> 0.5)
@@ -72,12 +72,12 @@ GEM
     mini_portile2 (2.8.5)
     minitest (5.20.0)
     mutex_m (0.2.0)
-    nokogiri (1.15.4)
+    nokogiri (1.15.5)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
-    public_suffix (5.0.3)
+    public_suffix (5.0.4)
     racc (1.7.3)
     rake (13.1.0)
     rb-fsevent (0.11.2)
@@ -102,7 +102,7 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport (~> 7.1.2)
-  jekyll (= 4.3.2)
+  jekyll (= 4.3.3)
   jekyll-include-cache (~> 0.2.1)
   jekyll-sass-converter (~> 3.0.0)
   jekyll-toc (~> 0.18.0)
@@ -110,4 +110,4 @@ DEPENDENCIES
   webrick
 
 BUNDLED WITH
-   2.4.21
+   2.5.3
