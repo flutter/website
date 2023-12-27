@@ -312,7 +312,7 @@
   },
   {
     "name": "Checkbox",
-    "description": "Form control that app users can select or clear to select one or more options from a set. Select the option to enable it or clear it to disable it.",
+    "description": "Form control that app users can set or clear to select one or more options from a set.",
     "categories": [],
     "subcategories": [
       "Selection",
@@ -923,7 +923,7 @@
   },
   {
     "name": "FloatingActionButton",
-    "description": "Clickable block that triggers a key action. This block contains an icon and floats in the app interface to keep the key action within reach.",
+    "description": "Clickable block containing an icon that keeps a key action always in reach.",
     "categories": [],
     "subcategories": [
       "Actions",
@@ -1268,7 +1268,7 @@
   },
   {
     "name": "NavigationDrawer",
-    "description": "Container that slides from the leading edge of the app to navigate to other sections in an app.  The leading edge falls on the left side for left-to-right languages.",
+    "description": "Container that slides from the leading edge of the app to navigate to other sections in an app.",
     "categories": [],
     "subcategories": [
       "Navigation"
@@ -1279,7 +1279,7 @@
   },
   {
     "name": "Navigation rail",
-    "description": "Persistent container on the leading edge of tablet and desktop screens to navigate to parts of an app. The leading edge falls on the left side for left-to-right languages.",
+    "description": "Persistent container on the leading edge of tablet and desktop screens to navigate to parts of an app.",
     "categories": [],
     "subcategories": [
       "Navigation"
@@ -1412,7 +1412,7 @@
   },
   {
     "name": "Radio",
-    "description": "Form control that app users can select or clear to select only one option from a set. Select the option to enable it or clear it to disable it.",
+    "description": "Form control that app users can set or clear to select only one option from a set.",
     "categories": [],
     "subcategories": [
       "Selection",
