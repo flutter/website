@@ -93,7 +93,7 @@ Which font you should use depends on the following considerations.
 
 Research what options a given font offers,
 like more than one weight or style per font file,
-[variable font capability][variable fonts],
+[variable font capability][variable-fonts],
 the availabilty of multiple font files for a multiple font weights,
 or more than one width per font.
 
