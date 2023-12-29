@@ -9,12 +9,13 @@ description: How to use custom fonts.
 
 {{site.alert.secondary}}
 
-  ## What you'll learn
-  
-  * How to choose a font.
-  * How to import font files.
-  * How to set a font as a default.
-  * How to use a font in a given widget.
+## What you'll learn
+
+* How to choose a font.
+* How to import font files.
+* How to set a font as a default.
+* How to use a font in a given widget.
+
 {{site.alert.end}}
 
 Although Android and iOS offer high quality system fonts,
