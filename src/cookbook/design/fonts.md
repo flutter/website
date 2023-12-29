@@ -224,7 +224,7 @@ the file as an integer multiple of 100, between 100 and 900.
 These values correspond to the [`FontWeight`][] and can be used in the
 [`fontWeight`][fontWeight property] property of a [`TextStyle`][] object.
 
-In the `pubspec.yaml` of this example,
+In the `pubspec.yaml` shown in this guide,
 you defined `RobotoMono-Bold` as the `700` weight of the font family.
 To use the `RobotoMono-Bold` font that you added to your app, 
 set `fontWeight` to `FontWeight.w700` in your `TextStyle` widget.
@@ -246,7 +246,7 @@ These values correspond to the [`FontStyle`][].
 You can use these styles in the [`fontStyle`][fontStyle property] property
 of a [`TextStyle`][] object.
 
-In the `pubspec.yaml` of this example,
+In the `pubspec.yaml` shown in this guide,
 you defined `Raleway-Italic` as being in the `italic` style. 
 To use the `Raleway-Italic` font that you added to your app, 
 set `style: TextStyle(fontStyle: FontStyle.italic)`.
