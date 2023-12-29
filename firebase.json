@@ -97,6 +97,7 @@
       { "source": "/widgets-intro", "destination": "/ui", "type": 301 },
       { "source": "/widgets", "destination": "/ui/widgets/catalog", "type": 301 },
       { "source": "/widgets/:rest*", "destination": "/ui/widgets/:rest*", "type": 301 },
+      { "source": "/widgets/inherited-widget-subscription", "destination": "https://docs.google.com/document/d/14BhIyj52NFYuyrWXe8bHJTZp7I67iKNmtOQXHCNH5GQ/edit?usp=sharing", "type": 301 },
 
       { "source": "/accessibility-and-localization", "destination": "/ui/accessibility-and-internationalization", "type": 301 },
       { "source": "/accessibility-and-localization/:rest*", "destination": "/ui/accessibility-and-internationalization/:rest*", "type": 301 },
