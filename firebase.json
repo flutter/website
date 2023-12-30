@@ -405,6 +405,7 @@
       { "source": "/go/impeller-dart", "destination": "https://docs.google.com/document/d/1Sh1BAC5c_kkuMVreo7ymBzPoMzb7lamZRPsI7GBXv5M/edit?resourcekey=0-5w8u2V-LS41tCHeoE8bDTQ", "type": 301 },
       { "source": "/go/impeller-geometry", "destination": "https://docs.google.com/document/d/1t-dzzi04nCdkIReoJp8ZyGNskqIip1TG3WhGEz7Osd8/edit?usp=sharing", "type": 301 },
       { "source": "/go/infinite-scroll", "destination": "https://docs.google.com/document/d/1TV2oF2iLIZtGd48336korxMTQrGizDAASAeZAeteMSc/edit?usp=sharing", "type": 301 },
+      { "source": "/go/inheritedwidget-subscription", "destination": "https://docs.google.com/document/d/14BhIyj52NFYuyrWXe8bHJTZp7I67iKNmtOQXHCNH5GQ/edit?usp=sharing", "type": 301 },
       { "source": "/go/inheritedwidget-workshop", "destination": "https://dartpad.dev/workshops.html?webserver=https://dartpad-workshops-io2021.web.app/inherited_widget", "type": 301 },
       { "source": "/go/input-field-autofill", "destination": "https://docs.google.com/document/d/1wYLsoc7NiHl2jFueB4Ros09E3nDCotdWVovDCFSMcAk/edit", "type": 301 },
       { "source": "/go/introduce-disposable", "destination": "https://docs.google.com/document/d/1cjylBOczGk70x-sn1iZYVNAfpPZdtGWsm_KzoNQX0jc/edit", "type": 301 },
