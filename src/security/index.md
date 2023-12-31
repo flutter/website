@@ -86,13 +86,12 @@ Contributing teams are welcome to include Flutter within the scope
 of their bug bounty programs. To have your program listed, please
 contact `security@flutter.dev`.
 
-Google considers Flutter to be in scope for the [Google Open Source
-Software Vulnerability Reward Program][]. For expediency, we ask that
-reporters please contact `security@flutter.dev` before using Google's
-vulnerability reporting flow.
+Google considers Flutter to be in scope for the
+[Google Open Source Software Vulnerability Reward Program][google-oss-vrp].
+For expediency, we ask that reporters please contact `security@flutter.dev`
+before using Google's vulnerability reporting flow.
 
-[Google Open Source Software Vulnerability Reward Program]:
-https://bughunters.google.com/open-source-security
+[google-oss-vrp]: https://bughunters.google.com/open-source-security
 
 ## Receiving security updates
 
