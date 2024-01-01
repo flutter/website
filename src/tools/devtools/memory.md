@@ -3,6 +3,8 @@ title: Using the Memory view
 description: Learn how to use the DevTools memory view.
 ---
 
+{% include docs/yt_shims.liquid %}
+
 The memory view provides insights into details
 of the application's memory allocation and
 tools to detect and debug specific issues.

@@ -4,6 +4,8 @@ subtitle: Where to look when your Flutter app drops frames in the UI.
 description: Diagnosing UI performance issues in Flutter.
 ---
 
+{% include docs/yt_shims.liquid %}
+
 {% include docs/performance.md %}
 
 {{site.alert.secondary}}

@@ -4,6 +4,8 @@ toc: false
 description: This event is ended.
 ---
 
+{% include docs/yt_shims.liquid %}
+
 {{site.alert.info}}
   The Flutter Apprentice event has ended.
   Thanks to all who participated!<br>
