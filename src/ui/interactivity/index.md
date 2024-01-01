@@ -5,6 +5,8 @@ short-title: Interactivity
 diff2html: true
 ---
 
+{% include docs/yt_shims.liquid %}
+
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
 
 {{site.alert.secondary}}
