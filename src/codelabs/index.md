@@ -4,6 +4,8 @@ description: >-
   Codelabs to help you quickly get started programming Flutter.
 ---
 
+{% include docs/yt_shims.liquid %}
+
 The Flutter codelabs provide a guided,
 hands-on coding experience. Some codelabs
 run in DartPad&mdash;no downloads required!
