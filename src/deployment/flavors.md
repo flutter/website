@@ -146,7 +146,7 @@ section at the end of this document.
 If your app uses a Flutter plugin, you need to update
 `ios/Podfile` (if developing for iOS) and `macos/Podfile` (if developing for macOS).
 
-1. In `ios/Podfile`/`macos/Podfile` change the default for
+1. In `ios/Podfile` and `macos/Podfile`, change the default for
    **Debug**, **Profile**, and **Release**
    to match the Xcode build configurations for the `free` scheme.
 
