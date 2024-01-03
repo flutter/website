@@ -235,7 +235,7 @@ TODO: When available, add an app sample.
 2. Test the setup using `flutter run --flavor free`
 at the command line, or in your IDE.
 
-For examples of build flavors for [iOS (Xcode)][] and [Android][],
+For examples of build flavors for [iOS][], [macOS][], and [Android][],
 check out the integration test samples in the [Flutter repo][].
 
 ## Conditionally bundling assets based on flavor
@@ -285,7 +285,8 @@ For packages that support creating flavors, check out the following:
 
 [Launching your app flavors]: {{site.url}}/deployment/flavors/#launching-your-app-flavors
 [Flutter repo]: {{site.repo.flutter}}/blob/master/dev/integration_tests/flavors/lib/main.dart
-[iOS (Xcode)]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flavors/ios
+[iOS]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flavors/ios
+[macOS]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flavors/macos
 [Android]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flavors/android
 [Adding assets and images]: {{site.url}}/ui/assets/assets-and-images
 [Build flavors in Flutter (Android and iOS) with different Firebase projects per flavor Flutter Ready to Go]: {{site.medium}}/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b
