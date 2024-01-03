@@ -29,9 +29,9 @@ To learn more about DevTools, check out the
 
 ## CPU profiler updates
 
-* Added hover cards to CPU profiler sampling rate selections. - [#7010](https://github.com/flutter/devtools/pull/7010)
+* Added hover cards to show sampling rate for the item in drop down. - [#7010](https://github.com/flutter/devtools/pull/7010)
 
-  ![Hover for dropdown]({{site.url}}/tools/devtools/release-notes/images-2.31.0/hover-for-dropdown.png "Hover for dropdown")
+  ![Sampling rate for dropdown]({{site.url}}/tools/devtools/release-notes/images-2.31.0/hover-for-dropdown.png "Sampling rate for dropdown")
 
 ## Debugger updates
 
