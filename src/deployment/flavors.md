@@ -40,9 +40,9 @@ Prerequisites:
 * Xcode installed
 * An existing Flutter project
 
-To set up flavors in iOS or macOS, you'll define build configurations in Xcode.
+To set up flavors in iOS and macOS, you'll define build configurations in Xcode.
 
-## Creating flavors in iOS or macOS
+## Creating flavors in iOS and macOS
 
 <ol markdown="1">
 <li markdown="1">
@@ -100,7 +100,7 @@ Change the `free` scheme to match the build configurations already created.
 </li>
 </ol>
 
-## Using flavors in iOS or macOS
+## Using flavors in iOS and macOS
 
 Now that you've set up your free flavor,
 you can, for example, add different product bundle identifiers per flavor.
