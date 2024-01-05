@@ -1404,7 +1404,7 @@ DispatchQueue.main.async {
 [`JSONMessageCodec`]: {{site.api}}/flutter/services/JSONMessageCodec-class.html
 [`MethodChannel`]: {{site.api}}/flutter/services/MethodChannel-class.html
 [`MethodChannelAndroid`]: {{site.api}}/javadoc/io/flutter/plugin/common/MethodChannel.html
-[`MethodChanneliOS`]: {{site.api}}/objcdoc/Classes/FlutterMethodChannel.html
+[`MethodChanneliOS`]: {{site.api}}/ios-embedder/interface_flutter_method_channel.html
 [Platform adaptations]: {{site.url}}/platform-integration/platform-adaptations
 [publishing packages]: {{site.url}}/packages-and-plugins/developing-packages#publish
 [`quick_actions`]: {{site.pub}}/packages/quick_actions

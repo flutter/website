@@ -84,7 +84,7 @@ on both Android and iOS on [GitHub][].
 
 [GitHub]: {{site.repo.samples}}/tree/main/add_to_app/multiple_flutters
 [`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
-[`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html
+[`FlutterViewController`]: {{site.api}}/ios-embedder/interface_flutter_view_controller.html
 [performance characteristics]: {{site.url}}/add-to-app/performance
 [flutter.dev/go/multiple-flutters]: {{site.url}}/go/multiple-flutters
 [Issue 72009]: {{site.repo.flutter}}/issues/72009

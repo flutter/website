@@ -128,7 +128,6 @@ check out [Testing state restoration][] on the
 {{site.alert.end}}
 
 [Testing state restoration]: {{site.api}}/flutter/services/RestorationManager-class.html#testing-state-restoration
-[`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html
 [`RestorationBucket`]: {{site.api}}/flutter/services/RestorationBucket-class.html
 [`RestorationManager`]: {{site.api}}/flutter/services/RestorationManager-class.html
 [services]: {{site.api}}/flutter/services/services-library.html
