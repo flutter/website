@@ -39,45 +39,45 @@ These types of games could use an open source game engine like the
 
 The Casual Games Toolkit provides the following free resources.
 
-* A repository that includes three new game templates that provide
+- A repository that includes three new game templates that provide
   a starting point for building a casual game.
 
   1. A [base game template][basic-template]
      that includes the basics for:
 
-     * Main menu
-     * Navigation
-     * Settings
-     * Level selection
-     * Player progress
-     * Play session management
-     * Sound
-     * Themes
+     - Main menu
+     - Navigation
+     - Settings
+     - Level selection
+     - Player progress
+     - Play session management
+     - Sound
+     - Themes
 
   1. A [card game template][card-template]
      that includes everything in the base template plus:
 
-     * Drag and drop
-     * Game state management
-     * Multiplayer integration hooks
+     - Drag and drop
+     - Game state management
+     - Multiplayer integration hooks
 
   1. An [endless runner template][runner-template] created in partnership
      with the open source game engine, Flame. It implements:
 
-     * A FlameGame base template
-     * Player steering
-     * Collision detection
-     * Parallax effects
-     * Spawning
-     * Different visual effects
+     - A FlameGame base template
+     - Player steering
+     - Collision detection
+     - Parallax effects
+     - Spawning
+     - Different visual effects
 
   1. A sample game built on top of the endless runner template,
      called SuperDash. You can play the game on iOS, Android,
-     or [web][], [view the open source code repo][], or 
+     or [web][], [view the open source code repo][], or
      [read how the game was created in 6 weeks][].
 
-* Developer guides for integrating needed services.
-* A link to a [Flame Discord][game-discord] channel.
+- Developer guides for integrating needed services.
+- A link to a [Flame Discord][game-discord] channel.
   If you have a Discord account, use this [direct link][discord-direct].
 
 The included game templates and cookbook recipes make certain choices
@@ -94,11 +94,11 @@ you can leverage up to $900 in offers when you integrate Google services,
 such as [Cloud, Firebase][], and [Ads][], into your game.
 
 {{ site.alert.important }}
-  **Terms and conditions apply.**
-  You must connect your Firebase and GCP accounts to use credits for
-  Firebase services and verify your business email during sign up to earn
-  an additional $100 on top of the normal $300 credit.
-  For the Ads offer, [check your region's eligibility][].
+**Terms and conditions apply.**
+You must connect your Firebase and GCP accounts to use credits for
+Firebase services and verify your business email during sign up to earn
+an additional $100 on top of the normal $300 credit.
+For the Ads offer, [check your region's eligibility][].
 {{ site.alert.end }}
 
 ## Get started
@@ -109,23 +109,23 @@ Are you ready? To get started:
 1. [Clone the games repo][game-repo].
 1. Review the `README` file for the first type of game you want to create.
 
-   * [basic game][basic-template-readme]
-   * [card game][card-template-readme]
-   * [runner game][runner-template-readme]
+   - [basic game][basic-template-readme]
+   - [card game][card-template-readme]
+   - [runner game][runner-template-readme]
 
 1. [Join the Flame community on Discord][game-discord]
    (use the [direct link][discord-direct] if you already
    have a Discord account).
 1. Review the codelabs and cookbook recipes.
 
-   * Build a [multiplayer game][multiplayer-recipe] with Cloud Firestore.
-   * Make your games more engaging
+   - Build a [multiplayer game][multiplayer-recipe] with Cloud Firestore.
+   - Make your games more engaging
      with [leaderboards and achievements][leaderboard-recipe].
-   * Monetize your games with [in-game ads][ads-recipe]
+   - Monetize your games with [in-game ads][ads-recipe]
      and [in-app purchases][iap-recipe].
-   * Add user authentication flow to your game via
+   - Add user authentication flow to your game via
      [Firebase Authentication][firebase-auth].
-   * Collect analytics about crashes and errors inside your game
+   - Collect analytics about crashes and errors inside your game
      with [Firebase Crashlytics][firebase-crashlytics].
 
 1. Set up accounts on AdMob, Firebase, and Cloud, as needed.
@@ -137,12 +137,12 @@ Are you ready? To get started:
 For Google I/O 2022, both the Flutter team and Very Good Ventures created new
 games.
 
-* VGV created the [I/O Pinball game][pinball-game] using the Flame engine.
+- VGV created the [I/O Pinball game][pinball-game] using the Flame engine.
   To learn about this game,
   check out [I/O Pinball Powered by Flutter and Firebase][] on Medium
   and [play the game][pinball-game] in your browser.
 
-* The Flutter team created [I/O Flip][flip-game], a virtual [CCG].
+- The Flutter team created [I/O Flip][flip-game], a virtual [CCG].
   To learn more about I/O Flip,
   check out [How It’s Made: I/O FLIP adds a twist to a classic card game with generative AI][flip-blog]
   on the Google Developers blog and [play the game][flip-game] in your browser.
@@ -168,13 +168,13 @@ investigate other resources that our community recommended.
 {% assign api-icon = '<span class="material-symbols-outlined">api</span>' %}
 
 {{ site.alert.secondary }}
-  {{pkg-icon}} Flutter package<br>
-  {{api-icon}} API documentation<br>
-  {{codelab}} Codelab <br>
-  {{recipe-icon}} Cookbook recipe<br>
-  {{tool-icon}} Desktop application<br>
-  {{assets-icon}} Game assets<br>
-  {{doc-icon}} Guide<br>
+{{pkg-icon}} Flutter package<br>
+{{api-icon}} API documentation<br>
+{{codelab}} Codelab <br>
+{{recipe-icon}} Cookbook recipe<br>
+{{tool-icon}} Desktop application<br>
+{{assets-icon}} Game assets<br>
+{{doc-icon}} Guide<br>
 {{ site.alert.end }}
 
 <table class="table table-striped" markdown="1">
@@ -305,8 +305,8 @@ investigate other resources that our community recommended.
 <td markdown="1">
 
 {{recipe-icon}} [Add advertising to your Flutter game][ads-recipe]<br>
-{{codelab}}  [Add AdMob ads to a Flutter app][]<br>
-{{codelab}}  [Add in-app purchases to your Flutter app][iap-recipe]<br>
+{{codelab}} [Add AdMob ads to a Flutter app][]<br>
+{{codelab}} [Add in-app purchases to your Flutter app][iap-recipe]<br>
 {{doc-icon}} [Gaming UX and Revenue Optimizations for Apps][] (PDF)
 
 </td>
@@ -341,6 +341,14 @@ investigate other resources that our community recommended.
 
 </td>
 </tr>
+<tr>
+<td>Level editor</td>
+<td markdown="1">
+
+{{tool-icon}} [Tiled][]
+
+</td>
+</tr>
 </table>
 
 {% assign games-gh = site.github | append: '/flutter/games' -%}
@@ -369,7 +377,6 @@ investigate other resources that our community recommended.
 [pinball-game]: https://pinball.flutter.dev/#/
 [runner-template-readme]: {{games-gh}}/blob/main/templates/endless_runner/README.md
 [runner-template]: {{games-gh}}/tree/main/templates/endless_runner
-
 [Add AdMob ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter
 [Build next generation UIs in Flutter]: {{site.codelabs}}/codelabs/flutter-next-gen-uis
 [firebase-crashlytics]: {{site.firebase}}/docs/crashlytics/get-started?platform=flutter
@@ -402,4 +409,4 @@ investigate other resources that our community recommended.
 [read how the game was created in 6 weeks]: {{site.flutter-medium}}/how-we-built-the-new-super-dash-demo-in-flutter-and-flame-in-just-six-weeks-9c7aa2a5ad31
 [view the open source code repo]: {{site.github}}/flutter/super_dash
 [web]: https://superdash.flutter.dev/
-
+[Tiled]: https://www.mapeditor.org/
