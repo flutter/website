@@ -341,6 +341,7 @@ investigate other resources that our community recommended.
 
 </td>
 </tr>
+
 <tr>
 <td>Level editor</td>
 <td markdown="1">
