@@ -20,7 +20,7 @@ errors, which is related to the most common Flutter layout widgets.
 The following tutorial will introduce you to layouts in Flutter, and give you an
 opportunity to work with the most common layout widgets.
 
-1. Tutorial: [Layouts in Flutter][]
+1. <i class="material-icons" aria-hidden="true">bolt</i> Take action! - Tutorial: [Layouts in Flutter][]
 
 ### Constraints
 
@@ -32,9 +32,9 @@ allow you to work with constraints, and how to deal with “unbounded constraint
 type errors.
 
 1. Article: [Understanding Constraints][]
-2. Video: [Expanded (Flutter Widget of the Week)][]
-3. Video: [Flexible (Flutter Widget of the Week)][]
-4. Video: [Intrinsic widgets (Decoding Flutter)][]
+2. Video: [Expanded - Flutter Widget of the Week][]
+3. Video: [Flexible - Flutter Widget of the Week][]
+4. Video: [Intrinsic widgets - Decoding Flutter][]
 
 ### Intermediate layout tutorial
 
@@ -58,12 +58,12 @@ pattern. The builder pattern is used in many Flutter widgets, including some
 scrolling widgets.
 
 1. Documentation: [Basic scrolling][]
-2. Video: [Builder (Flutter Widget of the Week)][]
-3. Video: [ListView (Flutter Widget of the Week)][]
+2. Video: [Builder - Flutter Widget of the Week][]
+3. Video: [ListView - Flutter Widget of the Week][]
 4. Example code: [Work with long lists][]
 5. Example code: [Create a horizontal list][]
 6. Example code: [Create a grid list][]
-7. Video: [PageView (Flutter Widget of the Week)][]
+7. Video: [PageView - Flutter Widget of the Week][]
 
 #### Stacks
 
@@ -75,7 +75,7 @@ as `z-index`.
 If you followed both of the tutorials mentioned on this page, you’ve already
 worked with Stacks. If not, these resources provide an overview.
 
-1. Video: [Stack (Flutter Widget of the Week)][]
+1. Video: [Stack - Flutter Widget of the Week][]
 2. Documentation: [Stack documentation][]
 
 #### Overlays
@@ -83,7 +83,7 @@ worked with Stacks. If not, these resources provide an overview.
 Overlays are used when you have widgets that are logically related to each
 other, but visually separate, such as tooltips.
 
-1. Video: [OverlayPortal (Widget of the Week)][]
+1. Video: [OverlayPortal - Flutter Widget of the Week][]
 
 ### Adaptive Layouts
 
@@ -93,10 +93,10 @@ things like screen-size, input types, and more. The following resources start by
 showing the most important widgets when building adaptive layouts, and finish
 with a Codelab that has you build an adaptive layout yourself.
 
-1. Video: [LayoutBuilder (Flutter Widget of the Week)][]
-2. Video: [MediaQuery (Flutter Widget of the Week)][]
+1. Video: [LayoutBuilder - Flutter Widget of the Week][]
+2. Video: [MediaQuery - Flutter Widget of the Week][]
 3. Tutorial: [Adaptive Apps codelab][]
-4. Video: [Building platform adaptive apps | Session][]
+4. Video: [Building platform adaptive apps][]
 
 ### DevTools and Debugging for Layout
 
@@ -111,7 +111,7 @@ should be prepared to confront before you start building Flutter apps, it’d be
 this type.
 
 1. Article: [DevTools - Widget Inspector][]
-2. Video: [Unbounded height / width | Decoding Flutter][]
+2. Video: [Unbounded height and width - Decoding Flutter][]
 
 ### Advanced Content
 
@@ -131,26 +131,26 @@ this type.
 
 [Layouts in Flutter]: {{site.url}}/ui/layout
 [Understanding Constraints]: {{site.url}}/ui/layout/constraints
-[Expanded (Flutter Widget of the Week)]: https://www.youtube.com/watch?v=_rnZaagadyo
-[Flexible (Flutter Widget of the Week)]: https://www.youtube.com/watch?v=CI7x0mAZiY0
-[Intrinsic widgets (Decoding Flutter)]: https://www.youtube.com/watch?v=Si5XJ_IocEs
+[Expanded - Flutter Widget of the Week]: https://www.youtube.com/watch?v=_rnZaagadyo
+[Flexible - Flutter Widget of the Week]: https://www.youtube.com/watch?v=CI7x0mAZiY0
+[Intrinsic widgets - Decoding Flutter]: https://www.youtube.com/watch?v=Si5XJ_IocEs
 [Build a Flutter Layout]: {{site.url}}/ui/layout/tutorial
 [Basic scrolling]: {{site.url}}/ui/layout/scrolling#basic-scrolling
-[Builder (Flutter Widget of the Week)]: https://www.youtube.com/watch?v=xXNOkIuSYuA
-[ListView (Flutter Widget of the Week)]: https://www.youtube.com/watch?v=KJpkjHGiI5A
+[Builder - Flutter Widget of the Week]: https://www.youtube.com/watch?v=xXNOkIuSYuA
+[ListView - Flutter Widget of the Week]: https://www.youtube.com/watch?v=KJpkjHGiI5A
 [Work with long lists]: {{site.url}}cookbook/lists/long-lists
 [Create a horizontal list]: {{site.url}}cookbook/lists/horizontal-list
 [Create a grid list]: {{site.url}}cookbook/lists/grid-lists
-[PageView (Flutter Widget of the Week)]: https://www.youtube.com/watch?v=J1gE9xvph-A
-[Stack (Flutter Widget of the Week)]: https://www.youtube.com/watch?v=liEGSeD3Zt8
+[PageView - Flutter Widget of the Week]: https://www.youtube.com/watch?v=J1gE9xvph-A
+[Stack - Flutter Widget of the Week]: https://www.youtube.com/watch?v=liEGSeD3Zt8
 [Stack documentation]: {{site.url}}/ui/layout#stack
-[OverlayPortal (Widget of the Week)]: https://www.youtube.com/watch?v=S0Ylpa44OAQ
-[LayoutBuilder (Flutter Widget of the Week)]: https://www.youtube.com/watch?v=IYDVcriKjsw
-[MediaQuery WotW]: https://www.youtube.com/watch?v=A3WrA4zAaPw
+[OverlayPortal - Flutter Widget of the Week]: https://www.youtube.com/watch?v=S0Ylpa44OAQ
+[LayoutBuilder - Flutter Widget of the Week]: https://www.youtube.com/watch?v=IYDVcriKjsw
+[MediaQuery - Flutter Widget of the Week]: https://www.youtube.com/watch?v=A3WrA4zAaPw
 [Adaptive Apps codelab]: https://codelabs.developers.google.com/codelabs/flutter-adaptive-app
-[Building platform adaptive apps | Session]: https://www.youtube.com/watch?v=RCdeSKVt7LI
+[Building platform adaptive apps]: https://www.youtube.com/watch?v=RCdeSKVt7LI
 [DevTools - Widget Inspector]: {{site.url}}/tools/devtools/inspector
-[Unbounded height / width | Decoding Flutter]: https://www.youtube.com/watch?v=jckqXR5CrPI
+[Unbounded height and width - Decoding Flutter]: https://www.youtube.com/watch?v=jckqXR5CrPI
 [2D Scrolling]: https://www.youtube.com/watch?v=ppEdTo-VGcg
 [Builder]: {{site.api}}/flutter/widgets/Builder-class.html
 [Row]: {{site.api}}flutter/widgets/Row-class.html
