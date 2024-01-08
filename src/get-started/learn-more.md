@@ -138,18 +138,18 @@ this type.
 [Basic scrolling]: {{site.url}}/ui/layout/scrolling#basic-scrolling
 [Builder (Flutter Widget of the Week)]: https://www.youtube.com/watch?v=xXNOkIuSYuA
 [ListView (Flutter Widget of the Week)]: https://www.youtube.com/watch?v=KJpkjHGiI5A
-[Work with long lists]: {{site.url}cookbook/lists/long-lists
-[Create a horizontal list]: {{site.url}cookbook/lists/horizontal-list
-[Create a grid list]: {{site.url}cookbook/lists/grid-lists
+[Work with long lists]: {{site.url}}cookbook/lists/long-lists
+[Create a horizontal list]: {{site.url}}cookbook/lists/horizontal-list
+[Create a grid list]: {{site.url}}cookbook/lists/grid-lists
 [PageView (Flutter Widget of the Week)]: https://www.youtube.com/watch?v=J1gE9xvph-A
 [Stack (Flutter Widget of the Week)]: https://www.youtube.com/watch?v=liEGSeD3Zt8
-[Stack documentation]: {{site.url}ui/layout#stack
+[Stack documentation]: {{site.url}}/ui/layout#stack
 [OverlayPortal (Widget of the Week)]: https://www.youtube.com/watch?v=S0Ylpa44OAQ
 [LayoutBuilder (Flutter Widget of the Week)]: https://www.youtube.com/watch?v=IYDVcriKjsw
 [MediaQuery WotW]: https://www.youtube.com/watch?v=A3WrA4zAaPw
 [Adaptive Apps codelab]: https://codelabs.developers.google.com/codelabs/flutter-adaptive-app
 [Building platform adaptive apps | Session]: https://www.youtube.com/watch?v=RCdeSKVt7LI
-[DevTools - Widget Inspector]: {{site.url}tools/devtools/inspector
+[DevTools - Widget Inspector]: {{site.url}}/tools/devtools/inspector
 [Unbounded height / width | Decoding Flutter]: https://www.youtube.com/watch?v=jckqXR5CrPI
 [2D Scrolling]: https://www.youtube.com/watch?v=ppEdTo-VGcg
 [Builder]: {{site.api}}/flutter/widgets/Builder-class.html
