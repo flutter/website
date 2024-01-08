@@ -138,9 +138,9 @@ this type.
 [Basic scrolling]: {{site.url}}/ui/layout/scrolling#basic-scrolling
 [Builder - Flutter Widget of the Week]: https://www.youtube.com/watch?v=xXNOkIuSYuA
 [ListView - Flutter Widget of the Week]: https://www.youtube.com/watch?v=KJpkjHGiI5A
-[Work with long lists]: {{site.url}}cookbook/lists/long-lists
-[Create a horizontal list]: {{site.url}}cookbook/lists/horizontal-list
-[Create a grid list]: {{site.url}}cookbook/lists/grid-lists
+[Work with long lists]: {{site.url}}/cookbook/lists/long-lists
+[Create a horizontal list]: {{site.url}}/cookbook/lists/horizontal-list
+[Create a grid list]: {{site.url}}/cookbook/lists/grid-lists
 [PageView - Flutter Widget of the Week]: https://www.youtube.com/watch?v=J1gE9xvph-A
 [Stack - Flutter Widget of the Week]: https://www.youtube.com/watch?v=liEGSeD3Zt8
 [Stack documentation]: {{site.url}}/ui/layout#stack
