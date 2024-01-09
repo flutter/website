@@ -16,13 +16,25 @@ for Dart-only class.
 Before:
 
 ```dart 
-  MemoryAllocations. ...
+if (kFlutterMemoryAllocationsEnabled) {
+  MemoryAllocations.instance.dispatchObjectCreated(
+    library: 'package:flutter/gestures.dart',
+    className: '$MultiDragPointerState',
+    object: this,
+  );
+}
 ```
 
 After:
 
 ```dart 
-  FlutterMemoryAllocations. ...
+if (kFlutterMemoryAllocationsEnabled) {
+  FlutterMemoryAllocations.instance.dispatchObjectCreated(
+    library: 'package:flutter/gestures.dart',
+    className: '$MultiDragPointerState',
+    object: this,
+  );
+}
 ```
 
 ## Timeline
