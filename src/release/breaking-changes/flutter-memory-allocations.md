@@ -27,7 +27,7 @@ After:
 
 ## Timeline
 
-Landed in version: 3.19.0-2.0.pre<br>
+Landed in version: 3.19.0-2.0.pre
 
 ## References
 
