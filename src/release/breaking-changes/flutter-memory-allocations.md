@@ -48,5 +48,3 @@ Relevant issues:
 * [Rename MemoryAllocations to FlutterMemoryAllocations (Issue 140622)][]
 
 [Rename MemoryAllocations to FlutterMemoryAllocations (Issue 140622)]: {{site.repo.flutter}}/issues/140622
-
-
