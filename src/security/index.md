@@ -82,13 +82,13 @@ fixed in the website itself.
 
 ## Bug Bounty programs
 
-Contributing teams are welcome to include Flutter within the scope
-of their bug bounty programs. To have your program listed, please
+Contributing teams can include Flutter within the scope
+of their bug bounty programs. To have your program listed,
 contact `security@flutter.dev`.
 
 Google considers Flutter to be in scope for the
 [Google Open Source Software Vulnerability Reward Program][google-oss-vrp].
-For expediency, we ask that reporters please contact `security@flutter.dev`
+For expediency, reporters should contact `security@flutter.dev`
 before using Google's vulnerability reporting flow.
 
 [google-oss-vrp]: https://bughunters.google.com/open-source-security
