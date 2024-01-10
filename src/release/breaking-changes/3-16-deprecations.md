@@ -101,9 +101,9 @@ Relevant PRs:
 * Removed in [#139267][]
 
 [`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
-[`Chip`]: {{site.api}}/flutter/material/ElevatedButton-class.html
-[`RawChip`]: {{site.api}}/flutter/material/OutlinedButton-class.html
-[`InputChip`]: {{site.api}}/flutter/material/ButtonStyle-class.html
+[`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
+[`OutlinedButton`]: {{site.api}}/flutter/material/OutlinedButton-class.html
+[`ButtonStyle`]: {{site.api}}/flutter/material/ButtonStyle-class.html
 
 [#105291]: {{site.repo.flutter}}/pull/105291
 [#139267]: {{site.repo.flutter}}/pull/139267
