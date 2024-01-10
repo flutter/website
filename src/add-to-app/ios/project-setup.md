@@ -35,7 +35,7 @@ For an example using SwiftUI, see the iOS directory in [News Feed App][].
 Your development environment must meet the
 [macOS system requirements for Flutter][]
 with [Xcode installed][].
-Flutter supports iOS 11 and later.
+Flutter supports iOS 12 and later.
 Additionally, you will need [CocoaPods][]
 version 1.10 or later.
 
