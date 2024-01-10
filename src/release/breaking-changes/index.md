@@ -37,6 +37,7 @@ release, and listed in alphabetical order:
 * [Default multitouch scrolling][]
 * [Deprecate imperative apply of Flutter's Gradle plugins][]
 * [Rename MemoryAllocations to FlutterMemoryAllocations][]
+* [Deprecated API removed after v3.16][]
 
 [Migrate RawKeyEvent/RawKeyboard system to KeyEvent/HardwareKeyboard system]: {{site.url}}/release/breaking-changes/key-event-migration
 [Deprecate `TextField.canRequestFocus`]: {{site.url}}/release/breaking-changes/can-request-focus
@@ -44,6 +45,7 @@ release, and listed in alphabetical order:
 [Default multitouch scrolling]: {{site.url}}/release/breaking-changes/multi-touch-scrolling
 [Deprecate imperative apply of Flutter's Gradle plugins]: {{site.url}}/release/breaking-changes/flutter-gradle-plugin-apply
 [Rename MemoryAllocations to FlutterMemoryAllocations]: {{site.url}}/release/breaking-changes/flutter-memory-allocations
+[Deprecated API removed after v3.16]: {{site.url}}/release/breaking-changes/3-16-deprecations
 
 ### Released in Flutter 3.16
 
