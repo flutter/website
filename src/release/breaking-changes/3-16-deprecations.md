@@ -1,8 +1,8 @@
 ---
 title: Deprecated API removed after v3.16
 description: >-
-After reaching end of life, the following deprecated APIs
-were removed from Flutter.
+  After reaching end of life, the following deprecated APIs
+  were removed from Flutter.
 ---
 
 ## Summary
