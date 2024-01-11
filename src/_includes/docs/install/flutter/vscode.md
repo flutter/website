@@ -132,5 +132,6 @@ This section presumes that you have installed [Visual Studio Code][]
    1. Close, then reopen all {{terminal}} windows.
    1. Restart VS Code.
 
+[development tools prerequisites]: #development-tools
 [Visual Studio Code]: https://code.visualstudio.com/docs/setup/mac
 [Flutter extension for VS Code]: https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter
