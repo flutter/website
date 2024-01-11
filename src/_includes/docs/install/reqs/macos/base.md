@@ -4,7 +4,11 @@
 ## System requirements
 
 To install and run Flutter,
-your {{os}} environment must meet these requirements:
+your {{os}} environment must meet the following hardware
+and software requirements.
+
+All of the commands in this guide have been tested on a MacBook Pro M1
+running macOS 14.2.1.
 
 ### Hardware requirements
 
@@ -30,6 +34,13 @@ software packages.
 {:.no_toc}
 
 Flutter supports macOS {{site.devmin.macos}} or later.
+
+If you run a supported macOS version,
+Z shell (`zsh`) is your default login and interactive shell.
+This guide presumes you have `zsh` installed
+and set as your default shell.
+
+{% include docs/install/reqs/macos/zsh-config.md target=target %}
 
 {% include docs/install/reqs/macos/apple-silicon.md %}
 

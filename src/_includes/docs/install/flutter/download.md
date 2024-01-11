@@ -5,8 +5,9 @@
 
 {% assign os = include.os %}
 {% assign osl = include.os | downcase %}
+{% assign target = include.target %}
 {% case os %}
-{% when 'Windows' -%}
+{% when "Windows" -%}
    {% assign unzip='Extract-Archive' %}
    {% assign path='C:\dev\' %}
    {% assign terminal='PowerShell' %}
@@ -39,13 +40,18 @@
    {% assign mv1 = 'mv ' | append: dirdl %}
 {% endcase -%}
 
+To install Flutter,
+download the Flutter SDK bundle from its archive,
+move the bundle to where you want it stored,
+then extract the SDK.
+
 1. Download the following installation bundle to get the latest
    {{site.sdk.channel}} release of the Flutter SDK.
 
    {% if os=='macOS' %}
 
-   | Intel | | <span class="apple-silicon">Apple Silicon</span> |
-   |-------| | ---------------|
+   | Intel Processor | | Apple Silicon |
+   |-----------------|-|---------------|
    | [(loading...)](#){:.download-latest-link-{{osl}}.btn.btn-primary} | | [(loading...)](#){:.download-latest-link-{{osl}}-arm64.apple-silicon.btn.btn-primary} |
 
    {% else %}
@@ -84,6 +90,9 @@
 
 [SDK archive]: {{site.url}}/release/archive
 
-{% if os == 'Windows' %}
-{% include docs/install/reqs/windows/set-path.md terminal=terminal %}
-{% endif %}
+{% case os %}
+{% when 'Windows' %}
+{% include docs/install/reqs/windows/set-path.md terminal=terminal target=target %}
+{% when 'macOS' %}
+{% include docs/install/reqs/macos/set-path.md terminal=terminal target=target %}
+{% endcase %}

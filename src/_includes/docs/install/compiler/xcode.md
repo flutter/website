@@ -80,12 +80,6 @@ and {{os}} code.
 
 To [install and set up CocoaPods][cocoapods], run the following commands:
 
-1. Install Homebrew if necessary.
-
-   ```terminal
-   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-   ```
-
 1. Install `ruby` using Homebrew.
 
    ```terminal
@@ -98,7 +92,26 @@ To [install and set up CocoaPods][cocoapods], run the following commands:
    {{prompt1}} brew install cocoapods
    ```
 
-Using Homebrew reduces potential issues with chipsets and install permissions.
+1. Add CocoaPods to your macOS `PATH` using the following command.
+
+    ```terminal
+    $ cat <<EOF >> ~/.zshenv
+    # Configure CocoaPods
+
+    export GEM_HOME=\$HOME/.gem
+    if [[ \$PATH != *"\$GEM_HOME"* ]]
+    then
+        export PATH=\$GEM_HOME/bin:\$PATH
+    fi
+    EOF
+    ```
+
+1. Load the changes to your current open terminal sessions
+   using the following command.
+
+    ```terminal
+    $ source ~/.zshenv
+    ```
 
 [Flutter plugins]: {{site.url}}/packages-and-plugins/developing-packages#types
 [cocoapods]: https://formulae.brew.sh/formula/cocoapods
