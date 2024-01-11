@@ -10,7 +10,7 @@
 {:.no_toc}
 
 This section presumes that you have installed [Visual Studio Code][]
-{{site.appmin.vscode}} or later.
+{{site.appmin.vscode}} or later and the [Flutter extension for VS Code][].
 
 #### Prompt VS code to install Flutter
 {:.no_toc}
