@@ -6,8 +6,8 @@ description: >-
 
 ## Summary
 
-Now, in consistency with other widgets, if controller is
-not provided in the widget constructor, the member `controller` is `null`.
+If a controller isn't provided in the constructor, the `controller` member is `null`.
+This makes `PageviewController` consistent with other widgets.
 
 ## Migration guide
 
