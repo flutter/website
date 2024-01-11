@@ -7,8 +7,7 @@ Like most UNIX-like operating system, macOS can support multiple shells,
 like `bash`, `zsh`, and `sh`.
 
 As of the October 2019 release of macOS Catalina (macOS 10.15),
-Z shell or `zsh` is the default shell for macOS.
-Apple made this change to due to licensing changes for `bash`.
+Zsh or `zsh` is the default shell for macOS.
 
 #### Check and set `zsh` as default
 {:.no_toc}
@@ -36,13 +35,12 @@ Apple made this change to due to licensing changes for `bash`.
    To check if your install succeeded,
    run the command in the previous step after installing `zsh`.
 
-1. If you need to change your default shell, run the following command.
+1. If you need to change your default shell to `zsh`, run the following command.
 
     ```terminal
     $ chsh -s `which zsh`
     ```
 
-    This command changes your shell to where you installed `zsh`.
 
 To learn more about macOS and `zsh`, check out
 [Use zsh as the default shell on your Mac][zsh-mac] in the macOS

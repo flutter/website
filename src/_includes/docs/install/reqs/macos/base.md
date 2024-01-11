@@ -36,7 +36,7 @@ software packages.
 Flutter supports macOS {{site.devmin.macos}} or later.
 
 If you run a supported macOS version,
-Z shell (`zsh`) is your default login and interactive shell.
+Zsh (`zsh`) is your default login and interactive shell.
 This guide presumes you have `zsh` installed
 and set as your default shell.
 
