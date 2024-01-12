@@ -49,7 +49,8 @@ is no longer used (see [Dart garbage collection][]).
 ### Object types
 
 #### Disposable object
-A dart object, that has method `dispose()`, which, by de-facto convention, is expected to be invoked,
+
+A Dart object, that has method `dispose()`, which, by de-facto convention, is expected to be invoked,
 when the object is not needed any more, to avoid memory leaks.
 
 #### Memory-risky object
