@@ -46,6 +46,16 @@ is no longer used (see [Dart garbage collection][]).
 
 [Dart garbage collection]: {{site.medium}}/flutter/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30
 
+### Object types
+
+#### Disposable object
+A dart object, that has method `dispose()`, which, by de-facto convention, is expected to be invoked,
+when the object is not needed any more, to avoid memory leaks.
+
+#### Memory-risky object
+
+A Dart object, that, if not disposed or disposed but not GCed, may cause a memory leak.
+
 ### Root object, retaining path, and reachability
 
 #### Root object
