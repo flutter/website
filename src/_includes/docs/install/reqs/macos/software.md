@@ -1,9 +1,5 @@
 {% assign target = include.target %}
 
-{% capture homebrew %}
-[Homebrew][] to install some other packages.
-Using Homebrew reduces potential issues with chipsets and install permissions.
-{% endcapture %}
 {% assign xcode = '[Xcode][] ' | append: site.appnow.xcode | append: ' to debug and compile native Swift or ObjectiveC code.' %}
 {% assign cocoapods = '[CocoaPods][] ' | append: site.appnow.cocoapods | append: ' to compile enable Flutter plugins in your native apps.' %}
 {% capture android %}
@@ -23,20 +19,17 @@ If you need to install `git`, type `brew install git`.
 {% case target %}
 {% when 'desktop','mobile-ios' %}
 
-* {{homebrew -}}
 * {{xcode}} {{git-xcode}} {{git-main}}
 * {{cocoapods}}
 
 {% when 'mobile-android' %}
 
-* {{homebrew -}}
 * {{android -}}
 * {{git-main}}
   {{- git-other}}
 
 {% when 'web' -%}
 
-* {{homebrew -}}
 * {{chrome -}}
 * {{git-main}}
   {{- git-other}}

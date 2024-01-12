@@ -26,7 +26,11 @@ Zsh or `zsh` is the default shell for macOS.
     UserShell: /bin/zsh
     ```
 
-1. If you need to install `zsh`, run the following command.
+1. If you need to install `zsh`, run the following commands.
+
+    ```terminal
+    $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    ```
 
     ```terminal
     $ brew install zsh

@@ -94,5 +94,5 @@ then extract the SDK.
 {% when 'Windows' %}
 {% include docs/install/reqs/windows/set-path.md terminal=terminal target=target %}
 {% when 'macOS' %}
-{% include docs/install/reqs/macos/set-path.md terminal=terminal target=target %}
+{% include docs/install/reqs/macos/set-path.md terminal=terminal target=target dir=dirinstall %}
 {% endcase %}

@@ -71,42 +71,45 @@ With Xcode, you can run Flutter apps on an iOS device or on the simulator.
 
 {% endif %}
 
-### Install CocoaPods
+### Install CocoaPods (Optional)
 
 If your apps depend on [Flutter plugins][] with native {{os}} code,
 install CocoaPods. Built using Ruby,
 CocoaPods handles the bundling of various dependencies across Flutter
 and {{os}} code.
 
-To [install and set up CocoaPods][cocoapods], run the following commands:
+To install and set up CocoaPods, run the following commands:
 
-1. Install `ruby` using Homebrew.
-
-   ```terminal
-   {{prompt1}} brew install ruby
-   ```
-
-1. Install `cocoapods` using Homebrew.
+1. Install `cocoapods` following the
+   [CocoaPods install guide][cocoapods].
 
    ```terminal
-   {{prompt1}} brew install cocoapods
+   $ sudo gem install cocoapods
    ```
+1. Launch your preferred text editor.
 
-1. Add CocoaPods to your macOS `PATH` using the following command.
+1. Open the Zsh environmental variable file `~/.zshenv` in your text editor.
 
-    ```terminal
-    $ cat <<EOF >> ~/.zshenv
-    # Configure CocoaPods
+1. Copy the following text block.
 
-    export GEM_HOME=\$HOME/.gem
-    if [[ \$PATH != *"\$GEM_HOME"* ]]
-    then
-        export PATH=\$GEM_HOME/bin:\$PATH
-    fi
-    EOF
-    ```
+   ```conf
 
-1. Load the changes to your current open terminal sessions
+   # Configure CocoaPods
+
+   # Set the Ruby gem directory to your .gem directory.
+   export GEM_HOME=$HOME/.gem
+
+   # Check if Flutter is in your PATH, and, if not, add it. 
+   if [[ $PATH != *"$GEM_HOME"* ]]
+   then
+       export PATH=$GEM_HOME/bin:$PATH
+   fi
+   ```
+1. Paste it at the end of your `~/.zshenv` file.
+
+1. Save your `~/.zshenv` file.
+
+1. Load the changes to your current open terminal session
    using the following command.
 
     ```terminal
@@ -114,4 +117,4 @@ To [install and set up CocoaPods][cocoapods], run the following commands:
     ```
 
 [Flutter plugins]: {{site.url}}/packages-and-plugins/developing-packages#types
-[cocoapods]: https://formulae.brew.sh/formula/cocoapods
+[cocoapods]: https://guides.cocoapods.org/using/getting-started.html#installation
