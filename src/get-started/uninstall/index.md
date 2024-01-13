@@ -25,33 +25,58 @@ delete the directories that store Flutter and its configuration files.
 
 {% case os %}
 {% when 'Windows' -%}
-   {% assign dirinstall='C:\dev\' %}
-   {% assign dirconfig='%USERPROFILE%\' %}
-   {% assign unzip='Extract-Archive' %}
-   {% assign path='C:\dev\' %}
-   {% assign prompt-start='C:\>' %}
-   {% assign prompt=path | append: '>' %}
-   {% assign terminal='PowerShell' %}
-   {% assign rm = 'Remove-Item -Recurse -Force -Path ' %}
-   {% capture rm-sdk %}Remove-Item -Recurse -Force -Path '{{dirinstall}}flutter'{% endcapture %}
-{% when "macOS" -%}
-   {% assign dirinstall='~/development' %}
-   {% assign dirconfig='~/' %}
-   {% assign path='~/development/' %}
-   {% assign terminal='the Terminal' %}
-   {% assign prompt='$' %}
-   {% assign prompt-start=prompt %}
-   {% assign rm = 'rm -rf ' %}
-   {% assign rm-sdk = 'rm -rf ' | append: dirinstall | append: '/flutter' %}
+{% assign dirinstall='C:\dev\' %}
+{% assign localappdata='%LOCALAPPDATA%\' %}
+{% assign appdata='%APPDATA%\' %}
+{% assign unzip='Extract-Archive' %}
+{% assign path='C:\dev\' %}
+{% assign prompt-start='C:\>' %}
+{% assign prompt=path | append: '>' %}
+{% assign terminal='PowerShell' %}
+{% assign rm = 'Remove-Item -Recurse -Force -Path ' %}
+{% capture rm-sdk %}Remove-Item -Recurse -Force -Path '{{dirinstall}}flutter'{% endcapture %}
+{% capture dart-files %}
+{{localappdata}}.dartServer
+{{appdata}}.dart
+{{appdata}}.dart-tool
+{% endcapture %}
+{% capture rm-dart-files %}
+{{prompt}} {{rm}} {{localappdata}}.dartServer,{{appdata}}.dart,{{appdata}}.dart-tool
+{% endcapture %}
+{% capture flutter-files %}{{appdata}}.flutter-devtools{% endcapture %}
+{% capture rm-flutter-files %}
+{{prompt}} {{rm}} {{flutter-files}}
+{% endcapture %}
+{% capture rm-pub-dir %}
+{{prompt}} {{rm}} {{localappdata}}Pub\Cache
+{% endcapture %}
 {% else -%}
-   {% assign dirinstall='~/development' %}
-   {% assign dirconfig='~/' %}
-   {% assign path='~/development/' %}
-   {% assign terminal='a shell' %}
-   {% assign prompt='$' %}
-   {% assign prompt-start=prompt %}
-   {% assign rm = 'rm -rf ' %}
-   {% assign rm-sdk = 'rm -rf ' | append: dirinstall | append: '/flutter' %}
+{% assign dirinstall='~/development' %}
+{% assign dirconfig='~/' %}
+{% assign path='~/development/' %}
+{% assign prompt='$' %}
+{% assign prompt-start=prompt %}
+{% assign rm = 'rm -rf ' %}
+{% assign rm-sdk = 'rm -rf ' | append: dirinstall | append: '/flutter' %}
+{% capture dart-files %}
+{{dirconfig}}.dart
+{{dirconfig}}.dart-tool
+{{dirconfig}}.dartServer
+{% endcapture %}
+{% capture rm-dart-files %}
+{{prompt}} {{rm}} {{dirconfig}}.dart*
+{% endcapture %}
+{% capture flutter-files %}
+{{dirconfig}}.flutter
+{{dirconfig}}.flutter-devtools
+{{dirconfig}}.flutter_settings
+{% endcapture %}
+{% capture rm-flutter-files %}
+{{prompt}} {{rm}} {{dirconfig}}.flutter*
+{% endcapture %}
+{% capture rm-pub-dir %}
+{{prompt}} {{rm}} {{dirconfig}}.pub-cache
+{% endcapture %}
 {% endcase -%}
 
 <div class="tab-pane {%- if id == 'windows' %} active {% endif %}" id="{{id}}" role="tabpanel" aria-labelledby="{{id}}-tab" markdown="1">
@@ -81,16 +106,14 @@ If you don't want to preserve your Flutter configuration,
 remove the following directories from your home directory.
 
 ```terminal
-{{dirconfig}}.flutter
-{{dirconfig}}.flutter-devtools
-{{dirconfig}}.flutter_settings
+{{ flutter-files | strip }}
 ```
 
 To remove these directories, run the following command.
 
 ```terminal
-{{prompt}} {{rm}} {{dirconfig}}.flutter*
-   ```
+{{rm-flutter-files | strip}}
+```
 
 ### Remove Dart configuration files
 {:.no_toc}
@@ -99,16 +122,14 @@ If you don't want to preserve your Dart configuration,
 remove the following directories from your home directory.
 
 ```terminal
-{{dirconfig}}.dart
-{{dirconfig}}.dart-tool
-{{dirconfig}}.dartServer
+{{ dart-files | strip}}
 ```
 
 To remove these directories, run the following command.
 
 ```terminal
-{{prompt}} {{rm}} {{dirconfig}}.dart*
-   ```
+{{rm-dart-files | strip}}
+```
 
 ### Remove pub package files
 {:.no_toc}
@@ -122,8 +143,8 @@ If you don't want to preserve your pub packages,
 remove the `.pub-cache` directory from your home directory.
 
 ```terminal
-{{prompt}} {{rm}} {{dirconfig}}.pub-cache
-   ```
+{{rm-pub-dir | strip}}
+```
 
 </div>
 
