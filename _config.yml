@@ -60,8 +60,8 @@ appmin:
   github_win: 2.4
   github_mac: 2.4
   vscode: 1.75
-  android_studio: '2022.3 (Giraffe) or later'
-  intellij_idea: '2022.3 or later'
+  android_studio: '2022.3 (Giraffe)'
+  intellij_idea: '2022.3'
   android_sdk: 19
   powershell: 5.0
 devmin:
