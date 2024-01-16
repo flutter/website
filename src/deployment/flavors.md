@@ -237,6 +237,11 @@ at the command line, or in your IDE.
 For examples of build flavors for [iOS (Xcode)][] and [Android][],
 check out the integration test samples in the [Flutter repo][].
 
+## Retrieving your app's flavor at runtime
+
+From your Dart code, you can use the [`appFlavor`][] API to determine what
+flavor your app was built with.
+
 ## Conditionally bundling assets based on flavor
 
 If you aren't familiar with how to add assets to your app, see
@@ -285,6 +290,7 @@ For packages that support creating flavors, check out the following:
 [Launching your app flavors]: {{site.url}}/deployment/flavors/#launching-your-app-flavors
 [Flutter repo]: {{site.repo.flutter}}/blob/master/dev/integration_tests/flavors/lib/main.dart
 [iOS (Xcode)]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flavors/ios
+[`appFlavor`]: {{site.api}}/flutter/services/appFlavor-constant.html
 [Android]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flavors/android
 [Adding assets and images]: {{site.url}}/ui/assets/assets-and-images
 [Build flavors in Flutter (Android and iOS) with different Firebase projects per flavor Flutter Ready to Go]: {{site.medium}}/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b
