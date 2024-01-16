@@ -32,7 +32,7 @@ When it happens, yellow and black stripes appear,
 indicating the area of overflow in the app UI.
 In addition, an error message displays in the debug console:
 
-```
+```text
 The following assertion was thrown during layout:
 A RenderFlex overflowed by 1146 pixels on the right.
 
@@ -66,11 +66,12 @@ Widget build(BuildContext context) {
         children: [
           Text('Title', style: Theme.of(context).textTheme.headlineMedium),
           const Text(
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed'
-              ' do eiusmod tempor incididunt ut labore et dolore magna '
-              'aliqua. Ut enim ad minim veniam, quis nostrud '
-              'exercitation ullamco laboris nisi ut aliquip ex ea '
-              'commodo consequat.'),
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed '
+            'do eiusmod tempor incididunt ut labore et dolore magna '
+            'aliqua. Ut enim ad minim veniam, quis nostrud '
+            'exercitation ullamco laboris nisi ut aliquip ex ea '
+            'commodo consequat.',
+          ),
         ],
       ),
     ],
@@ -153,7 +154,7 @@ occurring earlier in the rendering pipeline.
 
 The message shown by the error looks like this:
 
-```
+```text
 RenderBox was not laid out: 
 RenderViewport#5a477 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
 ```
@@ -183,7 +184,7 @@ while creating a UI in your Flutter app.
 
 The message shown by the error looks like this:
 
-```
+```text
 The following assertion was thrown during performResize():
 Vertical viewport was given unbounded height.
 
@@ -373,12 +374,12 @@ specific parent widgets within the Flutter framework.
 Feel free to submit a PR (using the doc icon in
 the top right corner of the page) to expand this list.
 
-| Widget                            | Expected parent widget(s) |
-| :-------------------------------- | ------------------------: |
-| `Flexible`                          |      `Row`, `Column`, or `Flex` |
-| `Expanded` (a specialized `Flexible`) |      `Row`, `Column`, or `Flex` |
-| `Positioned`                        |                     `Stack` |
-| `TableCell`                         |                     `Table` |
+| Widget                                |  Expected parent widget(s) |
+|:--------------------------------------|---------------------------:|
+| `Flexible`                            | `Row`, `Column`, or `Flex` |
+| `Expanded` (a specialized `Flexible`) | `Row`, `Column`, or `Flex` |
+| `Positioned`                          |                    `Stack` |
+| `TableCell`                           |                    `Table` |
 
 **How to fix it?**
 
@@ -396,7 +397,7 @@ either directly or indirectly.
 When the error occurs,
 the following message is displayed in the console:
 
-```
+```text
 The following assertion was thrown building DialogPage(dirty, dependencies: 
 [_InheritedTheme, _LocalizationsScope-[GlobalKey#59a8e]], 
 state: _DialogPageState#f121e):
@@ -506,7 +507,9 @@ For more information and to learn how to fix,
 check out the following video on
 [`PrimaryScrollController`][controller-video]:
 
-[controller-video]: <iframe width="560" height="315" src="{{yt-embed}}/33_0ABjFJUU" title="Learn about the PrimaryScrollController Flutter Widget" {{yt-set}}></iframe>`
+<iframe width="560" height="315" src="{{yt-embed}}/33_0ABjFJUU" title="Learn about the PrimaryScrollController Flutter Widget" {{yt-set}}></iframe>`
+
+[controller-video]: {{site.api}}/flutter/widgets/PrimaryScrollController-class.html
 
 ## References
 
@@ -516,4 +519,6 @@ check out the following resources:
 
 * [How to debug layout issues with the Flutter Inspector][medium-article]
 * [Understanding constraints][]
-* [Flutter architectural overview]({{site.url}}/resources/architectural-overview#layout-and-rendering)
+* [Flutter architectural overview][]
+
+[Flutter architectural overview]: {{site.url}}/resources/architectural-overview#layout-and-rendering
