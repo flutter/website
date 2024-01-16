@@ -76,7 +76,7 @@ for the `free` scheme.
 ![Step 3 Xcode image](/assets/images/docs/flavors/step3-ios-build-config.png){:width="100%"}
 {{site.alert.note}}
   Your configurations should be based on your **Debug.xconfig** or **Release.xcconfig**
-  file, not the **Pods-Runner.xcconfigs**. You can check this by expanding the configuration names. 
+  file, not the **Pods-Runner.xcconfigs**. You can check this by expanding the configuration names.
 {{site.alert.end}}
 
 </li>
@@ -114,7 +114,7 @@ In this example, we set the **Debug-free** value to equal
 Change the app bundle identifier to differentiate between schemes.
 In **Product Bundle Identifier**, append `.free` to each -free scheme value.
 
-![Step 1 using flavors image.](/assets/images/docs/flavors/step-1-using-flavors-free.png){:width="100%"}  
+![Step 1 using flavors image.](/assets/images/docs/flavors/step-1-using-flavors-free.png){:width="100%"}
 
 </li>
 <li markdown=1>
@@ -122,12 +122,12 @@ In **Product Bundle Identifier**, append `.free` to each -free scheme value.
 In the **Build Settings**, set the **Product Name** value to match each flavor.
 For example, add Debug Free.
 
-![Step 2 using flavors image.](/assets/images/docs/flavors/step-2-using-flavors-free.png){:width="100%"}  
+![Step 2 using flavors image.](/assets/images/docs/flavors/step-2-using-flavors-free.png){:width="100%"}
 
 </li>
 <li markdown=1>
 
-Add the display name to **Info.plist**. Update the **Bundle Display Name** 
+Add the display name to **Info.plist**. Update the **Bundle Display Name**
 value to `$(PRODUCT_NAME)`.
 
 ![Step 3 using flavors image.](/assets/images/docs/flavors/step3-using-flavors.png){:width="100%"}
@@ -237,6 +237,40 @@ at the command line, or in your IDE.
 For examples of build flavors for [iOS (Xcode)][] and [Android][],
 check out the integration test samples in the [Flutter repo][].
 
+## Retrieving your app's flavor at runtime
+
+From your Dart code, you can use the [`appFlavor`][] API to determine what
+flavor your app was built with.
+
+## Conditionally bundling assets based on flavor
+
+If you aren't familiar with how to add assets to your app, see
+[Adding assets and images][].
+
+If you have assets that are only used in a specific flavor in your app, you can
+configure them to only be bundled into your app when building for that flavor.
+This prevents your app bundle size from being bloated by unused assets.
+
+Here is an example:
+
+```yaml
+flutter:
+  assets:
+    - assets/common/
+    - path: assets/free/
+      flavors:
+        - free
+    - path: assets/premium/
+      flavors:
+        - premium
+```
+
+In this example, files within the `assets/common/` directory will always be bundled
+when app is built during `flutter run` or `flutter build`. Files within the
+`assets/free/` directory are bundled _only_ when the `--flavor` option is set
+to `free`. Similarly, files within the `assets/premium` directory are
+bundled _only_ if `--flavor` is set to `premium`.
+
 ## More information
 
 For more information on creating and using flavors, check out
@@ -256,7 +290,9 @@ For packages that support creating flavors, check out the following:
 [Launching your app flavors]: {{site.url}}/deployment/flavors/#launching-your-app-flavors
 [Flutter repo]: {{site.repo.flutter}}/blob/master/dev/integration_tests/flavors/lib/main.dart
 [iOS (Xcode)]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flavors/ios
+[`appFlavor`]: {{site.api}}/flutter/services/appFlavor-constant.html
 [Android]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flavors/android
+[Adding assets and images]: {{site.url}}/ui/assets/assets-and-images
 [Build flavors in Flutter (Android and iOS) with different Firebase projects per flavor Flutter Ready to Go]: {{site.medium}}/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b
 [Flavoring Flutter Applications (Android & iOS)]: {{site.medium}}/flutter-community/flavoring-flutter-applications-android-ios-ea39d3155346
 [Flutter Flavors Setup with multiple Firebase Environments using FlutterFire and Very Good CLI]: https://codewithandrea.com/articles/flutter-flavors-for-firebase-apps/

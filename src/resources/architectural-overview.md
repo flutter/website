@@ -3,6 +3,8 @@ title: Flutter architectural overview
 description: A high-level overview of the architecture of Flutter, including the core principles and concepts that form its design.
 ---
 
+{% include docs/yt_shims.liquid %}
+
 <?code-excerpt path-base="resources/architectural_overview/"?>
 
 This article is intended to provide a high-level overview of the architecture of
@@ -90,7 +92,7 @@ and compile toolchain.
 [Impeller]: {{site.url}}/perf/impeller
 
 The engine is exposed to the Flutter framework through
-[`dart:ui`]({{site.github}}/flutter/engine/tree/main/lib/ui),
+[`dart:ui`]({{site.repo.engine}}/tree/main/lib/ui),
 which wraps the underlying C++ code in Dart classes. This library
 exposes the lowest-level primitives, such as classes for driving input,
 graphics, and text rendering subsystems.
@@ -160,20 +162,20 @@ pieces of a Flutter app.
 * Implements business logic.
 * Owned by app developer.
 
-**Framework** ([source code]({{site.github}}/flutter/flutter/tree/main/packages/flutter/lib))
+**Framework** ([source code]({{site.repo.flutter}}/tree/main/packages/flutter/lib))
 * Provides higher-level API to build high-quality apps
   (for example, widgets, hit-testing, gesture detection,
   accessibility, text input).
 * Composites the app's widget tree into a scene.
 
-**Engine** ([source code]({{site.github}}/flutter/engine/tree/main/shell/common))
+**Engine** ([source code]({{site.repo.engine}}/tree/main/shell/common))
 * Responsible for rasterizing composited scenes.
 * Provides low-level implementation of Flutter's core APIs
   (for example, graphics, text layout, Dart runtime).
 * Exposes its functionality to the framework using the **dart:ui API**.
 * Integrates with a specific platform using the Engine's **Embedder API**.
 
-**Embedder** ([source code](https://github.com/flutter/engine/tree/main/shell/platform))
+**Embedder** ([source code]({{site.repo.engine}}/tree/main/shell/platform))
 * Coordinates with the underlying operating system
   for access to services like rendering surfaces,
   accessibility, and input.
@@ -196,7 +198,7 @@ when the application state changes. This model is inspired by
 which includes a rethinking of many traditional design principles.
 
 [faq]: {{site.url}}/resources/faq#what-programming-paradigm-does-flutters-framework-use
-[fb]: {{site.youtube-site}}/watch?time_continue=2&v=x7cQ3mrcKaY&feature=emb_logo
+[fb]: {{yt-watch}}?time_continue=2&v=x7cQ3mrcKaY&feature=emb_logo
 
 In most traditional UI frameworks, the user interface's initial state is
 described once and then separately updated by user code at runtime, in response
@@ -751,7 +753,7 @@ GPU to render it.
 Further details of the composition and rasterization stages of the pipeline are
 beyond the scope of this high-level article, but more information can be found
 [in this talk on the Flutter rendering
-pipeline]({{site.youtube-site}}/watch?v=UUfXWzp0-DU).
+pipeline]({{yt-watch}}?v=UUfXWzp0-DU).
 
 ## Platform embedding
 
@@ -761,7 +763,7 @@ itself. The mechanism for obtaining the texture and participating in the app
 lifecycle of the underlying operating system inevitably varies depending on the
 unique concerns of that platform. The engine is platform-agnostic, presenting a
 [stable ABI (Application Binary
-Interface)]({{site.github}}/flutter/engine/blob/main/shell/platform/embedder/embedder.h)
+Interface)]({{site.repo.engine}}/blob/main/shell/platform/embedder/embedder.h)
 that provides a _platform embedder_ with a way to set up and use Flutter.
 
 The platform embedder is the native OS application that hosts all Flutter
@@ -851,9 +853,9 @@ channel.setMethodCallHandler {
 }
 ```
 
-Further examples of using platform channels, including examples for macOS, can
-be found in the [flutter/plugins]({{site.repo.plugins}})
-repository<sup><a href="#a3">3</a></sup>. There are also [thousands of plugins
+Further examples of using platform channels, including examples for desktop
+platforms, can be found in the [flutter/packages]({{site.repo.packages}})
+repository. There are also [thousands of plugins
 already available]({{site.pub}}/flutter) for Flutter that cover many common
 scenarios, ranging from Firebase to ads to device hardware like camera and
 Bluetooth.
@@ -919,7 +921,7 @@ Flutter solves this by introducing platform view widgets
 ([`AndroidView`]({{site.api}}/flutter/widgets/AndroidView-class.html)
 and [`UiKitView`]({{site.api}}/flutter/widgets/UiKitView-class.html))
 that let you embed this kind of content on each platform. Platform views can be
-integrated with other Flutter content<sup><a href="#a4">4</a></sup>. Each of
+integrated with other Flutter content<sup><a href="#a3">3</a></sup>. Each of
 these widgets acts as an intermediary to the underlying operating system. For
 example, on Android, `AndroidView` serves three primary functions:
 
@@ -1023,7 +1025,7 @@ While HTML mode offers the best code size characteristics,
 `CanvasKit` provides the fastest path to the
 browser's graphics stack,
 and offers somewhat higher graphical fidelity with the
-native mobile targets<sup><a href="#a5">5</a></sup>.
+native mobile targets<sup><a href="#a4">4</a></sup>.
 
 The web version of the architectural layer diagram is as follows:
 
@@ -1067,15 +1069,9 @@ just return the same widget.
 <sup><a id="a2">2</a></sup> This is a slight simplification for ease of
 reading. In practice, the tree might be more complex.
 
-<sup><a id="a3">3</a></sup> While work is underway on Linux and Windows,
-examples for those platforms can be found in the [Flutter desktop embedding
-repository]({{site.github}}/google/flutter-desktop-embedding/tree/master/plugins).
-As development on those platforms reaches maturity, this content will be
-gradually migrated into the main Flutter repository.
-
-<sup><a id="a4">4</a></sup> There are some limitations with this approach, for
+<sup><a id="a3">3</a></sup> There are some limitations with this approach, for
 example, transparency doesn't composite the same way for a platform view as it
 would for other Flutter widgets.
 
-<sup><a id="a5">5</a></sup> One example is shadows, which have to be
+<sup><a id="a4">4</a></sup> One example is shadows, which have to be
 approximated with DOM-equivalent primitives at the cost of some fidelity.

@@ -54,7 +54,7 @@ in public that could put users at risk,
 For more details on how we handle security vulnerabilities,
 see our [security policy][].
 
-[Discord chat channels]: {{site.github}}/flutter/flutter/wiki/Chat
+[Discord chat channels]: {{site.repo.flutter}}/wiki/Chat
 [known false positives]: {{site.url}}/reference/security-false-positives
 [security policy]: {{site.repo.flutter}}/security/policy
 
@@ -80,7 +80,18 @@ Any vulnerability reported for flutter websites like
 docs.flutter.dev doesn't require a release and will be
 fixed in the website itself.
 
-Flutter doesn't have a bug bounty program.
+## Bug Bounty programs
+
+Contributing teams can include Flutter within the scope
+of their bug bounty programs. To have your program listed,
+contact `security@flutter.dev`.
+
+Google considers Flutter to be in scope for the
+[Google Open Source Software Vulnerability Reward Program][google-oss-vrp].
+For expediency, reporters should contact `security@flutter.dev`
+before using Google's vulnerability reporting flow.
+
+[google-oss-vrp]: https://bughunters.google.com/open-source-security
 
 ## Receiving security updates
 
@@ -90,7 +101,7 @@ The best way to receive security updates is to subscribe to the
 technical release blog post.
 
 [Discord channel]: https://discord.gg/BS8KZyg
-[flutter-announce]: https://groups.google.com/forum/#!forum/flutter-announce)
+[flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 
 ## Best practices
 

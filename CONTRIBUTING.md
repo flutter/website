@@ -11,7 +11,7 @@ but two of the primary repos are the
 [Flutter SDK](https://github.com/flutter/flutter), and this repo, the
 [Flutter website](https://github.com/flutter/website).
 To contribute a fix to a repo, submit a [pull request
-(PR)](https://services.github.com/on-demand/github-cli/open-pull-request-github).
+(PR)](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
 
 For information on contributing code or API docs to the Flutter SDK, see
 [Contributing to

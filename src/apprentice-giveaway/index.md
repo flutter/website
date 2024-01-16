@@ -4,6 +4,8 @@ toc: false
 description: This event is ended.
 ---
 
+{% include docs/yt_shims.liquid %}
+
 {{site.alert.info}}
   The Flutter Apprentice event has ended.
   Thanks to all who participated!<br>
@@ -41,14 +43,14 @@ You can find replays of the book club videos on YouTube.
 
 
 [book club replay videos]: #videos
-[week 1 replay]: {{site.youtube-site}}/watch?v=FFZkjw1PVrY
-[week 2 replay]: {{site.youtube-site}}/watch?v=Llnq61KyOPg
-[week 3 replay]: {{site.youtube-site}}/watch?v=4Ea1mhkQRxQ
-[week 4 replay]: {{site.youtube-site}}/watch?v=jJ1W52f6CiM
-[week 5 replay]: {{site.youtube-site}}/watch?v=Vqs9qbbTeQ0
-[week 6 replay]: {{site.youtube-site}}/watch?v=vDOsMxTbfoI
-[week 7 replay]: {{site.youtube-site}}/watch?v=lBS5a1hVxPM
-[week 8 replay]: {{site.youtube-site}}/watch?v=R39i_xTXhpY
-[week 9 replay]: {{site.youtube-site}}/watch?v=xy-H1d2L78c
-[week 10 replay]: {{site.youtube-site}}/watch?v=rg5dYnCO2vo
+[week 1 replay]: {{yt-watch}}?v=FFZkjw1PVrY
+[week 2 replay]: {{yt-watch}}?v=Llnq61KyOPg
+[week 3 replay]: {{yt-watch}}?v=4Ea1mhkQRxQ
+[week 4 replay]: {{yt-watch}}?v=jJ1W52f6CiM
+[week 5 replay]: {{yt-watch}}?v=Vqs9qbbTeQ0
+[week 6 replay]: {{yt-watch}}?v=vDOsMxTbfoI
+[week 7 replay]: {{yt-watch}}?v=lBS5a1hVxPM
+[week 8 replay]: {{yt-watch}}?v=R39i_xTXhpY
+[week 9 replay]: {{yt-watch}}?v=xy-H1d2L78c
+[week 10 replay]: {{yt-watch}}?v=rg5dYnCO2vo
 [raywenderlich.com]: https://www.raywenderlich.com/books/flutter-apprentice/v1.0.ea2

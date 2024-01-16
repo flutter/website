@@ -345,7 +345,7 @@ to verify that the values are correct.
   Defaults to `flutter.minSdkVersion`.
 
 `targetSdkVersion`
-: Specify the target API level on which on which you designed the app to run.
+: Specify the target API level on which you designed the app to run.
   Defaults to `flutter.targetSdkVersion`.
   
 `versionCode`
@@ -581,7 +581,7 @@ The resulting app bundle or APK files are located in
 [Platform Views]: {{site.url}}/platform-integration/android/platform-views
 [play]: {{site.android-dev}}/distribute
 [R8]: {{site.android-dev}}/studio/build/shrink-code
-[Sign your app]: https://developer.android.com/studio/publish/app-signing.html#generate-key
+[Sign your app]: {{site.android-dev}}/studio/publish/app-signing.html#generate-key
 [upload-bundle]: {{site.android-dev}}/studio/publish/upload-bundle
 [Version your app]: {{site.android-dev}}/studio/publish/versioning
 [x86-64]: {{site.android-dev}}/ndk/guides/abis#86-64

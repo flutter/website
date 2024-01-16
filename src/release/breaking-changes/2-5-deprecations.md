@@ -253,7 +253,7 @@ Relevant PRs:
 * Deprecated in [#60320]({{site.repo.flutter}}/issues/60320)
 * Removed in [#90294]({{site.repo.flutter}}/issues/90294)
 
-[Flutter Hybrid Composition]: {{site.github}}/flutter/flutter/wiki/Hybrid-Composition
+[Flutter Hybrid Composition]: {{site.repo.flutter}}/wiki/Hybrid-Composition
 [`AndroidViewController`]: {{site.api}}/flutter/services/AndroidViewController-class.html
 [`TextureAndroidViewController`]: {{site.api}}/flutter/services/TextureAndroidViewController-class.html
 [`SurfaceAndroidViewController`]: {{site.api}}/flutter/services/SurfaceAndroidViewController-class.html

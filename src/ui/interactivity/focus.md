@@ -3,6 +3,7 @@ title: Understanding Flutter's keyboard focus system
 description: How to use the focus system in your Flutter app.
 ---
 
+{% include docs/yt_shims.liquid %}
 
 This article explains how to control where keyboard input is directed. If you
 are implementing an application that uses a physical keyboard, such as most
@@ -33,7 +34,7 @@ system:
 - [Receiving/handling key events](#key-events)
 - [Implementing a custom component that needs to be focusable](#focus-widget)
 - [Receiving notifications when the focus changes](#change-notifications)
-- [Changing or defining the "tab order" of focus traversal in an application ](#focustraversalpolicy)
+- [Changing or defining the "tab order" of focus traversal in an application](#focustraversalpolicy)
 - [Defining groups of controls that should be traversed together](#focustraversalgroup-widget)
 - [Preventing some controls in an application from being focusable](#controlling-what-gets-focus)
 
@@ -234,6 +235,7 @@ class _MyCustomWidgetState extends State<MyCustomWidget> {
   }
 }
 ```
+
 ### Key events
 
 If you wish to listen for key events in a subtree, set the `onKey` attribute of
@@ -414,7 +416,7 @@ your custom controls.
 {{site.alert.note}}
   To learn more, watch this short Widget of the Week video on the FocusableActionDetector widget:
 
-  <iframe class="full-width" src="{{site.youtube-site}}/embed/R84AGg0lKs8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+  <iframe class="full-width" src="{{yt-embed}}/R84AGg0lKs8" title="Learn about the FocusableActionDetector Flutter Widget" {{yt-set}}></iframe>
 {{site.alert.end}}
 
 ## Controlling focus traversal
@@ -541,7 +543,6 @@ traditional modes. The provided widgets in Flutter already know how to use this
 information, so you only need it if you're writing your own controls from
 scratch. You can use `addHighlightModeListener` callback to listen for changes
 in the highlight mode.
-
 
 [`Actions`]: {{site.api}}/flutter/widgets/Actions-class.html
 [`Builder`]: {{site.api}}/flutter/widgets/Builder-class.html

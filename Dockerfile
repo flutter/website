@@ -1,4 +1,4 @@
-FROM ruby:3.2.2-slim-bookworm@sha256:adc7f93df5b83c8627b3fadcc974ce452ef9999603f65f637e32b8acec096ae1 AS base
+FROM ruby:3.3-slim-bookworm@sha256:7e2843d936fd2ea084b36f99ff252822bedb6b656ae868f5b08e68cc9b63e8b6 as base
 
 ENV TZ=US/Pacific
 RUN apt-get update && apt-get install -yq --no-install-recommends \
@@ -39,7 +39,9 @@ VOLUME /flutter
 # NOTE You will get a warning "Woah! You appear to be trying to run flutter as root."
 # and this is to be disregarded since this image is never deployed to production.
 RUN flutter doctor
-RUN flutter --version
+RUN flutter config --no-analytics  \
+    && flutter config --no-cli-animations  \
+    && flutter --version
 RUN dart pub get
 
 
@@ -53,10 +55,6 @@ RUN mkdir -p /etc/apt/keyrings \
     && apt-get update -yq \
     && apt-get install nodejs -yq \
     && npm install -g npm # Ensure latest npm
-
-# Install global Firebase CLI
-RUN npm install -g firebase-tools@12.7.0
-
 
 
 # ============== FLUTTER CODE TESTS ==============
@@ -72,6 +70,7 @@ ENTRYPOINT ["tool/test.sh"]
 FROM node AS dev
 
 ENV JEKYLL_ENV=development
+ENV RUBY_YJIT_ENABLE=1
 RUN gem install bundler
 COPY Gemfile Gemfile.lock ./
 RUN bundle config set force_ruby_platform true
@@ -98,6 +97,7 @@ EXPOSE 5502
 FROM node AS build
 
 ENV JEKYLL_ENV=production
+ENV RUBY_YJIT_ENABLE=1
 RUN gem install bundler
 COPY Gemfile Gemfile.lock ./
 RUN bundle config set force_ruby_platform true
@@ -115,9 +115,3 @@ ARG BUILD_CONFIGS=_config.yml
 ENV BUILD_CONFIGS=$BUILD_CONFIGS
 RUN bundle exec jekyll build --config $BUILD_CONFIGS
 
-
-
-# ============== TEST BUILT SITE LINKS ==============
-FROM build as checklinks
-
-CMD ["tool/check-links.sh"]

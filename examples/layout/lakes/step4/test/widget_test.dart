@@ -9,7 +9,6 @@ void main() {
     await tester.pumpWidget(const MyApp());
     expect(find.text('Oeschinen Lake Campground'), findsOneWidget);
     expect(find.text('ROUTE'), findsOneWidget);
-    // FIXME: the following fails
-    // expect(find.text('Oeschinen'), findsOneWidget);
+    expect(find.textContaining('Blüemlisalp'), findsOneWidget);
   });
 }

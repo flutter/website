@@ -3,6 +3,8 @@ title: Flutter's fonts and typography
 description: Learn about Flutter's support for typography.
 ---
 
+{% include docs/yt_shims.liquid %}
+
 [_Typography_][] covers the style and appearance of
 type or fonts: it specifies how heavy the font is,
 the slant of the font, the spacing between
@@ -112,9 +114,8 @@ The following example is for CSS, but illustrates the concept:
 <img src='/assets/images/docs/development/ui/typography/feature-tag-example.png'
 class="mw-100" alt="Example feature tags in CSS">
 
-
 [`FontFeature`]: {{site.api}}/flutter/dart-ui/FontFeature-class.html
-[`FontStyle`]: {{site.api}}/flutter/dart-ui/FontStyle-class.html
+[`FontStyle`]: {{site.api}}/flutter/dart-ui/FontStyle.html
 [`FontWeight`]: {{site.api}}/flutter/dart-ui/FontWeight-class.html
 [OpenType feature tag]: https://learn.microsoft.com/en-us/typography/opentype/spec/featuretags
 
@@ -125,7 +126,7 @@ of Flutter's typography and combines it with the Material
 _and_ Cupertino look and feel (depending on the platform
 the app runs on), animation, and custom fragment shaders:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sA5MRFFUuOU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{yt-embed}}/sA5MRFFUuOU" title="Learn how to prototype beautiful designs with Flutter" {{yt-set}}></iframe>
 <b>Prototyping beautiful designs with Flutter</b>
 
 To read one engineer's experience
@@ -133,7 +134,6 @@ customizing variable fonts and animating them as they
 morph (and was the basis for the above video),
 check out [Playful typography with Flutter][article],
 a free article on Medium. The associated example also
-uses a custom shader. 
+uses a custom shader.
 
 [article]: {{site.flutter-medium}}/playful-typography-with-flutter-f030385058b4
-

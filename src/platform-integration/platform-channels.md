@@ -1393,7 +1393,7 @@ DispatchQueue.main.async {
 [`BasicMessageChannel`]: {{site.api}}/flutter/services/BasicMessageChannel-class.html
 [`BinaryCodec`]: {{site.api}}/flutter/services/BinaryCodec-class.html
 [block]: {{site.apple-dev}}/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithBlocks/WorkingwithBlocks.html
-[`cloud_firestore`]: {{site.github}}/FirebaseExtended/flutterfire/blob/master/packages/cloud_firestore/cloud_firestore_platform_interface/lib/src/method_channel/utils/firestore_message_codec.dart
+[`cloud_firestore`]: {{site.github}}/firebase/flutterfire/blob/master/packages/cloud_firestore/cloud_firestore_platform_interface/lib/src/method_channel/utils/firestore_message_codec.dart
 [`dart:html` library]: {{site.dart.api}}/dart-html/dart-html-library.html
 [developing packages]: {{site.url}}/packages-and-plugins/developing-packages
 [plugins]: {{site.url}}/packages-and-plugins/developing-packages#plugin
@@ -1404,7 +1404,7 @@ DispatchQueue.main.async {
 [`JSONMessageCodec`]: {{site.api}}/flutter/services/JSONMessageCodec-class.html
 [`MethodChannel`]: {{site.api}}/flutter/services/MethodChannel-class.html
 [`MethodChannelAndroid`]: {{site.api}}/javadoc/io/flutter/plugin/common/MethodChannel.html
-[`MethodChanneliOS`]: {{site.api}}/objcdoc/Classes/FlutterMethodChannel.html
+[`MethodChanneliOS`]: {{site.api}}/ios-embedder/interface_flutter_method_channel.html
 [Platform adaptations]: {{site.url}}/platform-integration/platform-adaptations
 [publishing packages]: {{site.url}}/packages-and-plugins/developing-packages#publish
 [`quick_actions`]: {{site.pub}}/packages/quick_actions

@@ -47,14 +47,13 @@ reference to help you build up an application.
 - [Handle changes to a text field]({{site.url}}/cookbook/forms/text-field-changes)
 - [Retrieve the value of a text field]({{site.url}}/cookbook/forms/retrieve-input)
 
+
 ## Games
 
-{{site.alert.tip}}
-  Check back soon for recipes that
-  can you help you build games with Flutter!
+- [Add achievements and leaderboards to your mobile game]({{site.url}}/cookbook/games/achievements-leaderboard)
+- [Add multiplayer support via Firestore]({{site.url}}/cookbook/games/firestore-multiplayer)
+- [Add ads to your mobile Flutter app or game]({{site.url}}/cookbook/plugins/google-mobile-ads)
 
-  Until then, check out the [Casual Games Toolkit]({{site.main-url}}/games).
-{{site.alert.end}}
 
 ## Gestures
 - [Add Material touch ripples]({{site.url}}/cookbook/gestures/ripples)
@@ -111,7 +110,9 @@ reference to help you build up an application.
 
 
 ## Plugins
+
 - [Play and pause a video]({{site.url}}/cookbook/plugins/play-video)
+- [Add ads to your mobile Flutter app or game]({{site.url}}/cookbook/plugins/google-mobile-ads)
 - [Take a picture using the camera]({{site.url}}/cookbook/plugins/picture-using-camera)
 
 

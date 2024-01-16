@@ -7,7 +7,7 @@ This page has release notes for 3.7.0.
 For information about subsequent bug-fix releases,
 see [Hotfixes to the Stable Channel][].
 
-[Hotfixes to the Stable Channel]: {{site.github}}/flutter/flutter/wiki/Hotfixes-to-the-Stable-Channel
+[Hotfixes to the Stable Channel]: {{site.repo.flutter}}/wiki/Hotfixes-to-the-Stable-Channel
 
 ## What's changed
 

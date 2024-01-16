@@ -5,6 +5,8 @@ description: Learn how Flutter's layout mechanism works and how to build a layou
 diff2html: true
 ---
 
+{% include docs/yt_shims.liquid %}
+
 {% assign api = site.api | append: '/flutter' -%}
 {% capture code -%} {{site.repo.this}}/tree/{{site.branch}}/src/_includes/code {%- endcapture -%}
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
@@ -17,9 +19,9 @@ diff2html: true
 {{site.alert.secondary}}
   <h4 class="no_toc">What's the point?</h4>
 
-  * Widgets are classes used to build UIs.
-  * Widgets are used for both layout and UI elements.
-  * Compose simple widgets to build complex widgets.
+* Widgets are classes used to build UIs.
+* Widgets are used for both layout and UI elements.
+* Compose simple widgets to build complex widgets.
 {{site.alert.end}}
 
 The core of Flutter's layout mechanism is widgets.
@@ -106,10 +108,10 @@ Create an [`Image`][] widget:
 
 <?code-excerpt "layout/lakes/step5/lib/main.dart (Image-asset)" remove="/width|height/"?>
 ```dart
-Image.asset(
-  'images/lake.jpg',
+return Image.asset(
+  image,
   fit: BoxFit.cover,
-),
+);
 ```
 
 Create an [`Icon`][] widget:
@@ -164,11 +166,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const String appTitle = 'Flutter layout demo';
     return MaterialApp(
-      title: 'Flutter layout demo',
+      title: appTitle,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Flutter layout demo'),
+          title: const Text(appTitle),
         ),
         body: const Center(
           child: Text('Hello World'),
@@ -187,6 +190,73 @@ class MyApp extends StatelessWidget {
   libraries, you can customize existing widgets,
   or you can build your own set of custom widgets.
 {{site.alert.end}}
+
+#### Cupertino apps
+
+To create a `Cupertino` app, use `CupertinoApp` and [`CupertinoPageScaffold`][] widgets.
+
+Unlike `Material`, it doesn't provide a default banner or background color.
+You need to set these yourself.
+
+* To set default colors, pass in a configured [`CupertinoThemeData`][]
+  to your app's `theme` property.
+* To add an iOS-styled navigation bar to the top of your app, add a
+  [`CupertinoNavigationBar`][] widget to the `navigationBar`
+  property of your scaffold.
+  You can use the colors that [`CupertinoColors`][] provides to
+  configure your widgets to match iOS design.
+
+* To layout the body of your app, set the `child` property of your scaffold
+  with the desired widget as its value, like `Center` or `Column`.
+
+To learn what other UI components you can add, check out the
+[Cupertino library][].
+
+<?code-excerpt "lib/cupertino.dart (MyApp)" title?>
+```dart
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const CupertinoApp(
+      title: 'Flutter layout demo',
+      theme: CupertinoThemeData(
+        brightness: Brightness.light,
+        primaryColor: CupertinoColors.systemBlue,
+      ),
+      home: CupertinoPageScaffold(
+        navigationBar: CupertinoNavigationBar(
+          backgroundColor: CupertinoColors.systemGrey,
+          middle: Text('Flutter layout demo'),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text('Hello World'),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
+{{site.alert.note}}
+  The [Cupertino library][] implements widgets that follow
+  [Apple's Human Interface Guidelines for iOS][].
+  When designing your UI, you can use
+  widgets from the standard [widgets library][], or the Cupertino library.
+  You can mix widgets from both libraries, you can customize existing widgets,
+  or you can build your own set of custom widgets.
+{{site.alert.end}}
+
+[`CupertinoColors`]: {{api}}/cupertino/CupertinoColors-class.html
+[`CupertinoThemeData`]: {{api}}/cupertino/CupertinoThemeData-class.html
+[`CupertinoNavigationBar`]: {{api}}/cupertino/CupertinoNavigationBar-class.html
+[Apple's Human Interface Guidelines for iOS]: {{site.apple-dev}}/design/human-interface-guidelines/designing-for-ios
 
 #### Non-Material apps
 
@@ -228,8 +298,10 @@ color to white and the text to dark grey to mimic a Material app.
   That's it! When you run the app, you should see _Hello World_.
 
   App source code:
-  - [Material app]({{examples}}/layout/base)
-  - [Non-Material app]({{examples}}/layout/non_material)
+
+* [Material app]({{examples}}/layout/base)
+* [Non-Material app]({{examples}}/layout/non_material)
+
 </div>
 <div class="col-md-6">
   {% include docs/app-figure.md img-class="site-mobile-screenshot border w-75"
@@ -251,14 +323,14 @@ and a `Column` widget to arrange widgets vertically.
 {{site.alert.secondary}}
   <h4 class="no_toc">What's the point?</h4>
 
-  * `Row` and `Column` are two of the most commonly used layout patterns.
-  * `Row` and `Column` each take a list of child widgets.
-  * A child widget can itself be a `Row`, `Column`,
+* `Row` and `Column` are two of the most commonly used layout patterns.
+* `Row` and `Column` each take a list of child widgets.
+* A child widget can itself be a `Row`, `Column`,
     or other complex widget.
-  * You can specify how a `Row` or `Column` aligns its children,
+* You can specify how a `Row` or `Column` aligns its children,
     both vertically and horizontally.
-  * You can stretch or constrain specific child widgets.
-  * You can specify how child widgets use the `Row`'s or
+* You can stretch or constrain specific child widgets.
+* You can specify how child widgets use the `Row`'s or
     `Column`'s available space.
 {{site.alert.end}}
 
@@ -513,7 +585,7 @@ of 5 star icons, and text:
 
 <?code-excerpt "layout/pavlova/lib/main.dart (ratings)" replace="/ratings/[!$&!]/g"?>
 ```dart
-var stars = Row(
+final stars = Row(
   mainAxisSize: MainAxisSize.min,
   children: [
     Icon(Icons.star, color: Colors.green[500]),
@@ -719,10 +791,11 @@ color or image.
 <div class="col-lg-6" markdown="1">
   <h4 class="no_toc">Summary (Container)</h4>
 
-  * Add padding, margins, borders
-  * Change background color or image
-  * Contains a single child widget, but that child can be a Row,
+* Add padding, margins, borders
+* Change background color or image
+* Contains a single child widget, but that child can be a Row,
     Column, or even the root of a widget tree
+
 </div>
 <div class="col-lg-6 text-center">
   <img src='/assets/images/docs/ui/layout/margin-padding-border.png' class="mb-4 mw-100"
@@ -1127,6 +1200,7 @@ Widget _buildCard() {
   );
 }
 ```
+
 <hr>
 
 ### ListTile
@@ -1183,17 +1257,18 @@ The following videos, part of the
 [Flutter in Focus][] series,
 explain `Stateless` and `Stateful` widgets.
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/wE7khGHVkYY?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <iframe width="560" height="315" src="{{site.youtube-site}}/embed/AqCMFXEmf3w?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-[Flutter in Focus playlist]({{site.youtube-site}}/watch?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)
+<iframe width="560" height="315" src="{{yt-embed}}/wE7khGHVkYY?rel=0" title="Learn how to create stateless widgets" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{yt-embed}}/AqCMFXEmf3w?rel=0" title="Learn the best times to use stateful widgets" {{yt-set}}></iframe>
+[Flutter in Focus playlist]({{yt-playlist}}PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)
 
 ---
 
 Each episode of the
-[Widget of the Week series]({{site.youtube-site}}/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
+[Widget of the Week series]({{yt-playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 focuses on a widget. Several of them includes layout widgets.
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/b_sQ9bMltGU?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-[Flutter Widget of the Week playlist]({{site.youtube-site}}/watch?v=yI-8QHpGIP4&index=5&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
+<iframe width="560" height="315" src="{{yt-embed}}/b_sQ9bMltGU?rel=0" title="Watch the Widget of the Week playlist" {{yt-set}}></iframe>
+[Flutter Widget of the Week playlist]({{yt-playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 
 ## Other resources
 
@@ -1222,7 +1297,8 @@ The following resources might help when writing layout code.
 * [Zero to One with Flutter][]
 : One person's experience writing his first Flutter app.
 
-
+[Cupertino library]: {{api}}/cupertino/cupertino-library.html
+[`CupertinoPageScaffold`]: {{api}}/cupertino/CupertinoPageScaffold-class.html
 [Adding assets and images]: {{site.url}}/ui/assets/assets-and-images
 [API reference docs]: {{api}}
 [`build()`]: {{api}}/widgets/StatelessWidget/build.html
@@ -1236,7 +1312,7 @@ The following resources might help when writing layout code.
 [`DataTable`]: {{api}}/material/DataTable-class.html
 [Elevation]: {{site.material}}/styles/elevation
 [`Expanded`]: {{api}}/widgets/Expanded-class.html
-[Flutter in Focus]: {{site.youtube-site}}/watch?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
+[Flutter in Focus]: {{yt-watch}}?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 [`GridView`]: {{api}}/widgets/GridView-class.html
 [`GridTile`]: {{api}}/material/GridTile-class.html
 [HTML/CSS Analogs in Flutter]: {{site.url}}/get-started/flutter-for/web-devs
@@ -1267,5 +1343,4 @@ The following resources might help when writing layout code.
 [Debugging layout issues visually]: {{site.url}}/tools/devtools/inspector#debugging-layout-issues-visually
 [Understanding constraints]: {{site.url}}/ui/layout/constraints
 [Using the Flutter inspector]: {{site.url}}/tools/devtools/inspector
-[Widget of the Week series]: {{site.youtube-site}}/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG
 [Zero to One with Flutter]: {{site.medium}}/@mravn/zero-to-one-with-flutter-43b13fd7b354
