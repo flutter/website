@@ -33,4 +33,4 @@ To learn about the improvements included in DevTools 2.28.2, please read the
 ## Full commit history
 
 To find a complete list of changes in this release, check out the
-[DevTools git log](https://github.com/flutter/devtools/tree/v2.28.1).
+[DevTools git log](https://github.com/flutter/devtools/tree/v2.28.3).
