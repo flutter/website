@@ -55,12 +55,14 @@ and set as your default shell.
 #### Development tools
 {:.no_toc}
 
-Download and install the macOS version of the following packages:
+Download and install the latest macOS version of the following packages:
 
 {% include docs/install/reqs/macos/software.md target=target %}
 
 The developers of the preceding software provide support for those products.
 To troubleshoot installation issues, consult that product's documentation.
+
+{% include /docs/install/reqs/flutter/flutter-doctor-precedence.md %}
 
 #### Text editor or integrated development environment
 {:.no_toc}
