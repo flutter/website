@@ -9,10 +9,11 @@
 ### Use VS Code to install Flutter
 {:.no_toc}
 
-This section presumes that you have installed [Visual Studio Code][]
+To install Flutter using these instructions, verify that
+you have installed [Visual Studio Code][]
 {{site.appmin.vscode}} or later and the [Flutter extension for VS Code][].
 
-#### Prompt VS code to install Flutter
+#### Prompt VS Code to install Flutter
 {:.no_toc}
 
 1. Launch VS Code.
@@ -33,7 +34,7 @@ This section presumes that you have installed [Visual Studio Code][]
       click **Download SDK**.
 
       This option sends you the Flutter install page if you have not
-      installed Git for Windows as directed in
+      installed Git {% if os == "Windows" %}for Windows {% endif %}as directed in
       the [development tools prerequisites][].
 
 1. When prompted **Which Flutter template?**, ignore it.
