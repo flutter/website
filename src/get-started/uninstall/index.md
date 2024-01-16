@@ -151,3 +151,9 @@ remove the `.pub-cache` directory from your home directory.
 {% endfor -%}
 </div>
 {% comment %} End: Tab panes. {% endcomment -%}
+
+## Reinstall Flutter
+
+You can [reinstall Flutter](/get-started/install) at any time.
+If you removed the configuration directories,
+reinstalling Flutter restores them to default settings.
