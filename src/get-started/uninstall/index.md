@@ -8,6 +8,10 @@ os-list: [Windows, macOS, Linux, ChromeOS]
 To remove all of Flutter from your {{os}} development machine,
 delete the directories that store Flutter and its configuration files.
 
+## Uninstall the Flutter SDK
+
+Select your development platform from the following tabs.
+
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="base-os-tabs" role="tablist">
 {% for os in page.os-list %}
@@ -81,9 +85,6 @@ delete the directories that store Flutter and its configuration files.
 
 <div class="tab-pane {%- if id == 'windows' %} active {% endif %}" id="{{id}}" role="tabpanel" aria-labelledby="{{id}}-tab" markdown="1">
 
-## Uninstall the Flutter SDK
-{:.no_toc}
-
 This guide presumes that you installed Flutter in `{{path}}` on {{os}}.
 
 To uninstall the SDK, remove the `flutter` directory.
@@ -105,7 +106,7 @@ Each of the following procedures are _optional_.
 If you don't want to preserve your Flutter configuration,
 remove the following directories from your home directory.
 
-```terminal
+```nocode
 {{ flutter-files | strip }}
 ```
 
@@ -121,7 +122,7 @@ To remove these directories, run the following command.
 If you don't want to preserve your Dart configuration,
 remove the following directories from your home directory.
 
-```terminal
+```nocode
 {{ dart-files | strip}}
 ```
 
