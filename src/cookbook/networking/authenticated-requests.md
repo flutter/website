@@ -48,7 +48,7 @@ Future<Album> fetchAlbum() async {
       HttpHeaders.authorizationHeader: 'Basic your_api_token_here',
     },
   );
-  final responseJson = jsonDecode(response.body);
+  final responseJson = jsonDecode(response.body) as Map<String, dynamic>;
 
   return Album.fromJson(responseJson);
 }
@@ -65,11 +65,19 @@ class Album {
   });
 
   factory Album.fromJson(Map<String, dynamic> json) {
-    return Album(
-      userId: json['userId'],
-      id: json['id'],
-      title: json['title'],
-    );
+    return switch (json) {
+      {
+        'userId': int userId,
+        'id': int id,
+        'title': String title,
+      } =>
+        Album(
+          userId: userId,
+          id: id,
+          title: title,
+        ),
+      _ => throw const FormatException('Failed to load album.'),
+    };
   }
 }
 ```

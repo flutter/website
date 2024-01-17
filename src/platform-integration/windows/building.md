@@ -218,7 +218,7 @@ see the [Desktop Photo Search][] sample.
 
 [MSIX]: https://docs.microsoft.com/en-us/windows/msix/overview
 [msix package]: {{site.pub}}/packages/msix
-[Desktop Photo Search]: {{site.github}}/flutter/samples/tree/main/desktop_photo_search
+[Desktop Photo Search]: {{site.repo.samples}}/tree/main/desktop_photo_search
 
 #### Create a self-signed .pfx certificate for local testing
 

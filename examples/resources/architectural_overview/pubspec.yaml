@@ -1,17 +1,18 @@
 name: architectural_overview
-description: samples for architectural-overview.md
-version: 1.0.0
+description: Samples for the Flutter architectural overview.
+publish_to: none
 
 environment:
-  sdk: ^3.1.0-0
+  sdk: ^3.2.0
 
 dependencies:
   flutter:
     sdk: flutter
-  ffi: ^2.0.2
+  ffi: ^2.1.0
 
 dev_dependencies:
-  flutter_lints: ^2.0.2
+  example_utils:
+    path: ../../example_utils
 
 flutter:
   uses-material-design: true

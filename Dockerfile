@@ -1,4 +1,4 @@
-FROM ruby:3.2.2-slim-bookworm@sha256:17de1131ceb018ab30cbb76505559baa49a4c1b125e03c90dd10220bf863783c AS base
+FROM ruby:3.3-slim-bookworm@sha256:7e2843d936fd2ea084b36f99ff252822bedb6b656ae868f5b08e68cc9b63e8b6 as base
 
 ENV TZ=US/Pacific
 RUN apt-get update && apt-get install -yq --no-install-recommends \
@@ -11,8 +11,8 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
       gnupg \
       lsof \
       make \
+      rsync \
       unzip \
-      vim-nox \
       xdg-user-dirs \
     && rm -rf /var/lib/apt/lists/*
 
@@ -32,14 +32,16 @@ ENV FLUTTER_ROOT=flutter
 ENV FLUTTER_BIN=flutter/bin
 ENV PATH="/flutter/bin:$PATH"
 
-RUN git clone --branch $FLUTTER_BUILD_BRANCH --single-branch https://github.com/flutter/flutter /flutter/
+RUN git clone --branch $FLUTTER_BUILD_BRANCH --single-branch --filter=tree:0 https://github.com/flutter/flutter /flutter/
 VOLUME /flutter
 
 # Set up Flutter
 # NOTE You will get a warning "Woah! You appear to be trying to run flutter as root."
 # and this is to be disregarded since this image is never deployed to production.
 RUN flutter doctor
-RUN flutter --version
+RUN flutter config --no-analytics  \
+    && flutter config --no-cli-animations  \
+    && flutter --version
 RUN dart pub get
 
 
@@ -49,14 +51,10 @@ FROM flutter AS node
 
 RUN mkdir -p /etc/apt/keyrings \
     && curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg \
-    && echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_18.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list \
+    && echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list \
     && apt-get update -yq \
     && apt-get install nodejs -yq \
     && npm install -g npm # Ensure latest npm
-
-# Install global Firebase CLI
-RUN npm install -g firebase-tools@12.4.0
-
 
 
 # ============== FLUTTER CODE TESTS ==============
@@ -72,6 +70,7 @@ ENTRYPOINT ["tool/test.sh"]
 FROM node AS dev
 
 ENV JEKYLL_ENV=development
+ENV RUBY_YJIT_ENABLE=1
 RUN gem install bundler
 COPY Gemfile Gemfile.lock ./
 RUN bundle config set force_ruby_platform true
@@ -98,6 +97,7 @@ EXPOSE 5502
 FROM node AS build
 
 ENV JEKYLL_ENV=production
+ENV RUBY_YJIT_ENABLE=1
 RUN gem install bundler
 COPY Gemfile Gemfile.lock ./
 RUN bundle config set force_ruby_platform true
@@ -115,9 +115,3 @@ ARG BUILD_CONFIGS=_config.yml
 ENV BUILD_CONFIGS=$BUILD_CONFIGS
 RUN bundle exec jekyll build --config $BUILD_CONFIGS
 
-
-
-# ============== TEST BUILT SITE LINKS ==============
-FROM build as checklinks
-
-CMD ["tool/check-links.sh"]

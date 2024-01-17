@@ -23,7 +23,7 @@ existing Flutter project or [add-to-app][] project.
 
 To see a working sample, see the [App Clip sample][] on GitHub.
 
-[App Clip sample]: {{site.github}}/flutter/samples/tree/master/ios_app_clip
+[App Clip sample]: {{site.repo.samples}}/tree/master/ios_app_clip
 
 ## Step 1 - Open project
 
@@ -333,7 +333,7 @@ target '<name of your App Clip target>'
 ```
 
 At the top of the file,
-also uncomment `platform :ios, '11.0'` and set the
+also uncomment `platform :ios, '12.0'` and set the
 version to the lowest of the two target's iOS
 Deployment Target.
 

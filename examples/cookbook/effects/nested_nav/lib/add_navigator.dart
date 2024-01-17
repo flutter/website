@@ -88,8 +88,15 @@ class SetupFlowState extends State<SetupFlow> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: _isExitDesired,
+    return PopScope(
+      canPop: false,
+      onPopInvoked: (didPop) async {
+        if (didPop) return;
+
+        if (await _isExitDesired() && context.mounted) {
+          _exitSetup();
+        }
+      },
       child: Scaffold(
         appBar: _buildFlowAppBar(),
         body: Navigator(
@@ -109,23 +116,19 @@ class SetupFlowState extends State<SetupFlow> {
           message: 'Searching for nearby bulb...',
           onWaitComplete: _onDiscoveryComplete,
         );
-        break;
       case routeDeviceSetupSelectDevicePage:
         page = SelectDevicePage(
           onDeviceSelected: _onDeviceSelected,
         );
-        break;
       case routeDeviceSetupConnectingPage:
         page = WaitingPage(
           message: 'Connecting...',
           onWaitComplete: _onConnectionEstablished,
         );
-        break;
       case routeDeviceSetupFinishedPage:
         page = FinishedPage(
           onFinishPressed: _exitSetup,
         );
-        break;
     }
 
     return MaterialPageRoute<dynamic>(

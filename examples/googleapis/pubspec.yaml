@@ -2,16 +2,17 @@ name: google_sign_in_example
 publish_to: none
 
 environment:
-  sdk: ^3.1.0-0
+  sdk: ^3.2.0
 
 dependencies:
-  collection: ^1.18.0
-  extension_google_sign_in_as_googleapis_auth: ^2.1.0
+  collection: any # Pull the version of collection from Flutter.
+  extension_google_sign_in_as_googleapis_auth: ^2.0.11
   flutter:
     sdk: flutter
-  google_sign_in: ^6.1.4
-  googleapis: ^11.3.0
+  google_sign_in: ^6.1.5
+  googleapis: ^12.0.0
   http: ^1.1.0
 
 dev_dependencies:
-  flutter_lints: ^2.0.2
+  example_utils:
+    path: ../example_utils

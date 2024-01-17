@@ -51,8 +51,12 @@ To add support for other languages,
 an application must specify additional
 `MaterialApp` (or `CupertinoApp`) properties,
 and include a package called `flutter_localizations`.
-As of June 2023, this package supports [113 languages][]
+As of December 2023, this package supports [115 languages][language-count]
 and language variants.
+
+{% comment %}
+Consider updating the number of languages when touching this page.
+{% endcomment %}
 
 To begin, start by creating a new Flutter application
 in a directory of your choice with the `flutter create` command.
@@ -112,7 +116,7 @@ After introducing the `flutter_localizations` package
 and adding the previous code,
 the `Material` and `Cupertino`
 packages should now be correctly localized in
-one of the 113 supported locales.
+one of the 115 supported locales.
 Widgets should be adapted to the localized messages,
 along with correct left-to-right or right-to-left layout.
 
@@ -140,7 +144,7 @@ More information about these app properties, the types they
 depend on, and how internationalized Flutter apps are typically
 structured, is covered in this page.
 
-[113 languages]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
+[language-count]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
 
 <a id="overriding-locale"></a>
 ### Overriding the locale
@@ -262,7 +266,7 @@ complete the following instructions:
    }
    ```
 
-6. Now, run `flutter run` and codegen takes place automatically.
+6. Now, run `flutter pub get` or `flutter run` and codegen takes place automatically.
    You should find generated files in
    `${FLUTTER_PROJECT}/.dart_tool/flutter_gen/gen_l10n`.
    Alternatively, you can also run `flutter gen-l10n` to
@@ -308,7 +312,8 @@ complete the following instructions:
    );
    ```
 
-8. Now you can use `AppLocalizations` anywhere in your app:
+8. Once the Material app has started,
+   you can use `AppLocalizations` anywhere in your app:
 
    <?code-excerpt "gen_l10n_example/lib/main.dart (InternationalizedTitle)"?>
    ```dart
@@ -320,6 +325,13 @@ complete the following instructions:
      title: Text(AppLocalizations.of(context)!.helloWorld),
    ),
    ```
+
+{{site.alert.note}}
+  The Material app has to actually be started to initialize
+  `AppLocalizations`. If the app hasn't yet started,
+  `AppLocalizations.of(context)!.helloWorld` causes a
+  null exception.
+{{site.alert.end}}
 
    This code generates a `Text` widget that displays "Hello World!"
    if the target device's locale is set to English,
@@ -1200,7 +1212,7 @@ class DemoLocalizations {
     },
   };
 
-  static List<String> languages ()=> _localizedValues.keys.toList();
+  static List<String> languages() => _localizedValues.keys.toList();
 
   String get title {
     return _localizedValues[locale.languageCode]!['title']!;
@@ -1219,8 +1231,8 @@ class DemoLocalizationsDelegate
   const DemoLocalizationsDelegate();
 
   @override
-  bool isSupported(Locale locale) => DemoLocalizations.languages().contains(locale.languageCode);
-
+  bool isSupported(Locale locale) =>
+      DemoLocalizations.languages().contains(locale.languageCode);
 
   @override
   Future<DemoLocalizations> load(Locale locale) {
@@ -1299,7 +1311,7 @@ check out the following examples.
 * [`minimal`][]<br>
   The `minimal` example is designed to be as
   simple as possible.
-* [`intl_example`]<br>
+* [`intl_example`][]<br>
   uses APIs and tools provided by the [`intl`][] package.
 
 If Dart's `intl` package is new to you,

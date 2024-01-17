@@ -13,7 +13,7 @@ const jsonString = '''
 
 void example() {
   // #docregion manual
-  Map<String, dynamic> user = jsonDecode(jsonString);
+  final user = jsonDecode(jsonString) as Map<String, dynamic>;
 
   print('Howdy, ${user['name']}!');
   print('We sent the verification link to ${user['email']}.');
@@ -22,8 +22,8 @@ void example() {
 
 void exampleJson() {
   // #docregion fromJson
-  Map<String, dynamic> userMap = jsonDecode(jsonString);
-  var user = User.fromJson(userMap);
+  final userMap = jsonDecode(jsonString) as Map<String, dynamic>;
+  final user = User.fromJson(userMap);
 
   print('Howdy, ${user.name}!');
   print('We sent the verification link to ${user.email}.');

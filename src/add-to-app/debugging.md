@@ -104,5 +104,5 @@ On iOS, complete the follow steps:
 Verify your device connects to Android Studio over Wi-Fi
 as described in the [Android setup guide][].
 
-[iOS setup guide]: {{site.url}}/get-started/install/macos#ios-setup
-[Android setup guide]: {{site.url}}/get-started/install/macos#set-up-your-android-device
+[iOS setup guide]: {{site.url}}/get-started/install/macos/mobile-ios
+[Android setup guide]: {{site.url}}/get-started/install/macos/mobile-android?tab=physical#configure-your-target-android-device

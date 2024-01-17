@@ -3,6 +3,8 @@ title: Building adaptive apps
 description: Some considerations and instructions on how to build adaptive apps to run on a variety of platforms.
 ---
 
+{% include docs/yt_shims.liquid %}
+
 <?code-excerpt path-base="ui/layout/adaptive_app_demos"?>
 
 ## Overview
@@ -23,7 +25,7 @@ apps, but they fall into three major categories:
 * [Input](#input)
 * [Idioms and norms](#idioms-and-norms)
 
-<iframe style="max-width: 100%" width="560" height="315" src="{{site.youtube-site}}/embed/RCdeSKVt7LI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{yt-embed}}/RCdeSKVt7LI" title="Learn how to build platform-adaptive Flutter apps" {{yt-set}}></iframe>
 
 This page covers all three categories in detail
 using code snippets to illustrate the concepts.
@@ -41,14 +43,14 @@ Original demo code for adaptive app development techniques from [flutter-adaptiv
 One of the first things you must consider when writing
 your app for multiple platforms is how to adapt
 it to the various sizes and shapes of the screens that
-it will run on. 
+it will run on.
 
 ### Layout widgets
 
 If you've been building apps or websites,
 you're probably familiar with creating responsive interfaces.
 Luckily for Flutter developers,
-there are a large set of widgets to make this easier. 
+there are a large set of widgets to make this easier.
 
 Some of Flutter's most useful layout widgets include:
 
@@ -152,7 +154,7 @@ densities, you can easily adjust your UI:
 
 To set a custom visual density, inject the density into
 your `MaterialApp` theme:
- 
+
 <?code-excerpt "lib/main.dart (VisualDensity)"?>
 ```dart
 double densityAmt = touchMode ? 0.0 : -1.0;
@@ -166,7 +168,7 @@ return MaterialApp(
 ```
 
 To use `VisualDensity` inside your own views,
-you can look it up: 
+you can look it up:
 
 <?code-excerpt "lib/pages/adaptive_reflow_page.dart (VisualDensityOwnView)"?>
 ```dart
@@ -184,14 +186,14 @@ so it can mean different things to different views.
 In this example, 1 density unit equals 6 pixels,
 but this is totally up to your views to decide.
 The fact that it is unit-less makes it quite versatile,
-and it should work in most contexts. 
+and it should work in most contexts.
 
 It's worth noting that the Material Components generally
 use a value of around 4 logical pixels for each
 visual density unit. For more information about the
 supported components, see [`VisualDensity`][] API.
 For more information about density principles in general,
-see the [Material Design guide][]. 
+see the [Material Design guide][].
 
 [Material Design guide]: {{site.material2}}/design/layout/applying-density.html#usage
 [`VisualDensity`]: {{site.api}}/flutter/material/VisualDensity-class.html
@@ -202,7 +204,7 @@ If you need more than density changes and can't find a
 widget that does what you need, you can take a more
 procedural approach to adjust parameters, calculate sizes,
 swap widgets, or completely restructure your UI to suit
-a particular form factor. 
+a particular form factor.
 
 #### Screen-based breakpoints
 
@@ -210,7 +212,7 @@ The simplest form of procedural layouts uses
 screen-based breakpoints. In Flutter,
 this can be done with the `MediaQuery` API.
 There are no hard and fast rules for the sizes to use
-here, but these are general values: 
+here, but these are general values:
 
 <?code-excerpt "lib/global/device_size.dart (FormFactor)"?>
 ```dart
@@ -229,10 +231,10 @@ to determine the device type:
 ScreenType getFormFactor(BuildContext context) {
   // Use .shortestSide to detect device type regardless of orientation
   double deviceWidth = MediaQuery.of(context).size.shortestSide;
-  if (deviceWidth > FormFactor.desktop) return ScreenType.Desktop;
-  if (deviceWidth > FormFactor.tablet) return ScreenType.Tablet;
-  if (deviceWidth > FormFactor.handset) return ScreenType.Handset;
-  return ScreenType.Watch;
+  if (deviceWidth > FormFactor.desktop) return ScreenType.desktop;
+  if (deviceWidth > FormFactor.tablet) return ScreenType.tablet;
+  if (deviceWidth > FormFactor.handset) return ScreenType.handset;
+  return ScreenType.watch;
 }
 ```
 
@@ -241,21 +243,21 @@ and define it in terms of small to large:
 
 <?code-excerpt "lib/global/device_size.dart (ScreenSize)"?>
 ```dart
-enum ScreenSize { Small, Normal, Large, ExtraLarge }
+enum ScreenSize { small, normal, large, extraLarge }
 
 ScreenSize getSize(BuildContext context) {
   double deviceWidth = MediaQuery.of(context).size.shortestSide;
-  if (deviceWidth > 900) return ScreenSize.ExtraLarge;
-  if (deviceWidth > 600) return ScreenSize.Large;
-  if (deviceWidth > 300) return ScreenSize.Normal;
-  return ScreenSize.Small;
+  if (deviceWidth > 900) return ScreenSize.extraLarge;
+  if (deviceWidth > 600) return ScreenSize.large;
+  if (deviceWidth > 300) return ScreenSize.normal;
+  return ScreenSize.small;
 }
 ```
- 
+
 Screen-based breakpoints are best used for making
 top-level decisions in your app. Changing things like
 visual density, paddings, or font-sizes are best when
-defined on a global basis. 
+defined on a global basis.
 
 You can also use screen-based breakpoints to reflow your
 top-level widget trees. For example, you could switch
@@ -265,11 +267,13 @@ from a vertical to a horizontal layout when the user isn't on a handset:
 ```dart
 bool isHandset = MediaQuery.of(context).size.width < 600;
 return Flex(
-    children: [Text('Foo'), Text('Bar'), Text('Baz')],
-    direction: isHandset ? Axis.vertical : Axis.horizontal);
+  direction: isHandset ? Axis.vertical : Axis.horizontal,
+  children: const [Text('Foo'), Text('Bar'), Text('Baz')],
+);
 ```
+
 In another widget,
-you might swap some of the children completely: 
+you might swap some of the children completely:
 
 <?code-excerpt "lib/global/device_size.dart (WidgetSwap)"?>
 ```dart
@@ -298,15 +302,14 @@ The previous example could be rewritten using `LayoutBuilder`:
 
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (LayoutBuilder)"?>
 ```dart
-Widget foo = LayoutBuilder(
-    builder: (context, constraints) {
+Widget foo = LayoutBuilder(builder: (context, constraints) {
   bool useVerticalLayout = constraints.maxWidth < 400;
   return Flex(
-    children: [
+    direction: useVerticalLayout ? Axis.vertical : Axis.horizontal,
+    children: const [
       Text('Hello'),
       Text('World'),
     ],
-    direction: useVerticalLayout ? Axis.vertical : Axis.horizontal,
   );
 });
 ```
@@ -321,13 +324,11 @@ There are times when you want to make layout decisions
 based on the actual platform you're running on,
 regardless of size. For example, when building a
 custom title bar, you might need to check the operating
-system type and tweak the layout of your title bar, so
-it doesn't get covered by the native window buttons. 
+system type and tweak the layout of your title bar,
+so it doesn't get covered by the native window buttons.
 
 To determine which combination of platforms you're on,
 you can use the [`Platform`][] API along with the `kIsWeb` value:
-
-[`Platform`]: {{site.api}}/flutter/package-platform_platform/Platform-class.html
 
 <?code-excerpt "lib/global/device_type.dart (Platforms)"?>
 ```dart
@@ -338,11 +339,19 @@ bool get isMobileDeviceOrWeb => kIsWeb || isMobileDevice;
 bool get isDesktopDeviceOrWeb => kIsWeb || isDesktopDevice;
 ```
 
-The `Platform` API can't be accessed from web builds without 
+The `Platform` API can't be accessed from web builds without
 throwing an exception, because the `dart.io` package isn't
-supported on the web target. As a result, this code checks 
+supported on the web target. As a result, the above code checks
 for web first, and because of short-circuiting,
 Dart never calls `Platform` on web targets.
+
+Use `Platform`/`kIsWeb` when the logic absolutely <i>must</i>
+run for a given platform. For example,
+talking to a plugin that only works on iOS,
+or displaying a widget that only conforms to
+Play Store policy and not the App Store's.
+
+[`Platform`]: {{site.api}}/flutter/package-platform_platform/Platform-class.html
 
 ### Single source of truth for styling
 
@@ -368,16 +377,18 @@ class Fonts {
 }
 
 class TextStyles {
-  static const TextStyle raleway = const TextStyle(
+  static const TextStyle raleway = TextStyle(
     fontFamily: Fonts.raleway,
   );
   static TextStyle buttonText1 =
-      TextStyle(fontWeight: FontWeight.bold, fontSize: 14);
+      const TextStyle(fontWeight: FontWeight.bold, fontSize: 14);
   static TextStyle buttonText2 =
-      TextStyle(fontWeight: FontWeight.normal, fontSize: 11);
-  static TextStyle h1 = TextStyle(fontWeight: FontWeight.bold, fontSize: 22);
-  static TextStyle h2 = TextStyle(fontWeight: FontWeight.bold, fontSize: 16);
-  static late TextStyle body1 = raleway.copyWith(color: Color(0xFF42A5F5));
+      const TextStyle(fontWeight: FontWeight.normal, fontSize: 11);
+  static TextStyle h1 =
+      const TextStyle(fontWeight: FontWeight.bold, fontSize: 22);
+  static TextStyle h2 =
+      const TextStyle(fontWeight: FontWeight.bold, fontSize: 16);
+  static TextStyle body1 = raleway.copyWith(color: const Color(0xFF42A5F5));
   // etc
 }
 ```
@@ -387,10 +398,14 @@ These constants can then be used in place of hard-coded numeric values:
 <?code-excerpt "lib/global/device_type.dart (UseConstants)"?>
 ```dart
 return Padding(
-  padding: EdgeInsets.all(Insets.small),
+  padding: const EdgeInsets.all(Insets.small),
   child: Text('Hello!', style: TextStyles.body1),
 );
 ```
+
+Use `Theme.of(context).platform` for theming and
+design choices, like what kind of switches to show
+and general Cupertino/Material adaptions.
 
 With all views referencing the same shared-design system rules,
 they tend to look better and more consistent.
@@ -400,14 +415,14 @@ search and replace. Using shared rules has the added benefit
 of helping enforce consistency on the design side.
 
 Some common design system categories that can be represented
-this way are: 
+this way are:
 
-* Animation timings 
+* Animation timings
 * Sizes and breakpoints
 * Insets and paddings
 * Corner radius
-* Shadows 
-* Strokes 
+* Shadows
+* Strokes
 * Font families, sizes, and styles
 
 Like most rules, there are exceptions:
@@ -448,7 +463,7 @@ you can leverage.
 ### Use desktop build targets for rapid testing
 
 One of the most effective ways to test adaptive
-interfaces is to take advantage of the desktop build targets. 
+interfaces is to take advantage of the desktop build targets.
 
 When running on a desktop, you can easily resize the window
 while the app is running to preview various screen sizes.
@@ -462,13 +477,13 @@ development of a responsive UI.
 Building a great touch UI can often be more difficult
 than a traditional desktop UI due, in part,
 to the lack of input accelerators like right-click,
-scroll wheel, or keyboard shortcuts. 
+scroll wheel, or keyboard shortcuts.
 
 One way to approach this challenge is to focus initially
 on a great touch-oriented UI. You can still do most of
 your testing using the desktop target for its iteration speed.
 But, remember to switch frequently to a mobile device to
-verify that everything feels right. 
+verify that everything feels right.
 
 After you have the touch interface polished, you can tweak
 the visual density for mouse users, and then layer on all
@@ -500,10 +515,11 @@ customize how your UI reacts to the scroll wheel.
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (PointerScroll)"?>
 ```dart
 return Listener(
-    onPointerSignal: (event) {
-      if (event is PointerScrollEvent) print(event.scrollDelta.dy);
-    },
-    child: ListView());
+  onPointerSignal: (event) {
+    if (event is PointerScrollEvent) print(event.scrollDelta.dy);
+  },
+  child: ListView(),
+);
 ```
 
 [`Listener`]: {{site.api}}/flutter/widgets/Listener-class.html
@@ -546,15 +562,16 @@ class _BasicActionDetectorState extends State<BasicActionDetector> {
       child: Stack(
         clipBehavior: Clip.none,
         children: [
-          FlutterLogo(size: 100),
+          const FlutterLogo(size: 100),
           // Position focus in the negative margin for a cool effect
           if (_hasFocus)
             Positioned(
-                left: -4,
-                top: -4,
-                bottom: -4,
-                right: -4,
-                child: _roundedBorder())
+              left: -4,
+              top: -4,
+              bottom: -4,
+              right: -4,
+              child: _roundedBorder(),
+            )
         ],
       ),
     );
@@ -573,7 +590,7 @@ class _BasicActionDetectorState extends State<BasicActionDetector> {
 To get more control over the order that
 widgets are focused on when the user presses tab,
 you can use [`FocusTraversalGroup`][] to define sections
-of the tree that should be treated as a group when tabbing. 
+of the tree that should be treated as a group when tabbing.
 
 For example, you might to tab through all the fields in
 a form before tabbing to the submit button:
@@ -625,8 +642,8 @@ already has a focus node, you can wrap it in a
         return KeyEventResult.ignored;
       },
       child: ConstrainedBox(
-        constraints: BoxConstraints(maxWidth: 400),
-        child: TextField(
+        constraints: const BoxConstraints(maxWidth: 400),
+        child: const TextField(
           decoration: InputDecoration(
             border: OutlineInputBorder(),
           ),
@@ -650,7 +667,7 @@ class CreateNewItemIntent extends Intent {
 Widget build(BuildContext context) {
   return Shortcuts(
     // Bind intents to key combinations
-    shortcuts: <ShortcutActivator, Intent>{
+    shortcuts: const <ShortcutActivator, Intent>{
       SingleActivator(LogicalKeyboardKey.keyN, control: true):
           CreateNewItemIntent(),
     },
@@ -658,7 +675,8 @@ Widget build(BuildContext context) {
       // Bind intents to an actual method in your code
       actions: <Type, Action<Intent>>{
         CreateNewItemIntent: CallbackAction<CreateNewItemIntent>(
-            onInvoke: (intent) => _createNewItem()),
+          onInvoke: (intent) => _createNewItem(),
+        ),
       },
       // Your sub-tree must be wrapped in a focusNode, so it can take focus.
       child: Focus(
@@ -682,6 +700,7 @@ is easy with [`RawKeyboard`][]:
 
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (RawKeyboard)"?>
 ```dart
+@override
 void initState() {
   super.initState();
   RawKeyboard.instance.addListener(_handleKey);
@@ -734,7 +753,6 @@ important when you're binding a Delete/Backspace accelerator for
 `Delete`, but then have child `TextFields` that the user
 might be typing in.
 
-
 [`RawKeyboard`]: {{site.api}}/flutter/services/RawKeyboard-class.html
 [`RawKeyboardListener`]: {{site.api}}/flutter/widgets/RawKeyboardListener-class.html
 
@@ -783,10 +801,6 @@ return MouseRegion(
 );
 ```
 
-
-[`MouseRegions`]: {{site.api}}/flutter/widgets/MouseRegion-class.html
-
-
 ## Idioms and norms
 
 The final area to consider for adaptive apps is platform standards.
@@ -807,7 +821,7 @@ significant benefits:
   Conversely, a UI that feels familiar can build user trust
   and can help improve the perception of quality.
   This often has the added benefit of better app store
-  ratings&mdash;something we can all appreciate! 
+  ratings&mdash;something we can all appreciate!
 
 ### Consider expected behavior on each platform
 
@@ -828,7 +842,7 @@ them completely. For example, a lifetime Android user is
 likely unaware of platform conventions on iOS,
 and the same holds true for macOS, Linux, and Windows.
 These differences might be subtle to you,
-but be painfully obvious to an experienced user. 
+but be painfully obvious to an experienced user.
 
 #### Find a platform advocate
 
@@ -852,7 +866,7 @@ on a regular basis.
   **Important**: Advocates don't need to be developers or
   even full-time team members. They can be designers,
   stakeholders, or external testers that are provided
-  with regular builds. 
+  with regular builds.
 {{site.alert.end}}
 
 #### Stay unique
@@ -864,7 +878,7 @@ and opinionated UIs including custom buttons, context menus,
 and title bars.
 
 The more you can consolidate styling and behavior across platforms,
-the easier development and testing will be. 
+the easier development and testing will be.
 The trick is to balance creating a unique experience with a
 strong identity, while respecting the norms of each platform.
 
@@ -880,7 +894,7 @@ Desktop and mobile users expect scrollbars,
 but they expect them to behave differently on different platforms.
 Mobile users expect smaller scrollbars that only appear
 while scrolling, whereas desktop users generally expect
-omnipresent, larger scrollbars that they can click or drag. 
+omnipresent, larger scrollbars that they can click or drag.
 
 Flutter comes with a built-in `Scrollbar` widget that already
 has support for adaptive colors and sizes according to the
@@ -893,11 +907,12 @@ return Scrollbar(
   thumbVisibility: DeviceType.isDesktop,
   controller: _scrollController,
   child: GridView.count(
-      controller: _scrollController,
-      padding: EdgeInsets.all(Insets.extraLarge),
-      childAspectRatio: 1,
-      crossAxisCount: colCount,
-      children: listChildren),
+    controller: _scrollController,
+    padding: const EdgeInsets.all(Insets.extraLarge),
+    childAspectRatio: 1,
+    crossAxisCount: colCount,
+    children: listChildren,
+  ),
 );
 ```
 
@@ -907,7 +922,7 @@ comfortable on a given platform.
 #### Multi-select
 
 Dealing with multi-select within a list is another area
-with subtle differences across platforms: 
+with subtle differences across platforms:
 
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (MultiSelectShift)"?>
 ```dart
@@ -916,7 +931,7 @@ static bool get isSpanSelectModifierDown =>
 ```
 
 To perform a platform-aware check for control or command,
-you can write something like this: 
+you can write something like this:
 
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (MultiSelectModifierDown)"?>
 ```dart
@@ -924,10 +939,12 @@ static bool get isMultiSelectModifierDown {
   bool isDown = false;
   if (Platform.isMacOS) {
     isDown = isKeyDown(
-        {LogicalKeyboardKey.metaLeft, LogicalKeyboardKey.metaRight});
+      {LogicalKeyboardKey.metaLeft, LogicalKeyboardKey.metaRight},
+    );
   } else {
     isDown = isKeyDown(
-        {LogicalKeyboardKey.controlLeft, LogicalKeyboardKey.controlRight});
+      {LogicalKeyboardKey.controlLeft, LogicalKeyboardKey.controlRight},
+    );
   }
   return isDown;
 }
@@ -936,7 +953,7 @@ static bool get isMultiSelectModifierDown {
 A final consideration for keyboard users is the **Select All** action.
 If you have a large list of items of selectable items,
 many of your keyboard users will expect that they can use
-`Control+A` to select all the items. 
+`Control+A` to select all the items.
 
 ##### Touch devices
 
@@ -945,7 +962,7 @@ with the expected behavior being similar to having the
 `isMultiSelectModifier` down on the desktop.
 You can select or deselect items using a single tap,
 and will usually have a button to **Select All** or
-**Clear** the current selection. 
+**Clear** the current selection.
 
 How you handle multi-selection on different devices depends
 on your specific use cases, but the important thing is to
@@ -959,18 +976,18 @@ is that most visible text can be selected with the mouse cursor.
 When text is not selectable,
 users on the web tend to have an adverse reaction.
 
-Luckily, this is easy to support with the [`SelectableText`][] widget: 
+Luckily, this is easy to support with the [`SelectableText`][] widget:
 
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (SelectableText)"?>
 ```dart
-return SelectableText('Select me!');
+return const SelectableText('Select me!');
 ```
 
-To support rich text, then use `TextSpan`: 
+To support rich text, then use `TextSpan`:
 
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (RichTextSpan)"?>
 ```dart
-return SelectableText.rich(
+return const SelectableText.rich(
   TextSpan(
     children: [
       TextSpan(text: 'Hello'),
@@ -987,8 +1004,8 @@ return SelectableText.rich(
 On modern desktop applications, it's common to customize
 the title bar of your app window, adding a logo for
 stronger branding or contextual controls to help save
-vertical space in your main UI. 
- 
+vertical space in your main UI.
+
 ![Samples of title bars]({{site.url}}/assets/images/docs/development/ui/layout/titlebar.png){:width="100%"}
 
 This isn't supported directly in Flutter, but you can use the
@@ -1014,13 +1031,11 @@ and positioned:
   and is dismissed by clicking anywhere,
   selecting an option from the menu, or clicking outside it.
 
-
 * **Tooltip**&mdash;Typically triggered by hovering for
   200-400ms over an interactive element,
   a tooltip is usually anchored to a widget
   (as opposed to the mouse position) and is dismissed
   when the mouse cursor leaves that widget.
-
 
 * **Popup panel (also known as flyout)**&mdash;Similar to a tooltip,
   a popup panel is usually anchored to a widget.
@@ -1042,14 +1057,14 @@ return const Tooltip(
 ```
 
 Flutter also provides built-in context menus when editing
-or selecting text. 
+or selecting text.
 
 To show more advanced tooltips, popup panels,
 or create custom context menus,
 you either use one of the available packages,
 or build it yourself using a `Stack` or `Overlay`.
 
-Some available packages include: 
+Some available packages include:
 
 * [`context_menus`][]
 * [`anchored_popups`][]
@@ -1064,7 +1079,6 @@ and hover for more information. Failing to meet those expectations
 can lead to disappointed users, or at least,
 a feeling that something isn't quite right.
 
-
 [`anchored_popups`]: {{site.pub}}/packages/anchored_popups
 [`context_menus`]: {{site.pub}}/packages/context_menus
 [`custom_pop_up_menu`]: {{site.pub}}/packages/custom_pop_up_menu
@@ -1078,10 +1092,10 @@ On Windows, when presenting a row of buttons,
 the confirmation button is placed at the start of
 the row (left side). On all other platforms,
 it's the opposite. The confirmation button is
-placed at the end of the row (right side). 
+placed at the end of the row (right side).
 
 This can be easily handled in Flutter using the
-`TextDirection` property on `Row`: 
+`TextDirection` property on `Row`:
 
 <?code-excerpt "lib/widgets/ok_cancel_dialog.dart (RowTextDirection)"?>
 ```dart
@@ -1089,15 +1103,18 @@ TextDirection btnDirection =
     DeviceType.isWindows ? TextDirection.rtl : TextDirection.ltr;
 return Row(
   children: [
-    Spacer(),
+    const Spacer(),
     Row(
       textDirection: btnDirection,
       children: [
         DialogButton(
-            label: 'Cancel',
-            onPressed: () => Navigator.pop(context, false)),
+          label: 'Cancel',
+          onPressed: () => Navigator.pop(context, false),
+        ),
         DialogButton(
-            label: 'Ok', onPressed: () => Navigator.pop(context, true)),
+          label: 'Ok',
+          onPressed: () => Navigator.pop(context, true),
+        ),
       ],
     ),
   ],
@@ -1112,7 +1129,7 @@ return Row(
 
 Another common pattern on desktop apps is the menu bar.
 On Windows and Linux, this menu lives as part of the Chrome title bar,
-whereas on macOS, it's located along the top of the primary screen. 
+whereas on macOS, it's located along the top of the primary screen.
 
 Currently, you can specify custom menu bar entries using
 a prototype plugin, but it's expected that this functionality will
@@ -1151,7 +1168,7 @@ this way: you just select an item and start dragging.
 In Flutter, you can implement drag and drop in many
 ways. Discussing specific implementations is outside
 the scope of this article, but some high level options
-are: 
+are:
 
 * Use the [`Draggable`][] and [`DragTarget`][] APIs
   directly for a custom look and feel.
@@ -1160,7 +1177,6 @@ are:
   and move an object yourself within a parent `Stack`.
 
 * Use one of the [pre-made list packages][] on pub.dev.  
-
 
 [`Draggable`]: {{site.api}}/flutter/widgets/Draggable-class.html
 [`DragTarget`]: {{site.api}}/flutter/widgets/DragTarget-class.html
@@ -1171,14 +1187,14 @@ are:
 Of course, this page doesn't constitute an exhaustive list
 of the things you might consider. The more operating systems,
 form factors, and input devices you support,
-the more difficult it becomes to spec out every permutation in design. 
+the more difficult it becomes to spec out every permutation in design.
 
 Taking time to learn basic usability principles as a
 developer empowers you to make better decisions,
 reduces back-and-forth iterations with design during production,
 and results in improved productivity with better outcomes.
 
-Here are some resources to get you started: 
+Here are some resources to get you started:
 
 * [Material guidelines on applying layout][]
 * [Material design for large screens][]
@@ -1188,7 +1204,6 @@ Here are some resources to get you started:
 * [Human interface guidelines (Apple)][]
 * [Responsive design techniques (Microsoft)][]
 * [Machine sizes and breakpoints (Microsoft)][]
-
 
 [Build high quality apps (Android)]: {{site.android-dev}}/quality
 [Material guidelines on applying layout]: {{site.material}}/foundations/layout/applying-layout/window-size-classes

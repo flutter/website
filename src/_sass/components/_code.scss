@@ -1,14 +1,17 @@
+@use 'sass:color';
+
 @use '../base/variables' as *;
 @use '../base/material-colors' as *;
 @use '../vendor/bootstrap';
 @use '../vendor/prettify';
 
-// NOTE moved from _code to a shared module since imports end
-// up being sneaky and messy in terms of ordering
 @mixin pre-defaults {
   background-color: $site-color-codeblock-bg;
   padding: bootstrap.bs-spacer(3) bootstrap.bs-spacer(4);
 }
+
+$flutter-color-teal-darker:
+        color.scale($flutter-color-teal, $lightness: -10%, $saturation: 10%);
 
 //
 // Code-prettyprint overrides
@@ -21,7 +24,7 @@ pre {
   }
 
   .highlight {
-    background: #ffe600;
+    background: $flutter-color-yellow;
     padding: 2px;
   }
 }
@@ -29,9 +32,9 @@ pre {
 .pln { color: #222 }  /* plain text */
 
 @media screen {
-  .str { color: #1b87c9 }  /* string content */
-  .kwd { color: #1FBAAC }  /* a keyword */
-  .com { color: #999999 }  /* a comment */
+  .str { color: $flutter-color-blue-600 }  /* string content */
+  .kwd { color: $flutter-color-teal-darker }  /* a keyword */
+  .com { color: #6e6e70 }  /* a comment */
   /* punctuation, lisp open bracket, lisp close bracket */
   .pun, .opn, .clo { color: #222 }
 }
@@ -93,7 +96,7 @@ pre.console-output {
 }
 
 code {
-  color: #008f83;
+  color: $flutter-color-teal-darker;
 }
 
 pre {
@@ -139,7 +142,7 @@ pre > span.strike { text-decoration: line-through; }
     pre {
       @include code-excerpt-border;
 
-      background-color: bootstrap.$gray-100;
+      background-color: $site-color-codeblock-bg;
       margin-bottom: 0;
     }
   }

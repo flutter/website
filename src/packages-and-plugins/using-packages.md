@@ -3,6 +3,8 @@ title: Using packages
 description: How to use packages in your Flutter app.
 ---
 
+{% include docs/yt_shims.liquid %}
+
 <?code-excerpt path-base="development/plugin_api_migration"?>
 
 Flutter supports using shared packages contributed by other developers
@@ -34,7 +36,7 @@ an app without having to develop everything from scratch.
     For example, a plugin might provide Flutter apps
     with the ability to use a device's camera.
 
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/Y9WifT8aN6o?start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="{{yt-embed}}/Y9WifT8aN6o?start=1" title="Learn the difference between a package and a plugin" {{yt-set}}></iframe>
 {{site.alert.end}}
 
 Existing packages enable many use cases—for example,
@@ -50,12 +52,10 @@ To add assets, images, or fonts,
 whether stored in files or packages,
 see [Adding assets and images][].
 
-
 [Adding assets and images]: {{site.url}}/ui/assets/assets-and-images
 [`battery_plus`]: {{site.pub-pkg}}/battery_plus
 [developing packages]: {{site.url}}/packages-and-plugins/developing-packages
 [FlutterFire]: {{site.github}}/firebase/flutterfire
-
 
 [`go_router`]: {{site.pub-pkg}}/go_router
 [`http`]: {{site.url}}/cookbook/networking/fetch-data
@@ -124,7 +124,7 @@ To add the package, `css_colors`, to an app:
      Hot reload and hot restart only update the Dart code,
      so a full restart of the app might be required to avoid
      errors like `MissingPluginException` when using the package.
-     
+
 ### Adding a package dependency to an app using `flutter pub add`
 
 To add the package, `css_colors`, to an app:
@@ -142,7 +142,7 @@ To add the package, `css_colors`, to an app:
      Hot reload and hot restart only update the Dart code,
      so a full restart of the app might be required to avoid
      errors like `MissingPluginException` when using the package.
-     
+
 ### Removing a package dependency to an app using `flutter pub remove`
 
 To remove the package, `css_colors`, to an app:
@@ -156,7 +156,6 @@ is a handy reference for these steps.
 
 For a complete example,
 see the [css_colors example][] below.
-
 
 [css_colors example]: #css-example
 [Installing tab]: {{site.pub-pkg}}/css_colors/install
@@ -224,7 +223,6 @@ configurations.all {
 CocoaPods doesn't currently offer dependency
 override functionality.
 
-
 [CocoaPods]: https://guides.cocoapods.org/syntax/podspec.html#dependency
 [Gradle modules]: https://docs.gradle.org/current/userguide/declaring_dependencies.html
 [version ranges]: {{site.dart-site}}/tools/pub/dependencies#version-constraints
@@ -250,37 +248,36 @@ see the [`url_launcher`][] package), as
 well as a list of all prior versions
 (see [`url_launcher` versions][]).
 
-To ensure that the app doesn't break when a
-package is updated,
-specify a version range using one of the
-following formats:
+To ensure that the app doesn't break when you update a package,
+specify a version range using one of the following formats.
 
-* Range constraints: Specify a minimum and maximum version. For example:
+* **Ranged constraints:** Specify a minimum and maximum version.
 
   ```yaml
   dependencies:
     url_launcher: '>=5.4.0 <6.0.0'
   ```
 
-* Range constraints with [*caret syntax*][]
-  are similar to regular range constraints:
+* **Ranged constraints using the [caret syntax][]:**
+  Specify the version that serves as the inclusive minimum version.
+  This covers all versions from that version to the next major version.
 
   ```yaml
   dependencies:
     collection: '^5.4.0'
   ```
 
-For additional details,
-see the [package versioning guide][].
+  This syntax means the same as the one noted in the first bullet.
 
+To learn more, check out the [package versioning guide][].
 
-[*caret syntax*]: {{site.dart-site}}/tools/pub/dependencies#caret-syntax
+[caret syntax]: {{site.dart-site}}/tools/pub/dependencies#caret-syntax
 [package versioning guide]: {{site.dart-site}}/tools/pub/versioning
 [`url_launcher` versions]: {{site.pub-pkg}}/url_launcher/versions
 
 ### Updating package dependencies
 
-When running `flutter pub get` 
+When running `flutter pub get`
 for the first time after adding a package,
 Flutter saves the concrete package version found in the `pubspec.lock`
 [lockfile][]. This ensures that you get the same version again
@@ -421,11 +418,9 @@ To use this package:
     }
     ```
 
-
 [`css_colors`]: {{site.pub-pkg}}/css_colors
 
 1. Run the app. The app's background should now be orange.
-
 
 ### Example: Using the url_launcher package to launch the browser {#url-example}
 
@@ -480,7 +475,7 @@ To use this plugin:
     class DemoPage extends StatelessWidget {
       const DemoPage({super.key});
 
-      launchURL() {
+      void launchURL() {
         launchUrl(p.toUri('https://flutter.dev'));
       }
 
@@ -502,4 +497,3 @@ To use this plugin:
    before adding the plugin). Click **Show Flutter homepage**.
    You should see the default browser open on the device,
    displaying the homepage for flutter.dev.
-

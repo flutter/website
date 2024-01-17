@@ -1,5 +1,6 @@
 ---
-title: Install
+title: Choose your development platform to get started
+short-title: Install
 description: Install Flutter and get started. Downloads available for Windows, macOS, Linux, and ChromeOS operating systems.
 next:
   title: Set up an editor
@@ -7,7 +8,8 @@ next:
 os-list: [Windows, macOS, Linux, ChromeOS]
 ---
 
-Select the operating system on which you are installing Flutter:
+<!-- ## Choose your development platform to get started
+{:.no_toc} -->
 
 <div class="card-deck mb-8">
 {% for os in page.os-list %}

@@ -184,10 +184,10 @@ launches and displays the details screen:
 
 Source code: [deeplink_cookbook][]
 
-[alternate mode section]: https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_associated-domains?language=objc
-[deeplink_cookbook]: https://github.com/flutter/codelabs/tree/main/deeplink_cookbook
-[developer account]: https://developer.apple.com/account
-[Firebase Hosting]: https://firebase.google.com/docs/hosting
-[go_router]: https://pub.dev/packages/go_router
+[alternate mode section]: {{site.apple-dev}}/documentation/bundleresources/entitlements/com_apple_developer_associated-domains?language=objc
+[deeplink_cookbook]: {{site.repo.organization}}/codelabs/tree/main/deeplink_cookbook
+[developer account]: {{site.apple-dev}}/account
+[Firebase Hosting]: {{site.firebase}}/docs/hosting
+[go_router]: {{site.pub-pkg}}/go_router
 [GitHub Pages]: https://pages.github.com
-[uni_links]: https://pub.dev/packages/uni_links
+[uni_links]: {{site.pub-pkg}}/uni_links

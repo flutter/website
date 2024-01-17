@@ -7,11 +7,14 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+{% include docs/yt_shims.liquid %}
+
 <?code-excerpt path-base="cookbook/design/themes"?>
 
 {{site.alert.note}}
   This recipe uses Flutter's support for [Material 3][] and
-  the [google_fonts][] package.
+  the [google_fonts][] package. As of the Flutter 3.16 release,
+  Material 3 is Flutter's default theme.
 {{site.alert.end}}
 
 [Material 3]: {{site.url}}/ui/design/material
@@ -40,13 +43,11 @@ To share a `Theme` across your entire app, set the `theme` property
 to your `MaterialApp` constructor.
 This property takes a [`ThemeData`][] instance.
 
-To enable Material 3, set the [`useMaterial3`][] property
-to `true` in the `ThemeData` constructor.
+As of the Flutter 3.16 release, Material 3 is Flutter's
+default theme.
 
 If you don't specify a theme in the constructor,
 Flutter creates a default theme for you.
-
-[`useMaterial3`]: {{site.api}}/flutter/material/ThemeData/useMaterial3.html
 
 <?code-excerpt "lib/main.dart (MaterialApp)" replace="/return //g"?>
 ```dart
@@ -97,7 +98,7 @@ check out the [`ThemeData`][] documentation.
 
 ## Apply a theme
 
-To apply your new theme, use the `Theme.of(context)` method 
+To apply your new theme, use the `Theme.of(context)` method
 when specifying a widget's styling properties.
 These can include, but are not limited to, `style` and `color`.
 
@@ -184,7 +185,7 @@ Theme(
 
 To learn more, watch this short Widget of the Week video on the `Theme` widget:
 
-<iframe class="full-width" src="{{site.youtube-site}}/embed/oTvQDJOBXmM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="full-width" src="{{yt-embed}}/oTvQDJOBXmM" title="Learn about the Theme Flutter Widget" {{yt-set}}></iframe>
 
 ## Try an interactive example
 
@@ -302,7 +303,5 @@ class MyHomePage extends StatelessWidget {
   <img src="/assets/images/docs/cookbook/themes.png" alt="Themes Demo" class="site-mobile-screenshot" />
 </noscript>
 
-
 [`copyWith()`]: {{site.api}}/flutter/material/ThemeData/copyWith.html
 [`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html
-[`Theme`]: {{site.api}}/flutter/material/Theme-class.html

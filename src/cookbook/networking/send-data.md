@@ -96,7 +96,7 @@ the data from the network request.
 It includes a factory constructor that
 creates an `Album` from JSON.
 
-Converting JSON by hand is only one option.
+Converting JSON with [pattern matching][] is only one option.
 For more information, see the full article on
 [JSON and serialization][].
 
@@ -109,10 +109,17 @@ class Album {
   const Album({required this.id, required this.title});
 
   factory Album.fromJson(Map<String, dynamic> json) {
-    return Album(
-      id: json['id'],
-      title: json['title'],
-    );
+    return switch (json) {
+      {
+        'id': int id,
+        'title': String title,
+      } =>
+        Album(
+          id: id,
+          title: title,
+        ),
+      _ => throw const FormatException('Failed to load album.'),
+    };
   }
 }
 ```
@@ -150,7 +157,7 @@ Future<Album> createAlbum(String title) async {
   if (response.statusCode == 201) {
     // If the server did return a 201 CREATED response,
     // then parse the JSON.
-    return Album.fromJson(jsonDecode(response.body));
+    return Album.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   } else {
     // If the server did not return a 201 CREATED response,
     // then throw an exception.
@@ -259,7 +266,7 @@ Future<Album> createAlbum(String title) async {
   if (response.statusCode == 201) {
     // If the server did return a 201 CREATED response,
     // then parse the JSON.
-    return Album.fromJson(jsonDecode(response.body));
+    return Album.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   } else {
     // If the server did not return a 201 CREATED response,
     // then throw an exception.
@@ -274,10 +281,17 @@ class Album {
   const Album({required this.id, required this.title});
 
   factory Album.fromJson(Map<String, dynamic> json) {
-    return Album(
-      id: json['id'],
-      title: json['title'],
-    );
+    return switch (json) {
+      {
+        'id': int id,
+        'title': String title,
+      } =>
+        Album(
+          id: id,
+          title: title,
+        ),
+      _ => throw const FormatException('Failed to load album.'),
+    };
   }
 }
 
@@ -303,7 +317,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Create Data Example',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: Scaffold(
         appBar: AppBar(
@@ -367,6 +381,7 @@ class _MyAppState extends State<MyApp> {
 [Introduction to unit testing]: {{site.url}}/cookbook/testing/unit/introduction
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html
 [JSONPlaceholder]: https://jsonplaceholder.typicode.com/
-[Mock dependencies using Mockito]: {{site.url}}/cookbook/testing/unit/mocking
 [JSON and serialization]: {{site.url}}/data-and-backend/serialization/json
+[Mock dependencies using Mockito]: {{site.url}}/cookbook/testing/unit/mocking
+[pattern matching]: {{site.dart-site}}/language/patterns
 [`State`]: {{site.api}}/flutter/widgets/State-class.html

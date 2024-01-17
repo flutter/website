@@ -4,15 +4,17 @@ description: How to animate a widget to fly between two screens.
 short-title: Hero
 ---
 
+{% include docs/yt_shims.liquid %}
+
 {{site.alert.secondary}}
   <h4 class="no_toc">What you'll learn</h4>
 
-  * The _hero_ refers to the widget that flies between screens.
-  * Create a hero animation using Flutter's Hero widget.
-  * Fly the hero from one screen to another.
-  * Animate the transformation of a hero's shape from circular to
+* The _hero_ refers to the widget that flies between screens.
+* Create a hero animation using Flutter's Hero widget.
+* Fly the hero from one screen to another.
+* Animate the transformation of a hero's shape from circular to
     rectangular while flying it from one screen to another.
-  * The Hero widget in Flutter implements a style of animation
+* The Hero widget in Flutter implements a style of animation
     commonly known as _shared element transitions_ or
     _shared element animations._
 {{site.alert.end}}
@@ -24,7 +26,8 @@ one screen to another is called a _hero animation_ in Flutter, though the same
 motion is sometimes referred to as a _shared element transition_.
 
 You might want to watch this one-minute video introducing the Hero widget:
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/Be9UH1kXFDw?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="{{yt-embed}}/Be9UH1kXFDw" title="Learn about the Hero Flutter Widget" {{yt-set}}></iframe>
 
 This guide demonstrates how to build standard hero animations, and hero
 animations that transform the image from a circular shape to a square shape
@@ -34,8 +37,8 @@ during flight.
   **Examples**: This guide provides examples of each hero animation style at
   the following links.
 
-  * [Standard hero animation code][]
-  * [Radial hero animation code][]
+* [Standard hero animation code][]
+* [Radial hero animation code][]
 {{site.alert.end}}
 
 {{site.alert.secondary}}
@@ -70,12 +73,7 @@ Tapping the flippers in the blue route (or using the device's
 back-to-previous-route gesture) flies the flippers back to
 the original route.
 
-<div class="embedded-video-wrapper">
-  <iframe class="embedded-video-wrapper__frame"
-    src="{{site.youtube-site}}/embed/CEcFnqRDfgw?rel=0"
-    frameborder="0" allowfullscreen>
-  </iframe>
-</div>
+<iframe width="560" height="315" src="{{yt-embed}}/CEcFnqRDfgw" title="Watch this example of a standard hero animation in Flutter" {{yt-set-short}}></iframe>
 
 <br>**Radial hero animations**<br>
 
@@ -90,12 +88,7 @@ that displays it with a square shape.
 Tapping the square image flies the hero back to
 the original route, displayed with a circular shape.
 
-<div class="embedded-video-wrapper">
-  <iframe class="embedded-video-wrapper__frame"
-    src="{{site.youtube-site}}/embed/LWKENpwDKiM?rel=0"
-    frameborder="0" allowfullscreen>
-  </iframe>
-</div>
+<iframe width="560" height="315" src="{{yt-embed}}/LWKENpwDKiM" title="Watch this example of a radial hero animation in Flutter" {{yt-set-short}}></iframe>
 
 <br>Before moving to the sections specific to
 [standard](#standard-hero-animations)
@@ -106,17 +99,18 @@ and [behind the scenes](#behind-the-scenes) to understand
 how Flutter performs a hero animation.
 
 <a id="basic-structure"></a>
+
 ## Basic structure of a hero animation
 
 {{site.alert.secondary}}
   <h4 class="no_toc">What's the point?</h4>
 
-  * Use two hero widgets in different routes but with matching tags to
+* Use two hero widgets in different routes but with matching tags to
     implement the animation.
-  * The Navigator manages a stack containing the app's routes.
-  * Pushing a route on or popping a route from the Navigator's stack
+* The Navigator manages a stack containing the app's routes.
+* Pushing a route on or popping a route from the Navigator's stack
     triggers the animation.
-  * The Flutter framework calculates a rectangle tween,
+* The Flutter framework calculates a rectangle tween,
     [`RectTween`][] that defines the hero's boundary
     as it flies from the source to the destination route.
     During its flight, the hero is moved to
@@ -166,9 +160,7 @@ The next section describes Flutter's process in greater detail.
 The following describes how Flutter performs the
 transition from one route to another.
 
-<img src='/assets/images/docs/ui/animations/hero-transition-0.png'
-    alt="Before the transition the source hero appears in the source route"
-    class="mw-100">
+![Before the transition the source hero appears in the source route]({{site.url}}/assets/images/docs/ui/animations/hero-transition-0.png)
 
 Before transition, the source hero waits in the source
 route's widget tree. The destination route does not yet exist,
@@ -176,12 +168,10 @@ and the overlay is empty.
 
 ---
 
-<img src='/assets/images/docs/ui/animations/hero-transition-1.png'
-    alt="The transition begins"
-    class="mw-100">
+![The transition begins]({{site.url}}/assets/images/docs/ui/animations/hero-transition-1.png)
 
 Pushing a route to the `Navigator` triggers the animation.
-At t=0.0, Flutter does the following:
+At `t=0.0`, Flutter does the following:
 
 * Calculates the destination hero's path, offscreen,
   using the curved motion as described in the Material
@@ -196,9 +186,7 @@ At t=0.0, Flutter does the following:
 
 ---
 
-<img src='/assets/images/docs/ui/animations/hero-transition-2.png'
-    alt="The hero flies in the overlay to its final position and size"
-    class="mw-100">
+![The hero flies in the overlay to its final position and size]({{site.url}}/assets/images/docs/ui/animations/hero-transition-2.png)
 
 As the hero flies, its rectangular bounds are animated using
 [Tween&lt;Rect&gt;][], specified in Hero's
@@ -211,9 +199,7 @@ that uses a different Tween animation.)
 
 ---
 
-<img src='/assets/images/docs/ui/animations/hero-transition-3.png'
-    alt="When the transition is complete, the hero is moved from the overlay to the destination route"
-    class="mw-100">
+![When the transition is complete, the hero is moved from the overlay to the destination route]({{site.url}}/assets/images/docs/ui/animations/hero-transition-3.png)
 
 When the flight completes:
 
@@ -242,7 +228,7 @@ implement hero animations:
   destination route, and assign each the same tag.
   Flutter animates pairs of heroes with matching tags.
 
-[`Inkwell`][]
+[`InkWell`][]
 : Specifies what happens when tapping the hero.
   The `InkWell`'s `onTap()` method builds the
   new route and pushes it to the `Navigator`'s stack.
@@ -260,12 +246,12 @@ implement hero animations:
 {{site.alert.secondary}}
   <h4 class="no_toc">What's the point?</h4>
 
-  * Specify a route using `MaterialPageRoute`, `CupertinoPageRoute`,
+* Specify a route using `MaterialPageRoute`, `CupertinoPageRoute`,
     or build a custom route using `PageRouteBuilder`.
     The examples in this section use MaterialPageRoute.
-  * Change the size of the image at the end of the transition by
+* Change the size of the image at the end of the transition by
     wrapping the destination's image in a `SizedBox`.
-  * Change the location of the image by placing the destination's
+* Change the location of the image by placing the destination's
     image in a layout widget. These examples use `Container`.
 {{site.alert.end}}
 
@@ -312,22 +298,28 @@ The custom PhotoHero class maintains the hero,
 and its size, image, and behavior when tapped.
 The PhotoHero builds the following widget tree:
 
-<div class="text-center mb-4">
-  <img src='/assets/images/docs/ui/animations/photohero-class.png'
-      alt="PhotoHero class widget tree"
-      class="mw-100">
+<div class="text-center mb-4" markdown="1">
+
+  ![PhotoHero class widget tree]({{site.url}}/assets/images/docs/ui/animations/photohero-class.png)
+
 </div>
 
 Here's the code:
 
-{% prettify dart %}
+```dart
 class PhotoHero extends StatelessWidget {
-  const PhotoHero({ Key key, this.photo, this.onTap, this.width }) : super(key: key);
+  const PhotoHero({
+    super.key,
+    required this.photo,
+    this.onTap,
+    required this.width,
+  });
 
   final String photo;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
   final double width;
 
+  @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: width,
@@ -347,7 +339,7 @@ class PhotoHero extends StatelessWidget {
     );
   }
 }
-{% endprettify %}
+```
 
 Key information:
 
@@ -373,34 +365,36 @@ Here's the code:
 
 {% prettify dart %}
 class HeroAnimation extends StatelessWidget {
+  const HeroAnimation({super.key});
+
   Widget build(BuildContext context) {
-    [[highlight]]timeDilation = 5.0; // 1.0 means normal animation speed.[[/highlight]]
+    [!timeDilation = 5.0; // 1.0 means normal animation speed.!]
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Basic Hero Animation'),
       ),
       body: Center(
-        [[highlight]]child: PhotoHero([[/highlight]]
+        [!child: PhotoHero(!]
           photo: 'images/flippers-alpha.png',
           width: 300.0,
-          [[highlight]]onTap: ()[[/highlight]] {
-            [[highlight]]Navigator.of(context).push(MaterialPageRoute<void>([[/highlight]]
-              [[highlight]]builder: (BuildContext context)[[/highlight]] {
+          [!onTap: ()!] {
+            [!Navigator.of(context).push(MaterialPageRoute<void>(!]
+              [!builder: (context)!] {
                 return Scaffold(
                   appBar: AppBar(
                     title: const Text('Flippers Page'),
                   ),
                   body: Container(
-                    // The blue background emphasizes that it's a new route.
+                    // Set background to blue to emphasize that it's a new route.
                     color: Colors.lightBlueAccent,
                     padding: const EdgeInsets.all(16),
                     alignment: Alignment.topLeft,
-                    [[highlight]]child: PhotoHero([[/highlight]]
+                    [!child: PhotoHero(!]
                       photo: 'images/flippers-alpha.png',
                       width: 100.0,
-                      [[highlight]]onTap: ()[[/highlight]] {
-                        [[highlight]]Navigator.of(context).pop();[[/highlight]]
+                      [!onTap: ()!] {
+                        [!Navigator.of(context).pop();!]
                       },
                     ),
                   ),
@@ -436,12 +430,12 @@ Key information:
 {{site.alert.secondary}}
   <h4 class="no_toc">What's the point?</h4>
 
-  * A _radial transformation_ animates a circular shape into a square
+* A _radial transformation_ animates a circular shape into a square
     shape.
-  * A radial _hero_ animation performs a radial transformation while
+* A radial _hero_ animation performs a radial transformation while
     flying the hero from the source route to the destination route.
-  * MaterialRectCenter&shy;Arc&shy;Tween defines the tween animation.
-  * Build the destination route using `PageRouteBuilder`.
+* MaterialRectCenter&shy;Arc&shy;Tween defines the tween animation.
+* Build the destination route using `PageRouteBuilder`.
 {{site.alert.end}}
 
 Flying a hero from one route to another as it transforms
@@ -495,9 +489,7 @@ provided example to your needs.** The heavy lifting is done for you.
 The following diagram shows the clipped image at the beginning
 (`t = 0.0`), and the end (`t = 1.0`) of the animation.
 
-<img src='/assets/images/docs/ui/animations/radial-hero-animation.png'
-    alt="Radial transformation from beginning to end"
-    class="mw-100">
+![Radial transformation from beginning to end]({{site.url}}/assets/images/docs/ui/animations/radial-hero-animation.png)
 
 The blue gradient (representing the image), indicates where the clip
 shapes intersect. At the beginning of the transition,
@@ -529,22 +521,22 @@ The `Photo` class builds the widget tree that holds the image:
 
 {% prettify dart %}
 class Photo extends StatelessWidget {
-  Photo({ Key key, this.photo, this.color, this.onTap }) : super(key: key);
+  const Photo({super.key, required this.photo, this.color, this.onTap});
 
   final String photo;
-  final Color color;
+  final Color? color;
   final VoidCallback onTap;
 
   Widget build(BuildContext context) {
-    return [[highlight]]Material([[/highlight]]
+    return [!Material(!]
       // Slightly opaque color appears where the image has transparency.
-      [[highlight]]color: Theme.of(context).primaryColor.withOpacity(0.25),[[/highlight]]
-      child: [[highlight]]InkWell([[/highlight]]
-        onTap: [[highlight]]onTap,[[/highlight]]
-        child: [[highlight]]Image.asset([[/highlight]]
-            photo,
-            fit: BoxFit.contain,
-          )
+      [!color: Theme.of(context).primaryColor.withOpacity(0.25),!]
+      child: [!InkWell(!]
+        onTap: [!onTap,!]
+        child: [!Image.asset(!]
+          photo,
+          fit: BoxFit.contain,
+        ),
       ),
     );
   }
@@ -553,7 +545,7 @@ class Photo extends StatelessWidget {
 
 Key information:
 
-* The `Inkwell` captures the tap gesture.
+* The `InkWell` captures the tap gesture.
   The calling function passes the `onTap()` function to the
   `Photo`'s constructor.
 * During flight, the `InkWell` draws its splash on its first
@@ -576,21 +568,21 @@ with a rectangular clip (that remains a constant size throughout).
 
 To do this, it builds the following widget tree:
 
-<div class="text-center mb-4">
-  <img src='/assets/images/docs/ui/animations/radial-expansion-class.png'
-      alt="RadialExpansion widget tree" class="mw-100">
+<div class="text-center mb-4" markdown="1">
+
+  ![RadialExpansion widget tree]({{site.url}}/assets/images/docs/ui/animations/radial-expansion-class.png)
+
 </div>
 
 Here's the code:
 
 {% prettify dart %}
 class RadialExpansion extends StatelessWidget {
-  RadialExpansion({
-    Key key,
-    this.maxRadius,
+  const RadialExpansion({
+    super.key,
+    required this.maxRadius,
     this.child,
-  }) : [[highlight]]clipRectSize = 2.0 * (maxRadius / math.sqrt2),[[/highlight]]
-       super(key: key);
+  }) : [!clipRectSize = 2.0 * (maxRadius / math.sqrt2);!]
 
   final double maxRadius;
   final clipRectSize;
@@ -598,13 +590,13 @@ class RadialExpansion extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return [[highlight]]ClipOval([[/highlight]]
-      child: [[highlight]]Center([[/highlight]]
-        child: [[highlight]]SizedBox([[/highlight]]
+    return [!ClipOval(!]
+      child: [!Center(!]
+        child: [!SizedBox(!]
           width: clipRectSize,
           height: clipRectSize,
-          child: [[highlight]]ClipRect([[/highlight]]
-            child: [[highlight]]child,[[/highlight]]  // Photo
+          child: [!ClipRect(!]
+            child: [!child,!] // Photo
           ),
         ),
       ),
@@ -615,12 +607,12 @@ class RadialExpansion extends StatelessWidget {
 
 Key information:
 
-- The hero wraps the `RadialExpansion` widget.
-- As the hero flies, its size changes and,
+* The hero wraps the `RadialExpansion` widget.
+* As the hero flies, its size changes and,
   because it constrains its child's size,
   the `RadialExpansion` widget changes size to match.
-- The `RadialExpansion` animation is created by two overlapping clips.
-- The example defines the tweening interpolation using
+* The `RadialExpansion` animation is created by two overlapping clips.
+* The example defines the tweening interpolation using
   [`MaterialRectCenterArcTween`][].
   The default flight path for a hero animation
   interpolates the tweens using the corners of the heroes.
@@ -631,11 +623,11 @@ Key information:
 
   Here's the code:
 
-  {% prettify dart %}
-  static RectTween _createRectTween(Rect begin, Rect end) {
+  ```dart
+  static RectTween _createRectTween(Rect? begin, Rect? end) {
     return MaterialRectCenterArcTween(begin: begin, end: end);
   }
-  {% endprettify %}
+  ```
 
   The hero's flight path still follows an arc,
   but the image's aspect ratio remains constant.
@@ -648,10 +640,10 @@ Key information:
 [ClipRect]: {{site.api}}/flutter/widgets/ClipRect-class.html
 [Create a new Flutter example]: {{site.url}}/get-started/test-drive
 [`createRectTween`]: {{site.api}}/flutter/widgets/CreateRectTween.html
-[`debugPaintSizeEnabled`]: {{site.url}}/testing/code-debugging#debug-flags-layout
+[`debugPaintSizeEnabled`]: {{site.url}}/tools/devtools/inspector#debugging-layout-issues-visually
 [`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html
 [hero_animation]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/hero_animation/
-[`Inkwell`]: {{site.api}}/flutter/material/InkWell-class.html
+[`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
 [Material Design motion spec]: {{site.material2}}/design/motion/understanding-motion.html#principles
 [`MaterialRectArcTween`]: {{site.api}}/flutter/material/MaterialRectArcTween-class.html
 [`MaterialRectCenterArcTween`]: {{site.api}}/flutter/material/MaterialRectCenterArcTween-class.html
@@ -666,4 +658,3 @@ Key information:
 [`Route`]: {{site.api}}/flutter/widgets/Route-class.html
 [Standard hero animation code]: #standard-hero-animation-code
 [Tween&lt;Rect&gt;]: {{site.api}}/flutter/animation/Tween-class.html
-[watch this issue]: {{site.repo.flutter}}/issues/10667

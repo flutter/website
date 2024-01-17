@@ -4,6 +4,8 @@ description: How to release a Flutter app to the App Store.
 short-title: iOS
 ---
 
+{% include docs/yt_shims.liquid %}
+
 This guide provides a step-by-step walkthrough of releasing a
 Flutter app to the [App Store][appstore] and [TestFlight][].
 
@@ -13,23 +15,20 @@ Xcode is required to build and release your app. You
 must use a device running macOS to follow this guide.
 
 Before beginning the process of releasing your app,
-ensure that it meets
-Apple's [App Review Guidelines][appreview].
+ensure that it meets Apple's [App Review Guidelines][appreview].
 
 To publish your app to the App Store,
-you must first enroll in the
-[Apple Developer Program][devprogram].
-You can read more about the various
-membership options in Apple's
+you must first enroll in the [Apple Developer Program][devprogram].
+You can read more about the various membership options in Apple's
 [Choosing a Membership][devprogram_membership] guide.
 
 ## Video overview
 
 For those who prefer video over text,
 the following video covers the same material as this guide.
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iE2bpP56QKc?si=tHqWYKNTN1H8H9mC" title="Release an iOS app with Flutter in 7 steps" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{yt-embed}}/iE2bpP56QKc?si=tHqWYKNTN1H8H9mC" title="Release an iOS app with Flutter in 7 steps" {{yt-set}}></iframe>
 
-[Release an iOS app with Flutter in 7 steps](https://www.youtube.com/watch?v=iE2bpP56QKc)
+[Release an iOS app with Flutter in 7 steps]({{yt-watch}}?v=iE2bpP56QKc)
 
 ## Register your app on App Store Connect
 
@@ -119,9 +118,9 @@ In the **Deployment** section of the **Build Settings** tab:
 
 `iOS Deployment Target`
 : The minimum iOS version that your app supports.
-  Flutter supports iOS 11 and later. If your app or plugins
+  Flutter supports iOS 12 and later. If your app or plugins
   include Objective-C or Swift code that makes use of APIs newer
-  than iOS 11, update this setting to the highest required version.
+  than iOS 12, update this setting to the highest required version.
 
 The **General** tab of your project settings should resemble
 the following:
@@ -132,6 +131,7 @@ For a detailed overview of app signing, see
 [Create, export, and delete signing certificates][appsigning].
 
 ## Updating the app's deployment version
+
 If you changed `Deployment Target` in your Xcode project,
 open `ios/Flutter/AppframeworkInfo.plist` in your Flutter app
 and update the `MinimumOSVersion` value to match.
@@ -151,11 +151,11 @@ app's icons:
 ## Add a launch image
 
 Similar to the app icon,
-you can also replace the placeholder launch image: 
+you can also replace the placeholder launch image:
 
 1. In the Xcode project navigator,
    select `Assets.xcassets` in the `Runner` folder.
-   Update the placeholder launch image with your own launch image. 
+   Update the placeholder launch image with your own launch image.
 1. Verify the new launch image by hot restarting your app.
    (Don't use `hot reload`.)
 
@@ -170,9 +170,11 @@ on the App Store or TestFlight, you need to prepare a _release_ build.
 The default version number of the app is `1.0.0`.
 To update it, navigate to the `pubspec.yaml` file
 and update the following line:
+
 ```yaml
 version: 1.0.0+1
 ```
+
 The version number is three numbers separated by dots,
 such as `1.0.0` in the example above, followed by an optional
 build number such as `1` in the example above, separated by a `+`.
@@ -212,13 +214,11 @@ choose a different [export method][app_bundle_export_method] by
 adding the option `--export-method ad-hoc`,
 `--export-method development` or `--export-method enterprise`.
 
-
 {{site.alert.note}}
   On versions of Flutter where `flutter build ipa --export-method` is unavailable,
   open `build/ios/archive/MyApp.xcarchive` and follow the instructions below
   to validate and distribute the app from Xcode.
 {{site.alert.end}}
-
 
 ### Upload the app bundle to App Store Connect
 
@@ -236,9 +236,11 @@ Drag and drop the `build/ios/ipa/*.ipa` app bundle into the app.
 <li markdown="1">
 
 Or upload the app bundle from the command line by running:
+
 ```bash
 xcrun altool --upload-app --type ios -f build/ios/ipa/*.ipa --apiKey your_api_key --apiIssuer your_issuer_id
 ```
+
 Run `man altool` for details about how to authenticate with the App Store Connect API key.
 
 </li>
@@ -284,13 +286,14 @@ This step covers creating a build archive and uploading
 your build to App Store Connect using Flutter build commands
 and [Codemagic CLI Tools][codemagic_cli_tools] executed in a terminal
 in the Flutter project directory. This allows you to create a build archive
-with full control of distribution certificates in a temporary keychain 
+with full control of distribution certificates in a temporary keychain
 isolated from your login keychain.
 
 <ol markdown="1">
 <li markdown="1">
 
 Install the Codemagic CLI tools:
+
 ```bash
 pip3 install codemagic-cli-tools
 ```
@@ -486,7 +489,6 @@ For more details, see
 
 The [Distribute your app][distributionguide] guide provides a
 detailed overview of the process of releasing an app to the App Store.
-
 
 [appicon]: {{site.apple-dev}}/design/human-interface-guidelines/app-icons/
 [appreview]: {{site.apple-dev}}/app-store/review/

@@ -2,7 +2,7 @@ name: sqlite
 description: SQLITE
 
 environment:
-  sdk: ^3.1.0-0
+  sdk: ^3.2.0
 
 dependencies:
   flutter:
@@ -11,9 +11,11 @@ dependencies:
   path: ^1.8.3
 
 dev_dependencies:
+  example_utils:
+    path: ../../../example_utils
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.2
+
 
 flutter:
   uses-material-design: true

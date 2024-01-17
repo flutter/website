@@ -3,10 +3,10 @@ title: Performance
 description: Evaluating the performance of your app from several angles.
 ---
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/PKGguGUwSYE" 
-frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; 
-picture-in-picture" allowfullscreen></iframe>
-[Flutter performance basics]({{site.youtube-site}}/watch?v=PKGguGUwSYE)
+{% include docs/yt_shims.liquid %}
+
+<iframe width="560" height="315" src="{{yt-embed}}/PKGguGUwSYE" title="Learn tips to boost Flutter's performance" {{yt-set}}></iframe>
+[Flutter performance basics]({{yt-watch}}?v=PKGguGUwSYE)
 
 {{site.alert.note}}
   If your app has a performance issue and you are
@@ -18,15 +18,15 @@ picture-in-picture" allowfullscreen></iframe>
 
 What is performance? Why is performance important? How do I improve performance?
 
-Our goal is to answer those three questions (mainly the third one), and 
-anything related to them. This document should serve as the single entry 
-point or the root node of a tree of resources that addresses any questions 
+Our goal is to answer those three questions (mainly the third one), and
+anything related to them. This document should serve as the single entry
+point or the root node of a tree of resources that addresses any questions
 that you have about performance.
 
 The answers to the first two questions are mostly philosophical,
 and not as helpful to many developers who visit this page with specific
 performance issues that need to be solved.
-Therefore, the answers to those 
+Therefore, the answers to those
 questions are in the [appendix]({{site.url}}/perf/appendix).
 
 To improve performance, you first need metrics: some measurable numbers to
@@ -35,15 +35,15 @@ In the [metrics]({{site.url}}/perf/metrics) page,
 you'll see which metrics are currently used,
 and which tools and APIs are available to get the metrics.
 
-There is a list of [Frequently asked questions]({{site.url}}/perf/faq), 
-so you can find out if the questions you have or the problems you're having 
-were already answered or encountered, and whether there are existing solutions. 
+There is a list of [Frequently asked questions]({{site.url}}/perf/faq),
+so you can find out if the questions you have or the problems you're having
+were already answered or encountered, and whether there are existing solutions.
 (Alternatively, you can check the Flutter GitHub issue database using the
 [performance][performance] label.)
 
-Finally, the performance issues are divided into four categories. They 
-correspond to the four labels that are used in the Flutter GitHub issue 
-database: "[perf: speed][speed]", "[perf: memory][memory]", 
+Finally, the performance issues are divided into four categories. They
+correspond to the four labels that are used in the Flutter GitHub issue
+database: "[perf: speed][speed]", "[perf: memory][memory]",
 "[perf: app size][size]", "[perf: energy][energy]".
 
 The rest of the content is organized using those four categories.
@@ -52,9 +52,10 @@ The rest of the content is organized using those four categories.
 Let's put "speed" (rendering) first as it's the most popular performance issue
 category.
 {% endcomment -%}
+
 ## Speed
 
-Are your animations janky (not smooth)? Learn how to 
+Are your animations janky (not smooth)? Learn how to
 evaluate and fix rendering issues.
 
 [Improving rendering performance]({{site.url}}/perf/rendering-performance)
@@ -66,14 +67,13 @@ in some future pages.
 
 {% comment %}
 
-TODO(https://github.com/flutter/website/issues/8249): Reintroduce this article and add this link back.
+TODO(<https://github.com/flutter/website/issues/8249>): Reintroduce this article and add this link back.
 
 ## Memory
 
 [Using memory wisely]({{site.url}}/perf/memory)
 
 {% endcomment -%}
-
 
 ## App size
 
@@ -84,7 +84,7 @@ the quicker it is to download.
 
 {% comment %}
 
-TODO(https://github.com/flutter/website/issues/8249): Reintroduce this article and add this link back.
+TODO(<https://github.com/flutter/website/issues/8249>): Reintroduce this article and add this link back.
 
 ## Energy
 

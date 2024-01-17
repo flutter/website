@@ -1,19 +1,17 @@
 name: widgets_intro
 description: Sample state management code.
-
-version: 1.0.0+1
+publish_to: none
 
 environment:
-  sdk: ^3.1.0-0
+  sdk: ^3.2.0
 
 dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^1.0.5
-
 dev_dependencies:
-  flutter_lints: ^2.0.2
+  example_utils:
+    path: ../../example_utils
 
 flutter:
   uses-material-design: true

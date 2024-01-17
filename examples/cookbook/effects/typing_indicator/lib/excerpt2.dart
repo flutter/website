@@ -5,8 +5,6 @@ import 'package:flutter/material.dart';
 
 import './excerpt1.dart';
 
-
-
 // #docregion TypingIndicatorState
 class _TypingIndicatorState extends State<TypingIndicator>
     with TickerProviderStateMixin {

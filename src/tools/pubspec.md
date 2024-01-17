@@ -59,12 +59,12 @@ The Flutter only fields are highlighted.
 name: <project name>
 description: A new Flutter project.
 
-publish_to: 'none'
+publish_to: none
 
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.1.0 <4.0.0'
+  sdk: '>=3.2.0 <4.0.0'
 
 dependencies:
   [[highlight]]flutter:[[/highlight]]       # Required for every Flutter project
@@ -72,13 +72,13 @@ dependencies:
   [[highlight]]flutter_localizations:[[/highlight]] # Required to enable localization
     [[highlight]]sdk: flutter[[/highlight]]         # Required to enable localization
 
-  [[highlight]]cupertino_icons: ^1.0.5[[/highlight]] # Only required if you use Cupertino (iOS style) icons
+  [[highlight]]cupertino_icons: ^1.0.6[[/highlight]] # Only required if you use Cupertino (iOS style) icons
 
 dev_dependencies:
   [[highlight]]flutter_test:[[/highlight]]
     [[highlight]]sdk: flutter[[/highlight]] # Required for a Flutter project that includes tests
 
-  [[highlight]]flutter_lints: ^2.0.2[[/highlight]] # Contains a set of recommended lints for Flutter code
+  [[highlight]]flutter_lints: ^3.0.0[[/highlight]] # Contains a set of recommended lints for Flutter code
 
 [[highlight]]flutter:[[/highlight]]
 

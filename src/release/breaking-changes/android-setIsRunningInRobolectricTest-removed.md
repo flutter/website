@@ -55,9 +55,9 @@ and the following [commit][] added a
 [PR 20473][] further refactored `FlutterLoader`
 and `FlutterJNI` to allow for additional mocking and testing.
 
-[commit]: {{site.github}}/flutter/engine/commit/15f5696c4139a21e1fc54014ce17d01f6ad1737c#diff-f928557f2d60773a8435366400fa42ed
-[engine commit]: {{site.github}}/flutter/engine/commit/15f5696c4139a21e1fc54014ce17d01f6ad1737c#diff-599e1d64442183ead768757cca6805c3L154
-[PR 20473]: {{site.github}}/flutter/engine/pull/20473
+[commit]: {{site.repo.engine}}/commit/15f5696c4139a21e1fc54014ce17d01f6ad1737c#diff-f928557f2d60773a8435366400fa42ed
+[engine commit]: {{site.repo.engine}}/commit/15f5696c4139a21e1fc54014ce17d01f6ad1737c#diff-599e1d64442183ead768757cca6805c3L154
+[PR 20473]: {{site.repo.engine}}/pull/20473
 to allow for additional mocking/testing.
 
 ## Migration guide

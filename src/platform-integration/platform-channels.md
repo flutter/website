@@ -291,7 +291,7 @@ String _batteryLevel = 'Unknown battery level.';
 Future<void> _getBatteryLevel() async {
   String batteryLevel;
   try {
-    final int result = await platform.invokeMethod('getBatteryLevel');
+    final result = await platform.invokeMethod<int>('getBatteryLevel');
     batteryLevel = 'Battery level at $result % .';
   } on PlatformException catch (e) {
     batteryLevel = "Failed to get battery level: '${e.message}'.";
@@ -1127,7 +1127,7 @@ structured, typesafe manner.
 
 With [Pigeon][pigeon], the messaging protocol is defined
 in a subset of Dart that then generates messaging
-code for Android or iOS. You can find a more complete
+code for Android, iOS, macOS, or Windows. You can find a more complete
 example and more information on the [`pigeon`][pigeon]
 page on pub.dev.
 
@@ -1140,7 +1140,7 @@ asynchronous wrapper code and sending messages
 in either direction. The generated code is readable
 and guarantees there are no conflicts between
 multiple clients of different versions.
-Supported languages are Objective-C, Java, Kotlin,
+Supported languages are Objective-C, Java, Kotlin, C++,
 and Swift (with Objective-C interop).
 
 ### Pigeon example
@@ -1393,7 +1393,7 @@ DispatchQueue.main.async {
 [`BasicMessageChannel`]: {{site.api}}/flutter/services/BasicMessageChannel-class.html
 [`BinaryCodec`]: {{site.api}}/flutter/services/BinaryCodec-class.html
 [block]: {{site.apple-dev}}/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithBlocks/WorkingwithBlocks.html
-[`cloud_firestore`]: {{site.github}}/FirebaseExtended/flutterfire/blob/master/packages/cloud_firestore/cloud_firestore_platform_interface/lib/src/method_channel/utils/firestore_message_codec.dart
+[`cloud_firestore`]: {{site.github}}/firebase/flutterfire/blob/master/packages/cloud_firestore/cloud_firestore_platform_interface/lib/src/method_channel/utils/firestore_message_codec.dart
 [`dart:html` library]: {{site.dart.api}}/dart-html/dart-html-library.html
 [developing packages]: {{site.url}}/packages-and-plugins/developing-packages
 [plugins]: {{site.url}}/packages-and-plugins/developing-packages#plugin
@@ -1404,7 +1404,7 @@ DispatchQueue.main.async {
 [`JSONMessageCodec`]: {{site.api}}/flutter/services/JSONMessageCodec-class.html
 [`MethodChannel`]: {{site.api}}/flutter/services/MethodChannel-class.html
 [`MethodChannelAndroid`]: {{site.api}}/javadoc/io/flutter/plugin/common/MethodChannel.html
-[`MethodChanneliOS`]: {{site.api}}/objcdoc/Classes/FlutterMethodChannel.html
+[`MethodChanneliOS`]: {{site.api}}/ios-embedder/interface_flutter_method_channel.html
 [Platform adaptations]: {{site.url}}/platform-integration/platform-adaptations
 [publishing packages]: {{site.url}}/packages-and-plugins/developing-packages#publish
 [`quick_actions`]: {{site.pub}}/packages/quick_actions

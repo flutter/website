@@ -95,64 +95,69 @@ To find out the latest version, visit [Google Maven][].
 +<style name="NormalTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 ```
 
-## Signing the app
+<a id="signing-the-app"></a>
+## Sign the app
 
-To publish on the Play Store, you need to give your app a digital
-signature. Use the following instructions to sign your app.
+To publish on the Play Store, you need to
+sign your app with a digital certificate.
 
-On Android, there are two signing keys: deployment and upload. The end-users 
-download the .apk signed with the 'deployment key'. An 'upload key' is used to 
-authenticate the .aab / .apk uploaded by developers onto the Play Store and is 
-re-signed with the deployment key once in the Play Store.
-* It's highly recommended to use the automatic cloud managed signing for
-  the deployment key. For more information,
-  check out the [official Play Store documentation][].
+Android uses two signing keys: _upload_ and _app signing_.
+
+* Developers upload an `.aab` or `.apk` file signed with
+  an _upload key_ to the Play Store.
+* The end-users download the `.apk` file signed with an _app signing key_.
+
+To create your app signing key, use Play App Signing
+as described in the [official Play Store documentation][].
+
+To sign your app, use the following instructions.
 
 ### Create an upload keystore
 
 If you have an existing keystore, skip to the next step.
-If not, create one by either:
-* Following the [Android Studio key generation steps]({{site.android-dev}}/studio/publish/app-signing#sign-apk) 
-* Running the following at the command line:
+If not, create one using one of the following methods:
 
-    On macOS or Linux, use the following command:
+1. Follow the [Android Studio key generation steps]({{site.android-dev}}/studio/publish/app-signing#generate-key)
+1. Run the following command at the command line:
 
-    ```terminal
-    keytool -genkey -v -keystore ~/upload-keystore.jks -keyalg RSA \
-            -keysize 2048 -validity 10000 -alias upload
-    ```
+   On macOS or Linux, use the following command:
 
-    On Windows, use the following command in PowerShell:
+   ```terminal
+   keytool -genkey -v -keystore ~/upload-keystore.jks -keyalg RSA \
+           -keysize 2048 -validity 10000 -alias upload
+   ```
 
-    ```powershell
-    keytool -genkey -v -keystore %userprofile%\upload-keystore.jks ^
-            -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 ^
-            -alias upload
-    ```
+   On Windows, use the following command in PowerShell:
 
-    This command stores the `upload-keystore.jks` file in your home
-    directory. If you want to store it elsewhere, change
-    the argument you pass to the `-keystore` parameter.
-    **However, keep the `keystore` file private;
-    don't check it into public source control!**
+   ```powershell
+   keytool -genkey -v -keystore %userprofile%\upload-keystore.jks ^
+           -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 ^
+           -alias upload
+   ```
+
+   This command stores the `upload-keystore.jks` file in your home
+   directory. If you want to store it elsewhere, change
+   the argument you pass to the `-keystore` parameter.
+   **However, keep the `keystore` file private;
+   don't check it into public source control!**
     
-    {{site.alert.note}}
-    * The `keytool` command might not be in your path&mdash;it's
-      part of Java, which is installed as part of
-      Android Studio.  For the concrete path,
-      run `flutter doctor -v` and locate the path printed after
-      'Java binary at:'. Then use that fully qualified path
-      replacing `java` (at the end) with `keytool`.
-      If your path includes space-separated names,
-      such as `Program Files`, use platform-appropriate
-      notation for the names. For example, on Mac/Linux
-      use `Program\ Files`, and on Windows use
-      `"Program Files"`.
+   {{site.alert.note}}
+     * The `keytool` command might not be in your path&mdash;it's
+       part of Java, which is installed as part of
+       Android Studio.  For the concrete path,
+       run `flutter doctor -v` and locate the path printed after
+       'Java binary at:'. Then use that fully qualified path
+       replacing `java` (at the end) with `keytool`.
+       If your path includes space-separated names,
+       such as `Program Files`, use platform-appropriate
+       notation for the names. For example, on Mac/Linux
+       use `Program\ Files`, and on Windows use
+       `"Program Files"`.
     
-    * The `-storetype JKS` tag is only required for Java 9
-      or newer. As of the Java 9 release,
-      the keystore type defaults to PKS12.
-    {{site.alert.end}}
+     * The `-storetype JKS` tag is only required for Java 9
+       or newer. As of the Java 9 release,
+       the keystore type defaults to PKS12.
+   {{site.alert.end}}
 
 ### Reference the keystore from the app
 
@@ -340,7 +345,7 @@ to verify that the values are correct.
   Defaults to `flutter.minSdkVersion`.
 
 `targetSdkVersion`
-: Specify the target API level on which on which you designed the app to run.
+: Specify the target API level on which you designed the app to run.
   Defaults to `flutter.targetSdkVersion`.
   
 `versionCode`
@@ -576,7 +581,7 @@ The resulting app bundle or APK files are located in
 [Platform Views]: {{site.url}}/platform-integration/android/platform-views
 [play]: {{site.android-dev}}/distribute
 [R8]: {{site.android-dev}}/studio/build/shrink-code
-[Sign your app]: https://developer.android.com/studio/publish/app-signing.html#generate-key
+[Sign your app]: {{site.android-dev}}/studio/publish/app-signing.html#generate-key
 [upload-bundle]: {{site.android-dev}}/studio/publish/upload-bundle
 [Version your app]: {{site.android-dev}}/studio/publish/versioning
 [x86-64]: {{site.android-dev}}/ndk/guides/abis#86-64
