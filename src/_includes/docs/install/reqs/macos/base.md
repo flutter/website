@@ -1,7 +1,7 @@
 {% assign target = include.target %}
 {% assign os = include.os %}
 
-## System requirements
+## Verify system requirements
 
 To install and run Flutter,
 your {{os}} environment must meet these requirements:

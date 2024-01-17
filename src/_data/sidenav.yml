@@ -47,9 +47,6 @@
       permalink: /release/breaking-changes
     - title: Compatibility policy
       permalink: /release/compatibility-policy
-    - divider
-    - title: Uninstall Flutter
-      permalink: /get-started/uninstall
 
 - title: Samples & codelabs
   children:

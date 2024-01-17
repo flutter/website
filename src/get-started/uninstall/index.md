@@ -147,6 +147,10 @@ remove the `.pub-cache` directory from your home directory.
 {{rm-pub-dir | strip}}
 ```
 
+{% if os=='Windows' -%}
+{% include docs/install/reqs/{{os | downcase}}/unset-path.md terminal=terminal -%}
+{% endif %}
+
 </div>
 
 {% endfor -%}
