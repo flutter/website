@@ -5,9 +5,10 @@ description: Learn how to use and build DevTools extensions.
 
 ## What are DevTools extensions?
 
-DevTools extensions are developer tools provided by third-party packages that
-are tightly integrated into the DevTools tooling suite. Extensions are
-distributed as part of a pub package, and they are dynamically loaded into DevTools when a user is debugging their app.
+[DevTools extensions](https://pub.dev/packages/devtools_extensions) are developer
+tools provided by third-party packages that are tightly integrated into the
+DevTools tooling suite. Extensions are distributed as part of a pub package,
+and they are dynamically loaded into DevTools when a user is debugging their app.
 
 ## Using a DevTools extension
 
