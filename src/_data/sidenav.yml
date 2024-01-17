@@ -30,9 +30,6 @@
           permalink: /get-started/flutter-for/dart-swift-concurrency
     - title: "Dart language overview"
       permalink: https://dart.dev/overview
-    - divider
-    - title: Uninstall Flutter
-      permalink: /get-started/uninstall
 
 - title: Stay up to date
   permalink: /release
@@ -50,6 +47,9 @@
       permalink: /release/breaking-changes
     - title: Compatibility policy
       permalink: /release/compatibility-policy
+    - divider
+    - title: Uninstall Flutter
+      permalink: /get-started/uninstall
 
 - title: Samples & codelabs
   children:
