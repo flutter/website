@@ -6,47 +6,29 @@
 {:.no_toc}
 
 To run Flutter commands in {{terminal}},
-You need to add Flutter to the `PATH` environment variable.
-This section covers the permanent addition of the path to the
-Flutter to your `PATH` environment variable.
-This guide presumes that you are using the latest default shell, `zsh`.
-This section adds Flutter to the `PATH` using the `.zshenv` file.
-Zsh uses this file only for environment variables and loads its
-contents before any other configuration file.
+add Flutter to the `PATH` environment variable.
+This guide presumes your [Mac runs latest default shell][zsh-mac], `zsh`.
+Zsh uses the `.zshenv` file for [environment variables][envvar].
 
 1. Launch your preferred text editor.
 
 1. If it exists, open the Zsh environmental variable file `~/.zshenv`
    in your text editor. If it doesn't, create `~/.zshenv`.
 
-1. Copy the following text block.
+1. Copy the following line and paste it at the end of your `~/.zshenv` file.
 
    ```conf
-
-   # Configure Flutter
-
-   # Set the Flutter home directory to your Flutter install directory.
-   export FLUTTER_HOME=$HOME/development/flutter
-
-   # Check if Flutter is in your PATH, and, if not, add it. 
-   if [[ $PATH != *"$FLUTTER_HOME"* ]]
-   then
-       export PATH=$FLUTTER_HOME/bin:$PATH
-   fi
+   export PATH=$HOME/development/flutter/bin:$PATH
    ```
-
-1. Paste it at the end of your `~/.zshenv` file.
 
 1. Save your `~/.zshenv` file.
 
-1. Load the changes to your current open terminal session.
+1. To apply this change, restart all open terminal sessions.
 
-    ```terminal
-    $ source ~/.zshenv
-    ```
-
-   If you have more than one Terminal window open,
-   repeat this step in each Terminal window.
+If you use another shell,
+check out [this tutorial on setting your PATH][other-path].
 
 [zsh-mac]: https://support.apple.com/en-us/102360
-[brew]: https://brew.sh/
+[envvar]: https://zsh.sourceforge.io/Intro/intro_3.html
+[fish-path]: https://fishshell.com/docs/current/cmds/fish_add_path.html
+[other-path]: https://www.cyberciti.biz/faq/unix-linux-adding-path/

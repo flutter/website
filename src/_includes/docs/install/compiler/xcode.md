@@ -8,7 +8,7 @@
 
 To develop Flutter apps for {{os}}, install Xcode to compile to native bytecode.
 
-1. To configure the Xcode command-line tools to use the installed version,
+1. To configure the command-line tools to use the installed version of Xcode,
    run the following commands.
 
     ```terminal
@@ -74,9 +74,8 @@ With Xcode, you can run Flutter apps on an iOS device or on the simulator.
 ### Install CocoaPods (Optional)
 
 If your apps depend on [Flutter plugins][] with native {{os}} code,
-install CocoaPods. Built using Ruby,
-CocoaPods handles the bundling of various dependencies across Flutter
-and {{os}} code.
+install [CocoaPods][cocoapods].
+This program bundles various dependencies across Flutter and {{os}} code.
 
 To install and set up CocoaPods, run the following commands:
 
@@ -90,31 +89,15 @@ To install and set up CocoaPods, run the following commands:
 
 1. Open the Zsh environmental variable file `~/.zshenv` in your text editor.
 
-1. Copy the following text block.
+1. Copy the following line and paste it at the end of your `~/.zshenv` file.
 
    ```conf
-
-   # Configure CocoaPods
-
-   # Set the Ruby gem directory to your .gem directory.
-   export GEM_HOME=$HOME/.gem
-
-   # Check if Flutter is in your PATH, and, if not, add it. 
-   if [[ $PATH != *"$GEM_HOME"* ]]
-   then
-       export PATH=$GEM_HOME/bin:$PATH
-   fi
+   export PATH=$HOME/.gem/bin:$PATH
    ```
-1. Paste it at the end of your `~/.zshenv` file.
 
 1. Save your `~/.zshenv` file.
 
-1. Load the changes to your current open terminal session
-   using the following command.
-
-    ```terminal
-    $ source ~/.zshenv
-    ```
+1. To apply this change, restart all open terminal sessions.
 
 [Flutter plugins]: {{site.url}}/packages-and-plugins/developing-packages#types
 [cocoapods]: https://guides.cocoapods.org/using/getting-started.html#installation
