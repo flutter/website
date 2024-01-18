@@ -10,7 +10,7 @@ tools provided by third-party packages that are tightly integrated into the
 DevTools tooling suite. Extensions are distributed as part of a pub package,
 and they are dynamically loaded into DevTools when a user is debugging their app.
 
-## Using a DevTools extension
+## Use a DevTools extension
 
 If your app depends on a package that provides a DevTools extension, the
 extension will automatically show up in a new tab when you open DevTools. You
