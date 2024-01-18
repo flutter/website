@@ -35,7 +35,7 @@ options will be configured separately for each user. Since each user or
 contributor to the project will use a local copy of the `devtools_options.yaml`
 file in this case, the specified options may differ between project contributors.
 
-## Building a DevTools extension
+## Build a DevTools extension
 
 For an in-depth guide on how to build a DevTools extension, please read this
 [article](https://medium.com/flutter/dart-flutter-devtools-extensions-c8bc1aaf8e5f).
