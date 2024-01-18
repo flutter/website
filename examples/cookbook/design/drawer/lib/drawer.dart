@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 void drawerStart() {
   // #docregion DrawerStart
   Scaffold(
+    appBar: AppBar(), // Add an AppBar with hamburger button.
     drawer: null, // Add a Drawer here in the next step.
   );
   // #enddocregion DrawerStart
@@ -11,6 +12,7 @@ void drawerStart() {
 void drawerEmpty() {
   // #docregion DrawerEmpty
   Scaffold(
+    appBar: AppBar(),
     drawer: Drawer(
       child: null, // Populate the Drawer in the next step.
     ),
