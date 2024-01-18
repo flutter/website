@@ -37,5 +37,8 @@ file in this case, the specified options may differ between project contributors
 
 ## Build a DevTools extension
 
-For an in-depth guide on how to build a DevTools extension, please read this
-[article](https://medium.com/flutter/dart-flutter-devtools-extensions-c8bc1aaf8e5f).
+For an in-depth guide on how to build a DevTools extension, check out 
+[Dart and Flutter DevTools extensions][article], a free article on Medium.
+
+
+[article]: {{site.flutter-medium}}/dart-flutter-devtools-extensions-c8bc1aaf8e5f
