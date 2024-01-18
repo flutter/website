@@ -13,8 +13,8 @@ and they are dynamically loaded into DevTools when a user is debugging their app
 ## Use a DevTools extension
 
 If your app depends on a package that provides a DevTools extension, the
-extension will automatically show up in a new tab when you open DevTools. You
-will need to manually enable the extension before it loads for the first time.
+extension automatically shows up in a new tab when you open DevTools.
+You need to manually enable the extension before it loads for the first time.
 Make sure the extension is provided by a source you trust before enabling it.
 
 ![Screenshot of extension enablement prompt]({{site.url}}/assets/images/docs/tools/devtools/extension_enable_prompt.png)
