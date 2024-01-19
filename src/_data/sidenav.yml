@@ -610,6 +610,8 @@
           permalink: /tools/devtools/logging
         - title: App size tool
           permalink: /tools/devtools/app-size
+        - title: DevTools extensions
+          permalink: /tools/devtools/extensions
         - title: Release notes
           permalink: /tools/devtools/release-notes
     - title: SDK overview
