@@ -35,7 +35,9 @@ In this example, create a `Scaffold` with a `drawer`:
 <?code-excerpt "lib/drawer.dart (DrawerStart)" replace="/null, //g"?>
 ```dart
 Scaffold(
-  appBar: AppBar(), // Add an AppBar with hamburger button.
+  appBar: AppBar(
+    title: const Text('AppBar with hamburger button'),
+  ),
   drawer: // Add a Drawer here in the next step.
 );
 ```
@@ -50,7 +52,9 @@ which adheres to the Material Design spec.
 <?code-excerpt "lib/drawer.dart (DrawerEmpty)" replace="/null, //g"?>
 ```dart
 Scaffold(
-  appBar: AppBar(),
+  appBar: AppBar(
+    title: const Text('AppBar with hamburger button'),
+  ),
   drawer: Drawer(
     child: // Populate the Drawer in the next step.
   ),
