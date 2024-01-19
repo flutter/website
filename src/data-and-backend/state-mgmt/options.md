@@ -259,7 +259,7 @@ For more information, refer to the following resources:
 
 [Triple documentation]: https://triple.flutterando.com.br/
 [Flutter Triple package]: {{site.pub-pkg}}/flutter_triple
-[Segmented State pattern]: https://triple.flutterando.com.br/docs/intro/
+[Segmented State pattern]: https://triple.flutterando.com.br/docs/intro/overview#-segmented-state-pattern-ssp
 [Triple Pattern: A new pattern for state management in Flutter]: https://blog.flutterando.com.br/triple-pattern-um-novo-padr%C3%A3o-para-ger%C3%AAncia-de-estado-no-flutter-2e693a0f4c3e
 [VIDEO: Flutter Triple Pattern by Kevlin Ossada]: {{yt-watch}}?v=dXc3tR15AoA
 
