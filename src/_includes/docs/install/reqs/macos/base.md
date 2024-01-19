@@ -54,7 +54,7 @@ Download and install the following packages.
 The developers of the preceding software provide support for those products.
 To troubleshoot installation issues, consult that product's documentation.
 
-{% include /docs/install/reqs/flutter/flutter-doctor-precedence.md %}
+{% include /docs/install/reqs/flutter-sdk/flutter-doctor-precedence.md %}
 
 #### Text editor or integrated development environment
 {:.no_toc}

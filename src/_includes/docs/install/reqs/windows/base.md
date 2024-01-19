@@ -45,7 +45,7 @@ Download and install the Windows version of the following packages:
 The developers of the preceding software provide support for those products.
 To troubleshoot installation issues, consult that product's documentation.
 
-{% include docs/install/reqs/flutter/flutter-doctor-precedence.md %}
+{% include docs/install/reqs/flutter-sdk/flutter-doctor-precedence.md %}
 
 ## Configure a text editor or IDE
 
