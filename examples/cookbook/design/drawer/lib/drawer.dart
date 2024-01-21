@@ -4,7 +4,7 @@ void drawerStart() {
   // #docregion DrawerStart
   Scaffold(
     appBar: AppBar(
-      title: const Text('AppBar with hamburger button'),
+      title: const Text('AppBar without hamburger button'),
     ),
     drawer: null, // Add a Drawer here in the next step.
   );
