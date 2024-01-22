@@ -96,7 +96,7 @@ On iOS, the `native_add/ios/native_add.podspec` links the code.
 
 The native code is invoked from dart in `lib/native_add_bindings_generated.dart`.
 
-The bindings are generated with [package:ffigen](https://pub.dev/packages/ffigen).
+The bindings are generated with [package:ffigen]({{site.pub-pkg}}/ffigen).
 
 ## Other use cases
 

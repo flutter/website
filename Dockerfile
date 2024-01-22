@@ -1,4 +1,4 @@
-FROM ruby:3.2.2-slim-bookworm@sha256:e9926bc4f362f5049fd3e5916ee02fd2e95cd907a74b94b339bbd3b6d82223e4 AS base
+FROM ruby:3.3-slim-bookworm@sha256:7e2843d936fd2ea084b36f99ff252822bedb6b656ae868f5b08e68cc9b63e8b6 as base
 
 ENV TZ=US/Pacific
 RUN apt-get update && apt-get install -yq --no-install-recommends \
@@ -70,6 +70,7 @@ ENTRYPOINT ["tool/test.sh"]
 FROM node AS dev
 
 ENV JEKYLL_ENV=development
+ENV RUBY_YJIT_ENABLE=1
 RUN gem install bundler
 COPY Gemfile Gemfile.lock ./
 RUN bundle config set force_ruby_platform true
@@ -96,6 +97,7 @@ EXPOSE 5502
 FROM node AS build
 
 ENV JEKYLL_ENV=production
+ENV RUBY_YJIT_ENABLE=1
 RUN gem install bundler
 COPY Gemfile Gemfile.lock ./
 RUN bundle config set force_ruby_platform true

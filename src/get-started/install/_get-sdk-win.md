@@ -2,7 +2,7 @@
 
 {% include docs/china-notice.md %}
 
-{% include_relative _help-link.md location='win-get-sdk' %}
+{% include_relative_help-link.md location='win-get-sdk' %}
 
  1. Download the following installation bundle to get the latest
     {{site.sdk.channel}} release of the Flutter SDK:
@@ -13,7 +13,7 @@
     check out the [SDK archive][].
  1. Extract the zip file and place the contained `flutter`
     in the desired installation location for the Flutter SDK
-    (for example, `%USERPROFILE%\flutter`, `D:\dev\flutter`).
+    (for example, `%USERPROFILE%\flutter`, `C:\dev\flutter`).
 
 {{site.alert.warning}}
   Do not install Flutter to a path that contains special
@@ -21,17 +21,16 @@
 {{site.alert.end}}
 
 {{site.alert.warning}}
-  Do not install Flutter in a directory like 
+  Do not install Flutter in a directory like
   `C:\Program Files\` that requires elevated privileges.
 {{site.alert.end}}
 
 You are now ready to run Flutter commands in the Flutter Console.
 
-[Flutter repo]: {{site.repo.flutter}}
 
 ### Update your path
 
-{% include_relative _help-link.md location='win-path' section='#unable-to-find-the-flutter-command' %}
+{% include_relative_help-link.md location='win-path' section='#unable-to-find-the-flutter-command' %}
 
 If you wish to run Flutter commands in the regular Windows console,
 take these steps to add Flutter to the `PATH` environment variable:
@@ -52,7 +51,7 @@ for these changes to take effect.
 
 ### Run `flutter doctor`
 
-{% include_relative _help-link.md location='win-doctor' %}
+{% include_relative_help-link.md location='win-doctor' %}
 
 From a console window that has the Flutter directory in the
 path (see above), run the following command to see if there
@@ -71,7 +70,7 @@ For example:
 
 <pre>
 [-] Android toolchain - develop for Android devices
-    • Android SDK at D:\Android\sdk
+    • Android SDK at C:\Android\sdk
     <strong>✗ Android SDK is missing command line tools; download from https://goo.gl/XxQghQ</strong>
     • Try re-installing or updating your Android SDK,
       visit {{site.url}}/setup/#android-setup for detailed instructions.
@@ -88,9 +87,7 @@ verify that you've set everything up correctly.
   on to [Set up an editor][] to resolve this issue.
 {{site.alert.end}}
 
-{% include_relative _analytics.md %}
+{% include_relative_analytics.md %}
 
-
-[Flutter repo]: {{site.repo.flutter}}
 [SDK archive]: {{site.url}}/release/archive
 [Set up an editor]: {{site.url}}/get-started/editor?tab=androidstudio

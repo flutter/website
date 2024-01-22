@@ -4,6 +4,8 @@ subtitle: Where to look when your Flutter app drops frames in the UI.
 description: Diagnosing UI performance issues in Flutter.
 ---
 
+{% include docs/yt_shims.liquid %}
+
 {% include docs/performance.md %}
 
 {{site.alert.secondary}}
@@ -36,7 +38,7 @@ steps to take, and tools that can help.
 {{site.alert.end}}
 
 [Debugging]: {{site.url}}/testing/debugging
-[Tracing Dart code]: {{site.url}}/testing/debugging#tracing-dart-code
+[Tracing Dart code]: {{site.url}}/testing/code-debugging#trace-dart-code-performance
 
 ## Diagnosing performance problems
 
@@ -280,7 +282,7 @@ To enable the overlay programmatically, see
 [Debugging Flutter apps programmatically][] page.
 
 [Debugging Flutter apps programmatically]: {{site.url}}/testing/code-debugging
-[Performance overlay]: {{site.url}}/testing/code-debugging#performance-overlay
+[Performance overlay]: {{site.url}}/testing/code-debugging#add-performance-overlay
 
 ## Identifying problems in the UI graph
 
@@ -313,7 +315,7 @@ instead of clipping to a rounded rectangle.
 If it's a static scene that's being faded, rotated, or otherwise
 manipulated, a [`RepaintBoundary`][] might help.
 
-[programmatically]: {{site.url}}/testing/code-debugging#debugging-animations
+[programmatically]: {{site.url}}/testing/code-debugging#debug-animation-issues
 [`RepaintBoundary`]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
 [`saveLayer`]: {{site.api}}/flutter/dart-ui/Canvas/saveLayer.html
 
@@ -451,7 +453,7 @@ Flutter's tools and debugging in Flutter:
 [devtools]: {{site.url}}/tools/devtools
 [Flutter API]: {{site.api}}
 [Flutter inspector]: {{site.url}}/tools/devtools/inspector
-[Flutter inspector talk]: {{site.youtube-site}}/watch?v=JIcmJNT9DNI
+[Flutter inspector talk]: {{yt-watch}}?v=JIcmJNT9DNI
 [`PerformanceOverlay`]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
-[video]: {{site.youtube-site}}/watch?v=5F-6n_2XWR8
+[video]: {{yt-watch}}?v=5F-6n_2XWR8
 [Why Flutter Uses Dart]: https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf

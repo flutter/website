@@ -7,6 +7,8 @@ js:
     url: https://dartpad.dev/inject_embed.dart.js
 ---
 
+{% include docs/yt_shims.liquid %}
+
 <?code-excerpt path-base="layout/constraints/"?>
 
 <img src='/assets/images/docs/ui/layout/article-hero-image.png'
@@ -67,8 +69,8 @@ The negotiation goes something like this:
 
 **Widget**: "Hey parent, what are my constraints?"
 
-**Parent**: "You must be from `80` to `300` pixels wide,
-   and `30` to `85` tall."
+**Parent**: "You must be from `0` to `300` pixels wide,
+   and `0` to `85` tall."
 
 **Widget**: "Hmmm, since I want to have `5` pixels of padding,
    then my children can have at most `290` pixels of width
@@ -116,7 +118,7 @@ but does result in a few limitations:
   precisely define the size and position of any widget
   without taking into consideration the tree as a whole.
 
-* If a child wants a different size from its parent and 
+* If a child wants a different size from its parent and
   the parent doesn't have enough information to align it,
   then the child's size might be ignored.
   **Be specific when defining alignment.**
@@ -1465,7 +1467,6 @@ The red color is visible because of the padding,
 and the green `Container` has the same size as
 in the previous example.
 
-
 ### Example 9
 
 <img src='/assets/images/docs/ui/layout/layout-9.png' class="mw-100" alt="Example 9 layout">
@@ -1588,7 +1589,6 @@ UnconstrainedBox(
 The screen forces the `UnconstrainedBox` to be exactly
 the same size as the screen. However, the `UnconstrainedBox`
 lets its child `Container` be any size it wants.
-
 
 ### Example 14
 
@@ -1754,7 +1754,6 @@ but it can't be bigger than the screen.
 It then assumes the screen size,
 and resizes `Text` so that it fits the screen, too.
 
-
 ### Example 21
 
 <img src='/assets/images/docs/ui/layout/layout-21.png' class="mw-100" alt="Example 21 layout">
@@ -1770,7 +1769,6 @@ const Center(
 If, however, you remove the `FittedBox`, the `Text`
 gets its maximum width from the screen,
 and breaks the line so that it fits the screen.
-
 
 ### Example 22
 
@@ -1791,7 +1789,6 @@ FittedBox(
 (has non-infinite width and height). Otherwise,
 it won't render anything,
 and you'll see an error in the console.
-
 
 ### Example 23
 
@@ -1841,7 +1838,6 @@ Since `Row` won't impose any constraints onto its children,
 it's quite possible that the children might be too big to fit
 the available width of the `Row`. In this case, just like an
 `UnconstrainedBox`, the `Row` displays the "overflow warning".
-
 
 ### Example 25
 
@@ -2071,7 +2067,7 @@ the tight constraints it received from its parent
 (the screen) to loose constraints for its child
 (the `Container`).
 
-If you revisit [Example 3](#example-3), 
+If you revisit [Example 3](#example-3),
 the `Center` allows the red `Container` to be smaller,
 but not bigger than the screen.
 
@@ -2079,6 +2075,7 @@ but not bigger than the screen.
 [`RenderView`]: {{site.api}}/flutter/rendering/RenderView-class.html
 
 <a id="unbounded"></a>
+
 ## Unbounded constraints
 
 {{site.alert.note}}
@@ -2184,8 +2181,6 @@ Here's an example:
 
 <img src='/assets/images/docs/ui/layout/layout-final.png' class="mw-100" alt="A goodbye layout">
 
-
-
 ---
 
 Original article by Marcelo Glasberg
@@ -2207,7 +2202,6 @@ header image at the top of the article.
 {{site.alert.note}}
   To better understand how Flutter implements layout
   constraints, check out the following 5-minute video:
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/jckqXR5CrPI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="{{yt-embed}}/jckqXR5CrPI" title="Learn how Flutter implements layout constraints" {{yt-set}}></iframe>
   <p>Decoding Flutter: Unbounded height and width</p>
 {{site.alert.end}}
-

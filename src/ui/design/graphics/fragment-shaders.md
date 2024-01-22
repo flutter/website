@@ -276,7 +276,7 @@ For a more detailed guide on writing performant shaders,
 check out [Writing efficient shaders][] on GitHub.
 
 [Shader compilation jank]: {{site.url}}/perf/shader
-[Writing efficient shaders]: {{site.github}}/flutter/engine/blob/main/impeller/docs/shader_optimization.md
+[Writing efficient shaders]: {{site.repo.engine}}/blob/main/impeller/docs/shader_optimization.md
 
 ### Other resources
 
@@ -288,5 +288,5 @@ For more information, here are a few resources.
 
 [Shader toy]: https://www.shadertoy.com/
 [The Book of Shaders]: https://thebookofshaders.com/
-[`simple_shader`]: {{site.repo.organization}}/samples/tree/main/simple_shader
+[`simple_shader`]: {{site.repo.samples}}/tree/main/simple_shader
 

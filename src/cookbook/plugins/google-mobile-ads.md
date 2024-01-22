@@ -4,6 +4,8 @@ short-title: Show ads
 description: How to use the google_mobile_ads package to show ads in Flutter.
 ---
 
+<?code-excerpt path-base="cookbook/plugins/google_mobile_ads"?>
+
 {% comment %}
   This partly duplicates the AdMob documentation
   here: https://developers.google.com/admob/flutter/quick-start
@@ -35,7 +37,7 @@ package to add a banner ad to your app or game.
   Ad Manager, a platform intended for large publishers. Integrating Ad
   Manager resembles integrating AdMob, but it won't be covered in this
   cookbook recipe. To use Ad Manager, follow the
-  [Ad Manager documentation](https://developers.google.com/ad-manager/mobile-ads-sdk/flutter/quick-start).
+  [Ad Manager documentation]({{site.developers}}/ad-manager/mobile-ads-sdk/flutter/quick-start).
 {{site.alert.end}}
 
 ## 1. Get AdMob App IDs
@@ -142,11 +144,12 @@ You need to initialize the Mobile Ads SDK before loading ads.
 1.  Call `MobileAds.instance.initialize()` to initialize the Mobile Ads
     SDK.
 
+    <?code-excerpt "lib/main.dart (main)"?>
     ```dart
-    void main() {
+    void main() async {
       WidgetsFlutterBinding.ensureInitialized();
       unawaited(MobileAds.instance.initialize());
-    
+
       runApp(MyApp());
     }
     ```
@@ -171,26 +174,36 @@ To load a banner ad, construct a `BannerAd` instance, and
 call `load()` on it.
 
 {{site.alert.note}}
-  In the following code snippet, `adSize` and `adUnitId` have not been
-  initialized. We will get to that in a later step.
+  The following code snippet refers to fields such a `adSize`, `adUnitId`
+  and `_bannerAd`. This will all make more sense in a later step.
 {{site.alert.end}}
-  
+
+<?code-excerpt "lib/my_banner_ad.dart (loadAd)"?>
 ```dart
 /// Loads a banner ad.
 void _loadAd() {
   final bannerAd = BannerAd(
-    size: adSize,
-    adUnitId: adUnitId,
+    size: widget.adSize,
+    adUnitId: widget.adUnitId,
     request: const AdRequest(),
     listener: BannerAdListener(
+      // Called when an ad is successfully received.
       onAdLoaded: (ad) {
-        // TODO: show the ad
+        if (!mounted) {
+          ad.dispose();
+          return;
+        }
+        setState(() {
+          _bannerAd = ad as BannerAd;
+        });
       },
-      onAdFailedToLoad: (ad, err) {
+      // Called when an ad request failed.
+      onAdFailedToLoad: (ad, error) {
+        debugPrint('BannerAd failed to load: $error');
         ad.dispose();
       },
     ),
-  ); 
+  );
 
   // Start loading.
   bannerAd.load();
@@ -205,25 +218,26 @@ To view a complete example, check out the last step of this recipe.
 Once you have a loaded instance of `BannerAd`, use `AdWidget` to show it.
 
 ```dart
-AdWidget(ad: bannerAd)
+AdWidget(ad: _bannerAd)
 ```
 
 It's a good idea to wrap the widget in a `SafeArea` (so that no part of
 the ad is obstructed by device notches) and a `SizedBox` (so that it has
 its specified, constant size before and after loading).
 
+<?code-excerpt "lib/my_banner_ad.dart (build)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
   return SafeArea(
     child: SizedBox(
-      width: adSize.width.toDouble(),
-      height: adSize.height.toDouble(),
+      width: widget.adSize.width.toDouble(),
+      height: widget.adSize.height.toDouble(),
       child: _bannerAd == null
-          // Nothing to render yet.
+      // Nothing to render yet.
           ? SizedBox()
-          // The actual ad.
-          : AdWidget(ad: bannerAd),
+      // The actual ad.
+          : AdWidget(ad: _bannerAd!),
     ),
   );
 }
@@ -234,8 +248,9 @@ practice for when to call `dispose()` is either after the `AdWidget` is
 removed from the widget tree or in the
 `BannerAdListener.onAdFailedToLoad()` callback.
 
+<?code-excerpt "lib/my_banner_ad.dart (dispose)"?>
 ```dart
-bannerAd.dispose();
+_bannerAd?.dispose();
 ```
 
 
@@ -253,7 +268,7 @@ To show anything beyond test ads, you have to register ad units.
     beyond banner ads --- interstitials, rewarded ads, app open ads, and
     so on. 
     The API for those is similar, and documented in the 
-    [AdMob documentation](https://developers.google.com/admob/flutter/quick-start)
+    [AdMob documentation]({{site.developers}}/admob/flutter/quick-start)
     and through 
     [official samples](https://github.com/googleads/googleads-mobile-flutter/tree/main/samples/admob).
 
@@ -270,8 +285,9 @@ To show anything beyond test ads, you have to register ad units.
 5.  Add these *Ad unit IDs* to the constructor of `BannerAd`,
     depending on the target app platform.
 
+    <?code-excerpt "lib/my_banner_ad.dart (adUnitId)"?>
     ```dart
-      final String adUnitId = Platform.isAndroid
+    final String adUnitId = Platform.isAndroid
         // Use this ad unit on Android...
         ? 'ca-app-pub-3940256099942544/6300978111'
         // ... or this one on iOS.
@@ -305,6 +321,7 @@ and [Ad Manager](https://admanager.google.com/).
 The following code implements a simple stateful widget that loads a
 banner ad and shows it.
 
+<?code-excerpt "lib/my_banner_ad.dart"?>
 ```dart
 import 'dart:io';
 
@@ -312,86 +329,87 @@ import 'package:flutter/widgets.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class MyBannerAdWidget extends StatefulWidget {
- /// The requested size of the banner. Defaults to [AdSize.banner].
- final AdSize adSize;
+  /// The requested size of the banner. Defaults to [AdSize.banner].
+  final AdSize adSize;
 
- /// The AdMob ad unit to show.
- ///
- /// TODO: replace this test ad unit with your own ad unit
- final String adUnitId = Platform.isAndroid
-     // Use this ad unit on Android...
-     ? 'ca-app-pub-3940256099942544/6300978111'
-     // ... or this one on iOS.
-     : 'ca-app-pub-3940256099942544/2934735716';
+  /// The AdMob ad unit to show.
+  ///
+  /// TODO: replace this test ad unit with your own ad unit
+  final String adUnitId = Platform.isAndroid
+      // Use this ad unit on Android...
+      ? 'ca-app-pub-3940256099942544/6300978111'
+      // ... or this one on iOS.
+      : 'ca-app-pub-3940256099942544/2934735716';
 
- MyBannerAdWidget({
-   super.key,
-   this.adSize = AdSize.banner,
- });
+  MyBannerAdWidget({
+    super.key,
+    this.adSize = AdSize.banner,
+  });
 
- @override
- State<MyBannerAdWidget> createState() => _MyBannerAdWidgetState();
+  @override
+  State<MyBannerAdWidget> createState() => _MyBannerAdWidgetState();
 }
 
 class _MyBannerAdWidgetState extends State<MyBannerAdWidget> {
- /// The banner ad to show. This is `null` until the ad is actually loaded.
- BannerAd? _bannerAd;
+  /// The banner ad to show. This is `null` until the ad is actually loaded.
+  BannerAd? _bannerAd;
 
- @override
- Widget build(BuildContext context) {
-   return SafeArea(
-     child: SizedBox(
-       width: widget.adSize.width.toDouble(),
-       height: widget.adSize.height.toDouble(),
-       child: _bannerAd == null
-           // Nothing to render yet.
-           ? SizedBox()
-           // The actual ad.
-           : AdWidget(ad: _bannerAd!),
-     ),
-   );
- }
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: SizedBox(
+        width: widget.adSize.width.toDouble(),
+        height: widget.adSize.height.toDouble(),
+        child: _bannerAd == null
+        // Nothing to render yet.
+            ? SizedBox()
+        // The actual ad.
+            : AdWidget(ad: _bannerAd!),
+      ),
+    );
+  }
 
- @override
- void initState() {
-   super.initState();
-   _loadAd();
- }
+  @override
+  void initState() {
+    super.initState();
+    _loadAd();
+  }
 
- @override
- void dispose() {
-   _bannerAd?.dispose();
-   super.dispose();
- }
+  @override
+  void dispose() {
+    _bannerAd?.dispose();
+    super.dispose();
+  }
 
- /// Loads a banner ad.
- void _loadAd() {
-   final bannerAd = BannerAd(
-     size: widget.adSize,
-     adUnitId: widget.adUnitId,
-     request: const AdRequest(),
-     listener: BannerAdListener(
-       // Called when an ad is successfully received.
-       onAdLoaded: (ad) {
-         if (!mounted) {
-           ad.dispose();
-           return;
-         }
-         setState(() {
-           _bannerAd = ad as BannerAd;
-         });
-       },
-       // Called when an ad request failed.
-       onAdFailedToLoad: (ad, error) {
-         debugPrint('BannerAd failed to load: $error');
-         ad.dispose();
-       },
-     ),
-   );
+  /// Loads a banner ad.
+  void _loadAd() {
+    final bannerAd = BannerAd(
+      size: widget.adSize,
+      adUnitId: widget.adUnitId,
+      request: const AdRequest(),
+      listener: BannerAdListener(
+        // Called when an ad is successfully received.
+        onAdLoaded: (ad) {
+          if (!mounted) {
+            ad.dispose();
+            return;
+          }
+          setState(() {
+            _bannerAd = ad as BannerAd;
+          });
+        },
+        // Called when an ad request failed.
+        onAdFailedToLoad: (ad, error) {
+          debugPrint('BannerAd failed to load: $error');
+          ad.dispose();
+        },
+      ),
+    );
 
-   // Start loading.
-   bannerAd.load();
- }
+    // Start loading.
+    bannerAd.load();
+  }
+
 }
 ```
 

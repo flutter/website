@@ -4,6 +4,8 @@ description: >
   How to use the games_services plugin to add functionality to your game.
 ---
 
+<?code-excerpt path-base="cookbook/games/achievements_leaderboards"?>
+
 Gamers have various motivations for playing games.
 In broad strokes, there are four major motivations: 
 [immersion, achievement, cooperation, and competition][].
@@ -117,7 +119,7 @@ To enable *Play Games Services* on Android:
     containing the XML you received in the previous step.
 
 [Google Play Console]: https://play.google.com/console/
-[Play Games Services guide]: https://developers.google.com/games/services/console/enabling
+[Play Games Services guide]: {{site.developers}}/games/services/console/enabling
 
 ## 2. Sign in to the game service
 
@@ -133,6 +135,7 @@ have your achievement & leaderboard IDs ready, it's finally Dart time.
 2.  Before you can do anything else, you have to sign the player into
     the game service.
 
+    <?code-excerpt "lib/various.dart (signIn)"?>
     ```dart
     try {
       await GamesServices.signIn();
@@ -163,6 +166,7 @@ handling for clarity.
     and take note of their IDs. Now you can award any of those
     achievements from your Dart code:
 
+    <?code-excerpt "lib/various.dart (unlock)"?>
     ```dart
     await GamesServices.unlock(
       achievement: Achievement(
@@ -178,6 +182,7 @@ handling for clarity.
 2.  To display the achievements UI from your game, call the
     `games_services` API:
 
+    <?code-excerpt "lib/various.dart (showAchievements)"?>
     ```dart
     await GamesServices.showAchievements();
     ```
@@ -202,6 +207,7 @@ leaderboards.
     Console and App Store Connect, and took note of its ID. Using this
     ID, you can submit new scores for the player:
 
+    <?code-excerpt "lib/various.dart (submitScore)"?>
     ```dart
     await GamesServices.submitScore(
       score: Score(
@@ -218,10 +224,11 @@ leaderboards.
 2.  To display the leaderboard as an overlay over your game, make the
     following call:
 
+    <?code-excerpt "lib/various.dart (showLeaderboards)"?>
     ```dart
     await GamesServices.showLeaderboards(
-      iOSLeaderboardID: "some_id_from_app_store",
-      androidLeaderboardID: "sOmE_iD_fRoM_gPlAy",
+      iOSLeaderboardID: 'some_id_from_app_store',
+      androidLeaderboardID: 'sOmE_iD_fRoM_gPlAy',
     );
     ```
 
@@ -246,6 +253,7 @@ Each game has different needs from game services.
 To start, you might want to create this controller 
 in order to keep all achievements & leaderboards logic in one place:
 
+<?code-excerpt "lib/games_services_controller.dart"?>
 ```dart
 import 'dart:async';
 
@@ -329,8 +337,8 @@ class GamesServicesController {
     try {
       await GamesServices.showLeaderboards(
         // TODO: When ready, change both these leaderboard IDs.
-        iOSLeaderboardID: "some_id_from_app_store",
-        androidLeaderboardID: "sOmE_iD_fRoM_gPlAy",
+        iOSLeaderboardID: 'some_id_from_app_store',
+        androidLeaderboardID: 'sOmE_iD_fRoM_gPlAy',
       );
     } catch (e) {
       _log.severe('Cannot show leaderboard: $e');

@@ -15,7 +15,7 @@ have replaced just-in-time navigation APIs, like `WillPopScope` and
 ## Background
 
 Android 14 introduced the
-[Predictive Back feature](https://developer.android.com/guide/navigation/predictive-back-gesture),
+[Predictive Back feature]({{site.android-dev}}/guide/navigation/predictive-back-gesture),
 which allows the user to peek behind the current route during a valid back
 gesture and decide whether to continue back or to cancel the gesture. This was
 incompatible with Flutter's navigation APIs that allow the developer to cancel a
@@ -75,7 +75,7 @@ if (myRoute.popDisposition == RoutePopDisposition.doNotPop) {
 }
 ```
 
-### `ModalRoute.registerPopInterface` and `ModalRoute.unregisterPopInterface`
+### `ModalRoute.registerPopEntry` and `ModalRoute.unregisterPopEntry`
 
 Use these methods to register `PopScope` widgets, to be evaluated when the route
 decides whether it can pop. This functionality might be used when implementing a
@@ -87,9 +87,9 @@ void didChangeDependencies() {
   super.didChangeDependencies();
   final ModalRoute<dynamic>? nextRoute = ModalRoute.of(context);
   if (nextRoute != _route) {
-    _route?.unregisterPopInterface(this);
+    _route?.unregisterPopEntry(this);
     _route = nextRoute;
-    _route?.registerPopInterface(this);
+    _route?.registerPopEntry(this);
   }
 }
 ```
@@ -211,17 +211,17 @@ if (myRoute.popDisposition == RoutePopDisposition.doNotPop) {
 }
 ```
 
-### Migrating from `ModalRoute.add/removeScopedWillPopCallback` to `ModalRoute.(un)registerPopInterface`
+### Migrating from `ModalRoute.add/removeScopedWillPopCallback` to `ModalRoute.(un)registerPopEntry`
 
 Internally, `ModalRoute` kept track of the existence of `WillPopScope`s in its
 widget subtree by registering them with `addScopedWillPopCallback` and
 `removeScopedWillPopCallback`. Since `PopScope` replaces `WillPopScope`, these
-methods have been replaced by `registerPopInterface` and
-`unregisterPopInterface`, respectively.
+methods have been replaced by `registerPopEntry` and
+`unregisterPopEntry`, respectively.
 
-`PopInterface` is implemented by `PopScope` in order to expose only the minimal
+`PopEntry` is implemented by `PopScope` in order to expose only the minimal
 information necessary to `ModalRoute`. Anyone writing their own `PopScope`
-should implement `PopInterface` and register and unregister their widget with
+should implement `PopEntry` and register and unregister their widget with
 its enclosing `ModalRoute`.
 
 Code before migration:
@@ -246,9 +246,9 @@ Code after migration:
 @override
 void didChangeDependencies() {
   super.didChangeDependencies();
-  _route?.unregisterPopInterface(this);
+  _route?.unregisterPopEntry(this);
   _route = ModalRoute.of(context);
-  _route?.registerPopInterface(this);
+  _route?.registerPopEntry(this);
 }
 ```
 
@@ -325,7 +325,7 @@ return PopScope(
      This will be unnecessary on future versions of Android.
   1. Set `android:enableOnBackInvokedCallback="true"` in
      `android/app/src/main/AndroidManifest.xml`. If needed, refer to
-     [Android's full guide](https://developer.android.com/guide/navigation/custom-back/predictive-back-gesture)
+     [Android's full guide]({{site.android-dev}}/guide/navigation/custom-back/predictive-back-gesture)
      for migrating Android apps to support predictive back.
   1. Make sure you're using version `3.14.0-7.0.pre` of Flutter or greater.
   1. Run the app and perform a back gesture (swipe from the left side of
@@ -344,12 +344,12 @@ API documentation:
 * [`NavigatorPopHandler`][]
 * [`PopScope`][]
 * [`NavigatorPopHandler`][]
-* [`PopInterface`][]
+* [`PopEntry`][]
 * [`Form.canPop`][]
 * [`Form.onPopInvoked`][]
 * [`Route.popDisposition`][]
-* [`ModalRoute.registerPopInterface`][]
-* [`ModalRoute.unregisterPopInterface`][]
+* [`ModalRoute.registerPopEntry`][]
+* [`ModalRoute.unregisterPopEntry`][]
 
 Relevant issues:
 
@@ -362,12 +362,12 @@ Relevant PRs:
 
 [`PopScope`]: {{site.api}}/flutter/widgets/PopScope-class.html
 [`NavigatorPopHandler`]: {{site.api}}/flutter/widgets/NavigatorPopHandler-class.html
-[`PopInterface`]: {{site.api}}/flutter/widgets/PopInterface-class.html
+[`PopEntry`]: {{site.api}}/flutter/widgets/PopEntry-class.html
 [`Form.canPop`]: {{site.api}}/flutter/widgets/Form/canPop.html
 [`Form.onPopInvoked`]: {{site.api}}/flutter/widgets/Form/onPopInvoked.html
 [`Route.popDisposition`]: {{site.api}}/flutter/widgets/Route/popDisposition.html
-[`ModalRoute.registerPopInterface`]: {{site.api}}/flutter/widgets/ModalRoute/registerPopInterface.html
-[`ModalRoute.unregisterPopInterface`]: {{site.api}}/flutter/widgets/ModalRoute/unregisterPopInterface.html
+[`ModalRoute.registerPopEntry`]: {{site.api}}/flutter/widgets/ModalRoute/registerPopEntry.html
+[`ModalRoute.unregisterPopEntry`]: {{site.api}}/flutter/widgets/ModalRoute/unregisterPopEntry.html
 
 [Issue 109513]: {{site.repo.flutter}}/issues/109513
 [Predictive back support for root routes]: {{site.repo.flutter}}/pull/120385

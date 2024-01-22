@@ -182,19 +182,20 @@ consider asking for support from one of the following channels:
 * [/r/flutterhelp](https://www.reddit.com/r/flutterhelp/) on Reddit
 * [/r/flutterdev](https://discord.gg/rflutterdev) on Discord,
   particularly the `install-and-setup` channel on this server. 
-* [StackOverflow](https://stackoverflow.com/), 
+* [StackOverflow][], 
   in particular, questions tagged with [#flutter][] or [#dart][].
 
 To be respectful of everyone's time,
 search the archive for a similar issue before posting a new one. 
 
-[#dart]:  https://stackoverflow.com/questions/tagged/dart
-[#flutter]:  https://stackoverflow.com/questions/tagged/flutter
+[StackOverflow]: {{site.so}}
+[#dart]: {{site.so}}/questions/tagged/dart
+[#flutter]: {{site.so}}/questions/tagged/flutter
 [Android Java Gradle migration guide]: {{site.url}}/release/breaking-changes/android-java-gradle-migration-guide
 [community support channels]: #community-support
-[java binary path]: {{site.github}}/flutter/flutter/issues/106416#issuecomment-1522198064
-[so java version]: https://stackoverflow.com/questions/75328050/
-[set up VS Code]: https://docs.flutter.dev/get-started/editor
+[java binary path]: {{site.repo.flutter}}/issues/106416#issuecomment-1522198064
+[so java version]: {{site.so}}/questions/75328050/
+[set up VS Code]: {{site.url}}/get-started/editor
 [config path]: https://dartcode.org/docs/configuring-path-and-environment-variables/
-[sdkmanager]: https://developer.android.com/studio/command-line/sdkmanager
+[sdkmanager]: {{site.android-dev}}/studio/command-line/sdkmanager
 [windows path]: https://www.wikihow.com/Change-the-PATH-Environment-Variable-on-Windows

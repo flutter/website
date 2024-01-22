@@ -11,9 +11,9 @@ js:
 
 {{site.alert.tip}}
   This codelab walks you through writing
-  your first Flutter app on the web, specifically. 
+  your first Flutter app on the web, specifically.
   You might prefer to try
-  [another codelab][first_flutter_codelab] 
+  [another codelab][first_flutter_codelab]
   that takes a more generic approach.
   Note that the codelab on this page
   does work on mobile and desktop
@@ -47,11 +47,11 @@ The animated GIF shows how the app works at the completion of this lab.
 {{site.alert.secondary}}
   <h4 class="no_toc">What you'll learn</h4>
 
-  * How to write a Flutter app that looks natural on the web.
-  * Basic structure of a Flutter app.
-  * How to implement a Tween animation.
-  * How to implement a stateful widget.
-  * How to use the debugger to set breakpoints.
+* How to write a Flutter app that looks natural on the web.
+* Basic structure of a Flutter app.
+* How to implement a Tween animation.
+* How to implement a stateful widget.
+* How to use the debugger to set breakpoints.
 {{site.alert.end}}
 
 {{site.alert.secondary}}
@@ -59,9 +59,9 @@ The animated GIF shows how the app works at the completion of this lab.
 
   You need three pieces of software to complete this lab:
 
-  * [Flutter SDK][]
-  * [Chrome browser][]
-  * [Text editor or IDE][editor]
+* [Flutter SDK][]
+* [Chrome browser][]
+* [Text editor or IDE][editor]
 
   While developing, run your web app in Chrome
   so you can debug with Dart DevTools.
@@ -74,7 +74,7 @@ You'll start with a simple web app that we provide for you.
 <ol markdown="1">
 <li markdown="1">Enable web development.<br>
 At the command line, perform the following command to
-make sure that you have Flutter installed correctly. 
+make sure that you have Flutter installed correctly.
 
 ```terminal
 $ flutter doctor
@@ -123,15 +123,14 @@ web-javascript • Google Chrome 105.0.5195.125
 
 ```
 
-The **Chrome** device automatically starts Chrome and enables the use 
+The **Chrome** device automatically starts Chrome and enables the use
 of the Flutter DevTools tooling.
 </li>
 
 <li markdown="1">The starting app is displayed in the following DartPad.
 
-<?code-excerpt "lib/starter.dart" replace="/\/\* //g;/ \*\///g;/_ignore_for_file/ignore_for_file/g"?>
+<?code-excerpt "lib/starter.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code
-{$ begin main.dart $}
 import 'package:flutter/material.dart';
 
 void main() => runApp(const SignUpApp());
@@ -232,11 +231,6 @@ class _SignUpFormState extends State<SignUpForm> {
     );
   }
 }
-{$ end main.dart $}
-{$ begin test.dart $}
-// Avoid warning on "double _formProgress = 0;"
-//ignore_for_file: prefer_final_fields
-{$ end test.dart $}
 ```
 
 {{site.alert.important}}
@@ -397,7 +391,7 @@ You get that behavior for free.
   "call this method when the button is pressed".
 * The `const` keyword in front of the constructor is very
   important. When Flutter encounters a constant widget, it
-  short-circuits most of the rebuilding work under the hood 
+  short-circuits most of the rebuilding work under the hood
   making the rendering more efficient.
 * Flutter has only one `Navigator` object.
   This widget manages Flutter's screens
@@ -521,7 +515,7 @@ but becomes enabled when all three text fields contain
   The new widget tree must be created and rendered to screen
   in less than 1/60th of a second to create a smooth visual
   transition—especially for an animation.
-  Luckily Flutter *is* fast.
+  Luckily Flutter _is_ fast.
 * The `progress` field is defined as a floating value,
   and is updated in the `_updateFormProgress` method.
   When all three fields are filled in, `_formProgress` is set to 1.0.
@@ -1056,11 +1050,9 @@ Dart DevTools, or Flutter animations, see the following:
 * [Implicit animations][] codelab
 * [Web samples][]
 
-
 [Android Studio and IntelliJ]: {{site.url}}/tools/devtools/android-studio
 [Animation docs]: {{site.url}}/ui/animations
 [Building a form with validation]: {{site.url}}/cookbook/forms/validation
-[Building a web application with Flutter]: {{site.url}}/platform-integration/web/building
 [Chrome browser]: https://www.google.com/chrome/?brand=CHBD&gclid=CjwKCAiAws7uBRAkEiwAMlbZjlVMZCxJDGAHjoSpoI_3z_HczSbgbMka5c9Z521R89cDoBM3zAluJRoCdCEQAvD_BwE&gclsrc=aw.ds
 [create a new Flutter project]: {{site.url}}/get-started/test-drive
 [Dart DevTools]: {{site.url}}/tools/devtools/overview
@@ -1079,6 +1071,6 @@ Dart DevTools, or Flutter animations, see the following:
 [Material Design]: {{site.material}}/get-started
 [TextButton]: {{site.api}}/flutter/material/TextButton-class.html
 [VS Code]: {{site.url}}/tools/devtools/vscode
-[Web samples]: {{site.github}}/flutter/samples/tree/main/web
+[Web samples]: {{site.repo.samples}}/tree/main/web
 [Widget]: {{site.api}}/flutter/widgets/Widget-class.html
 [first_flutter_codelab]: {{site.url}}/get-started/codelab

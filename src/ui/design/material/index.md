@@ -3,6 +3,8 @@ title: Material Design for Flutter
 description: Learn about Material Design for Flutter.
 ---
 
+{% include docs/yt_shims.liquid %}
+
 Material Design is an open-source design system built
 and supported by Google designers and developers.
 
@@ -34,7 +36,6 @@ visiting the [Affected widgets][] page.
 [Affected widgets]: {{site.api}}/flutter/material/ThemeData/useMaterial3.html#affected-widgets
 [deprecation policy]: {{site.url}}/release/compatibility-policy#deprecation-policy
 [demo]: https://flutter.github.io/samples/web/material_3_demo/#/
-[Material 3 Flutter GitHub project]: {{site.github}}/orgs/flutter/projects/19/views/22
 [`NavigationBar`]: {{site.api}}/flutter/material/NavigationBar-class.html
 [`useMaterial3`]: {{site.api}}/flutter/material/ThemeData/useMaterial3.html
 
@@ -42,19 +43,18 @@ Explore the updated components, typography, color system,
 and elevation support with the
 [interactive Material 3 demo][demo]:
 
-<iframe src="https://flutter.github.io/samples/web/material_3_demo/#/"
-        width="100%" height="600px" title="Material 3 Demo App"></iframe>
+<iframe src="https://flutter.github.io/samples/web/material_3_demo/#/" width="100%" height="600px" title="Material 3 Demo App"></iframe>
 
 ## More information
 {:.no_toc}
 
 To learn more about Material Design and Flutter,
-check out:    
+check out:
 
 * [Material.io developer documentation][]
 * [Migrating a Flutter app to Material 3][] blog post by Taha Tesser
 * [Umbrella issue on GitHub][]
 
-[Material.io developer documentation]: https://m3.material.io/develop/flutter
+[Material.io developer documentation]: {{site.material}}/develop/flutter
 [Migrating a Flutter app to Material 3]: https://blog.codemagic.io/migrating-a-flutter-app-to-material-3/
 [Umbrella issue on GitHub]: {{site.github}}//flutter/flutter/issues/91605

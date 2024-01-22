@@ -4,15 +4,17 @@ description: How to animate a widget to fly between two screens.
 short-title: Hero
 ---
 
+{% include docs/yt_shims.liquid %}
+
 {{site.alert.secondary}}
   <h4 class="no_toc">What you'll learn</h4>
 
-  * The _hero_ refers to the widget that flies between screens.
-  * Create a hero animation using Flutter's Hero widget.
-  * Fly the hero from one screen to another.
-  * Animate the transformation of a hero's shape from circular to
+* The _hero_ refers to the widget that flies between screens.
+* Create a hero animation using Flutter's Hero widget.
+* Fly the hero from one screen to another.
+* Animate the transformation of a hero's shape from circular to
     rectangular while flying it from one screen to another.
-  * The Hero widget in Flutter implements a style of animation
+* The Hero widget in Flutter implements a style of animation
     commonly known as _shared element transitions_ or
     _shared element animations._
 {{site.alert.end}}
@@ -24,7 +26,8 @@ one screen to another is called a _hero animation_ in Flutter, though the same
 motion is sometimes referred to as a _shared element transition_.
 
 You might want to watch this one-minute video introducing the Hero widget:
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/Be9UH1kXFDw?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="{{yt-embed}}/Be9UH1kXFDw" title="Learn about the Hero Flutter Widget" {{yt-set}}></iframe>
 
 This guide demonstrates how to build standard hero animations, and hero
 animations that transform the image from a circular shape to a square shape
@@ -34,8 +37,8 @@ during flight.
   **Examples**: This guide provides examples of each hero animation style at
   the following links.
 
-  * [Standard hero animation code][]
-  * [Radial hero animation code][]
+* [Standard hero animation code][]
+* [Radial hero animation code][]
 {{site.alert.end}}
 
 {{site.alert.secondary}}
@@ -70,12 +73,7 @@ Tapping the flippers in the blue route (or using the device's
 back-to-previous-route gesture) flies the flippers back to
 the original route.
 
-<div class="embedded-video-wrapper">
-  <iframe class="embedded-video-wrapper__frame"
-    src="{{site.youtube-site}}/embed/CEcFnqRDfgw?rel=0"
-    frameborder="0" allowfullscreen>
-  </iframe>
-</div>
+<iframe width="560" height="315" src="{{yt-embed}}/CEcFnqRDfgw" title="Watch this example of a standard hero animation in Flutter" {{yt-set-short}}></iframe>
 
 <br>**Radial hero animations**<br>
 
@@ -90,12 +88,7 @@ that displays it with a square shape.
 Tapping the square image flies the hero back to
 the original route, displayed with a circular shape.
 
-<div class="embedded-video-wrapper">
-  <iframe class="embedded-video-wrapper__frame"
-    src="{{site.youtube-site}}/embed/LWKENpwDKiM?rel=0"
-    frameborder="0" allowfullscreen>
-  </iframe>
-</div>
+<iframe width="560" height="315" src="{{yt-embed}}/LWKENpwDKiM" title="Watch this example of a radial hero animation in Flutter" {{yt-set-short}}></iframe>
 
 <br>Before moving to the sections specific to
 [standard](#standard-hero-animations)
@@ -106,17 +99,18 @@ and [behind the scenes](#behind-the-scenes) to understand
 how Flutter performs a hero animation.
 
 <a id="basic-structure"></a>
+
 ## Basic structure of a hero animation
 
 {{site.alert.secondary}}
   <h4 class="no_toc">What's the point?</h4>
 
-  * Use two hero widgets in different routes but with matching tags to
+* Use two hero widgets in different routes but with matching tags to
     implement the animation.
-  * The Navigator manages a stack containing the app's routes.
-  * Pushing a route on or popping a route from the Navigator's stack
+* The Navigator manages a stack containing the app's routes.
+* Pushing a route on or popping a route from the Navigator's stack
     triggers the animation.
-  * The Flutter framework calculates a rectangle tween,
+* The Flutter framework calculates a rectangle tween,
     [`RectTween`][] that defines the hero's boundary
     as it flies from the source to the destination route.
     During its flight, the hero is moved to
@@ -252,12 +246,12 @@ implement hero animations:
 {{site.alert.secondary}}
   <h4 class="no_toc">What's the point?</h4>
 
-  * Specify a route using `MaterialPageRoute`, `CupertinoPageRoute`,
+* Specify a route using `MaterialPageRoute`, `CupertinoPageRoute`,
     or build a custom route using `PageRouteBuilder`.
     The examples in this section use MaterialPageRoute.
-  * Change the size of the image at the end of the transition by
+* Change the size of the image at the end of the transition by
     wrapping the destination's image in a `SizedBox`.
-  * Change the location of the image by placing the destination's
+* Change the location of the image by placing the destination's
     image in a layout widget. These examples use `Container`.
 {{site.alert.end}}
 
@@ -306,7 +300,7 @@ The PhotoHero builds the following widget tree:
 
 <div class="text-center mb-4" markdown="1">
 
-  ![PhotoHero class widget tree]({{site.url}}/assets/images/docs/ui/animations/photohero-class.png)    
+  ![PhotoHero class widget tree]({{site.url}}/assets/images/docs/ui/animations/photohero-class.png)
 
 </div>
 
@@ -436,12 +430,12 @@ Key information:
 {{site.alert.secondary}}
   <h4 class="no_toc">What's the point?</h4>
 
-  * A _radial transformation_ animates a circular shape into a square
+* A _radial transformation_ animates a circular shape into a square
     shape.
-  * A radial _hero_ animation performs a radial transformation while
+* A radial _hero_ animation performs a radial transformation while
     flying the hero from the source route to the destination route.
-  * MaterialRectCenter&shy;Arc&shy;Tween defines the tween animation.
-  * Build the destination route using `PageRouteBuilder`.
+* MaterialRectCenter&shy;Arc&shy;Tween defines the tween animation.
+* Build the destination route using `PageRouteBuilder`.
 {{site.alert.end}}
 
 Flying a hero from one route to another as it transforms
@@ -576,7 +570,7 @@ To do this, it builds the following widget tree:
 
 <div class="text-center mb-4" markdown="1">
 
-  ![RadialExpansion widget tree]({{site.url}}/assets/images/docs/ui/animations/radial-expansion-class.png)    
+  ![RadialExpansion widget tree]({{site.url}}/assets/images/docs/ui/animations/radial-expansion-class.png)
 
 </div>
 
@@ -613,12 +607,12 @@ class RadialExpansion extends StatelessWidget {
 
 Key information:
 
-- The hero wraps the `RadialExpansion` widget.
-- As the hero flies, its size changes and,
+* The hero wraps the `RadialExpansion` widget.
+* As the hero flies, its size changes and,
   because it constrains its child's size,
   the `RadialExpansion` widget changes size to match.
-- The `RadialExpansion` animation is created by two overlapping clips.
-- The example defines the tweening interpolation using
+* The `RadialExpansion` animation is created by two overlapping clips.
+* The example defines the tweening interpolation using
   [`MaterialRectCenterArcTween`][].
   The default flight path for a hero animation
   interpolates the tweens using the corners of the heroes.
@@ -646,7 +640,7 @@ Key information:
 [ClipRect]: {{site.api}}/flutter/widgets/ClipRect-class.html
 [Create a new Flutter example]: {{site.url}}/get-started/test-drive
 [`createRectTween`]: {{site.api}}/flutter/widgets/CreateRectTween.html
-[`debugPaintSizeEnabled`]: {{site.url}}/testing/code-debugging#debug-flags-layout
+[`debugPaintSizeEnabled`]: {{site.url}}/tools/devtools/inspector#debugging-layout-issues-visually
 [`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html
 [hero_animation]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/hero_animation/
 [`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
@@ -664,4 +658,3 @@ Key information:
 [`Route`]: {{site.api}}/flutter/widgets/Route-class.html
 [Standard hero animation code]: #standard-hero-animation-code
 [Tween&lt;Rect&gt;]: {{site.api}}/flutter/animation/Tween-class.html
-[watch this issue]: {{site.repo.flutter}}/issues/10667

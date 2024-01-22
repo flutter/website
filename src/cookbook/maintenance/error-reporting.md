@@ -118,4 +118,4 @@ see the [Sentry flutter example][] app.
 [`sentry_flutter`]: {{site.pub-pkg}}/sentry_flutter
 [Sentry API]: {{site.pub-api}}/sentry_flutter/latest/sentry_flutter/sentry_flutter-library.html
 [Sentry's site]: https://docs.sentry.io/platforms/flutter/
-[Firebase Crashlytics]: https://firebase.google.com/docs/crashlytics
+[Firebase Crashlytics]: {{site.firebase}}/docs/crashlytics

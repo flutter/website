@@ -117,5 +117,5 @@ A few notes to be aware of:
 * Upgrading to Flutter 3.10 won't fix this issue.
 
 [deprecated Gradle classes]: https://docs.gradle.org/7.6/javadoc/deprecated-list.html
-[issue 122609]: {{site.github}}/flutter/flutter/issues/122609
+[issue 122609]: {{site.repo.flutter}}/issues/122609
 [splitting out ApplicationId from PackageName]: http://tools.android.com/tech-docs/new-build-system/applicationid-vs-packagename

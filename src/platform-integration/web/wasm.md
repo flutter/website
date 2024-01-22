@@ -33,12 +33,15 @@ like Dart execute code in an efficient manner.
 
 [Chromium and V8][] released stable support for WasmGC in Chromium 119,
 and the Firefox team announced stable support in Firefox 120.
+Note that Chrome on iOS uses WebKit, which doesn't yet 
+[support WasmGC][].
 To see the current status of WasmGC and other proposals,
 check out the [WebAssembly roadmap][].
 
 [WasmGC]: https://github.com/WebAssembly/gc/tree/main/proposals/gc
 [Chromium and V8]: https://chromestatus.com/feature/6062715726462976
 [WebAssembly roadmap]: https://webassembly.org/roadmap/
+[support WasmGC]: https://bugs.webkit.org/show_bug.cgi?id=247394
 
 ### Try it out
 
@@ -97,7 +100,7 @@ package root.
 #### Serve the output locally with an HTTP server
 
 If you don't have a local HTTP server installed, you can use the
-[`dhttpd` package](https://pub.dev/packages/dhttpd):
+[`dhttpd` package]({{site.pub-pkg}}/dhttpd):
 
 ```terminal
 flutter pub global activate dhttpd

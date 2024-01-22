@@ -5,7 +5,7 @@ To generate the needed iOS platform dependencies,
 run the `flutter build` command.
 
 ```terminal
-$ flutter build ios --config-only --no-codesign --debug
+flutter build ios --config-only --no-codesign --debug
 ```
 
 ```terminal

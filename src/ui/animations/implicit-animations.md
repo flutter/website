@@ -3,6 +3,8 @@ title: Implicit animations
 description: Where to find more information on using implicit animations in Flutter.
 ---
 
+{% include docs/yt_shims.liquid %}
+
 With Flutter's [animation library][],
 you can add motion and create visual effects
 for the widgets in your UI.
@@ -15,6 +17,7 @@ The following set of resources provide many ways to learn
 about implicit animations in Flutter.
 
 ## Documentation
+
 [Implicit animations codelab][]
 : Jump right into the code!
   This codelab uses interactive examples
@@ -37,11 +40,11 @@ that every Flutter dev needs to know from top to bottom.
 The following videos cover topics
 that are relevant to implicit animations.
 
-{% comment %} Animation Basics with Implicit Animations {% endcomment %}
+<iframe width="560" height="315" src="{{yt-embed}}/IVTjpW3W33s" title="Learn about basic Flutter animation with implicit animations" {{yt-set}}></iframe>
+[Learn about Animation Basics with Implicit Animations]({{yt-watch}}/IVTjpW3W33s)
 
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/IVTjpW3W33s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-{% comment %} Custom Implicit Animations with Tween Animation Builder {% endcomment %}
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/6KiPEqzJIKQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{yt-embed}}/6KiPEqzJIKQ" title="Learn about building Custom Implicit Animations with TweenAnimationBuilder" {{yt-set}}></iframe>
+[Learn about building Custom Implicit Animations with TweenAnimationBuilder]({{yt-watch}}/6KiPEqzJIKQ)
 
 ## The Boring Show
 
@@ -49,11 +52,11 @@ Watch the Boring Show to follow Google Engineers build apps
 from scratch in Flutter. The following episode covers
 using implicit animations in a news aggregator app.
 
-{% comment %} Implicitly animating the Hacker News app {% endcomment %}
-
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/8ehlWchLVlQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{yt-embed}}/8ehlWchLVlQ" title="about implicitly animating the Hacker News app" {{yt-set}}></iframe>
+[Learn about implicitly animating the Hacker News app]({{yt-watch}}/8ehlWchLVlQ)
 
 ## Widget of the Week videos
+
 A weekly series of short animated videos each showing
 the important features of one particular widget.
 In about 60 seconds, you'll see real code for each
@@ -61,15 +64,16 @@ widget with a demo about how it works.
 The following Widget of the Week videos cover
 implicitly animated widgets:
 
-{% comment %} Animated Opacity {% endcomment %}
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/QZAvjqOqiLY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-{% comment %} Animated Padding {% endcomment %}
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/PY2m0fhGNz4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-{% comment %} Animated Positioned {% endcomment %}
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/hC3s2YdtWt8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-{% comment %} Animated switcher {% endcomment %}
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/2W7POjFb88g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% assign animated-widgets = 'AnimatedOpacity, AnimatedPadding, AnimatedPositioned, AnimatedSwitcher' | split: ", " %}
+{% assign animated-urls = 'QZAvjqOqiLY, PY2m0fhGNz4, hC3s2YdtWt8, 2W7POjFb88g' | split: ", " %}
 
+{% for widget in animated-widgets %}
+{% assign video-url = animated-urls[forloop.index0] %}
+
+<iframe width="560" height="315" src="{{yt-embed}}/{{video-url}}" title="Learn about the {{widget}} Flutter Widget" {{yt-set}}></iframe>
+[Learn about the {{widget}} Flutter Widget]({{yt-watch}}/{{video-url}})
+
+{% endfor -%}
 
 [`AnimatedContainer` sample]: {{site.url}}/cookbook/animation/animated-container
 [`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html

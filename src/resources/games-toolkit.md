@@ -18,8 +18,8 @@ open source licensing, it makes a great choice for games.
 
 Casual games fall into two categories: turn-based games
 and real-time games.
-You may be familiar with both types of games,
-though you might not have thought about them in quite this way.
+You might be familiar with both types of games,
+though perhaps you didn't think about them in quite this way.
 
 _Turn-based games_ cover games meant for a mass market with
 simple rules and gameplay.
@@ -42,8 +42,8 @@ The Casual Games Toolkit provides the following free resources.
 * A repository that includes three new game templates that provide
   a starting point for building a casual game.
 
-  1. A [base game template][basic-template].
-     It includes the basics for:
+  1. A [base game template][basic-template]
+     that includes the basics for:
 
      * Main menu
      * Navigation
@@ -54,15 +54,15 @@ The Casual Games Toolkit provides the following free resources.
      * Sound
      * Themes
 
-  1. A [card game template][card-template].
-     It includes everything in the base template plus:
+  1. A [card game template][card-template]
+     that includes everything in the base template plus:
 
      * Drag and drop
      * Game state management
      * Multiplayer integration hooks
 
   1. An [endless runner template][runner-template] created in partnership
-     with the open source game engine Flame. It implements:
+     with the open source game engine, Flame. It implements:
 
      * A FlameGame base template
      * Player steering
@@ -70,6 +70,11 @@ The Casual Games Toolkit provides the following free resources.
      * Parallax effects
      * Spawning
      * Different visual effects
+
+  1. A sample game built on top of the endless runner template,
+     called SuperDash. You can play the game on iOS, Android,
+     or [web][], [view the open source code repo][], or 
+     [read how the game was created in 6 weeks][].
 
 * Developer guides for integrating needed services.
 * A link to a [Flame Discord][game-discord] channel.
@@ -151,7 +156,7 @@ built with Flutter and Flame include
 ## Other resources
 
 Once you feel ready to go beyond these games templates,
-investigate other resources that our community recommends.
+investigate other resources that our community recommended.
 
 {% assign pkg-icon = '<span class="material-symbols-outlined">package_2</span>' %}
 {% assign doc-icon = '<span class="material-symbols-outlined">quick_reference_all</span>' %}
@@ -296,12 +301,22 @@ investigate other resources that our community recommends.
 </tr>
 
 <tr>
+<td>Level editor</td>
+<td markdown="1">
+
+{{tool-icon}} [Tiled][]
+
+</td>
+</tr>
+
+<tr>
 <td>Monetization</td>
 <td markdown="1">
 
 {{recipe-icon}} [Add advertising to your Flutter game][ads-recipe]<br>
-{{codelab}} [Add AdMob ads to a Flutter app][]<br>
-{{codelab}} [Add in-app purchases to your Flutter app][iap-recipe]
+{{codelab}}  [Add AdMob ads to a Flutter app][]<br>
+{{codelab}}  [Add in-app purchases to your Flutter app][iap-recipe]<br>
+{{doc-icon}} [Gaming UX and Revenue Optimizations for Apps][] (PDF)
 
 </td>
 </tr>
@@ -312,7 +327,7 @@ investigate other resources that our community recommends.
 
 {{pkg-icon}} [shared_preferences][]<br>
 {{pkg-icon}} [sqflite][]<br>
-{{pkg-icon}} [cbl_flutter][]<br>
+{{pkg-icon}} [cbl_flutter][] (Couchbase Lite)<br>
 
 </td>
 </tr>
@@ -348,7 +363,7 @@ investigate other resources that our community recommends.
 [I/O Pinball Powered by Flutter and Firebase]: {{site.medium}}/flutter/di-o-pinball-powered-by-flutter-and-firebase-d22423f3f5d
 [install Flutter]: {{site.url}}/get-started/install
 [Tomb Toad]: https://play.google.com/store/apps/details?id=com.crescentmoongames.tombtoad
-[basic-template-readme]: {{games-gh}}/tree/main/templates/basic/README.md
+[basic-template-readme]: {{games-gh}}/blob/main/templates/basic/README.md
 [basic-template]: {{games-gh}}/tree/main/templates/basic
 [card-template-readme]: {{games-gh}}/blob/main/templates/card/README.md
 [card-template]: {{games-gh}}/tree/main/templates/card
@@ -378,12 +393,13 @@ investigate other resources that our community recommends.
 [Add Firebase to your Flutter game]: {{site.firebase}}/docs/flutter/setup
 [GIMP]: https://www.gimp.org
 [Game Developer Studio]: https://www.gamedeveloperstudio.com
+[Gaming UX and Revenue Optimizations for Apps]: {{site.main-url}}/go/games-revenue
 [Paint API]: {{site.api}}/flutter/dart-ui/Paint-class.html
 [Special effects]: {{site.url}}/cookbook/effects
 [Spriter Pro]: https://store.steampowered.com/app/332360/Spriter_Pro/
 [app_review]: {{site.pub-pkg}}/app_review
 [audioplayers]: {{site.pub-pkg}}/audioplayers
-[cbl_flutter]: Couchbase Lite, {{site.pub-pkg}}/cbl_flutter
+[cbl_flutter]: {{site.pub-pkg}}/cbl_flutter
 [firebase_crashlytics]: {{site.pub-pkg}}/firebase_crashlytics
 [forge2d]: {{site.pub-pkg}}/forge2d
 [game-svc-pkg]: {{site.pub-pkg}}/games_services
@@ -392,3 +408,7 @@ investigate other resources that our community recommends.
 [spriteWidget]: {{site.pub-pkg}}/spritewidget
 [sqflite]: {{site.pub-pkg}}/sqflite
 [win32_gamepad]: {{site.pub-pkg}}/win32_gamepad
+[read how the game was created in 6 weeks]: {{site.flutter-medium}}/how-we-built-the-new-super-dash-demo-in-flutter-and-flame-in-just-six-weeks-9c7aa2a5ad31
+[view the open source code repo]: {{site.github}}/flutter/super_dash
+[web]: https://superdash.flutter.dev/
+[Tiled]: https://www.mapeditor.org/

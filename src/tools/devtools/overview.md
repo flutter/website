@@ -3,6 +3,8 @@ title: DevTools
 description: How to use the DevTools with Flutter.
 ---
 
+{% include docs/yt_shims.liquid %}
+
 ## What is DevTools?
 
 DevTools is a suite of performance and debugging tools
@@ -13,8 +15,8 @@ for Dart and Flutter.
 For a video introduction to DevTools, check out
 the following deep dive and use case walkthrough:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_EYk-E29edo" title="YouTube video player - Dive in to DevTools" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-[Dive in to DevTools](https://www.youtube.com/watch?v=_EYk-E29edo)
+<iframe width="560" height="315" src="{{yt-embed}}/_EYk-E29edo" title="Dive in to Flutter DevTools" {{yt-set}}></iframe>
+[Dive in to DevTools]({{yt-watch}}?v=_EYk-E29edo)
 
 ## What can I do with DevTools?
 
@@ -36,6 +38,7 @@ We expect you to use DevTools in conjunction with
 your existing IDE or command-line based development workflow.
 
 <a id="install-devtools"></a>
+
 ## How do I install DevTools?
 
 See the [VS Code][], [Android Studio/IntelliJ][], or
@@ -73,8 +76,6 @@ without performance impact.
 [Performance > Timeline]: {{site.url}}/tools/devtools/performance#timeline-events-tab
 [UI frames]: {{site.url}}/perf/ui-performance
 
-
-
 ## Providing feedback
 
 Please give DevTools a try, provide feedback, and file issues
@@ -86,7 +87,7 @@ For more information on debugging and profiling
 Flutter apps, see the [Debugging][] page and,
 in particular, its list of [other resources][].
 
-For more information on using DevTools with Dart command-line apps, see the 
+For more information on using DevTools with Dart command-line apps, see the
 [DevTools documentation on dart.dev]({{site.dart-site}}/tools/dart-devtools).
 
 [Android Studio/IntelliJ]: {{site.url}}/tools/devtools/android-studio

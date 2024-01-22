@@ -19,7 +19,7 @@ class AppHome extends StatelessWidget {
           onPressed: () {
             debugDumpApp();
           },
-          child: const Text('Dump App'),
+          child: const Text('Dump Widget Tree'),
         ),
       ),
     );
