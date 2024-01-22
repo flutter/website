@@ -26,11 +26,6 @@
     text-decoration: underline;
   }
 
-  // Remove external link icon and link path
-  a:after {
-    content: none !important;
-  }
-
   // Show borders around notes and code blocks
   .alert, pre {
     border: 1px solid black;

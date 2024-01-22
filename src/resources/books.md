@@ -35,7 +35,7 @@ page to view Flutter's latest release.
 
 {% for book in site.data.books %}
 <div class="book-img-with-details row">
-<a href="{{book.link}}" title="{{book.title}}" class="col-sm-3 no-automatic-external">
+<a href="{{book.link}}" title="{{book.title}}" class="col-sm-3">
   <img src="/assets/images/docs/cover/{{book.cover}}" alt="{{book.title}}">
 </a>
 <div class="details col-sm-9" markdown="1">

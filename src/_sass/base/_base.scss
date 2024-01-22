@@ -294,7 +294,7 @@ main {
 }
 
 td ol, td ul, td dl, td p {
-  margin-bottom: 0rem;
+  margin-bottom: 0;
 }
 
 p + ul, p + ol, p + dl {
@@ -307,7 +307,7 @@ li.breadcrumb-item:last-child {
 }
 
 td ol, td ul, td dl, td p {
-  margin-bottom: 0rem;
+  margin-bottom: 0;
 }
 
 .figure-caption {
@@ -333,6 +333,6 @@ aside {
     }  
   }
   .code-excerpt__code:last-child, div.highlighter-rouge {
-    margin-bottom: 0rem;
+    margin-bottom: 0;
   }
 }
