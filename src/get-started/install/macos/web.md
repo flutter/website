@@ -12,3 +12,5 @@ next:
 {% include docs/install/flutter-sdk.md target='web' os='macOS' terminal='Terminal' -%}
 
 {% include docs/install/flutter-doctor.md target='web' os='macOS' -%}
+
+{% include docs/install/next-steps.md os='macOS' -%}

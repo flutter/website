@@ -91,11 +91,11 @@ widgets in [What is State?][]
     </div>
 </div>
 
-[first-app]: {{site.youtube-site}}/watch?v=xWV71C2kp38
-[What is State?]: {{site.youtube-site}}/watch?v=QlwiL_yLh6E
+[first-app]: {{yt-watch}}?v=xWV71C2kp38
+[What is State?]: {{yt-watch}}?v=QlwiL_yLh6E
 
 {:.text-center}
-<b>Only have 60 seconds? Learn how to build and deploy a Flutter App!</b>
+**Only have 60 seconds? Learn how to build and deploy a Flutter App!**
 
 <div style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
   <iframe style="max-width: 100%" width="560" height="315" src="{{yt-embed}}/ZnufaryH43s" title="Learn how to build and deploy a Flutter app in 60 seconds" {{yt-set}}></iframe>
@@ -121,8 +121,8 @@ using helper methods][standalone-widgets] or
     </div>
 </div>
 
-[standalone-widgets]: {{site.youtube-site}}/watch?v=IOyq-eTRhvo
-[buildcontext]: {{site.youtube-site}}/watch?v=rIaaH87z1-g
+[standalone-widgets]: {{yt-watch}}?v=IOyq-eTRhvo
+[buildcontext]: {{yt-watch}}?v=rIaaH87z1-g
 
 To learn about all of the Flutter video series,
 see our [videos][] page.
