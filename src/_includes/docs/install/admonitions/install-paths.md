@@ -7,6 +7,6 @@
       * The path contains special characters or spaces.
       * The path requires elevated privileges.
 
-      As an example, `C:\Program Files\` fails both conditions.
+      As an example, `C:\Program Files` fails both conditions.
 
    {{site.alert.end}}
