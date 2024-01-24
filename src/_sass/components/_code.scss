@@ -74,7 +74,7 @@ pre.console-output {
   .nv { color: #03bbbb; }
   .o { color: $flutter-color-grey-500; font-weight: bold; } /* Operator */
   .s, .s1, .s2 { color: $flutter-color-blue-on-dark; } /* String, .Single, .Double quotes */
-  .sb { color: $flutter-color-fuchsia; } /* String.Backtick */
+  .sb { color: $flutter-color-light-blue; } /* String.Backtick */
 }
 
 // Match code-prettify classes to the extent possible.
