@@ -9,49 +9,65 @@ developer, or grammar stickler.
 
 Before submitting a PR,
 [search for an issue][search-issue] that covers your concern.
+If one exists, add `Fixes #<found-issue>` to your new PR.
 If you don't find one and your change is significant,
-consider [creating an issue][create-issue]
-that describers the problem and how you would plan to fix it.
+consider [creating an issue][create-issue].
+The issue should describe the problem, how you would plan to fix it,
+and should be assigned to yourself.
 
 When you create a new page or perform a major rewrite of an existing page,
 consider drafting it first in Google Docs to simplify collaboration.
+Once your Google doc has been created,
+add a link to it from your new GitHub issue.
 
 ### Draft changes
 
 1. [Create a branch][create-branch] for your change.
    Consider naming it `fix-<issue_number>` to help others find the related issue.
-   The new branch should be based on the `main` or a feature or version branch.
+   The new branch should be based on the `main` branch or a feature
+   or version branch.
+
+   To branch and set upstream at the same time, use this command:
+
+   ```terminal
+   git checkout -b <fix-issue> upstream main
+   ```
 
 1. Try to limit content changes to those that address the request made in the
    associated issue or doc plan. Use your best judgment.
 
    1. Avoid adjusting indents, line breaks, formatting, and the like
-      unrelated to your PR as part of the PR. Separate different work
-      using a new commit, a separate issue, a separate PR, or some
-      combination.
+      unrelated to your PR as part of the PR whenever possible.
+      To separate work unrelated to the PR, use a new commit,
+      a [separate issue][create-issue], a [separate PR](#submit-pr),
+      or some combination.
 
    1. Explain the reason for the additional changes in the PR summary,
-      if necessary.
+      if necessary. For guidance on what to include in a PR summary,
+      check out [this section in the Blockly docs][blockly-pr-note]
+      or this [PullRequest.com blog post][good-pr-blog-post].
 
 1. Make sure all copy and content meets the standards in the
    [Google Developer Documentation Style Guide][style-guide].
    Focus on the [**Voice and tone**][gs-tone]
    and the [**Highlights**][gs-highlights]
    pages. They provide the best starting points.
+
 1. Using `git`, [commit changes](https://git-scm.com/docs/git-commit) often.
    It simplifies reverting a specific change.
    Reviewers can choose to review changes made since their last review and
    shorten review cycles.
-1. When your draft is complete,
+
+1. When you complete your draft,
    [push the change to GitHub][push-change].
 
-### Submit a PR and request a review
+### Submit a PR and request a review {#submit-pr}
 
 1. [Create a pull request][create-pr]
    and verify that you have the right target branch.
    Most PRs are merged into the `main` branch.
    If you need to target an upcoming release or new feature,
-   your PR might be merged a dedicated branch with a different name.
+   your PR might be merged to a dedicated branch with a different name.
 
 1. Write the PR summary using the following guidelines:
 
@@ -71,7 +87,7 @@ consider drafting it first in Google Docs to simplify collaboration.
       you'd like the reviewer to check.
 
 1. If your PR isn't ready for review,
-   [set it to Draft][set-draft] and
+   [set it to Draft][set-draft] and, if possible,
    [apply the **st.WIP** label][apply-wip-label].
 
 1. Click **Create pull request**. This starts the review process.
@@ -79,7 +95,7 @@ consider drafting it first in Google Docs to simplify collaboration.
 ### Respond to reviewer feedback
 
 1. Read and address comments from the reviewer.
-   Acknowledge all comments with at least add a [reaction emoji][reaction-emoji].
+   Acknowledge all comments with at least a [reaction emoji][reaction-emoji].
    If the changes are technically or grammatically correct, make them.
    Reply to comments that you want to discuss.
    Remember that all comments are public. Keep your replies civil and relevant.
@@ -94,24 +110,26 @@ consider drafting it first in Google Docs to simplify collaboration.
 
 ### General guidelines for reviews
 
-* Technical review comes before content review, or "copy", review.
+* Technical review comes before content, or "copy", review.
 * Lean toward velocity. Aim for _improvement_ over absolute _perfection_.
 * Check the whole page. Sometimes new content contradicts unchanged
   content elsewhere on the same page.
 * Prefer giving an overall note when there's a repeated problem,
   rather than commenting on every instance.
 * Try to **approve** with suggestions wherever possible.
-  Use **request changes** only when the change can harm an end user's work or
-  violates [Flutter's Code of Conduct][code-of-conduct].
+  Use **request changes** only when the change can harm an end user's
+  work.
+* Close PRs that violate [Flutter's Code of Conduct][code-of-conduct].
 
-### Review the technical concerns
+### Perform a technical review
 
 In general, follow these practices.
 
 * Critique the _technical aspects_ of the PR.
-  If the writer makes a change that's technically correct but could be done
-  differently, _approve the PR_.
-* Provide suggested changes with corrected copy to make your change clear.
+  If technical content could be made less complex or more detailed,
+  advise the writer that this is the case in your review.
+  Still _approve the PR_ but only if your changes are included.
+* Provide suggested changes with corrected copy to make your changes clear.
 
 To conduct a consistent technical review in the Flutter website:
 
@@ -120,7 +138,7 @@ To conduct a consistent technical review in the Flutter website:
    1. The writer [requested your review][request-review] of the PR.
 
    1. The writer applied the [**review.tech**][review-tech-label]
-      label to the PR.
+      label to the PR, if possible.
 
    1. The writer didn't set the PR to [Draft mode][set-draft].
       You can provide feedback to a draft issue,
@@ -158,7 +176,7 @@ To conduct a consistent technical review in the Flutter website:
       [**review.tech**][review-tech-label] to
       [**review.await-update**][review-await-label].
 
-### Review the content quality
+### Perform a content review
 
 In general, follow these practices.
 
@@ -229,3 +247,5 @@ To conduct a consistent copy review in the Flutter website:
 [review-await-label](https://github.com/flutter/website/labels/review.await-update)
 [flutter-tree](https://github.com/flutter/flutter/wiki/Tree-hygiene)
 [flutter-style](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo)
+[good-pr-blog-post](https://www.pullrequest.com/blog/writing-a-great-pull-request-description/)
+[blockly-pr-note](https://developers.google.com/blockly/guides/contribute/get-started/write_a_good_pr#communicate-2)
