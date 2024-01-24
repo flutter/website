@@ -7,7 +7,7 @@ follow this procedure.
 1. To start the Simulator, run the following command:
 
     ```terminal
-    open -a Simulator
+    $ open -a Simulator
     ```
 
 1. Set your Simulator to use a 64-bit device.
@@ -17,9 +17,12 @@ follow this procedure.
 
      1. Go to **Window** <span aria-label="and then">></span>
         **Devices and Simulators**.
+
         You can also press <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>2</kbd>.
+
      2. Once the **Devices and Simulators** dialog opens,
         click **Simulators**.
+
      3. Choose a **Simulator** from the left-hand list or press **+** to
         create a new simulator.
 
