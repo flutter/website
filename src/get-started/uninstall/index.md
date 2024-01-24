@@ -60,7 +60,7 @@ Select your development platform from the following tabs.
 {% assign dirconfig='~/' %}
 {% assign path='~/development/' %}
 {% assign prompt='$' %}
-{% assign rm = 'rm -rf' %}
+{% assign rm = 'rm -rf ' %}
 {% assign rm-sdk = rm | append: dirinstall | append: '/flutter' %}
 {% capture dart-files %}
 {{dirconfig}}.dart
