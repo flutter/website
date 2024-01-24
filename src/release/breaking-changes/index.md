@@ -63,6 +63,7 @@ release, and listed in alphabetical order:
 * [Updated default text styles for menus][]
 * [Windows: External windows should notify Flutter engine of lifecycle changes][]
 * [Windows build path changed to add the target architecture][]
+* [Migrating to Material 3][]
 
 [Migrate ShortcutActivator and ShortcutManager to KeyEvent system]: {{site.url}}/release/breaking-changes/shortcut-key-event-migration
 [The `ThemeData.useMaterial3` property is now set to true by default]: {{site.url}}/release/breaking-changes/material-3-default
@@ -76,6 +77,7 @@ release, and listed in alphabetical order:
 [Updated default text styles for menus]: {{site.url}}/release/breaking-changes/menus-text-style
 [Windows: External windows should notify Flutter engine of lifecycle changes]: {{site.url}}/release/breaking-changes/win-lifecycle-process-function
 [Windows build path changed to add the target architecture]: {{site.url}}/release/breaking-changes/windows-build-architecture
+[Migrating to Material 3]: {{site.url}}/release/breaking-changes/material-3-migration
 
 ### Released in Flutter 3.13
 

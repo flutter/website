@@ -151,6 +151,8 @@
       permalink: /cookbook/design/themes
     - title: Material design
       permalink: /ui/design/material
+   - title: Material 3 migration
+      permalink: /release/breaking-changes/material-3-migration
     - title: Text
       permalink: /ui/design/text
       children:

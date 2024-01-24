@@ -6,20 +6,19 @@ description: >-
 
 ## Summary
 
-The Material library has been updated to match the Material 3 Design
-spec.  Changes include new components and component themes,
-updated component visuals, and much more. Many of these updates
-are seamless. You’ll see the new version of the widget when recompiling
-your app against the 3.16 (or later) release. But some manual work is also
-required to complete the migration.
+The Material library has been updated to match the Material 3 Design spec.
+Changes include new components and component themes, updated component visuals,
+and much more. Many of these updates are seamless. You’ll see the new version
+of an affected widget when recompiling your app against the 3.16 (or later)
+release. But some manual work is also required to complete the migration.
 
 ## Migration guide
 
 Prior to the 3.16 release, you could opt in to the Material 3 changes by
-setting `useMaterial3` flag to true. As of the Flutter 3.16 release
+setting the `useMaterial3` flag to true. As of the Flutter 3.16 release
 (November 2023), useMaterial3 is true by default.
 
-By the way, you _can_ recapture Material 2 behavior in your app by setting
+By the way, you _can_ recapture Material 2 behavior in your app by setting the
 `useMaterial3` to `false`. However, this is just a temporary solution. The
 `useMaterial3` flag _and_ the Material 2 implementation will eventually be
 removed as part of Flutter’s deprecation policy.
@@ -60,15 +59,16 @@ color scheme, check out the [`ColorScheme` from a network image][] sample.
 
 [`ColorScheme` from a network image]: {{site.api}}/flutter/material/ColorScheme/fromImageProvider.html
 
-Changes to Flutter Material 3 include:
-A new background color.
+Changes to Flutter Material 3 include a new background color.
 `ColorScheme.surfaceTint` indicates an elevated widget.
 Some widgets use different colors.
 
-To return your app’s UI to its previous behavior:
-Set `Colors.grey[50]!` to `ColorScheme.background`(when the theme is
-`Brightness.light`); set  `Colors.grey[850]!`to `ColorScheme.background`
-(when the theme is `Brightness.dark`).
+To return your app’s UI to its previous behavior (which we don't particularly
+recommend):
+* Set `Colors.grey[50]!` to `ColorScheme.background`
+   (when the theme is `Brightness.light`).
+* Set  `Colors.grey[850]!`to `ColorScheme.background`
+   (when the theme is `Brightness.dark`).
 
 Code before migration:
 
@@ -97,15 +97,15 @@ darkTheme: ThemeData(
 ),
 ```
 
-The `ColorScheme.surfaceTint` value indicates a component's
-elevation in Material 3. Some widgets might use
-both `surfaceTint` and `shadowColor` to indicate elevation (for example, `Card`
-and `ElevatedButton`) and others might only use `surfaceTint` to indicate
-elevation (such as `AppBar`). To achieve a widget’s previous behavior, set
-`Colors.transparent` to `ColorScheme.surfaceTint` in the theme. To
-differentiate a widget’s shadow from the content (when it had no shadow), set
-`ColorScheme.shadow` color to the shadowColor property in the widget theme
-without a default shadow color.
+The `ColorScheme.surfaceTint` value indicates a component's elevation in
+Material 3. Some widgets might use both `surfaceTint` and `shadowColor` to
+indicate elevation (for example, `Card` and `ElevatedButton`) and others might
+only use `surfaceTint` to indicate elevation (such as `AppBar`).
+
+If you must return to a widget’s previous behavior, set, set `Colors.transparent`
+to `ColorScheme.surfaceTint` in the theme. To differentiate a widget’s shadow
+from the content (when it has no shadow), set the `ColorScheme.shadow` color to
+the `shadowColor` property in the widget theme without a default shadow color.
 
 Code before migration:
 
@@ -159,15 +159,16 @@ ElevatedButton(
 
 ### Typography
 
-The default values for `ThemeData.textTheme` is updated to match the Material 3.
-Changes include updated font size, font weight, letter spacing, and line height.
-For more details, check out the [`TextTheme`][] documentation for more details.
+The default values for `ThemeData.textTheme` are updated to match the
+Material 3 defaults. Changes include updated font size, font weight, letter
+spacing, and line height. For more details, check out the [`TextTheme`][]
+documentation.
 
-For instance, prior to 3.16 release when a `Text` widget with a long string
-using `TextTheme.bodyLarge` in a constrained layout wrapped the text into two
-lines. However, The 3.16 release wraps the text into three lines. To achieve
-the previous behavior, adjust the text style and if necessary, the letter
-spacing.
+As shown in the following example, prior to the 3.16 release, when a `Text`
+widget with a long string using `TextTheme.bodyLarge` in a constrained layout
+wrapped the text into two lines. However, the 3.16 release wraps the text into
+three lines. If you must achieve the previous behavior, adjust the text style
+and, if necessary, the letter spacing.
 
 Code before migration:
 
@@ -252,7 +253,7 @@ NavigationBar(
 Check out the complete sample on
 [migrating from BottomNavigationBar from NavigationBar][].
 
-Replace the [`Drawer`][] widget with [`NavigationDrawer`][], provides
+Replace the [`Drawer`][] widget with [`NavigationDrawer`][], which provides
 pill-shaped navigation indicators, rounded corners, and new color mappings.
 
 Code before migration:
@@ -317,10 +318,10 @@ NavigationDrawer(
 Check out the complete sample on [migrating from Drawer from NavigationDrawer][].
 
 Material 3 introduces medium and large app bars that display a larger headline
-before scrolling. Instead of a drop shadow, `ColorScheme.surfaceTint` fills
-color to create a separation from the content when scrolling.
+before scrolling. Instead of a drop shadow, `ColorScheme.surfaceTint` color
+is used create a separation from the content when scrolling.
 
-The following demonstrates how to implement the medium app bar:
+The following code demonstrates how to implement the medium app bar:
 
 ```dart
 CustomScrollView(
@@ -351,7 +352,7 @@ Secondary tabs are used within a content area to further separate
 related content and establish hierarchy. Check out the [`TabBar.secondary`][]
 example.
 
-A new [`TabBar.tabAlignment`][] property specifies the horizontal alignment
+The new [`TabBar.tabAlignment`][] property specifies the horizontal alignment
 of the tabs.
 
 The following sample shows how to modify tab alignment in a scrollable `TabBar`:
@@ -436,7 +437,7 @@ Check out the complete sample on
     a [`MenuBar`][] or a [`MenuAnchor`][]. The new menu system isn't
     something that existing applications must migrate to, however
     applications that are deployed on the web or on desktop platforms
-    should consider using it instead of `PopupMenuButton` (and related classes).
+    should consider using it instead of `PopupMenuButton` (and related) classes.
  * [`DropdownMenu`][] combines a text field and a menu to
     produce what's sometimes called a _combo box_. Users can select
     a menu item from a potentially large list by entering a
@@ -450,7 +451,8 @@ Check out the complete sample on
  * [`Badge`][] decorates its child with a small label of just a few
     characters. Like '+1'. Badges are typically used to decorate the icon
     within a `NavigationDestination`, a `NavigationRailDestination`,
-    `NavigationDrawerDestination`, or a button's icon, as in TextButton.icon.
+    A `NavigationDrawerDestination`, or a button's icon, as in
+    `TextButton.icon`.
  * [`FilledButton`] and [`FilledButton.tonal`][] are very similar to an
     `ElevatedButton` without the elevation changes and drop shadow.
  * [`FilterChip.elevated`][], [`ChoiceChip.elevated`][], and
