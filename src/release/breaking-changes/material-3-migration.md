@@ -1,7 +1,7 @@
 ---
-title: Migrating to Material 3
+title: Migrate to Material 3
 description: >-
-  Migration guide for updating your UI from Material 2 to Material 3.
+  Learn how to migrate your Flutter app's UI from Material 2 to Material 3.
 ---
 
 ## Summary
@@ -113,7 +113,7 @@ Code before migration:
 theme: ThemeData(
   colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
 ),
-``
+```
 
 Code after migration:
 
