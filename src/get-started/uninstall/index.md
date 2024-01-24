@@ -29,7 +29,7 @@ Select your development platform from the following tabs.
 
 {% case os %}
 {% when 'Windows' -%}
-{% assign dirinstall='C:\dev\' %}
+{% assign dirinstall='C:\user\{username}\dev\' %}
 {% assign localappdata='%LOCALAPPDATA%\' %}
 {% assign appdata='%APPDATA%\' %}
 {% assign ps-localappdata='$env:LOCALAPPDATA\' %}
@@ -38,7 +38,7 @@ Select your development platform from the following tabs.
 {% assign path='C:\user\{username}\dev' %}
 {% assign prompt='C:\>' %}
 {% assign terminal='PowerShell' %}
-{% assign rm = 'Remove-Item -Recurse -Force -Path ' %}
+{% assign rm = 'Remove-Item -Recurse -Force -Path' %}
 {% capture rm-sdk %}Remove-Item -Recurse -Force -Path '{{dirinstall}}flutter'{% endcapture %}
 {% capture dart-files %}
 {{localappdata}}.dartServer
@@ -50,7 +50,7 @@ Select your development platform from the following tabs.
 {% endcapture %}
 {% capture flutter-files %}{{appdata}}.flutter-devtools{% endcapture %}
 {% capture rm-flutter-files %}
-{{prompt}} {{rm}} {{flutter-files}}
+{{prompt}} {{rm}} {{ps-appdata}}.flutter-devtools
 {% endcapture %}
 {% capture rm-pub-dir %}
 {{prompt}} {{rm}} {{ps-localappdata}}Pub\Cache
@@ -60,7 +60,7 @@ Select your development platform from the following tabs.
 {% assign dirconfig='~/' %}
 {% assign path='~/development/' %}
 {% assign prompt='$' %}
-{% assign rm = 'rm -rf ' %}
+{% assign rm = 'rm -rf' %}
 {% assign rm-sdk = rm | append: dirinstall | append: '/flutter' %}
 {% capture dart-files %}
 {{dirconfig}}.dart
