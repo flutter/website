@@ -14,7 +14,7 @@ features and assets when needed by the user.
 
 We refer to each uniquely downloadable bundle of Dart
 libraries and assets as a "deferred component".
-To load these, use Dart's deferred imports.
+To load these components, use [Dart's deferred imports][dart-def-import].
 They can be compiled into split AOT and JavaScript shared libraries.
 
 {{site.alert.note}}
@@ -602,3 +602,5 @@ Play store's delivery feature.
 [release or profile mode]: {{site.url}}/testing/build-modes
 [step 3.3]: #step-3.3
 [android-app-bundle]: {{site.android-dev}}/guide/app-bundle
+[dart-def-import]: https://dart.dev/language/libraries#lazily-loading-a-library
+
