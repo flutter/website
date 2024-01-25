@@ -156,7 +156,7 @@ built with Flutter and Flame include
 ## Other resources
 
 Once you feel ready to go beyond these games templates,
-investigate other resources that our community recommends.
+investigate other resources that our community recommended.
 
 {% assign pkg-icon = '<span class="material-symbols-outlined">package_2</span>' %}
 {% assign doc-icon = '<span class="material-symbols-outlined">quick_reference_all</span>' %}
@@ -301,6 +301,15 @@ investigate other resources that our community recommends.
 </tr>
 
 <tr>
+<td>Level editor</td>
+<td markdown="1">
+
+{{tool-icon}} [Tiled][]
+
+</td>
+</tr>
+
+<tr>
 <td>Monetization</td>
 <td markdown="1">
 
@@ -354,7 +363,7 @@ investigate other resources that our community recommends.
 [I/O Pinball Powered by Flutter and Firebase]: {{site.medium}}/flutter/di-o-pinball-powered-by-flutter-and-firebase-d22423f3f5d
 [install Flutter]: {{site.url}}/get-started/install
 [Tomb Toad]: https://play.google.com/store/apps/details?id=com.crescentmoongames.tombtoad
-[basic-template-readme]: {{games-gh}}/tree/main/templates/basic/README.md
+[basic-template-readme]: {{games-gh}}/blob/main/templates/basic/README.md
 [basic-template]: {{games-gh}}/tree/main/templates/basic
 [card-template-readme]: {{games-gh}}/blob/main/templates/card/README.md
 [card-template]: {{games-gh}}/tree/main/templates/card
@@ -402,4 +411,4 @@ investigate other resources that our community recommends.
 [read how the game was created in 6 weeks]: {{site.flutter-medium}}/how-we-built-the-new-super-dash-demo-in-flutter-and-flame-in-just-six-weeks-9c7aa2a5ad31
 [view the open source code repo]: {{site.github}}/flutter/super_dash
 [web]: https://superdash.flutter.dev/
-
+[Tiled]: https://www.mapeditor.org/

@@ -640,7 +640,7 @@ Key information:
 [ClipRect]: {{site.api}}/flutter/widgets/ClipRect-class.html
 [Create a new Flutter example]: {{site.url}}/get-started/test-drive
 [`createRectTween`]: {{site.api}}/flutter/widgets/CreateRectTween.html
-[`debugPaintSizeEnabled`]: {{site.url}}/testing/code-debugging#debug-flags-layout
+[`debugPaintSizeEnabled`]: {{site.url}}/tools/devtools/inspector#debugging-layout-issues-visually
 [`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html
 [hero_animation]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/hero_animation/
 [`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html

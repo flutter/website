@@ -485,9 +485,9 @@ For more details, see
 [device pixel ratio]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
 [Device pixel ratio]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
 [drawables]: {{site.android-dev}}/guide/topics/resources/drawable-resource
-[`FlutterPluginRegistrar`]: {{site.api}}/objcdoc/Protocols/FlutterPluginRegistrar.html
+[`FlutterPluginRegistrar`]: {{site.api}}/ios-embedder/protocol_flutter_plugin_registrar-p.html
 [`FlutterView`]: {{site.api}}/javadoc/io/flutter/view/FlutterView.html
-[`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html
+[`FlutterViewController`]: {{site.api}}/ios-embedder/interface_flutter_view_controller.html
 [Human Interface Guidelines]: {{site.apple-dev}}/design/human-interface-guidelines/app-icons
 [`ios_platform_images`]: {{site.pub}}/packages/ios_platform_images
 [layer list drawable]: {{site.android-dev}}/guide/topics/resources/drawable-resource#LayerList

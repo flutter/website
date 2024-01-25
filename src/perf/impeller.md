@@ -117,7 +117,7 @@ flutter run --enable-impeller
 ```
 
 Or, you can add the following setting to your project’s
-`AndroidManiest.xml` file under the `<application>` tag:
+`AndroidManifest.xml` file under the `<application>` tag:
 
 ```xml
 <meta-data

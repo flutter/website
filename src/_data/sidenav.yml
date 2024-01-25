@@ -1,14 +1,12 @@
 - title: Get started
   children:
-    - title: 1. Install
+    - title: Install Flutter
       permalink: /get-started/install
-    - title: 2. Set up an editor
-      permalink: /get-started/editor
-    - title: 3. Test drive
+    - title: Test drive
       permalink: /get-started/test-drive
-    - title: 4. Write your first app
+    - title: Write your first app
       permalink: /get-started/codelab
-    - title: 5. Learn more
+    - title: Learn more
       permalink: /get-started/learn-more
     - divider
     - title: From another platform?
@@ -612,6 +610,8 @@
           permalink: /tools/devtools/logging
         - title: App size tool
           permalink: /tools/devtools/app-size
+        - title: DevTools extensions
+          permalink: /tools/devtools/extensions
         - title: Release notes
           permalink: /tools/devtools/release-notes
     - title: SDK overview

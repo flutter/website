@@ -523,7 +523,7 @@ and the [Flutter 3.3 release notes][3.3 release notes].
 [Build and release a Windows desktop app]: {{site.url}}/deployment/windows
 [Developer mode]: {{site.apple-dev}}/documentation/xcode/enabling-developer-mode-on-a-device
 [Handling errors in Flutter]: {{site.url}}/testing/errors
-[macOS install]: {{site.url}}/get-started/install/macos#install-xcode
+[macOS install]: {{site.url}}/get-started/install/macos/mobile-ios#configure-xcode
 [navigation and routing overview]: {{site.url}}/ui/navigation
 [URL strategies]: {{site.url}}/ui/navigation/url-strategies
 
