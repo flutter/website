@@ -16,7 +16,7 @@ release. But some manual work is also required to complete the migration.
 
 Prior to the 3.16 release, you could opt in to the Material 3 changes by
 setting the `useMaterial3` flag to true. As of the Flutter 3.16 release
-(November 2023), useMaterial3 is true by default.
+(November 2023), `useMaterial3` is true by default.
 
 By the way, you _can_ recapture Material 2 behavior in your app by setting the
 `useMaterial3` to `false`. However, this is just a temporary solution. The
@@ -251,7 +251,7 @@ NavigationBar(
 ```
 
 Check out the complete sample on
-[migrating from BottomNavigationBar from NavigationBar][].
+[migrating from `BottomNavigationBar` to `NavigationBar`][].
 
 Replace the [`Drawer`][] widget with [`NavigationDrawer`][], which provides
 pill-shaped navigation indicators, rounded corners, and new color mappings.
@@ -315,7 +315,7 @@ NavigationDrawer(
 ),
 ```
 
-Check out the complete sample on [migrating from Drawer from NavigationDrawer][].
+Check out the complete sample on [migrating from `Drawer` to `NavigationDrawer`][].
 
 Material 3 introduces medium and large app bars that display a larger headline
 before scrolling. Instead of a drop shadow, `ColorScheme.surfaceTint` color
@@ -424,15 +424,15 @@ SegmentedButton<Weather>(
 ```
 
 Check out the complete sample on
-[migrating from ToggleButtons from SegmentedButton][].
+[migrating from `ToggleButtons` to `SegmentedButton`][].
 
-[migrating from BottomNavigationBar from NavigationBar]: {{site.api}}/flutter/material/BottomNavigationBar-class.html#material.BottomNavigationBar.2
-[migrating from Drawer from NavigationDrawer]: {{site.api}}/flutter/material/Drawer-class.html#material.Drawer.2
-[migrating from ToggleButtons from SegmentedButton]: {{site.api}}/flutter/material/ToggleButtons-class.html#material.ToggleButtons.1
+[migrating from `BottomNavigationBar` to `NavigationBar`]: {{site.api}}/flutter/material/BottomNavigationBar-class.html#material.BottomNavigationBar.2
+[migrating from `Drawer` to `NavigationDrawer`]: {{site.api}}/flutter/material/Drawer-class.html#material.Drawer.2
+[migrating from `ToggleButtons` to `SegmentedButton`]: {{site.api}}/flutter/material/ToggleButtons-class.html#material.ToggleButtons.1
 
 #### New components
 
- * `MenuBars and Cascading Menus` provide a desktop-style menu system that is
+ * "Menu bars and cascading menus" provide a desktop-style menu system that is
     fully traversable with the mouse or keyboard. Menus are anchored by
     a [`MenuBar`][] or a [`MenuAnchor`][]. The new menu system isn't
     something that existing applications must migrate to, however
