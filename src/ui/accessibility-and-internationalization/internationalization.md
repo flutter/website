@@ -6,6 +6,12 @@ description: How to internationalize your Flutter app.
 
 <?code-excerpt path-base="internationalization"?>
 
+{% comment %}
+Consider updating the number of languages when touching this page.
+{% endcomment %}
+
+{% assign languageCount = '115' -%}
+
 {{site.alert.secondary}}
   <h4 class="no_toc">What you'll learn</h4>
 
@@ -51,12 +57,8 @@ To add support for other languages,
 an application must specify additional
 `MaterialApp` (or `CupertinoApp`) properties,
 and include a package called `flutter_localizations`.
-As of December 2023, this package supports [115 languages][language-count]
+As of December 2023, this package supports [{{languageCount}} languages][language-count]
 and language variants.
-
-{% comment %}
-Consider updating the number of languages when touching this page.
-{% endcomment %}
 
 To begin, start by creating a new Flutter application
 in a directory of your choice with the `flutter create` command.
@@ -116,7 +118,7 @@ After introducing the `flutter_localizations` package
 and adding the previous code,
 the `Material` and `Cupertino`
 packages should now be correctly localized in
-one of the 115 supported locales.
+one of the {{languageCount}} supported locales.
 Widgets should be adapted to the localized messages,
 along with correct left-to-right or right-to-left layout.
 
@@ -777,7 +779,7 @@ Locale myLocale = Localizations.localeOf(context);
 ### Specifying the app's supported&shy;Locales parameter
 
 Although the `flutter_localizations` library currently supports
-113 languages and language variants, only English language translations
+{{languageCount}} languages and language variants, only English language translations
 are available by default. It's up to the developer to decide exactly
 which languages to support.
 
