@@ -301,6 +301,15 @@ investigate other resources that our community recommended.
 </tr>
 
 <tr>
+<td>Level editor</td>
+<td markdown="1">
+
+{{tool-icon}} [Tiled][]
+
+</td>
+</tr>
+
+<tr>
 <td>Monetization</td>
 <td markdown="1">
 
@@ -402,4 +411,4 @@ investigate other resources that our community recommended.
 [read how the game was created in 6 weeks]: {{site.flutter-medium}}/how-we-built-the-new-super-dash-demo-in-flutter-and-flame-in-just-six-weeks-9c7aa2a5ad31
 [view the open source code repo]: {{site.github}}/flutter/super_dash
 [web]: https://superdash.flutter.dev/
-
+[Tiled]: https://www.mapeditor.org/

@@ -1,10 +1,19 @@
 {% assign target = include.target %}
+{% case target %}
+{% when 'mobile-ios' %}
+{% assign v-target = "iOS" %}
+{% when 'mobile-android' %}
+{% assign v-target = "Android" %}
+{% else %}
+{% assign v-target = target %}
+{% endcase %}
 {% assign os = include.os %}
 
-## System requirements
+## Verify system requirements
 
 To install and run Flutter,
-your {{os}} environment must meet these requirements:
+your {{os}} environment must meet the following hardware
+and software requirements.
 
 ### Hardware requirements
 
@@ -14,7 +23,7 @@ minimal hardware requirements.
 <div class="table-wrapper" markdown="1">
 |     Requirement              |                                    Minimum                               |    Recommended      |
 |:-----------------------------|:------------------------------------------------------------------------:|:-------------------:|
-| x86_64 CPU Cores             | 4                                                                        | 8                   |
+| CPU Cores                    | 4                                                                        | 8                   |
 | Memory in GB                 | 8                                                                        | 16                  |
 | Display resolution in pixels | WXGA (1366 x 768)                                                        | FHD (1920 x 1080)   |
 | Free disk space in GB        | {% include docs/install/reqs/macos/storage.md target=target %}
@@ -22,26 +31,30 @@ minimal hardware requirements.
 
 ### Software requirements
 
-To write and compile Flutter code for {{target}},
-you must have the following version of macOS and the listed
-software packages.
+To write and compile Flutter code for {{v-target}},
+install the following packages.
 
 #### Operating system
 {:.no_toc}
 
 Flutter supports macOS {{site.devmin.macos}} or later.
+This guide presumes your Mac runs the `zsh` as your default shell.
+
+{% include docs/install/reqs/macos/zsh-config.md target=target %}
 
 {% include docs/install/reqs/macos/apple-silicon.md %}
 
 #### Development tools
 {:.no_toc}
 
-Download and install the macOS version of the following packages:
+Download and install the following packages.
 
 {% include docs/install/reqs/macos/software.md target=target %}
 
 The developers of the preceding software provide support for those products.
 To troubleshoot installation issues, consult that product's documentation.
+
+{% include /docs/install/reqs/flutter-sdk/flutter-doctor-precedence.md %}
 
 #### Text editor or integrated development environment
 {:.no_toc}

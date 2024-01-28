@@ -3,6 +3,8 @@ title: Using the Memory view
 description: Learn how to use the DevTools memory view.
 ---
 
+{% include docs/yt_shims.liquid %}
+
 The memory view provides insights into details
 of the application's memory allocation and
 tools to detect and debug specific issues.
@@ -43,6 +45,18 @@ and releases (or deallocates) the memory when the object
 is no longer used (see [Dart garbage collection][]).
 
 [Dart garbage collection]: {{site.medium}}/flutter/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30
+
+### Object types
+
+#### Disposable object
+
+A disposable object is any Dart object that defines a `dispose()` method.
+To avoid memory leaks, invoke `dispose` when the object isn't needed anymore.
+
+#### Memory-risky object
+
+A memory-risky object is an object that _might_ cause a memory leak,
+if it is not disposed properly or disposed but not GCed.
 
 ### Root object, retaining path, and reachability
 

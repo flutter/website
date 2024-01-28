@@ -35,7 +35,7 @@ For an example using SwiftUI, see the iOS directory in [News Feed App][].
 Your development environment must meet the
 [macOS system requirements for Flutter][]
 with [Xcode installed][].
-Flutter supports iOS 11 and later.
+Flutter supports iOS 12 and later.
 Additionally, you will need [CocoaPods][]
 version 1.10 or later.
 
@@ -498,12 +498,12 @@ You can now [add a Flutter screen][] to your existing application.
 [debugging functionalities such as hot-reload and DevTools]: {{site.url}}/add-to-app/debugging
 [Embed with CocoaPods and Flutter tools]: #option-a---embed-with-cocoapods-and-the-flutter-sdk
 [increases your app size]: {{site.url}}/resources/faq#how-big-is-the-flutter-engine
-[macOS system requirements for Flutter]: {{site.url}}/get-started/install/macos#system-requirements
+[macOS system requirements for Flutter]: {{site.url}}/get-started/install/macos/mobile-ios#system-requirements
 [On iOS 14 and higher]: {{site.apple-dev}}/news/?id=0oi77447
 [Podfile target]: https://guides.cocoapods.org/syntax/podfile.html#target
 [static or dynamic frameworks]: {{site.so}}/questions/32591878/ios-is-it-a-static-or-a-dynamic-framework
 [VS Code]: {{site.url}}/tools/vs-code
 [XCFrameworks]: {{site.apple-dev}}/documentation/xcode_release_notes/xcode_11_release_notes
-[Xcode installed]: {{site.url}}/get-started/install/macos#install-xcode
+[Xcode installed]: {{site.url}}/get-started/install/macos/mobile-ios#configure-xcode
 [News Feed app]: https://github.com/flutter/put-flutter-to-work/tree/022208184ec2623af2d113d13d90e8e1ce722365
 [Debugging your add-to-app module]: {{site.url}}/add-to-app/debugging/

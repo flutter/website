@@ -207,15 +207,15 @@ see [multiple Flutters][].
 [`DartExecutor.executeDartEntrypoint()`]: {{site.api}}/javadoc/io/flutter/embedding/engine/dart/DartExecutor.html#executeDartEntrypoint-io.flutter.embedding.engine.dart.DartExecutor.DartEntrypoint-
 [`FlutterActivity.createDefaultIntent()`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html#createDefaultIntent-android.content.Context-
 [`FlutterActivity.withCachedEngine()`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html#withCachedEngine-java.lang.String-
-[`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html
-[`FlutterViewController initWithProject: nibName: bundle:`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html#/c:objc(cs)FlutterViewController(im)initWithProject:nibName:bundle:
-[`initWithEngine: nibName: bundle:`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html#/c:objc(cs)FlutterViewController(im)initWithEngine:nibName:bundle:
+[`FlutterViewController`]: {{site.api}}/ios-embedder/interface_flutter_view_controller.html
+[`FlutterViewController initWithProject: nibName: bundle:`]: {{site.api}}/ios-embedder/interface_flutter_view_controller.html#aa3aabfb89e958602ce6a6690c919f655
+[`initWithEngine: nibName: bundle:`]: {{site.api}}/ios-embedder/interface_flutter_view_controller.html#a0aeea9525c569d5efbd359e2d95a7b31
 [`Intent`]: {{site.android-dev}}/reference/android/content/Intent.html
-[ios-engine]: {{site.api}}/objcdoc/Classes/FlutterEngine.html
+[ios-engine]: {{site.api}}/ios-embedder/interface_flutter_engine.html
 [`Layer`]: {{site.api}}/flutter/rendering/Layer-class.html
 [multiple Flutters]: {{site.url}}/add-to-app/multiple-flutters
 [`runApp()`]: {{site.api}}/flutter/widgets/runApp.html
-[`runWithEntrypoint:`]: {{site.api}}/objcdoc/Classes/FlutterEngine.html#/c:objc(cs)FlutterEngine(im)runWithEntrypoint:
+[`runWithEntrypoint:`]: {{site.api}}/ios-embedder/interface_flutter_engine.html#a019d6b3037eff6cfd584fb2eb8e9035e
 [snapshot]: {{site.github}}/dart-lang/sdk/wiki/Snapshots
 [`startActivity()`]: {{site.android-dev}}/reference/android/content/Context.html#startActivity(android.content.Intent
 [`Surface`]: {{site.android-dev}}/reference/android/view/Surface

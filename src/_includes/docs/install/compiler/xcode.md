@@ -8,7 +8,7 @@
 
 To develop Flutter apps for {{os}}, install Xcode to compile to native bytecode.
 
-1. To configure the Xcode command-line tools to use the installed version,
+1. To configure the command-line tools to use the installed version of Xcode,
    run the following commands.
 
     ```terminal
@@ -74,31 +74,30 @@ With Xcode, you can run Flutter apps on an iOS device or on the simulator.
 ### Install CocoaPods
 
 If your apps depend on [Flutter plugins][] with native {{os}} code,
-install CocoaPods. Built using Ruby,
-CocoaPods handles the bundling of various dependencies across Flutter
-and {{os}} code.
+install [CocoaPods][cocoapods].
+This program bundles various dependencies across Flutter and {{os}} code.
 
-To [install and set up CocoaPods][cocoapods], run the following commands:
+To install and set up CocoaPods, run the following commands:
 
-1. Install Homebrew if necessary.
-
-   ```terminal
-   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-   ```
-
-1. Install `ruby` using Homebrew.
+1. Install `cocoapods` following the
+   [CocoaPods install guide][cocoapods].
 
    ```terminal
-   {{prompt1}} brew install ruby
+   $ sudo gem install cocoapods
+   ```
+1. Launch your preferred text editor.
+
+1. Open the Zsh environmental variable file `~/.zshenv` in your text editor.
+
+1. Copy the following line and paste it at the end of your `~/.zshenv` file.
+
+   ```conf
+   export PATH=$HOME/.gem/bin:$PATH
    ```
 
-1. Install `cocoapods` using Homebrew.
+1. Save your `~/.zshenv` file.
 
-   ```terminal
-   {{prompt1}} brew install cocoapods
-   ```
-
-Using Homebrew reduces potential issues with chipsets and install permissions.
+1. To apply this change, restart all open terminal sessions.
 
 [Flutter plugins]: {{site.url}}/packages-and-plugins/developing-packages#types
-[cocoapods]: https://formulae.brew.sh/formula/cocoapods
+[cocoapods]: https://guides.cocoapods.org/using/getting-started.html#installation

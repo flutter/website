@@ -11,7 +11,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  pigeon: ^15.0.1
+  pigeon: ^16.0.0
 
   cupertino_icons: ^1.0.6
 

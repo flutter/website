@@ -89,16 +89,13 @@ follow Microsoft's instructions for the relevant platform:
 1. Type `doctor`.
 
 1. Select the **Flutter: Run Flutter Doctor**.
-   Flutter Doctor runs and its response displays in the **Output** panel.
 
-1. Go to **View** <span aria-label="and then">></span> **Output**.
+   Once you select this command, VS Code does the following.
 
-   You can also press <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +
-   <kbd>Shift</kbd> + <kbd>U</kbd>.
-
-1. In the dropdown on the upper right of the **Output** panel,
-   select **flutter (flutter)**.
-
+   - Opens the **Output** panel.
+   - Displays **flutter (flutter)** in the dropdown on the upper right
+     of this panel.
+   - Displays the output of Flutter Doctor command.
 
 </div>
 <div class="tab-pane" id="androidstudio" role="tabpanel" aria-labelledby="androidstudio-tab" markdown="1">

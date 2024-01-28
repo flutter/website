@@ -286,12 +286,15 @@ summary {
   margin-bottom: 1rem;
 }
 
-ol + img, ul + img, ol + p, ul + p, p + p + img, li:last-child, ul + p:last-child {
-  margin-bottom: 1rem;
+main {
+  ol + img, ul + img, ol + p, ul + p,
+  p + p + img, li:last-child, ul + p:last-child {
+    margin-bottom: 1rem;
+  }
 }
 
 td ol, td ul, td dl, td p {
-  margin-bottom: 0rem;
+  margin-bottom: 0;
 }
 
 p + ul, p + ol, p + dl {
@@ -304,7 +307,7 @@ li.breadcrumb-item:last-child {
 }
 
 td ol, td ul, td dl, td p {
-  margin-bottom: 0rem;
+  margin-bottom: 0;
 }
 
 .figure-caption {
@@ -330,6 +333,6 @@ aside {
     }  
   }
   .code-excerpt__code:last-child, div.highlighter-rouge {
-    margin-bottom: 0rem;
+    margin-bottom: 0;
   }
 }

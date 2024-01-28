@@ -4,6 +4,8 @@ description: >-
   Codelabs to help you quickly get started programming Flutter.
 ---
 
+{% include docs/yt_shims.liquid %}
+
 The Flutter codelabs provide a guided,
 hands-on coding experience. Some codelabs
 run in DartPad&mdash;no downloads required!
@@ -271,13 +273,6 @@ Learn how to test your Flutter application.
 Learn how to write code that's targeted for specific platforms,
 like iOS, Android, desktop, or the web.
 
-* [Building a Cupertino app with Flutter][]<br>
-  Build a version of the Shrine shopping app
-  (used in the Material Design codelabs) using the
-  Cupertino package to create an iOS style look and feel.
-  Create multiple tabs and navigate between them.
-  Use the [provider][] package to manage state between screens.
-
 * [How to write a Flutter plugin][]<br>
   Learn how to write a plugin by creating a music plugin
   for iOS and Android that processes audio on the host platform.
@@ -301,7 +296,6 @@ like iOS, Android, desktop, or the web.
   on iOS. This applies to your home screen, lock screen, or the
   today view.
 
-[Building a Cupertino app with Flutter]: {{site.codelabs}}/codelabs/flutter-cupertino
 [home-screen]: {{site.codelabs}}/flutter-home-screen-widgets
 [How to write a Flutter plugin]: {{site.codelabs}}/codelabs/write-flutter-plugin
 [provider]: {{site.pub-pkg}}/provider
