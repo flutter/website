@@ -325,10 +325,11 @@ dependencyResolutionManagement {
 ```
 </br>
 
-##### Kotlin DSL
+### Kotlin DSL based Android Project
 
-After `aar` build, follow these steps to add flutter module in Koltin DSL based Android Projects.
-Inlcude Flutter Moduel as dependecy in Android Project `app/build.gradle`
+After `aar` build, follow these steps to add flutter_module in Koltin DSL based Android Projects.
+
+Inlcude Flutter Module as dependecy in Android Project `app/build.gradle`
 <?code-excerpt title="MyApp/app/build.gradle.kts"?>
 ```gradle
 android {
@@ -339,14 +340,12 @@ android {
         debug {
           ...
         }
-
         create("profile") {
             // change with your own signin configs
             signingConfig = signingConfigs.getByName("debug")
             initWith(getByName("debug"))
         }
 }
-
 dependencies {
   // ...
   debugImplementation 'com.example.flutter_module:flutter_debug:1.0'
@@ -355,9 +354,11 @@ dependencies {
 
 }
 ```
+
 Here `profileImplementation` is a custom `configuration` to be implemented in `app/build.gradle` of `flutter_module`.
 
-```
+<?code-excerpt title="flutter_module/app/build.gradle.kts"?>
+```gradle
 configurations {
     profileImplementation {
         extendsFrom implementation
