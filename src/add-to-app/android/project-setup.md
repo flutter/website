@@ -327,18 +327,22 @@ dependencyResolutionManagement {
 
 ##### Kotlin DSL
 
+After `aar` build, follow these steps to add flutter module in Koltin DSL based Android Projects.
+Inlcude Flutter Moduel as dependecy in Android Project `app/build.gradle`
 <?code-excerpt title="MyApp/app/build.gradle.kts"?>
 ```gradle
 android {
     buildTypes {
         release {
-      ...
+          ...
         }
         debug {
           ...
         }
 
         create("profile") {
+            // change with your own signin configs
+            signingConfig = signingConfigs.getByName("debug")
             initWith(getByName("debug"))
         }
 }
@@ -347,6 +351,17 @@ dependencies {
   // ...
   debugImplementation 'com.example.flutter_module:flutter_debug:1.0'
   releaseImplementation 'com.example.flutter_module:flutter_release:1.0'
+  "profileImplementation"("com.example.flutter_module:flutter_profile:1.0")
+
+}
+```
+Here `profileImplementation` is a custom `configuration` to be implemented in `app/build.gradle` of `flutter_module`.
+
+```
+configurations {
+    profileImplementation {
+        extendsFrom implementation
+    }
 }
 ```
 
