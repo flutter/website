@@ -29,15 +29,16 @@ Select your development platform from the following tabs.
 
 {% case os %}
 {% when 'Windows' -%}
-{% assign dirinstall='C:\dev\' %}
+{% assign dirinstall='C:\user\{username}\dev\' %}
 {% assign localappdata='%LOCALAPPDATA%\' %}
 {% assign appdata='%APPDATA%\' %}
-{% assign unzip='Extract-Archive' %}
-{% assign path='C:\dev\' %}
-{% assign prompt-start='C:\>' %}
-{% assign prompt=path | append: '>' %}
+{% assign ps-localappdata='$env:LOCALAPPDATA\' %}
+{% assign ps-appdata='$env:APPDATA\' %}
+{% assign unzip='Expand-Archive' %}
+{% assign path='C:\user\{username}\dev' %}
+{% assign prompt='C:\>' %}
 {% assign terminal='PowerShell' %}
-{% assign rm = 'Remove-Item -Recurse -Force -Path ' %}
+{% assign rm = 'Remove-Item -Recurse -Force -Path' %}
 {% capture rm-sdk %}Remove-Item -Recurse -Force -Path '{{dirinstall}}flutter'{% endcapture %}
 {% capture dart-files %}
 {{localappdata}}.dartServer
@@ -45,23 +46,22 @@ Select your development platform from the following tabs.
 {{appdata}}.dart-tool
 {% endcapture %}
 {% capture rm-dart-files %}
-{{prompt}} {{rm}} {{localappdata}}.dartServer,{{appdata}}.dart,{{appdata}}.dart-tool
+{{prompt}} {{rm}} {{ps-localappdata}}.dartServer,{{ps-appdata}}.dart,{{ps-appdata}}.dart-tool
 {% endcapture %}
 {% capture flutter-files %}{{appdata}}.flutter-devtools{% endcapture %}
 {% capture rm-flutter-files %}
-{{prompt}} {{rm}} {{flutter-files}}
+{{prompt}} {{rm}} {{ps-appdata}}.flutter-devtools
 {% endcapture %}
 {% capture rm-pub-dir %}
-{{prompt}} {{rm}} {{localappdata}}Pub\Cache
+{{prompt}} {{rm}} {{ps-localappdata}}Pub\Cache
 {% endcapture %}
 {% else -%}
 {% assign dirinstall='~/development' %}
 {% assign dirconfig='~/' %}
 {% assign path='~/development/' %}
 {% assign prompt='$' %}
-{% assign prompt-start=prompt %}
 {% assign rm = 'rm -rf ' %}
-{% assign rm-sdk = 'rm -rf ' | append: dirinstall | append: '/flutter' %}
+{% assign rm-sdk = rm | append: dirinstall | append: '/flutter' %}
 {% capture dart-files %}
 {{dirconfig}}.dart
 {{dirconfig}}.dart-tool
@@ -147,9 +147,10 @@ remove the `.pub-cache` directory from your home directory.
 {{rm-pub-dir | strip}}
 ```
 
-{% if os=='Windows' -%}
+{% case os %}
+{% when 'Windows','macOS' -%}
 {% include docs/install/reqs/{{os | downcase}}/unset-path.md terminal=terminal -%}
-{% endif %}
+{% endcase %}
 
 </div>
 
