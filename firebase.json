@@ -123,6 +123,7 @@
       { "source": "/ios-14", "destination": "/platform-integration/ios/ios-debugging", "type": 301 },
       { "source": "/ios-project-migration", "destination": "/platform-integration/ios", "type": 301 },
       { "source": "/layout", "destination": "/ui/layout", "type": 301 },
+      { "source": "/material-3-migration", "destination": "/release/breaking-changes/material-3-migration", "type": 301 },
       { "source": "/packages-and-plugins/androidx-compatibility", "destination": "/platform-integration/android/androidx-migration", "type": 301 },
       { "source": "/packages-and-plugins/c-interop", "destination": "/platform-integration/android/c-interop", "type": 301 },
       { "source": "/packages-and-plugins/plugins-in-tests", "destination": "/testing/plugins-in-tests", "type": 301 },
