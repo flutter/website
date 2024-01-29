@@ -75,16 +75,6 @@
     @include nav-link-active-style;
 
     @include nav-link-not-active-hover;
-
-    // NOTE external link icons in toc were tiny -
-    // correct sizing and spacing
-    & span.material-icons {
-      vertical-align: middle;
-      margin-left: 5px;
-      font-size: 12px;
-      color: inherit;
-      opacity: 0.8;
-    }
   }
 
   @mixin collapsable() {

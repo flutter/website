@@ -33,7 +33,7 @@ pre {
 
 @media screen {
   .str { color: $flutter-color-blue-600 }  /* string content */
-  .kwd { color: $flutter-color-teal-darker }  /* a keyword */
+  .kwd { color: $flutter-color-teal }  /* a keyword */
   .com { color: #6e6e70 }  /* a comment */
   /* punctuation, lisp open bracket, lisp close bracket */
   .pun, .opn, .clo { color: #222 }
@@ -67,13 +67,14 @@ pre.console-output {
 // `terminal` is like `console` with prompts and output colored differently
 .language-terminal .highlight {
   @include console-base;
-  .gp { color: $grey-500; } /* Generic.Prompt */
+  .gp { color: $flutter-color-yellow; } /* Generic.Prompt */
   .go { color: $generic-output-color; } /* Generic.Output */
-  .nb, .nt { color: #99BB00; } /* Name.Builtin, Name.Tag */
+  .k, .kc, .kd, .kn, .kp, .kr, .kt { color: $flutter-color-blue-on-dark; } /* Keyword.* */
+  .nb, .nt { color: $flutter-color-blue-on-dark; } /* Name.Builtin, Name.Tag */
   .nv { color: #03bbbb; }
-  .o { color: $grey-500; font-weight: bold; } /* Operator */
-  .s, .s1, .s2 { color: #00CCEE; } /* String, .Single, .Double quotes */
-  .sb { color: #f56b78; } /* String.Backtick */
+  .o { color: $flutter-color-grey-500; font-weight: bold; } /* Operator */
+  .s, .s1, .s2 { color: $flutter-color-blue-on-dark; } /* String, .Single, .Double quotes */
+  .sb { color: $flutter-color-light-blue; } /* String.Backtick */
 }
 
 // Match code-prettify classes to the extent possible.
