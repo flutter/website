@@ -341,8 +341,6 @@ android {
           ...
         }
         create("profile") {
-            // change with your own signin configs
-            signingConfig = signingConfigs.getByName("debug")
             initWith(getByName("debug"))
         }
 }
@@ -350,18 +348,16 @@ dependencies {
   // ...
   debugImplementation 'com.example.flutter_module:flutter_debug:1.0'
   releaseImplementation 'com.example.flutter_module:flutter_release:1.0'
-  "profileImplementation"("com.example.flutter_module:flutter_profile:1.0")
-
+  add("profileImplementation", "com.example.flutter_module:flutter_profile:1.0")
 }
 ```
 
-Here `profileImplementation` is a custom `configuration` to be implemented in `app/build.gradle` of `flutter_module`.
+Here `profileImplementation` is a custom `configuration` to be implemented in `app/build.gradle` of host Project.
 
-<?code-excerpt title="flutter_module/app/build.gradle.kts"?>
+<?code-excerpt title="host-project/app/build.gradle.kts"?>
 ```gradle
 configurations {
-    profileImplementation {
-        extendsFrom implementation
+    getByName("profileImplementation") {
     }
 }
 ```
