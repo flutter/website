@@ -18,7 +18,7 @@ Prior to the 3.16 release, you could opt in to the Material 3 changes by
 setting the `useMaterial3` flag to true. As of the Flutter 3.16 release
 (November 2023), `useMaterial3` is true by default.
 
-By the way, you _can_ recapture Material 2 behavior in your app by setting the
+By the way, you _can_ revert to Material 2 behavior in your app by setting the
 `useMaterial3` to `false`. However, this is just a temporary solution. The
 `useMaterial3` flag _and_ the Material 2 implementation will eventually be
 removed as part of Flutter’s deprecation policy.
@@ -63,8 +63,7 @@ Changes to Flutter Material 3 include a new background color.
 `ColorScheme.surfaceTint` indicates an elevated widget.
 Some widgets use different colors.
 
-To return your app’s UI to its previous behavior (which we don't particularly
-recommend):
+To return your app’s UI to its previous behavior (which we don't recommend):
 * Set `Colors.grey[50]!` to `ColorScheme.background`
    (when the theme is `Brightness.light`).
 * Set  `Colors.grey[850]!`to `ColorScheme.background`
@@ -102,7 +101,7 @@ Material 3. Some widgets might use both `surfaceTint` and `shadowColor` to
 indicate elevation (for example, `Card` and `ElevatedButton`) and others might
 only use `surfaceTint` to indicate elevation (such as `AppBar`).
 
-If you must return to a widget’s previous behavior, set, set `Colors.transparent`
+To return to the widget’s previous behavior, set, set `Colors.transparent`
 to `ColorScheme.surfaceTint` in the theme. To differentiate a widget’s shadow
 from the content (when it has no shadow), set the `ColorScheme.shadow` color to
 the `shadowColor` property in the widget theme without a default shadow color.
