@@ -18,6 +18,12 @@ $ dart devtools --version
 
 ### Release notes
 
+{% comment %}
+When adding the release notes for a new DevTools release,
+make sure to add the version number as an entry to the list
+found at `/src/_data/devtools_releases.yml`.
+{% endcomment -%}
+
 {% assign releases = site.data.devtools_releases.releases %}
 
 {% for release in releases -%}
