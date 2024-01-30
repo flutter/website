@@ -1330,13 +1330,9 @@ The best and recommended practice is to hold your strings in a `.arb` file as ke
 
 Then in your code, you can access your strings as such:
 
+<?code-excerpt "lib/localization_examples.dart (AccessString)"?>
 ```dart
-return Column(
-  children: <Widget>[
-    // Returns 'Hello John'
-    Text(AppLocalizations.of(context)!.hello('John')),
-  ],
-);
+Text(AppLocalizations.of(context)!.hello('John'));
 ```
 
 Flutter has basic support for accessibility on Android,
