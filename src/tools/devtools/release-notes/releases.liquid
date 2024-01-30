@@ -9,7 +9,7 @@ layout: none
   "latest": "{{latest}}",
   "releases": {
     {%- for release in releases %}
-    "{{release}}": "{{site.url}}/tools/devtools/release-notes/release-notes-{{release}}-src.md"{%- unless forloop.last -%},{%- endunless -%}
+    "{{release}}": "/tools/devtools/release-notes/release-notes-{{release}}-src.md"{%- unless forloop.last -%},{%- endunless -%}
     {%- endfor %}
   }
 }
