@@ -2,23 +2,26 @@
 
 If you would like to contribute to the Flutter website,
 we’re happy to have your help! Anyone can contribute,
-regardless of your writing experience or how you view yourself as a writer,
+regardless of your writing experience or how you view yourself as a contributor,
 developer, or grammar stickler.
 
 ## Contributors
 
 Before submitting a PR,
 [search for an issue][search-issue] that covers your concern.
-If one exists, add `Fixes #<found-issue>` to your new PR.
-If you don't find one and your change is significant,
-consider [creating an issue][create-issue].
-The issue should describe the problem, how you would plan to fix it,
-and should be assigned to yourself.
+
+* If one exists, open the issue,
+  click the greyed-out smiley face :slightly_smiling_face: in its summary,
+  and choose :thumbsup:.
+* If you don't find one and your change is significant,
+  consider [creating an issue][create-issue].
+  The issue should describe the problem, how you would plan to fix it,
+  and should be assigned to yourself.
 
 When you create a new page or perform a major rewrite of an existing page,
 consider drafting it first in Google Docs to simplify collaboration.
-Once your Google doc has been created,
-add a link to it from your new GitHub issue.
+Once you create your Google doc,
+add a link to it from the summary of your new GitHub issue.
 
 ### Draft changes
 
@@ -50,7 +53,7 @@ add a link to it from your new GitHub issue.
 1. Make sure all copy and content meets the standards in the
    [Google Developer Documentation Style Guide][style-guide].
    Focus on the [**Voice and tone**][gs-tone]
-   and the [**Highlights**][gs-highlights]
+   and [**Highlights**][gs-highlights]
    pages. They provide the best starting points.
 
 1. Using `git`, [commit changes](https://git-scm.com/docs/git-commit) often.
@@ -61,7 +64,7 @@ add a link to it from your new GitHub issue.
 1. When you complete your draft,
    [push the change to GitHub][push-change].
 
-### Submit a PR and request a review {#submit-pr}
+### Submit a PR and request a review
 
 1. [Create a pull request][create-pr]
    and verify that you have the right target branch.
@@ -100,11 +103,11 @@ add a link to it from your new GitHub issue.
    Reply to comments that you want to discuss.
    Remember that all comments are public. Keep your replies civil and relevant.
 
-1. When your PR is ready for another round of feedback,
+1. When you've updated your PR and want another round of feedback,
    re-request a review or write a comment with `PTAL @[reviewer]`.
    (PTAL means _please take another look_.)
 
-1. Once your PR is approved, a reviewer [merges it][merges-pr].
+1. Once the reviewer approves your PR, that reviewer can [merge it][merges-pr].
 
 ## Reviewers
 
@@ -127,7 +130,7 @@ In general, follow these practices.
 
 * Critique the _technical aspects_ of the PR.
   If technical content could be made less complex or more detailed,
-  advise the writer that this is the case in your review.
+  advise the contributor that this is the case in your review.
   Still _approve the PR_ but only if your changes are included.
 * Provide suggested changes with corrected copy to make your changes clear.
 
@@ -135,14 +138,14 @@ To conduct a consistent technical review in the Flutter website:
 
 1. [Review a PR][review-pr] when it meets the following conditions:
 
-   1. The writer [requested your review][request-review] of the PR.
+   1. The contributor [requested your review][request-review] of the PR.
 
-   1. The writer applied the [**review.tech**][review-tech-label]
+   1. The contributor applied the [**review.tech**][review-tech-label]
       label to the PR, if possible.
 
-   1. The writer didn't set the PR to [Draft mode][set-draft].
+   1. The contributor didn't set the PR to [Draft mode][set-draft].
       You can provide feedback to a draft issue,
-      but you should understand that the author's still working on the draft.
+      but understand that the contributor's still working on the draft.
 
 1. Validate technical accuracy.
 
@@ -164,7 +167,7 @@ To conduct a consistent technical review in the Flutter website:
    whenever possible.
 
    1. If all of your comments were suggestions rather than issues,
-      approve the PR and trust the submitter to read and consider them
+      approve the PR and trust the contributor to read and consider them
       before merging.
       Click **Approve** and change the label from
       [**review.tech**][review-tech-label] to
@@ -180,23 +183,23 @@ To conduct a consistent technical review in the Flutter website:
 
 In general, follow these practices.
 
-* Favor trusting the writer.
+* Favor trusting the contributor.
   If they stand by the changes and the copy issues are minimal,
   _approve the PR_.
 * Provide suggested changes with corrected copy to make your change clear.
 
 To conduct a consistent copy review in the Flutter website:
 
-1. [Review a PR][request-pr] when it meets the following conditions:
+1. [Review a PR][review-pr] when it meets the following conditions:
 
-   1. The writer [requested your review][request-review] of the PR.
+   1. The contributor [requested your review][request-review] of the PR.
 
-   1. The writer applied the [**review.copy**][review-copy-label]
+   1. The contributor applied the [**review.copy**][review-copy-label]
       label to the PR.
 
-   1. The writer didn't set the PR to [Draft mode][set-draft].
+   1. The contributor didn't set the PR to [Draft mode][set-draft].
       You can provide feedback to a draft issue,
-      but you should understand that the author's still working on the draft.
+      but you should understand that the contributor's still working on the draft.
 
 1. Check that text and code examples are consistent with one another.
 
@@ -211,7 +214,7 @@ To conduct a consistent copy review in the Flutter website:
    prefer approving a PR rather than requesting changes, whenever possible.
 
    1. If all of your comments were suggestions rather than issues,
-      just approve and trust the submitter to read and consider them before merging.
+      just approve and trust the contributor to read and consider them before merging.
       Click **Approve** and change the label
       from [**review.copy**][review-copy-label] to **st.RFM.%**.
 
@@ -225,27 +228,27 @@ To conduct a consistent copy review in the Flutter website:
 * Google Developer Documentation Style Guide: https://developers.google.com/style
 * Chicago Manual of Style: https://www.chicagomanualofstyle.org
 
-[approve-pr](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/approving-a-pull-request-with-required-reviews)
-[add-comments](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/commenting-on-a-pull-request#adding-comments-to-a-pull-request)
-[search-issue](https://www.freecodecamp.org/news/github-search-tips/)
-[create-issue](https://github.com/flutter/website/issues/new/choose)
-[create-branch](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository)
-[style-guide](https://developers.google.com/style).
-[gs-tone](https://developers.google.com/style/tone)
-[gs-highlights](https://developers.google.com/style/highlights)
-[push-change](https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository).
-[set-draft](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request)
-[apply-wip-label](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/managing-labels#applying-a-label).
-[create-pr](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
-[reaction-emoji](https://github.blog/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/)
-[merges-pr](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request)
-[code-of-conduct](https://github.com/flutter/flutter/blob/master/CODE_OF_CONDUCT.md)
-[review-pr](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request)
-[request-review](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review)
-[review-tech-label](https://github.com/flutter/website/labels/review.tech)
-[review-copy-label](https://github.com/flutter/website/labels/review.copy)
-[review-await-label](https://github.com/flutter/website/labels/review.await-update)
-[flutter-tree](https://github.com/flutter/flutter/wiki/Tree-hygiene)
-[flutter-style](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo)
-[good-pr-blog-post](https://www.pullrequest.com/blog/writing-a-great-pull-request-description/)
-[blockly-pr-note](https://developers.google.com/blockly/guides/contribute/get-started/write_a_good_pr#communicate-2)
+[approve-pr]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/approving-a-pull-request-with-required-reviews
+[add-comments]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/commenting-on-a-pull-request#adding-comments-to-a-pull-request
+[search-issue]: https://www.freecodecamp.org/news/github-search-tips/
+[create-issue]: https://github.com/flutter/website/issues/new/choose
+[create-branch]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository
+[style-guide]: https://developers.google.com/style
+[gs-tone]: https://developers.google.com/style/tone
+[gs-highlights]: https://developers.google.com/style/highlights
+[push-change]: https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository
+[set-draft]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request
+[apply-wip-label]: https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/managing-labels#applying-a-label
+[create-pr]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
+[reaction-emoji]: https://github.blog/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/
+[merges-pr]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request
+[code-of-conduct]: https://github.com/flutter/flutter/blob/master/CODE_OF_CONDUCT.md
+[review-pr]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request
+[request-review]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review
+[review-tech-label]: https://github.com/flutter/website/labels/review.tech
+[review-copy-label]: https://github.com/flutter/website/labels/review.copy
+[review-await-label]: https://github.com/flutter/website/labels/review.await-update
+[flutter-tree]: https://github.com/flutter/flutter/wiki/Tree-hygiene
+[flutter-style]: https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo
+[good-pr-blog-post]: https://www.pullrequest.com/blog/writing-a-great-pull-request-description/
+[blockly-pr-note]: https://developers.google.com/blockly/guides/contribute/get-started/write_a_good_pr#communicate-2
