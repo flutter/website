@@ -1314,7 +1314,7 @@ Widget build(BuildContext context) {
 Flutter currently doesn't have a dedicated resources-like system for strings.
 The best and recommended practice is to hold your strings in a `.arb` file as key-value pairs For example:
 
-<?code-excerpt "lib/arb_examples.dart"?>
+<?code-excerpt "lib/arb_examples.arb"?>
 ```arb
 {
    "hello":"Hello {userName}",
