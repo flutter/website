@@ -14,34 +14,31 @@ features and assets when needed by the user.
 
 We refer to each uniquely downloadable bundle of Dart
 libraries and assets as a "deferred component".
-This is achieved by using Dart's deferred imports,
-which can be compiled into split AOT shared libraries.
+To load these components, use [Dart's deferred imports][dart-def-import].
+They can be compiled into split AOT and JavaScript shared libraries.
 
 {{site.alert.note}}
-  This feature is currently only available on Android,
-  taking advantage of Android and Google Play Stores'
-  [dynamic feature modules][] to deliver the
+  Flutter supports deferred, or "lazy", loading on Android and the web.
+  The implementations differ.
+  Android's [dynamic feature modules][] deliver the
   deferred components packaged as Android modules.
-  Deferred code does not impact other platforms,
+  The web creates these components as separate `*.js` files.
+  Deferred code doesn't impact other platforms,
   which continue to build as normal with all deferred
   components and assets included at initial install time.
-
-  Also, note that this is an advanced feature.
 {{site.alert.end}}
 
-Though modules can be defer loaded,
-the entire application must be completely built and
-uploaded as a single Android App Bundle.
-Dispatching partial updates without re-uploading
-new Android App Bundles for the entire application
-is not supported.
+Though you can defer loading modules,
+you must build the entire app and upload that app as a single
+[Android App Bundle][android-app-bundle] (`*.aab`).
+Flutter doesn't support dispatching partial updates without re-uploading
+new Android App Bundles for the entire application.
 
-Deferred loading is only performed when the app
-is compiled to [release or profile mode][].
-In debug mode, all deferred components are treated
-as regular imports, so they are present
-at launch and load immediately. Therefore,
-debug builds can still hot reload.
+Flutter performs deferred loading when you compile your app
+in [release or profile mode][].
+Debug mode treats all deferred components as regular imports.
+The components are present at launch and load immediately.
+This allows debug builds to hot reload.
 
 For a deeper dive into the technical details of
 how this feature works, see [Deferred Components][]
@@ -604,3 +601,6 @@ Play store's delivery feature.
 [lazily loading a library]: {{site.dart-site}}/language/libraries#lazily-loading-a-library
 [release or profile mode]: {{site.url}}/testing/build-modes
 [step 3.3]: #step-3.3
+[android-app-bundle]: {{site.android-dev}}/guide/app-bundle
+[dart-def-import]: https://dart.dev/language/libraries#lazily-loading-a-library
+

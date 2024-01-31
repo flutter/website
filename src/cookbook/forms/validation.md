@@ -27,13 +27,21 @@ a single text field using the following steps:
 
 ## 1. Create a `Form` with a `GlobalKey`
 
-First, create a [`Form`][].
-The `Form` widget acts as a container for grouping
-and validating multiple form fields.
+Create a [`Form`][].
+The `Form` widget acts as a container for grouping and
+validating multiple form fields.
 
 When creating the form, provide a [`GlobalKey`][].
-This uniquely identifies the `Form`,
-and allows validation of the form in a later step.
+This assigns a unique identifier to your `Form`.
+It also allows you to validate the form later.
+
+Create the form as a `StatefulWidget`.
+This allows you to create a unique `GlobalKey<FormState>()` once.
+You can then store it as a variable and access it at different points.
+
+If you made this a `StatelessWidget`, you'd need to store this key *somewhere*.
+As it is resource expensive, you wouldn't want to generate a new
+`GlobalKey` each time you run the `build` method.
 
 <?code-excerpt "lib/form.dart"?>
 ```dart
