@@ -288,7 +288,7 @@ function addCopyCodeButtonsEverywhere() {
         '<button class="code-excerpt__copy-btn" type="button"' +
         '    data-toggle="tooltip" title="Copy code"' +
         '    data-clipboard-target="#code-excerpt-' + i + '">' +
-        '  <i class="material-icons">content_copy</i>' +
+        '  <i class="material-symbols">content_copy</i>' +
         '</button>';
     });
 }
