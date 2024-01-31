@@ -167,6 +167,12 @@ Introducing Flutter in focus<br>
 
 [Flutter in focus playlist]: {{yt-playlist}}PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 
+### Flutter Course for Beginners
+
+A simple but effective non-scripted course that will definitely boost your journey of flutter learning.
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=P8HlpqLeNyY6czB2&amp;list=PL342JVRNQxEC3g0b1GsWwUctUsx5H7txz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Conference talks
 
 Here are a some Flutter talks given at various conferences.
