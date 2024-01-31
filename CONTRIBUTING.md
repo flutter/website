@@ -42,12 +42,13 @@ add a link to it from the summary of your new GitHub issue.
    1. Avoid adjusting indents, line breaks, formatting, and the like
       unrelated to your PR as part of the PR whenever possible.
       To separate work unrelated to the PR, use a new commit,
-      a [separate issue][create-issue], a [separate PR](#submit-pr),
+      a [separate issue][create-issue],
+      a [separate PR](#submit-a-pr-and-request-a-review),
       or some combination.
 
    1. Explain the reason for the additional changes in the PR summary,
       if necessary. For guidance on what to include in a PR summary,
-      check out [this section in the Blockly docs][blockly-pr-note]
+      consult [this section in the Blockly docs][blockly-pr-note]
       or this [PullRequest.com blog post][good-pr-blog-post].
 
 1. Make sure all copy and content meets the standards in the
