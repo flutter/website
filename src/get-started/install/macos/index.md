@@ -17,7 +17,7 @@ target-list: [Desktop, Mobile-iOS, Mobile-Android, Web]
           {% if icon == 'desktop' -%}
             <span class="material-symbols">laptop_mac</span>
           {% elsif icon == 'mobile-ios' -%}
-            <span class="symbols">phone_iphone</span>
+            <span class="material-symbols">phone_iphone</span>
           {% elsif icon == 'mobile-android' -%}
             <span class="material-symbols">phone_android</span>
           {% else -%}
