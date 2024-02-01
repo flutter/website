@@ -45,6 +45,8 @@ Download and install the Windows version of the following packages:
 The developers of the preceding software provide support for those products.
 To troubleshoot installation issues, consult that product's documentation.
 
+{% include docs/install/reqs/flutter-sdk/flutter-doctor-precedence.md %}
+
 ## Configure a text editor or IDE
 
 You can build apps with Flutter using any text editor or

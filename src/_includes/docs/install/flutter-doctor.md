@@ -17,20 +17,14 @@
 
 {% case os %}
 {% when 'Windows' -%}
-   {% assign path='C:\dev\flutter' %}
    {% assign terminal='PowerShell' %}
-   {% assign prompt1='D:>' %}
-   {% assign prompt2=path | append: '>' %}
+   {% assign prompt='C:\>' %}
 {% when "macOS" -%}
-   {% assign path='~/development/flutter' %}
-   {% assign terminal='the Terminal' %}
-   {% assign prompt1='$' %}
-   {% assign prompt2='$' %}
+   {% assign terminal='your Terminal' %}
+   {% assign prompt='$' %}
 {% else -%}
-   {% assign path='/usr/bin/flutter' %}
    {% assign terminal='a shell' %}
-   {% assign prompt1='$' %}
-   {% assign prompt2='$' %}
+   {% assign prompt='$' %}
 {% endcase -%}
 
 ### Run Flutter doctor
@@ -44,7 +38,7 @@ complete Flutter development environment for {{os}}.
    run the following command.
 
    ```terminal
-   {{prompt2}} flutter doctor
+   {{prompt}} flutter doctor
    ```
 
 As you chose to develop for {{v-target}},
@@ -64,7 +58,7 @@ If the `flutter doctor` command returns an error for any of these components,
 run it again with the verbose flag.
 
 ```terminal
-{{prompt2}} flutter doctor -v
+{{prompt}} flutter doctor -v
 ```
 
 Check the output for other software you might need to install

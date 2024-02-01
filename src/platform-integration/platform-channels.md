@@ -349,7 +349,7 @@ Inside the `configureFlutterEngine()` method, create a `MethodChannel` and call
 `setMethodCallHandler()`. Make sure to use the same channel name as
 was used on the Flutter client side.
 
-<?code-excerpt title="MyActivity.kt"?>
+<?code-excerpt title="MainActivity.kt"?>
 ```kotlin
 import androidx.annotation.NonNull
 import io.flutter.embedding.android.FlutterActivity
@@ -376,7 +376,7 @@ would write in a native Android app.
 
 First, add the needed imports at the top of the file:
 
-<?code-excerpt title="MyActivity.kt"?>
+<?code-excerpt title="MainActivity.kt"?>
 ```kotlin
 import android.content.Context
 import android.content.ContextWrapper
@@ -390,7 +390,7 @@ import android.os.Build.VERSION_CODES
 Next, add the following method in the `MainActivity` class,
 below the `configureFlutterEngine()` method:
 
-<?code-excerpt title="MyActivity.kt"?>
+<?code-excerpt title="MainActivity.kt"?>
 ```kotlin
   private fun getBatteryLevel(): Int {
     val batteryLevel: Int
@@ -416,7 +416,7 @@ If an unknown method is called, report that instead.
 
 Remove the following code:
 
-<?code-excerpt title="MyActivity.kt"?>
+<?code-excerpt title="MainActivity.kt"?>
 ```kotlin
     MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler {
       call, result ->
@@ -427,7 +427,7 @@ Remove the following code:
 
 And replace with the following:
 
-<?code-excerpt title="MyActivity.kt"?>
+<?code-excerpt title="MainActivity.kt"?>
 ```kotlin
     MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler {
       // This method is invoked on the main thread.

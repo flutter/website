@@ -80,7 +80,18 @@ Any vulnerability reported for flutter websites like
 docs.flutter.dev doesn't require a release and will be
 fixed in the website itself.
 
-Flutter doesn't have a bug bounty program.
+## Bug Bounty programs
+
+Contributing teams can include Flutter within the scope
+of their bug bounty programs. To have your program listed,
+contact `security@flutter.dev`.
+
+Google considers Flutter to be in scope for the
+[Google Open Source Software Vulnerability Reward Program][google-oss-vrp].
+For expediency, reporters should contact `security@flutter.dev`
+before using Google's vulnerability reporting flow.
+
+[google-oss-vrp]: https://bughunters.google.com/open-source-security
 
 ## Receiving security updates
 

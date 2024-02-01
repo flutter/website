@@ -15,3 +15,5 @@ next:
 {% include docs/install/compiler/xcode.md target='desktop' os='macOS' -%}
 
 {% include docs/install/flutter-doctor.md target='desktop' os='macOS' platform='desktop' compiler='Xcode' -%}
+
+{% include docs/install/next-steps.md os='macOS' -%}

@@ -151,6 +151,8 @@
       permalink: /cookbook/design/themes
     - title: Material design
       permalink: /ui/design/material
+    - title: Migrate to Material 3
+      permalink: /release/breaking-changes/material-3-migration
     - title: Text
       permalink: /ui/design/text
       children:
@@ -610,6 +612,8 @@
           permalink: /tools/devtools/logging
         - title: App size tool
           permalink: /tools/devtools/app-size
+        - title: DevTools extensions
+          permalink: /tools/devtools/extensions
         - title: Release notes
           permalink: /tools/devtools/release-notes
     - title: SDK overview

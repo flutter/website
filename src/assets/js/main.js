@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function(_) {
   setupTabs($('#china-os-tabs'), 'dev.flutter.china-os');
   setupTabs($('#china-os-dl-tabs'), 'dev.flutter.china-os-dl');
   setupTabs($('#china-os-pub-tabs'), 'dev.flutter.china-os-pub');
+  setupTabs($('#base-os-tabs'), 'dev.flutter.os');
 
   prettyPrint();
 });
@@ -287,7 +288,7 @@ function addCopyCodeButtonsEverywhere() {
         '<button class="code-excerpt__copy-btn" type="button"' +
         '    data-toggle="tooltip" title="Copy code"' +
         '    data-clipboard-target="#code-excerpt-' + i + '">' +
-        '  <i class="material-icons">content_copy</i>' +
+        '  <i class="material-symbols">content_copy</i>' +
         '</button>';
     });
 }
