@@ -1,0 +1,3 @@
+arb-dir: lib
+template-arb-file: arb_examples.arb
+output-localization-file: app_localizations.dart
