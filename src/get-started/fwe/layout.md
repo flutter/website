@@ -112,11 +112,15 @@ this type.
 * Article: [DevTools - Widget Inspector][]
 * Video: [Unbounded height and width - Decoding Flutter][]
 
-### Advanced Content
+### Additional Content
+
+The following resources are advanced and optional.
 
 - [2D Scrolling][]
 
 ### Reference material
+
+The following resources explain individual APIs.
 
 - [Builder][]
 - [Row][]
