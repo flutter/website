@@ -156,6 +156,16 @@ class LoggingActionDispatcher extends ActionDispatcher {
 
     return null;
   }
+
+  @override
+  (bool, Object?) invokeActionIfEnabled(
+    covariant Action<Intent> action,
+    covariant Intent intent, [
+    BuildContext? context,
+  ]) {
+    print('Action invoked: $action($intent) from $context');
+    return super.invokeActionIfEnabled(action, intent, context);
+  }
 }
 // #enddocregion LoggingActionDispatcher
 
