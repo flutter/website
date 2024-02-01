@@ -158,14 +158,14 @@ built with Flutter and Flame include
 Once you feel ready to go beyond these games templates,
 investigate other resources that our community recommended.
 
-{% assign pkg-icon = '<span class="material-symbols-outlined">package_2</span>' %}
-{% assign doc-icon = '<span class="material-symbols-outlined">quick_reference_all</span>' %}
-{% assign codelab = '<span class="material-symbols-outlined">science</span>' %}
-{% assign engine = '<span class="material-symbols-outlined">manufacturing</span>' %}
-{% assign tool-icon = '<span class="material-symbols-outlined">handyman</span>' %}
-{% assign recipe-icon = '<span class="material-symbols-outlined">book_5</span>' %}
-{% assign assets-icon = '<span class="material-symbols-outlined">photo_album</span>' %}
-{% assign api-icon = '<span class="material-symbols-outlined">api</span>' %}
+{% assign pkg-icon = '<span class="material-symbols">package_2</span>' %}
+{% assign doc-icon = '<span class="material-symbols">quick_reference_all</span>' %}
+{% assign codelab = '<span class="material-symbols">science</span>' %}
+{% assign engine = '<span class="material-symbols">manufacturing</span>' %}
+{% assign tool-icon = '<span class="material-symbols">handyman</span>' %}
+{% assign recipe-icon = '<span class="material-symbols">book_5</span>' %}
+{% assign assets-icon = '<span class="material-symbols">photo_album</span>' %}
+{% assign api-icon = '<span class="material-symbols">api</span>' %}
 
 {{ site.alert.secondary }}
   {{pkg-icon}} Flutter package<br>

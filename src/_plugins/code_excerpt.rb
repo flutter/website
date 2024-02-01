@@ -32,7 +32,7 @@ module Jekyll
         # <button class="code-excerpt__copy-btn" type="button"
         #     data-toggle="tooltip" title="Copy code"
         #     data-clipboard-target="##{id}">
-        #   <i class="material-icons">content_copy</i>
+        #   <i class="material-symbols">content_copy</i>
         # </button>
         # <div id="#{id}">
         # #{super(context)}
