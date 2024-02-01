@@ -19,7 +19,7 @@ errors, which is related to the most common Flutter layout widgets.
 The following tutorial will introduce you to layouts in Flutter, and give you an
 opportunity to work with the most common layout widgets, like rows and columns.
 
-* <i class="material-icons" aria-hidden="true">bolt</i> Take action! - Tutorial: [Layouts in Flutter][]
+<i class="material-symbols" aria-hidden="true">bolt</i> Take action! - Tutorial: [Layouts in Flutter][]
 
 ### Constraints
 
@@ -111,12 +111,6 @@ this type.
 
 * Article: [DevTools - Widget Inspector][]
 * Video: [Unbounded height and width - Decoding Flutter][]
-
-### Additional content
-
-The following resources are advanced and optional.
-
-- [2D Scrolling][]
 
 ### Reference material
 
