@@ -3,6 +3,7 @@ title: Choose your first type of app
 description: Configure your system to develop Flutter on macOS.
 short-title: macOS
 target-list: [Desktop, Mobile-iOS, Mobile-Android, Web]
+js: [{url: '/assets/js/temp/macos-install-redirector.js'}]
 ---
 
 {% assign os = 'macos' -%}
