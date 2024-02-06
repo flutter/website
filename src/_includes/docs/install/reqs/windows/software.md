@@ -17,11 +17,10 @@
 
 {% else -%}
 
-* [Visual Studio 2022][] with the the **Desktop development with C++**
-  workload or [Build Tools for Visual Studio 2022][]. This enables
-  building Windows app including all of its default components.
-  **Visual Studio** is an IDE separate from
-  **[Visual Studio _Code_][]**.
+* [Visual Studio 2022][] with the the **Desktop development with C++** workload
+  or [Build Tools for Visual Studio 2022][].
+  This enables building Windows app including all of its default components.
+  **Visual Studio** is an IDE separate from **[Visual Studio _Code_][]**.
 * [Android Studio][] {{site.appmin.android_studio}} to debug and compile
   Java or Kotlin code for Android.
   Flutter requires the full version of Android Studio.
