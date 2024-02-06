@@ -22,7 +22,7 @@ timeline while performing a specific task and saves a summary of the
 results to a local file.
 
 {{site.alert.note}}
-  Note that recording performance timelines is not supported on web.
+  Recording performance timelines isn't supported on web.
   For performance profiling on web, see
   [Debugging performance for web apps][]
 {{site.alert.end}}
