@@ -1,17 +1,19 @@
 name: staggered_pic_selection
-description: A new Flutter project.
+publish_to: none
+description: A more complex staggered animation example.
 
 environment:
-  sdk: ^3.1.0-0
+  sdk: ^3.2.0
 
 dependencies:
   flutter:
     sdk: flutter
 
 dev_dependencies:
+  example_utils:
+    path: ../../example_utils
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.2
 
 flutter:
   uses-material-design: true
@@ -46,4 +48,3 @@ flutter:
     - images/pic28.jpg
     - images/pic29.jpg
     - images/pic30.jpg
-

@@ -6,10 +6,10 @@ toc: false
 
 This page summarizes the changes in official stable releases of DevTools.
 To view a complete list of changes, check out the
-[DevTools git log](https://github.com/flutter/devtools/commits/master).
+[DevTools git log]({{site.repo.organization}}/devtools/commits/master).
 
 The Dart and Flutter SDKs include DevTools.
-To check your current version of DevTools, 
+To check your current version of DevTools,
 run the following on your command line:
 
 ```terminal
@@ -18,46 +18,14 @@ $ dart devtools --version
 
 ### Release notes
 
-* [2.27.0 release notes][]
-* [2.26.1 release notes][]
-* [2.25.0 release notes][]
-* [2.24.0 release notes][]
-* [2.23.1 release notes][]
-* [2.22.2 release notes][]
-* [2.21.1 release notes][]
-* [2.20.0 release notes][]
-* [2.18.0 release notes][]
-* [2.17.0 release notes][]
-* [2.16.0 release notes][]
-* [2.15.0 release notes][]
-* [2.14.0 release notes][]
-* [2.13.1 release notes][]
-* [2.12.1 release notes][]
-* [2.11.2 release notes][]
-* [2.10.0 release notes][]
-* [2.9.2 release notes][]
-* [2.9.1 release notes][]
-* [2.8.0 release notes][]
-* [2.7.0 release notes][]
+{% comment %}
+When adding the release notes for a new DevTools release,
+make sure to add the version number as an entry to the list
+found at `/src/_data/devtools_releases.yml`.
+{% endcomment -%}
 
-[2.27.0 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.27.0
-[2.26.1 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.26.1
-[2.25.0 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.25.0
-[2.24.0 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.24.0
-[2.23.1 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.23.1
-[2.22.2 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.22.2
-[2.21.1 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.21.1
-[2.20.0 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.20.0
-[2.18.0 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.18.0
-[2.17.0 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.17.0
-[2.16.0 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.16.0
-[2.15.0 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.15.0
-[2.14.0 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.14.0
-[2.13.1 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.13.1
-[2.12.1 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.12.1
-[2.11.2 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.11.2
-[2.10.0 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.10.0
-[2.9.2 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.9.2
-[2.9.1 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.9.1
-[2.8.0 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.8.0
-[2.7.0 release notes]: {{site.url}}/tools/devtools/release-notes/release-notes-2.7.0
+{% assign releases = site.data.devtools_releases.releases %}
+
+{% for release in releases -%}
+* [{{release}} release notes]({{site.url}}/tools/devtools/release-notes/release-notes-{{release}})
+{% endfor -%}

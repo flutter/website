@@ -9,6 +9,13 @@ Fetching data from the internet is necessary for most apps.
 Luckily, Dart and Flutter provide tools, such as the
 `http` package, for this type of work.
 
+{{site.alert.note}}
+  You should avoid directly using `dart:io` or `dart:html`
+  to make HTTP requests.
+  Those libraries are platform-dependent
+  and tied to a single implementation.
+{{site.alert.end}}
+
 This recipe uses the following steps:
 
   1. Add the `http` package.
@@ -35,12 +42,22 @@ Import the http package.
 import 'package:http/http.dart' as http;
 ```
 
-Additionally, in your AndroidManifest.xml file, 
+If you are deploying to Android, edit your `AndroidManifest.xml` file to 
 add the Internet permission.
 
 ```xml
 <!-- Required to fetch data from the internet. -->
 <uses-permission android:name="android.permission.INTERNET" />
+```
+
+Likewise, if you are deploying to macOS, edit your 
+`macos/Runner/DebugProfile.entitlements` and `macos/Runner/Release.entitlements`
+files to include the network client entitlement.
+
+```xml
+<!-- Required to fetch data from the internet. -->
+<key>com.apple.security.network.client</key>
+<true/>
 ```
 
 ## 2. Make a network request
@@ -76,7 +93,7 @@ First, create an `Album` class that contains the data from the
 network request. It includes a factory constructor that
 creates an `Album` from JSON.
 
-Converting JSON by hand is only one option.
+Converting JSON using [pattern matching][] is only one option.
 For more information, see the full article on
 [JSON and serialization][].
 
@@ -94,11 +111,19 @@ class Album {
   });
 
   factory Album.fromJson(Map<String, dynamic> json) {
-    return Album(
-      userId: json['userId'],
-      id: json['id'],
-      title: json['title'],
-    );
+    return switch (json) {
+      {
+        'userId': int userId,
+        'id': int id,
+        'title': String title,
+      } =>
+        Album(
+          userId: userId,
+          id: id,
+          title: title,
+        ),
+      _ => throw const FormatException('Failed to load album.'),
+    };
   }
 }
 ```
@@ -129,7 +154,7 @@ Future<Album> fetchAlbum() async {
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
     // then parse the JSON.
-    return Album.fromJson(jsonDecode(response.body));
+    return Album.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
@@ -253,7 +278,7 @@ Future<Album> fetchAlbum() async {
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
     // then parse the JSON.
-    return Album.fromJson(jsonDecode(response.body));
+    return Album.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
@@ -273,11 +298,19 @@ class Album {
   });
 
   factory Album.fromJson(Map<String, dynamic> json) {
-    return Album(
-      userId: json['userId'],
-      id: json['id'],
-      title: json['title'],
-    );
+    return switch (json) {
+      {
+        'userId': int userId,
+        'id': int id,
+        'title': String title,
+      } =>
+        Album(
+          userId: userId,
+          id: id,
+          title: title,
+        ),
+      _ => throw const FormatException('Failed to load album.'),
+    };
   }
 }
 
@@ -304,7 +337,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Fetch Data Example',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: Scaffold(
         appBar: AppBar(
@@ -344,4 +377,5 @@ class _MyAppState extends State<MyApp> {
 [`initState()`]: {{site.api}}/flutter/widgets/State/initState.html
 [Mock dependencies using Mockito]: {{site.url}}/cookbook/testing/unit/mocking
 [JSON and serialization]: {{site.url}}/data-and-backend/serialization/json
+[pattern matching]: {{site.dart-site}}/language/patterns
 [`State`]: {{site.api}}/flutter/widgets/State-class.html

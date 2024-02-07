@@ -7,7 +7,7 @@
     {% elsif entry contains 'header' -%}
       <li class="nav-header">{{entry.header}}</li>
     {% else -%}
-      {% assign id = 'sidenav-' | append: forloop.index -%}
+      {% assign id = include.base_id | append: '-sidenav-' | append: forloop.index -%}
       {% if forloop.index == active_entries[0] -%}
         {% assign isActive = true -%}
         {% assign class = 'active' -%}
@@ -48,13 +48,7 @@
         <li class="nav-item">
           <a class="{{class}} nav-link" href="{{entry.permalink}}"
              {%- if isExternal %} target="_blank" rel="noopener" {%- endif -%}
-          >{{entry.title}}
-            {%- if isExternal -%}
-            <span class="material-icons md-24">
-              open_in_new
-            </span>
-            {%- endif -%}
-          </a>
+          >{{entry.title}}</a>
         </li>
       {% endif -%}
     {% endif -%}

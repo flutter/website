@@ -13,7 +13,7 @@ of an application running on a real device. These tasks are performed
 with *integration tests*.
 
 Integration tests are written using the [integration_test][] package, provided
-by the SDK. 
+by the SDK.
 
 In this recipe, learn how to test a counter app. It demonstrates
 how to setup integration tests, how to verify specific text is displayed
@@ -85,10 +85,6 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              // Provide a Key to this specific Text widget. This allows
-              // identifying the widget from inside the test suite,
-              // and reading the text.
-              key: const Key('counter'),
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
@@ -113,7 +109,7 @@ Next, use the `integration_test` and `flutter_test` packages
 to write integration tests. Add these dependencies to the `dev_dependencies`
 section of the app's `pubspec.yaml` file.
 
-```console
+```terminal
 $ flutter pub add 'dev:flutter_test:{"sdk":"flutter"}'  'dev:integration_test:{"sdk":"flutter"}'
 "flutter_test" is already in "dev_dependencies". Will try to update the constraint.
 Resolving dependencies... 
@@ -158,6 +154,7 @@ Now you can write tests. This involves three steps:
 
 <?code-excerpt "integration_test/app_test.dart (IntegrationTest)"?>
 ```dart
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:introduction/main.dart';
@@ -175,7 +172,7 @@ void main() {
       expect(find.text('0'), findsOneWidget);
 
       // Finds the floating action button to tap on.
-      final Finder fab = find.byTooltip('Increment');
+      final fab = find.byKey(const Key('increment'));
 
       // Emulate a tap on the floating action button.
       await tester.tap(fab);
@@ -201,13 +198,13 @@ To test on a real iOS / Android device, first connect the device and run the
 following command from the root of the project:
 
 ```terminal
-flutter test integration_test/app_test.dart
+$ flutter test integration_test/app_test.dart
 ```
 
 Or, you can specify the directory to run all integration tests:
 
 ```terminal
-flutter test integration_test
+$ flutter test integration_test
 ```
  
 This command runs the app and integration tests on the target device. For more
@@ -247,13 +244,13 @@ Future<void> main() => integrationDriver();
 Launch `chromedriver` as follows: 
 
 ```terminal
-chromedriver --port=4444
+$ chromedriver --port=4444
 ```
 
 From the root of the project, run the following command:
 
 ```terminal
-flutter drive \
+$ flutter drive \
   --driver=test_driver/integration_test.dart \
   --target=integration_test/app_test.dart \
   -d chrome
@@ -269,7 +266,7 @@ flutter drive \
   -d web-server
 ```
 
-[Download ChromeDriver]: https://chromedriver.chromium.org/downloads
+[Download ChromeDriver]: https://googlechromelabs.github.io/chrome-for-testing/
 [Download EdgeDriver]: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
 [Download GeckoDriver]: {{site.github}}/mozilla/geckodriver/releases
 [flutter_driver]: {{site.api}}/flutter/flutter_driver/flutter_driver-library.html

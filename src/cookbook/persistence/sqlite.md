@@ -7,7 +7,8 @@ description: How to use SQLite to store and retrieve data.
 
 {{site.alert.note}}
   This guide uses the [sqflite package][].
-  This package only supports apps that run on macOS, iOS, or Android.
+  This package only supports apps that run on
+  macOS, iOS, or Android.
 {{site.alert.end}}
 
 [sqflite package]: {{site.pub-pkg}}/sqflite
@@ -39,7 +40,8 @@ This recipe uses the following steps:
 
 ## 1. Add the dependencies
 
-To work with SQLite databases, import the `sqflite` and `path` packages.
+To work with SQLite databases, import the `sqflite` and
+`path` packages.
 
   * The `sqflite` package provides classes and functions to
     interact with a SQLite database.
@@ -248,9 +250,9 @@ Future<List<Dog>> dogs() async {
   // Convert the List<Map<String, dynamic> into a List<Dog>.
   return List.generate(maps.length, (i) {
     return Dog(
-      id: maps[i]['id'],
-      name: maps[i]['name'],
-      age: maps[i]['age'],
+      id: maps[i]['id'] as int,
+      name: maps[i]['name'] as String,
+      age: maps[i]['age'] as int,
     );
   });
 }
@@ -407,9 +409,9 @@ void main() async {
     // Convert the List<Map<String, dynamic> into a List<Dog>.
     return List.generate(maps.length, (i) {
       return Dog(
-        id: maps[i]['id'],
-        name: maps[i]['name'],
-        age: maps[i]['age'],
+        id: maps[i]['id'] as int,
+        name: maps[i]['name'] as String,
+        age: maps[i]['age'] as int,
       );
     });
   }

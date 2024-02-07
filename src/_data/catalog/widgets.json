@@ -11,13 +11,15 @@
   },
   {
     "name": "AlertDialog",
-    "description": "Alerts are urgent interruptions requiring acknowledgement that inform the user about a situation. The AlertDialog widget implements this component.",
+    "description": "Hovering containers that prompt app users to provide more data or make a decision.",
     "categories": [],
     "subcategories": [
+      "Containment",
       "Dialogs, alerts, and panels"
     ],
     "link": "https://api.flutter.dev/flutter/material/AlertDialog-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-alert-dialog.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-dialog.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-coral.png'>"
   },
   {
     "name": "Align",
@@ -170,27 +172,18 @@
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
-    "name": "App bar",
-    "description": "Container that displays content and actions at the top of a screen.",
-    "categories": [],
-    "subcategories": [
-      "Navigation"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/AppBar-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-top-app-bar.png'>",
-    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-bubbles.png'>"
-  },
-  {
     "name": "AppBar",
-    "description": "A toolbar that might contain other widgets such as a `TabBar` and a `FlexibleSpaceBar`.",
+    "description": "Container that displays content and actions at the top of a screen.",
     "categories": [
       "Basics"
     ],
     "subcategories": [
+      "Navigation",
       "App structure and navigation"
     ],
     "link": "https://api.flutter.dev/flutter/material/AppBar-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-app-bar.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-top-app-bar.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-bubbles.png'>"
   },
   {
     "name": "AspectRatio",
@@ -297,20 +290,11 @@
   },
   {
     "name": "Card",
-    "description": "A Material Design card. A card has slightly rounded corners and a shadow.",
-    "categories": [],
-    "subcategories": [
-      "Information displays"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/Card-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-card.png'>"
-  },
-  {
-    "name": "Card",
     "description": "Container for short, related pieces of content displayed in a box with rounded corners and a drop shadow.",
     "categories": [],
     "subcategories": [
-      "Containment"
+      "Containment",
+      "Information displays"
     ],
     "link": "https://api.flutter.dev/flutter/material/Card-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-card.png'>",
@@ -328,20 +312,11 @@
   },
   {
     "name": "Checkbox",
-    "description": "Checkboxes allow the user to select multiple options from a set. The Checkbox widget implements this component.",
+    "description": "Form control that app users can set or clear to select one or more options from a set.",
     "categories": [],
     "subcategories": [
+      "Selection",
       "Input and selections"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/Checkbox-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-checkbox.png'>"
-  },
-  {
-    "name": "Checkbox",
-    "description": "Form control that app users can select or clear to select one or more options from a set. Select the option to enable it or clear it to disable it.",
-    "categories": [],
-    "subcategories": [
-      "Selection"
     ],
     "link": "https://api.flutter.dev/flutter/material/Checkbox-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-checkbox.png'>",
@@ -349,20 +324,11 @@
   },
   {
     "name": "Chip",
-    "description": "Small blocks that represent complex entities such as a contact.",
-    "categories": [],
-    "subcategories": [
-      "Information displays"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/Chip-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-chip.png'>"
-  },
-  {
-    "name": "Chip",
     "description": "Small blocks that simplify entering information, making selections, filtering content, or triggering actions.",
     "categories": [],
     "subcategories": [
-      "Selection"
+      "Selection",
+      "Information displays"
     ],
     "link": "https://api.flutter.dev/flutter/material/Chip-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-chip.png'>",
@@ -778,21 +744,12 @@
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-data-table.png'>"
   },
   {
-    "name": "Date & Time Pickers",
-    "description": "Date pickers use a dialog window to select a single date on mobile. Time pickers use a dialog to select a single time (in the hours:minutes format) on mobile.",
-    "categories": [],
-    "subcategories": [
-      "Input and selections"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/showDatePicker.html",
-    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VY2h4WElGdEhPb2c/components_pickers.png'>"
-  },
-  {
-    "name": "Date picker",
+    "name": "DatePicker",
     "description": "Calendar interface used to select a date or a range of dates.",
     "categories": [],
     "subcategories": [
-      "Selection"
+      "Selection",
+      "Input and selections"
     ],
     "link": "https://api.flutter.dev/flutter/material/showDatePicker.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-date-picker.png'>",
@@ -829,17 +786,6 @@
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
-    "name": "Dialog",
-    "description": "Hovering containers that prompt app users to provide more data or make a decision.",
-    "categories": [],
-    "subcategories": [
-      "Containment"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/AlertDialog-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-dialog.png'>",
-    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-coral.png'>"
-  },
-  {
     "name": "Dismissible",
     "description": "A widget that can be dismissed by dragging in the indicated direction. Dragging or flinging this widget in the DismissDirection causes the child to slide out of view. Following the slide animation, if resizeDuration is non-null, the Dismissible widget animates its height (or width, whichever is perpendicular to the dismiss direction) to zero over the resizeDuration.",
     "categories": [],
@@ -851,20 +797,11 @@
   },
   {
     "name": "Divider",
-    "description": "A one logical pixel thick horizontal line, with padding on either side.",
-    "categories": [],
-    "subcategories": [
-      "Layout"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/Divider-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-divider.png'>"
-  },
-  {
-    "name": "Divider",
     "description": "Thin line that groups content in lists and containers.",
     "categories": [],
     "subcategories": [
-      "Containment"
+      "Containment",
+      "Layout"
     ],
     "link": "https://api.flutter.dev/flutter/material/Divider-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-divider.png'>",
@@ -985,32 +922,24 @@
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
-    "name": "FAB",
-    "description": "Clickable block that triggers a key action. This block contains an icon and floats in the app interface to keep the key action within reach.",
+    "name": "FloatingActionButton",
+    "description": "Clickable block containing an icon that keeps a key action always in reach.",
     "categories": [],
     "subcategories": [
-      "Actions"
+      "Actions",
+      "Buttons"
     ],
-    "link": "https://api.flutter.dev/flutter/material/FloatingActionButton/FloatingActionButton.html",
+    "link": "https://api.flutter.dev/flutter/material/FloatingActionButton-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-floating-action-button.png'>",
     "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-leaves.png'>"
   },
   {
-    "name": "FloatingActionButton",
-    "description": "A floating action button is a circular icon button that hovers over content to promote a primary action in the application. Floating action buttons are most commonly used in the Scaffold.floatingActionButton field.",
-    "categories": [],
-    "subcategories": [
-      "Buttons"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/FloatingActionButton-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-floating-action-button.png'>"
-  },
-  {
-    "name": "Extended FAB",
+    "name": "Extended FloatingActionButton",
     "description": "Clickable block that triggers an action. These wider blocks can fit a text label and provide a larger target area.",
     "categories": [],
     "subcategories": [
-      "Actions"
+      "Actions",
+      "Buttons"
     ],
     "link": "https://api.flutter.dev/flutter/material/FloatingActionButton/FloatingActionButton.extended.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-extended-fab.png'>",
@@ -1135,25 +1064,16 @@
     "image": "<img alt='' src='https://flutter.github.io/assets-for-api-docs/assets/widgets/icon.png'>"
   },
   {
-    "name": "Icon button",
+    "name": "IconButton",
     "description": "Clickable icons to prompt app users to take supplementary actions.",
     "categories": [],
     "subcategories": [
-      "Actions"
+      "Actions",
+      "Buttons"
     ],
     "link": "https://api.flutter.dev/flutter/material/IconButton-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-icon-button.png'>",
     "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-leaves.png'>"
-  },
-  {
-    "name": "IconButton",
-    "description": "An icon button is a picture printed on a Material widget that reacts to touches by filling with color (ink).",
-    "categories": [],
-    "subcategories": [
-      "Buttons"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/IconButton-class.html",
-    "image": "<img alt='' src='https://storage.googleapis.com/material-design/publish/material_v_11/assets/0B_udO5B8pzrzdXVuTlBoOTBjcU0/components_buttons_other1.png'>"
   },
   {
     "name": "IgnorePointer",
@@ -1240,20 +1160,23 @@
   },
   {
     "name": "LinearProgressIndicator",
-    "description": "A material design linear progress indicator, also known as a progress bar.",
+    "description": "Vertical line that changes color as an ongoing process, such as loading an app or submitting a form, completes.",
     "categories": [],
     "subcategories": [
+      "Communication",
       "Information displays"
     ],
     "link": "https://api.flutter.dev/flutter/material/LinearProgressIndicator-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-linear-progress-indicator.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-progress-indicator.png'>",
+    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-coral.png'>"
   },
   {
-    "name": "List",
-    "description": "Continuous, vertical indexes that display text or images.",
+    "name": "ListTile",
+    "description": "A single fixed-height row that typically contains some text as well as a leading or trailing icon.",
     "categories": [],
     "subcategories": [
-      "Containment"
+      "Containment",
+      "Layout"
     ],
     "link": "https://api.flutter.dev/flutter/material/ListTile-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-list.png'>",
@@ -1268,16 +1191,6 @@
     ],
     "link": "https://api.flutter.dev/flutter/widgets/ListBody-class.html",
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
-  },
-  {
-    "name": "ListTile",
-    "description": "A single fixed-height row that typically contains some text as well as a leading or trailing icon.",
-    "categories": [],
-    "subcategories": [
-      "Layout"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/ListTile-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-list-tile.png'>"
   },
   {
     "name": "ListView",
@@ -1343,7 +1256,7 @@
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
-    "name": "Navigation bar",
+    "name": "NavigationBar",
     "description": "Persistent container that enables switching between primary destinations in an app.",
     "categories": [],
     "subcategories": [
@@ -1354,8 +1267,8 @@
     "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-bubbles.png'>"
   },
   {
-    "name": "Navigation drawer",
-    "description": "Container that slides from the leading edge of the app to navigate to other sections in an app.  The leading edge falls on the left side for left-to-right languages.",
+    "name": "NavigationDrawer",
+    "description": "Container that slides from the leading edge of the app to navigate to other sections in an app.",
     "categories": [],
     "subcategories": [
       "Navigation"
@@ -1366,7 +1279,7 @@
   },
   {
     "name": "Navigation rail",
-    "description": "Persistent container on the leading edge of tablet and desktop screens to navigate to parts of an app. The leading edge falls on the left side for left-to-right languages.",
+    "description": "Persistent container on the leading edge of tablet and desktop screens to navigate to parts of an app.",
     "categories": [],
     "subcategories": [
       "Navigation"
@@ -1498,32 +1411,12 @@
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
-    "name": "Progress indicator",
-    "description": "Vertical line that changes color as an ongoing process, such as loading an app or submitting a form, completes.",
-    "categories": [],
-    "subcategories": [
-      "Communication"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/LinearProgressIndicator-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-progress-indicator.png'>",
-    "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-coral.png'>"
-  },
-  {
     "name": "Radio",
-    "description": "Radio buttons allow the user to select one option from a set. Use radio buttons for exclusive selection if you think that the user needs to see all available options side-by-side. ",
+    "description": "Form control that app users can set or clear to select only one option from a set.",
     "categories": [],
     "subcategories": [
+      "Selection",
       "Input and selections"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/Radio-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-radio.png'>"
-  },
-  {
-    "name": "Radio button",
-    "description": "Form control that app users can select or clear to select only one option from a set. Select the option to enable it or clear it to disable it.",
-    "categories": [],
-    "subcategories": [
-      "Selection"
     ],
     "link": "https://api.flutter.dev/flutter/material/Radio-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-radio-button.png'>",
@@ -1666,7 +1559,7 @@
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
-    "name": "Segmented button",
+    "name": "SegmentedButton",
     "description": "Single or multiple selected clickable blocks to help people select options, switch views, or sort elements.",
     "categories": [],
     "subcategories": [
@@ -1748,20 +1641,11 @@
   },
   {
     "name": "Slider",
-    "description": "Sliders let users select from a range of values by moving the slider thumb. ",
-    "categories": [],
-    "subcategories": [
-      "Input and selections"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/Slider-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-slider.png'>"
-  },
-  {
-    "name": "Slider",
     "description": "Form control that enables selecting a range of values.",
     "categories": [],
     "subcategories": [
-      "Selection"
+      "Selection",
+      "Input and selections"
     ],
     "link": "https://api.flutter.dev/flutter/material/Slider-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-slider.png'>",
@@ -1860,20 +1744,11 @@
   },
   {
     "name": "SnackBar",
-    "description": "A lightweight message with an optional action which briefly displays at the bottom of the screen.",
-    "categories": [],
-    "subcategories": [
-      "Dialogs, alerts, and panels"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/SnackBar-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-snack-bar.png'>"
-  },
-  {
-    "name": "Snackbar",
     "description": "Brief messages about app processes that display at the bottom of the screen.",
     "categories": [],
     "subcategories": [
-      "Communication"
+      "Communication",
+      "Dialogs, alerts, and panels"
     ],
     "link": "https://api.flutter.dev/flutter/material/SnackBar-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-snackbar.png'>",
@@ -1913,45 +1788,27 @@
   },
   {
     "name": "Switch",
-    "description": "On/off switches toggle the state of a single settings option. The Switch widget implements this component.",
-    "categories": [],
-    "subcategories": [
-      "Input and selections"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/Switch-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-switch.png'>"
-  },
-  {
-    "name": "Switch",
     "description": "Toggle control that changes the state of a single item to on or off.",
     "categories": [],
     "subcategories": [
-      "Selection"
+      "Selection",
+      "Input and selections"
     ],
     "link": "https://api.flutter.dev/flutter/material/Switch-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-switch.png'>",
     "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-leaves.png'>"
   },
   {
-    "name": "Tab bar",
+    "name": "TabBar",
     "description": "Layered containers that organize content across different screens, data sets, and other interactions.",
     "categories": [],
     "subcategories": [
-      "Navigation"
+      "Navigation",
+      "App structure and navigation"
     ],
     "link": "https://api.flutter.dev/flutter/material/TabBar-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-tab-bar.png'>",
     "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-bubbles.png'>"
-  },
-  {
-    "name": "TabBar",
-    "description": "A Material Design widget that displays a horizontal row of tabs.",
-    "categories": [],
-    "subcategories": [
-      "App structure and navigation"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/TabBar-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-tab-bar.png'>"
   },
   {
     "name": "TabBarView",
@@ -2015,25 +1872,16 @@
     "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VNDg3V3ZjU2hsNGc/components_buttons_usage3.png'>"
   },
   {
-    "name": "Text field",
+    "name": "TextField",
     "description": "Box into which app users can enter text. They appear in forms and dialogs.",
     "categories": [],
     "subcategories": [
-      "Text Inputs"
+      "Text Inputs",
+      "Input and selections"
     ],
     "link": "https://api.flutter.dev/flutter/material/TextField-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-text-field.png'>",
     "hoverimage": "<img alt='' src='/assets/images/docs/widget-catalog/material-3-bubbles.png'>"
-  },
-  {
-    "name": "TextField",
-    "description": "Touching a text field places the cursor and displays the keyboard. The TextField widget implements this component.",
-    "categories": [],
-    "subcategories": [
-      "Input and selections"
-    ],
-    "link": "https://api.flutter.dev/flutter/material/TextField-class.html",
-    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-text-field.png'>"
   },
   {
     "name": "Theme",
@@ -2046,7 +1894,7 @@
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
-    "name": "Time picker",
+    "name": "TimePicker",
     "description": "Clock interface used to select and set a specific time.",
     "categories": [],
     "subcategories": [

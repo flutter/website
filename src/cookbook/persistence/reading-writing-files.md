@@ -3,6 +3,8 @@ title: Read and write files
 description: How to read from and write to files on disk.
 ---
 
+{% include docs/yt_shims.liquid %}
+
 <?code-excerpt path-base="cookbook/persistence/reading_writing_files/"?>
 
 In some cases, you need to read and write files to disk.
@@ -22,12 +24,12 @@ This recipe uses the following steps:
 To learn more, watch this Package of the Week video
 on the `path_provider` package:
 
-<iframe class="full-width" src="{{site.youtube-site}}/embed/Ci4t-NkOY3I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="full-width" src="{{yt-embed}}/Ci4t-NkOY3I" title="Learn about the path_provider Flutter Package" {{yt-set}}></iframe>
 
 {{site.alert.note}}
   This recipe doesn't work with web apps at this time.
   To follow the discussion on this issue,
-  check out `flutter/flutter` [issue #45296]({{site.github}}/flutter/flutter/issues/45296).
+  check out `flutter/flutter` [issue #45296]({{site.repo.flutter}}/issues/45296).
 {{site.alert.end}}
 
 ## 1. Find the correct local path

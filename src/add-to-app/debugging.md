@@ -94,5 +94,5 @@ and check to see if there is an **IPv6 address** section.
 Ensure that your device is wirelessly connected to Android Studio 
 as described in the [Android setup guide][].
 
-[iOS setup guide]: {{site.url}}/get-started/install/macos#deploy-to-ios-devices
-[Android setup guide]: {{site.url}}/get-started/install/macos#set-up-your-android-device
+[iOS setup guide]: {{site.url}}/get-started/install/macos/mobile-ios
+[Android setup guide]: {{site.url}}/get-started/install/macos/mobile-android?tab=physical#configure-your-target-android-device

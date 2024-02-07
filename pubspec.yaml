@@ -1,7 +1,8 @@
-name: flutter_io_dev_tools
+name: docs_flutter_dev
+publish_to: none
 
 environment:
-  sdk: ^3.1.0-0
+  sdk: ^3.2.0
 
 dev_dependencies:
   build_runner: ^2.4.6
@@ -10,4 +11,3 @@ dev_dependencies:
   code_excerpter:
     path: site-shared/packages/code_excerpter
   linkcheck: ^3.0.0
-  path: ^1.8.3

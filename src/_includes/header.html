@@ -10,7 +10,7 @@
       aria-controls="navbarSupportedContent"
       aria-expanded="false"
       aria-label="Toggle navigation">
-      <i class="material-icons">menu</i>
+      <i class="material-symbols">menu</i>
     </button>
 
     <a class="navbar-brand" href="{{site.url}}">
@@ -36,7 +36,7 @@
       <div class="site-header__sheet">
         <ul class="navbar-nav">
           <div class="site-sidebar site-sidebar--header d-md-none">
-            {% include_cached sidenav-level-1.html nav=site.data.sidenav page_url_path=route %}
+            {% include sidenav-level-1.html nav=site.data.sidenav page_url_path=route base_id="header" %}
           </div>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="platform-navbar-dropdown"

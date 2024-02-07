@@ -81,7 +81,7 @@ We do not recommend using this channel as
 it is more likely to contain serious regressions.
 
 The latest documentation for the **master** branch
-is at: <https://master-api.flutter.dev>
+is at: <https://main-api.flutter.dev>
 
 ### Changing channels
 
@@ -144,6 +144,6 @@ $ flutter pub outdated
 [Flutter SDK archive]: {{site.url}}/release/archive
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [pubspec.yaml]: {{site.dart-site}}/tools/pub/pubspec
-[test registry]: https://github.com/flutter/tests
-[contribute to Flutter]: https://github.com/flutter/flutter/blob/main/CONTRIBUTING.md
+[test registry]: {{site.repo.organization}}/tests
+[contribute to Flutter]: {{site.repo.flutter}}/blob/main/CONTRIBUTING.md
 [migration guides]: {{site.url}}/release/breaking-changes

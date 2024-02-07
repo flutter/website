@@ -68,7 +68,7 @@ the system libraries it depends upon as follows:
 
 ```terminal
 $ flutter build linux --release
-$ ldd build/linux/release/bundle/linux_desktop_test
+$ ldd build/linux/x64/release/bundle/linux_desktop_test
 ```
 
 To wrap up this application for distribution

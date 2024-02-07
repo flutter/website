@@ -16,7 +16,7 @@ repo:
   this: https://github.com/flutter/website
   flutter: https://github.com/flutter/flutter
   samples: https://github.com/flutter/samples
-  plugins: https://github.com/flutter/plugins
+  packages: https://github.com/flutter/packages
   gallery: https://github.com/flutter/gallery
   engine: https://github.com/flutter/engine
   uxr: https://github.com/flutter/uxr
@@ -32,7 +32,7 @@ social:
 dart-site: https://dart.dev
 news: https://news.dartlang.org
 api: https://api.flutter.dev
-master-api: https://master-api.flutter.dev
+main-api: https://main-api.flutter.dev
 pub: https://pub.dev
 pub-api: https://pub.dev/documentation
 pub-pkg: https://pub.dev/packages
@@ -52,9 +52,49 @@ developers: https://developers.google.com
 codelabs: https://codelabs.developers.google.com
 groups: https://groups.google.com
 firebase: https://firebase.google.com
-flutterfire: https://firebase.flutter.dev
 youtube-site: https://youtube.com
 
+## Software minimum versions
+
+appmin:
+  github_win: 2.4
+  github_mac: 2.4
+  vscode: 1.75
+  android_studio: '2022.3 (Giraffe)'
+  intellij_idea: '2022.3'
+  android_sdk: 19
+  powershell: 5.0
+  xcode: '14'
+  ios: '16'
+  cocoapods: '1.9'
+devmin:
+  windows: '64-bit version of Microsoft Windows 10'
+  macos: '10.15 (Catalina)'
+  linux: 
+    debian: 10
+    ubuntu: '18.04 LTS'
+targetmin:
+  windows: 'Microsoft Windows 7'
+  macos: '10.13 (Ventura)'
+  linux:
+    debian: 9
+    ubuntu: '18.04 LTS'
+  ios: 11
+  android: 'Android API level 19'
+
+## Software current versions
+
+appnow:
+  flutter: '3.13.4'
+  github_win: 2.4
+  vscode: '1.81.1'
+  android_studio: '2022.3 (Giraffe) or later'
+  android_sdk: '33.0.0'
+  intellij: '2023.1'
+  powershell: 5.0
+  xcode: '15'
+  ios: '17'
+  cocoapods: '1.12'
 
 ########### Jekyll ###########
 
@@ -170,25 +210,28 @@ alert:
     <aside class="alert alert-info" role="alert" markdown="1">
     **Bonus questions!**
   important: >-
-    <aside class="alert alert-warning" role="alert" markdown="1">
-    <i class="material-icons" aria-hidden="true">error</i> **Important:**
+    <aside class="alert alert-warning alert-icon" role="alert" markdown="1">
+    <i class="material-symbols" aria-hidden="true">error</i> **Important:**
   info: >-
     <aside class="alert alert-info" role="alert" markdown="1">
-    <i class="material-icons" aria-hidden="true">info</i>
+    <i class="material-symbols" aria-hidden="true">info</i>
   note: >-
     <aside class="alert alert-info" role="alert" markdown="1">
-    <i class="material-icons" aria-hidden="true">info</i> **Note:**
+    <i class="material-symbols" aria-hidden="true">info</i> **Note:**
   version-note: >-
     <aside class="alert alert-info" role="alert" markdown="1">
-    <i class="material-icons" aria-hidden="true">merge_type</i> **Version note:**
+    <i class="material-symbols" aria-hidden="true">merge_type</i> **Version note:**
+  recommend: >-
+    <aside class="alert alert-success alert-icon" role="alert" markdown="1">
+    <i class="material-symbols" aria-hidden="true">bolt</i>
   secondary: >-
     <aside class="alert alert-secondary" role="alert" markdown="1">
   tip: >-
     <aside class="alert alert-success" role="alert" markdown="1">
-    <i class="material-icons" aria-hidden="true">tips_and_updates</i> **Tip:**
+    <i class="material-symbols" aria-hidden="true">lightbulb</i> **Tip:**
   warning: >-
     <aside class="alert alert-warning" role="alert" markdown="1">
-    <i class="material-icons" aria-hidden="true">report_problem</i> **Warning:**
+    <i class="material-symbols" aria-hidden="true">warning</i> **Warning:**
   end: </aside>
 
 

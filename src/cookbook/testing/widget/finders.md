@@ -38,7 +38,7 @@ In testing, you often need to find widgets that contain specific text.
 This is exactly what the `find.text()` method is for. It creates a
 `Finder` that searches for widgets that display a specific `String` of text.
 
-<?code-excerpt "test/tests.dart (test1)"?>
+<?code-excerpt "test/finders_test.dart (test1)"?>
 ```dart
 testWidgets('finds a Text widget', (tester) async {
   // Build an App with a Text widget that displays the letter 'H'.
@@ -64,7 +64,7 @@ In this case, provide a `Key` to each widget in the list. This allows
 an app to uniquely identify a specific widget, making it easier to find
 the widget in the test environment.
 
-<?code-excerpt "test/tests.dart (test2)"?>
+<?code-excerpt "test/finders_test.dart (test2)"?>
 ```dart
 testWidgets('finds a widget using a Key', (tester) async {
   // Define the test key.
@@ -84,7 +84,7 @@ Finally, you might be interested in locating a specific instance of a widget.
 For example, this can be useful when creating widgets that take a `child`
 property and you want to ensure you're rendering the `child` widget.
 
-<?code-excerpt "test/tests.dart (test3)"?>
+<?code-excerpt "test/finders_test.dart (test3)"?>
 ```dart
 testWidgets('finds a specific instance', (tester) async {
   const childWidget = Padding(padding: EdgeInsets.zero);
@@ -110,7 +110,7 @@ to review all available methods.
 
 ### Complete example
 
-<?code-excerpt "test/tests.dart"?>
+<?code-excerpt "test/finders_test.dart"?>
 ```dart
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';

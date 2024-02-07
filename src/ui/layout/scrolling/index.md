@@ -3,6 +3,8 @@ title: Scrolling
 description: Overview of Flutter's scrolling support
 ---
 
+{% include docs/yt_shims.liquid %}
+
 Flutter has many built-in widgets that automatically
 scroll and also offers a variety of widgets
 that you can customize to create specific scrolling
@@ -11,16 +13,16 @@ behavior.
 ## Basic scrolling
 
 Many Flutter widgets support scrolling out of the box
-and do most of the work for you. For example, 
+and do most of the work for you. For example,
 [`SingleChildScrollView`][] automatically scrolls its
 child when necessary. Other useful widgets include
 [`ListView`][] and [`GridView`][].
 You can check out more of these widgets on the
 [scrolling page][] of the Widget catalog.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/DbkIQSvwnZc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{yt-embed}}/DbkIQSvwnZc" title="Learn how to use the Scrollbar Flutter Widget" {{yt-set}}></iframe>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KJpkjHGiI5A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{yt-embed}}/KJpkjHGiI5A" title="Learn how to use the ListView Flutter Widget" {{yt-set}}></iframe>
 
 ### Infinite scrolling
 
@@ -41,22 +43,22 @@ The following widgets provide more specific scrolling
 behavior.
 
 A video on using [`DraggableScrollableSheet`][]
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Hgw819mL_78" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{yt-embed}}/Hgw819mL_78" title="Learn how to use the DraggableScrollableSheet Flutter Widget" {{yt-set}}></iframe>
 
 Turn the scrollable area into a wheel! [`ListWheelScrollView`][]
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dUhmWAz4C7Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{yt-embed}}/dUhmWAz4C7Y" title="Learn how to use the ListWheelScrollView Flutter Widget" {{yt-set}}></iframe>
 
 [`DraggableScrollableSheet`]: {{site.api}}/flutter/widgets/DraggableScrollableSheet-class.html
 [`GridView`]: {{site.api}}/flutter/widgets/GridView-class.html
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
 [`ListWheelScrollView`]: {{site.api}}/flutter/widgets/ListWheelScrollView-class.html
 [scrolling page]: {{site.url}}/ui/widgets/scrolling
-[`SingleChildScrollView`]: {{site.api}}/flutter/widgets/SingleChildScrollView-class.html 
+[`SingleChildScrollView`]: {{site.api}}/flutter/widgets/SingleChildScrollView-class.html
 
 {% comment %}
   Not yet, but coming. Two dimensional scrolling:
   TableView and TreeView.
-  Video: https://www.youtube.com/watch?v=UDZ0LPQq-n8
+  Video: {{yt-watch}}?v=UDZ0LPQq-n8
 {% endcomment %}
 
 ## Fancy scrolling
@@ -91,4 +93,4 @@ or do you use a sliver?
 
 Check out the "ShrinkWrap vs Slivers" video:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LUqDNnv_dh0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{yt-embed}}/LUqDNnv_dh0" title="Learn how to nest scrolling widgets in Flutter" {{yt-set}}></iframe>

@@ -4,7 +4,10 @@ import '../global/device_type.dart';
 import '../widgets/scroll_view_with_scrollbars.dart';
 
 class AdaptiveDataTablePage extends StatelessWidget {
+  AdaptiveDataTablePage({super.key});
+
   final List<int> items = List.generate(100, (index) => index);
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -15,10 +18,10 @@ class AdaptiveDataTablePage extends StatelessWidget {
         return Column(children: [
           Row(
             children: [
-              _TableHeader('Column 1'),
-              if (showCol2) _TableHeader('Column 2'),
-              if (showCol3) _TableHeader('Column 3'),
-              if (showCol4) _TableHeader('Column 4'),
+              const _TableHeader('Column 1'),
+              if (showCol2) const _TableHeader('Column 2'),
+              if (showCol3) const _TableHeader('Column 3'),
+              if (showCol4) const _TableHeader('Column 4'),
             ],
           ),
           Expanded(
@@ -53,10 +56,10 @@ class _TableHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Expanded(
         child: Padding(
-          padding: EdgeInsets.all(Insets.medium),
+          padding: const EdgeInsets.all(Insets.medium),
           child: Text(
             label,
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
           ),
         ),
       );
@@ -69,7 +72,7 @@ class _TableRowItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Expanded(
       child: Padding(
-          padding: EdgeInsets.symmetric(
+          padding: const EdgeInsets.symmetric(
               horizontal: Insets.medium, vertical: Insets.extraLarge),
           child: Text(label)));
 }

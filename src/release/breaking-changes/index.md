@@ -25,34 +25,59 @@ release, and listed in alphabetical order:
 
 [breaking change policy]: {{site.url}}/release/compatibility-policy
 [Flutter announce]: {{site.groups}}/forum/#!forum/flutter-announce
-[Dart announce]: https://groups.google.com/a/dartlang.org/g/announce
+[Dart announce]: {{site.groups}}/a/dartlang.org/g/announce
 [`dart fix`]: {{site.url}}/tools/flutter-fix
 [test registry]: {{site.github}}/flutter/tests
 
 ### Not yet released to stable
 
+* [Migrate RawKeyEvent/RawKeyboard system to KeyEvent/HardwareKeyboard system][]
+* [Deprecate `TextField.canRequestFocus`][]
+* [Accessibility traversal order of tooltip changed][]
+* [Default multitouch scrolling][]
+* [Deprecate imperative apply of Flutter's Gradle plugins][]
+* [Rename MemoryAllocations to FlutterMemoryAllocations][]
+* [Deprecated API removed after v3.16][]
+* [Nullable PageView.controller][]
+
+[Migrate RawKeyEvent/RawKeyboard system to KeyEvent/HardwareKeyboard system]: {{site.url}}/release/breaking-changes/key-event-migration
+[Deprecate `TextField.canRequestFocus`]: {{site.url}}/release/breaking-changes/can-request-focus
+[Accessibility traversal order of tooltip changed]: {{site.url}}/release/breaking-changes/tooltip-semantics-order
+[Default multitouch scrolling]: {{site.url}}/release/breaking-changes/multi-touch-scrolling
+[Deprecate imperative apply of Flutter's Gradle plugins]: {{site.url}}/release/breaking-changes/flutter-gradle-plugin-apply
+[Rename MemoryAllocations to FlutterMemoryAllocations]: {{site.url}}/release/breaking-changes/flutter-memory-allocations
+[Deprecated API removed after v3.16]: {{site.url}}/release/breaking-changes/3-16-deprecations
+[Nullable PageView.controller]: {{site.url}}/release/breaking-changes/pageview-controller
+
+### Released in Flutter 3.16
+
+* [Migrating to Material 3][]
+* [Migrate ShortcutActivator and ShortcutManager to KeyEvent system][]
+* [The `ThemeData.useMaterial3` property is now set to true by default][]
+* [Deprecated API removed after v3.13][]
 * [Customize tabs alignment using the new `TabBar.tabAlignment` property][]
 * [Deprecate `textScaleFactor` in favor of `TextScaler`][]
-* [Deprecate TextField.canRequestFocus][]
+* [Android 14 nonlinear font scaling enabled][]
 * [Deprecate `describeEnum` and update `EnumProperty` to be type strict][]
 * [Deprecated just-in-time navigation pop APIs for Android Predictive Back][]
 * [Deprecated `Paint.enableDithering`][]
 * [Updated default text styles for menus][]
 * [Windows: External windows should notify Flutter engine of lifecycle changes][]
 * [Windows build path changed to add the target architecture][]
-* [Deprecated API removed after v3.13][]
 
+[Migrating to Material 3]: {{site.url}}/release/breaking-changes/material-3-migration
+[Migrate ShortcutActivator and ShortcutManager to KeyEvent system]: {{site.url}}/release/breaking-changes/shortcut-key-event-migration
+[The `ThemeData.useMaterial3` property is now set to true by default]: {{site.url}}/release/breaking-changes/material-3-default
+[Deprecated API removed after v3.13]: {{site.url}}/release/breaking-changes/3-13-deprecations
 [Customize tabs alignment using the new `TabBar.tabAlignment` property]: {{site.url}}/release/breaking-changes/tab-alignment
 [Deprecate `textScaleFactor` in favor of `TextScaler`]: {{site.url}}/release/breaking-changes/deprecate-textscalefactor
-[Deprecate TextField.canRequestFocus]: {{site.url}}/release/breaking-changes/can-request-focus
+[Android 14 nonlinear font scaling enabled]: {{site.url}}/release/breaking-changes/android-14-nonlinear-text-scaling-migration
 [Deprecate `describeEnum` and update `EnumProperty` to be type strict]: {{site.url}}/release/breaking-changes/describe-enum
 [Deprecated just-in-time navigation pop APIs for Android Predictive Back]: {{site.url}}/release/breaking-changes/android-predictive-back
 [Deprecated `Paint.enableDithering`]: {{site.url}}/release/breaking-changes/paint-enableDithering
 [Updated default text styles for menus]: {{site.url}}/release/breaking-changes/menus-text-style
-[Windows: External windows should notify Flutter engine of lifecycle changes]: {{site.url}}/release/breaking-changes/win_lifecycle_process_function
+[Windows: External windows should notify Flutter engine of lifecycle changes]: {{site.url}}/release/breaking-changes/win-lifecycle-process-function
 [Windows build path changed to add the target architecture]: {{site.url}}/release/breaking-changes/windows-build-architecture
-[Deprecated API removed after v3.13]: {{site.url}}/release/breaking-changes/3-13-deprecations
-
 
 ### Released in Flutter 3.13
 

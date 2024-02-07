@@ -114,7 +114,8 @@ Now, use the following instructions to update the
 ```dart
 // A function that converts a response body into a List<Photo>.
 List<Photo> parsePhotos(String responseBody) {
-  final parsed = jsonDecode(responseBody).cast<Map<String, dynamic>>();
+  final parsed =
+      (jsonDecode(responseBody) as List).cast<Map<String, dynamic>>();
 
   return parsed.map<Photo>((json) => Photo.fromJson(json)).toList();
 }
@@ -123,7 +124,7 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
   final response = await client
       .get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
 
-  // Use the compute function to run parsePhotos in a separate isolate.
+  // Synchronously run parsePhotos in the main isolate.
   return parsePhotos(response.body);
 }
 ```
@@ -187,7 +188,8 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
 
 // A function that converts a response body into a List<Photo>.
 List<Photo> parsePhotos(String responseBody) {
-  final parsed = jsonDecode(responseBody).cast<Map<String, dynamic>>();
+  final parsed =
+      (jsonDecode(responseBody) as List).cast<Map<String, dynamic>>();
 
   return parsed.map<Photo>((json) => Photo.fromJson(json)).toList();
 }
@@ -287,7 +289,7 @@ class PhotosList extends StatelessWidget {
 
 ![Isolate demo]({{site.url}}/assets/images/docs/cookbook/isolate.gif){:.site-mobile-screenshot}
 
-[`compute()`]: {{site.api}}/flutter/foundation/compute-constant.html
+[`compute()`]: {{site.api}}/flutter/foundation/compute.html
 [Fetch data from the internet]: {{site.url}}/cookbook/networking/fetch-data
 [`http`]: {{site.pub-pkg}}/http
 [`http.get()`]: {{site.pub-api}}/http/latest/http/get.html

@@ -389,7 +389,7 @@ You now have a `FlutterActivity` with a transparent background.
 {{site.alert.end}}
 
 [`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
-[`Activity`]: https://developer.android.com/reference/android/app/Activity
+[`Activity`]: {{site.android-dev}}/reference/android/app/Activity
 [`FlutterEngine`]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html
 [`FlutterEngineCache`]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngineCache.html
 [`FlutterFragment`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterFragment.html

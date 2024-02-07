@@ -336,8 +336,8 @@ For more information, see the API docs for:
 * [`FlutterPlatformView`][]
 * [`PlatformView`][]
 
-[`FlutterPlatformView`]: {{site.api}}/objcdoc/Protocols/FlutterPlatformView.html
-[`FlutterPlatformViewFactory`]: {{site.api}}/objcdoc/Protocols/FlutterPlatformViewFactory.html
+[`FlutterPlatformView`]: {{site.api}}/ios-embedder/protocol_flutter_platform_view-p.html
+[`FlutterPlatformViewFactory`]: {{site.api}}/ios-embedder/protocol_flutter_platform_view_factory-p.html
 [`PlatformView`]: {{site.api}}/javadoc/io/flutter/plugin/platform/PlatformView.html
 
 ## Putting it together

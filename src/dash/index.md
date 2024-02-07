@@ -3,6 +3,8 @@ title: Who is Dash?
 description: Learn more about the Flutter and Dart mascot, Dash.
 ---
 
+{% include docs/yt_shims.liquid %}
+
 This is Dash:
 
 ![Dash by herself]({{site.url}}/assets/images/dash/Dash.png){:width="50%"}<br>
@@ -65,8 +67,6 @@ Here are some early mockups and one of the first prototypes:
 ![First prototype]({{site.url}}/assets/images/dash/early-dash-sketches5.jpg){:width="50%"}<br>
 The first prototype had uneven eyes
 
-[event website]: https://events.dartlang.org/2018/dartconf/
-
 ## Why a hummingbird?
 
 Early on, a hummingbird image was created for the Dart team
@@ -86,8 +86,8 @@ manufacturers who returned the prototypes some weeks later.
 
 ![The first Dash prototypes]({{site.url}}/assets/images/dash/dash-prototypes.jpg){:width="35%"} ![The first Dash prototypes]({{site.url}}/assets/images/dash/dash-prototypes2.jpg){:width="35%"}<br>
 
-Introducing Dash at the January 2018 Dart Conference:
-<iframe width="541" height="350" src="{{ site.youtube-site }}/embed/R5vIUjRZaZA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Introducing Dash at the January 2018 Dart Conference.
+<iframe width="541" height="350" src="{{yt-embed}}/R5vIUjRZaZA" title="Introducing Dash at the January 2018 Dart Conference" {{yt-set}}></iframe>
 
 While the manufacturing process was proceeding,
 Shams chose a name for the plushy: Dash,
@@ -99,8 +99,7 @@ Many boxes of Dash plushies arrived in
 southern California just in time for the conference.
 They were eagerly adopted by Dart _and_ Flutter enthusiasts.
 
-The people have spoken,
-so Dash is now the mascot for Flutter **and** Dart.
+The people have spoken, so Dash is now the mascot for Flutter **and** Dart.
 
 ![Dash 1.0]({{site.url}}/assets/images/dash/dash-1.0.jpg){:width="35%"}<br>
 Dash 1.0
@@ -126,35 +125,33 @@ Dash 2.0 and 2.1
 * Dash is female, but she doesn't mind
   being called _they_, _their_, _he_, or _him_.
 * Dash has an [Instagram account][].
-* Dash has a **straight** beak. 
+* Dash has a **straight** beak.
   **Please, don't depict Dash with a curved beak.**
 * We also have Mega-Dash, a life-sized mascot
-  who is currently resting in a locked-down Google office.<br>
-![Mega-Dash in the office]({{site.url}}/assets/images/dash/MegaDashChilling.png){:width="50%"}<br>
+  who is currently resting in a Google office.
+  
+  ![Mega-Dash in the office]({{site.url}}/assets/images/dash/MegaDashChilling.png){:width="50%"}
+  
   Mega-Dash made her
   first appearance at the [Flutter Interact][] event
-  in Brooklyn, New York, on December 11, 2019.<br>
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/EgBMGDtHZhE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  in Brooklyn, New York, on December 11, 2019.
+  
+  <iframe width="560" height="315" src="{{yt-embed}}/EgBMGDtHZhE" title="Watch the Flutter Interact 2019 highlights" {{yt-set}}></iframe>
+  
 * We also have a Dash puppet that Shams made from
   one of the first plushies.
-![Nilay and the Dash puppet]({{site.url}}/assets/images/dash/NilayDashPuppet.png){:width="50%"}<br>
+  
+  ![Nilay and the Dash puppet]({{site.url}}/assets/images/dash/NilayDashPuppet.png){:width="50%"}
+  
   A number of our YouTube videos feature the Dash puppet,
-  voiced by Emily Fortuna, one of our early (and much loved)
+  voiced by Emily Fortuna, one of the early (and much loved)
   Flutter Developer Advocates.
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/dsiLVNDJ3t0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/oyy_1CjNdBU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-{% comment %}
-I haven't been able to figure out how to play the mp4 file...
-* Here is a sound recording of Dash's chirp, by Kathy Walrath,
-  the Dart writer.
-![Dash's chirp]({{site.url}}/assets/images/dash/DartDartDarrrrrrt.mp4){:width="50%"}<br>
-{% endcomment %}
+  
+  <iframe width="560" height="315" src="{{yt-embed}}/oyy_1CjNdBU" title="Building DashCast, a Flutter-based podcast app" {{yt-set}}></iframe>
+  <iframe width="560" height="315" src="{{yt-embed}}/dsiLVNDJ3t0" title="Revisiting DashCast, a Flutter-based podcast app" {{yt-set}}></iframe>
 
+<br>
 !["Born to Hot Reload" jacket]({{site.url}}/assets/images/dash/ShamsDashJacket.png){:width="35%"}<br>
 
-[Flutter Interact]: {{site.developers}}/events/flutter-interact
+[Flutter Interact]: {{yt-playlist}}PLjxrf2q8roU0o0wKRJTjyN0pSUA6TI8lg
 [Instagram account]: https://www.instagram.com/dash_the_dartlang_plushy/
-
-{% comment %}
-<iframe width="560" height="315" src="{{site.youtube-site}}/embed/sPW7nDBqt8w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-{% endcomment %}

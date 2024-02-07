@@ -201,7 +201,7 @@ launches and displays the details screen:
 Source code: [deeplink_cookbook][]
 
 [deeplink_cookbook]: {{site.github}}/flutter/codelabs/tree/main/deeplink_cookbook
-[Firebase Hosting]: https://firebase.google.com/docs/hosting
+[Firebase Hosting]: {{site.firebase}}/docs/hosting
 [go_router]: {{site.pub}}/packages/go_router
 [GitHub Pages]: https://pages.github.com
 [uni_links]: {{site.pub}}/packages/uni_links

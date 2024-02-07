@@ -3,6 +3,8 @@ title: Flutter for UIKit developers
 description: Learn how to apply iOS and UIKit developer knowledge when building Flutter apps.
 ---
 
+{% include docs/yt_shims.liquid %}
+
 <?code-excerpt path-base="get-started/flutter-for/ios_devs"?>
 
 iOS developers with experience using UIKit
@@ -33,7 +35,7 @@ to app behavior when running on iOS.
 To learn how, see [Platform adaptations][].
 
 {{site.alert.info}}
-  To integrate Flutter code into an **existing** iOS app, 
+  To integrate Flutter code into an **existing** iOS app,
   check out [Add Flutter to existing app][].
 {{site.alert.end}}
 
@@ -45,7 +47,7 @@ Jump around and find questions that address your most relevant needs.
 As an introduction, watch the following video.
 It outlines how Flutter works on iOS and how to use Flutter to build iOS apps.
 
-<iframe class="full-width" src="{{site.youtube-site}}/embed/ceMsPBbcEGg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="full-width" src="{{yt-embed}}/ceMsPBbcEGg" title="Learn how to develop with Flutter as an iOS developer" {{yt-set}}></iframe>
 
 ### Views vs. Widgets
 
@@ -670,7 +672,7 @@ package to use i10n machinery, such as date/time formatting.
 dependencies:
   flutter_localizations:
     sdk: flutter
-  intl: '^0.17.0'
+  intl: any # Use version of intl from flutter_localizations.
 ```
 
 To use the `flutter_localizations` package,
@@ -1353,7 +1355,7 @@ but is not as rich as `MaterialApp`.
 To customize the colors and styles of any child components,
 pass a `ThemeData` object to the `MaterialApp` widget.
 For example, in the code below,
-the primary swatch is set to blue and divider color is grey.
+the color scheme from seed is set to deepPurple and divider color is grey.
 
 <?code-excerpt "lib/theme.dart (Theme)"?>
 ```dart
@@ -1367,7 +1369,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         dividerColor: Colors.grey,
       ),
       home: const SampleAppPage(),
@@ -2029,7 +2031,7 @@ implement yourself, making it simple to make network calls.
 To add the `http` package as a dependency, run `flutter pub add`:
 
 ```terminal
-$ flutter pub add http
+flutter pub add http
 ```
 
 To make a network call,
@@ -2170,7 +2172,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 [Flutter cookbook]: {{site.url}}/cookbook
 [`http` package]: {{site.pub-pkg}}/http
 [Human Interface Guidelines]: {{site.apple-dev}}/ios/human-interface-guidelines/overview/themes/
-[internationalization guide]: {{site.url}}/ui/accessibility-and-localization/internationalization
+[internationalization guide]: {{site.url}}/ui/accessibility-and-internationalization/internationalization
 [`intl`]: {{site.pub-pkg}}/intl
 [`intl_translation`]: {{site.pub-pkg}}/intl_translation
 [Introduction to declarative UI]: {{site.url}}/get-started/flutter-for/declarative

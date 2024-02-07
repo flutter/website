@@ -54,7 +54,7 @@ follow these steps:
  1. Enable
     [VM acceleration]({{site.android-dev}}/studio/run/emulator-acceleration#accel-vm)
     on your machine.
- 1. Launch **Android Studio**, click the **Device Manager**
+ 1. Start **Android Studio**, click the **Device Manager**
     icon, and select **Create Device** under **Virtual** tab...
     * In older versions of Android Studio, you should instead
     launch **Android Studio > Tools > Android > AVD Manager** and select

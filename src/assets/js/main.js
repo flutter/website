@@ -20,9 +20,15 @@ document.addEventListener("DOMContentLoaded", function(_) {
   setupTabs($('#vscode-to-vs-setup'), 'dev.flutter.debug.vscode-to-vs');
   setupTabs($('#add-to-app-android'), 'dev.flutter.add-to-app.android');
   setupTabs($('#add-to-app-android-deps'), 'dev.flutter.add-to-app.android.deps');
-
-
   setupTabs($('#ios-versions'), 'dev.flutter.ios-versions');
+  setupTabs($('#android-devices-vp'), 'dev.flutter.install.android-devices-vp');
+  setupTabs($('#android-studio-start'), 'dev.flutter.install.android-studio-start');
+  setupTabs($('#flutter-install'), 'dev.flutter.install.options');
+  setupTabs($('#ios-devices-vp'), 'dev.flutter.install.ios-devices-vp');
+  setupTabs($('#china-os-tabs'), 'dev.flutter.china-os');
+  setupTabs($('#china-os-dl-tabs'), 'dev.flutter.china-os-dl');
+  setupTabs($('#china-os-pub-tabs'), 'dev.flutter.china-os-pub');
+  setupTabs($('#base-os-tabs'), 'dev.flutter.os');
 
   prettyPrint();
 });
@@ -282,7 +288,7 @@ function addCopyCodeButtonsEverywhere() {
         '<button class="code-excerpt__copy-btn" type="button"' +
         '    data-toggle="tooltip" title="Copy code"' +
         '    data-clipboard-target="#code-excerpt-' + i + '">' +
-        '  <i class="material-icons">content_copy</i>' +
+        '  <i class="material-symbols">content_copy</i>' +
         '</button>';
     });
 }

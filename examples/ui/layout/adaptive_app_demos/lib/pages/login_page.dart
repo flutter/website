@@ -5,6 +5,8 @@ import '../app_model.dart';
 
 // Uses full-screen breakpoints to reflow the widget tree
 class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
@@ -30,7 +32,7 @@ class _LoginDetailPanel extends StatelessWidget {
   Widget build(BuildContext context) => Container(
         alignment: Alignment.center,
         color: Colors.grey.shade300,
-        child: Text(
+        child: const Text(
           'LOGIN VIEW\nBRANDING',
           style: TextStyle(fontSize: 64),
           textAlign: TextAlign.center,
@@ -48,7 +50,7 @@ class _LoginForm extends StatelessWidget {
     return Center(
       // Use a maxWidth so the form is responsive, but does get not too large on bigger screens
       child: ConstrainedBox(
-        constraints: BoxConstraints(maxWidth: 450),
+        constraints: const BoxConstraints(maxWidth: 450),
         // Very small screens may require vertical scrolling of the form
         child: SingleChildScrollView(
           child: Padding(
@@ -56,19 +58,21 @@ class _LoginForm extends StatelessWidget {
             child: Column(
               children: [
                 TextField(decoration: _getTextDecoration('Enter email...')),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 TextField(
-                    decoration: _getTextDecoration('Enter password...'),
-                    obscureText: true),
-                SizedBox(height: 16),
+                  decoration: _getTextDecoration('Enter password...'),
+                  obscureText: true,
+                ),
+                const SizedBox(height: 16),
                 OutlinedButton(
-                    onPressed: handleLoginPressed,
-                    child: Container(
-                      width: double.infinity,
-                      alignment: Alignment.center,
-                      padding: EdgeInsets.all(16),
-                      child: Text('Log In'),
-                    )),
+                  onPressed: handleLoginPressed,
+                  child: Container(
+                    width: double.infinity,
+                    alignment: Alignment.center,
+                    padding: const EdgeInsets.all(16),
+                    child: const Text('Log In'),
+                  ),
+                ),
               ],
             ),
           ),
@@ -79,4 +83,4 @@ class _LoginForm extends StatelessWidget {
 }
 
 InputDecoration _getTextDecoration(String hint) =>
-    InputDecoration(border: OutlineInputBorder(), hintText: hint);
+    InputDecoration(border: const OutlineInputBorder(), hintText: hint);

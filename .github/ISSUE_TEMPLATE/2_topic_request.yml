@@ -1,18 +1,26 @@
 name: Topic request
-description: What information should be on flutter.dev but isn't covered well (or at all)?
-labels: [new page/topic request]
+description: What information should be on docs.flutter.dev but isn't covered well (or at all)?
+labels: [co.request, from.user]
 body:
   - type: textarea
     id: problem
     attributes:
-      label: What information is missing?
-      placeholder: A clear and concise description of what you expected to find on flutter.dev, but didn't.
+      label: What information needs to be added?
+      placeholder: Provide a clear and concise description of what you expected to find on docs.flutter.dev, but didn't.
     validations:
       required: true
   - type: textarea
     id: fix
     attributes:
-      label: How would you like us to fix this problem?
-      placeholder: Let us know where you'd expect to see this missing information.
+      label: Where should this new content appear?
+      placeholder: Let us know where you'd expect to see this new information.
     validations:
       required: false
+  - type: checkboxes
+    id: volunteer
+    attributes:
+      label: I would like to fix this problem.
+      description: Let us know if you want to try fixing this yourself.
+      options:
+        - label: I will try and fix this problem on docs.flutter.dev.
+          required: false

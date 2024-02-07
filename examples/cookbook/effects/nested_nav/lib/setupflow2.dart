@@ -9,7 +9,7 @@ class SetupFlow extends StatefulWidget {
   final String setupPageRoute;
 
   @override
-  SetupFlowState createState() => SetupFlowState();
+  State<SetupFlow> createState() => SetupFlowState();
 }
 
 class SetupFlowState extends State<SetupFlow> {

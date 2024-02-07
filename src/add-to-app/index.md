@@ -125,16 +125,16 @@ see our API usage guides at the following links:
   (such as assuming that a Flutter `Activity` is always present).
 * On Android, the Flutter module only supports AndroidX applications.
 
-[add-to-app GitHub Samples repository]: {{site.github}}/flutter/samples/tree/main/add_to_app
+[add-to-app GitHub Samples repository]: {{site.repo.samples}}/tree/main/add_to_app
 [Android Archive (AAR)]: {{site.android-dev}}/studio/projects/android-library
 [Flutter plugins]: {{site.pub}}/flutter
 [`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
 [java-engine]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html
-[ios-engine]: {{site.api}}/objcdoc/Classes/FlutterEngine.html
-[FlutterFire]: {{site.github}}/FirebaseExtended/flutterfire/tree/master/packages
+[ios-engine]: {{site.api}}/ios-embedder/interface_flutter_engine.html
+[FlutterFire]: {{site.github}}/firebase/flutterfire/tree/master/packages
 [`FlutterFragment`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterFragment.html
 [`FlutterPlugin`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html
-[`FlutterViewController`]: {{site.api}}/objcdoc/Classes/FlutterViewController.html
+[`FlutterViewController`]: {{site.api}}/ios-embedder/interface_flutter_view_controller.html
 [iOS Framework]: {{site.apple-dev}}/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html
-[maintained by the Flutter team]: {{site.repo.plugins}}/tree/main/packages
+[maintained by the Flutter team]: {{site.repo.packages}}/tree/main/packages
 [multiple Flutters]: {{site.url}}/add-to-app/multiple-flutters

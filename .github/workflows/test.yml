@@ -1,0 +1,63 @@
+name: test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: "0 0 * * 0"
+
+# Declare default permissions as read only.
+permissions: read-all
+
+env:
+  NODE_ENV: production
+  NODE_VERSION: 20
+
+jobs:
+  test:
+    name: Check excerpts and run tests
+    runs-on: ubuntu-latest
+    if: github.repository == 'flutter/website'
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: "Beta channel"
+            branch: beta
+            experimental: true
+          - name: "Stable channel"
+            branch: stable
+            experimental: false
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        with:
+          submodules: recursive
+      - name: Test
+        env:
+          FLUTTER_BUILD_BRANCH: ${{ matrix.branch }}
+        run: make test
+        continue-on-error: ${{ matrix.experimental }}
+
+  linkcheck:
+    name: Build site and check links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        with:
+          submodules: recursive
+      - name: Build site and check links
+        run: make build BUILD_CONFIGS=_config.yml,_config_stage.yml
+      - name: Install Node for Firebase install
+        uses: actions/setup-node@b39b52d1213e96004bfcb1c61a8a6fa8ab84f3e8
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools@13.0.2
+      - uses: dart-lang/setup-dart@fedb1266e91cf51be2fdb382869461a434b920a3
+        with:
+          sdk: stable
+      - run: tool/check-links.sh
