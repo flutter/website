@@ -1,6 +1,9 @@
 # Default Codeowners
 *  @atsansone @parlough @sfshaza2 @domesticmouse @MaryaBelanger
 
+# Covers staging and deploying with Cloud Build
+/cloud_build/ @parlough @khanhnwin @sfshaza2 @atsansone
+
 # Covers all web content
 /src/       @sfshaza2 @atsansone @parlough @domesticmouse @MaryaBelanger
 

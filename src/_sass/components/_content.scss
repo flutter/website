@@ -1,21 +1,6 @@
 @use '../base/variables' as *;
 @use '../vendor/bootstrap';
 
-// Header clearance of top nav
-@mixin _header-clearance {
-  $clearance: 100px;
-
-  margin-top: -$clearance;
-  padding-top: $clearance;
-}
-
-@mixin header-clearance {
-  @include _header-clearance;
-
-  content: "";
-  display: block;
-}
-
 // Material design icons
 @mixin md-icon-content($icon-name, $width: '', $bottom: true) {
   font-family: $site-font-family-icon;
@@ -69,7 +54,7 @@
           }
         }
 
-        .material-icons {
+        .material-symbols {
           font-size: 18px;
         }
       }
@@ -83,13 +68,6 @@
   h1, h2, h3, h4, h5, h6 {
     text-wrap: balance;
     
-    // Invisible pre-element to avoid modifying styles on headings.
-    &[id]:not(.no_toc)::before { @include header-clearance; }
-
-    // This case is for jekyll-toc entries that use the computed header id, rather than
-    // the Kramdown id override specified using the {#foo} markdown-extension syntax.
-    > a[id]::before { @include header-clearance; }
-
     $icon-size: 1.5rem;
     $anchor-padding: 0.25rem;
 

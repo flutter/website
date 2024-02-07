@@ -13,11 +13,6 @@ Material Design guidelines.
 Flutter includes a convenient way to create tab layouts as part of
 the [material library][].
 
-{{site.alert.note}}
-  To create tabs in a Cupertino app, see the
-  [Building a Cupertino app with Flutter][] codelab.
-{{site.alert.end}}
-
 This recipe creates a tabbed example using the following steps;
 
   1. Create a `TabController`.
@@ -147,7 +142,6 @@ class TabBarDemo extends StatelessWidget {
 
 
 [`AppBar`]: {{site.api}}/flutter/material/AppBar-class.html
-[Building a Cupertino app with Flutter]: {{site.codelabs}}/codelabs/flutter-cupertino
 [`DefaultTabController`]: {{site.api}}/flutter/material/DefaultTabController-class.html
 [material library]: {{site.api}}/flutter/material/material-library.html
 [`Tab`]: {{site.api}}/flutter/material/Tab-class.html

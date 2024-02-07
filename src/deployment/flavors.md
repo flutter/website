@@ -9,7 +9,7 @@ description: >
 ## What are flavors
 
 Have you ever wondered how to set up different environments in your Flutter app?
-Flavors (known as _build configurations_ in iOS), allow you (the developer) to
+Flavors (known as _build configurations_ in iOS and macOS), allow you (the developer) to
 create separate environments for your app using the same code base.
 For example, you might have one flavor for your full-fledged production app,
 another as a limited "free" app, another for testing experimental features, and so on.
@@ -31,7 +31,7 @@ Flavors let you define compile-time configurations
 and set parameters that are read at runtime to customize
 your app's behavior.
 
-This document guides you through setting up Flutter flavors for iOS and Android.
+This document guides you through setting up Flutter flavors for iOS, macOS, and Android.
 
 ## Environment set up
 
@@ -40,9 +40,9 @@ Prerequisites:
 * Xcode installed
 * An existing Flutter project
 
-To set up flavors in iOS, you'll define build configurations in Xcode.
+To set up flavors in iOS and macOS, you'll define build configurations in Xcode.
 
-## Creating flavors in iOS
+## Creating flavors in iOS and macOS
 
 <ol markdown="1">
 <li markdown="1">
@@ -100,7 +100,7 @@ Change the `free` scheme to match the build configurations already created.
 </li>
 </ol>
 
-## Using flavors in iOS
+## Using flavors in iOS and macOS
 
 Now that you've set up your free flavor,
 you can, for example, add different product bundle identifiers per flavor.
@@ -143,9 +143,10 @@ section at the end of this document.
 
 ### Plugin configurations
 
-If your app uses a Flutter plugin, you need to update the `ios/Podfile`.
+If your app uses a Flutter plugin, you need to update
+`ios/Podfile` (if developing for iOS) and `macos/Podfile` (if developing for macOS).
 
-1. In `ios/Podfile` change the default for
+1. In `ios/Podfile` and `macos/Podfile`, change the default for
    **Debug**, **Profile**, and **Release**
    to match the Xcode build configurations for the `free` scheme.
 
@@ -234,7 +235,7 @@ TODO: When available, add an app sample.
 2. Test the setup using `flutter run --flavor free`
 at the command line, or in your IDE.
 
-For examples of build flavors for [iOS (Xcode)][] and [Android][],
+For examples of build flavors for [iOS][], [macOS][], and [Android][],
 check out the integration test samples in the [Flutter repo][].
 
 ## Retrieving your app's flavor at runtime
@@ -289,6 +290,8 @@ For packages that support creating flavors, check out the following:
 
 [Launching your app flavors]: {{site.url}}/deployment/flavors/#launching-your-app-flavors
 [Flutter repo]: {{site.repo.flutter}}/blob/master/dev/integration_tests/flavors/lib/main.dart
+[iOS]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flavors/ios
+[macOS]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flavors/macos
 [iOS (Xcode)]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flavors/ios
 [`appFlavor`]: {{site.api}}/flutter/services/appFlavor-constant.html
 [Android]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flavors/android
