@@ -19,7 +19,7 @@ errors, which is related to the most common Flutter layout widgets.
 The following tutorial will introduce you to layouts in Flutter, and give you an
 opportunity to work with the most common layout widgets, like rows and columns.
 
-<i class="material-symbols" aria-hidden="true">bolt</i> Take action! - Tutorial: [Layouts in Flutter][]
+<i class="material-symbols" aria-hidden="true">label</i> Tutorial: [Layouts in Flutter][]
 
 ### Constraints
 
@@ -41,7 +41,7 @@ Now that you understand layouts and some tools that help working with them, you
 should read the following tutorial, which goes a bit deeper into common layout
 widgets than the starting tutorial.
 
-* Tutorial: [Build a Flutter Layout][]
+<i class="material-symbols" aria-hidden="true">label</i> Tutorial: [Build a Flutter Layout][]
 
 ### Specific layout concepts
 
@@ -84,7 +84,7 @@ other, but visually separate, such as tooltips.
 
 * Video: [OverlayPortal - Flutter Widget of the Week][]
 
-### Adaptive Layouts
+### Adaptive layouts
 
 Because Flutter is used to create mobile, tablet, desktop and web apps, it’s
 likely you’ll need to adjust your application to behave differently depending on
@@ -94,10 +94,11 @@ with a Codelab that has you build an adaptive layout yourself.
 
 * Video: [LayoutBuilder - Flutter Widget of the Week][]
 * Video: [MediaQuery - Flutter Widget of the Week][]
-* Tutorial: [Adaptive Apps codelab][]
 * Video: [Building platform adaptive apps][]
 
-### DevTools and Debugging for Layout
+<i class="material-symbols" aria-hidden="true">label</i> Tutorial: [Adaptive Apps codelab][]
+
+### DevTools and debugging for layout
 
 Flutter has a robust suite of DevTools that will help you work with any number
 of aspects of Flutter development. The “Widget Inspector” tool is particularly
