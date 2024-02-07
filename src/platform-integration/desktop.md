@@ -116,10 +116,6 @@ to create a new project with desktop support.
 
 ### Set up
 
-On Windows, desktop support is enabled on
-Flutter 2.10 or higher. On macOS and Linux,
-desktop support is enabled on Flutter 3 or higher.
-
 You might run `flutter doctor` to see if
 there are any unresolved issues.
 You should see a checkmark for each successfully

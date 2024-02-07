@@ -152,17 +152,18 @@ Widget build(BuildContext context) {
 The map given to a `Shortcuts` widget maps a `LogicalKeySet` (or a
 `ShortcutActivator`, see note below) to an `Intent` instance. The logical key
 set defines a set of one or more keys, and the intent indicates the intended
-purpose of the keypress. The `Shortcuts` widget looks up keypresses in the map,
+purpose of the keypress. The `Shortcuts` widget looks up key presses in the map,
 to find an `Intent` instance, which it gives to the action's `invoke()` method.
 
 {{site.alert.note}}
-  `ShortcutActivator` is a replacement (as of Flutter 2.3.0) for
-  `LogicalKeySet`. It allows for more flexible and correct activation of
-  shortcuts. `LogicalKeySet` is a `ShortcutActivator`, of course, but there is
-  also `SingleActivator`, which takes a single key and the optional modifiers to
-  be pressed before the key, and `CharacterActivator`, which activates a shortcut
-  based on the character produced by a key sequence, instead of the logical keys
-  themselves. `ShortcutActivator` is also meant to be subclassed to allow for
+  `ShortcutActivator` is a replacement for `LogicalKeySet`.
+  It allows for more flexible and correct activation of shortcuts.
+  `LogicalKeySet` is a `ShortcutActivator`, of course, but
+  there is also `SingleActivator`, which takes a single key and the
+  optional modifiers to be pressed before the key.
+  Then there is `CharacterActivator`, which activates a shortcut based on the
+  character produced by a key sequence, instead of the logical keys themselves.
+  `ShortcutActivator` is also meant to be subclassed to allow for
   custom ways of activating shortcuts from key events.
 {{site.alert.end}}
 
@@ -291,11 +292,14 @@ Object? result =
     Actions.maybeInvoke<SelectAllIntent>(context, const SelectAllIntent());
 ```
 
-Sometimes you want to invoke an action as a result of pressing a button or
-another control. Do this with the `Actions.handler` function, which creates a
-handler closure if the intent has a mapping to an enabled action, and returns
-null if it doesn't, so that the button is disabled if there is no matching
-enabled action in the context:
+Sometimes you want to invoke an action as a
+result of pressing a button or another control.
+You can do this with the `Actions.handler` function.
+If the intent has a mapping to an enabled action,
+the `Actions.handler` function creates a handler closure.
+However, if it doesn't have a mapping, it returns `null`.
+This allows the button to be disabled if
+there is no enabled action that matches in the context.
 
 <?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (HandlerExample)"?>
 ```dart
