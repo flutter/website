@@ -18,7 +18,6 @@ linter:
     - invalid_case_patterns
     - library_annotations
     - matching_super_parameters
-    - no_literal_bool_comparisons
     - no_self_assignments
     - no_wildcard_variable_uses
     - one_member_abstracts

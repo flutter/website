@@ -22,7 +22,7 @@ class AppTitleBar extends StatelessWidget {
           Positioned.fill(child: Container(color: Colors.blue)),
 
           // App Logo or Title
-          if (hideTitle == false)
+          if (!hideTitle)
             Positioned.fill(
               child: Center(
                 child: Text(

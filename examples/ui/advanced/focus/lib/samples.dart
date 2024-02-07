@@ -10,7 +10,7 @@ class AbsorbKeysExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Focus(
-      onKey: (node, event) => KeyEventResult.handled,
+      onKeyEvent: (node, event) => KeyEventResult.handled,
       canRequestFocus: false,
       child: child,
     );
@@ -25,7 +25,7 @@ class NoAExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Focus(
-      onKey: (node, event) {
+      onKeyEvent: (node, event) {
         return (event.logicalKey == LogicalKeyboardKey.keyA)
             ? KeyEventResult.handled
             : KeyEventResult.ignored;
