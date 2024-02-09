@@ -26,9 +26,8 @@ opportunity to work with the most common layout widgets, like rows and columns.
 Understanding “constraints” in Flutter are an important part of understanding
 how Flutter’s layout algorithm works.
 
-The following resources teach you what constraints are, some widgets that
-allow you to work with constraints, and how to deal with “unbounded constraints”
-type errors.
+The following resources teach you what constraints are and some widgets that
+allow you to work with constraints.
 
 * Article: [Understanding Constraints][]
 * Video: [Expanded - Flutter Widget of the Week][]
