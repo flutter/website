@@ -19,7 +19,7 @@ errors, which is related to the most common Flutter layout widgets.
 The following tutorial will introduce you to layouts in Flutter, and give you an
 opportunity to work with the most common layout widgets, like rows and columns.
 
-<i class="material-symbols" aria-hidden="true">label</i> Tutorial: [Layouts in Flutter][]
+<i class="material-symbols" aria-hidden="true">flutter_dash</i> Tutorial: [Layouts in Flutter][]
 
 ### Constraints
 
@@ -41,7 +41,7 @@ Now that you understand layouts and some tools that help working with them, you
 should read the following tutorial, which goes a bit deeper into common layout
 widgets than the starting tutorial.
 
-<i class="material-symbols" aria-hidden="true">label</i> Tutorial: [Build a Flutter Layout][]
+<i class="material-symbols" aria-hidden="true">flutter_dash</i> Tutorial: [Build a Flutter Layout][]
 
 ### Specific layout concepts
 
@@ -96,7 +96,7 @@ with a Codelab that has you build an adaptive layout yourself.
 * Video: [MediaQuery - Flutter Widget of the Week][]
 * Video: [Building platform adaptive apps][]
 
-<i class="material-symbols" aria-hidden="true">label</i> Tutorial: [Adaptive Apps codelab][]
+<i class="material-symbols" aria-hidden="true">flutter_dash</i> Tutorial: [Adaptive Apps codelab][]
 
 ### DevTools and debugging for layout
 
