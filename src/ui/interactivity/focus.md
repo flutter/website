@@ -110,7 +110,7 @@ Some dos and don'ts around using these objects include:
   a descendant where you want to focus.
 - Do use `focusNode.requestFocus()`. It is not necessary to call
   `FocusScope.of(context).requestFocus(focusNode)`. The
-  `focusNode.requestFocus()` method is  equivalent and more performat.
+  `focusNode.requestFocus()` method is equivalent and more performant.
 
 ### Unfocusing
 
