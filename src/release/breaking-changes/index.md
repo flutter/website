@@ -46,6 +46,7 @@ release, and listed in alphabetical order:
 * [Deprecate imperative apply of Flutter's Gradle plugins][]
 * [Default multi-touch scrolling][]
 * [Accessibility traversal order of tooltip changed][]
+
 [Deprecated API removed after v3.16]: {{site.url}}/release/breaking-changes/3-16-deprecations
 [Migrate RawKeyEvent/RawKeyboard system to KeyEvent/HardwareKeyboard system]: {{site.url}}/release/breaking-changes/key-event-migration
 [Deprecate imperative apply of Flutter's Gradle plugins]: {{site.url}}/release/breaking-changes/flutter-gradle-plugin-apply
