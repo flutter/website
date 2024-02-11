@@ -279,7 +279,7 @@ The `loadLibrary()` function can also be called early to
 trigger a pre-load to help mask the loading time.
 
 You can find another example of deferred import loading in
-[Flutter Gallery's lib/deferred_widget.dart][].
+[Flutter Gallery's `lib/deferred_widget.dart`][].
 </li>
 </ol>
 
@@ -595,7 +595,7 @@ Play store's delivery feature.
 [Deferred Components]: {{site.repo.flutter}}/wiki/Deferred-Components
 [`DeferredComponent`]: {{site.api}}/flutter/services/DeferredComponent-class.html
 [dynamic feature modules]: {{site.android-dev}}/guide/playcore/feature-delivery
-[Flutter Gallery's lib/deferred_widget.dart]: {{site.repo.gallery}}/blob/main/lib/deferred_widget.dart
+[Flutter Gallery's `lib/deferred_widget.dart`]: {{site.repo.gallery-archive}}/blob/main/lib/deferred_widget.dart
 [Flutter wiki]: {{site.repo.flutter}}/wiki
 [github.com/google/bundletool/releases]: {{site.github}}/google/bundletool/releases
 [lazily loading a library]: {{site.dart-site}}/language/libraries#lazily-loading-a-library

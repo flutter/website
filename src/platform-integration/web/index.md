@@ -75,7 +75,7 @@ The following resources can help you get started:
   [web FAQ][].
 * To see code examples,
   check out the [web samples for Flutter][].
-* To see a Flutter web app demo, check out the [Flutter Gallery][].
+* To see a Flutter web app demo, check out the [Wonderous app][].
 * To learn about deploying a web app, see
   [Preparing an app for web release][].
 * [File an issue][] on the main Flutter repo.
@@ -88,7 +88,7 @@ The following resources can help you get started:
 [Creating responsive apps]: {{site.url}}/ui/layout/responsive/adaptive-responsive
 [Discord]: https://discordapp.com/invite/yeZ6s7k
 [file an issue]: https://goo.gle/flutter_web_issue
-[Flutter Gallery]: {{site.gallery}}
+[Wonderous app]: {{site.wonderous}}/web
 [Preparing an app for web release]: {{site.url}}/deployment/web
 [Progressive Web Application]: https://web.dev/progressive-web-apps/
 [web FAQ]: {{site.url}}/platform-integration/web/faq

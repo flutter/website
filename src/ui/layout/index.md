@@ -8,9 +8,7 @@ diff2html: true
 {% include docs/yt_shims.liquid %}
 
 {% assign api = site.api | append: '/flutter' -%}
-{% capture code -%} {{site.repo.this}}/tree/{{site.branch}}/src/_includes/code {%- endcapture -%}
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
-{% capture demo -%} {{site.repo.gallery}}/tree/{{site.branch}}/lib/demos {%- endcapture -%}
 
 <?code-excerpt path-base=""?>
 
@@ -48,7 +46,7 @@ The second screenshot displays the visual layout, showing a row of
 
 {{site.alert.note}}
   Most of the screenshots in this tutorial are displayed with
-  `debugPaintSizeEnabled` set to true so you can see the visual layout.
+  `debugPaintSizeEnabled` set to `true` so you can see the visual layout.
   For more information, see
   [Debugging layout issues visually][], a section in
   [Using the Flutter inspector][].
@@ -206,7 +204,7 @@ You need to set these yourself.
   You can use the colors that [`CupertinoColors`][] provides to
   configure your widgets to match iOS design.
 
-* To layout the body of your app, set the `child` property of your scaffold
+* To lay out the body of your app, set the `child` property of your scaffold
   with the desired widget as its value, like `Center` or `Column`.
 
 To learn what other UI components you can add, check out the
@@ -288,7 +286,7 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-By default a non-Material app doesn't include an `AppBar`, title,
+By default, a non-Material app doesn't include an `AppBar`, title,
 or background color. If you want these features in a non-Material app,
 you have to build them yourself. This app changes the background
 color to white and the text to dark grey to mimic a Material app.
@@ -860,8 +858,7 @@ Widget _buildImageRow(int imageIndex) => Row(
     );
 ```
 
-You can find more `Container` examples in the [tutorial][]
-and the Flutter Gallery ([running app][], [repo][]).
+You can find more `Container` examples in the [tutorial][].
 
 **App source:** [container]({{examples}}/layout/container)
 
@@ -921,8 +918,8 @@ it automatically scrolls.
   The titles are created by setting the `footer` property for
   each [`GridTile`][].
 
-  **Dart code:** [grid_list_demo.dart]({{demo}}/material/grid_list_demo.dart)
-  from the [Flutter Gallery][repo]
+  **Dart code:** 
+  [`grid_list_demo.dart`]({{examples}}/layout/gallery/lib/grid_list_demo.dart)
 </div>
 </div>
 
@@ -975,16 +972,16 @@ its render box.
   **App source:** [grid_and_list]({{examples}}/layout/grid_and_list)
 </div>
 <div class="col-lg-6" markdown="1">
-  <img src='/assets/images/docs/ui/layout/listview-flutter-gallery.png' class="border mw-100"
+  <img src='/assets/images/docs/ui/layout/listview-color-gallery.png' class="border mw-100"
       alt="ListView containing shades of blue">
   {:.text-center}
 
   Uses `ListView` to display the [`Colors`][] from
-  the [Material Design palette][]
+  the [Material 2 Design palette][]
   for a particular color family.
 
-  **Dart code:** [colors_demo.dart]({{demo}}/reference/colors_demo.dart) from the
-  [Flutter Gallery][repo]
+  **Dart code:**
+  [`colors_demo.dart`]({{examples}}/layout/gallery/lib/colors_demo.dart)
 </div>
 </div>
 
@@ -1064,8 +1061,8 @@ or partially overlap the base widget.
 
   Uses `Stack` to overlay an icon on top of an image.
 
-  **Dart code:** [bottom_navigation_demo.dart]({{demo}}/material/bottom_navigation_demo.dart)
-  from the [Flutter Gallery][repo]
+  **Dart code:**
+  [`bottom_navigation_demo.dart`]({{examples}}/layout/gallery/lib/bottom_navigation_demo.dart)
 </div>
 </div>
 
@@ -1147,13 +1144,13 @@ Specifying an unsupported value disables the drop shadow entirely.
 </div>
 <div class="col-lg-6" markdown="1">
   <img src='/assets/images/docs/ui/layout/card-flutter-gallery.png' class="mw-100"
-      alt="Card containing an image, text and buttons">
+      alt="Tappable card containing an image and multiple forms of text">
   {:.text-center}
 
   A `Card` containing an image and text.
 
-  **Dart code:** [cards_demo.dart]({{demo}}/material/cards_demo.dart)
-  from the [Flutter Gallery][repo]
+  **Dart code:**
+  [`cards_demo.dart`]({{examples}}/layout/gallery/lib/cards_demo.dart)
 </div>
 </div>
 
@@ -1236,9 +1233,10 @@ and trailing icons. `ListTile` is most commonly used in
       alt="4 ListTiles, each containing a leading avatar">
   {:.text-center}
 
-  Uses `ListTile` with leading widgets.<br>
-  **Dart code:** [list_demo.dart]({{demo}}/material/list_demo.dart)
-  from the [Flutter Gallery][repo]
+  Uses `ListTile` with leading widgets.
+
+  **Dart code:**
+  [`list_demo.dart`]({{examples}}/layout/gallery/lib/list_demo.dart)
 </div>
 </div>
 
@@ -1284,10 +1282,6 @@ The following resources might help when writing layout code.
 : For those familiar with web programming,
   this page maps HTML/CSS functionality to Flutter features.
 
-* Flutter Gallery [running app][], [repo][]
-: Demo app showcasing many Material Design widgets and other
-  Flutter features.
-
 * [API reference docs][]
 : Reference documentation for all of the Flutter libraries.
 
@@ -1325,13 +1319,11 @@ The following resources might help when writing layout code.
 [`MainAxisAlignment`]: {{api}}/rendering/MainAxisAlignment.html
 [Material card]: {{site.material}}/components/cards
 [Material Design]: {{site.material}}/styles
-[Material Design palette]: {{site.material2}}/design/color/the-color-system.html#tools-for-picking-colors
+[Material 2 Design palette]: {{site.material2}}/design/color/the-color-system.html#tools-for-picking-colors
 [Material library]: {{api}}/material/material-library.html
 [pubspec file]: {{examples}}/layout/pavlova/pubspec.yaml
 [`pubspec.yaml` file]: {{examples}}/layout/row_column/pubspec.yaml
-[repo]: {{site.repo.gallery}}/tree/main
 [`Row`]: {{api}}/widgets/Row-class.html
-[running app]: {{site.gallery}}
 [`Scaffold`]: {{api}}/material/Scaffold-class.html
 [`SizedBox`]: {{api}}/widgets/SizedBox-class.html
 [`Stack`]: {{api}}/widgets/Stack-class.html
