@@ -39,7 +39,7 @@ These versions of Windows should include the required
 
 Download and install the Windows version of the following packages:
 
-* [Git for Windows][] {{site.appmin.git_win}} or later to manage source code.
+* [Git for Windows][] {{site.appmin.github_win}} or later to manage source code.
 {% include docs/install/reqs/windows/software.md target=include.target %}
 
 The developers of the preceding software provide support for those products.
