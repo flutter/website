@@ -37,17 +37,19 @@ support for deploying Flutter apps is shown in the
 following table:
 
 <div class="table-wrapper" markdown="1">
-| Platform version   |     Supported     |                  Best effort                 |           Unsupported          |
-|--------------------|:-----------------:|:--------------------------------------------:|:------------------------------:|
-| Android SDK        |       21-34       |                     19-20                    | 18 or earlier                  |
-| iOS                |       16-17       |                     12-15                    | 11 or earlier                  |
-| macOS              |    Ventura (13)   | Mojave (10.14) to Monterey (12), Sonoma (14) | High Sierra (10.13) or earlier |
-| Windows            |         10        |                   7, 8, 11                   | Any 32-bit, Vista or earlier   |
-| Linux Debian       |       11-12       |                      10                      | 9 or earlier                   |
-| Linux Ubuntu       |  20.04, 22.04 LTS |                  22.04-23.10                 | Non-LTS before 22.04           |
-| web (JS) - Chrome  | Latest 2 releases |                  96 or later                 | 95 or earlier                  |
-| web (JS) - Firefox | Latest 2 releases |                  99 or later                 | 98 or earlier                  |
-| web (JS) - Safari  | Latest 2 releases |                  14 or later                 | 13 or earlier                  |
-| web (JS) - Edge    | Latest 2 releases |                  96 or later                 | 95 or earlier                  |
+
+| Platform version   |     Supported     |                 Best effort                  |           Unsupported            |
+|--------------------|:-----------------:|:--------------------------------------------:|:--------------------------------:|
+| Android SDK        |       21-34       |                    19-20                     |          18 or earlier           |
+| iOS                |       16-17       |                    12-15                     |          11 or earlier           |
+| macOS              |   Ventura (13)    | Mojave (10.14) to Monterey (12), Sonoma (14) |  High Sierra (10.13) or earlier  |
+| Windows            |        10         |                   7, 8, 11                   |   Any 32-bit, Vista or earlier   |
+| Linux Debian       |       11-12       |                      10                      |     9 or earlier, any 32-bit     |
+| Linux Ubuntu       | 20.04, 22.04 LTS  |                 22.10-23.10                  | Non-LTS before 22.04, any 32-bit |
+| web (JS) - Chrome  | Latest 2 releases |                 96 or later                  |          95 or earlier           |
+| web (JS) - Firefox | Latest 2 releases |                 99 or later                  |          98 or earlier           |
+| web (JS) - Safari  | Latest 2 releases |                 14 or later                  |          13 or earlier           |
+| web (JS) - Edge    | Latest 2 releases |                 96 or later                  |          95 or earlier           |
 {:.table.table-striped}
+
 </div>
