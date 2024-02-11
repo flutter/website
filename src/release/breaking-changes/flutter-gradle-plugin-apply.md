@@ -1,8 +1,8 @@
 ---
 title: Deprecated imperative apply of Flutter's Gradle plugins
 description: >
-  How to migrate your Android app's Gradle build files to the new, declarative
-  format.
+  How to migrate your Flutter app's Android Gradle build files to the
+  new, declarative format.
 ---
 
 ## Summary
@@ -11,7 +11,7 @@ To build a Flutter app for Android, Flutter's Gradle plugins must be applied.
 Historically, this was done imperatively with Gradle's
 [legacy, imperative apply script method][].
 
-In Flutter 3.16, support has been added for applying these plugins with Gradle's
+In Flutter 3.16, support was added for applying these plugins with Gradle's
 [declarative plugins {} block][] (also called the Plugin DSL) and it is
 now the recommended approach. Since Flutter 3.16, projects generated with
 `flutter create` use the Plugin DSL to apply Gradle plugins. Projects created
@@ -194,6 +194,11 @@ and the following lines to `<app-src>/android/app/build.gradle`:
 +    id "com.google.firebase.crashlytics"
  }
 ```
+
+## Timeline
+
+Support in stable release: 3.16.0
+Recommended in stable release: 3.19.0
 
 ## References
 
