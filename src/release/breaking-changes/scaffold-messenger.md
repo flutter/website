@@ -92,8 +92,8 @@ When using the root `ScaffoldMessenger` provided by the
 `MaterialApp`, all descendant `Scaffold`s receive `SnackBar`s,
 unless a new `ScaffoldMessenger` scope is created further down the tree.
 By instantiating your own `ScaffoldMessenger`,
-you can control which `Scaffold`s receive `SnackBar`s, and which are not baseds
-on the context of your application.
+you can control which `Scaffold`s receive `SnackBar`s, and which are not,
+based on the context of your application.
 
 The method `debugCheckHasScaffoldMessenger` is available to assert
 that a given context has a `ScaffoldMessenger` ancestor.

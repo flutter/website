@@ -1123,7 +1123,7 @@ allows a user to scroll your content if needed.
 
 In Flutter the easiest way to do this is using the `ListView` widget.
 This acts as both a `ScrollView` and an iOS `TableView`,
-as you can layout widgets in a vertical format.
+as you can lay out widgets in a vertical format.
 
 <?code-excerpt "lib/layout.dart (ListView)"?>
 ```dart
@@ -1715,7 +1715,7 @@ Future<void> loadData() async {
 
 Once the `await`ed network call is done,
 update the UI by calling `setState()`,
-which triggers a rebuild of the widget sub-tree
+which triggers a rebuild of the widget subtree
 and updates the data.
 
 The following example loads data asynchronously and
@@ -2048,7 +2048,7 @@ Future<void> loadData() async {
 }
 ```
 
-### Showing the progress on long running tasks
+### Showing the progress on long-running tasks
 
 In UIKit, you typically use a `UIProgressView`
 while executing a long-running task in the background.

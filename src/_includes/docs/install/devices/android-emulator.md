@@ -56,7 +56,7 @@ follow these steps:
 1. Click **Next**.
 
    The **Virtual Device Configuration** displays its
-   **Verify Configuation** step.
+   **Verify Configuration** step.
 
 1. To rename the Android Virtual Device (AVD), change the value in the
    **AVD Name** box.

@@ -39,7 +39,7 @@ for some of the cells in a RecycleView list of cards as seen in the gif above.
 ## General approach
 
 The general gist of the FlutterView-level integration is that you must recreate
-the various interactions between the your Activity, the [FlutterView]({{site.api}}/javadoc/io/flutter/embedding/android/FlutterView.html)
+the various interactions between your Activity, the [FlutterView]({{site.api}}/javadoc/io/flutter/embedding/android/FlutterView.html)
 and the [FlutterEngine]({{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html)
 present in the [FlutterActivityAndFragmentDelegate](https://cs.opensource.google/flutter/engine/+/master:shell/platform/android/io/flutter/embedding/android/FlutterActivityAndFragmentDelegate.java)
 in your own application's code. The connections made in the [FlutterActivityAndFragmentDelegate](https://cs.opensource.google/flutter/engine/+/master:shell/platform/android/io/flutter/embedding/android/FlutterActivityAndFragmentDelegate.java)

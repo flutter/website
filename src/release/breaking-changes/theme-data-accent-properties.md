@@ -80,7 +80,7 @@ MaterialApp(
 
 The closest backwards compatible [`ColorScheme`][] color is
 [`ColorScheme.secondary`][]. To hew most closely to the latest Material
-Design guidelines one can substitute ColorScheme.primary instead.
+Design guidelines one can substitute `ColorScheme.primary` instead.
 If a contrasting color is needed then use [`ColorScheme.onSecondary`][].
 
 Custom components that used to look up the theme's accentColor, can look up

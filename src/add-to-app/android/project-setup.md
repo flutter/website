@@ -375,9 +375,8 @@ evaluate(new File(                                                     // new
 
 The binding and script evaluation allows the Flutter
 module to `include` itself (as `:flutter`) and any
-Flutter plugins used by the module (as `:package_info`,
-`:video_player`, etc) in the evaluation context of
-your `settings.gradle`.
+Flutter plugins used by the module (such as `:package_info` and `:video_player`)
+in the evaluation context of your `settings.gradle`.
 
 Introduce an `implementation` dependency on the Flutter
 module from your app:

@@ -785,7 +785,7 @@ Future<void> loadData() async {
 ```
 
 Once the `await`ed network call is done, update the UI by calling `setState()`,
-which triggers a rebuild of the widget sub-tree and updates the data.
+which triggers a rebuild of the widget subtree and updates the data.
 
 The following example loads data asynchronously and displays it in a `ListView`:
 
@@ -900,7 +900,7 @@ I/O operations.
 
 On Android, when you extend `AsyncTask`, you typically override 3 methods,
 `onPreExecute()`, `doInBackground()` and `onPostExecute()`. There is no
-equivalent in Flutter, since you `await` on a long running function, and
+equivalent in Flutter, since you `await` on a long-running function, and
 Dart's event loop takes care of the rest.
 
 However, there are times when you might be processing a large amount of data and
@@ -1129,7 +1129,7 @@ Future<void> loadData() async {
 ### How do I show the progress for a long-running task?
 
 In Android you would typically show a `ProgressBar` view in your UI while
-executing a long running task on a background thread.
+executing a long-running task on a background thread.
 
 In Flutter, use a `ProgressIndicator` widget.
 Show the progress programmatically by controlling when it's rendered
@@ -1359,7 +1359,7 @@ Fragments are a way to modularize your code, compose sophisticated
 user interfaces for larger screens, and help scale your application UI.
 In Flutter, both of these concepts fall under the umbrella of `Widget`s.
 
-To learn more about the UI for building Activities and Fragements,
+To learn more about the UI for building Activities and Fragments,
 see the community-contributed Medium article,
 [Flutter for Android Developers: How to design Activity UI in Flutter][].
 
@@ -2362,8 +2362,8 @@ fragmentation. For more information, see the
 
 ### How do I set up push notifications?
 
-In Android, you use Firebase Cloud Messaging to setup push
-notifications for your app.
+In Android, you use Firebase Cloud Messaging to set up
+push notifications for your app.
 
 In Flutter, access this functionality using the
 [Firebase Messaging][] plugin.

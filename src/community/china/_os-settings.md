@@ -80,7 +80,7 @@ This procedure requires using {{shell}}.
    {{newdir}}; cd {{installdirsuggestion}}
    ```
 
-1. Extract the the SDK from the {{file-format}} archive file.
+1. Extract the SDK from the {{file-format}} archive file.
 
    This example assumes you downloaded the {{os}} version of the Flutter SDK.
 
@@ -111,7 +111,7 @@ only apply to the current window.
 
 To set these values on a permanent basis,
 {% if id == 'windows' -%}
-set the enviroment variables as in the following example:
+set the environment variables as in the following example:
 {% else -%}
 append those three `export` commands to the `*rc` or `*profile`
 file that your preferred shell uses. This would resemble the following:

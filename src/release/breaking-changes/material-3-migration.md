@@ -8,7 +8,7 @@ description: >-
 
 The Material library has been updated to match the Material 3 Design spec.
 Changes include new components and component themes, updated component visuals,
-and much more. Many of these updates are seamless. You’ll see the new version
+and much more. Many of these updates are seamless. You'll see the new version
 of an affected widget when recompiling your app against the 3.16 (or later)
 release. But some manual work is also required to complete the migration.
 
@@ -21,7 +21,7 @@ setting the `useMaterial3` flag to true. As of the Flutter 3.16 release
 By the way, you _can_ revert to Material 2 behavior in your app by setting the
 `useMaterial3` to `false`. However, this is just a temporary solution. The
 `useMaterial3` flag _and_ the Material 2 implementation will eventually be
-removed as part of Flutter’s deprecation policy.
+removed as part of Flutter's deprecation policy.
 
 ### Colors
 
@@ -63,7 +63,7 @@ Changes to Flutter Material 3 include a new background color.
 `ColorScheme.surfaceTint` indicates an elevated widget.
 Some widgets use different colors.
 
-To return your app’s UI to its previous behavior (which we don't recommend):
+To return your app's UI to its previous behavior (which we don't recommend):
 * Set `Colors.grey[50]!` to `ColorScheme.background`
    (when the theme is `Brightness.light`).
 * Set  `Colors.grey[850]!`to `ColorScheme.background`
@@ -101,8 +101,8 @@ Material 3. Some widgets might use both `surfaceTint` and `shadowColor` to
 indicate elevation (for example, `Card` and `ElevatedButton`) and others might
 only use `surfaceTint` to indicate elevation (such as `AppBar`).
 
-To return to the widget’s previous behavior, set, set `Colors.transparent`
-to `ColorScheme.surfaceTint` in the theme. To differentiate a widget’s shadow
+To return to the widget's previous behavior, set, set `Colors.transparent`
+to `ColorScheme.surfaceTint` in the theme. To differentiate a widget's shadow
 from the content (when it has no shadow), set the `ColorScheme.shadow` color to
 the `shadowColor` property in the widget theme without a default shadow color.
 
@@ -201,10 +201,10 @@ ConstrainedBox(
 
 Some components couldn't merely be updated to match the Material 3 Design spec
 but needed a whole new implementation. Such components require manual migration
-since the Flutter SDK doesn’t know what, exactly, you want.
+since the Flutter SDK doesn't know what, exactly, you want.
 
 Replace the Material 2 style [`BottomNavigationBar`][] widget with the new
-[`NavigationBar`][] widget. It’s slightly taller, contains pill-shaped
+[`NavigationBar`][] widget. It's slightly taller, contains pill-shaped
 navigation indicators, and uses new color mappings.
 
 Code before migration:
@@ -442,7 +442,7 @@ Check out the complete sample on
     a menu item from a potentially large list by entering a
     matching string or by interacting with the menu with touch, mouse,
     or keyboard. This can be a good replacement for `DropdownButton`
-    widget, although it isn’t necessary.
+    widget, although it isn't necessary.
  * [`SearchBar`][] and [`SearchAnchor`][] are for interactions where the
     user enters a search query, the app computes a list of matching
     responses, and then the user either selects one or adjusts the

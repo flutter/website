@@ -553,7 +553,7 @@ You want to use [Dart DevTools][]!
 
 Our app currently has no bugs, but let's check it out anyway.
 The following instructions for launching DevTools applies to any workflow,
-but there is a short cut if you're using IntelliJ.
+but there is a shortcut if you're using IntelliJ.
 See the tip at the end of this section for more information.
 
 <ol markdown="1">

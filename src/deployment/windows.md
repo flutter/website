@@ -242,7 +242,7 @@ To validate the application:
 
 1. Launch Windows App Cert Kit.
 2. Select the Flutter Windows desktop package
-   (**.msix**, **.msixbundle** etc).
+   (**.msix**, **.msixbundle**, etc.).
 3. Choose a destination for the test report.
 
 The report might contain important warnings and information,

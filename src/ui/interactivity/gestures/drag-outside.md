@@ -21,9 +21,8 @@ your application, you can use the [`Draggable`][]
 widget. For insight into this approach, see
 the [Drag a UI element within an app][] recipe.
 
-An advantage of using `Draggable` and
-and `DragTarget` is that you can supply
-Dart code to decide whether to accept a drop.
+An advantage of using `Draggable` and `DragTarget` is
+that you can supply Dart code to decide whether to accept a drop.
 
 For more information, check out the
 [`Draggable` widget of the week][video] video.
