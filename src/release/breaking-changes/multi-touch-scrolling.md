@@ -1,8 +1,8 @@
 ---
-title: Default multi-touch scrolling
+title: Default multitouch scrolling
 description: >
   ScrollBehaviors will now configure how Scrollables respond to
-  multi-touch gestures.
+  multitouch gestures.
 ---
 
 ## Summary
