@@ -775,9 +775,8 @@ to your app.
 [Flutter API documentation][]
 : Reference documentation for all of the Flutter libraries.
 
-Flutter Gallery [running app][], [repo][]
-: Demo app showcasing many Material components and
-  other Flutter features.
+Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
+: Flutter showcase app with a custom design and engaging interactions.
 
 [Flutter's Layered Design][] (video)
 : This video includes information about state and
@@ -817,8 +816,8 @@ Flutter Gallery [running app][], [repo][]
 [`pubspec.yaml`]: {{examples}}/layout/lakes/step6/pubspec.yaml
 [`Radio`]: {{site.api}}/flutter/material/Radio-class.html
 [`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
-[repo]: {{site.repo.gallery}}
-[running app]: {{site.gallery}}
+[wonderous-app]: {{site.wonderous}}/web
+[wonderous-repo]: {{site.repo.wonderous}}
 [set up]: {{site.url}}/get-started/install
 [`SizedBox`]: {{site.api}}/flutter/widgets/SizedBox-class.html
 [`Slider`]: {{site.api}}/flutter/material/Slider-class.html

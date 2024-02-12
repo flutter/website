@@ -140,21 +140,22 @@ and
 in a GitHub Action packages the
 application into an MSIX and uploads it to a new submission on the dev center.
 
-An example Action YAML file for continuous deployment can be found
-[in the Flutter Gallery](https://github.com/flutter/gallery/blob/main/.github/workflows/release_deploy_windows.yml).
-The steps necessary for MSIX publishing are excerpted below:
+The steps necessary for MSIX publishing resemble the following
 
 ```
-      - uses: microsoft/setup-msstore-cli@v1
+- uses: microsoft/setup-msstore-cli@v1
 
-      - name: Configure the Microsoft Store CLI
-        run: msstore reconfigure --tenantId ${{ secrets.AZURE_AD_TENANT_ID }} --clientId ${{ secrets.AZURE_AD_ClIENT_ID }} --clientSecret ${{ secrets.AZURE_AD_CLIENT_SECRET }} --sellerId ${{ secrets.SELLER_ID }}
+- name: Configure the Microsoft Store CLI
+  run: msstore reconfigure --tenantId ${{ secrets.AZURE_AD_TENANT_ID }} --clientId ${{ secrets.AZURE_AD_ClIENT_ID }} --clientSecret ${{ secrets.AZURE_AD_CLIENT_SECRET }} --sellerId ${{ secrets.SELLER_ID }}
 
-      - name: Create MSIX
-        run: msstore package .
+- name: Install Dart dependencies
+  run: flutter pub get
 
-      - name: Publish MSIX to the Microsoft Store
-        run: msstore publish -v
+- name: Create MSIX package
+  run: msstore package .
+
+- name: Publish MSIX to the Microsoft Store
+  run: msstore publish -v
 ```
 
 ## Updating the app's version number
