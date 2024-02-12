@@ -1317,6 +1317,7 @@ The best and recommended practice is to hold your strings in a `.arb` file as ke
 <?code-excerpt "lib/arb_examples.arb"?>
 ```arb
 {
+   "@@locale": "en",
    "hello":"Hello {userName}",
    "@hello":{
       "description":"A message with a single parameter",
