@@ -72,7 +72,7 @@ provider: cannot connect to the LXD socket
 ('/var/snap/lxd/common/lxd/unix.socket').
 ```
 
-This means you need to add your user name to the LXD
+This means you need to add your username to the LXD
 (lxd) group, so log out of your session and then log back in:
 
 ```terminal
@@ -240,7 +240,7 @@ assemble the snap.
 
 Parts can be downloaded and built automatically using plugins.
 Similar to extensions, snapcraft can use various plugins
-(like Python, C, Java, Ruby, etc) to assist in the
+(such as Python, C, Java, and Ruby) to assist in the
 building process. Snapcraft also has some special plugins.
 
 **nil** plugin

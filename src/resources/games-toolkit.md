@@ -30,7 +30,7 @@ These games are well suited for Flutter.
 
 _Real-time games_ cover games a series of actions require real time responses.
 These include endless runner games, racing games, and so on.
-You might want to create a game with advanced features like collison detection,
+You might want to create a game with advanced features like collision detection,
 camera views, game loops, and the like.
 These types of games could use an open source game engine like the
 [Flame game engine][] built using Flutter.
@@ -144,7 +144,7 @@ games.
 
 * The Flutter team created [I/O Flip][flip-game], a virtual [CCG].
   To learn more about I/O Flip,
-  check out [How It’s Made: I/O FLIP adds a twist to a classic card game with generative AI][flip-blog]
+  check out [How It's Made: I/O FLIP adds a twist to a classic card game with generative AI][flip-blog]
   on the Google Developers blog and [play the game][flip-game] in your browser.
 
 {% comment %}
@@ -283,7 +283,7 @@ investigate other resources that our community recommended.
 </tr>
 
 <tr>
-<td>Games services integration</td>
+<td>Game services integration</td>
 <td markdown="1">
 
 {{pkg-icon}} [games_services][game-svc-pkg]

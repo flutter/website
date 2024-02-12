@@ -65,4 +65,4 @@ Check the output for other software you might need to install
 or further tasks to perform.
 
 If you change the configuration of your Flutter SDK or its related components,
-run `flutter doctor` again to verify the install.
+run `flutter doctor` again to verify the installation.

@@ -279,14 +279,14 @@ The `loadLibrary()` function can also be called early to
 trigger a pre-load to help mask the loading time.
 
 You can find another example of deferred import loading in
-[Flutter Gallery's lib/deferred_widget.dart][].
+[Flutter Gallery's `lib/deferred_widget.dart`][].
 </li>
 </ol>
 
 ### Step 3: Building the app
 
-Use the following `flutter` command to build a deferred
-components app:
+Use the following `flutter` command to build a
+deferred components app:
 
 ```terminal
 $ flutter build appbundle
@@ -580,7 +580,7 @@ the Android build ID or uninstalling and reinstalling
 the app, as Android won't update the feature modules
 unless it detects a new version number.
 
-### Releasing to the Google Play store
+### Releasing to the Google Play Store
 
 The built `.aab` file can be uploaded directly to
 the Play store as normal. When `loadLibrary()` is called,
@@ -595,7 +595,7 @@ Play store's delivery feature.
 [Deferred Components]: {{site.repo.flutter}}/wiki/Deferred-Components
 [`DeferredComponent`]: {{site.api}}/flutter/services/DeferredComponent-class.html
 [dynamic feature modules]: {{site.android-dev}}/guide/playcore/feature-delivery
-[Flutter Gallery's lib/deferred_widget.dart]: {{site.repo.gallery}}/blob/main/lib/deferred_widget.dart
+[Flutter Gallery's `lib/deferred_widget.dart`]: {{site.repo.gallery-archive}}/blob/main/lib/deferred_widget.dart
 [Flutter wiki]: {{site.repo.flutter}}/wiki
 [github.com/google/bundletool/releases]: {{site.github}}/google/bundletool/releases
 [lazily loading a library]: {{site.dart-site}}/language/libraries#lazily-loading-a-library

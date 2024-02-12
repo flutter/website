@@ -328,7 +328,7 @@ and receive responses to those messages.
 However, you can't receive unsolicited messages from the host platform.
 
 As an example,
-you can't set-up a long-lived Firestore listener in a background isolate,
+you can't set up a long-lived Firestore listener in a background isolate,
 because Firestore uses platform channels to push updates to Flutter,
 which are unsolicited.
 You can, however, query Firestore for a response in the background.

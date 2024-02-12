@@ -280,7 +280,7 @@ Relevant PRs:
 Supported by Flutter Fix: no
 
 The default `Typography` was deprecated in v1.13.8.
-The prior default returned the text stylings of the 2014 Material Design specification.
+The prior default returned the text styles of the 2014 Material Design specification.
 This will now result in `TextStyle`s reflecting the 2018 Material Design specification.
 For the former, use the `material2014` constructor.
 

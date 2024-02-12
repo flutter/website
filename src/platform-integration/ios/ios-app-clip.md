@@ -399,7 +399,7 @@ from the console output in Xcode after running.
 image="development/platform-integration/ios-app-clip/observatory-uri.png"
 %}
 
-You must then copy paste it back into the
+You must then copy and paste it back into the
 `flutter attach` command to connect.
 
 For example:

@@ -195,7 +195,7 @@ Here are some options:
   handled for you.
 * Construct an MSIX installer and distribute
   it through your own website. For this
-  option, you need to to give your application a
+  option, you need to give your application a
   digital signature in the form of a
   `.pfx` certificate.
 * Collect all of the necessary pieces
