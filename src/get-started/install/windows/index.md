@@ -36,6 +36,6 @@ js: [{url: '/assets/js/temp/windows-install-redirector.js'}]
 Your choice informs which parts of Flutter tooling you configure
 to run your first Flutter app.
 You can set up additional platforms later.
-If you don’t have a preference, choose mobile.
+If you don't have a preference, choose mobile.
 
 {% include docs/china-notice.md %}

@@ -206,7 +206,7 @@ You need to set these yourself.
   You can use the colors that [`CupertinoColors`][] provides to
   configure your widgets to match iOS design.
 
-* To layout the body of your app, set the `child` property of your scaffold
+* To lay out the body of your app, set the `child` property of your scaffold
   with the desired widget as its value, like `Center` or `Column`.
 
 To learn what other UI components you can add, check out the

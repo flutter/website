@@ -29,7 +29,8 @@ and `dispose()` is called elsewhere on the object.
 
 ## Migration guide
 
-If you encounter the following error, update your code to call `dispose()' only in cases when your code created the object.
+If you encounter the following error, update your code to
+call `dispose()` only in cases when your code created the object.
 
 ```
 Once you have called dispose() on a <class name>, it can no longer be used.

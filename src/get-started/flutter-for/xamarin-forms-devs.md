@@ -2534,7 +2534,7 @@ For more information, see the [DevTools][] documentation.
 
 ### How do I set up push notifications?
 
-In Android, you use Firebase Cloud Messaging to setup
+In Android, you use Firebase Cloud Messaging to set up
 push notifications for your app.
 
 In Flutter, access this functionality using the

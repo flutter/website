@@ -71,7 +71,7 @@ To learn more about DevTools, check out the
      You can use the File Explorer to find and open a library,
      or you can use the existing <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +
      <kbd>P</kbd> keyboard shortcut to search for a file.
-  1. A new “Outline” view that shows the structure of the selected library.
+  1. A new "Outline" view that shows the structure of the selected library.
      This view will show classes, members, methods, etc.,
      and when an item is selected,
      the source view will jump to the respective line of code

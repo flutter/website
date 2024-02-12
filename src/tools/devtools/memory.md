@@ -175,7 +175,7 @@ unreachable objects, it's the responsibility
 of the application to ensure that unneeded objects
 are no longer reachable (referenced from the root).
 
-So, if non needed objects are left referenced
+So, if non-needed objects are left referenced
 (in a global or static variable,
 or as a field of a long-living object),
 the garbage collector can't recognize them,

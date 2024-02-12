@@ -65,7 +65,7 @@ LayoutBuilder(builder: (context, constraints) {
 In this step, add a [`ConstrainedBox`][]
 as the child of the [`SingleChildScrollView`][].
 
-The [`ConstrainedBox`][] widget imposes aditional constraints to its child.
+The [`ConstrainedBox`][] widget imposes additional constraints to its child.
 
 Configure the constraint by setting the `minHeight` parameter to be
 the `maxHeight` of the [`LayoutBuilder`][] constraints.

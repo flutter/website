@@ -61,7 +61,7 @@ To troubleshoot installation issues, consult that product's documentation.
 
 You can build apps with Flutter using any text editor or
 integrated development environment (IDE) combined with
-Flutter’s command-line tools.
+Flutter's command-line tools.
 
 Using an IDE with a Flutter extension or plugin provides code completion,
 syntax highlighting, widget editing assists, debugging, and other features.

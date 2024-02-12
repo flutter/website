@@ -158,7 +158,7 @@ Mobile browsers:
 
 Desktop browsers:
 
-* MacOS - VoiceOver
+* macOS - VoiceOver
 * Windows - JAWs & NVDA
 
 Screen readers users on web must toggle the

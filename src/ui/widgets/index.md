@@ -30,7 +30,8 @@ you can also see all the widgets in the [widget index][].
 
 ## Widget of the Week
 
-100+ short, 1 minute explainer videos to help you quickly get started with Flutter widgets.
+100+ short, 1-minute explainer videos to
+help you quickly get started with Flutter widgets.
 
 <div class="card-deck card-deck--responsive">
     <div class="video-card">

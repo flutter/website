@@ -285,8 +285,8 @@ You can find another example of deferred import loading in
 
 ### Step 3: Building the app
 
-Use the following `flutter` command to build a deferred
-components app:
+Use the following `flutter` command to build a
+deferred components app:
 
 ```terminal
 $ flutter build appbundle
@@ -580,7 +580,7 @@ the Android build ID or uninstalling and reinstalling
 the app, as Android won't update the feature modules
 unless it detects a new version number.
 
-### Releasing to the Google Play store
+### Releasing to the Google Play Store
 
 The built `.aab` file can be uploaded directly to
 the Play store as normal. When `loadLibrary()` is called,

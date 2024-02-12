@@ -126,7 +126,7 @@ to contain each part of your layout.
 When Flutter needs to re-render part of a UI,
 it updates the smallest part that changes.
 This is why Flutter makes "everything a widget".
-If the only the text changes in a `Text` widget, Flutter redraws only that text.
+If only the text changes in a `Text` widget, Flutter redraws only that text.
 Flutter changes the least amount of the UI possible in response to user input.
 
 For this tutorial, write each element you have identified as its own widget.
