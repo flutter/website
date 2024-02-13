@@ -30,7 +30,7 @@ contains a simple demo app that uses [Material Components][].
 
 ### Run your sample Flutter app
 
-Run your example application on your desktop platform or in an iOS simulator or
+Run your example application on your desktop platform, in Chrome, in an iOS simulator, or
 Android emulator.
 
 {{site.alert.secondary}}
