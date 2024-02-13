@@ -19,7 +19,7 @@ which apps built with Flutter might be deployed:
    but are only tested on an ad-hoc basis.
 1. **Unsupported**<br>
    Platforms that we don't test or support.
-   
+
 {% comment %}
 **IMPORTANT NOTE**:
 When changing the minimum support version of macOS, Windows, or Linux,
@@ -48,7 +48,7 @@ following table:
 | web - Firefox  |latest 2 releases|99+| |
 | web - Safari   |latest 2 releases|14+| |
 | web - Edge     |latest 2 releases|96+| |
-| Windows        |10|7, 8, and 11|Vista-, any 32-bit|
+| Windows        |10|11|Vista-, 7, 8, any 32-bit|
 {:.table.table-striped.table-centered-after-first}
 </div>
 
