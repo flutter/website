@@ -1312,28 +1312,36 @@ Widget build(BuildContext context) {
 ### Where do I store strings? How do I handle localization?
 
 Flutter currently doesn't have a dedicated resources-like system for strings.
-At the moment, the best practice is to hold your copy text in a class as
-static fields and accessing them from there. For example:
+The best and recommended practice is to hold your strings in a `.arb` file as key-value pairs For example:
 
-<?code-excerpt "lib/string_examples.dart (Strings)"?>
-```dart
-class Strings {
-  static String welcomeMessage = 'Welcome To Flutter';
+<?code-excerpt "lib/arb_examples.arb"?>
+```arb
+{
+   "@@locale": "en",
+   "hello":"Hello {userName}",
+   "@hello":{
+      "description":"A message with a single parameter",
+      "placeholders":{
+         "userName":{
+            "type":"String",
+            "example":"Bob"
+         }
+      }
+   }
 }
 ```
 
 Then in your code, you can access your strings as such:
 
-<?code-excerpt "lib/string_examples.dart (AccessString)"?>
+<?code-excerpt "lib/localization_examples.dart (AccessString)"?>
 ```dart
-Text(Strings.welcomeMessage);
+Text(AppLocalizations.of(context)!.hello('John'));
 ```
 
 Flutter has basic support for accessibility on Android,
 though this feature is a work in progress.
 
-Flutter developers are encouraged to use the
-[intl package][] for internationalization and localization.
+See [Internationalizing Flutter apps][] for more information on this.
 
 ### What is the equivalent of a Gradle file? How do I add dependencies?
 
@@ -2413,3 +2421,4 @@ see the [`firebase_messaging`][] plugin documentation.
 [SQFlite]: {{site.pub}}/packages/sqflite
 [StackOverflow]: {{site.so}}/questions/44396075/equivalent-of-relativelayout-in-flutter
 [widget catalog]: {{site.url}}/ui/widgets/layout
+[Internationalizing Flutter apps]: {{site.url}}/ui/accessibility-and-internationalization/internationalization
