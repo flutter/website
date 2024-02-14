@@ -5,7 +5,7 @@ description: How to add an iOS App Clip target to your Flutter project.
 
 {{site.alert.important}}
   Targeting iOS 16 increases the uncompressed IPA payload size limit
-  to 15MB. Depending on the size of your app, you may hit the limit. ([#71098][]).
+  to 15MB. Depending on the size of your app, you might hit the limit. ([#71098][]).
 {{site.alert.end}}
 
 This guide describes how to manually add another
