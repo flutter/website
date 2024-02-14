@@ -1,6 +1,6 @@
 ---
 title: Adding an iOS App Clip target
-description: How to add an iOS 14 App Clip target to your Flutter project.
+description: How to add an iOS App Clip target to your Flutter project.
 ---
 
 {{site.alert.important}}
@@ -134,11 +134,11 @@ normal app target.
 This gives your App Clip target access to Flutter's
 required build settings.
 
-{% include docs/app-figure.md
-image="development/platform-integration/ios-app-clip/configuration.png" %}
-
 Set **iOS Deployment Target** to at least **16.0** to take advantage of the
 15MB size limit.
+
+{% include docs/app-figure.md
+image="development/platform-integration/ios-app-clip/configuration.png" %}
 
 **4.2**
 
@@ -296,11 +296,6 @@ into the App Clip bundle.
 
 ## Step 8 - Integrate plugins
 
-{{site.alert.warning}}
-  CocoaPods version 1.10.0.beta.1 or higher is required
-  to run Flutter apps with plugins.
-{{site.alert.end}}
-
 **8.1**
 
 Open the `Podfile` for your Flutter project
@@ -368,7 +363,7 @@ pod install
 
 You can now run your App Clip target from Xcode by
 selecting your App Clip target from the scheme drop-down,
-selecting an iOS 14 device and pressing run.
+selecting an iOS 16 or higher device and pressing run.
 
 {% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/run-select.png"
