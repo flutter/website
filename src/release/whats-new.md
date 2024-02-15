@@ -34,7 +34,7 @@ and the [Flutter 3.19 technical blog post][3.19-tech].
 You might also check out the [Dart 3.3 release][] blog post.
 
 [3.19-tech]: {{site.flutter-medium}}/whats-new-in-flutter-3-19-58b1aae242d2
-[3.19-umbrella]: xxx
+[3.19-umbrella]: {{site.flutter-medium}}/starting-2024-strong-with-flutter-and-dart-cae9845264fe
 [Dart 3.3 release]: {{site.medium}}/dartlang/new-in-dart-3-3-extension-types-javascript-interop-and-more-325bf2bf6c13
 
 **Docs updated or added since the 3.16 release**
@@ -52,6 +52,15 @@ You might also check out the [Dart 3.3 release][] blog post.
 [Concurrency and isolates]: {{site.url}}/perf/isolates
 [Flutter install]: {{site.github}}/get-started/install
 [Use themes to share colors and font styles]: {{site.url}}/cookbook/design/themes
+
+**Other updates**
+
+* Check out the just-published
+  [Flutter and Dart 2024 Roadmap][].
+* Check out [Harness the Gemini API in your Dart and Flutter apps][].
+
+[Flutter and Dart 2024 Roadmap]: {{site.github}}/flutter/flutter/wiki/Roadmap
+[Harness the Gemini API in your Dart and Flutter apps]: {{site.flutter-medium}}/harness-the-gemini-api-in-your-dart-and-flutter-apps-00573e560381
 
 ---
 
