@@ -26,7 +26,7 @@ FROM base AS flutter
 COPY ./site-shared ./site-shared
 COPY pubspec.yaml ./
 
-ARG FLUTTER_BUILD_BRANCH=stable
+ARG FLUTTER_BUILD_BRANCH=beta
 ENV FLUTTER_BUILD_BRANCH=$FLUTTER_BUILD_BRANCH
 ENV FLUTTER_ROOT=flutter
 ENV FLUTTER_BIN=flutter/bin

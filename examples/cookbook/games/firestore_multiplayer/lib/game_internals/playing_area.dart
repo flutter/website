@@ -18,6 +18,5 @@ class PlayingArea {
     _playerChanges.close();
   }
 
-  void replaceWith(List<PlayingCard> cards) {
-  }
+  void replaceWith(List<PlayingCard> cards) {}
 }

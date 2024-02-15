@@ -16,13 +16,14 @@ class LoginPage extends StatelessWidget {
     bool hideDetailPanel = screenSize.shortestSide < 250;
     return Scaffold(
       body: Flex(
-          direction: useVerticalLayout ? Axis.vertical : Axis.horizontal,
-          children: [
-            if (hideDetailPanel == false) ...[
-              Flexible(child: _LoginDetailPanel()),
-            ],
-            Flexible(child: _LoginForm()),
-          ]),
+        direction: useVerticalLayout ? Axis.vertical : Axis.horizontal,
+        children: [
+          if (!hideDetailPanel) ...[
+            Flexible(child: _LoginDetailPanel()),
+          ],
+          Flexible(child: _LoginForm()),
+        ],
+      ),
     );
   }
 }

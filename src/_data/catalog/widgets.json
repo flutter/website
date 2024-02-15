@@ -1433,13 +1433,13 @@
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
-    "name": "RawKeyboardListener",
+    "name": "KeyboardListener",
     "description": "A widget that calls a callback whenever the user presses or releases a key on a keyboard.",
     "categories": [
       "Input"
     ],
     "subcategories": [],
-    "link": "https://api.flutter.dev/flutter/widgets/RawKeyboardListener-class.html",
+    "link": "https://api.flutter.dev/flutter/widgets/KeyboardListener-class.html",
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {

@@ -4,7 +4,7 @@ short-title: Themes
 description: How to share colors and font styles throughout an app using Themes.
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://old-dartpad-3ce3f.web.app/inject_embed.dart.js
 ---
 
 {% include docs/yt_shims.liquid %}

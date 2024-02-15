@@ -117,7 +117,7 @@ Because immutable objects can't be updated,
 this effectively retains the actor model behavior.
 
 [`Port` objects]: {{site.dart.api}}/stable/dart-isolate/ReceivePort-class.html
-[objects that aren't copied when passed]: {{site.dart.api}}/stable/3.2.0/dart-isolate/SendPort/send.html
+[objects that aren't copied when passed]: {{site.dart.api}}/stable/dart-isolate/SendPort/send.html
 
 An exception to this rule is
 when an isolate exits when it sends a message using the `Isolate.exit` method.
