@@ -3,7 +3,7 @@ title: Handle changes to a text field
 description: How to detect changes to a text field.
 js:
   - defer: true
-    url: https://old-dartpad.web.app/inject_embed.dart.js
+    url: https://old-dartpad-3ce3f.web.app/inject_embed.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/forms/text_field_changes/"?>

@@ -3,7 +3,7 @@ title: Fade a widget in and out
 description: How to fade a widget in and out.
 js:
   - defer: true
-    url: https://old-dartpad.web.app/inject_embed.dart.js
+    url: https://old-dartpad-3ce3f.web.app/inject_embed.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/animation/opacity_animation/"?>

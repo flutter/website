@@ -3,7 +3,7 @@ title: Create a scrolling parallax effect
 description: How to implement a scrolling parallax effect.
 js:
   - defer: true
-    url: https://old-dartpad.web.app/inject_embed.dart.js
+    url: https://old-dartpad-3ce3f.web.app/inject_embed.dart.js
 ---
 
 {% include docs/yt_shims.liquid %}

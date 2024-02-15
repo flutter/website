@@ -7,7 +7,7 @@ toc: true
 diff2html: true
 js:
   - defer: true
-    url: https://old-dartpad.web.app/inject_embed.dart.js
+    url: https://old-dartpad-3ce3f.web.app/inject_embed.dart.js
   - defer: true
     url: /assets/js/codelabs/animations_examples.js
 ---
