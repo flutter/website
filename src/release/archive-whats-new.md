@@ -1,64 +1,18 @@
 ---
-title: What's new
+title: Archive of What's new
 description: >
-  A list of what's new on docs.flutter.dev and related documentation sites.
+  A past list of what's new on docs.flutter.dev >
+  and related documentation sites.
 ---
 
 {% include docs/yt_shims.liquid %}
 
-This page contains current and recent announcements
-of what's new on the Flutter website and blog.
-Find past what's new information on the
-[what's new archive][] page.
-You might also check out the
-Flutter SDK [release notes][].
+This page contains of archived announcements of
+what's new on the Flutter website and blog.
+For information on the latest releases,
+check out the [current what's new][] page.
 
-To stay on top of Flutter announcements including
-breaking changes,
-join the [flutter-announce][] Google group.
-
-For Dart, you can join the [Dart Announce][] Google group,
-and review the [Dart changelog][].
-
-[release notes]: {{site.url}}/release/release-notes
-[flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
-[Dart Announce]: {{site.groups}}/a/dartlang.org/g/announce
-[Dart changelog]: {{site.github}}/dart-lang/sdk/blob/main/CHANGELOG.md
-
-## 15 February 2024: Valentine's-Day-adjacent 3.19 release
-
-Flutter 3.19 is live! For more information,
-check out the [Flutter 3.19 umbrella blog post][3.19-umbrella]
-and the [Flutter 3.19 technical blog post][3.19-tech].
-
-You might also check out the [Dart 3.3 release][] blog post.
-
-[3.19-tech]: {{site.flutter-medium}}/whats-new-in-flutter-3-19-58b1aae242d2
-[3.19-umbrella]: xxx
-[Dart 3.3 release]: {{site.medium}}/dartlang/new-in-dart-3-3-extension-types-javascript-interop-and-more-325bf2bf6c13
-
-**Docs updated or added since the 3.16 release**
-
-* A new page on [migrating from Material 2 to Material 3][]
-  is added. Thanks to [@TahaTesser][] for writing this guide.
-* Material 3 uses theming in new and different ways than
-  Material 2. The [Use themes to share colors and font styles][]
-  cookbook recipe is updated to reflect these changes.
-* The [Flutter install][] pages have been updated. Please
-  [let us know][] if you have any feedback.
-* The [Concurrency and isolates][] page has been reworked.
-
-[@TahaTesser]: {{site.github}}/TahaTesser
-[Concurrency and isolates]: {{site.url}}/perf/isolates
-[Flutter install]: {{site.github}}/get-started/install
-[Use themes to share colors and font styles]: {{site.url}}/cookbook/design/themes
-
----
-
-For past releases, check out the
-[What's new archive][] page.
-
-[What's new archive]: {{site.url}}/release/archive-whats-new
+[current what's new]: {{site.url}}/release/whats-new
 
 ## 15 November 2023: 3.16 release
 
