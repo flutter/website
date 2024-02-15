@@ -59,5 +59,5 @@ jobs:
         run: npm install -g firebase-tools@13.0.2
       - uses: dart-lang/setup-dart@fedb1266e91cf51be2fdb382869461a434b920a3
         with:
-          sdk: true
+          sdk: stable
       - run: tool/check-links.sh
