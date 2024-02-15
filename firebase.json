@@ -102,7 +102,6 @@
       { "source": "/accessibility-and-localization", "destination": "/ui/accessibility-and-internationalization", "type": 301 },
       { "source": "/accessibility-and-localization/:rest*", "destination": "/ui/accessibility-and-internationalization/:rest*", "type": 301 },
       { "source": "/add-to-app/android/add-splash-screen", "destination": "/platform-integration/android/splash-screen", "type": 301 },
-
       { "source": "/codelabs/layout-basics", "destination": "/ui/layout", "type": 301 },
       { "source": "/codelabs/explicit-animations", "destination": "/ui/animations/tutorial", "type": 301 },
       { "source": "/cookbook/games/google-mobile-ads", "destination": "/cookbook/plugins/google-mobile-ads", "type": 301 },
