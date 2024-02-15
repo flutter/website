@@ -28,7 +28,7 @@ responsibility for state keeping and improves modularity. More details on the
 scenarios motivating the usage of multiple Flutters can be found at
 [flutter.dev/go/multiple-flutters][].
 
-Flutter 2 and above are optimized for this scenario, with a low incremental
+Flutter is optimized for this scenario, with a low incremental
 memory cost (~180kB) for adding additional Flutter instances. This fixed cost
 reduction allows the multiple Flutter instance pattern to be used more liberally
 in your add-to-app integration.

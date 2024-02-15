@@ -127,9 +127,9 @@ DragTarget<Item>(
       customer: customer,
     );
   },
-  onAccept: (item) {
+  onAcceptWithDetails: (details) {
     _itemDroppedOnCustomerCart(
-      item: item,
+      item: details.data,
       customer: customer,
     );
   },
@@ -151,7 +151,7 @@ the `Customer` widget turns red whenever any items are dragged above the
 `highlighted` property within the `CustomerCart` widget.
 
 When the user drops a draggable on the `DragTarget` widget,
-the `onAccept` callback is invoked. This is when you get
+the `onAcceptWithDetails` callback is invoked. This is when you get
 to decide whether or not to accept the data that was dropped.
 In this case, the item is always accepted and processed. 
 You might choose to inspect the incoming item to make a
@@ -160,7 +160,7 @@ different decision.
 Notice that the type of item dropped on `DragTarget`
 must match the type of the item dragged from `LongPressDraggable`.
 If the types are not compatible, then 
-the `onAccept` method isn't invoked.
+the `onAcceptWithDetails` method isn't invoked.
 
 With a `DragTarget` widget configured to accept your
 desired data, you can now transmit data from one part
@@ -214,7 +214,7 @@ void _itemDroppedOnCustomerCart({
 ```
 
 The `_itemDroppedOnCustomerCart` method is invoked in
-`onAccept()` when the user drops a menu item on a
+`onAcceptWithDetails()` when the user drops a menu item on a
 `CustomerCart` widget. By adding the dropped item to the 
 `customer` object, and invoking `setState()` to cause a
 layout update, the UI refreshes with the new customer's
@@ -422,9 +422,9 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
               customer: customer,
             );
           },
-          onAccept: (item) {
+          onAcceptWithDetails: (details) {
             _itemDroppedOnCustomerCart(
-              item: item,
+              item: details.data,
               customer: customer,
             );
           },

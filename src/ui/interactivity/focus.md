@@ -97,14 +97,16 @@ Some dos and don'ts around using these objects include:
   probably won't get what you expect.
 - Do set the `debugLabel` of a focus node widget to help with diagnosing
   focus issues.
-- Don't set the `onKey` callback on a `FocusNode` or `FocusScopeNode` if
-  they are being managed by a `Focus` or `FocusScope` widget. If you want an
-  `onKey` handler, then add a new `Focus` widget around the widget subtree you
-  would like to listen to, and set the `onKey` attribute of the widget to your
-  handler. Set `canRequestFocus: false` on the widget if you also don't want
-  it to be able to take primary focus. This is because the `onKey` attribute
-  on the `Focus` widget can be set to something else in a subsequent build,
-  and if that happens, it overwrites the `onKey` handler you set on the node.
+- Don't set the `onKeyEvent` callback on a `FocusNode` or `FocusScopeNode` if
+  they are being managed by a `Focus` or `FocusScope` widget.
+  If you want an `onKeyEvent` handler, then add a new `Focus` widget
+  around the widget subtree you would like to listen to, and
+  set the `onKeyEvent` attribute of the widget to your handler.
+  Set `canRequestFocus: false` on the widget if
+  you also don't want it to be able to take primary focus.
+  This is because the `onKeyEvent` attribute on the `Focus` widget can be
+  set to something else in a subsequent build, and if that happens,
+  it overwrites the `onKeyEvent` handler you set on the node.
 - Do call `requestFocus()` on a node to request that it receives the
   primary focus, especially from an ancestor that has passed a node it owns to
   a descendant where you want to focus.
@@ -238,29 +240,32 @@ class _MyCustomWidgetState extends State<MyCustomWidget> {
 
 ### Key events
 
-If you wish to listen for key events in a subtree, set the `onKey` attribute of
-the `Focus` widget to be a handler that either just listens to the key, or
+If you wish to listen for key events in a subtree,
+set the `onKeyEvent` attribute of the `Focus` widget to
+be a handler that either just listens to the key, or
 handles the key and stops its propagation to other widgets.
 
-Key events start at the focus node with primary focus. If that node doesn't
-return `KeyEventResult.handled` from its `onKey` handler, then its parent focus
-node is given the event. If the parent doesn't handle it, it goes to its parent,
-and so on, until it reaches the root of the focus tree. If the event reaches the
-root of the focus tree without being handled, then it is returned to the
-platform to give to the next native control in the application (in case the
-Flutter UI is part of a larger native application UI). Events that are handled
-are not propagated to other Flutter widgets, and they are also not propagated to
-native widgets.
+Key events start at the focus node with primary focus.
+If that node doesn't return `KeyEventResult.handled` from
+its `onKeyEvent` handler, then its parent focus node is given the event.
+If the parent doesn't handle it, it goes to its parent,
+and so on, until it reaches the root of the focus tree.
+If the event reaches the root of the focus tree without being handled, then
+it is returned to the platform to give to
+the next native control in the application
+(in case the Flutter UI is part of a larger native application UI).
+Events that are handled are not propagated to other Flutter widgets,
+and they are also not propagated to native widgets.
 
-Here's an example of a `Focus` widget that absorbs every key that its subtree
-doesn't handle, without being able to be the primary focus:
+Here's an example of a `Focus` widget that absorbs every key that
+its subtree doesn't handle, without being able to be the primary focus:
 
 <?code-excerpt "ui/advanced/focus/lib/samples.dart (AbsorbKeysExample)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
   return Focus(
-    onKey: (node, event) => KeyEventResult.handled,
+    onKeyEvent: (node, event) => KeyEventResult.handled,
     canRequestFocus: false,
     child: child,
   );
@@ -279,7 +284,7 @@ the text field:
 @override
 Widget build(BuildContext context) {
   return Focus(
-    onKey: (node, event) {
+    onKeyEvent: (node, event) {
       return (event.logicalKey == LogicalKeyboardKey.keyA)
           ? KeyEventResult.handled
           : KeyEventResult.ignored;
