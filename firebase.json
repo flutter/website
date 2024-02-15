@@ -102,6 +102,7 @@
       { "source": "/accessibility-and-localization", "destination": "/ui/accessibility-and-internationalization", "type": 301 },
       { "source": "/accessibility-and-localization/:rest*", "destination": "/ui/accessibility-and-internationalization/:rest*", "type": 301 },
       { "source": "/add-to-app/android/add-splash-screen", "destination": "/platform-integration/android/splash-screen", "type": 301 },
+
       { "source": "/codelabs/layout-basics", "destination": "/ui/layout", "type": 301 },
       { "source": "/codelabs/explicit-animations", "destination": "/ui/animations/tutorial", "type": 301 },
       { "source": "/cookbook/games/google-mobile-ads", "destination": "/cookbook/plugins/google-mobile-ads", "type": 301 },
@@ -207,6 +208,7 @@
       { "source": "/testing/oem-debuggers", "destination": "/testing/native-debugging", "type": 301 },
 
       { "source": "/assets/images/docs/intellij/hot-reload.gif", "destination": "https://raw.githubusercontent.com/flutter/website/main/src/assets/images/docs/tools/android-studio/hot-reload.gif", "type": 301 },
+      { "source": "/brick-breaker", "destination": "https://codelabs.developers.google.com/codelabs/flutter-flame-brick-breaker", "type": 301 },
       { "source": "/catalog/samples", "destination": "https://flutter.github.io/samples/#", "type": 301 },
       { "source": "/catalog/samples/*", "destination": "https://flutter.github.io/samples/#", "type": 301 },
       { "source": "/chat", "destination": "https://github.com/flutter/flutter/wiki/Chat", "type": 302 },
