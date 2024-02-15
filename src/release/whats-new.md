@@ -51,6 +51,7 @@ You might also check out the [Dart 3.3 release][] blog post.
 [@TahaTesser]: {{site.github}}/TahaTesser
 [Concurrency and isolates]: {{site.url}}/perf/isolates
 [Flutter install]: {{site.github}}/get-started/install
+[migrating from Material 2 to Material 3]: {{site.url}}/release/breaking-changes/material-3-migration
 [Use themes to share colors and font styles]: {{site.url}}/cookbook/design/themes
 
 **Other updates**
