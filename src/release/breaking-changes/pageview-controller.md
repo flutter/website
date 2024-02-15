@@ -1,13 +1,14 @@
 ---
 title: Make PageView.controller nullable
 description: >-
-  PageView.controller converted to be nullable.
+  PageView.controller is now nullable.
 ---
 
 ## Summary
 
-If a controller isn't provided in the constructor, the `controller` member is `null`.
-This makes `PageviewController` consistent with other widgets.
+If a controller isn't provided in the constructor,
+the `controller` member is `null`. This makes
+`PageView` and its `controller` property consistent with other widgets.
 
 ## Migration guide
 
@@ -25,7 +26,8 @@ pageView.controller!.page
 
 ## Timeline
 
-Landed in version: 3.19.0
+Landed in version: 3.19.0-12.0.pre<br>
+In stable release: Not yet
 
 ## References
 

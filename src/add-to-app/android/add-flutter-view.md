@@ -50,7 +50,7 @@ in this case is being added to an Activity or Fragment in your application,
 you must recreate the connections manually. Otherwise, the [FlutterView]({{site.api}}/javadoc/io/flutter/embedding/android/FlutterView.html)
 will not render anything or have other missing functionalities.
 
-A sample [FlutterViewEngine]({{site.repo.samples}}/blob/master/add_to_app/android_view/android_view/app/src/main/java/dev/flutter/example/androidView/FlutterViewEngine.kt)
+A sample [FlutterViewEngine]({{site.repo.samples}}/blob/main/add_to_app/android_view/android_view/app/src/main/java/dev/flutter/example/androidView/FlutterViewEngine.kt)
 class shows one such possible implementation of an application-specific
 connection between an Activity, a [FlutterView]({{site.api}}/javadoc/io/flutter/embedding/android/FlutterView.html)
 and a [FlutterEngine]({{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html).
