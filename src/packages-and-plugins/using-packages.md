@@ -427,7 +427,7 @@ To use this package:
 The [`url_launcher`][] plugin package enables opening
 the default browser on the mobile platform to display
 a given URL, and is supported on Android, iOS, web,
-Windows, Linux, and macos.
+Windows, Linux, and macOS.
 This package is a special Dart package called a
 _plugin package_ (or _plugin_),
 which includes platform-specific code.

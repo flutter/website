@@ -47,5 +47,5 @@ flutter_controller_->ForceRedraw();
 [PR 995][] shows the migration work for the
 [Flutter Gallery][] app.
 
-[PR 995]: {{site.repo.gallery}}/pull/995/files
-[Flutter Gallery]: {{site.gallery}}
+[PR 995]: {{site.repo.gallery-archive}}/pull/995/files
+[Flutter Gallery]: {{site.gallery-archive}}

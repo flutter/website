@@ -23,7 +23,7 @@ existing Flutter project or [add-to-app][] project.
 
 To see a working sample, see the [App Clip sample][] on GitHub.
 
-[App Clip sample]: {{site.repo.samples}}/tree/master/ios_app_clip
+[App Clip sample]: {{site.repo.samples}}/tree/main/ios_app_clip
 
 ## Step 1 - Open project
 
@@ -399,7 +399,7 @@ from the console output in Xcode after running.
 image="development/platform-integration/ios-app-clip/observatory-uri.png"
 %}
 
-You must then copy paste it back into the
+You must then copy and paste it back into the
 `flutter attach` command to connect.
 
 For example:

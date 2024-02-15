@@ -16,7 +16,7 @@ Integration tests are written using the [integration_test][] package, provided
 by the SDK.
 
 In this recipe, learn how to test a counter app. It demonstrates
-how to setup integration tests, how to verify specific text is displayed
+how to set up integration tests, how to verify specific text is displayed
 by the app, how to tap specific widgets, and how to run integration tests.
 
 This recipe uses the following steps:
@@ -214,7 +214,7 @@ information, see the [Integration testing][] page.
 
 #### 5b. Web
 
-<!--
+{% comment %}
 TODO(ryjohn): Add back after other WebDriver versions are supported:
 https://github.com/flutter/flutter/issues/90158
 
@@ -227,7 +227,7 @@ and download the corresponding web driver:
   * Safari: Safari can only be tested on a Mac;
     the SafariDriver is already installed on Mac machines.
   * Edge [Download EdgeDriver][]
--->
+{% endcomment -%}
 
 To get started testing in a web browser, [Download ChromeDriver][].
 

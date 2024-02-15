@@ -1188,9 +1188,7 @@ Docs added and updated since the last announcement include:
 
 Other newness:
 
-* A brand new version of [Flutter Gallery][]. There's a
-  link to the runnable sample in the side nav under
-  **Samples & Tutorials**.
+* A brand-new version of [Flutter Gallery][].
 
 Happy Fluttering!
 
@@ -1201,7 +1199,7 @@ Happy Fluttering!
 [Flutter: the first UI platform designed for ambient computing]: {{site.google-blog}}/2019/12/flutter-ui-ambient-computing.html?m=1
 [Flutter Favorite program]: {{site.url}}/packages-and-plugins/favorites
 [Flutter 1.12.13]: {{site.url}}/release/release-notes/release-notes-1.12.13
-[Flutter Gallery]: https://flutter.github.io/samples/#/
+[Flutter Gallery]: {{site.gallery-archive}}
 [Flutter Layout Explorer]: {{site.url}}/tools/devtools/inspector#flutter-layout-explorer
 [Flutter Medium publication]: {{site.medium}}/flutter
 [Migrating your plugin to the new Android APIs]: {{site.url}}/release/breaking-changes/plugin-api-migration

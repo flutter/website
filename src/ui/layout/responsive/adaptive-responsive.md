@@ -135,10 +135,10 @@ Learn more about creating an adaptive Flutter app with
 You might also check out the following episodes
 of The Boring Show:
 
-<iframe style="max-width: 100%" width="560" height="315" src="{{yt-embed}}/n6Awpg1MO6M" title="Learn about adaptative layouts on the Boring Show" {{yt-set}}></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{yt-embed}}/n6Awpg1MO6M" title="Learn about adaptive layouts on the Boring Show" {{yt-set}}></iframe>
 [Adaptive layouts][]
 
-<iframe style="max-width: 100%" width="560" height="315" src="{{yt-embed}}/eikOZzfc0l4" title="Continue to learn about adaptative layouts on the Boring Show" {{yt-set}}></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{yt-embed}}/eikOZzfc0l4" title="Continue to learn about adaptive layouts on the Boring Show" {{yt-set}}></iframe>
 [Adaptive layouts, part 2][]
 
 For an excellent example of an adaptive app,
@@ -156,10 +156,10 @@ You can learn more about creating platform adaptive apps
 in the following resources:
 
 * [Platform-specific behaviors and adaptations][], a page on this site.
+* [Extreme UI Adaptability in Flutter][], the story of how Google Earth is
+  using Flutter to take adaptability to the next level.
 * [Designing truly adaptive user interfaces][] a blog post and video by
   Aloïs Deniel, presented at the Flutter Vikings 2020 conference.
-* The [Flutter gallery app][] ([repo][]) has been written as an
-  adaptive app.
 
 [Adaptive layouts]: {{yt-watch}}?v=n6Awpg1MO6M&t=694s
 [Adaptive layouts, part 2]: {{yt-watch}}?v=eikOZzfc0l4&t=11s
@@ -167,8 +167,7 @@ in the following resources:
 [Building adaptive apps]: {{site.url}}/ui/layout/responsive/building-adaptive-apps
 
 [Designing truly adaptive user interfaces]: https://www.aloisdeniel.com/blog/designing-truly-adaptative-user-interfaces
-[Flutter gallery app]: {{site.gallery}}
 [Folio source code]: {{site.github}}/gskinnerTeam/flutter-folio
 [gskinner blog]: https://blog.gskinner.com/
 [Platform-specific behaviors and adaptations]: {{site.url}}/platform-integration/platform-adaptations
-[repo]: {{site.repo.gallery}}
+[Extreme UI Adaptability in Flutter]: {{site.flutter-medium}}/extreme-ui-adaptability-in-flutter-how-google-earth-supports-every-use-case-on-earth-6db4661e7a17

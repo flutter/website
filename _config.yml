@@ -17,9 +17,10 @@ repo:
   flutter: https://github.com/flutter/flutter
   samples: https://github.com/flutter/samples
   packages: https://github.com/flutter/packages
-  gallery: https://github.com/flutter/gallery
+  gallery-archive: https://github.com/flutter/gallery
   engine: https://github.com/flutter/engine
   uxr: https://github.com/flutter/uxr
+  wonderous: https://github.com/gskinnerTeam/flutter-wonderous-app
 dart:
   api: https://api.dart.dev
   sdk:
@@ -39,7 +40,7 @@ pub-pkg: https://pub.dev/packages
 flutter-medium: https://medium.com/flutter
 medium: https://medium.com
 dartpad: https://dartpad.dev
-gallery: https://gallery.flutter.dev
+gallery-archive: https://flutter-gallery-archive.web.app
 material: https://m3.material.io
 material2: https://m2.material.io
 so: https://stackoverflow.com
@@ -52,6 +53,7 @@ developers: https://developers.google.com
 codelabs: https://codelabs.developers.google.com
 groups: https://groups.google.com
 firebase: https://firebase.google.com
+wonderous: https://wonderous.app/
 youtube-site: https://youtube.com
 
 ## Software minimum versions

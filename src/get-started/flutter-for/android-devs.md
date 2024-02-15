@@ -785,7 +785,7 @@ Future<void> loadData() async {
 ```
 
 Once the `await`ed network call is done, update the UI by calling `setState()`,
-which triggers a rebuild of the widget sub-tree and updates the data.
+which triggers a rebuild of the widget subtree and updates the data.
 
 The following example loads data asynchronously and displays it in a `ListView`:
 
@@ -900,7 +900,7 @@ I/O operations.
 
 On Android, when you extend `AsyncTask`, you typically override 3 methods,
 `onPreExecute()`, `doInBackground()` and `onPostExecute()`. There is no
-equivalent in Flutter, since you `await` on a long running function, and
+equivalent in Flutter, since you `await` on a long-running function, and
 Dart's event loop takes care of the rest.
 
 However, there are times when you might be processing a large amount of data and
@@ -1129,7 +1129,7 @@ Future<void> loadData() async {
 ### How do I show the progress for a long-running task?
 
 In Android you would typically show a `ProgressBar` view in your UI while
-executing a long running task on a background thread.
+executing a long-running task on a background thread.
 
 In Flutter, use a `ProgressIndicator` widget.
 Show the progress programmatically by controlling when it's rendered
@@ -1312,28 +1312,36 @@ Widget build(BuildContext context) {
 ### Where do I store strings? How do I handle localization?
 
 Flutter currently doesn't have a dedicated resources-like system for strings.
-At the moment, the best practice is to hold your copy text in a class as
-static fields and accessing them from there. For example:
+The best and recommended practice is to hold your strings in a `.arb` file as key-value pairs For example:
 
-<?code-excerpt "lib/string_examples.dart (Strings)"?>
-```dart
-class Strings {
-  static String welcomeMessage = 'Welcome To Flutter';
+<?code-excerpt "lib/arb_examples.arb"?>
+```arb
+{
+   "@@locale": "en",
+   "hello":"Hello {userName}",
+   "@hello":{
+      "description":"A message with a single parameter",
+      "placeholders":{
+         "userName":{
+            "type":"String",
+            "example":"Bob"
+         }
+      }
+   }
 }
 ```
 
 Then in your code, you can access your strings as such:
 
-<?code-excerpt "lib/string_examples.dart (AccessString)"?>
+<?code-excerpt "lib/localization_examples.dart (AccessString)"?>
 ```dart
-Text(Strings.welcomeMessage);
+Text(AppLocalizations.of(context)!.hello('John'));
 ```
 
 Flutter has basic support for accessibility on Android,
 though this feature is a work in progress.
 
-Flutter developers are encouraged to use the
-[intl package][] for internationalization and localization.
+See [Internationalizing Flutter apps][] for more information on this.
 
 ### What is the equivalent of a Gradle file? How do I add dependencies?
 
@@ -1359,7 +1367,7 @@ Fragments are a way to modularize your code, compose sophisticated
 user interfaces for larger screens, and help scale your application UI.
 In Flutter, both of these concepts fall under the umbrella of `Widget`s.
 
-To learn more about the UI for building Activities and Fragements,
+To learn more about the UI for building Activities and Fragments,
 see the community-contributed Medium article,
 [Flutter for Android Developers: How to design Activity UI in Flutter][].
 
@@ -2362,8 +2370,8 @@ fragmentation. For more information, see the
 
 ### How do I set up push notifications?
 
-In Android, you use Firebase Cloud Messaging to setup push
-notifications for your app.
+In Android, you use Firebase Cloud Messaging to set up
+push notifications for your app.
 
 In Flutter, access this functionality using the
 [Firebase Messaging][] plugin.
@@ -2413,3 +2421,4 @@ see the [`firebase_messaging`][] plugin documentation.
 [SQFlite]: {{site.pub}}/packages/sqflite
 [StackOverflow]: {{site.so}}/questions/44396075/equivalent-of-relativelayout-in-flutter
 [widget catalog]: {{site.url}}/ui/widgets/layout
+[Internationalizing Flutter apps]: {{site.url}}/ui/accessibility-and-internationalization/internationalization

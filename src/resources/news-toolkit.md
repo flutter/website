@@ -49,8 +49,8 @@ You might also check out:
   an introduction to the toolkit on YouTube.
 
 {{site.alert.note}}
-  This is the first release of the news toolkit and,
-  while is has been tested by early adopters, it
+  This is an early release of the news toolkit and,
+  while it has been tested by early adopters, it
   might have issues or rough edges. Please don't
   hesitate to [file an issue][].
 {{site.alert.end}}
