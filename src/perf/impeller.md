@@ -117,7 +117,7 @@ by passing `--enable-impeller` to `flutter run`:
 flutter run --enable-impeller
 ```
 
-Or, you can add the following setting to your project’s
+Or, you can add the following setting to your project's
 `AndroidManifest.xml` file under the `<application>` tag:
 
 ```xml

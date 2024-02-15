@@ -24,7 +24,6 @@ options available to help automate the delivery of your application.
 You can use fastlane with the following tooling:
 
 * [GitHub Actions][]
-  * Example: Flutter Gallery's [Github Actions workflows][]
   * Example: [Github Action in Flutter Project][]
 * [Cirrus][]
 * [Travis][]
@@ -300,7 +299,7 @@ This can be achieved by using the following Files and Folders conditions:
 Xcode Cloud defaults the build number for new workflows to `1` and increments
 it per successful build. If you're using an existing app with a higher build
 number, you'll need to configure Xcode Cloud to use the correct build number
-for it's builds by simply specifying the `Next Build Number` in your iteration.
+for its builds by simply specifying the `Next Build Number` in your iteration.
 
 Check out [Setting the next build number for Xcode Cloud builds][] for more
 information.
@@ -317,10 +316,8 @@ information.
 [fastlane Android beta deployment guide]: https://docs.fastlane.tools/getting-started/android/beta-deployment/
 [fastlane CI documentation]: https://docs.fastlane.tools/best-practices/continuous-integration
 [fastlane iOS beta deployment guide]: https://docs.fastlane.tools/getting-started/ios/beta-deployment/
-[Flutter Gallery Project]: {{site.repo.gallery}}
 [Github Action in Flutter Project]: {{site.github}}/nabilnalakath/flutter-githubaction
 [GitHub Actions]: {{site.github}}/features/actions
-[Github Actions workflows]: {{site.repo.gallery}}/tree/main/.github/workflows
 [GitLab]: https://docs.gitlab.com/ee/ci/README.html#doc-nav
 [CircleCI]: https://circleci.com
 [Building and deploying Flutter apps with Fastlane]: https://circleci.com/blog/deploy-flutter-android

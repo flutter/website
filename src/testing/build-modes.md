@@ -50,7 +50,7 @@ Debug mode for a web app means that:
 By default, `flutter run` compiles to debug mode.
 Your IDE supports this mode. Android Studio,
 for example, provides a **Run > Debug...** menu option,
-as well as a green bug icon overlayed with a small triangle
+as well as a green bug icon overlaid with a small triangle
 on the project page.
 
 {{site.alert.note}}

@@ -42,5 +42,5 @@ files
 
 [Build and release a Windows app]: {{site.url}}/deployment/windows#updating-the-apps-version-number
 [run loop migration guide]: {{site.url}}/release/breaking-changes/windows-run-loop
-[PR 721]: {{site.repo.gallery}}/pull/721/files
-[Flutter Gallery]: {{site.gallery}}
+[PR 721]: {{site.repo.gallery-archive}}/pull/721/files
+[Flutter Gallery]: {{site.gallery-archive}}

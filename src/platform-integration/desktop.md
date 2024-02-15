@@ -305,14 +305,13 @@ You can run the following samples as desktop apps,
 as well as download and inspect the source code to
 learn more about Flutter desktop support.
 
-Flutter Gallery [running web app][], [repo][flutter-gallery-repo]
-: A samples project hosted on GitHub to help developers
-  evaluate and use Flutter. The Gallery consists of a
-  collection of Material design widgets, behaviors,
-  and vignettes implemented with Flutter.
-  You can clone the project and run Gallery as a desktop app
-  by following the instructions provided in the [README][].
-  
+Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
+: A showcase app that uses Flutter to create a highly expressive user interface.
+  Wonderous focuses on delivering an accessible and high-quality user experience
+  while including engaging interactions and novel animations.
+  To run Wonderous as a desktop app, clone the project and
+  follow the instructions provided in the [README][wonderous-readme].
+
 Flokk [announcement blogpost][gskinner-flokk-blogpost], [repo][gskinner-flokk-repo]
 : A Google contacts manager that integrates with GitHub and Twitter.
   It syncs with your Google account, imports your contacts,
@@ -322,10 +321,10 @@ Flokk [announcement blogpost][gskinner-flokk-blogpost], [repo][gskinner-flokk-re
 : A sample application built as a desktop application that
   uses desktop-supported plugins.
 
+[wonderous-app]: {{site.wonderous}}/web
+[wonderous-repo]: {{site.repo.wonderous}}
+[wonderous-readme]: {{site.repo.wonderous}}#wonderous
 [Photo Search app]: {{site.repo.samples}}/tree/main/desktop_photo_search
-[running web app]: {{site.gallery}}
-[flutter-gallery-repo]: {{site.repo.gallery}}
-[README]: {{site.repo.gallery}}#readme
 [gskinner-flokk-repo]: {{site.github}}/gskinnerTeam/flokk
 [gskinner-flokk-blogpost]: https://blog.gskinner.com/archives/2020/09/flokk-how-we-built-a-desktop-app-using-flutter.html
 [Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-client

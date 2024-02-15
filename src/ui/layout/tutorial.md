@@ -8,7 +8,6 @@ diff2html: true
 {% assign api = site.api | append: '/flutter' -%}
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
 {% assign rawExFile = '<https://raw.githubusercontent.com/flutter/website/main/examples>' -%}
-{% capture demo -%} {{site.repo.flutter}}/tree/{{site.branch}}/examples/flutter_gallery/lib/demo {%- endcapture -%}
 
 <style>dl, dd { margin-bottom: 0; }</style>
 
@@ -126,7 +125,7 @@ to contain each part of your layout.
 When Flutter needs to re-render part of a UI,
 it updates the smallest part that changes.
 This is why Flutter makes "everything a widget".
-If the only the text changes in a `Text` widget, Flutter redraws only that text.
+If only the text changes in a `Text` widget, Flutter redraws only that text.
 Flutter changes the least amount of the UI possible in response to user input.
 
 For this tutorial, write each element you have identified as its own widget.

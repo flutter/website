@@ -11,10 +11,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
     
   cupertino_icons: ^1.0.6
   http: ^1.2.0
   shared_preferences: ^2.2.2
+  intl: any
 
 dev_dependencies:
   example_utils:
@@ -23,4 +26,5 @@ dev_dependencies:
     sdk: flutter
 
 flutter:
+  generate: true
   uses-material-design: true

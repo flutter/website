@@ -287,7 +287,7 @@ In the render tree for **Example 5**:
   `BoxConstraints(w=800.0, h=600.0)`.
 
 * The [`Center`][] widget created the `RenderPositionedBox#dc1df` render object
-  under the `RenderSemanticsAnnotations#8187b` sub-tree.
+  under the `RenderSemanticsAnnotations#8187b` subtree.
 
 * Each child under this render object has `BoxConstraints` with both
   minimum and maximum values. For example, `RenderSemanticsAnnotations#a0a4b`

@@ -64,7 +64,6 @@ reference to help you build up an application.
 ## Images
 - [Display images from the internet]({{site.url}}/cookbook/images/network-image)
 - [Fade in images with a placeholder]({{site.url}}/cookbook/images/fading-in-images)
-- [Work with cached images]({{site.url}}/cookbook/images/cached-images)
 
 
 ## Lists

@@ -127,12 +127,6 @@ Similarly, dropping a ball attached to a spring falls
 * [Animate a widget using a physics simulation][]<br>
   A recipe in the animations section of the Flutter cookbook.
 
-* [Flutter Gallery][]<br>
-  Under **Material Components**, the [`Grid`][] example
-  demonstrates a fling animation. Select one of the
-  images from the grid and zoom in. You can pan the
-  image with flinging or dragging gestures.
-
 * Also see the API documentation for
   [`AnimationController.animateWith`][] and
   [`SpringSimulation`][].
@@ -178,11 +172,6 @@ using the `Hero` widget.
     and size.
   * The hero's boundary changes shape, from a circle to a square,
     as its flies from one page to another.
-
-* [Flutter Gallery][]<br>
-  You can build the Gallery app yourself,
-  or download it from the Play Store. The [Shrine][]
-  demo includes an example of a hero animation.
 
 * Also see the API documentation for the
   [`Hero`][], [`Navigator`][], and [`PageRoute`][] classes.
@@ -246,8 +235,6 @@ Learn more about Flutter animations at the following links:
 [Creating your own custom implicit animations with TweenAnimationBuilder]: {{yt-watch}}?v=6KiPEqzJIKQ&feature=youtu.be
 [Creating custom explicit animations with AnimatedBuilder and AnimatedWidget]: {{yt-watch}}?v=fneC7t4R_B0&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=4
 [Flutter API documentation]: {{site.api}}
-[Flutter Gallery]: {{site.repo.gallery}}
-[`Grid`]: {{site.repo.gallery}}/blob/main/lib/demos/material/grid_list_demo.dart
 [`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html
 [Hero animations]: {{site.url}}/ui/animations/hero-animations
 [How to choose which Flutter Animation Widget is right for you?]: {{yt-watch}}?v=GXIJJkq_H8g
@@ -258,7 +245,6 @@ Learn more about Flutter animations at the following links:
 [`PageRoute`]: {{site.api}}/flutter/widgets/PageRoute-class.html
 [part 2]: {{site.medium}}/dartlang/zero-to-one-with-flutter-part-two-5aa2f06655cb
 [Sample app catalog]: https://flutter.github.io/samples
-[Shrine]: {{site.repo.gallery}}/tree/main/lib/studies/shrine
 [`SpringSimulation`]: {{site.api}}/flutter/physics/SpringSimulation-class.html
 [Staggered Animations]: {{site.url}}/ui/animations/staggered-animations
 [Write your first Flutter app on the web]: {{site.url}}/get-started/codelab-web
