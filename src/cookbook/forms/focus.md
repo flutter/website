@@ -3,7 +3,7 @@ title: Focus and text fields
 description: How focus works with text fields.
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://old-dartpad.web.app/inject_embed.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/forms/focus/"?>

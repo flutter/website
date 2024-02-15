@@ -3,7 +3,7 @@ title: Using Actions and Shortcuts
 description: How to use Actions and Shortcuts in your Flutter app.
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://old-dartpad.web.app/inject_embed.dart.js
 ---
 
 This page describes how to bind physical keyboard events to actions in the user

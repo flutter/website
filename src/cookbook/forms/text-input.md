@@ -3,7 +3,7 @@ title: Create and style a text field
 description: How to implement a text field.
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://old-dartpad.web.app/inject_embed.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/forms/text_input/"?>

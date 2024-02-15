@@ -3,7 +3,7 @@ title: Handle taps
 description: How to handle tapping and dragging.
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://old-dartpad.web.app/inject_embed.dart.js
 ---
 
 {% include docs/yt_shims.liquid %}

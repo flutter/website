@@ -4,7 +4,7 @@ description: Flutter's model for widget constraints, sizing, positioning, and ho
 toc: false
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://old-dartpad.web.app/inject_embed.dart.js
 ---
 
 {% include docs/yt_shims.liquid %}
