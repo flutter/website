@@ -207,6 +207,7 @@
       { "source": "/testing/oem-debuggers", "destination": "/testing/native-debugging", "type": 301 },
 
       { "source": "/assets/images/docs/intellij/hot-reload.gif", "destination": "https://raw.githubusercontent.com/flutter/website/main/src/assets/images/docs/tools/android-studio/hot-reload.gif", "type": 301 },
+      { "source": "/brick-breaker", "destination": "https://codelabs.developers.google.com/codelabs/flutter-flame-brick-breaker", "type": 301 },
       { "source": "/catalog/samples", "destination": "https://flutter.github.io/samples/#", "type": 301 },
       { "source": "/catalog/samples/*", "destination": "https://flutter.github.io/samples/#", "type": 301 },
       { "source": "/chat", "destination": "https://github.com/flutter/flutter/wiki/Chat", "type": 302 },

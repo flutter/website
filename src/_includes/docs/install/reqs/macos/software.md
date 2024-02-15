@@ -8,7 +8,7 @@ Java or Kotlin code for Android.
 Flutter requires the full version of Android Studio.
 {% endcapture %}
 {% assign chrome = "[Google Chrome][] to debug JavaScript code for web apps." %}
-{% assign git-main = '[Git][] ' | append: site.appmin.github_mac | append: ' or later to manage source code.' %}
+{% assign git-main = '[Git][] ' | append: site.appmin.git_mac | append: ' or later to manage source code.' %}
 {% assign git-xcode = "The Xcode installation includes " %}
 {% capture git-other %}
 To check if you have `git` installed,

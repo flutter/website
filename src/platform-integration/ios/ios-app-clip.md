@@ -1,12 +1,11 @@
 ---
 title: Adding an iOS App Clip target
-description: How to add an iOS 14 App Clip target to your Flutter project.
+description: How to add an iOS App Clip target to your Flutter project.
 ---
 
 {{site.alert.important}}
-  This experimental preview currently exceeds the 10MB
-  uncompressed IPA payload size limit and cannot be
-  used in production ([#71098][]).
+  Targeting iOS 16 increases the uncompressed IPA payload size limit
+  to 15MB. Depending on the size of your app, you might hit the limit. ([#71098][]).
 {{site.alert.end}}
 
 This guide describes how to manually add another
@@ -55,8 +54,6 @@ Enter your new target detail in the dialog.
 
 Select **Storyboard** for Interface.
 
-Select **UIKit App Delegate** for Life Cycle.
-
 Select the same language as your original target for **Language**.
 
 (In other words, to simplify the setup,
@@ -73,6 +70,14 @@ activate the new scheme for the new target.
 
 {% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/activate-scheme.png" %}
+
+**2.5**
+
+Back in the project settings, open the **Build Phases** tab.
+Drag **Embedded App Clips** to above **Thin Binary**.
+
+{% include docs/app-figure.md
+image="development/platform-integration/ios-app-clip/embedded-app-clips.png" %}
 
 <a id="step-3"></a>
 ## Step 3 - Remove unneeded files
@@ -128,6 +133,9 @@ normal app target.
 
 This gives your App Clip target access to Flutter's
 required build settings.
+
+Set **iOS Deployment Target** to at least **16.0** to take advantage of the
+15MB size limit.
 
 {% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/configuration.png" %}
@@ -223,22 +231,6 @@ These steps are not necessary for add-to-app.
 
 **7.1**
 
-In your App Clip's target's project settings,
-open the **Build Settings** tab.
-
-For setting `Framework Search Paths`, add 2 entries:
-
-* `$(inherited)`
-* `$(PROJECT_DIR)/Flutter`
-
-In other words, the same as the main app target's build settings.
-
-{% include docs/app-figure.md
-image="development/platform-integration/ios-app-clip/app-clip-framework-search.png"
-%}
-
-**7.2**
-
 For the Swift target,
 set the `Objective-C Bridging Header`
 build setting to `Runner/Runner-Bridging-Header.h`
@@ -250,7 +242,7 @@ the same as the main app target's build settings.
 image="development/platform-integration/ios-app-clip/bridge-header.png"
 %}
 
-**7.3**
+**7.2**
 
 Now open the **Build Phases** tab. Press the **+** sign
 and select **New Run Script Phase**.
@@ -267,6 +259,8 @@ Expand the new phase and add this line to the script content:
 /bin/sh "$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh" build
 ```
 
+Uncheck **Based on dependency analysis**.
+
 In other words,
 the same as the main app target's build phases.
 
@@ -277,7 +271,7 @@ image="development/platform-integration/ios-app-clip/xcode-backend-build.png"
 This ensures that your Flutter Dart code is compiled
 when running the App Clip target.
 
-**7.4**
+**7.3**
 
 Press the **+** sign and select **New Run Script Phase** again.
 Leave it as the last phase.
@@ -287,6 +281,8 @@ This time, add:
 ```bash
 /bin/sh "$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh" embed_and_thin
 ```
+
+Uncheck **Based on dependency analysis**.
 
 In other words,
 the same as the main app target's build phases.
@@ -299,11 +295,6 @@ This ensures that your Flutter app and engine are embedded
 into the App Clip bundle.
 
 ## Step 8 - Integrate plugins
-
-{{site.alert.warning}}
-  CocoaPods version 1.10.0.beta.1 or higher is required
-  to run Flutter apps with plugins.
-{{site.alert.end}}
 
 **8.1**
 
@@ -372,7 +363,7 @@ pod install
 
 You can now run your App Clip target from Xcode by
 selecting your App Clip target from the scheme drop-down,
-selecting an iOS 14 device and pressing run.
+selecting an iOS 16 or higher device and pressing run.
 
 {% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/run-select.png"
@@ -393,7 +384,6 @@ networking permission restrictions.
 In order to debug your App Clip and use functionalities
 like hot reload, you must look for the Observatory URI
 from the console output in Xcode after running.
-[PENDING: Is this still true?]
 
 {% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/observatory-uri.png"
