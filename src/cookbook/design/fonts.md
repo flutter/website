@@ -81,7 +81,7 @@ Flutter does not support fonts in the Web Open Font Format,
 Few sources agree on what a font file type is or which uses less space.
 The key difference between font file types involves how the format 
 encodes the glyphs in the file.
-Most TrueType and OpenType font files have similiar capabilities as they
+Most TrueType and OpenType font files have similar capabilities as they
 borrowed from each other as the formats and fonts improved over time.
 
 Which font you should use depends on the following considerations.
@@ -93,7 +93,7 @@ Which font you should use depends on the following considerations.
 Research what options a given font offers,
 like more than one weight or style per font file,
 [variable font capability][variable-fonts],
-the availabilty of multiple font files for a multiple font weights,
+the availability of multiple font files for a multiple font weights,
 or more than one width per font.
 
 Choose the typeface or font family that meets the design needs of your app.
@@ -187,7 +187,7 @@ To add font files to your Flutter app, complete the following steps.
 
 This `pubspec.yaml` file defines the italic style for the
 `Raleway` font family as the `Raleway-Italic.ttf` font file.
-When you you set `style: TextStyle(fontStyle: FontStyle.italic)`,
+When you set `style: TextStyle(fontStyle: FontStyle.italic)`,
 Flutter swaps `Raleway-Regular` with `Raleway-Italic`.
 
 The `family` value sets the name of the typeface.

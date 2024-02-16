@@ -6,13 +6,13 @@ publish_to: none
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.2.0
+  sdk: ^3.3.0
 
 dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.6
-  transparent_image: ^2.0.0
+  transparent_image: ^2.0.1
 
 dev_dependencies:
   example_utils:

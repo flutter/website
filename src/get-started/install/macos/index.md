@@ -3,6 +3,7 @@ title: Choose your first type of app
 description: Configure your system to develop Flutter on macOS.
 short-title: macOS
 target-list: [Desktop, Mobile-iOS, Mobile-Android, Web]
+js: [{url: '/assets/js/temp/macos-install-redirector.js'}]
 ---
 
 {% assign os = 'macos' -%}
@@ -15,13 +16,13 @@ target-list: [Desktop, Mobile-iOS, Mobile-Android, Web]
         <span class="d-block h1">
           {% assign icon = target | downcase -%}
           {% if icon == 'desktop' -%}
-            <span class="material-icons">laptop_mac</span>
+            <span class="material-symbols">laptop_mac</span>
           {% elsif icon == 'mobile-ios' -%}
-            <span class="material-icons">phone_iphone</span>
+            <span class="material-symbols">phone_iphone</span>
           {% elsif icon == 'mobile-android' -%}
-            <span class="material-icons">phone_android</span>
+            <span class="material-symbols">phone_android</span>
           {% else -%}
-            <span class="material-icons">open_in_browser</span>
+            <span class="material-symbols">open_in_browser</span>
           {% endif -%}
         </span>
         <span class="text-muted text-nowrap">
@@ -43,6 +44,6 @@ target-list: [Desktop, Mobile-iOS, Mobile-Android, Web]
 Your choice informs which parts of Flutter tooling you configure
 to run your first Flutter app.
 You can set up additional platforms later.
-If you don’t have a preference, choose mobile.
+If you don't have a preference, choose mobile.
 
 {% include docs/china-notice.md %}

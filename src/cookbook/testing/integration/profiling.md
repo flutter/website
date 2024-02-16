@@ -21,6 +21,12 @@ In this recipe, learn how to write a test that records a performance
 timeline while performing a specific task and saves a summary of the
 results to a local file.
 
+{{site.alert.note}}
+  Recording performance timelines isn't supported on web.
+  For performance profiling on web, see
+  [Debugging performance for web apps][]
+{{site.alert.end}}
+
 This recipe uses the following steps:
 
   1. Write a test that scrolls through a list of items.
@@ -268,3 +274,4 @@ Future<void> main() {
 [`Timeline`]: {{site.api}}/flutter/flutter_driver/Timeline-class.html
 [`TimelineSummary`]: {{site.api}}/flutter/flutter_driver/TimelineSummary-class.html
 [`traceAction()`]: {{site.api}}/flutter/flutter_driver/FlutterDriver/traceAction.html
+[Debugging performance for web apps]: {{site.url}}/perf/web-performance

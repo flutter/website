@@ -1,0 +1,35 @@
+name: gallery
+description: >-
+  Legacy examples referenced in "Layouts in Flutter":
+  https://docs.flutter.dev/ui/layout.
+version: 1.0.0
+
+environment:
+  sdk: ^3.2.0
+
+dependencies:
+  animations: ^2.0.11
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  example_utils:
+    path: ../../example_utils
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/demos/bottom_navigation_background.png
+    - assets/places/india_chennai_flower_market.png
+    - assets/places/india_thanjavur_market.png
+    - assets/places/india_tanjore_bronze_works.png
+    - assets/places/india_tanjore_market_merchant.png
+    - assets/places/india_tanjore_thanjavur_temple.png
+    - assets/places/india_pondicherry_salt_farm.png
+    - assets/places/india_chennai_highway.png
+    - assets/places/india_chettinad_silk_maker.png
+    - assets/places/india_tanjore_thanjavur_temple_carvings.png
+    - assets/places/india_chettinad_produce.png
+    - assets/places/india_tanjore_market_technology.png
+    - assets/places/india_pondicherry_beach.png
+    - assets/places/india_pondicherry_fisherman.png

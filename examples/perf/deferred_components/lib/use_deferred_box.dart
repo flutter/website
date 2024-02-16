@@ -13,8 +13,8 @@ class _SomeWidgetState extends State<SomeWidget> {
 
   @override
   void initState() {
-    _libraryFuture = box.loadLibrary();
     super.initState();
+    _libraryFuture = box.loadLibrary();
   }
 
   @override

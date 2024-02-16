@@ -6,15 +6,18 @@ publish_to: none # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.2.0
+  sdk: ^3.3.0
 
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
     
   cupertino_icons: ^1.0.6
-  http: ^1.1.0
-  shared_preferences: ^2.2.0
+  http: ^1.2.0
+  shared_preferences: ^2.2.2
+  intl: any
 
 dev_dependencies:
   example_utils:
@@ -23,4 +26,5 @@ dev_dependencies:
     sdk: flutter
 
 flutter:
+  generate: true
   uses-material-design: true

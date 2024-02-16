@@ -158,7 +158,7 @@ Mobile browsers:
 
 Desktop browsers:
 
-* MacOS - VoiceOver
+* macOS - VoiceOver
 * Windows - JAWs & NVDA
 
 Screen readers users on web must toggle the
@@ -206,9 +206,8 @@ To learn about using Orca, check out
 
 <br/>
 
-Check out the following [video demo][] to see
-Victor Tsaran, who leads the Accessibility program for Material Design,
-using VoiceOver with the Flutter Gallery web app.
+Check out the following [video demo][] to see Victor Tsaran,
+using VoiceOver with the now-archived [Flutter Gallery][] web app.
 
 Flutter's standard widgets generate an accessibility tree automatically.
 However, if your app needs something different,
@@ -222,6 +221,7 @@ don't affect which voice the screen reader uses.
 Usually, the screen reader uses the system voice
 except where you explicitly set it with `TextSpan.locale`.
 
+[Flutter Gallery]: {{site.gallery-archive}}
 [`TextSpan.locale`]: {{site.api}}/flutter/painting/TextSpan/locale.html
 
 ## Sufficient contrast

@@ -221,7 +221,7 @@ Check both `KeyDownEvent` and `KeyRepeatEvent`.
 ## Timeline
 
 Landed in version: 3.18.0-7.0.pre<br>
-In stable release: not yet (Not in 3.18)
+In stable release: 3.19.0
 
 ## References
 
@@ -248,58 +248,58 @@ Relevant PRs:
 
 * [Deprecate RawKeyEvent, et al. and exempt uses in the framework.][]
 
-[`debugKeyEventSimulatorTransitModeOverride`]: {{site.main-api}}/flutter/services/debugKeyEventSimulatorTransitModeOverride-class.html
-[`Focus.onKey`]: {{site.main-api}}/flutter/services/Focus/onKey.html
-[`FocusNode.attach`]: {{site.main-api}}/flutter/services/FocusNode/attach.html
-[`FocusNode.onKey`]: {{site.main-api}}/flutter/services/FocusNode/onKey.html
-[`FocusOnKeyCallback`]: {{site.main-api}}/flutter/services/FocusOnKeyCallback-class.html
-[`FocusScope.onKey`]: {{site.main-api}}/flutter/services/FocusScope/onKey.html
-[`FocusScopeNode.onKey`]: {{site.main-api}}/flutter/services/FocusScopeNode/onKey.html
-[`GLFWKeyHelper`]: {{site.main-api}}/flutter/services/GLFWKeyHelper-class.html
-[`GtkKeyHelper`]: {{site.main-api}}/flutter/services/GtkKeyHelper-class.html
-[`KeyboardSide`]: {{site.main-api}}/flutter/services/KeyboardSide-class.html
-[`KeyDataTransitMode`]: {{site.main-api}}/flutter/services/KeyDataTransitMode-class.html
-[`KeyEventManager`]: {{site.main-api}}/flutter/services/KeyEventManager-class.html
-[`KeyHelper`]: {{site.main-api}}/flutter/services/KeyHelper-class.html
-[`KeyMessage`]: {{site.main-api}}/flutter/services/KeyMessage-class.html
-[`KeyMessageHandler`]: {{site.main-api}}/flutter/services/KeyMessageHandler-class.html
-[`KeySimulatorTransitModeVariant`]: {{site.main-api}}/flutter/services/KeySimulatorTransitModeVariant-class.html
-[`ModifierKey`]: {{site.main-api}}/flutter/services/ModifierKey-class.html
-[`RawKeyboard`]: {{site.main-api}}/flutter/services/RawKeyboard-class.html
-[`RawKeyboardListener`]: {{site.main-api}}/flutter/services/RawKeyboardListener-class.html
-[`RawKeyDownEvent`]: {{site.main-api}}/flutter/services/RawKeyDownEvent-class.html
-[`RawKeyEvent`]: {{site.main-api}}/flutter/services/RawKeyEvent-class.html
-[`RawKeyEventData`]: {{site.main-api}}/flutter/services/RawKeyEventData-class.html
-[`RawKeyEventDataAndroid`]: {{site.main-api}}/flutter/services/RawKeyEventDataAndroid-class.html
-[`RawKeyEventDataFuchsia`]: {{site.main-api}}/flutter/services/RawKeyEventDataFuchsia-class.html
-[`RawKeyEventDataIos`]: {{site.main-api}}/flutter/services/RawKeyEventDataIos-class.html
-[`RawKeyEventDataLinux`]: {{site.main-api}}/flutter/services/RawKeyEventDataLinux-class.html
-[`RawKeyEventDataMacOs`]: {{site.main-api}}/flutter/services/RawKeyEventDataMacOs-class.html
-[`RawKeyEventDataWeb`]: {{site.main-api}}/flutter/services/RawKeyEventDataWeb-class.html
-[`RawKeyEventDataWindows`]: {{site.main-api}}/flutter/services/RawKeyEventDataWindows-class.html
-[`RawKeyEventHandler`]: {{site.main-api}}/flutter/services/RawKeyEventHandler-class.html
-[`RawKeyUpEvent`]: {{site.main-api}}/flutter/services/RawKeyUpEvent-class.html
-[`ServicesBinding.keyEventManager`]: {{site.main-api}}/flutter/services/ServicesBinding/keyEventManager.html
-[`Focus.onKeyEvent`]: {{site.main-api}}/flutter/services/Focus/onKeyEvent.html
-[`FocusNode.onKeyEvent`]: {{site.main-api}}/flutter/services/FocusNode/onKeyEvent.html
-[`FocusOnKeyEventCallback`]: {{site.main-api}}/flutter/services/FocusOnKeyEventCallback-class.html
-[`FocusScope.onKeyEvent`]: {{site.main-api}}/flutter/services/FocusScope/onKeyEvent.html
-[`FocusScopeNode.onKeyEvent`]: {{site.main-api}}/flutter/services/FocusScopeNode/onKeyEvent.html
-[`HardwareKeyboard`]: {{site.main-api}}/flutter/services/HardwareKeyboard-class.html
-[`HardwareKeyboard.isLogicalKeyPressed`]: {{site.main-api}}/flutter/services/HardwareKeyboard/isLogicalKeyPressed.html
-[`KeyboardListener`]: {{site.main-api}}/flutter/services/KeyboardListener-class.html
-[`KeyDownEvent`]: {{site.main-api}}/flutter/services/KeyDownEvent-class.html
-[`KeyRepeatEvent`]: {{site.main-api}}/flutter/services/KeyRepeatEvent-class.html
-[`KeyEvent`]: {{site.main-api}}/flutter/services/KeyEvent-class.html
-[`KeyEventHandler`]: {{site.main-api}}/flutter/services/KeyEventHandler-class.html
-[`KeyUpEvent`]: {{site.main-api}}/flutter/services/KeyUpEvent-class.html
-[`RawKeyEvent.isKeyPressed`]: {{site.main-api}}/flutter/services/RawKeyEvent/isKeyPressed.html
-[`RawKeyEvent.isControlPressed`]: {{site.main-api}}/flutter/services/RawKeyEvent/isControlPressed.html
-[`RawKeyEvent.isShiftPressed`]: {{site.main-api}}/flutter/services/RawKeyEvent/isShiftPressed.html
-[`RawKeyEvent.isAltPressed`]: {{site.main-api}}/flutter/services/RawKeyEvent/isAltPressed.html
-[`RawKeyEvent.isMetaPressed`]: {{site.main-api}}/flutter/services/RawKeyEvent/isMetaPressed.html
-[`RawKeyEvent.repeat`]: {{site.main-api}}/flutter/services/RawKeyEvent/repeat.html
-[`RawKeyEventDataAndroid.eventSource`]: {{site.main-api}}/flutter/services/RawKeyEventDataAndroid/eventSource.html
-[`KeyEvent.deviceType`]: {{site.main-api}}/flutter/services/KeyEvent/deviceType.html
+[`debugKeyEventSimulatorTransitModeOverride`]: {{site.api}}/flutter/services/debugKeyEventSimulatorTransitModeOverride-class.html
+[`Focus.onKey`]: {{site.api}}/flutter/services/Focus/onKey.html
+[`FocusNode.attach`]: {{site.api}}/flutter/services/FocusNode/attach.html
+[`FocusNode.onKey`]: {{site.api}}/flutter/services/FocusNode/onKey.html
+[`FocusOnKeyCallback`]: {{site.api}}/flutter/services/FocusOnKeyCallback-class.html
+[`FocusScope.onKey`]: {{site.api}}/flutter/services/FocusScope/onKey.html
+[`FocusScopeNode.onKey`]: {{site.api}}/flutter/services/FocusScopeNode/onKey.html
+[`GLFWKeyHelper`]: {{site.api}}/flutter/services/GLFWKeyHelper-class.html
+[`GtkKeyHelper`]: {{site.api}}/flutter/services/GtkKeyHelper-class.html
+[`KeyboardSide`]: {{site.api}}/flutter/services/KeyboardSide-class.html
+[`KeyDataTransitMode`]: {{site.api}}/flutter/services/KeyDataTransitMode-class.html
+[`KeyEventManager`]: {{site.api}}/flutter/services/KeyEventManager-class.html
+[`KeyHelper`]: {{site.api}}/flutter/services/KeyHelper-class.html
+[`KeyMessage`]: {{site.api}}/flutter/services/KeyMessage-class.html
+[`KeyMessageHandler`]: {{site.api}}/flutter/services/KeyMessageHandler-class.html
+[`KeySimulatorTransitModeVariant`]: {{site.api}}/flutter/services/KeySimulatorTransitModeVariant-class.html
+[`ModifierKey`]: {{site.api}}/flutter/services/ModifierKey-class.html
+[`RawKeyboard`]: {{site.api}}/flutter/services/RawKeyboard-class.html
+[`RawKeyboardListener`]: {{site.api}}/flutter/services/RawKeyboardListener-class.html
+[`RawKeyDownEvent`]: {{site.api}}/flutter/services/RawKeyDownEvent-class.html
+[`RawKeyEvent`]: {{site.api}}/flutter/services/RawKeyEvent-class.html
+[`RawKeyEventData`]: {{site.api}}/flutter/services/RawKeyEventData-class.html
+[`RawKeyEventDataAndroid`]: {{site.api}}/flutter/services/RawKeyEventDataAndroid-class.html
+[`RawKeyEventDataFuchsia`]: {{site.api}}/flutter/services/RawKeyEventDataFuchsia-class.html
+[`RawKeyEventDataIos`]: {{site.api}}/flutter/services/RawKeyEventDataIos-class.html
+[`RawKeyEventDataLinux`]: {{site.api}}/flutter/services/RawKeyEventDataLinux-class.html
+[`RawKeyEventDataMacOs`]: {{site.api}}/flutter/services/RawKeyEventDataMacOs-class.html
+[`RawKeyEventDataWeb`]: {{site.api}}/flutter/services/RawKeyEventDataWeb-class.html
+[`RawKeyEventDataWindows`]: {{site.api}}/flutter/services/RawKeyEventDataWindows-class.html
+[`RawKeyEventHandler`]: {{site.api}}/flutter/services/RawKeyEventHandler-class.html
+[`RawKeyUpEvent`]: {{site.api}}/flutter/services/RawKeyUpEvent-class.html
+[`ServicesBinding.keyEventManager`]: {{site.api}}/flutter/services/ServicesBinding/keyEventManager.html
+[`Focus.onKeyEvent`]: {{site.api}}/flutter/services/Focus/onKeyEvent.html
+[`FocusNode.onKeyEvent`]: {{site.api}}/flutter/services/FocusNode/onKeyEvent.html
+[`FocusOnKeyEventCallback`]: {{site.api}}/flutter/services/FocusOnKeyEventCallback-class.html
+[`FocusScope.onKeyEvent`]: {{site.api}}/flutter/services/FocusScope/onKeyEvent.html
+[`FocusScopeNode.onKeyEvent`]: {{site.api}}/flutter/services/FocusScopeNode/onKeyEvent.html
+[`HardwareKeyboard`]: {{site.api}}/flutter/services/HardwareKeyboard-class.html
+[`HardwareKeyboard.isLogicalKeyPressed`]: {{site.api}}/flutter/services/HardwareKeyboard/isLogicalKeyPressed.html
+[`KeyboardListener`]: {{site.api}}/flutter/services/KeyboardListener-class.html
+[`KeyDownEvent`]: {{site.api}}/flutter/services/KeyDownEvent-class.html
+[`KeyRepeatEvent`]: {{site.api}}/flutter/services/KeyRepeatEvent-class.html
+[`KeyEvent`]: {{site.api}}/flutter/services/KeyEvent-class.html
+[`KeyEventHandler`]: {{site.api}}/flutter/services/KeyEventHandler-class.html
+[`KeyUpEvent`]: {{site.api}}/flutter/services/KeyUpEvent-class.html
+[`RawKeyEvent.isKeyPressed`]: {{site.api}}/flutter/services/RawKeyEvent/isKeyPressed.html
+[`RawKeyEvent.isControlPressed`]: {{site.api}}/flutter/services/RawKeyEvent/isControlPressed.html
+[`RawKeyEvent.isShiftPressed`]: {{site.api}}/flutter/services/RawKeyEvent/isShiftPressed.html
+[`RawKeyEvent.isAltPressed`]: {{site.api}}/flutter/services/RawKeyEvent/isAltPressed.html
+[`RawKeyEvent.isMetaPressed`]: {{site.api}}/flutter/services/RawKeyEvent/isMetaPressed.html
+[`RawKeyEvent.repeat`]: {{site.api}}/flutter/services/RawKeyEvent/repeat.html
+[`RawKeyEventDataAndroid.eventSource`]: {{site.api}}/flutter/services/RawKeyEventDataAndroid/eventSource.html
+[`KeyEvent.deviceType`]: {{site.api}}/flutter/services/KeyEvent/deviceType.html
 [`RawKeyEvent` and `RawKeyboard`, et al should be deprecated and removed (Issue 136419)]: {{site.repo.flutter}}/issues/136419
 [Deprecate RawKeyEvent, et al. and exempt uses in the framework.]: {{site.repo.flutter}}/pull/136677

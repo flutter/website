@@ -185,9 +185,9 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
             );
             // #enddocregion CustomerCart
           },
-          onAccept: (item) {
+          onAcceptWithDetails: (details) {
             _itemDroppedOnCustomerCart(
-              item: item,
+              item: details.data,
               customer: customer,
             );
           },

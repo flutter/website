@@ -57,7 +57,7 @@ follow this procedure.
     open -a Simulator
     ```
 
- 1. Set your Simulator to use a 64-bit device (iPhone 5s or later).
+ 1. Set your Simulator to use a 64-bit device (iPhone 6 or later).
 
     - From Xcode, choose a simulator device type. Go to
       **Product** <span aria-label="and then">></span>
