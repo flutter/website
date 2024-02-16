@@ -7,9 +7,8 @@ description: >-
 ## Summary
 
 Flutter apps currently include an asset file named AssetManifest.json. This file
-effectively contains a list of assets. This file could be read using the
-[AssetBundle][] API, allowing application code to determine what assets are
-available at runtime.
+effectively contains a list of assets. Application code can read it using the
+[AssetBundle][] API determine what assets are available at runtime.
 
 The AssetManifest.json file is an undocumented implementation detail.
 It's also no longer used by the framework, so it will stop being generated in a
