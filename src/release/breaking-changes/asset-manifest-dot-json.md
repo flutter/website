@@ -6,15 +6,16 @@ description: >-
 
 ## Summary
 
-Flutter apps currently include an asset file named AssetManifest.json, which
+Flutter apps currently include an asset file named AssetManifest.json. This file
 effectively contains a list of assets. This file could be read using the
-[AssetBundle][] API. This is useful in the scenario that application/plugin
-code needs to determine what assets are available at runtime.
+[AssetBundle][] API, allowing application code to determine what assets are
+available at runtime.
 
 The AssetManifest.json file is an undocumented implementation detail.
-It's also no longer used by the framework, so it will stop being created in a
+It's also no longer used by the framework, so it will stop being generated in a
 future release.
-To get a list of available assets, use the [AssetManifest][] API instead.
+If your application code needs to get a list of available assets, use
+the [AssetManifest][] API instead.
 
 ## Migration guide
 
@@ -45,6 +46,7 @@ AssetManifest.json will no longer be generated started with the third stable
 release after 3.20.
 
 Landed in version: Not yet
+
 Landed in stable: Not yet
 
 ## References
