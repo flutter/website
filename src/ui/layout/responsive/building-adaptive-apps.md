@@ -627,16 +627,16 @@ Keyboard accelerators can be accomplished in a few ways in Flutter
 depending on your goals.
 
 If you have a single widget like a `TextField` or a `Button` that
-already has a focus node, you can wrap it in a
-[`RawKeyboardListener`][] and listen for keyboard events:
+already has a focus node, you can wrap it in a [`KeyboardListener`][]
+or a [`Focus`][] widget and listen for keyboard events:
 
-<?code-excerpt "lib/pages/focus_examples_page.dart (FocusRawKeyboardListener)"?>
+<?code-excerpt "lib/pages/focus_examples_page.dart (focus-keyboard-listener)"?>
 ```dart
   @override
   Widget build(BuildContext context) {
     return Focus(
-      onKey: (node, event) {
-        if (event is RawKeyDownEvent) {
+      onKeyEvent: (node, event) {
+        if (event is KeyDownEvent) {
           print(event.logicalKey);
         }
         return KeyEventResult.ignored;
@@ -696,32 +696,34 @@ The final option is a global listener. This listener
 can be used for always-on, app-wide shortcuts or for
 panels that can accept shortcuts whenever they're visible
 (regardless of their focus state). Adding global listeners
-is easy with [`RawKeyboard`][]:
+is easy with [`HardwareKeyboard`][]:
 
-<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (RawKeyboard)"?>
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (hardware-keyboard)"?>
 ```dart
 @override
 void initState() {
   super.initState();
-  RawKeyboard.instance.addListener(_handleKey);
+  HardwareKeyboard.instance.addHandler(_handleKey);
 }
 
 @override
 void dispose() {
-  RawKeyboard.instance.removeListener(_handleKey);
+  HardwareKeyboard.instance.removeHandler(_handleKey);
   super.dispose();
 }
 ```
 
 To check key combinations with the global listener,
-you can use the `RawKeyboard.instance.keysPressed` map.
+you can use the `HardwareKeyboard.instance.logicalKeysPressed` set.
 For example, a method like the following can check whether any
 of the provided keys are being held down:
 
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (KeysPressed)"?>
 ```dart
 static bool isKeyDown(Set<LogicalKeyboardKey> keys) {
-  return keys.intersection(RawKeyboard.instance.keysPressed).isNotEmpty;
+  return keys
+      .intersection(HardwareKeyboard.instance.logicalKeysPressed)
+      .isNotEmpty;
 }
 ```
 
@@ -730,16 +732,18 @@ you can fire an action when `Shift+N` is pressed:
 
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (HandleKey)"?>
 ```dart
-void _handleKey(event) {
-  if (event is RawKeyDownEvent) {
-    bool isShiftDown = isKeyDown({
-      LogicalKeyboardKey.shiftLeft,
-      LogicalKeyboardKey.shiftRight,
-    });
-    if (isShiftDown && event.logicalKey == LogicalKeyboardKey.keyN) {
-      _createNewItem();
-    }
+bool _handleKey(KeyEvent event) {
+  bool isShiftDown = isKeyDown({
+    LogicalKeyboardKey.shiftLeft,
+    LogicalKeyboardKey.shiftRight,
+  });
+
+  if (isShiftDown && event.logicalKey == LogicalKeyboardKey.keyN) {
+    _createNewItem();
+    return true;
   }
+
+  return false;
 }
 ```
 
@@ -747,14 +751,14 @@ One note of caution when using the static listener,
 is that you often need to disable it when the user
 is typing in a field or when the widget it's associated with
 is hidden from view.
-Unlike with `Shortcuts` or `RawKeyboardListener`,
+Unlike with `Shortcuts` or `KeyboardListener`,
 this is your responsibility to manage. This can be especially
 important when you're binding a Delete/Backspace accelerator for
 `Delete`, but then have child `TextFields` that the user
 might be typing in.
 
-[`RawKeyboard`]: {{site.api}}/flutter/services/RawKeyboard-class.html
-[`RawKeyboardListener`]: {{site.api}}/flutter/widgets/RawKeyboardListener-class.html
+[`HardwareKeyboard`]: {{site.api}}/flutter/services/HardwareKeyboard-class.html
+[`KeyboardListener`]: {{site.api}}/flutter/widgets/KeyboardListener-class.html
 
 ### Mouse enter, exit, and hover
 

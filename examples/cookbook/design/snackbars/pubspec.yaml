@@ -2,7 +2,7 @@ name: snackbars
 description: Sample code for snackbars cookbook recipe.
 
 environment:
-  sdk: ^3.2.0
+  sdk: ^3.3.0
 
 dependencies:
   flutter:

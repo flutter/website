@@ -78,9 +78,9 @@ include a small reproducible test case.
 
 ### macOS
 
-Impeller is available for macOS in preview as of the
-Flutter 3.13 stable release. It continues to be
-in preview as of the 3.16 release.
+Impeller is available for macOS in preview as of
+the Flutter 3.13 stable release.
+It continues to be in preview as of the 3.19 release.
 
 To enable Impeller on macOS when debugging,
 pass `--enable-impeller` to the `flutter run` command.
@@ -102,6 +102,7 @@ app's `Info.plist` file.
 
 As of Flutter 3.16, Impeller is available behind
 a flag on Android devices that support Vulkan.
+It continues to be in preview as of the 3.19 release.
 
 {{site.alert.secondary}}
   **Does your device support Vulkan?**

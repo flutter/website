@@ -3,7 +3,7 @@ description: Examples to illustrate debugging your Flutter code.
 publish_to: none
 
 environment:
-  sdk: ^3.2.0
+  sdk: ^3.3.0
 
 dependencies:
   flutter:
