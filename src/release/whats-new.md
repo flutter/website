@@ -1,6 +1,6 @@
 ---
 title: What's new
-description: >
+description: >-
   A list of what's new on docs.flutter.dev and related documentation sites.
 ---
 
@@ -50,7 +50,7 @@ You might also check out the [Dart 3.3 release][] blog post.
 
 [@TahaTesser]: {{site.github}}/TahaTesser
 [Concurrency and isolates]: {{site.url}}/perf/isolates
-[Flutter install]: {{site.github}}/get-started/install
+[Flutter install]: {{site.url}}/get-started/install
 [let us know]: {{site.github}}/flutter/website/issues/new/choose
 [migrating from Material 2 to Material 3]: {{site.url}}/release/breaking-changes/material-3-migration
 [Use themes to share colors and font styles]: {{site.url}}/cookbook/design/themes
