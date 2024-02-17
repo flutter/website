@@ -1,7 +1,7 @@
 ---
 title: Archive of What's new
-description: >
-  A past list of what's new on docs.flutter.dev >
+description: >-
+  A list of previous what's new updates on docs.flutter.dev
   and related documentation sites.
 ---
 
