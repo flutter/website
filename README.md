@@ -160,8 +160,8 @@ _choose one_ of the following submodule-cloning techniques:
    with the generated `_site` directory visible locally.
 
 1. View your changes in the browser by navigating to `http://localhost:4002`.
-   > **Note:** Unless you're editing files under `site-shared`, 
-   > you can safely ignore
+   > **Note:** 
+   > You can safely ignore
    > `ERROR: directory is already being watched` messages. 
    > For details, see [#1363](https://github.com/flutter/website/issues/1363).
 
