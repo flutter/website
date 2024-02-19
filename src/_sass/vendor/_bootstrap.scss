@@ -116,6 +116,10 @@ a.card {
   font-family: $site-font-family-alt;
   font-size: bootstrap.$font-size-lg;
   margin-bottom: bs-spacer(2);
+
+  .card-highlight & {
+    font-weight: 700;
+  }
 }
 
 .breadcrumb {
