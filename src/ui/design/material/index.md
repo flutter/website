@@ -3,8 +3,6 @@ title: Material Design for Flutter
 description: Learn about Material Design for Flutter.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 Material Design is an open-source design system built
 and supported by Google designers and developers.
 

@@ -3,8 +3,6 @@ title: Building adaptive apps
 description: Some considerations and instructions on how to build adaptive apps to run on a variety of platforms.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 <?code-excerpt path-base="ui/layout/adaptive_app_demos"?>
 
 ## Overview
@@ -25,7 +23,7 @@ apps, but they fall into three major categories:
 * [Input](#input)
 * [Idioms and norms](#idioms-and-norms)
 
-<iframe style="max-width: 100%" width="560" height="315" src="{{yt-embed}}/RCdeSKVt7LI" title="Learn how to build platform-adaptive Flutter apps" {{yt-set}}></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{site.yt.embed}}/RCdeSKVt7LI" title="Learn how to build platform-adaptive Flutter apps" {{site.yt.set}}></iframe>
 
 This page covers all three categories in detail
 using code snippets to illustrate the concepts.

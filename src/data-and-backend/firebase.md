@@ -3,8 +3,6 @@ title: Firebase
 description: How to use Firebase and Firestore with Flutter.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 ## Introduction
 
 Firebase is a Backend-as-a-Service (BaaS) app development platform
@@ -52,8 +50,8 @@ The Flutter community created the following useful resources.
 [codelab1]: {{site.codelabs}}/codelabs/firebase-get-to-know-flutter
 [Firebase plugins]: {{site.firebase}}/docs/flutter/setup#available-plugins
 [started]: {{site.firebase}}/docs/flutter/setup
-[video]: {{yt-watch}}/DqJ_KjFzL9I&t#38s
-[video2]: {{yt-watch}}/OlcYP6UXlm8
-[video3]: {{yt-watch}}/u_Lyx8KJWpg
-[video4]: {{yt-watch}}/13-jNF984C0
-[workshop]: {{yt-watch}}/4wunbF29Kkg
+[video]: {{site.yt.watch}}/DqJ_KjFzL9I&t#38s
+[video2]: {{site.yt.watch}}/OlcYP6UXlm8
+[video3]: {{site.yt.watch}}/u_Lyx8KJWpg
+[video4]: {{site.yt.watch}}/13-jNF984C0
+[workshop]: {{site.yt.watch}}/4wunbF29Kkg

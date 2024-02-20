@@ -6,8 +6,6 @@ js:
     url: https://old-dartpad-3ce3f.web.app/inject_embed.dart.js
 ---
 
-{% include docs/yt_shims.liquid %}
-
 <?code-excerpt path-base="cookbook/effects/parallax_scrolling"?>
 
 When you scroll a list of cards (containing images,
@@ -218,7 +216,7 @@ to reposition your child widgets however you want.
 {{site.alert.note}}
   To learn more, watch this short Widget of the Week video on the Flow widget:
 
-  <iframe class="full-width" src="{{yt-embed}}/NG6pvXpnIso" title="Learn about the Flow Flutter Widget" {{yt-set}}></iframe>
+  <iframe class="full-width" src="{{site.yt.embed}}/NG6pvXpnIso" title="Learn about the Flow Flutter Widget" {{site.yt.set}}></iframe>
 {{site.alert.end}}
 
 {{site.alert.note}}

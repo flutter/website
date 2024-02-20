@@ -5,8 +5,6 @@ short-title: Interactivity
 diff2html: true
 ---
 
-{% include docs/yt_shims.liquid %}
-
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
 
 {{site.alert.secondary}}
@@ -792,7 +790,7 @@ Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
 [`FloatingActionButton`]: {{site.api}}/flutter/material/FloatingActionButton-class.html
 [Flutter API documentation]: {{site.api}}
 [Flutter cookbook]: {{site.url}}/cookbook
-[Flutter's Layered Design]: {{yt-watch}}?v=dkyY9WCGMi0
+[Flutter's Layered Design]: {{site.yt.watch}}?v=dkyY9WCGMi0
 [`FormField`]: {{site.api}}/flutter/widgets/FormField-class.html
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html

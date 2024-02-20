@@ -3,8 +3,6 @@ title: Using the Memory view
 description: Learn how to use the DevTools memory view.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 The memory view provides insights into details
 of the application's memory allocation and
 tools to detect and debug specific issues.
@@ -383,7 +381,7 @@ The quantities plotted on the y-axis are as follows:
 [DevTools Performance view]: {{site.url}}/tools/devtools/performance
 [Flutter architectural overview]: {{site.url}}/resources/architectural-overview
 [frog]: https://dartfrog.vgv.dev/
-[heroku]: {{yt-watch}}?v=nkTUMVNelXA
+[heroku]: {{site.yt.watch}}?v=nkTUMVNelXA
 
 ### Profile Memory tab
 
