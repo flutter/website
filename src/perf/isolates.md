@@ -3,8 +3,6 @@ title: Concurrency and isolates
 description: Multithreading in Flutter using Dart isolates.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 <?code-excerpt path-base="development/concurrency/isolates/"?>
 
 All Dart code runs in [isolates]({{site.dart-site}}/language/concurrency),
@@ -66,7 +64,7 @@ documentation.
 
 [concurrency page]: {{site.dart-site}}/language/concurrency
 
-<iframe width="560" height="315" src="{{yt-embed}}/vl_AaCgudcY" title="Learn about Isolates and Loop Events in Flutter" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/vl_AaCgudcY" title="Learn about Isolates and Loop Events in Flutter" {{site.yt.set}}></iframe>
 
 ## Common use cases for isolates
 

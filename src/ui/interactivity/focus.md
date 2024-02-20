@@ -3,8 +3,6 @@ title: Understanding Flutter's keyboard focus system
 description: How to use the focus system in your Flutter app.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 This article explains how to control where keyboard input is directed. If you
 are implementing an application that uses a physical keyboard, such as most
 desktop and web applications, this page is for you. If your app won't be used
@@ -421,7 +419,7 @@ your custom controls.
 {{site.alert.note}}
   To learn more, watch this short Widget of the Week video on the FocusableActionDetector widget:
 
-  <iframe class="full-width" src="{{yt-embed}}/R84AGg0lKs8" title="Learn about the FocusableActionDetector Flutter Widget" {{yt-set}}></iframe>
+  <iframe class="full-width" src="{{site.yt.embed}}/R84AGg0lKs8" title="Learn about the FocusableActionDetector Flutter Widget" {{site.yt.set}}></iframe>
 {{site.alert.end}}
 
 ## Controlling focus traversal

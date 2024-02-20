@@ -5,8 +5,6 @@ description: >-
   and related documentation sites.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 This page contains of archived announcements of
 what's new on the Flutter website and blog.
 For information on the latest releases,
@@ -617,7 +615,7 @@ For more information, see
 and [What's new in Flutter 2.10][],
 free articles on Medium.
 
-<iframe width="560" height="315" src="{{yt-embed}}/g-0B_Vfc9qM" title="Learn how Flutter can develop Windows native apps" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/g-0B_Vfc9qM" title="Learn how Flutter can develop Windows native apps" {{site.yt.set}}></iframe>
 
 [Announcing Flutter for Windows]: {{site.flutter-medium}}/announcing-flutter-for-windows-6979d0d01fed
 [What's new in Flutter 2.10]: {{site.flutter-medium}}/whats-new-in-flutter-2-10-5aafb0314b12
@@ -750,21 +748,21 @@ publication since the last stable release:
 [Announcing Flutter 2.2]: {{site.flutter-medium}}/announcing-flutter-2-2-at-google-i-o-2021-92f0fcbd7ef9
 [Building adaptive apps]: {{site.url}}/ui/layout/responsive/building-adaptive-apps
 [Build Voice Bots for Android with Dialogflow Essentials & Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter
-[Building your first Flutter app]: {{yt-watch}}?v=Z6KZ3cTGBWw
+[Building your first Flutter app]: {{site.yt.watch}}?v=Z6KZ3cTGBWw
 [DartPad Sharing Guide (using a Gist file)]: {{site.github}}/dart-lang/dart-pad/wiki/Sharing-Guide
 [DartPad Workshop Authoring Guide]: {{site.github}}/dart-lang/dart-pad/wiki/Workshop-Authoring-Guide
 [Deferred components]: {{site.url}}/perf/deferred-components
 [Embedded Support for Flutter]: {{site.url}}/embedded
 [Embedding DartPad in your web page]: {{site.github}}/dart-lang/dart-pad/wiki/Embedding-Guide
-[Firebase for Flutter]: {{yt-watch}}?v=4wunbF29Kkg
-[Flutter and Dialogflow voice bots]: {{yt-watch}}?v=O7JfSF3CJ84
+[Firebase for Flutter]: {{site.yt.watch}}?v=4wunbF29Kkg
+[Flutter and Dialogflow voice bots]: {{site.yt.watch}}?v=O7JfSF3CJ84
 [Get to know Firebase for Flutter]: {{site.firebase}}/codelabs/firebase-get-to-know-flutter#0
 [Google APIs]: {{site.url}}/data-and-backend/google-apis
 [How It's Made: I/O Photo Booth]: {{site.flutter-medium}}/how-its-made-i-o-photo-booth-3b8355d35883
-[Inherited widgets]: {{yt-watch}}?v=LFcGPS6cGrY
+[Inherited widgets]: {{site.yt.watch}}?v=LFcGPS6cGrY
 [Memory view page]: {{site.url}}/tools/devtools/memory
-[Null safety]: {{yt-watch}}?v=HdKwuHQvArY
-[Slivers]: {{yt-watch}}?v=YY-_yrZdjGc
+[Null safety]: {{site.yt.watch}}?v=HdKwuHQvArY
+[Slivers]: {{site.yt.watch}}?v=YY-_yrZdjGc
 [Q1 2021 survey]: {{site.flutter-medium}}/which-factors-affected-users-decisions-to-adopt-flutter-q1-2021-user-survey-results-563e61fc68c9
 [What's New in Flutter 2.2]: {{site.flutter-medium}}/whats-new-in-flutter-2-2-fd00c65e2039
 
