@@ -100,6 +100,10 @@ a.card {
 
   .card-title { color: $site-color-primary; }
 
+  .card-subtitle {
+    font-size: bootstrap.$font-size-sm;
+  }
+  
   &:hover {
     $border-height: 0.25rem;
 
