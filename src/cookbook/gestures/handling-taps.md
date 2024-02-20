@@ -6,8 +6,6 @@ js:
     url: https://old-dartpad-3ce3f.web.app/inject_embed.dart.js
 ---
 
-{% include docs/yt_shims.liquid %}
-
 <?code-excerpt path-base="cookbook/gestures/handling_taps/"?>
 
 You not only want to display information to users,
@@ -18,7 +16,7 @@ to fundamental actions, such as tapping and dragging.
 {{site.alert.note}}
   To learn more, watch this short Widget of the Week video on the GestureDetector widget:
 
-  <iframe class="full-width" src="{{yt-embed}}/WhVXkCFPmK4" title="Learn about the GestureDetector Flutter Widget" {{yt-set}}></iframe>
+  <iframe class="full-width" src="{{site.yt.embed}}/WhVXkCFPmK4" title="Learn about the GestureDetector Flutter Widget" {{site.yt.set}}></iframe>
 {{site.alert.end}}
 
 This recipe shows how to make a custom button that shows

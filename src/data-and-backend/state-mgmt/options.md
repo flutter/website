@@ -6,8 +6,6 @@ prev:
   path: /development/data-and-backend/state-mgmt/simple
 ---
 
-{% include docs/yt_shims.liquid %}
-
 State management is a complex topic.
 If you feel that some of your questions haven't been answered,
 or that the approach described on these pages
@@ -30,7 +28,7 @@ Things to review before selecting an approach.
 
 [Flutter Architecture Samples]: https://fluttersamples.com/
 [Introduction to state management]: {{site.url}}/data-and-backend/state-mgmt/intro
-[Pragmatic State Management in Flutter]: {{yt-watch}}?v=d_m5csmrf7I
+[Pragmatic State Management in Flutter]: {{site.yt.watch}}?v=d_m5csmrf7I
 
 ## Provider
 
@@ -70,7 +68,7 @@ use under the hood.
 The following instructor-led video workshop covers how to
 use `InheritedWidget`:
 
-<iframe width="560" height="315" src="{{yt-embed}}/LFcGPS6cGrY" title="How to manage application states using inherited widgets" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/LFcGPS6cGrY" title="How to manage application states using inherited widgets" {{site.yt.set}}></iframe>
 
 Other useful docs include:
 
@@ -112,10 +110,10 @@ A state container approach familiar to many web developers.
 * [Flutter_Redux_Gen - VS Code Plugin to generate boiler plate code][], by Balamurugan Muthusamy (BalaDhruv)
 
 [Accompanying article on Medium]: {{site.flutter-medium}}/animation-management-with-flutter-and-flux-redux-94729e6585fa
-[Animation Management with Redux and Flutter]: {{yt-watch}}?v=9ZkLtr0Fbgk
+[Animation Management with Redux and Flutter]: {{site.yt.watch}}?v=9ZkLtr0Fbgk
 [Async Redux–Redux without boilerplate. Allows for both sync and async reducers]: {{site.pub}}/packages/async_redux
 [Building a (large) Flutter app with Redux]: https://hillelcoren.com/2018/06/01/building-a-large-flutter-app-with-redux/
-[Building a TODO application (CRUD) in Flutter with Redux&mdash;Part 1]: {{yt-watch}}?v=Wj216eSBBWs
+[Building a TODO application (CRUD) in Flutter with Redux&mdash;Part 1]: {{site.yt.watch}}?v=Wj216eSBBWs
 [Fish-Redux–An assembled flutter application framework based on Redux]: {{site.github}}/alibaba/fish-redux/
 [Flutter Redux Thunk, an example]: {{site.medium}}/flutterpub/flutter-redux-thunk-27c2f2b80a3b
 [Flutter meets Redux: The Redux way of managing Flutter applications state]: {{site.medium}}/@thisisamir98/flutter-meets-redux-the-redux-way-of-managing-flutter-applications-state-f60ef693b509
@@ -172,7 +170,7 @@ doesn't need a `BuildContext`.
 {{site.alert.note}}
   To learn more, watch this short Package of the Week video on the GetIt package:
 
-  <iframe class="full-width" src="{{yt-embed}}/f9XQD5mf6FY" title="Learn about the GetIt Flutter Package" {{yt-set}}></iframe>
+  <iframe class="full-width" src="{{site.yt.embed}}/f9XQD5mf6FY" title="Learn about the GetIt Flutter Package" {{site.yt.set}}></iframe>
 {{site.alert.end}}
 
 [Flutter state management for minimalists]: {{site.medium}}/flutter-community/flutter-state-management-for-minimalists-4c71a2f2f0c1?sk=6f9cedfb550ca9cc7f88317e2e7055a0
@@ -188,7 +186,7 @@ A popular library based on observables and reactions.
 * [Getting started with MobX.dart][]
 * [Flutter: State Management with Mobx][], a video by Paul Halliday
 
-[Flutter: State Management with Mobx]: {{yt-watch}}?v=p-MUBLOEkCs
+[Flutter: State Management with Mobx]: {{site.yt.watch}}?v=p-MUBLOEkCs
 [Getting started with MobX.dart]: https://mobx.netlify.com/getting-started
 [MobX.dart, Hassle free state-management for your Dart and Flutter apps]: {{site.github}}/mobxjs/mobx.dart
 
@@ -261,7 +259,7 @@ For more information, refer to the following resources:
 [Flutter Triple package]: {{site.pub-pkg}}/flutter_triple
 [Segmented State pattern]: https://triple.flutterando.com.br/docs/intro/overview#-segmented-state-pattern-ssp
 [Triple Pattern: A new pattern for state management in Flutter]: https://blog.flutterando.com.br/triple-pattern-um-novo-padr%C3%A3o-para-ger%C3%AAncia-de-estado-no-flutter-2e693a0f4c3e
-[VIDEO: Flutter Triple Pattern by Kevlin Ossada]: {{yt-watch}}?v=dXc3tR15AoA
+[VIDEO: Flutter Triple Pattern by Kevlin Ossada]: {{site.yt.watch}}?v=dXc3tR15AoA
 
 ## solidart
 

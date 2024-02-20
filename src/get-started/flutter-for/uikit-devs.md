@@ -3,8 +3,6 @@ title: Flutter for UIKit developers
 description: Learn how to apply iOS and UIKit developer knowledge when building Flutter apps.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 <?code-excerpt path-base="get-started/flutter-for/ios_devs"?>
 
 iOS developers with experience using UIKit
@@ -47,7 +45,7 @@ Jump around and find questions that address your most relevant needs.
 As an introduction, watch the following video.
 It outlines how Flutter works on iOS and how to use Flutter to build iOS apps.
 
-<iframe class="full-width" src="{{yt-embed}}/ceMsPBbcEGg" title="Learn how to develop with Flutter as an iOS developer" {{yt-set}}></iframe>
+<iframe class="full-width" src="{{site.yt.embed}}/ceMsPBbcEGg" title="Learn how to develop with Flutter as an iOS developer" {{site.yt.set}}></iframe>
 
 ### Views vs. Widgets
 

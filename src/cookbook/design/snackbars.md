@@ -6,8 +6,6 @@ js:
     url: https://old-dartpad-3ce3f.web.app/inject_embed.dart.js
 ---
 
-{% include docs/yt_shims.liquid %}
-
 <?code-excerpt path-base="cookbook/design/snackbars/"?>
 
 It can be useful to briefly inform your users when certain actions
@@ -66,7 +64,7 @@ ScaffoldMessenger.of(context).showSnackBar(snackBar);
 {{site.alert.note}}
   To learn more, watch this short Widget of the Week video on the ScaffoldMessenger widget:
 
-  <iframe class="full-width" src="{{yt-embed}}/lytQi-slT5Y" title="Learn about the ScaffoldMessenger Flutter Widget" {{yt-set}}></iframe>
+  <iframe class="full-width" src="{{site.yt.embed}}/lytQi-slT5Y" title="Learn about the ScaffoldMessenger Flutter Widget" {{site.yt.set}}></iframe>
 {{site.alert.end}}
 
 ## 3. Provide an optional action

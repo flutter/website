@@ -7,8 +7,6 @@ js:
     url: https://old-dartpad-3ce3f.web.app/inject_embed.dart.js
 ---
 
-{% include docs/yt_shims.liquid %}
-
 <?code-excerpt path-base="cookbook/design/themes"?>
 
 {{site.alert.note}}
@@ -185,7 +183,7 @@ Theme(
 
 To learn more, watch this short Widget of the Week video on the `Theme` widget:
 
-<iframe class="full-width" src="{{yt-embed}}/oTvQDJOBXmM" title="Learn about the Theme Flutter Widget" {{yt-set}}></iframe>
+<iframe class="full-width" src="{{site.yt.embed}}/oTvQDJOBXmM" title="Learn about the Theme Flutter Widget" {{site.yt.set}}></iframe>
 
 ## Try an interactive example
 

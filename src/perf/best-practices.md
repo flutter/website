@@ -4,8 +4,6 @@ short-title: Best practices
 description: How to ensure that your Flutter app is performant.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 {% include docs/performance.md %}
 
 Generally, Flutter applications are performant by default,
@@ -104,7 +102,7 @@ For more information, check out:
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
 [`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
 [`TransitionBuilder`]: {{site.api}}/flutter/widgets/TransitionBuilder.html
-[Widgets vs helper methods]: {{yt-watch}}?v=IOyq-eTRhvo
+[Widgets vs helper methods]: {{site.yt.watch}}?v=IOyq-eTRhvo
 
 ---
 
@@ -372,7 +370,7 @@ If you are wondering why 60fps leads to a smooth visual experience,
 check out the video [Why 60fps?][]
 
 [profile mode]: {{site.url}}/testing/build-modes#profile
-[Why 60fps?]: {{yt-watch}}?v=CaMTIgxCSqU
+[Why 60fps?]: {{site.yt.watch}}?v=CaMTIgxCSqU
 
 ## Pitfalls
 

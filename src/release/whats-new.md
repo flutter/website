@@ -4,8 +4,6 @@ description: >-
   A list of what's new on docs.flutter.dev and related documentation sites.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 This page contains current and recent announcements
 of what's new on the Flutter website and blog.
 Find past what's new information on the

@@ -3,8 +3,6 @@ title: Accessibility
 description: Information on Flutter's accessibility support.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 Ensuring apps are accessible to a broad range of users is an essential
 part of building a high-quality app. Applications that are poorly
 designed create barriers to people of all ages. The [UN Convention on
@@ -129,7 +127,7 @@ navigate around your app.
 To learn how to find and customize Android's
 accessibility features, view the following video.
 
-<iframe width="560" height="315" src="{{yt-embed}}/FQyj_XTl01w" title="Learn about the accessibility features on the Google Pixel" {{yt-set}}>
+<iframe width="560" height="315" src="{{site.yt.embed}}/FQyj_XTl01w" title="Learn about the accessibility features on the Google Pixel" {{site.yt.set}}>
 </iframe>
 
 </div>
@@ -142,7 +140,7 @@ accessibility features, view the following video.
 To learn how to find and customize iOS
 accessibility features, view the following video.
 
-<iframe width="560" height="315" src="{{yt-embed}}/qDm7GiKra28" title="Learn how to navigate your iPhone or iPad with VoiceOver" {{yt-set}}>
+<iframe width="560" height="315" src="{{site.yt.embed}}/qDm7GiKra28" title="Learn how to navigate your iPhone or iPad with VoiceOver" {{site.yt.set}}>
 </iframe>
 
 </div>
@@ -191,7 +189,7 @@ Windows apps, check out
 On a Mac, you can use the desktop version of VoiceOver,
 which is included in macOS.
 
-<iframe width="560" height="315" src="{{yt-embed}}/5R-6WvAihms" title="Learn about the macOS VoiceOver screen reader" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/5R-6WvAihms" title="Learn about the macOS VoiceOver screen reader" {{site.yt.set}}></iframe>
 
 On Linux, a popular screen reader is called Orca.
 It comes pre-installed with some distributions
@@ -247,7 +245,7 @@ In the video below, two of our engineers take a mobile app from a dire
 accessibility state to one that takes advantage of Flutter's built-in
 widgets to offer a dramatically more accessible experience.
 
-<iframe width="560" height="315" src="{{yt-embed}}/bWbBgbmAdQs" title="Learn about building Flutter apps with Accessibility in mind" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/bWbBgbmAdQs" title="Learn about building Flutter apps with Accessibility in mind" {{site.yt.set}}></iframe>
 
 ## Testing accessibility on mobile
 
@@ -356,5 +354,5 @@ the following articles written by community members:
 [TalkBack]: https://support.google.com/accessibility/android/answer/6283677?hl=en
 [W3C recommends]: https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html
 [VoiceOver]: https://www.apple.com/lae/accessibility/iphone/vision/
-[video demo]: {{yt-watch}}?v=A6Sx0lBP8PI
+[video demo]: {{site.yt.watch}}?v=A6Sx0lBP8PI
 [file a bug report]: https://goo.gle/flutter_web_issue

@@ -5,8 +5,6 @@ description: >
   in your game.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 <?code-excerpt path-base="cookbook/games/firestore_multiplayer"?>
 
 Multiplayer games need a way to synchronize game states between players.
@@ -97,7 +95,7 @@ so every player sees the same state.
 If you want a quick, 15-minute primer on Cloud Firestore,
 check out the following video:
 
-<iframe width="560" height="315" src="{{yt-embed}}/v_hR4K4auoQ" title="What is a NoSQL Database? Learn about Cloud Firestore" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/v_hR4K4auoQ" title="What is a NoSQL Database? Learn about Cloud Firestore" {{site.yt.set}}></iframe>
 
 To add Firestore to your Flutter project,
 follow the first two steps of the
