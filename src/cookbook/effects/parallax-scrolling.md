@@ -55,7 +55,7 @@ class ParallaxRecipe extends StatelessWidget {
 ## Display items with text and a static image
 
 Each list item displays a rounded-rectangle background
-image, exemplifying one of seven locations in the world.
+image, representing one of seven locations in the world.
 Stacked on top of that background image is the
 name of the location and its country,
 positioned in the lower left. Between the
@@ -214,7 +214,8 @@ you can intercept the painting phase and take control
 to reposition your child widgets however you want.
 
 {{site.alert.note}}
-  To learn more, watch this short Widget of the Week video on the Flow widget:
+  To learn more, check out this short
+  Widget of the Week video on the Flow widget:
 
   <iframe class="full-width" src="{{site.yt.embed}}/NG6pvXpnIso" title="Learn about the Flow Flutter Widget" {{site.yt.set}}></iframe>
 {{site.alert.end}}
@@ -288,8 +289,8 @@ class ParallaxFlowDelegate extends FlowDelegate {
 
 A `FlowDelegate` controls how its children are sized
 and where those children are painted. In this case,
-your `Flow` widget has only one child: the background
-image. That image must be exactly as wide as the `Flow` widget.
+your `Flow` widget has only one child: the background image.
+That image must be exactly as wide as the `Flow` widget.
 
 Return tight width constraints for your background image child.
 
@@ -303,8 +304,8 @@ BoxConstraints getConstraintsForChild(int i, BoxConstraints constraints) {
 }
 ```
 
-Your background images are now sized appropriately.
-But, you still need to calculate the vertical position
+Your background images are now sized appropriately,
+but you still need to calculate the vertical position
 of each background image based on its scroll
 position, and then paint it.
 
@@ -321,10 +322,10 @@ To look up the bounds of the `Scrollable`,
 you pass a `ScrollableState` into your `FlowDelegate`.
 
 To look up the bounds of your individual list item,
-you pass your list item's `BuildContext` into your `FlowDelegate`.
+pass your list item's `BuildContext` into your `FlowDelegate`.
 
 To look up the final size of your background image,
-you assign a `GlobalKey` to your `Image` widget,
+assign a `GlobalKey` to your `Image` widget,
 and then you pass that `GlobalKey` into your
 `FlowDelegate`.
 
