@@ -41,7 +41,7 @@ and widgets together.
 
 The scrollable lists and widgets provided to the
 `CustomScrollView` are known as _slivers_. There are several types
-of slivers, such as `SliverList`, `SliverGridList`, and `SliverAppBar`.
+of slivers, such as `SliverList`, `SliverGrid`, and `SliverAppBar`.
 In fact, the `ListView` and `GridView` widgets use the `SliverList` and
 `SliverGrid` widgets to implement scrolling.
 
