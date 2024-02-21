@@ -180,7 +180,7 @@ To add font files to your Flutter app, complete the following steps.
          fonts:
            - asset: fonts/RobotoMono-Regular.ttf
            - asset: fonts/RobotoMono-Bold.ttf
-            weight: 700
+             weight: 700
    ```
 
 This `pubspec.yaml` file defines the italic style for the
