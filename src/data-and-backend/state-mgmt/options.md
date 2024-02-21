@@ -85,6 +85,13 @@ Other useful docs include:
 [Using Flutter Inherited Widgets Effectively]: https://ericwindmill.com/articles/inherited_widget/
 [Widget - State - Context - InheritedWidget]: https://www.didierboelens.com/2018/06/widget---state---context---inheritedwidget/
 
+## June
+
+lightweight and modern state management library that focuses on providing a pattern very similar to Flutter's native state management.
+
+* [june package][]
+
+
 ## Redux
 
 A state container approach familiar to many web developers.
