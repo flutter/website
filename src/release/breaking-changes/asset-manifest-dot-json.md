@@ -43,10 +43,12 @@ final List<String> assets = assetManifest.listAssets();
 
 ### Reading asset manifest information from Dart code outside of a Flutter app
 
-The tool generates a new file, AssetManifest.bin. This replaces AssetManifest.json.
+The `flutter` CLI tool generates a new file, AssetManifest.bin.
+This replaces AssetManifest.json.
 This file contains the same information of AssetManifest.json, but in a different format.
-If you need to be able to read this file from code that is not part of a Flutter app
-(and therefore cannot use the [AssetManifest][] API), you can still parse the file yourself.
+If you need to be able to read this file from code that is not part of a
+Flutter app(and therefore cannot use the [AssetManifest][] API), you can
+still parse the file yourself.
 
 The [standard_message_codec][] package can be used to parse the contents.
 
