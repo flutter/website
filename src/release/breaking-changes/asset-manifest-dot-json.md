@@ -74,10 +74,8 @@ format of the file may change in a future release without announcement.
 
 ## Timeline
 
-AssetManifest.json will no longer be generated started with the third stable
-release after 3.19.
-
-Landed in version: Not yet
+AssetManifest.json will no longer be generated starting with the fourth stable
+release after 3.19 or one year after the release of 3.19, whichever comes last.
 
 ## References
 
