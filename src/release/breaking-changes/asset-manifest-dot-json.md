@@ -11,8 +11,8 @@ effectively contains a list of assets. Application code can read it using the
 [AssetBundle][] API determine what assets are available at runtime.
 
 The AssetManifest.json file is an undocumented implementation detail.
-It's also no longer used by the framework, so it will stop being generated in a
-future release.
+It's no longer used by the framework, so it will no longer be
+generated in a future release.
 If your application code needs to get a list of available assets, use
 the [AssetManifest][] API instead.
 
