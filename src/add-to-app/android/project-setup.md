@@ -354,7 +354,8 @@ dependencies {
 }
 ```
 
-Here `profileImplementation` is a custom `configuration` to be implemented in `app/build.gradle` of host Project.
+The `profileImplementation` ID is a custom `configuration` to be
+implemented in the `app/build.gradle` file of a host project.
 
 <?code-excerpt title="host-project/app/build.gradle.kts"?>
 ```gradle
