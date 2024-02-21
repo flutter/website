@@ -206,7 +206,7 @@
       { "source": "/whats-new", "destination": "/release/whats-new", "type": 301 },
       { "source": "/testing/oem-debuggers", "destination": "/testing/native-debugging", "type": 301 },
 
-      { "source": "/adoptawidget", "destination": "https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md", "type": 301 },
+      { "source": "/adoptawidget", "destination": "https://github.com/flutter/flutter/blob/main/CONTRIBUTING.md", "type": 301 },
       { "source": "/apprentice-giveaway", "destination": "https://www.youtube.com/playlist?list=PL4dBIh1xps-HAaadBRWQobCO_IJ4gMOG2", "type": 301 },
       { "source": "/clock", "destination": "https://medium.com/flutter/its-time-the-flutter-clock-contest-results-dcebe2eb3957", "type": 301 },
       { "source": "/create", "destination": "https://medium.com/flutter/the-flutter-create-winners-are-40980f2d20b3", "type": 301 },
