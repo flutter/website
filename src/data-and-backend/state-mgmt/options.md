@@ -87,9 +87,12 @@ Other useful docs include:
 
 ## June
 
-lightweight and modern state management library that focuses on providing a pattern very similar to Flutter's native state management.
+A lightweight and modern state management library that focuses on providing
+a pattern similar to Flutter's built-in state management.
 
 * [june package][]
+
+[june package]: {{site.pub-pkg}}/june
 
 
 ## Redux
