@@ -18,6 +18,8 @@ the [AssetManifest][] API instead.
 
 ## Migration guide
 
+### Reading asset manifest from Flutter application code
+
 Before:
 
 ```dart
@@ -27,7 +29,7 @@ import 'package:flutter/services.dart';
 final String assetManifestContent = await rootBundle.loadString('AssetManifest.json');
 final Map<Object?, Object?> decodedAssetManifest = 
     json.decode(assetManifestContent) as Map<String, Object?>;
-final List<String> assets = decodedAssetManifest.keys.toList().cast();
+final List<String> assets = decodedAssetManifest.keys.toList().cast<String>();
 ```
 
 After:
@@ -39,14 +41,41 @@ final AssetManifest assetManifest = await AssetManifest.loadFromAssetBundle(root
 final List<String> assets = assetManifest.listAssets();
 ```
 
+### Reading asset manifest information from Dart code outside of a Flutter app
+
+The tool generates a new file, AssetManifest.bin. This replaces AssetManifest.json.
+This file contains the same information of AssetManifest.json, but in a different format.
+If you need to be able to read this file from code that is not part of a Flutter app
+(and therefore cannot use the [AssetManifest][] API), you can still parse the file yourself.
+
+The [standard_message_codec][] package can be used to parse the contents.
+
+```dart
+import 'dart:io';
+import 'dart:typed_data';
+
+import 'package:standard_message_codec/standard_message_codec.dart';
+
+void main() {
+  // The path to AssetManifest.bin depends on the target platform.
+  final String pathToAssetManifest = './build/web/assets/AssetManifest.bin';
+  final Uint8List manifest = File(pathToAssetManifest).readAsBytesSync();
+  final Map<Object?, Object?> decoded = const StandardMessageCodec()
+      .decodeMessage(ByteData.sublistView(manifest));
+  final List<String> assets = decoded.keys.cast<String>().toList();
+}
+```
+
+Keep in mind that AssetManifest.bin is an implementation detail of Flutter.
+Reading this file is not an officially supported workflow. The contents or
+format of the file may change in a future release without announcement.
+
 ## Timeline
 
 AssetManifest.json will no longer be generated started with the third stable
-release after 3.20.
+release after 3.19.
 
 Landed in version: Not yet
-
-Landed in stable: Not yet
 
 ## References
 
@@ -57,3 +86,4 @@ Relevant issues:
 [AssetBundle]: {{site.api}}/flutter/services/AssetBundle-class.html
 [AssetManifest]: {{site.api}}/flutter/services/AssetManifest-class.html
 [(Issue #143577)]: {{site.repo.flutter}}/issues/143577
+[standard_message_codec]: {{site.pub}}/packages/standard_message_codec
