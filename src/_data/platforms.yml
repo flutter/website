@@ -32,7 +32,7 @@
   unsupported: '98 and earlier'
 - platform: Safari (Web)
   supported: Latest 2 releases
-  besteffort: '15 or later.6'
+  besteffort: '15.6 or later'
   unsupported: '15.5 and earlier'
 - platform: Edge (Web)
   supported: Latest 2 releases

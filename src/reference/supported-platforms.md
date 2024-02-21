@@ -13,23 +13,48 @@ to run Flutter code.
 Flutter supports running apps on the following hardware architectures.
 
 {% assign chips = site.data.chipsets %}
-{% assign yes = '<span class="material-symbols" style="color: #158477;">verified</span>' %}
-{% assign no = '<span class="material-symbols" style="color: #D43324">dangerous</span>' %}
-{% assign beta = '<span class="material-symbols" style="color: #13C2AD">gpp_maybe</span>' %}
-{% assign na = '<span class="material-symbols" style="color:
-#DADCE0">do_not_disturb_on</span>' %}
+{% capture yes %}
+ <span class="material-symbols" 
+       style="color: #158477"
+       aria-label="The Flutter SDK supports the specified architecture on the specified target platform"
+       role="img">verified</span>
+{% endcapture %}
+{% capture no %}
+ <span class="material-symbols"
+       style="color: #D43324"
+       aria-label="The Flutter SDK does not support the specified
+       architecture on the specified target platform"
+       role="img">dangerous</span>
+{% endcapture %}
+{% capture beta %}
+ <span class="material-symbols"
+       style="color: #13C2AD"
+       aria-label="The Flutter SDK supports ARM64 in beta the only architecture on Windows"
+       role="img">gpp_maybe</span>
+{% endcapture %}
+{% capture na %}
+ <span class="material-symbols"
+       style="color: #DADCE0"
+       aria-label="No version of the Flutter SDK exists for the
+       specified architecture on the specified target platform"
+       role="img">do_not_disturb_on</span>
+{% endcapture %}
 
-| Platform |   x86   |   x64   |  ARM32  |   ARM64   | RISC-V   |
+| Platform |   x86   |   x64   |  ARM32  |   ARM64   | RV64GC   |
 |---|:---:|:---:|:---:|:---:|:---:|
 {%- for chip in chips %}
-  | {{chip.platform}} | {{chip.x86}} | {{chip.x64}} | {{chip.arm32}} | {{chip.arm64}} | {{chip.risc-v}} |
+  | {{chip.platform}} | {{chip.x86}} | {{chip.x64}} | {{chip.arm32}} | {{chip.arm64}} | {{chip.risc}} |
 {%- endfor %}
 {:.table.table-striped}
 
+<div aria-hidden="true" markdown="1">
+
 {{yes}} Supported in all channels.  
 {{no}} Unsupported in all channels.  
-{{beta}} Supported in Dev, Beta channels only.  
-{{na}} No version exists.
+{{beta}} Supported in Beta channel only.  
+{{na}} No version exists.  
+
+</div>
 
 ## Supported operating systems
 
