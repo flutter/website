@@ -330,7 +330,8 @@ dependencyResolutionManagement {
 After an `aar` build of a Kotlin DSL-based Android project,
 follow these steps to add the flutter_module.
 
-Inlcude Flutter Module as dependecy in Android Project `app/build.gradle`
+Include the flutter module as a dependency in 
+the Android project's `app/build.gradle` file.
 <?code-excerpt title="MyApp/app/build.gradle.kts"?>
 ```gradle
 android {
