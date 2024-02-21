@@ -52,8 +52,8 @@ Landed in stable: Not yet
 
 Relevant issues:
 
-* [When building a Flutter app, the flutter tool still generates an AssetManifest.json file that is unused by the framework (Issue #143577)][]
+* When building a Flutter app, the flutter tool generates an AssetManifest.json file that is unused by the framework [(Issue #143577)][]
 
 [AssetBundle]: {{site.api}}/flutter/services/AssetBundle-class.html
 [AssetManifest]: {{site.api}}/flutter/services/AssetManifest-class.html
-[When building a Flutter app, the flutter tool still generates an AssetManifest.json file that is unused by the framework (Issue #143577)]: {{site.repo.flutter}}/issues/143577
+[(Issue #143577)]: {{site.repo.flutter}}/issues/143577
