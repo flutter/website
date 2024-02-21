@@ -55,7 +55,7 @@ class ParallaxRecipe extends StatelessWidget {
 ## Display items with text and a static image
 
 Each list item displays a rounded-rectangle background
-image, exemplifying one of seven locations in the world.
+image, representing one of seven locations in the world.
 Stacked on top of that background image is the
 name of the location and its country,
 positioned in the lower left. Between the
@@ -214,7 +214,8 @@ you can intercept the painting phase and take control
 to reposition your child widgets however you want.
 
 {{site.alert.note}}
-  To learn more, watch this short Widget of the Week video on the Flow widget:
+  To learn more, check out this short
+  Widget of the Week video on the Flow widget:
 
   <iframe class="full-width" src="{{site.yt.embed}}/NG6pvXpnIso" title="Learn about the Flow Flutter Widget" {{site.yt.set}}></iframe>
 {{site.alert.end}}
@@ -288,8 +289,8 @@ class ParallaxFlowDelegate extends FlowDelegate {
 
 A `FlowDelegate` controls how its children are sized
 and where those children are painted. In this case,
-your `Flow` widget has only one child: the background
-image. That image must be exactly as wide as the `Flow` widget.
+your `Flow` widget has only one child: the background image.
+That image must be exactly as wide as the `Flow` widget.
 
 Return tight width constraints for your background image child.
 
@@ -303,8 +304,8 @@ BoxConstraints getConstraintsForChild(int i, BoxConstraints constraints) {
 }
 ```
 
-Your background images are now sized appropriately.
-But, you still need to calculate the vertical position
+Your background images are now sized appropriately,
+but you still need to calculate the vertical position
 of each background image based on its scroll
 position, and then paint it.
 
@@ -321,10 +322,10 @@ To look up the bounds of the `Scrollable`,
 you pass a `ScrollableState` into your `FlowDelegate`.
 
 To look up the bounds of your individual list item,
-you pass your list item's `BuildContext` into your `FlowDelegate`.
+pass your list item's `BuildContext` into your `FlowDelegate`.
 
 To look up the final size of your background image,
-you assign a `GlobalKey` to your `Image` widget,
+assign a `GlobalKey` to your `Image` widget,
 and then you pass that `GlobalKey` into your
 `FlowDelegate`.
 
@@ -407,7 +408,7 @@ A list item at the top of the scrollable area should
 produce 0%, and a list item at the bottom of the
 scrollable area should produce 100%.
 
-<?code-excerpt "lib/excerpt5.dart (PaintChildrenPt2)" replace="/  \/\/ code-excerpt-closing-bracket/}/g"?>
+<?code-excerpt "lib/excerpt5.dart (PaintChildrenPt2)" replace="/  \/\/ code-excerpt-closing-bracket//g"?>
 ```dart
 @override
 void paintChildren(FlowPaintingContext context) {
@@ -417,14 +418,13 @@ void paintChildren(FlowPaintingContext context) {
   final listItemOffset = listItemBox.localToGlobal(
       listItemBox.size.centerLeft(Offset.zero),
       ancestor: scrollableBox);
-}
+
 
   // Determine the percent position of this list item within the
   // scrollable area.
   final viewportDimension = scrollable.position.viewportDimension;
   final scrollFraction =
       (listItemOffset.dy / viewportDimension).clamp(0.0, 1.0);
-}
 ```
 
 Use the scroll percentage to calculate an `Alignment`.
@@ -433,7 +433,7 @@ and at 100%, you want `Alignment(0.0, 1.0)`.
 These coordinates correspond to top and bottom
 alignment, respectively.
 
-<?code-excerpt "lib/excerpt5.dart (PaintChildrenPt3)" replace="/  \/\/ code-excerpt-closing-bracket/}/g"?>
+<?code-excerpt "lib/excerpt5.dart (PaintChildrenPt3)" replace="/  \/\/ code-excerpt-closing-bracket//g"?>
 ```dart
 @override
 void paintChildren(FlowPaintingContext context) {
@@ -443,18 +443,17 @@ void paintChildren(FlowPaintingContext context) {
   final listItemOffset = listItemBox.localToGlobal(
       listItemBox.size.centerLeft(Offset.zero),
       ancestor: scrollableBox);
-}
+
 
   // Determine the percent position of this list item within the
   // scrollable area.
   final viewportDimension = scrollable.position.viewportDimension;
   final scrollFraction =
       (listItemOffset.dy / viewportDimension).clamp(0.0, 1.0);
-}
+
   // Calculate the vertical alignment of the background
   // based on the scroll percent.
   final verticalAlignment = Alignment(0.0, scrollFraction * 2 - 1);
-}
 ```
 
 Use `verticalAlignment`, along with the size of the
@@ -462,7 +461,7 @@ list item and the size of the background image,
 to produce a `Rect` that determines where the
 background image should be positioned.
 
-<?code-excerpt "lib/excerpt5.dart (PaintChildrenPt4)" replace="/  \/\/ code-excerpt-closing-bracket/}/g"?>
+<?code-excerpt "lib/excerpt5.dart (PaintChildrenPt4)" replace="/  \/\/ code-excerpt-closing-bracket//g"?>
 ```dart
 @override
 void paintChildren(FlowPaintingContext context) {
@@ -472,18 +471,18 @@ void paintChildren(FlowPaintingContext context) {
   final listItemOffset = listItemBox.localToGlobal(
       listItemBox.size.centerLeft(Offset.zero),
       ancestor: scrollableBox);
-}
+
 
   // Determine the percent position of this list item within the
   // scrollable area.
   final viewportDimension = scrollable.position.viewportDimension;
   final scrollFraction =
       (listItemOffset.dy / viewportDimension).clamp(0.0, 1.0);
-}
+
   // Calculate the vertical alignment of the background
   // based on the scroll percent.
   final verticalAlignment = Alignment(0.0, scrollFraction * 2 - 1);
-}
+
   // Convert the background alignment into a pixel offset for
   // painting purposes.
   final backgroundSize =
@@ -492,7 +491,6 @@ void paintChildren(FlowPaintingContext context) {
   final listItemSize = context.size;
   final childRect =
       verticalAlignment.inscribe(backgroundSize, Offset.zero & listItemSize);
-}
 ```
 
 Using `childRect`, paint the background image with
@@ -500,7 +498,7 @@ the desired translation transformation.
 It's this transformation over time that gives you the
 parallax effect.
 
-<?code-excerpt "lib/excerpt5.dart (PaintChildrenPt5)" replace="/  \/\/ code-excerpt-closing-bracket/}/g"?>
+<?code-excerpt "lib/excerpt5.dart (PaintChildrenPt5)" replace="/  \/\/ code-excerpt-closing-bracket//g"?>
 ```dart
 @override
 void paintChildren(FlowPaintingContext context) {
@@ -510,18 +508,18 @@ void paintChildren(FlowPaintingContext context) {
   final listItemOffset = listItemBox.localToGlobal(
       listItemBox.size.centerLeft(Offset.zero),
       ancestor: scrollableBox);
-}
+
 
   // Determine the percent position of this list item within the
   // scrollable area.
   final viewportDimension = scrollable.position.viewportDimension;
   final scrollFraction =
       (listItemOffset.dy / viewportDimension).clamp(0.0, 1.0);
-}
+
   // Calculate the vertical alignment of the background
   // based on the scroll percent.
   final verticalAlignment = Alignment(0.0, scrollFraction * 2 - 1);
-}
+
   // Convert the background alignment into a pixel offset for
   // painting purposes.
   final backgroundSize =
@@ -530,14 +528,13 @@ void paintChildren(FlowPaintingContext context) {
   final listItemSize = context.size;
   final childRect =
       verticalAlignment.inscribe(backgroundSize, Offset.zero & listItemSize);
-}
+
   // Paint the background.
   context.paintChild(
     0,
     transform:
         Transform.translate(offset: Offset(0.0, childRect.top)).transform,
   );
-}
 ```
 
 You need one final detail to achieve the parallax effect.

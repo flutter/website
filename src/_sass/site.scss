@@ -27,15 +27,9 @@
 @use 'components/snackbar';
 @use 'components/toc';
 
-// -- Pages
-
-// Page types
+// -- Pages (alpha ordered)
 @use 'pages/landing-page';
-
-// Marketing (alpha ordered)
 @use 'pages/not-found';
-@use 'pages/clock';
-@use 'pages/create';
 
 // -- Overrides
 @use 'base/print-overrides';
