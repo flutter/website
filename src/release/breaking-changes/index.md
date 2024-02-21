@@ -31,10 +31,12 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Stop generating AssetManifest.json][]
 * [Rename `MemoryAllocations` to `FlutterMemoryAllocations`][]
 * [Deprecate `TextField.canRequestFocus`][]
 * [Nullable PageView.controller][]
 
+[Stop generating AssetManifest.json]: {{site.url}}/release/breaking-changes/asset-manifest-dot-json
 [Rename `MemoryAllocations` to `FlutterMemoryAllocations`]: {{site.url}}/release/breaking-changes/flutter-memory-allocations
 [Deprecate `TextField.canRequestFocus`]: {{site.url}}/release/breaking-changes/can-request-focus
 [Nullable PageView.controller]: {{site.url}}/release/breaking-changes/pageview-controller
