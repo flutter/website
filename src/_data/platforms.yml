@@ -1,0 +1,40 @@
+- platform: Android SDK
+  supported: 21-34
+  besteffort: 19-20
+  unsupported: '18 and earlier'
+- platform: iOS
+  supported: 17
+  besteffort: 12-16
+  unsupported: '11 and earlier'
+- platform: macOS
+  supported: Ventura (13)
+  besteffort: Mojave (10.14) to Monterey (12), Sonoma (14)
+  unsupported: 'High Sierra (10.13) and earlier'
+- platform: Windows
+  supported: 10
+  besteffort: 7, 8, 11
+  unsupported: 'Vista and earlier'
+- platform: Debian (Linux)
+  supported: 11, 12
+  besteffort: 9, 10
+  unsupported: '8 and earlier'
+- platform: Ubuntu (Linux)
+  supported: 20.04 LTS
+  besteffort: 22.04-23.10
+  unsupported: Non-LTS < 22.04
+- platform: Chrome (Web)
+  supported: Latest 2 releases
+  besteffort: '96 or later'
+  unsupported: '95 and earlier'
+- platform: Firefox (Web)
+  supported: Latest 2 releases
+  besteffort: '99 or later'
+  unsupported: '98 and earlier'
+- platform: Safari (Web)
+  supported: Latest 2 releases
+  besteffort: '15.6 or later'
+  unsupported: '15.5 and earlier'
+- platform: Edge (Web)
+  supported: Latest 2 releases
+  besteffort: '96 or later'
+  unsupported: '95 and earlier'
