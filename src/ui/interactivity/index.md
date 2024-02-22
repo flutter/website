@@ -5,8 +5,6 @@ short-title: Interactivity
 diff2html: true
 ---
 
-{% include docs/yt_shims.liquid %}
-
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
 
 {{site.alert.secondary}}
@@ -775,9 +773,8 @@ to your app.
 [Flutter API documentation][]
 : Reference documentation for all of the Flutter libraries.
 
-Flutter Gallery [running app][], [repo][]
-: Demo app showcasing many Material components and
-  other Flutter features.
+Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
+: Flutter showcase app with a custom design and engaging interactions.
 
 [Flutter's Layered Design][] (video)
 : This video includes information about state and
@@ -793,7 +790,7 @@ Flutter Gallery [running app][], [repo][]
 [`FloatingActionButton`]: {{site.api}}/flutter/material/FloatingActionButton-class.html
 [Flutter API documentation]: {{site.api}}
 [Flutter cookbook]: {{site.url}}/cookbook
-[Flutter's Layered Design]: {{yt-watch}}?v=dkyY9WCGMi0
+[Flutter's Layered Design]: {{site.yt.watch}}?v=dkyY9WCGMi0
 [`FormField`]: {{site.api}}/flutter/widgets/FormField-class.html
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
@@ -817,8 +814,8 @@ Flutter Gallery [running app][], [repo][]
 [`pubspec.yaml`]: {{examples}}/layout/lakes/step6/pubspec.yaml
 [`Radio`]: {{site.api}}/flutter/material/Radio-class.html
 [`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
-[repo]: {{site.repo.gallery}}
-[running app]: {{site.gallery}}
+[wonderous-app]: {{site.wonderous}}/web
+[wonderous-repo]: {{site.repo.wonderous}}
 [set up]: {{site.url}}/get-started/install
 [`SizedBox`]: {{site.api}}/flutter/widgets/SizedBox-class.html
 [`Slider`]: {{site.api}}/flutter/material/Slider-class.html

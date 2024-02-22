@@ -4,8 +4,6 @@ short-title: Web
 description: Details of how Flutter supports the creation of web experiences.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 Flutter's web support delivers the same experiences on the web as on mobile.
 Building on the portability of Dart, the power of the web platform and the
 flexibility of the Flutter framework, you can now build apps for iOS, Android,
@@ -56,7 +54,7 @@ experiences into these websites.
 For a glimpse into how to migrate your mobile app to web, see
 the following video:
 
-<iframe width="560" height="315" src="{{yt-embed}}/HAstl_NkXl0" title="Learn how to move from a Mobile App to a Web App using Flutter" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/HAstl_NkXl0" title="Learn how to move from a Mobile App to a Web App using Flutter" {{site.yt.set}}></iframe>
 
 <a id="web"></a>
 
@@ -75,7 +73,7 @@ The following resources can help you get started:
   [web FAQ][].
 * To see code examples,
   check out the [web samples for Flutter][].
-* To see a Flutter web app demo, check out the [Flutter Gallery][].
+* To see a Flutter web app demo, check out the [Wonderous app][].
 * To learn about deploying a web app, see
   [Preparing an app for web release][].
 * [File an issue][] on the main Flutter repo.
@@ -88,7 +86,7 @@ The following resources can help you get started:
 [Creating responsive apps]: {{site.url}}/ui/layout/responsive/adaptive-responsive
 [Discord]: https://discordapp.com/invite/yeZ6s7k
 [file an issue]: https://goo.gle/flutter_web_issue
-[Flutter Gallery]: {{site.gallery}}
+[Wonderous app]: {{site.wonderous}}/web
 [Preparing an app for web release]: {{site.url}}/deployment/web
 [Progressive Web Application]: https://web.dev/progressive-web-apps/
 [web FAQ]: {{site.url}}/platform-integration/web/faq

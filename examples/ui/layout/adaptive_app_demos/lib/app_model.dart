@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'global/device_type.dart';
 
 class AppModel with ChangeNotifier {
-  bool getDefaultTouchMode() => DeviceType.isMobile == true;
+  bool getDefaultTouchMode() => DeviceType.isMobile;
 
   // Main menu, selected page
   int _selectedIndex = 0;

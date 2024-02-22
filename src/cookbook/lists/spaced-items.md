@@ -3,7 +3,7 @@ title: List with spaced items
 description: How to create a list with spaced or expanded items 
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://old-dartpad-3ce3f.web.app/inject_embed.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/lists/spaced_items/"?>
@@ -65,7 +65,7 @@ LayoutBuilder(builder: (context, constraints) {
 In this step, add a [`ConstrainedBox`][]
 as the child of the [`SingleChildScrollView`][].
 
-The [`ConstrainedBox`][] widget imposes aditional constraints to its child.
+The [`ConstrainedBox`][] widget imposes additional constraints to its child.
 
 Configure the constraint by setting the `minHeight` parameter to be
 the `maxHeight` of the [`LayoutBuilder`][] constraints.

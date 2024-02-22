@@ -111,20 +111,6 @@ dd {
   opacity: 1;
 }
 
-.happy-paths-image-holder {
-  align-items: left;
-  display: flex;
-  height: 120px;
-  justify-content: left;
-
-  img {
-    height: auto;
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-  }
-}
-
 .fixed-col {
   @include bootstrap.media-breakpoint-up(md) {
     bottom: 0;
@@ -291,13 +277,6 @@ blockquote {
 
   p {
     margin-bottom: 0;
-  }
-}
-
-.table-centered-after-first {
-  // Text aligns all elements in a table besides the first column to the center
-  th:not(:first-child), td:not(:first-child) {
-    text-align: center;
   }
 }
 

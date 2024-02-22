@@ -3,8 +3,6 @@ title: Who is Dash?
 description: Learn more about the Flutter and Dart mascot, Dash.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 This is Dash:
 
 ![Dash by herself]({{site.url}}/assets/images/dash/Dash.png){:width="50%"}<br>
@@ -87,7 +85,7 @@ manufacturers who returned the prototypes some weeks later.
 ![The first Dash prototypes]({{site.url}}/assets/images/dash/dash-prototypes.jpg){:width="35%"} ![The first Dash prototypes]({{site.url}}/assets/images/dash/dash-prototypes2.jpg){:width="35%"}<br>
 
 Introducing Dash at the January 2018 Dart Conference.
-<iframe width="541" height="350" src="{{yt-embed}}/R5vIUjRZaZA" title="Introducing Dash at the January 2018 Dart Conference" {{yt-set}}></iframe>
+<iframe width="541" height="350" src="{{site.yt.embed}}/R5vIUjRZaZA" title="Introducing Dash at the January 2018 Dart Conference" {{site.yt.set}}></iframe>
 
 While the manufacturing process was proceeding,
 Shams chose a name for the plushy: Dash,
@@ -136,7 +134,7 @@ Dash 2.0 and 2.1
   first appearance at the [Flutter Interact][] event
   in Brooklyn, New York, on December 11, 2019.
   
-  <iframe width="560" height="315" src="{{yt-embed}}/EgBMGDtHZhE" title="Watch the Flutter Interact 2019 highlights" {{yt-set}}></iframe>
+  <iframe width="560" height="315" src="{{site.yt.embed}}/EgBMGDtHZhE" title="Watch the Flutter Interact 2019 highlights" {{site.yt.set}}></iframe>
   
 * We also have a Dash puppet that Shams made from
   one of the first plushies.
@@ -147,11 +145,11 @@ Dash 2.0 and 2.1
   voiced by Emily Fortuna, one of the early (and much loved)
   Flutter Developer Advocates.
   
-  <iframe width="560" height="315" src="{{yt-embed}}/oyy_1CjNdBU" title="Building DashCast, a Flutter-based podcast app" {{yt-set}}></iframe>
-  <iframe width="560" height="315" src="{{yt-embed}}/dsiLVNDJ3t0" title="Revisiting DashCast, a Flutter-based podcast app" {{yt-set}}></iframe>
+  <iframe width="560" height="315" src="{{site.yt.embed}}/oyy_1CjNdBU" title="Building DashCast, a Flutter-based podcast app" {{site.yt.set}}></iframe>
+  <iframe width="560" height="315" src="{{site.yt.embed}}/dsiLVNDJ3t0" title="Revisiting DashCast, a Flutter-based podcast app" {{site.yt.set}}></iframe>
 
 <br>
 !["Born to Hot Reload" jacket]({{site.url}}/assets/images/dash/ShamsDashJacket.png){:width="35%"}<br>
 
-[Flutter Interact]: {{yt-playlist}}PLjxrf2q8roU0o0wKRJTjyN0pSUA6TI8lg
+[Flutter Interact]: {{site.yt.playlist}}PLjxrf2q8roU0o0wKRJTjyN0pSUA6TI8lg
 [Instagram account]: https://www.instagram.com/dash_the_dartlang_plushy/

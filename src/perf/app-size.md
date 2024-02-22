@@ -97,7 +97,7 @@ On Demand Resources size: Zero KB compressed, Zero KB uncompressed
 
 In this example, the app has an approximate
 download size of 5.4 MB and an approximate
-install size of 13.7 MB on an iPhone12,1 ([Model ID / Hardware
+installation size of 13.7 MB on an iPhone12,1 ([Model ID / Hardware
 number][] for iPhone 11)
 and iPhone11,8 (iPhone XR) running iOS 13.0.
 

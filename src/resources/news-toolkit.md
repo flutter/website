@@ -3,8 +3,6 @@ title: Flutter News Toolkit
 description: Learn more about creating a newsfeed app in Flutter.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 The Flutter News Toolkit enables you to accelerate
 development of a mobile news app.
 The toolkit assists you in building a customized
@@ -49,13 +47,13 @@ You might also check out:
   an introduction to the toolkit on YouTube.
 
 {{site.alert.note}}
-  This is the first release of the news toolkit and,
-  while is has been tested by early adopters, it
+  This is an early release of the news toolkit and,
+  while it has been tested by early adopters, it
   might have issues or rough edges. Please don't
   hesitate to [file an issue][].
 {{site.alert.end}}
 
 [toolkit]: https://flutter.github.io/news_toolkit/
 [blog]: {{site.flutter-medium}}/announcing-the-flutter-news-toolkit-180a0d32c012
-[video]: {{yt-watch}}?v=dukRAS-OUMM
+[video]: {{site.yt.watch}}?v=dukRAS-OUMM
 [file an issue]: {{site.repo.flutter}}/issues

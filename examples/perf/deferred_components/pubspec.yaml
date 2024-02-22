@@ -3,20 +3,20 @@ description: Samples to showcase deferred component imports/loading.
 publish_to: none
 
 environment:
-  sdk: ^3.2.0
+  sdk: ^3.3.0
 
 dependencies:
   flutter:
     sdk: flutter
 
-  provider: ^6.0.5
+  provider: ^6.1.1
 
 dev_dependencies:
   example_utils:
     path: ../../example_utils
   flutter_test:
     sdk: flutter
-  test: ^1.24.6
+  test: ^1.24.9
 
 flutter:
   uses-material-design: true

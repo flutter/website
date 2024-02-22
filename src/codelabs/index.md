@@ -4,8 +4,6 @@ description: >-
   Codelabs to help you quickly get started programming Flutter.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 The Flutter codelabs provide a guided,
 hands-on coding experience. Some codelabs
 run in DartPad&mdash;no downloads required!
@@ -37,7 +35,7 @@ one of the following codelabs:
   Android and iOS tooling, the completed app
   works on Android and iOS devices, as well.
 
-[Building your first Flutter app]: {{yt-watch}}?v=8sAyPDLorek
+[Building your first Flutter app]: {{site.yt.watch}}?v=8sAyPDLorek
 [Your first Flutter app]: {{site.codelabs}}/codelabs/flutter-codelab-first
 [Write your first Flutter app on the web]: {{site.url}}/get-started/codelab-web
 
@@ -64,8 +62,8 @@ one of the following codelabs:
   by Flutter.
 
 [Records and Patterns in Dart 3]: {{site.codelabs}}/codelabs/dart-patterns-records
-[Dart null safety in Action]: {{yt-watch}}?v=HdKwuHQvArY
-[inherited-widget-ws]: {{yt-watch}}?v=LFcGPS6cGrY
+[Dart null safety in Action]: {{site.yt.watch}}?v=HdKwuHQvArY
+[inherited-widget-ws]: {{site.yt.watch}}?v=LFcGPS6cGrY
 [low-level state management]: {{site.url}}/data-and-backend/state-mgmt/options#inheritedwidget--inheritedmodel
 
 ## Designing a Flutter UI
@@ -130,7 +128,7 @@ like layout and animations:
 [Adaptive Apps in Flutter]: {{site.codelabs}}/codelabs/flutter-adaptive-app
 [animations]: {{site.pub}}/packages/animations
 [Building Beautiful Transitions with Material Motion for Flutter]: {{site.codelabs}}/codelabs/material-motion-flutter
-[Building scrolling experiences in Flutter]: {{yt-watch}}?v=YY-_yrZdjGc
+[Building scrolling experiences in Flutter]: {{site.yt.watch}}?v=YY-_yrZdjGc
 [How to debug layout issues with the Flutter Inspector]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
 [Implicit animations]: {{site.url}}/codelabs/implicit-animations
 [MDC-101 Flutter: Material Components (MDC) Basics]: {{site.codelabs}}/codelabs/mdc-101-flutter
@@ -191,7 +189,7 @@ Learn how to use Flutter with other technologies.
   the Auth and Firestore emulators.
 
 [Add a user authentication flow to a Flutter app using FirebaseUI]: {{site.firebase}}/codelabs/firebase-auth-in-flutter-apps
-[firebase-ws]: {{yt-watch}}?v=wUSkeTaBonA
+[firebase-ws]: {{site.yt.watch}}?v=wUSkeTaBonA
 [Get to know Firebase for Flutter]: {{site.firebase}}/codelabs/firebase-get-to-know-flutter
 [Local development for your Flutter apps using the Firebase Emulator Suite]: {{site.firebase}}/codelabs/get-started-firebase-emulators-and-flutter
 
@@ -252,7 +250,7 @@ Learn how to use Flutter with other technologies.
 [Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
 [Adding WebView to your Flutter app]: {{site.codelabs}}/codelabs/flutter-webview
 [Build voice bots for Android with Dialogflow and Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter
-[Build voice bots for mobile with Dialogflow and Flutter]: {{yt-watch}}?v=O7JfSF3CJ84
+[Build voice bots for mobile with Dialogflow and Flutter]: {{site.yt.watch}}?v=O7JfSF3CJ84
 [Introduction to Flame with Flutter]: {{site.codelabs}}/codelabs/flutter-flame-brick-breaker
 [Using FFI in a Flutter plugin]: {{site.codelabs}}/codelabs/flutter-ffigen
 [Create haikus about Google products with the PaLM API and Flutter]: {{site.codelabs}}/haiku-generator
