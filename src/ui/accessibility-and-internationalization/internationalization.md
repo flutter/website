@@ -584,6 +584,7 @@ following `NumberFormat` constructors:
 | `compactLong`               | "1.2 million"      |
 | `currency`*                 | "USD1,200,000.00"  |
 | `decimalPattern`            | "1,200,000"        |
+| `decimalPatternDigits`*     | "1,200,000"        |
 | `decimalPercentPattern`*    | "120,000,000%"     |
 | `percentPattern`            | "120,000,000%"     |
 | `scientificPattern`         | "1E6"              |
