@@ -29,9 +29,9 @@ Flutter supports running apps on the following hardware architectures.
 {% capture beta %}
  <span class="material-symbols"
        style="color: #13C2AD"
-       aria-label="The Flutter SDK supports ARM64 architecture
-                   in the beta and main channels only on the specified target platform"
-       role="img">gpp_maybe</span>
+       aria-label="The Flutter SDK supports the specified architecture
+                   only in an emulator on the specified target platform"
+       role="img">mobile_friendly</span>
 {% endcapture %}
 {% capture na %}
  <span class="material-symbols"
@@ -52,7 +52,7 @@ Flutter supports running apps on the following hardware architectures.
 
 {{yes}} Supported on all channels.  
 {{no}} Unsupported on all channels.  
-{{beta}} Supported on `beta` and `main` channels only.  
+{{beta}} Supported in software emulation only.  
 {{na}} No version exists.  
 
 </div>
