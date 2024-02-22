@@ -9,7 +9,7 @@
   x64: '<span class="material-symbols" style="color: #158477" aria-label="The Flutter SDK supports the x64 architecture on Linux" role="img">verified</span>'
   arm32: '<span class="material-symbols" style="color: #D43324" aria-label="The Flutter SDK does not support the Arm32 architecture on Linux" role="img">dangerous</span>'
   arm64: '<span class="material-symbols" style="color: #158477" aria-label="The Flutter SDK supports the Arm64 architecture on Linux" role="img">verified</span> '
-  risc: '<span class="material-symbols" style="color: #DADCE0" aria-label="No version of the Flutter SDK exists for the RV64GC architecture on Linux" role="img">do_not_disturb_on</span>'
+  risc: '<span class="material-symbols" style="color: #D43324" aria-label="The Flutter SDK does not support the RV64GC architecture on Linux" role="img">dangerous</span>'
 - platform: 'macOS'
   x86: '<span class="material-symbols" style="color: #D43324" aria-label="The Flutter SDK does not support the x86 architecture on macOS" role="img">dangerous</span>'
   x64: '<span class="material-symbols" style="color: #158477" aria-label="The Flutter SDK supports the x64 architecture on macOS" role="img">verified</span>'
