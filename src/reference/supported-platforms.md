@@ -23,20 +23,21 @@ Flutter supports running apps on the following hardware architectures.
  <span class="material-symbols"
        style="color: #D43324"
        aria-label="The Flutter SDK does not support the specified
-       architecture on the specified target platform"
+                   architecture on the specified target platform"
        role="img">dangerous</span>
 {% endcapture %}
 {% capture beta %}
  <span class="material-symbols"
        style="color: #13C2AD"
-       aria-label="The Flutter SDK supports ARM64 in beta the only architecture on Windows"
+       aria-label="The Flutter SDK supports ARM64 architecture
+                   in the beta and main channels only on the specified target platform"
        role="img">gpp_maybe</span>
 {% endcapture %}
 {% capture na %}
  <span class="material-symbols"
        style="color: #DADCE0"
        aria-label="No version of the Flutter SDK exists for the
-       specified architecture on the specified target platform"
+                   specified architecture on the specified target platform"
        role="img">do_not_disturb_on</span>
 {% endcapture %}
 
