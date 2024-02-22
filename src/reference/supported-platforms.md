@@ -40,7 +40,7 @@ Flutter supports running apps on the following hardware architectures.
        role="img">do_not_disturb_on</span>
 {% endcapture %}
 
-| Platform |   x86   |   x64   |  ARM32  |   ARM64   | RV64GC   |
+| Platform | IA32 (x86) | x64 | Arm32 | Arm64 | RV64GC |
 |---|:---:|:---:|:---:|:---:|:---:|
 {%- for chip in chips %}
   | {{chip.platform}} | {{chip.x86}} | {{chip.x64}} | {{chip.arm32}} | {{chip.arm64}} | {{chip.risc}} |
@@ -49,9 +49,9 @@ Flutter supports running apps on the following hardware architectures.
 
 <div aria-hidden="true" markdown="1">
 
-{{yes}} Supported in all channels.  
-{{no}} Unsupported in all channels.  
-{{beta}} Supported in Beta channel only.  
+{{yes}} Supported on all channels.  
+{{no}} Unsupported on all channels.  
+{{beta}} Supported on `beta` and `main` channels only.  
 {{na}} No version exists.  
 
 </div>
@@ -60,10 +60,10 @@ Flutter supports running apps on the following hardware architectures.
 
 Flutter offers three tiers of support for deploying apps to target platforms.
 
-* **Supported**: Google tests these platforms on every commit.
-* **Best effort**: Google intends to support these platforms
-  through coding practices. Google tests these platforms on an ad-hoc basis.
-* **Unsupported**: Google doesn't test or support these platforms.
+* **Supported**: The Flutter team tests these platforms on every commit.
+* **Best effort**: The Flutter team intends to support these platforms
+  through coding practices. The team tests these platforms on an ad-hoc basis.
+* **Unsupported**: The Flutter team doesn't test or support these platforms.
 
 Based on these tiers, Flutter supports the following platforms.
 
