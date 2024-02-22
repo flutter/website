@@ -30,6 +30,13 @@ document.addEventListener("DOMContentLoaded", function(_) {
   setupTabs($('#china-os-pub-tabs'), 'dev.flutter.china-os-pub');
   setupTabs($('#base-os-tabs'), 'dev.flutter.os');
 
+  setupTabs($('#add-ios'), 'dev.flutter.upgrade');
+  setupTabs($('#add-android'), 'dev.flutter.upgrade');
+  setupTabs($('#add-macos'), 'dev.flutter.upgrade');
+  setupTabs($('#add-windows'), 'dev.flutter.upgrade');
+  setupTabs($('#add-linux'), 'dev.flutter.upgrade');
+  setupTabs($('#add-web'), 'dev.flutter.upgrade');
+
   prettyPrint();
 });
 

@@ -369,6 +369,8 @@
     - title: iOS
       permalink: /platform-integration/ios
       children:
+        - title: Add iOS to Flutter install
+          permalink: /platform-integration/ios/install-ios
         - title: Leverage Apple's system libraries
           permalink: /platform-integration/ios/apple-frameworks
         - title: Add a launch screen
