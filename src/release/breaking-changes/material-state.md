@@ -8,38 +8,38 @@ description: >-
 
 ## Summary
 
-`MaterialState`, and its related APIs have been moved out
+`MaterialState`, and its related APIs, have been moved out
 of the Material library and renamed to `WidgetState`.
 
 ## Background
 
-`MaterialState` provided logic for handeling multiple different
+Previously, `MaterialState` provided logic for handling multiple different
 states a widget could have, like "hovered", "focused", and
 "disabled". Because this functionality could be useful outside
-of the Material library, namely the base Widgets layer and
+of the Material library, namely for the base Widgets layer and
 Cupertino, it was decided to move it outside of Material. As
 part of the move, and to avoid future confusion, the different
-MaterialState classes have been renamed to `WidgetState`. The
+`MaterialState` classes have been renamed to `WidgetState`. The
 behavior of the two are the same.
 
 | Before    | Now |
 | -------- | ------- |
-| MaterialState | WidgetState |
-| MaterialStatePropertyResolver | WidgetStatePropertyResolver |
-| MaterialStateColor | WidgetStateColor |
-| MaterialStateMouseCursor | WidgetStateColorMouseCursor |
-| MaterialStateBorderSide | WidgetStateBorderSide |
-| MaterialStateOutlinedBorder | WidgetStateOutlinedBorder |
-| MaterialStateTextStyle | WidgetStateTextStyle |
-| MaterialStateProperty | WidgetStateProperty |
-| MaterialStatePropertyAll | WidgetStatePropertyAll |
-| MaterialStatesController | WidgetStatesController |
-| MaterialStateMixin | WidgetStateMixin |
+| `MaterialState` | `WidgetState` |
+| `MaterialStatePropertyResolver` | `WidgetStatePropertyResolver` |
+| `MaterialStateColor` | `WidgetStateColor` |
+| `MaterialStateMouseCursor` | `WidgetStateColorMouseCursor` |
+| `MaterialStateBorderSide` | `WidgetStateBorderSide` |
+| `MaterialStateOutlinedBorder` | `WidgetStateOutlinedBorder` |
+| `MaterialStateTextStyle` | `WidgetStateTextStyle` |
+| `MaterialStateProperty` | `WidgetStateProperty` |
+| `MaterialStatePropertyAll` | `WidgetStatePropertyAll` |
+| `MaterialStatesController` | `WidgetStatesController` |
+| `MaterialStateMixin` | `WidgetStateMixin` |
 
 The classes `MaterialStateOutlineInputBorder` and
 `MaterialStateUnderlineInputBorder` were left in the
-Material library with no `WidgetState` equivilant, as
-they are Material design specific.
+Material library with no `WidgetState` equivilent, as
+they are specific to Material design.
 
 ## Migration guide
 
@@ -88,7 +88,7 @@ WidgetStateBorderSide? get side;
 
 ## Timeline
 
-Landed in version: xxx<br>
+Landed in version: 3.20.0-1.2.pre<br>
 In stable release: not yet
 
 ## References
