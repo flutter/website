@@ -41,10 +41,10 @@ Flutter supports running apps on the following hardware architectures.
        role="img">do_not_disturb_on</span>
 {% endcapture %}
 
-| Platform | IA32 (x86) | x64 | Arm32 | Arm64 | RV64GC |
-|---|:---:|:---:|:---:|:---:|:---:|
+| Platform | x64 | Arm32 | Arm64 |
+|---|:---:|:---:|:---:|
 {%- for chip in chips %}
-  | {{chip.platform}} | {{chip.x86}} | {{chip.x64}} | {{chip.arm32}} | {{chip.arm64}} | {{chip.risc}} |
+  | {{chip.platform}} | {{chip.x64}} | {{chip.arm32}} | {{chip.arm64}} |
 {%- endfor %}
 {:.table.table-striped}
 
@@ -52,10 +52,11 @@ Flutter supports running apps on the following hardware architectures.
 
 {{yes}} Supported on all channels.  
 {{no}} Unsupported on all channels.  
-{{beta}} Supported in software emulation only.  
-{{na}} No version exists.  
+{{na}} No version was released for this chipset.  
 
 </div>
+
+Android supports IA32 (x86) in software emulation only.  
 
 ## Supported operating systems
 
