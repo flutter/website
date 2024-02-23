@@ -40,7 +40,7 @@ your existing IDE or command-line based development workflow.
 ## How do I install and start DevTools?
 
 See the [VS Code][], [Android Studio/IntelliJ][], or
-[command line][] pages for installation instructions.
+[command line][] pages for instructions to install and start DevTools.
 
 ## Troubleshooting some standard issues
 
