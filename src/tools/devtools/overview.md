@@ -22,9 +22,7 @@ If your app is started using VSCode GUI, use one of the following ways:
 1. Click button 'DevTools' on Flutter panel in VS Code
 2. Select the menu `{} > Dart DevTools` at the bottom of VS Code
 
-If your app is started with CLI:
-1. Start DevTools with `dart devtools`
-2. Connect to the app by pasting the app VM Service URI from the app's console
+If your app is started with CLI, click link to DevTools in the app sonsole output.
 
 ## What can I do with DevTools?
 
