@@ -16,14 +16,6 @@ the following deep dive and use case walkthrough:
 <iframe width="560" height="315" src="{{site.yt.embed}}/_EYk-E29edo" title="Dive in to Flutter DevTools" {{site.yt.set}}></iframe>
 [Dive in to DevTools]({{site.yt.watch}}?v=_EYk-E29edo)
 
-## How to start DevTools?
-
-If your app is started using VSCode GUI, use one of the following ways:    
-1. Click button 'DevTools' on Flutter panel in VS Code
-2. Select the menu `{} > Dart DevTools` at the bottom of VS Code
-
-If your app is started with CLI, click link to DevTools in the app sonsole output.
-
 ## What can I do with DevTools?
 
 Here are some of the things you can do with DevTools:
@@ -45,7 +37,7 @@ your existing IDE or command-line based development workflow.
 
 <a id="install-devtools"></a>
 
-## How do I install DevTools?
+## How do I install and start DevTools?
 
 See the [VS Code][], [Android Studio/IntelliJ][], or
 [command line][] pages for installation instructions.
