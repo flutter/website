@@ -55,9 +55,9 @@ The first is a codelab ostensibly on creating Adaptive Apps in Flutter, but it u
 Next is a long form YouTube video where Flutter DevRel alumni Fitz talks about how the location of data matters for Flutter apps.
 Finally, a really useful series of articles by Flutter GDE Anna (Domashych) Leushchenko covering advanced networking in Flutter.
 
-Codelab: [Adaptive Apps in Flutter][]
-Video: [Keeping it local: Managing a Flutter app's data][]
-Article series: [Basic and advanced networking in Dart and Flutter][]
+* Codelab: [Adaptive Apps in Flutter][]
+* Video: [Keeping it local: Managing a Flutter app's data][]
+* Article series: [Basic and advanced networking in Dart and Flutter][]
 
 
 [Adaptive Apps in Flutter]: https://codelabs.developers.google.com/codelabs/flutter-adaptive-app
