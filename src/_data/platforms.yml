@@ -1,40 +1,50 @@
-- platform: Android SDK
-  supported: 21-34
-  besteffort: 19-20
+- platform: 'Android SDK'
+  chipsets: 'x64, Arm32, Arm64'
+  supported: '21 to 34'
+  besteffort: '19 to 20'
   unsupported: '18 and earlier'
-- platform: iOS
-  supported: 17
-  besteffort: 12-16
+- platform: 'iOS'
+  chipsets: 'Arm64'
+  supported: '17'
+  besteffort: '12 to 16'
   unsupported: '11 and earlier'
-- platform: macOS
-  supported: Ventura (13)
-  besteffort: Mojave (10.14) to Monterey (12), Sonoma (14)
-  unsupported: 'High Sierra (10.13) and earlier'
-- platform: Windows
-  supported: 10
-  besteffort: 7, 8, 11
+- platform: 'macOS'
+  chipsets: 'x64, Arm64'
+  supported: '<abbr title="Ventura">13</abbr>'
+  besteffort: '<abbr title="Mojave">10.14</abbr> to <abbr title="Monterrey">12</abbr>, <abbr title="Sonoma">14</abbr>'
+  unsupported: '<abbr title="High Sierra">10.13</abbr> and earlier'
+- platform: 'Windows'
+  chipsets: 'x64, Arm64'
+  supported: '10'
+  besteffort: '7, 8, 11'
   unsupported: 'Vista and earlier'
-- platform: Debian (Linux)
-  supported: 11, 12
-  besteffort: 9, 10
+- platform: 'Debian (Linux)'
+  chipsets: 'x64, Arm64'
+  supported: '11, 12'
+  besteffort: '9, 10'
   unsupported: '8 and earlier'
-- platform: Ubuntu (Linux)
-  supported: 20.04 LTS
-  besteffort: 22.04-23.10
-  unsupported: Non-LTS < 22.04
-- platform: Chrome (Web)
-  supported: Latest 2 releases
-  besteffort: '96 or later'
+- platform: 'Ubuntu (Linux)'
+  chipsets: 'x64, Arm64'
+  supported: '20.04 LTS'
+  besteffort: '22.04 to 23.10'
+  unsupported: '22.04 and earlier normal'
+- platform: 'Chrome (Web)'
+  chipsets: 'N/A'
+  supported: '[Latest 2](https://chromereleases.googleblog.com/search/label/Stable%20updates)'
+  besteffort: '96 to latest 2'
   unsupported: '95 and earlier'
-- platform: Firefox (Web)
-  supported: Latest 2 releases
-  besteffort: '99 or later'
+- platform: 'Firefox (Web)'
+  chipsets: 'N/A'
+  supported: '[Latest 2](https://www.mozilla.org/en-US/firefox/releases/)'
+  besteffort: '99 to latest 2'
   unsupported: '98 and earlier'
-- platform: Safari (Web)
-  supported: Latest 2 releases
-  besteffort: '15.6 or later'
+- platform: 'Safari (Web)'
+  chipsets: 'N/A'
+  supported: '[Latest 2](https://developer.apple.com/documentation/safari-release-notes/)'
+  besteffort: '15.6 to latest 2'
   unsupported: '15.5 and earlier'
-- platform: Edge (Web)
-  supported: Latest 2 releases
-  besteffort: '96 or later'
+- platform: 'Edge (Web)'
+  chipsets: 'N/A'
+  supported: '[Latest 2](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel)'
+  besteffort: '96 to latest 2'
   unsupported: '95 and earlier'
