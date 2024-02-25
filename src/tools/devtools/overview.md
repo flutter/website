@@ -37,10 +37,10 @@ your existing IDE or command-line based development workflow.
 
 <a id="install-devtools"></a>
 
-## How do I install and start DevTools?
+## How to start DevTools?
 
 See the [VS Code][], [Android Studio/IntelliJ][], or
-[command line][] pages for instructions on how to install and start DevTools.
+[command line][] pages for instructions on how to start DevTools.
 
 ## Troubleshooting some standard issues
 
