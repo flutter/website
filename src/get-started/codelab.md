@@ -11,8 +11,6 @@ next:
 toc: false
 ---
 
-{% include docs/yt_shims.liquid %}
-
 You are now ready to start the "First Flutter app" codelab.
 In about an hour and a half,
 you will learn the basics of Flutter
@@ -47,4 +45,4 @@ that works on mobile, desktop, and web.
 If you prefer an instructor-led version of this codelab,
 check out the following workshop:
 
-<iframe width="560" height="315" src="{{yt-embed}}/8sAyPDLorek" title="Learn how to build your first Flutter app" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/8sAyPDLorek" title="Learn how to build your first Flutter app" {{site.yt.set}}></iframe>

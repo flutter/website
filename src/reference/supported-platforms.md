@@ -4,52 +4,31 @@ short-title: Supported platforms
 description: The platforms that Flutter supports by platform version.
 ---
 
-## Support tiers
+As of Flutter {{site.appnow.flutter}},
+Flutter supports deploying apps the following combinations of
+hardware architectures and operating system versions.
+These combinations are called _platforms_.
 
-We define three tiers of support for the platforms on
-which apps built with Flutter might be deployed:
+Flutter supports platforms in three tiers:
 
-1. **Supported**<br>
-   Google-tested platforms that
-   are automatically tested on every commit
-   by continuous integration testing.
-1. **Best effort**<br>
-   Platforms that we intend to support through
-   coding practices,
-   but are only tested on an ad-hoc basis.
-1. **Unsupported**<br>
-   Platforms that we don't test or support.
-   
-{% comment %}
-**IMPORTANT NOTE**:
-When changing the minimum support version of macOS, Windows, or Linux,
-make sure to make a corresponding change in the get started pages:
-  * /src/get-started/install/macos.md
-  * /src/get-started/install/windows.md
-  * /src/get-started/install/linux.md
-{% endcomment -%}
+* **Supported**: The Flutter team tests these platforms on every commit.
+* **Best effort**: The Flutter team intends to support these platforms
+  through coding practices. The team tests these platforms on an ad-hoc basis.
+* **Unsupported**: The Flutter team doesn't test or support these platforms.
 
+Based on these tiers, Flutter supports deploying to the following platforms.
 
-## Deploying Flutter
-
-As of the current stable release,
-support for deploying Flutter apps is shown in the
-following table:
+{% assign opsys = site.data.platforms %}
 
 <div class="table-wrapper" markdown="1">
 
-| Platform version |     Supported     |                 Best effort                  |           Unsupported            |
-|------------------|:-----------------:|:--------------------------------------------:|:--------------------------------:|
-| Android SDK      |       21-34       |                    19-20                     |          18 or earlier           |
-| iOS              |        17         |                    12-16                     |          11 or earlier           |
-| macOS            |   Ventura (13)    | Mojave (10.14) to Monterey (12), Sonoma (14) |  High Sierra (10.13) or earlier  |
-| Windows          |        10         |                   7, 8, 11                   |   Any 32-bit, Vista or earlier   |
-| Linux Debian     |      11, 12       |                    9, 10                     |     8 or earlier, any 32-bit     |
-| Linux Ubuntu     |     20.04 LTS     |                 22.04-23.10                  | Non-LTS before 22.04, any 32-bit |
-| web - Chrome     | Latest 2 releases |                 96 or later                  |          95 or earlier           |
-| web - Firefox    | Latest 2 releases |                 99 or later                  |          98 or earlier           |
-| web - Safari     | Latest 2 releases |                15.6 or later                 |         15.5 or earlier          |
-| web - Edge       | Latest 2 releases |                 96 or later                  |          95 or earlier           |
+| Target Platform | Hardware architectures | Supported versions | Best effort versions | Unsupported versions |
+|---|:---:|:---:|:---:|:---:|
+{%- for platform in opsys %}
+  | {{platform.platform}} | {{platform.chipsets}} | {{platform.supported}} | {{platform.besteffort}} | {{platform.unsupported}} |
+{%- endfor %}
 {:.table.table-striped}
 
 </div>
+
+Android supports IA32 (x86) in software emulation only.  

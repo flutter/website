@@ -3,8 +3,6 @@ title: Use a custom font
 description: How to use custom fonts.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 <?code-excerpt path-base="cookbook/design/fonts/"?>
 
 {{site.alert.secondary}}
@@ -102,7 +100,7 @@ Choose the typeface or font family that meets the design needs of your app.
   To learn how to get direct access to over 1,000 open-sourced font families,
   check out the [google_fonts][] package.
 
-  <iframe class="full-width" src="{{yt-embed}}/8Vzv2CdbEY0" title="Learn about the google_fonts Flutter Package" {{yt-set}}></iframe>
+  <iframe class="full-width" src="{{site.yt.embed}}/8Vzv2CdbEY0" title="Learn about the google_fonts Flutter Package" {{site.yt.set}}></iframe>
 
   To learn about another approach to using custom fonts that allows you to
   re-use one font over multiple projects,
@@ -182,7 +180,7 @@ To add font files to your Flutter app, complete the following steps.
          fonts:
            - asset: fonts/RobotoMono-Regular.ttf
            - asset: fonts/RobotoMono-Bold.ttf
-            weight: 700
+             weight: 700
    ```
 
 This `pubspec.yaml` file defines the italic style for the

@@ -25,7 +25,7 @@
 
    To learn what each code block does, check out the comments in that Dart file.
 
-The previous commands create a Flutter project directory called `my_app` that
+The previous commands create a Flutter project directory called `test_drive` that
 contains a simple demo app that uses [Material Components][].
 
 ### Run your sample Flutter app

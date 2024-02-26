@@ -3,8 +3,6 @@ title: Using packages
 description: How to use packages in your Flutter app.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 <?code-excerpt path-base="development/plugin_api_migration"?>
 
 Flutter supports using shared packages contributed by other developers
@@ -36,7 +34,7 @@ an app without having to develop everything from scratch.
     For example, a plugin might provide Flutter apps
     with the ability to use a device's camera.
 
-  <iframe width="560" height="315" src="{{yt-embed}}/Y9WifT8aN6o?start=1" title="Learn the difference between a package and a plugin" {{yt-set}}></iframe>
+  <iframe width="560" height="315" src="{{site.yt.embed}}/Y9WifT8aN6o?start=1" title="Learn the difference between a package and a plugin" {{site.yt.set}}></iframe>
 {{site.alert.end}}
 
 Existing packages enable many use cases—for example,

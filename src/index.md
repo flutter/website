@@ -4,8 +4,6 @@ short-title: Docs
 description: Get started with Flutter. Widgets, examples, updates, and API docs to help you write your first Flutter app.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 {% for card in site.data.docs_cards -%}
   {% capture index0Modulo3 -%}{{ forloop.index0 | modulo:3 }}{% endcapture -%}
   {% capture indexModulo3 -%}{{ forloop.index | modulo:3 }}{% endcapture -%}
@@ -81,24 +79,24 @@ widgets in [What is State?][]
 <div class="card-deck card-deck--responsive">
     <div class="video-card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{yt-embed}}/xWV71C2kp38" title="Create your first Flutter app" {{yt-set}}></iframe>
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.yt.embed}}/xWV71C2kp38" title="Create your first Flutter app" {{site.yt.set}}></iframe>
         </div>
     </div>
     <div class="video-card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{yt-embed}}/QlwiL_yLh6E" title="What is state?" {{yt-set}}></iframe>
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.yt.embed}}/QlwiL_yLh6E" title="What is state?" {{site.yt.set}}></iframe>
         </div>
     </div>
 </div>
 
-[first-app]: {{yt-watch}}?v=xWV71C2kp38
-[What is State?]: {{yt-watch}}?v=QlwiL_yLh6E
+[first-app]: {{site.yt.watch}}?v=xWV71C2kp38
+[What is State?]: {{site.yt.watch}}?v=QlwiL_yLh6E
 
 {:.text-center}
 **Only have 60 seconds? Learn how to build and deploy a Flutter App!**
 
 <div style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
-  <iframe style="max-width: 100%" width="560" height="315" src="{{yt-embed}}/ZnufaryH43s" title="Learn how to build and deploy a Flutter app in 60 seconds" {{yt-set}}></iframe>
+  <iframe style="max-width: 100%" width="560" height="315" src="{{site.yt.embed}}/ZnufaryH43s" title="Learn how to build and deploy a Flutter app in 60 seconds" {{site.yt.set}}></iframe>
 </div>
 
 ## Want to skill up?
@@ -111,18 +109,18 @@ using helper methods][standalone-widgets] or
 <div class="card-deck card-deck--responsive">
     <div class="video-card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{yt-embed}}/IOyq-eTRhvo" title="Learn the difference between Widgets and Helper Methods" {{yt-set}}></iframe>
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.yt.embed}}/IOyq-eTRhvo" title="Learn the difference between Widgets and Helper Methods" {{site.yt.set}}></iframe>
         </div>
     </div>
     <div class="video-card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{yt-embed}}/rIaaH87z1-g" title="Learn how to demystify BuildContext" {{yt-set}}></iframe>
+            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.yt.embed}}/rIaaH87z1-g" title="Learn how to demystify BuildContext" {{site.yt.set}}></iframe>
         </div>
     </div>
 </div>
 
-[standalone-widgets]: {{yt-watch}}?v=IOyq-eTRhvo
-[buildcontext]: {{yt-watch}}?v=rIaaH87z1-g
+[standalone-widgets]: {{site.yt.watch}}?v=IOyq-eTRhvo
+[buildcontext]: {{site.yt.watch}}?v=rIaaH87z1-g
 
 To learn about all of the Flutter video series,
 see our [videos][] page.
