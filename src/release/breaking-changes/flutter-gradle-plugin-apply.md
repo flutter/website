@@ -44,10 +44,9 @@ pluginManagement {
         def flutterSdkPath = properties.getProperty("flutter.sdk")
         assert flutterSdkPath != null, "flutter.sdk not set in local.properties"
         return flutterSdkPath
-    }
-    settings.ext.flutterSdkPath = flutterSdkPath()
+    }()
 
-    includeBuild("${settings.ext.flutterSdkPath}/packages/flutter_tools/gradle")
+    includeBuild("$flutterSdkPath/packages/flutter_tools/gradle")
 
     repositories {
         google()
@@ -57,12 +56,12 @@ pluginManagement {
 }
 
 plugins {
-    id "dev.flutter.flutter-plugin-loader" version "1.0.0"
-    id "com.android.application" version "{agpVersion}" apply false
-    id "org.jetbrains.kotlin.android" version "{kotlinVersion}" apply false
+    id("dev.flutter.flutter-plugin-loader") version "1.0.0"
+    id("com.android.application") version "{agpVersion}" apply false
+    id("org.jetbrains.kotlin.android") version "{kotlinVersion}" apply false
 }
 
-include ":app"
+include(":app")
 ```
 
 If you made some changes to this file, make sure they're placed after
