@@ -2,7 +2,8 @@
 title: Layouts
 description: Learn how to create layouts in Flutter.
 prev:
-  title: Flutter fundamentals
+    title: Flutter fundamentals
+    path: /get-started/fwe/fundamentals
 next:
     title: State management
 ---
