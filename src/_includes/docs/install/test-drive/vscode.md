@@ -25,18 +25,18 @@
 
    To learn what each code block does, check out the comments in that Dart file.
 
-The previous commands create a Flutter project directory called `my_app` that
+The previous commands create a Flutter project directory called `test_drive` that
 contains a simple demo app that uses [Material Components][].
 
 ### Run your sample Flutter app
 
-Run your example application on your desktop platform or in an iOS simulator or
+Run your example application on your desktop platform, in the Chrome web browser, in an iOS simulator, or
 Android emulator.
 
 {{site.alert.secondary}}
   Though you can deploy your app to the web,
-  don't choose that target for this tutorial.
-  The web target doesn't support hot reload at this time.
+  note that the web target doesn't support
+  hot reload at this time.
 {{site.alert.end}}
 
 1. Open the Command Palette.

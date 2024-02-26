@@ -1,5 +1,3 @@
-// ignore_for_file: non_constant_identifier_names
-
 import 'dart:io' show Platform;
 
 import 'package:flutter/gestures.dart';
@@ -111,38 +109,42 @@ class _MyWidgetState extends State<MyWidget> {
   // #enddocregion MultiSelectModifierDown
 
   // #docregion HandleKey
-  void _handleKey(event) {
-    if (event is RawKeyDownEvent) {
-      bool isShiftDown = isKeyDown({
-        LogicalKeyboardKey.shiftLeft,
-        LogicalKeyboardKey.shiftRight,
-      });
-      if (isShiftDown && event.logicalKey == LogicalKeyboardKey.keyN) {
-        _createNewItem();
-      }
+  bool _handleKey(KeyEvent event) {
+    bool isShiftDown = isKeyDown({
+      LogicalKeyboardKey.shiftLeft,
+      LogicalKeyboardKey.shiftRight,
+    });
+
+    if (isShiftDown && event.logicalKey == LogicalKeyboardKey.keyN) {
+      _createNewItem();
+      return true;
     }
+
+    return false;
   }
   // #enddocregion HandleKey
 
   // #docregion KeysPressed
   static bool isKeyDown(Set<LogicalKeyboardKey> keys) {
-    return keys.intersection(RawKeyboard.instance.keysPressed).isNotEmpty;
+    return keys
+        .intersection(HardwareKeyboard.instance.logicalKeysPressed)
+        .isNotEmpty;
   }
   // #enddocregion KeysPressed
 
-  // #docregion RawKeyboard
+  // #docregion hardware-keyboard
   @override
   void initState() {
     super.initState();
-    RawKeyboard.instance.addListener(_handleKey);
+    HardwareKeyboard.instance.addHandler(_handleKey);
   }
 
   @override
   void dispose() {
-    RawKeyboard.instance.removeListener(_handleKey);
+    HardwareKeyboard.instance.removeHandler(_handleKey);
     super.dispose();
   }
-  // #enddocregion RawKeyboard
+  // #enddocregion hardware-keyboard
 
   @override
   Widget build(BuildContext context) {
@@ -153,13 +155,13 @@ class _MyWidgetState extends State<MyWidget> {
   }
 }
 
-Widget SelectableTextWidget() {
+Widget selectableTextWidget() {
   // #docregion SelectableText
   return const SelectableText('Select me!');
   // #enddocregion SelectableText
 }
 
-Widget RichTextSpan() {
+Widget richTextSpan() {
   // #docregion RichTextSpan
   return const SelectableText.rich(
     TextSpan(
@@ -172,7 +174,7 @@ Widget RichTextSpan() {
   // #enddocregion RichTextSpan
 }
 
-Widget TooltipWidget() {
+Widget tooltipWidget() {
   // #docregion Tooltip
   return const Tooltip(
     message: 'I am a Tooltip',

@@ -7,6 +7,10 @@ js: [{url: '/assets/js/temp/windows-install-redirector.js'}]
 ---
 
 {% assign os = 'windows' -%}
+{% assign recommend = 'Mobile' %}
+{% capture rec-target -%}
+[{{recommend}}]({{site.url}}/get-started/install/{{os | downcase}}/{{recommend | downcase}})
+{%- endcapture %}
 
 <div class="card-deck mb-8">
 {% for target in page.target-list %}
@@ -25,8 +29,8 @@ js: [{url: '/assets/js/temp/windows-install-redirector.js'}]
         </span>
         <span class="text-muted text-nowrap">{{target}}</span>
         {% if icon == 'mobile' -%}
-           <br>Recommended
-        {% endif -%}
+          <div class="card-subtitle">Recommended</div>
+        {% endif %}
       </header>
     </div>
   </a>
@@ -36,6 +40,6 @@ js: [{url: '/assets/js/temp/windows-install-redirector.js'}]
 Your choice informs which parts of Flutter tooling you configure
 to run your first Flutter app.
 You can set up additional platforms later.
-If you don’t have a preference, choose mobile.
+_If you don't have a preference, choose **{{rec-target}}**._
 
 {% include docs/china-notice.md %}

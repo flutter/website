@@ -3,8 +3,6 @@ title: Using the Performance view
 description: Learn how to use the DevTools performance view.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 {{site.alert.note}}
   The DevTools performance view works for Flutter mobile and desktop apps.
   For web apps, Flutter adds timeline events to the
@@ -296,6 +294,6 @@ detect jank using DevTools, check out a guided
 [Reduce shader compilation jank on mobile]: {{site.url}}/perf/shader
 [Import and export]: #import-and-export
 [performance-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-performance-view-part-8-of-8-4ae762f91230
-[track-widgets]: {{yt-watch}}/_EYk-E29edo?t=623
-[track-layouts]: {{yt-watch}}/_EYk-E29edo?t=676
-[track-paints]: {{yt-watch}}/_EYk-E29edo?t=748
+[track-widgets]: {{site.yt.watch}}/_EYk-E29edo?t=623
+[track-layouts]: {{site.yt.watch}}/_EYk-E29edo?t=676
+[track-paints]: {{site.yt.watch}}/_EYk-E29edo?t=748

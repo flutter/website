@@ -3,8 +3,6 @@ title: Impeller rendering engine
 description: What is Impeller and how to enable it?
 ---
 
-{% include docs/yt_shims.liquid %}
-
 ## What is Impeller?
 
 Impeller provides a new rendering runtime for Flutter.
@@ -19,8 +17,8 @@ at Engine build time so they don't compile at runtime.
 For a video introduction to Impeller, check out the following
 talk from Google I/O 2023.
 
-<iframe width="560" height="315" src="{{yt-embed}}/vd5NqS01rlA" title="YouTube video player - Introducing Impeller - Flutter's new rendering engine" {{yt-set}}></iframe>
-[Introducing Impeller - Flutter's new rendering engine]({{yt-watch}}?v=vd5NqS01rlA)
+<iframe width="560" height="315" src="{{site.yt.embed}}/vd5NqS01rlA" title="YouTube video player - Introducing Impeller - Flutter's new rendering engine" {{site.yt.set}}></iframe>
+[Introducing Impeller - Flutter's new rendering engine]({{site.yt.watch}}?v=vd5NqS01rlA)
 
 Impeller has the following objectives:
 
@@ -78,9 +76,9 @@ include a small reproducible test case.
 
 ### macOS
 
-Impeller is available for macOS in preview as of the
-Flutter 3.13 stable release. It continues to be
-in preview as of the 3.16 release.
+Impeller is available for macOS in preview as of
+the Flutter 3.13 stable release.
+It continues to be in preview as of the 3.19 release.
 
 To enable Impeller on macOS when debugging,
 pass `--enable-impeller` to the `flutter run` command.
@@ -102,6 +100,7 @@ app's `Info.plist` file.
 
 As of Flutter 3.16, Impeller is available behind
 a flag on Android devices that support Vulkan.
+It continues to be in preview as of the 3.19 release.
 
 {{site.alert.secondary}}
   **Does your device support Vulkan?**
@@ -116,7 +115,7 @@ by passing `--enable-impeller` to `flutter run`:
 flutter run --enable-impeller
 ```
 
-Or, you can add the following setting to your project’s
+Or, you can add the following setting to your project's
 `AndroidManifest.xml` file under the `<application>` tag:
 
 ```xml

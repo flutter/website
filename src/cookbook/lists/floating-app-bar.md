@@ -3,7 +3,7 @@ title: Place a floating app bar above a list
 description: How to place a floating app bar above a list.
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://old-dartpad-3ce3f.web.app/inject_embed.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/lists/floating_app_bar/"?>
@@ -41,7 +41,7 @@ and widgets together.
 
 The scrollable lists and widgets provided to the
 `CustomScrollView` are known as _slivers_. There are several types
-of slivers, such as `SliverList`, `SliverGridList`, and `SliverAppBar`.
+of slivers, such as `SliverList`, `SliverGrid`, and `SliverAppBar`.
 In fact, the `ListView` and `GridView` widgets use the `SliverList` and
 `SliverGrid` widgets to implement scrolling.
 

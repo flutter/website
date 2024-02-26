@@ -13,7 +13,7 @@ class CopyableTextField extends StatefulWidget {
 }
 
 class _CopyableTextFieldState extends State<CopyableTextField> {
-  late TextEditingController controller = TextEditingController();
+  late final TextEditingController controller = TextEditingController();
 
   @override
   void dispose() {
@@ -62,7 +62,7 @@ class _CopyableTextFieldState extends State<CopyableTextField> {
 /// A ShortcutManager that logs all keys that it handles.
 class LoggingShortcutManager extends ShortcutManager {
   @override
-  KeyEventResult handleKeypress(BuildContext context, RawKeyEvent event) {
+  KeyEventResult handleKeypress(BuildContext context, KeyEvent event) {
     final KeyEventResult result = super.handleKeypress(context, event);
     if (result == KeyEventResult.handled) {
       print('Handled shortcut $event in $context');

@@ -45,12 +45,12 @@ class _TextListener extends StatefulWidget {
 class __TextListenerState extends State<_TextListener> {
   FocusNode focusNode = FocusNode();
 
-  // #docregion FocusRawKeyboardListener
+  // #docregion focus-keyboard-listener
   @override
   Widget build(BuildContext context) {
     return Focus(
-      onKey: (node, event) {
-        if (event is RawKeyDownEvent) {
+      onKeyEvent: (node, event) {
+        if (event is KeyDownEvent) {
           print(event.logicalKey);
         }
         return KeyEventResult.ignored;
@@ -66,7 +66,7 @@ class __TextListenerState extends State<_TextListener> {
     );
   }
 }
-// #enddocregion FocusRawKeyboardListener
+// #enddocregion focus-keyboard-listener
 
 class BasicActionDetector extends StatefulWidget {
   const BasicActionDetector({super.key});
@@ -154,7 +154,7 @@ class ClickableControl extends StatelessWidget {
   Widget build(BuildContext context) {
     return Focus(
       // Process keyboard event
-      onKey: _handleKeyDown,
+      onKeyEvent: _handleKeyDown,
       child: Builder(
         builder: (context) {
           // Check whether we have focus
@@ -180,9 +180,9 @@ class ClickableControl extends StatelessWidget {
 
   void _submit() => print('Submit!');
 
-  KeyEventResult _handleKeyDown(FocusNode node, RawKeyEvent event) {
-    if (event is RawKeyDownEvent &&
-        [LogicalKeyboardKey.enter, LogicalKeyboardKey.space]
+  KeyEventResult _handleKeyDown(FocusNode node, KeyEvent event) {
+    if (event is KeyDownEvent &&
+        {LogicalKeyboardKey.enter, LogicalKeyboardKey.space}
             .contains(event.logicalKey)) {
       _submit();
       return KeyEventResult.handled;

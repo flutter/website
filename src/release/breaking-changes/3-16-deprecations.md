@@ -273,4 +273,4 @@ be announced again when it comes.
 
 ## Timeline
 
-In stable release: TBD
+In stable release: 3.19.0

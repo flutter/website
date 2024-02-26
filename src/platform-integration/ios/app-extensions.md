@@ -271,7 +271,7 @@ You can use the following procedure or the
 to test on physical devices.
 
 1. Launch the share extension target.
-1. In the popup window that says “Choose an app to run”,
+1. In the popup window that says "Choose an app to run",
    select an app that can be used to test share extension,
    such as the Photos app.
 1. Select a photo, tap the share button,

@@ -2,10 +2,10 @@ name: docs_flutter_dev
 publish_to: none
 
 environment:
-  sdk: ^3.2.0
+  sdk: ^3.3.0
 
 dev_dependencies:
-  build_runner: ^2.4.6
+  build_runner: ^2.4.8
   code_excerpt_updater:
     path: site-shared/packages/code_excerpt_updater
   code_excerpter:

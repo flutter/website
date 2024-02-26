@@ -3,8 +3,6 @@ title: Scrolling
 description: Overview of Flutter's scrolling support
 ---
 
-{% include docs/yt_shims.liquid %}
-
 Flutter has many built-in widgets that automatically
 scroll and also offers a variety of widgets
 that you can customize to create specific scrolling
@@ -20,9 +18,9 @@ child when necessary. Other useful widgets include
 You can check out more of these widgets on the
 [scrolling page][] of the Widget catalog.
 
-<iframe width="560" height="315" src="{{yt-embed}}/DbkIQSvwnZc" title="Learn how to use the Scrollbar Flutter Widget" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/DbkIQSvwnZc" title="Learn how to use the Scrollbar Flutter Widget" {{site.yt.set}}></iframe>
 
-<iframe width="560" height="315" src="{{yt-embed}}/KJpkjHGiI5A" title="Learn how to use the ListView Flutter Widget" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/KJpkjHGiI5A" title="Learn how to use the ListView Flutter Widget" {{site.yt.set}}></iframe>
 
 ### Infinite scrolling
 
@@ -43,10 +41,10 @@ The following widgets provide more specific scrolling
 behavior.
 
 A video on using [`DraggableScrollableSheet`][]
-<iframe width="560" height="315" src="{{yt-embed}}/Hgw819mL_78" title="Learn how to use the DraggableScrollableSheet Flutter Widget" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/Hgw819mL_78" title="Learn how to use the DraggableScrollableSheet Flutter Widget" {{site.yt.set}}></iframe>
 
 Turn the scrollable area into a wheel! [`ListWheelScrollView`][]
-<iframe width="560" height="315" src="{{yt-embed}}/dUhmWAz4C7Y" title="Learn how to use the ListWheelScrollView Flutter Widget" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/dUhmWAz4C7Y" title="Learn how to use the ListWheelScrollView Flutter Widget" {{site.yt.set}}></iframe>
 
 [`DraggableScrollableSheet`]: {{site.api}}/flutter/widgets/DraggableScrollableSheet-class.html
 [`GridView`]: {{site.api}}/flutter/widgets/GridView-class.html
@@ -58,7 +56,7 @@ Turn the scrollable area into a wheel! [`ListWheelScrollView`][]
 {% comment %}
   Not yet, but coming. Two dimensional scrolling:
   TableView and TreeView.
-  Video: {{yt-watch}}?v=UDZ0LPQq-n8
+  Video: {{site.yt.watch}}?v=UDZ0LPQq-n8
 {% endcomment %}
 
 ## Fancy scrolling
@@ -93,4 +91,4 @@ or do you use a sliver?
 
 Check out the "ShrinkWrap vs Slivers" video:
 
-<iframe width="560" height="315" src="{{yt-embed}}/LUqDNnv_dh0" title="Learn how to nest scrolling widgets in Flutter" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/LUqDNnv_dh0" title="Learn how to nest scrolling widgets in Flutter" {{site.yt.set}}></iframe>

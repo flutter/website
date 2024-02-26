@@ -43,7 +43,7 @@
    {{prompt}} mv {{dirdl}}flutter_sdk_v1.0.0.zip {{path}}
    {%- endcapture %}
    {% capture uz -%}
-   {{prompt}} {{unzip}} {{path}}flutter_sdk_v1.0.0.zip {{path}}
+   {{prompt}} {{unzip}} {{path}}flutter_sdk_v1.0.0.zip -d {{path}}
    {%- endcapture %}
 {% else -%}
    {% assign diroptions='`~/development/`' %}

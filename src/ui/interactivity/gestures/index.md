@@ -4,8 +4,6 @@ short-title: Gestures
 description: How gestures, such as taps and drags, work in Flutter.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 This document explains how to listen for, and respond to,
 _gestures_ in Flutter.
 Examples of gestures include taps, drags, and scaling.
@@ -155,7 +153,7 @@ use a [`GestureDetector`][].
   To learn more, watch this short
   Widget of the Week video on the `GestureDetector` widget:
 
-  <iframe class="full-width" src="{{yt-embed}}/WhVXkCFPmK4" title="Learn about the GestureDetector Flutter Widget" {{yt-set}}></iframe>
+  <iframe class="full-width" src="{{site.yt.embed}}/WhVXkCFPmK4" title="Learn about the GestureDetector Flutter Widget" {{site.yt.set}}></iframe>
 {{site.alert.end}}
 
 If you're using Material Components,

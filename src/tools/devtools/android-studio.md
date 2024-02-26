@@ -34,7 +34,7 @@ you can start DevTools using one of the following:
 
 You can also open DevTools from an IntelliJ action.
 Open the **Find Action...** dialog
-(on macOS, press <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>A</kbd>,
+(on macOS, press <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>A</kbd>),
 and search for the **Open DevTools** action.
 When you select that action,
 DevTools is installed (if it isn't already), the DevTools server

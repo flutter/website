@@ -3,8 +3,6 @@ title: Concurrency and isolates
 description: Multithreading in Flutter using Dart isolates.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 <?code-excerpt path-base="development/concurrency/isolates/"?>
 
 All Dart code runs in [isolates]({{site.dart-site}}/language/concurrency),
@@ -66,7 +64,7 @@ documentation.
 
 [concurrency page]: {{site.dart-site}}/language/concurrency
 
-<iframe width="560" height="315" src="{{yt-embed}}/vl_AaCgudcY" title="Learn about Isolates and Loop Events in Flutter" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/vl_AaCgudcY" title="Learn about Isolates and Loop Events in Flutter" {{site.yt.set}}></iframe>
 
 ## Common use cases for isolates
 
@@ -117,7 +115,7 @@ Because immutable objects can't be updated,
 this effectively retains the actor model behavior.
 
 [`Port` objects]: {{site.dart.api}}/stable/dart-isolate/ReceivePort-class.html
-[objects that aren't copied when passed]: {{site.dart.api}}/stable/3.2.0/dart-isolate/SendPort/send.html
+[objects that aren't copied when passed]: {{site.dart.api}}/stable/dart-isolate/SendPort/send.html
 
 An exception to this rule is
 when an isolate exits when it sends a message using the `Isolate.exit` method.
@@ -328,7 +326,7 @@ and receive responses to those messages.
 However, you can't receive unsolicited messages from the host platform.
 
 As an example,
-you can't set-up a long-lived Firestore listener in a background isolate,
+you can't set up a long-lived Firestore listener in a background isolate,
 because Firestore uses platform channels to push updates to Flutter,
 which are unsolicited.
 You can, however, query Firestore for a response in the background.

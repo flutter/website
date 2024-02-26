@@ -4,7 +4,7 @@ description: >-
   Example of an internationalized Flutter app that uses `flutter gen-l10n`.
 
 environment:
-  sdk: ^3.2.0
+  sdk: ^3.3.0
 
 # #docregion FlutterLocalizations
 dependencies:

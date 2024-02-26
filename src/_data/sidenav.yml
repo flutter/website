@@ -48,16 +48,14 @@
     - title: Compatibility policy
       permalink: /release/compatibility-policy
 
-- title: Samples & codelabs
+- title: Codelabs & samples
   children:
-    - title: Flutter Gallery
-      permalink: https://gallery.flutter.dev
-    - title: Samples and demos
-      permalink: https://flutter.github.io/samples/
-    - title: Cookbook
-      permalink: /cookbook
     - title: Codelabs
       permalink: /codelabs
+    - title: Cookbook
+      permalink: /cookbook
+    - title: Samples and demos
+      permalink: https://flutter.github.io/samples/
 
 - title: App solutions
   children:
