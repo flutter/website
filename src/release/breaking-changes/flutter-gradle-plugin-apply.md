@@ -56,12 +56,12 @@ pluginManagement {
 }
 
 plugins {
-    id("dev.flutter.flutter-plugin-loader") version "1.0.0"
-    id("com.android.application") version "{agpVersion}" apply false
-    id("org.jetbrains.kotlin.android") version "{kotlinVersion}" apply false
+    id "dev.flutter.flutter-plugin-loader" version "1.0.0"
+    id "com.android.application" version "{agpVersion}" apply false
+    id "org.jetbrains.kotlin.android version "{kotlinVersion}" apply false
 }
 
-include(":app")
+include ":app"
 ```
 
 If you made some changes to this file, make sure they're placed after
