@@ -35,9 +35,10 @@ Here are some of the things you can do with DevTools:
 We expect you to use DevTools in conjunction with
 your existing IDE or command-line based development workflow.
 
+<a id="how-do-i-install-devtools></a>
 <a id="install-devtools"></a>
 
-## How to start DevTools?
+## How to start DevTools {#start}
 
 See the [VS Code][], [Android Studio/IntelliJ][], or
 [command line][] pages for instructions on how to start DevTools.
