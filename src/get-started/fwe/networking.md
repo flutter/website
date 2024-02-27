@@ -9,8 +9,9 @@ next:
 
 While it's said that "no man is an island",
 a Flutter app without any networking capability can feel a tad disconnected.
-In this section you will learn how to add networking features to your Flutter app.
-Your app will retrieve data, parse JSON into usable in memory representations, and then send data out again.
+This page covers how to add networking features to your Flutter app.
+Your app will retrieve data, parse JSON into usable in memory representations,
+and then send data out again.
 
 ## Introduction to retrieving data over the network
 
