@@ -1,12 +1,14 @@
-name: dart_tools
-description: Dart-based tools for flutter/website.
+name: flutter_site
+description: Dart-based tools for building docs.flutter.dev.
 publish_to: none
 
 environment:
   sdk: ^3.3.0
 
 dependencies:
-  logging: ^1.2.0
+  args: ^2.4.2
+  io: ^1.0.4
+  linkcheck: ^3.0.0
   path: ^1.9.0
 
 dev_dependencies:

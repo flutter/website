@@ -63,7 +63,7 @@ FROM flutter AS tests
 COPY ./ ./
 
 # Only test the code here, checking links is purely for site deployment
-ENTRYPOINT ["tool/test.sh"]
+ENTRYPOINT ["dart", "run", "flutter_site", "check-all"]
 
 
 # ============== DEV / JEKYLL SETUP ==============

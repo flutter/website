@@ -225,19 +225,6 @@ to DartPad examples, see the [DartPad embedding guide][].
 [DartPad embedding guide]: https://github.com/dart-lang/dart-pad/wiki/Embedding-Guide
 
 
-### DartPad example code in this repo 
-
-Some DartPad example code remains in this repo:
-- `src/_packages/dartpad_picker/web/dartpad_picker_main.dart`
-
-This code must be manually compiled, 
-which also regenerates the associated JavaScript file in `src/assets/js`:
-```bash
-$ cd src/_packages/dartpad_picker
-$ ./compile.sh
-```
-
-
 ## Deploying to a staging site
 
 You can deploy your local edits to a personal staging site as follows.
@@ -297,7 +284,7 @@ code in the corresponding `.dart` file.
 
 To resolve this error,
 from the root of the `website` directory,
-run `./tool/refresh-code-excerpts.sh`. 
+run `dart run flutter_site refresh-excerpts`. 
 
 For more information see [Code excerpts][] . 
 
