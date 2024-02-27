@@ -32,12 +32,15 @@ gives more background on how authorization works on the web.
 
 ## Making data retrived from the network useful
 
-Once you are retrieving data from the network, you will want a way to convert the data from the network into something that you can easily work with in Dart.
-The tutorials in the previous section used hand rolled Dart to convert network data into an in memory representation. 
-In this section you'll see other options for handling this conversion.
-The first is a YouTube video giving an overview of the [`freezed` package][]. 
-While the second is a codelab covering patterns and records using the case study of parsing JSON. 
-On point, no?
+Once you retrieve data from the network,
+you need a way to convert the data from the network
+into something that you can easily work with in Dart.
+The tutorials in the previous section used hand rolled Dart
+to convert network data into an in-memory representation. 
+In this section, you'll see other options for handling this conversion.
+The first links to a YouTube video showing an overview of the [`freezed` package][]. 
+The second links to a codelab that covers patterns and records
+using a case study of parsing JSON. 
 
 * YouTube video: [Freezed (Package of the Week)][]
 * Codelab: [Dive into Dart's patterns and records][]
