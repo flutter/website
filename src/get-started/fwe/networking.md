@@ -15,9 +15,16 @@ and then send data out again.
 
 ## Introduction to retrieving data over the network
 
-The following two tutorials introduce you to the [`http`][] package which enables your app to make [HTTP][] requests with ease, whether you are running on Android, iOS, inside a web browser, or natively on Windows, macOS or Linux. 
-The first tutorial shows you how to make an unauthenticated `GET` request to a website, parse the retrieved data as `JSON` and then display the resulting data.
-The second tutorial builds on the first by adding authentication headers, enabling access to web servers requiring authorization. The article by the Mozilla Developer Network (MDN) gives more background on how authorisation works on the web.
+The following two tutorials introduce you to the
+[`http`][] package, which enables your app to make
+[HTTP][] requests with ease, whether you are running on Android,
+iOS, inside a web browser, or natively on Windows, macOS, or Linux. 
+The first tutorial shows you how to make an unauthenticated `GET` request
+to a website, parse the retrieved data as `JSON` and then display the resulting data.
+The second tutorial builds on the first by adding authentication headers,
+enabling access to web servers requiring authorization.
+The article by the Mozilla Developer Network (MDN)
+gives more background on how authorization works on the web.
 
 * Tutorial: [Fetch data from the internet][]
 * Tutorial: [Make authenticated requests][]
