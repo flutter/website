@@ -47,12 +47,17 @@ using a case study of parsing JSON.
 
 ## Going both ways, getting data out again
 
-Now that you have mastered the art of retrieving data, it's time to look at pushing data out.
-This starts with sending data to the network, but then dives into asynchronicity.
-The truth is, once you are in a conversation over the network, you'll need to deal with the fact that web servers that are far away take a while to respond, and you can't stop rendering to the screen while you wait for packets to round trip.
-Dart has really great support for asynchonicity, as does Flutter.
-You'll learn all about Dart's support in a tutorial, then see Flutter's capability covered in a Widget of the Week video.
-Once you are through that, you'll learn how to debug network traffic using DevTool's Network View.
+Now that you've mastered the art of retrieving data, it's time to look at pushing data out.
+This information starts with sending data to the network, but then dives into asynchronicity.
+The truth is, once you are in a conversation over the network,
+you'll need to deal with the fact that web servers that are physically far away
+can take a while to respond, and you can't stop rendering to the screen
+while you wait for packets to round trip.
+Dart has really great support for asynchronicity, as does Flutter.
+You'll learn all about Dart's support in a tutorial,
+then see Flutter's capability covered in a Widget of the Week video.
+Once you complete that, you'll learn how to debug
+network traffic using DevTool's Network View.
 
 
 * Tutorial: [Send data to the internet][]
