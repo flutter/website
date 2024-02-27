@@ -94,7 +94,7 @@ Anna (Domashych) Leushchenko covering advanced networking in Flutter.
 [`http`]: {{site.pub-pkg}}/http
 [HTTP]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
 [Keeping it local: Managing a Flutter app's data]: {{site.youtube-site}}/watch?v=uCbHxLA9t9E
-[Make authenticated requests]: {{site.url}/cookbook/networking/authenticated-requests
+[Make authenticated requests]: {{site.url}}/cookbook/networking/authenticated-requests
 [MDN's article on Authorization for websites]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization
 [Using the Network View]: https://docs.flutter.dev/tools/devtools/network
 [Send data to the internet]: https://docs.flutter.dev/cookbook/networking/send-data
