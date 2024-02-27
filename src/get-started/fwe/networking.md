@@ -69,19 +69,19 @@ Finally, a really useful series of articles by Flutter GDE Anna (Domashych) Leus
 * Article series: [Basic and advanced networking in Dart and Flutter][]
 
 
-[Adaptive Apps in Flutter]: https://codelabs.developers.google.com/codelabs/flutter-adaptive-app
-[Asynchronous programming: futures, async, await]: https://dart.dev/codelabs/async-await
-[Basic and advanced networking in Dart and Flutter]: https://medium.com/tide-engineering-team/basic-and-advanced-networking-in-dart-and-flutter-the-tide-way-part-0-introduction-33ac040a4a1c
+[Adaptive Apps in Flutter]: {{site.codelabs}}/codelabs/flutter-adaptive-app
+[Asynchronous programming: futures, async, await]: {{site.dart-site}}/codelabs/async-await
+[Basic and advanced networking in Dart and Flutter]: {{site.medium}}/tide-engineering-team/basic-and-advanced-networking-in-dart-and-flutter-the-tide-way-part-0-introduction-33ac040a4a1c
 [Cross-Origin Resource Sharing (CORS) restrictions]: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
-[Dive into Dart's patterns and records]: https://codelabs.developers.google.com/codelabs/dart-patterns-records
-[Fetch data from the internet]: https://docs.flutter.dev/cookbook/networking/fetch-data
-[Freezed (Package of the Week)]: https://www.youtube.com/watch?v=RaThk0fiphA
-[`freezed` package]: https://pub.dev/packages/freezed
-[FutureBuilder (Widget of the Week)]: https://www.youtube.com/watch?v=zEdw_1B7JHY
-[`http`]: https://pub.dev/packages/http
+[Dive into Dart's patterns and records]: {{site.codelabs}}/codelabs/dart-patterns-records
+[Fetch data from the internet]: {{site.url}}/cookbook/networking/fetch-data
+[Freezed (Package of the Week)]: {{site.youtube-site}}/watch?v=RaThk0fiphA
+[`freezed` package]: {{site.pub-pkg}}/freezed
+[FutureBuilder (Widget of the Week)]: {{site.youtube-site}}/watch?v=zEdw_1B7JHY
+[`http`]: {{site.pub-pkg}}/http
 [HTTP]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
-[Keeping it local: Managing a Flutter app's data]: https://www.youtube.com/watch?v=uCbHxLA9t9E
-[Make authenticated requests]: https://docs.flutter.dev/cookbook/networking/authenticated-requests
+[Keeping it local: Managing a Flutter app's data]: {{site.youtube-site}}/watch?v=uCbHxLA9t9E
+[Make authenticated requests]: {{site.url}/cookbook/networking/authenticated-requests
 [MDN's article on Authorization for websites]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization
 [Using the Network View]: https://docs.flutter.dev/tools/devtools/network
 [Send data to the internet]: https://docs.flutter.dev/cookbook/networking/send-data
