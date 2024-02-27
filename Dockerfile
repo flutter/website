@@ -24,6 +24,7 @@ WORKDIR /app
 FROM base AS flutter
 
 COPY ./site-shared ./site-shared
+COPY ./tool ./tool
 COPY pubspec.yaml ./
 
 ARG FLUTTER_BUILD_BRANCH=stable
