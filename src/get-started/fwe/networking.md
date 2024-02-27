@@ -59,10 +59,15 @@ Once you are through that, you'll learn how to debug network traffic using DevTo
 
 ## Extension material
 
-Now that you have mastered using Flutter's networking APIs, it'll help to see Flutter's network usage in context.
-The first is a codelab ostensibly on creating Adaptive Apps in Flutter, but it uses a web server written in Dart to work around the web browsers' [Cross-Origin Resource Sharing (CORS) restrictions][].
-Next is a long form YouTube video where Flutter DevRel alumni Fitz talks about how the location of data matters for Flutter apps.
-Finally, a really useful series of articles by Flutter GDE Anna (Domashych) Leushchenko covering advanced networking in Flutter.
+Now that you've mastered using Flutter's networking APIs,
+it helps to see Flutter's network usage in context.
+The first codelab (ostensibly on creating Adaptive Apps in Flutter),
+uses a web server written in Dart to work around the web browsers'
+[Cross-Origin Resource Sharing (CORS) restrictions][].
+Next, a long-form YouTube video where Flutter DevRel alumnus,
+Fitz, talks about how the location of data matters for Flutter apps.
+Finally, a really useful series of articles by Flutter GDE
+Anna (Domashych) Leushchenko covering advanced networking in Flutter.
 
 * Codelab: [Adaptive Apps in Flutter][]
 * Video: [Keeping it local: Managing a Flutter app's data][]
