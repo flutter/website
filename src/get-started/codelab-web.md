@@ -1059,7 +1059,7 @@ Dart DevTools, or Flutter animations, see the following:
 [DartPad]: {{site.dartpad}}
 [DevTools command line]: {{site.url}}/tools/devtools/cli
 [DevTools documentation]: {{site.url}}/tools/devtools
-[DevTools installed]: {{site.url}}/tools/devtools/overview#how-do-i-install-devtools
+[DevTools installed]: {{site.url}}/tools/devtools/overview#start
 [DartPad troubleshooting page]: {{site.dart-site}}/tools/dartpad/troubleshoot
 [`didUpdateWidget`]: {{site.api}}/flutter/widgets/State/didUpdateWidget.html
 [editor]: {{site.url}}/get-started/editor
