@@ -27,9 +27,7 @@ Tutorial: [Building user interfaces with Flutter][]
 
 Flutter applications are built in [Dart][], a language that will look familiar
 to anyone who's written Java, Javascript, or any other C-like language. The first
-resource listed here is a tutorial about writing Dart code. After that, you can
-read about why Flutter chose to use Dart, and find a page with more resources
-for learning Dart.
+resource listed here is a tutorial about writing Dart code.  
 
 {{site.alert.note}}
   Installing Flutter also installs Dart,
@@ -39,7 +37,12 @@ for learning Dart.
 <i class="material-symbols" aria-hidden="true">flutter_dash</i>
 Tutorial: [Get started with Dart: Write command-line apps][]
 
+If you're interested in why Flutter chose Dart, you can
+read about it in the resource linked below, and there's a link with more resources
+for learning Dart.
+
 * [Why did Flutter choose to use Dart?][]
+
 * [Bootstrap into Dart][]
 
 ## Anatomy of a widget
@@ -82,15 +85,12 @@ this is a deep-dive on specific topics. In the next section, you'll start
 building more interesting UIs by creating more complex layouts in Flutter.
 
 [Building user interfaces with Flutter]:{{site.url}}/ui
-
-[Dart]: {{site.dart-site}}
-
-[Why did Flutter choose to use Dart?]: {{site.url}/resources/faq#why-did-flutter-choose-to-use-dart
-[Get started with Dart: Write command-line apps]: {{site.dart-site}}/tutorials/server/cmdline
 [Bootstrap into Dart]: {{site.url}}/resources/bootstrap-into-dart
-
+[Dart]: {{site.dart-site}}
 [Flutter widgets 101 episode 1: Stateless widgets]: {{site.youtube-site}}/watch?v=wE7khGHVkYY
 [Flutter widgets 101 episode 2: Stateful widgets]: {{site.youtube-site}}/watch?v=AqCMFXEmf3w
+[Get started with Dart: Write command-line apps]: {{site.dart-site}}/tutorials/server/cmdline
+[Why did Flutter choose to use Dart?]: {{site.url}}/resources/faq#why-did-flutter-choose-to-use-dart
 
 [`AppBar`]: {{site.api}}/flutter/material/AppBar-class.html
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
