@@ -32,9 +32,9 @@ final class TestDartCommand extends Command<int> {
       );
 }
 
-int _testDart({
+Future<int> _testDart({
   bool verboseLogging = false,
-}) {
+}) async {
   final directoriesToTest = [
     path.join('tool', 'flutter_site'),
     ...exampleProjectDirectories,
@@ -42,52 +42,59 @@ int _testDart({
 
   print('Testing code...');
 
-  for (final directory in directoriesToTest) {
-    if (verboseLogging) {
-      print('Testing code in $directory...');
-    }
+  final failedTests = <String>[
+    for (final directory in directoriesToTest)
+      if (!(await testsPassInDirectory(directory, verboseLogging))) directory
+  ];
 
-    if (runPubGetIfNecessary(directory) case final pubGetResult
-        when pubGetResult != 0) {
-      return pubGetResult;
-    }
-
-    final flutterTestOutput = Process.runSync(
-      Platform.executable,
-      [
-        'test',
-        '--reporter',
-        'expanded', // Non-animated expanded output looks better in CI and logs.
-      ],
-      workingDirectory: directory,
-    );
-
-    if (flutterTestOutput.exitCode != 0) {
-      final normalOutput = flutterTestOutput.stdout.toString();
-      final errorOutput = flutterTestOutput.stderr.toString();
-
-      // It's ok if the test directory is not found.
-      if (!errorOutput.contains('No test') &&
-          !normalOutput.contains('Could not find package `test`') &&
-          !normalOutput.contains('No tests were') &&
-          !errorOutput.contains(RegExp(r'Test directory.*not found'))) {
-        stderr.write(normalOutput);
-        stderr.writeln('Error: Tests in $directory failed:');
-        stderr.write(errorOutput);
-        return 1;
-      }
-
-      if (verboseLogging) {
-        print('No tests found or ran in $directory.');
-      }
-    } else {
-      if (verboseLogging) {
-        print('All tests passed in $directory.');
-      }
-    }
+  if (failedTests.isNotEmpty) {
+    stderr.writeln('\nError: ${failedTests.length} tests failed!');
+    return 1;
   }
 
   print('All tests passed successfully!');
 
   return 0;
+}
+
+Future<bool> testsPassInDirectory(String directory, bool verboseLogging) async {
+  if (verboseLogging) {
+    print('Testing code in $directory...');
+  }
+
+  final flutterTestOutput = await Process.run(
+    'flutter',
+    [
+      'test',
+      '--reporter',
+      'expanded', // Non-animated expanded output looks better in CI and logs.
+    ],
+    workingDirectory: directory,
+  );
+
+  if (flutterTestOutput.exitCode != 0) {
+    final normalOutput = flutterTestOutput.stdout.toString();
+    final errorOutput = flutterTestOutput.stderr.toString();
+
+    // It's ok if the test directory is not found.
+    if (!errorOutput.contains('No test') &&
+        !normalOutput.contains('Could not find package `test`') &&
+        !normalOutput.contains('No tests were') &&
+        !errorOutput.contains(RegExp(r'Test directory.*not found'))) {
+      stderr.write(normalOutput);
+      stderr.writeln('Tests in $directory failed:');
+      stderr.write(errorOutput);
+      return false;
+    }
+
+    if (verboseLogging) {
+      print('No tests found or ran in $directory.');
+    }
+  } else {
+    if (verboseLogging) {
+      print('All tests passed in $directory.');
+    }
+  }
+
+  return true;
 }

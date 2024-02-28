@@ -25,7 +25,7 @@ void groupEnd() {
 
 int runPubGetIfNecessary(String directory) {
   final pubGetOutput = Process.runSync(
-    Platform.executable,
+    'flutter',
     const ['pub', 'get'],
     workingDirectory: directory,
   );

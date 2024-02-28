@@ -47,13 +47,8 @@ int analyzeDart({
       print('Analyzing code in $directory...');
     }
 
-    if (runPubGetIfNecessary(directory) case final pubGetResult
-        when pubGetResult != 0) {
-      return pubGetResult;
-    }
-
     final flutterAnalyzeOutput = Process.runSync(
-      Platform.executable,
+      'flutter',
       const ['analyze', '.'],
       workingDirectory: directory,
     );

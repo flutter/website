@@ -30,7 +30,7 @@ final class CheckAllCommand extends Command<int> {
     for (final task in verificationTasks) {
       groupStart(task.first);
       final process = await Process.start(
-        Platform.executable,
+        Platform.resolvedExecutable,
         ['run', 'flutter_site', ...task],
       );
       await stdout.addStream(process.stdout);
