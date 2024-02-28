@@ -1,8 +1,0 @@
-{
-	"name": "Flutter.dev",
-	"dockerComposeFile": "../docker-compose.yml",
-	"extensions": [
-		"dart-code.dart-code",
-    "dart-code.flutter"
-	]
-}

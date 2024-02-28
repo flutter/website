@@ -6,7 +6,6 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
       build-essential \
       ca-certificates \
       curl \
-      diffutils \
       git \
       gnupg \
       lsof \
@@ -24,11 +23,9 @@ WORKDIR /app
 FROM base AS flutter
 
 COPY ./site-shared ./site-shared
-COPY ./tool ./tool
 COPY pubspec.yaml ./
 
-ARG FLUTTER_BUILD_BRANCH=stable
-ENV FLUTTER_BUILD_BRANCH=$FLUTTER_BUILD_BRANCH
+ENV FLUTTER_BUILD_BRANCH=stable
 ENV FLUTTER_ROOT=flutter
 ENV FLUTTER_BIN=flutter/bin
 ENV PATH="/flutter/bin:$PATH"
@@ -56,43 +53,6 @@ RUN mkdir -p /etc/apt/keyrings \
     && apt-get update -yq \
     && apt-get install nodejs -yq \
     && npm install -g npm # Ensure latest npm
-
-
-# ============== FLUTTER CODE TESTS ==============
-FROM flutter AS tests
-
-COPY ./ ./
-
-# Only test the code here, checking links is purely for site deployment
-ENTRYPOINT ["dart", "run", "flutter_site", "check-all"]
-
-
-# ============== DEV / JEKYLL SETUP ==============
-FROM node AS dev
-
-ENV JEKYLL_ENV=development
-ENV RUBY_YJIT_ENABLE=1
-RUN gem install bundler
-COPY Gemfile Gemfile.lock ./
-RUN bundle config set force_ruby_platform true
-RUN bundle install
-
-# Install Node deps
-ENV NODE_ENV=development
-COPY package.json package-lock.json ./
-RUN npm install
-
-COPY ./ ./
-
-# Jekyl ports
-EXPOSE 35730
-EXPOSE 4002
-
-# Firebase emulator port
-# Airplay runs on :5000 by default now
-EXPOSE 5502
-
-
 
 # ============== BUILD PROD JEKYLL SITE ==============
 FROM node AS build
