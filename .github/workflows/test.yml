@@ -60,4 +60,24 @@ jobs:
       - uses: dart-lang/setup-dart@fedb1266e91cf51be2fdb382869461a434b920a3
         with:
           sdk: stable
-      - run: tool/check-links.sh
+      - name: Fetch Dart dependencies
+        run: dart pub get
+      - name: Check for broken Markdown link references
+        run: dart run flutter_site check-link-references
+      - name: Check for broken internal links
+        run: dart run flutter_site check-links
+
+  firebase-validate:
+    name: Validate Firebase configuration
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        with:
+          submodules: recursive
+      - uses: dart-lang/setup-dart@fedb1266e91cf51be2fdb382869461a434b920a3
+        with:
+          sdk: stable
+      - name: Fetch Dart dependencies
+        run: dart pub get
+      - name: Validate the firebase.json file
+        run: dart run flutter_site verify-firebase-json

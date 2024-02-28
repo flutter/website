@@ -569,7 +569,7 @@ using DevTools, check out a guided
 [Flutter Inspector tutorial][inspector-tutorial].
 
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
-[common problems when debugging]: {{site.url}}/testing/debugging#common-problems
+[common problems when debugging]: {{site.url}}/testing/debugging
 [`crossAxisAlignment`]: {{site.api}}/flutter/widgets/Flex/crossAxisAlignment.html
 [DartConf 2018 talk]: {{site.yt.watch}}?v=JIcmJNT9DNI
 [debug mode]: {{site.url}}/testing/build-modes#debug
