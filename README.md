@@ -16,17 +16,8 @@
 * [Issues, bugs, and requests](#issues-bugs-and-requests)
 * [Before you submit a PR](#before-you-submit-a-pr)
 * [Before you build this site](#before-you-build-this-site)
-  - [1. Get the prerequisites](#1-get-the-prerequisites)
-  - [2. Clone this repo _and_ its submodules][]
-* [Setting up your local environment and serving changes][]
 * [Creating and/or editing DartPad example code](#creating-andor-editing-dartpad-example-code)
-  - [DartPad example code in GitHub gists](#dartpad-example-code-in-github-gists)
-  - [DartPad example code in this repo](#dartpad-example-code-in-this-repo)
-* [Deploying to a staging site](#deploying-to-a-staging-site)
 * [Writing for flutter.dev](#writing-for-flutterdev)
-
-[2. Clone this repo _and_ its submodules]: #2-clone-this-repo-and-its-submodules
-[Setting up your local environment and serving changes]: #setting-up-your-local-environment-and-serving-changes
 
 ## Issues, bugs, and requests
 
@@ -79,28 +70,11 @@ we recommend building the site.
 > [!WARNING]  
 > Support for building the site locally has temporarily been removed.
 > This README will be updated with the new building details soon.
+> 
 > Until then, please rely on automatic staging in pull requests.
+> Thanks for your patience!
 
-### 1. Get the prerequisites
-
-Install the following tools, if you don't have them already:
-
-- **bash**, the Bourne shell<br> 
-  These instructions assume you're using `bash`, 
-  and setup might not work if you use another shell.
-- **GNU Make**<br>
-  On Windows the easiest way to install Make is `choco install make`. 
-  Other options include using a
-  [subsystem](https://docs.microsoft.com/en-us/windows/wsl/install-win10). 
-- **Docker**. 
-  We use Docker for local dev, tests, and building the site. 
-  Install it from https://docs.docker.com/get-docker/.
-- **Firebase CLI**, for hosting the site locally. 
-  One way to get this is to run `npm install -g firebase-tools`. 
-  For full setup details, read the
-  [Firebase CLI documentation](https://firebase.google.com/docs/cli).
-
-### 2. Clone this repo _and_ its submodules
+### Clone this repo _and_ its submodules
 
 > **Note:** This repo has git _submodules_, 
 > which affects how you clone it. 
@@ -119,6 +93,7 @@ _choose one_ of the following submodule-cloning techniques:
 
 - Clone the repo and its submodule at the same
   using the `--recurse-submodules` option:
+- 
   ```bash
   $ git clone --recurse-submodules https://github.com/<username-or-flutter>/website.git
   ```
@@ -126,7 +101,8 @@ _choose one_ of the following submodule-cloning techniques:
   OR
 
 - If you've already cloned the repo without its submodule, 
-  then run this command from the repo root:<br>
+  then run this command from the repo root:
+
   ```bash
   $ git submodule update --init --recursive
   ```
@@ -171,7 +147,7 @@ to DartPad examples, see the [DartPad embedding guide][].
 ## Refreshing code excerpts
 
 A build that fails with the error
-`=> ERROR: some code excerpts were not refreshed!`
+`Error: Some code excerpts needed to be updated!`
 means that one or more code excerpts in the markdown file
 aren't identical to the
 code in the corresponding `.dart` file. 

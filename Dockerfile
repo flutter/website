@@ -17,33 +17,6 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
 
 WORKDIR /app
 
-
-
-# ============== INSTALL FLUTTER ==============
-FROM base AS flutter
-
-COPY ./site-shared ./site-shared
-COPY pubspec.yaml ./
-
-ENV FLUTTER_BUILD_BRANCH=stable
-ENV FLUTTER_ROOT=flutter
-ENV FLUTTER_BIN=flutter/bin
-ENV PATH="/flutter/bin:$PATH"
-
-RUN git clone --branch $FLUTTER_BUILD_BRANCH --single-branch --filter=tree:0 https://github.com/flutter/flutter /flutter/
-VOLUME /flutter
-
-# Set up Flutter
-# NOTE You will get a warning "Woah! You appear to be trying to run flutter as root."
-# and this is to be disregarded since this image is never deployed to production.
-RUN flutter doctor
-RUN flutter config --no-analytics  \
-    && flutter config --no-cli-animations  \
-    && flutter --version
-RUN dart pub get
-
-
-
 # ============== NODEJS INTSALL ==============
 FROM flutter AS node
 
