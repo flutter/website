@@ -125,8 +125,6 @@ Future<int> _refreshExcerpts({
   const replacements = [
     // Allows use of //!<br> to force a line break (against dart format)
     r'/\/\/!<br>//g;',
-    // Replace the word ellipsis, with optional parentheses.
-    r'/ellipsis(<\w+>)?(\(\))?;?/.../g;',
     // Replace commented out ellipses: /*...*/ --> ...
     r'/\/\*(\s*\.\.\.\s*)\*\//$1/g;',
     // Replace brackets with commented out ellipses: {/*-...-*/} --> ...
