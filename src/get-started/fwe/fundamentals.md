@@ -37,12 +37,11 @@ resource listed here is a tutorial about writing Dart code.
 <i class="material-symbols" aria-hidden="true">flutter_dash</i>
 Tutorial: [Get started with Dart: Write command-line apps][]
 
-If you're interested in why Flutter chose Dart, you can
-read about it in the resource linked below, and there's a link with more resources
-for learning Dart.
+If you're interested in why Flutter chose Dart, 
+you can read about it in the resource linked below. 
+The other link has more resources for learning Dart.
 
 * [Why did Flutter choose to use Dart?][]
-
 * [Bootstrap into Dart][]
 
 ## Anatomy of a widget
