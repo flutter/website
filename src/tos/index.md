@@ -8,7 +8,7 @@ visiting the Website, you consent to be bound by Google's general
 [Terms of Service][] and [Privacy Policy][].
 
 The "Flutter" name and the Flutter logo
-<img src="/assets/images/shared/brand/flutter/logo/square.svg" width="32px" alt="Flutter logo" class="align-baseline">
+<img src="/assets/images/branding/flutter/logo/square.svg" width="32px" alt="Flutter logo" class="align-baseline">
 (the "Flutter Marks") are trademarks owned by Google and are not included
 within the assets licensed under the Creative Commons Attribution 4.0
 International License.  Google grants you a non-transferable,

@@ -19,7 +19,7 @@ env:
 
 jobs:
   test:
-    name: Check excerpts and run tests
+    name: Analyze and test code examples
     runs-on: ubuntu-latest
     if: github.repository == 'flutter/website'
     strategy:
@@ -36,10 +36,36 @@ jobs:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           submodules: recursive
-      - name: Test
-        env:
-          FLUTTER_BUILD_BRANCH: ${{ matrix.branch }}
-        run: make test
+      - uses: subosito/flutter-action@2783a3f08e1baf891508463f8c6653c258246225
+        with:
+          channel: ${{ matrix.branch }}
+      - name: Fetch Dart dependencies
+        run: dart pub get
+      - name: Check Dart code formatting
+        run: dart run flutter_site format-dart --check
+        continue-on-error: ${{ matrix.experimental }}
+      - name: Analyze Dart code
+        run: dart run flutter_site analyze-dart
+        continue-on-error: ${{ matrix.experimental }}
+      - name: Run Dart tests
+        run: dart run flutter_site test-dart
+        continue-on-error: ${{ matrix.experimental }}
+
+  excerpts:
+    name: Check if code excerpts are up to date
+    runs-on: ubuntu-latest
+    if: github.repository == 'flutter/website'
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        with:
+          submodules: recursive
+      - uses: dart-lang/setup-dart@fedb1266e91cf51be2fdb382869461a434b920a3
+        with:
+          sdk: stable
+      - name: Fetch Dart dependencies
+        run: dart pub get
+      - name: Check if excerpts are up to date
+        run: dart run flutter_site refresh-excerpts --fail-on-update
         continue-on-error: ${{ matrix.experimental }}
 
   linkcheck:
@@ -60,4 +86,25 @@ jobs:
       - uses: dart-lang/setup-dart@fedb1266e91cf51be2fdb382869461a434b920a3
         with:
           sdk: stable
-      - run: tool/check-links.sh
+      - name: Fetch Dart dependencies
+        run: dart pub get
+      - name: Check for broken Markdown link references
+        run: dart run flutter_site check-link-references
+      - name: Check for broken internal links
+        run: dart run flutter_site check-links
+
+  firebase-validate:
+    name: Validate Firebase configuration
+    runs-on: ubuntu-latest
+    if: github.repository == 'flutter/website'
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        with:
+          submodules: recursive
+      - uses: dart-lang/setup-dart@fedb1266e91cf51be2fdb382869461a434b920a3
+        with:
+          sdk: stable
+      - name: Fetch Dart dependencies
+        run: dart pub get
+      - name: Validate the firebase.json file
+        run: dart run flutter_site verify-firebase-json
