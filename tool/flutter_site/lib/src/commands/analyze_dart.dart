@@ -61,10 +61,10 @@ Future<int> analyzeDart({
       stderr.write(errorOutput);
       stderr.writeln('\nError: Analysis on $directory failed.');
       return 1;
-    } else {
-      if (verboseLogging) {
-        print('Successfully analyzed code in $directory!');
-      }
+    }
+
+    if (verboseLogging) {
+      print('Successfully analyzed code in $directory!');
     }
   }
 
