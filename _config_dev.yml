@@ -1,6 +1,0 @@
-url: http://0.0.0.0:4002
-host: 0.0.0.0
-port: 4002
-sass:
-  cache: true
-  style: extended
