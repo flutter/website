@@ -32,7 +32,6 @@ jobs:
           - name: "Stable channel"
             branch: stable
             experimental: false
-    continue-on-error: ${{ matrix.experimental }}
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
@@ -44,10 +43,13 @@ jobs:
         run: dart pub get
       - name: Check Dart code formatting
         run: dart run flutter_site format-dart --check
+        continue-on-error: ${{ matrix.experimental }}
       - name: Analyze Dart code
         run: dart run flutter_site analyze-dart
+        continue-on-error: ${{ matrix.experimental }}
       - name: Run Dart tests
         run: dart run flutter_site test-dart
+        continue-on-error: ${{ matrix.experimental }}
 
   excerpts:
     name: Check if code excerpts are up to date
