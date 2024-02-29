@@ -1,0 +1,110 @@
+name: test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: "0 0 * * 0"
+
+# Declare default permissions as read only.
+permissions: read-all
+
+env:
+  NODE_ENV: production
+  NODE_VERSION: 20
+
+jobs:
+  test:
+    name: Analyze and test code examples
+    runs-on: ubuntu-latest
+    if: github.repository == 'flutter/website'
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: "Beta channel"
+            branch: beta
+            experimental: true
+          - name: "Stable channel"
+            branch: stable
+            experimental: false
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        with:
+          submodules: recursive
+      - uses: subosito/flutter-action@2783a3f08e1baf891508463f8c6653c258246225
+        with:
+          channel: ${{ matrix.branch }}
+      - name: Fetch Dart dependencies
+        run: dart pub get
+      - name: Check Dart code formatting
+        run: dart run flutter_site format-dart --check
+        continue-on-error: ${{ matrix.experimental }}
+      - name: Analyze Dart code
+        run: dart run flutter_site analyze-dart
+        continue-on-error: ${{ matrix.experimental }}
+      - name: Run Dart tests
+        run: dart run flutter_site test-dart
+        continue-on-error: ${{ matrix.experimental }}
+
+  excerpts:
+    name: Check if code excerpts are up to date
+    runs-on: ubuntu-latest
+    if: github.repository == 'flutter/website'
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        with:
+          submodules: recursive
+      - uses: dart-lang/setup-dart@fedb1266e91cf51be2fdb382869461a434b920a3
+        with:
+          sdk: stable
+      - name: Fetch Dart dependencies
+        run: dart pub get
+      - name: Check if excerpts are up to date
+        run: dart run flutter_site refresh-excerpts --fail-on-update
+        continue-on-error: ${{ matrix.experimental }}
+
+  linkcheck:
+    name: Build site and check links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        with:
+          submodules: recursive
+      - name: Build site and check links
+        run: make build BUILD_CONFIGS=_config.yml,_config_stage.yml
+      - name: Install Node for Firebase install
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools@13.0.2
+      - uses: dart-lang/setup-dart@fedb1266e91cf51be2fdb382869461a434b920a3
+        with:
+          sdk: stable
+      - name: Fetch Dart dependencies
+        run: dart pub get
+      - name: Check for broken Markdown link references
+        run: dart run flutter_site check-link-references
+      - name: Check for broken internal links
+        run: dart run flutter_site check-links
+
+  firebase-validate:
+    name: Validate Firebase configuration
+    runs-on: ubuntu-latest
+    if: github.repository == 'flutter/website'
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        with:
+          submodules: recursive
+      - uses: dart-lang/setup-dart@fedb1266e91cf51be2fdb382869461a434b920a3
+        with:
+          sdk: stable
+      - name: Fetch Dart dependencies
+        run: dart pub get
+      - name: Validate the firebase.json file
+        run: dart run flutter_site verify-firebase-json

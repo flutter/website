@@ -35,7 +35,7 @@ class ShortcutsExample extends StatelessWidget {
 // #docregion LoggingShortcutManager
 class LoggingShortcutManager extends ShortcutManager {
   @override
-  KeyEventResult handleKeypress(BuildContext context, RawKeyEvent event) {
+  KeyEventResult handleKeypress(BuildContext context, KeyEvent event) {
     final KeyEventResult result = super.handleKeypress(context, event);
     if (result == KeyEventResult.handled) {
       print('Handled shortcut $event in $context');
@@ -155,6 +155,16 @@ class LoggingActionDispatcher extends ActionDispatcher {
     super.invokeAction(action, intent, context);
 
     return null;
+  }
+
+  @override
+  (bool, Object?) invokeActionIfEnabled(
+    covariant Action<Intent> action,
+    covariant Intent intent, [
+    BuildContext? context,
+  ]) {
+    print('Action invoked: $action($intent) from $context');
+    return super.invokeActionIfEnabled(action, intent, context);
   }
 }
 // #enddocregion LoggingActionDispatcher

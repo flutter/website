@@ -5,15 +5,15 @@ publish_to: none
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.2.0
+  sdk: ^3.3.0
 
 dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.6
-  http: ^1.1.0
-  google_sign_in: ^6.1.4
-  shared_preferences: ^2.2.0
+  http: ^1.2.0
+  google_sign_in: ^6.2.1
+  shared_preferences: ^2.2.2
   my_widgets:
     path: my_widgets
 

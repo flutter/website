@@ -15,7 +15,7 @@
 
     <div class="apple-silicon">{{site.alert.tip}}
       To determine whether your Mac uses an Apple silicon processor,
-      refer to [Mac computers with Apple silicon]{:target="_blank"}
+      refer to [Mac computers with Apple silicon][]{:target="_blank"}
       on apple.com
     {{site.alert.end}}</div>
 

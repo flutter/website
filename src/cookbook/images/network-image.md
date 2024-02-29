@@ -3,7 +3,7 @@ title: Display images from the internet
 description: How to display images from the internet.
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://old-dartpad-3ce3f.web.app/inject_embed.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/images/network_image"?>
@@ -31,15 +31,14 @@ Image.network(
     'https://docs.flutter.dev/assets/images/dash/dash-fainting.gif');
 ```
 
-## Placeholders and caching
+## Image fade in with placeholders
 
 The default `Image.network` constructor doesn't handle more advanced
-functionality, such as fading images in after loading, or caching images
-to the device after they're downloaded. To accomplish these tasks, see
-the following recipes:
+functionality, such as fading images in after loading.
+To accomplish this task,
+check out [Fade in images with a placeholder][].
 
 * [Fade in images with a placeholder][]
-* [Work with cached images][]
 
 ## Interactive example
 
@@ -77,4 +76,3 @@ class MyApp extends StatelessWidget {
 [Fade in images with a placeholder]: {{site.url}}/cookbook/images/fading-in-images
 [`Image`]: {{site.api}}/flutter/widgets/Image-class.html
 [`Image.network()`]: {{site.api}}/flutter/widgets/Image/Image.network.html
-[Work with cached images]: {{site.url}}/cookbook/images/cached-images

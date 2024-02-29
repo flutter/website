@@ -3,8 +3,6 @@ title: Flutter architectural overview
 description: A high-level overview of the architecture of Flutter, including the core principles and concepts that form its design.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 <?code-excerpt path-base="resources/architectural_overview/"?>
 
 This article is intended to provide a high-level overview of the architecture of
@@ -198,7 +196,7 @@ when the application state changes. This model is inspired by
 which includes a rethinking of many traditional design principles.
 
 [faq]: {{site.url}}/resources/faq#what-programming-paradigm-does-flutters-framework-use
-[fb]: {{yt-watch}}?time_continue=2&v=x7cQ3mrcKaY&feature=emb_logo
+[fb]: {{site.yt.watch}}?time_continue=2&v=x7cQ3mrcKaY&feature=emb_logo
 
 In most traditional UI frameworks, the user interface's initial state is
 described once and then separately updated by user code at runtime, in response
@@ -551,7 +549,7 @@ By contrast, Flutter minimizes those abstractions,
 bypassing the system UI widget libraries in favor
 of its own widget set. The Dart code that paints
 Flutter's visuals is compiled into native code,
-which uses Skia (or, in future, Impeller) for rendering.
+which uses Skia (or, in the future, Impeller) for rendering.
 Flutter also embeds its own copy of Skia as part of the engine,
 allowing the developer to upgrade their app to stay
 updated with the latest performance improvements
@@ -735,9 +733,9 @@ Widget build(BuildContext context) {
 }
 ```
 
-More information about the constraint and layout system, along with worked
-examples, can be found in the [Understanding
-constraints]({{site.url}}/ui/layout/constraints) topic.
+More information about the constraint and layout system,
+along with working examples, can be found in the
+[Understanding constraints]({{site.url}}/ui/layout/constraints) topic.
 
 The root of all `RenderObject`s is the `RenderView`, which represents the total
 output of the render tree. When the platform demands a new frame to be rendered
@@ -753,7 +751,7 @@ GPU to render it.
 Further details of the composition and rasterization stages of the pipeline are
 beyond the scope of this high-level article, but more information can be found
 [in this talk on the Flutter rendering
-pipeline]({{yt-watch}}?v=UUfXWzp0-DU).
+pipeline]({{site.yt.watch}}?v=UUfXWzp0-DU).
 
 ## Platform embedding
 

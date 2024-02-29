@@ -1,17 +1,17 @@
 name: native_debugging
 description: Demonstration of native code debugging
-sdk: ^3.2.0
+sdk: ^3.3.0
 
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.2.0
+  sdk: ^3.3.0
 
 dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.6
-  url_launcher: ^6.1.12
+  url_launcher: ^6.2.4
 
 dev_dependencies:
   example_utils:

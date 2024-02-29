@@ -3,9 +3,14 @@ title: Choose your first type of app
 description: Configure your system to develop Flutter on Windows.
 short-title: Windows
 target-list: [Desktop, Mobile, Web]
+js: [{url: '/assets/js/temp/windows-install-redirector.js'}]
 ---
 
 {% assign os = 'windows' -%}
+{% assign recommend = 'Mobile' %}
+{% capture rec-target -%}
+[{{recommend}}]({{site.url}}/get-started/install/{{os | downcase}}/{{recommend | downcase}})
+{%- endcapture %}
 
 <div class="card-deck mb-8">
 {% for target in page.target-list %}
@@ -15,17 +20,17 @@ target-list: [Desktop, Mobile, Web]
         <span class="d-block h1">
           {% assign icon = target | downcase -%}
           {% if icon == 'desktop' -%}
-            <span class="material-icons">desktop_windows</span>
+            <span class="material-symbols">desktop_windows</span>
           {% elsif icon == 'mobile' -%}
-            <span class="material-icons">phone_android</span>
+            <span class="material-symbols">phone_android</span>
           {% else -%}
-            <span class="material-icons">open_in_browser</span>
+            <span class="material-symbols">open_in_browser</span>
           {% endif -%}
         </span>
         <span class="text-muted text-nowrap">{{target}}</span>
         {% if icon == 'mobile' -%}
-           <br>Recommended
-        {% endif -%}
+          <div class="card-subtitle">Recommended</div>
+        {% endif %}
       </header>
     </div>
   </a>
@@ -35,6 +40,6 @@ target-list: [Desktop, Mobile, Web]
 Your choice informs which parts of Flutter tooling you configure
 to run your first Flutter app.
 You can set up additional platforms later.
-If you don’t have a preference, choose mobile.
+_If you don't have a preference, choose **{{rec-target}}**._
 
 {% include docs/china-notice.md %}

@@ -234,9 +234,9 @@ Widget build(BuildContext context) {
       width: widget.adSize.width.toDouble(),
       height: widget.adSize.height.toDouble(),
       child: _bannerAd == null
-      // Nothing to render yet.
+          // Nothing to render yet.
           ? SizedBox()
-      // The actual ad.
+          // The actual ad.
           : AdWidget(ad: _bannerAd!),
     ),
   );
@@ -361,9 +361,9 @@ class _MyBannerAdWidgetState extends State<MyBannerAdWidget> {
         width: widget.adSize.width.toDouble(),
         height: widget.adSize.height.toDouble(),
         child: _bannerAd == null
-        // Nothing to render yet.
+            // Nothing to render yet.
             ? SizedBox()
-        // The actual ad.
+            // The actual ad.
             : AdWidget(ad: _bannerAd!),
       ),
     );
@@ -409,7 +409,6 @@ class _MyBannerAdWidgetState extends State<MyBannerAdWidget> {
     // Start loading.
     bannerAd.load();
   }
-
 }
 ```
 

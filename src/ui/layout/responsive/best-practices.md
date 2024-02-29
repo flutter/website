@@ -3,14 +3,14 @@ title: Best practices for app design
 description: >
   Learn the best practices for creating >
   a responsive and an adaptive app.
-short-title: Responsive
+short-title: Best practices
 ---
 
 {% include docs/yt_shims.liquid %}
 
 The best practices on this page cover,
 in particular, large screen devices,
-but can equally apply to _any_ Flutter app.
+but can equally apply to any Flutter app.
 Flutter defines [large screens][] as tablets,
 foldables, and ChromeOS devices running Android.
 
@@ -23,7 +23,7 @@ foldables, and ChromeOS devices running Android.
   When your app supports large screens,
   it also receives the following benefits:
 
-* Optimizes your app to fill the screen improves
+* Optimizing your app to fill the screen improves
   your app's user engagement metrics.
 * Increases your app's visibility in the Play Store.
   Recent [Play Store updates][] show ratings by
@@ -75,7 +75,7 @@ where it stores the list's state in the
 `SingleChildScrollView` widget.
 
 [FYI: I'd like to mostly avoid speaking specifically
-about the Wonderous app on our website, though
+about the Wonderous app, though
 linking to example code is OK.]
 
 If the `List` widget changes its layout

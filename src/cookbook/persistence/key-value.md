@@ -4,8 +4,6 @@ description: >-
   Learn how to use the shared_preferences package to store key-value data.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 <?code-excerpt path-base="cookbook/persistence/key_value/"?>
 
 If you have a relatively small collection of key-values
@@ -27,7 +25,7 @@ This recipe uses the following steps:
   To learn more, watch this short Package of the Week video
   on the `shared_preferences` package:
 
-  <iframe class="full-width" src="{{yt-embed}}/sa_U0jffQII" title="Learn about the shared_preferences Flutter package" {{yt-set}}></iframe>
+  <iframe class="full-width" src="{{site.yt.embed}}/sa_U0jffQII" title="Learn about the shared_preferences Flutter package" {{site.yt.set}}></iframe>
 {{site.alert.end}}
 
 ## 1. Add the dependency

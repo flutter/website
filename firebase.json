@@ -105,6 +105,7 @@
       { "source": "/codelabs/layout-basics", "destination": "/ui/layout", "type": 301 },
       { "source": "/codelabs/explicit-animations", "destination": "/ui/animations/tutorial", "type": 301 },
       { "source": "/cookbook/games/google-mobile-ads", "destination": "/cookbook/plugins/google-mobile-ads", "type": 301 },
+      { "source": "/cookbook/images/cached-images", "destination": "/cookbook/images/network-image", "type": 301 },
       { "source": "/cookbook/networking/named-routes", "destination": "/cookbook/navigation/named-routes", "type": 301 },
       { "source": "/cookbook/testing/integration-test-introduction", "destination": "/cookbook/testing/integration", "type": 301 },
       { "source": "/cookbook/testing/integration-test-profiling", "destination": "/cookbook/testing/integration/profiling", "type": 301 },
@@ -123,6 +124,7 @@
       { "source": "/ios-14", "destination": "/platform-integration/ios/ios-debugging", "type": 301 },
       { "source": "/ios-project-migration", "destination": "/platform-integration/ios", "type": 301 },
       { "source": "/layout", "destination": "/ui/layout", "type": 301 },
+      { "source": "/material-3-migration", "destination": "/release/breaking-changes/material-3-migration", "type": 301 },
       { "source": "/packages-and-plugins/androidx-compatibility", "destination": "/platform-integration/android/androidx-migration", "type": 301 },
       { "source": "/packages-and-plugins/c-interop", "destination": "/platform-integration/android/c-interop", "type": 301 },
       { "source": "/packages-and-plugins/plugins-in-tests", "destination": "/testing/plugins-in-tests", "type": 301 },
@@ -204,7 +206,12 @@
       { "source": "/whats-new", "destination": "/release/whats-new", "type": 301 },
       { "source": "/testing/oem-debuggers", "destination": "/testing/native-debugging", "type": 301 },
 
+      { "source": "/adoptawidget", "destination": "https://github.com/flutter/flutter/blob/main/CONTRIBUTING.md", "type": 301 },
+      { "source": "/apprentice-giveaway", "destination": "https://www.youtube.com/playlist?list=PL4dBIh1xps-HAaadBRWQobCO_IJ4gMOG2", "type": 301 },
+      { "source": "/clock", "destination": "https://medium.com/flutter/its-time-the-flutter-clock-contest-results-dcebe2eb3957", "type": 301 },
+      { "source": "/create", "destination": "https://medium.com/flutter/the-flutter-create-winners-are-40980f2d20b3", "type": 301 },
       { "source": "/assets/images/docs/intellij/hot-reload.gif", "destination": "https://raw.githubusercontent.com/flutter/website/main/src/assets/images/docs/tools/android-studio/hot-reload.gif", "type": 301 },
+      { "source": "/brick-breaker", "destination": "https://codelabs.developers.google.com/codelabs/flutter-flame-brick-breaker", "type": 301 },
       { "source": "/catalog/samples", "destination": "https://flutter.github.io/samples/#", "type": 301 },
       { "source": "/catalog/samples/*", "destination": "https://flutter.github.io/samples/#", "type": 301 },
       { "source": "/chat", "destination": "https://github.com/flutter/flutter/wiki/Chat", "type": 302 },
@@ -305,6 +312,7 @@
       { "source": "/go/deprecations-removed-after-3-10", "destination": "https://docs.google.com/spreadsheets/d/1gs2tvYBuwycP1XAZsDbMuqP5jUa6gWH1a0ZQGrzjXvw/edit?usp=sharing", "type": 301 },
       { "source": "/go/deprecations-removed-after-3-13", "destination": "https://docs.google.com/spreadsheets/d/1zzyBRdIkqiEcpv_njEQA7pyG7X8PcNhvXFYrEAB8P78/edit?usp=sharing", "type": 301 },
       { "source": "/go/deprecations-removed-after-3-16", "destination": "https://docs.google.com/spreadsheets/d/1ei3UmfvhmGGuwAGgLaQo1k_pgdu9Mu06tHPuSaS4TI4/edit?usp=sharing", "type": 301 },
+      { "source": "/go/deprecations-removed-after-3-19", "destination": "https://docs.google.com/spreadsheets/d/1x_UJ7GiB61ByBo6cPLm_JfLrgFqAfkQo7pPK_lHvsUo/edit?usp=sharing", "type": 301 },
       { "source": "/go/desktop-multi-window-support", "destination": "https://docs.google.com/document/d/11_4wntz_9IJTQOo_Qhp7QF4RfpIMTfVygtOTxQ4OGHY/edit", "type": 301 },
       { "source": "/go/desktop-multi-view-runner-apis", "destination": "https://docs.google.com/document/d/1WkJuzifgJXyceaSoCCu8qTETYmYBOYKoz7Qaxtsore4/edit?usp=sharing", "type": 301 },
       { "source": "/go/desktop-release-conductor", "destination": "https://docs.google.com/document/d/15AwPXNd5FvItAqM0wa2VK0tRrqtRTgM8vR5LQeT2Mag/edit?usp=sharing&resourcekey=0-yZ2FAN-wEKwKT-ymdisetA", "type": 301 },
@@ -437,8 +445,9 @@
       { "source": "/go/issue-triage-changes", "destination": "https://docs.google.com/document/d/1KJVPMxzfFaL_gIB6Z3oNRTBKA-NP25YpM8xi3xUKbBY", "type": 301 },
       { "source": "/go/job", "destination": "https://forms.gle/omPUhztq27KnH1LG8", "type": 301 },
       { "source": "/go/key-based-mouse-tracker-annotation", "destination": "https://docs.google.com/document/d/18DCRSX4-KjJIrnru_Cv9cJjzQmUWM95r8n6uvbS45-E/edit", "type": 301 },
-      { "source": "/go/leak-tracker-high-level-design", "destination": "https://docs.google.com/document/d/158JfU9JKRqfhRPF5C0ceTuOAIWPber_MYftRiuTzlVE/edit?resourcekey=0-SFa6mZ69muVqA5eXi30wIQ", "type": 301 },
       { "source": "/go/layout-builder-optimization", "destination": "https://docs.google.com/document/d/1H8Z48vZAemV0Kw0It65JMoGhqVlDLQErkKZN8-r9pdU", "type": 301 },
+      { "source": "/go/leak-tracker-high-level-design", "destination": "https://docs.google.com/document/d/158JfU9JKRqfhRPF5C0ceTuOAIWPber_MYftRiuTzlVE/edit?resourcekey=0-SFa6mZ69muVqA5eXi30wIQ", "type": 301 },
+      { "source": "/go/legacy-material", "destination": "https://docs.google.com/document/d/1REsg982YG2MlspsMOiNLpu8OIWkyehRRQUXHMU3tAAM/edit?usp=sharing", "type": 301 },      
       { "source": "/go/lifecycle-debug-flag", "destination": "https://docs.google.com/document/d/1WowGJhAMzYvwoyYLOzwjj1Jb0lwIjUpNfqvKjFWQZIM/edit", "type": 301 },
       { "source": "/go/link-widget-2", "destination": "https://docs.google.com/document/d/1-BJ4Rp6-glA9S__o97xDiNdd_lbuj7y6e394VE-5y4U", "type": 301 },
       { "source": "/go/link-widget", "destination": "https://docs.google.com/document/d/1HMadUQ2g7BRoCYmUvUYPAALU520fFv9PoPDkoz0wjAc", "type": 301 },
@@ -616,8 +625,22 @@
       {
         "source": "**",
         "headers": [
-          { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},
-          { "key": "X-Content-Type-Options", "value": "nosniff"}
+          {
+            "key": "Referrer-Policy",
+            "value": "strict-origin-when-cross-origin"
+          },
+          {
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
+          },
+          {
+            "key": "Content-Security-Policy-Report-Only",
+            "value": "default-src 'self' https:; font-src 'self' data: https://fonts.googleapis.com/ https://fonts.gstatic.com/; img-src 'self' https: data:; manifest-src 'none'; object-src 'none'; script-src 'self' 'unsafe-inline' 'sha256-TLFf6uphGKcmsQh139FXW+zI8+m+KYC/3ai/rTu4NO0=' 'sha256-BOF631Nskv2A6eetluVBrNcDbYRYd/+b3wU9NBtGKGQ=' 'sha256-ye5TuohbcxBNy6HcVWdwfRHAUaHjKdBTXjRsm92zCdo=' 'sha256-GdPtwIl3lB8GPexRo/QmApVAGQ/y1zRYuxJPZTpT6TQ=' 'sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==' 'sha512-ubuT8Z88WxezgSqf3RLuNi5lmjstiJcyezx34yIU2gAHonIi27Na7atqzUZCOoY4CExaoFumzOsFQ2Ch+I/HCw==' 'sha512-7rusk8kGPFynZWu26OKbTeI+QPoYchtxsmPeBqkHIEXJxeun4yJ4ISYe7C6sz9wdxeE1Gk3VxsIWgCZTc+vX3g==' 'sha512-7O5pXpc0oCRrxk8RUfDYFgn0nO1t+jLuIOQdOMRp4APB7uZ4vSjspzp5y6YDtDs4VzUSTbWzBFZ/LKJhnyFOKw==' 'sha512-nlp9/l96/EpjYBx7EP7pGASVXNe80hGhYAUrjeXnu/fyF5Py0/RXav4BBNs7n5Hx1WFhOEOWSAVjGeC3oKxDVQ=='; style-src 'self' https://unpkg.com/ https://pub.dartlang.org/static/ 'unsafe-inline' https://fonts.googleapis.com/ https://gstatic.com https://www.gstatic.com/ https://tagmanager.google.com https://accounts.google.com/gsi/style; frame-src 'self' https://youtube.com https://*.youtube.com https://dartpad.dev https://*.dartpad.dev; media-src 'self' https://youtube.com https://*.youtube.com; require-trusted-types-for 'script'"
+          },
+          {
+            "key": "X-Frame-Options",
+            "value": "'SAMEORIGIN' always;"
+          }
         ]
       }
     ]

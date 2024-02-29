@@ -13,10 +13,10 @@ of an application running on a real device. These tasks are performed
 with *integration tests*.
 
 Integration tests are written using the [integration_test][] package, provided
-by the SDK. 
+by the SDK.
 
 In this recipe, learn how to test a counter app. It demonstrates
-how to setup integration tests, how to verify specific text is displayed
+how to set up integration tests, how to verify specific text is displayed
 by the app, how to tap specific widgets, and how to run integration tests.
 
 This recipe uses the following steps:
@@ -109,7 +109,7 @@ Next, use the `integration_test` and `flutter_test` packages
 to write integration tests. Add these dependencies to the `dev_dependencies`
 section of the app's `pubspec.yaml` file.
 
-```console
+```terminal
 $ flutter pub add 'dev:flutter_test:{"sdk":"flutter"}'  'dev:integration_test:{"sdk":"flutter"}'
 "flutter_test" is already in "dev_dependencies". Will try to update the constraint.
 Resolving dependencies... 
@@ -198,13 +198,13 @@ To test on a real iOS / Android device, first connect the device and run the
 following command from the root of the project:
 
 ```terminal
-flutter test integration_test/app_test.dart
+$ flutter test integration_test/app_test.dart
 ```
 
 Or, you can specify the directory to run all integration tests:
 
 ```terminal
-flutter test integration_test
+$ flutter test integration_test
 ```
  
 This command runs the app and integration tests on the target device. For more
@@ -214,7 +214,7 @@ information, see the [Integration testing][] page.
 
 #### 5b. Web
 
-<!--
+{% comment %}
 TODO(ryjohn): Add back after other WebDriver versions are supported:
 https://github.com/flutter/flutter/issues/90158
 
@@ -227,7 +227,7 @@ and download the corresponding web driver:
   * Safari: Safari can only be tested on a Mac;
     the SafariDriver is already installed on Mac machines.
   * Edge [Download EdgeDriver][]
--->
+{% endcomment -%}
 
 To get started testing in a web browser, [Download ChromeDriver][].
 
@@ -244,13 +244,13 @@ Future<void> main() => integrationDriver();
 Launch `chromedriver` as follows: 
 
 ```terminal
-chromedriver --port=4444
+$ chromedriver --port=4444
 ```
 
 From the root of the project, run the following command:
 
 ```terminal
-flutter drive \
+$ flutter drive \
   --driver=test_driver/integration_test.dart \
   --target=integration_test/app_test.dart \
   -d chrome
@@ -266,7 +266,7 @@ flutter drive \
   -d web-server
 ```
 
-[Download ChromeDriver]: https://chromedriver.chromium.org/downloads
+[Download ChromeDriver]: https://googlechromelabs.github.io/chrome-for-testing/
 [Download EdgeDriver]: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
 [Download GeckoDriver]: {{site.github}}/mozilla/geckodriver/releases
 [flutter_driver]: {{site.api}}/flutter/flutter_driver/flutter_driver-library.html

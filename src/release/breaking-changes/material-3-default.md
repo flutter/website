@@ -15,7 +15,7 @@ As of this release, [`ThemeData.useMaterial3`][] is set `true` by default.
 ## Background
 
 Flutter's Material widgets now fully support Material 3 and,
-in Flutter 3.16, Material 3 is now the default style.
+as of Flutter 3.16, Material 3 is now the default style.
 
 The appearance of Material 3 components are primarily determined by
 the values for [`ThemeData.colorScheme`][] and [`ThemeData.textTheme`][].

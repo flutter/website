@@ -18,7 +18,7 @@ publish_to: none # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.2.0
+  sdk: ^3.3.0
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -29,12 +29,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  css_colors: ^1.1.1
-  url_launcher: ^6.1.12
+  css_colors: ^1.1.4
+  url_launcher: ^6.2.4
   battery: ^2.0.3
   flutter_test:
     sdk: flutter
-  path: ^1.8.3
+  path: ^1.9.0
   integration_test:
     sdk: flutter
 

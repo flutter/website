@@ -3,8 +3,6 @@ title: Use a custom font
 description: How to use custom fonts.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 <?code-excerpt path-base="cookbook/design/fonts/"?>
 
 {{site.alert.secondary}}
@@ -81,7 +79,7 @@ Flutter does not support fonts in the Web Open Font Format,
 Few sources agree on what a font file type is or which uses less space.
 The key difference between font file types involves how the format 
 encodes the glyphs in the file.
-Most TrueType and OpenType font files have similiar capabilities as they
+Most TrueType and OpenType font files have similar capabilities as they
 borrowed from each other as the formats and fonts improved over time.
 
 Which font you should use depends on the following considerations.
@@ -93,7 +91,7 @@ Which font you should use depends on the following considerations.
 Research what options a given font offers,
 like more than one weight or style per font file,
 [variable font capability][variable-fonts],
-the availabilty of multiple font files for a multiple font weights,
+the availability of multiple font files for a multiple font weights,
 or more than one width per font.
 
 Choose the typeface or font family that meets the design needs of your app.
@@ -102,7 +100,7 @@ Choose the typeface or font family that meets the design needs of your app.
   To learn how to get direct access to over 1,000 open-sourced font families,
   check out the [google_fonts][] package.
 
-  <iframe class="full-width" src="{{yt-embed}}/8Vzv2CdbEY0" title="Learn about the google_fonts Flutter Package" {{yt-set}}></iframe>
+  <iframe class="full-width" src="{{site.yt.embed}}/8Vzv2CdbEY0" title="Learn about the google_fonts Flutter Package" {{site.yt.set}}></iframe>
 
   To learn about another approach to using custom fonts that allows you to
   re-use one font over multiple projects,
@@ -182,12 +180,12 @@ To add font files to your Flutter app, complete the following steps.
          fonts:
            - asset: fonts/RobotoMono-Regular.ttf
            - asset: fonts/RobotoMono-Bold.ttf
-            weight: 700
+             weight: 700
    ```
 
 This `pubspec.yaml` file defines the italic style for the
 `Raleway` font family as the `Raleway-Italic.ttf` font file.
-When you you set `style: TextStyle(fontStyle: FontStyle.italic)`,
+When you set `style: TextStyle(fontStyle: FontStyle.italic)`,
 Flutter swaps `Raleway-Regular` with `Raleway-Italic`.
 
 The `family` value sets the name of the typeface.

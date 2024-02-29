@@ -6,13 +6,12 @@ publish_to: none
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.2.0
+  sdk: ^3.3.0
 
 dependencies:
   flutter:
     sdk: flutter
-  pigeon: ^16.0.0
-
+  pigeon: ^17.0.0
   cupertino_icons: ^1.0.6
 
 dev_dependencies:

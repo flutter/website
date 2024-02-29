@@ -3,8 +3,6 @@ title: Deep linking
 description: Navigate to routes when the app receives a new URL.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 Flutter supports deep linking on iOS, Android, and web browsers.
 Opening a URL displays that screen in your app. With the following
 steps, you can launch and display routes by using named routes
@@ -29,7 +27,7 @@ the pattern: `/#/path/to/app/screen`, but this can be changed by
 
 If you are a visual learner, check out the following video:
 
-<iframe width="560" height="315" src="{{yt-embed}}/KNAb2XL7k2g" title="Learn how to create and link to routes in your Flutter app" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/KNAb2XL7k2g" title="Learn how to create and link to routes in your Flutter app" {{site.yt.set}}></iframe>
 **Deep linking in Flutter**
 
 ## Get started
@@ -58,7 +56,7 @@ To get started, see our cookbooks for Android and iOS:
 If you have written a plugin to handle deep links, as described in
 [Deep Links and Flutter applications][plugin-linking]
 (a free article on Medium),
-it will continue to work until you opt-in to this behavior by adding
+it will continue to work until you opt in to this behavior by adding
 `FlutterDeepLinkingEnabled` to `Info.plist` or
 `flutter_deeplinking_enabled` to `AndroidManifest.xml`, respectively.
 

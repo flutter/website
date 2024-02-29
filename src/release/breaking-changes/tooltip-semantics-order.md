@@ -7,8 +7,8 @@ description: >-
 
 ## Summary
 
-During accessibility focus traversal, `Tooltip.message` is visited immediately 
-after `Tooltip.child`.
+During accessibility focus traversal, `Tooltip.message` is
+visited immediately after `Tooltip.child`.
 
 ## Background
 
@@ -25,9 +25,10 @@ As a result, `Tooltip.message` was not immediately after
 ## Migration guide
 
 This change moved the tooltip message in the semantics tree.
-You may see accessibility test failures if your tests expect a tooltip message to
-appear in a specific location in the semantics tree, when it is visible.
-Update your failing accessibility tests to adopt the new tooltip semantics order.
+You might see accessibility test failures if
+your tests expect a tooltip message to appear in a
+specific location in the semantics tree, when it is visible.
+Update any failing accessibility tests to adopt the new tooltip semantics order.
 
 For example, if you constructed the following widget tree in your test:
 
@@ -57,8 +58,8 @@ Directionality(
 );
 ```
 
-When the tooltip message is visible, the corresponding semantics tree before this 
-change should look like this:
+When the tooltip message is visible, the corresponding semantics tree before
+this change should look like this:
 
 ```dart
 SemanticsNode#0
@@ -90,8 +91,9 @@ SemanticsNode#0
      textDirection: ltr
 ```
 
-After this change, the same widget tree generates a slightly different semantics
-tree, as shown below. Node #6 becomes a child of node #3, instead of node #0.
+After this change, the same widget tree generates a
+slightly different semantics tree, as shown below.
+Node #6 becomes a child of node #3, instead of node #0.
 
 ```dart
 SemanticsNode#0
@@ -126,7 +128,7 @@ SemanticsNode#0
 ## Timeline
 
 Landed in version: 3.16.0-11.0.pre<br>
-In stable release: not yet
+In stable release: 3.19.0
 
 ## References
 

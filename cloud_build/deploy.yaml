@@ -1,0 +1,19 @@
+steps:
+  - name: gcr.io/cloud-builders/git
+    args: ['submodule', 'update', '--init', '--recursive']
+  - name: gcr.io/cloud-builders/docker
+    entrypoint: '/bin/bash'
+    args:
+      - '-c'
+      - |-
+        set -e
+        echo "Building the website using a makefile..."
+        make build
+  - name: gcr.io/flutter-dev-230821/firebase-ghcli
+    entrypoint: '/bin/bash'
+    args:
+      - '-c'
+      - |-
+        firebase deploy --project=flutter-docs-prod --only=hosting
+options:
+  logging: CLOUD_LOGGING_ONLY

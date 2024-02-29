@@ -3,8 +3,6 @@ title: Building adaptive apps
 description: Some considerations and instructions on how to build adaptive apps to run on a variety of platforms.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 <?code-excerpt path-base="ui/layout/adaptive_app_demos"?>
 
 ## Overview
@@ -25,7 +23,7 @@ apps, but they fall into three major categories:
 * [Input](#input)
 * [Idioms and norms](#idioms-and-norms)
 
-<iframe style="max-width: 100%" width="560" height="315" src="{{yt-embed}}/RCdeSKVt7LI" title="Learn how to build platform-adaptive Flutter apps" {{yt-set}}></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{site.yt.embed}}/RCdeSKVt7LI" title="Learn how to build platform-adaptive Flutter apps" {{site.yt.set}}></iframe>
 
 This page covers all three categories in detail
 using code snippets to illustrate the concepts.
@@ -36,7 +34,10 @@ were built using the concepts described here.
 [Flokk]: {{site.github}}/gskinnerTeam/flokk
 [Folio]: {{site.github}}/gskinnerTeam/flutter-folio
 
-Original demo code for adaptive app development techniques from [flutter-adaptive-demo](https://github.com/gskinnerTeam/flutter-adaptive-demo).
+Original demo code for adaptive app development
+techniques from the [flutter-adaptive-demo][].
+
+[flutter-adaptive-demo]: {{site.github}}/gskinnerTeam/flutter-adaptive-demo
 
 ## Building adaptive layouts
 
@@ -56,61 +57,73 @@ Some of Flutter's most useful layout widgets include:
 
 **Single child**
 
-* [`Align`][]&mdash;Aligns a child within itself.
+* [`Align`]
+: Aligns a child within itself.
   It takes a double value between -1 and 1,
   for both the vertical and horizontal alignment.
 
-* [`AspectRatio`][]&mdash;Attempts to size the
+* [`AspectRatio`][]
+: Attempts to size the
   child to a specific aspect ratio.
 
-* [`ConstrainedBox`][]&mdash;Imposes size constraints on its child,
+* [`ConstrainedBox`][]
+: Imposes size constraints on its child,
   offering control over the minimum or maximum size.
 
-* [`CustomSingleChildLayout`][]&mdash;Uses a delegate function
-  to position a single child. The delegate can determine
+* [`CustomSingleChildLayout`][]
+: Uses a delegate function to position a single child.
+  The delegate can determine
   the layout constraints and positioning for the child.
 
-* [`Expanded`][] and [`Flexible`][]&mdash;Allows a child of a
-  `Row` or `Column` to shrink or grow to fill any available space.
+* [`Expanded`][] and [`Flexible`][]
+: Allows a child of a `Row` or `Column`
+  to shrink or grow to fill any available space.
 
-* [`FractionallySizedBox`][]&mdash;Sizes its child to a fraction
-  of the available space.
+* [`FractionallySizedBox`][]
+: Sizes its child to a fraction of the available space.
 
-* [`LayoutBuilder`][]&mdash;Builds a widget that can reflow
+* [`LayoutBuilder`][]
+: Builds a widget that can reflow
   itself based on its parents size.
 
-* [`SingleChildScrollView`][]&mdash;Adds scrolling to a single child.
+* [`SingleChildScrollView`][]
+: Adds scrolling to a single child.
   Often used with a `Row` or `Column`.
 
 **Multichild**
 
-* [`Column`][], [`Row`][], and [`Flex`][]&mdash;Lays out children
-  in a single horizontal or vertical run.
+* [`Column`][], [`Row`][], and [`Flex`][]
+: Lays out children in a single horizontal or vertical run.
   Both `Column` and `Row` extend the `Flex` widget.
 
-* [`CustomMultiChildLayout`][]&mdash;Uses a delegate function to
+* [`CustomMultiChildLayout`][]
+: Uses a delegate function to
   position multiple children during the layout phase.
 
-* [`Flow`][]&mdash;Similar to `CustomMultiChildLayout`,
+* [`Flow`][]
+: Similar to `CustomMultiChildLayout`,
   but more efficient because it's performed during the
   paint phase rather than the layout phase.
 
-* [`ListView`][], [`GridView`][], and
-  [`CustomScrollView`][]&mdash;Provides scrollable
+* [`ListView`][], [`GridView`][], and [`CustomScrollView`][]
+: Provides scrollable
   lists of children.
 
-* [`Stack`][]&mdash;Layers and positions multiple children
+* [`Stack`][]
+: Layers and positions multiple children
   relative to the edges of the `Stack`.
   Functions similarly to position-fixed in CSS.
 
-* [`Table`][]&mdash;Uses a classic table layout algorithm for
+* [`Table`][]
+: Uses a classic table layout algorithm for
   its children, combining multiple rows and columns.
 
-* [`Wrap`][]&mdash;Displays its children in multiple horizontal
+* [`Wrap`][]
+: Displays its children in multiple horizontal
   or vertical runs.
 
-To see more available widgets and example code, see
-[Layout widgets][].
+To see more available widgets and example code,
+check out [Layout widgets][].
 
 [`Align`]: {{site.api}}/flutter/widgets/Align-class.html
 [`AspectRatio`]: {{site.api}}/flutter/widgets/AspectRatio-class.html
@@ -627,16 +640,16 @@ Keyboard accelerators can be accomplished in a few ways in Flutter
 depending on your goals.
 
 If you have a single widget like a `TextField` or a `Button` that
-already has a focus node, you can wrap it in a
-[`RawKeyboardListener`][] and listen for keyboard events:
+already has a focus node, you can wrap it in a [`KeyboardListener`][]
+or a [`Focus`][] widget and listen for keyboard events:
 
-<?code-excerpt "lib/pages/focus_examples_page.dart (FocusRawKeyboardListener)"?>
+<?code-excerpt "lib/pages/focus_examples_page.dart (focus-keyboard-listener)"?>
 ```dart
   @override
   Widget build(BuildContext context) {
     return Focus(
-      onKey: (node, event) {
-        if (event is RawKeyDownEvent) {
+      onKeyEvent: (node, event) {
+        if (event is KeyDownEvent) {
           print(event.logicalKey);
         }
         return KeyEventResult.ignored;
@@ -696,32 +709,34 @@ The final option is a global listener. This listener
 can be used for always-on, app-wide shortcuts or for
 panels that can accept shortcuts whenever they're visible
 (regardless of their focus state). Adding global listeners
-is easy with [`RawKeyboard`][]:
+is easy with [`HardwareKeyboard`][]:
 
-<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (RawKeyboard)"?>
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (hardware-keyboard)"?>
 ```dart
 @override
 void initState() {
   super.initState();
-  RawKeyboard.instance.addListener(_handleKey);
+  HardwareKeyboard.instance.addHandler(_handleKey);
 }
 
 @override
 void dispose() {
-  RawKeyboard.instance.removeListener(_handleKey);
+  HardwareKeyboard.instance.removeHandler(_handleKey);
   super.dispose();
 }
 ```
 
 To check key combinations with the global listener,
-you can use the `RawKeyboard.instance.keysPressed` map.
+you can use the `HardwareKeyboard.instance.logicalKeysPressed` set.
 For example, a method like the following can check whether any
 of the provided keys are being held down:
 
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (KeysPressed)"?>
 ```dart
 static bool isKeyDown(Set<LogicalKeyboardKey> keys) {
-  return keys.intersection(RawKeyboard.instance.keysPressed).isNotEmpty;
+  return keys
+      .intersection(HardwareKeyboard.instance.logicalKeysPressed)
+      .isNotEmpty;
 }
 ```
 
@@ -730,16 +745,18 @@ you can fire an action when `Shift+N` is pressed:
 
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (HandleKey)"?>
 ```dart
-void _handleKey(event) {
-  if (event is RawKeyDownEvent) {
-    bool isShiftDown = isKeyDown({
-      LogicalKeyboardKey.shiftLeft,
-      LogicalKeyboardKey.shiftRight,
-    });
-    if (isShiftDown && event.logicalKey == LogicalKeyboardKey.keyN) {
-      _createNewItem();
-    }
+bool _handleKey(KeyEvent event) {
+  bool isShiftDown = isKeyDown({
+    LogicalKeyboardKey.shiftLeft,
+    LogicalKeyboardKey.shiftRight,
+  });
+
+  if (isShiftDown && event.logicalKey == LogicalKeyboardKey.keyN) {
+    _createNewItem();
+    return true;
   }
+
+  return false;
 }
 ```
 
@@ -747,14 +764,14 @@ One note of caution when using the static listener,
 is that you often need to disable it when the user
 is typing in a field or when the widget it's associated with
 is hidden from view.
-Unlike with `Shortcuts` or `RawKeyboardListener`,
+Unlike with `Shortcuts` or `KeyboardListener`,
 this is your responsibility to manage. This can be especially
 important when you're binding a Delete/Backspace accelerator for
 `Delete`, but then have child `TextFields` that the user
 might be typing in.
 
-[`RawKeyboard`]: {{site.api}}/flutter/services/RawKeyboard-class.html
-[`RawKeyboardListener`]: {{site.api}}/flutter/widgets/RawKeyboardListener-class.html
+[`HardwareKeyboard`]: {{site.api}}/flutter/services/HardwareKeyboard-class.html
+[`KeyboardListener`]: {{site.api}}/flutter/widgets/KeyboardListener-class.html
 
 ### Mouse enter, exit, and hover
 
@@ -811,17 +828,19 @@ users are accustomed to more customized experiences,
 but reflecting these platform standards can still provide
 significant benefits:
 
-* **Reduce cognitive load**&mdash;By matching the user's
-  existing mental model, accomplishing tasks becomes intuitive,
+* **Reduce cognitive load**
+: By matching the user's existing mental model,
+  accomplishing tasks becomes intuitive,
   which requires less thinking,
   boosts productivity, and reduces frustrations.
 
-* **Build trust**&mdash;Users can become wary or suspicious
+* **Build trust**
+: Users can become wary or suspicious
   when applications don't adhere to their expectations.
   Conversely, a UI that feels familiar can build user trust
   and can help improve the perception of quality.
   This often has the added benefit of better app store
-  ratings&mdash;something we can all appreciate!
+  ratings—something we can all appreciate!
 
 ### Consider expected behavior on each platform
 
@@ -1026,18 +1045,21 @@ manifest as a widget shown in an overlay,
 but with differences in how they're triggered, dismissed,
 and positioned:
 
-* **Context menu**&mdash;Typically triggered by a right-click,
+* **Context menu**
+: Typically triggered by a right-click,
   a context menu is positioned close to the mouse,
   and is dismissed by clicking anywhere,
   selecting an option from the menu, or clicking outside it.
 
-* **Tooltip**&mdash;Typically triggered by hovering for
+* **Tooltip**
+: Typically triggered by hovering for
   200-400ms over an interactive element,
   a tooltip is usually anchored to a widget
   (as opposed to the mouse position) and is dismissed
   when the mouse cursor leaves that widget.
 
-* **Popup panel (also known as flyout)**&mdash;Similar to a tooltip,
+* **Popup panel (also known as flyout)**
+: Similar to a tooltip,
   a popup panel is usually anchored to a widget.
   The main difference is that panels are most often
   shown on a tap event, and they usually don't hide

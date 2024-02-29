@@ -15,25 +15,35 @@ to the device's screen size and orientation.
 
 There are at least two ways you can create a
 UI that responds to a change in screen size.
+Each approach has pros and cons.
+
+* `MediaQuery.of`
+  * Returns screen size used by entire app.
+  * Updates layout when user completes a size
+    or orientation change.
+* `LayoutBuilder` 
+  * Returns screen size used by a particular widget.
+  * Updates layout in real time as the user
+    changes size or orientation.
 
 For either approach, you need to determine
 the sizes (called _breakpoints_) where you
-want your UI change its display.
-The following examples use a pixel width
-1201 or more for an ultra wide display,
+want your UI change its layout.
+The following examples use a pixel width of
+1201 or more to indicate an ultra wide display,
 601 to 1200 pixels for a wide display,
 301 to 600 pixels for a narrow display,
 and a width of 300 pixels or less for an
 ultra narrow display.
 
-The calling function then decides how to handle
-the UI. Using the screen size examples above,
+The calling function decides how to handle the UI.
+Using the screen size examples above,
 if the screen is 1201 pixels or more,
 return a [`Scaffold`][] object with a row
 that has a list on the left (a side nav).
 If the screen is less than 300 pixels wide,
 return a [`Scaffold`][] object with a drawer
-containing that list (assume bottom navigation).
+containing that list (assumes bottom navigation).
 
 You can also adjust your display based on the
 device's height, the aspect ratio,
@@ -45,9 +55,10 @@ You can determine the current screen size by using the
 [`MediaQuery.of()`][] method in your widget's build function.
 Keep in mind that this method returns the current size
 and orientation of the app's entire screen and
-not just a single widget..
+not just a single widget.
 
-The following example code uses `MediaQuery.of`:
+The following example code uses `MediaQuery.of`
+to calculate the breakpoints:
 
 ```dart
 final screenWidth = MediaQuery.of(context).size.width;
@@ -63,12 +74,15 @@ if (screenWidth > 1200) {
 }
 ```
 
-If you use this approach, your `build` function
-automatically runs when the user is done changing
-the screen's size. However, this isn't a
+With this approach the `build` function
+automatically runs when the user is _done_
+resizing the screen. However, this isn't a
 particularly reactive approach. What you
 likely want to see is the UI changing in
-real time as the user resizes the screen.
+real time as the user resizes the window.
+
+[`MediaQuery`]: {{site.api}}/flutter/widgets/MediaQuery-class.html
+[`MediaQuery.of()`]: {{site.api}}/flutter/widgets/MediaQuery/of.html
 
 ### LayoutBuilder
 
@@ -84,14 +98,16 @@ the user rotates the phone or puts your app
 app into a tile UI on Android), Flutter calls
 the `LayoutBuilder`'s `build` function.
 
-The following example code shows how you might use a
-`LayoutBuilder`:
+The following code, similar to the code for
+`MediaQuery`, shows how the layout
+builder might calculate the breakspoints for
+the device's size:
 
 ```dart
 LayoutBuilder()
   ...
   child: LayoutBuilder(
-    bulider: (context, constraints) {
+    builder: (context, constraints) {
       if (constraints.maxWidth > 1200) {
         return UltraWideLayout();
       } else if (constraints.maxWidth > 600) {
@@ -102,10 +118,25 @@ LayoutBuilder()
     ...
 ```
 
-The `LayoutBuilder` re-runs its `build` method
-whenever the constraints passed to it from
-its parent changes, giving your app a chance
-to update the layout in real time.
+You can also adjust your display based on the
+device's height, the aspect ratio,
+or some other property.
+When the constraints change (for example,
+the user rotates the phone, resizes the window,
+or puts your app into a tile UI on Android),
+the `LayoutBuilder` re-runs its build method,
+updating the layout in real time.
+
+The `LayoutBuilder`'s `build` method then
+decides how to handle this change.
+For example, if the layout is `UltraWideLayout`
+or `WideLayout`, return a sidenav—such as
+a [`Scaffold`][] object with a row that has
+a list on the left. If the layout is
+`NarrowWide`, return a navigation drawer—or
+a drawer containing that list.
+
+[PENDING: Needs example code]
 
 ## Respond to large screen devices
 
@@ -135,8 +166,9 @@ it also receives the following benefits:
 Learn more in the following 5-minute video:
 
 <iframe width="560" height="315" src="{{yt-embed}}/HD5gYnspYzk?si=dsA37QUjHBb2Zh_-" title="Learn the difference between adaptive and responsive Flutter apps" {{yt-set}}></iframe>
-[Adaptive vs Responsive][]
+[Adaptive vs responsive][]
 
+[Adaptive vs responsive]: {{site.youtube-site}}/HD5gYnspYzk?si=5ItDD7UjXvGCRM0K
 
 ### Other resources
 
@@ -165,9 +197,6 @@ including contributions from the Flutter community:
 [`LayoutBuilder`]: {{site.api}}/flutter/widgets/LayoutBuilder-class.html
 [Making Cross-platform Flutter Landing Page Responsive]: {{site.medium}}/flutter-community/making-cross-platform-flutter-landing-page-responsive-7fffe0655970
 [`maxWidth`]: {{site.api}}/flutter/rendering/BoxConstraints/maxWidth.html
-[`MediaQuery`]: {{site.api}}/flutter/widgets/MediaQuery-class.html
-[`MediaQuery.of()`]: {{site.api}}/flutter/widgets/MediaQuery/of.html
-[`MediaQueryData`]: {{site.api}}/flutter/widgets/MediaQueryData-class.html
 [`OrientationBuilder`]: {{site.api}}/flutter/widgets/OrientationBuilder-class.html
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
 
@@ -194,25 +223,22 @@ in collaboration with gskinner and the Flutter team:
 The [Folio source code][] is also available on GitHub.
 Learn more on the [gskinner blog][].
 
-### Other resources
-
-You can learn more about creating platform adaptive apps
-in the following resources:
-
-* [Platform-specific behaviors and adaptations][], a page on this site.
-* [Designing truly adaptive user interfaces][] a blog post and video by
-  Aloïs Deniel, presented at the Flutter Vikings 2020 conference.
-* The [Flutter gallery app][] ([repo][]) has been written as an
-  adaptive app.
-
 [Adaptive layouts]: {{yt-watch}}?v=n6Awpg1MO6M&t=694s
 [Adaptive layouts, part 2]: {{yt-watch}}?v=eikOZzfc0l4&t=11s
-[Adaptive vs Responsive]: {{site.youtube-site}}/HD5gYnspYzk?si=5ItDD7UjXvGCRM0K
 [Building adaptive apps]: {{site.url}}/ui/layout/responsive/building-adaptive-apps
-
-[Designing truly adaptive user interfaces]: https://www.aloisdeniel.com/blog/designing-truly-adaptative-user-interfaces
-[Flutter gallery app]: {{site.gallery}}
 [Folio source code]: {{site.github}}/gskinnerTeam/flutter-folio
 [gskinner blog]: https://blog.gskinner.com/
+
+### Other resources
+
+You can learn more about creating platform-adaptive apps
+in the following resources:
+
+* [Platform-specific behaviors and adaptations][],
+  a page on this site.
+* [Designing truly adaptive user interfaces][],
+  presented at the Flutter Vikings 2020 conference
+  by Aloïs Deniel,
+
+[Designing truly adaptive user interfaces]: https://www.aloisdeniel.com/blog/designing-truly-adaptative-user-interfaces
 [Platform-specific behaviors and adaptations]: {{site.url}}/platform-integration/platform-adaptations
-[repo]: {{site.repo.gallery}}
