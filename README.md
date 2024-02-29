@@ -16,17 +16,8 @@
 * [Issues, bugs, and requests](#issues-bugs-and-requests)
 * [Before you submit a PR](#before-you-submit-a-pr)
 * [Before you build this site](#before-you-build-this-site)
-  - [1. Get the prerequisites](#1-get-the-prerequisites)
-  - [2. Clone this repo _and_ its submodules][]
-* [Setting up your local environment and serving changes][]
 * [Creating and/or editing DartPad example code](#creating-andor-editing-dartpad-example-code)
-  - [DartPad example code in GitHub gists](#dartpad-example-code-in-github-gists)
-  - [DartPad example code in this repo](#dartpad-example-code-in-this-repo)
-* [Deploying to a staging site](#deploying-to-a-staging-site)
 * [Writing for flutter.dev](#writing-for-flutterdev)
-
-[2. Clone this repo _and_ its submodules]: #2-clone-this-repo-and-its-submodules
-[Setting up your local environment and serving changes]: #setting-up-your-local-environment-and-serving-changes
 
 ## Issues, bugs, and requests
 
@@ -76,26 +67,14 @@ But here are a few notes to keep in mind before you submit a PR:
 For changes beyond simple text and CSS tweaks, 
 we recommend building the site.
 
-### 1. Get the prerequisites
+> [!WARNING]  
+> Support for building the site locally has temporarily been removed.
+> This README will be updated with the new building details soon.
+> 
+> Until then, please rely on automatic staging in pull requests.
+> Thanks for your patience!
 
-Install the following tools, if you don't have them already:
-
-- **bash**, the Bourne shell<br> 
-  These instructions assume you're using `bash`, 
-  and setup might not work if you use another shell.
-- **GNU Make**<br>
-  On Windows the easiest way to install Make is `choco install make`. 
-  Other options include using a
-  [subsystem](https://docs.microsoft.com/en-us/windows/wsl/install-win10). 
-- **Docker**. 
-  We use Docker for local dev, tests, and building the site. 
-  Install it from https://docs.docker.com/get-docker/.
-- **Firebase CLI**, for hosting the site locally. 
-  One way to get this is to run `npm install -g firebase-tools`. 
-  For full setup details, read the
-  [Firebase CLI documentation](https://firebase.google.com/docs/cli).
-
-### 2. Clone this repo _and_ its submodules
+### Clone this repo _and_ its submodules
 
 > **Note:** This repo has git _submodules_, 
 > which affects how you clone it. 
@@ -114,6 +93,7 @@ _choose one_ of the following submodule-cloning techniques:
 
 - Clone the repo and its submodule at the same
   using the `--recurse-submodules` option:
+- 
   ```bash
   $ git clone --recurse-submodules https://github.com/<username-or-flutter>/website.git
   ```
@@ -121,7 +101,8 @@ _choose one_ of the following submodule-cloning techniques:
   OR
 
 - If you've already cloned the repo without its submodule, 
-  then run this command from the repo root:<br>
+  then run this command from the repo root:
+
   ```bash
   $ git submodule update --init --recursive
   ```
@@ -132,68 +113,6 @@ _choose one_ of the following submodule-cloning techniques:
 > ```bash
 > $ git pull; git submodule update --init --recursive
 > ```
-
-## Setting up your local environment and serving changes
-
-1. _Optional:_ After cloning the repo and its submodules, 
-   create a branch for your changes:
-   ```bash
-   $ git checkout -b <BRANCH_NAME>
-   ```
-
-1. If the Docker Desktop application isn't already running,
-   start it. Look at its status icon: 
-   if it has an exclamation point (`!`),
-   then update Docker Desktop.
-
-1. Run the initial setup command:
-   ```bash
-   $ make setup
-   ```
-
-1. Serve the site locally (via `docker-compose`):
-   ```bash
-   $ make up
-   ```
-   The site is generated, 
-   and then the development server runs in the Docker container, 
-   with the generated `_site` directory visible locally.
-
-1. View your changes in the browser by navigating to `http://localhost:4002`.
-   > **Note:** Unless you're editing files under `site-shared`, 
-   > you can safely ignore
-   > `ERROR: directory is already being watched` messages. 
-   > For details, see [#1363](https://github.com/flutter/website/issues/1363).
-
-1. Make your changes. 
-   The files are updated, 
-   and your browser view should update to reflect the changes. 
-   You can either edit files locally or use an editor like `vim` 
-   directly in a shell in the container. 
-   To start a container shell, run `docker-compose exec site bash`.
-
-   > **Tip:** If you aren't seeing the changes you expect,
-   > restart the server and rebuild the site from scratch:
-   > ```bash
-   > $ make down && make clean && make up
-   > ```
-   > In some rare cases you might want to force all running containers down:
-   > ```bash
-   > $ docker rm -f $(docker ps -aq)
-   > ```
-
-1. Commit your changes to the branch and submit your PR.
-
-1. When you've finished developing, shut down the Docker container:
-   ```bash
-   $ make down
-   ```
-
-> **Tip:** To find additional commands, read the [`Makefile`][]. 
-> For example, if you need to debug the Docker infrastructure, 
-> you can run `make debug`.  
-
-[`Makefile`]: https://github.com/flutter/website/blob/main/Makefile
 
 ## Creating and/or editing DartPad example code
 
@@ -223,81 +142,19 @@ For detailed instructions on how to use this approach
 to DartPad examples, see the [DartPad embedding guide][].
 
 [DartPad embedding guide]: https://github.com/dart-lang/dart-pad/wiki/Embedding-Guide
-
-
-### DartPad example code in this repo 
-
-Some DartPad example code remains in this repo:
-- `src/_packages/dartpad_picker/web/dartpad_picker_main.dart`
-
-This code must be manually compiled, 
-which also regenerates the associated JavaScript file in `src/assets/js`:
-```bash
-$ cd src/_packages/dartpad_picker
-$ ./compile.sh
-```
-
-
-## Deploying to a staging site
-
-You can deploy your local edits to a personal staging site as follows.
-
-1. If you don't already have a Firebase project, 
-   navigate to the
-   [Firebase Console](https://console.firebase.google.com) 
-   and create your own Firebase project (for example, `my-foo`).
-
-1. In a separate `bash` shell, change to the repo directory
-   and initialize Firebase:
-
-    ```bash
-    $ npx firebase init
-    ```
- 
-1. If you created a new project, add it using the
-   [`firebase use` command][]:
-
-    ```bash
-    $ npx firebase use --add
-    ? Which project do you want to add? <select the project you created>
-    ? What alias do you want to use for this project? (e.g. staging) my-foo
-    ```
-
-   [`firebase use` command]: https://firebase.googleblog.com/2016/07/deploy-to-multiple-environments-with.html
- 
-1. Tell Firebase that you want to deploy to your project:
-
-    ```bash
-    $ npx firebase use my-foo
-    Now using alias staging (my-foo)
-    ```
-
-1. Build and deploy to the specified staging site:
-
-   ```bash
-   $ make stage-local
-   ```
-   
-   Your personal version of the Flutter website
-   is now deployed to Firebase. 
-   Copy the serving URL from the command output.
-
-   > **Warning**  
-   > Before staging the site on Firebase,
-   > terminate all instances serving the site locally with `make up`.
    
 
 ## Refreshing code excerpts
 
 A build that fails with the error
-`=> ERROR: some code excerpts were not refreshed!`
+`Error: Some code excerpts needed to be updated!`
 means that one or more code excerpts in the markdown file
 aren't identical to the
 code in the corresponding `.dart` file. 
 
 To resolve this error,
 from the root of the `website` directory,
-run `./tool/refresh-code-excerpts.sh`. 
+run `dart run flutter_site refresh-excerpts`. 
 
 For more information see [Code excerpts][] . 
 

@@ -41,14 +41,15 @@ toc: false
 
 These tasks depend on which integrated development environment (IDE) you use.
 
-* **Option 1** explains how to code with Visual Studio Code and its Flutter extension.
+* **Option 1** explains how to code with Visual Studio Code and
+  its Flutter extension.
 
 * **Option 2** explains how to code with Android Studio or IntelliJ IDEA with
   its Flutter plugin.
 
   Flutter supports IntelliJ IDEA Community, Educational, and Ultimate editions.
 
-* **Option 3** uses explains how to code with an editor of your choice then use the
+* **Option 3** explains how to code with an editor of your choice and use
   the terminal to compile and debug your code.
 
 ## Choose your IDE

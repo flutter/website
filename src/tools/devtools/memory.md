@@ -3,8 +3,6 @@ title: Using the Memory view
 description: Learn how to use the DevTools memory view.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 The memory view provides insights into details
 of the application's memory allocation and
 tools to detect and debug specific issues.
@@ -175,7 +173,7 @@ unreachable objects, it's the responsibility
 of the application to ensure that unneeded objects
 are no longer reachable (referenced from the root).
 
-So, if non needed objects are left referenced
+So, if non-needed objects are left referenced
 (in a global or static variable,
 or as a field of a long-living object),
 the garbage collector can't recognize them,
@@ -383,7 +381,7 @@ The quantities plotted on the y-axis are as follows:
 [DevTools Performance view]: {{site.url}}/tools/devtools/performance
 [Flutter architectural overview]: {{site.url}}/resources/architectural-overview
 [frog]: https://dartfrog.vgv.dev/
-[heroku]: {{yt-watch}}?v=nkTUMVNelXA
+[heroku]: {{site.yt.watch}}?v=nkTUMVNelXA
 
 ### Profile Memory tab
 

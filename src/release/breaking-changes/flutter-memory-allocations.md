@@ -1,15 +1,15 @@
 ---
 title: Deprecate MemoryAllocations in favor of FlutterMemoryAllocations
 description: >-
-  MemoryAllocations is renamed to FlutterMemoryAllocations
+  MemoryAllocations is renamed to FlutterMemoryAllocations.
 ---
 
 ## Summary
 
-Disposables in pure Dart projects cannot use MemoryAllocations in Flutter. 
-So, to be leak trackable they need a Dart-only class.
-MemoryAllocations in Flutter is renamed to release the name
-for Dart-only class.
+Disposables in pure Dart projects can't use `MemoryAllocations` in Flutter. 
+So, to be leak-trackable they need a Dart-only class.
+`MemoryAllocations` in Flutter is renamed to make the name
+available to a non-Flutter, Dart project.
 
 ## Migration guide
 
@@ -39,7 +39,8 @@ if (kFlutterMemoryAllocationsEnabled) {
 
 ## Timeline
 
-Landed in version: 3.19.0-2.0.pre
+Landed in version: 3.19.0-2.0.pre<br>
+Landed in stable: Not yet
 
 ## References
 

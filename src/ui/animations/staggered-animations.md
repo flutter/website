@@ -4,8 +4,6 @@ description: How to write a staggered animation in Flutter.
 short-title: Staggered
 ---
 
-{% include docs/yt_shims.liquid %}
-
 {{site.alert.secondary}}
   <h4 class="no_toc">What you'll learn</h4>
 
@@ -63,7 +61,7 @@ This guide shows how to build a staggered animation in Flutter.
 The following video demonstrates the animation performed by
 basic_staggered_animation:
 
-<iframe width="560" height="315" src="{{yt-embed}}/0fFvnZemmh8" title="Watch this example of a staggered animation in Flutter" {{yt-set-short}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/0fFvnZemmh8" title="Watch this example of a staggered animation in Flutter" {{site.yt.set-short}}></iframe>
 
 In the video, you see the following animation of a single widget,
 which begins as a bordered blue square with slightly rounded corners.
@@ -359,6 +357,6 @@ class _StaggerDemoState extends State<StaggerDemo>
 [staggered_pic_selection]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/staggered_pic_selection
 [`CurvedAnimation`]: {{site.api}}/flutter/animation/CurvedAnimation-class.html
 [`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
-[Full code for basic_staggered_animation's main.dart]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/basic_staggered_animation/main.dart
+[Full code for basic_staggered_animation's main.dart]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/basic_staggered_animation/lib/main.dart
 [`Interval`]: {{site.api}}/flutter/animation/Interval-class.html
 [`Tween`]: {{site.api}}/flutter/animation/Tween-class.html

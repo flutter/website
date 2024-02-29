@@ -3,8 +3,6 @@ title: Using the Flutter inspector
 description: Learn how to use the Flutter inspector to explore a Flutter app's widget tree.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 <?code-excerpt path-base="../examples/visual_debugging/"?>
 
 {{site.alert.note}}
@@ -98,7 +96,7 @@ Flutter layouts.
 For an overview of what you can do with this tool, see
 the Flutter Explorer video:
 
-<iframe width="560" height="315" src="{{yt-embed}}/Jakrc3Tn_y4" title="Learn about the Layout Explorer in Flutter DevTools" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/Jakrc3Tn_y4" title="Learn about the Layout Explorer in Flutter DevTools" {{site.yt.set}}></iframe>
 
 You might also find the following step-by-step article useful:
 
@@ -571,9 +569,9 @@ using DevTools, check out a guided
 [Flutter Inspector tutorial][inspector-tutorial].
 
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
-[common problems when debugging]: {{site.url}}/testing/debugging#common-problems
+[common problems when debugging]: {{site.url}}/testing/debugging
 [`crossAxisAlignment`]: {{site.api}}/flutter/widgets/Flex/crossAxisAlignment.html
-[DartConf 2018 talk]: {{yt-watch}}?v=JIcmJNT9DNI
+[DartConf 2018 talk]: {{site.yt.watch}}?v=JIcmJNT9DNI
 [debug mode]: {{site.url}}/testing/build-modes#debug
 [`Flex`]: {{site.api}}/flutter/widgets/Flex-class.html
 [flex layouts]: {{site.api}}/flutter/widgets/Flex-class.html

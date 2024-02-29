@@ -39,17 +39,19 @@ These versions of Windows should include the required
 
 Download and install the Windows version of the following packages:
 
-* [Git for Windows][] {{site.appmin.github_win}} or later to manage source code.
+* [Git for Windows][] {{site.appmin.git_win}} or later to manage source code.
 {% include docs/install/reqs/windows/software.md target=include.target %}
 
 The developers of the preceding software provide support for those products.
 To troubleshoot installation issues, consult that product's documentation.
 
+{% include docs/install/reqs/flutter-sdk/flutter-doctor-precedence.md %}
+
 ## Configure a text editor or IDE
 
 You can build apps with Flutter using any text editor or
 integrated development environment (IDE) combined with
-Flutter’s command-line tools.
+Flutter's command-line tools.
 
 Using an IDE with a Flutter extension or plugin provides code completion,
 syntax highlighting, widget editing assists, debugging, and other features.

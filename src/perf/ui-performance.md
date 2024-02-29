@@ -4,8 +4,6 @@ subtitle: Where to look when your Flutter app drops frames in the UI.
 description: Diagnosing UI performance issues in Flutter.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 {% include docs/performance.md %}
 
 {{site.alert.secondary}}
@@ -453,7 +451,7 @@ Flutter's tools and debugging in Flutter:
 [devtools]: {{site.url}}/tools/devtools
 [Flutter API]: {{site.api}}
 [Flutter inspector]: {{site.url}}/tools/devtools/inspector
-[Flutter inspector talk]: {{yt-watch}}?v=JIcmJNT9DNI
+[Flutter inspector talk]: {{site.yt.watch}}?v=JIcmJNT9DNI
 [`PerformanceOverlay`]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
-[video]: {{yt-watch}}?v=5F-6n_2XWR8
+[video]: {{site.yt.watch}}?v=5F-6n_2XWR8
 [Why Flutter Uses Dart]: https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf

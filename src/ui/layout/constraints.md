@@ -4,10 +4,8 @@ description: Flutter's model for widget constraints, sizing, positioning, and ho
 toc: false
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://old-dartpad-3ce3f.web.app/inject_embed.dart.js
 ---
-
-{% include docs/yt_shims.liquid %}
 
 <?code-excerpt path-base="layout/constraints/"?>
 
@@ -69,8 +67,8 @@ The negotiation goes something like this:
 
 **Widget**: "Hey parent, what are my constraints?"
 
-**Parent**: "You must be from `80` to `300` pixels wide,
-   and `30` to `85` tall."
+**Parent**: "You must be from `0` to `300` pixels wide,
+   and `0` to `85` tall."
 
 **Widget**: "Hmmm, since I want to have `5` pixels of padding,
    then my children can have at most `290` pixels of width
@@ -2202,6 +2200,6 @@ header image at the top of the article.
 {{site.alert.note}}
   To better understand how Flutter implements layout
   constraints, check out the following 5-minute video:
-  <iframe width="560" height="315" src="{{yt-embed}}/jckqXR5CrPI" title="Learn how Flutter implements layout constraints" {{yt-set}}></iframe>
+  <iframe width="560" height="315" src="{{site.yt.embed}}/jckqXR5CrPI" title="Learn how Flutter implements layout constraints" {{site.yt.set}}></iframe>
   <p>Decoding Flutter: Unbounded height and width</p>
 {{site.alert.end}}

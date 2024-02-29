@@ -4,8 +4,6 @@ description: How to animate a widget to fly between two screens.
 short-title: Hero
 ---
 
-{% include docs/yt_shims.liquid %}
-
 {{site.alert.secondary}}
   <h4 class="no_toc">What you'll learn</h4>
 
@@ -27,7 +25,7 @@ motion is sometimes referred to as a _shared element transition_.
 
 You might want to watch this one-minute video introducing the Hero widget:
 
-<iframe width="560" height="315" src="{{yt-embed}}/Be9UH1kXFDw" title="Learn about the Hero Flutter Widget" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/Be9UH1kXFDw" title="Learn about the Hero Flutter Widget" {{site.yt.set}}></iframe>
 
 This guide demonstrates how to build standard hero animations, and hero
 animations that transform the image from a circular shape to a square shape
@@ -73,7 +71,7 @@ Tapping the flippers in the blue route (or using the device's
 back-to-previous-route gesture) flies the flippers back to
 the original route.
 
-<iframe width="560" height="315" src="{{yt-embed}}/CEcFnqRDfgw" title="Watch this example of a standard hero animation in Flutter" {{yt-set-short}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/CEcFnqRDfgw" title="Watch this example of a standard hero animation in Flutter" {{site.yt.set-short}}></iframe>
 
 <br>**Radial hero animations**<br>
 
@@ -88,7 +86,7 @@ that displays it with a square shape.
 Tapping the square image flies the hero back to
 the original route, displayed with a circular shape.
 
-<iframe width="560" height="315" src="{{yt-embed}}/LWKENpwDKiM" title="Watch this example of a radial hero animation in Flutter" {{yt-set-short}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/LWKENpwDKiM" title="Watch this example of a radial hero animation in Flutter" {{site.yt.set-short}}></iframe>
 
 <br>Before moving to the sections specific to
 [standard](#standard-hero-animations)

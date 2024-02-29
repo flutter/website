@@ -1,0 +1,33 @@
+{% comment %}
+Embeds breadcrumb RDFa, follows ARIA guidelines. References:
+- https://developers.google.com/search/docs/data-types/breadcrumb
+- https://schema.org/BreadcrumbList
+- https://www.w3.org/TR/wai-aria-practices/examples/breadcrumb/index.html
+- https://search.google.com/structured-data/testing-tool
+{% endcomment %}
+
+{% assign url = page.url | regex_replace: '/index$|/index.html$|/$' -%}
+
+{% if url.size > 0 -%}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+  {% assign position = 0 -%}
+  {% for crumb in breadcrumbs -%}
+    {% if forloop.first -%}
+      {% comment %}Skip site root{% endcomment -%}
+      {% continue -%}
+    {% endif -%}
+    <li class="breadcrumb-item {%- if forloop.last %} active {%- endif %}"
+      property="itemListElement" typeof="ListItem"
+      {%- if forloop.last %} aria-current="page"{% endif %}>
+      {%- comment %}Avoid spaces here, it messes up formatting{% endcomment -%}
+      <a href="{{ crumb.url | regex_replace: '/index$|/index.html$|/$' }}" property="item" typeof="WebPage">
+        {%- comment %}Avoid spaces here, it messes up formatting{% endcomment -%}
+        <span property="name">{{crumb.title}}</span>
+      </a>
+      <meta property="position" content="{{forloop.index0}}" />
+    </li>
+  {% endfor %}
+  </ol>
+</nav>
+{%- endif -%}

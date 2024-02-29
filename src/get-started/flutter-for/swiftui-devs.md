@@ -3,8 +3,6 @@ title: Flutter for SwiftUI Developers
 description: Learn how to apply SwiftUI developer knowledge when building Flutter apps.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 <?code-excerpt path-base="get-started/flutter-for/ios_devs"?>
 
 {% assign sample_path = "blob/main/examples/get-started/flutter-for/ios_devs" %}
@@ -50,7 +48,7 @@ You can test full working examples on DartPad or view them on GitHub.
 As an introduction, watch the following video.
 It outlines how Flutter works on iOS and how to use Flutter to build iOS apps.
 
-<iframe class="full-width" src="{{yt-embed}}/ceMsPBbcEGg" title="Learn how to develop with Flutter as an iOS developer" {{yt-set}}></iframe>
+<iframe class="full-width" src="{{site.yt.embed}}/ceMsPBbcEGg" title="Learn how to develop with Flutter as an iOS developer" {{site.yt.set}}></iframe>
 
 Flutter and SwiftUI code describes how the UI looks and works.
 Developers call this type of code a _declarative framework_.
@@ -166,7 +164,7 @@ your Flutter app can use many different design systems:
 - Your own custom widgets
 - [Cupertino widgets][] that follow Apple's Human Interface Guidelines
 
-<iframe width="560" height="315" src="{{yt-embed}}/3PdUaidHc-E?rel=0" title="Learn about the Cupertino Flutter Package" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/3PdUaidHc-E?rel=0" title="Learn about the Cupertino Flutter Package" {{site.yt.set}}></iframe>
 
 If you're looking for a great reference app that features a
 custom design system, check out [Wonderous][].

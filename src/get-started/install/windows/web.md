@@ -12,3 +12,5 @@ next:
 {% include docs/install/flutter-sdk.md target='web' os='Windows' terminal='PowerShell' -%}
 
 {% include docs/install/flutter-doctor.md target='web' os='Windows' -%}
+
+{% include docs/install/next-steps.md os='Windows' -%}

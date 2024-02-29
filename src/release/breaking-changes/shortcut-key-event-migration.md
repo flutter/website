@@ -165,9 +165,9 @@ Relevant PRs:
 
 * [Prepare ShortcutActivator and ShortcutManager to migrate to KeyEvent from RawKeyEvent.][]
 
-[`KeyEvent`]: {{site.main-api}}/flutter/services/KeyEvent-class.html
-[`HardwareKeyboard`]: {{site.main-api}}/flutter/services/HardwareKeyboard-class.html
-[`ShortcutActivator`]: {{site.main-api}}/flutter/widgets/ShortcutActivator-class.html
-[`ShortcutManager`]: {{site.main-api}}/flutter/widgets/ShortcutManager-class.html
+[`KeyEvent`]: {{site.api}}/flutter/services/KeyEvent-class.html
+[`HardwareKeyboard`]: {{site.api}}/flutter/services/HardwareKeyboard-class.html
+[`ShortcutActivator`]: {{site.api}}/flutter/widgets/ShortcutActivator-class.html
+[`ShortcutManager`]: {{site.api}}/flutter/widgets/ShortcutManager-class.html
 [`RawKeyEvent` and `RawKeyboard`, et al should be deprecated and removed (Issue 136419)]: {{site.repo.flutter}}/issues/136419
 [Prepare ShortcutActivator and ShortcutManager to migrate to KeyEvent from RawKeyEvent.]: {{site.repo.flutter}}/pull/136854

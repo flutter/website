@@ -12,7 +12,7 @@ void main() {
 
   test('sanity check readmeSnippets', () async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    
+
     expect(prefs.getInt('counter'), equals(2));
   });
 }

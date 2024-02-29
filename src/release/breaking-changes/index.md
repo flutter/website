@@ -31,26 +31,33 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
-* [Migrate RawKeyEvent/RawKeyboard system to KeyEvent/HardwareKeyboard system][]
+* [Stop generating AssetManifest.json][]
+* [Rename `MemoryAllocations` to `FlutterMemoryAllocations`][]
 * [Deprecate `TextField.canRequestFocus`][]
-* [Accessibility traversal order of tooltip changed][]
-* [Default multitouch scrolling][]
-* [Deprecate imperative apply of Flutter's Gradle plugins][]
-* [Rename MemoryAllocations to FlutterMemoryAllocations][]
-* [Deprecated API removed after v3.16][]
 * [Nullable PageView.controller][]
 
-[Migrate RawKeyEvent/RawKeyboard system to KeyEvent/HardwareKeyboard system]: {{site.url}}/release/breaking-changes/key-event-migration
+[Stop generating AssetManifest.json]: {{site.url}}/release/breaking-changes/asset-manifest-dot-json
+[Rename `MemoryAllocations` to `FlutterMemoryAllocations`]: {{site.url}}/release/breaking-changes/flutter-memory-allocations
 [Deprecate `TextField.canRequestFocus`]: {{site.url}}/release/breaking-changes/can-request-focus
-[Accessibility traversal order of tooltip changed]: {{site.url}}/release/breaking-changes/tooltip-semantics-order
-[Default multitouch scrolling]: {{site.url}}/release/breaking-changes/multi-touch-scrolling
-[Deprecate imperative apply of Flutter's Gradle plugins]: {{site.url}}/release/breaking-changes/flutter-gradle-plugin-apply
-[Rename MemoryAllocations to FlutterMemoryAllocations]: {{site.url}}/release/breaking-changes/flutter-memory-allocations
-[Deprecated API removed after v3.16]: {{site.url}}/release/breaking-changes/3-16-deprecations
 [Nullable PageView.controller]: {{site.url}}/release/breaking-changes/pageview-controller
+
+### Released in Flutter 3.19
+
+* [Deprecated API removed after v3.16][]
+* [Migrate RawKeyEvent/RawKeyboard system to KeyEvent/HardwareKeyboard system][]
+* [Deprecate imperative apply of Flutter's Gradle plugins][]
+* [Default multitouch scrolling][]
+* [Accessibility traversal order of tooltip changed][]
+
+[Deprecated API removed after v3.16]: {{site.url}}/release/breaking-changes/3-16-deprecations
+[Migrate RawKeyEvent/RawKeyboard system to KeyEvent/HardwareKeyboard system]: {{site.url}}/release/breaking-changes/key-event-migration
+[Deprecate imperative apply of Flutter's Gradle plugins]: {{site.url}}/release/breaking-changes/flutter-gradle-plugin-apply
+[Default multitouch scrolling]: {{site.url}}/release/breaking-changes/multi-touch-scrolling
+[Accessibility traversal order of tooltip changed]: {{site.url}}/release/breaking-changes/tooltip-semantics-order
 
 ### Released in Flutter 3.16
 
+* [Migrating to Material 3][]
 * [Migrate ShortcutActivator and ShortcutManager to KeyEvent system][]
 * [The `ThemeData.useMaterial3` property is now set to true by default][]
 * [Deprecated API removed after v3.13][]
@@ -64,6 +71,7 @@ release, and listed in alphabetical order:
 * [Windows: External windows should notify Flutter engine of lifecycle changes][]
 * [Windows build path changed to add the target architecture][]
 
+[Migrating to Material 3]: {{site.url}}/release/breaking-changes/material-3-migration
 [Migrate ShortcutActivator and ShortcutManager to KeyEvent system]: {{site.url}}/release/breaking-changes/shortcut-key-event-migration
 [The `ThemeData.useMaterial3` property is now set to true by default]: {{site.url}}/release/breaking-changes/material-3-default
 [Deprecated API removed after v3.13]: {{site.url}}/release/breaking-changes/3-13-deprecations

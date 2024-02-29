@@ -3,7 +3,7 @@ title: Add a drawer to a screen
 description: How to implement a Material Drawer.
 js:
   - defer: true
-    url: https://dartpad.dev/inject_embed.dart.js
+    url: https://old-dartpad-3ce3f.web.app/inject_embed.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/design/drawer"?>
@@ -35,6 +35,9 @@ In this example, create a `Scaffold` with a `drawer`:
 <?code-excerpt "lib/drawer.dart (DrawerStart)" replace="/null, //g"?>
 ```dart
 Scaffold(
+  appBar: AppBar(
+    title: const Text('AppBar without hamburger button'),
+  ),
   drawer: // Add a Drawer here in the next step.
 );
 ```
@@ -49,6 +52,9 @@ which adheres to the Material Design spec.
 <?code-excerpt "lib/drawer.dart (DrawerEmpty)" replace="/null, //g"?>
 ```dart
 Scaffold(
+  appBar: AppBar(
+    title: const Text('AppBar with hamburger button'),
+  ),
   drawer: Drawer(
     child: // Populate the Drawer in the next step.
   ),
