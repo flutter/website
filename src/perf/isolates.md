@@ -207,6 +207,10 @@ needs to be run repeatedly throughout the lifetime of your application,
 or if you have a process that runs over a period of time
 and needs to yield multiple return values to the main isolate.
 
+Or, you might use [worker_manager][] to manage long-lived isolates.
+
+[worker_manager]: {{site.pub-pkg}}/worker_manager
+
 ### ReceivePorts and SendPorts
 
 Set up long-lived communication between isolates with two classes
