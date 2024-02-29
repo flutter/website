@@ -35,8 +35,8 @@ steps to take, and tools that can help.
     in the [Debugging][] page.
 {{site.alert.end}}
 
-[Debugging]: {{site.url}}/testing/debugging
-[Tracing Dart code]: {{site.url}}/testing/code-debugging#trace-dart-code-performance
+[Debugging]: /testing/debugging
+[Tracing Dart code]: /testing/code-debugging#trace-dart-code-performance
 
 ## Diagnosing performance problems
 
@@ -48,7 +48,7 @@ Before you begin, you want to make sure that you're running in
 For best results, you might choose the slowest device that
 your users might use.
 
-[profile mode]: {{site.url}}/testing/build-modes#profile
+[profile mode]: /testing/build-modes#profile
 
 ### Connect to a physical device
 
@@ -124,7 +124,7 @@ see [Flutter's build modes][].
 You'll begin by opening DevTools and viewing
 the performance overlay, as discussed in the next section.
 
-[Flutter's build modes]: {{site.url}}/testing/build-modes
+[Flutter's build modes]: /testing/build-modes
 
 ## Launch DevTools
 
@@ -137,8 +137,8 @@ UI performance of your application on a frame-by-frame basis.
 Once your app is running in profile mode,
 [launch DevTools][].
 
-[launch DevTools]: {{site.url}}/tools/devtools
-[Timeline view]: {{site.url}}/tools/devtools/performance
+[launch DevTools]: /tools/devtools
+[Timeline view]: /tools/devtools/performance
 
 ## The performance overlay
 
@@ -155,7 +155,7 @@ and use it to diagnose the cause of jank in your application.
 The following screenshot shows the performance overlay running
 on the Flutter Gallery example:
 
-![Screenshot of overlay showing zero jank]({{site.url}}/assets/images/docs/tools/devtools/performance-overlay-green.png)
+![Screenshot of overlay showing zero jank](/assets/images/docs/tools/devtools/performance-overlay-green.png)
 <br>Performance overlay showing the raster thread (top),
 and UI thread (bottom).<br>The vertical green bars
 represent the current frame.
@@ -185,12 +185,12 @@ If a red bar appears in the UI graph, the Dart code is too
 expensive. If a red vertical bar appears in the GPU graph,
 the scene is too complicated to render quickly.
 
-![Screenshot of performance overlay showing jank with red bars]({{site.url}}/assets/images/docs/tools/devtools/performance-overlay-jank.png)
+![Screenshot of performance overlay showing jank with red bars](/assets/images/docs/tools/devtools/performance-overlay-jank.png)
 <br>The vertical red bars indicate that the current frame is
 expensive to both render and paint.<br>When both graphs
 display red, start by diagnosing the UI thread.
 
-[debug mode]: {{site.url}}/testing/build-modes#debug
+[debug mode]: /testing/build-modes#debug
 
 ## Flutter's threads
 
@@ -266,7 +266,7 @@ from the Flutter inspector, which is available in the
 **Performance Overlay** button to toggle the overlay
 on your running app.
 
-[Inspector view]: {{site.url}}/tools/devtools/inspector
+[Inspector view]: /tools/devtools/inspector
 
 #### From the command line
 
@@ -279,8 +279,8 @@ To enable the overlay programmatically, see
 [Performance overlay][], a section in the
 [Debugging Flutter apps programmatically][] page.
 
-[Debugging Flutter apps programmatically]: {{site.url}}/testing/code-debugging
-[Performance overlay]: {{site.url}}/testing/code-debugging#add-performance-overlay
+[Debugging Flutter apps programmatically]: /testing/code-debugging
+[Performance overlay]: /testing/code-debugging#add-performance-overlay
 
 ## Identifying problems in the UI graph
 
@@ -313,7 +313,7 @@ instead of clipping to a rounded rectangle.
 If it's a static scene that's being faded, rotated, or otherwise
 manipulated, a [`RepaintBoundary`][] might help.
 
-[programmatically]: {{site.url}}/testing/code-debugging#debug-animation-issues
+[programmatically]: /testing/code-debugging#debug-animation-issues
 [`RepaintBoundary`]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
 [`saveLayer`]: {{site.api}}/flutter/dart-ui/Canvas/saveLayer.html
 
@@ -412,7 +412,7 @@ You can view the widget rebuilt counts for the current screen and
 frame in the Flutter plugin for Android Studio and IntelliJ.
 For details on how to do this, see [Show performance data][]
 
-[Show performance data]: {{site.url}}/tools/android-studio#show-performance-data
+[Show performance data]: /tools/android-studio#show-performance-data
 
 ## Benchmarking
 
@@ -431,7 +431,7 @@ regression is introduced that adversely affects performance.
 
 For more information, check out [Integration testing][].
 
-[Integration testing]: {{site.url}}/testing/integration-tests
+[Integration testing]: /testing/integration-tests
 
 ## Other resources
 
@@ -448,9 +448,9 @@ Flutter's tools and debugging in Flutter:
   and the [dart:developer][] package
 
 [dart:developer]: {{site.api}}/flutter/dart-developer/dart-developer-library.html
-[devtools]: {{site.url}}/tools/devtools
+[devtools]: /tools/devtools
 [Flutter API]: {{site.api}}
-[Flutter inspector]: {{site.url}}/tools/devtools/inspector
+[Flutter inspector]: /tools/devtools/inspector
 [Flutter inspector talk]: {{site.yt.watch}}?v=JIcmJNT9DNI
 [`PerformanceOverlay`]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
 [video]: {{site.yt.watch}}?v=5F-6n_2XWR8

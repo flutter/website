@@ -1291,7 +1291,7 @@ The following resources might help when writing layout code.
 
 [Cupertino library]: {{api}}/cupertino/cupertino-library.html
 [`CupertinoPageScaffold`]: {{api}}/cupertino/CupertinoPageScaffold-class.html
-[Adding assets and images]: {{site.url}}/ui/assets/assets-and-images
+[Adding assets and images]: /ui/assets/assets-and-images
 [API reference docs]: {{api}}
 [`build()`]: {{api}}/widgets/StatelessWidget/build.html
 [`Card`]: {{api}}/material/Card-class.html
@@ -1307,11 +1307,11 @@ The following resources might help when writing layout code.
 [Flutter in Focus]: {{site.yt.watch}}?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 [`GridView`]: {{api}}/widgets/GridView-class.html
 [`GridTile`]: {{api}}/material/GridTile-class.html
-[HTML/CSS Analogs in Flutter]: {{site.url}}/get-started/flutter-for/web-devs
+[HTML/CSS Analogs in Flutter]: /get-started/flutter-for/web-devs
 [`Icon`]: {{api}}/material/Icons-class.html
 [`Image`]: {{api}}/widgets/Image-class.html
-[Layout tutorial]: {{site.url}}/ui/layout/tutorial
-[layout widgets]: {{site.url}}/ui/widgets/layout
+[Layout tutorial]: /ui/layout/tutorial
+[layout widgets]: /ui/widgets/layout
 [`ListTile`]: {{api}}/material/ListTile-class.html
 [`ListView`]: {{api}}/widgets/ListView-class.html
 [`MainAxisAlignment`]: {{api}}/rendering/MainAxisAlignment.html
@@ -1327,10 +1327,10 @@ The following resources might help when writing layout code.
 [`Stack`]: {{api}}/widgets/Stack-class.html
 [`Table`]: {{api}}/widgets/Table-class.html
 [`Text`]: {{api}}/widgets/Text-class.html
-[tutorial]: {{site.url}}/ui/layout/tutorial
+[tutorial]: /ui/layout/tutorial
 [widgets library]: {{api}}/widgets/widgets-library.html
-[Widget catalog]: {{site.url}}/ui/widgets
-[Debugging layout issues visually]: {{site.url}}/tools/devtools/inspector#debugging-layout-issues-visually
-[Understanding constraints]: {{site.url}}/ui/layout/constraints
-[Using the Flutter inspector]: {{site.url}}/tools/devtools/inspector
+[Widget catalog]: /ui/widgets
+[Debugging layout issues visually]: /tools/devtools/inspector#debugging-layout-issues-visually
+[Understanding constraints]: /ui/layout/constraints
+[Using the Flutter inspector]: /tools/devtools/inspector
 [Zero to One with Flutter]: {{site.medium}}/@mravn/zero-to-one-with-flutter-43b13fd7b354

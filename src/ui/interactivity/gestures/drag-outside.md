@@ -27,7 +27,7 @@ that you can supply Dart code to decide whether to accept a drop.
 For more information, check out the
 [`Draggable` widget of the week][video] video.
 
-[Drag a UI element within an app]: {{site.url}}/cookbook/effects/drag-a-widget
+[Drag a UI element within an app]: /cookbook/effects/drag-a-widget
 [`Draggable`]:  {{site.api}}/flutter/widgets/Draggable-class.html
 [`DragTarget`]: {{site.api}}/flutter/widgets/DragTarget-class.html
 [local data]: {{site.pub-api}}/super_drag_and_drop/latest/super_drag_and_drop/DragItem/localData.html

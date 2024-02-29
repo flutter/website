@@ -255,13 +255,13 @@ flutter run --device-timeout 60
 
 {{site.alert.end}}
 
-[Check the app's Bundle ID]: {{site.url}}/assets/images/docs/setup/xcode-unique-bundle-id.png
+[Check the app's Bundle ID]: /assets/images/docs/setup/xcode-unique-bundle-id.png
 [Choosing a Membership]: {{site.apple-dev}}/support/compare-memberships
-[Trust Mac]: {{site.url}}/assets/images/docs/setup/trust-computer.png
-[Xcode account add]: {{site.url}}/assets/images/docs/setup/xcode-account.png
+[Trust Mac]: /assets/images/docs/setup/trust-computer.png
+[Xcode account add]: /assets/images/docs/setup/xcode-account.png
 [Developer Mode]: {{site.apple-dev}}/documentation/xcode/enabling-developer-mode-on-a-device
 [Apple's Developer Forums]: {{site.apple-dev}}/forums/
-[Debugging your add-to-app module]: {{site.url}}/add-to-app/debugging/#wireless-debugging
+[Debugging your add-to-app module]: /add-to-app/debugging/#wireless-debugging
 [Apple's documentation on pairing a wireless device with Xcode]: https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/devbc48d1bad
 [Apple Developer]: {{site.apple-dev}}/programs/
 [Apple Developer Account]: {{site.apple-dev}}/account

@@ -631,4 +631,4 @@ void main() => runApp(const MyApp());
 [`CallbackShortcuts`]: {{site.api}}/flutter/widgets/CallbackShortcuts-class.html
 [`Intent`]: {{site.api}}/flutter/widgets/Intent-class.html
 [`Shortcuts`]: {{site.api}}/flutter/widgets/Shortcuts-class.html
-[Using Shortcuts Diagram]: {{site.url}}/assets/images/docs/using_shortcuts.png
+[Using Shortcuts Diagram]: /assets/images/docs/using_shortcuts.png

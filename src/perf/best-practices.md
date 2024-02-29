@@ -96,7 +96,7 @@ For more information, check out:
   are more performant than functions.
 
 [`flutter_lints`]: {{site.pub-pkg}}/flutter_lints
-[`flutter_lints` migration guide]: {{site.url}}/release/breaking-changes/flutter-lints-package#migration-guide
+[`flutter_lints` migration guide]: /release/breaking-changes/flutter-lints-package#migration-guide
 [Performance considerations]: {{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations
 [source code for `SlideTransition`]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/transitions.dart#L168
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
@@ -143,7 +143,7 @@ your scene uses `saveLayer` by checking the
 `PerformanceOverlayLayer.checkerboardOffscreenLayers`
 switch in the [DevTools Performance view][].
 
-[DevTools timeline]: {{site.url}}/tools/devtools/performance#timeline-events-tab
+[DevTools timeline]: /tools/devtools/performance#timeline-events-tab
 
 #### Minimizing calls to saveLayer
 
@@ -258,10 +258,10 @@ For more information and examples, check out:
   a community article by AbdulRahman AlHamali
 * [`Listview.builder`][] API
 
-[Cookbook]: {{site.url}}/cookbook
+[Cookbook]: /cookbook
 [Creating a `ListView` that loads one page at a time]: {{site.medium}}/saugo360/flutter-creating-a-listview-that-loads-one-page-at-a-time-c5c91b6fabd3
 [`Listview.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
-[Working with long lists]: {{site.url}}/cookbook/lists/long-lists
+[Working with long lists]: /cookbook/lists/long-lists
 
 #### Avoid intrinsics
 
@@ -332,11 +332,11 @@ check out the [layout and rendering][]
 section in the [Flutter architectural overview][].
 
 
-[Flutter architectural overview]: {{site.url}}/resources/architectural-overview
-[how layout and constraints work]: {{site.url}}/ui/layout/constraints
-[layout and rendering]: {{site.url}}/resources/architectural-overview#layout-and-rendering
-[stack trace]: {{site.url}}/tools/devtools/cpu-profiler#flame-chart
-[Track layouts option]: {{site.url}}/tools/devtools/performance#track-layouts
+[Flutter architectural overview]: /resources/architectural-overview
+[how layout and constraints work]: /ui/layout/constraints
+[layout and rendering]: /resources/architectural-overview#layout-and-rendering
+[stack trace]: /tools/devtools/cpu-profiler#flame-chart
+[Track layouts option]: /tools/devtools/performance#track-layouts
 
 ---
 
@@ -369,7 +369,7 @@ render a frame as fast as possible. Why?
 If you are wondering why 60fps leads to a smooth visual experience,
 check out the video [Why 60fps?][]
 
-[profile mode]: {{site.url}}/testing/build-modes#profile
+[profile mode]: /testing/build-modes#profile
 [Why 60fps?]: {{site.yt.watch}}?v=CaMTIgxCSqU
 
 ## Pitfalls
@@ -440,7 +440,7 @@ For more performance info, check out the following resources:
 
 [Child elements' lifecycle]: {{site.api}}/flutter/widgets/ListView-class.html#child-elements-lifecycle
 [`CustomPainter`]: {{site.api}}/flutter/rendering/CustomPainter-class.html
-[DevTools Performance view]: {{site.url}}/tools/devtools/performance
+[DevTools Performance view]: /tools/devtools/performance
 [Performance optimizations]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html#performance-optimizations
 [Performance considerations for opacity animation]: {{site.api}}/flutter/widgets/Opacity-class.html#performance-considerations-for-opacity-animation
 [`RenderObject`]: {{site.api}}/flutter/rendering/RenderObject-class.html

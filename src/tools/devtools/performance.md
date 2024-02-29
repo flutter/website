@@ -10,7 +10,7 @@ description: Learn how to use the DevTools performance view.
   To learn about profiling web apps, check out [Debugging web performance][].
 {{site.alert.end}}
 
-[Debugging web performance]: {{site.url}}/perf/web-performance
+[Debugging web performance]: /perf/web-performance
 
 The performance page can help you diagnose performance
 problems and UI jank in your application.
@@ -32,7 +32,7 @@ the cause of poor performance in your app:
   which still preserves useful debugging information.
 {{site.alert.end}}
 
-[profile build]: {{site.url}}/testing/build-modes#profile
+[profile build]: /testing/build-modes#profile
 
 The performance view also supports importing and exporting of
 data snapshots. For more information,
@@ -65,7 +65,7 @@ or the [Timeline events](#timeline-events-tab) tab.
 (As of [DevTools 2.23.1][], the [Raster stats](#raster-stats-tab)
 is a standalone feature without data per frame).
 
-[DevTools 2.23.1]: {{site.url}}/tools/devtools/release-notes/release-notes-2.23.1
+[DevTools 2.23.1]: /tools/devtools/release-notes/release-notes-2.23.1
 
 The flutter frames chart updates when new frames
 are drawn in your app. To pause updates to this chart,
@@ -73,7 +73,7 @@ click the pause button to the right of the chart.
 This chart can be collapsed to provide more viewing space
 for data below by clicking the **Flutter frames** button above the chart.
 
-![Screenshot of a Flutter frames chart]({{site.url}}/assets/images/docs/tools/devtools/flutter-frames-chart.png)
+![Screenshot of a Flutter frames chart](/assets/images/docs/tools/devtools/flutter-frames-chart.png)
 
 The pair of bars representing each Flutter frame are color-coded
 to highlight the different portions of work that occur when rendering
@@ -101,7 +101,7 @@ Skia, the graphics library, runs on this thread.
 [Impeller][] (in the stable channel for iOS)
 also uses this thread.
 
-[Impeller]: {{site.url}}/perf/impeller
+[Impeller]: /perf/impeller
 
 Sometimes a scene results in a layer tree that is easy to construct,
 but expensive to render on the raster thread. In this case, you
@@ -132,7 +132,7 @@ Shader compilation occurs when a shader is first used in your Flutter
 app. Frames that perform shader compilation are marked in dark
 red:
 
-![Screenshot of shader compilation for a frame]({{site.url}}/assets/images/docs/tools/devtools/shader-compilation-frames-chart.png)
+![Screenshot of shader compilation for a frame](/assets/images/docs/tools/devtools/shader-compilation-frames-chart.png)
 
 For more information on how to reduce shader compilation jank,
 check out [Reduce shader compilation jank on mobile][].
@@ -145,7 +145,7 @@ in the Frame analysis tab. These hints help you diagnose
 jank in your app, and notify you of any expensive operations
 that we have detected that might have contributed to the slow frame time.
 
-![Screenshot of the frame analysis tab]({{site.url}}/assets/images/docs/tools/devtools/frame-analysis-tab.png)
+![Screenshot of the frame analysis tab](/assets/images/docs/tools/devtools/frame-analysis-tab.png)
 
 ## Raster stats tab
 
@@ -172,7 +172,7 @@ You can make changes to your code, hot reload,
 and take new snapshots to see if the performance of a layer
 was improved by your change.
 
-![Screenshot of the raster stats tab]({{site.url}}/assets/images/docs/tools/devtools/raster-stats-tab.png)
+![Screenshot of the raster stats tab](/assets/images/docs/tools/devtools/raster-stats-tab.png)
 
 ## Timeline events tab
 
@@ -186,7 +186,7 @@ You can also send your own Timeline events using the dart:developer
 [`Timeline`]: {{site.api}}/flutter/dart-developer/Timeline-class.html
 [`TimelineTask`]: {{site.api}}/flutter/dart-developer/TimelineTask-class.html
 
-![Screenshot of a timeline events tab]({{site.url}}/assets/images/docs/tools/devtools/timeline-events-tab.png)
+![Screenshot of a timeline events tab](/assets/images/docs/tools/devtools/timeline-events-tab.png)
 For help with navigating and using the trace viewer,
 click the **?** button at the top right of the timeline
 events tab bar. To refresh the timeline with new events from
@@ -204,7 +204,7 @@ use the options in the enhance tracing dropdown:
   Frame times might be negatively affected when these options are enabled.
 {{site.alert.end}}
 
-![Screenshot of enhanced tracing options]({{site.url}}/assets/images/docs/tools/devtools/enhanced-tracing.png)
+![Screenshot of enhanced tracing options](/assets/images/docs/tools/devtools/enhanced-tracing.png)
 
 To see the new timeline events, reproduce the activity
 in your app that you are interested in tracing,
@@ -216,7 +216,7 @@ To see the `build()` method events in the timeline,
 enable the **Track Widget Builds** option.
 The name of the widget is shown in the timeline event.
 
-![Screenshot of track widget builds]({{site.url}}/assets/images/docs/tools/devtools/track-widget-builds.png)
+![Screenshot of track widget builds](/assets/images/docs/tools/devtools/track-widget-builds.png)
 
 [Watch this video for an example of tracking widget builds][track-widgets]
 
@@ -225,7 +225,7 @@ The name of the widget is shown in the timeline event.
 To see render object layout events in the timeline,
 enable the **Track Layouts** option:
 
-![Screenshot of track layouts]({{site.url}}/assets/images/docs/tools/devtools/track-layouts.png)
+![Screenshot of track layouts](/assets/images/docs/tools/devtools/track-layouts.png)
 
 [Watch this video for an example of tracking layouts][track-layouts]
 
@@ -234,7 +234,7 @@ enable the **Track Layouts** option:
 To see render object paint events in the timeline,
 enable the **Track Paints** option:
 
-![Screenshot of track paints]({{site.url}}/assets/images/docs/tools/devtools/track-paints.png)
+![Screenshot of track paints](/assets/images/docs/tools/devtools/track-paints.png)
 
 [Watch this video for an example of tracking paints][track-paints]
 
@@ -272,7 +272,7 @@ to the jank you saw in your app.
   If performance improves with this option disabled,
   try to reduce the use of physical modeling effects in your app.
 
-![Screenshot of more debugging options]({{site.url}}/assets/images/docs/tools/devtools/more-debugging-options.png)
+![Screenshot of more debugging options](/assets/images/docs/tools/devtools/more-debugging-options.png)
 
 ## Import and export
 
@@ -289,9 +289,9 @@ To learn how to monitor an app's performance and
 detect jank using DevTools, check out a guided
 [Performance View tutorial][performance-tutorial].
 
-[GPU graph]: {{site.url}}/perf/ui-performance#identifying-problems-in-the-gpu-graph
-[Flutter performance profiling]: {{site.url}}/perf/ui-performance
-[Reduce shader compilation jank on mobile]: {{site.url}}/perf/shader
+[GPU graph]: /perf/ui-performance#identifying-problems-in-the-gpu-graph
+[Flutter performance profiling]: /perf/ui-performance
+[Reduce shader compilation jank on mobile]: /perf/shader
 [Import and export]: #import-and-export
 [performance-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-performance-view-part-8-of-8-4ae762f91230
 [track-widgets]: {{site.yt.watch}}/_EYk-E29edo?t=623

@@ -21,8 +21,8 @@ pass information about the user to that route.
   [Limitations][] in the [navigation overview][] page.
 {{site.alert.end}}
 
-[Limitations]: {{site.url}}/ui/navigation#limitations
-[navigation overview]: {{site.url}}/ui/navigation
+[Limitations]: /ui/navigation#limitations
+[navigation overview]: /ui/navigation
 
 You can accomplish this task using the `arguments` parameter of the
 [`Navigator.pushNamed()`][] method. Extract the arguments using the

@@ -74,7 +74,7 @@ See also:
 * [Deprecate `textScaleFactor` in favor of `TextScaler`][]
 
 [Android 14 nonlinear font scaling]: {{site.android-dev}}/about/versions/14/features#non-linear-font-scaling
-[Deprecate `textScaleFactor` in favor of `TextScaler`]: {{site.url}}/release/breaking-changes/deprecate-textscalefactor
+[Deprecate `textScaleFactor` in favor of `TextScaler`]: /release/breaking-changes/deprecate-textscalefactor
 [`TextScaler`]: {{site.api}}/flutter/painting/TextScaler-class.html
 [New font scaling system (Issue 116231)]: {{site.repo.flutter}}/issues/116231
 [Implementing TextScaler for nonlinear text scaling]: {{site.repo.engine}}/pull/44907

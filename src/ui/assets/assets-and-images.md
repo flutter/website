@@ -382,7 +382,7 @@ Updating a Flutter application's launch icon works
 the same way as updating launch icons in native
 Android or iOS applications.
 
-![Launch icon]({{site.url}}/assets/images/docs/assets-and-images/icon.png)
+![Launch icon](/assets/images/docs/assets-and-images/icon.png)
 
 #### Android
 
@@ -393,7 +393,7 @@ images named `ic_launcher.png`. Replace them with your
 desired assets respecting the recommended icon size per
 screen density as indicated by the [Android Developer Guide][].
 
-![Android icon location]({{site.url}}/assets/images/docs/assets-and-images/android-icon-path.png)
+![Android icon location](/assets/images/docs/assets-and-images/android-icon-path.png)
 
 {{site.alert.note}}
   If you rename the `.png` files, you must also update the
@@ -411,7 +411,7 @@ sized images as indicated by their filename as dictated by the
 Apple [Human Interface Guidelines][].
 Keep the original file names.
 
-![iOS icon location]({{site.url}}/assets/images/docs/assets-and-images/ios-icon-path.png)
+![iOS icon location](/assets/images/docs/assets-and-images/ios-icon-path.png)
 
 ### Updating the launch screen
 
@@ -466,15 +466,15 @@ drop in images by opening `Assets.xcassets` or do any
 customization using the Interface Builder in
 `LaunchScreen.storyboard`.
 
-![Adding launch icons in Xcode]({{site.url}}/assets/images/docs/assets-and-images/ios-launchscreen-xcode.png){:width="100%"}
+![Adding launch icons in Xcode](/assets/images/docs/assets-and-images/ios-launchscreen-xcode.png){:width="100%"}
 
 For more details, see
 [Adding a splash screen to your iOS app][].
 
 
-[add-to-app]: {{site.url}}/add-to-app/ios
-[Adding a splash screen to your Android app]: {{site.url}}/platform-integration/android/splash-screen
-[Adding a splash screen to your iOS app]: {{site.url}}/platform-integration/ios/splash-screen
+[add-to-app]: /add-to-app/ios
+[Adding a splash screen to your Android app]: /platform-integration/android/splash-screen
+[Adding a splash screen to your iOS app]: /platform-integration/ios/splash-screen
 [`AssetBundle`]: {{site.api}}/flutter/services/AssetBundle-class.html
 [`AssetImage`]: {{site.api}}/flutter/painting/AssetImage-class.html
 [`DefaultAssetBundle`]: {{site.api}}/flutter/widgets/DefaultAssetBundle-class.html
@@ -493,7 +493,7 @@ For more details, see
 [layer list drawable]: {{site.android-dev}}/guide/topics/resources/drawable-resource#LayerList
 [`mainBundle`]: {{site.apple-dev}}/documentation/foundation/nsbundle/1410786-mainbundle
 [`openFd`]: {{site.android-dev}}/reference/android/content/res/AssetManager#openFd(java.lang.String)
-[package]: {{site.url}}/packages-and-plugins/using-packages
+[package]: /packages-and-plugins/using-packages
 [`pathForResource:ofType:`]: {{site.apple-dev}}/documentation/foundation/nsbundle/1410989-pathforresource
 [`PluginRegistry.Registrar`]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html
 [`pubspec.yaml`]: {{site.dart-site}}/tools/pub/pubspec

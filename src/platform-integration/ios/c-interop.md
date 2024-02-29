@@ -20,8 +20,8 @@ _native interface_ and _language bindings._
   This feature is not yet supported for web plugins.
 {{site.alert.end}}
 
-[android-ffi]: {{site.url}}/platform-integration/android/c-interop
-[macos-ffi]: {{site.url}}/platform-integration/macos/c-interop
+[android-ffi]: /platform-integration/android/c-interop
+[macos-ffi]: /platform-integration/macos/c-interop
 [dart:ffi]: {{site.dart.api}}/dev/dart-ffi/dart-ffi-library.html
 [FFI]: https://en.wikipedia.org/wiki/Foreign_function_interface
 

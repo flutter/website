@@ -12,7 +12,7 @@ The following jobs are open:
 
 ## Software Engineering
 
-* [Android Engineer]({{site.url}}/jobs/android)
-* [Android Technical Lead]({{site.url}}/jobs/android_tl)
-* [iOS Engineer]({{site.url}}/jobs/ios)
+* [Android Engineer](/jobs/android)
+* [Android Technical Lead](/jobs/android_tl)
+* [iOS Engineer](/jobs/ios)
 {% endcomment %}

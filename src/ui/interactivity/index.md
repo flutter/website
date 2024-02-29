@@ -780,31 +780,31 @@ Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
 : This video includes information about state and
   stateless widgets.  Presented by Google engineer, Ian Hickson.
 
-[Android emulator]: {{site.url}}/get-started/install/windows/mobile?tab=virtual#configure-your-target-android-device
+[Android emulator]: /get-started/install/windows/mobile?tab=virtual#configure-your-target-android-device
 [`Checkbox`]: {{site.api}}/flutter/material/Checkbox-class.html
 [`Cupertino`]: {{site.api}}/flutter/cupertino/cupertino-library.html
 [Dart language documentation]: {{site.dart-site}}/language
-[Debugging Flutter apps]: {{site.url}}/testing/debugging
+[Debugging Flutter apps]: /testing/debugging
 [`DropdownButton`]: {{site.api}}/flutter/material/DropdownButton-class.html
 [`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
 [`FloatingActionButton`]: {{site.api}}/flutter/material/FloatingActionButton-class.html
 [Flutter API documentation]: {{site.api}}
-[Flutter cookbook]: {{site.url}}/cookbook
+[Flutter cookbook]: /cookbook
 [Flutter's Layered Design]: {{site.yt.watch}}?v=dkyY9WCGMi0
 [`FormField`]: {{site.api}}/flutter/widgets/FormField-class.html
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
-[Gestures]: {{site.url}}/cookbook/gestures
-[Gestures in Flutter]: {{site.url}}/ui/interactivity/gestures
-[Handling gestures]: {{site.url}}/ui#handling-gestures
-[new-flutter-app]: {{site.url}}/get-started/test-drive
+[Gestures]: /cookbook/gestures
+[Gestures in Flutter]: /ui/interactivity/gestures
+[Handling gestures]: /ui#handling-gestures
+[new-flutter-app]: /get-started/test-drive
 [`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
 [`Icon`]: {{site.api}}/flutter/widgets/Icon-class.html
 [`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
-[iOS simulator]: {{site.url}}/get-started/install/macos/mobile-ios#configure-your-target-ios-device
-[building layouts tutorial]: {{site.url}}/ui/layout/tutorial
+[iOS simulator]: /get-started/install/macos/mobile-ios#configure-your-target-ios-device
+[building layouts tutorial]: /ui/layout/tutorial
 [community]: {{site.main-url}}/community
-[Handle taps]: {{site.url}}/cookbook/gestures/handling-taps
+[Handle taps]: /cookbook/gestures/handling-taps
 [`lake.jpg`]: {{examples}}/layout/lakes/step6/images/lake.jpg
 [Libraries and imports]: {{site.dart-site}}/language/libraries
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
@@ -816,7 +816,7 @@ Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
 [`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
 [wonderous-app]: {{site.wonderous}}/web
 [wonderous-repo]: {{site.repo.wonderous}}
-[set up]: {{site.url}}/get-started/install
+[set up]: /get-started/install
 [`SizedBox`]: {{site.api}}/flutter/widgets/SizedBox-class.html
 [`Slider`]: {{site.api}}/flutter/material/Slider-class.html
 [`State`]: {{site.api}}/flutter/widgets/State-class.html

@@ -121,7 +121,7 @@ You might notice the following characteristics:
 * The padding and height changes occur during
   the same exact interval, but they don't have to.
 
-![Diagram showing the interval specified for each motion]({{site.url}}/assets/images/docs/ui/animations/StaggeredAnimationIntervals.png)
+![Diagram showing the interval specified for each motion](/assets/images/docs/ui/animations/StaggeredAnimationIntervals.png)
 
 To set up the animation:
 
@@ -351,9 +351,9 @@ class _StaggerDemoState extends State<StaggerDemo>
 [animation controllers]: {{site.api}}/flutter/animation/AnimationController-class.html
 [`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
 [`AnimatedBuilder`]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html
-[Animations in Flutter tutorial]: {{site.url}}/ui/animations/tutorial
+[Animations in Flutter tutorial]: /ui/animations/tutorial
 [basic_staggered_animation]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/basic_staggered_animation
-[Building Layouts in Flutter]: {{site.url}}/ui/layout
+[Building Layouts in Flutter]: /ui/layout
 [staggered_pic_selection]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/staggered_pic_selection
 [`CurvedAnimation`]: {{site.api}}/flutter/animation/CurvedAnimation-class.html
 [`Curves`]: {{site.api}}/flutter/animation/Curves-class.html

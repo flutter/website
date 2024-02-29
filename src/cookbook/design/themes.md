@@ -15,7 +15,7 @@ js:
   Material 3 is Flutter's default theme.
 {{site.alert.end}}
 
-[Material 3]: {{site.url}}/ui/design/material
+[Material 3]: /ui/design/material
 [google_fonts]: {{site.pub-pkg}}/google_fonts
 
 To share colors and font styles throughout an app, use themes.

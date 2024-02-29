@@ -333,15 +333,15 @@ Configure, update and communicate with Widgets
 [^5]: Uses Google's ML Kit and supports various features like text recognition, face detection, image labeling, landmark recognition, and barcode scanning. You can also create a custom model with Firebase. To learn more, see [Use a custom TensorFlow Lite model with Flutter][].
 [^6]: Uses the [OpenWeatherMap API][]. Other packages exist that can pull from different weather APIs.
 
-[Flutter for SwiftUI developers]: {{site.url}}/get-started/flutter-for/swiftui-devs
-[Using packages]: {{site.url}}/packages-and-plugins/using-packages
+[Flutter for SwiftUI developers]: /get-started/flutter-for/swiftui-devs
+[Using packages]: /packages-and-plugins/using-packages
 [pub.dev]: {{site.pub-pkg}}
 [`shared_preferences`]: {{site.pub-pkg}}/shared_preferences
 [`http`]: {{site.pub-pkg}}/http
 [`sensors_plus`]: {{site.pub-pkg}}/sensors_plus
 [`geolocator`]: {{site.pub-pkg}}/geolocator
 [`image_picker`]: {{site.pub-pkg}}/image_picker
-[`pubspec.yaml`]: {{site.url}}/tools/pubspec
+[`pubspec.yaml`]: /tools/pubspec
 [`quick_actions`]: {{site.pub-pkg}}/quick_actions
 [`in_app_purchase`]: {{site.pub-pkg}}/in_app_purchase
 [`pay`]: {{site.pub-pkg}}/pay
@@ -356,7 +356,7 @@ Configure, update and communicate with Widgets
 [`health`]: {{site.pub-pkg}}/health
 [OpenWeatherMap API]: https://openweathermap.org/api
 [`sqflite`]: {{site.pub-pkg}}/sqflite
-[Writing platform-specific code]: {{site.url}}/platform-integration/platform-channels
+[Writing platform-specific code]: /platform-integration/platform-channels
 [`camera`]: {{site.pub-pkg}}/camera
 [`flutter_core_spotlight`]: {{site.pub-pkg}}/flutter_core_spotlight
 [`home_widget`]: {{site.pub-pkg}}/home_widget

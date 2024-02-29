@@ -19,9 +19,9 @@ Plugins targeting the v1 Android embedding are encouraged
 to migrate following the instructions in
 [Supporting the new Android plugins APIs][].
 
-[Android Migration Summary]: {{site.url}}/go/android-migration-summary
+[Android Migration Summary]: /go/android-migration-summary
 [Upgrading pre 1.12 Android projects]: {{site.repo.flutter}}/wiki/Upgrading-pre-1.12-Android-projects
-[Supporting the new Android plugins APIs]: {{site.url}}/release/breaking-changes/plugin-api-migration
+[Supporting the new Android plugins APIs]: /release/breaking-changes/plugin-api-migration
 
 ## Context
 
@@ -41,7 +41,7 @@ the 7 months since the launch of Flutter v1.12,
 we disabled the creation of new app and plugin
 projects using the v1 embeddings.
 
-[add-to-app]: {{site.url}}/add-to-app
+[add-to-app]: /add-to-app
 [`io.flutter.embedding`]: https://cs.opensource.google/flutter/engine/+/master:shell/platform/android/io/flutter/embedding/
 [`io.flutter.app`]: https://cs.opensource.google/flutter/engine/+/master:shell/platform/android/io/flutter/app/.
 

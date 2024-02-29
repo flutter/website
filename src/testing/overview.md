@@ -41,7 +41,7 @@ A _unit test_ tests a single function, method, or class.
 The goal of a unit test is to verify the correctness of a
 unit of logic under a variety of conditions.
 External dependencies of the unit under test are generally
-[mocked out]({{site.url}}/cookbook/testing/unit/mocking).
+[mocked out](/cookbook/testing/unit/mocking).
 Unit tests generally don't read from or write
 to disk, render to screen, or receive user actions from
 outside the process running the test.
@@ -57,8 +57,8 @@ or run `flutter test --help` in your terminal.
   check out [Testing plugins][].
 {{site.alert.end}}
 
-[Plugins in Flutter tests]: {{site.url}}/testing/plugins-in-tests
-[Testing plugins]: {{site.url}}/testing/testing-plugins
+[Plugins in Flutter tests]: /testing/plugins-in-tests
+[Testing plugins]: /testing/testing-plugins
 
 ### Recipes
 {:.no_toc}
@@ -124,10 +124,10 @@ integration services, see the following:
 
 [code coverage]: https://en.wikipedia.org/wiki/Code_coverage
 [Codemagic CI/CD for Flutter]: https://blog.codemagic.io/getting-started-with-codemagic/
-[Continuous delivery using fastlane with Flutter]: {{site.url}}/deployment/cd#fastlane
+[Continuous delivery using fastlane with Flutter]: /deployment/cd#fastlane
 [Flutter CI/CD with Bitrise]: https://devcenter.bitrise.io/en/getting-started/getting-started-with-flutter-apps
 [How to test a Flutter app]: {{site.codelabs}}/codelabs/flutter-app-testing
 [Test Flutter apps on Appcircle]: https://blog.appcircle.io/article/flutter-ci-cd-github-ios-android-web#
 [Test Flutter apps on Cirrus]: https://cirrus-ci.org/examples/#flutter
 [Test Flutter apps on Travis]: {{site.flutter-medium}}/test-flutter-apps-on-travis-3fd5142ecd8c
-[integration testing page]: {{site.url}}/testing/integration-tests
+[integration testing page]: /testing/integration-tests

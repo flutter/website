@@ -13,7 +13,7 @@ Flutter-rendering iOS App Clip target to your
 existing Flutter project or [add-to-app][] project.
 
 [#71098]: {{site.repo.flutter}}/issues/71098
-[add-to-app]: {{site.url}}/add-to-app
+[add-to-app]: /add-to-app
 
 {{site.alert.warning}}
   This is an advanced guide and is best intended
@@ -174,8 +174,8 @@ Instead, use the scaffolding and the [iOS add-to-app APIs][]
 to perform a custom launch of Flutter.
 For example to show a [custom Flutter route][].
 
-[custom Flutter route]: {{site.url}}/add-to-app/ios/add-flutter-screen#route
-[iOS add-to-app APIs]: {{site.url}}/add-to-app/ios/add-flutter-screen
+[custom Flutter route]: /add-to-app/ios/add-flutter-screen#route
+[iOS add-to-app APIs]: /add-to-app/ios/add-flutter-screen
 
 ## Step 6 - Add App Clip associated domains
 

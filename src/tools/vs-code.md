@@ -6,7 +6,7 @@ description: How to develop Flutter apps in Visual Studio Code.
 
 <ul class="nav nav-tabs" id="ide" role="tablist">
   <li class="nav-item">
-    <a class="nav-link" href="{{site.url}}/tools/android-studio" role="tab" aria-selected="false">Android Studio and IntelliJ</a>
+    <a class="nav-link" href="/tools/android-studio" role="tab" aria-selected="false">Android Studio and IntelliJ</a>
   </li>
   <li class="nav-item">
     <a class="nav-link active" role="tab" aria-selected="true">Visual Studio Code</a>
@@ -89,7 +89,7 @@ The code analysis can:
   - You can also press <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +
     <kbd>Shift</kbd> + <kbd>M</kbd>.
   - The Problems pane displays any analysis issues:<br>
-    ![Problems pane]({{site.url}}/assets/images/docs/tools/vs-code/problems.png){:.mw-100.pt-1}
+    ![Problems pane](/assets/images/docs/tools/vs-code/problems.png){:.mw-100.pt-1}
 
 ## Running and debugging
 
@@ -157,7 +157,7 @@ You can also press <kbd>Ctrl</kbd> + <kbd>F5</kbd>.
 1. Click **Run** <span aria-label="and then">></span> **Start Debugging**.
    You can also press <kbd>F5</kbd>.
    The status bar turns orange to show you are in a debug session.<br>
-   ![Debug console]({{site.url}}/assets/images/docs/tools/vs-code/debug_console.png){:.mw-100.pt-1}
+   ![Debug console](/assets/images/docs/tools/vs-code/debug_console.png){:.mw-100.pt-1}
 
    - The left **Debug Sidebar** shows stack frames and variables.
    - The bottom **Debug Console** pane shows detailed logging output.
@@ -225,13 +225,13 @@ When space is limited, the icon is used as the visual
 version of the label.
 
 <dl markdown="1">
-<dt markdown="1"> **Toggle Baseline Painting** ![Baseline painting icon]({{site.url}}/assets/images/docs/tools/devtools/paint-baselines-icon.png){:width="20px"}</dt>
+<dt markdown="1"> **Toggle Baseline Painting** ![Baseline painting icon](/assets/images/docs/tools/devtools/paint-baselines-icon.png){:width="20px"}</dt>
 <dd>Causes each RenderBox to paint a line at each of its baselines.</dd>
-<dt markdown="1"> **Toggle Repaint Rainbow** ![Repaint rainbow icon]({{site.url}}/assets/images/docs/tools/devtools/repaint-rainbow-icon.png){:width="20px"}</dt>
+<dt markdown="1"> **Toggle Repaint Rainbow** ![Repaint rainbow icon](/assets/images/docs/tools/devtools/repaint-rainbow-icon.png){:width="20px"}</dt>
 <dd>Shows rotating colors on layers when repainting.</dd>
-<dt markdown="1">**Toggle Slow Animations** ![Slow animations icon]({{site.url}}/assets/images/docs/tools/devtools/slow-animations-icon.png){:width="20px"}</dt>
+<dt markdown="1">**Toggle Slow Animations** ![Slow animations icon](/assets/images/docs/tools/devtools/slow-animations-icon.png){:width="20px"}</dt>
 <dd>Slows down animations to enable visual inspection.</dd>
-<dt markdown="1">**Toggle Debug Mode Banner** ![Debug mode banner icon]({{site.url}}/assets/images/docs/tools/devtools/debug-mode-banner-icon.png){:width="20px"}</dt>
+<dt markdown="1">**Toggle Debug Mode Banner** ![Debug mode banner icon](/assets/images/docs/tools/devtools/debug-mode-banner-icon.png){:width="20px"}</dt>
 <dd>Hides the debug mode banner even when running a debug build.</dd>
 </dl>
 
@@ -254,7 +254,7 @@ A number of these are available when the cursor is placed on a
 Flutter widget identifier, as indicated by the yellow lightbulb icon.
 To invoke the assist, click the lightbulb as shown in the following screenshot:
 
-![Code assists]({{site.url}}/assets/images/docs/tools/vs-code/assists.png){:width="467px"}
+![Code assists](/assets/images/docs/tools/vs-code/assists.png){:width="467px"}
 
 You can also press <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> + <kbd>.</kbd>
 
@@ -285,7 +285,7 @@ can assist in correcting it.
 Snippets can be used to speed up entering typical code structures.
 They are invoked by typing their prefix,
 and then selecting from the code completion window:
-![Snippets]({{site.url}}/assets/images/docs/tools/vs-code/snippets.png){:width="100%"}
+![Snippets](/assets/images/docs/tools/vs-code/snippets.png){:width="100%"}
 
 The Flutter extension includes the following snippets:
 
@@ -350,13 +350,13 @@ Prior to filing new issues:
 When filing new issues, include [flutter doctor][] output.
 
 [Command Palette]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
-[DevTools]: {{site.url}}/tools/devtools
-[flutter doctor]: {{site.url}}/resources/bug-reports/#provide-some-flutter-diagnostics
-[Flutter inspector]: {{site.url}}/tools/devtools/inspector
-[Flutter's build modes]: {{site.url}}/testing/build-modes
-[Hot reload]: {{site.url}}/tools/hot-reload
+[DevTools]: /tools/devtools
+[flutter doctor]: /resources/bug-reports/#provide-some-flutter-diagnostics
+[Flutter inspector]: /tools/devtools/inspector
+[Flutter's build modes]: /testing/build-modes
+[Hot reload]: /tools/hot-reload
 [let us know]: {{site.repo.this}}/issues/new
 [issue tracker]: {{site.github}}/Dart-Code/Dart-Code/issues
-[Running DevTools from VS Code]: {{site.url}}/tools/devtools/vscode
-[Set up an editor]: {{site.url}}/get-started/editor?tab=vscode
-[VS Code status bar]: {{site.url}}/assets/images/docs/tools/vs-code/device_status_bar.png
+[Running DevTools from VS Code]: /tools/devtools/vscode
+[Set up an editor]: /get-started/editor?tab=vscode
+[VS Code status bar]: /assets/images/docs/tools/vs-code/device_status_bar.png

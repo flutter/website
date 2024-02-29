@@ -118,7 +118,7 @@ Relevant PRs:
 
 [`Paint.enableDithering`]: {{site.api}}/flutter/dart-ui/Paint/enableDithering.html
 [`matchesGoldenFile`]: {{site.api}}/flutter_test/matchesGoldenFile.html
-[Impeller]: {{site.url}}/perf/impeller
+[Impeller]: /perf/impeller
 [PR 13868]: {{site.repo.engine}}/pull/13868
 [PR 44181]: {{site.repo.engine}}/pull/44181
 [PR 44331]: {{site.repo.engine}}/pull/44331
@@ -129,5 +129,5 @@ Relevant PRs:
 [Issue 112498]: {{site.repo.flutter}}/issues/112498
 [Issue 118073]: {{site.repo.flutter}}/issues/118073
 [Issue 134250]: {{site.repo.flutter}}/issues/134250
-[Writing and using fragment shaders]: {{site.url}}/ui/design/graphics/fragment-shaders
+[Writing and using fragment shaders]: /ui/design/graphics/fragment-shaders
 [`hsl_linear_gradient.frag`]: https://github.com/jonahwilliams/awesome_gradients/blob/a4e09c47ef1760bd7073beb60f49dad8ede5bb2e/shaders/hsl_linear_gradient.frag

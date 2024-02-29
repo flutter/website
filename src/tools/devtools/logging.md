@@ -22,7 +22,7 @@ By default, the logging view shows:
 * `stdout` and `stderr` from applications
 * Custom logging events from applications
 
-![Screenshot of a logging view]({{site.url}}/assets/images/docs/tools/devtools/logging_log_entries.png){:width="100%"}
+![Screenshot of a logging view](/assets/images/docs/tools/devtools/logging_log_entries.png){:width="100%"}
 
 ## Logging from your application
 
@@ -36,8 +36,8 @@ page.
 To clear the log entries in the logging view,
 click the **Clear logs** button.
 
-[Logging]: {{site.url}}/testing/code-debugging#add-logging-to-your-application
-[Debugging Flutter apps programmatically]: {{site.url}}/testing/code-debugging
+[Logging]: /testing/code-debugging#add-logging-to-your-application
+[Debugging Flutter apps programmatically]: /testing/code-debugging
 
 ## Other resources
 

@@ -784,17 +784,17 @@ help verify alignments, add the `debugShowMaterialGrid` argument in the
 
 To add an overlay to non-Material applications, add a [`GridPaper`][] widget.
 
-[Debugger]: {{site.url}}/tools/devtools/debugger
-[Debugging]: {{site.url}}/testing/debugging
-[DevTools]: {{site.url}}/tools/devtools
+[Debugger]: /tools/devtools/debugger
+[Debugging]: /testing/debugging
+[DevTools]: /tools/devtools
 [DiagnosticsProperty]: {{site.api}}/flutter/foundation/DiagnosticsProperty-class.html
-[Flutter inspector]: {{site.url}}/tools/devtools/inspector
-[Inspector view]: {{site.url}}/tools/devtools/inspector
-[Logging view]: {{site.url}}/tools/devtools/logging
+[Flutter inspector]: /tools/devtools/inspector
+[Inspector view]: /tools/devtools/inspector
+[Logging view]: /tools/devtools/logging
 [Material Design baseline grid]: {{site.material}}/foundations/layout/understanding-layout/spacing
-[Profiling Flutter performance]: {{site.url}}/perf/ui-performance
-[The performance overlay]: {{site.url}}/perf/ui-performance#the-performance-overlay
-[Timeline events tab]: {{site.url}}/tools/devtools/performance#timeline-events-tab
+[Profiling Flutter performance]: /perf/ui-performance
+[The performance overlay]: /perf/ui-performance#the-performance-overlay
+[Timeline events tab]: /tools/devtools/performance#timeline-events-tab
 [Timeline]: {{site.dart.api}}/stable/dart-developer/Timeline-class.html
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
 [`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
@@ -830,10 +830,10 @@ To add an overlay to non-Material applications, add a [`GridPaper`][] widget.
 [`log()`]: {{site.api}}/flutter/dart-developer/log.html
 [`setState()`]: {{site.api}}/flutter/widgets/State/setState.html
 [`timeDilation`]: {{site.api}}/flutter/scheduler/timeDilation.html
-[debug mode]: {{site.url}}/testing/build-modes#debug
+[debug mode]: /testing/build-modes#debug
 [file an issue]: {{site.github}}/flutter/devtools/issues
 [frame callback]: {{site.api}}/flutter/scheduler/SchedulerBinding/addPersistentFrameCallback.html
-[profile mode]: {{site.url}}/testing/build-modes#profile
+[profile mode]: /testing/build-modes#profile
 [render-fill]: {{site.api}}/flutter/rendering/Layer/debugFillProperties.html
 [rendering library]: {{site.api}}/flutter/rendering/rendering-library.html
 [systrace]: {{site.android-dev}}/studio/profile/systrace

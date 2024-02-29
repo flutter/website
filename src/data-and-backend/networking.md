@@ -36,13 +36,13 @@ macOS apps must allow network access in the relevant `*.entitlements` files.
 
 Learn more about [setting up entitlements][].
 
-[setting up entitlements]: {{site.url}}/platform-integration/macos/building#setting-up-entitlements
+[setting up entitlements]: /platform-integration/macos/building#setting-up-entitlements
 
 ## Samples
 
 For a practical sample of various networking tasks (incl. fetching data,
 WebSockets, and parsing data in the background) see the 
-[networking cookbook]({{site.url}}/cookbook#networking).
+[networking cookbook](/cookbook#networking).
 
 [declare]: {{site.android-dev}}/training/basics/network-ops/connecting
 [`http`]: {{site.pub-pkg}}/http

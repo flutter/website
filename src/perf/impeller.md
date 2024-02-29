@@ -149,7 +149,7 @@ submitting an issue for Impeller:
 * An [export of the performance trace][].
   Zip the file and attach it to the GitHub issue.
 
-[export of the performance trace]:{{site.url}}/tools/devtools/performance#import-and-export
+[export of the performance trace]:/tools/devtools/performance#import-and-export
 [Impeller project board]: {{site.github}}/orgs/flutter/projects/21
 
 ## Architecture

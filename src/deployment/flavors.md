@@ -288,14 +288,14 @@ For packages that support creating flavors, check out the following:
 * [`flutter_flavor`][]
 * [`flutter_flavorizr`][]
 
-[Launching your app flavors]: {{site.url}}/deployment/flavors/#launching-your-app-flavors
+[Launching your app flavors]: /deployment/flavors/#launching-your-app-flavors
 [Flutter repo]: {{site.repo.flutter}}/blob/master/dev/integration_tests/flavors/lib/main.dart
 [iOS]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flavors/ios
 [macOS]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flavors/macos
 [iOS (Xcode)]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flavors/ios
 [`appFlavor`]: {{site.api}}/flutter/services/appFlavor-constant.html
 [Android]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flavors/android
-[Adding assets and images]: {{site.url}}/ui/assets/assets-and-images
+[Adding assets and images]: /ui/assets/assets-and-images
 [Build flavors in Flutter (Android and iOS) with different Firebase projects per flavor Flutter Ready to Go]: {{site.medium}}/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b
 [Flavoring Flutter Applications (Android & iOS)]: {{site.medium}}/flutter-community/flavoring-flutter-applications-android-ios-ea39d3155346
 [Flutter Flavors Setup with multiple Firebase Environments using FlutterFire and Very Good CLI]: https://codewithandrea.com/articles/flutter-flavors-for-firebase-apps/

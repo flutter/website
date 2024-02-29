@@ -472,8 +472,8 @@ macOS and Windows:
 - [Flutter inspector][] and the [DevTools][] docs
 - [Performance profiling][]
 
-[Debugging Flutter apps]: {{site.url}}/testing/debugging
-[Performance profiling]: {{site.url}}/perf/ui-performance
+[Debugging Flutter apps]: /testing/debugging
+[Performance profiling]: /perf/ui-performance
 
 ### Android
 
@@ -503,8 +503,8 @@ You can find debugging resources on [Microsoft Learn][].
 [Debugging]: {{site.apple-dev}}/support/debugging/
 [developer.android.com]: {{site.android-dev}}
 [developer.apple.com]: {{site.apple-dev}}
-[DevTools]: {{site.url}}/tools/devtools
-[Flutter inspector]: {{site.url}}/tools/devtools/inspector
+[DevTools]: /tools/devtools
+[Flutter inspector]: /tools/devtools/inspector
 [Instruments Help]: https://help.apple.com/instruments/mac/current/
 [Microsoft Learn]: https://learn.microsoft.com/visualstudio/
 [Visual Studio Debugger]: https://learn.microsoft.com/visualstudio/debugger/?view=vs-2022

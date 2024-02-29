@@ -18,7 +18,7 @@ join the [flutter-announce][] Google group.
 For Dart, you can join the [Dart Announce][] Google group,
 and review the [Dart changelog][].
 
-[release notes]: {{site.url}}/release/release-notes
+[release notes]: /release/release-notes
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [Dart Announce]: {{site.groups}}/a/dartlang.org/g/announce
 [Dart changelog]: {{site.github}}/dart-lang/sdk/blob/main/CHANGELOG.md
@@ -47,11 +47,11 @@ You might also check out the [Dart 3.3 release][] blog post.
 * The [Concurrency and isolates][] page has been reworked.
 
 [@TahaTesser]: {{site.github}}/TahaTesser
-[Concurrency and isolates]: {{site.url}}/perf/isolates
-[Flutter install]: {{site.url}}/get-started/install
+[Concurrency and isolates]: /perf/isolates
+[Flutter install]: /get-started/install
 [let us know]: {{site.github}}/flutter/website/issues/new/choose
-[migrating from Material 2 to Material 3]: {{site.url}}/release/breaking-changes/material-3-migration
-[Use themes to share colors and font styles]: {{site.url}}/cookbook/design/themes
+[migrating from Material 2 to Material 3]: /release/breaking-changes/material-3-migration
+[Use themes to share colors and font styles]: /cookbook/design/themes
 
 **Other updates**
 
@@ -67,5 +67,5 @@ You might also check out the [Dart 3.3 release][] blog post.
 For past releases, check out the
 [What's new archive][] page.
 
-[What's new archive]: {{site.url}}/release/archive-whats-new
+[What's new archive]: /release/archive-whats-new
 
