@@ -35,11 +35,13 @@ release, and listed in alphabetical order:
 * [Rename `MemoryAllocations` to `FlutterMemoryAllocations`][]
 * [Deprecate `TextField.canRequestFocus`][]
 * [Nullable PageView.controller][]
+* [Deprecate `ButtonBar` in favor of `OverflowBar`][]
 
 [Stop generating AssetManifest.json]: /release/breaking-changes/asset-manifest-dot-json
 [Rename `MemoryAllocations` to `FlutterMemoryAllocations`]: /release/breaking-changes/flutter-memory-allocations
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
 [Nullable PageView.controller]: /release/breaking-changes/pageview-controller
+[Deprecate `ButtonBar` in favor of `OverflowBar`]]: /release/breaking-changes/deprecate-buttonbar
 
 ### Released in Flutter 3.19
 
