@@ -45,7 +45,7 @@ moments to prepare.
   error in the native code.
 {{site.alert.end}}
 
-[state]: {{site.url}}/data-and-backend/state-mgmt/ephemeral-vs-app
+[state]: /data-and-backend/state-mgmt/ephemeral-vs-app
 
 ## Overview
 
@@ -166,4 +166,4 @@ check out the following resources:
 [`TextField`]: {{site.api}}/flutter/material/TextField/restorationId.html
 [`restorablePush`]: {{site.api}}/flutter/widgets/Navigator/restorablePush.html
 [`go_router`]: {{site.pub}}/packages/go_router
-[Navigation and routing]: {{site.url}}/ui/navigation
+[Navigation and routing]: /ui/navigation

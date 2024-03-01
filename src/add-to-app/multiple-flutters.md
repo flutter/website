@@ -85,10 +85,10 @@ on both Android and iOS on [GitHub][].
 [GitHub]: {{site.repo.samples}}/tree/main/add_to_app/multiple_flutters
 [`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
 [`FlutterViewController`]: {{site.api}}/ios-embedder/interface_flutter_view_controller.html
-[performance characteristics]: {{site.url}}/add-to-app/performance
-[flutter.dev/go/multiple-flutters]: {{site.url}}/go/multiple-flutters
+[performance characteristics]: /add-to-app/performance
+[flutter.dev/go/multiple-flutters]: /go/multiple-flutters
 [Issue 72009]: {{site.repo.flutter}}/issues/72009
 [Pigeon]: {{site.pub}}/packages/pigeon
-[platform channels]: {{site.url}}/platform-integration/platform-channels
+[platform channels]: /platform-integration/platform-channels
 [Android API]: https://cs.opensource.google/flutter/engine/+/master:shell/platform/android/io/flutter/embedding/engine/FlutterEngineGroup.java
 [iOS API]: https://cs.opensource.google/flutter/engine/+/master:shell/platform/darwin/ios/framework/Headers/FlutterEngineGroup.h

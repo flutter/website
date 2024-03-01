@@ -674,16 +674,16 @@ You can access the resources used in this tutorial from these locations:
 To add interactivity to this layout, follow the
 [interactivity tutorial][Adding Interactivity to Your Flutter App].
 
-[Adding Interactivity to Your Flutter App]: {{site.url}}/ui/interactivity
-[automatic reformatting support]: {{site.url}}/tools/formatting
+[Adding Interactivity to Your Flutter App]: /ui/interactivity
+[automatic reformatting support]: /tools/formatting
 [ch-photo]: https://unsplash.com/photos/red-and-gray-tents-in-grass-covered-mountain-5Rhl-kSRydQ
 [Unsplash]: https://unsplash.com
 [Switzerland Tourism]: https://www.myswitzerland.com/en-us/destinations/lake-oeschinen
-[Flutter's approach to layout]: {{site.url}}/ui/layout
-[new-flutter-app]: {{site.url}}/get-started/test-drive
+[Flutter's approach to layout]: /ui/layout
+[new-flutter-app]: /get-started/test-drive
 [`lake.jpg`]: {{rawExFile}}/layout/lakes/step5/images/lake.jpg
 [`lib/main.dart`]: {{examples}}/layout/lakes/step2/lib/main.dart
-[hot reload]: {{site.url}}/tools/hot-reload
+[hot reload]: /tools/hot-reload
 [`main.dart`]: {{examples}}/layout/lakes/step6/lib/main.dart
 [`pubspec.yaml`]: {{examples}}/layout/lakes/step6/pubspec.yaml
-[Set up your Flutter environment]: {{site.url}}/get-started/install
+[Set up your Flutter environment]: /get-started/install

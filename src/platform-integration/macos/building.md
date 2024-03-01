@@ -29,7 +29,7 @@ including a `MacosWindow` frame and scaffold,
 toolbars, pulldown and
 pop-up buttons, and modal dialogs.
 
-[Cupertino]: {{site.url}}/ui/widgets/cupertino
+[Cupertino]: /ui/widgets/cupertino
 [macos_ui]: {{site.pub}}/packages/macos_ui
 
 ## Building macOS apps
@@ -70,7 +70,7 @@ App Store.
 [distribute it through the macOS App Store]: {{site.apple-dev}}/macos/submit/
 [documentation on notarizing macOS Applications]:{{site.apple-dev}}/documentation/xcode/notarizing_macos_software_before_distribution
 [on distributing an application through the App Store]: https://help.apple.com/xcode/mac/current/#/dev067853c94
-[Build and release a macOS app]: {{site.url}}/deployment/macos
+[Build and release a macOS app]: /deployment/macos
 
 ## Entitlements and the App Sandbox
 

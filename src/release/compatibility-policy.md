@@ -34,7 +34,7 @@ We provide a list of [guides for migrating code][] affected by
 breaking changes.
 
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
-[guides for migrating code]: {{site.url}}/release/breaking-changes
+[guides for migrating code]: /release/breaking-changes
 
 ## Deprecation policy
 

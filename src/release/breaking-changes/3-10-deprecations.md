@@ -16,7 +16,7 @@ primary source to aid in migration. A
 [quick reference sheet][] is available as well.
 
 [Deprecation Policy]: {{site.repo.flutter}}/wiki/Tree-hygiene#deprecation
-[quick reference sheet]: {{site.url}}/go/deprecations-removed-after-3-10
+[quick reference sheet]: /go/deprecations-removed-after-3-10
 
 ## Changes
 
@@ -178,7 +178,7 @@ Relevant PRs:
 * Deprecated in [#93427][]
 * Removed in [#127124][]
 
-[ColorScheme for Material 3]: {{site.url}}/go/colorscheme-m3
+[ColorScheme for Material 3]: /go/colorscheme-m3
 
 [`ColorScheme`]: {{site.api}}/flutter/material/ColorScheme-class.html
 
@@ -236,7 +236,7 @@ Relevant PRs:
 * Deprecated in [#93396][]
 * Removed in [#127238][]
 
-[Material Theme System Updates]: {{site.url}}/go/material-theme-system-updates
+[Material Theme System Updates]: /go/material-theme-system-updates
 
 [`Theme`]: {{site.api}}/flutter/material/Theme-class.html
 [`ThemeData`]: {{site.api}}/flutter/material/Theme-class.html
@@ -411,7 +411,7 @@ await expectLater(
 );
 ```
 
-[In-depth migration guide available]: {{site.url}}/release/breaking-changes/animation-sheet-builder-display
+[In-depth migration guide available]: /release/breaking-changes/animation-sheet-builder-display
 
 **References**
 

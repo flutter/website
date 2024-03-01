@@ -12,7 +12,7 @@ description: Evaluating the performance of your app from several angles.
   on [Using the Performance view][].
 {{site.alert.end}}
 
-[Using the Performance view]: {{site.url}}/tools/devtools/performance
+[Using the Performance view]: /tools/devtools/performance
 
 What is performance? Why is performance important? How do I improve performance?
 
@@ -25,15 +25,15 @@ The answers to the first two questions are mostly philosophical,
 and not as helpful to many developers who visit this page with specific
 performance issues that need to be solved.
 Therefore, the answers to those
-questions are in the [appendix]({{site.url}}/perf/appendix).
+questions are in the [appendix](/perf/appendix).
 
 To improve performance, you first need metrics: some measurable numbers to
 verify the problems and improvements.
-In the [metrics]({{site.url}}/perf/metrics) page,
+In the [metrics](/perf/metrics) page,
 you'll see which metrics are currently used,
 and which tools and APIs are available to get the metrics.
 
-There is a list of [Frequently asked questions]({{site.url}}/perf/faq),
+There is a list of [Frequently asked questions](/perf/faq),
 so you can find out if the questions you have or the problems you're having
 were already answered or encountered, and whether there are existing solutions.
 (Alternatively, you can check the Flutter GitHub issue database using the
@@ -56,7 +56,7 @@ category.
 Are your animations janky (not smooth)? Learn how to
 evaluate and fix rendering issues.
 
-[Improving rendering performance]({{site.url}}/perf/rendering-performance)
+[Improving rendering performance](/perf/rendering-performance)
 
 {% comment %}
 Do your apps take a long time to open? We'll also cover the startup speed issue
@@ -69,7 +69,7 @@ TODO(<https://github.com/flutter/website/issues/8249>): Reintroduce this article
 
 ## Memory
 
-[Using memory wisely]({{site.url}}/perf/memory)
+[Using memory wisely](/perf/memory)
 
 {% endcomment -%}
 
@@ -88,11 +88,11 @@ TODO(<https://github.com/flutter/website/issues/8249>): Reintroduce this article
 
 How to ensure a longer battery life when running your app.
 
-[Preserving your battery]({{site.url}}/perf/power)
+[Preserving your battery](/perf/power)
 
 {% endcomment -%}
 
-[Measuring your app's size]: {{site.url}}/perf/app-size
+[Measuring your app's size]: /perf/app-size
 
 [speed]: {{site.repo.flutter}}/issues?q=is%3Aopen+label%3A%22perf%3A+speed%22+sort%3Aupdated-asc+
 [energy]: {{site.repo.flutter}}/issues?q=is%3Aopen+label%3A%22perf%3A+energy%22+sort%3Aupdated-asc+

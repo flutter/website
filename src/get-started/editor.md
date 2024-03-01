@@ -174,4 +174,4 @@ Use the following instructions for Linux or Windows:
 [Android Studio]: {{site.android-dev}}/studio/install
 [IntelliJ IDEA Community]: https://www.jetbrains.com/idea/download/
 [IntelliJ IDEA Ultimate]: https://www.jetbrains.com/idea/download/
-[next step: Test drive]: {{site.url}}/get-started/test-drive
+[next step: Test drive]: /get-started/test-drive

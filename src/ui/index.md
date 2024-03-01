@@ -899,16 +899,16 @@ retrieve the state associated with a widget.
 For more information, check out the [`GlobalKey`][] API.
 
 [`actions`]: {{api}}/material/AppBar-class.html#actions
-[adding interactivity to your Flutter app]: {{site.url}}/ui/interactivity
+[adding interactivity to your Flutter app]: /ui/interactivity
 [`AppBar`]: {{api}}/material/AppBar-class.html
 [`BoxDecoration`]: {{api}}/painting/BoxDecoration-class.html
 [`build()`]: {{api}}/widgets/StatelessWidget/build.html
-[building layouts]: {{site.url}}/ui/layout
+[building layouts]: /ui/layout
 [`Center`]: {{api}}/widgets/Center-class.html
 [`Column`]: {{api}}/widgets/Column-class.html
 [`Container`]: {{api}}/widgets/Container-class.html
 [`createState()`]: {{api}}/widgets/StatefulWidget-class.html#createState
-[Cupertino components]: {{site.url}}/ui/widgets/cupertino
+[Cupertino components]: /ui/widgets/cupertino
 [`CupertinoApp`]: {{api}}/cupertino/CupertinoApp-class.html
 [`CupertinoNavigationBar`]: {{api}}/cupertino/CupertinoNavigationBar-class.html
 [`didUpdateWidget()`]: {{api}}/widgets/State-class.html#didUpdateWidget
@@ -917,16 +917,16 @@ For more information, check out the [`GlobalKey`][] API.
 [`final`]: {{site.dart-site}}/language/variables#final-and-const
 [`flex`]: {{api}}/widgets/Expanded-class.html#flex
 [`FloatingActionButton`]: {{api}}/material/FloatingActionButton-class.html
-[Gestures in Flutter]: {{site.url}}/ui/interactivity/gestures
+[Gestures in Flutter]: /ui/interactivity/gestures
 [`GestureDetector`]: {{api}}/widgets/GestureDetector-class.html
 [`GlobalKey`]: {{api}}/widgets/GlobalKey-class.html
 [`IconButton`]: {{api}}/material/IconButton-class.html
 [`initState()`]: {{api}}/widgets/State-class.html#initState
 [`key`]: {{api}}/widgets/Widget-class.html#key
 [`Key`]: {{api}}/foundation/Key-class.html
-[Layouts]: {{site.url}}/ui/widgets/layout
+[Layouts]: /ui/widgets/layout
 [`leading`]: {{api}}/material/AppBar-class.html#leading
-[Material Components widgets]: {{site.url}}/ui/widgets/material
+[Material Components widgets]: /ui/widgets/material
 [Material icons]: https://design.google.com/icons/
 [`MaterialApp`]: {{api}}/material/MaterialApp-class.html
 [`Navigator`]: {{api}}/widgets/Navigator-class.html

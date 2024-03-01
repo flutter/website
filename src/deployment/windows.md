@@ -257,11 +257,11 @@ even if the certification passes.
 [msidocs]: https://docs.microsoft.com/en-us/windows/win32/msi/windows-installer-portal
 [microsoftpartner]: https://partner.microsoft.com/
 [msix package]: {{site.pub}}/packages/msix
-[msix packaging]: {{site.url}}/platform-integration/windows/building#msix-packaging
+[msix packaging]: /platform-integration/windows/building#msix-packaging
 [partnercenterapi]: https://docs.microsoft.com/azure/marketplace/azure-app-apis
 [storepolicies]: https://docs.microsoft.com/windows/uwp/publish/store-policies/
 [visualstudiopackaging]: https://docs.microsoft.com/windows/msix/package/packaging-uwp-apps
 [visualstudiosubmission]: https://docs.microsoft.com/windows/msix/package/packaging-uwp-apps#automate-store-submissions
 [windowspackageversioning]: https://docs.microsoft.com/windows/uwp/publish/package-version-numbering
 [windowsappcertification]: https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit
-[version migration guide]: {{site.url}}/release/breaking-changes/windows-version-information
+[version migration guide]: /release/breaking-changes/windows-version-information

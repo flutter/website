@@ -16,7 +16,7 @@ speech bubble typing indicator that animates in and out of view.
 
 The following animation shows the app's behavior:
 
-![The typing indicator is turned on and off]({{site.url}}/assets/images/docs/cookbook/effects/TypingIndicator.gif){:.site-mobile-screenshot}
+![The typing indicator is turned on and off](/assets/images/docs/cookbook/effects/TypingIndicator.gif){:.site-mobile-screenshot}
 
 ## Define the typing indicator widget
 
@@ -1081,5 +1081,5 @@ class FakeMessage extends StatelessWidget {
 }
 ```
 
-[explicit animation]: {{site.url}}/ui/animations#tween-animation
-[staggered animation]: {{site.url}}/ui/animations/staggered-animations
+[explicit animation]: /ui/animations#tween-animation
+[staggered animation]: /ui/animations/staggered-animations

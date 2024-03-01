@@ -24,7 +24,7 @@ about evaluating and debugging Flutter's performance.
 
 * What are some tools for capturing and analyzing performance
   metrics?
-  * [Dart DevTools]({{site.url}}/tools/devtools)
+  * [Dart DevTools](/tools/devtools)
   * [Apple instruments](https://en.wikipedia.org/wiki/Instruments_(software))
   * [Linux perf](https://en.wikipedia.org/wiki/Perf_(Linux))
   * [Chrome tracing (enter `about:tracing` in your
@@ -41,7 +41,7 @@ about evaluating and debugging Flutter's performance.
 * My Flutter app looks janky or stutters. How do I fix it?
   * [Improving rendering performance][]
 
-[Improving rendering performance]: {{site.url}}/perf/rendering-performance
+[Improving rendering performance]: /perf/rendering-performance
 
 * What are some costly performance operations that I need
   to be careful with?
@@ -53,7 +53,7 @@ about evaluating and debugging Flutter's performance.
 [`Clip.antiAliasWithSaveLayer`]: {{site.api}}/flutter/dart-ui/Clip.html#antiAliasWithSaveLayer
 [`ImageFilter`]: {{site.api}}/flutter/dart-ui/ImageFilter-class.html
 [`Opacity`]: {{site.api}}/flutter/widgets/Opacity-class.html
-[Performance best practices]: {{site.url}}/perf/best-practices
+[Performance best practices]: /perf/best-practices
 [`savelayer`]: {{site.api}}/flutter/dart-ui/Canvas/saveLayer.html
 
 * How do I tell which widgets in my Flutter app are rebuilt
@@ -83,13 +83,13 @@ about evaluating and debugging Flutter's performance.
     as demonstrated in [Parse JSON in the background][] cookbook.
 
 [`compute()`]: {{site.api}}/flutter/foundation/compute-constant.html
-[Parse JSON in the background]: {{site.url}}/cookbook/networking/background-parsing
+[Parse JSON in the background]: /cookbook/networking/background-parsing
 
 * How do I determine my Flutter app's package size that a
   user will download?
   * See [Measuring your app's size][]
 
-[Measuring your app's size]: {{site.url}}/perf/app-size
+[Measuring your app's size]: /perf/app-size
 
 * How do I see the breakdown of the Flutter engine size?
   * Visit the [binary size dashboard][], and replace the git

@@ -323,8 +323,8 @@ from the command line.
 [`integration_test`]: {{site.repo.flutter}}/tree/main/packages/integration_test#integration_test
 [integration_test usage]: {{site.repo.flutter}}/tree/main/packages/integration_test#usage
 [iOS Device Testing]: {{site.repo.flutter}}/tree/main/packages/integration_test#ios-device-testing
-[Migrating from flutter_drive]: {{site.url}}/release/breaking-changes/flutter-driver-migration
+[Migrating from flutter_drive]: /release/breaking-changes/flutter-driver-migration
 [Running Flutter driver tests with web]: {{site.repo.flutter}}/wiki/Running-Flutter-Driver-tests-with-Web
 [samples]: {{site.repo.samples}}
 [testing_app]: {{site.repo.samples}}/tree/main/testing_app/integration_test
-[widget tests]: {{site.url}}/testing/overview#widget-tests
+[widget tests]: /testing/overview#widget-tests

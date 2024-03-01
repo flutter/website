@@ -32,7 +32,7 @@ You can find the entirely new Material components by
 visiting the [Affected widgets][] page.
 
 [Affected widgets]: {{site.api}}/flutter/material/ThemeData/useMaterial3.html#affected-widgets
-[deprecation policy]: {{site.url}}/release/compatibility-policy#deprecation-policy
+[deprecation policy]: /release/compatibility-policy#deprecation-policy
 [demo]: https://flutter.github.io/samples/web/material_3_demo/#/
 [`NavigationBar`]: {{site.api}}/flutter/material/NavigationBar-class.html
 [`useMaterial3`]: {{site.api}}/flutter/material/ThemeData/useMaterial3.html

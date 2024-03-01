@@ -9,7 +9,7 @@ you must accept a permission dialog box to enable
 Flutter debugging functionalities such as hot-reload
 and DevTools.
 
-![Screenshot of "allow network connections" dialog]({{site.url}}/assets/images/docs/development/device-connect.png)
+![Screenshot of "allow network connections" dialog](/assets/images/docs/development/device-connect.png)
 
 This affects debug and profile builds only and won't
 appear in release builds. You can also allow this

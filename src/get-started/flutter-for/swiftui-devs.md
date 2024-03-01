@@ -1376,17 +1376,17 @@ Android, iOS, and on the web from the same codebase.
 
 To review a complete walkthrough, check out the [video_player example][].
 
-[Flutter for UIKit developers]: {{site.url}}/get-started/flutter-for/uikit-devs
-[Add Flutter to existing app]: {{site.url}}/add-to-app
-[Animations overview]: {{site.url}}/ui/animations
-[Cupertino widgets]: {{site.url}}/ui/widgets/cupertino
-[Flutter concurrency for Swift developers]: {{site.url}}/get-started/flutter-for/dart-swift-concurrency
-[Navigation and routing]: {{site.url}}/ui/navigation
+[Flutter for UIKit developers]: /get-started/flutter-for/uikit-devs
+[Add Flutter to existing app]: /add-to-app
+[Animations overview]: /ui/animations
+[Cupertino widgets]: /ui/widgets/cupertino
+[Flutter concurrency for Swift developers]: /get-started/flutter-for/dart-swift-concurrency
+[Navigation and routing]: /ui/navigation
 [Material]: {{site.material}}/develop/flutter/
-[Platform adaptations]: {{site.url}}/platform-integration/platform-adaptations
+[Platform adaptations]: /platform-integration/platform-adaptations
 [`url_launcher`]: {{site.pub-pkg}}/url_launcher
-[widget catalog]: {{site.url}}/ui/widgets/layout
-[Understanding constraints]: {{site.url}}/ui/layout/constraints
+[widget catalog]: /ui/widgets/layout
+[Understanding constraints]: /ui/layout/constraints
 [`WidgetApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
 [`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
@@ -1404,11 +1404,11 @@ To review a complete walkthrough, check out the [video_player example][].
 [`RotationTransition`]: {{site.api}}/flutter/widgets/RotationTransition-class.html
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
-[State management]:  {{site.url}}/data-and-backend/state-mgmt
+[State management]:  /data-and-backend/state-mgmt
 [Wonderous]: https://flutter.gskinner.com/wonderous/?utm_source=flutterdocs&utm_medium=docs&utm_campaign=iosdevs
 [video_player]: {{site.pub-pkg}}/video_player
 [video_player example]: {{site.pub-pkg}}/video_player/example
-[Creating responsive and adaptive apps]: {{site.url}}/ui/layout/responsive/adaptive-responsive
+[Creating responsive and adaptive apps]: /ui/layout/responsive/adaptive-responsive
 [`MediaQuery.of()`]: {{site.api}}/flutter/widgets/MediaQuery-class.html
 [`CustomPaint`]: {{site.api}}/flutter/widgets/CustomPaint-class.html
 [`CustomPainter`]: {{site.api}}/flutter/rendering/CustomPainter-class.html

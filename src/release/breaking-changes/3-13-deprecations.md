@@ -17,7 +17,7 @@ To further aid your migration, check out this
 [quick reference sheet][].
 
 [Deprecation Policy]: {{site.repo.flutter}}/wiki/Tree-hygiene#deprecation
-[quick reference sheet]: {{site.url}}/go/deprecations-removed-after-3-13
+[quick reference sheet]: /go/deprecations-removed-after-3-13
 
 ## Changes
 
@@ -47,7 +47,7 @@ covers this update to chips and tooltips in greater depth.
 To learn more, check out the [chips and tooltips migration guide][].
 
 [Deprecate `useDeleteButtonTooltip` for Chips]: https://docs.google.com/document/d/1wc9ot7T2E7hJubYxEWMX230a79wYSiFey4BHxnEzHtw/edit?usp=sharing&resourcekey=0-Bo7KPqEtkWgZcSuRCqwQ5w
-[chips and tooltips migration guide]: {{site.url}}/release/breaking-changes/chip-usedeletebuttontooltip-migration
+[chips and tooltips migration guide]: /release/breaking-changes/chip-usedeletebuttontooltip-migration
 
 **Migration guide**
 
@@ -407,7 +407,7 @@ The following properties were removed:
 To learn more about this `TestWindow` update, check out
 [`TestWindow` migration guide][].
 
-[`TestWindow` migration guide]: {{site.url}}/release/breaking-changes/window-singleton
+[`TestWindow` migration guide]: /release/breaking-changes/window-singleton
 
 **Migration guide**
 

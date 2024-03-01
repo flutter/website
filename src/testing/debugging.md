@@ -39,15 +39,15 @@ You might find the following docs useful:
 * [Flutter's modes][]
 * [Debugging Flutter apps programmatically][]
 
-[Flutter enabled IDE/editor]: {{site.url}}/get-started/editor
+[Flutter enabled IDE/editor]: /get-started/editor
 
-[Debugging Flutter apps programmatically]: {{site.url}}/testing/code-debugging
-[Flutter's modes]: {{site.url}}/testing/build-modes
-[Flutter performance profiling]: {{site.url}}/perf/ui-performance
-[Performance best practices]: {{site.url}}/perf/best-practices
-[Use a native debugger]: {{site.url}}/testing/native-debugging
+[Debugging Flutter apps programmatically]: /testing/code-debugging
+[Flutter's modes]: /testing/build-modes
+[Flutter performance profiling]: /perf/ui-performance
+[Performance best practices]: /perf/best-practices
+[Use a native debugger]: /testing/native-debugging
 
-[Android Studio/IntelliJ]: {{site.url}}/tools/android-studio#run-app-with-breakpoints
-[VS Code]: {{site.url}}/tools/vs-code#run-app-with-breakpoints
-[DevTools]: {{site.url}}/tools/devtools
-[Flutter inspector]: {{site.url}}/tools/devtools/inspector
+[Android Studio/IntelliJ]: /tools/android-studio#run-app-with-breakpoints
+[VS Code]: /tools/vs-code#run-app-with-breakpoints
+[DevTools]: /tools/devtools
+[Flutter inspector]: /tools/devtools/inspector

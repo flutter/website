@@ -457,7 +457,7 @@ master these skills.
 
 [built with `provider`]: {{site.repo.samples}}/tree/main/provider_counter
 [check out the example]: {{site.repo.samples}}/tree/main/provider_shopper
-[declarative UI programming]: {{site.url}}/data-and-backend/state-mgmt/declarative
-[ephemeral and app state]: {{site.url}}/data-and-backend/state-mgmt/ephemeral-vs-app
-[options page]: {{site.url}}/data-and-backend/state-mgmt/options
-[widget testing]: {{site.url}}/testing/overview#widget-tests
+[declarative UI programming]: /data-and-backend/state-mgmt/declarative
+[ephemeral and app state]: /data-and-backend/state-mgmt/ephemeral-vs-app
+[options page]: /data-and-backend/state-mgmt/options
+[widget testing]: /testing/overview#widget-tests

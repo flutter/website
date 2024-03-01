@@ -5,7 +5,7 @@ description: Why users see a survey announcement, how the data is used, and how 
 
 ## Why do I see a survey announcement?
 If you have not opted-out of Flutter's 
-[analytics and crash reporting]({{site.url}}/reference/crash-reporting), 
+[analytics and crash reporting](/reference/crash-reporting), 
 you may receive a survey announcement in your IDE. 
 
 We run two types of surveys:
@@ -32,6 +32,6 @@ To mute survey announcements, you might do one of the following:
 2. Opt-out of analytics and crash reporting per the steps
   given in
   [Disabling 
-analytics reporting]({{site.url}}/reference/crash-reporting#disabling-analytics-reporting).
+analytics reporting](/reference/crash-reporting#disabling-analytics-reporting).
 
 [Medium]: {{site.flutter-medium}}/search?q=survey

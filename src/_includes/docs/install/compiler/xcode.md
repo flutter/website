@@ -99,5 +99,5 @@ To install and set up CocoaPods, run the following commands:
 
 1. To apply this change, restart all open terminal sessions.
 
-[Flutter plugins]: {{site.url}}/packages-and-plugins/developing-packages#types
+[Flutter plugins]: /packages-and-plugins/developing-packages#types
 [cocoapods]: https://guides.cocoapods.org/using/getting-started.html#installation

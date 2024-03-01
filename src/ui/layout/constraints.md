@@ -17,7 +17,7 @@ js:
   you might check out [Common Flutter errors][].
 {{site.alert.end}}
 
-[Common Flutter errors]: {{site.url}}/testing/common-errors
+[Common Flutter errors]: /testing/common-errors
 
 When someone learning Flutter asks you why some widget
 with `width: 100` isn't 100 pixels wide,

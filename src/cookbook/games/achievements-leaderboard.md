@@ -15,7 +15,7 @@ Some players want to *compete* in it.
 This could be hitting high scores or accomplishing speedruns.
 These two ideas map to the concepts of *achievements* and *leaderboards*.
 
-![A simple graphic representing the four types of motivation explained above]({{site.url}}/assets/images/docs/cookbook/types-of-gamer-motivations.png){:.site-illustration}
+![A simple graphic representing the four types of motivation explained above](/assets/images/docs/cookbook/types-of-gamer-motivations.png){:.site-illustration}
 
 Ecosystems such as the App Store and Google Play provide
 centralized services for achievements and leaderboards.
@@ -52,7 +52,7 @@ To enable Game Center (GameKit) on iOS:
     register your game in [App Store Connect][]
     and from the **My App** section press the `+` icon.
 
-    ![Screenshot of the + button in App Store Connect]({{site.url}}/assets/images/docs/cookbook/app-store-add-app-button.png)
+    ![Screenshot of the + button in App Store Connect](/assets/images/docs/cookbook/app-store-add-app-button.png)
 
 7.  Still in App Store Connect, look for the *Game Center* section. You
     can find it in **Services** as of this writing. On the **Game
@@ -69,7 +69,7 @@ To enable *Play Games Services* on Android:
 1.  If you haven't already, go to [Google Play Console][]
     and register your game there.  
     
-    ![Screenshot of the 'Create app' button in Google Play Console]({{site.url}}/assets/images/docs/cookbook/google-play-create-app.png)
+    ![Screenshot of the 'Create app' button in Google Play Console](/assets/images/docs/cookbook/google-play-create-app.png)
 
 2.  Still in Google Play Console, select *Play Games Services* → *Setup
     and management* → *Configuration* from the navigation menu and
@@ -81,7 +81,7 @@ To enable *Play Games Services* on Android:
         If at any point you feel lost, consult the
         official [Play Games Services guide][].    
          
-        ![Screenshot showing the Games Services section in Google Play Console]({{site.url}}/assets/images/docs/cookbook/play-console-play-games-services.png)
+        ![Screenshot showing the Games Services section in Google Play Console](/assets/images/docs/cookbook/play-console-play-games-services.png)
 
 3.  When done, you can start adding leaderboards and achievements in
     **Play Games Services** → **Setup and management**. Create the exact

@@ -30,7 +30,7 @@ In order to browse around more of your application sources, click **Libraries**
 This opens the libraries window and allows you
 to search for other source files.
 
-![Screenshot of the debugger tab]({{site.url}}/assets/images/docs/tools/devtools/debugger_screenshot.png){:width="100%"}
+![Screenshot of the debugger tab](/assets/images/docs/tools/devtools/debugger_screenshot.png){:width="100%"}
 
 ## Setting breakpoints
 
@@ -88,11 +88,11 @@ whether or not the breakpoint was caught by application code.
 When performing a hot restart for a Flutter application,
 user breakpoints are cleared.
 
-[Logging view]: {{site.url}}/tools/devtools/logging
+[Logging view]: /tools/devtools/logging
 
 ## Other resources
 
 For more information on debugging and profiling, see the
 [Debugging][] page.
 
-[Debugging]: {{site.url}}/testing/debugging
+[Debugging]: /testing/debugging

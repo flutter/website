@@ -13,14 +13,14 @@ are spaced evenly, so that the items take up the visible space.
 For example, the four items in the following image are spaced evenly,
 with "Item 0" at the top, and "Item 3" at the bottom.
 
-![Spaced items]({{site.url}}/assets/images/docs/cookbook/spaced-items-1.png){:.site-mobile-screenshot}
+![Spaced items](/assets/images/docs/cookbook/spaced-items-1.png){:.site-mobile-screenshot}
 
 At the same time, you might want to allow users
 to scroll through the list when the list of items won't fit,
 maybe because a device is too small, a user resized a window,
 or the number of items exceeds the screen size.
 
-![Scrollable items]({{site.url}}/assets/images/docs/cookbook/spaced-items-2.png){:.site-mobile-screenshot}
+![Scrollable items](/assets/images/docs/cookbook/spaced-items-2.png){:.site-mobile-screenshot}
 
 Typically, you use [`Spacer`][] to tune the spacing between widgets,
 or [`Expanded`][] to expand a widget to fill the available space.

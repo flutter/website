@@ -9,12 +9,12 @@ js: [{url: '/assets/js/temp/macos-install-redirector.js'}]
 {% assign os = 'macos' -%}
 {% assign recommend = 'mobile-iOS' %}
 {% capture rec-target -%}
-[{{recommend | remove: 'mobile-' | strip}}]({{site.url}}/get-started/install/{{os | remove: ' ' | downcase}}/{{recommend | downcase}})
+[{{recommend | remove: 'mobile-' | strip}}](/get-started/install/{{os | remove: ' ' | downcase}}/{{recommend | downcase}})
 {%- endcapture %}
 
 <div class="card-deck mb-8">
 {% for target in page.target-list %}
-  <a class="card" id="install-{{os | remove: ' ' | downcase}}" href="{{site.url}}/get-started/install/{{os | remove: ' ' | downcase}}/{{target | downcase}}">
+  <a class="card" id="install-{{os | remove: ' ' | downcase}}" href="/get-started/install/{{os | remove: ' ' | downcase}}/{{target | downcase}}">
     <div class="card-body">
       <header class="card-title text-center m-0">
         <span class="d-block h1">

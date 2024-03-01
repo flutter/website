@@ -20,7 +20,7 @@ extension automatically shows up in a new tab when you open DevTools.
 You need to manually enable the extension before it loads for the first time.
 Make sure the extension is provided by a source you trust before enabling it.
 
-![Screenshot of extension enablement prompt]({{site.url}}/assets/images/docs/tools/devtools/extension_enable_prompt.png)
+![Screenshot of extension enablement prompt](/assets/images/docs/tools/devtools/extension_enable_prompt.png)
 
 Extension enablement states are stored in a `devtools_options.yaml` file in the
 root of the user's project (similar to `analysis_options.yaml`). This file

@@ -8,7 +8,7 @@ description: How to use the DevTools with Flutter.
 DevTools is a suite of performance and debugging tools
 for Dart and Flutter.
 
-![Dart DevTools Screens]({{site.url}}/assets/images/docs/tools/devtools/dart-devtools.gif){:width="100%"}
+![Dart DevTools Screens](/assets/images/docs/tools/devtools/dart-devtools.gif){:width="100%"}
 
 For a video introduction to DevTools, check out
 the following deep dive and use case walkthrough:
@@ -70,10 +70,10 @@ If your app has frequent background activity with some idle time,
 Flutter might use that opportunity to collect the created objects
 without performance impact.
 
-[CPU profiler]: {{site.url}}/tools/devtools/cpu-profiler
-[Performance]: {{site.url}}/perf
-[Performance > Timeline]: {{site.url}}/tools/devtools/performance#timeline-events-tab
-[UI frames]: {{site.url}}/perf/ui-performance
+[CPU profiler]: /tools/devtools/cpu-profiler
+[Performance]: /perf
+[Performance > Timeline]: /tools/devtools/performance#timeline-events-tab
+[UI frames]: /perf/ui-performance
 
 ## Providing feedback
 
@@ -89,9 +89,9 @@ in particular, its list of [other resources][].
 For more information on using DevTools with Dart command-line apps, see the
 [DevTools documentation on dart.dev]({{site.dart-site}}/tools/dart-devtools).
 
-[Android Studio/IntelliJ]: {{site.url}}/tools/devtools/android-studio
-[VS Code]: {{site.url}}/tools/devtools/vscode
-[command line]: {{site.url}}/tools/devtools/cli
+[Android Studio/IntelliJ]: /tools/devtools/android-studio
+[VS Code]: /tools/devtools/vscode
+[command line]: /tools/devtools/cli
 [DevTools issue tracker]: {{site.github}}/flutter/devtools/issues
-[Debugging]: {{site.url}}/testing/debugging
-[Other resources]: {{site.url}}/testing/debugging#other-resources
+[Debugging]: /testing/debugging
+[Other resources]: /testing/debugging#other-resources

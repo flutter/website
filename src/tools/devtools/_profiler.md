@@ -28,7 +28,7 @@ in a CPU profile. When a root node in this table
 has a high _self_ time, that means that many CPU samples
 in this profile ended with that method on top of the call stack.
 
-![Screenshot of the Bottom up view]({{site.url}}/assets/images/docs/tools/devtools/bottom-up-view.png)
+![Screenshot of the Bottom up view](/assets/images/docs/tools/devtools/bottom-up-view.png)
 See the [Guidelines](#guidelines) section below to learn how to
 enable the blue and green vertical lines seen in this image.
 
@@ -57,7 +57,7 @@ Tooltips can help you understand the values in each column:
 </dl>
 
 **Table element** (self time)
-![Screenshot of a bottom up table]({{site.url}}/assets/images/docs/tools/devtools/table-element.png)
+![Screenshot of a bottom up table](/assets/images/docs/tools/devtools/table-element.png)
 
 ### Call tree
 
@@ -71,7 +71,7 @@ When a root node in this table has a high _total_ time,
 that means that many CPU samples in this profile started
 with that method on the bottom of the call stack. 
 
-![Screenshot of a call tree table]({{site.url}}/assets/images/docs/tools/devtools/call-tree.png)
+![Screenshot of a call tree table](/assets/images/docs/tools/devtools/call-tree.png)
 See the [Guidelines](#guidelines) section below to learn how to
 enable the blue and green vertical lines seen in this image.
 
@@ -106,7 +106,7 @@ any code for methods that it called.
 on top of the call stack, or in other words,
 the time a method spent executing only its own code.
 
-![Screenshot of a call tree table]({{site.url}}/assets/images/docs/tools/devtools/method-table.png)
+![Screenshot of a call tree table](/assets/images/docs/tools/devtools/method-table.png)
 
 Selecting a method from the table on the left shows
 the call graph for that method. The call graph shows
@@ -125,12 +125,12 @@ amount of time that a method spent on the call stack.
 Like the Call tree, this view is useful for identifying
 expensive paths in a CPU profile.
 
-![Screenshot of a flame chart]({{site.url}}/assets/images/docs/tools/devtools/cpu-flame-chart.png)
+![Screenshot of a flame chart](/assets/images/docs/tools/devtools/cpu-flame-chart.png)
 
 The help menu, which can be opened by clicking the `?` icon
 next to the search bar, provides information about how to
 navigate and zoom within the chart and a color-coded legend.
-![Screenshot of flame chart help]({{site.url}}/assets/images/docs/tools/devtools/flame-chart-help.png){:width="70%"}
+![Screenshot of flame chart help](/assets/images/docs/tools/devtools/flame-chart-help.png){:width="70%"}
 
 
 ### CPU sampling rate
@@ -141,7 +141,7 @@ the CPU profiler page as "Cpu sampling rate: medium".
 This rate can be modified using the selector at the top
 of the page.
 
-![Screenshot of cpu sampling rate menu]({{site.url}}/assets/images/docs/tools/devtools/cpu-sampling-rate-menu.png){:width="70%"}
+![Screenshot of cpu sampling rate menu](/assets/images/docs/tools/devtools/cpu-sampling-rate-menu.png){:width="70%"}
 
 The **low**, **medium**, and **high** sampling rates are
 1,000 Hz, 4,000 Hz, and 20,000 Hz, respectively.
@@ -176,7 +176,7 @@ samples from the beginning of the recorded profile.
 When viewing a CPU profile, you can filter the data by
 library, method name, or [`UserTag`][].
 
-![Screenshot of filter by tag menu]({{site.url}}/assets/images/docs/tools/devtools/filter-by-tag.png)
+![Screenshot of filter by tag menu](/assets/images/docs/tools/devtools/filter-by-tag.png)
 
 [`UserTag`]: {{site.api}}/flutter/dart-developer/UserTag-class.html
 
@@ -188,5 +188,5 @@ To help with viewing parent-child relationships in a deep tree,
 enable the **Display guidelines** option.
 This adds vertical guidelines between parent and child in the tree.
 
-![Screenshot of display options]({{site.url}}/assets/images/docs/tools/devtools/display-options.png)
+![Screenshot of display options](/assets/images/docs/tools/devtools/display-options.png)
 

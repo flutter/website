@@ -117,5 +117,5 @@ class MyApp extends StatelessWidget {
   <img src="/assets/images/docs/cookbook/horizontal-list.gif" alt="Horizontal List Demo" class="site-mobile-screenshot" />
 </noscript>
 
-[breaking change]: {{site.url}}/release/breaking-changes/default-scroll-behavior-drag
+[breaking change]: /release/breaking-changes/default-scroll-behavior-drag
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html

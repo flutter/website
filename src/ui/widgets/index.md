@@ -66,4 +66,4 @@ help you quickly get started with Flutter widgets.
 
 <a class="btn btn-primary full-width" target="_blank" href="{{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG" >See more Widget of the Weeks</a>
 
-[widget index]: {{site.url}}/reference/widgets
+[widget index]: /reference/widgets

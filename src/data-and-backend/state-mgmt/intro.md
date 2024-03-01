@@ -13,8 +13,8 @@ next:
   or [Restore state on iOS][].
 {{site.alert.end}}
 
-[Restore state on Android]: {{site.url}}/platform-integration/android/restore-state-android
-[Restore state on iOS]: {{site.url}}/platform-integration/ios/restore-state-ios
+[Restore state on Android]: /platform-integration/android/restore-state-android
+[Restore state on iOS]: /platform-integration/ios/restore-state-ios
 
 _If you are already familiar with state management in reactive apps,
 you can skip this section, though you might want to review the
@@ -35,4 +35,4 @@ and many questions to think about.
 In the following pages,
 you will learn the basics of dealing with state in Flutter apps.
 
-[list of different approaches]: {{site.url}}/data-and-backend/state-mgmt/options
+[list of different approaches]: /data-and-backend/state-mgmt/options

@@ -599,7 +599,7 @@ Play store's delivery feature.
 [Flutter wiki]: {{site.repo.flutter}}/wiki
 [github.com/google/bundletool/releases]: {{site.github}}/google/bundletool/releases
 [lazily loading a library]: {{site.dart-site}}/language/libraries#lazily-loading-a-library
-[release or profile mode]: {{site.url}}/testing/build-modes
+[release or profile mode]: /testing/build-modes
 [step 3.3]: #step-3.3
 [android-app-bundle]: {{site.android-dev}}/guide/app-bundle
 [dart-def-import]: https://dart.dev/language/libraries#lazily-loading-a-library
