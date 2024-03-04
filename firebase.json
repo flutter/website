@@ -504,6 +504,7 @@
       { "source": "/go/plugins-team", "destination": "https://docs.google.com/forms/d/e/1FAIpQLSfpPqJYuL_RzLaTCjrWYw73Zrrei3YiU8B5eTrDBh4fuGhbXw/viewform?usp=sf_link", "type": 301 },
       { "source": "/go/profile-and-release-mode-for-custom-devices", "destination": "https://docs.google.com/document/d/1jcMyJvsWLizYOIJAdyosLSW-Io0-E_MGsU_uL_Q4Wt8/edit?usp=sharing", "type": 301 },
       { "source": "/go/programmatic-sheet", "destination": "https://docs.google.com/document/d/15A3q1QrcvEU82uG4heTCKV230depmaJZTIP5rEz7V8g/edit?usp=sharing&resourcekey=0-q-TH-9-LVmygnp6Ku4xKIg", "type": 301 },
+      { "source": "/go/pub-automated-publishing", "destination": "https://docs.google.com/document/d/1LSYVjDdgGNCc7p5Y2_hu8UA_Ms9MgZs3Jm974D1J344", "type": 301 },
       { "source": "/go/pub-workspace", "destination": "https://docs.google.com/document/d/1UEEAGdWIgVf0X7o8WPQCPmL4LSzaGCfJTM0pURoDLfE/edit?usp=sharing&resourcekey=0-c5CMaOoc_pg3ZwJKMAM0og", "type": 301 },
       { "source": "/go/publish-on-homebrew", "destination": "https://docs.google.com/document/d/1dk82qavQxT633LAonAM2xsqirWBmsqoHC4caJvYE584/edit?usp=sharing", "type": 301 },
       { "source": "/go/pull-request-revert-api", "destination": "https://docs.google.com/document/d/1mVVetlCjv9PM5gtg57nipDFd5TvWsd24rXPWS0FzVvE/edit?usp=sharing&resourcekey=0-McwG6wn0s6YQ7qxHffkcdw", "type": 301 },
