@@ -98,7 +98,7 @@ or [codemagic.yaml][cmyaml]
 to package the application and deploy it
 to the Microsoft Partner Center.
 Additional options (such as the list of
-capabilites and language resources
+capabilities and language resources
 contained in the package)
 can be configured using this package.
 
