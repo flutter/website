@@ -11,7 +11,7 @@ Some platform-specific functionality is available
 through existing packages;
 see [using packages][].
 
-[using packages]: {{site.url}}/packages-and-plugins/using-packages
+[using packages]: /packages-and-plugins/using-packages
 
 {{site.alert.note}}
   The information in this page is valid for most platforms,
@@ -64,7 +64,7 @@ Messages are passed between the client (UI)
 and host (platform) using platform
 channels as illustrated in this diagram:
 
-![Platform channels architecture]({{site.url}}/assets/images/docs/PlatformChannels.png){:width="100%"}
+![Platform channels architecture](/assets/images/docs/PlatformChannels.png){:width="100%"}
 
 Messages and responses are passed asynchronously,
 to ensure the user interface remains responsive.
@@ -1395,8 +1395,8 @@ DispatchQueue.main.async {
 [block]: {{site.apple-dev}}/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithBlocks/WorkingwithBlocks.html
 [`cloud_firestore`]: {{site.github}}/firebase/flutterfire/blob/master/packages/cloud_firestore/cloud_firestore_platform_interface/lib/src/method_channel/utils/firestore_message_codec.dart
 [`dart:html` library]: {{site.dart.api}}/dart-html/dart-html-library.html
-[developing packages]: {{site.url}}/packages-and-plugins/developing-packages
-[plugins]: {{site.url}}/packages-and-plugins/developing-packages#plugin
+[developing packages]: /packages-and-plugins/developing-packages
+[plugins]: /packages-and-plugins/developing-packages#plugin
 [dispatch queue]: {{site.apple-dev}}/documentation/dispatch/dispatchqueue
 [`/examples/platform_channel/`]: {{site.repo.flutter}}/tree/main/examples/platform_channel
 [`/examples/platform_channel_swift/`]: {{site.repo.flutter}}/tree/main/examples/platform_channel_swift
@@ -1405,8 +1405,8 @@ DispatchQueue.main.async {
 [`MethodChannel`]: {{site.api}}/flutter/services/MethodChannel-class.html
 [`MethodChannelAndroid`]: {{site.api}}/javadoc/io/flutter/plugin/common/MethodChannel.html
 [`MethodChanneliOS`]: {{site.api}}/ios-embedder/interface_flutter_method_channel.html
-[Platform adaptations]: {{site.url}}/platform-integration/platform-adaptations
-[publishing packages]: {{site.url}}/packages-and-plugins/developing-packages#publish
+[Platform adaptations]: /platform-integration/platform-adaptations
+[publishing packages]: /packages-and-plugins/developing-packages#publish
 [`quick_actions`]: {{site.pub}}/packages/quick_actions
 [section on threading]: #channels-and-platform-threading
 [`StandardMessageCodec`]: {{site.api}}/flutter/services/StandardMessageCodec-class.html

@@ -8,7 +8,7 @@
 - group: 'Shanghai Jiao Tong University *nix User Group'
   mirror: 'mirror.sjtu.edu.cn'
   urls:
-    pubhosted: 'https://mirror.sjtu.edu.cn/flutter-infra'
+    pubhosted: 'https://mirror.sjtu.edu.cn/dart-pub'
     flutterstorage: 'https://mirror.sjtu.edu.cn'
     issues: 'https://github.com/sjtug/mirror-requests'
     group: https://github.com/sjtug

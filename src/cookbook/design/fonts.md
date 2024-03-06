@@ -3,8 +3,6 @@ title: Use a custom font
 description: How to use custom fonts.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 <?code-excerpt path-base="cookbook/design/fonts/"?>
 
 {{site.alert.secondary}}
@@ -56,8 +54,8 @@ The guide offers completed example files at the end.
 
 {{site.alert.end}}
 
-[set up your Flutter environment]: {{site.url}}/get-started/install
-[new-flutter-app]: {{site.url}}/get-started/test-drive
+[set up your Flutter environment]: /get-started/install
+[new-flutter-app]: /get-started/test-drive
 
 ## Choose a font
 
@@ -102,7 +100,7 @@ Choose the typeface or font family that meets the design needs of your app.
   To learn how to get direct access to over 1,000 open-sourced font families,
   check out the [google_fonts][] package.
 
-  <iframe class="full-width" src="{{yt-embed}}/8Vzv2CdbEY0" title="Learn about the google_fonts Flutter Package" {{yt-set}}></iframe>
+  <iframe class="full-width" src="{{site.yt.embed}}/8Vzv2CdbEY0" title="Learn about the google_fonts Flutter Package" {{site.yt.set}}></iframe>
 
   To learn about another approach to using custom fonts that allows you to
   re-use one font over multiple projects,
@@ -182,7 +180,7 @@ To add font files to your Flutter app, complete the following steps.
          fonts:
            - asset: fonts/RobotoMono-Regular.ttf
            - asset: fonts/RobotoMono-Bold.ttf
-            weight: 700
+             weight: 700
    ```
 
 This `pubspec.yaml` file defines the italic style for the
@@ -408,10 +406,10 @@ Download the Raleway and RobotoMono font files from [Google Fonts][].
 
 The resulting Flutter app should display the following screen.
 
-![Custom Fonts Demo]({{site.url}}/assets/images/docs/cookbook/fonts.png){:.site-mobile-screenshot}
+![Custom Fonts Demo](/assets/images/docs/cookbook/fonts.png){:.site-mobile-screenshot}
 
 [variable-fonts]: https://fonts.google.com/knowledge/introducing_type/introducing_variable_fonts
-[Export fonts from a package]: {{site.url}}/cookbook/design/package-fonts
+[Export fonts from a package]: /cookbook/design/package-fonts
 [`fontFamily`]: {{site.api}}/flutter/painting/TextStyle/fontFamily.html
 [fontStyle property]: {{site.api}}/flutter/painting/TextStyle/fontStyle.html
 [`FontStyle`]: {{site.api}}/flutter/dart-ui/FontStyle.html
@@ -420,4 +418,4 @@ The resulting Flutter app should display the following screen.
 [Google Fonts]: https://fonts.google.com
 [google_fonts]: {{site.pub-pkg}}/google_fonts
 [`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html
-[Using Themes to share colors and font styles]: {{site.url}}/cookbook/design/themes
+[Using Themes to share colors and font styles]: /cookbook/design/themes

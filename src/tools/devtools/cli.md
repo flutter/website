@@ -60,7 +60,7 @@ If your app stops running
 or you opened DevTools manually,
 you should see a **Connect** dialog:
 
-![Screenshot of the DevTools connect dialog]({{site.url}}/assets/images/docs/tools/devtools/connect_dialog.png){:width="100%"}
+![Screenshot of the DevTools connect dialog](/assets/images/docs/tools/devtools/connect_dialog.png){:width="100%"}
 
 You can manually connect DevTools to a new app instance
 by copying the Observatory link you got from running your app,

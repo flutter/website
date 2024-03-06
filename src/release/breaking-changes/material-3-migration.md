@@ -508,7 +508,7 @@ Relevant PRs:
 
 
 [Material 3 umbrella issue]: {{site.repo.flutter}}/issues/91605
-[Material Design for Flutter]: {{site.url}}/ui/design/material
+[Material Design for Flutter]: /ui/design/material
 [`ThemeData.useMaterial3`]: {{site.api}}/flutter/material/ThemeData/useMaterial3.html
 [Change the default for `ThemeData.useMaterial3` to true]: {{site.repo.flutter}}/pull/129724
 [Updated `ThemeData.useMaterial3` API doc, default is true]: {{site.repo.flutter}}/pull/130764

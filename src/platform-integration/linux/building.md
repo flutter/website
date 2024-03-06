@@ -86,4 +86,4 @@ to the [Snap Store], see
 [Build and release a Linux application to the Snap Store][].
 
 [Snap Store]: https://snapcraft.io/store
-[Build and release a Linux application to the Snap Store]: {{site.url}}/deployment/linux
+[Build and release a Linux application to the Snap Store]: /deployment/linux

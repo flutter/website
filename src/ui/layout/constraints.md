@@ -7,8 +7,6 @@ js:
     url: https://old-dartpad-3ce3f.web.app/inject_embed.dart.js
 ---
 
-{% include docs/yt_shims.liquid %}
-
 <?code-excerpt path-base="layout/constraints/"?>
 
 <img src='/assets/images/docs/ui/layout/article-hero-image.png'
@@ -19,7 +17,7 @@ js:
   you might check out [Common Flutter errors][].
 {{site.alert.end}}
 
-[Common Flutter errors]: {{site.url}}/testing/common-errors
+[Common Flutter errors]: /testing/common-errors
 
 When someone learning Flutter asks you why some widget
 with `width: 100` isn't 100 pixels wide,
@@ -2202,6 +2200,6 @@ header image at the top of the article.
 {{site.alert.note}}
   To better understand how Flutter implements layout
   constraints, check out the following 5-minute video:
-  <iframe width="560" height="315" src="{{yt-embed}}/jckqXR5CrPI" title="Learn how Flutter implements layout constraints" {{yt-set}}></iframe>
+  <iframe width="560" height="315" src="{{site.yt.embed}}/jckqXR5CrPI" title="Learn how Flutter implements layout constraints" {{site.yt.set}}></iframe>
   <p>Decoding Flutter: Unbounded height and width</p>
 {{site.alert.end}}

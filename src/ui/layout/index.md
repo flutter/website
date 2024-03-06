@@ -5,8 +5,6 @@ description: Learn how Flutter's layout mechanism works and how to build a layou
 diff2html: true
 ---
 
-{% include docs/yt_shims.liquid %}
-
 {% assign api = site.api | append: '/flutter' -%}
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
 
@@ -1255,18 +1253,18 @@ The following videos, part of the
 [Flutter in Focus][] series,
 explain `Stateless` and `Stateful` widgets.
 
-<iframe width="560" height="315" src="{{yt-embed}}/wE7khGHVkYY?rel=0" title="Learn how to create stateless widgets" {{yt-set}}></iframe>
-<iframe width="560" height="315" src="{{yt-embed}}/AqCMFXEmf3w?rel=0" title="Learn the best times to use stateful widgets" {{yt-set}}></iframe>
-[Flutter in Focus playlist]({{yt-playlist}}PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)
+<iframe width="560" height="315" src="{{site.yt.embed}}/wE7khGHVkYY?rel=0" title="Learn how to create stateless widgets" {{site.yt.set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/AqCMFXEmf3w?rel=0" title="Learn the best times to use stateful widgets" {{site.yt.set}}></iframe>
+[Flutter in Focus playlist]({{site.yt.playlist}}PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)
 
 ---
 
 Each episode of the
-[Widget of the Week series]({{yt-playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
+[Widget of the Week series]({{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 focuses on a widget. Several of them includes layout widgets.
 
-<iframe width="560" height="315" src="{{yt-embed}}/b_sQ9bMltGU?rel=0" title="Watch the Widget of the Week playlist" {{yt-set}}></iframe>
-[Flutter Widget of the Week playlist]({{yt-playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
+<iframe width="560" height="315" src="{{site.yt.embed}}/b_sQ9bMltGU?rel=0" title="Watch the Widget of the Week playlist" {{site.yt.set}}></iframe>
+[Flutter Widget of the Week playlist]({{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 
 ## Other resources
 
@@ -1293,7 +1291,7 @@ The following resources might help when writing layout code.
 
 [Cupertino library]: {{api}}/cupertino/cupertino-library.html
 [`CupertinoPageScaffold`]: {{api}}/cupertino/CupertinoPageScaffold-class.html
-[Adding assets and images]: {{site.url}}/ui/assets/assets-and-images
+[Adding assets and images]: /ui/assets/assets-and-images
 [API reference docs]: {{api}}
 [`build()`]: {{api}}/widgets/StatelessWidget/build.html
 [`Card`]: {{api}}/material/Card-class.html
@@ -1306,14 +1304,14 @@ The following resources might help when writing layout code.
 [`DataTable`]: {{api}}/material/DataTable-class.html
 [Elevation]: {{site.material}}/styles/elevation
 [`Expanded`]: {{api}}/widgets/Expanded-class.html
-[Flutter in Focus]: {{yt-watch}}?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
+[Flutter in Focus]: {{site.yt.watch}}?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 [`GridView`]: {{api}}/widgets/GridView-class.html
 [`GridTile`]: {{api}}/material/GridTile-class.html
-[HTML/CSS Analogs in Flutter]: {{site.url}}/get-started/flutter-for/web-devs
+[HTML/CSS Analogs in Flutter]: /get-started/flutter-for/web-devs
 [`Icon`]: {{api}}/material/Icons-class.html
 [`Image`]: {{api}}/widgets/Image-class.html
-[Layout tutorial]: {{site.url}}/ui/layout/tutorial
-[layout widgets]: {{site.url}}/ui/widgets/layout
+[Layout tutorial]: /ui/layout/tutorial
+[layout widgets]: /ui/widgets/layout
 [`ListTile`]: {{api}}/material/ListTile-class.html
 [`ListView`]: {{api}}/widgets/ListView-class.html
 [`MainAxisAlignment`]: {{api}}/rendering/MainAxisAlignment.html
@@ -1329,10 +1327,10 @@ The following resources might help when writing layout code.
 [`Stack`]: {{api}}/widgets/Stack-class.html
 [`Table`]: {{api}}/widgets/Table-class.html
 [`Text`]: {{api}}/widgets/Text-class.html
-[tutorial]: {{site.url}}/ui/layout/tutorial
+[tutorial]: /ui/layout/tutorial
 [widgets library]: {{api}}/widgets/widgets-library.html
-[Widget catalog]: {{site.url}}/ui/widgets
-[Debugging layout issues visually]: {{site.url}}/tools/devtools/inspector#debugging-layout-issues-visually
-[Understanding constraints]: {{site.url}}/ui/layout/constraints
-[Using the Flutter inspector]: {{site.url}}/tools/devtools/inspector
+[Widget catalog]: /ui/widgets
+[Debugging layout issues visually]: /tools/devtools/inspector#debugging-layout-issues-visually
+[Understanding constraints]: /ui/layout/constraints
+[Using the Flutter inspector]: /tools/devtools/inspector
 [Zero to One with Flutter]: {{site.medium}}/@mravn/zero-to-one-with-flutter-43b13fd7b354

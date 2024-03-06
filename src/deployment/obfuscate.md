@@ -18,7 +18,7 @@ to reverse engineer your proprietary app.
 only on a [release build][].**
 
 [Code obfuscation]: https://en.wikipedia.org/wiki/Obfuscation_(software)
-[release build]: {{site.url}}/testing/build-modes#release
+[release build]: /testing/build-modes#release
 
 ## Limitations
 
@@ -57,7 +57,7 @@ described on this page:
   see [Build and release a web app][].
 {{site.alert.end}}
 
-[Build and release a web app]: {{site.url}}/deployment/web
+[Build and release a web app]: /deployment/web
 [minified]: https://en.wikipedia.org/wiki/Minification_(programming)
 
 ## Obfuscate your app
@@ -84,7 +84,7 @@ want to de-obfuscate a stack trace.
   To learn more about app size, see [Measuring your app's size][].
 {{site.alert.end}}
 
-[Measuring your app's size]: {{site.url}}/perf/app-size
+[Measuring your app's size]: /perf/app-size
 
 For detailed information on these flags, run
 the help command for your specific target, for example:

@@ -209,5 +209,5 @@ Should you find an issue that you believe is a
 legitimate security vulnerability, we would greatly
 appreciate if you would report it:
 
-* [Flutter security policy]({{site.url}}/security)
+* [Flutter security policy](/security)
 * [Dart security policy]({{site.dart-site}}/security)

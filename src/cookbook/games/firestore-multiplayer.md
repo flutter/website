@@ -5,8 +5,6 @@ description: >
   in your game.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 <?code-excerpt path-base="cookbook/games/firestore_multiplayer"?>
 
 Multiplayer games need a way to synchronize game states between players.
@@ -30,7 +28,7 @@ These games can simulate much of what happens
 in between player interactions on local machines.
 Therefore, they don't need to synchronize game states that often.
 
-![An illustration of two mobile phones and a two-way arrow between them]({{site.url}}/assets/images/docs/cookbook/multiplayer-two-mobiles.jpg){:.site-illustration}
+![An illustration of two mobile phones and a two-way arrow between them](/assets/images/docs/cookbook/multiplayer-two-mobiles.jpg){:.site-illustration}
 
 If you can choose low tick rates as a developer, you should.
 Low tick lowers latency requirements and server costs.
@@ -59,7 +57,7 @@ in response to both local events and remote events.
 A local event could be a player action or some game logic.
 A remote event could be a world update coming from the server.
 
-![Screenshot of the card game]({{site.url}}/assets/images/docs/cookbook/multiplayer-card-game.jpg){:.site-mobile-screenshot .site-illustration}
+![Screenshot of the card game](/assets/images/docs/cookbook/multiplayer-card-game.jpg){:.site-mobile-screenshot .site-illustration}
 
 To simplify this cookbook recipe, start with
 the [`card`][] template that you'll find
@@ -97,7 +95,7 @@ so every player sees the same state.
 If you want a quick, 15-minute primer on Cloud Firestore,
 check out the following video:
 
-<iframe width="560" height="315" src="{{yt-embed}}/v_hR4K4auoQ" title="What is a NoSQL Database? Learn about Cloud Firestore" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/v_hR4K4auoQ" title="What is a NoSQL Database? Learn about Cloud Firestore" {{site.yt.set}}></iframe>
 
 To add Firestore to your Flutter project,
 follow the first two steps of the
@@ -201,7 +199,7 @@ you could synchronize the contents of the two circular playing areas.
 It's not enough for a full multiplayer experience,
 but it's a good start.
 
-![Screenshot of the card game, with arrows pointing to playing areas]({{site.url}}/assets/images/docs/cookbook/multiplayer-areas.jpg){:.site-mobile-screenshot .site-illustration}
+![Screenshot of the card game, with arrows pointing to playing areas](/assets/images/docs/cookbook/multiplayer-areas.jpg){:.site-mobile-screenshot .site-illustration}
 
 To create a controller, copy,
 then paste the following code into a new file called
@@ -444,7 +442,7 @@ Notice the following features of this code:
     You can even edit the data in the console
     and see all running clients update.
 
-    ![Screenshot of the Firebase Firestore data view]({{site.url}}/assets/images/docs/cookbook/multiplayer-firebase-data.png)
+    ![Screenshot of the Firebase Firestore data view](/assets/images/docs/cookbook/multiplayer-firebase-data.png)
 
 [Firebase web console]: https://console.firebase.google.com/
 
@@ -462,7 +460,7 @@ Firebase integration include the following:
   * By default, macOS apps don't have internet access.
     Enable [internet entitlement][] first.
 
-[internet entitlement]: {{site.url}}/data-and-backend/networking#macos
+[internet entitlement]: /data-and-backend/networking#macos
 
 ## 7. Next steps
 
@@ -472,7 +470,7 @@ It lacks actual game rules:
 what cards can be played when, and with what results.
 This depends on the game itself and is left to you to try.
 
-![An illustration of two mobile phones and a two-way arrow between them]({{site.url}}/assets/images/docs/cookbook/multiplayer-two-mobiles.jpg){:.site-illustration}
+![An illustration of two mobile phones and a two-way arrow between them](/assets/images/docs/cookbook/multiplayer-two-mobiles.jpg){:.site-illustration}
 
 At this point, the shared state of the match only includes
 the two playing areas and the cards within them.
@@ -492,7 +490,7 @@ and the Firestore database structure can handle multiple matches.
 Instead of a single `match_1`,
 you can populate the matches collection with as many records as needed.
 
-![Screenshot of the Firebase Firestore data view with additional matches]({{site.url}}/assets/images/docs/cookbook/multiplayer-firebase-match.png)
+![Screenshot of the Firebase Firestore data view with additional matches](/assets/images/docs/cookbook/multiplayer-firebase-match.png)
 
 An online match can start in a "waiting" state,
 with only the first player present.

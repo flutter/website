@@ -4,8 +4,6 @@ description: How to release a Flutter app to the App Store.
 short-title: iOS
 ---
 
-{% include docs/yt_shims.liquid %}
-
 This guide provides a step-by-step walkthrough of releasing a
 Flutter app to the [App Store][appstore] and [TestFlight][].
 
@@ -26,9 +24,9 @@ You can read more about the various membership options in Apple's
 
 For those who prefer video over text,
 the following video covers the same material as this guide.
-<iframe width="560" height="315" src="{{yt-embed}}/iE2bpP56QKc?si=tHqWYKNTN1H8H9mC" title="Release an iOS app with Flutter in 7 steps" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/iE2bpP56QKc?si=tHqWYKNTN1H8H9mC" title="Release an iOS app with Flutter in 7 steps" {{site.yt.set}}></iframe>
 
-[Release an iOS app with Flutter in 7 steps]({{yt-watch}}?v=iE2bpP56QKc)
+[Release an iOS app with Flutter in 7 steps]({{site.yt.watch}}?v=iE2bpP56QKc)
 
 ## Register your app on App Store Connect
 
@@ -125,7 +123,7 @@ In the **Deployment** section of the **Build Settings** tab:
 The **General** tab of your project settings should resemble
 the following:
 
-![Xcode Project Settings]({{site.url}}/assets/images/docs/releaseguide/xcode_settings.png){:width="100%"}
+![Xcode Project Settings](/assets/images/docs/releaseguide/xcode_settings.png){:width="100%"}
 
 For a detailed overview of app signing, see
 [Create, export, and delete signing certificates][appsigning].
@@ -511,7 +509,7 @@ detailed overview of the process of releasing an app to the App Store.
 [distributionguide_submit]: https://help.apple.com/xcode/mac/current/#/dev067853c94
 [distributionguide_testflight]: https://help.apple.com/xcode/mac/current/#/dev2539d985f
 [distributionguide_upload]: https://help.apple.com/xcode/mac/current/#/dev442d7f2ca
-[obfuscate your Dart code]: {{site.url}}/deployment/obfuscate
+[obfuscate your Dart code]: /deployment/obfuscate
 [TestFlight]: {{site.apple-dev}}/testflight/
 [app_bundle_export_method]: https://help.apple.com/xcode/mac/current/#/dev31de635e5
 [apple_transport_app]: https://apps.apple.com/us/app/transporter/id1450874784

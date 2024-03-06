@@ -3,8 +3,6 @@ title: Flutter architectural overview
 description: A high-level overview of the architecture of Flutter, including the core principles and concepts that form its design.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 <?code-excerpt path-base="resources/architectural_overview/"?>
 
 This article is intended to provide a high-level overview of the architecture of
@@ -62,7 +60,7 @@ The following settings were used:
 {% endcomment %}
 
 ![Architectural
-diagram]({{site.url}}/assets/images/docs/arch-overview/archdiagram.png){:width="100%"}
+diagram](/assets/images/docs/arch-overview/archdiagram.png){:width="100%"}
 
 To the underlying operating system, Flutter applications are packaged in the
 same way as any other native application. A platform-specific embedder provides
@@ -89,7 +87,7 @@ plugin architecture, and a Dart runtime
 and compile toolchain.
 
 [Skia]: https://skia.org
-[Impeller]: {{site.url}}/perf/impeller
+[Impeller]: /perf/impeller
 
 The engine is exposed to the Flutter framework through
 [`dart:ui`]({{site.repo.engine}}/tree/main/lib/ui),
@@ -197,8 +195,8 @@ when the application state changes. This model is inspired by
 [work that came from Facebook for their own React framework][fb],
 which includes a rethinking of many traditional design principles.
 
-[faq]: {{site.url}}/resources/faq#what-programming-paradigm-does-flutters-framework-use
-[fb]: {{yt-watch}}?time_continue=2&v=x7cQ3mrcKaY&feature=emb_logo
+[faq]: /resources/faq#what-programming-paradigm-does-flutters-framework-use
+[fb]: {{site.yt.watch}}?time_continue=2&v=x7cQ3mrcKaY&feature=emb_logo
 
 In most traditional UI frameworks, the user interface's initial state is
 described once and then separately updated by user code at runtime, in response
@@ -206,7 +204,7 @@ to events. One challenge of this approach is that, as the application grows in
 complexity, the developer needs to be aware of how state changes cascade
 throughout the entire UI. For example, consider the following UI:
 
-![Color picker dialog]({{site.url}}/assets/images/docs/arch-overview/color-picker.png){:width="66%"}
+![Color picker dialog](/assets/images/docs/arch-overview/color-picker.png){:width="66%"}
 
 There are many places where the state can be changed: the color box, the hue
 slider, the radio buttons. As the user interacts with the UI, changes must be
@@ -398,7 +396,7 @@ href="#a1">1</a></sup>, regardless of what the widget previously returned. The
 framework does the heavy lifting work to determine which build methods need to
 be called based on the render object tree (described in more detail later). More
 information about this process can be found in the [Inside Flutter
-topic]({{site.url}}/resources/inside-flutter#linear-reconciliation).
+topic](/resources/inside-flutter#linear-reconciliation).
 
 On each rendered frame, Flutter can recreate just the parts of the UI where the
 state has changed by calling that widget's `build()` method. Therefore it is
@@ -467,7 +465,7 @@ provides an easy way to grab data from a shared ancestor. You can use
 `InheritedWidget` to create a state widget that wraps a common ancestor in the
 widget tree, as shown in this example:
 
-![Inherited widgets]({{site.url}}/assets/images/docs/arch-overview/inherited-widget.png){:width="50%"}
+![Inherited widgets](/assets/images/docs/arch-overview/inherited-widget.png){:width="50%"}
 
 Whenever one of the `ExamWidget` or `GradeWidget` objects needs data from
 `StudentState`, it can now access it with a command such as:
@@ -572,7 +570,7 @@ The overriding principle that Flutter applies to its rendering pipeline is that
 the system, as shown in the following sequencing diagram:
 
 ![Render pipeline sequencing
-diagram]({{site.url}}/assets/images/docs/arch-overview/render-pipeline.png){:width="100%"}
+diagram](/assets/images/docs/arch-overview/render-pipeline.png){:width="100%"}
 
 Let's take a look at some of these phases in greater detail.
 
@@ -614,10 +612,10 @@ hierarchy may therefore be deeper than what the code represents, as in this
 case<sup><a href="#a2">2</a></sup>:
 
 ![Render pipeline sequencing
-diagram]({{site.url}}/assets/images/docs/arch-overview/widgets.png){:width="35%"}
+diagram](/assets/images/docs/arch-overview/widgets.png){:width="35%"}
 
 This explains why, when you examine the tree through a debug tool such as the
-[Flutter inspector]({{site.url}}/tools/devtools/inspector), part of the
+[Flutter inspector](/tools/devtools/inspector), part of the
 Dart DevTools, you might see a structure that is considerably deeper than what
 is in your original code.
 
@@ -631,7 +629,7 @@ hierarchy. There are two basic types of elements:
   phases.
 
 ![Render pipeline sequencing
-diagram]({{site.url}}/assets/images/docs/arch-overview/widget-element.png){:width="85%"}
+diagram](/assets/images/docs/arch-overview/widget-element.png){:width="85%"}
 
 `RenderObjectElement`s are an intermediary between their widget analog and the
 underlying `RenderObject`, which we'll come to later.
@@ -679,7 +677,7 @@ an image, and
 applies a transformation before painting its child.
 
 ![Differences between the widgets hierarchy and the element and render
-trees]({{site.url}}/assets/images/docs/arch-overview/trees.png){:width="100%"}
+trees](/assets/images/docs/arch-overview/trees.png){:width="100%"}
 
 Most Flutter widgets are rendered by an object that inherits from the
 `RenderBox` subclass, which represents a `RenderObject` of fixed size in a 2D
@@ -694,7 +692,7 @@ respond by **passing up a size** to their parent object within the constraints
 the parent established.
 
 ![Constraints go down, sizes go
-up]({{site.url}}/assets/images/docs/arch-overview/constraints-sizes.png){:width="80%"}
+up](/assets/images/docs/arch-overview/constraints-sizes.png){:width="80%"}
 
 At the end of this single walk through the tree, every object has a defined size
 within its parent's constraints and is ready to be painted by calling the
@@ -737,7 +735,7 @@ Widget build(BuildContext context) {
 
 More information about the constraint and layout system,
 along with working examples, can be found in the
-[Understanding constraints]({{site.url}}/ui/layout/constraints) topic.
+[Understanding constraints](/ui/layout/constraints) topic.
 
 The root of all `RenderObject`s is the `RenderView`, which represents the total
 output of the render tree. When the platform demands a new frame to be rendered
@@ -753,7 +751,7 @@ GPU to render it.
 Further details of the composition and rasterization stages of the pipeline are
 beyond the scope of this high-level article, but more information can be found
 [in this talk on the Flutter rendering
-pipeline]({{yt-watch}}?v=UUfXWzp0-DU).
+pipeline]({{site.yt.watch}}?v=UUfXWzp0-DU).
 
 ## Platform embedding
 
@@ -817,7 +815,7 @@ and then deserialized into an equivalent representation in Kotlin (such as
 `HashMap`) or Swift (such as `Dictionary`).
 
 ![How platform channels allow Flutter to communicate with host
-code]({{site.url}}/assets/images/docs/arch-overview/platform-channels.png){:width="70%"}
+code](/assets/images/docs/arch-overview/platform-channels.png){:width="70%"}
 
 The following is a short platform channel example of a Dart call to a receiving
 event handler in Kotlin (Android) or Swift (iOS):
@@ -994,7 +992,7 @@ with loading the necessary libraries.
 
 More information about how Flutter is loaded into an existing Android or iOS app
 can be found at the [Load sequence, performance and memory
-topic]({{site.url}}/add-to-app/performance).
+topic](/add-to-app/performance).
 
 ## Flutter web support
 
@@ -1030,7 +1028,7 @@ native mobile targets<sup><a href="#a4">4</a></sup>.
 The web version of the architectural layer diagram is as follows:
 
 ![Flutter web
-architecture]({{site.url}}/assets/images/docs/arch-overview/web-arch.png){:width="100%"}
+architecture](/assets/images/docs/arch-overview/web-arch.png){:width="100%"}
 
 Perhaps the most notable difference compared to other platforms on which Flutter
 runs is that there is no need for Flutter to provide a Dart runtime. Instead,
@@ -1054,7 +1052,7 @@ into multiple files through [deferred imports][].
 ## Further information
 
 For those interested in more information about the internals of Flutter, the
-[Inside Flutter]({{site.url}}/resources/inside-flutter) whitepaper
+[Inside Flutter](/resources/inside-flutter) whitepaper
 provides a useful guide to the framework's design philosophy.
 
 ---

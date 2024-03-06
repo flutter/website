@@ -464,8 +464,8 @@ To learn more, check out these suggestions:
 [`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
 [AnimatedOpacity]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html
 [animation library]: {{site.api}}/flutter/animation/animation-library.html
-[animations tutorial]: {{site.url}}/ui/animations/tutorial
-[codelab]: {{site.url}}/codelabs
+[animations tutorial]: /ui/animations/tutorial
+[codelab]: /codelabs
 [`Curve`]: {{site.api}}/flutter/animation/Curve-class.html
 [`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
 [duration]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget/duration.html
@@ -473,7 +473,7 @@ To learn more, check out these suggestions:
 [fade-in complete]: #fade-in-complete
 [fade-in starter code]: #fade-in-starter-code
 [Fade-in text effect]: #example-fade-in-text-effect
-[hero animations]: {{site.url}}/ui/animations/hero-animations
+[hero animations]: /ui/animations/hero-animations
 [ImplicitlyAnimatedWidget]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html
 [linear animation curve]: {{site.api}}/flutter/animation/Curves/linear-constant.html
 [linear curve]: {{site.api}}/flutter/animation/Curves/linear-constant.html
@@ -481,5 +481,5 @@ To learn more, check out these suggestions:
 [Material App]: {{site.api}}/flutter/material/MaterialApp-class.html
 [complete shape-shifting example]: #shape-shifting-complete
 [shape-shifting starter code]: #shape-shifting-starter-code
-[staggered animations]: {{site.url}}/ui/animations/staggered-animations
-[stateful widgets]: {{site.url}}/ui/interactivity#stateful-and-stateless-widgets
+[staggered animations]: /ui/animations/staggered-animations
+[stateful widgets]: /ui/interactivity#stateful-and-stateless-widgets

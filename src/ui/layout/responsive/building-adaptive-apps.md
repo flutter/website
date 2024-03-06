@@ -3,8 +3,6 @@ title: Building adaptive apps
 description: Some considerations and instructions on how to build adaptive apps to run on a variety of platforms.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 <?code-excerpt path-base="ui/layout/adaptive_app_demos"?>
 
 ## Overview
@@ -25,7 +23,7 @@ apps, but they fall into three major categories:
 * [Input](#input)
 * [Idioms and norms](#idioms-and-norms)
 
-<iframe style="max-width: 100%" width="560" height="315" src="{{yt-embed}}/RCdeSKVt7LI" title="Learn how to build platform-adaptive Flutter apps" {{yt-set}}></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{site.yt.embed}}/RCdeSKVt7LI" title="Learn how to build platform-adaptive Flutter apps" {{site.yt.set}}></iframe>
 
 This page covers all three categories in detail
 using code snippets to illustrate the concepts.
@@ -125,7 +123,7 @@ To see more available widgets and example code, see
 [`Flow`]: {{site.api}}/flutter/widgets/Flow-class.html
 [`FractionallySizedBox`]: {{site.api}}/flutter/widgets/FractionallySizedBox-class.html
 [`GridView`]: {{site.api}}/flutter/widgets/GridView-class.html
-[Layout widgets]: {{site.url}}/ui/widgets/layout
+[Layout widgets]: /ui/widgets/layout
 [`LayoutBuilder`]: {{site.api}}/flutter/widgets/LayoutBuilder-class.html
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
@@ -150,7 +148,7 @@ are set to 0.0, but you can set the densities to any negative
 or positive value that you want. By switching between different
 densities, you can easily adjust your UI:
 
-![Adaptive scaffold]({{site.url}}/assets/images/docs/development/ui/layout/adaptive_scaffold.gif){:width="100%"}
+![Adaptive scaffold](/assets/images/docs/development/ui/layout/adaptive_scaffold.gif){:width="100%"}
 
 To set a custom visual density, inject the density into
 your `MaterialApp` theme:
@@ -470,7 +468,7 @@ while the app is running to preview various screen sizes.
 This, combined with hot reload, can greatly accelerate the
 development of a responsive UI.
 
-![Adaptive scaffold 2]({{site.url}}/assets/images/docs/development/ui/layout/adaptive_scaffold2.gif){:width="100%"}
+![Adaptive scaffold 2](/assets/images/docs/development/ui/layout/adaptive_scaffold2.gif){:width="100%"}
 
 ### Solve touch first
 
@@ -1010,7 +1008,7 @@ the title bar of your app window, adding a logo for
 stronger branding or contextual controls to help save
 vertical space in your main UI.
 
-![Samples of title bars]({{site.url}}/assets/images/docs/development/ui/layout/titlebar.png){:width="100%"}
+![Samples of title bars](/assets/images/docs/development/ui/layout/titlebar.png){:width="100%"}
 
 This isn't supported directly in Flutter, but you can use the
 [`bits_dojo`][] package to disable the native title bars,
@@ -1125,9 +1123,9 @@ return Row(
 );
 ```
 
-![Sample of embedded image]({{site.url}}/assets/images/docs/development/ui/layout/embed_image1.png){:width="75%"}
+![Sample of embedded image](/assets/images/docs/development/ui/layout/embed_image1.png){:width="75%"}
 
-![Sample of embedded image]({{site.url}}/assets/images/docs/development/ui/layout/embed_image2.png){:width="90%"}
+![Sample of embedded image](/assets/images/docs/development/ui/layout/embed_image2.png){:width="90%"}
 
 #### Menu bar
 

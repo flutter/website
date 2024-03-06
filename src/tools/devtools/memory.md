@@ -3,8 +3,6 @@ title: Using the Memory view
 description: Learn how to use the DevTools memory view.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 The memory view provides insights into details
 of the application's memory allocation and
 tools to detect and debug specific issues.
@@ -14,7 +12,7 @@ tools to detect and debug specific issues.
 {{site.alert.end}}
 
 For information on how to locate DevTools screens in different IDEs,
-check out the [DevTools overview]({{site.url}}/tools/devtools/overview).
+check out the [DevTools overview](/tools/devtools/overview).
 
 To better understand the insights found on this page,
 the first section explains how Dart manages memory.
@@ -251,7 +249,7 @@ owned by the widget, should never be referenced
 from the state's fields, as the state won't be garbage
 collected together with the widget, and can significantly outlive it.
 
-[interactive]: {{site.url}}/ui/interactivity#creating-a-stateful-widget
+[interactive]: /ui/interactivity#creating-a-stateful-widget
 
 ### Memory leak vs memory bloat
 
@@ -305,7 +303,7 @@ timestamp (x-axis) of measured quantities (y-axis)
 of the heap. For example, usage, capacity, external,
 garbage collection, and resident set size are captured.
 
-![Screenshot of a memory anatomy page]({{site.url}}/assets/images/docs/tools/devtools/memory_chart_anatomy.png){:width="100%"}
+![Screenshot of a memory anatomy page](/assets/images/docs/tools/devtools/memory_chart_anatomy.png){:width="100%"}
 
 #### Memory overview chart
 
@@ -326,7 +324,7 @@ Clicking the **Legend** button displays the
 collected measurements, symbols, and colors
 used to display the data.
 
-![Screenshot of a memory anatomy page]({{site.url}}/assets/images/docs/tools/devtools/memory_chart_anatomy.png){:width="100%"}
+![Screenshot of a memory anatomy page](/assets/images/docs/tools/devtools/memory_chart_anatomy.png){:width="100%"}
 
 The **Memory Size Scale** y-axis automatically
 adjusts to the range of data collected in the
@@ -380,10 +378,10 @@ The quantities plotted on the y-axis are as follows:
 [Command-line and server apps]: {{site.dart-site}}/server
 [Custom Flutter engine embedders]: {{site.repo.flutter}}/wiki/Custom-Flutter-Engine-Embedders
 [Dart VM internals]: https://mrale.ph/dartvm/
-[DevTools Performance view]: {{site.url}}/tools/devtools/performance
-[Flutter architectural overview]: {{site.url}}/resources/architectural-overview
+[DevTools Performance view]: /tools/devtools/performance
+[Flutter architectural overview]: /resources/architectural-overview
 [frog]: https://dartfrog.vgv.dev/
-[heroku]: {{yt-watch}}?v=nkTUMVNelXA
+[heroku]: {{site.yt.watch}}?v=nkTUMVNelXA
 
 ### Profile Memory tab
 
@@ -393,7 +391,7 @@ deeper analysis in Google Sheets or other tools,
 download the data in CSV format.
 Toggle **Refresh on GC**, to see allocation in real time.
 
-![Screenshot of the profile tab page]({{site.url}}/assets/images/docs/tools/devtools/profile-tab-2.png){:width="100%"}
+![Screenshot of the profile tab page](/assets/images/docs/tools/devtools/profile-tab-2.png){:width="100%"}
 
 ### Diff Snapshots tab
 
@@ -402,12 +400,12 @@ memory management. Follow the guidance on the tab
 to take snapshots before and after interaction
 with the application, and diff the snapshots:
 
-![Screenshot of the diff tab page]({{site.url}}/assets/images/docs/tools/devtools/diff-tab.png){:width="100%"}
+![Screenshot of the diff tab page](/assets/images/docs/tools/devtools/diff-tab.png){:width="100%"}
 
 Tap the **Filter classes and packages** button,
 to narrow the data:
 
-![Screenshot of the filter options ui]({{site.url}}/assets/images/docs/tools/devtools/filter-ui.png)
+![Screenshot of the filter options ui](/assets/images/docs/tools/devtools/filter-ui.png)
 
 For a deeper analysis in Google Sheets
 or other tools, download the data in CSV format.
@@ -424,14 +422,14 @@ allocate memory for a set of classes during feature execution:
 1. Select a traced class
 1. Review the collected data
 
-![Screenshot of a trace tab]({{site.url}}/assets/images/docs/tools/devtools/trace-instances-tab.png){:width="100%"}
+![Screenshot of a trace tab](/assets/images/docs/tools/devtools/trace-instances-tab.png){:width="100%"}
 
 #### Bottom up vs call tree view
 
 Switch between bottom-up and call tree views
 depending on specifics of your tasks.
 
-![Screenshot of a trace allocations]({{site.url}}/assets/images/docs/tools/devtools/trace-view.png)
+![Screenshot of a trace allocations](/assets/images/docs/tools/devtools/trace-view.png)
 
 The call tree view shows the method allocations
 for each instance. The view is a top-down representation

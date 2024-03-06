@@ -3,8 +3,6 @@ title: Implicit animations
 description: Where to find more information on using implicit animations in Flutter.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 With Flutter's [animation library][],
 you can add motion and create visual effects
 for the widgets in your UI.
@@ -40,11 +38,11 @@ that every Flutter dev needs to know from top to bottom.
 The following videos cover topics
 that are relevant to implicit animations.
 
-<iframe width="560" height="315" src="{{yt-embed}}/IVTjpW3W33s" title="Learn about basic Flutter animation with implicit animations" {{yt-set}}></iframe>
-[Learn about Animation Basics with Implicit Animations]({{yt-watch}}/IVTjpW3W33s)
+<iframe width="560" height="315" src="{{site.yt.embed}}/IVTjpW3W33s" title="Learn about basic Flutter animation with implicit animations" {{site.yt.set}}></iframe>
+[Learn about Animation Basics with Implicit Animations]({{site.yt.watch}}/IVTjpW3W33s)
 
-<iframe width="560" height="315" src="{{yt-embed}}/6KiPEqzJIKQ" title="Learn about building Custom Implicit Animations with TweenAnimationBuilder" {{yt-set}}></iframe>
-[Learn about building Custom Implicit Animations with TweenAnimationBuilder]({{yt-watch}}/6KiPEqzJIKQ)
+<iframe width="560" height="315" src="{{site.yt.embed}}/6KiPEqzJIKQ" title="Learn about building Custom Implicit Animations with TweenAnimationBuilder" {{site.yt.set}}></iframe>
+[Learn about building Custom Implicit Animations with TweenAnimationBuilder]({{site.yt.watch}}/6KiPEqzJIKQ)
 
 ## The Boring Show
 
@@ -52,8 +50,8 @@ Watch the Boring Show to follow Google Engineers build apps
 from scratch in Flutter. The following episode covers
 using implicit animations in a news aggregator app.
 
-<iframe width="560" height="315" src="{{yt-embed}}/8ehlWchLVlQ" title="about implicitly animating the Hacker News app" {{yt-set}}></iframe>
-[Learn about implicitly animating the Hacker News app]({{yt-watch}}/8ehlWchLVlQ)
+<iframe width="560" height="315" src="{{site.yt.embed}}/8ehlWchLVlQ" title="about implicitly animating the Hacker News app" {{site.yt.set}}></iframe>
+[Learn about implicitly animating the Hacker News app]({{site.yt.watch}}/8ehlWchLVlQ)
 
 ## Widget of the Week videos
 
@@ -70,14 +68,14 @@ implicitly animated widgets:
 {% for widget in animated-widgets %}
 {% assign video-url = animated-urls[forloop.index0] %}
 
-<iframe width="560" height="315" src="{{yt-embed}}/{{video-url}}" title="Learn about the {{widget}} Flutter Widget" {{yt-set}}></iframe>
-[Learn about the {{widget}} Flutter Widget]({{yt-watch}}/{{video-url}})
+<iframe width="560" height="315" src="{{site.yt.embed}}/{{video-url}}" title="Learn about the {{widget}} Flutter Widget" {{site.yt.set}}></iframe>
+[Learn about the {{widget}} Flutter Widget]({{site.yt.watch}}/{{video-url}})
 
 {% endfor -%}
 
-[`AnimatedContainer` sample]: {{site.url}}/cookbook/animation/animated-container
+[`AnimatedContainer` sample]: /cookbook/animation/animated-container
 [`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
 [animation library]: {{site.api}}/flutter/animation/animation-library.html
-[Flutter cookbook]: {{site.url}}/cookbook
-[Implicit animations codelab]: {{site.url}}/codelabs/implicit-animations
+[Flutter cookbook]: /cookbook
+[Implicit animations codelab]: /codelabs/implicit-animations
 [`ImplicitlyAnimatedWidget`]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html

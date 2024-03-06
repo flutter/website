@@ -3,8 +3,6 @@ title: Concurrency and isolates
 description: Multithreading in Flutter using Dart isolates.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 <?code-excerpt path-base="development/concurrency/isolates/"?>
 
 All Dart code runs in [isolates]({{site.dart-site}}/language/concurrency),
@@ -39,7 +37,7 @@ to painting a frame on the screen.
 The following figure shows an example event queue
 with 3 events waiting to be processed.
 
-![The main isolate diagram]({{site.url}}/assets/images/docs/development/concurrency/basics-main-isolate.png){:width="50%"}
+![The main isolate diagram](/assets/images/docs/development/concurrency/basics-main-isolate.png){:width="50%"}
 
 For smooth rendering,
 Flutter adds a "paint frame" event to the event queue
@@ -49,7 +47,7 @@ the application experiences UI jank,
 or worse,
 become unresponsive altogether.
 
-![Event jank diagram]({{site.url}}/assets/images/docs/development/concurrency/event-jank.png){:width="50%"}
+![Event jank diagram](/assets/images/docs/development/concurrency/event-jank.png){:width="50%"}
 
 Whenever a process can't be completed in a frame gap,
 the time between two frames,
@@ -66,7 +64,7 @@ documentation.
 
 [concurrency page]: {{site.dart-site}}/language/concurrency
 
-<iframe width="560" height="315" src="{{yt-embed}}/vl_AaCgudcY" title="Learn about Isolates and Loop Events in Flutter" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/vl_AaCgudcY" title="Learn about Isolates and Loop Events in Flutter" {{site.yt.set}}></iframe>
 
 ## Common use cases for isolates
 
@@ -76,7 +74,7 @@ to experience UI jank.
 This jank happens when there is any computation that takes longer than
 Flutter's frame gap.
 
-![Event jank diagram]({{site.url}}/assets/images/docs/development/concurrency/event-jank.png){:width="50%"}
+![Event jank diagram](/assets/images/docs/development/concurrency/event-jank.png){:width="50%"}
 
 Any process _could_ take longer to complete,
 depending on the implementation
@@ -143,7 +141,7 @@ and then shuts the isolate down when the computation is complete.
 This all happens concurrently with the main isolate,
 and doesn't block it.
 
-![Isolate diagram]({{site.url}}/assets/images/docs/development/concurrency/isolate-bg-worker.png){:width="50%"}
+![Isolate diagram](/assets/images/docs/development/concurrency/isolate-bg-worker.png){:width="50%"}
 
 The `Isolate.run` method requires a single argument,
 a callback function,
@@ -178,7 +176,7 @@ Future<List<Photo>> getPhotos() async {
 For a complete walkthrough of using Isolates to
 parse JSON in the background, see [this cookbook recipe][].
 
-[this cookbook recipe]: {{site.url}}/cookbook/networking/background-parsing
+[this cookbook recipe]: /cookbook/networking/background-parsing
 
 ## Stateful, longer-lived isolates
 
@@ -208,6 +206,10 @@ Long-lived isolates are useful when you have a specific process that either
 needs to be run repeatedly throughout the lifetime of your application,
 or if you have a process that runs over a period of time
 and needs to yield multiple return values to the main isolate.
+
+Or, you might use [worker_manager][] to manage long-lived isolates.
+
+[worker_manager]: {{site.pub-pkg}}/worker_manager
 
 ### ReceivePorts and SendPorts
 

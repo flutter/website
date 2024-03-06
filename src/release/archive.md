@@ -72,6 +72,6 @@ For additional details on how our installation bundles are structured,
 see [Installation bundles][].
 
 [Flutter's channels]: {{site.repo.flutter}}/wiki/Flutter-build-release-channels
-[release notes]: {{site.url}}/release/release-notes
+[release notes]: /release/release-notes
 [GitHub repo]: {{site.repo.flutter}}
 [Installation bundles]: {{site.repo.flutter}}/wiki/Flutter-Installation-Bundles

@@ -323,6 +323,59 @@ dependencyResolutionManagement {
 }
 
 ```
+</br>
+
+### Kotlin DSL based Android Project
+
+After an `aar` build of a Kotlin DSL-based Android project,
+follow these steps to add the flutter_module.
+
+Include the flutter module as a dependency in 
+the Android project's `app/build.gradle` file.
+<?code-excerpt title="MyApp/app/build.gradle.kts"?>
+```gradle
+android {
+    buildTypes {
+        release {
+          ...
+        }
+        debug {
+          ...
+        }
+        create("profile") {
+            initWith(getByName("debug"))
+        }
+}
+dependencies {
+  // ...
+  debugImplementation "com.example.flutter_module:flutter_debug:1.0"
+  releaseImplementation 'com.example.flutter_module:flutter_release:1.0'
+  add("profileImplementation", "com.example.flutter_module:flutter_profile:1.0")
+}
+```
+
+The `profileImplementation` ID is a custom `configuration` to be
+implemented in the `app/build.gradle` file of a host project.
+
+<?code-excerpt title="host-project/app/build.gradle.kts"?>
+```gradle
+configurations {
+    getByName("profileImplementation") {
+    }
+}
+```
+
+<?code-excerpt title="MyApp/settings.gradle.kts"?>
+```gradle
+include(":app")
+
+dependencyResolutionManagement {
+    repositories {
+        maven(url = "https://storage.googleapis.com/download.flutter.io")
+        maven(url = "some/path/flutter_module_project/build/host/outputs/repo")
+    }
+}
+```
 
 {{site.alert.important}}
   If you're located in China, use a mirror site rather than the
@@ -397,8 +450,8 @@ Your app now includes the Flutter module as a dependency.
 Continue to the [Adding a Flutter screen to an Android app][] guide.
 
 [`abiFilters`]: {{site.android-dev}}/reference/tools/gradle-api/4.2/com/android/build/api/dsl/Ndk#abiFilters:kotlin.collections.MutableSet
-[Adding a Flutter screen to an Android app]: {{site.url}}/add-to-app/android/add-flutter-screen
+[Adding a Flutter screen to an Android app]: /add-to-app/android/add-flutter-screen
 [Flutter plugin]: https://plugins.jetbrains.com/plugin/9212-flutter
 [local repository]: https://docs.gradle.org/current/userguide/declaring_repositories.html#sub:maven_local
-[only supports]: {{site.url}}/resources/faq#what-devices-and-os-versions-does-flutter-run-on
-[Using Flutter in China]: {{site.url}}/community/china
+[only supports]: /resources/faq#what-devices-and-os-versions-does-flutter-run-on
+[Using Flutter in China]: /community/china

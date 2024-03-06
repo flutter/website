@@ -47,7 +47,7 @@ Select the device on which the Flutter module runs so `flutter attach` filters f
 
 {% include docs/app-figure.md image="development/add-to-app/debugging/intellij-attach.png" caption="flutter attach via IntelliJ" %}
 
-[debugging functionalities]: {{site.url}}/testing/debugging
+[debugging functionalities]: /testing/debugging
 
 ### Wireless debugging
 
@@ -94,5 +94,5 @@ and check to see if there is an **IPv6 address** section.
 Ensure that your device is wirelessly connected to Android Studio 
 as described in the [Android setup guide][].
 
-[iOS setup guide]: {{site.url}}/get-started/install/macos/mobile-ios
-[Android setup guide]: {{site.url}}/get-started/install/macos/mobile-android?tab=physical#configure-your-target-android-device
+[iOS setup guide]: /get-started/install/macos/mobile-ios
+[Android setup guide]: /get-started/install/macos/mobile-android?tab=physical#configure-your-target-android-device

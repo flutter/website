@@ -4,8 +4,6 @@ description: How to write a staggered animation in Flutter.
 short-title: Staggered
 ---
 
-{% include docs/yt_shims.liquid %}
-
 {{site.alert.secondary}}
   <h4 class="no_toc">What you'll learn</h4>
 
@@ -63,7 +61,7 @@ This guide shows how to build a staggered animation in Flutter.
 The following video demonstrates the animation performed by
 basic_staggered_animation:
 
-<iframe width="560" height="315" src="{{yt-embed}}/0fFvnZemmh8" title="Watch this example of a staggered animation in Flutter" {{yt-set-short}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/0fFvnZemmh8" title="Watch this example of a staggered animation in Flutter" {{site.yt.set-short}}></iframe>
 
 In the video, you see the following animation of a single widget,
 which begins as a bordered blue square with slightly rounded corners.
@@ -123,7 +121,7 @@ You might notice the following characteristics:
 * The padding and height changes occur during
   the same exact interval, but they don't have to.
 
-![Diagram showing the interval specified for each motion]({{site.url}}/assets/images/docs/ui/animations/StaggeredAnimationIntervals.png)
+![Diagram showing the interval specified for each motion](/assets/images/docs/ui/animations/StaggeredAnimationIntervals.png)
 
 To set up the animation:
 
@@ -353,9 +351,9 @@ class _StaggerDemoState extends State<StaggerDemo>
 [animation controllers]: {{site.api}}/flutter/animation/AnimationController-class.html
 [`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
 [`AnimatedBuilder`]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html
-[Animations in Flutter tutorial]: {{site.url}}/ui/animations/tutorial
+[Animations in Flutter tutorial]: /ui/animations/tutorial
 [basic_staggered_animation]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/basic_staggered_animation
-[Building Layouts in Flutter]: {{site.url}}/ui/layout
+[Building Layouts in Flutter]: /ui/layout
 [staggered_pic_selection]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/staggered_pic_selection
 [`CurvedAnimation`]: {{site.api}}/flutter/animation/CurvedAnimation-class.html
 [`Curves`]: {{site.api}}/flutter/animation/Curves-class.html

@@ -12,8 +12,8 @@ specialized FAQs:
 * [Web FAQ][]
 * [Performance FAQ][]
 
-[Web FAQ]: {{site.url}}/platform-integration/web/faq
-[Performance FAQ]: {{site.url}}/perf/faq
+[Web FAQ]: /platform-integration/web/faq
+[Performance FAQ]: /perf/faq
 
 ### What is Flutter?
 
@@ -153,7 +153,7 @@ Flutter includes:
 * Command-line tools for creating, building, testing, and
   compiling your apps
 
-[Dart DevTools]: {{site.url}}/tools/devtools
+[Dart DevTools]: /tools/devtools
 
 ### Does Flutter work with any editors or IDEs?
 
@@ -169,9 +169,9 @@ of the many editors that support [editing Dart][].
 
 
 [Android Studio]: {{site.android-dev}}/studio
-[Android Studio/IntelliJ]: {{site.url}}/tools/android-studio
+[Android Studio/IntelliJ]: /tools/android-studio
 [editing Dart]: {{site.dart-site}}/tools
-[editor configuration]: {{site.url}}/get-started/editor
+[editor configuration]: /get-started/editor
 [IntelliJ IDEA]: https://www.jetbrains.com/idea/
 [VS Code]: https://code.visualstudio.com/
 
@@ -192,7 +192,7 @@ Of course, these widgets are only a starting point.
 Flutter is designed to make it easy to create your own
 widgets, or customize the existing widgets.
 
-[widgets]: {{site.url}}/ui/widgets
+[widgets]: /ui/widgets
 
 ### Does Flutter support Material Design?
 
@@ -201,7 +201,7 @@ and Material is fully supported. For more information,
 check out the Material 2 and Material 3 widgets
 in the [widget catalog][].
 
-[widget catalog]: {{site.url}}/ui/widgets/material
+[widget catalog]: /ui/widgets/material
 
 ### Does Flutter come with a testing framework?
 
@@ -212,7 +212,7 @@ We use our own testing capabilities to test our SDK,
 and we measure our [test coverage][] on every commit.
 
 [test coverage]: https://coveralls.io/github/flutter/flutter?branch=master
-[testing with Flutter]: {{site.url}}/testing/overview
+[testing with Flutter]: /testing/overview
 
 ### Does Flutter come with debugging tools?
 
@@ -221,8 +221,8 @@ called Dart DevTools). For more information, see
 [Debugging with Flutter][] and the [Flutter DevTools][] docs.
 
 
-[Debugging with Flutter]: {{site.url}}/testing/debugging
-[Flutter DevTools]: {{site.url}}/tools/devtools/overview
+[Debugging with Flutter]: /testing/debugging
+[Flutter DevTools]: /tools/devtools/overview
 
 ### Does Flutter come with a dependency injection framework?
 
@@ -249,9 +249,9 @@ for a better picture of the main components.
 For a more detailed description of the layered architecture
 of Flutter, read the [architectural overview][].
 
-[architectural overview]: {{site.url}}/resources/architectural-overview
+[architectural overview]: /resources/architectural-overview
 [architecture diagram]: https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit#slide=id.gbb3c3233b_0_162
-[Impeller]: {{site.url}}/perf/impeller
+[Impeller]: /perf/impeller
 
 ### How does Flutter run my code on Android? {#run-android}
 
@@ -329,8 +329,8 @@ and a single set of libraries for all of your code
 we also aim to help lower app development and maintenance costs.
 
 
-[catalog of Flutter's widgets]: {{site.url}}/ui/widgets
-[gesture system]: {{site.url}}/ui/interactivity/gestures
+[catalog of Flutter's widgets]: /ui/widgets
+[gesture system]: /ui/interactivity/gestures
 
 ### What happens when my mobile OS updates and introduces new widgets?
 
@@ -489,7 +489,7 @@ To do that, see [Measuring your app's size][].
 [built into Android Studio]: {{site.android-dev}}/studio/build/apk-analyzer
 [deprecated bitcode in Xcode 14]: {{site.apple-dev}}/documentation/xcode-release-notes/xcode-14-release-notes
 [iOS App Store Specific Considerations]: {{site.apple-dev}}/library/archive/qa/qa1795/_index.html#//apple_ref/doc/uid/DTS40014195-CH1-APP_STORE_CONSIDERATIONS
-[Measuring your app's size]: {{site.url}}/perf/app-size
+[Measuring your app's size]: /perf/app-size
 [minimal Flutter app]: {{site.repo.flutter}}/tree/75228a59dacc24f617272f7759677e242bbf74ec/examples/hello_world
 [QA1795]: {{site.apple-dev}}/library/archive/qa/qa1795/_index.html
 
@@ -533,7 +533,7 @@ Hot restart resets the state to the app's initial state.
 For more information, see [Hot reload][].
 
 
-[Hot reload]: {{site.url}}/tools/hot-reload
+[Hot reload]: /tools/hot-reload
 
 ### Where can I deploy my Flutter app?
 
@@ -541,8 +541,8 @@ You can compile and deploy your Flutter app to iOS, Android,
 [web][], and [desktop][].
 
 
-[desktop]: {{site.url}}/platform-integration/desktop
-[web]: {{site.url}}/platform-integration/web
+[desktop]: /platform-integration/desktop
+[web]: /platform-integration/web
 
 ### What devices and OS versions does Flutter run on?
 
@@ -562,15 +562,15 @@ You can compile and deploy your Flutter app to iOS, Android,
   [development operating system][install].
 
 
-[install]: {{site.url}}/get-started/install
-[supported platforms]: {{site.url}}/reference/supported-platforms
+[install]: /get-started/install
+[supported platforms]: /reference/supported-platforms
 
 ### Does Flutter run on the web?
 
 Yes, web support is available in the stable channel.
 For more details, check out the [web instructions][].
 
-[web instructions]: {{site.url}}/platform-integration/web/building
+[web instructions]: /platform-integration/web/building
 
 ### Can I use Flutter to build desktop apps?
 
@@ -581,7 +581,7 @@ macOS, and Linux.
 
 Yes, learn more in the [add-to-app][] section of our website.
 
-[add-to-app]: {{site.url}}/add-to-app
+[add-to-app]: /add-to-app
 
 ### Can I access platform services and APIs like sensors and local storage?
 
@@ -603,8 +603,8 @@ platform APIs as they need, and build layers of
 abstractions that are a best fit for their project.
 
 
-[is easy]: {{site.url}}/packages-and-plugins/using-packages
-[platform and third-party APIs]: {{site.url}}/platform-integration/platform-channels
+[is easy]: /packages-and-plugins/using-packages
+[platform and third-party APIs]: /platform-integration/platform-channels
 [ready-made packages]: {{site.pub}}/flutter/
 
 ### Can I extend and customize the bundled widgets?
@@ -680,7 +680,7 @@ iOS and Android.
 
 [`BasicMessageChannel`]: {{site.api}}/flutter/services/BasicMessageChannel-class.html
 [example project]: {{site.repo.flutter}}/tree/main/examples/platform_channel
-[platform channels]: {{site.url}}/platform-integration/platform-channels
+[platform channels]: /platform-integration/platform-channels
 
 ### Does Flutter come with a reflection / mirrors system?
 
@@ -709,8 +709,8 @@ Learn more about a11y in the
 [accessibility documentation][].
 
 
-[accessibility documentation]: {{site.url}}/ui/accessibility-and-internationalization/accessibility
-[internationalization tutorial]: {{site.url}}/ui/accessibility-and-internationalization/internationalization
+[accessibility documentation]: /ui/accessibility-and-internationalization/accessibility
+[internationalization tutorial]: /ui/accessibility-and-internationalization/internationalization
 
 ### How do I write parallel and/or concurrent apps for Flutter?
 
@@ -740,7 +740,7 @@ and many other utilities and formats.
 For a detailed writeup on using JSON with Flutter,
 check out the [JSON tutorial][].
 
-[JSON tutorial]: {{site.url}}/data-and-backend/serialization/json
+[JSON tutorial]: /data-and-backend/serialization/json
 [pub.dev]: {{site.pub}}
 
 ### Can I build 3D (OpenGL) apps with Flutter?
@@ -767,8 +767,8 @@ and creating a [release build of your iOS app][].
 Also, check out [Measuring your app's size][].
 
 
-[release build of your Android app]: {{site.url}}/deployment/android
-[release build of your iOS app]: {{site.url}}/deployment/ios
+[release build of your Android app]: /deployment/android
+[release build of your iOS app]: /deployment/ios
 
 ### Do Flutter apps run on Chromebooks?
 

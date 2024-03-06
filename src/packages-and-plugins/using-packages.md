@@ -3,8 +3,6 @@ title: Using packages
 description: How to use packages in your Flutter app.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 <?code-excerpt path-base="development/plugin_api_migration"?>
 
 Flutter supports using shared packages contributed by other developers
@@ -36,7 +34,7 @@ an app without having to develop everything from scratch.
     For example, a plugin might provide Flutter apps
     with the ability to use a device's camera.
 
-  <iframe width="560" height="315" src="{{yt-embed}}/Y9WifT8aN6o?start=1" title="Learn the difference between a package and a plugin" {{yt-set}}></iframe>
+  <iframe width="560" height="315" src="{{site.yt.embed}}/Y9WifT8aN6o?start=1" title="Learn the difference between a package and a plugin" {{site.yt.set}}></iframe>
 {{site.alert.end}}
 
 Existing packages enable many use cases—for example,
@@ -52,13 +50,13 @@ To add assets, images, or fonts,
 whether stored in files or packages,
 see [Adding assets and images][].
 
-[Adding assets and images]: {{site.url}}/ui/assets/assets-and-images
+[Adding assets and images]: /ui/assets/assets-and-images
 [`battery_plus`]: {{site.pub-pkg}}/battery_plus
-[developing packages]: {{site.url}}/packages-and-plugins/developing-packages
+[developing packages]: /packages-and-plugins/developing-packages
 [FlutterFire]: {{site.github}}/firebase/flutterfire
 
 [`go_router`]: {{site.pub-pkg}}/go_router
-[`http`]: {{site.url}}/cookbook/networking/fetch-data
+[`http`]: /cookbook/networking/fetch-data
 [pub.dev]: {{site.pub}}
 [`url_launcher`]: {{site.pub-pkg}}/url_launcher
 
@@ -90,7 +88,7 @@ or any combination thereof.
 
 [Android]: {{site.pub-pkg}}?q=sdk%3Aflutter+platform%3Aandroid
 [Flutter Favorites]: {{site.pub}}/flutter/favorites
-[Flutter Favorites program]: {{site.url}}/packages-and-plugins/favorites
+[Flutter Favorites program]: /packages-and-plugins/favorites
 [Flutter landing page]: {{site.pub}}/flutter
 [Linux]: {{site.pub-pkgs}}?q=sdk%3Aflutter+platform%3Alinux
 [iOS]: {{site.pub-pkg}}?q=sdk%3Aflutter+platform%3Aios
@@ -232,7 +230,7 @@ override functionality.
 If no package exists for your specific use case,
 you can [write a custom package][].
 
-[write a custom package]: {{site.url}}/packages-and-plugins/developing-packages
+[write a custom package]: /packages-and-plugins/developing-packages
 
 ## Managing package dependencies and versions
 

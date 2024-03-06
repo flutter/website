@@ -3,11 +3,9 @@ title: Who is Dash?
 description: Learn more about the Flutter and Dart mascot, Dash.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 This is Dash:
 
-![Dash by herself]({{site.url}}/assets/images/dash/Dash.png){:width="50%"}<br>
+![Dash by herself](/assets/images/dash/Dash.png){:width="50%"}<br>
 
 Dash is the mascot for the Dart language and the Flutter framework.
 
@@ -16,9 +14,9 @@ Dash is the mascot for the Dart language and the Flutter framework.
   [Dashatar][], a Flutter app for web and mobile!
 {{site.alert.end}}
 
-![A sample of Dashatars]({{site.url}}/assets/images/dash/Dashatars.png){:width="100%"}<br>
+![A sample of Dashatars](/assets/images/dash/Dashatars.png){:width="100%"}<br>
 
-![GIF of Dash fainting created for Flutter Engage]({{site.url}}/assets/images/dash/dash-fainting.gif)
+![GIF of Dash fainting created for Flutter Engage](/assets/images/dash/dash-fainting.gif)
 
 [Dashatar]: https://dashatar-dev.web.app/#/
 
@@ -60,11 +58,11 @@ That's right, Dash was originally a
 
 Here are some early mockups and one of the first prototypes:
 
-![1st mockup made by Novicell.dk]({{site.url}}/assets/images/dash/early-dash-sketches.png){:width="35%"} ![2nd mockup by Squishable.com]({{site.url}}/assets/images/dash/early-dash-sketches2.jpg){:width="35%"}<br>
+![1st mockup made by Novicell.dk](/assets/images/dash/early-dash-sketches.png){:width="35%"} ![2nd mockup by Squishable.com](/assets/images/dash/early-dash-sketches2.jpg){:width="35%"}<br>
 
-![Prototype 1]({{site.url}}/assets/images/dash/early-dash-sketches3.jpg){:width="35%"} ![Playing with embroidery ideas]({{site.url}}/assets/images/dash/early-dash-sketches4.jpg){:width="35%"}<br>
+![Prototype 1](/assets/images/dash/early-dash-sketches3.jpg){:width="35%"} ![Playing with embroidery ideas](/assets/images/dash/early-dash-sketches4.jpg){:width="35%"}<br>
 
-![First prototype]({{site.url}}/assets/images/dash/early-dash-sketches5.jpg){:width="50%"}<br>
+![First prototype](/assets/images/dash/early-dash-sketches5.jpg){:width="50%"}<br>
 The first prototype had uneven eyes
 
 ## Why a hummingbird?
@@ -73,7 +71,7 @@ Early on, a hummingbird image was created for the Dart team
 to use for presentations and the web.
 The hummingbird represents that Dart is a speedy language.
 
-![Early hummingbird drawing]({{site.url}}/assets/images/dash/DartHummingbird.jpg){:width="35%"}<br>
+![Early hummingbird drawing](/assets/images/dash/DartHummingbird.jpg){:width="35%"}<br>
 
 However, hummingbirds are pointed and angular
 and we wanted a cuddly plushy, so we chose a round
@@ -84,10 +82,10 @@ the tail shape, the tuft of hair, the eyes...all the
 little details. The vendor sent the specs to two
 manufacturers who returned the prototypes some weeks later.
 
-![The first Dash prototypes]({{site.url}}/assets/images/dash/dash-prototypes.jpg){:width="35%"} ![The first Dash prototypes]({{site.url}}/assets/images/dash/dash-prototypes2.jpg){:width="35%"}<br>
+![The first Dash prototypes](/assets/images/dash/dash-prototypes.jpg){:width="35%"} ![The first Dash prototypes](/assets/images/dash/dash-prototypes2.jpg){:width="35%"}<br>
 
 Introducing Dash at the January 2018 Dart Conference.
-<iframe width="541" height="350" src="{{yt-embed}}/R5vIUjRZaZA" title="Introducing Dash at the January 2018 Dart Conference" {{yt-set}}></iframe>
+<iframe width="541" height="350" src="{{site.yt.embed}}/R5vIUjRZaZA" title="Introducing Dash at the January 2018 Dart Conference" {{site.yt.set}}></iframe>
 
 While the manufacturing process was proceeding,
 Shams chose a name for the plushy: Dash,
@@ -101,10 +99,10 @@ They were eagerly adopted by Dart _and_ Flutter enthusiasts.
 
 The people have spoken, so Dash is now the mascot for Flutter **and** Dart.
 
-![Dash 1.0]({{site.url}}/assets/images/dash/dash-1.0.jpg){:width="35%"}<br>
+![Dash 1.0](/assets/images/dash/dash-1.0.jpg){:width="35%"}<br>
 Dash 1.0
 
-![Piles of Dashes awaiting conference goers]({{site.url}}/assets/images/dash/dash-conference-swag.jpg){:width="50%"}<br>
+![Piles of Dashes awaiting conference goers](/assets/images/dash/dash-conference-swag.jpg){:width="50%"}<br>
 Conference swag
 
 Since the creation of Dash 1.0, we've made two more versions.
@@ -115,10 +113,10 @@ Dash 2.1 is a smaller size and has a few more color
 tweaks. The smaller size is easier to ship,
 and fits better in a claw machine!
 
-![Dash 2.0 and 2.1]({{site.url}}/assets/images/dash/BigDashAndLittleDash.png){:width="50%"}<br>
+![Dash 2.0 and 2.1](/assets/images/dash/BigDashAndLittleDash.png){:width="50%"}<br>
 Dash 2.0 and 2.1
 
-![Flutter Interact claw machine]({{site.url}}/assets/images/dash/DashClawMachine.png){:width="50%"}<br>
+![Flutter Interact claw machine](/assets/images/dash/DashClawMachine.png){:width="50%"}<br>
 
 ## Dash facts
 
@@ -130,28 +128,28 @@ Dash 2.0 and 2.1
 * We also have Mega-Dash, a life-sized mascot
   who is currently resting in a Google office.
   
-  ![Mega-Dash in the office]({{site.url}}/assets/images/dash/MegaDashChilling.png){:width="50%"}
+  ![Mega-Dash in the office](/assets/images/dash/MegaDashChilling.png){:width="50%"}
   
   Mega-Dash made her
   first appearance at the [Flutter Interact][] event
   in Brooklyn, New York, on December 11, 2019.
   
-  <iframe width="560" height="315" src="{{yt-embed}}/EgBMGDtHZhE" title="Watch the Flutter Interact 2019 highlights" {{yt-set}}></iframe>
+  <iframe width="560" height="315" src="{{site.yt.embed}}/EgBMGDtHZhE" title="Watch the Flutter Interact 2019 highlights" {{site.yt.set}}></iframe>
   
 * We also have a Dash puppet that Shams made from
   one of the first plushies.
   
-  ![Nilay and the Dash puppet]({{site.url}}/assets/images/dash/NilayDashPuppet.png){:width="50%"}
+  ![Nilay and the Dash puppet](/assets/images/dash/NilayDashPuppet.png){:width="50%"}
   
   A number of our YouTube videos feature the Dash puppet,
   voiced by Emily Fortuna, one of the early (and much loved)
   Flutter Developer Advocates.
   
-  <iframe width="560" height="315" src="{{yt-embed}}/oyy_1CjNdBU" title="Building DashCast, a Flutter-based podcast app" {{yt-set}}></iframe>
-  <iframe width="560" height="315" src="{{yt-embed}}/dsiLVNDJ3t0" title="Revisiting DashCast, a Flutter-based podcast app" {{yt-set}}></iframe>
+  <iframe width="560" height="315" src="{{site.yt.embed}}/oyy_1CjNdBU" title="Building DashCast, a Flutter-based podcast app" {{site.yt.set}}></iframe>
+  <iframe width="560" height="315" src="{{site.yt.embed}}/dsiLVNDJ3t0" title="Revisiting DashCast, a Flutter-based podcast app" {{site.yt.set}}></iframe>
 
 <br>
-!["Born to Hot Reload" jacket]({{site.url}}/assets/images/dash/ShamsDashJacket.png){:width="35%"}<br>
+!["Born to Hot Reload" jacket](/assets/images/dash/ShamsDashJacket.png){:width="35%"}<br>
 
-[Flutter Interact]: {{yt-playlist}}PLjxrf2q8roU0o0wKRJTjyN0pSUA6TI8lg
+[Flutter Interact]: {{site.yt.playlist}}PLjxrf2q8roU0o0wKRJTjyN0pSUA6TI8lg
 [Instagram account]: https://www.instagram.com/dash_the_dartlang_plushy/

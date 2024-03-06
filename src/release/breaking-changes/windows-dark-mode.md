@@ -40,6 +40,6 @@ Flutter SDK
 [PR 862][] shows the migration work for the
 [Flutter Gallery][] app.
 
-[run loop migration guide]: {{site.url}}/release/breaking-changes/windows-run-loop
+[run loop migration guide]: /release/breaking-changes/windows-run-loop
 [PR 862]: {{site.repo.gallery-archive}}/pull/862/files
 [Flutter Gallery]: {{site.gallery-archive}}

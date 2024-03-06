@@ -253,4 +253,4 @@ As a final note, we're nearly at the midpoint of the year, when it's time to rea
 
 ## Full Issue List
 
-You can see [the full list of PRs committed in this release]({{site.url}}/release/release-notes/changelogs/changelog-1.5.4).
+You can see [the full list of PRs committed in this release](/release/release-notes/changelogs/changelog-1.5.4).

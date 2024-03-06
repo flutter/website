@@ -123,4 +123,4 @@ flutter run -d chrome --web-renderer html --profile
 
 [canvaskit]: https://skia.org/docs/user/modules/canvaskit/
 [file an issue]: {{site.repo.flutter}}/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
-[web-app-init]: {{site.url}}/platform-integration/web/initialization
+[web-app-init]: /platform-integration/web/initialization

@@ -4,8 +4,6 @@ description: How to animate a widget to fly between two screens.
 short-title: Hero
 ---
 
-{% include docs/yt_shims.liquid %}
-
 {{site.alert.secondary}}
   <h4 class="no_toc">What you'll learn</h4>
 
@@ -27,7 +25,7 @@ motion is sometimes referred to as a _shared element transition_.
 
 You might want to watch this one-minute video introducing the Hero widget:
 
-<iframe width="560" height="315" src="{{yt-embed}}/Be9UH1kXFDw" title="Learn about the Hero Flutter Widget" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/Be9UH1kXFDw" title="Learn about the Hero Flutter Widget" {{site.yt.set}}></iframe>
 
 This guide demonstrates how to build standard hero animations, and hero
 animations that transform the image from a circular shape to a square shape
@@ -73,7 +71,7 @@ Tapping the flippers in the blue route (or using the device's
 back-to-previous-route gesture) flies the flippers back to
 the original route.
 
-<iframe width="560" height="315" src="{{yt-embed}}/CEcFnqRDfgw" title="Watch this example of a standard hero animation in Flutter" {{yt-set-short}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/CEcFnqRDfgw" title="Watch this example of a standard hero animation in Flutter" {{site.yt.set-short}}></iframe>
 
 <br>**Radial hero animations**<br>
 
@@ -88,7 +86,7 @@ that displays it with a square shape.
 Tapping the square image flies the hero back to
 the original route, displayed with a circular shape.
 
-<iframe width="560" height="315" src="{{yt-embed}}/LWKENpwDKiM" title="Watch this example of a radial hero animation in Flutter" {{yt-set-short}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/LWKENpwDKiM" title="Watch this example of a radial hero animation in Flutter" {{site.yt.set-short}}></iframe>
 
 <br>Before moving to the sections specific to
 [standard](#standard-hero-animations)
@@ -160,7 +158,7 @@ The next section describes Flutter's process in greater detail.
 The following describes how Flutter performs the
 transition from one route to another.
 
-![Before the transition the source hero appears in the source route]({{site.url}}/assets/images/docs/ui/animations/hero-transition-0.png)
+![Before the transition the source hero appears in the source route](/assets/images/docs/ui/animations/hero-transition-0.png)
 
 Before transition, the source hero waits in the source
 route's widget tree. The destination route does not yet exist,
@@ -168,7 +166,7 @@ and the overlay is empty.
 
 ---
 
-![The transition begins]({{site.url}}/assets/images/docs/ui/animations/hero-transition-1.png)
+![The transition begins](/assets/images/docs/ui/animations/hero-transition-1.png)
 
 Pushing a route to the `Navigator` triggers the animation.
 At `t=0.0`, Flutter does the following:
@@ -186,7 +184,7 @@ At `t=0.0`, Flutter does the following:
 
 ---
 
-![The hero flies in the overlay to its final position and size]({{site.url}}/assets/images/docs/ui/animations/hero-transition-2.png)
+![The hero flies in the overlay to its final position and size](/assets/images/docs/ui/animations/hero-transition-2.png)
 
 As the hero flies, its rectangular bounds are animated using
 [Tween&lt;Rect&gt;][], specified in Hero's
@@ -199,7 +197,7 @@ that uses a different Tween animation.)
 
 ---
 
-![When the transition is complete, the hero is moved from the overlay to the destination route]({{site.url}}/assets/images/docs/ui/animations/hero-transition-3.png)
+![When the transition is complete, the hero is moved from the overlay to the destination route](/assets/images/docs/ui/animations/hero-transition-3.png)
 
 When the flight completes:
 
@@ -300,7 +298,7 @@ The PhotoHero builds the following widget tree:
 
 <div class="text-center mb-4" markdown="1">
 
-  ![PhotoHero class widget tree]({{site.url}}/assets/images/docs/ui/animations/photohero-class.png)
+  ![PhotoHero class widget tree](/assets/images/docs/ui/animations/photohero-class.png)
 
 </div>
 
@@ -489,7 +487,7 @@ provided example to your needs.** The heavy lifting is done for you.
 The following diagram shows the clipped image at the beginning
 (`t = 0.0`), and the end (`t = 1.0`) of the animation.
 
-![Radial transformation from beginning to end]({{site.url}}/assets/images/docs/ui/animations/radial-hero-animation.png)
+![Radial transformation from beginning to end](/assets/images/docs/ui/animations/radial-hero-animation.png)
 
 The blue gradient (representing the image), indicates where the clip
 shapes intersect. At the beginning of the transition,
@@ -570,7 +568,7 @@ To do this, it builds the following widget tree:
 
 <div class="text-center mb-4" markdown="1">
 
-  ![RadialExpansion widget tree]({{site.url}}/assets/images/docs/ui/animations/radial-expansion-class.png)
+  ![RadialExpansion widget tree](/assets/images/docs/ui/animations/radial-expansion-class.png)
 
 </div>
 
@@ -632,15 +630,15 @@ Key information:
   The hero's flight path still follows an arc,
   but the image's aspect ratio remains constant.
 
-[Animations in Flutter tutorial]: {{site.url}}/ui/animations/tutorial
+[Animations in Flutter tutorial]: /ui/animations/tutorial
 [basic_hero_animation]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/basic_hero_animation/
 [basic_radial_hero_animation]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/basic_radial_hero_animation
-[Building Layouts in Flutter]: {{site.url}}/ui/layout
+[Building Layouts in Flutter]: /ui/layout
 [`ClipOval`]: {{site.api}}/flutter/widgets/ClipOval-class.html
 [ClipRect]: {{site.api}}/flutter/widgets/ClipRect-class.html
-[Create a new Flutter example]: {{site.url}}/get-started/test-drive
+[Create a new Flutter example]: /get-started/test-drive
 [`createRectTween`]: {{site.api}}/flutter/widgets/CreateRectTween.html
-[`debugPaintSizeEnabled`]: {{site.url}}/tools/devtools/inspector#debugging-layout-issues-visually
+[`debugPaintSizeEnabled`]: /tools/devtools/inspector#debugging-layout-issues-visually
 [`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html
 [hero_animation]: {{site.repo.this}}/tree/{{site.branch}}/examples/_animation/hero_animation/
 [`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
@@ -654,7 +652,7 @@ Key information:
 [Radial hero animations]: #radial-hero-animations
 [Radial transformation]: https://web.archive.org/web/20180223140424/https://material.io/guidelines/motion/transforming-material.html
 [`RectTween`]: {{site.api}}/flutter/animation/RectTween-class.html
-[_Route_]: {{site.url}}/cookbook/navigation/navigation-basics
+[_Route_]: /cookbook/navigation/navigation-basics
 [`Route`]: {{site.api}}/flutter/widgets/Route-class.html
 [Standard hero animation code]: #standard-hero-animation-code
 [Tween&lt;Rect&gt;]: {{site.api}}/flutter/animation/Tween-class.html

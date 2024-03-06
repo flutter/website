@@ -3,8 +3,6 @@ title: Common Flutter errors
 description: How to recognize and resolve common Flutter framework errors.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 <?code-excerpt path-base="testing/common_errors"?>
 
 ## Introduction
@@ -100,7 +98,7 @@ it needs to display. The self-determined width of the
 clashes with the maximum amount of horizontal space its parent,
 the `Row` widget, can provide.
 
-[Flutter architectural overview]: {{site.url}}/resources/architectural-overview#layout-and-rendering
+[Flutter architectural overview]: /resources/architectural-overview#layout-and-rendering
 
 **How to fix it?**
 
@@ -140,9 +138,9 @@ The resources linked below provide further information about this error.
 * [Understanding constraints][]
 
 [its source code]: {{site.repo.flutter}}/blob/c8e42b47f5ea8b5ff7bf2f2b0a2a8e765f1aa51d/packages/flutter/lib/src/widgets/basic.dart#L5166-L5174
-[flexible-video]: {{yt-watch}}?v=CI7x0mAZiY0
+[flexible-video]: {{site.yt.watch}}?v=CI7x0mAZiY0
 [medium-article]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db#738b
-[Understanding constraints]: {{site.url}}/ui/layout/constraints
+[Understanding constraints]: /ui/layout/constraints
 
 ## 'RenderBox was not laid out'
 
@@ -507,7 +505,7 @@ For more information and to learn how to fix,
 check out the following video on
 [`PrimaryScrollController`][controller-video]:
 
-<iframe width="560" height="315" src="{{yt-embed}}/33_0ABjFJUU" title="Learn about the PrimaryScrollController Flutter Widget" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/33_0ABjFJUU" title="Learn about the PrimaryScrollController Flutter Widget" {{site.yt.set}}></iframe>
 
 [controller-video]: {{site.api}}/flutter/widgets/PrimaryScrollController-class.html
 
@@ -521,4 +519,4 @@ check out the following resources:
 * [Understanding constraints][]
 * [Flutter architectural overview][]
 
-[Flutter architectural overview]: {{site.url}}/resources/architectural-overview#layout-and-rendering
+[Flutter architectural overview]: /resources/architectural-overview#layout-and-rendering

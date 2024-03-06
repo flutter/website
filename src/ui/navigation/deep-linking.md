@@ -3,8 +3,6 @@ title: Deep linking
 description: Navigate to routes when the app receives a new URL.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 Flutter supports deep linking on iOS, Android, and web browsers.
 Opening a URL displays that screen in your app. With the following
 steps, you can launch and display routes by using named routes
@@ -18,8 +16,8 @@ using the [`Router`][Router] widget.
   [Limitations][] in the [navigation overview][] page.
 {{site.alert.end}}
 
-[Limitations]: {{site.url}}/ui/navigation#limitations
-[navigation overview]: {{site.url}}/ui/navigation
+[Limitations]: /ui/navigation#limitations
+[navigation overview]: /ui/navigation
 
 If you're running the app in a web browser, there's no additional setup
 required. Route paths are handled in the same way as an iOS or Android deep
@@ -29,7 +27,7 @@ the pattern: `/#/path/to/app/screen`, but this can be changed by
 
 If you are a visual learner, check out the following video:
 
-<iframe width="560" height="315" src="{{yt-embed}}/KNAb2XL7k2g" title="Learn how to create and link to routes in your Flutter app" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/KNAb2XL7k2g" title="Learn how to create and link to routes in your Flutter app" {{site.yt.set}}></iframe>
 **Deep linking in Flutter**
 
 ## Get started
@@ -37,14 +35,14 @@ If you are a visual learner, check out the following video:
 To get started, see our cookbooks for Android and iOS:
 
 <div class="card-deck mb-8">
-  <a class="card" href="{{site.url}}/cookbook/navigation/set-up-app-links">
+  <a class="card" href="/cookbook/navigation/set-up-app-links">
     <div class="card-body">
       <header class="card-title text-center m-0">
         Android
       </header>
     </div>
   </a>
-  <a class="card" href="{{site.url}}/cookbook/navigation/set-up-universal-links">
+  <a class="card" href="/cookbook/navigation/set-up-universal-links">
     <div class="card-body">
       <header class="card-title text-center m-0">
         iOS
@@ -93,4 +91,4 @@ introduction to the Router system.
 [Router]: {{site.api}}/flutter/widgets/Router-class.html
 [plugin-linking]: {{site.medium}}/flutter-community/deep-links-and-flutter-applications-how-to-handle-them-properly-8c9865af9283
 
-[configuring the URL strategy]: {{site.url}}/ui/navigation/url-strategies
+[configuring the URL strategy]: /ui/navigation/url-strategies

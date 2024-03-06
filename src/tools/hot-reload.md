@@ -67,7 +67,7 @@ The code updates and execution continues.
   hot reload.
 {{site.alert.end}}
 
-![Android Studio UI]({{site.url}}/assets/images/docs/development/tools/android-studio-run-controls.png){:width="100%"}<br>
+![Android Studio UI](/assets/images/docs/development/tools/android-studio-run-controls.png){:width="100%"}<br>
 Controls for run, run debug, hot reload, and hot restart in Android Studio
 
 A code change has a visible effect only if the modified
@@ -417,6 +417,6 @@ widgets and render objects.
 [static-variables]: {{site.dart-site}}/language/classes#static-variables
 [const-new]: {{site.dart-site}}/language/variables#final-and-const
 [Dart Virtual Machine (VM)]: {{site.dart-site}}/overview#platform
-[Flutter editor]: {{site.url}}/get-started/editor
+[Flutter editor]: /get-started/editor
 [Issue 43574]: {{site.repo.flutter}}/issues/43574
 [kernel files]: {{site.github}}/dart-lang/sdk/tree/main/pkg/kernel

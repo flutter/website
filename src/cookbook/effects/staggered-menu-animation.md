@@ -20,7 +20,7 @@ in at the bottom.
 
 The following animation shows the app's behavior:
 
-![Staggered Menu Animation Example]({{site.url}}/assets/images/docs/cookbook/effects/StaggeredMenuAnimation.gif){:.site-mobile-screenshot}
+![Staggered Menu Animation Example](/assets/images/docs/cookbook/effects/StaggeredMenuAnimation.gif){:.site-mobile-screenshot}
 
 ## Create the menu without animations
 
@@ -194,7 +194,7 @@ used to calculate the individual animation times.
 
 The desired animation times are shown in the following diagram:
 
-![Animation Timing Diagram]({{site.url}}/assets/images/docs/cookbook/effects/TimingDiagram.png){:.site-mobile-screenshot}
+![Animation Timing Diagram](/assets/images/docs/cookbook/effects/TimingDiagram.png){:.site-mobile-screenshot}
 
 To animate a value during a subsection of a larger animation,
 Flutter provides the `Interval` class.

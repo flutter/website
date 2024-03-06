@@ -3,8 +3,6 @@ title: Flutter fix
 description: Keep your code up to date with the help of the Flutter Fix feature.
 ---
 
-{% include docs/yt_shims.liquid %}
-
 As Flutter continues to evolve, we provide a tool to help you clean up
 deprecated APIs from your codebase. The tool ships as part of Flutter, and
 suggests changes that you might want to make to your code. The tool is available
@@ -29,7 +27,7 @@ Clicking the light bulb displays the suggested fix
 that updates that code to the new API.
 Clicking the suggested fix performs the update.
 
-![Screenshot showing suggested change in IntelliJ]({{site.url}}/assets/images/docs/development/tools/flutter-fix-suggestion-intellij.png)<br>
+![Screenshot showing suggested change in IntelliJ](/assets/images/docs/development/tools/flutter-fix-suggestion-intellij.png)<br>
 A sample quick-fix in IntelliJ
 
 ### VS Code
@@ -54,7 +52,7 @@ You can do any of the following:
   This shows a list of all actions, including
   refactors.
 
-![Screenshot showing suggested change in VS Code]({{site.url}}/assets/images/docs/development/tools/flutter-fix-suggestion-vscode.png)<br>
+![Screenshot showing suggested change in VS Code](/assets/images/docs/development/tools/flutter-fix-suggestion-vscode.png)<br>
 A sample code action in VS Code
 
 ## Applying project-wide fixes
@@ -87,4 +85,4 @@ on Flutter's Medium publication.
 
 [Deprecation lifetime in Flutter]: {{site.flutter-medium}}/deprecation-lifetime-in-flutter-e4d76ee738ad
 [`dart fix`]: {{site.dart-site}}/tools/dart-fix
-[dart fix Decoding Flutter]: {{yt-watch}}?v=OBIuSrg_Quo
+[dart fix Decoding Flutter]: {{site.yt.watch}}?v=OBIuSrg_Quo
