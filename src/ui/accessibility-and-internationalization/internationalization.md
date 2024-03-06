@@ -319,6 +319,7 @@ complete the following instructions:
 
    <?code-excerpt "gen_l10n_example/lib/main.dart (InternationalizedTitle)"?>
    ```dart
+   import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // import file
    appBar: AppBar(
      // The [AppBar] title text should update its message
      // according to the system locale of the target platform.
