@@ -90,8 +90,7 @@ Experimental options
 
 #### Pick a (simple) Flutter web application
 
-Choose a Flutter application that has been
-[migrated](#requires-js-interop-to-access-browser-and-js-apis)
+Choose a Flutter application that has been migrated
 to use [`package:web`][] and the new [JS interop][] solutions.
 
 Applications that use platform-specific packages and JS interop code
@@ -204,7 +203,7 @@ Context: The unavailable library 'dart:html' is imported through these packages:
     web_plugin_registrant.dart => package:flutter_web_plugins => dart:html
 ```
 
-[`dart:js_interop`]: {{site.dart-api}}/{{site.data.pkg-vers.SDK.channel}}/dart-js_interop/dart-js_interop-library.html
+[`dart:js_interop`]: {{site.dart-api}}/stable/dart-js_interop/dart-js_interop-library.html
 [`package:url_launcher`]: {{site.pub-pkg}}/url_launcher
 [`package:web` migration guide]: {{site.dart-site}}/interop/js-interop/package-web
 
