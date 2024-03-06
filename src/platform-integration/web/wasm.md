@@ -10,19 +10,27 @@ The Flutter and Dart teams are excited to add
 [WebAssembly](https://webassembly.org/) as a compilation target when building
 applications for the web.
 
-{{site.alert.warning}}
-  Development of WebAssembly support for Dart and Flutter remains ongoing.
-  
-  You can preview Wasm and WebAssembly garbage collection (WasmGC)
-  on the [`master` channel][].
-  Flutter is previewing these features.
-  Ongoing development might result in frequent changes.
+{{site.alert.note}}
+  Development of WebAssembly support for Dart and Flutter remains ongoing,
+  which might result in frequent changes. 
   Revisit this page for the latest updates.
-  
+
   **_Last updated {{page.last-update}}_**
+
+  **Wasm is now in beta!**
+  : Wasm and WebAssembly garbage collection (WasmGC) are now 
+    available on the Flutter [`beta` channel][] and [`master` channel][].
+
+  **Static JS interop is now in stable!**
+  : Migrate your packages to [`package:web`][] to make them compatible with Wasm.
+    Read the [Requires JS-interop](#requires-js-interop-to-access-browser-and-js-apis)
+    section to learn more. 
+
 {{site.alert.end}}
 
-[`master` channel]: https://github.com/flutter/flutter/wiki/flutter-build-release-channels#master
+[`beta` channel]: https://github.com/flutter/flutter/wiki/flutter-build-release-channels#beta
+[`master` channel]: https://github.com/flutter/flutter/wiki/flutter-build-release-channels#beta
+[`package:web`]: {{site.pub-pkg}}/web
 
 ### Background
 
@@ -50,12 +58,13 @@ To try a pre-built Flutter web app using Wasm, check out the
 
 To experiment with Wasm in your own apps, follow the steps below.
 
-#### Switch to the Flutter `master` channel and upgrade
+#### Switch to the Flutter `beta` channel and upgrade
 
-Wasm compilation is only available on the latest builds of the `master` channel.
+Wasm compilation is available on the latest builds of the `beta` channel
+(recommended) or `master` (not recommended).
 
 To learn more about Flutter build release channels and how to switch to
-the `master` channel, check out the
+the `beta` channel, check out the
 [Flutter wiki](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels).
 
 To then ensure you are running the latest version,
@@ -81,9 +90,15 @@ Experimental options
 
 #### Pick a (simple) Flutter web application
 
-Choose a Flutter application without platform-specific packages or
-JavaScript interop code.
-These [known limitations](#known-limitations) cause issues with Wasm.
+Choose a Flutter application that has been
+[migrated](#requires-js-interop-to-access-browser-and-js-apis)
+to use [`package:web`][] and the new [JS interop][] solutions.
+
+Applications that use platform-specific packages and JS interop code
+are not compatible with Wasm unless they have been
+[migrated to use *static* JS interop](#requires-js-interop-to-access-browser-and-js-apis).
+
+[JS interop]: {{site.dart-site}}/interop/js-interop
 
 #### Run `flutter build web --wasm`
 
@@ -121,10 +136,8 @@ As of {{page.last-update}},
 two browser families should be able to run
 Flutter/Wasm content:
 
-- Chromium-based browsers
-  - Version 119 or later.
-- Firefox
-  - Version 120 or later.
+- **Chromium-based browsers:** Version 119 or later.
+- **Firefox:** Version 120 or later.
 
 {{site.alert.note}}
   This does not include versions of these browsers on iOS.
@@ -156,14 +169,25 @@ but WasmGC encodings changed once the feature was stabilized.
 To ensure compatibility, run the latest version of the Flutter `master` channel
 and the latest version of Chrome or Firefox.
 
-#### Requires preview JS-interop to access browser and JS APIs
+#### Requires JS-interop to access browser and JS APIs
 
-To support Wasm, Dart is shifting how it targets browser and JavaScript APIs.
-This shift prevents Dart code that uses `dart:html` or `package:js` from
-compiling to Wasm.
-Most platform-specific packages, such as [`package:url_launcher`][],
-use these libraries.
-As a result, they are currently incompatible with Wasm support in Flutter.
+To support Wasm, Dart has shifted how it targets browser and JavaScript APIs.
+This shift prevents Dart code that uses `dart:html` or `package:js`
+from compiling to Wasm.
+
+Instead, Dart now provides new, lightweight interop solutions built around
+static JS interop:
+
+- [`package:web`][], which replaces `dart:html` (and other web libraries).
+- [`dart:js_interop`][], which replaces `package:js`.
+
+Most platform-specific packages, such as [`package:url_launcher`][], that used
+the previous web and JS interop solutions
+are [currently being migrated](https://github.com/flutter/packages/pull/5451/files)
+to be compatible with Wasm support in Flutter.
+
+To learn how to migrate to the new solutions, read the
+[`package:web` migration guide][] and [JS interop][] documentation set.
 
 To check if a Wasm build failed due to these APIs, review the error output.
 These often return soon after a build invocation.
@@ -180,12 +204,9 @@ Context: The unavailable library 'dart:html' is imported through these packages:
     web_plugin_registrant.dart => package:flutter_web_plugins => dart:html
 ```
 
-You can expect documentation on the replacements to these APIs later in 2023,
-including updates to the packages owned by the Dart and Flutter teams.
-
-In the meantime, to experiment with Wasm support in Flutter, avoid these APIs.
-
+[`dart:js_interop`]: {{site.dart-api}}/{{site.data.pkg-vers.SDK.channel}}/dart-js_interop/dart-js_interop-library.html
 [`package:url_launcher`]: {{site.pub-pkg}}/url_launcher
+[`package:web` migration guide]: {{site.dart-site}}/interop/js-interop/package-web
 
 #### Only build support
 
