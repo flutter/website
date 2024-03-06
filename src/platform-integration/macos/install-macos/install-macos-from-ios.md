@@ -4,7 +4,10 @@ description: Configure your system to develop Flutter mobile apps on macOS.
 short-title: When you started with web
 ---
 
-To add macOS desktop as a Flutter app target for macOS, follow this procedure.
+To add macOS desktop as a Flutter app target, follow this procedure.
+
+This procedure presumes you installed [Xcode][] {{site.appnow.xcode}}
+when your Flutter getting started path began with iOS.
 
 {% include docs/install/compiler/xcode.md
    target='macOS'
@@ -14,4 +17,6 @@ To add macOS desktop as a Flutter app target for macOS, follow this procedure.
 {% include docs/install/flutter-doctor.md
    target='macOS'
    devos='macOS'
-   config='macOSDesktopiOS' -%}
+   config='macOSDesktopiOS' %}
+
+[Xcode]: {{site.apple-dev}}/xcode/

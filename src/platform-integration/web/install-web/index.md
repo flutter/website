@@ -6,6 +6,9 @@ target-list: [macos-desktop, windows-desktop, ios-on-macos,
 android-on-macos, android-on-windows]
 ---
 
+To choose the guide to add Web devtools to your Flutter configuration,
+click the [Getting Started path][] you followed.
+
 <div class="card-deck mb-8">
 {% for target in page.target-list %}
 {% assign targetlink='/platform-integration/web/install-web/install-web-from-' | append: target | downcase %}
@@ -21,17 +24,17 @@ android-on-macos, android-on-windows]
             <span class="material-symbols">laptop_mac</span>
           {% when 'ios-on-macos' -%}
           <span class="material-symbols">laptop_mac</span><br>
-          <span class="material-symbols-outlined">arrow_downward</span><br>
+          <span class="material-symbols">add</span><br>
           <span class="material-symbols">phone_iphone</span>
           {% when 'windows-desktop' -%}
           <span class="material-symbols">desktop_windows</span>
           {% when 'android-on-macos' -%}
           <span class="material-symbols">laptop_mac</span><br>
-          <span class="material-symbols-outlined">arrow_downward</span><br>
+          <span class="material-symbols">add</span><br>
           <span class="material-symbols">phone_android</span>
             {% when 'android-on-windows' -%}
             <span class="material-symbols">desktop_windows</span><br>
-            <span class="material-symbols-outlined">arrow_downward</span><br>
+            <span class="material-symbols">add</span><br>
             <span class="material-symbols">phone_android</span>
           {% endcase -%}
         </span>
@@ -44,4 +47,4 @@ android-on-macos, android-on-windows]
 {% endfor %}
 </div>
 
-{% include docs/china-notice.md %}
+[Getting Started path]: /get-started/install

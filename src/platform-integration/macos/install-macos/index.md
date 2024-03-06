@@ -5,6 +5,9 @@ short-title: Add macOS to possible Flutter SDK targets
 target-list: [iOS, Android, Web]
 ---
 
+To choose the guide to add macOS devtools to your Flutter configuration,
+click the [Getting Started path][] you followed.
+
 <div class="card-deck mb-8">
 {% for target in page.target-list %}
 {% assign targetlink='/platform-integration/macos/install-macos/install-macos-from-' | append: target | downcase %}
@@ -33,4 +36,4 @@ target-list: [iOS, Android, Web]
 {% endfor %}
 </div>
 
-{% include docs/china-notice.md %}
+[Getting Started path]: /get-started/install

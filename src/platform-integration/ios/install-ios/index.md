@@ -5,6 +5,9 @@ short-title: Add iOS to possible Flutter SDK targets
 target-list: [macOS, Android, Web]
 ---
 
+To choose the guide to add iOS devtools to your Flutter configuration,
+click the [Getting Started path][] you followed.
+
 <div class="card-deck mb-8">
 {% for target in page.target-list %}
 {% assign targetlink='/platform-integration/ios/install-ios/install-ios-from-' | append: target | downcase %}
@@ -33,4 +36,4 @@ target-list: [macOS, Android, Web]
 {% endfor %}
 </div>
 
-{% include docs/china-notice.md %}
+[Getting Started path]: /get-started/install

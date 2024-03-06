@@ -1,7 +1,7 @@
 ---
-title: Add Windows devtools to Flutter from Android start
+title: Add Windows devtools to Flutter from Web start
 description: Configure your system to develop Flutter apps on Windows desktop.
-short-title: When you started with Android
+short-title: When you started with Web
 ---
 
 To add Windows desktop as a Flutter app target, follow this procedure.
@@ -18,7 +18,7 @@ To add Windows desktop as a Flutter app target, follow this procedure.
 {% include docs/install/flutter-doctor.md
    target='Windows'
    devos='Windows'
-   config='WindowsDesktopAndroid' %}
+   config='WindowsDesktopWeb' %}
 
 [Visual Studio 2022]: https://learn.microsoft.com/visualstudio/install/install-visual-studio?view=vs-2022
 [Visual Studio _Code_]: https://code.visualstudio.com/

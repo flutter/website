@@ -9,7 +9,7 @@ js: [{url: '/assets/js/temp/windows-install-redirector.js'}]
 {% assign os = 'windows' -%}
 {% assign recommend = 'Android' %}
 {% capture rec-target -%}
-[{{recommend}}](/get-started/install/{{os | downcase}}/{{recommend | downcase}})
+[{{recommend}}](/get-started/install/{{os | downcase}}/mobile)
 {%- endcapture %}
 
 <div class="card-deck mb-8">

@@ -1,10 +1,10 @@
 ---
-title: Add Android devtools for Flutter from Windows start
-description: Configure your Windows system to develop Flutter mobile apps for Android.
-short-title: When you started with Windows
+title: Add Android devtools for Flutter from iOS start
+description: Configure your Mac to develop Flutter mobile apps for Android.
+short-title: When you started with iOS
 ---
 
-To add Android as a Flutter app target for Windows, follow this procedure.
+To add Android as a Flutter app target for iOS, follow this procedure.
 
 ## Install Android Studio
 
@@ -15,14 +15,13 @@ To add Android as a Flutter app target for Windows, follow this procedure.
    Flutter requires the full version of Android Studio.
 
 {% include docs/install/compiler/android.md
-   target='desktop'
-   devos='windows'
+   target='macos'
+   devos='macOS'
    time="first" -%}
 
 {% include docs/install/flutter-doctor.md
    target='Android'
-   devos='Windows'
-   compiler='Android Studio'
-   config='WindowsDesktopAndroid' %}
+   devos='macOS'
+   config='macOSDesktopAndroid' %}
 
-[Android Studio]: https://developer.android.com/studio/install#win
+[Android Studio]: https://developer.android.com/studio/install#mac
