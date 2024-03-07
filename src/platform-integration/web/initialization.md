@@ -125,6 +125,8 @@ The `config` argument is an object that can have the following optional fields:
 
 </div>
 
+[web-renderers]: /platform-integration/web/renderers
+
 The `serviceWorkerSettings` has the following optional fields.
 
 <div class="table-wrapper" markdown="1">
