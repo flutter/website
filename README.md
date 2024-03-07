@@ -95,7 +95,7 @@ _choose one_ of the following submodule-cloning techniques:
   using the `--recurse-submodules` option:
 - 
   ```bash
-  $ git clone --recurse-submodules https://github.com/<username-or-flutter>/website.git
+  git clone --recurse-submodules https://github.com/<username-or-flutter>/website.git
   ```
 
   OR
@@ -104,14 +104,14 @@ _choose one_ of the following submodule-cloning techniques:
   then run this command from the repo root:
 
   ```bash
-  $ git submodule update --init --recursive
+  git submodule update --init --recursive
   ```
 
 > **Note:** At any time during development 
 > you can use the `git submodule` command to refresh submodules:
 >
 > ```bash
-> $ git pull; git submodule update --init --recursive
+> git pull; git submodule update --init --recursive
 > ```
 
 ## Creating and/or editing DartPad example code

@@ -356,6 +356,8 @@
     - title: Android
       permalink: /platform-integration/android
       children:
+        - title: Add Android as build target
+          permalink: /platform-integration/android/install-android
         - title: Add a splash screen
           permalink: /platform-integration/android/splash-screen
         - title: Bind to native code
@@ -369,6 +371,8 @@
     - title: iOS
       permalink: /platform-integration/ios
       children:
+        - title: Add iOS as build target
+          permalink: /platform-integration/ios/install-ios
         - title: Leverage Apple's system libraries
           permalink: /platform-integration/ios/apple-frameworks
         - title: Add a launch screen
@@ -393,6 +397,8 @@
     - title: macOS
       permalink: /platform-integration/macos
       children:
+        - title: Add macOS as build target
+          permalink: /platform-integration/macos/install-macos
         - title: Build a macOS app
           permalink: /platform-integration/macos/building
         - title: C interop
@@ -400,6 +406,8 @@
     - title: Web
       permalink: /platform-integration/web
       children:
+        - title: Add web as build target
+          permalink: /platform-integration/web/install-web
         - title: Build a web app
           permalink: /platform-integration/web/building
         - title: Web FAQ
@@ -413,6 +421,8 @@
     - title: Windows
       permalink: /platform-integration/windows
       children:
+        - title: Add Windows as build target
+          permalink: /platform-integration/windows/install-windows
         - title: Build a Windows app
           permalink: /platform-integration/windows/building
 
