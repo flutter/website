@@ -78,7 +78,7 @@ Any custom `flutter_bootstrap.js` script needs to have three components in order
 to successfully start your Flutter app:
 
 * A `{% raw %}{{flutter_js}}{% endraw %}` token, to make `_flutter.loader` available.
-* A `{% raw %}{{flutter_build_config}}{% endraw %}`, which provides information about the build to the
+* A `{% raw %}{{flutter_build_config}}{% endraw %}` token, which provides information about the build to the
   `FlutterLoader` needed to start your app
 * A call to `_flutter.loader.load()`, which actually starts the app.
 
@@ -127,7 +127,7 @@ The `config` argument is an object that can have the following optional fields:
 
 [web-renderers]: /platform-integration/web/renderers
 
-The `serviceWorkerSettings` has the following optional fields.
+The `serviceWorkerSettings` argument has the following optional fields.
 
 <div class="table-wrapper" markdown="1">
 
