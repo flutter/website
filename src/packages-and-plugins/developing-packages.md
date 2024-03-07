@@ -11,16 +11,16 @@ A minimal package consists of the following:
 
 **`pubspec.yaml`**
 : A metadata file that declares the package name,
-  version, author, and so on.
+version, author, and so on.
 
 **`lib`**
 : The `lib` directory contains the public code in
-  the package, minimally a single `<package-name>.dart` file.
+the package, minimally a single `<package-name>.dart` file.
 
 {{site.alert.note}}
-  For a list of dos and don'ts when writing an effective plugin,
-  see the Medium article by Mehmet Fidanboylu,
-  [Writing a good plugin][].
+For a list of dos and don'ts when writing an effective plugin,
+see the Medium article by Mehmet Fidanboylu,
+[Writing a good plugin][].
 {{site.alert.end}}
 
 ### Package types {#types}
@@ -29,32 +29,32 @@ Packages can contain more than one kind of content:
 
 **Dart packages**
 : General packages written in Dart,
-  for example the [`path`][] package.
-  Some of these might contain Flutter specific
-  functionality and thus have a dependency on the
-  Flutter framework, restricting their use to Flutter only,
-  for example the [`fluro`][] package.
+for example the [`path`][] package.
+Some of these might contain Flutter specific
+functionality and thus have a dependency on the
+Flutter framework, restricting their use to Flutter only,
+for example the [`fluro`][] package.
 
 **Plugin packages**
 : A specialized Dart package that contains an API written in
-  Dart code combined with one or more platform-specific
-  implementations.
+Dart code combined with one or more platform-specific
+implementations.
 
-  Plugin packages can be written for Android
-  (using Kotlin or Java), iOS (using Swift or Objective-C),
-  web, macOS, Windows, or Linux, or any combination
-  thereof.
+Plugin packages can be written for Android
+(using Kotlin or Java), iOS (using Swift or Objective-C),
+web, macOS, Windows, or Linux, or any combination
+thereof.
 
-  A concrete example is the [`url_launcher`][] plugin package.
-  To see how to use the `url_launcher` package, and how it
-  was extended to implement support for web,
-  see the Medium article by Harry Terkelsen,
-  [How to Write a Flutter Web Plugin, Part 1][].
+A concrete example is the [`url_launcher`][] plugin package.
+To see how to use the `url_launcher` package, and how it
+was extended to implement support for web,
+see the Medium article by Harry Terkelsen,
+[How to Write a Flutter Web Plugin, Part 1][].
 
 **FFI Plugin packages**
 : A specialized Dart package that contains an API written in
-  Dart code combined with one or more platform-specific
-  implementations that use Dart FFI([Android][Android], [iOS][iOS], [macOS][macOS]).
+Dart code combined with one or more platform-specific
+implementations that use Dart FFI([Android][Android], [iOS][iOS], [macOS][macOS]).
 
 ## Developing Dart packages {#dart}
 
@@ -84,30 +84,30 @@ folder with the following content:
 
 **.gitignore**
 : A hidden file that tells Git which files or
-  folders to ignore in a project.
+folders to ignore in a project.
 
 **.metadata**
 : A hidden file used by IDEs to track the properties
-  of the Flutter project.
+of the Flutter project.
 
 **pubspec.yaml**
 : A yaml file containing metadata that specifies
-  the package's dependencies. Used by the pub tool.
+the package's dependencies. Used by the pub tool.
 
 **README.md**
 : A starter markdown file that briefly describes
-  the package's purpose.
+the package's purpose.
 
 **lib/hello.dart**
 : A starter app containing Dart code for the package.
 
 **.idea/modules.xml**, **.idea/workspace.xml**
 : A hidden folder containing configuration files
-  for the IntelliJ IDEs.
+for the IntelliJ IDEs.
 
 **CHANGELOG.md**
 : A (mostly) empty markdown file for tracking
-  version changes to the package.
+version changes to the package.
 
 ### Step 2: Implement the package
 
@@ -145,22 +145,22 @@ A federated plugin requires the following packages:
 
 **app-facing package**
 : The package that plugin users depend on to use the plugin.
-  This package specifies the API used by the Flutter app.
+This package specifies the API used by the Flutter app.
 
 **platform package(s)**
 : One or more packages that contain the platform-specific
-  implementation code. The app-facing package calls into
-  these packages&mdash;they aren't included into an app,
-  unless they contain platform-specific functionality
-  accessible to the end user.
+implementation code. The app-facing package calls into
+these packages&mdash;they aren't included into an app,
+unless they contain platform-specific functionality
+accessible to the end user.
 
 **platform interface package**
 : The package that glues the app-facing package
-  to the platform package(s). This package declares an
-  interface that any platform package must implement to
-  support the app-facing package. Having a single package
-  that defines this interface ensures that all platform
-  packages implement the same functionality in a uniform way.
+to the platform package(s). This package declares an
+interface that any platform package must implement to
+support the app-facing package. Having a single package
+that defines this interface ensures that all platform
+packages implement the same functionality in a uniform way.
 
 #### Endorsed federated plugin
 
@@ -263,7 +263,6 @@ dependency on it, and including it as a `default_package` in the
 `platforms:` map. If the `hello` plugin above endorsed `hello_windows`,
 it would look as follows:
 
-
 ```yaml
 flutter:
   plugin:
@@ -292,7 +291,6 @@ some plugins for both iOS and macOS with the same codebase.
 Normally each platform's implementation is in its own
 folder, but the `sharedDarwinSource` option allows iOS
 and macOS to use the same folder instead:
-
 
 ```yaml
 flutter:
@@ -353,12 +351,15 @@ Please choose **one** of the following:
 ```terminal
 $ flutter create --org com.example --template=plugin --platforms=android,ios,linux,macos,windows -a kotlin hello
 ```
+
 ```terminal
 $ flutter create --org com.example --template=plugin --platforms=android,ios,linux,macos,windows -a java hello
 ```
+
 ```terminal
 $ flutter create --org com.example --template=plugin --platforms=android,ios,linux,macos,windows -i objc hello
 ```
+
 ```terminal
 $ flutter create --org com.example --template=plugin --platforms=android,ios,linux,macos,windows -i swift hello
 ```
@@ -371,15 +372,15 @@ with the following specialized content:
 
 **`android/src/main/java/com/example/hello/HelloPlugin.kt`**
 : The Android platform-specific implementation of the plugin API
-  in Kotlin.
+in Kotlin.
 
 **`ios/Classes/HelloPlugin.m`**
 : The iOS-platform specific implementation of the plugin API
-  in Objective-C.
+in Objective-C.
 
 **`example/`**
 : A Flutter app that depends on the plugin,
-  and illustrates how to use it.
+and illustrates how to use it.
 
 By default, the plugin project uses Swift for iOS code and
 Kotlin for Android code. If you prefer Objective-C or Java,
@@ -389,6 +390,7 @@ Android language using `-a`. For example:
 ```terminal
 $ flutter create --template=plugin --platforms=android,ios -i objc hello
 ```
+
 ```terminal
 $ flutter create --template=plugin --platforms=android,ios -a java hello
 ```
@@ -448,6 +450,36 @@ in the Project Navigator. (If you are using `sharedDarwinSource`,
 the path will end with `hello/darwin/Classes` instead.)
 
 You can run the example app by pressing the run (&#9654;) button.
+
+##### Add CocoaPod dependencies
+
+To add `HelloPod` with the version `0.0.1`:
+
+1. Specify dependency at the end of `ios/hello.podspec`:
+
+   ```ruby
+   s.dependency 'PodRepo', '0.0.1'
+   ```
+
+   For private pods, refer to [Private CocoaPods](https://guides.cocoapods.org/making/private-cocoapods.html), ensure repo access:
+
+   ```ruby
+   s.source = {
+       # For pods hosted on GitHub
+       :git => "https://github.com/path/to/PodRepo.git",
+       # Alternatively, for pods hosted locally
+       # :path => "file:///path/to/private/repo",
+       :tag => s.version.to_s
+     }`
+   ```
+
+2. Installing the plugin
+
+   - Add plugin in project’s `pubspec.yaml` dependencies.
+   - Run `flutter pub get`.
+   - In project’s `ios/` directory, run `pod install`.
+
+The pod should appear in the installation summary.
 
 #### Step 2d: Add Linux platform code (.h+.cc)
 
@@ -560,10 +592,10 @@ platform-specific implementation language, as shown above. However,
 platform implementations can also use platform-specific Dart as well.
 
 {{site.alert.note}}
-  The examples below only apply to non-web platforms. Web
-  plugin implementations are always written in Dart, and use
-  `pluginClass` and `fileName` for their Dart implementations
-  as shown above.
+The examples below only apply to non-web platforms. Web
+plugin implementations are always written in Dart, and use
+`pluginClass` and `fileName` for their Dart implementations
+as shown above.
 {{site.alert.end}}
 
 #### Dart-only platform implementations
@@ -587,7 +619,7 @@ flutter:
 In this version you would have no C++ Windows code, and would instead
 subclass the `hello` plugin's Dart platform interface class with a
 `HelloPluginWindows` class that includes a static
-`registerWith()` method.  This method is called during startup,
+`registerWith()` method. This method is called during startup,
 and can be used to register the Dart implementation:
 
 ```dart
@@ -665,24 +697,24 @@ This creates an FFI plugin project in the `hello`
 folder with the following specialized content:
 
 **lib**: The Dart code that defines the API of the plugin,
-  and which calls into the native code using `dart:ffi`.
+and which calls into the native code using `dart:ffi`.
 
 **src**: The native source code, and a `CMakeLists.txt`
-  file for building that source code into a dynamic library.
+file for building that source code into a dynamic library.
 
 **platform folders** (`android`, `ios`, `windows`, etc.): The
-  build files for building and bundling the native code
-  library with the platform application.
+build files for building and bundling the native code
+library with the platform application.
 
 ### Step 2: Building and bundling native code
 
 The `pubspec.yaml` specifies FFI plugins as follows:
 
 ```yaml
-  plugin:
-    platforms:
-      some_platform:
-        ffiPlugin: true
+plugin:
+  platforms:
+    some_platform:
+      ffiPlugin: true
 ```
 
 This configuration invokes the native build
@@ -694,35 +726,35 @@ such as when FFI is used for the
 implementation of one platform in a federated plugin:
 
 ```yaml
-  plugin:
-    implements: some_other_plugin
-    platforms:
-      some_platform:
-        dartPluginClass: SomeClass
-        ffiPlugin: true
+plugin:
+  implements: some_other_plugin
+  platforms:
+    some_platform:
+      dartPluginClass: SomeClass
+      ffiPlugin: true
 ```
 
 A plugin can have both FFI and method channels:
 
 ```yaml
-  plugin:
-    platforms:
-      some_platform:
-        pluginClass: SomeName
-        ffiPlugin: true
+plugin:
+  platforms:
+    some_platform:
+      pluginClass: SomeName
+      ffiPlugin: true
 ```
 
 The native build systems that are invoked by FFI
 (and method channels) plugins are:
 
-* For Android: Gradle, which invokes the Android NDK for native builds.
-  * See the documentation in `android/build.gradle`.
-* For iOS and macOS: Xcode, via CocoaPods.
-  * See the documentation in `ios/hello.podspec`.
-  * See the documentation in `macos/hello.podspec`.
-* For Linux and Windows: CMake.
-  * See the documentation in `linux/CMakeLists.txt`.
-  * See the documentation in `windows/CMakeLists.txt`.
+- For Android: Gradle, which invokes the Android NDK for native builds.
+  - See the documentation in `android/build.gradle`.
+- For iOS and macOS: Xcode, via CocoaPods.
+  - See the documentation in `ios/hello.podspec`.
+  - See the documentation in `macos/hello.podspec`.
+- For Linux and Windows: CMake.
+  - See the documentation in `linux/CMakeLists.txt`.
+  - See the documentation in `windows/CMakeLists.txt`.
 
 ### Step 3: Binding to native code
 
@@ -778,6 +810,7 @@ your development machine, use the following commands:
 ```terminal
 cd ~/dev/mypackage
 ```
+
 </li>
 
 <li markdown="1">Tell the documentation tool where the
@@ -789,6 +822,7 @@ cd ~/dev/mypackage
 
    set FLUTTER_ROOT=~/dev/flutter     # on Windows
 ```
+
 </li>
 
 <li markdown="1">Run the `dart doc` tool
@@ -799,6 +833,7 @@ cd ~/dev/mypackage
 
    %FLUTTER_ROOT%\bin\cache\dart-sdk\bin\dart doc  # on Windows
 ```
+
 </li>
 </ol>
 
@@ -872,13 +907,13 @@ package_1
 ## Publishing your package {#publish}
 
 {{site.alert.tip}}
-  Have you noticed that some of the packages and plugins
-  on pub.dev are designated as [Flutter Favorites][]?
-  These are the packages published by verified developers
-  and are identified as the packages and plugins you
-  should first consider using when writing your app.
-  To learn more,
-  see the [Flutter Favorites program][].
+Have you noticed that some of the packages and plugins
+on pub.dev are designated as [Flutter Favorites][]?
+These are the packages published by verified developers
+and are identified as the packages and plugins you
+should first consider using when writing your app.
+To learn more,
+see the [Flutter Favorites program][].
 {{site.alert.end}}
 
 Once you have implemented a package, you can publish it on
@@ -891,9 +926,9 @@ quality and usability of your package (and to make it
 more likely to achieve the status of a Flutter Favorite),
 consider including the following items:
 
-* Diverse code usage examples
-* Screenshots, animated gifs, or videos
-* A link to the corresponding code repository
+- Diverse code usage examples
+- Screenshots, animated gifs, or videos
+- A link to the corresponding code repository
 
 Next, run the publish command in `dry-run` mode
 to see if everything passes analysis:
@@ -969,6 +1004,7 @@ Pod::Spec.new do |s|
   # lines skipped
   s.dependency 'url_launcher'
 ```
+
 You can now `#import "UrlLauncherPlugin.h"` and
 access the `UrlLauncherPlugin` class in the source code
 at `hello/ios/Classes`.
@@ -982,7 +1018,9 @@ All web dependencies are handled by the `pubspec.yaml`
 file like any other Dart package.
 
 {% comment %}
+
 <!-- Remove until we have better text. -->
+
 ### MacOS
 
 PENDING
