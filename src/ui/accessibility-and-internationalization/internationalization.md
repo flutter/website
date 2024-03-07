@@ -576,20 +576,22 @@ The `int`, `double`, and `number` types can use any of the
 following `NumberFormat` constructors:
 
 <div class="table-wrapper" markdown="1">
-| Message "format" value      | Output for 1200000 |
-| --------------------------- | ------------------ |
-| `compact`                   | "1.2M"             |
-| `compactCurrency`*          | "$1.2M"            |
-| `compactSimpleCurrency`*    | "$1.2M"            |
-| `compactLong`               | "1.2 million"      |
-| `currency`*                 | "USD1,200,000.00"  |
-| `decimalPattern`            | "1,200,000"        |
-| `decimalPatternDigits`*     | "1,200,000"        |
-| `decimalPercentPattern`*    | "120,000,000%"     |
-| `percentPattern`            | "120,000,000%"     |
-| `scientificPattern`         | "1E6"              |
-| `simpleCurrency`*           | "$1,200,000"       |
+
+| Message "format" value   | Output for 1200000 |
+|--------------------------|--------------------|
+| `compact`                | "1.2M"             |
+| `compactCurrency`*       | "$1.2M"            |
+| `compactSimpleCurrency`* | "$1.2M"            |
+| `compactLong`            | "1.2 million"      |
+| `currency`*              | "USD1,200,000.00"  |
+| `decimalPattern`         | "1,200,000"        |
+| `decimalPatternDigits`*  | "1,200,000"        |
+| `decimalPercentPattern`* | "120,000,000%"     |
+| `percentPattern`         | "120,000,000%"     |
+| `scientificPattern`      | "1E6"              |
+| `simpleCurrency`*        | "$1,200,000"       |
 {:.table.table-striped}
+
 </div>
 
 The starred `NumberFormat` constructors in the table
@@ -827,6 +829,7 @@ For a full list of options, either run `flutter gen-l10n --help`
 at the command line or refer to the following table:
 
 <div class="table-wrapper" markdown="1">
+
 | Option                              | Description |
 | ------------------------------------| ------------------ |
 | `arb-dir`                           | The directory where the template and translated arb files are located. The default is `lib/l10n`. |
@@ -848,6 +851,7 @@ at the command line or refer to the following table:
 | `use-escaping`                      | Specifies whether to enable the use of single quotes as escaping syntax. |
 | `[no-]suppress-warnings`            | When specified, all warnings are suppressed. |
 {:.table.table-striped}
+
 </div>
 
 

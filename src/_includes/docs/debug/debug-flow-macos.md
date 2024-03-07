@@ -62,8 +62,10 @@ Building macOS application...
 
 {% comment %}
    ![Start button in Xcode interface](/assets/images/docs/testing/debugging/native/xcode/run-app.png)
-   <div markdown="1">{:.figure-caption}
+   <div class="figure-caption">
+
    Start button displayed in Xcode interface.
+
    </div>
 {% endcomment %}
 

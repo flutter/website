@@ -291,12 +291,13 @@ color to white and the text to dark grey to mimic a Material app.
 
 <div class="row">
 <div class="col-md-6" markdown="1">
+
   That's it! When you run the app, you should see _Hello World_.
 
   App source code:
 
-* [Material app]({{examples}}/layout/base)
-* [Non-Material app]({{examples}}/layout/non_material)
+  * [Material app]({{examples}}/layout/base)
+  * [Non-Material app]({{examples}}/layout/non_material)
 
 </div>
 <div class="col-md-6">
