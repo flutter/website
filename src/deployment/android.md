@@ -187,28 +187,26 @@ or `C:\\Users\\<user name>\\upload-keystore.jks` on Windows.
 Configure gradle to use your upload key when building your app in release mode 
 by editing the `[project]/android/app/build.gradle` file.
 
-<ol markdown="1">
-<li markdown="1"> Add the keystore information from your properties file before the `android` block:
+1. Add the keystore information from your
+   properties file before the `android` block:
 
-```
+   ```gradle
    def keystoreProperties = new Properties()
    def keystorePropertiesFile = rootProject.file('key.properties')
    if (keystorePropertiesFile.exists()) {
        keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
    }
-
+   
    android {
-         ...
+       // ...
    }
-```
+   ```
    
    Load the `key.properties` file into the `keystoreProperties` object.
 
-</li>
+1. Find the `buildTypes` block:
 
-<li markdown="1"> Find the `buildTypes` block:
-
-```
+   ```gradle
    buildTypes {
        release {
            // TODO: Add your own signing config for the release build.
@@ -217,11 +215,11 @@ by editing the `[project]/android/app/build.gradle` file.
            signingConfig signingConfigs.debug
        }
    }
-```
+   ```
 
    And replace it with the following signing configuration info:
 
-```
+   ```gradle
    signingConfigs {
        release {
            keyAlias keystoreProperties['keyAlias']
@@ -235,12 +233,9 @@ by editing the `[project]/android/app/build.gradle` file.
            signingConfig signingConfigs.release
        }
    }
-```
+   ```
 
-</li>
-</ol>
-
-Release builds of your app will now be signed automatically.
+   Release builds of your app will now be signed automatically.
 
 {{site.alert.note}}
   You might need to run `flutter clean` after changing the gradle file.

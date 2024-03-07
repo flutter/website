@@ -772,35 +772,30 @@ For example, see the docs for [`device_info`][].
 If you wish to generate API documentation locally on
 your development machine, use the following commands:
 
-<ol markdown="1">
-<li markdown="1">Change directory to the location of your package:
+1. Change directory to the location of your package:
 
-```terminal
-cd ~/dev/mypackage
-```
-</li>
+   ```terminal
+   cd ~/dev/mypackage
+   ```
 
-<li markdown="1">Tell the documentation tool where the
-    Flutter SDK is located (change the following commands to reflect
-    where you placed it):
+1. Tell the documentation tool where the
+   Flutter SDK is located (change the following commands to reflect
+   where you placed it):
 
-```terminal
+   ```terminal
    export FLUTTER_ROOT=~/dev/flutter  # on macOS or Linux
 
    set FLUTTER_ROOT=~/dev/flutter     # on Windows
-```
-</li>
+   ```
 
-<li markdown="1">Run the `dart doc` tool
-    (included as part of the Flutter SDK), as follows:
+1. Run the `dart doc` tool
+   (included as part of the Flutter SDK), as follows:
 
-```terminal
+   ```terminal
    $FLUTTER_ROOT/bin/cache/dart-sdk/bin/dart doc   # on macOS or Linux
-
+   
    %FLUTTER_ROOT%\bin\cache\dart-sdk\bin\dart doc  # on Windows
-```
-</li>
-</ol>
+   ```
 
 For tips on how to write API documentation, see
 [Effective Dart Documentation][].

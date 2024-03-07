@@ -223,49 +223,36 @@ adding the option `--export-method ad-hoc`,
 Once the app bundle is created, upload it to
 [App Store Connect][appstoreconnect_login] by either:
 
-<ol markdown="1">
-<li markdown="1">
+1. Install and open the [Apple Transport macOS app][apple_transport_app].
+   Drag and drop the `build/ios/ipa/*.ipa` app bundle into the app.
 
-Install and open the [Apple Transport macOS app][apple_transport_app].
-Drag and drop the `build/ios/ipa/*.ipa` app bundle into the app.
+1. Or upload the app bundle from the command line by running:
 
-</li>
+   ```terminal
+   xcrun altool --upload-app --type ios -f build/ios/ipa/*.ipa --apiKey your_api_key --apiIssuer your_issuer_id
+   ```
+   
+   Run `man altool` for details about how to authenticate
+   with the App Store Connect API key.
 
-<li markdown="1">
+1. Or open `build/ios/archive/MyApp.xcarchive` in Xcode.
 
-Or upload the app bundle from the command line by running:
-
-```bash
-xcrun altool --upload-app --type ios -f build/ios/ipa/*.ipa --apiKey your_api_key --apiIssuer your_issuer_id
-```
-
-Run `man altool` for details about how to authenticate with the App Store Connect API key.
-
-</li>
-
-<li markdown="1">
-
-Or open `build/ios/archive/MyApp.xcarchive` in Xcode.
-
-Click the **Validate App** button. If any issues are reported,
-address them and produce another build. You can reuse the same
-build ID until you upload an archive.
-
-After the archive has been successfully validated, click
-**Distribute App**.
-
-{{site.alert.note}}
-  When you export your app at the end of **Distribute App**,
-  Xcode will create a directory containing
-  an IPA of your app and an `ExportOptions.plist` file.
-  You can create new IPAs with the same options without launching
-  Xcode by running
-  `flutter build ipa --export-options-plist=path/to/ExportOptions.plist`.
-  See `xcodebuild -h` for details about the keys in this property list.
-{{site.alert.end}}
-
-</li>
-</ol>
+   Click the **Validate App** button. If any issues are reported,
+   address them and produce another build. You can reuse the same
+   build ID until you upload an archive.
+   
+   After the archive has been successfully validated, click
+   **Distribute App**.
+   
+   {{site.alert.note}}
+   When you export your app at the end of **Distribute App**,
+   Xcode will create a directory containing
+   an IPA of your app and an `ExportOptions.plist` file.
+   You can create new IPAs with the same options without launching
+   Xcode by running
+   `flutter build ipa --export-options-plist=path/to/ExportOptions.plist`.
+   See `xcodebuild -h` for details about the keys in this property list.
+   {{site.alert.end}}
 
 You can follow the status of your build in the
 Activities tab of your app's details page on
@@ -287,156 +274,121 @@ in the Flutter project directory. This allows you to create a build archive
 with full control of distribution certificates in a temporary keychain
 isolated from your login keychain.
 
-<ol markdown="1">
-<li markdown="1">
+1. Install the Codemagic CLI tools:
 
-Install the Codemagic CLI tools:
+   ```terminal
+   pip3 install codemagic-cli-tools
+   ```
 
-```bash
-pip3 install codemagic-cli-tools
-```
+1. You'll need to generate an [App Store Connect API Key][appstoreconnect_api_key]
+   with App Manager access to automate operations with App Store Connect. To make
+   subsequent commands more concise, set the following environment variables from
+   the new key: issuer id, key id, and API key file.
 
-</li>
-<li markdown="1">
+   ```terminal
+   export APP_STORE_CONNECT_ISSUER_ID=aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
+   export APP_STORE_CONNECT_KEY_IDENTIFIER=ABC1234567
+   export APP_STORE_CONNECT_PRIVATE_KEY=`cat /path/to/api/key/AuthKey_XXXYYYZZZ.p8`
+   ```
 
-You'll need to generate an [App Store Connect API Key][appstoreconnect_api_key]
-with App Manager access to automate operations with App Store Connect. To make
-subsequent commands more concise, set the following environment variables from
-the new key: issuer id, key id, and API key file.
+1. You need to export or create an iOS Distribution certificate to
+   code sign and package a build archive.
 
-```bash
-export APP_STORE_CONNECT_ISSUER_ID=aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
-export APP_STORE_CONNECT_KEY_IDENTIFIER=ABC1234567
-export APP_STORE_CONNECT_PRIVATE_KEY=`cat /path/to/api/key/AuthKey_XXXYYYZZZ.p8`
-```
+   If you have existing [certificates][devportal_certificates], you
+   can export the private keys by executing
+   the following command for each certificate:
+   
+   ```terminal
+   openssl pkcs12 -in <certificate_name>.p12 -nodes -nocerts | openssl rsa -out cert_key
+   ```
+   
+   Or you can create a new private key by executing the following command:
+   
+   ```terminal
+   ssh-keygen -t rsa -b 2048 -m PEM -f cert_key -q -N ""
+   ```
+   
+   Later, you can have CLI tools automatically
+   create a new iOS Distribution from the private key.
 
-</li>
-<li markdown="1">
+1. Set up a new temporary keychain to be used for code signing:
 
-You need to export or create an iOS Distribution certificate to code sign and package a build archive.
+   ```terminal
+   keychain initialize
+   ```
+   
+   {{site.alert.secondary}}
+   **Restore Login Keychain!**
+   After running `keychain initialize` you **must** run the following:<br>
+   
+   `keychain use-login`
+   
+   This sets your login keychain as the default to avoid potential
+   authentication issues with apps on your machine.
+   {{site.alert.end}}
 
-If you have existing [certificates][devportal_certificates], you can export the
-private keys by executing the following command for each certificate:
+1. Fetch the code signing files from App Store Connect:
 
-```bash
-openssl pkcs12 -in <certificate_name>.p12 -nodes -nocerts | openssl rsa -out cert_key
-```
+   ```terminal
+   app-store-connect fetch-signing-files $(xcode-project detect-bundle-id) \
+       --platform IOS \
+       --type IOS_APP_STORE \
+       --certificate-key=@file:/path/to/cert_key \
+       --create
+   ```
+   
+   Where `cert_key` is either your exported iOS Distribution certificate private key
+   or a new private key which automatically generates a new certificate. The certificate
+   will be created from the private key if it doesn't exist in App Store Connect.
 
-Or you can create a new private key by executing the following command:
+1. Now add the fetched certificates to your keychain:
 
-```bash
-ssh-keygen -t rsa -b 2048 -m PEM -f cert_key -q -N ""
-```
+   ```terminal
+   keychain add-certificates
+   ```
 
-Later, you can have CLI tools automatically create a new iOS Distribution from the private key.
+1. Update the Xcode project settings to use fetched code signing profiles:
 
-</li>
-<li markdown="1">
+   ```terminal
+   xcode-project use-profiles
+   ```
 
-Set up a new temporary keychain to be used for code signing:
+1. Install Flutter dependencies:
 
-```bash
-keychain initialize
-```
+   ```terminal
+   flutter packages pub get
+   ```
 
-{{site.alert.secondary}}
-**Restore Login Keychain!**
-After running `keychain initialize` you **must** run the following:<br>
+1. Install CocoaPods dependencies:
 
-`keychain use-login`
+   ```terminal
+   find . -name "Podfile" -execdir pod install \;
+   ```
 
-This sets your login keychain as the default to avoid potential
-authentication issues with apps on your machine.
-{{site.alert.end}}
+1. Build the Flutter the iOS project:
 
-</li>
-<li markdown="1">
+   ```terminal
+   flutter build ipa --release \
+       --export-options-plist=$HOME/export_options.plist
+   ```
 
-Fetch the code signing files from App Store Connect:
+   Note that `export_options.plist` is the output of
+   the `xcode-project use-profiles` command.
 
-```bash
-app-store-connect fetch-signing-files $(xcode-project detect-bundle-id) \
-    --platform IOS \
-    --type IOS_APP_STORE \
-    --certificate-key=@file:/path/to/cert_key \
-    --create
-```
+1. Publish the app to App Store Connect:
 
-Where `cert_key` is either your exported iOS Distribution certificate private key
-or a new private key which automatically generates a new certificate. The certificate
-will be created from the private key if it doesn't exist in App Store Connect.
+   ```terminal
+   app-store-connect publish \
+       --path $(find $(pwd) -name "*.ipa")
+   ```
 
-</li>
-<li markdown="1">
-
-Now add the fetched certificates to your keychain:
-
-```bash
-keychain add-certificates
-```
-
-</li>
-<li markdown="1">
-
-Update the Xcode project settings to use fetched code signing profiles:
-
-```bash
-xcode-project use-profiles
-```
-
-</li>
-<li markdown="1">
-
-Install Flutter dependencies:
-
-```bash
-flutter packages pub get
-```
-
-</li>
-<li markdown="1">
-
-Install CocoaPods dependencies:
-
-```bash
-find . -name "Podfile" -execdir pod install \;
-```
-
-</li>
-<li markdown="1">
-
-Build the Flutter the iOS project:
-
-```bash
-flutter build ipa --release \
-    --export-options-plist=$HOME/export_options.plist
-```
-
-Note that `export_options.plist` is the output of the `xcode-project use-profiles` command.
-
-</li>
-<li markdown="1">
-
-Publish the app to App Store Connect:
-
-```bash
-app-store-connect publish \
-    --path $(find $(pwd) -name "*.ipa")
-```
-
-</li>
-<li markdown="1">
-
-As mentioned earlier, don't forget to set your login keychain
-as the default to avoid authentication issues
-with apps on your machine:
-
-```bash
-keychain use-login
-```
-
-</li>
-</ol>
+1. As mentioned earlier, don't forget to set your login keychain
+   as the default to avoid authentication issues
+   with apps on your machine:
+   
+   ```terminal
+   keychain use-login
+   ```
 
 You should receive an email within 30 minutes notifying you that
 your build has been validated and is available to release to testers

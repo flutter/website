@@ -158,68 +158,51 @@ already have a Podfile, run `pod init` in the
 You can find more details on using 
 CocoaPods in the [CocoaPods getting started guide][].
 
-<ol markdown="1">
-<li markdown="1">
+1. Add the following lines to your `Podfile`:
 
-Add the following lines to your `Podfile`:
+   <?code-excerpt title="MyApp/Podfile"?>
+   ```ruby
+   flutter_application_path = '../my_flutter'
+   load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
+   ```
 
-<?code-excerpt title="MyApp/Podfile"?>
-```ruby
-flutter_application_path = '../my_flutter'
-load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
-```
+1. For each [Podfile target][] that needs to
+   embed Flutter, call `install_all_flutter_pods(flutter_application_path)`.
+   
+   <?code-excerpt title="MyApp/Podfile"?>
+   ```ruby
+   target 'MyApp' do
+     install_all_flutter_pods(flutter_application_path)
+   end
+   ```
 
-</li>
+1. In the `Podfile`'s `post_install` block,
+   call `flutter_post_install(installer)`.
 
-<li markdown="1">
+   <?code-excerpt title="MyApp/Podfile"?>
+   ```ruby
+   post_install do |installer|
+     flutter_post_install(installer) if defined?(flutter_post_install)
+   end
+   ```
+   
+   {{site.alert.note}}
+     The `flutter_post_install` method (added in Flutter 3.1.0),
+     adds build settings to support native Apple Silicon `arm64` iOS simulators.
+     Include the `if defined?(flutter_post_install)` check to ensure your `Podfile`
+     is valid if you are running on older versions of Flutter that don't have this method.
+   {{site.alert.end}}
 
-For each [Podfile target][] that needs to
-embed Flutter, call `install_all_flutter_pods(flutter_application_path)`.
+1. Run `pod install`.
 
-<?code-excerpt title="MyApp/Podfile"?>
-```ruby
-target 'MyApp' do
-  install_all_flutter_pods(flutter_application_path)
-end
-```
-
-</li>
-
-<li markdown="1">
-
-In the `Podfile`'s `post_install` block, call `flutter_post_install(installer)`.
-
-<?code-excerpt title="MyApp/Podfile"?>
-```ruby
-post_install do |installer|
-  flutter_post_install(installer) if defined?(flutter_post_install)
-end
-```
-
-{{site.alert.note}}
-  The `flutter_post_install` method (added in Flutter 3.1.0),
-  adds build settings to support native Apple Silicon `arm64` iOS simulators.
-  Include the `if defined?(flutter_post_install)` check to ensure your `Podfile`
-  is valid if you are running on older versions of Flutter that don't have this method.
-{{site.alert.end}}
-
-</li>
-
-<li markdown="1">
-
-Run `pod install`.
-
-{{site.alert.note}}
-  When you change the Flutter plugin dependencies in
-  `my_flutter/pubspec.yaml`, run `flutter pub get`
-  in your Flutter module directory to refresh the list
-  of plugins read by the `podhelper.rb` script.
-  Then, run `pod install` again from
-  your application at `some/path/MyApp`.
-{{site.alert.end}}
-
-</li>
-</ol>
+   {site.alert.note}}
+   When you change the Flutter plugin dependencies in
+   `my_flutter/pubspec.yaml`, run `flutter pub get`
+   in your Flutter module directory to refresh the list
+   of plugins read by the `podhelper.rb` script.
+   Then, run `pod install` again from
+   your application at `some/path/MyApp`.
+   {site.alert.end}}
 
 The `podhelper.rb` script embeds your plugins,
 `Flutter.framework`, and `App.framework` into your project.
@@ -411,59 +394,46 @@ build configuration. The following instructions assume
 the default **Debug** and **Release**.
 Adjust the names as needed depending on your app's build configurations.
 
-<ol markdown="1">
-<li markdown="1">
+1. Rename your app's **Info.plist** to **Info-Debug.plist**.
+   Make a copy of it called **Info-Release.plist** and
+   add it to your Xcode project.
+   
+   {% include docs/app-figure.md image="development/add-to-app/ios/project-setup/info-plists.png" alt="Info-Debug.plist and Info-Release.plist in Xcode" %}
 
-Rename your app's **Info.plist** to **Info-Debug.plist**.
-Make a copy of it called **Info-Release.plist** and add it to your Xcode project.
+1. In **Info-Debug.plist** _only_ add the key `NSBonjourServices`
+   and set the value to an array with the string `_dartVmService._tcp`.
+   Note Xcode will display this as "Bonjour services".
 
-{% include docs/app-figure.md image="development/add-to-app/ios/project-setup/info-plists.png" alt="Info-Debug.plist and Info-Release.plist in Xcode" %}
+   Optionally, add the key `NSLocalNetworkUsageDescription` set to your
+   desired customized permission dialog text.
+   
+   {% include docs/app-figure.md image="development/add-to-app/ios/project-setup/debug-plist.png" alt="Info-Debug.plist with additional keys" %}
 
-</li>
+1. In your target's build settings, change the **Info.plist File**
+   (`INFOPLIST_FILE`) setting path from
+   `path/to/Info.plist` to `path/to/Info-$(CONFIGURATION).plist`.
 
-<li markdown="1">
-In **Info-Debug.plist** _only_ add the key `NSBonjourServices`
-and set the value to an array with the string `_dartVmService._tcp`.
-Note Xcode will display this as "Bonjour services".
+   {% include docs/app-figure.md image="development/add-to-app/ios/project-setup/set-plist-build-setting.png" alt="Set INFOPLIST_FILE build setting" %}
 
-Optionally, add the key `NSLocalNetworkUsageDescription` set to your
-desired customized permission dialog text.
+   This will resolve to the path **Info-Debug.plist** in **Debug** and
+   **Info-Release.plist** in **Release**.
 
-{% include docs/app-figure.md image="development/add-to-app/ios/project-setup/debug-plist.png" alt="Info-Debug.plist with additional keys" %}
+   {% include docs/app-figure.md image="development/add-to-app/ios/project-setup/plist-build-setting.png" alt="Resolved INFOPLIST_FILE build setting" %}
 
-</li>
+   Alternatively, you can explicitly set the **Debug** path to **Info-Debug.plist**
+   and the **Release** path to **Info-Release.plist**.
 
-<li markdown="1">
+1. If the **Info-Release.plist** copy is in your
+   target's **Build Settings > Build Phases > Copy Bundle**
+   Resources build phase, remove it.
 
-In your target's build settings, change the **Info.plist File**
-(`INFOPLIST_FILE`) setting path from `path/to/Info.plist` to `path/to/Info-$(CONFIGURATION).plist`.
+   {% include docs/app-figure.md image="development/add-to-app/ios/project-setup/copy-bundle.png" alt="Copy Bundle build phase" %}
 
-{% include docs/app-figure.md image="development/add-to-app/ios/project-setup/set-plist-build-setting.png" alt="Set INFOPLIST_FILE build setting" %}
+   The first Flutter screen loaded by your Debug app will now prompt
+   for local network permission. The permission can also be allowed by enabling
+   **Settings > Privacy > Local Network > Your App**.
 
-This will resolve to the path **Info-Debug.plist** in **Debug** and
-**Info-Release.plist** in **Release**.
-
-{% include docs/app-figure.md image="development/add-to-app/ios/project-setup/plist-build-setting.png" alt="Resolved INFOPLIST_FILE build setting" %}
-
-Alternatively, you can explicitly set the **Debug** path to **Info-Debug.plist**
-and the **Release** path to **Info-Release.plist**.
-
-</li>
-
-<li markdown="1">
-
-If the **Info-Release.plist** copy is in your target's **Build Settings > Build Phases > Copy Bundle**
-Resources build phase, remove it.
-
-{% include docs/app-figure.md image="development/add-to-app/ios/project-setup/copy-bundle.png" alt="Copy Bundle build phase" %}
-
-The first Flutter screen loaded by your Debug app will now prompt
-for local network permission. The permission can also be allowed by enabling
-**Settings > Privacy > Local Network > Your App**.
-{% include docs/app-figure.md image="development/add-to-app/ios/project-setup/network-permission.png" alt="Local network permission dialog" %}
-
-</li>
-</ol>
+   {% include docs/app-figure.md image="development/add-to-app/ios/project-setup/network-permission.png" alt="Local network permission dialog" %}
 
 ## Apple Silicon (`arm64` Macs)
 

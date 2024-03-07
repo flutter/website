@@ -41,36 +41,32 @@ as shown in the following steps.
 In the Dart widget file, make changes similar to those 
 shown in `native_view_example.dart`:
 
-<ol markdown="1">
-<li markdown="1">Add the following imports:
+1. Add the following imports:
 
-<?code-excerpt "lib/platform_views/native_view_example_3.dart (import)"?>
-```dart
-import 'package:flutter/foundation.dart';
-import 'package:flutter/services.dart';
-```
-</li>
+   <?code-excerpt "lib/platform_views/native_view_example_3.dart (import)"?>
+   ```dart
+   import 'package:flutter/foundation.dart';
+   import 'package:flutter/services.dart';
+   ```
 
-<li markdown="1">Implement a `build()` method:
+1. Implement a `build()` method:
 
-<?code-excerpt "lib/platform_views/native_view_example_3.dart (iOSCompositionWidget)"?>
-```dart
-Widget build(BuildContext context) {
-  // This is used in the platform side to register the view.
-  const String viewType = '<platform-view-type>';
-  // Pass parameters to the platform side.
-  final Map<String, dynamic> creationParams = <String, dynamic>{};
-
-  return UiKitView(
-    viewType: viewType,
-    layoutDirection: TextDirection.ltr,
-    creationParams: creationParams,
-    creationParamsCodec: const StandardMessageCodec(),
-  );
-}
-```
-</li>
-</ol>
+   <?code-excerpt "lib/platform_views/native_view_example_3.dart (iOSCompositionWidget)"?>
+   ```dart
+   Widget build(BuildContext context) {
+     // This is used in the platform side to register the view.
+     const String viewType = '<platform-view-type>';
+     // Pass parameters to the platform side.
+     final Map<String, dynamic> creationParams = <String, dynamic>{};
+   
+     return UiKitView(
+       viewType: viewType,
+       layoutDirection: TextDirection.ltr,
+       creationParams: creationParams,
+       creationParamsCodec: const StandardMessageCodec(),
+     );
+   }
+   ```
 
 For more information, see the API docs for:
 [`UIKitView`][].

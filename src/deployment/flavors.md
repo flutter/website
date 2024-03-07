@@ -44,61 +44,45 @@ To set up flavors in iOS and macOS, you'll define build configurations in Xcode.
 
 ## Creating flavors in iOS and macOS
 
-<ol markdown="1">
-<li markdown="1">
+1. Open your project in Xcode.
 
-Open your project in Xcode.
+1. Select **Product** > **Scheme** > **New Scheme** from the menu to
+   add a new `Scheme`.
 
-</li>
-<li markdown=1>
+   * A scheme describes how Xcode runs different actions.
+     For the purposes of this guide, the example _flavor_ and _scheme_ are
+     named `free`.
+     The build configurations in the `free` scheme
+     have the `-free` suffix.
 
-Select **Product** > **Scheme** > **New Scheme** from the menu to
-add a new `Scheme`.
+1. Duplicate the build configurations to differentiate between the
+   default configurations that are already available and the new configurations
+   for the `free` scheme.
+   
+   * Under the **Info** tab at the end of the **Configurations** dropdown list,
+     click the plus button and duplicate
+     each configuration name (Debug, Release, and Profile).
+     Duplicate the existing configurations, once for each environment.
 
-* A scheme describes how Xcode runs different actions.
-  For the purposes of this guide, the example _flavor_ and _scheme_ are
-  named `free`.
-  The build configurations in the `free` scheme
-  have the `-free` suffix.
+   ![Step 3 Xcode image](/assets/images/docs/flavors/step3-ios-build-config.png){:width="100%"}
 
-</li>
-<li markdown="1">
+   {{site.alert.note}}
+   Your configurations should be based on your
+   `Debug.xconfig` or `Release.xcconfig` file, not the `Pods-Runner.xcconfigs`.
+   You can check this by expanding the configuration names.
+   {{site.alert.end}}
 
-Duplicate the build configurations to differentiate between the
-default configurations that are already available and the new configurations
-for the `free` scheme.
+1. To match the free flavor, add `-free`
+   at the end of each new configuration name.
 
-* Under the **Info** tab at the end of the **Configurations** dropdown list,
-  click the plus button and duplicate
-  each configuration name (Debug, Release, and Profile).
-  Duplicate the existing configurations, once for each environment.
+1. Change the `free` scheme to match the build configurations already created.
 
-![Step 3 Xcode image](/assets/images/docs/flavors/step3-ios-build-config.png){:width="100%"}
-{{site.alert.note}}
-  Your configurations should be based on your **Debug.xconfig** or **Release.xcconfig**
-  file, not the **Pods-Runner.xcconfigs**. You can check this by expanding the configuration names.
-{{site.alert.end}}
+   * In the **Runner** project, click **Manage Schemes…** and a pop up window opens.
+   * Double click the free scheme. In the next step
+     (as shown in the screenshot), you'll modify each scheme
+     to match its free build configuration:
 
-</li>
-<li markdown="1">
-
-To match the free flavor, add `-free`
-at the end of each new configuration name.
-
-</li>
-<li markdown="1">
-
-Change the `free` scheme to match the build configurations already created.
-
-* In the **Runner** project, click **Manage Schemes…** and a pop up window opens.
-* Double click the free scheme. In the next step
-  (as shown in the screenshot), you'll modify each scheme
-  to match its free build configuration:
-
-![Step 5 Xcode image](/assets/images/docs/flavors/step-5-ios-scheme-free.png){:width="100%"}
-
-</li>
-</ol>
+   ![Step 5 Xcode image](/assets/images/docs/flavors/step-5-ios-scheme-free.png){:width="100%"}
 
 ## Using flavors in iOS and macOS
 
@@ -108,32 +92,21 @@ A _bundle identifier_ uniquely identifies your application.
 In this example, we set the **Debug-free** value to equal
 `com.flavor-test.free`.
 
-<ol markdown="1">
-<li markdown="1">
+1. Change the app bundle identifier to differentiate between schemes.
+   In **Product Bundle Identifier**, append `.free` to each -free scheme value.
 
-Change the app bundle identifier to differentiate between schemes.
-In **Product Bundle Identifier**, append `.free` to each -free scheme value.
+   ![Step 1 using flavors image.](/assets/images/docs/flavors/step-1-using-flavors-free.png){:width="100%"}
 
-![Step 1 using flavors image.](/assets/images/docs/flavors/step-1-using-flavors-free.png){:width="100%"}
+1. In the **Build Settings**, set the
+   **Product Name** value to match each flavor.
+   For example, add Debug Free.
 
-</li>
-<li markdown=1>
+   ![Step 2 using flavors image.](/assets/images/docs/flavors/step-2-using-flavors-free.png){:width="100%"}
 
-In the **Build Settings**, set the **Product Name** value to match each flavor.
-For example, add Debug Free.
+1. Add the display name to **Info.plist**. Update the **Bundle Display Name**
+   value to `$(PRODUCT_NAME)`.
 
-![Step 2 using flavors image.](/assets/images/docs/flavors/step-2-using-flavors-free.png){:width="100%"}
-
-</li>
-<li markdown=1>
-
-Add the display name to **Info.plist**. Update the **Bundle Display Name**
-value to `$(PRODUCT_NAME)`.
-
-![Step 3 using flavors image.](/assets/images/docs/flavors/step3-using-flavors.png){:width="100%"}
-
-</li>
-</ol>
+   ![Step 3 using flavors image.](/assets/images/docs/flavors/step3-using-flavors.png){:width="100%"}
 
 Now you have set up your flavor by making a `free` scheme
 in Xcode and setting the build configurations for that scheme.

@@ -53,67 +53,42 @@ and a sheet of paper. Figure out where you want to place elements on your
 screen before writing code. It's the programming version of the adage:
 "Measure twice, cut once."
 
-<ol>
-<li markdown="1">
+1. Ask these questions to break the layout down to its basic elements.
 
-Ask these questions to break the layout down to its basic elements.
+   * Can you identify the rows and columns?
+   * Does the layout include a grid?
+   * Are there overlapping elements?
+   * Does the UI need tabs?
+   * What do you need to align, pad, or border?
 
-* Can you identify the rows and columns?
-* Does the layout include a grid?
-* Are there overlapping elements?
-* Does the UI need tabs?
-* What do you need to align, pad, or border?
+1. Identify the larger elements. In this example, you arrange the
+   image, title, buttons, and description into a column.
 
-</li>
+   {% include docs/app-figure.liquid
+     img-class="site-mobile-screenshot border"
+     image="ui/layout/layout-sketch-intro.svg"
+     caption="Major elements in the layout: image, row, row, and text block"
+     width="50%" -%}
 
-<li markdown="1">
+1. Diagram each row.
 
-Identify the larger elements. In this example, you arrange the image, title,
-buttons, and description into a column.
+   1. Row 1, the **Title** section, has three children:
+      a column of text, a star icon, and a number.
+      Its first child, the column, contains two lines of text.
+      That first column might need more space.
 
-{% include docs/app-figure.liquid
-    img-class="site-mobile-screenshot border"
-    image="ui/layout/layout-sketch-intro.svg"
-    caption="Major elements in the layout: image, row, row, and text block"
-    width="50%" %}
+      {% include docs/app-figure.liquid
+      image="ui/layout/layout-sketch-title-block.svg"
+      caption="Title section with text blocks and an icon"
+      -%}
 
-</li>
-<li markdown="1">
+   1. Row 2, the **Button** section, has three children: each child contains
+      a column which then contains an icon and text.
 
-Diagram each row.
-
-<ol type="a">
-
-<li markdown="1">
-
-Row 1, the **Title** section, has three children:
-a column of text, a star icon, and a number.
-Its first child, the column, contains two lines of text.
-That first column might need more space.
-
-{% include docs/app-figure.liquid
-   image="ui/layout/layout-sketch-title-block.svg"
-   caption="Title section with text blocks and an icon"
-   -%}
-
-</li>
-
-<li markdown="1">
-
-Row 2, the **Button** section, has three children: each child contains
-a column which then contains an icon and text.
-
-{% include docs/app-figure.liquid
-    image="ui/layout/layout-sketch-button-block.svg"
-    caption="The Button section with three labeled buttons"
-    width="50%" %}
-
-  </li>
-
-</ol>
-
-</li>
-</ol>
+      {% include docs/app-figure.liquid
+         image="ui/layout/layout-sketch-button-block.svg"
+         caption="The Button section with three labeled buttons"
+         width="50%" %}
 
 After diagramming the layout, consider how you would code it.
 
