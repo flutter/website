@@ -30,7 +30,7 @@ file by inserting the template token `{% raw %}{{flutter_bootstrap_js}}{% endraw
 <html>
   <body>
     <script>
-      {{"{{flutter_bootstrap_js}}"}}
+      {% raw %}{{flutter_bootstrap_js}}{% endraw %}
     </script>
   </body>
 <html>
@@ -64,7 +64,7 @@ Here is a list of the tokens that the build step will substitute in either the
 
 | Token | Replaced With |
 |-|-|
-| `{% raw %}{{flutter_js}}{% endraw %}` | The JavaScript code that makes the `FlutterLoader` object available in the `_flutter.loader` global variable. (See the `_flutter.loader.load() API` section below for more details.) |
+| {% raw %}`{{flutter_js}}`{% endraw %} | The JavaScript code that makes the `FlutterLoader` object available in the `_flutter.loader` global variable. (See the `_flutter.loader.load() API` section below for more details.) |
 | `{% raw %}{{flutter_build_config}}{% endraw %}` | A JavaScript statement that sets metadata produced by the build process which gives the `FlutterLoader` information needed to properly bootstrap your application
 | `{% raw %}{{flutter_service_worker_version}}{% endraw %}` | A unique number representing the build version of the service worker, which can be passed as part of the service worker configuration (see the "Service Worker Settings` below).
 | `{% raw %}{{flutter_bootstrap_js}}{% endraw %}` | As mentioned above, this inlines the contents of the `flutter_bootstrap.js` file directly into the `index.html` file. Note that this token can only be used in the `index.html` and not the `flutter_bootstrap.js` file itself.
@@ -85,8 +85,8 @@ to successfully start your Flutter app:
 The most basic `flutter_bootstrap.js` file would look something like this:
 
 ```js
-{{"{{flutter_js}}"}}
-{{"{{flutter_build_config}}"}}
+{% raw %}{{flutter_js}}{% endraw %}
+{% raw %}{{flutter_build_config}}{% endraw %}
 
 _flutter.loader.load();
 ```
@@ -148,8 +148,8 @@ URL of their website. Here's an example of a custom `flutter_bootstrap.js`
 script that does this:
 
 ```js
-{{"{{flutter_js}}"}}
-{{"{{flutter_build_config}}"}}
+{% raw %}{{flutter_js}}{% endraw %}
+{% raw %}{{flutter_build_config}}{% endraw %}
 
 const searchParams = new URLSearchParams(window.location.search);
 const forceCanvaskit = searchParams.get('force_canvaskit') === 'true';
@@ -157,7 +157,7 @@ const userConfig = forceCanvaskit ? {'renderer': 'canvaskit'} : {};
 _flutter.loader.load({
   config: userConfig,
   serviceWorkerSettings: {
-    serviceWorkerVersion: {{"{{flutter_service_worker_version}}"}},
+    serviceWorkerVersion: {% raw %}{{flutter_service_worker_version}}{% endraw %},
   },
 });
 ```
@@ -198,8 +198,8 @@ during the initialization process,
 use the hooks provided for each stage to update the DOM:
 
 ```js
-{{"{{flutter_js}}"}}
-{{"{{flutter_build_config}}"}}
+{% raw %}{{flutter_js}}{% endraw %}
+{% raw %}{{flutter_build_config}}{% endraw %}
 
 const loading = document.createElement('div');
 document.body.appendChild(loading);
