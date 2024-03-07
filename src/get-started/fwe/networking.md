@@ -30,7 +30,7 @@ gives more background on how authorization works on the web.
 * Tutorial: [Make authenticated requests][]
 * Article: [MDN's article on Authorization for websites][]
 
-## Making data retrived from the network useful
+## Making data retrieved from the network useful
 
 Once you retrieve data from the network,
 you need a way to convert the data from the network
