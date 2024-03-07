@@ -23,7 +23,7 @@ can use this script by simply placing an async script tag for it in your
 ```
 
 Alternatively, you can inline the entire contents of the `flutter_bootstrap.js`
-file by inserting the template token `{{"{{flutter_bootstrap_js}}"}}` in your
+file by inserting the template token `{% raw %}{{flutter_bootstrap_js}}{% endraw %}` in your
 `index.html` file:
 
 ```html
@@ -36,7 +36,7 @@ file by inserting the template token `{{"{{flutter_bootstrap_js}}"}}` in your
 <html>
 ```
 
-The `{{"{{flutter_bootstrap_js}}"}}` token will be replaced with the contents of the
+The `{% raw %}{{flutter_bootstrap_js}}{% endraw %}` token will be replaced with the contents of the
 `flutter_bootstrap.js` file when the `index.html` file is copied to the output
 directory during the build step.
 
@@ -64,10 +64,10 @@ Here is a list of the tokens that the build step will substitute in either the
 
 | Token | Replaced With |
 |-|-|
-| `{{"{{flutter_js}}"}}` | The JavaScript code that makes the `FlutterLoader` object available in the `_flutter.loader` global variable. (See the `_flutter.loader.load() API` section below for more details.) |
-| `{{"{{flutter_build_config}}"}}` | A JavaScript statement that sets metadata produced by the build process which gives the `FlutterLoader` information needed to properly bootstrap your application
-| `{{"{{flutter_service_worker_version}}"}}` | A unique number representing the build version of the service worker, which can be passed as part of the service worker configuration (see the "Service Worker Settings` below).
-| `{{"{{flutter_bootstrap_js}}"}}` | As mentioned above, this inlines the contents of the `flutter_bootstrap.js` file directly into the `index.html` file. Note that this token can only be used in the `index.html` and not the `flutter_bootstrap.js` file itself.
+| `{% raw %}{{flutter_js}}{% endraw %}` | The JavaScript code that makes the `FlutterLoader` object available in the `_flutter.loader` global variable. (See the `_flutter.loader.load() API` section below for more details.) |
+| `{% raw %}{{flutter_build_config}}{% endraw %}` | A JavaScript statement that sets metadata produced by the build process which gives the `FlutterLoader` information needed to properly bootstrap your application
+| `{% raw %}{{flutter_service_worker_version}}{% endraw %}` | A unique number representing the build version of the service worker, which can be passed as part of the service worker configuration (see the "Service Worker Settings` below).
+| `{% raw %}{{flutter_bootstrap_js}}{% endraw %}` | As mentioned above, this inlines the contents of the `flutter_bootstrap.js` file directly into the `index.html` file. Note that this token can only be used in the `index.html` and not the `flutter_bootstrap.js` file itself.
 {:.table}
 
 </div>
@@ -77,8 +77,8 @@ Here is a list of the tokens that the build step will substitute in either the
 Any custom `flutter_bootstrap.js` script needs to have three components in order
 to successfully start your Flutter app:
 
-* A `{{"{{flutter_js}}"}}` token, to make `_flutter.loader` available.
-* A `{{"{{flutter_build_config}}"}}`, which provides information about the build to the
+* A `{% raw %}{{flutter_js}}{% endraw %}` token, to make `_flutter.loader` available.
+* A `{% raw %}{{flutter_build_config}}{% endraw %}`, which provides information about the build to the
   `FlutterLoader` needed to start your app
 * A call to `_flutter.loader.load()`, which actually starts the app.
 
