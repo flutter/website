@@ -458,7 +458,7 @@ To add `HelloPod` with the version `0.0.1`:
 1. Specify dependency at the end of `ios/hello.podspec`:
 
    ```ruby
-   s.dependency 'PodRepo', '0.0.1'
+   s.dependency 'HelloPod', '0.0.1'
    ```
 
    For private pods, refer to [Private CocoaPods](https://guides.cocoapods.org/making/private-cocoapods.html), ensure repo access:
@@ -466,7 +466,7 @@ To add `HelloPod` with the version `0.0.1`:
    ```ruby
    s.source = {
        # For pods hosted on GitHub
-       :git => "https://github.com/path/to/PodRepo.git",
+       :git => "https://github.com/path/to/HelloPod.git",
        # Alternatively, for pods hosted locally
        # :path => "file:///path/to/private/repo",
        :tag => s.version.to_s
