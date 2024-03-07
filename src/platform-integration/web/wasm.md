@@ -3,7 +3,7 @@ title: Support for WebAssembly (Wasm)
 description: >-
   Current status of Flutter's experimental support for WebAssembly (Wasm).
 short-title: Wasm
-last-update: November 21, 2023
+last-update: March 7, 2024
 ---
 
 The Flutter and Dart teams are excited to add
@@ -12,7 +12,7 @@ applications for the web.
 
 {{site.alert.note}}
   Development of WebAssembly support for Dart and Flutter remains ongoing,
-  which might result in frequent changes. 
+  which will potentially result in frequent changes. 
   Revisit this page for the latest updates.
 
   **_Last updated {{page.last-update}}_**
@@ -203,7 +203,7 @@ Context: The unavailable library 'dart:html' is imported through these packages:
     web_plugin_registrant.dart => package:flutter_web_plugins => dart:html
 ```
 
-[`dart:js_interop`]: {{site.dart-api}}/stable/dart-js_interop/dart-js_interop-library.html
+[`dart:js_interop`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-js_interop
 [`package:url_launcher`]: {{site.pub-pkg}}/url_launcher
 [`package:web` migration guide]: {{site.dart-site}}/interop/js-interop/package-web
 
