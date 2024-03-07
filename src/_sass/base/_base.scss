@@ -111,6 +111,10 @@ dd {
   opacity: 1;
 }
 
+.card-app-type {
+  border-color: $site-color-nav-links;
+}
+
 .fixed-col {
   @include bootstrap.media-breakpoint-up(md) {
     bottom: 0;

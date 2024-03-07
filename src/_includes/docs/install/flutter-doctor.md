@@ -2,20 +2,11 @@
 
 {% include docs/help-link.md location='win-doctor' %}
 
-{% assign os = include.os %}
+{% assign devos = include.devos %}
 {% assign target = include.target %}
 {% assign compiler = include.compiler %}
 
-{% case target %}
-{% when 'mobile-ios' %}
-   {% assign v-target = 'iOS' %}
-{% when 'mobile-android' %}
-   {% assign v-target = 'Android' %}
-{% else %}
-   {% assign v-target = target %}
-{% endcase %}
-
-{% case os %}
+{% case devos %}
 {% when 'Windows' -%}
    {% assign terminal='PowerShell' %}
    {% assign prompt='C:\>' %}
@@ -26,11 +17,19 @@
    {% assign terminal='a shell' %}
    {% assign prompt='$' %}
 {% endcase -%}
+{% case target %}
+{% when 'macOS','Windows','Linux' %}
+{% assign work-target = target | append: ' desktop' %}
+{% when 'desktop' %}
+{% assign work-target = devos | append: ' desktop' %}
+{% else %}
+{% assign work-target = target | append: ' on ' | append: devos %}
+{% endcase %}
 
 ### Run Flutter doctor
 
 The `flutter doctor` command validates that all components of a
-complete Flutter development environment for {{os}}.
+complete Flutter development environment for {{devos}}.
 
 1. Open {{terminal}}.
 
@@ -41,13 +40,11 @@ complete Flutter development environment for {{os}}.
    {{prompt}} flutter doctor
    ```
 
-As you chose to develop for {{v-target}},
+As you chose to develop for {{target}},
 you do not need _all_ components.
 If you followed this guide, the result of your command should resemble:
 
-```terminal
-{% include docs/install/flutter-doctor-success.md %}
-```
+{% include docs/install/flutter-doctor-success.md config=include.config -%}
 
 ### Troubleshoot Flutter doctor issues
 
@@ -66,3 +63,9 @@ or further tasks to perform.
 
 If you change the configuration of your Flutter SDK or its related components,
 run `flutter doctor` again to verify the installation.
+
+## Start developing {{work-target}} apps on Flutter
+
+Congratulations!
+Now that you have installed all prerequisites and the Flutter SDK,
+you should be able to start developing Flutter apps for {{work-target}}.
