@@ -40,8 +40,10 @@ If you use VS Code to debug most of your code, start with this section.
 
 {% comment %}
      !['Flutter app generated as a Windows app. The app displays two buttons to open this page in a browser or in the app'](/assets/images/docs/testing/debugging/native/url-launcher-app/windows.png){:width="50%"}
-     <div markdown="1">{:.figure-caption}
+     <div class="figure-caption">
+     
      Flutter app generated as a Windows app. The app displays two buttons to open this page in a browser or in the app.
+
      </div>
 {% endcomment %}
 
@@ -58,9 +60,11 @@ If you use VS Code to debug most of your code, start with this section.
 
 {% comment %}
    ![Open Project/Solution dialog box in Visual Studio 2022 with my_app.sln file selected.](/assets/images/docs/testing/debugging/native/visual-studio/choose-solution.png){:width="100%"}
-   <div markdown="1">{:.figure-caption}
+   <div class="figure-caption">
+
    Open Project/Solution dialog box in Visual Studio 2022 with
-   `my_app.sln`` file selected.
+   `my_app.sln` file selected.
+
    </div>
 {% endcomment %}
 
@@ -103,9 +107,11 @@ If you use Visual Studio to debug most of your code, start with this section.
 
 {% comment %}
    ![Open Project/Solution dialog box in Visual Studio 2022 with my_app.sln file selected.](/assets/images/docs/testing/debugging/native/visual-studio/choose-solution.png){:width="100%"}
-   <div markdown="1">{:.figure-caption}
+   <div class="figure-caption">
+
    Open Project/Solution dialog box in Visual Studio 2022 with
-   `my_app.sln`` file selected.
+   `my_app.sln` file selected.
+
    </div>
 {% endcomment %}
 

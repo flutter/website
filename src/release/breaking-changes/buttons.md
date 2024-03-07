@@ -37,12 +37,13 @@ which uses the new names for the button components.
 
 <div class="table-wrapper" markdown="1">
 
-| Old Widget   | Old Theme     | New Widget      | New Theme |
-| -------------|---------------|-----------------|----------|
-| `FlatButton`   | `ButtonTheme`   | `TextButton`      | `TextButtonTheme`     |
-| `RaisedButton` | `ButtonTheme`   | `ElevatedButton`  | `ElevatedButtonTheme` |
-| `OutlineButton`| `ButtonTheme`   | `OutlinedButton`  | `OutlinedButtonTheme` |
+| Old Widget      | Old Theme     | New Widget       | New Theme             |
+|-----------------|---------------|------------------|-----------------------|
+| `FlatButton`    | `ButtonTheme` | `TextButton`     | `TextButtonTheme`     |
+| `RaisedButton`  | `ButtonTheme` | `ElevatedButton` | `ElevatedButtonTheme` |
+| `OutlineButton` | `ButtonTheme` | `OutlinedButton` | `OutlinedButtonTheme` |
 {:.table .table-striped .nowrap}
+
 </div>
 
 The new themes follow the "normalized" pattern that Flutter adopted

@@ -197,12 +197,13 @@ the generic `ButtonTheme`.
 
 <div class="table-wrapper" markdown="1">
 
-| Old Widget     | Old Theme       | New Widget        | New Theme             |
-| ---------------|-----------------|-------------------|-----------------------|
-| `FlatButton`   | `ButtonTheme`   | `TextButton`      | `TextButtonTheme`     |
-| `RaisedButton` | `ButtonTheme`   | `ElevatedButton`  | `ElevatedButtonTheme` |
-| `OutlineButton`| `ButtonTheme`   | `OutlinedButton`  | `OutlinedButtonTheme` |
+| Old Widget      | Old Theme     | New Widget       | New Theme             |
+|-----------------|---------------|------------------|-----------------------|
+| `FlatButton`    | `ButtonTheme` | `TextButton`     | `TextButtonTheme`     |
+| `RaisedButton`  | `ButtonTheme` | `ElevatedButton` | `ElevatedButtonTheme` |
+| `OutlineButton` | `ButtonTheme` | `OutlinedButton` | `OutlinedButtonTheme` |
 {:.table .table-striped .nowrap}
+
 </div>
 
 **Migration guide**
