@@ -3,7 +3,7 @@ title: Support for WebAssembly (Wasm)
 description: >-
   Current status of Flutter's experimental support for WebAssembly (Wasm).
 short-title: Wasm
-last-update: March 7, 2024
+last-update: March 8, 2024
 ---
 
 The Flutter and Dart teams are excited to add
@@ -21,35 +21,36 @@ applications for the web.
   : Wasm and WebAssembly garbage collection (WasmGC) are now 
     available on the Flutter [`beta` channel][] and [`master` channel][].
 
-  **Static JS interop is now in stable!**
-  : Migrate your packages to [`package:web`][] to make them compatible with Wasm.
-    Read the [Requires JS-interop](#requires-js-interop-to-access-browser-and-js-apis)
+  **Dart's next-gen Web interop is now stable!**
+  : Migrate your packages to [`package:web`][] and [`dart:js_interop`][]
+    to make them compatible with Wasm. Read the
+    [Requires JS-interop](#requires-js-interop-to-access-browser-and-js-apis)
     section to learn more. 
-
 {{site.alert.end}}
 
 [`beta` channel]: https://github.com/flutter/flutter/wiki/flutter-build-release-channels#beta
 [`master` channel]: https://github.com/flutter/flutter/wiki/flutter-build-release-channels#beta
 [`package:web`]: {{site.pub-pkg}}/web
+[`dart:js_interop`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-js_interop 
 
 ### Background
 
-To compile Dart and Flutter to Wasm, you need
-a browser that supports [WasmGC][].
+To compile Dart and Flutter to Wasm, you need a browser that supports [WasmGC][].
 The Wasm standard plans to add WasmGC to help garbage-collected languages
 like Dart execute code in an efficient manner.
 
-[Chromium and V8][] released stable support for WasmGC in Chromium 119,
-and the Firefox team announced stable support in Firefox 120.
-Note that Chrome on iOS uses WebKit, which doesn't yet 
-[support WasmGC][].
+[Chromium and V8][] released stable support for WasmGC in Chromium 119.
+Note that Chrome on iOS uses WebKit, which doesn't yet [support WasmGC][].
+Firefox announced stable support for Wasm in Firefox 120,
+but currently does not work due to a [known limitation](#known-limitations). 
 To see the current status of WasmGC and other proposals,
 check out the [WebAssembly roadmap][].
 
 [WasmGC]: https://github.com/WebAssembly/gc/tree/main/proposals/gc
 [Chromium and V8]: https://chromestatus.com/feature/6062715726462976
-[WebAssembly roadmap]: https://webassembly.org/roadmap/
 [support WasmGC]: https://bugs.webkit.org/show_bug.cgi?id=247394
+[WebAssembly roadmap]: https://webassembly.org/roadmap/
+[issue]: https://bugzilla.mozilla.org/show_bug.cgi?id=1788206
 
 ### Try it out
 
@@ -61,7 +62,7 @@ To experiment with Wasm in your own apps, follow the steps below.
 #### Switch to the Flutter `beta` channel and upgrade
 
 Wasm compilation is available on the latest builds of the `beta` channel
-(recommended) or `master` (not recommended).
+(prefered) or `master`.
 
 To learn more about Flutter build release channels and how to switch to
 the `beta` channel, check out the
@@ -77,27 +78,47 @@ At the bottom of the output, you should find experimental Wasm options like:
 
 ```console
 Experimental options
-    --wasm                                              Compile to WebAssembly rather than JavaScript.
-                                                        See https://flutter.dev/wasm for more information.
-    --omit-type-checks                                  Omit type checks in Wasm output.
-                                                        Reduces code size and improves performance, but might affect runtime correctness. Use with care.
-    --wasm-opt                                          Optimize output wasm using the Binaryen (https://github.com/WebAssembly/binaryen) tool.
-
-          [debug]                                       Similar to `full`, but member names are preserved. Debugging is easier, but size is a bit bigger.
-          [full] (default)                              wasm-opt is run. Build time is slower, but output is smaller and faster.
-          [none]                                        wasm-opt is not run. Fastest build; bigger, slower output.
+    --wasm                                                   Compile to WebAssembly rather than JavaScript.
+                                                             See https://flutter.dev/wasm for more information.
+    --[no-]strip-wasm                                        Whether to strip the resulting wasm file of static symbol names.
+                                                             (defaults to on)
 ```
 
 #### Pick a (simple) Flutter web application
 
-Choose a Flutter application that has been migrated
-to use [`package:web`][] and the new [JS interop][] solutions.
+Try the default template [sample app][], or choose any Flutter application
+that has been migrated to be
+[compatible with Wasm](#requires-js-interop-to-access-browser-and-js-apis).
 
-Applications that use platform-specific packages and JS interop code
-are not compatible with Wasm unless they have been
-[migrated to use *static* JS interop](#requires-js-interop-to-access-browser-and-js-apis).
+[sample app]: /get-started/test-drive
 
-[JS interop]: {{site.dart-site}}/interop/js-interop
+#### Modify `index.html`
+
+Before building with Wasm, you'll need to modify the bootstrap logic in your
+`web/index.html` file.
+
+```html
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Web Benchmarks</title>
+  <script src="flutter.js"></script>
+</head>
+<body>
+  <script>
+    {{flutter_build_config}}
+    _flutter.loader.load();
+  </script>
+</body>
+</html>
+```
+
+This feature is under development. The current syntax
+(`flutter.js`, `{{flutter_build_config}}`, `_flutter.loader.load()`)
+is a intermediary solution in the `beta` and `master` channels now,
+but will be replaced by the actual syntax in an upcoming stable release.
+Stay tuned!
 
 #### Run `flutter build web --wasm`
 
@@ -108,7 +129,7 @@ To build a web application with Wasm, add a `--wasm` flag to the existing
 flutter build web --wasm
 ```
 
-The command sends its output to the `build/web_wasm` directory relative to
+The command sends its output to the `build/web` directory relative to
 package root.
 
 #### Serve the output locally with an HTTP server
@@ -120,23 +141,20 @@ If you don't have a local HTTP server installed, you can use the
 flutter pub global activate dhttpd
 ```
 
-Then change to the `build/web_wasm` directory
-and run the server:
+Then change to the `build/web` directory
+and run the server with special headers:
 
 ```terminal
-> cd build/web_wasm
-> dhttpd
+> cd build/web
+> dhttpd '--headers=Cross-Origin-Embedder-Policy=credentialless;Cross-Origin-Opener-Policy=same-origin'
 Server started on port 8080
 ```
 
 #### Load it in a browser
 
 As of {{page.last-update}},
-two browser families should be able to run
-Flutter/Wasm content:
-
-- **Chromium-based browsers:** Version 119 or later.
-- **Firefox:** Version 120 or later.
+[only **Chromium-based browsers**](#chrome-119-or-later)
+(Version 119 or later) are able to run Flutter/Wasm content. 
 
 {{site.alert.note}}
   This does not include versions of these browsers on iOS.
@@ -150,23 +168,31 @@ If the application doesn't load:
 1. Check the developer console for errors.
 1. Validate a successful build with the typical JavaScript output.
 
-[ff-preview]: https://www.mozilla.org/en-US/firefox/channel/desktop/
-
 ### Known limitations
 
 Wasm support has some limitations.
 The following list covers some common issues.
 
-#### Chrome 119 and Firefox 120 or later
-
+#### Chrome 119 or later
+ 
 As mentioned in [Load it in a browser](#load-it-in-a-browser), 
 to run Flutter web apps compiled to Wasm, 
-use _Chrome 119 or later_ or _Firefox 120 or later_.
+use _Chrome 119 or later_.
 
 Some earlier versions supported WasmGC with specific flags enabled,
 but WasmGC encodings changed once the feature was stabilized.
 To ensure compatibility, run the latest version of the Flutter `master` channel
-and the latest version of Chrome or Firefox.
+and the latest version of Chrome.
+
+- **Why not Firefox?**
+  Firefox versions 120 and later were previously able to run Flutter/Wasm, but
+  they're [currently experiencing a bug][] that is blocking compatibility with Wasm.
+- **Why not Safari?**
+  No versions of Safari have supported Wasm so far; [this bug][] tracks their
+  implementation efforts.
+
+[currently experiencing a bug]: https://bugzilla.mozilla.org/show_bug.cgi?id=1788206
+[this bug]: https://bugs.webkit.org/show_bug.cgi?id=247394
 
 #### Requires JS-interop to access browser and JS APIs
 
@@ -180,15 +206,12 @@ static JS interop:
 - [`package:web`][], which replaces `dart:html` (and other web libraries).
 - [`dart:js_interop`][], which replaces `package:js`.
 
-Most platform-specific packages, such as [`package:url_launcher`][], that used
-the previous web and JS interop solutions
-are [currently being migrated](https://github.com/flutter/packages/pull/5451/files)
-to be compatible with Wasm support in Flutter.
+Most packages owned by the Dart and Flutter teams have been migrated
+to be compatible with Wasm support in Flutter, such as [`package:url_launcher`][].
+To learn how to migrate your packages and applications to the new solutions,
+check out the [JS interop][] documentation and [`package:web` migration guide][].
 
-To learn how to migrate to the new solutions, read the
-[`package:web` migration guide][] and [JS interop][] documentation set.
-
-To check if a Wasm build failed due to these APIs, review the error output.
+To check if a Wasm build failed due to incompatible APIs, review the error output.
 These often return soon after a build invocation.
 An API-related error should resemble the following:
 
@@ -203,9 +226,9 @@ Context: The unavailable library 'dart:html' is imported through these packages:
     web_plugin_registrant.dart => package:flutter_web_plugins => dart:html
 ```
 
-[`dart:js_interop`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-js_interop
 [`package:url_launcher`]: {{site.pub-pkg}}/url_launcher
 [`package:web` migration guide]: {{site.dart-site}}/interop/js-interop/package-web
+[JS interop]: {{site.dart-site}}/interop/js-interop
 
 #### Only build support
 
