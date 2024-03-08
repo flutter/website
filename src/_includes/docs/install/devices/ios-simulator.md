@@ -4,6 +4,12 @@
 To prepare to run and test your Flutter app on the iOS simulator,
 follow this procedure.
 
+1. To install the iOS Simulator, run the following command.
+
+    ```terminal
+    {{prompt1}} xcodebuild -downloadPlatform iOS
+    ```
+
 1. To start the Simulator, run the following command:
 
     ```terminal

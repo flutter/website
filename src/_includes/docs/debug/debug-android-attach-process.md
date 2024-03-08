@@ -26,8 +26,10 @@
    If reader feedback urges their return, these will be uncommented.
 
    ![Attach to Process dialog box open in Android Studio](/assets/images/docs/testing/debugging/native/android-studio/attach-process-dialog.png)
-   <div markdown="1">{:.figure-caption}
+   <div class="figure-caption">
+
    Flutter app in Android device displaying two buttons.
+
    </div>
 {% endcomment %}
 
@@ -47,8 +49,10 @@
 
 {% comment %}
    !['The Android Project view highlighting the GeneratedPluginRegistrant.java file.'](/assets/images/docs/testing/debugging/native/android-studio/debug-open-java-code.png){:width="100%"}
-   <div markdown="1">{:.figure-caption}
+   <div class="figure-caption">
+   
    The Android Project view highlighting the `GeneratedPluginRegistrant.java` file.
+   
    </div>
 {% endcomment %}
 
@@ -59,14 +63,18 @@ and the like. In other words, debug!
 
 {% comment %}
 ![The Dart debug pane with two breakpoints set in `lib/main.dart`](/assets/images/docs/testing/debugging/native/dart-debugger.png){:width="100%"}
-<div markdown="1">{:.figure-caption}
+<div class="figure-caption">
+
 The Dart debug pane with two breakpoints set in `lib/main.dart`.
+
 </div>
 {% endcomment %}
 
 {% comment %}
 !['The Android debug pane with one breakpoint set in GeneratedPluginRegistrant.java.'](/assets/images/docs/testing/debugging/native/android-studio/debugger-active.png)
-<div markdown="1">{:.figure-caption}
+<div class="figure-caption">
+
 The Android debug pane with one breakpoint set in GeneratedPluginRegistrant.java.
+
 </div>
 {% endcomment %}

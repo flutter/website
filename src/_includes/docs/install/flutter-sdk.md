@@ -1,9 +1,10 @@
 {% assign os=include.os %}
+{% assign target = include.target %}
 {% assign terminal=include.terminal %}
 {% case target %}
 {% when 'mobile-ios' %}
    {% assign v-target = 'iOS' %}
-{% when 'mobile-android' %}
+{% when 'mobile-android','mobile' %}
    {% assign v-target = 'Android' %}
 {% else %}
    {% assign v-target = target %}
@@ -40,7 +41,3 @@ or download and install the Flutter bundle yourself.
 </div>
 </div>
 {% comment %} End: Tab panes. {% endcomment -%}
-
-If you have installed all prerequisites and the Flutter SDK,
-you should be able to start developing Flutter on
-{{os}} for {{v-target}}.

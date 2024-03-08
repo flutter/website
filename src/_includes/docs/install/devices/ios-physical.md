@@ -241,7 +241,7 @@ extend the timeout. The timeout defaults to 10 seconds.
 To extend the timeout, change the value to an integer greater than 10.
 
 ```terminal
-flutter run --device-timeout 60
+$ flutter run --device-timeout 60
 ```
 
 {{site.alert.secondary}}

@@ -24,19 +24,18 @@ If you need to install `git`, type `brew install git`.
 
 {% when 'mobile-android' %}
 
-* {{android -}}
+* {{android}}
 * {{git-main}}
   {{- git-other}}
 
 {% when 'web' -%}
 
-* {{chrome -}}
+* {{chrome}}
 * {{git-main}}
   {{- git-other}}
 
 {% endcase %}
 
-[Homebrew]: https://brew.sh/
 [Git]: https://formulae.brew.sh/formula/git
 [Android Studio]: https://developer.android.com/studio/install#mac
 [Xcode]: {{site.apple-dev}}/xcode/
