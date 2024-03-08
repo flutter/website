@@ -187,7 +187,7 @@ and the latest version of Chrome.
   implementation efforts.
   
 {{site.alert.warning}}
-  The iOS versions of these any browser can't run Flutter with Wasm.
+  Flutter with Wasm can't run on the iOS version of any browser.
   All browsers on iOS are forced to use the WebKit,
   and can't use their own browser engine.
 {{site.alert.end}}
