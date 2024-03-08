@@ -183,7 +183,7 @@ and the latest version of Chrome.
   Firefox versions 120 and later were previously able to run Flutter/Wasm, but
   they're [currently experiencing a bug][] that is blocking compatibility with Wasm.
 - **Why not Safari?**
-  No versions of Safari have supported Wasm so far; [this bug][] tracks their
+  No versions of Safari have supported Wasm-GC yet; [this bug][] tracks their
   implementation efforts.
   
 {{site.alert.warning}}
