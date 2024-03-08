@@ -6,21 +6,23 @@ short-title: Wasm
 last-update: March 8, 2024
 ---
 
+**_Last updated {{page.last-update}}_**
+
 The Flutter and Dart teams are excited to add
 [WebAssembly](https://webassembly.org/) as a compilation target when building
 applications for the web.
 
+Development of WebAssembly support for Dart and Flutter remains ongoing,
+which will potentially result in frequent changes. 
+Revisit this page for the latest updates.
+
 {{site.alert.note}}
-  Development of WebAssembly support for Dart and Flutter remains ongoing,
-  which will potentially result in frequent changes. 
-  Revisit this page for the latest updates.
-
-  **_Last updated {{page.last-update}}_**
-
   **Wasm is now in beta!**
   : Wasm and WebAssembly garbage collection (WasmGC) are now 
     available on the Flutter [`beta` channel][] and [`master` channel][].
+{{site.alert.end}}
 
+{{site.alert.note}}
   **Dart's next-gen Web interop is now stable!**
   : Migrate your packages to [`package:web`][] and [`dart:js_interop`][]
     to make them compatible with Wasm. Read the
@@ -43,13 +45,10 @@ like Dart execute code in an efficient manner.
 Note that Chrome on iOS uses WebKit, which doesn't yet [support WasmGC][].
 Firefox announced stable support for Wasm in Firefox 120,
 but currently does not work due to a [known limitation](#known-limitations). 
-To see the current status of WasmGC and other proposals,
-check out the [WebAssembly roadmap][].
 
 [WasmGC]: https://github.com/WebAssembly/gc/tree/main/proposals/gc
 [Chromium and V8]: https://chromestatus.com/feature/6062715726462976
 [support WasmGC]: https://bugs.webkit.org/show_bug.cgi?id=247394
-[WebAssembly roadmap]: https://webassembly.org/roadmap/
 [issue]: https://bugzilla.mozilla.org/show_bug.cgi?id=1788206
 
 ### Try it out
@@ -107,7 +106,7 @@ Before building with Wasm, you'll need to modify the bootstrap logic in your
 </head>
 <body>
   <script>
-    {{flutter_build_config}}
+    {% raw %}{{flutter_build_config}}{% endraw %}
     _flutter.loader.load();
   </script>
 </body>
@@ -115,10 +114,10 @@ Before building with Wasm, you'll need to modify the bootstrap logic in your
 ```
 
 This feature is under development. The current syntax
-(`flutter.js`, `{{flutter_build_config}}`, `_flutter.loader.load()`)
-is a intermediary solution in the `beta` and `master` channels now,
-but will be replaced by the actual syntax in an upcoming stable release.
-Stay tuned!
+(`flutter.js`, `{% raw %}{{flutter_build_config}}{% endraw %}`,
+`_flutter.loader.load()`) is a intermediary solution in the `beta` and `master`
+channels now, but will be replaced by the actual syntax in an upcoming stable
+release. Stay tuned!
 
 #### Run `flutter build web --wasm`
 
@@ -156,10 +155,6 @@ As of {{page.last-update}},
 [only **Chromium-based browsers**](#chrome-119-or-later)
 (Version 119 or later) are able to run Flutter/Wasm content. 
 
-{{site.alert.note}}
-  This does not include versions of these browsers on iOS.
-{{site.alert.end}}
-
 If your configured browser meets the requirements, open
 [`localhost:8080`](http://localhost:8080) in the browser to view the app.
 
@@ -190,6 +185,12 @@ and the latest version of Chrome.
 - **Why not Safari?**
   No versions of Safari have supported Wasm so far; [this bug][] tracks their
   implementation efforts.
+  
+{{site.alert.warning}}
+  The iOS versions of these any browser can't run Flutter with Wasm.
+  All browsers on iOS are forced to use the WebKit,
+  and can't use their own browser engine.
+{{site.alert.end}}
 
 [currently experiencing a bug]: https://bugzilla.mozilla.org/show_bug.cgi?id=1788206
 [this bug]: https://bugs.webkit.org/show_bug.cgi?id=247394
