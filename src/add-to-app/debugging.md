@@ -58,21 +58,21 @@ using `flutter attach`.
 
 On iOS, you must follow the steps below:
 
-1. Ensure that your device is wirelessly connected to Xcode
-   as described in the [iOS setup guide][].
+1.  Ensure that your device is wirelessly connected to Xcode
+    as described in the [iOS setup guide][].
 
-1. Open **Xcode > Product > Scheme > Edit Scheme**.
+1.  Open **Xcode > Product > Scheme > Edit Scheme**.
 
-1. Select the **Arguments** tab.
+1.  Select the **Arguments** tab.
 
-1. Add either `--vm-service-host=0.0.0.0` for IPv4,
-   or `--vm-service-host=::0` for IPv6 as a launch argument
+1.  Add either `--vm-service-host=0.0.0.0` for IPv4,
+    or `--vm-service-host=::0` for IPv6 as a launch argument
 
-  You can determine if you're on an IPv6 network by opening your Mac's
-  **Settings > Wi-Fi > Details (of the network you're connected to) > TCP/IP**
-  and check to see if there is an **IPv6 address** section.
+    You can determine if you're on an IPv6 network by opening your Mac's
+    **Settings > Wi-Fi > Details (of the network you're connected to) > TCP/IP**
+    and check to see if there is an **IPv6 address** section.
 
-  ![Check the box that says 'connect via network' from the devices and simulators page](/assets/images/docs/development/add-to-app/debugging/wireless-port.png)
+    ![Check the box that says 'connect via network' from the devices and simulators page](/assets/images/docs/development/add-to-app/debugging/wireless-port.png)
 
 #### Android
 

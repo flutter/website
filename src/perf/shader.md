@@ -86,49 +86,49 @@ jank in later animations.
 Use the following instructions to collect
 and package the SkSL shaders:
 
-1. Run the app with `--cache-sksl` turned on
-   to capture shaders in SkSL:
+1.  Run the app with `--cache-sksl` turned on
+    to capture shaders in SkSL:
 
-   ```terminal
-   flutter run --profile --cache-sksl
-   ```
+    ```terminal
+    flutter run --profile --cache-sksl
+    ```
 
-   If the same app has been previously run
-   without `--cache-sksl`, then the
-   `--purge-persistent-cache` flag might be needed:
-   
-   ```terminal
-   flutter run --profile --cache-sksl --purge-persistent-cache
-   ```
-   
-   This flag removes older non-SkSL shader caches that
-   could interfere with SkSL shader capturing.
-   It also purges the SkSL shaders so use it *only* on the first
-   `--cache-sksl` run.
+    If the same app has been previously run
+    without `--cache-sksl`, then the
+    `--purge-persistent-cache` flag might be needed:
 
-1. Play with the app to trigger as many animations
-   as needed; particularly those with compilation jank.
+    ```terminal
+    flutter run --profile --cache-sksl --purge-persistent-cache
+    ```
 
-1. Press `M` at the command line of `flutter run` to
-   write the captured SkSL shaders into a file named
-   something like `flutter_01.sksl.json`.
-   For best results, capture SkSL shaders on an actual iOS device.
-   A shader captured on a simulator isn't likely to work correctly
-   on actual hardware.
+    This flag removes older non-SkSL shader caches that
+    could interfere with SkSL shader capturing.
+    It also purges the SkSL shaders so use it *only* on the first
+    `--cache-sksl` run.
 
-1. Build the app with SkSL warm-up using the following,
-   as appropriate:
+1.  Play with the app to trigger as many animations
+    as needed; particularly those with compilation jank.
 
-   ```terminal
-   flutter build ios --bundle-sksl-path flutter_01.sksl.json
-   ```
-   
-   If it's built for a driver test like `test_driver/app.dart`,
-   make sure to also specify `--target=test_driver/app.dart`
-   (for example, `flutter build ios --bundle-sksl-path
-   flutter_01.sksl.json --target=test_driver/app.dart`).
+1.  Press `M` at the command line of `flutter run` to
+    write the captured SkSL shaders into a file named
+    something like `flutter_01.sksl.json`.
+    For best results, capture SkSL shaders on an actual iOS device.
+    A shader captured on a simulator isn't likely to work correctly
+    on actual hardware.
 
-1. Test the newly built app.
+1.  Build the app with SkSL warm-up using the following,
+    as appropriate:
+
+    ```terminal
+    flutter build ios --bundle-sksl-path flutter_01.sksl.json
+    ```
+
+    If it's built for a driver test like `test_driver/app.dart`,
+    make sure to also specify `--target=test_driver/app.dart`
+    (for example, `flutter build ios --bundle-sksl-path
+    flutter_01.sksl.json --target=test_driver/app.dart`).
+
+1.  Test the newly built app.
 
 Alternatively, you can write some integration tests to
 automate the first three steps using a single command.

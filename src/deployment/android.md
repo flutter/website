@@ -43,23 +43,23 @@ To customize this icon, you might want to check out the
 
 Alternatively, you can do it manually using the following steps:
 
-1. Review the [Material Design product
-   icons][launchericons] guidelines for icon design.
+1.  Review the [Material Design product icons][launchericons]
+    guidelines for icon design.
 
-1. In the `[project]/android/app/src/main/res/` directory,
-   place your icon files in folders named using
-   [configuration qualifiers][].
-   The default `mipmap-` folders demonstrate the correct
-   naming convention.
+1.  In the `[project]/android/app/src/main/res/` directory,
+    place your icon files in folders named using
+    [configuration qualifiers][].
+    The default `mipmap-` folders demonstrate the correct
+    naming convention.
 
-1. In `AndroidManifest.xml`, update the
-   [`application`][applicationtag] tag's `android:icon`
-   attribute to reference icons from the previous
-   step (for example,
-   `<application android:icon="@mipmap/ic_launcher" ...`).
+1.  In `AndroidManifest.xml`, update the
+    [`application`][applicationtag] tag's `android:icon`
+    attribute to reference icons from the previous
+    step (for example,
+    `<application android:icon="@mipmap/ic_launcher" ...`).
 
-1. To verify that the icon has been replaced,
-   run your app and inspect the app icon in the Launcher.
+1.  To verify that the icon has been replaced,
+    run your app and inspect the app icon in the Launcher.
 
 ## Enabling Material Components
 
@@ -69,31 +69,34 @@ Material Components by following the steps described in the
 
 For example:
 
-1. Add the dependency on Android's Material in `<my-app>/android/app/build.gradle`:
+1.  Add the dependency on Android's Material library in
+    `<my-app>/android/app/build.gradle`:
 
-```groovy
-dependencies {
-    // ...
-    implementation 'com.google.android.material:material:<version>'
-    // ...
-}
-```
+    ```groovy
+    dependencies {
+        // ...
+        implementation 'com.google.android.material:material:<version>'
+        // ...
+    }
+    ```
 
-To find out the latest version, visit [Google Maven][].
+    To find out the latest version, visit [Google Maven][].
 
-2. Set the light theme in `<my-app>/android/app/src/main/res/values/styles.xml`:
+1.  Set the light theme in
+    `<my-app>/android/app/src/main/res/values/styles.xml`:
 
-```diff
--<style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar">
-+<style name="NormalTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-```
+    ```diff
+    -<style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar">
+    +<style name="NormalTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+    ```
 
-3. Set the dark theme in `<my-app>/android/app/src/main/res/values-night/styles.xml`
+1.  Set the dark theme in
+    `<my-app>/android/app/src/main/res/values-night/styles.xml`:
 
-```diff
--<style name="NormalTheme" parent="@android:style/Theme.Black.NoTitleBar">
-+<style name="NormalTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-```
+    ```diff
+    -<style name="NormalTheme" parent="@android:style/Theme.Black.NoTitleBar">
+    +<style name="NormalTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    ```
 
 <a id="signing-the-app"></a>
 ## Sign the app
@@ -117,47 +120,47 @@ To sign your app, use the following instructions.
 If you have an existing keystore, skip to the next step.
 If not, create one using one of the following methods:
 
-1. Follow the [Android Studio key generation steps]({{site.android-dev}}/studio/publish/app-signing#generate-key)
-1. Run the following command at the command line:
+1.  Follow the [Android Studio key generation steps]({{site.android-dev}}/studio/publish/app-signing#generate-key)
+1.  Run the following command at the command line:
 
-   On macOS or Linux, use the following command:
+    On macOS or Linux, use the following command:
 
-   ```terminal
-   keytool -genkey -v -keystore ~/upload-keystore.jks -keyalg RSA \
-           -keysize 2048 -validity 10000 -alias upload
-   ```
+    ```terminal
+    keytool -genkey -v -keystore ~/upload-keystore.jks -keyalg RSA \
+            -keysize 2048 -validity 10000 -alias upload
+    ```
 
-   On Windows, use the following command in PowerShell:
+    On Windows, use the following command in PowerShell:
 
-   ```powershell
-   keytool -genkey -v -keystore %userprofile%\upload-keystore.jks ^
-           -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 ^
-           -alias upload
-   ```
+    ```powershell
+    keytool -genkey -v -keystore %userprofile%\upload-keystore.jks ^
+            -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 ^
+            -alias upload
+    ```
 
-   This command stores the `upload-keystore.jks` file in your home
-   directory. If you want to store it elsewhere, change
-   the argument you pass to the `-keystore` parameter.
-   **However, keep the `keystore` file private;
-   don't check it into public source control!**
-    
-   {{site.alert.note}}
-     * The `keytool` command might not be in your path&mdash;it's
-       part of Java, which is installed as part of
-       Android Studio.  For the concrete path,
-       run `flutter doctor -v` and locate the path printed after
-       'Java binary at:'. Then use that fully qualified path
-       replacing `java` (at the end) with `keytool`.
-       If your path includes space-separated names,
-       such as `Program Files`, use platform-appropriate
-       notation for the names. For example, on Mac/Linux
-       use `Program\ Files`, and on Windows use
-       `"Program Files"`.
-    
-     * The `-storetype JKS` tag is only required for Java 9
-       or newer. As of the Java 9 release,
-       the keystore type defaults to PKS12.
-   {{site.alert.end}}
+    This command stores the `upload-keystore.jks` file in your home
+    directory. If you want to store it elsewhere, change
+    the argument you pass to the `-keystore` parameter.
+    **However, keep the `keystore` file private;
+    don't check it into public source control!**
+
+    {{site.alert.note}}
+      * The `keytool` command might not be in your path&mdash;it's
+        part of Java, which is installed as part of
+        Android Studio.  For the concrete path,
+        run `flutter doctor -v` and locate the path printed after
+        'Java binary at:'. Then use that fully qualified path
+        replacing `java` (at the end) with `keytool`.
+        If your path includes space-separated names,
+        such as `Program Files`, use platform-appropriate
+        notation for the names. For example, on Mac/Linux
+        use `Program\ Files`, and on Windows use
+        `"Program Files"`.
+     
+      * The `-storetype JKS` tag is only required for Java 9
+        or newer. As of the Java 9 release,
+        the keystore type defaults to PKS12.
+    {{site.alert.end}}
 
 ### Reference the keystore from the app
 
@@ -187,55 +190,55 @@ or `C:\\Users\\<user name>\\upload-keystore.jks` on Windows.
 Configure gradle to use your upload key when building your app in release mode 
 by editing the `[project]/android/app/build.gradle` file.
 
-1. Add the keystore information from your
-   properties file before the `android` block:
+1.  Add the keystore information from your
+    properties file before the `android` block:
 
-   ```gradle
-   def keystoreProperties = new Properties()
-   def keystorePropertiesFile = rootProject.file('key.properties')
-   if (keystorePropertiesFile.exists()) {
-       keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
-   }
+    ```gradle
+    def keystoreProperties = new Properties()
+    def keystorePropertiesFile = rootProject.file('key.properties')
+    if (keystorePropertiesFile.exists()) {
+        keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+    }
+    
+    android {
+        // ...
+    }
+    ```
    
-   android {
-       // ...
-   }
-   ```
-   
-   Load the `key.properties` file into the `keystoreProperties` object.
+    Load the `key.properties` file into the `keystoreProperties` object.
 
-1. Find the `buildTypes` block:
+1.  Find the `buildTypes` block:
 
-   ```gradle
-   buildTypes {
-       release {
-           // TODO: Add your own signing config for the release build.
-           // Signing with the debug keys for now,
-           // so `flutter run --release` works.
-           signingConfig signingConfigs.debug
-       }
-   }
-   ```
+    ```gradle
+    buildTypes {
+        release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now,
+            // so `flutter run --release` works.
+            signingConfig signingConfigs.debug
+        }
+    }
+    ```
 
-   And replace it with the following signing configuration info:
+    And replace it with the following signing configuration info:
 
-   ```gradle
-   signingConfigs {
-       release {
-           keyAlias keystoreProperties['keyAlias']
-           keyPassword keystoreProperties['keyPassword']
-           storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
-           storePassword keystoreProperties['storePassword']
-       }
-   }
-   buildTypes {
-       release {
-           signingConfig signingConfigs.release
-       }
-   }
-   ```
+    ```gradle
+    signingConfigs {
+        release {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+            storePassword keystoreProperties['storePassword']
+        }
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+        }
+    }
+    ```
 
-   Release builds of your app will now be signed automatically.
+    Release builds of your app will now be signed automatically.
 
 {{site.alert.note}}
   You might need to run `flutter clean` after changing the gradle file.
@@ -394,9 +397,9 @@ and maintaining additional files to de-obfuscate stack traces.
 
 From the command line:
 
-1. Enter `cd [project]`<br>
-1. Run `flutter build appbundle`<br>
-   (Running `flutter build` defaults to a release build.)
+1.  Enter `cd [project]`<br>
+1.  Run `flutter build appbundle`<br>
+    (Running `flutter build` defaults to a release build.)
 
 The release bundle for your app is created at
 `[project]/build/app/outputs/bundle/release/app.aab`.
@@ -412,19 +415,19 @@ This section describes two.
 
 #### Offline using the bundle tool
 
-1. If you haven't done so already, download `bundletool` from the
-   [GitHub repository][].
-1. [Generate a set of APKs][apk-set] from your app bundle.
-1. [Deploy the APKs][apk-deploy] to connected devices.
+1.  If you haven't done so already, download `bundletool` from the
+    [GitHub repository][].
+1.  [Generate a set of APKs][apk-set] from your app bundle.
+1.  [Deploy the APKs][apk-deploy] to connected devices.
 
 #### Online using Google Play
 
-1. Upload your bundle to Google Play to test it.
-   You can use the internal test track,
-   or the alpha or beta channels to test the bundle before
-   releasing it in production.
-2. Follow [these steps to upload your bundle][upload-bundle]
-   to the Play Store.
+1.  Upload your bundle to Google Play to test it.
+    You can use the internal test track,
+    or the alpha or beta channels to test the bundle before
+    releasing it in production.
+1.  Follow [these steps to upload your bundle][upload-bundle]
+    to the Play Store.
 
 ### Build an APK
 
@@ -439,10 +442,10 @@ your code involves adding a couple flags to your build command.
 
 From the command line:
 
-1. Enter `cd [project]`.
+1.  Enter `cd [project]`.
 
-1. Run `flutter build apk --split-per-abi`.
-   (The `flutter build` command defaults to `--release`.)
+1.  Run `flutter build apk --split-per-abi`.
+    (The `flutter build` command defaults to `--release`.)
 
 This command results in three APK files:
 

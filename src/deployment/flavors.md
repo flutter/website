@@ -44,45 +44,46 @@ To set up flavors in iOS and macOS, you'll define build configurations in Xcode.
 
 ## Creating flavors in iOS and macOS
 
-1. Open your project in Xcode.
+1.  Open your project in Xcode.
 
-1. Select **Product** > **Scheme** > **New Scheme** from the menu to
-   add a new `Scheme`.
+1.  Select **Product** > **Scheme** > **New Scheme** from the menu to
+    add a new `Scheme`.
 
-   * A scheme describes how Xcode runs different actions.
-     For the purposes of this guide, the example _flavor_ and _scheme_ are
-     named `free`.
-     The build configurations in the `free` scheme
-     have the `-free` suffix.
+    * A scheme describes how Xcode runs different actions.
+      For the purposes of this guide, the example _flavor_ and _scheme_ are
+      named `free`.
+      The build configurations in the `free` scheme
+      have the `-free` suffix.
 
-1. Duplicate the build configurations to differentiate between the
-   default configurations that are already available and the new configurations
-   for the `free` scheme.
-   
-   * Under the **Info** tab at the end of the **Configurations** dropdown list,
-     click the plus button and duplicate
-     each configuration name (Debug, Release, and Profile).
-     Duplicate the existing configurations, once for each environment.
+1.  Duplicate the build configurations to differentiate between the
+    default configurations that are already available and the new configurations
+    for the `free` scheme.
 
-   ![Step 3 Xcode image](/assets/images/docs/flavors/step3-ios-build-config.png){:width="100%"}
+    * Under the **Info** tab at the end of the **Configurations** dropdown list,
+      click the plus button and duplicate
+      each configuration name (Debug, Release, and Profile).
+      Duplicate the existing configurations, once for each environment.
 
-   {{site.alert.note}}
-   Your configurations should be based on your
-   `Debug.xconfig` or `Release.xcconfig` file, not the `Pods-Runner.xcconfigs`.
-   You can check this by expanding the configuration names.
-   {{site.alert.end}}
+    ![Step 3 Xcode image](/assets/images/docs/flavors/step3-ios-build-config.png){:width="100%"}
 
-1. To match the free flavor, add `-free`
-   at the end of each new configuration name.
+    {{site.alert.note}}
+    Your configurations should be based on your
+    `Debug.xconfig` or `Release.xcconfig` file, not the `Pods-Runner.xcconfigs`.
+    You can check this by expanding the configuration names.
+    {{site.alert.end}}
 
-1. Change the `free` scheme to match the build configurations already created.
+1.  To match the free flavor, add `-free`
+    at the end of each new configuration name.
 
-   * In the **Runner** project, click **Manage Schemes…** and a pop up window opens.
-   * Double click the free scheme. In the next step
-     (as shown in the screenshot), you'll modify each scheme
-     to match its free build configuration:
+1.  Change the `free` scheme to match the build configurations already created.
 
-   ![Step 5 Xcode image](/assets/images/docs/flavors/step-5-ios-scheme-free.png){:width="100%"}
+    * In the **Runner** project, click **Manage Schemes…** and
+      a pop up window opens.
+    * Double click the free scheme. In the next step
+      (as shown in the screenshot), you'll modify each scheme
+      to match its free build configuration:
+
+    ![Step 5 Xcode image](/assets/images/docs/flavors/step-5-ios-scheme-free.png){:width="100%"}
 
 ## Using flavors in iOS and macOS
 
@@ -92,21 +93,21 @@ A _bundle identifier_ uniquely identifies your application.
 In this example, we set the **Debug-free** value to equal
 `com.flavor-test.free`.
 
-1. Change the app bundle identifier to differentiate between schemes.
-   In **Product Bundle Identifier**, append `.free` to each -free scheme value.
+1.  Change the app bundle identifier to differentiate between schemes.
+    In **Product Bundle Identifier**, append `.free` to each -free scheme value.
 
-   ![Step 1 using flavors image.](/assets/images/docs/flavors/step-1-using-flavors-free.png){:width="100%"}
+    ![Step 1 using flavors image.](/assets/images/docs/flavors/step-1-using-flavors-free.png){:width="100%"}
 
-1. In the **Build Settings**, set the
-   **Product Name** value to match each flavor.
-   For example, add Debug Free.
+1.  In the **Build Settings**, set the
+    **Product Name** value to match each flavor.
+    For example, add Debug Free.
 
-   ![Step 2 using flavors image.](/assets/images/docs/flavors/step-2-using-flavors-free.png){:width="100%"}
+    ![Step 2 using flavors image.](/assets/images/docs/flavors/step-2-using-flavors-free.png){:width="100%"}
 
-1. Add the display name to **Info.plist**. Update the **Bundle Display Name**
-   value to `$(PRODUCT_NAME)`.
+1.  Add the display name to **Info.plist**. Update the **Bundle Display Name**
+    value to `$(PRODUCT_NAME)`.
 
-   ![Step 3 using flavors image.](/assets/images/docs/flavors/step3-using-flavors.png){:width="100%"}
+    ![Step 3 using flavors image.](/assets/images/docs/flavors/step3-using-flavors.png){:width="100%"}
 
 Now you have set up your flavor by making a `free` scheme
 in Xcode and setting the build configurations for that scheme.
@@ -171,11 +172,11 @@ Next, add a **launch.json** file; this allows you to run the command
 
 In VSCode, set up the launch configurations as follows:
 
-1. In the root directory of your project, add a folder called **.vscode**.
-2. Inside the **.vscode** folder, create a file named **launch.json**.
-3. In the **launch.json** file, add a configuration object for each flavor.
-   Each configuration has a **name**, **request**, **type**, **program**,
-   and **args** key.
+1.  In the root directory of your project, add a folder called **.vscode**.
+1.  Inside the **.vscode** folder, create a file named **launch.json**.
+1.  In the **launch.json** file, add a configuration object for each flavor.
+    Each configuration has a **name**, **request**, **type**, **program**,
+    and **args** key.
 
 ```json
 {
@@ -203,10 +204,10 @@ TODO: When available, add an app sample.
 
 ## Launching your app flavors
 
-1. Once the flavors are set up, modify the Dart code in
-**lib** / **main.dart** to consume the flavors.
-2. Test the setup using `flutter run --flavor free`
-at the command line, or in your IDE.
+1.  Once the flavors are set up, modify the Dart code in
+    `lib/main.dart` to consume the flavors.
+1.  Test the setup using `flutter run --flavor free`
+    at the command line, or in your IDE.
 
 For examples of build flavors for [iOS][], [macOS][], and [Android][],
 check out the integration test samples in the [Flutter repo][].

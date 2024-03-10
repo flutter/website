@@ -55,42 +55,39 @@ and a sheet of paper. Figure out where you want to place elements on your
 screen before writing code. It's the programming version of the adage:
 "Measure twice, cut once."
 
-1. Ask these questions to break the layout down to its basic elements.
+1.  Ask these questions to break the layout down to its basic elements.
 
-   * Can you identify the rows and columns?
-   * Does the layout include a grid?
-   * Are there overlapping elements?
-   * Does the UI need tabs?
-   * What do you need to align, pad, or border?
+    * Can you identify the rows and columns?
+    * Does the layout include a grid?
+    * Are there overlapping elements?
+    * Does the UI need tabs?
+    * What do you need to align, pad, or border?
+1.  Identify the larger elements. In this example, you arrange the
+    image, title, buttons, and description into a column.
 
-1. Identify the larger elements. In this example, you arrange the
-   image, title, buttons, and description into a column.
+    {% include docs/app-figure.liquid
+      img-class="site-mobile-screenshot border"
+      image="ui/layout/layout-sketch-intro.svg"
+      caption="Major elements in the layout: image, row, row, and text block"
+      width="50%" -%}
 
-   {% include docs/app-figure.liquid
-     img-class="site-mobile-screenshot border"
-     image="ui/layout/layout-sketch-intro.svg"
-     caption="Major elements in the layout: image, row, row, and text block"
-     width="50%" -%}
+1.  Diagram each row.
+    1.  Row 1, the **Title** section, has three children:
+        a column of text, a star icon, and a number.
+        Its first child, the column, contains two lines of text.
+        That first column might need more space.
 
-1. Diagram each row.
+        {% include docs/app-figure.liquid
+          image="ui/layout/layout-sketch-title-block.svg"
+          caption="Title section with text blocks and an icon" -%}
 
-   1. Row 1, the **Title** section, has three children:
-      a column of text, a star icon, and a number.
-      Its first child, the column, contains two lines of text.
-      That first column might need more space.
+    1.  Row 2, the **Button** section, has three children: each child contains
+        a column which then contains an icon and text.
 
-      {% include docs/app-figure.liquid
-      image="ui/layout/layout-sketch-title-block.svg"
-      caption="Title section with text blocks and an icon"
-      -%}
-
-   1. Row 2, the **Button** section, has three children: each child contains
-      a column which then contains an icon and text.
-
-      {% include docs/app-figure.liquid
-         image="ui/layout/layout-sketch-button-block.svg"
-         caption="The Button section with three labeled buttons"
-         width="50%" %}
+        {% include docs/app-figure.liquid
+           image="ui/layout/layout-sketch-button-block.svg"
+           caption="The Button section with three labeled buttons"
+           width="50%" %}
 
 After diagramming the layout, consider how you would code it.
 
@@ -113,40 +110,40 @@ In this section, shell out the basic Flutter app code to start your app.
 
 <?code-excerpt path-base="layout/base"?>
 
-1. [Set up your Flutter environment][].
+1.  [Set up your Flutter environment][].
 
-1. [Create a new Flutter app][new-flutter-app].
+1.  [Create a new Flutter app][new-flutter-app].
 
-1. Replace the contents of `lib/main.dart` with the following code.
-   This app uses a parameter for the app title and the title shown
-   on the app's `appBar`. This decision simplifies the code.
+1.  Replace the contents of `lib/main.dart` with the following code.
+    This app uses a parameter for the app title and the title shown
+    on the app's `appBar`. This decision simplifies the code.
 
-   <?code-excerpt "lib/main.dart (all)" title?>
-   ```dart
-   import 'package:flutter/material.dart';
+    <?code-excerpt "lib/main.dart (all)" title?>
+    ```dart
+    import 'package:flutter/material.dart';
+ 
+    void main() => runApp(const MyApp());
 
-   void main() => runApp(const MyApp());
+    class MyApp extends StatelessWidget {
+      const MyApp({super.key});
 
-   class MyApp extends StatelessWidget {
-     const MyApp({super.key});
-
-     @override
-     Widget build(BuildContext context) {
-       const String appTitle = 'Flutter layout demo';
-       return MaterialApp(
-         title: appTitle,
-         home: Scaffold(
-           appBar: AppBar(
-             title: const Text(appTitle),
-           ),
-           body: const Center(
-             child: Text('Hello World'),
-           ),
-         ),
-       );
-     }
-   }
-   ```
+      @override
+      Widget build(BuildContext context) {
+        const String appTitle = 'Flutter layout demo';
+        return MaterialApp(
+          title: appTitle,
+          home: Scaffold(
+            appBar: AppBar(
+              title: const Text(appTitle),
+            ),
+            body: const Center(
+              child: Text('Hello World'),
+            ),
+          ),
+        );
+      }
+    }
+    ```
 
 ## Add the Title section
 

@@ -47,29 +47,29 @@ Every iOS application is associated with a Bundle ID,
 a unique identifier registered with Apple.
 To register a Bundle ID for your app, follow these steps:
 
-1. Open the [App IDs][devportal_appids] page of your developer account.
-1. Click **+** to create a new Bundle ID.
-1. Enter an app name, select **Explicit App ID**, and enter an ID.
-1. Select the services your app uses, then click **Continue**.
-1. On the next page, confirm the details and click **Register**
-   to register your Bundle ID.
+1.  Open the [App IDs][devportal_appids] page of your developer account.
+1.  Click **+** to create a new Bundle ID.
+1.  Enter an app name, select **Explicit App ID**, and enter an ID.
+1.  Select the services your app uses, then click **Continue**.
+1.  On the next page, confirm the details and click **Register**
+    to register your Bundle ID.
 
 ### Create an application record on App Store Connect
 
 Register your app on App Store Connect:
 
-1. Open [App Store Connect][appstoreconnect_login] in your browser.
-1. On the App Store Connect landing page, click **My Apps**.
-1. Click **+** in the top-left corner of the My Apps page,
-   then select **New App**.
-1. Fill in your app details in the form that appears.
-   In the Platforms section, ensure that iOS is checked.
-   Since Flutter does not currently support tvOS,
-   leave that checkbox unchecked. Click **Create**.
-1. Navigate to the application details for your app and select
-   **App Information** from the sidebar.
-1. In the General Information section, select the Bundle ID
-   you registered in the preceding step.
+1.  Open [App Store Connect][appstoreconnect_login] in your browser.
+1.  On the App Store Connect landing page, click **My Apps**.
+1.  Click **+** in the top-left corner of the My Apps page,
+    then select **New App**.
+1.  Fill in your app details in the form that appears.
+    In the Platforms section, ensure that iOS is checked.
+    Since Flutter does not currently support tvOS,
+    leave that checkbox unchecked. Click **Create**.
+1.  Navigate to the application details for your app and select
+    **App Information** from the sidebar.
+1.  In the General Information section, select the Bundle ID
+    you registered in the preceding step.
 
 For a detailed overview, see
 [Add an app to your account][appstoreconnect_guide_register].
@@ -83,11 +83,11 @@ For detailed procedures and descriptions, see
 
 Navigate to your target's settings in Xcode:
 
-1. Open the default Xcode workspace in your project by running
-   `open ios/Runner.xcworkspace` in a terminal window from your
-   Flutter project directory.
-1. To view your app's settings, select the **Runner** target in the
-   Xcode navigator.
+1.  Open the default Xcode workspace in your project by running
+    `open ios/Runner.xcworkspace` in a terminal window from your
+    Flutter project directory.
+1.  To view your app's settings, select the **Runner** target in the
+    Xcode navigator.
 
 Verify the most important settings.
 
@@ -140,22 +140,22 @@ When a new Flutter app is created, a placeholder icon set is created.
 This step covers replacing these placeholder icons with your
 app's icons:
 
-1. Review the [iOS App Icon][appicon] guidelines.
-1. In the Xcode project navigator, select `Assets.xcassets` in the
-   `Runner` folder. Update the placeholder icons with your own app icons.
-1. Verify the icon has been replaced by running your app using
-   `flutter run`.
+1.  Review the [iOS App Icon][appicon] guidelines.
+1.  In the Xcode project navigator, select `Assets.xcassets` in the
+    `Runner` folder. Update the placeholder icons with your own app icons.
+1.  Verify the icon has been replaced by running your app using
+    `flutter run`.
 
 ## Add a launch image
 
 Similar to the app icon,
 you can also replace the placeholder launch image:
 
-1. In the Xcode project navigator,
-   select `Assets.xcassets` in the `Runner` folder.
-   Update the placeholder launch image with your own launch image.
-1. Verify the new launch image by hot restarting your app.
-   (Don't use `hot reload`.)
+1.  In the Xcode project navigator,
+    select `Assets.xcassets` in the `Runner` folder.
+    Update the placeholder launch image with your own launch image.
+1.  Verify the new launch image by hot restarting your app.
+    (Don't use `hot reload`.)
 
 ## Create a build archive and upload to App Store Connect
 
@@ -188,14 +188,14 @@ on the Apple Developer's site.
 
 You can also override the `pubspec.yaml` build name and number in Xcode:
 
-1. Open `Runner.xcworkspace` in your app's `ios` folder.
-1. Select **Runner** in the Xcode project navigator, then select the
-   **Runner** target in the settings view sidebar.
-1. In the Identity section, update the **Version** to the user-facing
-   version number you wish to publish.
-1. In the Identity section, update the **Build** identifier to a unique
-   build number used to track this build on App Store Connect.
-   Each upload requires a unique build number.
+1.  Open `Runner.xcworkspace` in your app's `ios` folder.
+1.  Select **Runner** in the Xcode project navigator, then select the
+    **Runner** target in the settings view sidebar.
+1.  In the Identity section, update the **Version** to the user-facing
+    version number you wish to publish.
+1.  In the Identity section, update the **Build** identifier to a unique
+    build number used to track this build on App Store Connect.
+    Each upload requires a unique build number.
 
 ### Create an app bundle
 
@@ -223,36 +223,36 @@ adding the option `--export-method ad-hoc`,
 Once the app bundle is created, upload it to
 [App Store Connect][appstoreconnect_login] by either:
 
-1. Install and open the [Apple Transport macOS app][apple_transport_app].
-   Drag and drop the `build/ios/ipa/*.ipa` app bundle into the app.
+1.  Install and open the [Apple Transport macOS app][apple_transport_app].
+    Drag and drop the `build/ios/ipa/*.ipa` app bundle into the app.
 
-1. Or upload the app bundle from the command line by running:
+1.  Or upload the app bundle from the command line by running:
 
-   ```terminal
-   xcrun altool --upload-app --type ios -f build/ios/ipa/*.ipa --apiKey your_api_key --apiIssuer your_issuer_id
-   ```
-   
-   Run `man altool` for details about how to authenticate
-   with the App Store Connect API key.
+    ```terminal
+    xcrun altool --upload-app --type ios -f build/ios/ipa/*.ipa --apiKey your_api_key --apiIssuer your_issuer_id
+    ```
 
-1. Or open `build/ios/archive/MyApp.xcarchive` in Xcode.
+    Run `man altool` for details about how to authenticate
+    with the App Store Connect API key.
 
-   Click the **Validate App** button. If any issues are reported,
-   address them and produce another build. You can reuse the same
-   build ID until you upload an archive.
-   
-   After the archive has been successfully validated, click
-   **Distribute App**.
-   
-   {{site.alert.note}}
-   When you export your app at the end of **Distribute App**,
-   Xcode will create a directory containing
-   an IPA of your app and an `ExportOptions.plist` file.
-   You can create new IPAs with the same options without launching
-   Xcode by running
-   `flutter build ipa --export-options-plist=path/to/ExportOptions.plist`.
-   See `xcodebuild -h` for details about the keys in this property list.
-   {{site.alert.end}}
+1.  Or open `build/ios/archive/MyApp.xcarchive` in Xcode.
+
+    Click the **Validate App** button. If any issues are reported,
+    address them and produce another build. You can reuse the same
+    build ID until you upload an archive.
+
+    After the archive has been successfully validated, click
+    **Distribute App**.
+
+    {{site.alert.note}}
+    When you export your app at the end of **Distribute App**,
+    Xcode will create a directory containing
+    an IPA of your app and an `ExportOptions.plist` file.
+    You can create new IPAs with the same options without launching
+    Xcode by running
+    `flutter build ipa --export-options-plist=path/to/ExportOptions.plist`.
+    See `xcodebuild -h` for details about the keys in this property list.
+    {{site.alert.end}}
 
 You can follow the status of your build in the
 Activities tab of your app's details page on
@@ -274,121 +274,121 @@ in the Flutter project directory. This allows you to create a build archive
 with full control of distribution certificates in a temporary keychain
 isolated from your login keychain.
 
-1. Install the Codemagic CLI tools:
+1.  Install the Codemagic CLI tools:
 
-   ```terminal
-   pip3 install codemagic-cli-tools
-   ```
+    ```terminal
+    pip3 install codemagic-cli-tools
+    ```
 
-1. You'll need to generate an [App Store Connect API Key][appstoreconnect_api_key]
-   with App Manager access to automate operations with App Store Connect. To make
-   subsequent commands more concise, set the following environment variables from
-   the new key: issuer id, key id, and API key file.
+1.  You'll need to generate an [App Store Connect API Key][appstoreconnect_api_key]
+    with App Manager access to automate operations with App Store Connect. To make
+    subsequent commands more concise, set the following environment variables from
+    the new key: issuer id, key id, and API key file.
 
-   ```terminal
-   export APP_STORE_CONNECT_ISSUER_ID=aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
-   export APP_STORE_CONNECT_KEY_IDENTIFIER=ABC1234567
-   export APP_STORE_CONNECT_PRIVATE_KEY=`cat /path/to/api/key/AuthKey_XXXYYYZZZ.p8`
-   ```
+    ```terminal
+    export APP_STORE_CONNECT_ISSUER_ID=aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
+    export APP_STORE_CONNECT_KEY_IDENTIFIER=ABC1234567
+    export APP_STORE_CONNECT_PRIVATE_KEY=`cat /path/to/api/key/AuthKey_XXXYYYZZZ.p8`
+    ```
 
-1. You need to export or create an iOS Distribution certificate to
-   code sign and package a build archive.
+1.  You need to export or create an iOS Distribution certificate to
+    code sign and package a build archive.
 
-   If you have existing [certificates][devportal_certificates], you
-   can export the private keys by executing
-   the following command for each certificate:
-   
-   ```terminal
-   openssl pkcs12 -in <certificate_name>.p12 -nodes -nocerts | openssl rsa -out cert_key
-   ```
-   
-   Or you can create a new private key by executing the following command:
-   
-   ```terminal
-   ssh-keygen -t rsa -b 2048 -m PEM -f cert_key -q -N ""
-   ```
-   
-   Later, you can have CLI tools automatically
-   create a new iOS Distribution from the private key.
+    If you have existing [certificates][devportal_certificates], you
+    can export the private keys by executing
+    the following command for each certificate:
 
-1. Set up a new temporary keychain to be used for code signing:
+    ```terminal
+    openssl pkcs12 -in <certificate_name>.p12 -nodes -nocerts | openssl rsa -out cert_key
+    ```
 
-   ```terminal
-   keychain initialize
-   ```
-   
-   {{site.alert.secondary}}
-   **Restore Login Keychain!**
-   After running `keychain initialize` you **must** run the following:<br>
-   
-   `keychain use-login`
-   
-   This sets your login keychain as the default to avoid potential
-   authentication issues with apps on your machine.
-   {{site.alert.end}}
+    Or you can create a new private key by executing the following command:
 
-1. Fetch the code signing files from App Store Connect:
+    ```terminal
+    ssh-keygen -t rsa -b 2048 -m PEM -f cert_key -q -N ""
+    ```
 
-   ```terminal
-   app-store-connect fetch-signing-files $(xcode-project detect-bundle-id) \
-       --platform IOS \
-       --type IOS_APP_STORE \
-       --certificate-key=@file:/path/to/cert_key \
-       --create
-   ```
-   
-   Where `cert_key` is either your exported iOS Distribution certificate private key
-   or a new private key which automatically generates a new certificate. The certificate
-   will be created from the private key if it doesn't exist in App Store Connect.
+    Later, you can have CLI tools automatically
+    create a new iOS Distribution from the private key.
 
-1. Now add the fetched certificates to your keychain:
+1.  Set up a new temporary keychain to be used for code signing:
 
-   ```terminal
-   keychain add-certificates
-   ```
+    ```terminal
+    keychain initialize
+    ```
 
-1. Update the Xcode project settings to use fetched code signing profiles:
+    {{site.alert.secondary}}
+    **Restore Login Keychain!**
+    After running `keychain initialize` you **must** run the following:<br>
 
-   ```terminal
-   xcode-project use-profiles
-   ```
+    `keychain use-login`
 
-1. Install Flutter dependencies:
+    This sets your login keychain as the default to avoid potential
+    authentication issues with apps on your machine.
+    {{site.alert.end}}
 
-   ```terminal
-   flutter packages pub get
-   ```
+1.  Fetch the code signing files from App Store Connect:
 
-1. Install CocoaPods dependencies:
+    ```terminal
+    app-store-connect fetch-signing-files $(xcode-project detect-bundle-id) \
+        --platform IOS \
+        --type IOS_APP_STORE \
+        --certificate-key=@file:/path/to/cert_key \
+        --create
+    ```
 
-   ```terminal
-   find . -name "Podfile" -execdir pod install \;
-   ```
+    Where `cert_key` is either your exported iOS Distribution certificate private key
+    or a new private key which automatically generates a new certificate. The certificate
+    will be created from the private key if it doesn't exist in App Store Connect.
 
-1. Build the Flutter the iOS project:
+1.  Now add the fetched certificates to your keychain:
 
-   ```terminal
-   flutter build ipa --release \
-       --export-options-plist=$HOME/export_options.plist
-   ```
+    ```terminal
+    keychain add-certificates
+    ```
 
-   Note that `export_options.plist` is the output of
-   the `xcode-project use-profiles` command.
+1.  Update the Xcode project settings to use fetched code signing profiles:
 
-1. Publish the app to App Store Connect:
+    ```terminal
+    xcode-project use-profiles
+    ```
 
-   ```terminal
-   app-store-connect publish \
-       --path $(find $(pwd) -name "*.ipa")
-   ```
+1.  Install Flutter dependencies:
 
-1. As mentioned earlier, don't forget to set your login keychain
-   as the default to avoid authentication issues
-   with apps on your machine:
-   
-   ```terminal
-   keychain use-login
-   ```
+    ```terminal
+    flutter packages pub get
+    ```
+
+1.  Install CocoaPods dependencies:
+
+    ```terminal
+    find . -name "Podfile" -execdir pod install \;
+    ```
+
+1.  Build the Flutter project for iOS:
+
+    ```terminal
+    flutter build ipa --release \
+        --export-options-plist=$HOME/export_options.plist
+    ```
+
+    Note that `export_options.plist` is the output of
+    the `xcode-project use-profiles` command.
+
+1.  Publish the app to App Store Connect:
+
+    ```terminal
+    app-store-connect publish \
+        --path $(find $(pwd) -name "*.ipa")
+    ```
+
+1.  As mentioned earlier, don't forget to set your login keychain
+    as the default to avoid authentication issues
+    with apps on your machine:
+
+    ```terminal
+    keychain use-login
+    ```
 
 You should receive an email within 30 minutes notifying you that
 your build has been validated and is available to release to testers
@@ -401,14 +401,14 @@ on TestFlight, or go ahead and release your app to the App Store.
 to internal and external testers. This optional step
 covers releasing your build on TestFlight.
 
-1. Navigate to the TestFlight tab of your app's application
-   details page on [App Store Connect][appstoreconnect_login].
-1. Select **Internal Testing** in the sidebar.
-1. Select the build to publish to testers, then click **Save**.
-1. Add the email addresses of any internal testers.
-   You can add additional internal users in the **Users and Roles**
-   page of App Store Connect,
-   available from the dropdown menu at the top of the page.
+1.  Navigate to the TestFlight tab of your app's application
+    details page on [App Store Connect][appstoreconnect_login].
+1.  Select **Internal Testing** in the sidebar.
+1.  Select the build to publish to testers, then click **Save**.
+1.  Add the email addresses of any internal testers.
+    You can add additional internal users in the **Users and Roles**
+    page of App Store Connect,
+    available from the dropdown menu at the top of the page.
 
 For more details, see [Distribute an app using TestFlight]
 [distributionguide_testflight].
@@ -419,14 +419,14 @@ When you're ready to release your app to the world,
 follow these steps to submit your app for review and
 release to the App Store:
 
-1. Select **Pricing and Availability** from the sidebar of your app's
-   application details page on
-   [App Store Connect][appstoreconnect_login] and complete the
-   required information.
-1. Select the status from the sidebar. If this is the first
-   release of this app, its status is
-   **1.0 Prepare for Submission**. Complete all required fields.
-1. Click **Submit for Review**.
+1.  Select **Pricing and Availability** from the sidebar of your app's
+    application details page on
+    [App Store Connect][appstoreconnect_login] and complete the
+    required information.
+1.  Select the status from the sidebar. If this is the first
+    release of this app, its status is
+    **1.0 Prepare for Submission**. Complete all required fields.
+1.  Click **Submit for Review**.
 
 Apple notifies you when their app review process is complete.
 Your app is released according to the instructions you

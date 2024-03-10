@@ -39,29 +39,29 @@ Every macOS application is associated with a Bundle ID,
 a unique identifier registered with Apple.
 To register a Bundle ID for your app, follow these steps:
 
-1. Open the [App IDs][devportal_appids] page of your developer account.
-1. Click **+** to create a new Bundle ID.
-1. Enter an app name, select **Explicit App ID**, and enter an ID.
-1. Select the services your app uses, then click **Continue**.
-1. On the next page, confirm the details and click **Register**
-   to register your Bundle ID.
+1.  Open the [App IDs][devportal_appids] page of your developer account.
+1.  Click **+** to create a new Bundle ID.
+1.  Enter an app name, select **Explicit App ID**, and enter an ID.
+1.  Select the services your app uses, then click **Continue**.
+1.  On the next page, confirm the details and click **Register**
+    to register your Bundle ID.
 
 ### Create an application record on App Store Connect
 
 Register your app on App Store Connect:
 
-1. Open [App Store Connect][appstoreconnect_login] in your browser.
-1. On the App Store Connect landing page, click **My Apps**.
-1. Click **+** in the top-left corner of the My Apps page,
-   then select **New App**.
-1. Fill in your app details in the form that appears.
-   In the Platforms section, ensure that macOS is checked.
-   Since Flutter does not currently support tvOS,
-   leave that checkbox unchecked. Click **Create**.
-1. Navigate to the application details for your app and select
-   **App Information** from the sidebar.
-1. In the General Information section, select the Bundle ID
-   you registered in the preceding step.
+1.  Open [App Store Connect][appstoreconnect_login] in your browser.
+1.  On the App Store Connect landing page, click **My Apps**.
+1.  Click **+** in the top-left corner of the My Apps page,
+    then select **New App**.
+1.  Fill in your app details in the form that appears.
+    In the Platforms section, ensure that macOS is checked.
+    Since Flutter does not currently support tvOS,
+    leave that checkbox unchecked. Click **Create**.
+1.  Navigate to the application details for your app and select
+    **App Information** from the sidebar.
+1.  In the General Information section, select the Bundle ID
+    you registered in the preceding step.
 
 For a detailed overview,
 see [Add an app to your account][appstoreconnect_guide_register].
@@ -75,11 +75,11 @@ For detailed procedures and descriptions, see
 
 Navigate to your target's settings in Xcode:
 
-1. In Xcode, open `Runner.xcworkspace` in your app's `macos` folder.
-1. To view your app's settings, select the **Runner** project in the Xcode
-   project navigator. Then, in the main view sidebar, select the **Runner**
-   target.
-1. Select the **General** tab.
+1.  In Xcode, open `Runner.xcworkspace` in your app's `macos` folder.
+1.  To view your app's settings, select the
+    **Runner** project in the Xcode project navigator. Then,
+    in the main view sidebar, select the **Runner** target.
+1.  Select the **General** tab.
 
 Verify the most important settings.
 
@@ -152,11 +152,11 @@ When a new Flutter app is created, a placeholder icon set is created.
 This step covers replacing these placeholder icons with your
 app's icons:
 
-1. Review the [macOS App Icon][appicon] guidelines.
-1. In the Xcode project navigator, select `Assets.xcassets` in the
-   `Runner` folder. Update the placeholder icons with your own app icons.
-1. Verify the icon has been replaced by running your app using
-   `flutter run -d macos`.
+1.  Review the [macOS App Icon][appicon] guidelines.
+1.  In the Xcode project navigator, select `Assets.xcassets` in the
+    `Runner` folder. Update the placeholder icons with your own app icons.
+1.  Verify the icon has been replaced by running your app using
+    `flutter run -d macos`.
 
 ## Create a build archive with Xcode
 
@@ -172,36 +172,38 @@ your code involves adding a couple flags to your build command.
 
 In Xcode, configure the app version and build:
 
-1. Open `Runner.xcworkspace` in your app's `macos` folder. To do this from
-   the command line, run the following command from the base directory of your
-   application project.
-   ```console
-   open macos/Runner.xcworkspace
-   ```
-1. Select **Runner** in the Xcode project navigator, then select the
-   **Runner** target in the settings view sidebar.
-1. In the Identity section, update the **Version** to the user-facing
-   version number you wish to publish.
-1. In the Identity section, update the **Build** identifier to a unique
-   build number used to track this build on App Store Connect.
-   Each upload requires a unique build number.
+1.  Open `Runner.xcworkspace` in your app's `macos` folder. To do this from
+    the command line, run the following command from the base directory of your
+    application project.
+ 
+    ```console
+    open macos/Runner.xcworkspace
+    ```
+1.  Select **Runner** in the Xcode project navigator, then select the
+    **Runner** target in the settings view sidebar.
+1.  In the Identity section, update the **Version** to the user-facing
+    version number you wish to publish.
+1.  In the Identity section, update the **Build** identifier to a unique
+    build number used to track this build on App Store Connect.
+    Each upload requires a unique build number.
 
 Finally, create a build archive and upload it to App Store Connect:
 
-1. Create a release Archive of your application. From the base directory of
-   your application project, run the following.
-   ```console
-   flutter build macos
-   ```
-1. Open Xcode and select **Product > Archive** to open the archive created
-   in the previous step.
-1. Click the **Validate App** button. If any issues are reported,
-   address them and produce another build. You can reuse the same
-   build ID until you upload an archive.
-1. After the archive has been successfully validated, click
-   **Distribute App**. You can follow the status of your build in the
-   Activities tab of your app's details page on
-   [App Store Connect][appstoreconnect_login].
+1.  Create a release Archive of your application. From the base directory of
+    your application project, run the following.
+ 
+    ```console
+    flutter build macos
+    ```
+1.  Open Xcode and select **Product > Archive** to open the archive created
+    in the previous step.
+1.  Click the **Validate App** button. If any issues are reported,
+    address them and produce another build. You can reuse the same
+    build ID until you upload an archive.
+1.  After the archive has been successfully validated, click
+    **Distribute App**. You can follow the status of your build in the
+    Activities tab of your app's details page on
+    [App Store Connect][appstoreconnect_login].
 
 You should receive an email within 30 minutes notifying you that
 your build has been validated and is available to release to testers
@@ -218,157 +220,157 @@ your build to App Store Connect using Flutter build commands
 and [Codemagic CLI Tools][codemagic_cli_tools] executed in a terminal
 in the Flutter project directory.
 
-1. Install the Codemagic CLI tools:
+1.  Install the Codemagic CLI tools:
 
-   ```terminal
-   pip3 install codemagic-cli-tools
-   ```
+    ```terminal
+    pip3 install codemagic-cli-tools
+    ```
 
-1. You'll need to generate an
-   [App Store Connect API Key][appstoreconnect_api_key] with
-   App Manager access to automate operations with App Store Connect.
-   To make subsequent commands more concise, set the
-   following environment variables from the new key:
-   issuer id, key id, and API key file.
+1.  You'll need to generate an
+    [App Store Connect API Key][appstoreconnect_api_key] with
+    App Manager access to automate operations with App Store Connect.
+    To make subsequent commands more concise, set the
+    following environment variables from the new key:
+    issuer id, key id, and API key file.
 
-   ```terminal
-   export APP_STORE_CONNECT_ISSUER_ID=aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
-   export APP_STORE_CONNECT_KEY_IDENTIFIER=ABC1234567
-   export APP_STORE_CONNECT_PRIVATE_KEY=`cat /path/to/api/key/AuthKey_XXXYYYZZZ.p8`
-   ```
+    ```terminal
+    export APP_STORE_CONNECT_ISSUER_ID=aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
+    export APP_STORE_CONNECT_KEY_IDENTIFIER=ABC1234567
+    export APP_STORE_CONNECT_PRIVATE_KEY=`cat /path/to/api/key/AuthKey_XXXYYYZZZ.p8`
+    ```
 
-1. You need to export or create a Mac App Distribution and a Mac Installer
-   Distribution certificate to perform code signing and package a build archive.
+1.  You need to export or create a Mac App Distribution and a Mac Installer
+    Distribution certificate to perform code signing and package a build archive.
 
-   If you have existing [certificates][devportal_certificates], you can export the
-   private keys by executing the following command for each certificate:
-   
-   ```terminal
-   openssl pkcs12 -in <certificate_name>.p12 -nodes -nocerts | openssl rsa -out cert_key
-   ```
-   
-   Or you can create a new private key by executing the following command:
-   
-   ```terminal
-   ssh-keygen -t rsa -b 2048 -m PEM -f cert_key -q -N ""
-   ```
+    If you have existing [certificates][devportal_certificates], you can export the
+    private keys by executing the following command for each certificate:
 
-   Later, you can have CLI tools automatically create a
-   new Mac App Distribution and Mac Installer Distribution certificate.
-   You can use the same private key for each new certificate.
+    ```terminal
+    openssl pkcs12 -in <certificate_name>.p12 -nodes -nocerts | openssl rsa -out cert_key
+    ```
 
-1. Fetch the code signing files from App Store Connect:
+    Or you can create a new private key by executing the following command:
 
-   ```terminal
-   app-store-connect fetch-signing-files YOUR.APP.BUNDLE_ID \
-       --platform MAC_OS \
-       --type MAC_APP_STORE \
-       --certificate-key=@file:/path/to/cert_key \
-       --create
-   ```
+    ```terminal
+    ssh-keygen -t rsa -b 2048 -m PEM -f cert_key -q -N ""
+    ```
 
-   Where `cert_key` is either your exported
-   Mac App Distribution certificate private key or a
-   new private key which automatically generates a new certificate. 
+    Later, you can have CLI tools automatically create a
+    new Mac App Distribution and Mac Installer Distribution certificate.
+    You can use the same private key for each new certificate.
 
-1. If you do not have a Mac Installer Distribution certificate,
-   you can create a new certificate by executing the following:
+1.  Fetch the code signing files from App Store Connect:
 
-   ```terminal
-   app-store-connect create-certificate \
-       --type MAC_INSTALLER_DISTRIBUTION \
-       --certificate-key=@file:/path/to/cert_key \
-       --save
-   ```
+    ```terminal
+    app-store-connect fetch-signing-files YOUR.APP.BUNDLE_ID \
+        --platform MAC_OS \
+        --type MAC_APP_STORE \
+        --certificate-key=@file:/path/to/cert_key \
+        --create
+    ```
 
-   Use `cert_key` of the private key you created earlier.
+    Where `cert_key` is either your exported
+    Mac App Distribution certificate private key or a
+    new private key which automatically generates a new certificate. 
 
-1. Fetch the Mac Installer Distribution certificates:
+1.  If you do not have a Mac Installer Distribution certificate,
+    you can create a new certificate by executing the following:
 
-   ```terminal
-   app-store-connect list-certificates \
-       --type MAC_INSTALLER_DISTRIBUTION \
-       --certificate-key=@file:/path/to/cert_key \
-       --save
-   ```
+    ```terminal
+    app-store-connect create-certificate \
+        --type MAC_INSTALLER_DISTRIBUTION \
+        --certificate-key=@file:/path/to/cert_key \
+        --save
+    ```
 
-1. Set up a new temporary keychain to be used for code signing:
+    Use `cert_key` of the private key you created earlier.
 
-   ```terminal
-   keychain initialize
-   ```
+1.  Fetch the Mac Installer Distribution certificates:
 
-   {{site.alert.secondary}}
-   **Restore Login Keychain!**
-   After running `keychain initialize` you **must** run the following:<br>
-   
-   `keychain use-login`
-   
-   This sets your login keychain as the default to avoid potential
-   authentication issues with apps on your machine.
-   {{site.alert.end}}
+    ```terminal
+    app-store-connect list-certificates \
+        --type MAC_INSTALLER_DISTRIBUTION \
+        --certificate-key=@file:/path/to/cert_key \
+        --save
+    ```
 
-1. Now add the fetched certificates to your keychain:
+1.  Set up a new temporary keychain to be used for code signing:
 
-   ```terminal
-   keychain add-certificates
-   ```
+    ```terminal
+    keychain initialize
+    ```
 
-1. Update the Xcode project settings to use fetched code signing profiles: 
+    {{site.alert.secondary}}
+    **Restore Login Keychain!**
+    After running `keychain initialize` you **must** run the following:<br>
 
-   ```terminal
-   xcode-project use-profiles
-   ```
+    `keychain use-login`
 
-1. Install Flutter dependencies:
+    This sets your login keychain as the default to avoid potential
+    authentication issues with apps on your machine.
+    {{site.alert.end}}
 
-   ```terminal
-   flutter packages pub get
-   ```
+1.  Now add the fetched certificates to your keychain:
 
-1. Install CocoaPods dependencies:
+    ```terminal
+    keychain add-certificates
+    ```
 
-   ```terminal
-   find . -name "Podfile" -execdir pod install \;
-   ```
+1.  Update the Xcode project settings to use fetched code signing profiles: 
 
-1. Build the Flutter macOS project:
+    ```terminal
+    xcode-project use-profiles
+    ```
 
-   ```bash
-   flutter build macos --release
-   ```
+1.  Install Flutter dependencies:
 
-1. Package the app:
+    ```terminal
+    flutter packages pub get
+    ```
 
-   ```terminal
-   APP_NAME=$(find $(pwd) -name "*.app")
-   PACKAGE_NAME=$(basename "$APP_NAME" .app).pkg
-   xcrun productbuild --component "$APP_NAME" /Applications/ unsigned.pkg
-   
-   INSTALLER_CERT_NAME=$(keychain list-certificates \
-             | jq '[.[]
-               | select(.common_name
-               | contains("Mac Developer Installer"))
-               | .common_name][0]' \
-             | xargs)
-   xcrun productsign --sign "$INSTALLER_CERT_NAME" unsigned.pkg "$PACKAGE_NAME"
-   rm -f unsigned.pkg 
-   ```
+1.  Install CocoaPods dependencies:
 
-1. Publish the packaged app to App Store Connect:
+    ```terminal
+    find . -name "Podfile" -execdir pod install \;
+    ```
 
-   ```terminal
-   app-store-connect publish \
-       --path "$PACKAGE_NAME"
-   ```
+1.  Build the Flutter macOS project:
 
-1. As mentioned earlier, don't forget to set your login keychain
-   as the default to avoid authentication issues
-   with apps on your machine:
+    ```bash
+    flutter build macos --release
+    ```
 
-   ```terminal
-   keychain use-login
-   ```
+1.  Package the app:
+
+    ```terminal
+    APP_NAME=$(find $(pwd) -name "*.app")
+    PACKAGE_NAME=$(basename "$APP_NAME" .app).pkg
+    xcrun productbuild --component "$APP_NAME" /Applications/ unsigned.pkg
+    
+    INSTALLER_CERT_NAME=$(keychain list-certificates \
+              | jq '[.[]
+                | select(.common_name
+                | contains("Mac Developer Installer"))
+                | .common_name][0]' \
+              | xargs)
+    xcrun productsign --sign "$INSTALLER_CERT_NAME" unsigned.pkg "$PACKAGE_NAME"
+    rm -f unsigned.pkg 
+    ```
+
+1.  Publish the packaged app to App Store Connect:
+
+    ```terminal
+    app-store-connect publish \
+        --path "$PACKAGE_NAME"
+    ```
+
+1.  As mentioned earlier, don't forget to set your login keychain
+    as the default to avoid authentication issues
+    with apps on your machine:
+
+    ```terminal
+    keychain use-login
+    ```
 
 ## Release your app on TestFlight
 
@@ -376,14 +378,14 @@ in the Flutter project directory.
 to internal and external testers. This optional step
 covers releasing your build on TestFlight.
 
-1. Navigate to the TestFlight tab of your app's application
-   details page on [App Store Connect][appstoreconnect_login].
-1. Select **Internal Testing** in the sidebar.
-1. Select the build to publish to testers, then click **Save**.
-1. Add the email addresses of any internal testers.
-   You can add additional internal users in the **Users and Roles**
-   page of App Store Connect,
-   available from the dropdown menu at the top of the page.
+1.  Navigate to the TestFlight tab of your app's application
+    details page on [App Store Connect][appstoreconnect_login].
+1.  Select **Internal Testing** in the sidebar.
+1.  Select the build to publish to testers, then click **Save**.
+1.  Add the email addresses of any internal testers.
+    You can add additional internal users in the **Users and Roles**
+    page of App Store Connect,
+    available from the dropdown menu at the top of the page.
 
 ## Distribute to registered devices
 
@@ -396,14 +398,14 @@ When you're ready to release your app to the world,
 follow these steps to submit your app for review and
 release to the App Store:
 
-1. Select **Pricing and Availability** from the sidebar of your app's
-   application details page on
-   [App Store Connect][appstoreconnect_login] and complete the
-   required information.
-1. Select the status from the sidebar. If this is the first
-   release of this app, its status is
-   **1.0 Prepare for Submission**. Complete all required fields.
-1. Click **Submit for Review**.
+1.  Select **Pricing and Availability** from the sidebar of your app's
+    application details page on
+    [App Store Connect][appstoreconnect_login] and complete the
+    required information.
+1.  Select the status from the sidebar. If this is the first
+    release of this app, its status is
+    **1.0 Prepare for Submission**. Complete all required fields.
+1.  Click **Submit for Review**.
 
 Apple notifies you when their app review process is complete.
 Your app is released according to the instructions you

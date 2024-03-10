@@ -411,14 +411,14 @@ We recommend you edit the Android code using Android Studio.
 
 Then use the following steps:
 
-1. Launch Android Studio.
-1. Select **Open an existing Android Studio Project**
-   in the **Welcome to Android Studio** dialog,
-   or select **File > Open** from the menu,
-   and select the `hello/example/android/build.gradle` file.
-1. In the **Gradle Sync** dialog, select **OK**.
-1. In the **Android Gradle Plugin Update** dialog,
-   select **Don't remind me again for this project**.
+1.  Launch Android Studio.
+1.  Select **Open an existing Android Studio Project**
+    in the **Welcome to Android Studio** dialog,
+    or select **File > Open** from the menu,
+    and select the `hello/example/android/build.gradle` file.
+1.  In the **Gradle Sync** dialog, select **OK**.
+1.  In the **Android Gradle Plugin Update** dialog,
+    select **Don't remind me again for this project**.
 
 The Android platform code of your plugin is located in
 `hello/java/com.example.hello/HelloPlugin`.
@@ -438,9 +438,9 @@ or in a terminal execute
 
 Then use the following steps:
 
-1. Launch Xcode.
-1. Select **File > Open**, and select the
-   `hello/example/ios/Runner.xcworkspace` file.
+1.  Launch Xcode.
+1.  Select **File > Open**, and select the
+    `hello/example/ios/Runner.xcworkspace` file.
 
 The iOS platform code for your plugin is located in
 `Pods/Development Pods/hello/../../example/ios/.symlinks/plugins/hello/ios/Classes`
@@ -464,11 +464,11 @@ IDE/editor, or in a terminal execute
 
 Then use the following steps:
 
-1. Launch Visual Studio Code.
-1. Open the `hello/example/linux/` directory.
-1. Choose **Yes** in the prompt asking:
-   `Would you like to configure project "linux"?`.
-   This will allow C++ autocomplete to work.
+1.  Launch Visual Studio Code.
+1.  Open the `hello/example/linux/` directory.
+1.  Choose **Yes** in the prompt asking:
+    `Would you like to configure project "linux"?`.
+    This will allow C++ autocomplete to work.
 
 The Linux platform code for your plugin is located in
 `flutter/ephemeral/.plugin_symlinks/hello/linux/`.
@@ -492,9 +492,9 @@ or in a terminal execute
 
 Then use the following steps:
 
-1. Launch Xcode.
-1. Select **File > Open**, and select the
-   `hello/example/macos/Runner.xcworkspace` file.
+1.  Launch Xcode.
+1.  Select **File > Open**, and select the
+    `hello/example/macos/Runner.xcworkspace` file.
 
 The macOS platform code for your plugin is located in
 `Pods/Development Pods/hello/../../example/macos/Flutter/ephemeral/.symlinks/plugins/hello/macos/Classes`
@@ -515,9 +515,9 @@ or in a terminal execute
 
 Then use the following steps:
 
-1. Launch Visual Studio.
-1. Select **Open a project or solution**, and select the
-   `hello/example/build/windows/hello_example.sln` file.
+1.  Launch Visual Studio.
+1.  Select **Open a project or solution**, and select the
+    `hello/example/build/windows/hello_example.sln` file.
 
 The Windows platform code for your plugin is located in
 `hello_plugin/Source Files` and `hello_plugin/Header Files` in
@@ -756,11 +756,11 @@ For an example, see `sumAsync` in `lib/hello.dart`.
 It is recommended practice to add the following documentation
 to all packages:
 
-1. A `README.md` file that introduces the package
-1. A `CHANGELOG.md` file that documents changes in each version
-1. A [`LICENSE`] file containing the terms under which the package
-   is licensed
-1. API documentation for all public APIs (see below for details)
+1.  A `README.md` file that introduces the package
+1.  A `CHANGELOG.md` file that documents changes in each version
+1.  A [`LICENSE`] file containing the terms under which
+    the package is licensed
+1.  API documentation for all public APIs (see below for details)
 
 ### API documentation
 
@@ -772,30 +772,30 @@ For example, see the docs for [`device_info`][].
 If you wish to generate API documentation locally on
 your development machine, use the following commands:
 
-1. Change directory to the location of your package:
+1.  Change directory to the location of your package:
 
-   ```terminal
-   cd ~/dev/mypackage
-   ```
+    ```terminal
+    cd ~/dev/mypackage
+    ```
 
-1. Tell the documentation tool where the
-   Flutter SDK is located (change the following commands to reflect
-   where you placed it):
+1.  Tell the documentation tool where the
+    Flutter SDK is located (change the following commands to reflect
+    where you placed it):
 
-   ```terminal
-   export FLUTTER_ROOT=~/dev/flutter  # on macOS or Linux
+    ```terminal
+    export FLUTTER_ROOT=~/dev/flutter  # on macOS or Linux
+ 
+    set FLUTTER_ROOT=~/dev/flutter     # on Windows
+    ```
 
-   set FLUTTER_ROOT=~/dev/flutter     # on Windows
-   ```
+1.  Run the `dart doc` tool
+    (included as part of the Flutter SDK), as follows:
 
-1. Run the `dart doc` tool
-   (included as part of the Flutter SDK), as follows:
-
-   ```terminal
-   $FLUTTER_ROOT/bin/cache/dart-sdk/bin/dart doc   # on macOS or Linux
-   
-   %FLUTTER_ROOT%\bin\cache\dart-sdk\bin\dart doc  # on Windows
-   ```
+    ```terminal
+    $FLUTTER_ROOT/bin/cache/dart-sdk/bin/dart doc   # on macOS or Linux
+    
+    %FLUTTER_ROOT%\bin\cache\dart-sdk\bin\dart doc  # on Windows
+    ```
 
 For tips on how to write API documentation, see
 [Effective Dart Documentation][].
