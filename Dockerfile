@@ -38,7 +38,6 @@ RUN bundle config set force_ruby_platform true
 RUN BUNDLE_WITHOUT="test development" bundle install --jobs=4 --retry=2
 
 ENV NODE_ENV=production
-COPY package.json package-lock.json ./
 RUN npm ci
 
 COPY ./ ./
