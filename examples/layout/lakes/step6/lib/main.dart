@@ -264,5 +264,5 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
       ],
     );
   }
-// #docregion _FavoriteWidgetState-fields
+  // #docregion _FavoriteWidgetState-fields
 }

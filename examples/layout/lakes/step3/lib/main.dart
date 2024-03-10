@@ -89,12 +89,12 @@ class TitleSection extends StatelessWidget {
 // #docregion ButtonWithText
 class ButtonSection extends StatelessWidget {
   const ButtonSection({super.key});
-// #enddocregion ButtonWithText
+  // #enddocregion ButtonWithText
 
   @override
   Widget build(BuildContext context) {
     final Color color = Theme.of(context).primaryColor;
-// #enddocregion ButtonStart
+    // #enddocregion ButtonStart
     return SizedBox(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -117,9 +117,9 @@ class ButtonSection extends StatelessWidget {
         ],
       ),
     );
-// #docregion ButtonStart
+    // #docregion ButtonStart
   }
-// #docregion ButtonWithText
+  // #docregion ButtonWithText
 }
 // #enddocregion ButtonStart
 

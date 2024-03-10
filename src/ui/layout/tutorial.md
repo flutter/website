@@ -64,7 +64,6 @@ screen before writing code. It's the programming version of the adage:
     * What do you need to align, pad, or border?
 1.  Identify the larger elements. In this example, you arrange the
     image, title, buttons, and description into a column.
-
     {% include docs/app-figure.liquid
       img-class="site-mobile-screenshot border"
       image="ui/layout/layout-sketch-intro.svg"
@@ -76,14 +75,12 @@ screen before writing code. It's the programming version of the adage:
         a column of text, a star icon, and a number.
         Its first child, the column, contains two lines of text.
         That first column might need more space.
-
         {% include docs/app-figure.liquid
           image="ui/layout/layout-sketch-title-block.svg"
           caption="Title section with text blocks and an icon" -%}
 
     1.  Row 2, the **Button** section, has three children: each child contains
         a column which then contains an icon and text.
-
         {% include docs/app-figure.liquid
            image="ui/layout/layout-sketch-button-block.svg"
            caption="The Button section with three labeled buttons"
@@ -314,7 +311,7 @@ class ButtonSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Color color = Theme.of(context).primaryColor;
-// ···
+    // ···
   }
 }
 ```
@@ -335,7 +332,7 @@ Add the following code after the `ButtonSection` class.
 ```dart
 class ButtonSection extends StatelessWidget {
   const ButtonSection({super.key});
-// ···
+  // ···
 }
 
 class ButtonWithText extends StatelessWidget {

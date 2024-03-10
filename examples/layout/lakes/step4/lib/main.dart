@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-// #enddocregion TextAdd
+    // #enddocregion TextAdd
     const String appTitle = 'Flutter layout demo';
     return MaterialApp(
       title: appTitle,

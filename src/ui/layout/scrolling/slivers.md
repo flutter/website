@@ -27,23 +27,20 @@ in Flutter, see the following resources:
 **[SliverAppBar][sliver-app-bar-video]**
 : A one-minute Widget-of-the-week
   video that gives an overview of the
-  `SliverAppBar` widget.
-
-  <br><iframe width="560" height="315" src="{{site.yt.embed}}/R9C5KMJKluE" title="Learn about the SliverAppBar Widget" {{site.yt.set}}></iframe>
+  `SliverAppBar` widget.<br>
+  <iframe width="560" height="315" src="{{site.yt.embed}}/R9C5KMJKluE" title="Learn about the SliverAppBar Widget" {{site.yt.set}}></iframe>
 
 **[SliverList and SliverGrid][]**
 : A one-minute Widget-of-the-week
   video that gives an overview of the `SliverList`
-  and `SliverGrid` widgets.
-
-  <br><iframe width="560" height="315" src="{{site.yt.embed}}/ORiTTaVY6mM" title="Learn about the SliverList and SliverBar Widget" {{site.yt.set}}></iframe>
+  and `SliverGrid` widgets.<br>
+  <iframe width="560" height="315" src="{{site.yt.embed}}/ORiTTaVY6mM" title="Learn about the SliverList and SliverBar Widget" {{site.yt.set}}></iframe>
 
 **[Slivers explained - Making dynamic layouts][]**
 : A 50-minute episode of [The Boring Show][]
   where Ian Hickson, Flutter's Tech Lead, and Filip Hracek
-  discuss the power of slivers.
-
-  <br><iframe width="560" height="315" src="{{site.yt.embed}}/Mz3kHQxBjGg" title="Watch the Boring Show to learn about slivers" {{site.yt.set}}></iframe>
+  discuss the power of slivers.<br>
+  <iframe width="560" height="315" src="{{site.yt.embed}}/Mz3kHQxBjGg" title="Watch the Boring Show to learn about slivers" {{site.yt.set}}></iframe>
 
 ## API docs
 
