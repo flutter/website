@@ -130,12 +130,12 @@ You'll start with a simple web app that we provide for you.
    <?code-excerpt "lib/starter.dart"?>
    ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code
    import 'package:flutter/material.dart';
-   
+
    void main() => runApp(const SignUpApp());
-   
+
    class SignUpApp extends StatelessWidget {
      const SignUpApp({super.key});
-   
+
      @override
      Widget build(BuildContext context) {
        return MaterialApp(
@@ -145,10 +145,10 @@ You'll start with a simple web app that we provide for you.
        );
      }
    }
-   
+
    class SignUpScreen extends StatelessWidget {
      const SignUpScreen({super.key});
-   
+
      @override
      Widget build(BuildContext context) {
        return Scaffold(
@@ -164,21 +164,21 @@ You'll start with a simple web app that we provide for you.
        );
      }
    }
-   
+
    class SignUpForm extends StatefulWidget {
      const SignUpForm({super.key});
-   
+
      @override
      State<SignUpForm> createState() => _SignUpFormState();
    }
-   
+
    class _SignUpFormState extends State<SignUpForm> {
      final _firstNameTextController = TextEditingController();
      final _lastNameTextController = TextEditingController();
      final _usernameTextController = TextEditingController();
-   
+
      double _formProgress = 0;
-   
+
      @override
      Widget build(BuildContext context) {
        return Form(
@@ -425,13 +425,13 @@ and update the app's UI when the form is complete.
        _lastNameTextController,
        _usernameTextController
      ];
-   
+
      for (final controller in controllers) {
        if (controller.value.text.isNotEmpty) {
          progress += 1 / controllers.length;
        }
      }
-   
+
      setState(() {
        _formProgress = progress;
      });
@@ -690,24 +690,24 @@ area. The animation has the following behavior:
    ```dart
    class AnimatedProgressIndicator extends StatefulWidget {
      final double value;
-   
+
      const AnimatedProgressIndicator({
        super.key,
        required this.value,
      });
-   
+
      @override
      State<AnimatedProgressIndicator> createState() {
        return _AnimatedProgressIndicatorState();
      }
    }
-   
+
    class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
        with SingleTickerProviderStateMixin {
      late AnimationController _controller;
      late Animation<Color?> _colorAnimation;
      late Animation<double> _curveAnimation;
-   
+
      @override
      void initState() {
        super.initState();
@@ -715,7 +715,7 @@ area. The animation has the following behavior:
          duration: const Duration(milliseconds: 1200),
          vsync: this,
        );
-   
+
        final colorTween = TweenSequence([
          TweenSequenceItem(
            tween: ColorTween(begin: Colors.red, end: Colors.orange),
@@ -730,17 +730,17 @@ area. The animation has the following behavior:
            weight: 1,
          ),
        ]);
-   
+
        _colorAnimation = _controller.drive(colorTween);
        _curveAnimation = _controller.drive(CurveTween(curve: Curves.easeIn));
      }
-   
+
      @override
      void didUpdateWidget(oldWidget) {
        super.didUpdateWidget(oldWidget);
        _controller.animateTo(widget.value);
      }
-   
+
      @override
      Widget build(BuildContext context) {
        return AnimatedBuilder(

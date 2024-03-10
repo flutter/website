@@ -187,11 +187,11 @@ guarding usages of deferred code behind `loadLibrary()`
    ```dart
    // box.dart
    import 'package:flutter/material.dart';
-   
+
    /// A simple blue 30x30 box.
    class DeferredBox extends StatelessWidget {
      const DeferredBox({super.key});
-   
+
      @override
      Widget build(BuildContext context) {
        return Container(
@@ -219,23 +219,23 @@ guarding usages of deferred code behind `loadLibrary()`
    ```dart
    import 'package:flutter/material.dart';
    import 'box.dart' deferred as box;
-   
+
    class SomeWidget extends StatefulWidget {
      const SomeWidget({super.key});
-   
+
      @override
      State<SomeWidget> createState() => _SomeWidgetState();
    }
-   
+
    class _SomeWidgetState extends State<SomeWidget> {
      late Future<void> _libraryFuture;
-   
+
      @override
      void initState() {
        super.initState();
        _libraryFuture = box.loadLibrary();
      }
-   
+
      @override
      Widget build(BuildContext context) {
        return FutureBuilder<void>(
