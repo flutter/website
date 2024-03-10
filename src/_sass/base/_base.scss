@@ -247,6 +247,12 @@ dd {
   overflow-x: auto;
 }
 
+// If table head has empty children, just hide it
+// since markdown-it-table doesn't support headless tables.
+thead:has(th:empty) {
+  display: none;
+}
+
 .searchbar {
   > * {
     max-width: 640px;
@@ -324,8 +330,5 @@ aside {
       margin: 0.5rem 0;
       font-size: 1.5rem;
     }  
-  }
-  .code-excerpt__code:last-child, div.highlighter-rouge {
-    margin-bottom: 0;
   }
 }

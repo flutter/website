@@ -15,7 +15,7 @@
   <li class="nav-header">{{entry.header}}</li>
 {%- elsif entry.children -%}
 
-  {% assign class = class | append: ' collapsable' -%}
+  {% assign class = class | append: ' collapsible' -%}
 
   {% if isActive or entry.expanded -%}
     {% assign expanded = 'true' -%}
