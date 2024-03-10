@@ -39,7 +39,7 @@ RUN BUNDLE_WITHOUT="test development" bundle install --jobs=4 --retry=2
 
 ENV NODE_ENV=production
 COPY package.json ./
-RUN npm ci
+RUN npm install
 
 COPY ./ ./
 
