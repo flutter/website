@@ -38,7 +38,7 @@ final class CheckLinksCommand extends Command<int> {
 /// The port that the firebase emulator runs on by default.
 /// This must match what's declared in the `firebase.json`
 /// and can't be 5000, since Airplay uses it.
-const int _emulatorPort = 5500;
+const int _emulatorPort = 5525;
 
 /// The path from root where the linkcheck skip list lives.
 final String _skipFilePath = path.join(
