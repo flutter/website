@@ -77,6 +77,8 @@ jobs:
           submodules: recursive
       - name: Build site and check links
         run: make build BUILD_CONFIGS=_config.yml
+      - name: Enable Corepack
+        run: corepack enable
       - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8
         with:
           node-version: ${{ env.NODE_VERSION }}
