@@ -14,7 +14,6 @@ on:
 permissions: read-all
 
 env:
-  NODE_ENV: production
   NODE_VERSION: 20
 
 jobs:
@@ -75,7 +74,7 @@ jobs:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
         with:
           submodules: recursive
-      - name: Build site and check links
+      - name: Build site
         run: make build BUILD_CONFIGS=_config.yml
       - name: Enable Corepack
         run: corepack enable
