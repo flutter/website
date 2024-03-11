@@ -38,7 +38,7 @@ final class CheckLinksCommand extends Command<int> {
 /// The port that the firebase emulator runs on by default.
 /// This must match what's declared in the `firebase.json`
 /// and can't be 5000, since Airplay uses it.
-const int _emulatorPort = 5525;
+const int _emulatorPort = 5500;
 
 /// The path from root where the linkcheck skip list lives.
 final String _skipFilePath = path.join(
@@ -57,18 +57,22 @@ Future<int> _checkLinks({bool checkExternal = false}) async {
   }
 
   print('Starting the Firebase hosting emulator asynchronously...');
-  final emulatorProcess = await Process.start('npx', const [
-    'firebase',
-    'emulators:start',
-    '--only',
-    'hosting',
-    '--project',
-    'default',
-  ]);
-
-  // Ignore the stdin and stderr output from the emulator.
-  unawaited(emulatorProcess.stdout.drain<void>());
-  unawaited(emulatorProcess.stderr.drain<void>());
+  final emulatorProcess = await Process.start(
+    'npm',
+    const [
+      'exec',
+      '--',
+      'firebase',
+      'emulators:start',
+      '--only',
+      'hosting',
+      '--project',
+      'default',
+      '--log-verbosity',
+      'QUIET',
+    ],
+    mode: ProcessStartMode.inheritStdio,
+  );
 
   // Give the emulator a few seconds to start up.
   await Future<void>.delayed(const Duration(seconds: 3));
