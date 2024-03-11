@@ -270,8 +270,8 @@ Future<void> main() {
 
 
 [`IntegrationTestWidgetsFlutterBinding`]: {{site.api}}/flutter/package-integration_test_integration_test/IntegrationTestWidgetsFlutterBinding-class.html
-[Scrolling]: {{site.url}}/cookbook/testing/widget/scrolling
+[Scrolling]: /cookbook/testing/widget/scrolling
 [`Timeline`]: {{site.api}}/flutter/flutter_driver/Timeline-class.html
 [`TimelineSummary`]: {{site.api}}/flutter/flutter_driver/TimelineSummary-class.html
 [`traceAction()`]: {{site.api}}/flutter/flutter_driver/FlutterDriver/traceAction.html
-[Debugging performance for web apps]: {{site.url}}/perf/web-performance
+[Debugging performance for web apps]: /perf/web-performance

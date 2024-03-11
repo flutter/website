@@ -8,7 +8,7 @@ plugin packages as well, but because plugins contain
 native code they often also require other kinds of tests
 to test all of their functionality.
 
-[usual types of Flutter tests]: {{site.url}}/testing/overview
+[usual types of Flutter tests]: /testing/overview
 
 {{site.alert.note}}
   To learn how to test your plugin code, read on.
@@ -17,7 +17,7 @@ to test all of their functionality.
   [Plugins in Flutter tests][].
 {{site.alert.end}}
 
-[Plugins in Flutter tests]: {{site.url}}/testing/plugins-in-tests
+[Plugins in Flutter tests]: /testing/plugins-in-tests
 
 ## Types of plugin tests
 
@@ -88,13 +88,13 @@ native UI interactions.
 
 [Espresso]: {{site.repo.packages}}/tree/main/packages/espresso
 [GoogleTest]: {{site.github}}/google/googletest
-[integration tests]: {{site.url}}/cookbook/testing/integration/introduction
+[integration tests]: /cookbook/testing/integration/introduction
 [JUnit]: {{site.github}}/junit-team/junit4/wiki/Getting-started
-[mocked in tests]: {{site.url}}/testing/plugins-in-tests#mock-the-platform-channel
-[plugin-tests]: {{site.url}}/packages-and-plugins/developing-packages#step-1-create-the-package-1
-[unit tests]: {{site.url}}/cookbook/testing/unit/introduction
-[widget tests]: {{site.url}}/cookbook/testing/widget/introduction
-[won't be loaded]: {{site.url}}/testing/plugins-in-tests
+[mocked in tests]: /testing/plugins-in-tests#mock-the-platform-channel
+[plugin-tests]: /packages-and-plugins/developing-packages#step-1-create-the-package-1
+[unit tests]: /cookbook/testing/unit/introduction
+[widget tests]: /cookbook/testing/widget/introduction
+[won't be loaded]: /testing/plugins-in-tests
 [XCTest]: {{site.apple-dev}}/documentation/xctest
 [XCUITest]: {{site.apple-dev}}/library/archive/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/09-ui_testing.html
 
@@ -112,7 +112,7 @@ For information on running this type of test, check out the
 [integration test documentation][].
 The commands must be run in the `example` directory. 
 
-[integration test documentation]: {{site.url}}/cookbook/testing/integration/introduction#5-run-the-integration-test
+[integration test documentation]: /cookbook/testing/integration/introduction#5-run-the-integration-test
 
 ### Native unit tests
 
@@ -203,7 +203,7 @@ Some extra considerations for plugin testing:
     then call the plugin's public API and validate the results.
 
 [Android Studio test UI]: {{site.android-dev}}/studio/test/test-in-android-studio
-[general advice]: {{site.url}}/testing/overview
+[general advice]: /testing/overview
 [Visual Studio test UI]: https://learn.microsoft.com/en-us/visualstudio/test/getting-started-with-unit-testing?view=vs-2022&tabs=dotnet%2Cmstest#run-unit-tests
 [Xcode Test UI]: {{site.apple-dev}}/library/archive/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/05-running_tests.html
 

@@ -11,7 +11,7 @@ description: Adding plugin as part of your Flutter tests.
   [Testing plugins][].
 {{site.alert.end}}
 
-[Testing plugins]: {{site.url}}/testing/testing-plugins
+[Testing plugins]: /testing/testing-plugins
 
 Almost all [Flutter plugins][] have two parts:
 
@@ -22,7 +22,7 @@ Almost all [Flutter plugins][] have two parts:
 In fact, the native (or host) language code distinguishes
 a plugin package from a standard package.
 
-[Flutter plugins]: {{site.url}}/packages-and-plugins/using-packages
+[Flutter plugins]: /packages-and-plugins/using-packages
 
 Building and registering the host portion of a plugin
 is part of the Flutter application build process,
@@ -38,8 +38,8 @@ this often results in errors like the following:
 MissingPluginException(No implementation found for method someMethodName on channel some_channel_name)
 ```
 
-[Dart unit tests]: {{site.url}}/cookbook/testing/unit/introduction
-[integration tests]: {{site.url}}/cookbook/testing/integration/introduction
+[Dart unit tests]: /cookbook/testing/unit/introduction
+[integration tests]: /cookbook/testing/integration/introduction
 [widget tests]: {{site.api}}/flutter/flutter_test/flutter_test-library.html
 
 {{site.alert.note}}
@@ -49,7 +49,7 @@ MissingPluginException(No implementation found for method someMethodName on chan
   so tests shouldn't rely on it.
 {{site.alert.end}}
 
-[only use Dart]: {{site.url}}/packages-and-plugins/developing-packages#dart-only-platform-implementations
+[only use Dart]: /packages-and-plugins/developing-packages#dart-only-platform-implementations
 
 When unit testing code that uses plugins,
 there are several options to avoid this exception.
@@ -72,7 +72,7 @@ This has several advantages:
   how the plugin is implemented,
   or even for non-plugin package dependencies.
 
-[mocking]: {{site.url}}/cookbook/testing/unit/mocking
+[mocking]: /cookbook/testing/unit/mocking
 
 ## Mock the plugin's public API
 
@@ -109,7 +109,7 @@ so you can't change how it's called.
 However, if possible,
 you should mock the dependency that uses the plugin instead.
 
-[federated plugin]: {{site.url}}/packages-and-plugins/developing-packages#federated-plugins
+[federated plugin]: /packages-and-plugins/developing-packages#federated-plugins
 
 ## Mock the platform channel
 
@@ -148,6 +148,6 @@ rather than tests of code using plugins.
 You might also want to check out
 [Testing plugins][].
 
-[platform channels]: {{site.url}}/platform-integration/platform-channels
+[platform channels]: /platform-integration/platform-channels
 [`TestDefaultBinaryMessenger`]: {{site.api}}/flutter/flutter_test/TestDefaultBinaryMessenger-class.html
-[Testing plugins]: {{site.url}}/testing/testing-plugins
+[Testing plugins]: /testing/testing-plugins

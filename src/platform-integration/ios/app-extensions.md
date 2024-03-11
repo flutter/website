@@ -284,17 +284,17 @@ extensions with your Flutter iOS app, check out the
 [Adding a Home Screen Widget to your Flutter app][lab]
 codelab.
 
-[Adding a Flutter Screen]: {{site.url}}/add-to-app/ios/add-flutter-screen?tab=vc-uikit-swift-tab#alternatively---create-a-flutterviewcontroller-with-an-implicit-flutterengine
+[Adding a Flutter Screen]: /add-to-app/ios/add-flutter-screen?tab=vc-uikit-swift-tab#alternatively---create-a-flutterviewcontroller-with-an-implicit-flutterengine
 [App Group]: {{site.apple-dev}}/documentation/xcode/configuring-app-groups
 [Apple's documentation]: {{site.apple-dev}}/app-extensions/
 [Compiling the Engine]: https://github.com/flutter/flutter/wiki/Compiling-the-engine
 [Core Spotlight]: {{site.apple-dev}}/documentation/corespotlight
-[Deep Linking]:{{site.url}}/ui/navigation/deep-linking
+[Deep Linking]:/ui/navigation/deep-linking
 [lab]: {{site.codelabs}}/flutter-home-screen-widgets
-[leverage]: {{site.url}}/platform-integration/ios/apple-frameworks
+[leverage]: /platform-integration/ios/apple-frameworks
 [`path_provider`]: {{site.pub-pkg}}/path_provider
 [pub.dev]: {{site.pub-pkg}}
-[read and write files]: {{site.url}}/cookbook/persistence/reading-writing-files
+[read and write files]: /cookbook/persistence/reading-writing-files
 [`shared_preference_app_group`]: {{site.pub-pkg}}/shared_preference_app_group
 [`sqflite`]: {{site.pub-pkg}}/sqflite
 [WidgetKit]: {{site.apple-dev}}/documentation/widgetkit

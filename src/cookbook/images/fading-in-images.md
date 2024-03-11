@@ -70,7 +70,7 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-![Fading In Image Demo]({{site.url}}/assets/images/docs/cookbook/fading-in-images.gif){:.site-mobile-screenshot}
+![Fading In Image Demo](/assets/images/docs/cookbook/fading-in-images.gif){:.site-mobile-screenshot}
 
 ## From asset bundle
 
@@ -129,10 +129,10 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-![Asset fade-in]({{site.url}}/assets/images/docs/cookbook/fading-in-asset-demo.gif){:.site-mobile-screenshot}
+![Asset fade-in](/assets/images/docs/cookbook/fading-in-asset-demo.gif){:.site-mobile-screenshot}
 
 
-[Adding assets and images]: {{site.url}}/ui/assets/assets-and-images
+[Adding assets and images]: /ui/assets/assets-and-images
 [`FadeInImage`]: {{site.api}}/flutter/widgets/FadeInImage-class.html
 [`FadeInImage.assetNetwork()`]: {{site.api}}/flutter/widgets/FadeInImage/FadeInImage.assetNetwork.html
 [`transparent_image`]: {{site.pub-pkg}}/transparent_image

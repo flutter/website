@@ -312,5 +312,5 @@ and more information on Flutter at
 [Flutter for UIKit developers][].
 
 [Learning Dart as a Swift developer]: {{site.dart-site}}/guides/language/coming-from/swift-to-dart
-[Flutter for SwiftUI developers]: {{site.url}}/get-started/flutter-for/swiftui-devs
-[Flutter for UIKit developers]: {{site.url}}/get-started/flutter-for/uikit-devs
+[Flutter for SwiftUI developers]: /get-started/flutter-for/swiftui-devs
+[Flutter for UIKit developers]: /get-started/flutter-for/uikit-devs

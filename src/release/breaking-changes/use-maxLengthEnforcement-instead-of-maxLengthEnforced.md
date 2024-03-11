@@ -243,7 +243,7 @@ Relevant PR:
 * [PR 63754][]: Fix TextField crashed with composing and maxLength set
 * [PR 68086][]: Introduce `MaxLengthEnforcement`
 
-[`MaxLengthEnforcement` design doc]: {{site.url}}/go/max-length-enforcement
+[`MaxLengthEnforcement` design doc]: /go/max-length-enforcement
 [`MaxLengthEnforcement`]: {{site.api}}/flutter/services/MaxLengthEnforcement.html
 [`LengthLimitingTextInputFormatter`]: {{site.api}}/flutter/services/LengthLimitingTextInputFormatter-class.html
 [`maxLength`]: {{site.api}}/flutter/services/LengthLimitingTextInputFormatter/maxLength.html

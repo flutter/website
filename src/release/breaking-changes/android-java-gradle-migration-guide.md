@@ -11,7 +11,7 @@ If you've recently upgraded Android Studio to the Flamingo
 release and have either run or built an existing Android app,
 you might have run into an error similar to the following:
 
-![Error dialog in Android Studio Flamingo: MultipleCompilationErrorsException]({{site.url}}/assets/images/docs/releaseguide/android-studio-flamingo-error.png){:width="80%"}
+![Error dialog in Android Studio Flamingo: MultipleCompilationErrorsException](/assets/images/docs/releaseguide/android-studio-flamingo-error.png){:width="80%"}
 
 The terminal output for this error is
 similar to the following:
@@ -59,13 +59,13 @@ as follows:
 1. In Android Studio, open the `android` folder.
    This should bring up the following dialog: 
 
-   ![Dialog prompting you to upgrade Gradle]({{site.url}}/assets/images/docs/releaseguide/android-studio-flamingo-upgrade-alert.png){:width="50%"}
+   ![Dialog prompting you to upgrade Gradle](/assets/images/docs/releaseguide/android-studio-flamingo-upgrade-alert.png){:width="50%"}
 
    Update to a Gradle release between 7.3 through 7.6.1, inclusive.
 
 1. Follow the guided workflow to update Gradle.
 
-   ![Workflow to upgrade Gradle]({{site.url}}/assets/images/docs/releaseguide/android-studio-flamingo-gradle-upgrade.png){:width="85%"}
+   ![Workflow to upgrade Gradle](/assets/images/docs/releaseguide/android-studio-flamingo-gradle-upgrade.png){:width="85%"}
 
 ## Solution #2: Manual fix at the command line
 

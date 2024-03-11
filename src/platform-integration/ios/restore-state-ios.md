@@ -20,6 +20,6 @@ and the [VeggieSeasons][] code sample.
 
 [a bit of extra setup]: {{site.api}}/flutter/services/RestorationManager-class.html#state-restoration-on-ios
 [`RestorationManager`]: {{site.api}}/flutter/services/RestorationManager-class.html
-[State restoration on Android]: {{site.url}}/platform-integration/android/restore-state-android
+[State restoration on Android]: /platform-integration/android/restore-state-android
 [VeggieSeasons]: {{site.repo.samples}}/tree/main/veggieseasons
 

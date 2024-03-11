@@ -9,6 +9,6 @@ class MyWidget extends StatelessWidget {
     return
         // #docregion AccessString
         Text(AppLocalizations.of(context)!.hello('John'));
-        // #enddocregion AccessString
+    // #enddocregion AccessString
   }
 }

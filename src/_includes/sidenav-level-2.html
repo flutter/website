@@ -43,7 +43,7 @@
       {% if isActive -%}
         {% include sidenav-level-3.html parent_id=id children=entry.children active_entries=active_entries -%}
       {% else -%}
-        {% include_cached sidenav-level-3.html parent_id=id children=entry.children -%}
+        {% include sidenav-level-3.html parent_id=id children=entry.children -%}
       {% endif -%}
     </ul>
   </li>

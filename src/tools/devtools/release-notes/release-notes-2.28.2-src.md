@@ -7,7 +7,7 @@ To learn more about DevTools, check out the
 
 This was a cherry-pick release on top of DevTools 2.28.1.
 To learn about the improvements included in DevTools 2.28.1, please read the
-[release notes]({{site.url}}/tools/devtools/release-notes/release-notes-2.28.1).
+[release notes](/tools/devtools/release-notes/release-notes-2.28.1).
 
 ## DevTools Extension updates
 

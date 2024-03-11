@@ -118,7 +118,6 @@ manually, without using Flutter's Android Studio plugin,
 follow these steps:
 
 #### Create a Flutter module
-{:.no_toc}
 
 Let's assume that you have an existing Android app at
 `some/path/MyApp`, and that you want your Flutter
@@ -159,7 +158,6 @@ module an embeddable Android library.
 {{site.alert.end}}
 
 #### Java version requirement
-{:.no_toc}
 
 Flutter requires your project to declare compatibility with Java 11 or later.
 
@@ -180,7 +178,6 @@ android {
 ```
 
 #### Centralize repository settings
-{:.no_toc}
 
 Starting with Gradle 7, Android recommends using centralized repository
 declarations in `settings.gradle` instead of project or module level
@@ -450,8 +447,8 @@ Your app now includes the Flutter module as a dependency.
 Continue to the [Adding a Flutter screen to an Android app][] guide.
 
 [`abiFilters`]: {{site.android-dev}}/reference/tools/gradle-api/4.2/com/android/build/api/dsl/Ndk#abiFilters:kotlin.collections.MutableSet
-[Adding a Flutter screen to an Android app]: {{site.url}}/add-to-app/android/add-flutter-screen
+[Adding a Flutter screen to an Android app]: /add-to-app/android/add-flutter-screen
 [Flutter plugin]: https://plugins.jetbrains.com/plugin/9212-flutter
 [local repository]: https://docs.gradle.org/current/userguide/declaring_repositories.html#sub:maven_local
-[only supports]: {{site.url}}/resources/faq#what-devices-and-os-versions-does-flutter-run-on
-[Using Flutter in China]: {{site.url}}/community/china
+[only supports]: /resources/faq#what-devices-and-os-versions-does-flutter-run-on
+[Using Flutter in China]: /community/china

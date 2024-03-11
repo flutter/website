@@ -5,12 +5,9 @@ description: Install Flutter and get started. Downloads available for Windows, m
 os-list: [Windows, macOS, Linux, ChromeOS]
 ---
 
-<!-- ## Choose your development platform to get started
-{:.no_toc} -->
-
 <div class="card-deck mb-8">
 {% for os in page.os-list %}
-  <a class="card" id="install-{{os | remove: ' ' | downcase}}" href="{{site.url}}/get-started/install/{{os | remove: ' ' | downcase}}">
+  <a class="card" id="install-{{os | remove: ' ' | downcase}}" href="/get-started/install/{{os | remove: ' ' | downcase}}">
     <div class="card-body">
       <header class="card-title text-center m-0">
         <span class="d-block h1">

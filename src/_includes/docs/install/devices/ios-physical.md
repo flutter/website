@@ -1,5 +1,4 @@
 #### Set up your target physical iOS device
-{:.no_toc}
 
 To deploy your Flutter app to a physical iPhone or iPad,
 you need to do the following:
@@ -11,7 +10,6 @@ you need to do the following:
   if your app uses Flutter plugins.
 
 ##### Create your Apple ID and Apple Developer account
-{:.no_toc}
 
 To test deploying to a physical iOS device, you need an Apple ID.
 
@@ -31,7 +29,6 @@ complete the first step and move on to the next section.
 [Apple ID]: https://support.apple.com/en-us/HT204316
 
 ##### Attach your physical iOS device to your Mac {#attach}
-{:.no_toc}
 
 Configure your physical iOS device to connect to Xcode.
 
@@ -47,7 +44,6 @@ Configure your physical iOS device to connect to Xcode.
 1. When prompted, unlock your iOS device.
 
 ##### Enable Developer Mode on iOS 16 or later
-{:.no_toc}
 
 Starting with iOS 16, Apple requires you to enable **[Developer Mode][]**
 to protect against malicious software.
@@ -71,7 +67,6 @@ Enable Developer Mode before deploying to a device running iOS 16 or later.
 1. Unlock your iOS device.
 
 ##### Enable developer code signing certificates
-{:.no_toc}
 
 To deploy to a physical iOS device, you need to establish trust with your
 Mac and the iOS device.
@@ -140,7 +135,6 @@ Follow the Xcode signing flow to provision your project.
 ![Check the app's Bundle ID][]{:.mw-100}
 
 ##### Enable trust of your Mac and iOS device {#trust}
-{:.no_toc}
 
 When you attach your physical iOS device for the first time,
 enable trust for both your Mac and the Development Certificate
@@ -150,7 +144,6 @@ You should enabled trust of your Mac on your iOS device when
 you [attached the device to your Mac](#attach).
 
 ###### Enable developer certificate for your iOS devices
-{:.no_toc}
 
 Enabling certificates varies in different versions of iOS.
 
@@ -214,7 +207,6 @@ If prompted, enter your Mac password into the
 **codesign wants to access key...** dialog and tap **Always Allow**.
 
 #### Set up wireless debugging on your iOS device (Optional)
-{:.no_toc}
 
 To debug your device using a Wi-Fi connection, follow this procedure.
 
@@ -241,7 +233,7 @@ extend the timeout. The timeout defaults to 10 seconds.
 To extend the timeout, change the value to an integer greater than 10.
 
 ```terminal
-flutter run --device-timeout 60
+$ flutter run --device-timeout 60
 ```
 
 {{site.alert.secondary}}
@@ -255,13 +247,13 @@ flutter run --device-timeout 60
 
 {{site.alert.end}}
 
-[Check the app's Bundle ID]: {{site.url}}/assets/images/docs/setup/xcode-unique-bundle-id.png
+[Check the app's Bundle ID]: /assets/images/docs/setup/xcode-unique-bundle-id.png
 [Choosing a Membership]: {{site.apple-dev}}/support/compare-memberships
-[Trust Mac]: {{site.url}}/assets/images/docs/setup/trust-computer.png
-[Xcode account add]: {{site.url}}/assets/images/docs/setup/xcode-account.png
+[Trust Mac]: /assets/images/docs/setup/trust-computer.png
+[Xcode account add]: /assets/images/docs/setup/xcode-account.png
 [Developer Mode]: {{site.apple-dev}}/documentation/xcode/enabling-developer-mode-on-a-device
 [Apple's Developer Forums]: {{site.apple-dev}}/forums/
-[Debugging your add-to-app module]: {{site.url}}/add-to-app/debugging/#wireless-debugging
+[Debugging your add-to-app module]: /add-to-app/debugging/#wireless-debugging
 [Apple's documentation on pairing a wireless device with Xcode]: https://help.apple.com/xcode/mac/9.0/index.html?localePath=en.lproj#/devbc48d1bad
 [Apple Developer]: {{site.apple-dev}}/programs/
 [Apple Developer Account]: {{site.apple-dev}}/account

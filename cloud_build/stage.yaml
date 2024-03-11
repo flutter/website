@@ -9,7 +9,7 @@ steps:
         set -e
 
         echo "Building the website using a makefile..."
-        make build BUILD_CONFIGS=_config.yml,_config_stage.yml
+        make build BUILD_CONFIGS=_config.yml
   - name: gcr.io/flutter-dev-230821/firebase-ghcli
     entrypoint: '/bin/bash'
     args:

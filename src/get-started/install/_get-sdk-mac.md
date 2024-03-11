@@ -79,7 +79,7 @@ For example:
     • Android SDK at /Users/dash/Library/Android/sdk
     <strong>✗ Android SDK is missing command line tools; download from https://goo.gl/XxQghQ</strong>
     • Try re-installing or updating your Android SDK,
-      visit {{site.url}}/setup/#android-setup for detailed instructions.
+      visit /setup/#android-setup for detailed instructions.
 </pre>
 
 The following sections describe how to perform these tasks
@@ -124,9 +124,9 @@ For additional download options, check out `flutter help precache`.
 {% include_relative _analytics.md %}
 
 [Flutter repo]: {{site.repo.flutter}}
-[SDK archive]: {{site.url}}/release/archive
+[SDK archive]: /release/archive
 [Snap Store]: https://snapcraft.io/store
 [snapd]: https://snapcraft.io/flutter
 [Update your path]: #update-your-path
-[Upgrading Flutter]: {{site.url}}/release/upgrade
+[Upgrading Flutter]: /release/upgrade
 [Mac computers with Apple silicon]: https://support.apple.com/en-us/HT211814

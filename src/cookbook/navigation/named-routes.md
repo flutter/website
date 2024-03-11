@@ -14,8 +14,8 @@ js:
   [Limitations][] in the [navigation overview][] page.
 {{site.alert.end}}
 
-[Limitations]: {{site.url}}/ui/navigation#limitations
-[navigation overview]: {{site.url}}/ui/navigation
+[Limitations]: /ui/navigation#limitations
+[navigation overview]: /ui/navigation
 
 In the [Navigate to a new screen and back][] recipe,
 you learned how to navigate to a new screen by creating a new route and
@@ -239,7 +239,7 @@ class SecondScreen extends StatelessWidget {
 
 
 [`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
-[Navigate to a new screen and back]: {{site.url}}/cookbook/navigation/navigation-basics
+[Navigate to a new screen and back]: /cookbook/navigation/navigation-basics
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`Navigator.pop()`]: {{site.api}}/flutter/widgets/Navigator/pop.html
 [`Navigator.pushNamed()`]: {{site.api}}/flutter/widgets/Navigator/pushNamed.html

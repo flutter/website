@@ -16,7 +16,7 @@ primary source to aid in migration. A
 [quick reference sheet][] is available as well.
 
 [Deprecation Policy]: {{site.repo.flutter}}/wiki/Tree-hygiene#deprecation
-[quick reference sheet]: {{site.url}}/go/deprecations-removed-after-3-3
+[quick reference sheet]: /go/deprecations-removed-after-3-3
 
 ## Changes
 
@@ -252,8 +252,8 @@ Relevant PRs:
 * Deprecated in [#78588][]
 * Removed in [#111715][]
 
-[In-depth migration guide available]: {{site.url}}/release/breaking-changes/default-desktop-scrollbars
-[Exposing & Updating ScrollBehaviors]: {{site.url}}/go/exposing-scroll-behaviors
+[In-depth migration guide available]: /release/breaking-changes/default-desktop-scrollbars
+[Exposing & Updating ScrollBehaviors]: /go/exposing-scroll-behaviors
 [`ScrollBehavior`]: {{site.api}}/flutter/widgets/ScrollBehavior-class.html
 [Scrollbars should be always visible and instantiated by default on web and desktop]: {{site.repo.flutter}}/issues/40107
 [#76739]: {{site.repo.flutter}}/pull/76739

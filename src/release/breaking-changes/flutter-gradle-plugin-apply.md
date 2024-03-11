@@ -32,9 +32,53 @@ buildscripts.
 
 ### android/settings.gradle
 
-Replace the contents of `<app-src>/android/settings.gradle` with the below,
+First, find the values of the Android Gradle Plugin (AGP) and Kotlin that the project currently 
+uses. Unless they have been moved, they are likely defined in the buildscript block of the 
+`<app-src>/android/build.gradle` file. As an example, consider the `build.gradle` file from 
+a new Flutter app created before this change:
+
+```gradle
+buildscript {
+    ext.kotlin_version = '1.7.10'
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.3.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = '../build'
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(':app')
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
+```
+
+The AGP version is the number that comes at the end of the line 
+`classpath 'com.android.tools.build:gradle:7.3.0'`, so `7.3.0` 
+in this case. Similarly, the kotlin version comes at the end of the line
+`ext.kotlin_version = '1.7.10'`, in this case `1.7.10`.
+
+Next, replace the contents of `<app-src>/android/settings.gradle` with the below,
 remembering to replace `{agpVersion}` and `{kotlinVersion}` with previously
-used values:
+identified values:
 
 ```gradle
 pluginManagement {
@@ -44,10 +88,9 @@ pluginManagement {
         def flutterSdkPath = properties.getProperty("flutter.sdk")
         assert flutterSdkPath != null, "flutter.sdk not set in local.properties"
         return flutterSdkPath
-    }
-    settings.ext.flutterSdkPath = flutterSdkPath()
+    }()
 
-    includeBuild("${settings.ext.flutterSdkPath}/packages/flutter_tools/gradle")
+    includeBuild("$flutterSdkPath/packages/flutter_tools/gradle")
 
     repositories {
         google()

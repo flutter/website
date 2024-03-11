@@ -191,11 +191,11 @@ search the archive for a similar issue before posting a new one.
 [StackOverflow]: {{site.so}}
 [#dart]: {{site.so}}/questions/tagged/dart
 [#flutter]: {{site.so}}/questions/tagged/flutter
-[Android Java Gradle migration guide]: {{site.url}}/release/breaking-changes/android-java-gradle-migration-guide
+[Android Java Gradle migration guide]: /release/breaking-changes/android-java-gradle-migration-guide
 [community support channels]: #community-support
 [java binary path]: {{site.repo.flutter}}/issues/106416#issuecomment-1522198064
 [so java version]: {{site.so}}/questions/75328050/
-[set up VS Code]: {{site.url}}/get-started/editor
+[set up VS Code]: /get-started/editor
 [config path]: https://dartcode.org/docs/configuring-path-and-environment-variables/
 [sdkmanager]: {{site.android-dev}}/studio/command-line/sdkmanager
 [windows path]: https://www.wikihow.com/Change-the-PATH-Environment-Variable-on-Windows

@@ -282,10 +282,10 @@ In addition to Flutter framework changes in the 1.2 release, we've made a number
 
 *   Dart & Flutter support for Visual Studio Code: versions [2.21](https://dartcode.org/releases/v2-21/), [2.22](https://dartcode.org/releases/v2-22/), [2.23](https://dartcode.org/releases/v2-23/) and [2.24](https://dartcode.org/releases/v2-24/).
 *   Dart & Flutter support for IntelliJ & Android Studio: [January, 2019](https://groups.google.com/forum/#!searchin/flutter-dev/nilay%7Csort:date/flutter-dev/VCfGRhDsHgs/JcYKxkxHBAAJ) and [February, 2019](https://groups.google.com/forum/#!searchin/flutter-dev/nilay%7Csort:date/flutter-dev/VCfGRhDsHgs/JcYKxkxHBAAJ) releases.
-*   Dart DevTools [alpha release]({{site.url}}/tools/devtools).
+*   Dart DevTools [alpha release](/tools/devtools).
 
 ## Full Issue List
 
-You can see [the full list of PRs committed in this release]({{site.url}}/release/release-notes/changelogs/changelog-1.2.1).
+You can see [the full list of PRs committed in this release](/release/release-notes/changelogs/changelog-1.2.1).
 
 [Android App Bundles]: https://developer.android.com/guide/app-bundle/
