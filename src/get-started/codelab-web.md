@@ -29,7 +29,8 @@ you can complete this tutorial.
 You don't need previous experience with Dart,
 mobile, or web programming.
 
-## What you'll build {:.no_toc}
+## What you'll build
+{:.no_toc}
 
 You'll implement a simple web app that displays a sign in screen.
 The screen contains three text fields:  first name,
@@ -44,7 +45,7 @@ to animate in from the bottom of the screen.
 The animated GIF shows how the app works at the completion of this lab.
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What you'll learn</h4>
+  <h4>What you'll learn</h4>
 
 * How to write a Flutter app that looks natural on the web.
 * Basic structure of a Flutter app.
@@ -54,7 +55,7 @@ The animated GIF shows how the app works at the completion of this lab.
 {{site.alert.end}}
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What you'll use</h4>
+  <h4>What you'll use</h4>
 
   You need three pieces of software to complete this lab:
 
@@ -261,7 +262,8 @@ From your IDE, editor, or at the command line,
 </li>
 </ol>
 
-### Observations {:.no_toc}
+### Observations
+{:.no_toc}
 
 * The entire code for this example lives in the
   `lib/main.dart` file.
@@ -292,7 +294,8 @@ all of your edits will be made to the private
 `_SignUpFormState` class.
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">Fun fact</h4>
+  <h4>Fun fact</h4>
+
 The Dart compiler enforces privacy for any identifier
 prefixed with an underscore. For more information,
 see the [Effective Dart Style Guide][].
@@ -380,7 +383,8 @@ You get that behavior for free.
 
 </ol>
 
-### Observations {:.no_toc}
+### Observations
+{:.no_toc}
 
 * The `_showWelcomeScreen()` function is used in the `build()`
   method as a callback function. Callback functions are often
@@ -499,7 +503,8 @@ but becomes enabled when all three text fields contain
 </li>
 </ol>
 
-### Observations {:.no_toc}
+### Observations
+{:.no_toc}
 
 * Calling a widget's `setState()` method tells Flutter that the
   widget needs to be updated on screen.
@@ -1018,7 +1023,8 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
 }
 ```
 
-### Observations {:.no_toc}
+### Observations
+{:.no_toc}
 
 * You can use an `AnimationController` to run any animation.
 * `AnimatedBuilder` rebuilds the widget tree when the value

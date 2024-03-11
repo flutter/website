@@ -1,6 +1,7 @@
 {% assign terminal=include.terminal %}
 
-### Remove Flutter from your macOS PATH {:.no_toc}
+### Remove Flutter from your macOS PATH
+{:.no_toc}
 
 To remove Flutter commands from {{terminal}},
 remove Flutter to the `PATH` environment variable.

@@ -1,6 +1,7 @@
 {% assign terminal=include.terminal %}
 
-### Download then install Flutter {:.no_toc}
+### Download then install Flutter
+{:.no_toc}
 
 {% assign os = include.os %}
 {% assign osl = include.os | downcase %}

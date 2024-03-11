@@ -46,7 +46,8 @@ You can also log your app using the `dart:developer` [`log()`][] function.
 This allows you to include greater granularity and more information
 in the logging output.
 
-### Example 1 {:.no_toc}
+### Example 1
+{:.no_toc}
 
 <?code-excerpt "lib/main.dart (log)"?>
 ```dart
@@ -66,7 +67,8 @@ parameter on the `log()` call, JSON encode the object
 you want to send, and pass the encoded string to the
 error parameter.
 
-### Example 2 {:.no_toc}
+### Example 2
+{:.no_toc}
 
 <?code-excerpt "lib/app_data.dart (PassAppData)"?>
 ```dart
@@ -102,7 +104,8 @@ To set programmatic breakpoints:
 
    **Example 3** illustrates this.
 
-### Example 3 {:.no_toc}
+### Example 3
+{:.no_toc}
 
 <?code-excerpt "lib/debugger.dart"?>
 ```dart

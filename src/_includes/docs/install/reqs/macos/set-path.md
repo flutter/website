@@ -2,7 +2,8 @@
 {% assign target = include.target %}
 {% assign dir = include.dir %}
 
-### Add Flutter to your `PATH` {:.no_toc}
+### Add Flutter to your `PATH`
+{:.no_toc}
 
 To run Flutter commands in {{terminal}},
 add Flutter to the `PATH` environment variable.
