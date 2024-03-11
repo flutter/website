@@ -36,12 +36,9 @@
     padding-bottom: bootstrap.bs-spacer(2);
     font-size: bootstrap.$font-size-sm;
 
-    // Indent subsequent lines.
-    margin-left: 1rem;
-    text-indent: -1rem;
-
     .nav {
       padding-top: 0.5rem;
+      padding-left: 1rem;
       display: block;
     }
   }
