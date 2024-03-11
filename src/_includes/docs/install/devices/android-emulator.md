@@ -1,5 +1,4 @@
 #### Set up the Android emulator
-{:.no_toc}
 
 {% include docs/help-link.md location='android-emulator' section='#android-setup' %}
 

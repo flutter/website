@@ -1,5 +1,4 @@
 #### Set up your target Android device
-{:.no_toc}
 
 {% include docs/help-link.md location='android-device' section='#android-setup' %}
 

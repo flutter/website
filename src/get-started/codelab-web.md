@@ -45,7 +45,7 @@ to animate in from the bottom of the screen.
 The animated GIF shows how the app works at the completion of this lab.
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What you'll learn</h4>
+  <h4>What you'll learn</h4>
 
 * How to write a Flutter app that looks natural on the web.
 * Basic structure of a Flutter app.
@@ -55,7 +55,7 @@ The animated GIF shows how the app works at the completion of this lab.
 {{site.alert.end}}
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What you'll use</h4>
+  <h4>What you'll use</h4>
 
   You need three pieces of software to complete this lab:
 
@@ -294,7 +294,8 @@ all of your edits will be made to the private
 `_SignUpFormState` class.
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">Fun fact</h4>
+  <h4>Fun fact</h4>
+
 The Dart compiler enforces privacy for any identifier
 prefixed with an underscore. For more information,
 see the [Effective Dart Style Guide][].

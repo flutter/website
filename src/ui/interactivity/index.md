@@ -8,7 +8,7 @@ diff2html: true
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What you'll learn</h4>
+  <h4>What you'll learn</h4>
 
 * How to respond to taps.
 * How to create a custom widget.
@@ -80,7 +80,7 @@ telling the framework to redraw the widget.
 ## Creating a stateful widget
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What's the point?</h4>
+  <h4>What's the point?</h4>
 
 * A stateful widget is implemented by two classes:
     a subclass of `StatefulWidget` and a subclass of `State`.
@@ -322,7 +322,7 @@ be managed, and lists other available interactive widgets.
 ## Managing state
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What's the point?</h4>
+  <h4>What's the point?</h4>
 
 * There are different approaches for managing state.
 * You, as the widget designer, choose which approach to use.

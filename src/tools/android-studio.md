@@ -60,7 +60,7 @@ differs between Android Studio and IntelliJ.
  1. Click **Finish**.
 
 {{site.alert.secondary}}
-  <h4 id="note" class="no_toc">Setting the company domain</h4>
+  <h4 id="note">Setting the company domain</h4>
 
   When creating a new app, some Flutter IDE plugins ask for an
   organization name in reverse domain order,
