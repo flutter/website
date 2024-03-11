@@ -13,7 +13,7 @@ Consider updating the number of languages when touching this page.
 {% assign languageCount = '115' -%}
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What you'll learn</h4>
+  <h4>What you'll learn</h4>
 
   * How to track the device's locale (the user's preferred language).
   * How to enable locale-specific Material or Cupertino widgets.

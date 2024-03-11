@@ -9,7 +9,6 @@ As of the October 2019 release of macOS Catalina (macOS 10.15),
 Zsh or `zsh` is the default shell for macOS.
 
 #### Check and set `zsh` as default
-{:.no_toc}
 
 1. To verify `zsh` was set as the default macOS shell,
    run the [Directory Services command line utility][dscl].

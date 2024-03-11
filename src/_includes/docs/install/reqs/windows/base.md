@@ -30,14 +30,12 @@ you must have the following version of Windows and the listed
 software packages.
 
 #### Operating system
-{:.no_toc}
 
 Flutter supports {{site.devmin.windows}} or later.
 These versions of Windows should include the required
 [Windows PowerShell][] {{site.appmin.powershell}} or later.
 
 #### Development tools
-{:.no_toc}
 
 Download and install the Windows version of the following packages:
 
