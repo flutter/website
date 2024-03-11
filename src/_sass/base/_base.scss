@@ -295,8 +295,8 @@ summary {
 }
 
 main {
-  ol + img, ul + img, ol + p, ul + p,
-  p + p + img, li:not(.toc-entry):last-child, ul + p:last-child {
+  ol + img, ul + img, ol + p, ul + p, p + p + img,
+  li:not(.toc-entry, .breadcrumb-item):last-child, ul + p:last-child {
     margin-bottom: 1rem;
   }
 }
