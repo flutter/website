@@ -5,7 +5,7 @@ short-title: Staggered
 ---
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What you'll learn</h4>
+  <h4>What you'll learn</h4>
 
 * A staggered animation consists of sequential or overlapping
     animations.
@@ -30,7 +30,7 @@ have gaps, where no changes occur.
 This guide shows how to build a staggered animation in Flutter.
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">Examples</h4>
+  <h4>Examples</h4>
 
   This guide explains the basic_staggered_animation example.
   You can also refer to a more complex example,
@@ -84,7 +84,7 @@ After running forward, the animation runs in reverse.
 ## Basic structure of a staggered animation
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What's the point?</h4>
+  <h4>What's the point?</h4>
 
 * All of the animations are driven by the same
     [`AnimationController`][].

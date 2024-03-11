@@ -146,7 +146,6 @@ call the [`debugDumpApp()`][] function.
    Hot reload re-renders your app.
 
 #### Example 4: Call `debugDumpApp()`
-{:.no_toc}
 
 <?code-excerpt "lib/dump_app.dart"?>
 ```dart
@@ -231,7 +230,6 @@ To dump the render tree:
    Hot reload re-renders your app.
 
 #### Example 5: Call `debugDumpRenderTree()`
-{:.no_toc}
 
 <?code-excerpt "lib/dump_render_tree.dart"?>
 ```dart
@@ -337,7 +335,6 @@ then call the superclass method.
 To debug a compositing issue, use [`debugDumpLayerTree()`][].
 
 #### Example 6: Call `debugDumpLayerTree()`
-{:.no_toc}
 
 <?code-excerpt "lib/dump_layer_tree.dart"?>
 ```dart
@@ -433,7 +430,6 @@ You can also use the [`debugFocusChanges`][] boolean property to enable
 extensive logging when the focus changes.
 
 #### Example 7: Call `debugDumpFocusTree()`
-{:.no_toc}
 
 <?code-excerpt "lib/dump_focus_tree.dart"?>
 ```dart
@@ -485,7 +481,6 @@ To obtain a dump of the Semantics tree:
 1. Use the [`debugDumpSemanticsTree()`][] function.
 
 #### Example 8: Call `debugDumpSemanticsTree()`
-{:.no_toc}
 
 <?code-excerpt "lib/dump_semantic_tree.dart"?>
 ```dart
@@ -562,8 +557,7 @@ This flag can be found in the `rendering` library.
 You can enable it at any time and affects all painting while `true`.
 Consider adding it to the top of your `void main()` entry point.
 
-#### Example 8
-{:.no_toc}
+#### Example 9
 
 See an example in the following code:
 
@@ -744,7 +738,6 @@ set the `showPerformanceOverlay` property to `true` on the
 constructor:
 
 #### Example 10
-{:.no_toc}
 
 <?code-excerpt "lib/performance_overlay.dart (PerfOverlay)"?>
 ```dart
