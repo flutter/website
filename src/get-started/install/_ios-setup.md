@@ -142,7 +142,6 @@ Configure your physical iOS device to connect to Xcode.
 1. When prompted, unlock your iOS device.
 
 #### Enable Developer Mode on iOS 16 or later
-{:.no_toc}
 
 Starting with iOS 16, Apple requires you to enable **[Developer Mode][]**
 to protect against malicious software.

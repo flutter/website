@@ -29,8 +29,7 @@ you can complete this tutorial.
 You don't need previous experience with Dart,
 mobile, or web programming.
 
-## What you'll build
-{:.no_toc}
+## What you'll build {:.no_toc}
 
 You'll implement a simple web app that displays a sign in screen.
 The screen contains three text fields:  first name,
@@ -262,8 +261,7 @@ From your IDE, editor, or at the command line,
 </li>
 </ol>
 
-### Observations
-{:.no_toc}
+### Observations {:.no_toc}
 
 * The entire code for this example lives in the
   `lib/main.dart` file.
@@ -382,8 +380,7 @@ You get that behavior for free.
 
 </ol>
 
-### Observations
-{:.no_toc}
+### Observations {:.no_toc}
 
 * The `_showWelcomeScreen()` function is used in the `build()`
   method as a callback function. Callback functions are often
@@ -502,8 +499,7 @@ but becomes enabled when all three text fields contain
 </li>
 </ol>
 
-### Observations
-{:.no_toc}
+### Observations {:.no_toc}
 
 * Calling a widget's `setState()` method tells Flutter that the
   widget needs to be updated on screen.
@@ -1022,8 +1018,7 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
 }
 ```
 
-### Observations
-{:.no_toc}
+### Observations {:.no_toc}
 
 * You can use an `AnimationController` to run any animation.
 * `AnimatedBuilder` rebuilds the widget tree when the value
