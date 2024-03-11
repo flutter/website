@@ -16,6 +16,6 @@ node_modules
 .dart_tool
 .flutter-plugins
 .flutter-plugins-dependencies
-.packages
+package-lock.json
 pubspec.lock
 tmp/

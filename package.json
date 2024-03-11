@@ -2,14 +2,22 @@
   "name": "docs.flutter.dev",
   "version": "0.0.0",
   "private": true,
-  "description": "Flutter docs",
-  "scripts": {},
+  "description": "Source for https://docs.flutter.dev",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/flutter/website.git"
   },
+  "engines": {
+    "node": ">=20.10.0",
+    "pnpm": ">=8.14.0"
+  },
+  "packageManager": "pnpm@8.15.4",
   "dependencies": {
     "bootstrap-scss": "^4.6.2",
     "diff2html-cli": "^5.2.15"
+  },
+  "devDependencies": {
+    "firebase-tools": "^13.4.1"
   }
 }
