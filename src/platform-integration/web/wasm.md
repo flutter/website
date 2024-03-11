@@ -35,7 +35,8 @@ Revisit this page for the latest updates.
 
 ### Background
 
-To compile Dart and Flutter to Wasm, you need a browser that supports [WasmGC][].
+To run a Flutter app that has been compiled to Wasm,
+you need a browser that supports [WasmGC][].
 The Wasm standard plans to add WasmGC to help garbage-collected languages
 like Dart execute code in an efficient manner.
 
@@ -58,8 +59,8 @@ To experiment with Wasm in your own apps, follow the steps below.
 
 #### Switch to the Flutter `beta` channel and upgrade
 
-Wasm compilation is available on the latest builds of the `beta` channel
-(prefered) or `master`.
+Wasm compilation is available on the latest builds of
+the `beta` channel (preferred) or `master`.
 
 To learn more about Flutter build release channels and how to switch to
 the `beta` channel, check out the
@@ -167,7 +168,6 @@ Wasm support has some limitations.
 The following list covers some common issues.
 
 #### Chrome 119 or later
- 
 As mentioned in [Load it in a browser](#load-it-in-a-browser), 
 to run Flutter web apps compiled to Wasm, 
 use _Chrome 119 or later_.
@@ -181,12 +181,12 @@ and the latest version of Chrome.
   Firefox versions 120 and later were previously able to run Flutter/Wasm, but
   they're [currently experiencing a bug][] that is blocking compatibility with Wasm.
 - **Why not Safari?**
-  Safari does not support Wasm-GC yet; [this bug][] tracks their
+  Safari does not support WasmGC yet; [this bug][] tracks their
   implementation efforts.
   
 {{site.alert.warning}}
-  Flutter with Wasm can't run on the iOS version of any browser.
-  All browsers on iOS are forced to use the WebKit,
+  Flutter compiled to Wasm can't run on the iOS version of any browser.
+  All browsers on iOS are required to use the WebKit,
   and can't use their own browser engine.
 {{site.alert.end}}
 
@@ -195,7 +195,8 @@ and the latest version of Chrome.
 
 #### Requires JS-interop to access browser and JS APIs {#js-interop-wasm}
 
-To support Wasm, Dart has shifted how it targets browser and JavaScript APIs.
+To support compilation to Wasm, Dart has
+shifted how it enables interop with browser and JavaScript APIs.
 This shift prevents Dart code that uses `dart:html` or `package:js`
 from compiling to Wasm.
 
