@@ -91,7 +91,7 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-family: $site-font-family-gsans;
+    font-family: $site-font-family-alt;
     font-size: 1.125rem;
     font-weight: 500;
   }
@@ -136,12 +136,6 @@
   &.alert-danger {
     width: auto;
     background-color: $alert-danger-bg;
-  }
-
-  &.alert-obsolete {
-    width: auto;
-    background-color: $gray-dark;
-    color: $white-base;
   }
 }
 
