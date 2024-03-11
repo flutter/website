@@ -17,16 +17,14 @@ which will potentially result in frequent changes.
 Revisit this page for the latest updates.
 
 {{site.alert.note}}
-  **Wasm is now in beta!**
+  **Support for Wasm is now in beta!**
   : Wasm and WebAssembly garbage collection (WasmGC) are now 
     available on the Flutter [`beta` channel][] and [`master` channel][].
-{{site.alert.end}}
 
-{{site.alert.note}}
   **Dart's next-gen Web interop is now stable!**
   : Migrate your packages to [`package:web`][] and [`dart:js_interop`][]
     to make them compatible with Wasm. Read the
-    [Requires JS-interop](#requires-js-interop-to-access-browser-and-js-apis)
+    [Requires JS-interop](#js-interop-wasm)
     section to learn more. 
 {{site.alert.end}}
 
@@ -87,7 +85,7 @@ Experimental options
 
 Try the default template [sample app][], or choose any Flutter application
 that has been migrated to be
-[compatible with Wasm](#requires-js-interop-to-access-browser-and-js-apis).
+[compatible with Wasm](#js-interop-wasm).
 
 [sample app]: /get-started/test-drive
 
@@ -195,7 +193,7 @@ and the latest version of Chrome.
 [currently experiencing a bug]: https://bugzilla.mozilla.org/show_bug.cgi?id=1788206
 [this bug]: https://bugs.webkit.org/show_bug.cgi?id=247394
 
-#### Requires JS-interop to access browser and JS APIs
+#### Requires JS-interop to access browser and JS APIs {#js-interop-wasm}
 
 To support Wasm, Dart has shifted how it targets browser and JavaScript APIs.
 This shift prevents Dart code that uses `dart:html` or `package:js`
