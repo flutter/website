@@ -3,7 +3,7 @@ title: Support for WebAssembly (Wasm)
 description: >-
   Current status of Flutter's experimental support for WebAssembly (Wasm).
 short-title: Wasm
-last-update: March 8, 2024
+last-update: March 12, 2024
 ---
 
 **_Last updated {{page.last-update}}_**
@@ -195,8 +195,8 @@ and the latest version of Chrome.
 
 #### Requires JS-interop to access browser and JS APIs {#js-interop-wasm}
 
-To support compilation to Wasm, Dart has
-shifted how it enables interop with browser and JavaScript APIs.
+To support compilation to Wasm, [Dart has shifted][JS interop]
+how it enables interop with browser and JavaScript APIs.
 This shift prevents Dart code that uses `dart:html` or `package:js`
 from compiling to Wasm.
 
