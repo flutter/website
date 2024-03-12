@@ -102,7 +102,7 @@ and boldface to work.
     • Android SDK at /Users/dash/Library/Android/sdk
     <strong>✗ Android SDK is missing command line tools; download from https://goo.gl/XxQghQ</strong>
     • Try re-installing or updating your Android SDK,
-      visit {{site.url}}/setup/#android-setup for detailed instructions.
+      visit /setup/#android-setup for detailed instructions.
 </pre>
 
 The following sections describe how to perform these tasks
@@ -116,6 +116,6 @@ run the `flutter doctor` command again.
 [Flutter repo]: {{site.repo.flutter}}
 [install Flutter from the Snap Store]: https://snapcraft.io/flutter
 [Installing snapd]: https://snapcraft.io/docs/installing-snapd
-[SDK archive]: {{site.url}}/release/archive
+[SDK archive]: /release/archive
 [Update your path]: #update-your-path
-[Upgrading Flutter]: {{site.url}}/release/upgrade
+[Upgrading Flutter]: /release/upgrade

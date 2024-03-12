@@ -109,7 +109,7 @@ then extract the SDK.
 
    When finished, the Flutter SDK should be in the `{{flutter-path}}` directory.
 
-[SDK archive]: {{site.url}}/release/archive
+[SDK archive]: /release/archive
 
 {% case os %}
 {% when 'Windows' %}

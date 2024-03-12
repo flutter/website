@@ -17,7 +17,7 @@ js:
   you might check out [Common Flutter errors][].
 {{site.alert.end}}
 
-[Common Flutter errors]: {{site.url}}/testing/common-errors
+[Common Flutter errors]: /testing/common-errors
 
 When someone learning Flutter asks you why some widget
 with `width: 100` isn't 100 pixels wide,
@@ -1131,7 +1131,7 @@ class Example26 extends Example {
       'If all of Row\'s children are wrapped in Expanded widgets, each Expanded has a size proportional to its flex parameter, '
       'and only then each Expanded widget forces its child to have the Expanded\'s width.'
       '\n\n'
-      'In other words, Expanded ignores the preffered width of its children.';
+      'In other words, Expanded ignores the preferred width of its children.';
 
   @override
   Widget build(BuildContext context) {

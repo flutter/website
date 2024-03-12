@@ -40,7 +40,7 @@ files
 [PR 721][] shows the migration work for the
 [Flutter Gallery][] app.
 
-[Build and release a Windows app]: {{site.url}}/deployment/windows#updating-the-apps-version-number
-[run loop migration guide]: {{site.url}}/release/breaking-changes/windows-run-loop
+[Build and release a Windows app]: /deployment/windows#updating-the-apps-version-number
+[run loop migration guide]: /release/breaking-changes/windows-run-loop
 [PR 721]: {{site.repo.gallery-archive}}/pull/721/files
 [Flutter Gallery]: {{site.gallery-archive}}

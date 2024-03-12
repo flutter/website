@@ -50,7 +50,7 @@ Turn the scrollable area into a wheel! [`ListWheelScrollView`][]
 [`GridView`]: {{site.api}}/flutter/widgets/GridView-class.html
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
 [`ListWheelScrollView`]: {{site.api}}/flutter/widgets/ListWheelScrollView-class.html
-[scrolling page]: {{site.url}}/ui/widgets/scrolling
+[scrolling page]: /ui/widgets/scrolling
 [`SingleChildScrollView`]: {{site.api}}/flutter/widgets/SingleChildScrollView-class.html
 
 {% comment %}
@@ -78,8 +78,8 @@ For more information, check out
 and the [Sliver classes][].
 
 [`CustomScrollView`]: {{site.api}}/flutter/widgets/CustomScrollView-class.html
-[Sliver classes]: {{site.url}}/ui/widgets/layout#Sliver%20widgets
-[Using slivers to achieve fancy scrolling]: {{site.url}}/ui/layout/scrolling/slivers
+[Sliver classes]: /ui/widgets/layout#Sliver%20widgets
+[Using slivers to achieve fancy scrolling]: /ui/layout/scrolling/slivers
 
 ## Nested scrolling widgets
 

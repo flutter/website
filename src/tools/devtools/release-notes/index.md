@@ -27,5 +27,5 @@ found at `/src/_data/devtools_releases.yml`.
 {% assign releases = site.data.devtools_releases.releases %}
 
 {% for release in releases -%}
-* [{{release}} release notes]({{site.url}}/tools/devtools/release-notes/release-notes-{{release}})
+* [{{release}} release notes](/tools/devtools/release-notes/release-notes-{{release}})
 {% endfor -%}

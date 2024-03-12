@@ -10,7 +10,7 @@ short-title: Fragment shaders
   instructions apply to both.
 {{site.alert.end}}
 
-[Impeller]: {{site.url}}/perf/impeller
+[Impeller]: /perf/impeller
 
 Custom shaders can be used to provide rich graphical effects
 beyond those provided by the Flutter SDK.
@@ -275,7 +275,7 @@ this is more efficient than creating a new
 For a more detailed guide on writing performant shaders,
 check out [Writing efficient shaders][] on GitHub.
 
-[Shader compilation jank]: {{site.url}}/perf/shader
+[Shader compilation jank]: /perf/shader
 [Writing efficient shaders]: {{site.repo.engine}}/blob/main/impeller/docs/shader_optimization.md
 
 ### Other resources

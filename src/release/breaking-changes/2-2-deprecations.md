@@ -16,7 +16,7 @@ primary source to aid in migration. A
 [quick reference sheet][] is available as well.
 
 [Deprecation Policy]: {{site.repo.flutter}}/wiki/Tree-hygiene#deprecation
-[quick reference sheet]: {{site.url}}/go/deprecations-removed-after-2-2
+[quick reference sheet]: /go/deprecations-removed-after-2-2
 
 ## Changes
 
@@ -267,7 +267,7 @@ Relevant PRs:
 * Deprecated in [#48547][]
 * Removed in [#83924][]
 
-[Update the TextTheme API]: {{site.url}}/go/update-text-theme-api
+[Update the TextTheme API]: /go/update-text-theme-api
 [`TextTheme`]: {{site.api}}/flutter/material/TextTheme-class.html
 [Migrate TextTheme to 2018 APIs]: {{site.repo.flutter}}/issues/45745
 [#48547]: {{site.repo.flutter}}/pull/48547
@@ -323,7 +323,7 @@ Relevant PRs:
 * Deprecated in [#48547][]
 * Removed in [#83924][]
 
-[Update the TextTheme API]: {{site.url}}/go/update-text-theme-api
+[Update the TextTheme API]: /go/update-text-theme-api
 [`Typography`]: {{site.api}}/flutter/material/Typography-class.html
 [Migrate TextTheme to 2018 APIs]: {{site.repo.flutter}}/issues/45745
 [#48547]: {{site.repo.flutter}}/pull/48547

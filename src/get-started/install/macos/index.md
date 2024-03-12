@@ -2,41 +2,46 @@
 title: Choose your first type of app
 description: Configure your system to develop Flutter on macOS.
 short-title: macOS
-target-list: [Desktop, Mobile-iOS, Mobile-Android, Web]
+target-list: [Desktop, iOS, Android, Web]
 js: [{url: '/assets/js/temp/macos-install-redirector.js'}]
 ---
 
 {% assign os = 'macos' -%}
-{% assign recommend = 'mobile-iOS' %}
+{% assign recommend = 'iOS' %}
 {% capture rec-target -%}
-[{{recommend | remove: 'mobile-' | strip}}]({{site.url}}/get-started/install/{{os | remove: ' ' | downcase}}/{{recommend | downcase}})
+[{{recommend | strip}}]({{site.url}}/get-started/install/{{os | downcase}}/{{recommend | downcase}})
 {%- endcapture %}
 
 <div class="card-deck mb-8">
 {% for target in page.target-list %}
-  <a class="card" id="install-{{os | remove: ' ' | downcase}}" href="{{site.url}}/get-started/install/{{os | remove: ' ' | downcase}}/{{target | downcase}}">
+{% case target %}
+{% when "iOS", "Android" %}
+{% assign targetlink = target | downcase | prepend: 'mobile-' %}
+{% else %}
+{% assign targetlink = target | downcase %}
+{% endcase %}
+  <a class="card card-app-type"
+     id="install-{{os | downcase}}"
+     href="{{site.url}}/get-started/install/{{os | downcase}}/{{targetlink}}">
     <div class="card-body">
       <header class="card-title text-center m-0">
         <span class="d-block h1">
           {% assign icon = target | downcase -%}
-          {% if icon == 'desktop' -%}
+          {% case icon %}
+          {% when 'desktop' -%}
             <span class="material-symbols">laptop_mac</span>
-          {% elsif icon == 'mobile-ios' -%}
+          {% when 'ios' -%}
             <span class="material-symbols">phone_iphone</span>
-          {% elsif icon == 'mobile-android' -%}
+          {% when 'android' -%}
             <span class="material-symbols">phone_android</span>
-          {% else -%}
+          {% when 'web' -%}
             <span class="material-symbols">open_in_browser</span>
-          {% endif -%}
+          {% endcase -%}
         </span>
         <span class="text-muted text-nowrap">
-        {% if target == "Desktop" or target == "Web" %}
-        {% assign target = "-" | append: target %}
-        {% endif -%}
-        {% assign mac_target = target | split: "-" | last %}
-        {{ mac_target }}
+        {{ target }}
         </span>
-        {% if icon == 'mobile-ios' -%}
+        {% if icon == 'ios' -%}
           <div class="card-subtitle">Recommended</div>
         {% endif %}
       </header>

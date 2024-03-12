@@ -66,7 +66,7 @@ is to set `GrGLProgramBuilder::finalize` in the tracing
 with `--trace-skia` enabled.
 The following screenshot shows an example timeline tracing.
 
-![A tracing screenshot verifying jank]({{site.url}}/assets/images/docs/perf/render/tracing.png){:width="100%"}
+![A tracing screenshot verifying jank](/assets/images/docs/perf/render/tracing.png){:width="100%"}
 
 ## What do we mean by "first run"?
 
@@ -157,12 +157,12 @@ Even better, you can put those tests into a
 CI (continuous integration) system so the
 SkSLs are generated and tested automatically over the lifetime of an app.
 
-[integration tests]: {{site.url}}/cookbook/testing/integration/introduction
+[integration tests]: /cookbook/testing/integration/introduction
 
 {{site.alert.note}}
   The integration_test package is now the recommended way
   to write integration tests. Refer to the
-  [Integration testing]({{site.url}}/testing/integration-tests/)
+  [Integration testing](/testing/integration-tests/)
   page for details.
 {{site.alert.end}}
 

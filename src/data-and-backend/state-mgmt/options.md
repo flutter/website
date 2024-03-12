@@ -27,7 +27,7 @@ Things to review before selecting an approach.
 * [Flutter Architecture Samples][], by Brian Egan
 
 [Flutter Architecture Samples]: https://fluttersamples.com/
-[Introduction to state management]: {{site.url}}/data-and-backend/state-mgmt/intro
+[Introduction to state management]: /data-and-backend/state-mgmt/intro
 [Pragmatic State Management in Flutter]: {{site.yt.watch}}?v=d_m5csmrf7I
 
 ## Provider
@@ -36,7 +36,7 @@ Things to review before selecting an approach.
 * [Provider package][]
 
 [Provider package]: {{site.pub-pkg}}/provider
-[Simple app state management]: {{site.url}}/data-and-backend/state-mgmt/simple
+[Simple app state management]: /data-and-backend/state-mgmt/simple
 
 ## Riverpod
 
@@ -56,7 +56,7 @@ The low-level approach to use for widget-specific, ephemeral state.
 * [Adding interactivity to your Flutter app][], a Flutter tutorial
 * [Basic state management in Google Flutter][], by Agung Surya
 
-[Adding interactivity to your Flutter app]: {{site.url}}/ui/interactivity
+[Adding interactivity to your Flutter app]: /ui/interactivity
 [Basic state management in Google Flutter]: {{site.medium}}/@agungsurya/basic-state-management-in-google-flutter-6ee73608f96d
 
 ## InheritedWidget &amp; InheritedModel

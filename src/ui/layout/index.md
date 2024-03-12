@@ -13,7 +13,7 @@ diff2html: true
 <style>dl, dd { margin-bottom: 0; }</style>
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What's the point?</h4>
+  <h4>What's the point?</h4>
 
 * Widgets are classes used to build UIs.
 * Widgets are used for both layout and UI elements.
@@ -291,12 +291,13 @@ color to white and the text to dark grey to mimic a Material app.
 
 <div class="row">
 <div class="col-md-6" markdown="1">
+
   That's it! When you run the app, you should see _Hello World_.
 
   App source code:
 
-* [Material app]({{examples}}/layout/base)
-* [Non-Material app]({{examples}}/layout/non_material)
+  * [Material app]({{examples}}/layout/base)
+  * [Non-Material app]({{examples}}/layout/non_material)
 
 </div>
 <div class="col-md-6">
@@ -317,7 +318,7 @@ widgets vertically or horizontally. You can use a
 and a `Column` widget to arrange widgets vertically.
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What's the point?</h4>
+  <h4>What's the point?</h4>
 
 * `Row` and `Column` are two of the most commonly used layout patterns.
 * `Row` and `Column` each take a list of child widgets.
@@ -785,7 +786,7 @@ color or image.
 
 <div class="row">
 <div class="col-lg-6" markdown="1">
-  <h4 class="no_toc">Summary (Container)</h4>
+  <h4>Summary (Container)</h4>
 
 * Add padding, margins, borders
 * Change background color or image
@@ -801,7 +802,6 @@ color or image.
 </div>
 
 #### Examples (Container)
-{:.no_toc}
 
 This layout consists of a column with two rows, each containing
 2 images. A [`Container`][] is used to change the background color
@@ -871,7 +871,6 @@ detects that its contents are too long to fit the render box,
 it automatically scrolls.
 
 #### Summary (GridView)
-{:.no_toc}
 
 * Lays widgets out in a grid
 * Detects when the column content exceeds the render box
@@ -894,7 +893,6 @@ it automatically scrolls.
 {{site.alert.end}}
 
 #### Examples (GridView)
-{:.no_toc}
 
 <div class="row">
 <div class="col-lg-6" markdown="1">
@@ -946,7 +944,6 @@ provides scrolling when its content is too long for
 its render box.
 
 #### Summary (ListView)
-{:.no_toc}
 
 * A specialized [`Column`][] for organizing a list of boxes
 * Can be laid out horizontally or vertically
@@ -955,7 +952,6 @@ its render box.
   supports scrolling
 
 #### Examples (ListView)
-{:.no_toc}
 
 <div class="row">
 <div class="col-lg-6" markdown="1">
@@ -1029,7 +1025,6 @@ widget&mdash;often an image. The widgets can completely
 or partially overlap the base widget.
 
 #### Summary (Stack)
-{:.no_toc}
 
 * Use for widgets that overlap another widget
 * The first widget in the list of children is the base widget;
@@ -1038,7 +1033,6 @@ or partially overlap the base widget.
 * You can choose to clip children that exceed the render box
 
 #### Examples (Stack)
-{:.no_toc}
 
 <div class="row">
 <div class="col-lg-7" markdown="1">
@@ -1116,7 +1110,6 @@ For a list of supported elevation values, see [Elevation][] in the
 Specifying an unsupported value disables the drop shadow entirely.
 
 #### Summary (Card)
-{:.no_toc}
 
 * Implements a [Material card][]
 * Used for presenting related nuggets of information
@@ -1127,7 +1120,6 @@ Specifying an unsupported value disables the drop shadow entirely.
 * From the [Material library][]
 
 #### Examples (Card)
-{:.no_toc}
 
 <div class="row">
 <div class="col-lg-6" markdown="1">
@@ -1207,7 +1199,6 @@ and trailing icons. `ListTile` is most commonly used in
 [`Card`][] or [`ListView`][], but can be used elsewhere.
 
 #### Summary (ListTile)
-{:.no_toc}
 
 * A specialized row that contains up to 3 lines of text and
   optional icons
@@ -1215,7 +1206,6 @@ and trailing icons. `ListTile` is most commonly used in
 * From the [Material library][]
 
 #### Examples (ListTile)
-{:.no_toc}
 
 <div class="row">
 <div class="col-lg-6" markdown="1">
@@ -1291,7 +1281,7 @@ The following resources might help when writing layout code.
 
 [Cupertino library]: {{api}}/cupertino/cupertino-library.html
 [`CupertinoPageScaffold`]: {{api}}/cupertino/CupertinoPageScaffold-class.html
-[Adding assets and images]: {{site.url}}/ui/assets/assets-and-images
+[Adding assets and images]: /ui/assets/assets-and-images
 [API reference docs]: {{api}}
 [`build()`]: {{api}}/widgets/StatelessWidget/build.html
 [`Card`]: {{api}}/material/Card-class.html
@@ -1307,11 +1297,11 @@ The following resources might help when writing layout code.
 [Flutter in Focus]: {{site.yt.watch}}?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 [`GridView`]: {{api}}/widgets/GridView-class.html
 [`GridTile`]: {{api}}/material/GridTile-class.html
-[HTML/CSS Analogs in Flutter]: {{site.url}}/get-started/flutter-for/web-devs
+[HTML/CSS Analogs in Flutter]: /get-started/flutter-for/web-devs
 [`Icon`]: {{api}}/material/Icons-class.html
 [`Image`]: {{api}}/widgets/Image-class.html
-[Layout tutorial]: {{site.url}}/ui/layout/tutorial
-[layout widgets]: {{site.url}}/ui/widgets/layout
+[Layout tutorial]: /ui/layout/tutorial
+[layout widgets]: /ui/widgets/layout
 [`ListTile`]: {{api}}/material/ListTile-class.html
 [`ListView`]: {{api}}/widgets/ListView-class.html
 [`MainAxisAlignment`]: {{api}}/rendering/MainAxisAlignment.html
@@ -1327,10 +1317,10 @@ The following resources might help when writing layout code.
 [`Stack`]: {{api}}/widgets/Stack-class.html
 [`Table`]: {{api}}/widgets/Table-class.html
 [`Text`]: {{api}}/widgets/Text-class.html
-[tutorial]: {{site.url}}/ui/layout/tutorial
+[tutorial]: /ui/layout/tutorial
 [widgets library]: {{api}}/widgets/widgets-library.html
-[Widget catalog]: {{site.url}}/ui/widgets
-[Debugging layout issues visually]: {{site.url}}/tools/devtools/inspector#debugging-layout-issues-visually
-[Understanding constraints]: {{site.url}}/ui/layout/constraints
-[Using the Flutter inspector]: {{site.url}}/tools/devtools/inspector
+[Widget catalog]: /ui/widgets
+[Debugging layout issues visually]: /tools/devtools/inspector#debugging-layout-issues-visually
+[Understanding constraints]: /ui/layout/constraints
+[Using the Flutter inspector]: /tools/devtools/inspector
 [Zero to One with Flutter]: {{site.medium}}/@mravn/zero-to-one-with-flutter-43b13fd7b354

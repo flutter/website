@@ -2379,18 +2379,18 @@ For more information on using the Firebase Cloud Messaging API,
 see the [`firebase_messaging`][] plugin documentation.
 
 
-[Add Flutter to existing app]: {{site.url}}/add-to-app
-[Animation & Motion widgets]: {{site.url}}/ui/widgets/animation
-[Animations tutorial]: {{site.url}}/ui/animations/tutorial
-[Animations overview]: {{site.url}}/ui/animations
+[Add Flutter to existing app]: /add-to-app
+[Animation & Motion widgets]: /ui/widgets/animation
+[Animations tutorial]: /ui/animations/tutorial
+[Animations overview]: /ui/animations
 [`AppLifecycleStatus` documentation]: {{site.api}}/flutter/dart-ui/AppLifecycleState.html
 [Apple's iOS design language]: {{site.apple-dev}}/design/resources/
 [`cloud_firestore`]: {{site.pub}}/packages/cloud_firestore
-[composing]: {{site.url}}/resources/architectural-overview#composition
-[Cupertino widgets]: {{site.url}}/ui/widgets/cupertino
-[developing packages and plugins]: {{site.url}}/packages-and-plugins/developing-packages
+[composing]: /resources/architectural-overview#composition
+[Cupertino widgets]: /ui/widgets/cupertino
+[developing packages and plugins]: /packages-and-plugins/developing-packages
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
-[DevTools]: {{site.url}}/tools/devtools
+[DevTools]: /tools/devtools
 [existing plugin]: {{site.pub}}/flutter/
 [`flutter_facebook_login`]: {{site.pub}}/packages/flutter_facebook_login
 [`google_mobile_ads`]: {{site.pub}}/packages/google_mobile_ads
@@ -2402,7 +2402,7 @@ see the [`firebase_messaging`][] plugin documentation.
 [`flutter_firebase_ui`]: {{site.pub}}/packages/flutter_firebase_ui
 [Firebase Messaging]: {{site.github}}/firebase/flutterfire/tree/master/packages/firebase_messaging
 [first party plugins]: {{site.pub}}/flutter/packages?q=firebase
-[Flutter cookbook]: {{site.url}}/cookbook
+[Flutter cookbook]: /cookbook
 [Flutter for Android Developers: How to design LinearLayout in Flutter]: https://proandroiddev.com/flutter-for-android-developers-how-to-design-linearlayout-in-flutter-5d819c0ddf1a
 [Flutter for Android Developers: How to design Activity UI in Flutter]: https://blog.usejournal.com/flutter-for-android-developers-how-to-design-activity-ui-in-flutter-4bf7b0de1e48
 [`geolocator`]: {{site.pub}}/packages/geolocator
@@ -2410,15 +2410,15 @@ see the [`firebase_messaging`][] plugin documentation.
 [`image_picker`]: {{site.pub}}/packages/image_picker
 [Intents]: #what-is-the-equivalent-of-an-intent-in-flutter
 [intl package]: {{site.pub}}/packages/intl
-[Introduction to declarative UI]: {{site.url}}/get-started/flutter-for/declarative
+[Introduction to declarative UI]: /get-started/flutter-for/declarative
 [Material Components]: {{site.material}}/develop/flutter
 [Material Design guidelines]: {{site.material}}/styles
 [optimized for all platforms]: {{site.material}}/develop
 [a plugin]: {{site.pub}}/packages/android_intent
 [pub.dev]: {{site.pub}}/flutter/packages/
-[Retrieve the value of a text field]: {{site.url}}/cookbook/forms/retrieve-input
+[Retrieve the value of a text field]: /cookbook/forms/retrieve-input
 [Shared_Preferences plugin]: {{site.pub}}/packages/shared_preferences
 [SQFlite]: {{site.pub}}/packages/sqflite
 [StackOverflow]: {{site.so}}/questions/44396075/equivalent-of-relativelayout-in-flutter
-[widget catalog]: {{site.url}}/ui/widgets/layout
-[Internationalizing Flutter apps]: {{site.url}}/ui/accessibility-and-internationalization/internationalization
+[widget catalog]: /ui/widgets/layout
+[Internationalizing Flutter apps]: /ui/accessibility-and-internationalization/internationalization

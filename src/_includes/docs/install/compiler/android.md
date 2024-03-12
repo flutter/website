@@ -1,11 +1,28 @@
 ## Configure Android development
 
+{% assign devos = include.devos %}
+{% assign target = include.target %}
+{% assign compiler = include.compiler %}
+{% assign time = include.time %}
+
+{% case devos %}
+{% when 'Windows' -%}
+   {% assign terminal='PowerShell' %}
+   {% assign prompt='C:\>' %}
+{% when "macOS" -%}
+   {% assign terminal='your Terminal' %}
+   {% assign prompt='$' %}
+{% else -%}
+   {% assign terminal='a shell' %}
+   {% assign prompt='$' %}
+{% endcase -%}
+
 ### Configure the Android toolchain in Android Studio
 
 {% include docs/help-link.md location='android-studio' section='#android-setup' %}
 
 {% comment %} Nav tabs {% endcomment -%}
-<ul class="nav nav-tabs" id="android-studio-start" role="tablist">
+<ul class="nav nav-tabs" id="android-studio-start-{{devos | downcase}}" role="tablist">
     <li class="nav-item">
         <a class="nav-link active" id="first-start-tab" href="#first-start" role="tab" aria-controls="first-start" aria-selected="true">First time using Android Studio</a>
     </li>
@@ -17,7 +34,11 @@
 {% comment %} Tab panes {% endcomment -%}
 <div class="tab-content">
 
-<div class="tab-pane active" id="first-start" role="tabpanel" aria-labelledby="first-start-tab" markdown="1">
+<div class="tab-pane active"
+     id="first-start"
+     role="tabpanel"
+     aria-labelledby="first-start-tab"
+     markdown="1">
 
 1. Start **Android Studio**.
 
@@ -35,7 +56,11 @@
 
 </div>
 
-<div class="tab-pane" id="later-start" role="tabpanel" aria-labelledby="later-start-tab" markdown="1">
+<div class="tab-pane"
+     id="later-start"
+     role="tabpanel"
+     aria-labelledby="later-start-tab"
+     markdown="1">
 
 1. Start **Android Studio**.
 
@@ -116,17 +141,19 @@
 
 <div class="tab-pane active" id="virtual" role="tabpanel" aria-labelledby="virtual-tab" markdown="1">
 
-{% include docs/install/devices/android-emulator.md os=include.os %}
+{% include docs/install/devices/android-emulator.md devos=devos %}
 
 </div>
 
 <div class="tab-pane" id="physical" role="tabpanel" aria-labelledby="physical-tab" markdown="1">
 
-{% include docs/install/devices/android-physical.md os=include.os %}
+{% include docs/install/devices/android-physical.md devos=devos %}
 
 </div>
 </div>
 {% comment %} End: Tab panes. {% endcomment -%}
+
+{% if time=="first" %}
 
 ### Agree to Android licenses
 
@@ -140,7 +167,7 @@ agree to the licenses of the Android SDK platform.
 1. Run the following command to enable signing licenses.
 
    ```terminal
-   $ flutter doctor --android-licenses
+   {{prompt}} flutter doctor --android-licenses
    ```
 
    If you accepted the Android Studio licenses at another time,
@@ -157,7 +184,6 @@ agree to the licenses of the Android SDK platform.
    read each with care.
 
 #### Troubleshooting licensing issues
-{:.no_toc}
 
 <details markdown="1">
 <summary>How to fix the error of finding Java install</summary>
@@ -207,3 +233,5 @@ source ~/.zshrc
 ```
 
 </details>
+
+{% endif %}

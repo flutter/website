@@ -54,8 +54,8 @@ The guide offers completed example files at the end.
 
 {{site.alert.end}}
 
-[set up your Flutter environment]: {{site.url}}/get-started/install
-[new-flutter-app]: {{site.url}}/get-started/test-drive
+[set up your Flutter environment]: /get-started/install
+[new-flutter-app]: /get-started/test-drive
 
 ## Choose a font
 
@@ -406,10 +406,10 @@ Download the Raleway and RobotoMono font files from [Google Fonts][].
 
 The resulting Flutter app should display the following screen.
 
-![Custom Fonts Demo]({{site.url}}/assets/images/docs/cookbook/fonts.png){:.site-mobile-screenshot}
+![Custom Fonts Demo](/assets/images/docs/cookbook/fonts.png){:.site-mobile-screenshot}
 
 [variable-fonts]: https://fonts.google.com/knowledge/introducing_type/introducing_variable_fonts
-[Export fonts from a package]: {{site.url}}/cookbook/design/package-fonts
+[Export fonts from a package]: /cookbook/design/package-fonts
 [`fontFamily`]: {{site.api}}/flutter/painting/TextStyle/fontFamily.html
 [fontStyle property]: {{site.api}}/flutter/painting/TextStyle/fontStyle.html
 [`FontStyle`]: {{site.api}}/flutter/dart-ui/FontStyle.html
@@ -418,4 +418,4 @@ The resulting Flutter app should display the following screen.
 [Google Fonts]: https://fonts.google.com
 [google_fonts]: {{site.pub-pkg}}/google_fonts
 [`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html
-[Using Themes to share colors and font styles]: {{site.url}}/cookbook/design/themes
+[Using Themes to share colors and font styles]: /cookbook/design/themes

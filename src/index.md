@@ -24,7 +24,7 @@ description: Get started with Flutter. Widgets, examples, updates, and API docs 
 **To see changes to the site since our last release,
 see [What's new][].**
 
-[What's new]: {{site.url}}/release/whats-new
+[What's new]: /release/whats-new
 
 ## New to Flutter?
 
@@ -32,7 +32,7 @@ Once you've gone through [Get started][],
 including [Write your first Flutter app][],
 here are some next steps.
 
-[Write your first Flutter app]: {{site.url}}/get-started/codelab
+[Write your first Flutter app]: /get-started/codelab
 
 ### Docs
 
@@ -56,16 +56,16 @@ Coming from another platform? Check out Flutter for:
 [FAQ][]
 : Get the answers to frequently asked questions.
 
-[Android]: {{site.url}}/get-started/flutter-for/android-devs
-[Building layouts]: {{site.url}}/ui/layout
-[FAQ]: {{site.url}}/resources/faq
-[Get started]: {{site.url}}/get-started/install
-[interactivity]: {{site.url}}/ui/interactivity
-[SwiftUI]: {{site.url}}/get-started/flutter-for/swiftui-devs
-[UIKit]: {{site.url}}/get-started/flutter-for/uikit-devs
-[React Native]: {{site.url}}/get-started/flutter-for/react-native-devs
-[Understanding constraints]: {{site.url}}/ui/layout/constraints
-[Xamarin.Forms]: {{site.url}}/get-started/flutter-for/xamarin-forms-devs
+[Android]: /get-started/flutter-for/android-devs
+[Building layouts]: /ui/layout
+[FAQ]: /resources/faq
+[Get started]: /get-started/install
+[interactivity]: /ui/interactivity
+[SwiftUI]: /get-started/flutter-for/swiftui-devs
+[UIKit]: /get-started/flutter-for/uikit-devs
+[React Native]: /get-started/flutter-for/react-native-devs
+[Understanding constraints]: /ui/layout/constraints
+[Xamarin.Forms]: /get-started/flutter-for/xamarin-forms-devs
 
 ### Videos
 
@@ -132,4 +132,4 @@ We release new videos almost every week on the Flutter YouTube channel:
 **The documentation on this site reflects the
 latest stable release of Flutter.**
 
-[videos]: {{site.url}}/resources/videos
+[videos]: /resources/videos

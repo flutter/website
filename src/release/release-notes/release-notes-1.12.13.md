@@ -398,7 +398,7 @@ In this release, we've merged a list of changes to support Android 10, including
 
 ## Add to App feature
 
-We've made a significant upgrade to Add-to-App, the feature that allows you to integrate a Flutter module into your Android or iOS app. Can't wait to try it? Check out the [Add-to-App documentation]({{site.url}}/add-to-app). 
+We've made a significant upgrade to Add-to-App, the feature that allows you to integrate a Flutter module into your Android or iOS app. Can't wait to try it? Check out the [Add-to-App documentation](/add-to-app). 
 
 [41666]({{site.repo.flutter}}/pull/41666) Generate projects using the new Android embedding
 
@@ -2345,7 +2345,7 @@ We encourage you to check the
 [Migrating your plugin to the new APIs][] documentation,
 and upgrade your plugins accordingly.
 
-[Migrating your plugin to the new APIs]: {{site.url}}/release/breaking-changes/plugin-api-migration
+[Migrating your plugin to the new APIs]: /release/breaking-changes/plugin-api-migration
 
 [1984]({{site.github}}/flutter/plugins/pull/1984) Remove Flutterfire plugins (moved to FirebaseExtended)
 
@@ -2400,7 +2400,7 @@ including adding the ability to pass intent flags
 (contributed by a community member!),
 and upgrading it to the [new plugin API][].
 
-[new plugin API]: {{site.url}}/release/breaking-changes/plugin-api-migration
+[new plugin API]: /release/breaking-changes/plugin-api-migration
 
 [2000]({{site.github}}/flutter/plugins/pull/2000) [android_intent] add flags option
 
@@ -2498,7 +2498,7 @@ Meanwhile, we converted it to a federated plugin
 to help it scale more efficiently to multiple platforms.
 For more information, refer to [Federated plugins][].
 
-[Federated plugins]: {{site.url}}/packages-and-plugins/developing-packages#federated-plugins
+[Federated plugins]: /packages-and-plugins/developing-packages#federated-plugins
 
 [2059]({{site.github}}/flutter/plugins/pull/2059) [google_sign_in] Fix chained async methods in error handling zones
 
@@ -3008,7 +3008,7 @@ In addition to the PRs listed below, please also check out the following release
 
 ## Full PR List
 
- See the [full list]({{site.url}}/release/release-notes/changelogs/changelog-1.12.13) of merged PRs for the 1.12 release.
+ See the [full list](/release/release-notes/changelogs/changelog-1.12.13) of merged PRs for the 1.12 release.
 
 
 [breaking change policy on the Flutter wiki]: {{site.repo.flutter}}/wiki/Tree-hygiene#handling-breaking-changes

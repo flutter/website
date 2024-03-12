@@ -23,7 +23,7 @@ Many developers use advertising to monetize their mobile apps and games.
 This allows their app to be downloaded free of charge, 
 which improves the app's popularity.
 
-![An illustration of a smartphone showing an ad]({{site.url}}/assets/images/docs/cookbook/ads-device.jpg){:.site-illustration}
+![An illustration of a smartphone showing an ad](/assets/images/docs/cookbook/ads-device.jpg){:.site-illustration}
 
 To add ads to your Flutter project, use
 [AdMob](https://admob.google.com/home/), 
@@ -56,7 +56,7 @@ package to add a banner ad to your app or game.
     tilde (`~`) between the two numbers.
     {% comment %} https://support.google.com/admob/answer/7356431 for future reference {% endcomment %}
 
-    ![Screenshot from AdMob showing the location of the App ID]({{site.url}}/assets/images/docs/cookbook/ads-app-id.png)
+    ![Screenshot from AdMob showing the location of the App ID](/assets/images/docs/cookbook/ads-app-id.png)
 
 ## 2. Platform-specific setup
 
@@ -134,7 +134,7 @@ $ flutter pub add google_mobile_ads
   whether it should try to solve it. Answer `y`, and the problem goes away.
   You can return to running your app from an IDE after that.
   
-  ![Screenshot of the `flutter` tool asking about multidex support]({{site.url}}/assets/images/docs/cookbook/ads-multidex.png)
+  ![Screenshot of the `flutter` tool asking about multidex support](/assets/images/docs/cookbook/ads-multidex.png)
 {{site.alert.end}}
 
 ## 4. Initialize the Mobile Ads SDK
@@ -262,7 +262,7 @@ To show anything beyond test ads, you have to register ad units.
 
 2.  Create an *Ad unit* for each of the AdMob apps.
 
-    ![Screenshot of the location of Ad Units in AdMob web UI]({{site.url}}/assets/images/docs/cookbook/ads-ad-unit.png)
+    ![Screenshot of the location of Ad Units in AdMob web UI](/assets/images/docs/cookbook/ads-ad-unit.png)
 
     This asks for the Ad unit's format. AdMob provides many formats
     beyond banner ads --- interstitials, rewarded ads, app open ads, and
@@ -280,7 +280,7 @@ To show anything beyond test ads, you have to register ad units.
     the *App ID* but with a slash (`/`) between the two numbers. This
     distinguishes an *Ad unit ID* from an *App ID*.
 
-    ![Screenshot of an Ad Unit ID in AdMob web UI]({{site.url}}/assets/images/docs/cookbook/ads-ad-unit-id.png)
+    ![Screenshot of an Ad Unit ID in AdMob web UI](/assets/images/docs/cookbook/ads-ad-unit-id.png)
 
 5.  Add these *Ad unit IDs* to the constructor of `BannerAd`,
     depending on the target app platform.
@@ -308,7 +308,7 @@ testing scenarios), your app must meet additional requirements:
 2.  You must [create an `app-ads.txt`](https://support.google.com/admob/answer/9363762)
     file and publish it on your developer website.
 
-![An illustration of a smartphone showing an ad]({{site.url}}/assets/images/docs/cookbook/ads-device.jpg){:.site-illustration}
+![An illustration of a smartphone showing an ad](/assets/images/docs/cookbook/ads-device.jpg){:.site-illustration}
 
 To learn more about app and game monetization, 
 visit the official sites

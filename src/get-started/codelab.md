@@ -40,7 +40,7 @@ that works on mobile, desktop, and web.
   [another codelab written specifically for the web][codelab-web].
 {{site.alert.end}}
 
-[codelab-web]: {{site.url}}/get-started/codelab-web
+[codelab-web]: /get-started/codelab-web
 
 If you prefer an instructor-led version of this codelab,
 check out the following workshop:

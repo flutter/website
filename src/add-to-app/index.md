@@ -78,14 +78,14 @@ To get started, see our project integration guide for
 Android and iOS:
 
 <div class="card-deck mb-8">
-  <a class="card" href="{{site.url}}/add-to-app/android/project-setup">
+  <a class="card" href="/add-to-app/android/project-setup">
     <div class="card-body">
       <header class="card-title text-center m-0">
         Android
       </header>
     </div>
   </a>
-  <a class="card" href="{{site.url}}/add-to-app/ios/project-setup">
+  <a class="card" href="/add-to-app/ios/project-setup">
     <div class="card-body">
       <header class="card-title text-center m-0">
         iOS
@@ -100,14 +100,14 @@ After Flutter is integrated into your project,
 see our API usage guides at the following links:
 
 <div class="card-deck mb-8">
-  <a class="card" href="{{site.url}}/add-to-app/android/add-flutter-screen">
+  <a class="card" href="/add-to-app/android/add-flutter-screen">
     <div class="card-body">
       <header class="card-title text-center m-0">
         Android
       </header>
     </div>
   </a>
-  <a class="card" href="{{site.url}}/add-to-app/ios/add-flutter-screen">
+  <a class="card" href="/add-to-app/ios/add-flutter-screen">
     <div class="card-body">
       <header class="card-title text-center m-0">
         iOS
@@ -137,4 +137,4 @@ see our API usage guides at the following links:
 [`FlutterViewController`]: {{site.api}}/ios-embedder/interface_flutter_view_controller.html
 [iOS Framework]: {{site.apple-dev}}/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html
 [maintained by the Flutter team]: {{site.repo.packages}}/tree/main/packages
-[multiple Flutters]: {{site.url}}/add-to-app/multiple-flutters
+[multiple Flutters]: /add-to-app/multiple-flutters

@@ -17,7 +17,7 @@ primary source to aid in migration. A
 
 
 [Deprecation Policy]: {{site.repo.flutter}}/wiki/Tree-hygiene#deprecation
-[quick reference sheet]: {{site.url}}/go/deprecations-removed-after-2-10
+[quick reference sheet]: /go/deprecations-removed-after-2-10
 
 ## Changes
 
@@ -97,7 +97,7 @@ Relevant PRs:
 * Deprecated in [#68086]({{site.repo.flutter}}/pull/68086)
 * Removed in [#98539]({{site.repo.flutter}}/pull/98539)
 
-[In-depth migration guide available]: {{site.url}}/release/breaking-changes/use-maxLengthEnforcement-instead-of-maxLengthEnforced
+[In-depth migration guide available]: /release/breaking-changes/use-maxLengthEnforcement-instead-of-maxLengthEnforced
 [`TextField`]: {{site.api}}/flutter/material/TextField-class.html
 [`TextFormField`]: {{site.api}}/flutter/material/TextFormField-class.html
 [`CupertinoTextField`]: {{site.api}}/flutter/cupertino/CupertinoTextField-class.html
@@ -178,7 +178,7 @@ Relevant PRs:
 * Deprecated in [#50546]({{site.repo.flutter}}/issues/50546)
 * Removed in [#98543]({{site.repo.flutter}}/issues/98543)
 
-[Material Date Picker Redesign]: {{site.url}}/go/material-date-picker-redesign
+[Material Date Picker Redesign]: /go/material-date-picker-redesign
 [`CalendarDatePicker`]: {{site.api}}/flutter/material/CalendarDatePicker-class.html
 [`showDatePicker`]: {{site.api}}/flutter/material/showDatePicker.html
 
@@ -197,12 +197,13 @@ the generic `ButtonTheme`.
 
 <div class="table-wrapper" markdown="1">
 
-| Old Widget     | Old Theme       | New Widget        | New Theme             |
-| ---------------|-----------------|-------------------|-----------------------|
-| `FlatButton`   | `ButtonTheme`   | `TextButton`      | `TextButtonTheme`     |
-| `RaisedButton` | `ButtonTheme`   | `ElevatedButton`  | `ElevatedButtonTheme` |
-| `OutlineButton`| `ButtonTheme`   | `OutlinedButton`  | `OutlinedButtonTheme` |
+| Old Widget      | Old Theme     | New Widget       | New Theme             |
+|-----------------|---------------|------------------|-----------------------|
+| `FlatButton`    | `ButtonTheme` | `TextButton`     | `TextButtonTheme`     |
+| `RaisedButton`  | `ButtonTheme` | `ElevatedButton` | `ElevatedButtonTheme` |
+| `OutlineButton` | `ButtonTheme` | `OutlinedButton` | `OutlinedButtonTheme` |
 {:.table .table-striped .nowrap}
+
 </div>
 
 **Migration guide**
@@ -279,8 +280,8 @@ Relevant PRs:
 * Deprecated in [#73352]({{site.repo.flutter}}/issues/73352)
 * Removed in [#98546]({{site.repo.flutter}}/issues/98546)
 
-[In-depth migration guide available for detailed styling]: {{site.url}}/release/breaking-changes/buttons
-[New Material buttons and themes]: {{site.url}}/go/material-button-migration-guide
+[In-depth migration guide available for detailed styling]: /release/breaking-changes/buttons
+[New Material buttons and themes]: /go/material-button-migration-guide
 [`ButtonStyle`]: {{site.api}}/flutter/material/ButtonStyle-class.html
 [`ButtonStyleButton`]: {{site.api}}/flutter/material/ButtonStyleButton-class.html
 [`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
@@ -354,8 +355,8 @@ Relevant PRs:
 * Deprecated in [#67947]({{site.repo.flutter}}/issues/67947)
 * Removed in [#98549]({{site.repo.flutter}}/issues/98549)
 
-[In-depth migration guide available]: {{site.url}}/release/breaking-changes/scaffold-messenger
-[ScaffoldMessenger Design]: {{site.url}}/go/scaffold-messenger
+[In-depth migration guide available]: /release/breaking-changes/scaffold-messenger
+[ScaffoldMessenger Design]: /go/scaffold-messenger
 [SnackBar Delivery]: https://youtu.be/sYG7HAGu_Eg?t=10271
 [Widget of the Week]: https://youtu.be/lytQi-slT5Y
 [`ScaffoldMessenger`]: {{site.api}}/flutter/material/ScaffoldMessenger-class.html
@@ -469,8 +470,8 @@ Relevant PRs:
 * Deprecated in [#66485]({{site.repo.flutter}}/issues/66482)
 * Removed in [#98578]({{site.repo.flutter}}/issues/98578)
 
-[In-depth migration guide available]: {{site.url}}/release/breaking-changes/text-selection-theme
-[Text Selection Theme]: {{site.url}}/go/text-selection-theme
+[In-depth migration guide available]: /release/breaking-changes/text-selection-theme
+[Text Selection Theme]: /go/text-selection-theme
 [`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html
 [`TextSelectionThemeData`]: {{site.api}}/flutter/material/TextSelectionThemeData-class.html
 
@@ -567,7 +568,7 @@ Relevant PRs:
 * Deprecated in [#66305]({{site.repo.flutter}}/issues/66305)
 * Removed in [#98583]({{site.repo.flutter}}/issues/98583)
 
-[In-depth migration guide available]: {{site.url}}/release/breaking-changes/clip-behavior
+[In-depth migration guide available]: /release/breaking-changes/clip-behavior
 [`Stack`]: {{site.api}}/flutter/widgets/Stack-class.html
 [`Clip`]: {{site.api}}/flutter/dart-ui/Clip.html
 

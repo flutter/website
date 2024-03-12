@@ -16,8 +16,8 @@ using the [`Router`][Router] widget.
   [Limitations][] in the [navigation overview][] page.
 {{site.alert.end}}
 
-[Limitations]: {{site.url}}/ui/navigation#limitations
-[navigation overview]: {{site.url}}/ui/navigation
+[Limitations]: /ui/navigation#limitations
+[navigation overview]: /ui/navigation
 
 If you're running the app in a web browser, there's no additional setup
 required. Route paths are handled in the same way as an iOS or Android deep
@@ -35,14 +35,14 @@ If you are a visual learner, check out the following video:
 To get started, see our cookbooks for Android and iOS:
 
 <div class="card-deck mb-8">
-  <a class="card" href="{{site.url}}/cookbook/navigation/set-up-app-links">
+  <a class="card" href="/cookbook/navigation/set-up-app-links">
     <div class="card-body">
       <header class="card-title text-center m-0">
         Android
       </header>
     </div>
   </a>
-  <a class="card" href="{{site.url}}/cookbook/navigation/set-up-universal-links">
+  <a class="card" href="/cookbook/navigation/set-up-universal-links">
     <div class="card-body">
       <header class="card-title text-center m-0">
         iOS
@@ -66,13 +66,15 @@ The behavior varies slightly based on the platform and whether the app is
 launched and running.
 
 <div class="table-wrapper" markdown="1">
-| Platform / Scenario      | Using Navigator                                                     | Using Router                                                                                                                                                                                        |
+
+| Platform / Scenario      | Using Navigator                                                     | Using Router                                                                                                                                                                                               |
 |--------------------------|---------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | iOS (not launched)       | App gets initialRoute ("/") and a short time after gets a pushRoute | App gets initialRoute ("/") and a short time after uses the RouteInformationParser to parse the route and call RouterDelegate.setNewRoutePath, which configures the Navigator with the corresponding Page. |
 | Android - (not launched) | App gets initialRoute containing the route ("/deeplink")            | App gets initialRoute ("/deeplink") and passes it to the RouteInformationParser to parse the route and call RouterDelegate.setNewRoutePath, which configures the Navigator with the corresponding Pages.   |
 | iOS (launched)           | pushRoute is called                                                 | Path is parsed, and the Navigator is configured with a new set of Pages.                                                                                                                                   |
 | Android (launched)       | pushRoute is called                                                 | Path is parsed, and the Navigator is configured with a new set of Pages.                                                                                                                                   |
 {:.table.table-striped}
+
 </div>
 
 When using the [`Router`][Router] widget,
@@ -91,4 +93,4 @@ introduction to the Router system.
 [Router]: {{site.api}}/flutter/widgets/Router-class.html
 [plugin-linking]: {{site.medium}}/flutter-community/deep-links-and-flutter-applications-how-to-handle-them-properly-8c9865af9283
 
-[configuring the URL strategy]: {{site.url}}/ui/navigation/url-strategies
+[configuring the URL strategy]: /ui/navigation/url-strategies

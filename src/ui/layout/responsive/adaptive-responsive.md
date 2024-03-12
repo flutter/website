@@ -110,11 +110,11 @@ in the following resources:
 [Adaptive layouts]: {{site.yt.watch}}?v=n6Awpg1MO6M&t=694s
 [Adaptive layouts, part 2]: {{site.yt.watch}}?v=eikOZzfc0l4&t=11s
 [Adaptive vs Responsive]: {{site.youtube-site}}/HD5gYnspYzk?si=5ItDD7UjXvGCRM0K
-[Building adaptive apps]: {{site.url}}/ui/layout/responsive/building-adaptive-apps
+[Building adaptive apps]: /ui/layout/responsive/building-adaptive-apps
 
 [Designing truly adaptive user interfaces]: https://www.aloisdeniel.com/blog/designing-truly-adaptative-user-interfaces
 [Folio source code]: {{site.github}}/gskinnerTeam/flutter-folio
 [gskinner blog]: https://blog.gskinner.com/
-[Platform-specific behaviors and adaptations]: {{site.url}}/platform-integration/platform-adaptations
+[Platform-specific behaviors and adaptations]: /platform-integration/platform-adaptations
 [Extreme UI Adaptability in Flutter]: {{site.flutter-medium}}/extreme-ui-adaptability-in-flutter-how-google-earth-supports-every-use-case-on-earth-6db4661e7a17
 >>>>>>> main

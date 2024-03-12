@@ -1,11 +1,15 @@
 #### Set up the Android emulator
-{:.no_toc}
 
 {% include docs/help-link.md location='android-emulator' section='#android-setup' %}
 
-{% if include.os=='Windows' -%}
+{% assign devos = include.devos %}
+{% assign target = include.target %}
+{% assign compiler = include.compiler %}
+{% assign time = include.time %}
+
+{% if devos=='Windows' -%}
 {% assign images = '**x86 Images**' -%}
-{% elsif include.os=='macOS' -%}
+{% elsif devos=='macOS' -%}
 {% assign images = '**x86 Images** if your Mac runs on an Intel CPU or **ARM Images** if your Mac runs on an Apple CPU' -%}
 {% endif -%}
 

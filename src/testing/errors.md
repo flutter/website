@@ -192,6 +192,6 @@ class MyApp extends StatelessWidget {
 [`FlutterError.presentError`]: {{site.api}}/flutter/foundation/FlutterError/presentError.html
 [`kReleaseMode`]:  {{site.api}}/flutter/foundation/kReleaseMode-constant.html
 [`MaterialApp.builder`]: {{site.api}}/flutter/material/MaterialApp/builder.html
-[reporting errors to a service]: {{site.url}}/cookbook/maintenance/error-reporting
+[reporting errors to a service]: /cookbook/maintenance/error-reporting
 [`PlatformDispatcher.instance.onError`]: {{site.api}}/flutter/dart-ui/PlatformDispatcher/onError.html
 [`PlatformDispatcher`]: {{site.api}}/flutter/dart-ui/PlatformDispatcher-class.html

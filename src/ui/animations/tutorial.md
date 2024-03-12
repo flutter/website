@@ -11,7 +11,7 @@ diff2html: true
 <?code-excerpt path-base="animation"?>
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What you'll learn</h4>
+  <h4>What you'll learn</h4>
 
   * How to use the fundamental classes from the
     animation library to add animation to a widget.
@@ -35,7 +35,7 @@ than custom explicit animations, which are described here.
 ## Essential animation concepts and classes
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What's the point?</h4>
+  <h4>What's the point?</h4>
 
   * [`Animation`][], a core class in Flutter's animation library,
     interpolates the values used to guide an animation.
@@ -265,7 +265,7 @@ Each section provides a link to the source code for that example.
 ### Rendering animations
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What's the point?</h4>
+  <h4>What's the point?</h4>
 
   * How to add basic animation to a widget using `addListener()` and
     `setState()`.
@@ -419,7 +419,7 @@ you've created your first animation in Flutter!
 ###  Simplifying with Animated&shy;Widget
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What's the point?</h4>
+  <h4>What's the point?</h4>
 
   * How to use the [`AnimatedWidget`][] helper class
     (instead of `addListener()`
@@ -547,7 +547,7 @@ and it passes the `Animation` object to `AnimatedLogo`:
 ### Monitoring the progress of the animation
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What's the point?</h4>
+  <h4>What's the point?</h4>
 
   * Use `addStatusListener()` for notifications of changes
     to the animation's state, such as starting, stopping,
@@ -620,7 +620,7 @@ at the beginning or the end. This creates a "breathing" effect:
 ### Refactoring with AnimatedBuilder
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What's the point?</h4>
+  <h4>What's the point?</h4>
 
   * An [`AnimatedBuilder`][] understands how to render the transition.
   * An `AnimatedBuilder` doesn't know how to render the widget,
@@ -826,7 +826,7 @@ in the bullet points above.
 ### Simultaneous animations
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What's the point?</h4>
+  <h4>What's the point?</h4>
 
   * The [`Curves`][] class defines an array of
     commonly used curves that you can
@@ -961,7 +961,7 @@ for the latest available documents and examples.
 [`Animatable`]: {{site.api}}/flutter/animation/Animatable-class.html
 [`Animation`]: {{site.api}}/flutter/animation/Animation-class.html
 [`AnimatedBuilder`]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html
-[animations landing page]: {{site.url}}/ui/animations
+[animations landing page]: /ui/animations
 [`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
 [`AnimationController` section]: #animationcontroller
 [`Curves`]: {{site.api}}/flutter/animation/Curves-class.html

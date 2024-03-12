@@ -141,9 +141,9 @@ the Dart [`pub outdated` documentation]({{site.dart-site}}/tools/pub/cmd/pub-out
 $ flutter pub outdated
 ```
 
-[Flutter SDK archive]: {{site.url}}/release/archive
+[Flutter SDK archive]: /release/archive
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [pubspec.yaml]: {{site.dart-site}}/tools/pub/pubspec
 [test registry]: {{site.repo.organization}}/tests
 [contribute to Flutter]: {{site.repo.flutter}}/blob/main/CONTRIBUTING.md
-[migration guides]: {{site.url}}/release/breaking-changes
+[migration guides]: /release/breaking-changes

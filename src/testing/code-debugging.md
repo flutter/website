@@ -146,7 +146,6 @@ call the [`debugDumpApp()`][] function.
    Hot reload re-renders your app.
 
 #### Example 4: Call `debugDumpApp()`
-{:.no_toc}
 
 <?code-excerpt "lib/dump_app.dart"?>
 ```dart
@@ -231,7 +230,6 @@ To dump the render tree:
    Hot reload re-renders your app.
 
 #### Example 5: Call `debugDumpRenderTree()`
-{:.no_toc}
 
 <?code-excerpt "lib/dump_render_tree.dart"?>
 ```dart
@@ -337,7 +335,6 @@ then call the superclass method.
 To debug a compositing issue, use [`debugDumpLayerTree()`][].
 
 #### Example 6: Call `debugDumpLayerTree()`
-{:.no_toc}
 
 <?code-excerpt "lib/dump_layer_tree.dart"?>
 ```dart
@@ -433,7 +430,6 @@ You can also use the [`debugFocusChanges`][] boolean property to enable
 extensive logging when the focus changes.
 
 #### Example 7: Call `debugDumpFocusTree()`
-{:.no_toc}
 
 <?code-excerpt "lib/dump_focus_tree.dart"?>
 ```dart
@@ -485,7 +481,6 @@ To obtain a dump of the Semantics tree:
 1. Use the [`debugDumpSemanticsTree()`][] function.
 
 #### Example 8: Call `debugDumpSemanticsTree()`
-{:.no_toc}
 
 <?code-excerpt "lib/dump_semantic_tree.dart"?>
 ```dart
@@ -562,8 +557,7 @@ This flag can be found in the `rendering` library.
 You can enable it at any time and affects all painting while `true`.
 Consider adding it to the top of your `void main()` entry point.
 
-#### Example 8
-{:.no_toc}
+#### Example 9
 
 See an example in the following code:
 
@@ -744,7 +738,6 @@ set the `showPerformanceOverlay` property to `true` on the
 constructor:
 
 #### Example 10
-{:.no_toc}
 
 <?code-excerpt "lib/performance_overlay.dart (PerfOverlay)"?>
 ```dart
@@ -784,17 +777,17 @@ help verify alignments, add the `debugShowMaterialGrid` argument in the
 
 To add an overlay to non-Material applications, add a [`GridPaper`][] widget.
 
-[Debugger]: {{site.url}}/tools/devtools/debugger
-[Debugging]: {{site.url}}/testing/debugging
-[DevTools]: {{site.url}}/tools/devtools
+[Debugger]: /tools/devtools/debugger
+[Debugging]: /testing/debugging
+[DevTools]: /tools/devtools
 [DiagnosticsProperty]: {{site.api}}/flutter/foundation/DiagnosticsProperty-class.html
-[Flutter inspector]: {{site.url}}/tools/devtools/inspector
-[Inspector view]: {{site.url}}/tools/devtools/inspector
-[Logging view]: {{site.url}}/tools/devtools/logging
+[Flutter inspector]: /tools/devtools/inspector
+[Inspector view]: /tools/devtools/inspector
+[Logging view]: /tools/devtools/logging
 [Material Design baseline grid]: {{site.material}}/foundations/layout/understanding-layout/spacing
-[Profiling Flutter performance]: {{site.url}}/perf/ui-performance
-[The performance overlay]: {{site.url}}/perf/ui-performance#the-performance-overlay
-[Timeline events tab]: {{site.url}}/tools/devtools/performance#timeline-events-tab
+[Profiling Flutter performance]: /perf/ui-performance
+[The performance overlay]: /perf/ui-performance#the-performance-overlay
+[Timeline events tab]: /tools/devtools/performance#timeline-events-tab
 [Timeline]: {{site.dart.api}}/stable/dart-developer/Timeline-class.html
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
 [`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
@@ -830,10 +823,10 @@ To add an overlay to non-Material applications, add a [`GridPaper`][] widget.
 [`log()`]: {{site.api}}/flutter/dart-developer/log.html
 [`setState()`]: {{site.api}}/flutter/widgets/State/setState.html
 [`timeDilation`]: {{site.api}}/flutter/scheduler/timeDilation.html
-[debug mode]: {{site.url}}/testing/build-modes#debug
+[debug mode]: /testing/build-modes#debug
 [file an issue]: {{site.github}}/flutter/devtools/issues
 [frame callback]: {{site.api}}/flutter/scheduler/SchedulerBinding/addPersistentFrameCallback.html
-[profile mode]: {{site.url}}/testing/build-modes#profile
+[profile mode]: /testing/build-modes#profile
 [render-fill]: {{site.api}}/flutter/rendering/Layer/debugFillProperties.html
 [rendering library]: {{site.api}}/flutter/rendering/rendering-library.html
 [systrace]: {{site.android-dev}}/studio/profile/systrace

@@ -19,7 +19,7 @@ You can also emit your own timeline events using the `dart:developer`
 [Timeline]: {{site.api}}/flutter/dart-developer/Timeline-class.html
 [TimelineTask]: {{site.api}}/flutter/dart-developer/TimelineTask-class.html
 
-![Screenshot of the Chrome DevTools performance panel]({{site.url}}/assets/images/docs/tools/devtools/chrome-devtools-performance-panel.png)
+![Screenshot of the Chrome DevTools performance panel](/assets/images/docs/tools/devtools/chrome-devtools-performance-panel.png)
 
 ## Optional flags to enhance tracing
 
@@ -45,5 +45,5 @@ in your app's `main` method.
 
 [start recording]: https://developer.chrome.com/docs/devtools/performance/#record
 
-[profile mode]: {{site.url}}/testing/build-modes#profile
+[profile mode]: /testing/build-modes#profile
 [Chrome DevTools performance panel]: https://developer.chrome.com/docs/devtools/performance

@@ -361,7 +361,7 @@ investigate other resources that our community recommended.
 [Flame game engine]: https://flame-engine.org/
 [Games]: {{site.main-url}}/games
 [I/O Pinball Powered by Flutter and Firebase]: {{site.medium}}/flutter/di-o-pinball-powered-by-flutter-and-firebase-d22423f3f5d
-[install Flutter]: {{site.url}}/get-started/install
+[install Flutter]: /get-started/install
 [Tomb Toad]: https://play.google.com/store/apps/details?id=com.crescentmoongames.tombtoad
 [basic-template-readme]: {{games-gh}}/blob/main/templates/basic/README.md
 [basic-template]: {{games-gh}}/tree/main/templates/basic
@@ -395,7 +395,7 @@ investigate other resources that our community recommended.
 [Game Developer Studio]: https://www.gamedeveloperstudio.com
 [Gaming UX and Revenue Optimizations for Apps]: {{site.main-url}}/go/games-revenue
 [Paint API]: {{site.api}}/flutter/dart-ui/Paint-class.html
-[Special effects]: {{site.url}}/cookbook/effects
+[Special effects]: /cookbook/effects
 [Spriter Pro]: https://store.steampowered.com/app/332360/Spriter_Pro/
 [app_review]: {{site.pub-pkg}}/app_review
 [audioplayers]: {{site.pub-pkg}}/audioplayers

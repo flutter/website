@@ -205,4 +205,4 @@ Source code: [deeplink_cookbook][]
 [go_router]: {{site.pub}}/packages/go_router
 [GitHub Pages]: https://pages.github.com
 [uni_links]: {{site.pub}}/packages/uni_links
-[Signing the app]: {{site.url}}/deployment/android#signing-the-app
+[Signing the app]: /deployment/android#signing-the-app

@@ -73,7 +73,7 @@ For example:
     • Android SDK at C:\Android\sdk
     <strong>✗ Android SDK is missing command line tools; download from https://goo.gl/XxQghQ</strong>
     • Try re-installing or updating your Android SDK,
-      visit {{site.url}}/setup/#android-setup for detailed instructions.
+      visit /setup/#android-setup for detailed instructions.
 </pre>
 
 The following sections describe how to perform these tasks and
@@ -89,5 +89,5 @@ verify that you've set everything up correctly.
 
 {% include_relative_analytics.md %}
 
-[SDK archive]: {{site.url}}/release/archive
-[Set up an editor]: {{site.url}}/get-started/editor?tab=androidstudio
+[SDK archive]: /release/archive
+[Set up an editor]: /get-started/editor?tab=androidstudio

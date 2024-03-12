@@ -356,7 +356,7 @@ When creating `json_serializable` classes the first time,
 you'll get errors similar to what is shown in the image below.
 
 ![IDE warning when the generated code for a model class does not exist
-yet.]({{site.url}}/assets/images/docs/json/ide_warning.png){:.mw-100}
+yet.](/assets/images/docs/json/ide_warning.png){:.mw-100}
 
 These errors are entirely normal and are simply because the generated code for
 the model class does not exist yet. To resolve this, run the code
@@ -532,8 +532,8 @@ For more information, see the following resources:
 [code generation libraries]: #code-generation
 [`dart:convert`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert
 [`explicitToJson`]: {{site.pub}}/documentation/json_annotation/latest/json_annotation/JsonSerializable/explicitToJson.html
-[Flutter Favorite]: {{site.url}}/packages-and-plugins/favorites
-[json background parsing]: {{site.url}}/cookbook/networking/background-parsing
+[Flutter Favorite]: /packages-and-plugins/favorites
+[json background parsing]: /cookbook/networking/background-parsing
 [`JsonCodec`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert/JsonCodec-class.html
 [`JsonSerializable`]: {{site.pub}}/documentation/json_annotation/latest/json_annotation/JsonSerializable-class.html
 [`json_annotation`]: {{site.pub}}/packages/json_annotation

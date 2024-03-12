@@ -45,7 +45,7 @@ to animate in from the bottom of the screen.
 The animated GIF shows how the app works at the completion of this lab.
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What you'll learn</h4>
+  <h4>What you'll learn</h4>
 
 * How to write a Flutter app that looks natural on the web.
 * Basic structure of a Flutter app.
@@ -55,7 +55,7 @@ The animated GIF shows how the app works at the completion of this lab.
 {{site.alert.end}}
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What you'll use</h4>
+  <h4>What you'll use</h4>
 
   You need three pieces of software to complete this lab:
 
@@ -294,7 +294,8 @@ all of your edits will be made to the private
 `_SignUpFormState` class.
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">Fun fact</h4>
+  <h4>Fun fact</h4>
+
 The Dart compiler enforces privacy for any identifier
 prefixed with an underscore. For more information,
 see the [Effective Dart Style Guide][].
@@ -601,7 +602,7 @@ Go to this URL in a Chrome browser. You should see the DevTools
 launch screen. It should look like the following:
 
 {% indent %}
-  ![Screenshot of the DevTools launch screen]({{site.url}}/assets/images/docs/get-started/devtools-launch-screen.png){:width="100%"}
+  ![Screenshot of the DevTools launch screen](/assets/images/docs/get-started/devtools-launch-screen.png){:width="100%"}
 {% endindent %}
 </li>
 
@@ -612,7 +613,7 @@ and click Connect. You should now see Dart DevTools
 running successfully in your Chrome browser:
 
 {% indent %}
-  ![Screenshot of DevTools running screen]({{site.url}}/assets/images/docs/get-started/devtools-running.png){:width="100%"}
+  ![Screenshot of DevTools running screen](/assets/images/docs/get-started/devtools-running.png){:width="100%"}
 {% endindent %}
 
 Congratulations, you are now running Dart DevTools!
@@ -626,7 +627,7 @@ Congratulations, you are now running Dart DevTools!
   **Flutter Inspector** -> **More Actions** -> **Open DevTools**:
 
   {% indent %}
-  ![Screenshot of Flutter inspector with DevTools menu]({{site.url}}/assets/images/docs/get-started/intellij-devtools.png){:width="100%"}
+  ![Screenshot of Flutter inspector with DevTools menu](/assets/images/docs/get-started/intellij-devtools.png){:width="100%"}
   {% endindent %}
 {{site.alert.end}}
 
@@ -640,7 +641,7 @@ Select `lib/main.dart` to display your Dart code
 in the center pane.
 
 {% indent %}
-  ![Screenshot of the DevTools debugger]({{site.url}}/assets/images/docs/get-started/devtools-debugging.png){:width="100%"}
+  ![Screenshot of the DevTools debugger](/assets/images/docs/get-started/devtools-debugging.png){:width="100%"}
 {% endindent %}
 </li>
 
@@ -1050,27 +1051,27 @@ Dart DevTools, or Flutter animations, see the following:
 * [Implicit animations][] codelab
 * [Web samples][]
 
-[Android Studio and IntelliJ]: {{site.url}}/tools/devtools/android-studio
-[Animation docs]: {{site.url}}/ui/animations
-[Building a form with validation]: {{site.url}}/cookbook/forms/validation
+[Android Studio and IntelliJ]: /tools/devtools/android-studio
+[Animation docs]: /ui/animations
+[Building a form with validation]: /cookbook/forms/validation
 [Chrome browser]: https://www.google.com/chrome/?brand=CHBD&gclid=CjwKCAiAws7uBRAkEiwAMlbZjlVMZCxJDGAHjoSpoI_3z_HczSbgbMka5c9Z521R89cDoBM3zAluJRoCdCEQAvD_BwE&gclsrc=aw.ds
-[create a new Flutter project]: {{site.url}}/get-started/test-drive
-[Dart DevTools]: {{site.url}}/tools/devtools/overview
+[create a new Flutter project]: /get-started/test-drive
+[Dart DevTools]: /tools/devtools/overview
 [DartPad]: {{site.dartpad}}
-[DevTools command line]: {{site.url}}/tools/devtools/cli
-[DevTools documentation]: {{site.url}}/tools/devtools
-[DevTools installed]: {{site.url}}/tools/devtools/overview#start
+[DevTools command line]: /tools/devtools/cli
+[DevTools documentation]: /tools/devtools
+[DevTools installed]: /tools/devtools/overview#start
 [DartPad troubleshooting page]: {{site.dart-site}}/tools/dartpad/troubleshoot
 [`didUpdateWidget`]: {{site.api}}/flutter/widgets/State/didUpdateWidget.html
-[editor]: {{site.url}}/get-started/editor
+[editor]: /get-started/editor
 [Effective Dart Style Guide]: {{site.dart-site}}/guides/language/effective-dart/style#dont-use-a-leading-underscore-for-identifiers-that-arent-private
-[Flutter cookbook]: {{site.url}}/cookbook
-[Flutter SDK]: {{site.url}}/get-started/install
-[Implicit animations]: {{site.url}}/codelabs/implicit-animations
-[Introduction to declarative UI]: {{site.url}}/get-started/flutter-for/declarative
+[Flutter cookbook]: /cookbook
+[Flutter SDK]: /get-started/install
+[Implicit animations]: /codelabs/implicit-animations
+[Introduction to declarative UI]: /get-started/flutter-for/declarative
 [Material Design]: {{site.material}}/get-started
 [TextButton]: {{site.api}}/flutter/material/TextButton-class.html
-[VS Code]: {{site.url}}/tools/devtools/vscode
+[VS Code]: /tools/devtools/vscode
 [Web samples]: {{site.repo.samples}}/tree/main/web
 [Widget]: {{site.api}}/flutter/widgets/Widget-class.html
-[first_flutter_codelab]: {{site.url}}/get-started/codelab
+[first_flutter_codelab]: /get-started/codelab
