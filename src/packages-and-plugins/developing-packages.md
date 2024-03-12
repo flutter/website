@@ -451,7 +451,7 @@ You can run the example app by pressing the run (&#9654;) button.
 
 ##### Add CocoaPod dependencies
 
-User the following instructions to add `HelloPod` with the version `0.0.1`:
+Use the following instructions to add `HelloPod` with the version `0.0.1`:
 
 1. Specify dependency at the end of `ios/hello.podspec`:
 
