@@ -453,7 +453,7 @@ You can run the example app by pressing the run (&#9654;) button.
 
 ##### Add CocoaPod dependencies
 
-To add `HelloPod` with the version `0.0.1`:
+Use the following instructions to add `HelloPod` with the version `0.0.1`:
 
 1. Specify dependency at the end of `ios/hello.podspec`:
 
@@ -461,7 +461,7 @@ To add `HelloPod` with the version `0.0.1`:
    s.dependency 'HelloPod', '0.0.1'
    ```
 
-   For private pods, refer to [Private CocoaPods](https://guides.cocoapods.org/making/private-cocoapods.html), ensure repo access:
+   For private pods, refer to [Private CocoaPods](https://guides.cocoapods.org/making/private-cocoapods.html) to ensure repo access:
 
    ```ruby
    s.source = {
@@ -475,9 +475,9 @@ To add `HelloPod` with the version `0.0.1`:
 
 2. Installing the plugin
 
-   - Add plugin in project’s `pubspec.yaml` dependencies.
+   - Add the plugin in the project’s `pubspec.yaml` dependencies.
    - Run `flutter pub get`.
-   - In project’s `ios/` directory, run `pod install`.
+   - In the project’s `ios/` directory, run `pod install`.
 
 The pod should appear in the installation summary.
 
