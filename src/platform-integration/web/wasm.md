@@ -6,6 +6,12 @@ short-title: Wasm
 last-update: March 12, 2024
 ---
 
+Subtitle: Support for Wasm just landed in Flutter beta 3.x.x, thanks to an exciting milestone Dart 3.3 added to the decade-long journey of Dart and JavaScript interoperability.
+
+To celebrate, we’re looking back at Dart's history and dedication to the JS interop story
+
+Dart 3.3 brought an exciting milestone in a decade-long journey of Dart/JS interoperability.
+
 **_Last updated {{page.last-update}}_**
 
 The Flutter and Dart teams are excited to add
@@ -60,7 +66,7 @@ To experiment with Wasm in your own apps, follow the steps below.
 #### Switch to the Flutter `beta` channel and upgrade
 
 Wasm compilation is available on the latest builds of
-the `beta` channel (preferred) or `master`.
+the `beta` channel (preferred) or `main`.
 
 To learn more about Flutter build release channels and how to switch to
 the `beta` channel, check out the
