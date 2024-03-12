@@ -19,7 +19,7 @@ Revisit this page for the latest updates.
 {{site.alert.note}}
   **Support for Wasm is now in beta!**
   : Wasm and WebAssembly garbage collection (WasmGC) are now 
-    available on the Flutter [`beta` channel][] and [`master` channel][].
+    available on the Flutter [`beta` channel][] and [`main` channel][].
 
   **Dart's next-gen Web interop is now stable!**
   : Migrate your packages to [`package:web`][] and [`dart:js_interop`][]
@@ -28,8 +28,8 @@ Revisit this page for the latest updates.
     section to learn more. 
 {{site.alert.end}}
 
-[`beta` channel]: https://github.com/flutter/flutter/wiki/flutter-build-release-channels#beta
-[`master` channel]: https://github.com/flutter/flutter/wiki/flutter-build-release-channels#beta
+[`beta` channel]: {{site.github}}/flutter/flutter/wiki/flutter-build-release-channels#beta
+[`main` channel]: {{site.github}}/flutter/flutter/wiki/flutter-build-release-channels#master-aka-main
 [`package:web`]: {{site.pub-pkg}}/web
 [`dart:js_interop`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-js_interop 
 
@@ -114,7 +114,7 @@ Before building with Wasm, you'll need to modify the bootstrap logic in your
 
 This feature is under development. The current syntax
 (`flutter.js`, `{% raw %}{{flutter_build_config}}{% endraw %}`,
-`_flutter.loader.load()`) is a intermediary solution in the `beta` and `master`
+`_flutter.loader.load()`) is a temporary solution in the `beta` and `main`
 channels now, but will be replaced by the actual syntax in an upcoming stable
 release. Stay tuned!
 
@@ -174,7 +174,7 @@ use _Chrome 119 or later_.
 
 Some earlier versions supported WasmGC with specific flags enabled,
 but WasmGC encodings changed once the feature was stabilized.
-To ensure compatibility, run the latest version of the Flutter `master` channel
+To ensure compatibility, run the latest version of the Flutter `main` channel
 and the latest version of Chrome.
 
 - **Why not Firefox?**
@@ -203,8 +203,8 @@ from compiling to Wasm.
 Instead, Dart now provides new, lightweight interop solutions built around
 static JS interop:
 
-- [`package:web`][], which replaces `dart:html` (and other web libraries).
-- [`dart:js_interop`][], which replaces `package:js`.
+- [`package:web`][], which replaces `dart:html` (and other web libraries)
+- [`dart:js_interop`][], which replaces `package:js`
 
 Most packages owned by the Dart and Flutter teams have been migrated
 to be compatible with Wasm support in Flutter, such as [`package:url_launcher`][].
