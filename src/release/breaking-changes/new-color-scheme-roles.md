@@ -1,7 +1,7 @@
 ---
 title: Introduce new `ColorScheme` roles for Material 3
 description: >-
-  `ColorScheme` introduces new colors roles to better align with Material Design
+  `ColorScheme` introduces new color roles to better align with Material Design
   3. `ColorScheme.fromSeed` method is also updated to support the newly added
   colors.
 ---
@@ -14,26 +14,27 @@ New color roles in `ColorScheme` include seven tone-based surfaces and container
 
 The tone-based surface colors include: `surfaceBright`, `surfaceDim`,
 `surfaceContainer`, `surfaceContainerLow`, `surfaceContainerLowest`,
-`surfaceContainerHigh`, and `surfaceContainerHighest`. These changes helps 
-deprecate the use of widgets' `surfaceTintColor`, and replace the old 
+`surfaceContainerHigh`, and `surfaceContainerHighest`. These changes help 
+eliminate the use of widgets' `surfaceTintColor`, and replace the old 
 opacity-based model which applied a tinted overlay on top of surfaces based 
 on their elevation.  
 
-The `surfaceTintColor` of widgets has been set to null and their background
-color are replaced by the new tone-based surface colors.
+The default `surfaceTintColor` for all widgets is now null and their default
+background color is now based on the new tone-based surface colors.
 
-`ColorScheme.fromSeed` has also been updated to use the latest algorithm in
-Material color utilities package. This change prevent the constructed 
+`ColorScheme.fromSeed` has also been updated to use the latest algorithm from
+the Material color utilities package. This change prevent the constructed 
 `ColorSchem` from being too bright, even if the source color looks bright and
-has a high chroma.
+had a high chroma (contained little black, white, and shades of grey).
 
 ## Migration guide
 
-The difference caused by the updated `ColorScheme.fromSeed` and the new color
+The differences caused by the updated `ColorScheme.fromSeed` and the new color
 roles should be small and acceptable. However, when providing a brighter
-source color to `ColorScheme.fromSeed`, it may constructs a relatively
-darker version of `ColorScheme`. To force the output to still be bright, 
-set `schemeVariant: FromSeedVariant.fidelity` in `ColorScheme.fromSeed`.
+seed color to `ColorScheme.fromSeed`, it may constructs a relatively darker
+version of `ColorScheme`. To force the output to still be bright, set 
+`schemeVariant: FromSeedVariant.fidelity` in `ColorScheme.fromSeed`. For 
+example:
 
 Code before migration:
 
