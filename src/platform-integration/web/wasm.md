@@ -131,8 +131,7 @@ As of {{page.last-update}},
 [only **Chromium-based browsers**](#chrome-119-or-later)
 (Version 119 or later) are able to run Flutter/Wasm content. 
 
-Open [`localhost:8080`](http://localhost:8080) 
-in the browser to view the app.
+Open `localhost:8080` in the browser to view the app.
 
 If the application doesn't load:
 
