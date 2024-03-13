@@ -1,14 +1,14 @@
 ---
-title: Introduce new ColorScheme roles for Material 3
+title: Introduce new `ColorScheme` roles for Material 3
 description: >-
-  ColorScheme introduces new colors roles to better align with Material Design
-  3. ColorScheme.fromSeed method is also updated to support the newly added
+  `ColorScheme` introduces new colors roles to better align with Material Design
+  3. `ColorScheme.fromSeed` method is also updated to support the newly added
   colors.
 ---
 
 ## Summary
 
-New color roles in ColorScheme include seven tone-based surfaces and containers, alongside twelve accent color add-ons. This update deprecates three existing color roles: background, onBackground, and surfaceVariant. The ColorScheme constructed by the updated ColorScheme.fromSeed method now generates different values compared to the previous version, adapting to Material Design 3's guidelines.
+New color roles in `ColorScheme` include seven tone-based surfaces and containers, alongside twelve accent color add-ons. This update deprecates three existing color roles: `background`, `onBackground`, and `surfaceVariant`. The `ColorScheme` constructed by the updated `ColorScheme.fromSeed` method now generates different values compared to the previous version, adapting to Material Design 3's guidelines.
 
 ## Background
 
