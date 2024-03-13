@@ -16,8 +16,9 @@
     flex: 1;
   }
 
-  // Remove DartPad iframes since they are not functional
-  .code-excerpt iframe {
+  // Remove DartPad iframes since they are not functional.
+  iframe[src^="https://dartpad"]:not(#try-dart-pad),
+  iframe[src^="https://old-dartpad"] {
     display: none;
   }
 
