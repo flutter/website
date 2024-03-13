@@ -74,19 +74,53 @@ To then ensure you are running the latest version,
 run `flutter upgrade`.
 
 To verify if your Flutter install supports Wasm,
-run `flutter build web --help`, 
-and check if the `--wasm` option is listed under `Experimental options`.
+run `flutter build web --help`.
 
-#### Create a simple Flutter web application
-
-Choose any Flutter application that has been 
-[migrated](#migration) to be
-[compatible with Wasm](#js-interop-wasm),
-or create a new Flutter sample app:
+At the bottom of the output, you should find experimental Wasm options like:
 
 ```console
-flutter create myapp
+Experimental options
+    --wasm                                                   Compile to WebAssembly rather than JavaScript.
+                                                             See https://flutter.dev/wasm for more information.
+    --[no-]strip-wasm                                        Whether to strip the resulting wasm file of static symbol names.
+                                                             (defaults to on)
 ```
+
+#### Pick a (simple) Flutter web application
+
+Try the default template [sample app][], or choose any Flutter application
+that has been migrated to be
+[compatible with Wasm](#js-interop-wasm).
+
+[sample app]: /get-started/test-drive
+
+#### Modify `index.html`
+
+Before building with Wasm, you'll need to modify the bootstrap logic in your
+`web/index.html` file.
+
+```html
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Web Benchmarks</title>
+  <script src="flutter.js"></script>
+</head>
+<body>
+  <script>
+    {% raw %}{{flutter_build_config}}{% endraw %}
+    _flutter.loader.load();
+  </script>
+</body>
+</html>
+```
+
+This feature is under development. The current syntax
+(`flutter.js`, `{% raw %}{{flutter_build_config}}{% endraw %}`,
+`_flutter.loader.load()`) is a temporary solution in the `beta` and `main`
+channels now, but will be replaced by the actual syntax in an upcoming stable
+release. Stay tuned!
 
 #### Run `flutter build web --wasm`
 
@@ -94,14 +128,11 @@ To build a web application with Wasm, add a `--wasm` flag to the existing
 `flutter build web` command.
 
 ```console
-cd myapp
 flutter build web --wasm
 ```
 
 The command sends its output to the `build/web` directory relative to
-package root. You should see both 
-`main.dart.js` (the app compiled to JavaScript) and
-`main.dart.wasm` (the app compiled to Wasm) in this directory.
+package root.
 
 #### Serve the output locally with an HTTP server
 
@@ -123,15 +154,12 @@ Server started on port 8080
 
 #### Load it in a browser
 
-The build command above builds the app to both JavaScript and Wasm.
-When the app is loaded, it will detect if the browser supports Wasm,
-and fall back to the JavaScript version if it doesn't.
-
 As of {{page.last-update}},
 [only **Chromium-based browsers**](#chrome-119-or-later)
 (Version 119 or later) are able to run Flutter/Wasm content. 
 
-Open `localhost:8080` in the browser to view the app.
+If your configured browser meets the requirements, open
+[`localhost:8080`](http://localhost:8080) in the browser to view the app.
 
 If the application doesn't load:
 
@@ -168,21 +196,6 @@ and the latest version of Chrome.
 
 [currently experiencing a bug]: https://bugzilla.mozilla.org/show_bug.cgi?id=1788206
 [this bug]: https://bugs.webkit.org/show_bug.cgi?id=247394
-
-#### Existing apps need migration {#migration}
-
-Flutter web apps created earlier need a small edit to the `index.html` file:
-
-1. Remove any Flutter scripts from the `<head>` section
-2. Add this to the `<body` section:
-
-```html
-<body>
-  <!-- Add this Flutter bootstrap script >
-  <script src="flutter_bootstrap.js" async></script>
-</body>
-</html>
-```
 
 #### Requires JS-interop to access browser and JS APIs {#js-interop-wasm}
 
