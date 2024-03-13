@@ -45,286 +45,31 @@ should provide details.
 
 ### Flutter Plugins and Apple Frameworks
 
-<table class="table table-striped nowrap">
-<tr>
-<th markdown="1">
-Use Case
-</th>
-<th markdown="1">
-Apple Framework or Class
-</th>
-<th markdown="1">
-Flutter Plugin
-</th>
-</tr>
-
-<tr>
-<td markdown="1">
-Access the photo library
-</td>
-<td markdown="1">
-* `PhotoKit`<br>using the `Photos` and `PhotosUI ` frameworks
-* `UIImagePickerController`
-</td>
-<td markdown="1">
-[`image_picker`][]
-</td>
-</tr>
-
-<tr>
-<td markdown="1">
-Access the camera
-</td>
-<td markdown="1">
-`UIImagePickerController`<br>using the `.camera` `sourceType`
-</td>
-<td markdown="1">
-[`image_picker`][]
-</td>
-</tr>
-
-<tr>
-<td markdown="1">
-Use advanced camera features
-</td>
-<td markdown="1">
-`AVFoundation`
-</td>
-<td markdown="1">
-[`camera`][]
-</td>
-</tr>
-
-<tr>
-<td markdown="1">
-Offer In-app purchases
-</td>
-<td markdown="1">
-`StoreKit`
-</td>
-<td markdown="1">
-[`in_app_purchase`][][^1]
-</td>
-</tr>
-
-<tr>
-<td markdown="1">
-Process payments
-</td>
-<td markdown="1">
-`PassKit`
-</td>
-<td markdown="1">
-[`pay`][][^2]
-</td>
-</tr>
-
-<tr>
-<td markdown="1">
-Send push notifications
-</td>
-<td markdown="1">
-`UserNotifications`
-</td>
-<td markdown="1">
-[`firebase_messaging`][][^3]
-</td>
-</tr>
-
-<tr>
-<td markdown="1">
-Access GPS coordinates
-</td>
-<td markdown="1">
-`CoreLocation`
-</td>
-<td markdown="1">
-[`geolocator`][]
-</td>
-</tr>
-
-<tr>
-<td markdown="1">
-Access sensor data[^4]
-</td>
-<td markdown="1">
-`CoreMotion`
-</td>
-<td markdown="1">
-[`sensors_plus`][]
-</td>
-</tr>
-
-<tr>
-<td markdown="1">
-Embed maps
-</td>
-<td markdown="1">
-`MapKit`
-</td>
-<td markdown="1">
-[`google_maps_flutter`][]
-</td>
-</tr>
-
-<tr>
-<td markdown="1">
-Make network requests
-</td>
-<td markdown="1">
-`URLSession`
-</td>
-<td markdown="1">
-[`http`][]
-</td>
-</tr>
-
-<tr>
-<td markdown="1">
-Store key-values
-</td>
-<td markdown="1">
-* `@AppStorage` property wrapper
-* `NSUserDefaults`
-</td>
-<td markdown="1">
-[`shared_preferences`][]
-</td>
-</tr>
-
-<tr>
-<td markdown="1">
-Persist to a database
-</td>
-<td markdown="1">
-`CoreData` or SQLite
-</td>
-<td markdown="1">
-[`sqflite`][]
-</td>
-</tr>
-
-<tr>
-<td markdown="1">
-Access health data
-</td>
-<td markdown="1">
-`HealthKit`
-</td>
-<td markdown="1">
-[`health`][]
-</td>
-</tr>
-
-<tr>
-<td markdown="1">
-Use machine learning
-</td>
-<td markdown="1">
-`CoreML`
-</td>
-<td markdown="1">
-[`google_ml_kit`][][^5]
-</td>
-</tr>
-
-<tr>
-<td markdown="1">
-Recognize text
-</td>
-<td markdown="1">
-`VisionKit`
-</td>
-<td markdown="1">
-[`google_ml_kit`][][^5]
-</td>
-</tr>
-
-<tr>
-<td markdown="1">
-Recognize speech
-</td>
-<td markdown="1">
-`Speech`
-</td>
-<td markdown="1">
-[`speech_to_text`][]
-</td>
-</tr>
-
-<tr>
-<td markdown="1">
-Use augmented reality
-</td>
-<td markdown="1">
-`ARKit`
-</td>
-<td markdown="1">
-[`ar_flutter_plugin`][]
-</td>
-</tr>
-
-<tr>
-<td markdown="1">
-Access weather data
-</td>
-<td markdown="1">
-`WeatherKit`
-</td>
-<td markdown="1">
-[`weather`][][^6]
-</td>
-</tr>
-
-<tr>
-<td markdown="1">
-Access and manage contacts
-</td>
-<td markdown="1">
-`Contacts`
-</td>
-<td markdown="1">
-[`contacts_service`][]
-</td>
-</tr>
-
-<tr>
-<td markdown="1">
-Expose quick actions on the home screen
-</td>
-<td markdown="1">
-`UIApplicationShortcutItem`
-</td>
-<td markdown="1">
-[`quick_actions`][]
-</td>
-</tr>
-
-<tr>
-<td markdown="1">
-Index items in Spotlight search
-</td>
-<td markdown="1">
-`CoreSpotlight`
-</td>
-<td markdown="1">
-[`flutter_core_spotlight`][]
-</td>
-</tr>
-
-<tr>
-<td markdown="1">
-Configure, update and communicate with Widgets
-</td>
-<td markdown="1">
-`WidgetKit`
-</td>
-<td markdown="1">
-[`home_widget`][]
-</td>
-</tr>
-
-</table>
+| Use Case                                       | Apple Framework or Class                                                              | Flutter Plugin               |
+|------------------------------------------------|---------------------------------------------------------------------------------------|------------------------------|
+| Access the photo library                       | `PhotoKit`using the `Photos` and `PhotosUI ` frameworks and `UIImagePickerController` | [`image_picker`][]           |
+| Access the camera                              | `UIImagePickerController` using the `.camera` `sourceType`                            | [`image_picker`][]           |
+| Use advanced camera features                   | `AVFoundation`                                                                        | [`camera`][]                 |
+| Offer In-app purchases                         | `StoreKit`                                                                            | [`in_app_purchase`][][^1]    |
+| Process payments                               | `PassKit`                                                                             | [`pay`][][^2]                |
+| Send push notifications                        | `UserNotifications`                                                                   | [`firebase_messaging`][][^3] |
+| Access GPS coordinates                         | `CoreLocation`                                                                        | [`geolocator`][]             |
+| Access sensor data[^4]                         | `CoreMotion`                                                                          | [`sensors_plus`][]           |
+| Embed maps                                     | `MapKit`                                                                              | [`google_maps_flutter`][]    |
+| Make network requests                          | `URLSession`                                                                          | [`http`][]                   |
+| Store key-values                               | `@AppStorage` property wrapper and `NSUserDefaults`                                   | [`shared_preferences`][]     |
+| Persist to a database                          | `CoreData` or SQLite                                                                  | [`sqflite`][]                |
+| Access health data                             | `HealthKit`                                                                           | [`health`][]                 |
+| Use machine learning                           | `CoreML`                                                                              | [`google_ml_kit`][][^5]      |
+| Recognize text                                 | `VisionKit`                                                                           | [`google_ml_kit`][][^5]      |
+| Recognize speech                               | `Speech`                                                                              | [`speech_to_text`][]         |
+| Use augmented reality                          | `ARKit`                                                                               | [`ar_flutter_plugin`][]      |
+| Access weather data                            | `WeatherKit`                                                                          | [`weather`][][^6]            |
+| Access and manage contacts                     | `Contacts`                                                                            | [`contacts_service`][]       |
+| Expose quick actions on the home screen        | `UIApplicationShortcutItem`                                                           | [`quick_actions`][]          |
+| Index items in Spotlight search                | `CoreSpotlight`                                                                       | [`flutter_core_spotlight`][] |
+| Configure, update and communicate with Widgets | `WidgetKit`                                                                           | [`home_widget`][]            |
+{:.table.table-striped.nowrap}
 
 [^1]: Supports both Google Play Store on Android and Apple App Store on iOS.
 [^2]: Adds Google Pay payments on Android and Apple Pay payments on iOS.

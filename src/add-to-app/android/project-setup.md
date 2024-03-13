@@ -118,7 +118,6 @@ manually, without using Flutter's Android Studio plugin,
 follow these steps:
 
 #### Create a Flutter module
-{:.no_toc}
 
 Let's assume that you have an existing Android app at
 `some/path/MyApp`, and that you want your Flutter
@@ -159,7 +158,6 @@ module an embeddable Android library.
 {{site.alert.end}}
 
 #### Java version requirement
-{:.no_toc}
 
 Flutter requires your project to declare compatibility with Java 11 or later.
 
@@ -180,7 +178,6 @@ android {
 ```
 
 #### Centralize repository settings
-{:.no_toc}
 
 Starting with Gradle 7, Android recommends using centralized repository
 declarations in `settings.gradle` instead of project or module level

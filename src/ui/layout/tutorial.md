@@ -31,8 +31,10 @@ If you use the example code provided, you can build the following app.
    width="50%" %}
 
 <figcaption class="figure-caption" markdown="1">
+
 Photo by [Dino Reichmuth][ch-photo] on [Unsplash][].
 Text by [Switzerland Tourism][].
+
 </figcaption>
 
 To get a better overview of the layout mechanism, start with

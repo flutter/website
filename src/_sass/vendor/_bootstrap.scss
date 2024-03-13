@@ -81,17 +81,61 @@
 // Bootstrap adjustments
 
 .alert {
-  > p:last-child { margin-bottom: 0; }
-  > ul:last-child { margin-bottom: 0; }
+  border: none;
+  border-radius: 0;
+  color: $site-color-body;
+  margin-top: 1rem;
+  padding: 1.25rem;
 
-  i.material-symbols {
-    font-size: 20px;
-    user-select: none;
-    vertical-align: -4px;
+  .alert-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: $site-font-family-alt;
+    font-size: 1.125rem;
+    font-weight: 500;
   }
-  
+
+  .alert-content {
+    margin-top: 0.5rem;
+  }
+
+  i.material-icons {
+    font-size: 1.25em;
+    user-select: none;
+  }
+
+  code {
+    background-color: transparent;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  &.alert-success {
+    width: auto;
+    background-color: $alert-success-bg;
+  }
+
+  &.alert-info {
+    width: auto;
+    background-color: $alert-info-bg;
+  }
+
   &.alert-secondary {
+    width: auto;
     background-color: $flutter-color-grey-500;
+  }
+
+  &.alert-warning {
+    width: auto;
+    background-color: $alert-warning-bg;
+  }
+
+  &.alert-danger {
+    width: auto;
+    background-color: $alert-danger-bg;
   }
 }
 
@@ -103,7 +147,7 @@ a.card {
   .card-subtitle {
     font-size: bootstrap.$font-size-sm;
   }
-  
+
   &:hover {
     $border-height: 0.25rem;
 
@@ -146,7 +190,7 @@ a.card {
 
 // The nav bar for viewing code samples on GitHub / DartPad
 .navbar-code {
-  flex-direction:row;
+  flex-direction: row;
 }
 
 // The nav bar for viewing code samples on GitHub / DartPad
@@ -165,33 +209,37 @@ a.card {
   white-space: normal;
 }
 
-.btn-link:hover,
-.btn-link:focus {
-  text-decoration: none;
+.btn-link {
+  &:hover, &:focus {
+    text-decoration: none;
+  }
 }
 
 .nav-tabs {
   font-family: $site-font-family-alt;
   margin-bottom: 0.75rem;
-}
 
-.nav-tabs .nav-item:not(:last-child) {
-  margin-right: bs-spacer(8);
-}
+  .nav-item {
+    &:not(:last-child) {
+      margin-right: bs-spacer(8);
+    }
 
-.nav-tabs .nav-item a {
-  color: $site-color-nav-links;
-  padding: bs-spacer(4) 0;
-}
+    a {
+      color: $site-color-nav-links;
+      padding: bs-spacer(4) 0;
+    }
+  }
 
-.nav-tabs .nav-link,
-.nav-tabs .nav-link:hover {
-  border: none;
-  border-bottom: 2px solid transparent;
-}
+  .nav-link {
+    &, &:hover {
+      border: none;
+      border-bottom: 2px solid transparent;
+    }
 
-.nav-tabs .nav-link.active {
-  border-color: $site-color-primary;
+    &.active, &:active {
+      border-color: $site-color-primary;
+    }
+  }
 }
 
 @mixin reset-carousel-animation {

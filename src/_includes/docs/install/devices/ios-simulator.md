@@ -1,5 +1,4 @@
 #### Configure your iOS simulator
-{:.no_toc}
 
 To prepare to run and test your Flutter app on the iOS simulator,
 follow this procedure.
