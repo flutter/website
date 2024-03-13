@@ -3,12 +3,6 @@ title: First week experience of Flutter
 description: Learn the xxx
 ---
 
-Intro - welcome to this page
-Links to each topic
-Include description
-Link to survey
-Include some text about why it's there.
-
 ## Welcome to the next level of Flutter!
 
 If you are new to Flutter, and have already worked
