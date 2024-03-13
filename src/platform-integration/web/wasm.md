@@ -62,28 +62,21 @@ To then ensure you are running the latest version,
 run `flutter upgrade`.
 
 To verify if your Flutter install supports Wasm,
-run `flutter build web --help`.
+run `flutter build web --help`, 
+and check if the `--wasm` option is listed under `Experimental options`.
 
-At the bottom of the output, you should find experimental Wasm options like:
+#### Create a simple Flutter web application
+
+Create a new Flutter sample app:
 
 ```console
-Experimental options
-    --wasm                                              Compile to WebAssembly rather than JavaScript.
-                                                        See https://flutter.dev/wasm for more information.
-    --omit-type-checks                                  Omit type checks in Wasm output.
-                                                        Reduces code size and improves performance, but might affect runtime correctness. Use with care.
-    --wasm-opt                                          Optimize output wasm using the Binaryen (https://github.com/WebAssembly/binaryen) tool.
-
-          [debug]                                       Similar to `full`, but member names are preserved. Debugging is easier, but size is a bit bigger.
-          [full] (default)                              wasm-opt is run. Build time is slower, but output is smaller and faster.
-          [none]                                        wasm-opt is not run. Fastest build; bigger, slower output.
+flutter create myapp
 ```
 
-#### Pick a (simple) Flutter web application
 
-Choose a Flutter application without platform-specific packages or
-JavaScript interop code.
-These [known limitations](#known-limitations) cause issues with Wasm.
+If you with to use an existing Flutter web application,
+note that only those without platform-specific packages or
+JavaScript interop code are [supported currently](#known-limitations).
 
 #### Run `flutter build web --wasm`
 
@@ -91,11 +84,14 @@ To build a web application with Wasm, add a `--wasm` flag to the existing
 `flutter build web` command.
 
 ```console
+cd myapp
 flutter build web --wasm
 ```
 
-The command sends its output to the `build/web_wasm` directory relative to
-package root.
+The command sends its output to the `build/web` directory relative to
+package root. You should see both 
+`main.dart.js` (the app compiled to JavaScript) and
+`main.dart.wasm` (the app compiled to Wasm) in this direcctory.
 
 #### Serve the output locally with an HTTP server
 
@@ -106,22 +102,26 @@ If you don't have a local HTTP server installed, you can use the
 flutter pub global activate dhttpd
 ```
 
-Then change to the `build/web_wasm` directory
+Then change to the `build/web` directory
 and run the server:
 
 ```terminal
-> cd build/web_wasm
+> cd build/web
 > dhttpd
 Server started on port 8080
 ```
 
 #### Load it in a browser
 
+The build command above builds the app to both JavaScript and Wasm.
+When the app is loaded, it will detect if the browser supports Wasm,
+and fall back to the JavaScript version if it doesn't.
+
 As of {{page.last-update}},
 two browser families should be able to run
 Flutter/Wasm content:
 
-- Chromium-based browsers
+- Google Chrome / Chromium-based browsers
   - Version 119 or later.
 - Firefox
   - Version 120 or later.
@@ -130,8 +130,8 @@ Flutter/Wasm content:
   This does not include versions of these browsers on iOS.
 {{site.alert.end}}
 
-If your configured browser meets the requirements, open
-[`localhost:8080`](http://localhost:8080) in the browser to view the app.
+Open [`localhost:8080`](http://localhost:8080) 
+in the browser to view the app.
 
 If the application doesn't load:
 
