@@ -32,11 +32,13 @@ As you might know, Flutter uses the [Dart language][].
 If you have experience with other object-oriented
 languages, like Java, C++, or Swift,
 Dart should feel familiar to you.
-As of this writing, [Dart is one of the fastest
-growing languages][dart-lang], in part, thanks to Flutter.
+As of this writing,
+[Dart is one of the fastest growing languages][dart-lang],
+in part, thanks to Flutter.
 
+[Dart language]: {{site.dart-site}}
 [dart-lang]: https://twitter.com/MiSvTh/status/1732002450641400276?cxt
-[your first Flutter codelab]: {{site.codelabs}}/codelabs/flutter-codelab-first?hl=en#0
+[your first Flutter codelab]: {{site.codelabs}}/codelabs/flutter-codelab-first
 
 We suggest that you work through the
 following subjects in the listed order.
