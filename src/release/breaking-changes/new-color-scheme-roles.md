@@ -30,7 +30,7 @@ has a high chroma.
 ## Migration guide
 
 The difference caused by the updated `ColorScheme.fromSeed` and the new color
-roles should be small and acceptable. However, when we provide a brighter
+roles should be small and acceptable. However, when providing a brighter
 source color to `ColorScheme.fromSeed`, it may constructs a relatively
 darker version of `ColorScheme`. To force the output to still be bright, 
 set `schemeVariant: FromSeedVariant.fidelity` in `ColorScheme.fromSeed`.
