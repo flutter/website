@@ -3,14 +3,12 @@ title: Support for WebAssembly (Wasm)
 description: >-
   Current status of Flutter's experimental support for WebAssembly (Wasm).
 short-title: Wasm
-last-update: March 12, 2024
+last-update: March 13, 2024
 ---
 
-Subtitle: Support for Wasm just landed in Flutter beta 3.x.x, thanks to an exciting milestone Dart 3.3 added to the decade-long journey of Dart and JavaScript interoperability.
-
-To celebrate, we’re looking back at Dart's history and dedication to the JS interop story
-
-Dart 3.3 brought an exciting milestone in a decade-long journey of Dart/JS interoperability.
+Today, we are excited to celebrate a new form of Dart/JS interop and the future it will enable.
+Knowing our past, we are certain this is not the end of the journey, but just an exciting point in our history.
+Dart will continue to evolve 
 
 **_Last updated {{page.last-update}}_**
 
