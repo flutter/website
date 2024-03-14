@@ -161,7 +161,11 @@ you can add interactivity to your own widget using `GestureDetector`.
 * Documentation: [Taps, drags, and other gestures][]
 * Article: [Handle taps][]
 
-Don't forget about accessibility! If you're building your own custom widget, you can annotate its meaning with the Semantics widget. It lets you provide descriptions, metadata, and more to screen readers and other semantic analysis-based tools. 
+Don't forget about accessibility!
+If you're building your own custom widget,
+you can annotate its meaning with the `Semantics` widget.
+It lets you provide descriptions, metadata,
+and more to screen readers and other semantic analysis-based tools. 
 
 * Video: [Semantics (Flutter Widget of the Week)][]
 
