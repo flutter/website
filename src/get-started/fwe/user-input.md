@@ -43,7 +43,8 @@ the most common user input methods into your Flutter app.
 ### Click or tap (Buttons)
 Let a user prompt action in a UI by clicking or tapping. 
 
-The following are Material 3 button types. Functionally they are similar, but styled differently:
+The following Material 3 button types are functionally similar,
+but are styled differently:
 
 * [ElevatedButton][]: A button with some depth. Use elevated buttons to add dimension to otherwise mostly flat layouts.
 * [FilledButton][]: A filled button that should be used for important, final actions that complete a flow, like Save, Join now, or Confirm.
