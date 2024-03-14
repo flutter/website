@@ -104,7 +104,9 @@ This `UserRepository` follows multiple proven design principles including:
 * [separation of concerns][], which prevents its implementation from juggling too many concerns
 * [loose coupling][], which protects surrounding code from implementation details
 
-And best of all, no matter how many times within a single session a user visits pages in your Flutter app which load a given user, the `UserRepository` class will only load that data over the network *once*.
+And best of all, no matter how many times within a single session
+a user visits pages in your Flutter app that load a given user,
+the `UserRepository` class only loads that data over the network *once*.
 
 However, your users may eventually tire of waiting for data to load every time they relaunch your app. For that, you should choose from one of the persistent caching strategies found below.
 
