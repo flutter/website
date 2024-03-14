@@ -175,24 +175,24 @@ This page was an introduction to handling user input. Now that you know how to a
 [FloatingActionButton]: {{site.api}}flutter/material/FloatingActionButton-class.html
 [FloatingActionButton (Widget of the Week)]: https://youtu.be/2uaoEDOgk_I?si=MQZcSp24oRaS_kiY
 
-[TextField]: {{site.api}}flutter/material/TextField-class.html
+[`TextField`]: {{site.api}}flutter/material/TextField-class.html
 [Create and style a text field]: /cookbook/forms/text-input
 [Retrieve the value of a text field]: /cookbook/forms/retrieve-input
 [Handle changes to a text field]: /cookbook/forms/text-field-changes
 [Focus and text fields]: /cookbook/forms/focus
-[RichText]: {{site.api}}flutter/widgets/RichText-class.html
+[`RichText`]: {{site.api}}flutter/widgets/RichText-class.html
 [Rich Text (Widget of the Week)]: https://www.youtube.com/watch?v=rykDVh-QFfw
 [Rich Text Editor]: https://flutter.github.io/samples/rich_text_editor.html
 [Rich Text Editor code]: https://github.com/flutter/samples/tree/main/simplistic_editor
-[Form]: {{site.api}}flutter/widgets/Form-class.html
+[`Form`]: {{site.api}}flutter/widgets/Form-class.html
 [Build a form with validation]: /cookbook/forms/validation
 [Form App]: https://flutter.github.io/samples/web/form_app/
 [Form App Code]: https://github.com/flutter/samples/tree/main/form_app
-[SelectableText]: {{site.api}}flutter/material/SelectableText-class.html
+[`SelectableText`]: {{site.api}}flutter/material/SelectableText-class.html
 [SelectableText (Widget of the Week)]: https://www.youtube.com/watch?v=ZSU3ZXOs6hc
 
-[SegmentedButton]: {{site.api}}flutter/material/SegmentedButton-class.html
-[DropdownMenu]: {{site.api}}flutter/material/DropdownMenu-class.html
+[`SegmentedButton`]: {{site.api}}flutter/material/SegmentedButton-class.html
+[`DropdownMenu`]: {{site.api}}flutter/material/DropdownMenu-class.html
 [DropdownMenu (Widget of the Week)]: https://youtu.be/giV9AbM2gd8?si=E23hjg72cjMTe_mz
 [Slider]: {{site.api}}flutter/material/Slider-class.html
 [Slider, RangeSlider, CupertinoSlider (Widget of the Week)]: https://www.youtube.com/watch?v=ufb4gIPDmEss
