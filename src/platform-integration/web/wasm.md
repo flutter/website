@@ -243,7 +243,7 @@ Wasm at the moment.
 
 Check out Flutter's
 [existing web support]({{site.main-url}}/multi-platform/web).
-Flutter and Dart work on support for Wasm continues.
+Work on Flutter and Dart Wasm support continues.
 Once finished, your existing Flutter web apps
 shouldn't need much work to support Wasm.
 
