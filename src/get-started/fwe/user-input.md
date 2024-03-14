@@ -37,7 +37,8 @@ user input widgets available in the Material 3 component library.
 
 ## Get user input
 
-This section covers widgets that will help you build the most common user input methods into your Flutter app. 
+This section covers widgets that help you build
+the most common user input methods into your Flutter app. 
 
 ### Click or tap (Buttons)
 Let a user prompt action in a UI by clicking or tapping. 
