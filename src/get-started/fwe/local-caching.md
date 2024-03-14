@@ -72,7 +72,9 @@ The simplest and most performant caching strategy is an in-memory cache. The dow
 
 Due to their simplicity, in-memory caches most directly mimic the pseudocode seen above of all caching strategies. That said, it is best to use proven design principles, like the [repository pattern][], to organize your code and prevent cache checks like the above from appearing all over your code base.
 
-Imagine a `UserRepository` class which is also tasked with caching users in memory to avoid duplicate network requests. Its implementation may look like this:
+Imagine a `UserRepository` class that is also tasked with
+caching users in memory to avoid duplicate network requests.
+Its implementation might look like this:
 
 ```dart
 class UserRepository {
