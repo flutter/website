@@ -141,7 +141,8 @@ on how to build a text field, from beginning to end:
 
 ### Swipe and slide
 
-[Dismissible][]: Clear list items by swiping left or right.
+[`Dismissible`][]
+: Clear list items by swiping left or right.
 
 * Video: [Dismissible (Widget of the Week)][]
 * Article: [Implement swipe to dismiss][]
