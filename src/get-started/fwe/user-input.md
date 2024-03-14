@@ -135,7 +135,7 @@ Don't forget about accessibility! If you're building your own custom widget, you
 
 Bonus: For a deeper understanding on how Flutter's GestureArena turns raw user interaction data into human recognizable concepts like taps, drags, and pinches:
 
-* Video: [GestureArena | Decoding Flutter][]
+* Video: [GestureArena (Decoding Flutter)][]
 
 ## Testing
 Finished building user interactions into your app? Don't forget to write tests to make sure that everything works as expected! 
@@ -208,7 +208,7 @@ This page was an introduction to handling user input. Now that you know how to a
 [Taps, drags, and other gestures]: /ui/interactivity/gestures#gestures
 [Handle taps]: /cookbook/gestures/handling-taps
 [Semantics (Flutter Widget of the Week)]: https://youtu.be/NvtMt_DtFrQ?si=o79BqAg9NAl8EE8_
-[GestureArena | Decoding Flutter]: https://www.youtube.com/watch?v=Q85LBtBdi0U
+[GestureArena (Decoding Flutter)]: https://www.youtube.com/watch?v=Q85LBtBdi0U
 
 [Tap, drag, and enter text]: https://docs.flutter.dev/cookbook/testing/widget/tap-drag
 [Handle scrolling]: https://docs.flutter.dev/cookbook/testing/widget/scrolling
