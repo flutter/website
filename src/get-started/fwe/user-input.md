@@ -181,7 +181,7 @@ This page was an introduction to handling user input. Now that you know how to a
 [DropdownMenu]: {{site.api}}flutter/material/DropdownMenu-class.html
 [DropdownMenu (Widget of the Week)]: https://youtu.be/giV9AbM2gd8?si=E23hjg72cjMTe_mz
 [Slider]: {{site.api}}flutter/material/Slider-class.html
-[Slider, RangeSlider, CupertinoSlider (Widget of the Week)](https://www.youtube.com/watch?v=ufb4gIPDmEs)
+[Slider, RangeSlider, CupertinoSlider (Widget of the Week)]: https://www.youtube.com/watch?v=ufb4gIPDmEs
 
 
 [Checkbox]: {{site.api}}flutter/material/Checkbox-class.html
