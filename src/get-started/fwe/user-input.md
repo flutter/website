@@ -74,7 +74,8 @@ This series of cookbook articles will walk you through every stop on how to buil
 * Demo: [Rich Text Editor][]
 * Sample code: [Rich Text Editor code][]
 
-[SelectableText][]: Display a string of user-selectable text with a single style.
+[`SelectableText`][]
+: Display a string of user-selectable text with a single style.
 
 * Video: [SelectableText (Widget of the Week)][]
 
