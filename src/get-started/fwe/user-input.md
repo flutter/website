@@ -69,7 +69,8 @@ on how to build a text field, from beginning to end:
 1. Article: [Handle changes to a text field][]
 1. Article: [Focus and text fields][]
 
-[RichText][]: Display text that uses multiple different styles.
+[`RichText`][]
+: Display text that uses multiple styles.
 
 * Video: [Rich Text (Widget of the Week)][]
 * Demo: [Rich Text Editor][]
