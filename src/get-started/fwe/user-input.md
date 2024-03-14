@@ -143,6 +143,7 @@ Finished building user interactions into your app? Don't forget to write tests t
 * Article: [Tap, drag, and enter text][]
 * Article: [Handle scrolling][]
 
+
 ## Next: Networking
 
 This page was an introduction to handling user input. Now that you know how to accept input from app's users, you can make your app even more interesting by adding external data. In the next section, you will learn now to fetch data for your app over a network. 
