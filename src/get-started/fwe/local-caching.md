@@ -17,7 +17,8 @@ at a future time is called *caching*, and this page covers how to approach this 
 
 ## Introduction to caching
 
-At its most basic, all caching strategies amount to the same three-step operation, represented with the following pseudocode:
+At its most basic, all caching strategies amount to the same three-step operation,
+represented with the following pseudocode:
 
 ```dart
 Data? _cachedData;
