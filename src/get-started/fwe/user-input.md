@@ -122,9 +122,14 @@ on how to build a text field, from beginning to end:
 
 * Video [SwitchListTile (Widget of the Week)][]
 
-[Radio][]: Select between a number of mutually exclusive values. When one radio button in a group is selected, the other radio buttons in the group cease to be selected.
+[`Radio`][]
+: Select between a number of mutually exclusive values.
+  When one radio button in a group is selected,
+  the other radio buttons in the group cease to be selected.
 
-[Chip][]: Chips are compact elements that represent an attribute, text, entity, or action.
+[`Chip`][]
+: Chips are compact elements that represent an attribute,
+  text, entity, or action.
 
 ### Select a date or time
 
