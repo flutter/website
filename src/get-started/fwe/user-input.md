@@ -133,9 +133,11 @@ on how to build a text field, from beginning to end:
 
 ### Select a date or time
 
-[showDatePicker][]: Shows a dialog containing a [Material Design date picker][].
+[`showDatePicker`][]
+: Shows a dialog containing a [Material Design date picker][].
 
-[showTimePicker][]: Shows a dialog containing a [Material Design time picker][].
+[`showTimePicker`][]
+: Shows a dialog containing a [Material Design time picker][].
 
 ### Swipe and slide
 
