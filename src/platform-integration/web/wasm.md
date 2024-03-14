@@ -22,7 +22,7 @@ Revisit this page for the latest updates.
 
 {{site.alert.note}}
   **Support for Wasm is now in beta!**
-  : Wasm and WebAssembly garbage collection (WasmGC) are now 
+  : WebAssembly support for Flutter web is
     available on the Flutter [`beta` channel][] and [`main` channel][].
 
   **Dart's next-gen Web interop is now stable!**
