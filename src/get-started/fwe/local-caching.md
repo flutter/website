@@ -7,7 +7,13 @@ next:
     title: JSON serialization
 ---
 
-Now that you've learned about how to load data from servers over the network, your Flutter app should feel more alive. However, just because you *can* load data from remote servers doesn't mean you always *should*. Sometimes, it's better to re-render the data you received from the previous network request rather than repeat it and make your user wait until it completes again. This technique of retaining application data to show again at a future time is called *caching*, and this page covers how to approach this task in your Flutter app.
+Now that you've learned about how to load data from servers over the network,
+your Flutter app should feel more alive.
+However, just because you *can* load data from remote servers doesn't mean
+you always *should*. Sometimes, it's better to re-render the data you received
+from the previous network request rather than repeat it and make your user wait
+until it completes again. This technique of retaining application data to show again
+at a future time is called *caching*, and this page covers how to approach this task in your Flutter app.
 
 ## Introduction to caching
 
