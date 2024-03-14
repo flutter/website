@@ -97,7 +97,9 @@ However, your users may eventually tire of waiting for data to load every time t
 
 ## Persistent caches
 
-Caching data in memory will never see your precious cache outlive a user single session. To enjoy the performance benefits of cache hits on fresh launches of your application, you will need to cache data somewhere on the device's hard drive.
+Caching data in memory will never see your precious cache outlive a user single session.
+To enjoy the performance benefits of cache hits on fresh launches of your application,
+you need to cache data somewhere on the device's hard drive.
 
 ### Caching data with `shared_preferences`
 
