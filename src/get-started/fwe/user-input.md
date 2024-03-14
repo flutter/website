@@ -28,7 +28,12 @@ Now that you've gotten a feel for how user interaction works,
 check out the [Material 3 Demo][], which samples some of the
 user input widgets available in the Material 3 component library. 
 
-Note: This page focuses on Material 3 widgets because it is the library that many developers start with when learning Flutter. However, Flutter also supports other component libraries such as [Cupertino][] for iOS-styled widgets.
+{{site.alert.note}}
+  This page focuses on Material 3 widgets because it's the library
+  that many developers start with when learning Flutter.
+  However, Flutter also supports  [Cupertino][] for iOS-styled widgets,
+  or you can build your own widget library.
+{{site.alert.end}}
 
 ## Get user input
 
