@@ -97,7 +97,11 @@ class UserRepository {
 }
 ```
 
-This `UserRepository` follows multiple proven design principles, including [dependency injection][] which helps with testing, [separation of concerns][] which prevents its implementation from juggling too many concerns, and [loose coupling][] which protects surrounding code from its implementation details.
+This `UserRepository` follows multiple proven design principles including:
+
+* [dependency injection][], which helps with testing
+* [separation of concerns][], which prevents its implementation from juggling too many concerns
+* [loose coupling][], which protects surrounding code from implementation details
 
 And best of all, no matter how many times within a single session a user visits pages in your Flutter app which load a given user, the `UserRepository` class will only load that data over the network *once*.
 
