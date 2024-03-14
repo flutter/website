@@ -46,10 +46,16 @@ Let a user prompt action in a UI by clicking or tapping.
 The following Material 3 button types are functionally similar,
 but are styled differently:
 
-* [ElevatedButton][]: A button with some depth. Use elevated buttons to add dimension to otherwise mostly flat layouts.
-* [FilledButton][]: A filled button that should be used for important, final actions that complete a flow, like Save, Join now, or Confirm.
-* [TextButton][]: Clickable text, without a border. 
-* [OutlinedButton][]: A button with text and a visible border.
+* [`ElevatedButton`][]
+: A button with some depth. Use elevated buttons to add dimension to
+  otherwise mostly flat layouts.
+* [`FilledButton`][]
+: A filled button should be used for important,
+  final actions that complete a flow, like **Save**, **Join now**, or **Confirm**.
+* [`TextButton`][]
+: Clickable text, without a border. 
+* [`OutlinedButton`][]
+: A button with text and a visible border.
 
 [IconButton][]: A button with an icon. 
 
