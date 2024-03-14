@@ -142,7 +142,10 @@ Don't forget about accessibility! If you're building your own custom widget, you
 
 * Video: [Semantics (Flutter Widget of the Week)][]
 
-Bonus: For a deeper understanding on how Flutter's GestureArena turns raw user interaction data into human recognizable concepts like taps, drags, and pinches:
+Bonus: For a deeper understanding on how Flutter's
+`GestureArena` turns raw user interaction data into
+human recognizable concepts like taps, drags, and pinches
+check out the following video:
 
 * Video: [GestureArena (Decoding Flutter)][]
 
