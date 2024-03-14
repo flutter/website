@@ -119,7 +119,7 @@ This series of cookbook articles will walk you through every stop on how to buil
 
 [pkg:flutter_slidable][]: A Flutter implementation of slidable list item with directional slide actions that can be dismissed.
 
-* Video [flutter_slidable (Package of the Week)][]
+* Video: [flutter_slidable (Package of the Week)][]
 
 ## Build your own interactive widget with GestureDetector 
 
@@ -191,7 +191,7 @@ This page was an introduction to handling user input. Now that you know how to a
 [SwitchListTile]: {{site.api}}flutter/material/SwitchListTile-class.html
 [SwitchListTile (Widget of the Week)]: https://www.youtube.com/watch?v=0igIjvtEWNU
 [Radio]: {{site.api}}flutter/material/Radio-class.html
-[Chips]: {{site.api}}flutter/material/Chip-class.html
+[Chip]: {{site.api}}flutter/material/Chip-class.html
 
 [Material Design date picker]: https://m3.material.io/components/date-pickers/overview
 [Material Design time picker]: https://m3.material.io/components/time-pickers/overview
