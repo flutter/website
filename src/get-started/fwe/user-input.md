@@ -106,15 +106,19 @@ on how to build a text field, from beginning to end:
 
 ### Toggle values
 
-[Checkbox][]: Select one or more items from a list, or turn an item on or off.
+[`Checkbox`][]
+: Select one or more items from a list, or toggle an item.
 
-[CheckboxListTile][]: A checkbox with a label.
+[`CheckboxListTile`][]
+: A checkbox with a label.
 
 * Video: [CheckboxListTile (Widget of the Week)][]
 
-[Switch][]: Toggle the on/off state of a single setting.
+[`Switch`][]
+: Toggle the on/off state of a single setting.
 
-[SwitchListTile][]: A switch with a label. 
+[`SwitchListTile`][]
+: A switch with a label. 
 
 * Video [SwitchListTile (Widget of the Week)][]
 
