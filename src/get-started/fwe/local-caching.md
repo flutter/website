@@ -103,7 +103,12 @@ you need to cache data somewhere on the device's hard drive.
 
 ### Caching data with `shared_preferences`
 
-[`shared_preferences`][] is a Flutter plugin which wraps platform-specific [key-value storage][] on all six of Flutter's target platforms. Although these underlying platform key-value stores were designed for small data sizes, they are still suitable for a caching strategy for most applications. For a complete guide, see our other resources on using key-value stores.
+[`shared_preferences`][] is a Flutter plugin that wraps
+platform-specific [key-value storage][] on all six of Flutter's target platforms.
+Although these underlying platform key-value stores were designed
+for small data sizes, they are still suitable for a caching strategy
+for most applications.
+For a complete guide, see our other resources on using key-value stores.
 
 * Cookbook: [Store key-value data on disk][]
 * Video: [Package of the Week: `shared_preferences`][]
