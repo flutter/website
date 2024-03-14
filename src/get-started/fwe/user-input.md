@@ -150,7 +150,8 @@ check out the following video:
 * Video: [GestureArena (Decoding Flutter)][]
 
 ## Testing
-Finished building user interactions into your app? Don't forget to write tests to make sure that everything works as expected! 
+Once you have finished building user interactions into your app,
+don't forget to write tests to make sure that everything works as expected!
 
 * Article: [Tap, drag, and enter text][]
 * Article: [Handle scrolling][]
