@@ -1,5 +1,5 @@
 ---
-title: Local Caching
+title: Local caching
 description: Learn how to persist data locally.
 prev:
   title: Networking and data
