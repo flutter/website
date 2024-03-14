@@ -146,7 +146,8 @@ on how to build a text field, from beginning to end:
 * Video: [Dismissible (Widget of the Week)][]
 * Article: [Implement swipe to dismiss][]
 
-[pkg:flutter_slidable][]: A Flutter implementation of slidable list item with directional slide actions that can be dismissed.
+[pkg:`flutter_slidable`][]
+: A list item with directional slide actions that can be dismissed.
 
 * Video: [flutter_slidable (Package of the Week)][]
 
