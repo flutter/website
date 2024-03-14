@@ -164,7 +164,7 @@ For a complete guide, see our other resources on using key-value stores.
 ### Caching data with the file system
 
 If your Flutter app outgrows the low-throughput scenarios
-ideal for `shared_preferences`, you may be ready to explore
+ideal for `shared_preferences`, you might be ready to explore
 caching data with your device's file system.
 For a more thorough guide, see our other resources on
 file system caching.
@@ -196,9 +196,11 @@ use the [`cached_network_image` package][].
 
 * Video: [Package of the Week: `cached_network_image`][]
 
+[PENDING: My understanding is that we now recommend `Image.network` instead of cache_network_image.
+
 ## State restoration
 
-Along with application data, you may also want to persist other
+Along with application data, you might also want to persist other
 aspects of a user's session, like their navigation stack, scroll
 positions, and even partial progress filling out forms. This
 pattern is called "state restoration", and is built in to Flutter.
@@ -207,10 +209,17 @@ State restoration works by instructing the Flutter framework
 to sync data from its Element tree with the Flutter engine,
 which then caches it in platform-specific storage for future 
 sessions. To enable state restoration on Flutter for Android
-and iOS, see the documentation below:
+and iOS, see the following documentation:
 
 * Android documentation: [Android state restoration][]
 * iOS documentation: [iOS state restoration][]
+
+## Feedback
+
+As this section of the website is evolving, 
+we [welcome your feedback][]!
+
+[welcome your feedback]: {{site.url}}/get-started/fwe
 
 [Android state restoration]: /platform-integration/android/restore-state-android
 [`cached_network_image` package]: {{site.pub-pkg}}/cached_network_image

@@ -61,7 +61,8 @@ following subjects in the listed order.
   how to use authentication, 
   how to implement asynchronicity, and more.
 6. [Local data and caching][]
-: Learn about local data and caching. xxx
+: Learn about different techniques for caching
+  local data.
 
 [Widget fundamentals]: {{site.url}}/get-started/fwe/fundamentals
 [Layout]: {{site.url}}/get-started/fwe/layout
