@@ -39,7 +39,10 @@ There are many interesting ways to vary this strategy, including the location of
 
 Caching comes with its own terminology, some of which is defined and explained below.
 
-**Cache hit:** An app is said to have had a cache hit when the cache contained their desired information and it was unnecessary to load it from the real source of truth.
+**Cache hit**
+: An app is said to have had a cache hit when the cache already
+  contained their desired information and it wasn't necessary
+  to load it from the real source of truth.
 
 **Cache miss:** An app is said to have had a cache miss when the cache was empty and the desired data had to be loaded from the real source of truth.
 
