@@ -194,23 +194,23 @@ This page was an introduction to handling user input. Now that you know how to a
 [`SegmentedButton`]: {{site.api}}flutter/material/SegmentedButton-class.html
 [`DropdownMenu`]: {{site.api}}flutter/material/DropdownMenu-class.html
 [DropdownMenu (Widget of the Week)]: https://youtu.be/giV9AbM2gd8?si=E23hjg72cjMTe_mz
-[Slider]: {{site.api}}flutter/material/Slider-class.html
+[`Slider`]: {{site.api}}flutter/material/Slider-class.html
 [Slider, RangeSlider, CupertinoSlider (Widget of the Week)]: https://www.youtube.com/watch?v=ufb4gIPDmEss
 
 
-[Checkbox]: {{site.api}}flutter/material/Checkbox-class.html
-[CheckboxListTile]: {{site.api}}flutter/material/CheckboxListTile-class.html
+[`Checkbox`]: {{site.api}}flutter/material/Checkbox-class.html
+[`CheckboxListTile`]: {{site.api}}flutter/material/CheckboxListTile-class.html
 [CheckboxListTile (Widget of the Week)]: https://www.youtube.com/watch?v=RkSqPAn9szs
-[Switch]: {{site.api}}flutter/material/Switch-class.html
-[SwitchListTile]: {{site.api}}flutter/material/SwitchListTile-class.html
+[`Switch`]: {{site.api}}flutter/material/Switch-class.html
+[`SwitchListTile`]: {{site.api}}flutter/material/SwitchListTile-class.html
 [SwitchListTile (Widget of the Week)]: https://www.youtube.com/watch?v=0igIjvtEWNU
-[Radio]: {{site.api}}flutter/material/Radio-class.html
-[Chip]: {{site.api}}flutter/material/Chip-class.html
+[`Radio`]: {{site.api}}flutter/material/Radio-class.html
+[`Chip`]: {{site.api}}flutter/material/Chip-class.html
 
 [Material Design date picker]: https://m3.material.io/components/date-pickers/overview
 [Material Design time picker]: https://m3.material.io/components/time-pickers/overview
-[showDatePicker]: {{site.api}}flutter/material/showDatePicker.html
-[showTimePicker]: {{site.api}}flutter/material/showTimePicker.html
+[`showDatePicker`]: {{site.api}}flutter/material/showDatePicker.html
+[`showTimePicker`]: {{site.api}}flutter/material/showTimePicker.html
 
 [Dismissible]: {{site.api}}flutter/widgets/Dismissible-class.html
 [Dismissible (Widget of the Week)]: https://youtu.be/iEMgjrfuc58?si=f0S7IdaA9PIWIYvl
