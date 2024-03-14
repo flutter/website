@@ -44,7 +44,9 @@ Caching comes with its own terminology, some of which is defined and explained b
   contained their desired information and it wasn't necessary
   to load it from the real source of truth.
 
-**Cache miss:** An app is said to have had a cache miss when the cache was empty and the desired data had to be loaded from the real source of truth.
+**Cache miss**
+: An app is said to have had a cache miss when the cache was empty
+  and the desired data had to be loaded from the real source of truth.
 
 ## Risks of caching data
 
