@@ -17,7 +17,8 @@ As a multi-platform UI framework, there are many different ways for users to int
 
 Some user input types, like [scrolling], have already been covered in previous sections. 
 
-For an introduction to how you can change app state in response to user interactions, check out the following tutorial which teaches you how to build a "favorite" button:
+For an introduction to how you can change app state in response to user interactions,
+check out the following tutorial that teaches you how to build a "favorite" button:
 
 <i class="material-symbols" aria-hidden="true">flutter_dash</i> Tutorial: [Add interactivity to your Flutter app][]
 
