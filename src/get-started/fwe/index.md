@@ -69,7 +69,7 @@ following subjects in the listed order.
 [State management]: {{site.url}}/get-started/fwe
 [Handling user input]: {{site.url}}/get-started/fwe
 [Networking and data]: {{site.url}}/networking
-[Local data and caching]: {{site.url}}/get-started/fwe
+[Local data and caching]: {{site.url}}/get-started/fwe/local-caching
 
 ## Feedback
 
