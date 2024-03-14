@@ -201,7 +201,6 @@
       { "source": "/ui/splash-screen/android-splash-screen", "destination": "/platform-integration/android/splash-screen", "type": 301 },
       { "source": "/ui/widgets/catalog", "destination": "/ui/widgets", "type": 301 },
       { "source": "/ui/widgets/widgetindex", "destination": "/reference/widgets", "type": 301 },
-      { "source": "/wasm", "destination": "/platform-integration/web/wasm", "type": 301 },
       { "source": "/web", "destination": "/platform-integration/web", "type": 301 },
       { "source": "/whats-new-archive", "destination": "/release/whats-new", "type": 301 },
       { "source": "/whats-new", "destination": "/release/whats-new", "type": 301 },
