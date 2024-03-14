@@ -133,7 +133,12 @@ If your Flutter app outgrows the low-throughput scenarios ideal for `shared_pref
 
 ### Caching data with an on-device database
 
-The final boss of local data caching is any strategy that uses a proper database to read and write data. Multiple flavors exist here, including relational and non-relational databases; and all offer dramatically improved performance over simple files - especially for large datasets. For a more thorough guide, see the following additional resources:
+The final boss of local data caching is any strategy
+that uses a proper database to read and write data.
+Multiple flavors exist here, including relational and non-relational databases.
+All approaches offer dramatically improved performance over
+simple files—especially for large datasets.
+For a more thorough guide, see the following resources:
 
 * Cookbook: [Persist data with SQLite][]
 * SQLite alternate: [`sqlite3` package][]
