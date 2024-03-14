@@ -6,10 +6,6 @@ short-title: Wasm
 last-update: March 13, 2024
 ---
 
-Today, we are excited to celebrate a new form of Dart/JS interop and the future it will enable.
-Knowing our past, we are certain this is not the end of the journey, but just an exciting point in our history.
-Dart will continue to evolve 
-
 **_Last updated {{page.last-update}}_**
 
 The Flutter and Dart teams are excited to add
@@ -23,7 +19,7 @@ Revisit this page for the latest updates.
 {{site.alert.note}}
   **Support for Wasm is now in beta!**
   : WebAssembly support for Flutter web is
-    available on the Flutter [`beta` channel][] and [`main` channel][].
+    available on the Flutter [`beta`][] and [`main`][] channels.
 
   **Dart's next-gen Web interop is now stable!**
   : Migrate your packages to [`package:web`][] and [`dart:js_interop`][]
@@ -32,8 +28,8 @@ Revisit this page for the latest updates.
     section to learn more. 
 {{site.alert.end}}
 
-[`beta` channel]: {{site.github}}/flutter/flutter/wiki/flutter-build-release-channels#beta
-[`main` channel]: {{site.github}}/flutter/flutter/wiki/flutter-build-release-channels#master-aka-main
+[`beta`]: {{site.github}}/flutter/flutter/wiki/flutter-build-release-channels#beta
+[`main`]: {{site.github}}/flutter/flutter/wiki/flutter-build-release-channels#master-aka-main
 [`package:web`]: {{site.pub-pkg}}/web
 [`dart:js_interop`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-js_interop 
 
@@ -46,7 +42,7 @@ like Dart execute code in an efficient manner.
 
 [Chromium and V8][] released stable support for WasmGC in Chromium 119.
 Note that Chrome on iOS uses WebKit, which doesn't yet [support WasmGC][].
-Firefox announced stable support for Wasm in Firefox 120,
+Firefox announced stable support for WasmGC in Firefox 120,
 but currently does not work due to a [known limitation](#known-limitations). 
 
 [WasmGC]: https://github.com/WebAssembly/gc/tree/main/proposals/gc
@@ -80,10 +76,10 @@ At the bottom of the output, you should find experimental Wasm options like:
 
 ```console
 Experimental options
-    --wasm                                                   Compile to WebAssembly rather than JavaScript.
-                                                             See https://flutter.dev/wasm for more information.
-    --[no-]strip-wasm                                        Whether to strip the resulting wasm file of static symbol names.
-                                                             (defaults to on)
+    --wasm                       Compile to WebAssembly rather than JavaScript.
+                                 See https://flutter.dev/wasm for more information.
+    --[no-]strip-wasm            Whether to strip the resulting wasm file of static symbol names.
+                                 (defaults to on)
 ```
 
 #### Pick a (simple) Flutter web application
@@ -96,15 +92,15 @@ that has been migrated to be
 
 #### Modify `index.html`
 
-Before building with Wasm, you'll need to modify the bootstrap logic in your
-`web/index.html` file.
+Before building with Wasm, you'll need to modify the bootstrap logic in
+your app's `web/index.html` file.
 
 ```html
 <!DOCTYPE HTML>
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Web Benchmarks</title>
+  <title>Flutter web app</title>
   <script src="flutter.js"></script>
 </head>
 <body>
@@ -124,8 +120,8 @@ release. Stay tuned!
 
 #### Run `flutter build web --wasm`
 
-To build a web application with Wasm, add a `--wasm` flag to the existing
-`flutter build web` command.
+To build a web application with Wasm, add the `--wasm` flag to
+the existing `flutter build web` command.
 
 ```console
 flutter build web --wasm
@@ -147,8 +143,8 @@ Then change to the `build/web` directory
 and run the server with special headers:
 
 ```terminal
-> cd build/web
-> dhttpd '--headers=Cross-Origin-Embedder-Policy=credentialless;Cross-Origin-Opener-Policy=same-origin'
+$ cd build/web
+$ dhttpd '--headers=Cross-Origin-Embedder-Policy=credentialless;Cross-Origin-Opener-Policy=same-origin'
 Server started on port 8080
 ```
 
@@ -168,10 +164,11 @@ If the application doesn't load:
 
 ### Known limitations
 
-Wasm support has some limitations.
+Wasm support currently has some limitations.
 The following list covers some common issues.
 
 #### Chrome 119 or later
+
 As mentioned in [Load it in a browser](#load-it-in-a-browser), 
 to run Flutter web apps compiled to Wasm, 
 use _Chrome 119 or later_.
@@ -182,15 +179,16 @@ To ensure compatibility, run the latest version of the Flutter `main` channel
 and the latest version of Chrome.
 
 - **Why not Firefox?**
-  Firefox versions 120 and later were previously able to run Flutter/Wasm, but
-  they're [currently experiencing a bug][] that is blocking compatibility with Wasm.
+  Firefox versions 120 and later were previously able to run Flutter/Wasm,
+  but they're [currently experiencing a bug][] that is
+  blocking compatibility with Wasm.
 - **Why not Safari?**
   Safari does not support WasmGC yet; [this bug][] tracks their
   implementation efforts.
   
 {{site.alert.warning}}
   Flutter compiled to Wasm can't run on the iOS version of any browser.
-  All browsers on iOS are required to use the WebKit,
+  All browsers on iOS are required to use WebKit,
   and can't use their own browser engine.
 {{site.alert.end}}
 
@@ -208,18 +206,20 @@ Instead, Dart now provides new, lightweight interop solutions built around
 static JS interop:
 
 - [`package:web`][], which replaces `dart:html` (and other web libraries)
-- [`dart:js_interop`][], which replaces `package:js`
+- [`dart:js_interop`][], which replaces `package:js` and `dart:js`
 
-Most packages owned by the Dart and Flutter teams have been migrated
-to be compatible with Wasm support in Flutter, such as [`package:url_launcher`][].
+Most packages owned by the Dart and Flutter teams have been
+migrated to be compatible with Wasm support in Flutter,
+such as [`package:url_launcher`][].
 To learn how to migrate your packages and applications to the new solutions,
 check out the [JS interop][] documentation and [`package:web` migration guide][].
 
-To check if a Wasm build failed due to incompatible APIs, review the error output.
+To check if a Wasm build failed due to
+incompatible APIs, review the error output.
 These often return soon after a build invocation.
 An API-related error should resemble the following:
 
-```console
+```plaintext
 Target dart2wasm failed: Exception: ../../../../.pub-cache/hosted/pub.dev/url_launcher_web-2.0.16/lib/url_launcher_web.dart:6:8: Error: Dart library 'dart:html' is not available on this platform.
 import 'dart:html' as html;
        ^
@@ -243,12 +243,12 @@ Wasm at the moment.
 
 Check out Flutter's
 [existing web support]({{site.main-url}}/multi-platform/web).
-Flutter to Wasm work continues.
-Once finished, we believe your existing Flutter web apps
+Flutter and Dart work on support for Wasm continues.
+Once finished, your existing Flutter web apps
 shouldn't need much work to support Wasm.
 
 If you want to learn more, watch this talk from our team at Wasm I/O 2023:
 [Flutter, Dart, and WasmGC: A new model for web applications](https://youtu.be/Nkjc9r0WDNo).
 
-To check out the latest details on the Flutter and Dart WebAssembly effort,
-visit at [flutter.dev/wasm]({{site.main-url}}/wasm).
+To follow the latest changes in the Flutter and Dart WebAssembly effort,
+revisit [flutter.dev/wasm]({{site.main-url}}/wasm).
