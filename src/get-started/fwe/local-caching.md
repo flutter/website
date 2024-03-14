@@ -60,7 +60,11 @@ A popular joke among computer scientists is that
 "The two hardest things in computer science are cache invalidation,
 naming things, and off-by-one errors."
 
-Despite the risks, almost every app in the world makes heavy use of data caching. The rest of this page will explore multiple approaches to caching data in your Flutter app, but know that all of these approaches can be tweaked or combined for your situation.
+Despite the risks, almost every app in the world
+makes heavy use of data caching.
+The rest of this page explores multiple approaches to
+caching data in your Flutter app, but know that all of these approaches
+can be tweaked or combined for your situation.
 
 ## Caching data in local memory
 
