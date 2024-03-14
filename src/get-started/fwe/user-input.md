@@ -154,7 +154,8 @@ on how to build a text field, from beginning to end:
 
 ## Build your own interactive widget with GestureDetector 
 
-If none of the above widgets fit the functionality what you're looking for, you can add interactivity to your own widget using GestureDetector. 
+If none of Flutter's widgets fit the functionality for what you're looking for,
+you can add interactivity to your own widget using `GestureDetector`. 
 
 * Video: [GestureDetector (Widget of the Week)][]
 * Documentation: [Taps, drags, and other gestures][]
