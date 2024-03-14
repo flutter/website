@@ -61,7 +61,6 @@ Several widgets support text input.
 
 This series of cookbook articles walk you through every stop
 on how to build a text field, retrieve its value, and handle state changes:
-
 1. Article: [Create and style a text field][]
 1. Article: [Retrieve the value of a text field][]
 1. Article: [Handle changes to a text field][]
