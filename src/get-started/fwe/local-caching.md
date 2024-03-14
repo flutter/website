@@ -148,7 +148,10 @@ For a more thorough guide, see the following resources:
 
 ## Caching images
 
-Caching images is similar problem space to caching regular data, albeit with a one-size-fits-all solution. The direct your Flutter app to use the file system to store images, use the [`cached_network_image` package][].
+Caching images is a similar problem space to caching regular data,
+though with a one-size-fits-all solution.
+To direct your Flutter app to use the file system to store images,
+use the [`cached_network_image` package][].
 
 * Video: [Package of the Week: `cached_network_image`][]
 
