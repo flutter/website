@@ -45,7 +45,7 @@ The following are Material 3 button types. Functionally they are similar, but st
 
 [FloatingActionButton][]: A circular icon button that hovers over content to promote a primary action.
 
-* Video: [Floating Action Button (Widget of the Week)][]
+* Video: [FloatingActionButton (Widget of the Week)][]
 
 ### Text
 
@@ -153,35 +153,35 @@ This page was an introduction to handling user input. Now that you know how to a
 [Cupertino]: {{site.api}}flutter/cupertino/cupertino-library.html
 [Material 3 Demo]: https://flutter.github.io/samples/web/material_3_demo/
 
-[ElevatedButton]: https://api.flutter.dev/flutter/material/ElevatedButton-class.html
-[FilledButton]: https://api.flutter.dev/flutter/material/FilledButton-class.html
-[TextButton]: https://api.flutter.dev/flutter/material/TextButton-class.html
-[OutlinedButton]: https://api.flutter.dev/flutter/material/OutlinedButton-class.html
-[IconButton]: https://api.flutter.dev/flutter/material/IconButton-class.html
-[FloatingActionButton]: https://api.flutter.dev/flutter/material/FloatingActionButton-class.html
+[ElevatedButton]: {{site.api}}flutter/material/ElevatedButton-class.html
+[FilledButton]: {{site.api}}flutter/material/FilledButton-class.html
+[TextButton]: {{site.api}}flutter/material/TextButton-class.html
+[OutlinedButton]: {{site.api}}flutter/material/OutlinedButton-class.html
+[IconButton]: {{site.api}}flutter/material/IconButton-class.html
+[FloatingActionButton]: {{site.api}}flutter/material/FloatingActionButton-class.html
 [FloatingActionButton (Widget of the Week)]: https://youtu.be/2uaoEDOgk_I?si=MQZcSp24oRaS_kiY
 
 [TextField]: {{site.api}}flutter/material/TextField-class.html
-[Create and style a text field]: https://docs.flutter.dev/cookbook/forms/text-input
-[Retrieve the value of a text field]: https://docs.flutter.dev/cookbook/forms/retrieve-input
-[Handle changes to a text field]: https://docs.flutter.dev/cookbook/forms/text-field-changes
-[Focus and text fields]: https://docs.flutter.dev/cookbook/forms/focus
-[RichText]: https://api.flutter.dev/flutter/widgets/RichText-class.html
+[Create and style a text field]: /cookbook/forms/text-input
+[Retrieve the value of a text field]: /cookbook/forms/retrieve-input
+[Handle changes to a text field]: /cookbook/forms/text-field-changes
+[Focus and text fields]: /cookbook/forms/focus
+[RichText]: {{site.api}}flutter/widgets/RichText-class.html
 [Rich Text (Widget of the Week)]: https://www.youtube.com/watch?v=rykDVh-QFfw
 [Rich Text Editor]: https://flutter.github.io/samples/rich_text_editor.html
 [Rich Text Editor code]: https://github.com/flutter/samples/tree/main/simplistic_editor
-[Form]: https://api.flutter.dev/flutter/widgets/Form-class.html
-[Build a form with validation]: https://docs.flutter.dev/cookbook/forms/validation
+[Form]: {{site.api}}flutter/widgets/Form-class.html
+[Build a form with validation]: /cookbook/forms/validation
 [Form App]: https://flutter.github.io/samples/web/form_app/
 [Form App Code]: https://github.com/flutter/samples/tree/main/form_app
-[SelectableText]: https://api.flutter.dev/flutter/material/SelectableText-class.html
+[SelectableText]: {{site.api}}flutter/material/SelectableText-class.html
 [SelectableText (Widget of the Week)]: https://www.youtube.com/watch?v=ZSU3ZXOs6hc
 
 [SegmentedButton]: {{site.api}}flutter/material/SegmentedButton-class.html
 [DropdownMenu]: {{site.api}}flutter/material/DropdownMenu-class.html
 [DropdownMenu (Widget of the Week)]: https://youtu.be/giV9AbM2gd8?si=E23hjg72cjMTe_mz
 [Slider]: {{site.api}}flutter/material/Slider-class.html
-[Slider, RangeSlider, CupertinoSlider (Widget of the Week)]: https://www.youtube.com/watch?v=ufb4gIPDmEs
+[Slider, RangeSlider, CupertinoSlider (Widget of the Week)]: https://www.youtube.com/watch?v=ufb4gIPDmEss
 
 
 [Checkbox]: {{site.api}}flutter/material/Checkbox-class.html
@@ -210,5 +210,5 @@ This page was an introduction to handling user input. Now that you know how to a
 [Semantics (Flutter Widget of the Week)]: https://youtu.be/NvtMt_DtFrQ?si=o79BqAg9NAl8EE8_
 [GestureArena (Decoding Flutter)]: https://www.youtube.com/watch?v=Q85LBtBdi0U
 
-[Tap, drag, and enter text]: https://docs.flutter.dev/cookbook/testing/widget/tap-drag
-[Handle scrolling]: https://docs.flutter.dev/cookbook/testing/widget/scrolling
+[Tap, drag, and enter text]: /cookbook/testing/widget/tap-drag
+[Handle scrolling]: /cookbook/testing/widget/scrolling
