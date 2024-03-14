@@ -78,7 +78,8 @@ This series of cookbook articles will walk you through every stop on how to buil
 
 * Video: [SelectableText (Widget of the Week)][]
 
-[Form][]: An optional container for grouping together multiple form field widgets. 
+[`Form`][]
+: An optional container for grouping together multiple form field widgets. 
 
 * Article: [Build a form with validation][]
 * Demo: [Form App][]
