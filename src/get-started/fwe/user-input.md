@@ -46,20 +46,12 @@ Let a user prompt action in a UI by clicking or tapping.
 The following Material 3 button types are functionally similar,
 but are styled differently:
 
-* [`ElevatedButton`][]
-: A button with some depth. Use elevated buttons to add dimension to
-  otherwise mostly flat layouts.
-* [`FilledButton`][]
-: A filled button should be used for important,
-  final actions that complete a flow, like **Save**, **Join now**, or **Confirm**.
-* [`TextButton`][]
-: Clickable text, without a border. 
-* [`OutlinedButton`][]
-: A button with text and a visible border.
-* [`IconButton`][]
-: A button with an icon. 
-* [`FloatingActionButton`][]:
-" A circular icon button that hovers over content to promote a primary action.
+* [ElevatedButton][]: A button with some depth. Use elevated buttons to add dimension to otherwise mostly flat layouts.
+* [FilledButton][]: A filled button that should be used for important, final actions that complete a flow, like Save, Join now, or Confirm.
+* [OutlinedButton][]: A button with text and a visible border. They contain actions that are important, but they aren’t the primary action in an app.
+* [TextButton][]: Clickable text, without a border. Text buttons do not have visible borders and must therefore rely on their position relative to other content for context.
+* [IconButton][]: A button with an icon. 
+* [FloatingActionButton][]: A circular icon button that hovers over content to promote a primary action.
   * Video: [FloatingActionButton (Widget of the Week)][]
 
 ### Text
