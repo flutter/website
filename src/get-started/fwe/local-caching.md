@@ -47,13 +47,13 @@ defined and explained below.
 
 **Cache hit**
 : An app is said to have had a cache hit when the cache already
-  contained their desired information and it wasn't necessary
-  to load it from the real source of truth.
+  contained their desired information and loading it from the
+  real source of truth was unnecessary.
 
 **Cache miss**
 : An app is said to have had a cache miss when the cache was
-  empty and the desired data had to be loaded from the real
-  source of truth.
+  empty and the desired data is loaded from the real source
+  of truth, and then saved to the cache for future reads.
 
 ## Risks of caching data
 
@@ -65,8 +65,8 @@ All caching strategies run the risk of holding onto stale data.
 Unfortunately, the action of verifying the freshness of a cache
 often takes as much time to complete as fully loading the data
 in question. This means that most apps tend to only benefit
-from caching data if they trust the data to be fresh without
-runtime verification.
+from caching data if they trust the data to be fresh at runtime
+without verification.
 
 To deal with this, most caching systems include a time limit
 on any individual piece of cached data. After this time limit
@@ -75,7 +75,7 @@ until fresh data is loaded.
 
 A popular joke among computer scientists is that "The two
 hardest things in computer science are cache invalidation,
-naming things, and off-by-one errors."
+naming things, and off-by-one errors." 😄
 
 Despite the risks, almost every app in the world makes heavy
 use of data caching. The rest of this page explores multiple
@@ -92,11 +92,11 @@ retained beyond the session in which it is originally cached.
 (Of course, this "downside" also has the upside of automatically
 solving most stale cache problems!)
 
-Due to their simplicity, in-memory caches most directly mimic
-the pseudocode seen above of all caching strategies. That said,
-it is best to use proven design principles, like the
-[repository pattern][], to organize your code and prevent cache
-checks like the above from appearing all over your code base.
+Due to their simplicity, in-memory caches closely mimic
+the pseudocode seen above. That said, it is best to use proven
+design principles, like the [repository pattern][],
+to organize your code and prevent cache checks like the above
+from appearing all over your code base.
 
 Imagine a `UserRepository` class that is also tasked with
 caching users in memory to avoid duplicate network requests.
@@ -144,9 +144,9 @@ choose from one of the persistent caching strategies found below.
 
 Caching data in memory will never see your precious cache
 outlive a user single session.
-To enjoy the performance benefits
-of cache hits on fresh launches of your application, you need
-to cache data somewhere on the device's hard drive.
+To enjoy the performance benefits of cache hits on fresh
+launches of your application, you need to cache data somewhere
+on the device's hard drive.
 
 ### Caching data with `shared_preferences`
 
@@ -166,7 +166,8 @@ For a complete guide, see our other resources on using key-value stores.
 If your Flutter app outgrows the low-throughput scenarios
 ideal for `shared_preferences`, you may be ready to explore
 caching data with your device's file system.
-For a more thorough guide, see our other resources on the topic.
+For a more thorough guide, see our other resources on
+file system caching.
 
 * Cookbook: [Read and write files][]
 
@@ -174,10 +175,10 @@ For a more thorough guide, see our other resources on the topic.
 
 The final boss of local data caching is any strategy
 that uses a proper database to read and write data.
-Multiple flavors exist here, including relational and
+Multiple flavors exist, including relational and
 non-relational databases.
 All approaches offer dramatically improved performance over
-simple files—especially for large datasets.
+simple files - especially for large datasets.
 For a more thorough guide, see the following resources:
 
 * Cookbook: [Persist data with SQLite][]
