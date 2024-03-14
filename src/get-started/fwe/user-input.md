@@ -56,12 +56,11 @@ but are styled differently:
 : Clickable text, without a border. 
 * [`OutlinedButton`][]
 : A button with text and a visible border.
-
-[IconButton][]: A button with an icon. 
-
-[FloatingActionButton][]: A circular icon button that hovers over content to promote a primary action.
-
-* Video: [FloatingActionButton (Widget of the Week)][]
+* [`IconButton`][]
+: A button with an icon. 
+* [`FloatingActionButton`][]:
+" A circular icon button that hovers over content to promote a primary action.
+  * Video: [FloatingActionButton (Widget of the Week)][]
 
 ### Text
 
