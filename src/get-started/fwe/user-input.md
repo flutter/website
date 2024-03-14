@@ -24,7 +24,9 @@ check out the following tutorial that teaches you how to build a "favorite" butt
 
 ## Material 3 demo 
 
-Now that you've gotten a feel for how user interaction works, check out the [Material 3 Demo][] which samples some of the various user input widgets available in the Material 3 component library. 
+Now that you've gotten a feel for how user interaction works,
+check out the [Material 3 Demo][], which samples some of the
+user input widgets available in the Material 3 component library. 
 
 Note: This page focuses on Material 3 widgets because it is the library that many developers start with when learning Flutter. However, Flutter also supports other component libraries such as [Cupertino][] for iOS-styled widgets.
 
