@@ -2,7 +2,7 @@
 title: Handling user input
 description: Learn how to handle user input in Flutter.
 prev:
-  title: State Management
+  title: State management
   path: /get-started/fwe/state-management
 next:
   title: Networking and data
