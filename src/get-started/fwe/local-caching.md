@@ -196,11 +196,28 @@ use the [`cached_network_image` package][].
 
 * Video: [Package of the Week: `cached_network_image`][]
 
+## State restoration
 
+Along with application data, you may also want to persist other
+aspects of a user's session, like their navigation stack, scroll
+positions, and even partial progress filling out forms. This
+pattern is called "state restoration", and is built in to Flutter.
+
+State restoration works by instructing the Flutter framework
+to sync data from its Element tree with the Flutter engine,
+which then caches it in platform-specific storage for future 
+sessions. To enable state restoration on Flutter for Android
+and iOS, see the documentation below:
+
+* Android documentation: [Android state restoration][]
+* iOS documentation: [iOS state restoration][]
+
+[Android state restoration]: /platform-integration/android/restore-state-android
 [`cached_network_image` package]: {{site.pub-pkg}}/cached_network_image
 [dependency injection]: https://en.wikipedia.org/wiki/Dependency_injection
 [`drift` package]: {{site.pub-pkg}}/drift
 [`hive` package]: {{site.pub-pkg}}/hive
+[iOS state restoration]: /platform-integration/ios/restore-state-ios
 [`isar` package]: {{site.pub-pkg}}/isar
 [key-value storage]: https://en.wikipedia.org/wiki/Key%E2%80%93value_database
 [loose coupling]: https://en.wikipedia.org/wiki/Loose_coupling
