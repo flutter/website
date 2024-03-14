@@ -75,7 +75,7 @@ Future<int> _checkLinks({bool checkExternal = false}) async {
   );
 
   // Give the emulator a few seconds to start up.
-  await Future<void>.delayed(const Duration(seconds: 3));
+  await Future<void>.delayed(const Duration(seconds: 5));
 
   try {
     // Check to see if the emulator is running.
@@ -116,7 +116,7 @@ Future<bool> _isPortInUse(int port) async {
       InternetAddress.loopbackIPv4,
       port,
       shared: false,
-    ).timeout(const Duration(seconds: 2)); // Ignore timeout.
+    ).timeout(const Duration(seconds: 3)); // Ignore timeout.
 
     // If we reach this line, the port was available,
     // and we know the Firebase hosting emulator is not running.
