@@ -212,10 +212,10 @@ This page was an introduction to handling user input. Now that you know how to a
 [`showDatePicker`]: {{site.api}}flutter/material/showDatePicker.html
 [`showTimePicker`]: {{site.api}}flutter/material/showTimePicker.html
 
-[Dismissible]: {{site.api}}flutter/widgets/Dismissible-class.html
+[`Dismissible`]: {{site.api}}flutter/widgets/Dismissible-class.html
 [Dismissible (Widget of the Week)]: https://youtu.be/iEMgjrfuc58?si=f0S7IdaA9PIWIYvl
 [Implement swipe to dismiss]: /cookbook/gestures/dismissible
-[pkg:flutter_slidable]: https://pub.dev/packages/flutter_slidable
+[pkg:`flutter_slidable`]: https://pub.dev/packages/flutter_slidable
 [flutter_slidable (Package of the Week)]: https://www.youtube.com/watch?v=QFcFEpFmNJ8
 
 [GestureDetector (Widget of the Week)]: https://www.youtube.com/watch?v=WhVXkCFPmK4
