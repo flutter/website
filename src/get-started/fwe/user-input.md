@@ -90,13 +90,17 @@ on how to build a text field, from beginning to end:
 
 ### Select a value from a group of options
 
-[SegmentedButton][]: Allow users to select from limited set of options.
+[`SegmentedButton`][]
+: Allow users to select from limited set of options.
 
-[DropdownMenu][]: Let users select a choice from a menu and put the selected item into the text input field.
+[`DropdownMenu`][]
+: Let users select a choice from a menu and place the
+  selected item into the text input field.
 
 * Video: [DropdownMenu (Widget of the Week)][]
 
-[Slider][]: Select from a range of values.
+[`Slider`][]
+: Select from a range of values.
 
 * Video: [Slider, RangeSlider, CupertinoSlider (Widget of the Week)][]
 
