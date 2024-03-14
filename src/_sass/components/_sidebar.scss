@@ -19,7 +19,7 @@
         padding-top: bootstrap.bs-spacer(2);
         padding-bottom: bootstrap.bs-spacer(1);
 
-        &.collapsable {
+        &.collapsible {
           padding-bottom: bootstrap.bs-spacer(2);
           &::before {
             top: 6px;
@@ -36,12 +36,12 @@
     overflow: hidden;
     border-top: 1px solid $site-color-light-grey;
   }
-  
+
   @mixin nav-link-active-style {
     &.active {
       font-weight: bootstrap.$font-weight-bold;
 
-      &:not(.collapsable) {
+      &:not(.collapsible) {
         color: $site-color-primary;
 
         &:hover {
@@ -77,7 +77,7 @@
     @include nav-link-not-active-hover;
   }
 
-  @mixin collapsable() {
+  @mixin collapsible() {
     align-items: flex-end;
     display: flex;
     justify-content: space-between;
@@ -104,16 +104,16 @@
     > .nav-item {
       > .nav-link {
         @include nav-link-active-style;
-        
-        &.collapsable {
+
+        &.collapsible {
           padding: bootstrap.bs-spacer(2) 0;
 
-          @include collapsable();
+          @include collapsible();
 
           @include nav-link-not-active-hover;
         }
-        
-        &:not(.collapsable) {
+
+        &:not(.collapsible) {
           padding: bootstrap.bs-spacer(1) 0;
         }
       }
@@ -160,7 +160,7 @@
         @include nav-link-not-active-hover;
         @include nav-link-active-style;
 
-        &.collapsable {
+        &.collapsible {
           &::before{
             content: 'arrow_drop_down';
             font: $site-font-icon;
