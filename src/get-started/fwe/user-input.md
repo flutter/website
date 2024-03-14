@@ -55,11 +55,12 @@ but are styled differently:
   * Video: [FloatingActionButton (Widget of the Week)][]
 
 ### Text
+Several widgets support text input. 
 
-[TextField][]: Let users enter text, either with hardware keyboard or with an onscreen keyboard.
+#### [TextField][]: Let users enter text, either with hardware keyboard or with an onscreen keyboard.
 
 This series of cookbook articles walk you through every stop
-on how to build a text field, from beginning to end:
+on how to build a text field, retrieve its value, and handle state changes:
 
 1. Article: [Create and style a text field][]
 1. Article: [Retrieve the value of a text field][]
