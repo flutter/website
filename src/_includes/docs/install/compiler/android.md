@@ -184,7 +184,6 @@ agree to the licenses of the Android SDK platform.
    read each with care.
 
 #### Troubleshooting licensing issues
-{:.no_toc}
 
 <details markdown="1">
 <summary>How to fix the error of finding Java install</summary>

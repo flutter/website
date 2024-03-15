@@ -449,6 +449,36 @@ the path will end with `hello/darwin/Classes` instead.)
 
 You can run the example app by pressing the run (&#9654;) button.
 
+##### Add CocoaPod dependencies
+
+Use the following instructions to add `HelloPod` with the version `0.0.1`:
+
+1. Specify dependency at the end of `ios/hello.podspec`:
+
+   ```ruby
+   s.dependency 'HelloPod', '0.0.1'
+   ```
+
+   For private pods, refer to [Private CocoaPods](https://guides.cocoapods.org/making/private-cocoapods.html) to ensure repo access:
+
+   ```ruby
+   s.source = {
+       # For pods hosted on GitHub
+       :git => "https://github.com/path/to/HelloPod.git",
+       # Alternatively, for pods hosted locally
+       # :path => "file:///path/to/private/repo",
+       :tag => s.version.to_s
+     }`
+   ```
+
+2. Installing the plugin
+
+   - Add the plugin in the project’s `pubspec.yaml` dependencies.
+   - Run `flutter pub get`.
+   - In the project’s `ios/` directory, run `pod install`.
+
+The pod should appear in the installation summary.
+
 #### Step 2d: Add Linux platform code (.h+.cc)
 
 We recommend you edit the Linux code using an IDE with

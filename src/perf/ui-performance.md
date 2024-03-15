@@ -7,7 +7,7 @@ description: Diagnosing UI performance issues in Flutter.
 {% include docs/performance.md %}
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What you'll learn</h4>
+  <h4>What you'll learn</h4>
 
   * Flutter aims to provide 60 frames per second (fps) performance,
     or 120 fps performance on devices capable of 120Hz updates.
@@ -62,7 +62,7 @@ _You should consider checking performance
 on the slowest device that your users might reasonably use._
 
 {{site.alert.secondary}}
-  <h4 class="no_toc" markdown="1">**Why you should run on a real device:**</h4>
+  <h4 markdown="1">**Why you should run on a real device:**</h4>
 
 * Simulators and emulators don't use the same hardware, so their
   performance characteristics are different&mdash;some operations are

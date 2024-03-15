@@ -9,15 +9,19 @@ next:
   permalink: /get-started/fwe/layout
 ---
 
-Welcome to Flutter! On this page, there are a few videos, articles, and a short
-tutorial that introduce many of the foundational concepts used by 
+On this page, there are a few videos,
+articles, and a short tutorial that introduce many
+of the foundational concepts used by 
 Flutter developers on a daily basis.
 
 ## Welcome to Flutter
 
-The following tutorial is a gentle introduction in building UIs with Flutter. It
-starts with a 'hello world' app, and walks you through building a simple
-shopping list application. If you're exploring Flutter for the first time, it's
+The following tutorial is a gentle introduction
+in building UIs with Flutter.
+It starts with a 'hello world' app,
+and walks you through building a simple
+shopping list application.
+If you're exploring Flutter for the first time, it's
 the perfect place to begin.
 
 <i class="material-symbols" aria-hidden="true">flutter_dash</i>
@@ -25,8 +29,10 @@ Tutorial: [Building user interfaces with Flutter][]
 
 ## Dart
 
-Flutter applications are built in [Dart][], a language that will look familiar
-to anyone who's written Java, Javascript, or any other C-like language. The first
+Flutter applications are built in [Dart][],
+a language that will look familiar
+to anyone who's written Java, Javascript,
+or any other C-like language. The first
 resource listed here is a tutorial about writing Dart code.  
 
 {{site.alert.note}}
@@ -46,24 +52,33 @@ The other link has more resources for learning Dart.
 
 ## Anatomy of a widget
 
-In regard to Flutter, you'll often hear "everything is a widget". This isn't
-exactly true, but it is safe to say that "_almost_ everything is a widget".
-Widgets are the UI building blocks that are combined to create a fully
+In regard to Flutter, you'll often hear
+"everything is a widget". This isn't
+exactly true, but it is safe to say that
+"_almost_ everything is a widget".
+Widgets are the UI building blocks that
+are combined to create a fully
 functional application.
 
-In the first tutorial, [Building user interfaces with Flutter][], you saw some
-built-in widgets, and created some custom widgets. The following videos expand
-on what you learned by explaining in detail the two types of widgets that you
-use the most in Flutter: stateless widgets and stateful widgets.
+In the first tutorial,
+[Building user interfaces with Flutter][],
+you saw some built-in widgets,
+and created some custom widgets.
+The following videos expand
+on what you learned by explaining in detail
+the two types of widgets that you use the
+most in Flutter: stateless widgets and stateful widgets.
 
 * [Flutter widgets 101 episode 1: Stateless widgets][]
 * [Flutter widgets 101 episode 2: Stateful widgets][]
 
 ## Important widgets to know
 
-The Flutter SDK includes many built-in widgets, from the smallest pieces of UI,
-like `Text`, to layout widgets, and widgets that style your application. The
-following widgets are the most important to be aware of as you move onto the
+The Flutter SDK includes many built-in widgets,
+from the smallest pieces of UI, like `Text`,
+to layout widgets, and widgets that style
+your application. The following widgets are
+the most important to be aware of as you move onto the
 next lesson in the learning pathway.
 
 * [`Container`][]
@@ -77,11 +92,14 @@ next lesson in the learning pathway.
 
 ## Next: Layouts
 
-This page is an introduction to foundational Flutter concepts, like
-widgets, and helps you become familiar with reading Flutter and Dart code. It's
-okay if you don't feel clear on every topic you encountered, as every page after
-this is a deep-dive on specific topics. In the next section, you'll start
-building more interesting UIs by creating more complex layouts in Flutter.
+This page is an introduction to foundational
+Flutter concepts, like widgets,
+and helps you become familiar with reading
+Flutter and Dart code. It's okay if you don't
+feel clear on every topic you encountered, as every page after
+this is a deep-dive on specific topics.
+In the next section, you'll start building more
+interesting UIs by creating more complex layouts in Flutter.
 
 [Building user interfaces with Flutter]:{{site.url}}/ui
 [Bootstrap into Dart]: {{site.url}}/resources/bootstrap-into-dart
@@ -100,3 +118,11 @@ building more interesting UIs by creating more complex layouts in Flutter.
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
 [`Text`]: {{site.api}}/flutter/widgets/Text-class.html
+
+## Feedback
+
+As this section of the website is evolving, 
+we [welcome your feedback][]!
+
+[welcome your feedback]: {{site.url}}/get-started/fwe
+
