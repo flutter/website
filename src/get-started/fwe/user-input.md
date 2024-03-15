@@ -9,31 +9,46 @@ next:
   path: /get-started/fwe/networking
 ---
 
-Now that you know how to manage state in your Flutter app, how can you let users interact with your app and change its state? 
+Now that you know how to manage state in your
+Flutter app, how can you let users interact
+with your app and change its state? 
 
 ## Introduction to user input
 
-As a multi-platform UI framework, there are many different ways for users to interact with a Flutter app. The resources in this section will introduce you to some of the common widgets used for enabling user interaction. 
+As a multi-platform UI framework,
+there are many different ways for users
+to interact with a Flutter app.
+The resources in this section introduce
+you to some of the common widgets used
+for enabling user interaction. 
 
-Some user input types, like [scrolling], have already been covered in previous sections. 
+Some user input types, like [scrolling],
+have already been covered in [Layouts][]. 
 
-For an introduction to how you can change app state in response to user interactions,
-check out the following tutorial that teaches you how to build a "favorite" button:
+For an introduction to how you can change app
+state in response to user interactions,
+check out the following tutorial that
+teaches you how to build a "favorite" button:
 
 <i class="material-symbols" aria-hidden="true">flutter_dash</i> Tutorial: [Add interactivity to your Flutter app][]
 
+[Layouts]: {{site.url}}/get-started/fwe/layout
+
 ## Material 3 demo 
 
-Now that you've gotten a feel for how user interaction works,
-check out the [Material 3 Demo][], which samples some of the
-user input widgets available in the Material 3 component library. 
+Next, check out the [Material 3 Demo][],
+which samples some of the user input widgets
+available in the Material 3 component library. 
 
 {{site.alert.note}}
-  This page focuses on Material 3 widgets because it's the library
-  that many developers start with when learning Flutter.
-  However, Flutter also supports  [Cupertino][] for iOS-styled widgets,
+  This page focuses on Material 3 widgets because
+  it's the library that many developers start with
+  when learning Flutter. However,
+  Flutter also supports [Cupertino][] for iOS-styled widgets,
   or you can build your own widget library.
 {{site.alert.end}}
+
+[Cupertino]: {{site.api}}flutter/cupertino/cupertino-library.html
 
 ## Get user input
 
@@ -41,31 +56,61 @@ This section covers widgets that help you build
 the most common user input methods into your Flutter app. 
 
 ### Click or tap (Buttons)
+
 Let a user prompt action in a UI by clicking or tapping. 
 
 The following Material 3 button types are functionally similar,
 but are styled differently:
 
-[ElevatedButton][]: A button with some depth. Use elevated buttons to add dimension to otherwise mostly flat layouts.
+[`ElevatedButton]`[]
+: A button with some depth.
+  Use elevated buttons to add dimension
+  to otherwise mostly flat layouts.
 
-[FilledButton][]: A filled button that should be used for important, final actions that complete a flow, like Save, Join now, or Confirm.
+[`FilledButton`][]
+: A filled button that should be used for important,
+  final actions that complete a flow,
+  like **Save**, **Join now**, or **Confirm**.
 
-[OutlinedButton][]: A button with text and a visible border. They contain actions that are important, but they aren’t the primary action in an app.
+[`OutlinedButton`][]
+: A button with text and a visible border.
+  These buttons contain actions that are important,
+  but aren’t the primary action in an app.
 
-[TextButton][]: Clickable text, without a border. Text buttons do not have visible borders and must therefore rely on their position relative to other content for context.
+[`TextButton`][]
+: Clickable text, without a border.
+  Since text buttons don't have visible borders
+  and they must therefore rely on their position
+  relative to other content for context.
 
-[IconButton][]: A button with an icon. 
+[`IconButton`][]: A button with an icon. 
 
-[FloatingActionButton][]: A circular icon button that hovers over content to promote a primary action.
-  * Video: [FloatingActionButton (Widget of the Week)][]
+[`FloatingActionButton`][]
+: A circular icon button that hovers over
+  content to promote a primary action.
+
+* Video: [FloatingActionButton (Widget of the Week)][]
+
+[`ElevatedButton`]: {{site.api}}flutter/material/ElevatedButton-class.html
+[`FilledButton`]: {{site.api}}flutter/material/FilledButton-class.html
+[`FloatingActionButton`]: {{site.api}}flutter/material/FloatingActionButton-class.html
+[FloatingActionButton (Widget of the Week)]: https://youtu.be/2uaoEDOgk_I?si=MQZcSp24oRaS_kiY
+[`IconButton`]: {{site.api}}flutter/material/IconButton-class.html
+[`OutlinedButton`]: {{site.api}}flutter/material/OutlinedButton-class.html
+[`TextButton`]: {{site.api}}flutter/material/TextButton-class.html
 
 ### Text
+
 Several widgets support text input. 
 
-[`TextField`][]: Let users enter text, either with hardware keyboard or with an onscreen keyboard.
+[`TextField`][]
+: Let users enter text, either with hardware
+  keyboard or with an onscreen keyboard.
 
-This series of cookbook articles walk you through every stop
-on how to build a text field, retrieve its value, and handle state changes:
+The following series of cookbook articles walk
+you through every step on how to build a text field,
+retrieve its value, and handle state changes:
+
 1. Article: [Create and style a text field][]
 1. Article: [Retrieve the value of a text field][]
 1. Article: [Handle changes to a text field][]
@@ -84,11 +129,28 @@ on how to build a text field, retrieve its value, and handle state changes:
 * Video: [SelectableText (Widget of the Week)][]
 
 [`Form`][]
-: An optional container for grouping together multiple form field widgets. 
+: An optional container for grouping together
+  multiple form field widgets. 
 
 * Article: [Build a form with validation][]
-* Demo: [Form App][]
-* Sample code: [Form App Code][]
+* Demo: [Form app][]
+* Sample code: [Form app code][]
+
+[Build a form with validation]: {{site.url}}/cookbook/forms/validation
+[Create and style a text field]: {{site.url}}/cookbook/forms/text-input
+[Focus and text fields]: {{site.url}}/cookbook/forms/focus
+[`Form`]: {{site.api}}flutter/widgets/Form-class.html
+[Form app]: https://flutter.github.io/samples/web/form_app/
+[Form app code]: https://github.com/flutter/samples/tree/main/form_app
+[Handle changes to a text field]: {{site.url}}/cookbook/forms/text-field-changes
+[Retrieve the value of a text field]: {{site.url}}/cookbook/forms/retrieve-input
+[`RichText`]: {{site.api}}flutter/widgets/RichText-class.html
+[Rich Text (Widget of the Week)]: https://www.youtube.com/watch?v=rykDVh-QFfw
+[Rich Text Editor]: https://flutter.github.io/samples/rich_text_editor.html
+[Rich Text Editor code]: https://github.com/flutter/samples/tree/main/simplistic_editor
+[`SelectableText`]: {{site.api}}flutter/material/SelectableText-class.html
+[SelectableText (Widget of the Week)]: https://www.youtube.com/watch?v=ZSU3ZXOs6hc
+[`TextField`]: {{site.api}}flutter/material/TextField-class.html
 
 ### Select a value from a group of options
 
@@ -106,10 +168,17 @@ on how to build a text field, retrieve its value, and handle state changes:
 
 * Video: [Slider, RangeSlider, CupertinoSlider (Widget of the Week)][]
 
+[`DropdownMenu`]: {{site.api}}flutter/material/DropdownMenu-class.html
+[DropdownMenu (Widget of the Week)]: https://youtu.be/giV9AbM2gd8?si=E23hjg72cjMTe_mz
+[`SegmentedButton`]: {{site.api}}flutter/material/SegmentedButton-class.html
+[`Slider`]: {{site.api}}flutter/material/Slider-class.html
+[Slider, RangeSlider, CupertinoSlider (Widget of the Week)]: https://www.youtube.com/watch?v=ufb4gIPDmEss
+
 ### Toggle values
 
 [`Checkbox`][]
-: Select one or more items from a list, or toggle an item.
+: Select one or more items from a list,
+  or toggle an item.
 
 [`CheckboxListTile`][]
 : A checkbox with a label.
@@ -136,10 +205,12 @@ on how to build a text field, retrieve its value, and handle state changes:
 ### Select a date or time
 
 [`showDatePicker`][]
-: Shows a dialog containing a [Material Design date picker][].
+: Shows a dialog containing a
+  [Material Design date picker][].
 
 [`showTimePicker`][]
-: Shows a dialog containing a [Material Design time picker][].
+: Shows a dialog containing a
+  [Material Design time picker][].
 
 ### Swipe and slide
 
@@ -150,14 +221,17 @@ on how to build a text field, retrieve its value, and handle state changes:
 * Article: [Implement swipe to dismiss][]
 
 [pkg:`flutter_slidable`][]
-: A list item with directional slide actions that can be dismissed.
+: A list item with directional slide actions
+  that can be dismissed.
 
 * Video: [flutter_slidable (Package of the Week)][]
 
-## Build your own interactive widget with GestureDetector 
+## Add interactivity with GestureDetector 
 
-If none of Flutter's widgets fit the functionality for what you're looking for,
-you can add interactivity to your own widget using `GestureDetector`. 
+If none of Flutter's widgets fit the functionality
+for what you're looking for,
+you can add interactivity to your own widget
+using `GestureDetector`. 
 
 * Video: [GestureDetector (Widget of the Week)][]
 * Documentation: [Taps, drags, and other gestures][]
@@ -167,7 +241,8 @@ Don't forget about accessibility!
 If you're building your own custom widget,
 you can annotate its meaning with the `Semantics` widget.
 It lets you provide descriptions, metadata,
-and more to screen readers and other semantic analysis-based tools. 
+and more to screen readers and other semantic
+analysis-based tools. 
 
 * Video: [Semantics (Flutter Widget of the Week)][]
 
@@ -179,52 +254,37 @@ check out the following video:
 * Video: [GestureArena (Decoding Flutter)][]
 
 ## Testing
-Once you have finished building user interactions into your app,
-don't forget to write tests to make sure that everything works as expected!
+
+Once you have finished building user interactions
+into your app, don't forget to write tests to
+ensure that everything works as expected!
 
 * Article: [Tap, drag, and enter text][]
 * Article: [Handle scrolling][]
 
+[GestureArena (Decoding Flutter)]: https://www.youtube.com/watch?v=Q85LBtBdi0U
+[GestureDetector (Widget of the Week)]: https://www.youtube.com/watch?v=WhVXkCFPmK4
+[Handle taps]: {{site.url}}/cookbook/gestures/handling-taps
+[Semantics (Flutter Widget of the Week)]: https://youtu.be/NvtMt_DtFrQ?si=o79BqAg9NAl8EE8_
+[Tap, drag, and enter text]: {{site.url}}/cookbook/testing/widget/tap-drag
+[Taps, drags, and other gestures]: {{site.url}}/ui/interactivity/gestures#gestures
+
 
 ## Next: Networking
 
-This page was an introduction to handling user input. Now that you know how to accept input from app's users, you can make your app even more interesting by adding external data. In the next section, you will learn now to fetch data for your app over a network. 
+This page was an introduction to handling user input.
+Now that you know how to accept input from app's users,
+you can make your app even more interesting by adding
+external data. In the next section,
+you'll learn now to fetch data for your app over a network,
+how to convert data to and from JSON, authentication,
+and other networking features. 
 
 [scrolling]: /get-started/fwe/layout#scrollable-widgets
 
 [Add interactivity to your Flutter app]: /ui/interactivity
-[Cupertino]: {{site.api}}flutter/cupertino/cupertino-library.html
 [Material 3 Demo]: https://flutter.github.io/samples/web/material_3_demo/
 
-[ElevatedButton]: {{site.api}}flutter/material/ElevatedButton-class.html
-[FilledButton]: {{site.api}}flutter/material/FilledButton-class.html
-[TextButton]: {{site.api}}flutter/material/TextButton-class.html
-[OutlinedButton]: {{site.api}}flutter/material/OutlinedButton-class.html
-[IconButton]: {{site.api}}flutter/material/IconButton-class.html
-[FloatingActionButton]: {{site.api}}flutter/material/FloatingActionButton-class.html
-[FloatingActionButton (Widget of the Week)]: https://youtu.be/2uaoEDOgk_I?si=MQZcSp24oRaS_kiY
-
-[`TextField`]: {{site.api}}flutter/material/TextField-class.html
-[Create and style a text field]: /cookbook/forms/text-input
-[Retrieve the value of a text field]: /cookbook/forms/retrieve-input
-[Handle changes to a text field]: /cookbook/forms/text-field-changes
-[Focus and text fields]: /cookbook/forms/focus
-[`RichText`]: {{site.api}}flutter/widgets/RichText-class.html
-[Rich Text (Widget of the Week)]: https://www.youtube.com/watch?v=rykDVh-QFfw
-[Rich Text Editor]: https://flutter.github.io/samples/rich_text_editor.html
-[Rich Text Editor code]: https://github.com/flutter/samples/tree/main/simplistic_editor
-[`Form`]: {{site.api}}flutter/widgets/Form-class.html
-[Build a form with validation]: /cookbook/forms/validation
-[Form App]: https://flutter.github.io/samples/web/form_app/
-[Form App Code]: https://github.com/flutter/samples/tree/main/form_app
-[`SelectableText`]: {{site.api}}flutter/material/SelectableText-class.html
-[SelectableText (Widget of the Week)]: https://www.youtube.com/watch?v=ZSU3ZXOs6hc
-
-[`SegmentedButton`]: {{site.api}}flutter/material/SegmentedButton-class.html
-[`DropdownMenu`]: {{site.api}}flutter/material/DropdownMenu-class.html
-[DropdownMenu (Widget of the Week)]: https://youtu.be/giV9AbM2gd8?si=E23hjg72cjMTe_mz
-[`Slider`]: {{site.api}}flutter/material/Slider-class.html
-[Slider, RangeSlider, CupertinoSlider (Widget of the Week)]: https://www.youtube.com/watch?v=ufb4gIPDmEss
 
 
 [`Checkbox`]: {{site.api}}flutter/material/Checkbox-class.html
@@ -243,15 +303,15 @@ This page was an introduction to handling user input. Now that you know how to a
 
 [`Dismissible`]: {{site.api}}flutter/widgets/Dismissible-class.html
 [Dismissible (Widget of the Week)]: https://youtu.be/iEMgjrfuc58?si=f0S7IdaA9PIWIYvl
-[Implement swipe to dismiss]: /cookbook/gestures/dismissible
+[Implement swipe to dismiss]: {{site.url}}/cookbook/gestures/dismissible
 [pkg:`flutter_slidable`]: https://pub.dev/packages/flutter_slidable
 [flutter_slidable (Package of the Week)]: https://www.youtube.com/watch?v=QFcFEpFmNJ8
 
-[GestureDetector (Widget of the Week)]: https://www.youtube.com/watch?v=WhVXkCFPmK4
-[Taps, drags, and other gestures]: /ui/interactivity/gestures#gestures
-[Handle taps]: /cookbook/gestures/handling-taps
-[Semantics (Flutter Widget of the Week)]: https://youtu.be/NvtMt_DtFrQ?si=o79BqAg9NAl8EE8_
-[GestureArena (Decoding Flutter)]: https://www.youtube.com/watch?v=Q85LBtBdi0U
+[Handle scrolling]: {{site.url}}/cookbook/testing/widget/scrolling
 
-[Tap, drag, and enter text]: /cookbook/testing/widget/tap-drag
-[Handle scrolling]: /cookbook/testing/widget/scrolling
+## Feedback
+
+As this section of the website is evolving, 
+we [welcome your feedback][]!
+
+[welcome your feedback]: {{site.url}}/get-started/fwe
