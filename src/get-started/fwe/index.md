@@ -1,6 +1,8 @@
 ---
 title: First week experience of Flutter
-description: Learn the xxx
+description: >
+  You've gotten a taste of using the Flutter framework;
+  now go beyond to learn the basics of Flutter.
 ---
 
 ## Welcome to the next level of Flutter!
@@ -51,7 +53,10 @@ following subjects in the listed order.
 3. [State management][]
 : Learn how to manage state. xxx
 4. [Handling user input][]
-: Learn how to handle user input. xxx
+: Learn about Flutter's widgets that support
+  interactivity, like buttons and text.
+  Also, learn how to add interactivity to
+  a widget that doesn't already support it.
 5. [Networking and data][]
 : Networking is a very large topic,
   so this section focuses on basic networking
@@ -67,7 +72,7 @@ following subjects in the listed order.
 [Widget fundamentals]: {{site.url}}/get-started/fwe/fundamentals
 [Layout]: {{site.url}}/get-started/fwe/layout
 [State management]: {{site.url}}/get-started/fwe
-[Handling user input]: {{site.url}}/get-started/fwe
+[Handling user input]: {{site.url}}/get-started/fwe/user-input
 [Networking and data]: {{site.url}}/networking
 [Local data and caching]: {{site.url}}/get-started/fwe/local-caching
 
