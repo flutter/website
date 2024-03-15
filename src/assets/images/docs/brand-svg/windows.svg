@@ -1,10 +1,129 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 27.7.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="448px" height="512px" viewBox="0 0 448 512" style="enable-background:new 0 0 448 512;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#027DFD;}
-</style>
-<path class="st0" d="M0,93.7l183.6-25.3v177.4H0V93.7z M0,418.3l183.6,25.3V268.4H0V418.3z M203.8,446.3L448,480V268.4H203.8V446.3z
-	 M203.8,65.7v180.1H448V32L203.8,65.7L203.8,65.7z"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1.9999179in"
+   height="1.9999999in"
+   version="1.1"
+   viewBox="0 0 50.796725 50.798808"
+   id="svg11"
+   sodipodi:docname="windows.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs11" />
+  <sodipodi:namedview
+     id="namedview11"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.865"
+     inkscape:cx="246.24277"
+     inkscape:cy="90.751445"
+     inkscape:window-width="1392"
+     inkscape:window-height="942"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg11"
+     inkscape:document-units="in" />
+  <g
+     id="g1"
+     transform="matrix(1.042091,0,0,1.042091,0,1.1497045e-4)"
+     style="fill:#027dfd;fill-opacity:1">
+    <rect
+       x="0"
+       y="-0.00011032669"
+       width="23.105"
+       height="23.105"
+       id="rect8"
+       style="fill:#027dfd;fill-opacity:1" />
+    <rect
+       x="25.639999"
+       y="-0.00011032669"
+       width="23.105"
+       height="23.105"
+       id="rect9"
+       style="fill:#027dfd;fill-opacity:1" />
+    <rect
+       x="0"
+       y="25.64189"
+       width="23.105"
+       height="23.105"
+       id="rect10"
+       style="fill:#027dfd;fill-opacity:1" />
+    <rect
+       x="25.639999"
+       y="25.64189"
+       width="23.105"
+       height="23.105"
+       id="rect11"
+       style="fill:#027dfd;fill-opacity:1" />
+  </g>
+  <g
+     id="g4"
+     transform="matrix(1.042091,0,0,1.042091,0,1.1497045e-4)"
+     style="fill:#027dfd;fill-opacity:1">
+    <rect
+       x="0"
+       y="-0.00011032669"
+       width="23.105"
+       height="23.105"
+       id="rect1"
+       style="fill:#027dfd;fill-opacity:1" />
+    <rect
+       x="25.639999"
+       y="-0.00011032669"
+       width="23.105"
+       height="23.105"
+       id="rect2"
+       style="fill:#027dfd;fill-opacity:1" />
+    <rect
+       x="0"
+       y="25.64189"
+       width="23.105"
+       height="23.105"
+       id="rect3"
+       style="fill:#027dfd;fill-opacity:1" />
+    <rect
+       x="25.639999"
+       y="25.64189"
+       width="23.105"
+       height="23.105"
+       id="rect4"
+       style="fill:#027dfd;fill-opacity:1" />
+  </g>
+  <rect
+     x="0"
+     y="-2.1218882e-12"
+     width="24.077513"
+     height="24.077513"
+     id="rect5"
+     style="fill:#027dfd;stroke-width:1.04209;fill-opacity:1" />
+  <rect
+     x="26.719213"
+     y="-2.1218882e-12"
+     width="24.077513"
+     height="24.077513"
+     id="rect6"
+     style="fill:#027dfd;stroke-width:1.04209;fill-opacity:1" />
+  <rect
+     x="0"
+     y="26.721298"
+     width="24.077513"
+     height="24.077513"
+     id="rect7"
+     style="fill:#027dfd;stroke-width:1.04209;fill-opacity:1" />
+  <rect
+     x="26.719213"
+     y="26.721298"
+     width="24.077513"
+     height="24.077513"
+     id="rect12"
+     style="fill:#027dfd;stroke-width:1.04209;fill-opacity:1" />
 </svg>

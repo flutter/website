@@ -42,6 +42,5 @@ check out the following resources.
 {%- endcase %}
 * [Uninstall Flutter][uninstall]
 
-
 [upgrade]: /release/upgrade
 [uninstall]: /get-started/uninstall?tab={{devos}}
