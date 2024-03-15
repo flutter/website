@@ -25,11 +25,11 @@ three-step operation, represented with the following pseudocode:
 ```dart
 Data? _cachedData;
 
-Future<Data> getData() async {
+Future<Data> get data async {
     // Step 1: Check whether your cache already contains the desired data
     if (_cachedData == null) {
         // Step 2: Load the data if the cache was empty
-        _cachedData = await readData();
+        _cachedData = await _readData();
     }
     // Step 3: Return the value in the cache
     return _cachedData!;
