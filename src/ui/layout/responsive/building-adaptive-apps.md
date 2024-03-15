@@ -1,6 +1,9 @@
 ---
 title: Building adaptive apps
-description: Some considerations and instructions on how to build adaptive apps to run on a variety of platforms.
+description: >
+  Some considerations and instructions on
+  how to build adaptive apps to run on a
+  variety of platforms.
 ---
 
 <?code-excerpt path-base="ui/layout/adaptive_app_demos"?>
@@ -39,7 +42,7 @@ techniques from the [flutter-adaptive-demo][].
 
 [flutter-adaptive-demo]: {{site.github}}/gskinnerTeam/flutter-adaptive-demo
 
-## Building adaptive layouts
+## Build a responsive and adaptive layout
 
 One of the first things you must consider when writing
 your app for multiple platforms is how to adapt

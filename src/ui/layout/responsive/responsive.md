@@ -15,7 +15,7 @@ to the device's screen size and orientation.
 
 There are at least two ways you can create a
 UI that responds to a change in screen size.
-Each approach has pros and cons.
+Each approach has its pros and cons.
 
 * `MediaQuery.of`
   * Returns screen size used by entire app.
@@ -28,7 +28,7 @@ Each approach has pros and cons.
 
 For either approach, you need to determine
 the sizes (called _breakpoints_) where you
-want your UI change its layout.
+want your UI to change its layout.
 The following examples use a pixel width of
 1201 or more to indicate an ultra wide display,
 601 to 1200 pixels for a wide display,
@@ -37,7 +37,7 @@ and a width of 300 pixels or less for an
 ultra narrow display.
 
 The calling function decides how to handle the UI.
-Using the screen size examples above,
+For example, using the screen size examples above,
 if the screen is 1201 pixels or more,
 return a [`Scaffold`][] object with a row
 that has a list on the left (a side nav).
@@ -151,18 +151,6 @@ foldable devices run on Android.
 
 ---
 
-### Why this matters
-
-When your app supports large screens,
-it also receives the following benefits:
-
-* Improves your app's metrics to show increased
-  user engagement when optimized to fill the screen.
-* Increases your app's visibility in the Play Store.
-  Recent [Play Store updates][] show ratings by device type
-  and indicates when an app lacks large screen support. 
-
----
 Learn more in the following 5-minute video:
 
 <iframe width="560" height="315" src="{{yt-embed}}/HD5gYnspYzk?si=dsA37QUjHBb2Zh_-" title="Learn the difference between adaptive and responsive Flutter apps" {{yt-set}}></iframe>
