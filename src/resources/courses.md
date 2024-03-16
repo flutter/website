@@ -31,5 +31,5 @@ To include your course, [submit a PR][]:
 [Dart & Flutter - Zero to Mastery 2023 + Clean Architecture]: https://www.udemy.com/course/flutter-made-easy-zero-to-mastery/?referralCode=CCBFCD16CC71F359EE3C
 [Dart & Flutter - Zero to Mastery 2023 - Keiko Corp. Food Reviews App]: https://academy.zerotomastery.io/courses/2092303/lectures/47623876
 [Sticky Grouped Headers in Flutter]: https://academy.droidcon.com/course/sticky-grouped-headers-in-flutter
-[Flutter University - From Zero to Mastery]: https://www.fudeo.it
+[Flutter University - From Zero to Mastery]: https://www.fudeo.it/?utm_source=flutter_dev
 [submit a PR]: {{site.repo.this}}/pulls
