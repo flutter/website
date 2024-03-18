@@ -130,17 +130,22 @@
           permalink: /cookbook/lists/floating-app-bar
         - title: Create a scrolling parallax effect
           permalink: /cookbook/effects/parallax-scrolling
-    # TODO(parlough): Rename this to 'Responsive design'
-    # and add 'Adaptive design' under 'Design & theming'.
-    - title: Adaptive design
+    # TODO(parlough): Add 'Adaptive design' under 'Design & theming'.
+    - title: Responsive design
       permalink: /ui/layout/responsive
       children:
-        - title: Adaptive and responsive app design
+        - title: Adaptive and responsive
           permalink: /ui/layout/responsive/adaptive-responsive
-        - title: Build an adaptive app
-          permalink: /ui/layout/responsive/building-adaptive-apps
+        - title: Responsive layout
+          permalink: /ui/layout/responsive/responsive
         - title: Update app UI based on orientation
           permalink: /cookbook/design/orientation
+        - title: Handling input
+          permalink: /ui/layout/responsive/input
+        - title: Platform idioms
+          permalink: /ui/layout/responsive/idioms
+        - title: Accessiblity
+          permalink: /ui/layout/responsive/accessibility
       
 - title: Design & theming
   permalink: /ui/design
