@@ -1,23 +1,27 @@
 ## Manage your Flutter SDK
 
 To learn more about managing your Flutter SDK install,
-check out the following resources.
+consult the following resources.
 
 {% assign doctor = site.data.doctor %}
 {% assign config = site.data.doctor[include.config] %}
 {% assign target = include.target | remove: 'mobile-' | downcase %}
 {% assign devos = include.devos %}
 {% if target == 'desktop' %}
-    {% assign webtarget = devos | append: '-desktop' | downcase %}
-    {% assign target = devos | downcase %}
+  {% assign webtarget = devos | append: '-desktop' | downcase %}
+  {% assign andtarget = devos | downcase %}
+  {% assign target = devos | downcase %}
+{% elsif target == 'web' %}
+  {% assign andtarget = 'web-on-' | append: devos | downcase %}
 {% else %}
-    {% assign webtarget = target | append: '-on-' | append: devos | downcase %}
+  {% assign webtarget = target | append: '-on-' | append: devos | downcase %}
+  {% assign andtarget = devos | downcase %}
 {% endif %}
 
 * [Upgrade Flutter][upgrade]
 {%- case config.add-android %}
 {%- when 'Y' %}
-* [Add Android compilation tools](/platform-integration/android/install-android/install-android-from-{{target}})
+* [Add Android compilation tools](/platform-integration/android/install-android/install-android-from-{{andtarget}})
 {%- endcase %}
 {%- case config.add-chrome %}
 {%- when 'Y' %}
