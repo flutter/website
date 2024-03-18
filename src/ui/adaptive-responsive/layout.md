@@ -8,8 +8,6 @@ short-title: Layout
 
 xxx This page is in the process of being coalesced; it's currently fairly repetitive as it comes from two sources
 
-{% include docs/yt_shims.liquid %}
-
 Flutter allows you to create apps that self-adapt
 to the device's screen size and orientation.
 

@@ -5,8 +5,6 @@ description: >
 short-title: Accessibility
 ---
 
-{% include docs/yt_shims.liquid %}
-
 Aside from standard advice on creating an
 [accessible app][], there are some special
 considerations to keep in mind when designing

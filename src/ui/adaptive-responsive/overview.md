@@ -8,8 +8,6 @@ description: >
 short-title: Adaptive
 ---
 
-{% include docs/yt_shims.liquid %}
-
 One of Flutter's primary goals is to create a framework
 that allows you to develop apps from a single codebase
 that look and feel great on any platform.

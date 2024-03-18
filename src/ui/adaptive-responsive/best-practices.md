@@ -6,8 +6,6 @@ description: >
 short-title: Best practices
 ---
 
-{% include docs/yt_shims.liquid %}
-
 The best practices on this page cover,
 in particular, large screen devices,
 but can equally apply to any Flutter app.
