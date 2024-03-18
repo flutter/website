@@ -23,46 +23,22 @@ macOS, or Linux platforms, or you can create your own.
 [Building macOS apps with Flutter]: /platform-integration/macos/building
 [Building Linux apps with Flutter]: /platform-integration/linux/building
 
-
-
 ## Create a new project
 
 You can use the following steps
 to create a new project with desktop support.
 
-### Set up
+### Set up desktop devtools
 
-You might run `flutter doctor` to see if
-there are any unresolved issues.
-You should see a checkmark for each successfully
-configured area. It should look something like
-the following on Windows,
-with an entry for "develop for Windows":
+Consult the guide for your target desktop environment:
 
-```terminal
-C:\> flutter doctor
-Doctor summary (to see all details, run flutter doctor -v):
-[✓] Flutter (Channel stable, 3.0.0, on Microsoft Windows [Version 10.0.19044.1706], locale en-US)
-[✓] Chrome - develop for the web
-[✓] Visual Studio - develop for Windows (Visual Studio Professional 2022 17.2.0)
-[✓] VS Code (version 1.67.2)
-[✓] Connected device (3 available)
-[✓] HTTP Host Availability
+* [Install Linux desktop devtools][Linux-devtools]
+* [Install macOS desktop devtools][macOS-devtools]
+* [Install Windows desktop devtools][Windows-devtools]
 
-• No issues found!
-```
-
-On macOS, look for a line like this:
-
-```terminal
-[✓] Xcode - develop for iOS and macOS
-```
-
-On Linux, look for a line like this:
-
-```terminal
-[✓] Linux toolchain - develop for Linux desktop
-```
+[Linux-devtools]: /get-started/install/linux/desktop
+[macOS-devtools]: /get-started/install/macos/desktop
+[Windows-devtools]: /get-started/install/windows/desktop
 
 If `flutter doctor` finds problems or missing components
 for a platform that you don't want to develop for,
