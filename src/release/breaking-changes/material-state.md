@@ -15,12 +15,11 @@ of the Material library and renamed to `WidgetState`.
 
 Previously, `MaterialState` provided logic for handling multiple different
 states a widget could have, like "hovered", "focused", and
-"disabled". Because this functionality could be useful outside
-of the Material library, namely for the base Widgets layer and
-Cupertino, it was decided to move it outside of Material. As
-part of the move, and to avoid future confusion, the different
-`MaterialState` classes have been renamed to `WidgetState`. The
-behavior of the two are the same.
+"disabled". Because this functionality is useful outside of the
+Material library, namely for the base Widgets layer and Cupertino,
+it was decided to move it outside of Material. Aspart of the move, and to
+avoid future confusion, the different`MaterialState` classes have been renamed
+to `WidgetState`. The behavior of the two are the same.
 
 | Before    | Now |
 | -------- | ------- |
@@ -34,7 +33,6 @@ behavior of the two are the same.
 | `MaterialStateProperty` | `WidgetStateProperty` |
 | `MaterialStatePropertyAll` | `WidgetStatePropertyAll` |
 | `MaterialStatesController` | `WidgetStatesController` |
-| `MaterialStateMixin` | `WidgetStateMixin` |
 
 The classes `MaterialStateOutlineInputBorder` and
 `MaterialStateUnderlineInputBorder` were left in the
@@ -56,15 +54,20 @@ MaterialState selected = MaterialState.selected;
 final MaterialStateProperty<Color> backgroundColor;
 
 class _MouseCursor extends MaterialStateMouseCursor{
-    const _MouseCursor(this.resolveCallback);
+  const _MouseCursor(this.resolveCallback);
 
-    final MaterialPropertyResolver<MouseCursor?> resolveCallback;
+  final MaterialPropertyResolver<MouseCursor?> resolveCallback;
 
-    @override
-    MouseCursor resolve(Set<MaterialState> states) => resolveCallback(states) ?? MouseCursor.uncontrolled;
+  @override
+  MouseCursor resolve(Set<MaterialState> states) => resolveCallback(states) ?? MouseCursor.uncontrolled;
 }
 
-MaterialStateBorderSide? get side;
+BorderSide side = MaterialStateBorderSide.resolveWith((Set<MaterialState> states) {
+  if (states.contains(MaterialState.selected)) {
+    return const BorderSide(color: Colors.red);
+  }
+  return null;
+});
 ```
 
 Code after migration:
@@ -75,20 +78,25 @@ WidgetState selected = WidgetState.selected;
 final WidgetStateProperty<Color> backgroundColor;
 
 class _MouseCursor extends WidgetStateMouseCursor{
-    const _MouseCursor(this.resolveCallback);
+  const _MouseCursor(this.resolveCallback);
 
-    final WidgetPropertyResolver<MouseCursor?> resolveCallback;
+  final WidgetPropertyResolver<MouseCursor?> resolveCallback;
 
-    @override
-    MouseCursor resolve(Set<WidgetState> states) => resolveCallback(states) ?? MouseCursor.uncontrolled;
+  @override
+  MouseCursor resolve(Set<WidgetState> states) => resolveCallback(states) ?? MouseCursor.uncontrolled;
 }
 
-WidgetStateBorderSide? get side;
+BorderSide side = WidgetStateBorderSide.resolveWith((Set<WidgetState> states) {
+  if (states.contains(WidgetState.selected)) {
+    return const BorderSide(color: Colors.red);
+  }
+  return null;
+});
 ```
 
 ## Timeline
 
-Landed in version: 3.20.0-1.2.pre<br>
+Landed in version: 3.21.0-10.0.pre<br>
 In stable release: not yet
 
 ## References
