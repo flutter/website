@@ -4,9 +4,7 @@ const releasesToShow = 99999;
 // The Flutter SDK archive filename prefix.
 const FILE_NAME_PREFIX = 'flutter_';
 
-const filenameReplacement = new RegExp(`^(.*) (.*?)\\b${FILE_NAME_PREFIX}\\w+_v?[X|0-9]+\\..* (.*)`, 'm');
-// const filenameReplacement = new RegExp(`^(.*?)\\b{FILE_NAME_PREFIX}\\w+_v?([X|0-9]+\\.)+[zip|tar\\.xz](.*)$`, 'm');
-// const filenameReplacement = new RegExp(`\\b{FILE_NAME_PREFIX}\\w+_v?\\d+(\\.\\d+)+\\.(zip|tar\\.xz)\\b`, 'm');
+const filenameReplacement = new RegExp(`^(.*?)\\b${FILE_NAME_PREFIX}\\w+_v?[X|0-9]+\\..*`, 'm');
 
 // Fetches Flutter release JSON for the given OS and calls the callback once the data is available.
 function fetchFlutterReleases(os, callback, errorCallback) {
@@ -162,24 +160,14 @@ let macOSArm64ArchiveFilename = '';
 function replaceFilenameInCodeElements(archiveFilename) {
   const codeElements = document.querySelectorAll('code');
 
-  codeElements.forEach((codeElement) => {
-    // Check if the <code> element itself needs replacement
-    if (codeElement.textContent.includes(FILE_NAME_PREFIX)) {
-      const text = codeElement.textContent;
-      codeElement.textContent = text.replace(
-        filenameReplacement,
-        `$1 $2${archiveFilename} $3`
-      );
-    }
-
-    // Process child nodes as before 
-    codeElement.childNodes.forEach((node) => {
+  codeElements.forEach((e) => {
+    e.childNodes.forEach((node) => {
       if (node.nodeType === Node.ELEMENT_NODE &&
-        node.textContent.includes(FILE_NAME_PREFIX)) {
+          node.textContent.includes(FILE_NAME_PREFIX)) {
         const text = node.textContent;
         node.textContent = text.replace(
-          filenameReplacement,
-          `$1 $2${archiveFilename} $3`
+            filenameReplacement,
+            `$1${archiveFilename}`
         );
       }
     });

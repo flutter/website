@@ -12,7 +12,7 @@ when your Flutter getting started path began with iOS.
 {% include docs/install/compiler/xcode.md
    target='macOS'
    devos='macOS'
-   attempt="first" -%}
+   time="first" -%}
 
 {% include docs/install/flutter-doctor.md
    target='macOS'

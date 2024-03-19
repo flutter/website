@@ -4,7 +4,7 @@
 {:.no_toc}
 
 {% assign os = include.os %}
-{% assign osl = os | downcase | replace: "chromeos","linux" %}
+{% assign osl = include.os | downcase %}
 {% assign target = include.target %}
 {% case os %}
 {% when 'Windows' -%}
@@ -19,6 +19,11 @@
    {% assign dirdl='%USERPROFILE%\Downloads' %}
    {% assign ps-dir-dl='$env:USERPROFILE\Downloads\' %}
    {% assign ps-dir-target='$env:USERPROFILE\dev\' %}
+   {% capture mv -%}
+   {{prompt}} Move-Item `
+       –Path {{ps-dir-dl}}flutter_sdk_v1.0.0.zip `
+       -Destination {{ps-dir-target}}
+   {%- endcapture %}
    {% capture uz -%}
    {{prompt}} Expand-Archive `
        –Path {{ps-dir-dl}}flutter_sdk_v1.0.0.zip `
@@ -33,20 +38,28 @@
    {% assign terminal='the Terminal' %}
    {% assign prompt='$' %}
    {% assign dirdl='~/Downloads/' %}
+   {% assign mv1 = 'mv ' | append: dirdl %}
+   {% capture mv -%}
+   {{prompt}} mv {{dirdl}}flutter_sdk_v1.0.0.zip {{path}}
+   {%- endcapture %}
    {% capture uz -%}
-   {{prompt}} {{unzip}} {{dirdl}}flutter_sdk_v1.0.0.zip -d {{path}}
+   {{prompt}} {{unzip}} {{path}}flutter_sdk_v1.0.0.zip -d {{path}}
    {%- endcapture %}
 {% else -%}
-   {% assign diroptions='`/usr/bin/`' %}
-   {% assign dirinstall='`/usr/bin/`' %}
+   {% assign diroptions='`~/development/`' %}
+   {% assign dirinstall='`~/development/`' %}
    {% assign unzip='unzip' %}
    {% assign path='/usr/bin/' %}
-   {% assign flutter-path='/usr/bin/flutter' %}
+   {% assign flutter-path='~/development/flutter' %}
    {% assign terminal='a shell' %}
-   {% assign prompt='$' %}
+   {% assign prompt1='$' %}
+   {% assign prompt2='$' %}
    {% assign dirdl='~/Downloads/' %}
+   {% capture mv %}
+   {{prompt2}} mv {{dirdl}}flutter_sdk_v1.0.0.zip {{path}}
+   {% endcapture %}
    {% capture uz -%}
-   {{prompt}} {{dirdl}}flutter_sdk_v1.0.0.zip {{path}}
+   {{prompt}} {{unzip}} {{path}}flutter_sdk_v1.0.0.zip {{path}}
    {%- endcapture %}
 {% endcase -%}
 
@@ -97,14 +110,12 @@ then extract the SDK.
    When finished, the Flutter SDK should be in the `{{flutter-path}}` directory.
 
 [SDK archive]: /release/archive
-[move-dl]: https://answers.microsoft.com/en-us/windows/forum/all/move-download-folder-to-other-drive-in-windows-10/67d58118-4ccd-473e-a3da-4e79fdb4c878
 
 {% case os %}
 {% when 'Windows' %}
 {% include docs/install/reqs/windows/set-path.md terminal=terminal target=target %}
 {% when 'macOS' %}
-{% include docs/install/reqs/macos/set-path.md terminal=terminal
-target=target dir=dirinstall %}
-{% else %}
-{% include docs/install/reqs/linux/set-path.md terminal=terminal target=target %}
+{% include docs/install/reqs/macos/set-path.md terminal=terminal target=target dir=dirinstall %}
 {% endcase %}
+
+[move-dl]: https://answers.microsoft.com/en-us/windows/forum/all/move-download-folder-to-other-drive-in-windows-10/67d58118-4ccd-473e-a3da-4e79fdb4c878

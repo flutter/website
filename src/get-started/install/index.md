@@ -11,8 +11,7 @@ os-list: [Windows, macOS, Linux, ChromeOS]
     <div class="card-body">
       <header class="card-title text-center m-0">
         <span class="d-block h1">
-          {% assign icon = os | downcase
-   -%}
+          {% assign icon = os | downcase -%}
             <img src="/assets/images/docs/brand-svg/{{icon}}.svg" width="72" height="72" aria-hidden="true" alt="{{os}} logo"> 
         </span>
         <span class="text-muted text-nowrap">{{os}}</span>

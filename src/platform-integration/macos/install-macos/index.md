@@ -11,7 +11,7 @@ click the [Getting Started path][] you followed.
 <div class="card-deck mb-8">
 {% for target in page.target-list %}
 {% assign targetlink='/platform-integration/macos/install-macos/install-macos-from-' | append: target | downcase %}
-  <a class="card card-app-type card-macos"
+  <a class="card card-app-type"
      id="install-{{target | downcase}}"
      href="{{targetlink}}">
     <div class="card-body">
@@ -24,13 +24,11 @@ click the [Getting Started path][] you followed.
           {% when 'android' -%}
             <span class="material-symbols">phone_android</span>
           {% when 'web' -%}
-            <span class="material-symbols">web</span>
+            <span class="material-symbols">open_in_browser</span>
           {% endcase -%}
-          <span class="material-symbols">add</span>
-          <span class="material-symbols">laptop_mac</span>
         </span>
-        <span class="text-muted">
-        Make {{ target }} and macOS desktop apps
+        <span class="text-muted text-nowrap">
+        {{ target }}
         </span>
       </header>
     </div>
