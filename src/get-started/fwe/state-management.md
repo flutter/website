@@ -84,7 +84,7 @@ To learn more, check out these resources:
 
 There are a few reasons why an app might need to share state:
 
-* To **update** the shared state when a user interacts with the widget
+* To **update** the shared state and notify other parts of the app
 * To **listen** for changes to the shared state
   and rebuild the UI when it changes.
 
