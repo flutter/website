@@ -125,7 +125,7 @@ Remove the whole `buildscript` block from `<app-src/android/build.gradle`:
 -    }
 -
 -    dependencies {
--        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+-        classpath "org.jetbrains.kotlin:gradle-plugin:$kotlin_version"
 -    }
 -}
 ```
@@ -167,7 +167,7 @@ remove these 2 chunks of code that use the legacy imperative apply method:
 
 ```diff
 -apply plugin: 'com.android.application'
--apply plugin: 'kotlin-android'
+-apply plugin: 'com.jetbrains.kotlin.android'
 -apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 ```
 
