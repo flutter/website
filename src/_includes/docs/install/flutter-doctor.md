@@ -25,16 +25,6 @@
 {% else %}
 {% assign work-target = target | append: ' on ' | append: devos %}
 {% endcase %}
-{% case work-target %}
-{% when 'macOS desktop','Web on macOS','iOS on macOS' %}
-{% assign compiler = 'Xcode' %}
-{% when 'Android on Windows','Android on macOS','Android on Linux' %}
-{% assign compiler = 'Android Studio' %}
-{% when 'Linux desktop','Web on Linux' %}
-{% assign compiler = 'one of the Linux libraries' %}
-{% when 'Windows desktop','Web on Windows' %}
-{% assign compiler = 'Visual Studio' %}
-{% endcase %}
 
 ### Run Flutter doctor
 
@@ -54,7 +44,7 @@ As you chose to develop for {{target}},
 you do not need _all_ components.
 If you followed this guide, the result of your command should resemble:
 
-{% include docs/install/flutter-doctor-success.md config=include.config devos=devos -%}
+{% include docs/install/flutter-doctor-success.md config=include.config -%}
 
 ### Troubleshoot Flutter doctor issues
 
@@ -72,11 +62,10 @@ Check the output for other software you might need to install
 or further tasks to perform.
 
 If you change the configuration of your Flutter SDK or its related components,
-run `flutter doctor` _again_ to verify the installation.
+run `flutter doctor` again to verify the installation.
 
-## Start developing {{work-target}} apps with Flutter
+## Start developing {{work-target}} apps on Flutter
 
 Congratulations!
 Now that you have installed all prerequisites and the Flutter SDK,
-you should be able to start developing Flutter apps for
-{{work-target}}.
+you should be able to start developing Flutter apps for {{work-target}}.

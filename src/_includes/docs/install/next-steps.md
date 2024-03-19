@@ -1,27 +1,23 @@
 ## Manage your Flutter SDK
 
 To learn more about managing your Flutter SDK install,
-consult the following resources.
+check out the following resources.
 
 {% assign doctor = site.data.doctor %}
 {% assign config = site.data.doctor[include.config] %}
 {% assign target = include.target | remove: 'mobile-' | downcase %}
 {% assign devos = include.devos %}
 {% if target == 'desktop' %}
-  {% assign webtarget = devos | append: '-desktop' | downcase %}
-  {% assign andtarget = devos | downcase %}
-  {% assign target = devos | downcase %}
-{% elsif target == 'web' %}
-  {% assign andtarget = 'web-on-' | append: devos | downcase %}
+    {% assign webtarget = devos | append: '-desktop' | downcase %}
+    {% assign target = devos | downcase %}
 {% else %}
-  {% assign webtarget = target | append: '-on-' | append: devos | downcase %}
-  {% assign andtarget = devos | downcase %}
+    {% assign webtarget = target | append: '-on-' | append: devos | downcase %}
 {% endif %}
 
 * [Upgrade Flutter][upgrade]
 {%- case config.add-android %}
 {%- when 'Y' %}
-* [Add Android compilation tools](/platform-integration/android/install-android/install-android-from-{{andtarget}})
+* [Add Android compilation tools](/platform-integration/android/install-android/install-android-from-{{target}})
 {%- endcase %}
 {%- case config.add-chrome %}
 {%- when 'Y' %}
@@ -45,6 +41,7 @@ consult the following resources.
 * [Add Windows desktop compiliation tools](/platform-integration/windows/install-windows/install-windows-from-{{target}})
 {%- endcase %}
 * [Uninstall Flutter][uninstall]
+
 
 [upgrade]: /release/upgrade
 [uninstall]: /get-started/uninstall?tab={{devos}}

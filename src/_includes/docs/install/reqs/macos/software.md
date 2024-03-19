@@ -17,12 +17,12 @@ If you need to install `git`, type `brew install git`.
 {% endcapture %}
 
 {% case target %}
-{% when 'desktop','iOS' %}
+{% when 'desktop','mobile-ios' %}
 
 * {{xcode}} {{git-xcode}} {{git-main}}
 * {{cocoapods}}
 
-{% when 'Android' %}
+{% when 'mobile-android' %}
 
 * {{android}}
 * {{git-main}}

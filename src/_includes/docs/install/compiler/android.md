@@ -3,7 +3,7 @@
 {% assign devos = include.devos %}
 {% assign target = include.target %}
 {% assign compiler = include.compiler %}
-{% assign attempt-time = include.attempt %}
+{% assign time = include.time %}
 
 {% case devos %}
 {% when 'Windows' -%}
@@ -21,23 +21,8 @@
 
 {% include docs/help-link.md location='android-studio' section='#android-setup' %}
 
-To create Android apps with Flutter, verify that the following Android
-components have been installed.
-
-* **Android SDK Platform, API {{ site.appnow.android_sdk }}**
-* **Android SDK Command-line Tools**
-* **Android SDK Build-Tools**
-* **Android SDK Platform-Tools**
-* **Android Emulator**
-
-If you haven't or don't know, continue with the following procedure.
-
-Otherwise, you can skip to the [next section][check-dev].
-
-[check-dev]: #check-your-development-setup
-
 {% comment %} Nav tabs {% endcomment -%}
-<ul class="nav nav-tabs" id="android-studio-start" role="tablist">
+<ul class="nav nav-tabs" id="android-studio-start-{{devos | downcase}}" role="tablist">
     <li class="nav-item">
         <a class="nav-link active" id="first-start-tab" href="#first-start" role="tab" aria-controls="first-start" aria-selected="true">First time using Android Studio</a>
     </li>
@@ -55,7 +40,7 @@ Otherwise, you can skip to the [next section][check-dev].
      aria-labelledby="first-start-tab"
      markdown="1">
 
-1. Launch **Android Studio**.
+1. Start **Android Studio**.
 
    The **Welcome to Android Studio** dialog displays.
 
@@ -77,7 +62,7 @@ Otherwise, you can skip to the [next section][check-dev].
      aria-labelledby="later-start-tab"
      markdown="1">
 
-1. Launch **Android Studio**.
+1. Start **Android Studio**.
 
 1. Go to the **Settings** dialog to view the **SDK Manager**.
 
@@ -168,7 +153,7 @@ Otherwise, you can skip to the [next section][check-dev].
 </div>
 {% comment %} End: Tab panes. {% endcomment -%}
 
-{% if attempt-time == 'first' %}
+{% if time=="first" %}
 
 ### Agree to Android licenses
 

@@ -95,8 +95,7 @@ The `flutter doctor -v` output might resemble the following:
 {% comment %}
 Need to use HTML for this code block to get the replacements
 and boldface to work.
-{% endcomment
-   -%}
+{% endcomment -%}
 
 <pre>
 [-] Android toolchain - develop for Android devices

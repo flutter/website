@@ -29,8 +29,7 @@
       $ cd ~/development
       $ unzip ~/Downloads/[[download-latest-link-filename]]flutter_{{os}}_vX.X.X-{{site.sdk.channel}}.zip[[/end]]
       ```
-    {% endcomment
-   -%}
+    {% endcomment -%}
 
     ```terminal
     $ cd ~/development

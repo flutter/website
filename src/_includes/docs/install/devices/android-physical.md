@@ -5,7 +5,7 @@
 {% assign devos = include.devos %}
 {% assign target = include.target %}
 {% assign compiler = include.compiler %}
-{% assign attempt = include.attempt %}
+{% assign time = include.time %}
 
 To configure your Flutter app to run on a physical Android device,
 you need an Android device running {{site.targetmin.android}} or later.

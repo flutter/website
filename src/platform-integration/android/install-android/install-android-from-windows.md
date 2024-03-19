@@ -17,11 +17,12 @@ To add Android as a Flutter app target for Windows, follow this procedure.
 {% include docs/install/compiler/android.md
    target='desktop'
    devos='windows'
-   attempt="first" -%}
+   time="first" -%}
 
 {% include docs/install/flutter-doctor.md
    target='Android'
    devos='Windows'
+   compiler='Android Studio'
    config='WindowsDesktopAndroid' %}
 
 [Android Studio]: https://developer.android.com/studio/install#win

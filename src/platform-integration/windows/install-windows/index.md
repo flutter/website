@@ -11,7 +11,7 @@ click the [Getting Started path][] you followed.
 <div class="card-deck mb-8">
 {% for target in page.target-list %}
 {% assign targetlink='/platform-integration/windows/install-windows/install-windows-from-' | append: target | downcase %}
-  <a class="card card-app-type card-windows"
+  <a class="card card-app-type"
      id="install-{{target | downcase}}"
      href="{{targetlink}}">
     <div class="card-body">
@@ -22,13 +22,11 @@ click the [Getting Started path][] you followed.
           {% when 'android' -%}
             <span class="material-symbols">phone_android</span>
           {% when 'web' -%}
-            <span class="material-symbols">web</span>
+            <span class="material-symbols">open_in_browser</span>
           {% endcase -%}
-          <span class="material-symbols">add</span>
-          <span class="material-symbols">desktop_windows</span>
         </span>
         <span class="text-muted text-nowrap">
-        Make Windows desktop and {{ target }} apps
+        {{ target }}
         </span>
       </header>
     </div>
