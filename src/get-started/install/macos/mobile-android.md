@@ -10,12 +10,31 @@ next:
   path: /get-started/test-drive
 ---
 
-{% include docs/install/reqs/macos/base.md target=page.target os=page.devos -%}
+{% include docs/install/reqs/macos/base.md
+   os=page.devos
+   target=page.target
+   -%}
 
-{% include docs/install/flutter-sdk.md target=page.target os=page.devos terminal='Terminal' -%}
+{% include docs/install/flutter-sdk.md
+   os=page.devos
+   target=page.target
+   terminal='Terminal'
+   -%}
 
-{% include docs/install/compiler/android.md target=page.target os=page.devos -%}
+{% include docs/install/compiler/android.md
+   devos=page.devos
+   target=page.target
+   attempt='first'
+   -%}
 
-{% include docs/install/flutter-doctor.md target=page.target devos=page.devos compiler='Android Studio' config=page.config -%}
+{% include docs/install/flutter-doctor.md
+   devos=page.devos
+   target=page.target
+   config=page.config
+   -%}
 
-{% include docs/install/next-steps.md devos=page.devos target=page.target config=page.config -%}
+{% include docs/install/next-steps.md
+   devos=page.devos
+   target=page.target
+   config=page.config
+   -%}

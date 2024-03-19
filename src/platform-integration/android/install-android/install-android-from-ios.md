@@ -17,7 +17,7 @@ To add Android as a Flutter app target for iOS, follow this procedure.
 {% include docs/install/compiler/android.md
    target='macos'
    devos='macOS'
-   time="first" -%}
+   attempt="first" -%}
 
 {% include docs/install/flutter-doctor.md
    target='Android'

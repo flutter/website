@@ -3,11 +3,11 @@
 {% assign prompt1='$' %}
 {% assign devos = include.devos %}
 {% assign target = include.target %}
-{% assign time = include.time %}
+{% assign attempt = include.attempt %}
 
 ### Configure Xcode
 
-{% if time=="first" %}
+{% if attempt=="first" %}
 
 To develop Flutter apps for {{target}}, install Xcode to compile to native bytecode.
 
@@ -82,9 +82,9 @@ With Xcode, you can run Flutter apps on an iOS device or on the simulator.
 
 {% endif %}
 
-{% if time=="first" %}
+{% if attempt=="first" %}
 
-### Install CocoaPods
+### Install CocoaPods (Optional)
 
 If your apps depend on [Flutter plugins][] with native {{target}} code,
 install [CocoaPods][cocoapods].
