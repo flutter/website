@@ -80,7 +80,7 @@ To learn more, check out these resources:
 * Article: [Differentiate between ephemeral state and app state](https://docs.flutter.dev/data-and-backend/state-mgmt/ephemeral-vs-app)
 * API docs: [StatefulWidget](https://api.flutter.dev/flutter/widgets/StatefulWidget-class.html)
 
-## Share state between widgets
+## Sharing state between widgets
 
 There are a few reasons why an app might need to share state:
 
