@@ -314,7 +314,7 @@ Column(
 
 A `ValueNotifer` is a simpler version of `ChangeNotifier`
 that stores a single value.
-To use it, create an instance of ValueNotifierwith the initial value:
+To use it, create an instance of ValueNotifier with the initial value:
 
 ```dart
 ValueNotifier<int> counterNotifier = ValueNotifier(0);
