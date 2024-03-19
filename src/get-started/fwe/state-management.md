@@ -19,7 +19,7 @@ and share them between different widgets.
 This page explores many aspects of state management, including:
 
 * Using a StatefulWidget
-* Share state between widgets using constructors, InheritedWidget, and callbacks
+* Sharing state between widgets using constructors, InheritedWidget, and callbacks
 * Using Listenables to notify other widgets when something changes
 * Using MVVM for your application's architecture
 
