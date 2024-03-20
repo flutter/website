@@ -10,7 +10,7 @@ next:
 
 # State management
 
-The _state_ of a Flutter app refers to all the objects and variables it uses
+The _state_ of a Flutter app refers to all the objects it uses
 to display its UI or manage system resources.
 State management is how we organize our app
 to most effectively access these objects
@@ -18,10 +18,11 @@ and share them between different widgets.
 
 This page explores many aspects of state management, including:
 
-* Using a StatefulWidget
-* Sharing state between widgets using constructors, InheritedWidget, and callbacks
-* Using Listenables to notify other widgets when something changes
-* Using MVVM for your application's architecture
+* Using a [`StatefulWidget`]
+* Sharing state between widgets using constructors, [`InheritedWidget`]s,
+  and callbacks
+* Using [`Listenable`]s to notify other widgets when something changes
+* Using Model-View-ViewModel (MVVM) for your application's architecture
 
 For other introductions to state management, check out these resources: 
 
@@ -187,13 +188,18 @@ class MyState extends InheritedWidget {
   final String data;
 
   static MyState of(BuildContext context) {
-    final MyState? result =
-        context.dependOnInheritedWidgetOfExactType<MyState>();
+    // This method looks for the nearest `MyState` widget ancestor.
+    final result = context.dependOnInheritedWidgetOfExactType<MyState>();
+    
     assert(result != null, 'No MyState found in context');
+    
     return result!;
   }
 
   @override
+  // This method should return true if the old widget's data is different
+  // from this widget's data. If true, any widgets that depend on this widget
+  // by calling `of()` will be re-built.
   bool updateShouldNotify(MyState oldWidget) => data != oldWidget.data;
 }
 ```
@@ -405,8 +411,9 @@ class CounterData {
 
 class CounterClient {
   Future<CounterData> loadCountFromServer() async {
-    final response =
-        await get(Uri.parse('https://myfluttercounterapp.net/count'));
+    final uri = Uri.parse('https://myfluttercounterapp.net/count');
+    final response = await get(uri);
+    
     if (response.statusCode != 200) {
       throw ('Failed to update resource');
     }
