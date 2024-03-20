@@ -88,7 +88,7 @@ when thinking about state management:
   and exist until it's removed from the screen.
   This is an example of _ephemeral state_.
 
-To learn more, check out these resources:
+You might find the following resources to be useful:
 
 * Article: [Ephemeral state and app state][ephemeral-state]
 * API docs: [StatefulWidget][]
