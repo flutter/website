@@ -1,7 +1,7 @@
 ---
 title: Add iOS devtools for Flutter
 description: Configure your system to develop Flutter for iOS.
-short-title: Add iOS to possible Flutter SDK targets
+short-title: Add iOS DevTools
 target-list: [macOS, Android, Web]
 ---
 

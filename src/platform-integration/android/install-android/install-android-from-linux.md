@@ -1,7 +1,7 @@
 ---
 title: Add Android devtools for Flutter from Linux start
 description: Configure your Mac to develop Flutter mobile apps for Android.
-short-title: When you started with Linux
+short-title: Starting from Linux desktop
 ---
 
 To add Android as a Flutter app target for Linux, follow this procedure.

@@ -1,7 +1,7 @@
 ---
 title: Add Android devtools for Flutter from Web on Linux start
 description: Configure your Linux system to develop Flutter mobile apps for Android.
-short-title: When you started with Web on Linux
+short-title: Starting from Web on Linux
 ---
 
 To add Android as a Flutter app target for Linux, follow this procedure.

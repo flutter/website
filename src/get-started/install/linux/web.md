@@ -1,7 +1,7 @@
 ---
 title: Start building Flutter web apps on Linux
 description: Configure your system to develop Flutter web apps on Linux.
-short-title: Web app
+short-title: Make web apps
 target: Web
 config: LinuxWeb
 devos: Linux

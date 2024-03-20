@@ -1,7 +1,7 @@
 ---
 title: Add Android devtools for Flutter from iOS start
 description: Configure your Mac to develop Flutter mobile apps for Android.
-short-title: When you started with iOS
+short-title: Starting from iOS on macOS
 ---
 
 To add Android as a Flutter app target for iOS, follow this procedure.

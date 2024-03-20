@@ -1,7 +1,7 @@
 ---
 title: Start building Flutter web apps on macOS
 description: Configure your system to develop Flutter web apps on macOS.
-short-title: macOS Web development
+short-title: Make web apps
 target: web
 config: macOSWeb
 devos: macOS

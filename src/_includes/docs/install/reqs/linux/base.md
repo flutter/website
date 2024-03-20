@@ -1,14 +1,13 @@
 {% assign os = include.os %}
 {% assign target = include.target %}
 
-{{site.alert.important}}
-  Perform this guide in sequence. Skipping steps can cause errors.
-{{site.alert.end}}
+{% include docs/install/admonitions/install-in-order.md %}
 
-## System requirements
+## Verify system requirements
 
 To install and run Flutter,
-your {{os}} environment must meet these requirements:
+your {{os}} environment must meet the following hardware
+and software requirements.
 
 ### Hardware requirements
 
@@ -24,6 +23,13 @@ minimal hardware requirements.
 | Free disk space in GB        | {% include docs/install/reqs/linux/storage.md target=target %}
 </div>
 
+{% if os == 'ChromeOS' and target == 'Android' %}
+To discover which hardware devices ChromeOS recommends for Android development,
+consult the [ChromeOS docs][chromeos-docs].
+{% endif %}
+
+[chromeos-docs]: https://chromeos.dev/en/android-environment
+
 ### Software requirements
 
 To write and compile Flutter code for {{target}},
@@ -34,8 +40,10 @@ software packages.
 {:.no_toc}
 
 {% if os == 'Linux' %}
-{% assign supported-os = 'Debian Linux {{site.devmin.linux.debian}} or later
-and Debian Linux {{site.devmin.linux.ubuntu}} or later' %}
+{%- capture supported-os %}
+Debian Linux {{site.devmin.linux.debian}} or later
+and Ubuntu Linux {{site.devmin.linux.ubuntu}} or later
+{% endcapture -%}
 {% else %}
 {% assign supported-os = 'ChromeOS' %}
 {% endif %}

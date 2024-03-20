@@ -1,7 +1,7 @@
 ---
 title: Add Android devtools for Flutter from Web on Windows start
 description: Configure your Windows system to develop Flutter mobile apps for Android.
-short-title: When you started with Web on Windows
+short-title: Starting from Web on Windows
 ---
 
 To add Android as a Flutter app target for Windows, follow this procedure.

@@ -1,7 +1,7 @@
 ---
 title: Add Linux devtools for Flutter
 description: Configure your system to develop Flutter for Linux.
-short-title: Add Linux to possible Flutter SDK targets
+short-title: Add Linux DevTools
 target-list: [Android, Web]
 ---
 

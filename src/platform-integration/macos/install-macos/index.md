@@ -1,7 +1,7 @@
 ---
 title: Add macOS devtools for Flutter
 description: Configure your system to develop Flutter for macOS.
-short-title: Add macOS to possible Flutter SDK targets
+short-title: Add macOS desktop DevTools
 target-list: [iOS, Android, Web]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Start building Flutter Android apps on Windows
 description: Configure your system to develop Flutter mobile apps on Windows.
-short-title: Android app
+short-title: Make Android apps
 target: Android
 config: WindowsAndroid
 devos: Windows

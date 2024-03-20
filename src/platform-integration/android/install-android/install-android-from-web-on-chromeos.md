@@ -1,7 +1,7 @@
 ---
 title: Add Android devtools for Flutter from Web on ChromeOS start
 description: Configure your ChromeOS system to develop Flutter mobile apps for Android.
-short-title: When you started with Web on ChromeOS
+short-title: Starting from Web on ChromeOS
 ---
 
 To add Android as a Flutter app target for ChromeOS, follow this procedure.

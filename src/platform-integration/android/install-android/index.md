@@ -1,7 +1,7 @@
 ---
 title: Add Android devtools for Flutter
 description: Configure your system to develop Flutter for Android.
-short-title: Add Android to possible Flutter SDK targets
+short-title: Add Android DevTools
 target-list: [Windows, 'Web on Windows', Linux, 'Web on Linux', macOS, 'Web on macOS', iOS, Web on ChromeOS]
 ---
 

@@ -1,13 +1,13 @@
 ---
 title: Add Chrome DevTools to Flutter from Android on ChromeOS start
 description: Configure your system to develop Flutter web apps on ChromeOS.
-short-title: When you started with Android on ChromeOS
+short-title: Starting from Android on ChromeOS
 ---
 
 To add web as a Flutter app target for ChromeOS with Android,
 follow this procedure.
 
-## Configure web development tools
+## Configure Chrome as the web DevTools tools
 
 {% include docs/install/reqs/add-web.md devos='ChromeOS' %}
 

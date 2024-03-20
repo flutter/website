@@ -1,7 +1,7 @@
 ---
 title: Add Windows devtools for Flutter
 description: Configure your system to develop Flutter for Windows.
-short-title: Add Windows to possible Flutter SDK targets
+short-title: Add Windows desktop DevTools
 target-list: [Android, Web]
 ---
 

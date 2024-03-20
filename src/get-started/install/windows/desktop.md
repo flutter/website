@@ -1,7 +1,7 @@
 ---
 title: Start building Flutter native desktop apps on Windows
 description: Configure your system to develop Flutter desktop apps on Windows.
-short-title: Windows Desktop app
+short-title: Make Windows desktop apps
 target: desktop
 config: WindowsDesktop
 devos: Windows
