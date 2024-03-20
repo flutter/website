@@ -29,7 +29,7 @@ For other introductions to state management, check out these resources:
   This video shows how to use the [riverpod][] package.
 
 <i class="material-symbols" aria-hidden="true">flutter_dash</i> Tutorial:
-[State management][]
+[State management][].
 This shows how to use ChangeNotifer with the [provider][] package.
 
 This guide doesn't use third-party packages like provider or Riverpod.
@@ -108,7 +108,7 @@ The most common patterns are:
 * **Using widget constructors** (sometimes called "prop drilling"
   in other frameworks)
 * **Using InheritedWidget** (or a similar API
-  such as the [provider](https://pub.dev/packages/provider) package).
+  such as the [provider][] package).
 * **Using callbacks** to notify a parent widget that something has changed
 
 ### Using widget constructors
@@ -261,13 +261,13 @@ TextButton(
 For more resources on sharing state between widgets,
 check out the following resources:
 
-* Article: [Flutter Architectural Overview—State management]({{site.url}}/resources/architectural-overview#state-management)
-* Video: [Pragmatic state management]({{site.youtube-site}}/watch?v=d_m5csmrf7I)
-* Video: [InheritedWidgets]({{site.youtube-site}}/watch?v=og-vJqLzg2c)
-* Video: [A guide to Inherited Widgets]({{site.youtube-site}}/watch?v=Zbm3hjPjQMk)
-* Sample: [Provider shopper](https://flutter.github.io/samples/provider_shopper.html)
-* Sample: [Provider counter](https://github.com/flutter/samples/tree/main/provider_counter)
-* API Docs: [InheritedWidget]({{site.api}}/flutter/widgets/InheritedWidget-class.html)
+* Article: [Flutter Architectural Overview — State management][architecture-state]
+* Video: [Pragmatic state management][]
+* Video: [InheritedWidgets][inherited-widget-video]
+* Video: [A guide to Inherited Widgets][]
+* Sample: [Provider shopper][]
+* Sample: [Provider counter][]
+* API Docs: [InheritedWidget][]
 
 ## Using Listenables
 
@@ -363,12 +363,12 @@ Column(
 
 To learn more about `Listenable` objects, check out the following resources:
 
-* API Docs: [`Listenable`]({{site.api}}/flutter/foundation/Listenable-class.html)
-* API Docs: [`ValueListenable`]({{site.api}}/flutter/foundation/ValueListenable-class.html) \
-* API Docs: [`ChangeNotifier`]({{site.api}}/flutter/foundation/ChangeNotifier-class.html)
-* API Docs: [`ListenableBuilder`](https://api.flutter.dev/flutter/widgets/ListenableBuilder-class.html)
-* API Docs: [`ValueListenableBuilder`]({{site.api}}/flutter/widgets/ValueListenableBuilder-class.html)
-* API Docs: [`InheritedNotifier`]({{site.api}}/flutter/widgets/InheritedNotifier-class.html)
+* API Docs: [`Listenable`][]
+* API Docs: [`ValueListenable`][]
+* API Docs: [`ChangeNotifier`][]
+* API Docs: [`ListenableBuilder`][]
+* API Docs: [`ValueListenableBuilder`][]
+* API Docs: [`InheritedNotifier`][]
 
 ## Using MVVM for your application's architecture
 
@@ -431,9 +431,8 @@ The model layer is typically responsible for the core algorithms
 and data structures needed for your app.
 If you are interested in other ways to define the model,
 such as using immutable value types,
-check out packages like [freezed]({{site.pub-pkg}}/freezed)
-or [build_collection]({{site.pub-pkg}}/built_collection) on pub.dev.
-
+check out packages like [freezed][]
+or [build_collection][] on pub.dev.
 
 ### Defining the ViewModel
 
@@ -533,12 +532,29 @@ there are many ways to organize and manage
 the state of your Flutter application.
 If you would like to learn more, check out the following resources:
 
-* Article: [List of state management approaches]({{site.url}}/data-and-backend/state-mgmt/options)
-* Repository: [Flutter Architecture Samples](https://fluttersamples.com/)
+* Article: [List of state management approaches][]
+* Repository: [Flutter Architecture Samples][]
 
-
-[ephemeral-state]: {{site.url}}/data-and-backend/state-mgmt/ephemeral-vs-app
-[provider]: https://pub.dev/packages/provider
-[managing-state-video]: https://www.youtube.com/watch?v=vU9xDLdEZtU
-[StatefulWidget]: {{site.url}}/flutter/widgets/StatefulWidget-class.html
+[A guide to Inherited Widgets]: ({{site.youtube-site}}/watch?v=Zbm3hjPjQMk)
+[build_collection]: {{site.pub-pkg}}/built_collection
+[Flutter Architecture Samples]: https://fluttersamples.com/
+[InheritedWidget]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
+[List of state management approaches]: {{site.url}}/data-and-backend/state-mgmt/options
+[Pragmatic state management]: {{site.youtube-site}}/watch?v=d_m5csmrf7I
+[Provider counter]: https://github.com/flutter/samples/tree/main/provider_counter
+[Provider shopper]: https://flutter.github.io/samples/provider_shopper.html
 [State management]: {{site.url}}/data-and-backend/state-mgmt/intro
+[StatefulWidget]: {{site.url}}/flutter/widgets/StatefulWidget-class.html
+[`ChangeNotifier`]: {{site.api}}/flutter/foundation/ChangeNotifier-class.html
+[`InheritedNotifier`]: {{site.api}}/flutter/widgets/InheritedNotifier-class.html
+[`ListenableBuilder`]: https://api.flutter.dev/flutter/widgets/ListenableBuilder-class.html
+[`Listenable`]: {{site.api}}/flutter/foundation/Listenable-class.html
+[`ValueListenableBuilder`]: {{site.api}}/flutter/widgets/ValueListenableBuilder-class.html
+[`ValueListenable`]: {{site.api}}/flutter/foundation/ValueListenable-class.html
+[architecture-state]: {{site.url}}/resources/architectural-overview#state-management
+[ephemeral-state]: {{site.url}}/data-and-backend/state-mgmt/ephemeral-vs-app
+[freezed]: {{site.pub-pkg}}/freezed
+[inherited-widget-video]: {{site.youtube-site}}/watch?v=og-vJqLzg2c
+[managing-state-video]: {{site.youtube-site}}/watch?v=vU9xDLdEZtU
+[provider]: {{site.pub-pkg}}/provider
+[riverpod]: {{site.pub-pkg}}/riverpod
