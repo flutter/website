@@ -36,7 +36,8 @@ Instead, it only uses primitives available in the Flutter framework.
 
 ## Using a StatefulWidget
 
-The simplest way to manage state is to use a StatefulWidget.
+The simplest way to manage state is to use a `StatefulWidget`,
+which stores state within itself.
 For example, consider a widget that stores its own state
 by extending `StatefulWidget`:
 
