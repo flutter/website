@@ -2605,12 +2605,12 @@ and common widget properties.
 [Dart's Type System]: {{site.dart-site}}/guides/language/sound-dart
 [Sound Null Safety]: {{site.dart-site}}/null-safety
 [`dart:io`]: {{site.api}}/flutter/dart-io/dart-io-library.html
-[DartPadA]: {{site.dartpad}}/0df636e00f348bdec2bc1c8ebc7daeb1
-[DartPadB]: {{site.dartpad}}/cf9e652f77636224d3e37d96dcf238e5
-[DartPadC]: {{site.dartpad}}/3f4625c16e05eec396d6046883739612
-[DartPadD]: {{site.dartpad}}/57ec21faa8b6fe2326ffd74e9781a2c7
-[DartPadE]: {{site.dartpad}}/c85038ad677963cb6dc943eb1a0b72e6
-[DartPadF]: {{site.dartpad}}/5454e8bfadf3000179d19b9bc6be9918
+[DartPadA]: {{site.dartpad}}/?id=0df636e00f348bdec2bc1c8ebc7daeb1
+[DartPadB]: {{site.dartpad}}/?id=cf9e652f77636224d3e37d96dcf238e5
+[DartPadC]: {{site.dartpad}}/?id=3f4625c16e05eec396d6046883739612
+[DartPadD]: {{site.dartpad}}/?id=57ec21faa8b6fe2326ffd74e9781a2c7
+[DartPadE]: {{site.dartpad}}/?id=c85038ad677963cb6dc943eb1a0b72e6
+[DartPadF]: {{site.dartpad}}/?id=5454e8bfadf3000179d19b9bc6be9918
 [Developing Packages & Plugins]: /packages-and-plugins/developing-packages
 [DevTools]: /tools/devtools
 [`Dismissible`]: {{site.api}}/flutter/widgets/Dismissible-class.html
