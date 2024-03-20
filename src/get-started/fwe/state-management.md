@@ -73,12 +73,18 @@ class _MyCounterState extends State<MyCounter> {
 This illustrates two important considerations
 when thinking about state management:
 
-* **Encapsulation** - The widget that uses `MyCounter` has no visibility into 
+This code illustrates two important concepts
+when thinking about state management:
+
+* **Encapsulation** 
+: The widget that uses `MyCounter` has no visibility into 
   the underlying `count` variable
   and no means to access or change it.
-* **Object Lifecycle** - The `_MyCounterState` object and its `count` variable
+* **Object lifecycle**
+: The `_MyCounterState` object and its `count` variable
   are created the first time that `MyCounter` is built,
-  and will exist until it is removed from the screen. This is an example of _ephemeral state_.
+  and exist until it's removed from the screen.
+  This is an example of _ephemeral state_.
 
 To learn more, check out these resources:
 
@@ -106,7 +112,7 @@ The most common patterns are:
 ### Using widget constructors
 
 Since Dart objects are passed by reference,
-It's very common for widgets to define the objects they need to use
+it's very common for widgets to define the objects they need to use
 in their constructor.
 Any state you pass into a widget's constructor
 can be used to build its UI:
@@ -155,17 +161,17 @@ and many frameworks take advantage of it or provide tools to make it easier.
 ### Using InheritedWidget
 
 Manually passing data down the widget tree can be verbose
-and cause unwanted boilerplate,
+and cause unwanted boilerplate code,
 so Flutter provides _InheritedWidget_,
 which provides a way to efficiently host data in a parent widget
 so that child widgets can get access them without storing them as a field.
 
-To implement an InheritedWidget, extend the `InheritedWidget` class
+To use `InheritedWidget`, extend the `InheritedWidget` class
 and implement the static method `of()`
 using `dependOnInheritedWidgetOfExactType`.
-When a widget calls `of()` in a build method,
-this creates a dependency that is managed by the Flutter framework,
-so that any widgets that depend on this InheritedWidget will rebuild
+A widget calling `of()` in a build method
+creates a dependency that is managed by the Flutter framework,
+so that any widgets that depend on this `InheritedWidget` rebuild
 when this widget is re-built with new data
 and `updateShouldNotify` returns true.
 
@@ -191,8 +197,8 @@ class MyState extends InheritedWidget {
 }
 ```
 
-To use an InheritedWidget, call the `of()` method
-in the `build()`method of the widget
+Next, call the `of()` method
+from the `build()`method of the widget
 that needs access to the shared state:
 
 ```dart
@@ -248,18 +254,18 @@ TextButton(
 ),
 ```
 
-### Learn more
+### Dive deeper
 
 For more resources on sharing state between widgets,
 check out the following resources:
 
-* Article: [Flutter Architectural Overview - State management](https://docs.flutter.dev/resources/architectural-overview#state-management)
-* Video: [Pragmatic state management](https://www.youtube.com/watch?v=d_m5csmrf7I)
-* Video: [InheritedWidgets](https://www.youtube.com/watch?v=og-vJqLzg2c)
-* Video: [A guide to Inherited Widgets](https://www.youtube.com/watch?v=Zbm3hjPjQMk)
+* Article: [Flutter Architectural Overview—State management]({{site.url}}/resources/architectural-overview#state-management)
+* Video: [Pragmatic state management]({{site.youtube-site}}/watch?v=d_m5csmrf7I)
+* Video: [InheritedWidgets]({{site.youtube-site}}/watch?v=og-vJqLzg2c)
+* Video: [A guide to Inherited Widgets]({{site.youtube-site}}/watch?v=Zbm3hjPjQMk)
 * Sample: [Provider shopper](https://flutter.github.io/samples/provider_shopper.html)
 * Sample: [Provider counter](https://github.com/flutter/samples/tree/main/provider_counter)
-* API Docs: [InheritedWidget](https://api.flutter.dev/flutter/widgets/InheritedWidget-class.html)
+* API Docs: [InheritedWidget]({{site.api}}/flutter/widgets/InheritedWidget-class.html)
 
 ## Using Listenables
 
@@ -269,7 +275,7 @@ How do you change the shared state in a way
 that notifies other parts of the app?
 
 Flutter provides an abstract class called `Listenable`
-that can update one or listeners.
+that can update one or more listeners.
 Some useful ways to use listenables are:
 
 * Use a `ChangeNotifier` and subscribe to it using a `ListenableBuilder`
@@ -294,7 +300,7 @@ class CounterNotifier extends ChangeNotifier {
 
 Then pass it to `ListenableBuilder`
 to ensure that the subtree returned by the `builder` function
-is re-built whenever the `ChangeNotifier` updates it's listeners.
+is re-built whenever the `ChangeNotifier` updates its listeners.
 
 ```dart
 Column(
@@ -318,7 +324,7 @@ Column(
 ### ValueNotifier
 
 A `ValueNotifer` is a simpler version of `ChangeNotifier`
-that stores a single value.
+that stores a single listener.
 To use it, create an instance of ValueNotifier with the initial value:
 
 ```dart
@@ -351,21 +357,21 @@ Column(
 )
 ```
 
-### Learn more
+### Deep dive
 
-To learn more about Listenables, check out the following resources:
+To learn more about `Listenable` objects, check out the following resources:
 
-* API Docs: [Listenable](https://api.flutter.dev/flutter/foundation/Listenable-class.html)
-* API Docs: [ValueListenable](https://api.flutter.dev/flutter/foundation/ValueListenable-class.html) \
-* API Docs: [ChangeNotifier](https://api.flutter.dev/flutter/foundation/ChangeNotifier-class.html)
-* API Docs: [ListenableBuilder](https://api.flutter.dev/flutter/widgets/ListenableBuilder-class.html)
-* API Docs: [ValueListenableBuilder](https://api.flutter.dev/flutter/widgets/ValueListenableBuilder-class.html)
-* API Docs: [InheritedNotifier](https://api.flutter.dev/flutter/widgets/InheritedNotifier-class.html)
+* API Docs: [`Listenable`]({{site.api}}/flutter/foundation/Listenable-class.html)
+* API Docs: [`ValueListenable`]({{site.api}}/flutter/foundation/ValueListenable-class.html) \
+* API Docs: [`ChangeNotifier`]({{site.api}}/flutter/foundation/ChangeNotifier-class.html)
+* API Docs: [`ListenableBuilder`](https://api.flutter.dev/flutter/widgets/ListenableBuilder-class.html)
+* API Docs: [`ValueListenableBuilder`]({{site.api}}/flutter/widgets/ValueListenableBuilder-class.html)
+* API Docs: [`InheritedNotifier`]({{site.api}}/flutter/widgets/InheritedNotifier-class.html)
 
 ## Using MVVM for your application's architecture
 
 Now that we understand how to share state
-and notify other parts of the app when the state changes,
+and notify other parts of the app when its state changes,
 we're ready to start thinking about how to organize
 the stateful objects in our app.
 
@@ -378,7 +384,7 @@ called _Model-View-ViewModel_ or _MVVM_.
 The Model is typically a Dart class that does low-level tasks
 such as make HTTP requests,
 cache data, or manage system resources such as a plugin.
-A model does not usually need to import Flutter libraries.
+A model doesn't usually need to import Flutter libraries.
 
 For example, consider a model that loads or updates the counter state
 using an HTTP client:
@@ -410,8 +416,8 @@ class CounterClient {
 
 ```
 
-This model does not use any Flutter primitives or make any assumptions
-about the platform it's running on,
+This model doesn't use any Flutter primitives or make any assumptions
+about the platform it's running on;
 its only job is to fetch or update the count using its HTTP client.
 This allows the model to be implemented with a Mock or Fake in unit tests,
 and defines clear boundaries between your app's low-level components and the
@@ -420,20 +426,20 @@ higher-level UI components needed to build the full app.
 The `CounterData` class defines the structure of the data
 and is the true "model" of our application.
 The model layer is typically responsible for the core algorithms
-and datastructures needed for your app.
-If you are interested in other ways to define the model
+and data structures needed for your app.
+If you are interested in other ways to define the model,
 such as using immutable value types,
-check out packages such as [freezed](https://pub.dev/packages/freezed)
-or [build_collection](https://pub.dev/packages/built_collection) on pub.dev.
+check out packages like [freezed]({{site.pub-pkg}}/freezed)
+or [build_collection]({{site.pub-pkg}}/built_collection) on pub.dev.
 
 
 ### Defining the ViewModel
 
-A `ViewModel` is what binds the _View_ to the _Model_.
+A `ViewModel` binds the _View_ to the _Model_.
 It protects the model from being accessed directly by the View,
-and ensures that data flow starts from a change to the model,
-which is handled by the ViewModel,
-which notifies the View that something changed (using `notifyListeners`).
+and ensures that data flow starts from a change to the model.
+Data flow is handled by the ViewModel, which uses `notifyListeners`
+to inform the View that something changed.
 The ViewModel is like a waiter in a restaurant
 that handles the communication
 between the kitchen (model) and the customers (views).
@@ -520,11 +526,12 @@ and low-level operations performed by the Model layer.
 
 ## Learn more about state management
 
-There are many ways to organize and manage
+This page touches the surface of state management as
+there are many ways to organize and manage
 the state of your Flutter application.
 If you would like to learn more, check out the following resources:
 
-* Article: [List of state management approaches](https://docs.flutter.dev/data-and-backend/state-mgmt/options)
+* Article: [List of state management approaches]({{site.url}}/data-and-backend/state-mgmt/options)
 * Repository: [Flutter Architecture Samples](https://fluttersamples.com/)
 
 
