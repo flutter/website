@@ -528,8 +528,8 @@ If you would like to learn more, check out the following resources:
 * Repository: [Flutter Architecture Samples](https://fluttersamples.com/)
 
 
-[ephemeral-state]: https://docs.flutter.dev/data-and-backend/state-mgmt/ephemeral-vs-app
+[ephemeral-state]: {{site.url}}/data-and-backend/state-mgmt/ephemeral-vs-app
 [provider]: https://pub.dev/packages/provider
 [managing-state-video]: https://www.youtube.com/watch?v=vU9xDLdEZtU
-[StatefulWidget]: https://api.flutter.dev/flutter/widgets/StatefulWidget-class.html
-[State management]: https://docs.flutter.dev/data-and-backend/state-mgmt/intro
+[StatefulWidget]: {{site.url}}/flutter/widgets/StatefulWidget-class.html
+[State management]: {{site.url}}/data-and-backend/state-mgmt/intro
