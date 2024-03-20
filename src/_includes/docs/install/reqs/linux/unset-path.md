@@ -4,7 +4,7 @@
 {:.no_toc}
 
 To remove Flutter commands from {{terminal}},
-remove Flutter to the `PATH` environment variable.
+remove Flutter from the `PATH` environment variable.
 
 {% include docs/install/reqs/windows/open-envvars.md %}
 

@@ -30,7 +30,7 @@ components have been installed.
 * **Android SDK Platform-Tools**
 * **Android Emulator**
 
-If you haven't or don't know, continue with the following procedure.
+If you haven't installed these, or you don't know, continue with the following procedure.
 
 Otherwise, you can skip to the [next section][check-dev].
 
