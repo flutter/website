@@ -1,4 +1,10 @@
-## Platform idioms
+---
+title: Platform idioms
+description: >
+  Learn how to create a responsive app >
+  that responds to changes in the screen size. 
+short-title: Idioms
+---
 
 The final area to consider for adaptive apps is platform standards.
 Each platform has its own idioms and norms;

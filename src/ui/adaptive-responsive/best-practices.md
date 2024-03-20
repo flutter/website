@@ -44,7 +44,7 @@ as the device rotates, changes window size,
 or folds and unfolds. 
 By default, Flutter should maintain state.
 
-[PENDING: How SHOULD they save app state? Does [this page][] apply to this situation?]
+[xxx PENDING: How SHOULD they save app state? Does [this page][] apply to this situation?]
 [this page]: {{site.url}}/platform-integration/android/restore-state-android
 
 If your app loses state during device configuration,
@@ -54,7 +54,7 @@ device type, such as a large screen.
 Some native extensions might lose state when the
 device changes position.
 
-[PENDING: What can you do when this happens? Do you need a federated plugin?]
+[xxx PENDING: What can you do when this happens? Do you need a federated plugin?]
 
 [app state]: {{site.android-dev}}/jetpack/compose/state#store-state
 

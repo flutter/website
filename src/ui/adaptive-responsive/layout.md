@@ -6,7 +6,7 @@ description: >
 short-title: Layout
 ---
 
-xxx This page is in the process of being coalesced; it's currently fairly repetitive as it comes from two sources
+[xxx PENDING: I'm coalescing this page from two previous pages. I'm not done with the text. It likely also needs code or other updates.]
 
 Flutter allows you to create apps that self-adapt
 to the device's screen size and orientation.
@@ -28,56 +28,108 @@ Each approach has its pros and cons.
 
 For either approach, you need to determine
 the sizes (called _breakpoints_) where you
-want your UI to change its layout.
-The following examples use a pixel width of
-1201 or more to indicate an ultra wide display,
-601 to 1200 pixels for a wide display,
-301 to 600 pixels for a narrow display,
-and a width of 300 pixels or less for an
-ultra narrow display.
+want your UI to change its layout,
+as described in the next section.
 
+### Screen-based breakpoints
+
+The simplest form of procedural layouts uses
+screen-based breakpoints. There are no
+hard and fast rules for the sizes to use
+here, but these are general values:
+
+<?code-excerpt "lib/global/device_size.dart (FormFactor)"?>
+```dart
+class FormFactor {
+  static double desktop = 900;
+  static double tablet = 600;
+  static double handset = 300;
+}
+```
+
+Using breakpoints, you can set up a simple system
+to determine the device type:
+
+[xxx PENDING: Should the following example be updated to use Display instead of MediaQuery?]
+
+<?code-excerpt "lib/global/device_size.dart (getFormFactor)"?>
+```dart
+ScreenType getFormFactor(BuildContext context) {
+  // Use .shortestSide to detect device type regardless of orientation
+  double deviceWidth = MediaQuery.of(context).size.shortestSide;
+  if (deviceWidth > FormFactor.desktop) return ScreenType.desktop;
+  if (deviceWidth > FormFactor.tablet) return ScreenType.tablet;
+  if (deviceWidth > FormFactor.handset) return ScreenType.handset;
+  return ScreenType.watch;
+}
+```
+
+As an alternative, you could abstract it more
+and define it in terms of small to large:
+
+<?code-excerpt "lib/global/device_size.dart (ScreenSize)"?>
+```dart
+enum ScreenSize { small, normal, large, extraLarge }
+
+ScreenSize getSize(BuildContext context) {
+  double deviceWidth = MediaQuery.of(context).size.shortestSide;
+  if (deviceWidth > 900) return ScreenSize.extraLarge;
+  if (deviceWidth > 600) return ScreenSize.large;
+  if (deviceWidth > 300) return ScreenSize.normal;
+  return ScreenSize.small;
+}
+```
+
+Screen-based breakpoints are best used for making
+top-level decisions in your app. Changing things like
+visual density, paddings, or font-sizes are best when
+defined on a global basis.
+
+You can also use screen-based breakpoints to reflow your
+top-level widget trees. For example, you could switch
+from a vertical to a horizontal layout when
+the user isn't on a handset (mobile device):
+
+[xxx PENDING: Should the following example be updated to use Display instead of MediaQuery?
+
+<?code-excerpt "lib/global/device_size.dart (MediaQuery)"?>
+```dart
+bool isHandset = MediaQuery.of(context).size.width < 600;
+return Flex(
+  direction: isHandset ? Axis.vertical : Axis.horizontal,
+  children: const [Text('Foo'), Text('Bar'), Text('Baz')],
+);
+```
+
+In another widget,
+you might swap some of the children completely:
+
+<?code-excerpt "lib/global/device_size.dart (WidgetSwap)"?>
+```dart
+Widget foo = Row(
+  children: [
+    ...isHandset ? _getHandsetChildren() : _getNormalChildren(),
+  ],
+);
+```
 The calling function decides how to handle the UI.
-For example, using the screen size examples above,
-if the screen is 1201 pixels or more,
-return a [`Scaffold`][] object with a row
-that has a list on the left (a side nav).
-If the screen is less than 300 pixels wide,
-return a [`Scaffold`][] object with a drawer
-containing that list (assumes bottom navigation).
-
 You can also adjust your display based on the
-device's height, the aspect ratio,
-or some other property.
+device's height, the aspect ratio, or some other property.
 
 ### MediaQuery
 
 You can determine the current screen size by using the
 [`MediaQuery.of()`][] method in your widget's build function.
-Keep in mind that this method returns the current size
+Keep in mind that this approach returns the current size
 and orientation of the app's entire screen and
 not just a single widget.
 
-The following example code uses `MediaQuery.of`
-to calculate the breakpoints:
+[xxx PENDING: Do we need an example here?]
 
-```dart
-final screenWidth = MediaQuery.of(context).size.width;
-
-if (screenWidth > 1200) {
-  return UltraWideLayout();
-} else if (screenwidth > 600) {
-  return WideLayout();
-} else if (screenwidth > 300) {
-  return NarrowLayout();
-} else {
-  return UltraNarrowLayout();
-}
-```
-
-With this approach the `build` function
+In this scenario, the `build` function
 automatically runs when the user is _done_
-resizing the screen. However, this isn't a
-particularly reactive approach. What you
+resizing the screen. However, this isn't
+particularly interactive. What you
 likely want to see is the UI changing in
 real time as the user resizes the window.
 
@@ -86,37 +138,48 @@ real time as the user resizes the window.
 
 ### LayoutBuilder
 
-To accomplish a more reactive approach,
-use the `LayoutBuilder` class.
+Even though checking total screen size is great for
+full-screen pages or making global layout decisions,
+it's often not ideal for nested subviews.
+Often, subviews have their own internal breakpoints
+and care only about the space that they have available to render.
+
+The simplest way to handle this in Flutter is using the
+[`LayoutBuilder`][] class. `LayoutBuilder` allows a
+widget to respond to incoming local size constraints,
+which can make the widget more versatile than if it
+depended on a global value.
+
+`LayoutBuilder` also provides an interactive approach:
 From a `LayoutBuilder`'s [`builder`][] property,
-extract the [`BoxConstraints`][] object.
-Examine the constraint's properties to decide
+extract the [`BoxConstraints`][] object and
+examine the constraint's properties to decide
 what to display.
+
+For example of modifying orientation:
+
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (LayoutBuilder)"?>
+```dart
+Widget foo = LayoutBuilder(builder: (context, constraints) {
+  bool useVerticalLayout = constraints.maxWidth < 400;
+  return Flex(
+    direction: useVerticalLayout ? Axis.vertical : Axis.horizontal,
+    children: const [
+      Text('Hello'),
+      Text('World'),
+    ],
+  );
+});
+```
+
+This widget can now be composed within a side panel,
+dialog, or even a full-screen view,
+and adapt its layout to whatever space is provided.
 
 When the constraints change (for example,
 the user rotates the phone or puts your app
 app into a tile UI on Android), Flutter calls
 the `LayoutBuilder`'s `build` function.
-
-The following code, similar to the code for
-`MediaQuery`, shows how the layout
-builder might calculate the breakspoints for
-the device's size:
-
-```dart
-LayoutBuilder()
-  ...
-  child: LayoutBuilder(
-    builder: (context, constraints) {
-      if (constraints.maxWidth > 1200) {
-        return UltraWideLayout();
-      } else if (constraints.maxWidth > 600) {
-        return WideLayout();
-      } else {
-        return NarrowLayout();
-    }
-    ...
-```
 
 You can also adjust your display based on the
 device's height, the aspect ratio,
@@ -126,28 +189,6 @@ the user rotates the phone, resizes the window,
 or puts your app into a tile UI on Android),
 the `LayoutBuilder` re-runs its build method,
 updating the layout in real time.
-
-The `LayoutBuilder`'s `build` method then
-decides how to handle this change.
-For example, if the layout is `UltraWideLayout`
-or `WideLayout`, return a sidenav—such as
-a [`Scaffold`][] object with a row that has
-a list on the left. If the layout is
-`NarrowWide`, return a navigation drawer—or
-a drawer containing that list.
-
-[PENDING: Needs example code]
-
-## Respond to large screen devices
-
-You can optimize your app to improve its
-look and feel on large screens. 
-Flutter defines [large screens][] as tablets,
-foldables, and ChromeOS devices running Android.
-Demand for large screens continues to increase. 
-As of December 2023, more than
-[270 million active large screen][] and 
-foldable devices run on Android.
 
 ---
 
@@ -188,10 +229,9 @@ including contributions from the Flutter community:
 [`OrientationBuilder`]: {{site.api}}/flutter/widgets/OrientationBuilder-class.html
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
 
-## Creating an adaptive Flutter app
+---
 
-Learn more about creating an adaptive Flutter app with
-[Building adaptive apps][], written by the gskinner team.
+## Creating an adaptive Flutter app
 
 You might also check out the following episodes
 of The Boring Show:
@@ -238,85 +278,6 @@ widget that does what you need, you can take a more
 procedural approach to adjust parameters, calculate sizes,
 swap widgets, or completely restructure your UI to suit
 a particular form factor.
-
-#### Screen-based breakpoints
-
-The simplest form of procedural layouts uses
-screen-based breakpoints. In Flutter,
-this can be done with the `MediaQuery` API.
-There are no hard and fast rules for the sizes to use
-here, but these are general values:
-
-<?code-excerpt "lib/global/device_size.dart (FormFactor)"?>
-```dart
-class FormFactor {
-  static double desktop = 900;
-  static double tablet = 600;
-  static double handset = 300;
-}
-```
-
-Using breakpoints, you can set up a simple system
-to determine the device type:
-
-<?code-excerpt "lib/global/device_size.dart (getFormFactor)"?>
-```dart
-ScreenType getFormFactor(BuildContext context) {
-  // Use .shortestSide to detect device type regardless of orientation
-  double deviceWidth = MediaQuery.of(context).size.shortestSide;
-  if (deviceWidth > FormFactor.desktop) return ScreenType.desktop;
-  if (deviceWidth > FormFactor.tablet) return ScreenType.tablet;
-  if (deviceWidth > FormFactor.handset) return ScreenType.handset;
-  return ScreenType.watch;
-}
-```
-
-As an alternative, you could abstract it more
-and define it in terms of small to large:
-
-<?code-excerpt "lib/global/device_size.dart (ScreenSize)"?>
-```dart
-enum ScreenSize { small, normal, large, extraLarge }
-
-ScreenSize getSize(BuildContext context) {
-  double deviceWidth = MediaQuery.of(context).size.shortestSide;
-  if (deviceWidth > 900) return ScreenSize.extraLarge;
-  if (deviceWidth > 600) return ScreenSize.large;
-  if (deviceWidth > 300) return ScreenSize.normal;
-  return ScreenSize.small;
-}
-```
-
-Screen-based breakpoints are best used for making
-top-level decisions in your app. Changing things like
-visual density, paddings, or font-sizes are best when
-defined on a global basis.
-
-You can also use screen-based breakpoints to reflow your
-top-level widget trees. For example, you could switch
-from a vertical to a horizontal layout when
-the user isn't on a handset:
-
-<?code-excerpt "lib/global/device_size.dart (MediaQuery)"?>
-```dart
-bool isHandset = MediaQuery.of(context).size.width < 600;
-return Flex(
-  direction: isHandset ? Axis.vertical : Axis.horizontal,
-  children: const [Text('Foo'), Text('Bar'), Text('Baz')],
-);
-```
-
-In another widget,
-you might swap some of the children completely:
-
-<?code-excerpt "lib/global/device_size.dart (WidgetSwap)"?>
-```dart
-Widget foo = Row(
-  children: [
-    ...isHandset ? _getHandsetChildren() : _getNormalChildren(),
-  ],
-);
-```
 
 #### Use LayoutBuilder for extra flexibility
 
@@ -527,388 +488,3 @@ The important thing to consider is what a user expects
 when using a particular input device,
 and work to reflect that in your app.
 
-## Idioms and norms
-
-The final area to consider for adaptive apps is platform standards.
-Each platform has its own idioms and norms;
-these nominal or de facto standards inform user expectations
-of how an application should behave. Thanks, in part to the web,
-users are accustomed to more customized experiences,
-but reflecting these platform standards can still provide
-significant benefits:
-
-* **Reduce cognitive load**
-: By matching the user's existing mental model,
-  accomplishing tasks becomes intuitive,
-  which requires less thinking,
-  boosts productivity, and reduces frustrations.
-
-* **Build trust**
-: Users can become wary or suspicious
-  when applications don't adhere to their expectations.
-  Conversely, a UI that feels familiar can build user trust
-  and can help improve the perception of quality.
-  This often has the added benefit of better app store
-  ratings—something we can all appreciate!
-
-### Consider expected behavior on each platform
-
-The first step is to spend some time considering what
-the expected appearance, presentation, or behavior is on this platform.
-Try to forget any limitations of your current implementation,
-and just envision the ideal user experience.
-Work backwards from there.
-
-Another way to think about this is to ask,
-"How would a user of this platform expect to achieve this goal?"
-Then, try to envision how that would work in your app
-without any compromises.
-
-This can be difficult if you aren't a regular user of the platform.
-You might be unaware of the specific idioms and can easily miss
-them completely. For example, a lifetime Android user is
-likely unaware of platform conventions on iOS,
-and the same holds true for macOS, Linux, and Windows.
-These differences might be subtle to you,
-but be painfully obvious to an experienced user.
-
-#### Find a platform advocate
-
-If possible, assign someone as an advocate for each platform.
-Ideally, your advocate uses the platform as their primary device,
-and can offer the perspective of a highly opinionated user.
-To reduce the number of people, combine roles.
-Have one advocate for Windows and Android,
-one for Linux and the web, and one for Mac and iOS.
-
-The goal is to have constant, informed feedback so the app
-feels great on each platform. Advocates should be encouraged
-to be quite picky, calling out anything they feel differs from
-typical applications on their device. A simple example is how
-the default button in a dialog is typically on the left on Mac
-and Linux, but is on the right on Windows.
-Details like that are easy to miss if you aren't using a platform
-on a regular basis.
-
-{{site.alert.secondary}}
-  **Important**: Advocates don't need to be developers or
-  even full-time team members. They can be designers,
-  stakeholders, or external testers that are provided
-  with regular builds.
-{{site.alert.end}}
-
-#### Stay unique
-
-Conforming to expected behaviors doesn't mean that your app
-needs to use default components or styling.
-Many of the most popular multiplatform apps have very distinct
-and opinionated UIs including custom buttons, context menus,
-and title bars.
-
-The more you can consolidate styling and behavior across platforms,
-the easier development and testing will be.
-The trick is to balance creating a unique experience with a
-strong identity, while respecting the norms of each platform.
-
-### Common idioms and norms to consider
-
-Take a quick look at a few specific norms and idioms
-you might want to consider, and how you could approach
-them in Flutter.
-
-#### Scrollbar appearance and behavior
-
-Desktop and mobile users expect scrollbars,
-but they expect them to behave differently on different platforms.
-Mobile users expect smaller scrollbars that only appear
-while scrolling, whereas desktop users generally expect
-omnipresent, larger scrollbars that they can click or drag.
-
-Flutter comes with a built-in `Scrollbar` widget that already
-has support for adaptive colors and sizes according to the
-current platform. The one tweak you might want to make is to
-toggle `alwaysShown` when on a desktop platform:
-
-<?code-excerpt "lib/pages/adaptive_grid_page.dart (ScrollbarAlwaysShown)"?>
-```dart
-return Scrollbar(
-  thumbVisibility: DeviceType.isDesktop,
-  controller: _scrollController,
-  child: GridView.count(
-    controller: _scrollController,
-    padding: const EdgeInsets.all(Insets.extraLarge),
-    childAspectRatio: 1,
-    crossAxisCount: colCount,
-    children: listChildren,
-  ),
-);
-```
-
-This subtle attention to detail can make your app feel more
-comfortable on a given platform.
-
-#### Multi-select
-
-Dealing with multi-select within a list is another area
-with subtle differences across platforms:
-
-<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (MultiSelectShift)"?>
-```dart
-static bool get isSpanSelectModifierDown =>
-    isKeyDown({LogicalKeyboardKey.shiftLeft, LogicalKeyboardKey.shiftRight});
-```
-
-To perform a platform-aware check for control or command,
-you can write something like this:
-
-<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (MultiSelectModifierDown)"?>
-```dart
-static bool get isMultiSelectModifierDown {
-  bool isDown = false;
-  if (Platform.isMacOS) {
-    isDown = isKeyDown(
-      {LogicalKeyboardKey.metaLeft, LogicalKeyboardKey.metaRight},
-    );
-  } else {
-    isDown = isKeyDown(
-      {LogicalKeyboardKey.controlLeft, LogicalKeyboardKey.controlRight},
-    );
-  }
-  return isDown;
-}
-```
-
-A final consideration for keyboard users is the **Select All** action.
-If you have a large list of items of selectable items,
-many of your keyboard users will expect that they can use
-`Control+A` to select all the items.
-
-##### Touch devices
-
-On touch devices, multi-selection is typically simplified,
-with the expected behavior being similar to having the
-`isMultiSelectModifier` down on the desktop.
-You can select or deselect items using a single tap,
-and will usually have a button to **Select All** or
-**Clear** the current selection.
-
-How you handle multi-selection on different devices depends
-on your specific use cases, but the important thing is to
-make sure that you're offering each platform the best
-interaction model possible.
-
-#### Selectable text
-
-A common expectation on the web (and to a lesser extent desktop)
-is that most visible text can be selected with the mouse cursor.
-When text is not selectable,
-users on the web tend to have an adverse reaction.
-
-Luckily, this is easy to support with the [`SelectableText`][] widget:
-
-<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (SelectableText)"?>
-```dart
-return const SelectableText('Select me!');
-```
-
-To support rich text, then use `TextSpan`:
-
-<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (RichTextSpan)"?>
-```dart
-return const SelectableText.rich(
-  TextSpan(
-    children: [
-      TextSpan(text: 'Hello'),
-      TextSpan(text: 'Bold', style: TextStyle(fontWeight: FontWeight.bold)),
-    ],
-  ),
-);
-```
-
-[`SelectableText`]: {{site.api}}/flutter/material/SelectableText-class.html
-
-#### Title bars
-
-On modern desktop applications, it's common to customize
-the title bar of your app window, adding a logo for
-stronger branding or contextual controls to help save
-vertical space in your main UI.
-
-![Samples of title bars](/assets/images/docs/development/ui/layout/titlebar.png){:width="100%"}
-
-This isn't supported directly in Flutter, but you can use the
-[`bits_dojo`][] package to disable the native title bars,
-and replace them with your own.
-
-This package lets you add whatever widgets you want to the
-`TitleBar` because it uses pure Flutter widgets under the hood.
-This makes it easy to adapt the title bar as you navigate
-to different sections of the app.
-
-[`bits_dojo`]: {{site.github}}/bitsdojo/bitsdojo_window
-
-#### Context menus and tooltips
-
-On desktop, there are several interactions that
-manifest as a widget shown in an overlay,
-but with differences in how they're triggered, dismissed,
-and positioned:
-
-* **Context menu**
-: Typically triggered by a right-click,
-  a context menu is positioned close to the mouse,
-  and is dismissed by clicking anywhere,
-  selecting an option from the menu, or clicking outside it.
-
-* **Tooltip**
-: Typically triggered by hovering for
-  200-400ms over an interactive element,
-  a tooltip is usually anchored to a widget
-  (as opposed to the mouse position) and is dismissed
-  when the mouse cursor leaves that widget.
-
-* **Popup panel (also known as flyout)**
-: Similar to a tooltip,
-  a popup panel is usually anchored to a widget.
-  The main difference is that panels are most often
-  shown on a tap event, and they usually don't hide
-  themselves when the cursor leaves.
-  Instead, panels are typically dismissed by clicking
-  outside the panel or by pressing a **Close** or **Submit** button.
-
-To show basic tooltips in Flutter,
-use the built-in [`Tooltip`][] widget:
-
-<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (Tooltip)"?>
-```dart
-return const Tooltip(
-  message: 'I am a Tooltip',
-  child: Text('Hover over the text to show a tooltip.'),
-);
-```
-
-Flutter also provides built-in context menus when editing
-or selecting text.
-
-To show more advanced tooltips, popup panels,
-or create custom context menus,
-you either use one of the available packages,
-or build it yourself using a `Stack` or `Overlay`.
-
-Some available packages include:
-
-* [`context_menus`][]
-* [`anchored_popups`][]
-* [`flutter_portal`][]
-* [`super_tooltip`][]
-* [`custom_pop_up_menu`][]
-
-While these controls can be valuable for touch users as accelerators,
-they are essential for mouse users. These users expect
-to right-click things, edit content in place,
-and hover for more information. Failing to meet those expectations
-can lead to disappointed users, or at least,
-a feeling that something isn't quite right.
-
-[`anchored_popups`]: {{site.pub}}/packages/anchored_popups
-[`context_menus`]: {{site.pub}}/packages/context_menus
-[`custom_pop_up_menu`]: {{site.pub}}/packages/custom_pop_up_menu
-[`flutter_portal`]: {{site.pub}}/packages/flutter_portal
-[`super_tooltip`]: {{site.pub}}/packages/super_tooltip
-[`Tooltip`]: {{site.api}}/flutter/material/Tooltip-class.html
-
-#### Horizontal button order
-
-On Windows, when presenting a row of buttons,
-the confirmation button is placed at the start of
-the row (left side). On all other platforms,
-it's the opposite. The confirmation button is
-placed at the end of the row (right side).
-
-This can be easily handled in Flutter using the
-`TextDirection` property on `Row`:
-
-<?code-excerpt "lib/widgets/ok_cancel_dialog.dart (RowTextDirection)"?>
-```dart
-TextDirection btnDirection =
-    DeviceType.isWindows ? TextDirection.rtl : TextDirection.ltr;
-return Row(
-  children: [
-    const Spacer(),
-    Row(
-      textDirection: btnDirection,
-      children: [
-        DialogButton(
-          label: 'Cancel',
-          onPressed: () => Navigator.pop(context, false),
-        ),
-        DialogButton(
-          label: 'Ok',
-          onPressed: () => Navigator.pop(context, true),
-        ),
-      ],
-    ),
-  ],
-);
-```
-
-![Sample of embedded image](/assets/images/docs/development/ui/layout/embed_image1.png){:width="75%"}
-
-![Sample of embedded image](/assets/images/docs/development/ui/layout/embed_image2.png){:width="90%"}
-
-#### Menu bar
-
-Another common pattern on desktop apps is the menu bar.
-On Windows and Linux, this menu lives as part of the Chrome title bar,
-whereas on macOS, it's located along the top of the primary screen.
-
-Currently, you can specify custom menu bar entries using
-a prototype plugin, but it's expected that this functionality will
-eventually be integrated into the main SDK.
-
-It's worth mentioning that on Windows and Linux,
-you can't combine a custom title bar with a menu bar.
-When you create a custom title bar,
-you're replacing the native one completely,
-which means you also lose the integrated native menu bar.
-
-If you need both a custom title bar and a menu bar,
-you can achieve that by implementing it in Flutter,
-similar to a custom context menu.
-
-#### Drag and drop
-
-One of the core interactions for both touch-based and
-pointer-based inputs is drag and drop. Although this
-interaction is expected for both types of input,
-there are important differences to think about when
-it comes to scrolling lists of draggable items.
-
-Generally speaking, touch users expect to see drag handles
-to differentiate draggable areas from scrollable ones,
-or alternatively, to initiate a drag by using a long
-press gesture. This is because scrolling and dragging
-are both sharing a single finger for input.
-
-Mouse users have more input options. They can use a wheel
-or scrollbar to scroll, which generally eliminates the need
-for dedicated drag handles. If you look at the macOS
-Finder or Windows Explorer, you'll see that they work
-this way: you just select an item and start dragging.
-
-In Flutter, you can implement drag and drop in many
-ways. Discussing specific implementations is outside
-the scope of this article, but some high level options
-are:
-
-* Use the [`Draggable`][] and [`DragTarget`][] APIs
-  directly for a custom look and feel.
-
-* Hook into `onPan` gesture events,
-  and move an object yourself within a parent `Stack`.
-
-* Use one of the [pre-made list packages][] on pub.dev.  
-
-[`Draggable`]: {{site.api}}/flutter/widgets/Draggable-class.html
-[`DragTarget`]: {{site.api}}/flutter/widgets/DragTarget-class.html
-[pre-made list packages]: {{site.pub}}/packages?q=reorderable+list

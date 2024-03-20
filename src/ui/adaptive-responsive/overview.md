@@ -46,28 +46,42 @@ side-panel navigation?
   adaptive and responsive.
 {{site.alert.end}}
 
-xxx Don't forget to redirect from the "Building an adaptive app" page to the new pages
-
 This section covers various aspects of adaptive and
 responsive design:
 
 * Create a responsive [Layout][]
-* Handling [Input][] for adaptive apps
+* Handle [Input][] for adaptive apps
 * Adapt to [Platform idioms]
 * Consider [Accessibility][] for responsive apps
+* Respond to [Large screen][] devices
 * Consider [Platform idioms][] for adaptive apps
-* [Best practices][] for responsive and adaptive apps;
+  to make your app feel more native on a particular device
+* Use [Best practices][] for responsive and adaptive apps,
   including **recommendations for large screens**
 
-[Accessibility][]: {{site.url}}/ui/layout/accessibility
-[Best practices]: {{site.url}}/ui/layout/best-practices
-[Input]: {{site.url}}/ui/layout/input
-[Layout]: {{site.url}}/ui/layout/responsive
-[Platform idioms]: {{site.url}}/ui/layout/idioms
+[Accessibility][]: {{site.url}}/ui/adaptive-responsive/accessibility
+[Best practices]: {{site.url}}/ui/adaptive-responsive/best-practices
+[Input]: {{site.url}}/ui/adaptive-responsive/input
+[Large screen]: {{site.url}}/ui/adaptive-responsive/large-screens
+[Layout]: {{site.url}}/ui/adaptive-responsive/layout
+[Platform idioms]: {{site.url}}/ui/adaptive-responsive/idioms
+
+## Examples
+
+If you'd like to see how these concepts come together,
+check out the [Flokk][] and [Folio][] examples.
+
+[Flokk]: {{site.github}}/gskinnerTeam/flokk
+[Folio]: {{site.github}}/gskinnerTeam/flutter-folio
+
+Original demo code for adaptive app development
+techniques from the [flutter-adaptive-demo][].
+
+[flutter-adaptive-demo]: {{site.github}}/gskinnerTeam/flutter-adaptive-demo
 
 ## Learn more about basic usability principles
 
-Of course, this page doesn't constitute an
+Of course, these pages don't constitute an
 exhaustive list of the things you might consider.
 The more operating systems, form factors,
 and input devices you support, the more difficult
