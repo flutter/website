@@ -137,6 +137,10 @@
           permalink: /ui/adaptive-responsive/overview
         - title: Responsive layout
           permalink: /ui/adaptive-responsive/layout
+        - title: Input
+          permalink: /ui/adaptive-responsive/input
+        - title: Large screens
+          permalink: /ui/adaptive-responsive/large-screens
         - title: Update app UI based on orientation
           permalink: /cookbook/design/orientation
         - title: Handling input

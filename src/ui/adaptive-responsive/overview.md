@@ -51,7 +51,6 @@ responsive design:
 
 * Create a responsive [Layout][]
 * Handle [Input][] for adaptive apps
-* Adapt to [Platform idioms]
 * Consider [Accessibility][] for responsive apps
 * Respond to [Large screen][] devices
 * Consider [Platform idioms][] for adaptive apps
