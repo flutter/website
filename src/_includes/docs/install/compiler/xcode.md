@@ -84,7 +84,7 @@ With Xcode, you can run Flutter apps on an iOS device or on the simulator.
 
 {% if attempt=="first" %}
 
-### Install CocoaPods (Optional)
+### Install CocoaPods
 
 If your apps depend on [Flutter plugins][] with native {{target}} code,
 install [CocoaPods][cocoapods].
