@@ -25,11 +25,12 @@ This page explores many aspects of state management, including:
 
 For other introductions to state management, check out these resources: 
 
-<i class="material-symbols" aria-hidden="true">flutter_dash</i> Tutorial:
-  [State management][]
-  This shows how to use ChangeNotifer with the [provider][] package.
 * Video: [Managing state in Flutter][managing-state-video].
   This video shows how to use the [riverpod][] package.
+
+<i class="material-symbols" aria-hidden="true">flutter_dash</i> Tutorial:
+[State management][]
+This shows how to use ChangeNotifer with the [provider][] package.
 
 This guide doesn't use third-party packages like provider or Riverpod.
 Instead, it only uses primitives available in the Flutter framework.
