@@ -249,7 +249,8 @@ you [attached the device to your Mac](#attach).
 
 Enabling certificates varies in different versions of iOS.
 
-{% comment %} Nav tabs {% endcomment -%}
+{% comment %} Nav tabs {% endcomment
+   -%}
 <ul class="nav nav-tabs" id="ios-versions" role="tablist">
     <li class="nav-item">
         <a class="nav-link" id="ios14-tab" href="#ios14" role="tab" aria-controls="ios14" aria-selected="true">iOS 14</a>
@@ -262,7 +263,8 @@ Enabling certificates varies in different versions of iOS.
     </li>
 </ul>
 
-{% comment %} Tab panes {% endcomment -%}
+{% comment %} Tab panes {% endcomment
+   -%}
 <div class="tab-content">
 
 <div class="tab-pane" id="ios14" role="tabpanel" aria-labelledby="ios14-tab" markdown="1">
@@ -303,7 +305,8 @@ Enabling certificates varies in different versions of iOS.
 1. When the dialog displays, tap **Trust**.
 
 </div>
-</div>{% comment %} End: Tab panes. {% endcomment -%}
+</div>{% comment %} End: Tab panes. {% endcomment
+   -%}
 
 If prompted, enter your Mac password into the
 **codesign wants to access key...** dialog and tap **Always Allow**.
