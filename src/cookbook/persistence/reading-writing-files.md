@@ -59,6 +59,8 @@ You can find the path to the documents directory as follows:
 
 <?code-excerpt "lib/main.dart (localPath)"?>
 ```dart
+import 'package:path_provider/path_provider.dart';
+// ...
 Future<String> get _localPath async {
   final directory = await getApplicationDocumentsDirectory();
 
