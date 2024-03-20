@@ -23,11 +23,16 @@ This page explores many aspects of state management, including:
 * Using Listenables to notify other widgets when something changes
 * Using MVVM for your application's architecture
 
-For a detailed introduction to state management, check out these resources:
+For other introductions to state management, check out these resources: 
 
-* Tutorial: [State management](https://docs.flutter.dev/data-and-backend/state-mgmt/intro) documentation
-* Video: [Managing state in Flutter](https://www.youtube.com/watch?v=vU9xDLdEZtU)
+<i class="material-symbols" aria-hidden="true">flutter_dash</i> Tutorial:
+  [State management][]
+  This shows how to use ChangeNotifer with the [provider][] package.
+* Video: [Managing state in Flutter][managing-state-video].
+  This video shows how to use the [riverpod][] package.
 
+This guide doesn't use third-party packages like provider or Riverpod.
+Instead, it only uses primitives available in the Flutter framework.
 
 ## Using a StatefulWidget
 
@@ -77,8 +82,8 @@ when thinking about state management:
 
 To learn more, check out these resources:
 
-* Article: [Differentiate between ephemeral state and app state](https://docs.flutter.dev/data-and-backend/state-mgmt/ephemeral-vs-app)
-* API docs: [StatefulWidget](https://api.flutter.dev/flutter/widgets/StatefulWidget-class.html)
+* Article: [Ephemeral state and app state][ephemeral-state]
+* API docs: [StatefulWidget][]
 
 ## Sharing state between widgets
 
@@ -521,3 +526,10 @@ If you would like to learn more, check out the following resources:
 
 * Article: [List of state management approaches](https://docs.flutter.dev/data-and-backend/state-mgmt/options)
 * Repository: [Flutter Architecture Samples](https://fluttersamples.com/)
+
+
+[ephemeral-state]: https://docs.flutter.dev/data-and-backend/state-mgmt/ephemeral-vs-app
+[provider]: https://pub.dev/packages/provider
+[managing-state-video]: https://www.youtube.com/watch?v=vU9xDLdEZtU
+[StatefulWidget]: https://api.flutter.dev/flutter/widgets/StatefulWidget-class.html
+[State management]: https://docs.flutter.dev/data-and-backend/state-mgmt/intro
