@@ -325,9 +325,12 @@ Column(
 
 ### ValueNotifier
 
-A `ValueNotifer` is a simpler version of `ChangeNotifier`
-that stores a single listener.
-To use it, create an instance of ValueNotifier with the initial value:
+A [`ValueNotifer`] is a simpler version of a `ChangeNotifier`,
+that stores a single value.
+It implements the `ValueListenable` and `Listenable` interfaces,
+so it's compatible
+with widgets such as `ListenableBuilder` and `ValueListenableBuilder`.
+To use it, create an instance of `ValueNotifier` with the initial value:
 
 ```dart
 ValueNotifier<int> counterNotifier = ValueNotifier(0);
@@ -364,6 +367,7 @@ Column(
 To learn more about `Listenable` objects, check out the following resources:
 
 * API Docs: [`Listenable`][]
+* API Docs: [`ValueNotifier`][]
 * API Docs: [`ValueListenable`][]
 * API Docs: [`ChangeNotifier`][]
 * API Docs: [`ListenableBuilder`][]
@@ -551,6 +555,7 @@ If you would like to learn more, check out the following resources:
 [`Listenable`]: {{site.api}}/flutter/foundation/Listenable-class.html
 [`ValueListenableBuilder`]: {{site.api}}/flutter/widgets/ValueListenableBuilder-class.html
 [`ValueListenable`]: {{site.api}}/flutter/foundation/ValueListenable-class.html
+[`ValueNotifier`]: {{site.api}}/flutter/foundation/ValueNotifer-class.html
 [architecture-state]: {{site.url}}/resources/architectural-overview#state-management
 [ephemeral-state]: {{site.url}}/data-and-backend/state-mgmt/ephemeral-vs-app
 [freezed]: {{site.pub-pkg}}/freezed
