@@ -387,8 +387,8 @@ called _Model-View-ViewModel_ or _MVVM_.
 ### Defining the Model
 
 The Model is typically a Dart class that does low-level tasks
-such as make HTTP requests,
-cache data, or manage system resources such as a plugin.
+such as making HTTP requests,
+caching data, or managing system resources such as a plugin.
 A model doesn't usually need to import Flutter libraries.
 
 For example, consider a model that loads or updates the counter state
