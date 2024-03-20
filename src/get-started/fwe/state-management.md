@@ -35,9 +35,6 @@ The simplest way to manage state is to use a StatefulWidget.
 For example, consider a widget that stores its own state
 by extending `StatefulWidget`:
 
-This illustrates two important considerations
-when thinking about state management:
-
 ```dart
 class MyCounter extends StatefulWidget {
   const MyCounter({super.key});
@@ -67,6 +64,9 @@ class _MyCounterState extends State<MyCounter> {
   }
 }
 ```
+
+This illustrates two important considerations
+when thinking about state management:
 
 * **Encapsulation** - The widget that uses `MyCounter` has no visibility into 
   the underlying `count` variable
