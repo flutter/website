@@ -94,7 +94,7 @@ To learn more, check out these resources:
 
 ## Sharing state between widgets
 
-There are a few reasons why an app might need to share state:
+Some scenarios where an app needs to store state include the following:
 
 * To **update** the shared state and notify other parts of the app
 * To **listen** for changes to the shared state
