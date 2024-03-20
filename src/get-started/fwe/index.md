@@ -51,7 +51,10 @@ following subjects in the listed order.
   It also facilitates designing a UI to
   optimize any screen where your app might be used.
 3. [State management][]
-: Learn how to manage state. xxx
+: Learn how share state between widgets and notify other parts of your app
+  when the state changes.
+  See how to implement MVVM in Flutter to manage state effectively
+  for small to medium-sized apps.
 4. [Handling user input][]
 : Learn about Flutter's widgets that support
   interactivity, like buttons and text.
@@ -71,7 +74,7 @@ following subjects in the listed order.
 
 [Widget fundamentals]: {{site.url}}/get-started/fwe/fundamentals
 [Layout]: {{site.url}}/get-started/fwe/layout
-[State management]: {{site.url}}/get-started/fwe
+[State management]: {{site.url}}/get-started/fwe/state-management
 [Handling user input]: {{site.url}}/get-started/fwe/user-input
 [Networking and data]: {{site.url}}/networking
 [Local data and caching]: {{site.url}}/get-started/fwe/local-caching
