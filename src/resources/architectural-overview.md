@@ -500,12 +500,6 @@ Container(
 );
 ```
 
-This approach is also used for
-[Navigator]({{site.api}}/flutter/widgets/Navigator-class.html), which provides
-page routing; and
-[MediaQuery]({{site.api}}/flutter/widgets/MediaQuery-class.html), which provides
-access to screen metrics such as orientation, dimensions, and brightness.
-
 As applications grow, more advanced state management approaches that reduce the
 ceremony of creating and using stateful widgets become more attractive. Many
 Flutter apps use utility packages like
