@@ -147,4 +147,4 @@ Relevant PRs:
 [`OverflowBar`]: {{site.api}}/flutter/widgets/OverflowBar-class.html
 [`ButtonBar`]: {{site.api}}/flutter/material/ButtonBar-class.html
 [Issue #127955]: {{site.repo.flutter}}/issues/127955
-[`Deprecate `ButtonBar`, `ButtonBarThemeData`, and `ThemeData.buttonBarTheme`]: {{site.repo.flutter}}/pull/145523
+[`Deprecate `ButtonBar`, `ButtonBarThemeData`, and `ThemeData.buttonBarTheme`]: {{site.repo.flutter}}/pull/10325
