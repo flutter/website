@@ -124,6 +124,12 @@ Run the following command to generate a release build:
 $ flutter build web
 ```
 
+If you receive a `not supported` error, run the following command:
+
+```terminal
+$ flutter config --enable-web
+```
+
 A release build uses [dart2js][]
 (instead of the [development compiler][])
 to produce a single JavaScript file `main.dart.js`.
@@ -137,7 +143,7 @@ You can also include `--web-renderer html`  or `--web-renderer canvaskit` to
 select between the HTML or CanvasKit renderers, respectively. For more
 information, see [Web renderers][].
 
-For more information, see
+To learn more, see
 [Build and release a web app][].
 
 ## Add web support to an existing app
@@ -149,6 +155,12 @@ from your project's top-level directory:
 
 ```terminal
 $ flutter create --platforms web .
+```
+
+If you receive a `not supported` error, run the following command:
+
+```terminal
+$ flutter config --enable-web
 ```
 
 [Build and release a web app]: /deployment/web
