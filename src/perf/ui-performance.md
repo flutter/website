@@ -42,8 +42,7 @@ steps to take, and tools that can help.
 
 To diagnose an app with performance problems, you'll enable
 the performance overlay to look at the UI and raster threads.
-(The raster thread was previously known as the GPU thread.)
-Before you begin, you want to make sure that you're running in
+Before you begin, make sure that you're running in
 [profile mode][], and that you're not using an emulator.
 For best results, you might choose the slowest device that
 your users might use.
@@ -217,7 +216,7 @@ on other threads.
   be rendered on the device. _Don't block this thread!_
   Shown in the bottom row of the performance overlay.
 
-**Raster thread** _(previously known as the GPU thread)_
+**Raster thread**
 : The raster thread takes the layer tree and displays
   it by talking to the GPU (graphic processing unit).
   You cannot directly access the raster thread or its data but,
@@ -225,11 +224,8 @@ on other threads.
   in the Dart code. Skia and Impeller, the graphics libraries,
   run on this thread.
   Shown in the top row of the performance overlay.
-  This thread was previously known as the "GPU thread" because it
-  rasterizes for the GPU. But it is running on the CPU.
-  We renamed it to "raster thread" because many developers wrongly
-  (but understandably)
-  assumed the thread runs on the GPU unit.  
+  Note that while the raster thread rasterizes for the GPU,
+  the thread itself runs on the CPU.
 
 **I/O thread**
 : Performs expensive tasks (mostly I/O) that would

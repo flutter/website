@@ -1,7 +1,7 @@
 ---
 title: Add Windows devtools to Flutter from Android start
 description: Configure your system to develop Flutter apps on Windows desktop.
-short-title: When you started with Android
+short-title: Starting from Android
 ---
 
 To add Windows desktop as a Flutter app target, follow this procedure.
