@@ -34,27 +34,21 @@ enable the blue and green vertical lines seen in this image.
 
 Tooltips can help you understand the values in each column:
 
-<dl markdown="1">
-<dt markdown="1">**Total time**
-</dt>
-<dd markdown="1">For top-level methods in the bottom-up tree
-    (stack frames that were at the top of at least one
-    CPU sample), this is the time the method spent executing
-    its own code, as well as the code for any methods that
-    it called.
-</dd>
+**Total time**
+: For top-level methods in the bottom-up tree
+(stack frames that were at the top of at least one
+CPU sample), this is the time the method spent executing
+its own code, as well as the code for any methods that
+it called.
 
-<dt markdown="1">**Self time**
-</dt>
-<dd markdown="1">For top-level methods in the bottom-up tree
-    (stack frames that were at the top of at least one CPU
-    sample), this is the time the method spent executing only
-    its own code.<br><br>
-    For children methods in the bottom-up tree (the callers),
-    this is the self time of the top-level method (the callee)
-    when called through the child method (the caller).
-</dd>
-</dl>
+**Self time**
+: For top-level methods in the bottom-up tree
+(stack frames that were at the top of at least one CPU
+sample), this is the time the method spent executing only
+its own code.<br><br>
+For children methods in the bottom-up tree (the callers),
+this is the self time of the top-level method (the callee)
+when called through the child method (the caller).
 
 **Table element** (self time)
 ![Screenshot of a bottom up table](/assets/images/docs/tools/devtools/table-element.png)
@@ -77,18 +71,12 @@ enable the blue and green vertical lines seen in this image.
 
 Tooltips can help you understand the values in each column:
 
-<dl markdown="1">
-<dt markdown="1">**Total time**
-</dt>
-<dd>Time that a method spent executing its own code as well as
-    the code for any methods it called.
-</dd>
+**Total time**
+: Time that a method spent executing its own code as well as
+  the code for any methods it called.
 
-<dt markdown="1">**Self time**
-</dt>
-<dd>Time the method spent executing only its own code.
-</dd>
-</dl>
+**Self time**
+: Time the method spent executing only its own code.
 
 ### Method table
 
