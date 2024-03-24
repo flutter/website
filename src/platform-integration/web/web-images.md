@@ -1,37 +1,41 @@
 ---
-title: Displaying images on the web
+title: Display images on the web
 short-title: Web images
 description: Learn how to load and display images on the web.
 ---
 
-The web supports the standard [`Image`][1] widget to display images.
+The web supports the standard [`Image`][] widget to display images.
 However, because web browsers are built to run untrusted code safely,
 there are certain limitations in what you can do with images compared
 to mobile and desktop platforms. This page explains these limitations
 and offers ways to work around them.
 
-# Background
+[`Image`]: {{site.api}}/flutter/widgets/Image-class.html
+
+## Background
 
 This section summarizes the technologies available
 across Flutter and the web,
 on which the solutions below are based on.
 
-## Images in Flutter
+### Images in Flutter
 
-Flutter offers the [`Image`][1] widget as well as the low-level
-[`dart:ui/Image`][11] class for rendering images.
+Flutter offers the [`Image`] widget as well as the low-level
+[`dart:ui/Image`][] class for rendering images.
 The `Image` widget has enough functionality for most use-cases.
 The `dart:ui/Image` class can be used in
 advanced situations where fine-grained control
 of the image is needed.
 
-## Images on the web
+[`dart:ui/Image`]: {{site.api}}/flutter/dart-ui/Image-class.html
+
+### Images on the web
 
 The web offers several methods for displaying images.
 Below are some of the common ones:
 
-- The built-in [`<img>`][2] and [`<picture>`][3] HTML elements.
-- The [`drawImage`][4] method on the [`<canvas>`][5] element.
+- The built-in [`<img>`][] and [`<picture>`][] HTML elements.
+- The [`drawImage`][] method on the [`<canvas>`][] element.
 - Custom image codec that renders to a WebGL canvas.
 
 Each option has its own benefits and drawbacks.
@@ -51,13 +55,18 @@ control over the image. Not only can you read the pixels and
 apply custom image algorithms, but you can also use GLSL for
 hardware-acceleration.
 
-## Cross-Origin Resource Sharing (CORS)
+[`<img>`]: https://developer.mozilla.org/docs/Web/HTML/Element/img
+[`<picture>`]: https://developer.mozilla.org/docs/Web/HTML/Element/picture
+[`drawImage`]: https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/drawImage
+[`<canvas>`]: https://developer.mozilla.org/docs/Web/HTML/Element/canvas
 
-[CORS][6] is a mechanism that browsers use to control
+### Cross-Origin Resource Sharing (CORS)
+
+[CORS][] is a mechanism that browsers use to control
 how one site accesses the resources of another site.
 It is designed such that, by default, one web-site
 is not allowed to make HTTP requests to another site
-using [XHR][21] or [`fetch`][22].
+using [XHR][] or [`fetch`][].
 This prevents scripts on another site from acting on behalf
 of the user and from gaining access to another
 site's resources without permission.
@@ -73,16 +82,21 @@ images to be rendered using WebGL must only come from servers
 that have a CORS policy configured to work with
 the domain that serves your application.
 
-## Flutter renderers on the web
+[CORS]: https://developer.mozilla.org/docs/Web/HTTP/CORS
+[XHR]: https://developer.mozilla.org/docs/Web/API/XMLHttpRequest
+[`fetch`]: https://developer.mozilla.org/docs/Web/API/Fetch_API/Using_Fetch
+
+### Flutter renderers on the web
 
 Flutter offers a choice of two renderers on the web:
 
-* **HTML**: this renderer uses a combination of HTML,
-  CSS, Canvas 2D, and SVG to render UI.
+**CanvasKit**
+: Uses WebGL to render UI, and therefore
+  requires access to the pixels of the image.
+
+**HTML**
+: Uses a combination of HTML, CSS, Canvas 2D, and SVG to render UI.
   It uses the `<img>` element to render images.
-* **CanvasKit**: this renderer uses WebGL to render UI,
-  and therefore requires
-  access to the pixels of the image.
 
 Because the HTML renderer uses the `<img>`
 element it can display images from
@@ -90,11 +104,11 @@ arbitrary sources. However,
 this places the following limitations on what you
 can do with them:
 
-* Limited support for [`Image.toByteData`][7].
-* No support for [`OffsetLayer.toImage`][8] and
-  [`Scene.toImage`][10].
+* Limited support for [`Image.toByteData`][].
+* No support for [`OffsetLayer.toImage`][] and
+  [`Scene.toImage`][].
 * No access to frame data in animated images
-  ([`Codec.getNextFrame`][9],
+  ([`Codec.getNextFrame`][],
   `frameCount` is always 1, `repetitionCount` is always 0).
 * No support for `ImageShader`.
 * Limited support for shader effects that can be applied to images.
@@ -105,19 +119,29 @@ The CanvasKit renderer implements Flutter's image API fully.
 However, it requires access to image pixels to do so,
 and is therefore subject to the CORS policy.
 
-# Solutions
+[`Image.toByteData`]: {{site.api}}/flutter/dart-ui/Image/toByteData.html
+[`OffsetLayer.toImage`]: {{site.api}}/flutter/rendering/OffsetLayer/toImage.html
+[`Scene.toImage`]: {{site.api}}/flutter/dart-ui/Scene/toImage.html
+[`Codec.getNextFrame`]: {{site.api}}/flutter/dart-ui/Codec/getNextFrame.html
 
-## In-memory, asset, and same-origin network images
+## Solutions
+
+### In-memory, asset, and same-origin network images
 
 If the app has the bytes of the encoded image in memory,
-provided as an [asset][12], or stored on the
+provided as an [asset][], or stored on the
 same server that serves the application
 (also known as _same-origin_), no extra effort is necessary.
 The image can be displayed using
-[`Image.memory`][13], [`Image.asset`][14], and [`Image.network`][15]
+[`Image.memory`][], [`Image.asset`][], and [`Image.network`][]
 in both HTML and CanvasKit modes.
 
-## Cross-origin images
+[asset]: /ui/assets/assets-and-images
+[`Image.memory`]: {{site.api}}/flutter/widgets/Image/Image.memory.html
+[`Image.asset`]: {{site.api}}/flutter/widgets/Image/Image.asset.html
+[`Image.network`]: {{site.api}}/flutter/widgets/Image/Image.network.html
+
+### Cross-origin images
 
 The HTML renderer can load cross-origin images
 without extra configuration.
@@ -125,16 +149,18 @@ without extra configuration.
 CanvasKit requires that the app gets the bytes of the encoded image.
 There are several ways to do this, discussed below.
 
-### Host your images in a CORS-enabled CDN.
+#### Host your images in a CORS-enabled CDN.
 
 Typically, content delivery networks (CDN)
 can be configured to customize what domains
 are allowed to access your content.
 For example, Firebase site hosting allows
-[specifying a custom][16] `Access-Control-Allow-Origin`
+[specifying a custom][custom-header] `Access-Control-Allow-Origin`
 header in the `firebase.json` file.
 
-### Lack control over the image server? Use a CORS proxy.
+[custom-header]: {{site.firebase}}/docs/hosting/full-config#headers
+
+#### Lack control over the image server? Use a CORS proxy.
 
 If the image server cannot be configured to allow CORS
 requests from your application,
@@ -148,46 +174,19 @@ but is not configured with the correct CORS headers.
 
 Examples:
 
-* Using [CloudFlare Workers][18].
-* Using [Firebase Functions][19].
+* Using [CloudFlare Workers][].
+* Using [Firebase Functions][].
 
-### Use `<img>` in a platform view.
+[CloudFlare Workers]: https://developers.cloudflare.com/workers/examples/cors-header-proxy
+[Firebase Functions]: {{site.github}}/7kfpun/cors-proxy
+
+#### Use `<img>` in a platform view.
 
 Flutter supports embedding HTML inside the app using
-[`HtmlElementView`][17].  Use it to create an `<img>`
+[`HtmlElementView`][].  Use it to create an `<img>`
 element to render the image from another domain.
 However, do keep in mind that this comes with the
-limitations explained in the section
-"Flutter renderers on the web" above.
+limitations explained in [Flutter renderers on the web][].
 
-[As of today][20], using too many HTML elements
-with the CanvasKit renderer might hurt performance.
-If images interleave non-image content Flutter needs to
-create extra WebGL contexts between the `<img>` elements.
-If your application needs to display a lot of images
-on the same screen all at once, consider using
-the HTML renderer instead of CanvasKit.
-
-
-[1]: {{site.api}}/flutter/widgets/Image-class.html
-[2]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img
-[3]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture
-[4]: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage
-[5]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas
-[6]: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
-[7]: {{site.api}}/flutter/dart-ui/Image/toByteData.html
-[8]: {{site.api}}/flutter/rendering/OffsetLayer/toImage.html
-[9]: {{site.api}}/flutter/dart-ui/Codec/getNextFrame.html
-[10]: {{site.api}}/flutter/dart-ui/Scene/toImage.html
-[11]: {{site.api}}/flutter/dart-ui/Image-class.html
-[12]: /ui/assets/assets-and-images
-[13]: {{site.api}}/flutter/widgets/Image/Image.memory.html
-[14]: {{site.api}}/flutter/widgets/Image/Image.asset.html
-[15]: {{site.api}}/flutter/widgets/Image/Image.network.html
-[16]: {{site.firebase}}/docs/hosting/full-config#headers
-[17]: {{site.api}}/flutter/widgets/HtmlElementView-class.html
-[18]: https://developers.cloudflare.com/workers/examples/cors-header-proxy
-[19]: {{site.github}}/7kfpun/cors-proxy
-[20]: {{site.repo.flutter}}/issues/71884
-[21]: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
-[22]: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+[`HtmlElementView`]: {{site.api}}/flutter/widgets/HtmlElementView-class.html
+[Flutter renderers on the web]: #flutter-renderers-on-the-web
