@@ -20,7 +20,7 @@ on which the solutions below are based on.
 
 ### Images in Flutter
 
-Flutter offers the [`Image`] widget as well as the low-level
+Flutter offers the [`Image`][] widget as well as the low-level
 [`dart:ui/Image`][] class for rendering images.
 The `Image` widget has enough functionality for most use-cases.
 The `dart:ui/Image` class can be used in
