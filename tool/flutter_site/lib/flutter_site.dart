@@ -5,6 +5,7 @@
 import 'package:args/command_runner.dart';
 
 import 'src/commands/analyze_dart.dart';
+import 'src/commands/build.dart';
 import 'src/commands/check_all.dart';
 import 'src/commands/check_link_references.dart';
 import 'src/commands/check_links.dart';
@@ -22,6 +23,7 @@ final class FlutterSiteCommandRunner extends CommandRunner<int> {
           'flutter_site',
           'Infrastructure tooling for the Flutter documentation website.',
         ) {
+    addCommand(BuildSiteCommand());
     addCommand(CheckLinksCommand());
     addCommand(CheckLinkReferencesCommand());
     addCommand(VerifyFirebaseJsonCommand());
