@@ -46,7 +46,7 @@ to create a new project with web support.
 
 Run the following commands to use the latest version of the Flutter SDK:
 
-```terminal
+```console
 $ flutter channel stable
 $ flutter upgrade
 ```
@@ -64,7 +64,7 @@ the `flutter devices` command outputs a `Chrome` device
 that opens the Chrome browser with your app running,
 and a `Web Server` that provides the URL serving the app.
 
-```terminal
+```console
 $ flutter devices
 1 connected device:
 
@@ -91,7 +91,7 @@ To create a new app that includes web support
 (in addition to mobile support), run the following commands,
 substituting `my_app` with the name of your project:
 
-```terminal
+```console
 $ flutter create my_app
 $ cd my_app
 ```
@@ -99,7 +99,7 @@ $ cd my_app
 To serve your app from `localhost` in Chrome,
 enter the following from the top of the package:
 
-```terminal
+```console
 $ flutter run -d chrome
 ```
 {{site.alert.note}}
@@ -120,13 +120,13 @@ The `flutter run` command launches the application using the
 
 Run the following command to generate a release build:
 
-```terminal
+```console
 $ flutter build web
 ```
 
 If you receive a `not supported` error, run the following command:
 
-```terminal
+```console
 $ flutter config --enable-web
 ```
 
@@ -153,13 +153,13 @@ created using a previous version of Flutter,
 run the following command
 from your project's top-level directory:
 
-```terminal
+```console
 $ flutter create --platforms web .
 ```
 
 If you receive a `not supported` error, run the following command:
 
-```terminal
+```console
 $ flutter config --enable-web
 ```
 

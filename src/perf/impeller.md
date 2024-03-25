@@ -53,7 +53,7 @@ Flutter enables Impeller by default on iOS.
 * To _disable_ Impeller on iOS when debugging,
   pass `--no-enable-impeller` to the `flutter run` command.
 
-  ```terminal
+  ```console
   flutter run --no-enable-impeller
   ```
 
@@ -83,7 +83,7 @@ It continues to be in preview as of the 3.19 release.
 To enable Impeller on macOS when debugging,
 pass `--enable-impeller` to the `flutter run` command.
 
-```terminal
+```console
 flutter run --enable-impeller
 ```
 
@@ -111,7 +111,7 @@ It continues to be in preview as of the 3.19 release.
 You can try Impeller on Vulkan-capable Android devices
 by passing `--enable-impeller` to `flutter run`:
 
-```terminal
+```console
 flutter run --enable-impeller
 ```
 

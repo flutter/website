@@ -2,7 +2,7 @@
 <details markdown="1">
 <summary><b>How to install Chrome from the command line</b></summary>
 
-```terminal
+```console
 $ wget https://dl-ssl.google.com/linux/linux_signing_key.pub -O /tmp/google.pub
 $ gpg --no-default-keyring \
         --keyring /etc/apt/keyrings/google-chrome.gpg \

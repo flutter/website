@@ -135,14 +135,14 @@ package root.
 If you don't have a local HTTP server installed, you can use the
 [`dhttpd` package]({{site.pub-pkg}}/dhttpd):
 
-```terminal
+```console
 flutter pub global activate dhttpd
 ```
 
 Then change to the `build/web` directory
 and run the server with special headers:
 
-```terminal
+```console
 $ cd build/web
 $ dhttpd '--headers=Cross-Origin-Embedder-Policy=credentialless;Cross-Origin-Opener-Policy=same-origin'
 Server started on port 8080

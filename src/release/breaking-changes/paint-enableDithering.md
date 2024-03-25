@@ -59,7 +59,7 @@ need to update your golden images to reflect the new default.
 For example, if you use [`matchesGoldenFile`][] to
 test a widget that contains a gradient:
 
-```terminal
+```console
 $ flutter test --update-goldens
 ```
 

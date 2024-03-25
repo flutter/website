@@ -72,7 +72,7 @@ If you already have a plugin, skip this step.
 To create a plugin called "native_add",
 do the following:
 
-```terminal
+```console
 $ flutter create --platforms=macos --template=plugin_ffi native_add
 $ cd native_add
 ```

@@ -12,11 +12,11 @@
 To generate the needed Android platform dependencies,
 run the `flutter build` command.
 
-```terminal
+```console
 flutter build appbundle --debug
 ```
 
-```terminal
+```console
 Running Gradle task 'bundleDebug'...                               27.1s
 ✓ Built build/app/outputs/bundle/debug/app-debug.aab.
 ```

@@ -128,7 +128,7 @@ have your achievement & leaderboard IDs ready, it's finally Dart time.
 
 1.  Add a dependency on the [`games_services` package]({{site.pub-pkg}}/games_services).
 
-    ```terminal
+    ```console
     $ flutter pub add games_services
     ```
 
