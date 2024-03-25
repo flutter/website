@@ -88,6 +88,7 @@ function _registerAsides(markdown) {
     'alert-info',
   );
   _registerAside(markdown, 'tip', 'Tip', 'lightbulb', 'alert-success');
+  _registerAside(markdown, 'recommend', 'Recommended', 'bolt', 'alert-success');
   _registerAside(markdown, 'important', 'Important', 'error', 'alert-warning');
   _registerAside(
     markdown,
