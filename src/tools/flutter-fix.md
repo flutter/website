@@ -67,14 +67,14 @@ This tool has two options:
 * To see a full list of available changes, run
   the following command:
 
-  ```terminal
+  ```console
   $ dart fix --dry-run
   ```
 
 * To apply all changes in bulk, run the
   following command:
 
-  ```terminal
+  ```console
   $ dart fix --apply
   ```
 

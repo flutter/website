@@ -8,7 +8,7 @@
   commands originate from the same `bin` directory and are
   therefore compatible.
 
-  ```terminal
+  ```console
   $ which flutter dart
   /path-to-flutter-sdk/bin/flutter
   /usr/local/bin/dart
@@ -23,7 +23,7 @@
   should show that the `flutter` and `dart` commands
   now come from the same directory.
 
-  ```terminal
+  ```console
   $ which flutter dart
   /path-to-flutter-sdk/bin/flutter
   /path-to-flutter-sdk/bin/dart

@@ -33,7 +33,7 @@ you need an Android device running {{site.targetmin.android}} or later.
 
    In PowerShell, run:
 
-   ```terminal
+   ```console
    c:\> flutter devices
    ```
 
@@ -41,7 +41,7 @@ you need an Android device running {{site.targetmin.android}} or later.
 
    In the Terminal, run:
 
-   ```terminal
+   ```console
    $ flutter devices
    ```
 

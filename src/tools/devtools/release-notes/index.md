@@ -12,7 +12,7 @@ The Dart and Flutter SDKs include DevTools.
 To check your current version of DevTools,
 run the following on your command line:
 
-```terminal
+```console
 $ dart devtools --version
 ```
 

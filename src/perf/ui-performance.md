@@ -113,7 +113,7 @@ Launch the app in profile mode as follows:
   **Run > Flutter Run main.dart in Profile Mode** menu item.
 * From the command line, use the `--profile` flag:
 
-  ```terminal
+  ```console
   $ flutter run --profile
   ```
 

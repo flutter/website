@@ -10,7 +10,7 @@ To develop Flutter apps for iOS, you need a Mac with Xcode installed.
  1. To configure the Xcode command-line tools to use the
     installed version, run the following commands.
 
-    ```terminal
+    ```console
     sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
     sudo xcodebuild -runFirstLaunch
     ```
@@ -26,7 +26,7 @@ To develop Flutter apps for iOS, you need a Mac with Xcode installed.
 
     1. Open the Terminal and run:
 
-       ```terminal
+       ```console
        sudo xcodebuild -license
        ```
 
@@ -43,7 +43,7 @@ follow this procedure.
  1. If using Xcode 15 or greater, download and install the iOS Simulator
     by running the following command:
 
-    ```terminal
+    ```console
     xcodebuild -downloadPlatform iOS
     ```
 
@@ -53,7 +53,7 @@ follow this procedure.
 
  1. To start the Simulator, run the following command:
 
-    ```terminal
+    ```console
     open -a Simulator
     ```
 
@@ -344,7 +344,7 @@ If you don't see your device listed when using `flutter run`,
 extend the timeout. The timeout defaults to 10 seconds.
 To extend the timeout, change the value to an integer greater than 10.
 
-```terminal
+```console
 flutter run --device-timeout 60
 ```
 
@@ -363,7 +363,7 @@ with native iOS code.
 
 To [Install and set up CocoaPods][], run the following commands:
 
-```terminal
+```console
 sudo gem install cocoapods
 ```
 
@@ -374,7 +374,7 @@ sudo gem install cocoapods
   Additionally, if you are installing on an [Apple Silicon Mac][],
   run the command:
 
-  ```terminal
+  ```console
   sudo gem uninstall ffi && sudo gem install ffi -- --enable-libffi-alloc
   ```
 {{site.alert.end}}

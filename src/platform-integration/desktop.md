@@ -46,7 +46,7 @@ you can ignore those warnings. Or you can disable the
 platform altogether using the `flutter config` command,
 for example:
 
-```terminal
+```console
 $ flutter config --no-enable-ios
 ```
 
@@ -91,7 +91,7 @@ To create a new application that includes desktop support
 (in addition to mobile and web support), run the following commands,
 substituting `my_app` with the name of your project:
 
-```terminal
+```console
 $ flutter create my_app
 $ cd my_app
 ```
@@ -100,7 +100,7 @@ To launch your application from the command line,
 enter one of the following commands from the top
 of the package:
 
-```terminal
+```console
 C:\> flutter run -d windows
 $ flutter run -d macos
 $ flutter run -d linux
@@ -116,7 +116,7 @@ $ flutter run -d linux
 To generate a release build,
 run one of the following commands:
 
-```terminal
+```console
 PS C:\> flutter build windows
 $ flutter build macos
 $ flutter build linux
@@ -128,7 +128,7 @@ To add desktop support to an existing Flutter project,
 run the following command in a terminal from the
 root project directory:
 
-```terminal
+```console
 $ flutter create --platforms=windows,macos,linux .
 ```
 

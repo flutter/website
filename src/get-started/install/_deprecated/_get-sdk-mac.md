@@ -25,21 +25,21 @@
       Our JS also updates the filename in this template,
       but it doesn't include the terminal formatting:
 
-      ```terminal
+      ```console
       $ cd ~/development
       $ unzip ~/Downloads/[[download-latest-link-filename]]flutter_{{os}}_vX.X.X-{{site.sdk.channel}}.zip[[/end]]
       ```
     {% endcomment
    -%}
 
-    ```terminal
+    ```console
     $ cd ~/development
     $ unzip ~/Downloads/flutter_{{os}}_vX.X.X-{{site.sdk.channel}}.zip
     ```
     
  1. Add the `flutter` tool to your path:
 
-    ```terminal
+    ```console
     $ export PATH="$PATH:`pwd`/flutter/bin"
     ```
 
@@ -61,7 +61,7 @@ Run the following command to see if there are any
 dependencies you need to install to complete the setup
 (for verbose output, add the `-v` flag):
 
-```terminal
+```console
 $ flutter doctor
 ```
 
@@ -98,7 +98,7 @@ You can also use git directly instead of downloading
 the prepared archive. For example,
 to download the stable branch:
     
-```terminal
+```console
 $ git clone https://github.com/flutter/flutter.git -b stable
 ```
 
@@ -116,7 +116,7 @@ up hermetic build environments,
 or if you only have intermittent network availability).
 To do so, run the following command:
 
-```terminal
+```console
 $ flutter precache
 ```
 

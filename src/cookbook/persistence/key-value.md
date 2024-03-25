@@ -35,7 +35,7 @@ Before starting, add the [`shared_preferences`][] package as a dependency.
 To add the `shared_preferences` package as a dependency,
 run `flutter pub add`:
 
-```terminal
+```console
 flutter pub add shared_preferences
 ```
 

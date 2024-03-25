@@ -1,4 +1,4 @@
-```nocode
+```plaintext
 flutter: RenderView#02c80
 flutter:  │ debug mode enabled - macos
 flutter:  │ view size: Size(800.0, 600.0) (in physical pixels)
