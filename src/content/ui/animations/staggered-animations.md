@@ -208,7 +208,7 @@ marking the widget tree dirty as values change.
 For each tick of the animation, the values are updated,
 resulting in a call to `_buildAnimation()`.
 
-{% prettify dart %}
+```dart
 [!class StaggerAnimation extends StatelessWidget!] {
   StaggerAnimation({super.key, required this.controller}) :
 
@@ -275,7 +275,7 @@ resulting in a call to `_buildAnimation()`.
     );
   }
 }
-{% endprettify %}
+```
 
 ### Stateful widget: StaggerDemo
 
@@ -285,7 +285,7 @@ the animation, and builds the non-animating portion of the widget tree.
 The animation begins when a tap is detected in the screen.
 The animation runs forward, then backward.
 
-{% prettify dart %}
+```dart
 [!class StaggerDemo extends StatefulWidget!] {
   @override
   State<StaggerDemo> createState() => _StaggerDemoState();
@@ -345,7 +345,7 @@ class _StaggerDemoState extends State<StaggerDemo>
     );
   }
 }
-{% endprettify %}
+```
 
 [`Animation`]: {{site.api}}/flutter/animation/Animation-class.html
 [animation controllers]: {{site.api}}/flutter/animation/AnimationController-class.html

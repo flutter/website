@@ -401,7 +401,7 @@ space evenly between, before, and after each image.
 <div class="row">
 <div class="col-lg-8">
   <?code-excerpt "layout/row_column/lib/main.dart (Row)" replace="/Row/[!$&!]/g"?>
-  {% prettify dart context="html" %}
+  ```dart
   [!Row!](
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
@@ -410,7 +410,7 @@ space evenly between, before, and after each image.
       Image.asset('images/pic3.jpg'),
     ],
   );
-  {% endprettify %}
+  ```
 </div>
 <div class="col-lg-4" markdown="1">
   <img src='/assets/images/docs/ui/layout/row-spaceevenly-visual.png' class="mw-100" alt="Row with 3 evenly spaced images">
@@ -428,7 +428,7 @@ space evenly between, above, and below each image.
 <div class="row">
 <div class="col-lg-8" markdown="1">
   <?code-excerpt "layout/row_column/lib/main.dart (Column)" replace="/Column/[!$&!]/g"?>
-  {% prettify dart context="html" %}
+  ```dart
   [!Column!](
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
@@ -437,7 +437,7 @@ space evenly between, above, and below each image.
       Image.asset('images/pic3.jpg'),
     ],
   );
-  {% endprettify %}
+  ```
 
   **App source:** [row_column]({{examples}}/layout/row_column)
 </div>
@@ -464,7 +464,7 @@ wrap each image with an `Expanded` widget.
 <div class="row">
 <div class="col-lg-8">
   <?code-excerpt "layout/sizing/lib/main.dart (expanded-images)" replace="/Expanded/[!$&!]/g"?>
-  {% prettify dart context="html" %}
+  ```dart
   Row(
     crossAxisAlignment: CrossAxisAlignment.center,
     children: [
@@ -479,7 +479,7 @@ wrap each image with an `Expanded` widget.
       ),
     ],
   );
-  {% endprettify %}
+  ```
 </div>
 <div class="col-lg-4" markdown="1">
   <img src='/assets/images/docs/ui/layout/row-expanded-2-visual.png' class="mw-100"
@@ -498,7 +498,7 @@ the flex factor of the middle image to 2:
 <div class="row">
 <div class="col-lg-8">
   <?code-excerpt "layout/sizing/lib/main.dart (expanded-images-with-flex)" replace="/flex.*/[!$&!]/g"?>
-  {% prettify dart context="html" %}
+  ```dart
   Row(
     crossAxisAlignment: CrossAxisAlignment.center,
     children: [
@@ -514,7 +514,7 @@ the flex factor of the middle image to 2:
       ),
     ],
   );
-  {% endprettify %}
+  ```
 </div>
 <div class="col-lg-4" markdown="1">
   <img src='/assets/images/docs/ui/layout/row-expanded-visual.png' class="mw-100"
@@ -536,7 +536,7 @@ uses this property to pack the star icons together.
 <div class="row">
 <div class="col-lg-8">
   <?code-excerpt "layout/pavlova/lib/main.dart (stars)" replace="/mainAxisSize.*/[!$&!]/g; /\w+ \w+ = //g; /;//g"?>
-  {% prettify dart context="html" %}
+  ```dart
   Row(
     [!mainAxisSize: MainAxisSize.min,!]
     children: [
@@ -547,7 +547,7 @@ uses this property to pack the star icons together.
       const Icon(Icons.star, color: Colors.black),
     ],
   )
-  {% endprettify %}
+  ```
 </div>
 <div class="col-lg-4" markdown="1">
   <img src='/assets/images/docs/ui/layout/packed.png' class="border mw-100"
@@ -810,7 +810,7 @@ of the column to a lighter grey.
 <div class="row">
 <div class="col-lg-7">
   <?code-excerpt "layout/container/lib/main.dart (column)" replace="/\bContainer/[!$&!]/g;"?>
-  {% prettify dart context="html" %}
+  ```dart
   Widget _buildImageColumn() {
     return [!Container!](
       decoration: const BoxDecoration(
@@ -824,7 +824,7 @@ of the column to a lighter grey.
       ),
     );
   }
-  {% endprettify %}
+  ```
 </div>
 <div class="col-lg-5 text-center">
   <img src='/assets/images/docs/ui/layout/container.png' class="mb-4 mw-100" width="230px"

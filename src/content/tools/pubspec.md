@@ -55,7 +55,7 @@ a pubspec for a basic Flutter app.
 Here is an example of a Flutter project pubspec file.
 The Flutter only fields are highlighted.
 
-{% prettify yaml %}
+```yaml
 name: <project name>
 description: A new Flutter project.
 
@@ -67,41 +67,41 @@ environment:
   sdk: ^3.3.0
 
 dependencies:
-  [[highlight]]flutter:[[/highlight]]       # Required for every Flutter project
-    [[highlight]]sdk: flutter[[/highlight]] # Required for every Flutter project
-  [[highlight]]flutter_localizations:[[/highlight]] # Required to enable localization
-    [[highlight]]sdk: flutter[[/highlight]]         # Required to enable localization
+  [!flutter:!]       # Required for every Flutter project
+    [!sdk: flutter!] # Required for every Flutter project
+  [!flutter_localizations:!] # Required to enable localization
+    [!sdk: flutter!]         # Required to enable localization
 
-  [[highlight]]cupertino_icons: ^1.0.6[[/highlight]] # Only required if you use Cupertino (iOS style) icons
+  [!cupertino_icons: ^1.0.6!] # Only required if you use Cupertino (iOS style) icons
 
 dev_dependencies:
-  [[highlight]]flutter_test:[[/highlight]]
-    [[highlight]]sdk: flutter[[/highlight]] # Required for a Flutter project that includes tests
+  [!flutter_test:!]
+    [!sdk: flutter!] # Required for a Flutter project that includes tests
 
-  [[highlight]]flutter_lints: ^3.0.1[[/highlight]] # Contains a set of recommended lints for Flutter code
+  [!flutter_lints: ^3.0.1!] # Contains a set of recommended lints for Flutter code
 
-[[highlight]]flutter:[[/highlight]]
+[!flutter:!]
 
-  [[highlight]]uses-material-design: true[[/highlight]] # Required if you use the Material icon font
+  [!uses-material-design: true!] # Required if you use the Material icon font
 
-  [[highlight]]generate: true[[/highlight]] # Enables generation of localized strings from arb files
+  [!generate: true!] # Enables generation of localized strings from arb files
 
-  [[highlight]]assets:[[/highlight]]  # Lists assets, such as image files
-    [[highlight]]- images/a_dot_burr.jpeg[[/highlight]]
-    [[highlight]]- images/a_dot_ham.jpeg[[/highlight]]
+  [!assets:!]  # Lists assets, such as image files
+    [!- images/a_dot_burr.jpeg!]
+    [!- images/a_dot_ham.jpeg!]
 
-  [[highlight]]fonts:[[/highlight]]              # Required if your app uses custom fonts
-    [[highlight]]- family: Schyler[[/highlight]]
-      [[highlight]]fonts:[[/highlight]]
-        [[highlight]]- asset: fonts/Schyler-Regular.ttf[[/highlight]]
-        [[highlight]]- asset: fonts/Schyler-Italic.ttf[[/highlight]]
-          [[highlight]]style: italic[[/highlight]]
-    [[highlight]]- family: Trajan Pro[[/highlight]]
-      [[highlight]]fonts:[[/highlight]]
-        [[highlight]]- asset: fonts/TrajanPro.ttf[[/highlight]]
-        [[highlight]]- asset: fonts/TrajanPro_Bold.ttf[[/highlight]]
-          [[highlight]]weight: 700[[/highlight]]
-{% endprettify %}
+  [!fonts:!]              # Required if your app uses custom fonts
+    [!- family: Schyler!]
+      [!fonts:!]
+        [!- asset: fonts/Schyler-Regular.ttf!]
+        [!- asset: fonts/Schyler-Italic.ttf!]
+          [!style: italic!]
+    [!- family: Trajan Pro!]
+      [!fonts:!]
+        [!- asset: fonts/TrajanPro.ttf!]
+        [!- asset: fonts/TrajanPro_Bold.ttf!]
+          [!weight: 700!]
+```
  
 ## Assets
 

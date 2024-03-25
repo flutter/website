@@ -101,14 +101,14 @@ animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
   or you can create your own. For example:
 
   <?code-excerpt "animate5/lib/main.dart (ShakeCurve)" plaster="none"?>
-  {% prettify dart context="html" %}
+  ```dart
   import 'dart:math';
 
   class ShakeCurve extends Curve {
     @override
     double transform(double t) => sin(t * pi * 2);
   }
-  {% endprettify %}
+  ```
 
   Browse the [`Curves`] documentation for a complete listing
   (with visual previews) of the `Curves` constants that ship with Flutter.
@@ -394,22 +394,22 @@ you've created your first animation in Flutter!
   Consider the following example:
 
   <?code-excerpt "animate1/lib/main.dart (addListener)" replace="/animation.*|\.\.addListener/[!$&!]/g"?>
-  {% prettify dart context="html" %}
+  ```dart
   [!animation = Tween<double>(begin: 0, end: 300).animate(controller)!]
     [!..addListener!](() {
       // ···
     });
-  {% endprettify %}
+  ```
 
   This code is equivalent to:
 
   <?code-excerpt "animate1/lib/main.dart (addListener)" replace="/animation.*/$&;/g; /  \./animation/g; /animation.*/[!$&!]/g"?>
-  {% prettify dart context="html" %}
+  ```dart
   [!animation = Tween<double>(begin: 0, end: 300).animate(controller);!]
   [!animation.addListener(() {!]
       // ···
     });
-  {% endprettify %}
+  ```
 
   To learn more about cascades,
   check out [Cascade notation][]

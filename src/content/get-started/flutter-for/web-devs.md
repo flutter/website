@@ -69,7 +69,7 @@ In both HTML and Flutter, child elements or widgets
 are anchored at the top left, by default.
 
 <div class="lefthighlight">
-{% prettify css %}
+```css
 <div class="grey-box">
   Lorem ipsum
 </div>
@@ -78,13 +78,13 @@ are anchored at the top left, by default.
     background-color: #e0e0e0; /* grey 300 */
     width: 320px;
     height: 240px;
-    [[highlight]]font: 900 24px Georgia;[[/highlight]]
+    [!font: 900 24px Georgia;!]
 }
-{% endprettify %}
+```
 </div>
 <div class="righthighlight">
 <?code-excerpt "lib/main.dart (Container)" replace="/\/\*//g;/\*\/ *//g"?>
-{% prettify dart %}
+```dart
 final container = Container(
   // grey box
   width: 320,
@@ -92,16 +92,16 @@ final container = Container(
   color: Colors.grey[300],
   child: const Text(
     'Lorem ipsum',
-    style: [[highlight]]TextStyle(
+    style: [!TextStyle(
       fontFamily: 'Georgia',
       fontSize: 24,
       fontWeight: FontWeight.bold,
     ),
-    [[/highlight]]
-    [[highlight]]textAlign: TextAlign.center, [[/highlight]]
+    !]
+    [!textAlign: TextAlign.center, !]
   ),
 );
-{% endprettify %}
+```
 </div>
 
 ### Setting background color
@@ -118,54 +118,54 @@ use the `decoration` property.
 The CSS examples use the hex color equivalents to the Material color palette.
 
 <div class="lefthighlight">
-{% prettify css %}
+```css
 <div class="grey-box">
   Lorem ipsum
 </div>
 
 .grey-box {
-    [[highlight]]background-color: #e0e0e0;[[/highlight]] /* grey 300 */
+    [!background-color: #e0e0e0;!] /* grey 300 */
     width: 320px;
     height: 240px;
     font: 900 24px Roboto;
 }
-{% endprettify %}
+```
 </div>
 
 <div class="righthighlight">
 <?code-excerpt "lib/main.dart (Container2)" replace="/\/\*//g;/\*\/ *//g"?>
-{% prettify dart %}
+```dart
 final container = Container(
   // grey box
   width: 320,
   height: 240,
-  [[highlight]]color: Colors.grey[300],
-  [[/highlight]]
+  [!color: Colors.grey[300],
+  !]
   child: Text(
     'Lorem ipsum',
     style: bold24Roboto,
   ),
 );
-{% endprettify %}
+```
 </div>
 
 <div class="righthighlight">
 <?code-excerpt "lib/main.dart (Container3)" replace="/\/\*//g;/\*\/ *//g"?>
-{% prettify dart %}
+```dart
 final container = Container(
   // grey box
   width: 320,
   height: 240,
-  [[highlight]]decoration: BoxDecoration(
+  [!decoration: BoxDecoration(
     color: Colors.grey[300],
   ),
-  [[/highlight]]
+  !]
   child: Text(
     'Lorem ipsum',
     style: bold24Roboto,
   ),
 );
-{% endprettify %}
+```
 </div>
 
 ### Centering components
@@ -178,7 +178,7 @@ or table-cell display behavior. The examples on this page show the flex
 behavior.
 
 <div class="lefthighlight">
-{% prettify css %}
+```css
 <div class="grey-box">
   Lorem ipsum
 </div>
@@ -188,29 +188,29 @@ behavior.
     width: 320px;
     height: 240px;
     font: 900 24px Roboto;
-    [[highlight]]display: flex;
+    [!display: flex;
     align-items: center;
-    justify-content: center;[[/highlight]]
+    justify-content: center;!]
 }
-{% endprettify %}
+```
 </div>
 
 <div class="righthighlight">
 <?code-excerpt "lib/main.dart (Center)" replace="/\/\*//g;/\*\/ *//g"?>
-{% prettify dart %}
+```dart
 final container = Container(
   // grey box
   width: 320,
   height: 240,
   color: Colors.grey[300],
-  child: [[highlight]]Center(
-    child: [[/highlight]]Text(
+  child: [!Center(
+    child: !]Text(
       'Lorem ipsum',
       style: bold24Roboto,
     ),
   ),
 );
-{% endprettify %}
+```
 </div>
 
 ### Setting container width
@@ -227,7 +227,7 @@ For nested Containers, if the parent's width is less than the child's width,
 the child Container sizes itself to match the parent.
 
 <div class="lefthighlight">
-{% prettify css %}
+```css
 <div class="grey-box">
   <div class="red-box">
     Lorem ipsum
@@ -236,7 +236,7 @@ the child Container sizes itself to match the parent.
 
 .grey-box {
     background-color: #e0e0e0; /* grey 300 */
-    [[highlight]]width: 320px;[[/highlight]]
+    [!width: 320px;!]
     height: 240px;
     font: 900 24px Roboto;
     display: flex;
@@ -247,26 +247,26 @@ the child Container sizes itself to match the parent.
     background-color: #ef5350; /* red 400 */
     padding: 16px;
     color: #ffffff;
-    [[highlight]]width: 100%;
-    max-width: 240px;[[/highlight]]
+    [!width: 100%;
+    max-width: 240px;!]
 }
-{% endprettify %}
+```
 </div>
 
 <div class="righthighlight">
 <?code-excerpt "lib/main.dart (Nested)" replace="/\/\*//g;/\*\/ *//g"?>
-{% prettify dart %}
+```dart
 final container = Container(
   // grey box
-  [[highlight]]width: 320,
-  [[/highlight]]
+  [!width: 320,
+  !]
   height: 240,
   color: Colors.grey[300],
   child: Center(
     child: Container(
       // red box
-      [[highlight]]width: 240,
-      [[/highlight]]// max-width is 240
+      [!width: 240,
+      !]// max-width is 240
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: Colors.red[400],
@@ -278,7 +278,7 @@ final container = Container(
     ),
   ),
 );
-{% endprettify %}
+```
 </div>
 
 ## Manipulating position and size
@@ -295,7 +295,7 @@ nest it in a [`Positioned`][] widget that is,
 in turn, nested in a [`Stack`][] widget.
 
 <div class="lefthighlight">
-{% prettify css %}
+```css
 <div class="grey-box">
   <div class="red-box">
     Lorem ipsum
@@ -303,7 +303,7 @@ in turn, nested in a [`Stack`][] widget.
 </div>
 
 .grey-box {
-    [[highlight]]position: relative;[[/highlight]]
+    [!position: relative;!]
     background-color: #e0e0e0; /* grey 300 */
     width: 320px;
     height: 240px;
@@ -313,28 +313,28 @@ in turn, nested in a [`Stack`][] widget.
     background-color: #ef5350; /* red 400 */
     padding: 16px;
     color: #ffffff;
-    [[highlight]]position: absolute;
+    [!position: absolute;
     top: 24px;
-    left: 24px;[[/highlight]]
+    left: 24px;!]
 }
-{% endprettify %}
+```
 </div>
 
 <div class="righthighlight">
 <?code-excerpt "lib/main.dart (Absolute)" replace="/\/\*//g;/\*\/ *//g"?>
-{% prettify dart %}
+```dart
 final container = Container(
   // grey box
   width: 320,
   height: 240,
   color: Colors.grey[300],
-  [[highlight]]child: Stack(
-    children: [[/highlight]][
+  [!child: Stack(
+    children: !][
       Positioned(
         // red box
-        [[highlight]]left: 24,
+        [!left: 24,
         top: 24,
-        [[/highlight]]
+        !]
         child: Container(
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
@@ -349,7 +349,7 @@ final container = Container(
     ],
   ),
 );
-{% endprettify %}
+```
 </div>
 
 ### Rotating components
@@ -365,7 +365,7 @@ and use its `rotateZ()` method to specify the rotation factor
 using radians (degrees × π / 180).
 
 <div class="lefthighlight">
-{% prettify css %}
+```css
 <div class="grey-box">
   <div class="red-box">
     Lorem ipsum
@@ -385,24 +385,24 @@ using radians (degrees × π / 180).
     background-color: #ef5350; /* red 400 */
     padding: 16px;
     color: #ffffff;
-    [[highlight]]transform: rotate(15deg);[[/highlight]]
+    [!transform: rotate(15deg);!]
 }
-{% endprettify %}
+```
 </div>
 
 <div class="righthighlight">
 <?code-excerpt "lib/main.dart (Rotating)" replace="/\/\*//g;/\*\/ *//g"?>
-{% prettify dart %}
+```dart
 final container = Container(
   // grey box
   width: 320,
   height: 240,
   color: Colors.grey[300],
   child: Center(
-    child: [[highlight]]Transform(
+    child: [!Transform(
       alignment: Alignment.center,
       transform: Matrix4.identity()..rotateZ(15 * 3.1415927 / 180),
-      child: [[/highlight]]Container(
+      child: !]Container(
         // red box
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
@@ -417,7 +417,7 @@ final container = Container(
     ),
   ),
 );
-{% endprettify %}
+```
 </div>
 
 ### Scaling components
@@ -435,7 +435,7 @@ When you scale a parent widget,
 its child widgets are scaled accordingly.
 
 <div class="lefthighlight">
-{% prettify css %}
+```css
 <div class="grey-box">
   <div class="red-box">
     Lorem ipsum
@@ -455,24 +455,24 @@ its child widgets are scaled accordingly.
     background-color: #ef5350; /* red 400 */
     padding: 16px;
     color: #ffffff;
-    [[highlight]]transform: scale(1.5);[[/highlight]]
+    [!transform: scale(1.5);!]
 }
-{% endprettify %}
+```
 </div>
 
 <div class="righthighlight">
 <?code-excerpt "lib/main.dart (Scaling)" replace="/\/\*//g;/\*\/ *//g"?>
-{% prettify dart %}
+```dart
 final container = Container(
   // grey box
   width: 320,
   height: 240,
   color: Colors.grey[300],
   child: Center(
-    child: [[highlight]]Transform(
+    child: [!Transform(
       alignment: Alignment.center,
       transform: Matrix4.identity()..scale(1.5),
-      child: [[/highlight]]Container(
+      child: !]Container(
         // red box
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
@@ -487,7 +487,7 @@ final container = Container(
     ),
   ),
 );
-{% endprettify %}
+```
 </div>
 
 ### Applying a linear gradient
@@ -508,7 +508,7 @@ The gradient "angle" is based on the Alignment (x, y) values:
 #### Vertical gradient
 
 <div class="lefthighlight">
-{% prettify css %}
+```css
 <div class="grey-box">
   <div class="red-box">
     Lorem ipsum
@@ -527,13 +527,13 @@ The gradient "angle" is based on the Alignment (x, y) values:
 .red-box {
     padding: 16px;
     color: #ffffff;
-    [[highlight]]background: linear-gradient(180deg, #ef5350, rgba(0, 0, 0, 0) 80%);[[/highlight]]
+    [!background: linear-gradient(180deg, #ef5350, rgba(0, 0, 0, 0) 80%);!]
 }
-{% endprettify %}
+```
 </div>
 <div class="righthighlight">
 <?code-excerpt "lib/main.dart (Gradient)" replace="/\/\*//g;/\*\/ *//g"?>
-{% prettify dart %}
+```dart
 final container = Container(
   // grey box
   width: 320,
@@ -542,7 +542,7 @@ final container = Container(
   child: Center(
     child: Container(
       // red box
-      [[highlight]]decoration: const BoxDecoration(
+      [!decoration: const BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment(0.0, 0.6),
@@ -552,7 +552,7 @@ final container = Container(
           ],
         ),
       ),
-      [[/highlight]]
+      !]
       padding: const EdgeInsets.all(16),
       child: Text(
         'Lorem ipsum',
@@ -561,13 +561,13 @@ final container = Container(
     ),
   ),
 );
-{% endprettify %}
+```
 </div>
 
 #### Horizontal gradient
 
 <div class="lefthighlight">
-{% prettify css %}
+```css
 <div class="grey-box">
   <div class="red-box">
     Lorem ipsum
@@ -586,13 +586,13 @@ final container = Container(
 .red-box {
     padding: 16px;
     color: #ffffff;
-    [[highlight]]background: linear-gradient(90deg, #ef5350, rgba(0, 0, 0, 0) 80%);[[/highlight]]
+    [!background: linear-gradient(90deg, #ef5350, rgba(0, 0, 0, 0) 80%);!]
 }
-{% endprettify %}
+```
 </div>
 <div class="righthighlight">
 <?code-excerpt "lib/main.dart (HorizontalGradient)" replace="/\/\*//g;/\*\/ *//g"?>
-{% prettify dart %}
+```dart
 final container = Container(
   // grey box
   width: 320,
@@ -602,7 +602,7 @@ final container = Container(
     child: Container(
       // red box
       padding: const EdgeInsets.all(16),
-      [[highlight]]decoration: const BoxDecoration(
+      [!decoration: const BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment(-1.0, 0.0),
           end: Alignment(0.6, 0.0),
@@ -612,7 +612,7 @@ final container = Container(
           ],
         ),
       ),
-      [[/highlight]]
+      !]
       child: Text(
         'Lorem ipsum',
         style: bold24Roboto,
@@ -620,7 +620,7 @@ final container = Container(
     ),
   ),
 );
-{% endprettify %}
+```
 </div>
 
 ## Manipulating shapes
@@ -635,7 +635,7 @@ Create a new [`BorderRadius`][]
 object that specifies the radius for rounding each corner.
 
 <div class="lefthighlight">
-{% prettify css %}
+```css
 <div class="grey-box">
   <div class="red-box">
     Lorem ipsum
@@ -655,13 +655,13 @@ object that specifies the radius for rounding each corner.
     background-color: #ef5350; /* red 400 */
     padding: 16px;
     color: #ffffff;
-    [[highlight]]border-radius: 8px;[[/highlight]]
+    [!border-radius: 8px;!]
 }
-{% endprettify %}
+```
 </div>
 <div class="righthighlight">
 <?code-excerpt "lib/main.dart (RoundCorners)" replace="/\/\*//g;/\*\/ *//g"?>
-{% prettify dart %}
+```dart
 final container = Container(
   // grey box
   width: 320,
@@ -673,9 +673,9 @@ final container = Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: Colors.red[400],
-        [[highlight]]borderRadius: const BorderRadius.all(
+        [!borderRadius: const BorderRadius.all(
           Radius.circular(8),
-        ), [[/highlight]]
+        ), !]
       ),
       child: Text(
         'Lorem ipsum',
@@ -684,7 +684,7 @@ final container = Container(
     ),
   ),
 );
-{% endprettify %}
+```
 </div>
 
 ### Adding box shadows
@@ -703,7 +703,7 @@ Use the `boxShadow` property of `BoxDecoration` to create a list of
 to customize the shadow depth, color, and so on.
 
 <div class="lefthighlight">
-{% prettify css %}
+```css
 <div class="grey-box">
   <div class="red-box">
     Lorem ipsum
@@ -723,14 +723,14 @@ to customize the shadow depth, color, and so on.
     background-color: #ef5350; /* red 400 */
     padding: 16px;
     color: #ffffff;
-    [[highlight]]box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8),
-              0 6px 20px rgba(0, 0, 0, 0.5);[[/highlight]]
+    [!box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8),
+              0 6px 20px rgba(0, 0, 0, 0.5);!]
 }
-{% endprettify %}
+```
 </div>
 <div class="righthighlight">
 <?code-excerpt "lib/main.dart (BoxShadow)" replace="/\/\*//g;/\*\/ *//g"?>
-{% prettify dart %}
+```dart
 final container = Container(
   // grey box
   width: 320,
@@ -745,7 +745,7 @@ final container = Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: Colors.red[400],
-        [[highlight]]boxShadow: const <BoxShadow>[
+        [!boxShadow: const <BoxShadow>[
           BoxShadow(
             color: Color(0xcc000000),
             offset: Offset(0, 2),
@@ -756,7 +756,7 @@ final container = Container(
             offset: Offset(0, 6),
             blurRadius: 20,
           ),
-        ], [[/highlight]]
+        ], !]
       ),
       child: Text(
         'Lorem ipsum',
@@ -765,7 +765,7 @@ final container = Container(
     ),
   ),
 );
-{% endprettify %}
+```
 </div>
 
 ### Making circles and ellipses
@@ -780,7 +780,7 @@ Flutter provides a `shape` property
 with [`BoxShape` enum][] for this purpose.
 
 <div class="lefthighlight">
-{% prettify css %}
+```css
 <div class="grey-box">
   <div class="red-circle">
     Lorem ipsum
@@ -800,16 +800,16 @@ with [`BoxShape` enum][] for this purpose.
     background-color: #ef5350; /* red 400 */
     padding: 16px;
     color: #ffffff;
-    [[highlight]]text-align: center;
+    [!text-align: center;
     width: 160px;
     height: 160px;
-    border-radius: 50%;[[/highlight]]
+    border-radius: 50%;!]
 }
-{% endprettify %}
+```
 </div>
 <div class="righthighlight">
 <?code-excerpt "lib/main.dart (Circle)" replace="/\/\*//g;/\*\/ *//g"?>
-{% prettify dart %}
+```dart
 final container = Container(
   // grey box
   width: 320,
@@ -820,21 +820,21 @@ final container = Container(
       // red circle
       decoration: BoxDecoration(
         color: Colors.red[400],
-        [[highlight]]shape: BoxShape.circle, [[/highlight]]
+        [!shape: BoxShape.circle, !]
       ),
       padding: const EdgeInsets.all(16),
-      [[highlight]]width: 160,
+      [!width: 160,
       height: 160,
-      [[/highlight]]
+      !]
       child: Text(
         'Lorem ipsum',
         style: bold24Roboto,
-        [[highlight]]textAlign: TextAlign.center, [[/highlight]]
+        [!textAlign: TextAlign.center, !]
       ),
     ),
   ),
 );
-{% endprettify %}
+```
 </div>
 
 ## Manipulating text
@@ -856,7 +856,7 @@ for the `letterSpacing` and `wordSpacing` properties
 of a [`TextStyle`][] child of a `Text` widget.
 
 <div class="lefthighlight">
-{% prettify css %}
+```css
 <div class="grey-box">
   <div class="red-box">
     Lorem ipsum
@@ -876,13 +876,13 @@ of a [`TextStyle`][] child of a `Text` widget.
     background-color: #ef5350; /* red 400 */
     padding: 16px;
     color: #ffffff;
-    [[highlight]]letter-spacing: 4px;[[/highlight]]
+    [!letter-spacing: 4px;!]
 }
-{% endprettify %}
+```
 </div>
 <div class="righthighlight">
 <?code-excerpt "lib/main.dart (TextSpacing)" replace="/\/\*//g;/\*\/ *//g"?>
-{% prettify dart %}
+```dart
 final container = Container(
   // grey box
   width: 320,
@@ -901,13 +901,13 @@ final container = Container(
           color: Colors.white,
           fontSize: 24,
           fontWeight: FontWeight.w900,
-          [[highlight]]letterSpacing: 4, [[/highlight]]
+          [!letterSpacing: 4, !]
         ),
       ),
     ),
   ),
 );
-{% endprettify %}
+```
 </div>
 
 ### Making inline formatting changes
@@ -925,10 +925,10 @@ with the default (inherited) text styling,
 and "ipsum" is in a separate `TextSpan` with custom styling.
 
 <div class="lefthighlight">
-{% prettify css %}
+```css
 <div class="grey-box">
   <div class="red-box">
-    [[highlight]]Lorem <em>ipsum</em>[[/highlight]]
+    [!Lorem <em>ipsum</em>!]
   </div>
 </div>
 
@@ -936,7 +936,7 @@ and "ipsum" is in a separate `TextSpan` with custom styling.
     background-color: #e0e0e0; /* grey 300 */
     width: 320px;
     height: 240px;
-    [[highlight]]font: 900 24px Roboto;[[/highlight]]
+    [!font: 900 24px Roboto;!]
     display: flex;
     align-items: center;
     justify-content: center;
@@ -946,15 +946,15 @@ and "ipsum" is in a separate `TextSpan` with custom styling.
     padding: 16px;
     color: #ffffff;
 }
-[[highlight]].red-box em {
+[!.red-box em {
     font: 300 48px Roboto;
     font-style: italic;
-}[[/highlight]]
-{% endprettify %}
+}!]
+```
 </div>
 <div class="righthighlight">
 <?code-excerpt "lib/main.dart (InlineFormatting)" replace="/\/\*//g;/\*\/ *//g"?>
-{% prettify dart %}
+```dart
 final container = Container(
   // grey box
   width: 320,
@@ -967,7 +967,7 @@ final container = Container(
         color: Colors.red[400],
       ),
       padding: const EdgeInsets.all(16),
-      child: [[highlight]]RichText(
+      child: [!RichText(
         text: TextSpan(
           style: bold24Roboto,
           children: const <TextSpan>[
@@ -982,11 +982,11 @@ final container = Container(
             ),
           ],
         ),
-      ), [[/highlight]]
+      ), !]
     ),
   ),
 );
-{% endprettify %}
+```
 </div>
 
 ### Creating text excerpts
@@ -999,7 +999,7 @@ to specify the number of lines to include in the excerpt,
 and the `overflow` property for handling overflow text.
 
 <div class="lefthighlight">
-{% prettify css %}
+```css
 <div class="grey-box">
   <div class="red-box">
     Lorem ipsum dolor sit amet, consec etur
@@ -1019,16 +1019,16 @@ and the `overflow` property for handling overflow text.
     background-color: #ef5350; /* red 400 */
     padding: 16px;
     color: #ffffff;
-    [[highlight]]overflow: hidden;
+    [!overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;[[/highlight]]
+    -webkit-line-clamp: 2;!]
 }
-{% endprettify %}
+```
 </div>
 <div class="righthighlight">
 <?code-excerpt "lib/main.dart (TextExcerpt)" replace="/\/\*//g;/\*\/ *//g"?>
-{% prettify dart %}
+```dart
 final container = Container(
   // grey box
   width: 320,
@@ -1044,13 +1044,13 @@ final container = Container(
       child: Text(
         'Lorem ipsum dolor sit amet, consec etur',
         style: bold24Roboto,
-        [[highlight]]overflow: TextOverflow.ellipsis,
-        maxLines: 1, [[/highlight]]
+        [!overflow: TextOverflow.ellipsis,
+        maxLines: 1, !]
       ),
     ),
   ),
 );
-{% endprettify %}
+```
 </div>
 <div class="end-examples"></div>
 
