@@ -58,6 +58,66 @@ ColorScheme.fromSeed(
 )
 ```
 
+The Material Design 3 removes 3 colors. To configure the appearance of the
+material components, the `background` should be replaced with `surface`;
+`onBackground` should be replaced with `onSurface`; `surfaceVariant` should be
+migrated to `surfaceContainerHighest`.
+
+Code before migration:
+
+```dart
+final ColorScheme colorScheme = ColorScheme();
+MaterialApp(
+  theme: ThemeData(
+    //...
+    colorScheme: colorScheme.copyWith(
+      background: myColor1,
+      onBackground: myColor2,
+      surfaceVariant: myColor3,
+    ),
+  ),
+  //...
+)
+```
+
+Code after migration:
+
+```dart
+final ColorScheme colorScheme = ColorScheme();
+MaterialApp(
+  theme: ThemeData(
+    //...
+    colorScheme: colorScheme.copyWith(
+      surface: myColor1,
+      onSurface: myColor2,
+      surfaceContainerHighest: myColor3,
+    ),
+  ),
+  //...
+)
+```
+
+Custom components that used to look up the `ColorScheme.background`,
+`ColorScheme.onBackground` and `ColorScheme.surfaceVariant` can look up the
+`ColorScheme.surface`, `ColorScheme.onSurface` and
+`ColorScheme.surfaceContainerHighest` instead.
+
+Code before migration:
+
+```dart
+Color myColor1 = Theme.of(context).colorScheme.background;
+Color myColor2 = Theme.of(context).colorScheme.onBackground;
+Color myColor3 = Theme.of(context).colorScheme.surfaceVariant;
+```
+
+Code after migration:
+
+```dart
+Color myColor1 = Theme.of(context).colorScheme.surface;
+Color myColor2 = Theme.of(context).colorScheme.onSurface;
+Color myColor3 = Theme.of(context).colorScheme.surfaceContainerHighest;
+```
+
 ## Timeline
 
 Landed in version: 3.21.0-4.0.pre <br>
