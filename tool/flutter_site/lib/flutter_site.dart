@@ -11,6 +11,7 @@ import 'src/commands/check_link_references.dart';
 import 'src/commands/check_links.dart';
 import 'src/commands/format_dart.dart';
 import 'src/commands/refresh_excerpts.dart';
+import 'src/commands/serve.dart';
 import 'src/commands/test_dart.dart';
 import 'src/commands/verify_firebase_json.dart';
 
@@ -23,14 +24,15 @@ final class FlutterSiteCommandRunner extends CommandRunner<int> {
           'flutter_site',
           'Infrastructure tooling for the Flutter documentation website.',
         ) {
+    addCommand(AnalyzeDartCommand());
     addCommand(BuildSiteCommand());
+    addCommand(CheckAllCommand());
     addCommand(CheckLinksCommand());
     addCommand(CheckLinkReferencesCommand());
-    addCommand(VerifyFirebaseJsonCommand());
-    addCommand(RefreshExcerptsCommand());
     addCommand(FormatDartCommand());
-    addCommand(AnalyzeDartCommand());
+    addCommand(RefreshExcerptsCommand());
+    addCommand(ServeSiteCommand());
     addCommand(TestDartCommand());
-    addCommand(CheckAllCommand());
+    addCommand(VerifyFirebaseJsonCommand());
   }
 }
