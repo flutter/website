@@ -1,7 +1,7 @@
 ---
 title: Add iOS devtools for Flutter
 description: Configure your system to develop Flutter for iOS.
-short-title: Add iOS to possible Flutter SDK targets
+short-title: Add iOS DevTools
 target-list: [macOS, Android, Web]
 ---
 
@@ -11,7 +11,7 @@ click the [Getting Started path][] you followed.
 <div class="card-deck mb-8">
 {% for target in page.target-list %}
 {% assign targetlink='/platform-integration/ios/install-ios/install-ios-from-' | append: target | downcase %}
-  <a class="card card-app-type"
+  <a class="card card-app-type card-macos"
      id="install-{{target | downcase}}"
      href="{{targetlink}}">
     <div class="card-body">
@@ -24,11 +24,13 @@ click the [Getting Started path][] you followed.
           {% when 'android' -%}
             <span class="material-symbols">phone_android</span>
           {% when 'web' -%}
-            <span class="material-symbols">open_in_browser</span>
+            <span class="material-symbols">web</span>
           {% endcase -%}
+          <span class="material-symbols">add</span>
+          <span class="material-symbols">phone_iphone</span>
         </span>
-        <span class="text-muted text-nowrap">
-        {{ target }}
+        <span class="text-muted d-block">
+        Make iOS and {{ target }}{% if target == 'macOS' %} desktop{% endif %} apps
         </span>
       </header>
     </div>

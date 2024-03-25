@@ -23,130 +23,22 @@ macOS, or Linux platforms, or you can create your own.
 [Building macOS apps with Flutter]: /platform-integration/macos/building
 [Building Linux apps with Flutter]: /platform-integration/linux/building
 
-## Requirements
-
-To compile a desktop application,
-you must build it **on** the targeted
-platform: build a Windows application on Windows,
-a macOS application on macOS,
-and a Linux application on Linux.
-
-To create a Flutter application with desktop support,
-you need the following software:
-
-* Flutter SDK. See the
-  [Flutter SDK][] installation instructions.
-* Optional: An IDE that supports Flutter.
-  You can install [Android Studio][], [IntelliJ IDEA][],
-  or [Visual Studio Code][] and
-  [install the Flutter and Dart plugins][]
-  to enable language support and tools for refactoring,
-  running, debugging, and reloading your desktop app
-  within an editor. See [setting up an editor][]
-  for more details.
-
-[Android Studio]: {{site.android-dev}}/studio/install
-[Flutter SDK]: /get-started/install
-[install the Flutter and Dart plugins]: /get-started/editor
-[IntelliJ IDEA]: https://www.jetbrains.com/idea/download/
-[setting up an editor]: /get-started/editor
-[Visual Studio Code]: /tools/vs-code
-
-### Additional Windows requirements
-
-For Windows desktop development,
-you need the following in addition to the Flutter SDK:
-
-* [Visual Studio 2022][] or [Visual Studio Build Tools 2022][]
-  When installing Visual Studio or only the Build Tools,
-  select the "Desktop development with C++" workload,
-  including all of its default components,
-  to install the necessary C++ toolchain and
-  Windows SDK header files.
-
-{{site.alert.note}}
-  **Visual Studio** is different than Visual Studio _Code_.
-{{site.alert.end}}
-
-[Visual Studio 2022]: https://visualstudio.microsoft.com/downloads/
-[Visual Studio Build Tools 2022]: https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022
-
-### Additional macOS requirements
-
-For macOS desktop development,
-you need the following in addition to the Flutter SDK:
-
-* [Xcode][] the full version of Xcode is required, not just the commandline tools
-* [CocoaPods][] if you use plugins
-
-[CocoaPods]: https://cocoapods.org/
-[Xcode]: {{site.apple-dev}}/xcode/
-
-### Additional Linux requirements
-
-For Linux desktop development,
-you need the following in addition to the Flutter SDK:
-
-{% include docs/linux-requirements-list.md %}
-
-One easy way to install the Flutter SDK along with the necessary
-dependencies is by using [snapd][].
-For more information, see [Installing snapd][].
-
-Once you have `snapd`, you can install Flutter
-using the [Snap Store][], or at the command line:
-
-```terminal
-$ sudo snap install flutter --classic
-```
-
-Alternatively, if you prefer not to use `snapd`,
-you can use the following command:
-
-{% include docs/linux-requirements-command.md %}
-
-[Snap Store]: https://snapcraft.io/store
-[Installing snapd]: https://snapcraft.io/docs/installing-snapd
-[snapd]: https://snapcraft.io/flutter
-
 ## Create a new project
 
 You can use the following steps
 to create a new project with desktop support.
 
-### Set up
+### Set up desktop devtools
 
-You might run `flutter doctor` to see if
-there are any unresolved issues.
-You should see a checkmark for each successfully
-configured area. It should look something like
-the following on Windows,
-with an entry for "develop for Windows":
+Consult the guide for your target desktop environment:
 
-```terminal
-C:\> flutter doctor
-Doctor summary (to see all details, run flutter doctor -v):
-[✓] Flutter (Channel stable, 3.0.0, on Microsoft Windows [Version 10.0.19044.1706], locale en-US)
-[✓] Chrome - develop for the web
-[✓] Visual Studio - develop for Windows (Visual Studio Professional 2022 17.2.0)
-[✓] VS Code (version 1.67.2)
-[✓] Connected device (3 available)
-[✓] HTTP Host Availability
+* [Install Linux desktop devtools][Linux-devtools]
+* [Install macOS desktop devtools][macOS-devtools]
+* [Install Windows desktop devtools][Windows-devtools]
 
-• No issues found!
-```
-
-On macOS, look for a line like this:
-
-```terminal
-[✓] Xcode - develop for iOS and macOS
-```
-
-On Linux, look for a line like this:
-
-```terminal
-[✓] Linux toolchain - develop for Linux desktop
-```
+[Linux-devtools]: /get-started/install/linux/desktop
+[macOS-devtools]: /get-started/install/macos/desktop
+[Windows-devtools]: /get-started/install/windows/desktop
 
 If `flutter doctor` finds problems or missing components
 for a platform that you don't want to develop for,

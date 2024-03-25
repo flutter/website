@@ -94,7 +94,7 @@ targetmin:
 ## Software current versions
 
 appnow:
-  flutter: '3.19.0'
+  flutter: '3.19.3'
   vscode: '1.86'
   android_studio: '2023.1 (Hedgehog) or later'
   android_sdk: '34.0.0'

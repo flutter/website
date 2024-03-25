@@ -1,7 +1,7 @@
 ---
 title: Add macOS devtools to Flutter from web start
 description: Configure your system to develop Flutter mobile apps on macOS.
-short-title: When you started with web
+short-title: Starting from web
 ---
 
 To add macOS desktop as a Flutter app target, follow this procedure.
@@ -12,7 +12,7 @@ when your Flutter getting started path began with iOS.
 {% include docs/install/compiler/xcode.md
    target='macOS'
    devos='macOS'
-   time="first" -%}
+   attempt="first" -%}
 
 {% include docs/install/flutter-doctor.md
    target='macOS'
