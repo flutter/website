@@ -96,7 +96,7 @@ BorderSide side = WidgetStateBorderSide.resolveWith((Set<WidgetState> states) {
 
 ## Timeline
 
-Landed in version: 3.21.0-10.0.pre<br>
+Landed in version: 3.21.0-11.0.pre<br>
 In stable release: not yet
 
 ## References
