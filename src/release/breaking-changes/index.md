@@ -31,11 +31,13 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Rename `MaterialState` to `WidgetState`][]
 * [Stop generating AssetManifest.json][]
 * [Rename `MemoryAllocations` to `FlutterMemoryAllocations`][]
 * [Deprecate `TextField.canRequestFocus`][]
 * [Nullable PageView.controller][]
 
+[Rename `MaterialState` to `WidgetState`]: /release/breaking-changes/material-state
 [Stop generating AssetManifest.json]: /release/breaking-changes/asset-manifest-dot-json
 [Rename `MemoryAllocations` to `FlutterMemoryAllocations`]: /release/breaking-changes/flutter-memory-allocations
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
