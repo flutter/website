@@ -3,21 +3,6 @@
 
 version: 2
 updates:
-  - package-ecosystem: "bundler"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.dependencies"
-      - "auto.bundler"
-      - "lang.ruby"
-  - package-ecosystem: "docker"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.dependencies"
-      - "auto.docker"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
