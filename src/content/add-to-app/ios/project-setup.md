@@ -158,8 +158,8 @@ already have a Podfile, run `pod init` in the
 You can find more details on using 
 CocoaPods in the [CocoaPods getting started guide][].
 
-<ol markdown="1">
-<li markdown="1">
+<ol>
+<li>
 
 Add the following lines to your `Podfile`:
 
@@ -171,7 +171,7 @@ load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
 
 </li>
 
-<li markdown="1">
+<li>
 
 For each [Podfile target][] that needs to
 embed Flutter, call `install_all_flutter_pods(flutter_application_path)`.
@@ -185,7 +185,7 @@ end
 
 </li>
 
-<li markdown="1">
+<li>
 
 In the `Podfile`'s `post_install` block, call `flutter_post_install(installer)`.
 
@@ -205,7 +205,7 @@ is valid if you are running on older versions of Flutter that don't have this me
 
 </li>
 
-<li markdown="1">
+<li>
 
 Run `pod install`.
 
@@ -411,8 +411,8 @@ build configuration. The following instructions assume
 the default **Debug** and **Release**.
 Adjust the names as needed depending on your app's build configurations.
 
-<ol markdown="1">
-<li markdown="1">
+<ol>
+<li>
 
 Rename your app's **Info.plist** to **Info-Debug.plist**.
 Make a copy of it called **Info-Release.plist** and add it to your Xcode project.
@@ -421,7 +421,8 @@ Make a copy of it called **Info-Release.plist** and add it to your Xcode project
 
 </li>
 
-<li markdown="1">
+<li>
+
 In **Info-Debug.plist** _only_ add the key `NSBonjourServices`
 and set the value to an array with the string `_dartVmService._tcp`.
 Note Xcode will display this as "Bonjour services".
@@ -433,7 +434,7 @@ desired customized permission dialog text.
 
 </li>
 
-<li markdown="1">
+<li>
 
 In your target's build settings, change the **Info.plist File**
 (`INFOPLIST_FILE`) setting path from `path/to/Info.plist` to `path/to/Info-$(CONFIGURATION).plist`.
@@ -450,7 +451,7 @@ and the **Release** path to **Info-Release.plist**.
 
 </li>
 
-<li markdown="1">
+<li>
 
 If the **Info-Release.plist** copy is in your target's **Build Settings > Build Phases > Copy Bundle**
 Resources build phase, remove it.

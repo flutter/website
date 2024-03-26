@@ -310,7 +310,7 @@ investigate other resources that our community recommended.
 
 <tr>
 <td>Monetization</td>
-<td markdown="1">
+<td>
 
 {{recipe-icon}} [Add advertising to your Flutter game][ads-recipe]<br>
 {{codelab}}  [Add AdMob ads to a Flutter app][]<br>
@@ -322,7 +322,7 @@ investigate other resources that our community recommended.
 
 <tr>
 <td>Persistence</td>
-<td markdown="1">
+<td>
 
 {{pkg-icon}} [shared_preferences][]<br>
 {{pkg-icon}} [sqflite][]<br>
@@ -333,7 +333,7 @@ investigate other resources that our community recommended.
 
 <tr>
 <td>Special effects</td>
-<td markdown="1">
+<td>
 
 {{api-icon}} [Paint API][]<br>
 {{recipe-icon}} [Special effects][]
@@ -343,7 +343,7 @@ investigate other resources that our community recommended.
 
 <tr>
 <td>User Experience</td>
-<td markdown="1">
+<td>
 
 {{codelab}} [Build next generation UIs in Flutter][]
 

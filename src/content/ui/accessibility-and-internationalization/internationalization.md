@@ -573,7 +573,7 @@ numbers based on the locale and the desired format.
 The `int`, `double`, and `number` types can use any of the
 following `NumberFormat` constructors:
 
-<div class="table-wrapper" markdown="1">
+<div class="table-wrapper">
 
 | Message "format" value   | Output for 1200000 |
 |--------------------------|--------------------|
@@ -826,7 +826,7 @@ to specify the following:
 For a full list of options, either run `flutter gen-l10n --help`
 at the command line or refer to the following table:
 
-<div class="table-wrapper" markdown="1">
+<div class="table-wrapper">
 
 | Option                              | Description |
 | ------------------------------------| ------------------ |

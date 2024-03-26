@@ -35,7 +35,7 @@ labyrinth that evolving the existing classes in-place would entail,
 the new names sync Flutter back up with the Material Design spec,
 which uses the new names for the button components.
 
-<div class="table-wrapper" markdown="1">
+<div class="table-wrapper">
 
 | Old Widget      | Old Theme     | New Widget       | New Theme             |
 |-----------------|---------------|------------------|-----------------------|

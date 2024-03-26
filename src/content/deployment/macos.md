@@ -363,7 +363,7 @@ find . -name "Podfile" -execdir pod install \;
 ```
 
 </li>
-<li markdown="1">
+<li>
 
 Build the Flutter macOS project:
 
@@ -372,7 +372,7 @@ flutter build macos --release
 ```
 
 </li>
-<li markdown="1">
+<li>
 
 Package the app:
 
@@ -392,7 +392,7 @@ rm -f unsigned.pkg
 ```
 
 </li>
-<li markdown="1">
+<li>
 
 Publish the packaged app to App Store Connect:
 
@@ -402,11 +402,12 @@ app-store-connect publish \
 ```
 
 </li>
-<li markdown="1">
+<li>
 
 As mentioned earlier, don't forget to set your login keychain
 as the default to avoid authentication issues
 with apps on your machine:
+
 ```bash
 keychain use-login
 ```

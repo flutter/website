@@ -99,12 +99,14 @@ If you later want this app to work on mobile,
 you'll need to do additional installation and setup.
 </li>
 
-<li markdown="1">List the devices.<br>
+<li>
+
+List the devices.<br>
 To ensure that web _is_ installed,
 list the devices available.
 You should see something like the following:
 
-``` terminal
+```terminal
 $ flutter devices
 4 connected devices:
 
@@ -116,14 +118,16 @@ macOS (desktop)             • macos                                •
 darwin-arm64   • macOS 12.6 21G115 darwin-arm64
 Chrome (web)                • chrome                               •
 web-javascript • Google Chrome 105.0.5195.125
-
 ```
 
 The **Chrome** device automatically starts Chrome and enables the use
 of the Flutter DevTools tooling.
+
 </li>
 
-<li markdown="1">The starting app is displayed in the following DartPad.
+<li>
+
+The starting app is displayed in the following DartPad.
 
 <?code-excerpt "lib/starter.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-starting_code
@@ -238,24 +242,36 @@ go to the [DartPad troubleshooting page][].
 
 </li>
 
-<li markdown="1">Run the example.<br>
+<li>
+
+Run the example.<br>
 Click the **Run** button to run the example.
 Note that you can type into the text fields,
 but the **Sign up** button is disabled.
+
 </li>
 
-<li markdown="1">Copy the code.<br>
+<li>
+
+Copy the code.<br>
 Click the clipboard icon in the upper right of the
 code pane to copy the Dart code to your clipboard.
+
 </li>
 
-<li markdown="1">Create a new Flutter project.<br>
+<li>
+
+Create a new Flutter project.<br>
 From your IDE, editor, or at the command line,
 [create a new Flutter project][] and name it `signin_example`.
+
 </li>
 
-<li markdown="1">Replace the contents of `lib/main.dart`
-                 with the contents of the clipboard.<br>
+<li>
+
+Replace the contents of `lib/main.dart`
+with the contents of the clipboard.
+
 </li>
 </ol>
 
@@ -322,18 +338,23 @@ class WelcomeScreen extends StatelessWidget {
 Next, you will enable the button to display the screen
 and create a method to display it.
 
-<ol markdown="1">
+<ol>
 
-<li markdown="1"> Locate the `build()` method for the
+<li>
+
+Locate the `build()` method for the
 `_SignUpFormState` class. This is the part of the code
 that builds the SignUp button.
 Notice how the button is defined:
 It's a `TextButton` with a blue background,
 white text that says **Sign up** and, when pressed,
 does nothing.
+
 </li>
 
-<li markdown="1">Update the `onPressed` property.<br>
+<li>
+
+Update the `onPressed` property.<br>
 Change the `onPressed` property to call the (non-existent)
 method that will display the welcome screen.
 
@@ -343,9 +364,12 @@ Change `onPressed: null` to the following:
 ```dart
 onPressed: _showWelcomeScreen,
 ```
+
 </li>
 
-<li markdown="1">Add the `_showWelcomeScreen` method.<br>
+<li>
+
+Add the `_showWelcomeScreen` method.<br>
 Fix the error reported by the analyzer that `_showWelcomeScreen`
 is not defined. Directly above the `build()` method,
 add the following function:
@@ -356,9 +380,12 @@ void _showWelcomeScreen() {
   Navigator.of(context).pushNamed('/welcome');
 }
 ```
+
 </li>
 
-<li markdown="1">Add the `/welcome` route.<br>
+<li>
+
+Add the `/welcome` route.<br>
 Create the connection to show the new screen.
 In the `build()` method for `SignUpApp`,
 add the following route below `'/'`:
@@ -367,13 +394,17 @@ add the following route below `'/'`:
 ```dart
 '/welcome': (context) => const WelcomeScreen(),
 ```
+
 </li>
 
-<li markdown="1">Run the app.<br>
+<li>
+
+Run the app.<br>
 The **Sign up** button should now be enabled.
 Click it to bring up the welcome screen.
 Note how it animates in from the bottom.
 You get that behavior for free.
+
 </li>
 
 </ol>
@@ -417,8 +448,10 @@ This example does **not** validate the accuracy of the user input.
 That is something you can add later using form validation, if you like.
 :::
 
-<ol markdown="1">
-<li markdown="1">Add a method to update `_formProgress`.
+<ol>
+<li>
+
+Add a method to update `_formProgress`.
 In the `_SignUpFormState` class, add a new method called
 `_updateFormProgress()`:
 
@@ -449,8 +482,9 @@ the number of non-empty text fields.
 
 </li>
 
-<li markdown="1">Call `_updateFormProgress` when the form
-changes.<br>
+<li>
+
+Call `_updateFormProgress` when the form changes.<br>
 In the `build()` method of the `_SignUpFormState` class,
 add a callback to the `Form` widget's `onChanged` argument.
 Add the code below marked as NEW:
@@ -461,9 +495,12 @@ return Form(
   onChanged: _updateFormProgress, // NEW
   child: Column(
 ```
+
 </li>
 
-<li markdown="1">Update the `onPressed` property (again).<br>
+<li>
+
+Update the `onPressed` property (again).<br>
 In `step 1`, you modified the `onPressed` property for the
 **Sign up** button to display the welcome screen.
 Now, update that button to display the welcome
@@ -489,12 +526,16 @@ TextButton(
   child: const Text('Sign up'),
 ),
 ```
+
 </li>
 
-<li markdown="1">Run the app.<br>
+<li>
+
+Run the app.<br>
 The **Sign up** button is initially disabled,
 but becomes enabled when all three text fields contain
 (any) text.
+
 </li>
 </ol>
 
@@ -526,6 +567,7 @@ but becomes enabled when all three text fields contain
   ```dart
   methodName(() {...});
   ```
+  
   Where `methodName` is a named function that takes an anonymous
   callback function as an argument.
 * The Dart syntax in the last step that displays the
@@ -552,30 +594,38 @@ The following instructions for launching DevTools applies to any workflow,
 but there is a shortcut if you're using IntelliJ.
 See the tip at the end of this section for more information.
 
-<ol markdown="1">
-<li markdown="1">Run the app.<br>
+<ol>
+<li>
+
+Run the app.<br>
 If your app isn't currently running, launch it.
 Select the **Chrome** device from the pull down
 and launch it from your IDE or,
-from the command line, use `flutter run -d chrome`,
+from the command line, use `flutter run -d chrome`.
+
 </li>
 
-<li markdown="1">Get the web socket info for DevTools.<br>
+<li>
+
+Get the web socket info for DevTools.<br>
 At the command line, or in the IDE,
 you should see a message stating something like the following:
 
-<pre>
+```terminal
 Launching lib/main.dart on Chrome in debug mode...
 Building application for the web...                                11.7s
 Attempting to connect to browser instance..
 Debug service listening on <b>ws://127.0.0.1:54998/pJqWWxNv92s=</b>
-</pre>
+```
 
 Copy the address of the debug service, shown in bold.
 You will need that to launch DevTools.
+
 </li>
 
-<li markdown="1">Ensure that DevTools is installed.<br>
+<li>
+
+Ensure that DevTools is installed.<br>
 Do you have [DevTools installed][]?
 If you are using an IDE,
 make sure you have the Flutter and Dart plugins set up,
@@ -584,24 +634,31 @@ as described in the [VS Code][] and
 If you are working at the command line,
 launch the DevTools server as explained in the
 [DevTools command line][] page.
+
 </li>
 
-<li markdown="1">Connect to DevTools.<br>
+<li>
+
+Connect to DevTools.<br>
 When DevTools launches, you should see something
 like the following:
 
 ```console
 Serving DevTools at http://127.0.0.1:9100
 ```
+
 Go to this URL in a Chrome browser. You should see the DevTools
 launch screen. It should look like the following:
 
 {% indent %}
   ![Screenshot of the DevTools launch screen](/assets/images/docs/get-started/devtools-launch-screen.png){:width="100%"}
 {% endindent %}
+
 </li>
 
-<li markdown="1">Connect to running app.<br>
+<li>
+
+Connect to running app.<br>
 Under **Connect to a running site**,
 paste the ws location that you copied in step 2,
 and click Connect. You should now see Dart DevTools
@@ -612,6 +669,7 @@ running successfully in your Chrome browser:
 {% endindent %}
 
 Congratulations, you are now running Dart DevTools!
+
 </li>
 </ol>
 
@@ -626,8 +684,10 @@ you can open DevTools by going to
 {% endindent %}
 :::
 
-<ol markdown="1">
-<li markdown="1">Set a breakpoint.<br>
+<ol>
+<li>
+
+Set a breakpoint.<br>
 Now that you have DevTools running,
 select the **Debugger** tab in the blue bar along the top.
 The debugger pane appears and, in the lower left,
@@ -638,9 +698,12 @@ in the center pane.
 {% indent %}
   ![Screenshot of the DevTools debugger](/assets/images/docs/get-started/devtools-debugging.png){:width="100%"}
 {% endindent %}
+
 </li>
 
-<li markdown="1">Set a breakpoint.<br>
+<li>
+
+Set a breakpoint.<br>
 In the Dart code,
 scroll down to where `progress` is updated:
 
@@ -656,9 +719,12 @@ for (final controller in controllers) {
 Place a breakpoint on the line with the for loop by clicking to the
 left of the line number. The breakpoint now appears
 in the **Breakpoints** section to the left of the window.
+
 </li>
 
-<li markdown="1">Trigger the breakpoint.<br>
+<li>
+
+Trigger the breakpoint.<br>
 In the running app, click one of the text fields to gain focus.
 The app hits the breakpoint and pauses.
 In the DevTools screen, you can see on the left
@@ -666,15 +732,22 @@ the value of `progress`, which is 0. This is to be expected,
 since none of the fields are filled in.
 Step through the for loop to see
 the program execution.
+
 </li>
 
-<li markdown="1">Resume the app.<br>
+<li>
+
+Resume the app.<br>
 Resume the app by clicking the green **Resume**
 button in the DevTools window.
+
 </li>
 
-<li markdown="1">Delete the breakpoint.<br>
+<li>
+
+Delete the breakpoint.<br>
 Delete the breakpoint by clicking it again, and resume the app.
+
 </li>
 </ol>
 
@@ -702,8 +775,10 @@ area. The animation has the following behavior:
   way across the sign in area.
   Also, the **Sign up** button becomes enabled.
 
-<ol markdown="1">
-<li markdown="1">Add an `AnimatedProgressIndicator`.<br>
+<ol>
+<li>
+
+Add an `AnimatedProgressIndicator`.<br>
 At the bottom of the file, add this widget:
 
 <?code-excerpt "lib/step3.dart (AnimatedProgressIndicator)"?>
@@ -778,9 +853,12 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
 The [`didUpdateWidget`][] function updates
 the `AnimatedProgressIndicatorState` whenever
 `AnimatedProgressIndicator` changes.
+
 </li>
 
-<li markdown="1">Use the new `AnimatedProgressIndicator`.<br>
+<li>
+
+Use the new `AnimatedProgressIndicator`.<br>
 Then, replace the `LinearProgressIndicator` in the `Form`
 with this new `AnimatedProgressIndicator`:
 
@@ -796,12 +874,16 @@ child: Column(
 
 This widget uses an `AnimatedBuilder` to animate the
 progress indicator to the latest value.
+
 </li>
 
-<li markdown="1">Run the app.<br>
+<li>
+
+Run the app.<br>
 Type anything into the three fields to verify that
 the animation works, and that clicking the
 **Sign up** button brings up the **Welcome** screen.
+
 </li>
 </ol>
 

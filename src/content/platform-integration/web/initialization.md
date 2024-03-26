@@ -89,7 +89,7 @@ learn how to customize each stage of your app's initialization.
 
 The `loadEntrypoint` method accepts these parameters:
 
-<div class="table-wrapper" markdown="1">
+<div class="table-wrapper">
 
 | Name | Description | JS&nbsp;Type |
 |-|-|-|
@@ -102,7 +102,7 @@ The `loadEntrypoint` method accepts these parameters:
 
 The `serviceWorker` JavaScript object accepts the following properties:
 
-<div class="table-wrapper" markdown="1">
+<div class="table-wrapper">
 
 | Name | Description | JS&nbsp;Type |
 |-|-|-|
@@ -121,7 +121,7 @@ plain JavaScript object.
 
 You can add any of the following optional parameters:
 
-<div class="table-wrapper" markdown="1">
+<div class="table-wrapper">
 
 | Name | Description | Dart&nbsp;Type |
 |-|-|-|

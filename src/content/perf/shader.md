@@ -86,9 +86,11 @@ jank in later animations.
 Use the following instructions to collect
 and package the SkSL shaders:
 
-<ol markdown="1">
-<li markdown="1">Run the app with `--cache-sksl` turned on
-    to capture shaders in SkSL:
+<ol>
+<li>
+
+Run the app with `--cache-sksl` turned on
+to capture shaders in SkSL:
 
 ```console
 flutter run --profile --cache-sksl
@@ -108,7 +110,7 @@ It also purges the SkSL shaders so use it *only* on the first
 `--cache-sksl` run.
 </li>
 
-<li markdown="1">
+<li>
 
 Play with the app to trigger as many animations
 as needed; particularly those with compilation jank.
@@ -127,8 +129,10 @@ on actual hardware.
 
 </li>
 
-<li> Build the app with SkSL warm-up using the following,
-    as appropriate:
+<li> 
+
+Build the app with SkSL warm-up using the following,
+as appropriate:
 
 ```console
 flutter build ios --bundle-sksl-path flutter_01.sksl.json

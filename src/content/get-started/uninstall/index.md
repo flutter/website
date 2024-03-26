@@ -83,7 +83,7 @@ Select your development platform from the following tabs.
 {% endcapture %}
 {% endcase -%}
 
-<div class="tab-pane {%- if id == 'windows' %} active {% endif %}" id="{{id}}" role="tabpanel" aria-labelledby="{{id}}-tab" markdown="1">
+<div class="tab-pane {%- if id == 'windows' %} active {% endif %}" id="{{id}}" role="tabpanel" aria-labelledby="{{id}}-tab">
 
 This guide presumes that you installed Flutter in `{{path}}` on {{os}}.
 

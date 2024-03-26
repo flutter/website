@@ -41,17 +41,22 @@ as shown in the following steps.
 In the Dart widget file, make changes similar to those 
 shown in `native_view_example.dart`:
 
-<ol markdown="1">
-<li markdown="1">Add the following imports:
+<ol>
+<li>
+
+Add the following imports:
 
 <?code-excerpt "lib/platform_views/native_view_example_3.dart (import)"?>
 ```dart
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 ```
+
 </li>
 
-<li markdown="1">Implement a `build()` method:
+<li>
+
+Implement a `build()` method:
 
 <?code-excerpt "lib/platform_views/native_view_example_3.dart (iOSCompositionWidget)"?>
 ```dart
@@ -69,6 +74,7 @@ Widget build(BuildContext context) {
   );
 }
 ```
+
 </li>
 </ol>
 

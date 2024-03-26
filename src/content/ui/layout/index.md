@@ -408,7 +408,7 @@ space evenly between, before, and after each image.
   );
   ```
 </div>
-<div class="col-lg-4" markdown="1">
+<div class="col-lg-4">
   <img src='/assets/images/docs/ui/layout/row-spaceevenly-visual.png' class="mw-100" alt="Row with 3 evenly spaced images">
 
   **App source:** [row_column]({{examples}}/layout/row_column)
@@ -422,7 +422,8 @@ setting the main axis alignment to `spaceEvenly` divides the free vertical
 space evenly between, above, and below each image.
 
 <div class="row">
-<div class="col-lg-8" markdown="1">
+<div class="col-lg-8">
+
   <?code-excerpt "layout/row_column/lib/main.dart (Column)" replace="/Column/[!$&!]/g"?>
   ```dart
   [!Column!](
@@ -477,7 +478,7 @@ wrap each image with an `Expanded` widget.
   );
   ```
 </div>
-<div class="col-lg-4" markdown="1">
+<div class="col-lg-4">
   <img src='/assets/images/docs/ui/layout/row-expanded-2-visual.png' class="mw-100"
       alt="Row of 3 images that are too wide, but each is constrained to take only 1/3 of the space">
 
@@ -512,7 +513,7 @@ the flex factor of the middle image to 2:
   );
   ```
 </div>
-<div class="col-lg-4" markdown="1">
+<div class="col-lg-4">
   <img src='/assets/images/docs/ui/layout/row-expanded-visual.png' class="mw-100"
       alt="Row of 3 images with the middle image twice as wide as the others">
 
@@ -545,7 +546,7 @@ uses this property to pack the star icons together.
   )
   ```
 </div>
-<div class="col-lg-4" markdown="1">
+<div class="col-lg-4">
   <img src='/assets/images/docs/ui/layout/packed.png' class="border mw-100"
       alt="Row of 5 stars, packed together in the middle of the row">
 
@@ -781,7 +782,7 @@ entire layout into a `Container` and changing its background
 color or image.
 
 <div class="row">
-<div class="col-lg-6" markdown="1">
+<div class="col-lg-6">
   <h4>Summary (Container)</h4>
 
 * Add padding, margins, borders
@@ -891,7 +892,7 @@ it's the entry in the "calorie" column for the "avocado" row), use
 #### Examples (GridView)
 
 <div class="row">
-<div class="col-lg-6" markdown="1">
+<div class="col-lg-6">
   <img src='/assets/images/docs/ui/layout/gridview-extent.png' class="mw-100" alt="A 3-column grid of photos">
   {:.text-center}
 
@@ -900,7 +901,7 @@ it's the entry in the "calorie" column for the "avocado" row), use
 
   **App source:** [grid_and_list]({{examples}}/layout/grid_and_list)
 </div>
-<div class="col-lg-6" markdown="1">
+<div class="col-lg-6">
   <img src='/assets/images/docs/ui/layout/gridview-count-flutter-gallery.png' class="mw-100"
       alt="A 2 column grid with footers">
   {:.text-center}
@@ -950,7 +951,7 @@ its render box.
 #### Examples (ListView)
 
 <div class="row">
-<div class="col-lg-6" markdown="1">
+<div class="col-lg-6">
   <img src='/assets/images/docs/ui/layout/listview.png' class="border mw-100"
       alt="ListView containing movie theaters and restaurants">
   {:.text-center}
@@ -961,7 +962,7 @@ its render box.
 
   **App source:** [grid_and_list]({{examples}}/layout/grid_and_list)
 </div>
-<div class="col-lg-6" markdown="1">
+<div class="col-lg-6">
   <img src='/assets/images/docs/ui/layout/listview-color-gallery.png' class="border mw-100"
       alt="ListView containing shades of blue">
   {:.text-center}
@@ -1031,7 +1032,7 @@ or partially overlap the base widget.
 #### Examples (Stack)
 
 <div class="row">
-<div class="col-lg-7" markdown="1">
+<div class="col-lg-7">
   <img src='/assets/images/docs/ui/layout/stack.png' class="mw-100" width="200px" alt="Circular avatar image with a label">
   {:.text-center}
 
@@ -1043,7 +1044,7 @@ or partially overlap the base widget.
 
   **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
 </div>
-<div class="col-lg-5" markdown="1">
+<div class="col-lg-5">
   <img src='/assets/images/docs/ui/layout/stack-flutter-gallery.png' class="mw-100" alt="An image with a icon overlaid on top">
   {:.text-center}
 
@@ -1118,7 +1119,7 @@ Specifying an unsupported value disables the drop shadow entirely.
 #### Examples (Card)
 
 <div class="row">
-<div class="col-lg-6" markdown="1">
+<div class="col-lg-6">
   <img src='/assets/images/docs/ui/layout/card.png' class="mw-100" alt="Card containing 3 ListTiles">
   {:.text-center}
 
@@ -1128,7 +1129,7 @@ Specifying an unsupported value disables the drop shadow entirely.
 
   **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
 </div>
-<div class="col-lg-6" markdown="1">
+<div class="col-lg-6">
   <img src='/assets/images/docs/ui/layout/card-flutter-gallery.png' class="mw-100"
       alt="Tappable card containing an image and multiple forms of text">
   {:.text-center}
@@ -1204,7 +1205,7 @@ and trailing icons. `ListTile` is most commonly used in
 #### Examples (ListTile)
 
 <div class="row">
-<div class="col-lg-6" markdown="1">
+<div class="col-lg-6">
   <img src='/assets/images/docs/ui/layout/card.png' class="mw-100" alt="Card containing 3 ListTiles">
   {:.text-center}
 
@@ -1212,7 +1213,7 @@ and trailing icons. `ListTile` is most commonly used in
 
   **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
 </div>
-<div class="col-lg-6" markdown="1">
+<div class="col-lg-6">
   <img src='/assets/images/docs/ui/layout/listtile-flutter-gallery.png' class="border mw-100" height="200px"
       alt="4 ListTiles, each containing a leading avatar">
   {:.text-center}

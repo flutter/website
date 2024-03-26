@@ -108,7 +108,7 @@ This shows all files without filtering.
 
 </div>
 
-<div class="tab-pane" id="without-android-studio" role="tabpanel" aria-labelledby="without-android-studio-tab" markdown="1">
+<div class="tab-pane" id="without-android-studio" role="tabpanel" aria-labelledby="without-android-studio-tab">
 
 ### Integrate without Android Studio
 {:.no_toc}
@@ -244,7 +244,7 @@ existing app in Gradle. You can achieve this in two ways.
 {% comment %} Tab panes {% endcomment -%}
 <div class="tab-content">
 
-<div class="tab-pane active" id="android-archive" role="tabpanel" aria-labelledby="android-archive-tab" markdown="1">
+<div class="tab-pane active" id="android-archive" role="tabpanel" aria-labelledby="android-archive-tab">
 
 ### Depend on the Android Archive (AAR)
 {:.no_toc}
@@ -389,7 +389,7 @@ the `Build > Flutter > Build AAR` menu.
 
 </div>
 
-<div class="tab-pane" id="module-source" role="tabpanel" aria-labelledby="module-source-tab" markdown="1">
+<div class="tab-pane" id="module-source" role="tabpanel" aria-labelledby="module-source-tab">
 
 ### Depend on the module's source code
 {:.no_toc}

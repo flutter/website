@@ -117,7 +117,7 @@ navigate around your app.
 {% comment %} Tab panes {% endcomment -%}
 <div class="tab-content">
 
-<div class="tab-pane active" id="talkback" role="tabpanel" aria-labelledby="talkback-tab" markdown="1">
+<div class="tab-pane active" id="talkback" role="tabpanel" aria-labelledby="talkback-tab">
 
 1. On your device, open **Settings**.
 2. Select **Accessibility** and then **TalkBack**.
@@ -132,7 +132,7 @@ accessibility features, view the following video.
 
 </div>
 
-<div class="tab-pane" id="voiceover" role="tabpanel" aria-labelledby="voiceover-tab" markdown="1">
+<div class="tab-pane" id="voiceover" role="tabpanel" aria-labelledby="voiceover-tab">
 
 1. On your device, open **Settings > Accessibility > VoiceOver**
 2. Turn the VoiceOver setting on or off
@@ -145,7 +145,7 @@ accessibility features, view the following video.
 
 </div>
 
-<div class="tab-pane" id="browsers" role="tabpanel" aria-labelledby="browsers-tab" markdown="1">
+<div class="tab-pane" id="browsers" role="tabpanel" aria-labelledby="browsers-tab">
 
 For web, the following screen readers are currently supported:
 
@@ -176,7 +176,7 @@ void main() {
 
 </div>
 
-<div class="tab-pane" id="desktop" role="tabpanel" aria-labelledby="desktop-tab" markdown="1">
+<div class="tab-pane" id="desktop" role="tabpanel" aria-labelledby="desktop-tab">
 
 Windows comes with a screen reader called Narrator
 but some developers recommend using the more popular

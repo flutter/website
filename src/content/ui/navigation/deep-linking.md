@@ -65,7 +65,7 @@ it will continue to work until you opt in to this behavior by adding
 The behavior varies slightly based on the platform and whether the app is
 launched and running.
 
-<div class="table-wrapper" markdown="1">
+<div class="table-wrapper">
 
 | Platform / Scenario      | Using Navigator                                                     | Using Router                                                                                                                                                                                               |
 |--------------------------|---------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

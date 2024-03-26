@@ -552,7 +552,7 @@ with a rectangular clip (that remains a constant size throughout).
 
 To do this, it builds the following widget tree:
 
-<div class="text-center mb-4" markdown="1">
+<div class="text-center mb-4">
 
   ![RadialExpansion widget tree](/assets/images/docs/ui/animations/radial-expansion-class.png)
 

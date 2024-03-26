@@ -3,7 +3,7 @@
 
 <div id="{{id}}-pub" class="tab-pane
   {%- if id == 'windows' %} active {% endif %}"
-  role="tabpanel" aria-labelledby="{{id}}-tab" markdown="1">
+  role="tabpanel" aria-labelledby="{{id}}-tab">
 
 1. Configure a proxy.
    To configure a proxy, check out the

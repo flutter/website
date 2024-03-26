@@ -386,34 +386,42 @@ For example:
   <string name="boxComponentName">boxComponent</string>
 </resources>
 ```
+
 </li>
 
-<li markdown="1">**`<projectDir>/android/<componentName>`**<br>
-    An Android dynamic feature module for
-    each deferred component exists and contains a `build.gradle`
-    and `src/main/AndroidManifest.xml` file.
-    This only checks for existence and does not validate
-    the contents of these files. If a file does not exist,
-    it generates a default recommended one.
+<li>
+
+**`<projectDir>/android/<componentName>`**<br>
+An Android dynamic feature module for
+each deferred component exists and contains a `build.gradle`
+and `src/main/AndroidManifest.xml` file.
+This only checks for existence and does not validate
+the contents of these files. If a file does not exist,
+it generates a default recommended one.
+
 </li>
 
-<li markdown="1">**`<projectDir>/android/app/src/main/res/values/AndroidManifest.xml`**<br>
-    Contains a meta-data entry that encodes
-    the mapping between loading units and component name the
-    loading unit is associated with. This mapping is used by the
-    embedder to convert Dart's internal loading unit id
-    to the name of a deferred component to install. For example:
-```js
+<li>
+
+**`<projectDir>/android/app/src/main/res/values/AndroidManifest.xml`**<br>
+Contains a meta-data entry that encodes
+the mapping between loading units and component name the
+loading unit is associated with. This mapping is used by the
+embedder to convert Dart's internal loading unit id
+to the name of a deferred component to install. For example:
+
+```xml
+...
+<application
+    android:label="MyApp"
+    android:name="io.flutter.app.FlutterPlayStoreSplitApplication"
+    android:icon="@mipmap/ic_launcher">
     ...
-    <application
-        android:label="MyApp"
-        android:name="io.flutter.app.FlutterPlayStoreSplitApplication"
-        android:icon="@mipmap/ic_launcher">
-        ...
-        <meta-data android:name="io.flutter.embedding.engine.deferredcomponents.DeferredComponentManager.loadingUnitMapping" android:value="2:boxComponent"/>
-    </application>
-    ...
+    <meta-data android:name="io.flutter.embedding.engine.deferredcomponents.DeferredComponentManager.loadingUnitMapping" android:value="2:boxComponent"/>
+</application>
+...
 ```
+
 </li>
 </ul>
 
@@ -421,28 +429,34 @@ The `gen_snapshot` validator won't run until the prebuild
 validator passes.
 </li>
 
-<li markdown="1">For each of these checks,
-    the tool produces the modified or new files
-    needed to pass the check.
-    These files are placed in the
-    `<projectDir>/build/android_deferred_components_setup_files` directory.
-    It is recommended that the changes be applied by
-    copying and overwriting the same files in the
-    project's `android` directory. Before overwriting,
-    the current project state should be committed to
-    source control and the recommended changes should be
-    reviewed to be appropriate. The tool won't make any
-    changes to your `android/` directory automatically.
+<li>
+
+or each of these checks,
+the tool produces the modified or new files
+needed to pass the check.
+These files are placed in the
+`<projectDir>/build/android_deferred_components_setup_files` directory.
+It is recommended that the changes be applied by
+copying and overwriting the same files in the
+project's `android` directory. Before overwriting,
+the current project state should be committed to
+source control and the recommended changes should be
+reviewed to be appropriate. The tool won't make any
+changes to your `android/` directory automatically.
+
 </li>
 
-<li markdown="1"><a id="step-3.3"></a>Once the available
-    loading units are generated and logged in
-    `<projectDirectory>/deferred_components_loading_units.yaml`,
-    it is possible to fully configure the pubspec's
-    `deferred-components` section so that the loading units
-    are assigned to deferred components as desired.
-    To continue with the box example, the generated
-    `deferred_components_loading_units.yaml` file would contain:
+<li><a id="step-3.3"></a>
+
+Once the available
+loading units are generated and logged in
+`<projectDirectory>/deferred_components_loading_units.yaml`,
+it is possible to fully configure the pubspec's
+`deferred-components` section so that the loading units
+are assigned to deferred components as desired.
+To continue with the box example, the generated
+`deferred_components_loading_units.yaml` file would contain:
+
 ```yaml
 loading-units:
   - id: 2
@@ -468,35 +482,54 @@ flutter:
         - package:MyAppName/box.Dart
   ...
 ```
+
 To assign a loading unit to a deferred component,
 add any Dart lib in the loading unit into the
 libraries section of the feature module.
 Keep the following guidelines in mind:
 
-<ul markdown="1">
-<li markdown="1">Loading units should not be included
-    in more than one component.
+<ul>
+<li>
+
+Loading units should not be included
+in more than one component.
+
 </li>
-<li markdown="1">Including one Dart library from a
-    loading unit indicates that the entire loading
-    unit is assigned to the deferred component.
+<li>
+
+Including one Dart library from a
+loading unit indicates that the entire loading
+unit is assigned to the deferred component.
+
 </li>
-<li markdown="1">All loading units not assigned to
-    a deferred component are included in the base component,
-    which always exists implicitly.
+<li>
+
+All loading units not assigned to
+a deferred component are included in the base component,
+which always exists implicitly.
+
 </li>
-<li markdown="1">Loading units assigned to the same
-    deferred component are downloaded, installed,
-    and shipped together.
+<li>
+
+Loading units assigned to the same
+deferred component are downloaded, installed,
+and shipped together.
+
 </li>
-<li markdown="1">The base component is implicit and
-    need not be defined in the pubspec.
+<li>
+
+The base component is implicit and
+need not be defined in the pubspec.
+
 </li>
 </ul>
 </li>
 
-<li markdown="1">Assets can also be included by adding
-    an assets section in the deferred component configuration:
+<li>
+
+Assets can also be included by adding
+an assets section in the deferred component configuration:
+
 ```yaml
   deferred-components:
     - name: boxComponent
@@ -526,24 +559,31 @@ as long as they are installed and loaded when they
 are first referenced, though typically,
 assets and the Dart code that uses those assets
 are best packed in the same component.
+
 </li>
 
-<li markdown="1">Manually add all deferred components
-    that you defined in `pubspec.yaml` into the
-    `android/settings.gradle` file as includes.
-    For example, if there are three deferred components
-    defined in the pubspec named, `boxComponent`, `circleComponent`,
-    and `assetComponent`, ensure that `android/settings.gradle`
-    contains the following:
+<li>
+
+Manually add all deferred components
+that you defined in `pubspec.yaml` into the
+`android/settings.gradle` file as includes.
+For example, if there are three deferred components
+defined in the pubspec named, `boxComponent`, `circleComponent`,
+and `assetComponent`, ensure that `android/settings.gradle`
+contains the following:
+
 ```gradle
 include ':app', ':boxComponent', ':circleComponent', ':assetComponent'
 ...
 ```
+
 </li>
 
-<li markdown="1">Repeat steps [3.1][] through 3.6 (this step)
-    until all validator recommendations are handled and the tool
-    runs without further recommendations.
+<li>
+
+Repeat steps [3.1][] through 3.6 (this step)
+until all validator recommendations are handled and the tool
+runs without further recommendations.
 
 When successful, this command outputs an `app-release.aab`
 file in `build/app/outputs/bundle/release`.

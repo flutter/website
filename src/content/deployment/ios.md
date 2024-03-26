@@ -366,7 +366,7 @@ or a new private key which automatically generates a new certificate. The certif
 will be created from the private key if it doesn't exist in App Store Connect.
 
 </li>
-<li markdown="1">
+<li>
 
 Now add the fetched certificates to your keychain:
 
@@ -375,7 +375,7 @@ keychain add-certificates
 ```
 
 </li>
-<li markdown="1">
+<li>
 
 Update the Xcode project settings to use fetched code signing profiles:
 
@@ -384,7 +384,7 @@ xcode-project use-profiles
 ```
 
 </li>
-<li markdown="1">
+<li>
 
 Install Flutter dependencies:
 
@@ -393,7 +393,7 @@ flutter packages pub get
 ```
 
 </li>
-<li markdown="1">
+<li>
 
 Install CocoaPods dependencies:
 
@@ -402,7 +402,7 @@ find . -name "Podfile" -execdir pod install \;
 ```
 
 </li>
-<li markdown="1">
+<li>
 
 Build the Flutter the iOS project:
 
@@ -414,7 +414,7 @@ flutter build ipa --release \
 Note that `export_options.plist` is the output of the `xcode-project use-profiles` command.
 
 </li>
-<li markdown="1">
+<li>
 
 Publish the app to App Store Connect:
 
@@ -424,7 +424,7 @@ app-store-connect publish \
 ```
 
 </li>
-<li markdown="1">
+<li>
 
 As mentioned earlier, don't forget to set your login keychain
 as the default to avoid authentication issues
