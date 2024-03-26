@@ -1,9 +1,10 @@
 ---
 title: Introduce new `ColorScheme` roles for Material 3
 description: >-
-  `ColorScheme` introduces new color roles to better align with Material Design
-  3. `ColorScheme.fromSeed` method is also updated to support the newly added
-  colors.
+  'ColorScheme' introduces new color roles to
+  better align with Material Design 3.
+  The 'ColorScheme.fromSeed' method is also updated to
+  support the newly added colors.
 ---
 
 ## Summary
