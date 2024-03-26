@@ -21,6 +21,7 @@ You can change your app source code, run the hot reload command in
    |                    **Original**                   |                       **New**                      |
    |:-------------------------------------------------:|:--------------------------------------------------:|
    | `'You have pushed the button this many times:' ,` | `'You have clicked the button this many times:' ,` |
+   
    {:.table.table-striped}
 
    :::important

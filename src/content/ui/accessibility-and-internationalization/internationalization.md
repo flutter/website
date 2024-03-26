@@ -588,6 +588,7 @@ following `NumberFormat` constructors:
 | `percentPattern`         | "120,000,000%"     |
 | `scientificPattern`      | "1E6"              |
 | `simpleCurrency`*        | "$1,200,000"       |
+
 {:.table.table-striped}
 
 </div>
@@ -848,6 +849,7 @@ at the command line or refer to the following table:
 | `[no-]format`                       | When specified, the `dart format` command is run after generating the localization files. |
 | `use-escaping`                      | Specifies whether to enable the use of single quotes as escaping syntax. |
 | `[no-]suppress-warnings`            | When specified, all warnings are suppressed. |
+
 {:.table.table-striped}
 
 </div>

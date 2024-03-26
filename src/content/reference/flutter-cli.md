@@ -71,6 +71,7 @@ The following table shows which commands you can use with the `flutter` tool:
 | symbolize | `flutter symbolize --input=<STACK_TRACK_FILE>` | Symbolize a stack trace from the AOT compiled flutter application. |
 | test    | `flutter test [<DIRECTORY|DART_FILE>]` | Runs tests in this package.<br>Use instead of [`dart test`][`dart test`]. |
 | upgrade | `flutter upgrade` | Upgrade your copy of Flutter. |
+
 {:.table .table-striped .nowrap}
 
 For additional help on any of the commands, enter `flutter help <command>`

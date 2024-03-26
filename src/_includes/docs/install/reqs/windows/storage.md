@@ -7,4 +7,5 @@
 {% else -%}
 11.0 | 60.0 |
 {% endif -%}
+
 {:.table.table-striped}

@@ -33,6 +33,7 @@ seen below.
 | **Maintenance cost** | Low    | Higher | Highest     |
 | **Dependencies**     | Few    | More   | Most        |
 | **Execution speed**  | Quick  | Quick  | Slow        |
+
 {:.table.table-striped}
 
 ## Unit tests

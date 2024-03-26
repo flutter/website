@@ -202,6 +202,7 @@ the generic `ButtonTheme`.
 | `FlatButton`    | `ButtonTheme` | `TextButton`     | `TextButtonTheme`     |
 | `RaisedButton`  | `ButtonTheme` | `ElevatedButton` | `ElevatedButtonTheme` |
 | `OutlineButton` | `ButtonTheme` | `OutlinedButton` | `OutlinedButtonTheme` |
+
 {:.table .table-striped .nowrap}
 
 </div>

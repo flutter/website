@@ -69,6 +69,7 @@ should provide details.
 | Expose quick actions on the home screen        | `UIApplicationShortcutItem`                                                           | [`quick_actions`][]          |
 | Index items in Spotlight search                | `CoreSpotlight`                                                                       | [`flutter_core_spotlight`][] |
 | Configure, update and communicate with Widgets | `WidgetKit`                                                                           | [`home_widget`][]            |
+
 {:.table.table-striped.nowrap}
 
 [^1]: Supports both Google Play Store on Android and Apple App Store on iOS.

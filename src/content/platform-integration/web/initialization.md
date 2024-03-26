@@ -96,6 +96,7 @@ The `loadEntrypoint` method accepts these parameters:
 |`entrypointUrl`| The URL of your Flutter app's entrypoint. Defaults to `"main.dart.js"`. |`String`|
 |`onEntrypointLoaded`| The function called when the engine is ready to be initialized. Receives an `engineInitializer` object as its only parameter. |`Function`|
 |`serviceWorker`| The configuration for the `flutter_service_worker.js` loader. (If not set, the service worker won't be used.) |`Object`|
+
 {:.table}
 
 </div>
@@ -109,6 +110,7 @@ The `serviceWorker` JavaScript object accepts the following properties:
 |`serviceWorkerUrl`| The URL of the Service Worker JS file. The `serviceWorkerVersion` is appended to the URL. Defaults to `"flutter_service_worker.js?v="` |`String`|
 |`serviceWorkerVersion`| Pass *the `serviceWorkerVersion` variable* set by the build process in your **`index.html`** file. |`String`|
 |`timeoutMillis`| The timeout value for the service worker load. Defaults to `4000`. |`Number`|
+
 {:.table}
 
 </div>
@@ -133,6 +135,7 @@ You can add any of the following optional parameters:
 |`debugShowSemanticNodes`| If `true`, Flutter visibly renders the semantics tree onscreen (for debugging).  |`bool`|
 |`hostElement`| HTML Element into which Flutter renders the app. When not set, Flutter web takes over the whole page. |`HtmlElement`|
 |`renderer`| Specifies the [web renderer][web-renderers] for the current Flutter application, either `"canvaskit"` or `"html"`. |`String`|
+
 {:.table}
 
 </div>

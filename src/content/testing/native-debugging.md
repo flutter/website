@@ -158,6 +158,7 @@ The following screenshot and table explain the purpose of each tool.
 |                               | Output              | Response that the Flutter app returns when building an app                        |
 |                               | Debug Console       | Logs or error messages that the Flutter app generates while debugging             |
 |                               | Terminal            | System shell prompt contained in VS Code                                          |
+
 {:.table.table-striped}
 
 </div>
@@ -185,6 +186,7 @@ You can step in, out, and over Dart statements, hot reload, or resume the app.
 | {% include_relative vscode-flutter-bar/_hot-restart.md %} | Hot Restart           | <kbd>Shift</kbd> + <kbd>Special</kbd> + <kbd>F5</kbd> |
 | {% include_relative vscode-flutter-bar/_stop.md %}        | Stop                  | <kbd>Shift</kbd> + <kbd>F5</kbd>                     |
 | {% include_relative vscode-flutter-bar/_inspector.md %}   | Open Widget Inspector |                                                       |
+
 {:.table.table-striped}
 
 </div>

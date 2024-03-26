@@ -27,6 +27,7 @@ Based on these tiers, Flutter supports deploying to the following platforms.
 {%- for platform in opsys %}
   | {{platform.platform}} | {{platform.chipsets}} | {{platform.supported}} | {{platform.besteffort}} | {{platform.unsupported}} |
 {%- endfor %}
+
 {:.table.table-striped}
 
 </div>
