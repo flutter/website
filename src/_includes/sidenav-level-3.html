@@ -1,6 +1,6 @@
-{% for entry in include.children -%}
+{% for entry in children -%}
 
-{% if include.active_entries and forloop.index == include.active_entries[2] -%}
+{% if active_entries and forloop.index == active_entries[2] -%}
   {% assign isActive = true -%}
   {% assign class = 'nav-link active' -%}
 {% else -%}
@@ -9,11 +9,8 @@
 {% endif -%}
 
 {% if entry == 'divider' -%}
-
   <div class="dropdown-divider"></div>
-
 {%- elsif entry.children -%}
-
   {% assign class = class | append: ' collapsible' -%}
 
   {% if isActive or entry.expanded -%}
@@ -25,24 +22,21 @@
     {% assign show = '' -%}
   {% endif -%}
 
-  {% assign id = include.parent_id | append: '-' | append: forloop.index -%}
+  {% assign id = parent_id | append: '-' | append: forloop.index -%}
   {% assign href = entry.permalink -%}
   {% unless href -%}
     {% assign href = '#' | append: id -%}
   {% endunless -%}
 
   <li class="nav-item">
-    <a class="{{class}}"
-      data-toggle="collapse" data-target="#{{id}}"
+    <a class="{{class}}" data-toggle="collapse" data-target="#{{id}}"
       href="{{href}}" role="button"
-      aria-expanded="{{expanded}}" aria-controls="{{id}}"
-    >{{entry.title}}
-    </a>
+      aria-expanded="{{expanded}}" aria-controls="{{id}}">{{entry.title}}</a>
     <ul class="nav flex-column flex-nowrap collapse {{show}}" id="{{id}}">
       {% if isActive -%}
-        {% include sidenav-level-4.html parent_id=id children=entry.children active_entries=active_entries -%}
+        {% render 'sidenav-level-4.html', parent_id:id, children:entry.children, active_entries:active_entries -%}
       {% else -%}
-        {% include sidenav-level-4.html parent_id=id children=entry.children -%}
+        {% render 'sidenav-level-4.html', parent_id:id, children:entry.children -%}
       {% endif -%}
     </ul>
   </li>
@@ -55,8 +49,9 @@
 
   <li class="nav-item">
     <a class="{{class}}" href="{{entry.permalink}}"
-       {%- if isExternal %} target="_blank" rel="noopener" {%- endif -%}
-    >{{entry.title}}</a>
+       {%- if isExternal %} target="_blank" rel="noopener" {%- endif -%}>
+      {{entry.title}}
+    </a>
   </li>
 
 {% endif -%}

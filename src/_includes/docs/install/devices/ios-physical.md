@@ -28,7 +28,7 @@ complete the first step and move on to the next section.
 
 [Apple ID]: https://support.apple.com/en-us/HT204316
 
-##### Attach your physical iOS device to your Mac {#attach}
+##### Attach your physical iOS device to your Mac {:#attach}
 
 Configure your physical iOS device to connect to Xcode.
 
@@ -134,7 +134,7 @@ Follow the Xcode signing flow to provision your project.
 
 ![Check the app's Bundle ID][]{:.mw-100}
 
-##### Enable trust of your Mac and iOS device {#trust}
+##### Enable trust of your Mac and iOS device {:#trust}
 
 When you attach your physical iOS device for the first time,
 enable trust for both your Mac and the Development Certificate
@@ -163,7 +163,7 @@ Enabling certificates varies in different versions of iOS.
 {% comment %} Tab panes {% endcomment -%}
 <div class="tab-content">
 
-<div class="tab-pane" id="ios14" role="tabpanel" aria-labelledby="ios14-tab" markdown="1">
+<div class="tab-pane" id="ios14" role="tabpanel" aria-labelledby="ios14-tab">
 
 1. Open the **Settings** app on the iOS device.
 
@@ -174,7 +174,7 @@ Enabling certificates varies in different versions of iOS.
 
 </div>
 
-<div class="tab-pane" id="ios15" role="tabpanel" aria-labelledby="ios15-tab" markdown="1">
+<div class="tab-pane" id="ios15" role="tabpanel" aria-labelledby="ios15-tab">
 
 1. Open the **Settings** app on the iOS device.
 
@@ -185,7 +185,7 @@ Enabling certificates varies in different versions of iOS.
 
 </div>
 
-<div class="tab-pane active" id="ios16" role="tabpanel" aria-labelledby="ios16-tab" markdown="1">
+<div class="tab-pane active" id="ios16" role="tabpanel" aria-labelledby="ios16-tab">
 
 1. Open the **Settings** app on the iOS device.
 
@@ -236,16 +236,13 @@ To extend the timeout, change the value to an integer greater than 10.
 $ flutter run --device-timeout 60
 ```
 
-{{site.alert.secondary}}
-  **Learn more about wireless debugging**
-
-  * To learn more, check out
-    [Apple's documentation on pairing a wireless device with Xcode][].
-  * To troubleshoot, check out [Apple's Developer Forums][].
-  * To learn how to configure wireless debugging with `flutter attach`,
-    check out [Debugging your add-to-app module][].
-
-{{site.alert.end}}
+:::note Learn more about wireless debugging
+* To learn more, check out
+  [Apple's documentation on pairing a wireless device with Xcode][].
+* To troubleshoot, check out [Apple's Developer Forums][].
+* To learn how to configure wireless debugging with `flutter attach`,
+  check out [Debugging your add-to-app module][].
+:::
 
 [Check the app's Bundle ID]: /assets/images/docs/setup/xcode-unique-bundle-id.png
 [Choosing a Membership]: {{site.apple-dev}}/support/compare-memberships

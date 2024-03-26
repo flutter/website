@@ -1,0 +1,17 @@
+---
+layout: none
+permalink: robots.txt
+---
+
+{%- if isProduction == true -%}
+User-agent: *
+Disallow:
+
+Sitemap: https://docs.flutter.dev/sitemap.xml
+{%- else -%}
+User-agent: linkcheck
+Disallow:
+
+User-agent: *
+Disallow: /
+{% endif -%}

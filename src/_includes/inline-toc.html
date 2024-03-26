@@ -1,28 +1,40 @@
-{% comment %}
-  Include parameters:
+{% assign itemCount = tocContents.count %}
+{% if itemCount > 1 %}
+{% if itemCount > 10 %}
+{% assign collapsible = true %}
+{% endif -%}
 
-  - toc_content: The HTML toc content
-  - class: CSS classes to add to toc element.
-  - header: header text, default 'Contents'
-
-  If you don't want the back-to-top button style `site-toc__back-to-top` as `display: none`.
-{% endcomment -%}
-
-{% assign toc = include.toc_content -%}
-
-{% comment %}
-  A TOC without <li> elements is empty. Only generate a TOC <div> for non-empty TOCs.
-{% endcomment -%}
-
-{% if toc contains "<li" -%}
-  {% assign toc = toc | replace: 'id="toc" ', '' %}
-  <div
-    id="site-toc--inline"
-    class="site-toc site-toc--inline {{include.class}}"
-  >
-    <header class="site-toc__title">
-      {{include.header | default: 'Contents'}}
-    </header>
-    {{ toc }}
-  </div>
+{% if collapsible %}
+{% assign topStyle = ' toc-collapsible toc-collapsed' %}
+{% else %}
+{% assign topStyle = '' %}
+{% endif -%}
+<div id="site-toc--inline" class="site-toc{{topStyle}}">
+  <header class="site-toc__title">
+    Contents
+    {% if collapsible %}
+    <span class="site-toc--inline__toggle toc-toggle-down"><i class="material-icons">keyboard_arrow_down</i></span>
+    <span class="site-toc--inline__toggle toc-toggle-up"><i class="material-icons">keyboard_arrow_up</i></span>
+    {% endif -%}
+  </header>
+  <ul class="section-nav">
+    {% for topLevel in tocContents.toc %}
+    <li class="toc-entry toc-h2">
+      <a href="{{topLevel.id}}">{{topLevel.text}}</a>
+      {% if topLevel.children and topLevel.children.size > 0 %}
+      <ul>
+        {% for child in topLevel.children %}
+        <li class="toc-entry toc-h3">
+          <a href="{{child.id}}">{{child.text}}</a>
+        </li>
+        {% endfor -%}
+      </ul>
+      {% endif -%}
+    </li>
+    {% endfor -%}
+  </ul>
+  {% if collapsible %}
+  <span class="site-toc--inline__toggle toc-toggle-more-items"><i class="material-icons">more_horiz</i></span>
+  {% endif -%}
+</div>
 {% endif -%}

@@ -1,0 +1,32 @@
+---
+layout: none
+sitemap: false
+permalink: sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+{% assign pages = collections.all | sort: 'url' %}
+
+{%- for page in pages -%}
+
+{%- if page.url and page.data.sitemap != false and page.data.title -%}
+<url>
+  <loc>{{ site.url }}{{ page.url | regex_replace: '/index(\.html)?$|\.html$|/$' }}</loc>
+  <lastmod>
+    {%- if page.data.sitemap.lastmod -%}
+      {{ page.data.sitemap.lastmod | date: "%Y-%m-%d" }}
+    {%- else -%}
+      {% assign date = site.now | default: page.date | default: site.time -%}
+      {{ date | toISOString }}
+    {%- endif -%}
+  </lastmod>
+  <changefreq>{{ page.data.sitemap.changefreq | default: 'monthly' }}</changefreq>
+  {% if page.data.sitemap.priority -%}
+  <priority>{{ page.data.sitemap.priority }}</priority>
+  {%- endif -%}
+</url>
+{% endif -%}
+
+{%- endfor -%}
+</urlset>
