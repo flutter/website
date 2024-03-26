@@ -126,7 +126,7 @@ $ flutter precache
 
 For additional download options, check out `flutter help precache`.
 
-{% include_relative _analytics.md %}
+{% include docs/install/deprecated/analytics.md %}
 
 [Flutter repo]: {{site.repo.flutter}}
 [SDK archive]: /release/archive

@@ -175,17 +175,17 @@ You can step in, out, and over Dart statements, hot reload, or resume the app.
 
 <div class="table-wrapper">
 
-| Icon                                                      | Action                | Default Keyboard Shortcut                             |
-|-----------------------------------------------------------|-----------------------|-------------------------------------------------------|
-| {% include_relative vscode-flutter-bar/_play.md %}        | Start or Resume       | <kbd>F5</kbd>                                         |
-| {% include_relative vscode-flutter-bar/_pause.md %}       | Pause                 | <kbd>F6</kbd>                                         |
-| {% include_relative vscode-flutter-bar/_step-over.md %}   | Step Over             | <kbd>F10</kbd>                                        |
-| {% include_relative vscode-flutter-bar/_step-into.md %}   | Step Into             | <kbd>F11</kbd>                                        |
-| {% include_relative vscode-flutter-bar/_step-out.md %}    | Step Out              | <kbd>Shift</kbd> + <kbd>F11</kbd>                     |
-| {% include_relative vscode-flutter-bar/_hot-reload.md %}  | Hot Reload            | <kbd>Ctrl</kbd> + <kbd>F5</kbd>                       |
-| {% include_relative vscode-flutter-bar/_hot-restart.md %} | Hot Restart           | <kbd>Shift</kbd> + <kbd>Special</kbd> + <kbd>F5</kbd> |
-| {% include_relative vscode-flutter-bar/_stop.md %}        | Stop                  | <kbd>Shift</kbd> + <kbd>F5</kbd>                     |
-| {% include_relative vscode-flutter-bar/_inspector.md %}   | Open Widget Inspector |                                                       |
+| Icon                                                 | Action                | Default Keyboard Shortcut                             |
+|------------------------------------------------------|-----------------------|-------------------------------------------------------|
+| {% include docs/vscode-flutter-bar/play.md %}        | Start or Resume       | <kbd>F5</kbd>                                         |
+| {% include docs/vscode-flutter-bar/pause.md %}       | Pause                 | <kbd>F6</kbd>                                         |
+| {% include docs/vscode-flutter-bar/step-over.md %}   | Step Over             | <kbd>F10</kbd>                                        |
+| {% include docs/vscode-flutter-bar/step-into.md %}   | Step Into             | <kbd>F11</kbd>                                        |
+| {% include docs/vscode-flutter-bar/step-out.md %}    | Step Out              | <kbd>Shift</kbd> + <kbd>F11</kbd>                     |
+| {% include docs/vscode-flutter-bar/hot-reload.md %}  | Hot Reload            | <kbd>Ctrl</kbd> + <kbd>F5</kbd>                       |
+| {% include docs/vscode-flutter-bar/hot-restart.md %} | Hot Restart           | <kbd>Shift</kbd> + <kbd>Special</kbd> + <kbd>F5</kbd> |
+| {% include docs/vscode-flutter-bar/stop.md %}        | Stop                  | <kbd>Shift</kbd> + <kbd>F5</kbd>                      |
+| {% include docs/vscode-flutter-bar/inspector.md %}   | Open Widget Inspector |                                                       |
 
 {:.table.table-striped}
 
@@ -364,11 +364,11 @@ test Flutter app. This update adds native code to debug.
       ```
    1. In Windows, run this command in the command prompt.
 
-      ```posh
+      ```powershell
       Get-ChildItem C:\dev\example\ -Rescurse | Where-Object {$_.LastWriteTime -gt (Get-Date).AddDays(-1)}
       ```
 
-      ```posh
+      ```powershell
       C:\dev\example\ios\Flutter\
 
 

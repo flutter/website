@@ -287,7 +287,7 @@ of Flutter, use a release build.
 
 #### Initial route with a cached engine
 
-{% include_relative _initial-route-cached-engine.md %}
+{% include docs/add-to-app/android-initial-route-cached-engine.md %}
 
 ## Add a translucent Flutter screen
 

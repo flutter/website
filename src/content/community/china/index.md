@@ -48,7 +48,7 @@ To set your machine to use a mirror site:
 {% comment %} Tab panes {% endcomment -%}
 <div class="tab-content">
 {% for os in page.os-list %}
-{% include_relative _os-settings.md ref-os=os sdk=flutter-sdk %}
+{% include docs/community/china/os-settings.md ref-os=os sdk=flutter-sdk %}
 {% endfor -%}
 </div>
 
@@ -78,7 +78,7 @@ from Google's archive to CFUG's mirror.
 {% comment %} Tab panes {% endcomment -%}
 <div class="tab-content">
 {% for os in page.os-list %}
-{% include_relative _download-urls.md ref-os=os filepath=sdk-path %}
+{% include docs/community/china/download-urls.md ref-os=os filepath=sdk-path %}
 {% endfor -%}
 </div>
 
@@ -109,10 +109,10 @@ To enable access to `pub.dev`:
 
 {% comment %} Tab panes {% endcomment -%}
 <div class="tab-content">
-{% include_relative _pub-settings.md os="Windows" filepath=path %}
-{% include_relative _pub-settings.md os="macOS" filepath=path %}
-{% include_relative _pub-settings.md os="Linux" filepath=path %}
-{% include_relative _pub-settings.md os="ChromeOS" filepath=path %}
+{% include docs/community/china/pub-settings.md os="Windows" filepath=path %}
+{% include docs/community/china/pub-settings.md os="macOS" filepath=path %}
+{% include docs/community/china/pub-settings.md os="Linux" filepath=path %}
+{% include docs/community/china/pub-settings.md os="ChromeOS" filepath=path %}
 </div>
 
 To learn more about publishing packages, check out the

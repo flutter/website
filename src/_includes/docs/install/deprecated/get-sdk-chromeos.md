@@ -56,6 +56,6 @@ process.
 Once you have installed any missing dependencies, run the `flutter doctor`
 command again to verify that you've set everything up correctly.
 
-{% include_relative _analytics.md %}
+{% include docs/install/deprecated/analytics.md %}
 
 [Flutter repo]: {{site.repo.flutter}}

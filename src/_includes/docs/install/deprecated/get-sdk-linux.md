@@ -112,7 +112,7 @@ and finish the setup process.
 After completing the outlined tasks,
 run the `flutter doctor` command again.
 
-{% include_relative _analytics.md %}
+{% include docs/install/deprecated/analytics.md %}
 
 [Flutter repo]: {{site.repo.flutter}}
 [install Flutter from the Snap Store]: https://snapcraft.io/flutter

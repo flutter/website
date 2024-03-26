@@ -2,7 +2,7 @@
 
 {% include docs/china-notice.md %}
 
-{% include_relative_help-link.md location='win-get-sdk' %}
+{% include docs/install/deprecated/help-link.md location='win-get-sdk' %}
 
  1. Download the following installation bundle to get the latest
     {{site.sdk.channel}} release of the Flutter SDK:
@@ -30,7 +30,7 @@ You are now ready to run Flutter commands in the Flutter Console.
 
 ### Update your path
 
-{% include_relative_help-link.md location='win-path' section='#unable-to-find-the-flutter-command' %}
+{% include docs/install/deprecated/help-link.md location='win-path' section='#unable-to-find-the-flutter-command' %}
 
 If you wish to run Flutter commands in the regular Windows console,
 take these steps to add Flutter to the `PATH` environment variable:
@@ -51,7 +51,7 @@ for these changes to take effect.
 
 ### Run `flutter doctor`
 
-{% include_relative_help-link.md location='win-doctor' %}
+{% include docs/install/deprecated/help-link.md location='win-doctor' %}
 
 From a console window that has the Flutter directory in the
 path (see above), run the following command to see if there
@@ -87,7 +87,7 @@ or  Dart plugin of Android Studio are not installed, move
 on to [Set up an editor][] to resolve this issue.
 :::
 
-{% include_relative_analytics.md %}
+{% include docs/install/deprecated/analytics.md %}
 
 [SDK archive]: /release/archive
 [Set up an editor]: /get-started/editor?tab=androidstudio

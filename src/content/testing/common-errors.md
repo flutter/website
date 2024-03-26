@@ -30,7 +30,7 @@ When it happens, yellow and black stripes appear,
 indicating the area of overflow in the app UI.
 In addition, an error message displays in the debug console:
 
-```text
+```plaintext
 The following assertion was thrown during layout:
 A RenderFlex overflowed by 1146 pixels on the right.
 
@@ -152,7 +152,7 @@ occurring earlier in the rendering pipeline.
 
 The message shown by the error looks like this:
 
-```text
+```plaintext
 RenderBox was not laid out: 
 RenderViewport#5a477 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
 ```
@@ -182,7 +182,7 @@ while creating a UI in your Flutter app.
 
 The message shown by the error looks like this:
 
-```text
+```plaintext
 The following assertion was thrown during performResize():
 Vertical viewport was given unbounded height.
 
@@ -283,7 +283,7 @@ to avoid many of the most common Flutter framework errors.
 
 The message shown by the error looks like this:
 
-```
+```plaintext
 The following assertion was thrown during performLayout():
 An InputDecorator, which is typically created by a TextField, cannot have an 
 unbounded width.
@@ -351,7 +351,7 @@ This error is about missing an expected parent widget.
 
 The message shown by the error looks like this:
 
-```
+```plaintext
 The following assertion was thrown while looking for parent data:
 Incorrect use of ParentDataWidget.
 (Some lines of this message omitted)
@@ -395,7 +395,7 @@ either directly or indirectly.
 When the error occurs,
 the following message is displayed in the console:
 
-```text
+```plaintext
 The following assertion was thrown building DialogPage(dirty, dependencies: 
 [_InheritedTheme, _LocalizationsScope-[GlobalKey#59a8e]], 
 state: _DialogPageState#f121e):
