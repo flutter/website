@@ -151,7 +151,7 @@ use the following instructions:
 
     **C/C++/Objective-C**
 
-    ```objective-c
+    ```objc
     extern "C" /* <= C++ only */ __attribute__((visibility("default"))) __attribute__((used))
     ```
 

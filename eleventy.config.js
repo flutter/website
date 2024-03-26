@@ -46,6 +46,19 @@ export default function (eleventyConfig) {
     jekyllInclude: true,
   });
 
+  // TODO(parlough): Finish samplecode implementation.
+  eleventyConfig.addPairedShortcode('samplecode', function(content, tabsId) {
+    return `<ul class="nav nav-tabs sample-code-tabs" id="${tabsId}" role="tablist">
+${content}
+
+</div>
+</ul>`;
+  });
+
+  eleventyConfig.addShortcode('sample', function(content, language) {
+    return `<div class="tag-content">${content}</div>`;
+  });
+
   eleventyConfig.addFilter('regex_replace', regexReplace);
   eleventyConfig.addFilter('toISOString', toISOString);
   eleventyConfig.addFilter(

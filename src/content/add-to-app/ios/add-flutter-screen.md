@@ -108,7 +108,7 @@ We then pass this `FlutterEngine` into a
 `ContentView` using the `environmentObject()` property.
 
 <?code-excerpt title="AppDelegate.h"?>
-```objectivec
+```objc
 @import UIKit;
 @import Flutter;
 
@@ -118,7 +118,7 @@ We then pass this `FlutterEngine` into a
 ```
 
 <?code-excerpt title="AppDelegate.m"?>
-```objectivec
+```objc
 // The following library connects plugins with iOS platform code to this app.
 #import <FlutterPluginRegistrant/GeneratedPluginRegistrant.h>
 
@@ -229,7 +229,7 @@ The `FlutterViewController` uses the `FlutterEngine` instance
 created in the `AppDelegate`.
 
 <?code-excerpt title="ViewController.m"?>
-```objectivec
+```objc
 @import Flutter;
 #import "AppDelegate.h"
 #import "ViewController.h"
@@ -332,7 +332,7 @@ func showFlutter() {
 ```
 {% sample UIKit-ObjC %}
 <?code-excerpt title="ViewController.m"?>
-```objectivec
+```objc
 // Existing code omitted.
 - (void)showFlutter {
   FlutterViewController *flutterViewController =
@@ -509,7 +509,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FlutterAppLifeCycleProvid
 
 {% sample Objective-C %}
 <?code-excerpt title="AppDelegate.h"?>
-```objectivec
+```objc
 @import Flutter;
 @import UIKit;
 @import FlutterPluginRegistrant;
@@ -524,7 +524,7 @@ The implementation should delegate mostly to a
 `FlutterPluginAppLifeCycleDelegate`:
 
 <?code-excerpt title="AppDelegate.m"?>
-```objectivec
+```objc
 @interface AppDelegate ()
 @property (nonatomic, strong) FlutterPluginAppLifeCycleDelegate* lifeCycleDelegate;
 @end
@@ -666,7 +666,7 @@ in `lib/other_file.dart` instead of `main()` in `lib/main.dart`:
 flutterEngine.run(withEntrypoint: "myOtherEntrypoint", libraryURI: "other_file.dart")
 ```
 {% sample Objective-C %}
-```objectivec
+```objc
 [flutterEngine runWithEntrypoint:@"myOtherEntrypoint" libraryURI:@"other_file.dart"];
 ```
 {% endsamplecode %}
@@ -687,7 +687,7 @@ engine.run(
   withEntrypoint: "main", initialRoute: "/onboarding")
 ```
 {% sample Objective-C %}
-```objectivec
+```objc
 FlutterEngine *flutterEngine = [[FlutterEngine alloc] init];
 // FlutterDefaultDartEntrypoint is the same as nil, which will run main().
 [flutterEngine runWithEntrypoint:FlutterDefaultDartEntrypoint
@@ -708,7 +708,7 @@ let flutterViewController = FlutterViewController(
       project: nil, initialRoute: "/onboarding", nibName: nil, bundle: nil)
 ```
 {% sample Objective-C %}
-```objectivec
+```objc
 FlutterViewController* flutterViewController =
       [[FlutterViewController alloc] initWithProject:nil
                                         initialRoute:@"/onboarding"

@@ -171,7 +171,7 @@ platform side and vice versa:
 | List                       | Array                                   |
 | Map                        | Dictionary                              |
 
-{% sample C++ %}
+{% sample "C++" %}
 | Dart                       | C++                                                      |
 | -------------------------- | -------------------------------------------------------- |
 | null                       | EncodableValue()                                         |
@@ -679,7 +679,7 @@ Make sure to use the same channel name
 as was used on the Flutter client side.
 
 <?code-excerpt title="AppDelegate.m"?>
-```objectivec
+```objc
 #import <Flutter/Flutter.h>
 #import "GeneratedPluginRegistrant.h"
 
@@ -708,7 +708,7 @@ would write in a native iOS app.
 Add the following method in the `AppDelegate` class, just before `@end`:
 
 <?code-excerpt title="AppDelegate.m"?>
-```objectivec
+```objc
 - (int)getBatteryLevel {
   UIDevice* device = UIDevice.currentDevice;
   device.batteryMonitoringEnabled = YES;
@@ -728,7 +728,7 @@ and returns a response for both the success and error cases using
 the `result` argument. If an unknown method is called, report that instead.
 
 <?code-excerpt title="AppDelegate.m"?>
-```objectivec
+```objc
 __weak typeof(self) weakSelf = self;
 [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
   // This method is invoked on the UI thread.
@@ -1376,7 +1376,7 @@ You can accomplish this in iOS by executing a
 
 In Objective-C:
 
-```objectivec
+```objc
 dispatch_async(dispatch_get_main_queue(), ^{
   // Call the desired channel message here.
 });

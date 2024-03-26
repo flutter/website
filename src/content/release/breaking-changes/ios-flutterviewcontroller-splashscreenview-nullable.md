@@ -11,13 +11,13 @@ been changed from `nonnull` to `nullable`.
 
 Old declaration of `splashScreenView`:
 
-```objective-c
+```objc
 @property(strong, nonatomic) UIView* splashScreenView;
 ```
 
 New declaration of `splashScreenView`:
 
-```objective-c
+```objc
 @property(strong, nonatomic, nullable) UIView* splashScreenView;
 ```
 
