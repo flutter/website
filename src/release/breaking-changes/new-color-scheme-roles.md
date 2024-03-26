@@ -98,7 +98,7 @@ MaterialApp(
 )
 ```
 
-Custom components that used to look up the `ColorScheme.background`,
+Custom components that used to look up `ColorScheme.background`,
 `ColorScheme.onBackground`, and `ColorScheme.surfaceVariant` can look up the
 `ColorScheme.surface`, `ColorScheme.onSurface` and
 `ColorScheme.surfaceContainerHighest` instead.
