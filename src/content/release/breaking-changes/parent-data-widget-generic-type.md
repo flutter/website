@@ -38,7 +38,7 @@ if you're subclassing or implementing `ParentDataWidget`.
 If you do, the analyzer shows the following warnings when you
 upgrade to the Flutter version that includes this change:
 
-```none
+```plaintext
   error • Missing concrete implementation of 'getter ParentDataWidget.debugTypicalAncestorWidgetClass' • lib/main.dart:114:7 • non_abstract_class_inherits_abstract_member
   error • 'FrogJar' doesn't extend 'ParentData' • lib/main.dart:114:41 • type_argument_not_matching_bounds
 ```

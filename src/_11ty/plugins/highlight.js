@@ -37,6 +37,11 @@ export async function configureHighlighting(markdown) {
       'console',
       'cmd',
       'plaintext',
+      'groovy',
+      'properties',
+      'ruby',
+      'c',
+      'cpp',
     ],
   });
 
@@ -46,6 +51,11 @@ export async function configureHighlighting(markdown) {
     const token = tokens[index];
 
     const splitTokenInfo = token.info.match(/(\S+)\s?(.*?)$/m);
+
+    if (!splitTokenInfo) {
+      throw new Error('Code block missing language specifier.');
+    }
+
     const language = splitTokenInfo.length > 1 ? splitTokenInfo[1] : '';
     const attributes = splitTokenInfo.length > 2 ? splitTokenInfo[2] : '';
 

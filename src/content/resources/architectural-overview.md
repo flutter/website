@@ -234,7 +234,7 @@ these trees.
 A widget declares its user interface by overriding the `build()` method, which
 is a function that converts state to UI:
 
-```none
+```plaintext
 UI = f(state)
 ```
 

@@ -860,7 +860,7 @@ and might need to include a license for each one.)
 
 The following example shows a well-organized license file:
 
-```none
+```plaintext
 package_1
 
 <some license text>
@@ -873,7 +873,7 @@ package_2
 
 Here is another example of a well-organized license file:
 
-```none
+```plaintext
 package_1
 
 <some license text>
@@ -887,7 +887,7 @@ package_2
 
 Here is an example of a poorly-organized license file:
 
-```none
+```plaintext
 <some license text>
 
 --------------------------------------------------------------------------------
@@ -896,7 +896,7 @@ Here is an example of a poorly-organized license file:
 
 Another example of a poorly-organized license file:
 
-```
+```plaintext
 package_1
 
 <some license text>
@@ -1004,6 +1004,7 @@ Pod::Spec.new do |s|
   # lines skipped
   s.dependency 'url_launcher'
 ```
+
 You can now `#import "UrlLauncherPlugin.h"` and
 access the `UrlLauncherPlugin` class in the source code
 at `hello/ios/Classes`.

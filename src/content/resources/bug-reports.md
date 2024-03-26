@@ -38,7 +38,7 @@ the reproduction into a separate repository and link it.
 * Run `flutter doctor -v` in your project directory and paste
   the results into the GitHub issue:
 
-```none
+```plaintext
 [✓] Flutter (Channel stable, 1.22.3, on Mac OS X 10.15.7 19H2, locale en-US)
     • Flutter version 1.22.3 at /Users/me/projects/flutter
     • Framework revision 8874f21e79 (5 days ago), 2020-10-29 14:14:35 -0700

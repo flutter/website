@@ -178,7 +178,7 @@ Setting up flavors in Android can be done in your project's
    * If you specify a **applicationIdSuffix** instead of a **applicationId**,
      it is appended to the "base" application id.
 
-```gradle
+```groovy
 flavorDimensions "default"
 
 productFlavors {

@@ -34,6 +34,7 @@ At the command line, run the following:
 ```console
 $ sudo snap install snapcraft --classic
 ```
+
 ### Install LXD
 
 To install LXD, use the following command:
@@ -226,7 +227,7 @@ apps:
   snaps might only communicate with the providing 
   snap by connecting the snaps' interface.
   
-```
+```plaintext
 dbus-super-cool-app: # adjust accordingly to your app name
   interface: dbus
   bus: session
@@ -281,15 +282,15 @@ yaml file!
 
 For example:
 
-```desktop
+```yaml
 [Desktop Entry]
 Name=Super Cool App
 Comment=Super Cool App that does everything
 Exec=super-cool-app 
-Icon=${SNAP}/meta/gui/super-cool-app.png # replace name to your app name
+Icon=${SNAP}/meta/gui/super-cool-app.png # Replace name with your app name.
 Terminal=false
 Type=Application
-Categories=Education; #adjust accordingly your snap category
+Categories=Education; # Adjust accordingly your snap category.
 ```
 
 Place your icon with .png extension in your Flutter 

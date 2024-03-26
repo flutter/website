@@ -142,7 +142,7 @@ application into an MSIX and uploads it to a new submission on the dev center.
 
 The steps necessary for MSIX publishing resemble the following
 
-```
+```yaml
 - uses: microsoft/setup-msstore-cli@v1
 
 - name: Configure the Microsoft Store CLI

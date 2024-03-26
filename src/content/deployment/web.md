@@ -32,7 +32,7 @@ directory of the project.
 The release build of a simple app has the
 following structure:
 
-```none
+```plaintext
 /build/web
   assets
     AssetManifest.json
@@ -95,7 +95,7 @@ Hosting.
 ### Before you begin
 To get started, [install or update][install-firebase-cli] the Firebase CLI:
 
-```
+```console
 npm install -g firebase-tools
 ```
 

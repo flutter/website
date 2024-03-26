@@ -105,7 +105,7 @@ To ensure that web _is_ installed,
 list the devices available.
 You should see something like the following:
 
-```terminal
+```console
 $ flutter devices
 4 connected devices:
 
@@ -607,7 +607,7 @@ Get the web socket info for DevTools.<br>
 At the command line, or in the IDE,
 you should see a message stating something like the following:
 
-```terminal
+```console
 Launching lib/main.dart on Chrome in debug mode...
 Building application for the web...                                11.7s
 Attempting to connect to browser instance..
@@ -646,9 +646,7 @@ Serving DevTools at http://127.0.0.1:9100
 Go to this URL in a Chrome browser. You should see the DevTools
 launch screen. It should look like the following:
 
-{% indent %}
-  ![Screenshot of the DevTools launch screen](/assets/images/docs/get-started/devtools-launch-screen.png){:width="100%"}
-{% endindent %}
+![Screenshot of the DevTools launch screen](/assets/images/docs/get-started/devtools-launch-screen.png){:width="100%"}
 
 </li>
 
@@ -660,9 +658,7 @@ paste the ws location that you copied in step 2,
 and click Connect. You should now see Dart DevTools
 running successfully in your Chrome browser:
 
-{% indent %}
-  ![Screenshot of DevTools running screen](/assets/images/docs/get-started/devtools-running.png){:width="100%"}
-{% endindent %}
+![Screenshot of DevTools running screen](/assets/images/docs/get-started/devtools-running.png){:width="100%"}
 
 Congratulations, you are now running Dart DevTools!
 
@@ -675,9 +671,7 @@ If you are using IntelliJ,
 you can open DevTools by going to
 **Flutter Inspector** -> **More Actions** -> **Open DevTools**:
 
-{% indent %}
 ![Screenshot of Flutter inspector with DevTools menu](/assets/images/docs/get-started/intellij-devtools.png){:width="100%"}
-{% endindent %}
 :::
 
 <ol>
@@ -691,9 +685,7 @@ see a list of libraries used in the example.
 Select `lib/main.dart` to display your Dart code
 in the center pane.
 
-{% indent %}
-  ![Screenshot of the DevTools debugger](/assets/images/docs/get-started/devtools-debugging.png){:width="100%"}
-{% endindent %}
+![Screenshot of the DevTools debugger](/assets/images/docs/get-started/devtools-debugging.png){:width="100%"}
 
 </li>
 

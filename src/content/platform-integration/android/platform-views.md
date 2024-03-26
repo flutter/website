@@ -396,7 +396,7 @@ For more information, see the API docs for:
 Finally, modify your `build.gradle` file
 to require one of the minimal Android SDK versions:
 
-```gradle
+```groovy
 android {
     defaultConfig {
         minSdkVersion 19 // if using hybrid composition

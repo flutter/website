@@ -23,7 +23,7 @@ Doing this avoids a missing `libflutter.so` runtime crash,
 for example:
 
 <?code-excerpt title="MyApp/app/build.gradle"?>
-```gradle
+```groovy
 android {
   //...
   defaultConfig {
@@ -165,7 +165,7 @@ app declares the following source compatibility within your
 app's `build.gradle` file, under the `android { }` block.
 
 <?code-excerpt title="MyApp/app/build.gradle"?>
-```gradle
+```groovy
 android {
   //...
   compileOptions {
@@ -296,7 +296,7 @@ to find these files.
 To do that, edit `settings.gradle` in your host app
 so that it includes the local repository and the dependency:
 
-```gradle
+```groovy
 dependencyResolutionManagement {
   repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
   repositories {
@@ -328,7 +328,7 @@ follow these steps to add the flutter_module.
 Include the flutter module as a dependency in 
 the Android project's `app/build.gradle` file.
 <?code-excerpt title="MyApp/app/build.gradle.kts"?>
-```gradle
+```groovy
 android {
     buildTypes {
         release {
@@ -353,7 +353,7 @@ The `profileImplementation` ID is a custom `configuration` to be
 implemented in the `app/build.gradle` file of a host project.
 
 <?code-excerpt title="host-project/app/build.gradle.kts"?>
-```gradle
+```groovy
 configurations {
     getByName("profileImplementation") {
     }
@@ -361,7 +361,7 @@ configurations {
 ```
 
 <?code-excerpt title="MyApp/settings.gradle.kts"?>
-```gradle
+```groovy
 include(":app")
 
 dependencyResolutionManagement {

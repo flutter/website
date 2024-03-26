@@ -87,7 +87,8 @@ Sign and export the IPA. The exported directory contains
 application size on different devices and versions of iOS.
 
 The App Size Report for the default demo app in Flutter 1.17 shows:
-```
+
+```plaintext
 Variant: Runner-7433FC8E-1DF4-4299-A7E8-E00768671BEB.ipa
 Supported variant descriptors: [device: iPhone12,1, os-version: 13.0] and [device: iPhone11,8, os-version: 13.0]
 App + On Demand Resources size: 5.4 MB compressed, 13.7 MB uncompressed

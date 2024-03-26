@@ -192,7 +192,7 @@ by editing the `[project]/android/app/build.gradle` file.
 
 Add the keystore information from your properties file before the `android` block:
 
-```gradle
+```groovy
    def keystoreProperties = new Properties()
    def keystorePropertiesFile = rootProject.file('key.properties')
    if (keystorePropertiesFile.exists()) {
@@ -212,7 +212,7 @@ Add the keystore information from your properties file before the `android` bloc
 
 Find the `buildTypes` block:
 
-```gradle
+```groovy
    buildTypes {
        release {
            // TODO: Add your own signing config for the release build.
@@ -225,7 +225,7 @@ Find the `buildTypes` block:
 
    And replace it with the following signing configuration info:
 
-```gradle
+```groovy
    signingConfigs {
        release {
            keyAlias keystoreProperties['keyAlias']
@@ -306,7 +306,7 @@ You might also choose to manually support multidex by following Android's guides
 and modifying your project's Android directory configuration.
 A [multidex keep file][multidex-keep] must be specified to include:
 
-```
+```plaintext
 io/flutter/embedding/engine/loader/FlutterLoader.class
 io/flutter/util/PathUtils.class
 ```

@@ -58,7 +58,7 @@ Add Play Core to the Android app's
 build.gradle dependencies.
 In `android/app/build.gradle` add the following:
 
-```gradle
+```groovy
 ...
 dependencies {
   ...
@@ -572,7 +572,7 @@ defined in the pubspec named, `boxComponent`, `circleComponent`,
 and `assetComponent`, ensure that `android/settings.gradle`
 contains the following:
 
-```gradle
+```groovy
 include ':app', ':boxComponent', ':circleComponent', ':assetComponent'
 ...
 ```

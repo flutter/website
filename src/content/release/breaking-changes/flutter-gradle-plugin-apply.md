@@ -37,7 +37,7 @@ uses. Unless they have been moved, they are likely defined in the buildscript bl
 `<app-src>/android/build.gradle` file. As an example, consider the `build.gradle` file from 
 a new Flutter app created before this change:
 
-```gradle
+```groovy
 buildscript {
     ext.kotlin_version = '1.7.10'
     repositories {
@@ -80,7 +80,7 @@ Next, replace the contents of `<app-src>/android/settings.gradle` with the below
 remembering to replace `{agpVersion}` and `{kotlinVersion}` with previously
 identified values:
 
-```gradle
+```groovy
 pluginManagement {
     def flutterSdkPath = {
         def properties = new Properties()
@@ -132,7 +132,7 @@ Remove the whole `buildscript` block from `<app-src/android/build.gradle`:
 
 Here's how that file will likely end up:
 
-```gradle
+```groovy
 allprojects {
     repositories {
         google()

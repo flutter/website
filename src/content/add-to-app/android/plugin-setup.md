@@ -76,7 +76,7 @@ does (transitively via a plugin).
 For instance, your existing app's Gradle might already have:
 
 <?code-excerpt title="ExistingApp/app/build.gradle"?>
-```gradle
+```groovy
 …
 dependencies {
   …
@@ -103,7 +103,7 @@ This plugin usage transitively adds a Gradle dependency again via
 firebase_crashlytics v0.1.3's own [Gradle file][]:
 
 <?code-excerpt title="firebase_crashlytics_via_pub/android/build.gradle"?>
-```gradle
+```groovy
 …
 dependencies {
   …
@@ -128,7 +128,7 @@ For example, you might use the new Crashlytics library
 in your existing app as follows:
 
 <?code-excerpt title="ExistingApp/app/build.gradle"?>
-```gradle
+```groovy
 …
 dependencies {
   …

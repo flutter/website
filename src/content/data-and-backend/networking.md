@@ -17,7 +17,7 @@ Some platforms require additional steps, as detailed below.
 Android apps must [declare their use of the internet][declare] in the Android
 manifest (`AndroidManifest.xml`):
 
-```
+```xml
 <manifest xmlns:android...>
  ...
  <uses-permission android:name="android.permission.INTERNET" />
@@ -29,7 +29,7 @@ manifest (`AndroidManifest.xml`):
 
 macOS apps must allow network access in the relevant `*.entitlements` files. 
 
-```
+```xml
 <key>com.apple.security.network.client</key>
 <true/>
 ```
