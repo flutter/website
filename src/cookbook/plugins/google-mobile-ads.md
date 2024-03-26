@@ -116,7 +116,7 @@ Add your AdMob app ID to your iOS app.
 To add the `google_mobile_ads` plugin as a dependency, run
 `flutter pub add`:
 
-```terminal
+```console
 $ flutter pub add google_mobile_ads
 ```
 
@@ -124,7 +124,7 @@ $ flutter pub add google_mobile_ads
   Once you add the plugin, your Android app might fail to build with a
   `DexArchiveMergerException`:
   
-  ```text
+  ```plaintext
   Error while merging dex archives:
   The number of method references in a .dex file cannot exceed 64K.
   ```

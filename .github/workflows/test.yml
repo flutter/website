@@ -32,10 +32,10 @@ jobs:
             branch: stable
             experimental: false
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
         with:
           submodules: recursive
-      - uses: subosito/flutter-action@62f096cacda5168a3bd7b95793373be14fa4fbaf
+      - uses: subosito/flutter-action@1c5eb12d812966ca84680edc38353a0851c8fd56
         with:
           channel: ${{ matrix.branch }}
       - name: Fetch Dart dependencies
@@ -55,7 +55,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.repository == 'flutter/website'
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
         with:
           submodules: recursive
       - uses: dart-lang/setup-dart@fedb1266e91cf51be2fdb382869461a434b920a3
@@ -71,7 +71,7 @@ jobs:
     name: Build site and check links
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
         with:
           submodules: recursive
       - name: Build site
@@ -101,7 +101,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.repository == 'flutter/website'
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
         with:
           submodules: recursive
       - uses: dart-lang/setup-dart@fedb1266e91cf51be2fdb382869461a434b920a3

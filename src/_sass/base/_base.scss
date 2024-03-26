@@ -247,6 +247,12 @@ dd {
   overflow-x: auto;
 }
 
+// If table head has empty children, just hide it
+// since markdown-it-table doesn't support headless tables.
+thead:has(th:empty) {
+  display: none;
+}
+
 .searchbar {
   > * {
     max-width: 640px;
@@ -289,8 +295,8 @@ summary {
 }
 
 main {
-  ol + img, ul + img, ol + p, ul + p,
-  p + p + img, li:last-child, ul + p:last-child {
+  ol + img, ul + img, ol + p, ul + p, p + p + img,
+  li:not(.toc-entry, .breadcrumb-item):last-child, ul + p:last-child {
     margin-bottom: 1rem;
   }
 }
@@ -305,7 +311,7 @@ p + ul, p + ol, p + dl {
 }
 
 li.breadcrumb-item:last-child {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 td ol, td ul, td dl, td p {
@@ -325,7 +331,49 @@ aside {
       font-size: 1.5rem;
     }  
   }
-  .code-excerpt__code:last-child, div.highlighter-rouge {
-    margin-bottom: 0;
+}
+
+.card-os-bug {
+  position: relative;
+  ::before {
+    content: "";
+    position: absolute;
+    top: 0.5rem; 
+    left: 0.5rem; 
+    width: 24px; 
+    height: 24px;
+    background-position: center center;
+    background-size: contain;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    z-index: 1; /* Place in front of card */
+  }
+}
+
+.card-macos {
+  @extend .card-os-bug;
+  ::before {
+    background-image: url("/assets/images/docs/brand-svg/macos-bug.svg");
+  }
+}
+
+.card-windows {
+  @extend .card-os-bug;
+  ::before {
+    background-image: url("/assets/images/docs/brand-svg/windows-bug.svg");
+  }
+}
+
+.card-linux {
+  @extend .card-os-bug;
+  ::before {
+    background-image: url("/assets/images/docs/brand-svg/linux.svg");
+  }
+}
+
+.card-chromeos {
+  @extend .card-os-bug;
+  ::before {
+    background-image: url("/assets/images/docs/brand-svg/chromeos.svg");
   }
 }

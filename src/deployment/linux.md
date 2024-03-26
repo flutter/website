@@ -31,21 +31,21 @@ Use the following instructions to set up your build environment.
 
 At the command line, run the following:
 
-```terminal
+```console
 $ sudo snap install snapcraft --classic
 ```
 ### Install LXD
 
 To install LXD, use the following command:
 
-```terminal
+```console
 $ sudo snap install lxd
 ```
 
 LXD is required during the snap build process. Once installed, LXD needs to be
 configured for use. The default answers are suitable for most use cases.
 
-```terminal
+```console
 $ sudo lxd init
 Would you like to use LXD clustering? (yes/no) [default=no]:
 Do you want to configure a new storage pool? (yes/no) [default=yes]:
@@ -66,7 +66,7 @@ Would you like a YAML "lxd init" preseed to be printed? (yes/no) [default=no]:
 
 On the first run, LXD might not be able to connect to its socket:
 
-```terminal
+```console
 An error occurred when trying to communicate with the 'LXD'
 provider: cannot connect to the LXD socket
 ('/var/snap/lxd/common/lxd/unix.socket').
@@ -75,7 +75,7 @@ provider: cannot connect to the LXD socket
 This means you need to add your username to the LXD
 (lxd) group, so log out of your session and then log back in:
 
-```terminal
+```console
 $ sudo usermod -a -G lxd <your username>
 ```
 
@@ -304,13 +304,13 @@ of the project.
 
 To use the Multipass VM backend:
 
-```terminal
+```console
 $ snapcraft
 ``` 
 
 To use the LXD container backend:
 
-```terminal
+```console
 $ snapcraft --use-lxd
 ```
 
@@ -331,14 +331,14 @@ The process consists of the following:
 1. Register the app's name. Registration can be done
    either using the Snap Store Web UI portal, or from the
    command line, as follows:
-   ```terminal
+   ```console
    $ snapcraft login
    $ snapcraft register
    ```
 1. Release the app. After reading the next section
    to learn about selecting a Snap Store channel,
    push the snap to the store:
-   ```terminal
+   ```console
    $ snapcraft upload --release=<channel> <file>.snap
    ```
 

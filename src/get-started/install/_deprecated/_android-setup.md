@@ -87,7 +87,7 @@ you have installed the tools listed above.
 
  1. Open an elevated console window and run the following command to begin
     signing licenses.
-    ```terminal
+    ```console
     $ flutter doctor --android-licenses
     ```
  1. Review the terms of each license carefully before agreeing to them.

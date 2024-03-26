@@ -354,7 +354,7 @@ From the command line,
 enter your Flutter project directory
 and then install the pod:
 
-```terminal
+```console
 cd ios
 pod install
 ```
@@ -394,6 +394,6 @@ You must then copy and paste it back into the
 
 For example:
 
-```terminal
+```console
 flutter attach --debug-uri <copied URI>
 ```

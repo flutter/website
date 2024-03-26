@@ -109,7 +109,7 @@ Next, use the `integration_test` and `flutter_test` packages
 to write integration tests. Add these dependencies to the `dev_dependencies`
 section of the app's `pubspec.yaml` file.
 
-```terminal
+```console
 $ flutter pub add 'dev:flutter_test:{"sdk":"flutter"}'  'dev:integration_test:{"sdk":"flutter"}'
 "flutter_test" is already in "dev_dependencies". Will try to update the constraint.
 Resolving dependencies... 
@@ -197,13 +197,13 @@ you are testing against. You can test against a mobile platform or the web.
 To test on a real iOS / Android device, first connect the device and run the
 following command from the root of the project:
 
-```terminal
+```console
 $ flutter test integration_test/app_test.dart
 ```
 
 Or, you can specify the directory to run all integration tests:
 
-```terminal
+```console
 $ flutter test integration_test
 ```
  
@@ -243,13 +243,13 @@ Future<void> main() => integrationDriver();
 
 Launch `chromedriver` as follows: 
 
-```terminal
+```console
 $ chromedriver --port=4444
 ```
 
 From the root of the project, run the following command:
 
-```terminal
+```console
 $ flutter drive \
   --driver=test_driver/integration_test.dart \
   --target=integration_test/app_test.dart \
@@ -259,7 +259,7 @@ $ flutter drive \
 For a headless testing experience, you can also run `flutter drive` 
 with `web-server` as the target device identifier as follows:
 
-```terminal
+```console
 flutter drive \
   --driver=test_driver/integration_test.dart \
   --target=integration_test/app_test.dart \

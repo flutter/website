@@ -36,14 +36,14 @@ To complete this recipe, you need to add three dependencies to your app:
 
 To add the packages as dependencies, run `flutter pub add`:
 
-```terminal
+```console
 $ flutter pub add camera path_provider path
 ```
 
 {{site.alert.tip}}
   - For android, You must update `minSdkVersion` to 21 (or higher).
   - On iOS, lines below have to be added inside `ios/Runner/Info.plist` in order the access the camera and microphone.
-    ```
+    ```xml
     <key>NSCameraUsageDescription</key>
     <string>Explanation on why the camera access is needed.</string>
     <key>NSMicrophoneUsageDescription</key>

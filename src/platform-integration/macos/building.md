@@ -121,7 +121,7 @@ which you must add if you make any network requests.
 Without the `com.apple.security.network.client` entitlement,
 for example, network requests fail with a message such as:
 
-```terminal
+```console
 flutter: SocketException: Connection failed
 (OS Error: Operation not permitted, errno = 1),
 address = example.com, port = 443

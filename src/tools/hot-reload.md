@@ -94,7 +94,7 @@ For example, if the app was in the background for too long.
 When a code change introduces a compilation error,
 hot reload generates an error message similar to:
 
-```nocode
+```plaintext
 Hot reload was rejected:
 '/path/to/project/lib/main.dart': warning: line 16 pos 38: unbalanced '{' opens here
   Widget build(BuildContext context) {

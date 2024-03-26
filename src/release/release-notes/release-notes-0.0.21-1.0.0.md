@@ -166,7 +166,7 @@ _This page is a dump of the old Changelog page from the Flutter wiki up until
 
   One of the consequences of this change is that all tests run through `flutter test` now explicitly depend on `package:flutter_test`.  Users of `flutter test` will need to update their `pubspec.yaml` file to include the following if it does not already exist:
 
-  ```
+  ```yaml
   dev_dependencies:
     flutter_test:
       sdk: flutter
@@ -174,7 +174,7 @@ _This page is a dump of the old Changelog page from the Flutter wiki up until
 
   If your `pubspec.yaml` does not contain the requisite dependency, and you run `flutter test`, you will see errors of the following form:
 
-  ```
+  ```console
   compiler message: Error: Could not resolve the package 'flutter_test' in 'package:flutter_test/flutter_test.dart'.
   ```
 

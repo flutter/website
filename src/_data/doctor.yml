@@ -1,3 +1,51 @@
+ChromeOSWeb:
+  degree: 1
+  windows: 'X'
+  linux: 'X'
+  android-toolchain: 'N'
+  chrome: 'Y'
+  xcode: 'X'
+  visual-studio: 'X'
+  android-studio: 'N'
+  errors: 3
+  add-android: 'Y'
+  add-chrome: 'N'
+  add-simulator: 'X'
+  add-xcode: 'X'
+  add-linux-tools: 'X'
+  add-visual-studio: 'X'
+ChromeOSAndroid:
+  degree: 1
+  windows: 'X'
+  linux: 'X'
+  android-toolchain: 'Y'
+  chrome: 'N'
+  xcode: 'X'
+  visual-studio: 'X'
+  android-studio: 'Y'
+  errors: 2
+  add-android: 'N'
+  add-chrome: 'Y'
+  add-simulator: 'X'
+  add-xcode: 'X'
+  add-linux-tools: 'X'
+  add-visual-studio: 'X'
+ChromeOSAndroidWeb:
+  degree: 2
+  windows: 'X'
+  linux: 'X'
+  android-toolchain: 'Y'
+  chrome: 'Y'
+  xcode: 'X'
+  visual-studio: 'X'
+  android-studio: 'Y'
+  errors: 0
+  add-android: 'N'
+  add-chrome: 'N'
+  add-simulator: 'X'
+  add-xcode: 'X'
+  add-linux-tools: 'X'
+  add-visual-studio: 'X'
 LinuxAndroid:
   degree: 1
   windows: 'X'

@@ -205,7 +205,7 @@ and thus marking itself dirty.
 This explains why a Flutter marks a specific object as "dirty".
 When you review the widget tree, look for a line that resembles the following:
 
-```nocode
+```plaintext
 └TextButton(dirty, dependencies: [MediaQuery, _InheritedTheme, _LocalizationsScope-[GlobalKey#5880d]], state: _ButtonStyleState#ab76e)
 ```
 
@@ -379,7 +379,7 @@ The `RepaintBoundary` widget creates:
 1. A `RenderRepaintBoundary` RenderObject in the render tree
    as shown in the **Example 5** results.
 
-   ```nocode
+   ```plaintext
    ╎     └─child: RenderRepaintBoundary#f8f28
    ╎       │ needs compositing
    ╎       │ creator: RepaintBoundary ← _FocusInheritedScope ← Semantics ←
@@ -398,7 +398,7 @@ The `RepaintBoundary` widget creates:
 1. A new layer in the layer tree as shown in the **Example 6**
    results.
 
-   ```nocode
+   ```plaintext
    ├─child 1: OffsetLayer#0f766
    │ │ creator: RepaintBoundary ← _FocusInheritedScope ← Semantics ←
    │ │   FocusScope ← PrimaryScrollController ← _ActionsScope ← Actions
@@ -539,7 +539,7 @@ and the [`debugPrintEndFrameBanner`][].
 
 **The print frame banner log for Example 1**
 
-```nocode
+```plaintext
 I/flutter : ▄▄▄▄▄▄▄▄ Frame 12         30s 437.086ms ▄▄▄▄▄▄▄▄
 I/flutter : Debug print: Am I performing this work more than once per frame?
 I/flutter : Debug print: Am I performing this work more than once per frame?

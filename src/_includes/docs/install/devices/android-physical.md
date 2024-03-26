@@ -5,7 +5,7 @@
 {% assign devos = include.devos %}
 {% assign target = include.target %}
 {% assign compiler = include.compiler %}
-{% assign time = include.time %}
+{% assign attempt = include.attempt %}
 
 To configure your Flutter app to run on a physical Android device,
 you need an Android device running {{site.targetmin.android}} or later.
@@ -33,7 +33,7 @@ you need an Android device running {{site.targetmin.android}} or later.
 
    In PowerShell, run:
 
-   ```terminal
+   ```console
    c:\> flutter devices
    ```
 
@@ -41,7 +41,7 @@ you need an Android device running {{site.targetmin.android}} or later.
 
    In the Terminal, run:
 
-   ```terminal
+   ```console
    $ flutter devices
    ```
 

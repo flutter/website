@@ -14,7 +14,7 @@ Here's an example of how to launch
 Flutter DevTools for an Android app with ports
 that will work:
 
-```terminal
+```console
 $ flutter pub global run devtools --port 8000
 $ cd path/to/your/app
 $ flutter run --observatory-port=8080
@@ -54,13 +54,13 @@ analyzer:
 
 To run these from the command line, use the following command:
 
-```terminal
+```console
 $ flutter analyze
 ```
 
 Sample output for this command might look like:
 
-```terminal
+```console
 Analyzing ...
 warning • This hardware feature is not supported on ChromeOS •
 android/app/src/main/AndroidManifest.xml:4:33 • unsupported_chrome_os_hardware

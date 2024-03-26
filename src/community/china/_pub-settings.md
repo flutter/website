@@ -18,25 +18,25 @@
 
    {% if id == 'windows' -%}
 
-   ```terminal
+   ```console
    {{prompt}} echo $env:PUB_HOSTED_URL
    ```
 
    If this command returns any value, unset it.
 
-   ```terminal
+   ```console
    {{prompt}} Remove-Item $env:PUB_HOSTED_URL
    ```
 
    {% else -%}
 
-   ```terminal
+   ```console
    {{prompt}} echo $PUB_HOSTED_URL
    ```
 
    If this command returns any value, unset it.
 
-   ```terminal
+   ```console
    {{prompt}} unset $PUB_HOSTED_URL
    ```
 
