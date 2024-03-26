@@ -8,11 +8,11 @@ js:
 
 <?code-excerpt path-base="cookbook/navigation/named_routes"?>
 
-{{site.alert.note}}
-  Named routes are no longer recommended for most
-  applications. For more information, see
-  [Limitations][] in the [navigation overview][] page.
-{{site.alert.end}}
+:::note
+Named routes are no longer recommended for most
+applications. For more information, see
+[Limitations][] in the [navigation overview][] page.
+:::
 
 [Limitations]: /ui/navigation#limitations
 [navigation overview]: /ui/navigation
@@ -118,9 +118,9 @@ MaterialApp(
 )
 ```
 
-{{site.alert.warning}}
-  When using `initialRoute`, **don't** define a `home` property.
-{{site.alert.end}}
+:::warning
+When using `initialRoute`, **don't** define a `home` property.
+:::
 
 ## 3. Navigate to the second screen
 

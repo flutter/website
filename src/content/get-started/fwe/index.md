@@ -16,13 +16,13 @@ steps of learning Flutter. It's not about teaching
 you how to _program_, it's about teaching you
 how Flutter works.
 
-{{site.alert.note}}
-  This first week experience is still a work
-  in progress and we welcome your feedback!
-  Please consider filling out the survey
-  listed at the bottom of this page and on the
-  new subject pages in this section.
-{{site.alert.end}}
+:::note
+This first week experience is still a work
+in progress and we welcome your feedback!
+Please consider filling out the survey
+listed at the bottom of this page and on the
+new subject pages in this section.
+:::
 
 As you might know, Flutter uses the [Dart language][].
 If you have experience with other object-oriented

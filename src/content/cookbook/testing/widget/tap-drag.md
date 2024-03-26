@@ -134,14 +134,14 @@ testWidgets('Add and remove a todo', (tester) async {
 });
 ```
 
-{{site.alert.note}}
-  This recipe builds upon previous widget testing recipes.
-  To learn the core concepts of widget testing,
-  see the following recipes:
+:::note
+This recipe builds upon previous widget testing recipes.
+To learn the core concepts of widget testing,
+see the following recipes:
 
 * [Introduction to widget testing][]
 * [Finding widgets in a widget test][]
-{{site.alert.end}}
+:::
 
 ### 3. Ensure tapping a button adds the todo
 

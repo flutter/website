@@ -7,10 +7,10 @@ description: Release notes for Flutter for prior releases.
 This page links to announcements and release notes for
 releases to the stable channel.
 
-{{site.alert.note}}
-  For information about bug-fix releases, check out
-  [Hotfixes to the Stable Channel][] on the Flutter wiki.
-{{site.alert.end}}
+:::note
+For information about bug-fix releases, check out
+[Hotfixes to the Stable Channel][] on the Flutter wiki.
+:::
 
 * 3.19.0
   * [3.19.0 announcement][]

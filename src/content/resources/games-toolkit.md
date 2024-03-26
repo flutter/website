@@ -93,13 +93,12 @@ As explained on the [Games][] page,
 you can leverage up to $900 in offers when you integrate Google services,
 such as [Cloud, Firebase][], and [Ads][], into your game.
 
-{{ site.alert.important }}
-  **Terms and conditions apply.**
-  You must connect your Firebase and GCP accounts to use credits for
-  Firebase services and verify your business email during sign up to earn
-  an additional $100 on top of the normal $300 credit.
-  For the Ads offer, [check your region's eligibility][].
-{{ site.alert.end }}
+:::important
+You must connect your Firebase and GCP accounts to use credits for
+Firebase services and verify your business email during sign up to earn
+an additional $100 on top of the normal $300 credit.
+For the Ads offer, [check your region's eligibility][].
+:::
 
 ## Get started
 
@@ -167,15 +166,15 @@ investigate other resources that our community recommended.
 {% assign assets-icon = '<span class="material-symbols">photo_album</span>' %}
 {% assign api-icon = '<span class="material-symbols">api</span>' %}
 
-{{ site.alert.secondary }}
-  {{pkg-icon}} Flutter package<br>
-  {{api-icon}} API documentation<br>
-  {{codelab}} Codelab <br>
-  {{recipe-icon}} Cookbook recipe<br>
-  {{tool-icon}} Desktop application<br>
-  {{assets-icon}} Game assets<br>
-  {{doc-icon}} Guide<br>
-{{ site.alert.end }}
+:::secondary
+{{pkg-icon}} Flutter package<br>
+{{api-icon}} API documentation<br>
+{{codelab}} Codelab <br>
+{{recipe-icon}} Cookbook recipe<br>
+{{tool-icon}} Desktop application<br>
+{{assets-icon}} Game assets<br>
+{{doc-icon}} Guide<br>
+:::
 
 <table class="table table-striped" markdown="1">
 <tr>

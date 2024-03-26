@@ -21,11 +21,11 @@ behavior so that errors can also be routed to the IDE's
 console, allowing you to inspect the
 objects mentioned in the message.
 
-{{site.alert.note}}
-  Consider calling [`FlutterError.presentError`][]
-  from your custom error handler in order to see
-  the logs in the console as well.
-{{site.alert.end}}
+:::note
+Consider calling [`FlutterError.presentError`][]
+from your custom error handler in order to see
+the logs in the console as well.
+:::
 
 When an error occurs during the build phase,
 the [`ErrorWidget.builder`][] callback is
@@ -70,10 +70,11 @@ void main() {
 
 // rest of `flutter create` code...
 ```
-{{site.alert.note}}
-  The top-level [`kReleaseMode`][] constant indicates
-  whether the app was compiled in release mode.
-{{site.alert.end}}
+
+:::note
+The top-level [`kReleaseMode`][] constant indicates
+whether the app was compiled in release mode.
+:::
 
 This handler can also be used to report errors to a logging service.
 For more details, see our cookbook chapter for

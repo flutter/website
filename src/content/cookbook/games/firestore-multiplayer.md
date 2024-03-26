@@ -75,10 +75,10 @@ git clone https://github.com/flutter/games.git
 
 Open the project in `templates/card`.
 
-{{site.alert.note}}
-  You can ignore this step and follow the recipe with your own game
-  project. Adapt the code at appropriate places.
-{{site.alert.end}}
+:::note
+You can ignore this step and follow the recipe with your own game
+project. Adapt the code at appropriate places.
+:::
 
 [`card`]: {{site.github}}/flutter/games/tree/main/templates/card#readme
 [`flutter/games` repository]: {{site.github}}/flutter/games
@@ -177,12 +177,12 @@ Dart code in that guide, return to this recipe.
     Put the provider above `MyApp`, not inside it.
     This enables you to test the app without Firebase.
 
-    {{site.alert.note}}
-      In case you are *not* working with the `card` template,
-      you must either [install the `provider` package][]
-      or use your own method of accessing the `FirebaseFirestore`
-      instance from various parts of your codebase.
-    {{site.alert.end}}
+    :::note
+    In case you are *not* working with the `card` template,
+    you must either [install the `provider` package][]
+    or use your own method of accessing the `FirebaseFirestore`
+    instance from various parts of your codebase.
+    :::
 
 [install the `provider` package]: {{site.pub-pkg}}/provider/install
 

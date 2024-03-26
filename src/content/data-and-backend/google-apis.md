@@ -14,17 +14,17 @@ end-user data by using Google authentication.
 Examples of user-data APIs include
 [Calendar][], [Gmail][], [YouTube][], and Firebase.
 
-{{site.alert.info}} 
-  The only APIs you should use directly from your Flutter
-  project are those that access user data using Google authentication.
+:::note
+The only APIs you should use directly from your Flutter
+project are those that access user data using Google authentication.
 
-  APIs that require [service accounts][] **should not**
-  be used directly from a Flutter application.
-  Doing so requires shipping service credentials as part
-  of your application, which is not secure.
-  To use these APIs,
-  we recommend creating an intermediate service.
-{{site.alert.end}}
+APIs that require [service accounts][] **should not**
+be used directly from a Flutter application.
+Doing so requires shipping service credentials as part
+of your application, which is not secure.
+To use these APIs,
+we recommend creating an intermediate service.
+:::
 
 To add authentication to Firebase explicitly, check out the
 [Add a user authentication flow to a Flutter app using FirebaseUI][fb-lab]

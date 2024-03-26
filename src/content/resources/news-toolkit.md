@@ -46,12 +46,12 @@ You might also check out:
 * [Quick start to building a news app in Flutter][video]
   an introduction to the toolkit on YouTube.
 
-{{site.alert.note}}
-  This is an early release of the news toolkit and,
-  while it has been tested by early adopters, it
-  might have issues or rough edges. Please don't
-  hesitate to [file an issue][].
-{{site.alert.end}}
+:::note
+This is an early release of the news toolkit and,
+while it has been tested by early adopters, it
+might have issues or rough edges. Please don't
+hesitate to [file an issue][].
+:::
 
 [toolkit]: https://flutter.github.io/news_toolkit/
 [blog]: {{site.flutter-medium}}/announcing-the-flutter-news-toolkit-180a0d32c012

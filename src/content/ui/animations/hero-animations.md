@@ -4,9 +4,7 @@ description: How to animate a widget to fly between two screens.
 short-title: Hero
 ---
 
-{{site.alert.secondary}}
-  <h4>What you'll learn</h4>
-
+:::secondary What you'll learn
 * The _hero_ refers to the widget that flies between screens.
 * Create a hero animation using Flutter's Hero widget.
 * Fly the hero from one screen to another.
@@ -15,7 +13,7 @@ short-title: Hero
 * The Hero widget in Flutter implements a style of animation
     commonly known as _shared element transitions_ or
     _shared element animations._
-{{site.alert.end}}
+:::
 
 You've probably seen hero animations many times. For example, a screen displays
 a list of thumbnails representing items for sale.  Selecting an item flies it to
@@ -31,25 +29,23 @@ This guide demonstrates how to build standard hero animations, and hero
 animations that transform the image from a circular shape to a square shape
 during flight.
 
-{{site.alert.secondary}}
-  **Examples**: This guide provides examples of each hero animation style at
-  the following links.
+:::secondary Examples
+This guide provides examples of each hero animation style at
+the following links.
 
 * [Standard hero animation code][]
 * [Radial hero animation code][]
-{{site.alert.end}}
+::
 
-{{site.alert.secondary}}
-  **New to Flutter?**
-  This page assumes you know how to create a layout
-  using Flutter's widgets. For more information, see
-  [Building Layouts in Flutter][].
-{{site.alert.end}}
+:::secondary New to Flutter?
+This page assumes you know how to create a layout
+using Flutter's widgets. For more information, see
+[Building Layouts in Flutter][].
+:::
 
-{{site.alert.secondary}}
-  **Terminology:**
+:::tip Terminology
   A [_Route_][] describes a page or screen in a Flutter app.
-{{site.alert.end}}
+:::
 
 You can create this animation in Flutter with Hero widgets.
 As the hero animates from the source to the destination route,
@@ -100,9 +96,7 @@ how Flutter performs a hero animation.
 
 ## Basic structure of a hero animation
 
-{{site.alert.secondary}}
-  <h4>What's the point?</h4>
-
+:::secondary What's the point?
 * Use two hero widgets in different routes but with matching tags to
     implement the animation.
 * The Navigator manages a stack containing the app's routes.
@@ -113,13 +107,12 @@ how Flutter performs a hero animation.
     as it flies from the source to the destination route.
     During its flight, the hero is moved to
     an application overlay, so that it appears on top of both routes.
-{{site.alert.end}}
+:::
 
-{{site.alert.secondary}}
-  **Terminology:**
-  If the concept of tweens or tweening is new to you,
-  see the [Animations in Flutter tutorial][].
-{{site.alert.end}}
+:::tip Terminology
+If the concept of tweens or tweening is new to you,
+check out the [Animations in Flutter tutorial][].
+:::
 
 Hero animations are implemented using two [`Hero`][]
 widgets: one describing the widget in the source route,
@@ -241,9 +234,7 @@ implement hero animations:
 
 ## Standard hero animations
 
-{{site.alert.secondary}}
-  <h4>What's the point?</h4>
-
+:::secondary What's the point?
 * Specify a route using `MaterialPageRoute`, `CupertinoPageRoute`,
     or build a custom route using `PageRouteBuilder`.
     The examples in this section use MaterialPageRoute.
@@ -251,25 +242,24 @@ implement hero animations:
     wrapping the destination's image in a `SizedBox`.
 * Change the location of the image by placing the destination's
     image in a layout widget. These examples use `Container`.
-{{site.alert.end}}
+:::
 
 <a id="standard-hero-animation-code"></a>
-{{site.alert.secondary}}
-  **Standard hero animation code**
 
-  Each of the following examples demonstrates flying an image from one
-  route to another. This guide describes the first example.
+:::secondary Standard hero animation code
+Each of the following examples demonstrates flying an image from one
+route to another. This guide describes the first example.
 
-  [hero_animation][]
-  : Encapsulates the hero code in a custom `PhotoHero` widget.
-    Animates the hero's motion along a curved path,
-    as described in the Material motion spec.
+[hero_animation][]
+: Encapsulates the hero code in a custom `PhotoHero` widget.
+  Animates the hero's motion along a curved path,
+  as described in the Material motion spec.
 
-  [basic_hero_animation][]
-  : Uses the hero widget directly.
-    This more basic example, provided for your reference, isn't
-    described in this guide.
-{{site.alert.end}}
+[basic_hero_animation][]
+: Uses the hero widget directly.
+  This more basic example, provided for your reference, isn't
+  described in this guide.
+:::
 
 ### What's going on?
 
@@ -425,16 +415,14 @@ Key information:
 
 ## Radial hero animations
 
-{{site.alert.secondary}}
-  <h4>What's the point?</h4>
-
+:::secondary What's the point?
 * A _radial transformation_ animates a circular shape into a square
     shape.
 * A radial _hero_ animation performs a radial transformation while
     flying the hero from the source route to the destination route.
 * MaterialRectCenter&shy;Arc&shy;Tween defines the tween animation.
 * Build the destination route using `PageRouteBuilder`.
-{{site.alert.end}}
+:::
 
 Flying a hero from one route to another as it transforms
 from a circular shape to a rectangular shape is a slick
@@ -453,34 +441,32 @@ This animation might seem complex (and it is), but you can **customize the
 provided example to your needs.** The heavy lifting is done for you.
 
 <a id="radial-hero-animation-code"></a>
-{{site.alert.secondary}}
-  **Radial hero animation code**
 
-  Each of the following examples demonstrates a radial hero animation.
-  This guide describes the first example.
+:::secondary Radial hero animation code
+Each of the following examples demonstrates a radial hero animation.
+This guide describes the first example.
 
-  [radial_hero_animation][]
-  : A radial hero animation as described in the Material motion spec.
+[radial_hero_animation][]
+: A radial hero animation as described in the Material motion spec.
 
-  [basic_radial_hero_animation][]
-  : The simplest example of a radial hero animation. The destination
-    route has no Scaffold, Card, Column, or Text.
-    This basic example, provided for your reference, isn't
-    described in this guide.
+[basic_radial_hero_animation][]
+: The simplest example of a radial hero animation. The destination
+  route has no Scaffold, Card, Column, or Text.
+  This basic example, provided for your reference, isn't
+  described in this guide.
 
-  [radial_hero_animation_animate<wbr>_rectclip][]
-  : Extends radial_hero_animation by also animating the size of the
-    rectangular clip. This more advanced example,
-    provided for your reference, isn't described in this guide.
-{{site.alert.end}}
+[radial_hero_animation_animate<wbr>_rectclip][]
+: Extends radial_hero_animation by also animating the size of the
+  rectangular clip. This more advanced example,
+  provided for your reference, isn't described in this guide.
+:::
 
-{{site.alert.secondary}}
-  **Pro tip:**
-  The radial hero animation involves intersecting a round shape with
-  a square shape. This can be hard to see, even when slowing
-  the animation with `timeDilation`, so you might consider enabling
-  the [`debugPaintSizeEnabled`][] flag during development.
-{{site.alert.end}}
+:::tip Pro tip
+The radial hero animation involves intersecting a round shape with
+a square shape. This can be hard to see, even when slowing
+the animation with `timeDilation`, so you might consider enabling
+the [`debugPaintSizeEnabled`][] flag during development.
+:::
 
 ### What's going on?
 

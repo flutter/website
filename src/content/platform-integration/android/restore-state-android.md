@@ -32,8 +32,7 @@ changes_, so that the app is ready when the OS signals
 that it's about to kill the app, giving the app only
 moments to prepare.
 
-{{site.alert.secondary}}
-  **Instance state vs long-lived state**
+:::secondary Instance state vs long-lived state
   When should you use the `RestorationManager` and
   when should you save state to long term storage?
   _Instance state_
@@ -43,7 +42,7 @@ moments to prepare.
   limited to 1 MB and, if the app exceeds this,
   it crashes with a `TransactionTooLargeException`
   error in the native code.
-{{site.alert.end}}
+:::
 
 [state]: /data-and-backend/state-mgmt/ephemeral-vs-app
 
@@ -121,11 +120,11 @@ To learn how to do this for both iOS and Android,
 check out [Testing state restoration][] on the
 [`RestorationManager`][] page.
 
-{{site.alert.warning}}
-  Don't forget to reenable
-  storing state on your device once you are
-  finished with testing!
-{{site.alert.end}}
+:::warning
+Don't forget to reenable
+storing state on your device once you are
+finished with testing!
+:::
 
 [Testing state restoration]: {{site.api}}/flutter/services/RestorationManager-class.html#testing-state-restoration
 [`RestorationBucket`]: {{site.api}}/flutter/services/RestorationBucket-class.html

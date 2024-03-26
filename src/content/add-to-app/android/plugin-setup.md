@@ -46,25 +46,25 @@ files in your module project. Perform those Android
 Gradle file edits on your outer, existing Android
 app rather than in your Flutter module.
 
-{{site.alert.note}}
-  Astute readers might notice that the Flutter module
-  directory also contains an `.android` and an
-  `.ios` directory. Those directories are Flutter-tool-generated
-  and are only meant to bootstrap Flutter into generic
-  Android or iOS libraries. They should not be edited or checked-in.
-  This allows Flutter to improve the integration point should
-  there be bugs or updates needed with new versions of Gradle,
-  Android, Android Gradle Plugin, etc.
+:::note
+Astute readers might notice that the Flutter module
+directory also contains an `.android` and an
+`.ios` directory. Those directories are Flutter-tool-generated
+and are only meant to bootstrap Flutter into generic
+Android or iOS libraries. They should not be edited or checked-in.
+This allows Flutter to improve the integration point should
+there be bugs or updates needed with new versions of Gradle,
+Android, Android Gradle Plugin, etc.
 
-  For advanced users, if more modularity is needed and you must
-  not leak knowledge of your Flutter module's dependencies into
-  your outer host app, you can rewrap and repackage your Flutter
-  module's Gradle library inside another native Android Gradle
-  library that depends on the Flutter module's Gradle library.
-  You can make your Android specific changes such as editing the
-  AndroidManifest.xml, Gradle files or adding more Java files
-  in that wrapper library.
-{{site.alert.end}}
+For advanced users, if more modularity is needed and you must
+not leak knowledge of your Flutter module's dependencies into
+your outer host app, you can rewrap and repackage your Flutter
+module's Gradle library inside another native Android Gradle
+library that depends on the Flutter module's Gradle library.
+You can make your Android specific changes such as editing the
+AndroidManifest.xml, Gradle files or adding more Java files
+in that wrapper library.
+:::
 
 ## C. Merging libraries
 

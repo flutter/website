@@ -11,14 +11,14 @@ _FFI_ stands for [_foreign function interface._][FFI]
 Other terms for similar functionality include
 _native interface_ and _language bindings._
 
-{{site.alert.note}}
-  This page describes using the `dart:ffi` library
-  in iOS apps. For information on Android, see
-  [Binding to native Android code using dart:ffi][android-ffi].
-  For information in macOS, see
-  [Binding to native macOS code using dart:ffi][macos-ffi].
-  This feature is not yet supported for web plugins.
-{{site.alert.end}}
+:::note
+This page describes using the `dart:ffi` library
+in iOS apps. For information on Android, see
+[Binding to native Android code using dart:ffi][android-ffi].
+For information in macOS, see
+[Binding to native macOS code using dart:ffi][macos-ffi].
+This feature is not yet supported for web plugins.
+:::
 
 [android-ffi]: /platform-integration/android/c-interop
 [macos-ffi]: /platform-integration/macos/c-interop
@@ -73,11 +73,11 @@ $ flutter create --platforms=android,ios,macos,windows,linux --template=plugin_f
 $ cd native_add
 ```
 
-{{site.alert.note}}
-  You can exclude platforms from `--platforms` that you don't want
-  to build to. However, you need to include the platform of 
-  the device you are testing on.
-{{site.alert.end}}
+:::note
+You can exclude platforms from `--platforms` that you don't want
+to build to. However, you need to include the platform of 
+the device you are testing on.
+:::
 
 This will create a plugin with C/C++ sources in `native_add/src`.
 These sources are built by the native build files in the various
@@ -199,13 +199,13 @@ in binary form, use the following instructions:
 1. Add a `vendored_frameworks` field.
    See the [CocoaPods example][].
 
-{{site.alert.warning}}
-  **Do not** upload this plugin
-  (or any plugin containing binary code) to pub.dev.
-  Instead, this plugin should be downloaded
-  from a trusted third-party,
-  as shown in the CocoaPods example.
-{{site.alert.end}}
+:::warning
+**Do not** upload this plugin
+(or any plugin containing binary code) to pub.dev.
+Instead, this plugin should be downloaded
+from a trusted third-party,
+as shown in the CocoaPods example.
+:::
 
 [CocoaPods example]: {{site.github}}/CocoaPods/CocoaPods/blob/master/examples/Vendored%20Framework%20Example/Example%20Pods/VendoredFrameworkExample.podspec
 

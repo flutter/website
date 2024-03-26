@@ -39,11 +39,11 @@ flutter:
     - directory/subdirectory/
 ```
 
-{{site.alert.note}}
- Only files located directly in the directory are included.
- [Resolution-aware asset image variants](#resolution-aware) are the only exception.
- To add files located in subdirectories, create an entry per directory.
-{{site.alert.end}}
+:::note
+Only files located directly in the directory are included.
+[Resolution-aware asset image variants](#resolution-aware) are the only exception.
+To add files located in subdirectories, create an entry per directory.
+:::
 
 ### Asset bundling
 
@@ -177,10 +177,10 @@ That is, if `.../my_icon.png` is 72px by 72px, then
 but they both render into 72px by 72px (in logical pixels),
 if width and height are not specified.
 
-{{site.alert.note}}
-  [Device pixel ratio][] depends on [MediaQueryData.size][], which requires having either
-  [MaterialApp][] or [CupertinoApp][] as an ancestor of your [`AssetImage`][].
-{{site.alert.end}}
+:::note
+[Device pixel ratio][] depends on [MediaQueryData.size][], which requires having either
+[MaterialApp][] or [CupertinoApp][] as an ancestor of your [`AssetImage`][].
+:::
 
 #### Bundling of resolution-aware image assets {#resolution-aware-bundling}
 
@@ -395,11 +395,11 @@ screen density as indicated by the [Android Developer Guide][].
 
 ![Android icon location](/assets/images/docs/assets-and-images/android-icon-path.png)
 
-{{site.alert.note}}
-  If you rename the `.png` files, you must also update the
-  corresponding name in your `AndroidManifest.xml`'s
-  `<application>` tag's `android:icon` attribute.
-{{site.alert.end}}
+:::note
+If you rename the `.png` files, you must also update the
+corresponding name in your `AndroidManifest.xml`'s
+`<application>` tag's `android:icon` attribute.
+:::
 
 #### iOS
 
@@ -424,13 +424,13 @@ transitional launch screens to your Flutter app while the
 Flutter framework loads. This launch screen persists until
 Flutter renders the first frame of your application.
 
-{{site.alert.note}}
-  This implies that if you don't call [`runApp()`][] in the
-  `main()` function of your app (or more specifically,
-  if you don't call [`FlutterView.render()`][] in response to
-  [`PlatformDispatcher.onDrawFrame`][]),
-  the launch screen persists forever.
-{{site.alert.end}}
+:::note
+This implies that if you don't call [`runApp()`][] in the
+`main()` function of your app (or more specifically,
+if you don't call [`FlutterView.render()`][] in response to
+[`PlatformDispatcher.onDrawFrame`][]),
+the launch screen persists forever.
+:::
 
 [`FlutterView.render()`]: {{site.api}}/flutter/dart-ui/FlutterView/render.html
 [`PlatformDispatcher.onDrawFrame`]: {{site.api}}/flutter/dart-ui/PlatformDispatcher/onDrawFrame.html

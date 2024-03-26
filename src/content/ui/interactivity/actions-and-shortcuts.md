@@ -155,17 +155,17 @@ set defines a set of one or more keys, and the intent indicates the intended
 purpose of the keypress. The `Shortcuts` widget looks up key presses in the map,
 to find an `Intent` instance, which it gives to the action's `invoke()` method.
 
-{{site.alert.note}}
-  `ShortcutActivator` is a replacement for `LogicalKeySet`.
-  It allows for more flexible and correct activation of shortcuts.
-  `LogicalKeySet` is a `ShortcutActivator`, of course, but
-  there is also `SingleActivator`, which takes a single key and the
-  optional modifiers to be pressed before the key.
-  Then there is `CharacterActivator`, which activates a shortcut based on the
-  character produced by a key sequence, instead of the logical keys themselves.
-  `ShortcutActivator` is also meant to be subclassed to allow for
-  custom ways of activating shortcuts from key events.
-{{site.alert.end}}
+:::note
+`ShortcutActivator` is a replacement for `LogicalKeySet`.
+It allows for more flexible and correct activation of shortcuts.
+`LogicalKeySet` is a `ShortcutActivator`, of course, but
+there is also `SingleActivator`, which takes a single key and the
+optional modifiers to be pressed before the key.
+Then there is `CharacterActivator`, which activates a shortcut based on the
+character produced by a key sequence, instead of the logical keys themselves.
+`ShortcutActivator` is also meant to be subclassed to allow for
+custom ways of activating shortcuts from key events.
+:::
 
 ### The ShortcutManager
 

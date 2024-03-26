@@ -13,11 +13,11 @@ see [using packages][].
 
 [using packages]: /packages-and-plugins/using-packages
 
-{{site.alert.note}}
-  The information in this page is valid for most platforms,
-  but platform-specific code for the web generally uses
-  [JS interoperability][] or the [`dart:html` library][] instead.
-{{site.alert.end}}
+:::note
+The information in this page is valid for most platforms,
+but platform-specific code for the web generally uses
+[JS interoperability][] or the [`dart:html` library][] instead.
+:::
 
 Flutter uses a flexible system that allows you to call
 platform-specific APIs in a language that works directly
@@ -44,16 +44,16 @@ with code generation:
   the native programming language&mdash;and sends a response back to the
   _client_, the Flutter portion of the app.
 
-{{site.alert.note}}
-  This guide addresses using the platform channel mechanism
-  if you need to use the platform's APIs in a non-Dart language.
-  But you can also write platform-specific Dart code
-  in your Flutter app by inspecting the
-  [`defaultTargetPlatform`][] property.
-  [Platform adaptations][] lists some
-  platform-specific adaptations that Flutter
-  automatically performs for you in the framework.
-{{site.alert.end}}
+:::note
+This guide addresses using the platform channel mechanism
+if you need to use the platform's APIs in a non-Dart language.
+But you can also write platform-specific Dart code
+in your Flutter app by inspecting the
+[`defaultTargetPlatform`][] property.
+[Platform adaptations][] lists some
+platform-specific adaptations that Flutter
+automatically performs for you in the framework.
+:::
 
 [`defaultTargetPlatform`]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
 [pigeon]: {{site.pub-pkg}}/pigeon
@@ -69,12 +69,12 @@ channels as illustrated in this diagram:
 Messages and responses are passed asynchronously,
 to ensure the user interface remains responsive.
 
-{{site.alert.note}}
-  Even though Flutter sends messages to and from Dart asynchronously,
-  whenever you invoke a channel method, you must invoke that method on the
-  platform's main thread. See the [section on threading][]
-  for more information.
-{{site.alert.end}}
+:::note
+Even though Flutter sends messages to and from Dart asynchronously,
+whenever you invoke a channel method, you must invoke that method on the
+platform's main thread. See the [section on threading][]
+for more information.
+:::
 
 On the client side, [`MethodChannel`][] enables sending
 messages that correspond to method calls. On the platform side,
@@ -84,11 +84,11 @@ enable receiving method calls and sending back a
 result. These classes allow you to develop a platform plugin
 with very little 'boilerplate' code.
 
-{{site.alert.note}}
-  If desired, method calls can also be sent in the reverse direction,
-  with the platform acting as client to methods implemented in Dart.
-  For a concrete example, check out the [`quick_actions`][] plugin.
-{{site.alert.end}}
+:::note
+If desired, method calls can also be sent in the reverse direction,
+with the platform acting as client to methods implemented in Dart.
+For a concrete example, check out the [`quick_actions`][] plugin.
+:::
 
 ### Platform channel data types support and codecs {#codec}
 
@@ -224,14 +224,14 @@ the project creation step is slightly different
 but the platform channel code
 is still written in the same way.
 
-{{site.alert.note}}
-  The full, runnable source-code for this example is
-  available in [`/examples/platform_channel/`][]
-  for Android with Java, iOS with Objective-C,
-  Windows with C++, and Linux with C.
-  For iOS with Swift,
-  see [`/examples/platform_channel_swift/`][].
-{{site.alert.end}}
+:::note
+The full, runnable source-code for this example is
+available in [`/examples/platform_channel/`][]
+for Android with Java, iOS with Objective-C,
+Windows with C++, and Linux with C.
+For iOS with Swift,
+see [`/examples/platform_channel_swift/`][].
+:::
 
 ### Step 1: Create a new app project {#example-project}
 
@@ -1224,14 +1224,14 @@ or they can execute on a background thread if using a Task Queue.
 You can invoke the platform side handlers asynchronously
 and on any thread.
 
-{{site.alert.note}}
-  On Android, the platform's main thread is sometimes
-  called the "main thread", but it is technically defined
-  as [the UI thread][]. Annotate methods that need
-  to be run on the UI thread with `@UiThread`.
-  On iOS, this thread is officially
-  referred to as [the main thread][].
-{{site.alert.end}}
+:::note
+On Android, the platform's main thread is sometimes
+called the "main thread", but it is technically defined
+as [the UI thread][]. Annotate methods that need
+to be run on the UI thread with `@UiThread`.
+On iOS, this thread is officially
+referred to as [the main thread][].
+:::
 
 ### Using plugins and channels from background isolates
 
@@ -1299,10 +1299,10 @@ override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.Flu
 
 In Swift:
 
-{{site.alert.note}}
-  In release 2.10, the Task Queue API is only available on the `master` channel
-  for iOS.
-{{site.alert.end}}
+:::note
+In release 2.10, the Task Queue API is only available on the `master` channel
+for iOS.
+:::
 
 ```swift
 public static func register(with registrar: FlutterPluginRegistrar) {
@@ -1318,10 +1318,10 @@ public static func register(with registrar: FlutterPluginRegistrar) {
 
 In Objective-C:
 
-{{site.alert.note}}
-  In release 2.10, the Task Queue API is only available on the `master` channel
-  for iOS.
-{{site.alert.end}}
+:::note
+In release 2.10, the Task Queue API is only available on the `master` channel
+for iOS.
+:::
 
 ```objc
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {

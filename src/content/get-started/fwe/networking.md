@@ -85,10 +85,10 @@ The first codelab (ostensibly on creating Adaptive apps in Flutter),
 uses a web server written in Dart to work around the web browsers'
 [Cross-Origin Resource Sharing (CORS) restrictions][].
 
-{{site.alert.note}}
-  If you've already worked through this codelab
-  on the [layout][] page, feel free to skip this step.
-{{site.alert.end}}
+:::note
+If you've already worked through this codelab
+on the [layout][] page, feel free to skip this step.
+:::
 
 [layout]: {{site.url}}/get-started/fwe/layout
 

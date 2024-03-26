@@ -386,12 +386,12 @@ val flutterFragment = FlutterFragment.withNewEngine()
 ```
 {% endsamplecode %}
 
-{{site.alert.note}}
-  `FlutterFragment`'s initial route property has no effect when a pre-warmed
-  `FlutterEngine` is used because the pre-warmed `FlutterEngine` already
-  chose an initial route. The initial route can be chosen explicitly when
-  pre-warming a `FlutterEngine`.
-{{site.alert.end}}
+:::note
+`FlutterFragment`'s initial route property has no effect when a pre-warmed
+`FlutterEngine` is used because the pre-warmed `FlutterEngine` already
+chose an initial route. The initial route can be chosen explicitly when
+pre-warming a `FlutterEngine`.
+:::
 
 ## Run Flutter from a specified entrypoint
 
@@ -426,13 +426,13 @@ of a Dart entrypoint called `mySpecialEntrypoint()`.
 Notice that the parentheses `()` are
 not included in the `dartEntrypoint` `String` name.
 
-{{site.alert.note}}
-  `FlutterFragment`'s Dart entrypoint property has no effect
-  when a pre-warmed `FlutterEngine` is used because the
-  pre-warmed `FlutterEngine` already executed a Dart entrypoint.
-  The Dart entrypoint can be chosen explicitly when pre-warming
-  a `FlutterEngine`.
-{{site.alert.end}}
+:::note
+`FlutterFragment`'s Dart entrypoint property has no effect
+when a pre-warmed `FlutterEngine` is used because the
+pre-warmed `FlutterEngine` already executed a Dart entrypoint.
+The Dart entrypoint can be chosen explicitly when pre-warming
+a `FlutterEngine`.
+:::
 
 ## Control `FlutterFragment`'s render mode
 
@@ -496,21 +496,21 @@ require transparent pixels in the Flutter experience that
 show through to the underlying Android UI. For this reason,
 Flutter supports translucency in a `FlutterFragment`.
 
-{{site.alert.note}}
-  Both `SurfaceView` and `TextureView` support transparency.
-  However, when a `SurfaceView` is instructed to render with
-  transparency, it positions itself at a higher z-index than
-  all other Android `View`s, which means it appears
-  above all other `View`s. This is a limitation of `SurfaceView`.
-  If it's acceptable to render your Flutter experience on top
-  of all other content, then `FlutterFragment`'s default
-  `RenderMode` of `surface` is the `RenderMode` that you
-  should use. However, if you need to display Android `View`s both
-  above and below your Flutter experience, then you must specify a
-  `RenderMode` of `texture`.
-  See "Control `FlutterFragment`'s render mode"
-  for information about controlling the `RenderMode`.
-{{site.alert.end}}
+:::note
+Both `SurfaceView` and `TextureView` support transparency.
+However, when a `SurfaceView` is instructed to render with
+transparency, it positions itself at a higher z-index than
+all other Android `View`s, which means it appears
+above all other `View`s. This is a limitation of `SurfaceView`.
+If it's acceptable to render your Flutter experience on top
+of all other content, then `FlutterFragment`'s default
+`RenderMode` of `surface` is the `RenderMode` that you
+should use. However, if you need to display Android `View`s both
+above and below your Flutter experience, then you must specify a
+`RenderMode` of `texture`.
+See "Control `FlutterFragment`'s render mode"
+for information about controlling the `RenderMode`.
+:::
 
 To enable transparency for a `FlutterFragment`,
 build it with the following configuration:
@@ -610,11 +610,11 @@ the surrounding `Activity`. The default value is `true`,
 which allows Flutter and Flutter plugins to interact with the
 surrounding `Activity`.
 
-{{site.alert.note}}
-  Some plugins might expect or require an `Activity` reference.
-  Ensure that none of your plugins require an `Activity`
-  before you disable access.
-{{site.alert.end}}
+:::note
+Some plugins might expect or require an `Activity` reference.
+Ensure that none of your plugins require an `Activity`
+before you disable access.
+:::
 
 [`Fragment`]: {{site.android-dev}}/guide/components/fragments
 [`FlutterFragment`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterFragment.html

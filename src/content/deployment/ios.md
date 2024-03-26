@@ -212,11 +212,11 @@ choose a different [export method][app_bundle_export_method] by
 adding the option `--export-method ad-hoc`,
 `--export-method development` or `--export-method enterprise`.
 
-{{site.alert.note}}
-  On versions of Flutter where `flutter build ipa --export-method` is unavailable,
-  open `build/ios/archive/MyApp.xcarchive` and follow the instructions below
-  to validate and distribute the app from Xcode.
-{{site.alert.end}}
+:::note
+On versions of Flutter where `flutter build ipa --export-method` is unavailable,
+open `build/ios/archive/MyApp.xcarchive` and follow the instructions below
+to validate and distribute the app from Xcode.
+:::
 
 ### Upload the app bundle to App Store Connect
 
@@ -254,15 +254,15 @@ build ID until you upload an archive.
 After the archive has been successfully validated, click
 **Distribute App**.
 
-{{site.alert.note}}
-  When you export your app at the end of **Distribute App**,
-  Xcode will create a directory containing
-  an IPA of your app and an `ExportOptions.plist` file.
-  You can create new IPAs with the same options without launching
-  Xcode by running
-  `flutter build ipa --export-options-plist=path/to/ExportOptions.plist`.
-  See `xcodebuild -h` for details about the keys in this property list.
-{{site.alert.end}}
+:::note
+When you export your app at the end of **Distribute App**,
+Xcode will create a directory containing
+an IPA of your app and an `ExportOptions.plist` file.
+You can create new IPAs with the same options without launching
+Xcode by running
+`flutter build ipa --export-options-plist=path/to/ExportOptions.plist`.
+See `xcodebuild -h` for details about the keys in this property list.
+:::
 
 </li>
 </ol>
@@ -339,15 +339,14 @@ Set up a new temporary keychain to be used for code signing:
 keychain initialize
 ```
 
-{{site.alert.secondary}}
-**Restore Login Keychain!**
+:::note Restore Login Keychain!
 After running `keychain initialize` you **must** run the following:<br>
 
 `keychain use-login`
 
 This sets your login keychain as the default to avoid potential
 authentication issues with apps on your machine.
-{{site.alert.end}}
+:::
 
 </li>
 <li markdown="1">

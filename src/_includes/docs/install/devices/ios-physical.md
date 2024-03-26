@@ -236,16 +236,13 @@ To extend the timeout, change the value to an integer greater than 10.
 $ flutter run --device-timeout 60
 ```
 
-{{site.alert.secondary}}
-  **Learn more about wireless debugging**
-
-  * To learn more, check out
-    [Apple's documentation on pairing a wireless device with Xcode][].
-  * To troubleshoot, check out [Apple's Developer Forums][].
-  * To learn how to configure wireless debugging with `flutter attach`,
-    check out [Debugging your add-to-app module][].
-
-{{site.alert.end}}
+:::note Learn more about wireless debugging
+* To learn more, check out
+  [Apple's documentation on pairing a wireless device with Xcode][].
+* To troubleshoot, check out [Apple's Developer Forums][].
+* To learn how to configure wireless debugging with `flutter attach`,
+  check out [Debugging your add-to-app module][].
+:::
 
 [Check the app's Bundle ID]: /assets/images/docs/setup/xcode-unique-bundle-id.png
 [Choosing a Membership]: {{site.apple-dev}}/support/compare-memberships

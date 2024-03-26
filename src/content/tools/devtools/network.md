@@ -3,9 +3,9 @@ title: Using the Network View
 description: How to use the DevTools network view.
 ---
 
-{{site.alert.note}}
-  The network view works with all Flutter and Dart applications.
-{{site.alert.end}}
+:::note
+The network view works with all Flutter and Dart applications.
+:::
 
 ## What is it?
 

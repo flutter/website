@@ -17,11 +17,11 @@ A minimal package consists of the following:
 : The `lib` directory contains the public code in
   the package, minimally a single `<package-name>.dart` file.
 
-{{site.alert.note}}
-  For a list of dos and don'ts when writing an effective plugin,
-  see the Medium article by Mehmet Fidanboylu,
-  [Writing a good plugin][].
-{{site.alert.end}}
+:::note
+For a list of dos and don'ts when writing an effective plugin,
+see the Medium article by Mehmet Fidanboylu,
+[Writing a good plugin][].
+:::
 
 ### Package types {#types}
 
@@ -589,12 +589,12 @@ In many cases, non-web platform implementations only use the
 platform-specific implementation language, as shown above. However,
 platform implementations can also use platform-specific Dart as well.
 
-{{site.alert.note}}
-  The examples below only apply to non-web platforms. Web
-  plugin implementations are always written in Dart, and use
-  `pluginClass` and `fileName` for their Dart implementations
-  as shown above.
-{{site.alert.end}}
+:::note
+The examples below only apply to non-web platforms. Web
+plugin implementations are always written in Dart, and use
+`pluginClass` and `fileName` for their Dart implementations
+as shown above.
+:::
 
 #### Dart-only platform implementations
 
@@ -901,15 +901,15 @@ package_1
 
 ## Publishing your package {#publish}
 
-{{site.alert.tip}}
-  Have you noticed that some of the packages and plugins
-  on pub.dev are designated as [Flutter Favorites][]?
-  These are the packages published by verified developers
-  and are identified as the packages and plugins you
-  should first consider using when writing your app.
-  To learn more,
-  see the [Flutter Favorites program][].
-{{site.alert.end}}
+:::tip
+Have you noticed that some of the packages and plugins
+on pub.dev are designated as [Flutter Favorites][]?
+These are the packages published by verified developers
+and are identified as the packages and plugins you
+should first consider using when writing your app.
+To learn more,
+see the [Flutter Favorites program][].
+:::
 
 Once you have implemented a package, you can publish it on
 [pub.dev][], so that other developers can easily use it.

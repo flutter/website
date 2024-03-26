@@ -47,16 +47,15 @@ ListView(
 
 ## Interactive example
 
-{{site.alert.secondary}}
-  **Desktop and web only:**
-  This example works in the browser and on the desktop.
-  However, as this list scrolls on the horizontal axis
-  (left to right or right to left),
-  hold <kbd>Shift</kbd> while using the mouse scroll wheel to scroll the list.
+:::note Desktop and web note
+This example works in the browser and on the desktop.
+However, as this list scrolls on the horizontal axis
+(left to right or right to left),
+hold <kbd>Shift</kbd> while using the mouse scroll wheel to scroll the list.
 
-  To learn more, read the [breaking change][] page on the
-  default drag for scrolling devices.
-{{site.alert.end}}
+To learn more, read the [breaking change][] page on the
+default drag for scrolling devices.
+:::
 
 <?code-excerpt "lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example

@@ -88,11 +88,11 @@ Make the `_DraggableCardState` class extend from
 Then construct an [AnimationController][] in
 `initState` and set `vsync` to `this`.
 
-{{site.alert.note}}
-  Extending `SingleTickerProviderStateMixin` allows the state object to be a
-  `TickerProvider` for the `AnimationController`. For more information, see the
-  documentation for [TickerProvider][].
-{{site.alert.end}}
+:::note
+Extending `SingleTickerProviderStateMixin` allows the state object to be a
+`TickerProvider` for the `AnimationController`. For more information, see the
+documentation for [TickerProvider][].
+:::
 
 <?code-excerpt "lib/{starter,step1}.dart"?>
 ```diff
@@ -330,10 +330,10 @@ onPanEnd: (details) {
 },
 ```
 
-{{site.alert.note}}
-  Now that the animation controller uses a simulation it's `duration` argument
-  is no longer required.
-{{site.alert.end}}
+:::note
+Now that the animation controller uses a simulation it's `duration` argument
+is no longer required.
+:::
 
 ## Interactive Example
 

@@ -28,12 +28,12 @@ This page covers the following topics:
 * [Updating the app's version number](#updating-the-apps-version-number)
 * [Android release FAQ](#android-release-faq)
 
-{{site.alert.note}}
-   Throughout this page, `[project]` refers to 
-   the directory that your application is in. While following
-   these instructions, substitute `[project]` with 
-   your app's directory.
-{{site.alert.end}}
+:::note
+Throughout this page, `[project]` refers to 
+the directory that your application is in. While following
+these instructions, substitute `[project]` with 
+your app's directory.
+:::
 
 ## Adding a launcher icon
 
@@ -140,24 +140,24 @@ If not, create one using one of the following methods:
    the argument you pass to the `-keystore` parameter.
    **However, keep the `keystore` file private;
    don't check it into public source control!**
-    
-   {{site.alert.note}}
-     * The `keytool` command might not be in your path&mdash;it's
-       part of Java, which is installed as part of
-       Android Studio.  For the concrete path,
-       run `flutter doctor -v` and locate the path printed after
-       'Java binary at:'. Then use that fully qualified path
-       replacing `java` (at the end) with `keytool`.
-       If your path includes space-separated names,
-       such as `Program Files`, use platform-appropriate
-       notation for the names. For example, on Mac/Linux
-       use `Program\ Files`, and on Windows use
-       `"Program Files"`.
-    
-     * The `-storetype JKS` tag is only required for Java 9
-       or newer. As of the Java 9 release,
-       the keystore type defaults to PKS12.
-   {{site.alert.end}}
+
+   :::note
+   * The `keytool` command might not be in your path&mdash;it's
+     part of Java, which is installed as part of
+     Android Studio.  For the concrete path,
+     run `flutter doctor -v` and locate the path printed after
+     'Java binary at:'. Then use that fully qualified path
+     replacing `java` (at the end) with `keytool`.
+     If your path includes space-separated names,
+     such as `Program Files`, use platform-appropriate
+     notation for the names. For example, on Mac/Linux
+     use `Program\ Files`, and on Windows use
+     `"Program Files"`.
+   
+   * The `-storetype JKS` tag is only required for Java 9
+     or newer. As of the Java 9 release,
+     the keystore type defaults to PKS12.
+   :::
 
 ### Reference the keystore from the app
 
@@ -177,10 +177,10 @@ The `storeFile` might be located at
 `/Users/<user name>/upload-keystore.jks` on macOS
 or `C:\\Users\\<user name>\\upload-keystore.jks` on Windows.
 
-{{site.alert.warning}}
-  Keep the `key.properties` file private;
-  don't check it into public source control.
-{{site.alert.end}}
+:::warning
+Keep the `key.properties` file private;
+don't check it into public source control.
+:::
 
 ### Configure signing in gradle
 
@@ -242,10 +242,10 @@ by editing the `[project]/android/app/build.gradle` file.
 
 Release builds of your app will now be signed automatically.
 
-{{site.alert.note}}
-  You might need to run `flutter clean` after changing the gradle file.
-  This prevents cached builds from affecting the signing process.
-{{site.alert.end}}
+:::note
+You might need to run `flutter clean` after changing the gradle file.
+This prevents cached builds from affecting the signing process.
+:::
 
 For more information on signing your app, check out
 [Sign your app][] on developer.android.com.
@@ -256,10 +256,10 @@ For more information on signing your app, check out
 when you build a release APK or AAB. To disable R8, pass the `--no-shrink`
 flag to `flutter build apk` or `flutter build appbundle`.
 
-{{site.alert.note}}
-  Obfuscation and minification can considerably extend compile time
-  of the Android application.
-{{site.alert.end}}
+:::note
+Obfuscation and minification can considerably extend compile time
+of the Android application.
+:::
 
 ## Enabling multidex support
 
@@ -291,12 +291,12 @@ The Flutter tool enables multidex support and retries the build:
 
 <img src='/assets/images/docs/deployment/android/cli-multidex-added-build.png' width="100%" alt='screenshot of a successful build after adding multidex'>
 
-{{site.alert.note}}
-  Multidex support is natively included when targeting
-  Android SDK 21 or later. However, we don't recommend
-  targeting API 21+ purely to resolve the multidex issue
-  as this might inadvertently exclude users running older devices.
-{{site.alert.end}}
+:::note
+Multidex support is natively included when targeting
+Android SDK 21 or later. However, we don't recommend
+targeting API 21+ purely to resolve the multidex issue
+as this might inadvertently exclude users running older devices.
+:::
 
 You might also choose to manually support multidex by following Android's guides
 and modifying your project's Android directory configuration.
@@ -381,11 +381,11 @@ the Play Store.
 * App bundle (preferred)
 * APK
 
-{{site.alert.note}}
-  The Google Play Store prefers the app bundle format.
-  For more information, check out
-  [About Android App Bundles][bundle].
-{{site.alert.end}}
+:::note
+The Google Play Store prefers the app bundle format.
+For more information, check out
+[About Android App Bundles][bundle].
+:::
 
 ### Build an app bundle
 

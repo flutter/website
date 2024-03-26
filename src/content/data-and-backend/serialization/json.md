@@ -14,18 +14,18 @@ JSON, sooner or later.
 This guide looks into ways of using JSON with Flutter.
 It covers which JSON solution to use in different scenarios, and why.
 
-{{site.alert.info}}
-  **Terminology:** _Encoding_ and _serialization_ are the same
-  thing&mdash;turning a data structure into a string.
-  _Decoding_ and _deserialization_ are the
-  opposite process&mdash;turning a string into a data structure.
-  However, _serialization_ also commonly refers to the entire process of
-  translating data structures to and from a more easily readable format.
+:::note Terminology
+_Encoding_ and _serialization_ are the same
+thing&mdash;turning a data structure into a string.
+_Decoding_ and _deserialization_ are the
+opposite process&mdash;turning a string into a data structure.
+However, _serialization_ also commonly refers to the entire process of
+translating data structures to and from a more easily readable format.
 
-  To avoid confusion, this doc uses "serialization" when referring to the
-  overall process, and "encoding" and "decoding" when specifically
-  referring to those processes.
-{{site.alert.end}}
+To avoid confusion, this doc uses "serialization" when referring to the
+overall process, and "encoding" and "decoding" when specifically
+referring to those processes.
+:::
 
 ## Which JSON serialization method is right for me?
 
@@ -61,11 +61,11 @@ manual serialization might be the way you want to start.
 For an example of manual encoding, see
 [Serializing JSON manually using dart:convert][].
 
-{{site.alert.tip}}
-  For hands-on practice deserializing JSON and
-  taking advantage of Dart 3's new features,
-  check out the [Dive into Dart's patterns and records][] codelab.
-{{site.alert.end}}
+:::tip
+For hands-on practice deserializing JSON and
+taking advantage of Dart 3's new features,
+check out the [Dive into Dart's patterns and records][] codelab.
+:::
 
 ### Use code generation for medium to large projects
 
@@ -211,13 +211,13 @@ In a production app, you would want to ensure that the serialization
 works properly. In practice, the `User.fromJson()` and `User.toJson()`
 methods both need to have unit tests in place to verify correct behavior.
 
-{{site.alert.info}}
-  The cookbook contains [a more comprehensive worked example of using
-  JSON model classes][json background parsing], using an isolate to parse
-  the JSON file on a background thread. This approach is ideal if you
-  need your app to remain responsive while the JSON file is being
-  decoded.
-{{site.alert.end}}
+:::note
+The cookbook contains [a more comprehensive worked example of using
+JSON model classes][json background parsing], using an isolate to parse
+the JSON file on a background thread. This approach is ideal if you
+need your app to remain responsive while the JSON file is being
+decoded.
+:::
 
 However, real-world scenarios are not always that simple.
 Sometimes JSON API responses are more complex, for example since they 
@@ -234,18 +234,17 @@ Although there are other libraries available, this guide uses
 [`json_serializable`][], an automated source code generator that
 generates the JSON serialization boilerplate for you.
 
-{{site.alert.info}}
-  **Choosing a library:**
-  You might have noticed two [Flutter Favorite][] packages
-  on pub.dev that generate JSON serialization code,
-  [`json_serializable`][] and [`built_value`][].
-  How do you choose between these packages?
-  The `json_serializable` package allows you to make regular
-  classes serializable by using annotations, 
-  whereas the `built_value` package provides a higher-level way
-  of defining immutable value classes that can also be
-  serialized to JSON.
-{{site.alert.end}}
+:::note Choosing a library
+You might have noticed two [Flutter Favorite][] packages
+on pub.dev that generate JSON serialization code,
+[`json_serializable`][] and [`built_value`][].
+How do you choose between these packages?
+The `json_serializable` package allows you to make regular
+classes serializable by using annotations, 
+whereas the `built_value` package provides a higher-level way
+of defining immutable value classes that can also be
+serialized to JSON.
+:::
 
 Since the serialization code is not handwritten or maintained manually
 anymore, you minimize the risk of having JSON serialization exceptions at

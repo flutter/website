@@ -77,12 +77,12 @@ To override the web renderer at runtime:
 The web renderer can't be changed after the Flutter engine startup process
 begins in `main.dart.js`.
 
-{{site.alert.note}}
-  As of **Flutter 3.7.0**,  setting a `window.flutterWebRenderer`
-  (an approach used in previous releases) displays a
-  **deprecation notice** in the JS console. For more information,
-  check out [Customizing web app initialization][web-app-init].
-{{site.alert.end}}
+:::note
+As of **Flutter 3.7.0**,  setting a `window.flutterWebRenderer`
+(an approach used in previous releases) displays a
+**deprecation notice** in the JS console. For more information,
+check out [Customizing web app initialization][web-app-init].
+:::
 
 ## Choosing which option to use
 

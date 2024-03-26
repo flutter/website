@@ -551,11 +551,11 @@ even if the phone hasn't been updated with a new Android version.
 The same is true for Flutter on other native platforms,
 such as Windows or macOS.
 
-{{site.alert.note}}
-  Flutter 3.10 set Impeller as the default
-  rendering engine on iOS. It's in preview
-  for Android behind a flag.
-{{site.alert.end}}
+:::note
+Flutter 3.10 set Impeller as the default
+rendering engine on iOS. It's in preview
+for Android behind a flag.
+:::
 
 ### From user input to the GPU
 

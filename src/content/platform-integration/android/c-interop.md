@@ -11,14 +11,14 @@ _FFI_ stands for [_foreign function interface._][FFI]
 Other terms for similar functionality include
 _native interface_ and _language bindings._
 
-{{site.alert.note}}
-  This page describes using the `dart:ffi` library
-  in Android apps. For information on iOS, see
-  [Binding to native iOS code using dart:ffi][ios-ffi].
-  For information in macOS, see
-  [Binding to native macOS code using dart:ffi][macos-ffi].
-  This feature is not yet supported for web plugins.
-{{site.alert.end}}
+:::note
+This page describes using the `dart:ffi` library
+in Android apps. For information on iOS, see
+[Binding to native iOS code using dart:ffi][ios-ffi].
+For information in macOS, see
+[Binding to native macOS code using dart:ffi][macos-ffi].
+This feature is not yet supported for web plugins.
+:::
 
 
 [ios-ffi]: /platform-integration/ios/c-interop
@@ -82,11 +82,11 @@ $ flutter create --platforms=android,ios,macos,windows,linux --template=plugin_f
 $ cd native_add
 ```
 
-{{site.alert.note}}
-  You can exclude platforms from `--platforms` that you don't want
-  to build to. However, you need to include the platform of 
-  the device you are testing on.
-{{site.alert.end}}
+:::note
+You can exclude platforms from `--platforms` that you don't want
+to build to. However, you need to include the platform of 
+the device you are testing on.
+:::
 
 This will create a plugin with C/C++ sources in `native_add/src`.
 These sources are built by the native build files in the various

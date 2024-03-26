@@ -1,10 +1,10 @@
 ## Configuring Android app support
 
-{{site.alert.note}}
-  Flutter relies on a full installation of Android Studio to supply
-  its Android platform dependencies. However, you can write your
-  Flutter apps in a number of editors; a later step discusses that.
-{{site.alert.end}}
+:::note
+Flutter relies on a full installation of Android Studio to supply
+its Android platform dependencies. However, you can write your
+Flutter apps in a number of editors; a later step discusses that.
+:::
 
 ### Install Android Studio
 

@@ -112,10 +112,10 @@ Wrap the `Column` widget in an `AnimatedOpacity` widget:
    }
 ```
 
-{{site.alert.info}}
-  You can reference the line numbers in the example code to help track where
-  to make these changes in the [fade-in starter code][].
-{{site.alert.end}}
+:::note
+You can reference the line numbers in the example code to help track where
+to make these changes in the [fade-in starter code][].
+:::
 
 #### 2. Initialize a state variable for the animated property
 
@@ -190,10 +190,10 @@ to set `opacity` to 1:
          duration: const Duration(seconds: 2),
 ```
 
-{{site.alert.secondary}}
-  You only need to set the start and end values of `opacity`.
-  The `AnimatedOpacity` widget manages everything in between.
-{{site.alert.end}}
+:::note
+You only need to set the start and end values of `opacity`.
+The `AnimatedOpacity` widget manages everything in between.
+:::
 
 ### Fade-in (complete)
 
@@ -213,17 +213,16 @@ of the `AnimatedOpacity` widget.
 - It requires a `duration` parameter to define how long
   the transition between the values should take.
 
-{{site.alert.note}}
-  - Implicit animations can only animate the
-    properties of a parent stateful widget.
-    The preceding example enables this with the
-    `FadeInDemo` widget that extends `StatefulWidget`.
+:::note
+- Implicit animations can only animate the
+  properties of a parent stateful widget.
+  The preceding example enables this with the
+  `FadeInDemo` widget that extends `StatefulWidget`.
 
-  - The `AnimatedOpacity` widget only animates the `opacity` property.
-    Some implicitly animated widgets can animate many properties
-    at the same time. The following example showcases this.
-
-{{site.alert.end}}
+- The `AnimatedOpacity` widget only animates the `opacity` property.
+  Some implicitly animated widgets can animate many properties
+  at the same time. The following example showcases this.
+:::
 
 ## Example: Shape-shifting effect
 
@@ -289,10 +288,10 @@ Change the `Container` widget to an `AnimatedContainer` widget:
                    color: color,
 ```
 
-{{site.alert.info}}
-  You can reference the line numbers in the example code to help track where to
-  make these changes in the [shape-shifting starter code][].
-{{site.alert.end}}
+:::note
+You can reference the line numbers in the example code to help track where to
+make these changes in the [shape-shifting starter code][].
+:::
 
 #### 2. Set starting values for animated properties
 

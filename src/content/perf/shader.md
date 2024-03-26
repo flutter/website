@@ -159,12 +159,12 @@ SkSLs are generated and tested automatically over the lifetime of an app.
 
 [integration tests]: /cookbook/testing/integration/introduction
 
-{{site.alert.note}}
-  The integration_test package is now the recommended way
-  to write integration tests. Refer to the
-  [Integration testing](/testing/integration-tests/)
-  page for details.
-{{site.alert.end}}
+:::note
+The integration_test package is now the recommended way
+to write integration tests. Refer to the
+[Integration testing](/testing/integration-tests/)
+page for details.
+:::
 
 Take the original version of [Flutter Gallery][] as an example.
 The CI system is set up to generate SkSLs for every Flutter commit,

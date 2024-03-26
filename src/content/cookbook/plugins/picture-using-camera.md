@@ -40,16 +40,16 @@ To add the packages as dependencies, run `flutter pub add`:
 $ flutter pub add camera path_provider path
 ```
 
-{{site.alert.tip}}
-  - For android, You must update `minSdkVersion` to 21 (or higher).
-  - On iOS, lines below have to be added inside `ios/Runner/Info.plist` in order the access the camera and microphone.
-    ```xml
-    <key>NSCameraUsageDescription</key>
-    <string>Explanation on why the camera access is needed.</string>
-    <key>NSMicrophoneUsageDescription</key>
-    <string>Explanation on why the microphone access is needed.</string>
-    ```
-{{site.alert.end}}
+:::tip
+- For android, You must update `minSdkVersion` to 21 (or higher).
+- On iOS, lines below have to be added inside `ios/Runner/Info.plist` in order the access the camera and microphone.
+  ```xml
+  <key>NSCameraUsageDescription</key>
+  <string>Explanation on why the camera access is needed.</string>
+  <key>NSMicrophoneUsageDescription</key>
+  <string>Explanation on why the microphone access is needed.</string>
+  ```
+:::
 
 ## 2. Get a list of the available cameras
 
@@ -133,22 +133,22 @@ class TakePictureScreenState extends State<TakePictureScreen> {
 }
 ```
 
-{{site.alert.warning}}
-  If you do not initialize the `CameraController`,
-  you *cannot* use the camera to display a preview and take pictures.
-{{site.alert.end}}
+:::warning
+If you do not initialize the `CameraController`,
+you *cannot* use the camera to display a preview and take pictures.
+:::
 
 ## 4. Use a `CameraPreview` to display the camera's feed
 
 Next, use the `CameraPreview` widget from the `camera` package to
 display a preview of the camera's feed.
 
-{{site.alert.secondary}}
-  **Remember** You must wait until the controller has finished
-  initializing before working with the camera. Therefore,
-  you must wait for the `_initializeControllerFuture()` created
-  in the previous step to complete before showing a `CameraPreview`.
-{{site.alert.end}}
+:::note Remember
+You must wait until the controller has finished
+initializing before working with the camera. Therefore,
+you must wait for the `_initializeControllerFuture()` created
+in the previous step to complete before showing a `CameraPreview`.
+:::
 
 Use a [`FutureBuilder`][] for exactly this purpose.
 

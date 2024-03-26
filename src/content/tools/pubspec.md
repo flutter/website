@@ -3,13 +3,13 @@ title: "Flutter and the pubspec file"
 description: "Describes the Flutter-only fields in the pubspec file."
 ---
 
-{{site.alert.note}}
-  This page is primarily aimed at folks who write
-  Flutter apps. If you write packages or plugins, 
-  (perhaps you want to create a federated plugin),
-  you should check out the
-  [Developing packages and plugins][] page.
-{{site.alert.end}}
+:::note
+This page is primarily aimed at folks who write
+Flutter apps. If you write packages or plugins, 
+(perhaps you want to create a federated plugin),
+you should check out the
+[Developing packages and plugins][] page.
+:::
 
 Every Flutter project includes a `pubspec.yaml` file,
 often referred to as _the pubspec_.
@@ -36,13 +36,13 @@ are described in [the pubspec file][] on [dart.dev][].
 This page lists _Flutter-specific_ fields
 that are only valid for a Flutter project.
 
-{{site.alert.note}}
-  The first time you build your project, it
-  creates a `pubspec.lock` file that contains
-  specific versions of the included packages.
-  This ensures that you get the same version
-  the next time the project is built.
-{{site.alert.end}}
+:::note
+The first time you build your project, it
+creates a `pubspec.lock` file that contains
+specific versions of the included packages.
+This ensures that you get the same version
+the next time the project is built.
+:::
 
 [the pubspec file]: {{site.dart-site}}/tools/pub/pubspec
 [dart.dev]: {{site.dart-site}}

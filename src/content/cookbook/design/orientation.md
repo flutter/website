@@ -66,12 +66,12 @@ body: OrientationBuilder(
 ),
 ```
 
-{{site.alert.note}}
-  If you're interested in the orientation of the screen,
-  rather than the amount of space available to the parent,
-  use `MediaQuery.of(context).orientation` instead of an
-  `OrientationBuilder` widget.
-{{site.alert.end}}
+:::note
+If you're interested in the orientation of the screen,
+rather than the amount of space available to the parent,
+use `MediaQuery.of(context).orientation` instead of an
+`OrientationBuilder` widget.
+:::
 
 ## Interactive example
 

@@ -33,12 +33,12 @@ that works on mobile, desktop, and web.
 
 </div>
 
-{{site.alert.tip}}
-  The codelab above walks you through writing your first Flutter
-  app for all platforms &mdash; mobile, desktop and web.
-  You might prefer to take
-  [another codelab written specifically for the web][codelab-web].
-{{site.alert.end}}
+:::tip
+The codelab above walks you through writing your first Flutter
+app for all platforms &mdash; mobile, desktop and web.
+You might prefer to take
+[another codelab written specifically for the web][codelab-web].
+:::
 
 [codelab-web]: /get-started/codelab-web
 

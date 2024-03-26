@@ -47,13 +47,13 @@ add code to launch `FlutterActivity` from whatever point
 in your app that you'd like. The following example shows
 `FlutterActivity` being launched from an `OnClickListener`.
 
-{{site.alert.note}}
+:::note
 Make sure to use the following import:
 
 ```java
 import io.flutter.embedding.android.FlutterActivity;
 ```
-{{site.alert.end}}
+:::
 
 {% samplecode default-activity-launch %}
 {% sample Java %}
@@ -200,19 +200,19 @@ or [`FlutterFragment`][] that should use the cached `FlutterEngine`.
 Using `FlutterActivity` with a cached `FlutterEngine`
 is discussed next.
 
-{{site.alert.note}}
-  To warm up a `FlutterEngine`, you must execute a Dart
-  entrypoint. Keep in mind that the moment
-  `executeDartEntrypoint()` is invoked,
-  your Dart entrypoint method begins executing.
-  If your Dart entrypoint invokes `runApp()`
-  to run a Flutter app, then your Flutter app behaves as if it
-  were running in a window of zero size until this
-  `FlutterEngine` is attached to a `FlutterActivity`,
-  `FlutterFragment`, or `FlutterView`. Make sure that your app
-  behaves appropriately between the time you warm it up and
-  the time you display Flutter content.
-{{site.alert.end}}
+:::note
+To warm up a `FlutterEngine`, you must execute a Dart
+entrypoint. Keep in mind that the moment
+`executeDartEntrypoint()` is invoked,
+your Dart entrypoint method begins executing.
+If your Dart entrypoint invokes `runApp()`
+to run a Flutter app, then your Flutter app behaves as if it
+were running in a window of zero size until this
+`FlutterEngine` is attached to a `FlutterActivity`,
+`FlutterFragment`, or `FlutterView`. Make sure that your app
+behaves appropriately between the time you warm it up and
+the time you display Flutter content.
+:::
 
 With a pre-warmed, cached `FlutterEngine`, you now need
 to instruct your `FlutterActivity` to use the cached
@@ -256,34 +256,34 @@ Now, when you launch `FlutterActivity`,
 there is significantly less delay in
 the display of Flutter content.
 
-{{site.alert.note}}
-  When using a cached `FlutterEngine`, that `FlutterEngine` outlives any
-  `FlutterActivity` or `FlutterFragment` that displays it. Keep in
-  mind that Dart code begins executing as soon as you pre-warm the
-  `FlutterEngine`, and continues executing after the destruction of your
-  `FlutterActivity`/`FlutterFragment`. To stop executing and clear resources,
-  obtain your `FlutterEngine` from the `FlutterEngineCache` and destroy the
-  `FlutterEngine` with `FlutterEngine.destroy()`.
-{{site.alert.end}}
+:::note
+When using a cached `FlutterEngine`, that `FlutterEngine` outlives any
+`FlutterActivity` or `FlutterFragment` that displays it. Keep in
+mind that Dart code begins executing as soon as you pre-warm the
+`FlutterEngine`, and continues executing after the destruction of your
+`FlutterActivity`/`FlutterFragment`. To stop executing and clear resources,
+obtain your `FlutterEngine` from the `FlutterEngineCache` and destroy the
+`FlutterEngine` with `FlutterEngine.destroy()`.
+:::
 
-{{site.alert.note}}
-  Runtime performance isn't the only reason that you might
-  pre-warm and cache a `FlutterEngine`.
-  A pre-warmed `FlutterEngine` executes Dart code independent
-  from a `FlutterActivity`, which allows such a `FlutterEngine`
-  to be used to execute arbitrary Dart code at any moment.
-  Non-UI application logic can be executed in a `FlutterEngine`,
-  like networking and data caching, and in background behavior
-  within a `Service` or elsewhere. When using a `FlutterEngine`
-  to execute behavior in the background, be sure to adhere to all
-  Android restrictions on background execution.
-{{site.alert.end}}
+:::note
+Runtime performance isn't the only reason that you might
+pre-warm and cache a `FlutterEngine`.
+A pre-warmed `FlutterEngine` executes Dart code independent
+from a `FlutterActivity`, which allows such a `FlutterEngine`
+to be used to execute arbitrary Dart code at any moment.
+Non-UI application logic can be executed in a `FlutterEngine`,
+like networking and data caching, and in background behavior
+within a `Service` or elsewhere. When using a `FlutterEngine`
+to execute behavior in the background, be sure to adhere to all
+Android restrictions on background execution.
+:::
 
-{{site.alert.note}}
-  Flutter's debug/release builds have drastically different
-  performance characteristics. To evaluate the performance
-  of Flutter, use a release build.
-{{site.alert.end}}
+:::note
+Flutter's debug/release builds have drastically different
+performance characteristics. To evaluate the performance
+of Flutter, use a release build.
+:::
 
 #### Initial route with a cached engine
 
@@ -381,12 +381,12 @@ startActivity(
 
 You now have a `FlutterActivity` with a transparent background.
 
-{{site.alert.note}}
-  Make sure that your Flutter content also includes a
-  translucent background. If your Flutter UI paints a
-  solid background color, then it still appears as
-  though your `FlutterActivity` has an opaque background.
-{{site.alert.end}}
+:::note
+Make sure that your Flutter content also includes a
+translucent background. If your Flutter UI paints a
+solid background color, then it still appears as
+though your `FlutterActivity` has an opaque background.
+:::
 
 [`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
 [`Activity`]: {{site.android-dev}}/reference/android/app/Activity

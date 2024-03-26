@@ -171,17 +171,17 @@ enough time to disappear before contracting the height.
 An ease-out curve that uses all the available time is a
 good way to accomplish this behavior.
 
-{{site.alert.note}}
-  The `AnimatedBuilder` widget rebuilds the `SizedBox`
-  widget as the `_indicatorSpaceAnimation` changes.
-  The alternative to using `AnimatedBuilder` is to
-  invoke `setState()` every time the animation changes, 
-  and then rebuild the entire widget tree within `TypingIndicator`. 
-  Invoking `setState()` in this manner is acceptable,
-  but as other widgets are added to this widget tree,
-  rebuilding the entire tree just to change the height 
-  of the `SizedBox` widget wastes CPU cycles.
-{{site.alert.end}}
+:::note
+The `AnimatedBuilder` widget rebuilds the `SizedBox`
+widget as the `_indicatorSpaceAnimation` changes.
+The alternative to using `AnimatedBuilder` is to
+invoke `setState()` every time the animation changes, 
+and then rebuild the entire widget tree within `TypingIndicator`. 
+Invoking `setState()` in this manner is acceptable,
+but as other widgets are added to this widget tree,
+rebuilding the entire tree just to change the height 
+of the `SizedBox` widget wastes CPU cycles.
+:::
 
 ## Animate the speech bubbles
 

@@ -6,11 +6,11 @@ description: Evaluating the performance of your app from several angles.
 <iframe width="560" height="315" src="{{site.yt.embed}}/PKGguGUwSYE" title="Learn tips to boost Flutter's performance" {{site.yt.set}}></iframe>
 [Flutter performance basics]({{site.yt.watch}}?v=PKGguGUwSYE)
 
-{{site.alert.note}}
-  If your app has a performance issue and you are
-  trying to debug it, check out the DevTool's page
-  on [Using the Performance view][].
-{{site.alert.end}}
+:::note
+If your app has a performance issue and you are
+trying to debug it, check out the DevTool's page
+on [Using the Performance view][].
+:::
 
 [Using the Performance view]: /tools/devtools/performance
 

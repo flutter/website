@@ -46,10 +46,10 @@ As of this release, `useMaterial3` is `true` by default.
 You can still opt out of the Material 3 version of the Material library by
 specifying `useMaterial3: false` in your `MaterialApp` theme.
 
-{{site.alert.note}}
-  Support for Material 2 and configuring the `useMaterial3` property
-  will eventually be deprecated and removed.
-{{site.alert.end}}
+:::note
+Support for Material 2 and configuring the `useMaterial3` property
+will eventually be deprecated and removed.
+:::
 
 Also, some of the widgets couldn't merely be updated,
 but needed a whole new implementation.

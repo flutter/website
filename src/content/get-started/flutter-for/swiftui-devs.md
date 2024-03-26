@@ -11,10 +11,10 @@ SwiftUI developers who want to write mobile apps using Flutter
 should review this guide.
 It explains how to apply existing SwiftUI knowledge to Flutter.
 
-{{site.alert.note}}
-  If you instead have experience building apps for iOS with UIKit,
-  see [Flutter for UIKit developers][].
-{{site.alert.end}}
+:::note
+If you instead have experience building apps for iOS with UIKit,
+see [Flutter for UIKit developers][].
+:::
 
 Flutter is a framework for building cross-platform applications
 that uses the Dart programming language.
@@ -33,10 +33,10 @@ Flutter also makes a number of adaptations
 to app behavior when running on iOS and macOS.
 To learn how, see [Platform adaptations][].
 
-{{site.alert.info}}
-  To integrate Flutter code into an **existing** iOS app,
-  check out [Add Flutter to existing app][].
-{{site.alert.end}}
+:::tip
+To integrate Flutter code into an **existing** iOS app,
+check out [Add Flutter to existing app][].
+:::
 
 This document can be used as a cookbook by jumping around
 and finding questions that are most relevant to your needs.
@@ -1327,10 +1327,10 @@ following example:
 )
 ```
 
-{{site.alert.note}}
-  To download custom fonts to use in your apps,
-  check out [Google Fonts](https://fonts.google.com).
-{{site.alert.end}}
+:::note
+To download custom fonts to use in your apps,
+check out [Google Fonts](https://fonts.google.com).
+:::
 
 ### Bundling images in apps
 

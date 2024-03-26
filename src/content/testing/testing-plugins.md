@@ -10,12 +10,12 @@ to test all of their functionality.
 
 [usual types of Flutter tests]: /testing/overview
 
-{{site.alert.note}}
-  To learn how to test your plugin code, read on.
-  To learn how to avoid crashes from a plugin when
-  testing your Flutter app, check out
-  [Plugins in Flutter tests][].
-{{site.alert.end}}
+:::note
+To learn how to test your plugin code, read on.
+To learn how to avoid crashes from a plugin when
+testing your Flutter app, check out
+[Plugins in Flutter tests][].
+:::
 
 [Plugins in Flutter tests]: /testing/plugins-in-tests
 

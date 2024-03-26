@@ -102,11 +102,10 @@ As of Flutter 3.16, Impeller is available behind
 a flag on Android devices that support Vulkan.
 It continues to be in preview as of the 3.19 release.
 
-{{site.alert.secondary}}
-  **Does your device support Vulkan?**
-  You can determine whether your Android device
-  supports Vulkan at [checking for Vulkan support][vulkan].
-{{site.alert.end}}
+:::secondary Does your device support Vulkan?
+You can determine whether your Android device
+supports Vulkan at [checking for Vulkan support][vulkan].
+:::
 
 You can try Impeller on Vulkan-capable Android devices
 by passing `--enable-impeller` to `flutter run`:

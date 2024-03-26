@@ -3,11 +3,11 @@ title: Using the CPU profiler view
 description: Learn how to use the DevTools CPU profiler view.
 ---
 
-{{site.alert.note}}
-  The CPU profiler view works with Dart CLI and mobile apps only.
-  Use Chrome DevTools to [analyze performance][]
-  of a web app.  
-{{site.alert.end}}
+:::note
+The CPU profiler view works with Dart CLI and mobile apps only.
+Use Chrome DevTools to [analyze performance][]
+of a web app.  
+:::
 
 The CPU profiler view allows you to record and profile a
 session from your Dart or Flutter application.
@@ -20,12 +20,12 @@ By aggregating many CPU samples together,
 the profiler can help you understand where the CPU
 spends most of its time.
 
-{{site.alert.note}}
-  **If you are running a Flutter application,
-  use a profile build to analyze performance.**
-  CPU profiles are not indicative of release performance
-  unless your Flutter application is run in profile mode.
-{{site.alert.end}}
+:::note
+**If you are running a Flutter application,
+use a profile build to analyze performance.**
+CPU profiles are not indicative of release performance
+unless your Flutter application is run in profile mode.
+:::
 
 {% include_relative _profiler.md %}
 

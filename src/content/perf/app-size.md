@@ -115,12 +115,12 @@ Starting in Flutter version 1.22 and DevTools version 0.9.1,
 a size analysis tool is included to help developers understand the breakdown
 of the release build of their application.
 
-{{site.alert.warning}}
-  As stated in the [checking total size](#checking-the-total-size) section
-  above, an upload package is not representative of your end users' download
-  size. Be aware that redundant native library architectures and asset densities
-  seen in the breakdown tool can be filtered by the Play Store and App Store.
-{{site.alert.end}}
+:::warning
+As stated in the [checking total size](#checking-the-total-size) section
+above, an upload package is not representative of your end users' download
+size. Be aware that redundant native library architectures and asset densities
+seen in the breakdown tool can be filtered by the Play Store and App Store.
+:::
 
 The size analysis tool is invoked by passing the `--analyze-size` flag when
 building:
@@ -150,12 +150,12 @@ Through the summary, you can get a quick idea of the size usage per category
 (such as asset, native code, Flutter libraries, etc). The compiled Dart
 native library is further broken down by package for quick analysis.
 
-{{site.alert.warning}}
-  This tool on iOS creates a .app rather than an IPA. Use this tool to
-  evaluate the relative size of the .app's content. To get
-  a closer estimate of the download size, reference the
-  [Estimating total size](#estimating-total-size) section above.
-{{site.alert.end}}
+:::warning
+This tool on iOS creates a .app rather than an IPA. Use this tool to
+evaluate the relative size of the .app's content. To get
+a closer estimate of the download size, reference the
+[Estimating total size](#estimating-total-size) section above.
+:::
 
 ### Deeper analysis in DevTools
 

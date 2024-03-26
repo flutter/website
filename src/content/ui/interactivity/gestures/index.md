@@ -149,12 +149,12 @@ drag update, and drag end):
 To listen to gestures from the widgets layer,
 use a [`GestureDetector`][].
 
-{{site.alert.note}}
-  To learn more, watch this short
-  Widget of the Week video on the `GestureDetector` widget:
+:::note
+To learn more, watch this short
+Widget of the Week video on the `GestureDetector` widget:
 
-  <iframe class="full-width" src="{{site.yt.embed}}/WhVXkCFPmK4" title="Learn about the GestureDetector Flutter Widget" {{site.yt.set}}></iframe>
-{{site.alert.end}}
+<iframe class="full-width" src="{{site.yt.embed}}/WhVXkCFPmK4" title="Learn about the GestureDetector Flutter Widget" {{site.yt.set}}></iframe>
+:::
 
 If you're using Material Components,
 many of those widgets already respond to taps or gestures.

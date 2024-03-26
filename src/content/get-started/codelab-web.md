@@ -9,16 +9,16 @@ js:
 
 <?code-excerpt path-base="get-started/codelab_web"?>
 
-{{site.alert.tip}}
-  This codelab walks you through writing
-  your first Flutter app on the web, specifically.
-  You might prefer to try
-  [another codelab][first_flutter_codelab]
-  that takes a more generic approach.
-  Note that the codelab on this page
-  does work on mobile and desktop
-  once you download and configure the appropriate tooling.
-{{site.alert.end}}
+:::tip
+This codelab walks you through writing
+your first Flutter app on the web, specifically.
+You might prefer to try
+[another codelab][first_flutter_codelab]
+that takes a more generic approach.
+Note that the codelab on this page
+does work on mobile and desktop
+once you download and configure the appropriate tooling.
+:::
 
 <img src="/assets/images/docs/get-started/sign-up.gif" alt="The web app that you'll be building" class='site-image-right'>
 
@@ -44,28 +44,24 @@ to animate in from the bottom of the screen.
 
 The animated GIF shows how the app works at the completion of this lab.
 
-{{site.alert.secondary}}
-  <h4>What you'll learn</h4>
-
+:::secondary What you'll learn
 * How to write a Flutter app that looks natural on the web.
 * Basic structure of a Flutter app.
 * How to implement a Tween animation.
 * How to implement a stateful widget.
 * How to use the debugger to set breakpoints.
-{{site.alert.end}}
+:::
 
-{{site.alert.secondary}}
-  <h4>What you'll use</h4>
-
-  You need three pieces of software to complete this lab:
+:::secondary What you'll use
+You need three pieces of software to complete this lab:
 
 * [Flutter SDK][]
 * [Chrome browser][]
 * [Text editor or IDE][editor]
 
-  While developing, run your web app in Chrome
-  so you can debug with Dart DevTools.
-{{site.alert.end}}
+While developing, run your web app in Chrome,
+so you can debug with Dart DevTools.
+:::
 
 ## Step 0: Get the starter web app
 
@@ -233,12 +229,13 @@ class _SignUpFormState extends State<SignUpForm> {
 }
 ```
 
-{{site.alert.important}}
-  This page uses an embedded version of [DartPad][]
-  to display examples and exercises.
-  If you see empty boxes instead of DartPads,
-  go to the [DartPad troubleshooting page][].
-{{site.alert.end}}
+:::important
+This page uses an embedded version of [DartPad][]
+to display examples and exercises.
+If you see empty boxes instead of DartPads,
+go to the [DartPad troubleshooting page][].
+:::
+
 </li>
 
 <li markdown="1">Run the example.<br>
@@ -293,13 +290,11 @@ called the `State` class. In this lab,
 all of your edits will be made to the private
 `_SignUpFormState` class.
 
-{{site.alert.secondary}}
-  <h4>Fun fact</h4>
-
+:::tip Fun fact
 The Dart compiler enforces privacy for any identifier
 prefixed with an underscore. For more information,
 see the [Effective Dart Style Guide][].
-{{site.alert.end}}
+:::
 
 First, in your `lib/main.dart` file,
 add the following class definition for the
@@ -417,10 +412,10 @@ Next, you will enable the ability to track the
 user's progress on filling in the form fields,
 and update the app's UI when the form is complete.
 
-{{site.alert.note}}
-  This example does **not** validate the accuracy of the user input.
-  That is something you can add later using form validation, if you like.
-{{site.alert.end}}
+:::note
+This example does **not** validate the accuracy of the user input.
+That is something you can add later using form validation, if you like.
+:::
 
 <ol markdown="1">
 <li markdown="1">Add a method to update `_formProgress`.
@@ -620,16 +615,16 @@ Congratulations, you are now running Dart DevTools!
 </li>
 </ol>
 
-{{site.alert.note}}
-  This is not the only way to launch DevTools.
-  If you are using IntelliJ,
-  you can open DevTools by going to
-  **Flutter Inspector** -> **More Actions** -> **Open DevTools**:
+:::note
+This is not the only way to launch DevTools.
+If you are using IntelliJ,
+you can open DevTools by going to
+**Flutter Inspector** -> **More Actions** -> **Open DevTools**:
 
-  {% indent %}
-  ![Screenshot of Flutter inspector with DevTools menu](/assets/images/docs/get-started/intellij-devtools.png){:width="100%"}
-  {% endindent %}
-{{site.alert.end}}
+{% indent %}
+![Screenshot of Flutter inspector with DevTools menu](/assets/images/docs/get-started/intellij-devtools.png){:width="100%"}
+{% endindent %}
+:::
 
 <ol markdown="1">
 <li markdown="1">Set a breakpoint.<br>

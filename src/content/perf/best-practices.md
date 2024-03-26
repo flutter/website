@@ -11,18 +11,18 @@ so you only need to avoid common pitfalls to get excellent
 performance. These best practice recommendations will help you
 write the most performant Flutter app possible.
 
-{{site.alert.note}}
-  If you are writing web apps in Flutter, you might be interested
-  in a series of articles, written by the Flutter Material team,
-  after they modified the [Flutter Gallery][] app to make it more
-  performant on the web:
+:::note
+If you are writing web apps in Flutter, you might be interested
+in a series of articles, written by the Flutter Material team,
+after they modified the [Flutter Gallery][] app to make it more
+performant on the web:
 
-  * [Optimizing performance in Flutter web apps with tree
-    shaking and deferred loading][web-perf-1]
-  * [Improving perceived performance with image placeholders,
-    precaching, and disabled navigation transitions][web-perf-2]
-  * [Building performant Flutter widgets][web-perf-3]
-{{site.alert.end}}
+* [Optimizing performance in Flutter web apps with tree
+  shaking and deferred loading][web-perf-1]
+* [Improving perceived performance with image placeholders,
+  precaching, and disabled navigation transitions][web-perf-2]
+* [Building performant Flutter widgets][web-perf-3]
+:::
 
 [Flutter Gallery]: {{site.gallery-archive}}
 [web-perf-1]: {{site.flutter-medium}}/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674
@@ -176,12 +176,11 @@ TBD: It would be nice if we could link to an example.
   eliminated? If not, you might need to find another
   package, or write your own.
 
-{{site.alert.secondary}}
-  **Note to package owners:**
-  As a best practice, consider providing documentation
-  for when `saveLayer` might be necessary for your package,
-  how it might be avoided, and when it can't be avoided.
-{{site.alert.end}}
+:::note Note to package owners
+As a best practice, consider providing documentation
+for when `saveLayer` might be necessary for your package,
+how it might be avoided, and when it can't be avoided.
+:::
 
 Other widgets that might trigger `saveLayer()`
 and are potentially costly:

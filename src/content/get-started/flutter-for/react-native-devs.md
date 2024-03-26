@@ -111,11 +111,11 @@ In Dart, uninitialized variables have an initial value of `null`.
 Because numbers are objects in Dart, even uninitialized variables with
 numeric types have the value `null`.
 
-{{site.alert.note}}
-  As of 2.12, Dart supports [Sound Null Safety][],
-  all underlying types are non-nullable by default,
-  which must be initialized as a non-nullable value.
-{{site.alert.end}}
+:::note
+As of 2.12, Dart supports [Sound Null Safety][],
+all underlying types are non-nullable by default,
+which must be initialized as a non-nullable value.
+:::
 
 ```js
 // JavaScript
@@ -1664,11 +1664,11 @@ A list of routes might be specified in the [`MaterialApp`][] widget,
 or they might be built on the fly, for example, in hero animations.
 The following example specifies named routes in the `MaterialApp` widget.
 
-{{site.alert.note}}
-  Named routes are no longer recommended for most
-  applications. For more information, see
-  [Limitations][] in the [navigation overview][] page.
-{{site.alert.end}}
+:::note
+Named routes are no longer recommended for most
+applications. For more information, see
+[Limitations][] in the [navigation overview][] page.
+:::
 
 [Limitations]: /ui/navigation#limitations
 [navigation overview]: /ui/navigation

@@ -9,9 +9,9 @@ evaluate expressions for a paused or running
 app in debug mode, and analyze inbound and outbound
 references for objects.
 
-{{site.alert.note}}
-  This page is up to date for DevTools 2.23.0.
-{{site.alert.end}}
+:::note
+This page is up to date for DevTools 2.23.0.
+:::
 
 The Debug console is available from the [Inspector][],
 [Debugger][], and [Memory][] views.

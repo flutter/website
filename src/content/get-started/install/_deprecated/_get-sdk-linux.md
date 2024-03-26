@@ -19,14 +19,14 @@ run the following command:
 $ sudo snap install flutter --classic
 ```
 
-{{site.alert.note}}
-  After you install Flutter with `snapd`,
-  display your Flutter SDK path with the following command:
+:::note
+After you install Flutter with `snapd`,
+display your Flutter SDK path with the following command:
 
-  ```console
-  $ flutter sdk-path
-  ```
-{{site.alert.end}}
+```console
+$ flutter sdk-path
+```
+:::
 
 ### Method 2: Manual installation
 
@@ -65,9 +65,9 @@ If you aren't using `snapd`, follow these steps to install Flutter.
 
     To find additional download options, run `flutter help precache`.
 
-{{site.alert.note}}
-  To update an existing version of Flutter, see [Upgrading Flutter][].
-{{site.alert.end}}
+:::note
+To update an existing version of Flutter, see [Upgrading Flutter][].
+:::
 
 ### Verify your install with `flutter doctor`
 

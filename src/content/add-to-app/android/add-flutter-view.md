@@ -4,11 +4,11 @@ short-title: Integrate via FlutterView
 description: Learn how to perform advanced integrations via Flutter Views.
 ---
 
-{{site.alert.warning}}
-  Integrating via a [FlutterView]({{site.api}}/javadoc/io/flutter/embedding/android/FlutterView.html)
-  is advanced usage and requires manually creating custom, application specific
-  bindings.
-{{site.alert.end}}
+:::warning
+Integrating via a [FlutterView]({{site.api}}/javadoc/io/flutter/embedding/android/FlutterView.html)
+is advanced usage and requires manually creating custom, application specific
+bindings.
+:::
 
 Integrating via a [FlutterView]({{site.api}}/javadoc/io/flutter/embedding/android/FlutterView.html)
 requires a bit more work than via FlutterActivity and FlutterFragment previously

@@ -14,13 +14,13 @@ This allows you, for example, to use the native
 Google Maps from the Android and iOS SDKs
 directly inside your Flutter app.
 
-{{site.alert.note}}
-  This page discusses how to host your own native iOS views
-  within a Flutter app.
-  If you'd like to embed native Android views
-  in your Flutter app,
-  see [Hosting native Android views][].
-{{site.alert.end}}
+:::note
+This page discusses how to host your own native iOS views
+within a Flutter app.
+If you'd like to embed native Android views
+in your Flutter app,
+see [Hosting native Android views][].
+:::
 
 [Hosting native Android views]: /platform-integration/android/platform-views
 

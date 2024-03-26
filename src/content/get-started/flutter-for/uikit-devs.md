@@ -10,10 +10,10 @@ who want to write mobile apps using Flutter
 should review this guide.
 It explains how to apply existing UIKit knowledge to Flutter.
 
-{{site.alert.note}}
-  If you have experience building apps with SwiftUI,
-  check out [Flutter for SwiftUI developers][] instead.
-{{site.alert.end}}
+:::note
+If you have experience building apps with SwiftUI,
+check out [Flutter for SwiftUI developers][] instead.
+:::
 
 Flutter is a framework for building cross-platform applications
 that uses the Dart programming language.
@@ -32,10 +32,10 @@ Flutter also makes a number of adaptations
 to app behavior when running on iOS.
 To learn how, see [Platform adaptations][].
 
-{{site.alert.info}}
-  To integrate Flutter code into an **existing** iOS app,
-  check out [Add Flutter to existing app][].
-{{site.alert.end}}
+:::tip
+To integrate Flutter code into an **existing** iOS app,
+check out [Add Flutter to existing app][].
+:::
 
 Use this guide as a cookbook.
 Jump around and find questions that address your most relevant needs.
@@ -49,12 +49,12 @@ It outlines how Flutter works on iOS and how to use Flutter to build iOS apps.
 
 ### Views vs. Widgets
 
-{{site.alert.secondary}}
-  How is react-style, or _declarative_,
-  programming different from the
-  traditional imperative style?
-  For a comparison, see [Introduction to declarative UI][].
-{{site.alert.end}}
+:::secondary
+How is react-style, or _declarative_,
+programming different from the
+traditional imperative style?
+For a comparison, see [Introduction to declarative UI][].
+:::
 
 In UIKit, most of what you create in the UI is done using view objects,
 which are instances of the `UIView` class.

@@ -309,11 +309,11 @@ We also recommend the following online class:
 
 * [The Complete Flutter Development Bootcamp Using Dart][]
 
-{{site.alert.note}}
-  If you have trouble viewing any of the codelabs
-  on [`codelabs.developers.google.com`]({{site.codelabs}}), try
-  [this mirror of the Flutter codelabs][].
-{{site.alert.end}}
+:::note
+If you have trouble viewing any of the codelabs
+on [`codelabs.developers.google.com`]({{site.codelabs}}), try
+[this mirror of the Flutter codelabs][].
+:::
 
 [codelabs]: {{site.dart-site}}/codelabs
 [Dart site]: {{site.dart-site}}

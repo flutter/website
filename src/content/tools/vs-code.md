@@ -93,18 +93,18 @@ The code analysis can:
 
 ## Running and debugging
 
-{{site.alert.note}}
-  You can debug your app in a couple of ways.
+:::note
+You can debug your app in a couple of ways.
 
-  - Using [DevTools][], a suite of debugging and profiling
-    tools that run in a browser.
-  - Using VS Code's built-in debugging features,
-    such as setting breakpoints.
+- Using [DevTools][], a suite of debugging and profiling
+  tools that run in a browser.
+- Using VS Code's built-in debugging features,
+  such as setting breakpoints.
 
-  The instructions below describe features available in VS Code.
-  For information on using launching DevTools, see
-  [Running DevTools from VS Code][] in the [DevTools][] docs.
-{{site.alert.end}}
+The instructions below describe features available in VS Code.
+For information on using launching DevTools, see
+[Running DevTools from VS Code][] in the [DevTools][] docs.
+:::
 
 Start debugging by clicking **Run > Start Debugging**
 from the main IDE window, or press <kbd>F5</kbd>.
@@ -117,18 +117,16 @@ including a Flutter SDK version and a
 device name (or the message **No Devices**):<br>
 ![VS Code status bar][]{:.mw-100.pt-1}
 
-{{site.alert.note}}
-
-  - If you do not see a Flutter version number or device info,
-    your project might not have been detected as a Flutter project.
-    Ensure that the folder that contains your `pubspec.yaml` is
-    inside a VS Code **Workspace Folder**.
-  - If the status bar reads **No Devices**, Flutter has not been
-    able to discover any connected iOS or Android devices or simulators.
-    You need to connect a device, or start a simulator or emulator,
-    to proceed.
-
-{{site.alert.end}}
+:::note
+- If you do not see a Flutter version number or device info,
+  your project might not have been detected as a Flutter project.
+  Ensure that the folder that contains your `pubspec.yaml` is
+  inside a VS Code **Workspace Folder**.
+- If the status bar reads **No Devices**, Flutter has not been
+  able to discover any connected iOS or Android devices or simulators.
+  You need to connect a device, or start a simulator or emulator,
+  to proceed.
+:::
 
 The Flutter extension automatically selects the last device connected.
 However, if you have multiple devices/simulators connected, click
@@ -136,14 +134,14 @@ However, if you have multiple devices/simulators connected, click
 at the top of the screen. Select the device you want to use for
 running or debugging.
 
-{{site.alert.secondary}}
-  **Are you developing for macOS or iOS remotely using
-  Visual Studio Code Remote?** If so, you might need to manually
-  unlock the keychain. For more information, see this
-  [question on StackExchange][].
+:::secondary
+**Are you developing for macOS or iOS remotely using
+Visual Studio Code Remote?** If so, you might need to manually
+unlock the keychain. For more information, see this
+[question on StackExchange][].
+:::
 
 [question on StackExchange]: https://superuser.com/questions/270095/when-i-ssh-into-os-x-i-dont-have-my-keychain-when-i-use-terminal-i-do/363840#363840
-{{site.alert.end}}
 
 ### Run app without breakpoints
 

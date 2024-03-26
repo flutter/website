@@ -53,13 +53,13 @@ for example, provides a **Run > Debug...** menu option,
 as well as a green bug icon overlaid with a small triangle
 on the project page.
 
-{{site.alert.note}}
-  * Hot reload works _only_ in debug mode.
-  * The emulator and simulator execute _only_ in debug mode.
-  * Application performance can be janky in debug mode.
-    Measure performance in [profile](#profile)
-    mode on an actual device.
-{{site.alert.end}}
+:::note
+* Hot reload works _only_ in debug mode.
+* The emulator and simulator execute _only_ in debug mode.
+* Application performance can be janky in debug mode.
+  Measure performance in [profile](#profile)
+  mode on an actual device.
+:::
 
 ## Release
 
@@ -116,9 +116,9 @@ Your IDE supports this mode. Android Studio, for example,
 provides a **Run > Profile...** menu option.
 The command `flutter run --profile` compiles to profile mode.
 
-{{site.alert.note}}
-  Use the [DevTools][] suite to profile your app's performance.
-{{site.alert.end}}
+:::note
+Use the [DevTools][] suite to profile your app's performance.
+:::
 
 For more information on the build modes, see
 [Flutter's build modes][].

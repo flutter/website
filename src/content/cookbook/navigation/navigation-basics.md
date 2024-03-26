@@ -14,10 +14,10 @@ For example, an app might have a screen that displays products.
 When the user taps the image of a product, a new screen displays
 details about the product.
 
-{{site.alert.secondary}}
-  **Terminology**: In Flutter, _screens_ and _pages_ are called _routes_.
-  The remainder of this recipe refers to routes.
-{{site.alert.end}}
+:::note Terminology
+In Flutter, _screens_ and _pages_ are called _routes_.
+The remainder of this recipe refers to routes.
+:::
 
 In Android, a route is equivalent to an Activity.
 In iOS, a route is equivalent to a ViewController.
@@ -210,12 +210,12 @@ In the following example, these widgets have been replaced:
 
 This way, the example follows the current iOS design language.
 
-{{site.alert.secondary}}
-  You don't need to replace all Material widgets with Cupertino versions
-  to use [`CupertinoPageRoute`][]
-  since Flutter allows you to mix and match Material and Cupertino widgets
-  depending on your needs.
-{{site.alert.end}}
+:::secondary
+You don't need to replace all Material widgets with Cupertino versions
+to use [`CupertinoPageRoute`][]
+since Flutter allows you to mix and match Material and Cupertino widgets
+depending on your needs.
+:::
 
 <?code-excerpt "lib/main_cupertino.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example

@@ -11,14 +11,11 @@ diff2html: true
 
 <style>dl, dd { margin-bottom: 0; }</style>
 
-{{site.alert.secondary}}
-
-## What you'll learn
-
+:::secondary What you'll learn
 * How to lay out widgets next to each other.
 * How to add space between widgets.
 * How adding and nesting widgets results in a Flutter layout.
-{{site.alert.end}}
+:::
 
 This tutorial explains how to design and build layouts in Flutter.
 
@@ -304,14 +301,12 @@ Pass the provided name and location to the `TitleSection` constructor.
 +            ],
 ```
 
-{{site.alert.tip}}
-
+:::tip
 * When pasting code into your app, indentation can become skewed.
       To fix this in your Flutter editor, use [automatic reformatting support][].
 * To accelerate your development, try Flutter's [hot reload][] feature.
 * If you have problems, compare your code to [`lib/main.dart`][].
-
-{{site.alert.end}}
+:::
 
 ## Add the Button section
 
@@ -571,11 +566,11 @@ To configure your app to reference images, modify its `pubspec.yaml` file.
 
 1. Download the [`lake.jpg`][] image and add it to the new `images` directory.
 
-   {{site.alert.info}}
-     You can't use `wget` to save this binary file.
-     You can download the [image][ch-photo] from [Unsplash][]
-     under the Unsplash License. The small size comes in at 94.4 kB.
-   {{site.alert.end}}
+   :::note
+   You can't use `wget` to save this binary file.
+   You can download the [image][ch-photo] from [Unsplash][]
+   under the Unsplash License. The small size comes in at 94.4 kB.
+   :::
 
 1. To include images, add an `assets` tag to the `pubspec.yaml` file
    at the root directory of your app.
@@ -594,15 +589,13 @@ To configure your app to reference images, modify its `pubspec.yaml` file.
    +    - images/lake.jpg
    ```
 
-{{site.alert.tip}}
-
+:::tip
 Text in the `pubspec.yaml` respects whitespace and text case.
 Write the changes to the file as given in the previous example.
 
 This change might require you to restart the running program to
 display the image.
-
-{{site.alert.end}}
+:::
 
 ### Create the `ImageSection` widget
 

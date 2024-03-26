@@ -16,17 +16,17 @@ Development of WebAssembly support for Dart and Flutter remains ongoing,
 which will potentially result in frequent changes. 
 Revisit this page for the latest updates.
 
-{{site.alert.note}}
-  **Support for Wasm is now in beta!**
-  : WebAssembly support for Flutter web is
-    available on the Flutter [`beta`][] and [`main`][] channels.
+:::note
+**Support for Wasm is now in beta!**
+: WebAssembly support for Flutter web is
+  available on the Flutter [`beta`][] and [`main`][] channels.
 
-  **Dart's next-gen Web interop is now stable!**
-  : Migrate your packages to [`package:web`][] and [`dart:js_interop`][]
-    to make them compatible with Wasm. Read the
-    [Requires JS-interop](#js-interop-wasm)
-    section to learn more. 
-{{site.alert.end}}
+**Dart's next-gen Web interop is now stable!**
+: Migrate your packages to [`package:web`][] and [`dart:js_interop`][]
+  to make them compatible with Wasm. Read the
+  [Requires JS-interop](#js-interop-wasm)
+  section to learn more. 
+:::
 
 [`beta`]: {{site.github}}/flutter/flutter/wiki/flutter-build-release-channels#beta
 [`main`]: {{site.github}}/flutter/flutter/wiki/flutter-build-release-channels#master-aka-main
@@ -185,12 +185,12 @@ and the latest version of Chrome.
 - **Why not Safari?**
   Safari does not support WasmGC yet; [this bug][] tracks their
   implementation efforts.
-  
-{{site.alert.warning}}
-  Flutter compiled to Wasm can't run on the iOS version of any browser.
-  All browsers on iOS are required to use WebKit,
-  and can't use their own browser engine.
-{{site.alert.end}}
+
+:::warning
+Flutter compiled to Wasm can't run on the iOS version of any browser.
+All browsers on iOS are required to use WebKit,
+and can't use their own browser engine.
+:::
 
 [currently experiencing a bug]: https://bugzilla.mozilla.org/show_bug.cgi?id=1788206
 [this bug]: https://bugs.webkit.org/show_bug.cgi?id=247394

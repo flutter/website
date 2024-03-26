@@ -10,10 +10,10 @@ existing Android knowledge to build mobile apps with Flutter.
 If you understand the fundamentals of the Android framework then you
 can use this document as a jump start to Flutter development.
 
-{{site.alert.note}}
-  To integrate Flutter code into your Android app, see
-  [Add Flutter to existing app][].
-{{site.alert.end}}
+:::note
+To integrate Flutter code into your Android app, see
+[Add Flutter to existing app][].
+:::
 
 Your Android knowledge and skill set are highly valuable when building with
 Flutter, because Flutter relies on the mobile operating system for numerous
@@ -29,11 +29,11 @@ finding questions that are most relevant to your needs.
 
 ### What is the equivalent of a View in Flutter?
 
-{{site.alert.secondary}}
-  How is react-style, or _declarative_, programming different than the
-  traditional imperative style?
-  For a comparison, see [Introduction to declarative UI][].
-{{site.alert.end}}
+:::secondary
+How is react-style, or _declarative_, programming different than the
+traditional imperative style?
+For a comparison, see [Introduction to declarative UI][].
+:::
 
 In Android, the `View` is the foundation of everything that shows up on the
 screen. Buttons, toolbars, and inputs, everything is a View.

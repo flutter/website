@@ -14,11 +14,11 @@ the Flutter team provides the [`video_player`][] plugin.
 You can use the `video_player` plugin to play videos
 stored on the file system, as an asset, or from the internet.
 
-{{site.alert.warning}}
-  At this time,
-  the `video_player` plugin doesn't work with any desktop platform.
-  To learn more, check out the [`video_player`][] package.
-{{site.alert.end}}
+:::warning
+At this time,
+the `video_player` plugin doesn't work with any desktop platform.
+To learn more, check out the [`video_player`][] package.
+:::
 
 On iOS, the `video_player` plugin makes use of
 [`AVPlayer`][] to handle playback. On Android,
@@ -80,10 +80,10 @@ For iOS, add the following to the `Info.plist` file found at
 </dict>
 ```
 
-{{site.alert.warning}}
-  The `video_player` plugin can only play asset videos in iOS simulators.
-  You must test network-hosted videos on physical iOS devices.
-{{site.alert.end}}
+:::warning
+The `video_player` plugin can only play asset videos in iOS simulators.
+You must test network-hosted videos on physical iOS devices.
+:::
 
 ## 3. Create and initialize a `VideoPlayerController`
 

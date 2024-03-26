@@ -210,11 +210,11 @@ used to perform additional tasks at a designated time. It also includes a set
 of [predefined environment variables][], such as `$CI_WORKSPACE`, which is the
 location of your cloned repository.
 
-{{site.alert.note}}
-  The temporary build environment that Xcode Cloud uses includes tools that are
-  part of macOS and Xcode&mdash;for example, Python&mdash;and additionally Homebrew to
-  support installing third-party dependencies and tools.
-{{site.alert.end}}
+:::note
+The temporary build environment that Xcode Cloud uses includes tools that are
+part of macOS and Xcode&mdash;for example, Python&mdash;and additionally Homebrew to
+support installing third-party dependencies and tools.
+:::
 
 #### Post-clone script
 
@@ -264,10 +264,10 @@ $ git add --chmod=+x ios/ci_scripts/ci_post_clone.sh
 An [Xcode Cloud workflow][] defines the steps performed in the CI/CD process
 when your workflow is triggered.
 
-{{site.alert.note}}
-  This requires that your project is already initialized with Git
-  and linked to a remote repository.
-{{site.alert.end}}
+:::note
+This requires that your project is already initialized with Git
+and linked to a remote repository.
+:::
 
 To create a new workflow in Xcode, use the following instructions:
 

@@ -7,13 +7,11 @@ diff2html: true
 
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
 
-{{site.alert.secondary}}
-  <h4>What you'll learn</h4>
-
+:::secondary What you'll learn
 * How to respond to taps.
 * How to create a custom widget.
 * The difference between stateless and stateful widgets.
-{{site.alert.end}}
+:::
 
 How do you modify your app to make it react to user input?
 In this tutorial, you'll add interactivity to an app that
@@ -79,16 +77,14 @@ telling the framework to redraw the widget.
 
 ## Creating a stateful widget
 
-{{site.alert.secondary}}
-  <h4>What's the point?</h4>
-
+:::secondary What's the point?
 * A stateful widget is implemented by two classes:
     a subclass of `StatefulWidget` and a subclass of `State`.
 * The state class contains the widget's mutable state and
     the widget's `build()` method.
 * When the widget's state changes, the state object calls
     `setState()`, telling the framework to redraw the widget.
-{{site.alert.end}}
+:::
 
 In this section, you'll create a custom stateful widget.
 You'll replace two stateless widgets&mdash;the solid red
@@ -163,12 +159,12 @@ class FavoriteWidget extends StatefulWidget {
 }
 ```
 
-{{site.alert.note}}
-  Members or classes that start with an underscore
-  (`_`) are private. For more information,
-  see [Libraries and imports][], a section in the
-  [Dart language documentation][].
-{{site.alert.end}}
+:::note
+Members or classes that start with an underscore
+(`_`) are private. For more information,
+see [Libraries and imports][], a section in the
+[Dart language documentation][].
+:::
 
 <a id="step-3"></a>
 
@@ -231,12 +227,12 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
 }
 ```
 
-{{site.alert.tip}}
-  Placing the `Text` in a [`SizedBox`][] and setting its
-  width prevents a discernible "jump" when the text changes
-  between the values of 40 and 41 &mdash; a jump would
-  otherwise occur because those values have different widths.
-{{site.alert.end}}
+:::tip
+Placing the `Text` in a [`SizedBox`][] and setting its
+width prevents a discernible "jump" when the text changes
+between the values of 40 and 41 &mdash; a jump would
+otherwise occur because those values have different widths.
+:::
 
 The `_toggleFavorite()` method, which is called when the
 `IconButton` is pressed, calls `setState()`.
@@ -321,13 +317,11 @@ be managed, and lists other available interactive widgets.
 
 ## Managing state
 
-{{site.alert.secondary}}
-  <h4>What's the point?</h4>
-
+:::secondary What's the point?
 * There are different approaches for managing state.
 * You, as the widget designer, choose which approach to use.
 * If in doubt, start by managing state in the parent widget.
-{{site.alert.end}}
+:::
 
 Who manages the stateful widget's state? The widget itself?
 The parent widget?  Both? Another object?
@@ -731,10 +725,10 @@ You can find examples of `GestureDetector` in
 [Managing state][]. Learn more about the `GestureDetector`
 in [Handle taps][], a recipe in the [Flutter cookbook][].
 
-{{site.alert.tip}}
-  Flutter also provides a set of iOS-style widgets called
-  [`Cupertino`][].
-{{site.alert.end}}
+:::tip
+Flutter also provides a set of iOS-style widgets called
+[`Cupertino`][].
+:::
 
 When you need interactivity, it's easiest to use one of
 the prefabricated widgets. Here's a partial list:

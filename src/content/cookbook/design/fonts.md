@@ -5,16 +5,12 @@ description: How to use custom fonts.
 
 <?code-excerpt path-base="cookbook/design/fonts/"?>
 
-{{site.alert.secondary}}
-
-## What you'll learn
-
+:::secondary What you'll learn
 * How to choose a font.
 * How to import font files.
 * How to set a font as a default.
 * How to use a font in a given widget.
-
-{{site.alert.end}}
+:::
 
 Although Android and iOS offer high quality system fonts,
 designers want support for custom fonts.
@@ -38,21 +34,19 @@ This recipe creates an app that uses custom fonts with the following steps.
 You don't need to follow each step as you go. 
 The guide offers completed example files at the end.
 
-{{site.alert.note}}
+:::note
+This guide makes the following presumptions:
 
-  This guide makes the following presumptions:
-  
-  1. You've [set up your Flutter environment][].
-  1. You've [created a new Flutter app][new-flutter-app] named `custom_fonts`.
-     If you haven't completed these steps yet, do so before continuing
-     with this guide.
-  1. You're performing the provided commands in a macOS or Linux shell
-     and using `vi`. You can substitute any text editor for `vi`.
-     Windows users should use the appropriate commands and paths when
-     performing the steps.
-  1. You're adding the Raleway and RobotoMono fonts to your Flutter app.
-
-{{site.alert.end}}
+1. You've [set up your Flutter environment][].
+1. You've [created a new Flutter app][new-flutter-app] named `custom_fonts`.
+   If you haven't completed these steps yet, do so before continuing
+   with this guide.
+1. You're performing the provided commands in a macOS or Linux shell
+   and using `vi`. You can substitute any text editor for `vi`.
+   Windows users should use the appropriate commands and paths when
+   performing the steps.
+1. You're adding the Raleway and RobotoMono fonts to your Flutter app.
+:::
 
 [set up your Flutter environment]: /get-started/install
 [new-flutter-app]: /get-started/test-drive
@@ -96,16 +90,16 @@ or more than one width per font.
 
 Choose the typeface or font family that meets the design needs of your app.
 
-{{site.alert.secondary}}
-  To learn how to get direct access to over 1,000 open-sourced font families,
-  check out the [google_fonts][] package.
+:::secondary
+To learn how to get direct access to over 1,000 open-sourced font families,
+check out the [google_fonts][] package.
 
-  <iframe class="full-width" src="{{site.yt.embed}}/8Vzv2CdbEY0" title="Learn about the google_fonts Flutter Package" {{site.yt.set}}></iframe>
+<iframe class="full-width" src="{{site.yt.embed}}/8Vzv2CdbEY0" title="Learn about the google_fonts Flutter Package" {{site.yt.set}}></iframe>
 
-  To learn about another approach to using custom fonts that allows you to
-  re-use one font over multiple projects,
-  check out [Export fonts from a package][].
-{{site.alert.end}}
+To learn about another approach to using custom fonts that allows you to
+re-use one font over multiple projects,
+check out [Export fonts from a package][].
+:::
 
 ## Import the font files
 
@@ -303,13 +297,13 @@ child: Text(
 ),
 ```
 
-{{site.alert.important}}
-  If a [`TextStyle`][] object specifies a weight or style without a
-  corresponding font file, the engine uses a generic file for the font
-  and attempts to extrapolate outlines for the requested weight and style.
-  
-  Avoid relying on this capability. Import the proper font file instead.
-{{site.alert.end}}
+:::important
+If a [`TextStyle`][] object specifies a weight or style without a
+corresponding font file, the engine uses a generic file for the font
+and attempts to extrapolate outlines for the requested weight and style.
+
+Avoid relying on this capability. Import the proper font file instead.
+:::
 
 ## Try the complete example
 

@@ -13,12 +13,12 @@ file exists in your project.
 
 ## Migration steps
 
-{{site.alert.note}}
- As part of this migration, you must recreate your Windows project,
-  which clobbers any custom changes to the
-  files in the `windows/runner` folder.  The following steps
-  include instructions for this scenario.
-{{site.alert.end}}
+:::note
+As part of this migration, you must recreate your Windows project,
+which clobbers any custom changes to the
+files in the `windows/runner` folder.  The following steps
+include instructions for this scenario.
+:::
 
 Your project can be updated using these steps:
 

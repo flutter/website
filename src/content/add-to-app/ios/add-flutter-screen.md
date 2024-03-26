@@ -11,25 +11,25 @@ This guide describes how to add a single Flutter screen to an existing iOS app.
 To launch a Flutter screen from an existing iOS, you start a
 [`FlutterEngine`][] and a [`FlutterViewController`][].
 
-{{site.alert.secondary}}
-  The `FlutterEngine` serves as a host to the Dart VM and your Flutter runtime,
-  and the `FlutterViewController` attaches to a `FlutterEngine` to pass 
-  input events into Flutter and to display frames rendered by the
-  `FlutterEngine`.
-{{site.alert.end}}
+:::note
+The `FlutterEngine` serves as a host to the Dart VM and your Flutter runtime,
+and the `FlutterViewController` attaches to a `FlutterEngine` to pass 
+input events into Flutter and to display frames rendered by the
+`FlutterEngine`.
+:::
 
 The `FlutterEngine` might have the same lifespan as your
 `FlutterViewController` or outlive your `FlutterViewController`.
 
-{{site.alert.tip}}
-  It's generally recommended to pre-warm a long-lived
-  `FlutterEngine` for your application because:
+:::tip
+It's generally recommended to pre-warm a long-lived
+`FlutterEngine` for your application because:
 
-  * The first frame appears faster when showing the `FlutterViewController`.
-  * Your Flutter and Dart state will outlive one `FlutterViewController`.
-  * Your application and your plugins can interact with Flutter and your Dart
-    logic before showing the UI.
-{{site.alert.end}}
+* The first frame appears faster when showing the `FlutterViewController`.
+* Your Flutter and Dart state will outlive one `FlutterViewController`.
+* Your application and your plugins can interact with Flutter and your Dart
+  logic before showing the UI.
+:::
 
 See [Loading sequence and performance][]
 for more analysis on the latency and memory
@@ -262,12 +262,12 @@ created in the `AppDelegate`.
 
 Now, you have a Flutter screen embedded in your iOS app.
 
-{{site.alert.note}}
-  Using the previous example, the default `main()`
-  entrypoint function of your default Dart library
-  would run when calling `run` on the
-  `FlutterEngine` created in the `AppDelegate`.
-{{site.alert.end}}
+:::note
+Using the previous example, the default `main()`
+entrypoint function of your default Dart library
+would run when calling `run` on the
+`FlutterEngine` created in the `AppDelegate`.
+:::
 
 ### _Alternatively_ - Create a FlutterViewController with an implicit FlutterEngine
 
@@ -641,16 +641,16 @@ You can also run a different entrypoint function by using
 [`runWithEntrypoint`][] with an `NSString` specifying
 a different Dart function.
 
-{{site.alert.note}}
-  Dart entrypoint functions other than `main()`
-  must be annotated with the following in order to
-  not be [tree-shaken][] away when compiling:
+:::note
+Dart entrypoint functions other than `main()`
+must be annotated with the following in order to
+not be [tree-shaken][] away when compiling:
 
-  ```dart
-  @pragma('vm:entry-point')
-  void myOtherEntrypoint() { ... };
-  ```
-{{site.alert.end}}
+```dart
+@pragma('vm:entry-point')
+void myOtherEntrypoint() { ... };
+```
+:::
 
 ### Dart library
 
@@ -717,15 +717,15 @@ FlutterViewController* flutterViewController =
 ```
 {% endsamplecode %}
 
-{{site.alert.tip}}
-  In order to imperatively change your current Flutter
-  route from the platform side after the `FlutterEngine`
-  is already running, use [`pushRoute()`][]
-  or [`popRoute()`] on the `FlutterViewController`.
+:::tip
+In order to imperatively change your current Flutter
+route from the platform side after the `FlutterEngine`
+is already running, use [`pushRoute()`][]
+or [`popRoute()`] on the `FlutterViewController`.
 
-  To pop the iOS route from the Flutter side,
-  call [`SystemNavigator.pop()`][].
-{{site.alert.end}}
+To pop the iOS route from the Flutter side,
+call [`SystemNavigator.pop()`][].
+:::
 
 See [Navigation and routing][] for more about Flutter's routes.
 

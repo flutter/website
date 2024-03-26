@@ -5,11 +5,11 @@ description: How to use SQLite to store and retrieve data.
 
 <?code-excerpt path-base="cookbook/persistence/sqlite/"?>
 
-{{site.alert.note}}
-  This guide uses the [sqflite package][].
-  This package only supports apps that run on
-  macOS, iOS, or Android.
-{{site.alert.end}}
+:::note
+This guide uses the [sqflite package][].
+This package only supports apps that run on
+macOS, iOS, or Android.
+:::
 
 [sqflite package]: {{site.pub-pkg}}/sqflite
 
@@ -97,11 +97,11 @@ to the database. This involves two steps:
   `sqflite` package, combined with the `join` function from the `path` package.
   2. Open the database with the `openDatabase()` function from `sqflite`.
 
-{{site.alert.note}}
-  In order to use the keyword `await`, the code must be placed
-  inside an `async` function. You should place all the following
-  table functions inside `void main() async {}`. 
-{{site.alert.end}}
+:::note
+In order to use the keyword `await`, the code must be placed
+inside an `async` function. You should place all the following
+table functions inside `void main() async {}`. 
+:::
 
 <?code-excerpt "lib/step3.dart (openDatabase)"?>
 ```dart
@@ -309,12 +309,12 @@ await updateDog(fido);
 print(await dogs()); // Prints Fido with age 42.
 ```
 
-{{site.alert.warning}}
-  Always use `whereArgs` to pass arguments to a `where` statement.
-  This helps safeguard against SQL injection attacks.
+:::warning
+Always use `whereArgs` to pass arguments to a `where` statement.
+This helps safeguard against SQL injection attacks.
 
-  Do not use string interpolation, such as `where: "id = ${dog.id}"`!
-{{site.alert.end}}
+Do not use string interpolation, such as `where: "id = ${dog.id}"`!
+:::
 
 
 ## 8. Delete a `Dog` from the database

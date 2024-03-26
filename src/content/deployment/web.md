@@ -63,10 +63,10 @@ following structure:
   version.json
 ```
 
-{{site.alert.note}}
-  The `canvaskit` directory and its contents are only present when the
-  CanvasKit renderer is selected—not when the HTML renderer is selected.
-{{site.alert.end}}
+:::note
+The `canvaskit` directory and its contents are only present when the
+CanvasKit renderer is selected—not when the HTML renderer is selected.
+:::
 
 Launch a web server (for example,
 `python -m http.server 8000`,

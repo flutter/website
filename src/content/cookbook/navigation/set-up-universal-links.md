@@ -83,11 +83,11 @@ It provides a simple API to handle complex routing scenarios.
 
     <img src="/assets/images/docs/cookbook/set-up-universal-links-flutterdeeplinkingenabled.png" alt="flutter deeplinking enabled screenshot" width="100%" />
 
-   {{site.alert.note}}
-       The FlutterDeepLinkingEnabled property opts into Flutter's default deeplink handler. If
-       you are using the third-party plugins, such as [uni_links][], setting this property will
-       break these plugins. Skip this step if you prefer to use third-party plugins.
-   {{site.alert.end}}
+   :::note
+   The FlutterDeepLinkingEnabled property opts into Flutter's default deeplink handler. If
+   you are using the third-party plugins, such as [uni_links][], setting this property will
+   break these plugins. Skip this step if you prefer to use third-party plugins.
+   :::
 
 1. Click the top-level **Runner**.
 1. Click **Signing & Capabilities**.
@@ -153,13 +153,13 @@ The hosted file should have the following content:
 
 ## Testing
 
-{{site.alert.note}}
-  It might take up to 24 hours before Apple's
-  [Content Delivery Network](https://en.wikipedia.org/wiki/Content_delivery_network) (CDN)
-  requests the apple-app-site-association (AASA) file from your web domain.
-  The universal link won't work until the CDN requests the file.
-  To bypass Apple's CDN, check out the [alternate mode section][].
-{{site.alert.end}}
+:::note
+It might take up to 24 hours before Apple's
+[Content Delivery Network](https://en.wikipedia.org/wiki/Content_delivery_network) (CDN)
+requests the apple-app-site-association (AASA) file from your web domain.
+The universal link won't work until the CDN requests the file.
+To bypass Apple's CDN, check out the [alternate mode section][].
+:::
 
 You can use a real device or the Simulator to test a universal link,
 but first make sure you have executed `flutter run` at least once on

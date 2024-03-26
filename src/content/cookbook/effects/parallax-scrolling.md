@@ -213,22 +213,22 @@ before the widget is painted. In other words,
 you can intercept the painting phase and take control
 to reposition your child widgets however you want.
 
-{{site.alert.note}}
-  To learn more, check out this short
-  Widget of the Week video on the Flow widget:
+:::note
+To learn more, check out this short
+Widget of the Week video on the Flow widget:
 
-  <iframe class="full-width" src="{{site.yt.embed}}/NG6pvXpnIso" title="Learn about the Flow Flutter Widget" {{site.yt.set}}></iframe>
-{{site.alert.end}}
+<iframe class="full-width" src="{{site.yt.embed}}/NG6pvXpnIso" title="Learn about the Flow Flutter Widget" {{site.yt.set}}></iframe>
+:::
 
-{{site.alert.note}}
-  In cases where you need control over what a child paints,
-  rather than where a child is painted,
-  consider using a [`CustomPaint`][] widget.
+:::note
+In cases where you need control over what a child paints,
+rather than where a child is painted,
+consider using a [`CustomPaint`][] widget.
 
-  In cases where you need control over the layout,
-  painting, and hit testing, consider defining a
-  custom [`RenderBox`][].
-{{site.alert.end}}
+In cases where you need control over the layout,
+painting, and hit testing, consider defining a
+custom [`RenderBox`][].
+:::
 
 Wrap your background `Image` widget with a
 [`Flow`][] widget.

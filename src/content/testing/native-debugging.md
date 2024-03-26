@@ -6,12 +6,12 @@ description: How to connect a native debugger to your running Flutter app.
 
 <?code-excerpt path-base="testing/native_debugging"?>
 
-{{site.alert.note}}
-  This guide presumes you understand general debugging,
-  have installed Flutter and git, and have familiarity
-  with the Dart language as well as one of the following
-  languages: Java, Kotlin, Swift, or Objective-C.
-{{site.alert.end}}
+:::note
+This guide presumes you understand general debugging,
+have installed Flutter and git, and have familiarity
+with the Dart language as well as one of the following
+languages: Java, Kotlin, Swift, or Objective-C.
+:::
 
 If you write Flutter apps only with Dart code,
 you can debug your code using your IDE's debugger.

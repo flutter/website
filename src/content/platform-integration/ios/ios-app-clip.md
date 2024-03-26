@@ -3,10 +3,10 @@ title: Adding an iOS App Clip target
 description: How to add an iOS App Clip target to your Flutter project.
 ---
 
-{{site.alert.important}}
-  Targeting iOS 16 increases the uncompressed IPA payload size limit
-  to 15MB. Depending on the size of your app, you might hit the limit. ([#71098][]).
-{{site.alert.end}}
+:::important
+Targeting iOS 16 increases the uncompressed IPA payload size limit
+to 15MB. Depending on the size of your app, you might hit the limit. ([#71098][]).
+:::
 
 This guide describes how to manually add another
 Flutter-rendering iOS App Clip target to your
@@ -15,10 +15,10 @@ existing Flutter project or [add-to-app][] project.
 [#71098]: {{site.repo.flutter}}/issues/71098
 [add-to-app]: /add-to-app
 
-{{site.alert.warning}}
-  This is an advanced guide and is best intended
-  for audience with a working knowledge of iOS development.
-{{site.alert.end}}
+:::warning
+This is an advanced guide and is best intended
+for audience with a working knowledge of iOS development.
+:::
 
 To see a working sample, see the [App Clip sample][] on GitHub.
 
@@ -88,12 +88,12 @@ In the Project Navigator, in the newly created App Clip group,
 delete everything except `Info.plist` and
 `<app clip target>.entitlements`.
 
-{{site.alert.tip}}
-  For add-to-app users, it's up to the reader to decide
-  how much of this template to keep to invoke
-  `FlutterViewController` or `FlutterEngine` APIs
-  from this code later.
-{{site.alert.end}}
+:::tip
+For add-to-app users, it's up to the reader to decide
+how much of this template to keep to invoke
+`FlutterViewController` or `FlutterEngine` APIs
+from this code later.
+:::
 
 {% include docs/app-figure.md
 image="development/platform-integration/ios-app-clip/clean-files.png" %}

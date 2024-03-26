@@ -32,13 +32,13 @@ This recipe demonstrates how to use the
 [`google_mobile_ads`]({{site.pub-pkg}}/google_mobile_ads)
 package to add a banner ad to your app or game.
 
-{{site.alert.note}}
-  Apart from AdMob, the `google_mobile_ads` package also supports
-  Ad Manager, a platform intended for large publishers. Integrating Ad
-  Manager resembles integrating AdMob, but it won't be covered in this
-  cookbook recipe. To use Ad Manager, follow the
-  [Ad Manager documentation]({{site.developers}}/ad-manager/mobile-ads-sdk/flutter/quick-start).
-{{site.alert.end}}
+:::note
+Apart from AdMob, the `google_mobile_ads` package also supports
+Ad Manager, a platform intended for large publishers. Integrating Ad
+Manager resembles integrating AdMob, but it won't be covered in this
+cookbook recipe. To use Ad Manager, follow the
+[Ad Manager documentation]({{site.developers}}/ad-manager/mobile-ads-sdk/flutter/quick-start).
+:::
 
 ## 1. Get AdMob App IDs
 
@@ -120,22 +120,22 @@ To add the `google_mobile_ads` plugin as a dependency, run
 $ flutter pub add google_mobile_ads
 ```
 
-{{site.alert.note}}
-  Once you add the plugin, your Android app might fail to build with a
-  `DexArchiveMergerException`:
-  
-  ```plaintext
-  Error while merging dex archives:
-  The number of method references in a .dex file cannot exceed 64K.
-  ```
-  
-  To resolve this, execute the `flutter run` command in the terminal, not
-  through an IDE plugin. The `flutter` tool can detect the issue and ask
-  whether it should try to solve it. Answer `y`, and the problem goes away.
-  You can return to running your app from an IDE after that.
-  
-  ![Screenshot of the `flutter` tool asking about multidex support](/assets/images/docs/cookbook/ads-multidex.png)
-{{site.alert.end}}
+:::note
+Once you add the plugin, your Android app might fail to build with a
+`DexArchiveMergerException`:
+
+```plaintext
+Error while merging dex archives:
+The number of method references in a .dex file cannot exceed 64K.
+```
+
+To resolve this, execute the `flutter run` command in the terminal, not
+through an IDE plugin. The `flutter` tool can detect the issue and ask
+whether it should try to solve it. Answer `y`, and the problem goes away.
+You can return to running your app from an IDE after that.
+
+![Screenshot of the `flutter` tool asking about multidex support](/assets/images/docs/cookbook/ads-multidex.png)
+:::
 
 ## 4. Initialize the Mobile Ads SDK
 
@@ -157,14 +157,14 @@ You need to initialize the Mobile Ads SDK before loading ads.
 Run the initialization step at startup, as shown above, 
 so that the AdMob SDK has enough time to initialize before it is needed.
 
-{{site.alert.note}}
-  `MobileAds.instance.initialize()` returns a `Future` but, the
-  way the SDK is built, you don't need to `await` it.
-  If you try to load an ad before that `Future` is completed, 
-  the SDK will gracefully wait until the initialization, and _then_ load the ad.
-  You can await the `Future`
-  if you want to know the exact time when the AdMob SDK is ready.
-{{site.alert.end}}
+:::note
+`MobileAds.instance.initialize()` returns a `Future` but, the
+way the SDK is built, you don't need to `await` it.
+If you try to load an ad before that `Future` is completed, 
+the SDK will gracefully wait until the initialization, and _then_ load the ad.
+You can await the `Future`
+if you want to know the exact time when the AdMob SDK is ready.
+:::
 
 ## 5. Load a banner ad
 
@@ -173,10 +173,10 @@ To show an ad, you need to request it from AdMob.
 To load a banner ad, construct a `BannerAd` instance, and
 call `load()` on it.
 
-{{site.alert.note}}
-  The following code snippet refers to fields such a `adSize`, `adUnitId`
-  and `_bannerAd`. This will all make more sense in a later step.
-{{site.alert.end}}
+:::note
+The following code snippet refers to fields such a `adSize`, `adUnitId`
+and `_bannerAd`. This will all make more sense in a later step.
+:::
 
 <?code-excerpt "lib/my_banner_ad.dart (loadAd)"?>
 ```dart
@@ -412,15 +412,15 @@ class _MyBannerAdWidgetState extends State<MyBannerAdWidget> {
 }
 ```
 
-{{site.alert.tip}}
-  In many cases, you will want to load the ad _outside_ a widget.
-  
-  For example, you can load it in a `ChangeNotifier`, a BLoC, a controller,
-  or whatever else you are using for app-level state. This way, you can
-  preload a banner ad in advance, and have it ready to show for when the
-  user navigates to a new screen.
-  
-  Verify that you have loaded the `BannerAd` instance before showing it with
-  an `AdWidget`, and that you dispose of the instance when it is no longer
-  needed.
-{{site.alert.end}}
+:::tip
+In many cases, you will want to load the ad _outside_ a widget.
+
+For example, you can load it in a `ChangeNotifier`, a BLoC, a controller,
+or whatever else you are using for app-level state. This way, you can
+preload a banner ad in advance, and have it ready to show for when the
+user navigates to a new screen.
+
+Verify that you have loaded the `BannerAd` instance before showing it with
+an `AdWidget`, and that you dispose of the instance when it is no longer
+needed.
+:::

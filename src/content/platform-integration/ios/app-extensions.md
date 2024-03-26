@@ -10,14 +10,14 @@ or you can make portions of your app available within other apps.
 To learn more about app extensions, check out
 [Apple's documentation][].
 
-{{site.alert.note}}
-  If you experience a build error when building an
-  iOS app that includes an app extension, be
-  aware that there is an open bug. The workaround
-  involves changing the order of the build process.
-  For more information, check out
-  [Issue #9690][] and [Issue #135056][].
-{{site.alert.end}}
+:::note
+If you experience a build error when building an
+iOS app that includes an app extension, be
+aware that there is an open bug. The workaround
+involves changing the order of the build process.
+For more information, check out
+[Issue #9690][] and [Issue #135056][].
+:::
 
 [Issue #9690]:   {{site.github}}/flutter/website/issues/9690
 [Issue #135056]: {{site.github}}/flutter/flutter/issues/135056
@@ -81,9 +81,9 @@ To share resources between your Flutter app
 and your app extension, put the `Runner` app target
 and the extension target in the same [App Group][].
 
-{{site.alert.note}}
-  You must be signed in to your Apple Developer account.
-{{site.alert.end}}
+:::note
+You must be signed in to your Apple Developer account.
+:::
 
 To add a target to an App Group:
 
@@ -150,19 +150,19 @@ though you must use an extension-safe
 `FlutterViewController` as described in
 the following section.
 
-{{site.alert.note}}
-  Due to the memory limitations of app extensions,
-  use Flutter to build an app extension UI for extension
-  types that have memory limits larger than 100MB.
-  For example, Share extensions have a 120MB memory limit.
+:::note
+Due to the memory limitations of app extensions,
+use Flutter to build an app extension UI for extension
+types that have memory limits larger than 100MB.
+For example, Share extensions have a 120MB memory limit.
 
-  In addition, Flutter uses extra memory in debug mode.
-  Therefore, Flutter doesn't fully support running
-  app extensions in debug mode on physical devices
-  when used to build extension UI; it might run out of memory.
-  As an alternative,
-  use an iOS simulator to test your extension in debug mode.
-{{site.alert.end}}
+In addition, Flutter uses extra memory in debug mode.
+Therefore, Flutter doesn't fully support running
+app extensions in debug mode on physical devices
+when used to build extension UI; it might run out of memory.
+As an alternative,
+use an iOS simulator to test your extension in debug mode.
+:::
 
 1. Locate the extension-safe `Flutter.xcframework` file,
    at `<path_to_flutter_sdk>/bin/cache/artifacts/engine/ios/extension_safe/Flutter.xcframework`.

@@ -5,10 +5,10 @@ description: How to update a plugin using the old APIs to support the new APIs.
 
 <?code-excerpt path-base="development/plugin_api_migration"?>
 
-{{site.alert.note}}
-  You might be directed to this page if the framework detects that
-  your app uses a plugin based on the old Android APIs.
-{{site.alert.end}}
+:::note
+You might be directed to this page if the framework detects that
+your app uses a plugin based on the old Android APIs.
+:::
 
 _If you don't write or maintain an Android Flutter plugin,
 you can skip this page._

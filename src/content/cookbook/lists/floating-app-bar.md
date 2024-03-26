@@ -101,13 +101,13 @@ CustomScrollView(
 )
 ```
 
-{{site.alert.tip}}
-  Play around with the
-  [various properties you can pass to the `SliverAppBar` widget][],
-  and use hot reload to see the results. For example, use an `Image`
-  widget for the `flexibleSpace` property to create a background image that
-  shrinks in size as it's scrolled offscreen.
-{{site.alert.end}}
+:::tip
+Play around with the
+[various properties you can pass to the `SliverAppBar` widget][],
+and use hot reload to see the results. For example, use an `Image`
+widget for the `flexibleSpace` property to create a background image that
+shrinks in size as it's scrolled offscreen.
+:::
 
 
 ### 3. Add a list of items using a `SliverList`

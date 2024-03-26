@@ -23,9 +23,9 @@ You can change your app source code, run the hot reload command in
    | `'You have pushed the button this many times:' ,` | `'You have clicked the button this many times:' ,` |
    {:.table.table-striped}
 
-   {{site.alert.important}}
-     _Don't stop your app._ Let your app run.
-   {{site.alert.end}}
+   :::important
+   _Don't stop your app._ Let your app run.
+   :::
 
 1. Save your changes{{include.save_changes}}
 

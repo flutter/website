@@ -13,11 +13,15 @@
     For other release channels, and older builds,
     check out the [SDK archive][].
 
-    <div class="apple-silicon">{{site.alert.tip}}
-      To determine whether your Mac uses an Apple silicon processor,
-      refer to [Mac computers with Apple silicon][]{:target="_blank"}
-      on apple.com
-    {{site.alert.end}}</div>
+    <div class="apple-silicon">
+    
+    :::tip
+    To determine whether your Mac uses an Apple silicon processor,
+    refer to [Mac computers with Apple silicon][]{:target="_blank"}
+    on apple.com.
+    :::
+
+    </div>
 
  1. Extract the file in the desired location. For example:
 
@@ -50,10 +54,10 @@
     
 You are now ready to run Flutter commands!
 
-{{site.alert.note}}
-  To update an existing version of Flutter,
-  check out [Upgrading Flutter][].
-{{site.alert.end}}
+:::note
+To update an existing version of Flutter,
+check out [Upgrading Flutter][].
+:::
 
 ### Run flutter doctor
 

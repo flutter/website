@@ -10,13 +10,11 @@ diff2html: true
 
 <?code-excerpt path-base="animation"?>
 
-{{site.alert.secondary}}
-  <h4>What you'll learn</h4>
-
-  * How to use the fundamental classes from the
-    animation library to add animation to a widget.
-  * When to use `AnimatedWidget` vs. `AnimatedBuilder`.
-{{site.alert.end}}
+:::secondary What you'll learn
+* How to use the fundamental classes from the
+  animation library to add animation to a widget.
+* When to use `AnimatedWidget` vs. `AnimatedBuilder`.
+:::
 
 This tutorial shows you how to build explicit animations in Flutter.
 After introducing some of the essential concepts, classes,
@@ -34,24 +32,22 @@ than custom explicit animations, which are described here.
 <a id="concepts"></a>
 ## Essential animation concepts and classes
 
-{{site.alert.secondary}}
-  <h4>What's the point?</h4>
-
-  * [`Animation`][], a core class in Flutter's animation library,
-    interpolates the values used to guide an animation.
-  * An `Animation` object knows the current state of an animation
-    (for example, whether it's started, stopped,
-    or moving forward or in reverse),
-    but doesn't know anything about what appears onscreen.
-  * An [`AnimationController`][] manages the `Animation`.
-  * A [`CurvedAnimation`][] defines progression as a non-linear curve.
-  * A [`Tween`][] interpolates between the range of data as used by the
-    object being animated.
-    For example, a `Tween` might define an interpolation
-    from red to blue, or from 0 to 255.
-  * Use `Listener`s and `StatusListener`s to monitor
-    animation state changes.
-{{site.alert.end}}
+:::secondary What's the point?
+* [`Animation`][], a core class in Flutter's animation library,
+  interpolates the values used to guide an animation.
+* An `Animation` object knows the current state of an animation
+  (for example, whether it's started, stopped,
+  or moving forward or in reverse),
+  but doesn't know anything about what appears onscreen.
+* An [`AnimationController`][] manages the `Animation`.
+* A [`CurvedAnimation`][] defines progression as a non-linear curve.
+* A [`Tween`][] interpolates between the range of data as used by the
+  object being animated.
+  For example, a `Tween` might define an interpolation
+  from red to blue, or from 0 to 255.
+* Use `Listener`s and `StatusListener`s to monitor
+  animation state changes.
+:::
 
 The animation system in Flutter is based on typed
 [`Animation`][] objects. Widgets can either incorporate
@@ -96,23 +92,23 @@ as a non-linear curve.
 animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
 ```
 
-{{site.alert.note}}
-  The [`Curves`][] class defines many commonly used curves,
-  or you can create your own. For example:
+:::note
+The [`Curves`][] class defines many commonly used curves,
+or you can create your own. For example:
 
-  <?code-excerpt "animate5/lib/main.dart (ShakeCurve)" plaster="none"?>
-  ```dart
-  import 'dart:math';
+<?code-excerpt "animate5/lib/main.dart (ShakeCurve)" plaster="none"?>
+```dart
+import 'dart:math';
 
-  class ShakeCurve extends Curve {
-    @override
-    double transform(double t) => sin(t * pi * 2);
-  }
-  ```
+class ShakeCurve extends Curve {
+  @override
+  double transform(double t) => sin(t * pi * 2);
+}
+```
 
-  Browse the [`Curves`] documentation for a complete listing
-  (with visual previews) of the `Curves` constants that ship with Flutter.
-{{site.alert.end}}
+Browse the [`Curves`] documentation for a complete listing
+(with visual previews) of the `Curves` constants that ship with Flutter.
+:::
 
 `CurvedAnimation` and `AnimationController` (described in the next section)
 are both of type `Animation<double>`, so you can pass them interchangeably.
@@ -161,20 +157,20 @@ To use your custom State object as the `vsync`, include the
 `TickerProviderStateMixin` when defining the custom State class.
 {% endcomment -%}
 
-{{site.alert.note}}
-  In some cases, a position might exceed the `AnimationController`'s
-  0.0-1.0 range. For example, the `fling()` function
-  allows you to provide velocity, force, and position
-  (via the Force object). The position can be anything and
-  so can be outside of the 0.0 to 1.0 range.
+:::note
+In some cases, a position might exceed the `AnimationController`'s
+0.0-1.0 range. For example, the `fling()` function
+allows you to provide velocity, force, and position
+(via the Force object). The position can be anything and
+so can be outside of the 0.0 to 1.0 range.
 
-  A `CurvedAnimation` can also exceed the 0.0 to 1.0 range,
-  even if the `AnimationController` doesn't.
-  Depending on the curve selected, the output of
-  the `CurvedAnimation` can have a wider range than the input.
-  For example, elastic curves such as `Curves.elasticIn`
-  significantly overshoots or undershoots the default range.
-{{site.alert.end}}
+A `CurvedAnimation` can also exceed the 0.0 to 1.0 range,
+even if the `AnimationController` doesn't.
+Depending on the curve selected, the output of
+the `CurvedAnimation` can have a wider range than the input.
+For example, elastic curves such as `Curves.elasticIn`
+significantly overshoots or undershoots the default range.
+:::
 
 ### Tween
 
@@ -227,10 +223,10 @@ AnimationController controller = AnimationController(
 Animation<int> alpha = IntTween(begin: 0, end: 255).animate(controller);
 ```
 
-{{site.alert.note}}
-  The `animate()` method returns an [`Animation`][],
-  not an [`Animatable`][].
-{{site.alert.end}}
+:::note
+The `animate()` method returns an [`Animation`][],
+not an [`Animatable`][].
+:::
 
 The following example shows a controller, a curve, and a `Tween`:
 
@@ -264,19 +260,17 @@ Each section provides a link to the source code for that example.
 
 ### Rendering animations
 
-{{site.alert.secondary}}
-  <h4>What's the point?</h4>
-
-  * How to add basic animation to a widget using `addListener()` and
-    `setState()`.
-  * Every time the Animation generates a new number, the `addListener()`
-    function calls `setState()`.
-  * How to define an `AnimationController` with the required
-    `vsync` parameter.
-  * Understanding the "`..`" syntax in "`..addListener`",
-    also known as Dart's _cascade notation_.
-  * To make a class private, start its name with an underscore (`_`).
-{{site.alert.end}}
+:::secondary What's the point?
+* How to add basic animation to a widget using `addListener()` and
+  `setState()`.
+* Every time the Animation generates a new number, the `addListener()`
+  function calls `setState()`.
+* How to define an `AnimationController` with the required
+  `vsync` parameter.
+* Understanding the "`..`" syntax in "`..addListener`",
+  also known as Dart's _cascade notation_.
+* To make a class private, start its name with an underscore (`_`).
+:::
 
 So far you've learned how to generate a sequence of numbers over time.
 Nothing has been rendered to the screen. To render with an
@@ -386,56 +380,53 @@ discarded to prevent memory leaks.
 With these few changes,
 you've created your first animation in Flutter!
 
-{{site.alert.secondary}}
-  **Dart language tricks:**
-  You might not be familiar with Dart's cascade notation&mdash;the two
-  dots in `..addListener()`. This syntax means that the `addListener()`
-  method is called with the return value from `animate()`.
-  Consider the following example:
+:::tip Dart language trick
+You might not be familiar with Dart's cascade notation&mdash;the two
+dots in `..addListener()`. This syntax means that the `addListener()`
+method is called with the return value from `animate()`.
+Consider the following example:
 
-  <?code-excerpt "animate1/lib/main.dart (addListener)" replace="/animation.*|\.\.addListener/[!$&!]/g"?>
-  ```dart
-  [!animation = Tween<double>(begin: 0, end: 300).animate(controller)!]
-    [!..addListener!](() {
-      // ···
-    });
-  ```
+<?code-excerpt "animate1/lib/main.dart (addListener)" replace="/animation.*|\.\.addListener/[!$&!]/g"?>
+```dart
+[!animation = Tween<double>(begin: 0, end: 300).animate(controller)!]
+  [!..addListener!](() {
+    // ···
+  });
+```
 
-  This code is equivalent to:
+This code is equivalent to:
 
-  <?code-excerpt "animate1/lib/main.dart (addListener)" replace="/animation.*/$&;/g; /  \./animation/g; /animation.*/[!$&!]/g"?>
-  ```dart
-  [!animation = Tween<double>(begin: 0, end: 300).animate(controller);!]
-  [!animation.addListener(() {!]
-      // ···
-    });
-  ```
+<?code-excerpt "animate1/lib/main.dart (addListener)" replace="/animation.*/$&;/g; /  \./animation/g; /animation.*/[!$&!]/g"?>
+```dart
+[!animation = Tween<double>(begin: 0, end: 300).animate(controller);!]
+[!animation.addListener(() {!]
+    // ···
+  });
+```
 
-  To learn more about cascades,
-  check out [Cascade notation][]
-  in the [Dart language documentation][].
-{{site.alert.end}}
+To learn more about cascades,
+check out [Cascade notation][]
+in the [Dart language documentation][].
+:::
 
 ###  Simplifying with Animated&shy;Widget
 
-{{site.alert.secondary}}
-  <h4>What's the point?</h4>
-
-  * How to use the [`AnimatedWidget`][] helper class
-    (instead of `addListener()`
-    and `setState()`) to create a widget that animates.
-  * Use `AnimatedWidget` to create a widget that performs
-    a reusable animation.
-    To separate the transition from the widget, use an
-    `AnimatedBuilder`, as shown in the
-    [Refactoring with AnimatedBuilder][] section.
-  * Examples of `AnimatedWidget`s in the Flutter API:
-    `AnimatedBuilder`, `AnimatedModalBarrier`,
-    `DecoratedBoxTransition`, `FadeTransition`,
-    `PositionedTransition`, `RelativePositionedTransition`,
-    `RotationTransition`, `ScaleTransition`,
-    `SizeTransition`, `SlideTransition`.
-{{site.alert.end}}
+:::secondary What's the point?
+* How to use the [`AnimatedWidget`][] helper class
+  (instead of `addListener()`
+  and `setState()`) to create a widget that animates.
+* Use `AnimatedWidget` to create a widget that performs
+  a reusable animation.
+  To separate the transition from the widget, use an
+  `AnimatedBuilder`, as shown in the
+  [Refactoring with AnimatedBuilder][] section.
+* Examples of `AnimatedWidget`s in the Flutter API:
+  `AnimatedBuilder`, `AnimatedModalBarrier`,
+  `DecoratedBoxTransition`, `FadeTransition`,
+  `PositionedTransition`, `RelativePositionedTransition`,
+  `RotationTransition`, `ScaleTransition`,
+  `SizeTransition`, `SlideTransition`.
+:::
 
 The `AnimatedWidget` base class allows you to separate out
 the core widget code from the animation code.
@@ -546,15 +537,13 @@ and it passes the `Animation` object to `AnimatedLogo`:
 <a id="monitoring"></a>
 ### Monitoring the progress of the animation
 
-{{site.alert.secondary}}
-  <h4>What's the point?</h4>
-
-  * Use `addStatusListener()` for notifications of changes
-    to the animation's state, such as starting, stopping,
-    or reversing direction.
-  * Run an animation in an infinite loop by reversing direction when
-    the animation has either completed or returned to its starting state.
-{{site.alert.end}}
+:::secondary What's the point?
+* Use `addStatusListener()` for notifications of changes
+  to the animation's state, such as starting, stopping,
+  or reversing direction.
+* Run an animation in an infinite loop by reversing direction when
+  the animation has either completed or returned to its starting state.
+:::
 
 It's often helpful to know when an animation changes state,
 such as finishing, moving forward, or reversing.
@@ -619,22 +608,20 @@ at the beginning or the end. This creates a "breathing" effect:
 
 ### Refactoring with AnimatedBuilder
 
-{{site.alert.secondary}}
-  <h4>What's the point?</h4>
-
-  * An [`AnimatedBuilder`][] understands how to render the transition.
-  * An `AnimatedBuilder` doesn't know how to render the widget,
-    nor does it manage the `Animation` object.
-  * Use `AnimatedBuilder` to describe an animation as
-    part of a build method for another widget.
-    If you simply want to define a widget with a reusable
-    animation, use an `AnimatedWidget`, as shown in
-    the [Simplifying with AnimatedWidget][] section.
-  * Examples of `AnimatedBuilders` in the Flutter API: `BottomSheet`,
-    `ExpansionTile`, `PopupMenu`, `ProgressIndicator`,
-    `RefreshIndicator`, `Scaffold`, `SnackBar`, `TabBar`,
-    `TextField`.
-{{site.alert.end}}
+:::secondary What's the point?
+* An [`AnimatedBuilder`][] understands how to render the transition.
+* An `AnimatedBuilder` doesn't know how to render the widget,
+  nor does it manage the `Animation` object.
+* Use `AnimatedBuilder` to describe an animation as
+  part of a build method for another widget.
+  If you simply want to define a widget with a reusable
+  animation, use an `AnimatedWidget`, as shown in
+  the [Simplifying with AnimatedWidget][] section.
+* Examples of `AnimatedBuilders` in the Flutter API: `BottomSheet`,
+  `ExpansionTile`, `PopupMenu`, `ProgressIndicator`,
+  `RefreshIndicator`, `Scaffold`, `SnackBar`, `TabBar`,
+  `TextField`.
+:::
 
 One problem with the code in the [animate3][] example,
 is that changing the animation required changing the widget
@@ -825,13 +812,11 @@ in the bullet points above.
 
 ### Simultaneous animations
 
-{{site.alert.secondary}}
-  <h4>What's the point?</h4>
-
-  * The [`Curves`][] class defines an array of
-    commonly used curves that you can
-    use with a [`CurvedAnimation`][].
-{{site.alert.end}}
+:::secondary What's the point?
+* The [`Curves`][] class defines an array of
+  commonly used curves that you can
+  use with a [`CurvedAnimation`][].
+:::
 
 In this section, you'll build on the example from
 [monitoring the progress of the animation][]
@@ -840,14 +825,14 @@ to animate in and out continuously. Consider the case
 where you want to animate in and out while the
 opacity animates from transparent to opaque.
 
-{{site.alert.note}}
-  This example shows how to use multiple tweens on the same animation
-  controller, where each tween manages a different effect in
-  the animation. It is for illustrative purposes only.
-  If you were tweening opacity and size in production code,
-  you'd probably use [`FadeTransition`][] and [`SizeTransition`][]
-  instead.
-{{site.alert.end}}
+:::note
+This example shows how to use multiple tweens on the same animation
+controller, where each tween manages a different effect in
+the animation. It is for illustrative purposes only.
+If you were tweening opacity and size in production code,
+you'd probably use [`FadeTransition`][] and [`SizeTransition`][]
+instead.
+:::
 
 Each tween manages an aspect of the animation. For example:
 

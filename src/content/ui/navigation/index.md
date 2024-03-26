@@ -41,10 +41,10 @@ documentation][`Navigator`].
 
 ## Using named routes
 
-{{site.alert.note}}
-  We don't recommend using named routes for most applications.
-  For more information, see the Limitations section below.
-{{site.alert.end}}
+:::note
+We don't recommend using named routes for most applications.
+For more information, see the Limitations section below.
+:::
 
 Applications with simple navigation and deep linking requirements can use the
 `Navigator` for navigation and the [`MaterialApp.routes`][] parameter for deep
@@ -101,14 +101,14 @@ Because packages like go_router are _declarative_, they will always display the
 same screen(s) when a deep link is received.
 
 
-{{site.alert.secondary}}
-  **Note for advanced developers**:  If you prefer not to use a routing package
-  and would like full control over navigation and routing in your app, override
-  `RouteInformationParser` and `RouterDelegate`. When the state in your app
-  changes, you can precisely control the stack of screens by providing a list of
-  `Page` objects using the `Navigator.pages` parameter. For more details, see the
-  `Router` API documentation.
-{{site.alert.end}}
+:::note Note for advanced developers
+If you prefer not to use a routing package
+and would like full control over navigation and routing in your app, override
+`RouteInformationParser` and `RouterDelegate`. When the state in your app
+changes, you can precisely control the stack of screens by providing a list of
+`Page` objects using the `Navigator.pages` parameter. For more details, see the
+`Router` API documentation.
+:::
 
 ## Using Router and Navigator together
 
@@ -131,10 +131,10 @@ _pageless_ routes after it are also removed. For example, if a deep link
 navigates by removing a _page-backed_ route from the Navigator, all _pageless
 _routes after (up until the next _page-backed_ route) are removed too.
 
-{{site.alert.note}}
-  You can't prevent navigation from page-backed screens using `WillPopScope`.
-  Instead, you should consult your routing package's API documentation.
-{{site.alert.end}}
+:::note
+You can't prevent navigation from page-backed screens using `WillPopScope`.
+Instead, you should consult your routing package's API documentation.
+:::
 
 ## Web support
 

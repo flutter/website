@@ -27,10 +27,10 @@ encrypt resources nor does it protect against
 reverse engineering.
 It only renames symbols with more obscure names.
 
-{{site.alert.info}}
-  It is a **poor security practice** to
-  store secrets in an app.
-{{site.alert.end}}
+:::warning
+It is a **poor security practice** to
+store secrets in an app.
+:::
 
 ## Supported targets
 
@@ -49,13 +49,13 @@ described on this page:
 * `macos-framework`
 * `windows`
 
-{{site.alert.info}}
-  Web apps don't support obfuscation.
-  A web app can be [minified][], which provides a similar result.
-  When you build a release version of a Flutter web app,
-  the web compiler minifies the app. To learn more,
-  see [Build and release a web app][].
-{{site.alert.end}}
+:::note
+Web apps don't support obfuscation.
+A web app can be [minified][], which provides a similar result.
+When you build a release version of a Flutter web app,
+the web compiler minifies the app. To learn more,
+see [Build and release a web app][].
+:::
 
 [Build and release a web app]: /deployment/web
 [minified]: https://en.wikipedia.org/wiki/Minification_(programming)
@@ -78,11 +78,11 @@ Once you've obfuscated your binary, **save
 the symbols file**. You need this if you later
 want to de-obfuscate a stack trace.
 
-{{site.alert.tip}}
-  The `--split-debug-info` option can also be used without `--obfuscate`
-  to extract Dart program symbols, reducing code size.
-  To learn more about app size, see [Measuring your app's size][].
-{{site.alert.end}}
+:::tip
+The `--split-debug-info` option can also be used without `--obfuscate`
+to extract Dart program symbols, reducing code size.
+To learn more about app size, see [Measuring your app's size][].
+:::
 
 [Measuring your app's size]: /perf/app-size
 

@@ -17,12 +17,12 @@ Insecure HTTP is not allowed by platform: <host>
 
 Use HTTPS instead.
 
-{{site.alert.important}}
-  This change over-restricted HTTP access on local networks beyond the
-  restrictions imposed by mobile platforms ([flutter/flutter#72723]({{site.repo.flutter}}/issues/72723)).
+:::important
+This change over-restricted HTTP access on local networks beyond the
+restrictions imposed by mobile platforms ([flutter/flutter#72723]({{site.repo.flutter}}/issues/72723)).
 
-  This change has since been reverted.
-{{site.alert.end}}
+This change has since been reverted.
+:::
 
 ## Context
 

@@ -82,12 +82,12 @@ class MyCustomFormState extends State<MyCustomForm> {
 }
 ```
 
-{{site.alert.tip}}
-  Using a `GlobalKey` is the recommended way to access a form.
-  However, if you have a more complex widget tree,
-  you can use the [`Form.of()`][] method to
-  access the form within nested widgets.
-{{site.alert.end}}
+:::tip
+Using a `GlobalKey` is the recommended way to access a form.
+However, if you have a more complex widget tree,
+you can use the [`Form.of()`][] method to
+access the form within nested widgets.
+:::
 
 ## 2. Add a `TextFormField` with validation logic
 

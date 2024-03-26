@@ -74,10 +74,11 @@ for the `free` scheme.
   Duplicate the existing configurations, once for each environment.
 
 ![Step 3 Xcode image](/assets/images/docs/flavors/step3-ios-build-config.png){:width="100%"}
-{{site.alert.note}}
-  Your configurations should be based on your **Debug.xconfig** or **Release.xcconfig**
-  file, not the **Pods-Runner.xcconfigs**. You can check this by expanding the configuration names.
-{{site.alert.end}}
+
+:::note
+Your configurations should be based on your **Debug.xconfig** or **Release.xcconfig**
+file, not the **Pods-Runner.xcconfigs**. You can check this by expanding the configuration names.
+:::
 
 </li>
 <li markdown="1">

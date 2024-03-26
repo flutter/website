@@ -367,17 +367,17 @@ To [Install and set up CocoaPods][], run the following commands:
 sudo gem install cocoapods
 ```
 
-{{site.alert.note}}
-  The default version of Ruby requires `sudo` to install the CocoaPods gem.
-  If you are using a Ruby Version manager, you might need to run without `sudo`.
+:::note
+The default version of Ruby requires `sudo` to install the CocoaPods gem.
+If you are using a Ruby Version manager, you might need to run without `sudo`.
 
-  Additionally, if you are installing on an [Apple Silicon Mac][],
-  run the command:
+Additionally, if you are installing on an [Apple Silicon Mac][],
+run the command:
 
-  ```console
-  sudo gem uninstall ffi && sudo gem install ffi -- --enable-libffi-alloc
-  ```
-{{site.alert.end}}
+```console
+sudo gem uninstall ffi && sudo gem install ffi -- --enable-libffi-alloc
+```
+:::
 
 [Check the app's Bundle ID]: /assets/images/docs/setup/xcode-unique-bundle-id.png
 [Choosing a Membership]: {{site.apple-dev}}/support/compare-memberships

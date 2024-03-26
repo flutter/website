@@ -15,11 +15,11 @@ In some cases, you might also need to pass arguments to a
 named route. For example, you might wish to navigate to the `/user` route and
 pass information about the user to that route.
 
-{{site.alert.note}}
-  Named routes are no longer recommended for most
-  applications. For more information, see
-  [Limitations][] in the [navigation overview][] page.
-{{site.alert.end}}
+:::note
+Named routes are no longer recommended for most
+applications. For more information, see
+[Limitations][] in the [navigation overview][] page.
+:::
 
 [Limitations]: /ui/navigation#limitations
 [navigation overview]: /ui/navigation

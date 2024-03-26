@@ -12,10 +12,10 @@ js:
 <img src='/assets/images/docs/ui/layout/article-hero-image.png'
      class="mw-100" alt="Hero image from the article">
 
-{{site.alert.note}}
-  If you are experiencing specific layout errors,
-  you might check out [Common Flutter errors][].
-{{site.alert.end}}
+:::note
+If you are experiencing specific layout errors,
+you might check out [Common Flutter errors][].
+:::
 
 [Common Flutter errors]: /testing/common-errors
 
@@ -1946,12 +1946,12 @@ its child to have the exact same width of the `Expanded`.
 But both `Expanded` and `Flexible` ignore their children's width
 when sizing themselves.
 
-{{site.alert.note}}
-  This means that it's impossible to expand `Row` children
-  proportionally to their sizes. The `Row` either uses
-  the exact child's width, or ignores it completely
-  when you use `Expanded` or `Flexible`.
-{{site.alert.end}}
+:::note
+This means that it's impossible to expand `Row` children
+proportionally to their sizes. The `Row` either uses
+the exact child's width, or ignores it completely
+when you use `Expanded` or `Flexible`.
+:::
 
 ### Example 28
 
@@ -1977,11 +1977,11 @@ as the screen, so the `Scaffold` fills the screen.
 The `Scaffold` tells the `Container` that it can be any size it wants,
 but not bigger than the screen.
 
-{{site.alert.note}}
-  When a widget tells its child that it can be smaller than a
-  certain size, we say the widget supplies _loose_ constraints
-  to its child. More on that later.
-{{site.alert.end}}
+:::note
+When a widget tells its child that it can be smaller than a
+certain size, we say the widget supplies _loose_ constraints
+to its child. More on that later.
+:::
 
 ### Example 29
 
@@ -2076,11 +2076,11 @@ but not bigger than the screen.
 
 ## Unbounded constraints
 
-{{site.alert.note}}
-  You might be directed here if the framework
-  detects a problem involving box constraints.
-  The `Flex` section below might also apply.
-{{site.alert.end}}
+:::note
+You might be directed here if the framework
+detects a problem involving box constraints.
+The `Flex` section below might also apply.
+:::
 
 In certain situations,
 a box's constraint is _unbounded_, or infinite.
@@ -2197,9 +2197,9 @@ header image at the top of the article.
 [pub.dev]: {{site.pub}}/publishers/glasberg.dev/packages
 [Simon Lightfoot]: {{site.github}}/slightfoot
 
-{{site.alert.note}}
-  To better understand how Flutter implements layout
-  constraints, check out the following 5-minute video:
-  <iframe width="560" height="315" src="{{site.yt.embed}}/jckqXR5CrPI" title="Learn how Flutter implements layout constraints" {{site.yt.set}}></iframe>
-  <p>Decoding Flutter: Unbounded height and width</p>
-{{site.alert.end}}
+:::note
+To better understand how Flutter implements layout
+constraints, check out the following 5-minute video:
+<iframe width="560" height="315" src="{{site.yt.embed}}/jckqXR5CrPI" title="Learn how Flutter implements layout constraints" {{site.yt.set}}></iframe>
+<p>Decoding Flutter: Unbounded height and width</p>
+:::

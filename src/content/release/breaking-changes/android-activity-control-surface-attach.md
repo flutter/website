@@ -7,13 +7,13 @@ description: >
 
 ## Summary
 
-{{site.alert.note}}
-  If you use standard Android embedding Java classes like
-  [`FlutterActivity`][] or [`FlutterFragment`][],
-  and don't manually embed a [`FlutterView`][]
-  inside your own custom `Activity` (this should be uncommon),
-  you can stop reading.
-{{site.alert.end}}
+:::note
+If you use standard Android embedding Java classes like
+[`FlutterActivity`][] or [`FlutterFragment`][],
+and don't manually embed a [`FlutterView`][]
+inside your own custom `Activity` (this should be uncommon),
+you can stop reading.
+:::
 
 A new [`ActivityControlSurface`][] method:
 
@@ -43,12 +43,12 @@ This allows custom Activities to signal to the engine
 (with which it has a `(0|1):1` relationship) that
 it was being attached or detached from the engine.
 
-{{site.alert.note}}
-  This lifecycle signaling is done automatically when you
-  use the engine's bundled [`FlutterActivity`][]
-  or [`FlutterFragment`][], which should be the most
-  common case.
-{{site.alert.end}}
+:::note
+This lifecycle signaling is done automatically when you
+use the engine's bundled [`FlutterActivity`][]
+or [`FlutterFragment`][], which should be the most
+common case.
+:::
 
 However, the previous API had the flaw that it didn't
 enforce exclusion between activities connecting to

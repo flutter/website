@@ -3,11 +3,11 @@ title: Automatic platform adaptations
 description: Learn more about Flutter's platform adaptiveness.
 ---
 
-{{site.alert.note}}
-  As of the Flutter 3.16 release, Material 3
-  replaces Material 2 as the default theme
-  on all Flutter apps that use Material.
-{{site.alert.end}}
+:::note
+As of the Flutter 3.16 release, Material 3
+replaces Material 2 as the default theme
+on all Flutter apps that use Material.
+:::
 
 ## Adaptation philosophy
 
@@ -33,11 +33,11 @@ For an example of an app using different information
 architecture structures on Android and iOS but sharing
 the same content code, see the [platform_design code samples][].
 
-{{site.alert.info}}
+:::secondary
 Preliminary guides addressing case 2 
 are being added to the UI components section. 
 You can request additional guides by commenting on [issue #8427][].
-{{site.alert.end}}
+:::
 
 ## Page navigation
 

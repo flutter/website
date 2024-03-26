@@ -43,15 +43,15 @@ behavior, but you don't require custom layout behavior
 or custom hit test behavior, a [`CustomPainter`][] is
 a great choice to get the job done. 
 
-{{site.alert.note}}
-  In cases where you need control over the child layout,
-  but you don't need control over the painting or hit testing,
-  consider using a [`Flow`][] widget.
+:::note
+In cases where you need control over the child layout,
+but you don't need control over the painting or hit testing,
+consider using a [`Flow`][] widget.
 
-  In cases where you need control over the layout,
-  painting, _and_ hit testing, 
-  consider defining a custom [`RenderBox`][].
-{{site.alert.end}}
+In cases where you need control over the layout,
+painting, _and_ hit testing, 
+consider defining a custom [`RenderBox`][].
+:::
 
 ## Replace original background widget
 
@@ -236,16 +236,16 @@ class BubblePainter extends CustomPainter {
 
 Congratulations! You now have a modern, chat bubble UI.
 
-{{site.alert.note}}
-  Each bubble's gradient changes as the user
-  scrolls because the `BubbleBackground` widget
-  invokes `Scrollable.of(context)`. This method 
-  sets up an implicit dependency on the ancestor
-  `ScrollableState`, which causes the `BubbleBackground`
-  widget to rebuild every time the user scrolls 
-  up or down. See the [`InheritedWidget`][] documentation
-  for more information about these types of dependencies.
-{{site.alert.end}}
+:::note
+Each bubble's gradient changes as the user
+scrolls because the `BubbleBackground` widget
+invokes `Scrollable.of(context)`. This method 
+sets up an implicit dependency on the ancestor
+`ScrollableState`, which causes the `BubbleBackground`
+widget to rebuild every time the user scrolls 
+up or down. See the [`InheritedWidget`][] documentation
+for more information about these types of dependencies.
+:::
 
 ## Interactive example
 

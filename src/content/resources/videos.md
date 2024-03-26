@@ -44,12 +44,12 @@ Flutter Forward.
 
 ### Learning to Fly
 
-{{site.alert.note}}
-  Season 2 of Learning to Fly has been released as part
-  of the 17 Days of Flutter, leading up to the 3.7
-  release! [Season 2][] centers around creating a platform
-  game, DoodleDash, using the Flame engine.
-{{site.alert.end}}
+:::note
+Season 2 of Learning to Fly has been released as part
+of the 17 Days of Flutter, leading up to the 3.7
+release! [Season 2][] centers around creating a platform
+game, DoodleDash, using the Flame engine.
+:::
 
 [Season 2]: {{site.yt.watch}}?v=ILTx1Wa33Z0
 

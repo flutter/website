@@ -8,10 +8,10 @@ The more features your app has, the harder it is to test manually.
 Automated tests help ensure that your app performs correctly before
 you publish it, while retaining your feature and bug fix velocity.
 
-{{site.alert.note}}
-  For hands-on practice of testing Flutter apps, see the
-  [How to test a Flutter app][] codelab.
-{{site.alert.end}}
+:::note
+For hands-on practice of testing Flutter apps, see the
+[How to test a Flutter app][] codelab.
+:::
 
 Automated testing falls into a few categories:
 
@@ -49,13 +49,13 @@ For more information regarding unit tests,
 you can view the following recipes
 or run `flutter test --help` in your terminal.
 
-{{site.alert.note}}
-  If you're writing unit tests for code that
-  uses plugins and you want to avoid crashes,
-  check out [Plugins in Flutter tests][].
-  If you want to test your Flutter plugin,
-  check out [Testing plugins][].
-{{site.alert.end}}
+:::note
+If you're writing unit tests for code that
+uses plugins and you want to avoid crashes,
+check out [Plugins in Flutter tests][].
+If you want to test your Flutter plugin,
+check out [Testing plugins][].
+:::
 
 [Plugins in Flutter tests]: /testing/plugins-in-tests
 [Testing plugins]: /testing/testing-plugins

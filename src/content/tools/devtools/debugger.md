@@ -3,22 +3,22 @@ title: Using the debugger
 description: How to use DevTools' source-level debugger.
 ---
 
-{{site.alert.note}}
-  DevTools hides the Debugger tab if the app was launched
-  from VS Code because VS Code has a built-in debugger.
-{{site.alert.end}}
+:::note
+DevTools hides the Debugger tab if the app was launched
+from VS Code because VS Code has a built-in debugger.
+:::
 
 ## Getting started
 
 DevTools includes a full source-level debugger, supporting
 breakpoints, stepping, and variable inspection.
 
-{{site.alert.note}}
-  The debugger works with all Flutter and Dart applications.
-  If you are looking for a way to use GDB to remotely debug the
-  Flutter engine running within an Android app process,
-  check out [`flutter_gdb`][].
-{{site.alert.end}}
+:::note
+The debugger works with all Flutter and Dart applications.
+If you are looking for a way to use GDB to remotely debug the
+Flutter engine running within an Android app process,
+check out [`flutter_gdb`][].
+:::
 
 [`flutter_gdb`]: {{site.repo.engine}}/blob/main/sky/tools/flutter_gdb
 

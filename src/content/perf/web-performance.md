@@ -3,9 +3,9 @@ title: Debugging performance for web apps
 description: Learn how to use Chrome DevTools to debug web performance issues.
 ---
 
-{{site.alert.note}}
-  Profiling Flutter web apps requires Flutter version 3.14 or later.
-{{site.alert.end}}
+:::note
+Profiling Flutter web apps requires Flutter version 3.14 or later.
+:::
 
 The Flutter framework emits timeline events as it works to build frames,
 draw scenes, and track other activity such as garbage collections.

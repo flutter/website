@@ -9,14 +9,14 @@ is the [Microsoft Store][microsoftstore].
 This guide provides a step-by-step walkthrough
 of packaging and deploying a Flutter app in this way.
 
-{{site.alert.note}}
-  You are not required to publish Windows apps through the
-  Microsoft Store, particularly if you prefer more control
-  over the distribution experience or don't want to deal
-  with the certification process. The Microsoft documentation
-  includes more information about traditional installation
-  approaches, including [Windows Installer][msidocs].
-{{site.alert.end}}
+:::note
+You are not required to publish Windows apps through the
+Microsoft Store, particularly if you prefer more control
+over the distribution experience or don't want to deal
+with the certification process. The Microsoft documentation
+includes more information about traditional installation
+approaches, including [Windows Installer][msidocs].
+:::
 
 ## Preliminaries
 
@@ -166,14 +166,14 @@ packaging process.
 
 The default version number of the app is `1.0.0.0`.
 
-{{site.alert.note}}
-  Microsoft Store apps are not allowed to have a
-  Version with a revision number other than zero.
-  Therefore, the last number of the version must
-  remain zero for all releases.
-  Ensure that you follow Microsoft's
-  [versioning guidelines][windowspackageversioning].
-{{site.alert.end}}
+:::note
+Microsoft Store apps are not allowed to have a
+Version with a revision number other than zero.
+Therefore, the last number of the version must
+remain zero for all releases.
+Ensure that you follow Microsoft's
+[versioning guidelines][windowspackageversioning].
+:::
 
 For apps not published to the Microsoft Store, you
 can set the app's executable's file and product versions.
@@ -199,12 +199,12 @@ Both the build name and number can be overridden in
 `flutter build windows` by specifying `--build-name` and
 `--build-number`, respectively.
 
-{{site.alert.note}}
-  Flutter projects created before Flutter 3.3
-  need to be updated to set the executable's version
-  information. For more information,
-  refer to the [version migration guide][].
-{{site.alert.end}}
+:::note
+Flutter projects created before Flutter 3.3
+need to be updated to set the executable's version
+information. For more information,
+refer to the [version migration guide][].
+:::
 
 ## Add app icons
 

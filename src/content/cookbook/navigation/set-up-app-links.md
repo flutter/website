@@ -92,14 +92,15 @@ It provides a simple API to handle complex routing scenarios.
         <data android:scheme="https" />
     </intent-filter>
     ```
-   {{site.alert.note}}
-     The metadata tag flutter_deeplinking_enabled opts
-     into Flutter's default deeplink handler.
-     If you are using the third-party plugins,
-     such as [uni_links][], setting this metadata tag will
-     break these plugins. Omit this metadata tag
-     if you prefer to use third-party plugins.
-   {{site.alert.end}}
+   
+   :::note
+   The metadata tag flutter_deeplinking_enabled opts
+   into Flutter's default deeplink handler.
+   If you are using the third-party plugins,
+   such as [uni_links][], setting this metadata tag will
+   break these plugins. Omit this metadata tag
+   if you prefer to use third-party plugins.
+   :::
 
 ## 3. Hosting assetlinks.json file
 
@@ -180,12 +181,13 @@ adb shell 'am start -a android.intent.action.VIEW \
     -d "http://<web-domain>/details"' \
     <package name>
 ```
-{{site.alert.note}}
-   This doesn't test whether the web files are
-   hosted correctly,
-   the command launches the app even
-   if web files are not presented.
-{{site.alert.end}}
+
+:::note
+This doesn't test whether the web files are
+hosted correctly,
+the command launches the app even
+if web files are not presented.
+:::
 
 To test **both** web and app setup, you must click a link
 directly through web browser or another app.

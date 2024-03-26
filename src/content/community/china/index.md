@@ -13,10 +13,10 @@ os-list: [Windows, macOS, Linux, ChromeOS]
 To speed the download and installation of Flutter in China,
 consider using a [mirror site][] or _mirror_.
 
-{{site.alert.important}}
-  Use mirror sites _only_ if you _trust_ the provider.
-  The Flutter team can't verify their reliability or security.
-{{site.alert.end}}
+:::important
+Use mirror sites _only_ if you _trust_ the provider.
+The Flutter team can't verify their reliability or security.
+:::
 
 [mirror site]: https://en.wikipedia.org/wiki/Mirror_site
 
@@ -82,9 +82,9 @@ from Google's archive to CFUG's mirror.
 {% endfor -%}
 </div>
 
-{{site.alert.note}}
-  Not every mirror supports downloading artifacts using their direct URL.
-{{site.alert.end}}
+:::note
+Not every mirror supports downloading artifacts using their direct URL.
+:::
 
 ## Configure your machine to publish your package
 

@@ -10,11 +10,11 @@ steps, you can launch and display routes by using named routes
 [`onGenerateRoute`][onGenerateRoute]), or by
 using the [`Router`][Router] widget.
 
-{{site.alert.note}}
-  Named routes are no longer recommended for most
-  applications. For more information, see
-  [Limitations][] in the [navigation overview][] page.
-{{site.alert.end}}
+:::note
+Named routes are no longer recommended for most
+applications. For more information, see
+[Limitations][] in the [navigation overview][] page.
+:::
 
 [Limitations]: /ui/navigation#limitations
 [navigation overview]: /ui/navigation

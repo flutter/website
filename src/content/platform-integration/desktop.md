@@ -9,15 +9,15 @@ Flutter's desktop support also extends to plugins&mdash;you
 can install existing plugins that support the Windows,
 macOS, or Linux platforms, or you can create your own.
 
-{{site.alert.note}}
-  This page covers developing apps for all desktop
-  platforms. Once you've read this, you can dive into
-  specific platform information at the following links:
+:::note
+This page covers developing apps for all desktop
+platforms. Once you've read this, you can dive into
+specific platform information at the following links:
 
-  * [Building Windows apps with Flutter][]
-  * [Building macOS apps with Flutter][]
-  * [Building Linux apps with Flutter][]
-{{site.alert.end}}
+* [Building Windows apps with Flutter][]
+* [Building macOS apps with Flutter][]
+* [Building Linux apps with Flutter][]
+:::
 
 [Building Windows apps with Flutter]: /platform-integration/windows/building
 [Building macOS apps with Flutter]: /platform-integration/macos/building
@@ -106,10 +106,10 @@ $ flutter run -d macos
 $ flutter run -d linux
 ```
 
-{{site.alert.note}}
-  If you do not supply the `-d` flag, `flutter run` lists
-  the available targets to choose from.
-{{site.alert.end}}
+:::note
+If you do not supply the `-d` flag, `flutter run` lists
+the available targets to choose from.
+:::
 
 ## Build a release app
 

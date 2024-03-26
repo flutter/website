@@ -20,11 +20,11 @@ which the framework diffs against the previous description in order
 to determine the minimal changes needed in the underlying render
 tree to transition from one state to the next.
 
-{{site.alert.note}}
-  If you would like to become better acquainted with Flutter by diving
-  into some code, check out [building layouts][],
-  and [adding interactivity to your Flutter app][].
-{{site.alert.end}}
+:::note
+If you would like to become better acquainted with Flutter by diving
+into some code, check out [building layouts][],
+and [adding interactivity to your Flutter app][].
+:::
 
 ## Hello world
 
@@ -296,13 +296,13 @@ might consider when designing your own widgets.
 
 For more information, check out [Material Components widgets][].
 
-{{site.alert.note}}
-  Material is one of the 2 bundled designs included with Flutter.
-  To create an iOS-centric design,
-  check out the [Cupertino components][] package,
-  which has its own versions of
-  [`CupertinoApp`][], and [`CupertinoNavigationBar`][].
-{{site.alert.end}}
+:::note
+Material is one of the 2 bundled designs included with Flutter.
+To create an iOS-centric design,
+check out the [Cupertino components][] package,
+which has its own versions of
+[`CupertinoApp`][], and [`CupertinoNavigationBar`][].
+:::
 
 
 ## Handling gestures

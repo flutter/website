@@ -135,10 +135,10 @@ To remove these directories, run the following command.
 ### Remove pub package files
 {:.no_toc}
 
-{{site.alert.important}}
-  If you want to remove Flutter but not Dart,
-  don't complete this section.
-{{site.alert.end}}
+:::important
+If you want to remove Flutter but not Dart,
+don't complete this section.
+:::
 
 If you don't want to preserve your pub packages,
 remove the `.pub-cache` directory from your home directory.

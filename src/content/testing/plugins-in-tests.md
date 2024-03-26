@@ -4,12 +4,12 @@ short-title: Plugin tests
 description: Adding plugin as part of your Flutter tests.
 ---
 
-{{site.alert.note}}
-  To learn how to avoid crashes from a plugin when
-  testing your Flutter app, read on.
-  To learn how to test your plugin code, check out
-  [Testing plugins][].
-{{site.alert.end}}
+:::note
+To learn how to avoid crashes from a plugin when
+testing your Flutter app, read on.
+To learn how to test your plugin code, check out
+[Testing plugins][].
+:::
 
 [Testing plugins]: /testing/testing-plugins
 
@@ -42,12 +42,12 @@ MissingPluginException(No implementation found for method someMethodName on chan
 [integration tests]: /cookbook/testing/integration/introduction
 [widget tests]: {{site.api}}/flutter/flutter_test/flutter_test-library.html
 
-{{site.alert.note}}
-  Plugin implementations that [only use Dart][]
-  will work in unit tests. This is an implementation
-  detail of the plugin, however,
-  so tests shouldn't rely on it.
-{{site.alert.end}}
+:::note
+Plugin implementations that [only use Dart][]
+will work in unit tests. This is an implementation
+detail of the plugin, however,
+so tests shouldn't rely on it.
+:::
 
 [only use Dart]: /packages-and-plugins/developing-packages#dart-only-platform-implementations
 

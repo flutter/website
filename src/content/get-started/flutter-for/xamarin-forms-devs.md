@@ -208,11 +208,11 @@ but there are many benefits to this approach.
 
 ### What is the equivalent of a Page or Element in Flutter?
 
-{{site.alert.secondary}}
-  How is react-style, or _declarative_, programming different from the
-  traditional imperative style?
-  For a comparison, see [Introduction to declarative UI][].
-{{site.alert.end}}
+:::secondary
+How is react-style, or _declarative_, programming different from the
+traditional imperative style?
+For a comparison, see [Introduction to declarative UI][].
+:::
 
 `ContentPage`, `TabbedPage`, `FlyoutPage` are all types of pages
 you might use in a Xamarin.Forms application.

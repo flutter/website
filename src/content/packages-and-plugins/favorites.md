@@ -15,10 +15,10 @@ own evaluation of packages and plugins for your project.
 You can see the complete list of
 [Flutter Favorite packages][] on pub.dev.
 
-{{site.alert.note}}
-  If you came here looking for the Happy Paths recommendations,
-  we have discontinued that project in favor of Flutter Favorites.
-{{site.alert.end}}
+:::note
+If you came here looking for the Happy Paths recommendations,
+we have discontinued that project in favor of Flutter Favorites.
+:::
 
 ## Metrics
 

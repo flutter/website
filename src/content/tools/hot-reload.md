@@ -45,27 +45,27 @@ Your app continues to execute from where it was prior
 to run the hot reload command.
 The code updates and execution continues.
 
-{{site.alert.secondary}}
-  **What is the difference between hot reload, hot restart,
-  and full restart?**
+:::secondary
+**What is the difference between hot reload, hot restart,
+and full restart?**
 
-  * **Hot reload** loads code changes into the VM and re-builds
-    the widget tree, preserving the app state;
-    it doesn't rerun `main()` or `initState()`.
-    (`⌘\` in Intellij and Android Studio, `⌃F5` in VSCode)
-  * **Hot restart** loads code changes into the VM,
-    and restarts the Flutter app, losing the app state.
-    (`⇧⌘\` in IntelliJ and Android Studio, `⇧⌘F5` in VSCode)
-  * **Full restart** restarts the iOS, Android, or web app.
-    This takes longer because it also recompiles the
-    Java / Kotlin / ObjC / Swift code. On the web,
-    it also restarts the Dart Development Compiler.
-    There is no specific keyboard shortcut for this;
-    you need to stop and start the run configuration.
+* **Hot reload** loads code changes into the VM and re-builds
+  the widget tree, preserving the app state;
+  it doesn't rerun `main()` or `initState()`.
+  (`⌘\` in Intellij and Android Studio, `⌃F5` in VSCode)
+* **Hot restart** loads code changes into the VM,
+  and restarts the Flutter app, losing the app state.
+  (`⇧⌘\` in IntelliJ and Android Studio, `⇧⌘F5` in VSCode)
+* **Full restart** restarts the iOS, Android, or web app.
+  This takes longer because it also recompiles the
+  Java / Kotlin / ObjC / Swift code. On the web,
+  it also restarts the Dart Development Compiler.
+  There is no specific keyboard shortcut for this;
+  you need to stop and start the run configuration.
 
-  Flutter web currently supports hot restart but not
-  hot reload.
-{{site.alert.end}}
+Flutter web currently supports hot restart but not
+hot reload.
+:::
 
 ![Android Studio UI](/assets/images/docs/development/tools/android-studio-run-controls.png){:width="100%"}<br>
 Controls for run, run debug, hot reload, and hot restart in Android Studio

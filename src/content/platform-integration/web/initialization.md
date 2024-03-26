@@ -58,12 +58,12 @@ that calls `loadEntrypoint` from the `flutter.js` file:
 </html>
 ```
 
-{{site.alert.note}}
-  In Flutter 2.10 or earlier,
-  this script doesn't support customization.
-  To upgrade your `index.html` file to the latest version,
-  see [Upgrading an older project](#upgrading-an-older-project).
-{{site.alert.end}}
+:::note
+In Flutter 2.10 or earlier,
+this script doesn't support customization.
+To upgrade your `index.html` file to the latest version,
+see [Upgrading an older project](#upgrading-an-older-project).
+:::
 
 The `loadEntrypoint` function calls the `onEntrypointLoaded` callback
 once the Service Worker is initialized, and the `main.dart.js` entrypoint
@@ -140,12 +140,12 @@ You can add any of the following optional parameters:
 [jsflutterconfig-source]: {{site.repo.engine}}/blob/main/lib/web_ui/lib/src/engine/configuration.dart#L247-L259
 [web-renderers]: /platform-integration/web/renderers
 
-{{site.alert.note}}
-  Some of the parameters described above might have been overridden
-  in previous releases by using properties in the `window` object.
-  That approach is still supported, but displays a **deprecation
-  notice** in the JS console, as of **Flutter 3.7.0**.
-{{site.alert.end}}
+:::note
+Some of the parameters described above might have been overridden
+in previous releases by using properties in the `window` object.
+That approach is still supported, but displays a **deprecation
+notice** in the JS console, as of **Flutter 3.7.0**.
+:::
 
 #### Engine configuration example
 

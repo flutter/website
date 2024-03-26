@@ -22,11 +22,11 @@ To retrieve the text a user has entered into a text field,
 create a [`TextEditingController`][]
 and supply it to a `TextField` or `TextFormField`.
 
-{{site.alert.secondary}}
-  **Important:** Call `dispose` of the `TextEditingController` when
-  you've finished using it. This ensures that you discard any resources
-  used by the object.
-{{site.alert.end}}
+:::important
+Call `dispose` of the `TextEditingController` when
+you've finished using it. This ensures that you discard any resources
+used by the object.
+:::
 
 <?code-excerpt "lib/starter.dart (Starter)" remove="return Container();"?>
 ```dart

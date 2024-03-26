@@ -15,38 +15,38 @@ to load and your app to initialize.
 
 ## Overview
 
-{{site.alert.warning}}
-  If you are experiencing a crash from implementing a splash screen, you
-  might need to migrate your code. See detailed instructions in the
-  [Deprecated Splash Screen API Migration guide][].
-{{site.alert.end}}
+:::warning
+If you are experiencing a crash from implementing a splash screen, you
+might need to migrate your code. See detailed instructions in the
+[Deprecated Splash Screen API Migration guide][].
+:::
 
 In Android, there are two separate screens that you can control:
 a _launch screen_ shown while your Android app initializes,
 and a _splash screen_ that displays while the Flutter experience
 initializes.
 
-{{site.alert.note}}
-  As of Flutter 2.5, the launch and splash screens have been
-  consolidated—Flutter now only implements the Android launch screen,
-  which is displayed until the framework draws the first frame.
-  This launch screen can act as both an Android launch screen and an
-  Android splash screen via customization, and thus, is referred to
-  as both terms. For example of such customization, check out the
-  [Android splash screen sample app][].
-  
-  If, prior to 2.5, you used `flutter create` to create an app,
-  and you run the app on 2.5 or later, the app might crash.
-  For more info, see the [Deprecated Splash Screen API Migration guide][].
-{{site.alert.end}}
+:::note
+As of Flutter 2.5, the launch and splash screens have been
+consolidated—Flutter now only implements the Android launch screen,
+which is displayed until the framework draws the first frame.
+This launch screen can act as both an Android launch screen and an
+Android splash screen via customization, and thus, is referred to
+as both terms. For example of such customization, check out the
+[Android splash screen sample app][].
 
-{{site.alert.note}}
-  For apps that embed one or more Flutter screens within an
-  existing Android app, consider
-  [pre-warming a `FlutterEngine`][] and reusing the
-  same engine throughout your app to minimize wait
-  time associated with initialization of the Flutter engine.
-{{site.alert.end}}
+If, prior to 2.5, you used `flutter create` to create an app,
+and you run the app on 2.5 or later, the app might crash.
+For more info, see the [Deprecated Splash Screen API Migration guide][].
+:::
+
+:::note
+For apps that embed one or more Flutter screens within an
+existing Android app, consider
+[pre-warming a `FlutterEngine`][] and reusing the
+same engine throughout your app to minimize wait
+time associated with initialization of the Flutter engine.
+:::
 
 ## Initializing the app
 

@@ -26,14 +26,14 @@ files
 `windows/runner/Runner.rc` files
 7. Verify your app builds using `flutter build windows`
 
-{{site.alert.note}}
-  Follow the [run loop migration guide][] if the build fails
-  with the following error message:
+:::note
+Follow the [run loop migration guide][] if the build fails
+with the following error message:
 
-  ```console
-  flutter_window.obj : error LNK2019: unresolved external symbol "public: void __cdecl RunLoop::RegisterFlutterInstance(class flutter::FlutterEngine *)" (?RegisterFlutterInstance@RunLoop@@QEAAXPEAVFlutterEngine@flutter@@@Z) referenced in function "protected: virtual bool __cdecl FlutterWindow::OnCreate(void)" (?OnCreate@FlutterWindow@@MEAA_NXZ)
-  ```
-{{site.alert.end}}
+```console
+flutter_window.obj : error LNK2019: unresolved external symbol "public: void __cdecl RunLoop::RegisterFlutterInstance(class flutter::FlutterEngine *)" (?RegisterFlutterInstance@RunLoop@@QEAAXPEAVFlutterEngine@flutter@@@Z) referenced in function "protected: virtual bool __cdecl FlutterWindow::OnCreate(void)" (?OnCreate@FlutterWindow@@MEAA_NXZ)
+```
+:::
 
 ## Example
 

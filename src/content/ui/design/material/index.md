@@ -11,15 +11,15 @@ adaptive, and expressive experiences—from dynamic color
 and enhanced accessibility, to foundations for
 large screen layouts, and design tokens.
 
-{{site.alert.warning}}
-  As of the Flutter 3.16 release, **Material 3 is
-  enabled by default**. For now, you can opt out
-  of Material 3 by setting the [`useMaterial3`][] property
-  to `false`. But be aware that the `useMaterial3`
-  property and support for Material 2
-  will eventually be deprecated according to
-  Flutter's [deprecation policy][].
-{{site.alert.end}}
+:::warning
+As of the Flutter 3.16 release, **Material 3 is
+enabled by default**. For now, you can opt out
+of Material 3 by setting the [`useMaterial3`][] property
+to `false`. But be aware that the `useMaterial3`
+property and support for Material 2
+will eventually be deprecated according to
+Flutter's [deprecation policy][].
+:::
 
 For _most_ Flutter widgets, upgrading to Material 3
 is seamless. But _some_ widgets couldn't be

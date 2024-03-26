@@ -35,10 +35,10 @@ to anyone who's written Java, Javascript,
 or any other C-like language. The first
 resource listed here is a tutorial about writing Dart code.  
 
-{{site.alert.note}}
-  Installing Flutter also installs Dart,
-  so you don't need to install Dart separately.
-{{site.alert.end}}
+:::note
+Installing Flutter also installs Dart,
+so you don't need to install Dart separately.
+:::
 
 <i class="material-symbols" aria-hidden="true">flutter_dash</i>
 Tutorial: [Get started with Dart: Write command-line apps][]

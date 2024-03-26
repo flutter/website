@@ -12,13 +12,11 @@ diff2html: true
 
 <style>dl, dd { margin-bottom: 0; }</style>
 
-{{site.alert.secondary}}
-  <h4>What's the point?</h4>
-
+:::secondary What's the point?
 * Widgets are classes used to build UIs.
 * Widgets are used for both layout and UI elements.
 * Compose simple widgets to build complex widgets.
-{{site.alert.end}}
+:::
 
 The core of Flutter's layout mechanism is widgets.
 In Flutter, almost everything is a widget&mdash;even
@@ -42,13 +40,13 @@ under each one:
 The second screenshot displays the visual layout, showing a row of
 3 columns where each column contains an icon and a label.
 
-{{site.alert.note}}
-  Most of the screenshots in this tutorial are displayed with
-  `debugPaintSizeEnabled` set to `true` so you can see the visual layout.
-  For more information, see
-  [Debugging layout issues visually][], a section in
-  [Using the Flutter inspector][].
-{{site.alert.end}}
+:::note
+Most of the screenshots in this tutorial are displayed with
+`debugPaintSizeEnabled` set to `true` so you can see the visual layout.
+For more information, see
+[Debugging layout issues visually][], a section in
+[Using the Flutter inspector][].
+:::
 
 Here's a diagram of the widget tree for this UI:
 
@@ -178,14 +176,14 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-{{site.alert.note}}
-  The [Material library][] implements widgets that follow [Material
-  Design][] principles. When designing your UI, you can exclusively use
-  widgets from the standard [widgets library][], or you can use
-  widgets from the Material library. You can mix widgets from both
-  libraries, you can customize existing widgets,
-  or you can build your own set of custom widgets.
-{{site.alert.end}}
+:::note
+The [Material library][] implements widgets that follow [Material
+Design][] principles. When designing your UI, you can exclusively use
+widgets from the standard [widgets library][], or you can use
+widgets from the Material library. You can mix widgets from both
+libraries, you can customize existing widgets,
+or you can build your own set of custom widgets.
+:::
 
 #### Cupertino apps
 
@@ -240,14 +238,14 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-{{site.alert.note}}
-  The [Cupertino library][] implements widgets that follow
-  [Apple's Human Interface Guidelines for iOS][].
-  When designing your UI, you can use
-  widgets from the standard [widgets library][], or the Cupertino library.
-  You can mix widgets from both libraries, you can customize existing widgets,
-  or you can build your own set of custom widgets.
-{{site.alert.end}}
+:::note
+The [Cupertino library][] implements widgets that follow
+[Apple's Human Interface Guidelines for iOS][].
+When designing your UI, you can use
+widgets from the standard [widgets library][], or the Cupertino library.
+You can mix widgets from both libraries, you can customize existing widgets,
+or you can build your own set of custom widgets.
+:::
 
 [`CupertinoColors`]: {{api}}/cupertino/CupertinoColors-class.html
 [`CupertinoThemeData`]: {{api}}/cupertino/CupertinoThemeData-class.html
@@ -317,9 +315,7 @@ widgets vertically or horizontally. You can use a
 `Row` widget to arrange widgets horizontally,
 and a `Column` widget to arrange widgets vertically.
 
-{{site.alert.secondary}}
-  <h4>What's the point?</h4>
-
+:::secondary What's the point?
 * `Row` and `Column` are two of the most commonly used layout patterns.
 * `Row` and `Column` each take a list of child widgets.
 * A child widget can itself be a `Row`, `Column`,
@@ -329,7 +325,7 @@ and a `Column` widget to arrange widgets vertically.
 * You can stretch or constrain specific child widgets.
 * You can specify how child widgets use the `Row`'s or
     `Column`'s available space.
-{{site.alert.end}}
+:::
 
 To create a row or column in Flutter, you add a list of children
 widgets to a [`Row`][] or [`Column`][] widget. In turn,
@@ -351,18 +347,18 @@ The left column's widget tree nests rows and columns.
 You'll implement some of Pavlova's layout code in
 [Nesting rows and columns](#nesting-rows-and-columns).
 
-{{site.alert.note}}
-  `Row` and `Column` are basic primitive widgets for horizontal
-  and vertical layouts&mdash;these low-level widgets allow for maximum
-  customization. Flutter also offers specialized, higher level widgets
-  that might be sufficient for your needs. For example,
-  instead of `Row` you might prefer [`ListTile`][],
-  an easy-to-use widget with properties for leading and trailing icons,
-  and up to 3 lines of text.  Instead of Column, you might prefer
-  [`ListView`][], a column-like layout that automatically scrolls
-  if its content is too long to fit the available space.
-  For more information, see [Common layout widgets][].
-{{site.alert.end}}
+:::note
+`Row` and `Column` are basic primitive widgets for horizontal
+and vertical layouts&mdash;these low-level widgets allow for maximum
+customization. Flutter also offers specialized, higher level widgets
+that might be sufficient for your needs. For example,
+instead of `Row` you might prefer [`ListTile`][],
+an easy-to-use widget with properties for leading and trailing icons,
+and up to 3 lines of text.  Instead of Column, you might prefer
+[`ListView`][], a column-like layout that automatically scrolls
+if its content is too long to fit the available space.
+For more information, see [Common layout widgets][].
+:::
 
 ### Aligning widgets
 
@@ -382,15 +378,15 @@ axis runs horizontally.
 The [`MainAxisAlignment`][] and [`CrossAxisAlignment`][]
 enums offer a variety of constants for controlling alignment.
 
-{{site.alert.note}}
-  When you add images to your project,
-  you need to update the `pubspec.yaml` file to access
-  them&mdash;this example uses `Image.asset` to display
-  the images.  For more information, see this example's
-  [`pubspec.yaml` file][] or [Adding assets and images][].
-  You don't need to do this if you're referencing online
-  images using `Image.network`.
-{{site.alert.end}}
+:::note
+When you add images to your project,
+you need to update the `pubspec.yaml` file to access
+them&mdash;this example uses `Image.asset` to display
+the images.  For more information, see this example's
+[`pubspec.yaml` file][] or [Adding assets and images][].
+You don't need to do this if you're referencing online
+images using `Image.network`.
+:::
 
 In the following example, each of the 3 images is 100 pixels wide.
 The render box (in this case, the entire screen)
@@ -614,11 +610,11 @@ final [!ratings!] = Container(
 );
 ```
 
-{{site.alert.tip}}
-  To minimize the visual confusion that can result from
-  heavily nested layout code, implement pieces of the UI
-  in variables and functions.
-{{site.alert.end}}
+:::tip
+To minimize the visual confusion that can result from
+heavily nested layout code, implement pieces of the UI
+in variables and functions.
+:::
 
 The icons row, below the ratings row, contains 3 columns;
 each column contains an icon and two lines of text,
@@ -726,16 +722,16 @@ body: Center(
 ),
 ```
 
-{{site.alert.tip}}
-  The Pavlova example runs best horizontally on a wide device,
-  such as a tablet.  If you are running this example in the iOS simulator,
-  you can select a different device using the **Hardware > Device** menu.
-  For this example, we recommend the iPad Pro.
-  You can change its orientation to landscape mode using
-  **Hardware > Rotate**. You can also change the size of the
-  simulator window (without changing the number of logical pixels)
-  using **Window > Scale**.
-{{site.alert.end}}
+:::tip
+The Pavlova example runs best horizontally on a wide device,
+such as a tablet.  If you are running this example in the iOS simulator,
+you can select a different device using the **Hardware > Device** menu.
+For this example, we recommend the iPad Pro.
+You can change its orientation to landscape mode using
+**Hardware > Rotate**. You can also change the size of the
+simulator window (without changing the number of logical pixels)
+using **Window > Scale**.
+:::
 
 **App source:** [pavlova]({{examples}}/layout/pavlova)
 
@@ -885,12 +881,12 @@ it automatically scrolls.
   is in landscape or portrait mode.
 {% endcomment %}
 
-{{site.alert.note}}
-  When displaying a two-dimensional list where it's important which
-  row and column a cell occupies (for example,
-  it's the entry in the "calorie" column for the "avocado" row), use
-  [`Table`][] or [`DataTable`][].
-{{site.alert.end}}
+:::note
+When displaying a two-dimensional list where it's important which
+row and column a cell occupies (for example,
+it's the entry in the "calorie" column for the "avocado" row), use
+[`Table`][] or [`DataTable`][].
+:::
 
 #### Examples (GridView)
 

@@ -21,11 +21,11 @@ In this recipe, learn how to write a test that records a performance
 timeline while performing a specific task and saves a summary of the
 results to a local file.
 
-{{site.alert.note}}
-  Recording performance timelines isn't supported on web.
-  For performance profiling on web, see
-  [Debugging performance for web apps][]
-{{site.alert.end}}
+:::note
+Recording performance timelines isn't supported on web.
+For performance profiling on web, see
+[Debugging performance for web apps][]
+:::
 
 This recipe uses the following steps:
 
@@ -149,11 +149,11 @@ The `--profile` option means to compile the app for the "profile mode"
 rather than the "debug mode", so that the benchmark result is closer to 
 what will be experienced by end users. 
 
-{{site.alert.note}}
-  Run the command with `--no-dds` when running on a mobile device or emulator.
-  This option disables the Dart Development Service (DDS), which won't
-  be accessible from your computer.
-{{site.alert.end}}
+:::note
+Run the command with `--no-dds` when running on a mobile device or emulator.
+This option disables the Dart Development Service (DDS), which won't
+be accessible from your computer.
+:::
 
 ### 5. Review the results
 

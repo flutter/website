@@ -5,9 +5,9 @@ description: Learn how to use the Flutter inspector to explore a Flutter app's w
 
 <?code-excerpt path-base="../examples/visual_debugging/"?>
 
-{{site.alert.note}}
-  The inspector works with all Flutter applications.
-{{site.alert.end}}
+:::note
+The inspector works with all Flutter applications.
+:::
 
 ## What is it?
 
@@ -30,12 +30,12 @@ To debug a layout issue, run the app in [debug mode][] and
 open the inspector by clicking the **Flutter Inspector**
 tab on the DevTools toolbar.
 
-{{site.alert.note}}
-  You can still access the Flutter inspector directly from
-  Android Studio/IntelliJ, but you might prefer the
-  more spacious view when running it from DevTools
-  in a browser.
-{{site.alert.end}}
+:::note
+You can still access the Flutter inspector directly from
+Android Studio/IntelliJ, but you might prefer the
+more spacious view when running it from DevTools
+in a browser.
+:::
 
 ### Debugging layout issues visually
 

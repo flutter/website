@@ -127,18 +127,18 @@ flutter: SocketException: Connection failed
 address = example.com, port = 443
 ```
 
-{{site.alert.secondary}}
-  **Important:** The `com.apple.security.network.server`
-  entitlement, which allows incoming network connections,
-  is enabled by default only for `debug` and `profile`
-  builds to enable communications between Flutter tools
-  and a running app. If you need to allow incoming
-  network requests in your application,
-  you must add the `com.apple.security.network.server`
-  entitlement to `Runner-Release.entitlements` as well,
-  otherwise your application will work correctly for debug or
-  profile testing, but will fail with release builds.
-{{site.alert.end}}
+:::important
+The `com.apple.security.network.server`
+entitlement, which allows incoming network connections,
+is enabled by default only for `debug` and `profile`
+builds to enable communications between Flutter tools
+and a running app. If you need to allow incoming
+network requests in your application,
+you must add the `com.apple.security.network.server`
+entitlement to `Runner-Release.entitlements` as well,
+otherwise your application will work correctly for debug or
+profile testing, but will fail with release builds.
+:::
 
 For more information on these topics,
 see [App Sandbox][] and [Entitlements][]

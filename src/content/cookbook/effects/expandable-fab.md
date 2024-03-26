@@ -339,12 +339,12 @@ every time the animation changes. The `FadeTransition` widget
 orchestrates the appearance and disappearance of each
 `ActionButton` as they expand and collapse, respectively.
 
-{{site.alert.note}}
-  The use of a `Positioned` widget within `_ExpandingActionButton`
-  implies that `_ExpandingActionButton` can only be used as a direct
-  child of a `Stack`. This is due to the explicit relationship
-  between `Positioned` and `Stack`.
-{{site.alert.end}}
+:::note
+The use of a `Positioned` widget within `_ExpandingActionButton`
+implies that `_ExpandingActionButton` can only be used as a direct
+child of a `Stack`. This is due to the explicit relationship
+between `Positioned` and `Stack`.
+:::
 
 Finally, use the new `_ExpandingActionButton` widget
 within the `ExpandableFab` to complete the exercise.

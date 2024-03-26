@@ -143,11 +143,11 @@ Use one of the following methods to ask Flutter to rebuild the widget.
   multiple frames even if the duration is longer than a
   single frame.
 
-{{site.alert.note}}
-  To kick off the animation, you need to call `pump()`
-  once (with no duration specified) to start the ticker.
-  Without it, the animation does not start.
-{{site.alert.end}}
+:::note
+To kick off the animation, you need to call `pump()`
+once (with no duration specified) to start the ticker.
+Without it, the animation does not start.
+:::
 
 [`tester.pumpAndSettle()`][]
 : Repeatedly calls `pump()` with the given duration until

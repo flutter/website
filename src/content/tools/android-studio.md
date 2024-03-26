@@ -59,17 +59,15 @@ differs between Android Studio and IntelliJ.
  1. If you might publish this app, [set the company domain](#note).
  1. Click **Finish**.
 
-{{site.alert.secondary}}
-  <h4 id="note">Setting the company domain</h4>
-
-  When creating a new app, some Flutter IDE plugins ask for an
-  organization name in reverse domain order,
-  something like `com.example`. Along with the name of the app,
-  this is used as the package name for Android, and the Bundle ID for iOS
-  when the app is released. If you think you might ever release this app,
-  it is better to specify these now. They cannot be changed once the app
-  is released. Your organization name should be unique.
-{{site.alert.end}}
+:::secondary Setting the company domain
+When creating a new app, some Flutter IDE plugins ask for an
+organization name in reverse domain order,
+something like `com.example`. Along with the name of the app,
+this is used as the package name for Android, and the Bundle ID for iOS
+when the app is released. If you think you might ever release this app,
+it is better to specify these now. They cannot be changed once the app
+is released. Your organization name should be unique.
+:::
 
 ### Opening a project from existing source code
 
@@ -81,10 +79,10 @@ To open an existing Flutter project:
     Flutter source code files.
  1. Click **Open**.
 
-    {{site.alert.important}}
-      Do *not* use the **New > Project from existing sources**
-      option for Flutter projects.
-    {{site.alert.end}}
+    :::important
+    Do *not* use the **New > Project from existing sources**
+    option for Flutter projects.
+    :::
 
 
 ## Editing code and viewing issues
@@ -102,22 +100,22 @@ The Flutter plugin performs code analysis that enables the following:
 
 ## Running and debugging
 
-{{site.alert.note}}
-  You can debug your app in a few ways.
+:::note
+You can debug your app in a few ways.
 
-  * Using [DevTools][], a suite of debugging and profiling
-    tools that run in a browser
-    _and include the Flutter inspector_.
-  * Using Android Studio's (or IntelliJ's) built-in debugging
-    features, such as the ability to set breakpoints.
-  * Using the Flutter inspector, directly available in
-    Android Studio and IntelliJ.
+* Using [DevTools][], a suite of debugging and profiling
+  tools that run in a browser
+  _and include the Flutter inspector_.
+* Using Android Studio's (or IntelliJ's) built-in debugging
+  features, such as the ability to set breakpoints.
+* Using the Flutter inspector, directly available in
+  Android Studio and IntelliJ.
 
-  The instructions below describe features available in Android
-  Studio and IntelliJ. For information on launching DevTools,
-  see [Running DevTools from Android Studio][] in the
-  [DevTools][] docs.
-{{site.alert.end}}
+The instructions below describe features available in Android
+Studio and IntelliJ. For information on launching DevTools,
+see [Running DevTools from Android Studio][] in the
+[DevTools][] docs.
+:::
 
 Running and debugging are controlled from the main toolbar:
 
@@ -128,12 +126,12 @@ Running and debugging are controlled from the main toolbar:
 When a Flutter project is open in the IDE, you should see a set of
 Flutter-specific buttons on the right-hand side of the toolbar.
 
-{{site.alert.note}}
-  If the Run and Debug buttons are disabled, and no targets are listed,
-  Flutter has not been able to discover any connected iOS or
-  Android devices or simulators.
-  You need to connect a device, or start a simulator, to proceed.
-{{site.alert.end}}
+:::note
+If the Run and Debug buttons are disabled, and no targets are listed,
+Flutter has not been able to discover any connected iOS or
+Android devices or simulators.
+You need to connect a device, or start a simulator, to proceed.
+:::
 
  1. Locate the **Flutter Target Selector** drop-down button.
     This shows a list of available targets.
@@ -164,10 +162,10 @@ To learn more, check out [Hot reload][].
 
 ### Show performance data
 
-{{site.alert.note}}
-  To examine performance issues in Flutter, see the
-  [Timeline view][].
-{{site.alert.end}}
+:::note
+To examine performance issues in Flutter, see the
+[Timeline view][].
+:::
 
 To view the performance data, including the widget rebuild
 information, start the app in **Debug** mode, and then open
@@ -185,13 +183,13 @@ widget was rebuilt since entering the current screen.
 For widgets that aren't rebuilt, a solid grey circle displays.
 Otherwise, a grey spinning circle displays.
 
-{{site.alert.secondary}}
-  The app shown in this screenshot has been designed to deliver
-  poor performance, and the rebuild profiler gives you a clue
-  about what is happening in the frame that might cause poor
-  performance. The widget rebuild profiler is not a diagnostic
-  tool, by itself, about poor performance.
-{{site.alert.end}}
+:::secondary
+The app shown in this screenshot has been designed to deliver
+poor performance, and the rebuild profiler gives you a clue
+about what is happening in the frame that might cause poor
+performance. The widget rebuild profiler is not a diagnostic
+tool, by itself, about poor performance.
+:::
 
 The purpose of this feature is to make you aware when widgets are
 rebuilding&mdash;you might not realize that this is happening when just

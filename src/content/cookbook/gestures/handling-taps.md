@@ -13,11 +13,11 @@ you want users to interact with your app.
 Use the [`GestureDetector`][] widget to respond
 to fundamental actions, such as tapping and dragging.
 
-{{site.alert.note}}
-  To learn more, watch this short Widget of the Week video on the GestureDetector widget:
+:::note
+To learn more, watch this short Widget of the Week video on the GestureDetector widget:
 
-  <iframe class="full-width" src="{{site.yt.embed}}/WhVXkCFPmK4" title="Learn about the GestureDetector Flutter Widget" {{site.yt.set}}></iframe>
-{{site.alert.end}}
+<iframe class="full-width" src="{{site.yt.embed}}/WhVXkCFPmK4" title="Learn about the GestureDetector Flutter Widget" {{site.yt.set}}></iframe>
+:::
 
 This recipe shows how to make a custom button that shows
 a snackbar when tapped with the following steps:

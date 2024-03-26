@@ -12,14 +12,12 @@ Consider updating the number of languages when touching this page.
 
 {% assign languageCount = '115' -%}
 
-{{site.alert.secondary}}
-  <h4>What you'll learn</h4>
-
-  * How to track the device's locale (the user's preferred language).
-  * How to enable locale-specific Material or Cupertino widgets.
-  * How to manage locale-specific app values.
-  * How to define the locales an app supports.
-{{site.alert.end}}
+:::secondary What you'll learn
+* How to track the device's locale (the user's preferred language).
+* How to enable locale-specific Material or Cupertino widgets.
+* How to manage locale-specific app values.
+* How to define the locales an app supports.
+:::
 
 If your app might be deployed to users who speak another
 language then you'll need to internationalize it.
@@ -328,12 +326,12 @@ complete the following instructions:
    ),
    ```
 
-{{site.alert.note}}
-  The Material app has to actually be started to initialize
-  `AppLocalizations`. If the app hasn't yet started,
-  `AppLocalizations.of(context)!.helloWorld` causes a
-  null exception.
-{{site.alert.end}}
+:::note
+The Material app has to actually be started to initialize
+`AppLocalizations`. If the app hasn't yet started,
+`AppLocalizations.of(context)!.helloWorld` causes a
+null exception.
+:::
 
    This code generates a `Text` widget that displays "Hello World!"
    if the target device's locale is set to English,
@@ -360,11 +358,11 @@ return MaterialApp(
 
 ### Placeholders, plurals, and selects
 
-{{site.alert.tip}}
-  When using VS Code, add the [arb-editor extension][].
-  This extension adds syntax highlighting, snippets, 
-  diagnostics, and quick fixes to help edit `.arb` template files.
-{{site.alert.end}}
+:::tip
+When using VS Code, add the [arb-editor extension][].
+This extension adds syntax highlighting, snippets, 
+diagnostics, and quick fixes to help edit `.arb` template files.
+:::
 
 [arb-editor extension]: https://marketplace.visualstudio.com/items?itemName=Google.arb-editor
 

@@ -475,11 +475,11 @@ compression less efficient (see the
 [iOS App Store Specific Considerations][]
 section of Apple's [QA1795][]).
 
-{{site.alert.note}}
-  The release engine binary used to include LLVM IR (bitcode).
-  However, Apple [deprecated bitcode in Xcode 14][] and removed support,
-  so it has been removed from the Flutter 3.7 release.
-{{site.alert.end}}
+:::note
+The release engine binary used to include LLVM IR (bitcode).
+However, Apple [deprecated bitcode in Xcode 14][] and removed support,
+so it has been removed from the Flutter 3.7 release.
+:::
 
 Of course, we recommend that you measure your own app.
 To do that, see [Measuring your app's size][].

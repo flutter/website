@@ -214,16 +214,16 @@ center of the available space and provides snapping physics.
 Snapping physics is what causes an item to snap to the center, 
 no matter where the user releases a drag.
 
-{{site.alert.note}}
-  In cases where you need to customize the
-  position of child widgets within a scrollable area,
-  consider using a [`Scrollable`][] widget with a 
-  [`viewportBuilder`][], and place a
-  [`Flow`][] widget inside the `viewportBuilder`. 
-  The `Flow` widget has a [delegate property][]
-  that allows you to position child widgets wherever
-  you want, based on the current `viewportOffset`.
-{{site.alert.end}}
+:::note
+In cases where you need to customize the
+position of child widgets within a scrollable area,
+consider using a [`Scrollable`][] widget with a 
+[`viewportBuilder`][], and place a
+[`Flow`][] widget inside the `viewportBuilder`. 
+The `Flow` widget has a [delegate property][]
+that allows you to position child widgets wherever
+you want, based on the current `viewportOffset`.
+:::
 
 Configure your widget tree to make space for the `PageView`.
 

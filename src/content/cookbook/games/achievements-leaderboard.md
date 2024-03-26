@@ -153,11 +153,11 @@ reasons. Therefore, every call should be wrapped in a try-catch block as
 in the previous example. The rest of this recipe omits exception
 handling for clarity.
 
-{{site.alert.tip}}
-  It's a good practice to create a controller. This would be a
-  `ChangeNotifier`, a bloc, or some other piece of logic that wraps around
-  the raw functionality of the `games_services` plugin.
-{{site.alert.end}}
+:::tip
+It's a good practice to create a controller. This would be a
+`ChangeNotifier`, a bloc, or some other piece of logic that wraps around
+the raw functionality of the `games_services` plugin.
+:::
 
 
 ## 3. Unlock achievements

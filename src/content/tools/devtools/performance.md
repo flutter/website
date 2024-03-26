@@ -3,12 +3,12 @@ title: Using the Performance view
 description: Learn how to use the DevTools performance view.
 ---
 
-{{site.alert.note}}
-  The DevTools performance view works for Flutter mobile and desktop apps.
-  For web apps, Flutter adds timeline events to the
-  performance panel of Chrome DevTools instead.
-  To learn about profiling web apps, check out [Debugging web performance][].
-{{site.alert.end}}
+:::note
+The DevTools performance view works for Flutter mobile and desktop apps.
+For web apps, Flutter adds timeline events to the
+performance panel of Chrome DevTools instead.
+To learn about profiling web apps, check out [Debugging web performance][].
+:::
 
 [Debugging web performance]: /perf/web-performance
 
@@ -25,12 +25,12 @@ the cause of poor performance in your app:
 * Timeline events trace viewer (all native Dart applications)
 * Advanced debugging tools (Flutter apps only)
 
-{{site.alert.secondary}}
-  **Use a [profile build][] of your application to analyze performance.**
-  Frame rendering times aren't indicative of release performance
-  when running in debug mode. Run your app in profile mode,
-  which still preserves useful debugging information.
-{{site.alert.end}}
+:::secondary
+**Use a [profile build][] of your application to analyze performance.**
+Frame rendering times aren't indicative of release performance
+when running in debug mode. Run your app in profile mode,
+which still preserves useful debugging information.
+:::
 
 [profile build]: /testing/build-modes#profile
 
@@ -145,12 +145,12 @@ that we have detected that might have contributed to the slow frame time.
 
 ## Raster stats tab
 
-{{site.alert.note}}
-  For best results, this tool should be used with
-  the Impeller rendering engine. When using Skia,
-  the raster stats reported might be inconsistent
-  due to the timing of when shaders are compiled.
-{{site.alert.end}}
+:::note
+For best results, this tool should be used with
+the Impeller rendering engine. When using Skia,
+the raster stats reported might be inconsistent
+due to the timing of when shaders are compiled.
+:::
 
 If you have Flutter frames that are janking with
 slow raster thread times, this tool might be able
@@ -196,9 +196,9 @@ your application, click the refresh button
 To view more detailed tracing in the timeline events chart,
 use the options in the enhance tracing dropdown:
 
-{{site.alert.note}}
-  Frame times might be negatively affected when these options are enabled.
-{{site.alert.end}}
+:::note
+Frame times might be negatively affected when these options are enabled.
+:::
 
 ![Screenshot of enhanced tracing options](/assets/images/docs/tools/devtools/enhanced-tracing.png)
 

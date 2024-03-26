@@ -46,11 +46,11 @@ The examples assume:
   );
   ```
 
-{{site.alert.secondary}}
-  How is react-style, or _declarative_, programming different from the
-  traditional imperative style?
-  For a comparison, see [Introduction to declarative UI][].
-{{site.alert.end}}
+:::secondary
+How is react-style, or _declarative_, programming different from the
+traditional imperative style?
+For a comparison, see [Introduction to declarative UI][].
+:::
 
 ## Performing basic layout operations
 

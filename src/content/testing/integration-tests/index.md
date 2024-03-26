@@ -16,12 +16,12 @@ properties:
 * Compatibility with [flutter_test][] APIs,
   enabling tests to be written in a similar style as [widget tests][]
 
-{{site.alert.note}}
-  The `integration_test` package is part of the Flutter SDK itself.
-  To use it, make sure that you update your app's pubspec file
-  to include this package as one of your `dev_dependencies`.
-  For an example, see the [Project setup](#project-setup) section below.
-{{site.alert.end}}
+:::note
+The `integration_test` package is part of the Flutter SDK itself.
+To use it, make sure that you update your app's pubspec file
+to include this package as one of your `dev_dependencies`.
+For an example, see the [Project setup](#project-setup) section below.
+:::
 
 ## Overview
 
@@ -120,10 +120,10 @@ void main() {
 }
 ```
 
-{{site.alert.note}}
-  Only use `testWidgets` to declare your tests.
-  Otherwise, Flutter could report errors incorrectly.
-{{site.alert.end}}
+:::note
+Only use `testWidgets` to declare your tests.
+Otherwise, Flutter could report errors incorrectly.
+:::
 
 If you are looking for more examples, take a look at the [testing_app][] of
 the [samples][] repository.
@@ -267,13 +267,14 @@ $ popd
 Where `<name>_test.dart` is the file created in the
 **Project Setup** section.
 
-{{site.alert.note}}
-  To use `--dart-define` with `gradlew`, you must `base64` encode
-  all parameters, and pass them to gradle in a comma separated list:
-  ```bash
-  ./gradlew project:task -Pdart-defines="{base64(key=value)},[...]"
-  ```
-{{site.alert.end}}
+:::note
+To use `--dart-define` with `gradlew`, you must `base64` encode
+all parameters, and pass them to gradle in a comma separated list:
+
+```console
+./gradlew project:task -Pdart-defines="{base64(key=value)},[...]"
+```
+:::
 
 Drag the "debug" APK from
 `<flutter_project_directory>/build/app/outputs/apk/debug`

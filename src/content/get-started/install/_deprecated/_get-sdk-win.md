@@ -15,15 +15,15 @@
     in the desired installation location for the Flutter SDK
     (for example, `%USERPROFILE%\flutter`, `C:\dev\flutter`).
 
-{{site.alert.warning}}
-  Do not install Flutter to a path that contains special
-  characters or spaces.
-{{site.alert.end}}
+:::warning
+Do not install Flutter to a path that contains special
+characters or spaces.
+:::
 
-{{site.alert.warning}}
-  Do not install Flutter in a directory like
-  `C:\Program Files\` that requires elevated privileges.
-{{site.alert.end}}
+:::warning
+Do not install Flutter in a directory like
+`C:\Program Files\` that requires elevated privileges.
+:::
 
 You are now ready to run Flutter commands in the Flutter Console.
 
@@ -81,11 +81,11 @@ finish the setup process. Once you have installed any missing
 dependencies, you can run the `flutter doctor` command again to
 verify that you've set everything up correctly.
 
-{{site.alert.note}}
-  If `flutter doctor` returns that either the Flutter plugin
-  or  Dart plugin of Android Studio are not installed, move
-  on to [Set up an editor][] to resolve this issue.
-{{site.alert.end}}
+:::note
+If `flutter doctor` returns that either the Flutter plugin
+or  Dart plugin of Android Studio are not installed, move
+on to [Set up an editor][] to resolve this issue.
+:::
 
 {% include_relative_analytics.md %}
 

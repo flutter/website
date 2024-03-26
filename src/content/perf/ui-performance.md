@@ -6,16 +6,14 @@ description: Diagnosing UI performance issues in Flutter.
 
 {% include docs/performance.md %}
 
-{{site.alert.secondary}}
-  <h4>What you'll learn</h4>
-
-  * Flutter aims to provide 60 frames per second (fps) performance,
-    or 120 fps performance on devices capable of 120Hz updates.
-  * For 60fps, frames need to render approximately every 16ms.
-  * Jank occurs when the UI doesn't render smoothly. For example,
-    every so often, a frame takes 10 times longer to render,
-    so it gets dropped, and the animation visibly jerks.
-{{site.alert.end}}
+:::secondary What you'll learn
+* Flutter aims to provide 60 frames per second (fps) performance,
+  or 120 fps performance on devices capable of 120Hz updates.
+* For 60fps, frames need to render approximately every 16ms.
+* Jank occurs when the UI doesn't render smoothly. For example,
+  every so often, a frame takes 10 times longer to render,
+  so it gets dropped, and the animation visibly jerks.
+:::
 
 It's been said that "a _fast_ app is great,
 but a _smooth_ app is even better."
@@ -24,16 +22,16 @@ how do you fix it? Where do you begin?
 This guide shows you where to start,
 steps to take, and tools that can help.
 
-{{site.alert.note}}
-  * An app's performance is determined by more than one measure.
-    Performance sometimes refers to raw speed, but also to the UI's
-    smoothness and lack of stutter. Other examples of performance
-    include I/O or network speed. This page primarily focuses on the
-    second type of performance (UI smoothness), but you can use most
-    of the same tools to diagnose other performance problems.
-  * To perform tracing inside your Dart code, see [Tracing Dart code][]
-    in the [Debugging][] page.
-{{site.alert.end}}
+:::note
+* An app's performance is determined by more than one measure.
+  Performance sometimes refers to raw speed, but also to the UI's
+  smoothness and lack of stutter. Other examples of performance
+  include I/O or network speed. This page primarily focuses on the
+  second type of performance (UI smoothness), but you can use most
+  of the same tools to diagnose other performance problems.
+* To perform tracing inside your Dart code, see [Tracing Dart code][]
+  in the [Debugging][] page.
+:::
 
 [Debugging]: /testing/debugging
 [Tracing Dart code]: /testing/code-debugging#trace-dart-code-performance
@@ -60,9 +58,7 @@ behavior of release mode builds.
 _You should consider checking performance
 on the slowest device that your users might reasonably use._
 
-{{site.alert.secondary}}
-  <h4 markdown="1">**Why you should run on a real device:**</h4>
-
+:::secondary Why you should run on a real device
 * Simulators and emulators don't use the same hardware, so their
   performance characteristics are different&mdash;some operations are
   faster on simulators than real devices, and some are slower.
@@ -74,7 +70,7 @@ on the slowest device that your users might reasonably use._
   instructions (also called "ahead of time", or AOT) before the app is
   loaded onto the device. JIT can cause the app to pause for JIT
   compilation, which itself can cause jank.
-{{site.alert.end}}
+:::
 
 ### Run in profile mode
 
@@ -84,11 +80,11 @@ functionality to allow debugging performance problems.
 For example, profile mode provides tracing information to the
 profiling tools.
 
-{{site.alert.note}}
-  DevTools can't connect to a Flutter web app running
-  in profile mode. Use Chrome DevTools to
-  [generate timeline events][] for a web app.
-{{site.alert.end}}
+:::note
+DevTools can't connect to a Flutter web app running
+in profile mode. Use Chrome DevTools to
+[generate timeline events][] for a web app.
+:::
 
 [generate timeline events]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 
@@ -334,12 +330,12 @@ apply an opacity to each individual widget, rather than a parent
 widget higher up in the widget tree. The same goes for
 other potentially expensive operations, such as clipping or shadows.
 
-{{site.alert.note}}
-  Opacity, clipping, and shadows are not, in themselves,
-  a bad idea. However, applying them to the top of the
-  widget tree might cause extra calls to `saveLayer`,
-  and needless processing.
-{{site.alert.end}}
+:::note
+Opacity, clipping, and shadows are not, in themselves,
+a bad idea. However, applying them to the top of the
+widget tree might cause extra calls to `saveLayer`,
+and needless processing.
+:::
 
 When you encounter calls to `saveLayer`,
 ask yourself these questions:

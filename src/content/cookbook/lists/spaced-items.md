@@ -149,11 +149,11 @@ LayoutBuilder(builder: (context, constraints) {
 });
 ```
 
-{{site.alert.tip}}
-  Play around with different devices, resizing the app,
-  or resizing the browser window, and see how the item list adapts
-  to the available space.
-{{site.alert.end}}
+:::tip
+Play around with different devices, resizing the app,
+or resizing the browser window, and see how the item list adapts
+to the available space.
+:::
 
 ## Interactive example
 

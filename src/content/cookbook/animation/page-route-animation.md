@@ -32,12 +32,12 @@ To start, use a [`PageRouteBuilder`][] to create a [`Route`][].
 `PageRouteBuilder` has two callbacks, one to build the content of the route
 (`pageBuilder`), and one to build the route's transition (`transitionsBuilder`).
 
-{{site.alert.note}}
-  The `child` parameter in transitionsBuilder is the widget returned from
-  pageBuilder. The `pageBuilder` function is only called the first time the
-  route is built. The framework can avoid extra work because `child` stays the
-  same throughout the transition.
-{{site.alert.end}}
+:::note
+The `child` parameter in transitionsBuilder is the widget returned from
+pageBuilder. The `pageBuilder` function is only called the first time the
+route is built. The framework can avoid extra work because `child` stays the
+same throughout the transition.
+:::
 
 The following example creates two routes: a home route with a "Go!" button, and
 a second route titled "Page 2".

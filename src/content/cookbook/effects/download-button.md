@@ -84,24 +84,24 @@ class DownloadButton extends StatelessWidget {
 }
 ```
 
-{{site.alert.note}}
-  Each time you define a custom widget,
-  you must decide whether all relevant 
-  information is provided to that widget
-  from its parent or if that widget orchestrates
-  the application behavior within itself.
-  For example, `DownloadButton` could receive the
-  current `DownloadStatus` from its parent, 
-  or the `DownloadButton` could orchestrate the
-  download process itself within its `State` object.
-  For most widgets, the best answer is to pass the relevant 
-  information into the widget from its parent,
-  rather than manage behavior within the widget.
-  By passing in all the relevant information,
-  you ensure greater reusability for the widget,
-  easier testing, and easier changes to application 
-  behavior in the future.
-{{site.alert.end}}
+:::note
+Each time you define a custom widget,
+you must decide whether all relevant 
+information is provided to that widget
+from its parent or if that widget orchestrates
+the application behavior within itself.
+For example, `DownloadButton` could receive the
+current `DownloadStatus` from its parent, 
+or the `DownloadButton` could orchestrate the
+download process itself within its `State` object.
+For most widgets, the best answer is to pass the relevant 
+information into the widget from its parent,
+rather than manage behavior within the widget.
+By passing in all the relevant information,
+you ensure greater reusability for the widget,
+easier testing, and easier changes to application 
+behavior in the future.
+:::
 
 ## Display the button shape
 

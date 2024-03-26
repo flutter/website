@@ -61,11 +61,11 @@ const snackBar = SnackBar(
 ScaffoldMessenger.of(context).showSnackBar(snackBar);
 ```
 
-{{site.alert.note}}
-  To learn more, watch this short Widget of the Week video on the ScaffoldMessenger widget:
+:::note
+To learn more, watch this short Widget of the Week video on the ScaffoldMessenger widget:
 
-  <iframe class="full-width" src="{{site.yt.embed}}/lytQi-slT5Y" title="Learn about the ScaffoldMessenger Flutter Widget" {{site.yt.set}}></iframe>
-{{site.alert.end}}
+<iframe class="full-width" src="{{site.yt.embed}}/lytQi-slT5Y" title="Learn about the ScaffoldMessenger Flutter Widget" {{site.yt.set}}></iframe>
+:::
 
 ## 3. Provide an optional action
 
@@ -93,11 +93,11 @@ final snackBar = SnackBar(
 
 ## Interactive example
 
-{{site.alert.note}}
-  In this example, the SnackBar displays when a user taps a button.
-  For more information on working with user input,
-  see the [Gestures][] section of the cookbook.
-{{site.alert.end}}
+:::note
+In this example, the SnackBar displays when a user taps a button.
+For more information on working with user input,
+see the [Gestures][] section of the cookbook.
+:::
 
 <?code-excerpt "lib/main.dart"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example

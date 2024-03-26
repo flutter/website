@@ -14,9 +14,9 @@ you need the following in addition to the Flutter SDK:
   you need the "Desktop development with C++" workload installed
   for building windows, including all of its default components. 
 
-{{site.alert.note}}
-  **Visual Studio** is different than Visual Studio _Code_.
-{{site.alert.end}}
+:::note
+**Visual Studio** is different than Visual Studio _Code_.
+:::
 
 For more information, see [Building Windows apps][].
 

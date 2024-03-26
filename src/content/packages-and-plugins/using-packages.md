@@ -9,33 +9,32 @@ Flutter supports using shared packages contributed by other developers
 to the Flutter and Dart ecosystems. This allows quickly building
 an app without having to develop everything from scratch.
 
-{{site.alert.secondary}}
-  **What is the difference between a package
-  and a plugin?** A plugin is a _type_ of
-  package&mdash;the full designation is _plugin package_,
-  which is generally shortened to _plugin_.
+:::note Difference between packages and plugins
+A plugin is a _type_ of
+package&mdash;the full designation is _plugin package_,
+which is generally shortened to _plugin_.
 
-  **Packages**
-  : At a minimum, a Dart package is a directory
-    containing a `pubspec.yaml` file. Additionally,
-    a package can contain dependencies
-    (listed in the pubspec), Dart libraries, apps,
-    resources, tests, images, fonts, and examples.
-    The [pub.dev][] site lists many packages—developed by Google engineers
-    and generous members of the Flutter and Dart community—
-    that you can use in your app.
+**Packages**
+: At a minimum, a Dart package is a directory
+  containing a `pubspec.yaml` file. Additionally,
+  a package can contain dependencies
+  (listed in the pubspec), Dart libraries, apps,
+  resources, tests, images, fonts, and examples.
+  The [pub.dev][] site lists many packages—developed by Google engineers
+  and generous members of the Flutter and Dart community—
+  that you can use in your app.
 
-  **Plugins**
-  : A plugin package is a special kind of package that makes
-    platform functionality available to the app.
-    Plugin packages can be written for Android (using Kotlin or Java),
-    iOS (using Swift or Objective-C), web, macOS, Windows, Linux,
-    or any combination thereof.
-    For example, a plugin might provide Flutter apps
-    with the ability to use a device's camera.
+**Plugins**
+: A plugin package is a special kind of package that makes
+  platform functionality available to the app.
+  Plugin packages can be written for Android (using Kotlin or Java),
+  iOS (using Swift or Objective-C), web, macOS, Windows, Linux,
+  or any combination thereof.
+  For example, a plugin might provide Flutter apps
+  with the ability to use a device's camera.
 
-  <iframe width="560" height="315" src="{{site.yt.embed}}/Y9WifT8aN6o?start=1" title="Learn the difference between a package and a plugin" {{site.yt.set}}></iframe>
-{{site.alert.end}}
+<iframe width="560" height="315" src="{{site.yt.embed}}/Y9WifT8aN6o?start=1" title="Learn the difference between a package and a plugin" {{site.yt.set}}></iframe>
+:::
 
 Existing packages enable many use cases—for example,
 making network requests ([`http`][]),

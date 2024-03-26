@@ -51,13 +51,13 @@ $ flutter channel stable
 $ flutter upgrade
 ```
 
-{{site.alert.warning}}
-  Running `flutter channel stable` replaces your current version of Flutter
-  with the stable version and can take time if your connection is slow.
-  After this, running `flutter upgrade` upgrades your install to the latest
- `stable`.  Returning to another channel (beta or master) requires calling
- `flutter channel <channel>` explicitly.
-{{site.alert.end}}
+:::warning
+Running `flutter channel stable` replaces your current version of Flutter
+with the stable version and can take time if your connection is slow.
+After this, running `flutter upgrade` upgrades your install to the latest
+`stable`.  Returning to another channel (beta or master) requires calling
+`flutter channel <channel>` explicitly.
+:::
 
 If Chrome is installed,
 the `flutter devices` command outputs a `Chrome` device
@@ -102,19 +102,20 @@ enter the following from the top of the package:
 ```console
 $ flutter run -d chrome
 ```
-{{site.alert.note}}
-  If there aren't any other connected devices,
-  the `-d chrome` is optional.
-{{site.alert.end}}
+
+:::note
+If there aren't any other connected devices,
+the `-d chrome` is optional.
+:::
 
 The `flutter run` command launches the application using the
 [development compiler] in a Chrome browser.
 
-{{site.alert.warning}}
-  **Hot reload is not supported in a web browser**
-  Currently, Flutter supports **hot restart**,
-  but not **hot reload** in a web browser.
-{{site.alert.end}}
+:::warning
+**Hot reload is not supported in a web browser**
+Currently, Flutter supports **hot restart**,
+but not **hot reload** in a web browser.
+:::
 
 ### Build
 

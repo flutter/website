@@ -7,9 +7,9 @@ The memory view provides insights into details
 of the application's memory allocation and
 tools to detect and debug specific issues.
 
-{{site.alert.note}}
-  This page is up to date for DevTools 2.23.0.
-{{site.alert.end}}
+:::note
+This page is up to date for DevTools 2.23.0.
+:::
 
 For information on how to locate DevTools screens in different IDEs,
 check out the [DevTools overview](/tools/devtools/overview).

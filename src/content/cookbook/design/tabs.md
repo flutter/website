@@ -77,10 +77,10 @@ pass it to the `TabBar`.
 Now that you have tabs, display content when a tab is selected.
 For this purpose, use the [`TabBarView`][] widget.
 
-{{site.alert.note}}
-  Order is important and must correspond to the order of the tabs in the
-  `TabBar`.
-{{site.alert.end}}
+:::note
+Order is important and must correspond to the
+order of the tabs in the `TabBar`.
+:::
 
 <?code-excerpt "lib/main.dart (TabBarView)"?>
 ```dart

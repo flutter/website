@@ -101,10 +101,10 @@ $ flutter channel beta
 $ flutter upgrade
 ```
 
-{{site.alert.note}}
-  If you need a specific version of the Flutter SDK,
-  you can download it from the [Flutter SDK archive][].
-{{site.alert.end}}
+:::note
+If you need a specific version of the Flutter SDK,
+you can download it from the [Flutter SDK archive][].
+:::
 
 
 ## Upgrading packages

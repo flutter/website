@@ -24,11 +24,11 @@ on the `path_provider` package:
 
 <iframe class="full-width" src="{{site.yt.embed}}/Ci4t-NkOY3I" title="Learn about the path_provider Flutter Package" {{site.yt.set}}></iframe>
 
-{{site.alert.note}}
-  This recipe doesn't work with web apps at this time.
-  To follow the discussion on this issue,
-  check out `flutter/flutter` [issue #45296]({{site.repo.flutter}}/issues/45296).
-{{site.alert.end}}
+:::note
+This recipe doesn't work with web apps at this time.
+To follow the discussion on this issue,
+check out `flutter/flutter` [issue #45296]({{site.repo.flutter}}/issues/45296).
+:::
 
 ## 1. Find the correct local path
 

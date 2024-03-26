@@ -9,11 +9,11 @@ js:
 
 <?code-excerpt path-base="cookbook/design/themes"?>
 
-{{site.alert.note}}
-  This recipe uses Flutter's support for [Material 3][] and
-  the [google_fonts][] package. As of the Flutter 3.16 release,
-  Material 3 is Flutter's default theme.
-{{site.alert.end}}
+:::note
+This recipe uses Flutter's support for [Material 3][] and
+the [google_fonts][] package. As of the Flutter 3.16 release,
+Material 3 is Flutter's default theme.
+:::
 
 [Material 3]: /ui/design/material
 [google_fonts]: {{site.pub-pkg}}/google_fonts

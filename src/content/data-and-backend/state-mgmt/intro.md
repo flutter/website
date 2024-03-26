@@ -6,12 +6,12 @@ next:
   path: /development/data-and-backend/state-mgmt/declarative
 ---
 
-{{site.alert.note}}
-  If you have written a mobile app using Flutter
-  and wonder why your app's state is lost
-  on a restart, check out [Restore state on Android][]
-  or [Restore state on iOS][].
-{{site.alert.end}}
+:::note
+If you have written a mobile app using Flutter
+and wonder why your app's state is lost
+on a restart, check out [Restore state on Android][]
+or [Restore state on iOS][].
+:::
 
 [Restore state on Android]: /platform-integration/android/restore-state-android
 [Restore state on iOS]: /platform-integration/ios/restore-state-ios

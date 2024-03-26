@@ -4,22 +4,19 @@ description: How to write a staggered animation in Flutter.
 short-title: Staggered
 ---
 
-{{site.alert.secondary}}
-  <h4>What you'll learn</h4>
-
+:::secondary What you'll learn
 * A staggered animation consists of sequential or overlapping
     animations.
 * To create a staggered animation, use multiple `Animation` objects.
 * One `AnimationController` controls all of the `Animation`s.
 * Each `Animation` object specifies the animation during an `Interval`.
 * For each property being animated, create a `Tween`.
-{{site.alert.end}}
+:::
 
-{{site.alert.secondary}}
-  **Terminology:**
-  If the concept of tweens or tweening is new to you, see the
-  [Animations in Flutter tutorial][].
-{{site.alert.end}}
+:::tip Terminology
+If the concept of tweens or tweening is new to you, see the
+[Animations in Flutter tutorial][].
+:::
 
 Staggered animations are a straightforward concept: visual changes
 happen as a series of operations, rather than all at once.
@@ -29,34 +26,32 @@ have gaps, where no changes occur.
 
 This guide shows how to build a staggered animation in Flutter.
 
-{{site.alert.secondary}}
-  <h4>Examples</h4>
+:::secondary Examples
+This guide explains the basic_staggered_animation example.
+You can also refer to a more complex example,
+staggered_pic_selection.
 
-  This guide explains the basic_staggered_animation example.
-  You can also refer to a more complex example,
-  staggered_pic_selection.
+[basic_staggered_animation][]
+: Shows a series of sequential and overlapping animations
+  of a single widget. Tapping the screen begins an animation
+  that changes opacity, size, shape, color, and padding.
 
-  [basic_staggered_animation][]
-  : Shows a series of sequential and overlapping animations
-    of a single widget. Tapping the screen begins an animation
-    that changes opacity, size, shape, color, and padding.
-
-  [staggered_pic_selection][]
-  : Shows deleting an image from a list of images displayed
-    in one of three sizes. This example uses two
-    [animation controllers][]: one for image selection/deselection,
-    and one for image deletion. The selection/deselection
-    animation is staggered. (To see this effect,
-    you might need to increase the `timeDilation` value.)
-    Select one of the largest images&mdash;it shrinks as it
-    displays a checkmark inside a blue circle.
-    Next, select one of the smallest images&mdash;the
-    large image expands as the checkmark disappears.
-    Before the large image has finished expanding,
-    the small image shrinks to display its checkmark.
-    This staggered behavior is similar to what you might
-    see in Google Photos.
-{{site.alert.end}}
+[staggered_pic_selection][]
+: Shows deleting an image from a list of images displayed
+  in one of three sizes. This example uses two
+  [animation controllers][]: one for image selection/deselection,
+  and one for image deletion. The selection/deselection
+  animation is staggered. (To see this effect,
+  you might need to increase the `timeDilation` value.)
+  Select one of the largest images&mdash;it shrinks as it
+  displays a checkmark inside a blue circle.
+  Next, select one of the smallest images&mdash;the
+  large image expands as the checkmark disappears.
+  Before the large image has finished expanding,
+  the small image shrinks to display its checkmark.
+  This staggered behavior is similar to what you might
+  see in Google Photos.
+:::
 
 The following video demonstrates the animation performed by
 basic_staggered_animation:
@@ -75,17 +70,15 @@ The square runs through changes in the following order:
 
 After running forward, the animation runs in reverse.
 
-{{site.alert.secondary}}
-  **New to Flutter?**
-  This page assumes you know how to create a layout using Flutter's
-  widgets.  For more information, see [Building Layouts in Flutter][].
-{{site.alert.end}}
+:::secondary New to Flutter?
+**New to Flutter?**
+This page assumes you know how to create a layout using Flutter's
+widgets.  For more information, see [Building Layouts in Flutter][].
+:::
 
 ## Basic structure of a staggered animation
 
-{{site.alert.secondary}}
-  <h4>What's the point?</h4>
-
+:::secondary What's the point?
 * All of the animations are driven by the same
     [`AnimationController`][].
 * Regardless of how long the animation lasts in real time,
@@ -97,7 +90,7 @@ After running forward, the animation runs in reverse.
     values for that property.
 * The `Tween` produces an [`Animation`][]
     object that is managed by the controller.
-{{site.alert.end}}
+:::
 
 {% comment %}
 The app is essentially animating a `Container` whose

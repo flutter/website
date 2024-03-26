@@ -28,11 +28,11 @@ Animate the image from the first screen to the second screen when
 the user taps the image. For now, create the visual structure;
 handle animations in the next steps.
 
-{{site.alert.note}}
-  This example builds upon the
-  [Navigate to a new screen and back][]
-  and [Handle taps][] recipes.
-{{site.alert.end}}
+:::note
+This example builds upon the
+[Navigate to a new screen and back][]
+and [Handle taps][] recipes.
+:::
 
 <?code-excerpt "lib/main_original.dart"?>
 ```dart
@@ -131,12 +131,12 @@ Hero(
 ```
 
 
-{{site.alert.note}}
-  This code is identical to what you have on the first screen.
-  As a best practice, create a reusable widget instead of
-  repeating code. This example uses identical code for both
-  widgets, for simplicity.
-{{site.alert.end}}
+:::note
+This code is identical to what you have on the first screen.
+As a best practice, create a reusable widget instead of
+repeating code. This example uses identical code for both
+widgets, for simplicity.
+:::
 
 ## Interactive example
 

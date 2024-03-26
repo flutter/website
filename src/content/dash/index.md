@@ -9,10 +9,10 @@ This is Dash:
 
 Dash is the mascot for the Dart language and the Flutter framework.
 
-{{site.alert.note}}
-  You can now make your **own** digital Dash using
-  [Dashatar][], a Flutter app for web and mobile!
-{{site.alert.end}}
+:::note
+You can now make your **own** digital Dash using
+[Dashatar][], a Flutter app for web and mobile!
+:::
 
 ![A sample of Dashatars](/assets/images/dash/Dashatars.png){:width="100%"}<br>
 

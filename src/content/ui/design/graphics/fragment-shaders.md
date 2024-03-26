@@ -4,11 +4,11 @@ description: How to author and use fragment shaders to create custom visual effe
 short-title: Fragment shaders
 ---
 
-{{site.alert.note}}
-  Both the Skia and [Impeller][] backends support writing a
-  custom shader. Except where noted, the same
-  instructions apply to both.
-{{site.alert.end}}
+:::note
+Both the Skia and [Impeller][] backends support writing a
+custom shader. Except where noted, the same
+instructions apply to both.
+:::
 
 [Impeller]: /perf/impeller
 
