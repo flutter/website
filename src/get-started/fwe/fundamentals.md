@@ -101,13 +101,13 @@ this is a deep-dive on specific topics.
 In the next section, you'll start building more
 interesting UIs by creating more complex layouts in Flutter.
 
-[Building user interfaces with Flutter]:{{site.url}}/ui
-[Bootstrap into Dart]: {{site.url}}/resources/bootstrap-into-dart
+[Building user interfaces with Flutter]: /ui
+[Bootstrap into Dart]: /resources/bootstrap-into-dart
 [Dart]: {{site.dart-site}}
 [Flutter widgets 101 episode 1: Stateless widgets]: {{site.youtube-site}}/watch?v=wE7khGHVkYY
 [Flutter widgets 101 episode 2: Stateful widgets]: {{site.youtube-site}}/watch?v=AqCMFXEmf3w
 [Get started with Dart: Write command-line apps]: {{site.dart-site}}/tutorials/server/cmdline
-[Why did Flutter choose to use Dart?]: {{site.url}}/resources/faq#why-did-flutter-choose-to-use-dart
+[Why did Flutter choose to use Dart?]: /resources/faq#why-did-flutter-choose-to-use-dart
 
 [`AppBar`]: {{site.api}}/flutter/material/AppBar-class.html
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
@@ -124,5 +124,5 @@ interesting UIs by creating more complex layouts in Flutter.
 As this section of the website is evolving, 
 we [welcome your feedback][]!
 
-[welcome your feedback]: {{site.url}}/get-started/fwe
+[welcome your feedback]: /get-started/fwe
 
