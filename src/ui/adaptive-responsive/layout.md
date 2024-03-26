@@ -194,10 +194,10 @@ updating the layout in real time.
 
 Learn more in the following 5-minute video:
 
-<iframe width="560" height="315" src="{{yt-embed}}/HD5gYnspYzk?si=dsA37QUjHBb2Zh_-" title="Learn the difference between adaptive and responsive Flutter apps" {{yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt-embed}}/HD5gYnspYzk?si=KvEOAYbOn7lAfKmP" title="Learn the difference between adaptive and responsive apps" {{site.yt-set}}></iframe>
 [Adaptive vs responsive][]
 
-[Adaptive vs responsive]: {{site.youtube-site}}/HD5gYnspYzk?si=5ItDD7UjXvGCRM0K
+[Adaptive vs responsive]: {{site.youtube-site}}/watch?v=HD5gYnspYzk
 
 ### Other resources
 
@@ -212,22 +212,14 @@ including contributions from the Flutter community:
 * [How to make flutter app responsive according to different screen
   size?][], a question on StackOverflow
 
-[`AspectRatio`]: {{site.api}}/flutter/widgets/AspectRatio-class.html
 [`BoxConstraints`]: {{site.api}}/flutter/rendering/BoxConstraints-class.html
 [Build Responsive UIs in Flutter]: {{site.medium}}/flutter-community/build-responsive-uis-in-flutter-fd450bd59158
 [`builder`]: {{site.api}}/flutter/widgets/LayoutBuilder/builder.html
-[`CustomMultiChildLayout`]: {{site.api}}/flutter/widgets/CustomMultiChildLayout-class.html
-[`CustomSingleChildLayout`]: {{site.api}}/flutter/widgets/CustomSingleChildLayout-class.html
 [Developing for Multiple Screen Sizes and Orientations in Flutter]: {{site.medium}}/flutter-community/developing-for-multiple-screen-sizes-and-orientations-in-flutter-fragments-in-flutter-a4c51b849434
-[`FittedBox`]: {{site.api}}/flutter/widgets/FittedBox-class.html
 
-[`FractionallySizedBox`]: {{site.api}}/flutter/widgets/FractionallySizedBox-class.html
 [How to make flutter app responsive according to different screen size?]: {{site.so}}/questions/49704497/how-to-make-flutter-app-responsive-according-to-different-screen-size
 [`LayoutBuilder`]: {{site.api}}/flutter/widgets/LayoutBuilder-class.html
 [Making Cross-platform Flutter Landing Page Responsive]: {{site.medium}}/flutter-community/making-cross-platform-flutter-landing-page-responsive-7fffe0655970
-[`maxWidth`]: {{site.api}}/flutter/rendering/BoxConstraints/maxWidth.html
-[`OrientationBuilder`]: {{site.api}}/flutter/widgets/OrientationBuilder-class.html
-[`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
 
 ---
 
@@ -236,24 +228,24 @@ including contributions from the Flutter community:
 You might also check out the following episodes
 of The Boring Show:
 
-<iframe style="max-width: 100%" width="560" height="315" src="{{yt-embed}}/n6Awpg1MO6M" title="Learn about adaptative layouts on the Boring Show" {{yt-set}}></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{site.yt-embed}}/n6Awpg1MO6M" title="Learn about adaptative layouts on the Boring Show" {{site.yt-set}}></iframe>
 [Adaptive layouts][]
 
-<iframe style="max-width: 100%" width="560" height="315" src="{{yt-embed}}/eikOZzfc0l4" title="Continue to learn about adaptative layouts on the Boring Show" {{yt-set}}></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{site.yt-embed}}/eikOZzfc0l4" title="Continue to learn about adaptative layouts on the Boring Show" {{site.yt-set}}></iframe>
 [Adaptive layouts, part 2][]
 
-For an excellent example of an adaptive app,
+For a great example of an adaptive app,
 check out Flutter Folio, a scrapbooking app created
 in collaboration with gskinner and the Flutter team:
 
-<iframe style="max-width: 100%" width="560" height="315" src="{{yt-embed}}/yytBENOnF0w" title="Watch a demonstration of the Flutter Folio app" {{yt-set}}></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{site.yt-embed}}/yytBENOnF0w" title="Watch a demonstration of the Flutter Folio app" {{site.yt-set}}></iframe>
 
 The [Folio source code][] is also available on GitHub.
 Learn more on the [gskinner blog][].
 
 [Adaptive layouts]: {{yt-watch}}?v=n6Awpg1MO6M&t=694s
 [Adaptive layouts, part 2]: {{yt-watch}}?v=eikOZzfc0l4&t=11s
-[Building adaptive apps]: {{site.url}}/ui/layout/responsive/building-adaptive-apps
+[Building adaptive apps]: /ui/layout/responsive/building-adaptive-apps
 [Folio source code]: {{site.github}}/gskinnerTeam/flutter-folio
 [gskinner blog]: https://blog.gskinner.com/
 
@@ -269,7 +261,7 @@ in the following resources:
   by Aloïs Deniel,
 
 [Designing truly adaptive user interfaces]: https://www.aloisdeniel.com/blog/designing-truly-adaptative-user-interfaces
-[Platform-specific behaviors and adaptations]: {{site.url}}/platform-integration/platform-adaptations
+[Platform-specific behaviors and adaptations]: /platform-integration/platform-adaptations
 
 ### Contextual layout
 

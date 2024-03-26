@@ -45,7 +45,7 @@ or folds and unfolds.
 By default, Flutter should maintain state.
 
 [xxx PENDING: How SHOULD they save app state? Does [this page][] apply to this situation?]
-[this page]: {{site.url}}/platform-integration/android/restore-state-android
+[this page]: /platform-integration/android/restore-state-android
 
 If your app loses state during device configuration,
 verify that the plugins and native extensions

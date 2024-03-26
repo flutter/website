@@ -135,16 +135,14 @@
       children:
         - title: Adaptive vs responsive
           permalink: /ui/adaptive-responsive/overview
-        - title: Responsive layout
+        - title: Layout for adaptive apps
           permalink: /ui/adaptive-responsive/layout
-        - title: Input
+        - title: Handling input
           permalink: /ui/adaptive-responsive/input
         - title: Large screens
           permalink: /ui/adaptive-responsive/large-screens
         - title: Update app UI based on orientation
           permalink: /cookbook/design/orientation
-        - title: Handling input
-          permalink: /ui/adaptive-responsive/input
         - title: Platform idioms
           permalink: /ui/adaptive-responsive/idioms
         - title: Accessiblity

@@ -58,12 +58,12 @@ responsive design:
 * Use [Best practices][] for responsive and adaptive apps,
   including **recommendations for large screens**
 
-[Accessibility][]: {{site.url}}/ui/adaptive-responsive/accessibility
-[Best practices]: {{site.url}}/ui/adaptive-responsive/best-practices
-[Input]: {{site.url}}/ui/adaptive-responsive/input
-[Large screen]: {{site.url}}/ui/adaptive-responsive/large-screens
-[Layout]: {{site.url}}/ui/adaptive-responsive/layout
-[Platform idioms]: {{site.url}}/ui/adaptive-responsive/idioms
+[Accessibility]: /ui/adaptive-responsive/accessibility
+[Best practices]: /ui/adaptive-responsive/best-practices
+[Input]: /ui/adaptive-responsive/input
+[Large screen]: /ui/adaptive-responsive/large-screens
+[Layout]: /ui/adaptive-responsive/layout
+[Platform idioms]: /ui/adaptive-responsive/idioms
 
 ## Examples
 

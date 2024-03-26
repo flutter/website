@@ -13,4 +13,5 @@ foldables, and ChromeOS devices running Android.
 For advice on working with large screens,
 see the [best practices][] page.
 
-[best practices]: {{site.url}}/ui/adaptive-responsive/large-screens
+[best practices]: /ui/adaptive-responsive/large-screens
+[large screens]: {{site.android-dev}}/guide/topics/large-screens/get-started-with-large-screens
