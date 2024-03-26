@@ -10,7 +10,7 @@ description: >-
 ## Summary
 
 New color roles in `ColorScheme` include seven tone-based surfaces and
-containers, and twelve accent colors for primary, secondary and tertiary groups.
+containers, and twelve accent colors for primary, secondary, and tertiary groups.
 This update deprecates three existing color roles: `background`, `onBackground`,
 and `surfaceVariant`. The `ColorScheme` constructed by the updated 
 `ColorScheme.fromSeed` method now generates different values compared to the 
