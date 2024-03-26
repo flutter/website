@@ -43,6 +43,7 @@ export default function (eleventyConfig) {
     cache: true,
     strictFilters: true,
     lenientIf: true,
+    jekyllInclude: true,
   });
 
   eleventyConfig.addFilter('regex_replace', regexReplace);

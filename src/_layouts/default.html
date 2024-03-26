@@ -26,30 +26,30 @@ layout: base
 
     <main class="site-content {{main-col}}">
       {% if toc != false -%}
-      {% include 'side-toc.html', tocContents:tocContents %}
+      {% include side-toc.html tocContents=tocContents %}
       {% endif -%}
       <div class="container">
 
         {% if deprecated %}
-        {% include 'snackbar.html', class:"snackbar--dismissible", label:"This page is deprecated and its content may be out of date.", action:"Dismiss" %}
+        {% include snackbar.html class="snackbar--dismissible" label="This page is deprecated and its content may be out of date." action="Dismiss" %}
         {% endif %}
 
-        {% include 'next-prev-nav.html', prev:prev, next:next %}
+        {% include next-prev-nav.html prev=prev next=next %}
 
         <header class="site-content__title">
-          {% include 'page-github-links.html' %}
+          {% include page-github-links.html %}
           <h1>{{ title }}</h1>
           {% if show_breadcrumbs == true -%}
-          {% include 'breadcrumbs.html' %}
+          {% include breadcrumbs.html %}
           {% endif -%}
         </header>
 
         {% if toc != false -%}
-        {% include 'inline-toc.html', tocContents:tocContents -%}
+        {% include inline-toc.html tocContents=tocContents -%}
         {% endif -%}
         {{ content }}
 
-        {% include 'next-prev-nav.html', prev:prev, next:next %}
+        {% include next-prev-nav.html prev=prev, next=next %}
       </div>
     </main>
   </div>
