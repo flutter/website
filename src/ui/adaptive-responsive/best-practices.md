@@ -104,7 +104,7 @@ For an example that uses this method,
 check out the [`setPreferredOrientations`][] API.
 
 {{site.alert.secondary}}
-  **Be careful of `MediaQuery`**<br>
+  **A note about `MediaQuery`**<br>
   Using the [`MediaQuery`][] class to determine
   the size of the device while also disabling 
   landscape mode (called _portrait locking_),
@@ -123,6 +123,7 @@ check out the [`setPreferredOrientations`][] API.
 [`Display`]: {{site.api}}/flutter/dart-ui/Display-class.html
 [`FlutterView.display`]: {{site.api}}/flutter/dart-ui/FlutterView/display.html
 [_letterboxing_]: {{site.android-dev}}/guide/topics/large-screens/large-screen-compatibility-mode#letterboxing
+[`MediaQuery`]: {{site.api}}/flutter/widgets/MediaQuery-class.html
 [`setPreferredOrientations`]: {{site.api}}/flutter/services/SystemChrome/setPreferredOrientations.html
 [window size classes]: {{site.android-dev}}/guide/topics/large-screens/support-different-screen-sizes#window_size_classes
 
