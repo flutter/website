@@ -303,6 +303,8 @@ return MouseRegion(
 `MouseRegion` is also useful for creating custom
 rollover and hover effects:
 
+<?code-excerpt path-base="ui/layout/adaptive_app_demos"?>
+
 <?code-excerpt "lib/pages/focus_examples_page.dart (MouseOver)"?>
 ```dart
 return MouseRegion(

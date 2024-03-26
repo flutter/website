@@ -107,6 +107,8 @@ has support for adaptive colors and sizes according to the
 current platform. The one tweak you might want to make is to
 toggle `alwaysShown` when on a desktop platform:
 
+<?code-excerpt path-base="ui/layout/adaptive_app_demos"?>
+
 <?code-excerpt "lib/pages/adaptive_grid_page.dart (ScrollbarAlwaysShown)"?>
 ```dart
 return Scrollbar(

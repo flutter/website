@@ -382,6 +382,8 @@ class TextStyles {
 
 These constants can then be used in place of hard-coded numeric values:
 
+<?code-excerpt path-base="ui/layout/adaptive_app_demos"?>
+
 <?code-excerpt "lib/global/device_type.dart (UseConstants)"?>
 ```dart
 return Padding(

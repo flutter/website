@@ -36,6 +36,8 @@ densities, you can easily adjust your UI.
 To set a custom visual density,
 inject the density into your `MaterialApp` theme:
 
+<?code-excerpt path-base="ui/layout/adaptive_app_demos"?>
+
 <?code-excerpt "lib/main.dart (VisualDensity)"?>
 ```dart
 double densityAmt = touchMode ? 0.0 : -1.0;
