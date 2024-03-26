@@ -25,6 +25,16 @@
 {% else %}
 {% assign work-target = target | append: ' on ' | append: devos %}
 {% endcase %}
+{% case work-target %}
+{% when 'macOS desktop','Web on macOS','iOS on macOS' %}
+{% assign compiler = 'Xcode' %}
+{% when 'Android on Windows','Android on macOS','Android on Linux' %}
+{% assign compiler = 'Android Studio' %}
+{% when 'Linux desktop','Web on Linux' %}
+{% assign compiler = 'one of the Linux libraries' %}
+{% when 'Windows desktop','Web on Windows' %}
+{% assign compiler = 'Visual Studio' %}
+{% endcase %}
 
 ### Run Flutter doctor
 
@@ -36,7 +46,7 @@ complete Flutter development environment for {{devos}}.
 1. To verify your installation of all the components,
    run the following command.
 
-   ```terminal
+   ```console
    {{prompt}} flutter doctor
    ```
 
@@ -44,7 +54,7 @@ As you chose to develop for {{target}},
 you do not need _all_ components.
 If you followed this guide, the result of your command should resemble:
 
-{% include docs/install/flutter-doctor-success.md config=include.config -%}
+{% include docs/install/flutter-doctor-success.md config=include.config devos=devos -%}
 
 ### Troubleshoot Flutter doctor issues
 
@@ -54,7 +64,7 @@ VS Code, {{compiler}}, the connected device, or network resources.
 If the `flutter doctor` command returns an error for any of these components,
 run it again with the verbose flag.
 
-```terminal
+```console
 {{prompt}} flutter doctor -v
 ```
 
@@ -62,10 +72,11 @@ Check the output for other software you might need to install
 or further tasks to perform.
 
 If you change the configuration of your Flutter SDK or its related components,
-run `flutter doctor` again to verify the installation.
+run `flutter doctor` _again_ to verify the installation.
 
-## Start developing {{work-target}} apps on Flutter
+## Start developing {{work-target}} apps with Flutter
 
 Congratulations!
 Now that you have installed all prerequisites and the Flutter SDK,
-you should be able to start developing Flutter apps for {{work-target}}.
+you should be able to start developing Flutter apps for
+{{work-target}}.

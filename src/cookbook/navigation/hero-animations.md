@@ -88,13 +88,12 @@ To connect the two screens together with an animation, wrap
 the `Image` widget on both screens in a `Hero` widget.
 The `Hero` widget requires two arguments:
 
-<dl>
-  <dt>`tag`</dt>
-  <dd>An object that identifies the `Hero`.
-      It must be the same on both screens.</dd>
-  <dt>`child`</dt>
-  <dd>The widget to animate across screens.</dd>
-</dl>
+`tag`
+: An object that identifies the `Hero`.
+  It must be the same on both screens.
+
+`child`
+: The widget to animate across screens.
 
 {% comment %}
 RegEx removes the first "child" property name and removed the trailing comma at the end

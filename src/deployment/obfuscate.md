@@ -70,7 +70,7 @@ where Flutter outputs debug files.
 In the case of obfuscation, it outputs a symbol map.
 For example:
 
-```terminal
+```console
 $ flutter build apk --obfuscate --split-debug-info=/<project-name>/<directory>
 ```
 
@@ -89,7 +89,7 @@ want to de-obfuscate a stack trace.
 For detailed information on these flags, run
 the help command for your specific target, for example:
 
-```terminal
+```console
 $ flutter build apk -h
 ```
 
@@ -109,7 +109,7 @@ use the following steps to make it human readable:
    and the symbols file to the `flutter symbolize` command.
    For example:
 
-   ```terminal
+   ```console
    $ flutter symbolize -i <stack trace file> -d out/android/app.android-arm64.symbols
    ```
 
@@ -125,7 +125,7 @@ use the following steps:
    use `--extra-gen-snapshot-options=--save-obfuscation-map=/<your-path>`.
    For example:
 
-   ```terminal
+   ```console
    $ flutter build apk --obfuscate --split-debug-info=/<project-name>/<directory> --extra-gen-snapshot-options=--save-obfuscation-map=/<your-path>
    ```
 

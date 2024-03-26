@@ -9,6 +9,8 @@ up-to-date information, such as null-safe Dart code.
 These courses are listed alphabetically.
 To include your course, [submit a PR][]:
 
+* [Flutter Fundamentals][] by Tadas Petra
+* [The Ultimate Login System][] by Tadas Petra
 * [Flutter & Dart - The Complete Guide, 2023 Edition][]
 * [The Complete 2021 Flutter Development Bootcamp Using Dart][] by App Brewery
 * [Flutter Crash Course][] by Nick Manning
@@ -21,6 +23,8 @@ To include your course, [submit a PR][]:
 * [Sticky Grouped Headers in Flutter][] by Marco Napoli
 * [Flutter University - From Zero to Mastery][] by Fudeo (Italian)
 
+[Flutter Fundamentals]: https://www.hungrimind.com/courses/flutter/fundamentals
+[The Ultimate Login System]: https://www.hungrimind.com/courses/flutter/login-riverpod-firebase
 [Flutter & Dart - The Complete Guide, 2023 Edition]: https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/
 [The Complete 2021 Flutter Development Bootcamp Using Dart]: https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart/
 [Flutter Crash Course]: https://fluttercrashcourse.com/

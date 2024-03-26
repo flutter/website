@@ -37,7 +37,7 @@ On Windows, this log is located in the Roaming AppData directory (`%APPDATA%`).
 To opt out of anonymous crash reporting and feature
 usage statistics, run the following command:
 
-```terminal
+```console
 $ flutter --disable-analytics
 ```
 
@@ -46,13 +46,13 @@ This Flutter installation neither sends nor stores any further information.
 
 To opt into analytics, run the following command: 
 
-```terminal
+```console
 $ flutter --enable-analytics
 ```
 
 To display the current setting, run the following command:
 
-```terminal
+```console
 $ flutter config
 ```
 

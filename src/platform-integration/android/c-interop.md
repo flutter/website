@@ -77,7 +77,7 @@ which we don't link to statically).
 To create an FFI plugin called "native_add",
 do the following:
 
-```terminal
+```console
 $ flutter create --platforms=android,ios,macos,windows,linux --template=plugin_ffi native_add
 $ cd native_add
 ```

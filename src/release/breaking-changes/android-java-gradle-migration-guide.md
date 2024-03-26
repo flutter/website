@@ -73,13 +73,13 @@ Do the following from the top of your Flutter project.
 
 1. Go to the Android directory for your project.
 
-   ```terminal
+   ```console
    $ cd android
    ```
 
 1. Update Gradle to the preferred version. Choose between 7.3 through 7.6.1, inclusive.
 
-   ```terminal
+   ```console
    $ ./gradlew wrapper --gradle-version=7.6.1
    ```
 

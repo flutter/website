@@ -41,7 +41,7 @@ starting with Flutter 3.10,
 a non-fatal warning is printed in debug builds when a mismatch is detected.
 The warning looks like the following:
 
-```nocode
+```plaintext
 ════════ Exception caught by Flutter framework ════════════════════════════════════
 The following assertion was thrown during runApp:
 Zone mismatch.

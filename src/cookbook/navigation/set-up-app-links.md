@@ -38,7 +38,7 @@ It provides a simple API to handle complex routing scenarios.
     To add the `go_router` package as a dependency,
     run `flutter pub add`:
 
-    ```terminal
+    ```console
     $ flutter pub add go_router
     ```
 
@@ -82,7 +82,7 @@ It provides a simple API to handle complex routing scenarios.
 
     Replace `example.com` with your own web domain.
 
-    ```
+    ```xml
     <meta-data android:name="flutter_deeplinking_enabled" android:value="true" />
     <intent-filter android:autoVerify="true">
         <action android:name="android.intent.action.VIEW" />

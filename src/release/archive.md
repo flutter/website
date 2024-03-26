@@ -31,7 +31,7 @@ check out the [release notes][] page.
   command using the provenance file URL from a release (you might need to 
   download [jq](https://stedolan.github.io/jq/) to easily parse the JSON).
 
-  ```terminal
+  ```console
   curl [provenance URL] | jq -r .payload | base64 -d | jq
   ```
 {{site.alert.end}}
@@ -63,7 +63,7 @@ However, you can get the SDK directly from
 [GitHub repo][] by cloning the master channel,
 and then triggering a download of the SDK dependencies:
 
-```terminal
+```console
 $ git clone -b master https://github.com/flutter/flutter.git
 $ ./flutter/bin/flutter --version
 ```

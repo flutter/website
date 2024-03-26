@@ -1108,7 +1108,7 @@ yourself, making it a simple way to make network calls.
 
 To add the `http` package as a dependency, run `flutter pub add`:
 
-```terminal
+```console
 $ flutter pub add http
 ```
 

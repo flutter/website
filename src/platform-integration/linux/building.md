@@ -66,7 +66,7 @@ assuming you have a Flutter desktop application
 called `linux_desktop_test`, you could inspect
 the system libraries it depends upon as follows:
 
-```terminal
+```console
 $ flutter build linux --release
 $ ldd build/linux/x64/release/bundle/linux_desktop_test
 ```
@@ -77,7 +77,7 @@ and make sure the Linux system you are installing
 it on has all of the system libraries required.
 This could be as simple as:
 
-```terminal
+```console
 $ sudo apt-get install libgtk-3-0 libblkid1 liblzma5
 ```
 

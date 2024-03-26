@@ -3,11 +3,11 @@
 To generate the needed Windows platform dependencies,
 run the `flutter build` command.
 
-```terminal
+```console
 C:\> flutter build windows --debug
 ```
 
-```terminal
+```console
 Building Windows application...                                    31.4s
 √  Built build\windows\runner\Debug\my_app.exe.
 ```
@@ -121,7 +121,7 @@ If you use Visual Studio to debug most of your code, start with this section.
    When the Flutter app has started, a console window displays
    a message with the Dart VM service URI. It resembles the following response:
 
-   ```terminal
+   ```console
    flutter: The Dart VM service is listening on http://127.0.0.1:62080/KPHEj2qPD1E=/
    ```
 

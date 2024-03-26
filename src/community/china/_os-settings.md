@@ -58,13 +58,13 @@ This procedure requires using {{shell}}.
 
 1. Set `PUB_HOSTED_URL` to your mirror site.
 
-   ```terminal
+   ```console
    {{envvarset}}PUB_HOSTED_URL="https://pub.flutter-io.cn"
    ```
 
 1. Set `FLUTTER_STORAGE_BASE_URL` to your mirror site.
 
-   ```terminal
+   ```console
    {{envvarset}}FLUTTER_STORAGE_BASE_URL="https://storage.flutter-io.cn"
    ```
 
@@ -76,7 +76,7 @@ This procedure requires using {{shell}}.
 
    Consider a path like {{installdirsuggestion}}.
 
-   ```terminal
+   ```console
    {{newdir}}; cd {{installdirsuggestion}}
    ```
 
@@ -84,19 +84,19 @@ This procedure requires using {{shell}}.
 
    This example assumes you downloaded the {{os}} version of the Flutter SDK.
 
-   ```terminal
+   ```console
    {{unzip}} {{sdk | replace: "opsys", download-os}}{{file-format}}
    ```
 
 1. Add Flutter to your `PATH` environment variable.
 
-   ```terminal
+   ```console
    {{setpath}}
    ```
 
 1. Run Flutter Doctor to verify your installation.
 
-   ```terminal
+   ```console
    {{prompt}} flutter doctor
    ```
 
@@ -117,7 +117,7 @@ append those three `export` commands to the `*rc` or `*profile`
 file that your preferred shell uses. This would resemble the following:
 {% endif -%}
 
-```terminal
+```console
 {{permaddexample}} 
 ```
 

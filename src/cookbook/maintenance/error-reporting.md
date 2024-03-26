@@ -54,7 +54,7 @@ error reports to the Sentry error tracking service.
 To add the `sentry_flutter` package as a dependency,
 run `flutter pub add`:
 
-```terminal
+```console
 $ flutter pub add sentry_flutter
 ```
 
