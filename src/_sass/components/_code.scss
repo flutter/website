@@ -1,172 +1,195 @@
 @use 'sass:color';
 
 @use '../base/variables' as *;
-@use '../base/material-colors' as *;
 @use '../vendor/bootstrap';
-@use '../vendor/prettify';
-
-@mixin pre-defaults {
-  background-color: $site-color-codeblock-bg;
-  padding: bootstrap.bs-spacer(3) bootstrap.bs-spacer(4);
-}
-
-$flutter-color-teal-darker:
-        color.scale($flutter-color-teal, $lightness: -10%, $saturation: 10%);
-
-//
-// Code-prettyprint overrides
-//
 
 pre {
-  &.prettyprint {
-    @include pre-defaults;
-    border: none;
+  margin-bottom: 1rem;
+  font-size: 0.9375rem;
+  font-weight: bootstrap.$font-weight-normal;
+  padding: 1.25rem;
+
+  a {
+    font-family: inherit;
+    font-weight: inherit;
   }
 
   .highlight {
-    background: $flutter-color-yellow;
-    padding: 2px;
+    background: $flutter-color-yellow-300;
+    padding: 0.1em;
   }
-}
 
-.pln { color: #222 }  /* plain text */
+  .highlight-diagnostics & {
+    .highlight {
+      border-bottom: 2px $flutter-color-fuchsia dashed;
+      background: inherit;
+      padding: 0;
+    }
+  }
 
-@media screen {
-  .str { color: $flutter-color-blue-600 }  /* string content */
-  .kwd { color: $flutter-color-teal }  /* a keyword */
-  .com { color: #6e6e70 }  /* a comment */
-  /* punctuation, lisp open bracket, lisp close bracket */
-  .pun, .opn, .clo { color: #222 }
-}
+  &:focus {
+    outline: none;
+  }
 
-//
-// Rouge / pygments classes -- https://github.com/jneen/rouge
-//
-// For CSS class names, see
-// - https://github.com/rouge-ruby/rouge/blob/master/lib/rouge/token.rb
-// - https://github.com/rouge-ruby/rouge/wiki/List-of-tokens, doc page,
-//   but doesn't seem to be as complete as token.rb.
-//
+  span.line {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    width: 100%;
 
-$generic-output-color: #8ae234;
+    &.highlighted-line {
+      background: color.change($site-color-primary, $alpha: 0.1);
+    }
+  }
 
-@mixin console-base($color: $light-green-A700) {
-  background: $grey-900;
-  color: $color;
-}
+  &.show-line-numbers code {
+    span.line {
+      padding-left: 0.5rem;
 
-.language-console .highlight {
-  @include console-base;
-  .go { color: $generic-output-color; } /* Generic.Output */
-}
-
-pre.console-output {
-  @include console-base($generic-output-color)
-}
-
-// `terminal` is like `console` with prompts and output colored differently
-.language-terminal .highlight {
-  @include console-base;
-  .gp { color: $flutter-color-yellow; font-weight: 700; } /* Generic.Prompt */
-  .go { color: $generic-output-color; } /* Generic.Output */
-  .k, .kc, .kd, .kn, .kp, .kr, .kt { color: $flutter-color-blue-on-dark; } /* Keyword.* */
-  .nb, .nt { color: $flutter-color-blue-on-dark; } /* Name.Builtin, Name.Tag */
-  .nv { color: #03bbbb; }
-  .o { color: $flutter-color-grey-500; font-weight: bold; } /* Operator */
-  .s, .s1, .s2 { color: $flutter-color-blue-on-dark; } /* String, .Single, .Double quotes */
-  .sb { color: $flutter-color-light-blue; } /* String.Backtick */
-}
-
-// Match code-prettify classes to the extent possible.
-.highlight {
-  .s, .s1, .s2 { @extend .str; } /* Literal.String.* */
-  .k, .kc, .kd, .kn, .kp, .kr, .kt { @extend .kwd; } /* Keyword.* */
-  .p { @extend .pun; } /* Punctuation */
-  .c, .c1, .cm { @extend .com; } /* Comment */
-  .cp { @extend .typ; } /* Comment.Preproc */
-  .l, .m, .mb, .mf, .mh, .mi, .mo, .mx { @extend .lit; } /* Literal.* */
-  .o { @extend .opn; } /* Operator */
-  .n { @extend .typ; } /* Name */
-  .na { @extend .kwd; } /* Name.Attribute */
-  .nb { @extend .typ; } /* Name.Builtin */
-  .nl { @extend .kwd; } /* Name.Label */
-  .no { @extend .lit; } /* Name.Constant */
-  .nt { @extend .tag; } /* Name.Tag */
-
-  .gp { user-select: none; } /* Generic.Prompt */
-}
-
-code {
-  color: $flutter-color-teal-darker;
-}
-
-pre {
-  @include pre-defaults;
-}
-
-// Give code blocks the same margin-bottom as regular paragraphs.
-div.highlighter-rouge {
-  margin-bottom: bootstrap.bs-spacer(4);
-}
-
-pre > span.strike { text-decoration: line-through; }
-
-.numbered-code-notes {
-  list-style-type: none;
-  padding-left: 0;
-  display: table;
-  li {
-    counter-increment: code-note-counter;
-    display: table-row;
-    padding-left: 8px;
-    &:before {
-      font-family: bootstrap.$font-family-monospace;
-      content: '/*' counter(code-note-counter) '*/' ;
-      display: table-cell;
-      text-align: right;
-      color: bootstrap.$teal;
-      padding-right: bootstrap.$font-size-base * 0.5;
-      // background-color: lightyellow;
+      &[data-line]::before {
+        display: inline-block;
+        content: attr(data-line) "";
+        width: 2em;
+        margin-right: 0.5rem;
+        text-align: right;
+        color: $site-color-sub-grey;
+      }
     }
   }
 }
 
-@mixin code-excerpt-border($side: '') {
-  border#{$side}: bootstrap.$border-width solid bootstrap.$border-color;
+.code-copy-button {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 10;
+
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+
+  font: $site-font-icon;
+
+  appearance: none;
+  border: none;
+  color: $site-color-nav-links;
+  background: none;
+  opacity: 0;
+  transition: opacity 0.4s;
+
+  &:hover, &:focus {
+    color: $site-color-primary;
+    opacity: 1;
+  }
+
+  &:active {
+    color: $flutter-color-blue;
+  }
 }
 
-.code-excerpt {
-  &__code {
-    margin-bottom: bootstrap.bs-spacer(4);
+.code-block-language {
+  font-family: $site-font-family-monospace;
+  user-select: none;
+  font-size: 0.8125rem;
+  color: $site-color-nav-links;
+  opacity: 1;
+  transition: opacity 0.25s;
+
+  position: absolute;
+  top: 3px;
+  right: 6px;
+  z-index: 5;
+
+  .highlight-languages .language-dart & {
+    color: $site-color-primary;
+  }
+
+  .highlight-languages .language-js & {
+    color: #f1a85a;
+  }
+
+  .highlight-languages .language-swift & {
+    color: #f05137;
+  }
+
+  .highlight-languages :not(.has-tag) & {
+    font-size: 0.875rem;
+    left: 6px;
+    right: unset;
+  }
+}
+
+.code-block-tag {
+  font-family: $site-font-family-monospace;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  position: absolute;
+  top: 3px;
+  left: 6px;
+
+  .tag-good &, .tag-passes-sa &, .tag-runtime-success & {
+    color: $alert-success-fg;
+  }
+
+  .tag-bad &, .tag-fails-sa &, .tag-runtime-fail & {
+    color: $alert-danger-fg;
+  }
+}
+
+.code-block-wrapper {
+  margin-bottom: 1rem;
+  border: 1px solid $flutter-color-grey-500;
+
+  .code-block-header {
+    background-color: #e9ecef;
+    border-bottom: 1px solid $flutter-color-grey-500;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    padding: 0.75rem 0.5rem 0.67rem 1rem;
+  }
+
+  .code-block-body {
     position: relative;
+    background-color: $site-color-codeblock-bg;
 
-    pre {
-      @include code-excerpt-border;
+    &:hover, &:focus-within {
+      .code-block-language {
+        opacity: 0;
+      }
 
-      background-color: $site-color-codeblock-bg;
-      margin-bottom: 0;
+      .code-copy-button {
+        opacity: 1;
+      }
+    }
+
+    &.tag-good, &.tag-passes-sa, &.tag-runtime-success {
+      background-color: $alert-success-bg;
+    }
+
+    &.tag-bad, &.tag-fails-sa, &.tag-runtime-fail {
+      background-color: $alert-danger-bg;
     }
   }
 
-  &__copy-btn {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    color: lighten($site-color-body, 20%); // Offers better contrast on dark bg
-    margin-top: bootstrap.bs-spacer(2);
-    outline: none !important;
-    position: absolute;
-    right: 0;
+  &:has(:focus-visible) {
+    border-color: #1389FD;
   }
 
-  &__header {
-    background-color: bootstrap.$gray-200;
-    @include code-excerpt-border('-top');
-    @include code-excerpt-border('-left');
-    @include code-excerpt-border('-right');
-    font-size: $site-spacer * .875;
-    font-weight: bootstrap.$font-weight-bold;
-    padding: bootstrap.bs-spacer(3) bootstrap.bs-spacer(2)
-            0.67rem bootstrap.bs-spacer(4);
+  pre {
+    margin-bottom: 0;
+    padding-right: 0;
+    padding-left: 0;
+
+    &:not([lang="console"]) {
+      line-height: 1.8;
+    }
   }
+}
+
+// Border and resizability for dartpad
+iframe[src^="https://dartpad"] {
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+  min-height: 400px;
+  resize: vertical;
+  width: 100%;
 }

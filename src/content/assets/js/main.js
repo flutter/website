@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function(_) {
   initCarousel();
   initSnackbar();
   initCookieNotice();
+  setupCopyButtons();
 
   setupTabs($('#os-archive-tabs'), 'dev.flutter.tab-os', _getOSForArchive);
   setupTabs($('#editor-setup'), 'io.flutter.tool-id');
@@ -25,8 +26,6 @@ document.addEventListener("DOMContentLoaded", function(_) {
   setupTabs($('#china-os-dl-tabs'), 'dev.flutter.china-os-dl');
   setupTabs($('#china-os-pub-tabs'), 'dev.flutter.china-os-pub');
   setupTabs($('#base-os-tabs'), 'dev.flutter.os');
-
-  prettyPrint();
 });
 
 function _getOSForArchive() {
@@ -245,5 +244,46 @@ function initCookieNotice() {
     e.preventDefault();
     Cookies.set(cookieKey, cookieConsentValue, { sameSite: 'strict', expires: 30 });
     notice.classList.remove(activeClass);
+  });
+}
+
+function setupCopyButtons() {
+  if (!navigator.clipboard) {
+    return;
+  }
+
+  const codeBlocks =
+      document.querySelectorAll('.code-block-body');
+
+  codeBlocks.forEach(codeBlock => {
+    if (codeBlock.querySelector('pre')) {
+      const copyButton = document.createElement('button');
+      const innerIcon = document.createElement('span');
+
+      copyButton.classList.add('code-copy-button');
+      copyButton.title = 'Copy to clipboard';
+
+      innerIcon.textContent = 'content_copy';
+      innerIcon.ariaHidden = 'true';
+      innerIcon.classList.add('material-symbols');
+
+      copyButton.addEventListener('click', async (e) => {
+        const codeBlockBody = e.currentTarget.parentElement;
+        if (codeBlockBody) {
+          const codePre = codeBlock.querySelector('pre');
+          if (codePre) {
+            const contentToCopy = codePre.textContent
+                .replace(terminalReplacementPattern, '');
+            if (contentToCopy && contentToCopy.length !== 0) {
+              await navigator.clipboard.writeText(contentToCopy);
+            }
+            e.preventDefault();
+          }
+        }
+      });
+
+      copyButton.appendChild(innerIcon);
+      codeBlock.appendChild(copyButton);
+    }
   });
 }
