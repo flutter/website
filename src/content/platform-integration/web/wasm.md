@@ -6,7 +6,7 @@ short-title: Wasm
 last-update: March 13, 2024
 ---
 
-**_Last updated {{page.last-update}}_**
+**_Last updated {{last-update}}_**
 
 The Flutter and Dart teams are excited to add
 [WebAssembly](https://webassembly.org/) as a compilation target when building
@@ -150,7 +150,7 @@ Server started on port 8080
 
 #### Load it in a browser
 
-As of {{page.last-update}},
+As of {{last-update}},
 [only **Chromium-based browsers**](#chrome-119-or-later)
 (Version 119 or later) are able to run Flutter/Wasm content. 
 
