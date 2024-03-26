@@ -108,20 +108,26 @@ It also purges the SkSL shaders so use it *only* on the first
 `--cache-sksl` run.
 </li>
 
-<li markdown="1"> Play with the app to trigger as many animations
-    as needed; particularly those with compilation jank.
+<li markdown="1">
+
+Play with the app to trigger as many animations
+as needed; particularly those with compilation jank.
+
 </li>
 
-<li markdown="1"> Press `M` at the command line of `flutter run` to
-    write the captured SkSL shaders into a file named something like
-   `flutter_01.sksl.json`.
-   For best results,
-   capture SkSL shaders on an actual iOS device.
-   A shader captured on a simulator isn't likely to work correctly
-   on actual hardware.
+<li> 
+
+Press `M` at the command line of `flutter run` to
+ write the captured SkSL shaders into a file named something like
+`flutter_01.sksl.json`.
+For best results,
+capture SkSL shaders on an actual iOS device.
+A shader captured on a simulator isn't likely to work correctly
+on actual hardware.
+
 </li>
 
-<li markdown="1"> Build the app with SkSL warm-up using the following,
+<li> Build the app with SkSL warm-up using the following,
     as appropriate:
 
 ```console
@@ -135,7 +141,7 @@ flutter_01.sksl.json --target=test_driver/app.dart`).
 
 </li>
 
-<li markdown="1"> Test the newly built app.
+<li> Test the newly built app.
 </li>
 </ol>
 

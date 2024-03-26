@@ -1,4 +1,4 @@
-<div class="tab-pane active" id="vscode" role="tabpanel" aria-labelledby="vscode-tab" markdown="1">
+<div class="tab-pane active" id="vscode" role="tabpanel" aria-labelledby="vscode-tab">
 
 ### Create your sample Flutter app {#create-app}
 

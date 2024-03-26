@@ -1,4 +1,4 @@
-<div class="tab-pane" id="terminal" role="tabpanel" aria-labelledby="terminal-tab" markdown="1">
+<div class="tab-pane" id="terminal" role="tabpanel" aria-labelledby="terminal-tab">
 
 ### Create your sample Flutter app {#create-app}
 

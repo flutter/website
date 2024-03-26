@@ -44,13 +44,13 @@ To set up flavors in iOS and macOS, you'll define build configurations in Xcode.
 
 ## Creating flavors in iOS and macOS
 
-<ol markdown="1">
-<li markdown="1">
+<ol>
+<li>
 
 Open your project in Xcode.
 
 </li>
-<li markdown=1>
+<li>
 
 Select **Product** > **Scheme** > **New Scheme** from the menu to
 add a new `Scheme`.
@@ -62,7 +62,7 @@ add a new `Scheme`.
   have the `-free` suffix.
 
 </li>
-<li markdown="1">
+<li>
 
 Duplicate the build configurations to differentiate between the
 default configurations that are already available and the new configurations
@@ -81,13 +81,13 @@ file, not the **Pods-Runner.xcconfigs**. You can check this by expanding the con
 :::
 
 </li>
-<li markdown="1">
+<li>
 
 To match the free flavor, add `-free`
 at the end of each new configuration name.
 
 </li>
-<li markdown="1">
+<li>
 
 Change the `free` scheme to match the build configurations already created.
 
@@ -109,8 +109,8 @@ A _bundle identifier_ uniquely identifies your application.
 In this example, we set the **Debug-free** value to equal
 `com.flavor-test.free`.
 
-<ol markdown="1">
-<li markdown="1">
+<ol>
+<li>
 
 Change the app bundle identifier to differentiate between schemes.
 In **Product Bundle Identifier**, append `.free` to each -free scheme value.
@@ -118,7 +118,7 @@ In **Product Bundle Identifier**, append `.free` to each -free scheme value.
 ![Step 1 using flavors image.](/assets/images/docs/flavors/step-1-using-flavors-free.png){:width="100%"}
 
 </li>
-<li markdown=1>
+<li>
 
 In the **Build Settings**, set the **Product Name** value to match each flavor.
 For example, add Debug Free.
@@ -126,7 +126,7 @@ For example, add Debug Free.
 ![Step 2 using flavors image.](/assets/images/docs/flavors/step-2-using-flavors-free.png){:width="100%"}
 
 </li>
-<li markdown=1>
+<li>
 
 Add the display name to **Info.plist**. Update the **Bundle Display Name**
 value to `$(PRODUCT_NAME)`.

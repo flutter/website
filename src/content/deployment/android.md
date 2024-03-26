@@ -187,8 +187,10 @@ don't check it into public source control.
 Configure gradle to use your upload key when building your app in release mode 
 by editing the `[project]/android/app/build.gradle` file.
 
-<ol markdown="1">
-<li markdown="1"> Add the keystore information from your properties file before the `android` block:
+<ol>
+<li> 
+
+Add the keystore information from your properties file before the `android` block:
 
 ```gradle
    def keystoreProperties = new Properties()
@@ -206,7 +208,9 @@ by editing the `[project]/android/app/build.gradle` file.
 
 </li>
 
-<li markdown="1"> Find the `buildTypes` block:
+<li>
+
+Find the `buildTypes` block:
 
 ```gradle
    buildTypes {

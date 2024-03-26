@@ -191,7 +191,7 @@ the root of the widget tree. It returns a "flattened" tree.
   That class implements part of the [`Material`][] widget.
   It doesn't appear anywhere in the code in **Example 4**.
 
-<details markdown="1">
+<details>
 <summary><strong>Expand to view the widget tree for Example 4</strong></summary>
 
 {% include_relative trees/widget-tree.md -%}
@@ -265,7 +265,7 @@ class AppHome extends StatelessWidget {
 When debugging layout issues, look at the `size` and `constraints` fields.
 The constraints flow down the tree and the sizes flow back up.
 
-<details markdown="1">
+<details>
 <summary><strong>Expand to view the render tree for Example 5</strong></summary>
 
 {% include_relative trees/render-tree.md -%}
@@ -367,7 +367,7 @@ class AppHome extends StatelessWidget {
 }
 ```
 
-<details markdown="1">
+<details>
 <summary><strong>Expand to view the output of layer tree for Example 6</strong></summary>
 
 {% include_relative trees/layer-tree.md -%}
@@ -462,7 +462,7 @@ class AppHome extends StatelessWidget {
 }
 ```
 
-<details markdown="1">
+<details>
 <summary><strong>Expand to view the focus tree for Example 7</strong></summary>
 
 {% include_relative trees/focus-tree.md -%}
@@ -522,7 +522,7 @@ class AppHome extends StatelessWidget {
 }
 ```
 
-<details markdown="1">
+<details>
 <summary><strong>Expand to view the semantic tree for Example 8</strong></summary>
 
 {% include_relative trees/semantic-tree.md -%}

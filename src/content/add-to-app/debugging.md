@@ -58,24 +58,24 @@ using `flutter attach`.
 
 On iOS, you must follow the steps below:
 
-<ol markdown="1">
-<li markdown="1">
+<ol>
+<li>
 
 Ensure that your device is wirelessly connected to Xcode
 as described in the [iOS setup guide][].
 
 </li>
-<li markdown="1">
+<li>
 
 Open **Xcode > Product > Scheme > Edit Scheme**
 
 </li>
-<li markdown="1">
+<li>
 
 Select the **Arguments** tab
 
 </li>
-<li markdown="1">
+<li>
 
 Add either `--vm-service-host=0.0.0.0` for IPv4, 
 or `--vm-service-host=::0` for IPv6 as a launch argument

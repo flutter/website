@@ -288,7 +288,7 @@ you have to build them yourself. This app changes the background
 color to white and the text to dark grey to mimic a Material app.
 
 <div class="row">
-<div class="col-md-6" markdown="1">
+<div class="col-md-6">
 
   That's it! When you run the app, you should see _Hello World_.
 

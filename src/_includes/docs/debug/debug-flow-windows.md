@@ -25,7 +25,7 @@ Building Windows application...                                    31.4s
 {% comment %} Tab panes {% endcomment -%}
 <div class="tab-content">
 
-<div class="tab-pane active" id="from-vscode-to-vs" role="tabpanel" aria-labelledby="from-vscode-to-vs-tab" markdown="1">
+<div class="tab-pane active" id="from-vscode-to-vs" role="tabpanel" aria-labelledby="from-vscode-to-vs-tab">
 
 #### Start debugging with VS Code first {#vscode-windows}
 
@@ -83,7 +83,7 @@ If you use VS Code to debug most of your code, start with this section.
 
 </div>
 
-<div class="tab-pane" id="from-vs-to-vscode" role="tabpanel" aria-labelledby="from-vs-to-vscode-tab" markdown="1">
+<div class="tab-pane" id="from-vs-to-vscode" role="tabpanel" aria-labelledby="from-vs-to-vscode-tab">
 
 #### Start debugging with Visual Studio first
 

@@ -14,7 +14,7 @@ and software requirements.
 Your {{os}} Flutter development environment must meet the following
 minimal hardware requirements.
 
-<div class="table-wrapper" markdown="1">
+<div class="table-wrapper">
 
 |     Requirement              |                                    Minimum                               |    Recommended      |
 |:-----------------------------|:------------------------------------------------------------------------:|:-------------------:|

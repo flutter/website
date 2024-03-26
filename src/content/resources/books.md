@@ -38,7 +38,8 @@ page to view Flutter's latest release.
 <a href="{{book.link}}" title="{{book.title}}" class="col-sm-3">
   <img src="/assets/images/docs/cover/{{book.cover}}" alt="{{book.title}}">
 </a>
-<div class="details col-sm-9" markdown="1">
+<div class="details col-sm-9">
+
 ### [{{book.title}}]({{book.link}})
 {:.title}
 

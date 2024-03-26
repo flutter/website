@@ -27,7 +27,7 @@ If you use the example code provided, you can build the following app.
    caption="The finished app."
    width="50%" %}
 
-<figcaption class="figure-caption" markdown="1">
+<figcaption class="figure-caption">
 
 Photo by [Dino Reichmuth][ch-photo] on [Unsplash][].
 Text by [Switzerland Tourism][].

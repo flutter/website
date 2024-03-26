@@ -176,7 +176,7 @@ investigate other resources that our community recommended.
 {{doc-icon}} Guide<br>
 :::
 
-<table class="table table-striped" markdown="1">
+<table class="table table-striped">
 <tr>
 <th>Feature</th>
 <th>Resources</th>
@@ -184,7 +184,7 @@ investigate other resources that our community recommended.
 
 <tr>
 <td>Animation and sprites</td>
-<td markdown="1">
+<td>
 
 {{recipe-icon}} [Special effects][]<br>
 {{tool-icon}} [Spriter Pro][]<br>
@@ -196,7 +196,7 @@ investigate other resources that our community recommended.
 
 <tr>
 <td>App review</td>
-<td markdown="1">
+<td>
 
 {{pkg-icon}} [app_review][]
 
@@ -205,7 +205,7 @@ investigate other resources that our community recommended.
 
 <tr>
 <td>Audio</td>
-<td markdown="1">
+<td>
 
 {{pkg-icon}} [audioplayers][]
 
@@ -214,7 +214,7 @@ investigate other resources that our community recommended.
 
 <tr>
 <td>Authentication</td>
-<td markdown="1">
+<td>
 
 {{codelab}} [User Authentication using Firebase][firebase-auth]
 
@@ -223,7 +223,7 @@ investigate other resources that our community recommended.
 
 <tr>
 <td>Cloud services</td>
-<td markdown="1">
+<td>
 
 {{codelab}} [Add Firebase to your Flutter game][]
 
@@ -232,7 +232,7 @@ investigate other resources that our community recommended.
 
 <tr>
 <td>Debugging</td>
-<td markdown="1">
+<td>
 
 {{doc-icon}} [Firebase Crashlytics overview][firebase-crashlytics]<br>
 {{pkg-icon}} [firebase_crashlytics][]
@@ -242,7 +242,7 @@ investigate other resources that our community recommended.
 
 <tr>
 <td>Drivers</td>
-<td markdown="1">
+<td>
 
 {{pkg-icon}} [win32_gamepad][]
 
@@ -251,7 +251,7 @@ investigate other resources that our community recommended.
 
 <tr>
 <td>Game assets<br>and asset tools</td>
-<td markdown="1">
+<td>
 
 {{assets-icon}} [CraftPix][]<br>
 {{assets-icon}} [Game Developer Studio][]<br>
@@ -262,7 +262,7 @@ investigate other resources that our community recommended.
 
 <tr>
 <td>Game engines</td>
-<td markdown="1">
+<td>
 
 {{pkg-icon}} [Flame][flame-pkg]<br>
 {{pkg-icon}} [Bonfire][bonfire-pkg]<br>
@@ -273,7 +273,7 @@ investigate other resources that our community recommended.
 
 <tr>
 <td>Game features</td>
-<td markdown="1">
+<td>
 
 {{recipe-icon}} [Add achievements and leaderboards to your game][leaderboard-recipe]<br>
 {{recipe-icon}} [Add multiplayer support to your game][multiplayer-recipe]
@@ -283,7 +283,7 @@ investigate other resources that our community recommended.
 
 <tr>
 <td>Game services integration</td>
-<td markdown="1">
+<td>
 
 {{pkg-icon}} [games_services][game-svc-pkg]
 
@@ -292,7 +292,7 @@ investigate other resources that our community recommended.
 
 <tr>
 <td>Legacy code</td>
-<td markdown="1">
+<td>
 
 {{codelab}} [Use the Foreign Function Interface in a Flutter plugin][]
 
@@ -301,7 +301,7 @@ investigate other resources that our community recommended.
 
 <tr>
 <td>Level editor</td>
-<td markdown="1">
+<td>
 
 {{tool-icon}} [Tiled][]
 

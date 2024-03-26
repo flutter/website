@@ -142,7 +142,7 @@ The following screenshot and table explain the purpose of each tool.
 
 ![VS Code with the Flutter plugin UI additions](/assets/images/docs/testing/debugging/vscode-ui/screens/debugger-parts.png)
 
-<div class="table-wrapper" markdown="1">
+<div class="table-wrapper">
 
 | Highlight Color in Screenshot | Bar, Panel, or Tab  | Contents                                                                          |
 |-------------------------------|---------------------|-----------------------------------------------------------------------------------|
@@ -172,7 +172,7 @@ You can step in, out, and over Dart statements, hot reload, or resume the app.
 
 ![Flutter debugger toolbar in VS Code](/assets/images/docs/testing/debugging/vscode-ui/screens/debug-toolbar.png)
 
-<div class="table-wrapper" markdown="1">
+<div class="table-wrapper">
 
 | Icon                                                      | Action                | Default Keyboard Shortcut                             |
 |-----------------------------------------------------------|-----------------------|-------------------------------------------------------|

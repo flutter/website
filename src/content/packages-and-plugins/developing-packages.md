@@ -802,17 +802,22 @@ For example, see the docs for [`device_info`][].
 If you wish to generate API documentation locally on
 your development machine, use the following commands:
 
-<ol markdown="1">
-<li markdown="1">Change directory to the location of your package:
+<ol>
+<li>
+
+Change directory to the location of your package:
 
 ```console
 cd ~/dev/mypackage
 ```
+
 </li>
 
-<li markdown="1">Tell the documentation tool where the
-    Flutter SDK is located (change the following commands to reflect
-    where you placed it):
+<li>
+
+Tell the documentation tool where the
+Flutter SDK is located (change the following commands to reflect
+where you placed it):
 
 ```console
    export FLUTTER_ROOT=~/dev/flutter  # on macOS or Linux
@@ -821,7 +826,7 @@ cd ~/dev/mypackage
 ```
 </li>
 
-<li markdown="1">Run the `dart doc` tool
+<li>Run the `dart doc` tool
     (included as part of the Flutter SDK), as follows:
 
 ```console

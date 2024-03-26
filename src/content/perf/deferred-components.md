@@ -51,10 +51,12 @@ Android app for deferred loading.
 
 ### Step 1: Dependencies and initial project setup
 
-<ol markdown="1">
-<li markdown="1">Add Play Core to the Android app's
-    build.gradle dependencies.
-    In `android/app/build.gradle` add the following:
+<ol>
+<li>
+
+Add Play Core to the Android app's
+build.gradle dependencies.
+In `android/app/build.gradle` add the following:
 
 ```gradle
 ...
@@ -66,14 +68,16 @@ dependencies {
 ```
 </li>
 
-<li markdown="1">If using the Google Play Store as the
-    distribution model for dynamic features,
-    the app must support `SplitCompat` and provide an instance
-    of a `PlayStoreDeferredComponentManager`.
-    Both of these tasks can be accomplished by setting
-    the `android:name` property on the application in
-    `android/app/src/main/AndroidManifest.xml` to
-    `io.flutter.embedding.android.FlutterPlayStoreSplitApplication`:
+<li>
+
+If using the Google Play Store as the
+distribution model for dynamic features,
+the app must support `SplitCompat` and provide an instance
+of a `PlayStoreDeferredComponentManager`.
+Both of these tasks can be accomplished by setting
+the `android:name` property on the application in
+`android/app/src/main/AndroidManifest.xml` to
+`io.flutter.embedding.android.FlutterPlayStoreSplitApplication`:
 
 ```xml
 <manifest ...
@@ -97,18 +101,23 @@ is large or complex, you might want to separately support
 To support `SplitCompat`, there are three methods
 (as detailed in the [Android docs][]), any of which are valid:
 
-<ul markdown="1">
-<li markdown="1">Make your application class extend
-    `SplitCompatApplication`:
+<ul>
+<li>
+
+Make your application class extend `SplitCompatApplication`:
+
 ```java
 public class MyApplication extends SplitCompatApplication {
     ...
 }
 ```
+
 </li>
 
-<li markdown="1">Call `SplitCompat.install(this);`
-    in the `attachBaseContext()` method:
+<li>
+
+Call `SplitCompat.install(this);`
+in the `attachBaseContext()` method:
 
 ```java
 @Override
@@ -118,18 +127,22 @@ protected void attachBaseContext(Context base) {
     SplitCompat.install(this);
 }
 ```
+
 </li>
 
-<li markdown="1">Declare `SplitCompatApplication` as the application
-    subclass and add the Flutter compatibility code from
-  `FlutterApplication` to your application class:
+<li>
 
-```js
+Declare `SplitCompatApplication` as the application
+subclass and add the Flutter compatibility code from
+`FlutterApplication` to your application class:
+
+```xml
 <application
     ...
     android:name="com.google.android.play.core.splitcompat.SplitCompatApplication">
 </application>
 ```
+
 </li>
 </ul>
 
@@ -152,24 +165,28 @@ FlutterInjector.setInstance(new FlutterInjector.Builder()
 
 </li>
     
-<li markdown="1">Opt into deferred components by adding
-    the `deferred-components` entry to the app's `pubspec.yaml`
-    under the `flutter` entry:
+<li>
 
-  ```yaml
+Opt into deferred components by adding
+the `deferred-components` entry to the app's `pubspec.yaml`
+under the `flutter` entry:
+
+```yaml
+...
+flutter:
   ...
-  flutter:
-    ...
-    deferred-components:
-    ...
-  ```
-  The `flutter` tool looks for the `deferred-components`
-  entry in the `pubspec.yaml` to determine whether the
-  app should be built as deferred or not.
-  This can be left empty for now unless you already
-  know the components desired and the Dart deferred libraries
-  that go into each. You will fill in this section later
-  in [step 3.3][] once `gen_snapshot` produces the loading units.
+  deferred-components:
+  ...
+```
+
+The `flutter` tool looks for the `deferred-components`
+entry in the `pubspec.yaml` to determine whether the
+app should be built as deferred or not.
+This can be left empty for now unless you already
+know the components desired and the Dart deferred libraries
+that go into each. You will fill in this section later
+in [step 3.3][] once `gen_snapshot` produces the loading units.
+
 </li>
 </ol>
 
@@ -184,15 +201,17 @@ to be deferred by modifying the imports and
 guarding usages of deferred code behind `loadLibrary()`
 `Futures`.
 
-<ol markdown="1">
-<li markdown="1">Create a new Dart library.
-    For example, create a new `DeferredBox` widget that
-    can be downloaded at runtime.
-    This widget can be of any complexity but,
-    for the purposes of this guide,
-    create a simple box as a stand-in.
-    To create a simple blue box widget,
-    create `box.dart` with the following contents:
+<ol>
+<li>
+
+Create a new Dart library.
+For example, create a new `DeferredBox` widget that
+can be downloaded at runtime.
+This widget can be of any complexity but,
+for the purposes of this guide,
+create a simple box as a stand-in.
+To create a simple blue box widget,
+create `box.dart` with the following contents:
 
 <?code-excerpt "lib/box.dart"?>
 ```dart
@@ -215,17 +234,19 @@ class DeferredBox extends StatelessWidget {
 ```
 </li>
 
-<li markdown="1">Import the new Dart library
-    with the `deferred` keyword in your app and
-    call `loadLibrary()` (see [lazily loading a library][]).
-    The following example uses `FutureBuilder`
-    to wait for the `loadLibrary` `Future` (created in
-    `initState`) to complete and display a
-    `CircularProgressIndicator` as a placeholder.
-    When the `Future` completes, it returns the `DeferredBox` widget.
-    `SomeWidget` can then be used in the app as normal and
-    won't ever attempt to access the deferred Dart code until
-    it has successfully loaded.
+<li>
+
+Import the new Dart library
+with the `deferred` keyword in your app and
+call `loadLibrary()` (see [lazily loading a library][]).
+The following example uses `FutureBuilder`
+to wait for the `loadLibrary` `Future` (created in
+`initState`) to complete and display a
+`CircularProgressIndicator` as a placeholder.
+When the `Future` completes, it returns the `DeferredBox` widget.
+`SomeWidget` can then be used in the app as normal and
+won't ever attempt to access the deferred Dart code until
+it has successfully loaded.
 
 <?code-excerpt "lib/use_deferred_box.dart"?>
 ```dart
@@ -280,6 +301,7 @@ trigger a pre-load to help mask the loading time.
 
 You can find another example of deferred import loading in
 [Flutter Gallery's `lib/deferred_widget.dart`][].
+
 </li>
 </ol>
 
@@ -310,14 +332,15 @@ This flag is also equivalent to omitting the `deferred-components:`
 entry in `pubspec.yaml`.
 :::
 
-<ol markdown="1">
-<li markdown="1"><a id="step-3.1"></a>The
-    `flutter build appbundle` command
-    runs the validator and attempts to build the app with
-    `gen_snapshot` instructed to produce split AOT shared libraries
-    as separate `.so` files. On the first run, the validator will
-    likely fail as it detects issues; the tool makes
-    recommendations for how to set up the project and fix these issues.
+<ol>
+<li><a id="step-3.1"></a>
+
+The `flutter build appbundle` command
+runs the validator and attempts to build the app with
+`gen_snapshot` instructed to produce split AOT shared libraries
+as separate `.so` files. On the first run, the validator will
+likely fail as it detects issues; the tool makes
+recommendations for how to set up the project and fix these issues.
 
 The validator is split into two sections: prebuild
 and post-gen_snapshot validation. This is because any
@@ -346,13 +369,15 @@ changes to the loading units by other developers can be caught.
 The validator also checks for the following in the
 `android` directory:
 
-<ul markdown="1">
-<li markdown="1">**`<projectDir>/android/app/src/main/res/values/strings.xml`**<br>
-    An entry for every deferred component mapping the key
-    `${componentName}Name` to `${componentName}`.
-    This string resource is used by the `AndroidManifest.xml`
-    of each feature module to define the `dist:title property`.
-    For example:
+<ul>
+<li>
+
+**`<projectDir>/android/app/src/main/res/values/strings.xml`**<br>
+An entry for every deferred component mapping the key
+`${componentName}Name` to `${componentName}`.
+This string resource is used by the `AndroidManifest.xml`
+of each feature module to define the `dist:title property`.
+For example:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

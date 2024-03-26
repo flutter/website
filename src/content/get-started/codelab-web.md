@@ -67,8 +67,8 @@ so you can debug with Dart DevTools.
 
 You'll start with a simple web app that we provide for you.
 
-<ol markdown="1">
-<li markdown="1">Enable web development.<br>
+<ol>
+<li>Enable web development.<br>
 At the command line, perform the following command to
 make sure that you have Flutter installed correctly.
 

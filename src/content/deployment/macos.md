@@ -218,16 +218,17 @@ your build to App Store Connect using Flutter build commands
 and [Codemagic CLI Tools][codemagic_cli_tools] executed in a terminal
 in the Flutter project directory.
 
-<ol markdown="1">
-<li markdown="1">
+<ol>
+<li>
 
 Install the Codemagic CLI tools:
+
 ```bash
 pip3 install codemagic-cli-tools
 ```
 
 </li>
-<li markdown="1">
+<li>
 
 You'll need to generate an [App Store Connect API Key][appstoreconnect_api_key]
 with App Manager access to automate operations with App Store Connect. To make
@@ -241,7 +242,7 @@ export APP_STORE_CONNECT_PRIVATE_KEY=`cat /path/to/api/key/AuthKey_XXXYYYZZZ.p8`
 ```
 
 </li>
-<li markdown="1">
+<li>
 
 You need to export or create a Mac App Distribution and a Mac Installer
 Distribution certificate to perform code signing and package a build archive.
@@ -264,7 +265,7 @@ Mac Installer Distribution certificate. You can use the same private key for
 each new certificate.
 
 </li>
-<li markdown="1">
+<li>
 
 Fetch the code signing files from App Store Connect:
 
@@ -280,7 +281,7 @@ Where `cert_key` is either your exported Mac App Distribution certificate privat
 or a new private key which automatically generates a new certificate. 
 
 </li>
-<li markdown="1">
+<li>
 
 If you do not have a Mac Installer Distribution certificate,
 you can create a new certificate by executing the following:
@@ -295,7 +296,7 @@ app-store-connect create-certificate \
 Use `cert_key` of the private key you created earlier.
 
 </li>
-<li markdown="1">
+<li>
 
 Fetch the Mac Installer Distribution certificates:
 
@@ -307,7 +308,7 @@ app-store-connect list-certificates \
 ```
 
 </li>
-<li markdown="1">
+<li>
 
 Set up a new temporary keychain to be used for code signing:
 
@@ -325,7 +326,7 @@ authentication issues with apps on your machine.
 :::
 
 </li>
-<li markdown="1">
+<li>
 
 Now add the fetched certificates to your keychain:
 
@@ -334,7 +335,7 @@ keychain add-certificates
 ```
 
 </li>
-<li markdown="1">
+<li>
 
 Update the Xcode project settings to use fetched code signing profiles: 
 
@@ -344,7 +345,7 @@ xcode-project use-profiles
 
 </li>
 
-<li markdown="1">
+<li>
 
 Install Flutter dependencies:
 
@@ -353,7 +354,7 @@ flutter packages pub get
 ```
 
 </li>
-<li markdown="1">
+<li>
 
 Install CocoaPods dependencies:
 

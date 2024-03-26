@@ -28,7 +28,7 @@ add Flutter to the `PATH` environment variable.
 {% assign shells = site.data.shells %}
 {% for shell in shells %}
 
-   <details markdown="1" {% if shell.name == 'bash' %}open{% endif %}>
+   <details {% if shell.name == 'bash' %}open{% endif %}>
    <summary>Show <tt>{{shell.name}}</tt> command</summary>
 
    ```console

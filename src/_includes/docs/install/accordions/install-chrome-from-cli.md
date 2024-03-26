@@ -1,6 +1,6 @@
 
-<details markdown="1">
-<summary><b>How to install Chrome from the command line</b></summary>
+<details>
+<summary><strong>How to install Chrome from the command line</strong></summary>
 
 ```console
 $ wget https://dl-ssl.google.com/linux/linux_signing_key.pub -O /tmp/google.pub

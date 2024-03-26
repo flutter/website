@@ -223,15 +223,15 @@ to validate and distribute the app from Xcode.
 Once the app bundle is created, upload it to
 [App Store Connect][appstoreconnect_login] by either:
 
-<ol markdown="1">
-<li markdown="1">
+<ol>
+<li>
 
 Install and open the [Apple Transport macOS app][apple_transport_app].
 Drag and drop the `build/ios/ipa/*.ipa` app bundle into the app.
 
 </li>
 
-<li markdown="1">
+<li>
 
 Or upload the app bundle from the command line by running:
 
@@ -243,7 +243,7 @@ Run `man altool` for details about how to authenticate with the App Store Connec
 
 </li>
 
-<li markdown="1">
+<li>
 
 Or open `build/ios/archive/MyApp.xcarchive` in Xcode.
 
@@ -287,8 +287,8 @@ in the Flutter project directory. This allows you to create a build archive
 with full control of distribution certificates in a temporary keychain
 isolated from your login keychain.
 
-<ol markdown="1">
-<li markdown="1">
+<ol>
+<li>
 
 Install the Codemagic CLI tools:
 
@@ -297,7 +297,7 @@ pip3 install codemagic-cli-tools
 ```
 
 </li>
-<li markdown="1">
+<li>
 
 You'll need to generate an [App Store Connect API Key][appstoreconnect_api_key]
 with App Manager access to automate operations with App Store Connect. To make
@@ -311,7 +311,7 @@ export APP_STORE_CONNECT_PRIVATE_KEY=`cat /path/to/api/key/AuthKey_XXXYYYZZZ.p8`
 ```
 
 </li>
-<li markdown="1">
+<li>
 
 You need to export or create an iOS Distribution certificate to code sign and package a build archive.
 
@@ -331,7 +331,7 @@ ssh-keygen -t rsa -b 2048 -m PEM -f cert_key -q -N ""
 Later, you can have CLI tools automatically create a new iOS Distribution from the private key.
 
 </li>
-<li markdown="1">
+<li>
 
 Set up a new temporary keychain to be used for code signing:
 
@@ -349,7 +349,7 @@ authentication issues with apps on your machine.
 :::
 
 </li>
-<li markdown="1">
+<li>
 
 Fetch the code signing files from App Store Connect:
 

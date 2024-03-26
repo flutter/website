@@ -3,7 +3,7 @@
 
 <div id="{{id}}" class="tab-pane
   {%- if id == 'windows' %} active {% endif %}"
-  role="tabpanel" aria-labelledby="{{id}}-tab" markdown="1">
+  role="tabpanel" aria-labelledby="{{id}}-tab">
 
 {% for channel in channels -%}
 ## {{channel | capitalize }} channel ({{include.os}})

@@ -46,7 +46,7 @@ If you choose another IDE, skip ahead to the [next step: Test drive][].
 
 {% comment %} Tab panes {% endcomment -%}
 <div class="tab-content">
-<div class="tab-pane active" id="vscode" role="tabpanel" aria-labelledby="vscode-tab" markdown="1">
+<div class="tab-pane active" id="vscode" role="tabpanel" aria-labelledby="vscode-tab">
 
 ## Install VS Code
 
@@ -98,7 +98,7 @@ follow Microsoft's instructions for the relevant platform:
    - Displays the output of Flutter Doctor command.
 
 </div>
-<div class="tab-pane" id="androidstudio" role="tabpanel" aria-labelledby="androidstudio-tab" markdown="1">
+<div class="tab-pane" id="androidstudio" role="tabpanel" aria-labelledby="androidstudio-tab">
 
 ## Install Android Studio or IntelliJ IDEA
 

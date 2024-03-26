@@ -1,4 +1,4 @@
-<div class="tab-pane" id="androidstudio" role="tabpanel" aria-labelledby="androidstudio-tab" markdown="1">
+<div class="tab-pane" id="androidstudio" role="tabpanel" aria-labelledby="androidstudio-tab">
 
 ### Create your sample Flutter app {#create-app}
 

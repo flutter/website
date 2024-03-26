@@ -28,13 +28,13 @@ or download and install the Flutter bundle yourself.
 {% comment %} Tab panes {% endcomment -%}
 <div class="tab-content">
 
-<div class="tab-pane active" id="vscode" role="tabpanel" aria-labelledby="vscode-tab" markdown="1">
+<div class="tab-pane active" id="vscode" role="tabpanel" aria-labelledby="vscode-tab">
 
 {% include docs/install/flutter/vscode.md os=os terminal=terminal target=v-target %}
 
 </div>
 
-<div class="tab-pane" id="download" role="tabpanel" aria-labelledby="download-tab" markdown="1">
+<div class="tab-pane" id="download" role="tabpanel" aria-labelledby="download-tab">
 
 {% include docs/install/flutter/download.md os=os terminal=terminal target=v-target%}
 

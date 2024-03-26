@@ -52,8 +52,7 @@ Otherwise, you can skip to the [next section][check-dev].
 <div class="tab-pane active"
      id="first-start"
      role="tabpanel"
-     aria-labelledby="first-start-tab"
-     markdown="1">
+     aria-labelledby="first-start-tab">
 
 1. Launch **Android Studio**.
 
@@ -74,8 +73,7 @@ Otherwise, you can skip to the [next section][check-dev].
 <div class="tab-pane"
      id="later-start"
      role="tabpanel"
-     aria-labelledby="later-start-tab"
-     markdown="1">
+     aria-labelledby="later-start-tab">
 
 1. Launch **Android Studio**.
 
@@ -154,13 +152,13 @@ Otherwise, you can skip to the [next section][check-dev].
 {% comment %} Tab panes {% endcomment -%}
 <div class="tab-content">
 
-<div class="tab-pane active" id="virtual" role="tabpanel" aria-labelledby="virtual-tab" markdown="1">
+<div class="tab-pane active" id="virtual" role="tabpanel" aria-labelledby="virtual-tab">
 
 {% include docs/install/devices/android-emulator.md devos=devos %}
 
 </div>
 
-<div class="tab-pane" id="physical" role="tabpanel" aria-labelledby="physical-tab" markdown="1">
+<div class="tab-pane" id="physical" role="tabpanel" aria-labelledby="physical-tab">
 
 {% include docs/install/devices/android-physical.md devos=devos %}
 
@@ -200,7 +198,7 @@ agree to the licenses of the Android SDK platform.
 
 #### Troubleshooting licensing issues
 
-<details markdown="1">
+<details>
 <summary>How to fix the error of finding Java install</summary>
 
 You might have an issue with the Android SDK locating the Java SDK.
