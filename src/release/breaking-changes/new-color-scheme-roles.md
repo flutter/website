@@ -1,5 +1,5 @@
 ---
-title: Introduce new `ColorScheme` roles for Material 3
+title: Introduce new ColorScheme roles for Material 3
 description: >-
   'ColorScheme' introduces new color roles to
   better align with Material Design 3.
