@@ -37,7 +37,7 @@ had a high chroma (contained little black, white, and shades of grey).
 
 The differences caused by the updated `ColorScheme.fromSeed` and the new color
 roles should be small and acceptable. However, when providing a brighter
-seed color to `ColorScheme.fromSeed`, it may construct a relatively darker
+seed color to `ColorScheme.fromSeed`, it might construct a relatively darker
 version of `ColorScheme`. To force the output to still be bright, set 
 `schemeVariant: FromSeedVariant.fidelity` in `ColorScheme.fromSeed`. For 
 example:
