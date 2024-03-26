@@ -61,6 +61,7 @@ Future<int> _refreshExcerpts({
     );
     return 1;
   } else {
+    // TODO(parlough): This doesn't account for v4.
     final diffPatchVersion = int.tryParse(diffVersionLine[1] ?? '');
     if (diffPatchVersion == null || diffPatchVersion < 6) {
       stderr.writeln(
