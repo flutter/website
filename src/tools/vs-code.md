@@ -224,16 +224,17 @@ several additional debugging commands are added to the
 When space is limited, the icon is used as the visual
 version of the label.
 
-<dl markdown="1">
-<dt markdown="1"> **Toggle Baseline Painting** ![Baseline painting icon](/assets/images/docs/tools/devtools/paint-baselines-icon.png){:width="20px"}</dt>
-<dd>Causes each RenderBox to paint a line at each of its baselines.</dd>
-<dt markdown="1"> **Toggle Repaint Rainbow** ![Repaint rainbow icon](/assets/images/docs/tools/devtools/repaint-rainbow-icon.png){:width="20px"}</dt>
-<dd>Shows rotating colors on layers when repainting.</dd>
-<dt markdown="1">**Toggle Slow Animations** ![Slow animations icon](/assets/images/docs/tools/devtools/slow-animations-icon.png){:width="20px"}</dt>
-<dd>Slows down animations to enable visual inspection.</dd>
-<dt markdown="1">**Toggle Debug Mode Banner** ![Debug mode banner icon](/assets/images/docs/tools/devtools/debug-mode-banner-icon.png){:width="20px"}</dt>
-<dd>Hides the debug mode banner even when running a debug build.</dd>
-</dl>
+**Toggle Baseline Painting** ![Baseline painting icon](/assets/images/docs/tools/devtools/paint-baselines-icon.png){:width="20px"}
+: Causes each RenderBox to paint a line at each of its baselines.
+
+**Toggle Repaint Rainbow** ![Repaint rainbow icon](/assets/images/docs/tools/devtools/repaint-rainbow-icon.png){:width="20px"}
+: Shows rotating colors on layers when repainting.
+
+**Toggle Slow Animations** ![Slow animations icon](/assets/images/docs/tools/devtools/slow-animations-icon.png){:width="20px"}
+: Slows down animations to enable visual inspection.
+
+**Toggle Debug Mode Banner** ![Debug mode banner icon](/assets/images/docs/tools/devtools/debug-mode-banner-icon.png){:width="20px"}
+: Hides the debug mode banner even when running a debug build.
 
 ### Debugging external libraries
 

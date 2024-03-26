@@ -50,7 +50,7 @@ This option corrects formatting in the current file when you save it.
 To correct code formatting in the command line interface (CLI),
 run the `dart format` command:
 
-```terminal
+```console
 $ dart format path1 path2 [...]
 ```
 

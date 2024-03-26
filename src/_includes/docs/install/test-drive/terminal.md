@@ -6,7 +6,7 @@ To create a new Flutter app, run the following commands in your shell or Termina
 
 1. Run the `flutter create` command.
 
-   ```terminal
+   ```console
    flutter create test_drive
    ```
 
@@ -15,7 +15,7 @@ To create a new Flutter app, run the following commands in your shell or Termina
 
 1. Change to the Flutter project directory.
 
-   ```terminal
+   ```console
    cd test_drive
    ```
 
@@ -24,7 +24,7 @@ To create a new Flutter app, run the following commands in your shell or Termina
 1. To verify that you have a running target device,
    run the following command.
 
-   ```terminal
+   ```console
    flutter devices
    ```
 
@@ -32,7 +32,7 @@ To create a new Flutter app, run the following commands in your shell or Termina
 
 2. To run your app, run the following command.
 
-   ```terminal
+   ```console
    flutter run
    ```
 

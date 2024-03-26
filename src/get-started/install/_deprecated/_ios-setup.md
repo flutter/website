@@ -10,7 +10,7 @@ To develop Flutter apps for iOS, you need a Mac with Xcode installed.
  1. To configure the Xcode command-line tools to use the
     installed version, run the following commands.
 
-    ```terminal
+    ```console
     sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
     sudo xcodebuild -runFirstLaunch
     ```
@@ -26,7 +26,7 @@ To develop Flutter apps for iOS, you need a Mac with Xcode installed.
 
     1. Open the Terminal and run:
 
-       ```terminal
+       ```console
        sudo xcodebuild -license
        ```
 
@@ -43,7 +43,7 @@ follow this procedure.
  1. If using Xcode 15 or greater, download and install the iOS Simulator
     by running the following command:
 
-    ```terminal
+    ```console
     xcodebuild -downloadPlatform iOS
     ```
 
@@ -53,7 +53,7 @@ follow this procedure.
 
  1. To start the Simulator, run the following command:
 
-    ```terminal
+    ```console
     open -a Simulator
     ```
 
@@ -142,7 +142,6 @@ Configure your physical iOS device to connect to Xcode.
 1. When prompted, unlock your iOS device.
 
 #### Enable Developer Mode on iOS 16 or later
-{:.no_toc}
 
 Starting with iOS 16, Apple requires you to enable **[Developer Mode][]**
 to protect against malicious software.
@@ -250,7 +249,8 @@ you [attached the device to your Mac](#attach).
 
 Enabling certificates varies in different versions of iOS.
 
-{% comment %} Nav tabs {% endcomment -%}
+{% comment %} Nav tabs {% endcomment
+   -%}
 <ul class="nav nav-tabs" id="ios-versions" role="tablist">
     <li class="nav-item">
         <a class="nav-link" id="ios14-tab" href="#ios14" role="tab" aria-controls="ios14" aria-selected="true">iOS 14</a>
@@ -263,7 +263,8 @@ Enabling certificates varies in different versions of iOS.
     </li>
 </ul>
 
-{% comment %} Tab panes {% endcomment -%}
+{% comment %} Tab panes {% endcomment
+   -%}
 <div class="tab-content">
 
 <div class="tab-pane" id="ios14" role="tabpanel" aria-labelledby="ios14-tab" markdown="1">
@@ -304,7 +305,8 @@ Enabling certificates varies in different versions of iOS.
 1. When the dialog displays, tap **Trust**.
 
 </div>
-</div>{% comment %} End: Tab panes. {% endcomment -%}
+</div>{% comment %} End: Tab panes. {% endcomment
+   -%}
 
 If prompted, enter your Mac password into the
 **codesign wants to access key...** dialog and tap **Always Allow**.
@@ -342,7 +344,7 @@ If you don't see your device listed when using `flutter run`,
 extend the timeout. The timeout defaults to 10 seconds.
 To extend the timeout, change the value to an integer greater than 10.
 
-```terminal
+```console
 flutter run --device-timeout 60
 ```
 
@@ -361,7 +363,7 @@ with native iOS code.
 
 To [Install and set up CocoaPods][], run the following commands:
 
-```terminal
+```console
 sudo gem install cocoapods
 ```
 
@@ -372,7 +374,7 @@ sudo gem install cocoapods
   Additionally, if you are installing on an [Apple Silicon Mac][],
   run the command:
 
-  ```terminal
+  ```console
   sudo gem uninstall ffi && sudo gem install ffi -- --enable-libffi-alloc
   ```
 {{site.alert.end}}

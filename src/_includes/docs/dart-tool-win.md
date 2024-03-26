@@ -9,7 +9,7 @@
   commands originate from the same `bin` directory and are
   therefore compatible.
 
-  ```terminal
+  ```console
   C:\>where flutter dart
   C:\path-to-flutter-sdk\bin\flutter
   C:\path-to-flutter-sdk\bin\flutter.bat
@@ -26,7 +26,7 @@
   should show that the `flutter` and `dart` commands
   from the same directory now come first.
 
-  ```terminal
+  ```console
   C:\>where flutter dart
   C:\dev\src\flutter\bin\flutter
   C:\dev\src\flutter\bin\flutter.bat
@@ -38,7 +38,7 @@
   However, if you are using `PowerShell`, in it `where` is
   an alias of `Where-Object` command, so you need to use `where.exe` instead.
 
-  ```terminal
+  ```console
   PS C:\> where.exe flutter dart
   ```
 

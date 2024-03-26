@@ -64,7 +64,7 @@ the [`card`][] template that you'll find
 in the [`flutter/games` repository][].
 Run the following command to clone that repository:
 
-```terminal
+```console
 git clone https://github.com/flutter/games.git
 ```
 

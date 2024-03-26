@@ -94,7 +94,7 @@ targetmin:
 ## Software current versions
 
 appnow:
-  flutter: '3.19.0'
+  flutter: '3.19.3'
   vscode: '1.86'
   android_studio: '2023.1 (Hedgehog) or later'
   android_sdk: '34.0.0'
@@ -122,11 +122,10 @@ sass:
 
 plugins:
   - jekyll-toc
-  - jekyll-include-cache
 
 toc:
   min_level: 2
-  max_level: 4
+  max_level: 3
 
 defaults:
   - scope:
@@ -219,16 +218,16 @@ alert:
     **Bonus questions!**
   important: >-
     <aside class="alert alert-warning alert-icon" role="alert" markdown="1">
-    <i class="material-symbols" aria-hidden="true">error</i> **Important:**
+    <i class="material-symbols" aria-hidden="true">error</i> **Important**
   info: >-
     <aside class="alert alert-info" role="alert" markdown="1">
     <i class="material-symbols" aria-hidden="true">info</i>
   note: >-
     <aside class="alert alert-info" role="alert" markdown="1">
-    <i class="material-symbols" aria-hidden="true">info</i> **Note:**
+    <i class="material-symbols" aria-hidden="true">info</i> **Note**
   version-note: >-
     <aside class="alert alert-info" role="alert" markdown="1">
-    <i class="material-symbols" aria-hidden="true">merge_type</i> **Version note:**
+    <i class="material-symbols" aria-hidden="true">merge_type</i> **Version note**
   recommend: >-
     <aside class="alert alert-success alert-icon" role="alert" markdown="1">
     <i class="material-symbols" aria-hidden="true">bolt</i>
@@ -236,10 +235,10 @@ alert:
     <aside class="alert alert-secondary" role="alert" markdown="1">
   tip: >-
     <aside class="alert alert-success" role="alert" markdown="1">
-    <i class="material-symbols" aria-hidden="true">lightbulb</i> **Tip:**
+    <i class="material-symbols" aria-hidden="true">lightbulb</i> **Tip**
   warning: >-
     <aside class="alert alert-warning" role="alert" markdown="1">
-    <i class="material-symbols" aria-hidden="true">warning</i> **Warning:**
+    <i class="material-symbols" aria-hidden="true">warning</i> **Warning**
   end: </aside>
 
 

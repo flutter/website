@@ -48,7 +48,7 @@ first create a Flutter module.
 
 From the command line, run:
 
-```terminal
+```console
 cd some/path/
 flutter create --template module my_flutter
 ```
@@ -251,7 +251,7 @@ every time you make code changes in your Flutter module.
 The following example assumes that you want to generate the
 frameworks to `some/path/MyApp/Flutter/`.
 
-```terminal
+```console
 flutter build ios-framework --output=some/path/MyApp/Flutter/
 ```
 
@@ -353,7 +353,7 @@ as described in Option B.
 To generate the `Flutter.podspec` and frameworks, run the following 
 from the command line in the root of your Flutter module:
 
-```terminal
+```console
 flutter build ios-framework --cocoapods --output=some/path/MyApp/Flutter/
 ```
 

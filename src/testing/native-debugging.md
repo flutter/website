@@ -44,11 +44,11 @@ debugging your own Flutter project as well.
 
 1. Create a basic Flutter app.
 
-    ```terminal
+    ```console
     $ flutter create my_app
     ```
 
-    ```terminal
+    ```console
     Creating project my_app...
     Resolving dependencies in my_app... 
     Got dependencies in my_app.
@@ -67,7 +67,7 @@ debugging your own Flutter project as well.
     Your application code is in my_app/lib/main.dart.
     ```
 
-    ```terminal
+    ```console
     $ cd my_app
     ```
 
@@ -105,8 +105,10 @@ debugging your own Flutter project as well.
 
 {% comment %}
       ![Flutter test app paused](/assets/images/docs/testing/debugging/native/macos/basic-app.png){:width="50%"}
-      <div markdown="1">{:.figure-caption}
+      <div class="figure-caption">
+
       Default Flutter app as rendered on macOS.
+
       </div>
 {% endcomment %}
 
@@ -141,6 +143,7 @@ The following screenshot and table explain the purpose of each tool.
 ![VS Code with the Flutter plugin UI additions](/assets/images/docs/testing/debugging/vscode-ui/screens/debugger-parts.png)
 
 <div class="table-wrapper" markdown="1">
+
 | Highlight Color in Screenshot | Bar, Panel, or Tab  | Contents                                                                          |
 |-------------------------------|---------------------|-----------------------------------------------------------------------------------|
 | **Yellow**                    | Variables           | List of current values of variables in the Flutter app                            |
@@ -156,6 +159,7 @@ The following screenshot and table explain the purpose of each tool.
 |                               | Debug Console       | Logs or error messages that the Flutter app generates while debugging             |
 |                               | Terminal            | System shell prompt contained in VS Code                                          |
 {:.table.table-striped}
+
 </div>
 
 To change where the panel (in **orange**) appears in VS Code,
@@ -169,6 +173,7 @@ You can step in, out, and over Dart statements, hot reload, or resume the app.
 ![Flutter debugger toolbar in VS Code](/assets/images/docs/testing/debugging/vscode-ui/screens/debug-toolbar.png)
 
 <div class="table-wrapper" markdown="1">
+
 | Icon                                                      | Action                | Default Keyboard Shortcut                             |
 |-----------------------------------------------------------|-----------------------|-------------------------------------------------------|
 | {% include_relative vscode-flutter-bar/_play.md %}        | Start or Resume       | <kbd>F5</kbd>                                         |
@@ -181,6 +186,7 @@ You can step in, out, and over Dart statements, hot reload, or resume the app.
 | {% include_relative vscode-flutter-bar/_stop.md %}        | Stop                  | <kbd>Shift</kbd> + <kbd>F5</kbd>                     |
 | {% include_relative vscode-flutter-bar/_inspector.md %}   | Open Widget Inspector |                                                       |
 {:.table.table-striped}
+
 </div>
 
 ## Update test Flutter app
@@ -307,11 +313,11 @@ test Flutter app. This update adds native code to debug.
 1. To add the `url_launcher` package as a dependency,
    run `flutter pub add`:
 
-    ```terminal
+    ```console
     $ flutter pub add url_launcher
     ```
 
-    ```terminal
+    ```console
     Resolving dependencies... 
       collection 1.17.1 (1.17.2 available)
     + flutter_web_plugins 0.0.0 from sdk flutter
@@ -337,11 +343,11 @@ test Flutter app. This update adds native code to debug.
    {: type="a"}
    1. In Linux or macOS, run this `find` command.
 
-      ```terminal
+      ```console
       $ find ./ -mmin -120 
       ```
 
-      ```terminal
+      ```console
       ./ios/Flutter/Debug.xcconfig
       ./ios/Flutter/Release.xcconfig
       ./linux/flutter/generated_plugin_registrant.cc

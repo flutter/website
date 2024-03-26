@@ -5,7 +5,7 @@ short-title: Hero
 ---
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What you'll learn</h4>
+  <h4>What you'll learn</h4>
 
 * The _hero_ refers to the widget that flies between screens.
 * Create a hero animation using Flutter's Hero widget.
@@ -101,7 +101,7 @@ how Flutter performs a hero animation.
 ## Basic structure of a hero animation
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What's the point?</h4>
+  <h4>What's the point?</h4>
 
 * Use two hero widgets in different routes but with matching tags to
     implement the animation.
@@ -242,7 +242,7 @@ implement hero animations:
 ## Standard hero animations
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What's the point?</h4>
+  <h4>What's the point?</h4>
 
 * Specify a route using `MaterialPageRoute`, `CupertinoPageRoute`,
     or build a custom route using `PageRouteBuilder`.
@@ -426,7 +426,7 @@ Key information:
 ## Radial hero animations
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What's the point?</h4>
+  <h4>What's the point?</h4>
 
 * A _radial transformation_ animates a circular shape into a square
     shape.

@@ -37,12 +37,13 @@ which uses the new names for the button components.
 
 <div class="table-wrapper" markdown="1">
 
-| Old Widget   | Old Theme     | New Widget      | New Theme |
-| -------------|---------------|-----------------|----------|
-| `FlatButton`   | `ButtonTheme`   | `TextButton`      | `TextButtonTheme`     |
-| `RaisedButton` | `ButtonTheme`   | `ElevatedButton`  | `ElevatedButtonTheme` |
-| `OutlineButton`| `ButtonTheme`   | `OutlinedButton`  | `OutlinedButtonTheme` |
+| Old Widget      | Old Theme     | New Widget       | New Theme             |
+|-----------------|---------------|------------------|-----------------------|
+| `FlatButton`    | `ButtonTheme` | `TextButton`     | `TextButtonTheme`     |
+| `RaisedButton`  | `ButtonTheme` | `ElevatedButton` | `ElevatedButtonTheme` |
+| `OutlineButton` | `ButtonTheme` | `OutlinedButton` | `OutlinedButtonTheme` |
 {:.table .table-striped .nowrap}
+
 </div>
 
 The new themes follow the "normalized" pattern that Flutter adopted
@@ -272,21 +273,22 @@ outline color:
 
 ```dart
 final ButtonStyle outlineButtonStyle = OutlinedButton.styleFrom(
-  primary: Colors.black87,
+  foregroundColor: Colors.black87,
   minimumSize: Size(88, 36),
   padding: EdgeInsets.symmetric(horizontal: 16),
   shape: const RoundedRectangleBorder(
     borderRadius: BorderRadius.all(Radius.circular(2)),
   ),
 ).copyWith(
-  side: MaterialStateProperty.resolveWith<BorderSide>(
+  side: MaterialStateProperty.resolveWith<BorderSide?>(
     (Set<MaterialState> states) {
-      if (states.contains(MaterialState.pressed))
+      if (states.contains(MaterialState.pressed)) {
         return BorderSide(
           color: Theme.of(context).colorScheme.primary,
           width: 1,
         );
-      return null; // Defer to the widget's default.
+      }
+      return null;
     },
   ),
 );

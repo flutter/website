@@ -21,7 +21,7 @@ This recipe uses the following steps:
 To add the `http` package as a dependency,
 run `flutter pub add`:
 
-```terminal
+```console
 $ flutter pub add http
 ```
 

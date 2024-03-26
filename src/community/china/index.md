@@ -135,26 +135,24 @@ You can use other mirrors if they become available.
 It includes the Flutter SDK and pub packages.
 
 #### Configure your machine to use this mirror
-{:.no_toc}
 
 To set your machine to use this mirror, use these commands.
 
 On macOS, Linux, or ChromeOS:
 
-```terminal
+```console
 export PUB_HOSTED_URL={{mirror.urls.pubhosted}};
 export FLUTTER_STORAGE_BASE_URL={{mirror.urls.flutterstorage}}
 ```
 
 On Windows:
 
-```terminal
+```console
 $env:PUB_HOSTED_URL="{{mirror.urls.pubhosted}}";
 $env:FLUTTER_STORAGE_BASE_URL="{{mirror.urls.flutterstorage}}"
 ```
 
 #### Get support for this mirror
-{:.no_toc}
 
 If you're running into issues that only occur when
 using the `{{mirror.mirror}}` mirror, report the issue to their

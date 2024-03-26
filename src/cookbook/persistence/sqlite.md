@@ -51,7 +51,7 @@ To work with SQLite databases, import the `sqflite` and
 To add the packages as a dependency,
 run `flutter pub add`:
 
-```terminal
+```console
 $ flutter pub add sqflite path
 ```
 

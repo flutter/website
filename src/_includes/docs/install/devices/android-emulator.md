@@ -1,21 +1,21 @@
 #### Set up the Android emulator
-{:.no_toc}
 
 {% include docs/help-link.md location='android-emulator' section='#android-setup' %}
 
 {% assign devos = include.devos %}
 {% assign target = include.target %}
 {% assign compiler = include.compiler %}
-{% assign time = include.time %}
+{% assign attempt = include.attempt %}
 
-{% if devos=='Windows' -%}
+{% case devos %}
+{% when 'Windows','Linux' -%}
 {% assign images = '**x86 Images**' -%}
-{% elsif devos=='macOS' -%}
+{% when 'macOS' -%}
 {% assign images = '**x86 Images** if your Mac runs on an Intel CPU or **ARM Images** if your Mac runs on an Apple CPU' -%}
-{% endif -%}
+{% endcase -%}
 
-To configure your Flutter app to run in the Android emulator,
-follow these steps:
+To configure your Flutter app to run in an Android emulator,
+follow these steps to create and select an emulator.
 
 1. Enable
     [VM acceleration]({{site.android-dev}}/studio/run/emulator-acceleration#accel-vm)
@@ -66,13 +66,11 @@ follow these steps:
 1. To rename the Android Virtual Device (AVD), change the value in the
    **AVD Name** box.
 
-1. Click **Show Advanced Settings**.
-
-1. Scroll to **Emulated Performance**.
+1. Click **Show Advanced Settings** and scroll to **Emulated Performance**.
 
 1. From the **Graphics** dropdown menu, select **Hardware - GLES 2.0**.
 
-   This enables [hardware acceleration]({{site.android-dev}}/studio/run/emulator-acceleration).
+   This enables [hardware acceleration][] and improves rendering performance.
 
 1. Verify your AVD configuration. If it is correct, click **Finish**.
 
@@ -82,4 +80,6 @@ follow these steps:
 1. In the **Device Manager** dialog, click the **Run** icon to the right
    of your desired AVD.
    The emulator starts up and displays the default canvas for your
-   selected OS version and device.
+   selected Android OS version and device.
+
+[hardware acceleration]: {{site.android-dev}}/studio/run/emulator-acceleration

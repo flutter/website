@@ -192,7 +192,7 @@ don't forget to add the dependency on it to your `pubspec.yaml`.
 
 To add the `provider` package as a dependency, run `flutter pub add`:
 
-```terminal
+```console
 $ flutter pub add provider
 ```
 

@@ -14,7 +14,6 @@ you have installed [Visual Studio Code][]
 {{site.appmin.vscode}} or later and the [Flutter extension for VS Code][].
 
 #### Prompt VS Code to install Flutter
-{:.no_toc}
 
 1. Launch VS Code.
 
@@ -42,7 +41,6 @@ you have installed [Visual Studio Code][]
    You can create a test project after checking your development setup.
 
 #### Download the Flutter SDK
-{:.no_toc}
 
 1. When the **Select Folder for Flutter SDK** dialog displays,
    choose where you want to install Flutter.
@@ -62,7 +60,7 @@ you have installed [Visual Studio Code][]
 
    While downloading Flutter, VS Code displays this pop-up notification:
 
-   ```terminal
+   ```console
    Downloading the Flutter SDK. This may take a few minutes.
    ```
 
@@ -72,7 +70,7 @@ you have installed [Visual Studio Code][]
 
 1. Once it finishes downloading Flutter, the **Output** panel displays.
 
-   ```terminal
+   ```console
    Checking Dart SDK version...
    Downloading Dart SDK from the Flutter engine ...
    Expanding downloaded archive...
@@ -80,13 +78,13 @@ you have installed [Visual Studio Code][]
 
    When successful, VS Code displays this pop-up notification:
 
-   ```terminal
+   ```console
    Initializing the Flutter SDK. This may take a few minutes.
    ```
 
    While initializing, the **Output** panel displays the following:
 
-   ```terminal
+   ```console
    Building flutter tool...
    Running pub upgrade...
    Resolving dependencies...
@@ -106,7 +104,7 @@ you have installed [Visual Studio Code][]
 
    When the Flutter install succeeds, VS Code displays this pop-up notification:
 
-   ```terminal
+   ```console
    Do you want to add the Flutter SDK to PATH so it's accessible
    in external terminals?
    ```
@@ -117,7 +115,7 @@ you have installed [Visual Studio Code][]
 
    When successful, a notification displays:
 
-   ```terminal
+   ```console
    The Flutter SDK was added to your PATH
    ```
 

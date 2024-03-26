@@ -16,8 +16,8 @@ use the methods provided by the [`WidgetTester`][] class,
 which is included in the [`flutter_test`][] package:
 
 In this recipe, learn how to scroll through a list of items to
-verify a specific widget is being displayed, and discuss the pros on cons of
-different approaches. 
+verify a specific widget is being displayed,
+and the pros and cons of different approaches. 
 
 This recipe uses the following steps:
 

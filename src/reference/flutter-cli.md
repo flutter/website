@@ -10,7 +10,7 @@ you can use the [`dart`][] command-line tool.
 Here's how you might use the `flutter` tool to create, analyze, test, and run an
 app:
 
-```terminal
+```console
 $ flutter create my_app
 $ cd my_app
 $ flutter analyze
@@ -20,7 +20,7 @@ $ flutter run lib/main.dart
 
 To run [`pub`][`dart pub`] commands using the `flutter` tool:
 
-```terminal
+```console
 $ flutter pub get
 $ flutter pub outdated
 $ flutter pub upgrade
@@ -28,14 +28,14 @@ $ flutter pub upgrade
 
 To view all commands that `flutter` supports:
 
-```terminal
+```console
 $ flutter --help --verbose
 ```
 
 To get the current version of the Flutter SDK, including its framework, engine,
 and tools:
 
-```terminal
+```console
 $ flutter --version
 ```
 

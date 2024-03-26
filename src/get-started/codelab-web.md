@@ -45,7 +45,7 @@ to animate in from the bottom of the screen.
 The animated GIF shows how the app works at the completion of this lab.
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What you'll learn</h4>
+  <h4>What you'll learn</h4>
 
 * How to write a Flutter app that looks natural on the web.
 * Basic structure of a Flutter app.
@@ -55,7 +55,7 @@ The animated GIF shows how the app works at the completion of this lab.
 {{site.alert.end}}
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">What you'll use</h4>
+  <h4>What you'll use</h4>
 
   You need three pieces of software to complete this lab:
 
@@ -76,7 +76,7 @@ You'll start with a simple web app that we provide for you.
 At the command line, perform the following command to
 make sure that you have Flutter installed correctly.
 
-```terminal
+```console
 $ flutter doctor
 Doctor summary (to see all details, run flutter doctor -v):
 [✓] Flutter (Channel master, 3.4.0-19.0.pre.254, on macOS 12.6 21G115
@@ -294,7 +294,8 @@ all of your edits will be made to the private
 `_SignUpFormState` class.
 
 {{site.alert.secondary}}
-  <h4 class="no_toc">Fun fact</h4>
+  <h4>Fun fact</h4>
+
 The Dart compiler enforces privacy for any identifier
 prefixed with an underscore. For more information,
 see the [Effective Dart Style Guide][].
@@ -594,7 +595,7 @@ launch the DevTools server as explained in the
 When DevTools launches, you should see something
 like the following:
 
-```terminal
+```console
 Serving DevTools at http://127.0.0.1:9100
 ```
 Go to this URL in a Chrome browser. You should see the DevTools

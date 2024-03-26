@@ -1,5 +1,4 @@
 #### Set up your target physical iOS device
-{:.no_toc}
 
 To deploy your Flutter app to a physical iPhone or iPad,
 you need to do the following:
@@ -11,7 +10,6 @@ you need to do the following:
   if your app uses Flutter plugins.
 
 ##### Create your Apple ID and Apple Developer account
-{:.no_toc}
 
 To test deploying to a physical iOS device, you need an Apple ID.
 
@@ -31,7 +29,6 @@ complete the first step and move on to the next section.
 [Apple ID]: https://support.apple.com/en-us/HT204316
 
 ##### Attach your physical iOS device to your Mac {#attach}
-{:.no_toc}
 
 Configure your physical iOS device to connect to Xcode.
 
@@ -47,7 +44,6 @@ Configure your physical iOS device to connect to Xcode.
 1. When prompted, unlock your iOS device.
 
 ##### Enable Developer Mode on iOS 16 or later
-{:.no_toc}
 
 Starting with iOS 16, Apple requires you to enable **[Developer Mode][]**
 to protect against malicious software.
@@ -71,7 +67,6 @@ Enable Developer Mode before deploying to a device running iOS 16 or later.
 1. Unlock your iOS device.
 
 ##### Enable developer code signing certificates
-{:.no_toc}
 
 To deploy to a physical iOS device, you need to establish trust with your
 Mac and the iOS device.
@@ -140,7 +135,6 @@ Follow the Xcode signing flow to provision your project.
 ![Check the app's Bundle ID][]{:.mw-100}
 
 ##### Enable trust of your Mac and iOS device {#trust}
-{:.no_toc}
 
 When you attach your physical iOS device for the first time,
 enable trust for both your Mac and the Development Certificate
@@ -150,7 +144,6 @@ You should enabled trust of your Mac on your iOS device when
 you [attached the device to your Mac](#attach).
 
 ###### Enable developer certificate for your iOS devices
-{:.no_toc}
 
 Enabling certificates varies in different versions of iOS.
 
@@ -214,7 +207,6 @@ If prompted, enter your Mac password into the
 **codesign wants to access key...** dialog and tap **Always Allow**.
 
 #### Set up wireless debugging on your iOS device (Optional)
-{:.no_toc}
 
 To debug your device using a Wi-Fi connection, follow this procedure.
 
@@ -240,7 +232,7 @@ If you don't see your device listed when using `flutter run`,
 extend the timeout. The timeout defaults to 10 seconds.
 To extend the timeout, change the value to an integer greater than 10.
 
-```terminal
+```console
 $ flutter run --device-timeout 60
 ```
 

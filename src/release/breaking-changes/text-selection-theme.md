@@ -96,7 +96,7 @@ but have failing golden file tests, you
 can update your master golden files using the
 following command:
 
-```terminal
+```console
 $ flutter test --update-goldens
 ```
 

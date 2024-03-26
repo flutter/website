@@ -271,7 +271,7 @@ but aren't required.
 1. Test run the `integration_test` tests locally. In a terminal,
    do the following:
 
-    ```terminal
+    ```console
     flutter test integration_test/app_test.dart
     ```
 

@@ -41,7 +41,7 @@ First, add this dependency to your project.
 
 To add the `video_player` package as a dependency, run `flutter pub add`:
 
-```terminal
+```console
 $ flutter pub add video_player
 ```
 

@@ -3,7 +3,7 @@
 {% assign devos = include.devos %}
 {% assign target = include.target %}
 {% assign compiler = include.compiler %}
-{% assign time = include.time %}
+{% assign attempt-time = include.attempt %}
 
 {% case devos %}
 {% when 'Windows' -%}
@@ -21,8 +21,23 @@
 
 {% include docs/help-link.md location='android-studio' section='#android-setup' %}
 
+To create Android apps with Flutter, verify that the following Android
+components have been installed.
+
+* **Android SDK Platform, API {{ site.appnow.android_sdk }}**
+* **Android SDK Command-line Tools**
+* **Android SDK Build-Tools**
+* **Android SDK Platform-Tools**
+* **Android Emulator**
+
+If you haven't installed these, or you don't know, continue with the following procedure.
+
+Otherwise, you can skip to the [next section][check-dev].
+
+[check-dev]: #check-your-development-setup
+
 {% comment %} Nav tabs {% endcomment -%}
-<ul class="nav nav-tabs" id="android-studio-start-{{devos | downcase}}" role="tablist">
+<ul class="nav nav-tabs" id="android-studio-start" role="tablist">
     <li class="nav-item">
         <a class="nav-link active" id="first-start-tab" href="#first-start" role="tab" aria-controls="first-start" aria-selected="true">First time using Android Studio</a>
     </li>
@@ -40,7 +55,7 @@
      aria-labelledby="first-start-tab"
      markdown="1">
 
-1. Start **Android Studio**.
+1. Launch **Android Studio**.
 
    The **Welcome to Android Studio** dialog displays.
 
@@ -62,7 +77,7 @@
      aria-labelledby="later-start-tab"
      markdown="1">
 
-1. Start **Android Studio**.
+1. Launch **Android Studio**.
 
 1. Go to the **Settings** dialog to view the **SDK Manager**.
 
@@ -153,7 +168,7 @@
 </div>
 {% comment %} End: Tab panes. {% endcomment -%}
 
-{% if time=="first" %}
+{% if attempt-time == 'first' %}
 
 ### Agree to Android licenses
 
@@ -166,14 +181,14 @@ agree to the licenses of the Android SDK platform.
 
 1. Run the following command to enable signing licenses.
 
-   ```terminal
+   ```console
    {{prompt}} flutter doctor --android-licenses
    ```
 
    If you accepted the Android Studio licenses at another time,
    this command returns:
 
-   ```terminal
+   ```console
    [========================================] 100% Computing updates...
    All SDK package licenses accepted.
    ```
@@ -184,14 +199,13 @@ agree to the licenses of the Android SDK platform.
    read each with care.
 
 #### Troubleshooting licensing issues
-{:.no_toc}
 
 <details markdown="1">
 <summary>How to fix the error of finding Java install</summary>
 
 You might have an issue with the Android SDK locating the Java SDK.
 
-```terminal
+```console
 $ flutter doctor --android-licenses
 
 ERROR: JAVA_HOME is set to an invalid directory: /Applications/Android\ Studio.app/Contents/jre/Contents/Home
@@ -229,7 +243,7 @@ Do not include the backslash between `Android` and `Studio`.
 To load this updated environment variable, reload your shell.
 This example uses the `zsh` resource file.
 
-```terminal
+```console
 source ~/.zshrc
 ```
 

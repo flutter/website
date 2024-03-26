@@ -146,7 +146,6 @@ call the [`debugDumpApp()`][] function.
    Hot reload re-renders your app.
 
 #### Example 4: Call `debugDumpApp()`
-{:.no_toc}
 
 <?code-excerpt "lib/dump_app.dart"?>
 ```dart
@@ -206,7 +205,7 @@ and thus marking itself dirty.
 This explains why a Flutter marks a specific object as "dirty".
 When you review the widget tree, look for a line that resembles the following:
 
-```nocode
+```plaintext
 └TextButton(dirty, dependencies: [MediaQuery, _InheritedTheme, _LocalizationsScope-[GlobalKey#5880d]], state: _ButtonStyleState#ab76e)
 ```
 
@@ -231,7 +230,6 @@ To dump the render tree:
    Hot reload re-renders your app.
 
 #### Example 5: Call `debugDumpRenderTree()`
-{:.no_toc}
 
 <?code-excerpt "lib/dump_render_tree.dart"?>
 ```dart
@@ -337,7 +335,6 @@ then call the superclass method.
 To debug a compositing issue, use [`debugDumpLayerTree()`][].
 
 #### Example 6: Call `debugDumpLayerTree()`
-{:.no_toc}
 
 <?code-excerpt "lib/dump_layer_tree.dart"?>
 ```dart
@@ -382,7 +379,7 @@ The `RepaintBoundary` widget creates:
 1. A `RenderRepaintBoundary` RenderObject in the render tree
    as shown in the **Example 5** results.
 
-   ```nocode
+   ```plaintext
    ╎     └─child: RenderRepaintBoundary#f8f28
    ╎       │ needs compositing
    ╎       │ creator: RepaintBoundary ← _FocusInheritedScope ← Semantics ←
@@ -401,7 +398,7 @@ The `RepaintBoundary` widget creates:
 1. A new layer in the layer tree as shown in the **Example 6**
    results.
 
-   ```nocode
+   ```plaintext
    ├─child 1: OffsetLayer#0f766
    │ │ creator: RepaintBoundary ← _FocusInheritedScope ← Semantics ←
    │ │   FocusScope ← PrimaryScrollController ← _ActionsScope ← Actions
@@ -433,7 +430,6 @@ You can also use the [`debugFocusChanges`][] boolean property to enable
 extensive logging when the focus changes.
 
 #### Example 7: Call `debugDumpFocusTree()`
-{:.no_toc}
 
 <?code-excerpt "lib/dump_focus_tree.dart"?>
 ```dart
@@ -485,7 +481,6 @@ To obtain a dump of the Semantics tree:
 1. Use the [`debugDumpSemanticsTree()`][] function.
 
 #### Example 8: Call `debugDumpSemanticsTree()`
-{:.no_toc}
 
 <?code-excerpt "lib/dump_semantic_tree.dart"?>
 ```dart
@@ -544,7 +539,7 @@ and the [`debugPrintEndFrameBanner`][].
 
 **The print frame banner log for Example 1**
 
-```nocode
+```plaintext
 I/flutter : ▄▄▄▄▄▄▄▄ Frame 12         30s 437.086ms ▄▄▄▄▄▄▄▄
 I/flutter : Debug print: Am I performing this work more than once per frame?
 I/flutter : Debug print: Am I performing this work more than once per frame?
@@ -562,8 +557,7 @@ This flag can be found in the `rendering` library.
 You can enable it at any time and affects all painting while `true`.
 Consider adding it to the top of your `void main()` entry point.
 
-#### Example 8
-{:.no_toc}
+#### Example 9
 
 See an example in the following code:
 
@@ -744,7 +738,6 @@ set the `showPerformanceOverlay` property to `true` on the
 constructor:
 
 #### Example 10
-{:.no_toc}
 
 <?code-excerpt "lib/performance_overlay.dart (PerfOverlay)"?>
 ```dart

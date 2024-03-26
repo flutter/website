@@ -331,7 +331,7 @@ For more information, see the documentation for [async and await][].
 To create an app using React Native,
 you would run `create-react-native-app` from the command line.
 
-```terminal
+```console
 $ create-react-native-app <projectname>
 ```
 
@@ -341,7 +341,7 @@ To create an app in Flutter, do one of the following:
 * Use the `flutter create` command from the command line. Make sure that the
   Flutter SDK is in your PATH.
 
-```terminal
+```console
 $ flutter create <projectname>
 ```
 
@@ -753,7 +753,7 @@ In Flutter, install a package using the following instructions:
 
 1. To add the `google_sign_in` package as a dependency, run `flutter pub add`:
 
-```terminal
+```console
 $ flutter pub add google_sign_in
 ```
 
@@ -1581,7 +1581,7 @@ providing a persistent store for simple data.
 
 To add the `shared_preferences` package as a dependency, run `flutter pub add`:
 
-```terminal
+```console
 $ flutter pub add shared_preferences
 ```
 
@@ -2052,7 +2052,7 @@ Flutter uses the `http` package.
 
 To add the `http` package as a dependency, run `flutter pub add`:
 
-```terminal
+```console
 $ flutter pub add http
 ```
 
@@ -2309,6 +2309,7 @@ your application using `flutter run` you can also access the menu by typing `h`
 in the terminal window, or type the following shortcuts:
 
 <div class="table-wrapper" markdown="1">
+
 | Action| Terminal Shortcut| Debug functions and properties|
 | :------- | :------: | :------ |
 | Widget hierarchy of the app| `w`| debugDumpApp()|
@@ -2322,6 +2323,7 @@ in the terminal window, or type the following shortcuts:
 | To save a screenshot to flutter. png| `s` ||
 | To quit| `q` ||
 {:.table.table-striped}
+
 </div>
 
 ## Animation
@@ -2503,6 +2505,7 @@ components mapped to the corresponding Flutter widget
 and common widget properties.
 
 <div class="table-wrapper" markdown="1">
+
 | React Native Component                                                                    | Flutter Widget                                                                                             | Description                                                                                                                            |
 | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | [`Button`](https://facebook.github.io/react-native/docs/button.html)                        | [`ElevatedButton`][]                           | A basic raised button.                                                                              |
@@ -2573,6 +2576,7 @@ and common widget properties.
 |                                                                                         | value [required]                                                                                          | [ double ] The current value of the slider.                                                                                                                                                                           |
 |                                                                                         | onChanged [required]                                                                                      | Called when the user selects a new value for the slider.                                                                                                                                                      |
 {:.table.table-striped}
+
 </div>
 
 
@@ -2601,12 +2605,12 @@ and common widget properties.
 [Dart's Type System]: {{site.dart-site}}/guides/language/sound-dart
 [Sound Null Safety]: {{site.dart-site}}/null-safety
 [`dart:io`]: {{site.api}}/flutter/dart-io/dart-io-library.html
-[DartPadA]: {{site.dartpad}}/0df636e00f348bdec2bc1c8ebc7daeb1
-[DartPadB]: {{site.dartpad}}/cf9e652f77636224d3e37d96dcf238e5
-[DartPadC]: {{site.dartpad}}/3f4625c16e05eec396d6046883739612
-[DartPadD]: {{site.dartpad}}/57ec21faa8b6fe2326ffd74e9781a2c7
-[DartPadE]: {{site.dartpad}}/c85038ad677963cb6dc943eb1a0b72e6
-[DartPadF]: {{site.dartpad}}/5454e8bfadf3000179d19b9bc6be9918
+[DartPadA]: {{site.dartpad}}/?id=0df636e00f348bdec2bc1c8ebc7daeb1
+[DartPadB]: {{site.dartpad}}/?id=cf9e652f77636224d3e37d96dcf238e5
+[DartPadC]: {{site.dartpad}}/?id=3f4625c16e05eec396d6046883739612
+[DartPadD]: {{site.dartpad}}/?id=57ec21faa8b6fe2326ffd74e9781a2c7
+[DartPadE]: {{site.dartpad}}/?id=c85038ad677963cb6dc943eb1a0b72e6
+[DartPadF]: {{site.dartpad}}/?id=5454e8bfadf3000179d19b9bc6be9918
 [Developing Packages & Plugins]: /packages-and-plugins/developing-packages
 [DevTools]: /tools/devtools
 [`Dismissible`]: {{site.api}}/flutter/widgets/Dismissible-class.html

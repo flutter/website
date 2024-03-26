@@ -66,13 +66,15 @@ The behavior varies slightly based on the platform and whether the app is
 launched and running.
 
 <div class="table-wrapper" markdown="1">
-| Platform / Scenario      | Using Navigator                                                     | Using Router                                                                                                                                                                                        |
+
+| Platform / Scenario      | Using Navigator                                                     | Using Router                                                                                                                                                                                               |
 |--------------------------|---------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | iOS (not launched)       | App gets initialRoute ("/") and a short time after gets a pushRoute | App gets initialRoute ("/") and a short time after uses the RouteInformationParser to parse the route and call RouterDelegate.setNewRoutePath, which configures the Navigator with the corresponding Page. |
 | Android - (not launched) | App gets initialRoute containing the route ("/deeplink")            | App gets initialRoute ("/deeplink") and passes it to the RouteInformationParser to parse the route and call RouterDelegate.setNewRoutePath, which configures the Navigator with the corresponding Pages.   |
 | iOS (launched)           | pushRoute is called                                                 | Path is parsed, and the Navigator is configured with a new set of Pages.                                                                                                                                   |
 | Android (launched)       | pushRoute is called                                                 | Path is parsed, and the Navigator is configured with a new set of Pages.                                                                                                                                   |
 {:.table.table-striped}
+
 </div>
 
 When using the [`Router`][Router] widget,
@@ -80,11 +82,13 @@ your app has the ability to replace the
 current set of pages when a new deep link
 is opened while the app is running.
 
-## For more information
+## To learn more
 
-[Learning Flutter's new navigation and routing system][] provides an
+* [Learning Flutter's new navigation and routing system][] provides an
 introduction to the Router system.
+* [Deep dive into Flutter deep linking][io-dl] video from Google I/O 2023
 
+[io-dl]: {{site.yt.watch}}?v=6RxuDcs6jVw&t=3s
 [Learning Flutter's new navigation and routing system]: {{site.flutter-medium}}/learning-flutters-new-navigation-and-routing-system-7c9068155ade
 [routes]: {{site.api}}/flutter/material/MaterialApp/routes.html
 [onGenerateRoute]: {{site.api}}/flutter/material/MaterialApp/onGenerateRoute.html
