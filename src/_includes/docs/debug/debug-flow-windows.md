@@ -27,7 +27,7 @@ Building Windows application...                                    31.4s
 
 <div class="tab-pane active" id="from-vscode-to-vs" role="tabpanel" aria-labelledby="from-vscode-to-vs-tab">
 
-#### Start debugging with VS Code first {#vscode-windows}
+#### Start debugging with VS Code first {:#vscode-windows}
 
 If you use VS Code to debug most of your code, start with this section.
 

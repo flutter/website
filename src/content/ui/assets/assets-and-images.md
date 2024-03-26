@@ -123,7 +123,7 @@ image from the asset declarations in the previous example:
 return const Image(image: AssetImage('assets/background.png'));
 ```
 
-### Resolution-aware image assets {#resolution-aware}
+### Resolution-aware image assets {:#resolution-aware}
 
 Flutter can load resolution-appropriate images for
 the current [device pixel ratio][].
@@ -182,7 +182,7 @@ if width and height are not specified.
 [MaterialApp][] or [CupertinoApp][] as an ancestor of your [`AssetImage`][].
 :::
 
-#### Bundling of resolution-aware image assets {#resolution-aware-bundling}
+#### Bundling of resolution-aware image assets {:#resolution-aware-bundling}
 
 You only need to specify the main asset or its parent directory
 in the `assets` section of `pubspec.yaml`.
@@ -199,7 +199,7 @@ awareness when loading images. (If you work with some of the lower
 level classes, like [`ImageStream`][] or [`ImageCache`][],
 you'll also notice parameters related to scale.)
 
-### Asset images in package dependencies {#from-packages}
+### Asset images in package dependencies {:#from-packages}
 
 To load an image from a [package][] dependency,
 the `package` argument must be provided to [`AssetImage`][].

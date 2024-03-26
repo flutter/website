@@ -195,7 +195,7 @@ and can't use their own browser engine.
 [currently experiencing a bug]: https://bugzilla.mozilla.org/show_bug.cgi?id=1788206
 [this bug]: https://bugs.webkit.org/show_bug.cgi?id=247394
 
-#### Requires JS-interop to access browser and JS APIs {#js-interop-wasm}
+#### Requires JS-interop to access browser and JS APIs {:#js-interop-wasm}
 
 To support compilation to Wasm, [Dart has shifted][JS interop]
 how it enables interop with browser and JavaScript APIs.

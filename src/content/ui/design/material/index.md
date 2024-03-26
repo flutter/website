@@ -43,8 +43,7 @@ and elevation support with the
 
 <iframe src="https://flutter.github.io/samples/web/material_3_demo/#/" width="100%" height="600px" title="Material 3 Demo App"></iframe>
 
-## More information
-{:.no_toc}
+## More information {:.no_toc}
 
 To learn more about Material Design and Flutter,
 check out:

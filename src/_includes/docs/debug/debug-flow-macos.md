@@ -26,7 +26,7 @@ Building macOS application...
 
 <div class="tab-pane active" id="from-vscode-to-xcode-macos" role="tabpanel" aria-labelledby="from-vscode-to-xcode-macos-tab">
 
-#### Start debugging with VS Code first {#vscode-macos}
+#### Start debugging with VS Code first {:#vscode-macos}
 
 ##### Start the debugger in VS Code
 
@@ -46,7 +46,7 @@ Building macOS application...
 
 <div class="tab-pane" id="from-xcode-macos" role="tabpanel" aria-labelledby="from-xcode-macos-tab">
 
-#### Start debugging with Xcode first {#xcode-macos}
+#### Start debugging with Xcode first {:#xcode-macos}
 
 ##### Start the debugger in Xcode
 

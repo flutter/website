@@ -93,15 +93,13 @@ To uninstall the SDK, remove the `flutter` directory.
 {{prompt}} {{rm-sdk}}
 ```
 
-## Remove configuration and package directories
-{:.no_toc}
+## Remove configuration and package directories {:.no_toc}
 
 Flutter and Dart install additional directories in your home directory.
 These contain configuration files and package downloads.
 Each of the following procedures are _optional_.
 
-### Remove Flutter configuration files
-{:.no_toc}
+### Remove Flutter configuration files {:.no_toc}
 
 If you don't want to preserve your Flutter configuration,
 remove the following directories from your home directory.
@@ -116,8 +114,7 @@ To remove these directories, run the following command.
 {{rm-flutter-files | strip}}
 ```
 
-### Remove Dart configuration files
-{:.no_toc}
+### Remove Dart configuration files {:.no_toc}
 
 If you don't want to preserve your Dart configuration,
 remove the following directories from your home directory.
@@ -132,8 +129,7 @@ To remove these directories, run the following command.
 {{rm-dart-files | strip}}
 ```
 
-### Remove pub package files
-{:.no_toc}
+### Remove pub package files {:.no_toc}
 
 :::important
 If you want to remove Flutter but not Dart,

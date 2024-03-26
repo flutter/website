@@ -1,4 +1,4 @@
-## Get the Flutter SDK {#get-sdk}
+## Get the Flutter SDK {:#get-sdk}
 
 {% include docs/china-notice.md %}
 

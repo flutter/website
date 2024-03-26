@@ -48,7 +48,7 @@ You can find the source code for this example in
 
 [`gen_l10n_example`]: {{site.repo.this}}/tree/{{site.branch}}/examples/internationalization/gen_l10n_example
 
-### Setting up an internation&shy;alized app: the Flutter<wbr>_localizations package {#setting-up}
+### Setting up an internation&shy;alized app: the Flutter<wbr>_localizations package {:#setting-up}
 
 By default, Flutter only provides US English localizations.
 To add support for other languages,

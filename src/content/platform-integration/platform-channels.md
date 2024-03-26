@@ -58,7 +58,7 @@ automatically performs for you in the framework.
 [`defaultTargetPlatform`]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
 [pigeon]: {{site.pub-pkg}}/pigeon
 
-## Architectural overview: platform channels {#architecture}
+## Architectural overview: platform channels {:#architecture}
 
 Messages are passed between the client (UI)
 and host (platform) using platform
@@ -90,7 +90,7 @@ with the platform acting as client to methods implemented in Dart.
 For a concrete example, check out the [`quick_actions`][] plugin.
 :::
 
-### Platform channel data types support and codecs {#codec}
+### Platform channel data types support and codecs {:#codec}
 
 The standard platform channels use a standard message codec that supports
 efficient binary serialization of simple JSON-like values, such as booleans,
@@ -205,7 +205,7 @@ platform side and vice versa:
 | Map                        | FlValue(FlValue, FlValue) |
 {% endsamplecode %}
 
-## Example: Calling platform-specific code using platform channels {#example}
+## Example: Calling platform-specific code using platform channels {:#example}
 
 The following code demonstrates how to call
 a platform-specific API to retrieve and display
@@ -233,7 +233,7 @@ For iOS with Swift,
 see [`/examples/platform_channel_swift/`][].
 :::
 
-### Step 1: Create a new app project {#example-project}
+### Step 1: Create a new app project {:#example-project}
 
 Start by creating a new app:
 
@@ -245,7 +245,7 @@ use the `-i` and/or `-a` flags:
 
 * In a terminal run: `flutter create -i objc -a java batterylevel`
 
-### Step 2: Create the Flutter platform client {#example-client}
+### Step 2: Create the Flutter platform client {:#example-client}
 
 The app's `State` class holds the current app state.
 Extend that to hold the current battery state.
@@ -1113,7 +1113,7 @@ You should now be able to run the application on Linux.
 If your device doesn't have a battery,
 it displays 'Battery level not available'.
 
-## Typesafe platform channels using Pigeon {#pigeon}
+## Typesafe platform channels using Pigeon {:#pigeon}
 
 The previous example uses `MethodChannel`
 to communicate between the host and client,
@@ -1184,7 +1184,7 @@ Future<void> onClick() async {
 }
 ```
 
-## Separate platform-specific code from UI code {#separate}
+## Separate platform-specific code from UI code {:#separate}
 
 If you expect to use your platform-specific code
 in multiple Flutter apps, you might consider
@@ -1192,7 +1192,7 @@ separating the code into a platform plugin located
 in a directory outside your main application.
 See [developing packages][] for details.
 
-## Publish platform-specific code as a package {#publish}
+## Publish platform-specific code as a package {:#publish}
 
 To share your platform-specific code with other developers
 in the Flutter ecosystem, see [publishing packages][].

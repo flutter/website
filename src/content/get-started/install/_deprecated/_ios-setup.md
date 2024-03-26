@@ -126,7 +126,7 @@ complete the first step and move on to the next section.
 
 [Apple ID]: https://support.apple.com/en-us/HT204316
 
-#### Attach your physical iOS device to your Mac {#attach}
+#### Attach your physical iOS device to your Mac {:#attach}
 
 Configure your physical iOS device to connect to Xcode.
 
@@ -234,7 +234,7 @@ If automatic signing fails in Xcode, verify that the project's
 
 ![Check the app's Bundle ID][]{:.mw-100}
 
-#### Enable trust of your Mac and iOS device {#trust}
+#### Enable trust of your Mac and iOS device {:#trust}
 
 When you attach your physical iOS device for the first time,
 enable trust for both your Mac and the Development Certificate

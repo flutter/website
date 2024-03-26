@@ -253,7 +253,7 @@ of Flutter, read the [architectural overview][].
 [architecture diagram]: https://docs.google.com/presentation/d/1cw7A4HbvM_Abv320rVgPVGiUP2msVs7tfGbkgdrTy0I/edit#slide=id.gbb3c3233b_0_162
 [Impeller]: /perf/impeller
 
-### How does Flutter run my code on Android? {#run-android}
+### How does Flutter run my code on Android? {:#run-android}
 
 The engine's C and C++ code are compiled with Android's NDK.
 The Dart code (both the SDK's and yours)
@@ -273,7 +273,7 @@ the top right-hand corner of your app when running in this mode,
 to remind you that performance is not characteristic of
 the finished release app.
 
-### How does Flutter run my code on iOS? {#run-ios}
+### How does Flutter run my code on iOS? {:#run-ios}
 
 The engine's C and C++ code are compiled with LLVM.
 The Dart code (both the SDK's and yours)
@@ -512,7 +512,7 @@ Flutter apps run using natively compiled code&mdash;no
 interpreters are involved.
 This means that Flutter apps start quickly.
 
-### What kind of developer cycles can I expect? How long between edit and refresh? {#hot-reload}
+### What kind of developer cycles can I expect? How long between edit and refresh? {:#hot-reload}
 
 Flutter implements a _hot reload_ developer cycle. You can expect
 sub-second reload times, on a device or an emulator/simulator.

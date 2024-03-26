@@ -27,7 +27,7 @@ Building com.example.myApp for device (ios)...
 
 <div class="tab-pane active" id="from-vscode-to-xcode-ios" role="tabpanel" aria-labelledby="from-vscode-to-xcode-ios-tab">
 
-#### Start debugging with VS Code first {#vscode-ios}
+#### Start debugging with VS Code first {:#vscode-ios}
 
 If you use VS Code to debug most of your code, start with this section.
 
@@ -49,7 +49,7 @@ If you use VS Code to debug most of your code, start with this section.
 
 <div class="tab-pane" id="from-xcode-ios" role="tabpanel" aria-labelledby="from-xcode-ios-tab">
 
-#### Start debugging with Xcode first {#xcode-ios}
+#### Start debugging with Xcode first {:#xcode-ios}
 
 If you use Xcode to debug most of your code, start with this section.
 

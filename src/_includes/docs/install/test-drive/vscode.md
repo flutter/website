@@ -1,6 +1,6 @@
 <div class="tab-pane active" id="vscode" role="tabpanel" aria-labelledby="vscode-tab">
 
-### Create your sample Flutter app {#create-app}
+### Create your sample Flutter app {:#create-app}
 
 1. Open the Command Palette.
 

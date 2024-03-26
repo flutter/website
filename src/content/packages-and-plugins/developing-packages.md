@@ -23,7 +23,7 @@ see the Medium article by Mehmet Fidanboylu,
 [Writing a good plugin][].
 :::
 
-### Package types {#types}
+### Package types {:#types}
 
 Packages can contain more than one kind of content:
 
@@ -56,7 +56,7 @@ Packages can contain more than one kind of content:
   Dart code combined with one or more platform-specific
   implementations that use Dart FFI([Android][Android], [iOS][iOS], [macOS][macOS]).
 
-## Developing Dart packages {#dart}
+## Developing Dart packages {:#dart}
 
 The following instructions explain how to write a Flutter
 package.
@@ -122,7 +122,7 @@ For additional details on how to organize the
 package contents,
 see the [Dart library package][] documentation.
 
-## Developing plugin packages {#plugin}
+## Developing plugin packages {:#plugin}
 
 If you want to develop a package that calls into
 platform-specific APIs,
@@ -196,7 +196,7 @@ why they are useful, and how they are
 implemented, see the Medium article by Harry Terkelsen,
 [How To Write a Flutter Web Plugin, Part 2][].
 
-### Specifying a plugin's supported platforms {#plugin-platforms}
+### Specifying a plugin's supported platforms {:#plugin-platforms}
 
 Plugins can specify the platforms they support by
 adding keys to the `platforms` map in the
@@ -393,7 +393,7 @@ $ flutter create --template=plugin --platforms=android,ios -i objc hello
 $ flutter create --template=plugin --platforms=android,ios -a java hello
 ```
 
-### Step 2: Implement the package {#edit-plugin-package}
+### Step 2: Implement the package {:#edit-plugin-package}
 
 As a plugin package contains code for several platforms
 written in several programming languages,
@@ -667,7 +667,7 @@ check out [Flutter in plugin tests][].
 [Flutter in plugin tests]: /testing/plugins-in-tests
 [Testing plugins]: /testing/testing-plugins
 
-## Developing FFI plugin packages {#plugin-ffi}
+## Developing FFI plugin packages {:#plugin-ffi}
 
 If you want to develop a package that calls into native APIs using
 Dart's FFI, you need to develop an FFI plugin package.
@@ -904,7 +904,7 @@ package_1
 <some license text>
 ```
 
-## Publishing your package {#publish}
+## Publishing your package {:#publish}
 
 :::tip
 Have you noticed that some of the packages and plugins
@@ -948,7 +948,7 @@ $ flutter pub publish
 For more details on publishing, see the
 [publishing docs][] on dart.dev.
 
-## Handling package interdependencies {#dependencies}
+## Handling package interdependencies {:#dependencies}
 
 If you are developing a package `hello` that depends on
 the Dart API exposed by another package, you need to add

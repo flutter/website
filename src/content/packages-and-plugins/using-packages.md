@@ -361,7 +361,7 @@ additional dependency options are available:
 The following examples walk through the necessary steps for
 using packages.
 
-### Example: Using the css_colors package {#css-example}
+### Example: Using the css_colors package {:#css-example}
 
 The [`css_colors`][] package
 defines color constants for CSS colors, so use the constants
@@ -419,7 +419,7 @@ To use this package:
 
 1. Run the app. The app's background should now be orange.
 
-### Example: Using the url_launcher package to launch the browser {#url-example}
+### Example: Using the url_launcher package to launch the browser {:#url-example}
 
 The [`url_launcher`][] plugin package enables opening
 the default browser on the mobile platform to display

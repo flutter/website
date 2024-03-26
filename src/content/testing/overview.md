@@ -60,8 +60,7 @@ check out [Testing plugins][].
 [Plugins in Flutter tests]: /testing/plugins-in-tests
 [Testing plugins]: /testing/testing-plugins
 
-### Recipes
-{:.no_toc}
+### Recipes {:.no_toc}
 
 {% include docs/testing-toc.md type='unit' %}
 
@@ -79,8 +78,7 @@ widgets. A widget test is therefore more comprehensive than a unit test.
 However, like a unit test, a widget test's environment is replaced with
 an implementation much simpler than a full-blown UI system.
 
-### Recipes
-{:.no_toc}
+### Recipes {:.no_toc}
 
 {% include docs/testing-toc.md type='widget' %}
 
@@ -100,8 +98,7 @@ from the test driver code to avoid skewing the results.
 For more information on how to write integration tests, see the [integration
 testing page][].
 
-### Recipes
-{:.no_toc}
+### Recipes {:.no_toc}
 
 {% include docs/testing-toc.md type='integration' %}
 

@@ -39,7 +39,6 @@ you must have the following version of {{os}} and the listed
 software packages.
 
 #### Operating system
-{:.no_toc}
 
 {% if os == 'Linux' %}
 {%- capture supported-os %}
@@ -52,8 +51,7 @@ and Ubuntu Linux {{site.devmin.linux.ubuntu}} or later
 
 Flutter supports {{supported-os}}.
 
-#### Development tools
-{:.no_toc}
+#### Development tools {:.no_toc}
 
 {% include docs/install/reqs/linux/software.md target=target os=os %}
 

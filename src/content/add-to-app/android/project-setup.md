@@ -57,8 +57,7 @@ the Flutter module still runs correctly.
 
 <div class="tab-pane active" id="with-android-studio" role="tabpanel" aria-labelledby="with-android-studio-tab">
 
-### Integrate with Android Studio
-{:.no_toc}
+### Integrate with Android Studio {:.no_toc}
 
 The Android Studio IDE can help integrate your Flutter module.
 Using Android Studio, you can edit both your Android and Flutter code
@@ -110,8 +109,7 @@ This shows all files without filtering.
 
 <div class="tab-pane" id="without-android-studio" role="tabpanel" aria-labelledby="without-android-studio-tab">
 
-### Integrate without Android Studio
-{:.no_toc}
+### Integrate without Android Studio {:.no_toc}
 
 To integrate a Flutter module with an existing Android app
 manually, without using Flutter's Android Studio plugin,
@@ -246,8 +244,7 @@ existing app in Gradle. You can achieve this in two ways.
 
 <div class="tab-pane active" id="android-archive" role="tabpanel" aria-labelledby="android-archive-tab">
 
-### Depend on the Android Archive (AAR)
-{:.no_toc}
+### Depend on the Android Archive (AAR) {:.no_toc}
 
 This option packages your Flutter library as a generic local
 Maven repository composed of AARs and POMs artifacts.
@@ -320,7 +317,8 @@ dependencyResolutionManagement {
 }
 
 ```
-</br>
+
+<br>
 
 ### Kotlin DSL based Android Project
 
@@ -391,8 +389,7 @@ the `Build > Flutter > Build AAR` menu.
 
 <div class="tab-pane" id="module-source" role="tabpanel" aria-labelledby="module-source-tab">
 
-### Depend on the module's source code
-{:.no_toc}
+### Depend on the module's source code {:.no_toc}
 
 This option enables a one-step build for both your
 Android project and Flutter project. This option is
