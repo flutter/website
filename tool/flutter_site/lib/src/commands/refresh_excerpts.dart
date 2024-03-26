@@ -53,7 +53,7 @@ Future<int> _refreshExcerpts({
   // TODO: Replace diffutils with cross-platform solution.
   final diffVersionOutput =
       Process.runSync('diff', ['--version']).stdout.toString();
-  final diffVersionLine = RegExp(r'^diff.*(3\.\d+)$', multiLine: true)
+  final diffVersionLine = RegExp(r'^diff.*3\.(\d+)$', multiLine: true)
       .firstMatch(diffVersionOutput);
   if (diffVersionLine == null) {
     stderr.writeln(
@@ -61,10 +61,11 @@ Future<int> _refreshExcerpts({
     );
     return 1;
   } else {
-    final diffVersion = double.tryParse(diffVersionLine[1] ?? '');
-    if (diffVersion == null || diffVersion < 3.6) {
+    final diffPatchVersion = int.tryParse(diffVersionLine[1] ?? '');
+    if (diffPatchVersion == null || diffPatchVersion < 6) {
       stderr.writeln(
-        'Error: diffutils version >=3.6 required - your version: $diffVersion!',
+        'Error: diffutils version >=3.6 required - '
+        'your version: $diffPatchVersion!',
       );
       return 1;
     }
