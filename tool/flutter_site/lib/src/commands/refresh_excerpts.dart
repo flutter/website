@@ -65,7 +65,7 @@ Future<int> _refreshExcerpts({
     if (diffPatchVersion == null || diffPatchVersion < 6) {
       stderr.writeln(
         'Error: diffutils version >=3.6 required - '
-        'your version: $diffPatchVersion!',
+        'your version: 3.$diffPatchVersion!',
       );
       return 1;
     }
