@@ -72,16 +72,16 @@ following subjects in the listed order.
 : Learn about different techniques for caching
   local data.
 
-[Widget fundamentals]: {{site.url}}/get-started/fwe/fundamentals
-[Layout]: {{site.url}}/get-started/fwe/layout
-[State management]: {{site.url}}/get-started/fwe/state-management
-[Handling user input]: {{site.url}}/get-started/fwe/user-input
-[Networking and data]: {{site.url}}/networking
-[Local data and caching]: {{site.url}}/get-started/fwe/local-caching
+[Widget fundamentals]: /get-started/fwe/fundamentals
+[Layout]: /get-started/fwe/layout
+[State management]: /get-started/fwe/state-management
+[Handling user input]: /get-started/fwe/user-input
+[Networking and data]: /networking
+[Local data and caching]: /get-started/fwe/local-caching
 
 ## Feedback
 
 As this section of the website is evolving,
 we [welcome your feedback][]!
 
-[welcome your feedback]: {{site.url}}/get-started/fwe
+[welcome your feedback]: /get-started/fwe

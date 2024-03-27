@@ -154,42 +154,42 @@ The following resources explain individual APIs.
 * [`Positioned`][]
 * [`MediaQuery`][]
 
-[Layouts in Flutter]: {{site.url}}/ui/layout
-[Understanding constraints]: {{site.url}}/ui/layout/constraints
+[Layouts in Flutter]: /ui/layout
+[Understanding constraints]: /ui/layout/constraints
 [Expanded—Flutter Widget of the Week]: {{site.youtube-site}}/watch?v=_rnZaagadyo
 [Flexible—Flutter Widget of the Week]: {{site.youtube-site}}/watch?v=CI7x0mAZiY0
 [Intrinsic widgets—Decoding Flutter]: {{site.youtube-site}}/watch?v=Si5XJ_IocEs
-[Build a Flutter Layout]: {{site.url}}/ui/layout/tutorial
-[Basic scrolling]: {{site.url}}/ui/layout/scrolling#basic-scrolling
+[Build a Flutter Layout]: /ui/layout/tutorial
+[Basic scrolling]: /ui/layout/scrolling#basic-scrolling
 [Builder—Flutter Widget of the Week]: {{site.youtube-site}}/watch?v=xXNOkIuSYuA
 [ListView—Flutter Widget of the Week]: {{site.youtube-site}}/watch?v=KJpkjHGiI5A
-[Work with long lists]: {{site.url}}/cookbook/lists/long-lists
-[Create a horizontal list]: {{site.url}}/cookbook/lists/horizontal-list
-[Create a grid list]: {{site.url}}/cookbook/lists/grid-lists
+[Work with long lists]: /cookbook/lists/long-lists
+[Create a horizontal list]: /cookbook/lists/horizontal-list
+[Create a grid list]: /cookbook/lists/grid-lists
 [PageView—Flutter Widget of the Week]: {{site.youtube-site}}/watch?v=J1gE9xvph-A
 [Stack—Flutter Widget of the Week]: {{site.youtube-site}}/watch?v=liEGSeD3Zt8
-[Stack documentation]: {{site.url}}/ui/layout#stack
+[Stack documentation]: /ui/layout#stack
 [OverlayPortal—Flutter Widget of the Week]: {{site.youtube-site}}/watch?v=S0Ylpa44OAQ
 [LayoutBuilder—Flutter Widget of the Week]: {{site.youtube-site}}/watch?v=IYDVcriKjsw
 [MediaQuery—Flutter Widget of the Week]: {{site.youtube-site}}/watch?v=A3WrA4zAaPw
 [Adaptive apps codelab]: {{site.codelabs}}/codelabs/flutter-adaptive-app
 [Building platform adaptive apps]: {{site.youtube-site}}/watch?v=RCdeSKVt7LI
-[DevTools—Widget inspector]: {{site.url}}/tools/devtools/inspector
+[DevTools—Widget inspector]: /tools/devtools/inspector
 [Unbounded height and width—Decoding Flutter]: {{site.youtube-site}}/watch?v=jckqXR5CrPI
 [2D Scrolling]: {{site.youtube-site}}/watch?v=ppEdTo-VGcg
 [`Builder`]: {{site.api}}/flutter/widgets/Builder-class.html
-[`Row`]: {{site.api}}flutter/widgets/Row-class.html
-[`Column`]: {{site.api}}flutter/widgets/Column-class.html
-[`Expanded`]: {{site.api}}flutter/widgets/Expanded-class.html
-[`Flexible`]: {{site.api}}flutter/widgets/Flexible-class.html
-[`ListView`]: {{site.api}}flutter/widgets/ListView-class.html
-[`Stack`]: {{site.api}}flutter/widgets/Stack-class.html
-[`Positioned`]: {{site.api}}flutter/widgets/Positioned-class.html
-[`MediaQuery`]: {{site.api}}flutter/widgets/MediaQuery-class.html
+[`Row`]: {{site.api}}/flutter/widgets/Row-class.html
+[`Column`]: {{site.api}}/flutter/widgets/Column-class.html
+[`Expanded`]: {{site.api}}/flutter/widgets/Expanded-class.html
+[`Flexible`]: {{site.api}}/flutter/widgets/Flexible-class.html
+[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
+[`Stack`]: {{site.api}}/flutter/widgets/Stack-class.html
+[`Positioned`]: {{site.api}}/flutter/widgets/Positioned-class.html
+[`MediaQuery`]: {{site.api}}/flutter/widgets/MediaQuery-class.html
 
 ## Feedback
 
 As this section of the website is evolving,
 we [welcome your feedback][]!
 
-[welcome your feedback]: {{site.url}}/get-started/fwe
+[welcome your feedback]: /get-started/fwe
