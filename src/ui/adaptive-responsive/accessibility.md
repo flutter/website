@@ -5,6 +5,8 @@ description: >
 short-title: Accessibility
 ---
 
+<?code-excerpt path-base="ui/layout/adaptive_app_demos"?>
+
 Aside from standard advice on creating an
 [accessible app][], there are some special
 considerations to keep in mind when designing
@@ -35,8 +37,6 @@ densities, you can easily adjust your UI.
 
 To set a custom visual density,
 inject the density into your `MaterialApp` theme:
-
-<?code-excerpt path-base="ui/layout/adaptive_app_demos"?>
 
 <?code-excerpt "lib/main.dart (VisualDensity)"?>
 ```dart

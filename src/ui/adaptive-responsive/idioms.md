@@ -6,6 +6,8 @@ description: >
 short-title: Idioms
 ---
 
+<?code-excerpt path-base="ui/layout/adaptive_app_demos"?>
+
 The final area to consider for adaptive apps is platform standards.
 Each platform has its own idioms and norms;
 these nominal or de facto standards inform user expectations
@@ -106,8 +108,6 @@ Flutter comes with a built-in `Scrollbar` widget that already
 has support for adaptive colors and sizes according to the
 current platform. The one tweak you might want to make is to
 toggle `alwaysShown` when on a desktop platform:
-
-<?code-excerpt path-base="ui/layout/adaptive_app_demos"?>
 
 <?code-excerpt "lib/pages/adaptive_grid_page.dart (ScrollbarAlwaysShown)"?>
 ```dart

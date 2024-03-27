@@ -6,7 +6,12 @@ description: >
 short-title: Layout
 ---
 
-[xxx PENDING: I'm coalescing this page from two previous pages. I'm not done with the text. It likely also needs code or other updates.]
+<?code-excerpt path-base="ui/layout/adaptive_app_demos"?>
+
+{% comment %}
+  TODO(sfshaza): I'm coalescing this page from two previous pages. I'm not done with the text.
+  It likely also needs code or other updates.
+{% endcomment -%}
 
 Flutter allows you to create apps that self-adapt
 to the device's screen size and orientation.
@@ -381,8 +386,6 @@ class TextStyles {
 ```
 
 These constants can then be used in place of hard-coded numeric values:
-
-<?code-excerpt path-base="ui/layout/adaptive_app_demos"?>
 
 <?code-excerpt "lib/global/device_type.dart (UseConstants)"?>
 ```dart

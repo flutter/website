@@ -4,6 +4,8 @@ description: >
   xxx
 ---
 
+<?code-excerpt path-base="ui/layout/adaptive_app_demos"?>
+
 ## Handling input
 
 It isn't enough to just adapt how your app looks,
@@ -302,8 +304,6 @@ return MouseRegion(
 
 `MouseRegion` is also useful for creating custom
 rollover and hover effects:
-
-<?code-excerpt path-base="ui/layout/adaptive_app_demos"?>
 
 <?code-excerpt "lib/pages/focus_examples_page.dart (MouseOver)"?>
 ```dart
