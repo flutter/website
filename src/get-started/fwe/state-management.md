@@ -549,12 +549,12 @@ If you would like to learn more, check out the following resources:
 [build_collection]: {{site.pub-pkg}}/built_collection
 [Flutter Architecture Samples]: https://fluttersamples.com/
 [InheritedWidget]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
-[List of state management approaches]: {{site.url}}/data-and-backend/state-mgmt/options
+[List of state management approaches]: /data-and-backend/state-mgmt/options
 [Pragmatic state management]: {{site.youtube-site}}/watch?v=d_m5csmrf7I
 [Provider counter]: https://github.com/flutter/samples/tree/main/provider_counter
 [Provider shopper]: https://flutter.github.io/samples/provider_shopper.html
-[State management]: {{site.url}}/data-and-backend/state-mgmt/intro
-[StatefulWidget]: {{site.url}}/flutter/widgets/StatefulWidget-class.html
+[State management]: /data-and-backend/state-mgmt/intro
+[StatefulWidget]: /flutter/widgets/StatefulWidget-class.html
 [`ChangeNotifier`]: {{site.api}}/flutter/foundation/ChangeNotifier-class.html
 [`InheritedNotifier`]: {{site.api}}/flutter/widgets/InheritedNotifier-class.html
 [`ListenableBuilder`]: https://api.flutter.dev/flutter/widgets/ListenableBuilder-class.html
@@ -562,8 +562,8 @@ If you would like to learn more, check out the following resources:
 [`ValueListenableBuilder`]: {{site.api}}/flutter/widgets/ValueListenableBuilder-class.html
 [`ValueListenable`]: {{site.api}}/flutter/foundation/ValueListenable-class.html
 [`ValueNotifier`]: {{site.api}}/flutter/foundation/ValueNotifer-class.html
-[architecture-state]: {{site.url}}/resources/architectural-overview#state-management
-[ephemeral-state]: {{site.url}}/data-and-backend/state-mgmt/ephemeral-vs-app
+[architecture-state]: /resources/architectural-overview#state-management
+[ephemeral-state]: /data-and-backend/state-mgmt/ephemeral-vs-app
 [freezed]: {{site.pub-pkg}}/freezed
 [inherited-widget-video]: {{site.youtube-site}}/watch?v=og-vJqLzg2c
 [managing-state-video]: {{site.youtube-site}}/watch?v=vU9xDLdEZtU
