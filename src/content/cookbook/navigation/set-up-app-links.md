@@ -135,7 +135,7 @@ under **Release> Setup > App Integrity> App Signing tab**:
 If you are storing the key locally,
 you can generate sha256 using the following command:
 
-```
+```console
 keytool -list -v -keystore <path-to-keystore>
 ```
 
@@ -175,7 +175,7 @@ the devices. This ensures that the Flutter application is installed.
 
 To test **only** the app setup, use the adb command:
 
-```
+```console
 adb shell 'am start -a android.intent.action.VIEW \
     -c android.intent.category.BROWSABLE \
     -d "http://<web-domain>/details"' \

@@ -59,6 +59,11 @@ ${content}
     return `<div class="tag-content">${content}</div>`;
   });
 
+  // TODO(parlough): Make this more generic.
+  eleventyConfig.addFilter('children_pages', function (pages, pageUrl) {
+    return pages.filter((page) => page.url.includes(pageUrl) && page.url !== pageUrl);
+  });
+
   eleventyConfig.addFilter('regex_replace', regexReplace);
   eleventyConfig.addFilter('toISOString', toISOString);
   eleventyConfig.addFilter(

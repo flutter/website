@@ -30,7 +30,7 @@ To export a font from a package, you need to import the font files into the
 In this example, assume you've got a Flutter library called
 `awesome_package` with fonts living in a `lib/fonts` folder.
 
-```
+```plaintext
 awesome_package/
   lib/
     awesome_package.dart

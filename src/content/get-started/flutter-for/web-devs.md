@@ -1,7 +1,7 @@
 ---
 title: Flutter for web developers
-description: Learn how to apply Web developer knowledge when building Flutter apps.
-css-old: [two_column.css]
+description: >-
+  Learn how to apply Web developer knowledge when building Flutter apps.
 ---
 
 <?code-excerpt path-base="get-started/flutter-for/web_devs"?>
@@ -68,7 +68,6 @@ there is a textAlign property of a [`Text`][] widget.
 In both HTML and Flutter, child elements or widgets
 are anchored at the top left, by default.
 
-<div class="lefthighlight">
 ```css
 <div class="grey-box">
   Lorem ipsum
@@ -81,8 +80,7 @@ are anchored at the top left, by default.
     [!font: 900 24px Georgia;!]
 }
 ```
-</div>
-<div class="righthighlight">
+
 <?code-excerpt "lib/main.dart (Container)" replace="/\/\*//g;/\*\/ *//g"?>
 ```dart
 final container = Container(
@@ -102,7 +100,6 @@ final container = Container(
   ),
 );
 ```
-</div>
 
 ### Setting background color
 
@@ -117,7 +114,6 @@ use the `decoration` property.
 
 The CSS examples use the hex color equivalents to the Material color palette.
 
-<div class="lefthighlight">
 ```css
 <div class="grey-box">
   Lorem ipsum
@@ -130,9 +126,7 @@ The CSS examples use the hex color equivalents to the Material color palette.
     font: 900 24px Roboto;
 }
 ```
-</div>
 
-<div class="righthighlight">
 <?code-excerpt "lib/main.dart (Container2)" replace="/\/\*//g;/\*\/ *//g"?>
 ```dart
 final container = Container(
@@ -147,9 +141,7 @@ final container = Container(
   ),
 );
 ```
-</div>
 
-<div class="righthighlight">
 <?code-excerpt "lib/main.dart (Container3)" replace="/\/\*//g;/\*\/ *//g"?>
 ```dart
 final container = Container(
@@ -166,7 +158,6 @@ final container = Container(
   ),
 );
 ```
-</div>
 
 ### Centering components
 
@@ -177,7 +168,6 @@ To accomplish a similar effect in CSS, the parent element uses either a flex
 or table-cell display behavior. The examples on this page show the flex
 behavior.
 
-<div class="lefthighlight">
 ```css
 <div class="grey-box">
   Lorem ipsum
@@ -193,9 +183,7 @@ behavior.
     justify-content: center;!]
 }
 ```
-</div>
 
-<div class="righthighlight">
 <?code-excerpt "lib/main.dart (Center)" replace="/\/\*//g;/\*\/ *//g"?>
 ```dart
 final container = Container(
@@ -211,7 +199,6 @@ final container = Container(
   ),
 );
 ```
-</div>
 
 ### Setting container width
 
@@ -226,7 +213,6 @@ Create a new [`BoxConstraints`][] widget with a `minWidth` or `maxWidth`.
 For nested Containers, if the parent's width is less than the child's width,
 the child Container sizes itself to match the parent.
 
-<div class="lefthighlight">
 ```css
 <div class="grey-box">
   <div class="red-box">
@@ -251,9 +237,7 @@ the child Container sizes itself to match the parent.
     max-width: 240px;!]
 }
 ```
-</div>
 
-<div class="righthighlight">
 <?code-excerpt "lib/main.dart (Nested)" replace="/\/\*//g;/\*\/ *//g"?>
 ```dart
 final container = Container(
@@ -279,7 +263,6 @@ final container = Container(
   ),
 );
 ```
-</div>
 
 ## Manipulating position and size
 
@@ -294,7 +277,6 @@ To specify an absolute position for a widget as x-y coordinates,
 nest it in a [`Positioned`][] widget that is,
 in turn, nested in a [`Stack`][] widget.
 
-<div class="lefthighlight">
 ```css
 <div class="grey-box">
   <div class="red-box">
@@ -318,9 +300,7 @@ in turn, nested in a [`Stack`][] widget.
     left: 24px;!]
 }
 ```
-</div>
 
-<div class="righthighlight">
 <?code-excerpt "lib/main.dart (Absolute)" replace="/\/\*//g;/\*\/ *//g"?>
 ```dart
 final container = Container(
@@ -350,7 +330,6 @@ final container = Container(
   ),
 );
 ```
-</div>
 
 ### Rotating components
 
@@ -364,7 +343,6 @@ create a new [`Matrix4`][] identity object
 and use its `rotateZ()` method to specify the rotation factor
 using radians (degrees × π / 180).
 
-<div class="lefthighlight">
 ```css
 <div class="grey-box">
   <div class="red-box">
@@ -388,9 +366,7 @@ using radians (degrees × π / 180).
     [!transform: rotate(15deg);!]
 }
 ```
-</div>
 
-<div class="righthighlight">
 <?code-excerpt "lib/main.dart (Rotating)" replace="/\/\*//g;/\*\/ *//g"?>
 ```dart
 final container = Container(
@@ -418,7 +394,6 @@ final container = Container(
   ),
 );
 ```
-</div>
 
 ### Scaling components
 
@@ -434,7 +409,6 @@ and use its `scale()` method to specify the scaling factor.
 When you scale a parent widget,
 its child widgets are scaled accordingly.
 
-<div class="lefthighlight">
 ```css
 <div class="grey-box">
   <div class="red-box">
@@ -458,9 +432,7 @@ its child widgets are scaled accordingly.
     [!transform: scale(1.5);!]
 }
 ```
-</div>
 
-<div class="righthighlight">
 <?code-excerpt "lib/main.dart (Scaling)" replace="/\/\*//g;/\*\/ *//g"?>
 ```dart
 final container = Container(
@@ -488,7 +460,6 @@ final container = Container(
   ),
 );
 ```
-</div>
 
 ### Applying a linear gradient
 
@@ -507,7 +478,6 @@ The gradient "angle" is based on the Alignment (x, y) values:
 
 #### Vertical gradient
 
-<div class="lefthighlight">
 ```css
 <div class="grey-box">
   <div class="red-box">
@@ -530,8 +500,7 @@ The gradient "angle" is based on the Alignment (x, y) values:
     [!background: linear-gradient(180deg, #ef5350, rgba(0, 0, 0, 0) 80%);!]
 }
 ```
-</div>
-<div class="righthighlight">
+
 <?code-excerpt "lib/main.dart (Gradient)" replace="/\/\*//g;/\*\/ *//g"?>
 ```dart
 final container = Container(
@@ -562,11 +531,9 @@ final container = Container(
   ),
 );
 ```
-</div>
 
 #### Horizontal gradient
 
-<div class="lefthighlight">
 ```css
 <div class="grey-box">
   <div class="red-box">
@@ -589,8 +556,7 @@ final container = Container(
     [!background: linear-gradient(90deg, #ef5350, rgba(0, 0, 0, 0) 80%);!]
 }
 ```
-</div>
-<div class="righthighlight">
+
 <?code-excerpt "lib/main.dart (HorizontalGradient)" replace="/\/\*//g;/\*\/ *//g"?>
 ```dart
 final container = Container(
@@ -621,7 +587,6 @@ final container = Container(
   ),
 );
 ```
-</div>
 
 ## Manipulating shapes
 
@@ -634,7 +599,6 @@ use the `borderRadius` property of a [`BoxDecoration`][] object.
 Create a new [`BorderRadius`][]
 object that specifies the radius for rounding each corner.
 
-<div class="lefthighlight">
 ```css
 <div class="grey-box">
   <div class="red-box">
@@ -658,8 +622,7 @@ object that specifies the radius for rounding each corner.
     [!border-radius: 8px;!]
 }
 ```
-</div>
-<div class="righthighlight">
+
 <?code-excerpt "lib/main.dart (RoundCorners)" replace="/\/\*//g;/\*\/ *//g"?>
 ```dart
 final container = Container(
@@ -685,7 +648,6 @@ final container = Container(
   ),
 );
 ```
-</div>
 
 ### Adding box shadows
 
@@ -702,7 +664,6 @@ Use the `boxShadow` property of `BoxDecoration` to create a list of
 `BoxShadow` widgets, which can be stacked
 to customize the shadow depth, color, and so on.
 
-<div class="lefthighlight">
 ```css
 <div class="grey-box">
   <div class="red-box">
@@ -727,8 +688,7 @@ to customize the shadow depth, color, and so on.
               0 6px 20px rgba(0, 0, 0, 0.5);!]
 }
 ```
-</div>
-<div class="righthighlight">
+
 <?code-excerpt "lib/main.dart (BoxShadow)" replace="/\/\*//g;/\*\/ *//g"?>
 ```dart
 final container = Container(
@@ -766,7 +726,6 @@ final container = Container(
   ),
 );
 ```
-</div>
 
 ### Making circles and ellipses
 
@@ -779,7 +738,6 @@ with the `borderRadius` property of [`BoxDecoration`][],
 Flutter provides a `shape` property
 with [`BoxShape` enum][] for this purpose.
 
-<div class="lefthighlight">
 ```css
 <div class="grey-box">
   <div class="red-circle">
@@ -806,8 +764,7 @@ with [`BoxShape` enum][] for this purpose.
     border-radius: 50%;!]
 }
 ```
-</div>
-<div class="righthighlight">
+
 <?code-excerpt "lib/main.dart (Circle)" replace="/\/\*//g;/\*\/ *//g"?>
 ```dart
 final container = Container(
@@ -835,7 +792,6 @@ final container = Container(
   ),
 );
 ```
-</div>
 
 ## Manipulating text
 
@@ -855,7 +811,6 @@ In Flutter, you specify white space as logical pixels
 for the `letterSpacing` and `wordSpacing` properties
 of a [`TextStyle`][] child of a `Text` widget.
 
-<div class="lefthighlight">
 ```css
 <div class="grey-box">
   <div class="red-box">
@@ -879,8 +834,7 @@ of a [`TextStyle`][] child of a `Text` widget.
     [!letter-spacing: 4px;!]
 }
 ```
-</div>
-<div class="righthighlight">
+
 <?code-excerpt "lib/main.dart (TextSpacing)" replace="/\/\*//g;/\*\/ *//g"?>
 ```dart
 final container = Container(
@@ -908,7 +862,6 @@ final container = Container(
   ),
 );
 ```
-</div>
 
 ### Making inline formatting changes
 
@@ -924,7 +877,6 @@ In the following example, "Lorem" is in a `TextSpan`
 with the default (inherited) text styling,
 and "ipsum" is in a separate `TextSpan` with custom styling.
 
-<div class="lefthighlight">
 ```css
 <div class="grey-box">
   <div class="red-box">
@@ -951,8 +903,7 @@ and "ipsum" is in a separate `TextSpan` with custom styling.
     font-style: italic;
 }!]
 ```
-</div>
-<div class="righthighlight">
+
 <?code-excerpt "lib/main.dart (InlineFormatting)" replace="/\/\*//g;/\*\/ *//g"?>
 ```dart
 final container = Container(
@@ -987,7 +938,6 @@ final container = Container(
   ),
 );
 ```
-</div>
 
 ### Creating text excerpts
 
@@ -998,7 +948,6 @@ In Flutter, use the `maxLines` property of a [`Text`][] widget
 to specify the number of lines to include in the excerpt,
 and the `overflow` property for handling overflow text.
 
-<div class="lefthighlight">
 ```css
 <div class="grey-box">
   <div class="red-box">
@@ -1025,8 +974,7 @@ and the `overflow` property for handling overflow text.
     -webkit-line-clamp: 2;!]
 }
 ```
-</div>
-<div class="righthighlight">
+
 <?code-excerpt "lib/main.dart (TextExcerpt)" replace="/\/\*//g;/\*\/ *//g"?>
 ```dart
 final container = Container(
@@ -1051,8 +999,6 @@ final container = Container(
   ),
 );
 ```
-</div>
-<div class="end-examples"></div>
 
 
 [basic shapes]: https://developer.mozilla.org/en-US/docs/Web/CSS/basic-shape

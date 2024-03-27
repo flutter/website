@@ -40,8 +40,8 @@ trade-offs of pre-warming an engine.
 Where you create a `FlutterEngine` depends on your host app.
 
 {% samplecode engine %}
-
 {% sample SwiftUI %}
+
 In this example, we create a `FlutterEngine` object inside a SwiftUI `ObservableObject`. 
 We then pass this `FlutterEngine` into a `ContentView` using the 
  `environmentObject()` property. 
@@ -76,6 +76,7 @@ struct MyApp: App {
 ```
 
 {% sample UIKit-Swift %}
+
 As an example, we demonstrate creating a
 `FlutterEngine`, exposed as a property, on app startup in
 the app delegate.
@@ -100,6 +101,7 @@ class AppDelegate: FlutterAppDelegate { // More on the FlutterAppDelegate.
   }
 }
 ```
+
 {% sample UIKit-ObjC %}
 
 In this example, we create a `FlutterEngine` 
@@ -143,8 +145,8 @@ We then pass this `FlutterEngine` into a
 ### Show a FlutterViewController with your FlutterEngine
 
 {% samplecode vc %}
-
 {% sample SwiftUI %}
+
 The following example shows a generic `ContentView` with a
 `Button` hooked to present a [`FlutterViewController`][].
 The `FlutterViewController` constructor takes the pre-warmed 
@@ -190,6 +192,7 @@ func showFlutter() {
 ```
 
 {% sample UIKit-Swift %}
+
 The following example shows a generic `ViewController` with a
 `UIButton` hooked to present a [`FlutterViewController`][].
 The `FlutterViewController` uses the `FlutterEngine` instance
@@ -223,6 +226,7 @@ class ViewController: UIViewController {
 ```
 
 {% sample UIKit-ObjC %}
+
 The following example shows a generic `ViewController` with a
 `UIButton` hooked to present a [`FlutterViewController`][].
 The `FlutterViewController` uses the `FlutterEngine` instance
@@ -289,6 +293,7 @@ To let the `FlutterViewController` present without an existing
 
 {% samplecode no-engine-vc %}
 {% sample SwiftUI %}
+
 ```swift
 import SwiftUI
 import Flutter
@@ -321,7 +326,9 @@ func openFlutterApp() {
   }
 }
 ```
+
 {% sample UIKit-Swift %}
+
 <?code-excerpt title="ViewController.swift"?>
 ```swift
 // Existing code omitted.
@@ -330,7 +337,9 @@ func showFlutter() {
   present(flutterViewController, animated: true, completion: nil)
 }
 ```
+
 {% sample UIKit-ObjC %}
+
 <?code-excerpt title="ViewController.m"?>
 ```objc
 // Existing code omitted.
@@ -448,6 +457,7 @@ For instance:
 
 {% samplecode app-delegate %}
 {% sample Swift %}
+
 <?code-excerpt title="AppDelegate.swift"?>
 ```swift
 import Foundation
@@ -508,6 +518,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FlutterAppLifeCycleProvid
 ```
 
 {% sample Objective-C %}
+
 <?code-excerpt title="AppDelegate.h"?>
 ```objc
 @import Flutter;
@@ -662,10 +673,13 @@ in `lib/other_file.dart` instead of `main()` in `lib/main.dart`:
 
 {% samplecode entrypoint-library %}
 {% sample Swift %}
+
 ```swift
 flutterEngine.run(withEntrypoint: "myOtherEntrypoint", libraryURI: "other_file.dart")
 ```
+
 {% sample Objective-C %}
+
 ```objc
 [flutterEngine runWithEntrypoint:@"myOtherEntrypoint" libraryURI:@"other_file.dart"];
 ```
@@ -680,13 +694,16 @@ FlutterViewController.
 
 {% samplecode initial-route %}
 {% sample Swift %}
+
 ```swift
 let flutterEngine = FlutterEngine()
 // FlutterDefaultDartEntrypoint is the same as nil, which will run main().
 engine.run(
   withEntrypoint: "main", initialRoute: "/onboarding")
 ```
+
 {% sample Objective-C %}
+
 ```objc
 FlutterEngine *flutterEngine = [[FlutterEngine alloc] init];
 // FlutterDefaultDartEntrypoint is the same as nil, which will run main().
@@ -703,11 +720,14 @@ a FlutterEngine:
 
 {% samplecode initial-route-without-pre-warming %}
 {% sample Swift %}
+
 ```swift
 let flutterViewController = FlutterViewController(
       project: nil, initialRoute: "/onboarding", nibName: nil, bundle: nil)
 ```
+
 {% sample Objective-C %}
+
 ```objc
 FlutterViewController* flutterViewController =
       [[FlutterViewController alloc] initWithProject:nil

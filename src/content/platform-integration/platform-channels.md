@@ -104,6 +104,7 @@ platform side and vice versa:
 
 {% samplecode type-mappings %}
 {% sample Java %}
+
 | Dart                       | Java                |
 | -------------------------- | ------------------- |
 | null                       | null                |
@@ -121,6 +122,7 @@ platform side and vice versa:
 | Map                        | java.util.HashMap   |
 
 {% sample Kotlin %}
+
 | Dart                       | Kotlin      |
 | -------------------------- | ----------- |
 | null                       | null        |
@@ -138,6 +140,7 @@ platform side and vice versa:
 | Map                        | HashMap     |
 
 {% sample Obj-C %}
+
 | Dart                       | Objective-C                                    |
 | -------------------------- | ---------------------------------------------- |
 | null                       | nil (NSNull when nested)                       |
@@ -155,6 +158,7 @@ platform side and vice versa:
 | Map                        | NSDictionary                                   |
 
 {% sample Swift %}
+
 | Dart                       | Swift                                   |
 | -------------------------- | --------------------------------------- |
 | null                       | nil                                     |
@@ -172,6 +176,7 @@ platform side and vice versa:
 | Map                        | Dictionary                              |
 
 {% sample "C++" %}
+
 | Dart                       | C++                                                      |
 | -------------------------- | -------------------------------------------------------- |
 | null                       | EncodableValue()                                         |
@@ -189,6 +194,7 @@ platform side and vice versa:
 | Map                        | EncodableValue(std::map<EncodableValue, EncodableValue>) |
 
 {% sample C %}
+
 | Dart                       | C (GObject)               |
 | -------------------------- | ------------------------- |
 | null                       | FlValue()                 |
@@ -332,6 +338,7 @@ Widget build(BuildContext context) {
 
 {% samplecode android-channel %}
 {% sample Kotlin %}
+
 Start by opening the Android host portion of your Flutter app
 in Android Studio:
 
@@ -447,6 +454,7 @@ And replace with the following:
 ```
 
 {% sample Java %}
+
 Start by opening the Android host portion of your Flutter app
 in Android Studio:
 
@@ -574,6 +582,7 @@ accessible from the **...** button in the toolbar.
 
 {% samplecode ios-channel %}
 {% sample Swift %}
+
 Start by opening the iOS host portion of your Flutter app in Xcode:
 
 1. Start Xcode.
@@ -659,6 +668,7 @@ batteryChannel.setMethodCallHandler({
 ```
 
 {% sample Objective-C %}
+
 Start by opening the iOS host portion of the Flutter app in Xcode:
 
 1. Start Xcode.

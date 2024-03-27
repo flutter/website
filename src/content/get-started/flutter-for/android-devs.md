@@ -1279,7 +1279,7 @@ arbitrarily called `images`, you would put the base image (1.0x)
 in the `images` folder, and all the other variants in sub-folders
 called with the appropriate ratio multiplier:
 
-```
+```plaintext
 images/my_icon.png       // Base: 1.0x image
 images/2.0x/my_icon.png  // 2.0x image
 images/3.0x/my_icon.png  // 3.0x image
@@ -1315,7 +1315,7 @@ Flutter currently doesn't have a dedicated resources-like system for strings.
 The best and recommended practice is to hold your strings in a `.arb` file as key-value pairs For example:
 
 <?code-excerpt "lib/arb_examples.arb"?>
-```arb
+```json
 {
    "@@locale": "en",
    "hello":"Hello {userName}",

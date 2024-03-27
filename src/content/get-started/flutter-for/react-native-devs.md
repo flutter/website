@@ -43,6 +43,7 @@ function startHere() {
   // Can be used as entry point
 }
 ```
+
 In Dart, every app must have a top-level `main()` function that serves as the
 entry point to the app.
 
@@ -643,7 +644,7 @@ When you create a new Flutter project,
 it builds the following directory structure.
 You can customize it later, but this is where you start.
 
-```
+```plaintext
 ┬
 └ project_name
   ┬

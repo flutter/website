@@ -53,6 +53,8 @@ export async function configureHighlighting(markdown) {
     const splitTokenInfo = token.info.match(/(\S+)\s?(.*?)$/m);
 
     if (!splitTokenInfo) {
+      console.log('HIIIIIII');
+      console.error(token);
       throw new Error('Code block missing language specifier.');
     }
 

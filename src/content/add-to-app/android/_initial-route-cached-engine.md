@@ -14,6 +14,7 @@ demonstrates the use of an initial route with a cached engine:
 
 {% samplecode cached-engine-with-initial-route %}
 {% sample Java %}
+
 <?code-excerpt title="MyApplication.java"?>
 ```java
 public class MyApplication extends Application {
@@ -35,7 +36,9 @@ public class MyApplication extends Application {
   }
 }
 ```
+
 {% sample Kotlin %}
+
 <?code-excerpt title="MyApplication.kt"?>
 ```kotlin
 class MyApplication : Application() {

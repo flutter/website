@@ -5,7 +5,7 @@ short-title: Widgets
 show_breadcrumbs: false
 ---
 
-{% assign sorted = site.data.catalog.widgets | sort:'name' -%}
+{% assign sorted = catalog.widgets | sort:'name' -%}
 
 This is an alphabetical list of nearly every widget that is bundled with
 Flutter. You can also [browse widgets by category][catalog].

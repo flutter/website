@@ -3,4 +3,14 @@ title: Testing
 description: A catalog of recipes showcasing testing your Flutter app.
 ---
 
-{% include docs/cookbook-toc.md pages=site.pages header_tag='h2' %}
+## Integration
+
+{% include docs/testing-toc.md type='integration' %}
+
+## Unit
+
+{% include docs/testing-toc.md type='unit' %}
+
+## Widget
+
+{% include docs/testing-toc.md type='widget' %}

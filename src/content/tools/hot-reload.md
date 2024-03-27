@@ -34,7 +34,7 @@ To hot reload a Flutter app:
 After a successful hot reload operation,
 you'll see a message in the console similar to:
 
-```
+```console
 Performing hot reload...
 Reloaded 1 of 448 libraries in 978ms.
 ```

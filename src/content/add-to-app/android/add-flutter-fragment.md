@@ -47,6 +47,7 @@ attach an instance of `FlutterFragment` in `onCreate()` within the
 
 {% samplecode add-fragment %}
 {% sample Java %}
+
 <?code-excerpt title="MyActivity.java"?>
 ```java
 public class MyActivity extends FragmentActivity {
@@ -92,7 +93,9 @@ public class MyActivity extends FragmentActivity {
     }
 }
 ```
+
 {% sample Kotlin %}
+
 <?code-excerpt title="MyActivity.kt"?>
 ```kotlin
 class MyActivity : FragmentActivity() {
@@ -151,6 +154,7 @@ These calls are shown in the following example:
 
 {% samplecode forward-activity-calls %}
 {% sample Java %}
+
 <?code-excerpt title="MyActivity.java"?>
 ```java
 public class MyActivity extends FragmentActivity {
@@ -209,7 +213,9 @@ public class MyActivity extends FragmentActivity {
     }
 }
 ```
+
 {% sample Kotlin %}
+
 <?code-excerpt title="MyActivity.kt"?>
 ```kotlin
 class MyActivity : FragmentActivity() {
@@ -288,6 +294,7 @@ factory method.
 
 {% samplecode use-prewarmed-engine %}
 {% sample Java %}
+
 <?code-excerpt title="MyApplication.java"?>
 ```java
 // Somewhere in your app, before your FlutterFragment is needed,
@@ -310,7 +317,9 @@ FlutterEngineCache
 ```java
 FlutterFragment.withCachedEngine("my_engine_id").build();
 ```
+
 {% sample Kotlin %}
+
 <?code-excerpt title="MyApplication.kt"?>
 ```kotlin
 // Somewhere in your app, before your FlutterFragment is needed,
@@ -333,6 +342,7 @@ FlutterEngineCache
 ```kotlin
 FlutterFragment.withCachedEngine("my_engine_id").build()
 ```
+
 {% endsamplecode %}
 
 `FlutterFragment` internally knows about [`FlutterEngineCache`][]
@@ -369,6 +379,7 @@ allows you to specify a desired initial route, as shown:
 
 {% samplecode launch-with-initial-route %}
 {% sample Java %}
+
 <?code-excerpt title="MyActivity.java"?>
 ```java
 // With a new FlutterEngine.
@@ -376,7 +387,9 @@ FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
     .initialRoute("myInitialRoute/")
     .build();
 ```
+
 {% sample Kotlin %}
+
 <?code-excerpt title="MyActivity.kt"?>
 ```kotlin
 // With a new FlutterEngine.
@@ -406,13 +419,16 @@ To specify an entrypoint, build `FlutterFragment`, as shown:
 
 {% samplecode launch-with-custom-entrypoint %}
 {% sample Java %}
+
 <?code-excerpt title="MyActivity.java"?>
 ```java
 FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
     .dartEntrypoint("mySpecialEntrypoint")
     .build();
 ```
+
 {% sample Kotlin %}
+
 <?code-excerpt title="MyActivity.kt"?>
 ```kotlin
 val flutterFragment = FlutterFragment.withNewEngine()
@@ -453,6 +469,7 @@ Select a `TextureView` by building a `FlutterFragment` with a
 
 {% samplecode launch-with-rendermode %}
 {% sample Java %}
+
 <?code-excerpt title="MyActivity.java"?>
 ```java
 // With a new FlutterEngine.
@@ -465,7 +482,9 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
     .renderMode(FlutterView.RenderMode.texture)
     .build();
 ```
+
 {% sample Kotlin %}
+
 <?code-excerpt title="MyActivity.kt"?>
 ```kotlin
 // With a new FlutterEngine.
@@ -517,6 +536,7 @@ build it with the following configuration:
 
 {% samplecode launch-with-transparency %}
 {% sample Java %}
+
 <?code-excerpt title="MyActivity.java"?>
 ```java
 // Using a new FlutterEngine.
@@ -529,7 +549,9 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
     .transparencyMode(FlutterView.TransparencyMode.transparent)
     .build();
 ```
+
 {% sample Kotlin %}
+
 <?code-excerpt title="MyActivity.kt"?>
 ```kotlin
 // Using a new FlutterEngine.
@@ -577,6 +599,7 @@ use the `shouldAttachEngineToActivity()` method in
 
 {% samplecode attach-to-activity %}
 {% sample Java %}
+
 <?code-excerpt title="MyActivity.java"?>
 ```java
 // Using a new FlutterEngine.
@@ -589,7 +612,9 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
     .shouldAttachEngineToActivity(false)
     .build();
 ```
+
 {% sample Kotlin %}
+
 <?code-excerpt title="MyActivity.kt"?>
 ```kotlin
 // Using a new FlutterEngine.

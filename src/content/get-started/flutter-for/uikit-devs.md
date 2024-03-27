@@ -1442,7 +1442,7 @@ are placed in an assets' folder for Flutter.
 As with iOS, assets are any type of file, not just images.
 For example, you might have a JSON file located in the `my-assets` folder:
 
-```
+```plaintext
 my-assets/data.json
 ```
 
@@ -1480,7 +1480,7 @@ project, you might decide to store it in a folder arbitrarily called `images`.
 Place the base image (1.0x) in the `images` folder, and the
 other variants in sub-folders named after the appropriate ratio multiplier:
 
-```
+```plaintext
 images/my_icon.png       // Base: 1.0x image
 images/2.0x/my_icon.png  // 2.0x image
 images/3.0x/my_icon.png  // 3.0x image

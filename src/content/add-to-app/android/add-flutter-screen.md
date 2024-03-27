@@ -57,6 +57,7 @@ import io.flutter.embedding.android.FlutterActivity;
 
 {% samplecode default-activity-launch %}
 {% sample Java %}
+
 <?code-excerpt title="ExistingActivity.java"?>
 ```java
 myButton.setOnClickListener(new OnClickListener() {
@@ -68,7 +69,9 @@ myButton.setOnClickListener(new OnClickListener() {
   }
 });
 ```
+
 {% sample Kotlin %}
+
 <?code-excerpt title="ExistingActivity.kt"?>
 ```kotlin
 myButton.setOnClickListener {
@@ -89,6 +92,7 @@ route in Flutter.
 
 {% samplecode custom-activity-launch %}
 {% sample Java %}
+
 <?code-excerpt title="ExistingActivity.java"?>
 ```java
 myButton.addOnClickListener(new OnClickListener() {
@@ -103,7 +107,9 @@ myButton.addOnClickListener(new OnClickListener() {
   }
 });
 ```
+
 {% sample Kotlin %}
+
 <?code-excerpt title="ExistingActivity.kt"?>
 ```kotlin
 myButton.setOnClickListener {
@@ -145,6 +151,7 @@ The following example arbitrarily pre-warms a
 
 {% samplecode prewarm-engine %}
 {% sample Java %}
+
 <?code-excerpt title="MyApplication.java"?>
 ```java
 public class MyApplication extends Application {
@@ -168,7 +175,9 @@ public class MyApplication extends Application {
   }
 }
 ```
+
 {% sample Kotlin %}
+
 <?code-excerpt title="MyApplication.kt"?>
 ```kotlin
 class MyApplication : Application() {
@@ -222,6 +231,7 @@ builder:
 
 {% samplecode cached-engine-activity-launch %}
 {% sample Java %}
+
 <?code-excerpt title="ExistingActivity.java"?>
 ```java
 myButton.addOnClickListener(new OnClickListener() {
@@ -235,7 +245,9 @@ myButton.addOnClickListener(new OnClickListener() {
   }
 });
 ```
+
 {% sample Kotlin %}
+
 <?code-excerpt title="ExistingActivity.kt"?>
 ```kotlin
 myButton.setOnClickListener {
@@ -339,6 +351,7 @@ pass the appropriate `BackgroundMode` to the `IntentBuilder`:
 
 {% samplecode transparent-activity-launch %}
 {% sample Java %}
+
 <?code-excerpt title="ExistingActivity.java"?>
 ```java
 // Using a new FlutterEngine.
@@ -359,6 +372,7 @@ startActivity(
 ```
 
 {% sample Kotlin %}
+
 <?code-excerpt title="ExistingActivity.kt"?>
 ```kotlin
 // Using a new FlutterEngine.

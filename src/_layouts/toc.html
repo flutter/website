@@ -20,7 +20,6 @@ sitemap: false
   {% endif -%}
   {% if forloop.index0 > 0 and path != '/ui' -%}
     {% assign topics = topics | where: "permalink", path -%}
-    {% assign topics = topics[0].children | where_exp:"item", "item != 'divider'" -%}
   {% endif -%}
 {% endfor -%}
 
