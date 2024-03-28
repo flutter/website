@@ -20,7 +20,7 @@ launched from Flutter Tools. - [#6848](https://github.com/flutter/devtools/issue
 ## Performance updates
 * Add a setting to include CPU samples in the Timeline. - [#7333](https://github.com/flutter/devtools/pull/7333), [#7369](https://github.com/flutter/devtools/pull/7369)
 
-    ![Timeline settings](tools/devtools/release-notes/images-2.34.1/7369-timeline-settings.png "Timeline settings")
+    ![Timeline settings](/tools/devtools/release-notes/images-2.34.1/7369-timeline-settings.png "Timeline settings")
 
 * Removed the legacy trace viewer. The legacy trace viewer was replaced with the
 embedded Perfetto trace viewer in DevTools version 2.21.1, but was available
@@ -31,14 +31,14 @@ the legacy trace viewer entirely. - [#7316](https://github.com/flutter/devtools/
 [#7480](https://github.com/flutter/devtools/pull/7480)
 * Added a loading message to show when refreshing the timeline. - [#7463](https://github.com/flutter/devtools/pull/7463)
 
-    ![Loading message](tools/devtools/release-notes/images-2.34.1/7463-overlay.png "Loading message")
+    ![Loading message](/tools/devtools/release-notes/images-2.34.1/7463-overlay.png "Loading message")
 
 ## Memory updates
 
 * Enabled export of snapshots and improved snapshotting
 performance. - [#7197](https://github.com/flutter/devtools/pull/7197), [#7439](https://github.com/flutter/devtools/pull/7439), [#7449](https://github.com/flutter/devtools/pull/7449)
 
-    ![Export snapshot](tools/devtools/release-notes/images-2.34.1/7197-export.png "Export snapshot")
+    ![Export snapshot](/tools/devtools/release-notes/images-2.34.1/7197-export.png "Export snapshot")
 
 * Fixed failures during disconnect in tracing. - [#7440](https://github.com/flutter/devtools/pull/7440)
 
