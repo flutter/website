@@ -60,4 +60,4 @@ IDE. - [#7415](https://github.com/flutter/devtools/pull/7415), [#7431](https://g
 ## Full commit history
 
 To find a complete list of changes in this release, check out the
-[DevTools git log](https://github.com/flutter/devtools/tree/v2.34.0).
+[DevTools git log](https://github.com/flutter/devtools/tree/v2.34.1).
