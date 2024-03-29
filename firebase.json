@@ -451,7 +451,7 @@
       { "source": "/go/key-based-mouse-tracker-annotation", "destination": "https://docs.google.com/document/d/18DCRSX4-KjJIrnru_Cv9cJjzQmUWM95r8n6uvbS45-E/edit", "type": 301 },
       { "source": "/go/layout-builder-optimization", "destination": "https://docs.google.com/document/d/1H8Z48vZAemV0Kw0It65JMoGhqVlDLQErkKZN8-r9pdU", "type": 301 },
       { "source": "/go/leak-tracker-high-level-design", "destination": "https://docs.google.com/document/d/158JfU9JKRqfhRPF5C0ceTuOAIWPber_MYftRiuTzlVE/edit?resourcekey=0-SFa6mZ69muVqA5eXi30wIQ", "type": 301 },
-      { "source": "/go/legacy-material", "destination": "https://docs.google.com/document/d/1REsg982YG2MlspsMOiNLpu8OIWkyehRRQUXHMU3tAAM/edit?usp=sharing", "type": 301 },      
+      { "source": "/go/legacy-material", "destination": "https://docs.google.com/document/d/1REsg982YG2MlspsMOiNLpu8OIWkyehRRQUXHMU3tAAM/edit?usp=sharing", "type": 301 },
       { "source": "/go/lifecycle-debug-flag", "destination": "https://docs.google.com/document/d/1WowGJhAMzYvwoyYLOzwjj1Jb0lwIjUpNfqvKjFWQZIM/edit", "type": 301 },
       { "source": "/go/link-widget-2", "destination": "https://docs.google.com/document/d/1-BJ4Rp6-glA9S__o97xDiNdd_lbuj7y6e394VE-5y4U", "type": 301 },
       { "source": "/go/link-widget", "destination": "https://docs.google.com/document/d/1HMadUQ2g7BRoCYmUvUYPAALU520fFv9PoPDkoz0wjAc", "type": 301 },
@@ -470,7 +470,7 @@
       { "source": "/go/max-length-enforcement", "destination": "https://docs.google.com/document/d/1S900lQaTPOsePnIeE7o3-Ia8f39VZaSv0JnjNyBfCvU", "type": 301 },
       { "source": "/go/medium-sized-code-samples", "destination": "https://docs.google.com/document/d/1-jjYru2ljRSRSY4hn4qwLj9oQj8UiqrDOgY10-FE2tY/edit?usp=sharing", "type": 301 },
       { "source": "/go/migrate-flutter-wiki", "destination": "https://docs.google.com/document/d/1naONKJd-eqPj8zEVfHfjGa5TCZNyJErBY4ca1gjSCq4/edit?usp=sharing", "type": 301 },
-      { "source": "/go/migrate-flutter-wiki-spreadsheet", "destination": "https://docs.google.com/spreadsheets/d/1x65189ZBdNiLRygpUYoU08pwvXD4M-Z157c6pm8deGI/edit?usp=sharing", "type": 301 },      
+      { "source": "/go/migrate-flutter-wiki-spreadsheet", "destination": "https://docs.google.com/spreadsheets/d/1x65189ZBdNiLRygpUYoU08pwvXD4M-Z157c6pm8deGI/edit?usp=sharing", "type": 301 },
       { "source": "/go/migrating-to-vertical-alignment", "destination": "https://docs.google.com/document/d/1vi6d6On6EXN82Q8KmXSLbWNnsnm9YjWtTWhSyjPF59Q/edit?usp=sharing", "type": 301 },
       { "source": "/go/mixin-modifier", "destination": "https://docs.google.com/document/d/1la2S1uJrNAawc1yja8hrSxFZJ0cFHnYopmaBYDLwMjg/edit?usp=sharing&resourcekey=0-br1LWMlYC63Q30VGiPtAHg", "type": 301 },
       { "source": "/go/mouse-tracker-no-longer-attaches-annotations", "destination": "https://docs.google.com/document/d/1YuOcepqZjNknAMz1si2m-jAiLT4MP28XEzBcKLHnNiA/edit", "type": 301 },
@@ -613,7 +613,8 @@
       { "source": "/go/windows-multi-view-ownership-updates", "destination": "https://docs.google.com/document/d/1QSnnu4SK0H_Zuik_x2ceHc8KTpxcG_HDS9KSm6xd5iY/edit?usp=sharing", "type": 301 },
       { "source": "/go/windows-x86-arm64-support", "destination": "https://docs.google.com/document/d/1gAGqtTAjO0GntR8bPonIO1aZJnTghPCI_PHJPdNzEmo/edit?resourcekey=0-l1tL7iai47yw3bMl9IcpHw", "type": 301 },
       { "source": "/go/wrap-layout", "destination": "https://docs.google.com/document/d/1auZtWT1T5CkUKOUTUld8rF91iN7PvQoOF0IlBNXiDSo/edit?usp=sharing", "type": 301 },
-      { "source": "/go/wrap-popupmenu-with-safearea", "destination": "https://docs.google.com/document/d/15uBmyEKiOeYGYt1PuBVf4SFK5YhH07EP9ylWP-H9mVE/edit?usp=sharing", "type": 301 }
+      { "source": "/go/wrap-popupmenu-with-safearea", "destination": "https://docs.google.com/document/d/15uBmyEKiOeYGYt1PuBVf4SFK5YhH07EP9ylWP-H9mVE/edit?usp=sharing", "type": 301 },
+      { "source": "/go/deprecate-html-renderer", "destination": "https://docs.google.com/document/d/1DGamHsa2lz_Qtgfrfa3j3fRaEopJXc7tCFVM1TQlck8/edit?usp=sharing&resourcekey=0-IjkqrCoo_EcRRS2bPYKI8w", "type": 301 }
     ],
     "headers": [
       {
