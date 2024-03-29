@@ -16,6 +16,50 @@ short-title: Layout
 Flutter allows you to create apps that self-adapt
 to the device's screen size and orientation.
 
+## General advice
+
+When creating a layout that automatically adapts
+to the size and shape of the user's device,
+there are several things you might keep in mind.
+This page covers how to take an app build for a
+phone and make it beautiful on a wide range of devices.
+
+### SafeArea
+
+When running your app on the latest devices,
+you might encounter bits of the UI being blocked
+by cutouts on top of the device's screen.
+
+You can fix this with the [`SafeArea`][] widget,
+which insets its child widget to avoid intrusions
+like notches and camera cutouts,
+as well as operating system UI such as the status bar
+on Android, or by rounded corners of the display.
+The `SafeArea` widget allows you to enable or
+disable padding on any of its four sides.
+
+It’s generally recommended to wrap the body of a
+`Scaffold` widget in `SafeArea` as a safe place to start,
+but you don’t always need to put it this high in the
+`Widget` tree.
+
+[xxx PENDING: example code]
+
+For example, if you purposefully want your app to stretch
+under the cutouts, you can move the `SafeArea` to wrap
+whatever content makes sense,
+and let the rest of the app take up the full screen.
+
+[xxx PENDING: example]
+
+Using `SafeArea` ensures that your app content won’t be
+cut off by physical display features or operating system UI
+and sets your app up for success even as new devices with
+different shapes and styles of cutouts enter the market.
+
+[`SafeArea`]: {{site.api}}/flutter/widgets/SafeArea-class.html
+
+{% comment %}
 ## Two approaches
 
 There are at least two ways you can create a
@@ -35,6 +79,8 @@ For either approach, you need to determine
 the sizes (called _breakpoints_) where you
 want your UI to change its layout,
 as described in the next section.
+
+{% endcomment %}
 
 ### Screen-based breakpoints
 

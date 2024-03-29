@@ -5,6 +5,8 @@ description: >
 short-title: Large screens
 ---
 
+[xxx PENDING: Should we axe this page?]
+
 You can optimize your app to improve its
 look and feel on large screens. 
 Flutter defines [large screens][] as tablets,

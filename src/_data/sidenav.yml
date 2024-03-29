@@ -133,10 +133,10 @@
     - title: Adaptive & responsive design
       permalink: /ui/adaptive-responsive
       children:
-        - title: Adaptive vs responsive
-          permalink: /ui/adaptive-responsive/overview
         - title: Layout for adaptive apps
           permalink: /ui/adaptive-responsive/layout
+        - title: Best practices for adaptive apps
+          permalink: /ui/adaptive-responsive/best-practices
         - title: Handling input
           permalink: /ui/adaptive-responsive/input
         - title: Large screens
