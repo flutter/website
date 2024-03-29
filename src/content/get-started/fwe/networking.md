@@ -90,7 +90,7 @@ If you've already worked through this codelab
 on the [layout][] page, feel free to skip this step.
 :::
 
-[layout]: {{site.url}}/get-started/fwe/layout
+[layout]: /get-started/fwe/layout
 
 Next, a long-form YouTube video where
 Flutter DevRel alumnus, Fitz,
@@ -125,4 +125,4 @@ Anna (Domashych) Leushchenko covering advanced networking in Flutter.
 As this section of the website is evolving,
 we [welcome your feedback][]!
 
-[welcome your feedback]: {{site.url}}/get-started/fwe
+[welcome your feedback]: /get-started/fwe

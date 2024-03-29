@@ -32,7 +32,7 @@ teaches you how to build a "favorite" button:
 
 <i class="material-symbols" aria-hidden="true">flutter_dash</i> Tutorial: [Add interactivity to your Flutter app][]
 
-[Layouts]: {{site.url}}/get-started/fwe/layout
+[Layouts]: /get-started/fwe/layout
 
 ## Material 3 demo 
 
@@ -48,7 +48,7 @@ Flutter also supports [Cupertino][] for iOS-styled widgets,
 or you can build your own widget library.
 :::
 
-[Cupertino]: {{site.api}}flutter/cupertino/cupertino-library.html
+[Cupertino]: {{site.api}}/flutter/cupertino/cupertino-library.html
 
 ## Get user input
 
@@ -91,13 +91,13 @@ but are styled differently:
 
 * Video: [FloatingActionButton (Widget of the Week)][]
 
-[`ElevatedButton`]: {{site.api}}flutter/material/ElevatedButton-class.html
-[`FilledButton`]: {{site.api}}flutter/material/FilledButton-class.html
-[`FloatingActionButton`]: {{site.api}}flutter/material/FloatingActionButton-class.html
+[`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
+[`FilledButton`]: {{site.api}}/flutter/material/FilledButton-class.html
+[`FloatingActionButton`]: {{site.api}}/flutter/material/FloatingActionButton-class.html
 [FloatingActionButton (Widget of the Week)]: https://youtu.be/2uaoEDOgk_I?si=MQZcSp24oRaS_kiY
-[`IconButton`]: {{site.api}}flutter/material/IconButton-class.html
-[`OutlinedButton`]: {{site.api}}flutter/material/OutlinedButton-class.html
-[`TextButton`]: {{site.api}}flutter/material/TextButton-class.html
+[`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
+[`OutlinedButton`]: {{site.api}}/flutter/material/OutlinedButton-class.html
+[`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
 
 ### Text
 
@@ -136,21 +136,21 @@ retrieve its value, and handle state changes:
 * Demo: [Form app][]
 * Sample code: [Form app code][]
 
-[Build a form with validation]: {{site.url}}/cookbook/forms/validation
-[Create and style a text field]: {{site.url}}/cookbook/forms/text-input
-[Focus and text fields]: {{site.url}}/cookbook/forms/focus
-[`Form`]: {{site.api}}flutter/widgets/Form-class.html
+[Build a form with validation]: /cookbook/forms/validation
+[Create and style a text field]: /cookbook/forms/text-input
+[Focus and text fields]: /cookbook/forms/focus
+[`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [Form app]: https://flutter.github.io/samples/web/form_app/
 [Form app code]: https://github.com/flutter/samples/tree/main/form_app
-[Handle changes to a text field]: {{site.url}}/cookbook/forms/text-field-changes
-[Retrieve the value of a text field]: {{site.url}}/cookbook/forms/retrieve-input
-[`RichText`]: {{site.api}}flutter/widgets/RichText-class.html
+[Handle changes to a text field]: /cookbook/forms/text-field-changes
+[Retrieve the value of a text field]: /cookbook/forms/retrieve-input
+[`RichText`]: {{site.api}}/flutter/widgets/RichText-class.html
 [Rich Text (Widget of the Week)]: https://www.youtube.com/watch?v=rykDVh-QFfw
 [Rich Text Editor]: https://flutter.github.io/samples/rich_text_editor.html
 [Rich Text Editor code]: https://github.com/flutter/samples/tree/main/simplistic_editor
-[`SelectableText`]: {{site.api}}flutter/material/SelectableText-class.html
+[`SelectableText`]: {{site.api}}/flutter/material/SelectableText-class.html
 [SelectableText (Widget of the Week)]: https://www.youtube.com/watch?v=ZSU3ZXOs6hc
-[`TextField`]: {{site.api}}flutter/material/TextField-class.html
+[`TextField`]: {{site.api}}/flutter/material/TextField-class.html
 
 ### Select a value from a group of options
 
@@ -168,10 +168,10 @@ retrieve its value, and handle state changes:
 
 * Video: [Slider, RangeSlider, CupertinoSlider (Widget of the Week)][]
 
-[`DropdownMenu`]: {{site.api}}flutter/material/DropdownMenu-class.html
+[`DropdownMenu`]: {{site.api}}/flutter/material/DropdownMenu-class.html
 [DropdownMenu (Widget of the Week)]: https://youtu.be/giV9AbM2gd8?si=E23hjg72cjMTe_mz
-[`SegmentedButton`]: {{site.api}}flutter/material/SegmentedButton-class.html
-[`Slider`]: {{site.api}}flutter/material/Slider-class.html
+[`SegmentedButton`]: {{site.api}}/flutter/material/SegmentedButton-class.html
+[`Slider`]: {{site.api}}/flutter/material/Slider-class.html
 [Slider, RangeSlider, CupertinoSlider (Widget of the Week)]: https://www.youtube.com/watch?v=ufb4gIPDmEss
 
 ### Toggle values
@@ -264,10 +264,10 @@ ensure that everything works as expected!
 
 [GestureArena (Decoding Flutter)]: https://www.youtube.com/watch?v=Q85LBtBdi0U
 [GestureDetector (Widget of the Week)]: https://www.youtube.com/watch?v=WhVXkCFPmK4
-[Handle taps]: {{site.url}}/cookbook/gestures/handling-taps
+[Handle taps]: /cookbook/gestures/handling-taps
 [Semantics (Flutter Widget of the Week)]: https://youtu.be/NvtMt_DtFrQ?si=o79BqAg9NAl8EE8_
-[Tap, drag, and enter text]: {{site.url}}/cookbook/testing/widget/tap-drag
-[Taps, drags, and other gestures]: {{site.url}}/ui/interactivity/gestures#gestures
+[Tap, drag, and enter text]: /cookbook/testing/widget/tap-drag
+[Taps, drags, and other gestures]: /ui/interactivity/gestures#gestures
 
 
 ## Next: Networking
@@ -287,31 +287,31 @@ and other networking features.
 
 
 
-[`Checkbox`]: {{site.api}}flutter/material/Checkbox-class.html
-[`CheckboxListTile`]: {{site.api}}flutter/material/CheckboxListTile-class.html
+[`Checkbox`]: {{site.api}}/flutter/material/Checkbox-class.html
+[`CheckboxListTile`]: {{site.api}}/flutter/material/CheckboxListTile-class.html
 [CheckboxListTile (Widget of the Week)]: https://www.youtube.com/watch?v=RkSqPAn9szs
-[`Switch`]: {{site.api}}flutter/material/Switch-class.html
-[`SwitchListTile`]: {{site.api}}flutter/material/SwitchListTile-class.html
+[`Switch`]: {{site.api}}/flutter/material/Switch-class.html
+[`SwitchListTile`]: {{site.api}}/flutter/material/SwitchListTile-class.html
 [SwitchListTile (Widget of the Week)]: https://www.youtube.com/watch?v=0igIjvtEWNU
-[`Radio`]: {{site.api}}flutter/material/Radio-class.html
-[`Chip`]: {{site.api}}flutter/material/Chip-class.html
+[`Radio`]: {{site.api}}/flutter/material/Radio-class.html
+[`Chip`]: {{site.api}}/flutter/material/Chip-class.html
 
 [Material Design date picker]: https://m3.material.io/components/date-pickers/overview
 [Material Design time picker]: https://m3.material.io/components/time-pickers/overview
-[`showDatePicker`]: {{site.api}}flutter/material/showDatePicker.html
-[`showTimePicker`]: {{site.api}}flutter/material/showTimePicker.html
+[`showDatePicker`]: {{site.api}}/flutter/material/showDatePicker.html
+[`showTimePicker`]: {{site.api}}/flutter/material/showTimePicker.html
 
-[`Dismissible`]: {{site.api}}flutter/widgets/Dismissible-class.html
+[`Dismissible`]: {{site.api}}/flutter/widgets/Dismissible-class.html
 [Dismissible (Widget of the Week)]: https://youtu.be/iEMgjrfuc58?si=f0S7IdaA9PIWIYvl
-[Implement swipe to dismiss]: {{site.url}}/cookbook/gestures/dismissible
+[Implement swipe to dismiss]: /cookbook/gestures/dismissible
 [pkg:`flutter_slidable`]: https://pub.dev/packages/flutter_slidable
 [flutter_slidable (Package of the Week)]: https://www.youtube.com/watch?v=QFcFEpFmNJ8
 
-[Handle scrolling]: {{site.url}}/cookbook/testing/widget/scrolling
+[Handle scrolling]: /cookbook/testing/widget/scrolling
 
 ## Feedback
 
 As this section of the website is evolving, 
 we [welcome your feedback][]!
 
-[welcome your feedback]: {{site.url}}/get-started/fwe
+[welcome your feedback]: /get-started/fwe
