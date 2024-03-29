@@ -35,8 +35,10 @@ the legacy trace viewer entirely. - [#7316](https://github.com/flutter/devtools/
 
 ## Memory updates
 
-* Enabled export of snapshots and improved snapshotting
-performance. - [#7197](https://github.com/flutter/devtools/pull/7197), [#7439](https://github.com/flutter/devtools/pull/7439), [#7449](https://github.com/flutter/devtools/pull/7449)
+* Enabled export of snapshots and improved snapshotting performance. -
+[#7197](https://github.com/flutter/devtools/pull/7197),
+[#7439](https://github.com/flutter/devtools/pull/7439),
+[#7449](https://github.com/flutter/devtools/pull/7449)
 
     ![Export snapshot](/tools/devtools/release-notes/images-2.34.1/7197-export.png "Export snapshot")
 
