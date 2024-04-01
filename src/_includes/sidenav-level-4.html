@@ -1,3 +1,6 @@
+{% assign children = include.children -%}
+{% assign active_entries = include.active_entries -%}
+{% assign id = include.id -%}
 {% for entry in children -%}
   {% if entry.permalink -%}
 

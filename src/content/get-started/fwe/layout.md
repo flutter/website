@@ -19,7 +19,7 @@ Finally, you'll encounter and debug one of
 Flutter's most common layout errors,
 the dreaded "unbounded constraints" error.
 
-### Introduction to layouts
+## Introduction to layouts
 
 The following tutorial introduces you to layouts
 in Flutter, and gives you an opportunity to work

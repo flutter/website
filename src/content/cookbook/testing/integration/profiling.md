@@ -35,7 +35,7 @@ This recipe uses the following steps:
   4. Run the test.
   5. Review the results.
 
-### 1. Write a test that scrolls through a list of items
+## 1. Write a test that scrolls through a list of items
 
 In this recipe, record the performance of an app as it scrolls through a
 list of items. To focus on performance profiling, this recipe builds
@@ -44,7 +44,7 @@ on the [Scrolling][] recipe in widget tests.
 Follow the instructions in that recipe to create an app and write a test to
 verify that everything works as expected.
 
-### 2. Record the performance of the app
+## 2. Record the performance of the app
 
 Next, record the performance of the app as it scrolls through the
 list. Perform this task using the [`traceAction()`][]
@@ -75,7 +75,7 @@ await binding.traceAction(
 );
 ```
 
-### 3. Save the results to disk
+## 3. Save the results to disk
 
 Now that you've captured a performance timeline, you need a way to review it.
 The `Timeline` object provides detailed information about all of the events
@@ -133,7 +133,7 @@ which you can customize.
 By default, it writes the results to the `integration_response_data.json` file,
 but you can customize it to generate a summary like in this example.
 
-### 4. Run the test
+## 4. Run the test
 
 After configuring the test to capture a performance `Timeline` and save a
 summary of the results to disk, run the test with the following command:
@@ -155,7 +155,7 @@ This option disables the Dart Development Service (DDS), which won't
 be accessible from your computer.
 :::
 
-### 5. Review the results
+## 5. Review the results
 
 After the test completes successfully, the `build` directory at the root of
 the project contains two files:
@@ -170,7 +170,7 @@ the project contains two files:
      convenient interface for inspecting the timeline data to discover
      the source of a performance issue.
 
-#### Summary example
+### Summary example
 
 ```json
 {
@@ -194,7 +194,7 @@ the project contains two files:
 }
 ```
 
-### Complete example
+## Complete example
 
 **integration_test/scrolling_test.dart**
 

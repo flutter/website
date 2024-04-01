@@ -3,6 +3,8 @@ title: Web FAQ
 description: Some gotchas and differences when writing or running web apps in Flutter.
 ---
 
+## Questions
+
 ### What scenarios are ideal for Flutter on the web?
 
 Not every web page makes sense in Flutter, but we think Flutter is particularly

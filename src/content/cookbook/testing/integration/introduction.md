@@ -27,7 +27,7 @@ This recipe uses the following steps:
   4. Write the integration test.
   5. Run the integration test.
 
-### 1. Create an app to test
+## 1. Create an app to test
 
 First, create an app for testing. In this example,
 test the counter app produced by the `flutter create`
@@ -103,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
-### 2. Add the `integration_test` dependency
+## 2. Add the `integration_test` dependency
 
 Next, use the `integration_test` and `flutter_test` packages
 to write integration tests. Add these dependencies to the `dev_dependencies`
@@ -131,7 +131,7 @@ Resolving dependencies...
 Changed 9 dependencies!
 ```
 
-### 3. Create the test files
+## 3. Create the test files
 
 Create a new directory, `integration_test`, with an empty `app_test.dart` file:
 
@@ -143,7 +143,7 @@ counter_app/
     app_test.dart
 ```
 
-### 4. Write the integration test
+## 4. Write the integration test
 
 Now you can write tests. This involves three steps:
 
@@ -187,12 +187,12 @@ void main() {
 }
 ```
 
-### 5. Run the integration test
+## 5. Run the integration test
 
 The process of running the integration tests varies depending on the platform
 you are testing against. You can test against a mobile platform or the web.
 
-#### 5a. Mobile
+### 5a. Mobile
 
 To test on a real iOS / Android device, first connect the device and run the
 following command from the root of the project:
@@ -212,7 +212,7 @@ information, see the [Integration testing][] page.
 
 ---
 
-#### 5b. Web
+### 5b. Web
 
 {% comment %}
 TODO(ryjohn): Add back after other WebDriver versions are supported:

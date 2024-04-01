@@ -18,7 +18,7 @@ Flutter supports platforms in three tiers:
 
 Based on these tiers, Flutter supports deploying to the following platforms.
 
-{% assign opsys = site.data.platforms %}
+{% assign opsys = platforms %}
 
 <div class="table-wrapper">
 

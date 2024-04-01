@@ -21,7 +21,7 @@ layout: base
   <div class="row flex-xl-nowrap">
     <div class="fixed-col site-sidebar site-sidebar--fixed {{sidebar-col}} d-none d-md-block" data-fixed-column>
       {% assign route = page.url | regex_replace:'/index$|/index\.html$|\.html$|/$' %}
-      {% render 'sidenav-level-1.html', url:page.url, nav:sidenav, base_id:"fixed" %}
+      {% include sidenav-level-1.html url=page.url nav=sidenav base_id="fixed" %}
     </div>
 
     <main class="site-content {{main-col}}">

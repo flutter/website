@@ -24,7 +24,6 @@ add Flutter to the `PATH` environment variable.
 1. To add Flutter to your `PATH`, expand the entry for your default shell, then
    choose the command.
 
-{% assign shells = site.data.shells %}
 {% for shell in shells %}
 
    <details {% if shell.name == 'bash' %}open{% endif %}>

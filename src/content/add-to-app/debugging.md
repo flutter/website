@@ -12,7 +12,7 @@ you run normal Android or iOS apps.
 However, Flutter is now powering the UI in places where you're showing a
 `FlutterActivity` or `FlutterViewController`.
 
-### Debugging
+## Debugging
 
 You might be used to having your suite of favorite Flutter debugging tools
 available to you automatically when running `flutter run` or an equivalent
@@ -30,18 +30,18 @@ remains attached until your `FlutterEngine` is disposed. But you can invoke
 `flutter attach` before starting your engine. `flutter attach` waits for
 the next available Dart VM that is hosted by your engine.
 
-#### Terminal
+### Terminal
 
 Run `flutter attach` or `flutter attach -d deviceId` to attach from the terminal.
 
 {% include docs/app-figure.md image="development/add-to-app/debugging/cli-attach.png" caption="flutter attach via terminal" %}
 
-#### VS Code
+### VS Code
 
 {% include docs/debug/debug-flow-ios.md %}
 {% include docs/debug/vscode-flutter-attach-json.md %}
 
-#### IntelliJ / Android Studio
+### IntelliJ / Android Studio
 
 Select the device on which the Flutter module runs so `flutter attach` filters for the right start signals.
 
@@ -49,12 +49,12 @@ Select the device on which the Flutter module runs so `flutter attach` filters f
 
 [debugging functionalities]: /testing/debugging
 
-### Wireless debugging
+## Wireless debugging
 
 You can debug your app wirelessly on an iOS or Android device
 using `flutter attach`.
 
-#### iOS
+### iOS
 
 On iOS, you must follow the steps below:
 
@@ -89,7 +89,7 @@ and check to see if there is an **IPv6 address** section.
 </li>
 </ol>
 
-#### Android
+### Android
 
 Ensure that your device is wirelessly connected to Android Studio 
 as described in the [Android setup guide][].

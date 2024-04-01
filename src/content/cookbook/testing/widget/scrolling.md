@@ -25,7 +25,7 @@ This recipe uses the following steps:
 2. Write a test that scrolls through the list.
 3. Run the test.
 
-### 1. Create an app with a list of items
+## 1. Create an app with a list of items
 
 This recipe builds an app that shows a long list of items.
 To keep this recipe focused on testing, use the app created in the
@@ -85,7 +85,7 @@ class MyApp extends StatelessWidget {
 ```
 
 
-### 2. Write a test that scrolls through the list
+## 2. Write a test that scrolls through the list
 
 Now, you can write a test. In this example, scroll through the list of items and
 verify that a particular item exists in the list. The [`WidgetTester`][] class
@@ -140,7 +140,7 @@ void main() {
 }
 ```
 
-### 3. Run the test
+## 3. Run the test
 
 Run the test using the following command from the root of the project:
 

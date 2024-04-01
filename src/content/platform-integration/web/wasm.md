@@ -33,7 +33,7 @@ Revisit this page for the latest updates.
 [`package:web`]: {{site.pub-pkg}}/web
 [`dart:js_interop`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-js_interop 
 
-### Background
+## Background
 
 To run a Flutter app that has been compiled to Wasm,
 you need a browser that supports [WasmGC][].
@@ -50,14 +50,14 @@ but currently does not work due to a [known limitation](#known-limitations).
 [support WasmGC]: https://bugs.webkit.org/show_bug.cgi?id=247394
 [issue]: https://bugzilla.mozilla.org/show_bug.cgi?id=1788206
 
-### Try it out
+## Try it out
 
 To try a pre-built Flutter web app using Wasm, check out the
 [Material 3 WasmGC preview demo](https://flutterweb-wasm.web.app/).
 
 To experiment with Wasm in your own apps, follow the steps below.
 
-#### Switch to the Flutter `beta` channel and upgrade
+### Switch to the Flutter `beta` channel and upgrade
 
 Wasm compilation is available on the latest builds of
 the `beta` channel (preferred) or `main`.
@@ -82,7 +82,7 @@ Experimental options
                                  (defaults to on)
 ```
 
-#### Pick a (simple) Flutter web application
+### Pick a (simple) Flutter web application
 
 Try the default template [sample app][], or choose any Flutter application
 that has been migrated to be
@@ -90,7 +90,7 @@ that has been migrated to be
 
 [sample app]: /get-started/test-drive
 
-#### Modify `index.html`
+### Modify `index.html`
 
 Before building with Wasm, you'll need to modify the bootstrap logic in
 your app's `web/index.html` file.
@@ -118,7 +118,7 @@ This feature is under development. The current syntax
 channels now, but will be replaced by the actual syntax in an upcoming stable
 release. Stay tuned!
 
-#### Run `flutter build web --wasm`
+### Run `flutter build web --wasm`
 
 To build a web application with Wasm, add the `--wasm` flag to
 the existing `flutter build web` command.
@@ -130,7 +130,7 @@ flutter build web --wasm
 The command sends its output to the `build/web` directory relative to
 package root.
 
-#### Serve the output locally with an HTTP server
+### Serve the output locally with an HTTP server
 
 If you don't have a local HTTP server installed, you can use the
 [`dhttpd` package]({{site.pub-pkg}}/dhttpd):
@@ -148,7 +148,7 @@ $ dhttpd '--headers=Cross-Origin-Embedder-Policy=credentialless;Cross-Origin-Ope
 Server started on port 8080
 ```
 
-#### Load it in a browser
+### Load it in a browser
 
 As of {{last-update}},
 [only **Chromium-based browsers**](#chrome-119-or-later)
@@ -162,12 +162,12 @@ If the application doesn't load:
 1. Check the developer console for errors.
 1. Validate a successful build with the typical JavaScript output.
 
-### Known limitations
+## Known limitations
 
 Wasm support currently has some limitations.
 The following list covers some common issues.
 
-#### Chrome 119 or later
+### Chrome 119 or later
 
 As mentioned in [Load it in a browser](#load-it-in-a-browser), 
 to run Flutter web apps compiled to Wasm, 
@@ -195,7 +195,7 @@ and can't use their own browser engine.
 [currently experiencing a bug]: https://bugzilla.mozilla.org/show_bug.cgi?id=1788206
 [this bug]: https://bugs.webkit.org/show_bug.cgi?id=247394
 
-#### Requires JS-interop to access browser and JS APIs {:#js-interop-wasm}
+### Requires JS-interop to access browser and JS APIs {:#js-interop-wasm}
 
 To support compilation to Wasm, [Dart has shifted][JS interop]
 how it enables interop with browser and JavaScript APIs.
@@ -234,12 +234,12 @@ Context: The unavailable library 'dart:html' is imported through these packages:
 [`package:web` migration guide]: {{site.dart-site}}/interop/js-interop/package-web
 [JS interop]: {{site.dart-site}}/interop/js-interop
 
-#### Only build support
+### Only build support
 
 Neither `flutter run` nor [DevTools](/tools/devtools) support
 Wasm at the moment.
 
-### Learn more
+## Learn more
 
 Check out Flutter's
 [existing web support]({{site.main-url}}/multi-platform/web).

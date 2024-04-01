@@ -24,7 +24,7 @@ make sure to add the version number as an entry to the list
 found at `/src/_data/devtools_releases.yml`.
 {% endcomment -%}
 
-{% assign releases = site.data.devtools_releases.releases %}
+{% assign releases = devtools_releases.releases %}
 
 {% for release in releases -%}
 * [{{release}} release notes](/tools/devtools/release-notes/release-notes-{{release}})

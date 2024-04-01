@@ -125,7 +125,7 @@ To learn more about publishing packages, check out the
 The Flutter team can't guarantee long-term availability of any mirrors.
 You can use other mirrors if they become available.
 
-{% for mirror in site.data.mirrors %}
+{% for mirror in mirrors %}
 
 <hr>
 
@@ -160,7 +160,7 @@ using the `{{mirror.mirror}}` mirror, report the issue to their
 
 {% endfor %}
 
-{% for mirror in site.data.mirrors %}
+{% for mirror in mirrors %}
 [{{mirror.group}}]: {{mirror.urls.group}}
 {% endfor %}
 

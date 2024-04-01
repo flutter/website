@@ -34,7 +34,7 @@ This recipe uses the following steps:
   3. Ensure tapping a button adds the todo.
   4. Ensure swipe-to-dismiss removes the todo.
 
-### 1. Create a widget to test
+## 1. Create a widget to test
 
 For this example,
 create a basic todo app that tests three features:
@@ -112,7 +112,7 @@ class _TodoListState extends State<TodoList> {
 }
 ```
 
-### 2. Enter text in the text field
+## 2. Enter text in the text field
 
 Now that you have a todo app, begin writing the test.
 Start by entering text into the `TextField`.
@@ -143,7 +143,7 @@ see the following recipes:
 * [Finding widgets in a widget test][]
 :::
 
-### 3. Ensure tapping a button adds the todo
+## 3. Ensure tapping a button adds the todo
 
 After entering text into the `TextField`, ensure that tapping
 the `FloatingActionButton` adds the item to the list.
@@ -171,7 +171,7 @@ testWidgets('Add and remove a todo', (tester) async {
 });
 ```
 
-### 4. Ensure swipe-to-dismiss removes the todo
+## 4. Ensure swipe-to-dismiss removes the todo
 
 Finally, ensure that performing a swipe-to-dismiss action on the todo
 item removes it from the list. This involves three steps:
@@ -199,7 +199,7 @@ testWidgets('Add and remove a todo', (tester) async {
 });
 ```
 
-### Complete example
+## Complete example
 
 <?code-excerpt "test/main_test.dart"?>
 ```dart

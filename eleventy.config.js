@@ -121,6 +121,9 @@ ${content}
     expand: true,
     filter: /^(?!_).+/,
   });
+  // eleventyConfig.addPassthroughCopy('src/content/tools/devtools/release-notes', {
+  //   filter: /.*src.*/,
+  // });
 
   if (isProduction) {
     // If building for production, minify/optimize the HTML output.

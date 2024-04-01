@@ -32,7 +32,7 @@ This recipe uses the following steps:
   2. Find a widget with a specific `Key`.
   3. Find a specific widget instance.
 
-### 1. Find a `Text` widget
+## 1. Find a `Text` widget
 
 In testing, you often need to find widgets that contain specific text.
 This is exactly what the `find.text()` method is for. It creates a
@@ -53,7 +53,7 @@ testWidgets('finds a Text widget', (tester) async {
 });
 ```
 
-### 2. Find a widget with a specific `Key`
+## 2. Find a widget with a specific `Key`
 
 In some cases, you might want to find a widget based on the Key that has been
 provided to it. This can be handy if displaying multiple instances of the
@@ -78,7 +78,7 @@ testWidgets('finds a widget using a Key', (tester) async {
 });
 ```
 
-### 3. Find a specific widget instance
+## 3. Find a specific widget instance
 
 Finally, you might be interested in locating a specific instance of a widget.
 For example, this can be useful when creating widgets that take a `child`
@@ -97,7 +97,7 @@ testWidgets('finds a specific instance', (tester) async {
 });
 ```
 
-### Summary
+## Summary
 
 The `find` constant provided by the `flutter_test` package provides
 several ways to locate widgets in the test environment. This recipe
@@ -108,7 +108,7 @@ If the above examples do not work for a particular use-case,
 see the [`CommonFinders` documentation][]
 to review all available methods.
 
-### Complete example
+## Complete example
 
 <?code-excerpt "test/finders_test.dart"?>
 ```dart

@@ -45,12 +45,12 @@ Let's take a look:
 To create a platform view on Android,
 use the following steps:
 
-### On the Dart side
+## On the Dart side
 
 On the Dart side, create a `Widget`
 and add one of the following build implementations.
 
-#### Hybrid composition
+### Hybrid composition
 
 In your Dart file,
 for example `native_view_example.dart`,
@@ -114,7 +114,7 @@ For more information, see the API docs for:
 [`PlatformViewLink`]: {{site.api}}/flutter/widgets/PlatformViewLink-class.html
 [`PlatformViewsService`]: {{site.api}}/flutter/services/PlatformViewsService-class.html
 
-#### Virtual display
+### Virtual display
 
 In your Dart file,
 for example `native_view_example.dart`,
@@ -153,7 +153,7 @@ For more information, see the API docs for:
 
 [`AndroidView`]: {{site.api}}/flutter/widgets/AndroidView-class.html
 
-### On the platform side
+## On the platform side
 
 On the platform side, use the standard
 `io.flutter.plugin.platform` package
@@ -405,7 +405,7 @@ android {
 }
 ```
 
-#### Manual view invalidation
+### Manual view invalidation
 
 Certain Android Views do not invalidate themselves when their content changes.
 Some example views include `SurfaceView` and `SurfaceTexture`.

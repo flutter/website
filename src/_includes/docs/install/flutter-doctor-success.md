@@ -1,5 +1,5 @@
-{% assign doctor = site.data.doctor %}
-{% assign config = site.data.doctor[include.config] %}
+{% assign doctor = doctor %}
+{% assign config = doctor[include.config] %}
 {% case include.devos %}
 {% when 'macOS' %}
 {% assign displayos = 'macOS 14.4.0 23E214 darwin-arm64' %}

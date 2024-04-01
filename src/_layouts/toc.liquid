@@ -6,7 +6,7 @@ sitemap: false
 
 {% assign url = page.url | regex_replace: '/index$|/index.html$|/$' -%}
 {% assign path_parts = url | split: '/' -%}
-{% assign topics = site.data.sidenav -%}
+{% assign topics = sidenav -%}
 
 {% comment %}
   - path_parts[0] == '' because page.url always starts with '/'

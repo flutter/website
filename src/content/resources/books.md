@@ -25,7 +25,7 @@ page to view Flutter's latest release.
 [sample]: {{site.repo.this}}/pull/6019
 [what's new]: /release/whats-new
 
-{% for book in site.data.books -%}
+{% for book in books -%}
 * [{{book.title}}]({{book.link}})
 {% endfor -%}
 
@@ -33,7 +33,7 @@ page to view Flutter's latest release.
   The following sections have more information about each book.
 </p>
 
-{% for book in site.data.books %}
+{% for book in books %}
 <div class="book-img-with-details row">
 <a href="{{book.link}}" title="{{book.title}}" class="col-sm-3">
   <img src="/assets/images/docs/cover/{{book.cover}}" alt="{{book.title}}">

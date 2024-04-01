@@ -4,7 +4,7 @@ short-title: Docs
 description: Get started with Flutter. Widgets, examples, updates, and API docs to help you write your first Flutter app.
 ---
 
-{% for card in site.data.docs_cards -%}
+{% for card in docs_cards -%}
   {% capture index0Modulo3 -%}{{ forloop.index0 | modulo:3 }}{% endcapture -%}
   {% capture indexModulo3 -%}{{ forloop.index | modulo:3 }}{% endcapture -%}
   {% if index0Modulo3 == '0' -%}

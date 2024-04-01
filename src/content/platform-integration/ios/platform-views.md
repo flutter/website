@@ -32,7 +32,7 @@ which means that the native
 To create a platform view on iOS,
 use the following instructions:
 
-### On the Dart side
+## On the Dart side
 
 On the Dart side, create a `Widget`
 and add the build implementation,
@@ -83,7 +83,7 @@ For more information, see the API docs for:
 
 [`UIKitView`]: {{site.api}}/flutter/widgets/UiKitView-class.html
 
-### On the platform side
+## On the platform side
 
 On the platform side, use either Swift or Objective-C:
 
@@ -396,6 +396,7 @@ In other words, if an animation is slow while a platform view is rendered,
 then consider taking a screenshot of the native view and rendering it as a texture.
 
 ## Composition limitations
+
 There are some limitations when composing iOS Platform Views.
 
 - The [`ShaderMask`][] and [`ColorFiltered`][] widgets are not supported.

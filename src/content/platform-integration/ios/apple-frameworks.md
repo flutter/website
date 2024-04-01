@@ -11,7 +11,8 @@ with specific frameworks like `HealthKit` or `MapKit`.
 For an overview of how the SwiftUI framework compares to Flutter,
 see [Flutter for SwiftUI developers][].
 
-### Introducing Flutter plugins
+## Introducing Flutter plugins
+
 Dart calls libraries that contain platform-specific code _plugins_.
 When developing an app with Flutter, you use _plugins_ to interact
 with system libraries.
@@ -29,7 +30,8 @@ If you can't find a package that meets your need,
 you can create your own or use platform channels directly in your project.
 To learn more, see [Writing platform-specific code][].
 
-### Adding a plugin to your project
+## Adding a plugin to your project
+
 To use an Apple framework within your native project,
 import it into your Swift or Objective-C file.
 

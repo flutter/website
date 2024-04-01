@@ -3,8 +3,8 @@
 To learn more about managing your Flutter SDK install,
 consult the following resources.
 
-{% assign doctor = site.data.doctor %}
-{% assign config = site.data.doctor[include.config] %}
+{% assign doctor = doctor %}
+{% assign config = doctor[include.config] %}
 {% assign target = include.target | remove: 'mobile-' | downcase %}
 {% assign devos = include.devos %}
 {% if target == 'desktop' %}

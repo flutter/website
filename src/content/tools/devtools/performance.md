@@ -38,7 +38,7 @@ The performance view also supports importing and exporting of
 data snapshots. For more information,
 check out the [Import and export][] section.
 
-### What is a frame in Flutter?
+## What is a frame in Flutter?
 
 Flutter is designed to render its UI at 60 frames per second
 (fps), or 120 fps on devices capable of 120Hz updates.
