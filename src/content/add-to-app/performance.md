@@ -217,5 +217,5 @@ see [multiple Flutters][].
 [`runApp()`]: {{site.api}}/flutter/widgets/runApp.html
 [`runWithEntrypoint:`]: {{site.api}}/ios-embedder/interface_flutter_engine.html#a019d6b3037eff6cfd584fb2eb8e9035e
 [snapshot]: {{site.github}}/dart-lang/sdk/wiki/Snapshots
-[`startActivity()`]: {{site.android-dev}}/reference/android/content/Context.html#startActivity(android.content.Intent
+[`startActivity()`]: {{site.android-dev}}/reference/android/content/Context#startActivity(android.content.Intent)
 [`Surface`]: {{site.android-dev}}/reference/android/view/Surface

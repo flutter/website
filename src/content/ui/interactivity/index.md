@@ -5,7 +5,7 @@ short-title: Interactivity
 diff2html: true
 ---
 
-{% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
+{% assign examples = {{site.repo.this}}/tree/{{site.branch}}/examples -%}
 
 :::secondary What you'll learn
 * How to respond to taps.

@@ -32,7 +32,8 @@ Android Studio and the listed editions of IntelliJ IDEA.
 Follow these procedures to add the Flutter plugin to VS Code,
 Android Studio, or IntelliJ.
 
-If you choose another IDE, skip ahead to the [next step: Test drive][].
+If you choose another IDE, skip ahead
+to the [next step: Test drive](/get-started/test-drive).
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">
@@ -111,6 +112,10 @@ To install the latest version of the following IDEs, follow their instructions:
 - [IntelliJ IDEA Community][]
 - [IntelliJ IDEA Ultimate][]
 
+[Android Studio]: {{site.android-dev}}/studio/install
+[IntelliJ IDEA Community]: https://www.jetbrains.com/idea/download/
+[IntelliJ IDEA Ultimate]: https://www.jetbrains.com/idea/download/
+
 ## Install the Flutter plugin
 
 The installation instructions vary by platform.
@@ -171,7 +176,3 @@ Use the following instructions for Linux or Windows:
 </div>
 </div>{% comment %} End: Tab panes. {% endcomment -%}
 
-[Android Studio]: {{site.android-dev}}/studio/install
-[IntelliJ IDEA Community]: https://www.jetbrains.com/idea/download/
-[IntelliJ IDEA Ultimate]: https://www.jetbrains.com/idea/download/
-[next step: Test drive]: /get-started/test-drive

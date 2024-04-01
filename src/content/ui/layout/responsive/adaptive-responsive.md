@@ -49,6 +49,7 @@ an app can be both, or neither.
 Learn more in the following 5-minute video:
 
 <iframe width="560" height="315" src="{{site.yt.embed}}/HD5gYnspYzk?si=dsA37QUjHBb2Zh_-" title="Learn the difference between adaptive and responsive Flutter apps" {{site.yt.set}}></iframe>
+
 [Adaptive vs Responsive][]
 
 ## Creating a responsive Flutter app
@@ -134,9 +135,11 @@ You might also check out the following episodes
 of The Boring Show:
 
 <iframe style="max-width: 100%" width="560" height="315" src="{{site.yt.embed}}/n6Awpg1MO6M" title="Learn about adaptive layouts on the Boring Show" {{site.yt.set}}></iframe>
+
 [Adaptive layouts][]
 
 <iframe style="max-width: 100%" width="560" height="315" src="{{site.yt.embed}}/eikOZzfc0l4" title="Continue to learn about adaptive layouts on the Boring Show" {{site.yt.set}}></iframe>
+
 [Adaptive layouts, part 2][]
 
 For an excellent example of an adaptive app,

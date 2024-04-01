@@ -18,7 +18,7 @@ In general, two cases of platform adaptiveness exist:
    would be 'wrong' if a different behavior took place.
 2. Things that are conventionally implemented in apps using
    the OEM's SDKs (such as using parallel tabs on iOS or
-   showing an [android.app.AlertDialog][] on Android).
+   showing an [`android.app.AlertDialog`][] on Android).
 
 This article mainly covers the automatic adaptations
 provided by Flutter in case 1 on Android and iOS.
@@ -26,7 +26,7 @@ provided by Flutter in case 1 on Android and iOS.
 For case 2, Flutter bundles the means to produce the
 appropriate effects of the platform conventions but doesn't
 adapt automatically when app design choices are needed.
-For a discussion, see [issue #8410][] and the
+For a discussion, see [issue #8410][8410] and the
 [Material/Cupertino adaptive widget problem definition][].
 
 For an example of an app using different information
@@ -36,7 +36,7 @@ the same content code, see the [platform_design code samples][].
 :::secondary
 Preliminary guides addressing case 2 
 are being added to the UI components section. 
-You can request additional guides by commenting on [issue #8427][].
+You can request additional guides by commenting on [issue #8427][8427].
 :::
 
 ## Page navigation
@@ -555,7 +555,7 @@ double tap and shows the selection toolbar.
 
 This section includes preliminary recommendations on how to adapt 
 Material widgets to deliver a natural and compelling experience on iOS. 
-Your feedback is welcomed on [issue #8427][]. 
+Your feedback is welcomed on [issue #8427][8427]. 
 
 ### Widgets with .adaptive() constructors
 
@@ -642,7 +642,6 @@ AppBar(
         toolbarHeight: Platform.isIOS ? 44 : null,
         ...
       ),
-
 ```
 
 But, because app bars are displayed alongside 
@@ -731,6 +730,7 @@ Scaffold(
                   .toList(),
             ));
 ```
+
 ### Text fields
 
 Since Android 12, text fields follow the
@@ -874,13 +874,13 @@ To learn more about adapting alert dialogs, check out
 You can leave feedback or ask questions in the discussion.
 
 
-[issue #8410]: {{site.repo.flutter}}/issues/8410#issuecomment-468034023
-[android.app.AlertDialog]: {{site.android-dev}}/reference/android/app/AlertDialog.html
+[8410]: {{site.repo.flutter}}/issues/8410#issuecomment-468034023
+[`android.app.AlertDialog`]: {{site.android-dev}}/reference/android/app/AlertDialog.html
 [`ZoomPageTransitionsBuilder`]: {{site.api}}/flutter/material/ZoomPageTransitionsBuilder-class.html
 [`CupertinoNavigationBar`]: {{site.api}}/flutter/cupertino/CupertinoNavigationBar-class.html
 [`CupertinoSliverNavigationBar`]: {{site.api}}/flutter/cupertino/CupertinoSliverNavigationBar-class.html
 [default theme]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/cupertino/text_theme.dart
-[Material/Cupertino adaptive widget problem definition]: http://bit.ly/flutter-adaptive-widget-problem
+[Material/Cupertino adaptive widget problem definition]: https://bit.ly/flutter-adaptive-widget-problem
 [`Navigator.push()`]: {{site.api}}/flutter/widgets/Navigator/push.html
 [overscroll glow indicator]: {{site.api}}/flutter/widgets/GlowingOverscrollIndicator-class.html
 [overscrolls]: {{site.api}}/flutter/widgets/BouncingScrollPhysics-class.html
@@ -891,7 +891,7 @@ You can leave feedback or ask questions in the discussion.
 [slides up and fades in]: {{site.api}}/flutter/material/FadeUpwardsPageTransitionsBuilder-class.html
 [`startActivity()`]: {{site.android-dev}}/reference/android/app/Activity.html#startActivity(android.content.Intent
 [`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
-[issue #8427]: {{site.repo.this}}/issues/8427
+[8427]: {{site.repo.this}}/issues/8427
 [m3-dialog]: {{site.material}}/components/dialogs/overview
 [hig-alert]: {{site.apple-dev}}/design/human-interface-guidelines/components/presentation/alerts/
 [alert-post]: {{site.repo.uxr}}/discussions/92
