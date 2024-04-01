@@ -10,7 +10,4 @@ To add Web as a Flutter app target for iOS on macOS, follow this procedure.
 
 {% include docs/install/reqs/add-web.md devos='macOS' %}
 
-{% include docs/install/flutter-doctor.md
-   target='Web'
-   devos='macOS'
-   config='macOSiOSWeb' %}
+{% include docs/install/flutter-doctor.md target='Web' devos='macOS' config='macOSiOSWeb' %}

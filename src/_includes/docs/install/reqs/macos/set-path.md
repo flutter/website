@@ -16,7 +16,7 @@ Zsh uses the `.zshenv` file for [environment variables][envvar].
 
 1. Copy the following line and paste it at the end of your `~/.zshenv` file.
 
-   ```conf
+   ```bash
    export PATH=$HOME/development/flutter/bin:$PATH
    ```
 

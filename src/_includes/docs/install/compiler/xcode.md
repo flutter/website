@@ -104,7 +104,7 @@ To install and set up CocoaPods, run the following commands:
 
 1. Copy the following line and paste it at the end of your `~/.zshenv` file.
 
-   ```conf
+   ```bash
    export PATH=$HOME/.gem/bin:$PATH
    ```
 

@@ -138,7 +138,7 @@ but you can customize it to generate a summary like in this example.
 After configuring the test to capture a performance `Timeline` and save a
 summary of the results to disk, run the test with the following command:
 
-```
+```console
 flutter drive \
   --driver=test_driver/perf_driver.dart \
   --target=integration_test/scrolling_test.dart \

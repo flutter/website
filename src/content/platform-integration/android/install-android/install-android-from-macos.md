@@ -14,14 +14,8 @@ To add Android as a Flutter app target for macOS, follow this procedure.
    Java or Kotlin code for Android.
    Flutter requires the full version of Android Studio.
 
-{% include docs/install/compiler/android.md
-   target='macos'
-   devos='macOS'
-   attempt="first" -%}
+{% include docs/install/compiler/android.md target='macos' devos='macOS' attempt="first" -%}
 
-{% include docs/install/flutter-doctor.md
-   target='Android'
-   devos='macOS'
-   config='macOSDesktopAndroid' %}
+{% include docs/install/flutter-doctor.md target='Android' devos='macOS' config='macOSDesktopAndroid' %}
 
 [Android Studio]: https://developer.android.com/studio/install#mac

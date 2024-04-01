@@ -135,7 +135,7 @@ Changed 9 dependencies!
 
 Create a new directory, `integration_test`, with an empty `app_test.dart` file:
 
-```
+```plaintext
 counter_app/
   lib/
     main.dart

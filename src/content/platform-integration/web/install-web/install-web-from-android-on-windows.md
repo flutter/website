@@ -11,7 +11,4 @@ follow this procedure.
 
 {% include docs/install/reqs/add-web.md devos='Windows' %}
 
-{% include docs/install/flutter-doctor.md
-   target='Web'
-   devos='Windows'
-   config='WindowsDesktopAndroidWeb' %}
+{% include docs/install/flutter-doctor.md target='Web' devos='Windows' config='WindowsDesktopAndroidWeb' %}

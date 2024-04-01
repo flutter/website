@@ -15,6 +15,7 @@ import { configureHighlighting } from './src/_11ty/plugins/highlight.js';
 
 import minifier from 'html-minifier-terser';
 import yaml from 'js-yaml';
+import { EleventyRenderPlugin } from '@11ty/eleventy';
 
 import * as path from 'node:path';
 import * as sass from 'sass';
@@ -45,6 +46,8 @@ export default function (eleventyConfig) {
     lenientIf: true,
     jekyllInclude: true,
   });
+
+  eleventyConfig.addPlugin(EleventyRenderPlugin);
 
   // TODO(parlough): Finish samplecode implementation.
   eleventyConfig.addPairedShortcode('samplecode', function(content, tabsId) {

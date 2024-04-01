@@ -10,7 +10,4 @@ To add Web as a Flutter app target for macOS desktop, follow this procedure.
 
 {% include docs/install/reqs/add-web.md devos='macOS' %}
 
-{% include docs/install/flutter-doctor.md
-   target='Web'
-   devos='macOS'
-   config='macOSDesktopWeb' %}
+{% include docs/install/flutter-doctor.md target='Web' devos='macOS' config='macOSDesktopWeb' %}

@@ -11,7 +11,4 @@ follow this procedure.
 
 {% include docs/install/reqs/add-web.md devos='Linux' %}
 
-{% include docs/install/flutter-doctor.md
-   target='Web'
-   devos='Linux'
-   config='LinuxDesktopAndroidWeb' %}
+{% include docs/install/flutter-doctor.md target='Web' devos='Linux' config='LinuxDesktopAndroidWeb' %}

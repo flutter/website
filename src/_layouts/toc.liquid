@@ -25,6 +25,8 @@ sitemap: false
 
 {% assign entries = topics -%}
 {% capture md %}{% include mini-toc.md %}{% endcapture %}
-{{ md | markdownify }}
+{% renderTemplate "md" %}
+{{ md }}
+{% endrenderTemplate %}
 
 {{content}}

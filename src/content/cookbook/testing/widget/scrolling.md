@@ -144,7 +144,7 @@ void main() {
 
 Run the test using the following command from the root of the project:
 
-```
+```console
 flutter test test/widget_test.dart
 ```
 

@@ -8,11 +8,8 @@ To add Linux as a Flutter app target for Linux, follow this procedure.
 
 ## Install Linux compilation tools
 
-1. Allocate a minimum of 5 GB of storage for the Linux compiliation tools.
+1. Allocate a minimum of 5 GB of storage for the Linux compilation tools.
 
 {% include docs/install/reqs/linux/install-desktop-tools.md devos='linux' %}
 
-{% include docs/install/flutter-doctor.md
-   target='Linux'
-   devos='Linux'
-   config='LinuxDesktopWeb' %}
+{% include docs/install/flutter-doctor.md target='Linux' devos='Linux' config='LinuxDesktopWeb' %}

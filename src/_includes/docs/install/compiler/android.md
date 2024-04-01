@@ -226,13 +226,13 @@ Look for your `JAVA_HOME` path in your appropriate shell resource file.
 
 Change it from:
 
-```conf
+```bash
 export JAVA_HOME="/Applications/Android\ Studio.app/Contents/jre/Contents/Home"
 ```
 
 to:
 
-```conf
+```bash
 export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/Contents/Home"
 ```
 
