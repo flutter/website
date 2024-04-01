@@ -64,6 +64,11 @@ ${content}
     return pages.filter((page) => page.url.includes(pageUrl) && page.url !== pageUrl);
   });
 
+  // TODO(parlough): Make this more generic.
+  eleventyConfig.addFilter('widget_filter', function (widgets, field, subName) {
+    return widgets.filter((comp) => comp[field]?.includes(subName) ?? false);
+  });
+
   eleventyConfig.addFilter('regex_replace', regexReplace);
   eleventyConfig.addFilter('toISOString', toISOString);
   eleventyConfig.addFilter(
