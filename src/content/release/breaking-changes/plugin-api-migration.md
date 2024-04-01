@@ -73,8 +73,7 @@ The following instructions outline the steps for supporting the new API:
    You might have to make a public constructor for your plugin class
    if one didn't exist already. For example:
 
-   <?code-excerpt title="MainActivity.java"?>
-   ```java
+   ```java title="MainActivity.java"
     package io.flutter.plugins.firebasecoreexample;
 
     import io.flutter.embedding.android.FlutterActivity;
@@ -92,8 +91,7 @@ The following instructions outline the steps for supporting the new API:
    to use `io.flutter.embedding.android.FlutterActivity`.
    For example:
 
-    <?code-excerpt title="AndroidManifest.xml"?>
-    ```xml
+    ```xml title="AndroidManifest.xml"
      <activity android:name="io.flutter.embedding.android.FlutterActivity"
             android:theme="@style/LaunchTheme"
    android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale"
@@ -118,8 +116,7 @@ The following instructions outline the steps for supporting the new API:
    register all the plugins instead of using
    `GeneratedPluginRegistrant`.  For example:
 
-    <?code-excerpt title="EmbeddingV1Activity.java"?>
-    ```java
+    ```java title="EmbeddingV1Activity.java"
     package io.flutter.plugins.batteryexample;
 
     import android.os.Bundle;
@@ -144,8 +141,7 @@ The following instructions outline the steps for supporting the new API:
    `<plugin_name>/example/android/app/src/main/AndroidManifest.xml` file.
    For example:
 
-    <?code-excerpt title="AndroidManifest.xml"?>
-    ```xml
+    ```xml title="AndroidManifest.xml"
     <activity
         android:name=".EmbeddingV1Activity"
         android:theme="@style/LaunchTheme"
@@ -164,8 +160,7 @@ but aren't required.
 1. Update `<plugin_name>/example/android/app/build.gradle`
    to replace references to `android.support.test` with `androidx.test`:
 
-    <?code-excerpt title="build.gradle"?>
-    ```groovy
+    ```groovy title="build.gradle"
     defaultConfig {
       ...
       testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -173,8 +168,7 @@ but aren't required.
     }
     ```
 
-    <?code-excerpt title="build.gradle"?>
-    ```groovy
+    ```groovy title="build.gradle"
     dependencies {
     ...
     androidTestImplementation 'androidx.test:runner:1.2.0'
@@ -188,8 +182,7 @@ but aren't required.
    in `<plugin_name>/example/android/app/src/androidTest/java/<plugin_path>/`.
    You will need to create these directories. For example:
 
-    <?code-excerpt title="MainActivityTest.java"?>
-    ```java
+    ```java title="MainActivityTest.java"
     package io.flutter.plugins.firebase.core;
 
     import androidx.test.rule.ActivityTestRule;
@@ -204,8 +197,7 @@ but aren't required.
     }
     ```
 
-    <?code-excerpt title="EmbeddingV1ActivityTest.java"?>
-    ```java
+    ```java title="EmbeddingV1ActivityTest.java"
     package io.flutter.plugins.firebase.core;
 
     import androidx.test.rule.ActivityTestRule;
@@ -225,8 +217,7 @@ but aren't required.
    `<plugin_name>/pubspec.yaml` and
    `<plugin_name>/example/pubspec.yaml`.
 
-    <?code-excerpt title="pubspec.yaml"?>
-    ```yaml
+    ```yaml title="pubspec.yaml"
     integration_test:
       sdk: flutter
     flutter_driver:
@@ -239,8 +230,7 @@ but aren't required.
    which is the minimum version for which we can guarantee support.
    For example:
 
-    <?code-excerpt title="pubspec.yaml"?>
-    ```yaml
+    ```yaml title="pubspec.yaml"
     environment:
       sdk: ">=2.16.1 <3.0.0"
       flutter: ">=1.17.0"

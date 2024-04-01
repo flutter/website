@@ -434,7 +434,7 @@ the core widget code from the animation code.
 object to hold the animation. Add the following `AnimatedLogo` class:
 
 <?code-excerpt path-base="animation/animate2"?>
-<?code-excerpt "lib/main.dart (AnimatedLogo)" title?>
+<?code-excerpt "lib/main.dart (AnimatedLogo)"?>
 ```dart
 class AnimatedLogo extends AnimatedWidget {
   const AnimatedLogo({super.key, required Animation<double> animation})

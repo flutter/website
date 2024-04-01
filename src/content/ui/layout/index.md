@@ -153,7 +153,7 @@ Then you can add the `Center` widget directly to the `body`
 property for the home page.
 
 <?code-excerpt path-base="layout/base"?>
-<?code-excerpt "lib/main.dart (MyApp)" title?>
+<?code-excerpt "lib/main.dart (MyApp)"?>
 ```dart
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -206,7 +206,7 @@ You need to set these yourself.
 To learn what other UI components you can add, check out the
 [Cupertino library][].
 
-<?code-excerpt "lib/cupertino.dart (MyApp)" title?>
+<?code-excerpt "lib/cupertino.dart (MyApp)"?>
 ```dart
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -258,7 +258,7 @@ For a non-Material app, you can add the `Center` widget to the app's
 `build()` method:
 
 <?code-excerpt path-base="layout/non_material"?>
-<?code-excerpt "lib/main.dart (MyApp)" title?>
+<?code-excerpt "lib/main.dart (MyApp)"?>
 ```dart
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

@@ -155,8 +155,7 @@ Android APIs might be helpful:
 {% samplecode android-splash-alignment %}
 {% sample Java %}
 
-<?code-excerpt title="MainActivity.java"?>
-```java
+```java title="MainActivity.java"
 import android.os.Build;
 import android.os.Bundle;
 import android.window.SplashScreenView;
@@ -186,8 +185,7 @@ public class MainActivity extends FlutterActivity {
 
 {% sample Kotlin %}
 
-<?code-excerpt title="MainActivity.kt"?>
-```kotlin
+```kotlin title="MainActivity.kt"
 import android.os.Build
 import android.os.Bundle
 import androidx.core.view.WindowCompat

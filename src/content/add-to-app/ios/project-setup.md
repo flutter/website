@@ -163,8 +163,7 @@ CocoaPods in the [CocoaPods getting started guide][].
 
 Add the following lines to your `Podfile`:
 
-<?code-excerpt title="MyApp/Podfile"?>
-```ruby
+```ruby title="MyApp/Podfile"
 flutter_application_path = '../my_flutter'
 load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
 ```
@@ -176,8 +175,7 @@ load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
 For each [Podfile target][] that needs to
 embed Flutter, call `install_all_flutter_pods(flutter_application_path)`.
 
-<?code-excerpt title="MyApp/Podfile"?>
-```ruby
+```ruby title="MyApp/Podfile"
 target 'MyApp' do
   install_all_flutter_pods(flutter_application_path)
 end
@@ -189,8 +187,7 @@ end
 
 In the `Podfile`'s `post_install` block, call `flutter_post_install(installer)`.
 
-<?code-excerpt title="MyApp/Podfile"?>
-```ruby
+```ruby title="MyApp/Podfile"
 post_install do |installer|
   flutter_post_install(installer) if defined?(flutter_post_install)
 end
@@ -379,8 +376,7 @@ some/path/MyApp/
 
 Host apps using CocoaPods can add Flutter to their Podfile:
 
-<?code-excerpt title="MyApp/Podfile"?>
-```ruby
+```ruby title="MyApp/Podfile"
 pod 'Flutter', :podspec => 'some/path/MyApp/Flutter/[build mode]/Flutter.podspec'
 ```
 

@@ -75,8 +75,7 @@ does (transitively via a plugin).
 
 For instance, your existing app's Gradle might already have:
 
-<?code-excerpt title="ExistingApp/app/build.gradle"?>
-```groovy
+```groovy title="ExistingApp/app/build.gradle"
 …
 dependencies {
   …
@@ -89,8 +88,7 @@ dependencies {
 And your Flutter module also depends on
 [firebase_crashlytics][] via `pubspec.yaml`:
 
-<?code-excerpt title="flutter_module/pubspec.yaml"?>
-```yaml
+```yaml title="flutter_module/pubspec.yaml"
 …
 dependencies:
   …
@@ -102,8 +100,7 @@ dependencies:
 This plugin usage transitively adds a Gradle dependency again via
 firebase_crashlytics v0.1.3's own [Gradle file][]:
 
-<?code-excerpt title="firebase_crashlytics_via_pub/android/build.gradle"?>
-```groovy
+```groovy title="firebase_crashlytics_via_pub/android/build.gradle
 …
 dependencies {
   …
@@ -127,8 +124,7 @@ or implementation breaking changes between the versions.
 For example, you might use the new Crashlytics library
 in your existing app as follows:
 
-<?code-excerpt title="ExistingApp/app/build.gradle"?>
-```groovy
+```groovy title="ExistingApp/app/build.gradle"
 …
 dependencies {
   …

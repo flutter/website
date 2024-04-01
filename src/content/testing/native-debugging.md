@@ -203,8 +203,7 @@ test Flutter app. This update adds native code to debug.
     <details>
     <summary>Expand to see Flutter code for this example</summary>
 
-    <?code-excerpt title="lib/main.dart"?>
-    ```dart
+    ```dart title="lib/main.dart"
     // Copyright 2023 The Flutter Authors. All rights reserved.
     // Use of this source code is governed by a BSD-style license that can be
     // found in the LICENSE file.

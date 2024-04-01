@@ -129,7 +129,7 @@ In this section, shell out the basic Flutter app code to start your app.
    This app uses a parameter for the app title and the title shown
    on the app's `appBar`. This decision simplifies the code.
 
-   <?code-excerpt "lib/main.dart (all)" title?>
+   <?code-excerpt "lib/main.dart (all)"?>
    ```dart
    import 'package:flutter/material.dart';
 
@@ -169,7 +169,7 @@ the following layout.
 
 Add the following code after the `MyApp` class.
 
-<?code-excerpt "step2/lib/main.dart (titleSection)" title?>
+<?code-excerpt "step2/lib/main.dart (titleSection)"?>
 ```dart
 class TitleSection extends StatelessWidget {
   const TitleSection({
@@ -311,7 +311,7 @@ amount of space. Paint all text and icons with the primary color.
 Add the following code after the `TitleSection` widget to contain the code
 to build the row of buttons.
 
-<?code-excerpt "lib/main.dart (ButtonStart)" title?>
+<?code-excerpt "lib/main.dart (ButtonStart)"?>
 ```dart
 class ButtonSection extends StatelessWidget {
   const ButtonSection({super.key});
@@ -336,7 +336,7 @@ is wrapped with a `Padding` widget.
 
 Add the following code after the `ButtonSection` class.
 
-<?code-excerpt "lib/main.dart (ButtonWithText)" title?>
+<?code-excerpt "lib/main.dart (ButtonWithText)"?>
 ```dart
 class ButtonSection extends StatelessWidget {
   const ButtonSection({super.key});
@@ -391,7 +391,7 @@ Add the following code into the `ButtonSection` widget.
    This value, then, tells Flutter to arrange the free space in equal amounts
    before, between, and after each column along the `Row`.
 
-<?code-excerpt "lib/main.dart (ButtonSection)" title?>
+<?code-excerpt "lib/main.dart (ButtonSection)"?>
 ```dart
 class ButtonSection extends StatelessWidget {
   const ButtonSection({super.key});
@@ -451,7 +451,7 @@ Add the button section to the `children` list.
 
 <?code-excerpt path-base="layout/lakes"?>
 
-<?code-excerpt "step{2,3}/lib/main.dart (addWidget)" title?>
+<?code-excerpt "step{2,3}/lib/main.dart (addWidget)"?>
 ```diff
 --- step2/lib/main.dart (addWidget)
 +++ step3/lib/main.dart (addWidget)
@@ -477,7 +477,7 @@ In this section, add the text description to this app.
 
 Add the following code as a separate widget after the `ButtonSection` widget.
 
-<?code-excerpt "step4/lib/main.dart (TextSection)" title?>
+<?code-excerpt "step4/lib/main.dart (TextSection)"?>
 ```dart
 class TextSection extends StatelessWidget {
   const TextSection({
@@ -511,7 +511,7 @@ Add a new `TextSection` widget as a child after the `ButtonSection`.
 When adding the `TextSection` widget, set its `description` property to
 the text of the location description.
 
-<?code-excerpt "step{3,4}/lib/main.dart (addWidget)" title?>
+<?code-excerpt "step{3,4}/lib/main.dart (addWidget)"?>
 ```diff
 --- step3/lib/main.dart (addWidget)
 +++ step4/lib/main.dart (addWidget)
@@ -581,7 +581,7 @@ display the image.
 
 Define the following `ImageSection` widget after the other declarations.
 
-<?code-excerpt "step5/lib/main.dart (ImageSection)" title?>
+<?code-excerpt "step5/lib/main.dart (ImageSection)"?>
 ```dart
 class ImageSection extends StatelessWidget {
   const ImageSection({super.key, required this.image});
@@ -610,7 +610,7 @@ Add an `ImageSection` widget as the first child in the `children` list.
 Set the `image` property to the path of the image you added in
 [Configure your app to use supplied images](#configure-your-app-to-use-supplied-images).
 
-<?code-excerpt "step{4,5}/lib/main.dart (addWidget)" title?>
+<?code-excerpt "step{4,5}/lib/main.dart (addWidget)"?>
 ```diff
 --- step4/lib/main.dart (addWidget)
 +++ step5/lib/main.dart (addWidget)

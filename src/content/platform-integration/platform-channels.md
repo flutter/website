@@ -356,8 +356,7 @@ Inside the `configureFlutterEngine()` method, create a `MethodChannel` and call
 `setMethodCallHandler()`. Make sure to use the same channel name as
 was used on the Flutter client side.
 
-<?code-excerpt title="MainActivity.kt"?>
-```kotlin
+```kotlin title="MainActivity.kt"
 import androidx.annotation.NonNull
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
@@ -383,8 +382,7 @@ would write in a native Android app.
 
 First, add the needed imports at the top of the file:
 
-<?code-excerpt title="MainActivity.kt"?>
-```kotlin
+```kotlin title="MainActivity.kt"
 import android.content.Context
 import android.content.ContextWrapper
 import android.content.Intent
@@ -397,8 +395,7 @@ import android.os.Build.VERSION_CODES
 Next, add the following method in the `MainActivity` class,
 below the `configureFlutterEngine()` method:
 
-<?code-excerpt title="MainActivity.kt"?>
-```kotlin
+```kotlin title="MainActivity.kt"
   private fun getBatteryLevel(): Int {
     val batteryLevel: Int
     if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
@@ -423,8 +420,7 @@ If an unknown method is called, report that instead.
 
 Remove the following code:
 
-<?code-excerpt title="MainActivity.kt"?>
-```kotlin
+```kotlin title="MainActivity.kt"
     MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler {
       call, result ->
       // This method is invoked on the main thread.
@@ -434,8 +430,7 @@ Remove the following code:
 
 And replace with the following:
 
-<?code-excerpt title="MainActivity.kt"?>
-```kotlin
+```kotlin title="MainActivity.kt"
     MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler {
       // This method is invoked on the main thread.
       call, result ->
@@ -473,8 +468,7 @@ inside the `configureFlutterEngine()` method.
 Make sure to use the same channel name as was used on the
 Flutter client side.
 
-<?code-excerpt title="MainActivity.java"?>
-```java
+```java title="MainActivity.java"
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity;
 import io.flutter.embedding.engine.FlutterEngine;
@@ -503,8 +497,7 @@ would write in a native Android app.
 
 First, add the needed imports at the top of the file:
 
-<?code-excerpt title="MainActivity.java"?>
-```java
+```java title="MainActivity.java"
 import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -517,8 +510,7 @@ import android.os.Bundle;
 Then add the following as a new method in the activity class,
 below the `configureFlutterEngine()` method:
 
-<?code-excerpt title="MainActivity.java"?>
-```java
+```java title="MainActivity.java"
   private int getBatteryLevel() {
     int batteryLevel = -1;
     if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
@@ -545,8 +537,7 @@ If an unknown method is called, report that instead.
 
 Remove the following code:
 
-<?code-excerpt title="MainActivity.java"?>
-```java
+```java title="MainActivity.java"
           (call, result) -> {
             // This method is invoked on the main thread.
             // TODO
@@ -555,8 +546,7 @@ Remove the following code:
 
 And replace with the following:
 
-<?code-excerpt title="MainActivity.java"?>
-```java
+```java title="MainActivity.java"
           (call, result) -> {
             // This method is invoked on the main thread.
             if (call.method.equals("getBatteryLevel")) {
@@ -603,8 +593,7 @@ Override the `application:didFinishLaunchingWithOptions:` function and create
 a `FlutterMethodChannel` tied to the channel name
 `samples.flutter.dev/battery`:
 
-<?code-excerpt title="AppDelegate.swift"?>
-```swift
+```swift title="AppDelegate.swift"
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
   override func application(
@@ -632,8 +621,7 @@ would write in a native iOS app.
 
 Add the following as a new method at the bottom of `AppDelegate.swift`:
 
-<?code-excerpt title="AppDelegate.swift"?>
-```swift
+```swift title="AppDelegate.swift"
 private func receiveBatteryLevel(result: FlutterResult) {
   let device = UIDevice.current
   device.isBatteryMonitoringEnabled = true
@@ -654,8 +642,7 @@ The implementation of this platform method calls
 the iOS code written in the previous step. If an unknown method
 is called, report that instead.
 
-<?code-excerpt title="AppDelegate.swift"?>
-```swift
+```swift title="AppDelegate.swift"
 batteryChannel.setMethodCallHandler({
   [weak self] (call: FlutterMethodCall, result: FlutterResult) -> Void in
   // This method is invoked on the UI thread.
@@ -688,8 +675,7 @@ didFinishLaunchingWithOptions:` method.
 Make sure to use the same channel name
 as was used on the Flutter client side.
 
-<?code-excerpt title="AppDelegate.m"?>
-```objc
+```objc title="AppDelegate.m"
 #import <Flutter/Flutter.h>
 #import "GeneratedPluginRegistrant.h"
 
@@ -717,8 +703,7 @@ would write in a native iOS app.
 
 Add the following method in the `AppDelegate` class, just before `@end`:
 
-<?code-excerpt title="AppDelegate.m"?>
-```objc
+```objc title="AppDelegate.m"
 - (int)getBatteryLevel {
   UIDevice* device = UIDevice.currentDevice;
   device.batteryMonitoringEnabled = YES;
@@ -737,8 +722,7 @@ this platform method calls the iOS code written in the previous step,
 and returns a response for both the success and error cases using
 the `result` argument. If an unknown method is called, report that instead.
 
-<?code-excerpt title="AppDelegate.m"?>
-```objc
+```objc title="AppDelegate.m"
 __weak typeof(self) weakSelf = self;
 [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
   // This method is invoked on the UI thread.
@@ -788,8 +772,7 @@ Add the C++ implementation of the platform channel method:
 First, add the necessary includes to the top of the file, just
 after `#include "flutter_window.h"`:
 
-<?code-excerpt title="flutter_window.cpp"?>
-```cpp
+```cpp title="flutter_window.cpp"
 #include <flutter/event_channel.h>
 #include <flutter/event_sink.h>
 #include <flutter/event_stream_handler_functions.h>
@@ -804,8 +787,7 @@ Edit the `FlutterWindow::OnCreate` method and create
 a `flutter::MethodChannel` tied to the channel name
 `samples.flutter.dev/battery`:
 
-<?code-excerpt title="flutter_window.cpp"?>
-```cpp
+```cpp title="flutter_window.cpp"
 bool FlutterWindow::OnCreate() {
   // ...
   RegisterPlugins(flutter_controller_->engine());
@@ -831,8 +813,7 @@ you would write in a native Windows application.
 Add the following as a new function at the top of
 `flutter_window.cpp` just after the `#include` section:
 
-<?code-excerpt title="flutter_window.cpp"?>
-```cpp
+```cpp title="flutter_window.cpp"
 static int GetBatteryLevel() {
   SYSTEM_POWER_STATUS status;
   if (GetSystemPowerStatus(&status) == 0 || status.BatteryLifePercent == 255) {
@@ -851,8 +832,7 @@ is called, report that instead.
   
 Remove the following code:
 
-<?code-excerpt title="flutter_window.cpp"?>
-```cpp
+```cpp title="flutter_window.cpp"
   channel.SetMethodCallHandler(
       [](const flutter::MethodCall<>& call,
          std::unique_ptr<flutter::MethodResult<>> result) {
@@ -862,8 +842,7 @@ Remove the following code:
 
 And replace with the following:
 
-<?code-excerpt title="flutter_window.cpp"?>
-```cpp
+```cpp title="flutter_window.cpp"
   channel.SetMethodCallHandler(
       [](const flutter::MethodCall<>& call,
          std::unique_ptr<flutter::MethodResult<>> result) {
@@ -905,16 +884,14 @@ Add the Swift implementation of the platform channel method:
 First, add the necessary import to the top of the file, just after
 `import FlutterMacOS`:
 
-<?code-excerpt title="MainFlutterWindow.swift"?>
-```swift
+```swift title="MainFlutterWindow.swift"
 import IOKit.ps
 ```
 
 Create a `FlutterMethodChannel` tied to the channel name
 `samples.flutter.dev/battery` in the `awakeFromNib` method:
 
-<?code-excerpt title="MainFlutterWindow.swift"?>
-```swift
+```swift title="MainFlutterWindow.swift"
   override func awakeFromNib() {
     // ...
     self.setFrame(windowFrame, display: true)
@@ -940,8 +917,7 @@ would write in a native macOS app.
 
 Add the following as a new method at the bottom of `MainFlutterWindow.swift`:
 
-<?code-excerpt title="MainFlutterWindow.swift"?>
-```swift
+```swift title="MainFlutterWindow.swift"
 private func getBatteryLevel() -> Int? {
   let info = IOPSCopyPowerSourcesInfo().takeRetainedValue()
   let sources: Array<CFTypeRef> = IOPSCopyPowerSourcesList(info).takeRetainedValue() as Array
@@ -963,8 +939,7 @@ The implementation of this platform method calls
 the macOS code written in the previous step. If an unknown method
 is called, report that instead.
 
-<?code-excerpt title="MainFlutterWindow.swift"?>
-```swift
+```swift title="MainFlutterWindow.swift"
 batteryChannel.setMethodCallHandler { (call, result) in
   switch call.method {
   case "getBatteryLevel":
@@ -1011,16 +986,14 @@ of your choice. The instructions below are for Visual Studio Code with the
 First, add the necessary includes to the top of the file, just
 after `#include <flutter_linux/flutter_linux.h`:
 
-<?code-excerpt title="my_application.cc"?>
-```c
+```c title="my_application.cc"
 #include <math.h>
 #include <upower.h>
 ```
 
 Add an `FlMethodChannel` to the `_MyApplication` struct:
 
-<?code-excerpt title="my_application.cc"?>
-```c
+```c title="my_application.cc"
 struct _MyApplication {
   GtkApplication parent_instance;
   char** dart_entrypoint_arguments;
@@ -1030,8 +1003,7 @@ struct _MyApplication {
 
 Make sure to clean it up in `my_application_dispose`:
 
-<?code-excerpt title="my_application.cc"?>
-```c
+```c title="my_application.cc"
 static void my_application_dispose(GObject* object) {
   MyApplication* self = MY_APPLICATION(object);
   g_clear_pointer(&self->dart_entrypoint_arguments, g_strfreev);
@@ -1045,8 +1017,7 @@ Edit the `my_application_activate` method and initialize
 `samples.flutter.dev/battery`, just after the call to
 `fl_register_plugins`:
 
-<?code-excerpt title="my_application.cc"?>
-```c
+```c title="my_application.cc"
 static void my_application_activate(GApplication* application) {
   // ...
   fl_register_plugins(FL_PLUGIN_REGISTRY(self->view));
@@ -1069,8 +1040,7 @@ you would write in a native Linux application.
 Add the following as a new function at the top of
 `my_application.cc` just after the `G_DEFINE_TYPE` line:
 
-<?code-excerpt title="my_application.cc"?>
-```c
+```c title="my_application.cc"
 static FlMethodResponse* get_battery_level() {
   // Find the first available battery and report that.
   g_autoptr(UpClient) up_client = up_client_new();
@@ -1100,8 +1070,7 @@ is called, report that instead.
   
 Add the following code after the `get_battery_level` function:
 
-<?code-excerpt title="flutter_window.cpp"?>
-```c
+```cpp title="flutter_window.cpp"
 static void battery_method_call_handler(FlMethodChannel* channel,
                                         FlMethodCall* method_call,
                                         gpointer user_data) {
