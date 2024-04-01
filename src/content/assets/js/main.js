@@ -247,6 +247,9 @@ function initCookieNotice() {
   });
 }
 
+// A pattern to remove terminal command markers when copying code blocks.
+const terminalReplacementPattern = /^(\s*\$\s*)|(C:\\(.*)>\s*)/gm;
+
 function setupCopyButtons() {
   if (!navigator.clipboard) {
     return;
