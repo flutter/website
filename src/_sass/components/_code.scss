@@ -55,17 +55,8 @@ $generic-output-color: #8ae234;
   color: $color;
 }
 
-.language-console .highlight {
-  @include console-base;
-  .go { color: $generic-output-color; } /* Generic.Output */
-}
-
-pre.console-output {
-  @include console-base($generic-output-color)
-}
-
 // `terminal` is like `console` with prompts and output colored differently
-.language-terminal .highlight {
+.language-console .highlight {
   @include console-base;
   .gp { color: $flutter-color-yellow; font-weight: 700; } /* Generic.Prompt */
   .go { color: $generic-output-color; } /* Generic.Output */
