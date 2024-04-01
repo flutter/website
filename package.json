@@ -18,6 +18,6 @@
     "diff2html-cli": "^5.2.15"
   },
   "devDependencies": {
-    "firebase-tools": "^13.4.1"
+    "firebase-tools": "^13.6.0"
   }
 }
