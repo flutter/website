@@ -3,7 +3,7 @@ title: Create a photo filter carousel
 description: How to implement a photo filter carousel in Flutter.
 js:
   - defer: true
-    url: https://old-dartpad-3ce3f.web.app/inject_embed.dart.js
+    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/effects/photo_filter_carousel"?>

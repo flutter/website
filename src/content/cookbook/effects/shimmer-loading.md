@@ -3,7 +3,7 @@ title: Create a shimmer loading effect
 description: How to implement a shimmer loading effect.
 js:
   - defer: true
-    url: https://old-dartpad-3ce3f.web.app/inject_embed.dart.js
+    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/effects/shimmer_loading"?>

@@ -3,7 +3,7 @@ title: List with spaced items
 description: How to create a list with spaced or expanded items 
 js:
   - defer: true
-    url: https://old-dartpad-3ce3f.web.app/inject_embed.dart.js
+    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/lists/spaced_items/"?>

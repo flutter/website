@@ -3,7 +3,7 @@ title: Play and pause a video
 description: How to use the video_player plugin.
 js:
   - defer: true
-    url: https://old-dartpad-3ce3f.web.app/inject_embed.dart.js
+    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/plugins/play_video/"?>

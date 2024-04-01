@@ -3,7 +3,7 @@ title: Retrieve the value of a text field
 description: How to retrieve text from a text field.
 js:
   - defer: true
-    url: https://old-dartpad-3ce3f.web.app/inject_embed.dart.js
+    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/forms/retrieve_input"?>

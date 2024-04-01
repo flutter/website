@@ -3,7 +3,7 @@ title: Navigate to a new screen and back
 description: How to navigate between routes.
 js:
   - defer: true
-    url: https://old-dartpad-3ce3f.web.app/inject_embed.dart.js
+    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/navigation/navigation_basics"?>
