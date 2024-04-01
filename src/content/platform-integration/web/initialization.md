@@ -247,6 +247,6 @@ First, remove the files from your `/web` directory.
 
 Then, from your project directory, run the following:
 
-```
+```console
 $ flutter create . --platforms=web
 ```

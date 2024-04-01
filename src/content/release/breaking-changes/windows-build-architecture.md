@@ -24,19 +24,19 @@ build path.
 
 Example build path before the migration:
 
-```
+```plaintext
 build\windows\runner\Release\hello_world.exe
 ```
 
 Example build path after the migration if targeting x64:
 
-```
+```plaintext
 build\windows\x64\runner\Release\hello_world.exe
 ```
 
 Example build path after the migration if targeting Arm64:
 
-```
+```plaintext
 build\windows\arm64\runner\Release\hello_world.exe
 ```
 

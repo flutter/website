@@ -99,25 +99,25 @@ pixel-perfect consistency on both desktop and mobile browsers.
 
 Run in Chrome using the default renderer option (`auto`):
 
-```
+```console
 flutter run -d chrome
 ```
 
 Build your app in release mode, using the default (auto) option:
 
-```
+```console
 flutter build web --release
 ```
 
 Build your app in release mode, using just the CanvasKit renderer:
 
-```
+```console
 flutter build web --web-renderer canvaskit --release
 ```
 
 Run  your app in profile mode using the HTML renderer:
 
-```
+```console
 flutter run -d chrome --web-renderer html --profile
 ```
 

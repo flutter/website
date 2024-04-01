@@ -69,7 +69,7 @@ assets to the new project.
 
 To create a new project run:
 
-```bash
+```console
 flutter create -t <project-type> <new-project-path>
 ```
 
@@ -108,7 +108,7 @@ the file `android/gradle.properties`
 or `.android/gradle.properties`
 must contain:
 
-```
+```properties
 android.useAndroidX=true
 android.enableJetifier=true
 ```

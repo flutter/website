@@ -21,7 +21,7 @@ When you try to run the `flutter` command,
 the console fails to find it. 
 The error usually looks as follows:
 
-```
+```plaintext
 'flutter' is not recognized as an internal or external command operable program or batch file
 ```
 
@@ -48,7 +48,7 @@ __What does this issue look like?__
 
 Running your Flutter project produces an error like the following:
 
-```
+```plaintext
 The Flutter SDK is installed in a protected folder and may not function correctly.
 Please move the SDK to a location that is user-writable without Administration permissions and restart.
 ```
@@ -71,7 +71,7 @@ The command `flutter doctor --android-licenses` fails.
 Running `flutter doctor –verbose` gives an error message
 like the following:
 
-```
+```plaintext
 java.lang.UnsupportedClassVersionError: com/android/prefs/AndroidLocationsProvider 
 has been compiled by a more recent version of the Java Runtime (class file version 55.0), 
 this version of the Java Runtime only recognizes class file versions up to 52.0
@@ -104,7 +104,7 @@ The `flutter doctor` command complains that the
 `cmdline-tools` are missing from the Android toolchain.
 For example:
 
-```
+```plaintext
 [!] Android toolchain - develop for Android devices (Android SDK version 33.0.2) 
     • Android SDK at C:\Users\My PC\AppData\Local\Android\sdk 
     X cmdline-tools component is missing 
@@ -139,7 +139,7 @@ __What does this issue look like?__
 Running a `flutter` command produces an "exit code: 69" error,
 as shown in the following example:
 
-```
+```plaintext
 Running "flutter pub get" in flutter_tools...
 Resolving dependencies in .../flutter/packages/flutter_tools... (28.0s)
 Got TLS error trying to find package test at https://pub.dev/.

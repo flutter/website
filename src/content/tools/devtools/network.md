@@ -46,10 +46,12 @@ Any text that is not paired with an available filter key will be queried against
 all categories (method, uri, status, type).
 
 Example filter queries:
-```
+
+```plaintext
 my-endpoint m:get t:json s:200
 ```
-```
+
+```plaintext
 https s:404
 ```
 

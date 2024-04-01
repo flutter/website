@@ -32,7 +32,7 @@ and `dispose()` is called elsewhere on the object.
 If you encounter the following error, update your code to
 call `dispose()` only in cases when your code created the object.
 
-```
+```plaintext
 Once you have called dispose() on a <class name>, it can no longer be used.
 ```
 

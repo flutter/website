@@ -21,11 +21,7 @@ This tutorial explains how to design and build layouts in Flutter.
 
 If you use the example code provided, you can build the following app.
 
-{% include docs/app-figure.liquid
-   img-class="site-mobile-screenshot border"
-   image="ui/layout/layout-demo-app.png"
-   caption="The finished app."
-   width="50%" %}
+{% include docs/app-figure.liquid img-class="site-mobile-screenshot border" image="ui/layout/layout-demo-app.png" caption="The finished app." width="50%" %}
 
 <figcaption class="figure-caption">
 
@@ -70,11 +66,7 @@ Ask these questions to break the layout down to its basic elements.
 Identify the larger elements. In this example, you arrange the image, title,
 buttons, and description into a column.
 
-{% include docs/app-figure.liquid
-    img-class="site-mobile-screenshot border"
-    image="ui/layout/layout-sketch-intro.svg"
-    caption="Major elements in the layout: image, row, row, and text block"
-    width="50%" %}
+{% include docs/app-figure.liquid img-class="site-mobile-screenshot border" image="ui/layout/layout-sketch-intro.svg" caption="Major elements in the layout: image, row, row, and text block" width="50%" %}
 
 </li>
 <li>
@@ -90,10 +82,7 @@ a column of text, a star icon, and a number.
 Its first child, the column, contains two lines of text.
 That first column might need more space.
 
-{% include docs/app-figure.liquid
-   image="ui/layout/layout-sketch-title-block.svg"
-   caption="Title section with text blocks and an icon"
-   -%}
+{% include docs/app-figure.liquid image="ui/layout/layout-sketch-title-block.svg" caption="Title section with text blocks and an icon" -%}
 
 </li>
 
@@ -102,10 +91,7 @@ That first column might need more space.
 Row 2, the **Button** section, has three children: each child contains
 a column which then contains an icon and text.
 
-{% include docs/app-figure.liquid
-    image="ui/layout/layout-sketch-button-block.svg"
-    caption="The Button section with three labeled buttons"
-    width="50%" %}
+{% include docs/app-figure.liquid image="ui/layout/layout-sketch-button-block.svg" caption="The Button section with three labeled buttons" width="50%" %}
 
   </li>
 
@@ -177,9 +163,7 @@ the following layout.
 
 <?code-excerpt path-base="layout/lakes"?>
 
-{% include docs/app-figure.liquid
-   image="ui/layout/layout-sketch-title-block-unlabeled.svg"
-   caption="The Title section as sketch and prototype UI" %}
+{% include docs/app-figure.liquid image="ui/layout/layout-sketch-title-block-unlabeled.svg" caption="The Title section as sketch and prototype UI" %}
 
 ### Add the `TitleSection` Widget
 
@@ -317,9 +301,7 @@ In this section, add the buttons that will add functionality to your app.
 The **Button** section contains three columns that use the same layout:
 an icon over a row of text.
 
-{% include docs/app-figure.liquid
-   image="ui/layout/layout-sketch-button-block-unlabeled.svg"
-   caption="The Button section as sketch and prototype UI" %}
+{% include docs/app-figure.liquid image="ui/layout/layout-sketch-button-block-unlabeled.svg" caption="The Button section as sketch and prototype UI" %}
 
 Plan to distribute these columns in one row so each takes the same
 amount of space. Paint all text and icons with the primary color.
@@ -487,9 +469,7 @@ Add the button section to the `children` list.
 
 In this section, add the text description to this app.
 
-{% include docs/app-figure.liquid
-   image="ui/layout/layout-sketch-add-text-block.svg"
-   caption="The text block as sketch and prototype UI" %}
+{% include docs/app-figure.liquid image="ui/layout/layout-sketch-add-text-block.svg" caption="The text block as sketch and prototype UI" %}
 
 <?code-excerpt path-base="layout/lakes"?>
 
@@ -650,11 +630,7 @@ Set the `image` property to the path of the image you added in
 
 That's it! When you hot reload the app, your app should look like this.
 
-{% include docs/app-figure.liquid
-   img-class="site-mobile-screenshot border"
-   image="ui/layout/layout-demo-app.png"
-   caption="The finished app"
-   width="50%" %}
+{% include docs/app-figure.liquid img-class="site-mobile-screenshot border" image="ui/layout/layout-demo-app.png" caption="The finished app" width="50%" %}
 
 ## Resources
 

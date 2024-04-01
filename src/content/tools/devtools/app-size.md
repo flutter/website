@@ -114,7 +114,7 @@ To put it in context of app size analysis,
 imagine `package:a` imports both `package:b` and `package:c`,
 and both `package:b` and `package:c` import `package:d`.
 
-```
+```plaintext
 package:a
 |__ package:b
 |   |__ package:d
@@ -125,7 +125,7 @@ package:a
 In this example, `package:a` dominates `package:d`,
 so the dominator tree for this data would look like:
 
-```
+```plaintext
 package:a
 |__ package:b
 |__ package:c
@@ -151,7 +151,7 @@ relationships that existing between nodes of code size data.
 
 Again, using the following example:
 
-```
+```plaintext
 package:a
 |__ package:b
 |   |__ package:d
@@ -163,7 +163,7 @@ The call graph for this data would link `package:d`
 to its direct callers, `package:b` and `package:c`,
 instead of its "dominator", `package:a`.
 
-```
+```plaintext
 package:a --> package:b -->
                               package:d
 package:a --> package:c -->
@@ -237,7 +237,7 @@ information for your entire application (native code,
 Dart code, assets, fonts, etc.), and you can generate it using the
 `--analyze-size` flag:
 
-```
+```console
 flutter build <your target platform> --analyze-size
 ```
 
@@ -245,7 +245,7 @@ This builds your application, prints a size summary
 to the command line, and prints a line
 telling you where to find the size analysis file.
 
-```
+```console
 flutter build apk --analyze-size --target-platform=android-arm64
 ...
 ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒

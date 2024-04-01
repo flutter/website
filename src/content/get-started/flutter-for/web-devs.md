@@ -68,7 +68,7 @@ there is a textAlign property of a [`Text`][] widget.
 In both HTML and Flutter, child elements or widgets
 are anchored at the top left, by default.
 
-```css
+```css highlightLines=9
 <div class="grey-box">
   Lorem ipsum
 </div>
@@ -77,12 +77,11 @@ are anchored at the top left, by default.
     background-color: #e0e0e0; /* grey 300 */
     width: 320px;
     height: 240px;
-    [!font: 900 24px Georgia;!]
+    font: 900 24px Georgia;
 }
 ```
 
-<?code-excerpt "lib/main.dart (Container)" replace="/\/\*//g;/\*\/ *//g"?>
-```dart
+```dart highlightLines=8-13
 final container = Container(
   // grey box
   width: 320,
@@ -90,13 +89,12 @@ final container = Container(
   color: Colors.grey[300],
   child: const Text(
     'Lorem ipsum',
-    style: [!TextStyle(
+    style: TextStyle(
       fontFamily: 'Georgia',
       fontSize: 24,
       fontWeight: FontWeight.bold,
     ),
-    !]
-    [!textAlign: TextAlign.center, !]
+    textAlign: TextAlign.center,
   ),
 );
 ```
@@ -114,27 +112,25 @@ use the `decoration` property.
 
 The CSS examples use the hex color equivalents to the Material color palette.
 
-```css
+```css highlightLines=6
 <div class="grey-box">
   Lorem ipsum
 </div>
 
 .grey-box {
-    [!background-color: #e0e0e0;!] /* grey 300 */
+    background-color: #e0e0e0; /* grey 300 */
     width: 320px;
     height: 240px;
     font: 900 24px Roboto;
 }
 ```
 
-<?code-excerpt "lib/main.dart (Container2)" replace="/\/\*//g;/\*\/ *//g"?>
-```dart
+```dart highlightLines=5
 final container = Container(
   // grey box
   width: 320,
   height: 240,
-  [!color: Colors.grey[300],
-  !]
+  color: Colors.grey[300],
   child: Text(
     'Lorem ipsum',
     style: bold24Roboto,
@@ -142,16 +138,14 @@ final container = Container(
 );
 ```
 
-<?code-excerpt "lib/main.dart (Container3)" replace="/\/\*//g;/\*\/ *//g"?>
-```dart
+```dart highlightLines=5-7
 final container = Container(
   // grey box
   width: 320,
   height: 240,
-  [!decoration: BoxDecoration(
+  decoration: BoxDecoration(
     color: Colors.grey[300],
   ),
-  !]
   child: Text(
     'Lorem ipsum',
     style: bold24Roboto,
@@ -168,7 +162,7 @@ To accomplish a similar effect in CSS, the parent element uses either a flex
 or table-cell display behavior. The examples on this page show the flex
 behavior.
 
-```css
+```css highlightLines=10-12
 <div class="grey-box">
   Lorem ipsum
 </div>
@@ -178,21 +172,20 @@ behavior.
     width: 320px;
     height: 240px;
     font: 900 24px Roboto;
-    [!display: flex;
+    display: flex;
     align-items: center;
-    justify-content: center;!]
+    justify-content: center;
 }
 ```
 
-<?code-excerpt "lib/main.dart (Center)" replace="/\/\*//g;/\*\/ *//g"?>
-```dart
+```dart highlightLines=6-7
 final container = Container(
   // grey box
   width: 320,
   height: 240,
   color: Colors.grey[300],
-  child: [!Center(
-    child: !]Text(
+  child: Center(
+    child: Text(
       'Lorem ipsum',
       style: bold24Roboto,
     ),
@@ -213,7 +206,7 @@ Create a new [`BoxConstraints`][] widget with a `minWidth` or `maxWidth`.
 For nested Containers, if the parent's width is less than the child's width,
 the child Container sizes itself to match the parent.
 
-```css
+```css highlightLines=9,20-21
 <div class="grey-box">
   <div class="red-box">
     Lorem ipsum
@@ -222,7 +215,7 @@ the child Container sizes itself to match the parent.
 
 .grey-box {
     background-color: #e0e0e0; /* grey 300 */
-    [!width: 320px;!]
+    width: 320px;
     height: 240px;
     font: 900 24px Roboto;
     display: flex;
@@ -233,24 +226,21 @@ the child Container sizes itself to match the parent.
     background-color: #ef5350; /* red 400 */
     padding: 16px;
     color: #ffffff;
-    [!width: 100%;
-    max-width: 240px;!]
+    width: 100%;
+    max-width: 240px;
 }
 ```
 
-<?code-excerpt "lib/main.dart (Nested)" replace="/\/\*//g;/\*\/ *//g"?>
-```dart
+```dart highlightLines=3,9
 final container = Container(
   // grey box
-  [!width: 320,
-  !]
+  width: 320,
   height: 240,
   color: Colors.grey[300],
   child: Center(
     child: Container(
       // red box
-      [!width: 240,
-      !]// max-width is 240
+      width: 240, // max-width is 240
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: Colors.red[400],
@@ -277,7 +267,7 @@ To specify an absolute position for a widget as x-y coordinates,
 nest it in a [`Positioned`][] widget that is,
 in turn, nested in a [`Stack`][] widget.
 
-```css
+```css highlightLines=8,18-20
 <div class="grey-box">
   <div class="red-box">
     Lorem ipsum
@@ -285,7 +275,7 @@ in turn, nested in a [`Stack`][] widget.
 </div>
 
 .grey-box {
-    [!position: relative;!]
+    position: relative;
     background-color: #e0e0e0; /* grey 300 */
     width: 320px;
     height: 240px;
@@ -295,26 +285,24 @@ in turn, nested in a [`Stack`][] widget.
     background-color: #ef5350; /* red 400 */
     padding: 16px;
     color: #ffffff;
-    [!position: absolute;
+    position: absolute;
     top: 24px;
-    left: 24px;!]
+    left: 24px;
 }
 ```
 
-<?code-excerpt "lib/main.dart (Absolute)" replace="/\/\*//g;/\*\/ *//g"?>
-```dart
+```dart highlightLines=6-7,10-11
 final container = Container(
   // grey box
   width: 320,
   height: 240,
   color: Colors.grey[300],
-  [!child: Stack(
-    children: !][
+  child: Stack(
+    children: [
       Positioned(
         // red box
-        [!left: 24,
+        left: 24,
         top: 24,
-        !]
         child: Container(
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
@@ -343,7 +331,7 @@ create a new [`Matrix4`][] identity object
 and use its `rotateZ()` method to specify the rotation factor
 using radians (degrees × π / 180).
 
-```css
+```css highlightLines=20
 <div class="grey-box">
   <div class="red-box">
     Lorem ipsum
@@ -363,22 +351,21 @@ using radians (degrees × π / 180).
     background-color: #ef5350; /* red 400 */
     padding: 16px;
     color: #ffffff;
-    [!transform: rotate(15deg);!]
+    transform: rotate(15deg);
 }
 ```
 
-<?code-excerpt "lib/main.dart (Rotating)" replace="/\/\*//g;/\*\/ *//g"?>
-```dart
+```dart highlightLines=7-10,
 final container = Container(
   // grey box
   width: 320,
   height: 240,
   color: Colors.grey[300],
   child: Center(
-    child: [!Transform(
+    child: Transform(
       alignment: Alignment.center,
       transform: Matrix4.identity()..rotateZ(15 * 3.1415927 / 180),
-      child: !]Container(
+      child: Container(
         // red box
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
@@ -409,7 +396,7 @@ and use its `scale()` method to specify the scaling factor.
 When you scale a parent widget,
 its child widgets are scaled accordingly.
 
-```css
+```css highlightLines=20
 <div class="grey-box">
   <div class="red-box">
     Lorem ipsum
@@ -429,22 +416,21 @@ its child widgets are scaled accordingly.
     background-color: #ef5350; /* red 400 */
     padding: 16px;
     color: #ffffff;
-    [!transform: scale(1.5);!]
+    transform: scale(1.5);
 }
 ```
 
-<?code-excerpt "lib/main.dart (Scaling)" replace="/\/\*//g;/\*\/ *//g"?>
-```dart
+```dart highlightLines=7-10
 final container = Container(
   // grey box
   width: 320,
   height: 240,
   color: Colors.grey[300],
   child: Center(
-    child: [!Transform(
+    child: Transform(
       alignment: Alignment.center,
       transform: Matrix4.identity()..scale(1.5),
-      child: !]Container(
+      child: Container(
         // red box
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
@@ -478,7 +464,7 @@ The gradient "angle" is based on the Alignment (x, y) values:
 
 #### Vertical gradient
 
-```css
+```css highlightLines=19
 <div class="grey-box">
   <div class="red-box">
     Lorem ipsum
@@ -497,12 +483,11 @@ The gradient "angle" is based on the Alignment (x, y) values:
 .red-box {
     padding: 16px;
     color: #ffffff;
-    [!background: linear-gradient(180deg, #ef5350, rgba(0, 0, 0, 0) 80%);!]
+    background: linear-gradient(180deg, #ef5350, rgba(0, 0, 0, 0) 80%);
 }
 ```
 
-<?code-excerpt "lib/main.dart (Gradient)" replace="/\/\*//g;/\*\/ *//g"?>
-```dart
+```dart highlightLines=9-18
 final container = Container(
   // grey box
   width: 320,
@@ -511,7 +496,7 @@ final container = Container(
   child: Center(
     child: Container(
       // red box
-      [!decoration: const BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment(0.0, 0.6),
@@ -521,7 +506,6 @@ final container = Container(
           ],
         ),
       ),
-      !]
       padding: const EdgeInsets.all(16),
       child: Text(
         'Lorem ipsum',
@@ -534,7 +518,7 @@ final container = Container(
 
 #### Horizontal gradient
 
-```css
+```css highlightLines=19
 <div class="grey-box">
   <div class="red-box">
     Lorem ipsum
@@ -553,12 +537,11 @@ final container = Container(
 .red-box {
     padding: 16px;
     color: #ffffff;
-    [!background: linear-gradient(90deg, #ef5350, rgba(0, 0, 0, 0) 80%);!]
+    background: linear-gradient(90deg, #ef5350, rgba(0, 0, 0, 0) 80%);
 }
 ```
 
-<?code-excerpt "lib/main.dart (HorizontalGradient)" replace="/\/\*//g;/\*\/ *//g"?>
-```dart
+```dart highlightLines=10-19
 final container = Container(
   // grey box
   width: 320,
@@ -568,7 +551,7 @@ final container = Container(
     child: Container(
       // red box
       padding: const EdgeInsets.all(16),
-      [!decoration: const BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment(-1.0, 0.0),
           end: Alignment(0.6, 0.0),
@@ -578,7 +561,6 @@ final container = Container(
           ],
         ),
       ),
-      !]
       child: Text(
         'Lorem ipsum',
         style: bold24Roboto,
@@ -599,7 +581,7 @@ use the `borderRadius` property of a [`BoxDecoration`][] object.
 Create a new [`BorderRadius`][]
 object that specifies the radius for rounding each corner.
 
-```css
+```css highlightLines=20
 <div class="grey-box">
   <div class="red-box">
     Lorem ipsum
@@ -619,12 +601,11 @@ object that specifies the radius for rounding each corner.
     background-color: #ef5350; /* red 400 */
     padding: 16px;
     color: #ffffff;
-    [!border-radius: 8px;!]
+    border-radius: 8px;
 }
 ```
 
-<?code-excerpt "lib/main.dart (RoundCorners)" replace="/\/\*//g;/\*\/ *//g"?>
-```dart
+```dart highlightLines=12-14
 final container = Container(
   // grey box
   width: 320,
@@ -636,9 +617,9 @@ final container = Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: Colors.red[400],
-        [!borderRadius: const BorderRadius.all(
+        borderRadius: const BorderRadius.all(
           Radius.circular(8),
-        ), !]
+        ),
       ),
       child: Text(
         'Lorem ipsum',
@@ -664,7 +645,7 @@ Use the `boxShadow` property of `BoxDecoration` to create a list of
 `BoxShadow` widgets, which can be stacked
 to customize the shadow depth, color, and so on.
 
-```css
+```css highlightLines=20-21
 <div class="grey-box">
   <div class="red-box">
     Lorem ipsum
@@ -684,13 +665,12 @@ to customize the shadow depth, color, and so on.
     background-color: #ef5350; /* red 400 */
     padding: 16px;
     color: #ffffff;
-    [!box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8),
-              0 6px 20px rgba(0, 0, 0, 0.5);!]
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8),
+              0 6px 20px rgba(0, 0, 0, 0.5);
 }
 ```
 
-<?code-excerpt "lib/main.dart (BoxShadow)" replace="/\/\*//g;/\*\/ *//g"?>
-```dart
+```dart highlightLines=15-26
 final container = Container(
   // grey box
   width: 320,
@@ -705,7 +685,7 @@ final container = Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: Colors.red[400],
-        [!boxShadow: const <BoxShadow>[
+        boxShadow: const <BoxShadow>[
           BoxShadow(
             color: Color(0xcc000000),
             offset: Offset(0, 2),
@@ -716,7 +696,7 @@ final container = Container(
             offset: Offset(0, 6),
             blurRadius: 20,
           ),
-        ], !]
+        ],
       ),
       child: Text(
         'Lorem ipsum',
@@ -738,7 +718,7 @@ with the `borderRadius` property of [`BoxDecoration`][],
 Flutter provides a `shape` property
 with [`BoxShape` enum][] for this purpose.
 
-```css
+```css highlightLines=20-23
 <div class="grey-box">
   <div class="red-circle">
     Lorem ipsum
@@ -758,15 +738,14 @@ with [`BoxShape` enum][] for this purpose.
     background-color: #ef5350; /* red 400 */
     padding: 16px;
     color: #ffffff;
-    [!text-align: center;
+    text-align: center;
     width: 160px;
     height: 160px;
-    border-radius: 50%;!]
+    border-radius: 50%;
 }
 ```
 
-<?code-excerpt "lib/main.dart (Circle)" replace="/\/\*//g;/\*\/ *//g"?>
-```dart
+```dart highlightLines=10,13-14,18
 final container = Container(
   // grey box
   width: 320,
@@ -777,16 +756,15 @@ final container = Container(
       // red circle
       decoration: BoxDecoration(
         color: Colors.red[400],
-        [!shape: BoxShape.circle, !]
+        shape: BoxShape.circle,
       ),
       padding: const EdgeInsets.all(16),
-      [!width: 160,
+      width: 160,
       height: 160,
-      !]
       child: Text(
         'Lorem ipsum',
         style: bold24Roboto,
-        [!textAlign: TextAlign.center, !]
+        textAlign: TextAlign.center,
       ),
     ),
   ),
@@ -811,7 +789,7 @@ In Flutter, you specify white space as logical pixels
 for the `letterSpacing` and `wordSpacing` properties
 of a [`TextStyle`][] child of a `Text` widget.
 
-```css
+```css highlightLines=20
 <div class="grey-box">
   <div class="red-box">
     Lorem ipsum
@@ -831,12 +809,11 @@ of a [`TextStyle`][] child of a `Text` widget.
     background-color: #ef5350; /* red 400 */
     padding: 16px;
     color: #ffffff;
-    [!letter-spacing: 4px;!]
+    letter-spacing: 4px;
 }
 ```
 
-<?code-excerpt "lib/main.dart (TextSpacing)" replace="/\/\*//g;/\*\/ *//g"?>
-```dart
+```dart highlightLines=19
 final container = Container(
   // grey box
   width: 320,
@@ -855,7 +832,7 @@ final container = Container(
           color: Colors.white,
           fontSize: 24,
           fontWeight: FontWeight.w900,
-          [!letterSpacing: 4, !]
+          letterSpacing: 4,
         ),
       ),
     ),
@@ -877,10 +854,10 @@ In the following example, "Lorem" is in a `TextSpan`
 with the default (inherited) text styling,
 and "ipsum" is in a separate `TextSpan` with custom styling.
 
-```css
+```css highlightLines=3,11,21-4
 <div class="grey-box">
   <div class="red-box">
-    [!Lorem <em>ipsum</em>!]
+    Lorem <em>ipsum</em>
   </div>
 </div>
 
@@ -888,7 +865,7 @@ and "ipsum" is in a separate `TextSpan` with custom styling.
     background-color: #e0e0e0; /* grey 300 */
     width: 320px;
     height: 240px;
-    [!font: 900 24px Roboto;!]
+    font: 900 24px Roboto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -898,14 +875,13 @@ and "ipsum" is in a separate `TextSpan` with custom styling.
     padding: 16px;
     color: #ffffff;
 }
-[!.red-box em {
+.red-box em {
     font: 300 48px Roboto;
     font-style: italic;
-}!]
+}
 ```
 
-<?code-excerpt "lib/main.dart (InlineFormatting)" replace="/\/\*//g;/\*\/ *//g"?>
-```dart
+```dart highlightLines=13-28
 final container = Container(
   // grey box
   width: 320,
@@ -918,7 +894,7 @@ final container = Container(
         color: Colors.red[400],
       ),
       padding: const EdgeInsets.all(16),
-      child: [!RichText(
+      child: RichText(
         text: TextSpan(
           style: bold24Roboto,
           children: const <TextSpan>[
@@ -933,7 +909,7 @@ final container = Container(
             ),
           ],
         ),
-      ), !]
+      ),
     ),
   ),
 );
@@ -948,7 +924,7 @@ In Flutter, use the `maxLines` property of a [`Text`][] widget
 to specify the number of lines to include in the excerpt,
 and the `overflow` property for handling overflow text.
 
-```css
+```css highlightLines=20-23
 <div class="grey-box">
   <div class="red-box">
     Lorem ipsum dolor sit amet, consec etur
@@ -968,15 +944,14 @@ and the `overflow` property for handling overflow text.
     background-color: #ef5350; /* red 400 */
     padding: 16px;
     color: #ffffff;
-    [!overflow: hidden;
+    overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;!]
+    -webkit-line-clamp: 2;
 }
 ```
 
-<?code-excerpt "lib/main.dart (TextExcerpt)" replace="/\/\*//g;/\*\/ *//g"?>
-```dart
+```dart highlightLines=16-17
 final container = Container(
   // grey box
   width: 320,
@@ -992,8 +967,8 @@ final container = Container(
       child: Text(
         'Lorem ipsum dolor sit amet, consec etur',
         style: bold24Roboto,
-        [!overflow: TextOverflow.ellipsis,
-        maxLines: 1, !]
+        overflow: TextOverflow.ellipsis,
+        maxLines: 1,
       ),
     ),
   ),

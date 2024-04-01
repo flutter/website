@@ -1,6 +1,6 @@
 <div class="tab-pane" id="terminal" role="tabpanel" aria-labelledby="terminal-tab">
 
-### Create your sample Flutter app {:#create-app}
+### Create your sample Flutter app {:#create-app-terminal}
 
 To create a new Flutter app, run the following commands in your shell or Terminal.
 

@@ -3,6 +3,7 @@ title: Flutter 3.0.0 release notes
 short-title: 3.0.0 release notes
 description: Release notes for Flutter 3.0.0.
 ---
+
 This page has release notes for 3.0.0.
 For information about subsequent bug-fix releases,
 see [Hotfixes to the Stable Channel][].
@@ -14,7 +15,7 @@ see [Hotfixes to the Stable Channel][].
 When migrating to Flutter 3,
 you might see warnings like the following:
 
-```
+```plaintext
 Warning: Operand of null-aware operation '!' has type 'SchedulerBinding' which excludes null.
 ```
 

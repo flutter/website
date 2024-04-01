@@ -417,7 +417,7 @@ Widget build(BuildContext context) {
 
 This logs every action as it executes, like so:
 
-```
+```console
 flutter: Action invoked: SelectAllAction#906fc(SelectAllIntent#a98e3) from Builder(dependencies: _[ActionsMarker])
 ```
 

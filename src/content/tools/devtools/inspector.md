@@ -543,7 +543,7 @@ In order to show other widgets, a parent directory of theirs must be added to th
 
 For example, consider the following directory structure:
 
-```
+```plaintext
 project_foo
   pkgs
     project_foo_app

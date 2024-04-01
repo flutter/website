@@ -112,7 +112,7 @@ You might see the following issues as a result of this change:
 
   Sample resulting Semantics tree:
 
-```
+```plaintext
 flutter:        ├─SemanticsNode#30 <-- SingleChildScrollView
 flutter:          │ flags: hasImplicitScrolling
 flutter:          │ scrollExtentMin: 0.0

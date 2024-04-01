@@ -6,7 +6,7 @@ description: Learn how to install and use DevTools from the command line.
 To run Dart DevTools from the CLI, you must have `dart` on your path. Then
 you can run the following command to launch DevTools:
 
-```
+```console
 dart devtools
 ```
 
@@ -30,7 +30,7 @@ This can be either a Flutter application
 or a Dart command-line application.
 The command below specifies a Flutter app:
 
-```
+```console
 cd path/to/flutter/app
 flutter run
 ```
@@ -39,7 +39,7 @@ You need to have a device connected, or a simulator open,
 for `flutter run` to work. Once the app starts, you'll see a
 message in your terminal that looks like the following:
 
-```
+```console
 An Observatory debugger and profiler on macOS is available at:
 http://127.0.0.1:52129/QjqebSY4lQ8=/
 The Flutter DevTools debugger and profiler on macOS is available at:
