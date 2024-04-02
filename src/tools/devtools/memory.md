@@ -153,7 +153,7 @@ retained only to the members of the shortest retaining path.
 
 In this example the object `x` has two retaining paths:
 
-```terminal
+```console
 root -> a -> b -> c -> x
 root -> d -> e -> x (shortest retaining path to `x`)
 ```

@@ -29,11 +29,11 @@ The `--web-renderer` command line option takes one of three values, `auto`,
 
 This flag can be used with the `run` or `build` subcommands. For example:
 
-```terminal
+```console
 flutter run -d chrome --web-renderer html
 ```
 
-```terminal
+```console
 flutter build web --web-renderer canvaskit
 ```
 

@@ -11,14 +11,14 @@ add Flutter to the `PATH` environment variable.
 1. Check which shell starts when you open a new console window.
    This would be your _default shell_.
 
-   ```terminal
+   ```console
    $ echo $SHELL
    ```
 
    This differs from another command that tells you which shell runs
    in your current console.
 
-   ```terminal
+   ```console
    $ echo $0
    ```
 
@@ -31,7 +31,7 @@ add Flutter to the `PATH` environment variable.
    <details markdown="1" {% if shell.name == 'bash' %}open{% endif %}>
    <summary>Show <tt>{{shell.name}}</tt> command</summary>
 
-   ```terminal
+   ```console
    $ {{shell.set-path}}
    ```
 

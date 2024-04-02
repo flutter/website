@@ -288,7 +288,7 @@ You can find another example of deferred import loading in
 Use the following `flutter` command to build a
 deferred components app:
 
-```terminal
+```console
 $ flutter build appbundle
 ```
 
@@ -554,7 +554,7 @@ To run the `.aab` file on a test device,
 download the bundletool jar executable from
 [github.com/google/bundletool/releases][] and run:
 
-```terminal
+```console
 $ java -jar bundletool.jar build-apks --bundle=<your_app_project_dir>/build/app/outputs/bundle/release/app-release.aab --output=<your_temp_dir>/app.apks --local-testing
 
 $ java -jar bundletool.jar install-apks --apks=<your_temp_dir>/app.apks
@@ -571,7 +571,7 @@ installation of deferred components is emulated.
 Before running `build-apks` again,
 remove the existing app .apks file:
 
-```terminal
+```console
 $ rm <your_temp_dir>/app.apks
 ```
 

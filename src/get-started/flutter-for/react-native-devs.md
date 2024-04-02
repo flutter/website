@@ -331,7 +331,7 @@ For more information, see the documentation for [async and await][].
 To create an app using React Native,
 you would run `create-react-native-app` from the command line.
 
-```terminal
+```console
 $ create-react-native-app <projectname>
 ```
 
@@ -341,7 +341,7 @@ To create an app in Flutter, do one of the following:
 * Use the `flutter create` command from the command line. Make sure that the
   Flutter SDK is in your PATH.
 
-```terminal
+```console
 $ flutter create <projectname>
 ```
 
@@ -753,7 +753,7 @@ In Flutter, install a package using the following instructions:
 
 1. To add the `google_sign_in` package as a dependency, run `flutter pub add`:
 
-```terminal
+```console
 $ flutter pub add google_sign_in
 ```
 
@@ -1581,7 +1581,7 @@ providing a persistent store for simple data.
 
 To add the `shared_preferences` package as a dependency, run `flutter pub add`:
 
-```terminal
+```console
 $ flutter pub add shared_preferences
 ```
 
@@ -2052,7 +2052,7 @@ Flutter uses the `http` package.
 
 To add the `http` package as a dependency, run `flutter pub add`:
 
-```terminal
+```console
 $ flutter pub add http
 ```
 

@@ -12,7 +12,7 @@ or for all sessions going forward.
 To update your `PATH` variable for the current session,
 enter this command in your terminal:
 
-```terminal
+```console
 $ export PATH="$PATH:[PATH_TO_FLUTTER_GIT_DIRECTORY]/flutter/bin"
 ```
 
@@ -27,13 +27,13 @@ follow these steps:
 
 1. Find your Flutter SDK installation path.
 
-    ```terminal
+    ```console
     $ find / -type d -wholename "flutter/bin" 2>/dev/null
     ```
 
     Response should resemble:
 
-    ```terminal
+    ```console
     /usr/<example>dev/flutter/bin
     ```
 
@@ -43,31 +43,31 @@ follow these steps:
 
    Replace `<path_to_flutter_directory>` with your Flutter path
    
-    ```terminal
+    ```console
     $ echo 'export PATH="$PATH:<path_to_flutter_directory>/flutter/bin"' >> $HOME/.bashrc
     ```
     
 3. Reload the current shell profile.
    
-    ```terminal
+    ```console
     source $HOME/.<rc file>
     ```
     
 4. Verify that the `flutter/bin` directory exists in your `PATH`.
    
-    ```terminal
+    ```console
     $ echo $PATH
     ```
     
     Response should resemble:
    
-    ```terminal
+    ```console
     /usr/<example>/dev/flutter/bin:/usr/local/git/git-google/bin:/usr/local/git/current/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:
     ```
     
 5. Verify that you can now use the `flutter` command.
    
-    ```terminal
+    ```console
     $ which flutter
     ```
 

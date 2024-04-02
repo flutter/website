@@ -46,7 +46,7 @@ complete Flutter development environment for {{devos}}.
 1. To verify your installation of all the components,
    run the following command.
 
-   ```terminal
+   ```console
    {{prompt}} flutter doctor
    ```
 
@@ -64,7 +64,7 @@ VS Code, {{compiler}}, the connected device, or network resources.
 If the `flutter doctor` command returns an error for any of these components,
 run it again with the verbose flag.
 
-```terminal
+```console
 {{prompt}} flutter doctor -v
 ```
 

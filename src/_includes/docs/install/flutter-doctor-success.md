@@ -14,7 +14,7 @@ Don't change the whitespace control dashes in this list.
 It took about two hours to get exactly right. @atsansone
 {% endcomment %}
 
-```terminal
+```console
 Running flutter doctor...
 Doctor summary (to see all details, run flutter doctor -v):
 [✓] Flutter (Channel stable, {{site.appnow.flutter}}, on {{displayos}}, locale en)

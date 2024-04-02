@@ -89,7 +89,7 @@ This guide presumes that you installed Flutter in `{{path}}` on {{os}}.
 
 To uninstall the SDK, remove the `flutter` directory.
 
-```terminal
+```console
 {{prompt}} {{rm-sdk}}
 ```
 
@@ -106,13 +106,13 @@ Each of the following procedures are _optional_.
 If you don't want to preserve your Flutter configuration,
 remove the following directories from your home directory.
 
-```nocode
+```plaintext
 {{ flutter-files | strip }}
 ```
 
 To remove these directories, run the following command.
 
-```terminal
+```console
 {{rm-flutter-files | strip}}
 ```
 
@@ -122,13 +122,13 @@ To remove these directories, run the following command.
 If you don't want to preserve your Dart configuration,
 remove the following directories from your home directory.
 
-```nocode
+```plaintext
 {{ dart-files | strip}}
 ```
 
 To remove these directories, run the following command.
 
-```terminal
+```console
 {{rm-dart-files | strip}}
 ```
 
@@ -143,7 +143,7 @@ To remove these directories, run the following command.
 If you don't want to preserve your pub packages,
 remove the `.pub-cache` directory from your home directory.
 
-```terminal
+```console
 {{rm-pub-dir | strip}}
 ```
 

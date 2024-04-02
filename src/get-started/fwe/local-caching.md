@@ -219,7 +219,7 @@ and iOS, see the following documentation:
 As this section of the website is evolving, 
 we [welcome your feedback][]!
 
-[welcome your feedback]: {{site.url}}/get-started/fwe
+[welcome your feedback]: /get-started/fwe
 
 [Android state restoration]: /platform-integration/android/restore-state-android
 [`cached_network_image` package]: {{site.pub-pkg}}/cached_network_image

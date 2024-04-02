@@ -15,7 +15,7 @@ To learn about using snapd, check [Installing snapd][].
 After you install `snapd`, [install Flutter from the Snap Store][] or
 run the following command:
 
-```terminal
+```console
 $ sudo snap install flutter --classic
 ```
 
@@ -23,7 +23,7 @@ $ sudo snap install flutter --classic
   After you install Flutter with `snapd`,
   display your Flutter SDK path with the following command:
 
-  ```terminal
+  ```console
   $ flutter sdk-path
   ```
 {{site.alert.end}}
@@ -41,14 +41,14 @@ If you aren't using `snapd`, follow these steps to install Flutter.
 
 1. Extract the downloaded file to a location of your choice:
 
-    ```terminal
+    ```console
     $ cd ~/development
     $ tar xf ~/Downloads/flutter_{{os}}_vX.X.X-{{site.sdk.channel}}.tar.xz
     ```
 
 1. Add the `flutter` tool to your path:
 
-    ```terminal
+    ```console
     $ export PATH="$PATH:`pwd`/flutter/bin"
     ```
 
@@ -59,7 +59,7 @@ If you aren't using `snapd`, follow these steps to install Flutter.
 
 1. (Optional) Pre-download development binaries:
 
-    ```terminal
+    ```console
     $ flutter precache
     ```
 
@@ -73,7 +73,7 @@ If you aren't using `snapd`, follow these steps to install Flutter.
 
 After installing Flutter, run `flutter doctor`.
 
-```terminal
+```console
 $ flutter doctor
 ```
 
@@ -83,7 +83,7 @@ Flutter bundles the Dart SDK. You don't need to install Dart.
 
 To get greater detail on what you need to fix, add the `-v` flag:
 
-```terminal
+```console
 $ flutter doctor -v
 ```
 

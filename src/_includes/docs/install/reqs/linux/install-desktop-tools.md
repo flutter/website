@@ -10,7 +10,7 @@
    [`libgtk-3-dev`][gtk3],
    [`libstdc++-12-dev`][libstdc]
 
-   ```terminal
+   ```console
    $ sudo apt-get install \
          clang cmake git \
          ninja-build pkg-config \

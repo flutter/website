@@ -294,7 +294,7 @@ file (such as `test/a11y_test.dart` in the case of the Name Generator).
 You can debug accessibility by visualizing the semantic nodes created for your web app
 using the following command line flag in profile and release modes:
 
-```terminal
+```console
 flutter run -d chrome --profile --dart-define=FLUTTER_WEB_DEBUG_SHOW_SEMANTICS=true
 ```
 

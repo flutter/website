@@ -90,7 +90,7 @@ then extract the SDK.
 
 1. Extract the zip file into the directory you want to store the Flutter SDK.
 
-   ```terminal
+   ```console
    {{uz}}
    ```
 

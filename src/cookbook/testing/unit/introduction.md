@@ -37,7 +37,7 @@ writing packages consumed by web, server, and Flutter apps.
 To add the `test` package as a dev dependency,
 run `flutter pub add`:
 
-```terminal
+```console
 $ flutter pub add dev:test
 ```
 
@@ -56,7 +56,7 @@ this is the convention used by the test runner when searching for tests.
 
 When you're finished, the folder structure should look like this:
 
-```nocode
+```plaintext
 counter_app/
   lib/
     counter.dart
@@ -175,14 +175,14 @@ fastest feedback loop as well as the ability to set breakpoints.
 To run the all tests from the terminal,
 run the following command from the root of the project:
 
-```terminal
+```console
 flutter test test/counter_test.dart
 ```
 
 To run all tests you put into one `group`,
 run the following command from the root of the project:
 
-```terminal
+```console
 flutter test --plain-name "Test start, increment, decrement"
 ```
 
@@ -190,7 +190,7 @@ This example uses the `group` created in **section 5**.
 
 To learn more about unit tests, you can execute this command:
 
-```terminal
+```console
 flutter test --help
 ```
 

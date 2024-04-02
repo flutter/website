@@ -12,7 +12,7 @@ To develop Flutter on {{os}}:
 1. Verify that you have the following tools installed:
    `bash`, `file`, `mkdir`, `rm`, `which`
 
-   ```terminal
+   ```console
    $ which bash file mkdir rm which
    /bin/bash
    /usr/bin/file
@@ -24,7 +24,7 @@ To develop Flutter on {{os}}:
 1. Install the following packages:
    [`curl`][curl], [`git`][git], [`unzip`][unzip], [`xz-utils`][xz], [`zip`][zip], `libglu1-mesa`
 
-   ```terminal
+   ```console
    $ sudo apt-get update -y && sudo apt-get upgrade -y;
    $ sudo apt-get install -y curl git unzip xz-utils zip libglu1-mesa
    ```
@@ -42,7 +42,7 @@ To develop Flutter on {{os}}:
    1. Install the following prequisite packages for Android Studio:
       `libc6:i386`, `libncurses5:i386`, `libstdc++6:i386`, `lib32z1`, `libbz2-1.0:i386`
 
-      ```terminal
+      ```console
       $ sudo apt-get install \
           libc6:i386 libncurses5:i386 \
           libstdc++6:i386 lib32z1 \

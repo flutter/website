@@ -3,11 +3,11 @@
 To generate the needed macOS platform dependencies,
 run the `flutter build` command.
 
-```terminal
+```console
 flutter build macos --debug
 ```
 
-```terminal
+```console
 Building macOS application...
 ```
 
@@ -66,7 +66,7 @@ Building macOS application...
    When the run completes, the **Debug** area at the bottom of Xcode displays
    a message with the Dart VM service URI. It resembles the following response:
 
-   ```terminal
+   ```console
    2023-07-12 14:55:39.966191-0500 Runner[58361:53017145]
        flutter: The Dart VM service is listening on
        http://127.0.0.1:50642/00wEOvfyff8=/
