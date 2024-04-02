@@ -646,7 +646,7 @@ AppBar(
 
 But, because app bars are displayed alongside 
 other content in your page, it's only recommended to adapt the styling 
-so long as its cohesive with the rest of your application. You can see 
+so long as it's cohesive with the rest of your application. You can see 
 additional code samples and a further explanation in 
 [the GitHub discussion on app bar adaptations][appbar-post]. 
 

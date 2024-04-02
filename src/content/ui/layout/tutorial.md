@@ -287,7 +287,7 @@ Pass the provided name and location to the `TitleSection` constructor.
 
 :::tip
 * When pasting code into your app, indentation can become skewed.
-      To fix this in your Flutter editor, use [automatic reformatting support][].
+  To fix this in your Flutter editor, use [automatic reformatting support][].
 * To accelerate your development, try Flutter's [hot reload][] feature.
 * If you have problems, compare your code to [`lib/main.dart`][].
 :::
