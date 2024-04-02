@@ -9,7 +9,7 @@ To choose the guide to add Visual Studio to your Flutter configuration,
 click the [Getting Started path][] you followed.
 
 <div class="card-deck mb-8">
-{% for target in page.target-list %}
+{% for target in target-list %}
 {% assign targetlink='/platform-integration/windows/install-windows/install-windows-from-' | append: target | downcase %}
   <a class="card card-app-type card-windows"
      id="install-{{target | downcase}}"

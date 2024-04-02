@@ -9,7 +9,7 @@ To choose the guide to add Linux devtools to your Flutter configuration,
 click the [Getting Started path][] you followed.
 
 <div class="card-deck mb-8">
-{% for target in page.target-list %}
+{% for target in target-list %}
 {% assign targetlink='/platform-integration/linux/install-linux/install-linux-from-' | append: target | downcase %}
   <a class="card card-app-type card-linux"
      id="install-{{target | downcase}}"

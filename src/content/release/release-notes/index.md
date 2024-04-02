@@ -117,7 +117,7 @@ For information about bug-fix releases, check out
 [1.22.0 breaking changes & migrations]: /release/breaking-changes#released-in-flutter-1-22
 [1.20.0 announcement]: {{site.flutter-medium}}/announcing-flutter-1-20-2aaf68c89c75
 [1.20.0 release notes & change log]: /release/release-notes/release-notes-1.20.0
-[1.20.0 breaking changes & migrations]: /release/breaking-changes#released-in-flutter-120
+[1.20.0 breaking changes & migrations]: /release/breaking-changes#released-in-flutter-1-20
 [1.17.0 announcement]: {{site.flutter-medium}}/announcing-flutter-1-17-4182d8af7f8e
 [1.17.0 release notes and change log]: /release/release-notes/release-notes-1.17.0
 [1.17.0 breaking changes & migrations]: /release/breaking-changes#released-in-flutter-1-17

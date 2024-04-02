@@ -8,7 +8,7 @@ target-list: [windows-desktop, android-on-windows, linux-desktop, android-on-lin
 To choose the guide to add Web devtools to your Flutter configuration,
 click the [Getting Started path][] you followed.
 
-{% for target in page.target-list %}
+{% for target in target-list %}
 {% capture index0Modulo2 %}{{ forloop.index0 | modulo:2 }}{% endcapture %}
 {% capture indexModulo2 %}{{ forloop.index | modulo:2 }}{% endcapture %}
 {% assign targetlink='/platform-integration/web/install-web/install-web-from-' | append: target | downcase %}

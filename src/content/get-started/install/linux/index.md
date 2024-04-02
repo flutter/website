@@ -12,7 +12,7 @@ target-list: [Desktop, Android, Web]
 {%- endcapture %}
 
 <div class="card-deck mb-8">
-{% for target in page.target-list %}
+{% for target in target-list %}
   <a class="card card-app-type card-linux"
      id="install-{{os | remove: ' ' | downcase}}"
      href="/get-started/install/{{os | remove: ' ' | downcase}}/{{target | downcase}}">

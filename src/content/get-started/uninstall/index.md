@@ -14,7 +14,7 @@ Select your development platform from the following tabs.
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="base-os-tabs" role="tablist">
-{% for os in page.os-list %}
+{% for os in os-list %}
 {% assign id = os | downcase -%}
   <li class="nav-item">
     <a class="nav-link {%- if id == 'windows' %} active {% endif %}" id="{{id}}-tab" href="#{{id}}" role="tab" aria-controls="{{id}} {{id}}-dl {{id}}-pub" aria-selected="true">{{os}}</a>
@@ -24,7 +24,7 @@ Select your development platform from the following tabs.
 
 {% comment %} Tab panes {% endcomment -%}
 <div class="tab-content">
-{% for os in page.os-list %}
+{% for os in os-list %}
 {% assign id = os | downcase -%}
 
 {% case os %}

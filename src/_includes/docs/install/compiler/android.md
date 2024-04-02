@@ -136,11 +136,11 @@ Otherwise, you can skip to the [next section][check-dev].
 
 </div>
 </div>
-{% comment %} End: Tab panes. {% endcomment -%}
+{% comment %} End: Tab panes. {% endcomment %}
 
 ### Configure your target Android device
 
-{% comment %} Nav tabs {% endcomment -%}
+{% comment %} Nav tabs {% endcomment %}
 <ul class="nav nav-tabs" id="android-devices-vp" role="tablist">
     <li class="nav-item">
         <a class="nav-link active" id="virtual-tab" href="#virtual" role="tab" aria-controls="virtual" aria-selected="true">Virtual Device</a>

@@ -8,7 +8,7 @@ target-list: [Windows, 'Web on Windows', Linux, 'Web on Linux', macOS, 'Web on m
 To choose the guide to add Android Studio to your Flutter configuration,
 click the [Getting Started path][] you followed.
 
-{% for target in page.target-list %}
+{% for target in target-list %}
 {% capture index0Modulo2 %}{{ forloop.index0 | modulo:2 }}{% endcapture %}
 {% capture indexModulo2 %}{{ forloop.index | modulo:2 }}{% endcapture %}
 {% assign

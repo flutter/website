@@ -14,7 +14,7 @@ js: [{url: '/assets/js/temp/macos-install-redirector.js'}]
 {%- endcapture %}
 
 <div class="card-deck mb-8">
-{% for target in page.target-list %}
+{% for target in target-list %}
 {% case target %}
 {% when "iOS", "Android" %}
 {% assign targetlink = target | downcase | prepend: 'mobile-' %}
