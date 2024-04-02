@@ -2490,7 +2490,7 @@ class SampleApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         textSelectionTheme:
             const TextSelectionThemeData(selectionColor: Colors.red),
-      ),ß
+      ),
       home: const SampleAppPage(),
     );
   }
