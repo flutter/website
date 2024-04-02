@@ -33,6 +33,9 @@ Text by [Switzerland Tourism][].
 To get a better overview of the layout mechanism, start with
 [Flutter's approach to layout][].
 
+[Switzerland Tourism]: https://www.myswitzerland.com/en-us/destinations/lake-oeschinen
+[Flutter's approach to layout]: /ui/layout
+
 ## Diagram the layout
 
 In this section, consider what type of user experience you want for
@@ -155,6 +158,9 @@ In this section, shell out the basic Flutter app code to start your app.
      }
    }
    ```
+
+[Set up your Flutter environment]: /get-started/install
+[new-flutter-app]: /get-started/test-drive
 
 ## Add the Title section
 
@@ -291,6 +297,10 @@ Pass the provided name and location to the `TitleSection` constructor.
 * To accelerate your development, try Flutter's [hot reload][] feature.
 * If you have problems, compare your code to [`lib/main.dart`][].
 :::
+
+[automatic reformatting support]: /tools/formatting
+[hot reload]: /tools/hot-reload
+[`lib/main.dart`]: {{examples}}/layout/lakes/step2/lib/main.dart
 
 ## Add the Button section
 
@@ -577,6 +587,8 @@ This change might require you to restart the running program to
 display the image.
 :::
 
+[`lake.jpg`]: {{rawExFile}}/layout/lakes/step5/images/lake.jpg
+
 ### Create the `ImageSection` widget
 
 Define the following `ImageSection` widget after the other declarations.
@@ -640,21 +652,14 @@ You can access the resources used in this tutorial from these locations:
 **Image:** [ch-photo][]<br>
 **Pubspec:** [`pubspec.yaml`][]<br>
 
+[`main.dart`]: {{examples}}/layout/lakes/step6/lib/main.dart
+[ch-photo]: https://unsplash.com/photos/red-and-gray-tents-in-grass-covered-mountain-5Rhl-kSRydQ
+[`pubspec.yaml`]: {{examples}}/layout/lakes/step6/pubspec.yaml
+
 ## Next Steps
 
 To add interactivity to this layout, follow the
 [interactivity tutorial][Adding Interactivity to Your Flutter App].
 
 [Adding Interactivity to Your Flutter App]: /ui/interactivity
-[automatic reformatting support]: /tools/formatting
-[ch-photo]: https://unsplash.com/photos/red-and-gray-tents-in-grass-covered-mountain-5Rhl-kSRydQ
 [Unsplash]: https://unsplash.com
-[Switzerland Tourism]: https://www.myswitzerland.com/en-us/destinations/lake-oeschinen
-[Flutter's approach to layout]: /ui/layout
-[new-flutter-app]: /get-started/test-drive
-[`lake.jpg`]: {{rawExFile}}/layout/lakes/step5/images/lake.jpg
-[`lib/main.dart`]: {{examples}}/layout/lakes/step2/lib/main.dart
-[hot reload]: /tools/hot-reload
-[`main.dart`]: {{examples}}/layout/lakes/step6/lib/main.dart
-[`pubspec.yaml`]: {{examples}}/layout/lakes/step6/pubspec.yaml
-[Set up your Flutter environment]: /get-started/install

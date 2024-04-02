@@ -26,7 +26,7 @@ provided by Flutter in case 1 on Android and iOS.
 For case 2, Flutter bundles the means to produce the
 appropriate effects of the platform conventions but doesn't
 adapt automatically when app design choices are needed.
-For a discussion, see [issue #8410][8410] and the
+For a discussion, see [issue #8410][] and the
 [Material/Cupertino adaptive widget problem definition][].
 
 For an example of an app using different information
@@ -38,6 +38,11 @@ Preliminary guides addressing case 2
 are being added to the UI components section. 
 You can request additional guides by commenting on [issue #8427][8427].
 :::
+
+[`android.app.AlertDialog`]: {{site.android-dev}}/reference/android/app/AlertDialog.html
+[issue #8410]: {{site.repo.flutter}}/issues/8410#issuecomment-468034023
+[Material/Cupertino adaptive widget problem definition]: https://bit.ly/flutter-adaptive-widget-problem
+[platform_design code samples]: {{site.repo.samples}}/tree/main/platform_design
 
 ## Page navigation
 
@@ -92,6 +97,10 @@ On **iOS**:
   </div>
 </div>
 
+[`Navigator.push()`]: {{site.api}}/flutter/widgets/Navigator/push.html
+[`startActivity()`]: {{site.android-dev}}/reference/android/app/Activity.html#startActivity(android.content.Intent
+[`PageRoute.fullscreenDialog`]: {{site.api}}/flutter/widgets/PageRoute-class.html
+
 ### Platform-specific transition details
 
 On **Android**, Flutter uses the [`ZoomPageTransitionsBuilder`][] animation.
@@ -126,6 +135,10 @@ subcomponent on the next or previous page's
   </div>
 </div>
 
+[`ZoomPageTransitionsBuilder`]: {{site.api}}/flutter/material/ZoomPageTransitionsBuilder-class.html
+[`CupertinoNavigationBar`]: {{site.api}}/flutter/cupertino/CupertinoNavigationBar-class.html
+[`CupertinoSliverNavigationBar`]: {{site.api}}/flutter/cupertino/CupertinoSliverNavigationBar-class.html
+
 ### Back navigation
 
 On **Android**,
@@ -155,6 +168,8 @@ an edge swipe gesture can be used to pop the top route.
     </div>
   </div>
 </div>
+
+[`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
 
 ## Scrolling
 
@@ -231,6 +246,9 @@ On **iOS**, scrolling past the edge of a scrollable
   </div>
 </div>
 
+[overscroll glow indicator]: {{site.api}}/flutter/widgets/GlowingOverscrollIndicator-class.html
+[overscrolls]: {{site.api}}/flutter/widgets/BouncingScrollPhysics-class.html
+
 ### Momentum
 
 On **iOS**,
@@ -291,7 +309,7 @@ default Cupertino theme is used.
 You might choose to adapt the text styling of Material 
 widgets to match the default text styling on iOS. 
 You can see widget-specific examples in the 
-[UI Component section][].
+[UI Component section](#ui-components).
 
 <div class="container">
   <div class="row">
@@ -313,6 +331,8 @@ You can see widget-specific examples in the
     </div>
   </div>
 </div>
+
+[default theme]: {{site.repo.flutter}}/blob/main/packages/flutter/lib/src/cupertino/text_theme.dart
 
 ## Iconography
 
@@ -345,7 +365,10 @@ has a stem/shaft on Android.
   </div>
 </div>
 
-The material library also provides a set of platform-adaptive icons through [`Icons.adaptive`].
+The material library also provides a set of
+platform-adaptive icons through [`Icons.adaptive`][].
+
+[`Icons.adaptive`]: {{site.api}}/flutter/material/PlatformAdaptiveIcons-class.html
 
 ## Haptic feedback
 
@@ -557,6 +580,8 @@ This section includes preliminary recommendations on how to adapt
 Material widgets to deliver a natural and compelling experience on iOS. 
 Your feedback is welcomed on [issue #8427][8427]. 
 
+[8427]: {{site.repo.this}}/issues/8427
+
 ### Widgets with .adaptive() constructors
 
 Several widgets support `.adaptive()` constructors. 
@@ -578,6 +603,12 @@ Therefore, we recommend that you follow platform conventions.
 |<img src="/assets/images/docs/platform-adaptations/m3-progress.png" width = 100 class="figure-img img-fluid rounded" alt="Circular progress indicator in Material 3" /><br/>`CircularProgressIndicator`|<img src="/assets/images/docs/platform-adaptations/hig-progress.png" class="figure-img img-fluid rounded" alt="Activity indicator in HIG" /><br/>`CupertinoActivityIndicator`|[`CircularProgressIndicator.adaptive()`][]|
 | <img src="/assets/images/docs/platform-adaptations/m3-checkbox.png" class="figure-img img-fluid rounded" alt=" Checkbox in Material 3" /> <br/>`Checkbox`| <img src="/assets/images/docs/platform-adaptations/hig-checkbox.png" class="figure-img img-fluid rounded" alt="Checkbox in HIG" /> <br/> `CupertinoCheckbox`|[`Checkbox.adaptive()`][]|
 |<img src="/assets/images/docs/platform-adaptations/m3-radio.png" class="figure-img img-fluid rounded" alt="Radio in Material 3" /> <br/>`Radio`|<img src="/assets/images/docs/platform-adaptations/hig-radio.png" class="figure-img img-fluid rounded" alt="Radio in HIG" /><br/>`CupertinoRadio`|[`Radio.adaptive()`][]|
+
+[`Checkbox.adaptive()`]: {{site.api}}/flutter/material/Checkbox/Checkbox.adaptive.html
+[`Radio.adaptive()`]: {{site.api}}/flutter/material/Radio/Radio.adaptive.html
+[`Switch.adaptive()`]: {{site.api}}/flutter/material/Switch/Switch.adaptive.html
+[`Slider.adaptive()`]: {{site.api}}/flutter/material/Slider/Slider.adaptive.html
+[`CircularProgressIndicator.adaptive()`]: {{site.api}}/flutter/material/CircularProgressIndicator/CircularProgressIndicator.adaptive.html
 
 ### Top app bar and navigation bar
 
@@ -649,6 +680,10 @@ other content in your page, it's only recommended to adapt the styling
 so long as it's cohesive with the rest of your application. You can see 
 additional code samples and a further explanation in 
 [the GitHub discussion on app bar adaptations][appbar-post]. 
+
+[mat-appbar]: {{site.material}}/components/top-app-bar/overview
+[hig-appbar]: {{site.apple-dev}}/design/human-interface-guidelines/components/navigation-and-search/navigation-bars/
+[appbar-post]: {{site.repo.uxr}}/discussions/93
 
 ### Bottom navigation bars
 
@@ -731,6 +766,9 @@ Scaffold(
             ));
 ```
 
+[mat-navbar]: {{site.material}}/components/navigation-bar/overview
+[hig-tabbar]: {{site.apple-dev}}/design/human-interface-guidelines/components/navigation-and-search/tab-bars/
+
 ### Text fields
 
 Since Android 12, text fields follow the
@@ -798,6 +836,10 @@ Widget _createAdaptiveTextField() {
 To learn more about adapting text fields, check out 
 [the GitHub discussion on text fields][text-field-post].
 You can leave feedback or ask questions in the discussion.
+
+[text-field-post]: {{site.repo.uxr}}/discussions/95
+[m3-text-field]: {{site.material}}/components/text-fields/overview
+[hig-text-field]: {{site.apple-dev}}/design/human-interface-guidelines/text-fields
 
 ### Alert dialog
 
@@ -873,39 +915,6 @@ To learn more about adapting alert dialogs, check out
 [the GitHub discussion on dialog adaptations][alert-post].
 You can leave feedback or ask questions in the discussion.
 
-
-[8410]: {{site.repo.flutter}}/issues/8410#issuecomment-468034023
-[`android.app.AlertDialog`]: {{site.android-dev}}/reference/android/app/AlertDialog.html
-[`ZoomPageTransitionsBuilder`]: {{site.api}}/flutter/material/ZoomPageTransitionsBuilder-class.html
-[`CupertinoNavigationBar`]: {{site.api}}/flutter/cupertino/CupertinoNavigationBar-class.html
-[`CupertinoSliverNavigationBar`]: {{site.api}}/flutter/cupertino/CupertinoSliverNavigationBar-class.html
-[default theme]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/cupertino/text_theme.dart
-[Material/Cupertino adaptive widget problem definition]: https://bit.ly/flutter-adaptive-widget-problem
-[`Navigator.push()`]: {{site.api}}/flutter/widgets/Navigator/push.html
-[overscroll glow indicator]: {{site.api}}/flutter/widgets/GlowingOverscrollIndicator-class.html
-[overscrolls]: {{site.api}}/flutter/widgets/BouncingScrollPhysics-class.html
-[`PageRoute.fullscreenDialog`]: {{site.api}}/flutter/widgets/PageRoute-class.html
-[platform_design code samples]: {{site.repo.samples}}/tree/main/platform_design
-[`Icons.adaptive`]: {{site.api}}/flutter/material/PlatformAdaptiveIcons-class.html
-[slides and clip-reveals up]: {{site.api}}/flutter/material/OpenUpwardsPageTransitionsBuilder-class.html
-[slides up and fades in]: {{site.api}}/flutter/material/FadeUpwardsPageTransitionsBuilder-class.html
-[`startActivity()`]: {{site.android-dev}}/reference/android/app/Activity.html#startActivity(android.content.Intent
-[`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
-[8427]: {{site.repo.this}}/issues/8427
-[m3-dialog]: {{site.material}}/components/dialogs/overview
 [hig-alert]: {{site.apple-dev}}/design/human-interface-guidelines/components/presentation/alerts/
 [alert-post]: {{site.repo.uxr}}/discussions/92
-[appbar-post]: {{site.repo.uxr}}/discussions/93
-[mat-appbar]: {{site.material}}/components/top-app-bar/overview
-[hig-appbar]: {{site.apple-dev}}/design/human-interface-guidelines/components/navigation-and-search/navigation-bars/
-[`Checkbox.adaptive()`]: {{site.api}}/flutter/material/Checkbox/Checkbox.adaptive.html
-[`Radio.adaptive()`]: {{site.api}}/flutter/material/Radio/Radio.adaptive.html
-[`Switch.adaptive()`]: {{site.api}}/flutter/material/Switch/Switch.adaptive.html
-[`Slider.adaptive()`]: {{site.api}}/flutter/material/Slider/Slider.adaptive.html
-[`CircularProgressIndicator.adaptive()`]: {{site.api}}/flutter/material/CircularProgressIndicator/CircularProgressIndicator.adaptive.html
-[UI Component section]: {{site.api}}/platform-integration/platform-adaptations/#ui-components
-[mat-navbar]: {{site.material}}/components/navigation-bar/overview
-[hig-tabbar]: {{site.apple-dev}}/design/human-interface-guidelines/components/navigation-and-search/tab-bars/
-[text-field-post]: {{site.repo.uxr}}/discussions/95 
-[m3-text-field]: {{site.material}}/components/text-fields/overview
-[hig-text-field]: {{site.apple-dev}}/design/human-interface-guidelines/text-fields
+[m3-dialog]: {{site.material}}/components/dialogs/overview
