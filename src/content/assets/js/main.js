@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(_) {
   adjustToc();
+  setupInlineToc();
   initFixedColumns();
   scrollSidebarIntoView();
   initVideoModal();
@@ -244,6 +245,14 @@ function initCookieNotice() {
     e.preventDefault();
     Cookies.set(cookieKey, cookieConsentValue, { sameSite: 'strict', expires: 30 });
     notice.classList.remove(activeClass);
+  });
+}
+
+function setupInlineToc() {
+  // Collapsible inline TOC expand/collapse
+  $(".site-toc--inline__toggle").on('click', function () {
+    var root = $("#site-toc--inline");
+    root.toggleClass('toc-collapsed');
   });
 }
 
