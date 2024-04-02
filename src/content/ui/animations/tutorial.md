@@ -5,7 +5,7 @@ description: A tutorial showing how to build explicit animations in Flutter.
 diff2html: true
 ---
 
-{% assign api = '{{site.api}}/flutter' -%}
+{% assign api = site.api | append: '/flutter' -%}
 {% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
 
 <?code-excerpt path-base="animation"?>

@@ -98,7 +98,7 @@ On **iOS**:
 </div>
 
 [`Navigator.push()`]: {{site.api}}/flutter/widgets/Navigator/push.html
-[`startActivity()`]: {{site.android-dev}}/reference/android/app/Activity.html#startActivity(android.content.Intent
+[`startActivity()`]: {{site.android-dev}}/reference/kotlin/android/app/Activity#startactivity
 [`PageRoute.fullscreenDialog`]: {{site.api}}/flutter/widgets/PageRoute-class.html
 
 ### Platform-specific transition details

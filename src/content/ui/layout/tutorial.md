@@ -5,9 +5,7 @@ description: Learn how to build a layout in Flutter.
 diff2html: true
 ---
 
-{% assign api = site.api | append: '/flutter' -%}
-{% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
-{% assign rawExFile = '<https://raw.githubusercontent.com/flutter/website/main/examples>' -%}
+{% assign examples = site.repo.this | append: "/tree/" | append: site.branch | append: "/examples" -%}
 
 <style>dl, dd { margin-bottom: 0; }</style>
 
@@ -270,7 +268,7 @@ These code updates change the app in the following ways.
   the top of the list. Elements in the `children` list display
   in array order on the screen from top to bottom.
 
-[`SingleChildScrollView`]: {{api}}/widgets/SingleChildScrollView-class.html
+[`SingleChildScrollView`]: {{site.api}}/flutter/widgets/SingleChildScrollView-class.html
 
 ### Update the app to display the title section
 
@@ -513,7 +511,7 @@ class TextSection extends StatelessWidget {
 By setting [`softWrap`][] to `true`, text lines fill the column width before
 wrapping at a word boundary.
 
-[`softWrap`]: {{api}}/widgets/Text/softWrap.html
+[`softWrap`]: {{site.api}}/flutter/widgets/Text/softWrap.html
 
 ### Update the app to display the text section
 
@@ -587,7 +585,7 @@ This change might require you to restart the running program to
 display the image.
 :::
 
-[`lake.jpg`]: {{rawExFile}}/layout/lakes/step5/images/lake.jpg
+[`lake.jpg`]: https://raw.githubusercontent.com/flutter/website/main/examples/layout/lakes/step5/images/lake.jpg
 
 ### Create the `ImageSection` widget
 
