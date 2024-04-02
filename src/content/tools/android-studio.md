@@ -45,7 +45,8 @@ differs between Android Studio and IntelliJ.
  1. Specify the **Flutter SDK path** and click **Next**.
  1. Enter your desired **Project name**, 
     **Description**, and **Project location**.
- 1. If you might publish this app, [set the company domain](#note).
+ 1. If you might publish this app,
+    [set the company domain](#set-the-company-domain).
  1. Click **Finish**.
 
 **In IntelliJ:**
@@ -56,10 +57,12 @@ differs between Android Studio and IntelliJ.
  1. Specify the **Flutter SDK path** and click **Next**.
  1. Enter your desired **Project name**,
     **Description**, and **Project location**.
- 1. If you might publish this app, [set the company domain](#note).
+ 1. If you might publish this app,
+    [set the company domain](#set-the-company-domain).
  1. Click **Finish**.
 
-:::secondary Setting the company domain
+#### Set the company domain
+
 When creating a new app, some Flutter IDE plugins ask for an
 organization name in reverse domain order,
 something like `com.example`. Along with the name of the app,
@@ -67,7 +70,6 @@ this is used as the package name for Android, and the Bundle ID for iOS
 when the app is released. If you think you might ever release this app,
 it is better to specify these now. They cannot be changed once the app
 is released. Your organization name should be unique.
-:::
 
 ### Opening a project from existing source code
 
@@ -374,11 +376,6 @@ location of the Android SDK:
     Flutter (as reported by `flutter doctor`).
  1. Click **OK**.
 
-## Tips and tricks
-
-* [Flutter IDE cheat sheet, MacOS version][]
-* [Flutter IDE cheat sheet, Windows & Linux version][]
-
 ## Troubleshooting
 
 ### Known issues and feedback
@@ -405,8 +402,6 @@ When filing new issues, include the output of [`flutter doctor`][].
 [GitHub issue tracker]: {{site.repo.flutter}}-intellij/issues
 [JetBrains YouTrack]: https://youtrack.jetbrains.com/issues?q=%23dart%20%23Unresolved
 [`flutter doctor`]: /resources/bug-reports#provide-some-flutter-diagnostics
-[Flutter IDE cheat sheet, MacOS version]: /resources/Flutter-IntelliJ-cheat-sheet-MacOS.pdf
-[Flutter IDE cheat sheet, Windows & Linux version]: /resources/Flutter-IntelliJ-cheat-sheet-WindowsLinux.pdf
 [Debugging Flutter apps]: /testing/debugging
 [Flutter plugin README]: {{site.repo.flutter}}-intellij/blob/master/README.md
 ["project view"]: {{site.android-dev}}/studio/projects/#ProjectView

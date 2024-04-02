@@ -283,7 +283,7 @@ extensions with your Flutter iOS app, check out the
 [Adding a Home Screen Widget to your Flutter app][lab]
 codelab.
 
-[Adding a Flutter Screen]: /add-to-app/ios/add-flutter-screen?tab=vc-uikit-swift-tab#alternatively---create-a-flutterviewcontroller-with-an-implicit-flutterengine
+[Adding a Flutter Screen]: /add-to-app/ios/add-flutter-screen?tab=vc-uikit-swift-tab#alternatively-create-a-flutterviewcontroller-with-an-implicit-flutterengine
 [App Group]: {{site.apple-dev}}/documentation/xcode/configuring-app-groups
 [Apple's documentation]: {{site.apple-dev}}/app-extensions/
 [Compiling the Engine]: https://github.com/flutter/flutter/wiki/Compiling-the-engine

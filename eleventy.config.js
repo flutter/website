@@ -122,7 +122,7 @@ ${content}
     filter: /^(?!_).+/,
   });
   eleventyConfig.addPassthroughCopy('src/content/tools/devtools/release-notes', {
-    filter: /.*src.*/,
+    filter: (path) => path.includes('src') || path.includes('images'),
   });
 
   if (isProduction) {

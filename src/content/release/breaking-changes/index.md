@@ -47,6 +47,7 @@ release, and listed in alphabetical order:
 [Nullable PageView.controller]: /release/breaking-changes/pageview-controller
 [Deprecated API removed after v3.19]: /release/breaking-changes/3-19-deprecations
 
+<a id="released-in-flutter-3-19"></a>
 ### Released in Flutter 3.19
 
 * [Deprecated API removed after v3.16][]
@@ -61,6 +62,7 @@ release, and listed in alphabetical order:
 [Default multitouch scrolling]: /release/breaking-changes/multi-touch-scrolling
 [Accessibility traversal order of tooltip changed]: /release/breaking-changes/tooltip-semantics-order
 
+<a id="released-in-flutter-3-16"></a>
 ### Released in Flutter 3.16
 
 * [Migrating to Material 3][]
@@ -91,6 +93,7 @@ release, and listed in alphabetical order:
 [Windows: External windows should notify Flutter engine of lifecycle changes]: /release/breaking-changes/win-lifecycle-process-function
 [Windows build path changed to add the target architecture]: /release/breaking-changes/windows-build-architecture
 
+<a id="released-in-flutter-3-13"></a>
 ### Released in Flutter 3.13
 
 * [Added missing `dispose()` for some disposable objects in Flutter][]
@@ -113,6 +116,7 @@ release, and listed in alphabetical order:
 [Migrate a Windows project to ensure the window is shown]: /release/breaking-changes/windows-show-window-migration
 [Updated `Checkbox.fillColor` behavior]: /release/breaking-changes/checkbox-fillColor
 
+<a id="released-in-flutter-3-10"></a>
 ### Released in Flutter 3.10
 
 * [Dart 3 changes in Flutter v3.10 and later][]
@@ -131,6 +135,7 @@ release, and listed in alphabetical order:
 [Require one data variant for `ClipboardData` constructor]: /release/breaking-changes/clipboard-data-required
 ["Zone mismatch" message]: /release/breaking-changes/zone-errors
 
+<a id="released-in-flutter-3-7"></a>
 ### Released in Flutter 3.7
 
 * [Deprecated API removed after v3.3][]
@@ -149,6 +154,7 @@ release, and listed in alphabetical order:
 [ThemeData's toggleableActiveColor property has been deprecated]: /release/breaking-changes/toggleable-active-color
 [Migrate a Windows project to support dark title bars]: /release/breaking-changes/windows-dark-mode
 
+<a id="released-in-flutter-3-3"></a>
 ### Released in Flutter 3.3
 
 * [Adding ImageProvider.loadBuffer][]
@@ -171,6 +177,7 @@ release, and listed in alphabetical order:
 [Page transitions replaced by ZoomPageTransitionsBuilder]: /release/breaking-changes/page-transition-replaced-by-ZoomPageTransitionBuilder
 [Migrate useDeleteButtonTooltip to deleteButtonTooltipMessage of Chips]: /release/breaking-changes/chip-usedeletebuttontooltip-migration
 
+<a id="released-in-flutter-2-10"></a>
 ### Released in Flutter 2.10
 
 * [Deprecated API removed after v2.5][]
@@ -183,6 +190,7 @@ release, and listed in alphabetical order:
 [Required Kotlin version]: /release/breaking-changes/kotlin-version
 [Scribble Text Input Client]: /release/breaking-changes/scribble-text-input-client
 
+<a id="released-in-flutter-2-5"></a>
 ### Released in Flutter 2.5
 
 * [Default drag scrolling devices][]
@@ -217,6 +225,7 @@ The following breaking change was reverted in release 2.2:
 
 [Network Policy on iOS and Android]: /release/breaking-changes/network-policy-ios-android
 
+<a id="released-in-flutter-2-2"></a>
 ### Released in Flutter 2.2
 
 * [Default Scrollbars on Desktop][]
@@ -251,6 +260,7 @@ The following breaking change was reverted in release 2.2:
 [Use maxLengthEnforcement instead of maxLengthEnforced]: /release/breaking-changes/use-maxLengthEnforcement-instead-of-maxLengthEnforced
 [Transition of platform channel test interfaces to flutter_test package]: /release/breaking-changes/mock-platform-channels
 
+<a id="released-in-flutter-1-22"></a>
 ### Released in Flutter 1.22
 
 * [Android v1 embedding app and plugin creation deprecation][]
@@ -262,6 +272,7 @@ The following breaking change was reverted in release 2.2:
 [Cupertino icons 1.0.0]: /release/breaking-changes/cupertino-icons-1.0.0
 [The new Form, FormField auto-validation API]: /release/breaking-changes/form-field-autovalidation-api
 
+<a id="released-in-flutter-1-20"></a>
 ### Released in Flutter 1.20
 
 * [Actions API revision][]
@@ -290,6 +301,7 @@ The following breaking change was reverted in release 2.2:
 [TextField requires MaterialLocalizations]: /release/breaking-changes/text-field-material-localizations
 [The Route Transition record and Transition delegate updates]: /release/breaking-changes/route-transition-record-and-transition-delegate
 
+<a id="released-in-flutter-1-17"></a>
 ### Released in Flutter 1.17
 
 * [Adding 'linux' and 'windows' to TargetPlatform enum][]
