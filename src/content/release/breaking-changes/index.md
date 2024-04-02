@@ -38,12 +38,14 @@ release, and listed in alphabetical order:
 * [Rename `MemoryAllocations` to `FlutterMemoryAllocations`][]
 * [Deprecate `TextField.canRequestFocus`][]
 * [Nullable PageView.controller][]
+* [Deprecated API removed after v3.19][]
 
 [Introduce new `ColorScheme` roles]: /release/breaking-changes/new-color-scheme-roles
 [Stop generating AssetManifest.json]: /release/breaking-changes/asset-manifest-dot-json
 [Rename `MemoryAllocations` to `FlutterMemoryAllocations`]: /release/breaking-changes/flutter-memory-allocations
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
 [Nullable PageView.controller]: /release/breaking-changes/pageview-controller
+[Deprecated API removed after v3.19]: /release/breaking-changes/3-19-deprecations
 
 ### Released in Flutter 3.19
 
