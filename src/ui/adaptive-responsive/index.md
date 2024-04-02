@@ -1,5 +1,5 @@
 ---
-title: Adaptive and responsive app design
+title: Overview
 description: >
   It's important to create an app,
   whether for mobile or web,
