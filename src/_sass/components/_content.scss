@@ -66,13 +66,15 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0;
     text-wrap: balance;
   }
 
   .header-wrapper {
     display: flex;
     margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     align-items: center;
 
     .heading-link {
@@ -83,6 +85,7 @@
       overflow: hidden;
       color: #4a4a4a;
       opacity: 0;
+      text-decoration: none;
 
       &:hover {
         color: $site-color-primary;
