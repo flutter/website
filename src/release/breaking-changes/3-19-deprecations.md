@@ -382,7 +382,7 @@ Package: flutter
 Supported by Flutter Fix: yes
 
 The `showTrackOnHover` property of `Scrollbar`, and its associated component theme,
-`ScrollbarThemeData.showTrackOnHover`, was replaced by the stateful property
+`ScrollbarThemeData.showTrackOnHover`, were replaced by the stateful property
 `ScrollbarThemeData.trackVisibility` after v3.4. By utilizing `trackVisibility`,
 all permutations of state can factor into revealing the scrollbar track, not
 just hover.
