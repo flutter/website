@@ -5,7 +5,7 @@ short-title: Interactivity
 diff2html: true
 ---
 
-{% assign examples = {{site.repo.this}}/tree/{{site.branch}}/examples -%}
+{% assign examples = site.repo.this | append: "/tree/" | append: site.branch | append: "/examples" -%}
 
 :::secondary What you'll learn
 * How to respond to taps.
