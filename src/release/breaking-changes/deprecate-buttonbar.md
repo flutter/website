@@ -7,13 +7,13 @@ description: >-
 
 ## Summary
 
-The `ButtonBar` widget has been deprecated in favor of the more efficient
+The `ButtonBar` widget was deprecated in favor of the more efficient
 `OverflowBar` widget. As a result, the `ThemeData.buttonBarTheme` and
-`ButtonBarTheme` have also been deprecated.
+`ButtonBarTheme` were also deprecated.
 
 ## Context
 
-The `ButtonBar` widget lays its children in a row and in a column if there is
+The `ButtonBar` widget lays out its children in a row and in a column if there is
 not enough horizontal space. The `OverflowBar` widget does the same, but it's
 not tied to the Material library and is part of the core widgets library.
 
@@ -26,12 +26,12 @@ not tied to the Material library and is part of the core widgets library.
   `MainAxisAlignment.end`.
 - `ButtonBar.buttonPadding` provides spacing between buttons and padding around
   buttons, replace it with `OverflowBar.spacing`, which provides spacing
-  between buttons. Wrap the `OverflowBar`widget with `Padding` widget to
+  between buttons. Wrap the `OverflowBar` widget with `Padding` widget to
   provide padding around the buttons.
 - Replace `ButtonBar.overflowButtonSpacing` with `OverflowBar.overflowSpacing`,
   which provides spacing between buttons when the buttons are laid in a column
   when there is not enough horizontal space.
-- Remove `ButtonBarThemeData` from `ThemeData`, if exists.
+- Remove `ButtonBarThemeData` from `ThemeData`, if it exists.
 
 ## Migration guide
 
