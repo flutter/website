@@ -717,7 +717,7 @@ The [previously announced][] deprecations for context menus, relating to `Toolba
 as well as parts of `TextSelectionController` and `SelectableRegionState` were not
 removed this cycle, to allow more time for migration.
 Expect these deprecations to be removed in the next cycle, which will
-be announced again when it comes.
+be announced again when the time comes.
 
 [previously announced]: https://groups.google.com/g/flutter-announce/c/8XjXpUKlnf8
 
