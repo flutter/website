@@ -50,8 +50,7 @@ For more information, see
 
 Here's a diagram of the widget tree for this UI:
 
-<img src='/assets/images/docs/ui/layout/sample-flutter-layout.png' class="mw-100" alt="Node tree">
-{:.text-center}
+<img src='/assets/images/docs/ui/layout/sample-flutter-layout.png' class="mw-100 text-center" alt="Node tree">
 
 Most of this should look as you might expect, but you might be wondering
 about the containers (shown in pink). [`Container`][] is a widget class
@@ -450,8 +449,7 @@ When a layout is too large to fit a device, a yellow
 and black striped pattern appears along the affected edge.
 Here is an [example][sizing] of a row that is too wide:
 
-<img src='/assets/images/docs/ui/layout/layout-too-large.png' class="mw-100" alt="Overly-wide row">
-{:.text-center}
+<img src='/assets/images/docs/ui/layout/layout-too-large.png' class="mw-100 text-center" alt="Overly-wide row">
 
 Widgets can be sized to fit within a row or column by using the
 [`Expanded`][] widget. To fix the previous example where the
@@ -561,9 +559,8 @@ inside of rows and columns as deeply as you need.
 Let's look at the code for the outlined
 section of the following layout:
 
-<img src='/assets/images/docs/ui/layout/pavlova-large-annotated.png' class="border mw-100"
+<img src='/assets/images/docs/ui/layout/pavlova-large-annotated.png' class="border mw-100 text-center"
     alt="Screenshot of the pavlova app, with the ratings and icon rows outlined in red">
-{:.text-center}
 
 The outlined section is implemented as two rows. The ratings row contains
 five stars and the number of reviews. The icons row contains three
@@ -571,11 +568,10 @@ columns of icons and text.
 
 The widget tree for the ratings row:
 
-<img src='/assets/images/docs/ui/layout/widget-tree-pavlova-rating-row.png' class="mw-100" alt="Ratings row widget tree">
-{:.text-center}
+<img src='/assets/images/docs/ui/layout/widget-tree-pavlova-rating-row.png' class="mw-100 text-center" alt="Ratings row widget tree">
 
 The `ratings` variable creates a row containing a smaller row
-of 5 star icons, and text:
+of 5-star icons, and text:
 
 <?code-excerpt "layout/pavlova/lib/main.dart (ratings)" replace="/ratings/[!$&!]/g"?>
 ```dart
@@ -621,8 +617,7 @@ The icons row, below the ratings row, contains 3 columns;
 each column contains an icon and two lines of text,
 as you can see in its widget tree:
 
-<img src='/assets/images/docs/ui/layout/widget-tree-pavlova-icon-row.png' class="mw-100" alt="Icon widget tree">
-{:.text-center}
+<img src='/assets/images/docs/ui/layout/widget-tree-pavlova-icon-row.png' class="mw-100 text-center" alt="Icon widget tree">
 
 The `iconList` variable defines the icons row:
 
@@ -893,8 +888,7 @@ it's the entry in the "calorie" column for the "avocado" row), use
 
 <div class="row">
 <div class="col-lg-6">
-  <img src='/assets/images/docs/ui/layout/gridview-extent.png' class="mw-100" alt="A 3-column grid of photos">
-  {:.text-center}
+  <img src='/assets/images/docs/ui/layout/gridview-extent.png' class="mw-100 text-center" alt="A 3-column grid of photos">
 
   Uses `GridView.extent` to create a grid with tiles a maximum
   150 pixels wide.
@@ -902,9 +896,8 @@ it's the entry in the "calorie" column for the "avocado" row), use
   **App source:** [grid_and_list]({{examples}}/layout/grid_and_list)
 </div>
 <div class="col-lg-6">
-  <img src='/assets/images/docs/ui/layout/gridview-count-flutter-gallery.png' class="mw-100"
+  <img src='/assets/images/docs/ui/layout/gridview-count-flutter-gallery.png' class="mw-100 text-center"
       alt="A 2 column grid with footers">
-  {:.text-center}
 
   Uses `GridView.count` to create a grid that's 2 tiles
   wide in portrait mode, and 3 tiles wide in landscape mode.
@@ -952,9 +945,8 @@ its render box.
 
 <div class="row">
 <div class="col-lg-6">
-  <img src='/assets/images/docs/ui/layout/listview.png' class="border mw-100"
+  <img src='/assets/images/docs/ui/layout/listview.png' class="border mw-100 text-center"
       alt="ListView containing movie theaters and restaurants">
-  {:.text-center}
 
   Uses `ListView` to display a list of businesses using
   `ListTile`s. A `Divider` separates the theaters from
@@ -963,9 +955,8 @@ its render box.
   **App source:** [grid_and_list]({{examples}}/layout/grid_and_list)
 </div>
 <div class="col-lg-6">
-  <img src='/assets/images/docs/ui/layout/listview-color-gallery.png' class="border mw-100"
+  <img src='/assets/images/docs/ui/layout/listview-color-gallery.png' class="border mw-100 text-center"
       alt="ListView containing shades of blue">
-  {:.text-center}
 
   Uses `ListView` to display the [`Colors`][] from
   the [Material 2 Design palette][]
@@ -1033,8 +1024,7 @@ or partially overlap the base widget.
 
 <div class="row">
 <div class="col-lg-7">
-  <img src='/assets/images/docs/ui/layout/stack.png' class="mw-100" width="200px" alt="Circular avatar image with a label">
-  {:.text-center}
+  <img src='/assets/images/docs/ui/layout/stack.png' class="mw-100 text-center" width="200px" alt="Circular avatar image with a label">
 
   Uses `Stack` to overlay a `Container`
   (that displays its `Text` on a translucent
@@ -1045,8 +1035,7 @@ or partially overlap the base widget.
   **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
 </div>
 <div class="col-lg-5">
-  <img src='/assets/images/docs/ui/layout/stack-flutter-gallery.png' class="mw-100" alt="An image with a icon overlaid on top">
-  {:.text-center}
+  <img src='/assets/images/docs/ui/layout/stack-flutter-gallery.png' class="mw-100 text-center" alt="An image with a icon overlaid on top">
 
   Uses `Stack` to overlay an icon on top of an image.
 
@@ -1120,8 +1109,7 @@ Specifying an unsupported value disables the drop shadow entirely.
 
 <div class="row">
 <div class="col-lg-6">
-  <img src='/assets/images/docs/ui/layout/card.png' class="mw-100" alt="Card containing 3 ListTiles">
-  {:.text-center}
+  <img src='/assets/images/docs/ui/layout/card.png' class="mw-100 text-center" alt="Card containing 3 ListTiles">
 
   A `Card` containing 3 ListTiles and sized by wrapping
   it with a `SizedBox`. A `Divider` separates the first
@@ -1130,9 +1118,8 @@ Specifying an unsupported value disables the drop shadow entirely.
   **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
 </div>
 <div class="col-lg-6">
-  <img src='/assets/images/docs/ui/layout/card-flutter-gallery.png' class="mw-100"
+  <img src='/assets/images/docs/ui/layout/card-flutter-gallery.png' class="mw-100 text-center"
       alt="Tappable card containing an image and multiple forms of text">
-  {:.text-center}
 
   A `Card` containing an image and text.
 
@@ -1206,17 +1193,15 @@ and trailing icons. `ListTile` is most commonly used in
 
 <div class="row">
 <div class="col-lg-6">
-  <img src='/assets/images/docs/ui/layout/card.png' class="mw-100" alt="Card containing 3 ListTiles">
-  {:.text-center}
+  <img src='/assets/images/docs/ui/layout/card.png' class="mw-100 text-center" alt="Card containing 3 ListTiles">
 
   A `Card` containing 3 `ListTile`s.
 
   **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
 </div>
 <div class="col-lg-6">
-  <img src='/assets/images/docs/ui/layout/listtile-flutter-gallery.png' class="border mw-100" height="200px"
+  <img src='/assets/images/docs/ui/layout/listtile-flutter-gallery.png' class="border mw-100 text-center" height="200px"
       alt="4 ListTiles, each containing a leading avatar">
-  {:.text-center}
 
   Uses `ListTile` with leading widgets.
 

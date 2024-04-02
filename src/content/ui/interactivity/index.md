@@ -35,8 +35,7 @@ replacing the solid star with an outline and
 decreasing the count. Tapping again favorites the lake,
 drawing a solid star and increasing the count.
 
-<img src='/assets/images/docs/ui/favorited-not-favorited.png' class="mw-100" alt="The custom widget you'll create" width="200px">
-{:.text-center}
+<img src='/assets/images/docs/ui/favorited-not-favorited.png' class="mw-100 text-center" alt="The custom widget you'll create" width="200px">
 
 To accomplish this, you'll create a single custom widget
 that includes both the star and the count,

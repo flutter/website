@@ -92,8 +92,7 @@ widgets in [What is State?][]
 [first-app]: {{site.yt.watch}}?v=xWV71C2kp38
 [What is State?]: {{site.yt.watch}}?v=QlwiL_yLh6E
 
-{:.text-center}
-**Only have 60 seconds? Learn how to build and deploy a Flutter App!**
+**Only have 60 seconds? Learn how to build and deploy a Flutter App!** {:.text-center}
 
 <div style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
   <iframe style="max-width: 100%" width="560" height="315" src="{{site.yt.embed}}/ZnufaryH43s" title="Learn how to build and deploy a Flutter app in 60 seconds" {{site.yt.set}}></iframe>
