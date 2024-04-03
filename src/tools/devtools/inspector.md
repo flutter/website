@@ -43,26 +43,31 @@ The following is a guide to the features available in the
 inspector's toolbar. When space is limited, the icon is
 used as the visual version of the label.
 
-<dl markdown="1">
-<dt markdown="1">![Select widget mode icon](/assets/images/docs/tools/devtools/select-widget-mode-icon.png){:width="20px"} **Select widget mode**</dt>
-<dd markdown="1">Enable this button in order to select
-    a widget on the device to inspect it. For more information,
-    see [Inspecting a widget](#inspecting-a-widget).
-<dt markdown="1">![Refresh tree icon](/assets/images/docs/tools/devtools/refresh-tree-icon.png){:width="20px"} **Refresh tree**</dt>
-<dd>Reload the current widget info.</dd>
-<dt markdown="1">![Slow animations icon](/assets/images/docs/tools/devtools/slow-animations-icon.png){:width="20px"} **[Slow animations][]**</dt>
-<dd>Run animations 5 times slower to help fine-tune them.</dd>
-<dt markdown="1">![Show guidelines mode icon](/assets/images/docs/tools/devtools/debug-paint-mode-icon.png){:width="20px"} **[Show guidelines][]**</dt>
-<dd>Overlay guidelines to assist with fixing layout issues.</dd>
-<dt markdown="1">![Show baselines icon](/assets/images/docs/tools/devtools/paint-baselines-icon.png){:width="20px"} **[Show baselines][]**</dt>
-<dd>Show baselines, which are used for aligning text.
-    Can be useful for checking if text is aligned.</dd>
-<dt markdown="1">![Highlight repaints icon](/assets/images/docs/tools/devtools/repaint-rainbow-icon.png){:width="20px"} **[Highlight repaints][]**</dt>
-<dd>Show borders that change color when elements repaint.
-    Useful for finding unnecessary repaints.</dd>
-<dt markdown="1">![Highlight oversized images icon](/assets/images/docs/tools/devtools/invert_oversized_images_icon.png){:width="20px"} **[Highlight oversized images][]**</dt>
-<dd>Highlights images that are using too much memory
-    by inverting colors and flipping them.</dd>
+![Select widget mode icon](/assets/images/docs/tools/devtools/select-widget-mode-icon.png){:width="20px"} **Select widget mode**
+: Enable this button in order to select
+  a widget on the device to inspect it. To learn more,
+  check out [Inspecting a widget](#inspecting-a-widget).
+
+![Refresh tree icon](/assets/images/docs/tools/devtools/refresh-tree-icon.png){:width="20px"} **Refresh tree**
+: Reload the current widget info.
+
+![Slow animations icon](/assets/images/docs/tools/devtools/slow-animations-icon.png){:width="20px"} **[Slow animations][]**
+: Run animations 5 times slower to help fine-tune them.
+
+![Show guidelines mode icon](/assets/images/docs/tools/devtools/debug-paint-mode-icon.png){:width="20px"} **[Show guidelines][]**
+: Overlay guidelines to assist with fixing layout issues.
+
+![Show baselines icon](/assets/images/docs/tools/devtools/paint-baselines-icon.png){:width="20px"} **[Show baselines][]**
+: Show baselines, which are used for aligning text.
+  Can be useful for checking if text is aligned.
+
+![Highlight repaints icon](/assets/images/docs/tools/devtools/repaint-rainbow-icon.png){:width="20px"} **[Highlight repaints][]**
+: Show borders that change color when elements repaint.
+  Useful for finding unnecessary repaints.
+
+![Highlight oversized images icon](/assets/images/docs/tools/devtools/invert_oversized_images_icon.png){:width="20px"} **[Highlight oversized images][]**
+: Highlights images that are using too much memory
+  by inverting colors and flipping them.
 
 [Slow animations]: #slow-animations
 [Show guidelines]: #show-guidelines

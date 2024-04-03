@@ -140,7 +140,7 @@ secrets in pull requests that you accept and merge.
         * Remove the `json_key_file` field from `Appfile` and store the string
           content of the JSON in your CI system's encrypted variable. 
           Read the environment variable directly in your `Fastfile`.
-          ```
+          ```plaintext
           upload_to_play_store(
             ...
             json_key_data: ENV['<variable name>']
@@ -165,7 +165,7 @@ secrets in pull requests that you accept and merge.
    However, this step is optional.
     * In both your `[project]/android` and `[project]/ios` folders, create a
       `Gemfile` containing the following content:
-        ```
+        ```plaintext
         source "https://rubygems.org"
 
         gem "fastlane"
@@ -255,7 +255,7 @@ exit 0
 
 This file should be added to your git repository and marked as executable.
 
-```terminal
+```console
 $ git add --chmod=+x ios/ci_scripts/ci_post_clone.sh
 ```
 
@@ -307,7 +307,7 @@ information.
 [Android app signing steps]: /deployment/android#signing-the-app
 [Appcircle]: https://appcircle.io/blog/guide-to-automated-mobile-ci-cd-for-flutter-projects-with-appcircle/
 [Apple Developer Account console]: {{site.apple-dev}}/account/ios/certificate/
-[Bitrise]: https://devcenter.bitrise.io/en/getting-started/getting-started-with-flutter-apps
+[Bitrise]: https://devcenter.bitrise.io/en/getting-started/quick-start-guides/getting-started-with-flutter-apps
 [CI Options and Examples]: #reference-and-examples
 [Cirrus]: https://cirrus-ci.org
 [Cirrus script]: {{site.repo.flutter}}/blob/master/.cirrus.yml

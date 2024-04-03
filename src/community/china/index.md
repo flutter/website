@@ -140,14 +140,14 @@ To set your machine to use this mirror, use these commands.
 
 On macOS, Linux, or ChromeOS:
 
-```terminal
+```console
 export PUB_HOSTED_URL={{mirror.urls.pubhosted}};
 export FLUTTER_STORAGE_BASE_URL={{mirror.urls.flutterstorage}}
 ```
 
 On Windows:
 
-```terminal
+```console
 $env:PUB_HOSTED_URL="{{mirror.urls.pubhosted}}";
 $env:FLUTTER_STORAGE_BASE_URL="{{mirror.urls.flutterstorage}}"
 ```

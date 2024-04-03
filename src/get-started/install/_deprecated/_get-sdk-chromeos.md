@@ -4,7 +4,7 @@
 
  1. Install the core development tools needed for Flutter:
 
-    ```terminal
+    ```console
     $ sudo apt install clang cmake ninja-build pkg-config libgtk-3-dev
     ```
 
@@ -14,13 +14,13 @@
  1. Download Flutter from the [Flutter repo][]
     on GitHub with the following command in your home directory:
 
-    ```terminal
+    ```console
     $ git clone https://github.com/flutter/flutter.git -b stable
     ```
 
  1. Add the `flutter` tool to your path:
 
-    ```terminal
+    ```console
     $ echo PATH="$PATH:`pwd`/flutter/bin" >> ~/.profile
     $ source ~/.profile
     ```
@@ -32,7 +32,7 @@ You are now ready to run Flutter commands!
 Run the following command to see if there are any dependencies you need to
 install to complete the setup (for verbose output, add the `-v` flag):
 
-```terminal
+```console
 $ flutter doctor
 ```
 

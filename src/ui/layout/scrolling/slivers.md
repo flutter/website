@@ -19,41 +19,28 @@ check out the following video about using slivers.
 For more information on implementing fancy scrolling effects
 in Flutter, see the following resources:
 
-<dl markdown="1">
-<dt markdown="1"> **[Slivers, Demystified][]**
-</dt>
-<dd markdown="1">A free article on Medium that
-    explains how to implement custom scrolling
-    using the sliver classes.
-</dd>
+**[Slivers, Demystified][]**
+: A free article on Medium that
+  explains how to implement custom scrolling
+  using the sliver classes.
 
-<dt markdown="1"> **[SliverAppBar][sliver-app-bar-video]**
-</dt>
-<dd markdown="1">A one-minute Widget-of-the-week
-    video that gives an overview of the
-    `SliverAppBar` widget.
+**[SliverAppBar][sliver-app-bar-video]**
+: A one-minute Widget-of-the-week
+  video that gives an overview of the
+  `SliverAppBar` widget.<br>
+  <iframe width="560" height="315" src="{{site.yt.embed}}/R9C5KMJKluE" title="Learn about the SliverAppBar Widget" {{site.yt.set}}></iframe>
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/R9C5KMJKluE" title="Learn about the SliverAppBar Widget" {{site.yt.set}}></iframe>
-</dd>
+**[SliverList and SliverGrid][]**
+: A one-minute Widget-of-the-week
+  video that gives an overview of the `SliverList`
+  and `SliverGrid` widgets.<br>
+  <iframe width="560" height="315" src="{{site.yt.embed}}/ORiTTaVY6mM" title="Learn about the SliverList and SliverBar Widget" {{site.yt.set}}></iframe>
 
-<dt markdown="1"> **[SliverList and SliverGrid][]**
-</dt>
-<dd markdown="1">A one-minute Widget-of-the-week
-    video that gives an overview of the `SliverList`
-    and `SliverGrid` widgets.
-
-<iframe width="560" height="315" src="{{site.yt.embed}}/ORiTTaVY6mM" title="Learn about the SliverList and SliverBar Widget" {{site.yt.set}}></iframe>
-</dd>
-
-<dt markdown="1"> **[Slivers explained - Making dynamic layouts][]**
-</dt>
-<dd markdown="1">A 50-minute episode of [The Boring Show][]
-    where Ian Hickson, Flutter's Tech Lead, and Filip Hracek
-    discuss the power of slivers.
-
-<iframe width="560" height="315" src="{{site.yt.embed}}/Mz3kHQxBjGg" title="Watch the Boring Show to learn about slivers" {{site.yt.set}}></iframe>
-</dd>
-</dl>
+**[Slivers explained - Making dynamic layouts][]**
+: A 50-minute episode of [The Boring Show][]
+  where Ian Hickson, Flutter's Tech Lead, and Filip Hracek
+  discuss the power of slivers.<br>
+  <iframe width="560" height="315" src="{{site.yt.embed}}/Mz3kHQxBjGg" title="Watch the Boring Show to learn about slivers" {{site.yt.set}}></iframe>
 
 ## API docs
 

@@ -54,8 +54,7 @@ This chart contains Flutter frame information for your application.
 Each bar set in the chart represents a single Flutter frame.
 The bars are color-coded to highlight the different portions
 of work that occur when rendering a Flutter frame: work from
-the UI thread and work from the raster thread (previously known
-as the GPU thread).
+the UI thread and work from the raster thread.
 
 This chart contains Flutter frame timing information for your
 application. Each pair of bars in the chart represents a single
@@ -77,8 +76,7 @@ for data below by clicking the **Flutter frames** button above the chart.
 
 The pair of bars representing each Flutter frame are color-coded
 to highlight the different portions of work that occur when rendering
-a Flutter frame: work from the UI thread and work from the raster thread
-(previously known as the GPU thread).
+a Flutter frame: work from the UI thread and work from the raster thread.
 
 ### UI
 
@@ -91,15 +89,13 @@ to be rendered on the device. Do **not** block this thread.
 
 ### Raster
 
-The raster thread (previously known as the GPU thread)
-executes graphics code from the Flutter Engine.
+The raster thread executes graphics code from the Flutter Engine.
 This thread takes the layer tree and displays it by talking to
 the GPU (graphic processing unit). You can't directly access
 the raster thread or its data, but if this thread is slow,
 it's a result of something you've done in the Dart code.
 Skia, the graphics library, runs on this thread.
-[Impeller][] (in the stable channel for iOS)
-also uses this thread.
+[Impeller][] also uses this thread.
 
 [Impeller]: /perf/impeller
 

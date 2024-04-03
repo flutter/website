@@ -103,14 +103,14 @@ npm install -g firebase-tools
 
 1. Enable the web frameworks preview to the [Firebase framework-aware CLI][]:
 
-    ```
+    ```console
     firebase experiments:enable webframeworks
     ```
 
 2. In an empty directory or an existing Flutter project, run the initialization
 command:
 
-    ```
+    ```console
     firebase init hosting
     ```
 
@@ -127,7 +127,7 @@ command:
 
 8. Deploy the app to Firebase Hosting:
 
-    ```terminal
+    ```console
     firebase deploy
     ```
 

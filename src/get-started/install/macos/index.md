@@ -6,10 +6,11 @@ target-list: [Desktop, iOS, Android, Web]
 js: [{url: '/assets/js/temp/macos-install-redirector.js'}]
 ---
 
-{% assign os = 'macos' -%}
+{% assign os = 'macos'
+   -%}
 {% assign recommend = 'iOS' %}
 {% capture rec-target -%}
-[{{recommend | strip}}]({{site.url}}/get-started/install/{{os | downcase}}/{{recommend | downcase}})
+[{{recommend | strip}}](/get-started/install/{{os | downcase}}/mobile-{{recommend | downcase}})
 {%- endcapture %}
 
 <div class="card-deck mb-8">
@@ -20,9 +21,9 @@ js: [{url: '/assets/js/temp/macos-install-redirector.js'}]
 {% else %}
 {% assign targetlink = target | downcase %}
 {% endcase %}
-  <a class="card card-app-type"
+  <a class="card card-app-type card-macos"
      id="install-{{os | downcase}}"
-     href="{{site.url}}/get-started/install/{{os | downcase}}/{{targetlink}}">
+     href="/get-started/install/{{os | downcase}}/{{targetlink}}">
     <div class="card-body">
       <header class="card-title text-center m-0">
         <span class="d-block h1">
@@ -35,10 +36,10 @@ js: [{url: '/assets/js/temp/macos-install-redirector.js'}]
           {% when 'android' -%}
             <span class="material-symbols">phone_android</span>
           {% when 'web' -%}
-            <span class="material-symbols">open_in_browser</span>
+            <span class="material-symbols">web</span>
           {% endcase -%}
         </span>
-        <span class="text-muted text-nowrap">
+        <span class="text-muted">
         {{ target }}
         </span>
         {% if icon == 'ios' -%}

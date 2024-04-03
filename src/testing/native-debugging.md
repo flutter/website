@@ -44,11 +44,11 @@ debugging your own Flutter project as well.
 
 1. Create a basic Flutter app.
 
-    ```terminal
+    ```console
     $ flutter create my_app
     ```
 
-    ```terminal
+    ```console
     Creating project my_app...
     Resolving dependencies in my_app... 
     Got dependencies in my_app.
@@ -67,7 +67,7 @@ debugging your own Flutter project as well.
     Your application code is in my_app/lib/main.dart.
     ```
 
-    ```terminal
+    ```console
     $ cd my_app
     ```
 
@@ -313,11 +313,11 @@ test Flutter app. This update adds native code to debug.
 1. To add the `url_launcher` package as a dependency,
    run `flutter pub add`:
 
-    ```terminal
+    ```console
     $ flutter pub add url_launcher
     ```
 
-    ```terminal
+    ```console
     Resolving dependencies... 
       collection 1.17.1 (1.17.2 available)
     + flutter_web_plugins 0.0.0 from sdk flutter
@@ -343,11 +343,11 @@ test Flutter app. This update adds native code to debug.
    {: type="a"}
    1. In Linux or macOS, run this `find` command.
 
-      ```terminal
+      ```console
       $ find ./ -mmin -120 
       ```
 
-      ```terminal
+      ```console
       ./ios/Flutter/Debug.xcconfig
       ./ios/Flutter/Release.xcconfig
       ./linux/flutter/generated_plugin_registrant.cc

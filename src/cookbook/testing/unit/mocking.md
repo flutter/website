@@ -51,7 +51,7 @@ in the `dev_dependencies` section.
 
 To add the dependencies, run `flutter pub add`:
 
-```terminal
+```console
 $ flutter pub add http dev:mockito dev:build_runner
 ```
 
@@ -125,7 +125,7 @@ void main() {
 
 Next, generate the mocks running the following command:
 
-```terminal
+```console
 $ dart run build_runner build
 ```
 
@@ -190,7 +190,7 @@ void main() {
 Now that you have a `fetchAlbum()` function with tests in place,
 run the tests.
 
-```terminal
+```console
 $ flutter test test/fetch_album_test.dart
 ```
 

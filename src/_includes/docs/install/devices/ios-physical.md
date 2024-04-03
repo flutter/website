@@ -232,7 +232,7 @@ If you don't see your device listed when using `flutter run`,
 extend the timeout. The timeout defaults to 10 seconds.
 To extend the timeout, change the value to an integer greater than 10.
 
-```terminal
+```console
 $ flutter run --device-timeout 60
 ```
 

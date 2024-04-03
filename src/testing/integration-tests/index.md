@@ -151,14 +151,14 @@ These tests can be launched with the
 is the optional device ID or pattern displayed
 in the output of the `flutter devices` command:
 
-```terminal
+```console
 $ flutter test integration_test/foo_test.dart -d <DEVICE_ID>
 ```
 
 This runs the tests in `foo_test.dart`. To run all tests in this directory on
 the default device, run:
 
-```terminal
+```console
 $ flutter test integration_test
 ```
 
@@ -167,7 +167,7 @@ $ flutter test integration_test
 [Download and install ChromeDriver][chromedriver]
 and run it on port 4444:
 
-```terminal
+```console
 $ chromedriver --port=4444
 ```
 
@@ -220,7 +220,7 @@ void main() {
 
 In a separate process, run `flutter_drive`:
 
-```terminal
+```console
 $ flutter drive \
    --driver=test_driver/integration_test.dart \
    --target=integration_test/counter_test.dart \
@@ -255,7 +255,7 @@ already. Then navigate to **Quality > Test Lab**:
 
 Create an APK using Gradle:
 
-```terminal
+```console
 $ pushd android
 # flutter build generates files in android/ for building the app
 flutter build apk

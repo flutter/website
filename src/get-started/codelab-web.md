@@ -76,7 +76,7 @@ You'll start with a simple web app that we provide for you.
 At the command line, perform the following command to
 make sure that you have Flutter installed correctly.
 
-```terminal
+```console
 $ flutter doctor
 Doctor summary (to see all details, run flutter doctor -v):
 [✓] Flutter (Channel master, 3.4.0-19.0.pre.254, on macOS 12.6 21G115
@@ -595,7 +595,7 @@ launch the DevTools server as explained in the
 When DevTools launches, you should see something
 like the following:
 
-```terminal
+```console
 Serving DevTools at http://127.0.0.1:9100
 ```
 Go to this URL in a Chrome browser. You should see the DevTools

@@ -1,15 +1,17 @@
-{{site.alert.important}}
-  Perform this guide in sequence. Skipping steps can cause errors.
-{{site.alert.end}}
+{% assign target = include.target %}
+{% assign os = include.os %}
 
-## System requirements
+{% include docs/install/admonitions/install-in-order.md %}
+
+## Verify system requirements
 
 To install and run Flutter,
-your {{include.os}} environment must meet these requirements:
+your {{os}} environment must meet the following hardware
+and software requirements.
 
 ### Hardware requirements
 
-Your {{include.os}} Flutter development environment must meet the following
+Your {{os}} Flutter development environment must meet the following
 minimal hardware requirements.
 
 <div class="table-wrapper" markdown="1">

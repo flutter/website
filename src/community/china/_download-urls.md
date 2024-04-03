@@ -22,13 +22,13 @@
 To download the {{include.ref-os}} 3.13 version of the Flutter SDK,
 you would change the original URL from:
 
-```terminal
+```console
 https://storage.googleapis.com/{{filepath}}
 ```
 
 to the mirror URL:
 
-```terminal
+```console
 https://storage.flutter-io.cn/{{filepath}}
 ```
 

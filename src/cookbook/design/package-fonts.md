@@ -49,7 +49,7 @@ updating the `pubspec.yaml` in the *app's* root directory.
 To add the `awesome_package` package as a dependency,
 run `flutter pub add`:
 
-```terminal
+```console
 $ flutter pub add awesome_package
 ```
 

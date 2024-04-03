@@ -19,7 +19,7 @@ Flutter SDK to a newer version.
 When you run DevTools from the command line, you should see output that
 looks something like:
 
-```
+```plaintext
 Serving DevTools at http://127.0.0.1:9100
 ```
 

@@ -35,7 +35,7 @@ It provides a simple API to handle complex routing scenarios.
 2. To include the `go_router` package as a dependency,
    run `flutter pub add`:
 
-    ```terminal
+    ```console
     $ flutter pub add go_router
     ```
 
@@ -169,7 +169,7 @@ the devices. This ensures that the Flutter application is installed.
 
 If using the Simulator, test using the Xcode CLI:
 
-```terminal
+```console
 $ xcrun simctl openurl booted https://<web domain>/details
 ```
 

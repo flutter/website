@@ -112,7 +112,7 @@ about evaluating and debugging Flutter's performance.
 
 * How do I retrieve the shader persistent cache from a device?
   * On Android, you can do the following:
-    ```terminal
+    ```console
     adb shell
     run-as <com.your_app_package_name>
     cp <your_folder> <some_public_folder, e.g., /sdcard> -r

@@ -1,4 +1,4 @@
-```nocode
+```plaintext
 flutter: WidgetsFlutterBinding - DEBUG MODE
 flutter: [root](renderObject: RenderView#06beb)
 flutter: └View-[GlobalObjectKey FlutterView#7971c]

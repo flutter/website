@@ -82,11 +82,13 @@ your app has the ability to replace the
 current set of pages when a new deep link
 is opened while the app is running.
 
-## For more information
+## To learn more
 
-[Learning Flutter's new navigation and routing system][] provides an
+* [Learning Flutter's new navigation and routing system][] provides an
 introduction to the Router system.
+* [Deep dive into Flutter deep linking][io-dl] video from Google I/O 2023
 
+[io-dl]: {{site.yt.watch}}?v=6RxuDcs6jVw&t=3s
 [Learning Flutter's new navigation and routing system]: {{site.flutter-medium}}/learning-flutters-new-navigation-and-routing-system-7c9068155ade
 [routes]: {{site.api}}/flutter/material/MaterialApp/routes.html
 [onGenerateRoute]: {{site.api}}/flutter/material/MaterialApp/onGenerateRoute.html
