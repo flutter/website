@@ -127,8 +127,7 @@ navigate around your app.
 To learn how to find and customize Android's
 accessibility features, view the following video.
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/FQyj_XTl01w" title="Learn about the accessibility features on the Google Pixel" {{site.yt.set}}>
-</iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/FQyj_XTl01w" title="Learn about the accessibility features on the Google Pixel" {{site.yt.set}}></iframe>
 
 </div>
 
@@ -140,8 +139,7 @@ accessibility features, view the following video.
 To learn how to find and customize iOS
 accessibility features, view the following video.
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/qDm7GiKra28" title="Learn how to navigate your iPhone or iPad with VoiceOver" {{site.yt.set}}>
-</iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/qDm7GiKra28" title="Learn how to navigate your iPhone or iPad with VoiceOver" {{site.yt.set}}></iframe>
 
 </div>
 

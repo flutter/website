@@ -27,6 +27,10 @@
     img, iframe {
       max-width: 100%;
     }
+
+    > img {
+      margin-bottom: 1rem;
+    }
   }
 
   @include bootstrap.media-breakpoint-up(md) {

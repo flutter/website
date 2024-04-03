@@ -23,7 +23,8 @@ Even if you couldn't make it to Nairobi for the in-person
 event, you can enjoy the content created for Flutter Forward!
 
 <iframe width="560" height="315" src="{{site.yt.embed}}/zKQYGKAe5W8?start=2778" title="Watch the livestream from Flutter Forward in Nairobi Kenya from 2023" {{site.yt.set}}></iframe>
-Flutter Forward livestream<br>
+
+**Flutter Forward livestream**
 
 [Flutter Forward playlist][]
 
@@ -38,7 +39,8 @@ This playlist contains these and other pre-event videos relating to
 Flutter Forward.
 
 <iframe width="560" height="315" src="{{site.yt.embed}}/hpgkrUPRBjc?start=6" title="Watch the videos to prepare you for Flutter Forward 2023" {{site.yt.set}}></iframe>
-17 Days of Flutter!<br>
+
+**17 Days of Flutter!**
 
 [Get ready for Flutter Forward playlist][]
 
@@ -62,7 +64,8 @@ learn alongside her as she asks important questions like:
 And more!
 
 <iframe width="560" height="315" src="{{site.yt.embed}}/CkcvVZZEsJE" title="Learn how to build your first Flutter app" {{site.yt.set}}></iframe>
-Building my first Flutter app | Learning to Fly<br>
+
+**Building my first Flutter app | Learning to Fly**
 
 [Learning to Fly playlist][]
 
@@ -84,7 +87,8 @@ In the comments section for this series,
 you can submit suggestions future episodes.
 
 <iframe width="560" height="315" src="{{site.yt.embed}}/QIW35-vcA2o" title="Watch this series on best practices for Flutter: Decoding Flutter" {{site.yt.set}}></iframe>
-Introducing Decoding Flutter<br>
+
+**Introducing Decoding Flutter**
 
 [Decoding Flutter playlist][]
 
@@ -96,7 +100,8 @@ Do you have 60 seconds?
 Each one-minute video highlights a Flutter widget.
 
 <iframe width="560" height="315" src="{{site.yt.embed}}/b_sQ9bMltGU" title="Watch this series on different Flutter Widgets: Widget of the Week" {{site.yt.set}}></iframe>
-Introducing widget of the week<br>
+
+**Introducing widget of the week**
 
 [Flutter widget of the week playlist][]
 
@@ -108,7 +113,8 @@ If you have another minute (or two),
 each of these videos highlights a Flutter package.
 
 <iframe width="560" height="315" src="{{site.yt.embed}}/QFcFEpFmNJ8" title="Watch this series on different Flutter Packages: Package of the Week" {{site.yt.set}}></iframe>
-`flutter_slidable` package<br>
+
+**`flutter_slidable` package**
 
 [Flutter package of the week playlist][]
 
@@ -121,7 +127,8 @@ unscripted and in real time. Mistakes, solutions
 (some of them correct), and snazzy intro music included.
 
 <iframe width="560" height="315" src="{{site.yt.embed}}/vqPG1tU6-c0" title="Watch this live Flutter coding series: The Boring Show" {{site.yt.set}}></iframe>
-Introducing the Boring Flutter show<br>
+
+**Introducing the Boring Flutter show**
 
 [The Boring Flutter show playlist][]
 
@@ -152,7 +159,8 @@ Check out the Flutter Engage 2021 highlights reel.
 Watch recordings of the sessions on the Flutter YouTube channel.
 
 <iframe width="560" height="315" src="{{site.yt.embed}}/zSbsIiluixw" title="Watch the Flutter sessions from Flutter Engage 2021" {{site.yt.set}}></iframe>
-Flutter Engage Keynote<br>
+
+**Flutter Engage Keynote**
 
 [Flutter Engage 2021 playlist][]
 
@@ -170,7 +178,8 @@ Watch recordings of the sessions offered by the Flutter community.
 Five-to-ten minute tutorials (more or less) on using Flutter.
 
 <iframe width="560" height="315" src="{{site.yt.embed}}/wgTBLj7rMPM" title="Watch this series on Flutter tutorials: Flutter in Focus" {{site.yt.set}}></iframe>
-Introducing Flutter in focus<br>
+
+**Introducing Flutter in focus**
 
 [Flutter in focus playlist][]
 

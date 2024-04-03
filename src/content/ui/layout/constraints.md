@@ -2200,6 +2200,8 @@ header image at the top of the article.
 :::note
 To better understand how Flutter implements layout
 constraints, check out the following 5-minute video:
+
 <iframe width="560" height="315" src="{{site.yt.embed}}/jckqXR5CrPI" title="Learn how Flutter implements layout constraints" {{site.yt.set}}></iframe>
-<p>Decoding Flutter: Unbounded height and width</p>
+
+**Decoding Flutter: Unbounded height and width**
 :::

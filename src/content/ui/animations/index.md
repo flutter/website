@@ -39,6 +39,7 @@ to implement) suits your needs, watch
 (Also published as a [_companion article_][article2].)
 
 <iframe width="560" height="315" src="{{site.yt.embed}}/IVTjpW3W33s" title="Learn about basic Flutter animation with implicit animations" {{site.yt.set}}></iframe>
+
 [Learn about Animation Basics with Implicit Animations]({{site.yt.watch}}/IVTjpW3W33s)
 
 To create a custom implicit animation, watch
@@ -46,6 +47,7 @@ To create a custom implicit animation, watch
 (Also published as a [_companion article_][article3].)
 
 <iframe width="560" height="315" src="{{site.yt.embed}}/6KiPEqzJIKQ" title="Learn about building Custom Implicit Animations with TweenAnimationBuilder" {{site.yt.set}}></iframe>
+
 [Learn about building Custom Implicit Animations with TweenAnimationBuilder]({{site.yt.watch}}/6KiPEqzJIKQ)
 
 To create an explicit animation (where you control the animation,

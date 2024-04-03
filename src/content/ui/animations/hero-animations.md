@@ -83,8 +83,9 @@ Tapping the square image flies the hero back to
 the original route, displayed with a circular shape.
 
 <iframe width="560" height="315" src="{{site.yt.embed}}/LWKENpwDKiM" title="Watch this example of a radial hero animation in Flutter" {{site.yt.set-short}}></iframe>
+<br>
 
-<br>Before moving to the sections specific to
+Before moving to the sections specific to
 [standard](#standard-hero-animations)
 or [radial](#radial-hero-animations) hero animations,
 read [basic structure of a hero animation](#basic-structure)

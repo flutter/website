@@ -1227,6 +1227,7 @@ explain `Stateless` and `Stateful` widgets.
 
 <iframe width="560" height="315" src="{{site.yt.embed}}/wE7khGHVkYY?rel=0" title="Learn how to create stateless widgets" {{site.yt.set}}></iframe>
 <iframe width="560" height="315" src="{{site.yt.embed}}/AqCMFXEmf3w?rel=0" title="Learn the best times to use stateful widgets" {{site.yt.set}}></iframe>
+
 [Flutter in Focus playlist]({{site.yt.playlist}}PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)
 
 ---
@@ -1236,6 +1237,7 @@ Each episode of the
 focuses on a widget. Several of them includes layout widgets.
 
 <iframe width="560" height="315" src="{{site.yt.embed}}/b_sQ9bMltGU?rel=0" title="Watch the Widget of the Week playlist" {{site.yt.set}}></iframe>
+
 [Flutter Widget of the Week playlist]({{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 
 ## Other resources

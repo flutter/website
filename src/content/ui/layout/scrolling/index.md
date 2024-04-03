@@ -37,13 +37,15 @@ For more information, check out
 
 ### Specialized scrollable widgets
 
-The following widgets provide more specific scrolling
-behavior.
+The following widgets provide more
+specific scrolling behavior.
 
-A video on using [`DraggableScrollableSheet`][]
+A video on using [`DraggableScrollableSheet`][]:
+
 <iframe width="560" height="315" src="{{site.yt.embed}}/Hgw819mL_78" title="Learn how to use the DraggableScrollableSheet Flutter Widget" {{site.yt.set}}></iframe>
 
-Turn the scrollable area into a wheel! [`ListWheelScrollView`][]
+Turn the scrollable area into a wheel with [`ListWheelScrollView`][]!
+
 <iframe width="560" height="315" src="{{site.yt.embed}}/dUhmWAz4C7Y" title="Learn how to use the ListWheelScrollView Flutter Widget" {{site.yt.set}}></iframe>
 
 [`DraggableScrollableSheet`]: {{site.api}}/flutter/widgets/DraggableScrollableSheet-class.html
