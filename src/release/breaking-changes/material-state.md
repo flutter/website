@@ -1,7 +1,7 @@
 ---
 title: Rename MaterialState to WidgetState
 description: >-
-  MaterialState and it's related APIs have been moved
+  MaterialState and its related APIs have been moved
   outside of the Material library and renamed to
   WidgetState.
 ---
@@ -17,7 +17,7 @@ Previously, `MaterialState` provided logic for handling multiple different
 states a widget could have, like "hovered", "focused", and
 "disabled". Because this functionality is useful outside of the
 Material library, namely for the base Widgets layer and Cupertino,
-it was decided to move it outside of Material. Aspart of the move, and to
+it was decided to move it outside of Material. As part of the move, and to
 avoid future confusion, the different`MaterialState` classes have been renamed
 to `WidgetState`. The behavior of the two are the same.
 
