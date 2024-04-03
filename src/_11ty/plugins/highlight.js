@@ -92,13 +92,9 @@ function _highlight(
   language,
   attributeString,
 ) {
-  // Don't customize or highlight DartPad snippets
-  // so that inject_embed can convert them.
-  // TODO(parlough): Migrate to new DartPad inject script.
-  if (language.includes('-dartpad') || language.includes('file-')) {
-    return `<pre><code class="language-${language}">
-${markdown.utils.escapeHtml(content)}
-</code></pre>`;
+  // Specially handle DartPad snippets so that inject_embed can convert them.
+  if (language.includes('-dartpad')) {
+    return `<pre><code data-dartpad="true" data-embed="true" data-theme="light">${markdown.utils.escapeHtml(content)}</code></pre>`;
   }
 
   const attributes = _parseAttributes(attributeString);
