@@ -550,7 +550,7 @@ If you would like to learn more, check out the following resources:
 [A guide to Inherited Widgets]: ({{site.youtube-site}}/watch?v=Zbm3hjPjQMk)
 [build_collection]: {{site.pub-pkg}}/built_collection
 [Flutter Architecture Samples]: https://fluttersamples.com/
-[`InheritedWidget]`: {{site.api}}/flutter/widgets/InheritedWidget-class.html
+[`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [List of state management approaches]: /data-and-backend/state-mgmt/options
 [Pragmatic state management]: {{site.youtube-site}}/watch?v=d_m5csmrf7I
 [Provider counter]: https://github.com/flutter/samples/tree/main/provider_counter
