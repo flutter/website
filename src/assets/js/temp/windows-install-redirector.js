@@ -5,6 +5,8 @@ const oldToNew = {
   'set-up-the-android-emulator': '/get-started/install/windows/mobile#configure-your-target-android-device',
   'agree-to-android-licenses': '/get-started/install/windows/mobile#agree-to-android-licenses',
   'android-setup': '/get-started/install/windows/mobile#configure-android-development',
+
+  'update-your-path': '/get-started/install/windows/mobile?tab=download#update-your-windows-path-variable',
 };
 
 function handleRedirect() {

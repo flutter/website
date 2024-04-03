@@ -3,6 +3,7 @@ title: Choose your first type of app
 description: Configure your system to develop Flutter on Linux.
 short-title: Linux
 target-list: [Desktop, Android, Web]
+js: [{url: '/assets/js/temp/linux-install-redirector.js'}]
 ---
 
 {% assign os = 'linux' -%}
