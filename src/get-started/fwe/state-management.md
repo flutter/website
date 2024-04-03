@@ -19,10 +19,12 @@ and share them between different widgets.
 This page explores many aspects of state management, including:
 
 * Using a [`StatefulWidget`]
-* Sharing state between widgets using constructors, [`InheritedWidget`]s,
-  and callbacks
-* Using [`Listenable`]s to notify other widgets when something changes
-* Using Model-View-ViewModel (MVVM) for your application's architecture
+* Sharing state between widgets using constructors,
+  [`InheritedWidget`]s, and callbacks
+* Using [`Listenable`]s to notify other widgets
+  when something changes
+* Using Model-View-ViewModel (MVVM)
+  for your application's architecture
 
 For other introductions to state management, check out these resources: 
 
@@ -31,10 +33,11 @@ For other introductions to state management, check out these resources:
 
 <i class="material-symbols" aria-hidden="true">flutter_dash</i> Tutorial:
 [State management][].
-This shows how to use ChangeNotifer with the [provider][] package.
+This shows how to use `ChangeNotifer` with the [provider][] package.
 
-This guide doesn't use third-party packages like provider or Riverpod.
-Instead, it only uses primitives available in the Flutter framework.
+This guide doesn't use third-party packages
+like provider or Riverpod. Instead,
+it only uses primitives available in the Flutter framework.
 
 ## Using a StatefulWidget
 
@@ -72,9 +75,6 @@ class _MyCounterState extends State<MyCounter> {
 }
 ```
 
-This illustrates two important considerations
-when thinking about state management:
-
 This code illustrates two important concepts
 when thinking about state management:
 
@@ -95,27 +95,29 @@ You might find the following resources to be useful:
 
 ## Sharing state between widgets
 
-Some scenarios where an app needs to store state include the following:
+Some scenarios where an app needs to store state
+include the following:
 
 * To **update** the shared state and notify other parts of the app
 * To **listen** for changes to the shared state
-  and rebuild the UI when it changes.
+  and rebuild the UI when it changes
 
 This section explores how you can effectively share state
 between different widgets in your app.
 The most common patterns are:
 
-* **Using widget constructors** (sometimes called "prop drilling"
-  in other frameworks)
-* **Using InheritedWidget** (or a similar API
+* **Using widget constructors**
+  (sometimes called "prop drilling" in other frameworks)
+* **Using `InheritedWidget`** (or a similar API,
   such as the [provider][] package).
-* **Using callbacks** to notify a parent widget that something has changed
+* **Using callbacks** to notify a parent widget
+  that something has changed
 
 ### Using widget constructors
 
 Since Dart objects are passed by reference,
-it's very common for widgets to define the objects they need to use
-in their constructor.
+it's very common for widgets to define the
+objects they need to use in their constructor.
 Any state you pass into a widget's constructor
 can be used to build its UI:
 
@@ -164,7 +166,7 @@ and many frameworks take advantage of it or provide tools to make it easier.
 
 Manually passing data down the widget tree can be verbose
 and cause unwanted boilerplate code,
-so Flutter provides _InheritedWidget_,
+so Flutter provides _`InheritedWidget`_,
 which provides a way to efficiently host data in a parent widget
 so that child widgets can get access them without storing them as a field.
 
@@ -174,7 +176,7 @@ using `dependOnInheritedWidgetOfExactType`.
 A widget calling `of()` in a build method
 creates a dependency that is managed by the Flutter framework,
 so that any widgets that depend on this `InheritedWidget` rebuild
-when this widget is re-built with new data
+when this widget re-builds with new data
 and `updateShouldNotify` returns true.
 
 ```dart
@@ -263,16 +265,16 @@ TextButton(
 
 ### Dive deeper
 
-For more resources on sharing state between widgets,
+For more information on sharing state between widgets,
 check out the following resources:
 
-* Article: [Flutter Architectural Overview — State management][architecture-state]
+* Article: [Flutter Architectural Overview—State management][architecture-state]
 * Video: [Pragmatic state management][]
 * Video: [InheritedWidgets][inherited-widget-video]
 * Video: [A guide to Inherited Widgets][]
 * Sample: [Provider shopper][]
 * Sample: [Provider counter][]
-* API Docs: [InheritedWidget][]
+* API Docs: [`InheritedWidget`][]
 
 ## Using Listenables
 
@@ -290,7 +292,7 @@ Some useful ways to use listenables are:
 
 ### ChangeNotifier
 
-To use ChangeNotifier, create a class that extends it,
+To use `ChangeNotifier`, create a class that extends it,
 and call `notifyListeners` whenever the class needs to notify its listeners.
 
 ```dart
@@ -449,9 +451,9 @@ or [build_collection][] on pub.dev.
 A `ViewModel` binds the _View_ to the _Model_.
 It protects the model from being accessed directly by the View,
 and ensures that data flow starts from a change to the model.
-Data flow is handled by the ViewModel, which uses `notifyListeners`
+Data flow is handled by the `ViewModel`, which uses `notifyListeners`
 to inform the View that something changed.
-The ViewModel is like a waiter in a restaurant
+The `ViewModel` is like a waiter in a restaurant
 that handles the communication
 between the kitchen (model) and the customers (views).
 
@@ -489,7 +491,7 @@ class CounterViewModel extends ChangeNotifier {
 }
 ```
 
-Notice that the ViewModel stores an `errorMessage`
+Notice that the `ViewModel` stores an `errorMessage`
 when it receives an error from the Model.
 This protects the View from unhandled runtime errors,
 which could lead to a crash.
@@ -499,10 +501,10 @@ can be used by the view to show a user-friendly error message.
 
 ### Defining the View
 
-Since our ViewModel is a `ChangeNotifier`,
+Since our `ViewModel` is a `ChangeNotifier`,
 any widget with a reference to it can use a `ListenableBuilder`
 to rebuild its widget tree
-when the ViewModel notifies its listeners:
+when the `ViewModel` notifies its listeners:
 
 ```dart
 ListenableBuilder(
@@ -548,7 +550,7 @@ If you would like to learn more, check out the following resources:
 [A guide to Inherited Widgets]: ({{site.youtube-site}}/watch?v=Zbm3hjPjQMk)
 [build_collection]: {{site.pub-pkg}}/built_collection
 [Flutter Architecture Samples]: https://fluttersamples.com/
-[InheritedWidget]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
+[`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [List of state management approaches]: /data-and-backend/state-mgmt/options
 [Pragmatic state management]: {{site.youtube-site}}/watch?v=d_m5csmrf7I
 [Provider counter]: https://github.com/flutter/samples/tree/main/provider_counter
@@ -569,3 +571,10 @@ If you would like to learn more, check out the following resources:
 [managing-state-video]: {{site.youtube-site}}/watch?v=vU9xDLdEZtU
 [provider]: {{site.pub-pkg}}/provider
 [riverpod]: {{site.pub-pkg}}/riverpod
+
+## Feedback
+
+As this section of the website is evolving,
+we [welcome your feedback][]! 
+
+[welcome your feedback]: /get-started/fwe
