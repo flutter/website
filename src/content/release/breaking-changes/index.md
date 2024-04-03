@@ -38,6 +38,7 @@ release, and listed in alphabetical order:
 * [Rename `MemoryAllocations` to `FlutterMemoryAllocations`][]
 * [Deprecate `TextField.canRequestFocus`][]
 * [Nullable PageView.controller][]
+* [Deprecate `ButtonBar` in favor of `OverflowBar`][]
 * [Deprecated API removed after v3.19][]
 
 [Introduce new `ColorScheme` roles]: /release/breaking-changes/new-color-scheme-roles
@@ -45,6 +46,7 @@ release, and listed in alphabetical order:
 [Rename `MemoryAllocations` to `FlutterMemoryAllocations`]: /release/breaking-changes/flutter-memory-allocations
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
 [Nullable PageView.controller]: /release/breaking-changes/pageview-controller
+[Deprecate `ButtonBar` in favor of `OverflowBar`]: /release/breaking-changes/deprecate-buttonbar
 [Deprecated API removed after v3.19]: /release/breaking-changes/3-19-deprecations
 
 <a id="released-in-flutter-3-19"></a>
