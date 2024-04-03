@@ -122,7 +122,7 @@ If not, create one using one of the following methods:
 
    On macOS or Linux, use the following command:
 
-   ```terminal
+   ```console
    keytool -genkey -v -keystore ~/upload-keystore.jks -keyalg RSA \
            -keysize 2048 -validity 10000 -alias upload
    ```
@@ -190,7 +190,7 @@ by editing the `[project]/android/app/build.gradle` file.
 <ol markdown="1">
 <li markdown="1"> Add the keystore information from your properties file before the `android` block:
 
-```
+```gradle
    def keystoreProperties = new Properties()
    def keystorePropertiesFile = rootProject.file('key.properties')
    if (keystorePropertiesFile.exists()) {
@@ -208,7 +208,7 @@ by editing the `[project]/android/app/build.gradle` file.
 
 <li markdown="1"> Find the `buildTypes` block:
 
-```
+```gradle
    buildTypes {
        release {
            // TODO: Add your own signing config for the release build.
@@ -221,7 +221,7 @@ by editing the `[project]/android/app/build.gradle` file.
 
    And replace it with the following signing configuration info:
 
-```
+```gradle
    signingConfigs {
        release {
            keyAlias keystoreProperties['keyAlias']

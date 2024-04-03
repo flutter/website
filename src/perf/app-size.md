@@ -46,7 +46,7 @@ install sizes.
 
 Produce an upload package for your application:
 
-```terminal
+```console
 flutter build appbundle
 ```
 

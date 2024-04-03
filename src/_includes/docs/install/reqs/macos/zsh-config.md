@@ -13,13 +13,13 @@ Zsh or `zsh` is the default shell for macOS.
 1. To verify `zsh` was set as the default macOS shell,
    run the [Directory Services command line utility][dscl].
 
-    ```terminal
+    ```console
     $ dscl . -read ~/ UserShell
     ```
 
     {{terminal}} should print the following as its response.
 
-    ```terminal
+    ```console
     UserShell: /bin/zsh
     ```
 
@@ -31,7 +31,7 @@ Zsh or `zsh` is the default shell for macOS.
 1. If you need to change your default shell to `zsh`,
    run the `chsh` command.
 
-    ```terminal
+    ```console
     $ chsh -s `which zsh`
     ```
 

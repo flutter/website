@@ -1297,7 +1297,7 @@ To add a custom font to your project, follow these steps:
 1. Find the `flutter` section.
 1. Add your custom font(s) under the `fonts` section.
 
-    ```
+    ```yaml
     flutter:
       fonts:
         - family: BungeeSpice
@@ -1343,7 +1343,7 @@ custom fonts.
 1. Add an `images` folder to the root directory.
 1. Add this asset to the `pubspec.yaml` file.
 
-    ```
+    ```yaml
     flutter:
       assets:
         - images/Blueberries.jpg

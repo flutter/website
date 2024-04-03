@@ -4,7 +4,7 @@ on Macs running [Apple silicon][].
 To run all Flutter components on Apple silicon,
 install [Rosetta 2][rosetta].
 
-```terminal
+```console
 $ sudo softwareupdate --install-rosetta --agree-to-license
 ```
 

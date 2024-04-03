@@ -48,26 +48,17 @@ pre {
 //   but doesn't seem to be as complete as token.rb.
 //
 
-$generic-output-color: white;
+$generic-output-color: #8ae234;
 
 @mixin console-base($color: $light-green-A700) {
   background: $grey-900;
   color: $color;
 }
 
+// `terminal` is like `console` with prompts and output colored differently
 .language-console .highlight {
   @include console-base;
-  .go { color: $generic-output-color; } /* Generic.Output */
-}
-
-pre.console-output {
-  @include console-base($generic-output-color)
-}
-
-// `terminal` is like `console` with prompts and output colored differently
-.language-terminal .highlight {
-  @include console-base;
-  .gp { color: $flutter-color-yellow; } /* Generic.Prompt */
+  .gp { color: $flutter-color-yellow; font-weight: 700; } /* Generic.Prompt */
   .go { color: $generic-output-color; } /* Generic.Output */
   .k, .kc, .kd, .kn, .kp, .kr, .kt { color: $flutter-color-blue-on-dark; } /* Keyword.* */
   .nb, .nt { color: $flutter-color-blue-on-dark; } /* Name.Builtin, Name.Tag */

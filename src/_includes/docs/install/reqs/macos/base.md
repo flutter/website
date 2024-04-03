@@ -9,6 +9,8 @@
 {% endcase %}
 {% assign os = include.os %}
 
+{% include docs/install/admonitions/install-in-order.md %}
+
 ## Verify system requirements
 
 To install and run Flutter,

@@ -35,7 +35,7 @@ jobs:
       - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
         with:
           submodules: recursive
-      - uses: subosito/flutter-action@62f096cacda5168a3bd7b95793373be14fa4fbaf
+      - uses: subosito/flutter-action@44ac965b96f18d999802d4b807e3256d5a3f9fa1
         with:
           channel: ${{ matrix.branch }}
       - name: Fetch Dart dependencies

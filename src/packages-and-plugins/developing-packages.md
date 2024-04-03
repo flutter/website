@@ -66,7 +66,7 @@ package.
 To create a starter Flutter package,
 use the `--template=package` flag with `flutter create`:
 
-```terminal
+```console
 $ flutter create --template=package hello
 ```
 
@@ -350,16 +350,16 @@ Use the `-a` option to specify the language for android
 or the `-i` option to specify the language for ios.
 Please choose **one** of the following:
 
-```terminal
+```console
 $ flutter create --org com.example --template=plugin --platforms=android,ios,linux,macos,windows -a kotlin hello
 ```
-```terminal
+```console
 $ flutter create --org com.example --template=plugin --platforms=android,ios,linux,macos,windows -a java hello
 ```
-```terminal
+```console
 $ flutter create --org com.example --template=plugin --platforms=android,ios,linux,macos,windows -i objc hello
 ```
-```terminal
+```console
 $ flutter create --org com.example --template=plugin --platforms=android,ios,linux,macos,windows -i swift hello
 ```
 
@@ -386,10 +386,10 @@ Kotlin for Android code. If you prefer Objective-C or Java,
 you can specify the iOS language using `-i` and the
 Android language using `-a`. For example:
 
-```terminal
+```console
 $ flutter create --template=plugin --platforms=android,ios -i objc hello
 ```
-```terminal
+```console
 $ flutter create --template=plugin --platforms=android,ios -a java hello
 ```
 
@@ -448,6 +448,36 @@ in the Project Navigator. (If you are using `sharedDarwinSource`,
 the path will end with `hello/darwin/Classes` instead.)
 
 You can run the example app by pressing the run (&#9654;) button.
+
+##### Add CocoaPod dependencies
+
+Use the following instructions to add `HelloPod` with the version `0.0.1`:
+
+1. Specify dependency at the end of `ios/hello.podspec`:
+
+   ```ruby
+   s.dependency 'HelloPod', '0.0.1'
+   ```
+
+   For private pods, refer to [Private CocoaPods](https://guides.cocoapods.org/making/private-cocoapods.html) to ensure repo access:
+
+   ```ruby
+   s.source = {
+       # For pods hosted on GitHub
+       :git => "https://github.com/path/to/HelloPod.git",
+       # Alternatively, for pods hosted locally
+       # :path => "file:///path/to/private/repo",
+       :tag => s.version.to_s
+     }`
+   ```
+
+2. Installing the plugin
+
+   - Add the plugin in the project’s `pubspec.yaml` dependencies.
+   - Run `flutter pub get`.
+   - In the project’s `ios/` directory, run `pod install`.
+
+The pod should appear in the installation summary.
 
 #### Step 2d: Add Linux platform code (.h+.cc)
 
@@ -546,7 +576,7 @@ existing plugin project, run `flutter create` with
 the `--template=plugin` flag again in the project directory.
 For example, to add web support in an existing plugin, run:
 
-```terminal
+```console
 $ flutter create --template=plugin --platforms=web .
 ```
 
@@ -657,7 +687,7 @@ targeting older Flutter versions, you can use a (non-FFI) plugin.
 To create a starter FFI plugin package,
 use the `--template=plugin_ffi` flag with `flutter create`:
 
-```terminal
+```console
 $ flutter create --template=plugin_ffi hello
 ```
 
@@ -736,7 +766,7 @@ on how to install this package.
 
 Regenerate the bindings by running the following:
 
-```terminal
+```console
 $  dart run ffigen --config ffigen.yaml
 ```
 
@@ -775,7 +805,7 @@ your development machine, use the following commands:
 <ol markdown="1">
 <li markdown="1">Change directory to the location of your package:
 
-```terminal
+```console
 cd ~/dev/mypackage
 ```
 </li>
@@ -784,7 +814,7 @@ cd ~/dev/mypackage
     Flutter SDK is located (change the following commands to reflect
     where you placed it):
 
-```terminal
+```console
    export FLUTTER_ROOT=~/dev/flutter  # on macOS or Linux
 
    set FLUTTER_ROOT=~/dev/flutter     # on Windows
@@ -794,7 +824,7 @@ cd ~/dev/mypackage
 <li markdown="1">Run the `dart doc` tool
     (included as part of the Flutter SDK), as follows:
 
-```terminal
+```console
    $FLUTTER_ROOT/bin/cache/dart-sdk/bin/dart doc   # on macOS or Linux
 
    %FLUTTER_ROOT%\bin\cache\dart-sdk\bin\dart doc  # on Windows
@@ -898,7 +928,7 @@ consider including the following items:
 Next, run the publish command in `dry-run` mode
 to see if everything passes analysis:
 
-```terminal
+```console
 $ flutter pub publish --dry-run
 ```
 
@@ -906,7 +936,7 @@ The next step is publishing to pub.dev,
 but be sure that you are ready because
 [publishing is forever][]:
 
-```terminal
+```console
 $ flutter pub publish
 ```
 

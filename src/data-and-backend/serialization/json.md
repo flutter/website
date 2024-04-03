@@ -260,7 +260,7 @@ are only used in the development environment.
 
 To add the dependencies, run `flutter pub add`:
 
-```terminal
+```console
 $ flutter pub add json_annotation dev:build_runner dev:json_serializable
 ```
 

@@ -59,6 +59,15 @@ The low-level approach to use for widget-specific, ephemeral state.
 [Adding interactivity to your Flutter app]: /ui/interactivity
 [Basic state management in Google Flutter]: {{site.medium}}/@agungsurya/basic-state-management-in-google-flutter-6ee73608f96d
 
+## ValueNotifier &amp; InheritedNotifier
+
+An approach using only Flutter provided tooling to update state and notify the UI of changes.
+
+
+* [State Management using ValueNotifier and InheritedNotifier][], by Tadas Petra
+
+[State Management using ValueNotifier and InheritedNotifier]: https://www.hungrimind.com/articles/flutter-state-management
+
 ## InheritedWidget &amp; InheritedModel
 
 The low-level approach used to communicate between ancestors and children

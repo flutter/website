@@ -12,7 +12,7 @@ Flutter SDK or the packages that your app depends on.
 
 To update the Flutter SDK use the `flutter upgrade` command:
 
-```terminal
+```console
 $ flutter upgrade
 ```
 
@@ -87,7 +87,7 @@ is at: <https://main-api.flutter.dev>
 
 To view your current channel, use the following command:
 
-```terminal
+```console
 $ flutter channel
 ```
 
@@ -96,7 +96,7 @@ Once you've changed your channel, use `flutter upgrade`
 to download the latest Flutter SDK and dependent packages for that channel.
 For example:
 
-```terminal
+```console
 $ flutter channel beta
 $ flutter upgrade
 ```
@@ -118,7 +118,7 @@ To update to the _latest compatible versions_ of
 all the dependencies listed in the `pubspec.yaml` file,
 use the `upgrade` command:
 
-```terminal
+```console
 $ flutter pub upgrade
 ```
 
@@ -126,7 +126,7 @@ To update to the _latest possible version_ of
 all the dependencies listed in the `pubspec.yaml` file,
 use the `upgrade --major-versions` command:
 
-```terminal
+```console
 $ flutter pub upgrade --major-versions
 ```
 
@@ -137,7 +137,7 @@ To identify out-of-date package dependencies and get advice
 on how to update them, use the `outdated` command. For details, see
 the Dart [`pub outdated` documentation]({{site.dart-site}}/tools/pub/cmd/pub-outdated).
 
-```terminal
+```console
 $ flutter pub outdated
 ```
 

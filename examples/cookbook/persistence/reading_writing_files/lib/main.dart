@@ -2,7 +2,9 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+// #docregion localPath
 import 'package:path_provider/path_provider.dart';
+// #enddocregion localPath
 
 void main() {
   runApp(

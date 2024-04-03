@@ -18,7 +18,7 @@
     to install additional necessary tooling.
  1. Accept Android licenses.
 
- ```terminal
+ ```console
 $ flutter doctor --android-licenses
 ```
 

@@ -1,7 +1,7 @@
 ---
 title: Add Windows devtools to Flutter from Web start
 description: Configure your system to develop Flutter apps on Windows desktop.
-short-title: When you started with Web
+short-title: Starting from Web
 ---
 
 To add Windows desktop as a Flutter app target, follow this procedure.

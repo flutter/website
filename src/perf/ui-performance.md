@@ -42,8 +42,7 @@ steps to take, and tools that can help.
 
 To diagnose an app with performance problems, you'll enable
 the performance overlay to look at the UI and raster threads.
-(The raster thread was previously known as the GPU thread.)
-Before you begin, you want to make sure that you're running in
+Before you begin, make sure that you're running in
 [profile mode][], and that you're not using an emulator.
 For best results, you might choose the slowest device that
 your users might use.
@@ -114,7 +113,7 @@ Launch the app in profile mode as follows:
   **Run > Flutter Run main.dart in Profile Mode** menu item.
 * From the command line, use the `--profile` flag:
 
-  ```terminal
+  ```console
   $ flutter run --profile
   ```
 
@@ -201,43 +200,37 @@ Although you have no direct access to any other thread,
 your actions on the UI thread have performance consequences
 on other threads.
 
-<dl markdown="1">
-<dt markdown="1">**Platform thread**</dt>
-<dd markdown="1">The platform's main thread. Plugin code runs here.
-    For more information, see the [UIKit][] documentation for iOS,
-    or the [MainThread][] documentation for Android.
-    This thread is not shown in the performance overlay.
-</dd>
-<dt markdown="1">**UI thread**</dt>
-<dd markdown="1">The UI thread executes Dart code in the Dart VM.
-    This thread includes code that you wrote, and code executed by
-    Flutter's framework on your app's behalf.
-    When your app creates and displays a scene, the UI thread creates
-    a _layer tree_, a lightweight object containing device-agnostic
-    painting commands, and sends the layer tree to the raster thread to
-    be rendered on the device. _Don't block this thread!_
-    Shown in the bottom row of the performance overlay.
-</dd>
-<dt markdown="1">**Raster thread** (previously known as the GPU thread)</dt>
-<dd markdown="1">The raster thread takes the layer tree and displays
-    it by talking to the GPU (graphic processing unit).
-    You cannot directly access the raster thread or its data but,
-    if this thread is slow, it's a result of something you've done
-    in the Dart code. Skia and Impeller, the graphics libraries,
-    run on this thread.
-    Shown in the top row of the performance overlay.
-    This thread was previously known as the "GPU thread" because it
-    rasterizes for the GPU. But it is running on the CPU.
-    We renamed it to "raster thread" because many developers wrongly
-    (but understandably)
-    assumed the thread runs on the GPU unit.
-</dd>
-<dt markdown="1">**I/O thread**</dt>
-<dd markdown="1">Performs expensive tasks (mostly I/O) that would
-    otherwise block either the UI or raster threads.
-    This thread is not shown in the performance overlay.
-</dd>
-</dl>
+**Platform thread**
+: The platform's main thread. Plugin code runs here.
+  For more information, see the [UIKit][] documentation for iOS,
+  or the [MainThread][] documentation for Android.
+  This thread is not shown in the performance overlay.
+
+**UI thread**
+: The UI thread executes Dart code in the Dart VM.
+  This thread includes code that you wrote, and code executed by
+  Flutter's framework on your app's behalf.
+  When your app creates and displays a scene, the UI thread creates
+  a _layer tree_, a lightweight object containing device-agnostic
+  painting commands, and sends the layer tree to the raster thread to
+  be rendered on the device. _Don't block this thread!_
+  Shown in the bottom row of the performance overlay.
+
+**Raster thread**
+: The raster thread takes the layer tree and displays
+  it by talking to the GPU (graphic processing unit).
+  You cannot directly access the raster thread or its data but,
+  if this thread is slow, it's a result of something you've done
+  in the Dart code. Skia and Impeller, the graphics libraries,
+  run on this thread.
+  Shown in the top row of the performance overlay.
+  Note that while the raster thread rasterizes for the GPU,
+  the thread itself runs on the CPU.
+
+**I/O thread**
+: Performs expensive tasks (mostly I/O) that would
+  otherwise block either the UI or raster threads.
+  This thread is not shown in the performance overlay.
     
 For links to more information and videos,
 see [The Framework architecture][] on the
