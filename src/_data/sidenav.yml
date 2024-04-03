@@ -124,6 +124,7 @@
       children:
         - title: Overview
           permalink: /ui/layout/scrolling
+          match-page-url-exactly: true
         - title: Use slivers to achieve fancy scrolling
           permalink: /ui/layout/scrolling/slivers
         - title: Place a floating app bar above a list

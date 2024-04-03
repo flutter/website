@@ -1,6 +1,3 @@
-{% assign children = include.children -%}
-{% assign active_entries = include.active_entries -%}
-{% assign id = include.id -%}
 {% for entry in children -%}
 
 {% if active_entries and forloop.index == active_entries[1] -%}
@@ -42,9 +39,9 @@
       aria-expanded="{{expanded}}" aria-controls="{{id}}">{{entry.title}}</a>
     <ul class="nav flex-column flex-nowrap collapse {{show}}" id="{{id}}">
       {% if isActive -%}
-        {% include sidenav-level-3.html parent_id=id children=entry.children active_entries=active_entries -%}
+        {% render sidenav-level-3.html, parent_id:id, children:entry.children, active_entries:active_entries -%}
       {% else -%}
-        {% include sidenav-level-3.html parent_id=id children=entry.children -%}
+        {% render sidenav-level-3.html, parent_id:id, children:entry.children -%}
       {% endif -%}
     </ul>
   </li>

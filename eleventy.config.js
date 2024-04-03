@@ -3,7 +3,7 @@
 // plugins and customization that live in `/src/_11ty`.
 
 import {
-  activeNavEntryIndexArray,
+  activeNavForPage,
   arrayToSentenceString,
   breadcrumbsForPage,
   generateToc,
@@ -74,10 +74,7 @@ ${content}
 
   eleventyConfig.addFilter('regex_replace', regexReplace);
   eleventyConfig.addFilter('toISOString', toISOString);
-  eleventyConfig.addFilter(
-      'active_nav_entry_index_array',
-      activeNavEntryIndexArray,
-  );
+  eleventyConfig.addFilter('active_nav_for_page', activeNavForPage);
   eleventyConfig.addFilter('array_to_sentence_string', arrayToSentenceString);
   eleventyConfig.addFilter('throw_error', function (error) {
     throw new Error(error);

@@ -34,38 +34,50 @@ export function toISOString(input) {
   }
 }
 
-export function activeNavEntryIndexArray(navEntryTree, pageUrlPath = '') {
-  const activeEntryIndexes = _getActiveNavEntries(navEntryTree, pageUrlPath);
-  return activeEntryIndexes.length === 0 ? null : activeEntryIndexes;
-}
+export function activeNavForPage(pageUrlPath, activeNav) {
+  // Split the path for this page, dropping everything before the path:
+  // Example: docs.flutter.dev/cookbook/networking/update-data ->
+  // [cookbook, networking, update-data]
+  const parts = pageUrlPath.toLowerCase().split('/').slice(1);
+  let currentPathPairs = activeNav;
+  let lastAllowedBackupActive = [];
 
-export function _getActiveNavEntries(navEntryTree, pageUrlPath = '') {
-  // TODO(parlough): Simplify once standardizing with the Flutter site.
-  for (let i = 0; i < navEntryTree.length; i++) {
-    const entry = navEntryTree[i];
-
-    if (entry.children) {
-      const descendantIndexes = _getActiveNavEntries(
-        entry.children,
-        pageUrlPath,
-      );
-      if (descendantIndexes.length > 0) {
-        return [i + 1, ...descendantIndexes];
-      }
+  parts.forEach(part => {
+    // If the current entry allows children and has active data,
+    // allow its active data to be a backup if a later path is not found.
+    const currentEntryActiveData = currentPathPairs['active'];
+    if (currentEntryActiveData &&
+        currentPathPairs['allow-children'] === true) {
+      lastAllowedBackupActive = currentEntryActiveData;
     }
 
-    if (entry.permalink) {
-      const isMatch = entry['match-page-url-exactly']
-        ? pageUrlPath === entry.permalink
-        : pageUrlPath.includes(entry.permalink);
+    const paths = currentPathPairs['paths'];
 
-      if (isMatch) {
-        return [i + 1];
-      }
+    // If the current entry has children paths, explore those next.
+    if (paths) {
+      currentPathPairs = paths;
     }
+
+    // Get the data for the next part.
+    const nextPair = currentPathPairs[part];
+
+    // If the next part of the path does not have data,
+    // use the active data for the current backup.
+    if (nextPair === undefined || nextPair === null) {
+      return lastAllowedBackupActive;
+    }
+
+    currentPathPairs = nextPair;
+  });
+
+  // If the last path part has active data, use that,
+  // otherwise fallback to the backup active data.
+  let activeEntries = currentPathPairs['active'];
+  if (activeEntries === undefined || activeEntries === null) {
+    activeEntries = lastAllowedBackupActive;
   }
 
-  return [];
+  return activeEntries;
 }
 
 export function arrayToSentenceString(list, joiner = 'and') {
