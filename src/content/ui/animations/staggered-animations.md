@@ -71,7 +71,6 @@ The square runs through changes in the following order:
 After running forward, the animation runs in reverse.
 
 :::secondary New to Flutter?
-**New to Flutter?**
 This page assumes you know how to create a layout using Flutter's
 widgets.  For more information, see [Building Layouts in Flutter][].
 :::

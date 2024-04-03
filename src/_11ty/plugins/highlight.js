@@ -283,7 +283,8 @@ function _parseNumbersAndRanges(input) {
     if (rangeParts.length > 1) {
       // Split by the dash, and turn each string into a number.
       // Assume the user only included one dash.
-      const [start, end] = rangeParts.map(Number.parseInt);
+      const start = Number.parseInt(rangeParts[0]);
+      const end = Number.parseInt(rangeParts[1]);
       if (!Number.isNaN(start) && !Number.isNaN(end)) {
         for (let i = start; i <= end; i++) {
           combinedNumbers.add(i);

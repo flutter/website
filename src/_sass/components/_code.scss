@@ -32,12 +32,15 @@ pre {
   }
 
   span.line {
+    display: inline-block;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
-    width: 100%;
+    min-width: 100%;
+    border-left: 2px solid transparent;
 
     &.highlighted-line {
-      background: color.change($site-color-primary, $alpha: 0.1);
+      background: color.change($site-color-primary, $alpha: 0.05);
+      border-left-color: $site-color-primary;
     }
   }
 
@@ -178,6 +181,11 @@ pre {
     margin-bottom: 0;
     padding-right: 0;
     padding-left: 0;
+
+    code {
+      display: block;
+      width: 100%;
+    }
 
     &:not([lang="console"]) {
       line-height: 1.8;
