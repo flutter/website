@@ -1,17 +1,12 @@
 const oldToNew = {
-  'ios-setup': '/get-started/install/macos/mobile-ios',
-  'set-up-the-ios-simulator': '/get-started/install/macos/mobile-ios#configure-your-target-ios-device',
-  'deploy-to-physical-ios-devices': '/deployment/ios',
-  'deploy-to-ios-devices': '/deployment/ios',
+  'linux-setup': '/get-started/install/linux/desktop',
 
-  'macos-setup': '/get-started/install/macos/desktop',
+  'android-setup': '/get-started/install/linux/android#configure-android-development',
+  'set-up-your-android-device': '/get-started/install/linux/android#configure-your-target-android-device',
+  'set-up-the-android-emulator': '/get-started/install/linux/android#configure-your-target-android-device',
+  'agree-to-android-licenses': '/get-started/install/linux/android#agree-to-android-licenses',
 
-  'android-setup': '/get-started/install/macos/mobile-android#configure-android-development',
-  'set-up-your-android-device': '/get-started/install/macos/mobile-android#configure-your-target-android-device',
-  'set-up-the-android-emulator': '/get-started/install/macos/mobile-android#configure-your-target-android-device',
-  'agree-to-android-licenses': '/get-started/install/macos/mobile-android#agree-to-android-licenses',
-
-  'update-your-path': '/get-started/install/macos/mobile-ios?tab=download#add-flutter-to-your-path',
+  'update-your-path': '/get-started/install/linux/android?tab=download#add-flutter-to-your-path'
 };
 
 function handleRedirect() {
@@ -51,7 +46,7 @@ function handleRedirect() {
 
 const currentLocation = window.location.pathname;
 
-if (currentLocation.includes('/get-started/install/macos') &&
+if (currentLocation.includes('/get-started/install/linux') &&
     currentLocation.split('/')
         .filter(value => value.trim().length !== 0).length === 3) {
   handleRedirect();
