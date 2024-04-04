@@ -53,9 +53,7 @@ The other link has more resources for learning Dart.
 ## Anatomy of a widget
 
 In regard to Flutter, you'll often hear
-"everything is a widget". This isn't
-exactly true, but it is safe to say that
-"_almost_ everything is a widget".
+"everything is a widget".
 Widgets are the UI building blocks that
 are combined to create a fully
 functional application.
