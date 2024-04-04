@@ -21,9 +21,6 @@
 
         &.collapsible {
           padding-bottom: bootstrap.bs-spacer(2);
-          &::before {
-            top: 6px;
-          }
         }
       }
     }
