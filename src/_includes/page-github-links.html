@@ -5,7 +5,7 @@ Style the button pair using the `#page-github-links` selector.
 
 {% assign repo = repo | default: site.repo.this -%}
 {% capture path -%} {{repo}}/tree/{{site.branch}}/{{page.inputPath | replace: './', ''}} {%- endcapture -%}
-{% assign siteTitle = title | default: page.url -%}
+{% assign siteTitle = title | default: page.url | escape -%}
 {% assign url = site.url | append: page.url -%}
 
 {% capture issueTitle -%} title=[PAGE ISSUE]: '{{siteTitle}}' {%- endcapture -%}

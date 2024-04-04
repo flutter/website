@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     {% endunless -%}
 
-    {% if jekyll.environment == "production" -%}
+    {%- if isProduction == true -%}
       <meta name="google-site-verification" content="{{ site.google_site_verification }}">
       <script>
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -43,13 +43,13 @@
 
     {% assign og_image_path = image.path | default: layout.image.path | default: site.default_share_image -%}
 
-    <meta name="description" content="{{desc}}">
+    <meta name="description" content="{{desc | escape}}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@flutterdev">
 
-    <meta property="og:title" content="{{title}}">
+    <meta property="og:title" content="{{title | escape}}">
     <meta property="og:url" content="{{site.url | append: page_url}}">
-    <meta property="og:description" content="{{desc}}">
+    <meta property="og:description" content="{{desc | escape}}">
     <meta property="og:image" content="{{site.url | append: og_image_path}}">
 
     {% unless strip_fonts == true -%}
@@ -79,14 +79,14 @@
 
     {% render cookie-notice.html %}
 
-    {% if jekyll.environment == "production" %}
+    {%- if isProduction == true -%}
       <noscript>
         <iframe
           src="https://www.googletagmanager.com/ns.html?id={{ site.google_tag_manager_id }}"
           height="0" width="0" style="display:none;visibility:hidden">
         </iframe>
       </noscript>
-    {% endif %}
+    {% endif -%}
 
     <div id="overlay-under-drawer"></div>
 
