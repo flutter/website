@@ -1,5 +1,7 @@
-import { getHighlighter } from 'shiki';
+import {getHighlighter} from 'shiki';
 import dashLightTheme from '../syntax/dash-light.js';
+
+import diff2html from "diff2html";
 
 /**
  * Replaces the markdown-it code block renderer with our own that:
@@ -97,6 +99,10 @@ function _highlight(
     return `<pre><code data-dartpad="true" data-embed="true" data-theme="light">${markdown.utils.escapeHtml(content)}</code></pre>`;
   }
 
+  if (language.includes('diff2html')) {
+    return diff2html.html(content, {drawFileList: false});
+  }
+
   const attributes = _parseAttributes(attributeString);
 
   const showLineNumbers = 'showLineNumbers' in attributes;
@@ -116,10 +122,16 @@ function _highlight(
     ? _parseNumbersAndRanges(highlightLines)
     : null;
 
+  const noHighlight = 'noHighlight' in attributes
+
   // Find the spans enclosed in `[!` and `!]` that we should mark
   // and remove them from the text.
-  const { updatedText, linesToMarkedRanges } =
-    _findMarkedTextAndUpdate(content);
+  const {updatedText, linesToMarkedRanges} =
+      noHighlight ? {
+            updatedText: content,
+            linesToMarkedRanges: {},
+          } :
+          _findMarkedTextAndUpdate(content);
 
   // Update the content with the markers removed and
   // with any extra whitespace trimmed off the end.
@@ -140,11 +152,7 @@ function _highlight(
 
           const bodyChildren = [preElement];
 
-          if (
-            language !== 'plaintext' &&
-            language !== 'console' &&
-            language !== 'ps'
-          ) {
+          if (!['plaintext', 'console', 'ps', 'diff'].includes(language)) {
             const languageText = _createSpanWithText(language, {
               class: 'code-block-language',
               title: `Language ${language}`,

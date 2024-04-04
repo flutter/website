@@ -86,7 +86,7 @@ To create a fade-in effect, you can animate the
 Wrap the `Column` widget in an `AnimatedOpacity` widget:
 
 <?code-excerpt "opacity{1,2}/lib/main.dart"?>
-```diff
+```diff2html
 --- opacity1/lib/main.dart
 +++ opacity2/lib/main.dart
 @@ -27,12 +27,14 @@
@@ -123,7 +123,7 @@ To hide the text before the user clicks **Show details**, set
 the starting value for `opacity` to zero:
 
 <?code-excerpt "opacity{2,3}/lib/main.dart"?>
-```diff
+```diff2html
 --- opacity2/lib/main.dart
 +++ opacity3/lib/main.dart
 @@ -15,6 +15,8 @@
@@ -152,7 +152,7 @@ In addition to an `opacity` parameter, `AnimatedOpacity` requires a
 you can start with 2 seconds:
 
 <?code-excerpt "opacity{3,4}/lib/main.dart"?>
-```diff
+```diff2html
 --- opacity3/lib/main.dart
 +++ opacity4/lib/main.dart
 @@ -30,6 +30,7 @@
@@ -174,7 +174,7 @@ the user clicks **Show details**, use the `onPressed()` handler
 to set `opacity` to 1:
 
 <?code-excerpt "opacity{4,5}/lib/main.dart"?>
-```diff
+```diff2html
 --- opacity4/lib/main.dart
 +++ opacity5/lib/main.dart
 @@ -27,7 +27,9 @@
@@ -274,7 +274,7 @@ The following steps use the `AnimatedContainer` widget to:
 Change the `Container` widget to an `AnimatedContainer` widget:
 
 <?code-excerpt "container{1,2}/lib/main.dart"?>
-```diff
+```diff2html
 --- container1/lib/main.dart
 +++ container2/lib/main.dart
 @@ -47,7 +47,7 @@
@@ -303,7 +303,7 @@ The `change()` method can use the `setState()` method to set new values
 for the `color`, `borderRadius`, and `margin` state variables:
 
 <?code-excerpt "container{2,3}/lib/main.dart"?>
-```diff
+```diff2html
 --- container2/lib/main.dart
 +++ container3/lib/main.dart
 @@ -38,6 +38,14 @@
@@ -329,7 +329,7 @@ To set the animation to trigger whenever the user presses **Change**,
 invoke the `change()` method in the `onPressed()` handler:
 
 <?code-excerpt "container{3,4}/lib/main.dart"?>
-```diff
+```diff2html
 --- container3/lib/main.dart
 +++ container4/lib/main.dart
 @@ -65,7 +65,7 @@
@@ -349,7 +349,7 @@ Set the `duration` of the animation that powers the transition
 between the old and new values:
 
 <?code-excerpt "container{4,5}/lib/main.dart"?>
-```diff
+```diff2html
 --- container4/lib/main.dart
 +++ container5/lib/main.dart
 @@ -6,6 +6,8 @@
@@ -405,7 +405,7 @@ The animation changes when you pass the
 [`easeInOutBack`][] constant for `curve`,
 
 <?code-excerpt "container{5,6}/lib/main.dart"?>
-```diff
+```diff2html
 --- container5/lib/main.dart
 +++ container6/lib/main.dart
 @@ -64,6 +64,7 @@

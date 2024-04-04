@@ -39,7 +39,7 @@ layout: base
         <header class="site-content__title">
           {% include page-github-links.html %}
           <h1>{{ title }}</h1>
-          {% if show_breadcrumbs == true -%}
+          {% if show_breadcrumbs != false -%}
           {% include breadcrumbs.html %}
           {% endif -%}
         </header>

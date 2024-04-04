@@ -247,7 +247,7 @@ Within the [`SingleChildScrollView`][] widget, replace the `Text` widget with a
 `Column` widget.
 
 <?code-excerpt "{../base,step2}/lib/main.dart" from="body:" to="children: ["?>
-```diff
+```diff2html
 --- ../base/lib/main.dart
 +++ step2/lib/main.dart
 @@ -21,2 +17,3 @@
@@ -277,7 +277,7 @@ This places it at the top of the screen.
 Pass the provided name and location to the `TitleSection` constructor.
 
 <?code-excerpt "{../base,step2}/lib/main.dart" from="children:" to="],"?>
-```diff
+```diff2html
 --- ../base/lib/main.dart
 +++ step2/lib/main.dart
 @@ -23 +19,6 @@
@@ -460,7 +460,7 @@ Add the button section to the `children` list.
 <?code-excerpt path-base="layout/lakes"?>
 
 <?code-excerpt "step{2,3}/lib/main.dart (addWidget)"?>
-```diff
+```diff2html
 --- step2/lib/main.dart (addWidget)
 +++ step3/lib/main.dart (addWidget)
 @@ -5,6 +5,7 @@
@@ -520,7 +520,7 @@ When adding the `TextSection` widget, set its `description` property to
 the text of the location description.
 
 <?code-excerpt "step{3,4}/lib/main.dart (addWidget)"?>
-```diff
+```diff2html
 --- step3/lib/main.dart (addWidget)
 +++ step4/lib/main.dart (addWidget)
 @@ -6,6 +6,16 @@
@@ -566,7 +566,7 @@ To configure your app to reference images, modify its `pubspec.yaml` file.
    available to your code.
 
    <?code-excerpt "{step4,step5}/pubspec.yaml"?>
-   ```diff
+   ```diff2html
    --- step4/pubspec.yaml
    +++ step5/pubspec.yaml
    @@ -19,3 +19,5 @@
@@ -621,7 +621,7 @@ Set the `image` property to the path of the image you added in
 [Configure your app to use supplied images](#configure-your-app-to-use-supplied-images).
 
 <?code-excerpt "step{4,5}/lib/main.dart (addWidget)"?>
-```diff
+```diff2html
 --- step4/lib/main.dart (addWidget)
 +++ step5/lib/main.dart (addWidget)
 @@ -1,6 +1,9 @@

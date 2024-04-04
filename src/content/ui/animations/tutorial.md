@@ -318,7 +318,7 @@ When defining an `AnimationController`, you must pass in a
 The changes from the non-animated example are highlighted:
 
 <?code-excerpt "animate{0,1}/lib/main.dart"?>
-```diff
+```diff2html
 --- animate0/lib/main.dart
 +++ animate1/lib/main.dart
 @@ -9,16 +9,39 @@
@@ -463,7 +463,7 @@ The `LogoApp` still manages the `AnimationController` and the `Tween`,
 and it passes the `Animation` object to `AnimatedLogo`:
 
 <?code-excerpt "animate{1,2}/lib/main.dart" from="class _LogoAppState" diff-u="6"?>
-```diff
+```diff2html
 --- animate1/lib/main.dart
 +++ animate2/lib/main.dart
 @@ -1,10 +1,28 @@
@@ -582,7 +582,7 @@ Next, use `addStatusListener()` to reverse the animation
 at the beginning or the end. This creates a "breathing" effect:
 
 <?code-excerpt "animate{2,3}/lib/main.dart" to="/^   }/" diff-u="4"?>
-```diff
+```diff2html
 --- animate2/lib/main.dart
 +++ animate3/lib/main.dart
 @@ -35,7 +35,15 @@
@@ -721,7 +721,7 @@ drive the transition. These are the three elements listed
 in the bullet points above.
 
 <?code-excerpt "animate{2,4}/lib/main.dart" from="class _LogoAppState" diff-u="10"?>
-```diff
+```diff2html
 --- animate2/lib/main.dart
 +++ animate4/lib/main.dart
 @@ -1,27 +1,47 @@

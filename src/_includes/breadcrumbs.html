@@ -11,12 +11,12 @@ Embeds breadcrumb RDFa, follows ARIA guidelines. References:
 {% if url.size > 0 -%}
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
-  {% assign breadcrumbs = page | breadcrumbsForPage -%}
-  {% if breadcrumbs -%}
-  {% for crumb in breadcrumbs -%}
+    {% assign breadcrumbs = page | breadcrumbsForPage -%}
+    {% if breadcrumbs and breadcrumbs.length > 1 -%}
+    {% for crumb in breadcrumbs -%}
     <li class="breadcrumb-item {%- if forloop.last %} active {%- endif %}"
-      property="itemListElement" typeof="ListItem"
-      {%- if forloop.last %} aria-current="page"{% endif %}>
+        property="itemListElement" typeof="ListItem"
+        {%- if forloop.last %} aria-current="page"{% endif %}>
       {%- comment %}Avoid spaces here, it messes up formatting{% endcomment -%}
       <a href="{{ crumb.url | regex_replace: '/index$|/index.html$|/$' }}" property="item" typeof="WebPage">
         {%- comment %}Avoid spaces here, it messes up formatting{% endcomment -%}
@@ -24,7 +24,8 @@ Embeds breadcrumb RDFa, follows ARIA guidelines. References:
       </a>
       <meta property="position" content="{{forloop.index0}}" />
     </li>
-  {% endfor %}
+    {% endfor %}
+    {% endif -%}
   </ol>
 </nav>
 {%- endif -%}
