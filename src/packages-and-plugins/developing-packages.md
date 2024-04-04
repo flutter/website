@@ -409,6 +409,12 @@ Locate the file `lib/hello.dart`.
 
 We recommend you edit the Android code using Android Studio.
 
+Before editing the Android platform code in Android Studio,
+first make sure that the code has been built at least once
+(in other words, run the example app from your IDE/editor,
+or in a terminal execute
+`cd hello/example; flutter build apk --config-only`).
+
 Then use the following steps:
 
 1. Launch Android Studio.
@@ -434,7 +440,7 @@ Before editing the iOS platform code in Xcode,
 first make sure that the code has been built at least once
 (in other words, run the example app from your IDE/editor,
 or in a terminal execute
-`cd hello/example; flutter build ios --no-codesign`).
+`cd hello/example; flutter build ios --no-codesign --config-only`).
 
 Then use the following steps:
 
@@ -518,7 +524,7 @@ Before editing the macOS platform code in Xcode,
 first make sure that the code has been built at least once
 (in other words, run the example app from your IDE/editor,
 or in a terminal execute
-`cd hello/example; flutter build macos`).
+`cd hello/example; flutter build macos --config-only`).
 
 Then use the following steps:
 
