@@ -2,8 +2,7 @@
 {% assign target = include.target %}
 {% assign dir = include.dir %}
 
-### Add Flutter to your `PATH`
-{:.no_toc}
+### Add Flutter to your `PATH` {:.no_toc}
 
 To run Flutter commands in {{terminal}},
 add Flutter to the `PATH` environment variable.
@@ -17,7 +16,7 @@ Zsh uses the `.zshenv` file for [environment variables][envvar].
 
 1. Copy the following line and paste it at the end of your `~/.zshenv` file.
 
-   ```conf
+   ```bash
    export PATH=$HOME/development/flutter/bin:$PATH
    ```
 

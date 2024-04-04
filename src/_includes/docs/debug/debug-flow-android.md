@@ -1,8 +1,8 @@
-{{site.alert.note}}
-  If you want to use the [GNU Project Debugger][] to debug the
-  Flutter engine running within an Android app process,
-  check out [`flutter_gdb`][].
-{{site.alert.end}}
+:::note
+If you want to use the [GNU Project Debugger][] to debug the
+Flutter engine running within an Android app process,
+check out [`flutter_gdb`][].
+:::
 
 [GNU Project Debugger]: https://www.sourceware.org/gdb/
 [`flutter_gdb`]: {{site.repo.engine}}/blob/main/sky/tools/flutter_gdb
@@ -34,9 +34,9 @@ Running Gradle task 'bundleDebug'...                               27.1s
 {% comment %} Tab panes {% endcomment -%}
 <div class="tab-content">
 
-<div class="tab-pane active" id="from-vscode-to-android-studio" role="tabpanel" aria-labelledby="from-vscode-to-android-studio-tab" markdown="1">
+<div class="tab-pane active" id="from-vscode-to-android-studio" role="tabpanel" aria-labelledby="from-vscode-to-android-studio-tab">
 
-#### Start debugging with VS Code first {#from-vscode-to-android-studio}
+#### Start debugging with VS Code first {:#from-vscode-to-android-studio}
 
 If you use VS Code to debug most of your code, start with this section.
 
@@ -48,9 +48,9 @@ If you use VS Code to debug most of your code, start with this section.
 
 </div>
 
-<div class="tab-pane" id="from-android-studio-to-vscode" role="tabpanel" aria-labelledby="from-android-studio-to-vscode-tab" markdown="1">
+<div class="tab-pane" id="from-android-studio-to-vscode" role="tabpanel" aria-labelledby="from-android-studio-to-vscode-tab">
 
-#### Start debugging with Android Studio first {#from-android-studio}
+#### Start debugging with Android Studio first {:#from-android-studio}
 
 If you use Android Studio to debug most of your code, start with this section.
 

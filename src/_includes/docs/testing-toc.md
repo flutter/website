@@ -5,7 +5,7 @@
   Usage: {% include docs/testing_toc.md type='unit' %}
 {% endcomment -%}
 {% assign dir = 'cookbook/testing/' | append: include.type -%}
-{% assign recipes = site.pages | where_exp:"item", "item.dir contains dir" | sort: 'title' -%}
+{% assign recipes = collections.all | children_pages: dir | sort: 'title' %}
 
 {% for recipe in recipes -%}
 {% comment -%}
@@ -13,6 +13,6 @@
 {% endcomment -%}
 {% assign frag = recipe.url | split: '/' | last %}
 {% if frag != include.type -%}
-- [{{ recipe.title }}]({{ recipe.url }})
+- [{{ recipe.data.title }}]({{ recipe.url }})
 {% endif -%}
 {% endfor %}

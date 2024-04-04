@@ -7,12 +7,12 @@
   releases on our site. - sz
 {% endcomment %}
 
-{{site.alert.note}}
-  The following link(s) take you to the
-  [latest docs][] on the master channel.
-  You can find the docs for the stable
-  channel at [api.flutter.dev][].
-{{site.alert.end}}
+:::note
+The following link(s) take you to the
+[latest docs][] on the master channel.
+You can find the docs for the stable
+channel at [api.flutter.dev][].
+:::
 
 [api.flutter.dev]: {{site.api}}
 [latest docs]: {{site.main-api}}

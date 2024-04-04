@@ -3,6 +3,10 @@ targets:
     sources:
       include:
         - examples/**
+        # Some default includes that aren't really used here but will prevent
+        # false-negative warnings:
+        - $package$
+        - lib/$lib$
       exclude:
         - '**/.*/**'
         - '**/android/**'

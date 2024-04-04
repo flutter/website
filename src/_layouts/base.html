@@ -5,12 +5,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <title>{% if short-title %}{{short-title}}{% else %}{{title}}{% endif %} | {{site.title}}</title>
     <link rel="icon" href="/assets/images/branding/flutter/icon/64.png">
     <link rel="apple-touch-icon" href="/assets/images/branding/flutter/logo/flutter-logomark-320px.png">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="#ffffff">
-    {% unless page.strip_fonts == true -%}
+
+    {% unless strip_fonts == true -%}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     {% endunless -%}
@@ -34,47 +35,49 @@
       </script>
     {% endif -%}
 
-    {% assign desc = page.description -%}
+    {% assign desc = description | default: site.description | strip_html | strip_newlines | truncate: 160 -%}
     {% unless desc and desc != '' -%}
       {% assign error = page.url | append: ' must have a description specified!' -%}
       {{ error | throw_error }}
     {% endunless %}
 
-    {% assign og_image_path = page.image.path | default: layout.image.path | default: site.default_share_image -%}
+    {% assign og_image_path = image.path | default: layout.image.path | default: site.default_share_image -%}
 
     <meta name="description" content="{{desc}}">
-    <meta name="keywords" content="{% if page.tags %}{{page.tags}}, {% endif %}{{page.keywords}}">
-
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@flutterdev">
 
-    <meta property="og:title" content="{{page.title}}">
-    <meta property="og:url" content="{{page_url | absolute_url}}">
+    <meta property="og:title" content="{{title}}">
+    <meta property="og:url" content="{{site.url | append: page_url}}">
     <meta property="og:description" content="{{desc}}">
-    <meta property="og:image" content="{{og_image_path | absolute_url}}">
+    <meta property="og:image" content="{{site.url | append: og_image_path}}">
 
-    {% unless page.strip_fonts == true -%}
+    {% unless strip_fonts == true -%}
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Text:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
     {% endunless -%}
 
-    {% include head-diff2html.html -%}
+    {% if diff2html -%}
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.47/bundles/css/diff2html.min.css" integrity="sha256-IMBK4VNZp0ivwefSn51bswdsrhk0HoMTLc2GqFHFBXg=" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {% endif -%}
 
     <script>
       window.__CALLBACKS = [];
     </script>
 
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | append: cache_bust }}">
-    {% for css in page.css -%}
-      {% assign asset_path = '/assets/css/{{css}}' -%}
+    {% if css -%}
+    {% for cssFile in css -%}
+      {% assign asset_path = '/assets/css/{{cssFile}}' -%}
       <link rel="stylesheet" href="{{ asset_path | append: cache_bust }}">
     {% endfor -%}
+    {% endif -%}
   </head>
-  <body{% if page.body_class %} class="{{ page.body_class }}"{% endif %}>
+  <body{% if body_class %} class="{{ body_class }}"{% endif %}>
 
-    {% include cookie-notice.html %}
+    {% render cookie-notice.html %}
 
     {% if jekyll.environment == "production" %}
       <noscript>
@@ -89,33 +92,26 @@
 
     {% include header.html %}
 
-    {% if page.show_banner -%}
-      {% include banner.html %}
-    {% endif -%}
+    {% render banner.html %}
 
     {{ content }}
 
-    {% if page.show_footer %}
-      {% include footer.html %}
-    {% endif %}
+    {% render footer.html %}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js" integrity="sha512-ubuT8Z88WxezgSqf3RLuNi5lmjstiJcyezx34yIU2gAHonIi27Na7atqzUZCOoY4CExaoFumzOsFQ2Ch+I/HCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js" integrity="sha512-7rusk8kGPFynZWu26OKbTeI+QPoYchtxsmPeBqkHIEXJxeun4yJ4ISYe7C6sz9wdxeE1Gk3VxsIWgCZTc+vX3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js" integrity="sha512-7O5pXpc0oCRrxk8RUfDYFgn0nO1t+jLuIOQdOMRp4APB7uZ4vSjspzp5y6YDtDs4VzUSTbWzBFZ/LKJhnyFOKw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.5/js.cookie.min.js" integrity="sha512-nlp9/l96/EpjYBx7EP7pGASVXNe80hGhYAUrjeXnu/fyF5Py0/RXav4BBNs7n5Hx1WFhOEOWSAVjGeC3oKxDVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="{{ '/assets/js/vendor/code-prettify/prettify.js' | append: cache_bust }}"></script>
-    <script src="{{ '/assets/js/vendor/code-prettify/lang-css.js' | append: cache_bust }}"></script>
-    <script src="{{ '/assets/js/vendor/code-prettify/lang-dart.js' | append: cache_bust }}"></script>
-    <script src="{{ '/assets/js/vendor/code-prettify/lang-yaml.js' | append: cache_bust }}"></script>
     <script src="{{ '/assets/js/tabs.js' | append: cache_bust }}"></script>
     <script src="{{ '/assets/js/archive.js' | append: cache_bust }}"></script>
     <script src="{{ '/assets/js/main.js' | append: cache_bust }}"></script>
 
-    {% for script in page.js -%}
-      <script src="{{ script.url | default: js }}" {% if script.defer %}defer{% endif %}></script>
-    {% endfor %}
+    {% if js -%}
+    {% for jsFile in js -%}
+      <script src="{{ jsFile.url | default: js }}" {% if jsFile.defer %}defer{% endif %}></script>
+    {% endfor -%}
+    {% endif -%}
 
   </body>
 </html>

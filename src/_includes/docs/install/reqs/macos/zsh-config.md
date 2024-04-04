@@ -1,6 +1,6 @@
 {% assign target = include.target %}
 
-<details markdown="1">
+<details>
 <summary><strong>To verify your shell configuration, expand this section</strong></summary>
 
 Like most UNIX-like operating system, macOS can support multiple shells,

@@ -1,5 +1,5 @@
-{% assign doctor = site.data.doctor %}
-{% assign config = site.data.doctor[include.config] %}
+{% assign doctor = doctor %}
+{% assign config = doctor[include.config] %}
 {% case include.devos %}
 {% when 'macOS' %}
 {% assign displayos = 'macOS 14.4.0 23E214 darwin-arm64' %}
@@ -14,7 +14,7 @@ Don't change the whitespace control dashes in this list.
 It took about two hours to get exactly right. @atsansone
 {% endcomment %}
 
-```console
+```console noHighlight
 Running flutter doctor...
 Doctor summary (to see all details, run flutter doctor -v):
 [✓] Flutter (Channel stable, {{site.appnow.flutter}}, on {{displayos}}, locale en)

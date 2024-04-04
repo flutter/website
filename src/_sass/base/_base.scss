@@ -16,12 +16,7 @@ h1 {
 }
 
 h2 {
-  margin: bootstrap.bs-spacer(12) 0 bootstrap.bs-spacer(8);
   clear: both;
-}
-
-h3 {
-  margin: bootstrap.bs-spacer(8) 0 bootstrap.bs-spacer(4);
 }
 
 dd {
@@ -322,7 +317,7 @@ summary {
 
 main {
   ol + img, ul + img, ol + p, ul + p, p + p + img,
-  li:not(.toc-entry, .breadcrumb-item):last-child, ul + p:last-child {
+  li:not(.toc-entry, .breadcrumb-item, .nav-item):last-child, ul + p:last-child {
     margin-bottom: 1rem;
   }
 }
