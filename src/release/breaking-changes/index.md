@@ -31,6 +31,7 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Rename `MaterialState` to `WidgetState`][]
 * [Introduce new `ColorScheme` roles][]
 * [Stop generating AssetManifest.json][]
 * [Rename `MemoryAllocations` to `FlutterMemoryAllocations`][]
@@ -39,6 +40,7 @@ release, and listed in alphabetical order:
 * [Deprecate `ButtonBar` in favor of `OverflowBar`][]
 * [Deprecated API removed after v3.19][]
 
+[Rename `MaterialState` to `WidgetState`]: /release/breaking-changes/material-state
 [Introduce new `ColorScheme` roles]: /release/breaking-changes/new-color-scheme-roles
 [Stop generating AssetManifest.json]: /release/breaking-changes/asset-manifest-dot-json
 [Rename `MemoryAllocations` to `FlutterMemoryAllocations`]: /release/breaking-changes/flutter-memory-allocations
