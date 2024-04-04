@@ -13,6 +13,6 @@
 {% endcomment -%}
 {% assign frag = recipe.url | split: '/' | last %}
 {% if frag != include.type -%}
-- [{{ recipe.title }}]({{ recipe.url }})
+- [{{ recipe.data.title }}]({{ recipe.url }})
 {% endif -%}
 {% endfor %}

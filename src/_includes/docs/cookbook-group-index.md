@@ -4,5 +4,5 @@
       | sort: 'title' %}
 
 {% for recipe in recipes -%}
-- [{{ recipe.title }}]({{ recipe.url }})
+- [{{ recipe.data.title }}]({{ recipe.url }})
 {% endfor -%}
