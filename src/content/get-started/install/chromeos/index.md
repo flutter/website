@@ -13,9 +13,7 @@ target-list: [Android, Web]
 
 <div class="card-deck mb-8">
 {% for target in target-list %}
-  <a class="card card-app-type card-chromeos"
-     id="install-{{os | remove: ' ' | downcase}}"
-     href="/get-started/install/{{os | remove: ' ' | downcase}}/{{target | downcase}}">
+  <a class="card card-app-type card-chromeos" id="install-{{os | remove: ' ' | downcase}}" href="/get-started/install/{{os | remove: ' ' | downcase}}/{{target | downcase}}">
     <div class="card-body">
       <header class="card-title text-center m-0">
         <span class="d-block h1">

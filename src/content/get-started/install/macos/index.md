@@ -6,8 +6,7 @@ target-list: [Desktop, iOS, Android, Web]
 js: [{url: '/assets/js/temp/macos-install-redirector.js'}]
 ---
 
-{% assign os = 'macos'
-   -%}
+{% assign os = 'macos' -%}
 {% assign recommend = 'iOS' %}
 {% capture rec-target -%}
 [{{recommend | strip}}](/get-started/install/{{os | downcase}}/mobile-{{recommend | downcase}})
@@ -15,15 +14,14 @@ js: [{url: '/assets/js/temp/macos-install-redirector.js'}]
 
 <div class="card-deck mb-8">
 {% for target in target-list %}
-{% case target %}
-{% when "iOS", "Android" %}
-{% assign targetlink = target | downcase | prepend: 'mobile-' %}
-{% else %}
-{% assign targetlink = target | downcase %}
-{% endcase %}
-  <a class="card card-app-type card-macos"
-     id="install-{{os | downcase}}"
-     href="/get-started/install/{{os | downcase}}/{{targetlink}}">
+  {% case target %}
+  {% when "iOS", "Android" %}
+  {% assign targetlink = target | downcase | prepend: 'mobile-' %}
+  {% else %}
+  {% assign targetlink = target | downcase %}
+  {% endcase %}
+
+  <a class="card card-app-type card-macos" id="install-{{os | downcase}}" href="/get-started/install/{{os | downcase}}/{{targetlink}}">
     <div class="card-body">
       <header class="card-title text-center m-0">
         <span class="d-block h1">
@@ -48,6 +46,7 @@ js: [{url: '/assets/js/temp/macos-install-redirector.js'}]
       </header>
     </div>
   </a>
+
 {% endfor %}
 </div>
 
