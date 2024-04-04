@@ -7,6 +7,7 @@ sitemap: false
 {% assign url = page.url | regex_replace: '/index$|/index.html$|/$' -%}
 {% assign path_parts = url | split: '/' -%}
 {% assign topics = sidenav -%}
+{% assign path = '' -%}
 
 {% comment %}
   - path_parts[0] == '' because page.url always starts with '/'
@@ -20,13 +21,26 @@ sitemap: false
   {% endif -%}
   {% if forloop.index0 > 0 and path != '/ui' -%}
     {% assign topics = topics | where: "permalink", path -%}
+    {% assign topics = topics[0].children | where: "title" -%}
   {% endif -%}
 {% endfor -%}
 
-{% assign entries = topics -%}
-{% capture md %}{% include mini-toc.md %}{% endcapture %}
-{% renderTemplate "md" %}
-{{ md }}
-{% endrenderTemplate %}
+{% if topics -%}
+### Topics
+
+{% for topic in topics -%}
+
+{% if topic.permalink == nil -%}
+{% if topic contains 'header' %}
+#### {{topic.header}}
+
+{% else -%}
+  - {{topic.title}}
+{% endif -%}
+{% else -%}
+  - [{{topic.title}}]({{topic.permalink}})
+{% endif -%}
+{% endfor %}
+{% endif -%}
 
 {{content}}
