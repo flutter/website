@@ -1,0 +1,30 @@
+# Copyright 2020 The Flutter Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+name: testing_app
+description: "App behind Flutter testing codelab."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.3.0-279.2.beta <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  go_router: ^13.1.0
+  provider: ^6.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  flutter_driver:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+  test: ^1.24.9
+
+flutter:
+  uses-material-design: true

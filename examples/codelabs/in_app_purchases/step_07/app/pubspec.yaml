@@ -1,0 +1,32 @@
+name: dashclicker
+description: A codelab for in-app purchases
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.2.0
+
+dependencies:
+  cloud_firestore: ^4.0.3
+  cupertino_icons: ^1.0.2
+  firebase_auth: ^4.2.2
+  firebase_core: ^2.5.0
+  flutter:
+    sdk: flutter
+  google_sign_in: ^6.0.1
+  http: ^1.0.0
+  in_app_purchase: ^3.0.1
+  in_app_purchase_platform_interface: ^1.3.1
+  intl: ^0.18.0
+  provider: ^6.0.2
+
+dev_dependencies:
+  flutter_lints: ^3.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/

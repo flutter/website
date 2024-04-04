@@ -1,0 +1,23 @@
+name: codelab_rebuild
+description: A sample command-line application.
+version: 1.0.0
+# homepage: https://www.example.com
+
+environment:
+  sdk: ^3.2.0
+
+dependencies: 
+  checked_yaml: ^2.0.1
+  io: ^1.0.3
+  json_annotation: ^4.8.0
+  logging: ^1.0.2
+  path: ^1.8.0
+
+dev_dependencies:
+  build_runner: ^2.3.3
+  json_serializable: ^6.5.4
+  lints: ">=2.0.0 <4.0.0"
+  test: ^1.16.0
+
+executables:
+  codelab_rebuild:

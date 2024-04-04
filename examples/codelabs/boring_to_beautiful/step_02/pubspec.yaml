@@ -1,0 +1,42 @@
+name: myartist
+description: A new Flutter project.
+publish_to: "none"
+version: 1.0.0
+
+environment:
+  sdk: ^3.2.0
+
+dependencies:
+  adaptive_breakpoints: ^0.1.7
+  adaptive_components: ^0.0.10
+  adaptive_navigation: ^0.0.10
+  animations: ^2.0.11
+  collection: ^1.18.0
+  cupertino_icons: ^1.0.6
+  desktop_window: ^0.4.0
+  dynamic_color: ^1.6.9
+  english_words: ^4.0.0
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.1.3
+  freezed_annotation: ^2.4.1
+  go_router: ^13.1.0
+  material_color_utilities: any
+  universal_platform: ^1.0.0+1
+  url_launcher: ^6.2.4
+
+dev_dependencies:
+  build_runner: ^2.4.8
+  flutter_lints: ^3.0.1
+  flutter_test:
+    sdk: flutter
+  freezed: ^2.4.6
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/images/playlists/
+    - assets/images/albums/
+    - assets/images/artists/
+    - assets/images/news/

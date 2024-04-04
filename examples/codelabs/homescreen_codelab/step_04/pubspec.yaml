@@ -1,0 +1,30 @@
+name: homescreen_widgets
+description: A sample Flutter project for adding home screen widgets.
+
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.2.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  shared_preferences: ^2.0.15
+  home_widget: ^0.3.0
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  fonts:
+    - family: Chewy
+      fonts:
+        - asset: fonts/Chewy-Regular.ttf
