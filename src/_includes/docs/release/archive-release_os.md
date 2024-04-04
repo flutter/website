@@ -6,6 +6,7 @@
   role="tabpanel" aria-labelledby="{{id}}-tab">
 
 {% for channel in channels -%}
+
 ## {{channel | capitalize }} channel ({{include.os}})
 
 Select from the following scrollable list:
@@ -16,6 +17,7 @@ Select from the following scrollable list:
   <tr class="loading"><td colspan="6">Loading...</td></tr>
   </table>
 </div>
+
 {% endfor -%}
 
 </div>

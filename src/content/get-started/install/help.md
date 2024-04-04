@@ -104,7 +104,7 @@ The `flutter doctor` command complains that the
 `cmdline-tools` are missing from the Android toolchain.
 For example:
 
-```plaintext
+```plaintext noHighlight
 [!] Android toolchain - develop for Android devices (Android SDK version 33.0.2) 
     • Android SDK at C:\Users\My PC\AppData\Local\Android\sdk 
     X cmdline-tools component is missing 
