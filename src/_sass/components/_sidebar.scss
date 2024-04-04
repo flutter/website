@@ -67,8 +67,11 @@
   }
 
   .nav-link {
-    padding: bootstrap.bs-spacer(1) 0;
+    display: flex;
     position: relative;
+    align-items: center;
+
+    padding: bootstrap.bs-spacer(1) 0;
     color: inherit;
     &.disabled { opacity: 0.5; }
 
@@ -166,7 +169,6 @@
             font: $site-font-icon;
             left: -24px;
             position: absolute;
-            top: 2px;
             transition: transform .25s ease-in-out;
           }
 
