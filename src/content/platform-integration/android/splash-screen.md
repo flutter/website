@@ -152,8 +152,8 @@ while additional loading continues in Dart.
 To achieve this, the following
 Android APIs might be helpful:
 
-{% samplecode android-splash-alignment %}
-{% sample Java %}
+{% samplecode "android-splash-alignment", "Java,Kotlin" %}
+{% sample "Java" %}
 
 ```java title="MainActivity.java"
 import android.os.Build;
@@ -183,7 +183,8 @@ public class MainActivity extends FlutterActivity {
 }
 ```
 
-{% sample Kotlin %}
+{% endsample %}
+{% sample "Kotlin" %}
 
 ```kotlin title="MainActivity.kt"
 import android.os.Build
@@ -206,6 +207,8 @@ class MainActivity : FlutterActivity() {
   }
 }
 ```
+
+{% endsample %}
 {% endsamplecode %}
 
 Then, you can reimplement the first frame in Flutter

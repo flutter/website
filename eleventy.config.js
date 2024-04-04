@@ -49,17 +49,47 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addPlugin(EleventyRenderPlugin);
 
-  // TODO(parlough): Finish samplecode implementation.
-  eleventyConfig.addPairedShortcode('samplecode', function(content, tabsId) {
-    return `<ul class="nav nav-tabs sample-code-tabs" id="${tabsId}" role="tablist">
+  let _currentTabsTitle = '';
+  let _currentTabIsActive = false;
+
+  // TODO(parlough): Replace samplecode with something easier.
+  eleventyConfig.addShortcode('samplecode', function(tabsTitle, tabsString) {
+    _currentTabsTitle = tabsTitle.toLowerCase();
+    let tabMarkup = `<ul class="nav nav-tabs sample-code-tabs" id="${_currentTabsTitle}-language" role="tablist">`;
+
+    let activeTab = true;
+    _currentTabIsActive = true;
+
+    const tabs = tabsString.split(',').map((tab) => tab.trim());
+    tabs.forEach((tabName) => {
+      const tabId = `${_currentTabsTitle}-${tabName.toLowerCase()}`;
+      tabMarkup += `<li class="nav-item">
+  <a class="nav-link ${activeTab ? "active" : ""}" id="${tabId}-tab" href="#${tabId}" role="tab" aria-controls="${tabId}" aria-selected="true">${tabName}</a>
+</li>`;
+      activeTab = false;
+    });
+
+    tabMarkup += `</ul><div class="tab-content">
+`;
+    return tabMarkup;
+  });
+
+  eleventyConfig.addShortcode('endsamplecode', function() {
+    return `</div>`
+  });
+
+  eleventyConfig.addPairedShortcode('sample', function(content, tabName) {
+    const tabId = `${_currentTabsTitle}-${tabName.toLowerCase()}`;
+    const tabContent = `<div class="tab-pane ${_currentTabIsActive ? "active" : ""}" id="${tabId}" role="tabpanel" aria-labelledby="${tabId}-tab">
+
 ${content}
 
 </div>
-</ul>`;
-  });
+`;
 
-  eleventyConfig.addShortcode('sample', function(content, language) {
-    return `<div class="tag-content">${content}</div>`;
+    _currentTabIsActive = false;
+
+    return tabContent;
   });
 
   // TODO(parlough): Make this more generic.

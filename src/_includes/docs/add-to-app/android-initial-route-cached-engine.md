@@ -12,8 +12,8 @@ with a custom initial route can configure their cached
 executing the Dart entrypoint. The following example
 demonstrates the use of an initial route with a cached engine:
 
-{% samplecode cached-engine-with-initial-route %}
-{% sample Java %}
+{% samplecode "cached-engine-with-initial-route", "Java,Kotlin" %}
+{% sample "Java" %}
 
 ```java title="MyApplication.java"
 public class MyApplication extends Application {
@@ -36,7 +36,8 @@ public class MyApplication extends Application {
 }
 ```
 
-{% sample Kotlin %}
+{% endsample %}
+{% sample "Kotlin" %}
 
 ```kotlin title="MyApplication.kt"
 class MyApplication : Application() {
@@ -58,6 +59,8 @@ class MyApplication : Application() {
   }
 }
 ```
+
+{% endsample %}
 {% endsamplecode %}
 
 By setting the initial route of the navigation channel, the associated

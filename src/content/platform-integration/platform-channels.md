@@ -102,8 +102,8 @@ messages happens automatically when you send and receive values.
 The following table shows how Dart values are received on the
 platform side and vice versa:
 
-{% samplecode type-mappings %}
-{% sample Java %}
+{% samplecode "type-mappings", "Java,Kotlin,Obj-C,Swift,C++,C" %}
+{% sample "Java" %}
 
 | Dart                       | Java                |
 | -------------------------- | ------------------- |
@@ -121,7 +121,8 @@ platform side and vice versa:
 | List                       | java.util.ArrayList |
 | Map                        | java.util.HashMap   |
 
-{% sample Kotlin %}
+{% endsample %}
+{% sample "Kotlin" %}
 
 | Dart                       | Kotlin      |
 | -------------------------- | ----------- |
@@ -139,7 +140,8 @@ platform side and vice versa:
 | List                       | List        |
 | Map                        | HashMap     |
 
-{% sample Obj-C %}
+{% endsample %}
+{% sample "Obj-C" %}
 
 | Dart                       | Objective-C                                    |
 | -------------------------- | ---------------------------------------------- |
@@ -157,7 +159,8 @@ platform side and vice versa:
 | List                       | NSArray                                        |
 | Map                        | NSDictionary                                   |
 
-{% sample Swift %}
+{% endsample %}
+{% sample "Swift" %}
 
 | Dart                       | Swift                                   |
 | -------------------------- | --------------------------------------- |
@@ -175,6 +178,7 @@ platform side and vice versa:
 | List                       | Array                                   |
 | Map                        | Dictionary                              |
 
+{% endsample %}
 {% sample "C++" %}
 
 | Dart                       | C++                                                      |
@@ -193,7 +197,8 @@ platform side and vice versa:
 | List                       | EncodableValue(std::vector<EncodableValue>)              |
 | Map                        | EncodableValue(std::map<EncodableValue, EncodableValue>) |
 
-{% sample C %}
+{% endsample %}
+{% sample "C" %}
 
 | Dart                       | C (GObject)               |
 | -------------------------- | ------------------------- |
@@ -209,6 +214,8 @@ platform side and vice versa:
 | Float64List                | FlValue(double*)          |
 | List                       | FlValue(FlValue)          |
 | Map                        | FlValue(FlValue, FlValue) |
+
+{% endsample %}
 {% endsamplecode %}
 
 ## Example: Calling platform-specific code using platform channels {:#example}
@@ -336,8 +343,8 @@ Widget build(BuildContext context) {
 
 ### Step 3: Add an Android platform-specific implementation
 
-{% samplecode android-channel %}
-{% sample Kotlin %}
+{% samplecode "android-channel", "Kotlin,Java" %}
+{% sample "Kotlin" %}
 
 Start by opening the Android host portion of your Flutter app
 in Android Studio:
@@ -448,7 +455,8 @@ And replace with the following:
     }
 ```
 
-{% sample Java %}
+{% endsample %}
+{% sample "Java" %}
 
 Start by opening the Android host portion of your Flutter app
 in Android Studio:
@@ -562,6 +570,8 @@ And replace with the following:
             }
           }
 ```
+
+{% endsample %}
 {% endsamplecode %}
 
 You should now be able to run the app on Android. If using the Android
@@ -570,8 +580,8 @@ accessible from the **...** button in the toolbar.
 
 ### Step 4: Add an iOS platform-specific implementation
 
-{% samplecode ios-channel %}
-{% sample Swift %}
+{% samplecode "ios-channel", "Swift,Objective-C" %}
+{% sample "Swift" %}
 
 Start by opening the iOS host portion of your Flutter app in Xcode:
 
@@ -654,7 +664,8 @@ batteryChannel.setMethodCallHandler({
 })
 ```
 
-{% sample Objective-C %}
+{% endsample %}
+{% sample "Objective-C" %}
 
 Start by opening the iOS host portion of the Flutter app in Xcode:
 
@@ -741,6 +752,8 @@ __weak typeof(self) weakSelf = self;
   }
 }];
 ```
+
+{% endsample %}
 {% endsamplecode %}
 
 You should now be able to run the app on iOS.

@@ -157,10 +157,10 @@ For more information, see the API docs for:
 
 On the platform side, use the standard
 `io.flutter.plugin.platform` package
-in either Java or Kotlin:
+in either Kotlin or Java:
 
-{% samplecode android-platform-views %}
-{% sample Kotlin %}
+{% samplecode "android-platform-views", "Kotlin,Java" %}
+{% sample "Kotlin" %}
 
 In your native code, implement the following:
 
@@ -261,7 +261,8 @@ class PlatformViewPlugin : FlutterPlugin {
 }
 ```
 
-{% sample Java %}
+{% endsample %}
+{% sample "Java" %}
 
 In your native code, implement the following:
 
@@ -379,6 +380,8 @@ public class PlatformViewPlugin implements FlutterPlugin {
   public void onDetachedFromEngine(@NonNull FlutterPluginBinding binding) {}
 }
 ```
+
+{% endsample %}
 {% endsamplecode %}
 
 For more information, see the API docs for:

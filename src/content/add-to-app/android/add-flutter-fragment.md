@@ -45,8 +45,8 @@ To add a `FlutterFragment` to a host `Activity`, instantiate and
 attach an instance of `FlutterFragment` in `onCreate()` within the
 `Activity`, or at another time that works for your app:
 
-{% samplecode add-fragment %}
-{% sample Java %}
+{% samplecode "add-fragment", "Java,Kotlin" %}
+{% sample "Java" %}
 
 ```java title="MyActivity.java"
 public class MyActivity extends FragmentActivity {
@@ -93,7 +93,8 @@ public class MyActivity extends FragmentActivity {
 }
 ```
 
-{% sample Kotlin %}
+{% endsample %}
+{% sample "Kotlin" %}
 
 ```kotlin title="MyActivity.kt"
 class MyActivity : FragmentActivity() {
@@ -140,6 +141,8 @@ class MyActivity : FragmentActivity() {
   }
 }
 ```
+
+{% endsample %}
 {% endsamplecode %}
 
 The previous code is sufficient to render a Flutter UI
@@ -150,8 +153,8 @@ Flutter behavior. Flutter depends on various OS signals that
 must  be forwarded from your host `Activity` to `FlutterFragment`.
 These calls are shown in the following example:
 
-{% samplecode forward-activity-calls %}
-{% sample Java %}
+{% samplecode "forward-activity-calls", "Java,Kotlin" %}
+{% sample "Java" %}
 
 ```java title="MyActivity.java"
 public class MyActivity extends FragmentActivity {
@@ -211,7 +214,8 @@ public class MyActivity extends FragmentActivity {
 }
 ```
 
-{% sample Kotlin %}
+{% endsample %}
+{% sample "Kotlin" %}
 
 ```kotlin title="MyActivity.kt"
 class MyActivity : FragmentActivity() {
@@ -263,6 +267,8 @@ class MyActivity : FragmentActivity() {
   }
 }
 ```
+
+{% endsample %}
 {% endsamplecode %}
 
 With the OS signals forwarded to Flutter,
@@ -288,8 +294,8 @@ To use a pre-warmed `FlutterEngine` in a `FlutterFragment`,
 instantiate a `FlutterFragment` with the `withCachedEngine()`
 factory method.  
 
-{% samplecode use-prewarmed-engine %}
-{% sample Java %}
+{% samplecode "use-prewarmed-engine", "Java,Kotlin" %}
+{% sample "Java" %}
 
 ```java title="MyApplication.java"
 // Somewhere in your app, before your FlutterFragment is needed,
@@ -312,7 +318,8 @@ FlutterEngineCache
 FlutterFragment.withCachedEngine("my_engine_id").build();
 ```
 
-{% sample Kotlin %}
+{% endsample %}
+{% sample "Kotlin" %}
 
 ```kotlin title="MyApplication.kt"
 // Somewhere in your app, before your FlutterFragment is needed,
@@ -335,6 +342,7 @@ FlutterEngineCache
 FlutterFragment.withCachedEngine("my_engine_id").build()
 ```
 
+{% endsample %}
 {% endsamplecode %}
 
 `FlutterFragment` internally knows about [`FlutterEngineCache`][]
@@ -369,8 +377,8 @@ initial routes (routes other than `/`).
 To facilitate this, `FlutterFragment`'s `Builder`
 allows you to specify a desired initial route, as shown:
 
-{% samplecode launch-with-initial-route %}
-{% sample Java %}
+{% samplecode "launch-with-initial-route", "Java,Kotlin" %}
+{% sample "Java" %}
 
 ```java title="MyActivity.java"
 // With a new FlutterEngine.
@@ -379,7 +387,8 @@ FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
     .build();
 ```
 
-{% sample Kotlin %}
+{% endsample %}
+{% sample "Kotlin" %}
 
 ```kotlin title="MyActivity.kt"
 // With a new FlutterEngine.
@@ -387,6 +396,8 @@ val flutterFragment = FlutterFragment.withNewEngine()
     .initialRoute("myInitialRoute/")
     .build()
 ```
+
+{% endsample %}
 {% endsamplecode %}
 
 :::note
@@ -407,8 +418,8 @@ Dart entrypoint: `main()`, but you can define other entrypoints.
 Dart entrypoint to execute for the given Flutter experience.
 To specify an entrypoint, build `FlutterFragment`, as shown:
 
-{% samplecode launch-with-custom-entrypoint %}
-{% sample Java %}
+{% samplecode "launch-with-custom-entrypoint", "Java,Kotlin" %}
+{% sample "Java" %}
 
 ```java title="MyActivity.java"
 FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
@@ -416,7 +427,8 @@ FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
     .build();
 ```
 
-{% sample Kotlin %}
+{% endsample %}
+{% sample "Kotlin" %}
 
 ```kotlin title="MyActivity.kt"
 val flutterFragment = FlutterFragment.withNewEngine()
@@ -424,6 +436,7 @@ val flutterFragment = FlutterFragment.withNewEngine()
     .build()
 ```
 
+{% endsample %}
 {% endsamplecode %}
 
 The `FlutterFragment` configuration results in the execution
@@ -456,8 +469,8 @@ then you need to use `TextureView` instead of `SurfaceView`.
 Select a `TextureView` by building a `FlutterFragment` with a
 `texture` `RenderMode`:
 
-{% samplecode launch-with-rendermode %}
-{% sample Java %}
+{% samplecode "launch-with-rendermode", "Java,Kotlin" %}
+{% sample "Java" %}
 
 ```java title="MyActivity.java"
 // With a new FlutterEngine.
@@ -471,7 +484,8 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
     .build();
 ```
 
-{% sample Kotlin %}
+{% endsample %}
+{% sample "Kotlin" %}
 
 ```kotlin title="MyActivity.kt"
 // With a new FlutterEngine.
@@ -484,6 +498,8 @@ val flutterFragment = FlutterFragment.withCachedEngine("my_engine_id")
     .renderMode(FlutterView.RenderMode.texture)
     .build()
 ```
+
+{% endsample %}
 {% endsamplecode %}
 
 Using the configuration shown, the resulting `FlutterFragment`
@@ -521,8 +537,8 @@ for information about controlling the `RenderMode`.
 To enable transparency for a `FlutterFragment`,
 build it with the following configuration:
 
-{% samplecode launch-with-transparency %}
-{% sample Java %}
+{% samplecode "launch-with-transparency", "Java,Kotlin" %}
+{% sample "Java" %}
 
 ```java title="MyActivity.java"
 // Using a new FlutterEngine.
@@ -536,7 +552,8 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
     .build();
 ```
 
-{% sample Kotlin %}
+{% endsample %}
+{% sample "Kotlin" %}
 
 ```kotlin title="MyActivity.kt"
 // Using a new FlutterEngine.
@@ -549,6 +566,8 @@ val flutterFragment = FlutterFragment.withCachedEngine("my_engine_id")
     .transparencyMode(FlutterView.TransparencyMode.transparent)
     .build()
 ```
+
+{% endsample %}
 {% endsamplecode %}
 
 ## The relationship between `FlutterFragment` and its `Activity`
@@ -582,8 +601,8 @@ prevent Flutter from controlling the `Activity`'s system UI,
 use the `shouldAttachEngineToActivity()` method in
 `FlutterFragment`'s `Builder`, as shown:
 
-{% samplecode attach-to-activity %}
-{% sample Java %}
+{% samplecode "attach-to-activity", "Java,Kotlin" %}
+{% sample "Java" %}
 
 ```java title="MyActivity.java"
 // Using a new FlutterEngine.
@@ -597,7 +616,8 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
     .build();
 ```
 
-{% sample Kotlin %}
+{% endsample %}
+{% sample "Kotlin" %}
 
 ```kotlin title="MyActivity.kt"
 // Using a new FlutterEngine.
@@ -610,6 +630,8 @@ val flutterFragment = FlutterFragment.withCachedEngine("my_engine_id")
     .shouldAttachEngineToActivity(false)
     .build()
 ```
+
+{% endsample %}
 {% endsamplecode %}
 
 Passing `false` to the `shouldAttachEngineToActivity()`
