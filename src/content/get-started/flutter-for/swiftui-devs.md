@@ -71,8 +71,6 @@ SwiftUI represents a UI component property as a View modifier.
 By contrast, Flutter uses widgets for both UI components and
 their properties.
 
-{:.include-lang}
-
 ```dart
 Padding(                         // <-- This is a Widget
   padding: EdgeInsets.all(10.0), // <-- So is this
@@ -127,8 +125,6 @@ limit their size to that of its content.
 However, in Flutter parent widgets can offer unbounded constraints.
 Unbounded constraints set their maximum values to infinity.
 
-{:.include-lang}
-
 ```dart
 UnboundedBox(
   child: Container(
@@ -138,8 +134,6 @@ UnboundedBox(
 
 If the child expands and it has unbounded constraints,
 Flutter returns an overflow warning:
-
-{:.include-lang}
 
 ```dart
 UnconstrainedBox(
@@ -299,8 +293,6 @@ the [Widget catalog][].
 
 In **SwiftUI**, you use the `Button` struct to create a button.
 
-{:.include-lang}
-
 ```swift
 Button("Do something") {
   // this closure gets called when your
@@ -348,8 +340,6 @@ Two separate structures allow you to create stacks:
 The following SwiftUI view adds a globe image and
 text to a horizontal stack view:
 
-{:.include-lang}
-
 ```swift
 HStack {
   Image(systemName: "globe")
@@ -394,8 +384,6 @@ The following examples build on those in the previous section.
 In **SwiftUI**, you use `VStack` to arrange the components into a
 vertical pillar.
 
-{:.include-lang}
-
 ```swift
 VStack {
   Image(systemName: "globe")
@@ -435,8 +423,6 @@ of items.
 To display a sequence of model objects, make sure that the user can
 identify your model objects.
 To make an object identifiable, use the `Identifiable` protocol.
-
-{:.include-lang}
 
 ```swift
 struct Person: Identifiable {
@@ -529,8 +515,6 @@ almost any widget that represents your data.
 When constructing non-conditional grids in **SwiftUI**,
 you use `Grid` with `GridRow`.
 
-{:.include-lang}
-
 ```swift
 Grid {
   GridRow {
@@ -608,8 +592,6 @@ components.
 The following example displays a series of `PersonView` instances
 in a scrollable fashion.
 
-{:.include-lang}
-
 ```swift
 ScrollView {
   VStack(alignment: .leading) {
@@ -674,8 +656,6 @@ To learn more, check out [Creating responsive and adaptive apps][].
 
 In **SwiftUI**, you use the `@State` property wrapper to represent the
 internal state of a SwiftUI view.
-
-{:.include-lang}
 
 ```swift
 struct ContentView: View {
@@ -763,8 +743,6 @@ In both frameworks, you specify parameters like `duration`, and `curve`.
 
 In **SwiftUI**, you use the `animate()` modifier to handle implicit
 animation.
-
-{:.include-lang}
 
 ```swift
 Button("Tap me!"){
@@ -907,8 +885,6 @@ In **SwiftUI**, the `NavigationStack` represents this stack of pages.
 The following example creates an app that displays a list of persons.
 To display a person's details in a new navigation link,
 tap on that person.
-
-{:.include-lang}
 
 ```swift
 NavigationStack(path: $path) {
@@ -1060,8 +1036,6 @@ To learn more, check out [Navigation and routing][].
 In **SwiftUI**, you use the `dismiss` environment value to pop-back to
 the previous screen.
 
-{:.include-lang}
-
 ```swift
 Button("Pop back") {
         dismiss()
@@ -1097,8 +1071,6 @@ TextButton(
 
 In **SwiftUI**, you use the `openURL` environment variable to open a
 URL to another application.
-
-{:.include-lang}
 
 ```swift
 @Environment(\.openURL) private var openUrl
@@ -1181,8 +1153,6 @@ In **SwiftUI**, you use modifier functions to style text.
 For example, to change the font of a `Text` string,
 use the `font()` modifier:
 
-{:.include-lang}
-
 ```swift
 Text("Hello, world!")
   .font(.system(size: 30, weight: .heavy))
@@ -1218,8 +1188,6 @@ of the `style` parameter of the `Text` widget.
 ### Styling buttons
 
 In **SwiftUI**, you use modifier functions to style buttons.
-
-{:.include-lang}
 
 ```swift
 Button("Do something") {
@@ -1273,8 +1241,6 @@ child: CupertinoButton(
 In **SwiftUI**, you can use a custom font in your app in two steps.
 First, add the font file to your SwiftUI project. After adding the file,
 use the `.font()` modifier to apply it to your UI components.
-
-{:.include-lang}
 
 ```swift
 Text("Hello")
