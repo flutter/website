@@ -285,6 +285,32 @@ blockquote {
   }
 }
 
+details {
+  margin-bottom: 0.75rem;
+
+  > summary {
+    font-weight: 500;
+    user-select: none;
+
+    &:hover {
+      color: $site-color-primary;
+    }
+  }
+
+  &[open] {
+    margin-bottom: unset;
+
+    > summary {
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  > :not(:first-child) {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+  }
+}
+
 summary {
   margin-bottom: 1rem;
 }
