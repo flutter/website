@@ -1293,7 +1293,7 @@ The equivalent to Android's density buckets are:
 | `ldpi`                    | `0.75x`             |
 | `mdpi`                    | `1.0x`              |
 | `hdpi`                    | `1.5x`              |
- | `xhdpi`                   | `2.0x`              |
+| `xhdpi`                   | `2.0x`              |
 | `xxhdpi`                  | `3.0x`              |
 | `xxxhdpi`                 | `4.0x`              |
 

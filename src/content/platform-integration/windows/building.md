@@ -286,7 +286,7 @@ In addition to that executable, you need the following:
   and the other DLLs, and bundle them together in a zip file.
   The resulting structure looks something like this:
   
-  ```text
+  ```plaintext
   Release
   │   flutter_windows.dll
   │   msvcp140.dll

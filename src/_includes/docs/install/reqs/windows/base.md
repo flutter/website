@@ -23,6 +23,8 @@ minimal hardware requirements.
 | Display resolution in pixels | WXGA (1366 x 768)                                                        | FHD (1920 x 1080)   |
 | Free disk space in GB        | {% include docs/install/reqs/windows/storage.md target=include.target %}
 
+{:.table .table-striped}
+
 </div>
 
 ### Software requirements

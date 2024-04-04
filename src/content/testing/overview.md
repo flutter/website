@@ -27,14 +27,18 @@ to cover all the important use cases. This advice is based on
 the fact that there are trade-offs between different kinds of testing,
 seen below.
 
-|                      | Unit   | Widget | Integration |
+<div class="table-wrapper">
+
+| Tradeoff             | Unit   | Widget | Integration |
 |----------------------|--------|--------|-------------|
 | **Confidence**       | Low    | Higher | Highest     |
 | **Maintenance cost** | Low    | Higher | Highest     |
 | **Dependencies**     | Few    | More   | Most        |
 | **Execution speed**  | Quick  | Quick  | Slow        |
 
-{:.table.table-striped}
+{:.table .table-striped}
+
+</div>
 
 ## Unit tests
 

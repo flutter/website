@@ -31,6 +31,8 @@ minimal hardware requirements.
 | Display resolution in pixels | WXGA (1366 x 768)                                                        | FHD (1920 x 1080)   |
 | Free disk space in GB        | {% include docs/install/reqs/macos/storage.md target=target %}
 
+{:.table .table-striped}
+
 </div>
 
 ### Software requirements

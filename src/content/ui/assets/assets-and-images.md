@@ -135,7 +135,7 @@ asset onto one that most closely matches the current
 For this mapping to work, assets should be arranged
 according to a particular directory structure:
 
-```text
+```plaintext
 .../image.png
 .../Mx/image.png
 .../Nx/image.png
@@ -155,7 +155,7 @@ The main asset is assumed to correspond to a resolution of 1.0.
 For example, consider the following asset layout for an
 image named `my_icon.png`:
 
-```text
+```plaintext
 .../my_icon.png       (mdpi baseline)
 .../1.5x/my_icon.png  (hdpi)
 .../2.0x/my_icon.png  (xhdpi)
@@ -207,7 +207,7 @@ the `package` argument must be provided to [`AssetImage`][].
 For instance, suppose your application depends on a package
 called `my_icons`, which has the following directory structure:
 
-```text
+```plaintext
 .../pubspec.yaml
 .../icons/heart.png
 .../icons/1.5x/heart.png
@@ -239,7 +239,7 @@ the application has to specify which ones to include in its
 `pubspec.yaml`. For instance, a package named `fancy_backgrounds`
 could have the following files:
 
-```text
+```plaintext
 .../lib/backgrounds/background1.png
 .../lib/backgrounds/background2.png
 .../lib/backgrounds/background3.png
@@ -298,7 +298,7 @@ flutter:
 
 This reflects the following structure in your Flutter app.
 
-```text
+```plaintext
 .../pubspec.yaml
 .../icons/heart.png
 ...etc.

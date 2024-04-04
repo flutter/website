@@ -23,6 +23,8 @@ minimal hardware requirements.
 | Display resolution in pixels | WXGA (1366 x 768)                                                        | FHD (1920 x 1080)   |
 | Free disk space in GB        | {% include docs/install/reqs/linux/storage.md target=target %}
 
+{:.table .table-striped}
+
 </div>
 
 {% if os == 'ChromeOS' and target == 'Android' %}

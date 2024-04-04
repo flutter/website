@@ -589,7 +589,7 @@ following `NumberFormat` constructors:
 | `scientificPattern`      | "1E6"              |
 | `simpleCurrency`*        | "$1,200,000"       |
 
-{:.table.table-striped}
+{:.table .table-striped}
 
 </div>
 
@@ -850,7 +850,7 @@ at the command line or refer to the following table:
 | `use-escaping`                      | Specifies whether to enable the use of single quotes as escaping syntax. |
 | `[no-]suppress-warnings`            | When specified, all warnings are suppressed. |
 
-{:.table.table-striped}
+{:.table .table-striped}
 
 </div>
 

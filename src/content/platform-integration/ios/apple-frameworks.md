@@ -72,7 +72,7 @@ should provide details.
 | Index items in Spotlight search                | `CoreSpotlight`                                                                       | [`flutter_core_spotlight`][] |
 | Configure, update and communicate with Widgets | `WidgetKit`                                                                           | [`home_widget`][]            |
 
-{:.table.table-striped.nowrap}
+{:.table .table-striped .nowrap}
 
 [^1]: Supports both Google Play Store on Android and Apple App Store on iOS.
 [^2]: Adds Google Pay payments on Android and Apple Pay payments on iOS.

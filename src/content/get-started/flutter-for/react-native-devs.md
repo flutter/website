@@ -2324,7 +2324,7 @@ in the terminal window, or type the following shortcuts:
 | To save a screenshot to flutter. png| `s` ||
 | To quit| `q` ||
 
-{:.table.table-striped}
+{:.table .table-striped}
 
 </div>
 
@@ -2578,7 +2578,7 @@ and common widget properties.
 |                                                                                         | value [required]                                                                                          | [ double ] The current value of the slider.                                                                                                                                                                           |
 |                                                                                         | onChanged [required]                                                                                      | Called when the user selects a new value for the slider.                                                                                                                                                      |
 
-{:.table.table-striped}
+{:.table .table-striped}
 
 </div>
 

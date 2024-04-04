@@ -75,7 +75,7 @@ launched and running.
 | iOS (launched)           | pushRoute is called                                                 | Path is parsed, and the Navigator is configured with a new set of Pages.                                                                                                                                   |
 | Android (launched)       | pushRoute is called                                                 | Path is parsed, and the Navigator is configured with a new set of Pages.                                                                                                                                   |
 
-{:.table.table-striped}
+{:.table .table-striped}
 
 </div>
 

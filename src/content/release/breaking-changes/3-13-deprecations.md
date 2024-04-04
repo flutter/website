@@ -327,7 +327,8 @@ The `instantiateImageCodec` method of `PaintingBinding`, as well as the `load`
 method of `ImageProvider` and the associated `DecoderCallback` were all
 deprecated in v2.13.
 
-The respective replacements are
+The respective replacements are:
+
 | Deprecated Method                       | Current Method                                    |
 |-----------------------------------------|---------------------------------------------------|
 | `PaintingBinding.instantiateImageCodec` | `PaintingBinding.instantiateImageCodecFromBuffer` |

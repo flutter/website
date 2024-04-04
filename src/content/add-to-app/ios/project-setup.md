@@ -75,7 +75,7 @@ testing the Flutter-only parts of your code.
 The `my_flutter` module directory structure is similar to a
 normal Flutter application:
 
-```text
+```plaintext
 my_flutter/
 ├── .ios/
 │   ├── Runner.xcworkspace
@@ -142,7 +142,7 @@ application and the Flutter module are in sibling
 directories. If you have a different directory structure,
 you might need to adjust the relative paths.
 
-```text
+```plaintext
 some/path/
 ├── my_flutter/
 │   └── .ios/
@@ -252,7 +252,7 @@ frameworks to `some/path/MyApp/Flutter/`.
 flutter build ios-framework --output=some/path/MyApp/Flutter/
 ```
 
-```text
+```plaintext
 some/path/MyApp/
 └── Flutter/
     ├── Debug/
@@ -354,7 +354,7 @@ from the command line in the root of your Flutter module:
 flutter build ios-framework --cocoapods --output=some/path/MyApp/Flutter/
 ```
 
-```text
+```plaintext
 some/path/MyApp/
 └── Flutter/
     ├── Debug/

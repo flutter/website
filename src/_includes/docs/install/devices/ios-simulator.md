@@ -45,12 +45,12 @@ follow this procedure.
    If that appears true on your Mac, change the presented size in the
    **Simulator** app.
 
-    |  **Display Size** |                          **Menu command**                          |     **Keyboard shortcut**     |
+    | **Display Size**  |                          **Menu command**                          |     **Keyboard shortcut**     |
     |:-----------------:|:------------------------------------------------------------------:|:-----------------------------:|
     | Small             | **Window** <span aria-label="and then">></span> **Physical Size**  | <kbd>Cmd</kbd> + <kbd>1</kbd> |
     | Moderate          | **Window** <span aria-label="and then">></span> **Point Accurate** | <kbd>Cmd</kbd> + <kbd>2</kbd> |
     | HD accurate       | **Window** <span aria-label="and then">></span> **Pixel Accurate** | <kbd>Cmd</kbd> + <kbd>3</kbd> |
     | Fit to screen     | **Window** <span aria-label="and then">></span> **Fit Screen**     | <kbd>Cmd</kbd> + <kbd>4</kbd> |
     
-    {:.table.table-striped}
+    {:.table .table-striped}
 

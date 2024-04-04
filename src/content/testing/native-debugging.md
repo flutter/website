@@ -159,7 +159,7 @@ The following screenshot and table explain the purpose of each tool.
 |                               | Debug Console       | Logs or error messages that the Flutter app generates while debugging             |
 |                               | Terminal            | System shell prompt contained in VS Code                                          |
 
-{:.table.table-striped}
+{:.table .table-striped}
 
 </div>
 
@@ -175,7 +175,7 @@ You can step in, out, and over Dart statements, hot reload, or resume the app.
 
 <div class="table-wrapper">
 
-| Icon                                                 | Action                | Default Keyboard Shortcut                             |
+| Icon                                                 | Action                | Default keyboard shortcut                             |
 |------------------------------------------------------|-----------------------|-------------------------------------------------------|
 | {% include docs/vscode-flutter-bar/play.md %}        | Start or Resume       | <kbd>F5</kbd>                                         |
 | {% include docs/vscode-flutter-bar/pause.md %}       | Pause                 | <kbd>F6</kbd>                                         |
@@ -187,7 +187,7 @@ You can step in, out, and over Dart statements, hot reload, or resume the app.
 | {% include docs/vscode-flutter-bar/stop.md %}        | Stop                  | <kbd>Shift</kbd> + <kbd>F5</kbd>                      |
 | {% include docs/vscode-flutter-bar/inspector.md %}   | Open Widget Inspector |                                                       |
 
-{:.table.table-striped}
+{:.table .table-striped}
 
 </div>
 
