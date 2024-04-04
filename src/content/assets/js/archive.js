@@ -164,9 +164,10 @@ function replaceFilenameInCodeElements(archiveFilename) {
 
   codeElements.forEach((codeElement) => {
     // Check if the <code> element itself needs replacement
-    if (codeElement.textContent.includes(FILE_NAME_PREFIX)) {
-      const text = codeElement.textContent;
-      codeElement.textContent = text.replace(
+    const codeElementText = codeElement.textContent;
+    if (codeElementText.includes(FILE_NAME_PREFIX) &&
+        filenameReplacement.test(codeElementText)) {
+      codeElement.textContent = codeElementText.replace(
         filenameReplacement,
         `$1 $2${archiveFilename} $3`
       );
@@ -174,10 +175,10 @@ function replaceFilenameInCodeElements(archiveFilename) {
 
     // Process child nodes as before 
     codeElement.childNodes.forEach((node) => {
+      const nodeText = node.textContent;
       if (node.nodeType === Node.ELEMENT_NODE &&
-        node.textContent.includes(FILE_NAME_PREFIX)) {
-        const text = node.textContent;
-        node.textContent = text.replace(
+          nodeText.includes(FILE_NAME_PREFIX)) {
+        node.textContent = nodeText.replace(
           filenameReplacement,
           `$1 $2${archiveFilename} $3`
         );
