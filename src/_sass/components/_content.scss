@@ -70,8 +70,6 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    margin-top: 0;
-    margin-bottom: 0;
     text-wrap: balance;
   }
 
@@ -80,6 +78,11 @@
     margin-top: 1.5rem;
     margin-bottom: 0.75rem;
     align-items: center;
+
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
 
     .heading-link {
       margin-left: 0.4rem;
