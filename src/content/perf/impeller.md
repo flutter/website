@@ -9,7 +9,7 @@ Impeller provides a new rendering runtime for Flutter.
 The Flutter team's believes this solves Flutter's
 [early-onset jank][] issue.
 Impeller precompiles a [smaller, simpler set of shaders][]
-at Engine build time so they don't compile at runtime.
+at Engine-build time so they don't compile at runtime.
 
 [early-onset jank]: {{site.repo.flutter}}/projects/188
 [smaller, simpler set of shaders]: {{site.repo.flutter}}/issues/77412
@@ -19,7 +19,7 @@ talk from Google I/O 2023.
 
 <iframe width="560" height="315" src="{{site.yt.embed}}/vd5NqS01rlA" title="YouTube video player - Introducing Impeller - Flutter's new rendering engine" {{site.yt.set}}></iframe>
 
-[Introducing Impeller - Flutter's new rendering engine]({{site.yt.watch}}?v=vd5NqS01rlA)
+[Introducing Impeller—Flutter's new rendering engine]({{site.yt.watch}}?v=vd5NqS01rlA)
 
 Impeller has the following objectives:
 
@@ -28,20 +28,20 @@ Impeller has the following objectives:
   It builds all pipeline state objects upfront.
   The engine controls caching and caches explicitly.
 * **Instrumentable**:
-  Impeller tags and labels all graphics resources like textures,
-  and buffers.
+  Impeller tags and labels all graphics resources,
+  such as textures and buffers.
   It can capture and persist animations to disk without affecting
   per-frame rendering performance.
 * **Portable**:
-  Flutter doesn't tie Impeller to a specific client rendering API.
+  Flutter doesn't tie Impeller to a specific client-rendering API.
   You can author shaders once and convert them to backend-specific
-  formats as necessary.
+  formats, as necessary.
 * **Leverages modern graphics APIs**:
   Impeller uses, but doesn't depend on, features available in
   modern APIs like Metal and Vulkan.
 * **Leverages concurrency**:
   Impeller can distribute single-frame workloads across multiple
-  threads if necessary.
+  threads, if necessary.
 
 ## Availability
 
@@ -49,7 +49,7 @@ Where can you use Impeller?
 
 ### iOS
 
-Flutter enables Impeller by default on iOS.
+Flutter **enables Impeller by default** on iOS.
 
 * To _disable_ Impeller on iOS when debugging,
   pass `--no-enable-impeller` to the `flutter run` command.
@@ -69,7 +69,8 @@ Flutter enables Impeller by default on iOS.
 
 The team continues to improve iOS support.
 If you encounter performance or fidelity issues
-with Impeller on iOS, file an issue in the [GitHub tracker][file-issue].
+with Impeller on iOS,
+file an issue in the [GitHub tracker][file-issue].
 Prefix the issue title with `[Impeller]` and
 include a small reproducible test case.
 
@@ -77,9 +78,8 @@ include a small reproducible test case.
 
 ### macOS
 
-Impeller is available for macOS in preview as of
-the Flutter 3.13 stable release.
-It continues to be in preview as of the 3.19 release.
+As of the 3.19 release,
+you can preview Impeller for macOS behind a flag.
 
 To enable Impeller on macOS when debugging,
 pass `--enable-impeller` to the `flutter run` command.
@@ -89,8 +89,8 @@ flutter run --enable-impeller
 ```
 
 To enable Impeller on macOS when deploying your app,
-add the following tags under the top-level `<dict>` tag in your
-app's `Info.plist` file.
+add the following tags under the top-level
+`<dict>` tag in your app's `Info.plist` file.
 
 ```xml
   <key>FLTEnableImpeller</key>
@@ -99,16 +99,15 @@ app's `Info.plist` file.
 
 ### Android
 
-As of Flutter 3.16, Impeller is available behind
-a flag on Android devices that support Vulkan.
-It continues to be in preview as of the 3.19 release.
+Impeller is available behind a flag on Android
+devices that support Vulkan.
 
 :::secondary Does your device support Vulkan?
 You can determine whether your Android device
 supports Vulkan at [checking for Vulkan support][vulkan].
 :::
 
-You can try Impeller on Vulkan-capable Android devices
+You can preview Impeller on Vulkan-capable Android devices
 by passing `--enable-impeller` to `flutter run`:
 
 ```console
@@ -159,7 +158,7 @@ check out the [README.md][] file in the source tree.
 
 [README.md]: {{site.repo.engine}}/blob/main/impeller/README.md
 
-## Additional Information
+## Additional information
 
 * [Frequently asked questions]({{site.repo.engine}}/blob/main/impeller/docs/faq.md)
 * [Impeller's coordinate system]({{site.repo.engine}}/blob/main/impeller/docs/coordinate_system.md)
