@@ -12,6 +12,6 @@ steps:
         npm install
         npm run build-site-for-production
         
-        firebase deploy --project=flutter-docs-pro --only=hosting
+        firebase deploy --project=flutter-docs-prod --only=hosting
 options:
   logging: CLOUD_LOGGING_ONLY
