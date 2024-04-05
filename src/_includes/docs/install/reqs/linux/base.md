@@ -14,13 +14,17 @@ and software requirements.
 Your {{os}} Flutter development environment must meet the following
 minimal hardware requirements.
 
-<div class="table-wrapper" markdown="1">
+<div class="table-wrapper">
+
 |     Requirement              |                                    Minimum                               |    Recommended      |
 |:-----------------------------|:------------------------------------------------------------------------:|:-------------------:|
 | CPU Cores                    | 4                                                                        | 8                   |
 | Memory in GB                 | 8                                                                        | 16                  |
 | Display resolution in pixels | WXGA (1366 x 768)                                                        | FHD (1920 x 1080)   |
 | Free disk space in GB        | {% include docs/install/reqs/linux/storage.md target=target %}
+
+{:.table .table-striped}
+
 </div>
 
 {% if os == 'ChromeOS' and target == 'Android' %}
@@ -37,7 +41,6 @@ you must have the following version of {{os}} and the listed
 software packages.
 
 #### Operating system
-{:.no_toc}
 
 {% if os == 'Linux' %}
 {%- capture supported-os %}
@@ -50,8 +53,7 @@ and Ubuntu Linux {{site.devmin.linux.ubuntu}} or later
 
 Flutter supports {{supported-os}}.
 
-#### Development tools
-{:.no_toc}
+#### Development tools {:.no_toc}
 
 {% include docs/install/reqs/linux/software.md target=target os=os %}
 
@@ -78,11 +80,11 @@ Popular options include:
 * [IntelliJ IDEA][] {{site.appmin.intellij_idea}} or later
   with the [Flutter plugin for IntelliJ][].
 
-{{site.alert.recommend}}
-  The Flutter team recommends installing [Visual Studio Code][vscode]
-  {{site.appmin.vscode}} or later and the [Flutter extension for VS Code][].
-  This combination simplifies installing the Flutter SDK.
-{{site.alert.end}}
+:::recommend
+The Flutter team recommends installing [Visual Studio Code][vscode]
+{{site.appmin.vscode}} or later and the [Flutter extension for VS Code][].
+This combination simplifies installing the Flutter SDK.
+:::
 
 [Android Studio]: https://developer.android.com/studio/install#linux
 [IntelliJ IDEA]: https://www.jetbrains.com/help/idea/installation-guide.html

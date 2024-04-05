@@ -1,7 +1,6 @@
 {% assign terminal=include.terminal %}
 
-### Remove Flutter from your macOS PATH
-{:.no_toc}
+### Remove Flutter from your macOS PATH {:.no_toc}
 
 To remove Flutter commands from {{terminal}},
 remove Flutter to the `PATH` environment variable.
@@ -14,7 +13,7 @@ Zsh uses the `.zshenv` file for [environment variables][envvar].
 
 1. Remove the following line at the end of your `~/.zshenv` file.
 
-   ```conf
+   ```bash
    export PATH=$HOME/development/flutter/bin:$PATH
    ```
 

@@ -7,12 +7,6 @@
 # Covers all web content
 /src/       @sfshaza2 @atsansone @parlough @domesticmouse @MaryaBelanger
 
-# Covers Jekyll plugins
-/src/_plugins/ @khanhnwin @parlough @sfshaza2 @atsansone @domesticmouse @MaryaBelanger
-
-# Covers website styles
-/src/_sass/ @khanhnwin @parlough @sfshaza2 @atsansone @domesticmouse @MaryaBelanger
-
 # Covers website tooling
 /tool/      @sfshaza2 @atsansone @parlough @khanhnwin @domesticmouse @MaryaBelanger
 

@@ -2,8 +2,7 @@
 {% assign target = include.target %}
 {% assign dir = include.dir %}
 
-### Add Flutter to your `PATH`
-{:.no_toc}
+### Add Flutter to your `PATH` {:.no_toc}
 
 To run Flutter commands in {{terminal}},
 add Flutter to the `PATH` environment variable.
@@ -25,10 +24,9 @@ add Flutter to the `PATH` environment variable.
 1. To add Flutter to your `PATH`, expand the entry for your default shell, then
    choose the command.
 
-{% assign shells = site.data.shells %}
 {% for shell in shells %}
 
-   <details markdown="1" {% if shell.name == 'bash' %}open{% endif %}>
+   <details {% if shell.name == 'bash' %}open{% endif %}>
    <summary>Show <tt>{{shell.name}}</tt> command</summary>
 
    ```console

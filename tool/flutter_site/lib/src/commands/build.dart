@@ -2,7 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'dart:io';
+
 import 'package:args/command_runner.dart';
+
+import '../utils.dart';
 
 final class BuildSiteCommand extends Command<int> {
   static const String _releaseFlag = 'release';
@@ -24,7 +28,20 @@ final class BuildSiteCommand extends Command<int> {
 
   @override
   Future<int> run() async {
-    print('TODO: Not yet implemented.');
-    return 0;
+    final productionRelease = argResults.get<bool>(_releaseFlag, false);
+
+    final process = await Process.start(
+      'npx',
+      const ['eleventy'],
+      environment: {
+        'PRODUCTION': '$productionRelease',
+      },
+    );
+
+    await stdout.addStream(process.stdout);
+    await stderr.addStream(process.stderr);
+
+    final processExitCode = await process.exitCode;
+    return processExitCode;
   }
 }

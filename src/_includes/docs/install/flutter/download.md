@@ -1,24 +1,23 @@
 {% assign terminal=include.terminal %}
 
-### Download then install Flutter
-{:.no_toc}
+### Download then install Flutter {:.no_toc}
 
 {% assign os = include.os %}
 {% assign osl = os | downcase | replace: "chromeos","linux" %}
 {% assign target = include.target %}
 {% case os %}
 {% when 'Windows' -%}
-   {% assign unzip='Expand-Archive .\' %}
-   {% assign path='C:\user\{username}\dev' %}
-   {% assign flutter-path='C:\user\{username}\dev\flutter' %}
+   {% assign unzip='Expand-Archive .\\' %}
+   {% assign path='C:\\user\\{username}\\dev' %}
+   {% assign flutter-path='C:\\user\\{username}\\dev\\flutter' %}
    {% assign terminal='PowerShell' %}
    {% assign prompt='C:>' %}
    {% assign prompt2=path | append: '>' %}
-   {% assign diroptions='`%USERPROFILE%` (`C:\Users\{username}`) or `%LOCALAPPDATA%` (`C:\Users\{username}\AppData\Local`)' %}
-   {% assign dirinstall='`%USERPROFILE%\dev\`' %}
-   {% assign dirdl='%USERPROFILE%\Downloads' %}
-   {% assign ps-dir-dl='$env:USERPROFILE\Downloads\' %}
-   {% assign ps-dir-target='$env:USERPROFILE\dev\' %}
+   {% assign diroptions='`%USERPROFILE%` (`C:\\Users\\{username}`) or `%LOCALAPPDATA%` (`C:\\Users\\{username}\\AppData\\Local`)' %}
+   {% assign dirinstall='`%USERPROFILE%\\dev\\`' %}
+   {% assign dirdl='%USERPROFILE%\\Downloads' %}
+   {% assign ps-dir-dl='$env:USERPROFILE\\Downloads\\' %}
+   {% assign ps-dir-target='$env:USERPROFILE\\dev\\' %}
    {% capture uz -%}
    {{prompt}} Expand-Archive `
        –Path {{ps-dir-dl}}flutter_sdk_v1.0.0.zip `
@@ -60,13 +59,13 @@ then extract the SDK.
 
    {% if os=='macOS' %}
 
-   | Intel Processor | | Apple Silicon |
-   |-----------------|-|---------------|
-   | [(loading...)](#){:.download-latest-link-{{osl}}.btn.btn-primary} | | [(loading...)](#){:.download-latest-link-{{osl}}-arm64.apple-silicon.btn.btn-primary} |
+   | Intel Processor                                                     | Apple Silicon                                                                             |
+   |---------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
+   | [(loading...)](#){:.download-latest-link-{{osl}} .btn .btn-primary} | [(loading...)](#){:.download-latest-link-{{osl}}-arm64 .apple-silicon .btn .btn-primary}  |
 
    {% else %}
 
-   [(loading...)](#){:.download-latest-link-{{osl}}.btn.btn-primary}
+   [(loading...)](#){:.download-latest-link-{{osl}} .btn .btn-primary}
 
    {% endif -%}
 

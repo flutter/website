@@ -14,7 +14,7 @@ and software requirements.
 Your {{os}} Flutter development environment must meet the following
 minimal hardware requirements.
 
-<div class="table-wrapper" markdown="1">
+<div class="table-wrapper">
 
 |     Requirement              |                                    Minimum                               |    Recommended      |
 |:-----------------------------|:------------------------------------------------------------------------:|:-------------------:|
@@ -22,6 +22,8 @@ minimal hardware requirements.
 | Memory in GB                 | 8                                                                        | 16                  |
 | Display resolution in pixels | WXGA (1366 x 768)                                                        | FHD (1920 x 1080)   |
 | Free disk space in GB        | {% include docs/install/reqs/windows/storage.md target=include.target %}
+
+{:.table .table-striped}
 
 </div>
 
@@ -67,11 +69,11 @@ Popular options include:
 * [IntelliJ IDEA][] {{site.appmin.intellij_idea}} or later
   with the [Flutter plugin for IntelliJ][].
 
-{{site.alert.recommend}}
-  The Flutter team recommends installing [Visual Studio Code][]
-  {{site.appmin.vscode}} or later and the [Flutter extension for VS Code][].
-  This combination simplifies installing the Flutter SDK.
-{{site.alert.end}}
+:::recommend
+The Flutter team recommends installing [Visual Studio Code][]
+{{site.appmin.vscode}} or later and the [Flutter extension for VS Code][].
+This combination simplifies installing the Flutter SDK.
+:::
 
 [Android Studio]: https://developer.android.com/studio/install
 [IntelliJ IDEA]: https://www.jetbrains.com/help/idea/installation-guide.html

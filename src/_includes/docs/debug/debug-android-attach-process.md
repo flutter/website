@@ -1,10 +1,10 @@
 1. Click the **Attach debugger to Android process** button.
    (![Tiny green bug superimposed with a light grey arrow](/assets/images/docs/testing/debugging/native/android-studio/attach-process-button.png))
 
-    {{site.alert.tip}}
-      If this button doesn't appear in the **Projects** menu bar, verify that
-      you opened Flutter _application_ project but _not a Flutter plugin_.
-    {{site.alert.end}}
+    :::tip
+    If this button doesn't appear in the **Projects** menu bar, verify that
+    you opened Flutter _application_ project but _not a Flutter plugin_.
+    :::
 
 1. The **process** dialog displays one entry for each connected device.
    Select **show all processes** to display available processes for each

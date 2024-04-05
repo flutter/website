@@ -16,12 +16,7 @@ h1 {
 }
 
 h2 {
-  margin: bootstrap.bs-spacer(12) 0 bootstrap.bs-spacer(8);
   clear: both;
-}
-
-h3 {
-  margin: bootstrap.bs-spacer(8) 0 bootstrap.bs-spacer(4);
 }
 
 dd {
@@ -290,13 +285,39 @@ blockquote {
   }
 }
 
+details {
+  margin-bottom: 0.75rem;
+
+  > summary {
+    font-weight: 500;
+    user-select: none;
+
+    &:hover {
+      color: $site-color-primary;
+    }
+  }
+
+  &[open] {
+    margin-bottom: unset;
+
+    > summary {
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  > :not(:first-child) {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+  }
+}
+
 summary {
   margin-bottom: 1rem;
 }
 
 main {
   ol + img, ul + img, ol + p, ul + p, p + p + img,
-  li:not(.toc-entry, .breadcrumb-item):last-child, ul + p:last-child {
+  li:not(.toc-entry, .breadcrumb-item, .nav-item):last-child, ul + p:last-child {
     margin-bottom: 1rem;
   }
 }
