@@ -12,31 +12,7 @@ with a custom initial route can configure their cached
 executing the Dart entrypoint. The following example
 demonstrates the use of an initial route with a cached engine:
 
-{% samplecode "cached-engine-with-initial-route", "Java,Kotlin" %}
-{% sample "Java" %}
-
-```java title="MyApplication.java"
-public class MyApplication extends Application {
-  @Override
-  public void onCreate() {
-    super.onCreate();
-    // Instantiate a FlutterEngine.
-    flutterEngine = new FlutterEngine(this);
-    // Configure an initial route.
-    flutterEngine.getNavigationChannel().setInitialRoute("your/route/here");
-    // Start executing Dart code to pre-warm the FlutterEngine.
-    flutterEngine.getDartExecutor().executeDartEntrypoint(
-      DartEntrypoint.createDefault()
-    );
-    // Cache the FlutterEngine to be used by FlutterActivity or FlutterFragment.
-    FlutterEngineCache
-      .getInstance()
-      .put("my_engine_id", flutterEngine);
-  }
-}
-```
-
-{% endsample %}
+{% samplecode "cached-engine-with-initial-route", "Kotlin,Java" %}
 {% sample "Kotlin" %}
 
 ```kotlin title="MyApplication.kt"
@@ -56,6 +32,30 @@ class MyApplication : Application() {
     FlutterEngineCache
       .getInstance()
       .put("my_engine_id", flutterEngine)
+  }
+}
+```
+
+{% endsample %}
+{% sample "Java" %}
+
+```java title="MyApplication.java"
+public class MyApplication extends Application {
+  @Override
+  public void onCreate() {
+    super.onCreate();
+    // Instantiate a FlutterEngine.
+    flutterEngine = new FlutterEngine(this);
+    // Configure an initial route.
+    flutterEngine.getNavigationChannel().setInitialRoute("your/route/here");
+    // Start executing Dart code to pre-warm the FlutterEngine.
+    flutterEngine.getDartExecutor().executeDartEntrypoint(
+      DartEntrypoint.createDefault()
+    );
+    // Cache the FlutterEngine to be used by FlutterActivity or FlutterFragment.
+    FlutterEngineCache
+      .getInstance()
+      .put("my_engine_id", flutterEngine);
   }
 }
 ```

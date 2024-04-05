@@ -73,7 +73,7 @@ tasks.register("clean", Delete) {
 
 The AGP version is the number that comes at the end of the line 
 `classpath 'com.android.tools.build:gradle:7.3.0'`, so `7.3.0` 
-in this case. Similarly, the kotlin version comes at the end of the line
+in this case. Similarly, the Kotlin version comes at the end of the line
 `ext.kotlin_version = '1.7.10'`, in this case `1.7.10`.
 
 Next, replace the contents of `<app-src>/android/settings.gradle` with the below,

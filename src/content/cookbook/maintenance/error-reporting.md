@@ -83,8 +83,10 @@ Alternatively, you can pass the DSN to Flutter using the `dart-define` tag:
 
 ### What does that give me?
 
-This is all you need for Sentry to capture unhandled errors in Dart and native layers.  
-This includes Swift, Objective-C, C, and C++ on iOS, and Java, Kotlin, C, and C++ on Android.
+This is all you need for Sentry to
+capture unhandled errors in Dart and native layers.  
+This includes Swift, Objective-C, C, and C++ on iOS, and
+Java, Kotlin, C, and C++ on Android.
 
 ## 4. Capture errors programmatically
 

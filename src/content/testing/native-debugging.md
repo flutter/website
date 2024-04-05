@@ -23,7 +23,8 @@ that portion of your code with a native debugger.
 
 - To debug iOS or macOS code written in Swift or Objective-C,
   you can use Xcode.
-- To debug Android code written in Java or Kotlin, you can use Android Studio.
+- To debug Android code written in Java or Kotlin,
+  you can use Android Studio.
 - To debug Windows code written in C++, you can use Visual Studio.
 
 This guide shows you how you can connect _two_

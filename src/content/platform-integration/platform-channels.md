@@ -102,26 +102,7 @@ messages happens automatically when you send and receive values.
 The following table shows how Dart values are received on the
 platform side and vice versa:
 
-{% samplecode "type-mappings", "Java,Kotlin,Obj-C,Swift,C++,C" %}
-{% sample "Java" %}
-
-| Dart                       | Java                |
-| -------------------------- | ------------------- |
-| null                       | null                |
-| bool                       | java.lang.Boolean   |
-| int                        | java.lang.Integer   |
-| int, if 32 bits not enough | java.lang.Long      |
-| double                     | java.lang.Double    |
-| String                     | java.lang.String    |
-| Uint8List                  | byte[]              |
-| Int32List                  | int[]               |
-| Int64List                  | long[]              |
-| Float32List                | float[]             |
-| Float64List                | double[]            |
-| List                       | java.util.ArrayList |
-| Map                        | java.util.HashMap   |
-
-{% endsample %}
+{% samplecode "type-mappings", "Kotlin,Java,Swift,Obj-C,C++,C" %}
 {% sample "Kotlin" %}
 
 | Dart                       | Kotlin      |
@@ -141,23 +122,23 @@ platform side and vice versa:
 | Map                        | HashMap     |
 
 {% endsample %}
-{% sample "Obj-C" %}
+{% sample "Java" %}
 
-| Dart                       | Objective-C                                    |
-| -------------------------- | ---------------------------------------------- |
-| null                       | nil (NSNull when nested)                       |
-| bool                       | NSNumber numberWithBool:                       |
-| int                        | NSNumber numberWithInt:                        |
-| int, if 32 bits not enough | NSNumber numberWithLong:                       |
-| double                     | NSNumber numberWithDouble:                     |
-| String                     | NSString                                       |
-| Uint8List                  | FlutterStandardTypedData typedDataWithBytes:   |
-| Int32List                  | FlutterStandardTypedData typedDataWithInt32:   |
-| Int64List                  | FlutterStandardTypedData typedDataWithInt64:   |
-| Float32List                | FlutterStandardTypedData typedDataWithFloat32: |
-| Float64List                | FlutterStandardTypedData typedDataWithFloat64: |
-| List                       | NSArray                                        |
-| Map                        | NSDictionary                                   |
+| Dart                       | Java                |
+| -------------------------- | ------------------- |
+| null                       | null                |
+| bool                       | java.lang.Boolean   |
+| int                        | java.lang.Integer   |
+| int, if 32 bits not enough | java.lang.Long      |
+| double                     | java.lang.Double    |
+| String                     | java.lang.String    |
+| Uint8List                  | byte[]              |
+| Int32List                  | int[]               |
+| Int64List                  | long[]              |
+| Float32List                | float[]             |
+| Float64List                | double[]            |
+| List                       | java.util.ArrayList |
+| Map                        | java.util.HashMap   |
 
 {% endsample %}
 {% sample "Swift" %}
@@ -177,6 +158,25 @@ platform side and vice versa:
 | Float64List                | FlutterStandardTypedData(float64: Data) |
 | List                       | Array                                   |
 | Map                        | Dictionary                              |
+
+{% endsample %}
+{% sample "Obj-C" %}
+
+| Dart                       | Objective-C                                    |
+| -------------------------- | ---------------------------------------------- |
+| null                       | nil (NSNull when nested)                       |
+| bool                       | NSNumber numberWithBool:                       |
+| int                        | NSNumber numberWithInt:                        |
+| int, if 32 bits not enough | NSNumber numberWithLong:                       |
+| double                     | NSNumber numberWithDouble:                     |
+| String                     | NSString                                       |
+| Uint8List                  | FlutterStandardTypedData typedDataWithBytes:   |
+| Int32List                  | FlutterStandardTypedData typedDataWithInt32:   |
+| Int64List                  | FlutterStandardTypedData typedDataWithInt64:   |
+| Float32List                | FlutterStandardTypedData typedDataWithFloat32: |
+| Float64List                | FlutterStandardTypedData typedDataWithFloat64: |
+| List                       | NSArray                                        |
+| Map                        | NSDictionary                                   |
 
 {% endsample %}
 {% sample "C++" %}
@@ -1254,8 +1254,22 @@ void main() {
 
 In order for a channel's platform side handler to
 execute on a background thread, you must use the
-Task Queue API. Currently this feature is only
+Task Queue API. Currently, this feature is only
 supported on iOS and Android.
+
+In Kotlin:
+
+```kotlin
+override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
+  val taskQueue =
+      flutterPluginBinding.binaryMessenger.makeBackgroundTaskQueue()
+  channel = MethodChannel(flutterPluginBinding.binaryMessenger,
+                          "com.example.foo",
+                          StandardMethodCodec.INSTANCE,
+                          taskQueue)
+  channel.setMethodCallHandler(this)
+}
+```
 
 In Java:
 
@@ -1272,20 +1286,6 @@ public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
           StandardMethodCodec.INSTANCE,
           taskQueue);
   channel.setMethodCallHandler(this);
-}
-```
-
-In Kotlin:
-
-```kotlin
-override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
-  val taskQueue =
-      flutterPluginBinding.binaryMessenger.makeBackgroundTaskQueue()
-  channel = MethodChannel(flutterPluginBinding.binaryMessenger,
-                          "com.example.foo",
-                          StandardMethodCodec.INSTANCE,
-                          taskQueue)
-  channel.setMethodCallHandler(this)
 }
 ```
 
@@ -1339,6 +1339,14 @@ In Android, you can accomplish this by `post()`ing a
 which causes the `Runnable` to execute on the
 main thread at the next opportunity.
 
+In Kotlin:
+
+```kotlin
+Handler(Looper.getMainLooper()).post {
+  // Call the desired channel message here.
+}
+```
+
 In Java:
 
 ```java
@@ -1348,14 +1356,6 @@ new Handler(Looper.getMainLooper()).post(new Runnable() {
     // Call the desired channel message here.
   }
 });
-```
-
-In Kotlin:
-
-```kotlin
-Handler(Looper.getMainLooper()).post {
-  // Call the desired channel message here.
-}
 ```
 
 ### Jumping to the main thread in iOS

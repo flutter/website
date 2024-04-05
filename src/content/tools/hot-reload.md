@@ -58,7 +58,7 @@ and full restart?**
   (`⇧⌘\` in IntelliJ and Android Studio, `⇧⌘F5` in VSCode)
 * **Full restart** restarts the iOS, Android, or web app.
   This takes longer because it also recompiles the
-  Java / Kotlin / ObjC / Swift code. On the web,
+  Java / Kotlin / Objective-C / Swift code. On the web,
   it also restarts the Dart Development Compiler.
   There is no specific keyboard shortcut for this;
   you need to stop and start the run configuration.
