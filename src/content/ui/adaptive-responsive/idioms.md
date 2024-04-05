@@ -30,7 +30,7 @@ significant benefits:
   This often has the added benefit of better app store
   ratings—something we can all appreciate!
 
-### Consider expected behavior on each platform
+## Consider expected behavior on each platform
 
 The first step is to spend some time considering what
 the expected appearance, presentation,
@@ -52,7 +52,7 @@ and the same holds true for macOS, Linux, and Windows.
 These differences might be subtle to you,
 but be painfully obvious to an experienced user.
 
-#### Find a platform advocate
+### Find a platform advocate
 
 If possible, assign someone as an advocate for each platform.
 Ideally, your advocate uses the platform as their primary device,
@@ -77,7 +77,7 @@ on a regular basis.
   with regular builds.
 {{site.alert.end}}
 
-#### Stay unique
+### Stay unique
 
 Conforming to expected behaviors doesn't mean that your app
 needs to use default components or styling.
@@ -90,13 +90,13 @@ the easier development and testing will be.
 The trick is to balance creating a unique experience with a
 strong identity, while respecting the norms of each platform.
 
-### Common idioms and norms to consider
+## Common idioms and norms to consider
 
 Take a quick look at a few specific norms and idioms
 you might want to consider, and how you could approach
 them in Flutter.
 
-#### Scrollbar appearance and behavior
+### Scrollbar appearance and behavior
 
 Desktop and mobile users expect scrollbars,
 but they expect them to behave differently on different platforms.
@@ -127,7 +127,7 @@ return Scrollbar(
 This subtle attention to detail can make your app feel more
 comfortable on a given platform.
 
-#### Multi-select
+### Multi-select
 
 Dealing with multi-select within a list is another area
 with subtle differences across platforms:
@@ -163,7 +163,7 @@ If you have a large list of items of selectable items,
 many of your keyboard users will expect that they can use
 `Control+A` to select all the items.
 
-##### Touch devices
+#### Touch devices
 
 On touch devices, multi-selection is typically simplified,
 with the expected behavior being similar to having the
@@ -177,7 +177,7 @@ on your specific use cases, but the important thing is to
 make sure that you're offering each platform the best
 interaction model possible.
 
-#### Selectable text
+### Selectable text
 
 A common expectation on the web (and to a lesser extent desktop)
 is that most visible text can be selected with the mouse cursor.
@@ -207,7 +207,7 @@ return const SelectableText.rich(
 
 [`SelectableText`]: {{site.api}}/flutter/material/SelectableText-class.html
 
-#### Title bars
+### Title bars
 
 On modern desktop applications, it's common to customize
 the title bar of your app window, adding a logo for
@@ -227,7 +227,7 @@ to different sections of the app.
 
 [`bits_dojo`]: {{site.github}}/bitsdojo/bitsdojo_window
 
-#### Context menus and tooltips
+### Context menus and tooltips
 
 On desktop, there are several interactions that
 manifest as a widget shown in an overlay,
@@ -297,7 +297,7 @@ a feeling that something isn't quite right.
 [`super_tooltip`]: {{site.pub}}/packages/super_tooltip
 [`Tooltip`]: {{site.api}}/flutter/material/Tooltip-class.html
 
-#### Horizontal button order
+### Horizontal button order
 
 On Windows, when presenting a row of buttons,
 the confirmation button is placed at the start of
@@ -336,7 +336,7 @@ return Row(
 
 ![Sample of embedded image](/assets/images/docs/development/ui/layout/embed_image2.png){:width="90%"}
 
-#### Menu bar
+### Menu bar
 
 Another common pattern on desktop apps is the menu bar.
 On Windows and Linux, this menu lives as part of the Chrome title bar,
@@ -356,7 +356,7 @@ If you need both a custom title bar and a menu bar,
 you can achieve that by implementing it in Flutter,
 similar to a custom context menu.
 
-#### Drag and drop
+### Drag and drop
 
 One of the core interactions for both touch-based and
 pointer-based inputs is drag and drop. Although this
