@@ -12,14 +12,13 @@ but can equally apply to any Flutter app.
 Flutter defines [large screens][] as tablets,
 foldables, and ChromeOS devices running Android.
 
-{{site.alert.secondary}}
-  **Why do large screens matter, in particular?**<br>
-  Demand for large screens continues to increase.
-  As of January 2024,
-  more than [270 million active large screen][]
-  and foldable devices run on Android.
-  When your app supports large screens,
-  it also receives the following benefits:
+:::secondary Why do large screens matter, in particular?
+Demand for large screens continues to increase.
+As of January 2024,
+more than [270 million active large screen][]
+and foldable devices run on Android.
+When your app supports large screens,
+it also receives the following benefits:
 
 * Optimizing your app to fill the screen improves
   your app's user engagement metrics.
@@ -27,7 +26,7 @@ foldables, and ChromeOS devices running Android.
   Recent [Play Store updates][] show ratings by
   device type and indicates when an app lacks
   large screen support. 
-{{site.alert.end}}
+:::
 
 [large screens]: {{site.android-dev}}/guide/topics/large-screens/get-started-with-large-screens
 [Play Store updates]: {{site.android-dev}}/2022/03/helping-users-discover-quality-apps-on.html
@@ -92,7 +91,7 @@ but instead of only handling a list of widgets arranged linearly,
 `GridView` can arrange widgets in a two-dimensional array.
 
 `GridView` also has constructors that are similar to `ListView`'s,
-with `ListView`'s default constructor mapping to GridView.count`,
+with `ListView`'s default constructor mapping to `GridView.count`,
 and `ListView.builder` being similar to `GridView.builder`.
 `GridView` also has additional constructors for more custom layouts,
 if you’re interested in finding out more,
@@ -164,22 +163,21 @@ a `Display` object.
 For an example that uses this method,
 check out the [`setPreferredOrientations`][] API.
 
-{{site.alert.secondary}}
-  **A note about `MediaQuery`**<br>
-  Using the [`MediaQuery`][] class to determine
-  the size of the device while also disabling 
-  landscape mode (called _portrait locking_),
-  causes the app's window to lock to the center of
-  the screen while surrounding the window with black.
+:::note A note about `MediaQuery`
+Using the [`MediaQuery`][] class to determine
+the size of the device while also disabling 
+landscape mode (called _portrait locking_),
+causes the app's window to lock to the center of
+the screen while surrounding the window with black.
 
-  This scenario, called [_letterboxing_][],
-  can happen in other situations as well and
-  is undesirable, particularly on larger screens.
-  The [`MediaQuery`][] class doesn't return the
-  proper screen size in split screen mode, and
-  can mistake a large screen for a small screen.
-  Use the `Display` class, instead.
-{{site.alert.end}}
+This scenario, called [_letterboxing_][],
+can happen in other situations as well and
+is undesirable, particularly on larger screens.
+The [`MediaQuery`][] class doesn't return the
+proper screen size in split screen mode, and
+can mistake a large screen for a small screen.
+Use the `Display` class, instead.
+:::
 
 [`Display`]: {{site.api}}/flutter/dart-ui/Display-class.html
 [`FlutterView.display`]: {{site.api}}/flutter/dart-ui/FlutterView/display.html

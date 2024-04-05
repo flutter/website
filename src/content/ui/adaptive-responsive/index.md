@@ -39,12 +39,12 @@ For example, on the current device,
 should the UI use bottom navigation or
 side-panel navigation?
 
-{{site.alert.note}}
-  Often adaptive and responsive concepts are
-  collapsed into a single term. Most often,
-  _adaptive design_ is used to refer to both
-  adaptive and responsive.
-{{site.alert.end}}
+:::note
+Often adaptive and responsive concepts are
+collapsed into a single term. Most often,
+_adaptive design_ is used to refer to both
+adaptive and responsive.
+:::
 
 This section covers various aspects of adaptive and
 responsive design:

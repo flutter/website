@@ -70,12 +70,12 @@ and Linux, but is on the right on Windows.
 Details like that are easy to miss if you aren't using a platform
 on a regular basis.
 
-{{site.alert.secondary}}
-  **Important**: Advocates don't need to be developers or
-  even full-time team members. They can be designers,
-  stakeholders, or external testers that are provided
-  with regular builds.
-{{site.alert.end}}
+:::secondary Important
+Advocates don't need to be developers or
+even full-time team members. They can be designers,
+stakeholders, or external testers that are provided
+with regular builds.
+:::
 
 ### Stay unique
 

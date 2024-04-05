@@ -208,6 +208,7 @@ updating the layout in real time.
 Learn more in the following 5-minute video:
 
 <iframe width="560" height="315" src="{{site.yt-embed}}/HD5gYnspYzk?si=KvEOAYbOn7lAfKmP" title="Learn the difference between adaptive and responsive apps" {{site.yt-set}}></iframe>
+
 [Adaptive vs responsive][]
 
 [Adaptive vs responsive]: {{site.youtube-site}}/watch?v=HD5gYnspYzk
@@ -242,9 +243,11 @@ You might also check out the following episodes
 of The Boring Show:
 
 <iframe style="max-width: 100%" width="560" height="315" src="{{site.yt-embed}}/n6Awpg1MO6M" title="Learn about adaptative layouts on the Boring Show" {{site.yt-set}}></iframe>
+
 [Adaptive layouts][]
 
 <iframe style="max-width: 100%" width="560" height="315" src="{{site.yt-embed}}/eikOZzfc0l4" title="Continue to learn about adaptative layouts on the Boring Show" {{site.yt-set}}></iframe>
+
 [Adaptive layouts, part 2][]
 
 For a great example of an adaptive app,
