@@ -13,13 +13,15 @@ of the Material library and renamed to `WidgetState`.
 
 ## Background
 
-Previously, `MaterialState` provided logic for handling multiple different
-states a widget could have, like "hovered", "focused", and
-"disabled". Because this functionality is useful outside of the
-Material library, namely for the base Widgets layer and Cupertino,
-it was decided to move it outside of Material. As part of the move, and to
-avoid future confusion, the different`MaterialState` classes have been renamed
-to `WidgetState`. The behavior of the two are the same.
+Previously, `MaterialState` provided logic for
+handling multiple different states a widget could have,
+like "hovered", "focused", and "disabled".
+Because this functionality is useful outside the Material library,
+namely for the base Widgets layer and Cupertino,
+it was decided to move it outside of Material.
+As part of the move, and to avoid future confusion,
+the different `MaterialState` classes have been renamed to `WidgetState`.
+The behavior of the two are the same.
 
 | Before                          | Now                           |
 |---------------------------------|-------------------------------|
@@ -97,7 +99,7 @@ BorderSide side = WidgetStateBorderSide.resolveWith((Set<WidgetState> states) {
 ## Timeline
 
 Landed in version: 3.21.0-11.0.pre<br>
-In stable release: not yet
+In stable release: Not yet
 
 ## References
 

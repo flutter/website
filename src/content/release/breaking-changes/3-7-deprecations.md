@@ -486,4 +486,4 @@ Removed in:
 
 ## Timeline
 
-In stable release: TBD
+In stable release: 3.10

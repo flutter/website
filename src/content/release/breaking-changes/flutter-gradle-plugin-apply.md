@@ -1,6 +1,6 @@
 ---
 title: Deprecated imperative apply of Flutter's Gradle plugins
-description: >
+description: >-
   How to migrate your Flutter app's Android Gradle build files to the
   new, declarative format.
 ---
