@@ -8,7 +8,7 @@ create a `.vscode/launch.json` file in your Flutter module project.
 1. Go to **View** <span aria-label="and then">></span> **Run**.
 
    You can also press
-   <kbd>Control</kbd> or <kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>D</kbd>.
+   <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>D</kbd>.
 
    VS Code displays the **Run and Debug** sidebar.
 
@@ -21,7 +21,7 @@ create a `.vscode/launch.json` file in your Flutter module project.
    VS Code creates then opens the `.vscode/launch.json` file.
 
    <details markdown="1">
-   <summary>Open to see an example launch.json file</summary>
+   <summary>Expand to see an example launch.json file</summary>
 
     ```json
     {

@@ -4,7 +4,7 @@ To generate the needed iOS platform dependencies,
 run the `flutter build` command.
 
 ```console
-flutter build ios --config-only --no-codesign --debug
+$ flutter build ios --config-only --no-codesign --debug
 ```
 
 ```console
@@ -37,13 +37,13 @@ If you use VS Code to debug most of your code, start with this section.
 
 ##### Attach to the Flutter process in Xcode
 
-1. To attach to the Flutter app, go to
-   **Debug** <span aria-label="and then">></span>
-   **Attach to Process** <span aria-label="and then">></span>
-   **Runner**.
+To attach to the Flutter app in Xcode:
 
-   **Runner** should be at the top of the **Attach to Process** menu
-   under the **Likely Targets** heading.
+1. Go to **Debug** <span aria-label="and then">></span>
+   **Attach to Process** <span aria-label="and then">></span>
+
+1. Select **Runner**. It should be at the top of the
+   **Attach to Process** menu under the **Likely Targets** heading.
 
 </div>
 
