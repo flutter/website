@@ -555,7 +555,7 @@ such as Windows or macOS.
 Flutter 3.10 set Impeller as the default
 rendering engine on iOS. You can preview
 Impeller on Android behind the `enable-impeller` flag.
-For more information, check out [Impeller rendering engine][].
+For more information, check out [Impeller rendering engine][Impeller].
 :::
 
 ### From user input to the GPU
