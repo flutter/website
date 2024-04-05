@@ -134,6 +134,8 @@
     - title: Adaptive & responsive design
       permalink: /ui/adaptive-responsive
       children:
+        - title: Overview
+          permalink: /ui/adaptive-responsive
         - title: Layout for adaptive apps
           permalink: /ui/adaptive-responsive/layout
         - title: Best practices for adaptive apps
@@ -148,7 +150,6 @@
           permalink: /ui/adaptive-responsive/idioms
         - title: Accessiblity
           permalink: /ui/adaptive-responsive/accessibility
-      
 - title: Design & theming
   permalink: /ui/design
   children:

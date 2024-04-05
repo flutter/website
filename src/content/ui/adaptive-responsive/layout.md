@@ -6,7 +6,7 @@ description: >
 short-title: Layout
 ---
 
-<?code-excerpt path-base="ui/layout/adaptive_app_demos"?>
+<?code-excerpt path-base="ui/adaptive_app_demos"?>
 
 {% comment %}
   TODO(sfshaza): I'm coalescing this page from two previous pages. I'm not done with the text.
@@ -24,42 +24,6 @@ there are several things you might keep in mind.
 This page covers how to take an app build for a
 phone and make it beautiful on a wide range of devices.
 
-### SafeArea
-
-When running your app on the latest devices,
-you might encounter bits of the UI being blocked
-by cutouts on top of the device's screen.
-
-You can fix this with the [`SafeArea`][] widget,
-which insets its child widget to avoid intrusions
-like notches and camera cutouts,
-as well as operating system UI such as the status bar
-on Android, or by rounded corners of the display.
-The `SafeArea` widget allows you to enable or
-disable padding on any of its four sides.
-
-It’s generally recommended to wrap the body of a
-`Scaffold` widget in `SafeArea` as a safe place to start,
-but you don’t always need to put it this high in the
-`Widget` tree.
-
-[xxx PENDING: example code]
-
-For example, if you purposefully want your app to stretch
-under the cutouts, you can move the `SafeArea` to wrap
-whatever content makes sense,
-and let the rest of the app take up the full screen.
-
-[xxx PENDING: example]
-
-Using `SafeArea` ensures that your app content won’t be
-cut off by physical display features or operating system UI
-and sets your app up for success even as new devices with
-different shapes and styles of cutouts enter the market.
-
-[`SafeArea`]: {{site.api}}/flutter/widgets/SafeArea-class.html
-
-{% comment %}
 ## Two approaches
 
 There are at least two ways you can create a
@@ -79,8 +43,6 @@ For either approach, you need to determine
 the sizes (called _breakpoints_) where you
 want your UI to change its layout,
 as described in the next section.
-
-{% endcomment %}
 
 ### Screen-based breakpoints
 
@@ -296,7 +258,6 @@ Learn more on the [gskinner blog][].
 
 [Adaptive layouts]: {{yt-watch}}?v=n6Awpg1MO6M&t=694s
 [Adaptive layouts, part 2]: {{yt-watch}}?v=eikOZzfc0l4&t=11s
-[Building adaptive apps]: /ui/layout/responsive/building-adaptive-apps
 [Folio source code]: {{site.github}}/gskinnerTeam/flutter-folio
 [gskinner blog]: https://blog.gskinner.com/
 
@@ -508,7 +469,7 @@ while the app is running to preview various screen sizes.
 This, combined with hot reload, can greatly accelerate the
 development of a responsive UI.
 
-![Adaptive scaffold 2](/assets/images/docs/development/ui/layout/adaptive_scaffold2.gif){:width="100%"}
+![Adaptive scaffold 2](/assets/images/docs/ui/adaptive_scaffold2.gif){:width="100%"}
 
 ### Solve touch first
 

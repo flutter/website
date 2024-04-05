@@ -6,7 +6,7 @@ description: >
 short-title: Idioms
 ---
 
-<?code-excerpt path-base="ui/layout/adaptive_app_demos"?>
+<?code-excerpt path-base="ui/adaptive_app_demos"?>
 
 The final area to consider for adaptive apps is platform standards.
 Each platform has its own idioms and norms;
@@ -214,7 +214,7 @@ the title bar of your app window, adding a logo for
 stronger branding or contextual controls to help save
 vertical space in your main UI.
 
-![Samples of title bars](/assets/images/docs/development/ui/layout/titlebar.png){:width="100%"}
+![Samples of title bars](/assets/images/docs/ui/titlebar.png){:width="100%"}
 
 This isn't supported directly in Flutter, but you can use the
 [`bits_dojo`][] package to disable the native title bars,
@@ -332,9 +332,9 @@ return Row(
 );
 ```
 
-![Sample of embedded image](/assets/images/docs/development/ui/layout/embed_image1.png){:width="75%"}
+![Sample of embedded image](/assets/images/docs/ui/embed_image1.png){:width="75%"}
 
-![Sample of embedded image](/assets/images/docs/development/ui/layout/embed_image2.png){:width="90%"}
+![Sample of embedded image](/assets/images/docs/ui/embed_image2.png){:width="90%"}
 
 ### Menu bar
 

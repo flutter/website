@@ -5,7 +5,7 @@ description: >
 short-title: Accessibility
 ---
 
-<?code-excerpt path-base="ui/layout/adaptive_app_demos"?>
+<?code-excerpt path-base="ui/adaptive_app_demos"?>
 
 Aside from standard advice on creating an
 [accessible app][], there are some special
@@ -33,7 +33,7 @@ negative or positive value that you want.
 By switching between different
 densities, you can easily adjust your UI.
 
-![Adaptive scaffold](/assets/images/docs/development/ui/layout/adaptive_scaffold.gif){:width="100%"}
+![Adaptive scaffold](/assets/images/docs/ui/adaptive_scaffold.gif){:width="100%"}
 
 To set a custom visual density,
 inject the density into your `MaterialApp` theme:

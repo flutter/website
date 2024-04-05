@@ -4,7 +4,7 @@ description: >
   xxx
 ---
 
-<?code-excerpt path-base="ui/layout/adaptive_app_demos"?>
+<?code-excerpt path-base="ui/adaptive_app_demos"?>
 
 ## Handling input
 

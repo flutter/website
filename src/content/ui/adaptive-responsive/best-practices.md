@@ -32,12 +32,77 @@ foldables, and ChromeOS devices running Android.
 [large screens]: {{site.android-dev}}/guide/topics/large-screens/get-started-with-large-screens
 [Play Store updates]: {{site.android-dev}}/2022/03/helping-users-discover-quality-apps-on.html
 
-## Best practices
-
 These best practices cover responsive _and_
 adaptive app design.
 
-### Save app state
+## SafeArea
+
+When running your app on the latest devices,
+you might encounter bits of the UI being blocked
+by cutouts on top of the device's screen.
+
+You can fix this with the [`SafeArea`][] widget,
+which insets its child widget to avoid intrusions
+(like notches and camera cutouts),
+as well as operating system UI (such as the status bar
+on Android, or by rounded corners of the display).
+The `SafeArea` widget allows you to enable or
+disable padding on any of its four sides.
+
+It’s generally recommended to wrap the body of a
+`Scaffold` widget in `SafeArea` as a safe place to start,
+but you don’t always need to put it this high in the
+`Widget` tree.
+
+[xxx PENDING: example code]
+
+For example, if you purposefully want your app to stretch
+under the cutouts, you can move the `SafeArea` to wrap
+whatever content makes sense,
+and let the rest of the app take up the full screen.
+
+[xxx PENDING: example]
+
+Using `SafeArea` ensures that your app content won’t be
+cut off by physical display features or operating system UI
+and sets your app up for success even as new devices with
+different shapes and styles of cutouts enter the market.
+
+[`SafeArea`]: {{site.api}}/flutter/widgets/SafeArea-class.html
+
+## Don't gobble up all horizontal space
+
+If viewing your mobile app on a large screen device,
+you might notice that either a box or some text might
+take up all the horizontal space.
+
+This is _not_ recommended by the Android Large Screen App
+Quality Guidelines.
+There are a couple ways you can solve this.
+
+You can use the `GridView` widget to transform your
+existing `ListView` into more reasonably sized items,
+or you can use the `maxWidth` property of `BoxConstraints`
+to not have the list go edge-to-edge.
+
+### GridView
+
+The `GridView` widget is very similar to the `ListView` widget,
+but instead of only handling a list of widgets arranged linearly,
+`GridView` can arrange widgets in a two-dimensional array.
+
+`GridView` also has constructors that are similar to `ListView`'s,
+with `ListView`'s default constructor mapping to GridView.count`,
+and `ListView.builder` being similar to `GridView.builder`.
+`GridView` also has additional constructors for more custom layouts,
+if you’re interested in finding out more,
+check out the [`GridView`][] API page.
+
+[`GridView`]: {{site.api}}/flutter/widgets/GridView-class.html
+
+[xxx PENDING] Not finished yet.
+
+## Save app state
 
 Apps should retain or restore [app state][]
 as the device rotates, changes window size,
@@ -58,7 +123,7 @@ device changes position.
 
 [app state]: {{site.android-dev}}/jetpack/compose/state#store-state
 
-### Restore List state
+## Restore List state
 
 To maintain the scroll position in a list
 that doesn't change its layout when the
@@ -72,10 +137,6 @@ in the [app code for the Wonderous app][],
 where it stores the list's state in the
 `SingleChildScrollView` widget.
 
-[FYI: I'd like to mostly avoid speaking specifically
-about the Wonderous app, though
-linking to example code is OK.]
-
 If the `List` widget changes its layout
 when the device's orientation changes,
 you might have to do a bit of math ([example][])
@@ -85,7 +146,7 @@ to change the scroll position on screen rotation.
 [example]: {{site.github}}/gskinnerTeam/flutter-wonderous-app/blob/34e49a08084fbbe69ed67be948ab00ef23819313/lib/ui/screens/collection/widgets/_collection_list.dart#L39
 [`PageStorageKey`]: {{site.api}}/flutter/widgets/PageStorageKey-class.html
 
-### Support multi-window mode
+## Support multi-window mode
 
 Use the [`Display`][] class, which
 supports Android's [window size classes][],
@@ -127,7 +188,7 @@ check out the [`setPreferredOrientations`][] API.
 [`setPreferredOrientations`]: {{site.api}}/flutter/services/SystemChrome/setPreferredOrientations.html
 [window size classes]: {{site.android-dev}}/guide/topics/large-screens/support-different-screen-sizes#window_size_classes
 
-### Support a variety of input devices
+## Support a variety of input devices
 
 Apps should support basic mice, trackpads,
 and keyboard shortcuts. The most common user
@@ -136,7 +197,7 @@ to ensure accessibility. In particular,
 your app must provide accessible best practices
 for keyboards on large devices.
 
-### Implement focus state for custom widgets
+## Implement focus state for custom widgets
 
 Flutter’s Material buttons handle basic
 focus states, unless you change the
