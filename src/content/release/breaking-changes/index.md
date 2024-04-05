@@ -41,6 +41,7 @@ release, and listed in alphabetical order:
 * [Nullable PageView.controller][]
 * [Deprecate `ButtonBar` in favor of `OverflowBar`][]
 * [Deprecated API removed after v3.19][]
+* [Dropping support for Android KitKat][]
 
 [Rename `MaterialState` to `WidgetState`]: /release/breaking-changes/material-state
 [Introduce new `ColorScheme` roles]: /release/breaking-changes/new-color-scheme-roles
@@ -50,6 +51,7 @@ release, and listed in alphabetical order:
 [Nullable PageView.controller]: /release/breaking-changes/pageview-controller
 [Deprecate `ButtonBar` in favor of `OverflowBar`]: /release/breaking-changes/deprecate-buttonbar
 [Deprecated API removed after v3.19]: /release/breaking-changes/3-19-deprecations
+[Dropping support for Android KitKat]: /release/breaking-changes/android-kitkat-deprecation
 
 <a id="released-in-flutter-3-19"></a>
 ### Released in Flutter 3.19
