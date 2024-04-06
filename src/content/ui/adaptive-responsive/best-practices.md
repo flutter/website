@@ -15,7 +15,7 @@ foldables, and ChromeOS devices running Android.
 :::secondary Why do large screens matter, in particular?
 Demand for large screens continues to increase.
 As of January 2024,
-more than [270 million active large screen][]
+more than [270 million active large screen][large screens]
 and foldable devices run on Android.
 When your app supports large screens,
 it also receives the following benefits:
@@ -108,8 +108,7 @@ as the device rotates, changes window size,
 or folds and unfolds. 
 By default, Flutter should maintain state.
 
-[xxx PENDING: How SHOULD they save app state? Does [this page][] apply to this situation?]
-[this page]: /platform-integration/android/restore-state-android
+[xxx PENDING: How SHOULD they save app state? Does [this page](/platform-integration/android/restore-state-android) apply to this situation?]
 
 If your app loses state during device configuration,
 verify that the plugins and native extensions
