@@ -62,7 +62,7 @@ export default function (eleventyConfig) {
 
     const tabs = tabsString.split(',').map((tab) => tab.trim());
     tabs.forEach((tabName) => {
-      const tabId = `${_currentTabsTitle}-${tabName.toLowerCase()}`;
+      const tabId = `${_currentTabsTitle}-${tabName.toLowerCase().replaceAll("+", "-plus")}`;
       tabMarkup += `<li class="nav-item">
   <a class="nav-link ${activeTab ? "active" : ""}" id="${tabId}-tab" href="#${tabId}" role="tab" aria-controls="${tabId}" aria-selected="true">${tabName}</a>
 </li>`;
@@ -79,7 +79,7 @@ export default function (eleventyConfig) {
   });
 
   eleventyConfig.addPairedShortcode('sample', function(content, tabName) {
-    const tabId = `${_currentTabsTitle}-${tabName.toLowerCase()}`;
+    const tabId = `${_currentTabsTitle}-${tabName.toLowerCase().replaceAll("+", "-plus")}`;
     const tabContent = `<div class="tab-pane ${_currentTabIsActive ? "active" : ""}" id="${tabId}" role="tabpanel" aria-labelledby="${tabId}-tab">
 
 ${content}
