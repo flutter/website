@@ -9,38 +9,52 @@ description: >-
 
 ## Summary
 
-New color roles in `ColorScheme` include seven tone-based surfaces and
-containers, and twelve accent colors for primary, secondary, and tertiary groups.
-This update deprecates three existing color roles: `background`, `onBackground`,
-and `surfaceVariant`. The `ColorScheme` constructed by the updated 
-`ColorScheme.fromSeed` method now generates different values compared to the 
-previous version, adapting to Material Design 3's guidelines.
+New color roles in `ColorScheme` include
+seven tone-based surfaces and containers, and twelve accent colors for
+primary, secondary, and tertiary groups.
+This update deprecates three existing color roles:
+`background`, `onBackground`, and `surfaceVariant`.
+The `ColorScheme` constructed by the updated `ColorScheme.fromSeed` method now
+generates different values compared to the previous version,
+adapting to the Material Design 3 guidelines.
 
 ## Background
 
-The tone-based surface colors include: `surfaceBright`, `surfaceDim`,
-`surfaceContainer`, `surfaceContainerLow`, `surfaceContainerLowest`,
-`surfaceContainerHigh`, and `surfaceContainerHighest`. These changes help 
-eliminate the use of widgets' `surfaceTintColor`, and replace the old 
-opacity-based model which applied a tinted overlay on top of surfaces based 
-on their elevation.  
+The tone-based surface colors include: 
 
-The default `surfaceTintColor` for all widgets is now null and their default
-background color is now based on the new tone-based surface colors.
+- `surfaceBright`
+- `surfaceDim`,
+- `surfaceContainer`
+- `surfaceContainerLow`
+- `surfaceContainerLowest`
+- `surfaceContainerHigh`
+- `surfaceContainerHighest`
 
-`ColorScheme.fromSeed` has also been updated to use the latest algorithm from
-the Material color utilities package. This change prevents the constructed 
-`ColorScheme` from being too bright, even if the source color looks bright and
+These changes help eliminate the use of widgets' `surfaceTintColor`, and
+replaces the old opacity-based model that applied a tinted overlay
+on top of surfaces based on their elevation.  
+
+The default `surfaceTintColor` for all widgets is now `null` and
+their default background color is now
+based on the new tone-based surface colors.
+
+`ColorScheme.fromSeed` has also been updated to use the latest algorithm
+from the [Material color utilities][] package.
+This change prevents the constructed `ColorScheme` from being too bright,
+even if the source color looks bright and
 had a high chroma (contained little black, white, and shades of grey).
+
+[Material color utilities]: {{site.pub-pkg}}/material_color_utilities
 
 ## Migration guide
 
-The differences caused by the updated `ColorScheme.fromSeed` and the new color
-roles should be small and acceptable. However, when providing a brighter
-seed color to `ColorScheme.fromSeed`, it might construct a relatively darker
-version of `ColorScheme`. To force the output to still be bright, set 
-`schemeVariant: FromSeedVariant.fidelity` in `ColorScheme.fromSeed`. For 
-example:
+The differences caused by the updated `ColorScheme.fromSeed` and
+the new color roles should be small and acceptable.
+However, when providing a brighter seed color to `ColorScheme.fromSeed`,
+it might construct a relatively darker version of `ColorScheme`.
+To force the output to still be bright,
+set `schemeVariant: FromSeedVariant.fidelity` in `ColorScheme.fromSeed`.
+For example:
 
 Code before migration:
 
@@ -59,10 +73,12 @@ ColorScheme.fromSeed(
 )
 ```
 
-The Material Design 3 removes 3 colors. To configure the appearance of the
-material components, the `background` should be replaced with `surface`;
-`onBackground` should be replaced with `onSurface`; `surfaceVariant` should be
-migrated to `surfaceContainerHighest`.
+Material Design 3 removes 3 colors.
+
+To configure the appearance of the material components,
+`background` should be replaced with `surface`,
+`onBackground` should be replaced with `onSurface`, and
+`surfaceVariant` should be migrated to `surfaceContainerHighest`.
 
 Code before migration:
 
@@ -99,7 +115,7 @@ MaterialApp(
 ```
 
 Custom components that used to look up `ColorScheme.background`,
-`ColorScheme.onBackground`, and `ColorScheme.surfaceVariant` can look up the
+`ColorScheme.onBackground`, and `ColorScheme.surfaceVariant` can look up
 `ColorScheme.surface`, `ColorScheme.onSurface` and
 `ColorScheme.surfaceContainerHighest` instead.
 
@@ -122,7 +138,7 @@ Color myColor3 = Theme.of(context).colorScheme.surfaceContainerHighest;
 ## Timeline
 
 Landed in version: 3.21.0-4.0.pre<br>
-In stable release: not yet
+In stable release: Not yet
 
 ## References
 

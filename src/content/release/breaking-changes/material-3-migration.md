@@ -64,10 +64,11 @@ Changes to Flutter Material 3 include a new background color.
 Some widgets use different colors.
 
 To return your app's UI to its previous behavior (which we don't recommend):
+
 * Set `Colors.grey[50]!` to `ColorScheme.background`
-   (when the theme is `Brightness.light`).
+  (when the theme is `Brightness.light`).
 * Set  `Colors.grey[850]!`to `ColorScheme.background`
-   (when the theme is `Brightness.dark`).
+  (when the theme is `Brightness.dark`).
 
 Code before migration:
 
@@ -314,7 +315,8 @@ NavigationDrawer(
 ),
 ```
 
-Check out the complete sample on [migrating from `Drawer` to `NavigationDrawer`][].
+Check out the complete sample on
+[migrating from `Drawer` to `NavigationDrawer`][].
 
 Material 3 introduces medium and large app bars that display a larger headline
 before scrolling. Instead of a drop shadow, `ColorScheme.surfaceTint` color

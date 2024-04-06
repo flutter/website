@@ -6,15 +6,16 @@ description: >-
 
 ## Summary
 
-Flutter apps currently include an asset file named AssetManifest.json. This file
-effectively contains a list of assets. Application code can read it using the
-[AssetBundle][] API to determine what assets are available at runtime.
+Flutter apps currently include an asset file named `AssetManifest.json`.
+This file effectively contains a list of assets.
+Application code can read it using the [`AssetBundle`][] API to
+determine what assets are available at runtime.
 
-The AssetManifest.json file is an undocumented implementation detail.
+The `AssetManifest.json` file is an undocumented implementation detail.
 It's no longer used by the framework, so it will no longer be
-generated in a future release.
+generated in a future release of Flutter.
 If your application code needs to get a list of available assets, use
-the [AssetManifest][] API instead.
+the [`AssetManifest`][] API instead.
 
 ## Migration guide
 
@@ -43,12 +44,13 @@ final List<String> assets = assetManifest.listAssets();
 
 ### Reading asset manifest information from Dart code outside of a Flutter app
 
-The `flutter` CLI tool generates a new file, AssetManifest.bin.
-This replaces AssetManifest.json.
-This file contains the same information of AssetManifest.json, but in a different format.
-If you need to be able to read this file from code that is not part of a
-Flutter app(and therefore cannot use the [AssetManifest][] API), you can
-still parse the file yourself.
+The `flutter` CLI tool generates a new file, `AssetManifest.bin`.
+This replaces `AssetManifest.json`.
+This file contains the same information as `AssetManifest.json`,
+but in a different format.
+If you need to read this file from code that is not part of a
+Flutter app, and therefore can't use the [`AssetManifest`][] API,
+you can still parse the file yourself.
 
 The [standard_message_codec][] package can be used to parse the contents.
 
@@ -68,22 +70,23 @@ void main() {
 }
 ```
 
-Keep in mind that AssetManifest.bin is an implementation detail of Flutter.
+Keep in mind that `AssetManifest.bin` is an implementation detail of Flutter.
 Reading this file is not an officially supported workflow. The contents or
 format of the file may change in a future release without announcement.
 
 ## Timeline
 
-AssetManifest.json will no longer be generated starting with the fourth stable
-release after 3.19 or one year after the release of 3.19, whichever comes last.
+`AssetManifest.json` will no longer be generated starting with the fourth stable
+release after 3.19 or one year after the release of 3.19, whichever comes later.
 
 ## References
 
 Relevant issues:
 
-* When building a Flutter app, the flutter tool generates an AssetManifest.json file that is unused by the framework [(Issue #143577)][]
+* When building a Flutter app, the flutter tool generates an
+  AssetManifest.json file that is unused by the framework [(Issue #143577)][]
 
-[AssetBundle]: {{site.api}}/flutter/services/AssetBundle-class.html
-[AssetManifest]: {{site.api}}/flutter/services/AssetManifest-class.html
+[`AssetBundle`]: {{site.api}}/flutter/services/AssetBundle-class.html
+[`AssetManifest`]: {{site.api}}/flutter/services/AssetManifest-class.html
 [(Issue #143577)]: {{site.repo.flutter}}/issues/143577
-[standard_message_codec]: {{site.pub}}/packages/standard_message_codec
+[standard_message_codec]: {{site.pub-pkg}}/standard_message_codec
