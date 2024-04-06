@@ -472,7 +472,7 @@ while the app is running to preview various screen sizes.
 This, combined with hot reload, can greatly accelerate the
 development of a responsive UI.
 
-![Adaptive scaffold 2](/assets/images/docs/ui/adaptive_scaffold2.gif){:width="100%"}
+![Adaptive scaffold 2](/assets/images/docs/ui/adaptive-responsive/adaptive_scaffold2.gif){:width="100%"}
 
 ### Solve touch first
 
