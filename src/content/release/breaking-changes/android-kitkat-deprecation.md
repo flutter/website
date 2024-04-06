@@ -1,27 +1,29 @@
 ---
 title: Dropping support for Android KitKat
-description: >
-  Raising the minimum supported Android version from KitKat (API 19) to Lollipop (API 21).
+description: >-
+  Flutter is raising the minimum supported Android version from
+  KitKat (API 19) to Lollipop (API 21).
 ---
 
 ## Summary
 
-We have raised Flutter's minimum supported Android version to Lollipop (API 21).
-Beginning with Flutter's 3.22 stable release, Flutter will no longer work on devices
-running Andoird KitKat (API 19).
+Flutter's minimum supported Android version is now Lollipop (API 21).
+Beginning with Flutter's 3.22 stable release,
+Flutter will no longer work on devices running Android KitKat (API 19).
 
 ## Context
 
-The context, purpose, and description of this deprecation are detailed in the
-document [go/rfc-android-k-deprecation][].
+The context, purpose, and description of this deprecation can be found in
+the [go/rfc-android-k-deprecation][] design document.
 
 ## Migration guide
 
-Flutter develoers targeting Android will need to increase the `minSdkVersion`
-in their `AndroidManifest.xml` files from `19` to `21`.
+Flutter developers targeting Android will need to increase the
+`minSdkVersion` in their `build.gradle` and `AndroidManifest.xml` files
+from `19` to at least `21`.
 
 ## Timeline
 
 In stable release: 3.22
 
-[go/rfc-android-k-deprecation]: {{site.api}}/go/rfc-android-k-deprecation
+[go/rfc-android-k-deprecation]: {{site.main-url}}/go/rfc-android-k-deprecation

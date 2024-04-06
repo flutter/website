@@ -146,7 +146,7 @@ class _MyShortcutManager extends ShortcutManager {
 ## Timeline
 
 Landed in version: 3.17.0-5.0.pre<br>
-In stable release: not yet (Not in 3.17)
+In stable release: 3.19.0
 
 ## References
 
@@ -163,11 +163,11 @@ Relevant issues:
 
 Relevant PRs:
 
-* [Prepare ShortcutActivator and ShortcutManager to migrate to KeyEvent from RawKeyEvent.][]
+* [Prepare ShortcutActivator and ShortcutManager to migrate to KeyEvent from RawKeyEvent][]
 
 [`KeyEvent`]: {{site.api}}/flutter/services/KeyEvent-class.html
 [`HardwareKeyboard`]: {{site.api}}/flutter/services/HardwareKeyboard-class.html
 [`ShortcutActivator`]: {{site.api}}/flutter/widgets/ShortcutActivator-class.html
 [`ShortcutManager`]: {{site.api}}/flutter/widgets/ShortcutManager-class.html
 [`RawKeyEvent` and `RawKeyboard`, et al should be deprecated and removed (Issue 136419)]: {{site.repo.flutter}}/issues/136419
-[Prepare ShortcutActivator and ShortcutManager to migrate to KeyEvent from RawKeyEvent.]: {{site.repo.flutter}}/pull/136854
+[Prepare ShortcutActivator and ShortcutManager to migrate to KeyEvent from RawKeyEvent]: {{site.repo.flutter}}/pull/136854

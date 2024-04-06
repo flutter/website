@@ -136,7 +136,7 @@ Code after migration:
 {% endcomment %}
 
 Landed in version: xxx<br>
-In stable release: not yet
+In stable release: Not yet
 Reverted in version: xxx  (OPTIONAL, delete if not used)
 
 ## References

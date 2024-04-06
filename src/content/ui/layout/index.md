@@ -395,6 +395,7 @@ space evenly between, before, and after each image.
 
 <div class="row">
 <div class="col-lg-8">
+
   <?code-excerpt "layout/row_column/lib/main.dart (Row)" replace="/Row/[!$&!]/g"?>
   ```dart
   [!Row!](
@@ -406,6 +407,7 @@ space evenly between, before, and after each image.
     ],
   );
   ```
+
 </div>
 <div class="col-lg-4">
   <img src='/assets/images/docs/ui/layout/row-spaceevenly-visual.png' class="mw-100" alt="Row with 3 evenly spaced images">
@@ -436,6 +438,7 @@ space evenly between, above, and below each image.
   ```
 
   **App source:** [row_column]({{examples}}/layout/row_column)
+
 </div>
 <div class="col-lg-4 text-center">
   <img src='/assets/images/docs/ui/layout/column-visual.png' class="mb-4" height="250px"
@@ -458,6 +461,7 @@ wrap each image with an `Expanded` widget.
 
 <div class="row">
 <div class="col-lg-8">
+
   <?code-excerpt "layout/sizing/lib/main.dart (expanded-images)" replace="/Expanded/[!$&!]/g"?>
   ```dart
   Row(
@@ -475,6 +479,7 @@ wrap each image with an `Expanded` widget.
     ],
   );
   ```
+
 </div>
 <div class="col-lg-4">
   <img src='/assets/images/docs/ui/layout/row-expanded-2-visual.png' class="mw-100"
@@ -492,6 +497,7 @@ the flex factor of the middle image to 2:
 
 <div class="row">
 <div class="col-lg-8">
+
   <?code-excerpt "layout/sizing/lib/main.dart (expanded-images-with-flex)" replace="/flex.*/[!$&!]/g"?>
   ```dart
   Row(
@@ -510,6 +516,7 @@ the flex factor of the middle image to 2:
     ],
   );
   ```
+
 </div>
 <div class="col-lg-4">
   <img src='/assets/images/docs/ui/layout/row-expanded-visual.png' class="mw-100"
@@ -530,6 +537,7 @@ uses this property to pack the star icons together.
 
 <div class="row">
 <div class="col-lg-8">
+
   <?code-excerpt "layout/pavlova/lib/main.dart (stars)" replace="/mainAxisSize.*/[!$&!]/g; /\w+ \w+ = //g; /;//g"?>
   ```dart
   Row(
@@ -543,6 +551,7 @@ uses this property to pack the star icons together.
     ],
   )
   ```
+
 </div>
 <div class="col-lg-4">
   <img src='/assets/images/docs/ui/layout/packed.png' class="border mw-100"
@@ -801,6 +810,7 @@ of the column to a lighter grey.
 
 <div class="row">
 <div class="col-lg-7">
+
   <?code-excerpt "layout/container/lib/main.dart (column)" replace="/\bContainer/[!$&!]/g;"?>
   ```dart
   Widget _buildImageColumn() {
@@ -817,6 +827,7 @@ of the column to a lighter grey.
     );
   }
   ```
+
 </div>
 <div class="col-lg-5 text-center">
   <img src='/assets/images/docs/ui/layout/container.png' class="mb-4 mw-100" width="230px"
@@ -1244,23 +1255,23 @@ focuses on a widget. Several of them includes layout widgets.
 
 The following resources might help when writing layout code.
 
-* [Layout tutorial][]
+[Layout tutorial][]
 : Learn how to build a layout.
 
-* [Widget catalog][]
+[Widget catalog][]
 : Describes many of the widgets available in Flutter.
 
-* [HTML/CSS Analogs in Flutter][]
+[HTML/CSS Analogs in Flutter][]
 : For those familiar with web programming,
   this page maps HTML/CSS functionality to Flutter features.
 
-* [API reference docs][]
+[API reference docs][]
 : Reference documentation for all of the Flutter libraries.
 
-* [Adding assets and images][]
+[Adding assets and images][]
 : Explains how to add images and other assets to your app's package.
 
-* [Zero to One with Flutter][]
+[Zero to One with Flutter][]
 : One person's experience writing his first Flutter app.
 
 [Cupertino library]: {{api}}/cupertino/cupertino-library.html

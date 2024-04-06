@@ -61,7 +61,7 @@ class _MyWidgetState extends State<MyWidget> {
 ## Timeline
 
 Landed in version: Reverted, waiting to reland<br>
-In stable release: not yet
+In stable release: Not yet
 
 ## References
 

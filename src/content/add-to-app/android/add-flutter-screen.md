@@ -55,7 +55,18 @@ import io.flutter.embedding.android.FlutterActivity;
 ```
 :::
 
-{% samplecode "default-activity-launch", "Java,Kotlin" %}
+{% samplecode "default-activity-launch", "Kotlin,Java" %}
+{% sample "Kotlin" %}
+
+```kotlin title="ExistingActivity.kt"
+myButton.setOnClickListener {
+  startActivity(
+    FlutterActivity.createDefaultIntent(this)
+  )
+}
+```
+
+{% endsample %}
 {% sample "Java" %}
 
 ```java title="ExistingActivity.java"
@@ -70,17 +81,6 @@ myButton.setOnClickListener(new OnClickListener() {
 ```
 
 {% endsample %}
-{% sample "Kotlin" %}
-
-```kotlin title="ExistingActivity.kt"
-myButton.setOnClickListener {
-  startActivity(
-    FlutterActivity.createDefaultIntent(this)
-  )
-}
-```
-
-{% endsample %}
 {% endsamplecode %}
 
 The previous example assumes that your Dart entrypoint
@@ -91,7 +91,21 @@ The following example demonstrates how to launch a
 `FlutterActivity` that initially renders a custom
 route in Flutter.
 
-{% samplecode "custom-activity-launch", "Java,Kotlin" %}
+{% samplecode "custom-activity-launch", "Kotlin,Java" %}
+{% sample "Kotlin" %}
+
+```kotlin title="ExistingActivity.kt"
+myButton.setOnClickListener {
+  startActivity(
+    FlutterActivity
+      .withNewEngine()
+      .initialRoute("/my_route")
+      .build(this)
+  )
+}
+```
+
+{% endsample %}
 {% sample "Java" %}
 
 ```java title="ExistingActivity.java"
@@ -106,20 +120,6 @@ myButton.addOnClickListener(new OnClickListener() {
       );
   }
 });
-```
-
-{% endsample %}
-{% sample "Kotlin" %}
-
-```kotlin title="ExistingActivity.kt"
-myButton.setOnClickListener {
-  startActivity(
-    FlutterActivity
-      .withNewEngine()
-      .initialRoute("/my_route")
-      .build(this)
-  )
-}
 ```
 
 {% endsample %}
@@ -151,33 +151,7 @@ location in your app to instantiate a `FlutterEngine`.
 The following example arbitrarily pre-warms a
 `FlutterEngine` in the `Application` class:
 
-{% samplecode "prewarm-engine", "Java,Kotlin" %}
-{% sample "Java" %}
-
-```java title="MyApplication.java"
-public class MyApplication extends Application {
-  public FlutterEngine flutterEngine;
-  
-  @Override
-  public void onCreate() {
-    super.onCreate();
-    // Instantiate a FlutterEngine.
-    flutterEngine = new FlutterEngine(this);
-
-    // Start executing Dart code to pre-warm the FlutterEngine.
-    flutterEngine.getDartExecutor().executeDartEntrypoint(
-      DartEntrypoint.createDefault()
-    );
-
-    // Cache the FlutterEngine to be used by FlutterActivity.
-    FlutterEngineCache
-      .getInstance()
-      .put("my_engine_id", flutterEngine);
-  }
-}
-```
-
-{% endsample %}
+{% samplecode "prewarm-engine", "Kotlin,Java" %}
 {% sample "Kotlin" %}
 
 ```kotlin title="MyApplication.kt"
@@ -199,6 +173,32 @@ class MyApplication : Application() {
     FlutterEngineCache
       .getInstance()
       .put("my_engine_id", flutterEngine)
+  }
+}
+```
+
+{% endsample %}
+{% sample "Java" %}
+
+```java title="MyApplication.java"
+public class MyApplication extends Application {
+  public FlutterEngine flutterEngine;
+  
+  @Override
+  public void onCreate() {
+    super.onCreate();
+    // Instantiate a FlutterEngine.
+    flutterEngine = new FlutterEngine(this);
+
+    // Start executing Dart code to pre-warm the FlutterEngine.
+    flutterEngine.getDartExecutor().executeDartEntrypoint(
+      DartEntrypoint.createDefault()
+    );
+
+    // Cache the FlutterEngine to be used by FlutterActivity.
+    FlutterEngineCache
+      .getInstance()
+      .put("my_engine_id", flutterEngine);
   }
 }
 ```
@@ -232,7 +232,20 @@ to instruct your `FlutterActivity` to use the cached
 To accomplish this, use `FlutterActivity`'s `withCachedEngine()`
 builder:
 
-{% samplecode "cached-engine-activity-launch", "Java,Kotlin" %}
+{% samplecode "cached-engine-activity-launch", "Kotlin,Java" %}
+{% sample "Kotlin" %}
+
+```kotlin title="ExistingActivity.kt"
+myButton.setOnClickListener {
+  startActivity(
+    FlutterActivity
+      .withCachedEngine("my_engine_id")
+      .build(this)
+  )
+}
+```
+
+{% endsample %}
 {% sample "Java" %}
 
 ```java title="ExistingActivity.java"
@@ -246,19 +259,6 @@ myButton.addOnClickListener(new OnClickListener() {
       );
   }
 });
-```
-
-{% endsample %}
-{% sample "Kotlin" %}
-
-```kotlin title="ExistingActivity.kt"
-myButton.setOnClickListener {
-  startActivity(
-    FlutterActivity
-      .withCachedEngine("my_engine_id")
-      .build(this)
-  )
-}
 ```
 
 {% endsample %}
@@ -353,28 +353,7 @@ with explicit transparency support.
 To launch your `FlutterActivity` with a transparent background,
 pass the appropriate `BackgroundMode` to the `IntentBuilder`:
 
-{% samplecode "transparent-activity-launch", "Java,Kotlin" %}
-{% sample "Java" %}
-
-```java title="ExistingActivity.java"
-// Using a new FlutterEngine.
-startActivity(
-  FlutterActivity
-    .withNewEngine()
-    .backgroundMode(FlutterActivityLaunchConfigs.BackgroundMode.transparent)
-    .build(context)
-);
-
-// Using a cached FlutterEngine.
-startActivity(
-  FlutterActivity
-    .withCachedEngine("my_engine_id")
-    .backgroundMode(FlutterActivityLaunchConfigs.BackgroundMode.transparent)
-    .build(context)
-);
-```
-
-{% endsample %}
+{% samplecode "transparent-activity-launch", "Kotlin,Java" %}
 {% sample "Kotlin" %}
 
 ```kotlin title="ExistingActivity.kt"
@@ -392,6 +371,27 @@ startActivity(
     .withCachedEngine("my_engine_id")
     .backgroundMode(FlutterActivityLaunchConfigs.BackgroundMode.transparent)
     .build(this)
+);
+```
+
+{% endsample %}
+{% sample "Java" %}
+
+```java title="ExistingActivity.java"
+// Using a new FlutterEngine.
+startActivity(
+  FlutterActivity
+    .withNewEngine()
+    .backgroundMode(FlutterActivityLaunchConfigs.BackgroundMode.transparent)
+    .build(context)
+);
+
+// Using a cached FlutterEngine.
+startActivity(
+  FlutterActivity
+    .withCachedEngine("my_engine_id")
+    .backgroundMode(FlutterActivityLaunchConfigs.BackgroundMode.transparent)
+    .build(context)
 );
 ```
 

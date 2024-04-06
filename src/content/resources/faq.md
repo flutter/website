@@ -665,7 +665,7 @@ across mobile platforms.
 
 Yes, Flutter supports calling into the platform,
 including integrating with Java or Kotlin code on Android,
-and ObjectiveC or Swift code on iOS.
+and Swift or Objective-C code on iOS.
 This is enabled by a flexible message passing style
 where a Flutter app might send and receive messages
 to the mobile platform using a [`BasicMessageChannel`][].
