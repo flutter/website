@@ -4,7 +4,7 @@ class ProblemWidget extends StatelessWidget {
   const ProblemWidget({super.key});
 
   @override
-  // #docregion Problem
+  // #docregion problem
   Widget build(BuildContext context) {
     return Center(
       child: Column(
@@ -26,14 +26,14 @@ class ProblemWidget extends StatelessWidget {
       ),
     );
   }
-  // #enddocregion Problem
+  // #enddocregion problem
 }
 
 class SolutionWidget extends StatelessWidget {
   const SolutionWidget({super.key});
 
   @override
-  // #docregion Fix
+  // #docregion solution
   Widget build(BuildContext context) {
     return Center(
       child: Column(
@@ -57,5 +57,5 @@ class SolutionWidget extends StatelessWidget {
       ),
     );
   }
-  // #enddocregion Fix
+  // #enddocregion solution
 }

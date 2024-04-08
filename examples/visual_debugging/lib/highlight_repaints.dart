@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-// #docregion Toggle
+// #docregion toggle
 import 'package:flutter/rendering.dart';
 
 void highlightRepaints() {
   debugRepaintRainbowEnabled = true;
 }
-// #enddocregion Toggle
+// #enddocregion toggle
 
-// #docregion EverythingRepaints
+// #docregion everything-repaints
 class EverythingRepaintsPage extends StatelessWidget {
   const EverythingRepaintsPage({super.key});
 
@@ -22,9 +22,9 @@ class EverythingRepaintsPage extends StatelessWidget {
     );
   }
 }
-// #enddocregion EverythingRepaints
+// #enddocregion everything-repaints
 
-// #docregion AreaRepaints
+// #docregion area-repaints
 class AreaRepaintsPage extends StatelessWidget {
   const AreaRepaintsPage({super.key});
 
@@ -40,4 +40,4 @@ class AreaRepaintsPage extends StatelessWidget {
     );
   }
 }
-// #enddocregion AreaRepaints
+// #enddocregion area-repaints

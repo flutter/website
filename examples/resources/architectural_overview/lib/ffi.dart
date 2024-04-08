@@ -1,6 +1,3 @@
-// ignore_for_file: unused_local_variable
-
-// #docregion FFI
 import 'dart:ffi';
 import 'package:ffi/ffi.dart'; // contains .toNativeUtf16() extension method
 
@@ -23,6 +20,7 @@ void exampleFfi() {
   final messageBox =
       user32.lookupFunction<MessageBoxNative, MessageBoxDart>('MessageBoxW');
 
+  // ignore: unused_local_variable
   final result = messageBox(
     0, // No owner window
     'Test message'.toNativeUtf16(), // Message
@@ -30,4 +28,3 @@ void exampleFfi() {
     0, // OK button only
   );
 }
-// #enddocregion FFI

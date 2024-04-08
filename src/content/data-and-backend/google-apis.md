@@ -70,7 +70,7 @@ To request access to read (but not write) an end-users
 YouTube data, authenticate the user with
 [`youtubeReadonlyScope`][].
 
-<?code-excerpt "lib/main.dart (youtubeImport)"?>
+<?code-excerpt "lib/main.dart (youtube-import)"?>
 ```dart
 /// Provides the `YouTubeApi` class.
 import 'package:googleapis/youtube/v3.dart';
@@ -100,7 +100,7 @@ Use the [google_sign_in][gsi-pkg] package to
 authenticate users with their Google identity.
 Configure signin for each platform you want to support.
 
-<?code-excerpt "lib/main.dart (googleImport)"?>
+<?code-excerpt "lib/main.dart (google-import)"?>
 ```dart
 /// Provides the `GoogleSignIn` class
 import 'package:google_sign_in/google_sign_in.dart';
@@ -133,7 +133,7 @@ The [extension_google_sign_in_as_googleapis_auth][]
 package provides an [extension method][] on `GoogleSignIn`
 called [`authenticatedClient`][].
 
-<?code-excerpt "lib/main.dart (authImport)"?>
+<?code-excerpt "lib/main.dart (auth-import)"?>
 ```dart
 import 'package:extension_google_sign_in_as_googleapis_auth/extension_google_sign_in_as_googleapis_auth.dart';
 ```
@@ -142,7 +142,7 @@ Add a listener to [`onCurrentUserChanged`][]
 and when the event value isn't `null`,
 you can create an authenticated client.
 
-<?code-excerpt "lib/main.dart (signinCall)"?>
+<?code-excerpt "lib/main.dart (signin-call)"?>
 ```dart
 var httpClient = (await _googleSignIn.authenticatedClient())!;
 ```

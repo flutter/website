@@ -1,4 +1,4 @@
-// #docregion Main
+// #docregion main
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -36,10 +36,10 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-// #enddocregion Main
+// #enddocregion main
 
 void containerExample(BuildContext context) {
-  // #docregion Container
+  // #docregion container
   Container(
     color: Theme.of(context).secondaryHeaderColor,
     child: Text(
@@ -47,8 +47,8 @@ void containerExample(BuildContext context) {
       style: Theme.of(context).textTheme.titleLarge,
     ),
   );
-  // #enddocregion Container
-  // #docregion Container2
+  // #enddocregion container
+  // #docregion widget-hierarchy
   Container(
     color: Colors.blue,
     child: Row(
@@ -58,7 +58,7 @@ void containerExample(BuildContext context) {
       ],
     ),
   );
-  // #enddocregion Container2
+  // #enddocregion widget-hierarchy
 }
 
 class OneColumnLayout extends StatelessWidget {
@@ -83,7 +83,7 @@ class LayoutBuilderExample extends StatelessWidget {
   const LayoutBuilderExample({super.key});
 
   @override
-  // #docregion LayoutBuilder
+  // #docregion layout-builder
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
@@ -95,14 +95,14 @@ class LayoutBuilderExample extends StatelessWidget {
       },
     );
   }
-// #enddocregion LayoutBuilder
+  // #enddocregion layout-builder
 }
 
 Future<void> exampleChannels() async {
-  // #docregion MethodChannel
+  // #docregion method-channel
   // Dart side
   const channel = MethodChannel('foo');
   final greeting = await channel.invokeMethod('bar', 'world') as String;
   print(greeting);
-  // #enddocregion MethodChannel
+  // #enddocregion method-channel
 }

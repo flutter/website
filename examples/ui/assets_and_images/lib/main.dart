@@ -1,13 +1,13 @@
 import 'dart:async' show Future;
 
 import 'package:flutter/material.dart';
-// #docregion RootBundle
+// #docregion root-bundle-load
 import 'package:flutter/services.dart' show rootBundle;
 
 Future<String> loadAsset() async {
   return await rootBundle.loadString('assets/config.json');
 }
-// #enddocregion RootBundle
+// #enddocregion root-bundle-load
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -30,14 +30,14 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    // #docregion BackgroundImage
+    // #docregion background-image
     return const Image(image: AssetImage('assets/background.png'));
-    // #enddocregion BackgroundImage
+    // #enddocregion background-image
   }
 }
 
 AssetImage getHeartIconImage() {
-  // #docregion PackageImage
+  // #docregion package-image
   return const AssetImage('icons/heart.png', package: 'my_icons');
   // #enddocregion PackageImage
 }

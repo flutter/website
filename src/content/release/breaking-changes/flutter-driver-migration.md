@@ -86,7 +86,7 @@ In `flutter_driver`, the test uses `waitFor`,
 which waits until the `finder` can locate the widget.
 The test fail if the widget can't be found.
 
-<?code-excerpt "test_driver/main_test.dart (Test1)"?>
+<?code-excerpt "test_driver/main_test.dart (wait-for)"?>
 ```dart
 test('do not select any item, verify please select text is displayed',
     () async {
@@ -105,7 +105,7 @@ In `integration_test` you have to perform two steps:
 2. Then, use `expect` with the matcher `findsOneWidget` to verify
    that the widget is displayed.
 
-<?code-excerpt "integration_test/main_test.dart (Test1)"?>
+<?code-excerpt "integration_test/main_test.dart (finds-one)"?>
 ```dart
 testWidgets('do not select any item, verify please select text is displayed',
     (tester) async {
@@ -144,7 +144,7 @@ a tap over a widget using a finder.
 To verify that a widget is not displayed,
 use the `waitForAbsent` method.
 
-<?code-excerpt "test_driver/main_test.dart (Test2)"?>
+<?code-excerpt "test_driver/main_test.dart (wait-for-absent)"?>
 ```dart
 test('tap on the first item (Alder), verify selected', () async {
   // find the item by text
@@ -175,7 +175,7 @@ until the action has finished, and all the UI changes have happened.
 To verify that a widget is not displayed, use the same `expect`
 function with the `findsNothing` matcher.
 
-<?code-excerpt "integration_test/main_test.dart (Test2)"?>
+<?code-excerpt "integration_test/main_test.dart (finds-nothing)"?>
 ```dart
 testWidgets('tap on the first item (Alder), verify selected', (tester) async {
   await tester.pumpWidget(const PlantsApp());
@@ -216,7 +216,7 @@ as well as a duration for the scroll.
 
 You also have to provide the total offset for the scrolling action. 
 
-<?code-excerpt "test_driver/main_test.dart (Test3)"?>
+<?code-excerpt "test_driver/main_test.dart (scroll)"?>
 ```dart
 test('scroll, tap on the last item (Zedoary), verify selected', () async {
   // find the list of plants, by Key
@@ -263,7 +263,7 @@ The method searches for any `Scrollable` widget
 and performs the scrolling action using the given offset.
 The action repeats until the item is visible.
 
-<?code-excerpt "integration_test/main_test.dart (Test3)"?>
+<?code-excerpt "integration_test/main_test.dart (scroll)"?>
 ```dart
 testWidgets('scroll, tap on the last item (Zedoary), verify selected',
     (tester) async {

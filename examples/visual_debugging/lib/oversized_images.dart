@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-// #docregion Toggle
+// #docregion toggle
 void showOversizedImages() {
   debugInvertOversizedImages = true;
 }
-// #enddocregion Toggle
+// #enddocregion toggle
 
-// #docregion ResizedImage
+// #docregion resized-image
 class ResizedImage extends StatelessWidget {
   const ResizedImage({super.key});
 
@@ -19,4 +19,4 @@ class ResizedImage extends StatelessWidget {
     );
   }
 }
-// #enddocregion ResizedImage
+// #enddocregion resized-image

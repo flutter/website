@@ -42,7 +42,7 @@ import 'package:intl/intl.dart';
 // https://pub.dev/packages/intl.
 import 'l10n/messages_all.dart';
 
-// #docregion DemoLocalizations
+// #docregion demo-localizations
 class DemoLocalizations {
   DemoLocalizations(this.localeName);
 
@@ -73,7 +73,7 @@ class DemoLocalizations {
     );
   }
 }
-// #enddocregion DemoLocalizations
+// #enddocregion demo-localizations
 
 class DemoLocalizationsDelegate
     extends LocalizationsDelegate<DemoLocalizations> {
@@ -111,10 +111,10 @@ class Demo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // #docregion MaterialAppTitleExample
+    // #docregion app-title
     return MaterialApp(
       onGenerateTitle: (context) => DemoLocalizations.of(context).title,
-      // #enddocregion MaterialAppTitleExample
+      // #enddocregion app-title
       localizationsDelegates: const [
         DemoLocalizationsDelegate(),
         ...GlobalMaterialLocalizations.delegates,
