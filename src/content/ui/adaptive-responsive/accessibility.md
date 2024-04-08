@@ -13,7 +13,7 @@ considerations to keep in mind when designing
 an accessible _and_ responsive app,
 particularly on large screen devices.
 
-[accessible app]: /accessibility-and-internationalization/accessibility
+[accessible app]: /ui/accessibility-and-internationalization/accessibility
 
 ## Visual density
 
