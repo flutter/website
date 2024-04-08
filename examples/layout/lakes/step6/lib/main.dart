@@ -247,7 +247,7 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
           padding: const EdgeInsets.all(0),
           child: IconButton(
             padding: const EdgeInsets.all(0),
-            alignment: Alignment.centerRight,
+            alignment: Alignment.center,
             icon: (_isFavorited
                 ? const Icon(Icons.star)
                 : const Icon(Icons.star_border)),
