@@ -79,7 +79,7 @@ include a small reproducible test case.
 ### macOS
 
 As of the 3.19 release,
-you can preview Impeller for macOS behind a flag.
+you can try out Impeller for macOS behind a flag.
 
 To enable Impeller on macOS when debugging,
 pass `--enable-impeller` to the `flutter run` command.
@@ -100,15 +100,16 @@ add the following tags under the top-level
 ### Android
 
 Impeller is available behind a flag on Android
-devices that support Vulkan.
+devices that support Vulkan, allowing you to
+try out the feature before it reaches stable.
 
 :::secondary Does your device support Vulkan?
 You can determine whether your Android device
 supports Vulkan at [checking for Vulkan support][vulkan].
 :::
 
-You can preview Impeller on Vulkan-capable Android devices
-by passing `--enable-impeller` to `flutter run`:
+To try out Impeller on Vulkan-capable Android devices,
+pass `--enable-impeller` to `flutter run`:
 
 ```console
 flutter run --enable-impeller
