@@ -4,7 +4,7 @@ class ProblemWidget extends StatelessWidget {
   const ProblemWidget({super.key});
 
   @override
-  // #docregion Problem
+  // #docregion problem
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
@@ -19,14 +19,14 @@ class ProblemWidget extends StatelessWidget {
       ),
     );
   }
-  // #enddocregion Problem
+  // #enddocregion problem
 }
 
 class SolutionWidget extends StatelessWidget {
   const SolutionWidget({super.key});
 
   @override
-  // #docregion Fix
+  // #docregion solution
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
@@ -41,5 +41,5 @@ class SolutionWidget extends StatelessWidget {
       ),
     );
   }
-  // #enddocregion Fix
+  // #enddocregion solution
 }

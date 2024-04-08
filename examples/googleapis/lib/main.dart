@@ -5,21 +5,21 @@
 import 'dart:async';
 import 'dart:convert';
 
-// #docregion authImport
+// #docregion auth-import
 import 'package:extension_google_sign_in_as_googleapis_auth/extension_google_sign_in_as_googleapis_auth.dart';
-// #enddocregion authImport
+// #enddocregion auth-import
 
 import 'package:flutter/material.dart';
 
-// #docregion googleImport
+// #docregion google-import
 /// Provides the `GoogleSignIn` class
 import 'package:google_sign_in/google_sign_in.dart';
-// #enddocregion googleImport
+// #enddocregion google-import
 
-// #docregion youtubeImport
+// #docregion youtube-import
 /// Provides the `YouTubeApi` class.
 import 'package:googleapis/youtube/v3.dart';
-// #enddocregion youtubeImport
+// #enddocregion youtube-import
 
 const _title = 'My YouTube Favorites';
 
@@ -135,9 +135,9 @@ class _LikedVideosWidgetState extends State<_LikedVideosWidget> {
   }
 
   Future<void> _downloadLikedList() async {
-    // #docregion signinCall
+    // #docregion signin-call
     var httpClient = (await _googleSignIn.authenticatedClient())!;
-    // #enddocregion signinCall
+    // #enddocregion signin-call
 
     // #docregion playlist
     var youTubeApi = YouTubeApi(httpClient);

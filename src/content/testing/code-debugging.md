@@ -68,7 +68,7 @@ error parameter.
 
 ### Example 2 {:.no_toc}
 
-<?code-excerpt "lib/app_data.dart (PassAppData)"?>
+<?code-excerpt "lib/app_data.dart (pass-data)"?>
 ```dart
 import 'dart:convert';
 import 'dart:developer' as developer;
@@ -558,9 +558,9 @@ Consider adding it to the top of your `void main()` entry point.
 
 See an example in the following code:
 
-<?code-excerpt "lib/debug_flags.dart (debugPaintSizeEnabled)"?>
+<?code-excerpt "lib/debug_flags.dart (debug-paint-size-enabled)"?>
 ```dart
-//add import to rendering library
+// Add import to the Flutter rendering library.
 import 'package:flutter/rendering.dart';
 
 void main() {
@@ -736,7 +736,7 @@ constructor:
 
 #### Example 10
 
-<?code-excerpt "lib/performance_overlay.dart (PerfOverlay)"?>
+<?code-excerpt "lib/performance_overlay.dart (show-overlay)"?>
 ```dart
 import 'package:flutter/material.dart';
 

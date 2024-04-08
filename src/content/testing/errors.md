@@ -53,7 +53,7 @@ For example, to make your application quit immediately any time an
 error is caught by Flutter in release mode, you could use the
 following handler:
 
-<?code-excerpt "lib/quit_immediate.dart (Main)"?>
+<?code-excerpt "lib/quit_immediate.dart (on-error-main)"?>
 ```dart
 import 'dart:io';
 
@@ -68,7 +68,7 @@ void main() {
   runApp(const MyApp());
 }
 
-// rest of `flutter create` code...
+// The rest of the `flutter create` code...
 ```
 
 :::note
@@ -85,7 +85,7 @@ For more details, see our cookbook chapter for
 To define a customized error widget that displays whenever
 the builder fails to build a widget, use [`MaterialApp.builder`][].
 
-<?code-excerpt "lib/excerpts.dart (CustomError)"?>
+<?code-excerpt "lib/excerpts.dart (custom-error)"?>
 ```dart
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -113,7 +113,7 @@ Consider an `onPressed` callback that invokes an asynchronous function,
 such as `MethodChannel.invokeMethod` (or pretty much any plugin).
 For example:
 
-<?code-excerpt "lib/excerpts.dart (OnPressed)" replace="/return //g;/;$//g"?>
+<?code-excerpt "lib/excerpts.dart (on-pressed)" replace="/return //g;/;$//g"?>
 ```dart
 OutlinedButton(
   child: const Text('Click me!'),
@@ -129,7 +129,7 @@ Instead, it's forwarded to the `PlatformDispatcher`.
 
 To catch such an error, use [`PlatformDispatcher.instance.onError`][].
 
-<?code-excerpt "lib/excerpts.dart (CatchError)"?>
+<?code-excerpt "lib/excerpts.dart (catch-error)"?>
 ```dart
 import 'package:flutter/material.dart';
 import 'dart:ui';
@@ -150,7 +150,7 @@ Say you want to exit application on any exception and to display
 a custom error widget whenever a widget building fails - you can base
 your errors handling on next code snippet:
 
-<?code-excerpt "lib/main.dart (Main)"?>
+<?code-excerpt "lib/main.dart (all-errors)"?>
 ```dart
 import 'package:flutter/material.dart';
 import 'dart:ui';

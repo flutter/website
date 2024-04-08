@@ -5,7 +5,7 @@ import 'nn_intl.dart';
 
 void main() {
   runApp(
-    // #docregion MaterialApp
+    // #docregion material-app
     const MaterialApp(
       localizationsDelegates: [
         GlobalWidgetsLocalizations.delegate,
@@ -18,7 +18,7 @@ void main() {
       ],
       home: Home(),
     ),
-    // #enddocregion MaterialApp
+    // #enddocregion material-app
   );
 }
 

@@ -4,15 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void examples(BuildContext context) {
-  // #docregion MaterialAppExample
+  // #docregion material-app
   const MaterialApp(
     title: 'Localizations Sample App',
     localizationsDelegates: AppLocalizations.localizationsDelegates,
     supportedLocales: AppLocalizations.supportedLocales,
   );
-  // #enddocregion MaterialAppExample
+  // #enddocregion material-app
 
-  // #docregion LocaleResolution
+  // #docregion locale-resolution
   MaterialApp(
     localeResolutionCallback: (
       locale,
@@ -21,14 +21,14 @@ void examples(BuildContext context) {
       return locale;
     },
   );
-  // #enddocregion LocaleResolution
+  // #enddocregion locale-resolution
 
-  // #docregion MyLocale
+  // #docregion my-locale
   Locale myLocale = Localizations.localeOf(context);
-  // #enddocregion MyLocale
+  // #enddocregion my-locale
 
   const MaterialApp(
-    // #docregion SupportedLocales
+    // #docregion supported-locales
     supportedLocales: [
       Locale.fromSubtags(languageCode: 'zh'), // generic Chinese 'zh'
       Locale.fromSubtags(
@@ -50,7 +50,7 @@ void examples(BuildContext context) {
           scriptCode: 'Hant',
           countryCode: 'HK'), // 'zh_Hant_HK'
     ],
-    // #enddocregion SupportedLocales
+    // #enddocregion supported-locales
   );
 }
 
@@ -65,7 +65,7 @@ class PageWithDatePicker extends StatefulWidget {
 
 class _PageWithDatePickerState extends State<PageWithDatePicker> {
   @override
-  // #docregion CalendarDatePicker
+  // #docregion date-picker
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -99,5 +99,5 @@ class _PageWithDatePickerState extends State<PageWithDatePicker> {
       ),
     );
   }
-  // #enddocregion CalendarDatePicker
+  // #enddocregion date-picker
 }
