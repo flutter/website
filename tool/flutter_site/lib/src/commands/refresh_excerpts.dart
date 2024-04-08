@@ -121,25 +121,7 @@ Future<int> _refreshExcerpts({
     return 1;
   }
 
-  // A collection of replacements for the code excerpt updater tool
-  // to run by default.
-  // They must not contain (unencoded/unescaped) spaces.
-  const replacements = [
-    // Allows use of //!<br> to force a line break (against dart format)
-    r'/\/\/!<br>//g;',
-    // Replace commented out ellipses: /*...*/ --> ...
-    r'/\/\*(\s*\.\.\.\s*)\*\//$1/g;',
-    // Replace brackets with commented out ellipses: {/*-...-*/} --> ...
-    r'/\{\/\*-(\s*\.\.\.\s*)-\*\/\}/$1/g;',
-    // Remove markers declaring an analysis issue or runtime error.
-    r'/\/\/!(analysis-issue|runtime-error)[^\n]*//g;',
-    // Remove analyzer ignore for file markers.
-    r'/\x20*\/\/\s+ignore_for_file:[^\n]+\n//g;',
-    // Remove analyzer inline ignores.
-    r'/\x20*\/\/\s+ignore:[^\n]+//g;',
-  ];
-
-  final srcDirectoryPath = path.join(repositoryRoot, 'src');
+  final srcDirectoryPath = path.join(repositoryRoot, 'src', 'content');
   final updaterArguments = <String>[
     '--fragment-dir-path',
     path.join(fragments, 'examples'),
@@ -148,7 +130,6 @@ Future<int> _refreshExcerpts({
     if (verboseLogging) '--log-fine',
     '--yaml',
     '--no-escape-ng-interpolation',
-    '--replace=${replacements.join('')}',
     '--write-in-place',
     srcDirectoryPath,
   ];
