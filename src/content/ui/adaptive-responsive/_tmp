@@ -17,14 +17,18 @@ It’s generally recommended to wrap the body of a
 but you don’t always need to put it this high in the
 `Widget` tree.
 
-[xxx PENDING: example code]
+{% comment %}
+TODO(sfshaza): [xxx PENDING: example code]
+{% endcomment %}
 
 For example, if you purposefully want your app to stretch
 under the cutouts, you can move the `SafeArea` to wrap
 whatever content makes sense,
 and let the rest of the app take up the full screen.
 
-[xxx PENDING: example]
+{% comment %}
+TODO(sfshaza): [xxx PENDING: example]
+{% endcomment %}
 
 Using `SafeArea` ensures that your app content won’t be
 cut off by physical display features or operating system UI

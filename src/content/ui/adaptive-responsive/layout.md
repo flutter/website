@@ -63,7 +63,9 @@ class FormFactor {
 Using breakpoints, you can set up a simple system
 to determine the device type:
 
-[xxx PENDING: Should the following example be updated to use Display instead of MediaQuery?]
+{% comment %}
+TODO(sfshaza): [xxx PENDING: Should the following example be updated to use Display instead of MediaQuery?]
+{% endcomment %}
 
 <?code-excerpt "lib/global/device_size.dart (getFormFactor)"?>
 ```dart
@@ -103,7 +105,9 @@ top-level widget trees. For example, you could switch
 from a vertical to a horizontal layout when
 the user isn't on a handset (mobile device):
 
-[xxx PENDING: Should the following example be updated to use Display instead of MediaQuery?
+{% comment %}
+TODO(sfshaza): [xxx PENDING: Should the following example be updated to use Display instead of MediaQuery?]
+{% endcomment %}
 
 <?code-excerpt "lib/global/device_size.dart (MediaQuery)"?>
 ```dart
@@ -137,7 +141,9 @@ Keep in mind that this approach returns the current size
 and orientation of the app's entire screen and
 not just a single widget.
 
-[xxx PENDING: Do we need an example here?]
+{% comment %}
+TODO(sfshaza): [xxx PENDING: Do we need an example here?]
+{% endcomment %}
 
 In this scenario, the `build` function
 automatically runs when the user is _done_
@@ -207,7 +213,7 @@ updating the layout in real time.
 
 Learn more in the following 5-minute video:
 
-<iframe width="560" height="315" src="{{site.yt-embed}}/HD5gYnspYzk?si=KvEOAYbOn7lAfKmP" title="Learn the difference between adaptive and responsive apps" {{site.yt-set}}></iframe>
+<iframe width="560" height="315" src="{{site.yt.embed}}/HD5gYnspYzk?si=KvEOAYbOn7lAfKmP" title="Learn the difference between adaptive and responsive apps" {{site.yt-set}}></iframe>
 
 [Adaptive vs responsive][]
 
@@ -242,11 +248,11 @@ including contributions from the Flutter community:
 You might also check out the following episodes
 of The Boring Show:
 
-<iframe style="max-width: 100%" width="560" height="315" src="{{site.yt-embed}}/n6Awpg1MO6M" title="Learn about adaptative layouts on the Boring Show" {{site.yt-set}}></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{site.yt.embed}}/n6Awpg1MO6M" title="Learn about adaptative layouts on the Boring Show" {{site.yt-set}}></iframe>
 
 [Adaptive layouts][]
 
-<iframe style="max-width: 100%" width="560" height="315" src="{{site.yt-embed}}/eikOZzfc0l4" title="Continue to learn about adaptative layouts on the Boring Show" {{site.yt-set}}></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{site.yt.embed}}/eikOZzfc0l4" title="Continue to learn about adaptative layouts on the Boring Show" {{site.yt-set}}></iframe>
 
 [Adaptive layouts, part 2][]
 
@@ -254,13 +260,13 @@ For a great example of an adaptive app,
 check out Flutter Folio, a scrapbooking app created
 in collaboration with gskinner and the Flutter team:
 
-<iframe style="max-width: 100%" width="560" height="315" src="{{site.yt-embed}}/yytBENOnF0w" title="Watch a demonstration of the Flutter Folio app" {{site.yt-set}}></iframe>
+<iframe style="max-width: 100%" width="560" height="315" src="{{site.yt.embed}}/yytBENOnF0w" title="Watch a demonstration of the Flutter Folio app" {{site.yt-set}}></iframe>
 
 The [Folio source code][] is also available on GitHub.
 Learn more on the [gskinner blog][].
 
-[Adaptive layouts]: {{yt-watch}}?v=n6Awpg1MO6M&t=694s
-[Adaptive layouts, part 2]: {{yt-watch}}?v=eikOZzfc0l4&t=11s
+[Adaptive layouts]: {{site.yt.watch}}?v=n6Awpg1MO6M&t=694s
+[Adaptive layouts, part 2]: {{site.yt.watch}}?v=eikOZzfc0l4&t=11s
 [Folio source code]: {{site.github}}/gskinnerTeam/flutter-folio
 [gskinner blog]: https://blog.gskinner.com/
 

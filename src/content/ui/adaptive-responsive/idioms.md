@@ -214,7 +214,7 @@ the title bar of your app window, adding a logo for
 stronger branding or contextual controls to help save
 vertical space in your main UI.
 
-![Samples of title bars](/assets/images/docs/ui/titlebar.png){:width="100%"}
+![Samples of title bars](/assets/images/docs/ui/adaptive-responsive/titlebar.png){:width="100%"}
 
 This isn't supported directly in Flutter, but you can use the
 [`bits_dojo`][] package to disable the native title bars,
@@ -332,9 +332,9 @@ return Row(
 );
 ```
 
-![Sample of embedded image](/assets/images/docs/ui/embed_image1.png){:width="75%"}
+![Sample of embedded image](/assets/images/docs/ui/adaptive-responsive/embed_image1.png){:width="75%"}
 
-![Sample of embedded image](/assets/images/docs/ui/embed_image2.png){:width="90%"}
+![Sample of embedded image](/assets/images/docs/ui/adaptive-responsive/embed_image2.png){:width="90%"}
 
 ### Menu bar
 
