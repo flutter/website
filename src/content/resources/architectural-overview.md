@@ -258,7 +258,7 @@ parent and can receive context from the parent. This structure carries all the
 way up to the root widget (the container that hosts the Flutter app, typically
 `MaterialApp` or `CupertinoApp`), as this trivial example shows:
 
-<?code-excerpt "lib/main.dart (Main)"?>
+<?code-excerpt "lib/main.dart (main)"?>
 ```dart
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -489,7 +489,7 @@ pervasive throughout an application. The `MaterialApp` `build()` method inserts
 a theme in the tree when it builds, and then deeper in the hierarchy a widget
 can use the `.of()` method to look up the relevant theme data, for example:
 
-<?code-excerpt "lib/main.dart (Container)"?>
+<?code-excerpt "lib/main.dart (container)"?>
 ```dart
 Container(
   color: Theme.of(context).secondaryHeaderColor,
@@ -574,7 +574,7 @@ Let's take a look at some of these phases in greater detail.
 
 Consider this code fragment that demonstrates a widget hierarchy:
 
-<?code-excerpt "lib/main.dart (Container2)"?>
+<?code-excerpt "lib/main.dart (widget-hierarchy)"?>
 ```dart
 Container(
   color: Colors.blue,
@@ -718,7 +718,7 @@ available to decide how it will render its content. By using a
 the child object can examine the passed-down constraints and use those to
 determine how it will use them, for example:
 
-<?code-excerpt "lib/main.dart (LayoutBuilder)"?>
+<?code-excerpt "lib/main.dart (layout-builder)"?>
 ```dart
 Widget build(BuildContext context) {
   return LayoutBuilder(
@@ -820,7 +820,7 @@ code](/assets/images/docs/arch-overview/platform-channels.png){:width="70%"}
 The following is a short platform channel example of a Dart call to a receiving
 event handler in Kotlin (Android) or Swift (iOS):
 
-<?code-excerpt "lib/main.dart (MethodChannel)"?>
+<?code-excerpt "lib/main.dart (method-channel)"?>
 ```dart
 // Dart side
 const channel = MethodChannel('foo');
@@ -874,7 +874,7 @@ To use FFI, you create a `typedef` for each of the Dart and unmanaged method
 signatures, and instruct the Dart VM to map between them. As an example,
 here's a fragment of code to call the traditional Win32 `MessageBox()` API:
 
-<?code-excerpt "lib/ffi.dart (FFI)"?>
+<?code-excerpt "lib/ffi.dart" remove="ignore:"?>
 ```dart
 import 'dart:ffi';
 import 'package:ffi/ffi.dart'; // contains .toNativeUtf16() extension method

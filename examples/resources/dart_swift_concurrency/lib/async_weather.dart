@@ -15,15 +15,15 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// #docregion Weather
+// #docregion weather
 enum Weather {
   rainy,
   windy,
   sunny,
 }
-// #enddocregion Weather
+// #enddocregion weather
 
-// #docregion HomePageViewModel
+// #docregion home-page-view-model
 @immutable
 class HomePageViewModel {
   const HomePageViewModel();
@@ -32,9 +32,9 @@ class HomePageViewModel {
     return Weather.sunny;
   }
 }
-// #enddocregion HomePageViewModel
+// #enddocregion home-page-view-model
 
-// #docregion HomePageWidget
+// #docregion home-page-widget
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -68,4 +68,4 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-// #enddocregion HomePageWidget
+// #enddocregion home-page-widget

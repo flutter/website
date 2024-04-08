@@ -90,12 +90,12 @@ Then import the `flutter_localizations` library and specify
 `localizationsDelegates` and `supportedLocales` for
 your `MaterialApp` or `CupertinoApp`:
 
-<?code-excerpt "gen_l10n_example/lib/main.dart (LocalizationDelegatesImport)"?>
+<?code-excerpt "gen_l10n_example/lib/main.dart (localization-delegates-import)"?>
 ```dart
 import 'package:flutter_localizations/flutter_localizations.dart';
 ```
 
-<?code-excerpt "gen_l10n_example/lib/main.dart (MaterialApp)" remove="AppLocalizations.delegate"?>
+<?code-excerpt "gen_l10n_example/lib/main.dart (material-app)" remove="AppLocalizations.delegate"?>
 ```dart
 return const MaterialApp(
   title: 'Localizations Sample App',
@@ -158,7 +158,7 @@ configured for your device.
 To observe this behavior, add a call to `Localizations.override`
 and a simple `CalendarDatePicker`:
 
-<?code-excerpt "gen_l10n_example/lib/examples.dart (CalendarDatePicker)"?>
+<?code-excerpt "gen_l10n_example/lib/examples.dart (date-picker)"?>
 ```dart
 Widget build(BuildContext context) {
   return Scaffold(
@@ -276,12 +276,12 @@ complete the following instructions:
    `AppLocalizations.delegate`
    in your call to the constructor for `MaterialApp`:
 
-   <?code-excerpt "gen_l10n_example/lib/main.dart (AppLocalizationsImport)"?>
+   <?code-excerpt "gen_l10n_example/lib/main.dart (app-localizations-import)"?>
    ```dart
    import 'package:flutter_gen/gen_l10n/app_localizations.dart';
    ```
 
-   <?code-excerpt "gen_l10n_example/lib/main.dart (MaterialApp)"?>
+   <?code-excerpt "gen_l10n_example/lib/main.dart (material-app)"?>
    ```dart
    return const MaterialApp(
      title: 'Localizations Sample App',
@@ -303,7 +303,7 @@ complete the following instructions:
    `localizationsDelegates` and `supportedLocales` lists.
    You can use these instead of providing them manually.
 
-   <?code-excerpt "gen_l10n_example/lib/examples.dart (MaterialAppExample)"?>
+   <?code-excerpt "gen_l10n_example/lib/examples.dart (material-app)"?>
    ```dart
    const MaterialApp(
      title: 'Localizations Sample App',
@@ -315,7 +315,7 @@ complete the following instructions:
 8. Once the Material app has started,
    you can use `AppLocalizations` anywhere in your app:
 
-   <?code-excerpt "gen_l10n_example/lib/main.dart (InternationalizedTitle)"?>
+   <?code-excerpt "gen_l10n_example/lib/main.dart (internationalized-title)"?>
    ```dart
    appBar: AppBar(
      // The [AppBar] title text should update its message
@@ -346,7 +346,7 @@ To localize your device app description,
 pass the localized string to
 [`MaterialApp.onGenerateTitle`][]:
 
-<?code-excerpt "intl_example/lib/main.dart (MaterialAppTitleExample)"?>
+<?code-excerpt "intl_example/lib/main.dart (app-title)"?>
 ```dart
 return MaterialApp(
   onGenerateTitle: (context) => DemoLocalizations.of(context).title,
@@ -405,7 +405,7 @@ Regenerate the `AppLocalizations` file.
 
 Replace the code passed into `Builder` with the following:
 
-<?code-excerpt "gen_l10n_example/lib/main.dart (Placeholder)" remove="/wombat|Wombats|he'|they|pronoun/"?>
+<?code-excerpt "gen_l10n_example/lib/main.dart (placeholder)" remove="/wombat|Wombats|he'|they|pronoun/"?>
 ```dart
 // Examples of internationalized strings.
 return Column(
@@ -461,7 +461,7 @@ the word, "wombat":
 
 Use a plural method by passing in the `count` parameter:
 
-<?code-excerpt "gen_l10n_example/lib/main.dart (Placeholder)" remove="/John|he|she|they|pronoun/" replace="/\[/[\n    .../g"?>
+<?code-excerpt "gen_l10n_example/lib/main.dart (placeholder)" remove="/John|he|she|they|pronoun/" replace="/\[/[\n    .../g"?>
 ```dart
 // Examples of internationalized strings.
 return Column(
@@ -507,7 +507,7 @@ selects a pronoun based on gender:
 Use this feature by
 passing the gender string as a parameter:
 
-<?code-excerpt "gen_l10n_example/lib/main.dart (Placeholder)" remove="/'He|hello|ombat/" replace="/\[/[\n    .../g"?>
+<?code-excerpt "gen_l10n_example/lib/main.dart (placeholder)" remove="/'He|hello|ombat/" replace="/\[/[\n    .../g"?>
 ```dart
 // Examples of internationalized strings.
 return Column(
@@ -684,7 +684,7 @@ use the following instructions:
 
 5. Once all supported locales have been added, save the file.
 
-<a id="advanced-customization">
+<a id="advanced-customization"></a>
 ## Advanced topics for further customization
 
 This section covers additional ways to customize a
@@ -706,7 +706,7 @@ In order to fully express every variant of Chinese for the
 country codes `CN`, `TW`, and `HK`, the list of supported
 locales should include:
 
-<?code-excerpt "gen_l10n_example/lib/examples.dart (SupportedLocales)"?>
+<?code-excerpt "gen_l10n_example/lib/examples.dart (supported-locales)"?>
 ```dart
 supportedLocales: [
   Locale.fromSubtags(languageCode: 'zh'), // generic Chinese 'zh'
@@ -768,7 +768,7 @@ and rebuilds it if the system's locale changes.
 You can always look up an app's current locale with
 `Localizations.localeOf()`:
 
-<?code-excerpt "gen_l10n_example/lib/examples.dart (MyLocale)"?>
+<?code-excerpt "gen_l10n_example/lib/examples.dart (my-locale)"?>
 ```dart
 Locale myLocale = Localizations.localeOf(context);
 ```
@@ -799,7 +799,7 @@ method can provide a [`localeResolutionCallback`][].
 For example, to have your app unconditionally accept
 whatever locale the user selects:
 
-<?code-excerpt "gen_l10n_example/lib/examples.dart (LocaleResolution)"?>
+<?code-excerpt "gen_l10n_example/lib/examples.dart (locale-resolution)"?>
 ```dart
 MaterialApp(
   localeResolutionCallback: (
@@ -946,7 +946,7 @@ It uses the `initializeMessages()` function
 generated by Dart's [`intl`][] package,
 [`Intl.message()`][], to look them up.
 
-<?code-excerpt "intl_example/lib/main.dart (DemoLocalizations)"?>
+<?code-excerpt "intl_example/lib/main.dart (demo-localizations)"?>
 ```dart
 class DemoLocalizations {
   DemoLocalizations(this.localeName);
@@ -1025,7 +1025,7 @@ The delegate class includes basic date and number format
 localizations. All of the other localizations are defined by `String`
 valued property getters in `NnMaterialLocalizations`, like this:
 
-<?code-excerpt "add_language/lib/nn_intl.dart (Getters)"?>
+<?code-excerpt "add_language/lib/nn_intl.dart (getters)"?>
 ```dart
 @override
 String get moreButtonTooltip => r'More';
@@ -1046,7 +1046,7 @@ such as `r'About $applicationName'`,
 because sometimes the strings contain variables with a `$` prefix.
 The variables are expanded by parameterized localization methods:
 
-<?code-excerpt "add_language/lib/nn_intl.dart (Raw)"?>
+<?code-excerpt "add_language/lib/nn_intl.dart (raw)"?>
 ```dart
 @override
 String get pageRowsInfoTitleRaw => r'$firstRow–$lastRow of $rowCount';
@@ -1063,7 +1063,7 @@ be specified, which are defined in the source code as follows:
 RegEx adds last two lines with commented out code and closing bracket.
 {% endcomment %}
 
-<?code-excerpt "add_language/lib/nn_intl.dart (Date)" replace="/  'LLL': 'LLL',/  'LLL': 'LLL',\n  \/\/ ...\n}/g"?>
+<?code-excerpt "add_language/lib/nn_intl.dart (date-patterns)" replace="/  'LLL': 'LLL',/  'LLL': 'LLL',\n  \/\/ ...\n}/g"?>
 ```dart
 const nnLocaleDatePatterns = {
   'd': 'd.',
@@ -1078,7 +1078,7 @@ const nnLocaleDatePatterns = {
 RegEx adds last two lines with commented out code and closing bracket.
 {% endcomment %}
 
-<?code-excerpt "add_language/lib/nn_intl.dart (Date2)" replace="/  ],/  ],\n  \/\/ ...\n}/g"?>
+<?code-excerpt "add_language/lib/nn_intl.dart (date-symbols)" replace="/  ],/  ],\n  \/\/ ...\n}/g"?>
 ```dart
 const nnDateSymbols = {
   'NAME': 'nn',
@@ -1096,7 +1096,7 @@ share the same flexibility for number formatting,
 the formatting for an existing locale must be used
 as a substitute in `_NnMaterialLocalizationsDelegate`:
 
-<?code-excerpt "add_language/lib/nn_intl.dart (Delegate)"?>
+<?code-excerpt "add_language/lib/nn_intl.dart (delegate)"?>
 ```dart
 class _NnMaterialLocalizationsDelegate
     extends LocalizationsDelegate<MaterialLocalizations> {
@@ -1158,7 +1158,7 @@ The following code sets the app's language to Nynorsk and
 adds the `NnMaterialLocalizations` delegate instance to the app's
 `localizationsDelegates` list:
 
-<?code-excerpt "add_language/lib/main.dart (MaterialApp)"?>
+<?code-excerpt "add_language/lib/main.dart (material-app)"?>
 ```dart
 const MaterialApp(
   localizationsDelegates: [
@@ -1179,7 +1179,7 @@ const MaterialApp(
 [flutter_localizations README]: {{site.repo.flutter}}/blob/master/packages/flutter_localizations/lib/src/l10n/README.md
 [`GlobalMaterialLocalizations`]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
 
-<a id="alternative-internationalization-workflows">
+<a id="alternative-internationalization-workflows"></a>
 ## Alternative internationalization workflows
 
 This section describes different approaches to internationalize
@@ -1199,7 +1199,7 @@ In the following example, the `DemoLocalizations` class
 includes all of its translations directly in per language Maps:
 
 
-<?code-excerpt "minimal/lib/main.dart (Demo)"?>
+<?code-excerpt "minimal/lib/main.dart (demo)"?>
 ```dart
 class DemoLocalizations {
   DemoLocalizations(this.locale);
@@ -1231,7 +1231,7 @@ In the minimal app the `DemoLocalizationsDelegate` is slightly
 different. Its `load` method returns a [`SynchronousFuture`][]
 because no asynchronous loading needs to take place.
 
-<?code-excerpt "minimal/lib/main.dart (Delegate)"?>
+<?code-excerpt "minimal/lib/main.dart (delegate)"?>
 ```dart
 class DemoLocalizationsDelegate
     extends LocalizationsDelegate<DemoLocalizations> {

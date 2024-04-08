@@ -4,7 +4,7 @@ import './backend.dart';
 
 import 'package:flutter/services.dart';
 
-// #docregion CatchError
+// #docregion catch-error
 import 'package:flutter/material.dart';
 import 'dart:ui';
 
@@ -16,9 +16,9 @@ void main() {
   };
   runApp(const MyApp());
 }
-// #enddocregion CatchError
+// #enddocregion catch-error
 
-// #docregion CustomError
+// #docregion custom-error
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -37,14 +37,14 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-// #enddocregion CustomError
+// #enddocregion custom-error
 
 class MyButton extends StatelessWidget {
   const MyButton({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // #docregion OnPressed
+    // #docregion on-pressed
     return OutlinedButton(
       child: const Text('Click me!'),
       onPressed: () async {
@@ -52,6 +52,6 @@ class MyButton extends StatelessWidget {
         await channel.invokeMethod('blah');
       },
     );
-    // #enddocregion OnPressed
+    // #enddocregion on-pressed
   }
 }

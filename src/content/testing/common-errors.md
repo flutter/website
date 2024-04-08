@@ -52,7 +52,7 @@ child widget that isn't constrained in its size.
 For example,
 the code snippet below demonstrates a common scenario:
 
-<?code-excerpt "lib/renderflex_overflow.dart (Problem)"?>
+<?code-excerpt "lib/renderflex_overflow.dart (problem)"?>
 ```dart
 Widget build(BuildContext context) {
   return Row(
@@ -107,7 +107,7 @@ to be wider than it can be. To achieve this,
 you need to constrain its width. One way to do it is to
 wrap the `Column` in an `Expanded` widget:
 
-<?code-excerpt "lib/renderflex_overflow.dart (Fix)"?>
+<?code-excerpt "lib/renderflex_overflow.dart (solution)"?>
 ```dart
 return const Row(
   children: [
@@ -205,7 +205,7 @@ on its children's height by default.
 The combination of the two behaviors leads to the failure of
 determining the size of the `ListView`.
 
-<?code-excerpt "lib/unbounded_height.dart (Problem)"?>
+<?code-excerpt "lib/unbounded_height.dart (problem)"?>
 ```dart
 Widget build(BuildContext context) {
   return Center(
@@ -238,7 +238,7 @@ wrap it using an `Expanded` widget (as shown in the following example).
 Otherwise, specify an absolute height using a `SizedBox`
 widget or a relative height using a `Flexible` widget.
 
-<?code-excerpt "lib/unbounded_height.dart (Fix)"?>
+<?code-excerpt "lib/unbounded_height.dart (solution)"?>
 ```dart
 Widget build(BuildContext context) {
   return Center(
@@ -300,7 +300,7 @@ This error occurs, for example, when a `Row` contains a
 `TextFormField` or a `TextField` but the latter has
 no width constraint.
 
-<?code-excerpt "lib/unbounded_width.dart (Problem)"?>
+<?code-excerpt "lib/unbounded_width.dart (problem)"?>
 ```dart
 Widget build(BuildContext context) {
   return MaterialApp(
@@ -325,7 +325,7 @@ fix this error by constraining the text field
 using either an `Expanded` or `SizedBox` widget.
 The following example demonstrates using an `Expanded` widget:
 
-<?code-excerpt "lib/unbounded_width.dart (Fix)"?>
+<?code-excerpt "lib/unbounded_width.dart (solution)"?>
 ```dart
 Widget build(BuildContext context) {
   return MaterialApp(
@@ -419,7 +419,7 @@ but `setState` should never be called from a `build` method.
 
 The following snippet seems to be a common culprit of this error:
 
-<?code-excerpt "lib/set_state_build.dart (Problem)"?>
+<?code-excerpt "lib/set_state_build.dart (problem)"?>
 ```dart
 Widget build(BuildContext context) {
   // Don't do this.
@@ -458,7 +458,7 @@ clicking a button on the first page,
 the `Navigator` pushes two routes–one
 for the second page and another for the dialog.
 
-<?code-excerpt "lib/set_state_build.dart (Fix)"?>
+<?code-excerpt "lib/set_state_build.dart (solution)"?>
 ```dart
 class FirstScreen extends StatelessWidget {
   const FirstScreen({super.key});

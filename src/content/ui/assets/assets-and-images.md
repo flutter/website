@@ -101,7 +101,7 @@ to an `AssetBundle` is not available,
 you can use `rootBundle` to directly load such assets.
 For example:
 
-<?code-excerpt "main.dart (RootBundle)"?>
+<?code-excerpt "main.dart (root-bundle-load)"?>
 ```dart
 import 'package:flutter/services.dart' show rootBundle;
 
@@ -118,7 +118,7 @@ class in a widget's `build()` method.
 For example, your app can load the background
 image from the asset declarations in the previous example:
 
-<?code-excerpt "main.dart (BackgroundImage)"?>
+<?code-excerpt "main.dart (background-image)"?>
 ```dart
 return const Image(image: AssetImage('assets/background.png'));
 ```
@@ -217,9 +217,10 @@ called `my_icons`, which has the following directory structure:
 
 To load the image, use:
 
-<?code-excerpt "main.dart (PackageImage)"?>
+<?code-excerpt "main.dart (package-image)"?>
 ```dart
-return const AssetImage('icons/heart.png', package: 'my_icons');
+  return const AssetImage('icons/heart.png', package: 'my_icons');
+}
 ```
 
 Assets used by the package itself should also be fetched
