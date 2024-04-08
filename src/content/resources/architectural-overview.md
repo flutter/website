@@ -80,7 +80,7 @@ the primitives necessary to support all Flutter applications.
 The engine is responsible for rasterizing composited scenes
 whenever a new frame needs to be painted.
 It provides the low-level implementation of Flutter's core API,
-including graphics (through [Impeller] on iOS and coming to Android,
+including graphics (through [Impeller][] on iOS and coming to Android,
 and [Skia][] on other platforms) text layout,
 file and network I/O, accessibility support,
 plugin architecture, and a Dart runtime
@@ -553,14 +553,16 @@ such as Windows or macOS.
 
 :::note
 Flutter 3.10 set Impeller as the default
-rendering engine on iOS. It's in preview
-for Android behind a flag.
+rendering engine on iOS. You can preview
+Impeller on Android behind the `enable-impeller` flag.
+For more information, check out [Impeller rendering engine][Impeller].
 :::
 
 ### From user input to the GPU
 
-The overriding principle that Flutter applies to its rendering pipeline is that
-**simple is fast**. Flutter has a straightforward pipeline for how data flows to
+The overriding principle that Flutter applies to its
+rendering pipeline is that **simple is fast**.
+Flutter has a straightforward pipeline for how data flows to
 the system, as shown in the following sequencing diagram:
 
 ![Render pipeline sequencing
@@ -585,15 +587,19 @@ Container(
 );
 ```
 
-When Flutter needs to render this fragment, it calls the `build()` method, which
-returns a subtree of widgets that renders UI based on the current app state.
-During this process, the `build()` method can introduce new widgets, as
-necessary, based on its state. As an example, in the preceding code
-fragment, `Container` has `color` and `child` properties. From looking at the
-[source
+When Flutter needs to render this fragment,
+it calls the `build()` method, which
+returns a subtree of widgets that renders
+UI-based on the current app state.
+During this process,
+the `build()` method can introduce new widgets,
+as necessary, based on its state.
+As an example, in the preceding code fragment,
+`Container` has `color` and `child` properties.
+From looking at the [source
 code]({{site.repo.flutter}}/blob/02efffc134ab4ce4ff50a9ddd86c832efdb80462/packages/flutter/lib/src/widgets/container.dart#L401)
-for `Container`, you can see that if the color is not null, it inserts a
-`ColoredBox` representing the color:
+for `Container`, you can see that if the color is not null,
+it inserts a `ColoredBox` representing the color:
 
 ```dart
 if (color != null)
