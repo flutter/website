@@ -184,74 +184,55 @@ don't check it into public source control.
 
 ### Configure signing in gradle
 
-Configure gradle to use your upload key when building your app in release mode 
-by editing the `[project]/android/app/build.gradle` file.
+When building your app in release mode, configure gradle to use your upload key.
+To configure gradle, edit the `<project>/android/app/build.gradle` file.
 
-<ol>
-<li> 
+1. Add the keystore information from your properties file before the `android` block:
 
-Add the keystore information from your properties file before the `android` block:
-
-```groovy
-   def keystoreProperties = new Properties()
-   def keystorePropertiesFile = rootProject.file('key.properties')
-   if (keystorePropertiesFile.exists()) {
-       keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
-   }
-
-   android {
+   ```diff
+   +   def keystoreProperties = new Properties()
+   +   def keystorePropertiesFile = rootProject.file('key.properties')
+   +   if (keystorePropertiesFile.exists()) {
+   +       keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+   +   }
+   +
+      android {
          ...
-   }
-```
-   
-   Load the `key.properties` file into the `keystoreProperties` object.
+      }
+   ```
 
-</li>
+1. Load the `key.properties` file into the `keystoreProperties` object.
 
-<li>
+1. Add the signing configuration before the `buildTypes` block:
 
-Find the `buildTypes` block:
+   ```diff
+   +   signingConfigs {
+   +       release {
+   +           keyAlias keystoreProperties['keyAlias']
+   +           keyPassword keystoreProperties['keyPassword']
+   +           storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+   +           storePassword keystoreProperties['storePassword']
+   +       }
+   +   }
+      buildTypes {
+         release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now,
+            // so `flutter run --release` works.
+   -           signingConfig signingConfigs.debug
+   +           signingConfig signingConfigs.release
+         }
+      }
+   ```
 
-```groovy
-   buildTypes {
-       release {
-           // TODO: Add your own signing config for the release build.
-           // Signing with the debug keys for now,
-           // so `flutter run --release` works.
-           signingConfig signingConfigs.debug
-       }
-   }
-```
-
-   And replace it with the following signing configuration info:
-
-```groovy
-   signingConfigs {
-       release {
-           keyAlias keystoreProperties['keyAlias']
-           keyPassword keystoreProperties['keyPassword']
-           storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
-           storePassword keystoreProperties['storePassword']
-       }
-   }
-   buildTypes {
-       release {
-           signingConfig signingConfigs.release
-       }
-   }
-```
-
-</li>
-</ol>
-
-Release builds of your app will now be signed automatically.
+Flutter now signs all release builds.
 
 :::note
 You might need to run `flutter clean` after changing the gradle file.
 This prevents cached builds from affecting the signing process.
 :::
 
-For more information on signing your app, check out
+To learn more about signing your app, check out
 [Sign your app][] on developer.android.com.
 
 ## Shrinking your code with R8
