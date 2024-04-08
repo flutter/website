@@ -599,11 +599,11 @@
       children:
         - title: Overview
           permalink: /tools/devtools/overview
-        - title: Install from Android Studio & IntelliJ
+        - title: Run from Android Studio & IntelliJ
           permalink: /tools/devtools/android-studio
-        - title: Install from VS Code
+        - title: Run from VS Code
           permalink: /tools/devtools/vscode
-        - title: Install from command line
+        - title: Run from command line
           permalink: /tools/devtools/cli
         - title: Flutter inspector
           permalink: /tools/devtools/inspector

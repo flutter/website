@@ -1,5 +1,5 @@
 ---
-title: Debugging performance for web apps
+title: Debug performance for web apps
 description: Learn how to use Chrome DevTools to debug web performance issues.
 ---
 

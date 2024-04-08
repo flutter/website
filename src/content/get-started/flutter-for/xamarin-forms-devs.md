@@ -2528,7 +2528,7 @@ DevTools includes support for profiling, examining the heap,
 inspecting the widget tree, logging diagnostics, debugging,
 observing executed lines of code,
 debugging memory leaks and memory fragmentation.
-For more information, see the [DevTools][] documentation.
+For more information, check out the [DevTools][] documentation.
 
 ## Notifications
 

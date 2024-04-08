@@ -5,15 +5,17 @@ description: Learn how to use and build DevTools extensions.
 
 ## What are DevTools extensions?
 
-[DevTools extensions](https://pub.dev/packages/devtools_extensions) are developer
-tools provided by third-party packages that are tightly integrated into the
-DevTools tooling suite. Extensions are distributed as part of a pub package,
-and they are dynamically loaded into DevTools when a user is debugging their app.
+[DevTools extensions](https://pub.dev/packages/devtools_extensions)
+are developer tools provided by third-party packages that are
+tightly integrated into the DevTools tooling suite.
+Extensions are distributed as part of a pub package,
+and they are dynamically loaded into DevTools when
+a user is debugging their app.
 
 ## Use a DevTools extension
 
-If your app depends on a package that provides a DevTools extension, the
-extension automatically shows up in a new tab when you open DevTools.
+If your app depends on a package that provides a DevTools extension,
+the extension automatically shows up in a new tab when you open DevTools.
 
 ### Configure extension enablement states
 
@@ -22,9 +24,11 @@ Make sure the extension is provided by a source you trust before enabling it.
 
 ![Screenshot of extension enablement prompt](/assets/images/docs/tools/devtools/extension_enable_prompt.png)
 
-Extension enablement states are stored in a `devtools_options.yaml` file in the
-root of the user's project (similar to `analysis_options.yaml`). This file
-stores per-project (or optionally, per user) settings for DevTools.
+Extension enablement states are stored in a `devtools_options.yaml`
+file in the root of the user's project
+(similar to `analysis_options.yaml`).
+This file stores per-project
+(or optionally, per user) settings for DevTools.
 
 If this file is **checked into source control**, the specified options are
 configured for the project. This means that anyone who pulls a project's

@@ -102,7 +102,7 @@ You can debug your app in a couple of ways.
   such as setting breakpoints.
 
 The instructions below describe features available in VS Code.
-For information on using launching DevTools, see
+For information on launching and using DevTools, see
 [Running DevTools from VS Code][] in the [DevTools][] docs.
 :::
 

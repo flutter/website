@@ -1,5 +1,5 @@
 ---
-title: Using the app size tool
+title: Use the app size tool
 description: Learn how to use the DevTools app size tool.
 ---
 
@@ -41,9 +41,10 @@ navigate to the "App Size" tab.
 
 ![Screenshot of app size tab](/assets/images/docs/tools/devtools/app_size_tab.png)
 
-If DevTools is not connected to a running application, you can
-access the tool from the landing page that appears once you have launched
-DevTools (see [installation instructions][]).
+If DevTools is not connected to a running application,
+you can access the tool from the landing page
+that appears once you have launched
+DevTools (see [launch instructions][]).
 
 ![Screenshot of app size access on landing page](/assets/images/docs/tools/devtools/app_size_access_landing_page.png){:width="100%"}
 
@@ -73,7 +74,7 @@ generating size files.
 
 The treemap and table show the hierarchical data for your app's size.
 
-#### Using the treemap
+#### Use the treemap
 
 A treemap is a visualization for hierarchical data.
 The space is broken up into rectangles,
@@ -101,7 +102,7 @@ This section of the page shows code size attribution data
 compiled application). This data is visible
 in the form of a dominator tree as well as a call graph.
 
-#### Using the dominator tree
+#### Use the dominator tree
 
 A [dominator tree][] is a tree where each node's
 children are those nodes it immediately dominates.
@@ -140,7 +141,7 @@ use the dominator tree to trace the package to its root source.
 
 ![Screenshot of code size dominator tree](/assets/images/docs/tools/devtools/app_size_dominator_tree.png){:width="100%"}
 
-#### Using the call graph
+#### Use the call graph
 
 A call graph provides similar information to the dominator
 tree in regards to helping you understand why code exists
@@ -227,7 +228,7 @@ on generating these files.
 In the diff view, the treemap and tree table show
 only data that differs between the two imported size files.
 
-For questions about using the treemap, see [Using the treemap][] above.
+For questions about using the treemap, see [Use the treemap][] above.
 
 ## Generating size files
 
@@ -266,10 +267,10 @@ the Wonderous App using DevTools, check out the
 [App Size Tool tutorial][app-size-tutorial]. Various strategies
 to reduce an app's size are also discussed.
 
-[Using the treemap]: #using-the-treemap
+[Use the treemap]: #using-the-treemap
 [Generating size files]: #generating-size-files
 [Analysis tab]: #analysis-tab
 [Diff tab]: #diff-tab
-[installation instructions]: /tools/devtools/overview#install-devtools
+[launch instructions]: /tools/devtools/overview#install-devtools
 [App Size Documentation]: /perf/app-size#breaking-down-the-size
 [app-size-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-app-size-tool-part-3-of-8-9be6e9ec42a2
