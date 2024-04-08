@@ -11,10 +11,11 @@ but only on the first run,
 this is likely due to shader compilation.
 Flutter's long term solution to
 shader compilation jank is [Impeller][],
-which is in the stable release for iOS
-and in preview behind a flag on Android.
+which is the default renderer on iOS.
+You can preview Impeller on Android by passing
+`--enable-impeller` to `flutter run.
 
-[Impeller]: {{site.repo.flutter}}/wiki/Impeller
+[Impeller]: /perf/impeller
 
 While we work on making Impeller fully production ready,
 you can mitigate shader compilation jank by bundling
@@ -30,7 +31,7 @@ or even create rendering errors.
 Also, note that we aren't planning to make
 improvements to the developer experience for creating
 precompiled shaders described below. Instead,
-we are focusing our energies on the more robust
+we are focusing our energies on more robust
 solution to this problem that Impeller offers.
 
 ## What is shader compilation jank?

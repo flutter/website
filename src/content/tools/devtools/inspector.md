@@ -356,7 +356,7 @@ the repainting to just the animation.
 
 Here the progress indicator causes its container to repaint:
 
-<?code-excerpt "lib/highlight_repaints.dart (EverythingRepaints)"?>
+<?code-excerpt "lib/highlight_repaints.dart (everything-repaints)"?>
 ```dart
 class EverythingRepaintsPage extends StatelessWidget {
   const EverythingRepaintsPage({super.key});
@@ -378,7 +378,7 @@ class EverythingRepaintsPage extends StatelessWidget {
 Wrapping the progress indicator in a `RepaintBoundary` causes
 only that section of the screen to repaint:
 
-<?code-excerpt "lib/highlight_repaints.dart (AreaRepaints)"?>
+<?code-excerpt "lib/highlight_repaints.dart (area-repaints)"?>
 ```dart
 class AreaRepaintsPage extends StatelessWidget {
   const AreaRepaintsPage({super.key});
@@ -405,7 +405,7 @@ which uses additional memory.
 
 You can also enable this option in code:
 
-<?code-excerpt "lib/highlight_repaints.dart (Toggle)"?>
+<?code-excerpt "lib/highlight_repaints.dart (toggle)"?>
 ```dart
 import 'package:flutter/rendering.dart';
 
@@ -443,7 +443,7 @@ the image asset file so it's smaller.
 If this isn't possible, you can use the `cacheHeight` and `cacheWidth`
 parameters on the `Image` constructor:
 
-<?code-excerpt "lib/oversized_images.dart (ResizedImage)"?>
+<?code-excerpt "lib/oversized_images.dart (resized-image)"?>
 ```dart
 class ResizedImage extends StatelessWidget {
   const ResizedImage({super.key});
@@ -467,7 +467,7 @@ regardless of these parameters.
 
 This property can also be set in code:
 
-<?code-excerpt "lib/oversized_images.dart (Toggle)"?>
+<?code-excerpt "lib/oversized_images.dart (toggle)"?>
 ```dart
 void showOversizedImages() {
   debugInvertOversizedImages = true;

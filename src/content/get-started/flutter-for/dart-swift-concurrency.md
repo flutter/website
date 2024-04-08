@@ -161,7 +161,7 @@ In Dart, all work runs on the main isolate by default.
 To implement the same example in Dart, 
 first, create the `Weather` `enum`:
 
-<?code-excerpt "lib/async_weather.dart (Weather)"?>
+<?code-excerpt "lib/async_weather.dart (weather)"?>
 ```dart
 enum Weather {
   rainy,
@@ -176,7 +176,7 @@ provided in the future. A `Future` is similar to Swift's `ObservableObject`.
 In this example, a function within the view model
 returns a `Future<Weather>` object:
 
-<?code-excerpt "lib/async_weather.dart (HomePageViewModel)"?>
+<?code-excerpt "lib/async_weather.dart (home-page-view-model)"?>
 ```dart
 @immutable
 class HomePageViewModel {
@@ -205,7 +205,7 @@ In Flutter, [`FutureBuilder`]({{site.api}}/flutter/widgets/FutureBuilder-class.h
 widgets are used to display the results of a Future in the UI. 
 The following example uses a `FutureBuilder`:
 
-<?code-excerpt "lib/async_weather.dart (HomePageWidget)"?>
+<?code-excerpt "lib/async_weather.dart (home-page-widget)"?>
 ```dart
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

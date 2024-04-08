@@ -967,14 +967,6 @@ updates:
       - "lang.dart"
   - package-ecosystem: "pub"
     versioning-strategy: "increase-if-necessary"
-    directory: "/examples/testing/debugging"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
     directory: "/examples/testing/errors"
     schedule:
       interval: "daily"

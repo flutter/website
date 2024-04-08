@@ -6,7 +6,7 @@ class AbsorbKeysExample extends StatelessWidget {
 
   final Widget child;
 
-  // #docregion AbsorbKeysExample
+  // #docregion absorb-keys
   @override
   Widget build(BuildContext context) {
     return Focus(
@@ -15,13 +15,13 @@ class AbsorbKeysExample extends StatelessWidget {
       child: child,
     );
   }
-  // #enddocregion AbsorbKeysExample
+  // #enddocregion absorb-keys
 }
 
 class NoAExample extends StatelessWidget {
   const NoAExample({super.key});
 
-  // #docregion NoAExample
+  // #docregion no-letter-a
   @override
   Widget build(BuildContext context) {
     return Focus(
@@ -33,13 +33,13 @@ class NoAExample extends StatelessWidget {
       child: const TextField(),
     );
   }
-  // #enddocregion NoAExample
+  // #enddocregion no-letter-a
 }
 
 class BuilderExample extends StatelessWidget {
   const BuilderExample({super.key});
 
-  // #docregion BuilderExample
+  // #docregion builder
   @override
   Widget build(BuildContext context) {
     return Focus(
@@ -52,10 +52,10 @@ class BuilderExample extends StatelessWidget {
       ),
     );
   }
-  // #enddocregion BuilderExample
+  // #enddocregion builder
 }
 
-// #docregion OrderedButtonRowExample
+// #docregion ordered-button-row
 class OrderedButtonRow extends StatelessWidget {
   const OrderedButtonRow({super.key});
 
@@ -95,4 +95,4 @@ class OrderedButtonRow extends StatelessWidget {
     );
   }
 }
-// #enddocregion OrderedButtonRowExample
+// #enddocregion ordered-button-row

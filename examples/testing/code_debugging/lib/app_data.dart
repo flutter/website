@@ -1,4 +1,4 @@
-// #docregion PassAppData
+// #docregion pass-data
 import 'dart:convert';
 import 'dart:developer' as developer;
 
@@ -11,6 +11,6 @@ void main() {
     error: jsonEncode(myCustomObject),
   );
 }
-// #enddocregion PassAppData
+// #enddocregion pass-data
 
 class MyCustomObject {}

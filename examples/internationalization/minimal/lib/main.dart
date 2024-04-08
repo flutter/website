@@ -26,7 +26,7 @@ import 'package:flutter/foundation.dart' show SynchronousFuture;
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-// #docregion Demo
+// #docregion demo
 class DemoLocalizations {
   DemoLocalizations(this.locale);
 
@@ -51,9 +51,9 @@ class DemoLocalizations {
     return _localizedValues[locale.languageCode]!['title']!;
   }
 }
-// #enddocregion Demo
+// #enddocregion demo
 
-// #docregion Delegate
+// #docregion delegate
 class DemoLocalizationsDelegate
     extends LocalizationsDelegate<DemoLocalizations> {
   const DemoLocalizationsDelegate();
@@ -72,7 +72,7 @@ class DemoLocalizationsDelegate
   @override
   bool shouldReload(DemoLocalizationsDelegate old) => false;
 }
-// #enddocregion Delegate
+// #enddocregion delegate
 
 class DemoApp extends StatelessWidget {
   const DemoApp({super.key});

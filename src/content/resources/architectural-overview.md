@@ -80,7 +80,7 @@ the primitives necessary to support all Flutter applications.
 The engine is responsible for rasterizing composited scenes
 whenever a new frame needs to be painted.
 It provides the low-level implementation of Flutter's core API,
-including graphics (through [Impeller] on iOS and coming to Android,
+including graphics (through [Impeller][] on iOS and coming to Android,
 and [Skia][] on other platforms) text layout,
 file and network I/O, accessibility support,
 plugin architecture, and a Dart runtime
@@ -258,7 +258,7 @@ parent and can receive context from the parent. This structure carries all the
 way up to the root widget (the container that hosts the Flutter app, typically
 `MaterialApp` or `CupertinoApp`), as this trivial example shows:
 
-<?code-excerpt "lib/main.dart (Main)"?>
+<?code-excerpt "lib/main.dart (main)"?>
 ```dart
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -489,7 +489,7 @@ pervasive throughout an application. The `MaterialApp` `build()` method inserts
 a theme in the tree when it builds, and then deeper in the hierarchy a widget
 can use the `.of()` method to look up the relevant theme data, for example:
 
-<?code-excerpt "lib/main.dart (Container)"?>
+<?code-excerpt "lib/main.dart (container)"?>
 ```dart
 Container(
   color: Theme.of(context).secondaryHeaderColor,
@@ -553,14 +553,16 @@ such as Windows or macOS.
 
 :::note
 Flutter 3.10 set Impeller as the default
-rendering engine on iOS. It's in preview
-for Android behind a flag.
+rendering engine on iOS. You can preview
+Impeller on Android behind the `enable-impeller` flag.
+For more information, check out [Impeller rendering engine][Impeller].
 :::
 
 ### From user input to the GPU
 
-The overriding principle that Flutter applies to its rendering pipeline is that
-**simple is fast**. Flutter has a straightforward pipeline for how data flows to
+The overriding principle that Flutter applies to its
+rendering pipeline is that **simple is fast**.
+Flutter has a straightforward pipeline for how data flows to
 the system, as shown in the following sequencing diagram:
 
 ![Render pipeline sequencing
@@ -572,7 +574,7 @@ Let's take a look at some of these phases in greater detail.
 
 Consider this code fragment that demonstrates a widget hierarchy:
 
-<?code-excerpt "lib/main.dart (Container2)"?>
+<?code-excerpt "lib/main.dart (widget-hierarchy)"?>
 ```dart
 Container(
   color: Colors.blue,
@@ -585,15 +587,19 @@ Container(
 );
 ```
 
-When Flutter needs to render this fragment, it calls the `build()` method, which
-returns a subtree of widgets that renders UI based on the current app state.
-During this process, the `build()` method can introduce new widgets, as
-necessary, based on its state. As an example, in the preceding code
-fragment, `Container` has `color` and `child` properties. From looking at the
-[source
+When Flutter needs to render this fragment,
+it calls the `build()` method, which
+returns a subtree of widgets that renders
+UI-based on the current app state.
+During this process,
+the `build()` method can introduce new widgets,
+as necessary, based on its state.
+As an example, in the preceding code fragment,
+`Container` has `color` and `child` properties.
+From looking at the [source
 code]({{site.repo.flutter}}/blob/02efffc134ab4ce4ff50a9ddd86c832efdb80462/packages/flutter/lib/src/widgets/container.dart#L401)
-for `Container`, you can see that if the color is not null, it inserts a
-`ColoredBox` representing the color:
+for `Container`, you can see that if the color is not null,
+it inserts a `ColoredBox` representing the color:
 
 ```dart
 if (color != null)
@@ -712,7 +718,7 @@ available to decide how it will render its content. By using a
 the child object can examine the passed-down constraints and use those to
 determine how it will use them, for example:
 
-<?code-excerpt "lib/main.dart (LayoutBuilder)"?>
+<?code-excerpt "lib/main.dart (layout-builder)"?>
 ```dart
 Widget build(BuildContext context) {
   return LayoutBuilder(
@@ -814,7 +820,7 @@ code](/assets/images/docs/arch-overview/platform-channels.png){:width="70%"}
 The following is a short platform channel example of a Dart call to a receiving
 event handler in Kotlin (Android) or Swift (iOS):
 
-<?code-excerpt "lib/main.dart (MethodChannel)"?>
+<?code-excerpt "lib/main.dart (method-channel)"?>
 ```dart
 // Dart side
 const channel = MethodChannel('foo');
@@ -868,7 +874,7 @@ To use FFI, you create a `typedef` for each of the Dart and unmanaged method
 signatures, and instruct the Dart VM to map between them. As an example,
 here's a fragment of code to call the traditional Win32 `MessageBox()` API:
 
-<?code-excerpt "lib/ffi.dart (FFI)"?>
+<?code-excerpt "lib/ffi.dart" remove="ignore:"?>
 ```dart
 import 'dart:ffi';
 import 'package:ffi/ffi.dart'; // contains .toNativeUtf16() extension method

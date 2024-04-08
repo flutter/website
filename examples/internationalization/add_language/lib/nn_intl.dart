@@ -11,13 +11,13 @@ import 'package:intl/intl.dart' as intl;
 ///
 /// These are not accurate and are just a clone of the date patterns for the
 /// `no` locale to demonstrate how one would write and use custom date patterns.
-// #docregion Date
+// #docregion date-patterns
 const nnLocaleDatePatterns = {
   'd': 'd.',
   'E': 'ccc',
   'EEEE': 'cccc',
   'LLL': 'LLL',
-// #enddocregion Date
+// #enddocregion date-patterns
   'LLLL': 'LLLL',
   'M': 'L.',
   'Md': 'd.M.',
@@ -64,14 +64,14 @@ const nnLocaleDatePatterns = {
 ///
 /// These are not accurate and are just a clone of the date symbols for the
 /// `no` locale to demonstrate how one would write and use custom date symbols.
-// #docregion Date2
+// #docregion date-symbols
 const nnDateSymbols = {
   'NAME': 'nn',
   'ERAS': <dynamic>[
     'f.Kr.',
     'e.Kr.',
   ],
-// #enddocregion Date2
+// #enddocregion date-symbols
   'ERANAMES': <dynamic>[
     'før Kristus',
     'etter Kristus',
@@ -257,7 +257,7 @@ const nnDateSymbols = {
   ],
 };
 
-// #docregion Delegate
+// #docregion delegate
 class _NnMaterialLocalizationsDelegate
     extends LocalizationsDelegate<MaterialLocalizations> {
   const _NnMaterialLocalizationsDelegate();
@@ -306,7 +306,7 @@ class _NnMaterialLocalizationsDelegate
   @override
   bool shouldReload(_NnMaterialLocalizationsDelegate old) => false;
 }
-// #enddocregion Delegate
+// #enddocregion delegate
 
 /// A custom set of localizations for the 'nn' locale. In this example, only
 /// the value for openAppDrawerTooltip was modified to use a custom message as
@@ -326,7 +326,7 @@ class NnMaterialLocalizations extends GlobalMaterialLocalizations {
     required super.twoDigitZeroPaddedFormat,
   });
 
-// #docregion Getters
+  // #docregion getters
   @override
   String get moreButtonTooltip => r'More';
 
@@ -335,8 +335,7 @@ class NnMaterialLocalizations extends GlobalMaterialLocalizations {
 
   @override
   String get alertDialogLabel => r'Alert';
-
-// #enddocregion Getters
+  // #enddocregion getters
 
   @override
   String get anteMeridiemAbbreviation => r'AM';
@@ -405,14 +404,14 @@ class NnMaterialLocalizations extends GlobalMaterialLocalizations {
   // A custom drawer tooltip message.
   String get openAppDrawerTooltip => r'Custom Navigation Menu Tooltip';
 
-// #docregion Raw
+  // #docregion raw
   @override
   String get pageRowsInfoTitleRaw => r'$firstRow–$lastRow of $rowCount';
 
   @override
   String get pageRowsInfoTitleApproximateRaw =>
       r'$firstRow–$lastRow of about $rowCount';
-// #enddocregion Raw
+  // #enddocregion raw
 
   @override
   String get pasteButtonLabel => r'PASTE';
