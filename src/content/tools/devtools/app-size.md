@@ -267,7 +267,7 @@ the Wonderous App using DevTools, check out the
 [App Size Tool tutorial][app-size-tutorial]. Various strategies
 to reduce an app's size are also discussed.
 
-[Use the treemap]: #using-the-treemap
+[Use the treemap]: #use-the-treemap
 [Generating size files]: #generating-size-files
 [Analysis tab]: #analysis-tab
 [Diff tab]: #diff-tab
