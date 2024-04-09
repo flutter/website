@@ -35,7 +35,7 @@ these instructions, substitute `[project]` with
 your app's directory.
 :::
 
-## Adding a launcher icon
+## Add a launcher icon
 
 When a new Flutter app is created, it has a default launcher icon.
 To customize this icon, you might want to check out the
@@ -61,7 +61,7 @@ Alternatively, you can do it manually using the following steps:
 1. To verify that the icon has been replaced,
    run your app and inspect the app icon in the Launcher.
 
-## Enabling Material Components
+## Enable Material Components
 
 If your app uses [Platform Views][], you might want to enable
 Material Components by following the steps described in the
@@ -235,18 +235,19 @@ This prevents cached builds from affecting the signing process.
 To learn more about signing your app, check out
 [Sign your app][] on developer.android.com.
 
-## Shrinking your code with R8
+## Shrink your code with R8
 
-[R8][] is the new code shrinker from Google, and it's enabled by default
-when you build a release APK or AAB. To disable R8, pass the `--no-shrink`
-flag to `flutter build apk` or `flutter build appbundle`.
+[R8][] is the new code shrinker from Google.
+It's enabled by default when you build a release APK or AAB.
+To disable R8, pass the `--no-shrink` flag to
+`flutter build apk` or `flutter build appbundle`.
 
 :::note
 Obfuscation and minification can considerably extend compile time
 of the Android application.
 :::
 
-## Enabling multidex support
+## Enable multidex support
 
 When writing large apps or making use of large plugins,
 you might encounter Android's dex limit of 64k methods
@@ -296,7 +297,7 @@ Also, include any other classes used in app startup.
 For more detailed guidance on adding multidex support manually,
 check out the official [Android documentation][multidex-docs].
 
-## Reviewing the app manifest
+## Review the app manifest
 
 Review the default [App Manifest][manifest] file, `AndroidManifest.xml`.
 This file is located in `[project]/android/app/src/main`.
@@ -314,7 +315,7 @@ Verify the following values:
   Internet access during development to enable communication between
   Flutter tools and a running app.
 
-## Reviewing the Gradle build configuration
+## Review the Gradle build configuration
 
 Review the default [Gradle build file][gradlebuild]
 (`build.gradle`, located in `[project]/android/app`),
@@ -358,7 +359,7 @@ to verify that the values are correct.
 For more information, check out the module-level build
 section in the [Gradle build file][gradlebuild].
   
-## Building the app for release
+## Build the app for release
 
 You have two possible release formats when publishing to
 the Play Store.
@@ -455,7 +456,7 @@ From the command line:
 1. Enter `cd [project]`.
 1. Run `flutter install`.
 
-## Publishing to the Google Play Store
+## Publish to the Google Play Store
 
 For detailed instructions on publishing your app to the Google Play Store,
 check out the [Google Play launch][play] documentation.
