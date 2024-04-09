@@ -5,9 +5,7 @@ description: >
 short-title: Large screens
 ---
 
-{% comment %}
-TODO(sfshaza): [xxx PENDING: Should we axe this page?]
-{% endcomment %}
+<b>TODO(sfshaza): PENDING: Should we axe this page?</b>
 
 You can optimize your app to improve its
 look and feel on large screens. 

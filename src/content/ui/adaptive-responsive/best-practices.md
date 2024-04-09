@@ -53,18 +53,14 @@ It’s generally recommended to wrap the body of a
 but you don’t always need to put it this high in the
 `Widget` tree.
 
-{% comment %}
-TODO(sfshaza): [xxx PENDING: example code]
-{% endcomment %}
+<b>TODO(sfshaza): PENDING: example code</b>
 
 For example, if you purposefully want your app to stretch
 under the cutouts, you can move the `SafeArea` to wrap
 whatever content makes sense,
 and let the rest of the app take up the full screen.
 
-{% comment %}
-TODO(sfshaza): [xxx PENDING: example]
-{% endcomment %}
+<b>TODO(sfshaza): PENDING: example</b>
 
 Using `SafeArea` ensures that your app content won’t be
 cut off by physical display features or operating system UI
@@ -103,9 +99,7 @@ check out the [`GridView`][] API page.
 
 [`GridView`]: {{site.api}}/flutter/widgets/GridView-class.html
 
-{% comment %}
-TODO(sfshaza): [xxx PENDING: Not finished yet.]
-{% endcomment %}
+<p>TODO(sfshaza): PENDING: Not finished yet.</b>
 
 ## Save app state
 
@@ -114,9 +108,7 @@ as the device rotates, changes window size,
 or folds and unfolds. 
 By default, Flutter should maintain state.
 
-{% comment %}
-TODO(sfshaza): [xxx PENDING: How SHOULD they save app state? Does [this page](/platform-integration/android/restore-state-android) apply to this situation?]
-{% endcomment %}
+<b>TODO(sfshaza): PENDING: How SHOULD they save app state? Does [this page](/platform-integration/android/restore-state-android) apply to this situation?</b>
 
 If your app loses state during device configuration,
 verify that the plugins and native extensions
@@ -125,9 +117,7 @@ device type, such as a large screen.
 Some native extensions might lose state when the
 device changes position.
 
-{% comment %}
-TODO(sfshaza): [xxx PENDING: What can you do when this happens? Do you need a federated plugin?]
-{% endcomment %}
+<b>TODO(sfshaza): PENDING: What can you do when this happens? Do you need a federated plugin?</b>
 
 [app state]: {{site.android-dev}}/jetpack/compose/state#store-state
 

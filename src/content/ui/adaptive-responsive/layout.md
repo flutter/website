@@ -8,10 +8,7 @@ short-title: Layout
 
 <?code-excerpt path-base="ui/adaptive_app_demos"?>
 
-{% comment %}
-  TODO(sfshaza): I'm coalescing this page from two previous pages. I'm not done with the text.
-  It likely also needs code or other updates.
-{% endcomment -%}
+<b>TODO(sfshaza): I'm coalescing this page from two previous pages. I'm not done with the text. It likely also needs code or other updates.</b>
 
 Flutter allows you to create apps that self-adapt
 to the device's screen size and orientation.
@@ -63,9 +60,7 @@ class FormFactor {
 Using breakpoints, you can set up a simple system
 to determine the device type:
 
-{% comment %}
-TODO(sfshaza): [xxx PENDING: Should the following example be updated to use Display instead of MediaQuery?]
-{% endcomment %}
+<b>TODO(sfshaza): PENDING: Should the following example be updated to use Display instead of MediaQuery?</b>
 
 <?code-excerpt "lib/global/device_size.dart (getFormFactor)"?>
 ```dart
@@ -105,9 +100,7 @@ top-level widget trees. For example, you could switch
 from a vertical to a horizontal layout when
 the user isn't on a handset (mobile device):
 
-{% comment %}
-TODO(sfshaza): [xxx PENDING: Should the following example be updated to use Display instead of MediaQuery?]
-{% endcomment %}
+<b>TODO(sfshaza): PENDING: Should the following example be updated to use Display instead of MediaQuery?</b>
 
 <?code-excerpt "lib/global/device_size.dart (MediaQuery)"?>
 ```dart
@@ -141,9 +134,7 @@ Keep in mind that this approach returns the current size
 and orientation of the app's entire screen and
 not just a single widget.
 
-{% comment %}
-TODO(sfshaza): [xxx PENDING: Do we need an example here?]
-{% endcomment %}
+<b>TODO(sfshaza): PENDING: Do we need an example here?</b>
 
 In this scenario, the `build` function
 automatically runs when the user is _done_
