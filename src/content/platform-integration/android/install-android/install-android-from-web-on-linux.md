@@ -1,5 +1,5 @@
 ---
-title: Add Android compiler for Flutter from Web on Linux start
+title: Add Android compiling for Flutter from Web on Linux start
 description: Configure your Linux system to develop Flutter mobile apps for Android.
 short-title: Starting from Web on Linux
 ---

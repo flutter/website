@@ -1,5 +1,5 @@
 ---
-title: Add Android compiler for Flutter from Web on ChromeOS start
+title: Add Android compiling for Flutter from Web on ChromeOS start
 description: Configure your ChromeOS system to develop Flutter mobile apps for Android.
 short-title: Starting from Web on ChromeOS
 ---

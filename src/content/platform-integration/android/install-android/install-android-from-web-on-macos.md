@@ -1,5 +1,5 @@
 ---
-title: Add Android compiler for Flutter from Web on macOS start
+title: Add Android compiling for Flutter from Web on macOS start
 description: Configure your Mac to develop Flutter mobile apps for Android.
 short-title: Starting from Web on macOS
 ---
