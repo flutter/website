@@ -1,5 +1,5 @@
 ---
-title: Add Android devtools for Flutter from Windows start
+title: Add Android compiler for Flutter from Windows start
 description: Configure your Windows system to develop Flutter mobile apps for Android.
 short-title: Starting from Windows desktop
 ---

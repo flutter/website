@@ -1,5 +1,5 @@
 ---
-title: Add Android devtools for Flutter from macOS start
+title: Add Android compiler for Flutter from macOS start
 description: Configure your Mac to develop Flutter mobile apps for Android.
 short-title: Starting from macOS desktop
 ---

@@ -1,8 +1,8 @@
 ---
-title: Add Android devtools for Flutter
+title: Add Android compiling for Flutter
 description: Configure your system to develop Flutter for Android.
-short-title: Add Android DevTools
-target-list: [Windows, 'Web on Windows', Linux, 'Web on Linux', macOS, 'Web on macOS', iOS, Web on ChromeOS]
+short-title: Add Android compiling
+target-list: [Windows, 'web on Windows', Linux, 'web on Linux', macOS, 'web on macOS', iOS, web on ChromeOS]
 ---
 
 To choose the guide to add Android Studio to your Flutter configuration,
