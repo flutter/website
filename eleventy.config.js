@@ -16,6 +16,7 @@ import { configureHighlighting } from './src/_11ty/plugins/highlight.js';
 import minifier from 'html-minifier-terser';
 import yaml from 'js-yaml';
 import { EleventyRenderPlugin } from '@11ty/eleventy';
+import { eleventyImageTransformPlugin } from '@11ty/eleventy-img';
 
 import * as path from 'node:path';
 import * as sass from 'sass';
@@ -168,6 +169,36 @@ ${content}
       }
 
       return content;
+    });
+
+    // Optimize all images, generate an avif, webp, and png version,
+    // and indicate they should be lazily loaded.
+    // Save in `_site/assets/img` and update links to there.
+    eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+      extensions: "html",
+      formats: ["avif", "webp", "png"],
+      widths: ["auto"],
+      defaultAttributes: {
+        loading: "lazy",
+        decoding: "async",
+      },
+      urlPath: "/assets/img/",
+      outputDir: "_site/assets/img/",
+    });
+  } else {
+    // To be more consistent with the production build,
+    // don't optimize images but still indicate they should be lazily loaded.
+    // Then save in `_site/assets/img` and update links to there.
+    eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+      extensions: "html",
+      formats: ["auto"],
+      widths: ["auto"],
+      defaultAttributes: {
+        loading: "lazy",
+        decoding: "async",
+      },
+      urlPath: "/assets/img/",
+      outputDir: "_site/assets/img/",
     });
   }
 
