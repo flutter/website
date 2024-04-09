@@ -1,5 +1,5 @@
 ---
-title: Using the Logging view
+title: Use the Logging view
 description: Learn how to use the DevTools logging view.
 ---
 

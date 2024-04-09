@@ -153,8 +153,6 @@ Flutter includes:
 * Command-line tools for creating, building, testing, and
   compiling your apps
 
-[Dart DevTools]: /tools/devtools
-
 ### Does Flutter work with any editors or IDEs?
 
 We provide plugins for [VS Code][],
@@ -219,7 +217,6 @@ and we measure our [test coverage][] on every commit.
 Yes, Flutter comes with [Flutter DevTools][] (also
 called Dart DevTools). For more information, see
 [Debugging with Flutter][] and the [Flutter DevTools][] docs.
-
 
 [Debugging with Flutter]: /testing/debugging
 [Flutter DevTools]: /tools/devtools/overview

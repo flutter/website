@@ -1,5 +1,5 @@
 ---
-title: Using the Network View
+title: Use the Network View
 description: How to use the DevTools network view.
 ---
 

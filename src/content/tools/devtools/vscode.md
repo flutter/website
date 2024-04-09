@@ -1,9 +1,9 @@
 ---
-title: Install and run DevTools from VS Code
-description: Learn how to install and use DevTools from VS Code.
+title: Run DevTools from VS Code
+description: Learn how to launch and use DevTools from VS Code.
 ---
 
-## Install the VS Code extensions
+## Add the VS Code extensions
 
 To use the DevTools from VS Code, you need the [Dart extension][].
 If you're debugging Flutter applications, you should also install
@@ -27,19 +27,23 @@ The chosen tool will be opened embedded inside VS Code.
 
 ![Screenshot showing DevTools embedded in VS Code](/assets/images/docs/tools/vs-code/vscode_embedded.png){:width="100%"}
 
-You can choose to have DevTools always opened in a browser with the
-`dart.embedDevTools` setting, and control whether it opens as a full window or
-in a new column next to your current editor with the `dart.devToolsLocation`
-setting.
+You can choose to have DevTools always opened
+in a browser with the `dart.embedDevTools` setting,
+and control whether it opens as a full window or
+in a new column next to your current editor with the
+`dart.devToolsLocation` setting.
 
-A full list of Dart/Flutter settings are available
-[here](https://dartcode.org/docs/settings/) or in the
+A full list of Dart/Flutter settings are available on
+[dartcode.org](https://dartcode.org/docs/settings/)
+or in the
 [VS Code settings editor](https://code.visualstudio.com/docs/getstarted/settings#_settings-editor).
-Some recommendation settings for Dart/Flutter in VS Code can be found
-[here](https://dartcode.org/docs/recommended-settings/).
+Some recommendation settings for Dart/Flutter in VS Code
+can also be found on
+[dartcode.org](https://dartcode.org/docs/recommended-settings/).
 
-You can also see whether DevTools is running and launch it in a browser from the
-language status area (the `{}` icon next to **Dart** in the status bar).
+You can also see whether DevTools is running
+and launch it in a browser from the language status area
+(the `{}` icon next to **Dart** in the status bar).
 
 ![Screenshot showing DevTools in the VS Code language status area](/assets/images/docs/tools/vs-code/vscode_status_bar.png){:width="100%"}
 

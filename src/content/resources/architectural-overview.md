@@ -614,9 +614,11 @@ case<sup><a href="#a2">2</a></sup>:
 ![Render pipeline sequencing
 diagram](/assets/images/docs/arch-overview/widgets.png){:width="35%"}
 
-This explains why, when you examine the tree through a debug tool such as the
-[Flutter inspector](/tools/devtools/inspector), part of the
-Dart DevTools, you might see a structure that is considerably deeper than what
+This explains why, when you examine the tree through
+a debug tool such as the
+[Flutter inspector](/tools/devtools/inspector),
+part of the Flutter/Dart DevTools,
+you might see a structure that is considerably deeper than what
 is in your original code.
 
 During the build phase, Flutter translates the widgets expressed in code into a

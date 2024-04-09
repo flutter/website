@@ -19,7 +19,7 @@ The following is available through the Flutter SDK:
 * APIs for unit and integration tests
 * Interop and plugin APIs to connect to the system and 3rd-party SDKs
 * Headless test runner for running tests on Windows, Linux, and Mac
-* [Dart DevTools][] for testing, debugging, and profiling your app
+* [Flutter DevTools][] for testing, debugging, and profiling your app
 * `flutter` and `dart` command-line tools for creating, building, testing,
   and compiling your apps
 
@@ -35,7 +35,7 @@ The [`flutter` CLI tool][] (`flutter/bin/flutter`) is how developers
 
 The [`dart` CLI tool][] is available with the Flutter SDK at `flutter/bin/dart`.
 
-[Dart DevTools]: /tools/devtools
+[Flutter DevTools]: /tools/devtools
 [Dart SDK]: {{site.dart-site}}/tools/sdk
 [`dart` CLI tool]: {{site.dart-site}}/tools/dart-tool
 [`flutter` CLI tool]: /reference/flutter-cli
