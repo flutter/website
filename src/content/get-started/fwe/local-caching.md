@@ -140,6 +140,11 @@ However, your users might eventually tire of waiting for data
 to load every time they relaunch your app. For that, you should
 choose from one of the persistent caching strategies found below.
 
+[dependency injection]: https://en.wikipedia.org/wiki/Dependency_injection
+[loose coupling]: https://en.wikipedia.org/wiki/Loose_coupling
+[repository Pattern]: https://medium.com/@pererikbergman/repository-design-pattern-e28c0f3e4a30
+[separation of concerns]: https://en.wikipedia.org/wiki/Separation_of_concerns
+
 ## Persistent caches
 
 Caching data in memory will never see your precious cache
@@ -161,6 +166,11 @@ For a complete guide, see our other resources on using key-value stores.
 * Cookbook: [Store key-value data on disk][]
 * Video: [Package of the Week: `shared_preferences`][]
 
+[key-value storage]: https://en.wikipedia.org/wiki/Key%E2%80%93value_database
+[Package of the Week: `shared_preferences`]: https://www.youtube.com/watch?v=sa_U0jffQII
+[`shared_preferences`]: {{site.pub-pkg}}/shared_preferences
+[Store key-value data on disk]: /cookbook/persistence/key-value
+
 ### Caching data with the file system
 
 If your Flutter app outgrows the low-throughput scenarios
@@ -170,6 +180,8 @@ For a more thorough guide, see our other resources on
 file system caching.
 
 * Cookbook: [Read and write files][]
+
+[Read and write files]: /cookbook/persistence/reading-writing-files
 
 ### Caching data with an on-device database
 
@@ -187,6 +199,12 @@ For a more thorough guide, see the following resources:
 * Hive, a non-relational database: [`hive` package][]
 * Isar, a non-relational database: [`isar` package][]
 
+[`drift` package]: {{site.pub-pkg}}/drift
+[`hive` package]: {{site.pub-pkg}}/hive
+[`isar` package]: {{site.pub-pkg}}/isar
+[Persist data with SQLite]: /cookbook/persistence/sqlite
+[`sqlite3` package]: {{site.pub-pkg}}/sqlite3
+
 ## Caching images
 
 Caching images is a similar problem space to caching regular data,
@@ -196,7 +214,12 @@ use the [`cached_network_image` package][].
 
 * Video: [Package of the Week: `cached_network_image`][]
 
+{% comment %}
 [PENDING: My understanding is that we now recommend `Image.network` instead of cache_network_image.
+{% endcomment %}
+
+[`cached_network_image` package]: {{site.pub-pkg}}/cached_network_image
+[Package of the Week: `cached_network_image`]: https://www.youtube.com/watch?v=fnHr_rsQwDA
 
 ## State restoration
 
@@ -214,28 +237,11 @@ and iOS, see the following documentation:
 * Android documentation: [Android state restoration][]
 * iOS documentation: [iOS state restoration][]
 
+[iOS state restoration]: /platform-integration/ios/restore-state-ios
+
 ## Feedback
 
 As this section of the website is evolving, 
 we [welcome your feedback][]!
 
-[welcome your feedback]: /get-started/fwe
-
-[Android state restoration]: /platform-integration/android/restore-state-android
-[`cached_network_image` package]: {{site.pub-pkg}}/cached_network_image
-[dependency injection]: https://en.wikipedia.org/wiki/Dependency_injection
-[`drift` package]: {{site.pub-pkg}}/drift
-[`hive` package]: {{site.pub-pkg}}/hive
-[iOS state restoration]: /platform-integration/ios/restore-state-ios
-[`isar` package]: {{site.pub-pkg}}/isar
-[key-value storage]: https://en.wikipedia.org/wiki/Key%E2%80%93value_database
-[loose coupling]: https://en.wikipedia.org/wiki/Loose_coupling
-[Package of the Week: `cached_network_image`]: https://www.youtube.com/watch?v=fnHr_rsQwDA
-[Package of the Week: `shared_preferences`]: https://www.youtube.com/watch?v=sa_U0jffQII
-[Persist data with SQLite]: /cookbook/persistence/sqlite
-[Read and write files]: /cookbook/persistence/reading-writing-files
-[repository Pattern]: https://medium.com/@pererikbergman/repository-design-pattern-e28c0f3e4a30
-[separation of concerns]: https://en.wikipedia.org/wiki/Separation_of_concerns
-[`shared_preferences`]: {{site.pub-pkg}}/shared_preferences
-[`sqlite3` package]: {{site.pub-pkg}}/sqlite3
-[Store key-value data on disk]: /cookbook/persistence/key-value
+[welcome your feedback]: https://google.qualtrics.com/jfe/form/SV_6A9KxXR7XmMrNsy?page="local-caching"
