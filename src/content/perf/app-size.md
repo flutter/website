@@ -142,8 +142,8 @@ This build is different from a standard release build in two ways.
    detailed analysis in DevTools.
 
 In addition to analyzing a single build, two builds can also be diffed by
-loading two `*-code-size-analysis_*.json` files into DevTools. See
-[DevTools documentation][] for details.
+loading two `*-code-size-analysis_*.json` files into DevTools.
+Check out the [DevTools documentation][] for details.
 
 {% include docs/app-figure.md image="perf/size-summary.png" alt="Size summary of an Android application in terminal" %}
 
@@ -170,8 +170,8 @@ This can be done by `flutter pub global run devtools`, selecting
 
 {% include docs/app-figure.md image="perf/devtools-size.png" alt="Example breakdown of app in DevTools" %}
 
-For further information on using the DevTools app size tool, see
-[DevTools documentation][].
+For further information on using the DevTools app size tool,
+check out the [DevTools documentation][].
 
 ## Reducing app size
 

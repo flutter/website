@@ -1,5 +1,5 @@
 ---
-title: Using the Debug console
+title: Use the Debug console
 description: Learn how to use the DevTools console.
 ---
 

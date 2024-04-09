@@ -392,10 +392,11 @@ and any plugin frameworks into your existing application
 as described in Option B.
 
 ## Local Network Privacy Permissions
+
 On iOS 14 and higher, enable the Dart multicast DNS
 service in the Debug version of your app
 to add [debugging functionalities such as hot-reload and
-DevTools][] via `flutter attach`.
+DevTools][] using `flutter attach`.
 
 :::warning
 This service must not be enabled in the **Release**

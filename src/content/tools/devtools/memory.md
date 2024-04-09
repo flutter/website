@@ -1,5 +1,5 @@
 ---
-title: Using the Memory view
+title: Use the Memory view
 description: Learn how to use the DevTools memory view.
 ---
 

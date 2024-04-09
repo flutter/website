@@ -1,11 +1,11 @@
 ---
-title: Install and run DevTools from Android Studio
-description: Learn how to install and use DevTools from Android Studio.
+title: Run DevTools from Android Studio
+description: Learn how to launch and use DevTools from Android Studio.
 ---
 
 ## Install the Flutter plugin
 
-Install the Flutter plugin if you don't already have it installed.
+Add the Flutter plugin if you don't already have it installed.
 This can be done using the normal **Plugins** page in the IntelliJ
 and Android Studio settings. Once that page is open,
 you can search the marketplace for the Flutter plugin.
@@ -20,7 +20,7 @@ and clicking the **Run** or **Debug** toolbar buttons.
 ## Launch DevTools from the toolbar/menu
 
 Once an app is running,
-you can start DevTools using one of the following:
+you can start DevTools using one of the following techniques:
 
 * Select the **Open DevTools** toolbar action in the Run view.
 * Select the **Open DevTools** toolbar action in the Debug view.
@@ -36,9 +36,8 @@ You can also open DevTools from an IntelliJ action.
 Open the **Find Action...** dialog
 (on macOS, press <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>A</kbd>),
 and search for the **Open DevTools** action.
-When you select that action,
-DevTools is installed (if it isn't already), the DevTools server
-launches, and a browser instance opens pointing to the DevTools app.
+When you select that action, the DevTools server
+launches and a browser instance opens pointing to the DevTools app.
 
 When opened with an IntelliJ action, DevTools is not connected
 to a Flutter app. You'll need to provide a service protocol port

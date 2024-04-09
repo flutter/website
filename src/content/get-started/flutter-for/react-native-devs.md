@@ -2274,7 +2274,7 @@ Use the [DevTools][] suite for debugging Flutter or Dart apps.
 DevTools includes support for profiling, examining the heap,
 inspecting the widget tree, logging diagnostics, debugging,
 observing executed lines of code, debugging memory leaks and memory
-fragmentation. For more information, see the
+fragmentation. For more information, check out the
 [DevTools][] documentation.
 
 If you're using an IDE,

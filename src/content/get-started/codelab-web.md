@@ -59,7 +59,8 @@ You need three pieces of software to complete this lab:
 * [Text editor or IDE][editor]
 
 While developing, run your web app in Chrome,
-so you can debug with Dart DevTools.
+so you can debug with Dart DevTools 
+(also call Flutter DevTools).
 :::
 
 ## Step 0: Get the starter web app
@@ -621,8 +622,7 @@ You will need that to launch DevTools.
 
 <li>
 
-Ensure that DevTools is installed.<br>
-Do you have [DevTools installed][]?
+Ensure that the Dart and Flutter plugins are installed.<br>
 If you are using an IDE,
 make sure you have the Flutter and Dart plugins set up,
 as described in the [VS Code][] and
@@ -654,8 +654,8 @@ launch screen. It should look like the following:
 
 Connect to running app.<br>
 Under **Connect to a running site**,
-paste the ws location that you copied in step 2,
-and click Connect. You should now see Dart DevTools
+paste the web socket (ws) location that you copied in step 2,
+and click **Connect**. You should now see Dart DevTools
 running successfully in your Chrome browser:
 
 ![Screenshot of DevTools running screen](/assets/images/docs/get-started/devtools-running.png){:width="100%"}

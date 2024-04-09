@@ -13,7 +13,8 @@ you’ll spend a lot of time creating layouts
 with Flutter widgets. In this section,
 you’ll learn how to build simple and
 complex layouts with some of the most common layout widgets.
-You’ll use DevTools to understand how
+You’ll use Flutter DevTools (also
+called Dart DevTools) to understand how
 Flutter is creating your layout.
 Finally, you'll encounter and debug one of
 Flutter's most common layout errors,
@@ -137,7 +138,7 @@ If there was only one type error you should be prepared
 to confront when you first start building Flutter apps,
 it would be this one.
 
-* Article: [DevTools—Widget inspector][]
+* Article: [Use the Flutter inspector][]
 * Video: [Unbounded height and width—Decoding Flutter][]
 
 ### Reference material
@@ -174,7 +175,7 @@ The following resources explain individual APIs.
 [MediaQuery—Flutter Widget of the Week]: {{site.youtube-site}}/watch?v=A3WrA4zAaPw
 [Adaptive apps codelab]: {{site.codelabs}}/codelabs/flutter-adaptive-app
 [Building platform adaptive apps]: {{site.youtube-site}}/watch?v=RCdeSKVt7LI
-[DevTools—Widget inspector]: /tools/devtools/inspector
+[Use the Flutter inspector]: /tools/devtools/inspector
 [Unbounded height and width—Decoding Flutter]: {{site.youtube-site}}/watch?v=jckqXR5CrPI
 [2D Scrolling]: {{site.youtube-site}}/watch?v=ppEdTo-VGcg
 [`Builder`]: {{site.api}}/flutter/widgets/Builder-class.html
