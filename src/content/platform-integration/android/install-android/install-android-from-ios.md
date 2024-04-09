@@ -1,5 +1,5 @@
 ---
-title: Add Android compiling for Flutter from iOS start
+title: Add Android as a target platform for Flutter from iOS start
 description: Configure your Mac to develop Flutter mobile apps for Android.
 short-title: Starting from iOS on macOS
 ---
