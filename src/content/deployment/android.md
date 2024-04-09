@@ -4,28 +4,25 @@ description: How to prepare for and release an Android app to the Play store.
 short-title: Android
 ---
 
-During a typical development cycle,
-you test an app using `flutter run` at the command line,
-or by using the **Run** and **Debug**
-options in your IDE. By default,
-Flutter builds a _debug_ version of your app.
+To test an app, you can use `flutter run` at the command line,
+or the **Run** and **Debug** options in your IDE.
 
 When you're ready to prepare a _release_ version of your app,
 for example to [publish to the Google Play Store][play],
 this page can help. Before publishing,
 you might want to put some finishing touches on your app.
-This page covers the following topics:
+This guide explains how to perform the following tasks:
 
-* [Adding a launcher icon](#adding-a-launcher-icon)
-* [Enabling Material Components](#enabling-material-components)
+* [Add a launcher icon](#add-a-launcher-icon)
+* [Enable Material Components](#enable-material-components)
 * [Signing the app](#signing-the-app)
-* [Shrinking your code with R8](#shrinking-your-code-with-r8)
-* [Enabling multidex support](#enabling-multidex-support)
-* [Reviewing the app manifest](#reviewing-the-app-manifest)
-* [Reviewing the build configuration](#reviewing-the-gradle-build-configuration)
-* [Building the app for release](#building-the-app-for-release)
-* [Publishing to the Google Play Store](#publishing-to-the-google-play-store)
-* [Updating the app's version number](#updating-the-apps-version-number)
+* [Shrink your code with R8](#shrink-your-code-with-r8)
+* [Enable multidex support](#enable-multidex-support)
+* [Review the app manifest](#review-the-app-manifest)
+* [Review the build configuration](#review-the-gradle-build-configuration)
+* [Build the app for release](#build-the-app-for-release)
+* [Publish to the Google Play Store](#publish-to-the-google-play-store)
+* [Update the app's version number](#update-the-apps-version-number)
 * [Android release FAQ](#android-release-faq)
 
 :::note
@@ -35,7 +32,7 @@ these instructions, substitute `[project]` with
 your app's directory.
 :::
 
-## Adding a launcher icon
+## Add a launcher icon
 
 When a new Flutter app is created, it has a default launcher icon.
 To customize this icon, you might want to check out the
@@ -61,7 +58,7 @@ Alternatively, you can do it manually using the following steps:
 1. To verify that the icon has been replaced,
    run your app and inspect the app icon in the Launcher.
 
-## Enabling Material Components
+## Enable Material Components
 
 If your app uses [Platform Views][], you might want to enable
 Material Components by following the steps described in the
@@ -184,88 +181,70 @@ don't check it into public source control.
 
 ### Configure signing in gradle
 
-Configure gradle to use your upload key when building your app in release mode 
-by editing the `[project]/android/app/build.gradle` file.
+When building your app in release mode, configure gradle to use your upload key.
+To configure gradle, edit the `<project>/android/app/build.gradle` file.
 
-<ol>
-<li> 
+1. Add the keystore information from your properties file before the `android` block:
 
-Add the keystore information from your properties file before the `android` block:
-
-```groovy
-   def keystoreProperties = new Properties()
-   def keystorePropertiesFile = rootProject.file('key.properties')
-   if (keystorePropertiesFile.exists()) {
-       keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
-   }
-
-   android {
+   ```diff
+   +   def keystoreProperties = new Properties()
+   +   def keystorePropertiesFile = rootProject.file('key.properties')
+   +   if (keystorePropertiesFile.exists()) {
+   +       keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+   +   }
+   +
+      android {
          ...
-   }
-```
-   
-   Load the `key.properties` file into the `keystoreProperties` object.
+      }
+   ```
 
-</li>
+1. Load the `key.properties` file into the `keystoreProperties` object.
 
-<li>
+1. Add the signing configuration before the `buildTypes` block:
 
-Find the `buildTypes` block:
+   ```diff
+   +   signingConfigs {
+   +       release {
+   +           keyAlias keystoreProperties['keyAlias']
+   +           keyPassword keystoreProperties['keyPassword']
+   +           storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+   +           storePassword keystoreProperties['storePassword']
+   +       }
+   +   }
+      buildTypes {
+         release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now,
+            // so `flutter run --release` works.
+   -           signingConfig signingConfigs.debug
+   +           signingConfig signingConfigs.release
+         }
+      }
+   ```
 
-```groovy
-   buildTypes {
-       release {
-           // TODO: Add your own signing config for the release build.
-           // Signing with the debug keys for now,
-           // so `flutter run --release` works.
-           signingConfig signingConfigs.debug
-       }
-   }
-```
-
-   And replace it with the following signing configuration info:
-
-```groovy
-   signingConfigs {
-       release {
-           keyAlias keystoreProperties['keyAlias']
-           keyPassword keystoreProperties['keyPassword']
-           storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
-           storePassword keystoreProperties['storePassword']
-       }
-   }
-   buildTypes {
-       release {
-           signingConfig signingConfigs.release
-       }
-   }
-```
-
-</li>
-</ol>
-
-Release builds of your app will now be signed automatically.
+Flutter now signs all release builds.
 
 :::note
 You might need to run `flutter clean` after changing the gradle file.
 This prevents cached builds from affecting the signing process.
 :::
 
-For more information on signing your app, check out
+To learn more about signing your app, check out
 [Sign your app][] on developer.android.com.
 
-## Shrinking your code with R8
+## Shrink your code with R8
 
-[R8][] is the new code shrinker from Google, and it's enabled by default
-when you build a release APK or AAB. To disable R8, pass the `--no-shrink`
-flag to `flutter build apk` or `flutter build appbundle`.
+[R8][] is the new code shrinker from Google.
+It's enabled by default when you build a release APK or AAB.
+To disable R8, pass the `--no-shrink` flag to
+`flutter build apk` or `flutter build appbundle`.
 
 :::note
 Obfuscation and minification can considerably extend compile time
 of the Android application.
 :::
 
-## Enabling multidex support
+## Enable multidex support
 
 When writing large apps or making use of large plugins,
 you might encounter Android's dex limit of 64k methods
@@ -315,7 +294,7 @@ Also, include any other classes used in app startup.
 For more detailed guidance on adding multidex support manually,
 check out the official [Android documentation][multidex-docs].
 
-## Reviewing the app manifest
+## Review the app manifest
 
 Review the default [App Manifest][manifest] file, `AndroidManifest.xml`.
 This file is located in `[project]/android/app/src/main`.
@@ -333,7 +312,7 @@ Verify the following values:
   Internet access during development to enable communication between
   Flutter tools and a running app.
 
-## Reviewing the Gradle build configuration
+## Review the Gradle build configuration
 
 Review the default [Gradle build file][gradlebuild]
 (`build.gradle`, located in `[project]/android/app`),
@@ -377,7 +356,7 @@ to verify that the values are correct.
 For more information, check out the module-level build
 section in the [Gradle build file][gradlebuild].
   
-## Building the app for release
+## Build the app for release
 
 You have two possible release formats when publishing to
 the Play Store.
@@ -474,12 +453,12 @@ From the command line:
 1. Enter `cd [project]`.
 1. Run `flutter install`.
 
-## Publishing to the Google Play Store
+## Publish to the Google Play Store
 
 For detailed instructions on publishing your app to the Google Play Store,
 check out the [Google Play launch][play] documentation.
 
-## Updating the app's version number
+## Update the app's version number
 
 The default version number of the app is `1.0.0`.
 To update it, navigate to the `pubspec.yaml` file
