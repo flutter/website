@@ -4,28 +4,25 @@ description: How to prepare for and release an Android app to the Play store.
 short-title: Android
 ---
 
-During a typical development cycle,
-you test an app using `flutter run` at the command line,
-or by using the **Run** and **Debug**
-options in your IDE. By default,
-Flutter builds a _debug_ version of your app.
+To test an app, you can use `flutter run` at the command line,
+or the **Run** and **Debug** options in your IDE.
 
 When you're ready to prepare a _release_ version of your app,
 for example to [publish to the Google Play Store][play],
 this page can help. Before publishing,
 you might want to put some finishing touches on your app.
-This page covers the following topics:
+This guide explains how to perform the following tasks:
 
-* [Adding a launcher icon](#adding-a-launcher-icon)
-* [Enabling Material Components](#enabling-material-components)
+* [Add a launcher icon](#add-a-launcher-icon)
+* [Enable Material Components](#enable-material-components)
 * [Signing the app](#signing-the-app)
-* [Shrinking your code with R8](#shrinking-your-code-with-r8)
-* [Enabling multidex support](#enabling-multidex-support)
-* [Reviewing the app manifest](#reviewing-the-app-manifest)
-* [Reviewing the build configuration](#reviewing-the-gradle-build-configuration)
-* [Building the app for release](#building-the-app-for-release)
-* [Publishing to the Google Play Store](#publishing-to-the-google-play-store)
-* [Updating the app's version number](#updating-the-apps-version-number)
+* [Shrink your code with R8](#shrink-your-code-with-r8)
+* [Enable multidex support](#enable-multidex-support)
+* [Review the app manifest](#review-the-app-manifest)
+* [Review the build configuration](#review-the-gradle-build-configuration)
+* [Build the app for release](#build-the-app-for-release)
+* [Publish to the Google Play Store](#publish-to-the-google-play-store)
+* [Update the app's version number](#update-the-apps-version-number)
 * [Android release FAQ](#android-release-faq)
 
 :::note
@@ -461,7 +458,7 @@ From the command line:
 For detailed instructions on publishing your app to the Google Play Store,
 check out the [Google Play launch][play] documentation.
 
-## Updating the app's version number
+## Update the app's version number
 
 The default version number of the app is `1.0.0`.
 To update it, navigate to the `pubspec.yaml` file
