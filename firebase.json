@@ -626,9 +626,16 @@
         ]
       },
       {
-        "source": "**/*.@(jpg|jpeg|gif|png|webp|webm|svg|md|css|js)",
+        "source": "**/*.@(avif|jpg|jpeg|gif|png|webp|webm|svg|md|css|js)",
         "headers": [
           { "key": "Cache-Control", "value": "max-age=3600" },
+          { "key": "Access-Control-Allow-Origin", "value": "*" }
+        ]
+      },
+      {
+        "source": "/assets/img/*.@(jpg|jpeg|png|webp|avif)",
+        "headers": [
+          { "key": "Cache-Control", "value": "max-age=604800" },
           { "key": "Access-Control-Allow-Origin", "value": "*" }
         ]
       },
