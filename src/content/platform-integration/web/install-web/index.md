@@ -1,11 +1,11 @@
 ---
-title: Add Web devtools for Flutter
+title: Add Chrome DevTools for Flutter
 description: Configure your system to develop Flutter for Web.
 short-title: Add Chrome DevTools
 target-list: [windows-desktop, android-on-windows, linux-desktop, android-on-linux, macos-desktop, android-on-macos, ios-on-macos, android-on-chromeos]
 ---
 
-To choose the guide to add Web devtools to your Flutter configuration,
+To choose the guide to add Chrome DevTools to your Flutter configuration,
 click the [Getting Started path][] you followed.
 
 {% for target in target-list %}
