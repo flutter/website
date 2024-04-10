@@ -1,11 +1,12 @@
 ---
-title: Add iOS devtools for Flutter
+title: Add iOS as a target platform for Flutter
 description: Configure your system to develop Flutter for iOS.
-short-title: Add iOS DevTools
-target-list: [macOS, Android, Web]
+short-title: Set up iOS compilation
+target-list: [macOS, Android, web]
 ---
 
-To choose the guide to add iOS devtools to your Flutter configuration,
+To choose the guide to add the iOS compiler and simulator
+to your Flutter configuration,
 click the [Getting Started path][] you followed.
 
 <div class="card-deck mb-8">
