@@ -10,6 +10,7 @@
       permalink: /get-started/learn-more
     - divider
     - title: From another platform?
+      permalink: /get-started/flutter-for
       children:
         - title: Flutter for Android devs
           permalink: /get-started/flutter-for/android-devs
