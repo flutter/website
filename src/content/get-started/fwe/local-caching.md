@@ -237,6 +237,7 @@ and iOS, see the following documentation:
 * Android documentation: [Android state restoration][]
 * iOS documentation: [iOS state restoration][]
 
+[Android state restoration]: /platform-integration/android/restore-state-android
 [iOS state restoration]: /platform-integration/ios/restore-state-ios
 
 ## Feedback
