@@ -1,7 +1,7 @@
 ---
 title: Add iOS as a target platform for Flutter
 description: Configure your system to develop Flutter for iOS.
-short-title: Add iOS compiling
+short-title: Set up iOS compilation
 target-list: [macOS, Android, web]
 ---
 
