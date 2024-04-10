@@ -1,7 +1,7 @@
 ---
 title: Add Android as a target platform for Flutter
 description: Configure your system to develop Flutter for Android.
-short-title: Add Android compiling
+short-title: Set up Android compliation
 target-list: [Windows, 'web on Windows', Linux, 'web on Linux', macOS, 'web on macOS', iOS, web on ChromeOS]
 ---
 
