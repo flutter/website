@@ -6,7 +6,7 @@
   set-path: fish_add_path -g -p $HOME/development/flutter/bin
 - name: csh
   set-path: echo 'setenv PATH "$HOME/development/flutter/bin:$PATH"' >> ~/.cshrc
-- name: tsch
+- name: tcsh
   set-path: echo 'setenv PATH "$HOME/development/flutter/bin:$PATH"' >> ~/.tcshrc
 - name: ksh
   set-path: echo 'export PATH="$HOME/development/flutter/bin:$PATH"' >> ~/.profile
