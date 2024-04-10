@@ -1,6 +1,8 @@
 ---
 title: Debug Flutter apps from code
-description: How to enable various debugging tools from your code and at the command line.
+description: >
+  How to enable various debugging tools from
+  your code and at the command line.
 ---
 
 <?code-excerpt path-base="testing/code_debugging"?>

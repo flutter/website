@@ -119,9 +119,9 @@ If you encounter problems, please [file an issue][].
 
 Use [Flutter DevTools][] for the following tasks:
 
-* [Debugging][]
-* [Logging][]
-* [Running Flutter inspector][]
+* [debugging][]
+* [logging][]
+* [running Flutter inspector][]
 
 Use [Chrome DevTools][] for the following tasks:
 
@@ -146,7 +146,7 @@ Not currently.
 [building a web app with Flutter]: /platform-integration/web/building
 [Chrome DevTools]: {{site.developers}}/web/tools/chrome-devtools
 [Creating responsive apps]: /ui/layout/responsive/adaptive-responsive
-[Debugging]: /tools/devtools/debugger
+[debugging]: /tools/devtools/debugger
 [file an issue]: {{site.repo.flutter}}/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [Flutter DevTools]: /tools/devtools/overview
 [Generating event timeline]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
@@ -154,9 +154,9 @@ Not currently.
 [`iframe`]: https://html.com/tags/iframe/
 [isolates]: {{site.dart-site}}/guides/language/concurrency
 [Issue 32248]: {{site.repo.flutter}}/issues/32248
-[Logging]: /tools/devtools/logging
+[logging]: /tools/devtools/logging
 [Preparing a web app for release]: /deployment/web
-[Running Flutter inspector]: /tools/devtools/inspector
+[running Flutter inspector]: /tools/devtools/inspector
 [Upgrading from package:flutter_web to the Flutter SDK]: {{site.repo.flutter}}/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
 [widget tests]: /testing/overview#widget-tests
 [Web support for Flutter]: /platform-integration/web

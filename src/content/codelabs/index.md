@@ -278,7 +278,7 @@ like iOS, Android, desktop, or the web.
 
 * [Using a plugin with a Flutter web app][]<br>
   Finish an app that reports the number of stars on a GitHub repository.
-  Use Dart DevTools to do some simple debugging, and
+  Use Dart/Flutter DevTools to do some simple debugging, and
   host your app on Firebase and, finally, use a Flutter plugin to
   launch the app and open the hosted privacy policy.
 

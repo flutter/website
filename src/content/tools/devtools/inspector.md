@@ -1,5 +1,5 @@
 ---
-title: Using the Flutter inspector
+title: Use the Flutter inspector
 description: Learn how to use the Flutter inspector to explore a Flutter app's widget tree.
 ---
 
@@ -109,7 +109,7 @@ You might also find the following step-by-step article useful:
 
 [debug-article]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
 
-### Using the Layout Explorer
+### Use the Layout Explorer
 
 From the Flutter Inspector, select a widget. The Layout Explorer
 supports both [flex layouts][] and fixed size layouts, and has
@@ -535,11 +535,14 @@ Toggling this value enables or disables the hover inspection functionality.
 By default, DevTools limits the widgets displayed in the widget tree
 to those from the project's root directory, and those from Flutter. This
 filtering only applies to the widgets in the Inspector Widget Tree (left side
-of the Inspector) -- not the Widget Details Tree (right side of the Inspector
-in the same tab view as the Layout Explorer). In the Widget Details Tree, you
-will be able to see all widgets in the tree from all packages.
+of the Inspector)—not the Widget Details Tree (right side of the Inspector
+in the same tab view as the Layout Explorer).
+In the Widget Details Tree,
+you can see all widgets in the tree from all packages.
 
-In order to show other widgets, a parent directory of theirs must be added to the Package Directories.
+In order to show other widgets,
+a parent directory of theirs must
+be added to the Package Directories.
 
 For example, consider the following directory structure:
 

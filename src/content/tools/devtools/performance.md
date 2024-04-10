@@ -1,5 +1,5 @@
 ---
-title: Using the Performance view
+title: Use the Performance view
 description: Learn how to use the DevTools performance view.
 ---
 
@@ -7,7 +7,8 @@ description: Learn how to use the DevTools performance view.
 The DevTools performance view works for Flutter mobile and desktop apps.
 For web apps, Flutter adds timeline events to the
 performance panel of Chrome DevTools instead.
-To learn about profiling web apps, check out [Debugging web performance][].
+To learn about profiling web apps,
+check out [Debugging web performance][].
 :::
 
 [Debugging web performance]: /perf/web-performance

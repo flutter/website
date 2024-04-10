@@ -81,8 +81,9 @@ For example, profile mode provides tracing information to the
 profiling tools.
 
 :::note
-DevTools can't connect to a Flutter web app running
-in profile mode. Use Chrome DevTools to
+Dart/Flutter DevTools can't connect to a
+Flutter web app running in profile mode.
+Use Chrome DevTools to
 [generate timeline events][] for a web app.
 :::
 

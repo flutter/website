@@ -1,5 +1,5 @@
 ---
-title: Using the debugger
+title: Use the debugger
 description: How to use DevTools' source-level debugger.
 ---
 
@@ -10,8 +10,8 @@ from VS Code because VS Code has a built-in debugger.
 
 ## Getting started
 
-DevTools includes a full source-level debugger, supporting
-breakpoints, stepping, and variable inspection.
+DevTools includes a full source-level debugger,
+supporting breakpoints, stepping, and variable inspection.
 
 :::note
 The debugger works with all Flutter and Dart applications.
