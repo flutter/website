@@ -1,7 +1,7 @@
 ---
 title: Add macOS as a target platform for Flutter
 description: Configure your system to develop Flutter for macOS.
-short-title: Setup macOS development
+short-title: Set up macOS development
 target-list: [iOS, Android, web]
 ---
 

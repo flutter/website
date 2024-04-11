@@ -1,7 +1,7 @@
 ---
-title: Add the web as a target platform for Flutter
+title: Set up web development for Flutter
 description: Configure your system to develop Flutter for the web.
-short-title: Setup web development
+short-title: Set up web development
 target-list: [windows-desktop, android-on-windows, linux-desktop, android-on-linux, macos-desktop, android-on-macos, ios-on-macos, android-on-chromeos]
 ---
 

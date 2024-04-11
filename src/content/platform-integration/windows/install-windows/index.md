@@ -1,7 +1,7 @@
 ---
 title: Add Windows as a target platform for Flutter
 description: Configure your system to develop Flutter for Windows.
-short-title: Setup Windows development
+short-title: Set up Windows development
 target-list: [Android, web]
 ---
 

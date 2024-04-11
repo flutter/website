@@ -1,7 +1,7 @@
 ---
 title: Add Linux as a target platform for Flutter
 description: Configure your system to develop Flutter for Linux.
-short-title: Setup Linux development
+short-title: Set up Linux development
 target-list: [Android, web]
 ---
 
