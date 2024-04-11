@@ -1,5 +1,5 @@
 ---
-title: Add Chrome DevTools to Flutter from macOS start
+title: Add web as a target platform for Flutter from macOS start
 description: Configure your system to develop Flutter web apps on macOS.
 short-title: Starting from macOS desktop
 ---

@@ -1,19 +1,18 @@
 ---
-title: Add Windows devtools for Flutter
+title: Add Windows as a target platform for Flutter
 description: Configure your system to develop Flutter for Windows.
-short-title: Add Windows desktop DevTools
-target-list: [Android, Web]
+short-title: Setup Windows development
+target-list: [Android, web]
 ---
 
-To choose the guide to add Visual Studio to your Flutter configuration,
-click the [Getting Started path][] you followed.
+To set up your development environment for targeting Windows,
+choose the guide that corresponds to the [Getting Started path][] you followed,
+or the platform you already have set up.
 
 <div class="card-deck mb-8">
 {% for target in target-list %}
-{% assign targetlink='/platform-integration/windows/install-windows/install-windows-from-' | append: target | downcase %}
-  <a class="card card-app-type card-windows"
-     id="install-{{target | downcase}}"
-     href="{{targetlink}}">
+{% assign targetLink = '/platform-integration/windows/install-windows/install-windows-from-' | append: target | downcase %}
+  <a class="card card-app-type card-windows" id="install-{{target | downcase}}" href="{{targetLink}}">
     <div class="card-body">
       <header class="card-title text-center m-0">
         <span class="d-block h1">
@@ -27,7 +26,7 @@ click the [Getting Started path][] you followed.
           <span class="material-symbols">add</span>
           <span class="material-symbols">desktop_windows</span>
         </span>
-        <span class="text-muted text-nowrap">
+        <span class="text-muted d-block">
         Make Windows desktop and {{ target }} apps
         </span>
       </header>

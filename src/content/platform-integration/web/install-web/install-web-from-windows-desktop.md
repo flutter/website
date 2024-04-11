@@ -1,5 +1,5 @@
 ---
-title: Add Chrome DevTools to Flutter from Windows start
+title: Add web as a target platform for Flutter from Windows start
 description: Configure your system to develop Flutter web apps on Windows.
 short-title: Starting from Windows desktop
 ---

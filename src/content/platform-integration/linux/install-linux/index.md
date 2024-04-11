@@ -1,19 +1,18 @@
 ---
-title: Add Linux devtools for Flutter
+title: Add Linux as a target platform for Flutter
 description: Configure your system to develop Flutter for Linux.
-short-title: Add Linux DevTools
-target-list: [Android, Web]
+short-title: Setup Linux development
+target-list: [Android, web]
 ---
 
-To choose the guide to add Linux devtools to your Flutter configuration,
-click the [Getting Started path][] you followed.
+To set up your development environment for targeting Linux,
+choose the guide that corresponds to the [Getting Started path][] you followed,
+or the platform you already have set up.
 
 <div class="card-deck mb-8">
 {% for target in target-list %}
-{% assign targetlink='/platform-integration/linux/install-linux/install-linux-from-' | append: target | downcase %}
-  <a class="card card-app-type card-linux"
-     id="install-{{target | downcase}}"
-     href="{{targetlink}}">
+{% assign targetLink = '/platform-integration/linux/install-linux/install-linux-from-' | append: target | downcase %}
+  <a class="card card-app-type card-linux" id="install-{{target | downcase}}" href="{{targetLink}}">
     <div class="card-body">
       <header class="card-title text-center m-0">
         <span class="d-block h1">
@@ -25,7 +24,7 @@ click the [Getting Started path][] you followed.
             <span class="material-symbols">web</span>
           {% endcase -%}
         </span>
-        <span class="text-muted">
+        <span class="text-muted d-block">
         Make {{ target }} and Linux desktop apps
         </span>
       </header>
