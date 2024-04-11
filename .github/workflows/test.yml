@@ -58,7 +58,7 @@ jobs:
       - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
         with:
           submodules: recursive
-      - uses: dart-lang/setup-dart@65c82982aa686933bf10d50aced7a27b2b63f2a6
+      - uses: dart-lang/setup-dart@f0ead981b4d9a35b37f30d36160575d60931ec30
         with:
           sdk: stable
       - name: Fetch Dart dependencies
@@ -84,7 +84,7 @@ jobs:
         run: corepack install
       - name: Install node dependencies
         run: pnpm install --frozen-lockfile
-      - uses: dart-lang/setup-dart@65c82982aa686933bf10d50aced7a27b2b63f2a6
+      - uses: dart-lang/setup-dart@f0ead981b4d9a35b37f30d36160575d60931ec30
         with:
           sdk: stable
       - name: Fetch Dart dependencies
@@ -104,7 +104,7 @@ jobs:
       - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
         with:
           submodules: recursive
-      - uses: dart-lang/setup-dart@65c82982aa686933bf10d50aced7a27b2b63f2a6
+      - uses: dart-lang/setup-dart@f0ead981b4d9a35b37f30d36160575d60931ec30
         with:
           sdk: stable
       - name: Fetch Dart dependencies
