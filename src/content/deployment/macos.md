@@ -462,6 +462,12 @@ For more details, see
 The [Distribute your app][distributionguide] guide provides a
 detailed overview of the process of releasing an app to the App Store.
 
+## Additional resources
+
+To learn how to package and distribute your Flutter desktop app 
+for macOS the open source way, without using a paid Apple developer 
+account, check out the step-by-step 
+[macOS packaging guide][macos_packaging_guide].
 
 [appicon]: {{site.apple-dev}}/design/human-interface-guidelines/macos/icons-and-images/app-icon/
 [appreview]: {{site.apple-dev}}/app-store/review/
@@ -486,3 +492,4 @@ detailed overview of the process of releasing an app to the App Store.
 [distributionguide_upload]: https://help.apple.com/xcode/mac/current/#/dev442d7f2ca
 [obfuscating your Dart code]: /deployment/obfuscate
 [TestFlight]: {{site.apple-dev}}/testflight/
+[macos_packaging_guide]: https://medium.com/@fluttergems/packaging-and-distributing-flutter-desktop-apps-the-missing-guide-part-1-macos-b36438269285

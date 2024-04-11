@@ -85,5 +85,12 @@ For information on publishing a Linux application
 to the [Snap Store], see
 [Build and release a Linux application to the Snap Store][].
 
+## Additional resources
+
+To learn how to create Linux Debian (`.deb`) and RPM (`.rpm`) 
+builds of your Flutter desktop app, check out 
+the step-by-step [Linux packaging guide][linux_packaging_guide].
+
 [Snap Store]: https://snapcraft.io/store
 [Build and release a Linux application to the Snap Store]: /deployment/linux
+[linux_packaging_guide]: https://medium.com/@fluttergems/packaging-and-distributing-flutter-desktop-apps-the-missing-guide-part-3-linux-24ef8d30a5b4
