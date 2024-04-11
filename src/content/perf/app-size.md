@@ -165,7 +165,7 @@ analyzed in deeper detail in DevTools where a tree or a treemap view can
 break down the contents of the application into the individual file level and
 up to function level for the Dart AOT artifact.
 
-This can be done by `flutter pub global run devtools`, selecting
+This can be done by `dart devtools`, selecting
 `Open app size tool` and uploading the JSON file.
 
 {% include docs/app-figure.md image="perf/devtools-size.png" alt="Example breakdown of app in DevTools" %}
