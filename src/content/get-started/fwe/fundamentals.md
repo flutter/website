@@ -122,5 +122,4 @@ interesting UIs by creating more complex layouts in Flutter.
 As this section of the website is evolving, 
 we [welcome your feedback][]!
 
-[welcome your feedback]: /get-started/fwe
-
+[welcome your feedback]: https://google.qualtrics.com/jfe/form/SV_6A9KxXR7XmMrNsy?page="fundamentals"
