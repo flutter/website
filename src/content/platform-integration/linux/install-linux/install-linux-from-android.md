@@ -1,5 +1,5 @@
 ---
-title: Add Linux devtools to Flutter from Android start
+title: Add Linux as a target platform for Flutter from Android start
 description: Configure your system to develop Flutter mobile apps also on Linux.
 short-title: Starting from Android
 ---

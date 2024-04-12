@@ -21,7 +21,7 @@ js: [{url: '/assets/js/temp/linux-install-redirector.js'}]
           {% assign icon = target | downcase -%}
           {% if icon == 'desktop' -%}
             <span class="material-symbols">desktop_windows</span>
-          {% elsif icon == 'mobile' -%}
+          {% elsif icon == 'android' -%}
             <span class="material-symbols">phone_android</span>
           {% else -%}
             <span class="material-symbols">web</span>

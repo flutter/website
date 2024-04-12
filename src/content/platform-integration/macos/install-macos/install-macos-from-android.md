@@ -1,5 +1,5 @@
 ---
-title: Add macOS devtools to Flutter from Android start
+title: Add macOS as a target platform for Flutter from Android start
 description: Configure your system to develop Flutter mobile apps also on macOS.
 short-title: Starting from Android
 ---

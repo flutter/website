@@ -1,5 +1,5 @@
 ---
-title: Add web DevTools to Flutter from Linux start
+title: Set up web development for Flutter from Linux start
 description: Configure your system to develop Flutter web apps on Linux.
 short-title: Starting from Linux desktop
 ---

@@ -1,5 +1,5 @@
 ---
-title: Add Chrome DevTools to Flutter from Windows start
+title: Set up web development for Flutter from Windows start
 description: Configure your system to develop Flutter web apps on Windows.
 short-title: Starting from Windows desktop
 ---
