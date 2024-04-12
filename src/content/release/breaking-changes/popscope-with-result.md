@@ -14,7 +14,7 @@ function signature to take in an additional result as an position parameter.
 
 Previously, PopScope hadn't haven a way to access the pop result when `onPopInvoked`
 is called. To add support for accessing pop result, the generic type is added to
-PopScope class so that the `onPopInvoked` access the type-safe result.
+PopScope class so that the `onPopInvoked` can access the type-safe result.
 
 ## Description of change
 
