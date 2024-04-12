@@ -12,14 +12,14 @@ function signature to take in an additional result as an position parameter.
 
 ## Context
 
-Previously, PopScope hadn't haven a way to access the pop result when `onPopInvoked`
-is called. To add support for accessing pop result, the generic type is added to
-PopScope class so that the `onPopInvoked` can access the type-safe result.
+Previously, `PopScope` didn't have a way to access the pop result when `onPopInvoked`
+was called. The generic type is added to the `PopScope` class
+so that `onPopInvoked` can access the type-safe result.
 
 ## Description of change
 
 Added a generic type in `PopScope` class and updated the `onPopInvoked`
-function signature to take in an additional result as an position parameter.
+function signature to take an additional result as an position parameter.
 
 ## Migration guide
 
@@ -70,11 +70,12 @@ void main() {
 }
 ```
 
-The generic type should match the generic type of the [`Route`] the `PopScope` is in.
-If the route uses `int` as its generic type, consider use `PopScope<int>`.
+The generic type should match the generic type of the [`Route`]
+that the `PopScope` is in.
+If the route uses `int` as its generic type, consider using `PopScope<int>`.
 
-If the widget are shared across multiple routes with different types, one can
-use `PopScope<Object?>` to catch all possible types.
+If the `PopScope` widgets are shared across multiple routes with
+different types, you can use `PopScope<Object?>` to catch all possible types.
 
 ## Timeline
 
