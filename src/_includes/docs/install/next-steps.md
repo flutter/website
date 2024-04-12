@@ -34,15 +34,15 @@ consult the following resources.
 {%- endcase %}
 {%- case config.add-xcode %}
 {%- when 'Y' %}
-* [Add macOS compliation tools](/platform-integration/macos/install-macos/install-macos-from-{{target}})
+* [Add macOS compilation tools](/platform-integration/macos/install-macos/install-macos-from-{{target}})
 {%- endcase %}
 {%- case config.add-linux-tools %}
 {%- when 'Y' %}
-* [Add Linux compiliation tools](/platform-integration/linux/install-linux/install-linux-from-{{target}})
+* [Add Linux compilation tools](/platform-integration/linux/install-linux/install-linux-from-{{target}})
 {%- endcase %}
 {%- case config.add-visual-studio %}
 {%- when 'Y' %}
-* [Add Windows desktop compiliation tools](/platform-integration/windows/install-windows/install-windows-from-{{target}})
+* [Add Windows desktop compilation tools](/platform-integration/windows/install-windows/install-windows-from-{{target}})
 {%- endcase %}
 * [Uninstall Flutter][uninstall]
 

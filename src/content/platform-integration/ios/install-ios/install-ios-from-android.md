@@ -1,5 +1,5 @@
 ---
-title: Add iOS devtools to Flutter from Android start
+title: Add iOS as a target platform from Android start
 description: Configure your system to develop Flutter mobile apps also on iOS.
 short-title: Starting from Android
 ---

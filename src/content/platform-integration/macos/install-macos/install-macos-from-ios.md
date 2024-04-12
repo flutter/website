@@ -1,5 +1,5 @@
 ---
-title: Add macOS devtools to Flutter from web start
+title: Add macOS as a target platform for Flutter from web start
 description: Configure your system to develop Flutter mobile apps on macOS.
 short-title: Starting from web
 ---

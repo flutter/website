@@ -1,5 +1,5 @@
 ---
-title: Add Chrome DevTools to Flutter from Android on ChromeOS start
+title: Set up web development for Flutter from Android on ChromeOS start
 description: Configure your system to develop Flutter web apps on ChromeOS.
 short-title: Starting from Android on ChromeOS
 ---
