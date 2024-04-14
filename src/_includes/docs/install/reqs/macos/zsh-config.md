@@ -1,4 +1,3 @@
-{% assign target = include.target %}
 
 <details>
 <summary><strong>To verify your shell configuration, expand this section</strong></summary>

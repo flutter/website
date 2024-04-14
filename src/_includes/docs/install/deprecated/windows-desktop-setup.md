@@ -4,7 +4,7 @@
 
 ### Additional Windows requirements
 
-{% include docs/install/deprecated/help-link.md location='win-desktop' %}
+{% render docs/install/deprecated/help-link.md, location:'win-desktop' %}
 
 For Windows desktop development,
 you need the following in addition to the Flutter SDK:

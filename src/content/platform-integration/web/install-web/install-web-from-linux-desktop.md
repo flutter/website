@@ -8,6 +8,6 @@ To add web as a Flutter app target for Linux desktop, follow this procedure.
 
 ## Configure Chrome as the web DevTools tools
 
-{% include docs/install/reqs/add-web.md devos='Linux' %}
+{% render docs/install/reqs/add-web.md, devos:'Linux' %}
 
-{% include docs/install/flutter-doctor.md target='Web' devos='Linux' config='LinuxDesktopWeb' %}
+{% render docs/install/flutter-doctor.md, target:'Web', devos:'Linux', config:'LinuxDesktopWeb' %}

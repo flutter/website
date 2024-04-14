@@ -9,6 +9,6 @@ follow this procedure.
 
 ## Configure Chrome as the web DevTools tools
 
-{% include docs/install/reqs/add-web.md devos='ChromeOS' %}
+{% render docs/install/reqs/add-web.md, devos:'ChromeOS' %}
 
-{% include docs/install/flutter-doctor.md target='Web' devos='ChromeOS' config='ChromeOSAndroidWeb' %}
+{% render docs/install/flutter-doctor.md, target:'Web', devos:'ChromeOS', config:'ChromeOSAndroidWeb' %}

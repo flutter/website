@@ -4,9 +4,9 @@ To learn more about managing your Flutter SDK install,
 consult the following resources.
 
 {% assign doctor = doctor %}
-{% assign config = doctor[include.config] %}
-{% assign target = include.target | remove: 'mobile-' | downcase %}
-{% assign devos = include.devos %}
+{% assign config = doctor[config] %}
+{% assign target = target | remove: 'mobile-' | downcase %}
+{% assign devos = devos %}
 {% if target == 'desktop' %}
   {% assign webtarget = devos | append: '-desktop' | downcase %}
   {% assign andtarget = devos | downcase %}

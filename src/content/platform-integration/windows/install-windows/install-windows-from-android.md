@@ -15,7 +15,7 @@ To add Windows desktop as a Flutter app target, follow this procedure.
    This enables building Windows app including all of its default components.
    **Visual Studio** is an IDE separate from **[Visual Studio _Code_][]**.
 
-{% include docs/install/flutter-doctor.md target='Windows' devos='Windows' config='WindowsDesktopAndroid' %}
+{% render docs/install/flutter-doctor.md, target:'Windows', devos:'Windows', config:'WindowsDesktopAndroid' %}
 
 [Visual Studio 2022]: https://learn.microsoft.com/visualstudio/install/install-visual-studio?view=vs-2022
 [Visual Studio _Code_]: https://code.visualstudio.com/

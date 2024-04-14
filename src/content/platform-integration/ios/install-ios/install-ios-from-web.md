@@ -11,10 +11,10 @@ To add iOS as a Flutter app target for macOS, follow this procedure.
 1. Allocate a minimum of 26 GB of storage for Xcode.
    Consider allocating 42 GB of storage for an optimal configuration.
 1. Install [Xcode][] {{site.appnow.xcode}} to debug and compile native
-   Swift or ObjectiveC code.
+   Swift or Objective-C code.
 
-{% include docs/install/compiler/xcode.md target='iOS' devos='macOS' attempt="first" -%}
+{% render docs/install/compiler/xcode.md, target:'iOS', devos:'macOS', attempt:"first" -%}
 
-{% include docs/install/flutter-doctor.md target='iOS' devos='macOS' config='macOSiOSWeb' %}
+{% render docs/install/flutter-doctor.md, target:'iOS', devos:'macOS', config:'macOSiOSWeb' %}
 
 [Xcode]: {{site.apple-dev}}/xcode/

@@ -1,5 +1,3 @@
-{% assign os = include.os %}
-{% assign target = include.target %}
 
 To develop Flutter on {{os}}:
 
@@ -32,7 +30,7 @@ To develop Flutter on {{os}}:
 {% case target %}
 {% when 'desktop' -%}
 
-{% include docs/install/reqs/linux/install-desktop-tools.md devos=os %}
+{% render docs/install/reqs/linux/install-desktop-tools.md, devos:os %}
 
 {% when 'Android' -%}
 
@@ -57,7 +55,7 @@ To develop Flutter on {{os}}:
 
 1. Install [Google Chrome][] to debug JavaScript code for web apps.
 
-{% include docs/install/accordions/install-chrome-from-cli.md %}
+{% render docs/install/accordions/install-chrome-from-cli.md %}
 
 {% endcase -%}
 

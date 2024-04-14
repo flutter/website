@@ -2,9 +2,6 @@
 ## Configure iOS development
 
 {% assign prompt1='$' %}
-{% assign devos = include.devos %}
-{% assign target = include.target %}
-{% assign attempt = include.attempt %}
 
 ### Configure Xcode
 
@@ -69,13 +66,13 @@ With Xcode, you can run Flutter apps on an iOS device or on the simulator.
 
 <div class="tab-pane active" id="virtual" role="tabpanel" aria-labelledby="virtual-tab">
 
-{% include docs/install/devices/ios-simulator.md %}
+{% render docs/install/devices/ios-simulator.md %}
 
 </div>
 
 <div class="tab-pane" id="physical" role="tabpanel" aria-labelledby="physical-tab">
 
-{% include docs/install/devices/ios-physical.md %}
+{% render docs/install/devices/ios-physical.md %}
 
 </div>
 </div>

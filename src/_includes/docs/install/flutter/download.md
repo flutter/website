@@ -1,10 +1,7 @@
-{% assign terminal=include.terminal %}
 
 ### Download then install Flutter {:.no_toc}
 
-{% assign os = include.os %}
 {% assign osl = os | downcase | replace: "chromeos","linux" %}
-{% assign target = include.target %}
 {% case os %}
 {% when 'Windows' -%}
    {% assign unzip='Expand-Archive .\\' %}
@@ -84,7 +81,7 @@ then extract the SDK.
 
    Consider creating a directory at {{diroptions}}.
    {% if os == "Windows" -%}
-   {% include docs/install/admonitions/install-paths.md %}
+   {% render docs/install/admonitions/install-paths.md %}
    {% endif %}
 
 1. Extract the zip file into the directory you want to store the Flutter SDK.
@@ -100,10 +97,9 @@ then extract the SDK.
 
 {% case os %}
 {% when 'Windows' %}
-{% include docs/install/reqs/windows/set-path.md terminal=terminal target=target %}
+{% render docs/install/reqs/windows/set-path.md, terminal:terminal, target:target %}
 {% when 'macOS' %}
-{% include docs/install/reqs/macos/set-path.md terminal=terminal
-target=target dir=dirinstall %}
+{% render docs/install/reqs/macos/set-path.md, terminal:terminal, target:target, dir:dirinstall %}
 {% else %}
-{% include docs/install/reqs/linux/set-path.md terminal=terminal target=target %}
+{% render docs/install/reqs/linux/set-path.md, terminal:terminal, target:target %}
 {% endcase %}

@@ -71,7 +71,7 @@ Select your preferred IDE for Flutter apps.
 
 {% comment %} Tab panes {% endcomment -%}
 <div class="tab-content">
-  {% include docs/install/test-drive/vscode.md %}
-  {% include docs/install/test-drive/androidstudio.md %}
-  {% include docs/install/test-drive/terminal.md %}
+  {% render docs/install/test-drive/vscode.md %}
+  {% render docs/install/test-drive/androidstudio.md %}
+  {% render docs/install/test-drive/terminal.md %}
 </div>

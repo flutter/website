@@ -42,6 +42,6 @@ To create a new Flutter app, run the following commands in your shell or Termina
 1. Type <kbd>r</kbd> in the terminal window.
 {% endcapture %}
 
-{% include docs/install/test-drive/try-hot-reload.md save_changes=save_changes  ide="VS Code" %}
+{% render docs/install/test-drive/try-hot-reload.md, save_changes:save_changes, ide:"VS Code" %}
 
 </div>

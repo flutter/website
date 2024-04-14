@@ -1,6 +1,3 @@
-{% assign os=include.os %}
-{% assign target = include.target %}
-{% assign terminal=include.terminal %}
 {% case target %}
 {% when 'mobile-ios' %}
    {% assign v-target = 'iOS' %}
@@ -30,13 +27,13 @@ or download and install the Flutter bundle yourself.
 
 <div class="tab-pane active" id="vscode" role="tabpanel" aria-labelledby="vscode-tab">
 
-{% include docs/install/flutter/vscode.md os=os terminal=terminal target=v-target %}
+{% render docs/install/flutter/vscode.md, os:os, terminal:terminal, target:v-target %}
 
 </div>
 
 <div class="tab-pane" id="download" role="tabpanel" aria-labelledby="download-tab">
 
-{% include docs/install/flutter/download.md os=os terminal=terminal target=v-target%}
+{% render docs/install/flutter/download.md, os:os, terminal:terminal, target:v-target%}
 
 </div>
 </div>

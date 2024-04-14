@@ -1,7 +1,5 @@
-{% if include.target == 'Android' %}
+{% if target == 'Android' %}
 {% assign target = 'mobile' %}
-{% else %}
-{% assign target = include.target %}
 {% endif %}
 
 {% if target == 'desktop' -%}

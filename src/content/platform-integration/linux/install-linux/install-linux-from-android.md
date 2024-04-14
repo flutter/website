@@ -10,6 +10,6 @@ To add Linux desktop as a Flutter app target, follow this procedure.
 
 1. Allocate a minimum of 5 GB of storage for the Linux compilation tools.
 
-{% include docs/install/reqs/linux/install-desktop-tools.md devos='Linux' target='desktop' %}
+{% render docs/install/reqs/linux/install-desktop-tools.md, devos:'Linux', target:'desktop' %}
 
-{% include docs/install/flutter-doctor.md target='Linux'devos='Linux' config='LinuxDesktopAndroid' %}
+{% render docs/install/flutter-doctor.md, target:'Linux', devos:'Linux', config:'LinuxDesktopAndroid' %}

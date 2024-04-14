@@ -1,11 +1,6 @@
 #### Set up your target Android device
 
-{% include docs/help-link.md location='android-device' section='#android-setup' %}
-
-{% assign devos = include.devos %}
-{% assign target = include.target %}
-{% assign compiler = include.compiler %}
-{% assign attempt = include.attempt %}
+{% render docs/help-link.md, location:'android-device', section:'#android-setup' %}
 
 To configure your Flutter app to run on a physical Android device,
 you need an Android device running {{site.targetmin.android}} or later.

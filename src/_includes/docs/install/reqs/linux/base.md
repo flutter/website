@@ -1,7 +1,5 @@
-{% assign os = include.os %}
-{% assign target = include.target %}
 
-{% include docs/install/admonitions/install-in-order.md %}
+{% render docs/install/admonitions/install-in-order.md %}
 
 ## Verify system requirements
 
@@ -21,7 +19,7 @@ minimal hardware requirements.
 | CPU Cores                    | 4                                                                        | 8                   |
 | Memory in GB                 | 8                                                                        | 16                  |
 | Display resolution in pixels | WXGA (1366 x 768)                                                        | FHD (1920 x 1080)   |
-| Free disk space in GB        | {% include docs/install/reqs/linux/storage.md target=target %}
+| Free disk space in GB        | {% render docs/install/reqs/linux/storage.md, target:target %}
 
 {:.table .table-striped}
 
@@ -55,9 +53,9 @@ Flutter supports {{supported-os}}.
 
 #### Development tools {:.no_toc}
 
-{% include docs/install/reqs/linux/software.md target=target os=os %}
+{% render docs/install/reqs/linux/software.md, target:target, os:os %}
 
-{% include docs/install/reqs/flutter-sdk/flutter-doctor-precedence.md %}
+{% render docs/install/reqs/flutter-sdk/flutter-doctor-precedence.md %}
 
 The developers of the preceding software provide support for those products.
 To troubleshoot installation issues, consult that product's documentation.

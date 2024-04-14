@@ -14,8 +14,8 @@ To add Android as a Flutter app target for Windows, follow this procedure.
    Java or Kotlin code for Android.
    Flutter requires the full version of Android Studio.
 
-{% include docs/install/compiler/android.md target='desktop' devos='windows' attempt="first" -%}
+{% render docs/install/compiler/android.md, target:'desktop', devos:'windows', attempt:"first" -%}
 
-{% include docs/install/flutter-doctor.md target='Android' devos='Windows' config='WindowsDesktopAndroid' %}
+{% render docs/install/flutter-doctor.md, target:'Android', devos:'Windows', config:'WindowsDesktopAndroid' %}
 
 [Android Studio]: https://developer.android.com/studio/install#win

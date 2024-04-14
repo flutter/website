@@ -9,6 +9,6 @@ follow this procedure.
 
 ## Configure Chrome as the web DevTools tools
 
-{% include docs/install/reqs/add-web.md devos='macOS' %}
+{% render docs/install/reqs/add-web.md, devos:'macOS' %}
 
-{% include docs/install/flutter-doctor.md target='Web' devos='macOS' config='macOSDesktopAndroidWeb' %}
+{% render docs/install/flutter-doctor.md, target:'Web', devos:'macOS', config:'macOSDesktopAndroidWeb' %}

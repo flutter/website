@@ -1,5 +1,3 @@
-{% assign os=include.os %}
-{% assign terminal=include.terminal %}
 {%- if os=='macOS' -%}
 {% assign special = 'Command' %}
 {% else %}
@@ -50,7 +48,7 @@ you have installed [Visual Studio Code][]
    {% if os == "Windows" -%}
    Consider `%USERPROFILE%` or `C:\dev`.
 
-   {% include docs/install/admonitions/install-paths.md %}
+   {% render docs/install/admonitions/install-paths.md %}
    {% else -%}
    Consider `~/development/`
    {% endif %}

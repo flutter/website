@@ -25,8 +25,8 @@ To add Android as a Flutter app target for ChromeOS, follow this procedure.
    Java or Kotlin code for Android.
    Flutter requires the full version of Android Studio.
 
-{% include docs/install/compiler/android.md target='linux' devos='ChromeOS' attempt="first" -%}
+{% render docs/install/compiler/android.md, target:'linux', devos:'ChromeOS', attempt:"first" -%}
 
-{% include docs/install/flutter-doctor.md target='Android' devos='ChromeOS' config='ChromeOSAndroidWeb' %}
+{% render docs/install/flutter-doctor.md, target:'Android', devos:'ChromeOS', config:'ChromeOSAndroidWeb' %}
 
 [Android Studio]: https://developer.android.com/studio/install#linux

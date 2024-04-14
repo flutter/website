@@ -1,11 +1,10 @@
-{% assign terminal=include.terminal %}
 
 ### Remove Flutter from your Windows Path variable {:.no_toc}
 
 To remove Flutter commands from {{terminal}},
 remove Flutter from the `PATH` environment variable.
 
-{% include docs/install/reqs/windows/open-envvars.md %}
+{% render docs/install/reqs/windows/open-envvars.md %}
 
 1. Under **User variables for (username)** section,
    look for the **Path** entry.

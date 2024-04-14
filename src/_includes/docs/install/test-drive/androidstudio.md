@@ -68,14 +68,14 @@ uses [Material Components][].
 
 {% capture save_changes -%}
   : invoke **Save All**, or click **Hot Reload**
-  {% include docs/install/test-drive/hot-reload-icon.md %}.
+  {% render docs/install/test-drive/hot-reload-icon.md %}.
 {% endcapture %}
 
 {% capture ide_profile -%}
   to invoke the menu item **Run > Profile** in the IDE, or
 {% endcapture %}
 
-{% include docs/install/test-drive/try-hot-reload.md save_changes=save_changes ide="Android Studio" %}
+{% render docs/install/test-drive/try-hot-reload.md, save_changes:save_changes, ide:"Android Studio" %}
 
 [Main IntelliJ toolbar]: /assets/images/docs/tools/android-studio/main-toolbar.png
 [Material Components]: {{site.material}}/components

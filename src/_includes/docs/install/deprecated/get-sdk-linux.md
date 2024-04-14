@@ -1,6 +1,6 @@
 ## Get the Flutter SDK {:#get-sdk}
 
-{% include docs/china-notice.md %}
+{% render docs/china-notice.md %}
 
 To install the Flutter SDK on your Linux system,
 use one of the following methods.
@@ -112,7 +112,7 @@ and finish the setup process.
 After completing the outlined tasks,
 run the `flutter doctor` command again.
 
-{% include docs/install/deprecated/analytics.md %}
+{% render docs/install/deprecated/analytics.md %}
 
 [Flutter repo]: {{site.repo.flutter}}
 [install Flutter from the Snap Store]: https://snapcraft.io/flutter

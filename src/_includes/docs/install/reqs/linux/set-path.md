@@ -1,6 +1,3 @@
-{% assign terminal=include.terminal %}
-{% assign target = include.target %}
-{% assign dir = include.dir %}
 
 ### Add Flutter to your `PATH` {:.no_toc}
 

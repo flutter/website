@@ -1,11 +1,6 @@
 
 ## Configure Android development
 
-{% assign devos = include.devos %}
-{% assign target = include.target %}
-{% assign compiler = include.compiler %}
-{% assign attempt-time = include.attempt %}
-
 {% case devos %}
 {% when 'Windows' -%}
    {% assign terminal='PowerShell' %}
@@ -20,7 +15,7 @@
 
 ### Configure the Android toolchain in Android Studio
 
-{% include docs/help-link.md location='android-studio' section='#android-setup' %}
+{% render docs/help-link.md, location:'android-studio', section:'#android-setup' %}
 
 To create Android apps with Flutter, verify that the following Android
 components have been installed.
@@ -155,13 +150,13 @@ Otherwise, you can skip to the [next section][check-dev].
 
 <div class="tab-pane active" id="virtual" role="tabpanel" aria-labelledby="virtual-tab">
 
-{% include docs/install/devices/android-emulator.md devos=devos %}
+{% render docs/install/devices/android-emulator.md, devos=devos %}
 
 </div>
 
 <div class="tab-pane" id="physical" role="tabpanel" aria-labelledby="physical-tab">
 
-{% include docs/install/devices/android-physical.md devos=devos %}
+{% render docs/install/devices/android-physical.md, devos=devos %}
 
 </div>
 </div>
@@ -171,7 +166,7 @@ Otherwise, you can skip to the [next section][check-dev].
 
 ### Agree to Android licenses
 
-{% include docs/help-link.md location='android-licenses' section='#android-setup' %}
+{% render docs/help-link.md, location:'android-licenses', section:'#android-setup' %}
 
 Before you can use Flutter and after you install all prerequisites,
 agree to the licenses of the Android SDK platform.

@@ -1,8 +1,6 @@
 After the app build completes, your device displays your app.
 
-{% include docs/app-figure.md img-class="site-mobile-screenshot border"
-    path-prefix="get-started" platform="macOS" image="starter-app.png"
-    caption="Starter app" %}
+{% render docs/app-figure.md, img-class:"site-mobile-screenshot border", path-prefix:"get-started", platform:"macOS", image:"starter-app.png", caption:"Starter app" %}
 
 ## Try hot reload
 
@@ -11,7 +9,7 @@ the ability to reload the code of a live running app without
 restarting or losing app state.
 
 You can change your app source code, run the hot reload command in
-{{include.ide}}, and see the change in your target device.
+{{ide}}, and see the change in your target device.
 
 1. Open `lib/main.dart`.
 
@@ -28,10 +26,8 @@ You can change your app source code, run the hot reload command in
    _Don't stop your app._ Let your app run.
    :::
 
-1. Save your changes{{include.save_changes}}
+1. Save your changes{{save_changes}}
 
 Your app updates the string as you watch.
 
-{% include docs/app-figure.md img-class="site-mobile-screenshot border"
-    path-prefix="get-started" platform="macOS" image="starter-app-hot-reload.png"
-    caption="Starter app after hot reload" %}
+{% render docs/app-figure.md, img-class:"site-mobile-screenshot border", path-prefix:"get-started", platform:"macOS", image:"starter-app-hot-reload.png", caption:"Starter app after hot reload" %}

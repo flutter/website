@@ -1,11 +1,7 @@
 
 ## Check your development setup
 
-{% include docs/help-link.md location='win-doctor' %}
-
-{% assign devos = include.devos %}
-{% assign target = include.target %}
-{% assign compiler = include.compiler %}
+{% render docs/help-link.md, location:'win-doctor' %}
 
 {% case devos %}
 {% when 'Windows' -%}
@@ -55,7 +51,7 @@ As you chose to develop for {{target}},
 you do not need _all_ components.
 If you followed this guide, the result of your command should resemble:
 
-{% include docs/install/flutter-doctor-success.md config=include.config devos=devos -%}
+{% render docs/install/flutter-doctor-success.md, config:config, devos:devos -%}
 
 ### Troubleshoot Flutter doctor issues
 
@@ -79,5 +75,4 @@ run `flutter doctor` _again_ to verify the installation.
 
 Congratulations!
 Now that you have installed all prerequisites and the Flutter SDK,
-you should be able to start developing Flutter apps for
-{{work-target}}.
+you should be able to start developing Flutter apps for {{work-target}}.

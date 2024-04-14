@@ -145,7 +145,7 @@ remove the `.pub-cache` directory from your home directory.
 
 {% case os %}
 {% when 'Windows','macOS' -%}
-{% include docs/install/reqs/{{os | downcase}}/unset-path.md terminal=terminal -%}
+{% render docs/install/reqs/{{os | downcase}}/unset-path.md, terminal:terminal -%}
 {% endcase %}
 
 </div>

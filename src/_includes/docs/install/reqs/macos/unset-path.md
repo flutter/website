@@ -1,4 +1,3 @@
-{% assign terminal=include.terminal %}
 
 ### Remove Flutter from your macOS PATH {:.no_toc}
 

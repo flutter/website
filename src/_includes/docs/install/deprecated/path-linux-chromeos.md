@@ -5,7 +5,7 @@ you need to add the Flutter SDK to your `PATH`.
 You can add Flutter to your `PATH` either for the current session
 or for all sessions going forward.
 
-{% include docs/dart-tool.md %}
+{% render docs/dart-tool.md %}
 
 #### Update your path for the current session only
 
@@ -77,4 +77,4 @@ follow these steps:
 	  /usr/<example>/dev/flutter/bin/flutter
 	  ```
 
-{% include docs/dart-tool.md %}
+{% render docs/dart-tool.md %}

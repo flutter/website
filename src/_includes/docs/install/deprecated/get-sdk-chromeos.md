@@ -1,6 +1,6 @@
 ## Get the Flutter SDK {:#get-sdk}
 
-{% include docs/china-notice.md %}
+{% render docs/china-notice.md %}
 
  1. Install the core development tools needed for Flutter:
 
@@ -56,6 +56,6 @@ process.
 Once you have installed any missing dependencies, run the `flutter doctor`
 command again to verify that you've set everything up correctly.
 
-{% include docs/install/deprecated/analytics.md %}
+{% render docs/install/deprecated/analytics.md %}
 
 [Flutter repo]: {{site.repo.flutter}}

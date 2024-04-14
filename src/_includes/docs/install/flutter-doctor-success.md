@@ -1,6 +1,6 @@
 {% assign doctor = doctor %}
-{% assign config = doctor[include.config] %}
-{% case include.devos %}
+{% assign config = doctor[config] %}
+{% case devos %}
 {% when 'macOS' %}
 {% assign displayos = 'macOS 14.4.0 23E214 darwin-arm64' %}
 {% when 'Windows' %}

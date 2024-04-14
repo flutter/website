@@ -13,8 +13,8 @@ To add macOS as a Flutter app target for macOS, follow this procedure.
 1. Install [Xcode][] {{site.appnow.xcode}} to debug and compile native
    Swift or ObjectiveC code.
 
-{% include docs/install/compiler/xcode.md target='macOS' devos='macOS' attempt="first" -%}
+{% render docs/install/compiler/xcode.md, target:'macOS', devos='macOS', attempt="first" -%}
 
-{% include docs/install/flutter-doctor.md target='macOS' devos='macOS' config='macOSDesktopWeb' %}
+{% render docs/install/flutter-doctor.md, target:'macOS', devos:'macOS', config:'macOSDesktopWeb' %}
 
 [Xcode]: {{site.apple-dev}}/xcode/

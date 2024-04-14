@@ -8,6 +8,6 @@ To add Web as a Flutter app target for Windows desktop, follow this procedure.
 
 ## Configure Chrome as the web DevTools tools
 
-{% include docs/install/reqs/add-web.md devos='Windows' %}
+{% render docs/install/reqs/add-web.md, devos:'Windows' %}
 
-{% include docs/install/flutter-doctor.md target='Web' devos='Windows' config='WindowsDesktopWeb' %}
+{% render docs/install/flutter-doctor.md, target:'Web', devos:'Windows', config:'WindowsDesktopWeb' %}
