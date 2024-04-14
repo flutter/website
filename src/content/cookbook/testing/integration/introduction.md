@@ -103,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
-## 2. Add dev dependencies
+## 2. Add the `integration_test` dependency
 
 Run following command to add `integration_test` and `flutter_test` packages as `dev_dependencies` using `sdk: flutter`.
 
