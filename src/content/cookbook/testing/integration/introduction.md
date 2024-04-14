@@ -103,32 +103,34 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
-## 2. Add the `integration_test` dependency
+## 2. Add dev dependencies
 
-Next, use the `integration_test` and `flutter_test` packages
-to write integration tests. Add these dependencies to the `dev_dependencies`
-section of the app's `pubspec.yaml` file.
+Run following command to add `integration_test` and `flutter_test` packages as `dev_dependencies` using `sdk: flutter`.
 
-```console
+```sh
 $ flutter pub add 'dev:flutter_test:{"sdk":"flutter"}'  'dev:integration_test:{"sdk":"flutter"}'
+```
+Output
+```console
 "flutter_test" is already in "dev_dependencies". Will try to update the constraint.
-Resolving dependencies... 
+Resolving dependencies...
   collection 1.17.2 (1.18.0 available)
 + file 6.1.4 (7.0.0 available)
-+ flutter_driver 0.0.0 from sdk flutter
-+ fuchsia_remote_debug_protocol 0.0.0 from sdk flutter
-+ integration_test 0.0.0 from sdk flutter
-  material_color_utilities 0.5.0 (0.8.0 available)
-  meta 1.9.1 (1.10.0 available)
-+ platform 3.1.0 (3.1.2 available)
-+ process 4.2.4 (5.0.0 available)
-  stack_trace 1.11.0 (1.11.1 available)
-  stream_channel 2.1.1 (2.1.2 available)
-+ sync_http 0.3.1
-  test_api 0.6.0 (0.6.1 available)
-+ vm_service 11.7.1 (11.10.0 available)
+# ...output has been shortened
 + webdriver 3.0.2
 Changed 9 dependencies!
+```
+Updated pubsec
+```yaml
+# pubspec.yaml
+# ...
+dev_dependencies:
+  # ... added depencies
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+# ...
 ```
 
 ## 3. Create the test files
