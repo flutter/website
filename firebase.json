@@ -28,7 +28,7 @@
 
       { "source": "/accessibility", "destination": "/ui/accessibility-and-internationalization/accessibility", "type": 301 },
       { "source": "/adaptations", "destination": "/platform-integration/platform-adaptations", "type": 301 },
-      { "source": "/adaptive*", "destination": "/ui/adaptive-responsive/overview", "type": 301 },
+      { "source": "/adaptive*", "destination": "/ui/adaptive-responsive", "type": 301 },
       { "source": "/android-release", "destination": "/deployment/android", "type": 301 },
       { "source": "/animations", "destination": "/ui/animations", "type": 301 },
       { "source": "/animations/:rest*", "destination": "/ui/animations/:rest*", "type": 301 },
