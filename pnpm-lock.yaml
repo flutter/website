@@ -11,14 +11,14 @@ dependencies:
 
 devDependencies:
   '@11ty/eleventy':
-    specifier: 3.0.0-alpha.5
-    version: 3.0.0-alpha.5
+    specifier: 3.0.0-alpha.6
+    version: 3.0.0-alpha.6
   diff2html:
-    specifier: ^3.4.47
-    version: 3.4.47
+    specifier: ^3.4.48
+    version: 3.4.48
   firebase-tools:
-    specifier: ^13.6.1
-    version: 13.6.1
+    specifier: ^13.7.2
+    version: 13.7.2
   hast-util-from-html:
     specifier: ^2.0.1
     version: 2.0.1
@@ -26,8 +26,8 @@ devDependencies:
     specifier: ^6.0.2
     version: 6.0.2
   hast-util-to-text:
-    specifier: ^4.0.0
-    version: 4.0.0
+    specifier: ^4.0.1
+    version: 4.0.1
   html-minifier-terser:
     specifier: ^7.2.0
     version: 7.2.0
@@ -39,7 +39,7 @@ devDependencies:
     version: 14.1.0
   markdown-it-anchor:
     specifier: ^8.6.7
-    version: 8.6.7(@types/markdown-it@13.0.7)(markdown-it@14.1.0)
+    version: 8.6.7(@types/markdown-it@14.0.1)(markdown-it@14.1.0)
   markdown-it-attrs:
     specifier: ^4.1.6
     version: 4.1.6(markdown-it@14.1.0)
@@ -53,11 +53,11 @@ devDependencies:
     specifier: ^4.1.1
     version: 4.1.1
   sass:
-    specifier: ^1.74.1
-    version: 1.74.1
+    specifier: ^1.75.0
+    version: 1.75.0
   shiki:
-    specifier: ^1.2.4
-    version: 1.2.4
+    specifier: ^1.3.0
+    version: 1.3.0
 
 packages:
 
@@ -105,8 +105,8 @@ packages:
       normalize-path: 3.0.0
     dev: true
 
-  /@11ty/eleventy@3.0.0-alpha.5:
-    resolution: {integrity: sha512-JRWRqoAalwkiWIb9dQHmSX40kSOD6vhUwt73df/PWZPYzlAPxx27Gfi96TzR2bE+lmZ8IwgQzhYEBenL9tJ9Ow==}
+  /@11ty/eleventy@3.0.0-alpha.6:
+    resolution: {integrity: sha512-wllqMiM3A9qRt1mUA6iETQfhRtpFfUnzCT7v4RK/5RFqX/Bjwmqe18v7dfStHSO+V2zv5hE32skdM23HigG+eg==}
     engines: {node: '>=18'}
     hasBin: true
     dependencies:
@@ -121,14 +121,14 @@ packages:
       chokidar: 3.6.0
       cross-spawn: 7.0.3
       debug: 4.3.4
-      dependency-graph: 0.11.0
+      dependency-graph: 1.0.0
       fast-glob: 3.3.2
       graceful-fs: 4.2.11
       gray-matter: 4.0.3
       is-glob: 4.0.3
       iso-639-1: 3.1.2
       kleur: 4.1.5
-      liquidjs: 10.10.2
+      liquidjs: 10.11.0
       luxon: 3.4.4
       markdown-it: 14.1.0
       micromatch: 4.0.5
@@ -274,7 +274,7 @@ packages:
     engines: {node: ^8.13.0 || >=10.10.0}
     dependencies:
       '@grpc/proto-loader': 0.7.12
-      '@types/node': 20.12.4
+      '@types/node': 20.12.7
     dev: true
 
   /@grpc/proto-loader@0.7.12:
@@ -475,8 +475,8 @@ packages:
     resolution: {integrity: sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==}
     dev: true
 
-  /@shikijs/core@1.2.4:
-    resolution: {integrity: sha512-ClaUWpt8oTzjcF0MM1P81AeWyzc1sNSJlAjMG80CbwqbFqXSNz+NpQVUC0icobt3sZn43Sn27M4pHD/Jmp3zHw==}
+  /@shikijs/core@1.3.0:
+    resolution: {integrity: sha512-7fedsBfuILDTBmrYZNFI8B6ATTxhQAasUHllHmjvSZPnoq4bULWoTpHwmuQvZ8Aq03/tAa2IGo6RXqWtHdWaCA==}
     dev: true
 
   /@sindresorhus/slugify@2.2.1:
@@ -501,14 +501,14 @@ packages:
   /@types/duplexify@3.6.4:
     resolution: {integrity: sha512-2eahVPsd+dy3CL6FugAzJcxoraWhUghZGEQJns1kTKfCXWKJ5iG/VkaB05wRVrDKHfOFKqb0X0kXh91eE99RZg==}
     dependencies:
-      '@types/node': 20.12.4
+      '@types/node': 20.12.7
     dev: true
 
   /@types/glob@8.1.0:
     resolution: {integrity: sha512-IO+MJPVhoqz+28h1qLAcBEH2+xHMK6MTyHJc7MTnnYb6wsoLR29POVGJ7LycmVXIqyy/4/2ShP5sUwTXuOwb/w==}
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 20.12.4
+      '@types/node': 20.12.7
     dev: true
 
   /@types/hast@3.0.4:
@@ -536,8 +536,8 @@ packages:
       '@types/mdurl': 1.0.5
     dev: true
 
-  /@types/markdown-it@13.0.7:
-    resolution: {integrity: sha512-U/CBi2YUUcTHBt5tjO2r5QV/x0Po6nsYwQU4Y04fBS6vfoImaiZ6f8bi3CjTCxBPQSO1LMyUqkByzi8AidyxfA==}
+  /@types/markdown-it@14.0.1:
+    resolution: {integrity: sha512-6WfOG3jXR78DW8L5cTYCVVGAsIFZskRHCDo5tbqa+qtKVt4oDRVH7hyIWu1SpDQJlmIoEivNQZ5h+AGAOrgOtQ==}
     dependencies:
       '@types/linkify-it': 3.0.5
       '@types/mdurl': 1.0.5
@@ -551,8 +551,8 @@ packages:
     resolution: {integrity: sha512-K0VQKziLUWkVKiRVrx4a40iPaxTUefQmjtkQofBkYRcoaaL/8rhwDWww9qWbrgicNOgnpIsMxyNIUM4+n6dUIA==}
     dev: true
 
-  /@types/node@20.12.4:
-    resolution: {integrity: sha512-E+Fa9z3wSQpzgYQdYmme5X3OTuejnnTx88A6p6vkkJosR3KBz+HpE3kqNm98VE6cfLFcISx7zW7MsJkH6KwbTw==}
+  /@types/node@20.12.7:
+    resolution: {integrity: sha512-wq0cICSkRLVaf3UGLMGItu/PtdY7oaXaI/RVU+xliKVOtRna3PRY57ZDfztpDL0n11vfymMUnXv8QwYCO7L1wg==}
     dependencies:
       undici-types: 5.26.5
     dev: true
@@ -561,7 +561,7 @@ packages:
     resolution: {integrity: sha512-F3OznnSLAUxFrCEu/L5PY8+ny8DtcFRjx7fZZ9bycvXRi3KPTRS9HOitGZwvPg0juRhXFWIeKX58cnX5YqLohQ==}
     dependencies:
       '@types/glob': 8.1.0
-      '@types/node': 20.12.4
+      '@types/node': 20.12.7
     dev: true
 
   /@types/triple-beam@1.3.5:
@@ -1551,6 +1551,11 @@ packages:
     engines: {node: '>= 0.6.0'}
     dev: true
 
+  /dependency-graph@1.0.0:
+    resolution: {integrity: sha512-cW3gggJ28HZ/LExwxP2B++aiKxhJXMSIt9K48FOXQkm+vuG5gyatXnLsONRJdzO/7VfjDIiaOOa/bs4l464Lwg==}
+    engines: {node: '>=4'}
+    dev: true
+
   /dequal@2.0.3:
     resolution: {integrity: sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA==}
     engines: {node: '>=6'}
@@ -1573,8 +1578,8 @@ packages:
       dequal: 2.0.3
     dev: true
 
-  /diff2html@3.4.47:
-    resolution: {integrity: sha512-2llDp8750FRUJl8n7apM0tlcqZYxbDHTw7qhzv/kGddByHRpn3Xg/sWHHIy34h492aGSpStEULydxqrITYpuoA==}
+  /diff2html@3.4.48:
+    resolution: {integrity: sha512-1lzNSg0G0VPKZPTyi4knzV2nAWTXBy/QaWCKzDto6iEIlcuOJEG0li4bElJfpHNz+pBqPu4AcC1i9ZCo9KMUOg==}
     engines: {node: '>=12'}
     dependencies:
       diff: 5.1.0
@@ -1888,7 +1893,7 @@ packages:
       openapi3-ts: 3.2.0
       promise-breaker: 6.0.0
       pump: 3.0.0
-      qs: 6.12.0
+      qs: 6.12.1
       raw-body: 2.5.2
       semver: 7.6.0
     transitivePeerDependencies:
@@ -2052,8 +2057,8 @@ packages:
       - supports-color
     dev: true
 
-  /firebase-tools@13.6.1:
-    resolution: {integrity: sha512-Jq9eGavkqBHayi/2onmMs7S7AM4VvqlcrQ4no48XLZ56B/9ACe5NkS1CxU3IPTnqMdnBblzbq0QHOl814Xp0UQ==}
+  /firebase-tools@13.7.2:
+    resolution: {integrity: sha512-sq1AZCOt/xjpP7FYNRXPEjSZtplAhEFd/LKqTaKsCtFo64h/ykEAYXHzAJCSl6J1EWh6tf0h1DYT2mIaW+d5cw==}
     engines: {node: '>=18.0.0 || >=20.0.0'}
     hasBin: true
     dependencies:
@@ -2581,8 +2586,8 @@ packages:
       '@types/hast': 3.0.4
     dev: true
 
-  /hast-util-to-text@4.0.0:
-    resolution: {integrity: sha512-EWiE1FSArNBPUo1cKWtzqgnuRQwEeQbQtnFJRYV1hb1BWDgrAlBU0ExptvZMM/KSA82cDpm2sFGf3Dmc5Mza3w==}
+  /hast-util-to-text@4.0.1:
+    resolution: {integrity: sha512-RHL7Vo2n06ZocCFWqmbyhZ1pCYX/mSKdywt9YD5U6Hquu5syV+dImCXFKLFt02JoK5QxkQFS0PoVdFdPXuPffQ==}
     dependencies:
       '@types/hast': 3.0.4
       '@types/unist': 3.0.2
@@ -3207,8 +3212,8 @@ packages:
       uc.micro: 2.1.0
     dev: true
 
-  /liquidjs@10.10.2:
-    resolution: {integrity: sha512-UcuTUexKg/8CmX6I5KNghk13pl3c8Rqhm+WSWqrc17pQP9LjpYPpOLDKG9OMBeHDBQ70yyn/GOqyZ/EKJ4z5yg==}
+  /liquidjs@10.11.0:
+    resolution: {integrity: sha512-DPUG/ez9KbeV6oxon4EOJPzkNModjYmSa2ceP3r9+3bOV9+MnpN/+a1KwGaj8bz5pp4td3kBiHrPX9sC7iuDxA==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
@@ -3380,13 +3385,13 @@ packages:
       markdown-it: 12.3.2
     dev: true
 
-  /markdown-it-anchor@8.6.7(@types/markdown-it@13.0.7)(markdown-it@14.1.0):
+  /markdown-it-anchor@8.6.7(@types/markdown-it@14.0.1)(markdown-it@14.1.0):
     resolution: {integrity: sha512-FlCHFwNnutLgVTflOYHPW2pPcl2AACqVzExlkGQNsi4CJgqOHN7YTgDd4LuhgN1BFO3TS0vLAruV1Td6dwWPJA==}
     peerDependencies:
       '@types/markdown-it': '*'
       markdown-it: '*'
     dependencies:
-      '@types/markdown-it': 13.0.7
+      '@types/markdown-it': 14.0.1
       markdown-it: 14.1.0
     dev: true
 
@@ -4196,7 +4201,7 @@ packages:
       '@protobufjs/path': 1.1.2
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
-      '@types/node': 20.12.4
+      '@types/node': 20.12.7
       long: 5.2.3
     dev: true
 
@@ -4267,8 +4272,8 @@ packages:
       side-channel: 1.0.6
     dev: true
 
-  /qs@6.12.0:
-    resolution: {integrity: sha512-trVZiI6RMOkO476zLGaBIzszOdFPnCCXHPG9kn0yuS1uz6xdVxPfZdB3vUig9pxPFDM9BRAgz/YUIVQ1/vuiUg==}
+  /qs@6.12.1:
+    resolution: {integrity: sha512-zWmv4RSuB9r2mYQw3zxQuHWeU+42aKi1wWig/j4ele4ygELZ7PEO6MM7rim9oAQH2A5MWfsAVf/jPvTPgCbvUQ==}
     engines: {node: '>=0.6'}
     dependencies:
       side-channel: 1.0.6
@@ -4502,8 +4507,8 @@ packages:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
     dev: true
 
-  /sass@1.74.1:
-    resolution: {integrity: sha512-w0Z9p/rWZWelb88ISOLyvqTWGmtmu2QJICqDBGyNnfG4OUnPX9BBjjYIXUpXCMOOg5MQWNpqzt876la1fsTvUA==}
+  /sass@1.75.0:
+    resolution: {integrity: sha512-ShMYi3WkrDWxExyxSZPst4/okE9ts46xZmJDSawJQrnte7M1V9fScVB+uNXOVKRBt0PggHOwoZcn8mYX4trnBw==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -4622,10 +4627,10 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /shiki@1.2.4:
-    resolution: {integrity: sha512-Q9n9jKiOjJCRPztA9POn3/uZXNySHDNKAsPNpmtHDcFyi6ZQhx5vQKZW3Nhrwn8TWW3RudSRk66zqY603EZDeg==}
+  /shiki@1.3.0:
+    resolution: {integrity: sha512-9aNdQy/etMXctnPzsje1h1XIGm9YfRcSksKOGqZWXA/qP9G18/8fpz5Bjpma8bOgz3tqIpjERAd6/lLjFyzoww==}
     dependencies:
-      '@shikijs/core': 1.2.4
+      '@shikijs/core': 1.3.0
     dev: true
 
   /side-channel@1.0.6:
@@ -4674,13 +4679,13 @@ packages:
     dependencies:
       agent-base: 7.1.1
       debug: 4.3.4
-      socks: 2.8.1
+      socks: 2.8.3
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /socks@2.8.1:
-    resolution: {integrity: sha512-B6w7tkwNid7ToxjZ08rQMT8M9BJAf8DKx8Ft4NivzH0zBUfd6jldGcisJn/RLgxcX3FPNDdNQCUEMMT79b+oCQ==}
+  /socks@2.8.3:
+    resolution: {integrity: sha512-l5x7VUUWbjVFbafGLxPWkYsHIhEvmF85tbIeFZWc8ZPtoMyybuEhL7Jye/ooC4/d48FgOjSJXgsF/AJPYCW8Zw==}
     engines: {node: '>= 10.0.0', npm: '>= 3.0.0'}
     dependencies:
       ip-address: 9.0.5
