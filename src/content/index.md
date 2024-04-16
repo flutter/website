@@ -32,12 +32,13 @@ Once you've gone through [Get started][],
 including [Write your first Flutter app][],
 here are some next steps.
 
+[Get started]: /get-started/install
 [Write your first Flutter app]: /get-started/codelab
 
 ### Docs
 
 Coming from another platform? Check out Flutter for:
-[Android][], [SwiftUI][], [UIKit][], [React Native][], and
+[Android][], [SwiftUI][], [UIKit][], [React Native][], [Web][], and
 [Xamarin.Forms][] developers.
 
 [Building layouts][]
@@ -57,15 +58,15 @@ Coming from another platform? Check out Flutter for:
 : Get the answers to frequently asked questions.
 
 [Android]: /get-started/flutter-for/android-devs
-[Building layouts]: /ui/layout
-[FAQ]: /resources/faq
-[Get started]: /get-started/install
-[interactivity]: /ui/interactivity
 [SwiftUI]: /get-started/flutter-for/swiftui-devs
 [UIKit]: /get-started/flutter-for/uikit-devs
 [React Native]: /get-started/flutter-for/react-native-devs
-[Understanding constraints]: /ui/layout/constraints
+[Web]: /get-started/flutter-for/web-devs
 [Xamarin.Forms]: /get-started/flutter-for/xamarin-forms-devs
+[Building layouts]: /ui/layout
+[Understanding constraints]: /ui/layout/constraints
+[interactivity]: /ui/interactivity
+[FAQ]: /resources/faq
 
 ### Videos
 
