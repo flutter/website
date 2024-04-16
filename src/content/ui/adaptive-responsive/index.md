@@ -8,6 +8,8 @@ description: >
 short-title: Adaptive
 ---
 
+![List of supported platforms](/assets/images/docs/ui/adaptive-responsive/platforms.png)
+
 One of Flutter's primary goals is to create a framework
 that allows you to develop apps from a single codebase
 that look and feel great on any platform.
@@ -49,6 +51,11 @@ adaptive and responsive.
 This section covers various aspects of adaptive and
 responsive design:
 
+* [General approach][]
+
+{% comment %}
+---------------- CUT THIS OUT
+
 * Create a responsive [Layout][]
 * Handle [Input][] for adaptive apps
 * Consider [Accessibility][] for responsive apps
@@ -65,18 +72,20 @@ responsive design:
 [Layout]: /ui/adaptive-responsive/layout
 [Platform idioms]: /ui/adaptive-responsive/idioms
 
+------------------ TO HERE, replace with new toc
+{% endcomment %}
+
 ## Examples
 
 If you'd like to see how these concepts come together,
-check out the [Flokk][] and [Folio][] examples.
+check out the the source code for the following
+apps/demos:
 
-[Flokk]: {{site.github}}/gskinnerTeam/flokk
-[Folio]: {{site.github}}/gskinnerTeam/flutter-folio
+* [Wonderous][]
+* [Flutter adaptive demo][]
 
-Original demo code for adaptive app development
-techniques from the [flutter-adaptive-demo][].
-
-[flutter-adaptive-demo]: {{site.github}}/gskinnerTeam/flutter-adaptive-demo
+[Flutter adaptive demo]: {{site.github}}/gskinnerTeam/flutter-adaptive-demo
+[Wonderous]: {{site.github}}/gskinnerTeam/flutter-wonderous-app
 
 ## Learn more about basic usability principles
 

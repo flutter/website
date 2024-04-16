@@ -138,20 +138,22 @@
     - title: Overview
       permalink: /ui/adaptive-responsive
       match-page-url-exactly: true
-    - title: Layout for adaptive apps
-      permalink: /ui/adaptive-responsive/layout
-    - title: Best practices for adaptive apps
-      permalink: /ui/adaptive-responsive/best-practices
-    - title: Handling input
-      permalink: /ui/adaptive-responsive/input
-    - title: Large screens
-      permalink: /ui/adaptive-responsive/large-screens
-    - title: Update app UI based on orientation
-      permalink: /cookbook/design/orientation
-    - title: Platform idioms
-      permalink: /ui/adaptive-responsive/idioms
-    - title: Accessibility
-      permalink: /ui/adaptive-responsive/accessibility
+    - title: General approach
+      permalink: /ui/adaptive-responsive/general
+#    - title: Layout for adaptive apps
+#      permalink: /ui/adaptive-responsive/layout
+#    - title: Best practices for adaptive apps
+#      permalink: /ui/adaptive-responsive/best-practices
+#    - title: Handling input
+#      permalink: /ui/adaptive-responsive/input
+#    - title: Large screens
+#      permalink: /ui/adaptive-responsive/large-screens
+#    - title: Update app UI based on orientation
+#      permalink: /cookbook/design/orientation
+#    - title: Platform idioms
+#      permalink: /ui/adaptive-responsive/idioms
+#    - title: Accessibility
+#      permalink: /ui/adaptive-responsive/accessibility
 - title: Design & theming
   permalink: /ui/design
   children:
