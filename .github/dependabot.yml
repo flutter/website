@@ -3,21 +3,6 @@
 
 version: 2
 updates:
-  - package-ecosystem: "bundler"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.dependencies"
-      - "auto.bundler"
-      - "lang.ruby"
-  - package-ecosystem: "docker"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.dependencies"
-      - "auto.docker"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -975,14 +960,6 @@ updates:
   - package-ecosystem: "pub"
     versioning-strategy: "increase-if-necessary"
     directory: "/examples/testing/common_errors"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/testing/debugging"
     schedule:
       interval: "daily"
     labels:

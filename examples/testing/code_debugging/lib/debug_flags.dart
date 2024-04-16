@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-// #docregion debugPaintSizeEnabled
-//add import to rendering library
+// #docregion debug-paint-size-enabled
+// Add import to the Flutter rendering library.
 import 'package:flutter/rendering.dart';
 
 void main() {
@@ -8,7 +8,7 @@ void main() {
   runApp(const MyApp());
 }
 
-// #enddocregion debugPaintSizeEnabled
+// #enddocregion debug-paint-size-enabled
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

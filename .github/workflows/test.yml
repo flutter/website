@@ -35,7 +35,7 @@ jobs:
       - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
         with:
           submodules: recursive
-      - uses: subosito/flutter-action@1c5eb12d812966ca84680edc38353a0851c8fd56
+      - uses: subosito/flutter-action@44ac965b96f18d999802d4b807e3256d5a3f9fa1
         with:
           channel: ${{ matrix.branch }}
       - name: Fetch Dart dependencies
@@ -58,7 +58,7 @@ jobs:
       - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
         with:
           submodules: recursive
-      - uses: dart-lang/setup-dart@fedb1266e91cf51be2fdb382869461a434b920a3
+      - uses: dart-lang/setup-dart@f0ead981b4d9a35b37f30d36160575d60931ec30
         with:
           sdk: stable
       - name: Fetch Dart dependencies
@@ -74,8 +74,6 @@ jobs:
       - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
         with:
           submodules: recursive
-      - name: Build site
-        run: make build BUILD_CONFIGS=_config.yml
       - name: Enable Corepack
         run: corepack enable
       - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8
@@ -86,11 +84,13 @@ jobs:
         run: corepack install
       - name: Install node dependencies
         run: pnpm install --frozen-lockfile
-      - uses: dart-lang/setup-dart@fedb1266e91cf51be2fdb382869461a434b920a3
+      - uses: dart-lang/setup-dart@f0ead981b4d9a35b37f30d36160575d60931ec30
         with:
           sdk: stable
       - name: Fetch Dart dependencies
         run: dart pub get
+      - name: Build site
+        run: dart run flutter_site build
       - name: Check for broken Markdown link references
         run: dart run flutter_site check-link-references
       - name: Check for broken internal links
@@ -104,7 +104,7 @@ jobs:
       - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
         with:
           submodules: recursive
-      - uses: dart-lang/setup-dart@fedb1266e91cf51be2fdb382869461a434b920a3
+      - uses: dart-lang/setup-dart@f0ead981b4d9a35b37f30d36160575d60931ec30
         with:
           sdk: stable
       - name: Fetch Dart dependencies

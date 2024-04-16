@@ -2,7 +2,7 @@
 
 import './my_app.dart';
 
-// #docregion Main
+// #docregion on-error-main
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
@@ -16,5 +16,5 @@ void main() {
   runApp(const MyApp());
 }
 
-// rest of `flutter create` code...
-// #enddocregion Main
+// The rest of the `flutter create` code...
+// #enddocregion on-error-main

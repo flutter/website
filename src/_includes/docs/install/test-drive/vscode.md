@@ -1,6 +1,6 @@
-<div class="tab-pane active" id="vscode" role="tabpanel" aria-labelledby="vscode-tab" markdown="1">
+<div class="tab-pane active" id="vscode" role="tabpanel" aria-labelledby="vscode-tab">
 
-### Create your sample Flutter app {#create-app}
+### Create your sample Flutter app {:#create-app-vs-code}
 
 1. Open the Command Palette.
 
@@ -33,11 +33,11 @@ contains a simple demo app that uses [Material Components][].
 Run your example application on your desktop platform, in the Chrome web browser, in an iOS simulator, or
 Android emulator.
 
-{{site.alert.secondary}}
-  Though you can deploy your app to the web,
-  note that the web target doesn't support
-  hot reload at this time.
-{{site.alert.end}}
+:::note
+Though you can deploy your app to the web,
+the web target doesn't support
+hot reload at this time.
+:::
 
 1. Open the Command Palette.
 

@@ -1,4 +1,3 @@
-// box.dart
 import 'package:flutter/material.dart';
 
 /// A simple blue 30x30 box.

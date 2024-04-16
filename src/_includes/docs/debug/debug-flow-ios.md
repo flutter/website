@@ -4,7 +4,7 @@ To generate the needed iOS platform dependencies,
 run the `flutter build` command.
 
 ```console
-flutter build ios --config-only --no-codesign --debug
+$ flutter build ios --config-only --no-codesign --debug
 ```
 
 ```console
@@ -25,31 +25,31 @@ Building com.example.myApp for device (ios)...
 {% comment %} Tab panes {% endcomment -%}
 <div class="tab-content">
 
-<div class="tab-pane active" id="from-vscode-to-xcode-ios" role="tabpanel" aria-labelledby="from-vscode-to-xcode-ios-tab" markdown="1">
+<div class="tab-pane active" id="from-vscode-to-xcode-ios" role="tabpanel" aria-labelledby="from-vscode-to-xcode-ios-tab">
 
-#### Start debugging with VS Code first {#vscode-ios}
+#### Start debugging with VS Code first {:#vscode-ios}
 
 If you use VS Code to debug most of your code, start with this section.
 
 ##### Start the Dart debugger in VS Code
 
-{% include docs/debug/debug-flow-vscode-as-start.md %}
+{% include docs/debug/debug-flow-vscode-as-start.md add=include.add %}
 
 ##### Attach to the Flutter process in Xcode
 
-1. To attach to the Flutter app, go to
-   **Debug** <span aria-label="and then">></span>
-   **Attach to Process** <span aria-label="and then">></span>
-   **Runner**.
+To attach to the Flutter app in Xcode:
 
-   **Runner** should be at the top of the **Attach to Process** menu
-   under the **Likely Targets** heading.
+1. Go to **Debug** <span aria-label="and then">></span>
+   **Attach to Process** <span aria-label="and then">></span>
+
+1. Select **Runner**. It should be at the top of the
+   **Attach to Process** menu under the **Likely Targets** heading.
 
 </div>
 
-<div class="tab-pane" id="from-xcode-ios" role="tabpanel" aria-labelledby="from-xcode-ios-tab" markdown="1">
+<div class="tab-pane" id="from-xcode-ios" role="tabpanel" aria-labelledby="from-xcode-ios-tab">
 
-#### Start debugging with Xcode first {#xcode-ios}
+#### Start debugging with Xcode first {:#xcode-ios}
 
 If you use Xcode to debug most of your code, start with this section.
 

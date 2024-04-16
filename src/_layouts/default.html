@@ -2,49 +2,54 @@
 layout: base
 ---
 
+{% if toc != false -%}
+{% assign tocContents = content | generate_toc %}
+{% if tocContents == null or tocContents == '' -%}
+{% assign toc = false %}
+{% endif -%}
+{% endif -%}
+
 {% assign sidebar-col = 'col-12 col-md-3 col-xl-2' -%}
-{% if page.toc -%}
-  {% assign main-col = 'col-12 col-md-9 offset-md-3 col-xl-8 offset-xl-2 col-xxl-8 offset-xxl-2' -%}
-  {% comment %}Side toc is col-xl-2{% endcomment -%}
+{% if toc != false -%}
+{% assign main-col = 'col-12 col-md-9 offset-md-3 col-xl-8 offset-xl-2 col-xxl-8 offset-xxl-2' -%}
+{% comment %}Side toc is col-xl-2{% endcomment -%}
 {% else -%}
-  {% assign main-col = 'col-12 col-md-9 offset-md-3 col-xl-10 offset-xl-2 col-xxl-8 offset-xxl-2' -%}
+{% assign main-col = 'col-12 col-md-9 offset-md-3 col-xl-10 offset-xl-2 col-xxl-8 offset-xxl-2' -%}
 {% endif -%}
 
 <div class="container-fluid position-relative">
   <div class="row flex-xl-nowrap">
     <div class="fixed-col site-sidebar site-sidebar--fixed {{sidebar-col}} d-none d-md-block" data-fixed-column>
       {% assign route = page.url | regex_replace:'/index$|/index\.html$|\.html$|/$' %}
-      {% include sidenav-level-1.html nav=site.data.sidenav page_url_path=route base_id="fixed" %}
+      {% render sidenav-level-1.html, url:page.url, nav:sidenav, base_id:"fixed", active_nav:activeNav %}
     </div>
 
-    {% if page.toc and layout.toc != false -%}
-      {% assign toc_content = content | toc_only -%}
-      {% include side-toc.html toc_content=toc_content -%}
-    {% endif -%}
-
     <main class="site-content {{main-col}}">
+      {% if toc != false -%}
+      {% include side-toc.html tocContents=tocContents %}
+      {% endif -%}
       <div class="container">
 
-        {% if page.deprecated %}
-          {% include snackbar.html class="snackbar--dismissible" label="This page is deprecated and its content may be out of date." action="Dismiss" %}
+        {% if deprecated %}
+        {% include snackbar.html class="snackbar--dismissible" label="This page is deprecated and its content may be out of date." action="Dismiss" %}
         {% endif %}
 
-        {% include next-prev-nav.html prev=page.prev next=page.next %}
+        {% include next-prev-nav.html prev=prev next=next %}
 
         <header class="site-content__title">
           {% include page-github-links.html %}
-          <h1>{{ page.title }}</h1>
-          {% if page.show_breadcrumbs -%}
-            {% include breadcrumbs.html %}
+          <h1>{{ title }}</h1>
+          {% if show_breadcrumbs != false -%}
+          {% include breadcrumbs.html %}
           {% endif -%}
         </header>
-        
-        {% if page.toc and layout.toc != false -%}
-          {% include inline-toc.html toc_content=toc_content -%}
-        {% endif -%}
-        {{ content | inject_anchors }}
 
-        {% include next-prev-nav.html prev=page.prev next=page.next %}
+        {% if toc != false -%}
+        {% include inline-toc.html tocContents=tocContents -%}
+        {% endif -%}
+        {{ content }}
+
+        {% include next-prev-nav.html prev=prev, next=next %}
       </div>
     </main>
   </div>

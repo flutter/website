@@ -1,4 +1,4 @@
-// #docregion PerfOverlay
+// #docregion show-overlay
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-// #enddocregion PerfOverlay
+// #enddocregion show-overlay
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key, required this.title});

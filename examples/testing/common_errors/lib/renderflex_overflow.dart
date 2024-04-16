@@ -4,7 +4,7 @@ class ProblemWidget extends StatelessWidget {
   const ProblemWidget({super.key});
 
   @override
-  // #docregion Problem
+  // #docregion problem
   Widget build(BuildContext context) {
     return Row(
       children: [
@@ -26,7 +26,7 @@ class ProblemWidget extends StatelessWidget {
       ],
     );
   }
-  // #enddocregion Problem
+  // #enddocregion problem
 }
 
 class SolutionWidget extends StatelessWidget {
@@ -34,7 +34,7 @@ class SolutionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // #docregion Fix
+    // #docregion solution
     return const Row(
       children: [
         Icon(Icons.message),
@@ -45,6 +45,6 @@ class SolutionWidget extends StatelessWidget {
         ),
       ],
     );
-    // #enddocregion Fix
+    // #enddocregion solution
   }
 }

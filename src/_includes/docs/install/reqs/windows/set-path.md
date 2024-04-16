@@ -1,7 +1,6 @@
 {% assign terminal=include.terminal %}
 
-### Update your Windows PATH variable
-{:.no_toc}
+### Update your Windows PATH variable {:.no_toc}
 
 {% include docs/help-link.md location='win-path' section='#unable-to-find-the-flutter-command' %}
 

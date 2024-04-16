@@ -18,14 +18,15 @@ You can change your app source code, run the hot reload command in
 1. Change the word `pushed` to `clicked` in the following string.
    It is on line 109 of the `main.dart` file as of this writing.
 
-   |                    **Original**                   |                       **New**                      |
+   |                   **Original**                    |                      **New**                       |
    |:-------------------------------------------------:|:--------------------------------------------------:|
    | `'You have pushed the button this many times:' ,` | `'You have clicked the button this many times:' ,` |
-   {:.table.table-striped}
+   
+   {:.table .table-striped}
 
-   {{site.alert.important}}
-     _Don't stop your app._ Let your app run.
-   {{site.alert.end}}
+   :::important
+   _Don't stop your app._ Let your app run.
+   :::
 
 1. Save your changes{{include.save_changes}}
 

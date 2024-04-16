@@ -1,3 +1,4 @@
+
 ## Configure Android development
 
 {% assign devos = include.devos %}
@@ -52,8 +53,7 @@ Otherwise, you can skip to the [next section][check-dev].
 <div class="tab-pane active"
      id="first-start"
      role="tabpanel"
-     aria-labelledby="first-start-tab"
-     markdown="1">
+     aria-labelledby="first-start-tab">
 
 1. Launch **Android Studio**.
 
@@ -74,8 +74,7 @@ Otherwise, you can skip to the [next section][check-dev].
 <div class="tab-pane"
      id="later-start"
      role="tabpanel"
-     aria-labelledby="later-start-tab"
-     markdown="1">
+     aria-labelledby="later-start-tab">
 
 1. Launch **Android Studio**.
 
@@ -137,11 +136,11 @@ Otherwise, you can skip to the [next section][check-dev].
 
 </div>
 </div>
-{% comment %} End: Tab panes. {% endcomment -%}
+{% comment %} End: Tab panes. {% endcomment %}
 
 ### Configure your target Android device
 
-{% comment %} Nav tabs {% endcomment -%}
+{% comment %} Nav tabs {% endcomment %}
 <ul class="nav nav-tabs" id="android-devices-vp" role="tablist">
     <li class="nav-item">
         <a class="nav-link active" id="virtual-tab" href="#virtual" role="tab" aria-controls="virtual" aria-selected="true">Virtual Device</a>
@@ -154,13 +153,13 @@ Otherwise, you can skip to the [next section][check-dev].
 {% comment %} Tab panes {% endcomment -%}
 <div class="tab-content">
 
-<div class="tab-pane active" id="virtual" role="tabpanel" aria-labelledby="virtual-tab" markdown="1">
+<div class="tab-pane active" id="virtual" role="tabpanel" aria-labelledby="virtual-tab">
 
 {% include docs/install/devices/android-emulator.md devos=devos %}
 
 </div>
 
-<div class="tab-pane" id="physical" role="tabpanel" aria-labelledby="physical-tab" markdown="1">
+<div class="tab-pane" id="physical" role="tabpanel" aria-labelledby="physical-tab">
 
 {% include docs/install/devices/android-physical.md devos=devos %}
 
@@ -200,7 +199,7 @@ agree to the licenses of the Android SDK platform.
 
 #### Troubleshooting licensing issues
 
-<details markdown="1">
+<details>
 <summary>How to fix the error of finding Java install</summary>
 
 You might have an issue with the Android SDK locating the Java SDK.
@@ -228,13 +227,13 @@ Look for your `JAVA_HOME` path in your appropriate shell resource file.
 
 Change it from:
 
-```conf
+```bash
 export JAVA_HOME="/Applications/Android\ Studio.app/Contents/jre/Contents/Home"
 ```
 
 to:
 
-```conf
+```bash
 export JAVA_HOME="/Applications/Android Studio.app/Contents/jre/Contents/Home"
 ```
 

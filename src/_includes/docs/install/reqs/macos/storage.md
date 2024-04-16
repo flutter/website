@@ -9,4 +9,3 @@
 {% else -%}
 44.0 | 70.0 |
 {% endif -%}
-{:.table.table-striped}
