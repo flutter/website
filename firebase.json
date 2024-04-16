@@ -414,6 +414,7 @@
       { "source": "/go/go-router-v11-breaking-changes", "destination": "https://docs.google.com/document/d/1L2LPM_DBqKQx1pTRRfG7pi33P88iAypBju65rcMW_dU/edit?usp=sharing", "type": 301 },
       { "source": "/go/go-router-v12-breaking-changes", "destination": "https://docs.google.com/document/d/1KIf_08oHZ18BU0JpNG9dxWP7g4cH0xmF8m7Wmgq80Zk/edit?usp=sharing&resourcekey=0-twH8Zo2kaaIC-vlvVag4yw", "type": 301 },
       { "source": "/go/go-router-v13-breaking-changes", "destination": "https://docs.google.com/document/d/1FRdW_p29zH0I3KEMQKW_QMMN7owiQ5Wx-PUhhZpehSg/edit?usp=sharing", "type": 301 },
+      { "source": "/go/go-router-v14-breaking-changes", "destination": "https://docs.google.com/document/d/1Z6RYo7rGIdtryvQvAntekF53zoz4iy4XvIamBxRWa4Y/edit?usp=sharing&resourcekey=0-CH_yB7ur4gLvSuqPtB5bZA", "type": 301 },
       { "source": "/go/handling-synchronous-keyboard-events", "destination": "https://docs.google.com/document/d/1rWXSjkb2ZKv-cpg26lVK0aZi4cVeXJ8j7YmSJdq2TOM/edit", "type": 301 },
       { "source": "/go/hermetic-xcode-installation", "destination": "https://docs.google.com/document/d/1EcXm4Woq48GR_ky07mEJka6NfV1vFBN2OHDEeGfPk34/edit?resourcekey=0-0Gjtt1I66mGJ8AwiCTlFNw", "type": 301 },
       { "source": "/go/hero-refactor", "destination": "https://docs.google.com/document/d/1JZVqykFjhDXcJyj_Ep5gfTmF-Eu4pQXXNRcLCN04tls/edit?usp=sharing", "type": 301 },
