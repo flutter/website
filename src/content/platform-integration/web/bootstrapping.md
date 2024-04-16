@@ -3,6 +3,16 @@ title: Flutter web app initialization
 description: Customize how Flutter apps are initialized on the web
 ---
 
+:::note
+This page describes APIs that are available in the [`beta`][] and [`main`][]
+channels in Flutter 3.22 or later. For app initialization in Flutter 3.21 or
+earlier, see the ["Customizing web App Initialization"][] page.
+:::
+
+[`beta`]: {{site.github}}/flutter/flutter/wiki/flutter-build-release-channels#beta
+[`main`]: {{site.github}}/flutter/flutter/wiki/flutter-build-release-channels#master-aka-main
+["Customizing web App Initialization"](/platform-integration/web/initialization.md)
+
 This page details the initialization process for Flutter web apps, and how this
 process can be customized.
 
