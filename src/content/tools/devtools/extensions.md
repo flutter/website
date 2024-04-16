@@ -57,8 +57,6 @@ a free article on Medium.
 To learn more about writing and using DevTools extensions,
 checkout the following video:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gOrSc4s4RWY?si=SxzsS7d0QFBHtVNA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-[DevTools Extensions—Flutter Build Show][video]
+<iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.yt.embed}}/gOrSc4s4RWY" title="DevTools Extensions—Flutter Build Show" {{site.yt.set}}></iframe>
 
 [article]: {{site.flutter-medium}}/dart-flutter-devtools-extensions-c8bc1aaf8e5f
-[video]: {{site.youtube-site}}/watch?v=gOrSc4s4RWY
