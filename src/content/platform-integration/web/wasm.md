@@ -98,7 +98,7 @@ applications compiled to wasm, see the [Flutter web app initialization][]
 page.
 :::
 
-[Flutter web app initialization](/platform-integration/web/bootstrapping.md)
+[Flutter web app initialization](/platform-integration/web/bootstrapping)
 
 Before building with Wasm, you'll need to modify the bootstrap logic in
 your app's `web/index.html` file.

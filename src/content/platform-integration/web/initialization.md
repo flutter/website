@@ -10,7 +10,7 @@ later, see the [Flutter web app initialization][] page.
 :::
 
 [`stable`]: {{site.github}}/flutter/flutter/wiki/flutter-build-release-channels#stable
-[Flutter web app initialization](/platform-integration/web/bootstrapping.md)
+[Flutter web app initialization](/platform-integration/web/bootstrapping)
 
 
 You can customize how a Flutter app is initialized on the web
