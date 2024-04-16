@@ -11,7 +11,7 @@ earlier, see the [Customizing web App Initialization][] page.
 
 [`beta`]: {{site.github}}/flutter/flutter/wiki/flutter-build-release-channels#beta
 [`main`]: {{site.github}}/flutter/flutter/wiki/flutter-build-release-channels#master-aka-main
-[Customizing web App Initialization](/platform-integration/web/initialization)
+[Customizing web App Initialization]: /platform-integration/web/initialization
 
 This page details the initialization process for Flutter web apps, and how this
 process can be customized.

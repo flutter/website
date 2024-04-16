@@ -8,9 +8,8 @@ This page describes APIs that are available in the [`stable`][] channel in
 Flutter 3.21 or earlier. For recommended app initialization in Flutter 3.22 or
 later, see the [Flutter web app initialization][] page.
 :::
-
 [`stable`]: {{site.github}}/flutter/flutter/wiki/flutter-build-release-channels#stable
-[Flutter web app initialization](/platform-integration/web/bootstrapping)
+[Flutter web app initialization]: /platform-integration/web/bootstrapping
 
 
 You can customize how a Flutter app is initialized on the web
