@@ -94,11 +94,11 @@ that has been migrated to be
 
 :::tip
 For more information about using the bootstrapping APIs required to load Flutter
-applications compiled to wasm, see the ["Flutter web app initialization"][]
+applications compiled to wasm, see the [Flutter web app initialization][]
 page.
 :::
 
-["Flutter web app initialization"](/platform-integration/web/bootstrapping.md)
+[Flutter web app initialization](/platform-integration/web/bootstrapping.md)
 
 Before building with Wasm, you'll need to modify the bootstrap logic in
 your app's `web/index.html` file.
