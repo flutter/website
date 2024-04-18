@@ -55,6 +55,20 @@ my-endpoint m:get t:json s:200
 https s:404
 ```
 
+### Recording network requests on app startup
+
+To record network traffic on app startup, you can start your app in a paused state then, begin recording before your app starts:
+
+1. Start your app in a paused state:
+    * Flutter
+      * use the `--start-paused` flag.
+    * Dart
+        * use the `--pause-isolates-on-start` flag.
+2. Connect DevTools to your paused app.
+3. Navigate to the Network Tab, ensure that recording has started.
+4. Run your app by resuming execution using the on screen Resume button.
+5. The logged requests will then include all network requests since the startup of your app.
+
 ## Other resources
 
 HTTP and HTTPs requests are also surfaced in the [Timeline][timeline] as
