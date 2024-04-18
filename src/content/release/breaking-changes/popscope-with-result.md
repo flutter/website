@@ -79,7 +79,7 @@ different types, you can use `PopScope<Object?>` to catch all possible types.
 
 ## Timeline
 
-Landed in version: TBD
+Landed in version: 3.22.0-12.0.pre-56
 In stable release: TBD
 
 ## References
