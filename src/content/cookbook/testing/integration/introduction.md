@@ -27,88 +27,104 @@ This recipe uses the following steps:
   4. Write the integration test.
   5. Run the integration test.
 
-## 1. Create an app to test
+## Create a new app to test
 
-First, create an app for testing. In this example,
-test the counter app produced by the `flutter create`
-command. This app allows a user to tap on a button
-to increase a counter.
+Integration testing requires an app to test.
+This example uses the built-in **Counter App** example
+that Flutter produces when you run the `flutter create` command.
+The counter app allows a user to tap on a button to increase a counter.
 
-<?code-excerpt "lib/main.dart"?>
-```dart
-import 'package:flutter/material.dart';
+1. To create an instance of the built-in Flutter app,
+   run the following command in your terminal:
 
-void main() => runApp(const MyApp());
+   ```console
+   $ flutter create counter_app
+   ```
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+1. Change into the `counter_app` directory.
 
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Counter App',
-      home: MyHomePage(title: 'Counter App Home Page'),
-    );
-  }
-}
+1. Open `lib/main.dart` in your preferred IDE.
+   It should resemble the following code:
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+   <?code-excerpt "lib/main.dart"?>
+   ```dart title="lib/main.dart"
+   import 'package:flutter/material.dart';
+   
+   void main() => runApp(const MyApp());
+   
+   class MyApp extends StatelessWidget {
+     const MyApp({super.key});
+   
+     @override
+     Widget build(BuildContext context) {
+       return const MaterialApp(
+         title: 'Counter App',
+         home: MyHomePage(title: 'Counter App Home Page'),
+       );
+     }
+   }
+   
+   class MyHomePage extends StatefulWidget {
+     const MyHomePage({super.key, required this.title});
+   
+     final String title;
+   
+     @override
+     State<MyHomePage> createState() => _MyHomePageState();
+   }
+   
+   class _MyHomePageState extends State<MyHomePage> {
+     int _counter = 0;
+   
+     void _incrementCounter() {
+       setState(() {
+         _counter++;
+       });
+     }
+   
+     @override
+     Widget build(BuildContext context) {
+       return Scaffold(
+         appBar: AppBar(
+           title: Text(widget.title),
+         ),
+         body: Center(
+           child: Column(
+             mainAxisAlignment: MainAxisAlignment.center,
+             children: <Widget>[
+               const Text(
+                 'You have pushed the button this many times:',
+               ),
+               Text(
+                 '$_counter',
+                 style: Theme.of(context).textTheme.headlineMedium,
+               ),
+             ],
+           ),
+         ),
+         floatingActionButton: FloatingActionButton(
+           // Provide a Key to this button. This allows finding this
+           // specific button inside the test suite, and tapping it.
+           key: const Key('increment'),
+           onPressed: _incrementCounter,
+           tooltip: 'Increment',
+           child: const Icon(Icons.add),
+         ),
+       );
+     }
+   }
+   ```
 
-  final String title;
+## Add the `integration_test` dependency
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
+You need to add the testing packages to your new app.
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+To add `integration_test` and `flutter_test` packages as
+`dev_dependencies` using `sdk: flutter`, run following command.
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        // Provide a Key to this button. This allows finding this
-        // specific button inside the test suite, and tapping it.
-        key: const Key('increment'),
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
-    );
-  }
-}
-```
-
-## 2. Add the `integration_test` dependency
-
-Run following command to add `integration_test` and `flutter_test` packages as `dev_dependencies` using `sdk: flutter`.
-
-```sh
-$ flutter pub add 'dev:flutter_test:{"sdk":"flutter"}'  'dev:integration_test:{"sdk":"flutter"}'
+```console
+$ flutter pub add 'dev:flutter_test:{"sdk":"flutter"}' \
+  'dev:integration_test:{"sdk":"flutter"}'
 ```
 Output
 ```console
@@ -120,9 +136,8 @@ Resolving dependencies...
 + webdriver 3.0.2
 Changed 9 dependencies!
 ```
-Updated pubsec
-```yaml
-# pubspec.yaml
+Updated `pubspec.yaml` file
+```yaml title="pubspec.yaml"
 # ...
 dev_dependencies:
   # ... added depencies
@@ -133,9 +148,12 @@ dev_dependencies:
 # ...
 ```
 
-## 3. Create the test files
+## Create the integration test files
 
-Create a new directory, `integration_test`, with an empty `app_test.dart` file:
+1. Create a new directory named `integration_test`.
+1. Add empty file named `app_test.dart` in that directory.
+
+The resulting directory tree should resemble the following:
 
 ```plaintext
 counter_app/
@@ -145,76 +163,83 @@ counter_app/
     app_test.dart
 ```
 
-## 4. Write the integration test
+## Write the integration test
 
-Now you can write tests. This involves three steps:
+1. Open your `integration_test/app_test.dart` file in your preferred IDE.
+1. Copy the following code and paste it into your
+   `integration_test/app_test.dart` file.
 
-  1. Initialize `IntegrationTestWidgetsFlutterBinding`, a singleton service that
-     executes tests on a physical device.
-  2. Interact and tests widgets using the `WidgetTester` class.
-  3. Test the important scenarios.
+   <?code-excerpt "integration_test/app_test.dart (IntegrationTest)"?>
+   ```dart title="integration_test/app_test.dart"
+   import 'package:flutter/material.dart';
+   import 'package:flutter_test/flutter_test.dart';
+   import 'package:integration_test/integration_test.dart';
+   import 'package:introduction/main.dart';
+   
+   void main() {
+     IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+   
+     group('end-to-end test', () {
+       testWidgets('tap on the floating action button, verify counter',
+           (tester) async {
+         // Load app widget.
+         await tester.pumpWidget(const MyApp());
+   
+         // Verify the counter starts at 0.
+         expect(find.text('0'), findsOneWidget);
+   
+         // Finds the floating action button to tap on.
+         final fab = find.byKey(const Key('increment'));
+   
+         // Emulate a tap on the floating action button.
+         await tester.tap(fab);
+   
+         // Trigger a frame.
+         await tester.pumpAndSettle();
+   
+         // Verify the counter increments by 1.
+         expect(find.text('1'), findsOneWidget);
+       });
+     });
+   }
+   ```
 
-<?code-excerpt "integration_test/app_test.dart (IntegrationTest)"?>
-```dart
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:integration_test/integration_test.dart';
-import 'package:introduction/main.dart';
+This example goes through three steps:
 
-void main() {
-  IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+1. Initialize `IntegrationTestWidgetsFlutterBinding`.
+   This singleton service executes tests on a physical device.
+2. Interact and tests widgets using the `WidgetTester` class.
+3. Test the important scenarios.
 
-  group('end-to-end test', () {
-    testWidgets('tap on the floating action button, verify counter',
-        (tester) async {
-      // Load app widget.
-      await tester.pumpWidget(const MyApp());
+## Run integration tests
 
-      // Verify the counter starts at 0.
-      expect(find.text('0'), findsOneWidget);
+The integration test runs vary depending on the platform on which you test.
+You can test against a mobile platform or the web.
 
-      // Finds the floating action button to tap on.
-      final fab = find.byKey(const Key('increment'));
+### Test on a mobile device
 
-      // Emulate a tap on the floating action button.
-      await tester.tap(fab);
+To test on a real iOS or Android device
 
-      // Trigger a frame.
-      await tester.pumpAndSettle();
+1. Connect the device.
+1. Run the following command from the root of the project.
 
-      // Verify the counter increments by 1.
-      expect(find.text('1'), findsOneWidget);
-    });
-  });
-}
-```
+   ```console
+   $ flutter test integration_test/app_test.dart
+   ```
 
-## 5. Run the integration test
+1. To run all integration tests, specify the directory:
 
-The process of running the integration tests varies depending on the platform
-you are testing against. You can test against a mobile platform or the web.
+   ```console
+   $ flutter test integration_test
+   ```
 
-### 5a. Mobile
+   This command runs the app and integration tests on the target device.
 
-To test on a real iOS / Android device, first connect the device and run the
-following command from the root of the project:
-
-```console
-$ flutter test integration_test/app_test.dart
-```
-
-Or, you can specify the directory to run all integration tests:
-
-```console
-$ flutter test integration_test
-```
- 
-This command runs the app and integration tests on the target device. For more
-information, see the [Integration testing][] page.
+To learn more, consult the [Integration testing][] page.
 
 ---
 
-### 5b. Web
+### Test in a web browser
 
 {% comment %}
 TODO(ryjohn): Add back after other WebDriver versions are supported:
@@ -224,49 +249,58 @@ To test for web,
 determine which browser you want to test against
 and download the corresponding web driver:
 
-  * Chrome: [Download ChromeDriver][]
-  * Firefox: [Download GeckoDriver][]
-  * Safari: Safari can only be tested on a Mac;
-    the SafariDriver is already installed on Mac machines.
-  * Edge [Download EdgeDriver][]
+* Chrome: [Download ChromeDriver][]
+* Firefox: [Download GeckoDriver][]
+* Safari: Safari can only be tested on a Mac;
+  the SafariDriver is already installed on Mac machines.
+* Edge [Download EdgeDriver][]
 {% endcomment -%}
 
-To get started testing in a web browser, [Download ChromeDriver][].
+To test in a web browser, perform the following steps.
 
-Next, create a new directory named `test_driver` containing a new file
-named `integration_test.dart`:
+1. [Download ChromeDriver][].
 
-<?code-excerpt "test_driver/integration_test.dart"?>
-```dart
-import 'package:integration_test/integration_test_driver.dart';
+1. Create a new directory named `test_driver`.
 
-Future<void> main() => integrationDriver();
-```
+   ```console
+   $ mkdir test_driver
+   ```
 
-Launch `chromedriver` as follows: 
+1. In this directory, create a new file named `integration_test.dart`.
 
-```console
-$ chromedriver --port=4444
-```
+1. Copy the following code and paste it into your `integration_test.dart` file.
 
-From the root of the project, run the following command:
+   <?code-excerpt "test_driver/integration_test.dart"?>
+   ```dart title="test_driver/integration_test.dart"
+   import 'package:integration_test/integration_test_driver.dart';
+   
+   Future<void> main() => integrationDriver();
+   ```
 
-```console
-$ flutter drive \
-  --driver=test_driver/integration_test.dart \
-  --target=integration_test/app_test.dart \
-  -d chrome
-```
+1. Launch `chromedriver` as follows:
 
-For a headless testing experience, you can also run `flutter drive` 
-with `web-server` as the target device identifier as follows:
+   ```console
+   $ chromedriver --port=4444
+   ```
 
-```console
-flutter drive \
-  --driver=test_driver/integration_test.dart \
-  --target=integration_test/app_test.dart \
-  -d web-server
-```
+1. From the root of the project, run the following command:
+
+   ```console
+   $ flutter drive \
+     --driver=test_driver/integration_test.dart \
+     --target=integration_test/app_test.dart \
+     -d chrome
+   ```
+
+   To run this as a headless test, run `flutter drive`
+   with `-d web-server` option:
+
+   ```console
+   $ flutter drive \
+     --driver=test_driver/integration_test.dart \
+     --target=integration_test/app_test.dart \
+     -d web-server
+   ```
 
 [Download ChromeDriver]: https://googlechromelabs.github.io/chrome-for-testing/
 [Download EdgeDriver]: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
@@ -274,5 +308,3 @@ flutter drive \
 [flutter_driver]: {{site.api}}/flutter/flutter_driver/flutter_driver-library.html
 [integration_test]: {{site.repo.flutter}}/tree/main/packages/integration_test
 [Integration testing]: /testing/integration-tests
-[`SerializableFinders`]: {{site.api}}/flutter/flutter_driver/CommonFinders-class.html
-[`ValueKey`]: {{site.api}}/flutter/foundation/ValueKey-class.html
