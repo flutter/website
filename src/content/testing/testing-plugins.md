@@ -112,7 +112,7 @@ For information on running this type of test, check out the
 [integration test documentation][].
 The commands must be run in the `example` directory. 
 
-[integration test documentation]: /cookbook/testing/integration/introduction#5-run-the-integration-test
+[integration test documentation]: /cookbook/testing/integration/introduction#run-integration-tests
 
 ### Native unit tests
 
