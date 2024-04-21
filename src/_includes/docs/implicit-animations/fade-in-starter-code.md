@@ -1,4 +1,5 @@
 <?code-excerpt "animation/implicit/opacity1/lib/main.dart"?>
+
 ```run-dartpad:theme-light:mode-flutter:split-60:width-100%:height-532px:ga_id-fade_in_starter_code
 // Copyright 2019 the Dart project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license
@@ -19,9 +20,8 @@ class FadeInDemo extends StatefulWidget {
 class _FadeInDemoState extends State<FadeInDemo> {
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    return Column(children: <Widget>[
-      Image.network(owlUrl, height: height * 0.8),
+    return ListView(children: <Widget>[
+      Image.network(owlUrl),
       TextButton(
         child: const Text(
           'Show Details',

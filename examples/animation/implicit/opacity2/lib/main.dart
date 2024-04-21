@@ -17,9 +17,8 @@ class FadeInDemo extends StatefulWidget {
 class _FadeInDemoState extends State<FadeInDemo> {
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    return Column(children: <Widget>[
-      Image.network(owlUrl, height: height * 0.8),
+    return ListView(children: <Widget>[
+      Image.network(owlUrl),
       TextButton(
         child: const Text(
           'Show Details',
