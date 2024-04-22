@@ -89,6 +89,7 @@ is opened while the app is running.
 * [Learning Flutter's new navigation and routing system][] provides an
 introduction to the Router system.
 * [Deep dive into Flutter deep linking][io-dl] video from Google I/O 2023
+* [Flutter Deep Linking: The Ultimate Guide][] a step-by-step tutorial showing how to implement deep links in Flutter
 
 [io-dl]: {{site.yt.watch}}?v=6RxuDcs6jVw&t=3s
 [Learning Flutter's new navigation and routing system]: {{site.flutter-medium}}/learning-flutters-new-navigation-and-routing-system-7c9068155ade
@@ -96,5 +97,6 @@ introduction to the Router system.
 [onGenerateRoute]: {{site.api}}/flutter/material/MaterialApp/onGenerateRoute.html
 [Router]: {{site.api}}/flutter/widgets/Router-class.html
 [plugin-linking]: {{site.medium}}/flutter-community/deep-links-and-flutter-applications-how-to-handle-them-properly-8c9865af9283
+[Flutter Deep Linking: The Ultimate Guide]: https://codewithandrea.com/articles/flutter-deep-links/
 
 [configuring the URL strategy]: /ui/navigation/url-strategies
