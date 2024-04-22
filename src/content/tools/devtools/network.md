@@ -58,11 +58,11 @@ https s:404
 ### Recording network requests on app startup
 
 To record network traffic on app startup, you can start your app in a paused
-state then, begin recording before your app starts:
+state, and then begin recording before resuming your app.
 
 1. Start your app in a paused state:
     * `flutter run --start-paused ...`
-    * `dart run --pause-isolates-on-start ...`
+    * `dart run --pause-isolates-on-start --observe ...`
 2. Open DevTools from the IDE where you started your app, or from the link that
    was printed to the command line if you started your app from the CLI.
 3. Navigate to the Network screen and ensure that recording has started.
