@@ -208,12 +208,12 @@ This example goes through three steps:
 
 1. Initialize `IntegrationTestWidgetsFlutterBinding`.
    This singleton service executes tests on a physical device.
-2. Interact and tests widgets using the `WidgetTester` class.
+2. Interact and test widgets using the `WidgetTester` class.
 3. Test the important scenarios.
 
 ## Run integration tests
 
-The integration test runs vary depending on the platform on which you test.
+The integration tests that run vary depending on the platform on which you test.
 You can test against a mobile platform or the web.
 
 ### Test on a mobile device
