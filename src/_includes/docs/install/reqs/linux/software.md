@@ -49,7 +49,7 @@ To develop Flutter on {{os}}:
           libbz2-1.0:i386
       ```
 
-   1. Install [Android Studio][] {{site.appmin.android_studio}} to debug and compile
+   1. Install [Android Studio][] {{site.appmin.android_studio}} or later to debug and compile
       Java or Kotlin code for Android.
       Flutter requires the full version of Android Studio.
 

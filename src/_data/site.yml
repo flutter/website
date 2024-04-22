@@ -69,8 +69,8 @@ appmin:
   git_win: 2.27
   git_mac: 2.27
   vscode: 1.77
-  android_studio: '2023.1 (Hedgehog)'
-  intellij_idea: '2023.1'
+  android_studio: '2023.2.1 (Iguana)'
+  intellij_idea: '2023.2'
   android_sdk: 21
   powershell: 5.0
   xcode: '14'
@@ -96,7 +96,7 @@ targetmin:
 appnow:
   flutter: '3.19.3'
   vscode: '1.86'
-  android_studio: '2023.1 (Hedgehog) or later'
+  android_studio: '2023.1'
   android_sdk: '34.0.0'
   intellij: '2023.3'
   powershell: 5.1
