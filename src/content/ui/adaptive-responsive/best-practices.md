@@ -1,14 +1,15 @@
 ---
 title: Best practices for app design
 description: >
-  Learn the best practices for creating >
+  Learn the best practices for creating
   a responsive and an adaptive app.
 short-title: Best practices
 ---
 
-The best practices on this page cover,
-in particular, large screen devices,
-but can equally apply to any Flutter app.
+The best practices on this page cover
+considerations for making your app work
+on a variety of screen sizes, including
+large screens.
 Flutter defines [large screens][] as tablets,
 foldables, and ChromeOS devices running Android.
 
@@ -31,20 +32,18 @@ it also receives the following benefits:
 [large screens]: {{site.android-dev}}/guide/topics/large-screens/get-started-with-large-screens
 [Play Store updates]: {{site.android-dev}}/2022/03/helping-users-discover-quality-apps-on.html
 
-These best practices cover responsive _and_
-adaptive app design.
-
 ## SafeArea
 
 When running your app on the latest devices,
 you might encounter bits of the UI being blocked
-by cutouts on top of the device's screen.
-
+by cutouts on the device's screen.
 You can fix this with the [`SafeArea`][] widget,
 which insets its child widget to avoid intrusions
 (like notches and camera cutouts),
-as well as operating system UI (such as the status bar
-on Android, or by rounded corners of the display).
+as well as operating system UI
+(such as the status bar on Android),
+or by rounded corners of the physical display.
+
 The `SafeArea` widget allows you to enable or
 disable padding on any of its four sides.
 
@@ -53,21 +52,19 @@ It’s generally recommended to wrap the body of a
 but you don’t always need to put it this high in the
 `Widget` tree.
 
-<b>TODO(sfshaza): PENDING: example code</b>
-
 For example, if you purposefully want your app to stretch
 under the cutouts, you can move the `SafeArea` to wrap
 whatever content makes sense,
 and let the rest of the app take up the full screen.
 
-<b>TODO(sfshaza): PENDING: example</b>
-
 Using `SafeArea` ensures that your app content won’t be
-cut off by physical display features or operating system UI
+cut off by physical display features or operating system UI,
 and sets your app up for success even as new devices with
 different shapes and styles of cutouts enter the market.
 
 [`SafeArea`]: {{site.api}}/flutter/widgets/SafeArea-class.html
+
+----------
 
 ## Don't gobble up all horizontal space
 

@@ -12,25 +12,25 @@ designed for conventional mobile devices,
 and make it beautiful on a wide range
 of devices? What steps are required?
 
-Our engineers, who have experience doing this
-exact thing for very large apps, recommend the
+Google engineers, who have experience doing this
+very thing for large apps, recommend the
 following 3-step approach.
 
 <b>PENDING: Why are you reluctant to use Khanh's Vertex AI example code? Is it because it uses Vertex AI API?</b>
 
 ### Abstract
 
-![Step 1: Abstract common info in the widgets](/assets/images/docs/ui/adaptive-responsive/abstract.png)
+![Step 1: Abstract info common to any UI widget](/assets/images/docs/ui/adaptive-responsive/abstract.png)
 
 First, identify the widgets that you plan to
 make dynamic. Analyze the constructors for those
-widgets and abstract out what you can share.
+widgets and abstract out the data that you can share.
 
 Common widgets that require adaptibility are:
 
 * Dialogs, both fullscreen and modal
-w Navigation UI, both rail and bottom bar
-* Custom layout, whether tall or wide
+* Navigation UI, both rail and bottom bar
+* Custom layout, such as "is the UI area taller or wider?"
 
 For example, in a `Dialog` widget, you can share
 the info that contains the _content_ of the dialog.
@@ -41,26 +41,33 @@ and a `NavigationRail` when the app window is large.
 These widgets would likely share a list of
 navigable destinations. In this case,
 you might create a `Destination` widget to hold
-this info, and give the `Destination` as having both
+this info, and specify the `Destination` as having both
 an icon and a text label.
 
-Next, you will determine how to measure your window.
+Next, you will evaluate your screen size to decide
+on how to display your UI.
 
 ### Measure
 
-![Step 2: Determine how to measure sizes](/assets/images/docs/ui/adaptive-responsive/measure.png)
+![Step 2: How to measure screen size](/assets/images/docs/ui/adaptive-responsive/measure.png)
+
+You have two ways to determine the size of your display area:
+`MediaQuery` and `LayoutBuilder`.
+
+#### MediaQuery
 
 In the past, you might have used `MediaQuery.of` to
-determine the size of the current device's screen.
-However, with all the variety of device screens these days,
-this test can be misleading.
+determine the size of the device's screen.
+However, devices today feature screens
+with a wide variety of sizes and shapes,
+and this test can be misleading.
 
 For example, maybe your app currently occupies a
-small window on a large screen. If you use
-`MediaQuery.of` to determine the screen to be small
-(when, in fact, the app is running on a large screen),
+small window on a large screen. If you use the
+`MediaQuery.of` method and conclude the screen to be small
+(when, in fact, the app displays in a tiny window on a large screen),
 and you've portrait locked your app, it causes the
-app's window to locked to the center of the
+app's window to lock to the center of the
 screen, surrounded with black.
 This is hardly an ideal UI on a large screen.
 
@@ -78,10 +85,10 @@ not just a single widget.
 
 <b>PENDING: Previously, we recommended `MediaQuery.of()`. Why do we now recommend `.sizeOf()`?</b>
 
-You have two ways to measure your screen space. You can use
-either `MediaQuery.sizeOf` or `LayoutBuilder`,
+You have two ways to measure your screen space.
+You can use either `MediaQuery.sizeOf` or `LayoutBuilder`,
 depending on whether you want the size of the whole
-app window, or if you want more local sizing.
+app window, or more local sizing.
 
 If you want your widget to be fullscreen,
 even when the app window is small,
@@ -91,27 +98,47 @@ In the previous section, you want to base the
 sizing behavior on the entire app's window,
 so you would use `MediaQuery.sizeOf`.
 
-<b>PENDING: Include example of LayoutBuilder? I think we should.</b>
+#### LayoutBuilder
 
-![Step 2: Determine how to measure sizes](/assets/images/docs/ui/adaptive-responsive/measure.png)
+Rather than providing the size of the app’s window,
+`LayoutBuilder` provides the layout constraints from
+the parent `Widget`. This means that you get
+sizing information based on the specific spot
+in the widget tree where you added the `LayoutBuilder`.
+Also, `LayoutBuilder` returns a `BoxConstraints`
+object instead of a `Size` object,
+so you are given the valid width
+and height ranges (minimum and maximum) for the content,
+rather than just a fixed size.
+This can be useful for custom widgets.
+
+For example, imagine a custom widget, where you want
+the sizing to be based on the space specifically
+given to that widget, and not the app window in general.
+In this scenario, use `LayoutBuilder`.
 
 ### Branch
 
+![Step 3: Branch in the code based on the desired UI](/assets/images/docs/ui/adaptive-responsive/measure.png)
+
 At this point, you must decide what sizing breakpoints to use
 when choosing what version of the UI to display.
-The material guidelines suggest using a bottom nav bar for
-windows less than 600 logical pixels wide, and a nav rail
-for those that are 600 pixels wide or greater. Again,
-your choice shouldn't depend on the device itself,
-but on the device's window size.
+For example, the material guidelines suggest using
+a bottom nav bar for windows less than 600 logical pixels wide,
+and a nav rail for those that are 600 pixels wide or greater.
+Again, your choice shouldn't depend on the _type_ of device,
+but on the device's available window size.
 
-<b>PENDING: Do we have a good link into material.io for the num-of-pixels info? I searched but couldn't find it.</b>
+<b>PENDING: Do we have a single link into material.io that sums up the num-of-pixels info? I searched but couldn't find it.</b>
 
 To work through an example that switches between a
 `NavigationRail` and a `NavigationBar`, check out
 the [Building an animated responsive app layout with Material 3][codelab].
 
 [codelab]: {{site.codelabs}}/codelabs/flutter-animated-responsive-layout
+
+The next page discusses some best practices for
+making your app adaptive to a variety of screen sizes.
 
 
 {% comment %}

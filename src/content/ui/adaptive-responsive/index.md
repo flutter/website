@@ -52,6 +52,7 @@ This section covers various aspects of adaptive and
 responsive design:
 
 * [General approach][]
+* TBD
 
 {% comment %}
 ---------------- CUT THIS OUT
