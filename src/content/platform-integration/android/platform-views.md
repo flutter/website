@@ -23,7 +23,7 @@ see [Hosting native iOS views][].
 
 [Hosting native iOS views]: /platform-integration/ios/platform-views
 
-Flutter supports two modes:
+Flutter supports two modes starting at api 23:
 Hybrid composition and virtual displays.
 
 Which one to use depends on the use case.
