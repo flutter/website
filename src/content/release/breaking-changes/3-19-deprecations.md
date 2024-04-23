@@ -720,7 +720,7 @@ when using platform views on android devices runing api level 22 and below.
 
 **Migration guide**
 
-Set minimum api level to 23 or higher or check the android api level before displaying a platform view. 
+Set minimum api level to 23 (or higher) or check the android api level before displaying a platform view. 
 
 ---
 
