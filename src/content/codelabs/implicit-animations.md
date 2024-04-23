@@ -89,7 +89,7 @@ Wrap the `Column` widget in an `AnimatedOpacity` widget:
 ```diff2html
 --- opacity1/lib/main.dart
 +++ opacity2/lib/main.dart
-@@ -27,12 +27,14 @@
+@@ -26,12 +26,14 @@
          ),
          onPressed: () => {},
        ),
@@ -134,8 +134,8 @@ the starting value for `opacity` to zero:
 +
    @override
    Widget build(BuildContext context) {
-     double height = MediaQuery.of(context).size.height;
-@@ -28,6 +30,7 @@
+     return ListView(children: <Widget>[
+@@ -27,6 +29,7 @@
          onPressed: () => {},
        ),
        AnimatedOpacity(
@@ -155,7 +155,7 @@ you can start with 2 seconds:
 ```diff2html
 --- opacity3/lib/main.dart
 +++ opacity4/lib/main.dart
-@@ -30,6 +30,7 @@
+@@ -29,6 +29,7 @@
          onPressed: () => {},
        ),
        AnimatedOpacity(
@@ -177,7 +177,7 @@ to set `opacity` to 1:
 ```diff2html
 --- opacity4/lib/main.dart
 +++ opacity5/lib/main.dart
-@@ -27,7 +27,9 @@
+@@ -26,7 +26,9 @@
            'Show Details',
            style: TextStyle(color: Colors.blueAccent),
          ),
