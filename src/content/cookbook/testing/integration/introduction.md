@@ -46,11 +46,11 @@ The counter app allows a user to tap on a button to increase a counter.
 1. Open `lib/main.dart` in your preferred IDE.
 
 1. Add a `key` parameter to the `floatingActionButton()` widget
-   with a value of a `Key` class with a string of `increment`.
+   with an instance of a `Key` class with a string value of `increment`.
 
    ```dart
     floatingActionButton: FloatingActionButton(
-      [!key: const Key('increment'),!]
+      [!key: const ValueKey('increment'),!]
       onPressed: _incrementCounter,
       tooltip: 'Increment',
       child: const Icon(Icons.add),
@@ -119,9 +119,9 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        // Provide a Key to this button. This allows finding this
+        // Provide a ValueKey to this button. This allows finding this
         // specific button inside the test suite, and tapping it.
-        [!key: const Key('increment'),!]
+        key: const ValueKey('increment'),
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
@@ -195,15 +195,16 @@ counter_app/
 
 1. Copy the following code and paste it into your
    `integration_test/app_test.dart` file.
-   The last import should point to the `main.dart` file of your
-   `counter_app`.
+   The last import should point to the `main.dart` file
+   of your `counter_app`.
+   (This `import` points to the example app called `introduction`.)
 
    <?code-excerpt "integration_test/app_test.dart (IntegrationTest)"?>
    ```dart title="integration_test/app_test.dart"
    import 'package:flutter/material.dart';
    import 'package:flutter_test/flutter_test.dart';
    import 'package:integration_test/integration_test.dart';
-   [!import 'package:counter_app/main.dart';!]
+   [!import 'package:introduction/main.dart';!]
    
    void main() {
      IntegrationTestWidgetsFlutterBinding.ensureInitialized();
@@ -218,7 +219,7 @@ counter_app/
          expect(find.text('0'), findsOneWidget);
    
          // Finds the floating action button to tap on.
-         final fab = find.byKey(const Key('increment'));
+         final fab = find.byValueKey(const ValueKey('increment'));
    
          // Emulate a tap on the floating action button.
          await tester.tap(fab);

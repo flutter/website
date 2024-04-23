@@ -17,7 +17,7 @@ void main() {
       expect(find.text('0'), findsOneWidget);
 
       // Finds the floating action button to tap on.
-      final fab = find.byKey(const Key('increment'));
+      final fab = find.byValueKey(const ValueKey('increment'));
 
       // Emulate a tap on the floating action button.
       await tester.tap(fab);
