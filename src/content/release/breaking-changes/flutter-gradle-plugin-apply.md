@@ -182,7 +182,7 @@ very top of your file, add:
 +}
 ```
 
-Finally, if your `dependencies` sections contains a dependency on `"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"`, 
+Finally, if your `dependencies` block contains a dependency on `"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"`, 
 then remove that dependency.
 ```diff
 dependencies {
