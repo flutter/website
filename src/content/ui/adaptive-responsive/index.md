@@ -52,7 +52,11 @@ This section covers various aspects of adaptive and
 responsive design:
 
 * [General approach][]
+* [Best practices][]
 * TBD
+
+[General approach]: /ui/adaptive-responsive/general
+[Best practices]:   /ui/adaptive-responsive/best-practices
 
 {% comment %}
 ---------------- CUT THIS OUT

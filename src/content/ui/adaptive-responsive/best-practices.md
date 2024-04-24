@@ -19,10 +19,10 @@ As of January 2024,
 more than [270 million active large screen][large screens]
 and foldable devices run on Android.
 When your app supports large screens,
-it also receives the following benefits:
+it also receives other benefits.
+Optimizing your app to fill the screen:
 
-* Optimizing your app to fill the screen improves
-  your app's user engagement metrics.
+* Improves your app's user engagement metrics.
 * Increases your app's visibility in the Play Store.
   Recent [Play Store updates][] show ratings by
   device type and indicates when an app lacks
@@ -44,11 +44,13 @@ as well as operating system UI
 (such as the status bar on Android),
 or by rounded corners of the physical display.
 
-The `SafeArea` widget allows you to enable or
+If you don't want this behavior,
+the `SafeArea` widget allows you to
 disable padding on any of its four sides.
+(By default, all four sides are enabled.)
 
 It’s generally recommended to wrap the body of a
-`Scaffold` widget in `SafeArea` as a safe place to start,
+`Scaffold` widget in `SafeArea` as a good place to start,
 but you don’t always need to put it this high in the
 `Widget` tree.
 
@@ -63,6 +65,12 @@ and sets your app up for success even as new devices with
 different shapes and styles of cutouts enter the market.
 
 [`SafeArea`]: {{site.api}}/flutter/widgets/SafeArea-class.html
+
+If you would like to learn more about how
+`SafeArea` works under the covers, watch
+the <b>PENDiNG</b> Google I/O video.
+(But the short answer is that it relies
+heavily on `MediaQuery`.)
 
 ----------
 

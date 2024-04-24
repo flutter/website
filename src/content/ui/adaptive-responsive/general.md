@@ -2,7 +2,7 @@
 title: General approach to adaptive apps
 description: >
   xxx
-short-title: Layout
+short-title: General approach
 ---
 
 <?code-excerpt path-base="ui/adaptive_app_demos"?>
@@ -18,7 +18,7 @@ following 3-step approach.
 
 <b>PENDING: Why are you reluctant to use Khanh's Vertex AI example code? Is it because it uses Vertex AI API?</b>
 
-### Abstract
+### Step 1: Abstract
 
 ![Step 1: Abstract info common to any UI widget](/assets/images/docs/ui/adaptive-responsive/abstract.png)
 
@@ -47,7 +47,7 @@ an icon and a text label.
 Next, you will evaluate your screen size to decide
 on how to display your UI.
 
-### Measure
+### Step 2: Measure
 
 ![Step 2: How to measure screen size](/assets/images/docs/ui/adaptive-responsive/measure.png)
 
@@ -117,9 +117,9 @@ the sizing to be based on the space specifically
 given to that widget, and not the app window in general.
 In this scenario, use `LayoutBuilder`.
 
-### Branch
+### Step 3: Branch
 
-![Step 3: Branch in the code based on the desired UI](/assets/images/docs/ui/adaptive-responsive/measure.png)
+![Step 3: Branch the code based on the desired UI](/assets/images/docs/ui/adaptive-responsive/measure.png)
 
 At this point, you must decide what sizing breakpoints to use
 when choosing what version of the UI to display.
