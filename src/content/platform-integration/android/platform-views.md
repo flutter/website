@@ -23,24 +23,32 @@ see [Hosting native iOS views][].
 
 [Hosting native iOS views]: /platform-integration/ios/platform-views
 
-Flutter supports two modes starting at api 23:
-Hybrid composition and virtual displays.
+Platform Views on Android have two implementations. They come with tradeoffs
+both in terms of performance and fidelity. 
+Platform views require Android API 23+.
 
-Which one to use depends on the use case.
-Let's take a look:
+### [Hybrid Composition](#hybrid-composition)
 
-* [Hybrid composition](#hybrid-composition)
-  appends the native `android.view.View` to the view hierarchy. 
-  Therefore, keyboard handling, and accessibility work out of the box.
-  Prior to Android 10, this mode might significantly
-  reduce the frame throughput (FPS) of the Flutter UI.
-  For more context, see [Performance](#performance).
+Platform Views are rendered as they are normally. Flutter content is rendered into a texture.
+SurfaceFlinger composes the Flutter content and the platform views.
 
-* [Virtual displays](#virtual-display)
-  render the `android.view.View` instance to a texture, 
-  so it's not embedded within the Android Activity's view hierarchy.
-  Certain platform interactions such as keyboard handling
-  and accessibility features might not work.
+* `+` best performance and fidelity of Android views.
+* `-` Flutter performance suffers.
+* `-` FPS of application will be lower.
+* `-` Certain transformations that can be applied to Flutter widgets will not work when applied to platform views.
+
+### [Texture Layer](#texturelayerhybridcompisition) (or Texture Layer Hybrid Composition)
+
+Platform Views are rendered into a texture.
+Flutter draws the platform views (via the texture).
+Flutter content is rendered directly into a Surface.
+
+* `+` good performance for Android Views
+* `+` best performance for Flutter rendering.
+* `+` all transformations work correctly.
+* `-` quick scrolling (e.g. a web view) will be janky
+* `-` SurfaceViews are problematic in this mode and will be moved into a virtual display (breaking a11y)
+* `-` Text magnifier will break unless Flutter is rendered into a TextureView.
 
 To create a platform view on Android,
 use the following steps:
@@ -114,7 +122,7 @@ For more information, see the API docs for:
 [`PlatformViewLink`]: {{site.api}}/flutter/widgets/PlatformViewLink-class.html
 [`PlatformViewsService`]: {{site.api}}/flutter/services/PlatformViewsService-class.html
 
-### Virtual display
+### TextureLayerHybridCompisition
 
 In your Dart file,
 for example `native_view_example.dart`,
@@ -407,6 +415,9 @@ android {
     }
 }
 ```
+### Surface Views 
+
+Handling SurfaceViews is problematic for Flutter and should be avoided when possible.
 
 ### Manual view invalidation
 
@@ -419,6 +430,10 @@ Manual view invalidation is done by calling `invalidate` on the View
 or one of its parent views.
 
 [`AndroidViewSurface`]: {{site.api}}/flutter/widgets/AndroidViewSurface-class.html
+
+### Issues 
+
+[Existing Platform View issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+platform-views%22)
 
 {% include docs/platform-view-perf.md %}
 
