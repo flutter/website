@@ -66,16 +66,22 @@ the `lib/main.dart` file should resemble the following code.
 ```dart title="lib/main.dart"
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Counter App',
-      home: MyHomePage(title: 'Counter App Home Page'),
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -102,6 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
       body: Center(
@@ -199,40 +206,40 @@ counter_app/
    of your `counter_app`.
    (This `import` points to the example app called `introduction`.)
 
-   <?code-excerpt "integration_test/app_test.dart (IntegrationTest)"?>
-   ```dart title="integration_test/app_test.dart"
-   import 'package:flutter/material.dart';
-   import 'package:flutter_test/flutter_test.dart';
-   import 'package:integration_test/integration_test.dart';
-   [!import 'package:introduction/main.dart';!]
-   
-   void main() {
-     IntegrationTestWidgetsFlutterBinding.ensureInitialized();
-   
-     group('end-to-end test', () {
-       testWidgets('tap on the floating action button, verify counter',
-           (tester) async {
-         // Load app widget.
-         await tester.pumpWidget(const MyApp());
-   
-         // Verify the counter starts at 0.
-         expect(find.text('0'), findsOneWidget);
-   
-         // Finds the floating action button to tap on.
-         final fab = find.byValueKey(const ValueKey('increment'));
-   
-         // Emulate a tap on the floating action button.
-         await tester.tap(fab);
-   
-         // Trigger a frame.
-         await tester.pumpAndSettle();
-   
-         // Verify the counter increments by 1.
-         expect(find.text('1'), findsOneWidget);
-       });
-     });
-   }
-   ```
+    <?code-excerpt "integration_test/app_test.dart (integration-test)" replace="/introduction/counter_app/g"?>
+    ```dart title="integration_test/app_test.dart"
+    import 'package:flutter/material.dart';
+    import 'package:flutter_test/flutter_test.dart';
+    import 'package:integration_test/integration_test.dart';
+    import 'package:[!introduction!]/main.dart';
+
+    void main() {
+      IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+
+      group('end-to-end test', () {
+        testWidgets('tap on the floating action button, verify counter',
+            (tester) async {
+          // Load app widget.
+          await tester.pumpWidget(const MyApp());
+
+          // Verify the counter starts at 0.
+          expect(find.text('0'), findsOneWidget);
+
+          // Finds the floating action button to tap on.
+          final fab = find.byKey(const ValueKey('increment'));
+
+          // Emulate a tap on the floating action button.
+          await tester.tap(fab);
+
+          // Trigger a frame.
+          await tester.pumpAndSettle();
+
+          // Verify the counter increments by 1.
+          expect(find.text('1'), findsOneWidget);
+        });
+      });
+    }
+    ```
 
 This example goes through three steps:
 
