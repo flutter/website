@@ -182,6 +182,16 @@ very top of your file, add:
 +}
 ```
 
+Finally, if your `dependencies` block contains a dependency on `"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"`, 
+then remove that dependency.
+```diff
+dependencies {
+-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+```
+If it was the only dependency in the `dependencies` block, then 
+alternatively you may remove the block entirely.
+
 ### Validation
 
 Execute `flutter run` to confirm your app builds and launches on a connected
