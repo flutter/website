@@ -7,19 +7,25 @@ description: >
 
 ## Summary
 
-Added a generic type in [`PopScope`][] class and updated the [`onPopInvoked`][]
-function signature to take in an additional result as an position parameter.
+Added a generic type in [`PopScope`][] class and replaced the [`onPopInvoked`][]
+with a new method [`onPopInvokedWithResult`][]. The new method takes a boolean
+`didPop` and a `result` as position parameters.
+
+Also replaced the [`Form.onPopInvoked`] with [`Form.onPopInvokedWithResult`][]
+for the same reason.
 
 ## Context
 
 Previously, `PopScope` didn't have a way to access the pop result when `onPopInvoked`
 was called. The generic type is added to the `PopScope` class
-so that `onPopInvoked` can access the type-safe result.
+so that the new method `onPopInvokedWithResult` can access the type-safe result.
 
 ## Description of change
 
-Added a generic type in `PopScope` class and updated the `onPopInvoked`
-function signature to take an additional result as an position parameter.
+Added a generic type in `PopScope` class and a new method `onPopInvokedWithResult`. 
+The `onPopInvoked` was deprecated in the favor of `onPopInvokedWithResult`.
+
+Also added a new method `onPopInvokedWithResult` to `Form` to replace `onPopInvoked`.
 
 ## Migration guide
 
@@ -32,15 +38,29 @@ void main() {
   runApp(
     MaterialApp(
       navigatorKey: nav,
-      home: PopScope(
-        canPop: false,
-        onPopInvoked: (bool didPop) {
-          if (didPop) {
-            return;
-          }
-          launchConfirmationDialog();
-        },
-        child: MyWidget(),
+      home: Column(
+        children: [
+          Form(
+            canPop: false,
+            onPopInvoked: (bool didPop) {
+              if (didPop) {
+                return;
+              }
+              launchConfirmationDialog();
+            },
+            child: MyWidget(),
+          ),
+          PopScope(
+            canPop: false,
+            onPopInvoked: (bool didPop) {
+              if (didPop) {
+                return;
+              }
+              launchConfirmationDialog();
+            },
+            child: MyWidget(),
+          ),
+        ],
       ),
     ),
   );
@@ -55,15 +75,29 @@ void main() {
   runApp(
     MaterialApp(
       navigatorKey: nav,
-      home: PopScope<Object?>(
-        canPop: false,
-        onPopInvoked: (bool didPop, Object? result) {
-          if (didPop) {
-            return;
-          }
-          launchConfirmationDialog();
-        },
-        child: MyWidget(),
+      home: Column(
+        children: [
+          Form(
+            canPop: false,
+            onPopInvokedWithResult: (bool didPop, Object? result) {
+              if (didPop) {
+                return;
+              }
+              launchConfirmationDialog();
+            },
+            child: MyWidget(),
+          ),
+          PopScope<Object?>(
+            canPop: false,
+            onPopInvokedWithResult: (bool didPop, Object? result) {
+              if (didPop) {
+                return;
+              }
+              launchConfirmationDialog();
+            },
+            child: MyWidget(),
+          ),
+        ],
       ),
     ),
   );
@@ -89,6 +123,9 @@ API documentation:
 * [`PopScope`][]
 * [`onPopInvoked`][]
 * [`Route`][]
+* [`onPopInvokedWithResult`][]
+* [`Form.onPopInvoked`][]
+* [`Form.onPopInvokedWithResult`][]
 
 Relevant issue:
 
@@ -102,4 +139,7 @@ Relevant PR:
 [`PopScope`]: {{site.api}}/flutter/widgets/PopScope-class.html
 [`Route`]: {{site.api}}/flutter/widgets/Route-class.html
 [`onPopInvoked`]: {{site.api}}/flutter/widgets/PopScope/onPopInvoked.html
+[`onPopInvokedWithResult`]: {{site.api}}/flutter/widgets/PopScope/onPopInvokedWithResult.html
+[`Form.onPopInvoked`]: {{site.api}}/flutter/widgets/Form/onPopInvoked.html
+[`Form.onPopInvokedWithResult`]: {{site.api}}/flutter/widgets/Form/onPopInvokedWithResult.html
 [Issue 137458]: {{site.repo.flutter}}/issues/137458
