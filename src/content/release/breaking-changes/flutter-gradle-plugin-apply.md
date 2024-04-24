@@ -182,6 +182,14 @@ very top of your file, add:
 +}
 ```
 
+Finally, if your `dependencies` sections contains a dependency on
+```groovy
+implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+```
+then remove that dependency. If it is the only dependency in the `dependencies` block, then 
+alternatively you may remove the block entirely.
+
+
 ### Validation
 
 Execute `flutter run` to confirm your app builds and launches on a connected
