@@ -27,7 +27,7 @@ Platform Views on Android have two implementations. They come with tradeoffs
 both in terms of performance and fidelity. 
 Platform views require Android API 23+.
 
-### [Hybrid Composition](#hybrid-composition)
+## [Hybrid Composition](#hybrid-composition)
 
 Platform Views are rendered as they are normally. Flutter content is rendered into a texture.
 SurfaceFlinger composes the Flutter content and the platform views.
@@ -37,7 +37,7 @@ SurfaceFlinger composes the Flutter content and the platform views.
 * `-` FPS of application will be lower.
 * `-` Certain transformations that can be applied to Flutter widgets will not work when applied to platform views.
 
-### [Texture Layer](#texturelayerhybridcompisition) (or Texture Layer Hybrid Composition)
+## [Texture Layer](#texturelayerhybridcompisition) (or Texture Layer Hybrid Composition)
 
 Platform Views are rendered into a texture.
 Flutter draws the platform views (via the texture).
