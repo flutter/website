@@ -366,6 +366,8 @@
     - title: Firebase
       permalink: /data-and-backend/firebase
       children:
+        - title: Overview
+          permalink: /data-and-backend/firebase
         - title: Add Firebase to your Flutter app
           permalink: https://firebase.google.com/docs/flutter/setup?platform=ios
     - title: Google APIs
