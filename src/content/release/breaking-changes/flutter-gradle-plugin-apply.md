@@ -186,7 +186,7 @@ Finally, if your `dependencies` sections contains a dependency on `"org.jetbrain
 then remove that dependency.
 ```diff
 dependencies {
-    -implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 ```
 If it was the only dependency in the `dependencies` block, then 
