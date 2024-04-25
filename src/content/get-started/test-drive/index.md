@@ -54,7 +54,7 @@ These tasks depend on which integrated development environment (IDE) you use.
 
 ## Choose your IDE
 
-Select your preferred IDE for Flutter apps.
+Select your preferred IDE for Flutter apps. Note that for either one of these you may need to install the relevant Flutter and Dart extensions.
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">
