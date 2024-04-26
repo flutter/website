@@ -355,6 +355,11 @@ to verify that the values are correct.
 
 For more information, check out the module-level build
 section in the [Gradle build file][gradlebuild].
+
+:::note
+If you use a recent version of the Android SDK, you might get deprecation warnings about `compileSdkVersion`, `minSdkVersion` or `targetSdkVersion`.
+You can rename these properties to `compileSdk`, `minSdk` and `targetSdk` respectively.
+:::
   
 ## Build the app for release
 
