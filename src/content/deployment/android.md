@@ -323,11 +323,11 @@ to verify that the values are correct.
 `applicationId`
 : Specify the final, unique [application ID][].
   
-`minSdkVersion`
+`minSdk`
 : Specify the [minimum API level][] on which you designed the app to run.
   Defaults to `flutter.minSdkVersion`.
 
-`targetSdkVersion`
+`targetSdk`
 : Specify the target API level on which you designed the app to run.
   Defaults to `flutter.targetSdkVersion`.
   
@@ -349,12 +349,17 @@ to verify that the values are correct.
 
 #### Under the `android` block
   
-`compileSdkVersion`
+`compileSdk`
 : Specify the API level Gradle should use to compile your app.
   Defaults to `flutter.compileSdkVersion`.
 
 For more information, check out the module-level build
 section in the [Gradle build file][gradlebuild].
+
+:::note
+If you use a recent version of the Android SDK, you might get deprecation warnings about `compileSdkVersion`, `minSdkVersion` or `targetSdkVersion`.
+You can rename these properties to `compileSdk`, `minSdk` and `targetSdk` respectively.
+:::
   
 ## Build the app for release
 
