@@ -37,7 +37,6 @@ toc: false
 1. How to run the new Flutter app.
 1. How to use "hot reload" after you make changes to the app.
 
-## Guide depends on your IDE
 
 These tasks depend on which integrated development environment (IDE) you use.
 
