@@ -60,36 +60,60 @@
 
 - title: App solutions
   children:
+    - title: Firebase & Firestore
+      children:
+      - title: Overview
+        permalink: /data-and-backend/firebase
+      - title: Discover Firebase for Flutter
+        permalink: https://firebase.google.com/docs/flutter
+      - title: Get to know Firebase for Flutter
+        permalink: https://www.youtube.com/watch?v=wUSkeTaBonA
+      - title: Add a user authentication flow to a Flutter app using FirebaseUI
+        permalink: https://firebase.google.com/codelabs/firebase-auth-in-flutter-apps
+      - title: Get to know Firebase for web
+        permalink: https://firebase.google.com/codelabs/firebase-get-to-know-web
     - title: Games
       children:
         - title: Overview
           permalink: /resources/games-toolkit
         - title: Add achievements and leaderboards
           permalink: /cookbook/games/achievements-leaderboard
+        - title: Build leaderboards with Firestore
+          permalink: https://codelabs.developers.google.com/codelabs/admob-inline-ads-in-flutter
         - title: Add advertising
           permalink: /cookbook/plugins/google-mobile-ads
         - title: Add multiplayer support
           permalink: /cookbook/games/firestore-multiplayer
         - title: Add in-app purchases
-          permalink: https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases#0
+          permalink: https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases
         - title: Add user authentication
-          permalink: https://firebase.google.com/codelabs/firebase-auth-in-flutter-apps#0
+          permalink: https://firebase.google.com/codelabs/firebase-auth-in-flutter-apps
         - title: Debug using Crashlytics
           permalink: https://firebase.google.com/docs/crashlytics/get-started?platform=flutter
-    - title: News
-      children:
-        - title: Build a news app
-          permalink: /resources/news-toolkit
+        - title: Intro to Flame with Flutter
+          permalink: https://codelabs.developers.google.com/codelabs/flutter-flame-brick-breaker
     - title: Monetization
       children:
         - title: Overview
           permalink: https://flutter.dev/monetization
         - title: Add in-app purchases
-          permalink: https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases#0
+          permalink: https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases
+        - title: Add advertising
+          permalink: /cookbook/plugins/google-mobile-ads
+        - title: Add AdMob Ads to your Flutter app
+          permalink: https://codelabs.developers.google.com/codelabs/admob-ads-in-flutter
+        - title: Add an AdMob banner and native inline ads to a Flutter app
+          permalink: https://codelabs.developers.google.com/codelabs/admob-inline-ads-in-flutter
     - title: Maps
       children:
         - title: Add maps to your app
           permalink: https://developers.google.com/maps/flutter-package
+        - title: Add Google maps to a Flutter app
+          permalink: https://codelabs.developers.google.com/codelabs/google-maps-in-flutter
+    - title: News
+      children:
+        - title: Build a news app
+          permalink: /resources/news-toolkit
 
 - divider
 - header: User interface
@@ -351,6 +375,11 @@
           permalink: /cookbook/persistence/sqlite
     - title: Firebase
       permalink: /data-and-backend/firebase
+      children:
+        - title: Overview
+          permalink: /data-and-backend/firebase
+        - title: Add Firebase to your Flutter app
+          permalink: https://firebase.google.com/docs/flutter/setup?platform=ios
     - title: Google APIs
       permalink: /data-and-backend/google-apis
 
