@@ -12,12 +12,15 @@ The mouse and keyboard introduce input types beyond those
 found on a touch device, like scroll wheel, right-click,
 hover interactions, tab traversal, and keyboard shortcuts.
 
-Many features that encompass a well designed app,
+Some of these features work by default on Material
+widgets. But, if you've created a custom widget,
+you might need to implement them directly.
+
+Some features that encompass a well designed app,
 also help users who work with assistive technologies.
 For example, aside from being **good app design**,
-some of these features,
-like tab traversal and keyboard shortcuts, are _critical
-for users who work with assistive devices_.
+some features, like tab traversal and keyboard shortcuts,
+are _critical for users who work with assistive devices_.
 In addition to the standard advice for
 [creating accessible apps][], this page covers
 info for creating apps that are both
@@ -25,7 +28,7 @@ adaptive _and_ accessible.
 
 [creating accessible apps]: /ui/accessibility-and-internationalization/accessibility
 
-## Scroll wheel
+## Scroll wheel for custom widgets
 
 Scrolling widgets like `ScrollView` or `ListView`
 support the scroll wheel by default, and because
@@ -273,8 +276,8 @@ bool _handleKey(KeyEvent event) {
 
 One note of caution when using the static listener,
 is that you often need to disable it when the user
-is typing in a field or when the widget it's associated with
-is hidden from view.
+is typing in a field or when the widget it's
+associated with is hidden from view.
 Unlike with `Shortcuts` or `KeyboardListener`,
 this is your responsibility to manage. This can be especially
 important when you're binding a Delete/Backspace accelerator for
@@ -284,19 +287,11 @@ might be typing in.
 [`HardwareKeyboard`]: {{site.api}}/flutter/services/HardwareKeyboard-class.html
 [`KeyboardListener`]: {{site.api}}/flutter/widgets/KeyboardListener-class.html
 
------------
-  Implement a focus state for any custom
-  buttons or gesture detectors in your app. 
-  If you change the default Material button styles,
-  test for keyboard focus states and 
-  implement your own, if needed.<br><br>
------------
-
 ## Mouse enter, exit, and hover for custom widgets
 
 On desktop, it's common to change the mouse cursor
 to indicate the functionality about the content the
-mouse is hovering over. For example, you usually see
+mouse is hovering over. For example, you typically see
 a hand cursor when you hover over a button,
 or an `I` cursor when you hover over text.
 
@@ -306,6 +301,12 @@ for standard button and text cursors.
 of the Material buttons to set the `overlayColor` to transparent.)
 
 <b>PENDING: should we really include this "notable exception" here?</b>
+
+Implement a focus state for any custom buttons or
+gesture detectors in your app. 
+If you change the default Material button styles,
+test for keyboard focus states and 
+implement your own, if needed.
 
 To change the cursor from within your custom widgets,
 use [`MouseRegion`][]:

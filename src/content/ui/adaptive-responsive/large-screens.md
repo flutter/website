@@ -40,7 +40,9 @@ For example, it:
 [large screens]: {{site.android-dev}}/guide/topics/large-screens/get-started-with-large-screens
 [Play Store updates]: {{site.android-dev}}/2022/03/helping-users-discover-quality-apps-on.html
 
-For example, consider the following screenshots of an app.
+## Layout with GridView
+
+Consider the following screenshots of an app.
 The app displays its UI in a `ListView`.
 The image on the left shows the app running
 on a mobile device. The image on the right shows the
@@ -52,6 +54,7 @@ _before the advice on this page was applied_.
 This is not optimal.
 
 The [Android Large Screen App Quality Guidelines][guidelines]
+and the "iOS equivalent"
 say that neither text nor boxes should take up the
 full screen width. How to solve this in an adaptive way?
 
@@ -60,7 +63,7 @@ full screen width. How to solve this in an adaptive way?
 The answer is to either use `GridView` or the
 `maxWidth` property of `BoxConstraints`.
 
-## GridView
+### GridView
 
 You can use the `GridView` widget to transform
 your existing `ListView` into more reasonably-sized items.
@@ -79,11 +82,11 @@ To learn more, visit the [`GridView`][] API page.
 [`GridView`]: {{site.api}}/flutter/widgets/GridView-class.html
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
 
-For example, if your original app is used a `ListView.builder`,
+For example, if your original app used a `ListView.builder`,
 swap that out for a `GridView.builder`.
 If your app has a large number of items,
-it’s recommended to use this `.builder` constructor to only build
-the item widgets that are actually visible.
+it’s recommended to use this builder constructor to only
+build the item widgets that are actually visible.
 
 Most of the parameters in the constructor are the same between
 the two widgets, so it's a straightforward swap.
@@ -222,10 +225,10 @@ then your app already has built-in support for
 various additional input states.
 
 But what if you have a custom widget?
-The following example shows how to add
-interactivity for hover and D-pad selection.
-
-<b>PENDING: Another case where an example is best...</b>
+Check out the [User input][] page for
+guidance on adding
+[input support for widgets][].
 
 [includes support for mouse and stylus input[]: {{site.android-dev}}/developer.android.com/docs/quality-guidelines/large-screen-app-quality
+[input support for widgets]: /ui/adaptive-responsive/input
 

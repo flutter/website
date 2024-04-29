@@ -101,7 +101,8 @@ A side note is that this is what the `AppBar` widget
 does by default, which is how it goes underneath the
 system status bar. This is also why wrapping the body
 of a `Scaffold` in a `SafeArea` is recommended,
-instead of wrapping the whole `Scaffold` itself.                                                                                                                  
+instead of wrapping the whole `Scaffold` itself.
+
 `SafeArea` ensures that your app content won't be
 cut off in a generic way and sets your app up
 for success even as new devices with different
