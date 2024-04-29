@@ -5,25 +5,25 @@ description: How to use the focus system in your Flutter app.
 
 This article explains how to direct keyboard input.
 If your app uses a physical keyboard, like desktop and web apps,
-keep reading. If your app won't need with a physical keyboard,
+keep reading. If your app won't use a physical keyboard,
 you can skip this guide.
 
 ## Overview
 
-Flutter includes a focus system.
-This system directs keyboard input to a particular part of an app.
+Flutter includes a focus system that
+directs keyboard input to a particular part of an app.
 To "focus" the input to part of an app,
 users tap or click on the desired UI element.
 Once in focus, text entered with the keyboard appears in that element.
 This continues until the focus moves to another element in the app.
-App users also can press a particular keyboard shortcut to move focus
-like <kbd>Tab</kbd>.
+App users also can press a particular keyboard shortcut to move focus,
+typically <kbd>Tab</kbd>, which is called _tab traversal_.
 
 :::secondary What you'll learn
 
 * How the focus system works
 * When to use the focus system
-* How to give and remove focus from a control
+* How to give focus to, and remove focus from, a control
 * How to find which widget has focus
 * How to set focus scope
 * How to set focus order
@@ -37,11 +37,12 @@ If that describes your experience, skip to
 ## Glossary
 
 The following terms describe elements of the Flutter focus system.
-The various classes that implement some of these concepts after this section.
+The various classes that implement some of these concepts
+are listed after this section.
 
 **Focus tree**
   : A sparse mirror of the widget tree that represents all the widgets
-    that can receive focus. These are called _focus nodes_.
+    that can receive focus. The nodes in this tree are called _focus nodes_.
 
 **Focus node**
   : A single node in a focus tree.
