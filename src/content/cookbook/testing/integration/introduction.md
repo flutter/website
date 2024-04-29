@@ -211,7 +211,7 @@ counter_app/
     import 'package:flutter/material.dart';
     import 'package:flutter_test/flutter_test.dart';
     import 'package:integration_test/integration_test.dart';
-    import 'package:[!introduction!]/main.dart';
+    import 'package:counter_app/main.dart';
 
     void main() {
       IntegrationTestWidgetsFlutterBinding.ensureInitialized();
@@ -339,7 +339,7 @@ To test in a web browser, perform the following steps.
    <?code-excerpt "test_driver/integration_test.dart"?>
    ```dart title="test_driver/integration_test.dart"
    import 'package:integration_test/integration_test_driver.dart';
-   
+
    Future<void> main() => integrationDriver();
    ```
 
