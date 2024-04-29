@@ -1,132 +1,49 @@
 ---
-title: Best practices for app design
+title: Best practices for adaptive design
 description: >
-  Learn the best practices for creating
-  a responsive and an adaptive app.
-short-title: Best practices
+  Summarize some of the best practices for adaptive design.
+short-title: Best practice
 ---
 
-The best practices on this page cover
-considerations for making your app work
-on a variety of screen sizes, including
-large screens.
-Flutter defines [large screens][] as tablets,
-foldables, and ChromeOS devices running Android.
+Recommended best practices for adaptive design include:
 
-:::secondary Why do large screens matter, in particular?
-Demand for large screens continues to increase.
-As of January 2024,
-more than [270 million active large screen][large screens]
-and foldable devices run on Android.
-When your app supports large screens,
-it also receives other benefits.
-Optimizing your app to fill the screen:
+## Don't lock the orientation of your app.
 
-* Improves your app's user engagement metrics.
-* Increases your app's visibility in the Play Store.
-  Recent [Play Store updates][] show ratings by
-  device type and indicates when an app lacks
-  large screen support. 
-:::
+An adaptive app should look good on windows of
+different sizes and shapes. While locking an app
+to portrait mode on phones can help narrow the scope
+of a minimum viable product, it can increase the
+effort required to make the app adaptive in the future.
 
-[large screens]: {{site.android-dev}}/guide/topics/large-screens/get-started-with-large-screens
-[Play Store updates]: {{site.android-dev}}/2022/03/helping-users-discover-quality-apps-on.html
+For example, the assumption that phones will only
+render your app in a full screen portrait mode is
+not a guarantee. Multi window app support is becoming common,
+and foldables have many use cases that work best with
+multiple apps running side by side.
 
-## SafeArea
+If you absolutely need to lock your app to portrait mode,
+remember to use the `Display` API instead of something
+like `MediaQuery`, which has been previously recommended.
 
-When running your app on the latest devices,
-you might encounter bits of the UI being blocked
-by cutouts on the device's screen.
-You can fix this with the [`SafeArea`][] widget,
-which insets its child widget to avoid intrusions
-(like notches and camera cutouts),
-as well as operating system UI
-(such as the status bar on Android),
-or by rounded corners of the physical display.
+To summarize:
 
-If you don't want this behavior,
-the `SafeArea` widget allows you to
-disable padding on any of its four sides.
-(By default, all four sides are enabled.)
+  * Locked screens can be [an accessibility issue][] for some users
+  * Android large format tiers require portrait and landscape
+    support at the [lowest level][].
+  * Android devices can [override a locked screen][]
+  * Apple guidelines say [aim to support both orientations][] 
 
-It’s generally recommended to wrap the body of a
-`Scaffold` widget in `SafeArea` as a good place to start,
-but you don’t always need to put it this high in the
-`Widget` tree.
+[accessibility issue]: https://www.w3.org/WAI/WCAG21/Understanding/orientation.html
+[aim to support both orientations]: https://www.w3.org/WAI/WCAG21/Understanding/orientation.html
+[lowest level]:  {{site.android-dev}}/docs/quality-guidelines/large-screen-app-quality#T3-8
+[override a locked screen]: {{site.android-dev}}/guide/topics/large-screens/large-screen-compatibility-mode#per-app_overrides
 
-For example, if you purposefully want your app to stretch
-under the cutouts, you can move the `SafeArea` to wrap
-whatever content makes sense,
-and let the rest of the app take up the full screen.
+<b>PENDING: Link to blog post</b>
 
-Using `SafeArea` ensures that your app content won’t be
-cut off by physical display features or operating system UI,
-and sets your app up for success even as new devices with
-different shapes and styles of cutouts enter the market.
+## Don't gobble up all of the horizontal space
 
-[`SafeArea`]: {{site.api}}/flutter/widgets/SafeArea-class.html
-
-If you would like to learn more about how
-`SafeArea` works under the covers, watch
-the <b>PENDiNG</b> Google I/O video.
-(But the short answer is that it relies
-heavily on `MediaQuery`.)
-
-----------
-
-## Don't gobble up all horizontal space
-
-If viewing your mobile app on a large screen device,
-you might notice that either a box or some text might
-take up all the horizontal space.
-
-This is _not_ recommended by the Android Large Screen App
-Quality Guidelines.
-There are a couple ways you can solve this.
-
-You can use the `GridView` widget to transform your
-existing `ListView` into more reasonably sized items,
-or you can use the `maxWidth` property of `BoxConstraints`
-to not have the list go edge-to-edge.
-
-### GridView
-
-The `GridView` widget is very similar to the `ListView` widget,
-but instead of only handling a list of widgets arranged linearly,
-`GridView` can arrange widgets in a two-dimensional array.
-
-`GridView` also has constructors that are similar to `ListView`'s,
-with `ListView`'s default constructor mapping to `GridView.count`,
-and `ListView.builder` being similar to `GridView.builder`.
-`GridView` also has additional constructors for more custom layouts,
-if you’re interested in finding out more,
-check out the [`GridView`][] API page.
-
-[`GridView`]: {{site.api}}/flutter/widgets/GridView-class.html
-
-<p>TODO(sfshaza): PENDING: Not finished yet.</b>
-
-## Save app state
-
-Apps should retain or restore [app state][]
-as the device rotates, changes window size,
-or folds and unfolds. 
-By default, Flutter should maintain state.
-
-<b>TODO(sfshaza): PENDING: How SHOULD they save app state? Does [this page](/platform-integration/android/restore-state-android) apply to this situation?</b>
-
-If your app loses state during device configuration,
-verify that the plugins and native extensions
-that your app uses support the
-device type, such as a large screen.
-Some native extensions might lose state when the
-device changes position.
-
-<b>TODO(sfshaza): PENDING: What can you do when this happens? Do you need a federated plugin?</b>
-
-[app state]: {{site.android-dev}}/jetpack/compose/state#store-state
-
-## Restore List state
+Use the `MediaQuery.sizeOf` and `LayoutBuilder` classes
+that reflect the app area and available widget area, respectively
 
 To maintain the scroll position in a list
 that doesn't change its layout when the
@@ -135,6 +52,7 @@ use the [`PageStorageKey`][] class.
 [`PageStorageKey`][] persists the
 widget state in storage after the widget is
 destroyed and restores state when recreated.
+
 You can see an example of this
 in the [app code for the Wonderous app][],
 where it stores the list's state in the
@@ -149,43 +67,88 @@ to change the scroll position on screen rotation.
 [example]: {{site.github}}/gskinnerTeam/flutter-wonderous-app/blob/34e49a08084fbbe69ed67be948ab00ef23819313/lib/ui/screens/collection/widgets/_collection_list.dart#L39
 [`PageStorageKey`]: {{site.api}}/flutter/widgets/PageStorageKey-class.html
 
-## Support multi-window mode
+## Break down your `Widget`s
 
+While building your app, try to break down large,
+complex widgets into smaller, simpler ones.
+
+Refactoring widgets can reduce the complexity of
+adopting an adaptive UI by sharing core pieces of code.
+There are other benefits as well:
+
+* On the performance side, having lots of small `const`
+  widgets improves rebuild times over having large,
+  complex widgets.
+* Flutter can reuse `const` widget instances,
+  while a larger complex widget has to be set up
+  every time there is a rebuild.
+* From a code health perspective, organizing your UI
+  into smaller bite sized pieces helps keep the complexity
+  of each `Widget` down. A less-complex `Widget` is more readable,
+  easier to refactor, and less likely to have surprising behavior.
+
+## Avoid checking for hardware types
+
+Avoid writing code that checks whether the device you're
+running on is a "phone" or a "tablet", or any other type
+of device when making layout decisions.
+
+What space your app is actually given to render in
+isn’t always tied to the full screen size of the device.
+Flutter can run on many different platforms,
+and your app might be running in a resizeable window on ChromeOS,
+side by side with another app on tablets in a multi-window mode,
+or even in a picture-in-picture on phones.
+Therefore, device type and app window size aren’t
+really strongly connected.
+
+Instead, use `MediaQuery` to get the size of the window
+your app is currently running in.
+
+This isn’t just helpful for UI code.
+Check out last year’s talk
+[Flutter lessons for federated plugin development][]
+to learn how abstracting out device capabilities
+can help your business logic code as well.
+ 
+[Flutter lessons for federated plugin development]: https://www.youtube.com/watch?v=GAnSNplNpCA
+
+## Avoid orientation-based layouts
+
+Avoid using `MediaQuery`'s orientation field
+or `OrientationBuilder` to switch between
+different app layouts. This is similar to the
+guidance of not checking device types to determine
+screen size. The device’s orientation also doesn’t
+necessarily inform you of how much space your app window has.
+
+Instead, use `MediaQuery`'s `sizeOf` or `LayoutBuilder`,
+and use adaptive breakpoints like the ones that the
+Material website recommends.
+
+# Support multi-window mode
 Use the [`Display`][] class, which
 supports Android's [window size classes][],
-to determine a device's full screen size,
+to determine the full screen size an app can use,
 and to distinguish a small device from
-a large, multi-screen device.
-
+a large, multi-screen device.<br><br>
 The `Display` class allows you to retrieve
 various properties of a display,
 such as physical size, pixel ratio,
 and refresh rate.
 The [`FlutterView.display`][] getter returns
-a `Display` object. 
+a `Display` object.<br><br>
+
+:::secondary Warning
+This class should only be used
+when you need to know the physical display
+capabilities. For most use cases, use `MediaQuery`.
+:::
 
 For an example that uses this method,
 check out the [`setPreferredOrientations`][] API.
 
-:::note A note about `MediaQuery`
-Using the [`MediaQuery`][] class to determine
-the size of the device while also disabling 
-landscape mode (called _portrait locking_),
-causes the app's window to lock to the center of
-the screen while surrounding the window with black.
-
-This scenario, called [_letterboxing_][],
-can happen in other situations as well and
-is undesirable, particularly on larger screens.
-The [`MediaQuery`][] class doesn't return the
-proper screen size in split screen mode, and
-can mistake a large screen for a small screen.
-Use the `Display` class, instead.
-:::
-
-[`Display`]: {{site.api}}/flutter/dart-ui/Display-class.html
 [`FlutterView.display`]: {{site.api}}/flutter/dart-ui/FlutterView/display.html
-[_letterboxing_]: {{site.android-dev}}/guide/topics/large-screens/large-screen-compatibility-mode#letterboxing
 [`MediaQuery`]: {{site.api}}/flutter/widgets/MediaQuery-class.html
 [`setPreferredOrientations`]: {{site.api}}/flutter/services/SystemChrome/setPreferredOrientations.html
 [window size classes]: {{site.android-dev}}/guide/topics/large-screens/support-different-screen-sizes#window_size_classes
@@ -199,25 +162,24 @@ to ensure accessibility. In particular,
 your app must provide accessible best practices
 for keyboards on large devices.
 
-## Implement focus state for custom widgets
+The Material library provides widgets with
+excellent default behavior for touch, mouse,
+and keyboard interaction.
 
-Flutter’s Material buttons handle basic
-focus states, unless you change the
-default styling of the Material buttons
-to set the `overlayColor` to transparent. 
+# Save app state
 
-Implement a focus state for any custom
-buttons or gesture detectors in your app. 
-If you change the default Material button styles,
-test for keyboard focus states and 
-implement your own, if needed.
+Apps should retain or restore [app state][]
+as the device rotates, changes window size,
+or folds and unfolds. 
+By default, Flutter should maintain state.
 
-For an example that changes the button style
-to outline the button when the it has focus,
-check out the [button code for the Wonderous app][].
-In this example, the [`FocusNode.hasFocus`][]
-property is modified to check whether
-the button has focus and, if so, adds an outline.
+If your app loses state during device configuration,
+verify that the plugins and native extensions
+that your app uses support the
+device type, such as a large screen.
+Some native extensions might lose state when the
+device changes position.
 
-[button code for the Wonderous app]: {{site.github}}/gskinnerTeam/flutter-wonderous-app/blob/8a29d6709668980340b1b59c3d3588f123edd4d8/lib/ui/common/controls/buttons.dart#L143
-[`FocusNode.hasFocus`]: {{site.api}}/flutter/widgets/FocusNode/hasFocus.html
+<b>TODO(sfshaza): PENDING: What can you do when this happens?</b>
+
+[app state]: {{site.android-dev}}/jetpack/compose/state#store-state

@@ -37,8 +37,7 @@ So, a responsive app adjusts the placement of design
 elements to _fit_ the available space. And an
 adaptive app selects the appropriate layout and
 input devices to be usable _in_ the available space.
-For example, on the current device,
-should the UI use bottom navigation or
+For example, should a tablet UI use bottom navigation or
 side-panel navigation?
 
 :::note
@@ -52,76 +51,16 @@ This section covers various aspects of adaptive and
 responsive design:
 
 * [General approach][]
-* [Best practices][]
-* TBD
+* [SafeArea & MediaQuery][]
+* [Large screens & foldables][]
+* [User input & accessibility][]
+* [Best practices for adaptive apps][]
+* [Additional resources][]
 
+[Additional resources]: /ui/adaptive-responsive/more-info
+[Best practices for adaptive apps]: /ui/adaptive-responsive/best-practices
 [General approach]: /ui/adaptive-responsive/general
-[Best practices]:   /ui/adaptive-responsive/best-practices
+[Large screens & foldables]: /ui/adaptive-responsive/large-screens
+[SafeArea & MediaQuery]:   /ui/adaptive-responsive/safearea-mediaquery
+[User input & accessibility]: /ui/adaptive-responsive/input
 
-{% comment %}
----------------- CUT THIS OUT
-
-* Create a responsive [Layout][]
-* Handle [Input][] for adaptive apps
-* Consider [Accessibility][] for responsive apps
-* Respond to [Large screen][] devices
-* Consider [Platform idioms][] for adaptive apps
-  to make your app feel more native on a particular device
-* Use [Best practices][] for responsive and adaptive apps,
-  including **recommendations for large screens**
-
-[Accessibility]: /ui/adaptive-responsive/accessibility
-[Best practices]: /ui/adaptive-responsive/best-practices
-[Input]: /ui/adaptive-responsive/input
-[Large screen]: /ui/adaptive-responsive/large-screens
-[Layout]: /ui/adaptive-responsive/layout
-[Platform idioms]: /ui/adaptive-responsive/idioms
-
------------------- TO HERE, replace with new toc
-{% endcomment %}
-
-## Examples
-
-If you'd like to see how these concepts come together,
-check out the the source code for the following
-apps/demos:
-
-* [Wonderous][]
-* [Flutter adaptive demo][]
-
-[Flutter adaptive demo]: {{site.github}}/gskinnerTeam/flutter-adaptive-demo
-[Wonderous]: {{site.github}}/gskinnerTeam/flutter-wonderous-app
-
-## Learn more about basic usability principles
-
-Of course, these pages don't constitute an
-exhaustive list of the things you might consider.
-The more operating systems, form factors,
-and input devices you support, the more difficult
-it becomes to spec out every permutation in design.
-
-Taking time to learn basic usability principles as a
-developer empowers you to make better decisions,
-reduces back-and-forth iterations with
-design during production, and results in
-improved productivity with better outcomes.
-
-Here are some resources to get you started:
-
-* [Material guidelines on applying layout][]
-* [Material design for large screens][]
-* [Material guidelines on canonical layouts][]
-* [Build high quality apps (Android)][]
-* [UI design do's and don'ts (Apple)][]
-* [Human interface guidelines (Apple)][]
-* [Responsive design techniques (Microsoft)][]
-* [Machine sizes and breakpoints (Microsoft)][]
-
-[Build high quality apps (Android)]: {{site.android-dev}}/quality
-[Material guidelines on applying layout]: {{site.material}}/foundations/layout/applying-layout/window-size-classes
-[Material guidelines on canonical layouts]: {{site.material}}/foundations/layout/canonical-layouts/overview
-[Human interface guidelines (Apple)]: {{site.apple-dev}}/design/human-interface-guidelines/
-[Material design for large screens]: {{site.material2}}/blog/material-design-for-large-screens
-[Machine sizes and breakpoints (Microsoft)]: https://docs.microsoft.com/en-us/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-desig
-[Responsive design techniques (Microsoft)]: https://docs.microsoft.com/en-us/windows/uwp/design/layout/responsive-design
-[UI design do's and don'ts (Apple)]: {{site.apple-dev}}/design/tips/

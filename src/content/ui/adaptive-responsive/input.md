@@ -1,20 +1,31 @@
 ---
-title: Input for adaptive apps
+title: User input & accessibility
 description: >
   xxx
 ---
 
 <?code-excerpt path-base="ui/adaptive_app_demos"?>
 
-## Handling input
-
 It isn't enough to just adapt how your app looks,
-you also have to support varying user inputs.
+you also have to support a variety of user inputs.
 The mouse and keyboard introduce input types beyond those
-found on a touch device—like scroll wheel, right-click,
+found on a touch device, like scroll wheel, right-click,
 hover interactions, tab traversal, and keyboard shortcuts.
 
-### Scroll wheel
+Many features that encompass a well designed app,
+also help users who work with assistive technologies.
+For example, aside from being **good app design**,
+some of these features,
+like tab traversal and keyboard shortcuts, are _critical
+for users who work with assistive devices_.
+In addition to the standard advice for
+[creating accessible apps][], this page covers
+info for creating apps that are both
+adaptive _and_ accessible.
+
+[creating accessible apps]: /ui/accessibility-and-internationalization/accessibility
+
+## Scroll wheel
 
 Scrolling widgets like `ScrollView` or `ListView`
 support the scroll wheel by default, and because
@@ -37,10 +48,10 @@ return Listener(
 
 [`Listener`]: {{site.api}}/flutter/widgets/Listener-class.html
 
-### Tab traversal and focus interactions
+## Tab traversal and focus interactions
 
 Users with physical keyboards expect that they can use
-the tab key to quickly navigate your application,
+the tab key to quickly navigate an application,
 and users with motor or vision differences often rely
 completely on keyboard navigation.
 
@@ -52,11 +63,11 @@ Most built-in components, like buttons and text fields,
 support traversal and highlights by default.
 If you have your own widget that you want included in
 traversal, you can use the [`FocusableActionDetector`][] widget
-to create your own controls. It combines the functionality
-of [`Actions`][], [`Shortcuts`][], [`MouseRegion`][], and
-[`Focus`][] widgets to create a detector that defines actions
-and key bindings, and provides callbacks for handling focus
-and hover highlights.
+to create your own controls. The [`FocusableActionDetector`][]
+widget is helpful for combining focus, mouse input,
+and shortcuts together in one widget. You can create
+a detector that defines actions and key bindings,
+and provides callbacks for handling focus and hover highlights.
 
 <?code-excerpt "lib/pages/focus_examples_page.dart (_BasicActionDetectorState)"?>
 ```dart
@@ -98,10 +109,10 @@ class _BasicActionDetectorState extends State<BasicActionDetector> {
 [`MouseRegion`]: {{site.api}}/flutter/widgets/MouseRegion-class.html
 [`Shortcuts`]: {{site.api}}/flutter/widgets/Shortcuts-class.html
 
-#### Controlling traversal order
+### Controlling traversal order
 
 To get more control over the order that
-widgets are focused on when the user presses tab,
+widgets are focused on when the user tabs through,
 you can use [`FocusTraversalGroup`][] to define sections
 of the tree that should be treated as a group when tabbing.
 
@@ -126,7 +137,7 @@ a custom policy.
 
 [`FocusTraversalGroup`]: {{site.api}}/flutter/widgets/FocusTraversalGroup-class.html
 
-### Keyboard accelerators
+## Keyboard accelerators
 
 In addition to tab traversal, desktop and web users are accustomed
 to having various keyboard shortcuts bound to specific actions.
@@ -136,7 +147,7 @@ accelerators your users expect. The keyboard is a powerful
 input tool, so try to squeeze as much efficiency from it as you can.
 Your users will appreciate it!
 
-Keyboard accelerators can be accomplished in a few ways in Flutter
+Keyboard accelerators can be accomplished in a few ways in Flutter,
 depending on your goals.
 
 If you have a single widget like a `TextField` or a `Button` that
@@ -167,8 +178,8 @@ or a [`Focus`][] widget and listen for keyboard events:
 }
 ```
 
-If you'd like to apply a set of keyboard shortcuts to a
-large section of the tree, you can use the [`Shortcuts`][] widget:
+To apply a set of keyboard shortcuts to a large section
+of the tree, use the [`Shortcuts`][] widget:
 
 <?code-excerpt "lib/widgets/extra_widget_excerpts.dart (Shortcuts)"?>
 ```dart
@@ -273,7 +284,15 @@ might be typing in.
 [`HardwareKeyboard`]: {{site.api}}/flutter/services/HardwareKeyboard-class.html
 [`KeyboardListener`]: {{site.api}}/flutter/widgets/KeyboardListener-class.html
 
-### Mouse enter, exit, and hover
+-----------
+  Implement a focus state for any custom
+  buttons or gesture detectors in your app. 
+  If you change the default Material button styles,
+  test for keyboard focus states and 
+  implement your own, if needed.<br><br>
+-----------
+
+## Mouse enter, exit, and hover for custom widgets
 
 On desktop, it's common to change the mouse cursor
 to indicate the functionality about the content the
@@ -281,9 +300,14 @@ mouse is hovering over. For example, you usually see
 a hand cursor when you hover over a button,
 or an `I` cursor when you hover over text.
 
-The Material Component set has built-in support
-for your standard button and text cursors.
-To change the cursor from within your own widgets,
+Flutter’s Material buttons handle basic focus states
+for standard button and text cursors.
+(A notable exception is if you change the default styling
+of the Material buttons to set the `overlayColor` to transparent.)
+
+<b>PENDING: should we really include this "notable exception" here?</b>
+
+To change the cursor from within your custom widgets,
 use [`MouseRegion`][]:
 
 <?code-excerpt "lib/pages/focus_examples_page.dart (MouseRegion)"?>
@@ -317,3 +341,83 @@ return MouseRegion(
   ),
 );
 ```
+
+For an example that changes the button style
+to outline the button when it has focus,
+check out the [button code for the Wonderous app][].
+The app modifies the [`FocusNode.hasFocus`][]
+property to check whether the button has focus
+and, if so, adds an outline.
+
+[button code for the Wonderous app]: {{site.github}}/gskinnerTeam/flutter-wonderous-app/blob/8a29d6709668980340b1b59c3d3588f123edd4d8/lib/ui/common/controls/buttons.dart#L143
+[`FocusNode.hasFocus`]: {{site.api}}/flutter/widgets/FocusNode/hasFocus.html
+
+## Visual density
+
+You might consider enlarging the "hit area"
+of a widget to accommodate a touch screen, for example.
+
+Different input devices offer various levels of precision,
+which necessitate differently-sized hit areas.
+Flutter's `VisualDensity` class makes it easy to adjust the
+density of your views across the entire application,
+for example, by making a button larger
+(and therefore easier to tap) on a touch device.
+
+When you change the `VisualDensity` for
+your `MaterialApp`, `MaterialComponents`
+that support it animate their densities to match.
+By default, both horizontal and vertical densities
+are set to 0.0, but you can set the densities to any
+negative or positive value that you want.
+By switching between different
+densities, you can easily adjust your UI.
+
+![Adaptive scaffold](/assets/images/docs/ui/adaptive-responsive/adaptive_scaffold.gif){:width="100%"}
+
+To set a custom visual density,
+inject the density into your `MaterialApp` theme:
+
+<?code-excerpt "lib/main.dart (VisualDensity)"?>
+```dart
+double densityAmount = touchMode ? 0.0 : -1.0;
+VisualDensity density =
+    VisualDensity(horizontal: densityAmount, vertical: densityAmount);
+return MaterialApp(
+  theme: ThemeData(visualDensity: density),
+  home: MainAppScaffold(),
+  debugShowCheckedModeBanner: false,
+);
+```
+
+To use `VisualDensity` inside your own views,
+you can look it up:
+
+<?code-excerpt "lib/pages/adaptive_reflow_page.dart (VisualDensityOwnView)"?>
+```dart
+VisualDensity density = Theme.of(context).visualDensity;
+```
+
+Not only does the container react automatically to changes
+in density, it also animates when it changes.
+This ties together your custom components,
+along with the built-in components,
+for a smooth transition effect across the app.
+
+As shown, `VisualDensity` is unit-less,
+so it can mean different things to different views.
+In the following example, 1 density unit equals 6 pixels,
+but this is totally up to you to decide.
+The fact that it is unit-less makes it quite versatile,
+and it should work in most contexts.
+
+It's worth noting that the Material generally
+use a value of around 4 logical pixels for each
+visual density unit. For more information about the
+supported components, see the [`VisualDensity`][] API.
+For more information about density principles in general,
+see the [Material Design guide][].
+
+[Material Design guide]: {{site.material2}}/design/layout/applying-density.html#usage
+[`VisualDensity`]: {{site.api}}/flutter/material/VisualDensity-class.html
+

@@ -1,7 +1,7 @@
 ---
 title: General approach to adaptive apps
 description: >
-  xxx
+  General advice on how to approach making your Flutter app adaptive.
 short-title: General approach
 ---
 
@@ -79,11 +79,9 @@ then at least define the portrait mode to work
 in top-down mode as well as bottom up.
 :::
 
-So, keep in mind that `MediaQuery.sizeOf` returns the
+Keep in mind that `MediaQuery.sizeOf` returns the
 current size of the app's entire screen and
 not just a single widget.
-
-<b>PENDING: Previously, we recommended `MediaQuery.of()`. Why do we now recommend `.sizeOf()`?</b>
 
 You have two ways to measure your screen space.
 You can use either `MediaQuery.sizeOf` or `LayoutBuilder`,
@@ -98,7 +96,31 @@ In the previous section, you want to base the
 sizing behavior on the entire app's window,
 so you would use `MediaQuery.sizeOf`.
 
+:::secondary Why use `MediaQuery.sizeOf` instead of `MediaQuery.of`?
+Previous advice did recommend that you use the `of` method of
+`MediaQuery` to obtain the app window's dimensions.
+The short answer is **for performance reasons.** 
+
+`MediaQuery` contains a lot of data, but if you're
+only interested in the size property, it's more
+efficient to use the `sizeOf` method. Both methods
+return the size of the app window in logical pixels
+(also known as _density independent pixels_).
+The logical pixel dimensions generally works best as its
+roughly the same visual size across all devices.
+The `MediaQuery` class has other specialized functions
+for each of its individual properties for the same reason.
+:::
+
+Requesting the size of the app window from inside
+the `build` method, as in `MediaQuery.sizeOf(context)`,
+causes the givien `BuildContext` to rebuild any time
+the size property changes.
+
 #### LayoutBuilder
+
+`LayoutBuilder` accomplishes a similar goal as
+`MediaQuery.sizeOf`, with some distinctions.
 
 Rather than providing the size of the app’s window,
 `LayoutBuilder` provides the layout constraints from
@@ -123,13 +145,13 @@ In this scenario, use `LayoutBuilder`.
 
 At this point, you must decide what sizing breakpoints to use
 when choosing what version of the UI to display.
-For example, the material guidelines suggest using
+For example, the [Material layout][] guidelines suggest using
 a bottom nav bar for windows less than 600 logical pixels wide,
 and a nav rail for those that are 600 pixels wide or greater.
 Again, your choice shouldn't depend on the _type_ of device,
 but on the device's available window size.
 
-<b>PENDING: Do we have a single link into material.io that sums up the num-of-pixels info? I searched but couldn't find it.</b>
+[Material layout]: https://m3.material.io/foundations/layout/applying-layout/window-size-classes
 
 To work through an example that switches between a
 `NavigationRail` and a `NavigationBar`, check out
@@ -137,40 +159,18 @@ the [Building an animated responsive app layout with Material 3][codelab].
 
 [codelab]: {{site.codelabs}}/codelabs/flutter-animated-responsive-layout
 
-The next page discusses some best practices for
-making your app adaptive to a variety of screen sizes.
+The next page discusses how to ensure that your
+app looks best on large screens and foldables.
 
 
 {% comment %}
 -----------
-
-## General advice
 
 When creating a layout that automatically adapts
 to the size and shape of the user's device,
 there are several things you might keep in mind.
 This page covers how to take an app built for a
 phone and make it beautiful on a wide range of devices.
-
-## Two approaches
-
-There are at least two ways you can create a
-UI that responds to a change in screen size.
-Each approach has its pros and cons.
-
-* `MediaQuery.of`
-  * Returns screen size used by entire app.
-  * Updates layout when user completes a size
-    or orientation change.
-* `LayoutBuilder` 
-  * Returns screen size used by a particular widget.
-  * Updates layout in real time as the user
-    changes size or orientation.
-
-For either approach, you need to determine
-the sizes (called _breakpoints_) where you
-want your UI to change its layout,
-as described in the next section.
 
 ### Screen-based breakpoints
 
@@ -188,39 +188,6 @@ class FormFactor {
 }
 ```
 
-Using breakpoints, you can set up a simple system
-to determine the device type:
-
-<b>TODO(sfshaza): PENDING: Should the following example be updated to use Display instead of MediaQuery?</b>
-
-<?code-excerpt "lib/global/device_size.dart (getFormFactor)"?>
-```dart
-ScreenType getFormFactor(BuildContext context) {
-  // Use .shortestSide to detect device type regardless of orientation
-  double deviceWidth = MediaQuery.of(context).size.shortestSide;
-  if (deviceWidth > FormFactor.desktop) return ScreenType.desktop;
-  if (deviceWidth > FormFactor.tablet) return ScreenType.tablet;
-  if (deviceWidth > FormFactor.handset) return ScreenType.handset;
-  return ScreenType.watch;
-}
-```
-
-As an alternative, you could abstract it more
-and define it in terms of small to large:
-
-<?code-excerpt "lib/global/device_size.dart (ScreenSize)"?>
-```dart
-enum ScreenSize { small, normal, large, extraLarge }
-
-ScreenSize getSize(BuildContext context) {
-  double deviceWidth = MediaQuery.of(context).size.shortestSide;
-  if (deviceWidth > 900) return ScreenSize.extraLarge;
-  if (deviceWidth > 600) return ScreenSize.large;
-  if (deviceWidth > 300) return ScreenSize.normal;
-  return ScreenSize.small;
-}
-```
-
 Screen-based breakpoints are best used for making
 top-level decisions in your app. Changing things like
 visual density, paddings, or font-sizes are best when
@@ -231,112 +198,9 @@ top-level widget trees. For example, you could switch
 from a vertical to a horizontal layout when
 the user isn't on a handset (mobile device):
 
-<b>TODO(sfshaza): PENDING: Should the following example be updated to use Display instead of MediaQuery?</b>
-
-<?code-excerpt "lib/global/device_size.dart (MediaQuery)"?>
-```dart
-bool isHandset = MediaQuery.of(context).size.width < 600;
-return Flex(
-  direction: isHandset ? Axis.vertical : Axis.horizontal,
-  children: const [Text('Foo'), Text('Bar'), Text('Baz')],
-);
-```
-
-In another widget,
-you might swap some of the children completely:
-
-<?code-excerpt "lib/global/device_size.dart (WidgetSwap)"?>
-```dart
-Widget foo = Row(
-  children: [
-    ...isHandset ? _getHandsetChildren() : _getNormalChildren(),
-  ],
-);
-```
-The calling function decides how to handle the UI.
-You can also adjust your display based on the
-device's height, the aspect ratio, or some other property.
-
-### MediaQuery
-
-You can determine the current screen size by using the
-[`MediaQuery.of()`][] method in your widget's build function.
-Keep in mind that this approach returns the current size
-and orientation of the app's entire screen and
-not just a single widget.
-
-<b>TODO(sfshaza): PENDING: Do we need an example here?</b>
-
-In this scenario, the `build` function
-automatically runs when the user is _done_
-resizing the screen. However, this isn't
-particularly interactive. What you
-likely want to see is the UI changing in
-real time as the user resizes the window.
-
-[`MediaQuery`]: {{site.api}}/flutter/widgets/MediaQuery-class.html
-[`MediaQuery.of()`]: {{site.api}}/flutter/widgets/MediaQuery/of.html
-
-### LayoutBuilder
-
-Even though checking total screen size is great for
-full-screen pages or making global layout decisions,
-it's often not ideal for nested subviews.
-Often, subviews have their own internal breakpoints
-and care only about the space that they have available to render.
-
-The simplest way to handle this in Flutter is using the
-[`LayoutBuilder`][] class. `LayoutBuilder` allows a
-widget to respond to incoming local size constraints,
-which can make the widget more versatile than if it
-depended on a global value.
-
-`LayoutBuilder` also provides an interactive approach:
-From a `LayoutBuilder`'s [`builder`][] property,
-extract the [`BoxConstraints`][] object and
-examine the constraint's properties to decide
-what to display.
-
-For example of modifying orientation:
-
-<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (LayoutBuilder)"?>
-```dart
-Widget foo = LayoutBuilder(builder: (context, constraints) {
-  bool useVerticalLayout = constraints.maxWidth < 400;
-  return Flex(
-    direction: useVerticalLayout ? Axis.vertical : Axis.horizontal,
-    children: const [
-      Text('Hello'),
-      Text('World'),
-    ],
-  );
-});
-```
-
-This widget can now be composed within a side panel,
-dialog, or even a full-screen view,
-and adapt its layout to whatever space is provided.
-
-When the constraints change (for example,
-the user rotates the phone or puts your app
-app into a tile UI on Android), Flutter calls
-the `LayoutBuilder`'s `build` function.
-
-You can also adjust your display based on the
-device's height, the aspect ratio,
-or some other property.
-When the constraints change (for example,
-the user rotates the phone, resizes the window,
-or puts your app into a tile UI on Android),
-the `LayoutBuilder` re-runs its build method,
-updating the layout in real time.
-
----
-
 Learn more in the following 5-minute video:
 
 <iframe width="560" height="315" src="{{site.yt.embed}}/HD5gYnspYzk?si=KvEOAYbOn7lAfKmP" title="Learn the difference between adaptive and responsive apps" {{site.yt-set}}></iframe>
-
 [Adaptive vs responsive][]
 
 [Adaptive vs responsive]: {{site.youtube-site}}/watch?v=HD5gYnspYzk
@@ -371,11 +235,9 @@ You might also check out the following episodes
 of The Boring Show:
 
 <iframe style="max-width: 100%" width="560" height="315" src="{{site.yt.embed}}/n6Awpg1MO6M" title="Learn about adaptative layouts on the Boring Show" {{site.yt-set}}></iframe>
-
 [Adaptive layouts][]
 
 <iframe style="max-width: 100%" width="560" height="315" src="{{site.yt.embed}}/eikOZzfc0l4" title="Continue to learn about adaptative layouts on the Boring Show" {{site.yt-set}}></iframe>
-
 [Adaptive layouts, part 2][]
 
 For a great example of an adaptive app,
@@ -384,13 +246,8 @@ in collaboration with gskinner and the Flutter team:
 
 <iframe style="max-width: 100%" width="560" height="315" src="{{site.yt.embed}}/yytBENOnF0w" title="Watch a demonstration of the Flutter Folio app" {{site.yt-set}}></iframe>
 
-The [Folio source code][] is also available on GitHub.
-Learn more on the [gskinner blog][].
-
 [Adaptive layouts]: {{site.yt.watch}}?v=n6Awpg1MO6M&t=694s
 [Adaptive layouts, part 2]: {{site.yt.watch}}?v=eikOZzfc0l4&t=11s
-[Folio source code]: {{site.github}}/gskinnerTeam/flutter-folio
-[gskinner blog]: https://blog.gskinner.com/
 
 ### Other resources
 

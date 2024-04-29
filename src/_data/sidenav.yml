@@ -164,20 +164,16 @@
       match-page-url-exactly: true
     - title: General approach
       permalink: /ui/adaptive-responsive/general
-    - title: Best practices for adaptive apps
+    - title: SafeArea & MediaQuery
+      permalink: /ui/adaptive-responsive/safearea-mediaquery
+    - title: Large screens & foldables
+      permalink: /ui/adaptive-responsive/large-screens
+    - title: User input & accessibility
+      permalink: /ui/adaptive-responsive/input
+    - title: Best practices
       permalink: /ui/adaptive-responsive/best-practices
-#    - title: Layout for adaptive apps
-#      permalink: /ui/adaptive-responsive/layout
-#    - title: Handling input
-#      permalink: /ui/adaptive-responsive/input
-#    - title: Large screens
-#      permalink: /ui/adaptive-responsive/large-screens
-#    - title: Update app UI based on orientation
-#      permalink: /cookbook/design/orientation
-#    - title: Platform idioms
-#      permalink: /ui/adaptive-responsive/idioms
-#    - title: Accessibility
-#      permalink: /ui/adaptive-responsive/accessibility
+    - title: Additional resourcres
+      permalink: /ui/adaptive-responsive/more-info
 - title: Design & theming
   permalink: /ui/design
   children:

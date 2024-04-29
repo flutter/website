@@ -8,6 +8,8 @@ short-title: Idioms
 
 <?code-excerpt path-base="ui/adaptive_app_demos"?>
 
+<b>PENDING: Leave this page out for now... In future ...xxx</b>
+
 The final area to consider for adaptive apps is platform standards.
 Each platform has its own idioms and norms;
 these nominal or de facto standards inform user expectations
