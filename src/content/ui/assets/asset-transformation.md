@@ -34,10 +34,10 @@ const Widget logo = VectorGraphic(
 );
 ```
 
-## Asset tranformer features
+### Passing arguments to asset transformers
 
-You can specify a string of arguments to passed to an asset transformer, just like
-a command-line program:
+You can specify a string of arguments to passed to an asset transformer, just
+like a command-line program:
 
 ```yaml
 flutter:
@@ -48,8 +48,10 @@ flutter:
           args: '--tessellate --font-size=14'
 ```
 
-In addition, asset transformers can be chained, with transformations applying in
-the order they are declared. Consider this example using made-up packages:
+### Chaining asset transformers
+
+Asset transformers can be chained, with transformations applying in
+the order they are declared. Consider this example using fictional packages:
 
 ```yaml
 flutter:
@@ -61,7 +63,7 @@ flutter:
 ```
 
 Here, `bird.png` is transformed by the `grayscale_filter` package. The output
-is then transformed by `png_optimizer`. 
+is then transformed by `png_optimizer`.
 
 ## Writing asset transformer packages
 
