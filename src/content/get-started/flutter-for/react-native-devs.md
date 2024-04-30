@@ -923,7 +923,7 @@ class MyCanvasWidget extends StatelessWidget {
 }
 ```
 
-{% render docs/android-ios-figure-pair.md, image:"react-native/canvas.png," alt:"Canvas", class:"border" %}
+{% render docs/android-ios-figure-pair.md, image:"react-native/canvas.png", alt:"Canvas", class:"border" %}
 
 ## Layouts
 
