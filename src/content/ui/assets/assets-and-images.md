@@ -511,4 +511,4 @@ For more details, see
 [MediaQueryData.size]: {{site.api}}/flutter/widgets/MediaQueryData/size.html
 [MaterialApp]: {{site.api}}/flutter/material/MaterialApp-class.html
 [CupertinoApp]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
-[Transforming assets at build time]: {{site.url}}/ui/assets/asset-transformation
+[Transforming assets at build time]: /ui/assets/asset-transformation
