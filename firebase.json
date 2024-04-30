@@ -287,6 +287,7 @@
       { "source": "/go/colorscheme-m3", "destination": "https://docs.google.com/document/d/1mY1ahBQEMAfsawGJMX5S34pXb7c8dHGatyotClReeas/edit#heading=h.cnnhzna3pz6d", "type": 301 },
       { "source": "/go/configurable-autosubmit", "destination": "https://docs.google.com/document/d/14pf4jfBy1-PHYmJLVbeqrh1swTF01SZ2YD3DR_Qv3kM/edit?usp=sharing&resourcekey=0-AW7-kNNGmmpSUqyOvBdwRg", "type": 301 },
       { "source": "/go/contextual-menus", "destination": "https://docs.google.com/document/d/1F1itGgbSS3Cbq70hScSCNriDoux1sMGF9LHZsMdvU74/edit?resourcekey=0-RkHGwhe-tcoTGlaQyclPtQ", "type": 301 },
+      { "source": "/go/cross_file-content-uri-implementation", "destination": "https://docs.google.com/document/d/1-d7uWlB9ERPIOFRQ1nJGGiPDb9ALh7QxincEPOmGc3c", "type": 301 },
       { "source": "/go/cupertino-context-menu-action", "destination": "https://docs.google.com/document/d/1lCuPyAbIzAr0c2KIEZhREC_EnkTKBxNiqP6lGLT-KpU/edit", "type": 301 },
       { "source": "/go/cupertino-datepicker-redesign", "destination": "https://docs.google.com/document/d/1Ib5ztLzc19e1Uggz16BFlrJMg1TOdYLyP-WqtTpDltM/edit?usp=sharing&resourcekey=0-11oVmOsTHLD5fqxdAHZqNg", "type": 301 },
       { "source": "/go/cupertino-increase-contrast", "destination": "https://docs.google.com/document/d/1kePVlqWvJu5Ph0RL6wgg67F3SATmsJ8QY5N0S1MvaGg/edit#", "type": 301 },
