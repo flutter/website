@@ -100,7 +100,7 @@
           children:
           - title: Add advertising
             permalink: /cookbook/plugins/google-mobile-ads
-          - title: Add AdMob Ads to your Flutter app
+          - title: Add AdMob ads to your Flutter app
             permalink: https://codelabs.developers.google.com/codelabs/admob-ads-in-flutter
           - title: Add an AdMob banner and native inline ads
             permalink: https://codelabs.developers.google.com/codelabs/admob-inline-ads-in-flutter
