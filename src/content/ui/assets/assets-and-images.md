@@ -272,6 +272,12 @@ To load the image within your package, use:
 return const AssetImage('packages/fancy_backgrounds/backgrounds/background1.png');
 ```
 
+### Automatic transformation of asset files at build time
+
+You can have asset files transformed by dart packages at build time.
+To learn how to do this and write your own asset-transforming packages, see
+[Transforming assets at build time][].
+
 ## Sharing assets with the underlying platform
 
 Flutter assets are readily available to platform code
@@ -504,3 +510,4 @@ For more details, see
 [MediaQueryData.size]: {{site.api}}/flutter/widgets/MediaQueryData/size.html
 [MaterialApp]: {{site.api}}/flutter/material/MaterialApp-class.html
 [CupertinoApp]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
+[Transforming assets at build time]: {{site.url}}/ui/assets/asset-transformers
