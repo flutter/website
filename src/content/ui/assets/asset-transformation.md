@@ -73,6 +73,13 @@ An asset transformer is a Dart [command-line app][] that is invoked with
 the file to transform and `--output`, which is the location where the
 transformer code must write its output to.
 
+If the transformer applications finishes with a non-zero exit code, the build
+will fail with error message explaining that transformation of the asset failed.
+Anything written to the [`stderr`] stream of the process by the transformer will
+be included in the error message.
+
+## Sample
+
 For a sample Flutter project that uses asset transformation and includes a custom
 Dart package that is used as a transformer, check out the
 [asset_transformers project in the Flutter samples repo][].
@@ -81,3 +88,4 @@ Dart package that is used as a transformer, check out the
 [asset_transformers project in the Flutter samples repo]: {{site.repo.samples}}/tree/main/experimental/asset_transformation
 [`vector_graphics_compiler`]: {{site.pub}}/packages/vector_graphics_compiler
 [`vector_graphics`]: {{site.pub}}//packages/vector_graphics
+[`stderr`]: {{site.api}}/dart-io/stderr.html
