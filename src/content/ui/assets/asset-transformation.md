@@ -58,12 +58,13 @@ flutter:
   assets:
     - path: assets/bird.png
       transformers:
-      - package: grayscale_filter
-      - package: png_optimizer
+        - package: grayscale_filter
+        - package: png_optimizer
 ```
 
-Here, `bird.png` is transformed by the `grayscale_filter` package. The output
-is then transformed by `png_optimizer`.
+Here, `bird.png` is transformed by the `grayscale_filter` package.
+The output is then transformed by the `png_optimizer` package before being
+bundled into the built app.
 
 ## Writing asset transformer packages
 
@@ -73,8 +74,8 @@ the file to transform and `--output`, which is the location where the
 transformer code must write its output to.
 
 For a sample Flutter project that uses asset transformation and includes a custom
-Dart package that is used as a transformer, check out the [asset_transformers project
-in the Flutter samples repo][].
+Dart package that is used as a transformer, check out the
+[asset_transformers project in the Flutter samples repo][].
 
 [command-line app]: {{site.dart-site}}/tutorials/server/cmdline
 [asset_transformers project in the Flutter samples repo]: {{site.repo.samples}}/tree/main/experimental/asset_transformation
