@@ -45,7 +45,6 @@ export default function (eleventyConfig) {
     strictFilters: true,
     lenientIf: true,
     jekyllInclude: true,
-    globals: eleventyConfig.globalData,
   });
 
   eleventyConfig.addPlugin(EleventyRenderPlugin);
