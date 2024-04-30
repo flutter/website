@@ -10,14 +10,21 @@ you can skip this guide.
 
 ## Overview
 
-Flutter includes a focus system that
-directs keyboard input to a particular part of an app.
-To "focus" the input to part of an app,
-users tap or click on the desired UI element.
-Once in focus, text entered with the keyboard appears in that element.
+Flutter includes a focus system that directs keyboard input
+to a particular part of an app.
+To "focus" the input to part of an app, app users can take action
+depending on their input method.
+
+* To change focus on touch interfaces,
+  app users tap or click on the desired UI element.
+
+* To change focus on traditional interfaces,
+  app users can use the mouse to click on the desired UI element
+  or press a keyboard shortcut to move focus.
+
+Once in focus, text entered with the keyboard flows to that element.
+Text input could control objects or display text in a text field.
 This continues until the focus moves to another element in the app.
-App users also can press a particular keyboard shortcut to move focus,
-typically <kbd>Tab</kbd>, which is called _tab traversal_.
 
 :::secondary What you'll learn
 
@@ -69,8 +76,9 @@ are listed after this section.
 **Focus traversal**
   : The process of how focus moves from one focusable node to another
   in a predictable order.
-  The common experience in apps can be seen when the user presses <kbd>Tab</kbd>
-  to move to the next focusable control or field.
+  In common app UX, when a user presses <kbd>Tab</kbd>, focus moves
+  to the next focusable control or field.
+  This is why this method is also known as _tab traversal_
 
 ## Focus use cases
 
