@@ -21,9 +21,9 @@ flutter:
 ```
 
 With this configuration, `assets/logo.svg` will be transformed by the
-`vector_graphics_compiler` package as it is copied to the build output. This
+[`vector_graphics_compiler`][] package as it is copied to the build output. This
 package precompiles SVG files into an optimized binary files that can be
-displayed using the `vector_graphics` package, like so:
+displayed using the [`vector_graphics`][] package, like so:
 
 <?code-excerpt "ui/assets_and_images/lib/logo.dart (TransformedAsset)"?>
 ```dart
@@ -79,3 +79,5 @@ Dart package that is used as a transformer, check out the
 
 [command-line app]: {{site.dart-site}}/tutorials/server/cmdline
 [asset_transformers project in the Flutter samples repo]: {{site.repo.samples}}/tree/main/experimental/asset_transformation
+[`vector_graphics_compiler`]: {{site.pub}}/packages/vector_graphics_compiler
+[`vector_graphics`]: {{site.pub}}//packages/vector_graphics
