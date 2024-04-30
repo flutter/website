@@ -298,8 +298,7 @@ color to white and the text to dark grey to mimic a Material app.
 
 </div>
 <div class="col-md-6">
-  {% include docs/app-figure.md img-class="site-mobile-screenshot border w-75"
-      image="ui/layout/hello-world.png" alt="Hello World" %}
+  {% render docs/app-figure.md, img-class:"site-mobile-screenshot border w-75", image:"ui/layout/hello-world.png", alt:"Hello World" %}
 </div>
 </div>
 

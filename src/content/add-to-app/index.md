@@ -30,7 +30,7 @@ memory resources. See more in the [multiple Flutters][] page.
 
 ### Add to Android applications
 
-{% include docs/app-figure.md image="development/add-to-app/android-overview.gif" alt="Add-to-app steps on Android" %}
+{% render docs/app-figure.md, image:"development/add-to-app/android-overview.gif" alt="Add-to-app steps on Android" %}
 
 * Auto-build and import the Flutter module by adding a
   Flutter SDK hook to your Gradle script.
@@ -52,7 +52,7 @@ memory resources. See more in the [multiple Flutters][] page.
 
 ### Add to iOS applications
 
-{% include docs/app-figure.md image="development/add-to-app/ios-overview.gif" alt="Add-to-app steps on iOS" %}
+{% render docs/app-figure.md, image:"development/add-to-app/ios-overview.gif", alt:"Add-to-app steps on iOS" %}
 
 * Auto-build and import the Flutter module by adding a Flutter
   SDK hook to your CocoaPods and to your Xcode build phase.

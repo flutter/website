@@ -97,7 +97,7 @@ To add a target to an App Group:
     1. Select an App Group from the list.
     1. Click **+** to add a new App Group.
 
-{% include docs/app-figure.md image="development/platform-integration/app-extensions/xcode-app-groups.png" %}
+{% render docs/app-figure.md, image:"development/platform-integration/app-extensions/xcode-app-groups.png" %}
 
 When two targets belong to the same App Group,
 they can read from and write to the same source.
