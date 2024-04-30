@@ -33,22 +33,24 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Generic types in `PopScope`][]
 * [Rename `MaterialState` to `WidgetState`][]
 * [Introduce new `ColorScheme` roles][]
 * [Stop generating `AssetManifest.json`][]
 * [Rename `MemoryAllocations` to `FlutterMemoryAllocations`][]
 * [Deprecate `TextField.canRequestFocus`][]
-* [Nullable PageView.controller][]
+* [Nullable `PageView.controller`][]
 * [Deprecate `ButtonBar` in favor of `OverflowBar`][]
 * [Deprecated API removed after v3.19][]
 * [Dropping support for Android KitKat][]
 
+[Generic types in `PopScope`]: /release/breaking-changes/popscope-with-result
 [Rename `MaterialState` to `WidgetState`]: /release/breaking-changes/material-state
 [Introduce new `ColorScheme` roles]: /release/breaking-changes/new-color-scheme-roles
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
 [Rename `MemoryAllocations` to `FlutterMemoryAllocations`]: /release/breaking-changes/flutter-memory-allocations
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
-[Nullable PageView.controller]: /release/breaking-changes/pageview-controller
+[Nullable `PageView.controller`]: /release/breaking-changes/pageview-controller
 [Deprecate `ButtonBar` in favor of `OverflowBar`]: /release/breaking-changes/deprecate-buttonbar
 [Deprecated API removed after v3.19]: /release/breaking-changes/3-19-deprecations
 [Dropping support for Android KitKat]: /release/breaking-changes/android-kitkat-deprecation

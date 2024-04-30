@@ -21,8 +21,8 @@ To add Android as a Flutter app target for Linux, follow this procedure.
         libbz2-1.0:i386
     ```
 
-1. Install [Android Studio][] {{site.appmin.android_studio}} to debug and compile
-   Java or Kotlin code for Android.
+1. Install [Android Studio][] {{site.appmin.android_studio}} or later
+   to debug and compile Java or Kotlin code for Android.
    Flutter requires the full version of Android Studio.
 
 {% render docs/install/compiler/android.md, target:'linux', devos:'Linux', attempt:"first" -%}
