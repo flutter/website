@@ -84,12 +84,12 @@ are listed after this section.
 
 Some situations where you might use the focus system include:
 
-- [Receiving/handling key events](#key-events)
-- [Implementing a custom component that needs to be focusable](#focus-widget)
-- [Receiving notifications when the focus changes](#change-notifications)
-- [Changing or defining the "tab order" of focus traversal in an app](#focustraversalpolicy)
-- [Defining groups of controls that should be traversed together](#focustraversalgroup-widget)
-- [Preventing some controls in an app from being focusable](#controlling-what-gets-focus)
+* [Receiving/handling key events](#listen-for-key-events)
+* [Implementing a custom component that needs to be focusable](#control-what-gets-focus)
+* [Receiving notifications when the focus changes](#get-notifications-of-focus-changes)
+* [Changing or defining the "tab order" of focus traversal in an app](#set-a-focus-traversal-policy)
+* [Defining groups of controls that should be traversed together](#limit-focus-traversal-to-a-group)
+* [Preventing some controls in an app from being focusable](#control-what-gets-focus)
 
 ## Implement the focus system in your app
 
