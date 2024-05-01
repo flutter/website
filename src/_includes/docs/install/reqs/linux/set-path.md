@@ -1,10 +1,6 @@
-{% assign terminal=include.terminal %}
-{% assign target = include.target %}
-{% assign dir = include.dir %}
-
 ### Add Flutter to your `PATH` {:.no_toc}
 
-To run Flutter commands in {{terminal}},
+To run Flutter commands in {{include.terminal}},
 add Flutter to the `PATH` environment variable.
 
 1. Check which shell starts when you open a new console window.

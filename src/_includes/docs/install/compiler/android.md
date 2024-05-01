@@ -1,12 +1,7 @@
 
 ## Configure Android development
 
-{% assign devos = include.devos %}
-{% assign target = include.target %}
-{% assign compiler = include.compiler %}
-{% assign attempt-time = include.attempt %}
-
-{% case devos %}
+{% case include.devos %}
 {% when 'Windows' -%}
    {% assign terminal='PowerShell' %}
    {% assign prompt='C:\>' %}
@@ -155,13 +150,13 @@ Otherwise, you can skip to the [next section][check-dev].
 
 <div class="tab-pane active" id="virtual" role="tabpanel" aria-labelledby="virtual-tab">
 
-{% include docs/install/devices/android-emulator.md devos=devos %}
+{% include docs/install/devices/android-emulator.md devos=include.devos %}
 
 </div>
 
 <div class="tab-pane" id="physical" role="tabpanel" aria-labelledby="physical-tab">
 
-{% include docs/install/devices/android-physical.md devos=devos %}
+{% include docs/install/devices/android-physical.md devos=include.devos %}
 
 </div>
 </div>
