@@ -337,7 +337,7 @@ ask yourself these questions:
 * Can any of these calls be eliminated?
 * Can I apply the same effect to an individual element instead of a group?
 
-[`Clip.antiAliasWithSaveLayer:`]: {{site.api}}/flutter/dart-ui/Clip.html
+[`Clip.antiAliasWithSaveLayer`]: {{site.api}}/flutter/dart-ui/Clip.html
 
 #### Checking for non-cached images
 
