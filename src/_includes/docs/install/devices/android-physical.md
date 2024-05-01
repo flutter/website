@@ -2,11 +2,6 @@
 
 {% include docs/help-link.md location='android-device' section='#android-setup' %}
 
-{% assign devos = include.devos %}
-{% assign target = include.target %}
-{% assign compiler = include.compiler %}
-{% assign attempt = include.attempt %}
-
 To configure your Flutter app to run on a physical Android device,
 you need an Android device running {{site.targetmin.android}} or later.
 
@@ -18,18 +13,18 @@ you need an Android device running {{site.targetmin.android}} or later.
    enable **Wireless debugging** on your device as described in the
    [Android documentation]({{site.android-dev}}/studio/run/device#wireless).
 
-{%- if devos == 'Windows' %}
+{%- if include.devos == 'Windows' %}
 
 1. Install the [Google USB Driver]({{site.android-dev}}/studio/run/win-usb).
 
 {% endif %}
 
-1. Plug your device into your {{devos}} computer.
+1. Plug your device into your {{include.devos}} computer.
    If your device prompts you, authorize your computer to access your device.
 
 1. Verify that Flutter recognizes your connected Android device.
 
-   {%- if devos == 'Windows' %}
+   {%- if include.devos == 'Windows' %}
 
    In PowerShell, run:
 
