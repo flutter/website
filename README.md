@@ -188,11 +188,23 @@ following the instructions in [Get the prerequisites](#get-the-prerequisites).
    dart pub get
    ```
 
-3. Install [`pnpm`][] using your preferred [installation method][pnpm-install].
-   `pnpm` is an alternative, efficient package manager for npm packages.
-   If you already have `pnpm`, verify you have the latest stable version.
-   We recommend using [`corepack`][] to install and manage `pnpm` versions,
-   since it is bundled with most installations of Node.
+3. Install `pnpm`, an alternative, efficient package manager for
+   npm packages. If you already have `pnpm`, verify you have the
+   latest stable version.
+
+   ```console
+   node --version
+   ```
+
+   If you do not already have `pnpm` installed, we recommend
+   using [`corepack`][] to install and manage `pnpm` versions,
+   since `corepack` is bundled with most installations of
+   Node. If you installed `node` using Homebrew, you'll need
+   to install corepack separately:
+
+   ```console
+   brew install corepack
+   ```
 
    If you haven't used `corepack` before, you'll need to
    first enable it with `corepack enable`.
@@ -200,11 +212,14 @@ following the instructions in [Get the prerequisites](#get-the-prerequisites).
    root directory of the repository, run `corepack install`:
 
    ```console
-   corepack enable
+   corepack enable;
    corepack install
    ```
 
-4. Once you have `pnpm` installed and setup,
+   To install [`pnpm`][] without using `corepack`, you
+   can use your preferred [installation method][pnpm-install].
+
+5. Once you have `pnpm` installed and setup,
    fetch the site's npm dependencies using `pnpm install`.
    We highly recommend you use `pnpm`, but you can also use `npm`.
 
@@ -212,14 +227,14 @@ following the instructions in [Get the prerequisites](#get-the-prerequisites).
    pnpm install
    ```
 
-5. From the root directory, run the `dash_site` tool to
+6. From the root directory, run the `dash_site` tool to
    validate your setup and learn about the available commands.
 
    ```console
    ./dash_site --help
    ```
 
-6. From the root directory, serve the site locally.
+7. From the root directory, serve the site locally.
 
    ```console
    ./dash_site serve
@@ -228,21 +243,21 @@ following the instructions in [Get the prerequisites](#get-the-prerequisites).
    This command generates and serves the site on a
    local port that's printed to your terminal.
 
-7. View your changes in the browser by navigating to <http://localhost:4000>.
+8. View your changes in the browser by navigating to <http://localhost:4000>.
 
    Note the port might be different if `4000` is taken.
 
    If you want to check the raw, generated HTML output and structure,
    view the `_site` directory in a file explorer or an IDE.
 
-8. Make your changes to the local repo.
+9. Make your changes to the local repo.
 
    The site should automatically rebuild on most changes, but if
    something doesn't update, exit the process and rerun the command.
    Improvements to this functionality are planned.
    Please open a new issue to track the issue if this occurs.
 
-9. Commit your changes to the branch and submit your PR.
+10. Commit your changes to the branch and submit your PR.
 
    If your change is large, or you'd like to test it,
    consider [validating your changes](#validate-your-changes).
