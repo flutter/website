@@ -85,7 +85,7 @@ Dart package that is used as a transformer, check out the
 [asset_transformers project in the Flutter samples repo][].
 
 [command-line app]: {{site.dart-site}}/tutorials/server/cmdline
-[asset_transformers project in the Flutter samples repo]: {{site.repo.samples}}/tree/main/experimental/asset_transformation
+[asset_transformers project in the Flutter samples repo]: {{site.repo.samples}}/tree/main/asset_transformation
 [`vector_graphics_compiler`]: {{site.pub}}/packages/vector_graphics_compiler
 [`vector_graphics`]: {{site.pub}}//packages/vector_graphics
 [`stderr`]: {{site.api}}/flutter/dart-io/Process/stderr.html
