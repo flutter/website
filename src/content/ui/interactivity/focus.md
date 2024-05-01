@@ -53,8 +53,7 @@ are listed after this section.
 
 **Focus node**
   : A single node in a focus tree.
-  This node can receive focus and can "have focus" when part of
-  the _focus chain_.
+  This type of node can receive focus when it's part of the _focus chain_.
   When it has focus, it participates in handling key events.
 
 **Primary focus**
@@ -63,19 +62,22 @@ are listed after this section.
   This focus node exists at the farthest point from the root of the focus tree.
 
 **Focus chain**
-  : An list of focus nodes ordered from primary focus node to the root
+  : A list of focus nodes ordered from the primary focus node to the root
   of the focus tree.
   Starting at the primary focus node, it follows the focus tree branches
-  to its root.
+  to its root. All of the nodes in the _focus chain_ are assumed to have focus.
+  Key events start at the first node in the chain, called the _primary focus_,
+  and propagate along the chain until a node handles the event.
 
 **Focus scope**
   : A special focus node that contains a group of other focus nodes.
-  It allows only those nodes to receive focus.
-  It contains data about which nodes had received focus in its subtree.
+  It limits focus traversal to those nodes.
+  It maintains data about which nodes have received focus
+  in its subtree in the past.
 
 **Focus traversal**
-  : The process of how focus moves from one focusable node to another
-  in a predictable order.
+  : The process of moving focus from one focusable node to another
+  in a predictable, controllable, order.
   In common app UX, when a user presses <kbd>Tab</kbd>, focus moves
   to the next focusable control or field.
   This is why this method is also known as _tab traversal_
@@ -107,11 +109,14 @@ To prevent breaking existing apps,
 they still contain public interfaces for their attributes.
 
 These widgets act as a somewhat opaque handle.
-This handle passes to a descendant widget to call the `requestFocus()`
-method on an ancestor widget.
-The ancestor widget then requests that Flutter gives focus
+To focus a descendant widget,
+an ancestor widget can use this handle to call the `requestFocus()` method.
+The ancestor widget can also request that Flutter give focus
 to a descendant widget.
-To set the other attributes, use a [`Focus`][] or [`FocusScope`][] widget.
+If setting other attributes like `onKey` or `skipTraversal`,
+use the [`Focus.withExternalFocusNode`][] or
+[`FocusScope.withExternalFocusNode`][] constructors
+This avoids an accidental reset of the attributes.
 
 ### Follow focus best practices
 
@@ -168,7 +173,7 @@ or a node in the same scope that had focus earlier.
 Which one depends upon the `disposition` argument you give to `unfocus()`.
 To better control where the focus passes when you remove it from a node,
 you have two options.
-You can set focus to another node or use the focus traversal mechanism.
+You can choose to set focus to another node or use the focus traversal mechanism.
 To find another node, this mechanism can use the `focusInDirection`,
 `nextFocus`, or `previousFocus` methods on `FocusNode`.
 
@@ -189,7 +194,8 @@ It allows two modes for passing focus:
 :::important
 Without another scope, focus moves to the root scope node of the focus system,
 `FocusManager.rootScope`.
-This wouldn't be a desired result.
+This wouldn't be a desired result,
+because it stops focus traversal from working.
 The root scope doesn't have a `context` for the framework to determine which
 node should be focused next.
 If you find that your app can't navigate using focus traversal,
@@ -198,7 +204,9 @@ To fix it, add a `FocusScope` as an ancestor to the focus node
 requesting the unfocus.
 The `WidgetsApp` has its own `FocusScope`.
 As `MaterialApp` and `CupertinoApp` derive from `WidgetsApp`,
-this shouldn't cause an issue.
+this would cause an issue in apps in very limited edge cases.
+These cases would be limited to apps that don't start with
+any of these specific widgets and don't have their own `FocusScope`.
 :::
 
 ## Allow a control to receive focus
@@ -206,9 +214,9 @@ this shouldn't cause an issue.
 The `Focus` widget owns and manages a focus node.
 It performs the following functions as the workhorse of the focus system:
 
-- Attachs and detachs of the focus node it owns from the focus tree
+- Attaches and detaches the focus node it owns from the focus tree
 - Manages the attributes and callbacks of the focus node
-- Enable discovery of focus nodes attached to the widget
+- Enables discovery of focus nodes attached to the widget
   tree through its static functions
 
 To allow a widget subtree to obtain focus, wrap the `Focus` widget around it.
@@ -220,7 +228,7 @@ it can receive focus when tapped or clicked.
 If you don't create a `FocusNode` object for the `Focus` widget to manage,
 it creates its own.
 To allow focus control from a parent widget, create your own`FocusNode`.
-This object can then call `requestFocus()` on the node to control.
+To control its focus, this object can then call `requestFocus()` on the node.
 To access the functionality of a `FocusNode`,
 change the attributes of the `Focus` widget itself.
 
