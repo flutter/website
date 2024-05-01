@@ -36,8 +36,8 @@ const Widget logo = VectorGraphic(
 
 ### Passing arguments to asset transformers
 
-You can specify a string of arguments to passed to an asset transformer, just
-like a command-line program:
+To pass a string of arguments to an asset transformer,
+also specify that in the pubspec:
 
 ```yaml
 flutter:
