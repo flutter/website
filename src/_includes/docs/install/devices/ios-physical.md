@@ -80,7 +80,6 @@ Follow the Xcode signing flow to provision your project.
 
 1. Sign in to Xcode with your Apple ID.
 
-   {: type="a"}
    1. Go to **Xcode** <span aria-label="and then">></span>
       **Settings...**
    1. Click **Accounts**.
@@ -124,7 +123,6 @@ Follow the Xcode signing flow to provision your project.
 
    After you select a team, Xcode performs the following tasks:
 
-   {: type="a"}
    1. Creates and downloads a Development Certificate
    1. Registers your device with your account,
    1. Creates and downloads a provisioning profile if needed
@@ -203,7 +201,8 @@ Enabling certificates varies in different versions of iOS.
 1. When the dialog displays, tap **Trust**.
 
 </div>
-</div>{% comment %} End: Tab panes. {% endcomment -%}
+</div>
+{% comment %} End: Tab panes. {% endcomment %}
 
 If prompted, enter your Mac password into the
 **codesign wants to access key...** dialog and tap **Always Allow**.
