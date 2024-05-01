@@ -142,7 +142,7 @@ When you attach your physical iOS device for the first time,
 enable trust for both your Mac and the Development Certificate
 on the iOS device.
 
-You should enabled trust of your Mac on your iOS device when
+You should have enabled trust of your Mac on your iOS device when
 you [attached the device to your Mac](#attach).
 
 ##### Enable developer certificate for your iOS devices
@@ -193,6 +193,11 @@ Enabling certificates varies in different versions of iOS.
 
 1. Tap on **General** <span aria-label="and then">></span>
     **VPN & Device Management**.
+
+    :::note
+    If you can't find **VPN & Device Management**
+    in **Settings**, run your app on your iOS device once, then try again.
+    :::
 
 1. Under the **Developer App** heading, you should find your certificate.
 
