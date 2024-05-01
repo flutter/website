@@ -45,16 +45,6 @@ The following instructions outline the steps for supporting the new API:
    for more details on accessing app resources with
    the latest version (v2) of embedding.
    <br><br>
-   Also, note that the plugin should still contain the static
-   `registerWith()` method to remain compatible with apps that
-   don't use the v2 Android embedding.
-   (See [Upgrading pre 1.12 Android projects][] for details.)
-   The easiest thing to do (if possible) is move the logic from
-   `registerWith()` into a private method that both
-   `registerWith()` and `onAttachedToEngine()` can call.
-   Either `registerWith()` or `onAttachedToEngine()` will be called,
-   not both.
-   <br><br>
    In addition, you should document all non-overridden public members
    within the plugin. In an add-to-app scenario,
    these classes are accessible to a developer and
@@ -107,50 +97,10 @@ The following instructions outline the steps for supporting the new API:
             </intent-filter>
         </activity>
     ```
-
-1. (Optional) Create an `EmbeddingV1Activity.java` file
-   that uses the v1 embedding for the example project
-   in the same folder as `MainActivity` to
-   keep testing the v1 embedding's compatibility
-   with your plugin. Note that you have to manually
-   register all the plugins instead of using
-   `GeneratedPluginRegistrant`.  For example:
-
-    ```java title="EmbeddingV1Activity.java"
-    package io.flutter.plugins.batteryexample;
-
-    import android.os.Bundle;
-    import io.flutter.app.FlutterActivity;
-    import io.flutter.plugins.battery.BatteryPlugin;
-
-    public class EmbeddingV1Activity extends FlutterActivity {
-      @Override
-      protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        BatteryPlugin.registerWith(registrarFor("io.flutter.plugins.battery.BatteryPlugin"));
-      }
-    }
-    ```
-
+    
 1.  Add `<meta-data android:name="flutterEmbedding" android:value="2"/>`
     to the `<plugin_name>/example/android/app/src/main/AndroidManifest.xml`.
     This sets the example app to use the v2 embedding.
-
-1. (Optional) If you created an `EmbeddingV1Activity`
-   in the previous step, add the `EmbeddingV1Activity` to the
-   `<plugin_name>/example/android/app/src/main/AndroidManifest.xml` file.
-   For example:
-
-    ```xml title="AndroidManifest.xml"
-    <activity
-        android:name=".EmbeddingV1Activity"
-        android:theme="@style/LaunchTheme"
-            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale"
-        android:hardwareAccelerated="true"
-        android:exported="true"
-        android:windowSoftInputMode="adjustResize">
-    </activity>
-    ```
 
 ## Testing your plugin
 
@@ -178,7 +128,7 @@ but aren't required.
     }
     ```
 
-1. Add tests files for `MainActivity` and `EmbeddingV1Activity`
+1. Add tests files for `MainActivity`
    in `<plugin_name>/example/android/app/src/androidTest/java/<plugin_path>/`.
    You will need to create these directories. For example:
 
@@ -194,22 +144,6 @@ but aren't required.
     public class MainActivityTest {
       // Replace `MainActivity` with `io.flutter.embedding.android.FlutterActivity` if you removed `MainActivity`.
       @Rule public ActivityTestRule<MainActivity> rule = new ActivityTestRule<>(MainActivity.class);
-    }
-    ```
-
-    ```java title="EmbeddingV1ActivityTest.java"
-    package io.flutter.plugins.firebase.core;
-
-    import androidx.test.rule.ActivityTestRule;
-    import io.flutter.plugins.firebasecoreexample.EmbeddingV1Activity;
-    import org.junit.Rule;
-    import org.junit.runner.RunWith;
-
-    @RunWith(FlutterRunner.class)
-    public class EmbeddingV1ActivityTest {
-      @Rule
-      public ActivityTestRule<EmbeddingV1Activity> rule =
-          new ActivityTestRule<>(EmbeddingV1Activity.class);
     }
     ```
 
