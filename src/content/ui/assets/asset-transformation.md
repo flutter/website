@@ -4,8 +4,8 @@ description: How to set up automatic transformation of images (and other assets)
 short-title: Asset transformation
 ---
 
-You can configure your project to automatically transform assets using
-compatible Dart packages.
+You can configure your project to automatically transform assets
+at build time using compatible Dart packages.
 
 ## Specifying asset transformations
 
