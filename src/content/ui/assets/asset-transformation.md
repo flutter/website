@@ -50,8 +50,9 @@ flutter:
 
 ### Chaining asset transformers
 
-Asset transformers can be chained, with transformations applying in
-the order they are declared. Consider this example using fictional packages:
+Asset transformers can be chained and are applied in
+the order they are declared.
+Consider the following example using imaginary packages:
 
 ```yaml
 flutter:
