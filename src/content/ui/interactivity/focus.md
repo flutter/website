@@ -78,9 +78,9 @@ are listed after this section.
 **Focus traversal**
   : The process of moving focus from one focusable node to another
   in a predictable, controllable, order.
-  In common app UX, when a user presses <kbd>Tab</kbd>, focus moves
-  to the next focusable control or field.
-  This is why this method is also known as _tab traversal_
+  In common app UX, when a user presses <kbd>Tab</kbd>,
+  focus moves to the next focusable control or field.
+  This explains why this method is also known as _tab traversal_.
 
 ## Focus use cases
 
@@ -101,12 +101,6 @@ Like render objects, these objects live longer than widgets and
 hold the focus state and attributes.
 This allows focus nodes to persist between builds of the widget tree.
 Together, these objects form the focus tree data structure.
-
-The original intent was for these widgets to control some focus system aspects.
-They would've been developer-facing objects.
-Over time, they evolved to implement details of the focus system.
-To prevent breaking existing apps,
-they still contain public interfaces for their attributes.
 
 These widgets act as a somewhat opaque handle.
 To focus a descendant widget,
@@ -137,7 +131,7 @@ Some dos and don'ts around using these objects include:
   it owns to a descendant where you want to the focus.
 
 **Do use `focusNode.requestFocus()`.**
-: You don't need to call FocusScope.of(context).requestFocus(focusNode)`.
+: You don't need to call `FocusScope.of(context).requestFocus(focusNode)`.
   The `focusNode.requestFocus()` method works the same with better performance.
 
 **Don't allocate a new `FocusNode` object for each build.**
@@ -151,14 +145,14 @@ Some dos and don'ts around using these objects include:
 
 **Don't set the `onKeyEvent` callback on a `FocusNode` that `Focus` manages.**
 : To set focus to respond to a key event, use an `onKeyEvent` handler.
-  Surround the desired widget subtree with a new `Focus` widget
+  Surround the desired widget subtree with a new [`Focus`][] widget
   with its `onKeyEvent` attribute set to your handler.
   If you don't want the widget to be able to take primary focus,
   set `canRequestFocus: false` on it.
   Do this because the `onKeyEvent` attribute on the `Focus` widget
   can be set to something else in a later build. If that happens,
   the attribute overwrites the `onKeyEvent` handler you set on the node.
-  This applies to a `FocusScopeNode` that a `FocusScope` widget manages.
+  This applies to a `FocusScopeNode` that a [`FocusScope`][] widget manages.
 
 ### Tell a node to give up focus
 
@@ -180,13 +174,13 @@ To find another node, this mechanism can use the `focusInDirection`,
 When calling `unfocus()`, you can set the `disposition` argument. 
 It allows two modes for passing focus:
 
-- [`UnfocusDisposition.scope`][]:
+* [`UnfocusDisposition.scope`][]:
   The argument defaults to this option.
   It gives the focus to the nearest parent focus scope.
   If the something moves the focus to the next node with `FocusNode.nextFocus`,
   the app starts with the "first" focusable item in the scope.
 
-- `UnfocusDisposition.previouslyFocusedChild`:
+* `UnfocusDisposition.previouslyFocusedChild`:
   The `previouslyFocusedChild` disposition searches the scope to find the
   last focused child and request focus on it.
   If no child had focus before, this disposition works like `scope`.
@@ -214,9 +208,9 @@ any of these specific widgets and don't have their own `FocusScope`.
 The `Focus` widget owns and manages a focus node.
 It performs the following functions as the workhorse of the focus system:
 
-- Attaches and detaches the focus node it owns from the focus tree
-- Manages the attributes and callbacks of the focus node
-- Enables discovery of focus nodes attached to the widget
+* Attaches and detaches the focus node it owns from the focus tree
+* Manages the attributes and callbacks of the focus node
+* Enables discovery of focus nodes attached to the widget
   tree through its static functions
 
 To allow a widget subtree to obtain focus, wrap the `Focus` widget around it.
@@ -309,14 +303,14 @@ If that node doesn't return `KeyEventResult.handled` from
 its `onKeyEvent` handler, then its parent focus node is given the event.
 If the parent doesn't handle it, it goes to its parent,
 and so on, until it reaches the root of the focus tree.
-If the event reaches the root of the focus tree without being handled, then
-it is returned to the platform to give to
-the next native control in the app
-(in case the Flutter UI is part of a larger native app UI).
-Events that are handled are not propagated to other Flutter widgets,
-and they are also not propagated to native widgets.
+If the event reaches the root of the focus tree without being handled,
+then it's returned to the platform.
+This allows the platform to give the event to the next native control
+in the app in case the Flutter UI belongs to larger native app UI.
+Handled events don't get propagated to other Flutter widgets
+or native widgets.
 
-Here's an example of a `Focus` widget that absorbs every key that
+Consider the following example. This `Focus` widget absorbs every key that
 its subtree doesn't handle, without being able to be the primary focus:
 
 <?code-excerpt "ui/advanced/focus/lib/samples.dart (absorb-keys)"?>
@@ -442,9 +436,9 @@ it only takes effect after the current build phase completes.
 This means that focus changes are always delayed by one frame,
 because changing focus can cause arbitrary parts of the widget tree to rebuild,
 including ancestors of the widget currently requesting focus.
-Because descendants cannot dirty their ancestors,
-it has to happen between frames,
-so that any needed changes can happen on the next frame.
+As descendants cannot dirty their ancestors,
+it has to happen between frames.
+This allows any needed changes can happen on the next frame.
 
 ## Group focus nodes
 
@@ -463,9 +457,10 @@ Focus scopes also serve as a place to return focus to if none of the descendants
 have focus. This allows the focus traversal code to have a starting context for
 finding the next (or first) focusable control to move to.
 
-If you focus a focus scope node, it first attempts to focus the current, or most
-recently focused node in its subtree, or the node in its subtree that requested
-autofocus (if any). If there is no such node, it receives the focus itself.
+If you focus a focus scope node, it first attempts to focus the current,
+or most recently focused node in its subtree,
+or the node in its subtree that requested autofocus (if any).
+If there is no such node, it receives the focus itself.
 
 ## Detect focusable actions
 
@@ -532,9 +527,9 @@ If none of the provided focus traversal policies work for your app,
 write your own policy. You can then use that policy to determine any
 custom ordering.
 
-Consider this example of how to to traverse a row of buttons in the
+Consider this example on how to traverse a row of buttons in the
 order TWO, ONE, THREE.
-This example uses the `FocusTraversalOrder` widget with the `order`
+This example uses the [`FocusTraversalOrder`][] widget with the `order`
 set to `NumericFocusOrder`.
 
 <?code-excerpt "ui/advanced/focus/lib/samples.dart (ordered-button-row)"?>
@@ -611,18 +606,18 @@ Users of the focus system might only use three properties of this API.
   interpret changes to app user device input.
   The `highlightStrategy` property allows one of three values:
 
-  - `automatic` (default):
+  * `automatic` (default):
     Switch focus highlighting based on the most recent input events
-  - `alwaysTouch`:
+  * `alwaysTouch`:
     Lock to touch focus highlighting
-  - `alwaysTraditional`:
+  * `alwaysTraditional`:
     Lock to traditional focus highlighting
 
 **`FocusManager.instance.highlightMode` property**
 : The `highlightStrategy` value determines the `highlightMode` value.
 
-  - When an app user navigates with touch, Flutter hides the focus highlight.
-  - When the app user switches to a mouse or keyboard,
+  * When an app user navigates with touch, Flutter hides the focus highlight.
+  * When the app user switches to a mouse or keyboard,
     Flutter shows the focus highlight.
 
 The provided focus widgets in Flutter know how to use these properties.
@@ -633,22 +628,37 @@ use `addHighlightModeListener` callback.
 
 [`Actions`]: {{site.api}}/flutter/widgets/Actions-class.html
 [`Builder`]: {{site.api}}/flutter/widgets/Builder-class.html
-[`DirectionalFocusTraversalPolicyMixin`]: {{site.api}}/flutter/widgets/DirectionalFocusTraversalPolicyMixin-mixin.html
+[`DirectionalFocusTraversalPolicyMixin`]:
+    {{site.api}}/flutter/widgets/DirectionalFocusTraversalPolicyMixin-mixin.html
+[`Focus.withExternalFocusNode`]:
+    {{site.api}}/flutter/widgets/Focus/Focus.withExternalFocusNode.html
 [`Focus`]: {{site.api}}/flutter/widgets/Focus-class.html
-[`FocusableActionDetector`]: {{site.api}}/flutter/widgets/FocusableActionDetector-class.html
+[`FocusableActionDetector`]:
+    {{site.api}}/flutter/widgets/FocusableActionDetector-class.html
 [`FocusManager`]: {{site.api}}/flutter/widgets/FocusManager-class.html
 [`FocusNode`]: {{site.api}}/flutter/widgets/FocusNode-class.html
 [`FocusOrder`]: {{site.api}}/flutter/widgets/FocusOrder-class.html
+[`FocusScope.withExternalFocusNode`]:
+    {{site.api}}/flutter/widgets/FocusScope/FocusScope.withExternalFocusNode.html
 [`FocusScope`]: {{site.api}}/flutter/widgets/FocusScope-class.html
 [`FocusScopeNode`]: {{site.api}}/flutter/widgets/FocusScopeNode-class.html
-[`FocusTraversalGroup`]: {{site.api}}/flutter/widgets/FocusTraversalGroup-class.html
-[`FocusTraversalOrder`]: {{site.api}}/flutter/widgets/FocusTraversalOrder-class.html
-[FocusTraversalOrder-constructor]: {{site.api}}/flutter/widgets/FocusTraversalOrder/FocusTraversalOrder.html
-[`FocusTraversalPolicy`]: {{site.api}}/flutter/widgets/FocusTraversalPolicy-class.html
-[`LexicalFocusOrder`]: {{site.api}}/flutter/widgets/LexicalFocusOrder-class.html
+[`FocusTraversalGroup`]:
+    {{site.api}}/flutter/widgets/FocusTraversalGroup-class.html
+[`FocusTraversalOrder`]:
+    {{site.api}}/flutter/widgets/FocusTraversalOrder-class.html
+[`FocusTraversalPolicy`]:
+    {{site.api}}/flutter/widgets/FocusTraversalPolicy-class.html
+[`LexicalFocusOrder`]:
+    {{site.api}}/flutter/widgets/LexicalFocusOrder-class.html
 [`MouseRegion`]: {{site.api}}/flutter/widgets/MouseRegion-class.html
-[`NumericFocusOrder`]: {{site.api}}/flutter/widgets/NumericFocusOrder-class.html
-[`OrderedTraversalPolicy`]: {{site.api}}/flutter/widgets/OrderedTraversalPolicy-class.html
-[`ReadingOrderTraversalPolicy`]: {{site.api}}/flutter/widgets/ReadingOrderTraversalPolicy-class.html
+[`NumericFocusOrder`]:
+    {{site.api}}/flutter/widgets/NumericFocusOrder-class.html
+[`OrderedTraversalPolicy`]:
+    {{site.api}}/flutter/widgets/OrderedTraversalPolicy-class.html
+[`ReadingOrderTraversalPolicy`]:
+    {{site.api}}/flutter/widgets/ReadingOrderTraversalPolicy-class.html
 [`Shortcuts`]: {{site.api}}/flutter/widgets/Shortcuts-class.html
-[`UnfocusDisposition.scope`]: {{site.api}}/flutter/widgets/UnfocusDisposition.html
+[`UnfocusDisposition.scope`]:
+    {{site.api}}/flutter/widgets/UnfocusDisposition.html
+[FocusTraversalOrder-constructor]:
+    {{site.api}}/flutter/widgets/FocusTraversalOrder/FocusTraversalOrder.html
