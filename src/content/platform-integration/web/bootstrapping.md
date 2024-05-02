@@ -105,8 +105,8 @@ _flutter.loader.load();
 
 ## The `_flutter.loader.load()` API
 
-The `_flutter.loader.load()` JavaScript API can also be invoked with a few
-different optional arguments that can customize initialization behavior:
+The `_flutter.loader.load()` JavaScript API can be invoked with optional
+arguments to customize initialization behavior:
 
 <div class="table-wrapper">
 
