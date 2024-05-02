@@ -18,9 +18,9 @@ process can be customized.
 
 ## `flutter_bootstrap.js`
 
-When building your flutter app, the `flutter build web` command will produce a
+When building your flutter app, the `flutter build web` command produces a
 script called `flutter_bootstrap.js` in the output build directory
-(`build/web`), which contains the JavaScript code needed to initialize and run
+(`build/web`). This file contains the JavaScript code needed to initialize and run
 your Flutter app. You can use this script by simply placing an async script tag
 for it in your `index.html` file in the `web` subdirectory of your flutter
 project:
@@ -47,33 +47,33 @@ file by inserting the template token `{% raw %}{{flutter_bootstrap_js}}{% endraw
 <html>
 ```
 
-The `{% raw %}{{flutter_bootstrap_js}}{% endraw %}` token will be replaced with the contents of the
+The `{% raw %}{{flutter_bootstrap_js}}{% endraw %}` token is replaced with the contents of the
 `flutter_bootstrap.js` file when the `index.html` file is copied to the output
 directory (`build/web`) during the build step.
 
-## Customizing Initialization
+## Customizing initialization
 
 By default, the `flutter build web` process generates a `flutter_bootstrap.js`
 file that does a simple initialization of your Flutter app. However, in some
-scenarios, you may have a reason to customize this initialization process, such
+scenarios, you might have a reason to customize this initialization process, such
 as:
 
 * Setting a custom Flutter configuration for your app
 * Changing the settings for the Flutter service worker
-* Write custom JavaScript code to run at different stages of the startup process
+* Writing custom JavaScript code to run at different stages of the startup process
 
 To write your own custom bootstrapping logic instead of using the default script
 produced by the build step, you can place a `flutter_bootstrap.js` file in the
-`web` subdirectory of your project, which will be copied over and used in lieu
+`web` subdirectory of your project, which is copied over and used in lieu
 of the default script produced by the build. This file is also templated, and
-you can insert several special tokens which the build step will substitute at
+you can insert several special tokens that the build step substitutes at
 build time when copying the `flutter_bootstrap.js` file to the output directory.
-Here is a list of the tokens that the build step will substitute in either the
+The following table lists the tokens that the build step will substitute in either the
 `flutter_bootstrap.js` or `index.html` files:
 
 <div class="table-wrapper">
 
-| Token | Replaced With |
+| Token | Replaced with |
 |---|---|
 | `{% raw %}{{flutter_js}}{% endraw %}` | The JavaScript code that makes the `FlutterLoader` object available in the `_flutter.loader` global variable. (See the `_flutter.loader.load() API` section below for more details.) |
 | `{% raw %}{{flutter_build_config}}{% endraw %}` | A JavaScript statement that sets metadata produced by the build process which gives the `FlutterLoader` information needed to properly bootstrap your application. |
@@ -84,14 +84,15 @@ Here is a list of the tokens that the build step will substitute in either the
 
 </div>
 
-## Writing a custom `flutter_bootstrap.js`
+## Write a custom `flutter_bootstrap.js`
 
 Any custom `flutter_bootstrap.js` script needs to have three components in order
 to successfully start your Flutter app:
 
 * A `{% raw %}{{flutter_js}}{% endraw %}` token, to make `_flutter.loader` available.
-* A `{% raw %}{{flutter_build_config}}{% endraw %}` token, which provides information about the build to the
-  `FlutterLoader` needed to start your app
+* A `{% raw %}{{flutter_build_config}}{% endraw %}` token, 
+  which provides information about the build to the
+  `FlutterLoader` needed to start your app.
 * A call to `_flutter.loader.load()`, which actually starts the app.
 
 The most basic `flutter_bootstrap.js` file would look something like this:
@@ -110,11 +111,12 @@ arguments to customize initialization behavior:
 
 <div class="table-wrapper">
 
-| Name | Description | JS&nbsp;Type |
+| Name | Description | JS&nbsp;type |
 |---|---|---|
 |`config`| The Flutter configuration of your app. |`Object`|
 |`onEntrypointLoaded`| The function called when the engine is ready to be initialized. Receives an `engineInitializer` object as its only parameter. |`Function`|
-|`serviceWorkerSettings`| The configuration for the `flutter_service_worker.js` loader. (If not set, the service worker won't be used.) |`Object`|
+|`serviceWorkerSettings`| The configuration for the `flutter_service_worker.js` loader.
+(If not set, the service worker isn't used.) |`Object`|
 
 {:.table}
 
@@ -124,7 +126,7 @@ The `config` argument is an object that can have the following optional fields:
 
 <div class="table-wrapper">
 
-| Name | Description | Dart&nbsp;Type |
+| Name | Description | Dart&nbsp;type |
 |---|---|---|
 |`assetBase`| The base URL of the `assets` directory of the app. Add this when Flutter loads from a different domain or subdirectory than the actual web app. You might need this when you embed Flutter web into another app, or when you deploy its assets to a CDN. |`String`|
 |`canvasKitBaseUrl`| The base URL from where `canvaskit.wasm` is downloaded. |`String`|
@@ -145,7 +147,7 @@ The `serviceWorkerSettings` argument has the following optional fields.
 
 <div class="table-wrapper">
 
-| Name | Description | JS&nbsp;Type |
+| Name | Description | JS&nbsp;type |
 |-|-|-|
 |`serviceWorkerUrl`| The URL of the Service Worker JS file. The `serviceWorkerVersion` is appended to the URL. Defaults to `"flutter_service_worker.js?v="` |`String`|
 |`serviceWorkerVersion`| Pass *the `serviceWorkerVersion` variable* set by the build process in your **`index.html`** file. |`String`|
@@ -155,11 +157,11 @@ The `serviceWorkerSettings` argument has the following optional fields.
 
 </div>
 
-## Example: Customizing Flutter Configuration Based on URL Query Parameters
+## Example: Customizing Flutter configuration based on URL query parameters
 
-Here is an example of a custom `flutter_bootstrap.js` that allows the user to
-force the CanvasKit renderer by providing a query parameter called
-`?force_canvaskit=true` in the URL of their website:
+The following example shows a custom `flutter_bootstrap.js` that allows
+the user to force the the app to use the `CanvasKit` renderer by providing
+a query parameter called `?force_canvaskit=true` in the URL of their website:
 
 ```js
 {% raw %}{{flutter_js}}{% endraw %}
@@ -176,8 +178,8 @@ _flutter.loader.load({
 });
 ```
 
-This script introspects the `URLSearchParams` of the page to determine whether
-passed the user passed `force_canvaskit=true`, and use that to change the user
+This script evaluates the `URLSearchParams` of the page to determine whether
+the user passed `force_canvaskit=true` and then changes the user
 configuration of the Flutter app. It also passes the service worker settings
 to use the flutter service worker, along with the service worker version.
 
@@ -196,7 +198,7 @@ during development.
 **Initializing the Flutter engine**
 : The `onEntrypointLoaded` callback receives an **engine initializer** object as
 its only parameter. Use the engine initializer to set the run-time
-configuration, and start the Flutter Web engine.
+configuration, and start the Flutter web engine.
 
 **Running the app**
 : The `initializeEngine()` function returns a [`Promise`][js-promise]
@@ -205,7 +207,7 @@ single method, `runApp()`, that runs the Flutter app.
 
 [js-promise]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 
-## Example: Display a Progress Indicator
+## Example: Display a progress indicator
 
 To give the user of your application feedback
 during the initialization process,
