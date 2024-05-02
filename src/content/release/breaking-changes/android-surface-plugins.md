@@ -2,8 +2,8 @@
 title: New APIs for Android plugins that render to a Surface
 description: >
   Adds a new API, `SurfaceProducer`, to the Android embedding API, which
-  transparently handles the creation and management of a `Surface` for plugins.
-  For Impeller, use of this API is required.
+  opaquely handles the creation and management of a `Surface` for plugins. For
+  Impeller, use of this API is required.
 ---
 
 ## Summary
@@ -31,9 +31,9 @@ this, the Android embedding API needed to be updated to support a more generic
 ## Migration guide
 
 If you are using the older [`createSurfaceTexture`][] API, you should migrate to
-the new [`createSurfacePRoducer`][] API. The new API is more flexible and allows
-the Flutter engine to transparently pick the best implementation for the
-current platform and API level.
+the new [`createSurfaceProducer`][] API. The new API is more flexible and allows
+the Flutter engine to opaquely pick the best implementation for the current
+platform and API level.
 
 1. Instead of creating a `SurfaceTextureEntry`, create a `SurfaceProducer`:
 
@@ -55,6 +55,9 @@ Otherwise, the API is the same as before.
 ## Timeline
 
 Landed in version: 3.22.0-12.0.pre-56
+
+> **NOTE**: This landed in the verison _before_ but was non-functional; plugins
+> that migrate to this API should set `3.22` as a minimum version constraint.
 
 In stable release: TBD
 
