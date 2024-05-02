@@ -19,10 +19,11 @@ process can be customized.
 ## `flutter_bootstrap.js`
 
 When building your flutter app, the `flutter build web` command will produce a
-script called `flutter_bootstrap.js` in the output build directory, which
-contains the JavaScript code needed to initialize and run your Flutter app. You
-can use this script by simply placing an async script tag for it in your
-`index.html` file in the `web` subdirectory of your flutter project:
+script called `flutter_bootstrap.js` in the output build directory
+(`build/web`), which contains the JavaScript code needed to initialize and run
+your Flutter app. You can use this script by simply placing an async script tag
+for it in your `index.html` file in the `web` subdirectory of your flutter
+project:
 
 ```html
 <html>
@@ -48,7 +49,7 @@ file by inserting the template token `{% raw %}{{flutter_bootstrap_js}}{% endraw
 
 The `{% raw %}{{flutter_bootstrap_js}}{% endraw %}` token will be replaced with the contents of the
 `flutter_bootstrap.js` file when the `index.html` file is copied to the output
-directory during the build step.
+directory (`build/web`) during the build step.
 
 ## Customizing Initialization
 
