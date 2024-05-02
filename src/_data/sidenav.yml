@@ -93,11 +93,11 @@
         - title: Intro to Flame with Flutter
           permalink: https://codelabs.developers.google.com/codelabs/flutter-flame-brick-breaker
     - title: Monetization
-#        - title: Overview
-#          permalink: xxx
       children:
         - title: Advertising
           children:
+          - title: Ads overview
+            permalink: /resources/ads-overview
           - title: Add advertising
             permalink: /cookbook/plugins/google-mobile-ads
           - title: Add AdMob ads to your Flutter app
@@ -106,10 +106,14 @@
             permalink: https://codelabs.developers.google.com/codelabs/admob-inline-ads-in-flutter
         - title: In-app purchases
           children:
+          - title: In-app purchases overview
+            permalink: /resources/in-app-purchases-overview
           - title: Add in-app purchases
             permalink: https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases
         - title: Payments
           children:
+          - title: Payments overview
+            permalink: /resources/payments-overview
           - title: Google pay package
             permalink: https://pub.dev/packages/pay
     - title: Maps
