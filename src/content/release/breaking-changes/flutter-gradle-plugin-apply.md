@@ -223,8 +223,12 @@ and remove these 2 lines from `<app-src>/android/app/build.gradle`:
 -apply plugin: 'com.google.firebase.crashlytics'
 ```
 
-To migrate to the new, declarative apply of the GMS and Crashlytics plugins, add
-the following lines to `<app-src>/android/settings.gradle`:
+To migrate to the new, declarative-apply syntax for
+the GMS and Crashlytics plugins, add them to `plugins` block
+in your app's `<app-src>/android/settings.gradle` file.
+The additions should look similar to the following,
+but with your desired plugin versions, likely matching
+the ones you removed from the `<app-src>/android/build.gradle` file.
 
 ```diff
  plugins {
