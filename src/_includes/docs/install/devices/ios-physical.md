@@ -74,11 +74,12 @@ This requires you to load signed developer certificates to your iOS device.
 To sign an app in Xcode,
 you need to create a development provisioning profile.
 
-Follow the Xcode signing flow to provision your project.
+To provision your project, follow the Xcode signing flow.
 
-1. Open Xcode.
+1. Launch Xcode.
 
-1. Sign in to Xcode with your Apple ID.
+1. Go to **Xcode** <span aria-label="and then">></span>
+   **Settings...**
 
    1. Go to **Xcode** <span aria-label="and then">></span>
       **Settings...**
@@ -140,10 +141,10 @@ When you attach your physical iOS device for the first time,
 enable trust for both your Mac and the Development Certificate
 on the iOS device.
 
-You should enabled trust of your Mac on your iOS device when
+You should have enabled trust of your Mac on your iOS device when
 you [attached the device to your Mac](#attach).
 
-###### Enable developer certificate for your iOS devices
+##### Enable developer certificate for your iOS devices
 
 Enabling certificates varies in different versions of iOS.
 
@@ -192,6 +193,11 @@ Enabling certificates varies in different versions of iOS.
 1. Tap on **General** <span aria-label="and then">></span>
     **VPN & Device Management**.
 
+    :::note
+    If you can't find **VPN & Device Management**
+    in **Settings**, run your app on your iOS device once, then try again.
+    :::
+
 1. Under the **Developer App** heading, you should find your certificate.
 
 1. Tap your Certificate.
@@ -204,8 +210,11 @@ Enabling certificates varies in different versions of iOS.
 </div>
 {% comment %} End: Tab panes. {% endcomment %}
 
-If prompted, enter your Mac password into the
-**codesign wants to access key...** dialog and tap **Always Allow**.
+If the **codesign wants to access key...** dialog displays:
+
+1. Enter your macOS password.
+
+1. Tap **Always Allow**.
 
 #### Set up wireless debugging on your iOS device (Optional)
 
