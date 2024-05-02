@@ -80,15 +80,15 @@ Follow the Xcode signing flow to provision your project.
 
 1. Sign in to Xcode with your Apple ID.
 
-   {: type="a"}
    1. Go to **Xcode** <span aria-label="and then">></span>
-      **Settings...*
+      **Settings...**
    1. Click **Accounts**.
-   . Click **+**.
-   . Select **Apple ID** and click **Continue**.
-   . When prompted, enter your **Apple ID** and **Password**.
-   . Close the **Settings** dialog.
-     Development and testing supports any Apple ID.
+   1. Click **+**.
+   1. Select **Apple ID** and click **Continue**.
+   1. When prompted, enter your **Apple ID** and **Password**.
+   1. Close the **Settings** dialog.
+
+   Development and testing supports any Apple ID.
 
 1. Go to **File** <span aria-label="and then">></span> **Open...**
 
@@ -123,14 +123,14 @@ Follow the Xcode signing flow to provision your project.
 
    After you select a team, Xcode performs the following tasks:
 
-   {: type="a"}
    1. Creates and downloads a Development Certificate
    1. Registers your device with your account,
    1. Creates and downloads a provisioning profile if needed
-      If automatic signing fails in Xcode, verify that the project's
-      **General** <span aria-label="and then">></span>
-      **Identity** <span aria-label="and then">></span>
-      **Bundle Identifier** value is unique.
+
+If automatic signing fails in Xcode, verify that the project's
+**General** <span aria-label="and then">></span>
+**Identity** <span aria-label="and then">></span>
+**Bundle Identifier** value is unique.
 
 ![Check the app's Bundle ID][]{:.mw-100}
 
@@ -201,7 +201,8 @@ Enabling certificates varies in different versions of iOS.
 1. When the dialog displays, tap **Trust**.
 
 </div>
-</div>{% comment %} End: Tab panes. {% endcomment -%}
+</div>
+{% comment %} End: Tab panes. {% endcomment %}
 
 If prompted, enter your Mac password into the
 **codesign wants to access key...** dialog and tap **Always Allow**.
