@@ -143,13 +143,14 @@ The `config` argument is an object that can have the following optional fields:
 
 The `serviceWorkerSettings` argument has the following optional fields.
 
-<div class="table-wrapper" markdown="1">
+<div class="table-wrapper">
 
 | Name | Description | JS&nbsp;Type |
 |-|-|-|
 |`serviceWorkerUrl`| The URL of the Service Worker JS file. The `serviceWorkerVersion` is appended to the URL. Defaults to `"flutter_service_worker.js?v="` |`String`|
 |`serviceWorkerVersion`| Pass *the `serviceWorkerVersion` variable* set by the build process in your **`index.html`** file. |`String`|
 |`timeoutMillis`| The timeout value for the service worker load. Defaults to `4000`. |`Number`|
+
 {:.table}
 
 </div>
