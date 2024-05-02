@@ -1,5 +1,26 @@
 {% assign route = page.url|regex_replace:'/index$|/index\.html$|\.html$|/$' %}
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const getParameterByName = (name, url = window.location.href) => {
+      name = name.replace(/[\[\]]/g, "\\$&");
+      const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return "";
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
+    };
+    const isKawaii = getParameterByName("kawaii") === "true";
+    if (isKawaii) {
+      const logoImage = document.querySelector(".navbar-brand img");
+      logoImage.src = "/assets/images/branding/flutter/logo/logo-cute.png";
+      logoImage.alt = "Kawaii Flutter logo";
+      logoImage.height = 56;
+      logoImage.width = 84;
+    }
+  });
+</script>
+
 <header class="site-header">
   <nav class="navbar navbar-expand-md justify-content-start justify-content-md-between">
     <button
