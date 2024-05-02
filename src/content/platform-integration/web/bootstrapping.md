@@ -71,7 +71,7 @@ build time when copying the `flutter_bootstrap.js` file to the output directory.
 Here is a list of the tokens that the build step will substitute in either the
 `flutter_bootstrap.js` or `index.html` files:
 
-<div class="table-wrapper" markdown="1">
+<div class="table-wrapper">
 
 | Token | Replaced With |
 |---|---|
@@ -79,6 +79,7 @@ Here is a list of the tokens that the build step will substitute in either the
 | `{% raw %}{{flutter_build_config}}{% endraw %}` | A JavaScript statement that sets metadata produced by the build process which gives the `FlutterLoader` information needed to properly bootstrap your application. |
 | `{% raw %}{{flutter_service_worker_version}}{% endraw %}` | A unique number representing the build version of the service worker, which can be passed as part of the service worker configuration (see the "Service Worker Settings" table below). |
 | `{% raw %}{{flutter_bootstrap_js}}{% endraw %}` | As mentioned above, this inlines the contents of the `flutter_bootstrap.js` file directly into the `index.html` file. Note that this token can only be used in the `index.html` and not the `flutter_bootstrap.js` file itself. |
+
 {:.table}
 
 </div>
@@ -107,20 +108,21 @@ _flutter.loader.load();
 The `_flutter.loader.load()` JavaScript API can also be invoked with a few
 different optional arguments that can customize initialization behavior:
 
-<div class="table-wrapper" markdown="1">
+<div class="table-wrapper">
 
 | Name | Description | JS&nbsp;Type |
 |---|---|---|
 |`config`| The Flutter configuration of your app. |`Object`|
 |`onEntrypointLoaded`| The function called when the engine is ready to be initialized. Receives an `engineInitializer` object as its only parameter. |`Function`|
 |`serviceWorkerSettings`| The configuration for the `flutter_service_worker.js` loader. (If not set, the service worker won't be used.) |`Object`|
+
 {:.table}
 
 </div>
 
 The `config` argument is an object that can have the following optional fields:
 
-<div class="table-wrapper" markdown="1">
+<div class="table-wrapper">
 
 | Name | Description | Dart&nbsp;Type |
 |---|---|---|
@@ -132,6 +134,7 @@ The `config` argument is an object that can have the following optional fields:
 |`debugShowSemanticNodes`| If `true`, Flutter visibly renders the semantics tree onscreen (for debugging).  |`bool`|
 |`hostElement`| HTML Element into which Flutter renders the app. When not set, Flutter web takes over the whole page. |`HtmlElement`|
 |`renderer`| Specifies the [web renderer][web-renderers] for the current Flutter application, either `"canvaskit"` or `"html"`. |`String`|
+
 {:.table}
 
 </div>
