@@ -74,7 +74,7 @@ Here is a list of the tokens that the build step will substitute in either the
 <div class="table-wrapper" markdown="1">
 
 | Token | Replaced With |
-|-|-|
+|---|---|
 | `{% raw %}{{flutter_js}}{% endraw %}` | The JavaScript code that makes the `FlutterLoader` object available in the `_flutter.loader` global variable. (See the `_flutter.loader.load() API` section below for more details.) |
 | `{% raw %}{{flutter_build_config}}{% endraw %}` | A JavaScript statement that sets metadata produced by the build process which gives the `FlutterLoader` information needed to properly bootstrap your application. |
 | `{% raw %}{{flutter_service_worker_version}}{% endraw %}` | A unique number representing the build version of the service worker, which can be passed as part of the service worker configuration (see the "Service Worker Settings" table below). |
@@ -110,7 +110,7 @@ different optional arguments that can customize initialization behavior:
 <div class="table-wrapper" markdown="1">
 
 | Name | Description | JS&nbsp;Type |
-|-|-|-|
+|---|---|---|
 |`config`| The Flutter configuration of your app. |`Object`|
 |`onEntrypointLoaded`| The function called when the engine is ready to be initialized. Receives an `engineInitializer` object as its only parameter. |`Function`|
 |`serviceWorkerSettings`| The configuration for the `flutter_service_worker.js` loader. (If not set, the service worker won't be used.) |`Object`|
@@ -123,7 +123,7 @@ The `config` argument is an object that can have the following optional fields:
 <div class="table-wrapper" markdown="1">
 
 | Name | Description | Dart&nbsp;Type |
-|-|-|-|
+|---|---|---|
 |`assetBase`| The base URL of the `assets` directory of the app. Add this when Flutter loads from a different domain or subdirectory than the actual web app. You might need this when you embed Flutter web into another app, or when you deploy its assets to a CDN. |`String`|
 |`canvasKitBaseUrl`| The base URL from where `canvaskit.wasm` is downloaded. |`String`|
 |`canvasKitVariant`| The CanvasKit variant to download. Your options cover:<br><br>1. `auto`: Downloads the optimal variant for the browser. The option defaults to this value.<br>2. `full`: Downloads the full variant of CanvasKit that works in all browsers.<br>3. `chromium`: Downloads a smaller variant of CanvasKit that uses Chromium compatible APIs. **_Warning_**: Don't use the `chromium` option unless you plan on only using Chromium-based browsers. |`String`|
