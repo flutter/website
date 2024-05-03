@@ -65,8 +65,6 @@ in the same IDE.
 You can also use IntelliJ Flutter plugin functionality like
 Dart code completion, hot reload, and widget inspector.
 
-Android Studio supports add-to-app flows on Android Studio 2022.2 or later
-with the [Flutter plugin][] for IntelliJ.
 To build your app, the Android Studio plugin configures your
 Android project to add your Flutter module as a dependency.
 
