@@ -1,5 +1,5 @@
 {% assign alt = include.alt | default: include.caption -%}
-{% assign caption = include.caption | default: '' '-%}
+{% assign caption = include.caption | default: '' -%}
 {% if include.width -%}
 {% assign width = 'width: ' | append: include.width | append: ';' -%}
 {% else -%}
