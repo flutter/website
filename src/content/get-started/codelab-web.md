@@ -75,13 +75,12 @@ make sure that you have Flutter installed correctly.
 ```console
 $ flutter doctor
 Doctor summary (to see all details, run flutter doctor -v):
-[✓] Flutter (Channel master, 3.4.0-19.0.pre.254, on macOS 12.6 21G115
-    darwin-arm64, locale en)
-[✓] Android toolchain - develop for Android devices (Android SDK version 33.0.0)
-[✓] Xcode - develop for iOS and macOS (Xcode 14.0)
+[✓] Flutter (Channel stable, {{site.appnow.flutter}}, on macOS darwin-arm64, locale en)
+[✓] [✓] Android toolchain - develop for Android devices (Android SDK version {{site.appnow.android_sdk}})
+[✓] Xcode - develop for iOS and macOS (Xcode {{site.appnow.xcode}})
 [✓] Chrome - develop for the web
-[✓] Android Studio (version 2021.2)
-[✓] VS Code (version 1.71.1)
+[✓] Android Studio (version {{site.appnow.android_studio}})
+[✓] VS Code (version {{site.appnow.vscode}})
 [✓] Connected device (4 available)
 [✓] HTTP Host Availability
 
@@ -475,7 +474,7 @@ void _updateFormProgress() {
 }
 ```
 
-This method updates the `_formProgress` field based on the
+This method updates the `_formProgress` field based on
 the number of non-empty text fields.
 
 </li>
