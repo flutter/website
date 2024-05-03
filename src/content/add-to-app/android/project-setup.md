@@ -34,7 +34,7 @@ android {
 }
 ```
 
-The Flutter engine has an `x86` and `x86_64` version.
+The Flutter engine also has an `x86_64` version.
 When using an emulator in debug Just-In-Time (JIT) mode,
 the Flutter module still runs correctly.
 :::

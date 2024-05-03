@@ -83,8 +83,8 @@ devmin:
     debian: 11
     ubuntu: '20.04 LTS'
 targetmin:
-  windows: 'Microsoft Windows 7'
-  macos: '10.14 (Ventura)'
+  windows: 'Microsoft Windows 10'
+  macos: '10.14 (Mojave)'
   linux:
     debian: 10
     ubuntu: '18.04 LTS'
