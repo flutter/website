@@ -76,7 +76,7 @@ make sure that you have Flutter installed correctly.
 $ flutter doctor
 Doctor summary (to see all details, run flutter doctor -v):
 [✓] Flutter (Channel stable, {{site.appnow.flutter}}, on macOS darwin-arm64, locale en)
-[✓] [✓] Android toolchain - develop for Android devices (Android SDK version {{site.appnow.android_sdk}})
+[✓] Android toolchain - develop for Android devices (Android SDK version {{site.appnow.android_sdk}})
 [✓] Xcode - develop for iOS and macOS (Xcode {{site.appnow.xcode}})
 [✓] Chrome - develop for the web
 [✓] Android Studio (version {{site.appnow.android_studio}})
