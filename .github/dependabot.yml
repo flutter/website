@@ -735,7 +735,7 @@ updates:
       - "lang.dart"
   - package-ecosystem: "pub"
     versioning-strategy: "increase-if-necessary"
-    directory: "/examples/development/ui/interactive"
+    directory: "/examples/ui/interactive"
     schedule:
       interval: "daily"
     labels:

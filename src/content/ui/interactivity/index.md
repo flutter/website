@@ -386,7 +386,7 @@ The `_TapboxAState` class:
   `setState()` function to update the UI.
 * Implements all interactive behavior for the widget.
 
-<?code-excerpt path-base="development/ui/interactive/"?>
+<?code-excerpt path-base="ui/interactive/"?>
 
 <?code-excerpt "lib/self_managed.dart"?>
 ```dart
