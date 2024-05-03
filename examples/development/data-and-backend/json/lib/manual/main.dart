@@ -2,14 +2,14 @@ import 'dart:convert';
 
 import 'user.dart';
 
-// #docregion JSON
+// #docregion multiline-json
 const jsonString = '''
 {
   "name": "John Smith",
   "email": "john@example.com"
 }
 ''';
-// #enddocregion JSON
+// #enddocregion multiline-json
 
 void example() {
   // #docregion manual
@@ -21,16 +21,16 @@ void example() {
 }
 
 void exampleJson() {
-  // #docregion fromJson
+  // #docregion from-json
   final userMap = jsonDecode(jsonString) as Map<String, dynamic>;
   final user = User.fromJson(userMap);
 
   print('Howdy, ${user.name}!');
   print('We sent the verification link to ${user.email}.');
-  // #enddocregion fromJson
+  // #enddocregion from-json
 
-  // #docregion jsonEncode
+  // #docregion json-encode
   // ignore: unused_local_variable
   String json = jsonEncode(user);
-  // #enddocregion jsonEncode
+  // #enddocregion json-encode
 }

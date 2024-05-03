@@ -106,7 +106,7 @@ construct new widgets in the build methods of their parents,
 if you want to change `contents`, it needs to live in `MyCart`'s
 parent or above.
 
-<?code-excerpt "lib/src/provider.dart (myTapHandler)"?>
+<?code-excerpt "lib/src/provider.dart (my-tap-handler)"?>
 ```dart
 // GOOD
 void myTapHandler(BuildContext context) {
@@ -386,7 +386,7 @@ It is best practice to put your `Consumer` widgets as deep in the tree
 as possible. You don't want to rebuild large portions of the UI
 just because some detail somewhere changed.
 
-<?code-excerpt "lib/src/performance.dart (nonLeafDescendant)"?>
+<?code-excerpt "lib/src/performance.dart (non-leaf-descendant)"?>
 ```dart
 // DON'T DO THIS
 return Consumer<CartModel>(
@@ -404,7 +404,7 @@ return Consumer<CartModel>(
 
 Instead:
 
-<?code-excerpt "lib/src/performance.dart (leafDescendant)"?>
+<?code-excerpt "lib/src/performance.dart (leaf-descendant)"?>
 ```dart
 // DO THIS
 return HumongousWidget(
@@ -435,7 +435,7 @@ rebuild a widget that doesn't need to be rebuilt.
 For this use case, we can use `Provider.of`,
 with the `listen` parameter set to `false`.
 
-<?code-excerpt "lib/src/performance.dart (nonRebuilding)" replace="/listen: false/[!$&!]/g"?>
+<?code-excerpt "lib/src/performance.dart (non-rebuilding)" replace="/listen: false/[!$&!]/g"?>
 ```dart
 Provider.of<CartModel>(context, [!listen: false!]).removeAll();
 ```

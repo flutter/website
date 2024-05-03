@@ -14,7 +14,7 @@ class HelperScaffoldWrapper extends StatelessWidget {
   }
 }
 
-// #docregion Ephemeral
+// #docregion ephemeral
 class MyHomepage extends StatefulWidget {
   const MyHomepage({super.key});
 
@@ -34,13 +34,13 @@ class _MyHomepageState extends State<MyHomepage> {
           _index = newIndex;
         });
       },
-      // #enddocregion Ephemeral
+      // #enddocregion ephemeral
       items: const [
         BottomNavigationBarItem(label: 'abc', icon: Icon(Icons.title)),
         BottomNavigationBarItem(label: 'def', icon: Icon(Icons.map)),
       ],
-      // #docregion Ephemeral
+      // #docregion ephemeral
     );
   }
 }
-// #enddocregion Ephemeral
+// #enddocregion ephemeral

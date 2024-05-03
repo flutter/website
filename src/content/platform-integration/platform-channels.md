@@ -272,13 +272,13 @@ All channel names used in a single app must
 be unique; prefix the channel name with a unique 'domain
 prefix', for example: `samples.flutter.dev/battery`.
 
-<?code-excerpt "lib/platform_channels.dart (Import)"?>
+<?code-excerpt "lib/platform_channels.dart (import)"?>
 ```dart
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 ```
-<?code-excerpt "lib/platform_channels.dart (MyHomePageState)"?>
+<?code-excerpt "lib/platform_channels.dart (my-home-page-state)"?>
 ```dart
 class _MyHomePageState extends State<MyHomePage> {
   static const platform = MethodChannel('samples.flutter.dev/battery');
@@ -296,7 +296,7 @@ so wrap the `invokeMethod` call in a try-catch statement.
 Use the returned result to update the user interface state in `_batteryLevel`
 inside `setState`.
 
-<?code-excerpt "lib/platform_channels.dart (GetBattery)"?>
+<?code-excerpt "lib/platform_channels.dart (get-battery)"?>
 ```dart
 // Get battery level.
 String _batteryLevel = 'Unknown battery level.';
@@ -320,7 +320,7 @@ Finally, replace the `build` method from the template to
 contain a small user interface that displays the battery
 state in a string, and a button for refreshing the value.
 
-<?code-excerpt "lib/platform_channels.dart (Build)"?>
+<?code-excerpt "lib/platform_channels.dart (build)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -1139,7 +1139,7 @@ and Swift (with Objective-C interop).
 
 **Pigeon file:**
 
-<?code-excerpt "lib/pigeon_source.dart (Search)"?>
+<?code-excerpt "lib/pigeon_source.dart (search)"?>
 ```dart
 import 'package:pigeon/pigeon.dart';
 
@@ -1164,7 +1164,7 @@ abstract class Api {
 
 **Dart usage:**
 
-<?code-excerpt "lib/use_pigeon.dart (UseApi)"?>
+<?code-excerpt "lib/use_pigeon.dart (use-api)"?>
 ```dart
 import 'generated_pigeon.dart';
 

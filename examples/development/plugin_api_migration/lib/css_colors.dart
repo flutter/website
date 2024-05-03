@@ -1,4 +1,4 @@
-// #docregion CssColors
+// #docregion css-colors
 import 'package:css_colors/css_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -25,4 +25,4 @@ class DemoPage extends StatelessWidget {
     return Scaffold(body: Container(color: CSSColors.orange));
   }
 }
-// #enddocregion CssColors
+// #enddocregion css-colors

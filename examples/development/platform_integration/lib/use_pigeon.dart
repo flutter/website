@@ -1,6 +1,6 @@
 // ignore_for_file: avoid_print
 
-// #docregion UseApi
+// #docregion use-api
 import 'generated_pigeon.dart';
 
 Future<void> onClick() async {
@@ -9,6 +9,6 @@ Future<void> onClick() async {
   SearchReply reply = await api.search(request);
   print('reply: ${reply.result}');
 }
-// #enddocregion UseApi
+// #enddocregion use-api
 
 class SomeApi extends Api {}

@@ -246,7 +246,7 @@ but aren't required.
    This is a smoke test to ensure that the plugin properly registers
    with the new embedder. For example:
 
-    <?code-excerpt "lib/test.dart (Test)"?>
+    <?code-excerpt "lib/test.dart (test)"?>
     ```dart
     import 'package:flutter_test/flutter_test.dart';
     import 'package:integration_test/integration_test.dart';
