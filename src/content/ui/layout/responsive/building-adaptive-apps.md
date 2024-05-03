@@ -543,7 +543,7 @@ of [`Actions`][], [`Shortcuts`][], [`MouseRegion`][], and
 and key bindings, and provides callbacks for handling focus
 and hover highlights.
 
-<?code-excerpt "lib/pages/focus_examples_page.dart (_BasicActionDetectorState)"?>
+<?code-excerpt "lib/pages/focus_examples_page.dart (focusable-action-detector)"?>
 ```dart
 class _BasicActionDetectorState extends State<BasicActionDetector> {
   bool _hasFocus = false;
@@ -593,7 +593,7 @@ of the tree that should be treated as a group when tabbing.
 For example, you might to tab through all the fields in
 a form before tabbing to the submit button:
 
-<?code-excerpt "lib/pages/focus_examples_page.dart (FocusTraversalGroup)"?>
+<?code-excerpt "lib/pages/focus_examples_page.dart (focus-traversal-group)"?>
 ```dart
 return Column(children: [
   FocusTraversalGroup(
@@ -771,7 +771,7 @@ for your standard button and text cursors.
 To change the cursor from within your own widgets,
 use [`MouseRegion`][]:
 
-<?code-excerpt "lib/pages/focus_examples_page.dart (MouseRegion)"?>
+<?code-excerpt "lib/pages/focus_examples_page.dart (mouse-region)"?>
 ```dart
 // Show hand cursor
 return MouseRegion(
@@ -790,7 +790,7 @@ return MouseRegion(
 `MouseRegion` is also useful for creating custom
 rollover and hover effects:
 
-<?code-excerpt "lib/pages/focus_examples_page.dart (MouseOver)"?>
+<?code-excerpt "lib/pages/focus_examples_page.dart (mouse-over)"?>
 ```dart
 return MouseRegion(
   onEnter: (_) => setState(() => _isMouseOver = true),

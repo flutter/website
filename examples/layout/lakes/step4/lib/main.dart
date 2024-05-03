@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
 
-// #docregion TextAdd
+// #docregion text-add
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-// #enddocregion TextAdd
+    // #enddocregion text-add
     const String appTitle = 'Flutter layout demo';
     return MaterialApp(
       title: appTitle,
@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text(appTitle),
         ),
-        // #docregion addWidget
-        // #docregion TextAdd
+        // #docregion add-widget
+        // #docregion text-add
         body: const SingleChildScrollView(
           child: Column(
             children: [
@@ -39,12 +39,12 @@ class MyApp extends StatelessWidget {
             ],
           ),
         ),
-        // #enddocregion addWidget
+        // #enddocregion add-widget
       ),
     );
   }
 }
-// #enddocregion TextAdd
+// #enddocregion text-add
 
 class TitleSection extends StatelessWidget {
   const TitleSection({
@@ -164,7 +164,7 @@ class ButtonWithText extends StatelessWidget {
   }
 }
 
-// #docregion TextSection
+// #docregion text-section
 class TextSection extends StatelessWidget {
   const TextSection({
     super.key,
@@ -184,4 +184,4 @@ class TextSection extends StatelessWidget {
     );
   }
 }
-// #enddocregion TextSection
+// #enddocregion text-section
