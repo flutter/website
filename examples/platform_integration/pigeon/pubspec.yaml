@@ -1,5 +1,5 @@
-name: platform_integration
-description: Examples for documenting platform integration.
+name: pigeon_examples
+description: Examples showing how to use pigeon for platform integration.
 
 publish_to: none
 

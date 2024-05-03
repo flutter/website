@@ -4,7 +4,7 @@ short-title: iOS platform-views
 description: Learn how to host native iOS views in your Flutter app with Platform Views.
 ---
 
-<?code-excerpt path-base="development/platform_integration"?>
+<?code-excerpt path-base="platform_integration/platform_views"?>
 
 Platform views allow you to embed native views in a Flutter app,
 so you can apply transforms, clips, and opacity to the native view
@@ -46,7 +46,7 @@ shown in `native_view_example.dart`:
 
 Add the following imports:
 
-<?code-excerpt "lib/platform_views/native_view_example_3.dart (import)"?>
+<?code-excerpt "lib/native_view_example_3.dart (import)"?>
 ```dart
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -58,7 +58,7 @@ import 'package:flutter/services.dart';
 
 Implement a `build()` method:
 
-<?code-excerpt "lib/platform_views/native_view_example_3.dart (iOSCompositionWidget)"?>
+<?code-excerpt "lib/native_view_example_3.dart (iOSCompositionWidget)"?>
 ```dart
 Widget build(BuildContext context) {
   // This is used in the platform side to register the view.
@@ -354,7 +354,7 @@ When implementing the `build()` method in Dart,
 you can use [`defaultTargetPlatform`][]
 to detect the platform, and decide which widget to use:
 
-<?code-excerpt "lib/platform_views/native_view_example_3.dart (TogetherWidget)"?>
+<?code-excerpt "lib/native_view_example_3.dart (TogetherWidget)"?>
 ```dart
 Widget build(BuildContext context) {
   // This is used in the platform side to register the view.

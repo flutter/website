@@ -3,7 +3,7 @@ title: "Binding to native Android code using dart:ffi"
 description: "To use C code in your Flutter program, use the dart:ffi library."
 ---
 
-<?code-excerpt path-base="development/platform_integration"?>
+<?code-excerpt path-base="platform_integration"?>
 
 Flutter mobile and desktop apps can use the
 [dart:ffi][] library to call native C APIs.
