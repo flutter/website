@@ -66,7 +66,7 @@ use the following instructions:
 
 1. Add the following imports:  
    
-   <?code-excerpt "lib/platform_views/native_view_example_1.dart (Import)"?>
+   <?code-excerpt "lib/platform_views/native_view_example_1.dart (import)"?>
    ```dart
    import 'package:flutter/foundation.dart';
    import 'package:flutter/gestures.dart';
@@ -77,7 +77,7 @@ use the following instructions:
     
 2. Implement a `build()` method:
   
-   <?code-excerpt "lib/platform_views/native_view_example_1.dart (HybridCompositionWidget)"?>
+   <?code-excerpt "lib/platform_views/native_view_example_1.dart (hybrid-composition)"?>
    ```dart
    Widget build(BuildContext context) {
      // This is used in the platform side to register the view.
@@ -130,7 +130,7 @@ use the following instructions:
 
 1. Add the following imports:
    
-   <?code-excerpt "lib/platform_views/native_view_example_2.dart (Import)"?>
+   <?code-excerpt "lib/platform_views/native_view_example_2.dart (import)"?>
    ```dart
    import 'package:flutter/material.dart';
    import 'package:flutter/services.dart';
@@ -138,7 +138,7 @@ use the following instructions:
 
 2. Implement a `build()` method:
 
-   <?code-excerpt "lib/platform_views/native_view_example_2.dart (VirtualDisplayWidget)"?>
+   <?code-excerpt "lib/platform_views/native_view_example_2.dart (virtual-display)"?>
    ```dart
    Widget build(BuildContext context) {
      // This is used in the platform side to register the view.

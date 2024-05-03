@@ -58,7 +58,7 @@ import 'package:flutter/services.dart';
 
 Implement a `build()` method:
 
-<?code-excerpt "lib/platform_views/native_view_example_3.dart (iOSCompositionWidget)"?>
+<?code-excerpt "lib/platform_views/native_view_example_3.dart (ios-composition)"?>
 ```dart
 Widget build(BuildContext context) {
   // This is used in the platform side to register the view.
@@ -354,7 +354,7 @@ When implementing the `build()` method in Dart,
 you can use [`defaultTargetPlatform`][]
 to detect the platform, and decide which widget to use:
 
-<?code-excerpt "lib/platform_views/native_view_example_3.dart (TogetherWidget)"?>
+<?code-excerpt "lib/platform_views/native_view_example_3.dart (together-widget)"?>
 ```dart
 Widget build(BuildContext context) {
   // This is used in the platform side to register the view.

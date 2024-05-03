@@ -76,7 +76,7 @@ $ flutter pub add intl:any
 
 This creates a `pubspec.yml` file with the following entries:
 
-<?code-excerpt "gen_l10n_example/pubspec.yaml (FlutterLocalizations)"?>
+<?code-excerpt "gen_l10n_example/pubspec.yaml (flutter-localizations)"?>
 ```yaml
 dependencies:
   flutter:
@@ -216,7 +216,7 @@ complete the following instructions:
 2. Open the `pubspec.yaml` file and enable the `generate` flag. 
    This flag is found in the `flutter` section in the pubspec file.
 
-   <?code-excerpt "gen_l10n_example/pubspec.yaml (Generate)"?>
+   <?code-excerpt "gen_l10n_example/pubspec.yaml (generate)"?>
    ```yaml
    # The following section is specific to Flutter.
    flutter:
