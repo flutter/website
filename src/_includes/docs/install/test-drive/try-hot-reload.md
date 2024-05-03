@@ -1,6 +1,6 @@
 After the app build completes, your device displays your app.
 
-{% include docs/app-figure.md img-class="site-mobile-screenshot border" image="get-started/starter-app.png" caption="Starter app on macOS" %}
+{% include docs/app-figure.md img-class="site-mobile-screenshot border" image="get-started/macos/starter-app.png" caption="Starter app on macOS" %}
 
 ## Try hot reload
 
