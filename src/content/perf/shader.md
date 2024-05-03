@@ -4,7 +4,7 @@ short-title: Shader jank
 description: What is shader jank and how to minimize it.
 ---
 
-{% include docs/performance.md %}
+{% render docs/performance.md %}
 
 If the animations on your mobile app appear to be janky,
 but only on the first run,

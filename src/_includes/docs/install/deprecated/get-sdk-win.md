@@ -1,6 +1,6 @@
 ## Get the Flutter SDK
 
-{% include docs/china-notice.md %}
+{% render docs/china-notice.md %}
 
 {% include docs/install/deprecated/help-link.md location='win-get-sdk' %}
 

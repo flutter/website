@@ -48,7 +48,7 @@ you have installed [Visual Studio Code][]
    {% if include.os == "Windows" -%}
    Consider `%USERPROFILE%` or `C:\dev`.
 
-   {% include docs/install/admonitions/install-paths.md %}
+   {% render docs/install/admonitions/install-paths.md %}
    {% else -%}
    Consider `~/development/`
    {% endif %}

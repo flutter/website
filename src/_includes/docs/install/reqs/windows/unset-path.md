@@ -4,7 +4,7 @@
 To remove Flutter commands from {{include.terminal}},
 remove Flutter to the `PATH` environment variable.
 
-{% include docs/install/reqs/windows/open-envvars.md %}
+{% render docs/install/reqs/windows/open-envvars.md %}
 
 1. Under **User variables for (username)** section,
    look for the **Path** entry.

@@ -63,7 +63,7 @@ consists of a [Material App][] home screen containing:
 
 To view the example, Click **Run**:
 
-{% include docs/implicit-animations/fade-in-starter-code.md %}
+{% render docs/implicit-animations/fade-in-starter-code.md %}
 
 ### Animate opacity with AnimatedOpacity widget
 
@@ -200,7 +200,7 @@ The `AnimatedOpacity` widget manages everything in between.
 Here's the example with the completed changes you've made.
 Run this example then click **Show details** to trigger the animation.
 
-{% include docs/implicit-animations/fade-in-complete.md %}
+{% render docs/implicit-animations/fade-in-complete.md %}
 
 ### Putting it all together
 
@@ -242,7 +242,7 @@ It starts with a [Material App][] home screen that contains:
 
 To start the example, click **Run**.
 
-{% include docs/implicit-animations/shape-shifting-starter-code.md %}
+{% render docs/implicit-animations/shape-shifting-starter-code.md %}
 
 ### Animate color, borderRadius, and margin with AnimatedContainer
 
@@ -378,7 +378,7 @@ Run the code and click **Change** to trigger the animation.
 Each time you click **Change**, the shape animates to its new values
 for `margin`, `borderRadius`, and `color`.
 
-{% include docs/implicit-animations/shape-shifting-complete.md %}
+{% render docs/implicit-animations/shape-shifting-complete.md %}
 
 ### Using animation curves
 

@@ -4,7 +4,7 @@ subtitle: Where to look when your Flutter app drops frames in the UI.
 description: Diagnosing UI performance issues in Flutter.
 ---
 
-{% include docs/performance.md %}
+{% render docs/performance.md %}
 
 :::secondary What you'll learn
 * Flutter aims to provide 60 frames per second (fps) performance,
