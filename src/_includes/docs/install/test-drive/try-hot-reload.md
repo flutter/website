@@ -1,8 +1,6 @@
 After the app build completes, your device displays your app.
 
-{% include docs/app-figure.md img-class="site-mobile-screenshot border"
-    path-prefix="get-started" platform="macOS" image="starter-app.png"
-    caption="Starter app" %}
+{% include docs/app-figure.md img-class="site-mobile-screenshot border" platform="macOS" image="get-started/starter-app.png" caption="Starter app" %}
 
 ## Try hot reload
 
@@ -32,6 +30,4 @@ You can change your app source code, run the hot reload command in
 
 Your app updates the string as you watch.
 
-{% include docs/app-figure.md img-class="site-mobile-screenshot border"
-    path-prefix="get-started" platform="macOS" image="starter-app-hot-reload.png"
-    caption="Starter app after hot reload" %}
+{% include docs/app-figure.md img-class="site-mobile-screenshot border" platform="macOS" image="get-started/starter-app-hot-reload.png" caption="Starter app after hot reload" %}
