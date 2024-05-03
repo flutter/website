@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 Widget layoutBuilderWidget() {
-  // #docregion LayoutBuilder
+  // #docregion layout-builder
   Widget foo = LayoutBuilder(builder: (context, constraints) {
     bool useVerticalLayout = constraints.maxWidth < 400;
     return Flex(
@@ -16,7 +16,7 @@ Widget layoutBuilderWidget() {
       ],
     );
   });
-  // #enddocregion LayoutBuilder
+  // #enddocregion layout-builder
 
   return foo;
 }
@@ -25,14 +25,14 @@ class ScrollListen extends StatelessWidget {
   const ScrollListen({super.key});
 
   Widget scrollListener(BuildContext context) {
-    // #docregion PointerScroll
+    // #docregion pointer-scroll
     return Listener(
       onPointerSignal: (event) {
         if (event is PointerScrollEvent) print(event.scrollDelta.dy);
       },
       child: ListView(),
     );
-    // #enddocregion PointerScroll
+    // #enddocregion pointer-scroll
   }
 
   @override
@@ -42,7 +42,7 @@ class ScrollListen extends StatelessWidget {
   }
 }
 
-// #docregion Shortcuts
+// #docregion shortcuts
 // Define a class for each type of shortcut action you want
 class CreateNewItemIntent extends Intent {
   const CreateNewItemIntent();
@@ -70,7 +70,7 @@ Widget build(BuildContext context) {
     ),
   );
 }
-// #enddocregion Shortcuts
+// #enddocregion shortcuts
 
 void _createNewItem() {
   // ignore: unnecessary_statements
@@ -87,12 +87,12 @@ class MyWidget extends StatefulWidget {
 }
 
 class _MyWidgetState extends State<MyWidget> {
-  // #docregion MultiSelectShift
+  // #docregion multi-select-shift
   static bool get isSpanSelectModifierDown =>
       isKeyDown({LogicalKeyboardKey.shiftLeft, LogicalKeyboardKey.shiftRight});
-  // #enddocregion MultiSelectShift
+  // #enddocregion multi-select-shift
 
-  // #docregion MultiSelectModifierDown
+  // #docregion multi-select-modifier-down
   static bool get isMultiSelectModifierDown {
     bool isDown = false;
     if (Platform.isMacOS) {
@@ -106,9 +106,9 @@ class _MyWidgetState extends State<MyWidget> {
     }
     return isDown;
   }
-  // #enddocregion MultiSelectModifierDown
+  // #enddocregion multi-select-modifier-down
 
-  // #docregion HandleKey
+  // #docregion handle-key
   bool _handleKey(KeyEvent event) {
     bool isShiftDown = isKeyDown({
       LogicalKeyboardKey.shiftLeft,
@@ -122,15 +122,15 @@ class _MyWidgetState extends State<MyWidget> {
 
     return false;
   }
-  // #enddocregion HandleKey
+  // #enddocregion handle-key
 
-  // #docregion KeysPressed
+  // #docregion keys-pressed
   static bool isKeyDown(Set<LogicalKeyboardKey> keys) {
     return keys
         .intersection(HardwareKeyboard.instance.logicalKeysPressed)
         .isNotEmpty;
   }
-  // #enddocregion KeysPressed
+  // #enddocregion keys-pressed
 
   // #docregion hardware-keyboard
   @override
@@ -156,13 +156,13 @@ class _MyWidgetState extends State<MyWidget> {
 }
 
 Widget selectableTextWidget() {
-  // #docregion SelectableText
+  // #docregion selectable-text
   return const SelectableText('Select me!');
-  // #enddocregion SelectableText
+  // #enddocregion selectable-text
 }
 
 Widget richTextSpan() {
-  // #docregion RichTextSpan
+  // #docregion rich-text-span
   return const SelectableText.rich(
     TextSpan(
       children: [
@@ -171,14 +171,14 @@ Widget richTextSpan() {
       ],
     ),
   );
-  // #enddocregion RichTextSpan
+  // #enddocregion rich-text-span
 }
 
 Widget tooltipWidget() {
-  // #docregion Tooltip
+  // #docregion tooltip
   return const Tooltip(
     message: 'I am a Tooltip',
     child: Text('Hover over the text to show a tooltip.'),
   );
-  // #enddocregion Tooltip
+  // #enddocregion tooltip
 }

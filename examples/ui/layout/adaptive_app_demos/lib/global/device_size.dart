@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 
 enum ScreenType { handset, tablet, desktop, watch }
 
-// #docregion FormFactor
+// #docregion form-factor
 class FormFactor {
   static double desktop = 900;
   static double tablet = 600;
   static double handset = 300;
 }
-// #enddocregion FormFactor
+// #enddocregion form-factor
 
-// #docregion getFormFactor
+// #docregion get-form-factor
 ScreenType getFormFactor(BuildContext context) {
   // Use .shortestSide to detect device type regardless of orientation
   double deviceWidth = MediaQuery.of(context).size.shortestSide;
@@ -20,9 +20,9 @@ ScreenType getFormFactor(BuildContext context) {
   if (deviceWidth > FormFactor.handset) return ScreenType.handset;
   return ScreenType.watch;
 }
-// #enddocregion getFormFactor
+// #enddocregion get-form-factor
 
-// #docregion ScreenSize
+// #docregion screen-size
 enum ScreenSize { small, normal, large, extraLarge }
 
 ScreenSize getSize(BuildContext context) {
@@ -32,7 +32,7 @@ ScreenSize getSize(BuildContext context) {
   if (deviceWidth > 300) return ScreenSize.normal;
   return ScreenSize.small;
 }
-// #enddocregion ScreenSize
+// #enddocregion screen-size
 
 class WidgetWithBreakPoints extends StatelessWidget {
   const WidgetWithBreakPoints({super.key});
@@ -56,25 +56,25 @@ class WidgetWithBreakPoints extends StatelessWidget {
   Widget widgetSwap(BuildContext context) {
     bool isHandset = MediaQuery.of(context).size.width < 600;
 
-    // #docregion WidgetSwap
+    // #docregion widget-swap
     Widget foo = Row(
       children: [
         ...isHandset ? _getHandsetChildren() : _getNormalChildren(),
       ],
     );
-    // #enddocregion WidgetSwap
+    // #enddocregion widget-swap
 
     return foo;
   }
 
   @override
   Widget build(BuildContext context) {
-    // #docregion MediaQuery
+    // #docregion media-query
     bool isHandset = MediaQuery.of(context).size.width < 600;
     return Flex(
       direction: isHandset ? Axis.vertical : Axis.horizontal,
       children: const [Text('Foo'), Text('Bar'), Text('Baz')],
     );
-    // #enddocregion MediaQuery
+    // #enddocregion media-query
   }
 }
