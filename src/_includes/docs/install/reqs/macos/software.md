@@ -1,4 +1,3 @@
-{% assign target = include.target %}
 
 {% assign xcode = '[Xcode][] ' | append: site.appnow.xcode | append: ' to debug and compile native Swift or ObjectiveC code.' %}
 {% assign cocoapods = '[CocoaPods][] ' | append: site.appnow.cocoapods | append: ' to compile enable Flutter plugins in your native apps.' %}
@@ -16,7 +15,7 @@ type `git version` in your Terminal.
 If you need to install `git`, type `brew install git`.
 {% endcapture %}
 
-{% case target %}
+{% case include.target %}
 {% when 'desktop','iOS' %}
 
 * {{xcode}} {{git-xcode}} {{git-main}}
