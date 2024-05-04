@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text(appTitle),
         ),
-        // #docregion addWidget
+        // #docregion add-widget
         body: const SingleChildScrollView(
           child: Column(
             children: [
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
             ],
           ),
         ),
-        // #enddocregion addWidget
+        // #enddocregion add-widget
       ),
     );
   }
@@ -84,17 +84,17 @@ class TitleSection extends StatelessWidget {
   }
 }
 
-// #docregion ButtonStart
-// #docregion ButtonSection
-// #docregion ButtonWithText
+// #docregion button-start
+// #docregion button-section
+// #docregion button-with-text
 class ButtonSection extends StatelessWidget {
   const ButtonSection({super.key});
-// #enddocregion ButtonWithText
+// #enddocregion button-with-text
 
   @override
   Widget build(BuildContext context) {
     final Color color = Theme.of(context).primaryColor;
-// #enddocregion ButtonStart
+// #enddocregion button-start
     return SizedBox(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -117,11 +117,11 @@ class ButtonSection extends StatelessWidget {
         ],
       ),
     );
-// #docregion ButtonStart
+// #docregion button-start
   }
-// #docregion ButtonWithText
+// #docregion button-with-text
 }
-// #enddocregion ButtonStart
+// #enddocregion button-start
 
 class ButtonWithText extends StatelessWidget {
   const ButtonWithText({
@@ -138,7 +138,7 @@ class ButtonWithText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-// #enddocregion ButtonSection
+// #enddocregion button-section
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -155,9 +155,9 @@ class ButtonWithText extends StatelessWidget {
           ),
         ),
       ],
-// #docregion ButtonSection
+// #docregion button-section
     );
   }
-// #enddocregion ButtonWithText
+// #enddocregion button-with-text
 }
-// #enddocregion ButtonSection
+// #enddocregion button-section

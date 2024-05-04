@@ -111,13 +111,13 @@ class MyCatalogItem extends StatelessWidget {
     );
   }
 
-  // #docregion myTapHandler
+  // #docregion my-tap-handler
   // GOOD
   void myTapHandler(BuildContext context) {
     var cartModel = somehowGetMyCartModel(context);
     cartModel.add(item);
   }
-  // #enddocregion myTapHandler
+  // #enddocregion my-tap-handler
 }
 
 class MyHomepage extends StatelessWidget {

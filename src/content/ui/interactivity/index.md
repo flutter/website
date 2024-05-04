@@ -149,7 +149,7 @@ which you'll implement in the next step.
 
 <?code-excerpt path-base="layout/lakes/interactive"?>
 
-<?code-excerpt "lib/main.dart (FavoriteWidget)"?>
+<?code-excerpt "lib/main.dart (favorite-widget)"?>
 ```dart
 class FavoriteWidget extends StatefulWidget {
   const FavoriteWidget({super.key});
@@ -177,14 +177,11 @@ red star, indicating that the lake has "favorite" status,
 along with 41 likes. These values are stored in the
 `_isFavorited` and `_favoriteCount` fields:
 
-<?code-excerpt "lib/main.dart (_FavoriteWidgetState fields)" replace="/(bool|int) .*/[!$&!]/g"?>
+<?code-excerpt "lib/main.dart (favorite-state-fields)" replace="/(bool|int) .*/[!$&!]/g"?>
 ```dart
 class _FavoriteWidgetState extends State<FavoriteWidget> {
   [!bool _isFavorited = true;!]
   [!int _favoriteCount = 41;!]
-
-  // ···
-}
 ```
 
 The class also defines a `build()` method,
@@ -194,37 +191,11 @@ because it has an `onPressed` property that defines
 the callback function (`_toggleFavorite`) for handling a tap.
 You'll define the callback function next.
 
-<?code-excerpt "lib/main.dart (_FavoriteWidgetState build)" replace="/build|icon.*|onPressed.*|child: Text.*/[!$&!]/g"?>
+<?code-excerpt "lib/main.dart (favorite-state-fields)" replace="/build|icon.*|onPressed.*|child: Text.*/[!$&!]/g"?>
 ```dart
 class _FavoriteWidgetState extends State<FavoriteWidget> {
-  // ···
-  @override
-  Widget [!build!](BuildContext context) {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Container(
-          padding: const EdgeInsets.all(0),
-          child: IconButton(
-            padding: const EdgeInsets.all(0),
-            alignment: Alignment.center,
-            [!icon: (_isFavorited!]
-                ? const Icon(Icons.star)
-                : const Icon(Icons.star_border)),
-            color: Colors.red[500],
-            [!onPressed: _toggleFavorite,!]
-          ),
-        ),
-        SizedBox(
-          width: 18,
-          child: SizedBox(
-            [!child: Text('$_favoriteCount'),!]
-          ),
-        ),
-      ],
-    );
-  }
-}
+  bool _isFavorited = true;
+  int _favoriteCount = 41;
 ```
 
 :::tip
@@ -245,7 +216,7 @@ UI between these two states:
 * A `star` icon and the number 41
 * A `star_border` icon and the number 40
 
-<?code-excerpt "lib/main.dart (_toggleFavorite)"?>
+<?code-excerpt "lib/main.dart (toggle-favorite)"?>
 ```dart
 void _toggleFavorite() {
   setState(() {
@@ -386,7 +357,7 @@ The `_TapboxAState` class:
   `setState()` function to update the UI.
 * Implements all interactive behavior for the widget.
 
-<?code-excerpt path-base="development/ui/interactive/"?>
+<?code-excerpt path-base="ui/interactive/"?>
 
 <?code-excerpt "lib/self_managed.dart"?>
 ```dart

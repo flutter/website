@@ -75,7 +75,7 @@ class BasicActionDetector extends StatefulWidget {
   State<BasicActionDetector> createState() => _BasicActionDetectorState();
 }
 
-// #docregion _BasicActionDetectorState
+// #docregion focusable-action-detector
 class _BasicActionDetectorState extends State<BasicActionDetector> {
   bool _hasFocus = false;
   @override
@@ -106,7 +106,7 @@ class _BasicActionDetectorState extends State<BasicActionDetector> {
     );
   }
 }
-// #enddocregion _BasicActionDetectorState
+// #enddocregion focusable-action-detector
 
 /// Uses [FocusableActionDetector]
 class ClickableActionDetector extends StatefulWidget {
@@ -159,7 +159,7 @@ class ClickableControl extends StatelessWidget {
         builder: (context) {
           // Check whether we have focus
           bool hasFocus = Focus.of(context).hasFocus;
-          // #docregion MouseRegion
+          // #docregion mouse-region
           // Show hand cursor
           return MouseRegion(
             cursor: SystemMouseCursors.click,
@@ -172,7 +172,7 @@ class ClickableControl extends StatelessWidget {
               child: Logo(showBorder: hasFocus),
             ),
           );
-          // #enddocregion MouseRegion
+          // #enddocregion mouse-region
         },
       ),
     );
@@ -223,14 +223,14 @@ class MyFocusTraversalWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // #docregion FocusTraversalGroup
+    // #docregion focus-traversal-group
     return Column(children: [
       FocusTraversalGroup(
         child: MyFormWithMultipleColumnsAndRows(),
       ),
       SubmitButton(),
     ]);
-    // #enddocregion FocusTraversalGroup
+    // #enddocregion focus-traversal-group
   }
 }
 
@@ -273,7 +273,7 @@ class _MyHoverWidgetState extends State<MyHoverWidget> {
 
   @override
   Widget build(BuildContext context) {
-    // #docregion MouseOver
+    // #docregion mouse-over
     return MouseRegion(
       onEnter: (_) => setState(() => _isMouseOver = true),
       onExit: (_) => setState(() => _isMouseOver = false),
@@ -283,6 +283,6 @@ class _MyHoverWidgetState extends State<MyHoverWidget> {
         color: _isMouseOver ? Colors.blue : Colors.black,
       ),
     );
-    // #enddocregion MouseOver
+    // #enddocregion mouse-over
   }
 }

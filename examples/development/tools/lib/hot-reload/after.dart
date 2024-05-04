@@ -2,30 +2,30 @@
 
 import 'package:flutter/material.dart';
 
-// #docregion Main
+// #docregion main
 import 'package:flutter/widgets.dart';
 
 void main() {
   runApp(const Center(child: Text('Hello', textDirection: TextDirection.ltr)));
 }
-// #enddocregion Main
+// #enddocregion main
 
-// #docregion Enum
+// #docregion enum
 class Color {
   Color(this.i, this.j);
   final int i;
   final int j;
 }
-// #enddocregion Enum
+// #enddocregion enum
 
-// #docregion Class
+// #docregion class
 class A<T, V> {
   T? i;
   V? v;
 }
-// #enddocregion Class
+// #enddocregion class
 
-// #docregion SampleTable
+// #docregion sample-table
 final sampleTable = [
   Table(
     children: const [
@@ -56,15 +56,15 @@ final sampleTable = [
     ],
   ),
 ];
-// #enddocregion SampleTable
+// #enddocregion sample-table
 
-// #docregion Const
+// #docregion const
 const foo = 2; // modified
-// #docregion FinalFoo
+// #docregion final-foo
 final bar = foo;
-// #enddocregion FinalFoo
+// #enddocregion final-foo
 void onClick() {
   print(foo);
   print(bar);
 }
-// #enddocregion Const
+// #enddocregion const

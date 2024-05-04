@@ -2,7 +2,7 @@
 // ignore_for_file: one_member_abstracts
 // dart run pigeon --input lib/pigeon_source.dart --dart_out lib/generated_pigeon.dart
 
-// #docregion Search
+// #docregion search
 import 'package:pigeon/pigeon.dart';
 
 class SearchRequest {
@@ -22,4 +22,4 @@ abstract class Api {
   @async
   SearchReply search(SearchRequest request);
 }
-// #enddocregion Search
+// #enddocregion search

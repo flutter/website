@@ -1,13 +1,13 @@
-// #docregion Import
+// #docregion import
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-// #enddocregion Import
+// #enddocregion import
 
 class VirtualDisplayWidget extends StatelessWidget {
   const VirtualDisplayWidget({super.key});
 
   @override
-  // #docregion VirtualDisplayWidget
+  // #docregion virtual-display
   Widget build(BuildContext context) {
     // This is used in the platform side to register the view.
     const String viewType = '<platform-view-type>';
@@ -21,5 +21,5 @@ class VirtualDisplayWidget extends StatelessWidget {
       creationParamsCodec: const StandardMessageCodec(),
     );
   }
-  // #enddocregion VirtualDisplayWidget
+  // #enddocregion virtual-display
 }

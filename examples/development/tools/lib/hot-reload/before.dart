@@ -1,6 +1,6 @@
 // ignore_for_file: avoid_print, prefer_const_declarations, prefer_const_constructors
 
-// #docregion Build
+// #docregion build
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,23 +15,23 @@ class MyApp extends StatelessWidget {
     return GestureDetector(onTap: () => print('tapped'));
   }
 }
-// #enddocregion Build
+// #enddocregion build
 
-// #docregion Enum
+// #docregion enum
 enum Color {
   red,
   green,
   blue,
 }
-// #enddocregion Enum
+// #enddocregion enum
 
-// #docregion Class
+// #docregion class
 class A<T> {
   T? i;
 }
-// #enddocregion Class
+// #enddocregion class
 
-// #docregion SampleTable
+// #docregion sample-table
 final sampleTable = [
   Table(
     children: const [
@@ -62,13 +62,13 @@ final sampleTable = [
     ],
   ),
 ];
-// #enddocregion SampleTable
+// #enddocregion sample-table
 
-// #docregion Const
+// #docregion const
 const foo = 1;
 final bar = foo;
 void onClick() {
   print(foo);
   print(bar);
 }
-// #enddocregion Const
+// #enddocregion const

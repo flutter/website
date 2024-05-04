@@ -10,16 +10,16 @@ const jsonString = '''
 ''';
 
 void exampleJson() {
-  // #docregion fromJson
+  // #docregion from-json
   final userMap = jsonDecode(jsonString) as Map<String, dynamic>;
   final user = User.fromJson(userMap);
-  // #enddocregion fromJson
+  // #enddocregion from-json
 
   print('Howdy, ${user.name}!');
   print('We sent the verification link to ${user.email}.');
 
-  // #docregion jsonEncode
+  // #docregion json-encode
   // ignore: unused_local_variable
   String json = jsonEncode(user);
-  // #enddocregion jsonEncode
+  // #enddocregion json-encode
 }
