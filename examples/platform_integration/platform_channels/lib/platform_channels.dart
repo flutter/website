@@ -1,8 +1,8 @@
-// #docregion Import
+// #docregion import
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-// #enddocregion Import
+// #enddocregion import
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -11,12 +11,12 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-// #docregion MyHomePageState
+// #docregion my-home-page-state
 class _MyHomePageState extends State<MyHomePage> {
   static const platform = MethodChannel('samples.flutter.dev/battery');
-  // #docregion GetBattery
+  // #docregion get-battery
   // Get battery level.
-// #enddocregion MyHomePageState
+// #enddocregion my-home-page-state
   String _batteryLevel = 'Unknown battery level.';
 
   Future<void> _getBatteryLevel() async {
@@ -32,9 +32,9 @@ class _MyHomePageState extends State<MyHomePage> {
       _batteryLevel = batteryLevel;
     });
   }
-  // #enddocregion GetBattery
+  // #enddocregion get-battery
 
-// #docregion Build
+  // #docregion build
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -52,5 +52,5 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
-// #enddocregion Build
+  // #enddocregion build
 }

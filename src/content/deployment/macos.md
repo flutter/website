@@ -287,7 +287,7 @@ If you do not have a Mac Installer Distribution certificate,
 you can create a new certificate by executing the following:
 
 ```bash
-app-store-connect create-certificate \
+app-store-connect certificates create \
     --type MAC_INSTALLER_DISTRIBUTION \
     --certificate-key=@file:/path/to/cert_key \
     --save
@@ -301,7 +301,7 @@ Use `cert_key` of the private key you created earlier.
 Fetch the Mac Installer Distribution certificates:
 
 ```bash
-app-store-connect list-certificates \
+app-store-connect certificates list \
     --type MAC_INSTALLER_DISTRIBUTION \
     --certificate-key=@file:/path/to/cert_key \
     --save

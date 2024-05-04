@@ -122,7 +122,7 @@ changed to enumerated types.
 For example:
 
 Before the change:
-<?code-excerpt "lib/hot-reload/before.dart (Enum)"?>
+<?code-excerpt "lib/hot-reload/before.dart (enum)"?>
 ```dart
 enum Color {
   red,
@@ -132,7 +132,7 @@ enum Color {
 ```
 
 After the change:
-<?code-excerpt "lib/hot-reload/after.dart (Enum)"?>
+<?code-excerpt "lib/hot-reload/after.dart (enum)"?>
 ```dart
 class Color {
   Color(this.i, this.j);
@@ -147,7 +147,7 @@ Hot reload won't work when generic type declarations
 are modified. For example, the following won't work:
 
 Before the change:
-<?code-excerpt "lib/hot-reload/before.dart (Class)"?>
+<?code-excerpt "lib/hot-reload/before.dart (class)"?>
 ```dart
 class A<T> {
   T? i;
@@ -155,7 +155,7 @@ class A<T> {
 ```
 
 After the change:
-<?code-excerpt "lib/hot-reload/after.dart (Class)"?>
+<?code-excerpt "lib/hot-reload/after.dart (class)"?>
 ```dart
 class A<T, V> {
   T? i;
@@ -199,7 +199,7 @@ a hot restart or restart the state where the initializers are hold
 is necessary to see the changes.
 For example, consider the following code:
 
-<?code-excerpt "lib/hot-reload/before.dart (SampleTable)"?>
+<?code-excerpt "lib/hot-reload/before.dart (sample-table)"?>
 ```dart
 final sampleTable = [
   Table(
@@ -235,7 +235,7 @@ final sampleTable = [
 
 After running the app, you make the following change:
 
-<?code-excerpt "lib/hot-reload/after.dart (SampleTable)"?>
+<?code-excerpt "lib/hot-reload/after.dart (sample-table)"?>
 ```dart
 final sampleTable = [
   Table(
@@ -273,7 +273,7 @@ You hot reload, but the change is not reflected.
 
 Conversely, in the following example:
 
-<?code-excerpt "lib/hot-reload/before.dart (Const)"?>
+<?code-excerpt "lib/hot-reload/before.dart (const)"?>
 ```dart
 const foo = 1;
 final bar = foo;
@@ -286,7 +286,7 @@ void onClick() {
 Running the app for the first time prints `1` and `1`.
 Then, you make the following change:
 
-<?code-excerpt "lib/hot-reload/after.dart (Const)"?>
+<?code-excerpt "lib/hot-reload/after.dart (const)"?>
 ```dart
 const foo = 2; // modified
 final bar = foo;
@@ -306,7 +306,7 @@ The flagging mechanism is triggered for
 most of the initialization work in the above example,
 but not for cases like the following:
 
-<?code-excerpt "lib/hot-reload/after.dart (FinalFoo)"?>
+<?code-excerpt "lib/hot-reload/after.dart (final-foo)"?>
 ```dart
 final bar = foo;
 ```
@@ -316,7 +316,7 @@ consider redefining the field as `const` or using a getter to
 return the value, rather than using `final`.
 For example, either of the following solutions work:
 
-<?code-excerpt "lib/hot-reload/foo_const.dart (Const)"?>
+<?code-excerpt "lib/hot-reload/foo_const.dart (const)"?>
 ```dart
 const foo = 1;
 const bar = foo; // Convert foo to a const...
@@ -326,7 +326,7 @@ void onClick() {
 }
 ```
 
-<?code-excerpt "lib/hot-reload/getter.dart (Const)"?>
+<?code-excerpt "lib/hot-reload/getter.dart (const)"?>
 ```dart
 const foo = 1;
 int get bar => foo; // ...or provide a getter.
@@ -354,7 +354,7 @@ see its effects after hot reload.
 
 For example, consider the following code:
 
-<?code-excerpt "lib/hot-reload/before.dart (Build)"?>
+<?code-excerpt "lib/hot-reload/before.dart (build)"?>
 ```dart
 import 'package:flutter/material.dart';
 
@@ -374,7 +374,7 @@ class MyApp extends StatelessWidget {
 
 After running this app, change the code as follows:
 
-<?code-excerpt "lib/hot-reload/after.dart (Main)"?>
+<?code-excerpt "lib/hot-reload/after.dart (main)"?>
 ```dart
 import 'package:flutter/widgets.dart';
 

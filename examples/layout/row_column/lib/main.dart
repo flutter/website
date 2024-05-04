@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
   }
 
   Widget buildRow() =>
-      // #docregion Row
+      // #docregion row
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -33,10 +33,10 @@ class MyApp extends StatelessWidget {
           Image.asset('images/pic3.jpg'),
         ],
       );
-  // #enddocregion Row
+  // #enddocregion row
 
   Widget buildColumn() =>
-      // #docregion Column
+      // #docregion column
       Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -45,5 +45,5 @@ class MyApp extends StatelessWidget {
           Image.asset('images/pic3.jpg'),
         ],
       );
-  // #enddocregion Column
+  // #enddocregion column
 }

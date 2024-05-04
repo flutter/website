@@ -192,24 +192,24 @@ class ImageSection extends StatelessWidget {
   }
 }
 
-// #docregion FavoriteWidget
+// #docregion favorite-widget
 class FavoriteWidget extends StatefulWidget {
   const FavoriteWidget({super.key});
 
   @override
   State<FavoriteWidget> createState() => _FavoriteWidgetState();
 }
-// #enddocregion FavoriteWidget
+// #enddocregion favorite-widget
 
-// #docregion _FavoriteWidgetState, _FavoriteWidgetState-fields, _FavoriteWidgetState-build
+// #docregion favorite-state, favorite-state-fields, favorite-state-build
 class _FavoriteWidgetState extends State<FavoriteWidget> {
-  // #enddocregion _FavoriteWidgetState-build
+  // #enddocregion favorite-state-build
   bool _isFavorited = true;
   int _favoriteCount = 41;
 
-  // #enddocregion _FavoriteWidgetState-fields
+  // #enddocregion favorite-state-fields
 
-  // #docregion _toggleFavorite
+  // #docregion toggle-favorite
   void _toggleFavorite() {
     setState(() {
       if (_isFavorited) {
@@ -222,9 +222,9 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
     });
   }
 
-  // #enddocregion _toggleFavorite
+  // #enddocregion toggle-favorite
 
-  // #docregion _FavoriteWidgetState-build
+  // #docregion favorite-state-build
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -251,5 +251,6 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
       ],
     );
   }
-// #docregion _FavoriteWidgetState-fields
+  // #docregion favorite-state-build
 }
+// #enddocregion favorite-state, favorite-state-fields, favorite-state-build
