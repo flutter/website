@@ -31,7 +31,7 @@ layout: base
       <div class="container">
 
         {% if deprecated %}
-        {% include snackbar.html class="snackbar--dismissible" label="This page is deprecated and its content may be out of date." action="Dismiss" %}
+        {% render snackbar.html, class:"snackbar--dismissible", label:"This page is deprecated and its content may be out of date.", action:"Dismiss" %}
         {% endif %}
 
         {% include next-prev-nav.html prev=prev next=next %}

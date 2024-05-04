@@ -1,7 +1,7 @@
 
 ## Check your development setup
 
-{% include docs/help-link.md location='win-doctor' %}
+{% render docs/help-link.md, location:'win-doctor' %}
 
 {% assign compiler = include.compiler %}
 

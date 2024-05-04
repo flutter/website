@@ -40,4 +40,4 @@ to run your first Flutter app.
 You can set up additional platforms later.
 _If you don't have a preference, choose **{{rec-target}}**._
 
-{% include docs/china-notice.md %}
+{% render docs/china-notice.md %}
