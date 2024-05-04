@@ -1,5 +1,5 @@
 
-{% include docs/install/admonitions/install-in-order.md %}
+{% render docs/install/admonitions/install-in-order.md %}
 
 ## Verify system requirements
 
@@ -55,7 +55,7 @@ Flutter supports {{supported-os}}.
 
 {% include docs/install/reqs/linux/software.md target=include.target os=include.os %}
 
-{% include docs/install/reqs/flutter-sdk/flutter-doctor-precedence.md %}
+{% render docs/install/reqs/flutter-sdk/flutter-doctor-precedence.md %}
 
 The developers of the preceding software provide support for those products.
 To troubleshoot installation issues, consult that product's documentation.

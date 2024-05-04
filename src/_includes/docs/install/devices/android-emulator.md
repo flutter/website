@@ -1,6 +1,6 @@
 #### Set up the Android emulator
 
-{% include docs/help-link.md location='android-emulator' section='#android-setup' %}
+{% render docs/help-link.md, location:'android-emulator', section:'#android-setup' %}
 
 {% case include.devos %}
 {% when 'Windows','Linux' -%}

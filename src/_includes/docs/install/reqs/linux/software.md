@@ -54,7 +54,7 @@ To develop Flutter on {{include.os}}:
 
 1. Install [Google Chrome][] to debug JavaScript code for web apps.
 
-{% include docs/install/accordions/install-chrome-from-cli.md %}
+{% render docs/install/accordions/install-chrome-from-cli.md %}
 
 {% endcase -%}
 

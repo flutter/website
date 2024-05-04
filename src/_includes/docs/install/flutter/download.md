@@ -81,7 +81,7 @@ then extract the SDK.
 
    Consider creating a directory at {{diroptions}}.
    {% if include.os == "Windows" -%}
-   {% include docs/install/admonitions/install-paths.md %}
+   {% render docs/install/admonitions/install-paths.md %}
    {% endif %}
 
 1. Extract the zip file into the directory you want to store the Flutter SDK.

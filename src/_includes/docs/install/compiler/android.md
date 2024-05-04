@@ -15,7 +15,7 @@
 
 ### Configure the Android toolchain in Android Studio
 
-{% include docs/help-link.md location='android-studio' section='#android-setup' %}
+{% render docs/help-link.md, location:'android-studio', section:'#android-setup' %}
 
 To create Android apps with Flutter, verify that the following Android
 components have been installed.
@@ -166,7 +166,7 @@ Otherwise, you can skip to the [next section][check-dev].
 
 ### Agree to Android licenses
 
-{% include docs/help-link.md location='android-licenses' section='#android-setup' %}
+{% render docs/help-link.md, location:'android-licenses', section:'#android-setup' %}
 
 Before you can use Flutter and after you install all prerequisites,
 agree to the licenses of the Android SDK platform.

@@ -1,5 +1,5 @@
 
-{% include docs/install/admonitions/install-in-order.md %}
+{% render docs/install/admonitions/install-in-order.md %}
 
 ## Verify system requirements
 
@@ -47,7 +47,7 @@ Download and install the Windows version of the following packages:
 The developers of the preceding software provide support for those products.
 To troubleshoot installation issues, consult that product's documentation.
 
-{% include docs/install/reqs/flutter-sdk/flutter-doctor-precedence.md %}
+{% render docs/install/reqs/flutter-sdk/flutter-doctor-precedence.md %}
 
 ## Configure a text editor or IDE
 
