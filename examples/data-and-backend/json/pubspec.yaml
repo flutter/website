@@ -12,6 +12,6 @@ dependencies:
 
 dev_dependencies:
   example_utils:
-    path: ../../../example_utils
+    path: ../../example_utils
   build_runner: ^2.4.8
   json_serializable: ^6.7.1
