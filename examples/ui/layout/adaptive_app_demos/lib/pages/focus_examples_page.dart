@@ -75,7 +75,7 @@ class BasicActionDetector extends StatefulWidget {
   State<BasicActionDetector> createState() => _BasicActionDetectorState();
 }
 
-// #docregion action-detector-state
+// #docregion focusable-action-detector
 class _BasicActionDetectorState extends State<BasicActionDetector> {
   bool _hasFocus = false;
   @override
@@ -106,7 +106,7 @@ class _BasicActionDetectorState extends State<BasicActionDetector> {
     );
   }
 }
-// #enddocregion action-detector-state
+// #enddocregion focusable-action-detector
 
 /// Uses [FocusableActionDetector]
 class ClickableActionDetector extends StatefulWidget {

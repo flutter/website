@@ -543,7 +543,7 @@ of [`Actions`][], [`Shortcuts`][], [`MouseRegion`][], and
 and key bindings, and provides callbacks for handling focus
 and hover highlights.
 
-<?code-excerpt "lib/pages/focus_examples_page.dart (action-detector-state)"?>
+<?code-excerpt "lib/pages/focus_examples_page.dart (focusable-action-detector)"?>
 ```dart
 class _BasicActionDetectorState extends State<BasicActionDetector> {
   bool _hasFocus = false;
