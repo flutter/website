@@ -1,16 +1,16 @@
-// #docregion Import
+// #docregion import
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-// #enddocregion Import
+// #enddocregion import
 
 class HybridCompositionWidget extends StatelessWidget {
   const HybridCompositionWidget({super.key});
 
   @override
-  // #docregion HybridCompositionWidget
+  // #docregion hybrid-composition
   Widget build(BuildContext context) {
     // This is used in the platform side to register the view.
     const String viewType = '<platform-view-type>';
@@ -42,5 +42,5 @@ class HybridCompositionWidget extends StatelessWidget {
       },
     );
   }
-  // #enddocregion HybridCompositionWidget
+  // #enddocregion hybrid-composition
 }
