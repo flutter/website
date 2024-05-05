@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// #docregion MyApp
+// #docregion my-app
 class MyApp extends StatelessWidget {
   /// This widget is the root of your application.
   const MyApp({super.key});
@@ -13,9 +13,9 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-// #enddocregion MyApp
+// #enddocregion my-app
 
-// #docregion MyHomePage
+// #docregion my-home-page
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
@@ -24,9 +24,9 @@ class MyHomePage extends StatefulWidget {
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
-// #enddocregion MyHomePage
+// #enddocregion my-home-page
 
-// #docregion MyHomePageState
+// #docregion my-home-page-state
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
@@ -68,4 +68,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-// #enddocregion MyHomePageState
+// #enddocregion my-home-page-state
