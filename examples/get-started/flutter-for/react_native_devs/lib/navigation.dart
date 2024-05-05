@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// #docregion Navigator
+// #docregion navigator
 class NavigationApp extends StatelessWidget {
   // This widget is the root of your application.
   const NavigationApp({super.key});
@@ -17,7 +17,7 @@ class NavigationApp extends StatelessWidget {
     );
   }
 }
-// #enddocregion Navigator
+// #enddocregion navigator
 
 class UsualNavScreen extends StatelessWidget {
   const UsualNavScreen({super.key});
@@ -32,20 +32,20 @@ class DrawerNavScreen extends StatelessWidget {
   const DrawerNavScreen({super.key});
 
   void navigateRoute(BuildContext context) {
-    // #docregion PushNamed
+    // #docregion push-named
     Navigator.of(context).pushNamed('/a');
-    // #enddocregion PushNamed
+    // #enddocregion push-named
   }
 
   void pushNavigator(BuildContext context) {
-    // #docregion NavigatorPush
+    // #docregion navigator-push
     Navigator.push(
       context,
       MaterialPageRoute(
         builder: (context) => const UsualNavScreen(),
       ),
     );
-    // #enddocregion NavigatorPush
+    // #enddocregion navigator-push
   }
 
   @override
@@ -61,7 +61,7 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
-// #docregion TabNav
+// #docregion tab-nav
 class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
   late TabController controller = TabController(length: 2, vsync: this);
 
@@ -76,7 +76,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
     );
   }
 }
-// #enddocregion TabNav
+// #enddocregion tab-nav
 
 class NavigationHomePage extends StatefulWidget {
   const NavigationHomePage({super.key});
@@ -85,7 +85,7 @@ class NavigationHomePage extends StatefulWidget {
   State<NavigationHomePage> createState() => _NavigationHomePageState();
 }
 
-// #docregion NavigationHomePageState
+// #docregion navigation-home-page-state
 class _NavigationHomePageState extends State<NavigationHomePage>
     with SingleTickerProviderStateMixin {
   late TabController controller = TabController(length: 2, vsync: this);
@@ -113,7 +113,7 @@ class _NavigationHomePageState extends State<NavigationHomePage>
         ));
   }
 }
-// #enddocregion NavigationHomePageState
+// #enddocregion navigation-home-page-state
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -136,7 +136,7 @@ class TabScreen extends StatelessWidget {
 class DrawerExample extends StatelessWidget {
   const DrawerExample({super.key});
 
-  // #docregion Drawer
+  // #docregion drawer
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -150,5 +150,5 @@ class DrawerExample extends StatelessWidget {
       ),
     );
   }
-  // #enddocregion Drawer
+  // #enddocregion drawer
 }

@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-// #docregion TextStyle
+// #docregion text-style
 TextStyle bold24Roboto = const TextStyle(
   color: Colors.white,
   fontSize: 24,
   fontWeight: FontWeight.bold,
 );
-// #enddocregion TextStyle
+// #enddocregion text-style
 
 class MyWidget extends StatelessWidget {
   MyWidget({super.key});
 
-  // #docregion Container
+  // #docregion container
   final container = Container(
     // grey box
     width: 320,
@@ -28,7 +28,7 @@ class MyWidget extends StatelessWidget {
       /*[[highlight]]*/ textAlign: TextAlign.center, /*[[/highlight]]*/
     ),
   );
-// #enddocregion Container
+// #enddocregion container
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class MyWidget extends StatelessWidget {
 class Container2 extends StatelessWidget {
   Container2({super.key});
 
-  // #docregion Container2
+  // #docregion container-2
   final container = Container(
     // grey box
     width: 320,
@@ -51,7 +51,7 @@ class Container2 extends StatelessWidget {
       style: bold24Roboto,
     ),
   );
-// #enddocregion Container2
+// #enddocregion container-2
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +62,7 @@ class Container2 extends StatelessWidget {
 class Container3 extends StatelessWidget {
   Container3({super.key});
 
-  // #docregion Container3
+  // #docregion container-3
   final container = Container(
     // grey box
     width: 320,
@@ -76,7 +76,7 @@ class Container3 extends StatelessWidget {
       style: bold24Roboto,
     ),
   );
-// #enddocregion Container3
+// #enddocregion container-3
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +87,7 @@ class Container3 extends StatelessWidget {
 class CenterWidget extends StatelessWidget {
   CenterWidget({super.key});
 
-  // #docregion Center
+  // #docregion center
   final container = Container(
     // grey box
     width: 320,
@@ -100,7 +100,7 @@ class CenterWidget extends StatelessWidget {
       ),
     ),
   );
-  // #enddocregion Center
+  // #enddocregion center
 
   @override
   Widget build(BuildContext context) {
@@ -111,7 +111,7 @@ class CenterWidget extends StatelessWidget {
 class Nested extends StatelessWidget {
   Nested({super.key});
 
-  // #docregion Nested
+  // #docregion nested
   final container = Container(
     // grey box
     /*[[highlight]]*/ width: 320,
@@ -134,7 +134,7 @@ class Nested extends StatelessWidget {
       ),
     ),
   );
-  // #enddocregion Nested
+  // #enddocregion nested
 
   @override
   Widget build(BuildContext context) {
@@ -145,7 +145,7 @@ class Nested extends StatelessWidget {
 class Absolute extends StatelessWidget {
   Absolute({super.key});
 
-  // #docregion Absolute
+  // #docregion absolute
   final container = Container(
     // grey box
     width: 320,
@@ -172,7 +172,7 @@ class Absolute extends StatelessWidget {
       ],
     ),
   );
-  // #enddocregion Absolute
+  // #enddocregion absolute
 
   @override
   Widget build(BuildContext context) {
@@ -183,7 +183,7 @@ class Absolute extends StatelessWidget {
 class Rotating extends StatelessWidget {
   Rotating({super.key});
 
-  // #docregion Rotating
+  // #docregion rotating
   final container = Container(
     // grey box
     width: 320,
@@ -208,7 +208,7 @@ class Rotating extends StatelessWidget {
       ),
     ),
   );
-  // #enddocregion Rotating
+  // #enddocregion rotating
 
   @override
   Widget build(BuildContext context) {
@@ -219,7 +219,7 @@ class Rotating extends StatelessWidget {
 class Scaling extends StatelessWidget {
   Scaling({super.key});
 
-  // #docregion Scaling
+  // #docregion scaling
   final container = Container(
     // grey box
     width: 320,
@@ -244,7 +244,7 @@ class Scaling extends StatelessWidget {
       ),
     ),
   );
-  // #enddocregion Scaling
+  // #enddocregion scaling
 
   @override
   Widget build(BuildContext context) {
@@ -255,7 +255,7 @@ class Scaling extends StatelessWidget {
 class Gradient extends StatelessWidget {
   Gradient({super.key});
 
-  // #docregion Gradient
+  // #docregion gradient
   final container = Container(
     // grey box
     width: 320,
@@ -283,7 +283,7 @@ class Gradient extends StatelessWidget {
       ),
     ),
   );
-  // #enddocregion Gradient
+  // #enddocregion gradient
 
   @override
   Widget build(BuildContext context) {
@@ -294,7 +294,7 @@ class Gradient extends StatelessWidget {
 class HorizontalGradient extends StatelessWidget {
   HorizontalGradient({super.key});
 
-  // #docregion HorizontalGradient
+  // #docregion horizontal-gradient
   final container = Container(
     // grey box
     width: 320,
@@ -322,7 +322,7 @@ class HorizontalGradient extends StatelessWidget {
       ),
     ),
   );
-  // #enddocregion HorizontalGradient
+  // #enddocregion horizontal-gradient
 
   @override
   Widget build(BuildContext context) {
@@ -333,7 +333,7 @@ class HorizontalGradient extends StatelessWidget {
 class RoundCorners extends StatelessWidget {
   RoundCorners({super.key});
 
-  // #docregion RoundCorners
+  // #docregion round-corners
   final container = Container(
     // grey box
     width: 320,
@@ -356,7 +356,7 @@ class RoundCorners extends StatelessWidget {
       ),
     ),
   );
-  // #enddocregion RoundCorners
+  // #enddocregion round-corners
 
   @override
   Widget build(BuildContext context) {
@@ -367,7 +367,7 @@ class RoundCorners extends StatelessWidget {
 class BoxShadowExample extends StatelessWidget {
   BoxShadowExample({super.key});
 
-  // #docregion BoxShadow
+  // #docregion box-shadow
   final container = Container(
     // grey box
     width: 320,
@@ -402,7 +402,7 @@ class BoxShadowExample extends StatelessWidget {
       ),
     ),
   );
-  // #enddocregion BoxShadow
+  // #enddocregion box-shadow
 
   @override
   Widget build(BuildContext context) {
@@ -413,7 +413,7 @@ class BoxShadowExample extends StatelessWidget {
 class CircleExample extends StatelessWidget {
   CircleExample({super.key});
 
-  // #docregion Circle
+  // #docregion circle
   final container = Container(
     // grey box
     width: 320,
@@ -438,7 +438,7 @@ class CircleExample extends StatelessWidget {
       ),
     ),
   );
-  // #enddocregion Circle
+  // #enddocregion circle
 
   @override
   Widget build(BuildContext context) {
@@ -449,7 +449,7 @@ class CircleExample extends StatelessWidget {
 class TextSpacingExample extends StatelessWidget {
   TextSpacingExample({super.key});
 
-  // #docregion TextSpacing
+  // #docregion text-spacing
   final container = Container(
     // grey box
     width: 320,
@@ -474,7 +474,7 @@ class TextSpacingExample extends StatelessWidget {
       ),
     ),
   );
-  // #enddocregion TextSpacing
+  // #enddocregion text-spacing
 
   @override
   Widget build(BuildContext context) {
@@ -485,7 +485,7 @@ class TextSpacingExample extends StatelessWidget {
 class InlineFormattingExample extends StatelessWidget {
   InlineFormattingExample({super.key});
 
-  // #docregion InlineFormatting
+  // #docregion inline-formatting
   final container = Container(
     // grey box
     width: 320,
@@ -517,7 +517,7 @@ class InlineFormattingExample extends StatelessWidget {
       ),
     ),
   );
-  // #enddocregion InlineFormatting
+  // #enddocregion inline-formatting
 
   @override
   Widget build(BuildContext context) {
@@ -528,7 +528,7 @@ class InlineFormattingExample extends StatelessWidget {
 class TextExcerptsExample extends StatelessWidget {
   TextExcerptsExample({super.key});
 
-  // #docregion TextExcerpt
+  // #docregion text-excerpt
   final container = Container(
     // grey box
     width: 320,
@@ -550,7 +550,7 @@ class TextExcerptsExample extends StatelessWidget {
       ),
     ),
   );
-  // #enddocregion TextExcerpt
+  // #enddocregion text-excerpt
 
   @override
   Widget build(BuildContext context) {

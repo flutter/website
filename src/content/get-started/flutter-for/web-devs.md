@@ -37,7 +37,7 @@ The examples assume:
   is defined by the `bold24Roboto` variable as follows,
   to keep the syntax simple:
 
-  <?code-excerpt "lib/main.dart (TextStyle)"?>
+  <?code-excerpt "lib/main.dart (text-style)"?>
   ```dart
   TextStyle bold24Roboto = const TextStyle(
     color: Colors.white,

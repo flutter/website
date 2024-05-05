@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// #docregion CreateState
+// #docregion create-state
 class MyStatefulWidget extends StatefulWidget {
   const MyStatefulWidget({
     super.key,
@@ -18,9 +18,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     return const Text('Hello World!');
   }
 }
-// #enddocregion CreateState
+// #enddocregion create-state
 
-// #docregion UseStatefulWidget
+// #docregion use-stateful-widget
 class MyStatelessWidget extends StatelessWidget {
   // This widget is the root of your application.
   const MyStatelessWidget({super.key});
@@ -33,4 +33,4 @@ class MyStatelessWidget extends StatelessWidget {
     );
   }
 }
-// #enddocregion UseStatefulWidget
+// #enddocregion use-stateful-widget
