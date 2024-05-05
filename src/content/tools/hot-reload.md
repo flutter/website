@@ -3,7 +3,7 @@ title: Hot reload
 description: Speed up development using Flutter's hot reload feature.
 ---
 
-<?code-excerpt path-base="development/tools"?>
+<?code-excerpt path-base="tools"?>
 
 Flutter's hot reload feature helps you quickly and
 easily experiment, build UIs, add features, and fix bugs.

@@ -3,7 +3,7 @@ title: Supporting the new Android plugins APIs
 description: How to update a plugin using the old APIs to support the new APIs.
 ---
 
-<?code-excerpt path-base="development/plugin_api_migration"?>
+<?code-excerpt path-base="platform_integration/plugin_api_migration"?>
 
 :::note
 New plugins and all plugins that are compatible with Flutter 2 (March 2021) can ignore this page.
