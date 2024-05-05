@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
 
-  // #docregion Padding
+  // #docregion padding
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,5 +19,5 @@ class MyWidget extends StatelessWidget {
       ),
     );
   }
-  // #enddocregion Padding
+  // #enddocregion padding
 }

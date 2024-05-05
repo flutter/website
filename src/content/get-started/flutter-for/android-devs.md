@@ -100,7 +100,7 @@ The following example shows how to use a `StatelessWidget`. A common
 `StatelessWidget` is the `Text` widget. If you look at the implementation of
 the `Text` widget you'll find that it subclasses `StatelessWidget`.
 
-<?code-excerpt "lib/text_widget.dart (TextWidget)" replace="/return const //g"?>
+<?code-excerpt "lib/text_widget.dart (text-widget)" replace="/return const //g"?>
 ```dart
 Text(
   'I like Flutter!',
@@ -119,7 +119,7 @@ update it when the user clicks the button.
 
 For example:
 
-<?code-excerpt "lib/text_widget.dart (StatefulWidget)"?>
+<?code-excerpt "lib/text_widget.dart (stateful-widget)"?>
 ```dart
 import 'package:flutter/material.dart';
 
@@ -184,7 +184,7 @@ with a widget tree.
 
 The following example shows how to display a simple widget with padding:
 
-<?code-excerpt "lib/layout.dart (SimpleWidget)"?>
+<?code-excerpt "lib/layout.dart (simple-widget)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -220,7 +220,7 @@ and control that child's creation with a boolean flag.
 For example, here is how you can toggle between two
 widgets when you click on a `FloatingActionButton`:
 
-<?code-excerpt "lib/layout.dart (ToggleWidget)"?>
+<?code-excerpt "lib/layout.dart (toggle-widget)"?>
 ```dart
 import 'package:flutter/material.dart';
 
@@ -492,7 +492,7 @@ For example, how do you build a `CustomButton` that takes a label in
 the constructor? Create a CustomButton that composes a `ElevatedButton` with
 a label, rather than by extending `ElevatedButton`:
 
-<?code-excerpt "lib/custom.dart (CustomButton)"?>
+<?code-excerpt "lib/custom.dart (custom-button)"?>
 ```dart
 class CustomButton extends StatelessWidget {
   final String label;
@@ -511,7 +511,7 @@ class CustomButton extends StatelessWidget {
 
 Then use `CustomButton`, just as you'd use any other Flutter widget:
 
-<?code-excerpt "lib/custom.dart (UseCustomButton)"?>
+<?code-excerpt "lib/custom.dart (use-custom-button)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -550,7 +550,7 @@ In Flutter, you have a couple options to navigate between pages:
 
 The following example builds a Map.
 
-<?code-excerpt "lib/intent.dart (Map)"?>
+<?code-excerpt "lib/intent.dart (map)"?>
 ```dart
 void main() {
   runApp(MaterialApp(
@@ -566,7 +566,7 @@ void main() {
 
 Navigate to a route by `push`ing its name to the `Navigator`.
 
-<?code-excerpt "lib/intent.dart (Push)"?>
+<?code-excerpt "lib/intent.dart (push)"?>
 ```dart
 Navigator.of(context).pushNamed('/b');
 ```
@@ -738,7 +738,7 @@ This is done by `await`ing on the `Future` returned by `push()`.
 For example, to start a location route that lets the user select
 their location, you could do the following:
 
-<?code-excerpt "lib/intent.dart (PushAwait)"?>
+<?code-excerpt "lib/intent.dart (push-await)"?>
 ```dart
 Object? coordinates = await Navigator.of(context).pushNamed('/location');
 ```
@@ -746,7 +746,7 @@ Object? coordinates = await Navigator.of(context).pushNamed('/location');
 And then, inside your location route, once the user has selected their location
 you can `pop` the stack with the result:
 
-<?code-excerpt "lib/intent.dart (Pop)"?>
+<?code-excerpt "lib/intent.dart (pop)"?>
 ```dart
 Navigator.of(context).pop({'lat': 43.821757, 'long': -79.226392});
 ```
@@ -773,7 +773,7 @@ have used Kotlin's coroutines.
 For example, you can run network code without causing the UI to hang by
 using `async`/`await` and letting Dart do the heavy lifting:
 
-<?code-excerpt "lib/async.dart (loadData)"?>
+<?code-excerpt "lib/async.dart (load-data)"?>
 ```dart
 Future<void> loadData() async {
   var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
@@ -884,7 +884,7 @@ you would keep _any_ sort of work out of the main thread in Android.
 For I/O-bound work, declare the function as an `async` function,
 and `await` on long-running tasks inside the function:
 
-<?code-excerpt "lib/async.dart (loadData)"?>
+<?code-excerpt "lib/async.dart (load-data)"?>
 ```dart
 Future<void> loadData() async {
   var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
@@ -917,7 +917,7 @@ Isolates are true to their name, and cannot share memory
 The following example shows, in a simple isolate, how to share data back to
 the main thread to update the UI.
 
-<?code-excerpt "lib/isolates.dart (loadData)"?>
+<?code-excerpt "lib/isolates.dart (load-data)"?>
 ```dart
 Future<void> loadData() async {
   ReceivePort receivePort = ReceivePort();
@@ -1294,14 +1294,14 @@ assets:
 
 You can then access your images using `AssetImage`:
 
-<?code-excerpt "lib/images.dart (AssetImage)"?>
+<?code-excerpt "lib/images.dart (asset-image)"?>
 ```dart
 AssetImage('images/my_icon.jpeg')
 ```
 
 or directly in an `Image` widget:
 
-<?code-excerpt "lib/images.dart (Imageasset)"?>
+<?code-excerpt "lib/images.dart (image-asset)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -1333,7 +1333,7 @@ The best and recommended practice is to hold your strings in a `.arb` file as ke
 
 Then in your code, you can access your strings as such:
 
-<?code-excerpt "lib/localization_examples.dart (AccessString)"?>
+<?code-excerpt "lib/localization_examples.dart (access-string)"?>
 ```dart
 Text(AppLocalizations.of(context)!.hello('John'));
 ```
@@ -1482,7 +1482,7 @@ If you notice the two code samples are identical with the exception of the
 exploited to develop rich layouts that can change overtime with the same
 children.
 
-<?code-excerpt "lib/layout.dart (Row)"?>
+<?code-excerpt "lib/layout.dart (row)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -1498,7 +1498,7 @@ Widget build(BuildContext context) {
 }
 ```
 
-<?code-excerpt "lib/layout.dart (Column)"?>
+<?code-excerpt "lib/layout.dart (column)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -1540,7 +1540,7 @@ This might seem like overkill coming from Android,
 but in Flutter a ListView widget is
 both a ScrollView and an Android ListView.
 
-<?code-excerpt "lib/layout.dart (ListView)"?>
+<?code-excerpt "lib/layout.dart (list-view)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -1575,7 +1575,7 @@ In Flutter there are two ways of adding touch listeners:
  1. If the Widget supports event detection, pass a function to it and handle it
     in the function. For example, the ElevatedButton has an `onPressed` parameter:
 
-  <?code-excerpt "lib/events.dart (onPressed)"?>
+  <?code-excerpt "lib/events.dart (on-pressed)"?>
   ```dart
   @override
   Widget build(BuildContext context) {
@@ -1591,7 +1591,7 @@ In Flutter there are two ways of adding touch listeners:
  2. If the Widget doesn't support event detection, wrap the
     widget in a GestureDetector and pass a function to the `onTap` parameter.
 
-  <?code-excerpt "lib/events.dart (onTap)"?>
+  <?code-excerpt "lib/events.dart (on-tap)"?>
   ```dart
   class SampleTapApp extends StatelessWidget {
     const SampleTapApp({super.key});
@@ -1662,7 +1662,7 @@ Using the GestureDetector, you can listen to a wide range of Gestures such as:
 The following example shows a `GestureDetector`
 that rotates the Flutter logo on a double tap:
 
-<?code-excerpt "lib/events.dart (SampleApp)"?>
+<?code-excerpt "lib/events.dart (sample-app)"?>
 ```dart
 class SampleApp extends StatefulWidget {
   const SampleApp({super.key});
@@ -2051,7 +2051,7 @@ fonts:
 
 Then assign the font to your `Text` widget:
 
-<?code-excerpt "lib/text.dart (CustomFont)"?>
+<?code-excerpt "lib/text.dart (custom-font)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -2102,7 +2102,7 @@ In Flutter, you can easily show a "hint" or a placeholder text for your input by
 adding an InputDecoration object to the decoration constructor parameter for
 the Text Widget.
 
-<?code-excerpt "lib/form.dart (InputHint)" replace="/return const //g;/;//g"?>
+<?code-excerpt "lib/form.dart (input-hint)" replace="/return const //g;/;//g"?>
 ```dart
 Center(
   child: TextField(
@@ -2281,7 +2281,7 @@ To customize the colors and styles of any child components, pass a
 `ThemeData` object to the `MaterialApp` widget. For example, in the code below,
 the color scheme from seed is set to deepPurple and text selection color is red.
 
-<?code-excerpt "lib/theme.dart (Theme)"?>
+<?code-excerpt "lib/theme.dart (theme)"?>
 ```dart
 import 'package:flutter/material.dart';
 

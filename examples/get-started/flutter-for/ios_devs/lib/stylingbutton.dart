@@ -31,7 +31,7 @@ class HomePage extends StatelessWidget {
     return CupertinoPageScaffold(
       navigationBar: const CupertinoNavigationBar(
           middle:
-              // #docregion CustomFont
+              // #docregion custom-font
               Text(
         'Cupertino',
         style: TextStyle(
@@ -39,10 +39,10 @@ class HomePage extends StatelessWidget {
           fontFamily: 'BungeeSpice',
         ),
       )
-          // #enddocregion CustomFont
+          // #enddocregion custom-font
           ),
       child: Center(
-        // #docregion StylingButtonExample
+        // #docregion styling-button
         child: CupertinoButton(
           color: CupertinoColors.systemYellow,
           onPressed: () {},
@@ -56,7 +56,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
         ),
-        // #enddocregion StylingButtonExample
+        // #enddocregion styling-button
       ),
     );
   }

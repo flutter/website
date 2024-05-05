@@ -314,7 +314,7 @@ use the `CupertinoButton` class:
 </ul>
 </nav>
 
-<?code-excerpt "lib/text_button.dart (textbutton)"?>
+<?code-excerpt "lib/text_button.dart (text-button)"?>
 ```dart
         CupertinoButton(
   onPressed: () {
@@ -462,7 +462,7 @@ You set the number of items to display then build a widget for each item.
 </ul>
 </nav>
 
-<?code-excerpt "lib/list.dart (SimpleList)"?>
+<?code-excerpt "lib/list.dart (simple-list)"?>
 ```dart
 class Person {
   String name;
@@ -546,7 +546,7 @@ The following example uses the `.builder()` initializer:
 </ul>
 </nav>
 
-<?code-excerpt "lib/grid.dart (GridExample)"?>
+<?code-excerpt "lib/grid.dart (grid-example)"?>
 ```dart
 const widgets = [
   Text('Row 1'),
@@ -617,7 +617,7 @@ of the `Person` class to create the custom `PersonView` widget.
 </ul>
 </nav>
 
-<?code-excerpt "lib/scroll.dart (ScrollExample)"?>
+<?code-excerpt "lib/scroll.dart (scroll-example)"?>
 ```dart
     SingleChildScrollView(
   child: Column(
@@ -694,7 +694,7 @@ The following example shows a part of a counter app:
 </ul>
 </nav>
 
-<?code-excerpt "lib/state.dart (State)"?>
+<?code-excerpt "lib/state.dart (state)"?>
 ```dart
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -770,7 +770,7 @@ This animates the `Transform.rotate` widget.
 </ul>
 </nav>
 
-<?code-excerpt "lib/simple_animation.dart (AnimatedButton)"?>
+<?code-excerpt "lib/simple_animation.dart (animated-button)"?>
 ```dart
     AnimatedRotation(
   duration: const Duration(seconds: 1),
@@ -823,7 +823,7 @@ with two classes that help you draw:
     </ul>
     </nav>
 
-    <?code-excerpt "lib/canvas.dart (CustomPaint)"?>
+    <?code-excerpt "lib/canvas.dart (custom-paint)"?>
     ```dart
         CustomPaint(
       painter: SignaturePainter(_points),
@@ -844,7 +844,7 @@ with two classes that help you draw:
     </ul>
     </nav>
 
-    <?code-excerpt "lib/canvas.dart (CustomPainter)"?>
+    <?code-excerpt "lib/canvas.dart (custom-painter)"?>
     ```dart
     class SignaturePainter extends CustomPainter {
       SignaturePainter(this.points);
@@ -921,7 +921,7 @@ call your navigation routes using their names.
     </ul>
     </nav>
 
-    <?code-excerpt "lib/navigation.dart (Routes)"?>
+    <?code-excerpt "lib/navigation.dart (routes)"?>
     ```dart
     // Defines the route name as a constant
     // so that it's reusable.
@@ -961,7 +961,7 @@ call your navigation routes using their names.
     </ul>
     </nav>
 
-    <?code-excerpt "lib/navigation.dart (ListView)"?>
+    <?code-excerpt "lib/navigation.dart (list-view)"?>
     ```dart
         ListView.builder(
       itemCount: mockPersons.length,
@@ -1005,7 +1005,7 @@ call your navigation routes using their names.
     </ul>
     </nav>
 
-    <?code-excerpt "lib/navigation.dart (DetailsPage)"?>
+    <?code-excerpt "lib/navigation.dart (details-page)"?>
     ```dart
     class DetailsPage extends StatelessWidget {
       const DetailsPage({super.key});
@@ -1055,7 +1055,7 @@ In **Flutter**, use the `pop()` function of the `Navigator` class:
 </ul>
 </nav>
 
-<?code-excerpt "lib/popback.dart (PopBackExample)"?>
+<?code-excerpt "lib/popback.dart (pop-back)"?>
 ```dart
 TextButton(
   onPressed: () {
@@ -1096,7 +1096,7 @@ In **Flutter**, use the [`url_launcher`][] plugin.
 </ul>
 </nav>
 
-<?code-excerpt "lib/openapp.dart (OpenAppExample)"?>
+<?code-excerpt "lib/openapp.dart (open-app-example)"?>
 ```dart
     CupertinoButton(
   onPressed: () async {
@@ -1137,7 +1137,7 @@ of the `App` class:
 </ul>
 </nav>
 
-<?code-excerpt "lib/cupertino_themes.dart (Theme)"?>
+<?code-excerpt "lib/cupertino_themes.dart (theme)"?>
 ```dart
     CupertinoApp(
   theme: CupertinoThemeData(
@@ -1173,7 +1173,7 @@ of the `style` parameter of the `Text` widget.
 </ul>
 </nav>
 
-<?code-excerpt "lib/cupertino_themes.dart (StylingTextExample)"?>
+<?code-excerpt "lib/cupertino_themes.dart (styling-text)"?>
 ```dart
     Text(
   'Hello, world!',
@@ -1219,7 +1219,7 @@ In the following example:
 </ul>
 </nav>
 
-<?code-excerpt "lib/stylingbutton.dart (StylingButtonExample)"?>
+<?code-excerpt "lib/stylingbutton.dart (styling-button)"?>
 ```dart
 child: CupertinoButton(
   color: CupertinoColors.systemYellow,
@@ -1282,7 +1282,7 @@ following example:
 </ul>
 </nav>
 
-<?code-excerpt "lib/stylingbutton.dart (CustomFont)"?>
+<?code-excerpt "lib/stylingbutton.dart (custom-font)"?>
 ```dart
         Text(
   'Cupertino',
