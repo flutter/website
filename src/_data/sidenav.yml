@@ -667,6 +667,8 @@
           permalink: /tools/devtools/app-size
         - title: DevTools extensions
           permalink: /tools/devtools/extensions
+        - title: Validate deep links
+          permalink: /tools/devtools/deep-links
         - title: Release notes
           permalink: /tools/devtools/release-notes
     - title: SDK overview
