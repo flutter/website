@@ -1,6 +1,6 @@
 ---
 title: Migrating from flutter_driver
-description: >
+description: >-
   Learn how to migrate existing flutter_driver tests to integration_test.
 ---
 
@@ -26,13 +26,11 @@ functionality:
 * On the right, there's a details screen that displays the plant name
   and species.
 * On app start, when no plant is selected, a text asking the user to select
-a plant is displayed
+  a plant is displayed
 * The list of plants is loaded from a local JSON file located in the
-  assets folder.
+  `/assets` folder.
 
-<img src='/assets/images/docs/integration-test/migration-1.png'
-class="mw-100" 
-alt="Starter project screenshot">
+<img src='/assets/images/docs/integration-test/migration-1.png' class="mw-100" alt="Starter project screenshot">
 
 You can find the full code example in the [Example Project][] folder.
 
@@ -56,7 +54,7 @@ This file won't be necessary anymore when using `integration_test`.
 
 To start using the `integration_test` package,
 add the `integration_test` to
-your pubspec.yaml file if you haven't yet:
+your `pubspec.yaml` file if you haven't yet:
 
 ```yaml
 dev_dependencies:

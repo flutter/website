@@ -1,9 +1,6 @@
-{% assign os = include.os %}
-{% assign target = include.target %}
+To develop Flutter on {{include.os}}:
 
-To develop Flutter on {{os}}:
-
-{% if os == "ChromeOS" %}
+{% if include.os == "ChromeOS" %}
 
 1. Enable [Linux][] on your Chromebook.
 
@@ -29,17 +26,17 @@ To develop Flutter on {{os}}:
    $ sudo apt-get install -y curl git unzip xz-utils zip libglu1-mesa
    ```
 
-{% case target %}
+{% case include.target %}
 {% when 'desktop' -%}
 
-{% include docs/install/reqs/linux/install-desktop-tools.md devos=os %}
+{% include docs/install/reqs/linux/install-desktop-tools.md devos=include.os %}
 
 {% when 'Android' -%}
 
-1. To develop {{target}} apps:
+1. To develop {{include.target}} apps:
 
    {:type="a"}
-   1. Install the following prequisite packages for Android Studio:
+   1. Install the following prerequisite packages for Android Studio:
       `libc6:i386`, `libncurses5:i386`, `libstdc++6:i386`, `lib32z1`, `libbz2-1.0:i386`
 
       ```console
@@ -57,7 +54,7 @@ To develop Flutter on {{os}}:
 
 1. Install [Google Chrome][] to debug JavaScript code for web apps.
 
-{% include docs/install/accordions/install-chrome-from-cli.md %}
+{% render docs/install/accordions/install-chrome-from-cli.md %}
 
 {% endcase -%}
 

@@ -94,12 +94,12 @@ targetmin:
 ## Software current versions
 
 appnow:
-  flutter: '3.19.3'
-  vscode: '1.86'
-  android_studio: '2023.1'
-  android_sdk: '34.0.0'
-  intellij: '2023.3'
+  flutter: '3.19.6'
+  vscode: '1.89'
+  android_studio: '2023.3'
+  android_sdk: '34.0.5'
+  intellij: '2024.1'
   powershell: 5.1
   xcode: '15'
   ios: '17'
-  cocoapods: '1.13'
+  cocoapods: '1.15'

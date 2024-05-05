@@ -6,22 +6,22 @@ description: >-
 environment:
   sdk: ^3.3.0
 
-# #docregion FlutterLocalizations
+# #docregion flutter-localizations
 dependencies:
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
   intl: any
-# #enddocregion FlutterLocalizations
+# #enddocregion flutter-localizations
 
 dev_dependencies:
   example_utils:
     path: ../../example_utils
 
-# #docregion Generate
+# #docregion generate
 # The following section is specific to Flutter.
 flutter:
   generate: true # Add this line
-# #enddocregion Generate
+# #enddocregion generate
   uses-material-design: true

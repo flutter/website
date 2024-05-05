@@ -141,7 +141,7 @@ UnconstrainedBox(
 )
 ```
 
-<img src="/assets/images/docs/ui/layout/layout-14.png" alt="When parents pass unbounded constraints to children, and the children are expanding, then there is an overflow warning">
+<img src="/assets/images/docs/ui/layout/layout-14.png" alt="When parents pass unbounded constraints to children, and the children are expanding, then there is an overflow warning.">
 
 To learn how constraints work in Flutter,
 see [Understanding constraints][].

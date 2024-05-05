@@ -1,8 +1,5 @@
-{% assign devos = include.devos %}
-{% assign target = include.target %}
-
-1. To develop {{devos}} {{target}} apps, use the following command to install
-   these packages:  
+1. To develop {{include.devos}} {{include.target}} apps, use the
+   following command to install these packages:  
    [`clang`][clang],
    [`cmake`][cmake],
    [`ninja-build`][ninjabuild],
