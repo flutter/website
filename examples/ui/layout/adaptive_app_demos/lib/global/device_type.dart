@@ -20,16 +20,16 @@ class DeviceType {
   static bool get isDesktopOrWeb => isDesktop || isWeb;
   static bool get isMobileOrWeb => isMobile || isWeb;
 
-  // #docregion Platforms
+  // #docregion platforms
   bool get isMobileDevice => !kIsWeb && (Platform.isIOS || Platform.isAndroid);
   bool get isDesktopDevice =>
       !kIsWeb && (Platform.isMacOS || Platform.isWindows || Platform.isLinux);
   bool get isMobileDeviceOrWeb => kIsWeb || isMobileDevice;
   bool get isDesktopDeviceOrWeb => kIsWeb || isDesktopDevice;
-  // #enddocregion Platforms
+  // #enddocregion platforms
 }
 
-// #docregion Styling
+// #docregion styling
 class Insets {
   static const double xsmall = 3;
   static const double small = 4;
@@ -59,18 +59,18 @@ class TextStyles {
   static TextStyle body1 = raleway.copyWith(color: const Color(0xFF42A5F5));
   // etc
 }
-// #enddocregion Styling
+// #enddocregion styling
 
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // #docregion UseConstants
+    // #docregion use-constants
     return Padding(
       padding: const EdgeInsets.all(Insets.small),
       child: Text('Hello!', style: TextStyles.body1),
     );
-    // #enddocregion UseConstants
+    // #enddocregion use-constants
   }
 }

@@ -16,7 +16,7 @@ The {{site.sdk.channel | capitalize }} channel contains the
 most stable Flutter builds.
 To learn more, check out [Flutter's channels][].
 
-{% include docs/china-notice.md %}
+{% render docs/china-notice.md %}
 
 To learn what's new in the major Flutter releases,
 check out the [release notes][] page.

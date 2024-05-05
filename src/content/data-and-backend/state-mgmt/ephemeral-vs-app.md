@@ -47,7 +47,7 @@ Below, you see how the currently selected item in a bottom navigation bar is
 held in the `_index` field of the `_MyHomepageState` class.
 In this example, `_index` is ephemeral state.
 
-<?code-excerpt "state_mgmt/simple/lib/src/set_state.dart (Ephemeral)" plaster="// ... items ..."?>
+<?code-excerpt "state_mgmt/simple/lib/src/set_state.dart (ephemeral)" plaster="// ... items ..."?>
 ```dart
 class MyHomepage extends StatefulWidget {
   const MyHomepage({super.key});

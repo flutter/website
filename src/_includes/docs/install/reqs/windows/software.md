@@ -1,34 +1,34 @@
 {% if include.target == 'Android' %}
-{% assign target = 'mobile' %}
+{% assign mod-target = 'mobile' %}
 {% else %}
-{% assign target = include.target %}
+{% assign mod-target = include.target %}
 {% endif %}
 
-{% if target == 'desktop' -%}
+{% if mod-target == 'desktop' -%}
 
 * [Visual Studio 2022][] to debug and compile native C++ Windows code.
   Make sure to install the **Desktop development with C++** workload.
   This enables building Windows app including all of its default components.
   **Visual Studio** is an IDE separate from **[Visual Studio _Code_][]**.
 
-{% elsif target == 'mobile' -%}
+{% elsif mod-target == 'mobile' -%}
 
-* [Android Studio][] {{site.appmin.android_studio}} to debug and compile
-  Java or Kotlin code for Android.
+* [Android Studio][] {{site.appmin.android_studio}} or later
+  to debug and compile Java or Kotlin code for Android.
   Flutter requires the full version of Android Studio.
 
-{% elsif target == 'web' -%}
+{% elsif mod-target == 'web' -%}
 
 * [Google Chrome][] to debug JavaScript code for web apps.
 
 {% else -%}
 
-* [Visual Studio 2022][] with the the **Desktop development with C++** workload
+* [Visual Studio 2022][] with the **Desktop development with C++** workload
   or [Build Tools for Visual Studio 2022][].
   This enables building Windows app including all of its default components.
   **Visual Studio** is an IDE separate from **[Visual Studio _Code_][]**.
-* [Android Studio][] {{site.appmin.android_studio}} to debug and compile
-  Java or Kotlin code for Android.
+* [Android Studio][] {{site.appmin.android_studio}} or later
+  to debug and compile Java or Kotlin code for Android.
   Flutter requires the full version of Android Studio.
 * The latest version of [Google Chrome][] to debug JavaScript code for web apps.
 

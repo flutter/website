@@ -53,23 +53,31 @@ Future<int> _refreshExcerpts({
   // TODO: Replace diffutils with cross-platform solution.
   final diffVersionOutput =
       Process.runSync('diff', ['--version']).stdout.toString();
+  if (diffVersionOutput.toLowerCase().contains('apple diff')) {
+    stderr.writeln(
+      'Error: The built-in diff tool on macOS is out of date! '
+      'Please install a version of diffutils >= 3.6.',
+    );
+    return 1;
+  }
+
   final diffVersionLine = RegExp(r'^diff.*3\.(\d+)$', multiLine: true)
       .firstMatch(diffVersionOutput);
   if (diffVersionLine == null) {
     stderr.writeln(
-      'Error: diffutils must be installed to refresh code excerpts!',
+      'Error: diffutils >= 3.6 must be installed to refresh code excerpts!',
     );
     return 1;
-  } else {
-    // TODO(parlough): This doesn't account for v4.
-    final diffPatchVersion = int.tryParse(diffVersionLine[1] ?? '');
-    if (diffPatchVersion == null || diffPatchVersion < 6) {
-      stderr.writeln(
-        'Error: diffutils version >=3.6 required - '
-        'your version: 3.$diffPatchVersion!',
-      );
-      return 1;
-    }
+  }
+
+  // TODO(parlough): This doesn't account for v4.
+  final diffPatchVersion = int.tryParse(diffVersionLine[1] ?? '');
+  if (diffPatchVersion == null || diffPatchVersion < 6) {
+    stderr.writeln(
+      'Error: diffutils version >=3.6 required - '
+      'your version: 3.$diffPatchVersion!',
+    );
+    return 1;
   }
 
   final repositoryRoot = Directory.current.path;

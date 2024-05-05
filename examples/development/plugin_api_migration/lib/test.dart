@@ -1,7 +1,5 @@
-// ignore_for_file: import_of_legacy_library_into_null_safe
-
 import 'package:battery/battery.dart';
-// #docregion Test
+// #docregion test
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 
@@ -14,4 +12,4 @@ void main() {
     expect(batteryLevel, isNotNull);
   });
 }
-// #enddocregion Test
+// #enddocregion test

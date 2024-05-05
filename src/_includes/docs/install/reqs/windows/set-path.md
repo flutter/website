@@ -1,15 +1,14 @@
-{% assign terminal=include.terminal %}
 
 ### Update your Windows PATH variable {:.no_toc}
 
-{% include docs/help-link.md location='win-path' section='#unable-to-find-the-flutter-command' %}
+{% render docs/help-link.md, location:'win-path', section:'#unable-to-find-the-flutter-command' %}
 
-To run Flutter commands in {{terminal}},
+To run Flutter commands in {{include.terminal}},
 add Flutter to the `PATH` environment variable.
 This section presumes that you installed the Flutter SDK in
 `%USERPROFILE%\dev\flutter`.
 
-{% include docs/install/reqs/windows/open-envvars.md %}
+{% render docs/install/reqs/windows/open-envvars.md %}
 
 1. In the **User variables for (username)** section,
    look for the **Path** entry.
@@ -44,4 +43,5 @@ This section presumes that you installed the Flutter SDK in
       1. Click **OK** three times.
 
 1. To enable these changes,
-   close and reopen any existing command prompts and {{terminal}} instances.
+   close and reopen any existing
+   command prompts and {{include.terminal}} instances.

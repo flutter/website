@@ -30,7 +30,7 @@ class OkCancelDialog extends StatelessWidget {
 class _OkCancelButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // #docregion RowTextDirection
+    // #docregion row-text-direction
     TextDirection btnDirection =
         DeviceType.isWindows ? TextDirection.rtl : TextDirection.ltr;
     return Row(
@@ -51,7 +51,7 @@ class _OkCancelButtons extends StatelessWidget {
         ),
       ],
     );
-    // #enddocregion RowTextDirection
+    // #enddocregion row-text-direction
   }
 }
 

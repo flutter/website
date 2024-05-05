@@ -2,15 +2,12 @@
 ## Configure iOS development
 
 {% assign prompt1='$' %}
-{% assign devos = include.devos %}
-{% assign target = include.target %}
-{% assign attempt = include.attempt %}
 
 ### Configure Xcode
 
-{% if attempt=="first" %}
+{% if include.attempt=="first" %}
 
-To develop Flutter apps for {{target}}, install Xcode to compile to native bytecode.
+To develop Flutter apps for {{include.target}}, install Xcode to compile to native bytecode.
 
 1. To configure the command-line tools to use the installed version of Xcode,
    run the following commands.
@@ -33,7 +30,7 @@ To develop Flutter apps for {{target}}, install Xcode to compile to native bytec
 This section presumes you have installed and configured Xcode when you
 installed Flutter for
 
-{%- case target %}
+{%- case include.target %}
 {%- when 'iOS' %}
 [macOS desktop][macos-install]
 {%- when 'desktop' %}
@@ -48,7 +45,7 @@ installed Flutter for
 
 Try to keep to the current version of Xcode.
 
-{% if target=='iOS' %}
+{% if include.target=='iOS' %}
 
 ### Configure your target iOS device
 
@@ -83,13 +80,14 @@ With Xcode, you can run Flutter apps on an iOS device or on the simulator.
 
 {% endif %}
 
-{% if attempt=="first" %}
+{% if include.attempt=="first" %}
 
 ### Install CocoaPods
 
-If your apps depend on [Flutter plugins][] with native {{target}} code,
+If your apps depend on [Flutter plugins][] with native {{include.target}} code,
 install [CocoaPods][cocoapods].
-This program bundles various dependencies across Flutter and {{target}} code.
+This program bundles various dependencies across
+Flutter and {{include.target}} code.
 
 To install and set up CocoaPods, run the following commands:
 

@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text(appTitle),
         ),
-        // #docregion addWidget
+        // #docregion add-widget
         body: const SingleChildScrollView(
           child: Column(
             children: [
@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
             ],
           ),
         ),
-        // #enddocregion addWidget
+        // #enddocregion add-widget
       ),
     );
   }
@@ -86,12 +86,12 @@ class TitleSection extends StatelessWidget {
             ),
           ),
           /*3*/
-          // #docregion Icon
+          // #docregion icon
           Icon(
             Icons.star,
             color: Colors.red[500],
           ),
-          // #enddocregion Icon
+          // #enddocregion icon
           const Text('41'),
         ],
       ),
@@ -185,7 +185,7 @@ class TextSection extends StatelessWidget {
   }
 }
 
-// #docregion ImageSection
+// #docregion image-asset
 class ImageSection extends StatelessWidget {
   const ImageSection({super.key, required this.image});
 
@@ -193,36 +193,36 @@ class ImageSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // #docregion Image-asset
+    // #docregion image-asset
     return Image.asset(
       image,
       width: 600,
       height: 240,
       fit: BoxFit.cover,
     );
-    // #enddocregion Image-asset
+    // #enddocregion image-asset
   }
 }
-// #enddocregion ImageSection
+// #enddocregion image-section
 
-// #docregion FavoriteWidget
+// #docregion favorite-widget
 class FavoriteWidget extends StatefulWidget {
   const FavoriteWidget({super.key});
 
   @override
   State<FavoriteWidget> createState() => _FavoriteWidgetState();
 }
-// #enddocregion FavoriteWidget
+// #enddocregion favorite-widget
 
-// #docregion _FavoriteWidgetState, _FavoriteWidgetState-fields, _FavoriteWidgetState-build
+// #docregion favorite-state, favorite-state-fields, favorite-state-build
 class _FavoriteWidgetState extends State<FavoriteWidget> {
-  // #enddocregion _FavoriteWidgetState-build
+  // #enddocregion favorite-state-build
   bool _isFavorited = true;
   int _favoriteCount = 41;
 
-  // #enddocregion _FavoriteWidgetState-fields
+  // #enddocregion favorite-state-fields
 
-  // #docregion _toggleFavorite
+  // #docregion toggle-favorite
   void _toggleFavorite() {
     setState(() {
       if (_isFavorited) {
@@ -235,9 +235,9 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
     });
   }
 
-  // #enddocregion _toggleFavorite
+  // #enddocregion toggle-favorite
 
-  // #docregion _FavoriteWidgetState-build
+  // #docregion favorite-state-build
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -264,5 +264,6 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
       ],
     );
   }
-// #docregion _FavoriteWidgetState-fields
+  // #docregion favorite-state-fields
 }
+// #enddocregion favorite-state, favorite-state-fields, favorite-state-build

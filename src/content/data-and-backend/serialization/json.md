@@ -114,7 +114,7 @@ decoder.
 
 The following sample JSON implements a simple user model.
 
-<?code-excerpt "lib/manual/main.dart (JSON)" skip="1" take="4"?>
+<?code-excerpt "lib/manual/main.dart (multiline-json)" skip="1" take="4"?>
 ```json
 {
   "name": "John Smith",
@@ -187,7 +187,7 @@ class User {
 The responsibility of the decoding logic is now moved inside the model
 itself. With this new approach, you can decode a user easily.
 
-<?code-excerpt "lib/manual/main.dart (fromJson)"?>
+<?code-excerpt "lib/manual/main.dart (from-json)"?>
 ```dart
 final userMap = jsonDecode(jsonString) as Map<String, dynamic>;
 final user = User.fromJson(userMap);
@@ -200,7 +200,7 @@ To encode a user, pass the `User` object to the `jsonEncode()` function.
 You don't need to call the `toJson()` method, since `jsonEncode()`
 already does it for you.
 
-<?code-excerpt "lib/manual/main.dart (jsonEncode)" skip="1"?>
+<?code-excerpt "lib/manual/main.dart (json-encode)" skip="1"?>
 ```dart
 String json = jsonEncode(user);
 ```
@@ -387,14 +387,14 @@ It is safe to start the watcher once and leave it running in the background.
 To decode a JSON string the `json_serializable` way,
 you do not have actually to make any changes to our previous code.
 
-<?code-excerpt "lib/serializable/main.dart (fromJson)"?>
+<?code-excerpt "lib/serializable/main.dart (from-json)"?>
 ```dart
 final userMap = jsonDecode(jsonString) as Map<String, dynamic>;
 final user = User.fromJson(userMap);
 ```
 The same goes for encoding. The calling API is the same as before.
 
-<?code-excerpt "lib/serializable/main.dart (jsonEncode)" skip="1"?>
+<?code-excerpt "lib/serializable/main.dart (json-encode)" skip="1"?>
 ```dart
 String json = jsonEncode(user);
 ```
@@ -525,7 +525,7 @@ For more information, see the following resources:
 * The [`json_serializable`][] package on pub.dev
 * The [`json_serializable` examples][] on GitHub
 * The [Dive into Dart's patterns and records][] codelab
-
+* This ultimate guide about [how to parse JSON in Dart/Flutter][]
 
 [`built_value`]: {{site.pub}}/packages/built_value
 [code generation libraries]: #code-generation
@@ -544,3 +544,4 @@ For more information, see the following resources:
 [Serializing JSON using code generation libraries]: #code-generation
 [tree shaking]: https://en.wikipedia.org/wiki/Tree_shaking
 [Dive into Dart's patterns and records]: {{site.codelabs}}/codelabs/dart-patterns-records
+[how to parse JSON in Dart/Flutter]: https://codewithandrea.com/articles/parse-json-dart/

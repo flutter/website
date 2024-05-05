@@ -54,7 +54,7 @@ class _AdaptiveGridPageState extends State<AdaptiveGridPage> {
               builder: (context, constraints) {
                 // Calculate how many columns we want depending on available space
                 int colCount = max(1, (constraints.maxWidth / 250).floor());
-                // #docregion ScrollbarAlwaysShown
+                // #docregion scrollbar-always-shown
                 return Scrollbar(
                   thumbVisibility: DeviceType.isDesktop,
                   controller: _scrollController,
@@ -66,7 +66,7 @@ class _AdaptiveGridPageState extends State<AdaptiveGridPage> {
                     children: listChildren,
                   ),
                 );
-                // #enddocregion ScrollbarAlwaysShown
+                // #enddocregion scrollbar-always-shown
               },
             ),
           ),
