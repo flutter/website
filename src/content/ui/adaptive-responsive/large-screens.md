@@ -208,6 +208,8 @@ and multi-view devices.
 
 <b>PENDING: OK, the next thing covered in the slides (starting with slide 66) is an actual example that switches between Dialog implementations. This would be hard to show without providing a specific example. I think it would be VERY useful to include this in the docs. Ditto for the navigation UI (starting with slide 81) and custom layout (slide 96). Thoughts?</b>
 
+[SafeArea & MediaQuery]: /ui/adaptive-responsive/safearea-mediaquery
+
 ## Adaptive input
 
 Adding support for more screens, also means
