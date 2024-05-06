@@ -89,7 +89,7 @@ Relevant PRs:
 [`Surface`]: https://developer.android.com/reference/android/view/Surface
 [`SurfaceProducer`]: {{site.api}}/javadoc/io/flutter/view/TextureRegistry.SurfaceProducer.html
 [`SurfaceTexture`]: https://source.android.com/docs/core/graphics/arch-st
-[`createSurfaceProducer`]: {site.api}}//javadoc/io/flutter/view/TextureRegistry.html#createSurfaceProducer()
+[`createSurfaceProducer`]: {site.api}}/javadoc/io/flutter/view/TextureRegistry.html#createSurfaceProducer()
 [`createSurfaceTexture`]: {{site.api}}/javadoc/io/flutter/view/TextureRegistry.html#createSurfaceTexture()
 [`getSurface()`]: {{site.api}}/javadoc/io/flutter/view/TextureRegistry.SurfaceProducer.html#getSurface()
 [Issue 139702]: {{site.repo.flutter}}/issues/139702
