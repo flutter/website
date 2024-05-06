@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", function(_) {
   initCookieNotice();
   setupCopyButtons();
 
+  setupSearch();
+
   setupTabs($('#os-archive-tabs'), 'dev.flutter.tab-os', _getOSForArchive);
   setupTabs($('#editor-setup'), 'io.flutter.tool-id');
   setupTabs($('.sample-code-tabs'), 'io.flutter.tool-id');
@@ -120,6 +122,33 @@ function adjustToc() {
     if (distanceBetweenTop > 0) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+  }
+}
+
+function setupSearch() {
+  document.addEventListener('keydown', handleSearchShortcut);
+}
+
+function handleSearchShortcut(event) {
+  const activeElement = document.activeElement;
+  if (activeElement instanceof HTMLInputElement ||
+      activeElement instanceof HTMLTextAreaElement ||
+      event.code !== 'Slash'
+  ) {
+    return;
+  }
+
+  // If the page has a search field in the body, focus that.
+  const bodySearch = document.querySelector('input.gsc-input');
+  // Otherwise, focus the search field in the navbar.
+  const searchElement = bodySearch ? bodySearch : document
+      .querySelector('input.search-field');
+
+  // If we successfully found a search field, focus that.
+  if (searchElement) {
+    searchElement.focus();
+    // Prevent the initial slash from showing up in the search field.
+    event.preventDefault();
   }
 }
 
