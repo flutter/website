@@ -56,8 +56,10 @@ Otherwise, the API is the same as before.
 
 Landed in version: 3.22.0-12.0.pre-56
 
-> **NOTE**: This landed in the verison _before_ but was non-functional; plugins
-> that migrate to this API should set `3.22` as a minimum version constraint.
+:::note
+This feature landed in the _previous_ version of the SDK but was non-functional;
+plugins that migrate to this API should set `3.22` as a minimum version constraint.
+:::
 
 In stable release: TBD
 

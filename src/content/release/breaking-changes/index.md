@@ -43,6 +43,7 @@ release, and listed in alphabetical order:
 * [Deprecate `ButtonBar` in favor of `OverflowBar`][]
 * [Deprecated API removed after v3.19][]
 * [Dropping support for Android KitKat][]
+* [New APIs for Android plugins that render to a `Surface`][]
 
 [Generic types in `PopScope`]: /release/breaking-changes/popscope-with-result
 [Rename `MaterialState` to `WidgetState`]: /release/breaking-changes/material-state
@@ -54,6 +55,7 @@ release, and listed in alphabetical order:
 [Deprecate `ButtonBar` in favor of `OverflowBar`]: /release/breaking-changes/deprecate-buttonbar
 [Deprecated API removed after v3.19]: /release/breaking-changes/3-19-deprecations
 [Dropping support for Android KitKat]: /release/breaking-changes/android-kitkat-deprecation
+[New APIs for Android plugins that render to a `Surface`]: /release/breaking-changes/android-surface-plugins
 
 <a id="released-in-flutter-3-19"></a>
 ### Released in Flutter 3.19
