@@ -12,6 +12,15 @@ and offers ways to work around them.
 
 [`Image`]: {{site.api}}/flutter/widgets/Image-class.html
 
+:::note
+For information on how to optimize web loading speed,
+check out the (free) article on Medium,
+[Best practices for optimizing Flutter web loading speed][article].
+
+[article]: {{site.flutter-medium}}/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c
+:::
+
+
 ## Background
 
 This section summarizes the technologies available
