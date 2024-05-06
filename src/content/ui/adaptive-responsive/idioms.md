@@ -111,7 +111,7 @@ has support for adaptive colors and sizes according to the
 current platform. The one tweak you might want to make is to
 toggle `alwaysShown` when on a desktop platform:
 
-<?code-excerpt "lib/pages/adaptive_grid_page.dart (ScrollbarAlwaysShown)"?>
+<?code-excerpt "lib/pages/adaptive_grid_page.dart (scrollbar-always-shown)"?>
 ```dart
 return Scrollbar(
   thumbVisibility: DeviceType.isDesktop,
@@ -134,7 +134,7 @@ comfortable on a given platform.
 Dealing with multi-select within a list is another area
 with subtle differences across platforms:
 
-<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (MultiSelectShift)"?>
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (multi-select-shift)"?>
 ```dart
 static bool get isSpanSelectModifierDown =>
     isKeyDown({LogicalKeyboardKey.shiftLeft, LogicalKeyboardKey.shiftRight});
@@ -143,7 +143,7 @@ static bool get isSpanSelectModifierDown =>
 To perform a platform-aware check for control or command,
 you can write something like this:
 
-<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (MultiSelectModifierDown)"?>
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (multi-select-modifier-down)"?>
 ```dart
 static bool get isMultiSelectModifierDown {
   bool isDown = false;
@@ -188,14 +188,14 @@ users on the web tend to have an adverse reaction.
 
 Luckily, this is easy to support with the [`SelectableText`][] widget:
 
-<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (SelectableText)"?>
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (selectable-text)"?>
 ```dart
 return const SelectableText('Select me!');
 ```
 
 To support rich text, then use `TextSpan`:
 
-<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (RichTextSpan)"?>
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (rich-text-span)"?>
 ```dart
 return const SelectableText.rich(
   TextSpan(
@@ -261,7 +261,7 @@ and positioned:
 To show basic tooltips in Flutter,
 use the built-in [`Tooltip`][] widget:
 
-<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (Tooltip)"?>
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (tooltip)"?>
 ```dart
 return const Tooltip(
   message: 'I am a Tooltip',
@@ -310,7 +310,7 @@ placed at the end of the row (right side).
 This can be easily handled in Flutter using the
 `TextDirection` property on `Row`:
 
-<?code-excerpt "lib/widgets/ok_cancel_dialog.dart (RowTextDirection)"?>
+<?code-excerpt "lib/widgets/ok_cancel_dialog.dart (row-text-direction)"?>
 ```dart
 TextDirection btnDirection =
     DeviceType.isWindows ? TextDirection.rtl : TextDirection.ltr;

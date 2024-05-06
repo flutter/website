@@ -39,7 +39,7 @@ If you need to implement custom scroll behavior,
 you can use the [`Listener`][] widget, which lets you
 customize how your UI reacts to the scroll wheel.
 
-<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (PointerScroll)"?>
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (pointer-scroll)"?>
 ```dart
 return Listener(
   onPointerSignal: (event) {
@@ -72,7 +72,7 @@ and shortcuts together in one widget. You can create
 a detector that defines actions and key bindings,
 and provides callbacks for handling focus and hover highlights.
 
-<?code-excerpt "lib/pages/focus_examples_page.dart (_BasicActionDetectorState)"?>
+<?code-excerpt "lib/pages/focus_examples_page.dart (focusable-action-detector)"?>
 ```dart
 class _BasicActionDetectorState extends State<BasicActionDetector> {
   bool _hasFocus = false;
@@ -122,7 +122,7 @@ of the tree that should be treated as a group when tabbing.
 For example, you might to tab through all the fields in
 a form before tabbing to the submit button:
 
-<?code-excerpt "lib/pages/focus_examples_page.dart (FocusTraversalGroup)"?>
+<?code-excerpt "lib/pages/focus_examples_page.dart (focus-traversal-group)"?>
 ```dart
 return Column(children: [
   FocusTraversalGroup(
@@ -184,7 +184,7 @@ or a [`Focus`][] widget and listen for keyboard events:
 To apply a set of keyboard shortcuts to a large section
 of the tree, use the [`Shortcuts`][] widget:
 
-<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (Shortcuts)"?>
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (shortcuts)"?>
 ```dart
 // Define a class for each type of shortcut action you want
 class CreateNewItemIntent extends Intent {
@@ -245,7 +245,7 @@ you can use the `HardwareKeyboard.instance.logicalKeysPressed` set.
 For example, a method like the following can check whether any
 of the provided keys are being held down:
 
-<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (KeysPressed)"?>
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (keys-pressed)"?>
 ```dart
 static bool isKeyDown(Set<LogicalKeyboardKey> keys) {
   return keys
@@ -257,7 +257,7 @@ static bool isKeyDown(Set<LogicalKeyboardKey> keys) {
 Putting these two things together,
 you can fire an action when `Shift+N` is pressed:
 
-<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (HandleKey)"?>
+<?code-excerpt "lib/widgets/extra_widget_excerpts.dart (handle-key)"?>
 ```dart
 bool _handleKey(KeyEvent event) {
   bool isShiftDown = isKeyDown({
@@ -311,7 +311,7 @@ implement your own, if needed.
 To change the cursor from within your custom widgets,
 use [`MouseRegion`][]:
 
-<?code-excerpt "lib/pages/focus_examples_page.dart (MouseRegion)"?>
+<?code-excerpt "lib/pages/focus_examples_page.dart (mouse-region)"?>
 ```dart
 // Show hand cursor
 return MouseRegion(
@@ -330,7 +330,7 @@ return MouseRegion(
 `MouseRegion` is also useful for creating custom
 rollover and hover effects:
 
-<?code-excerpt "lib/pages/focus_examples_page.dart (MouseOver)"?>
+<?code-excerpt "lib/pages/focus_examples_page.dart (mouse-over)"?>
 ```dart
 return MouseRegion(
   onEnter: (_) => setState(() => _isMouseOver = true),
@@ -379,11 +379,11 @@ densities, you can easily adjust your UI.
 To set a custom visual density,
 inject the density into your `MaterialApp` theme:
 
-<?code-excerpt "lib/main.dart (VisualDensity)"?>
+<?code-excerpt "lib/main.dart (visual-density)"?>
 ```dart
-double densityAmount = touchMode ? 0.0 : -1.0;
+double densityAmt = touchMode ? 0.0 : -1.0;
 VisualDensity density =
-    VisualDensity(horizontal: densityAmount, vertical: densityAmount);
+    VisualDensity(horizontal: densityAmt, vertical: densityAmt);
 return MaterialApp(
   theme: ThemeData(visualDensity: density),
   home: MainAppScaffold(),
@@ -394,7 +394,7 @@ return MaterialApp(
 To use `VisualDensity` inside your own views,
 you can look it up:
 
-<?code-excerpt "lib/pages/adaptive_reflow_page.dart (VisualDensityOwnView)"?>
+<?code-excerpt "lib/pages/adaptive_reflow_page.dart (visual-density-own-view)"?>
 ```dart
 VisualDensity density = Theme.of(context).visualDensity;
 ```
