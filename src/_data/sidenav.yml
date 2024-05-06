@@ -104,6 +104,8 @@
             permalink: https://codelabs.developers.google.com/codelabs/admob-ads-in-flutter
           - title: Add an AdMob banner and native inline ads
             permalink: https://codelabs.developers.google.com/codelabs/admob-inline-ads-in-flutter
+          - title: Google AdMob mediation
+            permalink: https://developers.google.com/admob/flutter/mediation
         - title: In-app purchases
           children:
           - title: In-app purchases overview
