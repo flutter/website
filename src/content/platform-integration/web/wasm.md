@@ -143,7 +143,7 @@ package root.
 ### Serve the output locally with an HTTP server
 
 If you don't have a local HTTP server installed, you can use
-[`dhttpd` package]({{site.pub-pkg}}/dhttpd):
+the [`dhttpd` package]({{site.pub-pkg}}/dhttpd):
 
 ```console
 flutter pub global activate dhttpd
