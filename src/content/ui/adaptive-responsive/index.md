@@ -61,6 +61,6 @@ responsive design:
 [Best practices for adaptive apps]: /ui/adaptive-responsive/best-practices
 [General approach]: /ui/adaptive-responsive/general
 [Large screens & foldables]: /ui/adaptive-responsive/large-screens
-[SafeArea & MediaQuery]:   /ui/adaptive-responsive/safearea-mediaquery
+[SafeArea & MediaQuery]: /ui/adaptive-responsive/safearea-mediaquery
 [User input & accessibility]: /ui/adaptive-responsive/input
 

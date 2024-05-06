@@ -230,5 +230,6 @@ guidance on adding
 [input support for widgets][].
 
 [includes support for mouse and stylus input]: {{site.android-dev}}/developer.android.com/docs/quality-guidelines/large-screen-app-quality
-[input support for widgets]: /ui/adaptive-responsive/input
+[User input]: /ui/adaptive-responsive/input
+[input support for widgets]: /ui/adaptive-responsive/input#custom-widgets
 

@@ -49,7 +49,7 @@ as you'll see in the [MediaQuery][] page.
 
 ## MediaQuery
 
-As discussed in the [SafeArea][] section,
+As discussed in the [SafeArea](#safearea) section,
 `MediaQuery` is a powerful widget for creating
 adaptive apps. Sometimes you'll use `MediaQuery`
 directly, and sometimes you'll use `SafeArea`,
@@ -107,4 +107,3 @@ instead of wrapping the whole `Scaffold` itself.
 cut off in a generic way and sets your app up
 for success even as new devices with different
 shapes and styles of cutouts enter the market.
-

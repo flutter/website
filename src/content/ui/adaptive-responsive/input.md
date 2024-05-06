@@ -287,7 +287,7 @@ might be typing in.
 [`HardwareKeyboard`]: {{site.api}}/flutter/services/HardwareKeyboard-class.html
 [`KeyboardListener`]: {{site.api}}/flutter/widgets/KeyboardListener-class.html
 
-## Mouse enter, exit, and hover for custom widgets
+## Mouse enter, exit, and hover for custom widgets {:#custom-widgets}
 
 On desktop, it's common to change the mouse cursor
 to indicate the functionality about the content the
