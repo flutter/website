@@ -128,8 +128,8 @@ are not.
 
 When a _page-backed_ `Route` is removed from the `Navigator`, all of the
 _pageless_ routes after it are also removed. For example, if a deep link
-navigates by removing a _page-backed_ route from the Navigator, all _pageless
-_routes after (up until the next _page-backed_ route) are removed too.
+navigates by removing a _page-backed_ route from the Navigator, all _pageless_
+routes after (up until the next _page-backed_ route) are removed too.
 
 :::note
 You can't prevent navigation from page-backed screens using `WillPopScope`.
