@@ -163,7 +163,7 @@ so you can pass them around any way you want. So, inside
 @override
 Widget build(BuildContext context) {
   return SomeWidget(
-    // Construct the widget, passing it a reference to the method above.
+    // Construct the widget, passing it a reference to the method below.
     MyListItem(myTapCallback),
   );
 }
