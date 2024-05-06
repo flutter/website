@@ -18,7 +18,7 @@ following 3-step approach.
 
 <b>PENDING: Why are you reluctant to use Khanh's Vertex AI example code? Is it because it uses Vertex AI API?</b>
 
-### Step 1: Abstract
+## Step 1: Abstract
 
 ![Step 1: Abstract info common to any UI widget](/assets/images/docs/ui/adaptive-responsive/abstract.png)
 
@@ -47,14 +47,14 @@ an icon and a text label.
 Next, you will evaluate your screen size to decide
 on how to display your UI.
 
-### Step 2: Measure
+## Step 2: Measure
 
 ![Step 2: How to measure screen size](/assets/images/docs/ui/adaptive-responsive/measure.png)
 
 You have two ways to determine the size of your display area:
 `MediaQuery` and `LayoutBuilder`.
 
-#### MediaQuery
+### MediaQuery
 
 In the past, you might have used `MediaQuery.of` to
 determine the size of the device's screen.
@@ -118,7 +118,7 @@ the `build` method, as in `MediaQuery.sizeOf(context)`,
 causes the givien `BuildContext` to rebuild any time
 the size property changes.
 
-#### LayoutBuilder
+### LayoutBuilder
 
 `LayoutBuilder` accomplishes a similar goal as
 `MediaQuery.sizeOf`, with some distinctions.
@@ -140,7 +140,7 @@ the sizing to be based on the space specifically
 given to that widget, and not the app window in general.
 In this scenario, use `LayoutBuilder`.
 
-### Step 3: Branch
+## Step 3: Branch
 
 ![Step 3: Branch the code based on the desired UI](/assets/images/docs/ui/adaptive-responsive/measure.png)
 
