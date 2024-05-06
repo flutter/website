@@ -184,7 +184,7 @@ pixel ratio, and the refresh rate of the physical device.
 
 Here is some sample code for getting a `Display` object:
 
-```
+```dart
 /// AppState object.
 ui.FlutterView? _view;
 
@@ -229,6 +229,6 @@ Check out the [User input][] page for
 guidance on adding
 [input support for widgets][].
 
-[includes support for mouse and stylus input[]: {{site.android-dev}}/developer.android.com/docs/quality-guidelines/large-screen-app-quality
+[includes support for mouse and stylus input]: {{site.android-dev}}/developer.android.com/docs/quality-guidelines/large-screen-app-quality
 [input support for widgets]: /ui/adaptive-responsive/input
 
