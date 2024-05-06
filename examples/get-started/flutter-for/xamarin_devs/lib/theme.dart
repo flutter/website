@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// #docregion Theme
+// #docregion theme
 class SampleApp extends StatelessWidget {
   /// This widget is the root of your application.
   const SampleApp({super.key});
@@ -18,7 +18,7 @@ class SampleApp extends StatelessWidget {
     );
   }
 }
-// #enddocregion Theme
+// #enddocregion theme
 
 class SampleAppPage extends StatelessWidget {
   const SampleAppPage({super.key});

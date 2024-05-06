@@ -5,13 +5,13 @@ class MyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // #docregion InputHint
+    // #docregion input-hint
     return const Center(
       child: TextField(
         decoration: InputDecoration(hintText: 'This is a hint'),
       ),
     );
-    // #enddocregion InputHint
+    // #enddocregion input-hint
   }
 }
 
@@ -22,7 +22,7 @@ class MyForm extends StatefulWidget {
   State<MyForm> createState() => _MyFormState();
 }
 
-// #docregion MyFormState
+// #docregion my-form-state
 class _MyFormState extends State<MyForm> {
   // Create a text controller and use it to retrieve the current value.
   // of the TextField!
@@ -64,4 +64,4 @@ class _MyFormState extends State<MyForm> {
     );
   }
 }
-// #enddocregion MyFormState
+// #enddocregion my-form-state

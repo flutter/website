@@ -39,7 +39,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   bool get showLoadingDialog => data.isEmpty;
 
-  // #docregion loadData
+  // #docregion load-data
   Future<void> loadData() async {
     final ReceivePort receivePort = ReceivePort();
     await Isolate.spawn(dataLoader, receivePort.sendPort);
@@ -81,7 +81,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     port.send(<dynamic>[msg, response.sendPort]);
     return response.first as Future<List<Map<String, dynamic>>>;
   }
-  // #enddocregion loadData
+  // #enddocregion load-data
 
   Widget getBody() {
     bool showLoadingDialog = data.isEmpty;

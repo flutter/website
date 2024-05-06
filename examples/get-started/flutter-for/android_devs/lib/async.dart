@@ -59,7 +59,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     );
   }
 
-  // #docregion loadData
+  // #docregion load-data
   Future<void> loadData() async {
     var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
     http.Response response = await http.get(dataURL);
@@ -67,5 +67,5 @@ class _SampleAppPageState extends State<SampleAppPage> {
       widgets = jsonDecode(response.body);
     });
   }
-  // #enddocregion loadData
+  // #enddocregion load-data
 }

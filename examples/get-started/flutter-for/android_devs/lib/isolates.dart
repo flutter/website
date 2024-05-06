@@ -79,7 +79,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     );
   }
 
-  // #docregion loadData
+  // #docregion load-data
   Future<void> loadData() async {
     ReceivePort receivePort = ReceivePort();
     await Isolate.spawn(dataLoader, receivePort.sendPort);
@@ -121,5 +121,5 @@ class _SampleAppPageState extends State<SampleAppPage> {
     port.send([msg, response.sendPort]);
     return response.first;
   }
-  // #enddocregion loadData
+  // #enddocregion load-data
 }

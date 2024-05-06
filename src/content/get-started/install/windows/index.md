@@ -37,7 +37,7 @@ js: [{url: '/assets/js/temp/windows-install-redirector.js'}]
         <span class="text-muted text-nowrap">{{target}}</span>
         {% if icon == 'android' -%}
           <div class="card-subtitle">Recommended</div>
-        {% endif %}
+        {% endif -%}
       </header>
     </div>
   </a>

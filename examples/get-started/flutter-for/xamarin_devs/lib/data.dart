@@ -35,7 +35,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     loadData();
   }
 
-  // #docregion loadData
+  // #docregion load-data
   Future<void> loadData() async {
     final Uri dataURL = Uri.parse(
       'https://jsonplaceholder.typicode.com/posts',
@@ -45,7 +45,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
       data = jsonDecode(response.body);
     });
   }
-  // #enddocregion loadData
+  // #enddocregion load-data
 
   Widget getRow(int index) {
     return Padding(

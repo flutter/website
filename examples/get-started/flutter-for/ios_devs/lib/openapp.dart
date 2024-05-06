@@ -31,7 +31,7 @@ class HomePage extends StatelessWidget {
       child: SafeArea(
         child: Center(
           child:
-              // #docregion OpenAppExample
+              // #docregion open-app-example
               CupertinoButton(
             onPressed: () async {
               await launchUrl(
@@ -42,7 +42,7 @@ class HomePage extends StatelessWidget {
               'Open website',
             ),
           ),
-          // #enddocregion OpenAppExample
+          // #enddocregion open-app-example
         ),
       ),
     );

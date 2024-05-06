@@ -2,7 +2,7 @@ import 'dart:developer' as developer;
 
 import 'package:flutter/material.dart';
 
-// #docregion Main
+// #docregion main
 void main() {
   runApp(
     MaterialApp(
@@ -15,7 +15,7 @@ void main() {
     ),
   );
 }
-// #enddocregion Main
+// #enddocregion main
 
 class MyAppHome extends StatelessWidget {
   const MyAppHome({super.key});
@@ -41,9 +41,9 @@ class AnotherPage extends StatelessWidget {
   const AnotherPage({super.key});
 
   void goToPage(BuildContext context) {
-    // #docregion PushNamed
+    // #docregion push-named
     Navigator.of(context).pushNamed('/b');
-    // #enddocregion PushNamed
+    // #enddocregion push-named
   }
 
   Future<void> goToAnotherPage(BuildContext context) async {
@@ -57,9 +57,9 @@ class AnotherPage extends StatelessWidget {
   }
 
   void popLocation(BuildContext context) {
-    // #docregion PopLocation
+    // #docregion pop-location
     Navigator.of(context).pop({'lat': 43.821757, 'long': -79.226392});
-    // #enddocregion PopLocation
+    // #enddocregion pop-location
   }
 
   @override

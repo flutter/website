@@ -3,7 +3,7 @@ title: Concurrency and isolates
 description: Multithreading in Flutter using Dart isolates.
 ---
 
-<?code-excerpt path-base="development/concurrency/isolates/"?>
+<?code-excerpt path-base="perf/concurrency/isolates/"?>
 
 All Dart code runs in [isolates]({{site.dart-site}}/language/concurrency),
 which are similar to threads,

@@ -703,7 +703,7 @@ updates:
       - "lang.dart"
   - package-ecosystem: "pub"
     versioning-strategy: "increase-if-necessary"
-    directory: "/examples/development/data-and-backend/json"
+    directory: "/examples/data-and-backend/json"
     schedule:
       interval: "daily"
     labels:
@@ -711,7 +711,7 @@ updates:
       - "lang.dart"
   - package-ecosystem: "pub"
     versioning-strategy: "increase-if-necessary"
-    directory: "/examples/development/platform_integration"
+    directory: "/examples/platform_integration"
     schedule:
       interval: "daily"
     labels:
@@ -719,7 +719,7 @@ updates:
       - "lang.dart"
   - package-ecosystem: "pub"
     versioning-strategy: "increase-if-necessary"
-    directory: "/examples/development/plugin_api_migration"
+    directory: "/examples/platform_integration/plugin_api_migration"
     schedule:
       interval: "daily"
     labels:
@@ -727,7 +727,7 @@ updates:
       - "lang.dart"
   - package-ecosystem: "pub"
     versioning-strategy: "increase-if-necessary"
-    directory: "/examples/development/tools"
+    directory: "/examples/tools"
     schedule:
       interval: "daily"
     labels:
