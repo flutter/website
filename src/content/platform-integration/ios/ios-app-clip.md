@@ -65,7 +65,7 @@ an Objective-C main target, and vice versa.)
 In the following dialog,
 activate the new scheme for the new target.
 
-{% render docs/app-figure.md, image="development/platform-integration/ios-app-clip/activate-scheme.png" %}
+{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/activate-scheme.png" %}
 
 **2.5**
 
