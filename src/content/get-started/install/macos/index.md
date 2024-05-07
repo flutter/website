@@ -37,12 +37,10 @@ js: [{url: '/assets/js/temp/macos-install-redirector.js'}]
             <span class="material-symbols">web</span>
           {% endcase -%}
         </span>
-        <span class="text-muted">
-        {{ target }}
-        </span>
+        <span class="text-muted">{{ target }}</span>
         {% if icon == 'ios' -%}
           <div class="card-subtitle">Recommended</div>
-        {% endif %}
+        {% endif -%}
       </header>
     </div>
   </a>
