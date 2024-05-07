@@ -6,11 +6,11 @@ class MyForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      // #docregion HintText
+      // #docregion hint-text
       child: TextField(
         decoration: InputDecoration(hintText: 'This is a hint'),
       ),
-      // #enddocregion HintText
+      // #enddocregion hint-text
     );
   }
 }

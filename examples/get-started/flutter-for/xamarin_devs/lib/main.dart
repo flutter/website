@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-// #docregion Main
+// #docregion main
 void main() {
   runApp(const MyApp());
 }
-// #enddocregion Main
+// #enddocregion main
 
-// #docregion MyApp
+// #docregion my-app
 class MyApp extends StatelessWidget {
   /// This widget is the root of your application.
   const MyApp({super.key});
@@ -21,4 +21,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-// #enddocregion MyApp
+// #enddocregion my-app

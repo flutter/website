@@ -9,7 +9,8 @@ last-update: March 13, 2024
 **_Last updated {{last-update}}_**
 
 The Flutter and Dart teams are excited to add
-[WebAssembly](https://webassembly.org/) as a compilation target when building
+[WebAssembly](https://webassembly.org/)
+as a compilation target when building
 applications for the web.
 
 Development of WebAssembly support for Dart and Flutter remains ongoing,
@@ -33,6 +34,14 @@ Revisit this page for the latest updates.
 [`package:web`]: {{site.pub-pkg}}/web
 [`dart:js_interop`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-js_interop 
 
+:::note
+For information on how to optimize web loading speed,
+check out the (free) article on Medium,
+[Best practices for optimizing Flutter web loading speed][article].
+
+[article]: {{site.flutter-medium}}/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c
+:::
+
 ## Background
 
 To run a Flutter app that has been compiled to Wasm,
@@ -43,9 +52,9 @@ like Dart execute code in an efficient manner.
 [Chromium and V8][] released stable support for WasmGC in Chromium 119.
 Note that Chrome on iOS uses WebKit, which doesn't yet [support WasmGC][].
 Firefox announced stable support for WasmGC in Firefox 120,
-but currently does not work due to a [known limitation](#known-limitations). 
+but currently doesn't work due to a [known limitation](#known-limitations). 
 
-[WasmGC]: https://github.com/WebAssembly/gc/tree/main/proposals/gc
+[WasmGC]: {{site.github}}/WebAssembly/gc/tree/main/proposals/gc
 [Chromium and V8]: https://chromestatus.com/feature/6062715726462976
 [support WasmGC]: https://bugs.webkit.org/show_bug.cgi?id=247394
 [issue]: https://bugzilla.mozilla.org/show_bug.cgi?id=1788206
@@ -55,7 +64,7 @@ but currently does not work due to a [known limitation](#known-limitations).
 To try a pre-built Flutter web app using Wasm, check out the
 [Material 3 WasmGC preview demo](https://flutterweb-wasm.web.app/).
 
-To experiment with Wasm in your own apps, follow the steps below.
+To experiment with Wasm in your own apps, use the following steps.
 
 ### Switch to the Flutter `beta` channel and upgrade
 
@@ -64,12 +73,12 @@ the `beta` channel (preferred) or `main`.
 
 To learn more about Flutter build release channels and how to switch to
 the `beta` channel, check out the
-[Flutter wiki](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels).
+[Flutter wiki]({{site.github}}/flutter/flutter/wiki/Flutter-build-release-channels).
 
-To then ensure you are running the latest version,
+To ensure you are running the latest version,
 run `flutter upgrade`.
 
-To verify if your Flutter install supports Wasm,
+To verify that your Flutter install supports Wasm,
 run `flutter build web --help`.
 
 At the bottom of the output, you should find experimental Wasm options like:
@@ -82,9 +91,10 @@ Experimental options
                                  (defaults to on)
 ```
 
-### Pick a (simple) Flutter web application
+### Choose a (simple) Flutter web application
 
-Try the default template [sample app][], or choose any Flutter application
+Try the default template [sample app][],
+or choose any Flutter application
 that has been migrated to be
 [compatible with Wasm](#js-interop-wasm).
 
@@ -132,8 +142,8 @@ package root.
 
 ### Serve the output locally with an HTTP server
 
-If you don't have a local HTTP server installed, you can use the
-[`dhttpd` package]({{site.pub-pkg}}/dhttpd):
+If you don't have a local HTTP server installed, you can use
+the [`dhttpd` package]({{site.pub-pkg}}/dhttpd):
 
 ```console
 flutter pub global activate dhttpd
@@ -247,7 +257,8 @@ Work on Flutter and Dart Wasm support continues.
 Once finished, your existing Flutter web apps
 shouldn't need much work to support Wasm.
 
-If you want to learn more, watch this talk from our team at Wasm I/O 2023:
+If you want to learn more,
+check out this talk from our team at Wasm I/O 2023:
 [Flutter, Dart, and WasmGC: A new model for web applications](https://youtu.be/Nkjc9r0WDNo).
 
 To follow the latest changes in the Flutter and Dart WebAssembly effort,

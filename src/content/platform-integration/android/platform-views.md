@@ -4,7 +4,7 @@ short-title: Android platform-views
 description: Learn how to host native Android views in your Flutter app with Platform Views.
 ---
 
-<?code-excerpt path-base="development/platform_integration"?>
+<?code-excerpt path-base="platform_integration/platform_views"?>
 
 Platform views allow you to embed native views in a Flutter app,
 so you can apply transforms, clips, and opacity to the native view
@@ -65,8 +65,8 @@ for example `native_view_example.dart`,
 use the following instructions:
 
 1. Add the following imports:  
-   
-   <?code-excerpt "lib/platform_views/native_view_example_1.dart (import)"?>
+
+   <?code-excerpt "lib/native_view_example_1.dart (import)"?>
    ```dart
    import 'package:flutter/foundation.dart';
    import 'package:flutter/gestures.dart';
@@ -76,8 +76,8 @@ use the following instructions:
    ```  
     
 2. Implement a `build()` method:
-  
-   <?code-excerpt "lib/platform_views/native_view_example_1.dart (hybrid-composition)"?>
+
+   <?code-excerpt "lib/native_view_example_1.dart (hybrid-composition)"?>
    ```dart
    Widget build(BuildContext context) {
      // This is used in the platform side to register the view.
@@ -129,8 +129,8 @@ for example `native_view_example.dart`,
 use the following instructions:
 
 1. Add the following imports:
-   
-   <?code-excerpt "lib/platform_views/native_view_example_2.dart (import)"?>
+
+   <?code-excerpt "lib/native_view_example_2.dart (import)"?>
    ```dart
    import 'package:flutter/material.dart';
    import 'package:flutter/services.dart';
@@ -138,7 +138,7 @@ use the following instructions:
 
 2. Implement a `build()` method:
 
-   <?code-excerpt "lib/platform_views/native_view_example_2.dart (virtual-display)"?>
+   <?code-excerpt "lib/native_view_example_2.dart (virtual-display)"?>
    ```dart
    Widget build(BuildContext context) {
      // This is used in the platform side to register the view.

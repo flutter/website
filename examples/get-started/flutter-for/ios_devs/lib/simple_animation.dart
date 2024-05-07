@@ -28,7 +28,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: Center(
         child:
-            // #docregion AnimatedButton
+            // #docregion animated-button
             AnimatedRotation(
           duration: const Duration(seconds: 1),
           turns: turns,
@@ -41,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: const Text('Tap me!')),
         ),
-        // #enddocregion AnimatedButton
+        // #enddocregion animated-button
       ),
     );
   }

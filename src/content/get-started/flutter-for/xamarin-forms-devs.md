@@ -36,7 +36,7 @@ LoadApplication(new App());
 In Flutter, the default main entry point is
 `main` where you load your Flutter app.
 
-<?code-excerpt "lib/main.dart (Main)"?>
+<?code-excerpt "lib/main.dart (main)"?>
 ```dart
 void main() {
   runApp(const MyApp());
@@ -67,7 +67,7 @@ public class App : Application
 In Flutter, "everything is a widget", even the application itself.
 The following example shows `MyApp`, a simple application `Widget`.
 
-<?code-excerpt "lib/main.dart (MyApp)"?>
+<?code-excerpt "lib/main.dart (my-app)"?>
 ```dart
 class MyApp extends StatelessWidget {
   /// This widget is the root of your application.
@@ -107,7 +107,7 @@ Examples of a stateless widget are titles, icons, or images.
 The following example uses `MaterialApp`,
 which holds its root page in the `home` property.
 
-<?code-excerpt "lib/page.dart (MyApp)"?>
+<?code-excerpt "lib/page.dart (my-app)"?>
 ```dart
 class MyApp extends StatelessWidget {
   /// This widget is the root of your application.
@@ -131,7 +131,7 @@ The first part, which is itself immutable, creates a `State` object
 that holds the state of the object. The `State` object persists over
 the life of the widget.
 
-<?code-excerpt "lib/page.dart (MyHomePage)"?>
+<?code-excerpt "lib/page.dart (my-home-page)"?>
 ```dart
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -151,7 +151,7 @@ Make sure to call `setState()` only when necessary,
 and only on the part of the widget tree that has changed,
 or it can result in poor UI performance.
 
-<?code-excerpt "lib/page.dart (MyHomePageState)"?>
+<?code-excerpt "lib/page.dart (my-home-page-state)"?>
 ```dart
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
@@ -280,7 +280,7 @@ A common `StatelessWidget` is the `Text` widget.
 If you look at the implementation of the `Text` widget
 you'll find it subclasses `StatelessWidget`.
 
-<?code-excerpt "lib/views.dart (Text)" replace="/return //g"?>
+<?code-excerpt "lib/views.dart (text)" replace="/return //g"?>
 ```dart
 const Text(
   'I like Flutter!',
@@ -360,7 +360,7 @@ In Flutter, you write your layouts with a widget tree in code.
 
 The following example shows how to display a simple widget with padding:
 
-<?code-excerpt "lib/padding.dart (Padding)"?>
+<?code-excerpt "lib/padding.dart (padding)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -395,7 +395,7 @@ and control that child's creation with a boolean flag.
 The following example shows how to toggle between two widgets
 when the user clicks the `FloatingActionButton`:
 
-<?code-excerpt "lib/views.dart (AddRemoveElement)"?>
+<?code-excerpt "lib/views.dart (add-remove-element)"?>
 ```dart
 class SampleApp extends StatelessWidget {
   /// This widget is the root of your application.
@@ -677,7 +677,7 @@ that takes a label in the constructor?
 Create a CustomButton that composes a `ElevatedButton`
 with a label, rather than by extending `ElevatedButton`:
 
-<?code-excerpt "lib/custom_button.dart (CustomButton)"?>
+<?code-excerpt "lib/custom_button.dart (custom-button)"?>
 ```dart
 class CustomButton extends StatelessWidget {
   const CustomButton(this.label, {super.key});
@@ -696,7 +696,7 @@ class CustomButton extends StatelessWidget {
 
 Then use `CustomButton`, just as you'd use any other Flutter widget:
 
-<?code-excerpt "lib/custom_button.dart (UseCustomButton)"?>
+<?code-excerpt "lib/custom_button.dart (use-custom-button)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -732,7 +732,7 @@ To navigate between pages, you have a couple options:
 
 The following example builds a `Map`.
 
-<?code-excerpt "lib/navigation.dart (Main)"?>
+<?code-excerpt "lib/navigation.dart (main)"?>
 ```dart
 void main() {
   runApp(
@@ -750,7 +750,7 @@ void main() {
 
 Navigate to a route by pushing its name to the `Navigator`.
 
-<?code-excerpt "lib/navigation.dart (PushNamed)"?>
+<?code-excerpt "lib/navigation.dart (push-named)"?>
 ```dart
 Navigator.of(context).pushNamed('/b');
 ```
@@ -775,7 +775,7 @@ Object? coordinates = await Navigator.of(context).pushNamed('/location');
 And then, inside your 'location' route, once the user has selected their
 location, pop the stack with the result:
 
-<?code-excerpt "lib/navigation.dart (PopLocation)"?>
+<?code-excerpt "lib/navigation.dart (pop-location)"?>
 ```dart
 Navigator.of(context).pop({'lat': 43.821757, 'long': -79.226392});
 ```
@@ -814,7 +814,7 @@ for any Xamarin.Forms developer.
 For example, you can run network code without causing the UI to hang by
 using `async`/`await` and letting Dart do the heavy lifting:
 
-<?code-excerpt "lib/data.dart (loadData)"?>
+<?code-excerpt "lib/data.dart (load-data)"?>
 ```dart
 Future<void> loadData() async {
   final Uri dataURL = Uri.parse(
@@ -928,7 +928,7 @@ thread via `Task.Run()` in Xamarin.Forms.
 For I/O-bound work, declare the function as an `async` function,
 and `await` on long-running tasks inside the function:
 
-<?code-excerpt "lib/data.dart (loadData)"?>
+<?code-excerpt "lib/data.dart (load-data)"?>
 ```dart
 Future<void> loadData() async {
   final Uri dataURL = Uri.parse(
@@ -958,7 +958,7 @@ or update your UI by calling `setState()`.
 The following example shows, in a simple isolate,
 how to share data back to the main thread to update the UI.
 
-<?code-excerpt "lib/isolates.dart (SimpleIsolate)"?>
+<?code-excerpt "lib/isolates.dart (simple-isolate)"?>
 ```dart
 Future<void> loadData() async {
   final ReceivePort receivePort = ReceivePort();
@@ -1147,7 +1147,7 @@ dependencies:
 To make a network request,
 call `await` on the `async` function `http.get()`:
 
-<?code-excerpt "lib/data.dart (loadData)"?>
+<?code-excerpt "lib/data.dart (load-data)"?>
 ```dart
 Future<void> loadData() async {
   final Uri dataURL = Uri.parse(
@@ -1323,7 +1323,7 @@ assets:
 
 You can directly access your images in an `Image.asset` widget:
 
-<?code-excerpt "lib/images.dart (ImageAsset)"?>
+<?code-excerpt "lib/images.dart (image-asset)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -1333,7 +1333,7 @@ Widget build(BuildContext context) {
 
 or using `AssetImage`:
 
-<?code-excerpt "lib/images.dart (AssetImage)"?>
+<?code-excerpt "lib/images.dart (asset-image)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -1352,7 +1352,7 @@ Flutter doesn't currently have a dedicated system for handling strings.
 At the moment, the best practice is to declare your copy text
 in a class as static fields and access them from there. For example:
 
-<?code-excerpt "lib/strings.dart (StringsClass)"?>
+<?code-excerpt "lib/strings.dart (strings-class)"?>
 ```dart
 class Strings {
   static const String welcomeMessage = 'Welcome To Flutter';
@@ -1361,7 +1361,7 @@ class Strings {
 
 You can access your strings as such:
 
-<?code-excerpt "lib/strings.dart (AccessString)" replace="/return const //g"?>
+<?code-excerpt "lib/strings.dart (access-string)" replace="/return const //g"?>
 ```dart
 Text(Strings.welcomeMessage);
 ```
@@ -1383,7 +1383,7 @@ To use the `flutter_localizations` package,
 specify the `localizationsDelegates` and
 `supportedLocales` on the app widget:
 
-<?code-excerpt "lib/strings.dart (Localization)"?>
+<?code-excerpt "lib/strings.dart (localization)"?>
 ```dart
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -1509,7 +1509,7 @@ The children are the same and this feature
 can be exploited to develop rich layouts
 that can change overtime with the same children.
 
-<?code-excerpt "lib/layouts.dart (Row)"?>
+<?code-excerpt "lib/layouts.dart (row)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -1525,7 +1525,7 @@ Widget build(BuildContext context) {
 }
 ```
 
-<?code-excerpt "lib/layouts.dart (Column)"?>
+<?code-excerpt "lib/layouts.dart (column)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -1547,7 +1547,7 @@ This is much more powerful than what you are used to in Xamarin.Forms.
 A `GridView` provides automatic scrolling when the
 content exceeds its viewable space.
 
-<?code-excerpt "lib/layouts.dart (Grid)"?>
+<?code-excerpt "lib/layouts.dart (grid)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -1577,7 +1577,7 @@ In Flutter, you accomplish this with the `Stack` widget.
 
 This sample creates two icons that overlap each other.
 
-<?code-excerpt "lib/layouts.dart (Stack)"?>
+<?code-excerpt "lib/layouts.dart (stack)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -1609,7 +1609,7 @@ and if the content is larger than the device screen, it scrolls.
 In Flutter, the closest match is the `SingleChildScrollView` widget.
 You simply fill the Widget with the content that you want to be scrollable.
 
-<?code-excerpt "lib/layouts.dart (ScrollView)"?>
+<?code-excerpt "lib/layouts.dart (scroll-view)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -1625,7 +1625,7 @@ This might seem like overkill, but in Flutter this is
 far more optimized and less intensive than a Xamarin.Forms `ListView`,
 which is backing on to platform specific controls.
 
-<?code-excerpt "lib/layouts.dart (ListView)"?>
+<?code-excerpt "lib/layouts.dart (list-view)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -1662,7 +1662,7 @@ In Flutter there are two very similar ways:
    handle it in the function. For example, the ElevatedButton has an
    `onPressed` parameter:
 
-   <?code-excerpt "lib/gestures.dart (ElevatedButton)"?>
+   <?code-excerpt "lib/gestures.dart (elevated-button)"?>
    ```dart
    @override
    Widget build(BuildContext context) {
@@ -1679,7 +1679,7 @@ In Flutter there are two very similar ways:
    widget in a `GestureDetector` and pass a function
    to the `onTap` parameter.
 
-   <?code-excerpt "lib/gestures.dart (GestureDetector)"?>
+   <?code-excerpt "lib/gestures.dart (gesture-detector)"?>
    ```dart
    class SampleApp extends StatelessWidget {
      const SampleApp({super.key});
@@ -1772,7 +1772,7 @@ you can listen to a wide range of Gestures such as:
 The following example shows a `GestureDetector`
 that rotates the Flutter logo on a double tap:
 
-<?code-excerpt "lib/gestures.dart (RotatingFlutterDetector)"?>
+<?code-excerpt "lib/gestures.dart (rotating-flutter-detector)"?>
 ```dart
 class RotatingFlutterDetector extends StatefulWidget {
   const RotatingFlutterDetector({super.key});
@@ -2148,7 +2148,7 @@ fonts:
 
 Then assign the font to your `Text` widget:
 
-<?code-excerpt "lib/strings.dart (CustomFont)"?>
+<?code-excerpt "lib/strings.dart (custom-font)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -2270,7 +2270,7 @@ In Flutter, you can easily show a "hint" or a placeholder text
 for your input by adding an `InputDecoration` object
 to the `decoration` constructor parameter for the text widget.
 
-<?code-excerpt "lib/input_decoration.dart (HintText)" replace="/child: //g"?>
+<?code-excerpt "lib/input_decoration.dart (hint-text)" replace="/child: //g"?>
 ```dart
 TextField(
   decoration: InputDecoration(hintText: 'This is a hint'),
@@ -2476,7 +2476,7 @@ pass a `ThemeData` object to the `MaterialApp` widget.
 For example, in the following code,
 the color scheme from seed is set to deepPurple and text selection color is red.
 
-<?code-excerpt "lib/theme.dart (Theme)"?>
+<?code-excerpt "lib/theme.dart (theme)"?>
 ```dart
 class SampleApp extends StatelessWidget {
   /// This widget is the root of your application.

@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_print
 import 'package:flutter/material.dart';
 
-// #docregion Components
+// #docregion components
 /// Flutter
 class CustomCard extends StatelessWidget {
   const CustomCard({
@@ -45,4 +45,4 @@ class UseCard extends StatelessWidget {
     );
   }
 }
-// #enddocregion Components
+// #enddocregion components

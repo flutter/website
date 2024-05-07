@@ -81,7 +81,7 @@ class HomePage extends StatelessWidget {
       // inside a scroll view of type
       // SingleChildScrollView (equivalent of a ScrollView in SwiftUI).
       body:
-          // #docregion ScrollExample
+          // #docregion scroll-example
           SingleChildScrollView(
         child: Column(
           children: mockPersons
@@ -93,7 +93,7 @@ class HomePage extends StatelessWidget {
               .toList(),
         ),
       ),
-      // #enddocregion ScrollExample
+      // #enddocregion scroll-example
     );
   }
 }

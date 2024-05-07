@@ -1,5 +1,7 @@
-name: platform_integration
-description: Examples for documenting platform integration.
+name: platform_channels_examples
+description: >-
+  Examples showcasing how to use platform channels to
+  communicate with the underlying native platforms.
 
 publish_to: none
 
@@ -11,7 +13,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  pigeon: ^18.0.0
 
 dev_dependencies:
   example_utils:

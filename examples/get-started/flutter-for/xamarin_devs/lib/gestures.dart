@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
 
-  // #docregion ElevatedButton
+  // #docregion elevated-button
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -14,10 +14,10 @@ class MyWidget extends StatelessWidget {
       child: const Text('Button'),
     );
   }
-  // #enddocregion ElevatedButton
+  // #enddocregion elevated-button
 }
 
-// #docregion GestureDetector
+// #docregion gesture-detector
 class SampleApp extends StatelessWidget {
   const SampleApp({super.key});
 
@@ -35,9 +35,9 @@ class SampleApp extends StatelessWidget {
     );
   }
 }
-// #enddocregion GestureDetector
+// #enddocregion gesture-detector
 
-// #docregion RotatingFlutterDetector
+// #docregion rotating-flutter-detector
 class RotatingFlutterDetector extends StatefulWidget {
   const RotatingFlutterDetector({super.key});
 
@@ -82,4 +82,4 @@ class _RotatingFlutterDetectorState extends State<RotatingFlutterDetector>
     );
   }
 }
-// #enddocregion RotatingFlutterDetector
+// #enddocregion rotating-flutter-detector

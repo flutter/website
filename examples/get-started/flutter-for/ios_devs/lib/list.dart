@@ -20,7 +20,7 @@ class App extends StatelessWidget {
   }
 }
 
-// #docregion SimpleList
+// #docregion simple-list
 class Person {
   String name;
   Person(this.name);
@@ -49,4 +49,4 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-// #enddocregion SimpleList
+// #enddocregion simple-list

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ColumnExample extends StatelessWidget {
   const ColumnExample({super.key});
 
-  // #docregion Column
+  // #docregion column
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -27,14 +27,14 @@ class ColumnExample extends StatelessWidget {
         ],
       ),
     );
-    // #enddocregion Column
+    // #enddocregion column
   }
 }
 
 class StackExample extends StatelessWidget {
   const StackExample({super.key});
 
-  // #docregion Stack
+  // #docregion stack
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -51,6 +51,6 @@ class StackExample extends StatelessWidget {
         ),
       ],
     );
-    // #enddocregion Stack
+    // #enddocregion stack
   }
 }
