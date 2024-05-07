@@ -12,20 +12,18 @@ into Flutter's other pop mechanisms.
 ## Context
 
 The `onPopPage` was added for cleaning up pages after a page is about to be popped.
-The developer can veto pop by returning false in the callback. This does not work well
-with other popping mechanisms in the framework, such as [`PopScope`] and cupertino back
-gestures.
+To veto pop, return `false` in the callback. This does not work well with other popping
+mechanisms in the framework, such as [`PopScope`] and iOS back gestures.
 
-The page APIs needed to be refactored in order to integrate them together.
-
+To integrate the other pop mechanisms together, the page APIs need to be refactored.
 
 ## Description of change
 
-The `onPopPage` is replaced by `onDidRemovePage` and no longer had the ability to veto
-a pop. In the `onDidRemovePage`, one is only responsible for updating the [`pages`].
+The `onDidRemovePage` property replaces the `onPopPage` property. You can no longer veto a pop in
+the `onDidRemovePage` property. Instead, you are only responsible for updating the [`pages`].
 
-The veto mechanism is moved to the `Page.canPop` and `Page.onPopInvoked` similar to how
-one uses the `PopScope` widget.
+The veto mechanism moves to the `Page.canPop` and `Page.onPopInvoked`.
+These function similar to how one uses the `PopScope` widget.
 
 ## Migration guide
 
