@@ -1,7 +1,7 @@
 ---
 title: Navigator's page APIs breaking change
 description: >
-  Changes to Navigator's page APIs.
+  Replace Navigator's `onPopPage` property with `onDidRemovePage` property.
 ---
 
 ## Summary
