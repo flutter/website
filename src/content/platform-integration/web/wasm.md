@@ -3,7 +3,7 @@ title: Support for WebAssembly (Wasm)
 description: >-
   Current status of Flutter's experimental support for WebAssembly (Wasm).
 short-title: Wasm
-last-update: March 13, 2024
+last-update: May 14, 2024
 ---
 
 **_Last updated {{last-update}}_**
@@ -13,14 +13,9 @@ The Flutter and Dart teams are excited to add
 as a compilation target when building
 applications for the web.
 
-Development of WebAssembly support for Dart and Flutter remains ongoing,
-which will potentially result in frequent changes. 
-Revisit this page for the latest updates.
-
 :::note
-**Support for Wasm is now in beta!**
-: WebAssembly support for Flutter web is
-  available on the Flutter [`beta`][] and [`main`][] channels.
+**Support for Wasm is now stable!**
+: WebAssembly support for Flutter web is available on the Flutter [`stable`][].
 
 **Dart's next-gen Web interop is now stable!**
 : Migrate your packages to [`package:web`][] and [`dart:js_interop`][]
@@ -29,18 +24,9 @@ Revisit this page for the latest updates.
   section to learn more. 
 :::
 
-[`beta`]: {{site.github}}/flutter/flutter/wiki/flutter-build-release-channels#beta
-[`main`]: {{site.github}}/flutter/flutter/wiki/flutter-build-release-channels#master-aka-main
+[`stable`]: {{site.github}}/flutter/flutter/wiki/flutter-build-release-channels#stable
 [`package:web`]: {{site.pub-pkg}}/web
 [`dart:js_interop`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-js_interop 
-
-:::note
-For information on how to optimize web loading speed,
-check out the (free) article on Medium,
-[Best practices for optimizing Flutter web loading speed][article].
-
-[article]: {{site.flutter-medium}}/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c
-:::
 
 ## Background
 
@@ -66,17 +52,9 @@ To try a pre-built Flutter web app using Wasm, check out the
 
 To experiment with Wasm in your own apps, use the following steps.
 
-### Switch to the Flutter `beta` channel and upgrade
+### Switch to the Flutter 3.22 stable or newer
 
-Wasm compilation is available on the latest builds of
-the `beta` channel (preferred) or `main`.
-
-To learn more about Flutter build release channels and how to switch to
-the `beta` channel, check out the
-[Flutter wiki]({{site.github}}/flutter/flutter/wiki/Flutter-build-release-channels).
-
-To ensure you are running the latest version,
-run `flutter upgrade`.
+To ensure you are running the latest version, run `flutter upgrade`.
 
 To verify that your Flutter install supports Wasm,
 run `flutter build web --help`.
@@ -85,7 +63,7 @@ At the bottom of the output, you should find experimental Wasm options like:
 
 ```console
 Experimental options
-    --wasm                       Compile to WebAssembly rather than JavaScript.
+    --wasm                       Compile to WebAssembly (with fallback to JavaScript).
                                  See https://flutter.dev/wasm for more information.
     --[no-]strip-wasm            Whether to strip the resulting wasm file of static symbol names.
                                  (defaults to on)
@@ -102,41 +80,17 @@ that has been migrated to be
 
 ### Modify `index.html`
 
-:::tip
-For more information about using the bootstrapping APIs required to load Flutter
-applications compiled to wasm, see the [Flutter web app initialization][]
-page.
-:::
+Make sure your app's `web/index.html` is updated to the latest
+[Flutter web app initialization][] for Flutter 3.22 and later.
 
 [Flutter web app initialization]: /platform-integration/web/bootstrapping
 
-Before building with Wasm, you'll need to modify the bootstrap logic in
-your app's `web/index.html` file.
-
-```html
-<!DOCTYPE HTML>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Flutter web app</title>
-  <script src="flutter.js"></script>
-</head>
-<body>
-  <script>
-    {% raw %}{{flutter_build_config}}{% endraw %}
-    _flutter.loader.load();
-  </script>
-</body>
-</html>
-```
-
-This feature is under development. The current syntax
-(`flutter.js`, `{% raw %}{{flutter_build_config}}{% endraw %}`,
-`_flutter.loader.load()`) is a temporary solution in the `beta` and `main`
-channels now, but will be replaced by the actual syntax in an upcoming stable
-release. Stay tuned!
-
 ### Run `flutter build web --wasm`
+
+:::note
+`flutter run` does not support `--wasm` in Flutter 3.22. This feature has been
+implemented, though, and will be available in the following stable release.
+:::
 
 To build a web application with Wasm, add the `--wasm` flag to
 the existing `flutter build web` command.
@@ -145,10 +99,21 @@ the existing `flutter build web` command.
 flutter build web --wasm
 ```
 
-The command sends its output to the `build/web` directory relative to
+The command produces output into the `build/web` directory relative to the
 package root.
 
-### Serve the output locally with an HTTP server
+### Serve the output with an HTTP server
+
+Flutter Web WebAssembly uses multiple threads to render your application
+faster, with less jank. To do this, advanced browser features are used that
+are restricted via specific HTTP server headers.
+
+:::warning
+Flutter Web applications will not run with WebAssembly unless the server is
+configured to send specific HTTP headers.
+:::
+
+WIP...kevmoo...
 
 If you don't have a local HTTP server installed, you can use
 the [`dhttpd` package]({{site.pub-pkg}}/dhttpd):
