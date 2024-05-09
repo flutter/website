@@ -15,9 +15,9 @@ applications for the web.
 
 :::note
 **Support for Wasm is now stable!**
-: WebAssembly support for Flutter web is available on the Flutter [`stable`][].
+: WebAssembly support for Flutter web is available on the Flutter [`stable`][] channel.
 
-**Dart's next-gen Web interop is now stable!**
+**Dart's next-gen web interop is now stable!**
 : Migrate your packages to [`package:web`][] and [`dart:js_interop`][]
   to make them compatible with Wasm. Read the
   [Requires JS-interop](#js-interop-wasm)
@@ -99,12 +99,12 @@ package root.
 
 ### Serve the output with an HTTP server
 
-Flutter Web WebAssembly uses multiple threads to render your application
+Flutter web WebAssembly uses multiple threads to render your application
 faster, with less jank. To do this, advanced browser features are used that
 require specific HTTP response headers.
 
 :::warning
-Flutter Web applications will not run with WebAssembly unless the server is
+Flutter web applications won't run with WebAssembly unless the server is
 configured to send specific HTTP headers.
 :::
 
@@ -119,7 +119,10 @@ configured to send specific HTTP headers.
 
 </div>
 
-To learn more about these headers, see [Load cross-origin resources without CORP headers using COEP: credentialless](https://developer.chrome.com/blog/coep-credentialless-origin-trial).
+To learn more about these headers, check out
+[Load cross-origin resources without CORP headers using COEP: credentialless][coep].
+
+[coep]: https://developer.chrome.com/blog/coep-credentialless-origin-trial
 
 ### Serving Wasm locally
 
