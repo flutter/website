@@ -87,11 +87,6 @@ Make sure your app's `web/index.html` is updated to the latest
 
 ### Run `flutter build web --wasm`
 
-:::note
-`flutter run` does not support `--wasm` in Flutter 3.22. This feature has been
-implemented, though, and will be available in the following stable release.
-:::
-
 To build a web application with Wasm, add the `--wasm` flag to
 the existing `flutter build web` command.
 
@@ -106,14 +101,27 @@ package root.
 
 Flutter Web WebAssembly uses multiple threads to render your application
 faster, with less jank. To do this, advanced browser features are used that
-are restricted via specific HTTP server headers.
+require specific HTTP response headers.
 
 :::warning
 Flutter Web applications will not run with WebAssembly unless the server is
 configured to send specific HTTP headers.
 :::
 
-WIP...kevmoo...
+<div class="table-wrapper">
+
+| Name | Value |
+|-|-|
+| `Cross-Origin-Embedder-Policy` | `credentialless` <br> or <br> `require-corp` |
+| `Cross-Origin-Opener-Policy` | `same-origin` |
+
+{:.table}
+
+</div>
+
+To learn more about these headers, see [Load cross-origin resources without CORP headers using COEP: credentialless](https://developer.chrome.com/blog/coep-credentialless-origin-trial).
+
+### Serving Wasm locally
 
 If you don't have a local HTTP server installed, you can use
 the [`dhttpd` package]({{site.pub-pkg}}/dhttpd):
@@ -220,19 +228,5 @@ Context: The unavailable library 'dart:html' is imported through these packages:
 ### Only build support
 
 Neither `flutter run` nor [DevTools](/tools/devtools) support
-Wasm at the moment.
-
-## Learn more
-
-Check out Flutter's
-[existing web support]({{site.main-url}}/multi-platform/web).
-Work on Flutter and Dart Wasm support continues.
-Once finished, your existing Flutter web apps
-shouldn't need much work to support Wasm.
-
-If you want to learn more,
-check out this talk from our team at Wasm I/O 2023:
-[Flutter, Dart, and WasmGC: A new model for web applications](https://youtu.be/Nkjc9r0WDNo).
-
-To follow the latest changes in the Flutter and Dart WebAssembly effort,
-revisit [flutter.dev/wasm]({{site.main-url}}/wasm).
+Wasm in Flutter 3.22. This feature has been
+implemented, though, and will be available in the next stable release.
