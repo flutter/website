@@ -23,7 +23,7 @@ stateless widgets.
 The [building layouts tutorial][] showed you how to create
 the layout for the following screenshot.
 
-{% render docs/app-figure.md, img-class:"site-mobile-screenshot border", image:"ui/layout/lakes.jpg", caption:"The layout tutorial app" %}
+{% render ./docs/app-figure.md, img-class:"site-mobile-screenshot border", image:"ui/layout/lakes.jpg", caption:"The layout tutorial app" %}
 
 When the app first launches, the star is solid red,
 indicating that this lake has previously been favorited.

@@ -94,7 +94,7 @@ For an iOS target, complete the follow steps:
 
    1. If your dev machine uses IPv6, add `--vm-service-host=::0`.
 
-   {% render docs/app-figure.md, img-class:"site-mobile-screenshot border", image:"development/add-to-app/debugging/wireless-port.png",
+   {% render ./docs/app-figure.md, img-class:"site-mobile-screenshot border", image:"development/add-to-app/debugging/wireless-port.png",
    caption:"Arguments Passed On Launch with an IPv4 network added", width:"100%" %}
 
 #### To determine if you're on an IPv6 network
@@ -109,7 +109,7 @@ For an iOS target, complete the follow steps:
 
 1. Check for an **IPv6 address** section.
 
-   {% render docs/app-figure.md, img-class:"site-mobile-screenshot border", image:"development/add-to-app/ipv6.png", caption:"WiFi dialog box for macOS System Settings", width:"60%" %}
+   {% render ./docs/app-figure.md, img-class:"site-mobile-screenshot border", image:"development/add-to-app/ipv6.png", caption:"WiFi dialog box for macOS System Settings", width:"60%" %}
 
 ### Debug over Wi-Fi on Android devices
 
