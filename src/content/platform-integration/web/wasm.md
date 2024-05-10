@@ -32,8 +32,6 @@ applications for the web.
 
 To run a Flutter app that has been compiled to Wasm,
 you need a browser that supports [WasmGC][].
-The Wasm standard plans to add WasmGC to help garbage-collected languages
-like Dart execute code in an efficient manner.
 
 [Chromium and V8][] released stable support for WasmGC in Chromium 119.
 Note that Chrome on iOS uses WebKit, which doesn't yet [support WasmGC][].
