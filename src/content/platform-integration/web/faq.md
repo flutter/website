@@ -167,7 +167,7 @@ Not currently.
 [Web support for Flutter]: /platform-integration/web
 [web workers]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
 [run your web apps in any supported browser]: /platform-integration/web/building#create-and-run
-[Integration testing]: /testing/integration-tests#running-in-a-browser
+[Integration testing]: /testing/integration-tests#test-in-a-web-browser
 [documentation for conditional imports]: {{site.dart-site}}/guides/libraries/create-library-packages#conditionally-importing-and-exporting-library-files
 [roadmap]: {{site.github}}/flutter/flutter/wiki/Roadmap#web-platform
 [space_hawaii]: https://alien-hawaii-2024.web.app/
