@@ -113,7 +113,7 @@ Drawer(
 ## 4. Open the drawer programmatically
 
 Typically, you don't need to write any code to open a `drawer`,
-Because when `leading` is null, the default implementation in `AppBar` is `DrawerButton`.
+Because when the `leading` widget is null, the default implementation in `AppBar` is `DrawerButton`.
 
 But if you want to have free control of the `drawer`.
 You can do this by using the `Builder` call `Scaffold.of(context).openDrawer()`.
@@ -135,7 +135,7 @@ Scaffold(
     ),
   ),
   drawer: Drawer(
-    child: null, // Populate the Drawer in the last step.
+    child: // Populate the Drawer in the last step.
   ),
 );
 ```
