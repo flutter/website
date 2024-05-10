@@ -35,10 +35,10 @@ consider separating your primary application experience—created in Flutter—f
 your landing page, marketing content, and help content—created using
 search-engine optimized HTML.
 
-Having said that, as we mention in our [roadmap][], we plan to investigate
-search engine indexability of Flutter Web. To that end we've built a small
-website containing [Hawaii-themed space stories][space_hawaii], which we
-would like search engines to pick up and index.
+That said, as mentioned in the [roadmap][], the Flutter team plans to
+investigate search engine indexability of Flutter web. To that end, we built a
+small website containing [Hawaii-themed space stories][space_hawaii], hoping
+that search engines find and index this site.
 
 ### How do I create an app that also runs on the web?
 
