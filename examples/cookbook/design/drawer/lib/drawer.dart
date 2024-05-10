@@ -60,7 +60,6 @@ void drawerListview() {
   // #enddocregion DrawerListView
 }
 
-
 void drawerOpen() {
   // #docregion DrawerOpen
   Scaffold(
@@ -83,7 +82,6 @@ void drawerOpen() {
   );
   // #enddocregion DrawerOpen
 }
-
 
 void drawerClose() {
   Builder(
