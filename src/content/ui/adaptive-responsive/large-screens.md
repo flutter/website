@@ -246,6 +246,7 @@ For more information (and example code), check out
 [Problem: Navigation rail][], a section in the
 [Developing Flutter apps for Large screens][article] article.
 
+[article]: {{site.flutter-medium}}/developing-flutter-apps-for-large-screens-53b7b0e17f10
 [Problem: Navigation rail]: {{site.flutter-medium}}/developing-flutter-apps-for-large-screens-53b7b0e17f10#:~:text=Problem%3A%20Navigation%20rail1
 
 
