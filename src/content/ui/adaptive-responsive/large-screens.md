@@ -238,17 +238,16 @@ guidance on adding
 ### Navigation
 
 Navigation can create unique challenges when working with a variety of
-differently-sized devices. Generally, you'll want to switch between
+differently-sized devices. Generally, you want to switch between
 a [`BottomNavigationBar`][] and a [`NavigationRail`] depending on
 available screen space.
 
-For more information (and example code), check out
-[Problem: Navigation rail][], a section in the
+For more information (and corresponding example code),
+check out [Problem: Navigation rail][], a section in the
 [Developing Flutter apps for Large screens][article] article.
 
 [article]: {{site.flutter-medium}}/developing-flutter-apps-for-large-screens-53b7b0e17f10
+[`BottomNavigationBar`]: {{site.api}}/flutter/material/BottomNavigationBar-class.html
+[`NavigationRail`]: {{site.api}}/flutter/material/NavigationRail-class.html
 [Problem: Navigation rail]: {{site.flutter-medium}}/developing-flutter-apps-for-large-screens-53b7b0e17f10#:~:text=Problem%3A%20Navigation%20rail1
-
-
-Handling navigation for large and small screens, 
 
