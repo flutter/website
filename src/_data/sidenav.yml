@@ -64,7 +64,7 @@
       children:
       - title: Overview
         permalink: /resources/ai-overview
-      - Get started with the Gemini API
+      - title: Get started with the Gemini API
         permalink: https://ai.google.dev/gemini-api/docs/get-started/dart
       - title: Google AI Dart SDK (pub.dev)
         permalink: https://pub.dev/packages/google_generative_ai
