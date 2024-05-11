@@ -23,6 +23,38 @@ and review the [Dart changelog][].
 [Dart Announce]: {{site.groups}}/a/dartlang.org/g/announce
 [Dart changelog]: {{site.github}}/dart-lang/sdk/blob/main/CHANGELOG.md
 
+## 14 May 2024: Google I/O 3.22 release
+
+### Infrastructure
+- Updated side nav, in particular "App solutions".
+  Added links for AdMob mediation (per Zoey)
+
+{{% comment %}}
+What's new:
+- New adaptive docs (total rewrite)
+- Updated install docs
+- New page on Deep link validator
+- Predictive back support (Justin)
+- Conditionally bundling assets based on flavor on docs.flutter.dev.
+  https://docs.flutter.dev/deployment/flavors#conditionally-bundling-assets-based-on-flavor
+  (Actually added in 3.19)
+- FWE work!!!
+- Infrastructure and website workflow for contributing is simpler.
+  For more details, see README. 11ty
+- New web bootstrapping page
+- Updated wasm page
+- dart.dev/go/macros
+- New ui/asset/asset-transformer page
+
+
+https://medium.com/flutter/whats-new-in-flutter-3-22-fbde6c164fe3
+
+Blogs:
+- Cheng's optimizing article
+- Craig's classroom blog post
+
+{{% endcomment %}}
+
 ## 15 February 2024: Valentine's-Day-adjacent 3.19 release
 
 Flutter 3.19 is live! For more information,
