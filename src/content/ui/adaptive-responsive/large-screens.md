@@ -15,13 +15,13 @@ foldables, and ChromeOS devices running Android. Flutter
 _also_ defines large screen devices as web, desktop,
 and iPads.
 
-<b>PENDING: Mariam, do you have any specific iPad numbers?</b>
-
 :::secondary Why do large screens matter, in particular?
 Demand for large screens continues to increase.
 As of January 2024,
 more than [270 million active large screen][large screens]
-and foldable devices run on Android.
+and foldable devices run on Android and more than
+[14.9 million iPad users][].
+
 When your app supports large screens,
 it also receives other benefits.
 Optimizing your app to fill the screen.
@@ -36,6 +36,7 @@ For example, it:
   guidelines and is [accepted in the App Store][].
 :::
 
+[14.9 million iPad users]: https://www.statista.com/statistics/299632/tablet-shipments-apple/
 [accepted in the App Store]: https://developer.apple.com/ipados/submit/
 [large screens]: {{site.android-dev}}/guide/topics/large-screens/get-started-with-large-screens
 [Play Store updates]: {{site.android-dev}}/2022/03/helping-users-discover-quality-apps-on.html
@@ -54,14 +55,14 @@ _before the advice on this page was applied_.
 This is not optimal.
 
 The [Android Large Screen App Quality Guidelines][guidelines]
-and the "iOS equivalent"
+and the [iOS equivalent][]
 say that neither text nor boxes should take up the
 full screen width. How to solve this in an adaptive way?
 
 [guidelines]: https://developer.android.com/docs/quality-guidelines/large-screen-app-quality
+[iOS equivalent]: https://developer.apple.com/design/human-interface-guidelines/designing-for-ipados
 
-The answer is to either use `GridView` or the
-`maxWidth` property of `BoxConstraints`.
+A common solution uses `GridView`, as shown in the next section.
 
 ### GridView
 
@@ -116,13 +117,18 @@ This distinction is important because many mobile
 devices support multi-window mode, which can
 cause your app to be rendered in a space smaller than
 the physical size of the display. Also, Flutter apps
-can run on web and desktop, which can be sized in
+can run on web and desktop, which might be sized in
 many ways. <strong>For this
 reason, use `MediaQuery` to get the app window size
 rather than the physical device size.</strong>
 :::
 
-You can solve this scenario in one of two ways:
+### Other solutions
+
+Another way to approach to this situations is to
+use the `maxWidth` property of `BoxConstraints`.
+This involves the following:
+
 * Wrap the `GridView`in a `ConstrainedBox` and give
   it a `BoxConstraints` with a maximum width set.
 * Use a `Container` instead of a `ConstrainedBox`
@@ -140,7 +146,7 @@ by Material 3 in the [Applying layout][] guide.
 As mentioned previously, Android and Flutter both
 recommend in their design guidance **not**
 to lock screen orientation,
-but some developers lock screen orientation anyway.
+but some apps lock screen orientation anyway.
 Be aware that this can cause problems when running your
 app on a foldable device.
 
@@ -175,14 +181,12 @@ You can solve this in one of two ways:
 How to obtain the physical screen dimensions?
 
 You can use the [`Display`][] API, introduced in
-Flutter 3.22/Dart 3.4, which contains the size,
+Flutter 3.13, which contains the size,
 pixel ratio, and the refresh rate of the physical device. 
-
-<b>PENDING: Your notes said Flutter 3.13 introduced Display, but isn't it actually Flutter 3.22?</b>
 
 [`Display`]: https://main-api.flutter.dev/flutter/dart-ui/Display-class.html
 
-Here is some sample code for getting a `Display` object:
+The following sample code retrieves a `Display` object:
 
 ```dart
 /// AppState object.
@@ -200,15 +204,9 @@ void didChangeMetrics() {
 ```
 
 The important thing is to find the display of the
-view that you care about. This is a forward-looking
+view that you care about. This creates a forward-looking
 API that should handle current _and_ future multi-display
 and multi-view devices.
-
-<b>PENDING: What is tricky about selecting the "right" view? It feels like this explanation is incomplete</b>
-
-<b>PENDING: OK, the next thing covered in the slides (starting with slide 66) is an actual example that switches between Dialog implementations. This would be hard to show without providing a specific example. I think it would be VERY useful to include this in the docs. Ditto for the navigation UI (starting with slide 81) and custom layout (slide 96). Thoughts?</b>
-
-[SafeArea & MediaQuery]: /ui/adaptive-responsive/safearea-mediaquery
 
 ## Adaptive input
 
@@ -220,9 +218,10 @@ Android guidelines describe three tiers of large format device support.
 ![3 tiers of large format device support](/assets/images/docs/ui/adaptive-responsive/large-screen-guidelines.png){:width="90%"}
 
 Tier 3, the lowest level of support,
-[includes support for mouse and stylus input][].
+includes support for mouse and stylus input
+([Material 3 guidelines][m3-guide], [Apple guidelines][]).
 
-If you app uses Material 3 and its buttons and selectors,
+If your app uses Material 3 and its buttons and selectors,
 then your app already has built-in support for
 various additional input states.
 
@@ -231,7 +230,24 @@ Check out the [User input][] page for
 guidance on adding
 [input support for widgets][].
 
-[includes support for mouse and stylus input]: {{site.android-dev}}/developer.android.com/docs/quality-guidelines/large-screen-app-quality
-[User input]: /ui/adaptive-responsive/input
+[Apple guidelines]: https://developer.apple.com/design/human-interface-guidelines/designing-for-ipados#Best-practices
 [input support for widgets]: /ui/adaptive-responsive/input#custom-widgets
+[m3-guide]: {{site.android-dev}}/developer.android.com/docs/quality-guidelines/large-screen-app-quality
+[User input]: /ui/adaptive-responsive/input
+
+### Navigation
+
+Navigation can create unique challenges when working with a variety of
+differently-sized devices. Generally, you'll want to switch between
+a [`BottomNavigationBar`][] and a [`NavigationRail`] depending on
+available screen space.
+
+For more information (and example code), check out
+[Problem: Navigation rail][], a section in the
+[Developing Flutter apps for Large screens][article] article.
+
+[Problem: Navigation rail]: {{site.flutter-medium}}/developing-flutter-apps-for-large-screens-53b7b0e17f10#:~:text=Problem%3A%20Navigation%20rail1
+
+
+Handling navigation for large and small screens, 
 

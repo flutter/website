@@ -8,7 +8,9 @@ short-title: Idioms
 
 <?code-excerpt path-base="ui/adaptive_app_demos"?>
 
-<b>PENDING: Leave this page out for now... In future ...xxx</b>
+{% comment %}
+<b>PENDING: Leave this page out for now... In V2, I'd like to include it. Mariam suggested splitting it up by platform and I like that idea</b>
+{% endcomment %}
 
 The final area to consider for adaptive apps is platform standards.
 Each platform has its own idioms and norms;

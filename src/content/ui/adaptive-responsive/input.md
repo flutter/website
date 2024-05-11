@@ -300,8 +300,6 @@ for standard button and text cursors.
 (A notable exception is if you change the default styling
 of the Material buttons to set the `overlayColor` to transparent.)
 
-<b>PENDING: should we really include this "notable exception" here?</b>
-
 Implement a focus state for any custom buttons or
 gesture detectors in your app. 
 If you change the default Material button styles,

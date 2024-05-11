@@ -247,7 +247,7 @@ You might also check out [Introducing Dart 3][].
 
 [wireless debugging]: /add-to-app/debugging
 [Material Widget Catalog]: /ui/widgets/material
-[canvasKitVariant runtime configuration]: /platform-integration/web/initialization#initializing-the-engine
+[canvasKitVariant runtime configuration]: /platform-integration/web/initialization
 [Android Java Gradle migration]: /release/breaking-changes/android-java-gradle-migration-guide
 [DevTools]: /tools/devtools/overview
 [WebAssembly support]: /platform-integration/web/wasm

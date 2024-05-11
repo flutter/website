@@ -33,6 +33,7 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Navigator's page APIs breaking change][]
 * [Generic types in `PopScope`][]
 * [Rename `MaterialState` to `WidgetState`][]
 * [Introduce new `ColorScheme` roles][]
@@ -45,6 +46,7 @@ release, and listed in alphabetical order:
 * [Dropping support for Android KitKat][]
 * [New APIs for Android plugins that render to a `Surface`][]
 
+[Navigator's page APIs breaking change]: /release/breaking-changes/navigator-and-page-api
 [Generic types in `PopScope`]: /release/breaking-changes/popscope-with-result
 [Rename `MaterialState` to `WidgetState`]: /release/breaking-changes/material-state
 [Introduce new `ColorScheme` roles]: /release/breaking-changes/new-color-scheme-roles

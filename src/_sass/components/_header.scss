@@ -156,6 +156,7 @@
 
     &::before {
       content: 'search';
+      content: 'search' / '';
       font: $site-font-icon;
       pointer-events: none;
       position: absolute;

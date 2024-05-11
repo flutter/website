@@ -190,7 +190,9 @@ check out [User input & accessibility][].
 
 ### Restore List state
 
-<b>PENDING: Reid, you suggested renaming/removing? this and I can't, for the life of me, fine that comment in the PR</b>
+{% comment %|
+<b>PENDING: Reid, I think you suggested renaming/removing this item? I can't, for the life of me, find that comment in the PR</b>
+{% endcomment %}
 
 To maintain the scroll position in a list
 that doesn't change its layout when the
@@ -218,7 +220,7 @@ to change the scroll position on screen rotation.
 Apps should retain or restore [app state][]
 as the device rotates, changes window size,
 or folds and unfolds. 
-By default, Flutter should maintain state.
+By default, an app should maintain state.
 
 If your app loses state during device configuration,
 verify that the plugins and native extensions
@@ -227,6 +229,12 @@ device type, such as a large screen.
 Some native extensions might lose state when the
 device changes position.
 
-<b>TODO(sfshaza): PENDING: What can you do when this happens?</b>
+For more information on a real-world case
+where this occurred, check out 
+[Problem: Folding/unfolding causes state loss][state-loss]
+in [Developing Flutter apps for Large screens][article],
+a free article on Medium.
 
 [app state]: {{site.android-dev}}/jetpack/compose/state#store-state
+[article]: {{site.flutter-medium}}/developing-flutter-apps-for-large-screens-53b7b0e17f10
+[state-loss]: {{site.flutter-medium}}/developing-flutter-apps-for-large-screens-53b7b0e17f10#:~:text=Problem%3A%20Folding/Unfolding%20causes%20state%2Dloss

@@ -16,8 +16,6 @@ Google engineers, who have experience doing this
 very thing for large apps, recommend the
 following 3-step approach.
 
-<b>PENDING: Why are you reluctant to use Khanh's Vertex AI example code? Is it because it uses Vertex AI API?</b>
-
 ## Step 1: Abstract
 
 ![Step 1: Abstract info common to any UI widget](/assets/images/docs/ui/adaptive-responsive/abstract.png)
