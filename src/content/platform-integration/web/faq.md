@@ -35,6 +35,11 @@ consider separating your primary application experience—created in Flutter—f
 your landing page, marketing content, and help content—created using
 search-engine optimized HTML.
 
+That said, as mentioned in the [roadmap][], the Flutter team plans to
+investigate search engine indexability of Flutter web. To that end, we built a
+small website containing [Hawaii-themed space stories][space_hawaii], hoping
+that search engines find and index this site.
+
 ### How do I create an app that also runs on the web?
 
 See [building a web app with Flutter][].
@@ -164,3 +169,5 @@ Not currently.
 [run your web apps in any supported browser]: /platform-integration/web/building#create-and-run
 [Integration testing]: /testing/integration-tests#running-in-a-browser
 [documentation for conditional imports]: {{site.dart-site}}/guides/libraries/create-library-packages#conditionally-importing-and-exporting-library-files
+[roadmap]: {{site.github}}/flutter/flutter/wiki/Roadmap#web-platform
+[space_hawaii]: https://alien-hawaii-2024.web.app/
