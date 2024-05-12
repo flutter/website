@@ -9,12 +9,14 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.6
+  vector_graphics: 1.1.10+1
 
 dev_dependencies:
   example_utils:
     path: ../../example_utils
   flutter_test:
     sdk: flutter
+  vector_graphics_compiler: 1.1.10+1
     
 flutter:
   uses-material-design: true
@@ -22,3 +24,6 @@ flutter:
   assets:
     - assets/my_icon.png
     - assets/background.png
+    - path: assets/logo.svg
+      transformers:
+        - package: vector_graphics_compiler
