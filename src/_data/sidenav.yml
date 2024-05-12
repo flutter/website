@@ -257,6 +257,8 @@
       permalink: /cookbook/images/fading-in-images
     - title: Play and pause a video
       permalink: /cookbook/plugins/play-video
+    - title: Transforming assets at build time
+      permalink: /ui/assets/asset-transformation
 
 - title: Navigation & routing
   permalink: /ui/navigation
