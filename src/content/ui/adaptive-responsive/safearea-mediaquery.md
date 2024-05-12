@@ -41,10 +41,8 @@ and sets your app up for success even as new devices with
 different shapes and styles of cutouts enter the market.
 
 How does `SafeArea` do so much in a small amount of code?
-Behind the scenes it uses the `MediaQuery` object,
-as you'll see in the [MediaQuery][] page.
+Behind the scenes it uses the `MediaQuery` object.
 
-[MediaQuery]: /ui/adaptive-responsive/mediaquery
 [`SafeArea`]: {{site.api}}/flutter/widgets/SafeArea-class.html
 
 ## MediaQuery
