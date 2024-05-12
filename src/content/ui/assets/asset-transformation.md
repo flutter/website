@@ -9,8 +9,8 @@ at build time using compatible Dart packages.
 
 ## Specifying asset transformations
 
-You can describe which assets should transformed and which package should be
-used transform them in your `pubspec.yaml` file.
+In the `pubspec.yaml` file, list the assets to be transformed and the associated
+transformer package.
 
 ```yaml
 flutter:
@@ -20,7 +20,7 @@ flutter:
         - package: vector_graphics_compiler
 ```
 
-With this configuration, `assets/logo.svg` will be transformed by the
+With this configuration, `assets/logo.svg` is transformed by the
 [`vector_graphics_compiler`][] package as it is copied to the build output. This
 package precompiles SVG files into an optimized binary files that can be
 displayed using the [`vector_graphics`][] package, like so:
@@ -75,9 +75,9 @@ the file to transform and `--output`, which is the location where the
 transformer code must write its output to.
 
 If the transformer applications finishes with a non-zero exit code, the build
-will fail with error message explaining that transformation of the asset failed.
-Anything written to the [`stderr`] stream of the process by the transformer will
-be included in the error message.
+fails with error message explaining that transformation of the asset failed.
+Anything written to the [`stderr`] stream of the process by the transformer is
+included in the error message.
 
 ## Sample
 
