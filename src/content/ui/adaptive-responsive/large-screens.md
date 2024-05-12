@@ -154,10 +154,12 @@ When running on a foldable, the app might look ok
 when the device is folded. But when unfolding,
 you might find the app letterboxed.
 
-As described in the [SafeArea & MediaQuery][] page,
+As described in the [SafeArea & MediaQuery][sa-mq] page,
 letterboxing means that the app's window is locked to
 the center of the screen while the window is
 surrounded with black.
+
+[sa-mq]: /ui/adaptive-responsive/safearea-mediaquery
 
 Why can this happen?
 
