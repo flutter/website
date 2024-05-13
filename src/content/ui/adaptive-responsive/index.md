@@ -54,11 +54,13 @@ responsive design:
 * [SafeArea & MediaQuery][]
 * [Large screens & foldables][]
 * [User input & accessibility][]
+* [Capabilities & policies][]
 * [Best practices for adaptive apps][]
 * [Additional resources][]
 
 [Additional resources]: /ui/adaptive-responsive/more-info
 [Best practices for adaptive apps]: /ui/adaptive-responsive/best-practices
+[Capabilities & policies]: /ui/adaptive-responsive/capabilities
 [General approach]: /ui/adaptive-responsive/general
 [Large screens & foldables]: /ui/adaptive-responsive/large-screens
 [SafeArea & MediaQuery]: /ui/adaptive-responsive/safearea-mediaquery
