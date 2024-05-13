@@ -169,7 +169,7 @@ Future<Album> deleteAlbum(String id) async {
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
-    // then parse the JSON. After deleting,
+    // then return an empty Album. After deleting,
     // you'll get an empty JSON `{}` response.
     // Don't return `null`, otherwise `snapshot.hasData`
     // will always return false on `FutureBuilder`.
