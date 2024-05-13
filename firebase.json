@@ -195,6 +195,7 @@
       { "source": "/ui/layout/box-constraints", "destination": "/ui/layout/constraints#unbounded", "type": 301 },
       { "source": "/ui/layout/building-adaptive-apps", "destination": "/ui/adaptive-responsive", "type": 301 },
       { "source": "/ui/layout/responsive", "destination": "/ui/adaptive-responsive", "type": 301 },
+      { "source": "/ui/layout/responsive/adaptive-responsive", "destination": "/ui/adaptive-responsive", "type": 301 },
       { "source": "/ui/material", "destination": "/ui/design/material", "type": 301 },
       { "source": "/ui/material3-updates", "destination": "/ui/design/material", "type": 301 },
       { "source": "/ui/scrolling", "destination": "/ui/layout/scrolling", "type": 301 },
