@@ -332,14 +332,14 @@ class FinishedPage extends StatelessWidget {
               const SizedBox(height: 32),
               ElevatedButton(
                 style: ButtonStyle(
-                  padding: WidgetStateColor.resolveWith((states) {
+                  padding: WidgetStateProperty.resolveWith((states) {
                     return const EdgeInsets.symmetric(
                         horizontal: 24, vertical: 12);
                   }),
                   backgroundColor: WidgetStateColor.resolveWith((states) {
                     return const Color(0xFF222222);
                   }),
-                  shape: WidgetStateColor.resolveWith((states) {
+                  shape: WidgetStateProperty.resolveWith((states) {
                     return const StadiumBorder();
                   }),
                 ),
