@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
 
-  // #docregion CustomFont
+  // #docregion custom-font
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,5 +18,5 @@ class MyWidget extends StatelessWidget {
       ),
     );
   }
-  // #enddocregion CustomFont
+  // #enddocregion custom-font
 }

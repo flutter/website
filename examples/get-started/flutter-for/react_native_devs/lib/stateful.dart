@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 
-// #docregion StatefulWidget
+// #docregion stateful-widget
 class MyStatefulWidget extends StatefulWidget {
   const MyStatefulWidget({
     super.key,
@@ -13,9 +13,9 @@ class MyStatefulWidget extends StatefulWidget {
   @override
   State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
 }
-// #enddocregion StatefulWidget
+// #enddocregion stateful-widget
 
-// #docregion StatefulWidgetState
+// #docregion stateful-widget-state
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   bool showText = true;
   bool toggleState = true;
@@ -65,4 +65,4 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     );
   }
 }
-// #enddocregion StatefulWidgetState
+// #enddocregion stateful-widget-state

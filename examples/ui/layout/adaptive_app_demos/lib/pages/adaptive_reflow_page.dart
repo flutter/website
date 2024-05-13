@@ -73,9 +73,9 @@ class _ContentPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // #docregion VisualDensityOwnView
+    // #docregion visual-density-own-view
     VisualDensity density = Theme.of(context).visualDensity;
-    // #enddocregion VisualDensityOwnView
+    // #enddocregion visual-density-own-view
     return ConstrainedBox(
       constraints: const BoxConstraints(minHeight: 300, minWidth: 300),
       child: Padding(

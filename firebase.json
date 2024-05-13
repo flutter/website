@@ -401,6 +401,7 @@
       { "source": "/go/google-apis", "destination": "/data-and-backend/google-apis?utm_source=go-link&utm_medium=referral&utm_campaign=go-google-apis", "type": 301 },
       { "source": "/go/google-testing-v2", "destination": "https://docs.google.com/document/d/1Sg_CsGa3VxMNOXFKvoXEPNneD6OUuXIUsmFEjhluhDw", "type": 301 },
       { "source": "/go/go-router-improvements", "destination": "https://docs.google.com/document/d/1_mRXinbL_rb0mUt6DAFZ8kj0kh33ZjEMJuUq4PJgwj8/edit?usp=sharing&resourcekey=0-sYbRzE9opneOFZ5F8J3gGw", "type": 301 },
+      { "source": "/go/go-router-redirect", "destination": "https://docs.google.com/document/d/1L940WGrM1YJ8BkJEpNd67fUqoqC6OsTfch4eH86E0xU/edit?usp=sharing&resourcekey=0-9oxsWU1tLpAACTUXyNjpkA", "type": 301 },
       { "source": "/go/go-router-support-imperative-routing", "destination": "https://docs.google.com/document/d/1HCgLi7ialw2Eqv-f_2z9ogdOfcmepIIqCsRhF-DT9dM/edit?usp=sharing", "type": 301 },
       { "source": "/go/go-router-v2-5-breaking-changes", "destination": "https://docs.google.com/document/d/1MoEM3C6sDvMUuZYCxlYoMI2QJlkONu8i9G53uy5xk-M/edit", "type": 301 },
       { "source": "/go/go-router-v2-breaking-changes", "destination": "https://docs.google.com/document/d/12iXx214phOag-XCetaGbSzziXGaHX82V-wMi_-8W04M/edit", "type": 301 },
@@ -502,6 +503,7 @@
       { "source": "/go/outline-input-border-padding-fix", "destination": "https://docs.google.com/document/d/1QBM5oM9qPWVeFSPSqpXOFbdXV9dH9A9ABKsNMs1J2XU/edit?usp=sharing", "type": 301 },
       { "source": "/go/overridable-text-actions", "destination": "https://docs.google.com/document/d/11vmEZTjB4_E4el1IjTo2VBI2d_fR7tjQWeCajsQc-q4/edit?usp=sharing", "type": 301 },
       { "source": "/go/performance-best-practices", "destination": "https://docs.google.com/document/d/16bd3HtkuvzAk0uizDGTT3aNtjI8Mfr0f6C3ZVrYYqvI", "type": 301 },
+      { "source": "/go/performance-android-orientation-changes", "destination": "https://docs.google.com/document/d/1L7NMG8YfWXoAuCFPv9oX11M1FEWXKbyaWc03mOmXJGc/edit?usp=sharing", "type": 301 },
       { "source": "/go/permissible-slider-interaction", "destination": "https://docs.google.com/document/d/151iaqbK-rZSRI34NdkvfIk4RkzOpAevoJ87TwiXfTpM/edit?usp=sharing&resourcekey=0-o0Gx6nrgl-fpw7_zUdMaQA", "type": 301 },
       { "source": "/go/picture-lifecycle", "destination": "https://docs.google.com/document/d/1aTBj38k6NSVsYRwySEBItlqxdQbjzurjmHsXAr3yGiI/edit?usp=sharing&resourcekey=0-TbKDu4BVInqphkzAlasBnw", "type": 301 },
       { "source": "/go/platform-api-breakages", "destination": "https://docs.google.com/document/d/1OxDsf_eot7TlsRn57z-1_dGbvuqnMxO7QEGIAmOCZtA/edit?usp=sharing", "type": 301 },
@@ -532,6 +534,7 @@
       { "source": "/go/respecting-tabcontroller-animateto-duration", "destination": "https://docs.google.com/document/d/1wzSzUYstDM-Kg5kwskyXcEUX7QTb-lBOso7Z5ebrCTk/edit", "type": 301 },
       { "source": "/go/restoring-anonymous-routes", "destination": "https://docs.google.com/document/d/1vnjDruoiDz0eEd4eVzg3IS6W_LRaFxNSlKWtU6iXp2M/edit", "type": 301 },
       { "source": "/go/router-api-improvement", "destination": "https://docs.google.com/document/d/1kbUPagtDl30jqYAq-mDMdd-ftHm3q9AMq55ufZCo9lE/edit?usp=sharing&resourcekey=0-JBqYh_UD3h9OSA8NS5OO4g", "type": 301 },
+      { "source": "/go/runtime-flutter-analyzer", "destination": "https://docs.google.com/document/d/1VZOv9NsmNeXaqM9h9EjKTz5cg7lEsA623XBfbojXU5U/edit?usp=sharing", "type": 301 },
       { "source": "/go/rfc-32-bit-ios-support", "destination": "https://docs.google.com/document/d/1Xz8B2w42ZGmrSdvQHo6LVLhiSZBIxnHxZxoZ-8oyRUc/edit", "type": 301 },
       { "source": "/go/rfc-32-bit-ios-unsupported", "destination": "https://docs.google.com/document/d/1cc5EOsuTlbf4dTDTwmkD3aKjS8XEbVCIqi9BFct9XHM/edit?resourcekey=0-Iv0gXDx7nSDCe3YDfxDKqw", "type": 301 },
       { "source": "/go/rfc-android-j-deprecation", "destination": "https://docs.google.com/document/d/1N06Pm1x19AIWorENk6OdmY5T8kMzPJUOZs8aL9VccG4/edit", "type": 301 },
@@ -630,7 +633,7 @@
         ]
       },
       {
-        "source": "**/*.@(jpg|jpeg|gif|png|webp|webm|svg|md|css|js)",
+        "source": "**/*.@(avif|jpg|jpeg|gif|png|webp|webm|svg|md|css|js)",
         "headers": [
           { "key": "Cache-Control", "value": "max-age=3600" },
           { "key": "Access-Control-Allow-Origin", "value": "*" }

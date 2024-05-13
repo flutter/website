@@ -3,23 +3,23 @@ import 'package:flutter/material.dart';
 class ImageAssetExample extends StatelessWidget {
   const ImageAssetExample({super.key});
 
-  // #docregion ImageAsset
+  // #docregion image-asset
   @override
   Widget build(BuildContext context) {
     return Image.asset('images/my_icon.png');
   }
-  // #enddocregion ImageAsset
+  // #enddocregion image-asset
 }
 
 class AssetImageExample extends StatelessWidget {
   const AssetImageExample({super.key});
 
-  // #docregion AssetImage
+  // #docregion asset-image
   @override
   Widget build(BuildContext context) {
     return const Image(
       image: AssetImage('images/my_image.png'),
     );
   }
-  // #enddocregion AssetImage
+  // #enddocregion asset-image
 }

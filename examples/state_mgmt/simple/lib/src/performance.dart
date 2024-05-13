@@ -35,7 +35,7 @@ class DescendantInLeafNode_Good extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // #docregion leafDescendant
+    // #docregion leaf-descendant
     // DO THIS
     return HumongousWidget(
       // ...
@@ -48,7 +48,7 @@ class DescendantInLeafNode_Good extends StatelessWidget {
         ),
       ),
     );
-    // #enddocregion leafDescendant
+    // #enddocregion leaf-descendant
   }
 }
 
@@ -57,7 +57,7 @@ class DescendantNotInLeafNode_Bad extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // #docregion nonLeafDescendant
+    // #docregion non-leaf-descendant
     // DON'T DO THIS
     return Consumer<CartModel>(
       builder: (context, cart, child) {
@@ -70,7 +70,7 @@ class DescendantNotInLeafNode_Bad extends StatelessWidget {
         );
       },
     );
-    // #enddocregion nonLeafDescendant
+    // #enddocregion non-leaf-descendant
   }
 }
 
@@ -112,9 +112,9 @@ class NonRebuilding_Good extends StatelessWidget {
   }
 
   void _onPressed(BuildContext context) {
-    // #docregion nonRebuilding
+    // #docregion non-rebuilding
     Provider.of<CartModel>(context, listen: false).removeAll();
-    // #enddocregion nonRebuilding
+    // #enddocregion non-rebuilding
   }
 }
 

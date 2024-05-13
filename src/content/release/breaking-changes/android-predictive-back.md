@@ -12,6 +12,14 @@ To support Android 14's Predictive Back feature, a set of ahead-of-time APIs
 have replaced just-in-time navigation APIs, like `WillPopScope` and
 `Navigator.willPop`.
 
+:::note
+The Flutter 3.22 release includes some updates
+to predictive back behavior. For more info, check out
+[Issue #132504][].
+:::
+
+[Issue #132504]: {{site.github}}/flutter/flutter/issues/132504#issuecomment-2025776552
+
 ## Background
 
 Android 14 introduced the

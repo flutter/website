@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// #docregion Map
+// #docregion map
 void main() {
   runApp(MaterialApp(
     home: const MyAppHome(), // Becomes the route named '/'.
@@ -11,7 +11,7 @@ void main() {
     },
   ));
 }
-// #enddocregion Map
+// #enddocregion map
 
 class MyAppHome extends StatefulWidget {
   const MyAppHome({super.key});
@@ -32,23 +32,23 @@ class MyPage extends StatelessWidget {
   final String title;
 
   void navigate(BuildContext context) {
-    // #docregion Push
+    // #docregion push
     Navigator.of(context).pushNamed('/b');
-    // #enddocregion Push
+    // #enddocregion push
   }
 
   Object? push(BuildContext context) async {
-    // #docregion PushAwait
+    // #docregion push-await
     Object? coordinates = await Navigator.of(context).pushNamed('/location');
-    // #enddocregion PushAwait
+    // #enddocregion push-await
 
     return coordinates;
   }
 
   void pop(BuildContext context) {
-    // #docregion Pop
+    // #docregion pop
     Navigator.of(context).pop({'lat': 43.821757, 'long': -79.226392});
-    // #enddocregion Pop
+    // #enddocregion pop
   }
 
   @override

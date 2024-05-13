@@ -262,17 +262,17 @@ Opting in allows Flutter to automatically depend on
 When you try to build and run your app with the **Run** and **Debug**
 options in your IDE, your build might fail with the following message:
 
-<img src='/assets/images/docs/deployment/android/ide-build-failure-multidex.png' width="100%" alt='screenshot of build failure because Multidex support is required'>
+<img src='/assets/images/docs/deployment/android/ide-build-failure-multidex.png' width="100%" alt='Build failure because Multidex support is required'>
 
 To enable multidex from the command line,
 run `flutter run --debug` and select an Android device:
 
-<img src='/assets/images/docs/deployment/android/cli-select-device.png' width="100%" alt='screenshot of selecting an Android device'>
+<img src='/assets/images/docs/deployment/android/cli-select-device.png' width="100%" alt='Selecting an Android device with the flutter CLI.'>
 
 When prompted, enter `y`.
 The Flutter tool enables multidex support and retries the build:
 
-<img src='/assets/images/docs/deployment/android/cli-multidex-added-build.png' width="100%" alt='screenshot of a successful build after adding multidex'>
+<img src='/assets/images/docs/deployment/android/cli-multidex-added-build.png' width="100%" alt='The output of a successful build after adding multidex.'>
 
 :::note
 Multidex support is natively included when targeting
@@ -527,13 +527,13 @@ In Android Studio, open the existing `android/`
 folder under your app's folder. Then,
 select **build.gradle (Module: app)** in the project panel:
 
-<img src='/assets/images/docs/deployment/android/gradle-script-menu.png' width="100%" alt='screenshot of gradle build script menu'>
+<img src='/assets/images/docs/deployment/android/gradle-script-menu.png' width="100%" alt='The Gradle build script menu in Android Studio.'>
 
 Next, select the build variant. Click **Build > Select Build Variant**
 in the main menu. Select any of the variants in the **Build Variants**
 panel (debug is the default):
 
-<img src='/assets/images/docs/deployment/android/build-variant-menu.png' width="100%" alt='screenshot of build variant menu'>
+<img src='/assets/images/docs/deployment/android/build-variant-menu.png' width="100%" alt='The build variant menu in Android Studio with Release selected.'>
 
 The resulting app bundle or APK files are located in
 `build/app/outputs` within your app's folder.

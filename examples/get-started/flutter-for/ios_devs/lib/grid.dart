@@ -20,7 +20,7 @@ class App extends StatelessWidget {
   }
 }
 
-// #docregion GridExample
+// #docregion grid-example
 const widgets = [
   Text('Row 1'),
   Icon(CupertinoIcons.arrow_down_square),
@@ -47,4 +47,4 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-// #enddocregion GridExample
+// #enddocregion grid-example

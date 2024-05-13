@@ -32,10 +32,9 @@ add the extension point *target* to your Xcode project.
    Flutter project directory.
 1. In Xcode, select **File -> New -> Target** from the menu bar. 
 
-    <figure class="site-figure {{include.class}}">
+    <figure class="site-figure">
     <div class="site-figure-container">
-        <img src='/assets/images/docs/development/platform-integration/app-extensions/xcode-new-target.png'
-        height='300'>
+        <img src='/assets/images/docs/development/platform-integration/app-extensions/xcode-new-target.png' alt='Opening the File -> New menu, then selecting Target in Xcode.' height='300'>
     </div>
     </figure>
 1. Select the app extension you intend to add.
@@ -97,7 +96,7 @@ To add a target to an App Group:
     1. Select an App Group from the list.
     1. Click **+** to add a new App Group.
 
-{% include docs/app-figure.md image="development/platform-integration/app-extensions/xcode-app-groups.png" %}
+{% render docs/app-figure.md, image:"development/platform-integration/app-extensions/xcode-app-groups.png", alt:"Selecting an App Group within an Xcode Runner target configuration." %}
 
 When two targets belong to the same App Group,
 they can read from and write to the same source.
@@ -135,10 +134,9 @@ share content with other apps,
 such as sharing a picture to create
 a new post on a social media app.
 
-<figure class="site-figure {{include.class}}">
+<figure class="site-figure">
     <div class="site-figure-container">
-        <img src='/assets/images/docs/development/platform-integration/app-extensions/share-extension.png'
-        height='300'>
+        <img src='/assets/images/docs/development/platform-integration/app-extensions/share-extension.png' alt='An example of an entry added to the share menu by a Flutter app' height='300'>
     </div>
 </figure>
 
@@ -174,10 +172,9 @@ use an iOS simulator to test your extension in debug mode.
    share extension's frameworks and libraries list.
    Make sure the embed column says "Embed & Sign".
 
-   <figure class="site-figure {{include.class}}">
+   <figure class="site-figure">
        <div class="site-figure-container">
-           <img src='/assets/images/docs/development/platform-integration/app-extensions/embed-framework.png'
-           height='300'>
+           <img src='/assets/images/docs/development/platform-integration/app-extensions/embed-framework.png' alt='The Flutter.xcframework file being marked as Embed & Sign in Xcode.' height='300'>
        </div>
    </figure>
 
@@ -192,10 +189,9 @@ use an iOS simulator to test your extension in debug mode.
       **Based on configuration file** drop-down menu for your
       extension matches the one selected for the normal app target.
 
-    <figure class="site-figure {{include.class}}">
+    <figure class="site-figure">
         <div class="site-figure-container">
-            <img src='/assets/images/docs/development/platform-integration/app-extensions/xcode-configurations.png'
-            height='300'>
+            <img src='/assets/images/docs/development/platform-integration/app-extensions/xcode-configurations.png' alt='An example Xcode Runner configuration with each property set to: Based on configuration file.' height='300'>
         </div>
     </figure>
 
@@ -212,10 +208,9 @@ use an iOS simulator to test your extension in debug mode.
        you should omit the `<YourShareExtensionTargetName>.`
        portion.<br>
 
-    <figure class="site-figure {{include.class}}">
+    <figure class="site-figure">
         <div class="site-figure-container">
-            <img src='/assets/images/docs/development/platform-integration/app-extensions/share-extension-info.png'
-            height='300'>
+            <img src='/assets/images/docs/development/platform-integration/app-extensions/share-extension-info.png' alt='Setting the NSExtensionPrincipalClass property in the Info.plist file within Xcode.' height='300'>
         </div>
     </figure>
 

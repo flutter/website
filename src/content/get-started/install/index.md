@@ -3,6 +3,7 @@ title: Choose your development platform to get started
 short-title: Install
 description: Install Flutter and get started. Downloads available for Windows, macOS, Linux, and ChromeOS operating systems.
 os-list: [Windows, macOS, Linux, ChromeOS]
+js: [{url: '/assets/js/page/install-current.js'}]
 ---
 
 <div class="card-deck mb-8">
@@ -21,4 +22,4 @@ os-list: [Windows, macOS, Linux, ChromeOS]
 {% endfor %}
 </div>
 
-{% include docs/china-notice.md %}
+{% render docs/china-notice.md %}

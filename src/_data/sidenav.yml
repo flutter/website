@@ -60,6 +60,16 @@
 
 - title: App solutions
   children:
+    - title: AI
+      children:
+      - title: Overview
+        permalink: /resources/ai-overview
+      - title: Get started with the Gemini API
+        permalink: https://ai.google.dev/gemini-api/docs/get-started/dart
+      - title: Google AI Dart SDK (pub.dev)
+        permalink: https://pub.dev/packages/google_generative_ai
+      - title: Build with Google AI Dart SDK (video)
+        permalink: https://www.youtube.com/watch?v=1AuzJEiHjO4
     - title: Firebase & Firestore
       children:
       - title: Overview
@@ -104,6 +114,8 @@
             permalink: https://codelabs.developers.google.com/codelabs/admob-ads-in-flutter
           - title: Add an AdMob banner and native inline ads
             permalink: https://codelabs.developers.google.com/codelabs/admob-inline-ads-in-flutter
+          - title: Google AdMob mediation
+            permalink: https://developers.google.com/admob/flutter/mediation
         - title: In-app purchases
           children:
           - title: In-app purchases overview
@@ -261,6 +273,8 @@
       permalink: /cookbook/images/fading-in-images
     - title: Play and pause a video
       permalink: /cookbook/plugins/play-video
+    - title: Transforming assets at build time
+      permalink: /ui/assets/asset-transformation
 
 - title: Navigation & routing
   permalink: /ui/navigation
@@ -455,6 +469,8 @@
           permalink: /platform-integration/web/install-web
         - title: Build a web app
           permalink: /platform-integration/web/building
+        - title: WebAssembly
+          permalink: /platform-integration/web/wasm
         - title: Web FAQ
           permalink: /platform-integration/web/faq
         - title: Web renderers
@@ -667,6 +683,8 @@
           permalink: /tools/devtools/app-size
         - title: DevTools extensions
           permalink: /tools/devtools/extensions
+        - title: Validate deep links
+          permalink: /tools/devtools/deep-links
         - title: Release notes
           permalink: /tools/devtools/release-notes
     - title: SDK overview

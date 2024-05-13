@@ -4,7 +4,7 @@ void main() {
   runApp(const MyApp());
 }
 
-// #docregion MyApp
+// #docregion my-app
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -33,4 +33,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-// #docregion MyApp
+// #enddocregion my-app

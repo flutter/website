@@ -99,7 +99,7 @@ Text('Hello World'),
 
 Create an [`Image`][] widget:
 
-<?code-excerpt "layout/lakes/step5/lib/main.dart (Image-asset)" remove="/width|height/"?>
+<?code-excerpt "layout/lakes/step5/lib/main.dart (image-asset)" remove="/width|height/"?>
 ```dart
 return Image.asset(
   image,
@@ -109,7 +109,7 @@ return Image.asset(
 
 Create an [`Icon`][] widget:
 
-<?code-excerpt "layout/lakes/step5/lib/main.dart (Icon)"?>
+<?code-excerpt "layout/lakes/step5/lib/main.dart (icon)"?>
 ```dart
 Icon(
   Icons.star,
@@ -152,7 +152,7 @@ Then you can add the `Center` widget directly to the `body`
 property for the home page.
 
 <?code-excerpt path-base="layout/base"?>
-<?code-excerpt "lib/main.dart (MyApp)"?>
+<?code-excerpt "lib/main.dart (my-app)"?>
 ```dart
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -205,7 +205,7 @@ You need to set these yourself.
 To learn what other UI components you can add, check out the
 [Cupertino library][].
 
-<?code-excerpt "lib/cupertino.dart (MyApp)"?>
+<?code-excerpt "lib/cupertino.dart (my-app)"?>
 ```dart
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -257,7 +257,7 @@ For a non-Material app, you can add the `Center` widget to the app's
 `build()` method:
 
 <?code-excerpt path-base="layout/non_material"?>
-<?code-excerpt "lib/main.dart (MyApp)"?>
+<?code-excerpt "lib/main.dart (my-app)"?>
 ```dart
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -298,8 +298,7 @@ color to white and the text to dark grey to mimic a Material app.
 
 </div>
 <div class="col-md-6">
-  {% include docs/app-figure.md img-class="site-mobile-screenshot border w-75"
-      image="ui/layout/hello-world.png" alt="Hello World" %}
+  {% render docs/app-figure.md, img-class:"site-mobile-screenshot border w-75", image:"ui/layout/hello-world.png", alt:"Hello World" %}
 </div>
 </div>
 
@@ -396,7 +395,7 @@ space evenly between, before, and after each image.
 <div class="row">
 <div class="col-lg-8">
 
-  <?code-excerpt "layout/row_column/lib/main.dart (Row)" replace="/Row/[!$&!]/g"?>
+  <?code-excerpt "layout/row_column/lib/main.dart (row)" replace="/Row/[!$&!]/g"?>
   ```dart
   [!Row!](
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -425,7 +424,7 @@ space evenly between, above, and below each image.
 <div class="row">
 <div class="col-lg-8">
 
-  <?code-excerpt "layout/row_column/lib/main.dart (Column)" replace="/Column/[!$&!]/g"?>
+  <?code-excerpt "layout/row_column/lib/main.dart (column)" replace="/Column/[!$&!]/g"?>
   ```dart
   [!Column!](
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -630,7 +629,7 @@ as you can see in its widget tree:
 
 The `iconList` variable defines the icons row:
 
-<?code-excerpt "layout/pavlova/lib/main.dart (iconList)" replace="/iconList/[!$&!]/g"?>
+<?code-excerpt "layout/pavlova/lib/main.dart (icon-list)" replace="/iconList/[!$&!]/g"?>
 ```dart
 const descTextStyle = TextStyle(
   color: Colors.black,
@@ -680,7 +679,7 @@ final [!iconList!] = DefaultTextStyle.merge(
 The `leftColumn` variable contains the ratings and icons rows,
 as well as the title and text that describes the Pavlova:
 
-<?code-excerpt "layout/pavlova/lib/main.dart (leftColumn)" replace="/leftColumn/[!$&!]/g"?>
+<?code-excerpt "layout/pavlova/lib/main.dart (left-column)" replace="/leftColumn/[!$&!]/g"?>
 ```dart
 final [!leftColumn!] = Container(
   padding: const EdgeInsets.fromLTRB(20, 30, 20, 20),
@@ -1055,7 +1054,7 @@ or partially overlap the base widget.
 </div>
 </div>
 
-<?code-excerpt "layout/card_and_stack/lib/main.dart (Stack)" replace="/\bStack/[!$&!]/g;"?>
+<?code-excerpt "layout/card_and_stack/lib/main.dart (stack)" replace="/\bStack/[!$&!]/g;"?>
 ```dart
 Widget _buildStack() {
   return [!Stack!](
@@ -1139,7 +1138,7 @@ Specifying an unsupported value disables the drop shadow entirely.
 </div>
 </div>
 
-<?code-excerpt "layout/card_and_stack/lib/main.dart (Card)" replace="/\bCard/[!$&!]/g;"?>
+<?code-excerpt "layout/card_and_stack/lib/main.dart (card)" replace="/\bCard/[!$&!]/g;"?>
 ```dart
 Widget _buildCard() {
   return SizedBox(

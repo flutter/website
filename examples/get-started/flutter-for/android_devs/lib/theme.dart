@@ -1,4 +1,4 @@
-// #docregion Theme
+// #docregion theme
 import 'package:flutter/material.dart';
 
 class SampleApp extends StatelessWidget {
@@ -17,7 +17,7 @@ class SampleApp extends StatelessWidget {
     );
   }
 }
-// #enddocregion Theme
+// #enddocregion theme
 
 class SampleAppPage extends StatelessWidget {
   const SampleAppPage({super.key});

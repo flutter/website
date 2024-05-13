@@ -7,7 +7,7 @@ void main() {
   );
 }
 
-// #docregion Routes
+// #docregion routes
 // Defines the route name as a constant
 // so that it's reusable.
 const detailsPageRouteName = '/details';
@@ -29,7 +29,7 @@ class App extends StatelessWidget {
     );
   }
 }
-// #enddocregion Routes
+// #enddocregion routes
 
 // Create a class that holds each person's data.
 @immutable
@@ -67,7 +67,7 @@ class HomePage extends StatelessWidget {
       ),
       child: Material(
         child:
-            // #docregion ListView
+            // #docregion list-view
             ListView.builder(
           itemCount: mockPersons.length,
           itemBuilder: (context, index) {
@@ -92,13 +92,13 @@ class HomePage extends StatelessWidget {
             );
           },
         ),
-        // #enddocregion ListView
+        // #enddocregion list-view
       ),
     );
   }
 }
 
-// #docregion DetailsPage
+// #docregion details-page
 class DetailsPage extends StatelessWidget {
   const DetailsPage({super.key});
 
@@ -116,4 +116,4 @@ class DetailsPage extends StatelessWidget {
     );
   }
 }
-// #enddocregion DetailsPage
+// #enddocregion details-page

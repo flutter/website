@@ -37,12 +37,10 @@ js: [{url: '/assets/js/temp/macos-install-redirector.js'}]
             <span class="material-symbols">web</span>
           {% endcase -%}
         </span>
-        <span class="text-muted">
-        {{ target }}
-        </span>
+        <span class="text-muted">{{ target }}</span>
         {% if icon == 'ios' -%}
           <div class="card-subtitle">Recommended</div>
-        {% endif %}
+        {% endif -%}
       </header>
     </div>
   </a>
@@ -55,4 +53,4 @@ to run your first Flutter app.
 You can set up additional platforms later.
 _If you don't have a preference, choose **{{rec-target}}**._
 
-{% include docs/china-notice.md %}
+{% render docs/china-notice.md %}
