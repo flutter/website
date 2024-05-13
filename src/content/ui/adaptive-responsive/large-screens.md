@@ -105,7 +105,7 @@ that you can use, namely:
 [`SliverGridDelegateWith<b>FixedCrossAxisCount</b>`]: {{site.api}}/flutter/rendering/SliverGridDelegateWithFixedCrossAxisCount-class.html 
 [`SliverGridDelegateWith<b>MaxCrossAxisExtent</b>`]:  {{site.api}}/flutter/rendering/SliverGridDelegateWithMaxCrossAxisExtent-class.html
 
-:::
+:::secondary
 Don't use the grid delegate for these classes that lets
 you set the column count directly and then hardcode
 the number of columns based on whether the device
