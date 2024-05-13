@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: Adaptive and responsive design in Flutter
 description: >-
   It's important to create an app,
   whether for mobile or web,
