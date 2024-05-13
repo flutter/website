@@ -146,12 +146,6 @@ games.
   check out [How It's Made: I/O FLIP adds a twist to a classic card game with generative AI][flip-blog]
   on the Google Developers blog and [play the game][flip-game] in your browser.
 
-{% comment %}
-Some examples of successful mobile videogames
-built with Flutter and Flame include
-[Tomb Toad][] and [Air Hockey][].
-{% endcomment %}
-
 ## Other resources
 
 Once you feel ready to go beyond these games templates,
@@ -208,6 +202,8 @@ investigate other resources that our community recommended.
 <td>
 
 {{pkg-icon}} [audioplayers][]
+{{pkg-icon}} [flutter_soloud][] - NEW
+{{codelab}}  [Using SoLoud: Add sound and music to your app][] - NEW
 
 </td>
 </tr>
@@ -411,3 +407,5 @@ investigate other resources that our community recommended.
 [view the open source code repo]: {{site.github}}/flutter/super_dash
 [web]: https://superdash.flutter.dev/
 [Tiled]: https://www.mapeditor.org/
+[flutter_soloud]: {{site.pub-pkg}}/flutter_soloud
+[SoLoud codelab]: {{site.codelabs}}/codelabs/flutter-codelab-soloud
