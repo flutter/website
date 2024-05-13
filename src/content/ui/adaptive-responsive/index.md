@@ -5,7 +5,7 @@ description: >-
   whether for mobile or web,
   that responds to size and orientation changes
   and maximizes the use of each platform.
-short-title: Adaptive
+short-title: Adaptive design
 ---
 
 ![List of supported platforms](/assets/images/docs/ui/adaptive-responsive/platforms.png)
