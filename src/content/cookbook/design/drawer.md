@@ -110,7 +110,37 @@ Drawer(
 );
 ```
 
-## 4. Close the drawer programmatically
+## 4. Open the drawer programmatically
+
+Typically, you don't need to write any code to open a `drawer`,
+Because when the `leading` widget is null, the default implementation in `AppBar` is `DrawerButton`.
+
+But if you want to have free control of the `drawer`.
+You can do this by using the `Builder` call `Scaffold.of(context).openDrawer()`.
+
+<?code-excerpt "lib/drawer.dart (DrawerOpen)" replace="/null, //g"?>
+```dart
+Scaffold(
+  appBar: AppBar(
+    title: const Text('AppBar with hamburger button'),
+    leading: Builder(
+      builder: (context) {
+        return IconButton(
+          icon: const Icon(Icons.menu),
+          onPressed: () {
+            Scaffold.of(context).openDrawer();
+          },
+        );
+      },
+    ),
+  ),
+  drawer: Drawer(
+    child: // Populate the Drawer in the last step.
+  ),
+);
+```
+
+## 5. Close the drawer programmatically
 
 After a user taps an item, you might want to close the drawer.
 You can do this by using the [`Navigator`][].
@@ -200,7 +230,19 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.title)),
+      appBar: AppBar(
+        title: Text(widget.title),
+        leading: Builder(
+          builder: (context) {
+            return IconButton(
+              icon: const Icon(Icons.menu),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+            );
+          },
+        ),
+      ),
       body: Center(
         child: _widgetOptions[_selectedIndex],
       ),

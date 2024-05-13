@@ -60,6 +60,29 @@ void drawerListview() {
   // #enddocregion DrawerListView
 }
 
+void drawerOpen() {
+  // #docregion DrawerOpen
+  Scaffold(
+    appBar: AppBar(
+      title: const Text('AppBar with hamburger button'),
+      leading: Builder(
+        builder: (context) {
+          return IconButton(
+            icon: const Icon(Icons.menu),
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          );
+        },
+      ),
+    ),
+    drawer: Drawer(
+      child: null, // Populate the Drawer in the last step.
+    ),
+  );
+  // #enddocregion DrawerOpen
+}
+
 void drawerClose() {
   Builder(
     builder: (context) {
