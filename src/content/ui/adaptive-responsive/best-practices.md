@@ -9,7 +9,7 @@ Recommended best practices for adaptive design include:
 
 ## Design considerations
 
-### Break down your `Widget`s
+### Break down your widgets
 
 While designing your app, try to break down large,
 complex widgets into smaller, simpler ones.
@@ -215,7 +215,7 @@ to change the scroll position on screen rotation.
 [`PageStorageKey`]: {{site.api}}/flutter/widgets/PageStorageKey-class.html
 [Wonderous app]: {{site.github}}/gskinnerTeam/flutter-wonderous-app/blob/8a29d6709668980340b1b59c3d3588f123edd4d8/lib/ui/screens/wonder_events/widgets/_events_list.dart#L64
 
-# Save app state
+## Save app state
 
 Apps should retain or restore [app state][]
 as the device rotates, changes window size,
