@@ -220,7 +220,7 @@ class SelectDevicePage extends StatelessWidget {
                 height: 54,
                 child: ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateColor.resolveWith((states) {
+                    backgroundColor: WidgetStateColor.resolveWith((states) {
                       return const Color(0xFF222222);
                     }),
                   ),
@@ -336,14 +336,14 @@ class FinishedPage extends StatelessWidget {
               const SizedBox(height: 32),
               ElevatedButton(
                 style: ButtonStyle(
-                  padding: MaterialStateProperty.resolveWith((states) {
+                  padding: WidgetStateProperty.resolveWith((states) {
                     return const EdgeInsets.symmetric(
                         horizontal: 24, vertical: 12);
                   }),
-                  backgroundColor: MaterialStateColor.resolveWith((states) {
+                  backgroundColor: WidgetStateColor.resolveWith((states) {
                     return const Color(0xFF222222);
                   }),
-                  shape: MaterialStateProperty.resolveWith((states) {
+                  shape: WidgetStateProperty.resolveWith((states) {
                     return const StadiumBorder();
                   }),
                 ),

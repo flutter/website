@@ -2,7 +2,7 @@ name: finders
 description: A new Flutter project.
 
 environment:
-  sdk: ^3.3.0
+  sdk: ^3.4.0
 
 dependencies:
   flutter:
