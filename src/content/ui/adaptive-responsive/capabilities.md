@@ -16,7 +16,7 @@ handle that in your code.
 Consider the unique strengths and weaknesses of different devices.
 Beyond their screen size and inputs, such as touch, mouse, keyboard,
 what other unique capabilities can you leverage?
-Flutter enables our code to _run_ on different devices
+Flutter enables your code to _run_ on different devices,
 but strong design is more than just running code.
 Think about what each platform does best and
 see if there are unique capabilities to leverage.
@@ -38,23 +38,29 @@ a set of `Capability` and `Policy` classes for your app.
 ### Capabilities
 
 A _capability_ defines what the code or device _can_ do.
-Examples of capabilities are: the existence of an API,
-OS-enforced restrictions,
-physical hardware requirements (like a camera). 
+Examples of capabilities include:
+
+* the existence of an API
+* OS-enforced restrictions
+* physical hardware requirements (like a camera) 
 
 ### Policies
 
 A _policy_ defines what the code _should_ do.
-Examples of policies include: App store guidelines,
-design preferences, assets or copy that refers
-to the host device, features enabled on the server side. 
+
+Examples of policies include:
+
+* App store guidelines
+* design preferences
+* assets or copy that refers to the host device
+* features enabled on the server side 
 
 ### How to structure policy code 
 
 The simplest mechanical way is `Platform.isAndroid`,
 `Platfrom.isIOS`, and `kIsWeb`. These APIs mechanically
 let you know where the code is running but have some
-problems as the app expands where it runs and
+problems as the app expands where it can run, and
 as host platforms add functionality. 
 
 The following guidelines explain best practices
