@@ -155,7 +155,7 @@ Compile-time policy checks are good for platforms
 where the preference is unlikely to change and where
 accidentally changing the value might have large consequences.
 For example, if a platform requires that you not
-link to the play store or requires that you use
+link to the play store, or requires that you use
 a specific payment provider given the content of your app.
 
 Runtime checks can be good for determining if there
