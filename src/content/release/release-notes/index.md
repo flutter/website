@@ -12,8 +12,10 @@ For information about bug-fix releases, check out
 [Hotfixes to the Stable Channel][] on the Flutter wiki.
 :::
 
-* 3.22.0
+* 3.22.0 _(Tentative)_
+  {% comment %}
   * [3.22.0 announcement][]
+  {% endcomment -%}
   * [3.22.0 release notes & change log][]
   * [3.22.0 breaking changes & migrations][]
 * 3.19.0
