@@ -1,7 +1,8 @@
 ---
 title: SafeArea & MediaQuery
 description: >-
-  Learn how to use SafeArea to create an adaptive app.
+  Learn how to use SafeArea and MediaQuery
+  to create an adaptive app.
 ---
 
 This page discusses how and when to use the
