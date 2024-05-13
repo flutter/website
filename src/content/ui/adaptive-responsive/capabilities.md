@@ -185,5 +185,5 @@ policies so the widget tests don't need to change
 when capabilities or policies change.
 
 Name the methods in your capabilities and policies classes
- based not on device type but what they are trying to branch. 
+based on what they are trying to branch, rather than on device type.
 
