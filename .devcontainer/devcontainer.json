@@ -12,7 +12,6 @@
 		"PATH": "${containerEnv:PATH}:${containerEnv:FLUTTER_ROOT}/bin"
 	},
 	"onCreateCommand": "git clone --branch=stable https://github.com/flutter/flutter.git ${FLUTTER_ROOT} && ${FLUTTER_ROOT}/bin/flutter doctor",
->>>>>>> main
 	"postCreateCommand": "git submodule update --init --recursive && flutter pub get && corepack install && pnpm install",
 	"customizations": {
 		"vscode": {
