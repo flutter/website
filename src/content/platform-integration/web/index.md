@@ -83,7 +83,7 @@ The following resources can help you get started:
 ---
 
 [Building a web application with Flutter]: /platform-integration/web/building
-[Creating responsive apps]: /ui/layout/responsive/adaptive-responsive
+[Creating responsive apps]: /ui/adaptive-responsive
 [Discord]: https://discordapp.com/invite/yeZ6s7k
 [file an issue]: https://goo.gle/flutter_web_issue
 [Wonderous app]: {{site.wonderous}}/web
