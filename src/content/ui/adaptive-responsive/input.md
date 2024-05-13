@@ -1,7 +1,9 @@
 ---
 title: User input & accessibility
 description: >-
-  xxx
+  A truly adaptive app also handles differences
+  in how user input works and also programs
+  to help folks with accessibility issues.
 ---
 
 <?code-excerpt path-base="ui/adaptive_app_demos"?>

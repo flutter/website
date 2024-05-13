@@ -1,15 +1,16 @@
 ---
 title: Additional resources
 description: >-
-  Other resources that you might find useful when writing adaptive apps.
+  Other resources that you might find useful
+  when writing adaptive apps.
 short-title: Learn
 ---
 
 ## Examples
 
-If you'd like to see how these concepts come together,
-check out the source code for the following
-apps/demos:
+If you'd like to see how the adaptive and responsive
+concepts (as described in these pages) come together.
+check out the source code for the following apps:
 
 * [Wonderous][]
 * [Flutter adaptive demo][]
