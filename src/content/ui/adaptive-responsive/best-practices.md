@@ -1,6 +1,6 @@
 ---
 title: Best practices for adaptive design
-description: >
+description: >-
   Summarize some of the best practices for adaptive design.
 short-title: Best practice
 ---
@@ -122,7 +122,7 @@ Avoid using `MediaQuery`'s orientation field
 or `OrientationBuilder` to switch between
 different app layouts. This is similar to the
 guidance of not checking device types to determine
-screen size. The device’s orientation also doesn’t
+screen size. The device's orientation also doesn't
 necessarily inform you of how much space your app window has.
 
 Instead, use `MediaQuery`'s `sizeOf` or `LayoutBuilder`,
@@ -151,18 +151,18 @@ running on is a "phone" or a "tablet", or any other type
 of device when making layout decisions.
 
 What space your app is actually given to render in
-isn’t always tied to the full screen size of the device.
+isn't always tied to the full screen size of the device.
 Flutter can run on many different platforms,
 and your app might be running in a resizeable window on ChromeOS,
 side by side with another app on tablets in a multi-window mode,
 or even in a picture-in-picture on phones.
-Therefore, device type and app window size aren’t
+Therefore, device type and app window size aren't
 really strongly connected.
 
 Instead, use `MediaQuery` to get the size of the window
 your app is currently running in.
 
-This isn’t only helpful for UI code.
+This isn't only helpful for UI code.
 To learn how abstracting out device
 capabilities can help your business logic code,
 check out the 2022 Google I/O talk,

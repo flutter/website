@@ -1,6 +1,6 @@
 ---
 title: User input & accessibility
-description: >
+description: >-
   xxx
 ---
 
@@ -16,7 +16,7 @@ Some of these features work by default on Material
 widgets. But, if you've created a custom widget,
 you might need to implement them directly.
 
-Some features that encompass a well designed app,
+Some features that encompass a well-designed app,
 also help users who work with assistive technologies.
 For example, aside from being **good app design**,
 some features, like tab traversal and keyboard shortcuts,
@@ -295,7 +295,7 @@ mouse is hovering over. For example, you typically see
 a hand cursor when you hover over a button,
 or an `I` cursor when you hover over text.
 
-Flutter’s Material buttons handle basic focus states
+Flutter's Material buttons handle basic focus states
 for standard button and text cursors.
 (A notable exception is if you change the default styling
 of the Material buttons to set the `overlayColor` to transparent.)

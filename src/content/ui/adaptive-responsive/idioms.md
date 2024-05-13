@@ -1,6 +1,6 @@
 ---
 title: Platform idioms
-description: >
+description: >-
   Learn how to create a responsive app >
   that responds to changes in the screen size. 
 short-title: Idioms

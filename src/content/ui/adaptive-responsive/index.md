@@ -1,6 +1,6 @@
 ---
 title: Overview
-description: >
+description: >-
   It's important to create an app,
   whether for mobile or web,
   that responds to size and orientation changes

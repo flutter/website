@@ -1,6 +1,6 @@
 ---
 title: Additional resources
-description: >
+description: >-
   Other resources that you might find useful when writing adaptive apps.
 short-title: Learn
 ---
@@ -8,7 +8,7 @@ short-title: Learn
 ## Examples
 
 If you'd like to see how these concepts come together,
-check out the the source code for the following
+check out the source code for the following
 apps/demos:
 
 * [Wonderous][]

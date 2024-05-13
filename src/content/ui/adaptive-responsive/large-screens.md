@@ -1,6 +1,6 @@
 ---
 title: Large screen devices
-description: >
+description: >-
   Things to keep in mind when adapting apps to large screens.
 short-title: Large screens
 ---
@@ -86,7 +86,7 @@ To learn more, visit the [`GridView`][] API page.
 For example, if your original app used a `ListView.builder`,
 swap that out for a `GridView.builder`.
 If your app has a large number of items,
-it’s recommended to use this builder constructor to only
+it's recommended to use this builder constructor to only
 build the item widgets that are actually visible.
 
 Most of the parameters in the constructor are the same between
@@ -117,15 +117,14 @@ This distinction is important because many mobile
 devices support multi-window mode, which can
 cause your app to be rendered in a space smaller than
 the physical size of the display. Also, Flutter apps
-can run on web and desktop, which might be sized in
-many ways. <strong>For this
-reason, use `MediaQuery` to get the app window size
-rather than the physical device size.</strong>
+can run on web and desktop, which might be sized in many ways.
+**For this reason, use `MediaQuery` to get the app window size
+rather than the physical device size.**
 :::
 
 ### Other solutions
 
-Another way to approach to this situations is to
+Another way to approach these situations is to
 use the `maxWidth` property of `BoxConstraints`.
 This involves the following:
 

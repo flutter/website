@@ -1,6 +1,6 @@
 ---
 title: General approach to adaptive apps
-description: >
+description: >-
   General advice on how to approach making your Flutter app adaptive.
 short-title: General approach
 ---
@@ -69,7 +69,7 @@ app's window to lock to the center of the
 screen, surrounded with black.
 This is hardly an ideal UI on a large screen.
 
-:::Note
+:::note
 The Material Guidelines encourage you to never
 _portrait lock_ your app (by disabling landscape mode).
 However, if you feel you really must,
@@ -113,7 +113,7 @@ for each of its individual properties for the same reason.
 
 Requesting the size of the app window from inside
 the `build` method, as in `MediaQuery.sizeOf(context)`,
-causes the givien `BuildContext` to rebuild any time
+causes the given `BuildContext` to rebuild any time
 the size property changes.
 
 ### LayoutBuilder
@@ -121,7 +121,7 @@ the size property changes.
 `LayoutBuilder` accomplishes a similar goal as
 `MediaQuery.sizeOf`, with some distinctions.
 
-Rather than providing the size of the app’s window,
+Rather than providing the size of the app's window,
 `LayoutBuilder` provides the layout constraints from
 the parent `Widget`. This means that you get
 sizing information based on the specific spot
