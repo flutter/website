@@ -13,9 +13,6 @@ in a future release.
 The deep link view validates any deep links
 that are defined in your app.
 
-You can open DevTools, click into the **Deep Links** tab,
-and import a Flutter project that contains deeplinks.
-
 To use this feature, open DevTools,
 click into the **Deep Links** tab,
 and import a Flutter project that contains deep links.
@@ -25,8 +22,6 @@ and import a Flutter project that contains deep links.
 This tool helps you identify and troubleshoot any errors
 in your Android deep link setup,
 from website configuration to Android manifest files.
-DevTools provides instructions on how to fix any issues,
-making the implementation process much easier. 
 DevTools provides instructions on how to fix any issues,
 making the implementation process easier. 
 
