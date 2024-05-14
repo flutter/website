@@ -21,7 +21,7 @@ but strong design is more than just running code.
 Think about what each platform does best and
 see if there are unique capabilities to leverage.
 
-For example: Apple's App Store and Google’s Play Store
+For example: Apple's App Store and Google's Play Store
 have different rules that apps need to abide by.
 Different host operating systems have differing
 capabilities across time as well as each other. 
@@ -96,14 +96,13 @@ This method can exist directly in the class but it's likely
 that other parts of the code might need this same check.
 If so, put the code in a class. 
 
-```dart 
-/// policy.dart
+```dart title="policy.dart"
 
 class Policy {
 
   bool shouldAllowPurchaseClick() {
     // Banned by Apple App Store guidelines. 
-    return !Platform.isIOS
+    return !Platform.isIOS;
   }
 }
 ```
@@ -138,10 +137,10 @@ For example, consider the case where one platform adds
 a new permission that requires users to interact with
 a system dialog before your code calls a sensitive API.
 Your team does the work for platform 1 and creates a
-capability named `requirePremissionDialogFlow`.
+capability named `requirePermissionDialogFlow`.
 Then, if and when platform 2 adds a similar requirement
 but only for new API versions,
-then the implementation of `requirePremissionDialogFlow`
+then the implementation of `requirePermissionDialogFlow`
 can now check the API level and return true for platform 2.
 You've leveraged the work you already did.
 
@@ -154,8 +153,7 @@ you might decide to break up the policy class by feature
 or some other criteria.  
 
 For policy implementation, you can use compile time,
-run time, or whether the app is backed by a
-Remote Procedure Call (RPC).
+run time, or Remote Procedure Call (RPC) backed implementations.
 
 Compile-time policy checks are good for platforms
 where the preference is unlikely to change and where
