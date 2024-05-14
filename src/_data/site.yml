@@ -87,7 +87,7 @@ targetmin:
   macos: '10.14 (Mojave)'
   linux:
     debian: 10
-    ubuntu: '18.04 LTS'
+    ubuntu: '20.04 LTS'
   ios: 12
   android: 'Android API level 21'
 
