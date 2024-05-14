@@ -112,11 +112,11 @@ Future<Album> deleteAlbum(String id) async {
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
-    // then parse the JSON. After deleting,
+    // then return an empty Album. After deleting,
     // you'll get an empty JSON `{}` response.
     // Don't return `null`, otherwise `snapshot.hasData`
     // will always return false on `FutureBuilder`.
-    return Album.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return Album.empty();
   } else {
     // If the server did not return a "200 OK response",
     // then throw an exception.
@@ -169,11 +169,11 @@ Future<Album> deleteAlbum(String id) async {
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
-    // then parse the JSON. After deleting,
+    // then return an empty Album. After deleting,
     // you'll get an empty JSON `{}` response.
     // Don't return `null`, otherwise `snapshot.hasData`
     // will always return false on `FutureBuilder`.
-    return Album.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return Album.empty();
   } else {
     // If the server did not return a "200 OK response",
     // then throw an exception.
@@ -182,10 +182,12 @@ Future<Album> deleteAlbum(String id) async {
 }
 
 class Album {
-  final int id;
-  final String title;
+  int? id;
+  String? title;
 
-  const Album({required this.id, required this.title});
+  Album({this.id, this.title});
+
+  Album.empty();
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return switch (json) {
