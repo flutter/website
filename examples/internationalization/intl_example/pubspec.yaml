@@ -18,5 +18,9 @@ dev_dependencies:
     sdk: flutter
   intl_translation: ^0.19.0
 
+# TODO(parlough): Remove this override once intl_translation 0.20 is published.
+dependency_overrides:
+  intl: 0.19.0
+
 flutter:
   uses-material-design: true
