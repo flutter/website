@@ -7,9 +7,10 @@ description: >-
   and so on.
 ---
 
-Most real-world apps deal with capabilities and
-policies. This page contains advice for how to
-handle that in your code.
+Most real-world apps have the need to adapt to the
+capabilities and policies of different devices and platforms.
+This page contains advice for how to
+handle these scenarios in your code.
 
 ## Design to the strengths of each device type
 
@@ -40,9 +41,9 @@ a set of `Capability` and `Policy` classes for your app.
 A _capability_ defines what the code or device _can_ do.
 Examples of capabilities include:
 
-* the existence of an API
+* The existence of an API
 * OS-enforced restrictions
-* physical hardware requirements (like a camera) 
+* Physical hardware requirements (like a camera) 
 
 ### Policies
 
@@ -51,14 +52,14 @@ A _policy_ defines what the code _should_ do.
 Examples of policies include:
 
 * App store guidelines
-* design preferences
-* assets or copy that refers to the host device
-* features enabled on the server side 
+* Design preferences
+* Assets or copy that refers to the host device
+* Features enabled on the server side 
 
 ### How to structure policy code 
 
 The simplest mechanical way is `Platform.isAndroid`,
-`Platfrom.isIOS`, and `kIsWeb`. These APIs mechanically
+`Platform.isIOS`, and `kIsWeb`. These APIs mechanically
 let you know where the code is running but have some
 problems as the app expands where it can run, and
 as host platforms add functionality. 
@@ -72,13 +73,13 @@ to make layout decisions or assumptions about what a device can do.**
 Instead, describe what you want to branch on in a method. 
 
 Example: Your app has a link to buy something in a
-website but you don't want to show that link on iOS
+website, but you don't want to show that link on iOS
 devices for policy reasons. 
 
 ```dart
 bool shouldAllowPurchaseClick() {
   // Banned by Apple App Store guidelines. 
-  return !Platform.isIOS
+  return !Platform.isIOS;
 }
 
 ...
