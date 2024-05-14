@@ -91,14 +91,14 @@ To learn more, check out [dart.dev/go/macros][].
 [Transforming assets at build time]: /ui/asset/asset-transformer page
 [Validate deep links]: /tools/devtools/deep-links
 
+**Articles**
+
+The following articles were published on the [Flutter Medium][]
+publication since Flutter 3.19:
+
 {{% comment %}}
 LATER:
 - Predictive back support (Justin) (still experimental)
-
-Blogs:
-- Cheng's optimizing article
-- Craig's classroom blog post
-
 list new codelabs
 
 also update codelabs page
