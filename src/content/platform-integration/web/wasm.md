@@ -97,7 +97,7 @@ package root, just like `flutter build web`.
 
 :::note
 Even with the `--wasm` flag, `flutter build web` will still compile the
-application with JavaScript. If WasmGC support is not detected at runtime,
+application to JavaScript. If WasmGC support is not detected at runtime,
 the JavaScript output is used so the application will continue to work across
 browsers.
 :::
