@@ -424,7 +424,10 @@ investigate other resources that our community recommended.
 
 ## Games Toolkit updates for Flutter 3.22
 
-Low-latency, high-performance sound
+The following codelabs and guide were added for
+the Flutter 3.22 release:
+
+<strong>Low-latency, high-performance sound</strong>
 : In collaboration with the Flutter community ([@Marco Bavagnoli]),
   we've enabled the SoLoud audio engine.
   This free and portable engine delivers the low-latency and
@@ -433,7 +436,7 @@ Low-latency, high-performance sound
   [Add sound and music to your Flutter game with SoLoud][],
   dedicated to adding sound and music to your game.
 
-Word puzzle games
+<strong>Word puzzle games</strong>
 : Check out the new codelab,
   [Build a word puzzle with Flutter][],
   focused on building word puzzle games.
@@ -442,14 +445,14 @@ Word puzzle games
   to effortlessly generate expansive crossword-style grids of
   interlocking words without compromising the user experience.
 
-Forge 2D physics engine
+<strong>Forge 2D physics engine</strong>
 : The new Forge2D codelab,
   [Build a 2D physics game with Flutter and Flame][],
   guides you through crafting game mechanics in a
   Flutter and Flame game using a 2D physics simulation
   along the lines of Box2D, called [Forge2D][].
 
-Optimize loading speed for Flutter web-based games
+<strong>Optimize loading speed for Flutter web-based games</strong>
 : In the fast-paced world of web-based gaming,
   a slow loading game is a major deterrent.
   Players expect instant gratification and will
