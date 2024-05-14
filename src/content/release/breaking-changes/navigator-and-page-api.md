@@ -86,7 +86,7 @@ void main() {
 
 ## Timeline
 
-Landed in version: TBD
+Landed in version: TBD<br>
 In stable release: TBD
 
 ## References

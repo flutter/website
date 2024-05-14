@@ -40,7 +40,7 @@ if (kFlutterMemoryAllocationsEnabled) {
 ## Timeline
 
 Landed in version: 3.19.0-2.0.pre<br>
-Landed in stable: Not yet
+Landed in stable: 3.22.0
 
 ## References
 

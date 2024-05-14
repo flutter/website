@@ -176,7 +176,7 @@ Scaffold(
 
 ## Timeline
 
-Landed in version: 3.3.0-0.0.pre  
+Landed in version: 3.3.0-0.0.pre<br>
 In stable release: 3.3
 
 ## References
