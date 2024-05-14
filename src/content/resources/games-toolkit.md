@@ -1,13 +1,14 @@
 ---
 title: Casual Games Toolkit
-description: Free & open source multiplatform 2D game development in Flutter
+description: >-
+  Learn about free & open source multiplatform 2D game development in Flutter.
 ---
 
 The Flutter Casual Games Toolkit pulls together new and existing resources
 so you can accelerate development of games on mobile platforms.
 
-:::note
-Check out the latest [Games updates for Flutter 3.22](#games-toolkit-updates-for-flutter-3-22)
+:::recommend
+Check out the latest [game updates and resources for Flutter 3.22](#updates)!
 :::
 
 This page outlines where you can find these available resources.
@@ -122,9 +123,9 @@ Are you ready? To get started:
 1. Review the codelabs and cookbook recipes.
 
    * {{recipe-icon}} Build a [multiplayer game][multiplayer-recipe] with Cloud Firestore.
-   * {{codelab}} Build a [word puzzle][] with Flutter.—<strong>NEW</strong>
-   * {{codelab}} Build a [2D physics game][] with Flutter and Flame.—<strong>NEW</strong>
-   * {{codelab}} [Add sound and music][] to your Flutter game with SoLoud.—<strong>NEW</strong>
+   * {{codelab}} Build a [word puzzle][] with Flutter.—**NEW**
+   * {{codelab}} Build a [2D physics game][] with Flutter and Flame.—**NEW**
+   * {{codelab}} [Add sound and music][] to your Flutter game with SoLoud.—**NEW**
    * {{recipe-icon}}Make your games more engaging
      with [leaderboards and achievements][leaderboard-recipe].
    * Monetize your games with {{recipe-icon}}[in-game ads][ads-recipe]
@@ -213,8 +214,8 @@ investigate other resources that our community recommended.
 <td>
 
 {{pkg-icon}} [audioplayers][]<br>
-{{pkg-icon}} [flutter_soloud][]—<strong>NEW</strong><br>
-{{codelab}}  [Add sound and music to your Flutter game with SoLoud][]—<strong>NEW</strong>
+{{pkg-icon}} [flutter_soloud][]—**NEW**<br>
+{{codelab}}  [Add sound and music to your Flutter game with SoLoud][]—**NEW**
 
 </td>
 </tr>
@@ -353,7 +354,7 @@ investigate other resources that our community recommended.
 <td>
 
 {{codelab}} [Build next generation UIs in Flutter][]<br>
-{{doc-icon}} [Best practices for optimizing Flutter web loading speed][]—<strong>NEW</strong>
+{{doc-icon}} [Best practices for optimizing Flutter web loading speed][]—**NEW**
 
 </td>
 </tr>
@@ -422,13 +423,13 @@ investigate other resources that our community recommended.
 [flutter_soloud]: {{site.pub-pkg}}/flutter_soloud
 [SoLoud codelab]: {{site.codelabs}}/codelabs/flutter-codelab-soloud
 
-## Games Toolkit updates for Flutter 3.22
+## Games Toolkit updates for Flutter 3.22 {:#updates}
 
-The following codelabs and guide were added for
+The following codelabs and guides were added for
 the Flutter 3.22 release:
 
-<strong>Low-latency, high-performance sound</strong>
-: In collaboration with the Flutter community ([@Marco Bavagnoli]),
+**Low-latency, high-performance sound**
+: In collaboration with the Flutter community ([@Marco Bavagnoli][]),
   we've enabled the SoLoud audio engine.
   This free and portable engine delivers the low-latency and
   high-performance sound that's essential for many games.
@@ -436,7 +437,7 @@ the Flutter 3.22 release:
   [Add sound and music to your Flutter game with SoLoud][],
   dedicated to adding sound and music to your game.
 
-<strong>Word puzzle games</strong>
+**Word puzzle games**
 : Check out the new codelab,
   [Build a word puzzle with Flutter][],
   focused on building word puzzle games.
@@ -445,14 +446,14 @@ the Flutter 3.22 release:
   to effortlessly generate expansive crossword-style grids of
   interlocking words without compromising the user experience.
 
-<strong>Forge 2D physics engine</strong>
+**Forge 2D physics engine**
 : The new Forge2D codelab,
   [Build a 2D physics game with Flutter and Flame][],
   guides you through crafting game mechanics in a
   Flutter and Flame game using a 2D physics simulation
   along the lines of Box2D, called [Forge2D][].
 
-<strong>Optimize loading speed for Flutter web-based games</strong>
+**Optimize loading speed for Flutter web-based games**
 : In the fast-paced world of web-based gaming,
   a slow loading game is a major deterrent.
   Players expect instant gratification and will
