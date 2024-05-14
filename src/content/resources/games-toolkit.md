@@ -353,7 +353,7 @@ investigate other resources that our community recommended.
 <td>
 
 {{codelab}} [Build next generation UIs in Flutter][]<br>
-{{guide}} [Best practices for optimizing Flutter web loading speed][]—<strong>NEW</strong>
+{{doc-icon}} [Best practices for optimizing Flutter web loading speed][]—<strong>NEW</strong>
 
 </td>
 </tr>
