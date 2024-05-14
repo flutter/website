@@ -3,7 +3,7 @@ description: Demo code for adaptive app development techniques.
 publish_to: none
 
 environment:
-  sdk: ^3.3.0
+  sdk: ^3.4.0
 
 dependencies:
   flutter:
@@ -17,7 +17,7 @@ dependencies:
 
 dev_dependencies:
   example_utils:
-    path: ../../../example_utils
+    path: ../../example_utils
   flutter_test:
     sdk: flutter
     

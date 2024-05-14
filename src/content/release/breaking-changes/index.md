@@ -31,6 +31,8 @@ release, and listed in alphabetical order:
 [`dart fix`]: /tools/flutter-fix
 [test registry]: {{site.github}}/flutter/tests
 
+<a id="released-in-flutter-322"></a>
+<a id="released-in-flutter-3-22"></a>
 ### Not yet released to stable
 
 * [Navigator's page APIs breaking change][]

@@ -16,8 +16,8 @@ class StyledTextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       style: ButtonStyle(
-        padding: MaterialStateProperty.all(const EdgeInsets.all(Insets.small)),
-        textStyle: MaterialStateProperty.all(TextStyles.buttonText2),
+        padding: WidgetStateProperty.all(const EdgeInsets.all(Insets.small)),
+        textStyle: WidgetStateProperty.all(TextStyles.buttonText2),
       ),
       onPressed: onPressed,
       child: child,

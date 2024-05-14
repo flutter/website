@@ -2,7 +2,7 @@ name: background_parsing
 description: Background parsing
 
 environment:
-  sdk: ^3.3.0
+  sdk: ^3.4.0
 
 dependencies:
   flutter:
