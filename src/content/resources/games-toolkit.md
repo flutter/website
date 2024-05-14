@@ -139,7 +139,7 @@ Are you ready? To get started:
 1. Write your game!
 1. Deploy to both the Google Play and Apple stores.
 
-[Add sound and music]: {{site.codelabs}}/codelabs/flutter-codelab-soloud#0
+[Add sound and music]: {{site.codelabs}}/codelabs/flutter-codelab-soloud
 [2D physics game]: {{site.codelabs}}/codelabs/flutter-flame-forge2d
 [word puzzle]: {{site.codelabs}}/codelabs/flutter-word-puzzle
 
@@ -468,6 +468,6 @@ the Flutter 3.22 release:
 [Add sound and music to your Flutter game with SoLoud]: {{site.codelabs}}/codelabs/flutter-codelab-soloud
 [Best practices for optimizing Flutter web loading speed]: {{site.flutter-medium}}/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c
 [Build a word puzzle with Flutter]: {{site.codelabs}}/codelabs/flutter-word-puzzle
-[Build a 2D physics game with Flutter and Flame]: {{site.codelab}}/codelabs/flutter-flame-forge2d#0
+[Build a 2D physics game with Flutter and Flame]: {{site.codelabs}}/codelabs/flutter-flame-forge2d
 [Cheng Lin]: {{site.medium}}/@mhclin113_26002
 [Forge2D]: {{site.pub-pkgs}}/forge2d
