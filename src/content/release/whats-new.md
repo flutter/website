@@ -37,22 +37,34 @@ You might also check out the [Dart 3.4 release][] blog post.
 
 **Docs updated or added since the 3.19 release**
 
-### Infrastructure
+* A new 7-page section on [Adaptive and Responsive design][].
+  (This replaces our previous documentation on this subject.)
+* Our [Flutter install][] docs have been revamped.
+
+**Website infrastructure**
+
+If you contribute to the website, you might have noticed
+some recent changes. Namely, the website infrastructure
+has been updated and the new workflow is simpler.
+For more details, check out the [website README][].
+
+
+[Adaptive and Responsive design]: /ui/adaptive-responsive
+[Flutter install]: /get-started/install
+[website README]: 
+
+Infrastructure
 - Updated side nav, in particular "App solutions".
   Added links for AdMob mediation (per Zoey)
 
 {{% comment %}}
 What's new:
-- New adaptive docs (total rewrite)
-- Updated install docs
 - New page on Deep link validator
 - Predictive back support (Justin)
 - Conditionally bundling assets based on flavor on docs.flutter.dev.
   https://docs.flutter.dev/deployment/flavors#conditionally-bundling-assets-based-on-flavor
   (Actually added in 3.19)
 - FWE work!!!
-- Infrastructure and website workflow for contributing is simpler.
-  For more details, see README. 11ty
 - New web bootstrapping page
 - Updated wasm page
 - dart.dev/go/macros
