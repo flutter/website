@@ -105,7 +105,7 @@ As of the 3.22 release, Impeller on Android with Vulkan
 is a release candidate. On devices that don't support Vulkan,
 Impeller will fallback to the the legacy OpenGL renderer. No
 action on your part is necessary for this fallback behavior.
-To try out Impeller on Android before it becomes the default
+Consider trying Impeller on Android before it becomes the default
 on stable, you can explicitly opt into it.
 
 :::secondary Does your device support Vulkan?
