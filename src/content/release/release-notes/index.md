@@ -12,7 +12,7 @@ For information about bug-fix releases, check out
 [Hotfixes to the Stable Channel][] on the Flutter wiki.
 :::
 
-* 3.22.0 _(Tentative)_
+* 3.22.0
   {% comment %}
   * [3.22.0 announcement][]
   {% endcomment -%}
