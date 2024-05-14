@@ -214,7 +214,7 @@ investigate other resources that our community recommended.
 
 {{pkg-icon}} [audioplayers][]<br>
 {{pkg-icon}} [flutter_soloud][]—<strong>NEW</strong><br>
-{{codelab}}  [Using SoLoud: Add sound and music to your app][]—<strong>NEW</strong>
+{{codelab}}  [Add sound and music to your app with SoLoud][]—<strong>NEW</strong>
 
 </td>
 </tr>
