@@ -30,53 +30,78 @@ check out the [Flutter 3.22 umbrella blog post][3.22-umbrella]
 and the [Flutter 3.22 technical blog post][3.22-tech].
 
 You might also check out the [Dart 3.4 release][] blog post.
+In particular, Dart now provides a "baked in" language macro,
+`JsonCodable`, for serializing and deserializing JSON data. 
+A future (and unspecified) Dart release will allow
+you to create your own macros.
+To learn more, check out [dart.dev/go/macros][].
 
 [3.22-tech]: {{site.flutter-medium}}/whats-new-in-flutter-3-19-58b1aae242d2
 [3.22-umbrella]: {{site.flutter-medium}}/starting-2024-strong-with-flutter-and-dart-cae9845264fe
 [Dart 3.4 release]: {{site.medium}}/dartlang/new-in-dart-3-3-extension-types-javascript-interop-and-more-325bf2bf6c13
+[dart.dev/go/macros]: http://dart.dev/go/macros
 
 **Docs updated or added since the 3.19 release**
 
 * A new 7-page section on [Adaptive and Responsive design][].
-  (This replaces our previous documentation on this subject.)
+  (This replaces our previous, somewhat scattered,
+  documentation on this subject.)
+* For new-ish Flutter developer who has worked through
+  the first Flutter codelab, we've added some "what's next"
+  advice on how to move beyond that initial step.
+  Check out the docs for the
+  [First week experience of Flutter][], also called **FWE**.
 * Our [Flutter install][] docs have been revamped.
+* We have three new codelabs and a new guide for the Games Toolkit.
+  To see the list of additions,
+  check out the updated [Casual Games Toolkit][] page.
+* A new section, [Conditionally bundling assets based on flavor][],
+  in the Flavors page.
+* Flutter support for Web Assembly (Wasm) has now reached stable.
+  To learn more, check out the updated
+  [Support for WebAssembly (Wasm)][] page.
+* DevTools has a new screen for evaluating deep links on Android.
+  To learn more, check out the new page, [Validate deep links][].
+* We have a new page that describes web bootstrapping for
+  Flutter SDK release 3.22 and later.
+  Check out [Flutter web app initialization][].
+* You can now provide code to transform your assets
+  into another format at runtime. To learn more,
+  check out [Transforming assets at build time][].
 
 **Website infrastructure**
 
-If you contribute to the website, you might have noticed
-some recent changes. Namely, the website infrastructure
-has been updated and the new workflow is simpler.
-For more details, check out the [website README][].
-
+* If you contribute to the website, you might have noticed
+  some recent changes. Namely, the website infrastructure
+  has been updated and the new workflow is simpler.
+  For more details, check out the [website README][].
+* You might also have noticed that the **App solutions**
+  submenu in the sidenav now has an **AI** section,
+  and an enhanced **Monetization** section,
+  to name some of the changes.
 
 [Adaptive and Responsive design]: /ui/adaptive-responsive
+[Casual Games Toolkit]: /ui/resources/games-toolkit
+[Conditionally bundling assets based on flavor]: /deployment/flavors#conditionally-bundling-assets-based-on-flavor
+[First week experience of Flutter]: /get-started/fwe
 [Flutter install]: /get-started/install
-[website README]: 
-
-Infrastructure
-- Updated side nav, in particular "App solutions".
-  Added links for AdMob mediation (per Zoey)
+[Flutter web app initialization]: /platform-integration/web/bootstrapping
+[website README]: {{site.github}}/flutter/website/?tab=readme-ov-file#flutter-documentation-website
+[Support for WebAssembly (Wasm)]: /platform-integration/web/wasm
+[Transforming assets at build time]: /ui/asset/asset-transformer page
+[Validate deep links]: /tools/devtools/deep-links
 
 {{% comment %}}
-What's new:
-- New page on Deep link validator
-- Predictive back support (Justin)
-- Conditionally bundling assets based on flavor on docs.flutter.dev.
-  https://docs.flutter.dev/deployment/flavors#conditionally-bundling-assets-based-on-flavor
-  (Actually added in 3.19)
-- FWE work!!!
-- New web bootstrapping page
-- Updated wasm page
-- dart.dev/go/macros
-- New ui/asset/asset-transformer page
-
-
-https://medium.com/flutter/whats-new-in-flutter-3-22-fbde6c164fe3
+LATER:
+- Predictive back support (Justin) (still experimental)
 
 Blogs:
 - Cheng's optimizing article
 - Craig's classroom blog post
 
+list new codelabs
+
+also update codelabs page
 {{% endcomment %}}
 
 ## 15 February 2024: Valentine's-Day-adjacent 3.19 release
