@@ -88,7 +88,7 @@ To learn more, check out [dart.dev/go/macros][].
 [Flutter web app initialization]: /platform-integration/web/bootstrapping
 [website README]: {{site.github}}/flutter/website/?tab=readme-ov-file#flutter-documentation-website
 [Support for WebAssembly (Wasm)]: /platform-integration/web/wasm
-[Transforming assets at build time]: /ui/asset/asset-transformer page
+[Transforming assets at build time]: /ui/assets/asset-transformation
 [Validate deep links]: /tools/devtools/deep-links
 
 **Articles**
