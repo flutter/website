@@ -81,7 +81,7 @@ To learn more, check out [dart.dev/go/macros][].
   to name some of the changes.
 
 [Adaptive and Responsive design]: /ui/adaptive-responsive
-[Casual Games Toolkit]: /ui/resources/games-toolkit
+[Casual Games Toolkit]: /resources/games-toolkit
 [Conditionally bundling assets based on flavor]: /deployment/flavors#conditionally-bundling-assets-based-on-flavor
 [First week experience of Flutter]: /get-started/fwe
 [Flutter install]: /get-started/install
