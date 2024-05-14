@@ -93,7 +93,14 @@ flutter build web --wasm
 ```
 
 The command produces output into the `build/web` directory relative to the
-package root.
+package root, just like `flutter build web`.
+
+:::note
+Even with the `--wasm` flag, `flutter build web` will still compile the
+application with JavaScript. If WasmGC support is not detected at runtime,
+the JavaScript output is used so the application will continue to work across
+browsers.
+:::
 
 ### Serve the output with an HTTP server
 
