@@ -230,7 +230,7 @@ Learn how to use Flutter with other technologies.
   Flutter and Flame game using a 2D physics simulation along
   the lines of Box2D, called [Forge2D][].
 
-* [Build a world puzzle with Flutter][]—**NEW**<br>
+* [Build a word puzzle with Flutter][]—**NEW**<br>
   This codelab focuses on building word puzzle games,
   and dives into using Flutter's background processing
   to generate expansive crossword-style grids of interlocking words.
