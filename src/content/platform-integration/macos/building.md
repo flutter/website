@@ -153,7 +153,7 @@ on the Apple Developer site.
 
 If you choose to distribute your application outside
 of the App Store, you need to notarize your application
-for compatibility with macOS 10.15+.
+for compatibility with macOS.
 This requires enabling the Hardened Runtime option.
 Once you have enabled it, you need a valid signing
 certificate in order to build.
