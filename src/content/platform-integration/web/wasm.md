@@ -46,7 +46,8 @@ but currently doesn't work due to a [known limitation](#known-limitations).
 ## Try it out
 
 To try a pre-built Flutter web app using Wasm, check out the
-[Material 3 WasmGC preview demo](https://flutterweb-wasm.web.app/).
+[Material 3 WasmGC preview demo](https://flutterweb-wasm.web.app/)
+or the [Wonderous demo app](https://wonderous.app/web/).
 
 To experiment with Wasm in your own apps, use the following steps.
 
