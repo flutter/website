@@ -124,7 +124,7 @@ like layout and animations:
   evokes those science fiction movies and TV shows we all love
   watching when we aren't coding.
 
-[Building next generation UIs in Flutter]: {{site.codelabs}}/codelabs/flutter-next-gen-uis#0
+[Building next generation UIs in Flutter]: {{site.codelabs}}/codelabs/flutter-next-gen-uis
 [Adaptive Apps in Flutter]: {{site.codelabs}}/codelabs/flutter-adaptive-app
 [animations]: {{site.pub}}/packages/animations
 [Building Beautiful Transitions with Material Motion for Flutter]: {{site.codelabs}}/codelabs/material-motion-flutter
@@ -211,6 +211,12 @@ Learn how to use Flutter with other technologies.
 
 ### Flutter and other technologies
 
+* [Add sound and music to your Flutter game with SoLoud][]—**NEW**<br>
+  The [SoLoud][] package, a free and portable engine,
+  delivers the low-latency and high-performance sound that's
+  essential for many games.
+  In this codelab, learn how to add SoLoud to your game.
+
 * [Adding Google Maps to a Flutter app][]<br>
   Display a Google map in an app, retrieve data from a
   web service, and display the data as markers on the map.
@@ -218,6 +224,16 @@ Learn how to use Flutter with other technologies.
 * [Adding WebView to your Flutter app][]<br>
   With the WebView Flutter plugin you can add a WebView
   widget to your Android or iOS Flutter app.
+
+* [Build a 2D physics game with Flutter and Flame][]—**NEW**<br>
+  This codelab guides you through crafting game mechanics in a
+  Flutter and Flame game using a 2D physics simulation along
+  the lines of Box2D, called [Forge2D][].
+
+* [Build a word puzzle with Flutter][]—**NEW**<br>
+  This codelab focuses on building word puzzle games,
+  and dives into using Flutter's background processing
+  to generate expansive crossword-style grids of interlocking words.
 
 * [Build voice bots for mobile with Dialogflow and Flutter][] (workshop)<br>
   An instructor-led version of the Dialogflow
@@ -247,13 +263,18 @@ Learn how to use Flutter with other technologies.
   PaLM API gives you access to Google's
   state-of-the-art large language models.
 
+[Add sound and music to your Flutter game with SoLoud]: {{site.codelabs}}/codelabs/flutter-codelab-soloud
 [Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
 [Adding WebView to your Flutter app]: {{site.codelabs}}/codelabs/flutter-webview
+[Build a 2D physics game with Flutter and Flame]: {{site.codelabs}}/codelabs/flutter-flame-forge2d
+[Build a word puzzle with Flutter]: {{site.codelabs}}/codelabs/flutter-word-puzzle
 [Build voice bots for Android with Dialogflow and Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter
 [Build voice bots for mobile with Dialogflow and Flutter]: {{site.yt.watch}}?v=O7JfSF3CJ84
-[Introduction to Flame with Flutter]: {{site.codelabs}}/codelabs/flutter-flame-brick-breaker
-[Using FFI in a Flutter plugin]: {{site.codelabs}}/codelabs/flutter-ffigen
 [Create haikus about Google products with the PaLM API and Flutter]: {{site.codelabs}}/haiku-generator
+[Forge2D]: {{site.pub-pkg}}/forge2d
+[Introduction to Flame with Flutter]: {{site.codelabs}}/codelabs/flutter-flame-brick-breaker
+[SoLoud]: {{site.pub-pkg}}/flutter_soloud
+[Using FFI in a Flutter plugin]: {{site.codelabs}}/codelabs/flutter-ffigen
 
 ## Testing
 
@@ -264,7 +285,7 @@ Learn how to test your Flutter application.
   Unit test the provider package. Write widget tests for two of the
   widgets. Use Flutter Driver to create an integration test.
 
-[How to test a Flutter app]: {{site.codelabs}}/codelabs/flutter-app-testing/#0
+[How to test a Flutter app]: {{site.codelabs}}/codelabs/flutter-app-testing/
 
 ## Writing platform-specific code
 
@@ -289,7 +310,7 @@ like iOS, Android, desktop, or the web.
   create and use plugins to interact with native APIs and desktop applications,
   and use code generation to build type-safe client libraries for GitHub's APIs.
 
-* [Adding a Home Screen widget to your Flutter app][home-screen]<br> **NEW**
+* [Adding a Home Screen widget to your Flutter app][home-screen]<br>
   Learn how to add a Home Screen widget to your Flutter app
   on iOS. This applies to your home screen, lock screen, or the
   today view.
