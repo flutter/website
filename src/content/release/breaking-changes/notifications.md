@@ -98,7 +98,7 @@ new default behavior of `Notification.dispatch`.
 
 ## Timeline
 
-Landed in version: 2.12.0-4.1
+Landed in version: 2.12.0-4.1<br>
 In stable release: 3.0.0
 
 ## References

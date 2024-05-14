@@ -61,7 +61,7 @@ This feature landed in the _previous_ version of the SDK but was non-functional;
 plugins that migrate to this API should set `3.22` as a minimum version constraint.
 :::
 
-In stable release: TBD
+In stable release: 3.22.0
 
 ## References
 

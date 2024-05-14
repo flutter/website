@@ -736,4 +736,4 @@ be announced again when the time comes.
 
 ## Timeline
 
-In stable release: TBD
+In stable release: 3.22.0
