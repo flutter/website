@@ -96,13 +96,13 @@ To learn more, check out [dart.dev/go/macros][].
 The following articles were published on the [Flutter Medium][]
 publication since Flutter 3.19:
 
-{{% comment %}}
+{% comment %}
 LATER:
 - Predictive back support (Justin) (still experimental)
 list new codelabs
 
 also update codelabs page
-{{% endcomment %}}
+{% endcomment %}
 
 ## 15 February 2024: Valentine's-Day-adjacent 3.19 release
 
