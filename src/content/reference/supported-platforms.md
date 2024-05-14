@@ -31,5 +31,3 @@ Based on these tiers, Flutter supports deploying to the following platforms.
 {:.table .table-striped}
 
 </div>
-
-Android supports IA32 (x86) in software emulation only.  

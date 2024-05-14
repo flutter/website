@@ -94,7 +94,8 @@ In the **Identity** section:
 In the **Deployment info** section:
 
 `Deployment Target`
-: The minimum macOS version that your app supports. Flutter supports macOS 10.14 and later.
+: The minimum macOS version that your app supports.
+  Flutter supports deploying apps to macOS {{site.targetmin.macos}} and later.
 
 In the **Signing & Capabilities** section:
 
