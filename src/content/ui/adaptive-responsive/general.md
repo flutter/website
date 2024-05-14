@@ -140,7 +140,7 @@ In this scenario, use `LayoutBuilder`.
 
 ## Step 3: Branch
 
-![Step 3: Branch the code based on the desired UI](/assets/images/docs/ui/adaptive-responsive/measure.png)
+![Step 3: Branch the code based on the desired UI](/assets/images/docs/ui/adaptive-responsive/branch.png)
 
 At this point, you must decide what sizing breakpoints to use
 when choosing what version of the UI to display.
