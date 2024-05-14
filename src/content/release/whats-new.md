@@ -96,6 +96,8 @@ To learn more, check out [dart.dev/go/macros][].
 The following articles were published on the [Flutter Medium][]
 publication since Flutter 3.19:
 
+[Flutter Medium]: {{site.flutter-medium}}
+
 ## 15 February 2024: Valentine's-Day-adjacent 3.19 release
 
 Flutter 3.19 is live! For more information,
