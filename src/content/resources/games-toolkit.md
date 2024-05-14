@@ -7,7 +7,7 @@ The Flutter Casual Games Toolkit pulls together new and existing resources
 so you can accelerate development of games on mobile platforms.
 
 :::note
-Check out the latest [Games updates for Flutter 3.22](#games-3.22-updates).
+Check out the latest [Games updates for Flutter 3.22](#games-toolkit-updates-for-flutter-3-22)
 :::
 
 This page outlines where you can find these available resources.
@@ -122,9 +122,9 @@ Are you ready? To get started:
 1. Review the codelabs and cookbook recipes.
 
    * {{recipe-icon}} Build a [multiplayer game][multiplayer-recipe] with Cloud Firestore.
-   * {{codelab}} Build a [word puzzle][] with Flutter. -- NEW
-   * {{codelab}} Build a [2D physics game][] with Flutter and Flame. -- NEW
-   * {{codelab}} [Add sound and music][] to your Flutter game with SoLoud. -- NEW
+   * {{codelab}} Build a [word puzzle][] with Flutter.—<strong>NEW</strong>
+   * {{codelab}} Build a [2D physics game][] with Flutter and Flame.—<strong>NEW</strong>
+   * {{codelab}} [Add sound and music][] to your Flutter game with SoLoud.—<strong>NEW</strong>
    * {{recipe-icon}}Make your games more engaging
      with [leaderboards and achievements][leaderboard-recipe].
    * Monetize your games with {{recipe-icon}}[in-game ads][ads-recipe]
@@ -212,9 +212,9 @@ investigate other resources that our community recommended.
 <td>Audio</td>
 <td>
 
-{{pkg-icon}} [audioplayers][]
-{{pkg-icon}} [flutter_soloud][] - NEW
-{{codelab}}  [Using SoLoud: Add sound and music to your app][] - NEW
+{{pkg-icon}} [audioplayers][]<br>
+{{pkg-icon}} [flutter_soloud][]—<strong>NEW</strong><br>
+{{codelab}}  [Using SoLoud: Add sound and music to your app][]—<strong>NEW</strong>
 
 </td>
 </tr>
@@ -352,8 +352,8 @@ investigate other resources that our community recommended.
 <td>User Experience</td>
 <td>
 
-{{codelab}} [Build next generation UIs in Flutter][]
-{{guide}} [Best practices for optimizing Flutter web loading speed][] -- NEW
+{{codelab}} [Build next generation UIs in Flutter][]<br>
+{{guide}} [Best practices for optimizing Flutter web loading speed][]—<strong>NEW</strong>
 
 </td>
 </tr>
@@ -422,7 +422,7 @@ investigate other resources that our community recommended.
 [flutter_soloud]: {{site.pub-pkg}}/flutter_soloud
 [SoLoud codelab]: {{site.codelabs}}/codelabs/flutter-codelab-soloud
 
-## Games Toolkit updates for Flutter 3.22 {games-3.22-updates}
+## Games Toolkit updates for Flutter 3.22
 
 Low-latency, high-performance sound
 : In collaboration with the Flutter community ([@Marco Bavagnoli]),
