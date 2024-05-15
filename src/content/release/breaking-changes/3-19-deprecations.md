@@ -459,7 +459,7 @@ method executes the same functionality as `release` did now.
 Code before migration:
 
 ```dart
-KeepAliveHandle handle = KeepAliveHAndle();
+KeepAliveHandle handle = KeepAliveHandle();
 handle.release();
 handle.dispose();
 ```
@@ -467,7 +467,7 @@ handle.dispose();
 Code after migration:
 
 ```dart
-KeepAliveHandle handle = KeepAliveHAndle();
+KeepAliveHandle handle = KeepAliveHandle();
 handle.dispose();
 ```
 
