@@ -13,9 +13,7 @@ For information about bug-fix releases, check out
 :::
 
 * 3.22.0
-  {% comment %}
   * [3.22.0 announcement][]
-  {% endcomment -%}
   * [3.22.0 release notes & change log][]
   * [3.22.0 breaking changes & migrations][]
 * 3.19.0
