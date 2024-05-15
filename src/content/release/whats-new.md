@@ -38,7 +38,7 @@ To learn more, check out [dart.dev/go/macros][].
 
 [3.22-tech]: {{site.flutter-medium}}/whats-new-in-flutter-3-19-58b1aae242d2
 [3.22-umbrella]: {{site.flutter-medium}}/starting-2024-strong-with-flutter-and-dart-cae9845264fe
-[Dart 3.4 release]: {{site.medium}}/dartlang/new-in-dart-3-3-extension-types-javascript-interop-and-more-325bf2bf6c13
+[Dart 3.4 release]: {{site.medium}}/dartlang/dart-3-4-bd8d23b4462a
 [dart.dev/go/macros]: http://dart.dev/go/macros
 
 **Docs updated or added since the 3.19 release**
