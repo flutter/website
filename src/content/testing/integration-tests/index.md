@@ -1,6 +1,7 @@
 ---
 title: Check app functionality with an integration test
 description: Learn how to write integration tests
+os-list: [Windows, macOS, Linux]
 ---
 
 <?code-excerpt path-base="testing/integration_tests/how_to"?>
@@ -264,16 +265,100 @@ This example goes through three steps:
 
 ## Run integration tests
 
-The integration tests that run vary depending on the 
+The integration tests that run vary depending on the
 platform on which you test.
 
-* To test a mobile platform,
-  you can use the command line or Firebase Test Lab.
+* To test a desktop platform, use the command line or a CI system.
+* To test a mobile platform, use the command line or Firebase Test Lab.
 * To test in a web browser, use the command line.
+
+---
+
+### Test on a desktop platform
+
+<details markdown="1">
+<summary>Expand if you test Linux apps using a CI system</summary>
+
+To test a Linux app, your CI system must invoke an X server first.
+In the GitHub Action, GitLab Runner, or similar configuration file,
+set the integration test to work _with_ the `xvfb-run` tool.
+
+Doing this invokes an X Window system into which Flutter can
+launch and test your Linux app.
+
+As an example using GitHub Actions, your `jobs.setup.steps` should
+include a step resembling the following:
+
+```yaml
+      - name: Run Integration Tests
+        uses: username/xvfb-action@v1.1.2
+        with:
+          run: flutter test integration_test -d linux -r github
+```
+
+This starts the integration test within an X Window.
+
+If you don't configure your integration in this way,
+Flutter returns an error.
+
+```console
+Building Linux application...
+Error waiting for a debug connection: The log reader stopped unexpectedly, or never started.
+```
+
+</details>
+
+To test on a macOS, Windows, or Linux platform,
+complete the following tasks.
+
+1. Run the following command from the root of the project.
+
+   ```console
+   $ flutter test integration_test/app_test.dart
+   ```
+
+1. If offered a choice of platform to test,
+   choose the desktop platform.
+   Type `1` to choose the desktop platform.
+
+Based on platform, the command result should resemble the following output.
+
+{% comment %} Nav tabs {% endcomment -%}
+<ul class="nav nav-tabs" id="base-os-tabs" role="tablist">
+{% for os in os-list %}
+{% assign id = os | downcase -%}
+  <li class="nav-item">
+    <a class="nav-link {%- if id == 'windows' %} active {% endif %}" id="{{id}}-tab" href="#{{id}}" role="tab" aria-controls="{{id}} {{id}}-dl {{id}}-pub" aria-selected="true">{{os}}</a>
+  </li>
+{% endfor -%}
+</ul>
+
+{% comment %} Tab panes {% endcomment -%}
+<div class="tab-content">
+{% for os in os-list %}
+{% assign id = os | downcase -%}
+<div class="tab-pane {%- if id == 'windows' %} active {% endif %}" id="{{id}}" role="tabpanel" aria-labelledby="{{id}}-tab">
+
+{% case id %}
+{% when 'windows' %}
+  {% render docs/test/integration/windows-example.md %}
+{% when 'macos' %}
+  {% render docs/test/integration/macos-example.md %}
+{% when 'linux' %}
+  {% render docs/test/integration/linux-example.md %}
+{% endcase %}
+</div>
+
+{% endfor -%}
+</div>
+{% comment %} End: Tab panes. {% endcomment %}
+
+---
 
 ### Test on a mobile device
 
-To test on a real iOS or Android device
+To test on a real iOS or Android device,
+complete the following tasks.
 
 1. Connect the device.
 
@@ -283,7 +368,7 @@ To test on a real iOS or Android device
    $ flutter test integration_test/app_test.dart
    ```
 
-   The result should resemble the following output:
+   The result should resemble the following output. This example uses iOS.
 
    ```console
    $ flutter test integration_test/app_test.dart
@@ -297,8 +382,6 @@ To test on a real iOS or Android device
 1. Verify that the test removed the Counter App when it finished.
    If not, subsequent tests fail. If needed, press on the app and choose
    **Remove App** from the context menu.
-
-To learn more, consult the [Integration testing][] page.
 
 ---
 
@@ -409,12 +492,10 @@ To test in a web browser, perform the following steps.
      -d web-server
    ```
 
-[ChromeDriver]: https://googlechromelabs.github.io/chrome-for-testing/
-[Download EdgeDriver]: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
-[Download GeckoDriver]: {{site.github}}/mozilla/geckodriver/releases
-
 To learn more, see the
 [Running Flutter driver tests with web][] wiki page.
+
+---
 
 ### Test using the Firebase Test Lab
 
@@ -422,10 +503,12 @@ To test both Android and iOS targets,
 you can use the Firebase Test Lab.
 
 #### Android setup
+
 Follow the instructions in the [Android Device Testing][]
 section of the README.
 
 #### iOS setup
+
 Follow the instructions in the [iOS Device Testing][]
 section of the README.
 
@@ -507,22 +590,23 @@ on the Firebase TestLab section of the Firebase Console.
 To learn how to upload the .zip file from the command line,
 consult the [iOS Device Testing][] section in the README.
 
+[`integration_test`]: {{site.repo.flutter}}/tree/main/packages/integration_test#integration_test
 [Android Device Testing]: {{site.repo.flutter}}/tree/main/packages/integration_test#android-device-testing
-[chromedriver]: https://googlechromelabs.github.io/chrome-for-testing/
+[ChromeDriver]: https://googlechromelabs.github.io/chrome-for-testing/
+[Download EdgeDriver]: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
+[Download GeckoDriver]: {{site.github}}/mozilla/geckodriver/releases
 [Firebase Console]: http://console.firebase.google.com/
-[Firebase Test Lab]: {{site.firebase}}/docs/test-lab
 [Firebase Test Lab section of the README]: {{site.repo.flutter}}/tree/main/packages/integration_test#firebase-test-lab
+[Firebase Test Lab]: {{site.firebase}}/docs/test-lab
 [Firebase TestLab iOS instructions]: {{site.firebase}}/docs/test-lab/ios/firebase-console
 [flutter_test]: {{site.api}}/flutter/flutter_test/flutter_test-library.html
-[`integration_test`]: {{site.repo.flutter}}/tree/main/packages/integration_test#integration_test
-[integration_test usage]:
-    {{site.repo.flutter}}/tree/main/packages/integration_test#usage
 [Integration testing]: /testing/integration-tests
 [iOS Device Testing]: {{site.repo.flutter}}/tree/main/packages/integration_test#ios-device-testing
 [Running Flutter driver tests with web]: {{site.repo.flutter}}/wiki/Running-Flutter-Driver-tests-with-Web
+[widget tests]: /testing/overview#widget-tests
+
+[flutter_driver]: {{site.api}}/flutter/flutter_driver/flutter_driver-library.html
+[integration_test usage]: {{site.repo.flutter}}/tree/main/packages/integration_test#usage
 [samples]: {{site.repo.samples}}
 [testing_app]: {{site.repo.samples}}/tree/main/testing_app/integration_test
-[widget tests]: /testing/overview#widget-tests
 [testWidgets]: {{site.api}}/flutter/flutter_test/testWidgets.html
-[flutter_driver]: {{site.api}}/flutter/flutter_driver/flutter_driver-library.html
-
