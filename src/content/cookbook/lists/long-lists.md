@@ -100,10 +100,16 @@ class MyApp extends StatelessWidget {
 
 ## Children's extent
 
-To specify each item's extent, you can use either `itemExtent` or `prototypeItem`.
+To specify each item's extent, you can use either [`prototypeItem`][], [`itemExtent`][],
+or [`itemExtentBuilder`][].
+
 Specifying either is more efficient than letting the children determine their own extent
 because the scrolling machinery can make use of the foreknowledge of the children's
 extent to save work, for example when the scroll position changes drastically.
+
+Use [`prototypeItem`][] or [`itemExtent`][] if your list has items of fixed size.
+
+Use [`itemExtentBuilder`][] if your list has items of different sizes.
 
 <noscript>
   <img src="/assets/images/docs/cookbook/long-lists.gif" alt="Long Lists Demo" class="site-mobile-screenshot" />
@@ -112,3 +118,6 @@ extent to save work, for example when the scroll position changes drastically.
 [`List.generate`]: {{site.api}}/flutter/dart-core/List/List.generate.html
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
 [`ListView.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
+[`prototypeItem`]: {{site.api}}/flutter/widgets/ListView/prototypeItem.html
+[`itemExtent`]: {{site.api}}/flutter/widgets/ListView/itemExtent.html
+[`itemExtentBuilder`]: {{site.api}}/flutter/widgets/ListView/itemExtentBuilder.html
