@@ -234,7 +234,7 @@ guidance on adding
 
 [Apple guidelines]: https://developer.apple.com/design/human-interface-guidelines/designing-for-ipados#Best-practices
 [input support for widgets]: /ui/adaptive-responsive/input#custom-widgets
-[m3-guide]: {{site.android-dev}}/developer.android.com/docs/quality-guidelines/large-screen-app-quality
+[m3-guide]: {{site.android-dev}}/docs/quality-guidelines/large-screen-app-quality
 [User input]: /ui/adaptive-responsive/input
 
 ### Navigation
