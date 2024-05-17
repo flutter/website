@@ -30,19 +30,21 @@
    {% assign prompt='$' %}
    {% assign dirdl='~/Downloads/' %}
    {% capture uz -%}
-   {{prompt}} {{unzip}} {{dirdl}}flutter_sdk_v1.0.0.zip -d {{path}}
+   {{prompt}} {{unzip}} {{dirdl}}flutter_sdk_v1.0.0.zip \
+        -d {{path}}
    {%- endcapture %}
 {% else -%}
    {% assign diroptions='`/usr/bin/`' %}
    {% assign dirinstall='`/usr/bin/`' %}
-   {% assign unzip='unzip' %}
+   {% assign unzip='tar' %}
    {% assign path='/usr/bin/' %}
    {% assign flutter-path='/usr/bin/flutter' %}
    {% assign terminal='a shell' %}
    {% assign prompt='$' %}
    {% assign dirdl='~/Downloads/' %}
    {% capture uz -%}
-   {{prompt}} {{dirdl}}flutter_sdk_v1.0.0.zip {{path}}
+   {{prompt}} {{unzip}} -xf {{dirdl}}flutter_sdk_v1.0.0.zip \
+        -C {{path}}
    {%- endcapture %}
 {% endcase -%}
 
@@ -84,7 +86,7 @@ then extract the SDK.
    {% render docs/install/admonitions/install-paths.md %}
    {% endif %}
 
-1. Extract the zip file into the directory you want to store the Flutter SDK.
+1. Extract the file into the directory you want to store the Flutter SDK.
 
    ```console
    {{uz}}
