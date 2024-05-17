@@ -77,8 +77,6 @@
   </head>
   <body{% if body_class %} class="{{ body_class }}"{% endif %}>
 
-    {% render cookie-notice.html %}
-
     {%- if isProduction == true -%}
       <noscript>
         <iframe
@@ -88,19 +86,79 @@
       </noscript>
     {% endif -%}
 
-    <div id="overlay-under-drawer"></div>
+    <header id="site-header">
+      <div id="header-leading">
+        <div id="menu-button">
+          <button class="header-button">
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+        </div>
+        <a class="flutter-logo" href="https://flutter.dev">
+          <img src="/assets/images/branding/flutter/logo/default.svg" alt="Flutter logo">
+          <span>Flutter</span>
+        </a>
+        <a id="docs-button" href="">Docs</a>
+      </div>
+      <div id="header-center">
+        <search id="header-search">
+          <button class="header-button">
+            <span class="material-symbols-outlined">search</span>
+          </button>
+          <input type="search" placeholder="Search Flutter docs...">
+        </search>
+      </div>
+      <div id="header-trailing">
+        <button id="open-search" class="header-button">
+          <span class="material-symbols-outlined">search</span>
+        </button>
+        <button id="theme-switcher" class="header-button">
+          <span class="material-symbols-outlined">dark_mode</span>
+        </button>
+      </div>
+    </header>
 
-    {% include header.html %}
+    <div id="site-below-header">
+      <div id="site-banner">
 
-    {% render banner.html %}
-
-    {{ content }}
-
-    {% render footer.html %}
+      </div>
+      <div id="site-primary">
+        {{ content }}
+      </div>
+      <footer id="site-footer">
+        <div class="footer-main">
+          <a class="flutter-logo" href="https://flutter.dev">
+            <img src="/assets/images/branding/flutter/logo/default.svg" alt="Flutter logo">
+            <span>Flutter</span>
+          </a>
+          <div class="footer-social-links">
+            <a href="https://medium.com/flutter" target="_blank" rel="noopener" title="Medium blog">
+              <svg><use href="/assets/images/social/medium.svg#medium"></use></svg>
+            </a>
+            <a href="https://youtube.com/@flutterdev" target="_blank" rel="noopener" title="YouTube">
+              <svg><use href="/assets/images/social/youtube.svg#youtube"></use></svg>
+            </a>
+            <a href="https://github.com/flutter" target="_blank" rel="noopener" title="GitHub">
+              <svg><use href="/assets/images/social/github.svg#github"></use></svg>
+            </a>
+            <a href="https://twitter.com/FlutterDev" target="_blank" rel="noopener" title="X (Twitter)">
+              <svg><use href="/assets/images/social/x.svg#x"></use></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-section footer-tray">
+          <div class="footer-licenses">Except as otherwise noted, this site is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>, and code samples are licensed under the <a href="https://opensource.org/licenses/BSD-3-Clause">3-Clause BSD License</a>.</div>
+          <div class="footer-utility-links">
+            <ul>
+              <li><a href="/tos" title="Terms of use">Terms</a></li>
+              <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener" title="Privacy policy">Privacy</a></li>
+              <li><a href="/security" title="Security philosophy and practices">Security</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js" integrity="sha512-ubuT8Z88WxezgSqf3RLuNi5lmjstiJcyezx34yIU2gAHonIi27Na7atqzUZCOoY4CExaoFumzOsFQ2Ch+I/HCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js" integrity="sha512-7rusk8kGPFynZWu26OKbTeI+QPoYchtxsmPeBqkHIEXJxeun4yJ4ISYe7C6sz9wdxeE1Gk3VxsIWgCZTc+vX3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.5/js.cookie.min.js" integrity="sha512-nlp9/l96/EpjYBx7EP7pGASVXNe80hGhYAUrjeXnu/fyF5Py0/RXav4BBNs7n5Hx1WFhOEOWSAVjGeC3oKxDVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="{{ '/assets/js/tabs.js' | append: cache_bust }}"></script>
