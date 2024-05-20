@@ -20,5 +20,5 @@ The following resources can help you get started:
 * [Get started with the Gemini API in Dart or Flutter apps][tutorial]
 * [Google Generative AI SDK for Dart and Flutter][pkg]
 
-[pkg]: {{site.pub-pkg}}/packages/google_generative_ai
+[pkg]: {{site.pub-pkg}}/google_generative_ai
 [tutorial]: https://ai.google.dev/gemini-api/docs/get-started/dart
