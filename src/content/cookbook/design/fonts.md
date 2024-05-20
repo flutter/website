@@ -221,7 +221,7 @@ you defined `RobotoMono-Bold` as the `700` weight of the font family.
 To use the `RobotoMono-Bold` font that you added to your app, 
 set `fontWeight` to `FontWeight.w700` in your `TextStyle` widget.
 
-If hadn't added `RobotoMono-Bold` to your app,
+If you hadn't added `RobotoMono-Bold` to your app,
 Flutter attempts to make the font look bold.
 The text then might appear to be somewhat darker.
 

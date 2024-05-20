@@ -110,9 +110,9 @@ or using `flutter test`.
 
 For information on running this type of test, check out the
 [integration test documentation][].
-The commands must be run in the `example` directory. 
+The commands must be run in the `example` directory.
 
-[integration test documentation]: /cookbook/testing/integration/introduction#run-integration-tests
+[integration test documentation]: /cookbook/testing/integration/introduction
 
 ### Native unit tests
 

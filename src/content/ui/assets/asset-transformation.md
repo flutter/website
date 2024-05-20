@@ -45,7 +45,7 @@ flutter:
     - path: assets/logo.svg
       transformers:
         - package: vector_graphics_compiler
-          args: '--tessellate --font-size=14'
+          args: ['--tessellate', '--font-size=14']
 ```
 
 ### Chaining asset transformers
