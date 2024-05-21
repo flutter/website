@@ -89,7 +89,7 @@
         - title: Add achievements and leaderboards
           permalink: /cookbook/games/achievements-leaderboard
         - title: Build leaderboards with Firestore
-          permalink: https://codelabs.developers.google.com/codelabs/admob-inline-ads-in-flutter
+          permalink: https://firebase.google.com/codelabs/build-leaderboards-with-firestore#0
         - title: Add advertising
           permalink: /cookbook/plugins/google-mobile-ads
         - title: Add multiplayer support
