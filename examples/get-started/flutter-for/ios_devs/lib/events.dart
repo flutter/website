@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class MyButton extends StatelessWidget {
   const MyButton({super.key});
 
-  // #docregion onPressed
+  // #docregion on-pressed
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -14,10 +14,10 @@ class MyButton extends StatelessWidget {
       child: const Text('Button'),
     );
   }
-  // #enddocregion onPressed
+  // #enddocregion on-pressed
 }
 
-// #docregion onTap
+// #docregion on-tap
 class SampleTapApp extends StatelessWidget {
   const SampleTapApp({super.key});
 
@@ -37,9 +37,9 @@ class SampleTapApp extends StatelessWidget {
     );
   }
 }
-// #enddocregion onTap
+// #enddocregion on-tap
 
-// #docregion SampleApp
+// #docregion sample-app
 class SampleApp extends StatefulWidget {
   const SampleApp({super.key});
 
@@ -88,4 +88,4 @@ class _SampleAppState extends State<SampleApp>
     );
   }
 }
-// #enddocregion SampleApp
+// #enddocregion sample-app

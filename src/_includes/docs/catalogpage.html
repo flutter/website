@@ -1,4 +1,4 @@
-{% for section in site.data.catalog.index %}
+{% for section in catalog.index %}
     {% if section.name == include.category %}
         {% assign category = section %}
         {% break %}
@@ -19,7 +19,7 @@
 
     <p>See more widgets in the <a href="/ui/widgets">widget catalog</a>.</p>
 
-    {% assign components = site.data.catalog.widgets | where_exp:"comp","comp.categories contains include.category" -%}
+    {% assign components = catalog.widgets | widget_filter: "categories", include.category %}
 
     {% if components.size != 0 -%}
         <div class="card-deck card-deck--responsive">
@@ -41,7 +41,7 @@
 
     {% if category.subcategories and category.subcategories.size != 0 -%}
     {% for sub in category.subcategories -%}
-        {% assign components = site.data.catalog.widgets | where_exp:"comp","comp.subcategories contains sub.name" -%}
+        {% assign components = catalog.widgets | widget_filter: "subcategories", sub.name %}
         {% if components.size != 0 -%}
         <h2 id="{{sub.name}}">{{sub.name}}</h2>
         <div class="card-deck card-deck--responsive">

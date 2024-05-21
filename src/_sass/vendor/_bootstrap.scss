@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 @use '../base/variables' as *;
 
 // Import from NPM library directly
@@ -13,6 +15,10 @@
   $headings-font-family: $site-font-family-alt,
   $headings-font-weight: $font-size-base-weight,
   $dt-font-weight: $font-size-base-weight,
+
+  // Code config
+  $code-color: color.scale($flutter-color-teal, $lightness: -10%, $saturation: 10%),
+  $kbd-font-size: 0.75rem,
 
   // Layout config
   $container-max-widths: (
@@ -100,7 +106,7 @@
     margin-top: 0.5rem;
   }
 
-  i.material-icons {
+  i.material-symbols {
     font-size: 1.25em;
     user-select: none;
   }
@@ -146,6 +152,10 @@ a.card {
 
   .card-subtitle {
     font-size: bootstrap.$font-size-sm;
+  }
+
+  &.card-highlight {
+    border: 1px solid rgba(0, 0, 0, 0.5);
   }
 
   &:hover {

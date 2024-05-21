@@ -1,8 +1,6 @@
 After the app build completes, your device displays your app.
 
-{% include docs/app-figure.md img-class="site-mobile-screenshot border"
-    path-prefix="get-started" platform="macOS" image="starter-app.png"
-    caption="Starter app" %}
+{% render docs/app-figure.md, img-class:"site-mobile-screenshot border", image:"get-started/macos/starter-app.png", caption:"Starter app on macOS" %}
 
 ## Try hot reload
 
@@ -18,19 +16,18 @@ You can change your app source code, run the hot reload command in
 1. Change the word `pushed` to `clicked` in the following string.
    It is on line 109 of the `main.dart` file as of this writing.
 
-   |                    **Original**                   |                       **New**                      |
+   |                   **Original**                    |                      **New**                       |
    |:-------------------------------------------------:|:--------------------------------------------------:|
    | `'You have pushed the button this many times:' ,` | `'You have clicked the button this many times:' ,` |
-   {:.table.table-striped}
+   
+   {:.table .table-striped}
 
-   {{site.alert.important}}
-     _Don't stop your app._ Let your app run.
-   {{site.alert.end}}
+   :::important
+   _Don't stop your app._ Let your app run.
+   :::
 
 1. Save your changes{{include.save_changes}}
 
 Your app updates the string as you watch.
 
-{% include docs/app-figure.md img-class="site-mobile-screenshot border"
-    path-prefix="get-started" platform="macOS" image="starter-app-hot-reload.png"
-    caption="Starter app after hot reload" %}
+{% render docs/app-figure.md, img-class:"site-mobile-screenshot border", image:"get-started/macos/starter-app-hot-reload.png", caption:"Starter app after hot reload" %}

@@ -7,9 +7,9 @@ class MyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Image(
         image:
-            // #docregion AssetImage
+            // #docregion asset-image
             AssetImage('images/a_dot_burr.jpeg')
-        // #enddocregion AssetImage
+        // #enddocregion asset-image
         );
   }
 }
@@ -17,10 +17,10 @@ class MyWidget extends StatelessWidget {
 class ImageExample extends StatelessWidget {
   const ImageExample({super.key});
 
-  // #docregion Imageasset
+  // #docregion image-asset
   @override
   Widget build(BuildContext context) {
     return Image.asset('images/my_image.png');
   }
-  // #enddocregion Imageasset
+  // #enddocregion image-asset
 }

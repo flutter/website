@@ -1,29 +1,31 @@
-{% assign os = include.os %}
-{% assign target = include.target %}
 
-{% include docs/install/admonitions/install-in-order.md %}
+{% render docs/install/admonitions/install-in-order.md %}
 
 ## Verify system requirements
 
 To install and run Flutter,
-your {{os}} environment must meet the following hardware
+your {{include.os}} environment must meet the following hardware
 and software requirements.
 
 ### Hardware requirements
 
-Your {{os}} Flutter development environment must meet the following
+Your {{include.os}} Flutter development environment must meet the following
 minimal hardware requirements.
 
-<div class="table-wrapper" markdown="1">
+<div class="table-wrapper">
+
 |     Requirement              |                                    Minimum                               |    Recommended      |
 |:-----------------------------|:------------------------------------------------------------------------:|:-------------------:|
 | CPU Cores                    | 4                                                                        | 8                   |
 | Memory in GB                 | 8                                                                        | 16                  |
 | Display resolution in pixels | WXGA (1366 x 768)                                                        | FHD (1920 x 1080)   |
-| Free disk space in GB        | {% include docs/install/reqs/linux/storage.md target=target %}
+| Free disk space in GB        | {% include docs/install/reqs/linux/storage.md target=include.target %}
+
+{:.table .table-striped}
+
 </div>
 
-{% if os == 'ChromeOS' and target == 'Android' %}
+{% if include.os == 'ChromeOS' and include.target == 'Android' %}
 To discover which hardware devices ChromeOS recommends for Android development,
 consult the [ChromeOS docs][chromeos-docs].
 {% endif %}
@@ -32,14 +34,13 @@ consult the [ChromeOS docs][chromeos-docs].
 
 ### Software requirements
 
-To write and compile Flutter code for {{target}},
-you must have the following version of {{os}} and the listed
+To write and compile Flutter code for {{include.target}},
+you must have the following version of {{include.os}} and the listed
 software packages.
 
 #### Operating system
-{:.no_toc}
 
-{% if os == 'Linux' %}
+{% if include.os == 'Linux' %}
 {%- capture supported-os %}
 Debian Linux {{site.devmin.linux.debian}} or later
 and Ubuntu Linux {{site.devmin.linux.ubuntu}} or later
@@ -50,12 +51,11 @@ and Ubuntu Linux {{site.devmin.linux.ubuntu}} or later
 
 Flutter supports {{supported-os}}.
 
-#### Development tools
-{:.no_toc}
+#### Development tools {:.no_toc}
 
-{% include docs/install/reqs/linux/software.md target=target os=os %}
+{% include docs/install/reqs/linux/software.md target=include.target os=include.os %}
 
-{% include docs/install/reqs/flutter-sdk/flutter-doctor-precedence.md %}
+{% render docs/install/reqs/flutter-sdk/flutter-doctor-precedence.md %}
 
 The developers of the preceding software provide support for those products.
 To troubleshoot installation issues, consult that product's documentation.
@@ -78,11 +78,11 @@ Popular options include:
 * [IntelliJ IDEA][] {{site.appmin.intellij_idea}} or later
   with the [Flutter plugin for IntelliJ][].
 
-{{site.alert.recommend}}
-  The Flutter team recommends installing [Visual Studio Code][vscode]
-  {{site.appmin.vscode}} or later and the [Flutter extension for VS Code][].
-  This combination simplifies installing the Flutter SDK.
-{{site.alert.end}}
+:::recommend
+The Flutter team recommends installing [Visual Studio Code][vscode]
+{{site.appmin.vscode}} or later and the [Flutter extension for VS Code][].
+This combination simplifies installing the Flutter SDK.
+:::
 
 [Android Studio]: https://developer.android.com/studio/install#linux
 [IntelliJ IDEA]: https://www.jetbrains.com/help/idea/installation-guide.html

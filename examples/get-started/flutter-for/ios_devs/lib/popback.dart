@@ -122,7 +122,7 @@ class DetailsPage extends StatelessWidget {
                 title: Text(person.name),
                 subtitle: Text(age),
               ),
-              // #docregion PopBackExample
+              // #docregion pop-back
               TextButton(
                 onPressed: () {
                   // This code allows the
@@ -131,7 +131,7 @@ class DetailsPage extends StatelessWidget {
                 },
                 child: const Text('Pop back'),
               ),
-              // #enddocregion PopBackExample
+              // #enddocregion pop-back
             ],
           ),
         ),

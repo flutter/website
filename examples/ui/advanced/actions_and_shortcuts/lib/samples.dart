@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 class ShortcutsExample extends StatelessWidget {
   const ShortcutsExample({super.key});
 
-  // #docregion ShortcutsExample
+  // #docregion shortcuts
   @override
   Widget build(BuildContext context) {
     return Shortcuts(
@@ -29,10 +29,10 @@ class ShortcutsExample extends StatelessWidget {
       ),
     );
   }
-  // #enddocregion ShortcutsExample
+  // #enddocregion shortcuts
 }
 
-// #docregion LoggingShortcutManager
+// #docregion logging-shortcut-manager
 class LoggingShortcutManager extends ShortcutManager {
   @override
   KeyEventResult handleKeypress(BuildContext context, KeyEvent event) {
@@ -43,7 +43,7 @@ class LoggingShortcutManager extends ShortcutManager {
     return result;
   }
 }
-// #enddocregion LoggingShortcutManager
+// #enddocregion logging-shortcut-manager
 
 class SelectAllIntent extends Intent {
   const SelectAllIntent({this.controller});
@@ -57,7 +57,7 @@ class Model {
 
 Model model = Model();
 
-// #docregion SelectAllAction
+// #docregion select-all-action
 class SelectAllAction extends Action<SelectAllIntent> {
   SelectAllAction(this.model);
 
@@ -66,12 +66,12 @@ class SelectAllAction extends Action<SelectAllIntent> {
   @override
   void invoke(covariant SelectAllIntent intent) => model.selectAll();
 }
-// #enddocregion SelectAllAction
+// #enddocregion select-all-action
 
 void callbackActionSample() {
-// #docregion CallbackAction
+// #docregion callback-action
   CallbackAction(onInvoke: (intent) => model.selectAll());
-// #enddocregion CallbackAction
+// #enddocregion callback-action
 }
 
 class SelectAllExample extends StatelessWidget {
@@ -79,7 +79,7 @@ class SelectAllExample extends StatelessWidget {
 
   final Widget child;
 
-// #docregion SelectAllExample
+  // #docregion select-all-usage
   @override
   Widget build(BuildContext context) {
     return Actions(
@@ -89,31 +89,31 @@ class SelectAllExample extends StatelessWidget {
       child: child,
     );
   }
-// #enddocregion SelectAllExample
+  // #enddocregion select-all-usage
 }
 
 late BuildContext context;
 
 void findAndInvokeExample() {
-// #docregion MaybeFindExample
+  // #docregion maybe-find
   Action<SelectAllIntent>? selectAll =
       Actions.maybeFind<SelectAllIntent>(context);
-// #enddocregion MaybeFindExample
-// #docregion InvokeActionExample
+  // #enddocregion maybe-find
+  // #docregion invoke-action
   Object? result;
   if (selectAll != null) {
     result =
         Actions.of(context).invokeAction(selectAll, const SelectAllIntent());
   }
-// #enddocregion InvokeActionExample
+  // #enddocregion invoke-action
   print('$result');
 }
 
 void maybeInvokeExample() {
-// #docregion MaybeInvokeExample
+  // #docregion maybe-invoke
   Object? result =
       Actions.maybeInvoke<SelectAllIntent>(context, const SelectAllIntent());
-// #enddocregion MaybeInvokeExample
+  // #enddocregion maybe-invoke
   print('$result');
 }
 
@@ -122,7 +122,7 @@ class HandlerExample extends StatelessWidget {
 
   final TextEditingController controller;
 
-  // #docregion HandlerExample
+  // #docregion handler
   @override
   Widget build(BuildContext context) {
     return Actions(
@@ -140,10 +140,10 @@ class HandlerExample extends StatelessWidget {
       ),
     );
   }
-  // #enddocregion HandlerExample
+  // #enddocregion handler
 }
 
-// #docregion LoggingActionDispatcher
+// #docregion logging-action-dispatcher
 class LoggingActionDispatcher extends ActionDispatcher {
   @override
   Object? invokeAction(
@@ -167,12 +167,12 @@ class LoggingActionDispatcher extends ActionDispatcher {
     return super.invokeActionIfEnabled(action, intent, context);
   }
 }
-// #enddocregion LoggingActionDispatcher
+// #enddocregion logging-action-dispatcher
 
 class LoggingActionDispatcherExample extends StatelessWidget {
   const LoggingActionDispatcherExample({super.key});
 
-  // #docregion LoggingActionDispatcherExample
+  // #docregion logging-action-dispatcher-usage
   @override
   Widget build(BuildContext context) {
     return Actions(
@@ -191,7 +191,7 @@ class LoggingActionDispatcherExample extends StatelessWidget {
       ),
     );
   }
-  // #enddocregion LoggingActionDispatcherExample
+  // #enddocregion logging-action-dispatcher-usage
 }
 
 class CallbackShortcutsExample extends StatefulWidget {
@@ -205,7 +205,7 @@ class CallbackShortcutsExample extends StatefulWidget {
 class _CallbackShortcutsExampleState extends State<CallbackShortcutsExample> {
   int count = 0;
 
-// #docregion CallbackShortcuts
+  // #docregion callback-shortcuts
   @override
   Widget build(BuildContext context) {
     return CallbackShortcuts(
@@ -229,5 +229,5 @@ class _CallbackShortcutsExampleState extends State<CallbackShortcutsExample> {
       ),
     );
   }
-// #enddocregion CallbackShortcuts
+  // #enddocregion callback-shortcuts
 }

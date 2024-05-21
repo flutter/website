@@ -1,4 +1,5 @@
 _site
+.cache
 .*-cache
 .*-metadata
 .DS_Store
@@ -10,6 +11,7 @@ _site
 *.swp
 build
 node_modules
+.pnpm-store/
 ./flutter/
 
 # Dart and Flutter, build related

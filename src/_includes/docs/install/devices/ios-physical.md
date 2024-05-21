@@ -28,7 +28,7 @@ complete the first step and move on to the next section.
 
 [Apple ID]: https://support.apple.com/en-us/HT204316
 
-##### Attach your physical iOS device to your Mac {#attach}
+##### Attach your physical iOS device to your Mac {:#attach}
 
 Configure your physical iOS device to connect to Xcode.
 
@@ -74,21 +74,22 @@ This requires you to load signed developer certificates to your iOS device.
 To sign an app in Xcode,
 you need to create a development provisioning profile.
 
-Follow the Xcode signing flow to provision your project.
+To provision your project, follow the Xcode signing flow.
 
-1. Open Xcode.
+1. Launch Xcode.
 
-1. Sign in to Xcode with your Apple ID.
+1. Go to **Xcode** <span aria-label="and then">></span>
+   **Settings...**
 
-   {: type="a"}
    1. Go to **Xcode** <span aria-label="and then">></span>
-      **Settings...*
+      **Settings...**
    1. Click **Accounts**.
-   . Click **+**.
-   . Select **Apple ID** and click **Continue**.
-   . When prompted, enter your **Apple ID** and **Password**.
-   . Close the **Settings** dialog.
-     Development and testing supports any Apple ID.
+   1. Click **+**.
+   1. Select **Apple ID** and click **Continue**.
+   1. When prompted, enter your **Apple ID** and **Password**.
+   1. Close the **Settings** dialog.
+
+   Development and testing supports any Apple ID.
 
 1. Go to **File** <span aria-label="and then">></span> **Open...**
 
@@ -123,27 +124,27 @@ Follow the Xcode signing flow to provision your project.
 
    After you select a team, Xcode performs the following tasks:
 
-   {: type="a"}
    1. Creates and downloads a Development Certificate
    1. Registers your device with your account,
    1. Creates and downloads a provisioning profile if needed
-      If automatic signing fails in Xcode, verify that the project's
-      **General** <span aria-label="and then">></span>
-      **Identity** <span aria-label="and then">></span>
-      **Bundle Identifier** value is unique.
+
+If automatic signing fails in Xcode, verify that the project's
+**General** <span aria-label="and then">></span>
+**Identity** <span aria-label="and then">></span>
+**Bundle Identifier** value is unique.
 
 ![Check the app's Bundle ID][]{:.mw-100}
 
-##### Enable trust of your Mac and iOS device {#trust}
+##### Enable trust of your Mac and iOS device {:#trust}
 
 When you attach your physical iOS device for the first time,
 enable trust for both your Mac and the Development Certificate
 on the iOS device.
 
-You should enabled trust of your Mac on your iOS device when
+You should have enabled trust of your Mac on your iOS device when
 you [attached the device to your Mac](#attach).
 
-###### Enable developer certificate for your iOS devices
+##### Enable developer certificate for your iOS devices
 
 Enabling certificates varies in different versions of iOS.
 
@@ -163,7 +164,7 @@ Enabling certificates varies in different versions of iOS.
 {% comment %} Tab panes {% endcomment -%}
 <div class="tab-content">
 
-<div class="tab-pane" id="ios14" role="tabpanel" aria-labelledby="ios14-tab" markdown="1">
+<div class="tab-pane" id="ios14" role="tabpanel" aria-labelledby="ios14-tab">
 
 1. Open the **Settings** app on the iOS device.
 
@@ -174,7 +175,7 @@ Enabling certificates varies in different versions of iOS.
 
 </div>
 
-<div class="tab-pane" id="ios15" role="tabpanel" aria-labelledby="ios15-tab" markdown="1">
+<div class="tab-pane" id="ios15" role="tabpanel" aria-labelledby="ios15-tab">
 
 1. Open the **Settings** app on the iOS device.
 
@@ -185,12 +186,17 @@ Enabling certificates varies in different versions of iOS.
 
 </div>
 
-<div class="tab-pane active" id="ios16" role="tabpanel" aria-labelledby="ios16-tab" markdown="1">
+<div class="tab-pane active" id="ios16" role="tabpanel" aria-labelledby="ios16-tab">
 
 1. Open the **Settings** app on the iOS device.
 
 1. Tap on **General** <span aria-label="and then">></span>
     **VPN & Device Management**.
+
+    :::note
+    If you can't find **VPN & Device Management**
+    in **Settings**, run your app on your iOS device once, then try again.
+    :::
 
 1. Under the **Developer App** heading, you should find your certificate.
 
@@ -201,10 +207,14 @@ Enabling certificates varies in different versions of iOS.
 1. When the dialog displays, tap **Trust**.
 
 </div>
-</div>{% comment %} End: Tab panes. {% endcomment -%}
+</div>
+{% comment %} End: Tab panes. {% endcomment %}
 
-If prompted, enter your Mac password into the
-**codesign wants to access key...** dialog and tap **Always Allow**.
+If the **codesign wants to access key...** dialog displays:
+
+1. Enter your macOS password.
+
+1. Tap **Always Allow**.
 
 #### Set up wireless debugging on your iOS device (Optional)
 
@@ -236,16 +246,13 @@ To extend the timeout, change the value to an integer greater than 10.
 $ flutter run --device-timeout 60
 ```
 
-{{site.alert.secondary}}
-  **Learn more about wireless debugging**
-
-  * To learn more, check out
-    [Apple's documentation on pairing a wireless device with Xcode][].
-  * To troubleshoot, check out [Apple's Developer Forums][].
-  * To learn how to configure wireless debugging with `flutter attach`,
-    check out [Debugging your add-to-app module][].
-
-{{site.alert.end}}
+:::note Learn more about wireless debugging
+* To learn more, check out
+  [Apple's documentation on pairing a wireless device with Xcode][].
+* To troubleshoot, check out [Apple's Developer Forums][].
+* To learn how to configure wireless debugging with `flutter attach`,
+  check out [Debugging your add-to-app module][].
+:::
 
 [Check the app's Bundle ID]: /assets/images/docs/setup/xcode-unique-bundle-id.png
 [Choosing a Membership]: {{site.apple-dev}}/support/compare-memberships

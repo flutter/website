@@ -1,13 +1,10 @@
-{% assign os=include.os %}
-{% assign terminal=include.terminal %}
-{%- if os=='macOS' -%}
+{%- if include.os=='macOS' -%}
 {% assign special = 'Command' %}
 {% else %}
 {% assign special = 'Control' %}
 {%- endif %}
 
-### Use VS Code to install Flutter
-{:.no_toc}
+### Use VS Code to install Flutter {:.no_toc}
 
 To install Flutter using these instructions, verify that
 you have installed [Visual Studio Code][]
@@ -33,8 +30,8 @@ you have installed [Visual Studio Code][]
       click **Download SDK**.
 
       This option sends you the Flutter install page if you have not
-      installed Git {% if os == "Windows" %}for Windows {% endif %}as directed in
-      the [development tools prerequisites][].
+      installed Git {% if include.os == "Windows" %}for Windows {% endif %}as
+      directed in the [development tools prerequisites][].
 
 1. When prompted **Which Flutter template?**, ignore it.
    Press <kbd>Esc</kbd>.
@@ -48,10 +45,10 @@ you have installed [Visual Studio Code][]
    VS Code places you in your user profile to start.
    Choose a different location.
 
-   {% if os == "Windows" -%}
+   {% if include.os == "Windows" -%}
    Consider `%USERPROFILE%` or `C:\dev`.
 
-   {% include docs/install/admonitions/install-paths.md %}
+   {% render docs/install/admonitions/install-paths.md %}
    {% else -%}
    Consider `~/development/`
    {% endif %}
@@ -109,7 +106,7 @@ you have installed [Visual Studio Code][]
    in external terminals?
    ```
 
-{% if os=='Windows' %}
+{% if include.os=='Windows' %}
 
 1. Click **Add SDK to PATH**.
 
@@ -125,10 +122,10 @@ you have installed [Visual Studio Code][]
 
    If you agree, click **OK**.
 
-1. To enable `flutter` in all {{terminal}} windows:
+1. To enable `flutter` in all {{include.terminal}} windows:
 
    {:type="a"}
-   1. Close, then reopen all {{terminal}} windows.
+   1. Close, then reopen all {{include.terminal}} windows.
    1. Restart VS Code.
 
 [development tools prerequisites]: #development-tools

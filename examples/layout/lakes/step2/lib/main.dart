@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text(appTitle),
         ),
-        // #docregion addWidget
+        // #docregion add-widget
         body: const SingleChildScrollView(
           child: Column(
             children: [
@@ -25,13 +25,13 @@ class MyApp extends StatelessWidget {
             ],
           ),
         ),
-        // #enddocregion addWidget
+        // #enddocregion add-widget
       ),
     );
   }
 }
 
-// #docregion titleSection
+// #docregion title-section
 class TitleSection extends StatelessWidget {
   const TitleSection({
     super.key,
@@ -83,4 +83,4 @@ class TitleSection extends StatelessWidget {
     );
   }
 }
-// #enddocregion titleSection
+// #enddocregion title-section

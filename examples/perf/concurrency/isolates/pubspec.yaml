@@ -1,0 +1,18 @@
+name: isolates
+description: Sample isolate code.
+publish_to: none
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.4.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  shared_preferences: any
+
+dev_dependencies:
+  example_utils:
+    path: ../../../example_utils
+

@@ -1,13 +1,8 @@
 #### Set up the Android emulator
 
-{% include docs/help-link.md location='android-emulator' section='#android-setup' %}
+{% render docs/help-link.md, location:'android-emulator', section:'#android-setup' %}
 
-{% assign devos = include.devos %}
-{% assign target = include.target %}
-{% assign compiler = include.compiler %}
-{% assign attempt = include.attempt %}
-
-{% case devos %}
+{% case include.devos %}
 {% when 'Windows','Linux' -%}
 {% assign images = '**x86 Images**' -%}
 {% when 'macOS' -%}

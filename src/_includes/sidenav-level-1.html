@@ -1,13 +1,14 @@
-{% assign active_entries = include.page_url_path | active_nav_for_page: site.data.activenav -%}
+{% assign page_url_path = url | regex_replace: '/index$|/index\.html$|\.html$|/$' -%}
+{% assign active_entries = page_url_path | active_nav_for_page: active_nav -%}
 
 <ul class="nav flex-column">
-  {%- for entry in include.nav -%}
+  {%- for entry in nav -%}
     {% if entry == 'divider' -%}
       <li aria-hidden="true"><div class="sidebar-primary-divider"></div></li>
-    {% elsif entry contains 'header' -%}
+    {% elsif entry.header -%}
       <li class="nav-header">{{entry.header}}</li>
     {% else -%}
-      {% assign id = include.base_id | append: '-sidenav-' | append: forloop.index -%}
+      {% assign id = base_id | append: '-sidenav-' | append: forloop.index -%}
       {% if forloop.index == active_entries[0] -%}
         {% assign isActive = true -%}
         {% assign class = 'active' -%}
@@ -15,8 +16,7 @@
         {% assign isActive = false -%}
         {% assign class = '' -%}
       {% endif -%}
-  
-      {% if entry contains 'children' -%}
+      {% if entry.children -%}
         {% if isActive or entry.expanded -%}
           {% assign expanded = 'true' -%}
           {% assign show = 'show' -%}
@@ -26,29 +26,26 @@
           {% assign show = '' -%}
         {% endif -%}
         <li class="nav-item">
-          <a class="nav-link {{class}} collapsible" data-toggle="collapse" href="#{{id}}" role="button"
-             aria-expanded="{{expanded}}" aria-controls="{{id}}"
-          >{{entry.title}}</a>
-      
+          <a class="nav-link {{class}} collapsible" data-toggle="collapse" href="#{{id}}" role="button" aria-expanded="{{expanded}}" aria-controls="{{id}}">{{entry.title}}</a>
           <ul class="nav flex-column flex-nowrap collapse {{show}}" id="{{id}}">
             {% if isActive -%}
-            {% include sidenav-level-2.html parent_id=id children=entry.children active_entries=active_entries -%}
+            {%- render sidenav-level-2.html, parent_id:id, children:entry.children, active_entries:active_entries -%}
             {% else -%}
-            {% include sidenav-level-2.html parent_id=id children=entry.children -%}
+            {%- render sidenav-level-2.html, parent_id:id, children:entry.children -%}
             {% endif -%}
           </ul>
         </li>
-      {%- elsif entry contains 'permalink' -%}
+      {%- elsif entry.permalink -%}
         {% if entry.permalink contains '://' -%}
         {% assign isExternal = true -%}
         {% else -%}
         {% assign isExternal = false -%}
         {% endif -%}
-      
         <li class="nav-item">
-          <a class="{{class}} nav-link" href="{{entry.permalink}}"
-             {%- if isExternal %} target="_blank" rel="noopener" {%- endif -%}
-          >{{entry.title}}</a>
+          <a class="nav-link {{class}}" href="{{entry.permalink}}"
+             {%- if isExternal %} target="_blank" rel="noopener" {%- endif -%}>
+            {{entry.title}}
+          </a>
         </li>
       {% endif -%}
     {% endif -%}

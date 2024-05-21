@@ -1,4 +1,4 @@
-// #docregion ToggleWidget
+// #docregion toggle-widget
 import 'package:flutter/material.dart';
 
 void main() {
@@ -65,12 +65,12 @@ class _SampleAppPageState extends State<SampleAppPage> {
     );
   }
 }
-// #enddocregion ToggleWidget
+// #enddocregion toggle-widget
 
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
 
-  // #docregion SimpleWidget
+  // #docregion simple-widget
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -88,13 +88,13 @@ class MyWidget extends StatelessWidget {
       ),
     );
   }
-  // #enddocregion SimpleWidget
+  // #enddocregion simple-widget
 }
 
 class RowExample extends StatelessWidget {
   const RowExample({super.key});
 
-  // #docregion Row
+  // #docregion row
   @override
   Widget build(BuildContext context) {
     return const Row(
@@ -107,13 +107,13 @@ class RowExample extends StatelessWidget {
       ],
     );
   }
-  // #enddocregion Row
+  // #enddocregion row
 }
 
 class ColumnExample extends StatelessWidget {
   const ColumnExample({super.key});
 
-  // #docregion Column
+  // #docregion column
   @override
   Widget build(BuildContext context) {
     return const Column(
@@ -126,13 +126,13 @@ class ColumnExample extends StatelessWidget {
       ],
     );
   }
-  // #enddocregion Column
+  // #enddocregion column
 }
 
 class ListViewExample extends StatelessWidget {
   const ListViewExample({super.key});
 
-  // #docregion ListView
+  // #docregion list-view
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -144,5 +144,5 @@ class ListViewExample extends StatelessWidget {
       ],
     );
   }
-  // #enddocregion ListView
+  // #enddocregion list-view
 }

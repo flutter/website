@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// #docregion StatefulWidget
+// #docregion stateful-widget
 
 class SampleApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -46,18 +46,18 @@ class _SampleAppPageState extends State<SampleAppPage> {
     );
   }
 }
-// #enddocregion StatefulWidget
+// #enddocregion stateful-widget
 
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // #docregion TextWidget
+    // #docregion text-widget
     return const Text(
       'I like Flutter!',
       style: TextStyle(fontWeight: FontWeight.bold),
     );
-    // #enddocregion TextWidget
+    // #enddocregion text-widget
   }
 }

@@ -21,9 +21,6 @@
 
         &.collapsible {
           padding-bottom: bootstrap.bs-spacer(2);
-          &::before {
-            top: 6px;
-          }
         }
       }
     }
@@ -67,8 +64,11 @@
   }
 
   .nav-link {
-    padding: bootstrap.bs-spacer(1) 0;
+    display: flex;
     position: relative;
+    align-items: center;
+
+    padding: bootstrap.bs-spacer(1) 0;
     color: inherit;
     &.disabled { opacity: 0.5; }
 
@@ -83,13 +83,16 @@
     justify-content: space-between;
 
     &::after {
+      // Duplicated since Firefox doesn't support content alt text.
       content: 'keyboard_arrow_down';
+      content: 'keyboard_arrow_down' / '';
       font: $site-font-icon;
       transition: transform .25s ease-in-out;
     }
 
     &:not(.collapsed) {
       &::after {
+        content: 'keyboard_arrow_down' / '';
         transform: rotate(180deg);
       }
     }
@@ -161,17 +164,19 @@
         @include nav-link-active-style;
 
         &.collapsible {
-          &::before{
+          &::before {
+            // Duplicated since Firefox doesn't support content alt text.
             content: 'arrow_drop_down';
+            content: 'arrow_drop_down' / '';
             font: $site-font-icon;
             left: -24px;
             position: absolute;
-            top: 2px;
             transition: transform .25s ease-in-out;
           }
 
           &.collapsed {
             &::before {
+              content: 'arrow_drop_down' / '';
               transform: rotate(-90deg);
             }
           }

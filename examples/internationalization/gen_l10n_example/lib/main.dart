@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
-// #docregion AppLocalizationsImport
+// #docregion app-localizations-import
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-// #enddocregion AppLocalizationsImport
+// #enddocregion app-localizations-import
 
-// #docregion LocalizationDelegatesImport
+// #docregion localization-delegates-import
 import 'package:flutter_localizations/flutter_localizations.dart';
-// #enddocregion LocalizationDelegatesImport
+// #enddocregion localization-delegates-import
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // #docregion MaterialApp
+    // #docregion material-app
     return const MaterialApp(
       title: 'Localizations Sample App',
       localizationsDelegates: [
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       ],
       home: MyHomePage(),
     );
-    // #enddocregion MaterialApp
+    // #enddocregion material-app
   }
 }
 
@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // #docregion InternationalizedTitle
+      // #docregion internationalized-title
       appBar: AppBar(
         // The [AppBar] title text should update its message
         // according to the system locale of the target platform.
@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // cause this text to update.
         title: Text(AppLocalizations.of(context)!.helloWorld),
       ),
-      // #enddocregion InternationalizedTitle
+      // #enddocregion internationalized-title
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -65,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
               // will pass the updated BuildContext to the new widget.
               child: Builder(
                 builder: (context) {
-                  // #docregion Placeholder
+                  // #docregion placeholder
                   // Examples of internationalized strings.
                   return Column(
                     children: <Widget>[
@@ -85,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Text(AppLocalizations.of(context)!.pronoun('other')),
                     ],
                   );
-                  // #enddocregion Placeholder
+                  // #enddocregion placeholder
                 },
               ),
             ),

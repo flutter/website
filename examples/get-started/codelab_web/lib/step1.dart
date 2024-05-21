@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// #docregion WelcomeScreen
+// #docregion welcome-screen
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
 
@@ -16,7 +16,7 @@ class WelcomeScreen extends StatelessWidget {
     );
   }
 }
-// #enddocregion WelcomeScreen
+// #enddocregion welcome-screen
 
 void main() => runApp(const SignUpApp());
 
@@ -28,9 +28,9 @@ class SignUpApp extends StatelessWidget {
     return MaterialApp(
       routes: {
         '/': (context) => const SignUpScreen(),
-        // #docregion WelcomeRoute
+        // #docregion welcome-route
         '/welcome': (context) => const WelcomeScreen(),
-        // #enddocregion WelcomeRoute
+        // #enddocregion welcome-route
       },
     );
   }
@@ -69,11 +69,11 @@ class _SignUpFormState extends State<SignUpForm> {
 
   double _formProgress = 0;
 
-  // #docregion showWelcomeScreen
+  // #docregion show-welcome-screen
   void _showWelcomeScreen() {
     Navigator.of(context).pushNamed('/welcome');
   }
-  // #enddocregion showWelcomeScreen
+  // #enddocregion show-welcome-screen
 
   @override
   Widget build(BuildContext context) {
@@ -106,20 +106,20 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           TextButton(
             style: ButtonStyle(
-              foregroundColor: MaterialStateProperty.resolveWith((states) {
-                return states.contains(MaterialState.disabled)
+              foregroundColor: WidgetStateProperty.resolveWith((states) {
+                return states.contains(WidgetState.disabled)
                     ? null
                     : Colors.white;
               }),
-              backgroundColor: MaterialStateProperty.resolveWith((states) {
-                return states.contains(MaterialState.disabled)
+              backgroundColor: WidgetStateProperty.resolveWith((states) {
+                return states.contains(WidgetState.disabled)
                     ? null
                     : Colors.blue;
               }),
             ),
-            // #docregion onPressed
+            // #docregion on-pressed
             onPressed: _showWelcomeScreen,
-            // #enddocregion onPressed
+            // #enddocregion on-pressed
             child: const Text('Sign up'),
           ),
         ],

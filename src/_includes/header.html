@@ -36,7 +36,7 @@
       <div class="site-header__sheet">
         <ul class="navbar-nav">
           <div class="site-sidebar site-sidebar--header d-md-none">
-            {% include sidenav-level-1.html nav=site.data.sidenav page_url_path=route base_id="header" %}
+            {% render sidenav-level-1.html, url:page.url, nav:sidenav, base_id:"header", active_nav:activeNav %}
           </div>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="platform-navbar-dropdown"
@@ -114,7 +114,7 @@
         </ul>
         <form action="/search/" class="site-header__search form-inline">
           <input
-            class="site-header__searchfield form-control"
+            class="site-header__searchfield form-control search-field"
             type="search" name="q" id="q" autocomplete="off"
             placeholder="Search" aria-label="Search">
         </form>
@@ -150,11 +150,9 @@
         <svg><use href="/assets/images/social/github.svg#github"></use></svg>
       </a>
     </div>
-    {% if page.show-nav-get-started-button -%}
-      <a
-        class="site-header__cta btn btn-primary"
-        href="/get-started/install/">Get started
-      </a>
-    {% endif -%}
+    <a
+      class="site-header__cta btn btn-primary"
+      href="/get-started/install/">Get started
+    </a>
   </nav>
 </header>

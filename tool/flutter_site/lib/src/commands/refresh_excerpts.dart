@@ -53,23 +53,31 @@ Future<int> _refreshExcerpts({
   // TODO: Replace diffutils with cross-platform solution.
   final diffVersionOutput =
       Process.runSync('diff', ['--version']).stdout.toString();
+  if (diffVersionOutput.toLowerCase().contains('apple diff')) {
+    stderr.writeln(
+      'Error: The built-in diff tool on macOS is out of date! '
+      'Please install a version of diffutils >= 3.6.',
+    );
+    return 1;
+  }
+
   final diffVersionLine = RegExp(r'^diff.*3\.(\d+)$', multiLine: true)
       .firstMatch(diffVersionOutput);
   if (diffVersionLine == null) {
     stderr.writeln(
-      'Error: diffutils must be installed to refresh code excerpts!',
+      'Error: diffutils >= 3.6 must be installed to refresh code excerpts!',
     );
     return 1;
-  } else {
-    // TODO(parlough): This doesn't account for v4.
-    final diffPatchVersion = int.tryParse(diffVersionLine[1] ?? '');
-    if (diffPatchVersion == null || diffPatchVersion < 6) {
-      stderr.writeln(
-        'Error: diffutils version >=3.6 required - '
-        'your version: 3.$diffPatchVersion!',
-      );
-      return 1;
-    }
+  }
+
+  // TODO(parlough): This doesn't account for v4.
+  final diffPatchVersion = int.tryParse(diffVersionLine[1] ?? '');
+  if (diffPatchVersion == null || diffPatchVersion < 6) {
+    stderr.writeln(
+      'Error: diffutils version >=3.6 required - '
+      'your version: 3.$diffPatchVersion!',
+    );
+    return 1;
   }
 
   final repositoryRoot = Directory.current.path;
@@ -121,25 +129,7 @@ Future<int> _refreshExcerpts({
     return 1;
   }
 
-  // A collection of replacements for the code excerpt updater tool
-  // to run by default.
-  // They must not contain (unencoded/unescaped) spaces.
-  const replacements = [
-    // Allows use of //!<br> to force a line break (against dart format)
-    r'/\/\/!<br>//g;',
-    // Replace commented out ellipses: /*...*/ --> ...
-    r'/\/\*(\s*\.\.\.\s*)\*\//$1/g;',
-    // Replace brackets with commented out ellipses: {/*-...-*/} --> ...
-    r'/\{\/\*-(\s*\.\.\.\s*)-\*\/\}/$1/g;',
-    // Remove markers declaring an analysis issue or runtime error.
-    r'/\/\/!(analysis-issue|runtime-error)[^\n]*//g;',
-    // Remove analyzer ignore for file markers.
-    r'/\x20*\/\/\s+ignore_for_file:[^\n]+\n//g;',
-    // Remove analyzer inline ignores.
-    r'/\x20*\/\/\s+ignore:[^\n]+//g;',
-  ];
-
-  final srcDirectoryPath = path.join(repositoryRoot, 'src');
+  final srcDirectoryPath = path.join(repositoryRoot, 'src', 'content');
   final updaterArguments = <String>[
     '--fragment-dir-path',
     path.join(fragments, 'examples'),
@@ -148,7 +138,6 @@ Future<int> _refreshExcerpts({
     if (verboseLogging) '--log-fine',
     '--yaml',
     '--no-escape-ng-interpolation',
-    '--replace=${replacements.join('')}',
     '--write-in-place',
     srcDirectoryPath,
   ];

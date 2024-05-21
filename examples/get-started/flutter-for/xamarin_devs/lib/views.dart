@@ -6,16 +6,16 @@ class MyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // #docregion Text
+    // #docregion text
     return const Text(
       'I like Flutter!',
       style: TextStyle(fontWeight: FontWeight.bold),
     );
-    // #enddocregion Text
+    // #enddocregion text
   }
 }
 
-// #docregion AddRemoveElement
+// #docregion add-remove-element
 class SampleApp extends StatelessWidget {
   /// This widget is the root of your application.
   const SampleApp({super.key});
@@ -68,4 +68,4 @@ class _SampleAppPageState extends State<SampleAppPage> {
     );
   }
 }
-// #enddocregion AddRemoveElement
+// #enddocregion add-remove-element

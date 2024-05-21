@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class RowExample extends StatelessWidget {
   const RowExample({super.key});
 
-  // #docregion Row
+  // #docregion row
   @override
   Widget build(BuildContext context) {
     return const Row(
@@ -16,13 +16,13 @@ class RowExample extends StatelessWidget {
       ],
     );
   }
-  // #enddocregion Row
+  // #enddocregion row
 }
 
 class ColumnExample extends StatelessWidget {
   const ColumnExample({super.key});
 
-  // #docregion Column
+  // #docregion column
   @override
   Widget build(BuildContext context) {
     return const Column(
@@ -34,14 +34,14 @@ class ColumnExample extends StatelessWidget {
         Text('Column Four'),
       ],
     );
-    // #enddocregion Column
+    // #enddocregion column
   }
 }
 
 class GridExample extends StatelessWidget {
   const GridExample({super.key});
 
-  // #docregion Grid
+  // #docregion grid
   @override
   Widget build(BuildContext context) {
     return GridView.count(
@@ -62,13 +62,13 @@ class GridExample extends StatelessWidget {
       ),
     );
   }
-  // #enddocregion Grid
+  // #enddocregion grid
 }
 
 class StackExample extends StatelessWidget {
   const StackExample({super.key});
 
-  // #docregion Stack
+  // #docregion stack
   @override
   Widget build(BuildContext context) {
     return const Stack(
@@ -89,26 +89,26 @@ class StackExample extends StatelessWidget {
       ],
     );
   }
-  // #enddocregion Stack
+  // #enddocregion stack
 }
 
 class ScrollViewExample extends StatelessWidget {
   const ScrollViewExample({super.key});
 
-  // #docregion ScrollView
+  // #docregion scroll-view
   @override
   Widget build(BuildContext context) {
     return const SingleChildScrollView(
       child: Text('Long Content'),
     );
   }
-  // #enddocregion ScrollView
+  // #enddocregion scroll-view
 }
 
 class ListViewExample extends StatelessWidget {
   const ListViewExample({super.key});
 
-  // #docregion ListView
+  // #docregion list-view
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -120,5 +120,5 @@ class ListViewExample extends StatelessWidget {
       ],
     );
   }
-  // #enddocregion ListView
+  // #enddocregion list-view
 }

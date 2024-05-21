@@ -3,21 +3,6 @@
 
 version: 2
 updates:
-  - package-ecosystem: "bundler"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.dependencies"
-      - "auto.bundler"
-      - "lang.ruby"
-  - package-ecosystem: "docker"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.dependencies"
-      - "auto.docker"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -718,7 +703,7 @@ updates:
       - "lang.dart"
   - package-ecosystem: "pub"
     versioning-strategy: "increase-if-necessary"
-    directory: "/examples/development/data-and-backend/json"
+    directory: "/examples/data-and-backend/json"
     schedule:
       interval: "daily"
     labels:
@@ -726,7 +711,7 @@ updates:
       - "lang.dart"
   - package-ecosystem: "pub"
     versioning-strategy: "increase-if-necessary"
-    directory: "/examples/development/platform_integration"
+    directory: "/examples/platform_integration"
     schedule:
       interval: "daily"
     labels:
@@ -734,7 +719,7 @@ updates:
       - "lang.dart"
   - package-ecosystem: "pub"
     versioning-strategy: "increase-if-necessary"
-    directory: "/examples/development/plugin_api_migration"
+    directory: "/examples/platform_integration/plugin_api_migration"
     schedule:
       interval: "daily"
     labels:
@@ -742,7 +727,7 @@ updates:
       - "lang.dart"
   - package-ecosystem: "pub"
     versioning-strategy: "increase-if-necessary"
-    directory: "/examples/development/tools"
+    directory: "/examples/tools"
     schedule:
       interval: "daily"
     labels:
@@ -750,7 +735,7 @@ updates:
       - "lang.dart"
   - package-ecosystem: "pub"
     versioning-strategy: "increase-if-necessary"
-    directory: "/examples/development/ui/interactive"
+    directory: "/examples/ui/interactive"
     schedule:
       interval: "daily"
     labels:
@@ -975,14 +960,6 @@ updates:
   - package-ecosystem: "pub"
     versioning-strategy: "increase-if-necessary"
     directory: "/examples/testing/common_errors"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/testing/debugging"
     schedule:
       interval: "daily"
     labels:

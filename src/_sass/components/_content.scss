@@ -27,6 +27,10 @@
     img, iframe {
       max-width: 100%;
     }
+
+    > img {
+      margin-bottom: 1rem;
+    }
   }
 
   @include bootstrap.media-breakpoint-up(md) {
@@ -67,36 +71,47 @@
 
   h1, h2, h3, h4, h5, h6 {
     text-wrap: balance;
-    
-    $icon-size: 1.5rem;
-    $anchor-padding: 0.25rem;
+  }
 
-    > a.anchor {
-      float: left;
-      margin-left: -($icon-size + $anchor-padding);
-      padding-right: $anchor-padding;
+  .header-wrapper {
+    display: flex;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    align-items: center;
+
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .heading-link {
+      margin-left: 0.4rem;
+      font-size: 1.3rem;
+      line-height: 1;
+      transition: all 0.15s ease-in-out;
       overflow: hidden;
+      color: #4a4a4a;
+      opacity: 0;
       text-decoration: none;
 
-      .octicon-link {
-        transition: all 0.2s ease-in-out;
-
-        @include md-icon-before("tag", false);
-        font-size: $icon-size;
-        color: $site-color-body;
-        opacity: 0;
-
-        &:hover {
-          color: lighten($site-color-primary, 20%);
-        }
+      &:hover {
+        color: $site-color-primary;
       }
 
-      &:focus .octicon-link {
+      &:focus {
         opacity: 1
+      }
+
+      &:active {
+        color: $flutter-color-dark-blue;
       }
     }
 
-    &:hover > .anchor > .octicon-link { opacity: 1 }
+    &:hover {
+      .heading-link {
+        opacity: 1
+      }
+    }
   }
 
   // Embedded DartPad

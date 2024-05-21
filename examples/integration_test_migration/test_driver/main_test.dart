@@ -14,15 +14,15 @@ void main() {
       await driver.close();
     });
 
-    // #docregion Test1
+    // #docregion wait-for
     test('do not select any item, verify please select text is displayed',
         () async {
       // Wait for 'please select' text is displayed
       await driver.waitFor(find.text('Please select a plant from the list.'));
     });
-    // #enddocregion Test1
+    // #enddocregion wait-for
 
-    // #docregion Test2
+    // #docregion wait-for-absent
     test('tap on the first item (Alder), verify selected', () async {
       // find the item by text
       final item = find.text('Alder');
@@ -40,9 +40,9 @@ void main() {
       await driver
           .waitForAbsent(find.text('Please select a plant from the list.'));
     });
-    // #enddocregion Test2
+    // #enddocregion wait-for-absent
 
-    // #docregion Test3
+    // #docregion scroll
     test('scroll, tap on the last item (Zedoary), verify selected', () async {
       // find the list of plants, by Key
       final listFinder = find.byValueKey('listOfPlants');
@@ -72,6 +72,6 @@ void main() {
       await driver
           .waitForAbsent(find.text('Please select a plant from the list.'));
     });
-    // #enddocregion Test3
+    // #enddocregion scroll
   });
 }
