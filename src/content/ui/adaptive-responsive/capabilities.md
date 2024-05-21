@@ -67,7 +67,7 @@ as host platforms add functionality.
 The following guidelines explain best practices
 when developing the capabilities and policies for your app:
 
-**Avoid using `Platform.isAndoid` and similar functions
+**Avoid using `Platform.isAndroid` and similar functions
 to make layout decisions or assumptions about what a device can do.**
 
 Instead, describe what you want to branch on in a method. 
