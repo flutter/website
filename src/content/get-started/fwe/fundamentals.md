@@ -2,8 +2,8 @@
 title: Flutter fundamentals
 description: Learn the basic building blocks of Flutter.
 prev:
-  title: Learn more
-  permalink: /get-started/learn-more
+  title: First week experience
+  permalink: /get-started/fwe
 next:
   title: Layouts
   permalink: /get-started/fwe/layout
