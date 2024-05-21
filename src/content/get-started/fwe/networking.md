@@ -3,8 +3,11 @@ title: Networking and data
 description: Learn how to network your Flutter app.
 prev:
   title: Handling user input
+  path: /get-started/fwe/user-input
 next:
-    title: Local data and caching
+  title: Local data and caching
+  path: /get-started/fwe/networking
+
 ---
 
 While it's said that "no man is an island",

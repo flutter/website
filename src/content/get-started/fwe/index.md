@@ -77,7 +77,7 @@ following subjects in the listed order.
 [Layout]: /get-started/fwe/layout
 [State management]: /get-started/fwe/state-management
 [Handling user input]: /get-started/fwe/user-input
-[Networking and data]: /networking
+[Networking and data]: /get-started/fwe/networking
 [Local data and caching]: /get-started/fwe/local-caching
 
 ## Feedback

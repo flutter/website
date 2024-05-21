@@ -6,6 +6,7 @@ prev:
   path: /get-started/fwe/fundamentals
 next:
     title: State management
+    path: /get-started/fwe/state-management
 ---
 
 Given that Flutter is a UI toolkit,
@@ -27,6 +28,7 @@ in Flutter, and gives you an opportunity to work
 with the most common layout widgets, like rows and columns.
 
 <i class="material-symbols" aria-hidden="true">flutter_dash</i> Tutorial: [Layouts in Flutter][]
+
 
 ### Constraints
 
