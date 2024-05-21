@@ -118,7 +118,7 @@ subcomponent on the next or previous page's
   <div class="row">
     <div class="col-sm">
       <figure class="figure text-center">
-      <object style="border-radius: 12px; height: 400px;" class="figure-img img-fluid" height="400" width="185" alt="An animation of the page transition on Android" data="/assets/images/docs/platform-adaptations/android-zoom-animation.png"></object>
+      <img style="border-radius: 12px; height: 400px;" class="figure-img img-fluid" height="400" width="185" alt="An animation of the page transition on Android" src="/assets/images/docs/platform-adaptations/android-zoom-animation.png" />
         <figcaption class="figure-caption">
           Android
         </figcaption>
