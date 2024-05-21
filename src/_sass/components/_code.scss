@@ -42,6 +42,13 @@ pre {
       background: color.change($site-color-primary, $alpha: 0.05);
       border-left-color: $site-color-primary;
     }
+
+    .terminal-command::before {
+      color: $site-color-sub-grey;
+      content: "$";
+      content: "$" / "";
+      padding-right: 0.5rem;
+    }
   }
 
   &.show-line-numbers code {

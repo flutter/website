@@ -122,7 +122,7 @@ function _highlight(
     ? _parseNumbersAndRanges(highlightLines)
     : null;
 
-  const noHighlight = 'noHighlight' in attributes
+  const noHighlight = 'noHighlight' in attributes;
 
   // Find the spans enclosed in `[!` and `!]` that we should mark
   // and remove them from the text.
@@ -152,7 +152,7 @@ function _highlight(
 
           const bodyChildren = [preElement];
 
-          if (!['plaintext', 'console', 'ps', 'diff'].includes(language)) {
+          if (!['plaintext', 'console', 'ps', 'diff', 'powershell'].includes(language)) {
             const languageText = _createSpanWithText(language, {
               class: 'code-block-language',
               title: `Language ${language}`,
@@ -232,6 +232,18 @@ function _highlight(
 
           if (linesToHighlight?.has(line)) {
             lineElement.properties['class'] += ' highlighted-line';
+          }
+
+          if (lineElement.children.length < 1) return;
+
+          // Remove terminal command marker if present.
+          const firstSpan = lineElement.children[0];
+          const firstText = firstSpan.children[0];
+          if (firstText?.value.startsWith('$ ')) {
+            // If terminal marker is present on the first span,
+            // remove it and add a class to use CSS to display it.
+            firstText.value = firstText.value.substring(2);
+            firstSpan.properties['class'] += ' terminal-command';
           }
 
           const highlightRange = linesToMarkedRanges[line];
