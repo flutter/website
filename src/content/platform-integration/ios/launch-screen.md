@@ -24,7 +24,7 @@ with an Xcode storyboard.
 
 The default Flutter template includes an Xcode
 storyboard named `LaunchScreen.storyboard`
-that can be customized your own assets.
+that can be customized with your own assets.
 By default, the storyboard displays a blank image,
 but you can change this. To do so,
 open the Flutter app's Xcode project
