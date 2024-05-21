@@ -23,6 +23,11 @@ the dreaded "unbounded constraints" error.
 
 ## Introduction to layouts
 
+The following tutorial introduces you to layouts
+in Flutter, and gives you an opportunity to work
+with the most common layout widgets, like rows and columns.
+
+<i class="material-symbols" aria-hidden="true">flutter_dash</i> Tutorial: [Layouts in Flutter][]
 
 
 ### Constraints
