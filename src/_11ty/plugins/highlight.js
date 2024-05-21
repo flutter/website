@@ -3,6 +3,10 @@ import dashLightTheme from '../syntax/dash-light.js';
 
 import diff2html from "diff2html";
 
+const _terminalLanguages = {
+  'console': '$',
+};
+
 /**
  * Replaces the markdown-it code block renderer with our own that:
  *
@@ -236,14 +240,16 @@ function _highlight(
 
           if (lineElement.children.length < 1) return;
 
-          // Remove terminal command marker if present.
-          const firstSpan = lineElement.children[0];
-          const firstText = firstSpan.children[0];
-          if (firstText?.value.startsWith('$ ')) {
-            // If terminal marker is present on the first span,
-            // remove it and add a class to use CSS to display it.
-            firstText.value = firstText.value.substring(2);
-            firstSpan.properties['class'] += ' terminal-command';
+          if (language in _terminalLanguages) {
+            // Remove terminal command marker if present.
+            const firstSpan = lineElement.children[0];
+            const firstText = firstSpan.children[0];
+            if (firstText?.value.startsWith('$ ')) {
+              // If terminal marker is present on the first span,
+              // remove it and add a class to use CSS to display it.
+              firstText.value = firstText.value.substring(2);
+              firstSpan.properties['class'] += ' terminal-command';
+            }
           }
 
           const highlightRange = linesToMarkedRanges[line];
