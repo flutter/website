@@ -5,7 +5,8 @@ prev:
   title: Layouts
   path: /get-started/fwe/layout
 next:
-    title: Handling user input
+  title: Handling user input
+  path: /get-started/fwe/user-input  
 ---
 
 # State management

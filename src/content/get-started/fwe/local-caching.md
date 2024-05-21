@@ -3,8 +3,10 @@ title: Local caching
 description: Learn how to persist data locally.
 prev:
   title: Networking and data
+  path: /get-started/fwe/networking
 next:
-    title: JSON serialization
+  title: Learn more
+  path: /get-started/learn-more
 ---
 
 Now that you've learned about how to load data from servers
