@@ -234,8 +234,8 @@ TODO: When available, add an app sample.
 1. Once the flavors are set up, modify the Dart code in
 **lib** / **main.dart** to consume the flavors.
 2. Test the setup using `flutter run --flavor free`
-at the command line, or in your IDE. Alternatively, you
-can set a default flavor in your `pubspec.yaml`:
+at the command line, or in your IDE.
+Alternatively, you can set a default flavor in your `pubspec.yaml`:
 
 ```yaml
 flutter:
