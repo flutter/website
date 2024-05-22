@@ -22,7 +22,7 @@ depending on their input method.
   app users can use the mouse to click on the desired UI element
   or press a keyboard shortcut to move focus.
 
-Once in focus, text entered with the keyboard flows to that element.
+Once a part of an app has focus, text entered with the keyboard flows to that element.
 Text input could control objects or display text in a text field.
 This continues until the focus moves to another element in the app.
 
@@ -57,8 +57,8 @@ are listed after this section.
   When it has focus, it participates in handling key events.
 
 **Primary focus**
-  : A focus node that has focus where key events start propagating to
-  the primary focus node and its ancestors.
+  : A focus node that has focus, meaning that key events propagate to
+  the primary focus node and its ancestors in the focus tree.
   This focus node exists at the farthest point from the root of the focus tree.
 
 **Focus chain**
@@ -102,12 +102,13 @@ hold the focus state and attributes.
 This allows focus nodes to persist between builds of the widget tree.
 Together, these objects form the focus tree data structure.
 
-These widgets act as a somewhat opaque handle.
+These nodes act as a somewhat opaque handle.
 To focus a descendant widget,
 an ancestor widget can use this handle to call the `requestFocus()` method.
 The ancestor widget can also request that Flutter give focus
 to a descendant widget.
-If setting other attributes like `onKey` or `skipTraversal`,
+If setting other attributes on the focus node
+like `onKey` or `skipTraversal`,
 use the [`Focus.withExternalFocusNode`][] or
 [`FocusScope.withExternalFocusNode`][] constructors
 This avoids an accidental reset of the attributes.
@@ -128,7 +129,7 @@ Some dos and don'ts around using these objects include:
 
 **Do call the `requestFocus()` method on a node to request the primary focus.**
 : Call this method from an ancestor that has passed a node
-  it owns to a descendant where you want to the focus.
+  it owns to a descendant where you want to change the focus.
 
 **Do use `focusNode.requestFocus()`.**
 : You don't need to call `FocusScope.of(context).requestFocus(focusNode)`.
@@ -144,7 +145,7 @@ Some dos and don'ts around using these objects include:
   That might result in an unexpected outcome.
 
 **Don't set the `onKeyEvent` callback on a `FocusNode` that `Focus` manages.**
-: To set focus to respond to a key event, use an `onKeyEvent` handler.
+: To respond to a key event, use an `onKeyEvent` handler.
   Surround the desired widget subtree with a new [`Focus`][] widget
   with its `onKeyEvent` attribute set to your handler.
   If you don't want the widget to be able to take primary focus,
@@ -158,11 +159,11 @@ Some dos and don'ts around using these objects include:
 
 The `FocusNode.unfocus()` API tells a node to "give up the focus".
 While it does remove focus from the node,
-note that you can't "unfocus" all nodes.
+you can't "unfocus" all nodes.
 If you remove focus from a node, it must pass the focus somewhere else,
 since there is _always_ a primary focus. When a node calls `unfocus()`,
 focus can pass to one of two nodes.
-It can pass to either the nearest `FocusScopeNode`
+It can pass to either the nearest ancestor `FocusScopeNode` in the focus tree
 or a node in the same scope that had focus earlier.
 Which one depends upon the `disposition` argument you give to `unfocus()`.
 To better control where the focus passes when you remove it from a node,
@@ -177,11 +178,11 @@ It allows two modes for passing focus:
 * [`UnfocusDisposition.scope`][]:
   The argument defaults to this option.
   It gives the focus to the nearest parent focus scope.
-  If the something moves the focus to the next node with `FocusNode.nextFocus`,
+  If something moves the focus to the next node with `FocusNode.nextFocus`,
   the app starts with the "first" focusable item in the scope.
 
 * `UnfocusDisposition.previouslyFocusedChild`:
-  The `previouslyFocusedChild` disposition searches the scope to find the
+  The `previouslyFocusedChild` disposition accesses the scope to find the
   last focused child and request focus on it.
   If no child had focus before, this disposition works like `scope`.
 
@@ -214,14 +215,14 @@ It performs the following functions as the workhorse of the focus system:
   tree through its static functions
 
 To allow a widget subtree to obtain focus, wrap the `Focus` widget around it.
-This works during the focus traversal process or when a passed
+This happens during the focus traversal process or when a passed
 `FocusNode` calls `requestFocus`.
 Combined with a gesture detector calling `requestFocus`,
 it can receive focus when tapped or clicked.
 
 If you don't create a `FocusNode` object for the `Focus` widget to manage,
 it creates its own.
-To allow focus control from a parent widget, create your own`FocusNode`.
+To allow focus control from another widget, create your own`FocusNode`.
 To control its focus, this object can then call `requestFocus()` on the node.
 To access the functionality of a `FocusNode`,
 change the attributes of the `Focus` widget itself.
@@ -438,7 +439,7 @@ because changing focus can cause arbitrary parts of the widget tree to rebuild,
 including ancestors of the widget currently requesting focus.
 As descendants cannot dirty their ancestors,
 it has to happen between frames.
-This allows any needed changes can happen on the next frame.
+This allows any needed changes to happen on the next frame.
 
 ## Group focus nodes
 
@@ -457,8 +458,8 @@ Focus scopes also serve as a place to return focus to if none of the descendants
 have focus. This allows the focus traversal code to have a starting context for
 finding the next (or first) focusable control to move to.
 
-If you focus a focus scope node, it first attempts to focus the current,
-or most recently focused node in its subtree,
+If you focus a focus scope node, it first attempts to focus the
+most recently focused node in its subtree,
 or the node in its subtree that requested autofocus (if any).
 If there is no such node, it receives the focus itself.
 
@@ -466,9 +467,9 @@ If there is no such node, it receives the focus itself.
 
 The [`FocusableActionDetector`][] widget combines the functionality of
 [`Actions`][], [`Shortcuts`][], and [`MouseRegion`][] with a `Focus` widget.
-This widgets creates a detector that defines actions and key bindings,
+This widget creates a detector that defines actions and key bindings,
 and provides callbacks that handle focus and hover highlights.
-Flutter controls use this to implement all of these aspects of the controls.
+Flutter controls use this to implement these aspects of the controls.
 Flutter implements this widget using the constituent widgets.
 If you don't need all of its functionality, use only the widgets you need.
 This widget provides a convenient way to build these behaviors into
@@ -500,7 +501,7 @@ Apps don't often use a grid layout, so focus traversal requires more guidance.
 
 Flutter's default algorithm for focus traversal
 ([`ReadingOrderTraversalPolicy`][]) often provides the right answer for most apps.
-Exceptions exist: cases where the context or design requires a different order
+Exceptions exist: cases exist where the context or design requires a different order
 than what the default ordering algorithm calculates.
 For those cases, you can use other methods to achieve your desired order.
 
@@ -509,11 +510,11 @@ For those cases, you can use other methods to achieve your desired order.
 Your app might need to confine traversal to one group of widgets
 before moving on to another widget or group of widgets.
 To set this constrant, place the [`FocusTraversalGroup`][] widget
-around the necessary widget subtrees in the focus tree.
+around the necessary widget subtrees.
 To resolve many tab traversal ordering problems,
 you might only need to arrange widgets into related groups.
 If grouping alone doesn't resolve your problem,
-add a [`FocusTraversalPolicy`][] to the widget group
+add a [`FocusTraversalPolicy`][] to the focus traversal group
 to set the ordering within the group.
 
 While the default [`ReadingOrderTraversalPolicy`][] works in most cases,
@@ -589,12 +590,12 @@ The requests (member functions) can include `findFirstFocus`,
 To use a `FocusTraversalPolicy`, give one to a `FocusTraversalGroup`,
 It determines the widget subtree in which the policy will be effective.
 Avoid calling the member functions of the class directly.
-The focus system should use these functions.
+The focus system uses these functions.
 
 ## Manage focus
 
 The [`FocusManager`][] maintains the current primary focus for the system.
-Users of the focus system might only use three properties of this API.
+Users of the focus system typically use three main properties of this API.
 
 **`FocusManager.instance.primaryFocus` property**
 : This contains the current focus node with focus.
@@ -603,7 +604,7 @@ Users of the focus system might only use three properties of this API.
 **`FocusManager.instance.highlightStrategy` property**
 : Widgets that change between touch and mouse and keyboard input
   need this property. This property tells `FocusManager` how to
-  interpret changes to app user device input.
+  interpret changes in which input devices the app user employs.
   The `highlightStrategy` property allows one of three values:
 
   * `automatic` (default):
@@ -620,7 +621,8 @@ Users of the focus system might only use three properties of this API.
   * When the app user switches to a mouse or keyboard,
     Flutter shows the focus highlight.
 
-The provided focus widgets in Flutter know how to use these properties.
+The provided focusable widgets and `FocusableActionDetector` in Flutter
+know how to use these properties.
 You only need this API if you're writing your own controls.
 
 To listen for changes in the highlight mode,
