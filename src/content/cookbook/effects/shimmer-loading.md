@@ -576,7 +576,7 @@ on and off as the content loads.
 
 ## Interactive example
 
-<?code-excerpt "lib/original_example.dart" replace="/\/\/ code-excerpt-closing-bracket/}/g"?>
+<?code-excerpt "lib/original_example.dart" remove="code-excerpt-closing-bracket"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
@@ -721,7 +721,6 @@ class ShimmerState extends State<Shimmer> with SingleTickerProviderStateMixin {
     _shimmerController.dispose();
     super.dispose();
   }
-}
 
   LinearGradient get gradient => LinearGradient(
         colors: widget.linearGradient.colors,
@@ -808,7 +807,6 @@ class _ShimmerLoadingState extends State<ShimmerLoading> {
       });
     }
   }
-}
 
   @override
   Widget build(BuildContext context) {
