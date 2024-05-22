@@ -3,20 +3,29 @@
 
 {% assign prompt1='$' %}
 
-### Configure Xcode
+### Install and configure Xcode
 
 {% if include.attempt=="first" %}
 
 To develop Flutter apps for {{include.target}}, install Xcode to compile to native bytecode.
 
+1. Open the **App Store** and sign in.
+
+1. Search for `Xcode`.
+
+1. Click **Install**.
+
+   The Xcode installer takes up 6+ GB of storage.
+   The download make take some time.
+
 1. To configure the command-line tools to use the installed version of Xcode,
-   run the following commands.
+   use the following commands.
 
     ```console
     {{prompt1}} sudo sh -c 'xcode-select -s /Applications/Xcode.app/Contents/Developer && xcodebuild -runFirstLaunch'
     ```
 
-   To use the latest version of Xcode, use this path.
+   Use this path for the latest version of Xcode.
    If you need to use a different version, specify that path instead.
 
 1. Sign the Xcode license agreement.
