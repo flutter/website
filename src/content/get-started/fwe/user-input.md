@@ -75,7 +75,7 @@ but are styled differently:
 [`OutlinedButton`][]
 : A button with text and a visible border.
   These buttons contain actions that are important,
-  but aren’t the primary action in an app.
+  but aren't the primary action in an app.
 
 [`TextButton`][]
 : Clickable text, without a border.

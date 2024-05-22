@@ -7,7 +7,6 @@ prev:
 next:
   title: Local data and caching
   path: /get-started/fwe/networking
-
 ---
 
 While it's said that "no man is an island",
@@ -120,8 +119,8 @@ Anna (Domashych) Leushchenko covering advanced networking in Flutter.
 [Keeping it local: Managing a Flutter app's data]: {{site.youtube-site}}/watch?v=uCbHxLA9t9E
 [Make authenticated requests]: /cookbook/networking/authenticated-requests
 [MDN's article on Authorization for websites]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization
-[Using the Network View]: https://docs.flutter.dev/tools/devtools/network
-[Send data to the internet]: https://docs.flutter.dev/cookbook/networking/send-data
+[Using the Network View]: /tools/devtools/network
+[Send data to the internet]: /cookbook/networking/send-data
 
 ## Feedback
 
