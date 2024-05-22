@@ -23,7 +23,7 @@ adapting to the Material Design 3 guidelines.
 The tone-based surface colors include: 
 
 - `surfaceBright`
-- `surfaceDim`,
+- `surfaceDim`
 - `surfaceContainer`
 - `surfaceContainerLow`
 - `surfaceContainerLowest`
@@ -53,8 +53,8 @@ the new color roles should be small and acceptable.
 However, when providing a brighter seed color to `ColorScheme.fromSeed`,
 it might construct a relatively darker version of `ColorScheme`.
 To force the output to still be bright,
-set `schemeVariant: FromSeedVariant.fidelity` in `ColorScheme.fromSeed`.
-For example:
+set `dynamicSchemeVariant: DynamicSchemeVariant.fidelity` in
+`ColorScheme.fromSeed`. For example:
 
 Code before migration:
 
@@ -69,7 +69,7 @@ Code after migration:
 ```dart
 ColorScheme.fromSeed(
     seedColor: Color(0xFF0000FF), // Bright blue
-    schemeVariant: FromSeedVariant.fidelity,
+    dynamicSchemeVariant: DynamicSchemeVariant.fidelity,
 )
 ```
 
