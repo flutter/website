@@ -10,11 +10,11 @@ next:
 ---
 
 Given that Flutter is a UI toolkit,
-you’ll spend a lot of time creating layouts
+you'll spend a lot of time creating layouts
 with Flutter widgets. In this section,
-you’ll learn how to build simple and
+you'll learn how to build simple and
 complex layouts with some of the most common layout widgets.
-You’ll use Flutter DevTools (also
+You'll use Flutter DevTools (also
 called Dart DevTools) to understand how
 Flutter is creating your layout.
 Finally, you'll encounter and debug one of
@@ -32,9 +32,9 @@ with the most common layout widgets, like rows and columns.
 
 ### Constraints
 
-Understanding “constraints” in Flutter is  an
+Understanding "constraints" in Flutter is  an
 important part of understanding
-how Flutter’s layout algorithm works.
+how Flutter's layout algorithm works.
 
 The following resources teach you what
 constraints are and some widgets that
@@ -63,10 +63,10 @@ that are a bit more involved than using rows and columns.
 
 Several Flutter widgets facilitate scrolling through
 content in your application.
-First, you’ll see how to use the most common widget for
+First, you'll see how to use the most common widget for
 making any page scrollable,
 as well as a widget for creating scrollable lists.
-You’ll also be introduced to a common pattern in
+You'll also be introduced to a common pattern in
 Flutter—the builder pattern.
 Many Flutter widgets use the builder pattern,
 including some scrolling widgets.
@@ -85,11 +85,11 @@ Stacks give you more flexibility in placing widgets
 in Flutter by allowing you to specify exact locations
 of widgets within their parent,
 including on top of each other.
-If you’re coming from the web,
+If you're coming from the web,
 `Stacks` solve the same problem as `z-index`.
 
 If you followed the previous tutorials mentioned
-on this page, you’ve already worked with `Stack`s.
+on this page, you've already worked with `Stack`s.
 If not, these resources provide an overview.
 
 * Video: [Stack—Flutter Widget of the Week][]
@@ -107,7 +107,7 @@ such as tooltips.
 
 Because Flutter is used to create mobile,
 tablet, desktop, _and_ web apps,
-it’s likely you’ll need to adjust your
+it's likely you'll need to adjust your
 application to behave differently depending on
 things like screen size or input device.
 This is referred to as making an app
@@ -133,9 +133,9 @@ The "Widget Inspector" tool is particularly
 useful when building layouts (and working with widgets in general).
 
 Additionally, perhaps the most common error
-you’ll run into while building a Flutter application
+you'll run into while building a Flutter application
 is due to incorrectly using layout widgets,
-and is referred to as the “unbounded constraints” error.
+and is referred to as the "unbounded constraints" error.
 If there was only one type error you should be prepared
 to confront when you first start building Flutter apps,
 it would be this one.

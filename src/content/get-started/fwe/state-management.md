@@ -277,7 +277,7 @@ check out the following resources:
 * Sample: [Provider counter][]
 * API Docs: [`InheritedWidget`][]
 
-## Using Listenables
+## Using listenables
 
 Now that you've chosen how you want to share state in your app,
 how do you update the UI when it changes?
@@ -428,7 +428,6 @@ class CounterClient {
     // ...
   }
 }
-
 ```
 
 This model doesn't use any Flutter primitives or make any assumptions
@@ -548,7 +547,7 @@ If you would like to learn more, check out the following resources:
 * Article: [List of state management approaches][]
 * Repository: [Flutter Architecture Samples][]
 
-[A guide to Inherited Widgets]: ({{site.youtube-site}}/watch?v=Zbm3hjPjQMk)
+[A guide to Inherited Widgets]: {{site.youtube-site}}/watch?v=Zbm3hjPjQMk
 [build_collection]: {{site.pub-pkg}}/built_collection
 [Flutter Architecture Samples]: https://fluttersamples.com/
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
@@ -560,7 +559,7 @@ If you would like to learn more, check out the following resources:
 [StatefulWidget]: /flutter/widgets/StatefulWidget-class.html
 [`ChangeNotifier`]: {{site.api}}/flutter/foundation/ChangeNotifier-class.html
 [`InheritedNotifier`]: {{site.api}}/flutter/widgets/InheritedNotifier-class.html
-[`ListenableBuilder`]: https://api.flutter.dev/flutter/widgets/ListenableBuilder-class.html
+[`ListenableBuilder`]: {{site.api}}/flutter/widgets/ListenableBuilder-class.html
 [`Listenable`]: {{site.api}}/flutter/foundation/Listenable-class.html
 [`ValueListenableBuilder`]: {{site.api}}/flutter/widgets/ValueListenableBuilder-class.html
 [`ValueListenable`]: {{site.api}}/flutter/foundation/ValueListenable-class.html

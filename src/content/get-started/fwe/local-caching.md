@@ -12,7 +12,7 @@ next:
 Now that you've learned about how to load data from servers
 over the network, your Flutter app should feel more alive.
 However, just because you *can* load data from remote servers
-doesn't mea you always *should*. Sometimes, it's better to
+doesn't mean you always *should*. Sometimes, it's better to
 re-render the data you received from the previous network
 request rather than repeat it and make your user wait until
 it completes again. This technique of retaining application
@@ -217,7 +217,7 @@ use the [`cached_network_image` package][].
 * Video: [Package of the Week: `cached_network_image`][]
 
 {% comment %}
-[PENDING: My understanding is that we now recommend `Image.network` instead of cache_network_image.
+TODO: My understanding is that we now recommend `Image.network` instead of cache_network_image.
 {% endcomment %}
 
 [`cached_network_image` package]: {{site.pub-pkg}}/cached_network_image
