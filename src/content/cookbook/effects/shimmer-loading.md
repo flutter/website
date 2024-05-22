@@ -462,7 +462,7 @@ The `transform` property accepts a `GradientTransform` instance.
 Define a class called `_SlidingGradientTransform` that implements 
 `GradientTransform` to achieve the appearance of horizontal sliding.
 
-<?code-excerpt "lib/original_example.dart (SlidingGradientTransform)"?>
+<?code-excerpt "lib/original_example.dart (sliding-gradient-transform)"?>
 ```dart
 class _SlidingGradientTransform extends GradientTransform {
   const _SlidingGradientTransform({
@@ -483,7 +483,7 @@ in order to create the appearance of motion.
 To change the percentage, configure an
 [`AnimationController`][] in the `ShimmerState` class.
 
-<?code-excerpt "lib/original_example.dart (ShimmerStateAnimation)" replace="/\/\/ code-excerpt-closing-bracket/}/g"?>
+<?code-excerpt "lib/original_example.dart (shimmer-state-animation)" replace="/\/\/ code-excerpt-closing-bracket/}/g"?>
 ```dart
 class ShimmerState extends State<Shimmer> with SingleTickerProviderStateMixin {
   late AnimationController _shimmerController;
@@ -507,7 +507,7 @@ class ShimmerState extends State<Shimmer> with SingleTickerProviderStateMixin {
 Apply the `_SlidingGradientTransform` to the `gradient`
 by using the `_shimmerController`'s `value` as the `slidePercent`.
 
-<?code-excerpt "lib/original_example.dart (LinearGradient)"?>
+<?code-excerpt "lib/original_example.dart (linear-gradient)"?>
 ```dart
 LinearGradient get gradient => LinearGradient(
       colors: widget.linearGradient.colors,
@@ -527,7 +527,7 @@ is happening.
 Expose the `_shimmerController` from `ShimmerState`
 as a [`Listenable`][].
 
-<?code-excerpt "lib/original_example.dart (shimmerChanges)"?>
+<?code-excerpt "lib/original_example.dart (shimmer-changes)"?>
 ```dart
 Listenable get shimmerChanges => _shimmerController;
 ```
@@ -536,7 +536,7 @@ In `ShimmerLoading`, listen for changes to the ancestor
 `ShimmerState`'s `shimmerChanges` property,
 and repaint the shimmer gradient.
 
-<?code-excerpt "lib/original_example.dart (ShimmerLoadingState)" replace="/\/\/ code-excerpt-closing-bracket/}/g"?>
+<?code-excerpt "lib/original_example.dart (shimmer-loading-state)" replace="/\/\/ code-excerpt-closing-bracket/}/g"?>
 ```dart
 class _ShimmerLoadingState extends State<ShimmerLoading> {
   Listenable? _shimmerChanges;
@@ -562,7 +562,7 @@ class _ShimmerLoadingState extends State<ShimmerLoading> {
   void _onShimmerChange() {
     if (widget.isLoading) {
       setState(() {
-        // update the shimmer painting.
+        // Update the shimmer painting.
       });
     }
   }
@@ -576,7 +576,7 @@ on and off as the content loads.
 
 ## Interactive example
 
-<?code-excerpt "lib/original_example.dart"?>
+<?code-excerpt "lib/original_example.dart" remove="code-excerpt-closing-bracket"?>
 ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
@@ -721,7 +721,6 @@ class ShimmerState extends State<Shimmer> with SingleTickerProviderStateMixin {
     _shimmerController.dispose();
     super.dispose();
   }
-// code-excerpt-closing-bracket
 
   LinearGradient get gradient => LinearGradient(
         colors: widget.linearGradient.colors,
@@ -741,7 +740,7 @@ class ShimmerState extends State<Shimmer> with SingleTickerProviderStateMixin {
     required RenderBox descendant,
     Offset offset = Offset.zero,
   }) {
-    final shimmerBox = context.findRenderObject() as RenderBox;
+    final shimmerBox = context.findRenderObject() as RenderBox?;
     return descendant.localToGlobal(offset, ancestor: shimmerBox);
   }
 
@@ -804,11 +803,10 @@ class _ShimmerLoadingState extends State<ShimmerLoading> {
   void _onShimmerChange() {
     if (widget.isLoading) {
       setState(() {
-        // update the shimmer painting.
+        // Update the shimmer painting.
       });
     }
   }
-// code-excerpt-closing-bracket
 
   @override
   Widget build(BuildContext context) {
