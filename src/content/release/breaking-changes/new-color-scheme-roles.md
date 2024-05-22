@@ -69,7 +69,7 @@ Code after migration:
 ```dart
 ColorScheme.fromSeed(
     seedColor: Color(0xFF0000FF), // Bright blue
-    schemeVariant: FromSeedVariant.fidelity,
+    dynamicSchemeVariant: DynamicSchemeVariant.fidelity,
 )
 ```
 
