@@ -8,7 +8,7 @@
 {% case include.devos %}
 {% when 'Windows' -%}
    {% assign terminal='PowerShell' %}
-   {% assign prompt='C:\>' %}
+   {% assign prompt='PS C:\>' %}
 {% when "macOS" -%}
    {% assign terminal='your Terminal' %}
    {% assign prompt='$' %}
