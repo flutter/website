@@ -74,6 +74,7 @@
       { "source": "/packages-and-plugins/happy-paths/recommended", "destination": "/packages-and-plugins/favorites", "type": 301 },
       { "source": "/platform-plugins*", "destination": "/packages-and-plugins/using-packages", "type": 301 },
       { "source": "/platform-services", "destination": "/platform-integration/platform-channels", "type": 301 },
+      { "source": "/predictive-back", "destination": "/release/breaking-changes/android-predictive-back#migration-guide", "type": 301 },
       { "source": "/reading-writing-files", "destination": "/cookbook/persistence/reading-writing-files", "type": 301 },
       { "source": "/reference/tutorials", "destination": "/codelabs", "type": 301 },
       { "source": "/release-notes", "destination": "/release/release-notes", "type": 301 },
