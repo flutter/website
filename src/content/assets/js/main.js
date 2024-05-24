@@ -3,9 +3,6 @@ document.addEventListener("DOMContentLoaded", function(_) {
   setupInlineToc();
   initFixedColumns();
   scrollSidebarIntoView();
-  initVideoModal();
-  initCarousel();
-  initSnackbar();
   initCookieNotice();
   setupCopyButtons();
 
@@ -154,11 +151,11 @@ function handleSearchShortcut(event) {
 }
 
 function initFixedColumns() {
-  var fixedColumnsSelector = '[data-fixed-column]';
-  var bannerSelector = '.site-banner';
-  var footerSelector = 'footer.site-footer';
-  var headerSelector = '.site-header';
-  var fixedColumns = $(fixedColumnsSelector);
+  const fixedColumnsSelector = '[data-fixed-column]';
+  const bannerSelector = '.site-banner';
+  const footerSelector = 'footer.site-footer';
+  const headerSelector = '.site-header';
+  const fixedColumns = $(fixedColumnsSelector);
 
   function adjustFixedColumns() {
     // only change values if the fixed col is visible
@@ -166,23 +163,24 @@ function initFixedColumns() {
       return;
     }
 
-    var headerHeight = $(headerSelector).outerHeight();
-    var bannerVisibleHeight = 0;
+    const headerHeight = $(headerSelector).outerHeight();
+    let bannerVisibleHeight = 0;
     // First, make sure the banner element even exists on the page.
-    if ($(bannerSelector).length > 0) {
-      var bannerHeight = $(bannerSelector).outerHeight();
-      var bannerOffset = $(bannerSelector).offset().top;
-      var bannerPosition = bannerOffset - $(window).scrollTop();
+    const siteBanner = $(bannerSelector);
+    if (siteBanner.length > 0) {
+      const bannerHeight = siteBanner.outerHeight();
+      const bannerOffset = siteBanner.offset().top;
+      const bannerPosition = bannerOffset - $(window).scrollTop();
       bannerVisibleHeight =
         Math.max(bannerHeight - (headerHeight - bannerPosition), 0);
     }
-    var topOffset = headerHeight + bannerVisibleHeight;
+    const topOffset = headerHeight + bannerVisibleHeight;
 
-    var footerOffset = $(footerSelector).offset().top;
-    var footerPosition = footerOffset - $(window).scrollTop();
-    var footerVisibleHeight = $(window).height() - footerPosition;
+    const footerOffset = $(footerSelector).offset().top;
+    const footerPosition = footerOffset - $(window).scrollTop();
+    const footerVisibleHeight = $(window).height() - footerPosition;
 
-    var fixedColumnsMaxHeight = $(window).height() - topOffset - footerVisibleHeight;
+    const fixedColumnsMaxHeight = $(window).height() - topOffset - footerVisibleHeight;
 
     $(fixedColumnsSelector).css('max-height', fixedColumnsMaxHeight);
     $(fixedColumnsSelector).css('top', topOffset);
@@ -198,65 +196,8 @@ function initFixedColumns() {
   }
 }
 
-function initVideoModal() {
-  var videoModalObject = $('[data-video-modal]');
-
-  if (videoModalObject.length) {
-    // there is a video modal in the DOM, load the YouTube API
-    var tag = document.createElement('script');
-    tag.src = 'https://www.youtube.com/iframe_api';
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-    window.onYouTubeIframeAPIReady = function () {
-      window.videoPlayer = new YT.Player('video-player-iframe');
-    };
-  }
-
-  videoModalObject.on('shown.bs.modal', function (event) {
-    if (window.videoPlayer) {
-      var videoId = event.relatedTarget.dataset.video;
-      window.videoPlayer.loadVideoById(videoId);
-      window.videoPlayer.playVideo();
-    }
-  });
-
-  videoModalObject.on('hide.bs.modal', function (event) {
-    if (window.videoPlayer) {
-      window.videoPlayer.stopVideo();
-    }
-  });
-}
-
-function initCarousel() {
-  var CAROUSEL_SELECTOR = '.carousel';
-  var CAROUSEL_ITEM_SELECTOR = '.carousel-item';
-  var carousel = $(CAROUSEL_SELECTOR);
-
-  carousel.on('slide.bs.carousel', function (e) {
-    carousel.find(CAROUSEL_ITEM_SELECTOR).eq(e.from).addClass('transition-out');
-  });
-  carousel.on('slid.bs.carousel', function (e) {
-    carousel.find(CAROUSEL_ITEM_SELECTOR).eq(e.from).removeClass('transition-out');
-  });
-}
-
-function initSnackbar() {
-  var SNACKBAR_SELECTOR = '.snackbar';
-  var SNACKBAR_ACTION_SELECTOR = '.snackbar__action';
-  var snackbars = $(SNACKBAR_SELECTOR);
-
-  snackbars.each(function () {
-    var snackbar = $(this);
-    snackbar.find(SNACKBAR_ACTION_SELECTOR).click(function () {
-      snackbar.fadeOut();
-    });
-  })
-}
-
 /**
- * Activate the cookie notice footer
- * @returns null
+ * Activate the cookie notice footer.
  */
 function initCookieNotice() {
   const notice = document.getElementById('cookie-notice');
@@ -281,7 +222,7 @@ function initCookieNotice() {
 function setupInlineToc() {
   // Collapsible inline TOC expand/collapse
   $(".site-toc--inline__toggle").on('click', function () {
-    var root = $("#site-toc--inline");
+    const root = $("#site-toc--inline");
     root.toggleClass('toc-collapsed');
   });
 }
