@@ -43,7 +43,7 @@ It provides a simple API to handle complex routing scenarios.
 3. To handle the routing, create a `GoRouter` object in the `main.dart` file:
 
     <?code-excerpt "lib/main.dart"?>
-    ```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+    ```dartpad run="true"
     import 'package:flutter/material.dart';
     import 'package:go_router/go_router.dart';
 
