@@ -109,7 +109,7 @@ function _highlight(
     const theme = attributes['theme'] ?? 'light';
     const title = attributes['title'] ?? 'Runnable Flutter sample';
     const runAutomatically = attributes['run'] ?? 'false';
-    return `<pre><code data-dartpad="true" data-embed="true" data-theme="${theme}" data-title="${title}" data-run="${runAutomatically}">${markdown.utils.escapeHtml(content)}</code></pre>`;
+    return `<pre><code data-dartpad="true" data-embed="true" data-theme="${theme}" title="${title}" data-run="${runAutomatically}">${markdown.utils.escapeHtml(content)}</code></pre>`;
   }
 
   const showLineNumbers = 'showLineNumbers' in attributes;
