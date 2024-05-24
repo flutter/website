@@ -15,3 +15,14 @@
 
 # Covers all configuration files for the website
 /*          @sfshaza2 @atsansone @parlough @khanhnwin @domesticmouse @MaryaBelanger
+
+# Covers iOS documentation content
+**/add-to-app/ios/ @jmagman
+**/deployment/ios.md @jmagman
+**/flavors.md @jmagman
+**/flavors/
+**/platform-integration/ios/ @jmagman
+
+# Covers macOS documentation content
+**/deployment/macos.md @jmagman
+**/platform-integration/macos/ @jmagman
