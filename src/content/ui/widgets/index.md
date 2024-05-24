@@ -19,7 +19,7 @@ you can also see all the widgets in the [widget index][].
                 <p class="card-text">{{section.description}}</p>
             </div>
             <div class="card-footer card-footer--transparent">
-                <a href="{{page.url}}{{section.id}}">Visit</a>
+                <a href="{{page.url}}{{section.id}}" aria-label="Navigate to the {{section.name}} widgets catalog">Visit</a>
             </div>
         </div>
     {% endif -%}
