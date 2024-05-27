@@ -174,12 +174,12 @@ remove these 2 chunks of code that use the legacy imperative apply method:
 Now apply the plugins again, but this time using the Plugin DSL syntax. At the
 very top of your file, add:
 
-```diff
-+plugins {
-+    id "com.android.application"
-+    id "kotlin-android"
-+    id "dev.flutter.flutter-gradle-plugin"
-+}
+```groovy
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+}
 ```
 
 Finally, if your `dependencies` block contains a dependency on `"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"`, 
