@@ -98,16 +98,19 @@ function _highlight(
   language,
   attributeString,
 ) {
-  // Specially handle DartPad snippets so that inject_embed can convert them.
-  if (language.includes('-dartpad')) {
-    return `<pre><code data-dartpad="true" data-embed="true" data-theme="light">${markdown.utils.escapeHtml(content)}</code></pre>`;
-  }
-
   if (language.includes('diff2html')) {
     return diff2html.html(content, {drawFileList: false});
   }
 
   const attributes = _parseAttributes(attributeString);
+
+  // Specially handle DartPad snippets so that inject_embed can convert them.
+  if (language.includes('dartpad')) {
+    const theme = attributes['theme'] ?? 'light';
+    const title = attributes['title'] ?? 'Runnable Flutter sample';
+    const runAutomatically = attributes['run'] ?? 'false';
+    return `<pre><code data-dartpad="true" data-embed="true" data-theme="${theme}" title="${title}" data-run="${runAutomatically}">${markdown.utils.escapeHtml(content)}</code></pre>`;
+  }
 
   const showLineNumbers = 'showLineNumbers' in attributes;
   let startingLineNumber = 0;

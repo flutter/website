@@ -94,6 +94,7 @@ Future<int> _checkLinks({bool checkExternal = false}) async {
         ],
         stdout,
       );
+      await Future<void>.delayed(const Duration(seconds: 1));
       return result;
     } catch (e, stackTrace) {
       stderr.writeln('Error: linkcheck failed to execute properly!');
@@ -103,6 +104,7 @@ Future<int> _checkLinks({bool checkExternal = false}) async {
     }
   } finally {
     print('Shutting down Firebase hosting emulator...');
+    emulatorProcess.kill();
     emulatorProcess.kill(ProcessSignal.sigkill);
     print('Done!\n');
   }

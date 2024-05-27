@@ -1,5 +1,5 @@
 <?code-excerpt "animation/implicit/opacity5/lib/main.dart"?>
-```run-dartpad:theme-light:mode-flutter:split-60:width-100%:height-532px:ga_id-fade_in_complete
+```dartpad
 // Copyright 2019 the Dart project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license
 // that can be found in the LICENSE file.
