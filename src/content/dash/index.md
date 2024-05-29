@@ -148,9 +148,7 @@ Dash 2.0 and 2.1
   <iframe width="560" height="315" src="{{site.yt.embed}}/oyy_1CjNdBU" title="Building DashCast, a Flutter-based podcast app" {{site.yt.set}}></iframe>
   <iframe width="560" height="315" src="{{site.yt.embed}}/dsiLVNDJ3t0" title="Revisiting DashCast, a Flutter-based podcast app" {{site.yt.set}}></iframe>
 
-<br>
-![Born to Hot Reload jacket](/assets/images/dash/ShamsDashJacket.png){:width="35%"}
-<br>
+   ![Born to Hot Reload jacket](/assets/images/dash/ShamsDashJacket.png){:width="35%"}
 
 [Flutter Interact]: {{site.yt.playlist}}PLjxrf2q8roU0o0wKRJTjyN0pSUA6TI8lg
 [Instagram account]: https://www.instagram.com/dash_the_dartlang_plushy/
