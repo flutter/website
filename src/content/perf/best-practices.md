@@ -322,7 +322,7 @@ You have a couple options for avoiding the intrinsic pass:
 * Choose a particular cell to be the
   "anchor" cell&mdash;all cells will be
   sized relative to this cell.
-  Write a custom render object that
+  Write a custom [`RenderObject`][] that
   positions the child anchor first and then lays
   out the other children around it.
 
@@ -436,6 +436,7 @@ For more performance info, check out the following resources:
 * [Child elements' lifecycle][] and how to load them efficiently,
   in the ListView API page
 * [Performance considerations][] of a `StatefulWidget`
+* [Best practices for optimizing Flutter web loading speed][best-practices-medium]
 
 [Child elements' lifecycle]: {{site.api}}/flutter/widgets/ListView-class.html#child-elements-lifecycle
 [`CustomPainter`]: {{site.api}}/flutter/rendering/CustomPainter-class.html
@@ -443,3 +444,4 @@ For more performance info, check out the following resources:
 [Performance optimizations]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html#performance-optimizations
 [Performance considerations for opacity animation]: {{site.api}}/flutter/widgets/Opacity-class.html#performance-considerations-for-opacity-animation
 [`RenderObject`]: {{site.api}}/flutter/rendering/RenderObject-class.html
+[best-practices-medium]: https://medium.com/flutter/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c
