@@ -14,16 +14,15 @@ and preparation of apps for distribution.
 The Linux programming interface,
 comprising library functions and system calls,
 is designed around the C language and ABI.
-Fortunately, Dart provides the `dart:ffi` package.
-This package enables Dart programs
-to call into C libraries.
+Fortunately, Dart provides the `dart:ffi` package,
+which enables Dart programs to call into C libraries.
 
 Foreign Function Interfaces (FFI) allow Flutter apps to perform the
 following with native libraries:
 
 * allocate native memory with `malloc` or `calloc`
-* support pointers, structs and callbacks,
-* support Application Binary Interface (ABI) types like `long` and `size_t`.
+* support pointers, structs, and callbacks
+* support Application Binary Interface (ABI) types like `long` and `size_t`
 
 To learn more about calling C libraries from Flutter,
 consult [C interop using `dart:ffi`][].
@@ -54,8 +53,8 @@ The executable binary can be found in your project under
 Alongside your executable binary in the `bundle` directory,
 you can find two directories:
 
-* `lib` which contains the required `.so` library files
-* `data` which contains the application's data assets, such as fonts or images
+* `lib` contains the required `.so` library files
+* `data` contains the application's data assets, such as fonts or images
 
 In addition to these files, your application also relies on various
 operating system libraries against which it's been compiled.
