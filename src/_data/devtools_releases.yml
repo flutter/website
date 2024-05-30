@@ -2,6 +2,7 @@
 # make sure to add the version number as an entry in this list.
 # This step might be eliminated in the future.
 releases:
+  - '2.36.0'
   - '2.35.0'
   - '2.34.1'
   - '2.33.0'
