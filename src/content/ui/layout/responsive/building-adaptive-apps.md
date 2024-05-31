@@ -1,6 +1,7 @@
 ---
 title: Building adaptive apps
 description: Some considerations and instructions on how to build adaptive apps to run on a variety of platforms.
+sitemap: false
 ---
 
 <?code-excerpt path-base="ui/adaptive_app_demos"?>

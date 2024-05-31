@@ -23,10 +23,29 @@ dd {
   margin-bottom: .75rem;
 }
 
-.card-deck.card-deck--responsive {
-  .card {
-    flex: 0 0 calc((100% / 3) - #{bootstrap.bs-spacer(4)});
-    margin-bottom: bootstrap.bs-spacer(4);
+img {
+  max-width: 100%;
+
+  &[width] {
+    width: auto;
+  }
+
+  &[width][height] {
+    height: auto;
+  }
+}
+
+.card-deck {
+  &.card-deck--responsive {
+    .card {
+      flex: 0 0 calc((100% / 3) - #{bootstrap.bs-spacer(4)});
+      margin-bottom: bootstrap.bs-spacer(4);
+    }
+  }
+
+  .card-body img {
+    width: 72px;
+    height: 72px;
   }
 }
 
