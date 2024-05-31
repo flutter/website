@@ -1,6 +1,6 @@
 ---
-title: Building Linux apps with Flutter
-description: Platform-specific considerations for building for Linux with Flutter.
+title: Build Linux apps with Flutter
+description: Platform-specific considerations when building for Linux with Flutter.
 toc: true
 short-title: Linux development
 ---
@@ -9,87 +9,85 @@ This page discusses considerations unique to building
 Linux apps with Flutter, including shell integration
 and preparation of apps for distribution.
 
-## Integrating with Linux
+## Integrate with Linux
 
 The Linux programming interface,
 comprising library functions and system calls,
 is designed around the C language and ABI.
-Fortunately, Dart provides `dart:ffi`,
-which is designed to enable Dart programs
-to efficiently call into C libraries.
-FFI provides Flutter apps with the ability to
-allocate native memory with `malloc` or `calloc`,
-support for pointers, structs and callbacks,
-and ABI types like `long` and `size_t`.
+Fortunately, Dart provides the `dart:ffi` package,
+which enables Dart programs to call into C libraries.
 
-For more information about calling C libraries
-from Flutter, see [C interop using `dart:ffi`][].
+Foreign Function Interfaces (FFI) allow Flutter apps to perform the
+following with native libraries:
 
-Many apps will benefit from using a package that
-wraps the underlying library
+* allocate native memory with `malloc` or `calloc`
+* support pointers, structs, and callbacks
+* support Application Binary Interface (ABI) types like `long` and `size_t`
+
+To learn more about calling C libraries from Flutter,
+consult [C interop using `dart:ffi`][].
+
+Many apps benefit from using a package that wraps the underlying library
 calls in a more convenient, idiomatic Dart API.
 [Canonical has built a series of packages][Canonical]
 with a focus on enabling Dart and Flutter on Linux,
 including support for desktop notifications,
 dbus, network management, and Bluetooth.
 
-More generally, many other [packages support Linux],
+In general, many other [packages support creating Linux apps][support-linux],
 including common packages such as [`url_launcher`],
-[`shared_preferences`], [`file_selector`], and
-[`path_provider`].
+[`shared_preferences`], [`file_selector`], and [`path_provider`].
 
 [C interop using `dart:ffi`]: {{site.dart-site}}/guides/libraries/c-interop
 [Canonical]: {{site.pub}}/publishers/canonical.com/packages
-[packages support Linux]: {{site.pub}}/packages?q=platform%3Alinux
+[support-linux]: {{site.pub}}/packages?q=platform%3Alinux
 [`url_launcher`]: {{site.pub-pkg}}/url_launcher
 [`shared_preferences`]: {{site.pub-pkg}}/shared_preferences
 [`file_selector`]: {{site.pub-pkg}}/file_selector
 [`path_provider`]: {{site.pub-pkg}}/path_provider
 
-## Preparing Linux apps for distribution
+## Prepare Linux apps for distribution
 
 The executable binary can be found in your project under
-`build/linux/<build mode>/bundle/`. Alongside your
-executable binary in the `bundle` directory there are
-two directories:
+`build/linux/x64/<build mode>/bundle/`.
+Alongside your executable binary in the `bundle` directory,
+you can find two directories:
 
 * `lib` contains the required `.so` library files
-* `data` contains the application's data assets,
-   such as fonts or images
+* `data` contains the application's data assets, such as fonts or images
 
-In addition to these files, your application also
-relies on various operating system libraries that
-it's been compiled against.
-You can see the full list by running `ldd`
-against your application. For example,
-assuming you have a Flutter desktop application
-called `linux_desktop_test`, you could inspect
-the system libraries it depends upon as follows:
+In addition to these files, your application also relies on various
+operating system libraries against which it's been compiled.
+To see the full list of libraries,
+use the `ldd` command on your application's directory.
+
+For example, assume you have a Flutter desktop application
+called `linux_desktop_test`.
+To inspect the its system library dependencies, use the following commands:
 
 ```console
 $ flutter build linux --release
 $ ldd build/linux/x64/release/bundle/linux_desktop_test
 ```
 
-To wrap up this application for distribution
-you need to include everything in the `bundle` directory,
-and make sure the Linux system you are installing
-it on has all of the system libraries required.
-This could be as simple as:
+To wrap up this application for distribution,
+include everything in the `bundle` directory
+and verify the target Linux system has all required system libraries.
+
+This might only require using the following command.
 
 ```console
 $ sudo apt-get install libgtk-3-0 libblkid1 liblzma5
 ```
 
-For information on publishing a Linux application
-to the [Snap Store], see
-[Build and release a Linux application to the Snap Store][].
+To learn how to publish a Linux application to the [Snap Store],
+consult [Build and release a Linux application to the Snap Store][].
 
 ## Additional resources
 
-To learn how to create Linux Debian (`.deb`) and RPM (`.rpm`) 
-builds of your Flutter desktop app, check out 
-the step-by-step [Linux packaging guide][linux_packaging_guide].
+To learn how to create Linux Debian (`.deb`) and RPM (`.rpm`)
+builds of your Flutter desktop app,
+consult the step-by-step [Linux packaging guide][linux_packaging_guide].
 
 [Snap Store]: https://snapcraft.io/store
 [Build and release a Linux application to the Snap Store]: /deployment/linux
