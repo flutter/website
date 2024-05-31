@@ -30,7 +30,7 @@
    {% assign prompt='$' %}
    {% assign dirdl='~/Downloads/' %}
    {% capture uz -%}
-   {{prompt}} {{unzip}} {{dirdl}}flutter_sdk_v1.0.0.zip \
+   {{prompt}} {{unzip}} {{dirdl}}Flutter\ v1.0.0\ stable.zip \
         -d {{path}}
    {%- endcapture %}
 {% else -%}
