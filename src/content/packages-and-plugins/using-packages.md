@@ -3,7 +3,7 @@ title: Using packages
 description: How to use packages in your Flutter app.
 ---
 
-<?code-excerpt path-base="development/plugin_api_migration"?>
+<?code-excerpt path-base="platform_integration/plugin_api_migration"?>
 
 Flutter supports using shared packages contributed by other developers
 to the Flutter and Dart ecosystems. This allows quickly building
@@ -385,7 +385,7 @@ To use this package:
 
 1. Open `lib/main.dart` and replace its full contents with:
 
-    <?code-excerpt "lib/css_colors.dart (CssColors)"?>
+    <?code-excerpt "lib/css_colors.dart (css-colors)"?>
     ```dart
     import 'package:css_colors/css_colors.dart';
     import 'package:flutter/material.dart';
@@ -448,7 +448,7 @@ To use this plugin:
 1. Open `lib/main.dart` and replace its full contents with the
    following:
 
-    <?code-excerpt "lib/url_launcher.dart (UrlLauncher)"?>
+    <?code-excerpt "lib/url_launcher.dart (url-launcher)"?>
     ```dart
     import 'package:flutter/material.dart';
     import 'package:path/path.dart' as p;

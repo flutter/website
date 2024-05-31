@@ -69,7 +69,7 @@ services like rendering surfaces, accessibility, and input; and manages the
 message event loop. The embedder is written in a language that is appropriate
 for the platform: currently Java and C++ for Android, Objective-C/Objective-C++
 for iOS and macOS, and C++ for Windows and Linux. Using the embedder, Flutter
-code can be integrated into an existing application as a module, or the code may
+code can be integrated into an existing application as a module, or the code might
 be the entire content of the application. Flutter includes a number of embedders
 for common target platforms, but [other embedders also
 exist](https://hover.build/blog/one-year-in/).
@@ -516,8 +516,9 @@ onto a screen.
 
 ### Flutter's rendering model
 
-You may be wondering: if Flutter is a cross-platform framework, then how can it
-offer comparable performance to single-platform frameworks?
+You might be wondering: if Flutter is a cross-platform framework,
+then how can it offer comparable performance to
+single-platform frameworks?
 
 It's useful to start by thinking about how traditional
 Android apps work. When drawing,
@@ -608,15 +609,17 @@ if (color != null)
 
 Correspondingly, the `Image` and `Text` widgets might insert child widgets such
 as `RawImage` and `RichText` during the build process. The eventual widget
-hierarchy may therefore be deeper than what the code represents, as in this
-case<sup><a href="#a2">2</a></sup>:
+hierarchy might therefore be deeper than what the code represents,
+as in this case<sup><a href="#a2">2</a></sup>:
 
 ![Render pipeline sequencing
 diagram](/assets/images/docs/arch-overview/widgets.png){:width="35%"}
 
-This explains why, when you examine the tree through a debug tool such as the
-[Flutter inspector](/tools/devtools/inspector), part of the
-Dart DevTools, you might see a structure that is considerably deeper than what
+This explains why, when you examine the tree through
+a debug tool such as the
+[Flutter inspector](/tools/devtools/inspector),
+part of the Flutter/Dart DevTools,
+you might see a structure that is considerably deeper than what
 is in your original code.
 
 During the build phase, Flutter translates the widgets expressed in code into a

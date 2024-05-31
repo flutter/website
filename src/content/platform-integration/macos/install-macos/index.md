@@ -1,19 +1,18 @@
 ---
-title: Add macOS devtools for Flutter
+title: Add macOS as a target platform for Flutter
 description: Configure your system to develop Flutter for macOS.
-short-title: Add macOS desktop DevTools
-target-list: [iOS, Android, Web]
+short-title: Set up macOS development
+target-list: [iOS, Android, web]
 ---
 
-To choose the guide to add macOS devtools to your Flutter configuration,
-click the [Getting Started path][] you followed.
+To set up your development environment for targeting macOS,
+choose the guide that corresponds to the [Getting Started path][] you followed,
+or the platform you already have set up.
 
 <div class="card-deck mb-8">
 {% for target in target-list %}
-{% assign targetlink='/platform-integration/macos/install-macos/install-macos-from-' | append: target | downcase %}
-  <a class="card card-app-type card-macos"
-     id="install-{{target | downcase}}"
-     href="{{targetlink}}">
+{% assign targetLink = '/platform-integration/macos/install-macos/install-macos-from-' | append: target | downcase %}
+  <a class="card card-app-type card-macos" id="install-{{target | downcase}}" href="{{targetLink}}">
     <div class="card-body">
       <header class="card-title text-center m-0">
         <span class="d-block h1">
@@ -29,7 +28,7 @@ click the [Getting Started path][] you followed.
           <span class="material-symbols">add</span>
           <span class="material-symbols">laptop_mac</span>
         </span>
-        <span class="text-muted">
+        <span class="text-muted d-block">
         Make {{ target }} and macOS desktop apps
         </span>
       </header>

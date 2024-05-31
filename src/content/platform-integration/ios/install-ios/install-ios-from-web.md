@@ -1,5 +1,5 @@
 ---
-title: Add iOS devtools to Flutter from web start
+title: Add iOS as a target platform from web start
 description: Configure your system to develop Flutter mobile apps on iOS.
 short-title: Starting from web
 ---

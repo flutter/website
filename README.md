@@ -188,11 +188,23 @@ following the instructions in [Get the prerequisites](#get-the-prerequisites).
    dart pub get
    ```
 
-3. Install [`pnpm`][] using your preferred [installation method][pnpm-install].
-   `pnpm` is an alternative, efficient package manager for npm packages.
-   If you already have `pnpm`, verify you have the latest stable version.
-   We recommend using [`corepack`][] to install and manage `pnpm` versions,
-   since it is bundled with most installations of Node.
+3. Install `pnpm`, an alternative, efficient package manager for
+   npm packages. If you already have `pnpm`, verify you have the
+   latest stable version.
+
+   ```console
+   node --version
+   ```
+
+   If you do not already have `pnpm` installed, we recommend
+   using [`corepack`][] to install and manage `pnpm` versions,
+   since `corepack` is bundled with most installations of
+   Node. If you installed `node` using Homebrew, you'll need
+   to install corepack separately:
+
+   ```console
+   brew install corepack
+   ```
 
    If you haven't used `corepack` before, you'll need to
    first enable it with `corepack enable`.
@@ -200,9 +212,12 @@ following the instructions in [Get the prerequisites](#get-the-prerequisites).
    root directory of the repository, run `corepack install`:
 
    ```console
-   corepack enable
+   corepack enable;
    corepack install
    ```
+
+   To install [`pnpm`][] without using `corepack`, you
+   can use your preferred [installation method][pnpm-install].
 
 4. Once you have `pnpm` installed and setup,
    fetch the site's npm dependencies using `pnpm install`.

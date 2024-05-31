@@ -15,3 +15,14 @@
 
 # Covers all configuration files for the website
 /*          @sfshaza2 @atsansone @parlough @khanhnwin @domesticmouse @MaryaBelanger
+
+# Covers iOS documentation content
+**/add-to-app/ios/ @jmagman @atsansone @parlough @sfshaza2 @domesticmouse @MaryaBelanger
+**/deployment/ios.md @jmagman @atsansone @parlough @sfshaza2 @domesticmouse @MaryaBelanger
+**/flavors.md @jmagman @atsansone @parlough @sfshaza2 @domesticmouse @MaryaBelanger
+**/flavors/ @jmagman @atsansone @parlough @sfshaza2 @domesticmouse @MaryaBelanger
+**/platform-integration/ios/ @jmagman @atsansone @parlough @sfshaza2 @domesticmouse @MaryaBelanger
+
+# Covers macOS documentation content
+**/deployment/macos.md @jmagman @atsansone @parlough @sfshaza2 @domesticmouse @MaryaBelanger
+**/platform-integration/macos/ @jmagman @atsansone @parlough @sfshaza2 @domesticmouse @MaryaBelanger

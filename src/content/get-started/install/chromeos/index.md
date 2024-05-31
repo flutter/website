@@ -28,7 +28,7 @@ js: [{url: '/assets/js/temp/chromeos-install-redirector.js'}]
         <span class="text-muted text-nowrap">{{target}}</span>
         {% if icon == 'android' -%}
           <div class="card-subtitle">Recommended</div>
-        {% endif %}
+        {% endif -%}
       </header>
     </div>
   </a>
@@ -40,4 +40,4 @@ to run your first Flutter app.
 You can set up additional platforms later.
 _If you don't have a preference, choose **{{rec-target}}**._
 
-{% include docs/china-notice.md %}
+{% render docs/china-notice.md %}

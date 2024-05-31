@@ -4,7 +4,7 @@ subtitle: Where to look when your Flutter app drops frames in the UI.
 description: Diagnosing UI performance issues in Flutter.
 ---
 
-{% include docs/performance.md %}
+{% render docs/performance.md %}
 
 :::secondary What you'll learn
 * Flutter aims to provide 60 frames per second (fps) performance,
@@ -81,8 +81,9 @@ For example, profile mode provides tracing information to the
 profiling tools.
 
 :::note
-DevTools can't connect to a Flutter web app running
-in profile mode. Use Chrome DevTools to
+Dart/Flutter DevTools can't connect to a
+Flutter web app running in profile mode.
+Use Chrome DevTools to
 [generate timeline events][] for a web app.
 :::
 
@@ -312,18 +313,10 @@ The [`saveLayer`][] method is one of the most expensive methods in
 the Flutter framework. It's useful when applying post-processing
 to the scene, but it can slow your app and should be avoided if
 you don't need it.  Even if you don't call `saveLayer` explicitly,
-implicit calls might happen on your behalf. You can check whether
-your scene is using `saveLayer` with the
-[`PerformanceOverlayLayer.checkerboardOffscreenLayers`][] switch.
+implicit calls might happen on your behalf, for example when specyifying
+[`Clip.antiAliasWithSaveLayer`][] (typically as a `clipBehavior`).
 
-{% comment %}
-[TODO: Document disabling the graphs and checkerboardRasterCacheImages.
-Flutter inspector doesn't seem to support this?]
-{% endcomment %}
-
-Once the switch is enabled, run the app and look for any images
-that are outlined with a flickering box. The box flickers from
-frame to frame if a new frame is being rendered.  For example,
+For example,
 perhaps you have a group of objects with opacities that are rendered
 using `saveLayer`. In this case, it's probably more performant to
 apply an opacity to each individual widget, rather than a parent
@@ -344,7 +337,7 @@ ask yourself these questions:
 * Can any of these calls be eliminated?
 * Can I apply the same effect to an individual element instead of a group?
 
-[`PerformanceOverlayLayer.checkerboardOffscreenLayers`]: {{site.api}}/flutter/rendering/PerformanceOverlayLayer/checkerboardOffscreenLayers.html
+[`Clip.antiAliasWithSaveLayer`]: {{site.api}}/flutter/dart-ui/Clip.html
 
 #### Checking for non-cached images
 
@@ -365,28 +358,6 @@ they are easier to render in subsequent frames.
 _Because raster cache entries are expensive to
 construct and take up loads of GPU memory,
 cache images only where absolutely necessary._
-
-You can see which images are being cached by enabling the
-[`PerformanceOverlayLayer.checkerboardRasterCacheImages`][] switch.
-
-{% comment %}
-[TODO: Document how to do this, either via UI or programmatically.
-At this point, disable the graphs and checkerboardOffScreenLayers.]
-{% endcomment %}
-
-Run the app and look for images rendered with a randomly colored
-checkerboard, indicating that the image is cached.
-As you interact with the scene, the checkerboarded images
-should remain constant&mdash;you don't want to see flickering,
-which would indicate that the cached image is being re-cached.
-
-In most cases, you want to see checkerboards on static images,
-but not on non-static images.  If a static image isn't cached,
-you can cache it by placing it into a [`RepaintBoundary`][]
-widget. Though the engine might still ignore a repaint
-boundary if it thinks the image isn't complex enough.
-
-[`PerformanceOverlayLayer.checkerboardRasterCacheImages`]: {{site.api}}/flutter/rendering/PerformanceOverlayLayer/checkerboardRasterCacheImages.html
 
 ### Viewing the widget rebuild profiler
 

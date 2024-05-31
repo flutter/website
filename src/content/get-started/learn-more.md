@@ -6,6 +6,16 @@ prev:
   path: /get-started/codelab
 ---
 
+:::note
+We are experimenting with more opinionated documentation
+for the new Flutter developer. You can find it at the
+[Flutter first week experience][].
+Each page has a survey link at the bottom,
+and we'd love your feedback!
+:::
+
+[Flutter first week experience]: /get-started/fwe
+
 Learn more about the Flutter framework from the following pages:
 
 ## Flutter basics
@@ -32,7 +42,7 @@ Learn more about the Flutter framework from the following pages:
 * [The Complete Flutter Developer Bootcamp Using Dart][]
 * [Udacity online Flutter training][]
 
-Reach out to us at our [mailing list][]. We'd love to hear from you!
+Reach out to us on our [mailing list][]. We'd love to hear from you!
 
 Happy Fluttering!
 

@@ -1,5 +1,5 @@
 ---
-title: Debugging Flutter apps
+title: Debug Flutter apps
 description: How to debug your Flutter app.
 ---
 

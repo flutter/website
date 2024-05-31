@@ -64,7 +64,7 @@ publish_to: none
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.3.0
+  sdk: ^3.4.0
 
 dependencies:
   [!flutter:!]       # Required for every Flutter project
@@ -78,7 +78,7 @@ dev_dependencies:
   [!flutter_test:!]
     [!sdk: flutter!] # Required for a Flutter project that includes tests
 
-  [!flutter_lints: ^3.0.1!] # Contains a set of recommended lints for Flutter code
+  [!flutter_lints: ^4.0.0!] # Contains a set of recommended lints for Flutter code
 
 [!flutter:!]
 

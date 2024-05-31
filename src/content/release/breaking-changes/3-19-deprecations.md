@@ -459,7 +459,7 @@ method executes the same functionality as `release` did now.
 Code before migration:
 
 ```dart
-KeepAliveHandle handle = KeepAliveHAndle();
+KeepAliveHandle handle = KeepAliveHandle();
 handle.release();
 handle.dispose();
 ```
@@ -467,7 +467,7 @@ handle.dispose();
 Code after migration:
 
 ```dart
-KeepAliveHandle handle = KeepAliveHAndle();
+KeepAliveHandle handle = KeepAliveHandle();
 handle.dispose();
 ```
 
@@ -711,6 +711,17 @@ Relevant PRs:
 [#79310]: {{site.repo.flutter}}/pull/79310
 [#143983]: {{site.repo.flutter}}/pull/143983
 
+### `Android Platform Views on API 22 and below `
+
+Supported by Flutter Fix: no
+
+As of Flutter 3.0 platform views require api 23 or higher. In Flutter 3.19 we now throw UnsupportedOperationException 
+when using platform views on android devices runing api level 22 and below. 
+
+**Migration guide**
+
+Set minimum api level to 23 (or higher) or check the android api level before displaying a platform view. 
+
 ---
 
 The [previously announced][] deprecations for context menus, relating to `ToolbarOptions`
@@ -725,4 +736,4 @@ be announced again when the time comes.
 
 ## Timeline
 
-In stable release: TBD
+In stable release: 3.22.0

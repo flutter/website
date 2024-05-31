@@ -69,7 +69,7 @@ class _SignUpFormState extends State<SignUpForm> {
     Navigator.of(context).pushNamed('/welcome');
   }
 
-  // #docregion updateFormProgress
+  // #docregion update-form-progress
   void _updateFormProgress() {
     var progress = 0.0;
     final controllers = [
@@ -78,27 +78,27 @@ class _SignUpFormState extends State<SignUpForm> {
       _usernameTextController
     ];
 
-    // #docregion forLoop
+    // #docregion for-loop
     for (final controller in controllers) {
       if (controller.value.text.isNotEmpty) {
         progress += 1 / controllers.length;
       }
     }
-    // #enddocregion forLoop
+    // #enddocregion for-loop
 
     setState(() {
       _formProgress = progress;
     });
   }
-  // #enddocregion updateFormProgress
+  // #enddocregion update-form-progress
 
   @override
   Widget build(BuildContext context) {
-    // #docregion onChanged
+    // #docregion on-changed
     return Form(
       onChanged: _updateFormProgress, // NEW
       child: Column(
-        // #enddocregion onChanged
+        // #enddocregion on-changed
         mainAxisSize: MainAxisSize.min,
         children: [
           LinearProgressIndicator(value: _formProgress),
@@ -124,16 +124,16 @@ class _SignUpFormState extends State<SignUpForm> {
               decoration: const InputDecoration(hintText: 'Username'),
             ),
           ),
-          // #docregion onPressed
+          // #docregion on-pressed
           TextButton(
             style: ButtonStyle(
-              foregroundColor: MaterialStateProperty.resolveWith((states) {
-                return states.contains(MaterialState.disabled)
+              foregroundColor: WidgetStateProperty.resolveWith((states) {
+                return states.contains(WidgetState.disabled)
                     ? null
                     : Colors.white;
               }),
-              backgroundColor: MaterialStateProperty.resolveWith((states) {
-                return states.contains(MaterialState.disabled)
+              backgroundColor: WidgetStateProperty.resolveWith((states) {
+                return states.contains(WidgetState.disabled)
                     ? null
                     : Colors.blue;
               }),
@@ -144,7 +144,7 @@ class _SignUpFormState extends State<SignUpForm> {
             // #enddocregion ternary
             child: const Text('Sign up'),
           ),
-          // #enddocregion onPressed
+          // #enddocregion on-pressed
         ],
       ),
     );

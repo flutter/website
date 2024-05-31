@@ -10,6 +10,7 @@
       permalink: /get-started/learn-more
     - divider
     - title: From another platform?
+      permalink: /get-started/flutter-for
       children:
         - title: Flutter for Android devs
           permalink: /get-started/flutter-for/android-devs
@@ -59,36 +60,84 @@
 
 - title: App solutions
   children:
+    - title: AI
+      children:
+      - title: Overview
+        permalink: /resources/ai-overview
+      - title: Get started with the Gemini API
+        permalink: https://ai.google.dev/gemini-api/docs/get-started/dart
+      - title: Google AI Dart SDK (pub.dev)
+        permalink: https://pub.dev/packages/google_generative_ai
+      - title: Build with Google AI Dart SDK (video)
+        permalink: https://www.youtube.com/watch?v=1AuzJEiHjO4
+    - title: Firebase & Firestore
+      children:
+      - title: Overview
+        permalink: /data-and-backend/firebase
+      - title: Discover Firebase for Flutter
+        permalink: https://firebase.google.com/docs/flutter
+      - title: Get to know Firebase for Flutter
+        permalink: https://www.youtube.com/watch?v=wUSkeTaBonA
+      - title: Add a user authentication flow to a Flutter app using FirebaseUI
+        permalink: https://firebase.google.com/codelabs/firebase-auth-in-flutter-apps
+      - title: Get to know Firebase for web
+        permalink: https://firebase.google.com/codelabs/firebase-get-to-know-web
     - title: Games
       children:
         - title: Overview
           permalink: /resources/games-toolkit
         - title: Add achievements and leaderboards
           permalink: /cookbook/games/achievements-leaderboard
+        - title: Build leaderboards with Firestore
+          permalink: https://firebase.google.com/codelabs/build-leaderboards-with-firestore#0
         - title: Add advertising
           permalink: /cookbook/plugins/google-mobile-ads
         - title: Add multiplayer support
           permalink: /cookbook/games/firestore-multiplayer
         - title: Add in-app purchases
-          permalink: https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases#0
+          permalink: https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases
         - title: Add user authentication
-          permalink: https://firebase.google.com/codelabs/firebase-auth-in-flutter-apps#0
+          permalink: https://firebase.google.com/codelabs/firebase-auth-in-flutter-apps
         - title: Debug using Crashlytics
           permalink: https://firebase.google.com/docs/crashlytics/get-started?platform=flutter
-    - title: News
-      children:
-        - title: Build a news app
-          permalink: /resources/news-toolkit
+        - title: Intro to Flame with Flutter
+          permalink: https://codelabs.developers.google.com/codelabs/flutter-flame-brick-breaker
     - title: Monetization
       children:
-        - title: Overview
-          permalink: https://flutter.dev/monetization
-        - title: Add in-app purchases
-          permalink: https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases#0
+        - title: Advertising
+          children:
+          - title: Ads overview
+            permalink: /resources/ads-overview
+          - title: Add advertising
+            permalink: /cookbook/plugins/google-mobile-ads
+          - title: Add AdMob ads to your Flutter app
+            permalink: https://codelabs.developers.google.com/codelabs/admob-ads-in-flutter
+          - title: Add an AdMob banner and native inline ads
+            permalink: https://codelabs.developers.google.com/codelabs/admob-inline-ads-in-flutter
+          - title: Google AdMob mediation
+            permalink: https://developers.google.com/admob/flutter/mediation
+        - title: In-app purchases
+          children:
+          - title: In-app purchases overview
+            permalink: /resources/in-app-purchases-overview
+          - title: Add in-app purchases
+            permalink: https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases
+        - title: Payments
+          children:
+          - title: Payments overview
+            permalink: /resources/payments-overview
+          - title: Google pay package
+            permalink: https://pub.dev/packages/pay
     - title: Maps
       children:
         - title: Add maps to your app
           permalink: https://developers.google.com/maps/flutter-package
+        - title: Add Google maps to a Flutter app
+          permalink: https://codelabs.developers.google.com/codelabs/google-maps-in-flutter
+    - title: News
+      children:
+        - title: Build a news app
+          permalink: /resources/news-toolkit
 
 - divider
 - header: User interface
@@ -131,18 +180,26 @@
           permalink: /cookbook/lists/floating-app-bar
         - title: Create a scrolling parallax effect
           permalink: /cookbook/effects/parallax-scrolling
-    # TODO(parlough): Rename this to 'Responsive design'
-    # and add 'Adaptive design' under 'Design & theming'.
-    - title: Adaptive design
-      permalink: /ui/layout/responsive
-      children:
-        - title: Adaptive and responsive app design
-          permalink: /ui/layout/responsive/adaptive-responsive
-        - title: Build an adaptive app
-          permalink: /ui/layout/responsive/building-adaptive-apps
-        - title: Update app UI based on orientation
-          permalink: /cookbook/design/orientation
-      
+- title: Adaptive & responsive design
+  permalink: /ui/adaptive-responsive
+  children:
+    - title: Overview
+      permalink: /ui/adaptive-responsive
+      match-page-url-exactly: true
+    - title: General approach
+      permalink: /ui/adaptive-responsive/general
+    - title: SafeArea & MediaQuery
+      permalink: /ui/adaptive-responsive/safearea-mediaquery
+    - title: Large screens & foldables
+      permalink: /ui/adaptive-responsive/large-screens
+    - title: User input & accessibility
+      permalink: /ui/adaptive-responsive/input
+    - title: Capabilities & policies
+      permalink: /ui/adaptive-responsive/capabilities
+    - title: Best practices
+      permalink: /ui/adaptive-responsive/best-practices
+    - title: Additional resources
+      permalink: /ui/adaptive-responsive/more-info
 - title: Design & theming
   permalink: /ui/design
   children:
@@ -224,6 +281,8 @@
       permalink: /cookbook/images/fading-in-images
     - title: Play and pause a video
       permalink: /cookbook/plugins/play-video
+    - title: Transforming assets at build time
+      permalink: /ui/assets/asset-transformation
 
 - title: Navigation & routing
   permalink: /ui/navigation
@@ -340,6 +399,11 @@
           permalink: /cookbook/persistence/sqlite
     - title: Firebase
       permalink: /data-and-backend/firebase
+      children:
+        - title: Overview
+          permalink: /data-and-backend/firebase
+        - title: Add Firebase to your Flutter app
+          permalink: https://firebase.google.com/docs/flutter/setup?platform=ios
     - title: Google APIs
       permalink: /data-and-backend/google-apis
 
@@ -413,6 +477,8 @@
           permalink: /platform-integration/web/install-web
         - title: Build a web app
           permalink: /platform-integration/web/building
+        - title: WebAssembly
+          permalink: /platform-integration/web/wasm
         - title: Web FAQ
           permalink: /platform-integration/web/faq
         - title: Web renderers
@@ -599,11 +665,11 @@
       children:
         - title: Overview
           permalink: /tools/devtools/overview
-        - title: Install from Android Studio & IntelliJ
+        - title: Run from Android Studio & IntelliJ
           permalink: /tools/devtools/android-studio
-        - title: Install from VS Code
+        - title: Run from VS Code
           permalink: /tools/devtools/vscode
-        - title: Install from command line
+        - title: Run from command line
           permalink: /tools/devtools/cli
         - title: Flutter inspector
           permalink: /tools/devtools/inspector
@@ -625,6 +691,8 @@
           permalink: /tools/devtools/app-size
         - title: DevTools extensions
           permalink: /tools/devtools/extensions
+        - title: Validate deep links
+          permalink: /tools/devtools/deep-links
         - title: Release notes
           permalink: /tools/devtools/release-notes
     - title: SDK overview

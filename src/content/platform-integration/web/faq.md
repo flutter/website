@@ -35,6 +35,11 @@ consider separating your primary application experience—created in Flutter—f
 your landing page, marketing content, and help content—created using
 search-engine optimized HTML.
 
+That said, as mentioned in the [roadmap][], the Flutter team plans to
+investigate search engine indexability of Flutter web. To that end, we built a
+small website containing [Hawaii-themed space stories][space_hawaii], hoping
+that search engines find and index this site.
+
 ### How do I create an app that also runs on the web?
 
 See [building a web app with Flutter][].
@@ -145,7 +150,7 @@ Not currently.
 [Analyzing performance]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance
 [building a web app with Flutter]: /platform-integration/web/building
 [Chrome DevTools]: {{site.developers}}/web/tools/chrome-devtools
-[Creating responsive apps]: /ui/layout/responsive/adaptive-responsive
+[Creating responsive apps]: /ui/adaptive-responsive
 [Debugging]: /tools/devtools/debugger
 [file an issue]: {{site.repo.flutter}}/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [Flutter DevTools]: /tools/devtools/overview
@@ -162,5 +167,7 @@ Not currently.
 [Web support for Flutter]: /platform-integration/web
 [web workers]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
 [run your web apps in any supported browser]: /platform-integration/web/building#create-and-run
-[Integration testing]: /testing/integration-tests#running-in-a-browser
+[Integration testing]: /testing/integration-tests#test-in-a-web-browser
 [documentation for conditional imports]: {{site.dart-site}}/guides/libraries/create-library-packages#conditionally-importing-and-exporting-library-files
+[roadmap]: {{site.github}}/flutter/flutter/wiki/Roadmap#web-platform
+[space_hawaii]: https://alien-hawaii-2024.web.app/

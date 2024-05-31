@@ -76,7 +76,7 @@ use `MediaQuery.of(context).orientation` instead of an
 ## Interactive example
 
 <?code-excerpt "lib/main.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-500px:split-60:ga_id-interactive_example
+```dartpad run="true"
 import 'package:flutter/material.dart';
 
 void main() {

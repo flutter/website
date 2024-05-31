@@ -3,6 +3,10 @@ import dashLightTheme from '../syntax/dash-light.js';
 
 import diff2html from "diff2html";
 
+const _terminalLanguages = {
+  'console': '$',
+};
+
 /**
  * Replaces the markdown-it code block renderer with our own that:
  *
@@ -94,16 +98,19 @@ function _highlight(
   language,
   attributeString,
 ) {
-  // Specially handle DartPad snippets so that inject_embed can convert them.
-  if (language.includes('-dartpad')) {
-    return `<pre><code data-dartpad="true" data-embed="true" data-theme="light">${markdown.utils.escapeHtml(content)}</code></pre>`;
-  }
-
   if (language.includes('diff2html')) {
     return diff2html.html(content, {drawFileList: false});
   }
 
   const attributes = _parseAttributes(attributeString);
+
+  // Specially handle DartPad snippets so that inject_embed can convert them.
+  if (language.includes('dartpad')) {
+    const theme = attributes['theme'] ?? 'light';
+    const title = attributes['title'] ?? 'Runnable Flutter sample';
+    const runAutomatically = attributes['run'] ?? 'false';
+    return `<pre><code data-dartpad="true" data-embed="true" data-theme="${theme}" title="${title}" data-run="${runAutomatically}">${markdown.utils.escapeHtml(content)}</code></pre>`;
+  }
 
   const showLineNumbers = 'showLineNumbers' in attributes;
   let startingLineNumber = 0;
@@ -122,7 +129,7 @@ function _highlight(
     ? _parseNumbersAndRanges(highlightLines)
     : null;
 
-  const noHighlight = 'noHighlight' in attributes
+  const noHighlight = 'noHighlight' in attributes;
 
   // Find the spans enclosed in `[!` and `!]` that we should mark
   // and remove them from the text.
@@ -152,7 +159,7 @@ function _highlight(
 
           const bodyChildren = [preElement];
 
-          if (!['plaintext', 'console', 'ps', 'diff'].includes(language)) {
+          if (!['plaintext', 'console', 'ps', 'diff', 'powershell'].includes(language)) {
             const languageText = _createSpanWithText(language, {
               class: 'code-block-language',
               title: `Language ${language}`,
@@ -232,6 +239,20 @@ function _highlight(
 
           if (linesToHighlight?.has(line)) {
             lineElement.properties['class'] += ' highlighted-line';
+          }
+
+          if (lineElement.children.length < 1) return;
+
+          if (language in _terminalLanguages) {
+            // Remove terminal command marker if present.
+            const firstSpan = lineElement.children[0];
+            const firstText = firstSpan.children[0];
+            if (firstText?.value.startsWith('$ ')) {
+              // If terminal marker is present on the first span,
+              // remove it and add a class to use CSS to display it.
+              firstText.value = firstText.value.substring(2);
+              firstSpan.properties['class'] += ' terminal-command';
+            }
           }
 
           const highlightRange = linesToMarkedRanges[line];

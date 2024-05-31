@@ -122,3 +122,10 @@
   cover: flutter-architectures-ebook.jpeg
   link: "https://www.amazon.com/Flutter-Architectures-Write-code-architecture-ebook/dp/B0CFM8QW1M"
   desc: "Write code with a good architecture"
+- title: 'Flutter Engineering'
+  authors:
+    - Majid Hajian
+  publisher: Staten House
+  cover: flutter-engineering.jpg
+  link: "https://www.flutterengineering.io"
+  desc: "Craft Awesome Flutter Apps with Confidence"

@@ -80,6 +80,8 @@ include a small reproducible test case.
 
 As of the 3.19 release,
 you can try out Impeller for macOS behind a flag.
+In a future release, the ability to opt-out of
+using Impeller will be removed.
 
 To enable Impeller on macOS when debugging,
 pass `--enable-impeller` to the `flutter run` command.
@@ -99,9 +101,12 @@ add the following tags under the top-level
 
 ### Android
 
-Impeller is available behind a flag on Android
-devices that support Vulkan, allowing you to
-try out the feature before it reaches stable.
+As of the 3.22 release, Impeller on Android with Vulkan
+is a release candidate. On devices that don't support Vulkan,
+Impeller will fallback to the the legacy OpenGL renderer. No
+action on your part is necessary for this fallback behavior.
+Consider trying Impeller on Android before it becomes the default
+on stable, you can explicitly opt into it.
 
 :::secondary Does your device support Vulkan?
 You can determine whether your Android device

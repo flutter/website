@@ -1,5 +1,5 @@
 ---
-title: Using the Network View
+title: Use the Network View
 description: How to use the DevTools network view.
 ---
 
@@ -54,6 +54,23 @@ my-endpoint m:get t:json s:200
 ```plaintext
 https s:404
 ```
+
+### Recording network requests on app startup
+
+To record network traffic on app startup, you can start your app in a paused
+state, and then begin recording network traffic in DevTools
+before resuming your app.
+
+1. Start your app in a paused state:
+    * `flutter run --start-paused ...`
+    * `dart run --pause-isolates-on-start --observe ...`
+2. Open DevTools from the IDE where you started your app, or from the link that
+   was printed to the command line if you started your app from the CLI.
+3. Navigate to the Network screen and ensure that recording has started.
+4. Resume your app.
+   ![Screenshot of the app resumption experience on the Network screen](/assets/images/docs/tools/devtools/network_startup_resume.png){:width="100%"}
+5. The Network profiler will now record all network traffic from your app,
+   including traffic from app startup.
 
 ## Other resources
 

@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text(appTitle),
         ),
-        // #docregion addWidget
+        // #docregion add-widget
         body: const SingleChildScrollView(
           child: Column(
             children: [
@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
             ],
           ),
         ),
-        // #enddocregion addWidget
+        // #enddocregion add-widget
       ),
     );
   }
@@ -86,12 +86,12 @@ class TitleSection extends StatelessWidget {
             ),
           ),
           /*3*/
-          // #docregion Icon
+          // #docregion icon
           Icon(
             Icons.star,
             color: Colors.red[500],
           ),
-          // #enddocregion Icon
+          // #enddocregion icon
           const Text('41'),
         ],
       ),
@@ -185,7 +185,7 @@ class TextSection extends StatelessWidget {
   }
 }
 
-// #docregion ImageSection
+// #docregion image-section
 class ImageSection extends StatelessWidget {
   const ImageSection({super.key, required this.image});
 
@@ -193,14 +193,14 @@ class ImageSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // #docregion Image-asset
+    // #docregion image-asset
     return Image.asset(
       image,
       width: 600,
       height: 240,
       fit: BoxFit.cover,
     );
-    // #enddocregion Image-asset
+    // #enddocregion image-asset
   }
 }
-// #enddocregion ImageSection
+// #enddocregion image-section

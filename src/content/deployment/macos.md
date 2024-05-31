@@ -94,7 +94,8 @@ In the **Identity** section:
 In the **Deployment info** section:
 
 `Deployment Target`
-: The minimum macOS version that your app supports. Flutter supports macOS 10.14 and later.
+: The minimum macOS version that your app supports.
+  Flutter supports deploying apps to macOS {{site.targetmin.macos}} and later.
 
 In the **Signing & Capabilities** section:
 
@@ -287,7 +288,7 @@ If you do not have a Mac Installer Distribution certificate,
 you can create a new certificate by executing the following:
 
 ```bash
-app-store-connect create-certificate \
+app-store-connect certificates create \
     --type MAC_INSTALLER_DISTRIBUTION \
     --certificate-key=@file:/path/to/cert_key \
     --save
@@ -301,7 +302,7 @@ Use `cert_key` of the private key you created earlier.
 Fetch the Mac Installer Distribution certificates:
 
 ```bash
-app-store-connect list-certificates \
+app-store-connect certificates list \
     --type MAC_INSTALLER_DISTRIBUTION \
     --certificate-key=@file:/path/to/cert_key \
     --save
@@ -462,6 +463,12 @@ For more details, see
 The [Distribute your app][distributionguide] guide provides a
 detailed overview of the process of releasing an app to the App Store.
 
+## Additional resources
+
+To learn how to package and distribute your Flutter desktop app 
+for macOS the open source way, without using a paid Apple developer 
+account, check out the step-by-step 
+[macOS packaging guide][macos_packaging_guide].
 
 [appicon]: {{site.apple-dev}}/design/human-interface-guidelines/macos/icons-and-images/app-icon/
 [appreview]: {{site.apple-dev}}/app-store/review/
@@ -486,3 +493,4 @@ detailed overview of the process of releasing an app to the App Store.
 [distributionguide_upload]: https://help.apple.com/xcode/mac/current/#/dev442d7f2ca
 [obfuscating your Dart code]: /deployment/obfuscate
 [TestFlight]: {{site.apple-dev}}/testflight/
+[macos_packaging_guide]: https://medium.com/@fluttergems/packaging-and-distributing-flutter-desktop-apps-the-missing-guide-part-1-macos-b36438269285

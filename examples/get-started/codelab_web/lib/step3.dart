@@ -92,14 +92,14 @@ class _SignUpFormState extends State<SignUpForm> {
   Widget build(BuildContext context) {
     return Form(
       onChanged: _updateFormProgress,
-      // #docregion UseAnimatedProgressIndicator
+      // #docregion use-animated-progress-indicator
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           AnimatedProgressIndicator(value: _formProgress), // NEW
           Text('Sign up', style: Theme.of(context).textTheme.headlineMedium),
           Padding(
-            // #enddocregion UseAnimatedProgressIndicator
+            // #enddocregion use-animated-progress-indicator
             padding: const EdgeInsets.all(8),
             child: TextFormField(
               controller: _firstNameTextController,
@@ -122,13 +122,13 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           TextButton(
             style: ButtonStyle(
-              foregroundColor: MaterialStateProperty.resolveWith((states) {
-                return states.contains(MaterialState.disabled)
+              foregroundColor: WidgetStateProperty.resolveWith((states) {
+                return states.contains(WidgetState.disabled)
                     ? null
                     : Colors.white;
               }),
-              backgroundColor: MaterialStateProperty.resolveWith((states) {
-                return states.contains(MaterialState.disabled)
+              backgroundColor: WidgetStateProperty.resolveWith((states) {
+                return states.contains(WidgetState.disabled)
                     ? null
                     : Colors.blue;
               }),
@@ -143,7 +143,7 @@ class _SignUpFormState extends State<SignUpForm> {
   }
 }
 
-// #docregion AnimatedProgressIndicator
+// #docregion animated-progress-indicator
 class AnimatedProgressIndicator extends StatefulWidget {
   final double value;
 
@@ -209,4 +209,4 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
     );
   }
 }
-// #enddocregion AnimatedProgressIndicator
+// #enddocregion animated-progress-indicator

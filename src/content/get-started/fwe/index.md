@@ -1,5 +1,6 @@
 ---
 title: First week experience of Flutter
+short-title: First week
 description: >
   You've gotten a taste of using the Flutter framework;
   now go beyond to learn the basics of Flutter.
@@ -76,7 +77,7 @@ following subjects in the listed order.
 [Layout]: /get-started/fwe/layout
 [State management]: /get-started/fwe/state-management
 [Handling user input]: /get-started/fwe/user-input
-[Networking and data]: /networking
+[Networking and data]: /get-started/fwe/networking
 [Local data and caching]: /get-started/fwe/local-caching
 
 ## Feedback
@@ -84,4 +85,4 @@ following subjects in the listed order.
 As this section of the website is evolving,
 we [welcome your feedback][]!
 
-[welcome your feedback]: /get-started/fwe
+[welcome your feedback]: https://google.qualtrics.com/jfe/form/SV_6A9KxXR7XmMrNsy?page="index"

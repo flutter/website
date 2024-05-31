@@ -33,25 +33,36 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Navigator's page APIs breaking change][]
+* [Generic types in `PopScope`][]
+* [Stop generating `AssetManifest.json`][]
+* [Deprecate `TextField.canRequestFocus`][]
+* [Deprecate `ButtonBar` in favor of `OverflowBar`][]
+
+[Navigator's page APIs breaking change]: /release/breaking-changes/navigator-and-page-api
+[Generic types in `PopScope`]: /release/breaking-changes/popscope-with-result
+[Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
+[Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
+[Deprecate `ButtonBar` in favor of `OverflowBar`]: /release/breaking-changes/deprecate-buttonbar
+
+<a id="released-in-flutter-322"></a>
+### Released in Flutter 3.22
+
+* [Deprecated API removed after v3.19][]
 * [Rename `MaterialState` to `WidgetState`][]
 * [Introduce new `ColorScheme` roles][]
-* [Stop generating `AssetManifest.json`][]
-* [Rename `MemoryAllocations` to `FlutterMemoryAllocations`][]
-* [Deprecate `TextField.canRequestFocus`][]
-* [Nullable PageView.controller][]
-* [Deprecate `ButtonBar` in favor of `OverflowBar`][]
-* [Deprecated API removed after v3.19][]
 * [Dropping support for Android KitKat][]
+* [New APIs for Android plugins that render to a `Surface`][]
+* [Nullable `PageView.controller`][]
+* [Rename `MemoryAllocations` to `FlutterMemoryAllocations`][]
 
+[Deprecated API removed after v3.19]: /release/breaking-changes/3-19-deprecations
 [Rename `MaterialState` to `WidgetState`]: /release/breaking-changes/material-state
 [Introduce new `ColorScheme` roles]: /release/breaking-changes/new-color-scheme-roles
-[Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
-[Rename `MemoryAllocations` to `FlutterMemoryAllocations`]: /release/breaking-changes/flutter-memory-allocations
-[Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
-[Nullable PageView.controller]: /release/breaking-changes/pageview-controller
-[Deprecate `ButtonBar` in favor of `OverflowBar`]: /release/breaking-changes/deprecate-buttonbar
-[Deprecated API removed after v3.19]: /release/breaking-changes/3-19-deprecations
 [Dropping support for Android KitKat]: /release/breaking-changes/android-kitkat-deprecation
+[New APIs for Android plugins that render to a `Surface`]: /release/breaking-changes/android-surface-plugins
+[Nullable `PageView.controller`]: /release/breaking-changes/pageview-controller
+[Rename `MemoryAllocations` to `FlutterMemoryAllocations`]: /release/breaking-changes/flutter-memory-allocations
 
 <a id="released-in-flutter-3-19"></a>
 ### Released in Flutter 3.19

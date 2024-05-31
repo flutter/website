@@ -247,7 +247,7 @@ You might also check out [Introducing Dart 3][].
 
 [wireless debugging]: /add-to-app/debugging
 [Material Widget Catalog]: /ui/widgets/material
-[canvasKitVariant runtime configuration]: /platform-integration/web/initialization#initializing-the-engine
+[canvasKitVariant runtime configuration]: /platform-integration/web/initialization
 [Android Java Gradle migration]: /release/breaking-changes/android-java-gradle-migration-guide
 [DevTools]: /tools/devtools/overview
 [WebAssembly support]: /platform-integration/web/wasm
@@ -515,7 +515,7 @@ and the [Flutter 3.3 release notes][3.3 release notes].
 [Build and release a Windows desktop app]: /deployment/windows
 [Developer mode]: {{site.apple-dev}}/documentation/xcode/enabling-developer-mode-on-a-device
 [Handling errors in Flutter]: /testing/errors
-[macOS install]: /get-started/install/macos/mobile-ios#configure-xcode
+[macOS install]: /get-started/install/macos/mobile-ios#install-and-configure-xcode
 [navigation and routing overview]: /ui/navigation
 [URL strategies]: /ui/navigation/url-strategies
 
@@ -684,7 +684,7 @@ null safety, but that work is not yet completed.
 
 **Docs updated or added since the 2.0 release**
 
-* A new page on [Building adaptive apps][].
+* A new page on Building adaptive apps.
 * A new page describing how to use [Google APIs][]
   with Flutter.
 * A new landing page for [Embedded Support for Flutter][].
@@ -746,7 +746,6 @@ publication since the last stable release:
 
 [Adding in-app purchases to your Flutter app]: {{site.codelabs}}/codelabs/flutter-in-app-purchases
 [Announcing Flutter 2.2]: {{site.flutter-medium}}/announcing-flutter-2-2-at-google-i-o-2021-92f0fcbd7ef9
-[Building adaptive apps]: /ui/layout/responsive/building-adaptive-apps
 [Build Voice Bots for Android with Dialogflow Essentials & Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter
 [Building your first Flutter app]: {{site.yt.watch}}?v=Z6KZ3cTGBWw
 [DartPad Sharing Guide (using a Gist file)]: {{site.github}}/dart-lang/dart-pad/wiki/Sharing-Guide
@@ -846,7 +845,7 @@ publication since the last stable release:
 [Announcing Flutter 2]: {{site.google-blog}}/2021/03/announcing-flutter-2.html
 [comp]: {{site.flutter-medium}}/providing-operating-system-compatibility-on-a-large-scale-374cc2fb0dad
 [Configuring the URL strategy on the web]: /ui/navigation/url-strategies
-[Creating responsive and adaptive apps]: /ui/layout/responsive/adaptive-responsive
+[Creating responsive and adaptive apps]: /ui/adaptive-responsive
 [Dart sound null safety: technical preview 2]: {{site.flutter-medium}}/null-safety-flutter-tech-preview-cb5c98aba187
 [Deprecation Lifetime in Flutter]: {{site.flutter-medium}}/deprecation-lifetime-in-flutter-e4d76ee738ad
 [Desktop support for Flutter]: /platform-integration/desktop
@@ -1261,7 +1260,7 @@ Happy Fluttering!
 [building a web application]: /platform-integration/web/building
 [`ColorFiltered`]: {{site.api}}/flutter/widgets/ColorFiltered-class.html
 [ColorFiltered demo]: {{site.github}}/csells/flutter_color_filter
-[creating responsive apps]: /ui/layout/responsive/adaptive-responsive
+[creating responsive apps]: /ui/adaptive-responsive
 [Flutter for web]: /platform-integration/web
 [Flutter news from GDD China: uniting Flutter on web and mobile, and introducing Flutter 1.9]: {{site.google-blog}}/2019/09/flutter-news-from-gdd-china-flutter1.9.html?m=1
 [Improving Flutter's Error Messages]: {{site.flutter-medium}}/improving-flutters-error-messages-e098513cecf9

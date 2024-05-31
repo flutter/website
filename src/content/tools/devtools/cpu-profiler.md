@@ -1,5 +1,5 @@
 ---
-title: Using the CPU profiler view
+title: Use the CPU profiler view
 description: Learn how to use the DevTools CPU profiler view.
 ---
 
@@ -152,8 +152,9 @@ navigate and zoom within the chart and a color-coded legend.
 
 ### CPU sampling rate
 
-DevTools sets a default rate at which the VM collects CPU samples:
-1 sample / 250 μs (microseconds). This is selected by default on
+DevTools sets a rate at which the VM collects CPU samples:
+1 sample / 250 μs (microseconds).
+This is selected by default on
 the CPU profiler page as "Cpu sampling rate: medium".
 This rate can be modified using the selector at the top
 of the page.

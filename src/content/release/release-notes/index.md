@@ -12,6 +12,10 @@ For information about bug-fix releases, check out
 [Hotfixes to the Stable Channel][] on the Flutter wiki.
 :::
 
+* 3.22.0
+  * [3.22.0 announcement][]
+  * [3.22.0 release notes & change log][]
+  * [3.22.0 breaking changes & migrations][]
 * 3.19.0
   * [3.19.0 announcement][]
   * [3.19.0 release notes & change log][]
@@ -77,6 +81,9 @@ For information about bug-fix releases, check out
 * Earlier
   * [Archived release notes][]
 
+[3.22.0 announcement]: {{site.flutter-medium}}/whats-new-in-flutter-3-22-fbde6c164fe3
+[3.22.0 release notes & change log]: /release/release-notes/release-notes-3.22.0
+[3.22.0 breaking changes & migrations]: /release/breaking-changes#released-in-flutter-3-22
 [3.19.0 announcement]: {{site.flutter-medium}}/whats-new-in-flutter-3-19-58b1aae242d2
 [3.19.0 release notes & change log]: /release/release-notes/release-notes-3.19.0
 [3.19.0 breaking changes & migrations]: /release/breaking-changes#released-in-flutter-3-19

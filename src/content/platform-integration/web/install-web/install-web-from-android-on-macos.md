@@ -1,5 +1,5 @@
 ---
-title: Add Web devtools to Flutter from Android on macOS start
+title: Set up web development for Flutter from Android on macOS start
 description: Configure your system to develop Flutter web apps on macOS.
 short-title: Starting from Android on macOS
 ---

@@ -8,7 +8,7 @@ Flutter apps in a number of editors; a later step discusses that.
 
 ### Install Android Studio
 
-{% include docs/install/deprecated/help-link.md location='android-studio' section='#android-setup' %}
+{% render docs/help-link.md, location:'android-studio', section:'#android-setup' %}
 
  1. Download and install [Android Studio]({{site.android-dev}}/studio).
  1. Start Android Studio, and go through the 'Android Studio Setup Wizard'.
@@ -22,7 +22,7 @@ Flutter apps in a number of editors; a later step discusses that.
 
 ### Set up your Android device
 
-{% include docs/install/deprecated/help-link.md location='android-device' section='#android-setup' %}
+{% render docs/help-link.md, location:'android-device', section:'#android-setup' %}
 
 To prepare to run and test your Flutter app on an Android device,
 you need an Android device running Android 5.0 (API level 21) or higher.
@@ -46,7 +46,7 @@ you need an Android device running Android 5.0 (API level 21) or higher.
 
 ### Set up the Android emulator
 
-{% include docs/install/deprecated/help-link.md location='android-emulator' section='#android-setup' %}
+{% render docs/help-link.md, location:'android-emulator', section:'#android-setup' %}
 
 To prepare to run and test your Flutter app on the Android emulator,
 follow these steps:
@@ -65,7 +65,7 @@ follow these steps:
  1. Choose a device definition and select **Next**.
  1. Select one or more system images for the Android versions you want
     to emulate, and select **Next**.
-    An _x86_ or _x86\_64_ image is recommended.
+    An _x86\_64_ image is recommended.
  1. Under Emulated Performance, select **Hardware - GLES 2.0** to enable
     [hardware
     acceleration]({{site.android-dev}}/studio/run/emulator-acceleration).
@@ -79,7 +79,7 @@ follow these steps:
 
 ### Agree to Android Licenses
 
-{% include docs/install/deprecated/help-link.md location='android-licenses' section='#android-setup' %}
+{% render docs/help-link.md, location:'android-licenses', section:'#android-setup' %}
 
 Before you can use Flutter, you must agree to the
 licenses of the Android SDK platform. This step should be done after

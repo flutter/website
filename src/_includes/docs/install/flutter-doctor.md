@@ -1,16 +1,14 @@
 
 ## Check your development setup
 
-{% include docs/help-link.md location='win-doctor' %}
+{% render docs/help-link.md, location:'win-doctor' %}
 
-{% assign devos = include.devos %}
-{% assign target = include.target %}
 {% assign compiler = include.compiler %}
 
-{% case devos %}
+{% case include.devos %}
 {% when 'Windows' -%}
    {% assign terminal='PowerShell' %}
-   {% assign prompt='C:\>' %}
+   {% assign prompt='PS C:\>' %}
 {% when "macOS" -%}
    {% assign terminal='your Terminal' %}
    {% assign prompt='$' %}
@@ -18,13 +16,13 @@
    {% assign terminal='a shell' %}
    {% assign prompt='$' %}
 {% endcase -%}
-{% case target %}
+{% case include.target %}
 {% when 'macOS','Windows','Linux' %}
-{% assign work-target = target | append: ' desktop' %}
+{% assign work-target = include.target | append: ' desktop' %}
 {% when 'desktop' %}
-{% assign work-target = devos | append: ' desktop' %}
+{% assign work-target = include.devos | append: ' desktop' %}
 {% else %}
-{% assign work-target = target | append: ' on ' | append: devos %}
+{% assign work-target = include.target | append: ' on ' | append: include.devos %}
 {% endcase %}
 {% case work-target %}
 {% when 'macOS desktop','Web on macOS','iOS on macOS' %}
@@ -40,7 +38,7 @@
 ### Run Flutter doctor
 
 The `flutter doctor` command validates that all components of a
-complete Flutter development environment for {{devos}}.
+complete Flutter development environment for {{include.devos}}.
 
 1. Open {{terminal}}.
 
@@ -51,11 +49,11 @@ complete Flutter development environment for {{devos}}.
    {{prompt}} flutter doctor
    ```
 
-As you chose to develop for {{target}},
+As you chose to develop for {{include.target}},
 you do not need _all_ components.
 If you followed this guide, the result of your command should resemble:
 
-{% include docs/install/flutter-doctor-success.md config=include.config devos=devos -%}
+{% include docs/install/flutter-doctor-success.md config=include.config devos=include.devos -%}
 
 ### Troubleshoot Flutter doctor issues
 

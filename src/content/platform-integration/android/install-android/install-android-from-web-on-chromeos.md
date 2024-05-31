@@ -1,5 +1,5 @@
 ---
-title: Add Android devtools for Flutter from Web on ChromeOS start
+title: Add Android as a target platform for Flutter from Web on ChromeOS start
 description: Configure your ChromeOS system to develop Flutter mobile apps for Android.
 short-title: Starting from Web on ChromeOS
 ---
@@ -21,8 +21,8 @@ To add Android as a Flutter app target for ChromeOS, follow this procedure.
         libbz2-1.0:i386
     ```
 
-1. Install [Android Studio][] {{site.appmin.android_studio}} to debug and compile
-   Java or Kotlin code for Android.
+1. Install [Android Studio][] {{site.appmin.android_studio}} or later
+   to debug and compile Java or Kotlin code for Android.
    Flutter requires the full version of Android Studio.
 
 {% include docs/install/compiler/android.md target='linux' devos='ChromeOS' attempt="first" -%}

@@ -75,7 +75,7 @@ but are styled differently:
 [`OutlinedButton`][]
 : A button with text and a visible border.
   These buttons contain actions that are important,
-  but aren’t the primary action in an app.
+  but aren't the primary action in an app.
 
 [`TextButton`][]
 : Clickable text, without a border.
@@ -314,4 +314,4 @@ and other networking features.
 As this section of the website is evolving, 
 we [welcome your feedback][]!
 
-[welcome your feedback]: /get-started/fwe
+[welcome your feedback]: https://google.qualtrics.com/jfe/form/SV_6A9KxXR7XmMrNsy?page="user-input"

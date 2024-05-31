@@ -1,4 +1,3 @@
-{% assign target = include.target %}
 
 <details>
 <summary><strong>To verify your shell configuration, expand this section</strong></summary>
@@ -17,7 +16,7 @@ Zsh or `zsh` is the default shell for macOS.
     $ dscl . -read ~/ UserShell
     ```
 
-    {{terminal}} should print the following as its response.
+    The command should print the following as its response.
 
     ```console
     UserShell: /bin/zsh

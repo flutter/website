@@ -136,7 +136,7 @@ A common`StatelessWidget` is the `Text` widget.
 If you look at the implementation of the `Text` widget,
 you'll find it subclasses `StatelessWidget`.
 
-<?code-excerpt "lib/text_widget.dart (TextWidget)" replace="/return const //g"?>
+<?code-excerpt "lib/text_widget.dart (text-widget)" replace="/return const //g"?>
 ```dart
 Text(
   'I like Flutter!',
@@ -156,7 +156,7 @@ update it when the user clicks the button.
 
 For example:
 
-<?code-excerpt "lib/text_widget.dart (StatefulWidget)"?>
+<?code-excerpt "lib/text_widget.dart (stateful-widget)"?>
 ```dart
 
 class SampleApp extends StatelessWidget {
@@ -214,7 +214,7 @@ In Flutter, declare your layout in code by composing a widget tree.
 
 The following example shows how to display a simple widget with padding:
 
-<?code-excerpt "lib/layout.dart (SimpleWidget)"?>
+<?code-excerpt "lib/layout.dart (simple-widget)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -251,7 +251,7 @@ with a boolean flag.
 The following example shows how to toggle between two widgets
 when the user clicks the `FloatingActionButton`:
 
-<?code-excerpt "lib/layout.dart (ToggleWidget)"?>
+<?code-excerpt "lib/layout.dart (toggle-widget)"?>
 ```dart
 class SampleApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -515,7 +515,7 @@ that takes a label in the constructor?
 Create a CustomButton that composes a `ElevatedButton` with a label,
 rather than by extending `ElevatedButton`:
 
-<?code-excerpt "lib/custom.dart (CustomButton)"?>
+<?code-excerpt "lib/custom.dart (custom-button)"?>
 ```dart
 class CustomButton extends StatelessWidget {
   const CustomButton(this.label, {super.key});
@@ -535,7 +535,7 @@ class CustomButton extends StatelessWidget {
 Then use `CustomButton`,
 just as you'd use any other Flutter widget:
 
-<?code-excerpt "lib/custom.dart (UseCustomButton)"?>
+<?code-excerpt "lib/custom.dart (use-custom-button)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -572,7 +572,7 @@ To navigate between pages, you have a couple options:
 
 The following example builds a `Map.`
 
-<?code-excerpt "lib/intent.dart (Map)"?>
+<?code-excerpt "lib/intent.dart (map)"?>
 ```dart
 void main() {
   runApp(
@@ -590,7 +590,7 @@ void main() {
 
 Navigate to a route by `push`ing its name to the `Navigator`.
 
-<?code-excerpt "lib/intent.dart (Push)"?>
+<?code-excerpt "lib/intent.dart (push)"?>
 ```dart
 Navigator.of(context).pushNamed('/b');
 ```
@@ -602,7 +602,7 @@ This is done by `await`ing on the `Future` returned by `push()`.
 For example, to start a `location` route that lets the user select their
 location, you might do the following:
 
-<?code-excerpt "lib/intent.dart (PushAwait)"?>
+<?code-excerpt "lib/intent.dart (push-await)"?>
 ```dart
 Object? coordinates = await Navigator.of(context).pushNamed('/location');
 ```
@@ -610,7 +610,7 @@ Object? coordinates = await Navigator.of(context).pushNamed('/location');
 And then, inside your `location` route, once the user has selected their
 location, `pop()` the stack with the result:
 
-<?code-excerpt "lib/intent.dart (Pop)"?>
+<?code-excerpt "lib/intent.dart (pop)"?>
 ```dart
 Navigator.of(context).pop({'lat': 43.821757, 'long': -79.226392});
 ```
@@ -646,7 +646,7 @@ Flutter doesn't currently have a dedicated system for handling strings.
 At the moment, the best practice is to declare your copy text
 in a class as static fields and access them from there. For example:
 
-<?code-excerpt "lib/string_examples.dart (Strings)"?>
+<?code-excerpt "lib/string_examples.dart (strings)"?>
 ```dart
 class Strings {
   static const String welcomeMessage = 'Welcome To Flutter';
@@ -655,7 +655,7 @@ class Strings {
 
 You can access your strings as such:
 
-<?code-excerpt "lib/string_examples.dart (AccessString)" replace="/const //g"?>
+<?code-excerpt "lib/string_examples.dart (access-string)" replace="/const //g"?>
 ```dart
 Text(Strings.welcomeMessage);
 ```
@@ -1123,7 +1123,7 @@ In Flutter the easiest way to do this is using the `ListView` widget.
 This acts as both a `ScrollView` and an iOS `TableView`,
 as you can lay out widgets in a vertical format.
 
-<?code-excerpt "lib/layout.dart (ListView)"?>
+<?code-excerpt "lib/layout.dart (list-view)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -1157,7 +1157,7 @@ In Flutter, there are two ways of adding touch listeners:
    and handle the event in the function. For example, the
    `ElevatedButton` widget has an `onPressed` parameter:
 
-  <?code-excerpt "lib/events.dart (onPressed)"?>
+  <?code-excerpt "lib/events.dart (on-pressed)"?>
    ```dart
   @override
   Widget build(BuildContext context) {
@@ -1174,7 +1174,7 @@ In Flutter, there are two ways of adding touch listeners:
    wrap the widget in a GestureDetector and pass a function
    to the `onTap` parameter.
 
-  <?code-excerpt "lib/events.dart (onTap)"?>
+  <?code-excerpt "lib/events.dart (on-tap)"?>
    ```dart
   class SampleTapApp extends StatelessWidget {
     const SampleTapApp({super.key});
@@ -1265,7 +1265,7 @@ to a wide range of gestures such as:
 The following example shows a `GestureDetector`
 that rotates the Flutter logo on a double tap:
 
-<?code-excerpt "lib/events.dart (SampleApp)"?>
+<?code-excerpt "lib/events.dart (sample-app)"?>
 ```dart
 class SampleApp extends StatefulWidget {
   const SampleApp({super.key});
@@ -1355,7 +1355,7 @@ pass a `ThemeData` object to the `MaterialApp` widget.
 For example, in the code below,
 the color scheme from seed is set to deepPurple and divider color is grey.
 
-<?code-excerpt "lib/theme.dart (Theme)"?>
+<?code-excerpt "lib/theme.dart (theme)"?>
 ```dart
 import 'package:flutter/material.dart';
 
@@ -1394,7 +1394,7 @@ fonts:
 
 Then assign the font to your `Text` widget:
 
-<?code-excerpt "lib/text.dart (CustomFont)"?>
+<?code-excerpt "lib/text.dart (custom-font)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -1495,14 +1495,14 @@ assets:
 
 You can now access your images using `AssetImage`:
 
-<?code-excerpt "lib/images.dart (AssetImage)"?>
+<?code-excerpt "lib/images.dart (asset-image)"?>
 ```dart
 AssetImage('images/a_dot_burr.jpeg')
 ```
 
 or directly in an `Image` widget:
 
-<?code-excerpt "lib/images.dart (Imageasset)"?>
+<?code-excerpt "lib/images.dart (image-asset)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -1531,7 +1531,7 @@ by specialized widgets. If you have a `TextField` or a
 `TextFormField`, you can supply a [`TextEditingController`][]
 to retrieve user input:
 
-<?code-excerpt "lib/form.dart (MyFormState)"?>
+<?code-excerpt "lib/form.dart (my-form-state)"?>
 ```dart
 class _MyFormState extends State<MyForm> {
   // Create a text controller and use it to retrieve the current value.
@@ -1586,7 +1586,7 @@ In Flutter, you can easily show a "hint" or a placeholder text
 for your field by adding an `InputDecoration` object
 to the decoration constructor parameter for the `Text` widget:
 
-<?code-excerpt "lib/form.dart (InputHint)" replace="/return const //g;/;//g"?>
+<?code-excerpt "lib/form.dart (input-hint)" replace="/return const //g;/;//g"?>
 ```dart
 Center(
   child: TextField(
@@ -1700,7 +1700,7 @@ For example, you can run network code without causing the
 UI to hang by using `async`/`await` and letting Dart do
 the heavy lifting:
 
-<?code-excerpt "lib/async.dart (loadData)"?>
+<?code-excerpt "lib/async.dart (load-data)"?>
 ```dart
 Future<void> loadData() async {
   final Uri dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
@@ -1808,7 +1808,7 @@ work that keeps the CPU busy, you want to move it to an
 For I/O-bound work, declare the function as an `async` function,
 and `await` on long-running tasks inside the function:
 
-<?code-excerpt "lib/async.dart (loadData)"?>
+<?code-excerpt "lib/async.dart (load-data)"?>
 ```dart
 Future<void> loadData() async {
   final Uri dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
@@ -1838,7 +1838,7 @@ Isolates are true to their name, and cannot share memory
 The following example shows, in a simple isolate,
 how to share data back to the main thread to update the UI.
 
-<?code-excerpt "lib/isolates.dart (loadData)"?>
+<?code-excerpt "lib/isolates.dart (load-data)"?>
 ```dart
 Future<void> loadData() async {
   final ReceivePort receivePort = ReceivePort();
@@ -2035,7 +2035,7 @@ flutter pub add http
 To make a network call,
 call `await` on the `async` function `http.get()`:
 
-<?code-excerpt "lib/progress.dart (loadData)"?>
+<?code-excerpt "lib/progress.dart (load-data)"?>
 ```dart
 Future<void> loadData() async {
   final Uri dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');

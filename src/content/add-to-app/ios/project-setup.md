@@ -293,7 +293,7 @@ Settings > Build Phases > Link Binary With Libraries**.
 In the target's build settings, add `$(PROJECT_DIR)/Flutter/Release/`
 to the **Framework Search Paths** (`FRAMEWORK_SEARCH_PATHS`).
 
-{% include docs/app-figure.md image="development/add-to-app/ios/project-setup/framework-search-paths.png" alt="Update Framework Search Paths in Xcode" %}
+{% render docs/app-figure.md, image:"development/add-to-app/ios/project-setup/framework-search-paths.png", alt:"Update Framework Search Paths in Xcode" %}
 
 :::tip
 To use the simulator, you will need to 
@@ -333,7 +333,7 @@ select **Embed & Sign**.
 They will then appear under **Embed Frameworks** within 
 **Build Phases** as follows: 
 
-{% include docs/app-figure.md image="development/add-to-app/ios/project-setup/embed-xcode.png" alt="Embed frameworks in Xcode" %}
+{% render docs/app-figure.md, image:"development/add-to-app/ios/project-setup/embed-xcode.png", alt:"Embed frameworks in Xcode" %}
 
 You should now be able to build the project in Xcode using `⌘B`.
 
@@ -392,10 +392,11 @@ and any plugin frameworks into your existing application
 as described in Option B.
 
 ## Local Network Privacy Permissions
+
 On iOS 14 and higher, enable the Dart multicast DNS
 service in the Debug version of your app
 to add [debugging functionalities such as hot-reload and
-DevTools][] via `flutter attach`.
+DevTools][] using `flutter attach`.
 
 :::warning
 This service must not be enabled in the **Release**
@@ -413,7 +414,7 @@ Adjust the names as needed depending on your app's build configurations.
 Rename your app's **Info.plist** to **Info-Debug.plist**.
 Make a copy of it called **Info-Release.plist** and add it to your Xcode project.
 
-{% include docs/app-figure.md image="development/add-to-app/ios/project-setup/info-plists.png" alt="Info-Debug.plist and Info-Release.plist in Xcode" %}
+{% render docs/app-figure.md, image:"development/add-to-app/ios/project-setup/info-plists.png", alt:"Info-Debug.plist and Info-Release.plist in Xcode" %}
 
 </li>
 
@@ -426,7 +427,7 @@ Note Xcode will display this as "Bonjour services".
 Optionally, add the key `NSLocalNetworkUsageDescription` set to your
 desired customized permission dialog text.
 
-{% include docs/app-figure.md image="development/add-to-app/ios/project-setup/debug-plist.png" alt="Info-Debug.plist with additional keys" %}
+{% render docs/app-figure.md, image:"development/add-to-app/ios/project-setup/debug-plist.png", alt:"Info-Debug.plist with additional keys" %}
 
 </li>
 
@@ -435,12 +436,12 @@ desired customized permission dialog text.
 In your target's build settings, change the **Info.plist File**
 (`INFOPLIST_FILE`) setting path from `path/to/Info.plist` to `path/to/Info-$(CONFIGURATION).plist`.
 
-{% include docs/app-figure.md image="development/add-to-app/ios/project-setup/set-plist-build-setting.png" alt="Set INFOPLIST_FILE build setting" %}
+{% render docs/app-figure.md, image:"development/add-to-app/ios/project-setup/set-plist-build-setting.png", alt:"Set INFOPLIST_FILE build setting" %}
 
 This will resolve to the path **Info-Debug.plist** in **Debug** and
 **Info-Release.plist** in **Release**.
 
-{% include docs/app-figure.md image="development/add-to-app/ios/project-setup/plist-build-setting.png" alt="Resolved INFOPLIST_FILE build setting" %}
+{% render docs/app-figure.md, image:"development/add-to-app/ios/project-setup/plist-build-setting.png", alt:"Resolved INFOPLIST_FILE build setting" %}
 
 Alternatively, you can explicitly set the **Debug** path to **Info-Debug.plist**
 and the **Release** path to **Info-Release.plist**.
@@ -452,12 +453,13 @@ and the **Release** path to **Info-Release.plist**.
 If the **Info-Release.plist** copy is in your target's **Build Settings > Build Phases > Copy Bundle**
 Resources build phase, remove it.
 
-{% include docs/app-figure.md image="development/add-to-app/ios/project-setup/copy-bundle.png" alt="Copy Bundle build phase" %}
+{% render docs/app-figure.md, image:"development/add-to-app/ios/project-setup/copy-bundle.png", alt:"Copy Bundle build phase" %}
 
 The first Flutter screen loaded by your Debug app will now prompt
 for local network permission. The permission can also be allowed by enabling
 **Settings > Privacy > Local Network > Your App**.
-{% include docs/app-figure.md image="development/add-to-app/ios/project-setup/network-permission.png" alt="Local network permission dialog" %}
+
+{% render docs/app-figure.md, image:"development/add-to-app/ios/project-setup/network-permission.png", alt:"Local network permission dialog" %}
 
 </li>
 </ol>
@@ -475,7 +477,7 @@ Click the right arrow disclosure indicator icon to expand the available build co
 Hover over **Debug** and click the plus icon. Change **Any SDK** to **Any iOS Simulator SDK**.
 Add `arm64` to the build settings value.
 
-{% include docs/app-figure.md image="development/add-to-app/ios/project-setup/excluded-archs.png" alt="Set conditional EXCLUDED_ARCHS build setting" %}
+{% render docs/app-figure.md, image:"development/add-to-app/ios/project-setup/excluded-archs.png", alt:"Set conditional EXCLUDED_ARCHS build setting" %}
 
 When done correctly, Xcode will add `"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;` to your **project.pbxproj** file.
 
@@ -489,18 +491,19 @@ You can now [add a Flutter screen][] to your existing application.
 [add a Flutter screen]: /add-to-app/ios/add-flutter-screen
 [Android Studio/IntelliJ]: /tools/android-studio
 [build modes of Flutter]: /testing/build-modes
-[embed the frameworks]: /add-to-app/ios/project-setup#embed-the-frameworks
 [CocoaPods]: https://cocoapods.org/
 [CocoaPods getting started guide]: https://guides.cocoapods.org/using/using-cocoapods.html
 [debugging functionalities such as hot-reload and DevTools]: /add-to-app/debugging
-[Embed with CocoaPods and Flutter tools]: #option-a---embed-with-cocoapods-and-the-flutter-sdk
 [increases your app size]: /resources/faq#how-big-is-the-flutter-engine
 [macOS system requirements for Flutter]: /get-started/install/macos/mobile-ios#verify-system-requirements
-[On iOS 14 and higher]: {{site.apple-dev}}/news/?id=0oi77447
 [Podfile target]: https://guides.cocoapods.org/syntax/podfile.html#target
 [static or dynamic frameworks]: {{site.so}}/questions/32591878/ios-is-it-a-static-or-a-dynamic-framework
 [VS Code]: /tools/vs-code
-[XCFrameworks]: {{site.apple-dev}}/documentation/xcode_release_notes/xcode_11_release_notes
-[Xcode installed]: /get-started/install/macos/mobile-ios#configure-xcode
+[Xcode installed]: /get-started/install/macos/mobile-ios#install-and-configure-xcode
 [News Feed app]: https://github.com/flutter/put-flutter-to-work/tree/022208184ec2623af2d113d13d90e8e1ce722365
 [Debugging your add-to-app module]: /add-to-app/debugging/
+
+[embed the frameworks]: /add-to-app/ios/project-setup#embed-the-frameworks
+[Embed with CocoaPods and Flutter tools]: #option-a---embed-with-cocoapods-and-the-flutter-sdk
+[On iOS 14 and higher]: {{site.apple-dev}}/news/?id=0oi77447
+[XCFrameworks]: {{site.apple-dev}}/documentation/xcode_release_notes/xcode_11_release_notes

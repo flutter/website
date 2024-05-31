@@ -60,6 +60,14 @@ During a build, Flutter places assets into a special
 archive called the _asset bundle_ that apps read
 from at runtime.
 
+### Automatic transformation of asset files at build time
+
+Flutter supports using a Dart package to transform asset files when building your app.
+To do this, specify the asset files and transformer package in your pubspec file.
+To learn more, check out [Transforming assets at build time][].
+To learn how to do this and write your own asset-transforming packages, see
+[Transforming assets at build time][].
+
 ## Loading assets
 
 Your app can access its assets through an
@@ -504,3 +512,4 @@ For more details, see
 [MediaQueryData.size]: {{site.api}}/flutter/widgets/MediaQueryData/size.html
 [MaterialApp]: {{site.api}}/flutter/material/MaterialApp-class.html
 [CupertinoApp]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
+[Transforming assets at build time]: /ui/assets/asset-transformation

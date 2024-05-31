@@ -1,10 +1,15 @@
 ---
 title: Casual Games Toolkit
-description: Free & open source multiplatform 2D game development in Flutter
+description: >-
+  Learn about free & open source multiplatform 2D game development in Flutter.
 ---
 
 The Flutter Casual Games Toolkit pulls together new and existing resources
 so you can accelerate development of games on mobile platforms.
+
+:::recommend
+Check out the latest [game updates and resources for Flutter 3.22](#updates)!
+:::
 
 This page outlines where you can find these available resources.
 
@@ -117,24 +122,31 @@ Are you ready? To get started:
    have a Discord account).
 1. Review the codelabs and cookbook recipes.
 
-   * Build a [multiplayer game][multiplayer-recipe] with Cloud Firestore.
-   * Make your games more engaging
+   * {{recipe-icon}} Build a [multiplayer game][multiplayer-recipe] with Cloud Firestore.
+   * {{codelab}} Build a [word puzzle][] with Flutter.—**NEW**
+   * {{codelab}} Build a [2D physics game][] with Flutter and Flame.—**NEW**
+   * {{codelab}} [Add sound and music][] to your Flutter game with SoLoud.—**NEW**
+   * {{recipe-icon}}Make your games more engaging
      with [leaderboards and achievements][leaderboard-recipe].
-   * Monetize your games with [in-game ads][ads-recipe]
-     and [in-app purchases][iap-recipe].
-   * Add user authentication flow to your game via
-     [Firebase Authentication][firebase-auth].
+   * Monetize your games with {{recipe-icon}}[in-game ads][ads-recipe]
+     and {{codelab}} [in-app purchases][iap-recipe].
+   * Add user authentication flow to your game with
+     {{recipe-icon}} [Firebase Authentication][firebase-auth].
    * Collect analytics about crashes and errors inside your game
-     with [Firebase Crashlytics][firebase-crashlytics].
+     with {{recipe-icon}} [Firebase Crashlytics][firebase-crashlytics].
 
 1. Set up accounts on AdMob, Firebase, and Cloud, as needed.
 1. Write your game!
 1. Deploy to both the Google Play and Apple stores.
 
+[Add sound and music]: {{site.codelabs}}/codelabs/flutter-codelab-soloud
+[2D physics game]: {{site.codelabs}}/codelabs/flutter-flame-forge2d
+[word puzzle]: {{site.codelabs}}/codelabs/flutter-word-puzzle
+
 ## Example games
 
-For Google I/O 2022, both the Flutter team and Very Good Ventures created new
-games.
+For Google I/O 2022, both the Flutter team
+and Very Good Ventures created new games.
 
 * VGV created the [I/O Pinball game][pinball-game] using the Flame engine.
   To learn about this game,
@@ -145,12 +157,6 @@ games.
   To learn more about I/O Flip,
   check out [How It's Made: I/O FLIP adds a twist to a classic card game with generative AI][flip-blog]
   on the Google Developers blog and [play the game][flip-game] in your browser.
-
-{% comment %}
-Some examples of successful mobile videogames
-built with Flutter and Flame include
-[Tomb Toad][] and [Air Hockey][].
-{% endcomment %}
 
 ## Other resources
 
@@ -207,7 +213,9 @@ investigate other resources that our community recommended.
 <td>Audio</td>
 <td>
 
-{{pkg-icon}} [audioplayers][]
+{{pkg-icon}} [audioplayers][]<br>
+{{pkg-icon}} [flutter_soloud][]—**NEW**<br>
+{{codelab}}  [Add sound and music to your Flutter game with SoLoud][]—**NEW**
 
 </td>
 </tr>
@@ -345,7 +353,8 @@ investigate other resources that our community recommended.
 <td>User Experience</td>
 <td>
 
-{{codelab}} [Build next generation UIs in Flutter][]
+{{codelab}} [Build next generation UIs in Flutter][]<br>
+{{doc-icon}} [Best practices for optimizing Flutter web loading speed][]—**NEW**
 
 </td>
 </tr>
@@ -411,3 +420,54 @@ investigate other resources that our community recommended.
 [view the open source code repo]: {{site.github}}/flutter/super_dash
 [web]: https://superdash.flutter.dev/
 [Tiled]: https://www.mapeditor.org/
+[flutter_soloud]: {{site.pub-pkg}}/flutter_soloud
+[SoLoud codelab]: {{site.codelabs}}/codelabs/flutter-codelab-soloud
+
+## Games Toolkit updates for Flutter 3.22 {:#updates}
+
+The following codelabs and guides were added for
+the Flutter 3.22 release:
+
+**Low-latency, high-performance sound**
+: In collaboration with the Flutter community ([@Marco Bavagnoli][]),
+  we've enabled the SoLoud audio engine.
+  This free and portable engine delivers the low-latency and
+  high-performance sound that's essential for many games.
+  To help you get started, check out the new codelab,
+  [Add sound and music to your Flutter game with SoLoud][],
+  dedicated to adding sound and music to your game.
+
+**Word puzzle games**
+: Check out the new codelab,
+  [Build a word puzzle with Flutter][],
+  focused on building word puzzle games.
+  This genre is perfect for exploring Flutter's UI capabilities,
+  and this codelab dives into using Flutter's background processing
+  to effortlessly generate expansive crossword-style grids of
+  interlocking words without compromising the user experience.
+
+**Forge 2D physics engine**
+: The new Forge2D codelab,
+  [Build a 2D physics game with Flutter and Flame][],
+  guides you through crafting game mechanics in a
+  Flutter and Flame game using a 2D physics simulation
+  along the lines of Box2D, called [Forge2D][].
+
+**Optimize loading speed for Flutter web-based games**
+: In the fast-paced world of web-based gaming,
+  a slow loading game is a major deterrent.
+  Players expect instant gratification and will
+  quickly abandon a game that doesn't load promptly.
+  Hence, we've published a guide,
+  [Best practices for optimizing Flutter web loading speed][],
+  authored by [Cheng Lin][],
+  to help you optimize your Flutter web-based games
+  and apps for lightning-fast loading speeds.
+
+[@Marco Bavagnoli]: {{site.github}}/alnitak
+[Add sound and music to your Flutter game with SoLoud]: {{site.codelabs}}/codelabs/flutter-codelab-soloud
+[Best practices for optimizing Flutter web loading speed]: {{site.flutter-medium}}/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c
+[Build a word puzzle with Flutter]: {{site.codelabs}}/codelabs/flutter-word-puzzle
+[Build a 2D physics game with Flutter and Flame]: {{site.codelabs}}/codelabs/flutter-flame-forge2d
+[Cheng Lin]: {{site.medium}}/@mhclin113_26002
+[Forge2D]: {{site.pub-pkgs}}/forge2d

@@ -27,6 +27,7 @@ state management from other reactive frameworks,
 you can find packages and tutorials listed on the [options page][].
 
 ## Our example 
+
 <img src='/assets/images/docs/development/data-and-backend/state-mgmt/model-shopper-screencast.gif' alt='An animated gif showing a Flutter app in use. It starts with the user on a login screen. They log in and are taken to the catalog screen, with a list of items. The click on several items, and as they do so, the items are marked as "added". The user clicks on a button and gets taken to the cart view. They see the items there. They go back to the catalog, and the items they bought still show "added". End of animation.' class='site-image-right'>
 
 For illustration, consider the following simple app.
@@ -105,7 +106,7 @@ construct new widgets in the build methods of their parents,
 if you want to change `contents`, it needs to live in `MyCart`'s
 parent or above.
 
-<?code-excerpt "lib/src/provider.dart (myTapHandler)"?>
+<?code-excerpt "lib/src/provider.dart (my-tap-handler)"?>
 ```dart
 // GOOD
 void myTapHandler(BuildContext context) {
@@ -385,7 +386,7 @@ It is best practice to put your `Consumer` widgets as deep in the tree
 as possible. You don't want to rebuild large portions of the UI
 just because some detail somewhere changed.
 
-<?code-excerpt "lib/src/performance.dart (nonLeafDescendant)"?>
+<?code-excerpt "lib/src/performance.dart (non-leaf-descendant)"?>
 ```dart
 // DON'T DO THIS
 return Consumer<CartModel>(
@@ -403,7 +404,7 @@ return Consumer<CartModel>(
 
 Instead:
 
-<?code-excerpt "lib/src/performance.dart (leafDescendant)"?>
+<?code-excerpt "lib/src/performance.dart (leaf-descendant)"?>
 ```dart
 // DO THIS
 return HumongousWidget(
@@ -434,7 +435,7 @@ rebuild a widget that doesn't need to be rebuilt.
 For this use case, we can use `Provider.of`,
 with the `listen` parameter set to `false`.
 
-<?code-excerpt "lib/src/performance.dart (nonRebuilding)" replace="/listen: false/[!$&!]/g"?>
+<?code-excerpt "lib/src/performance.dart (non-rebuilding)" replace="/listen: false/[!$&!]/g"?>
 ```dart
 Provider.of<CartModel>(context, [!listen: false!]).removeAll();
 ```

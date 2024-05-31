@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// #docregion State
+// #docregion state
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
   @override
@@ -44,4 +44,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-// #enddocregion State
+// #enddocregion state

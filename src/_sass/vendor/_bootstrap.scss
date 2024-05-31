@@ -154,6 +154,10 @@ a.card {
     font-size: bootstrap.$font-size-sm;
   }
 
+  &.card-highlight {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+
   &:hover {
     $border-height: 0.25rem;
 

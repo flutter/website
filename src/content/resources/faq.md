@@ -153,8 +153,6 @@ Flutter includes:
 * Command-line tools for creating, building, testing, and
   compiling your apps
 
-[Dart DevTools]: /tools/devtools
-
 ### Does Flutter work with any editors or IDEs?
 
 We provide plugins for [VS Code][],
@@ -220,7 +218,6 @@ Yes, Flutter comes with [Flutter DevTools][] (also
 called Dart DevTools). For more information, see
 [Debugging with Flutter][] and the [Flutter DevTools][] docs.
 
-
 [Debugging with Flutter]: /testing/debugging
 [Flutter DevTools]: /tools/devtools/overview
 
@@ -257,7 +254,7 @@ of Flutter, read the [architectural overview][].
 
 The engine's C and C++ code are compiled with Android's NDK.
 The Dart code (both the SDK's and yours)
-are ahead-of-time (AOT) compiled into native, ARM, and x86
+are ahead-of-time (AOT) compiled into native, ARM, and x86-64
 libraries. Those libraries are included in a "runner"
 Android project, and the whole thing is built into an `.apk`.
 When launched, the app loads the Flutter library.
@@ -552,10 +549,10 @@ You can compile and deploy your Flutter app to iOS, Android,
   the list of [supported platforms][].
 
 * Flutter supports building ahead-of-time (AOT) compiled libraries
-  for `x86_64`, `armeabi-v7a`, and `arm64-v8a`.
+  for `x86-64`, `armeabi-v7a`, and `arm64-v8a`.
 
 * Apps built for ARMv7 or ARM64 run fine (using ARM emulation)
-  on many x86 Android devices.
+  on many x86-64 Android devices.
 
 * We support developing Flutter apps on a range of platforms.
   See the system requirements listed under each

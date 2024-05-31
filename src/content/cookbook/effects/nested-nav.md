@@ -391,10 +391,8 @@ Run the app:
 * Click the **Finished** button to return to the
   first screen.
 
-<!-- Start DartPad -->
-
 <?code-excerpt "lib/main.dart"?>
-```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
+```dartpad run="true"
 import 'package:flutter/material.dart';
 
 const routeHome = '/';
@@ -613,7 +611,7 @@ class SelectDevicePage extends StatelessWidget {
                 height: 54,
                 child: ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateColor.resolveWith((states) {
+                    backgroundColor: WidgetStateColor.resolveWith((states) {
                       return const Color(0xFF222222);
                     }),
                   ),
@@ -729,14 +727,14 @@ class FinishedPage extends StatelessWidget {
               const SizedBox(height: 32),
               ElevatedButton(
                 style: ButtonStyle(
-                  padding: MaterialStateProperty.resolveWith((states) {
+                  padding: WidgetStateProperty.resolveWith((states) {
                     return const EdgeInsets.symmetric(
                         horizontal: 24, vertical: 12);
                   }),
-                  backgroundColor: MaterialStateColor.resolveWith((states) {
+                  backgroundColor: WidgetStateColor.resolveWith((states) {
                     return const Color(0xFF222222);
                   }),
-                  shape: MaterialStateProperty.resolveWith((states) {
+                  shape: WidgetStateProperty.resolveWith((states) {
                     return const StadiumBorder();
                   }),
                 ),

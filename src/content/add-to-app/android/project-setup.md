@@ -34,7 +34,7 @@ android {
 }
 ```
 
-The Flutter engine has an `x86` and `x86_64` version.
+The Flutter engine also has an `x86_64` version.
 When using an emulator in debug Just-In-Time (JIT) mode,
 the Flutter module still runs correctly.
 :::
@@ -65,8 +65,6 @@ in the same IDE.
 You can also use IntelliJ Flutter plugin functionality like
 Dart code completion, hot reload, and widget inspector.
 
-Android Studio supports add-to-app flows on Android Studio 2022.2 or later
-with the [Flutter plugin][] for IntelliJ.
 To build your app, the Android Studio plugin configures your
 Android project to add your Flutter module as a dependency.
 
@@ -260,7 +258,7 @@ flutter build aar
 
 Then, follow the on-screen instructions to integrate.
 
-{% include docs/app-figure.md image="development/add-to-app/android/project-setup/build-aar-instructions.png" %}
+{% render docs/app-figure.md, image:"development/add-to-app/android/project-setup/build-aar-instructions.png" %}
 
 More specifically, this command creates
 (by default all debug/profile/release modes)
@@ -378,7 +376,7 @@ check out [Using Flutter in China][] page.
 You can also build an AAR for your Flutter module in Android Studio using
 the `Build > Flutter > Build AAR` menu.
 
-{% include docs/app-figure.md image="development/add-to-app/android/project-setup/ide-build-aar.png" %}
+{% render docs/app-figure.md, image:"development/add-to-app/android/project-setup/ide-build-aar.png" %}
 :::
 
 </div>

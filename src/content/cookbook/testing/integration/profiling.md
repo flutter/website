@@ -1,5 +1,5 @@
 ---
-title: Performance profiling
+title: Measure performance with an integration test
 description: How to profile performance for a Flutter app.
 ---
 

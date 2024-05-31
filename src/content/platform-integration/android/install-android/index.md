@@ -1,22 +1,20 @@
 ---
-title: Add Android devtools for Flutter
+title: Add Android as a target platform for Flutter
 description: Configure your system to develop Flutter for Android.
-short-title: Add Android DevTools
-target-list: [Windows, 'Web on Windows', Linux, 'Web on Linux', macOS, 'Web on macOS', iOS, Web on ChromeOS]
+short-title: Set up Android development
+target-list: [Windows, 'web on Windows', Linux, 'web on Linux', macOS, 'web on macOS', iOS, 'web on ChromeOS']
 ---
 
-To choose the guide to add Android Studio to your Flutter configuration,
-click the [Getting Started path][] you followed.
+To set up your development environment for targeting Android,
+choose the guide that corresponds to the [Getting Started path][] you followed,
+or the platform you already have set up.
 
 {% for target in target-list %}
-{% capture index0Modulo2 %}{{ forloop.index0 | modulo:2 }}{% endcapture %}
-{% capture indexModulo2 %}{{ forloop.index | modulo:2 }}{% endcapture %}
-{% assign
-targetlink='/platform-integration/android/install-android/install-android-from-'
-| append: target | downcase | replace: " ", "-" %}
-  {% if index0Modulo2 == '0' %}
-  <div class="card-deck mb-8">
-  {% endif %}
+{% assign row = forloop.index0 | modulo: 2 %}
+{% assign targetLink = '/platform-integration/android/install-android/install-android-from-' | append: target | downcase | replace: " ", "-" %}
+{% if row == 0 %}
+<div class="card-deck mb-8">
+{% endif %}
 
   {% if target contains 'macOS' or target contains 'iOS' %}
     {% assign bug = 'card-macos' %}
@@ -28,9 +26,7 @@ targetlink='/platform-integration/android/install-android/install-android-from-'
     {% assign bug = 'card-chromeos' %}
   {% endif %}
 
-  <a class="card card-app-type {{bug}}"
-     id="install-{{target | downcase}}"
-     href="{{targetlink}}">
+  <a class="card card-app-type {{bug}}" id="install-{{target | downcase}}" href="{{targetLink}}">
     <div class="card-body">
       <header class="card-title text-center m-0">
         <span class="d-block h1">
@@ -44,26 +40,26 @@ targetlink='/platform-integration/android/install-android/install-android-from-'
             <span class="material-symbols">phone_iphone</span>
           {% else -%}
             <span class="material-symbols">web</span>
-          {% endcase %}
+          {% endcase -%}
           <span class="material-symbols">add</span>
           <span class="material-symbols">phone_android</span>
         </span>
-        <span class="text-muted">
+        <span class="text-muted d-block">
         Make Android and
-        {% if target contains "iOS" %}
+        {% if target contains "iOS" -%}
         {{target}} apps on macOS
-        {% elsif target contains "on" %}
+        {%- elsif target contains "on" -%}
         {{ target | replace: "on", "apps on" }}
-        {% else %}
+        {%- else -%}
         {{target}} desktop apps
-        {% endif %}
+        {%- endif -%}
         </span>
       </header>
     </div>
   </a>
-  {% if indexModulo2 == '0' %}
-  </div>
-  {% endif %}
+{% if row == 1 %}
+</div>
+{% endif %}
 {% endfor %}
 
 [Getting Started path]: /get-started/install

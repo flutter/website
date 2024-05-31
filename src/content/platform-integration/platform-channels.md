@@ -4,7 +4,7 @@ short-title: Platform-specific code
 description: Learn how to write custom platform-specific code in your app.
 ---
 
-<?code-excerpt path-base="development/platform_integration"?>
+<?code-excerpt path-base="platform_integration"?>
 
 This guide describes how to write custom platform-specific code.
 Some platform-specific functionality is available
@@ -272,13 +272,14 @@ All channel names used in a single app must
 be unique; prefix the channel name with a unique 'domain
 prefix', for example: `samples.flutter.dev/battery`.
 
-<?code-excerpt "lib/platform_channels.dart (Import)"?>
+<?code-excerpt "platform_channels/lib/platform_channels.dart (import)"?>
 ```dart
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 ```
-<?code-excerpt "lib/platform_channels.dart (MyHomePageState)"?>
+
+<?code-excerpt "platform_channels/lib/platform_channels.dart (my-home-page-state)"?>
 ```dart
 class _MyHomePageState extends State<MyHomePage> {
   static const platform = MethodChannel('samples.flutter.dev/battery');
@@ -296,7 +297,7 @@ so wrap the `invokeMethod` call in a try-catch statement.
 Use the returned result to update the user interface state in `_batteryLevel`
 inside `setState`.
 
-<?code-excerpt "lib/platform_channels.dart (GetBattery)"?>
+<?code-excerpt "platform_channels/lib/platform_channels.dart (get-battery)"?>
 ```dart
 // Get battery level.
 String _batteryLevel = 'Unknown battery level.';
@@ -320,7 +321,7 @@ Finally, replace the `build` method from the template to
 contain a small user interface that displays the battery
 state in a string, and a button for refreshing the value.
 
-<?code-excerpt "lib/platform_channels.dart (Build)"?>
+<?code-excerpt "platform_channels/lib/platform_channels.dart (build)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -979,7 +980,8 @@ it displays 'Battery level not available'.
   
 For this example you need to install the `upower` developer headers.
 This is likely available from your distribution, for example with:
-```sh
+
+```console
 sudo apt install libupower-glib-dev
 ```
 
@@ -1139,7 +1141,7 @@ and Swift (with Objective-C interop).
 
 **Pigeon file:**
 
-<?code-excerpt "lib/pigeon_source.dart (Search)"?>
+<?code-excerpt "pigeon/lib/pigeon_source.dart (search)"?>
 ```dart
 import 'package:pigeon/pigeon.dart';
 
@@ -1164,7 +1166,7 @@ abstract class Api {
 
 **Dart usage:**
 
-<?code-excerpt "lib/use_pigeon.dart (UseApi)"?>
+<?code-excerpt "pigeon/lib/use_pigeon.dart (use-api)"?>
 ```dart
 import 'generated_pigeon.dart';
 

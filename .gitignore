@@ -11,6 +11,7 @@ _site
 *.swp
 build
 node_modules
+.pnpm-store/
 ./flutter/
 
 # Dart and Flutter, build related

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-// #docregion Strings
+// #docregion strings
 class Strings {
   static String welcomeMessage = 'Welcome To Flutter';
 }
-// #enddocregion Strings
+// #enddocregion strings
 
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
@@ -12,8 +12,8 @@ class MyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return
-        // #docregion AccessString
+        // #docregion access-string
         Text(Strings.welcomeMessage);
-    // #enddocregion AccessString
+    // #enddocregion access-string
   }
 }

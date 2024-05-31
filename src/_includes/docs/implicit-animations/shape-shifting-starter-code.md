@@ -1,5 +1,5 @@
 <?code-excerpt "animation/implicit/container1/lib/main.dart"?>
-```run-dartpad:theme-light:mode-flutter:split-60:width-100%:height-500px:ga_id-shape_shifting_starter_code
+```dartpad
 // Copyright 2019 the Dart project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license
 // that can be found in the LICENSE file.

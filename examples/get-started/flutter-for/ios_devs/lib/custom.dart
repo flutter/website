@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// #docregion CustomButton
+// #docregion custom-button
 class CustomButton extends StatelessWidget {
   const CustomButton(this.label, {super.key});
 
@@ -14,17 +14,17 @@ class CustomButton extends StatelessWidget {
     );
   }
 }
-// #enddocregion CustomButton
+// #enddocregion custom-button
 
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
 
-  // #docregion UseCustomButton
+  // #docregion use-custom-button
   @override
   Widget build(BuildContext context) {
     return const Center(
       child: CustomButton('Hello'),
     );
   }
-  // #enddocregion UseCustomButton
+  // #enddocregion use-custom-button
 }

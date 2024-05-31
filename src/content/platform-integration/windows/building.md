@@ -304,4 +304,11 @@ In addition to that executable, you need the following:
 At this point if desired it would be relatively simple to
 add this folder to a Windows installer such as Inno Setup, WiX, etc.
 
+## Additional resources
+
+To learn how to build an `.exe` using Inno Setup to distribute 
+your Flutter desktop app for Windows, check out the step-by-step 
+[Windows packaging guide][windows_packaging_guide].
+
 [deployment example walkthroughs]: https://docs.microsoft.com/en-us/cpp/windows/deployment-examples
+[windows_packaging_guide]: https://medium.com/@fluttergems/packaging-and-distributing-flutter-desktop-apps-the-missing-guide-part-2-windows-0b468d5e9e70
