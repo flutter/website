@@ -646,7 +646,7 @@
         ]
       },
       {
-        "source": "/assets/img/*.@(jpg|jpeg|png|webp|avif)",
+        "source": "/assets/images/*.@(jpg|jpeg|png|webp|avif)",
         "headers": [
           { "key": "Cache-Control", "value": "max-age=604800" },
           { "key": "Access-Control-Allow-Origin", "value": "*" }
