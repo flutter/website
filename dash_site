@@ -1,8 +1,8 @@
 #!/bin/bash
 
-REQUIRED_DART_VERSION="3.3"
-REQUIRED_NODE_VERSION="20.10"
-REQUIRED_PNPM_VERSION="8.14"
+REQUIRED_DART_VERSION="3.4"
+REQUIRED_NODE_VERSION="20.12"
+REQUIRED_PNPM_VERSION="9.0"
 
 # Check that the 'dart' command is available on the user's path.
 if ! command -v dart &> /dev/null; then
