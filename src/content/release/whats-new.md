@@ -10,6 +10,9 @@ Find past what's new information on the
 [what's new archive][] page.
 You might also check out the
 Flutter SDK [release notes][].
+Also, check out the [What's new in Flutter][]
+and [Flutter at Google I/O 2024 in 5 minutes][]
+videos from Google I/O!
 
 To stay on top of Flutter announcements including
 breaking changes,
@@ -18,10 +21,12 @@ join the [flutter-announce][] Google group.
 For Dart, you can join the [Dart Announce][] Google group,
 and review the [Dart changelog][].
 
-[release notes]: /release/release-notes
-[flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [Dart Announce]: {{site.groups}}/a/dartlang.org/g/announce
 [Dart changelog]: {{site.github}}/dart-lang/sdk/blob/main/CHANGELOG.md
+[flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
+[Flutter at Google I/O 2024 in 5 minutes]: {{site.youtube-site}}/watch?v=x2WOHonEwqM
+[release notes]: /release/release-notes
+[What's new in Flutter]: {{site.youtube-site}}/watch?v=lpnKWK-KEYs
 
 ## 14 May 2024: Google I/O 3.22 release
 

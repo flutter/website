@@ -43,9 +43,12 @@ Here are some resources that you might find useful:
 * [Human interface guidelines (Apple)][]
 * [Responsive design techniques (Microsoft)][]
 * [Machine sizes and breakpoints (Microsoft)][]
+* [How to build Adaptive UI with Flutter][],
+  a Google I/O 2024 video.
 
 [Android large screen guidelines]: {{site.android-dev}}/docs/quality-guidelines/large-screen-app-quality
 [Build high quality apps (Android)]: {{site.android-dev}}/quality
+[How to build Adaptive UI with Flutter]: {{site.youtube-site}}/watch?v=LeKLGzpsz9I
 [Material guidelines on applying layout]: {{site.material}}/foundations/layout/applying-layout/window-size-classes
 [Material guidelines on canonical layouts]: {{site.material}}/foundations/layout/canonical-layouts/overview
 [Human interface guidelines (Apple)]: {{site.apple-dev}}/design/human-interface-guidelines/

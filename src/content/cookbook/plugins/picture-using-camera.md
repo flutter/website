@@ -11,6 +11,24 @@ for this purpose. The `camera` plugin provides tools to get a list of the
 available cameras, display a preview coming from a specific camera,
 and take photos or videos.
 
+:::note
+The [`camera_android_camerax`][] plugin,
+built on top of the [CameraX][] Android library,
+improves image resolution with automatic selection
+of the resolution based on the device's capability.
+This plugin also helps deal with _device quirks_,
+defined as camera hardware that might
+not work as expected.
+
+For more information,
+check out the Google I/O 2024 talk,
+[Building picture perfect camera experiences in Flutter with CameraX][camerax-video].
+:::
+
+[`camera_android_camerax`]: {{site.pub-pkg}}/camera_android_camerax
+[CameraX]: https://developer.android.com/training/camerax
+[camerax-video]: {{site.youtube-site}}/watch?v=d1sRCa5k2Sg&t=1s
+
 This recipe demonstrates how to use the `camera` plugin to display a preview,
 take a photo, and display it using the following steps:
 
@@ -42,7 +60,9 @@ $ flutter pub add camera path_provider path
 
 :::tip
 - For android, You must update `minSdkVersion` to 21 (or higher).
-- On iOS, lines below have to be added inside `ios/Runner/Info.plist` in order the access the camera and microphone.
+- On iOS, the following lines must be added inside
+  `ios/Runner/Info.plist` to the access the camera and microphone.
+
   ```xml
   <key>NSCameraUsageDescription</key>
   <string>Explanation on why the camera access is needed.</string>
@@ -134,7 +154,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
 ```
 
 :::warning
-If you do not initialize the `CameraController`,
+If you don't initialize the `CameraController`,
 you *cannot* use the camera to display a preview and take pictures.
 :::
 
@@ -146,8 +166,8 @@ display a preview of the camera's feed.
 :::note Remember
 You must wait until the controller has finished
 initializing before working with the camera. Therefore,
-you must wait for the `_initializeControllerFuture()` created
-in the previous step to complete before showing a `CameraPreview`.
+you must wait for the `_initializeControllerFuture()`, created
+in the previous step, to complete before showing a `CameraPreview`.
 :::
 
 Use a [`FutureBuilder`][] for exactly this purpose.
@@ -186,7 +206,8 @@ using the `CameraController` when a user taps on the button.
 Taking a picture requires 2 steps:
 
   1. Ensure that the camera is initialized.
-  2. Use the controller to take a picture and ensure that it returns a `Future<XFile>`.
+  2. Use the controller to take a picture and ensure
+     that it returns a `Future<XFile>`.
 
 It is good practice to wrap these operations in a `try / catch` block in order
 to handle any errors that might occur.
