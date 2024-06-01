@@ -71,7 +71,7 @@ Wiki page:
 
 * [Flutter Test Fonts][]
 
-[Flutter Test Fonts]: {{site.repo.flutter}}/wiki/Flutter-Test-Fonts
+[Flutter Test Fonts]: {{site.repo.flutter}}/blob/master/docs/contributing/testing/Flutter-Test-Fonts.md
 [TextDecoration.underline]: {{site.api}}/flutter/dart-ui/TextDecoration/underline-constant.html
 [TextDecoration.overline]: {{site.api}}/flutter/dart-ui/TextDecoration/overline-constant.html
 [TextDecoration.lineThrough]: {{site.api}}/flutter/dart-ui/TextDecoration/lineThrough-constant.html

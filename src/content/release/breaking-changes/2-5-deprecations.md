@@ -16,7 +16,7 @@ primary source to aid in migration. A
 [quick reference sheet][] is available as well.
 
 
-[Deprecation Policy]: {{site.repo.flutter}}/wiki/Tree-hygiene#deprecation
+[Deprecation Policy]: {{site.repo.flutter}}/blob/master/docs/contributing/Tree-hygiene.md#deprecations
 [quick reference sheet]: /go/deprecations-removed-after-2-5
 
 ## Changes
@@ -253,7 +253,7 @@ Relevant PRs:
 * Deprecated in [#60320]({{site.repo.flutter}}/issues/60320)
 * Removed in [#90294]({{site.repo.flutter}}/issues/90294)
 
-[Flutter Hybrid Composition]: {{site.repo.flutter}}/wiki/Hybrid-Composition
+[Flutter Hybrid Composition]: {{site.repo.flutter}}/blob/master/docs/platforms/Hybrid-Composition.md
 [`AndroidViewController`]: {{site.api}}/flutter/services/AndroidViewController-class.html
 [`TextureAndroidViewController`]: {{site.api}}/flutter/services/TextureAndroidViewController-class.html
 [`SurfaceAndroidViewController`]: {{site.api}}/flutter/services/SurfaceAndroidViewController-class.html

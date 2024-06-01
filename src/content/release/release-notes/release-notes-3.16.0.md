@@ -8,7 +8,7 @@ This page has release notes for 3.16.0.
 For information about subsequent bug-fix releases,
 see [Hotfixes to the Stable Channel][].
 
-[Hotfixes to the Stable Channel]: {{site.repo.flutter}}/wiki/Hotfixes-to-the-Stable-Channel
+[Hotfixes to the Stable Channel]: {{site.repo.flutter}}/blob/master/docs/releases/Hotfixes-to-the-Stable-Channel.md
 
 ## Flutter
 

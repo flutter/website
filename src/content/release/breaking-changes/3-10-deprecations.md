@@ -15,7 +15,7 @@ All affected APIs have been compiled into this
 primary source to aid in migration. A
 [quick reference sheet][] is available as well.
 
-[Deprecation Policy]: {{site.repo.flutter}}/wiki/Tree-hygiene#deprecation
+[Deprecation Policy]: {{site.repo.flutter}}/blob/master/docs/contributing/Tree-hygiene.md#deprecations
 [quick reference sheet]: /go/deprecations-removed-after-3-10
 
 ## Changes

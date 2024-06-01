@@ -129,8 +129,8 @@ For more information on the build modes, see
 [dart2js]: {{site.dart-site}}/tools/dart2js
 [dartdevc]: {{site.dart-site}}/tools/dartdevc
 [DevTools]: /tools/devtools
-[Flutter wiki]: {{site.repo.flutter}}/wiki/Flutter's-modes
-[Flutter's build modes]: {{site.repo.flutter}}/wiki/Flutter%27s-modes
+[Flutter wiki]: {{site.repo.flutter}}/blob/master/docs/engine/Flutter's-modes.md
+[Flutter's build modes]: {{site.repo.flutter}}/blob/master/docs/engine/Flutter's-modes.md
 [generate timeline events]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [hot reload]: /tools/hot-reload
 [iOS]: /deployment/ios

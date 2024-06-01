@@ -16,7 +16,7 @@ primary source to aid in migration.
 To further aid your migration, check out this
 [quick reference sheet][].
 
-[Deprecation Policy]: {{site.repo.flutter}}/wiki/Tree-hygiene#deprecation
+[Deprecation Policy]: {{site.repo.flutter}}/blob/master/docs/contributing/Tree-hygiene.md#deprecations
 [quick reference sheet]: /go/deprecations-removed-after-3-16
 
 ## Changes

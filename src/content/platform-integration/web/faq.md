@@ -162,7 +162,6 @@ Not currently.
 [Logging]: /tools/devtools/logging
 [Preparing a web app for release]: /deployment/web
 [Running Flutter inspector]: /tools/devtools/inspector
-[Upgrading from package:flutter_web to the Flutter SDK]: {{site.repo.flutter}}/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
 [widget tests]: /testing/overview#widget-tests
 [Web support for Flutter]: /platform-integration/web
 [web workers]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers

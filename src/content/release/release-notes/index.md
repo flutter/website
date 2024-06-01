@@ -131,4 +131,4 @@ For information about bug-fix releases, check out
 [1.12.13 announcement]: {{site.flutter-medium}}/announcing-flutter-1-12-what-a-year-22c256ba525d
 [1.12.13 release notes and change log]: /release/release-notes/release-notes-1.12.13
 [Archived release notes]: /release/release-notes/release-notes-archive
-[Hotfixes to the Stable Channel]: {{site.repo.flutter}}/wiki/Hotfixes-to-the-Stable-Channel
+[Hotfixes to the Stable Channel]: {{site.repo.flutter}}/blob/master/docs/releases/Hotfixes-to-the-Stable-Channel.md

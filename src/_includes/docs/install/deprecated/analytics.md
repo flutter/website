@@ -34,6 +34,6 @@ how data is handled by these services.
 
 [Google Terms of Service]: https://policies.google.com/terms
 [Privacy Policy]: https://policies.google.com/privacy
-[crash reports]: {{site.repo.flutter}}/wiki/Flutter-CLI-crash-reporting
+[crash reports]: /src/content/reference/crash-reporting.md
 [`dart` tool]: {{site.dart-site}}/tools/dart-tool
 :::
