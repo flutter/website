@@ -486,6 +486,7 @@
       { "source": "/go/mixin-modifier", "destination": "https://docs.google.com/document/d/1la2S1uJrNAawc1yja8hrSxFZJ0cFHnYopmaBYDLwMjg/edit?usp=sharing&resourcekey=0-br1LWMlYC63Q30VGiPtAHg", "type": 301 },
       { "source": "/go/mouse-tracker-no-longer-attaches-annotations", "destination": "https://docs.google.com/document/d/1YuOcepqZjNknAMz1si2m-jAiLT4MP28XEzBcKLHnNiA/edit", "type": 301 },
       { "source": "/go/move-mouse-tracker-to-rendering", "destination": "https://docs.google.com/document/d/1dYNOTZ4kdq6ndNHopjUlrGlGBw3W-3jMbnoNJouIYtE/edit", "type": 301 },
+      { "source": "/go/move-flutter-agnostic-types", "destination": "https://docs.google.com/document/d/1qQokfeExIx3E7X_2ogFfZ4U5viBQflwVSKtlazPjgOY/edit?usp=sharing&resourcekey=0-XFum7OfSG2Nkvvq8w5QxdA", "type": 301 },
       { "source": "/go/multiple-applications", "destination": "https://docs.google.com/document/d/1alrr7qimNDazmQx5D80BSHh62V2OINO4UQ5N3HcPnmo/edit?resourcekey=0-wPs1Go9AiKR-yG0-xStuKw", "type": 301 },
       { "source": "/go/multiple-engines", "destination": "https://docs.google.com/document/d/1NwiZPWHd1te46eP2GWwIezDV9CdMQkODAMuF5kWdtLw", "type": 301 },
       { "source": "/go/multiple-flutters", "destination": "https://docs.google.com/document/d/1fdKRufqUzQvERcqNIUSq-GdabXc4k8VIsClzRElJ6KY", "type": 301 },
