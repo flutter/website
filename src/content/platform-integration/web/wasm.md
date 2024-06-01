@@ -24,7 +24,7 @@ applications for the web.
   section to learn more. 
 :::
 
-[`stable`]: {{site.github}}/flutter/flutter/wiki/flutter-build-release-channels#stable
+[`stable`]: {{site.github}}/flutter/flutter/blob/master/docs/releases/Flutter-build-release-channels.md#stable
 [`package:web`]: {{site.pub-pkg}}/web
 [`dart:js_interop`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-js_interop 
 

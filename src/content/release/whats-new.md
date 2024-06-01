@@ -139,7 +139,7 @@ You might also check out the [Dart 3.3 release][] blog post.
   [Flutter and Dart 2024 Roadmap][].
 * Check out [Harness the Gemini API in your Dart and Flutter apps][].
 
-[Flutter and Dart 2024 Roadmap]: {{site.github}}/flutter/flutter/wiki/Roadmap
+[Flutter and Dart 2024 Roadmap]: {{site.github}}/flutter/flutter/blob/master/docs/roadmap/Roadmap.md
 [Harness the Gemini API in your Dart and Flutter apps]: {{site.flutter-medium}}/harness-the-gemini-api-in-your-dart-and-flutter-apps-00573e560381
 
 ---

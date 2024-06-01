@@ -4,7 +4,7 @@ short-title: 1.9.1 release notes
 description: Release notes for Flutter 1.9.1.
 ---
 
-Hello and welcome to another stable release of Flutter. So far this year, we've been right on target with one stable release each quarter, as per [our plan](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels) (well, less of a plan and more of a goal, but still, it's been working out pretty well so far…). This release is our biggest yet, with 620 Pull Requests merged from 116 contributors. As always, the interesting PRs are listed below. And there are lots of interesting things to discuss in this release, including:
+Hello and welcome to another stable release of Flutter. So far this year, we've been right on target with one stable release each quarter, as per [our plan](https://github.com/flutter/flutter/blob/master/docs/releases/Flutter-build-release-channels.md) (well, less of a plan and more of a goal, but still, it's been working out pretty well so far…). This release is our biggest yet, with 620 Pull Requests merged from 116 contributors. As always, the interesting PRs are listed below. And there are lots of interesting things to discuss in this release, including:
 
 *   One regression fixed but also one added
 *   Some breaking API changes
