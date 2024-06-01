@@ -137,7 +137,7 @@ like layout and animations:
 [MDC-104 Flutter: Material Advanced Components]: {{site.codelabs}}/codelabs/mdc-104-flutter
 [Take your Flutter app from boring to beautiful]: {{site.codelabs}}/codelabs/flutter-boring-to-beautiful
 
-## Using Flutter with
+## Using Flutter with ...
 
 Learn how to use Flutter with other technologies.
 
@@ -193,6 +193,37 @@ Learn how to use Flutter with other technologies.
 [Get to know Firebase for Flutter]: {{site.firebase}}/codelabs/firebase-get-to-know-flutter
 [Local development for your Flutter apps using the Firebase Emulator Suite]: {{site.firebase}}/codelabs/get-started-firebase-emulators-and-flutter
 
+### Build games with Flutter
+
+* [Add sound and music to your Flutter game with SoLoud][]—**NEW**<br>
+  The [SoLoud][] package, a free and portable engine,
+  delivers the low-latency and high-performance sound that's
+  essential for many games.
+  In this codelab, learn how to add SoLoud to your game.
+
+* [Build a 2D physics game with Flutter and Flame][]—**NEW**<br>
+  This codelab guides you through crafting game mechanics in a
+  Flutter and Flame game using a 2D physics simulation along
+  the lines of Box2D, called [Forge2D][].
+
+* [Build a word puzzle with Flutter][]—**NEW**<br>
+  This codelab focuses on building word puzzle games,
+  and dives into using Flutter's background processing
+  to generate expansive crossword-style grids of interlocking words.
+
+* [Introduction to Flame with Flutter][]<br>
+  Build a Breakout clone using the Flame 2D game engine and
+  embed it in a Flutter wrapper. You will use Flame's Effects
+  to animate and remove components, along with the `google_fonts` and
+  `flutter_animate` packages, to make the whole game look well designed.
+
+[Add sound and music to your Flutter game with SoLoud]: {{site.codelabs}}/codelabs/flutter-codelab-soloud
+[Build a 2D physics game with Flutter and Flame]: {{site.codelabs}}/codelabs/flutter-flame-forge2d
+[Build a word puzzle with Flutter]: {{site.codelabs}}/codelabs/flutter-word-puzzle
+[Forge2D]: {{site.pub-pkg}}/forge2d
+[Introduction to Flame with Flutter]: {{site.codelabs}}/codelabs/flutter-flame-brick-breaker
+[SoLoud]: {{site.pub-pkg}}/flutter_soloud
+
 ### Flutter and TensorFlow
 
 * [Create a custom text-classification model with TensorFlow Lite Model Maker][]<br>
@@ -211,12 +242,6 @@ Learn how to use Flutter with other technologies.
 
 ### Flutter and other technologies
 
-* [Add sound and music to your Flutter game with SoLoud][]—**NEW**<br>
-  The [SoLoud][] package, a free and portable engine,
-  delivers the low-latency and high-performance sound that's
-  essential for many games.
-  In this codelab, learn how to add SoLoud to your game.
-
 * [Adding Google Maps to a Flutter app][]<br>
   Display a Google map in an app, retrieve data from a
   web service, and display the data as markers on the map.
@@ -224,16 +249,6 @@ Learn how to use Flutter with other technologies.
 * [Adding WebView to your Flutter app][]<br>
   With the WebView Flutter plugin you can add a WebView
   widget to your Android or iOS Flutter app.
-
-* [Build a 2D physics game with Flutter and Flame][]—**NEW**<br>
-  This codelab guides you through crafting game mechanics in a
-  Flutter and Flame game using a 2D physics simulation along
-  the lines of Box2D, called [Forge2D][].
-
-* [Build a word puzzle with Flutter][]—**NEW**<br>
-  This codelab focuses on building word puzzle games,
-  and dives into using Flutter's background processing
-  to generate expansive crossword-style grids of interlocking words.
 
 * [Build voice bots for mobile with Dialogflow and Flutter][] (workshop)<br>
   An instructor-led version of the Dialogflow
@@ -244,12 +259,6 @@ Learn how to use Flutter with other technologies.
   common questions about the tool Dialogflow. End users
   can interact with the text interface or stream a voice
   interaction via the built-in microphone of a mobile device.
-
-* [Introduction to Flame with Flutter][]<br>
-  Build a Breakout clone using the Flame 2D game engine and
-  embed it in a Flutter wrapper. You will use Flame's Effects
-  to animate and remove components, along with the `google_fonts` and
-  `flutter_animate` packages, to make the whole game look well designed.
 
 * [Using FFI in a Flutter plugin][]<br>
   Learn how to use Dart's FFI (foreign function interface)
@@ -263,17 +272,11 @@ Learn how to use Flutter with other technologies.
   PaLM API gives you access to Google's
   state-of-the-art large language models.
 
-[Add sound and music to your Flutter game with SoLoud]: {{site.codelabs}}/codelabs/flutter-codelab-soloud
 [Adding Google Maps to a Flutter app]: {{site.codelabs}}/codelabs/google-maps-in-flutter
 [Adding WebView to your Flutter app]: {{site.codelabs}}/codelabs/flutter-webview
-[Build a 2D physics game with Flutter and Flame]: {{site.codelabs}}/codelabs/flutter-flame-forge2d
-[Build a word puzzle with Flutter]: {{site.codelabs}}/codelabs/flutter-word-puzzle
 [Build voice bots for Android with Dialogflow and Flutter]: {{site.codelabs}}/codelabs/dialogflow-flutter
 [Build voice bots for mobile with Dialogflow and Flutter]: {{site.yt.watch}}?v=O7JfSF3CJ84
 [Create haikus about Google products with the PaLM API and Flutter]: {{site.codelabs}}/haiku-generator
-[Forge2D]: {{site.pub-pkg}}/forge2d
-[Introduction to Flame with Flutter]: {{site.codelabs}}/codelabs/flutter-flame-brick-breaker
-[SoLoud]: {{site.pub-pkg}}/flutter_soloud
 [Using FFI in a Flutter plugin]: {{site.codelabs}}/codelabs/flutter-ffigen
 
 ## Testing
@@ -292,17 +295,6 @@ Learn how to test your Flutter application.
 Learn how to write code that's targeted for specific platforms,
 like iOS, Android, desktop, or the web.
 
-* [How to write a Flutter plugin][]<br>
-  Learn how to write a plugin by creating a music plugin
-  for iOS and Android that processes audio on the host platform.
-  Then make an example app that uses your plugin to make a music keyboard.
-
-* [Using a plugin with a Flutter web app][]<br>
-  Finish an app that reports the number of stars on a GitHub repository.
-  Use Dart/Flutter DevTools to do some simple debugging, and
-  host your app on Firebase and, finally, use a Flutter plugin to
-  launch the app and open the hosted privacy policy.
-
 * [Write a Flutter desktop application][]<br>
   Build a Flutter desktop app (Windows, Linux, or macOS)
   that accesses GitHub APIs to retrieve your repositories,
@@ -316,19 +308,8 @@ like iOS, Android, desktop, or the web.
   today view.
 
 [home-screen]: {{site.codelabs}}/flutter-home-screen-widgets
-[How to write a Flutter plugin]: {{site.codelabs}}/codelabs/write-flutter-plugin
 [provider]: {{site.pub-pkg}}/provider
-[Using a plugin with a Flutter web app]: {{site.codelabs}}/codelabs/web-url-launcher
 [Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-client
-
-## Other resources
-
-For Dart-specific codelabs, see the
-[codelabs][] page on the [Dart site][].
-
-We also recommend the following online class:
-
-* [The Complete Flutter Development Bootcamp Using Dart][]
 
 :::note
 If you have trouble viewing any of the codelabs
@@ -336,7 +317,4 @@ on [`codelabs.developers.google.com`]({{site.codelabs}}), try
 [this mirror of the Flutter codelabs][].
 :::
 
-[codelabs]: {{site.dart-site}}/codelabs
-[Dart site]: {{site.dart-site}}
-[The Complete Flutter Development Bootcamp Using Dart]: https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart
 [this mirror of the Flutter codelabs]: https://codelabs.flutter-io.cn/
