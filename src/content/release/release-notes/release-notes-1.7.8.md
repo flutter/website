@@ -17,7 +17,7 @@ The major themes of this release are:
     [RangeSlider](https://api.flutter.dev/flutter/material/RangeSlider-class.html)
 
 As detailed in our
-[roadmap](https://github.com/flutter/flutter/wiki/Roadmap),
+[roadmap](https://github.com/flutter/flutter/blob/master/docs/roadmap/Roadmap.md),
 we're also continuing the ongoing work in the Flutter engine
 and framework to support turning on web and desktop targets;
 however, this is not yet ready for general usage.

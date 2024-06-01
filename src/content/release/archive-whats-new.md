@@ -1247,7 +1247,7 @@ Other relevant docs:
 * If you already have a web app that depends on the
   flutter_web package, the following instructions tell
   you how to migrate to the flutter package:
-  [Upgrading from package:flutter_web to the Flutter SDK][].
+  Upgrading from package:flutter_web to the Flutter SDK.
 * A new [`ToggleButtons`][] widget, described in the API docs.
   [ToggleButtons demo][]
 * A new [`ColorFiltered`][] widget, also described in the API docs.
@@ -1270,7 +1270,6 @@ Happy Fluttering!
 [Showcase]: {{site.main-url}}/showcase
 [`ToggleButtons`]: {{site.api}}/flutter/material/ToggleButtons-class.html
 [ToggleButtons demo]: {{site.github}}/csells/flutter_toggle_buttons
-[Upgrading from package:flutter_web to the Flutter SDK]: {{site.repo.flutter}}/wiki/Upgrading-from-package:flutter_web-to-the-Flutter-SDK
 [using the dart:ffi library]: /platform-integration/android/c-interop
 
 ## 09 Jul 2019: 1.7 release

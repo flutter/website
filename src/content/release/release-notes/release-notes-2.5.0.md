@@ -7,7 +7,7 @@ This page has release notes for 2.5.0.
 For information about subsequent bug-fix releases, see
 [Hotfixes to the Stable Channel][].
 
-[Hotfixes to the Stable Channel]: https://github.com/flutter/flutter/wiki/Hotfixes-to-the-Stable-Channel
+[Hotfixes to the Stable Channel]: https://github.com/flutter/flutter/blob/master/docs/releases/Hotfixes-to-the-Stable-Channel.md
 
 ## Merged PRs by labels for `flutter/flutter` 
 

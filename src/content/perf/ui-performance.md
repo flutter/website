@@ -230,13 +230,13 @@ on other threads.
   This thread is not shown in the performance overlay.
     
 For links to more information and videos,
-see [The Framework architecture][] on the
-[GitHub wiki][], and the community article,
+see [The Framework architecture][] in the
+[Flutter wiki][], and the community article,
 [The Layer Cake][].
 
-[GitHub wiki]: {{site.repo.flutter}}/wiki/
+[Flutter wiki]: {{site.repo.flutter}}/tree/master/docs
 [MainThread]: {{site.android-dev}}/reference/android/support/annotation/MainThread
-[The Framework architecture]: {{site.repo.flutter}}/wiki/The-Framework-architecture
+[The Framework architecture]: {{site.repo.flutter}}/blob/master/docs/about/The-Framework-architecture.md
 [The Layer Cake]: {{site.medium}}/flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401
 [UIKit]: {{site.apple-dev}}/documentation/uikit
 

@@ -55,7 +55,7 @@ in public that could put users at risk,
 For more details on how we handle security vulnerabilities,
 see our [security policy][].
 
-[Discord chat channels]: {{site.repo.flutter}}/wiki/Chat
+[Discord chat channels]: {{site.repo.flutter}}/blob/master/docs/contributing/Chat.md
 [known false positives]: /reference/security-false-positives
 [security policy]: {{site.repo.flutter}}/security/policy
 
@@ -108,8 +108,7 @@ technical release blog post.
 
 * **Keep current with the latest Flutter SDK releases.**
   We regularly update Flutter, and these updates might fix security
-  defects discovered in previous versions. Check the Flutter
-  [change log][] for security-related updates.
+  defects discovered in previous versions.
 
 * **Keep your application's dependencies up to date.**
   Make sure you [upgrade your package dependencies][]
@@ -128,6 +127,5 @@ technical release blog post.
   be sure to update your fork and consider sharing your
   changes with the community.
 
-[change log]: {{site.repo.flutter}}/wiki/Changelog
 [upgrade your package dependencies]: /release/upgrade
 

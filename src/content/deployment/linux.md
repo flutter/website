@@ -389,9 +389,8 @@ You can learn more from the following links on the
 
 
 
-[Desktop shells]: {{site.repo.flutter}}/wiki/Desktop-shells
 [Environment variables]: https://snapcraft.io/docs/environment-variables
-[Flutter wiki]: {{site.repo.flutter}}/wiki/
+[Flutter wiki]: {{site.repo.flutter}}/tree/master/docs
 [Interface management]: https://snapcraft.io/docs/interface-management
 [DBus interface]: https://snapcraft.io/docs/dbus-interface
 [Introduction to snapcraft]: https://snapcraft.io/blog/introduction-to-snapcraft
