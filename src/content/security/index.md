@@ -108,8 +108,7 @@ technical release blog post.
 
 * **Keep current with the latest Flutter SDK releases.**
   We regularly update Flutter, and these updates might fix security
-  defects discovered in previous versions. Check the Flutter
-  [change log][] for security-related updates.
+  defects discovered in previous versions.
 
 * **Keep your application's dependencies up to date.**
   Make sure you [upgrade your package dependencies][]
