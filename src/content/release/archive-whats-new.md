@@ -1247,7 +1247,7 @@ Other relevant docs:
 * If you already have a web app that depends on the
   flutter_web package, the following instructions tell
   you how to migrate to the flutter package:
-  [Upgrading from package:flutter_web to the Flutter SDK][].
+  Upgrading from package:flutter_web to the Flutter SDK.
 * A new [`ToggleButtons`][] widget, described in the API docs.
   [ToggleButtons demo][]
 * A new [`ColorFiltered`][] widget, also described in the API docs.
