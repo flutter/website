@@ -455,11 +455,11 @@ is instantiated with the data it needs:
 ```dart
 @override
 Widget build(BuildContext context) {
-   return ContentWidget(_importantState_);
+   return ContentWidget([!importantState!]);
 }
 ```
 
-Where _importantState_ is a placeholder for the class
+Where `importantState` is a placeholder for the class
 that contains the state important to the `Widget`.
 
 As widget trees get deeper, however,
