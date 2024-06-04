@@ -16,7 +16,7 @@ stored on the file system, as an asset, or from the internet.
 
 :::warning
 At this time,
-the `video_player` plugin doesn't work with any desktop platform.
+the `video_player` plugin doesn't work on Linux and Windows.
 To learn more, check out the [`video_player`][] package.
 :::
 
@@ -84,6 +84,20 @@ For iOS, add the following to the `Info.plist` file found at
 The `video_player` plugin can only play asset videos in iOS simulators.
 You must test network-hosted videos on physical iOS devices.
 :::
+
+### MacOS
+
+If you are using network-based videos, you will need to [add the
+`com.apple.security.network.client`
+entitlement](https://docs.flutter.dev/platform-integration/macos/building#entitlements-and-the-app-sandbox)
+
+### Web
+
+> The Web platform does **not** support `dart:io`, so avoid using the `VideoPlayerController.file` constructor for the plugin. Using the constructor attempts to create a `VideoPlayerController.file` that will throw an `UnimplementedError`.
+
+\* Different web browsers may have different video-playback capabilities (supported formats, autoplay...). Check [package:video_player_web](https://pub.dev/packages/video_player_web) for more web-specific information.
+
+The `VideoPlayerOptions.mixWithOthers` option can't be implemented in web, at least at the moment. If you use this option in web it will be silently ignored.
 
 ## 3. Create and initialize a `VideoPlayerController`
 
