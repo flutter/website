@@ -447,25 +447,33 @@ existing state objects when appropriate.
 So, if many widgets can contain state, how is state managed and passed around
 the system?
 
-As with any other class, you can use a constructor in a widget to initialize its
-data, so a `build()` method can ensure that any child widget is instantiated
-with the data it needs:
+As with any other class,
+you can use a constructor in a widget to initialize its data,
+so a `build()` method can ensure that any child widget
+is instantiated with the data it needs:
 
 ```dart
 @override
 Widget build(BuildContext context) {
-   return ContentWidget(importantState);
+   return ContentWidget([!importantState!]);
 }
 ```
 
-As widget trees get deeper, however, passing state information up and down the
-tree hierarchy becomes cumbersome. So, a third widget type,
-[`InheritedWidget`]({{site.api}}/flutter/widgets/InheritedWidget-class.html),
-provides an easy way to grab data from a shared ancestor. You can use
-`InheritedWidget` to create a state widget that wraps a common ancestor in the
+Where `importantState` is a placeholder for the class
+that contains the state important to the `Widget`.
+
+As widget trees get deeper, however,
+passing state information up and down the
+tree hierarchy becomes cumbersome.
+So, a third widget type, [`InheritedWidget`][],
+provides an easy way to grab data from a shared ancestor.
+You can use `InheritedWidget` to create a state widget
+that wraps a common ancestor in the
 widget tree, as shown in this example:
 
 ![Inherited widgets](/assets/images/docs/arch-overview/inherited-widget.png){:width="50%"}
+
+[`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 
 Whenever one of the `ExamWidget` or `GradeWidget` objects needs data from
 `StudentState`, it can now access it with a command such as:
@@ -474,20 +482,26 @@ Whenever one of the `ExamWidget` or `GradeWidget` objects needs data from
 final studentState = StudentState.of(context);
 ```
 
-The `of(context)` call takes the build context (a handle to the current widget
-location), and returns [the nearest ancestor in the
-tree]({{site.api}}/flutter/widgets/BuildContext/dependOnInheritedWidgetOfExactType.html)
-that matches the `StudentState` type. `InheritedWidget`s also offer an
-`updateShouldNotify()` method, which Flutter calls to determine whether a state
+The `of(context)` call takes the build context
+(a handle to the current widget location),
+and returns [the nearest ancestor in the tree][]
+that matches the `StudentState` type.
+`InheritedWidget`s also offer an `updateShouldNotify()` method,
+which Flutter calls to determine whether a state
 change should trigger a rebuild of child widgets that use it.
 
-Flutter itself uses `InheritedWidget` extensively as part of the framework for
-shared state, such as the application's _visual theme_, which includes
-[properties like color and type
-styles]({{site.api}}/flutter/material/ThemeData-class.html) that are
-pervasive throughout an application. The `MaterialApp` `build()` method inserts
-a theme in the tree when it builds, and then deeper in the hierarchy a widget
-can use the `.of()` method to look up the relevant theme data, for example:
+[the nearest ancestor in the tree]: {{site.api}}/flutter/widgets/BuildContext/dependOnInheritedWidgetOfExactType.html
+
+Flutter itself uses `InheritedWidget` extensively as part
+of the framework for shared state,
+such as the application's _visual theme_, which includes
+[properties like color and type styles][] that are
+pervasive throughout an application.
+The `MaterialApp` `build()` method inserts a theme
+in the tree when it builds, and then deeper in the hierarchy a widget
+can use the `.of()` method to look up the relevant theme data.
+
+For example:
 
 <?code-excerpt "lib/main.dart (container)"?>
 ```dart
@@ -499,6 +513,8 @@ Container(
   ),
 );
 ```
+
+[properties like color and type styles]: {{site.api}}/flutter/material/ThemeData-class.html
 
 As applications grow, more advanced state management approaches that reduce the
 ceremony of creating and using stateful widgets become more attractive. Many

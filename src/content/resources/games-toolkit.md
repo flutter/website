@@ -471,3 +471,16 @@ the Flutter 3.22 release:
 [Build a 2D physics game with Flutter and Flame]: {{site.codelabs}}/codelabs/flutter-flame-forge2d
 [Cheng Lin]: {{site.medium}}/@mhclin113_26002
 [Forge2D]: {{site.pub-pkgs}}/forge2d
+
+## Other new resources
+
+Check out the following videos:
+
+* [Building multiplatform games with Flutter][gdc-talk], a talk
+  given at the [Game Developer Conference (GDC)][] 2024.
+* [How to build a physics-based game with Flutter and Flame's Forge2D][forge2d-video],
+  from Google I/O 2024.
+
+[Game Developer Conference (GDC)]: https://gdconf.com/
+[forge2d-video]: {{site.youtube-site}}/watch?v=nsnQJrYHHNQ
+[gdc-talk]: {{site.youtube-site}}/watch?v=7mG_sW40tsw

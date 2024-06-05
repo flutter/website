@@ -22,3 +22,12 @@ The following resources can help you get started:
 
 [pkg]: {{site.pub-pkg}}/google_generative_ai
 [tutorial]: https://ai.google.dev/gemini-api/docs/get-started/dart
+
+Also, check out the following videos from Google I/O 2024:
+
+* [Build generative AI agents with Vertex AI Agent Builder and Flutter][vertex-video]
+* [Gemini API and Flutter: Practical, AI-driven apps with Google AI tools][gemini-video]
+
+
+[gemini-video]: {{site.youtube-site}}/watch?v=B1RKFL6ASts
+[vertex-video]: {{site.youtube-site}}/watch?v=V8P_S9OLI_I

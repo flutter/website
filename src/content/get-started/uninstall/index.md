@@ -29,14 +29,14 @@ Select your development platform from the following tabs.
 
 {% case os %}
 {% when 'Windows' -%}
-{% assign dirinstall='C:\user\{username}\dev\' %}
+{% assign dirinstall='C:\\user\{username}\dev\' %}
 {% assign localappdata='%LOCALAPPDATA%\' %}
 {% assign appdata='%APPDATA%\' %}
 {% assign ps-localappdata='$env:LOCALAPPDATA\' %}
 {% assign ps-appdata='$env:APPDATA\' %}
 {% assign unzip='Expand-Archive' %}
-{% assign path='C:\user\{username}\dev' %}
-{% assign prompt='C:\>' %}
+{% assign path='C:\\user\{username}\dev' %}
+{% assign prompt='C:\\>' %}
 {% assign terminal='PowerShell' %}
 {% assign rm = 'Remove-Item -Recurse -Force -Path' %}
 {% capture rm-sdk %}Remove-Item -Recurse -Force -Path '{{dirinstall}}flutter'{% endcapture %}

@@ -1359,8 +1359,7 @@ We increased our support for web, moving it from the dev channel to the beta cha
 ## Desktop
 
 We are also moving macOS support from tech preview to alpha,
-enabling it in the dev channel. For more details, see the
-[Flutter wiki]({{site.repo.flutter}}/wiki/Desktop-shells).
+enabling it in the dev channel.
 
 [37901]({{site.repo.flutter}}/pull/37901) [macos] Check for special keys before creating a logical key
 
@@ -3011,7 +3010,7 @@ In addition to the PRs listed below, please also check out the following release
  See the [full list](/release/release-notes/changelogs/changelog-1.12.13) of merged PRs for the 1.12 release.
 
 
-[breaking change policy on the Flutter wiki]: {{site.repo.flutter}}/wiki/Tree-hygiene#handling-breaking-changes
+[breaking change policy on the Flutter wiki]: {{site.repo.flutter}}/blob/master/docs/contributing/Tree-hygiene.md#handling-breaking-changes
 [flutter-announce]: https://groups.google.com/g/flutter-announce
 [GitHub Octoverse report]: https://octoverse.github.com/
 [this post from Ian Hickson]: https://groups.google.com/g/flutter-announce/c/Z09a317E21o

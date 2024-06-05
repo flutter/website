@@ -12,6 +12,15 @@ Deep linking is a mechanism for launching an app with a URI.
 This URI contains scheme, host, and path,
 and opens the app to a specific screen.
 
+:::note
+Did you know that Flutter DevTools provides a
+deep link validation tool for Android?
+An iOS version of the tool is in the works.
+Learn more and see a demo at [Validate deep links][].
+:::
+
+[Validate deep links]: /tools/devtools/deep-links
+
 A _app link_ is a type of deep link that uses
 `http` or `https` and is exclusive to Android devices.
 

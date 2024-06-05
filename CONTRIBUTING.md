@@ -60,5 +60,5 @@ Happy Fluttering!
 [doc-PRs]: https://github.com/flutter/website/pulls
 [so]: https://stackoverflow.com/tags/flutter
 [mailinglist]: https://groups.google.com/d/forum/flutter-dev
-[chat]: https://github.com/flutter/flutter/wiki/Chat
+[chat]: https://github.com/flutter/flutter/blob/master/docs/contributing/Chat.md
 [reddit]: https://www.reddit.com/r/FlutterDev
