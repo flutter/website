@@ -6,8 +6,8 @@
   <head>
     <meta charset="utf-8">
     <title>{% if short-title %}{{short-title}}{% else %}{{title}}{% endif %} | {{site.title}}</title>
-    <link rel="icon" href="/assets/images/branding/flutter/icon/64.png">
-    <link rel="apple-touch-icon" href="/assets/images/branding/flutter/logo/flutter-logomark-320px.png">
+    <link rel="icon" href="/assets/images/branding/flutter/icon/64.png" eleventy:ignore>
+    <link rel="apple-touch-icon" href="/assets/images/branding/flutter/logo/flutter-logomark-320px.png" eleventy:ignore>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="#ffffff">
 
@@ -50,7 +50,7 @@
     <meta property="og:title" content="{{title | escape}}">
     <meta property="og:url" content="{{site.url | append: page_url}}">
     <meta property="og:description" content="{{desc | escape}}">
-    <meta property="og:image" content="{{site.url | append: og_image_path}}">
+    <meta property="og:image" content="{{site.url | append: og_image_path}}" eleventy:ignore>
 
     {% unless strip_fonts == true -%}
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">

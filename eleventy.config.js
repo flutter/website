@@ -16,6 +16,7 @@ import { configureHighlighting } from './src/_11ty/plugins/highlight.js';
 import minifier from 'html-minifier-terser';
 import yaml from 'js-yaml';
 import { EleventyRenderPlugin } from '@11ty/eleventy';
+import { eleventyImageTransformPlugin } from '@11ty/eleventy-img';
 
 import * as path from 'node:path';
 import * as sass from 'sass';
@@ -27,6 +28,7 @@ import * as sass from 'sass';
  */
 export default function (eleventyConfig) {
   const isProduction = process.env.PRODUCTION === 'true';
+  const shouldOptimize = process.env.OPTIMIZE === 'true';
 
   eleventyConfig.on('eleventy.before', async () => {
     await configureHighlighting(markdown);
@@ -123,7 +125,7 @@ ${content}
       }
 
       const result = sass.compileString(inputContent, {
-        style: isProduction ? 'compressed' : 'expanded',
+        style: shouldOptimize ? 'compressed' : 'expanded',
         quietDeps: true,
         loadPaths: [parsedPath.dir, 'src/_sass'],
       });
@@ -153,7 +155,7 @@ ${content}
     filter: (path) => path.includes('src') || path.includes('images'),
   });
 
-  if (isProduction) {
+  if (shouldOptimize) {
     // If building for production, minify/optimize the HTML output.
     // Doing so during serving isn't worth the extra build time.
     eleventyConfig.addTransform('minify-html', async function (content) {
@@ -169,6 +171,37 @@ ${content}
       }
 
       return content;
+    });
+
+    // Optimize all images, generate an avif, webp, and png version,
+    // and indicate they should be lazily loaded.
+    // Save in `_site/assets/images` and update links to there.
+    eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+      extensions: 'html',
+      formats: ['avif', 'webp', 'png', 'svg'],
+      svgShortCircuit: true,
+      widths: ['auto'],
+      defaultAttributes: {
+        loading: 'lazy',
+        decoding: 'async',
+      },
+      urlPath: '/assets/images/',
+      outputDir: '_site/assets/images/',
+    });
+  } else {
+    // To be more consistent with the production build,
+    // don't optimize images but still indicate they should be lazily loaded.
+    // Then save in `_site/assets/images` and update links to there.
+    eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+      extensions: 'html',
+      formats: ['auto'],
+      widths: ['auto'],
+      defaultAttributes: {
+        loading: 'lazy',
+        decoding: 'async',
+      },
+      urlPath: '/assets/images/',
+      outputDir: '_site/assets/images/',
     });
   }
 

@@ -16,13 +16,14 @@
   "scripts": {
     "serve": "PRODUCTION=false eleventy --serve",
     "build-site-for-staging": "PRODUCTION=false eleventy",
-    "build-site-for-production": "PRODUCTION=true eleventy"
+    "build-site-for-production": "PRODUCTION=true OPTIMIZE=true eleventy"
   },
   "dependencies": {
     "bootstrap-scss": "^4.6.2"
   },
   "devDependencies": {
     "@11ty/eleventy": "3.0.0-alpha.10",
+    "@11ty/eleventy-img": "5.0.0-beta.4",
     "diff2html": "^3.4.48",
     "firebase-tools": "^13.10.2",
     "hast-util-from-html": "^2.0.1",
@@ -36,7 +37,7 @@
     "markdown-it-container": "^4.0.0",
     "markdown-it-deflist": "^3.0.0",
     "markdown-it-table": "^4.1.1",
-    "sass": "^1.77.3",
+    "sass": "^1.77.4",
     "shiki": "^1.6.1"
   }
 }

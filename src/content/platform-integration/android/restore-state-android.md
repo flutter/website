@@ -68,7 +68,7 @@ You can enable state restoration with just a few tasks:
 
 3. If you use any Navigator API (like `push`, `pushNamed`, and so on)
    migrate to the API that has "restorable" in the name
-   (`restorablePush`, `resstorablePushNamed`, and so on)
+   (`restorablePush`, `restorablePushNamed`, and so on)
    to restore the navigation stack.
 
 Other considerations:

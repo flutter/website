@@ -1,6 +1,7 @@
 ---
 title: Building adaptive apps
 description: Some considerations and instructions on how to build adaptive apps to run on a variety of platforms.
+sitemap: false
 ---
 
 <?code-excerpt path-base="ui/adaptive_app_demos"?>
@@ -148,7 +149,7 @@ are set to 0.0, but you can set the densities to any negative
 or positive value that you want. By switching between different
 densities, you can easily adjust your UI:
 
-![Adaptive scaffold](/assets/images/docs/development/ui/layout/adaptive_scaffold.gif){:width="100%"}
+![Adaptive scaffold](/assets/images/docs/ui/adaptive-responsive/adaptive_scaffold.gif){:width="100%"}
 
 To set a custom visual density, inject the density into
 your `MaterialApp` theme:
@@ -468,7 +469,7 @@ while the app is running to preview various screen sizes.
 This, combined with hot reload, can greatly accelerate the
 development of a responsive UI.
 
-![Adaptive scaffold 2](/assets/images/docs/development/ui/layout/adaptive_scaffold2.gif){:width="100%"}
+![Adaptive scaffold 2](/assets/images/docs/ui/adaptive-responsive/adaptive_scaffold2.gif){:width="100%"}
 
 ### Solve touch first
 
@@ -1008,7 +1009,7 @@ the title bar of your app window, adding a logo for
 stronger branding or contextual controls to help save
 vertical space in your main UI.
 
-![Samples of title bars](/assets/images/docs/development/ui/layout/titlebar.png){:width="100%"}
+![Samples of title bars](/assets/images/docs/ui/adaptive-responsive/titlebar.png){:width="100%"}
 
 This isn't supported directly in Flutter, but you can use the
 [`bits_dojo`][] package to disable the native title bars,
@@ -1123,9 +1124,9 @@ return Row(
 );
 ```
 
-![Sample of embedded image](/assets/images/docs/development/ui/layout/embed_image1.png){:width="75%"}
+![Sample of embedded image](/assets/images/docs/ui/adaptive-responsive/embed_image1.png){:width="75%"}
 
-![Sample of embedded image](/assets/images/docs/development/ui/layout/embed_image2.png){:width="90%"}
+![Sample of embedded image](/assets/images/docs/ui/adaptive-responsive/embed_image2.png){:width="90%"}
 
 #### Menu bar
 
