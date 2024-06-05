@@ -26,9 +26,10 @@
 
     img, iframe {
       max-width: 100%;
+      max-height: 20rem;
     }
 
-    > img {
+    > img, > p > img {
       margin-bottom: 1rem;
     }
   }

@@ -8,6 +8,11 @@
   position: relative;
   z-index: bootstrap.$zindex-sticky;
 
+  &__logo {
+    height: 100px;
+    width: 81px;
+  }
+
   &__wrapper {
     align-items: center;
     display: flex;
