@@ -87,7 +87,7 @@ You must test network-hosted videos on physical iOS devices.
 
 ### MacOS
 
-If you are using network-based videos, you will need to [add the
+If you use network-based videos, [add the
 `com.apple.security.network.client`
 entitlement](https://docs.flutter.dev/platform-integration/macos/building#entitlements-and-the-app-sandbox)
 
