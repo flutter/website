@@ -87,7 +87,7 @@ To learn more, check out [dart.dev/go/macros][].
 
 [Adaptive and Responsive design]: /ui/adaptive-responsive
 [Casual Games Toolkit]: /resources/games-toolkit
-[Bundle assets conditionally based on flavor]: /deployment/flavors#bundle-assets-conditionally-based on flavor
+[Bundle assets conditionally based on flavor]: /deployment/flavors#bundle-assets-conditionally-based-on-flavor
 [First week experience of Flutter]: /get-started/fwe
 [Flutter install]: /get-started/install
 [Flutter web app initialization]: /platform-integration/web/bootstrapping
