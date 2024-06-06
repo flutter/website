@@ -16,7 +16,7 @@ stored on the file system, as an asset, or from the internet.
 
 :::warning
 At this time,
-the `video_player` plugin doesn't work with any desktop platform.
+the `video_player` plugin doesn't work on Linux and Windows.
 To learn more, check out the [`video_player`][] package.
 :::
 
@@ -84,6 +84,25 @@ For iOS, add the following to the `Info.plist` file found at
 The `video_player` plugin can only play asset videos in iOS simulators.
 You must test network-hosted videos on physical iOS devices.
 :::
+
+### macOS
+
+If you use network-based videos, 
+[add the `com.apple.security.network.client` entitlement][mac-entitlement].
+
+### Web
+
+Flutter web does **not** support `dart:io`,
+so avoid using the `VideoPlayerController.file` constructor for the plugin.
+Using this constructor attempts to create a`VideoPlayerController.file`
+that throws an `UnimplementedError`.
+
+Different web browsers might have different video-playback capabilities,
+such as supported formats or autoplay.
+Check the [video_player_web] package for more web-specific information.
+
+The `VideoPlayerOptions.mixWithOthers` option can't be implemented in web,
+at least at the moment. If you use this option in web it will be silently ignored.
 
 ## 3. Create and initialize a `VideoPlayerController`
 
@@ -351,3 +370,5 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
 [`play()`]: {{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/play.html
 [`video_player`]: {{site.pub-pkg}}/video_player
 [`VideoPlayer`]: {{site.pub-api}}/video_player/latest/video_player/VideoPlayer-class.html
+[mac-entitlement]: {{site.url}}/platform-integration/macos/building#entitlements-and-the-app-sandbox
+[video_player_web]: {{site.pub-pkg}}/video_player_web
