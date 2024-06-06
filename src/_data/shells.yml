@@ -1,14 +1,14 @@
 - name: bash
-  set-path: echo 'export PATH="$HOME/development/flutter/bin:$PATH"' >> ~/.bash_profile
+  set-path: echo 'export PATH="/usr/bin/flutter/bin:$PATH"' >> ~/.bash_profile
 - name: zsh
-  set-path: echo 'export PATH="$HOME/development/flutter/bin:$PATH"' >> ~/.zshenv
+  set-path: echo 'export PATH="/usr/bin/flutter/bin:$PATH"' >> ~/.zshenv
 - name: fish
-  set-path: fish_add_path -g -p $HOME/development/flutter/bin
+  set-path: fish_add_path -g -p /usr/bin/flutter/bin
 - name: csh
-  set-path: echo 'setenv PATH "$HOME/development/flutter/bin:$PATH"' >> ~/.cshrc
+  set-path: echo 'setenv PATH "/usr/bin/flutter/bin:$PATH"' >> ~/.cshrc
 - name: tcsh
-  set-path: echo 'setenv PATH "$HOME/development/flutter/bin:$PATH"' >> ~/.tcshrc
+  set-path: echo 'setenv PATH "/usr/bin/flutter/bin:$PATH"' >> ~/.tcshrc
 - name: ksh
-  set-path: echo 'export PATH="$HOME/development/flutter/bin:$PATH"' >> ~/.profile
+  set-path: echo 'export PATH="/usr/bin/flutter/bin:$PATH"' >> ~/.profile
 - name: sh
-  set-path: echo 'export PATH="$HOME/development/flutter/bin:$PATH"' >> ~/.profile
+  set-path: echo 'export PATH="/usr/bin/flutter/bin:$PATH"' >> ~/.profile
