@@ -86,6 +86,7 @@ You must test network-hosted videos on physical iOS devices.
 :::
 
 ### macOS
+
 If you use network-based videos, 
 [add the `com.apple.security.network.client` entitlement][mac-entitlement].
 
@@ -98,8 +99,7 @@ that throws an `UnimplementedError`.
 
 Different web browsers might have different video-playback capabilities,
 such as supported formats or autoplay.
-Check the [video_player_web](https://pub.dev/packages/video_player_web)
-package for more web-specific information.
+Check the [video_player_web] package for more web-specific information.
 
 The `VideoPlayerOptions.mixWithOthers` option can't be implemented in web,
 at least at the moment. If you use this option in web it will be silently ignored.
@@ -370,5 +370,5 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
 [`play()`]: {{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/play.html
 [`video_player`]: {{site.pub-pkg}}/video_player
 [`VideoPlayer`]: {{site.pub-api}}/video_player/latest/video_player/VideoPlayer-class.html
-[mac-entitlement]: platform-integration/macos/building#entitlements-and-the-app-sandbox
-[video_player_web]: {{site-pub-pkg}}/video_player_web
+[mac-entitlement]: {{site.url}}/platform-integration/macos/building#entitlements-and-the-app-sandbox
+[video_player_web]: {{site.pub-pkg}}/video_player_web
