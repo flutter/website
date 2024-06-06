@@ -187,8 +187,8 @@ value to `$(PRODUCT_NAME)`.
 Now you have set up your flavor by making a `free` scheme
 in Xcode and setting the build configurations for that scheme.
 
-For more information,
-skip to the [Launching your app flavors][]
+For more information, skip to the
+[Launch your app flavors](#launch-your-app-flavors)
 section at the end of this document.
 
 ### Update plugin configurations
@@ -348,7 +348,6 @@ For packages that support creating flavors, check out the following:
 * [`flutter_flavor`][]
 * [`flutter_flavorizr`][]
 
-[Launching your app flavors]: /deployment/flavors/#launching-your-app-flavors
 [Flutter repo]: {{site.repo.flutter}}/blob/master/dev/integration_tests/flavors/lib/main.dart
 [iOS]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flavors/ios
 [macOS]: {{site.repo.flutter}}/tree/master/dev/integration_tests/flavors/macos
