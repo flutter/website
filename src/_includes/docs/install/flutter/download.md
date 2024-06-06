@@ -8,17 +8,17 @@
    {% assign path='C:\\user\\{username}\\dev' %}
    {% assign flutter-path='C:\\user\\{username}\\dev\\flutter' %}
    {% assign terminal='PowerShell' %}
-   {% assign prompt='C:>' %}
+   {% assign prompt='PS C:\\>' %}
    {% assign prompt2=path | append: '>' %}
    {% assign diroptions='`%USERPROFILE%` (`C:\\Users\\{username}`) or `%LOCALAPPDATA%` (`C:\\Users\\{username}\\AppData\\Local`)' %}
    {% assign dirinstall='`%USERPROFILE%\\dev\\`' %}
    {% assign dirdl='%USERPROFILE%\\Downloads' %}
    {% assign ps-dir-dl='$env:USERPROFILE\\Downloads\\' %}
    {% assign ps-dir-target='$env:USERPROFILE\\dev\\' %}
-   {% capture uz -%}
-   {{prompt}} Expand-Archive `
-       –Path {{ps-dir-dl}}flutter_sdk_v1.0.0.zip `
-       -Destination {{ps-dir-target}}
+   {% capture uz %}
+     {{prompt}} Expand-Archive `
+         –Path {{ps-dir-dl}}flutter_sdk_v1.0.0.zip `
+         -Destination {{ps-dir-target}}
    {%- endcapture %}
 {% when "macOS" -%}
    {% assign diroptions='`~/development/`' %}
@@ -27,11 +27,11 @@
    {% assign path='~/development/' %}
    {% assign flutter-path='~/development/flutter' %}
    {% assign terminal='the Terminal' %}
-   {% assign prompt='$' %}
+   {% assign prompt='\$' %}
    {% assign dirdl='~/Downloads/' %}
    {% capture uz -%}
-   {{prompt}} {{unzip}} {{dirdl}}flutter_sdk_v1.0.0.zip \
-        -d {{path}}
+      {{prompt}} {{unzip}} {{dirdl}}flutter_sdk_v1.0.0.zip \
+          -d {{path}}
    {%- endcapture %}
 {% else -%}
    {% assign diroptions='`/usr/bin/`' %}
@@ -40,11 +40,10 @@
    {% assign path='/usr/bin/' %}
    {% assign flutter-path='/usr/bin/flutter' %}
    {% assign terminal='a shell' %}
-   {% assign prompt='$' %}
+   {% assign prompt='\$' %}
    {% assign dirdl='~/Downloads/' %}
    {% capture uz -%}
-   {{prompt}} {{unzip}} -xf {{dirdl}}flutter_sdk_v1.0.0.zip \
-        -C {{path}}
+     {{prompt}} {{unzip}} -xf {{dirdl}}flutter_sdk_v1.0.0.zip -C {{path}}
    {%- endcapture %}
 {% endcase -%}
 

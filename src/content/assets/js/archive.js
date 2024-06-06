@@ -4,7 +4,8 @@ const releasesToShow = 99999;
 // The Flutter SDK archive filename prefix.
 const FILE_NAME_PREFIX = 'flutter_';
 
-const filenameReplacement = new RegExp(`^(.*) (.*?)\\b${FILE_NAME_PREFIX}\\w+_v?[X|0-9]+\\..* (.*)`, 'm');
+const filenameReplacement = new RegExp(`^(.*)(\\bflutter_\\w+_v?([X|0-9]\\.)+[zipxztar\\.]{2,3})`, 'm');
+// const filenameReplacement = new RegExp(`^((.*) )* (.*?)\\b${FILE_NAME_PREFIX}\\w+_v?[X|0-9]+\\..* (.*)`, 'm');
 // const filenameReplacement = new RegExp(`^(.*?)\\b{FILE_NAME_PREFIX}\\w+_v?([X|0-9]+\\.)+[zip|tar\\.xz](.*)$`, 'm');
 // const filenameReplacement = new RegExp(`\\b{FILE_NAME_PREFIX}\\w+_v?\\d+(\\.\\d+)+\\.(zip|tar\\.xz)\\b`, 'm');
 
@@ -164,23 +165,23 @@ function replaceFilenameInCodeElements(archiveFilename) {
 
   codeElements.forEach((codeElement) => {
     // Check if the <code> element itself needs replacement
-    const codeElementText = codeElement.textContent;
+    const codeElementText = codeElement.innerHTML;
     if (codeElementText.includes(FILE_NAME_PREFIX) &&
         filenameReplacement.test(codeElementText)) {
-      codeElement.textContent = codeElementText.replace(
+      codeElement.innerHTML = codeElementText.replace(
         filenameReplacement,
-        `$1 $2${archiveFilename} $3`
+        `$1${archiveFilename}`
       );
     }
 
     // Process child nodes as before 
     codeElement.childNodes.forEach((node) => {
       const nodeText = node.textContent;
-      if (node.nodeType === Node.ELEMENT_NODE &&
+      if (node.nodeType === Node.TEXT_NODE &&
           nodeText.includes(FILE_NAME_PREFIX)) {
         node.textContent = nodeText.replace(
           filenameReplacement,
-          `$1 $2${archiveFilename} $3`
+          `$1${archiveFilename}`
         );
       }
     });
