@@ -51,6 +51,8 @@ you'll define build configurations in Xcode.
 
 ## Create flavors in iOS and macOS
 
+### Update setup in Xcode
+
 <ol>
 <li>
 
@@ -113,6 +115,34 @@ build configurations already created.
 
 </li>
 </ol>
+
+### Manually update podfile
+
+After running `flutter clean`, `flutter pub`, and `pod install`,
+you receive a build error indicating that it is unable to load
+the contents of a file list,
+you will need to manually update your podfile.
+
+To fix this, use the following steps.
+
+1. Rename the podfile schemes as follows:
+
+```yml
+project 'Runner', {
+  'Debug-free' => :debug,
+  'Profile-free' => :release,
+  'Release-free' => :release,
+  'Debug-prod' => :debug,
+  'Profile-prod' => :release,
+  'Release-prod' => :release,
+}
+```
+
+2. Run `flutter clean` and `flutter pub get`.
+
+3. Run `pod install`.
+
+4. Build the app.
 
 ## Use flavors in iOS and macOS
 
