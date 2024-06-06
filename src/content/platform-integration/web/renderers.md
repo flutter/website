@@ -13,19 +13,19 @@ your needs. The two renderers are:
   [CanvasKit][canvaskit] uses WebGL to render Skia paint commands.
 
 **HTML renderer**
-: This renderer, which has a smaller download size than the CanvasKit renderer, uses a combination of
-  HTML elements, CSS, Canvas elements, and SVG elements.
+: This renderer, which has a smaller download size than the CanvasKit renderer,
+  uses a combination of HTML elements, CSS, Canvas elements, and SVG elements.
 
 ## Command line options
 
-The `--web-renderer` command line option takes one of three values, `canvaskit`,
-`html`, or `auto`.
+The `--web-renderer` command line option takes one of three values:
+`canvaskit`, `html`, or `auto`.
 
-* `canvaskit` (default) - always use the CanvasKit renderer
+* `canvaskit` (soon to be default) - always use the CanvasKit renderer
+* `auto` (default) - automatically chooses which renderer to use. This option
+    chooses the HTML renderer when the app is running in a mobile browser, and
+    CanvasKit renderer when the app is running in a desktop browser.
 * `html` - always use the HTML renderer
-* `auto` - automatically chooses which renderer to use. This option
-  chooses the HTML renderer when the app is running in a mobile browser, and
-  CanvasKit renderer when the app is running in a desktop browser.
 
 This flag can be used with the `run` or `build` subcommands. For example:
 
@@ -78,7 +78,7 @@ The web renderer can't be changed after the Flutter engine startup process
 begins in `main.dart.js`.
 
 :::note
-As of **Flutter 3.7.0**,  setting a `window.flutterWebRenderer`
+Setting a `window.flutterWebRenderer`
 (an approach used in previous releases) displays a
 **deprecation notice** in the JS console. For more information,
 check out [Customizing web app initialization][web-app-init].
@@ -97,25 +97,25 @@ mobile browsers and optimizing for performance on desktop browsers.
 
 ## Examples
 
-Run in Chrome using the default renderer option (`canvaskit`):
+Run in Chrome using the default renderer option (`auto`):
 
 ```console
 flutter run -d chrome
 ```
 
-Build your app in release mode, using the default (`canvaskit`) option:
+Build your app in release mode, using the default (`auto`) option:
 
 ```console
 flutter build web --release
 ```
 
-Build your app in release mode, using the `auto` renderer option:
+Build your app in release mode, using just the CanvasKit renderer:
 
 ```console
-flutter build web --web-renderer auto --release
+flutter build web --web-renderer canvaskit --release
 ```
 
-Run  your app in profile mode using the HTML renderer:
+Run your app in profile mode using the HTML renderer:
 
 ```console
 flutter run -d chrome --web-renderer html --profile
