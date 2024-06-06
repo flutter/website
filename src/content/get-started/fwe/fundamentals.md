@@ -33,11 +33,12 @@ Installing Flutter also installs Dart,
 so you don't need to install Dart separately.
 :::
 
-The following example is a small program that fetches data
-from dart.dev, decodes the returned json, and prints it to
-the console. If you’re confident in your ability to
-understand this program, feel free to skip to the next
-section on this page.
+The following example is a small program that 
+fetches data from dart.dev, decodes the returned json, 
+and prints it to the console. 
+If you’re confident in your ability to 
+understand this program, 
+feel free to skip to the next section on this page.
 
 ```dart
 import 'dart:convert';
@@ -68,9 +69,9 @@ void main() async {
 }
 ```
 
-This program has two parts: the `Package` class declaration
-and the business logic, which is contained in the [`main`][]
-function.
+This program has two parts: 
+the `Package` class declaration, and the business logic, 
+which is contained in the [`main`][] function.
 
 The `Package` class contains many of the most common
 features you’ll use when working with [classes in Dart][].
@@ -80,10 +81,11 @@ a method.
 The Dart language is [type safe][]; it uses static type 
 checking to ensure that a variable's value always matches the
 variable's static type. When defining a class, annotating
-the members with `String` is required, but it is often
-optional due to type inference. For example, in the main
-function in this example there are many lines that start
-with `final variableName =`. These lines are type safe,
+the members with `String` is required, 
+but it is often optional due to type inference. 
+For example, in the main function in this example 
+there are many lines that start with `final variableName =`. 
+These lines are type safe, 
 despite not being explicitly given a type.
 
 Dart also has built-in [sound null safety][]. In the 
@@ -147,7 +149,7 @@ class MyApp extends StatelessWidget {
             builder: (context) {
               return Column(
                 children: [
-                  const Text('Hello World'),
+                  const Text('Hello, World!'),
                   const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: () {
@@ -196,13 +198,16 @@ and `Text` in the preceding example, as well as
 widgets like `Icon` and `Image`.
 
 In the preceding example, Flutter will paint a
-button and some text centered on the screen,
+button and "Hello, World!" centered on the screen,
 laid out vertically. To position these elements,
 there’s a`Center` widget, 
 which positions its children in the center
 of the available space, 
 and a `Column` widget, 
 which lays out its children vertically one after another.
+
+<img src='/assets/images/docs/fwe/simple_composition_example.png' width="100%" alt="A diagram that shows widget composition with a series of lines and nodes.">
+
 
 In the [next page][] in this series, you will
 learn more about layout in Flutter.
@@ -319,15 +324,14 @@ you can read [Building user interfaces with Flutter][].
 [type safe]: {{site.dart-site}}/language/type-system
 [sound null safety]: {{site.dart-site}}/null-safety
 [Why did Flutter choose to use Dart?]: /resources/faq#why-did-flutter-choose-to-use-dart
-[next page]: /layout
+[next page]: /get-started/fwe/layout
 [`build`]: {{site.api}}/flutter/widgets/StatelessWidget/build.html
-[Flutter architectural overview]: {{site}}/resources/architectural-overview
+[Flutter architectural overview]: /resources/architectural-overview
 [`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
 [`State`]: {{site.api}}/flutter/widgets/State-class.html
 [`setState`]: {{site.api}}/flutter/widgets/State/setState.html
-[state management lesson]: /state-management
-
+[state management lesson]: /get-started/fwe/state-management
 [`AppBar`]: {{site.api}}/flutter/material/AppBar-class.html
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
 [`Container`]: {{site.api}}/flutter/widgets/Container-class.html
