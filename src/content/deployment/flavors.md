@@ -116,7 +116,7 @@ build configurations already created.
 </li>
 </ol>
 
-### Manually update podfile
+### Manually update Podfile
 
 After running `flutter clean`, `flutter pub`, and `pod install`,
 you receive a build error indicating that it is unable to load
