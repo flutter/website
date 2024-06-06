@@ -75,37 +75,43 @@ which is contained in the [`main`][] function.
 
 The `Package` class contains many of the most common
 features you’ll use when working with [classes in Dart][].
-This class has three members, and defines a constructor and
-a method.
+This class has three members, 
+and defines a constructor and a method.
 
-The Dart language is [type safe][]; it uses static type 
-checking to ensure that a variable's value always matches the
-variable's static type. When defining a class, annotating
-the members with `String` is required, 
+The Dart language is [type safe][]; it uses 
+static type checking to ensure that 
+a variable's value always matches the
+variable's static type. 
+When defining a class, annotating the members with 
+`String` is required, 
 but it is often optional due to type inference. 
-For example, in the main function in this example 
+In the `main` function in this example 
 there are many lines that start with `final variableName =`. 
 These lines are type safe, 
 despite not being explicitly given a type.
 
-Dart also has built-in [sound null safety][]. In the 
-example, the `description` member is declared with the
-type `String?`. The `?` at the end of `String?` means that
-this property can be null. The other two members cannot be
-null, and the program will not compile if you tried to set
-them to null. You can see this demonstrated in the
-constructor for the ‘Package class’. It takes two required,
+Dart also has built-in [sound null safety][]. 
+In the example, the `description` member is 
+declared with the type `String?`. 
+The `?` at the end of `String?` means that 
+this property can be null. 
+The other two members cannot be null, 
+and the program will not compile if 
+you tried to set them to null. 
+You can see this demonstrated in the constructor for 
+the ‘Package class’. It takes two required,
 positional arguments and one optional, named argument.
 
-Next in the example is the `main` function. All Dart
-programs, including Flutter apps, start with a `main`
-function. The function showcases several basic Dart language
-features, including using libraries, marking functions as
-async, making function calls, using `if` statement
-control-flow, and more.
+Next in the example is the `main` function. 
+All Dart programs, including Flutter apps, 
+start with a `main`function. 
+The function showcases several basic Dart language features, 
+including using libraries, marking functions as async, 
+making function calls, using `if` statement control-flow,
+and more.
 
-If these features aren’t familiar to you, read 
-[Introduction to Dart][] from the Dart documentation.
+If these features aren’t familiar to you, 
+read [Introduction to Dart][] from the Dart documentation.
 
 :::note
 If you're interested in why Flutter chose Dart, 
@@ -116,16 +122,19 @@ The other link has more resources for learning Dart.
 ## Widgets
 
 In regard to Flutter, you'll often hear
-"everything is a widget". Widgets are the building blocks of
-a Flutter app's user interface, and each widget is an
-immutable declaration of part of the user interface. Widgets
-are used to describe all aspects of a user interface,
+"everything is a widget". 
+Widgets are the building blocks of a 
+Flutter app's user interface, 
+and each widget is an immutable declaration of part 
+of the user interface. Widgets are used 
+to describe all aspects of a user interface,
 including physical aspects such as text and buttons to
 layout effects like padding and alignment.
 
-Widgets form a hierarchy based on composition. Each widget
-nests inside its parent and can receive context from the
-parent. This structure carries all the way up to the root
+Widgets form a hierarchy based on composition. 
+Each widget nests inside its parent and 
+can receive context from the parent. 
+This structure carries all the way up to the root
 widget, as this trivial example shows:
 
 ```dart
@@ -166,12 +175,11 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 ```
 
-In the preceding code, all instantiated classes
-are
-widgets: `MaterialApp`, `Scaffold`, `AppBar`, `Text`,
+In the preceding code, 
+all instantiated classes are widgets: 
+`MaterialApp`, `Scaffold`, `AppBar`, `Text`,
 `Center`, `Builder`, `Column`, `SizedBox`, and
 `ElevatedButton`.
 
@@ -185,25 +193,25 @@ combine to produce powerful effects.
 There are layout widgets such
 as `Padding`, `Alignment`, `Row`, `Column`,
 and `Grid`. These layout widgets do not have a
-visual representation of their own. Instead, their
-sole purpose is to control some aspect of another
-widget's layout. Flutter also includes utility
-widgets that take advantage of this compositional
-approach. For example, Container, a commonly used
-widget, is made up of several widgets responsible
-for layout, painting, positioning, and sizing.
-And, there are widgets that have visual
-representation, such as `ElevatedButton`
-and `Text` in the preceding example, as well as
+visual representation of their own. 
+Instead, their sole purpose is to 
+control some aspect of another widget's layout. 
+Flutter also includes utility widgets that 
+take advantage of this compositional approach. 
+For example, Container, a commonly used widget, 
+is made up of several widgets responsible for layout, 
+painting, positioning, and sizing.
+And, there are widgets that have visual representation, 
+such as `ElevatedButton` and 
+`Text` in the preceding example, as well as
 widgets like `Icon` and `Image`.
 
-In the preceding example, Flutter will paint a
-button and "Hello, World!" centered on the screen,
-laid out vertically. To position these elements,
-there’s a`Center` widget, 
+If you run the code from the preceding example, 
+Flutter paints a button and 
+"Hello, World!" centered on the screen, laid out vertically. 
+To position these elements, there’s a`Center` widget, 
 which positions its children in the center
-of the available space, 
-and a `Column` widget, 
+of the available space, and a `Column` widget, 
 which lays out its children vertically one after another.
 
 <img src='/assets/images/docs/fwe/simple_composition_example.png' width="100%" alt="A diagram that shows widget composition with a series of lines and nodes.">
@@ -214,7 +222,12 @@ learn more about layout in Flutter.
 
 ### Building widgets
 
-To create a user interface in Flutter, you override the [`build`][] method on widget objects. All widgets must have a build method, and it must return another widget. For example, if you want to add text to the screen with some padding, you could write it like this:
+To create a user interface in Flutter, 
+you override the [`build`][] method on widget objects. 
+All widgets must have a build method, 
+and it must return another widget. For example, 
+if you want to add text to the screen with some padding, 
+you could write it like this:
 
 ```dart
 class PaddedText extends StatelessWidget {
@@ -230,25 +243,43 @@ class PaddedText extends StatelessWidget {
 }
 ```
 
-The framework calls the `build` method when this widget is created and when the dependencies of this widget change (such as state that is passed into the widget). This method can potentially be called in every frame and should not have any side effects beyond building a widget. For more information on how Flutter renders widgets, read [Flutter architectural overview][].
+The framework calls the `build` method when this 
+widget is created and when the dependencies of this
+widget change (such as state that is passed into the widget). 
+This method can potentially be called in every frame
+and should not have any side effects beyond 
+building a widget. 
+For more information on how Flutter renders widgets, 
+read [Flutter architectural overview][].
 
 ### Widget state
-The framework introduces two major classes of widget: stateful and stateless widgets.
+The framework introduces two major classes of widget: 
+stateful and stateless widgets.
 
-Widgets that have no mutable state (they don’t 
-have any class properties that change over 
-time) subclass [`StatelessWidget`][]. Many 
-built-in widgets are stateless, such as `Padding`, `Text`, and `Icon`. When you create your own widgets, you’ll create Stateless widgets most of the time.
+Widgets that have no mutable state 
+(they don’t have any class properties 
+that change over time) subclass [`StatelessWidget`][]. 
+Many built-in widgets are stateless, 
+such as `Padding`, `Text`, and `Icon`. 
+When you create your own widgets, 
+you’ll create Stateless widgets most of the time.
 
-On the other hand, if the unique 
-characteristics of a widget need to change 
+On the other hand, 
+if the unique characteristics of a widget need to change 
 based on user interaction or other factors, 
-that widget is stateful. For example, if a 
-widget has a counter that increments whenever 
-the user taps a button, then the value of the 
-counter is the state for that widget. When 
-that value changes, the widget needs to be 
-rebuilt to update its part of the UI. These widgets subclass [`StatefulWidget`][], and (because the widget itself is immutable) they store mutable state in a separate class that subclasses [`State`][]. StatefulWidgets don't have a build method; instead, their user interface is built through their State object, as shown in the example below.
+that widget is stateful. 
+For example, if a widget has a counter that 
+increments whenever the user taps a button, 
+then the value of the counter is the state for that widget. 
+When that value changes, the widget needs to be 
+rebuilt to update its part of the UI. 
+These widgets subclass [`StatefulWidget`][], 
+and (because the widget itself is immutable) 
+they store mutable state in a separate class that 
+subclasses [`State`][]. 
+StatefulWidgets don't have a build method; 
+instead, their user interface is built through
+their State object, as shown in the example below.
 
 ```dart
 class CounterWidget extends StatefulWidget {
@@ -272,12 +303,23 @@ class _CounterWidgetState extends State<CounterWidget> {
 }
 ```
 
-Whenever you mutate a State object (for 
-example, by incrementing the counter), you 
-must call [`setState`][] to signal the 
-framework to update the user interface by calling the State's build method again.
+Whenever you mutate a State object 
+(for example, by incrementing the counter), 
+you must call [`setState`][] to signal the framework
+to update the user interface by 
+calling the State's build method again.
 
-Having separate state and widget objects lets other widgets treat both stateless and stateful widgets in exactly the same way, without being concerned about losing state. Instead of needing to hold on to a child to preserve its state, the parent can create a new instance of the child at any time without losing the child's persistent state. The framework does all the work of finding and reusing existing state objects when appropriate.
+Having separate state and widget objects 
+lets other widgets treat both 
+stateless and stateful widgets in exactly the same way, 
+without being concerned about losing state. 
+Instead of needing to hold on to 
+a child to preserve its state,
+the parent can create a new instance of the child
+at any time without losing 
+the child's persistent state. 
+The framework does all the work of finding and 
+reusing existing state objects when appropriate.
 
 There’s more information about 
 [`StatefulWidget`][] objects later in this 
