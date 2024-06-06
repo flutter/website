@@ -198,16 +198,16 @@ Instead, their sole purpose is to
 control some aspect of another widget's layout. 
 Flutter also includes utility widgets that 
 take advantage of this compositional approach. 
-For example, Container, a commonly used widget, 
+For example, `Container`, a commonly used widget, 
 is made up of several widgets responsible for layout, 
 painting, positioning, and sizing.
-And, there are widgets that have visual representation, 
+Some widgets have visual representation, 
 such as `ElevatedButton` and 
 `Text` in the preceding example, as well as
 widgets like `Icon` and `Image`.
 
 If you run the code from the preceding example, 
-Flutter paints a button and 
+Flutter paints a button with the text
 "Hello, World!" centered on the screen, laid out vertically. 
 To position these elements, there’s a`Center` widget, 
 which positions its children in the center
@@ -257,12 +257,12 @@ The framework introduces two major classes of widget:
 stateful and stateless widgets.
 
 Widgets that have no mutable state 
-(they don’t have any class properties 
+(they have no class properties 
 that change over time) subclass [`StatelessWidget`][]. 
 Many built-in widgets are stateless, 
 such as `Padding`, `Text`, and `Icon`. 
 When you create your own widgets, 
-you’ll create Stateless widgets most of the time.
+you’ll create `Stateless` widgets most of the time.
 
 On the other hand, 
 if the unique characteristics of a widget need to change 
@@ -277,9 +277,9 @@ These widgets subclass [`StatefulWidget`][],
 and (because the widget itself is immutable) 
 they store mutable state in a separate class that 
 subclasses [`State`][]. 
-StatefulWidgets don't have a build method; 
+`StatefulWidgets` don't have a `build` method; 
 instead, their user interface is built through
-their State object, as shown in the example below.
+their `State` object, as shown in the example below.
 
 ```dart
 class CounterWidget extends StatefulWidget {
@@ -303,13 +303,13 @@ class _CounterWidgetState extends State<CounterWidget> {
 }
 ```
 
-Whenever you mutate a State object 
+Whenever you mutate a `State` object 
 (for example, by incrementing the counter), 
 you must call [`setState`][] to signal the framework
 to update the user interface by 
-calling the State's build method again.
+calling the `State`'s `build` method again.
 
-Having separate state and widget objects 
+Separating state from widget objects 
 lets other widgets treat both 
 stateless and stateful widgets in exactly the same way, 
 without being concerned about losing state. 
