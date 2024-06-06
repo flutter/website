@@ -7,25 +7,25 @@ When running and building apps for the web, you can choose between two different
 renderers. This page describes both renderers and how to choose the best one for
 your needs. The two renderers are:
 
-**HTML renderer**
-: This renderer, which has a smaller download size than the CanvasKit renderer, uses a combination of
-  HTML elements, CSS, Canvas elements, and SVG elements.
-
 **CanvasKit renderer**
 : This renderer is fully consistent with Flutter mobile and desktop, has faster
   performance with higher widget density, but adds about 1.5MB in download size.
   [CanvasKit][canvaskit] uses WebGL to render Skia paint commands.
 
+**HTML renderer**
+: This renderer, which has a smaller download size than the CanvasKit renderer, uses a combination of
+  HTML elements, CSS, Canvas elements, and SVG elements.
+
 ## Command line options
 
-The `--web-renderer` command line option takes one of three values, `auto`,
-`html`, or `canvaskit`.
+The `--web-renderer` command line option takes one of three values, `canvaskit`,
+`html`, or `auto`.
 
-* `auto` (default) - automatically chooses which renderer to use. This option
+* `canvaskit` (default) - always use the CanvasKit renderer
+* `html` - always use the HTML renderer
+* `auto` - automatically chooses which renderer to use. This option
   chooses the HTML renderer when the app is running in a mobile browser, and
   CanvasKit renderer when the app is running in a desktop browser.
-* `html` - always use the HTML renderer
-* `canvaskit` - always use the CanvasKit renderer
 
 This flag can be used with the `run` or `build` subcommands. For example:
 
@@ -86,33 +86,33 @@ check out [Customizing web app initialization][web-app-init].
 
 ## Choosing which option to use
 
-Choose the `auto` option (default) if you are optimizing for download size on
-mobile browsers and optimizing for performance on desktop browsers.
+Choose the `canvaskit` option (default) if you are prioritizing performance and
+pixel-perfect consistency on both desktop and mobile browsers.
 
 Choose the `html` option if you are optimizing download size over performance on
 both desktop and mobile browsers.
 
-Choose the `canvaskit` option if you are prioritizing performance and
-pixel-perfect consistency on both desktop and mobile browsers.
+Choose the `auto` option if you are optimizing for download size on
+mobile browsers and optimizing for performance on desktop browsers.
 
 ## Examples
 
-Run in Chrome using the default renderer option (`auto`):
+Run in Chrome using the default renderer option (`canvaskit`):
 
 ```console
 flutter run -d chrome
 ```
 
-Build your app in release mode, using the default (auto) option:
+Build your app in release mode, using the default (`canvaskit`) option:
 
 ```console
 flutter build web --release
 ```
 
-Build your app in release mode, using just the CanvasKit renderer:
+Build your app in release mode, using the `auto` renderer option:
 
 ```console
-flutter build web --web-renderer canvaskit --release
+flutter build web --web-renderer auto --release
 ```
 
 Run  your app in profile mode using the HTML renderer:
