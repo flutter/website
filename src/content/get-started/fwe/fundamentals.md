@@ -129,7 +129,7 @@ and each widget is an immutable declaration of part
 of the user interface. Widgets are used 
 to describe all aspects of a user interface,
 including physical aspects such as text and buttons to
-layout effects like padding and alignment.
+lay out effects like padding and alignment.
 
 Widgets form a hierarchy based on composition. 
 Each widget nests inside its parent and 
