@@ -121,7 +121,7 @@ build configurations already created.
 After running `flutter clean`, `flutter pub`, and `pod install`,
 you receive a build error indicating that it is unable to load
 the contents of a file list,
-you will need to manually update your podfile.
+you will need to manually update your Podfile.
 
 To fix this, use the following steps.
 
