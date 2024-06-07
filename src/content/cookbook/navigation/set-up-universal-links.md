@@ -86,7 +86,7 @@ It provides a simple API to handle complex routing scenarios.
 1. Open the `ios/Runner.xcworkspace` file inside the
    Flutter project's `ios` folder.
 
-### Add support for go_router
+### Add the FlutterDeepLinkingEnabled key value pair
 
 1. In the Xcode Navigator, expand **Runner** then click **Info**.
 
