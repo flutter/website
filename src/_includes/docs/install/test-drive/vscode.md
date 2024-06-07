@@ -9,9 +9,9 @@
 2. Open the Command Palette.
 
    Go to **View** <span aria-label="and then">></span> **Command Palette** or
-   press <kbd>{{special}}</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>.
+   press <kbd class="special-key"></kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>.
 
-3. Type `flutter`
+3. Type `flutter`.
 
 4. Select the **Flutter: New Project**.
 
@@ -46,9 +46,9 @@ hot reload at this time.
 1. Open the Command Palette.
 
    Go to **View** <span aria-label="and then">></span> **Command Palette** or
-   press <kbd>{{special}}</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>.
+   press <kbd class="special-key"></kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>.
 
-1. Type `flutter`
+1. Type `flutter`.
 
 1. Select the **Flutter: Select Device**.
 
@@ -74,3 +74,10 @@ hot reload at this time.
 [Material Components]: {{site.material}}/components
 
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const specialKey = navigator.userAgent.includes('Mac')? 'Command' : 'Control';
+    document.querySelectorAll('.special-key').forEach((element)=>element.textContent=specialKey);
+  });
+</script>
