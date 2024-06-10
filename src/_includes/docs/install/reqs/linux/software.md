@@ -46,7 +46,8 @@ To develop Flutter on {{include.os}}:
           libbz2-1.0:i386
       ```
 
-      > If your Ubuntu distribution can't find these packages, you might need to enable multi-architecture support
+If your Ubuntu distribution can't find the following packages,
+you might need to enable multi-architecture support:
          
       ```
       sudo dpkg -add-architecture i386
