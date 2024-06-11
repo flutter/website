@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function(_) {
   setupTabs($('#china-os-pub-tabs'), 'dev.flutter.china-os-pub');
   setupTabs($('#base-os-tabs'), 'dev.flutter.os');
   setupTabs($('#xcode-ide-vs-ui'), 'dev.flutter.xcode-ux');
+  setupTabs($('#ios-project-setup'), 'dev.flutter.ios.project-setup');
 });
 
 function _getOSForArchive() {
