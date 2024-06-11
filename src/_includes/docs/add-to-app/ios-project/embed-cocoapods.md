@@ -120,9 +120,9 @@ This section presumes you called your Swift app `MyApp`.
 
 1. To build the project, press <kbd>Cmd</kbd> + <kbd>B</kbd>.
 
-To review an example `Podfile`, consult this [Flutter Podfile sample].
+To review an example `Podfile`, consult this [Flutter Podfile sample][].
 
 [build modes of Flutter]: /testing/build-modes
 [CocoaPods getting started guide]: https://guides.cocoapods.org/using/using-cocoapods.html
 [Podfile target]: https://guides.cocoapods.org/syntax/podfile.html#target
-[Flutter Podfile sample]: {{github}}/flutter/samples/blob/main/add_to_app/plugin/ios_using_plugin/Podfile
+[Flutter Podfile sample]: https://github.com/flutter/samples/blob/main/add_to_app/plugin/ios_using_plugin/Podfile

@@ -330,13 +330,7 @@ You can now [add a Flutter screen][] to your existing iOS app.
 [debugging functionalities such as hot-reload and DevTools]: /add-to-app/debugging
 [increases your app size]: /resources/faq#how-big-is-the-flutter-engine
 [macOS system requirements for Flutter]: /get-started/install/macos/mobile-ios#verify-system-requirements
-[static or dynamic frameworks]: {{site.so}}/questions/32591878/ios-is-it-a-static-or-a-dynamic-framework
 [VS Code]: /tools/vs-code
 [Xcode installed]: /get-started/install/macos/mobile-ios#install-and-configure-xcode
 [News Feed app]: https://github.com/flutter/put-flutter-to-work/tree/022208184ec2623af2d113d13d90e8e1ce722365
 [Debugging your add-to-app module]: /add-to-app/debugging/
-
-[embed the frameworks]: /add-to-app/ios/project-setup#embed-the-frameworks
-[Embed with CocoaPods and Flutter tools]: #option-a---embed-with-cocoapods-and-the-flutter-sdk
-[On iOS 14 and higher]: {{site.apple-dev}}/news/?id=0oi77447
-[XCFrameworks]: {{site.apple-dev}}/documentation/xcode_release_notes/xcode_11_release_notes
