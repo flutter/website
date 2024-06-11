@@ -1036,7 +1036,7 @@
       "Multi-child layout widgets"
     ],
     "link": "https://api.flutter.dev/flutter/widgets/GridView-class.html",
-    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VandQYXpNMG9aQUk/components_grid_lists.png'>"
+    "image": "<img alt='' src='/assets/images/docs/widget-catalog/material-grid-view.png'>"
   },
   {
     "name": "Hero",
