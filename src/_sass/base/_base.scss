@@ -26,13 +26,13 @@ dd {
 img {
   max-width: 100%;
 
-  &[width] {
-    width: auto;
-  }
-
   &[width][height] {
     height: auto;
   }
+}
+
+picture {
+  max-height: 100%;
 }
 
 .card-deck {
@@ -40,6 +40,7 @@ img {
     .card {
       flex: 0 0 calc((100% / 3) - #{bootstrap.bs-spacer(4)});
       margin-bottom: bootstrap.bs-spacer(4);
+      overflow: hidden;
     }
   }
 
@@ -68,8 +69,6 @@ img {
   justify-content: center;
 
   img {
-    height: auto;
-    max-width: 100%;
     max-height: 100%;
     width: auto;
   }
