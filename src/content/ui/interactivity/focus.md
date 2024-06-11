@@ -86,7 +86,7 @@ are listed after this section.
   focus moves to the next focusable control or field.
   This explains why this method is also known as _tab traversal_.
 
-## Focus use cases
+## When to use the focus system
 
 Some situations where you might use the focus system include:
 
@@ -106,32 +106,34 @@ hold the focus state and attributes.
 This allows focus nodes to persist between builds of the widget tree.
 Together, these objects form the focus tree data structure.
 
-These widgets act as a somewhat opaque handle. To focus a descendant widget,
+These objects act as handles. To set focus on a descendant widget,
 an ancestor widget can use this handle to call the `requestFocus()` method.
-The ancestor widget can also request that Flutter give focus
-to a descendant widget.
+To request that Flutter give focus to one of it's descendants
+if that descendant uses a focus node that the ancestor gave it,
+an ancestor widget can also use the `requestFocus()` method.
 If setting other attributes like `onKey` or `skipTraversal`,
 use the [`Focus.withExternalFocusNode`][] or
 [`FocusScope.withExternalFocusNode`][] constructors.
-This avoids an accidental reset of the attributes,
-which the `Focus` and `FocusScope` widget otherwise manage.
+This avoids an unintentional reset of the attributes,
+which the `Focus` and `FocusScope` widgets otherwise manage.
 
 ### Follow focus best practices
 
 Some dos and don'ts around using these objects include:
 
 **Do create `FocusNode` and `FocusScopeNode` objects in a stateful widget.**
-: When you finish using `FocusNode` and `FocusScopeNode`,
-  you need to dispose of them.
+: When you finish using `FocusNode` or `FocusScopeNode`,
+  you must dispose of them.
   For this reason, only create them inside of a stateful widget's `State` object.
   You can override the stateful widget's `dispose` method to dispose of the
   focus objects.
 
 **Do set the `debugLabel` of a focus node widget.**
 : This helps with diagnosing focus issues.
+  The result appears in diagnostic output as `debugDumpFocusTree()`.
 
 **Do call the `requestFocus()` method on a node to request the primary focus.**
-: Call this method from an node that has passed a node
+: Call this method from a node that has passed a node
   it owns to a descendant where you want to the focus.
 
 **Do use `focusNode.requestFocus()`.**
@@ -147,48 +149,47 @@ Some dos and don'ts around using these objects include:
 : If you do, the widgets fight over managing the attributes of the node.
   That might result in an unexpected outcome.
 
-**Don't set the `onKeyEvent` callback on a `FocusNode` that `Focus` manages.**
-: To set focus to respond to a key event, use an `onKeyEvent` handler.
-  Surround the desired widget subtree with a new [`Focus`][] widget
-  with its `onKeyEvent` attribute set to your handler.
-  If you don't want the widget to be able to take primary focus,
-  set `canRequestFocus: false` on it.
-  Do this because the `onKeyEvent` attribute on the `Focus` widget
-  can be set to something else in a later build. If that happens,
-  the attribute overwrites the `onKeyEvent` handler you set on the node.
+**Don't set attributes on focus nodes without using `Focus.withExternalFocusNode()`**
+: If you want to include attributes on a FocusNode,
+  create a FocusNode outside of the Focus widget.
+  This prevents you from unintentionally overwriting any attributes
+  you set on the [`Focus`][] widget.
+
   This applies to a `FocusScopeNode` that a [`FocusScope`][] widget
   manages.
 
-### Tell a node to give up focus
+## Tell a node to give up focus
 
 The `FocusNode.unfocus()` API tells a node to "give up the focus".
 While it does remove focus from the node,
-note that you can't "unfocus" all nodes.
+you can't "unfocus" all nodes.
 If you remove focus from a node, it must pass the focus somewhere else,
 since there is _always_ a primary focus. When a node calls `unfocus()`,
 focus can pass to one of two nodes.
 It can pass to either the nearest `FocusScopeNode`
 or a node in the same scope that had focus earlier.
-Which one depends upon the `disposition` argument you give to `unfocus()`.
-To better control where the focus passes when you remove it from a node,
-you have two options.
-You can choose to set focus to another node or use the focus traversal mechanism.
-To find another node, this mechanism can use the `focusInDirection`,
-`nextFocus`, or `previousFocus` methods on `FocusNode`.
 
-When calling `unfocus()`, you can set the `disposition` argument. 
+Which node Flutter chooses depends upon the `disposition` argument
+you give to `unfocus()`.
+When calling `unfocus()`, you can set the `disposition` argument.
 It allows two modes for passing focus:
 
 * [`UnfocusDisposition.scope`][]:
   The argument defaults to this option.
   It gives the focus to the nearest parent focus scope.
-  If the something moves the focus to the next node with `FocusNode.nextFocus`,
+  If then something moves the focus to the next node with `FocusNode.nextFocus`,
   the app starts with the "first" focusable item in the scope.
 
 * `UnfocusDisposition.previouslyFocusedChild`:
   The `previouslyFocusedChild` disposition searches the scope to find the
-  last focused child and request focus on it.
+  most recently focused child and requests focus on it.
   If no child had focus before, this disposition works like `scope`.
+
+To better control where the focus passes when you remove it from a node,
+you have two options.
+You can choose to set focus to another node or use the focus traversal mechanism.
+To find another node, this mechanism can use the `focusInDirection`,
+`nextFocus`, or `previousFocus` methods on `FocusNode`.
 
 ## Allow a control to receive focus
 
@@ -208,13 +209,15 @@ it can receive focus when tapped or clicked.
 
 If you don't create a `FocusNode` object for the `Focus` widget to manage,
 it creates its own.
-To allow focus control from a parent widget, create your own`FocusNode`.
-To control its focus, this object can then call `requestFocus()` on the node.
-To access the functionality of a `FocusNode`,
-change the attributes of the `Focus` widget itself.
+
+* To allow focus control from a parent widget, create your own `FocusNode`.
+* To control its focus, this object can then call `requestFocus()` on the node.
+* To access the functionality of a `FocusNode`,
+  change the attributes of the `Focus` widget itself.
 
 To implement Flutter's own focus functionality,
 its controls use the [`FocusableActionDetector`][] widget.
+You can also use this widget.
 
 Consider the following example.
 It shows how to use the `Focus` widget to make a custom control focusable.
