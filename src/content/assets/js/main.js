@@ -52,13 +52,13 @@ function getOS() {
     return 'macos';
   }
 
-  if (userAgent.indexOf('Win')) {
+  if (userAgent.indexOf('Win') !== -1) {
     // Windows
     return 'windows';
   }
 
   if ((userAgent.indexOf('Linux') !== -1 || userAgent.indexOf("X11") !== -1)
-    && userAgent.indexOf('Android') !== -1) {
+    && userAgent.indexOf('Android') === -1) {
     // Linux, but not Android
     return 'linux';
   }
