@@ -152,5 +152,5 @@ To embed your dynamic frameworks, complete the following procedure.
 
    1. Select **Product** > **Build** or press <kbd>Cmd</kbd> + <kbd>B</kbd>.
 
-[static or dynamic frameworks]: {{site.so}}/questions/32591878/ios-is-it-a-static-or-a-dynamic-framework
+[static or dynamic frameworks]: https://stackoverflow.com/questions/32591878/ios-is-it-a-static-or-a-dynamic-framework
 [static-framework]: https://developer.apple.com/library/archive/technotes/tn2435/_index.html
