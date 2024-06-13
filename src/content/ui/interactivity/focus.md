@@ -111,7 +111,7 @@ an ancestor widget can use this handle to call the `requestFocus()` method.
 To request that Flutter give focus to one of it's descendants
 if that descendant uses a focus node that the ancestor gave it,
 an ancestor widget can also use the `requestFocus()` method.
-If setting other attributes like `onKey` or `skipTraversal`,
+If setting attributes like `onKey` or `skipTraversal`,
 use the [`Focus.withExternalFocusNode`][] or
 [`FocusScope.withExternalFocusNode`][] constructors.
 This avoids an unintentional reset of the attributes,
@@ -187,7 +187,8 @@ It allows two modes for passing focus:
 
 To better control where the focus passes when you remove it from a node,
 you have two options.
-You can choose to set focus to another node or use the focus traversal mechanism.
+You can choose to set focus to another node using `requestFocus()`
+or use the focus traversal mechanism.
 To find another node, this mechanism can use the `focusInDirection`,
 `nextFocus`, or `previousFocus` methods on `FocusNode`.
 
@@ -292,7 +293,7 @@ To just listen, you can also use the `KeyboardListener` widget.
 Key events start at the focus node that has primary focus.
 If that node doesn't return `KeyEventResult.handled` from
 its `onKeyEvent` handler, then its parent focus node is given the event.
-If the parent doesn't handle it, it goes to its parent,
+If the parent doesn't handle it, it goes to _its_ parent,
 and so on, until it reaches the root of the focus tree.
 If the event reaches the root of the focus tree without being handled,
 then it's returned to the platform.
