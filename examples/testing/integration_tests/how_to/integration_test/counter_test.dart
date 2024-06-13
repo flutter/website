@@ -5,10 +5,8 @@ import 'package:how_to/main.dart';
 import 'package:integration_test/integration_test.dart';
 
 void main() {
-  // #enddocregion initial
-  IntegrationTestWidgetsFlutterBinding.ensureInitialized(); // NEW
+  IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
-  // #docregion initial
   group('end-to-end test', () {
     testWidgets('tap on the floating action button, verify counter',
         (tester) async {
