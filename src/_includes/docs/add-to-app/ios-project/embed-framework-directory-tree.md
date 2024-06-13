@@ -30,7 +30,8 @@ The resulting project structure should resemble this directory tree.
 ```
 
 :::warning
-Always put `Flutter.xcframework` and `App.xcframework` from the same directory.
+Always use `Flutter.xcframework` and `App.xcframework` bundles
+located in the same directory.
 Mixing `.xcframework` imports from different directories
 (like `Profile/Flutter.xcframework` with `Debug/App.xcframework`)
 causes runtime crashes.

@@ -8,12 +8,11 @@ These errors include issues like `Multiple commands produce
 
 To work around this issue, link every plugin source in its `podspec` file
 from the Flutter module to the host app's `Podfile`.
-Create this link instead of linking the plugins' `xcframework` framework.
-The next section explains how the
-[`flutter build ios-framework` command produces][ios-framework] that framework.
+Link the source instead of the plugins' `xcframework` framework.
+The next section explains how to [produce that framework][ios-framework].
 
-This issue contributed to the introduction of the
-`--no-plugins` flag for the `flutter build ios-framework` command.
+To prevent the error that occurs when common dependencies exist,
+use `flutter build ios-framework` with the `--no-plugins` flag.
 
 [common]: https://github.com/flutter/flutter/issues/130220
 [ios-framework]: https://github.com/flutter/flutter/issues/114692

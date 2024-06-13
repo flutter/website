@@ -12,14 +12,15 @@ consider one of the following three methods.
 | Embedding Method | Methodology | Benefit |
 |---|---|---|
 | Use CocoaPods _(Recommended)_ | Install and use the Flutter SDK and CocoaPods. Flutter compiles the `flutter_module` from source each time Xcode builds the iOS app. | Least complicated method to embed Flutter into your app. |
-| Use [iOS frameworks][] | Create iOS frameworks for Flutter components, embed them into your iOS, and update your existing app's build settings. | Doesn't require every developer to install the Flutter SDK and Cocoapods on their local machines. |
+| Use [iOS frameworks][] | Create iOS frameworks for Flutter components, embed them into your iOS, and update your existing app's build settings. | Doesn't require every developer to install the Flutter SDK and CocoaPods on their local machines. |
 | Use iOS frameworks and CocoaPods | Embed the frameworks for your iOS app and the plugins in Xcode, but distribute the Flutter engine as a CocoaPods podspec. | Provides an alternative to distributing the large Flutter engine (`Flutter.xcframework`) library. |
 
 {:.table .table-striped}
 
 [iOS frameworks]: {{site.apple-dev}}/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html
 
-Using Flutter modules [increases your app size][].
+When you add Flutter to your existing iOS app,
+it [increases the size of your iOS app][app-size].
 
 For examples using an app built with UIKit,
 see the iOS directories in the [add_to_app code samples][].
@@ -38,7 +39,7 @@ create a Flutter module first.
 Use the following command to create a Flutter module.
 
 ```console
-$ cd /path/to
+$ cd /path/to/my_flutter
 $ flutter create --template module my_flutter
 ```
 
@@ -48,13 +49,13 @@ in the same parent directory as your existing iOS app.
 
 [CocoaPods method]: /add-to-app/ios/project-setup/?tab=embed-using-cocoapods
 
-From the Flutter module directory, you can run the same `flutter`
-commands you would in any other Flutter project,
-like `flutter run --debug` or `flutter build ios`.
+From the Flutter module directory,
+you can run the same `flutter` commands you would in any other Flutter project,
+like `flutter run` or `flutter build ios`.
 You can also run the module in [VS Code][] or
 [Android Studio/IntelliJ][] with the Flutter and Dart plugins.
 This project contains a single-view example version of your module
-before it's embedded in your existing iOS app.
+before embeddeding it in your existing iOS app.
 This helps when testing the Flutter-only parts of your code.
 
 ## Organize your module
@@ -164,7 +165,8 @@ Never enable this service in the **Release** version of your app.
 The Apple App Store might reject your app.
 :::
 
-Maintain a separate copy of your app's Info.plist per build configuration.
+To set local network privacy permissions only in the Debug version of your app,
+create a separate `Info.plist` per build configuration.
 SwiftUI projects start without an `Info.plist` file.
 If you need to create a property list,
 you can do so through Xcode or text editor.
@@ -329,7 +331,7 @@ You can now [add a Flutter screen][] to your existing iOS app.
 [build modes of Flutter]: /testing/build-modes
 [CocoaPods]: https://cocoapods.org/
 [debugging functionalities such as hot-reload and DevTools]: /add-to-app/debugging
-[increases your app size]: /resources/faq#how-big-is-the-flutter-engine
+[app-size]: /resources/faq#how-big-is-the-flutter-engine
 [macOS system requirements for Flutter]: /get-started/install/macos/mobile-ios#verify-system-requirements
 [VS Code]: /tools/vs-code
 [Xcode installed]: /get-started/install/macos/mobile-ios#install-and-configure-xcode

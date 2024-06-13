@@ -74,7 +74,8 @@ To link the necessary frameworks, follow this procedure.
       ```
 
    1. Change the `Release` text highlighted in the prior step
-      and change it to `$(CONFIGURATION)`.
+      and change it to `$(CONFIGURATION)`. Also wrap the path in
+      quotation marks.
 
       ```text
       312885572C1A441C009F74FF /* Flutter.xcframework */ = {
@@ -82,14 +83,14 @@ To link the necessary frameworks, follow this procedure.
         expectedSignature = "AppleDeveloperProgram:S8QB4VV633:FLUTTER.IO LLC";
         lastKnownFileType = wrapper.xcframework;
         name = Flutter.xcframework;
-        path = Flutter/[!$(CONFIGURATION)!]/Flutter.xcframework;
+        path = [!"!]Flutter/[!$(CONFIGURATION)!]/Flutter.xcframework[!"!];
         sourceTree = "<group>";
       };
       312885582C1A441C009F74FF /* App.xcframework */ = {
         isa = PBXFileReference;
         lastKnownFileType = wrapper.xcframework;
         name = App.xcframework;
-        path = Flutter/[!$(CONFIGURATION)!]/App.xcframework;
+        path = [!"!]Flutter/[!$(CONFIGURATION)!]/App.xcframework[!"!];
         sourceTree = "<group>";
       };
       ```
