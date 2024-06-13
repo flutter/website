@@ -12,8 +12,8 @@ consider one of the following three methods.
 | Embedding Method | Methodology | Benefit |
 |---|---|---|
 | Use CocoaPods _(Recommended)_ | Install and use the Flutter SDK and CocoaPods. Flutter compiles the `flutter_module` from source each time Xcode builds the iOS app. | Least complicated method to embed Flutter into your app. |
-| Use [iOS frameworks][] | Create iOS frameworks for Flutter components, embed them into your iOS, and update your existing app's build settings. Run the `flutter build` command to embed the frameworks. | Doesn't require every developer to install the Flutter SDK and Cocoapods on their local machines. |
-| Use iOS frameworks and CocoaPods | Embed the frameworks for your iOS app and the plugins in Xcode, but distribute the Flutter engine as a CocoaPods podspec. Run the `flutter build` command to embed the frameworks. | Provides an alternative to distributing the large `Flutter.xcframework` library. |
+| Use [iOS frameworks][] | Create iOS frameworks for Flutter components, embed them into your iOS, and update your existing app's build settings. | Doesn't require every developer to install the Flutter SDK and Cocoapods on their local machines. |
+| Use iOS frameworks and CocoaPods | Embed the frameworks for your iOS app and the plugins in Xcode, but distribute the Flutter engine as a CocoaPods podspec. | Provides an alternative to distributing the large Flutter engine (`Flutter.xcframework`) library. |
 
 {:.table .table-striped}
 
@@ -103,10 +103,11 @@ embedding the module into your existing application with CocoaPods.
 ## Embed a Flutter module in your iOS app
 
 After you have developed your Flutter module,
-you can embed it using the methods described at the top of the page.
+you can embed it using the methods described
+in the table at the top of the page.
 
-You can run in Debug mode on a simulator or a real device,
-and Release on a real device.
+You can run in **Debug** mode on a simulator or a real device,
+and **Release** mode on a real device.
 
 :::note
 Learn more about [Flutter's build modes][build modes of Flutter].
@@ -154,7 +155,7 @@ site.yt.embed, yt-set: site.yt.set, yt-watch: site.yt.watch  %}
 ## Set local network privacy permissions
 
 On iOS 14 and later, enable the Dart multicast DNS service in the
-Debug version of your iOS app.
+**Debug** version of your iOS app.
 This adds [debugging functionalities such as hot-reload and DevTools][]
 using `flutter attach`.
 
@@ -174,7 +175,7 @@ Adjust the names as needed depending on your app's build configurations.
 
    1. Open your project in Xcode.
 
-   1. In the **Navigator**, click on the project name.
+   1. In the **Project Navigator**, click on the project name.
 
    1. From the **Targets** list in the Editor pane, click on your app.
 
@@ -197,7 +198,7 @@ Adjust the names as needed depending on your app's build configurations.
 
 1. Create a Release property list.
 
-   1. In the **Navigator**, click on `Info-Debug.plist`.
+   1. In the **Project Navigator**, click on `Info-Debug.plist`.
 
    1. Select **File** > **Duplicate...**.  
       You can also press <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd>.
@@ -207,7 +208,7 @@ Adjust the names as needed depending on your app's build configurations.
 
 1. Add the necessary properties to the **Debug** property list.
 
-   1. In the **Navigator**, click on `Info-Debug.plist`.
+   1. In the **Project Navigator**, click on `Info-Debug.plist`.
 
    1. Add the String value `_dartVmService._tcp`
       to the **Bonjour Services** array.
@@ -222,7 +223,7 @@ Adjust the names as needed depending on your app's build configurations.
 
 1. Set the target to use different property lists for different build modes.
 
-   1. In the **Navigator**, click on your project.
+   1. In the **Project Navigator**, click on your project.
 
    1. Click the **Build Settings** tab.
 
@@ -253,7 +254,7 @@ Adjust the names as needed depending on your app's build configurations.
 
 1. Remove the **Release** property list from the **Build Phases**.
 
-   1. In the **Navigator**, click on your project.
+   1. In the **Project Navigator**, click on your project.
 
    1. Click the **Build Phases** tab.
 
@@ -278,7 +279,7 @@ Adjust the names as needed depending on your app's build configurations.
 
 ## Mitigate known issue with Apple Silicon Macs
 
-On an Apple Silicon (M1 or M2) Mac,
+On [Macs running Apple Silicon][apple-silicon],
 the host app builds for an `arm64` simulator.
 While Flutter supports `arm64` simulators, some plugins might not.
 If you use one of these plugins, you might see a compilation error like
@@ -286,7 +287,7 @@ If you use one of these plugins, you might see a compilation error like
 If this occurs,
 exclude `arm64` from the simulator architectures in your host app.
 
-1. In the **Navigator**, click on your project.
+1. In the **Project Navigator**, click on your project.
 
 1. Click the **Build Settings** tab.
 
@@ -334,3 +335,4 @@ You can now [add a Flutter screen][] to your existing iOS app.
 [Xcode installed]: /get-started/install/macos/mobile-ios#install-and-configure-xcode
 [News Feed app]: https://github.com/flutter/put-flutter-to-work/tree/022208184ec2623af2d113d13d90e8e1ce722365
 [Debugging your add-to-app module]: /add-to-app/debugging/
+[apple-silicon]: https://support.apple.com/en-us/116943

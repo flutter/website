@@ -5,12 +5,17 @@
 This method generates Flutter as a CocoaPods podspec instead of
 distributing the large `Flutter.xcframework` to other developers,
 machines, or continuous integration systems.
-Flutter still generates the `App.xcframework` and plugin frameworks
-as described in Option B.
+Flutter still generates iOS frameworks for your compiled Dart code,
+and for each of your Flutter plugins.
+Embed these frameworks and update your existing application's build settings.
 
 #### Requirements {:#method-c-reqs}
 
-This method has the same requirements as Method B.
+No additional software or hardware requirements are needed for this method.
+Use this method in the following use cases:
+
+* Members of your team can't install the Flutter SDK and CocoaPods
+* You don't want to use CocoaPods as a dependency manager in existing iOS apps
 
 #### Limitations {:#method-c-limits}
 
@@ -22,41 +27,14 @@ This method only works with the `beta` or `stable` [release channels][].
 
 #### Example project structure {:#method-c-structure}
 
-To generate the `Flutter.podspec` and frameworks,
-run the following command in the root of your Flutter module.
+{% render docs/add-to-app/ios-project/embed-framework-directory-tree.md %}
 
-```console
-$ flutter build ios-framework --cocoapods --output=/path/to/MyApp/Flutter/
-```
+#### Add Flutter engine to your Podfile
 
-The resulting project structure should resemble this directory tree.
-
-```plaintext
-/path/to/MyApp/
-└── Flutter/
-    ├── Debug/
-    │   ├── Flutter.podspec
-    │   ├── App.xcframework
-    │   ├── FlutterPluginRegistrant.xcframework
-    │   └── example_plugin.xcframework (each plugin with iOS platform code is a separate framework)
-    ├── Profile/
-    │   ├── Flutter.podspec
-    │   ├── App.xcframework
-    │   ├── FlutterPluginRegistrant.xcframework
-    │   └── example_plugin.xcframework
-    └── Release/
-        ├── Flutter.podspec
-        ├── App.xcframework
-        ├── FlutterPluginRegistrant.xcframework
-        └── example_plugin.xcframework
-```
-
-#### Add Flutter to your Podfile
-
-Host apps using CocoaPods can add Flutter to their Podfile.
+Host apps using CocoaPods can add the Flutter engine to their Podfile.
 
 ```ruby title="MyApp/Podfile"
-pod 'Flutter', :podspec => '/path/to/MyApp/Flutter/[build mode]/Flutter.podspec'
+pod 'Flutter', :podspec => '/path/to/MyApp/Flutter/[![build mode]!]/Flutter.podspec'
 ```
 
 :::note
@@ -65,7 +43,6 @@ For example, use `Debug` if you need to use `flutter attach`
 and `Release` when you're ready to ship.
 :::
 
-Link and embed the generated App.xcframework,
-FlutterPluginRegistrant.xcframework,
-and any plugin frameworks into your existing application
-as described in Option B.
+#### Link and embed app and plugin frameworks
+
+{% render docs/add-to-app/ios-project/link-and-embed.md %}
