@@ -30,7 +30,7 @@ For an example using SwiftUI, consult the iOS directory in [News Feed App][].
 
 Your development environment must meet the
 [macOS system requirements for Flutter][] with [Xcode installed][].
-Flutter supports iOS {{site.appmin.xcode}} and later and [CocoaPods][] {{site.appmin.cocoapods}} or later.
+Flutter supports Xcode {{site.appmin.xcode}} or later and [CocoaPods][] {{site.appmin.cocoapods}} or later.
 
 ## Create a Flutter module
 
