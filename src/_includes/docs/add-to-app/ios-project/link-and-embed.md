@@ -123,14 +123,17 @@ section of your target's **General** settings.
 
 To embed your dynamic frameworks, complete the following procedure.
 
-1. Navigate to **General** > **Frameworks, Libraries, and Embedded
-   Content**.
+1. Navigate to **General** <span aria-label="and then">></span>
+   **Frameworks, Libraries, and Embedded Content**.
 
 1. Click on each of your dynamic frameworks and select **Embed & Sign**.
 
    {% render docs/captioned-image.liquid,
    image:"development/add-to-app/ios/project-setup/choose-to-embed.png",
    caption:"Select **Embed & Sign** for each of your frameworks in Xcode" %}
+
+   Don't include any static frameworks,
+   including `FlutterPluginRegistrant.xcframework`.
 
 1. Click the **Build Phases** tab.
 
@@ -150,7 +153,8 @@ To embed your dynamic frameworks, complete the following procedure.
       The `.xcworkspace` file has the CocoaPod dependencies,
       the `.xcodeproj` doesn't.
 
-   1. Select **Product** > **Build** or press <kbd>Cmd</kbd> + <kbd>B</kbd>.
+   1. Select **Product** <span aria-label="and then">></span>
+      **Build** or press <kbd>Cmd</kbd> + <kbd>B</kbd>.
 
 [static or dynamic frameworks]: https://stackoverflow.com/questions/32591878/ios-is-it-a-static-or-a-dynamic-framework
 [static-framework]: https://developer.apple.com/library/archive/technotes/tn2435/_index.html
