@@ -207,9 +207,13 @@ static JS interop:
 - [`package:web`][], which replaces `dart:html` (and other web libraries)
 - [`dart:js_interop`][], which replaces `package:js` and `dart:js`
 
-Most packages owned by the Dart and Flutter teams have been
-migrated to be compatible with Wasm support in Flutter,
+The Dart and Flutter teams have migrated most packages
+to be compatible with Wasm support in Flutter,
 such as [`package:url_launcher`][].
+You can find packages that are compatible with Wasm
+by using the [`wasm-ready`][] filter on [pub.dev][].
+
+
 To learn how to migrate your packages and applications to the new solutions,
 check out the [JS interop][] documentation and [`package:web` migration guide][].
 
@@ -232,6 +236,8 @@ Context: The unavailable library 'dart:html' is imported through these packages:
 [`package:url_launcher`]: {{site.pub-pkg}}/url_launcher
 [`package:web` migration guide]: {{site.dart-site}}/interop/js-interop/package-web
 [JS interop]: {{site.dart-site}}/interop/js-interop
+[`wasm-ready`]: {{site.pub-pkg}}?q=is%3Awasm-ready
+[pub.dev]: {{site.pub}}
 
 ### Only build support
 
