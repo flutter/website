@@ -208,10 +208,10 @@ static JS interop:
 - [`dart:js_interop`][], which replaces `package:js` and `dart:js`
 
 The Dart and Flutter teams have migrated most packages
-to be compatible with Wasm support in Flutter,
+to support Wasm in Flutter,
 such as [`package:url_launcher`][].
-You can find packages that are compatible with Wasm
-by using the [`wasm-ready`][] filter on [pub.dev][].
+To find Wasm-compatible packages, 
+use the [`wasm-ready`][] filter on [pub.dev][].
 
 
 To learn how to migrate your packages and applications to the new solutions,
