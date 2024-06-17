@@ -5,75 +5,62 @@ description: Learn how to integrate a Flutter module into your existing iOS proj
 ---
 
 Flutter UI components can be incrementally added into your existing iOS
-application as embedded frameworks. There are a few ways to embed Flutter 
-in your existing application.
+application as embedded frameworks.
+To embed Flutter in your existing application,
+consider one of the following three methods.
 
-1. **Use the CocoaPods dependency manager and installed Flutter SDK.**
-  In this case, the `flutter_module` is compiled from
-  the source each time the app is built. (Recommended.)
+| Embedding Method | Methodology | Benefit |
+|---|---|---|
+| Use CocoaPods _(Recommended)_ | Install and use the Flutter SDK and CocoaPods. Flutter compiles the `flutter_module` from source each time Xcode builds the iOS app. | Least complicated method to embed Flutter into your app. |
+| Use [iOS frameworks][] | Create iOS frameworks for Flutter components, embed them into your iOS, and update your existing app's build settings. | Doesn't require every developer to install the Flutter SDK and CocoaPods on their local machines. |
+| Use iOS frameworks and CocoaPods | Embed the frameworks for your iOS app and the plugins in Xcode, but distribute the Flutter engine as a CocoaPods podspec. | Provides an alternative to distributing the large Flutter engine (`Flutter.xcframework`) library. |
 
-1. **Create frameworks for the Flutter engine, your compiled Dart code,
-  and all Flutter plugins.** Here, you manually embed the frameworks,
-  and update your existing application's build settings in Xcode.
-  This can be useful for teams that don't want to require every developer
-  to have the Flutter SDK and Cocoapods installed locally.
+{:.table .table-striped}
 
-1. **Create frameworks for your compiled Dart code,
-  and all Flutter plugins. Use CocoaPods for the Flutter engine.** 
-  With this option, embed the frameworks for your application
-  and the plugins in Xcode, but distribute the
-  Flutter engine as a CocoaPods podspec.
-  This is similar to the second option, but it provides
-  an alternative to distributing the large Flutter.xcframework.
+[iOS frameworks]: {{site.apple-dev}}/library/archive/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html
 
-For examples using an app built with UIKit, 
-see the iOS directories in the [add_to_app code samples][]. 
-For an example using SwiftUI, see the iOS directory in [News Feed App][].
+When you add Flutter to your existing iOS app,
+it [increases the size of your iOS app][app-size].
 
-## System requirements
+For examples using an app built with UIKit,
+see the iOS directories in the [add_to_app code samples][].
+For an example using SwiftUI, consult the iOS directory in [News Feed App][].
+
+## Development system requirements
 
 Your development environment must meet the
-[macOS system requirements for Flutter][]
-with [Xcode installed][].
-Flutter supports iOS 12 and later.
-Additionally, you will need [CocoaPods][]
-version 1.10 or later.
-
+[macOS system requirements for Flutter][] with [Xcode installed][].
+Flutter supports Xcode {{site.appmin.xcode}} or later and [CocoaPods][] {{site.appmin.cocoapods}} or later.
 
 ## Create a Flutter module
 
-To embed Flutter into your existing application, 
-using any of the methods mentioned above, 
-first create a Flutter module.
-
-From the command line, run:
+To embed Flutter into your existing application with any method,
+create a Flutter module first.
+Use the following command to create a Flutter module.
 
 ```console
-cd some/path/
-flutter create --template module my_flutter
+$ cd /path/to/my_flutter
+$ flutter create --template module my_flutter
 ```
 
-A Flutter module project is created at `some/path/my_flutter/`.
-If you are using the first method mentioned above, 
-the module should be created in the same parent directory 
-as your existing iOS app. 
+Flutter creates module project under `/path/to/my_flutter/`.
+If you use the [CocoaPods method][], save the module
+in the same parent directory as your existing iOS app.
 
+[CocoaPods method]: /add-to-app/ios/project-setup/?tab=embed-using-cocoapods
 
-From the Flutter module directory, you can run the same `flutter`
-commands you would in any other Flutter project,
-like `flutter run --debug` or `flutter build ios`.
-You can also run the module in
-[Android Studio/IntelliJ][] or [VS Code][] with
-the Flutter and Dart plugins. This project contains a
-single-view example version of your module before it's
-embedded in your existing application,
-which is useful for incrementally
-testing the Flutter-only parts of your code.
+From the Flutter module directory,
+you can run the same `flutter` commands you would in any other Flutter project,
+like `flutter run` or `flutter build ios`.
+You can also run the module in [VS Code][] or
+[Android Studio/IntelliJ][] with the Flutter and Dart plugins.
+This project contains a single-view example version of your module
+before embeddeding it in your existing iOS app.
+This helps when testing the Flutter-only parts of your code.
 
-### Module organization
+## Organize your module
 
-The `my_flutter` module directory structure is similar to a
-normal Flutter application:
+The `my_flutter` module directory structure resembles a typical Flutter app.
 
 ```plaintext
 my_flutter/
@@ -86,424 +73,268 @@ my_flutter/
 └── pubspec.yaml
 ```
 
-Add your Dart code to the `lib/` directory.
-
-Add Flutter dependencies to `my_flutter/pubspec.yaml`,
-including Flutter packages and plugins.
+Your Dart code should be added to the `lib/` directory.
+Your Flutter dependencies, packages, and plugins must be added to the
+`pubspec.yaml` file.
 
 The `.ios/` hidden subfolder contains an Xcode workspace where
 you can run a standalone version of your module.
-It is a wrapper project to bootstrap your Flutter code,
-and contains helper scripts to facilitate building frameworks or
+This wrapper project bootstraps your Flutter code.
+It contains helper scripts to facilitate building frameworks or
 embedding the module into your existing application with CocoaPods.
 
 :::note
-Add custom iOS code to your own existing application's
-project or to a plugin, not to the module's `.ios/`
-directory. Changes made in your module's `.ios/`
-directory don't appear in your existing iOS project
-using the module, and might be overwritten by Flutter.
 
-Do not source control the `.ios/` directory since it's autogenerated.
-Before building the module on a new machine, run `flutter pub get`
-in the `my_flutter` directory first to regenerate the `.ios/`
-directory before building iOS project using the Flutter module.
+* Add custom iOS code to your own existing application's
+  project or to a plugin, not to the module's `.ios/`
+  directory. Changes made in your module's `.ios/`
+  directory don't appear in your existing iOS project
+  using the module, and might be overwritten by Flutter.
+
+* Exclude the `.ios/` directory from source control as
+  it's autogenerated.
+
+* Before building the module on a new machine,
+  run `flutter pub get` in the `my_flutter` directory.
+  This regenerates the `.ios/` directory before building
+  the iOS project that uses the Flutter module.
+
 :::
 
-## Embed the Flutter module in your existing application
+## Embed a Flutter module in your iOS app
 
 After you have developed your Flutter module,
-you can embed it using the methods described at the top of the page.
+you can embed it using the methods described
+in the table at the top of the page.
+
+You can run in **Debug** mode on a simulator or a real device,
+and **Release** mode on a real device.
 
 :::note
-You can run in Debug mode on a simulator or a real device,
-and Release on a real device. Learn more about
-[Flutter's build modes][build modes of Flutter]
+Learn more about [Flutter's build modes][build modes of Flutter].
 
-To leverage Flutter debugging functionality 
-such as hot reload, see  [Debugging your add-to-app module][].
+To use Flutter debugging features such as hot reload,
+consult [Debugging your add-to-app module][].
 :::
 
-Using Flutter [increases your app size][].
+{% comment %} Nav tabs {% endcomment -%}
+<ul class="nav nav-tabs" id="ios-project-setup" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="embed-using-cocoapods-tab" href="#embed-using-cocoapods" role="tab" aria-controls="embed-using-cocoapods" aria-selected="true">Use CocoaPods</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="embed-using-frameworks-tab" href="#embed-using-frameworks" role="tab" aria-controls="embed-using-frameworks" aria-selected="false">Use frameworks</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="embed-using-both-tab" href="#embed-using-both" role="tab" aria-controls="embed-using-both" aria-selected="false">Use frameworks and CocoaPods</a>
+    </li>
+</ul>
 
-### Option A - Embed with CocoaPods and the Flutter SDK
+{% comment %} Tab panes {% endcomment -%}
+<div class="tab-content">
 
-This method requires every developer working on your
-project to have a locally installed version of the Flutter SDK.
-The Flutter module is compiled from source each time the app is built.
-Simply build your application in Xcode to automatically
-run the script to embed your Dart and plugin code.
-This allows rapid iteration with the most up-to-date
-version of your Flutter module without running additional
-commands outside of Xcode.
+<div class="tab-pane active" id="embed-using-cocoapods" role="tabpanel" aria-labelledby="embed-using-cocoapods-tab">
 
-The following example assumes that your existing
-application and the Flutter module are in sibling
-directories. If you have a different directory structure,
-you might need to adjust the relative paths.
+{% render docs/add-to-app/ios-project/embed-cocoapods.md, yt-embed:
+site.yt.embed, yt-set: site.yt.set, yt-watch: site.yt.watch  %}
 
-```plaintext
-some/path/
-├── my_flutter/
-│   └── .ios/
-│       └── Flutter/
-│         └── podhelper.rb
-└── MyApp/
-    └── Podfile
-```
+</div>
 
-If your existing application (`MyApp`) doesn't
-already have a Podfile, run `pod init` in the  
-`MyApp` directory to create one. 
-You can find more details on using 
-CocoaPods in the [CocoaPods getting started guide][].
+<div class="tab-pane" id="embed-using-frameworks" role="tabpanel" aria-labelledby="embed-using-frameworks-tab">
 
-<ol>
-<li>
+{% render docs/add-to-app/ios-project/embed-frameworks.md %}
 
-Add the following lines to your `Podfile`:
+</div>
+<div class="tab-pane" id="embed-using-both" role="tabpanel" aria-labelledby="embed-using-both-tab">
 
-```ruby title="MyApp/Podfile"
-flutter_application_path = '../my_flutter'
-load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
-```
+{% render docs/add-to-app/ios-project/embed-split.md %}
 
-</li>
+</div>
+</div>
+{% comment %} End: Tab panes. {% endcomment %}
 
-<li>
+## Set local network privacy permissions
 
-For each [Podfile target][] that needs to
-embed Flutter, call `install_all_flutter_pods(flutter_application_path)`.
-
-```ruby title="MyApp/Podfile"
-target 'MyApp' do
-  install_all_flutter_pods(flutter_application_path)
-end
-```
-
-</li>
-
-<li>
-
-In the `Podfile`'s `post_install` block, call `flutter_post_install(installer)`.
-
-```ruby title="MyApp/Podfile"
-post_install do |installer|
-  flutter_post_install(installer) if defined?(flutter_post_install)
-end
-```
-
-:::note
-The `flutter_post_install` method (added in Flutter 3.1.0),
-adds build settings to support native Apple Silicon `arm64` iOS simulators.
-Include the `if defined?(flutter_post_install)` check to ensure your `Podfile`
-is valid if you are running on older versions of Flutter that don't have this method.
-:::
-
-</li>
-
-<li>
-
-Run `pod install`.
-
-:::note
-When you change the Flutter plugin dependencies in
-`my_flutter/pubspec.yaml`, run `flutter pub get`
-in your Flutter module directory to refresh the list
-of plugins read by the `podhelper.rb` script.
-Then, run `pod install` again from
-your application at `some/path/MyApp`.
-:::
-
-</li>
-</ol>
-
-The `podhelper.rb` script embeds your plugins,
-`Flutter.framework`, and `App.framework` into your project.
-
-Your app's Debug and Release build configurations embed
-the Debug or Release [build modes of Flutter][], respectively.
-Add a Profile build configuration
-to your app to test in profile mode.
-
-:::tip
-`Flutter.framework` is the bundle for the Flutter engine,
-and `App.framework` is the compiled Dart code for this project.
-:::
-
-Open `MyApp.xcworkspace` in Xcode.
-You can now build the project using `⌘B`.
-
-### Option B - Embed frameworks in Xcode
-
-Alternatively, you can generate the necessary frameworks
-and embed them in your application by manually editing
-your existing Xcode project. You might do this if members of your
-team can't locally install Flutter SDK and CocoaPods,
-or if you don't want to use CocoaPods
-as a dependency manager in your existing applications.
-You must run `flutter build ios-framework`
-every time you make code changes in your Flutter module.
-
-The following example assumes that you want to generate the
-frameworks to `some/path/MyApp/Flutter/`.
-
-```console
-flutter build ios-framework --output=some/path/MyApp/Flutter/
-```
-
-```plaintext
-some/path/MyApp/
-└── Flutter/
-    ├── Debug/
-    │   ├── Flutter.xcframework
-    │   ├── App.xcframework
-    │   ├── FlutterPluginRegistrant.xcframework (only if you have plugins with iOS platform code)
-    │   └── example_plugin.xcframework (each plugin is a separate framework)
-    ├── Profile/
-    │   ├── Flutter.xcframework
-    │   ├── App.xcframework
-    │   ├── FlutterPluginRegistrant.xcframework
-    │   └── example_plugin.xcframework
-    └── Release/
-        ├── Flutter.xcframework
-        ├── App.xcframework
-        ├── FlutterPluginRegistrant.xcframework
-        └── example_plugin.xcframework
-```
+On iOS 14 and later, enable the Dart multicast DNS service in the
+**Debug** version of your iOS app.
+This adds [debugging functionalities such as hot-reload and DevTools][]
+using `flutter attach`.
 
 :::warning
-Always use `Flutter.xcframework` and `App.xcframework`
-from the same directory. Mixing `.xcframework` imports
-from different directories (such as `Profile/Flutter.xcframework`
-with `Debug/App.xcframework`) causes runtime crashes.
+Never enable this service in the **Release** version of your app.
+The Apple App Store might reject your app.
 :::
 
-Link and embed the generated frameworks into your existing
-application in Xcode.  There are multiple ways to do
-this&mdash;use the method that is best for your project.
-
-#### Link on the frameworks
-
-For example, you can drag the frameworks from
-`some/path/MyApp/Flutter/Release/` in Finder
-into your target's **Build
-Settings > Build Phases > Link Binary With Libraries**.
-
-In the target's build settings, add `$(PROJECT_DIR)/Flutter/Release/`
-to the **Framework Search Paths** (`FRAMEWORK_SEARCH_PATHS`).
-
-{% render docs/app-figure.md, image:"development/add-to-app/ios/project-setup/framework-search-paths.png", alt:"Update Framework Search Paths in Xcode" %}
-
-:::tip
-To use the simulator, you will need to 
-embed the Debug version of the Flutter frameworks in your
-Debug build configuration. To do this 
-you can use `$(PROJECT_DIR)/Flutter/$(CONFIGURATION)`
-in the **Framework Search Paths** (`FRAMEWORK_SEARCH_PATHS`)
-build setting. This embeds the Release frameworks in the Release configuration, 
-and the Debug frameworks in the Debug Configuration.
-
-You must also open `MyApp.xcodeproj/project.pbxproj` (from Finder) 
-and replace `path = Flutter/Release/example.xcframework;`
-with `path = "Flutter/$(CONFIGURATION)/example.xcframework";`
-for all added frameworks. (Note the added `"`.)
-:::
-
-#### Embed the frameworks
-
-The generated dynamic frameworks must be embedded
-into your app to be loaded at runtime.
-
-:::important
-Plugins might produce [static or dynamic frameworks][].
-Static frameworks should be linked on, but never embedded.
-If you embed a static framework into your application,
-your application is not publishable to the App Store
-and fails with a
-**Found an unexpected Mach-O header code** archive error.
-:::
-
-After linking the frameworks, you should see them in the 
-**Frameworks, Libraries, and Embedded Content**
-section of your target's **General** settings. 
-To embed the dynamic frameworks
-select **Embed & Sign**. 
-
-They will then appear under **Embed Frameworks** within 
-**Build Phases** as follows: 
-
-{% render docs/app-figure.md, image:"development/add-to-app/ios/project-setup/embed-xcode.png", alt:"Embed frameworks in Xcode" %}
-
-You should now be able to build the project in Xcode using `⌘B`.
-
-### Option C - Embed application and plugin frameworks in Xcode and Flutter framework with CocoaPods
-
-Alternatively, instead of distributing the large Flutter.xcframework
-to other developers, machines, or continuous integration systems,
-you can instead generate Flutter as CocoaPods podspec by adding
-the flag `--cocoapods`. This produces a `Flutter.podspec`
-instead of an engine Flutter.xcframework.
-The App.xcframework and plugin frameworks are generated
-as described in Option B.
-
-To generate the `Flutter.podspec` and frameworks, run the following 
-from the command line in the root of your Flutter module:
-
-```console
-flutter build ios-framework --cocoapods --output=some/path/MyApp/Flutter/
-```
-
-```plaintext
-some/path/MyApp/
-└── Flutter/
-    ├── Debug/
-    │   ├── Flutter.podspec
-    │   ├── App.xcframework
-    │   ├── FlutterPluginRegistrant.xcframework
-    │   └── example_plugin.xcframework (each plugin with iOS platform code is a separate framework)
-    ├── Profile/
-    │   ├── Flutter.podspec
-    │   ├── App.xcframework
-    │   ├── FlutterPluginRegistrant.xcframework
-    │   └── example_plugin.xcframework
-    └── Release/
-        ├── Flutter.podspec
-        ├── App.xcframework
-        ├── FlutterPluginRegistrant.xcframework
-        └── example_plugin.xcframework
-```
-
-Host apps using CocoaPods can add Flutter to their Podfile:
-
-```ruby title="MyApp/Podfile"
-pod 'Flutter', :podspec => 'some/path/MyApp/Flutter/[build mode]/Flutter.podspec'
-```
-
-:::note
-You must hard code the `[build mode]` value.
-For example, use `Debug` if you need to use
-`flutter attach` and `Release` when you're ready to ship.
-:::
-
-Link and embed the generated App.xcframework,
-FlutterPluginRegistrant.xcframework,
-and any plugin frameworks into your existing application
-as described in Option B.
-
-## Local Network Privacy Permissions
-
-On iOS 14 and higher, enable the Dart multicast DNS
-service in the Debug version of your app
-to add [debugging functionalities such as hot-reload and
-DevTools][] using `flutter attach`.
-
-:::warning
-This service must not be enabled in the **Release**
-version of your app, or you might experience App Store rejections.
-:::
-
-One way to do this is to maintain a separate copy of your app's Info.plist per
-build configuration. The following instructions assume
-the default **Debug** and **Release**.
+To set local network privacy permissions only in the Debug version of your app,
+create a separate `Info.plist` per build configuration.
+SwiftUI projects start without an `Info.plist` file.
+If you need to create a property list,
+you can do so through Xcode or text editor.
+The following instructions assume the default **Debug** and **Release**.
 Adjust the names as needed depending on your app's build configurations.
 
-<ol>
-<li>
+1. Create a new property list.
 
-Rename your app's **Info.plist** to **Info-Debug.plist**.
-Make a copy of it called **Info-Release.plist** and add it to your Xcode project.
+   1. Open your project in Xcode.
 
-{% render docs/app-figure.md, image:"development/add-to-app/ios/project-setup/info-plists.png", alt:"Info-Debug.plist and Info-Release.plist in Xcode" %}
+   1. In the **Project Navigator**, click on the project name.
 
-</li>
+   1. From the **Targets** list in the Editor pane, click on your app.
 
-<li>
+   1. Click the **Info** tab.
 
-In **Info-Debug.plist** _only_ add the key `NSBonjourServices`
-and set the value to an array with the string `_dartVmService._tcp`.
-Note Xcode will display this as "Bonjour services".
+   1. Expand **Custom iOS Target Properties**.
 
-Optionally, add the key `NSLocalNetworkUsageDescription` set to your
-desired customized permission dialog text.
+   1. Right-click on the list and select **Add Row**.
 
-{% render docs/app-figure.md, image:"development/add-to-app/ios/project-setup/debug-plist.png", alt:"Info-Debug.plist with additional keys" %}
+   1. From the dropdown menu, select **Bonjour Services**.
+      This creates a new property list in the project directory
+      called `Info`. This displays as `Info.plist` in the Finder.
 
-</li>
+1. Rename the `Info.plist` to `Info-Debug.plist`
 
-<li>
+   1. Click on **Info** file in the project list at the left.
 
-In your target's build settings, change the **Info.plist File**
-(`INFOPLIST_FILE`) setting path from `path/to/Info.plist` to `path/to/Info-$(CONFIGURATION).plist`.
+   1. In the **Identity and Type** panel at the right,
+      change the **Name** from `Info.plist` to `Info-Debug.plist`.
 
-{% render docs/app-figure.md, image:"development/add-to-app/ios/project-setup/set-plist-build-setting.png", alt:"Set INFOPLIST_FILE build setting" %}
+1. Create a Release property list.
 
-This will resolve to the path **Info-Debug.plist** in **Debug** and
-**Info-Release.plist** in **Release**.
+   1. In the **Project Navigator**, click on `Info-Debug.plist`.
 
-{% render docs/app-figure.md, image:"development/add-to-app/ios/project-setup/plist-build-setting.png", alt:"Resolved INFOPLIST_FILE build setting" %}
+   1. Select **File** > **Duplicate...**.  
+      You can also press <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd>.
 
-Alternatively, you can explicitly set the **Debug** path to **Info-Debug.plist**
-and the **Release** path to **Info-Release.plist**.
+   1. In the dialog box, set the **Save As:** field to
+      `Info-Release.plist` and click **Save**.
 
-</li>
+1. Add the necessary properties to the **Debug** property list.
 
-<li>
+   1. In the **Project Navigator**, click on `Info-Debug.plist`.
 
-If the **Info-Release.plist** copy is in your target's **Build Settings > Build Phases > Copy Bundle**
-Resources build phase, remove it.
+   1. Add the String value `_dartVmService._tcp`
+      to the **Bonjour Services** array.
 
-{% render docs/app-figure.md, image:"development/add-to-app/ios/project-setup/copy-bundle.png", alt:"Copy Bundle build phase" %}
+   1. _(Optional)_ To set your desired customized permission dialog text,
+      add the key **Privacy - Local Network Usage Description**.
 
-The first Flutter screen loaded by your Debug app will now prompt
-for local network permission. The permission can also be allowed by enabling
-**Settings > Privacy > Local Network > Your App**.
+      {% render docs/captioned-image.liquid,
+      image:"development/add-to-app/ios/project-setup/debug-plist.png",
+      caption:"The `Info-Debug` property list with the **Bonjour Services**
+      and **Privacy - Local Network Usage Description** keys added" %}
 
-{% render docs/app-figure.md, image:"development/add-to-app/ios/project-setup/network-permission.png", alt:"Local network permission dialog" %}
+1. Set the target to use different property lists for different build modes.
 
-</li>
-</ol>
+   1. In the **Project Navigator**, click on your project.
 
-## Apple Silicon (`arm64` Macs)
+   1. Click the **Build Settings** tab.
 
-On an Apple Silicon (M1) Mac, the host app builds for an `arm64` simulator.
-While Flutter supports `arm64` simulators, some plugins might not. If you use
-one of these plugins, you might see a compilation error like **Undefined symbols
-for architecture arm64** and you must exclude `arm64` from the simulator
-architectures in your host app.
+   1. Click **All** and **Combined** sub-tabs.
 
-In your host app target, find the **Excluded Architectures** (`EXCLUDED_ARCHS`) build setting.
-Click the right arrow disclosure indicator icon to expand the available build configurations.
-Hover over **Debug** and click the plus icon. Change **Any SDK** to **Any iOS Simulator SDK**.
-Add `arm64` to the build settings value.
+   1. In the Search box, type `plist`.  
+      This limits the settings to those that include property lists.
 
-{% render docs/app-figure.md, image:"development/add-to-app/ios/project-setup/excluded-archs.png", alt:"Set conditional EXCLUDED_ARCHS build setting" %}
+   1. Scroll through the list until you see **Packaging**.
 
-When done correctly, Xcode will add `"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;` to your **project.pbxproj** file.
+   1. Click on the **Info.plist File** setting.
 
-Repeat for any iOS unit test targets.
+   1. Change the **Info.plist File** value
+      from `path/to/Info.plist` to `path/to/Info-$(CONFIGURATION).plist`.
 
-## Development
+      {%- render docs/captioned-image.liquid,
+      image:"development/add-to-app/ios/project-setup/set-plist-build-setting.png",
+      caption:"Updating the `Info.plist` build setting to use build
+      mode-specific property lists" %}
 
-You can now [add a Flutter screen][] to your existing application.
+      This resolves to the path **Info-Debug.plist** in **Debug** and
+      **Info-Release.plist** in **Release**.
+
+      {% render docs/captioned-image.liquid,
+      image:"development/add-to-app/ios/project-setup/plist-build-setting.png",
+      caption:"The updated **Info.plist File** build setting displaying the
+      configuration variations" %}
+
+1. Remove the **Release** property list from the **Build Phases**.
+
+   1. In the **Project Navigator**, click on your project.
+
+   1. Click the **Build Phases** tab.
+
+   1. Expand **Copy Bundle Resources**.
+
+   1. If this list includes `Info-Release.plist`,
+      click on it and then click the **-** (minus sign) under it
+      to remove the property list from the resources list.
+
+      {% render docs/captioned-image.liquid,
+      image:"development/add-to-app/ios/project-setup/copy-bundle.png",
+      caption:"The **Copy Bundle** build phase displaying the
+      **Info-Release.plist** setting. Remove this setting." %}
+
+1. The first Flutter screen your Debug app loads prompts
+   for local network permission.
+
+   Click **OK**.
+
+   _(Optional)_ To grant permission before the app loads, enable
+   **Settings > Privacy > Local Network > Your App**.
+
+## Mitigate known issue with Apple Silicon Macs
+
+On [Macs running Apple Silicon][apple-silicon],
+the host app builds for an `arm64` simulator.
+While Flutter supports `arm64` simulators, some plugins might not.
+If you use one of these plugins, you might see a compilation error like
+**Undefined symbols for architecture arm64**.
+If this occurs,
+exclude `arm64` from the simulator architectures in your host app.
+
+1. In the **Project Navigator**, click on your project.
+
+1. Click the **Build Settings** tab.
+
+1. Click **All** and **Combined** sub-tabs.
+
+1. Under **Architectures**, click on **Excluded Architectures**.
+
+1. Expand to see the available build configurations.
+
+1. Click **Debug**.
+
+1. Click the **+** (plus sign).
+
+1. Select **iOS Simulator**.
+
+1. Double-click in the value column for **Any iOS Simulator SDK**.
+
+1. Click the **+** (plus sign).
+
+1. Type `arm64` in the **Debug > Any iOS Simulator SDK** dialog box.
+
+   {% render docs/captioned-image.liquid,
+   image:"development/add-to-app/ios/project-setup/excluded-archs.png",
+   caption:"Add `arm64` as an excluded architecture for your app" %}  
+
+1. Press <kbd>Esc</kbd> to close this dialog box.
+
+1. Repeat these steps for the **Release** build mode.
+
+1. Repeat for any iOS unit test targets.
+
+## Next steps
+
+You can now [add a Flutter screen][] to your existing iOS app.
 
 [add_to_app code samples]: {{site.repo.samples}}/tree/main/add_to_app
 [add a Flutter screen]: /add-to-app/ios/add-flutter-screen
 [Android Studio/IntelliJ]: /tools/android-studio
 [build modes of Flutter]: /testing/build-modes
 [CocoaPods]: https://cocoapods.org/
-[CocoaPods getting started guide]: https://guides.cocoapods.org/using/using-cocoapods.html
 [debugging functionalities such as hot-reload and DevTools]: /add-to-app/debugging
-[increases your app size]: /resources/faq#how-big-is-the-flutter-engine
+[app-size]: /resources/faq#how-big-is-the-flutter-engine
 [macOS system requirements for Flutter]: /get-started/install/macos/mobile-ios#verify-system-requirements
-[Podfile target]: https://guides.cocoapods.org/syntax/podfile.html#target
-[static or dynamic frameworks]: {{site.so}}/questions/32591878/ios-is-it-a-static-or-a-dynamic-framework
 [VS Code]: /tools/vs-code
 [Xcode installed]: /get-started/install/macos/mobile-ios#install-and-configure-xcode
 [News Feed app]: https://github.com/flutter/put-flutter-to-work/tree/022208184ec2623af2d113d13d90e8e1ce722365
 [Debugging your add-to-app module]: /add-to-app/debugging/
-
-[embed the frameworks]: /add-to-app/ios/project-setup#embed-the-frameworks
-[Embed with CocoaPods and Flutter tools]: #option-a---embed-with-cocoapods-and-the-flutter-sdk
-[On iOS 14 and higher]: {{site.apple-dev}}/news/?id=0oi77447
-[XCFrameworks]: {{site.apple-dev}}/documentation/xcode_release_notes/xcode_11_release_notes
+[apple-silicon]: https://support.apple.com/en-us/116943

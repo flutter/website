@@ -78,7 +78,7 @@ builds, you can add the following snippet to your $project_path\android\app\src\
 <application android:usesCleartextTraffic="true"/>
 ```
 
-For iOS, you can follow [these instructions](/add-to-app/ios/project-setup#local-network-privacy-permissions) to create a `Info-debug.plist` and put this in:
+For iOS, you can follow [these instructions](/add-to-app/ios/project-setup/?tab=embed-using-cocoapods#set-local-network-privacy-permissions) to create a `Info-debug.plist` and put this in:
 
 ```xml
 <key>NSAppTransportSecurity</key>
