@@ -7,7 +7,7 @@ on:
     types: [created]
   schedule:
     # Schedule for five minutes after the hour, every hour
-    - cron: '5 * * * *
+    - cron: '5 * * * *' 
 
 # By specifying the access of one of the scopes, all of those that are not
 # specified are set to 'none'.
