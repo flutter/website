@@ -178,7 +178,7 @@ ${content}
     // Save in `_site/assets/images` and update links to there.
     eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
       extensions: 'html',
-      formats: ['avif', 'webp', 'png', 'svg'],
+      formats: ['webp', 'png', 'svg'],
       svgShortCircuit: true,
       widths: ['auto'],
       defaultAttributes: {
@@ -187,6 +187,10 @@ ${content}
       },
       urlPath: '/assets/images/',
       outputDir: '_site/assets/images/',
+      sharpOptions: {
+        animated: true,
+        limitInputPixels: false,
+      },
     });
   } else {
     // To be more consistent with the production build,
@@ -202,6 +206,10 @@ ${content}
       },
       urlPath: '/assets/images/',
       outputDir: '_site/assets/images/',
+      sharpOptions: {
+        animated: true,
+        limitInputPixels: false,
+      },
     });
   }
 
