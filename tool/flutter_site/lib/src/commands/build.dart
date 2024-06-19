@@ -35,6 +35,7 @@ final class BuildSiteCommand extends Command<int> {
       const ['eleventy'],
       environment: {
         'PRODUCTION': '$productionRelease',
+        'OPTIMIZE': '$productionRelease',
       },
     );
 

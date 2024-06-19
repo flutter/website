@@ -215,7 +215,7 @@ function initCookieNotice() {
 
   agreeBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    Cookies.set(cookieKey, cookieConsentValue, { sameSite: 'strict', expires: 30 });
+    Cookies.set(cookieKey, cookieConsentValue, { sameSite: 'strict', expires: 90 });
     notice.classList.remove(activeClass);
   });
 }
