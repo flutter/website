@@ -73,6 +73,8 @@ flutter:
           style: italic
 ```
 
+<a id="use" aria-hidden="true"></a>
+
 ## 3. Use the font
 
 Use a [`TextStyle`][] to change the appearance of text.

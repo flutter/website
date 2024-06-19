@@ -136,7 +136,9 @@ Once your app is running in profile mode,
 [launch DevTools]: /tools/devtools
 [Timeline view]: /tools/devtools/performance
 
-## The performance overlay
+<a id="the-performance-overlay" aria-hidden="true"></a>
+
+## The performance overlay {:#performance-overlay}
 
 The performance overlay displays statistics in two graphs
 that show where time is being spent in your app. If the UI
