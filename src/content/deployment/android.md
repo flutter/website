@@ -312,6 +312,8 @@ Verify the following values:
   Internet access during development to enable communication between
   Flutter tools and a running app.
 
+<a id="reviewing-the-gradle-build-configuration" aria-hidden="true"></a>
+
 ## Review the Gradle build configuration
 
 Review the default [Gradle build file][gradlebuild]
