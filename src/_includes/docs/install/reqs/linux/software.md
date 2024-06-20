@@ -36,14 +36,12 @@ To develop Flutter on {{include.os}}:
 1. To develop {{include.target}} apps:
 
    {:type="a"}
-   1. Install the following prerequisite packages for Android Studio:
-      `libc6:i386`, `libncurses5:i386`, `libstdc++6:i386`, `lib32z1`, `libbz2-1.0:i386`
+   1. Install the following prerequisite packages for Android Studio.
 
       ```console
       $ sudo apt-get install \
-          libc6:i386 libncurses5:i386 \
-          libstdc++6:i386 lib32z1 \
-          libbz2-1.0:i386
+          libc6:amd64 libstdc++6:amd64 \
+          libbz2-1.0:amd64 libncurses5:amd64
       ```
 
    1. Install [Android Studio][] {{site.appmin.android_studio}} or later to debug and compile
