@@ -219,7 +219,7 @@ called Dart DevTools). For more information, see
 [Debugging with Flutter][] and the [Flutter DevTools][] docs.
 
 [Debugging with Flutter]: /testing/debugging
-[Flutter DevTools]: /tools/devtools/overview
+[Flutter DevTools]: /tools/devtools
 
 ### Does Flutter come with a dependency injection framework?
 

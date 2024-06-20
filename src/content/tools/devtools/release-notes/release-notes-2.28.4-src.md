@@ -3,7 +3,7 @@
 The 2.28.4 release of the Dart and Flutter DevTools
 includes the following changes among other general improvements.
 To learn more about DevTools, check out the
-[DevTools overview](https://docs.flutter.dev/tools/devtools/overview).
+[DevTools overview](https://docs.flutter.dev/tools/devtools).
 
 This was a cherry-pick release on top of DevTools 2.28.3.
 To learn about the improvements included in DevTools 2.28.3, please read the

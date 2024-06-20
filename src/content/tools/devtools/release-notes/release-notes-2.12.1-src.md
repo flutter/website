@@ -3,7 +3,7 @@
 The 2.12.1 release of the Dart and Flutter DevTools
 includes the following changes among other general improvements.
 To learn more about DevTools, check out the
-[DevTools overview](https://docs.flutter.dev/tools/devtools/overview).
+[DevTools overview](https://docs.flutter.dev/tools/devtools).
 
 ## General updates
 
