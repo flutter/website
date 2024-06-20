@@ -37,7 +37,7 @@ To set your machine to use a mirror site:
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="china-os-tabs" role="tablist">
-{% for os in page.os-list %}
+{% for os in os-list %}
 {% assign id = os | downcase -%}
   <li class="nav-item">
     <a class="nav-link {%- if id == 'windows' %} active {% endif %}" id="{{id}}-tab" href="#{{id}}" role="tab" aria-controls="{{id}} {{id}}-dl {{id}}-pub" aria-selected="true">{{os}}</a>
@@ -47,7 +47,7 @@ To set your machine to use a mirror site:
 
 {% comment %} Tab panes {% endcomment -%}
 <div class="tab-content">
-{% for os in page.os-list %}
+{% for os in os-list %}
 {% include docs/community/china/os-settings.md ref-os=os sdk=flutter-sdk %}
 {% endfor -%}
 </div>
@@ -67,7 +67,7 @@ from Google's archive to CFUG's mirror.
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="china-os-dl-tabs" role="tablist">
-{% for os in page.os-list %}
+{% for os in os-list %}
 {% assign id = os | downcase -%}
   <li class="nav-item">
     <a class="nav-link {%- if id == 'windows' %} active {% endif %}" id="{{id}}-dl-tab" href="#{{id}}-dl" role="tab" aria-controls="{{id}} {{id}}-dl {{id}}-pub" aria-selected="true">{{os}}</a>
@@ -77,7 +77,7 @@ from Google's archive to CFUG's mirror.
 
 {% comment %} Tab panes {% endcomment -%}
 <div class="tab-content">
-{% for os in page.os-list %}
+{% for os in os-list %}
 {% include docs/community/china/download-urls.md ref-os=os filepath=sdk-path %}
 {% endfor -%}
 </div>
@@ -99,7 +99,7 @@ To enable access to `pub.dev`:
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="china-os-pub-tabs" role="tablist">
-{% for os in page.os-list %}
+{% for os in os-list %}
 {% assign id = os | downcase -%}
   <li class="nav-item">
     <a class="nav-link {%- if id == 'windows' %} active {% endif %}" id="{{id}}-pub-tab" href="#{{id}}-pub" role="tab" aria-controls="{{id}} {{id}}-pub" aria-selected="true">{{os}}</a>
