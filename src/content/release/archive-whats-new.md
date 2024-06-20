@@ -249,7 +249,7 @@ You might also check out [Introducing Dart 3][].
 [Material Widget Catalog]: /ui/widgets/material
 [canvasKitVariant runtime configuration]: /platform-integration/web/initialization
 [Android Java Gradle migration]: /release/breaking-changes/android-java-gradle-migration-guide
-[DevTools]: /tools/devtools/overview
+[DevTools]: /tools/devtools
 [WebAssembly support]: /platform-integration/web/wasm
 [adding iOS app extensions]: /platform-integration/ios/app-extensions
 [testing Flutter plugins]: /testing/testing-plugins

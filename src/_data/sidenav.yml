@@ -664,7 +664,7 @@
       permalink: /tools/devtools
       children:
         - title: Overview
-          permalink: /tools/devtools/overview
+          permalink: /tools/devtools
         - title: Run from Android Studio & IntelliJ
           permalink: /tools/devtools/android-studio
         - title: Run from VS Code

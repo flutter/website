@@ -1119,11 +1119,11 @@ Dart DevTools, or Flutter animations, see the following:
 [Building a form with validation]: /cookbook/forms/validation
 [Chrome browser]: https://www.google.com/chrome/?brand=CHBD&gclid=CjwKCAiAws7uBRAkEiwAMlbZjlVMZCxJDGAHjoSpoI_3z_HczSbgbMka5c9Z521R89cDoBM3zAluJRoCdCEQAvD_BwE&gclsrc=aw.ds
 [create a new Flutter project]: /get-started/test-drive
-[Dart DevTools]: /tools/devtools/overview
+[Dart DevTools]: /tools/devtools
 [DartPad]: {{site.dartpad}}
 [DevTools command line]: /tools/devtools/cli
 [DevTools documentation]: /tools/devtools
-[DevTools installed]: /tools/devtools/overview#start
+[DevTools installed]: /tools/devtools#start
 [DartPad troubleshooting page]: {{site.dart-site}}/tools/dartpad/troubleshoot
 [`didUpdateWidget`]: {{site.api}}/flutter/widgets/State/didUpdateWidget.html
 [editor]: /get-started/editor

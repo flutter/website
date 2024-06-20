@@ -153,7 +153,7 @@ Not currently.
 [Creating responsive apps]: /ui/adaptive-responsive
 [Debugging]: /tools/devtools/debugger
 [file an issue]: {{site.repo.flutter}}/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
-[Flutter DevTools]: /tools/devtools/overview
+[Flutter DevTools]: /tools/devtools
 [Generating event timeline]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [`http`]: {{site.pub}}/packages/http
 [`iframe`]: https://html.com/tags/iframe/

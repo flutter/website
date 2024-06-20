@@ -12,7 +12,7 @@ This page is up to date for DevTools 2.23.0.
 :::
 
 For information on how to locate DevTools screens in different IDEs,
-check out the [DevTools overview](/tools/devtools/overview).
+check out the [DevTools overview](/tools/devtools).
 
 To better understand the insights found on this page,
 the first section explains how Dart manages memory.
@@ -383,6 +383,8 @@ The quantities plotted on the y-axis are as follows:
 [frog]: https://dartfrog.vgv.dev/
 [heroku]: {{site.yt.watch}}?v=nkTUMVNelXA
 
+<a id="profile-tab" aria-hidden="true"></a>
+
 ### Profile Memory tab
 
 Use the **Profile Memory** tab to see current memory
@@ -409,6 +411,8 @@ to narrow the data:
 
 For a deeper analysis in Google Sheets
 or other tools, download the data in CSV format.
+
+<a id="trace-tab" aria-hidden="true"></a>
 
 ### Trace Instances tab
 

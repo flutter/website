@@ -2555,7 +2555,7 @@ For more information on using the Firebase Cloud Messaging API, see the
 [Cupertino widgets]: /ui/widgets/cupertino
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
 [developing packages and plugins]: /packages-and-plugins/developing-packages
-[DevTools]: /tools/devtools/overview
+[DevTools]: /tools/devtools
 [existing plugin]: {{site.pub}}/flutter
 [`google_mobile_ads`]: {{site.pub}}/packages/google_mobile_ads
 [`firebase_analytics`]: {{site.pub}}/packages/firebase_analytics
