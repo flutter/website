@@ -81,7 +81,7 @@ that has been migrated to be
 Make sure your app's `web/index.html` is updated to the latest
 [Flutter web app initialization][] for Flutter 3.22 and later.
 
-[Flutter web app initialization]: /platform-integration/web/bootstrapping
+[Flutter web app initialization]: /platform-integration/web/initialization
 
 ### Run `flutter build web --wasm`
 

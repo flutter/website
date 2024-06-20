@@ -483,7 +483,7 @@
           permalink: /platform-integration/web/faq
         - title: Web renderers
           permalink: /platform-integration/web/renderers
-        - title: Custom app initialization
+        - title: Customize app initialization
           permalink: /platform-integration/web/initialization
         - title: Display images on the web
           permalink: /platform-integration/web/web-images
