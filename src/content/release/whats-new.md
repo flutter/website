@@ -90,7 +90,7 @@ To learn more, check out [dart.dev/go/macros][].
 [Conditionally bundling assets based on flavor]: /deployment/flavors#conditionally-bundling-assets-based-on-flavor
 [First week experience of Flutter]: /get-started/fwe
 [Flutter install]: /get-started/install
-[Flutter web app initialization]: /platform-integration/web/bootstrapping
+[Flutter web app initialization]: /platform-integration/web/initialization
 [website README]: {{site.github}}/flutter/website/?tab=readme-ov-file#flutter-documentation-website
 [Support for WebAssembly (Wasm)]: /platform-integration/web/wasm
 [Transforming assets at build time]: /ui/assets/asset-transformation
