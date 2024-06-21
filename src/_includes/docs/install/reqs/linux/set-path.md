@@ -29,6 +29,17 @@ add Flutter to the `PATH` environment variable.
    $ {{shell.set-path}}
    ```
 
+   {% if shell.name == 'shell' %}
+      <b>Note:</b><br> If the above does not work, you may be using a non-login shell. In that case, add the same line to ~/.bashrc:
+      ```console 
+      $ echo 'export PATH="/usr/bin/flutter/bin:$PATH"' >> ~/.bashrc
+      ```
+      To ensure consistency across all shell types, you can source ~/.bashrc from ~/.bash_profile by adding the following to ~/.bash_profile:
+      ```
+      if [ -f ~/.bashrc ]; then source ~/.bashrc fi
+      ```
+   {% endif %}
+
    </details>
 
 {% endfor %}
