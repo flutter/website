@@ -8,6 +8,8 @@ js:
 
 <?code-excerpt path-base="cookbook/effects/photo_filter_carousel"?>
 
+{% include docs/deprecated.md %}
+
 Everybody knows that a photo looks better with a filter.
 In this recipe, you build a scrollable,
 filter selection carousel.
