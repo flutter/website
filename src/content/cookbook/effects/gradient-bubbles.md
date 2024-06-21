@@ -8,6 +8,8 @@ js:
 
 <?code-excerpt path-base="cookbook/effects/gradient_bubbles"?>
 
+{% include docs/deprecated.md %}
+
 Traditional chat apps display messages in chat bubbles
 with solid color backgrounds. Modern chat apps display
 chat bubbles with gradients that are based 
