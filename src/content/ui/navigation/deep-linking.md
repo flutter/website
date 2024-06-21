@@ -5,7 +5,7 @@ description: Navigate to routes when the app receives a new URL.
 Deep links are links that not only open an app, but also take the
 user to a specific location "deep" inside the app. For example,
 a deep link from an advertizement for a pair of sneakers might open
-a shopping app and display the product page for those particular shows.
+a shopping app and display the product page for those particular shoes.
 
 Flutter supports deep linking on iOS, Android, and the web.
 Opening a URL displays that screen in your app.
