@@ -58,20 +58,6 @@ Future<int> _refreshExcerpts({
     baseSourcePath: path.join(repositoryRoot, 'examples'),
     defaultPlasterContent: '···',
     validTargetExtensions: const {'.md'},
-    defaultTransforms: [
-      // SimpleReplaceTransform(
-      //   RegExp(r'ellipsis(<\w+>)?(\(\))?;?'),
-      //   '...',
-      // ),
-      // BackReferenceReplaceTransform(
-      //   RegExp(r'/\*(\s*\.\.\.\s*)\*/'),
-      //   '\$1',
-      // ),
-      // BackReferenceReplaceTransform(
-      //   RegExp(r'\{/\*-(\s*\.\.\.\s*)-\*/\}'),
-      //   '\$1',
-      // ),
-    ],
   );
 
   print('Running the code excerpt updater...');
