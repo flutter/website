@@ -66,7 +66,7 @@ jobs:
       - name: Fetch Dart dependencies
         run: dart pub get
       - name: Check if excerpts are up to date
-        run: dart run dart_site refresh-excerpts --fail-on-update --dry-run
+        run: dart run flutter_site refresh-excerpts --fail-on-update --dry-run
         continue-on-error: ${{ matrix.experimental }}
 
   linkcheck:
