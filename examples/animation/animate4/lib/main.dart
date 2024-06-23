@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(const LogoApp());
 
-// #docregion LogoWidget
+// #docregion logo-widget
 class LogoWidget extends StatelessWidget {
   const LogoWidget({super.key});
 
-  // Leave out the height and width so it fills the animating parent
+  // Leave out the height and width so it fills the animating parent.
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -15,9 +15,9 @@ class LogoWidget extends StatelessWidget {
     );
   }
 }
-// #enddocregion LogoWidget
+// #enddocregion logo-widget
 
-// #docregion GrowTransition
+// #docregion grow-transition
 class GrowTransition extends StatelessWidget {
   const GrowTransition(
       {required this.child, required this.animation, super.key});
@@ -42,7 +42,7 @@ class GrowTransition extends StatelessWidget {
     );
   }
 }
-// #enddocregion GrowTransition
+// #enddocregion grow-transition
 
 class LogoApp extends StatefulWidget {
   const LogoApp({super.key});
@@ -81,3 +81,4 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   }
   // #docregion print-state
 }
+// #enddocregion print-state

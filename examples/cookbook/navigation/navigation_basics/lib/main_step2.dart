@@ -11,17 +11,17 @@ class FirstRoute extends StatelessWidget {
       ),
       body: Center(
         child: ElevatedButton(
-            child: const Text('Open route'),
-            // #docregion FirstRouteOnPressed
-            // Within the `FirstRoute` widget
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const SecondRoute()),
-              );
-            }
-            // #enddocregion FirstRouteOnPressed
-            ),
+          child: const Text('Open route'),
+          // #docregion first-route-on-pressed
+          // Within the `FirstRoute` widget:
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const SecondRoute()),
+            );
+          },
+          // #enddocregion first-route-on-pressed
+        ),
       ),
     );
   }
@@ -38,13 +38,12 @@ class SecondRoute extends StatelessWidget {
       ),
       body: Center(
         child: ElevatedButton(
-          // #docregion SecondRouteOnPressed
+          // #docregion second-route-on-pressed
           // Within the SecondRoute widget
           onPressed: () {
             Navigator.pop(context);
-          }
-          // #enddocregion SecondRouteOnPressed
-          ,
+          },
+          // #enddocregion second-route-on-pressed
           child: const Text('Go back!'),
         ),
       ),

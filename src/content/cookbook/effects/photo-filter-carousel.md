@@ -492,7 +492,6 @@ void _onFilterTapped(int index) {
 Configure each `FilterItem` widget to invoke
 `_onFilterTapped` when tapped.
 
-<?code-excerpt "lib/original_example.dart (OnFilterTapped)" replace="/child: //g;/\(\) {}/_onFilterTapped/g;"?>
 ```dart
 FilterItem(
   color: itemColor(index),

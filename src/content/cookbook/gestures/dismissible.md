@@ -109,7 +109,7 @@ the indicator is a red background.
 To add the indicator,
 provide a `background` parameter to the `Dismissible`.
 
-<?code-excerpt "lib/{step2,main}.dart (Dismissible)"?>
+
 ```diff2html
 --- lib/step2.dart (Dismissible)
 +++ lib/main.dart (Dismissible)

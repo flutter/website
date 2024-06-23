@@ -94,7 +94,6 @@ Extending `SingleTickerProviderStateMixin` allows the state object to be a
 documentation for [TickerProvider][].
 :::
 
-<?code-excerpt "lib/{starter,step1}.dart"?>
 ```diff2html
 --- lib/starter.dart
 +++ lib/step1.dart
@@ -126,7 +125,6 @@ documentation for [TickerProvider][].
 Make the widget move when it's dragged, and add an [Alignment][] field to the
 `_DraggableCardState` class:
 
-<?code-excerpt "lib/{step1,step2}.dart (alignment)"?>
 ```diff2html
 --- lib/step1.dart (alignment)
 +++ lib/step2.dart (alignment)
@@ -143,7 +141,6 @@ size of the widget, and divide by 2. (This converts units of "pixels dragged" to
 coordinates that [Align][] uses.) Then, set the `Align` widget's `alignment` to
 `_dragAlignment`:
 
-<?code-excerpt "lib/{step1,step2}.dart (build)"?>
 ```diff2html
 --- lib/step1.dart (build)
 +++ lib/step2.dart (build)
@@ -183,7 +180,6 @@ Add an `Animation<Alignment>` field and an `_runAnimation` method. This
 method defines a `Tween` that interpolates between the point the widget was
 dragged to, to the point in the center.
 
-<?code-excerpt "lib/{step2,step3}.dart (animation)"?>
 ```diff2html
 --- lib/step2.dart (animation)
 +++ lib/step3.dart (animation)
@@ -212,7 +208,6 @@ void _runAnimation() {
 Next, update `_dragAlignment` when the `AnimationController` produces a
 value:
 
-<?code-excerpt "lib/{step2,step3}.dart (initState)"?>
 ```diff2html
 --- lib/step2.dart (initState)
 +++ lib/step3.dart (initState)
@@ -242,7 +237,6 @@ child: Align(
 
 Finally, update the `GestureDetector` to manage the animation controller:
 
-<?code-excerpt "lib/{step2,step3}.dart (gesture)"?>
 ```diff2html
 --- lib/step2.dart (gesture)
 +++ lib/step3.dart (gesture)

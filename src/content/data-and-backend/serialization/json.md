@@ -495,7 +495,7 @@ To make this work, pass `explicitToJson: true` in the `@JsonSerializable()`
 annotation over the class declaration. The `User` class now looks as follows:
 
 <?code-excerpt "lib/nested/user.dart"?>
-``` dart
+```dart
 import 'package:json_annotation/json_annotation.dart';
 
 import 'address.dart';

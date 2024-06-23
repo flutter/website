@@ -195,6 +195,7 @@ You'll define the callback function next.
 class _FavoriteWidgetState extends State<FavoriteWidget> {
   bool _isFavorited = true;
   int _favoriteCount = 41;
+
 ```
 
 :::tip
@@ -228,6 +229,7 @@ void _toggleFavorite() {
     }
   });
 }
+
 ```
 
 <a id="step-4"></a>
@@ -240,7 +242,7 @@ creates the `Icon` and `Text`, and delete it.
 In the same location, create the stateful widget:
 
 <?code-excerpt path-base=""?>
-<?code-excerpt "layout/lakes/{step6,interactive}/lib/main.dart" remove="*3*" from="class MyApp" to="/^[ ]+\);$/"?>
+
 ```diff2html
 --- layout/lakes/step6/lib/main.dart
 +++ layout/lakes/interactive/lib/main.dart

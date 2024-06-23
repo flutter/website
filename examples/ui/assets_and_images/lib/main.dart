@@ -39,5 +39,5 @@ class _MyHomePageState extends State<MyHomePage> {
 AssetImage getHeartIconImage() {
   // #docregion package-image
   return const AssetImage('icons/heart.png', package: 'my_icons');
-  // #enddocregion PackageImage
+  // #enddocregion package-image
 }

@@ -221,7 +221,6 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
       }
     });
   }
-
   // #enddocregion toggle-favorite
 
   // #docregion favorite-state-build
@@ -253,4 +252,4 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
   }
   // #docregion favorite-state-build
 }
-// #enddocregion favorite-state, favorite-state-fields, favorite-state-build
+// #enddocregion favorite-state, favorite-state-build
