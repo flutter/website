@@ -28,7 +28,7 @@ class BubbleBackground extends StatelessWidget {
   }
 }
 
-// #docregion BPWithoutPaint
+// #docregion bp-without-paint
 class BubblePainter extends CustomPainter {
   BubblePainter({
     required ScrollableState scrollable,
@@ -48,8 +48,8 @@ class BubblePainter extends CustomPainter {
         oldDelegate._bubbleContext != _bubbleContext ||
         oldDelegate._colors != _colors;
   }
+  // #enddocregion bp-without-paint
 
-// #enddocregion BPWithoutPaint
   @override
   void paint(Canvas canvas, Size size) {
     final scrollableBox = _scrollable.context.findRenderObject() as RenderBox;
@@ -69,4 +69,6 @@ class BubblePainter extends CustomPainter {
       );
     canvas.drawRect(Offset.zero & size, paint);
   }
+  // #docregion bp-without-paint
 }
+// #enddocregion bp-without-paint

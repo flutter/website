@@ -848,9 +848,9 @@ with two classes that help you draw:
     ```dart
     class SignaturePainter extends CustomPainter {
       SignaturePainter(this.points);
-
+    
       final List<Offset?> points;
-
+    
       @override
       void paint(Canvas canvas, Size size) {
         final Paint paint = Paint()
@@ -863,7 +863,7 @@ with two classes that help you draw:
           }
         }
       }
-
+    
       @override
       bool shouldRepaint(SignaturePainter oldDelegate) =>
           oldDelegate.points != points;
@@ -926,12 +926,12 @@ call your navigation routes using their names.
     // Defines the route name as a constant
     // so that it's reusable.
     const detailsPageRouteName = '/details';
-
+    
     class App extends StatelessWidget {
       const App({
         super.key,
       });
-
+    
       @override
       Widget build(BuildContext context) {
         return CupertinoApp(
@@ -1009,7 +1009,7 @@ call your navigation routes using their names.
     ```dart
     class DetailsPage extends StatelessWidget {
       const DetailsPage({super.key});
-
+    
       @override
       Widget build(BuildContext context) {
         // Read the person instance from the arguments.

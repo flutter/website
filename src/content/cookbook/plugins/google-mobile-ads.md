@@ -149,7 +149,7 @@ You need to initialize the Mobile Ads SDK before loading ads.
     void main() async {
       WidgetsFlutterBinding.ensureInitialized();
       unawaited(MobileAds.instance.initialize());
-
+    
       runApp(MyApp());
     }
     ```

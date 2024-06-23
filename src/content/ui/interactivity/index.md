@@ -195,7 +195,6 @@ You'll define the callback function next.
 class _FavoriteWidgetState extends State<FavoriteWidget> {
   bool _isFavorited = true;
   int _favoriteCount = 41;
-
 ```
 
 :::tip
@@ -229,7 +228,6 @@ void _toggleFavorite() {
     }
   });
 }
-
 ```
 
 <a id="step-4"></a>

@@ -113,7 +113,7 @@ Consider an `onPressed` callback that invokes an asynchronous function,
 such as `MethodChannel.invokeMethod` (or pretty much any plugin).
 For example:
 
-<?code-excerpt "lib/excerpts.dart (on-pressed)" replace="/return //g;/;$//g"?>
+<?code-excerpt "lib/excerpts.dart (on-pressed)" replace="/return //g;/^\);$/)/g"?>
 ```dart
 OutlinedButton(
   child: const Text('Click me!'),

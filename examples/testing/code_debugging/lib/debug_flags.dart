@@ -7,7 +7,6 @@ void main() {
   debugPaintSizeEnabled = true;
   runApp(const MyApp());
 }
-
 // #enddocregion debug-paint-size-enabled
 
 class MyApp extends StatelessWidget {

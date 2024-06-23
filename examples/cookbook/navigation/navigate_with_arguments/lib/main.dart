@@ -7,14 +7,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // #docregion Routes
+    // #docregion routes
     // #docregion OnGenerateRoute
     return MaterialApp(
       routes: {
         ExtractArgumentsScreen.routeName: (context) =>
             const ExtractArgumentsScreen(),
       },
-      // #enddocregion Routes
+      // #enddocregion routes
       // Provide a function to handle named routes.
       // Use this function to identify the named
       // route being pushed, and create the correct
@@ -51,7 +51,9 @@ class MyApp extends StatelessWidget {
       // #enddocregion OnGenerateRoute
       title: 'Navigation with Arguments',
       home: const HomeScreen(),
+      // #docregion routes
     );
+    // #enddocregion routes
   }
 }
 

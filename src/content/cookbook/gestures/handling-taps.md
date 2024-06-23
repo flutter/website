@@ -25,7 +25,7 @@ a snackbar when tapped with the following steps:
   1. Create the button.
   2. Wrap it in a `GestureDetector` that an `onTap()` callback.
 
-<?code-excerpt "lib/main.dart (GestureDetector)" replace="/return //g;/;$//g"?>
+<?code-excerpt "lib/main.dart (GestureDetector)" replace="/return //g;/^\);$/)/g"?>
 ```dart
 // The GestureDetector wraps the button.
 GestureDetector(

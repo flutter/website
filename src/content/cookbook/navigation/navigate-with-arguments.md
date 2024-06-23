@@ -103,7 +103,7 @@ Next, add an entry to the `routes` provided to the `MaterialApp` widget. The
 {% comment %}
 RegEx removes the return statement and adds the closing parenthesis at the end
 {% endcomment %}
-<?code-excerpt "lib/main.dart (Routes)" replace="/return //g;/$/\n)/g"?>
+<?code-excerpt "lib/main.dart (routes)" plaster="none" replace="/return //g;/^\);$/)/g"?>
 ```dart
 MaterialApp(
   routes: {

@@ -46,7 +46,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
     super.initState();
     _boardState = BoardState(onWin: _playerWon);
 
-    // #docregion initState
+    // #docregion init-state
     final firestore = context.read<FirebaseFirestore?>();
     if (firestore == null) {
       _log.warning("Firestore instance wasn't provided. "
@@ -57,7 +57,7 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
         boardState: _boardState,
       );
     }
-    // #enddocregion initState
+    // #enddocregion init-state
   }
 
   void _playerWon() {}

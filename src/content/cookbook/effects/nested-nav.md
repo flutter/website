@@ -45,7 +45,7 @@ along with the setup flow. Define these
 route names as constants so that they can
 be referenced within code.
 
-<?code-excerpt "lib/main.dart (Routes)"?>
+<?code-excerpt "lib/main.dart (routes)"?>
 ```dart
 const routeHome = '/';
 const routeSettings = '/settings';

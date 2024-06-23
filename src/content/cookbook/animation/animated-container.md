@@ -73,7 +73,7 @@ Next, build the `AnimatedContainer` using the properties defined in the
 previous step. Furthermore, provide a `duration` that defines how long
 the animation should run.
 
-<?code-excerpt "lib/main.dart (AnimatedContainer)" replace="/^child: //g;/,$//g"?>
+<?code-excerpt "lib/main.dart (AnimatedContainer)" replace="/^child: //g;/^\),$/)/g"?>
 ```dart
 AnimatedContainer(
   // Use the properties stored in the State class.
@@ -105,7 +105,7 @@ A real app typically transitions between fixed values (for example,
 from a grey to a green background). For this app,
 generate new values each time the user taps the button.
 
-<?code-excerpt "lib/main.dart (FAB)" replace="/^floatingActionButton: //g;/,$//g"?>
+<?code-excerpt "lib/main.dart (FAB)" replace="/^floatingActionButton: //g;/^\),$/)/g"?>
 ```dart
 FloatingActionButton(
   // When the user taps the button

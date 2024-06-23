@@ -136,7 +136,7 @@ Dart code in that guide, return to this recipe.
     ```dart
     import 'package:cloud_firestore/cloud_firestore.dart';
     import 'package:firebase_core/firebase_core.dart';
-
+    
     import 'firebase_options.dart';
     ```
 
@@ -146,7 +146,7 @@ Dart code in that guide, return to this recipe.
     <?code-excerpt "lib/main.dart (initializeApp)"?>
     ```dart
     WidgetsFlutterBinding.ensureInitialized();
-
+    
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
@@ -401,7 +401,7 @@ Notice the following features of this code:
     You added the `FirebaseFirestore` instance to `main.dart`
     in the *Initialize Firestore* step.
 
-    <?code-excerpt "lib/play_session/play_session_screen.dart (initState)"?>
+    <?code-excerpt "lib/play_session/play_session_screen.dart (init-state)"?>
     ```dart
     final firestore = context.read<FirebaseFirestore?>();
     if (firestore == null) {

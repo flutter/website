@@ -37,7 +37,7 @@ To display the list of strings, render each String as a widget
 using `ListView.builder()`.
 In this example, display each String on its own line.
 
-<?code-excerpt "lib/main.dart (ListView)" replace="/^body: //g;/,$//g"?>
+<?code-excerpt "lib/main.dart (ListView)" replace="/^body: //g;/^\),$/)/g"?>
 ```dart
 ListView.builder(
   itemCount: items.length,

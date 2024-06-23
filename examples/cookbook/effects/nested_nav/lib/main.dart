@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// #docregion Routes
+// #docregion routes
 const routeHome = '/';
 const routeSettings = '/settings';
 const routePrefixDeviceSetup = '/setup/';
@@ -9,7 +9,7 @@ const routeDeviceSetupStartPage = 'find_devices';
 const routeDeviceSetupSelectDevicePage = 'select_device';
 const routeDeviceSetupConnectingPage = 'connecting';
 const routeDeviceSetupFinishedPage = 'finished';
-// #enddocregion Routes
+// #enddocregion routes
 
 void main() {
   runApp(

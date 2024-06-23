@@ -135,7 +135,7 @@ Begin listening for changes when the
 `_MyCustomFormState` class is initialized,
 and stop listening when the `_MyCustomFormState` is disposed.
 
-<?code-excerpt "lib/main.dart (initState)"?>
+<?code-excerpt "lib/main.dart (init-state)"?>
 ```dart
 @override
 void initState() {

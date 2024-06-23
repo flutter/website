@@ -17,7 +17,7 @@ class FilterSelector extends StatefulWidget {
   State<FilterSelector> createState() => _FilterSelectorState();
 }
 
-// #docregion PageViewController
+// #docregion page-view-controller
 class _FilterSelectorState extends State<FilterSelector> {
   static const _filtersPerScreen = 5;
   static const _viewportFractionPerItem = 1.0 / _filtersPerScreen;
@@ -63,15 +63,17 @@ class _FilterSelectorState extends State<FilterSelector> {
         },
       ),
     );
-  } //code-excerpt-close-bracket
+  }
+  // #enddocregion page-view-controller
 
-// #enddocregion PageViewController
   @override
   Widget build(BuildContext context) {
     _buildCarousel(5); // Makes sure _buildCarousel is used
     return Container();
   }
+  // #docregion page-view-controller
 }
+// #enddocregion page-view-controller
 
 @immutable
 class FilterItem extends StatelessWidget {

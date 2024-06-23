@@ -209,8 +209,8 @@ Next, update `_dragAlignment` when the `AnimationController` produces a
 value:
 
 ```diff2html
---- lib/step2.dart (initState)
-+++ lib/step3.dart (initState)
+--- lib/step2.dart (init-state)
++++ lib/step3.dart (init-state)
 @@ -3,4 +3,9 @@
    super.initState();
    _controller =

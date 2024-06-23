@@ -19,7 +19,7 @@ Create a ripple effect using the following steps:
   2. Wrap it in an `InkWell` widget to manage tap callbacks and
      ripple animations.
 
-<?code-excerpt "lib/main.dart (InkWell)" replace="/return //g;/;$//g"?>
+<?code-excerpt "lib/main.dart (InkWell)" replace="/return //g;/^\);$/)/g"?>
 ```dart
 // The InkWell wraps the custom flat button widget.
 InkWell(

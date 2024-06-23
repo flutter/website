@@ -125,7 +125,7 @@ from 0.0 to 1.0 during a given duration.
 For example, this code creates an `Animation` object,
 but does not start it running:
 
-<?code-excerpt "animate5/lib/main.dart (AnimationController)"?>
+<?code-excerpt "animate5/lib/main.dart (animation-controller)"?>
 ```dart
 controller =
     AnimationController(duration: const Duration(seconds: 2), vsync: this);
@@ -650,7 +650,7 @@ the logo is straightforward:
 class LogoWidget extends StatelessWidget {
   const LogoWidget({super.key});
 
-  // Leave out the height and width so it fills the animating parent
+  // Leave out the height and width so it fills the animating parent.
   @override
   Widget build(BuildContext context) {
     return Container(

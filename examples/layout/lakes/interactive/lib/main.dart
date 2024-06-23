@@ -206,7 +206,6 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
   // #enddocregion favorite-state-build
   bool _isFavorited = true;
   int _favoriteCount = 41;
-
   // #enddocregion favorite-state-fields
 
   // #docregion toggle-favorite

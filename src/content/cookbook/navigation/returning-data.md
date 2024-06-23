@@ -147,7 +147,7 @@ Any result is returned to the `Future` in the SelectionButton.
 
 ### Yep button
 
-<?code-excerpt "lib/main.dart (Yep)" replace="/^child: //g;/,$//g"?>
+<?code-excerpt "lib/main.dart (Yep)" replace="/^child: //g;/^\),$/)/g"?>
 ```dart
 ElevatedButton(
   onPressed: () {
@@ -160,7 +160,7 @@ ElevatedButton(
 
 ### Nope button
 
-<?code-excerpt "lib/main.dart (Nope)" replace="/^child: //g;/,$//g"?>
+<?code-excerpt "lib/main.dart (Nope)" replace="/^child: //g;/^\),$/)/g"?>
 ```dart
 ElevatedButton(
   onPressed: () {

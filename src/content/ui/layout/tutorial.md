@@ -155,7 +155,6 @@ In this section, shell out the basic Flutter app code to start your app.
        );
      }
    }
-   
    ```
 
 [Set up your Flutter environment]: /get-started/install

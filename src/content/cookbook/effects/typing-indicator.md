@@ -439,7 +439,7 @@ Introduce a repeating `AnimationController` to
 implement the circle flashing and pass it to the
 `StatusBubble`.
 
-<?code-excerpt "lib/excerpt4.dart (AnimationController)"?>
+<?code-excerpt "lib/excerpt4.dart (animation-controller)"?>
 ```dart
 class _TypingIndicatorState extends State<TypingIndicator>
     with TickerProviderStateMixin {

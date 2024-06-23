@@ -164,7 +164,7 @@ that corresponds to the associated filter color.
 Define a new stateless widget called `FilterItem`
 that displays a single list item.
 
-<?code-excerpt "lib/original_example.dart (FilterItem)"?>
+<?code-excerpt "lib/original_example.dart (filter-item)"?>
 ```dart
 @immutable
 class FilterItem extends StatelessWidget {
@@ -229,7 +229,7 @@ you want, based on the current `viewportOffset`.
 
 Configure your widget tree to make space for the `PageView`.
 
-<?code-excerpt "lib/excerpt3.dart (PageView)"?>
+<?code-excerpt "lib/excerpt3.dart (page-view)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -309,7 +309,7 @@ as the user scrolls.
 Create a `PageViewController` and connect it to the
 `PageView` widget.
 
-<?code-excerpt "lib/excerpt5.dart (PageViewController)" replace="/\/\/code-excerpt-close-bracket/\n}/g;"?>
+<?code-excerpt "lib/excerpt5.dart (page-view-controller)" plaster="none"?>
 ```dart
 class _FilterSelectorState extends State<FilterSelector> {
   static const _filtersPerScreen = 5;
@@ -405,7 +405,7 @@ Calculate an appropriate scale and opacity for each
 `FilterItem` widget within the `AnimatedBuilder` and
 apply those values.
 
-<?code-excerpt "lib/original_example.dart (FinalBuildCarousel)"?>
+<?code-excerpt "lib/original_example.dart (final-build-carousel)"?>
 ```dart
 Widget _buildCarousel(double itemSize) {
   return Container(

@@ -82,7 +82,7 @@ For this example, generate a list of items to work with. The list
 contains a header followed by five messages. Each message has one
 of 3 types: `ListItem`, `HeadingItem`, or `MessageItem`.
 
-<?code-excerpt "lib/main.dart (Items)" replace="/^items:/final items =/g;/,$/;/g"?>
+<?code-excerpt "lib/main.dart (Items)" replace="/^items:/final items =/g;/^\),$/);/g"?>
 ```dart
 final items = List<ListItem>.generate(
   1000,
@@ -101,7 +101,7 @@ In general, provide a builder function that checks for what type
 of item you're dealing with, and returns the appropriate widget
 for that type of item.
 
-<?code-excerpt "lib/main.dart (builder)" replace="/^body: //g;/,$//g"?>
+<?code-excerpt "lib/main.dart (builder)" replace="/^body: //g;/^\),$/)/g"?>
 ```dart
 ListView.builder(
   // Let the ListView know how many items it needs to build.
