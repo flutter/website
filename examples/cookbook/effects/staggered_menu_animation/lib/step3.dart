@@ -46,8 +46,8 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
       buttonEndTime.inMilliseconds / _animationDuration.inMilliseconds,
     );
   }
-
   // #enddocregion step3
+
   @override
   Widget build(BuildContext context) {
     return Container();

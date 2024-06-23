@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 import './excerpt1.dart';
 
-// #docregion TypingIndicatorState
+// #docregion typing-indicator-state
 class _TypingIndicatorState extends State<TypingIndicator>
     with TickerProviderStateMixin {
   late AnimationController _appearanceController;
@@ -76,4 +76,4 @@ class _TypingIndicatorState extends State<TypingIndicator>
     );
   }
 }
-// #enddocregion TypingIndicatorState
+// #enddocregion typing-indicator-state

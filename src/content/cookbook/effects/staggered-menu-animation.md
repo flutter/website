@@ -163,7 +163,7 @@ up to you. Define the animation delays,
 individual animation durations, and the total 
 animation duration.
 
-<?code-excerpt "lib/animation_delays.dart (delays)" replace="/_buttonTime;\n/_buttonTime;\n}/g;"?>
+<?code-excerpt "lib/animation_delays.dart (delays)" plaster="none"?>
 ```dart
 class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
   static const _initialDelayTime = Duration(milliseconds: 50);
