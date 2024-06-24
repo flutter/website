@@ -389,14 +389,14 @@ To use this package:
     ```dart
     import 'package:css_colors/css_colors.dart';
     import 'package:flutter/material.dart';
-
+    
     void main() {
       runApp(const MyApp());
     }
-
+    
     class MyApp extends StatelessWidget {
       const MyApp({super.key});
-
+    
       @override
       Widget build(BuildContext context) {
         return const MaterialApp(
@@ -404,10 +404,10 @@ To use this package:
         );
       }
     }
-
+    
     class DemoPage extends StatelessWidget {
       const DemoPage({super.key});
-
+    
       @override
       Widget build(BuildContext context) {
         return Scaffold(body: Container(color: CSSColors.orange));
@@ -453,14 +453,14 @@ To use this plugin:
     import 'package:flutter/material.dart';
     import 'package:path/path.dart' as p;
     import 'package:url_launcher/url_launcher.dart';
-
+    
     void main() {
       runApp(const MyApp());
     }
-
+    
     class MyApp extends StatelessWidget {
       const MyApp({super.key});
-
+    
       @override
       Widget build(BuildContext context) {
         return const MaterialApp(
@@ -468,14 +468,14 @@ To use this plugin:
         );
       }
     }
-
+    
     class DemoPage extends StatelessWidget {
       const DemoPage({super.key});
-
+    
       void launchURL() {
         launchUrl(p.toUri('https://flutter.dev'));
       }
-
+    
       @override
       Widget build(BuildContext context) {
         return Scaffold(

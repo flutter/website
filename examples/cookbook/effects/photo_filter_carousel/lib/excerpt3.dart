@@ -62,7 +62,7 @@ class _FilterSelectorState extends State<FilterSelector> {
     );
   }
 
-  // #docregion PageView
+  // #docregion page-view
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
@@ -91,5 +91,5 @@ class _FilterSelectorState extends State<FilterSelector> {
       ),
     );
   }
-  // #enddocregion PageView
+  // #enddocregion page-view
 }

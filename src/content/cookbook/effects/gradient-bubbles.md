@@ -154,9 +154,8 @@ BubblePainter(
   scrollable: ScrollableState(),
 ),
 ```
-<!-- this code excerpt adds an extra closing bracket
-at the end because the excerpt cuts off the paint method that's required for Custom Painter. -->
-<?code-excerpt "lib/bubble_painter.dart (BPWithoutPaint)" replace="/}\n/}\n}\n/g;"?>
+
+<?code-excerpt "lib/bubble_painter.dart (bp-without-paint)" plaster="none"?>
 ```dart
 class BubblePainter extends CustomPainter {
   BubblePainter({

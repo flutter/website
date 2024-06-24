@@ -27,7 +27,7 @@ animations. This recipe uses the following steps:
 First, create something to fade in and out. For this example,
 draw a green box on screen.
 
-<?code-excerpt "lib/main.dart (Container)" replace="/^child: //g;/,$//g"?>
+<?code-excerpt "lib/main.dart (Container)" replace="/^child: //g;/\),$/)/g"?>
 ```dart
 Container(
   width: 200,
@@ -100,7 +100,7 @@ This tells Flutter to rebuild the widget.
 For more information on working with user input,
 see the [Gestures][] section of the cookbook.
 
-<?code-excerpt "lib/main.dart (FAB)" replace="/^floatingActionButton: //g;/,$//g"?>
+<?code-excerpt "lib/main.dart (FAB)" replace="/^floatingActionButton: //g;/^\),$/)/g"?>
 ```dart
 FloatingActionButton(
   onPressed: () {
@@ -127,7 +127,7 @@ The `AnimatedOpacity` widget requires three arguments:
   * `duration`: How long the animation should take to complete.
   * `child`: The widget to animate. In this case, the green box.
 
-<?code-excerpt "lib/main.dart (AnimatedOpacity)" replace="/^child: //g;/,$//g"?>
+<?code-excerpt "lib/main.dart (AnimatedOpacity)" replace="/^child: //g;/^\),$/)/g"?>
 ```dart
 AnimatedOpacity(
   // If the widget is visible, animate to 0.0 (invisible).

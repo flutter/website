@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// #docregion GlobalKey
+// #docregion global-key
 @immutable
 class LocationListItem extends StatelessWidget {
   final GlobalKey _backgroundImageKey = GlobalKey();
@@ -21,9 +21,8 @@ class LocationListItem extends StatelessWidget {
       ],
     );
   }
-// code-excerpt-closing-bracket
+  // #enddocregion global-key
 
-// #enddocregion GlobalKey
   LocationListItem({
     super.key,
     required this.imageUrl,
@@ -97,9 +96,11 @@ class LocationListItem extends StatelessWidget {
       ),
     );
   }
+  // #docregion global-key
 }
+// #enddocregion global-key
 
-// #docregion ParallaxFlowDelegateGK
+// #docregion parallax-flow-delegate-gk
 class ParallaxFlowDelegate extends FlowDelegate {
   ParallaxFlowDelegate({
     required this.scrollable,
@@ -110,8 +111,7 @@ class ParallaxFlowDelegate extends FlowDelegate {
   final ScrollableState scrollable;
   final BuildContext listItemContext;
   final GlobalKey backgroundImageKey;
-// code-excerpt-closing-bracket
-// #enddocregion ParallaxFlowDelegateGK
+  // #enddocregion parallax-flow-delegate-gk
   @override
   BoxConstraints getConstraintsForChild(int i, BoxConstraints constraints) {
     return BoxConstraints.tightFor(
@@ -119,11 +119,11 @@ class ParallaxFlowDelegate extends FlowDelegate {
     );
   }
 
-  // #docregion PaintChildren
-  // #docregion PaintChildrenPt2
-  // #docregion PaintChildrenPt3
-  // #docregion PaintChildrenPt4
-  // #docregion PaintChildrenPt5
+  // #docregion paint-children
+  // #docregion paint-children-2
+  // #docregion paint-children-3
+  // #docregion paint-children-4
+  // #docregion paint-children-5
   @override
   void paintChildren(FlowPaintingContext context) {
     // Calculate the position of this list item within the viewport.
@@ -132,21 +132,20 @@ class ParallaxFlowDelegate extends FlowDelegate {
     final listItemOffset = listItemBox.localToGlobal(
         listItemBox.size.centerLeft(Offset.zero),
         ancestor: scrollableBox);
-    // code-excerpt-closing-bracket
-    // #enddocregion PaintChildren
+    // #enddocregion paint-children
 
     // Determine the percent position of this list item within the
     // scrollable area.
     final viewportDimension = scrollable.position.viewportDimension;
     final scrollFraction =
         (listItemOffset.dy / viewportDimension).clamp(0.0, 1.0);
-    // code-excerpt-closing-bracket
-    // #enddocregion PaintChildrenPt2
+    // #enddocregion paint-children-2
+
     // Calculate the vertical alignment of the background
     // based on the scroll percent.
     final verticalAlignment = Alignment(0.0, scrollFraction * 2 - 1);
-    // code-excerpt-closing-bracket
-    // #enddocregion PaintChildrenPt3
+    // #enddocregion paint-children-3
+
     // Convert the background alignment into a pixel offset for
     // painting purposes.
     final backgroundSize =
@@ -155,17 +154,19 @@ class ParallaxFlowDelegate extends FlowDelegate {
     final listItemSize = context.size;
     final childRect =
         verticalAlignment.inscribe(backgroundSize, Offset.zero & listItemSize);
-    // code-excerpt-closing-bracket
-    // #enddocregion PaintChildrenPt4
+    // #enddocregion paint-children-4
+
     // Paint the background.
     context.paintChild(
       0,
       transform:
           Transform.translate(offset: Offset(0.0, childRect.top)).transform,
     );
-    // code-excerpt-closing-bracket
-    // #enddocregion PaintChildrenPt5
+    // #enddocregion paint-children-5
+
+    // #docregion paint-children, paint-children-2, paint-children-3, paint-children-4, paint-children-5
   }
+  // #enddocregion paint-children, paint-children-2, paint-children-3, paint-children-4, paint-children-5
 
   @override
   bool shouldRepaint(ParallaxFlowDelegate oldDelegate) {
@@ -173,7 +174,9 @@ class ParallaxFlowDelegate extends FlowDelegate {
         listItemContext != oldDelegate.listItemContext ||
         backgroundImageKey != oldDelegate.backgroundImageKey;
   }
+  // #docregion parallax-flow-delegate-gk
 }
+// #enddocregion parallax-flow-delegate-gk
 
 class ParallaxRecipe extends StatelessWidget {
   const ParallaxRecipe({super.key});

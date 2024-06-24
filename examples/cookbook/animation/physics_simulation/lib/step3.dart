@@ -37,7 +37,7 @@ class _DraggableCardState extends State<DraggableCard>
   Alignment _dragAlignment = Alignment.center;
   // #enddocregion animation
 
-  // #docregion initState
+  // #docregion init-state
   @override
   void initState() {
     super.initState();
@@ -49,7 +49,7 @@ class _DraggableCardState extends State<DraggableCard>
       });
     });
   }
-  // #enddocregion initState
+  // #enddocregion init-state
 
   @override
   void dispose() {

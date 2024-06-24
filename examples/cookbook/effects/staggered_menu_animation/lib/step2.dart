@@ -7,7 +7,7 @@ class Menu extends StatefulWidget {
   State<Menu> createState() => _MenuState();
 }
 
-// #docregion AnimationController
+// #docregion animation-controller
 class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
   late AnimationController _staggeredController;
 
@@ -25,11 +25,12 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
     _staggeredController.dispose();
     super.dispose();
   }
-
-// #enddocregion AnimationController
+  // #enddocregion animation-controller
 
   @override
   Widget build(BuildContext context) {
     return Container();
   }
+  // #docregion animation-controller
 }
+// #enddocregion animation-controller

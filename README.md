@@ -299,17 +299,22 @@ on the [Flutter contributors Discord][]!
 
 A build that fails with the error
 `Error: Some code excerpts needed to be updated!`
-means that one or more code excerpts in the markdown file
-aren't identical to the
-code in the corresponding `.dart` file.
+means that one or more code excerpts in the site Markdown files
+aren't identical to the code regions declared
+in the corresponding `.dart` files.
 
-To resolve this error,
+The `.dart` files are the source of truth for code snippets,
+and the preceding `<?code-excerpt>` instructions in Markdown files specify
+how the snippets are copied from the `.dart` files. 
+
+To resolve this error and update the Markdown snippets to match,
 from the root of the `website` directory,
 run `./dash_site refresh-excerpts`.
 
-For more information see [Code excerpts][] .
+To learn more about creating, editing, and using code excerpts,
+check out the [excerpt updater package documentation][].
 
-[Code excerpts]: https://github.com/dart-lang/site-shared/blob/main/doc/code-excerpts.md
+[excerpt updater package documentation]: https://github.com/dart-lang/site-shared/tree/main/packages/excerpter#readme
 
 ## [Optional] Deploy to a staging site
 

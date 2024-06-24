@@ -156,7 +156,7 @@ class _FilterSelectorState extends State<FilterSelector> {
     );
   }
 
-  // #docregion FinalBuildCarousel
+  // #docregion final-build-carousel
   Widget _buildCarousel(double itemSize) {
     return Container(
       height: itemSize,
@@ -222,7 +222,7 @@ class _FilterSelectorState extends State<FilterSelector> {
       ),
     );
   }
-  // #enddocregion FinalBuildCarousel
+  // #enddocregion final-build-carousel
 
   Widget _buildSelectionRing(double itemSize) {
     return IgnorePointer(
@@ -245,7 +245,7 @@ class _FilterSelectorState extends State<FilterSelector> {
   }
 }
 
-// #docregion FilterItem
+// #docregion filter-item
 @immutable
 class FilterItem extends StatelessWidget {
   const FilterItem({
@@ -278,4 +278,4 @@ class FilterItem extends StatelessWidget {
     );
   }
 }
-// #enddocregion FilterItem
+// #enddocregion filter-item

@@ -227,8 +227,7 @@ To load the image, use:
 
 <?code-excerpt "main.dart (package-image)"?>
 ```dart
-  return const AssetImage('icons/heart.png', package: 'my_icons');
-}
+return const AssetImage('icons/heart.png', package: 'my_icons');
 ```
 
 Assets used by the package itself should also be fetched

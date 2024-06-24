@@ -133,12 +133,12 @@ In this section, shell out the basic Flutter app code to start your app.
    <?code-excerpt "lib/main.dart (all)"?>
    ```dart
    import 'package:flutter/material.dart';
-
+   
    void main() => runApp(const MyApp());
-
+   
    class MyApp extends StatelessWidget {
      const MyApp({super.key});
-
+   
      @override
      Widget build(BuildContext context) {
        const String appTitle = 'Flutter layout demo';
@@ -246,7 +246,6 @@ In the `body` property, replace the `Center` widget with a
 Within the [`SingleChildScrollView`][] widget, replace the `Text` widget with a
 `Column` widget.
 
-<?code-excerpt "{../base,step2}/lib/main.dart" from="body:" to="children: ["?>
 ```diff2html
 --- ../base/lib/main.dart
 +++ step2/lib/main.dart
@@ -276,7 +275,6 @@ Add the `TitleSection` widget as the first element in the `children` list.
 This places it at the top of the screen.
 Pass the provided name and location to the `TitleSection` constructor.
 
-<?code-excerpt "{../base,step2}/lib/main.dart" from="children:" to="],"?>
 ```diff2html
 --- ../base/lib/main.dart
 +++ step2/lib/main.dart
@@ -459,7 +457,6 @@ Add the button section to the `children` list.
 
 <?code-excerpt path-base="layout/lakes"?>
 
-<?code-excerpt "step{2,3}/lib/main.dart (add-widget)"?>
 ```diff2html
 --- step2/lib/main.dart (add-widget)
 +++ step3/lib/main.dart (add-widget)
@@ -519,7 +516,6 @@ Add a new `TextSection` widget as a child after the `ButtonSection`.
 When adding the `TextSection` widget, set its `description` property to
 the text of the location description.
 
-<?code-excerpt "step{3,4}/lib/main.dart (add-widget)"?>
 ```diff2html
 --- step3/lib/main.dart (add-widget)
 +++ step4/lib/main.dart (add-widget)
@@ -565,7 +561,6 @@ To configure your app to reference images, modify its `pubspec.yaml` file.
    When you add `assets`, it serves as the set of pointers to the images
    available to your code.
 
-   <?code-excerpt "{step4,step5}/pubspec.yaml"?>
    ```diff2html
    --- step4/pubspec.yaml
    +++ step5/pubspec.yaml
@@ -620,7 +615,6 @@ Add an `ImageSection` widget as the first child in the `children` list.
 Set the `image` property to the path of the image you added in
 [Configure your app to use supplied images](#configure-your-app-to-use-supplied-images).
 
-<?code-excerpt "step{4,5}/lib/main.dart (add-widget)"?>
 ```diff2html
 --- step4/lib/main.dart (add-widget)
 +++ step5/lib/main.dart (add-widget)

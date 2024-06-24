@@ -136,7 +136,7 @@ Add the `SingleTickerProviderStateMixin`
 to the `MenuState` class. Then, declare and
 instantiate an `AnimationController`.
 
-<?code-excerpt "lib/step2.dart (AnimationController)" replace="/}\n/}\n}\n/g;"?>
+<?code-excerpt "lib/step2.dart (animation-controller)" plaster="none"?>
 ```dart
 class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
   late AnimationController _staggeredController;
@@ -149,7 +149,6 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
       vsync: this,
     );
   }
-}
 
   @override
   void dispose() {
@@ -164,7 +163,7 @@ up to you. Define the animation delays,
 individual animation durations, and the total 
 animation duration.
 
-<?code-excerpt "lib/animation_delays.dart (delays)" replace="/_buttonTime;\n/_buttonTime;\n}/g;"?>
+<?code-excerpt "lib/animation_delays.dart (delays)" plaster="none"?>
 ```dart
 class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
   static const _initialDelayTime = Duration(milliseconds: 50);
@@ -209,7 +208,7 @@ an interval from 0.2 to 0.5 would start at 200 ms
 Declare and calculate each list item's `Interval` and the 
 bottom button `Interval`.
 
-<?code-excerpt "lib/step3.dart (step3)" replace="/\/\/code-excerpt-close-bracket/\n}/g;"?>
+<?code-excerpt "lib/step3.dart (step3)" plaster="none"?>
 ```dart
 class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
   final List<Interval> _itemSlideIntervals = [];
@@ -256,7 +255,7 @@ The staggered animation plays as soon as the menu becomes visible.
 
 Start the animation in `initState()`.
 
-<?code-excerpt "lib/step4.dart (initState)"?>
+<?code-excerpt "lib/step4.dart (init-state)"?>
 ```dart
 @override
 void initState() {
@@ -278,7 +277,7 @@ Use the list item's `Interval` and an `easeOut`
 curve to animate the opacity and translation
 values for each list item.
 
-<?code-excerpt "lib/step4.dart (buildListItems)"?>
+<?code-excerpt "lib/step4.dart (build-list-items)"?>
 ```dart
 List<Widget> _buildListItems() {
   final listItems = <Widget>[];
@@ -323,7 +322,7 @@ Use the same approach to animate the opacity and
 scale of the bottom button. This time, use an
 `elasticOut` curve to give the button a springy effect.
 
-<?code-excerpt "lib/step4.dart (buildGetStartedButton)"?>
+<?code-excerpt "lib/step4.dart (build-get-started)"?>
 ```dart
 Widget _buildGetStartedButton() {
   return SizedBox(

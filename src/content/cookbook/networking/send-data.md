@@ -179,7 +179,7 @@ user input from a `TextField`.
 When the `ElevatedButton` is pressed, the `_futureAlbum`
 is set to the value returned by `createAlbum()` method.
 
-<?code-excerpt "lib/main.dart (Column)" replace="/^return //g;/;$//g"?>
+<?code-excerpt "lib/main.dart (Column)" replace="/^return //g;/^\);$/)/g"?>
 ```dart
 Column(
   mainAxisAlignment: MainAxisAlignment.center,
@@ -226,7 +226,7 @@ even in the case of a "404 Not Found" server response.
 If `createAlbum()` returns `null`, then
 `CircularProgressIndicator` displays indefinitely.
 
-<?code-excerpt "lib/main.dart (FutureBuilder)" replace="/^return //g;/;$//g"?>
+<?code-excerpt "lib/main.dart (FutureBuilder)" replace="/^return //g;/^\);$/)/g"?>
 ```dart
 FutureBuilder<Album>(
   future: _futureAlbum,

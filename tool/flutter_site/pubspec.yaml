@@ -7,6 +7,8 @@ environment:
 
 dependencies:
   args: ^2.4.2
+  excerpter:
+    path: ../../site-shared/packages/excerpter
   io: ^1.0.4
   linkcheck: ^3.0.0
   path: ^1.9.0

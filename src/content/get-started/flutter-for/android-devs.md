@@ -1595,7 +1595,7 @@ In Flutter there are two ways of adding touch listeners:
   ```dart
   class SampleTapApp extends StatelessWidget {
     const SampleTapApp({super.key});
-
+  
     @override
     Widget build(BuildContext context) {
       return Scaffold(

@@ -206,7 +206,6 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
   // #enddocregion favorite-state-build
   bool _isFavorited = true;
   int _favoriteCount = 41;
-
   // #enddocregion favorite-state-fields
 
   // #docregion toggle-favorite
@@ -221,7 +220,6 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
       }
     });
   }
-
   // #enddocregion toggle-favorite
 
   // #docregion favorite-state-build
@@ -253,4 +251,4 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
   }
   // #docregion favorite-state-build
 }
-// #enddocregion favorite-state, favorite-state-fields, favorite-state-build
+// #enddocregion favorite-state, favorite-state-build

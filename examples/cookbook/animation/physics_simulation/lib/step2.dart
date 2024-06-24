@@ -38,14 +38,14 @@ class _DraggableCardState extends State<DraggableCard>
   // #enddocregion alignment
   // #enddocregion animation
 
-  // #docregion initState
+  // #docregion init-state
   @override
   void initState() {
     super.initState();
     _controller =
         AnimationController(vsync: this, duration: const Duration(seconds: 1));
   }
-  // #enddocregion initState
+  // #enddocregion init-state
 
   @override
   void dispose() {

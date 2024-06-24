@@ -48,7 +48,7 @@ see the [Use lists][] recipe.
 
 ### Generate the list of todos
 
-<?code-excerpt "lib/main.dart (Generate)" replace="/^todos:/final todos =/g;/,$/;/g"?>
+<?code-excerpt "lib/main.dart (Generate)" replace="/^todos:/final todos =/g/^\),$/);/g"?>
 ```dart
 final todos = List.generate(
   20,
@@ -61,7 +61,7 @@ final todos = List.generate(
 
 ### Display the list of todos using a ListView
 
-<?code-excerpt "lib/main_todoscreen.dart (ListViewBuilder)" replace="/^body: //g;/;$//g"?>
+<?code-excerpt "lib/main_todoscreen.dart (ListViewBuilder)" replace="/^body: //g;/^\),$/)/g"?>
 ```dart
 ListView.builder(
   itemCount: todos.length,
@@ -70,7 +70,7 @@ ListView.builder(
       title: Text(todos[index].title),
     );
   },
-),
+)
 ```
 
 So far, so good.
@@ -310,7 +310,7 @@ a `ListTile` widget using `Navigator.push()`.
 Pass the arguments as part of the [`RouteSettings`][].
 The `DetailScreen` extracts these arguments.
 
-<?code-excerpt "lib/main_routesettings.dart (builder)" replace="/^body: //g;/,$//g"?>
+<?code-excerpt "lib/main_routesettings.dart (builder)" replace="/^body: //g;/^\),$/)/g"?>
 ```dart
 ListView.builder(
   itemCount: todos.length,

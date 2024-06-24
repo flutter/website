@@ -172,7 +172,7 @@ in the previous step, to complete before showing a `CameraPreview`.
 
 Use a [`FutureBuilder`][] for exactly this purpose.
 
-<?code-excerpt "lib/main.dart (FutureBuilder)" replace="/body: //g;/,$//g"?>
+<?code-excerpt "lib/main.dart (FutureBuilder)" replace="/body: //g;/^\),$/)/g"?>
 ```dart
 // You must wait until the controller is initialized before displaying the
 // camera preview. Use a FutureBuilder to display a loading spinner until the
@@ -212,7 +212,7 @@ Taking a picture requires 2 steps:
 It is good practice to wrap these operations in a `try / catch` block in order
 to handle any errors that might occur.
 
-<?code-excerpt "lib/main_step5.dart (FAB)" replace="/^floatingActionButton: //g;/,$//g"?>
+<?code-excerpt "lib/main_step5.dart (FAB)" replace="/^floatingActionButton: //g;/^\),$/)/g"?>
 ```dart
 FloatingActionButton(
   // Provide an onPressed callback.

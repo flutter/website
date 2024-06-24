@@ -102,7 +102,7 @@ to build when navigating to those routes.
 {% comment %}
 RegEx removes the trailing comma
 {% endcomment %}
-<?code-excerpt "lib/main.dart (MaterialApp)" replace="/,$//g"?>
+<?code-excerpt "lib/main.dart (MaterialApp)" replace="/^\),$/)/g"?>
 ```dart
 MaterialApp(
   title: 'Named Routes Demo',

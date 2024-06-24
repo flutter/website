@@ -213,8 +213,8 @@ create a simple box as a stand-in.
 To create a simple blue box widget,
 create `box.dart` with the following contents:
 
-<?code-excerpt "lib/box.dart" title="box.dart"?>
-```dart
+<?code-excerpt "lib/box.dart"?>
+```dart title="box.dart"
 import 'package:flutter/material.dart';
 
 /// A simple blue 30x30 box.

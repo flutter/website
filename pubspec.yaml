@@ -5,10 +5,5 @@ environment:
   sdk: ^3.4.0
 
 dev_dependencies:
-  build_runner: ^2.4.9
-  code_excerpt_updater:
-    path: site-shared/packages/code_excerpt_updater
-  code_excerpter:
-    path: site-shared/packages/code_excerpter
   flutter_site:
     path: tool/flutter_site

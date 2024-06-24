@@ -22,7 +22,7 @@ final class CheckAllCommand extends Command<int> {
       ['format-dart', '--check'],
       ['analyze-dart'],
       ['test-dart'],
-      ['refresh-excerpts', '--fail-on-update'],
+      ['refresh-excerpts', '--fail-on-update', '--dry-run'],
     ];
 
     var seenFailure = false;

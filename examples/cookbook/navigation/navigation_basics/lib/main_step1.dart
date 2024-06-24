@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// #docregion FirstSecondRoutes
+// #docregion first-second-routes
 class FirstRoute extends StatelessWidget {
   const FirstRoute({super.key});
 
@@ -42,3 +42,4 @@ class SecondRoute extends StatelessWidget {
     );
   }
 }
+// #enddocregion first-second-routes

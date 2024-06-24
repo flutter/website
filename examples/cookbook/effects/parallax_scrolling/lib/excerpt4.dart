@@ -91,7 +91,7 @@ class LocationListItem extends StatelessWidget {
   }
 }
 
-// #docregion ParallaxFlowDelegate
+// #docregion parallax-flow-delegate
 class ParallaxFlowDelegate extends FlowDelegate {
   ParallaxFlowDelegate();
 
@@ -112,7 +112,7 @@ class ParallaxFlowDelegate extends FlowDelegate {
     return true;
   }
 }
-// #enddocregion ParallaxFlowDelegate
+// #enddocregion parallax-flow-delegate
 
 class ParallaxRecipe extends StatelessWidget {
   const ParallaxRecipe({super.key});

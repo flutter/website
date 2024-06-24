@@ -33,7 +33,7 @@ phases of the flashing circles within the large speech bubble.
 
 Define a new stateful widget called `TypingIndicator`.
 
-<?code-excerpt "lib/excerpt1.dart (TypingIndicator)"?>
+<?code-excerpt "lib/excerpt1.dart (typing-indicator)"?>
 ```dart
 class TypingIndicator extends StatefulWidget {
   const TypingIndicator({
@@ -84,7 +84,7 @@ Define an animation for the height of the typing indicator,
 and then apply that animated value to the `SizedBox`
 widget within the typing indicator.
 
-<?code-excerpt "lib/excerpt2.dart (TypingIndicatorState)"?>
+<?code-excerpt "lib/excerpt2.dart (typing-indicator-state)"?>
 ```dart
 class _TypingIndicatorState extends State<TypingIndicator>
     with TickerProviderStateMixin {
@@ -203,7 +203,7 @@ lower left. Then, animate the scale of the bubbles
 so that the bubbles are staggered whenever the `showIndicator`
 property changes.
 
-<?code-excerpt "lib/excerpt3.dart (Bubbles)"?>
+<?code-excerpt "lib/excerpt3.dart (bubbles)"?>
 ```dart
 class _TypingIndicatorState extends State<TypingIndicator>
     with TickerProviderStateMixin {
@@ -439,7 +439,7 @@ Introduce a repeating `AnimationController` to
 implement the circle flashing and pass it to the
 `StatusBubble`.
 
-<?code-excerpt "lib/excerpt4.dart (AnimationController)"?>
+<?code-excerpt "lib/excerpt4.dart (animation-controller)"?>
 ```dart
 class _TypingIndicatorState extends State<TypingIndicator>
     with TickerProviderStateMixin {

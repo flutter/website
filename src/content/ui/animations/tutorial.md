@@ -125,7 +125,7 @@ from 0.0 to 1.0 during a given duration.
 For example, this code creates an `Animation` object,
 but does not start it running:
 
-<?code-excerpt "animate5/lib/main.dart (AnimationController)"?>
+<?code-excerpt "animate5/lib/main.dart (animation-controller)"?>
 ```dart
 controller =
     AnimationController(duration: const Duration(seconds: 2), vsync: this);
@@ -317,7 +317,6 @@ When defining an `AnimationController`, you must pass in a
 
 The changes from the non-animated example are highlighted:
 
-<?code-excerpt "animate{0,1}/lib/main.dart"?>
 ```diff2html
 --- animate0/lib/main.dart
 +++ animate1/lib/main.dart
@@ -462,7 +461,6 @@ when drawing itself.
 The `LogoApp` still manages the `AnimationController` and the `Tween`,
 and it passes the `Animation` object to `AnimatedLogo`:
 
-<?code-excerpt "animate{1,2}/lib/main.dart" from="class _LogoAppState" diff-u="6"?>
 ```diff2html
 --- animate1/lib/main.dart
 +++ animate2/lib/main.dart
@@ -552,7 +550,7 @@ The following code modifies the previous example so that
 it listens for a state change and prints an update.
 The highlighted line shows the change:
 
-<?code-excerpt "animate3/lib/main.dart (print state)" plaster="none" replace="/\/\/ (\.\..*)/$1;/g; /\.\..*/[!$&!]/g; /\n  }/$&\n  \/\/ .../g"?>
+<?code-excerpt "animate3/lib/main.dart (print-state)" plaster="none" replace="/\/\/ (\.\..*)/$1;/g; /\.\..*/[!$&!]/g; /\n  }/$&\n  \/\/ .../g"?>
 ```dart
 class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   late Animation<double> animation;
@@ -581,7 +579,6 @@ AnimationStatus.completed
 Next, use `addStatusListener()` to reverse the animation
 at the beginning or the end. This creates a "breathing" effect:
 
-<?code-excerpt "animate{2,3}/lib/main.dart" to="/^   }/" diff-u="4"?>
 ```diff2html
 --- animate2/lib/main.dart
 +++ animate3/lib/main.dart
@@ -648,12 +645,12 @@ example looks like this:
 Starting from the bottom of the widget tree, the code for rendering
 the logo is straightforward:
 
-<?code-excerpt "animate4/lib/main.dart (LogoWidget)"?>
+<?code-excerpt "animate4/lib/main.dart (logo-widget)"?>
 ```dart
 class LogoWidget extends StatelessWidget {
   const LogoWidget({super.key});
 
-  // Leave out the height and width so it fills the animating parent
+  // Leave out the height and width so it fills the animating parent.
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -683,7 +680,7 @@ that object as its child. The net result is that the
 `AnimatedBuilder` is inserted in between the two widgets
 in the render tree.
 
-<?code-excerpt "animate4/lib/main.dart (GrowTransition)"?>
+<?code-excerpt "animate4/lib/main.dart (grow-transition)"?>
 ```dart
 class GrowTransition extends StatelessWidget {
   const GrowTransition(
@@ -720,7 +717,6 @@ object with a `LogoWidget` as a child, and an animation object to
 drive the transition. These are the three elements listed
 in the bullet points above.
 
-<?code-excerpt "animate{2,4}/lib/main.dart" from="class _LogoAppState" diff-u="10"?>
 ```diff2html
 --- animate2/lib/main.dart
 +++ animate4/lib/main.dart

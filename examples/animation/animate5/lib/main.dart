@@ -47,10 +47,10 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    // #docregion AnimationController, tweens
+    // #docregion animation-controller, tweens
     controller =
         AnimationController(duration: const Duration(seconds: 2), vsync: this);
-    // #enddocregion AnimationController, tweens
+    // #enddocregion animation-controller, tweens
     animation = CurvedAnimation(parent: controller, curve: Curves.easeIn)
       ..addStatusListener((status) {
         if (status == AnimationStatus.completed) {

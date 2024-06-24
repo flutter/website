@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-// #docregion TypingIndicator
+// #docregion typing-indicator
 class TypingIndicator extends StatefulWidget {
   const TypingIndicator({
     super.key,
@@ -27,4 +27,4 @@ class _TypingIndicatorState extends State<TypingIndicator> {
     return const SizedBox();
   }
 }
-// #enddocregion TypingIndicator
+// #enddocregion typing-indicator

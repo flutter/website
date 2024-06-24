@@ -55,9 +55,9 @@ It provides a simple API to handle complex routing scenarios.
     ```dartpad run="true"
     import 'package:flutter/material.dart';
     import 'package:go_router/go_router.dart';
-
+    
     void main() => runApp(MaterialApp.router(routerConfig: router));
-
+    
     /// This handles '/' and '/details'.
     final router = GoRouter(
       routes: [

@@ -44,7 +44,7 @@ final items = List<String>.generate(20, (i) => 'Item ${i + 1}');
 Display each item in the list on screen. Users won't
 be able to swipe these items away just yet.
 
-<?code-excerpt "lib/step1.dart (ListView)" replace="/^body: //g;/,$//g"?>
+<?code-excerpt "lib/step1.dart (ListView)" replace="/^body: //g;/^\),$/)/g"?>
 ```dart
 ListView.builder(
   itemCount: items.length,
@@ -109,7 +109,7 @@ the indicator is a red background.
 To add the indicator,
 provide a `background` parameter to the `Dismissible`.
 
-<?code-excerpt "lib/{step2,main}.dart (Dismissible)"?>
+
 ```diff2html
 --- lib/step2.dart (Dismissible)
 +++ lib/main.dart (Dismissible)

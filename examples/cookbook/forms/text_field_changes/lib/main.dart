@@ -29,7 +29,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
   // of the TextField.
   final myController = TextEditingController();
 
-  // #docregion initState
+  // #docregion init-state
   @override
   void initState() {
     super.initState();
@@ -37,7 +37,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
     // Start listening to changes.
     myController.addListener(_printLatestValue);
   }
-  // #enddocregion initState
+  // #enddocregion init-state
 
   // #docregion dispose
   @override
