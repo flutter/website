@@ -36,7 +36,7 @@ To run integration tests, add the `integration_test` package
 as a dependency for your Flutter app test file.
 
 To migrate existing projects that use `flutter_driver`,
-consult the [Migrating from flutter_drive][] guide.
+consult the [Migrating from flutter_driver][] guide.
 
 Tests written with the `integration_test` package 
 can perform the following tasks.
@@ -55,6 +55,6 @@ The other guides in this section explain how to use integration tests to validat
 [functionality]: /testing/integration-tests/
 [performance]: /cookbook/testing/integration/profiling/
 [integration_test]: {{site.repo.flutter}}/tree/main/packages/integration_test
-[Migrating from flutter_drive]:
+[Migrating from flutter_driver]:
     /release/breaking-changes/flutter-driver-migration
 [widget tests]: /testing/overview#widget-tests
