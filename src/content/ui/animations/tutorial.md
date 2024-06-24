@@ -317,19 +317,20 @@ When defining an `AnimationController`, you must pass in a
 
 The changes from the non-animated example are highlighted:
 
+<?code-excerpt "animate0/lib/main.dart" diff-with="animate1/lib/main.dart"?>
 ```diff2html
 --- animate0/lib/main.dart
 +++ animate1/lib/main.dart
-@@ -9,16 +9,39 @@
+@@ -9,8 +9,25 @@
    State<LogoApp> createState() => _LogoAppState();
  }
-
+ 
 -class _LogoAppState extends State<LogoApp> {
 +class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
 +  late Animation<double> animation;
 +  late AnimationController controller;
 +
-+  @override
+   @override
 +  void initState() {
 +    super.initState();
 +    controller =
@@ -343,10 +344,11 @@ The changes from the non-animated example are highlighted:
 +    controller.forward();
 +  }
 +
-   @override
++  @override
    Widget build(BuildContext context) {
      return Center(
        child: Container(
+@@ -17,6 +34,6 @@
          margin: const EdgeInsets.symmetric(vertical: 10),
 -        height: 300,
 -        width: 300,
@@ -355,6 +357,7 @@ The changes from the non-animated example are highlighted:
          child: const FlutterLogo(),
        ),
      );
+@@ -23,2 +40,8 @@
    }
 +
 +  @override
@@ -461,40 +464,12 @@ when drawing itself.
 The `LogoApp` still manages the `AnimationController` and the `Tween`,
 and it passes the `Animation` object to `AnimatedLogo`:
 
+<?code-excerpt "animate1/lib/main.dart" diff-with="animate2/lib/main.dart" from="class _LogoAppState" diff-u="6"?>
 ```diff2html
 --- animate1/lib/main.dart
 +++ animate2/lib/main.dart
-@@ -1,10 +1,28 @@
- import 'package:flutter/material.dart';
-
- void main() => runApp(const LogoApp());
-
-+class AnimatedLogo extends AnimatedWidget {
-+  const AnimatedLogo({super.key, required Animation<double> animation})
-+      : super(listenable: animation);
-+
-+  @override
-+  Widget build(BuildContext context) {
-+    final animation = listenable as Animation<double>;
-+    return Center(
-+      child: Container(
-+        margin: const EdgeInsets.symmetric(vertical: 10),
-+        height: animation.value,
-+        width: animation.value,
-+        child: const FlutterLogo(),
-+      ),
-+    );
-+  }
-+}
-+
- class LogoApp extends StatefulWidget {
-   const LogoApp({super.key});
-
-   @override
-   State<LogoApp> createState() => _LogoAppState();
- }
-@@ -15,32 +33,18 @@
-
+@@ -4,32 +4,18 @@
+ 
    @override
    void initState() {
      super.initState();
@@ -509,7 +484,7 @@ and it passes the `Animation` object to `AnimatedLogo`:
 +    animation = Tween<double>(begin: 0, end: 300).animate(controller);
      controller.forward();
    }
-
+ 
    @override
 -  Widget build(BuildContext context) {
 -    return Center(
@@ -522,7 +497,7 @@ and it passes the `Animation` object to `AnimatedLogo`:
 -    );
 -  }
 +  Widget build(BuildContext context) => AnimatedLogo(animation: animation);
-
+ 
    @override
    void dispose() {
      controller.dispose();
@@ -579,10 +554,11 @@ AnimationStatus.completed
 Next, use `addStatusListener()` to reverse the animation
 at the beginning or the end. This creates a "breathing" effect:
 
+<?code-excerpt "animate2/lib/main.dart" diff-with="animate3/lib/main.dart" diff-u="4"?>
 ```diff2html
 --- animate2/lib/main.dart
 +++ animate3/lib/main.dart
-@@ -35,7 +35,15 @@
+@@ -35,9 +35,17 @@
    void initState() {
      super.initState();
      controller =
@@ -599,6 +575,8 @@ at the beginning or the end. This creates a "breathing" effect:
 +      ..addStatusListener((status) => print('$status'));
      controller.forward();
    }
+ 
+   @override
 ```
 
 **App source:** [animate3][]
@@ -717,67 +695,11 @@ object with a `LogoWidget` as a child, and an animation object to
 drive the transition. These are the three elements listed
 in the bullet points above.
 
+<?code-excerpt "animate2/lib/main.dart" diff-with="animate4/lib/main.dart" from="class _LogoAppState" diff-u="10"?>
 ```diff2html
 --- animate2/lib/main.dart
 +++ animate4/lib/main.dart
-@@ -1,27 +1,47 @@
- import 'package:flutter/material.dart';
-
- void main() => runApp(const LogoApp());
-
--class AnimatedLogo extends AnimatedWidget {
--  const AnimatedLogo({super.key, required Animation<double> animation})
--      : super(listenable: animation);
-+class LogoWidget extends StatelessWidget {
-+  const LogoWidget({super.key});
-+
-+  // Leave out the height and width so it fills the animating parent
-+  @override
-+  Widget build(BuildContext context) {
-+    return Container(
-+      margin: const EdgeInsets.symmetric(vertical: 10),
-+      child: const FlutterLogo(),
-+    );
-+  }
-+}
-+
-+class GrowTransition extends StatelessWidget {
-+  const GrowTransition(
-+      {required this.child, required this.animation, super.key});
-+
-+  final Widget child;
-+  final Animation<double> animation;
-
-   @override
-   Widget build(BuildContext context) {
--    final animation = listenable as Animation<double>;
-     return Center(
--      child: Container(
--        margin: const EdgeInsets.symmetric(vertical: 10),
--        height: animation.value,
--        width: animation.value,
--        child: const FlutterLogo(),
-+      child: AnimatedBuilder(
-+        animation: animation,
-+        builder: (context, child) {
-+          return SizedBox(
-+            height: animation.value,
-+            width: animation.value,
-+            child: child,
-+          );
-+        },
-+        child: child,
-       ),
-     );
-   }
- }
-
- class LogoApp extends StatefulWidget {
-   const LogoApp({super.key});
-
-   @override
-   State<LogoApp> createState() => _LogoAppState();
-@@ -34,18 +54,23 @@
+@@ -5,18 +5,23 @@
    @override
    void initState() {
      super.initState();
@@ -786,7 +708,7 @@ in the bullet points above.
      animation = Tween<double>(begin: 0, end: 300).animate(controller);
      controller.forward();
    }
-
+ 
    @override
 -  Widget build(BuildContext context) => AnimatedLogo(animation: animation);
 +  Widget build(BuildContext context) {
@@ -795,7 +717,7 @@ in the bullet points above.
 +      child: const LogoWidget(),
 +    );
 +  }
-
+ 
    @override
    void dispose() {
      controller.dispose();

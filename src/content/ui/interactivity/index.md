@@ -241,10 +241,11 @@ In the same location, create the stateful widget:
 
 <?code-excerpt path-base=""?>
 
+<?code-excerpt "layout/lakes/step6/lib/main.dart" diff-with="layout/lakes/interactive/lib/main.dart" remove="*3*" from="class MyApp"?>
 ```diff2html
 --- layout/lakes/step6/lib/main.dart
 +++ layout/lakes/interactive/lib/main.dart
-@@ -83,11 +83,7 @@
+@@ -79,11 +79,7 @@
                ],
              ),
            ),

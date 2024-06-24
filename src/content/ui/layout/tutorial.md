@@ -246,10 +246,11 @@ In the `body` property, replace the `Center` widget with a
 Within the [`SingleChildScrollView`][] widget, replace the `Text` widget with a
 `Column` widget.
 
+<?code-excerpt "../base/lib/main.dart" diff-with="step2/lib/main.dart" from="body: " to=")," to="children: ["?>
 ```diff2html
 --- ../base/lib/main.dart
 +++ step2/lib/main.dart
-@@ -21,2 +17,3 @@
+@@ -1,2 +1,3 @@
 -        body: const Center(
 -          child: Text('Hello World'),
 +        body: const SingleChildScrollView(
@@ -275,10 +276,11 @@ Add the `TitleSection` widget as the first element in the `children` list.
 This places it at the top of the screen.
 Pass the provided name and location to the `TitleSection` constructor.
 
+<?code-excerpt "../base/lib/main.dart" diff-with="step2/lib/main.dart" from="children:" to="],"?>
 ```diff2html
 --- ../base/lib/main.dart
 +++ step2/lib/main.dart
-@@ -23 +19,6 @@
+@@ -1,0 +1,6 @@
 +            children: [
 +              TitleSection(
 +                name: 'Oeschinen Lake Campground',
@@ -457,9 +459,10 @@ Add the button section to the `children` list.
 
 <?code-excerpt path-base="layout/lakes"?>
 
+<?code-excerpt "step2/lib/main.dart (add-widget)" diff-with="step3/lib/main.dart (add-widget)"?>
 ```diff2html
---- step2/lib/main.dart (add-widget)
-+++ step3/lib/main.dart (add-widget)
+--- step2/lib/main.dart
++++ step3/lib/main.dart
 @@ -5,6 +5,7 @@
          name: 'Oeschinen Lake Campground',
          location: 'Kandersteg, Switzerland',
@@ -516,9 +519,10 @@ Add a new `TextSection` widget as a child after the `ButtonSection`.
 When adding the `TextSection` widget, set its `description` property to
 the text of the location description.
 
+<?code-excerpt "step3/lib/main.dart (add-widget)" diff-with="step4/lib/main.dart (add-widget)"?>
 ```diff2html
---- step3/lib/main.dart (add-widget)
-+++ step4/lib/main.dart (add-widget)
+--- step3/lib/main.dart
++++ step4/lib/main.dart
 @@ -6,6 +6,16 @@
          location: 'Kandersteg, Switzerland',
        ),
@@ -561,11 +565,12 @@ To configure your app to reference images, modify its `pubspec.yaml` file.
    When you add `assets`, it serves as the set of pointers to the images
    available to your code.
 
+   <?code-excerpt "step4/pubspec.yaml" diff-with="step5/pubspec.yaml"?>
    ```diff2html
    --- step4/pubspec.yaml
    +++ step5/pubspec.yaml
    @@ -19,3 +19,5 @@
-
+    
     flutter:
       uses-material-design: true
    +  assets:
@@ -615,9 +620,10 @@ Add an `ImageSection` widget as the first child in the `children` list.
 Set the `image` property to the path of the image you added in
 [Configure your app to use supplied images](#configure-your-app-to-use-supplied-images).
 
+<?code-excerpt "step4/lib/main.dart (add-widget)" diff-with="step5/lib/main.dart (add-widget)"?>
 ```diff2html
---- step4/lib/main.dart (add-widget)
-+++ step5/lib/main.dart (add-widget)
+--- step4/lib/main.dart
++++ step5/lib/main.dart
 @@ -1,6 +1,9 @@
  body: const SingleChildScrollView(
    child: Column(
