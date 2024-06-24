@@ -94,13 +94,14 @@ Extending `SingleTickerProviderStateMixin` allows the state object to be a
 documentation for [TickerProvider][].
 :::
 
+<?code-excerpt "lib/starter.dart" diff-with="lib/step1.dart"?>
 ```diff2html
 --- lib/starter.dart
 +++ lib/step1.dart
-@@ -29,14 +29,20 @@
+@@ -29,7 +29,10 @@
    State<DraggableCard> createState() => _DraggableCardState();
  }
-
+ 
 -class _DraggableCardState extends State<DraggableCard> {
 +class _DraggableCardState extends State<DraggableCard>
 +    with SingleTickerProviderStateMixin {
@@ -109,11 +110,13 @@ documentation for [TickerProvider][].
    @override
    void initState() {
      super.initState();
+@@ -36,3 +39,5 @@
 +    _controller =
 +        AnimationController(vsync: this, duration: const Duration(seconds: 1));
    }
-
+ 
    @override
+@@ -39,4 +44,5 @@
    void dispose() {
 +    _controller.dispose();
      super.dispose();
@@ -125,9 +128,10 @@ documentation for [TickerProvider][].
 Make the widget move when it's dragged, and add an [Alignment][] field to the
 `_DraggableCardState` class:
 
+<?code-excerpt "lib/step1.dart (alignment)" diff-with="lib/step2.dart (alignment)"?>
 ```diff2html
---- lib/step1.dart (alignment)
-+++ lib/step2.dart (alignment)
+--- lib/step1.dart
++++ lib/step2.dart
 @@ -1,3 +1,4 @@
  class _DraggableCardState extends State<DraggableCard>
      with SingleTickerProviderStateMixin {
@@ -141,9 +145,10 @@ size of the widget, and divide by 2. (This converts units of "pixels dragged" to
 coordinates that [Align][] uses.) Then, set the `Align` widget's `alignment` to
 `_dragAlignment`:
 
+<?code-excerpt "lib/step1.dart (build)" diff-with="lib/step2.dart (build)"?>
 ```diff2html
---- lib/step1.dart (build)
-+++ lib/step2.dart (build)
+--- lib/step1.dart
++++ lib/step2.dart
 @@ -1,8 +1,22 @@
  @override
  Widget build(BuildContext context) {
@@ -180,9 +185,10 @@ Add an `Animation<Alignment>` field and an `_runAnimation` method. This
 method defines a `Tween` that interpolates between the point the widget was
 dragged to, to the point in the center.
 
+<?code-excerpt "lib/step2.dart (animation)" diff-with="lib/step3.dart (animation)"?>
 ```diff2html
---- lib/step2.dart (animation)
-+++ lib/step3.dart (animation)
+--- lib/step2.dart
++++ lib/step3.dart
 @@ -1,4 +1,5 @@
  class _DraggableCardState extends State<DraggableCard>
      with SingleTickerProviderStateMixin {
@@ -208,9 +214,10 @@ void _runAnimation() {
 Next, update `_dragAlignment` when the `AnimationController` produces a
 value:
 
+<?code-excerpt "lib/step2.dart (init-state)" diff-with="lib/step3.dart (init-state)"?>
 ```diff2html
---- lib/step2.dart (init-state)
-+++ lib/step3.dart (init-state)
+--- lib/step2.dart
++++ lib/step3.dart
 @@ -3,4 +3,9 @@
    super.initState();
    _controller =
@@ -237,9 +244,10 @@ child: Align(
 
 Finally, update the `GestureDetector` to manage the animation controller:
 
+<?code-excerpt "lib/step2.dart (gesture)" diff-with="lib/step3.dart (gesture)"?>
 ```diff2html
---- lib/step2.dart (gesture)
-+++ lib/step3.dart (gesture)
+--- lib/step2.dart
++++ lib/step3.dart
 @@ -1,5 +1,7 @@
  return GestureDetector(
 -  onPanDown: (details) {},

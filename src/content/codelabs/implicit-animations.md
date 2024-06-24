@@ -85,6 +85,7 @@ To create a fade-in effect, you can animate the
 `opacity` property using the`AnimatedOpacity` widget. 
 Wrap the `Column` widget in an `AnimatedOpacity` widget:
 
+<?code-excerpt "opacity1/lib/main.dart" diff-with="opacity2/lib/main.dart"?>
 ```diff2html
 --- opacity1/lib/main.dart
 +++ opacity2/lib/main.dart
@@ -121,12 +122,13 @@ to make these changes in the [fade-in starter code][].
 To hide the text before the user clicks **Show details**, set
 the starting value for `opacity` to zero:
 
+<?code-excerpt "opacity2/lib/main.dart" diff-with="opacity3/lib/main.dart"?>
 ```diff2html
 --- opacity2/lib/main.dart
 +++ opacity3/lib/main.dart
 @@ -15,6 +15,8 @@
  }
-
+ 
  class _FadeInDemoState extends State<FadeInDemo> {
 +  double opacity = 0;
 +
@@ -149,6 +151,7 @@ In addition to an `opacity` parameter, `AnimatedOpacity` requires a
 [duration][] to use for its animation. For this example,
 you can start with 2 seconds:
 
+<?code-excerpt "opacity3/lib/main.dart" diff-with="opacity4/lib/main.dart"?>
 ```diff2html
 --- opacity3/lib/main.dart
 +++ opacity4/lib/main.dart
@@ -170,6 +173,7 @@ To do this, change `opacity` state using the `onPressed()` handler for
 the user clicks **Show details**, use the `onPressed()` handler
 to set `opacity` to 1:
 
+<?code-excerpt "opacity4/lib/main.dart" diff-with="opacity5/lib/main.dart"?>
 ```diff2html
 --- opacity4/lib/main.dart
 +++ opacity5/lib/main.dart
@@ -269,6 +273,7 @@ The following steps use the `AnimatedContainer` widget to:
 
 Change the `Container` widget to an `AnimatedContainer` widget:
 
+<?code-excerpt "container1/lib/main.dart" diff-with="container2/lib/main.dart"?>
 ```diff2html
 --- container1/lib/main.dart
 +++ container2/lib/main.dart
@@ -297,13 +302,14 @@ create a `change()` method.
 The `change()` method can use the `setState()` method to set new values
 for the `color`, `borderRadius`, and `margin` state variables:
 
+<?code-excerpt "container2/lib/main.dart" diff-with="container3/lib/main.dart"?>
 ```diff2html
 --- container2/lib/main.dart
 +++ container3/lib/main.dart
 @@ -38,6 +38,14 @@
      margin = randomMargin();
    }
-
+ 
 +  void change() {
 +    setState(() {
 +      color = randomColor();
@@ -322,6 +328,7 @@ for the `color`, `borderRadius`, and `margin` state variables:
 To set the animation to trigger whenever the user presses **Change**,
 invoke the `change()` method in the `onPressed()` handler:
 
+<?code-excerpt "container3/lib/main.dart" diff-with="container4/lib/main.dart"?>
 ```diff2html
 --- container3/lib/main.dart
 +++ container4/lib/main.dart
@@ -341,13 +348,14 @@ invoke the `change()` method in the `onPressed()` handler:
 Set the `duration` of the animation that powers the transition
 between the old and new values:
 
+<?code-excerpt "container4/lib/main.dart" diff-with="container5/lib/main.dart"?>
 ```diff2html
 --- container4/lib/main.dart
 +++ container5/lib/main.dart
 @@ -6,6 +6,8 @@
-
+ 
  import 'package:flutter/material.dart';
-
+ 
 +const _duration = Duration(milliseconds: 400);
 +
  double randomBorderRadius() {
@@ -396,6 +404,7 @@ the [complete shape-shifting example][].
 The animation changes when you pass the
 [`easeInOutBack`][] constant for `curve`,
 
+<?code-excerpt "container5/lib/main.dart" diff-with="container6/lib/main.dart"?>
 ```diff2html
 --- container5/lib/main.dart
 +++ container6/lib/main.dart

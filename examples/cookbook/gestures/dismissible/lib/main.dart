@@ -35,7 +35,7 @@ class MyAppState extends State<MyApp> {
         ),
         body: ListView.builder(
           itemCount: items.length,
-          // #docregion Dismissible
+          // #docregion dismissible
           itemBuilder: (context, index) {
             final item = items[index];
             return Dismissible(
@@ -61,7 +61,7 @@ class MyAppState extends State<MyApp> {
               ),
             );
           },
-          // #enddocregion Dismissible
+          // #enddocregion dismissible
         ),
       ),
     );

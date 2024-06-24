@@ -69,7 +69,7 @@ such as removing the item from a web service or database.
 
 Update the `itemBuilder()` function to return a `Dismissible` widget:
 
-<?code-excerpt "lib/step2.dart (Dismissible)"?>
+<?code-excerpt "lib/step2.dart (dismissible)"?>
 ```dart
 itemBuilder: (context, index) {
   final item = items[index];
@@ -109,10 +109,10 @@ the indicator is a red background.
 To add the indicator,
 provide a `background` parameter to the `Dismissible`.
 
-
+<?code-excerpt "lib/step2.dart (dismissible)" diff-with="lib/main.dart (dismissible)"?>
 ```diff2html
---- lib/step2.dart (Dismissible)
-+++ lib/main.dart (Dismissible)
+--- lib/step2.dart
++++ lib/main.dart
 @@ -16,6 +16,8 @@
        ScaffoldMessenger.of(context)
            .showSnackBar(SnackBar(content: Text('$item dismissed')));
