@@ -354,3 +354,4 @@ you can build a full version and upload it to Firebase.
 4. Navigate to your PR on GitHub and include the link of the staged version.
    Do consider adding a reference to the commit you staged,
    so that reviewers know if any further changes have been made.
+[![CodeQL](https://github.com/flutter/website/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/flutter/website/actions/workflows/codeql-analysis.yml)
