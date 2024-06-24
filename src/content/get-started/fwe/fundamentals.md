@@ -110,6 +110,34 @@ including using libraries, marking functions as async,
 making function calls, using `if` statement control-flow,
 and more.
 
+:::note Where does initialization code go?
+The main entrypoint in a starter
+Flutter app is in `lib/main.dart`.
+The default `main` method looks
+like the following:
+
+```
+void main() {
+  runApp(const MyApp());
+}       
+
+```
+
+Perform any initialization before calling `runApp()`,
+though be aware that the widget tree hasn't been created yet.
+
+Every stateful widget has an `initState()`
+method that is called when the widget is
+created and added to the widget tree.
+You can override this method and perform
+initialization there, though the first line of
+this method _must_ be `super.initState()`.
+
+Finally, hot reloading your app does _not_
+call `initState` or `main` again.
+Hot restart calls both.
+:::
+
 If these features aren’t familiar to you, 
 read [Introduction to Dart][] from the Dart documentation.
 
