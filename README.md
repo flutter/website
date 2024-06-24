@@ -303,7 +303,11 @@ means that one or more code excerpts in the site Markdown files
 aren't identical to the code regions declared
 in the corresponding `.dart` files.
 
-To resolve this error,
+The `.dart` files are the source of truth for code snippets,
+and the preceding `<?code-excerpt>` instructions in Markdown files specify
+how the snippets are copied from the `.dart` files. 
+
+To resolve this error and update the Markdown snippets to match,
 from the root of the `website` directory,
 run `./dash_site refresh-excerpts`.
 
