@@ -569,7 +569,7 @@ Run the app:
 * Scroll up and down to observe the parallax effect.
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad title="" run="true"
+```dartpad title="Flutter parallax scrolling hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 

@@ -258,7 +258,7 @@ Run the app:
 
 <!-- start dartpad -->
 <?code-excerpt "lib/main.dart"?>
-```dartpad title="" run="true"
+```dartpad title="Flutter graident bubbles hands-on example in DartPad" run="true"
 import 'dart:math';
 import 'dart:ui' as ui;
 
