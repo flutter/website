@@ -31,7 +31,7 @@ Otherwise, you can skip to the [next section][check-dev].
 
 [check-dev]: #check-your-development-setup
 
-{% tabs %}
+{% tabs "android-studio-experience" %}
 {% tab "First time using Android Studio" %}
 
 1. Launch **Android Studio**.
@@ -114,7 +114,7 @@ Otherwise, you can skip to the [next section][check-dev].
 
 ### Configure your target Android device
 
-{% tabs %}
+{% tabs "android-emulator-or-not" %}
 {% tab "Virtual device" %}
 
 {% include docs/install/devices/android-emulator.md devos=include.devos %}

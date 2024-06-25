@@ -60,7 +60,7 @@ Try to keep to the current version of Xcode.
 
 With Xcode, you can run Flutter apps on an iOS device or on the simulator.
 
-{% tabs %}
+{% tabs "ios-simulator-or-not" %}
 {% tab "Virtual device" %}
 
 {% include docs/install/devices/ios-simulator.md %}
