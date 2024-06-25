@@ -410,7 +410,7 @@ Run the app:
 <!-- start dartpad -->
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="" run="true"
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';

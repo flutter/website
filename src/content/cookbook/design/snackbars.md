@@ -100,7 +100,7 @@ see the [Gestures][] section of the cookbook.
 :::
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="" run="true"
 import 'package:flutter/material.dart';
 
 void main() => runApp(const SnackBarDemo());

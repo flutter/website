@@ -577,7 +577,7 @@ on and off as the content loads.
 ## Interactive example
 
 <?code-excerpt "lib/original_example.dart" remove="code-excerpt-closing-bracket"?>
-```dartpad run="true"
+```dartpad title="" run="true"
 import 'package:flutter/material.dart';
 
 void main() {

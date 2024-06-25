@@ -62,7 +62,7 @@ TextFormField(
 ## Interactive example
 
 <?code-excerpt "lib/main.dart" replace="/^child\: //g"?>
-```dartpad run="true"
+```dartpad title="" run="true"
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());

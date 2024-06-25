@@ -139,7 +139,7 @@ FloatingActionButton(
 ## Interactive example
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="" run="true"
 import 'dart:math';
 
 import 'package:flutter/material.dart';

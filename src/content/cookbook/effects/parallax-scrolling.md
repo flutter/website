@@ -569,7 +569,7 @@ Run the app:
 * Scroll up and down to observe the parallax effect.
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="" run="true"
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 

@@ -258,7 +258,7 @@ Run the app:
 
 <!-- start dartpad -->
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="" run="true"
 import 'dart:math';
 import 'dart:ui' as ui;
 

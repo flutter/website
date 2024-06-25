@@ -431,7 +431,7 @@ invoke actions to accomplish their work. All the invoked actions and
 shortcuts are logged.
 
 <?code-excerpt "ui/advanced/actions_and_shortcuts/lib/copyable_text.dart"?>
-```dartpad run="true"
+```dartpad title="Copyable text DartPad hands-on example" run="true"
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
