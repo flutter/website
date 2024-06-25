@@ -123,8 +123,21 @@ void main() {
 
 ```
 
-Perform any initialization before calling `runApp()`,
+Perform any _quick_ initialization (less than a frame or two)
+_before_ calling `runApp()`,
 though be aware that the widget tree hasn't been created yet.
+If you want to perform initialization that takes awhile,
+such as loading data from disk or over a network,
+do it in a way that won't block the main UI thread.
+For more information, check out [Asynchronous programming][],
+the [`FutureBuilder`][] API, [Deferred components][],
+or the [Working with long lists][] cookbook recipe,
+as appropriate.
+
+[Asynchronous programming]: {{site.dart-site}}/libraries/async/async-await
+[Deferred components]: /perf/deferred-components
+[`FutureBuilder`]: {{site.api}}/flutter/widgets/FutureBuilder-class.html
+[Working with long lists]: /cookbook/lists/long-lists
 
 Every stateful widget has an `initState()`
 method that is called when the widget is
