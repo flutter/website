@@ -116,7 +116,7 @@ Flutter app is in `lib/main.dart`.
 The default `main` method looks
 like the following:
 
-```
+```dart
 void main() {
   runApp(const MyApp());
 }       
