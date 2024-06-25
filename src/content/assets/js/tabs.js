@@ -26,6 +26,8 @@ function setupTabs() {
         }
       });
 
+      // If a tab was previously specified as selected in local storage,
+      // save a reference to it that can be switched to later.
       if (saveId && localStorage.getItem(localStorageKey) === saveId) {
         tabToChangeTo = tab;
       }
