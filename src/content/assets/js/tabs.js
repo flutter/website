@@ -1,59 +1,67 @@
-function setupTabs(container, storageName, defaultTabGetter) {
-  const tabs = $(container).find('li a');
+function setupTabs() {
+  const tabsWrappers = document.querySelectorAll('.tabs-wrapper');
 
-  function getTabIdFromQuery(query) {
-    const match = query.match(/(#|\btab=)([\w-]+)/);
-    return match ? match[2] : '';
-  }
+  tabsWrappers.forEach(function (tabWrapper) {
+    const saveKey = tabWrapper.dataset.tabSaveKey;
+    const localStorageKey = `tab-save-${saveKey}`;
+    const tabs = tabWrapper.querySelectorAll('a.nav-link');
 
-  function clickHandler(e) {
-    e.preventDefault();
-    $(this).tab('show');
-    const id = getTabIdFromQuery($(this).attr('href'));
+    tabs.forEach(function (tab) {
+      const saveId = tab.dataset.tabSaveId;
 
-    if (storageName && window.localStorage) {
-      window.localStorage.setItem(storageName, id);
+      tab.addEventListener('click', function (event) {
+        event.preventDefault();
+        if (saveKey && saveId) {
+          _activateTabsWithSaveId(saveKey, saveId);
+          localStorage.setItem(localStorageKey, saveId);
+        } else {
+          _clearActiveTabs(tabs);
+          _setActiveTab(tab);
+        }
+      });
+
+      if (saveId && localStorage.getItem(localStorageKey) === saveId) {
+        tab.click();
+      } else if (tabWrapper.id === 'os-archive-tabs') {
+        // TODO(parlough): Add default selection for archive tabs.
+      }
+    });
+  });
+}
+
+function _clearActiveTabs(tabs) {
+  tabs.forEach(function (tab) {
+    tab.classList.remove('active');
+    tab.ariaSelected = 'false';
+    document.getElementById(`${tab.id}-panel`)?.classList.remove('active');
+  });
+}
+
+function _setActiveTab(tab) {
+  tab.classList.add('active');
+  tab.ariaSelected = 'true';
+  document.getElementById(`${tab.id}-panel`)?.classList.add('active');
+}
+
+function _activateTabsWithSaveId(saveKey, saveId) {
+  const tabsWrappers = document.querySelectorAll(`.tabs-wrapper[data-tab-save-key="${saveKey}"]`);
+
+  tabsWrappers.forEach(function (tabWrapper) {
+    const tabToActivate = tabWrapper.querySelector(`a.nav-link[data-tab-save-id="${saveId}"]`);
+    if (tabToActivate) {
+      const tabs = tabWrapper.querySelectorAll('a.nav-link');
+      _clearActiveTabs(tabs);
+      _setActiveTab(tabToActivate);
     }
+  });
+}
 
-    updateUrlQuery(id);
+function _getOsForArchive() {
+  const os = getOS();
+  // The archive doesn't have chromeos, fall back to linux.
+  if (os === 'chromeos') {
+    return 'linux';
   }
 
-  function updateUrlQuery(id) {
-    const loc = window.location;
-    const query = '?tab=' + id;
-    if (id && loc.search !== query) {
-      const url = loc.protocol + '//' + loc.host + loc.pathname + query + loc.hash;
-      history.replaceState(undefined, undefined, url);
-    }
-  }
-
-  function selectTab(id) {
-    const tab = tabs.filter('[href="#' + id + '"]');
-    tab.click();
-  }
-
-  function getSelectedTab() {
-    let selectedTab = getTabIdFromQuery(location.search);
-    if (!selectedTab && storageName && window.localStorage) {
-      selectedTab = window.localStorage.getItem(storageName);
-    }
-
-    if (selectedTab) {
-      return selectedTab;
-    }
-
-    if (defaultTabGetter) {
-      return defaultTabGetter();
-    }
-
-    return null;
-  }
-
-  function initializeTabs() {
-    tabs.click(clickHandler);
-    const selectedTab = getSelectedTab();
-    selectTab(selectedTab);
-  }
-
-  initializeTabs();
+  return os;
 }
