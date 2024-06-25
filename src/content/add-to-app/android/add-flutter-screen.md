@@ -55,8 +55,8 @@ import io.flutter.embedding.android.FlutterActivity;
 ```
 :::
 
-{% samplecode "default-activity-launch", "Kotlin,Java" %}
-{% sample "Kotlin" %}
+{% tabs "android-language" %}
+{% tab "Kotlin" %}
 
 ```kotlin title="ExistingActivity.kt"
 myButton.setOnClickListener {
@@ -66,8 +66,8 @@ myButton.setOnClickListener {
 }
 ```
 
-{% endsample %}
-{% sample "Java" %}
+{% endtab %}
+{% tab "Java" %}
 
 ```java title="ExistingActivity.java"
 myButton.setOnClickListener(new OnClickListener() {
@@ -80,8 +80,8 @@ myButton.setOnClickListener(new OnClickListener() {
 });
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 The previous example assumes that your Dart entrypoint
 is called `main()`, and your initial Flutter route is '/'.
@@ -91,8 +91,8 @@ The following example demonstrates how to launch a
 `FlutterActivity` that initially renders a custom
 route in Flutter.
 
-{% samplecode "custom-activity-launch", "Kotlin,Java" %}
-{% sample "Kotlin" %}
+{% tabs "android-language" %}
+{% tab "Kotlin" %}
 
 ```kotlin title="ExistingActivity.kt"
 myButton.setOnClickListener {
@@ -105,8 +105,8 @@ myButton.setOnClickListener {
 }
 ```
 
-{% endsample %}
-{% sample "Java" %}
+{% endtab %}
+{% tab "Java" %}
 
 ```java title="ExistingActivity.java"
 myButton.addOnClickListener(new OnClickListener() {
@@ -122,8 +122,8 @@ myButton.addOnClickListener(new OnClickListener() {
 });
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 Replace `"/my_route"` with your desired initial route.
 
@@ -151,8 +151,8 @@ location in your app to instantiate a `FlutterEngine`.
 The following example arbitrarily pre-warms a
 `FlutterEngine` in the `Application` class:
 
-{% samplecode "prewarm-engine", "Kotlin,Java" %}
-{% sample "Kotlin" %}
+{% tabs "android-language" %}
+{% tab "Kotlin" %}
 
 ```kotlin title="MyApplication.kt"
 class MyApplication : Application() {
@@ -177,8 +177,8 @@ class MyApplication : Application() {
 }
 ```
 
-{% endsample %}
-{% sample "Java" %}
+{% endtab %}
+{% tab "Java" %}
 
 ```java title="MyApplication.java"
 public class MyApplication extends Application {
@@ -203,8 +203,8 @@ public class MyApplication extends Application {
 }
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 The ID passed to the [`FlutterEngineCache`][] can be whatever you want.
 Make sure that you pass the same ID to any `FlutterActivity`
@@ -232,8 +232,8 @@ to instruct your `FlutterActivity` to use the cached
 To accomplish this, use `FlutterActivity`'s `withCachedEngine()`
 builder:
 
-{% samplecode "cached-engine-activity-launch", "Kotlin,Java" %}
-{% sample "Kotlin" %}
+{% tabs "android-language" %}
+{% tab "Kotlin" %}
 
 ```kotlin title="ExistingActivity.kt"
 myButton.setOnClickListener {
@@ -245,8 +245,8 @@ myButton.setOnClickListener {
 }
 ```
 
-{% endsample %}
-{% sample "Java" %}
+{% endtab %}
+{% tab "Java" %}
 
 ```java title="ExistingActivity.java"
 myButton.addOnClickListener(new OnClickListener() {
@@ -261,8 +261,8 @@ myButton.addOnClickListener(new OnClickListener() {
 });
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 When using the `withCachedEngine()` factory method,
 pass the same ID that you used when caching the desired
@@ -353,8 +353,8 @@ with explicit transparency support.
 To launch your `FlutterActivity` with a transparent background,
 pass the appropriate `BackgroundMode` to the `IntentBuilder`:
 
-{% samplecode "transparent-activity-launch", "Kotlin,Java" %}
-{% sample "Kotlin" %}
+{% tabs "android-language" %}
+{% tab "Kotlin" %}
 
 ```kotlin title="ExistingActivity.kt"
 // Using a new FlutterEngine.
@@ -374,8 +374,8 @@ startActivity(
 );
 ```
 
-{% endsample %}
-{% sample "Java" %}
+{% endtab %}
+{% tab "Java" %}
 
 ```java title="ExistingActivity.java"
 // Using a new FlutterEngine.
@@ -395,8 +395,8 @@ startActivity(
 );
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 You now have a `FlutterActivity` with a transparent background.
 

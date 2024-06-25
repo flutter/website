@@ -39,8 +39,8 @@ trade-offs of pre-warming an engine.
 
 Where you create a `FlutterEngine` depends on your host app.
 
-{% samplecode "engine", "SwiftUI,UIKit-Swift,UIKit-ObjC" %}
-{% sample "SwiftUI" %}
+{% tabs "darwin-framework" %}
+{% tab "SwiftUI" %}
 
 In this example, we create a `FlutterEngine` object inside a SwiftUI `ObservableObject`. 
 We then pass this `FlutterEngine` into a `ContentView` using the 
@@ -74,8 +74,8 @@ struct MyApp: App {
 }
 ```
 
-{% endsample %}
-{% sample "UIKit-Swift" %}
+{% endtab %}
+{% tab "UIKit-Swift" %}
 
 As an example, we demonstrate creating a
 `FlutterEngine`, exposed as a property, on app startup in
@@ -101,8 +101,8 @@ class AppDelegate: FlutterAppDelegate { // More on the FlutterAppDelegate.
 }
 ```
 
-{% endsample %}
-{% sample "UIKit-ObjC" %}
+{% endtab %}
+{% tab "UIKit-ObjC" %}
 
 In this example, we create a `FlutterEngine` 
 object inside a SwiftUI `ObservableObject`. 
@@ -139,13 +139,13 @@ We then pass this `FlutterEngine` into a
 @end
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 ### Show a FlutterViewController with your FlutterEngine
 
-{% samplecode "vc", "SwiftUI,UIKit-Swift,UIKit-ObjC" %}
-{% sample "SwiftUI" %}
+{% tabs "darwin-framework" %}
+{% tab "SwiftUI" %}
 
 The following example shows a generic `ContentView` with a
 `Button` hooked to present a [`FlutterViewController`][].
@@ -190,8 +190,8 @@ func showFlutter() {
 }
 ```
 
-{% endsample %}
-{% sample "UIKit-Swift" %}
+{% endtab %}
+{% tab "UIKit-Swift" %}
 
 The following example shows a generic `ViewController` with a
 `UIButton` hooked to present a [`FlutterViewController`][].
@@ -224,8 +224,8 @@ class ViewController: UIViewController {
 }
 ```
 
-{% endsample %}
-{% sample "UIKit-ObjC" %}
+{% endtab %}
+{% tab "UIKit-ObjC" %}
 
 The following example shows a generic `ViewController` with a
 `UIButton` hooked to present a [`FlutterViewController`][].
@@ -262,8 +262,8 @@ created in the `AppDelegate`.
 @end
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 Now, you have a Flutter screen embedded in your iOS app.
 
@@ -292,8 +292,8 @@ To let the `FlutterViewController` present without an existing
 `FlutterEngine`, omit the `FlutterEngine` construction, and create the
 `FlutterViewController` without an engine reference.
 
-{% samplecode "no-engine-vc", "SwiftUI,UIKit-Swift,UIKit-ObjC" %}
-{% sample "SwiftUI" %}
+{% tabs "darwin-framework" %}
+{% tab "SwiftUI" %}
 
 ```swift
 import SwiftUI
@@ -328,8 +328,8 @@ func openFlutterApp() {
 }
 ```
 
-{% endsample %}
-{% sample "UIKit-Swift" %}
+{% endtab %}
+{% tab "UIKit-Swift" %}
 
 ```swift title="ViewController.swift"
 // Existing code omitted.
@@ -339,8 +339,8 @@ func showFlutter() {
 }
 ```
 
-{% endsample %}
-{% sample "UIKit-ObjC" %}
+{% endtab %}
+{% tab "UIKit-ObjC" %}
 
 ```objc title="ViewController.m"
 // Existing code omitted.
@@ -352,8 +352,8 @@ func showFlutter() {
 @end
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 See [Loading sequence and performance][]
 for more explorations on latency and memory usage.
@@ -458,8 +458,8 @@ Otherwise, plugins that depend on these events might have undefined behavior.
 
 For instance:
 
-{% samplecode "app-delegate", "Swift,Objective-C" %}
-{% sample "Swift" %}
+{% tabs "darwin-language" %}
+{% tab "Swift" %}
 
 ```swift title="AppDelegate.swift"
 import Foundation
@@ -519,8 +519,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FlutterAppLifeCycleProvid
 }
 ```
 
-{% endsample %}
-{% sample "Objective-C" %}
+{% endtab %}
+{% tab "Objective-C" %}
 
 ```objc title="AppDelegate.h"
 @import Flutter;
@@ -635,8 +635,8 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult result))comp
 @end
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 ## Launch options
 
@@ -674,22 +674,22 @@ function in a specific file.
 For instance the following runs `myOtherEntrypoint()`
 in `lib/other_file.dart` instead of `main()` in `lib/main.dart`:
 
-{% samplecode "entrypoint-library", "Swift,Objective-C" %}
-{% sample "Swift" %}
+{% tabs "darwin-language" %}
+{% tab "Swift" %}
 
 ```swift
 flutterEngine.run(withEntrypoint: "myOtherEntrypoint", libraryURI: "other_file.dart")
 ```
 
-{% endsample %}
-{% sample "Objective-C" %}
+{% endtab %}
+{% tab "Objective-C" %}
 
 ```objc
 [flutterEngine runWithEntrypoint:@"myOtherEntrypoint" libraryURI:@"other_file.dart"];
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 
 ### Route
@@ -698,8 +698,8 @@ Starting in Flutter version 1.22, an initial route can be set for your Flutter
 [`WidgetsApp`][] when constructing the FlutterEngine or the
 FlutterViewController.
 
-{% samplecode "initial-route", "Swift,Objective-C" %}
-{% sample "Swift" %}
+{% tabs "darwin-language" %}
+{% tab "Swift" %}
 
 ```swift
 let flutterEngine = FlutterEngine()
@@ -708,8 +708,8 @@ engine.run(
   withEntrypoint: "main", initialRoute: "/onboarding")
 ```
 
-{% endsample %}
-{% sample "Objective-C" %}
+{% endtab %}
+{% tab "Objective-C" %}
 
 ```objc
 FlutterEngine *flutterEngine = [[FlutterEngine alloc] init];
@@ -718,8 +718,8 @@ FlutterEngine *flutterEngine = [[FlutterEngine alloc] init];
                     initialRoute:@"/onboarding"];
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 This code sets your `dart:ui`'s [`PlatformDispatcher.defaultRouteName`][]
 to `"/onboarding"` instead of `"/"`.
@@ -727,16 +727,16 @@ to `"/onboarding"` instead of `"/"`.
 Alternatively, to construct a FlutterViewController directly without pre-warming
 a FlutterEngine:
 
-{% samplecode "initial-route-without-pre-warming", "Swift,Objective-C" %}
-{% sample "Swift" %}
+{% tabs "darwin-language" %}
+{% tab "Swift" %}
 
 ```swift
 let flutterViewController = FlutterViewController(
       project: nil, initialRoute: "/onboarding", nibName: nil, bundle: nil)
 ```
 
-{% endsample %}
-{% sample "Objective-C" %}
+{% endtab %}
+{% tab "Objective-C" %}
 
 ```objc
 FlutterViewController* flutterViewController =
@@ -746,8 +746,8 @@ FlutterViewController* flutterViewController =
                                               bundle:nil];
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 :::tip
 In order to imperatively change your current Flutter

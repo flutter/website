@@ -102,8 +102,8 @@ messages happens automatically when you send and receive values.
 The following table shows how Dart values are received on the
 platform side and vice versa:
 
-{% samplecode "type-mappings", "Kotlin,Java,Swift,Obj-C,C++,C" %}
-{% sample "Kotlin" %}
+{% tabs "platform-channel-language" %}
+{% tab "Kotlin" %}
 
 | Dart              | Kotlin        |
 | ----------------- | ------------- |
@@ -123,8 +123,8 @@ platform side and vice versa:
 
 {:.table .table-striped}
 
-{% endsample %}
-{% sample "Java" %}
+{% endtab %}
+{% tab "Java" %}
 
 | Dart              | Java                  |
 | ----------------- | --------------------- |
@@ -144,8 +144,8 @@ platform side and vice versa:
 
 {:.table .table-striped}
 
-{% endsample %}
-{% sample "Swift" %}
+{% endtab %}
+{% tab "Swift" %}
 
 | Dart              | Swift                                     |
 | ----------------- | ----------------------------------------- |
@@ -165,8 +165,8 @@ platform side and vice versa:
 
 {:.table .table-striped}
 
-{% endsample %}
-{% sample "Obj-C" %}
+{% endtab %}
+{% tab "Obj-C" %}
 
 | Dart              | Objective-C                                      |
 | ----------------- | ------------------------------------------------ |
@@ -186,8 +186,8 @@ platform side and vice versa:
 
 {:.table .table-striped}
 
-{% endsample %}
-{% sample "C++" %}
+{% endtab %}
+{% tab "C++" %}
 
 | Dart               | C++                                                        |
 | ------------------ | ---------------------------------------------------------- |
@@ -207,8 +207,8 @@ platform side and vice versa:
 
 {:.table .table-striped}
 
-{% endsample %}
-{% sample "C" %}
+{% endtab %}
+{% tab "C" %}
 
 | Dart               | C (GObject)                 |
 | ------------------ | --------------------------- |
@@ -227,8 +227,8 @@ platform side and vice versa:
 
 {:.table .table-striped}
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 ## Example: Calling platform-specific code using platform channels {:#example}
 
@@ -356,8 +356,8 @@ Widget build(BuildContext context) {
 
 ### Step 3: Add an Android platform-specific implementation
 
-{% samplecode "android-channel", "Kotlin,Java" %}
-{% sample "Kotlin" %}
+{% tabs "android-language" %}
+{% tab "Kotlin" %}
 
 Start by opening the Android host portion of your Flutter app
 in Android Studio:
@@ -468,8 +468,8 @@ And replace with the following:
     }
 ```
 
-{% endsample %}
-{% sample "Java" %}
+{% endtab %}
+{% tab "Java" %}
 
 Start by opening the Android host portion of your Flutter app
 in Android Studio:
@@ -584,8 +584,8 @@ And replace with the following:
           }
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 You should now be able to run the app on Android. If using the Android
 Emulator, set the battery level in the Extended Controls panel
@@ -593,8 +593,8 @@ accessible from the **...** button in the toolbar.
 
 ### Step 4: Add an iOS platform-specific implementation
 
-{% samplecode "ios-channel", "Swift,Objective-C" %}
-{% sample "Swift" %}
+{% tabs "darwin-language" %}
+{% tab "Swift" %}
 
 Start by opening the iOS host portion of your Flutter app in Xcode:
 
@@ -677,8 +677,8 @@ batteryChannel.setMethodCallHandler({
 })
 ```
 
-{% endsample %}
-{% sample "Objective-C" %}
+{% endtab %}
+{% tab "Objective-C" %}
 
 Start by opening the iOS host portion of the Flutter app in Xcode:
 
@@ -766,8 +766,8 @@ __weak typeof(self) weakSelf = self;
 }];
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 You should now be able to run the app on iOS.
 If using the iOS Simulator,

@@ -45,8 +45,8 @@ To add a `FlutterFragment` to a host `Activity`, instantiate and
 attach an instance of `FlutterFragment` in `onCreate()` within the
 `Activity`, or at another time that works for your app:
 
-{% samplecode "add-fragment", "Kotlin,Java" %}
-{% sample "Kotlin" %}
+{% tabs "android-language" %}
+{% tab "Kotlin" %}
 
 ```kotlin title="MyActivity.kt"
 class MyActivity : FragmentActivity() {
@@ -94,8 +94,8 @@ class MyActivity : FragmentActivity() {
 }
 ```
 
-{% endsample %}
-{% sample "Java" %}
+{% endtab %}
+{% tab "Java" %}
 
 ```java title="MyActivity.java"
 public class MyActivity extends FragmentActivity {
@@ -142,8 +142,8 @@ public class MyActivity extends FragmentActivity {
 }
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 The previous code is sufficient to render a Flutter UI
 that begins with a call to your `main()` Dart entrypoint,
@@ -153,8 +153,8 @@ Flutter behavior. Flutter depends on various OS signals that
 must  be forwarded from your host `Activity` to `FlutterFragment`.
 These calls are shown in the following example:
 
-{% samplecode "forward-activity-calls", "Kotlin,Java" %}
-{% sample "Kotlin" %}
+{% tabs "android-language" %}
+{% tab "Kotlin" %}
 
 ```kotlin title="MyActivity.kt"
 class MyActivity : FragmentActivity() {
@@ -207,8 +207,8 @@ class MyActivity : FragmentActivity() {
 }
 ```
 
-{% endsample %}
-{% sample "Java" %}
+{% endtab %}
+{% tab "Java" %}
 
 ```java title="MyActivity.java"
 public class MyActivity extends FragmentActivity {
@@ -268,8 +268,8 @@ public class MyActivity extends FragmentActivity {
 }
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 With the OS signals forwarded to Flutter,
 your `FlutterFragment` works as expected.
@@ -294,8 +294,8 @@ To use a pre-warmed `FlutterEngine` in a `FlutterFragment`,
 instantiate a `FlutterFragment` with the `withCachedEngine()`
 factory method.  
 
-{% samplecode "use-prewarmed-engine", "Kotlin,Java" %}
-{% sample "Kotlin" %}
+{% tabs "android-language" %}
+{% tab "Kotlin" %}
 
 ```kotlin title="MyApplication.kt"
 // Somewhere in your app, before your FlutterFragment is needed,
@@ -318,8 +318,8 @@ FlutterEngineCache
 FlutterFragment.withCachedEngine("my_engine_id").build()
 ```
 
-{% endsample %}
-{% sample "Java" %}
+{% endtab %}
+{% tab "Java" %}
 
 ```java title="MyApplication.java"
 // Somewhere in your app, before your FlutterFragment is needed,
@@ -342,8 +342,8 @@ FlutterEngineCache
 FlutterFragment.withCachedEngine("my_engine_id").build();
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 `FlutterFragment` internally knows about [`FlutterEngineCache`][]
 and retrieves the pre-warmed `FlutterEngine` based on the ID
@@ -377,8 +377,8 @@ initial routes (routes other than `/`).
 To facilitate this, `FlutterFragment`'s `Builder`
 allows you to specify a desired initial route, as shown:
 
-{% samplecode "launch-with-initial-route", "Kotlin,Java" %}
-{% sample "Kotlin" %}
+{% tabs "android-language" %}
+{% tab "Kotlin" %}
 
 ```kotlin title="MyActivity.kt"
 // With a new FlutterEngine.
@@ -387,8 +387,8 @@ val flutterFragment = FlutterFragment.withNewEngine()
     .build()
 ```
 
-{% endsample %}
-{% sample "Java" %}
+{% endtab %}
+{% tab "Java" %}
 
 ```java title="MyActivity.java"
 // With a new FlutterEngine.
@@ -397,8 +397,8 @@ FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
     .build();
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 :::note
 `FlutterFragment`'s initial route property has no effect when a pre-warmed
@@ -418,8 +418,8 @@ Dart entrypoint: `main()`, but you can define other entrypoints.
 Dart entrypoint to execute for the given Flutter experience.
 To specify an entrypoint, build `FlutterFragment`, as shown:
 
-{% samplecode "launch-with-custom-entrypoint", "Kotlin,Java" %}
-{% sample "Kotlin" %}
+{% tabs "android-language" %}
+{% tab "Kotlin" %}
 
 ```kotlin title="MyActivity.kt"
 val flutterFragment = FlutterFragment.withNewEngine()
@@ -427,8 +427,8 @@ val flutterFragment = FlutterFragment.withNewEngine()
     .build()
 ```
 
-{% endsample %}
-{% sample "Java" %}
+{% endtab %}
+{% tab "Java" %}
 
 ```java title="MyActivity.java"
 FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
@@ -436,8 +436,8 @@ FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
     .build();
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 The `FlutterFragment` configuration results in the execution
 of a Dart entrypoint called `mySpecialEntrypoint()`.
@@ -469,8 +469,8 @@ then you need to use `TextureView` instead of `SurfaceView`.
 Select a `TextureView` by building a `FlutterFragment` with a
 `texture` `RenderMode`:
 
-{% samplecode "launch-with-rendermode", "Kotlin,Java" %}
-{% sample "Kotlin" %}
+{% tabs "android-language" %}
+{% tab "Kotlin" %}
 
 ```kotlin title="MyActivity.kt"
 // With a new FlutterEngine.
@@ -484,8 +484,8 @@ val flutterFragment = FlutterFragment.withCachedEngine("my_engine_id")
     .build()
 ```
 
-{% endsample %}
-{% sample "Java" %}
+{% endtab %}
+{% tab "Java" %}
 
 ```java title="MyActivity.java"
 // With a new FlutterEngine.
@@ -499,8 +499,8 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
     .build();
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 Using the configuration shown, the resulting `FlutterFragment`
 renders its UI to a `TextureView`.
@@ -537,8 +537,8 @@ for information about controlling the `RenderMode`.
 To enable transparency for a `FlutterFragment`,
 build it with the following configuration:
 
-{% samplecode "launch-with-transparency", "Kotlin,Java" %}
-{% sample "Kotlin" %}
+{% tabs "android-language" %}
+{% tab "Kotlin" %}
 
 ```kotlin title="MyActivity.kt"
 // Using a new FlutterEngine.
@@ -552,8 +552,8 @@ val flutterFragment = FlutterFragment.withCachedEngine("my_engine_id")
     .build()
 ```
 
-{% endsample %}
-{% sample "Java" %}
+{% endtab %}
+{% tab "Java" %}
 
 ```java title="MyActivity.java"
 // Using a new FlutterEngine.
@@ -567,8 +567,8 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
     .build();
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 ## The relationship between `FlutterFragment` and its `Activity`
 
@@ -601,8 +601,8 @@ prevent Flutter from controlling the `Activity`'s system UI,
 use the `shouldAttachEngineToActivity()` method in
 `FlutterFragment`'s `Builder`, as shown:
 
-{% samplecode "attach-to-activity", "Kotlin,Java" %}
-{% sample "Kotlin" %}
+{% tabs "android-language" %}
+{% tab "Kotlin" %}
 
 ```kotlin title="MyActivity.kt"
 // Using a new FlutterEngine.
@@ -616,8 +616,8 @@ val flutterFragment = FlutterFragment.withCachedEngine("my_engine_id")
     .build()
 ```
 
-{% endsample %}
-{% sample "Java" %}
+{% endtab %}
+{% tab "Java" %}
 
 ```java title="MyActivity.java"
 // Using a new FlutterEngine.
@@ -631,8 +631,8 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
     .build();
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 Passing `false` to the `shouldAttachEngineToActivity()`
 `Builder` method prevents Flutter from interacting with
