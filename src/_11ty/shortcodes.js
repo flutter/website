@@ -1,15 +1,19 @@
-import { slugify } from './utils/slugify.js';
+import {slugify} from './utils/slugify.js';
 
 export function registerShortcodes(eleventyConfig) {
   _setupTabs(eleventyConfig);
 }
 
 function _setupTabs(eleventyConfig) {
-  let tabs = [];
+  // Variable shared between all tabs to ensure each has a unique ID.
   let currentTabId = 0;
+
+  // Variables that are shared between the tabs within a tabs shortcode,
+  // and should be reset before returning from tabs.
+  let tabs = [];
   let markTabAsActive = true;
 
-  eleventyConfig.addPairedShortcode('tabs', function(content, saveKey) {
+  eleventyConfig.addPairedShortcode('tabs', function (content, saveKey) {
     let tabMarkup = `<div class="tabs-wrapper" ${saveKey ? `data-tab-save-key="${slugify(saveKey)}"` : ''}><ul class="nav nav-tabs" role="tablist">`;
     let activeTab = true;
 
@@ -35,7 +39,7 @@ function _setupTabs(eleventyConfig) {
     return tabMarkup;
   });
 
-  eleventyConfig.addPairedShortcode('tab', function(content, tabName) {
+  eleventyConfig.addPairedShortcode('tab', function (content, tabName) {
     const tabIdNumber = currentTabId++;
     tabs.push({name: tabName, id: tabIdNumber});
     const tabId = `${tabIdNumber}-tab`;
@@ -47,6 +51,7 @@ ${content}
 </div>
 `;
 
+    // No other tabs should be marked as active.
     markTabAsActive = false;
 
     return tabContent;
