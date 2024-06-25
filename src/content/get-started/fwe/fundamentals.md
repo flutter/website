@@ -154,12 +154,6 @@ Hot restart calls both.
 If these features aren’t familiar to you, 
 read [Introduction to Dart][] from the Dart documentation.
 
-:::note
-If you're interested in why Flutter chose Dart, 
-you can read about it in the resource linked below. 
-The other link has more resources for learning Dart.
-:::
-
 ## Widgets
 
 In regard to Flutter, you'll often hear
