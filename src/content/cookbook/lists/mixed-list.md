@@ -122,7 +122,7 @@ ListView.builder(
 ## Interactive example
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad title="" run="true"
+```dartpad title="Flutter create mixed lists hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 
 void main() {

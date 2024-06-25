@@ -143,7 +143,7 @@ SliverList(
 ## Interactive example
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad title="" run="true"
+ run="true"
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
