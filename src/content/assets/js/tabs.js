@@ -40,7 +40,7 @@ function setupTabs() {
       const currentOperatingSystem = _getOsForArchive();
 
       if (currentOperatingSystem) {
-        _activateTabWithSaveId(currentOperatingSystem);
+        _activateTabWithSaveId(tabWrapper, currentOperatingSystem);
       }
     }
   });

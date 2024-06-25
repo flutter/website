@@ -298,7 +298,7 @@ function getProvenanceLink(os, release, date, channel) {
 
 // Send requests to render the tables.
 document.addEventListener("DOMContentLoaded", function(_) {
-  const foundSdkArchivesElement = document.getElementById('sdk-archives') !== null;
+  const foundSdkArchivesElement = document.querySelector('.tabs-wrapper[data-tab-save-key="os-archive-tabs"]') !== null;
   if (foundSdkArchivesElement) {
     fetchFlutterReleases('windows', updateTable, updateTableFailed);
     fetchFlutterReleases('macos', updateTable, updateTableFailed);
