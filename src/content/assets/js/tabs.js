@@ -1,3 +1,6 @@
+/**
+ * Set up interactivity of tabs created with the `{% tabs %}` shortcode.
+ */
 function setupTabs() {
   const tabsWrappers = document.querySelectorAll('.tabs-wrapper');
 
@@ -5,6 +8,7 @@ function setupTabs() {
     const saveKey = tabWrapper.dataset.tabSaveKey;
     const localStorageKey = `tab-save-${saveKey}`;
     const tabs = tabWrapper.querySelectorAll('a.nav-link');
+    let tabToChangeTo;
 
     tabs.forEach(function (tab) {
       const saveId = tab.dataset.tabSaveId;
@@ -12,7 +16,9 @@ function setupTabs() {
       tab.addEventListener('click', function (event) {
         event.preventDefault();
         if (saveKey && saveId) {
-          _activateTabsWithSaveId(saveKey, saveId);
+          // If the tab wrapper and this tab have a save key and ID defined,
+          // switch other tabs to the tab with the same ID.
+          _findAndActivateTabsWithSaveId(saveKey, saveId);
           localStorage.setItem(localStorageKey, saveId);
         } else {
           _clearActiveTabs(tabs);
@@ -21,11 +27,22 @@ function setupTabs() {
       });
 
       if (saveId && localStorage.getItem(localStorageKey) === saveId) {
-        tab.click();
-      } else if (tabWrapper.id === 'os-archive-tabs') {
-        // TODO(parlough): Add default selection for archive tabs.
+        tabToChangeTo = tab;
       }
     });
+
+    if (tabToChangeTo) {
+      tabToChangeTo.click();
+    } else if (saveKey === 'os-archive-tabs') {
+      // If this tab wrapper is for the archive page,
+      // and no tab was retrieved from local storage,
+      // switch to the tab for the current OS.
+      const currentOperatingSystem = _getOsForArchive();
+
+      if (currentOperatingSystem) {
+        _activateTabWithSaveId(currentOperatingSystem);
+      }
+    }
   });
 }
 
@@ -43,17 +60,20 @@ function _setActiveTab(tab) {
   document.getElementById(`${tab.id}-panel`)?.classList.add('active');
 }
 
-function _activateTabsWithSaveId(saveKey, saveId) {
+function _findAndActivateTabsWithSaveId(saveKey, saveId) {
   const tabsWrappers = document.querySelectorAll(`.tabs-wrapper[data-tab-save-key="${saveKey}"]`);
 
-  tabsWrappers.forEach(function (tabWrapper) {
-    const tabToActivate = tabWrapper.querySelector(`a.nav-link[data-tab-save-id="${saveId}"]`);
-    if (tabToActivate) {
-      const tabs = tabWrapper.querySelectorAll('a.nav-link');
-      _clearActiveTabs(tabs);
-      _setActiveTab(tabToActivate);
-    }
-  });
+  tabsWrappers.forEach((tabWrapper) =>
+      _activateTabWithSaveId(tabWrapper, saveId));
+}
+
+function _activateTabWithSaveId(tabWrapper, saveId) {
+  const tabToActivate = tabWrapper.querySelector(`a.nav-link[data-tab-save-id="${saveId}"]`);
+  if (tabToActivate) {
+    const tabs = tabWrapper.querySelectorAll('a.nav-link');
+    _clearActiveTabs(tabs);
+    _setActiveTab(tabToActivate);
+  }
 }
 
 function _getOsForArchive() {
