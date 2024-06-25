@@ -117,41 +117,24 @@ To use Flutter debugging features such as hot reload,
 consult [Debugging your add-to-app module][].
 :::
 
-{% comment %} Nav tabs {% endcomment -%}
-<ul class="nav nav-tabs" id="ios-project-setup" role="tablist">
-    <li class="nav-item">
-        <a class="nav-link active" id="embed-using-cocoapods-tab" href="#embed-using-cocoapods" role="tab" aria-controls="embed-using-cocoapods" aria-selected="true">Use CocoaPods</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="embed-using-frameworks-tab" href="#embed-using-frameworks" role="tab" aria-controls="embed-using-frameworks" aria-selected="false">Use frameworks</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="embed-using-both-tab" href="#embed-using-both" role="tab" aria-controls="embed-using-both" aria-selected="false">Use frameworks and CocoaPods</a>
-    </li>
-</ul>
+{% tabs %}
+{% tab "Use CocoaPods" %}
 
-{% comment %} Tab panes {% endcomment -%}
-<div class="tab-content">
+{% render docs/add-to-app/ios-project/embed-cocoapods.md, yt-embed: site.yt.embed, yt-set: site.yt.set, yt-watch: site.yt.watch  %}
 
-<div class="tab-pane active" id="embed-using-cocoapods" role="tabpanel" aria-labelledby="embed-using-cocoapods-tab">
-
-{% render docs/add-to-app/ios-project/embed-cocoapods.md, yt-embed:
-site.yt.embed, yt-set: site.yt.set, yt-watch: site.yt.watch  %}
-
-</div>
-
-<div class="tab-pane" id="embed-using-frameworks" role="tabpanel" aria-labelledby="embed-using-frameworks-tab">
+{% endtab %}
+{% tab "Use frameworks" %}
 
 {% render docs/add-to-app/ios-project/embed-frameworks.md %}
 
-</div>
-<div class="tab-pane" id="embed-using-both" role="tabpanel" aria-labelledby="embed-using-both-tab">
+{% endtab %}
+{% tab "Use frameworks and CocoaPods" %}
 
 {% render docs/add-to-app/ios-project/embed-split.md %}
 
-</div>
-</div>
-{% comment %} End: Tab panes. {% endcomment %}
+{% endtab %}
+{% endtabs %}
+
 
 ## Set local network privacy permissions
 

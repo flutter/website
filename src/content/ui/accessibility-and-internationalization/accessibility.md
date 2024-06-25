@@ -98,26 +98,8 @@ navigate around your app.
 
 **To turn on the screen reader on your device, complete the following steps:**
 
-{% comment %} Nav tabs {% endcomment -%}
-<ul class="nav nav-tabs" id="editor-setup" role="tablist">
-    <li class="nav-item">
-        <a class="nav-link active" id="talkback-tab" href="#talkback" role="tab" aria-controls="talkback" aria-selected="true">TalkBack on Android</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="voiceover-tab" href="#voiceover" role="tab" aria-controls="voiceover" aria-selected="false">VoiceOver on iPhone</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="browsers-tab" href="#browsers" role="tab" aria-controls="browsers" aria-selected="false">Browsers</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="desktop-tab" href="#desktop" role="tab" aria-controls="desktop" aria-selected="false">Desktop</a>
-    </li>
-</ul>
-
-{% comment %} Tab panes {% endcomment -%}
-<div class="tab-content">
-
-<div class="tab-pane active" id="talkback" role="tabpanel" aria-labelledby="talkback-tab">
+{% tabs %}
+{% tab "TalkBack on Android" %}
 
 1. On your device, open **Settings**.
 2. Select **Accessibility** and then **TalkBack**.
@@ -129,9 +111,8 @@ accessibility features, view the following video.
 
 <iframe width="560" height="315" src="{{site.yt.embed}}/FQyj_XTl01w" title="Learn about the accessibility features on the Google Pixel" {{site.yt.set}}></iframe>
 
-</div>
-
-<div class="tab-pane" id="voiceover" role="tabpanel" aria-labelledby="voiceover-tab">
+{% endtab %}
+{% tab "VoiceOver on iPhone" %}
 
 1. On your device, open **Settings > Accessibility > VoiceOver**
 2. Turn the VoiceOver setting on or off
@@ -141,9 +122,8 @@ accessibility features, view the following video.
 
 <iframe width="560" height="315" src="{{site.yt.embed}}/qDm7GiKra28" title="Learn how to navigate your iPhone or iPad with VoiceOver" {{site.yt.set}}></iframe>
 
-</div>
-
-<div class="tab-pane" id="browsers" role="tabpanel" aria-labelledby="browsers-tab">
+{% endtab %}
+{% tab "Browsers" %}
 
 For web, the following screen readers are currently supported:
 
@@ -172,9 +152,8 @@ void main() {
 }
 ```
 
-</div>
-
-<div class="tab-pane" id="desktop" role="tabpanel" aria-labelledby="desktop-tab">
+{% endtab %}
+{% tab "Desktop" %}
 
 Windows comes with a screen reader called Narrator
 but some developers recommend using the more popular
@@ -197,8 +176,8 @@ To learn about using Orca, check out
 
 [orca]: https://www.a11yproject.com/posts/getting-started-with-orca
 
-</div>
-</div>{% comment %} End: Tab panes. {% endcomment -%}
+{% endtab %}
+{% endtabs %}
 
 <br/>
 

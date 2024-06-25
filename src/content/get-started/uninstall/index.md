@@ -1,32 +1,23 @@
 ---
 title: Uninstall Flutter
 description: How to remove the Flutter SDK.
-toc: true
+toc: false
 os-list: [Windows, macOS, Linux, ChromeOS]
 ---
 
-To remove all of Flutter from your {{os}} development machine,
+To remove all of Flutter from your development machine,
 delete the directories that store Flutter and its configuration files.
 
 ## Uninstall the Flutter SDK
 
 Select your development platform from the following tabs.
 
-{% comment %} Nav tabs {% endcomment -%}
-<ul class="nav nav-tabs" id="base-os-tabs" role="tablist">
-{% for os in os-list %}
-{% assign id = os | downcase -%}
-  <li class="nav-item">
-    <a class="nav-link {%- if id == 'windows' %} active {% endif %}" id="{{id}}-tab" href="#{{id}}" role="tab" aria-controls="{{id}} {{id}}-dl {{id}}-pub" aria-selected="true">{{os}}</a>
-  </li>
-{% endfor -%}
-</ul>
+{% tabs %}
 
-{% comment %} Tab panes {% endcomment -%}
-<div class="tab-content">
 {% for os in os-list %}
-{% assign id = os | downcase -%}
+{% tab os %}
 
+{% assign id = os | downcase -%}
 {% case os %}
 {% when 'Windows' -%}
 {% assign dirinstall='C:\\user\{username}\dev\' %}
@@ -82,8 +73,6 @@ Select your development platform from the following tabs.
 {{prompt}} {{rm}} {{dirconfig}}.pub-cache
 {% endcapture %}
 {% endcase -%}
-
-<div class="tab-pane {%- if id == 'windows' %} active {% endif %}" id="{{id}}" role="tabpanel" aria-labelledby="{{id}}-tab">
 
 This guide presumes that you installed Flutter in `{{path}}` on {{os}}.
 
@@ -148,11 +137,10 @@ remove the `.pub-cache` directory from your home directory.
 {% include docs/install/reqs/{{os | downcase}}/unset-path.md terminal=terminal -%}
 {% endcase %}
 
-</div>
-
+{% endtab %}
 {% endfor -%}
-</div>
-{% comment %} End: Tab panes. {% endcomment -%}
+
+{% endtabs %}
 
 ## Reinstall Flutter
 

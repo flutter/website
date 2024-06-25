@@ -1,10 +1,6 @@
 
 {% assign id =  include.os | downcase -%}
 
-<div id="{{id}}-pub" class="tab-pane
-  {%- if id == 'windows' %} active {% endif %}"
-  role="tabpanel" aria-labelledby="{{id}}-tab">
-
 1. Configure a proxy.
    To configure a proxy, check out the
    [Dart documentation on proxies]({{site.dart-site}}/tools/pub/troubleshoot#pub-get-fails-from-behind-a-corporate-firewall).
@@ -41,5 +37,3 @@
    ```
 
    {% endif %}
-
-</div>

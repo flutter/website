@@ -148,23 +148,8 @@ you [attached the device to your Mac](#attach).
 
 Enabling certificates varies in different versions of iOS.
 
-{% comment %} Nav tabs {% endcomment -%}
-<ul class="nav nav-tabs" id="ios-versions" role="tablist">
-    <li class="nav-item">
-        <a class="nav-link" id="ios14-tab" href="#ios14" role="tab" aria-controls="ios14" aria-selected="true">iOS 14</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="ios15-tab" href="#ios15" role="tab" aria-controls="ios15" aria-selected="false">iOS 15</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link active" id="ios16-tab" href="#ios16" role="tab" aria-controls="ios16" aria-selected="false">iOS 16 or later</a>
-    </li>
-</ul>
-
-{% comment %} Tab panes {% endcomment -%}
-<div class="tab-content">
-
-<div class="tab-pane" id="ios14" role="tabpanel" aria-labelledby="ios14-tab">
+{% tabs "ios-versions" %}
+{% tab "iOS 14" %}
 
 1. Open the **Settings** app on the iOS device.
 
@@ -173,9 +158,8 @@ Enabling certificates varies in different versions of iOS.
 
 1. Tap to toggle your Certificate to **Enable**
 
-</div>
-
-<div class="tab-pane" id="ios15" role="tabpanel" aria-labelledby="ios15-tab">
+{% endtab %}
+{% tab "iOS 15" %}
 
 1. Open the **Settings** app on the iOS device.
 
@@ -184,9 +168,8 @@ Enabling certificates varies in different versions of iOS.
 
 1. Tap to toggle your Certificate to **Enable**.
 
-</div>
-
-<div class="tab-pane active" id="ios16" role="tabpanel" aria-labelledby="ios16-tab">
+{% endtab %}
+{% tab "iOS 16 or later" %}
 
 1. Open the **Settings** app on the iOS device.
 
@@ -206,9 +189,8 @@ Enabling certificates varies in different versions of iOS.
 
 1. When the dialog displays, tap **Trust**.
 
-</div>
-</div>
-{% comment %} End: Tab panes. {% endcomment %}
+{% endtab %}
+{% endtabs %}
 
 If the **codesign wants to access key...** dialog displays:
 

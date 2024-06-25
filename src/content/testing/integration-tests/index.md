@@ -1,7 +1,6 @@
 ---
 title: Check app functionality with an integration test
 description: Learn how to write integration tests
-os-list: [Windows, macOS, Linux]
 ---
 
 <?code-excerpt path-base="testing/integration_tests/how_to"?>
@@ -316,35 +315,23 @@ complete the following tasks.
 
 Based on platform, the command result should resemble the following output.
 
-{% comment %} Nav tabs {% endcomment -%}
-<ul class="nav nav-tabs" id="base-os-tabs" role="tablist">
-{% for os in os-list %}
-{% assign id = os | downcase -%}
-  <li class="nav-item">
-    <a class="nav-link {%- if id == 'windows' %} active {% endif %}" id="{{id}}-tab" href="#{{id}}" role="tab" aria-controls="{{id}} {{id}}-dl {{id}}-pub" aria-selected="true">{{os}}</a>
-  </li>
-{% endfor -%}
-</ul>
+{% tabs %}
+{% tab "Windows" %}
 
-{% comment %} Tab panes {% endcomment -%}
-<div class="tab-content">
-{% for os in os-list %}
-{% assign id = os | downcase -%}
-<div class="tab-pane {%- if id == 'windows' %} active {% endif %}" id="{{id}}" role="tabpanel" aria-labelledby="{{id}}-tab">
+{% render docs/test/integration/windows-example.md %}
 
-{% case id %}
-{% when 'windows' %}
-  {% render docs/test/integration/windows-example.md %}
-{% when 'macos' %}
-  {% render docs/test/integration/macos-example.md %}
-{% when 'linux' %}
-  {% render docs/test/integration/linux-example.md %}
-{% endcase %}
-</div>
+{% endtab %}
+{% tab "macOS" %}
 
-{% endfor -%}
-</div>
-{% comment %} End: Tab panes. {% endcomment %}
+{% render docs/test/integration/macos-example.md %}
+
+{% endtab %}
+{% tab "Linux" %}
+
+{% render docs/test/integration/linux-example.md %}
+
+{% endtab %}
+{% endtabs %}
 
 ---
 

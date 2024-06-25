@@ -4,7 +4,7 @@ short-title: VS Code
 description: How to develop Flutter apps in Visual Studio Code.
 ---
 
-<ul class="nav nav-tabs" id="ide" role="tablist">
+<ul class="nav nav-tabs" id="ide-tabs" role="tablist">
   <li class="nav-item">
     <a class="nav-link" href="/tools/android-studio" role="tab" aria-selected="false">Android Studio and IntelliJ</a>
   </li>

@@ -12,20 +12,8 @@ Warning: Building for device with codesigning disabled. You will have to manuall
 Building com.example.myApp for device (ios)...
 ```
 
-{% comment %} Nav tabs {% endcomment -%}
-<ul class="nav nav-tabs" id="vscode-to-xcode-ios-setup" role="tablist">
-    <li class="nav-item">
-        <a class="nav-link active" id="from-vscode-to-xcode-ios-tab" href="#from-vscode-to-xcode-ios" role="tab" aria-controls="from-vscode-to-xcode-ios" aria-selected="true">Start from VS Code</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="from-xcode-ios-tab" href="#from-xcode-ios" role="tab" aria-controls="from-xcode-ios" aria-selected="false">Start from Xcode</a>
-    </li>
-</ul>
-
-{% comment %} Tab panes {% endcomment -%}
-<div class="tab-content">
-
-<div class="tab-pane active" id="from-vscode-to-xcode-ios" role="tabpanel" aria-labelledby="from-vscode-to-xcode-ios-tab">
+{% tabs "darwin-debug-flow" %}
+{% tab "Start from VS Code" %}
 
 #### Start debugging with VS Code first {:#vscode-ios}
 
@@ -45,9 +33,8 @@ To attach to the Flutter app in Xcode:
 1. Select **Runner**. It should be at the top of the
    **Attach to Process** menu under the **Likely Targets** heading.
 
-</div>
-
-<div class="tab-pane" id="from-xcode-ios" role="tabpanel" aria-labelledby="from-xcode-ios-tab">
+{% endtab %}
+{% tab "Start from Xcode" %}
 
 #### Start debugging with Xcode first {:#xcode-ios}
 
@@ -115,6 +102,5 @@ If you use Xcode to debug most of your code, start with this section.
     ![Alt text](/assets/images/docs/testing/debugging/vscode-ui/screens/vscode-add-attach-uri-filled.png)
 {% endcomment %}
 
-</div>
-</div>
-{% comment %} End: Tab panes. {% endcomment -%}
+{% endtab %}
+{% endtabs %}
