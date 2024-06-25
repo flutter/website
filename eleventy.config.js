@@ -2,14 +2,7 @@
 // It configures the core 11ty behavior and registers
 // plugins and customization that live in `/src/_11ty`.
 
-import {
-  activeNavForPage,
-  arrayToSentenceString,
-  breadcrumbsForPage,
-  generateToc,
-  regexReplace,
-  toISOString,
-} from './src/_11ty/filters.js';
+import { registerFilters } from './src/_11ty/filters.js';
 import { registerShortcodes } from './src/_11ty/shortcodes.js';
 import { markdown } from './src/_11ty/plugins/markdown.js';
 import { configureHighlighting } from './src/_11ty/plugins/highlight.js';
@@ -51,27 +44,8 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addPlugin(EleventyRenderPlugin);
 
+  registerFilters(eleventyConfig);
   registerShortcodes(eleventyConfig);
-
-  // TODO(parlough): Make this more generic.
-  eleventyConfig.addFilter('children_pages', function (pages, pageUrl) {
-    return pages.filter((page) => page.url.includes(pageUrl) && page.url !== pageUrl);
-  });
-
-  // TODO(parlough): Make this more generic.
-  eleventyConfig.addFilter('widget_filter', function (widgets, field, subName) {
-    return widgets.filter((comp) => comp[field]?.includes(subName) ?? false);
-  });
-
-  eleventyConfig.addFilter('regex_replace', regexReplace);
-  eleventyConfig.addFilter('toISOString', toISOString);
-  eleventyConfig.addFilter('active_nav_for_page', activeNavForPage);
-  eleventyConfig.addFilter('array_to_sentence_string', arrayToSentenceString);
-  eleventyConfig.addFilter('throw_error', function (error) {
-    throw new Error(error);
-  });
-  eleventyConfig.addFilter('generate_toc', generateToc);
-  eleventyConfig.addFilter('breadcrumbsForPage', breadcrumbsForPage);
 
   eleventyConfig.addTemplateFormats('scss');
   eleventyConfig.addWatchTarget('src/_sass');
