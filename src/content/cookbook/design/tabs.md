@@ -96,7 +96,7 @@ body: const TabBarView(
 ## Interactive example
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter TabBar DartPad hands-on example" run="true"
 import 'package:flutter/material.dart';
 
 void main() {

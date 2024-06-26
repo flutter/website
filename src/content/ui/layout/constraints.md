@@ -166,7 +166,7 @@ Use the numbered horizontal scrolling bar to switch between
 29 different examples.
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Constraints DartPad hands-on example" run="true"
 import 'package:flutter/material.dart';
 
 void main() => runApp(const HomePage());

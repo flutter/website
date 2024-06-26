@@ -505,7 +505,7 @@ You now have a draggable, tappable photo filter carousel.
 ## Interactive example
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter photo filter carousel hands-on example in DartPad" run="true"
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';

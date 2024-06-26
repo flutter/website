@@ -129,7 +129,7 @@ of the Flutter DevTools tooling.
 The starting app is displayed in the following DartPad.
 
 <?code-excerpt "lib/starter.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter beginning getting started hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 
 void main() => runApp(const SignUpApp());
@@ -877,7 +877,7 @@ the animation works, and that clicking the
 ### Complete sample
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter complete getting started hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 
 void main() => runApp(const SignUpApp());
