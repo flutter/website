@@ -30,6 +30,15 @@ img {
   &[width][height] {
     height: auto;
   }
+  &.w25p {
+    width: 25%;
+  }
+  &.w50p {
+    width: 50%;
+  }
+  &.w75p {
+    width: 75%;
+  }
 }
 
 picture {
