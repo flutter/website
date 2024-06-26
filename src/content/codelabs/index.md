@@ -188,10 +188,16 @@ Learn how to use Flutter with other technologies.
   developing with Flutter. You will also learn to use
   the Auth and Firestore emulators.
 
+* [Send and receive notifications for a Flutter app using Firebase Cloud Messaging][]<br>
+  Learn how to develop a multi-platform app with Flutter
+  and Firebase Cloud Messaging, integrating FCM to send and
+  receive messages on Android, iOS, and web.
+
 [Add a user authentication flow to a Flutter app using FirebaseUI]: {{site.firebase}}/codelabs/firebase-auth-in-flutter-apps
 [firebase-ws]: {{site.yt.watch}}?v=wUSkeTaBonA
 [Get to know Firebase for Flutter]: {{site.firebase}}/codelabs/firebase-get-to-know-flutter
 [Local development for your Flutter apps using the Firebase Emulator Suite]: {{site.firebase}}/codelabs/get-started-firebase-emulators-and-flutter
+[Send and receive notifications for a Flutter app using Firebase Cloud Messaging]: {{site.firebase}}/codelabs/firebase-fcm-flutter
 
 ### Build games with Flutter
 
