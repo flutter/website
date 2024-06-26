@@ -60,32 +60,18 @@ Try to keep to the current version of Xcode.
 
 With Xcode, you can run Flutter apps on an iOS device or on the simulator.
 
-{% comment %} Nav tabs {% endcomment -%}
-<ul class="nav nav-tabs" id="ios-devices-vp" role="tablist">
-    <li class="nav-item">
-        <a class="nav-link active" id="virtual-tab" href="#virtual" role="tab" aria-controls="virtual" aria-selected="true">Virtual Device</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="physical-tab" href="#physical" role="tab" aria-controls="physical" aria-selected="false">Physical Device</a>
-    </li>
-</ul>
-
-{% comment %} Tab panes {% endcomment -%}
-<div class="tab-content">
-
-<div class="tab-pane active" id="virtual" role="tabpanel" aria-labelledby="virtual-tab">
+{% tabs "ios-simulator-or-not" %}
+{% tab "Virtual device" %}
 
 {% include docs/install/devices/ios-simulator.md %}
 
-</div>
-
-<div class="tab-pane" id="physical" role="tabpanel" aria-labelledby="physical-tab">
+{% endtab %}
+{% tab "Physical device" %}
 
 {% include docs/install/devices/ios-physical.md %}
 
-</div>
-</div>
-{% comment %} End: Tab panes. {% endcomment -%}
+{% endtab %}
+{% endtabs %}
 
 {% endif %}
 

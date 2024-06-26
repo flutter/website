@@ -1,4 +1,3 @@
-
 ## Configure Android development
 
 {% case include.devos %}
@@ -32,23 +31,8 @@ Otherwise, you can skip to the [next section][check-dev].
 
 [check-dev]: #check-your-development-setup
 
-{% comment %} Nav tabs {% endcomment -%}
-<ul class="nav nav-tabs" id="android-studio-start" role="tablist">
-    <li class="nav-item">
-        <a class="nav-link active" id="first-start-tab" href="#first-start" role="tab" aria-controls="first-start" aria-selected="true">First time using Android Studio</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="later-start-tab" href="#later-start" role="tab" aria-controls="later-start" aria-selected="false">Current Android Studio User</a>
-    </li>
-</ul>
-
-{% comment %} Tab panes {% endcomment -%}
-<div class="tab-content">
-
-<div class="tab-pane active"
-     id="first-start"
-     role="tabpanel"
-     aria-labelledby="first-start-tab">
+{% tabs "android-studio-experience" %}
+{% tab "First time using Android Studio" %}
 
 1. Launch **Android Studio**.
 
@@ -64,12 +48,8 @@ Otherwise, you can skip to the [next section][check-dev].
    * **Android SDK Platform-Tools**
    * **Android Emulator**
 
-</div>
-
-<div class="tab-pane"
-     id="later-start"
-     role="tabpanel"
-     aria-labelledby="later-start-tab">
+{% endtab %}
+{% tab "Current Android Studio User" %}
 
 1. Launch **Android Studio**.
 
@@ -129,40 +109,25 @@ Otherwise, you can skip to the [next section][check-dev].
 
    1. When the install finishes, click **Finish**.
 
-</div>
-</div>
-{% comment %} End: Tab panes. {% endcomment %}
+{% endtab %}
+{% endtabs %}
 
 ### Configure your target Android device
 
-{% comment %} Nav tabs {% endcomment %}
-<ul class="nav nav-tabs" id="android-devices-vp" role="tablist">
-    <li class="nav-item">
-        <a class="nav-link active" id="virtual-tab" href="#virtual" role="tab" aria-controls="virtual" aria-selected="true">Virtual Device</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="physical-tab" href="#physical" role="tab" aria-controls="physical" aria-selected="false">Physical Device</a>
-    </li>
-</ul>
-
-{% comment %} Tab panes {% endcomment -%}
-<div class="tab-content">
-
-<div class="tab-pane active" id="virtual" role="tabpanel" aria-labelledby="virtual-tab">
+{% tabs "android-emulator-or-not" %}
+{% tab "Virtual device" %}
 
 {% include docs/install/devices/android-emulator.md devos=include.devos %}
 
-</div>
-
-<div class="tab-pane" id="physical" role="tabpanel" aria-labelledby="physical-tab">
+{% endtab %}
+{% tab "Physical device" %}
 
 {% include docs/install/devices/android-physical.md devos=include.devos %}
 
-</div>
-</div>
-{% comment %} End: Tab panes. {% endcomment -%}
+{% endtab %}
+{% endtabs %}
 
-{% if attempt-time == 'first' %}
+{% if include.attempt == 'first' %}
 
 ### Agree to Android licenses
 

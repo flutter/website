@@ -152,8 +152,8 @@ while additional loading continues in Dart.
 To achieve this, the following
 Android APIs might be helpful:
 
-{% samplecode "android-splash-alignment", "Kotlin,Java" %}
-{% sample "Kotlin" %}
+{% tabs "android-language" %}
+{% tab "Kotlin" %}
 
 ```kotlin title="MainActivity.kt"
 import android.os.Build
@@ -177,8 +177,8 @@ class MainActivity : FlutterActivity() {
 }
 ```
 
-{% endsample %}
-{% sample "Java" %}
+{% endtab %}
+{% tab "Java" %}
 
 ```java title="MainActivity.java"
 import android.os.Build;
@@ -208,8 +208,8 @@ public class MainActivity extends FlutterActivity {
 }
 ```
 
-{% endsample %}
-{% endsamplecode %}
+{% endtab %}
+{% endtabs %}
 
 Then, you can reimplement the first frame in Flutter
 that shows elements of your Android launch screen in

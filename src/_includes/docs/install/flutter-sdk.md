@@ -12,31 +12,15 @@
 To install the Flutter SDK, you can use the VS Code Flutter extension
 or download and install the Flutter bundle yourself.
 
-{% comment %} Nav tabs {% endcomment -%}
-<ul class="nav nav-tabs" id="flutter-install" role="tablist">
-    <li class="nav-item">
-        <a class="nav-link active" id="vscode-tab" href="#vscode" role="tab" aria-controls="vscode" aria-selected="true">Use VS Code to install</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="download-tab" href="#download" role="tab" aria-controls="download" aria-selected="false">Download and install</a>
-    </li>
-</ul>
-
-{% comment %} Tab panes {% endcomment -%}
-<div class="tab-content">
-
-<div class="tab-pane active" id="vscode" role="tabpanel" aria-labelledby="vscode-tab">
+{% tabs "vs-code-or-download" %}
+{% tab "Use VS Code to install" %}
 
 {% include docs/install/flutter/vscode.md os=include.os terminal=include.terminal target=v-target %}
 
-</div>
+{% endtab %}
+{% tab "Download and install" %}
 
-<div class="tab-pane" id="download" role="tabpanel" aria-labelledby="download-tab">
+{% include docs/install/flutter/download.md os=include.os terminal=include.terminal target=v-target %}
 
-{% include docs/install/flutter/download.md os=include.os terminal=include.terminal target=v-target%}
-
-</div>
-</div>
-
-{% comment %} End: Tab panes. {% endcomment -%}
-
+{% endtab %}
+{% endtabs %}

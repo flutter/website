@@ -12,20 +12,8 @@ Building Windows application...                                    31.4s
 √  Built build\windows\runner\Debug\my_app.exe.
 ```
 
-{% comment %} Nav tabs {% endcomment -%}
-<ul class="nav nav-tabs" id="vscode-to-vs-setup" role="tablist">
-    <li class="nav-item">
-        <a class="nav-link active" id="from-vscode-to-vs-tab" href="#from-vscode-to-vs" role="tab" aria-controls="from-vscode-to-vs" aria-selected="true">Start from VS Code</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="from-vs-to-vscode-tab" href="#from-vs-to-vscode" role="tab" aria-controls="from-vs-to-vscode" aria-selected="false">Start from Visual Studio</a>
-    </li>
-</ul>
-
-{% comment %} Tab panes {% endcomment -%}
-<div class="tab-content">
-
-<div class="tab-pane active" id="from-vscode-to-vs" role="tabpanel" aria-labelledby="from-vscode-to-vs-tab">
+{% tabs %}
+{% tab "Start from VS Code" %}
 
 #### Start debugging with VS Code first {:#vscode-windows}
 
@@ -81,9 +69,8 @@ If you use VS Code to debug most of your code, start with this section.
    ![Visual Studio debugger running and monitoring the Flutter app](/assets/images/docs/testing/debugging/native/visual-studio/debugger-active.png){:width="100%"}
 {% endcomment %}
 
-</div>
-
-<div class="tab-pane" id="from-vs-to-vscode" role="tabpanel" aria-labelledby="from-vs-to-vscode-tab">
+{% endtab %}
+{% tab "Start from Visual Studio" %}
 
 #### Start debugging with Visual Studio first
 
@@ -150,6 +137,5 @@ If you use Visual Studio to debug most of your code, start with this section.
    ![Alt text](/assets/images/docs/testing/debugging/vscode-ui/screens/vscode-add-attach-uri-filled.png)
 {% endcomment %}
 
-</div>
-</div>
-{% comment %} End: Tab panes. {% endcomment -%}
+{% endtab %}
+{% endtabs %}

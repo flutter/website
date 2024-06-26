@@ -48,10 +48,6 @@ EOT
       {%- assign file-format = 'tar.xz' %}
 {% endcase %}
 
-<div id="{{id}}" class="tab-pane
-  {%- if id == 'windows' %} active {% endif %}"
-  role="tabpanel" aria-labelledby="{{id}}-tab">
-
 This procedure requires using {{shell}}.
 
 1. Open a new window in {{shell}} to prepare running scripts.
@@ -120,5 +116,3 @@ file that your preferred shell uses. This would resemble the following:
 ```console
 {{permaddexample}} 
 ```
-
-</div>

@@ -41,20 +41,8 @@ the Flutter module still runs correctly.
 
 ## Integrate your Flutter module
 
-{% comment %} Nav tabs {% endcomment -%}
-<ul class="nav nav-tabs" id="add-to-app-android" role="tablist">
-    <li class="nav-item">
-        <a class="nav-link active" id="with-android-studio-tab" href="#with-android-studio" role="tab" aria-controls="with-android-studio" aria-selected="true">With Android Studio</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="without-android-studio-tab" href="#without-android-studio" role="tab" aria-controls="without-android-studio" aria-selected="false">Without Android Studio</a>
-    </li>
-</ul>
-
-{% comment %} Tab panes {% endcomment -%}
-<div class="tab-content">
-
-<div class="tab-pane active" id="with-android-studio" role="tabpanel" aria-labelledby="with-android-studio-tab">
+{% tabs %}
+{% tab "With Android Studio" %}
 
 ### Integrate with Android Studio {:.no_toc}
 
@@ -102,9 +90,8 @@ set your Project pane to display **Project Files**.
 This shows all files without filtering.
 :::
 
-</div>
-
-<div class="tab-pane" id="without-android-studio" role="tabpanel" aria-labelledby="without-android-studio-tab">
+{% endtab %}
+{% tab "Without Android Studio" %}
 
 ### Integrate without Android Studio {:.no_toc}
 
@@ -204,9 +191,8 @@ host Android app, make the following changes.
    }
    ```
 
-</div>
-</div>
-{% comment %} End: Tab panes. {% endcomment -%}
+{% endtab %}
+{% endtabs %}
 
 ## Add the Flutter module as a dependency
 
@@ -225,20 +211,8 @@ existing app in Gradle. You can achieve this in two ways.
     one-click build process, but requires the Flutter SDK.
     This is the mechanism used by the Android Studio IDE plugin.
 
-{% comment %} Nav tabs {% endcomment -%}
-<ul class="nav nav-tabs" id="add-to-app-android-deps" role="tablist">
-    <li class="nav-item">
-        <a class="nav-link active" id="android-archive-tab" href="#android-archive" role="tab" aria-controls="android-archive" aria-selected="true">Android Archive</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="module-source-tab" href="#module-source" role="tab" aria-controls="module-source" aria-selected="false">Module source code</a>
-    </li>
-</ul>
-
-{% comment %} Tab panes {% endcomment -%}
-<div class="tab-content">
-
-<div class="tab-pane active" id="android-archive" role="tabpanel" aria-labelledby="android-archive-tab">
+{% tabs %}
+{% tab "Android Archive" %}
 
 ### Depend on the Android Archive (AAR) {:.no_toc}
 
@@ -379,9 +353,8 @@ the `Build > Flutter > Build AAR` menu.
 {% render docs/app-figure.md, image:"development/add-to-app/android/project-setup/ide-build-aar.png" %}
 :::
 
-</div>
-
-<div class="tab-pane" id="module-source" role="tabpanel" aria-labelledby="module-source-tab">
+{% endtab %}
+{% tab "Module source code" %}
 
 ### Depend on the module's source code {:.no_toc}
 
@@ -427,9 +400,8 @@ dependencies {
 }
 ```
 
-</div>
-</div>
-{% comment %} End: Tab panes. {% endcomment -%}
+{% endtab %}
+{% endtabs %}
 
 Your app now includes the Flutter module as a dependency.
 

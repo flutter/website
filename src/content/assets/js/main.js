@@ -7,38 +7,8 @@ document.addEventListener("DOMContentLoaded", function(_) {
   setupCopyButtons();
 
   setupSearch();
-
-  setupTabs($('#os-archive-tabs'), 'dev.flutter.tab-os', _getOSForArchive);
-  setupTabs($('#editor-setup'), 'io.flutter.tool-id');
-  setupTabs($('.sample-code-tabs'), 'io.flutter.tool-id');
-  setupTabs($('#vscode-to-xcode-ios-setup'), 'dev.flutter.debug.vscode-to-xcode-ios');
-  setupTabs($('#vscode-to-xcode-macos-setup'), 'dev.flutter.debug.vscode-to-xcode-macos');
-  setupTabs($('#vscode-to-android-studio-setup'), 'dev.flutter.debug.vscode-to-as');
-  setupTabs($('#vscode-to-vs-setup'), 'dev.flutter.debug.vscode-to-vs');
-  setupTabs($('#add-to-app-android'), 'dev.flutter.add-to-app.android');
-  setupTabs($('#add-to-app-android-deps'), 'dev.flutter.add-to-app.android.deps');
-  setupTabs($('#ios-versions'), 'dev.flutter.ios-versions');
-  setupTabs($('#android-devices-vp'), 'dev.flutter.install.android-devices-vp');
-  setupTabs($('#android-studio-start'), 'dev.flutter.install.android-studio-start');
-  setupTabs($('#flutter-install'), 'dev.flutter.install.options');
-  setupTabs($('#ios-devices-vp'), 'dev.flutter.install.ios-devices-vp');
-  setupTabs($('#china-os-tabs'), 'dev.flutter.china-os');
-  setupTabs($('#china-os-dl-tabs'), 'dev.flutter.china-os-dl');
-  setupTabs($('#china-os-pub-tabs'), 'dev.flutter.china-os-pub');
-  setupTabs($('#base-os-tabs'), 'dev.flutter.os');
-  setupTabs($('#xcode-ide-vs-ui'), 'dev.flutter.xcode-ux');
-  setupTabs($('#ios-project-setup'), 'dev.flutter.ios.project-setup');
+  setupTabs();
 });
-
-function _getOSForArchive() {
-  const os = getOS();
-  // The archive doesn't have chromeos, fall back to linux.
-  if (os === 'chromeos') {
-    return 'linux';
-  }
-
-  return os;
-}
 
 /**
  * Get the user's current operating system, or

@@ -55,22 +55,20 @@ These tasks depend on which integrated development environment (IDE) you use.
 
 Select your preferred IDE for Flutter apps.
 
-{% comment %} Nav tabs {% endcomment -%}
-<ul class="nav nav-tabs" id="editor-setup" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="vscode-tab" href="#vscode" role="tab" aria-controls="vscode" aria-selected="true">Visual Studio Code</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="androidstudio-tab" href="#androidstudio" role="tab" aria-controls="androidstudio" aria-selected="false">Android Studio and IntelliJ</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="terminal-tab" href="#terminal" role="tab" aria-controls="terminal" aria-selected="false">Terminal & editor</a>
-  </li>
-</ul>
+{% tabs %}
+{% tab "Visual Studio Code" %}
 
-{% comment %} Tab panes {% endcomment -%}
-<div class="tab-content">
-  {% include docs/install/test-drive/vscode.md %}
-  {% include docs/install/test-drive/androidstudio.md %}
-  {% include docs/install/test-drive/terminal.md %}
-</div>
+{% include docs/install/test-drive/vscode.md %}
+
+{% endtab %}
+{% tab "Android Studio and IntelliJ" %}
+
+{% include docs/install/test-drive/androidstudio.md %}
+
+{% endtab %}
+{% tab "Terminal & editor" %}
+
+{% include docs/install/test-drive/terminal.md %}
+
+{% endtab %}
+{% endtabs %}

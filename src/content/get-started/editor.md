@@ -35,19 +35,8 @@ Android Studio, or IntelliJ.
 If you choose another IDE, skip ahead
 to the [next step: Test drive](/get-started/test-drive).
 
-{% comment %} Nav tabs {% endcomment -%}
-<ul class="nav nav-tabs" id="editor-setup" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="vscode-tab" href="#vscode" role="tab" aria-controls="vscode" aria-selected="true">Visual Studio Code</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="androidstudio-tab" href="#androidstudio" role="tab" aria-controls="androidstudio" aria-selected="false">Android Studio and IntelliJ</a>
-  </li>
-</ul>
-
-{% comment %} Tab panes {% endcomment -%}
-<div class="tab-content">
-<div class="tab-pane active" id="vscode" role="tabpanel" aria-labelledby="vscode-tab">
+{% tabs %}
+{% tab "Visual Studio Code" %}
 
 ## Install VS Code
 
@@ -98,8 +87,8 @@ follow Microsoft's instructions for the relevant platform:
      of this panel.
    - Displays the output of Flutter Doctor command.
 
-</div>
-<div class="tab-pane" id="androidstudio" role="tabpanel" aria-labelledby="androidstudio-tab">
+{% endtab %}
+{% tab "Android Studio and IntelliJ" %}
 
 ## Install Android Studio or IntelliJ IDEA
 
@@ -173,6 +162,6 @@ Use the following instructions for Linux or Windows:
 
 1. Click **Restart** when prompted.
 
-</div>
-</div>{% comment %} End: Tab panes. {% endcomment -%}
+{% endtab %}
+{% endtabs %}
 

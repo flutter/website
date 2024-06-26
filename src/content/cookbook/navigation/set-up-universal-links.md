@@ -129,20 +129,8 @@ Personal development teams don't support the Associated Domains
 capability. To add associated domains, choose the IDE tab.
 :::
 
-{% comment %} Nav tabs {% endcomment -%}
-<ul class="nav nav-tabs" id="xcode-ide-vs-ui" role="tablist">
-    <li class="nav-item">
-        <a class="nav-link active" id="xcode-ui-tab" href="#xcode-ui" role="tab" aria-controls="xcode-ui" aria-selected="true">Use Xcode UI</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="xcode-ide-tab" href="#xcode-ide" role="tab" aria-controls="xcode-ide" aria-selected="false">Use an IDE</a>
-    </li>
-</ul>
-
-{% comment %} Tab panes {% endcomment -%}
-<div class="tab-content">
-
-<div class="tab-pane active" id="xcode-ui" role="tabpanel" aria-labelledby="xcode-ui-tab">
+{% tabs %}
+{% tab "Xcode" %}
 
 1. Launch Xcode if necessary.
 
@@ -171,10 +159,8 @@ capability. To add associated domains, choose the IDE tab.
       alt="Xcode add associated domains screenshot"
       width="100%" />
 
-</div>
-
-<div class="tab-pane" id="xcode-ide" role="tabpanel"
-aria-labelledby="xcode-ide-tab">
+{% endtab %}
+{% tab "Other editors" %}
 
 1. Open the `ios/Runner/Runner.entitlements` XML file in your preferred IDE.
 
@@ -213,10 +199,9 @@ the following steps.
       alt="Xcode add associated domains screenshot"
       width="100%" />
 
-</div>
+{% endtab %}
+{% endtabs %}
 
-</div>
-{% comment %} End: Tab panes. {% endcomment -%}
 You have finished configuring the application for deep linking.
 
 ## Associate your app with your web domain
