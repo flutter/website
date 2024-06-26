@@ -1,5 +1,5 @@
 <?code-excerpt "animation/implicit/opacity5/lib/main.dart"?>
-```dartpad
+```dartpad title="Flutter Implicit Animation Opacity hands-on example in DartPad"
 // Copyright 2019 the Dart project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license
 // that can be found in the LICENSE file.

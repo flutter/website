@@ -472,7 +472,7 @@ Run the app:
 <!-- start dartpad -->
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter download button hands-on example in DartPad" run="true"
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

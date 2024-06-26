@@ -666,7 +666,7 @@ Run the app:
 <!-- Start DartPad -->
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter typing indicator hands-on example in DartPad" run="true"
 import 'dart:math';
 
 import 'package:flutter/cupertino.dart';

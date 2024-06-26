@@ -410,7 +410,7 @@ Run the app:
 <!-- start dartpad -->
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Flutter expandable floating action button hands-on example in DartPad" run="true"
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';

@@ -4,6 +4,30 @@ import { selectAll } from 'hast-util-select';
 import { toText } from 'hast-util-to-text';
 import { escapeHtml } from 'markdown-it/lib/common/utils.mjs';
 
+export function registerFilters(eleventyConfig) {
+  eleventyConfig.addFilter('children_pages', function (pages, pageUrl) {
+    return pages.filter((page) => page.url.includes(pageUrl) && page.url !== pageUrl);
+  });
+
+  // TODO(parlough): Make this more generic.
+  eleventyConfig.addFilter('widget_filter', function (widgets, field, subName) {
+    return widgets.filter((comp) => comp[field]?.includes(subName) ?? false);
+  });
+
+  eleventyConfig.addFilter('throw_error', function (error) {
+    // TODO(parlough): See if more context can be added to this error
+    //   or if there's a better built-in solution.
+    throw new Error(error);
+  });
+
+  eleventyConfig.addFilter('regex_replace', regexReplace);
+  eleventyConfig.addFilter('toISOString', toISOString);
+  eleventyConfig.addFilter('active_nav_for_page', activeNavForPage);
+  eleventyConfig.addFilter('array_to_sentence_string', arrayToSentenceString);
+  eleventyConfig.addFilter('generate_toc', generateToc);
+  eleventyConfig.addFilter('breadcrumbsForPage', breadcrumbsForPage);
+}
+
 /**
  * Replace text in {@link input} that matches the specified {@link regex}
  * with the specified {@link replacement}.
@@ -13,7 +37,7 @@ import { escapeHtml } from 'markdown-it/lib/common/utils.mjs';
  * @param {string} replacement
  * @return {string} The resulting string with the replacement made.
  */
-export function regexReplace(input, regex, replacement = '') {
+function regexReplace(input, regex, replacement = '') {
   return input.toString().replace(new RegExp(regex), replacement);
 }
 
@@ -25,7 +49,7 @@ export function regexReplace(input, regex, replacement = '') {
  * @param {string|Date} input The date to convert
  * @return {string} The ISO string
  */
-export function toISOString(input) {
+function toISOString(input) {
   if (input instanceof Date) {
     return input.toISOString();
   } else {
@@ -34,7 +58,7 @@ export function toISOString(input) {
   }
 }
 
-export function activeNavForPage(pageUrlPath, activeNav) {
+function activeNavForPage(pageUrlPath, activeNav) {
   // Split the path for this page, dropping everything before the path:
   // Example: docs.flutter.dev/cookbook/networking/update-data ->
   // [cookbook, networking, update-data]
@@ -80,7 +104,7 @@ export function activeNavForPage(pageUrlPath, activeNav) {
   return activeEntries;
 }
 
-export function arrayToSentenceString(list, joiner = 'and') {
+function arrayToSentenceString(list, joiner = 'and') {
   if (!list || list.length === 0) {
     return '';
   }
@@ -103,7 +127,7 @@ export function arrayToSentenceString(list, joiner = 'and') {
   return result;
 }
 
-export function generateToc(contents) {
+function generateToc(contents) {
   // TODO(parlough): Speed this up.
   //   Perhaps do the processing before HTML rendering?
   //   Maybe shouldn't be a filter.
@@ -154,7 +178,7 @@ export function generateToc(contents) {
   };
 }
 
-export function breadcrumbsForPage(page) {
+function breadcrumbsForPage(page) {
   const breadcrumbs = [];
 
   // Retrieve the liquid data for this page.
@@ -162,8 +186,8 @@ export function breadcrumbsForPage(page) {
 
   while (page) {
     const urlSegments = page.url
-      .split('/')
-      .filter((segment) => segment.length > 0);
+        .split('/')
+        .filter((segment) => segment.length > 0);
 
     breadcrumbs.push({
       title: data['breadcrumb'] ?? data['short-title'] ?? data.title,

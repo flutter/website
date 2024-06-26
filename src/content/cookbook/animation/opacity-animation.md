@@ -123,9 +123,9 @@ to `true` or `false`. How to fade the box in and out? With an
 
 The `AnimatedOpacity` widget requires three arguments:
 
-  * `opacity`: A value from 0.0 (invisible) to 1.0 (fully visible).
-  * `duration`: How long the animation should take to complete.
-  * `child`: The widget to animate. In this case, the green box.
+* `opacity`: A value from 0.0 (invisible) to 1.0 (fully visible).
+* `duration`: How long the animation should take to complete.
+* `child`: The widget to animate. In this case, the green box.
 
 <?code-excerpt "lib/main.dart (AnimatedOpacity)" replace="/^child: //g;/^\),$/)/g"?>
 ```dart
@@ -146,7 +146,7 @@ AnimatedOpacity(
 ## Interactive example
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad run="true"
+```dartpad title="Implicit Animation Opacity DartPad hands-on example" run="true"
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
