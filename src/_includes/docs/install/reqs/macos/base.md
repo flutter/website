@@ -38,6 +38,8 @@ minimal hardware requirements.
 To write and compile Flutter code for {{v-target}},
 install the following packages.
 
+{% render docs/install/admonitions/install-dart.md %}
+
 #### Operating system
 
 Flutter supports macOS {{site.devmin.macos}} or later.
