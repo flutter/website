@@ -281,7 +281,6 @@ codelab.
 [Adding a Flutter Screen]: /add-to-app/ios/add-flutter-screen?tab=vc-uikit-swift-tab#alternatively-create-a-flutterviewcontroller-with-an-implicit-flutterengine
 [App Group]: {{site.apple-dev}}/documentation/xcode/configuring-app-groups
 [Apple's documentation]: {{site.apple-dev}}/app-extensions/
-[Compiling the Engine]: https://github.com/flutter/flutter/blob/master/docs/engine/contributing/Compiling-the-engine.md
 [Core Spotlight]: {{site.apple-dev}}/documentation/corespotlight
 [Deep Linking]:/ui/navigation/deep-linking
 [lab]: {{site.codelabs}}/flutter-home-screen-widgets
