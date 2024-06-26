@@ -38,6 +38,8 @@ To write and compile Flutter code for {{include.target}},
 you must have the following version of {{include.os}} and the listed
 software packages.
 
+{% render docs/install/admonitions/install-dart.md %}
+
 #### Operating system
 
 {% if include.os == 'Linux' %}

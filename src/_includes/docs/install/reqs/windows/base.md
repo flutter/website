@@ -31,6 +31,8 @@ To write and compile Flutter code for {{include.target}},
 you must have the following version of Windows and the listed
 software packages.
 
+{% render docs/install/admonitions/install-dart.md %}
+
 #### Operating system
 
 Flutter supports {{site.devmin.windows}} or later.
