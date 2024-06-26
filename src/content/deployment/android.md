@@ -78,14 +78,14 @@ dependencies {
 
 To find out the latest version, visit [Google Maven][].
 
-2. Set the light theme in `<my-app>/android/app/src/main/res/values/styles.xml`:
+1. Set the light theme in `<my-app>/android/app/src/main/res/values/styles.xml`:
 
 ```diff
 -<style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar">
 +<style name="NormalTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
 ```
 
-3. Set the dark theme in `<my-app>/android/app/src/main/res/values-night/styles.xml`
+1. Set the dark theme in `<my-app>/android/app/src/main/res/values-night/styles.xml`
 
 ```diff
 -<style name="NormalTheme" parent="@android:style/Theme.Black.NoTitleBar">
@@ -150,7 +150,7 @@ If not, create one using one of the following methods:
      notation for the names. For example, on Mac/Linux
      use `Program\ Files`, and on Windows use
      `"Program Files"`.
-   
+
    * The `-storetype JKS` tag is only required for Java 9
      or newer. As of the Java 9 release,
      the keystore type defaults to PKS12.
@@ -184,9 +184,12 @@ don't check it into public source control.
 When building your app in release mode, configure gradle to use your upload key.
 To configure gradle, edit the `<project>/android/app/build.gradle` file.
 
-1. Add the keystore information from your properties file before the `android` block:
+1. Define and load the keystore properties file before the `android`
+   property block.
 
-   ```diff
+1. Set the `keystoreProperties` object to load the `key.properties` file.
+
+   ```diff title="[project]/android/app/build.gradle"
    +   def keystoreProperties = new Properties()
    +   def keystorePropertiesFile = rootProject.file('key.properties')
    +   if (keystorePropertiesFile.exists()) {
@@ -198,28 +201,32 @@ To configure gradle, edit the `<project>/android/app/build.gradle` file.
       }
    ```
 
-1. Load the `key.properties` file into the `keystoreProperties` object.
+1. Add the signing configuration before the `buildTypes` property block
+   inside the `android` property block.
 
-1. Add the signing configuration before the `buildTypes` block:
+   ```diff title="[project]/android/app/build.gradle"
+       android {
+           ...
 
-   ```diff
-   +   signingConfigs {
-   +       release {
-   +           keyAlias keystoreProperties['keyAlias']
-   +           keyPassword keystoreProperties['keyPassword']
-   +           storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
-   +           storePassword keystoreProperties['storePassword']
+   +       signingConfigs {
+   +           release {
+   +               keyAlias keystoreProperties['keyAlias']
+   +               keyPassword keystoreProperties['keyPassword']
+   +               storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+   +               storePassword keystoreProperties['storePassword']
+   +           }
    +       }
-   +   }
-      buildTypes {
-         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now,
-            // so `flutter run --release` works.
-   -           signingConfig signingConfigs.debug
-   +           signingConfig signingConfigs.release
-         }
-      }
+           buildTypes {
+              release {
+                 // TODO: Add your own signing config for the release build.
+                 // Signing with the debug keys for now,
+                 // so `flutter run --release` works.
+   -                signingConfig signingConfigs.debug
+   +                signingConfig signingConfigs.release
+              }
+           }
+       ...
+       }
    ```
 
 Flutter now signs all release builds.
@@ -296,66 +303,82 @@ check out the official [Android documentation][multidex-docs].
 
 ## Review the app manifest
 
-Review the default [App Manifest][manifest] file, `AndroidManifest.xml`.
-This file is located in `[project]/android/app/src/main`.
+Review the default [App Manifest][manifest] file.
+
+```xml title="[project]/android/app/src/main/AndroidManifest.xml"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application
+        [!android:label="[project]"!]
+        ...
+    </application>
+    ...
+    [!<uses-permission android:name="android.permission.INTERNET"/>!]
+</manifest>
+```
+
 Verify the following values:
 
-`application`
-: Edit the `android:label` in the
-  [`application`][applicationtag] tag to reflect
-  the final name of the app.
+| Tag                                | Attribute | Value                                                                                                   |
+|------------------------------------|-----------|-----------------------------------------------------------------------------------------------------------|
+| [`application`][applicationtag]    | Edit the `android:label` in the [`application`][applicationtag] tag to reflect the final name of the app. |
+| [`uses-permission`][permissiontag] | Add the `android.permission.INTERNET` [permission][permissiontag] value to the `android:name` attribute if your app needs Internet access. The standard template doesn't include this tag but allows Internet access during development to enable communication between Flutter tools and a running app. |
 
-`uses-permission`
-: Add the `android.permission.INTERNET`
-  [permission][permissiontag] if your application code needs Internet
-  access. The standard template doesn't include this tag but allows
-  Internet access during development to enable communication between
-  Flutter tools and a running app.
+{:.table .table-striped}
 
-<a id="reviewing-the-gradle-build-configuration" aria-hidden="true"></a>
+## Review or change the Gradle build configuration {:#review-the-gradle-build-configuration}
 
-## Review the Gradle build configuration
+To verify the Android build configuration,
+review the `android` block in the default
+[Gradle build script][gradlebuild].
+The default Gradle build script is found at `[project]/android/app/build.gradle`.
+You can change the values of any of these properties.
 
-Review the default [Gradle build file][gradlebuild]
-(`build.gradle`, located in `[project]/android/app`),
-to verify that the values are correct.
+```groovy title="[project]/android/app/build.gradle"
+android {
+    namespace = "com.example.[project]"
+    // Any value starting with "flutter." gets its value from
+    // the Flutter Gradle plugin.
+    // To change from these defaults, make your changes in this file.
+    [!compileSdk = flutter.compileSdkVersion!]
+    ndkVersion = flutter.ndkVersion
 
-#### Under the `defaultConfig` block
+    ...
 
-`applicationId`
-: Specify the final, unique [application ID][].
-  
-`minSdk`
-: Specify the [minimum API level][] on which you designed the app to run.
-  Defaults to `flutter.minSdkVersion`.
+    defaultConfig {
+        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        [!applicationId = "com.example.[project]"!]
+        // You can update the following values to match your application needs.
+        [!minSdk = flutter.minSdkVersion!]
+        [!targetSdk = flutter.targetSdkVersion!]
+        // These two properties use values defined elsewhere in this file.
+        // You can set these values in the property declaration
+        // or use a variable.
+        [!versionCode = flutterVersionCode.toInteger()!]
+        [!versionName = flutterVersionName!]
+    }
 
-`targetSdk`
-: Specify the target API level on which you designed the app to run.
-  Defaults to `flutter.targetSdkVersion`.
-  
-`versionCode`
-: A positive integer used as an [internal version number][].
-  This number is used only to determine whether one version is more recent
-  than another, with higher numbers indicating more recent versions.
-  This version isn't shown to users.
+    buildTypes {
+        ...
+    }
+}
+```
 
-`versionName`
-: A string used as the version number shown to users.
-  This setting can be specified as a raw string or as
-  a reference to a string resource.
+### Properties to adjust in build.gradle
 
-`buildToolsVersion`
-: The Gradle plugin specifies the default version of the
-  build tools that your project uses.
-  You can use this option to specify a different version of the build tools.
+| Property             | Purpose                                                                                                                                                                                                                                                     | Default Value              |
+|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|
+| `compileSdk`         | The Android API level against which your app is compiled. This should be the highest version available. If you set this property to `31`, you run your app on a device running API `30` or earlier as long as your app makes uses no APIs specific to `31`. | |
+| `defaultConfig`      |  |  |
+| `.applicationId`     | The final, unique [application ID][] that identifies your app.                                                                                                                                                                                              |                            |
+| `.minSdk`            | The [minimum Android API level][] for which you designed your app to run.                                                                                                                                                                                   | `flutter.minSdkVersion`    |
+| `.targetSdk`         | The Android API level against which you tested your app to run. Your app should run on all Android API levels up to this one.                                                                                                                               | `flutter.targetSdkVersion` |
+| `.versionCode`       | A positive integer that sets an [internal version number][]. This number only determines which version is more recent than another. Greater numbers indicate more recent versions. App users never see this value.                                          |                            |
+| `.versionName`       | A string that your app displays as its version number. Set this property as a raw string or as a reference to a string resource.                                                                                                                            |                            |
+| `.buildToolsVersion` | The Gradle plugin specifies the default version of the Android build tools that your project uses. To specify a different version of the build tools, change this value.                                                                                    |                            |
 
-#### Under the `android` block
-  
-`compileSdk`
-: Specify the API level Gradle should use to compile your app.
-  Defaults to `flutter.compileSdkVersion`.
+{:.table .table-striped}
 
-For more information, check out the module-level build
+To learn more about Gradle, check out the module-level build
 section in the [Gradle build file][gradlebuild].
 
 :::note
@@ -373,8 +396,7 @@ the Play Store.
 
 :::note
 The Google Play Store prefers the app bundle format.
-For more information, check out
-[About Android App Bundles][bundle].
+To learn more, check out [About Android App Bundles][bundle].
 :::
 
 ### Build an app bundle
@@ -561,7 +583,7 @@ The resulting app bundle or APK files are located in
 [internal version number]: {{site.android-dev}}/studio/publish/versioning
 [launchericons]: {{site.material}}/styles/icons
 [manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
-[minimum API level]: {{site.android-dev}}/studio/publish/versioning#minsdk
+[minimum Android API level]: {{site.android-dev}}/studio/publish/versioning#minsdk
 [multidex-docs]: {{site.android-dev}}/studio/build/multidex
 [multidex-keep]: {{site.android-dev}}/studio/build/multidex#keep
 [obfuscating your Dart code]: /deployment/obfuscate
