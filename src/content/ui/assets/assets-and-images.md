@@ -68,6 +68,12 @@ To learn more, check out [Transforming assets at build time][].
 To learn how to do this and write your own asset-transforming packages, see
 [Transforming assets at build time][].
 
+### Conditional bundling of assets based on app flavor
+
+If your project utilizes the [flavors feature][], you can configure individual
+assets can be configured to be bundled only in certain flavors of your app.
+For more information, check out [Conditionally bundling assets based on flavor].
+
 ## Loading assets
 
 Your app can access its assets through an
@@ -512,3 +518,5 @@ For more details, see
 [MaterialApp]: {{site.api}}/flutter/material/MaterialApp-class.html
 [CupertinoApp]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
 [Transforming assets at build time]: /ui/assets/asset-transformation
+[Conditionally bundling assets based on flavor]: /deployment/flavors#conditionally-bundling-assets-based-on-flavor
+[flavors feature]: /deployment/flavors
