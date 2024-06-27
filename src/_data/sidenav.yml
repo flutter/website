@@ -468,7 +468,7 @@
           permalink: /platform-integration/macos/install-macos
         - title: Build a macOS app
           permalink: /platform-integration/macos/building
-        - title: C interop
+        - title: Bind to native code
           permalink: /platform-integration/macos/c-interop
         - title: Host a native macOS view
           permalink: /platform-integration/macos/platform-views
