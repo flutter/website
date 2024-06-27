@@ -71,7 +71,7 @@ To learn how to do this and write your own asset-transforming packages, see
 ### Conditional bundling of assets based on app flavor
 
 If your project utilizes the [flavors feature][], you can configure individual
-assets can be configured to be bundled only in certain flavors of your app.
+assets to be bundled only in certain flavors of your app.
 For more information, check out [Conditionally bundling assets based on flavor].
 
 ## Loading assets
