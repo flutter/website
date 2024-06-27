@@ -185,8 +185,8 @@ that specifies a `HTMLElement` as the `hostElement`.
     <div id="flutter_host">Loading...</div>
 
     <script>
-      {{flutter_js}}
-      {{flutter_build_config}}
+      {% raw %}{{flutter_js}}{% endraw %}
+      {% raw %}{{flutter_build_config}}{% endraw %}
 
       _flutter.loader.load({
         config: {

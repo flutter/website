@@ -56,10 +56,10 @@ To override the web renderer at runtime:
 ```html highlightLines=9-14
 <body>
   <script>
-    {{flutter_js}}
-    {{flutter_build_config}}
+    {% raw %}{{flutter_js}}{% endraw %}
+    {% raw %}{{flutter_build_config}}{% endraw %}
 
-    // TODO: Replace this with your code to determine which renderer to use.  
+    // TODO: Replace this with your own code to determine which renderer to use.  
     const useHtml = true;
   
     const config = {
