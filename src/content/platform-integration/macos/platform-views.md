@@ -90,60 +90,60 @@ import Cocoa
 import FlutterMacOS
 
 class NativeViewFactory: NSObject, FlutterPlatformViewFactory {
-    private var messenger: FlutterBinaryMessenger
+  private var messenger: FlutterBinaryMessenger
 
-    init(messenger: FlutterBinaryMessenger) {
-        self.messenger = messenger
-        super.init()
-    }
+  init(messenger: FlutterBinaryMessenger) {
+    self.messenger = messenger
+    super.init()
+  }
 
-    func create(
-        viewIdentifier viewId: Int64,
-        arguments args: Any?
-    ) -> FlutterPlatformView {
-        return NativeView(
-            viewIdentifier: viewId,
-            arguments: args,
-            binaryMessenger: messenger)
-    }
+  func create(
+    viewIdentifier viewId: Int64,
+    arguments args: Any?
+  ) -> FlutterPlatformView {
+    return NativeView(
+      viewIdentifier: viewId,
+      arguments: args,
+      binaryMessenger: messenger)
+  }
 
-    /// Implementing this method is only necessary when the `arguments` in `createWithFrame` is not `nil`.
-    public func createArgsCodec() -> (FlutterMessageCodec & NSObjectProtocol)? {
-          return FlutterStandardMessageCodec.sharedInstance()
-    }
+  /// Implementing this method is only necessary when the `arguments` in `createWithFrame` is not `nil`.
+  public func createArgsCodec() -> (FlutterMessageCodec & NSObjectProtocol)? {
+    return FlutterStandardMessageCodec.sharedInstance()
+  }
 }
 
 class NativeView: NSView {
-    private var _view: NSView
+  private var _view: NSView
 
-    init(
-        frame: CGRect,
-        viewIdentifier viewId: Int64,
-        arguments args: Any?,
-        binaryMessenger messenger: FlutterBinaryMessenger?
-    ) {
-        _view = NSView()
-        super.init(frame: frame)
-        // macOS views can be created here
-        createNativeView(view: _view)
-    }
+  init(
+    frame: CGRect,
+    viewIdentifier viewId: Int64,
+    arguments args: Any?,
+    binaryMessenger messenger: FlutterBinaryMessenger?
+  ) {
+    _view = NSView()
+    super.init(frame: frame)
+    // macOS views can be created here
+    createNativeView(view: _view)
+  }
 
-    func createNativeView(view _view: NSView) {
-        _view.wantsLayer = true
-        _view.layer?.backgroundColor = NSColor.systemBlue.cgColor
-        _view.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+  func createNativeView(view _view: NSView) {
+    _view.wantsLayer = true
+    _view.layer?.backgroundColor = NSColor.systemBlue.cgColor
+    _view.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
 
-        let nativeLabel = NSTextField()
-        nativeLabel.frame = CGRect(x: 0, y: 0, width: 180, height: 48.0)
-        nativeLabel.stringValue = "Native text from macOS"
-        nativeLabel.textColor = NSColor.white
-        nativeLabel.font = NSFont.systemFont(ofSize: 14)
-        nativeLabel.isBezeled = false
-        nativeLabel.focusRingType = .none
-        nativeLabel.isEditable = true
-        nativeLabel.sizeToFit()
-        _view.addSubview(nativeLabel)
-    }
+    let nativeLabel = NSTextField()
+    nativeLabel.frame = CGRect(x: 0, y: 0, width: 180, height: 48.0)
+    nativeLabel.stringValue = "Native text from macOS"
+    nativeLabel.textColor = NSColor.white
+    nativeLabel.font = NSFont.systemFont(ofSize: 14)
+    nativeLabel.isBezeled = false
+    nativeLabel.focusRingType = .none
+    nativeLabel.isEditable = true
+    nativeLabel.sizeToFit()
+    _view.addSubview(nativeLabel)
+  }
 }
 ```
 
@@ -156,15 +156,15 @@ import Cocoa
 import FlutterMacOS
 
 class MainFlutterWindow: NSWindow {
-    override func awakeFromNib() {
-        // ...
+  override func awakeFromNib() {
+    // ...
 
-        let registrar = flutterViewController.registrar(forPlugin: "plugin-name")
-        let factory = NativeViewFactory(messenger: registrar.messenger)
-        registrar.register(
-            factory,
-            withId: "<platform-view-type>")
-    }
+    let registrar = flutterViewController.registrar(forPlugin: "plugin-name")
+    let factory = NativeViewFactory(messenger: registrar.messenger)
+    registrar.register(
+      factory,
+      withId: "<platform-view-type>")
+  }
 }
 ```
 
@@ -176,10 +176,10 @@ import Cocoa
 import FlutterMacOS
 
 public class Plugin: NSObject, FlutterPlugin {
-    public static func register(with registrar: FlutterPluginRegistrar) {
-        let factory = NativeViewFactory(messenger: registrar.messenger)
-        registrar.register(factory, withId: "<platform-view-type>")
-    }
+  public static func register(with registrar: FlutterPluginRegistrar) {
+    let factory = NativeViewFactory(messenger: registrar.messenger)
+    registrar.register(factory, withId: "<platform-view-type>")
+  }
 }
 ```
 
