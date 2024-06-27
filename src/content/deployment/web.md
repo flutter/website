@@ -172,41 +172,43 @@ create a release build.
 
 _Added in Flutter 3.10_<br>
 You can embed a Flutter web app into
-any HTML element of your web page, with `flutter.js` and the `hostElement`
-engine initialization parameter.
+any HTML element of your web page.
 
-To tell Flutter web in which element to render, use the `hostElement` parameter of the `initializeEngine`
-function:
+To tell Flutter web in which element to render,
+pass an object with a `config` field to the `_flutter.loader.load` function
+that specifies a `HTMLElement` as the `hostElement`.
 
-```html
+```html highlightLines=11-13
 <html>
-  <head>
-    <!-- ... -->
-    <script src="flutter.js" defer></script>
-  </head>
   <body>
-
     <!-- Ensure your flutter target is present on the page... -->
     <div id="flutter_host">Loading...</div>
 
     <script>
-      window.addEventListener("load", function (ev) {
-        _flutter.loader.loadEntrypoint({
-          onEntrypointLoaded: async function(engineInitializer) {
-            let appRunner = await engineInitializer.initializeEngine({
-              // Pass a reference to "div#flutter_host" into the Flutter engine.
-              hostElement: document.querySelector("#flutter_host")
-            });
-            await appRunner.runApp();
-          }
-        });
+      {% raw %}{{flutter_js}}{% endraw %}
+      {% raw %}{{flutter_build_config}}{% endraw %}
+
+      _flutter.loader.load({
+        config: {
+          hostElement: document.getElementById('flutter_host'),
+        }
       });
     </script>
   </body>
 </html>
 ```
 
-To learn more, check out [Customizing web app initialization][customizing-web-init].
+To learn more about other configuration options,
+check out [Customizing web app initialization][customizing-web-init].
+
+:::version-note
+This method of specifying the `hostElement` was changed in Flutter 3.22.
+To learn how to configure the `hostElement` in earlier Flutter versions,
+reference [Legacy web app initialization][web-init-legacy].
+:::
+
+[customizing-web-init]: /platform-integration/web/initialization
+[web-init-legacy]: /platform-integration/web/initialization-legacy
 
 ### Iframe
 
@@ -242,5 +244,4 @@ so please [give us feedback][] if you see something that doesn't look right.
 [Google Cloud Hosting]: https://cloud.google.com/solutions/web-hosting
 [`iframe`]: https://html.com/tags/iframe/
 [Web renderers]: /platform-integration/web/renderers
-[customizing-web-init]: /platform-integration/web/initialization
 
