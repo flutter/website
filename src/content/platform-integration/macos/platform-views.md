@@ -81,15 +81,15 @@ On the platform side, use Swift:
 {% samplecode "macos-platform-views", "Swift" %}
 {% sample "Swift" %}
 
-Implement the factory and the platform view. The `FLNativeViewFactory` creates
-the platform view, and the platform view provides a reference to the `NSView`.
-For example, `FLNativeView.swift`:
+Implement the factory and the platform view. The `NativeViewFactory` creates the
+platform view, and the platform view provides a reference to the `NSView`. For
+example, `NativeView.swift`:
 
 ```swift
 import Cocoa
 import FlutterMacOS
 
-class FLNativeViewFactory: NSObject, FlutterPlatformViewFactory {
+class NativeViewFactory: NSObject, FlutterPlatformViewFactory {
     private var messenger: FlutterBinaryMessenger
 
     init(messenger: FlutterBinaryMessenger) {
@@ -101,7 +101,7 @@ class FLNativeViewFactory: NSObject, FlutterPlatformViewFactory {
         viewIdentifier viewId: Int64,
         arguments args: Any?
     ) -> FlutterPlatformView {
-        return FLNativeView(
+        return NativeView(
             viewIdentifier: viewId,
             arguments: args,
             binaryMessenger: messenger)
@@ -113,7 +113,7 @@ class FLNativeViewFactory: NSObject, FlutterPlatformViewFactory {
     }
 }
 
-class FLNativeView: NSView {
+class NativeView: NSView {
     private var _view: NSView
 
     init(
@@ -160,7 +160,7 @@ class MainFlutterWindow: NSWindow {
         // ...
 
         let registrar = flutterViewController.registrar(forPlugin: "plugin-name")
-        let factory = FLNativeViewFactory(messenger: registrar.messenger)
+        let factory = NativeViewFactory(messenger: registrar.messenger)
         registrar.register(
             factory,
             withId: "<platform-view-type>")
@@ -169,15 +169,15 @@ class MainFlutterWindow: NSWindow {
 ```
 
 For plugin registration, modify the plugin's main file (for example,
-`FLPlugin.swift`):
+`Plugin.swift`):
 
 ```swift
 import Cocoa
 import FlutterMacOS
 
-public class FLPlugin: NSObject, FlutterPlugin {
+public class Plugin: NSObject, FlutterPlugin {
     public static func register(with registrar: FlutterPluginRegistrar) {
-        let factory = FLNativeViewFactory(messenger: registrar.messenger)
+        let factory = NativeViewFactory(messenger: registrar.messenger)
         registrar.register(factory, withId: "<platform-view-type>")
     }
 }
