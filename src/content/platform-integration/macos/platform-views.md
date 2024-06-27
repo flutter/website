@@ -14,10 +14,14 @@ Flutter app.
 
 :::note
 This page discusses how to host your own native macOS views within a Flutter
-app. If you'd like to embed native iOS views in your Flutter app, see
-[Hosting native iOS views][].
+app.
+If you'd like to embed native Android views in your Flutter app,
+see [Hosting native Android views][].
+If you'd like to embed native iOS views in your Flutter app,
+see [Hosting native iOS views][].
 :::
 
+[Hosting native Android views]: /platform-integration/android/platform-views
 [Hosting native iOS views]: /platform-integration/ios/platform-views
 
 macOS uses Hybrid composition, which means that the native `NSView` is appended

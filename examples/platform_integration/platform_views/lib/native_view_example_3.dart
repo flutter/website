@@ -43,6 +43,8 @@ class TogetherWidget extends StatelessWidget {
       // return widget on Android.
       case TargetPlatform.iOS:
       // return widget on iOS.
+      case TargetPlatform.macOS:
+      // return widget on macOS.
       default:
         throw UnsupportedError('Unsupported platform view');
     }

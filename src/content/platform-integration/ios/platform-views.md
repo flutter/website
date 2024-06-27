@@ -17,12 +17,14 @@ directly inside your Flutter app.
 :::note
 This page discusses how to host your own native iOS views
 within a Flutter app.
-If you'd like to embed native Android views
-in your Flutter app,
+If you'd like to embed native Android views in your Flutter app,
 see [Hosting native Android views][].
+If you'd like to embed native macOS views in your Flutter app,
+see [Hosting native macOS views][].
 :::
 
 [Hosting native Android views]: /platform-integration/android/platform-views
+[Hosting native macOS views]: /platform-integration/macos/platform-views
 
 
 iOS only uses Hybrid composition,
@@ -367,6 +369,8 @@ Widget build(BuildContext context) {
     // return widget on Android.
     case TargetPlatform.iOS:
     // return widget on iOS.
+    case TargetPlatform.macOS:
+    // return widget on macOS.
     default:
       throw UnsupportedError('Unsupported platform view');
   }
