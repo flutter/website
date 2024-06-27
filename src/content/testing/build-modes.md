@@ -20,9 +20,10 @@ A quick summary for when to use which mode is as follows:
 
 The rest of the page details these modes.
 
-* To learn about headless testing, see the [Flutter wiki][].
-* To learn how to detect the build mode, see the
-[Check for Debug/Release Mode in Flutter Apps] blog post.
+* To learn about the headless testing mode,
+  refer to the engine wiki's docs on [Flutter's build modes][].
+* To learn how to detect the build mode, check out the
+  [Check for Debug/Release Mode in Flutter Apps] blog post.
 
 [Check for Debug/Release Mode in Flutter Apps]: https://retroportalstudio.medium.com/check-for-debug-release-mode-in-flutter-apps-d8d545f20da3
 
@@ -129,8 +130,7 @@ For more information on the build modes, see
 [dart2js]: {{site.dart-site}}/tools/dart2js
 [dartdevc]: {{site.dart-site}}/tools/dartdevc
 [DevTools]: /tools/devtools
-[Flutter wiki]: {{site.repo.flutter}}/blob/master/docs/engine/Flutter's-modes.md
-[Flutter's build modes]: {{site.repo.flutter}}/blob/master/docs/engine/Flutter's-modes.md
+[Flutter's build modes]: {{site.repo.engine}}/blob/main/docs/Flutter's-modes.md
 [generate timeline events]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [hot reload]: /tools/hot-reload
 [iOS]: /deployment/ios
