@@ -76,11 +76,6 @@ For more information, see the API docs for: [`AppKitView`][].
 
 ## On the platform side
 
-On the platform side, use Swift:
-
-{% samplecode "macos-platform-views", "Swift" %}
-{% sample "Swift" %}
-
 Implement the factory and the platform view. The `NativeViewFactory` creates the
 platform view, and the platform view provides a reference to the `NSView`. For
 example, `NativeView.swift`:
@@ -182,9 +177,6 @@ public class Plugin: NSObject, FlutterPlugin {
   }
 }
 ```
-
-{% endsample %}
-{% endsamplecode %}
 
 For more information, see the API docs for:
 
