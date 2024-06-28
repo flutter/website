@@ -52,14 +52,16 @@ the project, you may get an error like this:
 Target Integrity (Xcode): The package product 'plugin_name_ios' requires minimum platform version 14.0 for the iOS platform, but this target supports 12.0
 ```
 
-To use the plugin, you'll need to increase the Minimum Deployment of your
+To use the plugin, you'll need to increase the Minimum Deployments of your
 app's target.
 
 :::warning
 This raises your app's minimum OS version requirement.
 :::
 
-![Screenshot 2024-04-05 at 3 04 09 PM](https://github.com/flutter/flutter/assets/15619084/c7cfe40c-8d90-4be5-9bee-b92af090f663)
+{% render docs/captioned-image.liquid,
+image:"development/packages-and-plugins/swift-package-manager/minimum-deployments.png",
+caption:"The target's Minimum Deployments setting" %}
 
 ## How to add Swift Package Manager integration to a custom target
 
@@ -89,14 +91,18 @@ To undo this migration:
 4. Click on the `FlutterGeneratedPluginSwiftPackage` package and then click the
    `-` button.
 
-   ![Screenshot 2024-04-05 at 2 24 48 PM](https://github.com/flutter/flutter/assets/15619084/2ad421e3-473e-4db4-92a1-175b5984c822)
+   {% render docs/captioned-image.liquid,
+   image:"development/packages-and-plugins/swift-package-manager/remove-generated-package.png",
+   caption:"The `FlutterGeneratedPluginSwiftPackage` to remove" %}
 
 4. Navigate to Frameworks, Libraries, and Embedded Content for the Runner
    target.
 
 5. Click on `FlutterGeneratedPluginSwiftPackage` and then click the `-` button.
 
-   ![Screenshot 2024-04-05 at 2 25 25 PM](https://github.com/flutter/flutter/assets/15619084/caa5194a-80c2-4243-b251-13bd8fd3bfee)
+   {% render docs/captioned-image.liquid,
+   image:"development/packages-and-plugins/swift-package-manager/remove-generated-framework.png",
+   caption:"The `FlutterGeneratedPluginSwiftPackage` to remove" %}
 
 6. Next, select Product > Scheme > Edit Scheme.
 
@@ -108,6 +114,8 @@ To undo this migration:
 
 10. Click the 🗑️ button.
 
-    ![Screenshot](https://github.com/flutter/flutter/assets/737941/0f760191-bfb5-400b-a120-7c99f4751b0f)
+   {% render docs/captioned-image.liquid,
+   image:"development/packages-and-plugins/swift-package-manager/remove-flutter-pre-action.png",
+   caption:"The Build Pre-Action to remove" %}
 
 ["Disable Swift Package Manager"]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-disable-swift-package-manager
