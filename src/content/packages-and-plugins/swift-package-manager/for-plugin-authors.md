@@ -1,6 +1,7 @@
 ---
 title: Swift Package Manager for plugin authors
 description: How to add Swift Package Manager compatibility to iOS and macOS plugins
+diff2html: true
 ---
 
 Flutter is migrating to Swift Package Manager to manage iOS and macOS native
@@ -54,11 +55,16 @@ To update your unit tests:
 2. If you were using a CocoaPod dependency for tests, such as `OCMock`,
    you'll want to remove it from your Podfile.
 
-   ```diff title="Podfile"
-   target 'RunnerTests' do
-     inherit! :search_paths
-   -  pod 'OCMock', '3.5'
-   end`
+   ```diff2html
+   --- a/ios/Podfile
+   +++ b/ios/Podfile
+   @@ -33,7 +33,6 @@ target 'Runner' do
+      target 'RunnerTests' do
+        inherit! :search_paths
+   
+   -    pod 'OCMock', '3.5'
+      end
+    end
    ```
 
    Then in the terminal, run `pod install` in the `plugin_name_ios/example/ios`

@@ -82,7 +82,8 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    `Sources/plugin_name_ios/PrivacyInfo.xcprivacy` and uncomment the resource in
    the Package.swift.
 
-   ```diff title="Package.swift"
+
+   ```swift title="Package.swift"
                resources: [
                    // If your plugin requires a privacy manifest, for example if it uses any required
                    // reason APIs, update the PrivacyInfo.xcprivacy file to describe your plugin's
@@ -124,7 +125,10 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     The example below assumes they are located within the
     `Sources/plugin_name_ios/include` directory.
 
-    ```diff title="Package.swift"
+    ```diff2html
+    --- a/Package.swift
+    +++ b/Package.swift
+    @@ -1,3 +1,4 @@ 
             .target(
                 name: "plugin_name_ios",
                 dependencies: [],
@@ -134,7 +138,10 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     If you want to keep your unit tests compatible with both CocoaPods and
     Swift Package Manager, you can try the following:
 
-    ```diff
+    ```diff2html
+    --- a/Tests/TestFile.m
+    +++ b/Tests/TestFile.m
+    @@ -1,2 +1,4 @@
     @import plugin_name_ios;
     - @import plugin_name_ios.Test;
     + #if __has_include(<plugin_name_ios/plugin_name_ios-umbrella.h>)
@@ -162,30 +169,45 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
     Within `ImplementationFile.m`, the import would change:
 
-    ```diff
+    ```diff2html
+    --- a/Sources/plugin_name_ios/ImplementationFile.m
+    +++ b/Sources/plugin_name_ios/ImplementationFile.m
+    @@ -1,1 +1,1 @@
     - #import "PublicHeaderFile.h"
     + #import "./include/plugin_name_ios/PublicHeaderFile.h"
     ```
 
 12. If using Pigeon, update your Pigeon input file:
 
-    ```diff
-    - objcHeaderOut: 'ios/Classes/messages.g.h',
-    + objcHeaderOut: 'ios/plugin_name_ios/Sources/plugin_name_ios/messages.g.h',
-    - objcSourceOut: 'ios/Classes/messages.g.m',
-    + objcSourceOut: 'ios/plugin_name_ios/Sources/plugin_name_ios/messages.g.m',
+    ```diff2html
+    --- a/pigeons/messages.dart
+    +++ b/pigeons/messages.dart
+    @@ -18,8 +18,8 @@ import 'package:pigeon/pigeon.dart';
+       javaOptions: JavaOptions(),
+    -  objcHeaderOut: 'ios/Classes/messages.g.h',
+    -  objcSourceOut: 'ios/Classes/messages.g.m',
+    +  objcHeaderOut: 'ios/plugin_name_ios/Sources/plugin_name_ios/messages.g.h',
+    +  objcSourceOut: 'ios/plugin_name_ios/Sources/plugin_name_ios/messages.g.m',
+       copyrightHeader: 'pigeons/copyright.txt',
     ```
 
     If your `objcHeaderOut` file is no longer within the same directory as the
     `objcSourceOut`, you can change the `#import` using
     `ObjcOptions.headerIncludePath`:
 
-    ```diff
-    objcHeaderOut: 'ios/plugin_name_ios/Sources/plugin_name_ios/include/plugin_name_ios/messages.g.h',
-    objcSourceOut: 'ios/plugin_name_ios/Sources/plugin_name_ios/messages.g.m',
-    + objcOptions: ObjcOptions(
-    +   headerIncludePath: './include/plugin_name_ios/messages.g.h',
-    + ),
+    ```diff2html
+    --- a/pigeons/messages.dart
+    +++ b/pigeons/messages.dart
+    @@ -18,8 +18,8 @@ import 'package:pigeon/pigeon.dart';
+       javaOptions: JavaOptions(),
+    -  objcHeaderOut: 'ios/Classes/messages.g.h',
+    -  objcSourceOut: 'ios/Classes/messages.g.m',
+    +  objcHeaderOut: 'ios/plugin_name_ios/Sources/plugin_name_ios/messages.g.h',
+    +  objcSourceOut: 'ios/plugin_name_ios/Sources/plugin_name_ios/messages.g.m',
+    +  objcOptions: ObjcOptions(
+    +    headerIncludePath: './include/plugin_name_ios/messages.g.h',
+    +  ),
+       copyrightHeader: 'pigeons/copyright.txt',
     ```
 
 13. Update your Package.swift with any customizations you may need.
@@ -226,17 +248,17 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
 14. Update your `plugin_name_ios.podspec` to point to new paths.
 
-    ```diff title="plugin_name_ios.podspec"
+    ```diff2html
+    --- a/plugin_name_ios.podspec
+    +++ b/plugin_name_ios.podspec
+    @@ -21,4 +21,4 @@ 
     - s.source_files = 'Classes/**/*.{h,m}'
-    + s.source_files = 'plugin_name_ios/Sources/plugin_name_ios/**/*.{h,m}'
-    
     - s.public_header_files = 'Classes/**/*.h'
-    + s.public_header_files = 'plugin_name_ios/Sources/plugin_name_ios/include/**/*.h'
-    
     - s.module_map = 'Classes/cocoapods_plugin_name_ios.modulemap'
-    + s.module_map = 'plugin_name_ios/Sources/plugin_name_ios/include/cocoapods_plugin_name_ios.modulemap'
-    
     - s.resource_bundles = {'plugin_name_ios_privacy' => ['Resources/PrivacyInfo.xcprivacy']}
+    + s.source_files = 'plugin_name_ios/Sources/plugin_name_ios/**/*.{h,m}'
+    + s.public_header_files = 'plugin_name_ios/Sources/plugin_name_ios/include/**/*.h'
+    + s.module_map = 'plugin_name_ios/Sources/plugin_name_ios/include/cocoapods_plugin_name_ios.modulemap'
     + s.resource_bundles = {'plugin_name_ios_privacy' => ['plugin_name_ios/Sources/plugin_name_ios/PrivacyInfo.xcprivacy']}
     ```
 

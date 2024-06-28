@@ -70,7 +70,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    `Sources/plugin_name_ios/PrivacyInfo.xcprivacy` and uncomment the resource in
    the Package.swift file.
 
-   ```diff
+   ```swift title="Package.swift"
                resources: [
                    // If your plugin requires a privacy manifest, for example if it uses any required
                    // reason APIs, update the PrivacyInfo.xcprivacy file to describe your plugin's
@@ -97,9 +97,16 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
 9. If using Pigeon, you'll want to update your Pigeon input file.
 
-   ```diff
-   - swiftOut: 'ios/Classes/messages.g.swift',
-   + swiftOut: 'ios/plugin_name_ios/Sources/plugin_name_ios/messages.g.swift',
+   ```diff2html
+   --- a/pigeons/messages.dart
+   +++ b/pigeons/messages.dart
+   @@ -16,7 +16,7 @@ import 'package:pigeon/pigeon.dart';
+      kotlinOptions: KotlinOptions(),
+      javaOut: 'android/app/src/main/java/io/flutter/plugins/Messages.java',
+      javaOptions: JavaOptions(),
+   -  swiftOut: 'ios/Classes/messages.g.swift',
+   +  swiftOut: 'ios/plugin_name_ios/Sources/plugin_name_ios/messages.g.swift',
+      swiftOptions: SwiftOptions(),
    ```
 
 10. Update your Package.swift with any customizations you may need.
@@ -139,11 +146,13 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
 11. Update your `plugin_name_ios.podspec` to point to new paths.
 
-    ```diff
+    ```diff2html
+    --- a/plugin_name_ios.podspec
+    +++ b/plugin_name_ios.podspec
+    @@ -1,2 +1,2 @@ 
     - s.source_files = 'Classes/**/*.swift'
-    + s.source_files = 'plugin_name_ios/Sources/plugin_name_ios/**/*.swift'
-    
     - s.resource_bundles = {'plugin_name_ios_privacy' => ['Resources/PrivacyInfo.xcprivacy']}
+    + s.source_files = 'plugin_name_ios/Sources/plugin_name_ios/**/*.swift'
     + s.resource_bundles = {'plugin_name_ios_privacy' => ['plugin_name_ios/Sources/plugin_name_ios/PrivacyInfo.xcprivacy']}
     ```
 
