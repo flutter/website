@@ -214,7 +214,8 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
        ```
 
     4. Make any other customizations. For more information on how to write a
-       Package.swift, see [https://developer.apple.com/documentation/packagedescription](https://developer.apple.com/documentation/packagedescription).
+       Package.swift file, see
+       [https://developer.apple.com/documentation/packagedescription](https://developer.apple.com/documentation/packagedescription).
 
        :::tip
        If you add additional targets to your Package.swift,
@@ -239,7 +240,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     + s.resource_bundles = {'plugin_name_ios_privacy' => ['plugin_name_ios/Sources/plugin_name_ios/PrivacyInfo.xcprivacy']}
     ```
 
-15. Update getting of resources from bundle to use `SWIFTPM_MODULE_BUNDLE`:
+15. Update loading of resources from bundle to use `SWIFTPM_MODULE_BUNDLE`:
 
     ```objc
     #if SWIFT_PACKAGE

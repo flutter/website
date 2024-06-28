@@ -27,14 +27,90 @@ please [open an issue][].
 ## Adding Swift Package Manager support to an existing Flutter plugin
 
 {% tabs %}
-{% tab "Swift" %}
+{% tab "Swift plugin" %}
 
 {% include docs/swift-package-manager/migrate-swift-plugin.md %}
 
 {% endtab %}
-{% tab "Objective-C" %}
+{% tab "Objective-C plugin" %}
 
 {% include docs/swift-package-manager/migrate-objective-c-plugin.md %}
 
 {% endtab %}
 {% endtabs %}
+
+## Updating unit tests in plugin example app
+
+If your plugin has native XCTests, you may need to update them to work with
+Swift Package Manager if one of the following is true:
+
+* You're using a CocoaPod dependency for the test.
+* Your plugin is explicitly set to `type: .dynamic` in its Package.swift file.
+
+To update your unit tests:
+
+1. Open your `example/ios/Runner.xcworkspace` in Xcode.
+
+2. If you were using a CocoaPod dependency for tests, such as `OCMock`,
+   you'll want to remove it from your Podfile.
+
+   ```diff title="Podfile"
+   target 'RunnerTests' do
+     inherit! :search_paths
+   -  pod 'OCMock', '3.5'
+   end`
+   ```
+
+   Then in the terminal, run `pod install` in the `plugin_name_ios/example/ios`
+   directory.
+
+3. Navigate to Package Dependencies for the project.
+
+   ![Screenshot 2024-04-05 at 10 13 56 AM](https://github.com/flutter/flutter/assets/15619084/0d862f5f-8bff-41df-9cf4-3f56b1957230)
+
+4. Click the `+` button and add any test-only dependencies by searching for them
+   in the top right search bar.
+
+   ![Screenshot 2024-04-09 at 3 11 21 PM](https://github.com/flutter/flutter/assets/15619084/9e88c220-97d6-48f8-91ce-0b0ce72f50fa)
+
+   :::note
+   OCMock uses unsafe build flags and can only be used if targeted by commit.
+   `fe1661a3efed11831a6452f4b1a0c5e6ddc08c3d` is the commit for the 3.9.3
+   version.
+   :::
+
+5. Ensure the dependency is added to the `RunnerTests` Target and click the
+   `Add Package` button.
+
+   ![Screenshot 2024-04-09 at 3 12 12 PM](https://github.com/flutter/flutter/assets/15619084/06424d39-e317-4360-8b99-571fd3f046f2)
+
+6. If you've explicitly set your plugin's library type to `.dynamic` in its
+   Package.swift file
+   ([not recommended by Apple][library type recommendations]),
+   you'll also need to add it as a dependency to the `RunnerTests` target.
+
+   1. First, ensure `RunnerTests` has a `Link Binary With Libraries` Build
+      Phase.
+   
+      ![Screenshot 2024-04-19 at 3 14 56 PM](https://github.com/flutter/flutter/assets/15619084/64a050f1-c1e0-4ed5-a2fc-87002d3bf72b)
+
+   2. If it does not already exist, create one by selecting the `+` button and
+      selecting `New Link Binary With Libraries Phase`.
+   
+      ![Screenshot 2024-04-19 at 3 13 01 PM](https://github.com/flutter/flutter/assets/15619084/0ca159c1-8b57-4789-aad6-d7020a1907a0)
+
+   3. Navigate to Package Dependencies for the project.
+
+   4. Click the `+` button.
+
+   5. Click the `Add Local...` button on the bottom of the dialog that opens.
+
+   6. Navigate to `plugin_name/plugin_name_ios/ios/plugin_name_ios` and click
+      the `Add Package` button.
+
+   7. Ensure it is added to the `RunnerTests` target and click the `Add Package`
+      button.
+
+7. Ensure tests pass Product > Test.
+
+[library type recommendations]: https://developer.apple.com/documentation/packagedescription/product/library(name:type:targets:)
