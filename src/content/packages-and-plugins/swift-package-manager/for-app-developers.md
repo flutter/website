@@ -42,7 +42,7 @@ Target Integrity (Xcode): The package product 'plugin_name_ios' requires minimum
 To use the plugin, you'll need to increase the Minimum Deployment of your
 app's target.
 
-:::note
+:::warning
 This raises your app's minimum OS version requirement.
 :::
 
