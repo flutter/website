@@ -22,7 +22,10 @@ Issue tracking Flutter's Swift Package Manager migration: https://github.com/flu
 
 {% include docs/swift-package-manager/how-to-enable-disable.md %}
 
-## Adding Swift Package Manager support to an existing Objective-C Flutter plugin
+## Adding Swift Package Manager support to an existing Flutter plugin
+
+{% tabs %}
+{% tab "Objective-C" %}
 
 Replace `plugin_name` throughout this guide with the name of your plugin.
 The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
@@ -250,7 +253,8 @@ let package = Package(
   * **If your plugin has Native unit tests (XCTest), make sure you also complete "Updating unit tests in plugin example app" below.**
   * [Follow instructions for testing plugins](https://docs.flutter.dev/testing/testing-plugins)
 
-## Adding Swift Package Manager support to an existing Swift Flutter plugin
+{% endtab %}
+{% tab "Swift" %}
 
 Replace `plugin_name` throughout this guide with the name of your plugin.
 The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
@@ -441,3 +445,6 @@ Note: OCMock uses unsafe build flags and can only be used if targeted by commit.
    7. Ensure it is added to the `RunnerTests` target and click the `Add Package` button
 
 7. Ensure tests pass Product > Test
+
+{% endtab %}
+{% endtabs %}
