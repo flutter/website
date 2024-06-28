@@ -3,17 +3,30 @@ title: Swift Package Manager for app developers
 description: How to use Swift Package Manager for native iOS or macOS dependencies
 ---
 
-Flutter is migrating to Swift Package Manager to manage iOS and macOS native dependencies.
+Flutter is migrating to Swift Package Manager to manage iOS and macOS native
+dependencies.
 This is an experimental feature that may change in the future.
-It is currently only available on the [`master` channel](https://docs.flutter.dev/release/upgrade#switching-flutter-channels).
+It is currently only available on the [`master` channel][].
 Flutter will continue to support CocoaPods until further notice.
 
 :::tip
 If you find a bug in Flutter's Swift Package Manager feature,
-please [open an issue](https://github.com/flutter/flutter/issues/new?template=2_bug.yml).
+please [open an issue][].
 :::
 
+[`master` channel]: /release/upgrade#switching-flutter-channels
+[open an issue]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml
+
 {% include docs/swift-package-manager/how-to-enable-disable.md %}
+
+## Add Flutter to an existing app (add-to-app)
+
+Flutter's Swift Package Manager feature does not support add-to-app scenarios
+yet.
+
+For status updates, see [flutter#146957].
+
+[flutter#146957]: https://github.com/flutter/flutter/issues/146957
 
 ## How to add Swift Package Manager integration to a project manually
 
@@ -35,7 +48,7 @@ please [open an issue](https://github.com/flutter/flutter/issues/new?template=2_
 If a Swift Package Flutter Manager plugin requires a higher OS version than
 the project, you may get an error like this:
 
-```txt
+```text
 Target Integrity (Xcode): The package product 'plugin_name_ios' requires minimum platform version 14.0 for the iOS platform, but this target supports 12.0
 ```
 
@@ -50,7 +63,8 @@ This raises your app's minimum OS version requirement.
 
 ## How to add Swift Package Manager integration to a custom target
 
-Follow the steps in `How to add Swift Package Manager integration to an iOS/macOS project manually`.
+Follow the steps in
+`How to add Swift Package Manager integration to an iOS/macOS project manually`.
 
 In Step 1, list item 6 use your custom target instead of the Flutter target.
 
@@ -64,28 +78,36 @@ depend on.
 
 To undo this migration:
 
-1. Disable Swift Package Manager (see "Disable Swift Package Manager" instructions above).
-2. Open your app (`ios/Runner.xcworkspace` or `ios/Runner.xcworkspace`) in Xcode
-3. Navigate to Package Dependencies for the project
-4. Click on the `FlutterGeneratedPluginSwiftPackage` package and then click the `-` button
+1. Disable Swift Package Manager (see ["Disable Swift Package Manager"][]
+   instructions above).
 
-![Screenshot 2024-04-05 at 2 24 48 PM](https://github.com/flutter/flutter/assets/15619084/2ad421e3-473e-4db4-92a1-175b5984c822)
+2. Open your app (`ios/Runner.xcworkspace` or `ios/Runner.xcworkspace`) in
+   Xcode.
 
-4. Navigate to Frameworks, Libraries, and Embedded Content for the Runner target
-5. Click on `FlutterGeneratedPluginSwiftPackage` and then click the `-` button
+3. Navigate to Package Dependencies for the project.
 
-![Screenshot 2024-04-05 at 2 25 25 PM](https://github.com/flutter/flutter/assets/15619084/caa5194a-80c2-4243-b251-13bd8fd3bfee)
+4. Click on the `FlutterGeneratedPluginSwiftPackage` package and then click the
+   `-` button.
 
-6. Next, select Product > Scheme > Edit Scheme
-7. Click the `>` next to "Build" in the left side bar
-8. Select Pre-actions
-9. Select the `Run Prepare Flutter Framework Script`
-10. Click the 🗑️ button
+   ![Screenshot 2024-04-05 at 2 24 48 PM](https://github.com/flutter/flutter/assets/15619084/2ad421e3-473e-4db4-92a1-175b5984c822)
 
-![Screenshot](https://github.com/flutter/flutter/assets/737941/0f760191-bfb5-400b-a120-7c99f4751b0f)
+4. Navigate to Frameworks, Libraries, and Embedded Content for the Runner
+   target.
 
-## Add Flutter to an existing app (add-to-app)
+5. Click on `FlutterGeneratedPluginSwiftPackage` and then click the `-` button.
 
-Flutter's Swift Package Manager feature does not support add-to-app scenarios yet.
+   ![Screenshot 2024-04-05 at 2 25 25 PM](https://github.com/flutter/flutter/assets/15619084/caa5194a-80c2-4243-b251-13bd8fd3bfee)
 
-See: https://github.com/flutter/flutter/issues/146957
+6. Next, select Product > Scheme > Edit Scheme.
+
+7. Click the `>` next to "Build" in the left side bar.
+
+8. Select Pre-actions.
+
+9. Select the `Run Prepare Flutter Framework Script`.
+
+10. Click the 🗑️ button.
+
+    ![Screenshot](https://github.com/flutter/flutter/assets/737941/0f760191-bfb5-400b-a120-7c99f4751b0f)
+
+["Disable Swift Package Manager"]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-disable-swift-package-manager
