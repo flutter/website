@@ -44,32 +44,30 @@ target is selected.
 
 To override the web renderer at runtime:
 
-* Build the app with the `auto` option.
-* Prepare a configuration object with the `renderer` property set to
-  `"canvaskit"` or `"html"`.
-* Pass that object to the `engineInitializer.initializeEngine(configuration);`
-  method in the [Flutter Web app initialization][web-app-init] script.
+ 1. Build the app with the `auto` option.
+ 1. Set up custom web app initialization
+    as described in [Write a custom `flutter_bootstrap.js`][custom-bootstrap].
+ 1. Prepare a configuration object with the `renderer` property set to
+    `"canvaskit"` or `"html"`.
+ 1. Pass your prepared config object as the `config` property of
+    a new object to the `_flutter.loader.load` method that is
+    provided by the earlier injected code.
 
-```html
+```html highlightLines=9-14
 <body>
   <script>
-    let useHtml = true;
+    {% raw %}{{flutter_js}}{% endraw %}
+    {% raw %}{{flutter_build_config}}{% endraw %}
 
-    window.addEventListener('load', function(ev) {
-    _flutter.loader.loadEntrypoint({
-      serviceWorker: {
-        serviceWorkerVersion: serviceWorkerVersion,
-      },
-      onEntrypointLoaded: function(engineInitializer) {
-        let config = {
-          renderer: useHtml ? "html" : "canvaskit",
-        };
-        engineInitializer.initializeEngine(config).then(function(appRunner) {
-          appRunner.runApp();
-        });
-      }
+    // TODO: Replace this with your own code to determine which renderer to use.  
+    const useHtml = true;
+  
+    const config = {
+      renderer: useHtml ? "html" : "canvaskit",
+    };
+    _flutter.loader.load({
+      config: config,
     });
-  });
   </script>
 </body>
 ```
@@ -77,12 +75,15 @@ To override the web renderer at runtime:
 The web renderer can't be changed after the Flutter engine startup process
 begins in `main.dart.js`.
 
-:::note
-Setting a `window.flutterWebRenderer`
-(an approach used in previous releases) displays a
-**deprecation notice** in the JS console. For more information,
-check out [Customizing web app initialization][web-app-init].
+:::version-note
+The method of specifying the web renderer was changed in Flutter 3.22.
+To learn how to configure the renderer in earlier Flutter versions,
+check out [Legacy web app initialization][web-init-legacy].
 :::
+
+[custom-bootstrap]: /platform-integration/web/initialization#custom-bootstrap-js
+[customizing-web-init]: /platform-integration/web/initialization
+[web-init-legacy]: /platform-integration/web/initialization-legacy
 
 ## Choosing which option to use
 
@@ -123,4 +124,3 @@ flutter run -d chrome --web-renderer html --profile
 
 [canvaskit]: https://skia.org/docs/user/modules/canvaskit/
 [file an issue]: {{site.repo.flutter}}/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
-[web-app-init]: /platform-integration/web/initialization

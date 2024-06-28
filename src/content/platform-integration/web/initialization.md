@@ -29,7 +29,7 @@ your `index.html` file in the `web` subdirectory of your Flutter app:
   <body>
     <script src="flutter_bootstrap.js" async></script>
   </body>
-<html>
+</html>
 ```
 
 Alternatively, you can inline the entire contents of
@@ -44,7 +44,7 @@ your `index.html` file:
       {% raw %}{{flutter_bootstrap_js}}{% endraw %}
     </script>
   </body>
-<html>
+</html>
 ```
 
 The `{% raw %}{{flutter_bootstrap_js}}{% endraw %}` token is
@@ -90,7 +90,9 @@ substitute in either the `flutter_bootstrap.js` or `index.html` files:
 
 </div>
 
-## Write a custom `flutter_bootstrap.js`
+<a id="write-a-custom-flutter_bootstrap-js" aria-hidden="true"></a>
+
+## Write a custom `flutter_bootstrap.js` {:#custom-bootstrap-js}
 
 Any custom `flutter_bootstrap.js` script needs to have three components in
 order to successfully start your Flutter app:
