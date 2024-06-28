@@ -19,7 +19,8 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     - Sources/plugin_name_ios/include (directory)
     - Sources/plugin_name_ios/include/plugin_name_ios (directory)
     - Sources/plugin_name_ios/include/plugin_name_ios/.gitkeep (file)
-      - Needed to ensure the directory is committed, even if empty. Can be removed if files are added to the directory.
+      - This is needed to ensure the directory is committed, even if empty.
+        Can be removed if files are added to the directory.
 
    <pre>
    /plugin_name/plugin_name_ios/ios/plugin_name_ios/<b>Package.swift</b>
@@ -189,85 +190,129 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
 13. Update your Package.swift with any customizations you may need.
 
-    1. Open `/plugin_name/plugin_name_ios/ios/plugin_name_ios/` in Xcode
-        * If package does not show any files in Xcode, quit Xcode (Xcode > Quit Xcode) and reopen
-        * You don't need to edit your Package.swift through Xcode, but Xcode will provide helpful feedback
-        * If Xcode isn't updating after you make a change, try clicking File > Packages > Reset Package Caches
+    1. Open `/plugin_name/plugin_name_ios/ios/plugin_name_ios/` in Xcode.
+
+        * If package does not show any files in Xcode, quit Xcode (Xcode >
+          Quit Xcode) and reopen.
+
+        * You don't need to edit your Package.swift through Xcode, but Xcode
+          provides helpful feedback.
+
+        * If Xcode isn't updating after you make a change, try clicking
+          File > Packages > Reset Package Caches.
 
     2. [Add dependencies][].
 
     3. If your package must be linked explicitly `static` or `dynamic`
-    ([not recommended](https://developer.apple.com/documentation/packagedescription/product/library(name:type:targets:))),
-    update the [Product](https://developer.apple.com/documentation/packagedescription/product) to define the type:
+       ([not recommended by Apple][]), update the [Product][] to define the
+       type:
 
-    ```swift title="Package.swift"
-    products: [
-        .library(name: "plugin-name-ios", type: .static, targets: ["plugin_name_ios"])
-    ],
-    ```
+       ```swift title="Package.swift"
+       products: [
+           .library(name: "plugin-name-ios", type: .static, targets: ["plugin_name_ios"])
+       ],
+       ```
 
-    4. Make any other customizations - see https://developer.apple.com/documentation/packagedescription for more info on how to write a Package.swift.
-    5. If you add additional targets to your Package.swift, try to name them uniquely. If your target name conflicts with another target from another package, this can cause issues that may require manual intervention to be able to use your plugin.
+    4. Make any other customizations. For more information on how to write a
+       Package.swift, see [https://developer.apple.com/documentation/packagedescription](https://developer.apple.com/documentation/packagedescription).
+
+       :::tip
+       If you add additional targets to your Package.swift,
+       try to name them uniquely.
+       If your target name conflicts with another target from another package,
+       this can cause issues for developers that use your plugin.
+       :::
 
 14. Update your `plugin_name_ios.podspec` to point to new paths.
-```diff title="plugin_name_ios.podspec"
-- s.source_files = 'Classes/**/*.{h,m}'
-+ s.source_files = 'plugin_name_ios/Sources/plugin_name_ios/**/*.{h,m}'
 
-- s.public_header_files = 'Classes/**/*.h'
-+ s.public_header_files = 'plugin_name_ios/Sources/plugin_name_ios/include/**/*.h'
+    ```diff title="plugin_name_ios.podspec"
+    - s.source_files = 'Classes/**/*.{h,m}'
+    + s.source_files = 'plugin_name_ios/Sources/plugin_name_ios/**/*.{h,m}'
+    
+    - s.public_header_files = 'Classes/**/*.h'
+    + s.public_header_files = 'plugin_name_ios/Sources/plugin_name_ios/include/**/*.h'
+    
+    - s.module_map = 'Classes/cocoapods_plugin_name_ios.modulemap'
+    + s.module_map = 'plugin_name_ios/Sources/plugin_name_ios/include/cocoapods_plugin_name_ios.modulemap'
+    
+    - s.resource_bundles = {'plugin_name_ios_privacy' => ['Resources/PrivacyInfo.xcprivacy']}
+    + s.resource_bundles = {'plugin_name_ios_privacy' => ['plugin_name_ios/Sources/plugin_name_ios/PrivacyInfo.xcprivacy']}
+    ```
 
-- s.module_map = 'Classes/cocoapods_plugin_name_ios.modulemap'
-+ s.module_map = 'plugin_name_ios/Sources/plugin_name_ios/include/cocoapods_plugin_name_ios.modulemap'
+15. Update getting of resources from bundle to use `SWIFTPM_MODULE_BUNDLE`:
 
-- s.resource_bundles = {'plugin_name_ios_privacy' => ['Resources/PrivacyInfo.xcprivacy']}
-+ s.resource_bundles = {'plugin_name_ios_privacy' => ['plugin_name_ios/Sources/plugin_name_ios/PrivacyInfo.xcprivacy']}
-```
+    ```objc
+    #if SWIFT_PACKAGE
+       NSBundle *bundle = SWIFTPM_MODULE_BUNDLE;
+     #else
+       NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+     #endif
+     NSURL *imageURL = [bundle URLForResource:@"image" withExtension:@"jpg"];
+    ```
 
-15. Update getting of resources from bundle to use `SWIFTPM_MODULE_BUNDLE`
-```objc
-#if SWIFT_PACKAGE
-   NSBundle *bundle = SWIFTPM_MODULE_BUNDLE;
- #else
-   NSBundle *bundle = [NSBundle bundleForClass:[self class]];
- #endif
- NSURL *imageURL = [bundle URLForResource:@"image" withExtension:@"jpg"];
-```
-  * Note: `SWIFTPM_MODULE_BUNDLE` will only work if there are actual resources (either [defined in the Package.swift](https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package#Explicitly-declare-or-exclude-resources) or [automatically included by Xcode](https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package#:~:text=Xcode%20detects%20common%20resource%20types%20for%20Apple%20platforms%20and%20treats%20them%20as%20a%20resource%20automatically)). Otherwise, it will fail.
+    :::note
+    `SWIFTPM_MODULE_BUNDLE` will only work if there are actual resources
+    (either [defined in the Package.swift file][Bundling resources] or
+    [automatically included by Xcode][Xcode resource detection]).
+    Otherwise, it will fail.
+    :::
 
-16. If your `plugin_name_ios/Sources/plugin_name_ios/include` directory only contains a `.gitkeep`,
-    you'll want update your `.gitignore` to include the following:
+16. If your `plugin_name_ios/Sources/plugin_name_ios/include` directory only
+    contains a `.gitkeep`, you'll want update your `.gitignore` to include the
+    following:
 
     ```text title=".gitignore"
     !.gitkeep
     ```
 
-    Then run `flutter pub publish --dry-run` to ensure the `include` directory will be published.
+    Then run `flutter pub publish --dry-run` to ensure the `include` directory
+    is published.
 
-17. Verify plugin still works with CocoaPods
-    1. Disable Swift Package Manager
+17. Verify plugin still works with CocoaPods.
+
+    1. Disable Swift Package Manager:
+
       ```sh
       flutter config --no-enable-swift-package-manager
       ```
-    2. Run `flutter run` with the example app and ensure it builds and runs
-    3. Run CocoaPods validation lints
+
+    2. Run `flutter run` with the example app and ensure it builds and runs.
+
+    3. Run CocoaPods validation lints:
+
     ```sh
     pod lib lint ios/plugin_name_ios.podspec  --configuration=Debug --skip-tests --use-modular-headers --use-libraries
     ```
+
     ```sh
     pod lib lint ios/plugin_name_ios.podspec  --configuration=Debug --skip-tests --use-modular-headers
     ```
-18. Verify plugin works with Swift Package Manager
-    1. Enable Swift Package Manager
+
+18. Verify plugin works with Swift Package Manager.
+
+    1. Enable Swift Package Manager:
+
       ```sh
       flutter config --enable-swift-package-manager
       ```
-    2. Run `flutter run` with the example app and ensure it builds and runs
-    3. Open the example app in Xcode and ensure Package Dependencies show in the left Project Navigator
 
-19. Verify tests pass
-  * **If your plugin has Native unit tests (XCTest), make sure you also complete "Updating unit tests in plugin example app" below.**
-  * [Follow instructions for testing plugins](https://docs.flutter.dev/testing/testing-plugins)
+    2. Run `flutter run` with the example app and ensure it builds and runs.
+
+    3. Open the example app in Xcode and ensure Package Dependencies show
+       in the left Project Navigator.
+
+19. Verify tests pass.
+
+  * **If your plugin has Native unit tests (XCTest), make sure you also complete
+    ["Updating unit tests in plugin example app"] below.**
+
+  * Follow instructions for [testing plugins][].
 
 [Swift Package Manager's documentation]: {{site.github}}/apple/swift-package-manager/blob/main/Documentation/Usage.md#creating-c-language-targets
 [Add dependencies]: https://developer.apple.com/documentation/packagedescription/package/dependency
+[not recommended by Apple]: https://developer.apple.com/documentation/packagedescription/product/library(name:type:targets:)
+[Product]: https://developer.apple.com/documentation/packagedescription/product
+[Bundling resources]: https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package#Explicitly-declare-or-exclude-resources
+[Xcode resource detection]: https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package#:~:text=Xcode%20detects%20common%20resource%20types%20for%20Apple%20platforms%20and%20treats%20them%20as%20a%20resource%20automatically
+["Updating unit tests in plugin example app"]: /packages-and-plugins/swift-package-manager/for-plugin-authors/#updating-unit-tests-in-plugin-example-app
+[testing plugins]: https://docs.flutter.dev/testing/testing-plugins

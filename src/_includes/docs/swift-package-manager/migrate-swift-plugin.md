@@ -97,7 +97,14 @@ let package = Package(
     ],
     ```
     4. Make any other customizations - see https://developer.apple.com/documentation/packagedescription for more info on how to write a Package.swift.
-    5. If you add additional targets to your Package.swift, try to name them uniquely. If your target name conflicts with another target from another package, this can cause issues that may require manual intervention to be able to use your plugin.
+
+       :::tip
+       If you add additional targets to your Package.swift,
+       try to name them uniquely.
+       If your target name conflicts with another target from another package,
+       this can cause issues for developers that use your plugin.
+       :::
+
 11. Update your `plugin_name_ios.podspec` to point to new paths.
 ```diff
 - s.source_files = 'Classes/**/*.swift'
@@ -173,7 +180,7 @@ Note: OCMock uses unsafe build flags and can only be used if targeted by commit.
 
 ![Screenshot 2024-04-09 at 3 12 12 PM](https://github.com/flutter/flutter/assets/15619084/06424d39-e317-4360-8b99-571fd3f046f2)
 
-6. If you've explicitly set your plugin's library type to `.dynamic` in its Package.swift ([not recommended](https://developer.apple.com/documentation/packagedescription/product/library(name:type:targets:))), you'll also need to add it as a dependency to the `RunnerTests` target.
+6. If you've explicitly set your plugin's library type to `.dynamic` in its Package.swift ([not recommended by Apple](https://developer.apple.com/documentation/packagedescription/product/library(name:type:targets:))), you'll also need to add it as a dependency to the `RunnerTests` target.
    1. First, ensure `RunnerTests` has a `Link Binary With Libraries` Build Phase
    ![Screenshot 2024-04-19 at 3 14 56 PM](https://github.com/flutter/flutter/assets/15619084/64a050f1-c1e0-4ed5-a2fc-87002d3bf72b)
 
