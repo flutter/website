@@ -66,12 +66,16 @@ To update your unit tests:
 
 3. Navigate to Package Dependencies for the project.
 
-   ![Screenshot 2024-04-05 at 10 13 56 AM](https://github.com/flutter/flutter/assets/15619084/0d862f5f-8bff-41df-9cf4-3f56b1957230)
+   {% render docs/captioned-image.liquid,
+   image:"development/packages-and-plugins/swift-package-manager/package-dependencies.png",
+   caption:"The project's package dependencies" %}
 
 4. Click the `+` button and add any test-only dependencies by searching for them
    in the top right search bar.
 
-   ![Screenshot 2024-04-09 at 3 11 21 PM](https://github.com/flutter/flutter/assets/15619084/9e88c220-97d6-48f8-91ce-0b0ce72f50fa)
+   {% render docs/captioned-image.liquid,
+   image:"development/packages-and-plugins/swift-package-manager/search-for-ocmock.png",
+   caption:"Search for test-only dependencies" %}
 
    :::note
    OCMock uses unsafe build flags and can only be used if targeted by commit.
@@ -82,7 +86,9 @@ To update your unit tests:
 5. Ensure the dependency is added to the `RunnerTests` Target and click the
    `Add Package` button.
 
-   ![Screenshot 2024-04-09 at 3 12 12 PM](https://github.com/flutter/flutter/assets/15619084/06424d39-e317-4360-8b99-571fd3f046f2)
+   {% render docs/captioned-image.liquid,
+   image:"development/packages-and-plugins/swift-package-manager/choose-package-products-test.png",
+   caption:"Ensure the dependency is added to the `RunnerTests` target" %}
 
 6. If you've explicitly set your plugin's library type to `.dynamic` in its
    Package.swift file
@@ -92,12 +98,16 @@ To update your unit tests:
    1. First, ensure `RunnerTests` has a `Link Binary With Libraries` Build
       Phase.
    
-      ![Screenshot 2024-04-19 at 3 14 56 PM](https://github.com/flutter/flutter/assets/15619084/64a050f1-c1e0-4ed5-a2fc-87002d3bf72b)
+      {% render docs/captioned-image.liquid,
+      image:"development/packages-and-plugins/swift-package-manager/runner-tests-link-binary-with-libraries.png",
+      caption:"The `Link Binary With Libraries` Build Phase in the `RunnerTests` target" %}
 
    2. If it does not already exist, create one by selecting the `+` button and
       selecting `New Link Binary With Libraries Phase`.
-   
-      ![Screenshot 2024-04-19 at 3 13 01 PM](https://github.com/flutter/flutter/assets/15619084/0ca159c1-8b57-4789-aad6-d7020a1907a0)
+
+      {% render docs/captioned-image.liquid,
+      image:"development/packages-and-plugins/swift-package-manager/add-runner-tests-link-binary-with-libraries.png",
+      caption:"Add `Link Binary With Libraries` Build Phase" %}
 
    3. Navigate to Package Dependencies for the project.
 
