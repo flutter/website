@@ -13,8 +13,6 @@ If you find a bug in Flutter's Swift Package Manager feature,
 please [open an issue](https://github.com/flutter/flutter/issues/new?template=2_bug.yml).
 :::
 
-Issue tracking Flutter's Swift Package Manager migration: https://github.com/flutter/flutter/issues/126005.
-
 {% include docs/swift-package-manager/how-to-enable-disable.md %}
 
 ## How to add Swift Package Manager integration to a project manually
@@ -67,7 +65,7 @@ depend on.
 To undo this migration:
 
 1. Disable Swift Package Manager (see "Disable Swift Package Manager" instructions above).
-2. Open your app (`/ios/Runner.xcworkspace`) in Xcode
+2. Open your app (`ios/Runner.xcworkspace` or `ios/Runner.xcworkspace`) in Xcode
 3. Navigate to Package Dependencies for the project
 4. Click on the `FlutterGeneratedPluginSwiftPackage` package and then click the `-` button
 

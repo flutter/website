@@ -14,14 +14,14 @@ the of the following files in your bug report:
 
 ### Step 1: Add FlutterGeneratedPluginSwiftPackage Package Dependency {:.no_toc}
 
-1. Open your app (`/macos/Runner.xcworkspace`) in Xcode
+1. Open your app (`macos/Runner.xcworkspace`) in Xcode
 2. Navigate to Package Dependencies for the project
 
 ![Screenshot 2024-04-05 at 10 13 56 AM](https://github.com/flutter/flutter/assets/15619084/0d862f5f-8bff-41df-9cf4-3f56b1957230)
 
 3. Click the `+` button
 4. Click the `Add Local...` button on the bottom of the dialog that opens
-5. Navigate to `/macos/Flutter/ephemeral/Packages/FlutterGeneratedPluginSwiftPackage` and click the `Add Package` button
+5. Navigate to `macos/Flutter/ephemeral/Packages/FlutterGeneratedPluginSwiftPackage` and click the `Add Package` button
 6. Ensure it is added to the Runner Target and click the `Add Package` button
 
 ![Screenshot 2024-04-05 at 10 17 21 AM](https://github.com/flutter/flutter/assets/15619084/b5bf410d-c0d4-47b0-b84c-2738002e97d4)

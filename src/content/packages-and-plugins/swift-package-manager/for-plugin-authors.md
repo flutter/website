@@ -18,8 +18,6 @@ If you find a bug in Flutter's Swift Package Manager feature,
 please [open an issue](https://github.com/flutter/flutter/issues/new?template=2_bug.yml).
 :::
 
-Issue tracking Flutter's Swift Package Manager migration: https://github.com/flutter/flutter/issues/126005.
-
 {% include docs/swift-package-manager/how-to-enable-disable.md %}
 
 ## Adding Swift Package Manager support to an existing Flutter plugin
