@@ -6,7 +6,7 @@ prev:
   path: /get-started/fwe/user-input
 next:
   title: Local data and caching
-  path: /get-started/fwe/networking
+  path: /get-started/fwe/local-caching
 ---
 
 While it's said that "no man is an island",
