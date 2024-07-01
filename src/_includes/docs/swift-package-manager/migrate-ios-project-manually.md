@@ -50,7 +50,7 @@ the of the following files in your bug report:
 2. Click the **>** next to **Build** in the left side bar.
 3. Select **Pre-actions**.
 4. Click the **+** button and select **New Run Script Action** from the menu.
-5. Click the **Run Script** title and it change to:
+5. Click the **Run Script** title and change it to:
 
    ```plaintext
    Run Prepare Flutter Framework Script
@@ -65,17 +65,17 @@ the of the following files in your bug report:
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/add-flutter-pre-action.png",
-   caption:"Add `Run Prepare Flutter Framework Script` build pre-action" %}
+   caption:"Add **Run Prepare Flutter Framework Script** build pre-action" %}
 
 ### Step 3: Run app {:.no_toc}
 
 1. Run the app in Xcode.
 2. Ensure that `FlutterGeneratedPluginSwiftPackage` is a target dependency and
-   that `Run Prepare Flutter Framework Script` is ran as a pre-action.
+   that **Run Prepare Flutter Framework Script** is ran as a pre-action.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/flutter-pre-action-build-log.png",
-   caption:"Ensure `Run Prepare Flutter Framework Script` is ran as a pre-action" %}
+   caption:"Ensure **Run Prepare Flutter Framework Script** is ran as a pre-action" %}
 
 3. Ensure that the app runs on the command line with `flutter run`.
 
