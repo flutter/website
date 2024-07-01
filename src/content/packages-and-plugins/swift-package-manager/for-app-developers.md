@@ -10,7 +10,7 @@ It is currently only available on the [`master` channel][].
 Flutter will continue to support CocoaPods until further notice.
 
 :::tip
-If you find a bug in Flutter's Swift Package Manager feature,
+If you find a bug in Flutter's Swift Package Manager support,
 please [open an issue][].
 :::
 
@@ -22,7 +22,7 @@ please [open an issue][].
 
 ## Add Flutter to an existing app (add-to-app)
 
-Flutter's Swift Package Manager feature does not support add-to-app scenarios
+Flutter's Swift Package Manager support does not work with add-to-app scenarios
 yet.
 
 For status updates, see [flutter#146957].

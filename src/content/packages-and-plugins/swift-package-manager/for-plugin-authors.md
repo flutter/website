@@ -6,7 +6,7 @@ diff2html: true
 
 Flutter is migrating to [Swift Package Manager][] to manage iOS and macOS native
 dependencies.
-This is an experimental feature that may change in the future.
+This is an experimental feature that might change in the future.
 It is currently only available on the [`master` channel][].
 Flutter will continue to support CocoaPods until further notice.
 
@@ -24,7 +24,7 @@ already supports CocoaPods.
 This ensures the plugin is usable by all Flutter projects.
 
 :::tip
-If you find a bug in Flutter's Swift Package Manager feature,
+If you find a bug in Flutter's Swift Package Manager support,
 please [open an issue][].
 :::
 
@@ -51,11 +51,11 @@ please [open an issue][].
 
 ## Updating unit tests in plugin example app
 
-If your plugin has native XCTests, you may need to update them to work with
+If your plugin has native XCTests, you might need to update them to work with
 Swift Package Manager if one of the following is true:
 
 * You're using a CocoaPod dependency for the test.
-* Your plugin is explicitly set to `type: .dynamic` in its Package.swift file.
+* Your plugin is explicitly set to `type: .dynamic` in its `Package.swift` file.
 
 To update your unit tests:
 
@@ -106,7 +106,7 @@ To update your unit tests:
    caption:"Ensure the dependency is added to the `RunnerTests` target" %}
 
 6. If you've explicitly set your plugin's library type to `.dynamic` in its
-   Package.swift file
+   `Package.swift` file
    ([not recommended by Apple][library type recommendations]),
    you'll also need to add it as a dependency to the `RunnerTests` target.
 
@@ -133,7 +133,7 @@ To update your unit tests:
    6. Navigate to `plugin_name/plugin_name_ios/ios/plugin_name_ios` and click
       the `Add Package` button.
 
-   7. Ensure it is added to the `RunnerTests` target and click the `Add Package`
+   7. Ensure that it's added to the `RunnerTests` target and click the `Add Package`
       button.
 
 7. Ensure tests pass Product > Test.

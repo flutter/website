@@ -1,8 +1,9 @@
-Once you enable the Swift Package Manager feature, the Flutter CLI will try
-to migrate your project to add Swift Package Manager integration. This makes
-your project download the Swift packages that your Flutter plugins depend on.
+Once you enable Swift Package Manager support, the Flutter CLI tries to
+migrate your project to add Swift Package Manager integration.
+This makes your project download the Swift packages that your Flutter
+plugins depend on.
 
-However, the Flutter CLI may be unable to migrate your project if you've
+However, the Flutter CLI might be unable to migrate your project if you've
 modified it significantly.
 
 Please [file a bug][] before migrating manually to help the Flutter team improve
@@ -27,22 +28,22 @@ the of the following files in your bug report:
 4. Click the `Add Local...` button on the bottom of the dialog that opens.
 5. Navigate to `ios/Flutter/ephemeral/Packages/FlutterGeneratedPluginSwiftPackage`
    and click the `Add Package` button.
-6. Ensure it is added to the `Runner` target and click the `Add Package` button.
+6. Ensure that it's added to the `Runner` target and click the `Add Package` button.
  
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/choose-package-products.png",
-   caption:"Ensure the package is added to the `Runner` target" %}
+   caption:"Ensure that the package is added to the `Runner` target" %}
 
-7. Ensure `FlutterGeneratedPluginSwiftPackage` was added to Frameworks,
-   Libraries, and Embedded Content.
+7. Ensure that `FlutterGeneratedPluginSwiftPackage` was added to **Frameworks,
+   Libraries, and Embedded Content**.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/add-generated-framework.png",
-   caption:"Ensure `FlutterGeneratedPluginSwiftPackage` was added to Frameworks, Libraries, and Embedded Content" %}
+   caption:"Ensure that `FlutterGeneratedPluginSwiftPackage` was added to **Frameworks, Libraries, and Embedded Content**" %}
 
 ### Step 2: Add Run Prepare Flutter Framework Script Pre-Action {:.no_toc}
 
-**The following must be completed for each flavor.**
+**The following steps must be completed for each flavor.**
 
 1. Next, select Product > Scheme > Edit Scheme.
 2. Click the `>` next to "Build" in the left side bar.
@@ -63,14 +64,14 @@ the of the following files in your bug report:
 
 ### Step 3: Run app {:.no_toc}
 
-1. Run the app in Xcode and ensure `FlutterGeneratedPluginSwiftPackage` is a
-   target dependency and `Run Prepare Flutter Framework Script` is ran as
+1. Run the app in Xcode and ensure that `FlutterGeneratedPluginSwiftPackage` is
+   a target dependency and `Run Prepare Flutter Framework Script` is ran as
    a pre-action.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/flutter-pre-action-build-log.png",
    caption:"Ensure `Run Prepare Flutter Framework Script` is ran as a pre-action" %}
 
-2. Also, ensure the app runs on the command line with `flutter run`.
+2. Also, ensure that the app runs on the command line with `flutter run`.
 
 [file a bug]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml
