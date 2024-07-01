@@ -112,7 +112,7 @@ To undo this migration:
 
 8. Select **Pre-actions**.
 
-9.  Select the `Run Prepare Flutter Framework Script`.
+9. Select the **Run Prepare Flutter Framework Script**.
 
 10. Click the 🗑️ button.
 

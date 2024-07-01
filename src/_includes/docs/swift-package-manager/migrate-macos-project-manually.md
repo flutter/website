@@ -65,7 +65,7 @@ the of the following files in your bug report:
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/add-flutter-pre-action.png",
-   caption:"Add `Run Prepare Flutter Framework Script` build pre-action" %}
+   caption:"Add **Run Prepare Flutter Framework Script** build pre-action" %}
 
 ### Step 3: Run app {:.no_toc}
 
