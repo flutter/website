@@ -3,10 +3,10 @@
 Flutter's Swift Package Manager support is disabled by default.
 To enable it:
 
-1. Switch to Flutter's `master` channel:
+1. Switch to Flutter's `main` channel:
 
    ```sh
-   flutter channel master
+   flutter channel main
    flutter upgrade
    ```
 
