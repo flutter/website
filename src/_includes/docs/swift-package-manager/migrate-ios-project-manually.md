@@ -6,10 +6,11 @@ plugins depend on.
 However, the Flutter CLI might be unable to migrate your project if you've
 modified it significantly.
 
-Please [file a bug][] before migrating manually to help the Flutter team improve
-the automatic migration.
-Please include the error message you received and consider including a copy of
-the of the following files in your bug report:
+If auto-migration fails, please [file an issue][]
+before migrating manually; this helps the Flutter team improve
+the automatic migration process.
+Include the error message and, if possible, include a copy of
+the following files in your issue:
 
 * `ios/Runner.xcodeproj/project.pbxproj`
 * `ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme`
@@ -80,4 +81,4 @@ the of the following files in your bug report:
 3. Ensure that the app runs on the command line with `flutter run`.
 
 [enable Swift Package Manager]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-enable-swift-package-manager
-[file a bug]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml
+[file an issue]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml
