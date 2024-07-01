@@ -17,7 +17,7 @@ To enable it:
    ```
 
 Running an app using the Flutter CLI migrates it to add Swift Package Manager
-support.
+integration.
 This makes your project download the Swift packages that
 your Flutter plugins depend on.
 

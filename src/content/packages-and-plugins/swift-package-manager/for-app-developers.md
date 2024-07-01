@@ -5,7 +5,7 @@ description: How to use Swift Package Manager for native iOS or macOS dependenci
 
 Flutter is migrating to [Swift Package Manager][] to manage iOS and macOS native
 dependencies.
-This is an experimental feature that may change in the future.
+This is an experimental feature that might change in the future.
 It is currently only available on the [`master` channel][].
 Flutter will continue to support CocoaPods until further notice.
 
@@ -47,7 +47,7 @@ For status updates, see [flutter#146957].
 ## How to use a Swift Package Manager Flutter plugin that requires a higher OS version
 
 If a Swift Package Flutter Manager plugin requires a higher OS version than
-the project, you may get an error like this:
+the project, you might get an error like this:
 
 ```text
 Target Integrity (Xcode): The package product 'plugin_name_ios' requires minimum platform version 14.0 for the iOS platform, but this target supports 12.0

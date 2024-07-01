@@ -18,17 +18,18 @@ the of the following files in your bug report:
 ### Step 1: Add FlutterGeneratedPluginSwiftPackage Package Dependency {:.no_toc}
 
 1. Open your app (`macos/Runner.xcworkspace`) in Xcode.
-2. Navigate to Package Dependencies for the project.
+2. Navigate to **Package Dependencies** for the project.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/package-dependencies.png",
    caption:"The project's package dependencies" %}
 
-3. Click the `+` button.
-4. Click the `Add Local...` button on the bottom of the dialog that opens.
+3. Click the **+** button.
+4. In the dialog that opens, click the **Add Local...** button.
 5. Navigate to `macos/Flutter/ephemeral/Packages/FlutterGeneratedPluginSwiftPackage`
-   and click the `Add Package` button.
-6. Ensure that it's added to the Runner Target and click the `Add Package` button.
+   and click the **Add Package** button.
+6. Ensure that it's added to the Runner Target and click the **Add Package**
+   button.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/choose-package-products.png",
@@ -45,13 +46,17 @@ the of the following files in your bug report:
 
 **The following steps must be completed for each flavor.**
 
-1. Next, select Product > Scheme > Edit Scheme.
-2. Click the `>` next to "Build" in the left side bar.
-3. Select Pre-actions.
-4. Click the `+` button and select `New Run Script Action` from the menu.
-5. Click the "Run Script" title and change to
-   `Run Prepare Flutter Framework Script`.
-6. Change the "Provide build settings from" to the Runner target.
+1. Select **Product > Scheme > Edit Scheme**.
+2. Click the **>** next to **Build** in the left side bar.
+3. Select **Pre-actions**.
+4. Click the **+** button and select **New Run Script Action** from the menu.
+5. Click the **Run Script** title and change to:
+
+   ```plaintext
+   Run Prepare Flutter Framework Script
+   ```
+
+6. Change the **Provide build settings from** to the `Runner` target.
 7. Input the following in the text box:
 
    ```sh
@@ -64,12 +69,14 @@ the of the following files in your bug report:
 
 ### Step 3: Run app {:.no_toc}
 
-1. Run the app in Xcode and ensure `FlutterGeneratedPluginSwiftPackage` is a
-   target dependency and `Run Prepare Flutter Framework Script` is ran as a
-   pre-action.
+1. Run the app in Xcode.
+   Ensure that `FlutterGeneratedPluginSwiftPackage` is a target dependency and
+   that `Run Prepare Flutter Framework Script` is ran as a pre-action.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/flutter-pre-action-build-log.png",
    caption:"Ensure `Run Prepare Flutter Framework Script` is ran as a pre-action" %}
 
 2. Also, ensure that the app runs on the command line with `flutter run`.
+
+[file a bug]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml
