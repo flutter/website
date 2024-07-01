@@ -53,7 +53,7 @@ the project, you might get an error like this:
 Target Integrity (Xcode): The package product 'plugin_name_ios' requires minimum platform version 14.0 for the iOS platform, but this target supports 12.0
 ```
 
-To use the plugin, you'll need to increase the Minimum Deployments of your
+To use the plugin, you'll need to increase the **Minimum Deployments** of your
 app's target.
 
 :::warning
@@ -62,16 +62,22 @@ This raises your app's minimum OS version requirement.
 
 {% render docs/captioned-image.liquid,
 image:"development/packages-and-plugins/swift-package-manager/minimum-deployments.png",
-caption:"The target's Minimum Deployments setting" %}
+caption:"The target's **Minimum Deployments** setting" %}
 
 ## How to add Swift Package Manager integration to a custom target
 
 Follow the steps in
-`How to add Swift Package Manager integration to an iOS/macOS project manually`.
+[How to add Swift Package Manager integration to a project manually][manualIntegration].
 
-In Step 1, list item 6 use your custom target instead of the `Flutter` target.
+In [Step 1][manualIntegrationStep1], list item 6 use your custom target instead
+of the `Flutter` target.
 
-In Step 2, list item 6 use your custom target instead of the `Flutter` target.
+In [Step 2][manualIntegrationStep2], list item 6 use your custom target instead
+of the `Flutter` target.
+
+[manualIntegration]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-add-swift-package-manager-integration-to-a-project-manually
+[manualIntegrationStep1]: /packages-and-plugins/swift-package-manager/for-app-developers/#step-1-add-fluttergeneratedpluginswiftpackage-package-dependency
+[manualIntegrationStep2]: /packages-and-plugins/swift-package-manager/for-app-developers/#step-2-add-run-prepare-flutter-framework-script-pre-action
 
 ## How to remove Swift Package Manager integration
 
@@ -118,6 +124,6 @@ To undo this migration:
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/remove-flutter-pre-action.png",
-   caption:"The Build Pre-Action to remove" %}
+   caption:"The build pre-action to remove" %}
 
 [Disable Swift Package Manager]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-disable-swift-package-manager
