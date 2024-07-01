@@ -4,7 +4,7 @@ description: How to add Swift Package Manager compatibility to iOS and macOS plu
 diff2html: true
 ---
 
-Flutter is migrating to Swift Package Manager to manage iOS and macOS native
+Flutter is migrating to [Swift Package Manager][] to manage iOS and macOS native
 dependencies.
 This is an experimental feature that may change in the future.
 It is currently only available on the [`master` channel][].
@@ -20,6 +20,7 @@ If you find a bug in Flutter's Swift Package Manager feature,
 please [open an issue][].
 :::
 
+[Swift Package Manager]: https://www.swift.org/documentation/package-manager/
 [`master` channel]: /release/upgrade#switching-flutter-channels
 [open an issue]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml
 
