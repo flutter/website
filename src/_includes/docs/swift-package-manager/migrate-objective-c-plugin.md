@@ -31,7 +31,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    /plugin_name/plugin_name_ios/ios/plugin_name_ios/<b>Sources/plugin_name_ios/include/plugin_name_ios/.gitkeep</b>
    </pre>
 
-4. Use the following template in the `Package.swift`:
+4. Use the following template in the `Package.swift` file:
 
    ```swift title="Package.swift"
    // swift-tools-version: 5.9
@@ -78,9 +78,9 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    version of the plugin name.
    :::
 
-5. If your plugin has a `PrivacyInfo.xcprivacy`, move it to
+5. If your plugin has a `PrivacyInfo.xcprivacy` file, move it to
    `Sources/plugin_name_ios/PrivacyInfo.xcprivacy` and uncomment the resource in
-   the Package.swift.
+   the `Package.swift` file.
 
 
    ```swift title="Package.swift"
@@ -98,7 +98,8 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    ```
 
 6. Move any resource files from `ios/Assets` to `Sources/plugin_name_ios`
-   (or a subdirectory). Then add them to your Package.swift if applicable.
+   (or a subdirectory). Then add them to your `Package.swift` file if
+   applicable.
    For more instructions, see
    [https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package](https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package).
 
@@ -121,7 +122,8 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     Note that this will make all public headers available via the module.
 
     To remove the modulemap for Swift Package Manager but keep it for CocoaPods,
-    exclude the modulemap and umbrella header in the plugin's Package.swift.
+    exclude the modulemap and umbrella header in the plugin's `Package.swift`
+    file.
     The example below assumes they are located within the
     `Sources/plugin_name_ios/include` directory.
 
@@ -210,22 +212,22 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
        copyrightHeader: 'pigeons/copyright.txt',
     ```
 
-13. Update your Package.swift with any customizations you may need.
+13. Update your `Package.swift` file with any customizations you may need.
 
     1. Open `/plugin_name/plugin_name_ios/ios/plugin_name_ios/` in Xcode.
 
         * If package does not show any files in Xcode, quit Xcode (Xcode >
           Quit Xcode) and reopen.
 
-        * You don't need to edit your Package.swift through Xcode, but Xcode
-          provides helpful feedback.
+        * You don't need to edit your `Package.swift` file through Xcode,
+          but Xcode provides helpful feedback.
 
         * If Xcode isn't updating after you make a change, try clicking
           File > Packages > Reset Package Caches.
 
-    2. [Add dependencies][].
+    1. [Add dependencies][].
 
-    3. If your package must be linked explicitly `static` or `dynamic`
+    2. If your package must be linked explicitly `static` or `dynamic`
        ([not recommended by Apple][]), update the [Product][] to define the
        type:
 
@@ -235,18 +237,18 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
        ],
        ```
 
-    4. Make any other customizations. For more information on how to write a
+    3. Make any other customizations. For more information on how to write a
        Package.swift file, see
        [https://developer.apple.com/documentation/packagedescription](https://developer.apple.com/documentation/packagedescription).
 
        :::tip
-       If you add additional targets to your Package.swift,
+       If you add additional targets to your `Package.swift` file,
        try to name them uniquely.
        If your target name conflicts with another target from another package,
        this can cause issues for developers that use your plugin.
        :::
 
-14. Update your `plugin_name_ios.podspec` to point to new paths.
+1.  Update your `plugin_name_ios.podspec` to point to new paths.
 
     ```diff2html
     --- a/plugin_name_ios.podspec
@@ -262,7 +264,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     + s.resource_bundles = {'plugin_name_ios_privacy' => ['plugin_name_ios/Sources/plugin_name_ios/PrivacyInfo.xcprivacy']}
     ```
 
-15. Update loading of resources from bundle to use `SWIFTPM_MODULE_BUNDLE`:
+2.  Update loading of resources from bundle to use `SWIFTPM_MODULE_BUNDLE`:
 
     ```objc
     #if SWIFT_PACKAGE
@@ -275,12 +277,12 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
     :::note
     `SWIFTPM_MODULE_BUNDLE` will only work if there are actual resources
-    (either [defined in the Package.swift file][Bundling resources] or
+    (either [defined in the `Package.swift` file][Bundling resources] or
     [automatically included by Xcode][Xcode resource detection]).
     Otherwise, it will fail.
     :::
 
-16. If your `plugin_name_ios/Sources/plugin_name_ios/include` directory only
+3.  If your `plugin_name_ios/Sources/plugin_name_ios/include` directory only
     contains a `.gitkeep`, you'll want update your `.gitignore` to include the
     following:
 
@@ -291,7 +293,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     Then run `flutter pub publish --dry-run` to ensure the `include` directory
     is published.
 
-17. Verify plugin still works with CocoaPods.
+4.  Verify plugin still works with CocoaPods.
 
     1. Disable Swift Package Manager:
 
@@ -311,7 +313,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     pod lib lint ios/plugin_name_ios.podspec  --configuration=Debug --skip-tests --use-modular-headers
     ```
 
-18. Verify plugin works with Swift Package Manager.
+5.  Verify plugin works with Swift Package Manager.
 
     1. Enable Swift Package Manager:
 
@@ -324,7 +326,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     3. Open the example app in Xcode and ensure Package Dependencies show
        in the left Project Navigator.
 
-19. Verify tests pass.
+6.  Verify tests pass.
 
   * **If your plugin has Native unit tests (XCTest), make sure you also complete
     ["Updating unit tests in plugin example app"] below.**

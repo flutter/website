@@ -22,7 +22,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    /plugin_name/plugin_name_ios/ios/plugin_name_ios/<b>Sources/plugin_name_ios</b>
    </pre>
 
-4. Use the following template in the `Package.swift`:
+4. Use the following template in the `Package.swift` file:
 
    ```swift title="Package.swift"
    // swift-tools-version: 5.9
@@ -66,9 +66,9 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    version of the plugin name.
    :::
 
-5. If your plugin has a `PrivacyInfo.xcprivacy`, move it to
+5. If your plugin has a `PrivacyInfo.xcprivacy` file, move it to
    `Sources/plugin_name_ios/PrivacyInfo.xcprivacy` and uncomment the resource in
-   the Package.swift file.
+   the `Package.swift` file.
 
    ```swift title="Package.swift"
                resources: [
@@ -86,7 +86,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
 6. Move any resource files from `ios/Assets` to `Sources/plugin_name_ios`
    (or a subdirectory).
-   Then add them to your Package.swift if applicable.
+   Then add them to your `Package.swift` file if applicable.
    For more instructions, see
    [https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package](https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package).
 
@@ -109,15 +109,15 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
       swiftOptions: SwiftOptions(),
    ```
 
-10. Update your Package.swift with any customizations you may need.
+10. Update your `Package.swift` file with any customizations you may need.
 
     1. Open `/plugin_name/plugin_name_ios/ios/plugin_name_ios/` in Xcode.
 
         * If package does not show any files in Xcode, quit Xcode
           (Xcode > Quit Xcode) and reopen.
 
-        * You don't need to edit your Package.swift through Xcode, but Xcode
-          will provide helpful feedback.
+        * You don't need to edit your `Package.swift` file through Xcode,
+          but Xcode will provide helpful feedback.
 
         * If Xcode isn't updating after you make a change, try clicking File >
           Packages > Reset Package Caches.
@@ -134,11 +134,11 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
        ```
 
     4. Make any other customizations. For more information on how to write a
-       Package.swift file, see
+       `Package.swift` file, see
        [https://developer.apple.com/documentation/packagedescription](https://developer.apple.com/documentation/packagedescription).
 
        :::tip
-       If you add additional targets to your Package.swift,
+       If you add additional targets to your `Package.swift` file,
        try to name them uniquely.
        If your target name conflicts with another target from another package,
        this can cause issues for developers that use your plugin.
@@ -168,7 +168,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
     :::note
     `Bundle.module` will only work if there are actual resources
-    (either [defined in the Package.swift file][Bundling resources] or
+    (either [defined in the `Package.swift` file][Bundling resources] or
     [automatically included by Xcode][Xcode resource detection]).
     Otherwise, it will fail.
     :::
