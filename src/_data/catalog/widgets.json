@@ -430,6 +430,16 @@
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-action-sheet.png'>"
   },
   {
+    "name": "CupertinoActionSheetAction",
+    "description": "A button typically used in a CupertinoActionSheet.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoActionSheetAction-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
     "name": "CupertinoActivityIndicator",
     "description": "An iOS-style activity indicator. Displays a circular 'spinner'.",
     "categories": [
@@ -438,6 +448,16 @@
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoActivityIndicator-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-activity-indicator.png'>"
+  },
+  {
+    "name": "CupertinoAdaptiveTextSelectionToolbar",
+    "description": "The default Cupertino context menu for text selection for the current platform with the given children.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoAdaptiveTextSelectionToolbar-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "CupertinoAlertDialog",
@@ -450,6 +470,16 @@
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-alert-dialog.png'>"
   },
   {
+    "name": "CupertinoApp",
+    "description": "An application that uses Cupertino design.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoApp-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
     "name": "CupertinoButton",
     "description": "An iOS-style button.",
     "categories": [
@@ -458,6 +488,26 @@
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoButton-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-button.png'>"
+  },
+  {
+    "name": "CupertinoCheckBox",
+    "description": "An macOS-style checkbox.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoCheckbox-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "CupertinoColors",
+    "description": "A palette of Color constants that describe colors commonly used when matching the iOS platform aesthetics.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoColors-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "CupertinoContextMenu",
@@ -470,6 +520,16 @@
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-context-menu.png'>"
   },
   {
+    "name": "CupertinoContextMeniAction",
+    "description": "A button in a _ContextMenuSheet.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoContextMenuAction-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
     "name": "CupertinoDatePicker",
     "description": "An iOS-style date or date and time picker.",
     "categories": [
@@ -478,6 +538,36 @@
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoDatePicker-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-date-picker.png'>"
+  },
+  {
+    "name": "CupertinoDesktopTextSelectionControls",
+    "description": "Desktop Cupertino styled text selection controls.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoDesktopTextSelectionControls-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "CupertinoDesktopTextSelectionToolbar",
+    "description": "A macOS-style text selection toolbar.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoDesktopTextSelectionToolbar-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "CupertinoDesktopTextSelectionToolbarButton",
+    "description": "A button in the style of the macOS context menu buttons.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoDesktopTextSelectionToolbarButton-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "CupertinoDialogAction",
@@ -490,6 +580,46 @@
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-dialog-action.png'>"
   },
   {
+    "name": "CupertinoDialogRoute",
+    "description": "A dialog route that shows an iOS-style dialog.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoDialogRoute-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "CupertinoDynamicColor",
+    "description": "A Color subclass that represents a family of colors, and the correct effective color in the color family.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoDynamicColor-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "CupertinoFormRow",
+    "description": "An iOS-style form row.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoFormRow-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "CupertinoFormSection",
+    "description": "An iOS-style form section.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoFormSection-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
     "name": "CupertinoFullscreenDialogTransition",
     "description": "An iOS-style transition used for summoning fullscreen dialogs.",
     "categories": [
@@ -498,6 +628,16 @@
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoFullscreenDialogTransition-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-fullscreen-dialog-transition.png'>"
+  },
+  {
+    "name": "CupertinoThemeData",
+    "description": "Styling specifications for a CupertinoTheme.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoThemeData-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "CupertinoListSection",
@@ -520,6 +660,46 @@
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-list-tile.png'>"
   },
   {
+    "name": "CupertinoListTileChevron",
+    "description": "A typical iOS trailing widget used to denote that a CupertinoListTile is a button with an action.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoListTileChevron-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "CupertinoLocalizations",
+    "description": "Defines the localized resource values used by the Cupertino widgets.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoLocalizations-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "CupertinoMagnifier",
+    "description": "A RawMagnifier used for magnifying text in cases where a user's finger may be blocking the point of interest, like a selection handle.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoMagnifier-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "CupertinoModalPopupRoute",
+    "description": "A route that shows a modal iOS-style popup that slides up from the bottom of the screen.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoModalPopupRoute-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
     "name": "CupertinoNavigationBar",
     "description": "Container at the top of a screen that uses the iOS style. Many developers use this with `CupertinoPageScaffold`.",
     "categories": [
@@ -528,6 +708,36 @@
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoNavigationBar-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-nav-bar.png'>"
+  },
+  {
+    "name": "CupertinoNavigationBarBackButton",
+    "description": "A nav bar back button typically used in CupertinoNavigationBar.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoNavigationBarBackButton-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "CupertinoPage",
+    "description": "A page that creates a cupertino style PageRoute.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoPage-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "CupertinoPageRoute",
+    "description": "A modal route that replaces the entire screen with an iOS transition.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoPageRoute-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "CupertinoPageScaffold",
@@ -560,6 +770,16 @@
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-picker.png'>"
   },
   {
+    "name": "CupertinoPickerDefaultSelectionOverlay",
+    "description": "A default selection overlay for CupertinoPickers.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoPickerDefaultSelectionOverlay-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
     "name": "CupertinoPopupSurface",
     "description": "Rounded rectangle surface that looks like an iOS popup surface, such as an alert dialog or action sheet.",
     "categories": [
@@ -567,6 +787,16 @@
     ],
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoPopupSurface-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "CupertinoRadio",
+    "description": "A macOS-style radio button.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoRadio-class.html",
     "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
@@ -578,6 +808,16 @@
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoScrollbar-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-scrollbar.png'>"
+  },
+  {
+    "name": "CupertinoScrollBehavior",
+    "description": "Describes how Scrollable widgets behave for CupertinoApps.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoScrollBehavior-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "CupertinoSearchTextField",
@@ -625,11 +865,31 @@
     "categories": [
       "Cupertino (iOS-style widgets)"
     ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoSliverNavigationBar-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "CupertinoSliverRefreshControl",
+    "description": "A sliver widget implementing the iOS-style pull to refresh content control.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
     "subcategories": [
       "Sliver widgets"
     ],
-    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoSliverNavigationBar-class.html",
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoSliverRefreshControl-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-sliver-navigation-bar.png'>"
+  },
+  {
+    "name": "CupertinoSpellCheckSuggestionsToolbar",
+    "description": "The default spell check suggestions toolbar for iOS.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoSpellCheckSuggestionsToolbar-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "CupertinoSwitch",
@@ -650,6 +910,16 @@
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoTabBar-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-tab-bar.png'>"
+  },
+  {
+    "name": "CupertinoTabController",
+    "description": "Coordinates tab selection between a CupertinoTabBar and a CupertinoTabScaffold.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoTabController-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "CupertinoTabScaffold",
@@ -680,6 +950,106 @@
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoTextField-class.html",
     "image": "<img alt='' src='/assets/images/docs/widget-catalog/cupertino-textfield.png'>"
+  },
+  {
+    "name": "CupertinoTextFormFieldRow",
+    "description": "Creates a CupertinoFormRow containing a FormField that wraps a CupertinoTextField.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoTextFormFieldRow-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "CupertinoTextMagnifier",
+    "description": "A CupertinoMagnifier used for magnifying text in cases where a user's finger may be blocking the point of interest, like a selection handle.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoTextMagnifier-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "CupertinoTextSelectionControls",
+    "description": "iOS-style text selection controls.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoTextSelectionControls-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "CupertinoTextSelectionHandleControls",
+    "description": "iOS-style text selection handle controls.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoTextSelectionHandleControls-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "CupertinoTextSelectionToolbar",
+    "description": "An iOS-style text selection toolbar.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoTextSelectionToolbar-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "CupertinoTextSelectionToolbarButton",
+    "description": "A button in the style of the iOS text selection toolbar buttons.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoTextSelectionToolbarButton-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "CupertinoTextThemeData",
+    "description": "Cupertino typography theme in a CupertinoThemeData.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoTextThemeData-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "CupertinoTheme",
+    "description": "Applies a visual styling theme to descendant Cupertino widgets.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoTheme-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "CupertinoThemeData",
+    "description": "Styling specifications for a CupertinoTheme.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoThemeData-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "CupertinoThumbPainter",
+    "description": "Paints an iOS-style slider thumb or switch thumb.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoThumbPainter-class.html",
+    "image": "<img alt='' src='/assets/images/docs/catalog-widget-placeholder.png'>"
   },
   {
     "name": "CupertinoTimerPicker",
