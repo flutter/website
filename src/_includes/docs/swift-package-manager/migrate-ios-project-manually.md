@@ -70,13 +70,13 @@ the of the following files in your bug report:
 ### Step 3: Run app {:.no_toc}
 
 1. Run the app in Xcode.
-   Ensure that `FlutterGeneratedPluginSwiftPackage` is a target dependency and
+2. Ensure that `FlutterGeneratedPluginSwiftPackage` is a target dependency and
    that `Run Prepare Flutter Framework Script` is ran as a pre-action.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/flutter-pre-action-build-log.png",
    caption:"Ensure `Run Prepare Flutter Framework Script` is ran as a pre-action" %}
 
-2. Also, ensure that the app runs on the command line with `flutter run`.
+3. Ensure that the app runs on the command line with `flutter run`.
 
 [file a bug]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml

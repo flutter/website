@@ -7,7 +7,7 @@ diff2html: true
 Flutter is migrating to [Swift Package Manager][] to manage iOS and macOS native
 dependencies.
 This is an experimental feature that might change in the future.
-It is currently only available on the [`master` channel][].
+It is currently only available on the [`main` channel][].
 Flutter will continue to support CocoaPods until further notice.
 
 Flutter plugins should _both_ Swift Package Manager and CocoaPods until further
@@ -29,7 +29,7 @@ please [open an issue][].
 :::
 
 [Swift Package Manager]: https://www.swift.org/documentation/package-manager/
-[`master` channel]: /release/upgrade#switching-flutter-channels
+[`main` channel]: /release/upgrade#switching-flutter-channels
 [open an issue]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml
 
 {% include docs/swift-package-manager/how-to-enable-disable.md %}
@@ -62,7 +62,7 @@ To update your unit tests:
 1. Open your `example/ios/Runner.xcworkspace` in Xcode.
 
 2. If you were using a CocoaPod dependency for tests, such as `OCMock`,
-   you'll want to remove it from your Podfile.
+   you'll want to remove it from your `Podfile` file.
 
    ```diff2html
    --- a/ios/Podfile
@@ -79,14 +79,14 @@ To update your unit tests:
    Then in the terminal, run `pod install` in the `plugin_name_ios/example/ios`
    directory.
 
-3. Navigate to Package Dependencies for the project.
+3. Navigate to **Package Dependencies** for the project.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/package-dependencies.png",
    caption:"The project's package dependencies" %}
 
-4. Click the `+` button and add any test-only dependencies by searching for them
-   in the top right search bar.
+4. Click the **+** button and add any test-only dependencies by searching for
+   them in the top right search bar.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/search-for-ocmock.png",
@@ -99,7 +99,7 @@ To update your unit tests:
    :::
 
 5. Ensure the dependency is added to the `RunnerTests` Target and click the
-   `Add Package` button.
+   **Add Package** button.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/choose-package-products-test.png",
@@ -110,32 +110,33 @@ To update your unit tests:
    ([not recommended by Apple][library type recommendations]),
    you'll also need to add it as a dependency to the `RunnerTests` target.
 
-   1. First, ensure `RunnerTests` has a `Link Binary With Libraries` Build
-      Phase.
+   1. Ensure `RunnerTests` **Build Phases** has a **Link Binary With Libraries**
+      build phase:
    
       {% render docs/captioned-image.liquid,
       image:"development/packages-and-plugins/swift-package-manager/runner-tests-link-binary-with-libraries.png",
       caption:"The `Link Binary With Libraries` Build Phase in the `RunnerTests` target" %}
 
-   2. If it does not already exist, create one by selecting the `+` button and
-      selecting `New Link Binary With Libraries Phase`.
+      If the build phase does not already exist, create one.
+      Select the **+** button and select
+      **New Link Binary With Libraries Phase**.
 
       {% render docs/captioned-image.liquid,
       image:"development/packages-and-plugins/swift-package-manager/add-runner-tests-link-binary-with-libraries.png",
       caption:"Add `Link Binary With Libraries` Build Phase" %}
 
-   3. Navigate to Package Dependencies for the project.
+   2. Navigate to **Package Dependencies** for the project.
 
-   4. Click the `+` button.
+   3. Click the **+** button.
 
-   5. Click the `Add Local...` button on the bottom of the dialog that opens.
+   4. In the dialog that opens, click the **Add Local...** button.
 
-   6. Navigate to `plugin_name/plugin_name_ios/ios/plugin_name_ios` and click
-      the `Add Package` button.
+   5. Navigate to `plugin_name/plugin_name_ios/ios/plugin_name_ios` and click
+      the **Add Package** button.
 
-   7. Ensure that it's added to the `RunnerTests` target and click the `Add Package`
-      button.
+   6. Ensure that it's added to the `RunnerTests` target and click the
+      **Add Package** button.
 
-7. Ensure tests pass Product > Test.
+7. Ensure tests pass **Product > Test**.
 
 [library type recommendations]: https://developer.apple.com/documentation/packagedescription/product/library(name:type:targets:)

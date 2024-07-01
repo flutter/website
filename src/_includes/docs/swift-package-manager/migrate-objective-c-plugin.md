@@ -216,14 +216,14 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
     1. Open `/plugin_name/plugin_name_ios/ios/plugin_name_ios/` in Xcode.
 
-        * If package does not show any files in Xcode, quit Xcode (Xcode >
-          Quit Xcode) and reopen.
+        * If package does not show any files in Xcode, quit Xcode (**Xcode >
+          Quit Xcode**) and reopen.
 
         * You don't need to edit your `Package.swift` file through Xcode,
           but Xcode provides helpful feedback.
 
         * If Xcode isn't updating after you make a change, try clicking
-          File > Packages > Reset Package Caches.
+          **File > Packages > Reset Package Caches**.
 
     1. [Add dependencies][].
 
@@ -238,7 +238,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
        ```
 
     3. Make any other customizations. For more information on how to write a
-       Package.swift file, see
+       `Package.swift` file, see
        [https://developer.apple.com/documentation/packagedescription](https://developer.apple.com/documentation/packagedescription).
 
        :::tip
@@ -323,13 +323,13 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
     2. Run `flutter run` with the example app and ensure it builds and runs.
 
-    3. Open the example app in Xcode and ensure Package Dependencies show
-       in the left Project Navigator.
+    3. Open the example app in Xcode and ensure **Package Dependencies** show
+       in the left **Project Navigator**.
 
 6.  Verify tests pass.
 
   * **If your plugin has Native unit tests (XCTest), make sure you also complete
-    ["Updating unit tests in plugin example app"] below.**
+    [Updating unit tests in plugin example app][] below.**
 
   * Follow instructions for [testing plugins][].
 
@@ -339,5 +339,5 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 [Product]: https://developer.apple.com/documentation/packagedescription/product
 [Bundling resources]: https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package#Explicitly-declare-or-exclude-resources
 [Xcode resource detection]: https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package#:~:text=Xcode%20detects%20common%20resource%20types%20for%20Apple%20platforms%20and%20treats%20them%20as%20a%20resource%20automatically
-["Updating unit tests in plugin example app"]: /packages-and-plugins/swift-package-manager/for-plugin-authors/#updating-unit-tests-in-plugin-example-app
+[Updating unit tests in plugin example app]: /packages-and-plugins/swift-package-manager/for-plugin-authors/#updating-unit-tests-in-plugin-example-app
 [testing plugins]: https://docs.flutter.dev/testing/testing-plugins

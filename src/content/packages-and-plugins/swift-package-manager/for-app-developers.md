@@ -6,7 +6,7 @@ description: How to use Swift Package Manager for native iOS or macOS dependenci
 Flutter is migrating to [Swift Package Manager][] to manage iOS and macOS native
 dependencies.
 This is an experimental feature that might change in the future.
-It is currently only available on the [`master` channel][].
+It is currently only available on the [`main` channel][].
 Flutter will continue to support CocoaPods until further notice.
 
 :::tip
@@ -15,7 +15,7 @@ please [open an issue][].
 :::
 
 [Swift Package Manager]: https://www.swift.org/documentation/package-manager/
-[`master` channel]: /release/upgrade#switching-flutter-channels
+[`main` channel]: /release/upgrade#switching-flutter-channels
 [open an issue]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml
 
 {% include docs/swift-package-manager/how-to-enable-disable.md %}
@@ -49,7 +49,7 @@ For status updates, see [flutter#146957].
 If a Swift Package Flutter Manager plugin requires a higher OS version than
 the project, you might get an error like this:
 
-```text
+```plaintext
 Target Integrity (Xcode): The package product 'plugin_name_ios' requires minimum platform version 14.0 for the iOS platform, but this target supports 12.0
 ```
 
@@ -69,9 +69,9 @@ caption:"The target's Minimum Deployments setting" %}
 Follow the steps in
 `How to add Swift Package Manager integration to an iOS/macOS project manually`.
 
-In Step 1, list item 6 use your custom target instead of the Flutter target.
+In Step 1, list item 6 use your custom target instead of the `Flutter` target.
 
-In Step 2, list item 6 use your custom target instead of the Flutter target.
+In Step 2, list item 6 use your custom target instead of the `Flutter` target.
 
 ## How to remove Swift Package Manager integration
 
@@ -81,37 +81,38 @@ depend on.
 
 To undo this migration:
 
-1. Disable Swift Package Manager (see ["Disable Swift Package Manager"][]
+1. Disable Swift Package Manager (see [Disable Swift Package Manager][]
    instructions above).
 
 2. Open your app (`ios/Runner.xcworkspace` or `ios/Runner.xcworkspace`) in
    Xcode.
 
-3. Navigate to Package Dependencies for the project.
+3. Navigate to **Package Dependencies** for the project.
 
 4. Click on the `FlutterGeneratedPluginSwiftPackage` package and then click the
-   `-` button.
+   **-** button.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/remove-generated-package.png",
    caption:"The `FlutterGeneratedPluginSwiftPackage` to remove" %}
 
-4. Navigate to Frameworks, Libraries, and Embedded Content for the Runner
+4. Navigate to **Frameworks, Libraries, and Embedded Content** for the `Runner`
    target.
 
-5. Click on `FlutterGeneratedPluginSwiftPackage` and then click the `-` button.
+5. Click on `FlutterGeneratedPluginSwiftPackage` and then click the **-**
+   button.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/remove-generated-framework.png",
    caption:"The `FlutterGeneratedPluginSwiftPackage` to remove" %}
 
-6. Next, select Product > Scheme > Edit Scheme.
+6. Select **Product > Scheme > Edit Scheme**.
 
-7. Click the `>` next to "Build" in the left side bar.
+7. Click the **>** next to **Build** in the left side bar.
 
-8. Select Pre-actions.
+8. Select **Pre-actions**.
 
-9. Select the `Run Prepare Flutter Framework Script`.
+9.  Select the `Run Prepare Flutter Framework Script`.
 
 10. Click the 🗑️ button.
 
@@ -119,4 +120,4 @@ To undo this migration:
    image:"development/packages-and-plugins/swift-package-manager/remove-flutter-pre-action.png",
    caption:"The Build Pre-Action to remove" %}
 
-["Disable Swift Package Manager"]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-disable-swift-package-manager
+[Disable Swift Package Manager]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-disable-swift-package-manager
