@@ -28,17 +28,21 @@ Package Manager yet.
 
 ## How to disable Swift Package Manager
 
+:::secondary Plugin authors
+Plugin authors need to disable and enable Flutter's Swift Package Manager
+support for testing.
+Otherwise, you likely won't need to disable this.
+
+If you find a bug in Flutter's Swift Package Manager support,
+please [open an issue][].
+:::
+
 Disabling Swift Package Manager causes Flutter to use CocoaPods for all
 dependencies.
 However, Swift Package Manager will remain integrated with your project.
 To remove this integration,
 follow the [How to remove Swift Package Manager integration][removeSPM]
 instructions.
-
-:::tip
-If you find a bug in Flutter's Swift Package Manager support,
-please [open an issue][].
-:::
 
 ### Disable for a single project
 
