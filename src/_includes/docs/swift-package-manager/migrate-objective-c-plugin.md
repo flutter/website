@@ -145,7 +145,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
             .target(
                 name: "plugin_name_ios",
                 dependencies: [],
-    +           exclude: ["include/cocoapods_plugin_name_ios.modulemap", "include/plugin_name_ios-umbrella.h"],
+    +           exclude: ["include/plugin_name_ios.modulemap", "include/plugin_name_ios-umbrella.h"],
     ```
 
     If you want to keep your unit tests compatible with both CocoaPods and
