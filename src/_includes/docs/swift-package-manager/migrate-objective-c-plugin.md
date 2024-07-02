@@ -309,7 +309,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     !.gitkeep
     ```
 
-    Then run `flutter pub publish --dry-run` to ensure the `include` directory
+    Run `flutter pub publish --dry-run` to ensure the `include` directory
     is published.
 
 4.  Verify the plugin still works with CocoaPods.
