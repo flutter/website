@@ -164,7 +164,7 @@ surrounded with black.
 Why can this happen?
 
 This can happen when using `MediaQuery` to figure out
-the window size for yur app. When the device is folded,
+the window size for your app. When the device is folded,
 orientation is restricted to portrait mode.
 Under the hood, `setPreferredOrientations` causes
 Android to use a portrait compatibility mode and the app
