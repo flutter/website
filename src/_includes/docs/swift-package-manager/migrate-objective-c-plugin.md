@@ -21,8 +21,9 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     - `Sources/plugin_name_ios/include` (directory)
     - `Sources/plugin_name_ios/include/plugin_name_ios` (directory)
     - `Sources/plugin_name_ios/include/plugin_name_ios/.gitkeep` (file)
-      - This file ensures the directory is committed if empty.
-        If files are added to the directory, this file can be removed.
+      - This file ensures the directory is committed.
+        You can remove the `.gitkeep` file if other files are added to the
+        directory.
 
    Your plugin should look like:
 
