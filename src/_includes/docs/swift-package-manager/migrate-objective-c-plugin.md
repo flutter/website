@@ -229,7 +229,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
        copyrightHeader: 'pigeons/copyright.txt',
     ```
 
-   Run Pigeon to re-generate its code with the latest configuration.
+    Run Pigeon to re-generate its code with the latest configuration.
 
 13. Update your `Package.swift` file with any customizations you might need.
 
