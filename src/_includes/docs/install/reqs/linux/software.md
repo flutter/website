@@ -44,6 +44,14 @@ To develop Flutter on {{include.os}}:
           libbz2-1.0:amd64 libncurses5:amd64
       ```
 
+If your Ubuntu distribution can't find the following packages,
+you might need to enable multi-architecture support:
+         
+      ```
+      sudo dpkg -add-architecture i386
+      sudo apt update
+      ```
+
    1. Install [Android Studio][] {{site.appmin.android_studio}} or later to debug and compile
       Java or Kotlin code for Android.
       Flutter requires the full version of Android Studio.
