@@ -47,6 +47,9 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    let package = Package(
        name: "plugin_name_ios",
        platforms: [
+           // The platforms your plugin supports.
+           // If your plugin only supports iOS, remove `.macOS(...)`.
+           // If your plugin only supports macOS, remove `.iOS(...)`.
            .iOS("12.0"),
            .macOS("10.14")
        ],
