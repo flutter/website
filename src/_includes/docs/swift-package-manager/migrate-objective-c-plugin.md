@@ -8,27 +8,31 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    Name this new directory the name of the platform package.
 
    <pre>
-   /plugin_name/plugin_name_ios/ios/<b>plugin_name_ios</b>
+   plugin_name/plugin_name_ios/ios/
+   ├── ...
+   └── <b>plugin_name_ios/</b>
    </pre>
 
 3. Within this new directory, create the following files/directories:
 
-    - Package.swift (file)
-    - Sources (directory)
-    - Sources/plugin_name_ios (directory)
-    - Sources/plugin_name_ios/include (directory)
-    - Sources/plugin_name_ios/include/plugin_name_ios (directory)
-    - Sources/plugin_name_ios/include/plugin_name_ios/.gitkeep (file)
-      - This is needed to ensure the directory is committed, even if empty.
-        Can be removed if files are added to the directory.
+    - `Package.swift` (file)
+    - `Sources` (directory)
+    - `Sources/plugin_name_ios` (directory)
+    - `Sources/plugin_name_ios/include` (directory)
+    - `Sources/plugin_name_ios/include/plugin_name_ios` (directory)
+    - `Sources/plugin_name_ios/include/plugin_name_ios/.gitkeep` (file)
+      - This file ensures the directory is committed if empty.
+        If files are added to the directory, this file can be removed.
+
+   Your plugin should look like:
 
    <pre>
-   /plugin_name/plugin_name_ios/ios/plugin_name_ios/<b>Package.swift</b>
-   /plugin_name/plugin_name_ios/ios/plugin_name_ios/<b>Sources</b>
-   /plugin_name/plugin_name_ios/ios/plugin_name_ios/<b>Sources/plugin_name_ios</b>
-   /plugin_name/plugin_name_ios/ios/plugin_name_ios/<b>Sources/plugin_name_ios/include</b>
-   /plugin_name/plugin_name_ios/ios/plugin_name_ios/<b>Sources/plugin_name_ios/include/plugin_name_ios</b>
-   /plugin_name/plugin_name_ios/ios/plugin_name_ios/<b>Sources/plugin_name_ios/include/plugin_name_ios/.gitkeep</b>
+   plugin_name/plugin_name_ios/ios/
+   ├── ...
+   └── plugin_name_ios/
+      ├── <b>Package.swift</b>
+      └── <b>Sources/plugin_name_ios/include/plugin_name_ios/</b>
+         └── <b>.gitkeep</b>
    </pre>
 
 4. Use the following template in the `Package.swift` file:

@@ -8,18 +8,24 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    Name this new directory the name of the platform package.
 
    <pre>
-   /plugin_name/plugin_name_ios/ios/<b>plugin_name_ios</b>
+   plugin_name/plugin_name_ios/ios/
+   ├── ...
+   └── <b>plugin_name_ios/</b>
    </pre>
 
 3. Within this new directory, create the following files/directories:
-    - Package.swift (file)
-    - Sources (directory)
-    - Sources/plugin_name_ios (directory)
+    - `Package.swift` (file)
+    - `Sources` (directory)
+    - `Sources/plugin_name_ios` (directory)
+
+   Your plugin should look like:
 
    <pre>
-   /plugin_name/plugin_name_ios/ios/plugin_name_ios/<b>Package.swift</b>
-   /plugin_name/plugin_name_ios/ios/plugin_name_ios/<b>Sources</b>
-   /plugin_name/plugin_name_ios/ios/plugin_name_ios/<b>Sources/plugin_name_ios</b>
+   plugin_name/plugin_name_ios/ios/
+   ├── ...
+   └── plugin_name_ios/
+      ├── <b>Package.swift</b>
+      └── <b>Sources/plugin_name_ios/</b>
    </pre>
 
 4. Use the following template in the `Package.swift` file:
