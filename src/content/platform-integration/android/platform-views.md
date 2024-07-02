@@ -19,9 +19,12 @@ This page discusses how to host your own native Android views
 within a Flutter app.
 If you'd like to embed native iOS views in your Flutter app,
 see [Hosting native iOS views][].
+If you'd like to embed native macOS views in your Flutter app,
+see [Hosting native macOS views][].
 :::
 
 [Hosting native iOS views]: /platform-integration/ios/platform-views
+[Hosting native macOS views]: /platform-integration/macos/platform-views
 
 Platform Views on Android have two implementations. They come with tradeoffs
 both in terms of performance and fidelity. 

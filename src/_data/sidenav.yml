@@ -470,6 +470,8 @@
           permalink: /platform-integration/macos/building
         - title: Bind to native code
           permalink: /platform-integration/macos/c-interop
+        - title: Host a native macOS view
+          permalink: /platform-integration/macos/platform-views
     - title: Web
       permalink: /platform-integration/web
       children:
