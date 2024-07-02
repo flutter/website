@@ -1,7 +1,7 @@
 Replace `plugin_name` throughout this guide with the name of your plugin.
 The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
-1. Enable the Swift Package Manager feature.
+1. [Enable the Swift Package Manager feature][enableSPM].
 
 2. Start by creating a directory under the `ios`, `macos`, and/or `darwin`
    directories.
@@ -333,6 +333,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
   * Follow instructions for [testing plugins][].
 
+[enableSPM]: /packages-and-plugins/swift-package-manager/for-plugin-authors#how-to-enable-swift-package-manager
 [Swift Package Manager's documentation]: {{site.github}}/apple/swift-package-manager/blob/main/Documentation/Usage.md#creating-c-language-targets
 [Add dependencies]: https://developer.apple.com/documentation/packagedescription/package/dependency
 [not recommended by Apple]: https://developer.apple.com/documentation/packagedescription/product/library(name:type:targets:)
