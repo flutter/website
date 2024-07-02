@@ -170,17 +170,23 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 10. The `ios/Assets`, `ios/Resources`, and `ios/Classes` directories should now
     be empty and can be deleted.
 
-11. If your header files were previously in the same directory as your
-    implementation files, you might need to change your import statements.
+11. If your header files are no longer in the same directory as your
+    implementation files, you will need to update your import statements.
 
     For example, if the following changes were made:
 
-    * `ios/Classes/PublicHeaderFile.h` -->
-      `Sources/plugin_name_ios/include/plugin_name_ios/PublicHeaderFile.h`
-    * `ios/Classes/ImplementationFile.m` -->
-      `Sources/plugin_name_ios/ImplementationFile.m`
+    <div class="table-wrapper">
 
-    Within `ImplementationFile.m`, the import would change:
+    | Before | After |
+    | -----  | ----- |
+    | `ios/Classes/PublicHeaderFile.h` | `ios/plugin_name_ios/Sources/plugin_name_ios/include/plugin_name_ios/PublicHeaderFile.h` |
+    | `ios/Classes/ImplementationFile.m` | `ios/plugin_name_ios/Sources/plugin_name_ios/ImplementationFile.m` |
+
+    {:.table .table-striped}
+
+    </div>
+
+    In `ImplementationFile.m`, the import would change:
 
     ```diff2html
     --- a/Sources/plugin_name_ios/ImplementationFile.m
