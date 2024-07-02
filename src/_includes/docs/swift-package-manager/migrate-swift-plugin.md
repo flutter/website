@@ -182,7 +182,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     Otherwise, it will fail.
     :::
 
-13. Verify plugin still works with CocoaPods.
+13. Verify the plugin still works with CocoaPods.
 
     1. Disable Swift Package Manager.
 
@@ -202,7 +202,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     pod lib lint ios/plugin_name_ios.podspec  --configuration=Debug --skip-tests --use-modular-headers
     ```
 
-14. Verify plugin works with Swift Package Manager.
+14. Verify the plugin works with Swift Package Manager.
 
     1. Enable Swift Package Manager.
 
