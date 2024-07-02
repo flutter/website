@@ -114,14 +114,14 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 7. Move any public headers from `ios/Classes` to
    `Sources/plugin_name_ios/include/plugin_name_ios`.
 
-    * If you're unsure which headers are public, check your `podspec` for
-      `public_header_files`. If not found, that means all of your headers were
-      public.
+    * If you're unsure which headers are public, check your `podspec` file's
+      [`public_header_files`][] attribute.
+      If this attribute  is not specified, all of your headers were public.
       You should consider whether or not you want all of your headers to be
       public.
 
-    * The `pluginClass` defined in your pubspec.yaml must be public and within
-      this directory.
+    * The `pluginClass` defined in your `pubspec.yaml` file must be public and
+      within this directory.
 
 8. Handling modulemap (skip this step if not using a custom modulemap):
 
@@ -342,6 +342,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
   * Follow instructions for [testing plugins][].
 
 [enableSPM]: /packages-and-plugins/swift-package-manager/for-plugin-authors#how-to-enable-swift-package-manager
+[`public_header_files`]: https://guides.cocoapods.org/syntax/podspec.html#public_header_files
 [Swift Package Manager's documentation]: {{site.github}}/apple/swift-package-manager/blob/main/Documentation/Usage.md#creating-c-language-targets
 [Add dependencies]: https://developer.apple.com/documentation/packagedescription/package/dependency
 [not recommended by Apple]: https://developer.apple.com/documentation/packagedescription/product/library(name:type:targets:)
