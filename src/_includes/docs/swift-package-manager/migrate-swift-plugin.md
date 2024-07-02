@@ -165,7 +165,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     + s.resource_bundles = {'plugin_name_ios_privacy' => ['plugin_name_ios/Sources/plugin_name_ios/PrivacyInfo.xcprivacy']}
     ```
 
-12. Update loading of resources from bundle to use `Bundle.module`.
+12. Update loading of resources from bundle to use [`Bundle.module`][].
 
     ```swift
     #if SWIFT_PACKAGE
@@ -176,8 +176,8 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     ```
 
     :::note
-    `Bundle.module` will only work if there are actual resources
-    (either [defined in the `Package.swift` file][Bundling resources] or
+    `Bundle.module` only works if there are resources
+    [defined in the `Package.swift` file][Bundling resources] or
     [automatically included by Xcode][Xcode resource detection]).
     Otherwise, it will fail.
     :::
@@ -226,6 +226,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 [Pigeon]: https://pub.dev/packages/pigeon
 [Add dependencies]: https://developer.apple.com/documentation/packagedescription/package/dependency
 [Product]: https://developer.apple.com/documentation/packagedescription/product
+[`Bundle.module`]: https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package#Access-a-resource-in-code
 [Bundling resources]: https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package#Explicitly-declare-or-exclude-resources
 [Xcode resource detection]: https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package#:~:text=Xcode%20detects%20common%20resource%20types%20for%20Apple%20platforms%20and%20treats%20them%20as%20a%20resource%20automatically
 [Updating unit tests in plugin example app]: /packages-and-plugins/swift-package-manager/for-plugin-authors/#updating-unit-tests-in-plugin-example-app
