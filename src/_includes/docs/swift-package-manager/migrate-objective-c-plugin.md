@@ -123,17 +123,20 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     * The `pluginClass` defined in your `pubspec.yaml` file must be public and
       within this directory.
 
-8. Handling modulemap (skip this step if not using a custom modulemap):
+8. Handling `modulemap`.
 
-    If you're using a modulemap for CocoaPods to create a Test submodule,
-    consider removing it for Swift Package Manager.
-    Note that this will make all public headers available via the module.
+   Skip this step if your plugin does not have a `modulemap`.
 
-    To remove the modulemap for Swift Package Manager but keep it for CocoaPods,
-    exclude the modulemap and umbrella header in the plugin's `Package.swift`
-    file.
-    The example below assumes they are located within the
-    `Sources/plugin_name_ios/include` directory.
+   If you're using a `modulemap` for CocoaPods to create a Test submodule,
+   consider removing it for Swift Package Manager.
+   Note that this will make all public headers available via the module.
+
+   To remove the `modulemap` for Swift Package Manager but keep it for
+   CocoaPods, exclude the `modulemap` and umbrella header in the plugin's
+   `Package.swift` file.
+  
+   The example below assumes the `modulemap` and umbrella header are located
+   in the `Sources/plugin_name_ios/include` directory.
 
     ```diff2html
     --- a/Package.swift
