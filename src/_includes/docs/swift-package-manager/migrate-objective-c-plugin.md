@@ -167,8 +167,8 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
 9. Move all remaining files from `ios/Classes` to `Sources/plugin_name_ios`.
 
-10. `ios/Assets`, `ios/Resources`, `ios/Classes` should now be empty and
-    can be deleted.
+10. The `ios/Assets`, `ios/Resources`, and `ios/Classes` directories should now
+    be empty and can be deleted.
 
 11. If your header files were previously within the same directory as your
     implementation files, you may need to change your import statements.

@@ -101,8 +101,8 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
 7. Move all files from `ios/Classes` to `Sources/plugin_name_ios`.
 
-8. `ios/Assets`, `ios/Resources`, `ios/Classes` should now be empty and can be
-   deleted.
+8. The `ios/Assets`, `ios/Resources`, and `ios/Classes` direcotries should now
+   be empty and can be deleted.
 
 9. If using Pigeon, you'll want to update your Pigeon input file.
 
