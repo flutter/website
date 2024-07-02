@@ -104,7 +104,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 8. The `ios/Assets`, `ios/Resources`, and `ios/Classes` directories should now
    be empty and can be deleted.
 
-9. If using Pigeon, you'll want to update your Pigeon input file.
+9. If your plugin uses [Pigeon][], update your Pigeon input file.
 
    ```diff2html
    --- a/pigeons/messages.dart
@@ -223,6 +223,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
   * Follow instructions for [testing plugins][].
 
 [enableSPM]: /packages-and-plugins/swift-package-manager/for-plugin-authors#how-to-enable-swift-package-manager
+[Pigeon]: https://pub.dev/packages/pigeon
 [Add dependencies]: https://developer.apple.com/documentation/packagedescription/package/dependency
 [Product]: https://developer.apple.com/documentation/packagedescription/product
 [Bundling resources]: https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package#Explicitly-declare-or-exclude-resources

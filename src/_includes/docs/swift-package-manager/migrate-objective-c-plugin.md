@@ -190,7 +190,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     + #import "./include/plugin_name_ios/PublicHeaderFile.h"
     ```
 
-12. If using Pigeon, update your Pigeon input file:
+12. If your plugin uses [Pigeon][], update your Pigeon input file.
 
     ```diff2html
     --- a/pigeons/messages.dart
@@ -347,6 +347,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 [enableSPM]: /packages-and-plugins/swift-package-manager/for-plugin-authors#how-to-enable-swift-package-manager
 [`public_header_files`]: https://guides.cocoapods.org/syntax/podspec.html#public_header_files
 [Swift Package Manager's documentation]: {{site.github}}/apple/swift-package-manager/blob/main/Documentation/Usage.md#creating-c-language-targets
+[Pigeon]: https://pub.dev/packages/pigeon
 [Add dependencies]: https://developer.apple.com/documentation/packagedescription/package/dependency
 [not recommended by Apple]: https://developer.apple.com/documentation/packagedescription/product/library(name:type:targets:)
 [Product]: https://developer.apple.com/documentation/packagedescription/product
