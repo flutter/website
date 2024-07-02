@@ -1,15 +1,15 @@
 {% assign alt = alt | default: caption -%}
 {% assign caption = caption | default: '' -%}
 {% if width -%}
-{% assign width = 'width: ' | append: width | append: ';' -%}
+{% assign imgwidth = 'width: ' | append: width | append: ';' -%}
 {% else -%}
-{% assign width = '' -%}
+{% assign imgwidth = '' -%}
 {% endif -%}
 {% if height -%}
-{% assign height = 'height: ' | append: height | append: ';' -%}
+{% assign imgheight = 'height: ' | append: height | append: ';' -%}
 {% else -%}
-{% assign height = '' -%}
+{% assign imgheight = '' -%}
 {% endif -%}
 
-![{{alt}}](/assets/images/docs/{{image}} "{{alt}}"){: class="img-class"}  
-{% if caption -%}<figurecaption class="figure-caption">{{caption}}</figurecaption> {% endif %}
+![{{alt}}](/assets/images/docs/{{image}} "{{alt}}"){% if imgstyle -%}{:.{{imgstyle}}}{%- endif %}
+{% if caption %}<br><figurecaption class="figure-caption">{{caption}}</figurecaption> {% endif %}
