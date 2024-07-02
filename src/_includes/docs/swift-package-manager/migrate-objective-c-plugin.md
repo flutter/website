@@ -215,7 +215,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
        javaOptions: JavaOptions(),
     -  objcHeaderOut: 'ios/Classes/messages.g.h',
     -  objcSourceOut: 'ios/Classes/messages.g.m',
-    +  objcHeaderOut: 'ios/plugin_name_ios/Sources/plugin_name_ios/messages.g.h',
+    +  objcHeaderOut: 'ios/plugin_name_ios/Sources/plugin_name_ios/include/plugin_name_ios/messages.g.h',
     +  objcSourceOut: 'ios/plugin_name_ios/Sources/plugin_name_ios/messages.g.m',
     +  objcOptions: ObjcOptions(
     +    headerIncludePath: './include/plugin_name_ios/messages.g.h',
