@@ -95,7 +95,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
 6. Move any resource files from `ios/Assets` to `Sources/plugin_name_ios`
    (or a subdirectory).
-   Then add them to your `Package.swift` file if applicable.
+   Add the resource files to your `Package.swift` file if applicable.
    For more instructions, see
    [https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package](https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package).
 
