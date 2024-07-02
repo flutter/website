@@ -170,8 +170,8 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 10. The `ios/Assets`, `ios/Resources`, and `ios/Classes` directories should now
     be empty and can be deleted.
 
-11. If your header files were previously within the same directory as your
-    implementation files, you may need to change your import statements.
+11. If your header files were previously in the same directory as your
+    implementation files, you might need to change your import statements.
 
     For example, if the following changes were made:
 
@@ -223,7 +223,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
        copyrightHeader: 'pigeons/copyright.txt',
     ```
 
-13. Update your `Package.swift` file with any customizations you may need.
+13. Update your `Package.swift` file with any customizations you might need.
 
     1. Open `/plugin_name/plugin_name_ios/ios/plugin_name_ios/` in Xcode.
 

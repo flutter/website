@@ -101,7 +101,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
 7. Move all files from `ios/Classes` to `Sources/plugin_name_ios`.
 
-8. The `ios/Assets`, `ios/Resources`, and `ios/Classes` direcotries should now
+8. The `ios/Assets`, `ios/Resources`, and `ios/Classes` directories should now
    be empty and can be deleted.
 
 9. If using Pigeon, you'll want to update your Pigeon input file.
@@ -118,7 +118,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
       swiftOptions: SwiftOptions(),
    ```
 
-10. Update your `Package.swift` file with any customizations you may need.
+10. Update your `Package.swift` file with any customizations you might need.
 
     1. Open `/plugin_name/plugin_name_ios/ios/plugin_name_ios/` in Xcode.
 
