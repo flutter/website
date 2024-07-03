@@ -7,20 +7,21 @@ To learn more about DevTools, check out the
 
 ## General updates
 
-* Improved messaging when a screen is unavailable for the platform of the
-connected app. - [#7958](https://github.com/flutter/devtools/pull/7958)
-* Fixed a bug where an infinite spinner was shown upon app
-disconnect. - [#7992](https://github.com/flutter/devtools/pull/7992)
+* Improved messaging when a screen is unavailable for the
+  platform of the connected app. - [#7958](https://github.com/flutter/devtools/pull/7958)
+* Fixed a bug where an infinite spinner was shown upon
+  app disconnect. - [#7992](https://github.com/flutter/devtools/pull/7992)
 * Fixed a bug where trying to reuse a disconnected DevTools instance would
-fail. - [#8009](https://github.com/flutter/devtools/pull/8009)
+  fail. - [#8009](https://github.com/flutter/devtools/pull/8009)
 
 ## Performance updates
 
-* Removed the "Raster Stats" feature. This tool did not work for the Impeller rendering
-engine, and the information it gave for the SKIA rendering engine was misleading and
-inactionable. Users should follow official Flutter guidance for
-[Performance & Optimization](https://docs.flutter.dev/perf) when debugging the
-rendering performance of their Flutter apps. - [#7981](https://github.com/flutter/devtools/pull/7981).
+* Removed the "Raster Stats" feature.
+  This tool did not work for the Impeller rendering engine, and
+  the information it gave for the SKIA rendering engine was 
+  often misleading and unactionable. Users should follow the
+  official Flutter guidance for [Performance and optimization](/perf) when
+  debugging the rendering performance of their Flutter apps. - [#7981](https://github.com/flutter/devtools/pull/7981).
 
 ## Network profiler updates
 
@@ -28,8 +29,8 @@ rendering performance of their Flutter apps. - [#7981](https://github.com/flutte
 
 ## VS Code Sidebar updates
 
-* Added showing all DevTools tools in the sidebar by default, even when there are no
-debug sessions available. - [#7947](https://github.com/flutter/devtools/pull/7947)
+* Added showing all DevTools tools in the sidebar by default, even when
+  there are no debug sessions available. - [#7947](https://github.com/flutter/devtools/pull/7947)
 
 ![DevTools tools in the sidebar](/tools/devtools/release-notes/images-2.37.1/devtools_in_sidebar.png)
 
