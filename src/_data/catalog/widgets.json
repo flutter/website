@@ -2236,7 +2236,7 @@
     "description": "Box into which app users can enter text. They appear in forms and dialogs.",
     "categories": [],
     "subcategories": [
-      "Text Inputs",
+      "Text input",
       "Input and selections"
     ],
     "link": "https://api.flutter.dev/flutter/material/TextField-class.html",

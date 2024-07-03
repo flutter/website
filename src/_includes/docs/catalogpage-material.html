@@ -6,9 +6,6 @@
     {% endif %}
 {% endfor %}
 
-<div class="category-description">
-    <p>{{category.description}}</p>
-</div>
 {% if category.subcategories and category.subcategories.size != 0 -%}
 <ul>
     {% for sub in category.subcategories -%}
@@ -16,8 +13,6 @@
     {% endfor -%}
 </ul>
 {% endif -%}
-
-<p> {{ category.pagecontent }}</p>
 
 {% assign components = catalog.widgets | widget_filter: "categories", include.category %}
 
@@ -47,5 +42,3 @@
     {% endif -%}
 {% endfor -%}
 {% endif -%}
-
-<p>Check out more widgets in the <a href="/ui/widgets">widget catalog</a>.</p>

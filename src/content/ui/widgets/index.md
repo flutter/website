@@ -12,7 +12,7 @@ you can also see all the widgets in the [widget index][].
 {% assign categories = catalog.index | sort: 'name' -%}
 {% for section in categories %}
     <!-- Don't display the legacy Material 2 card. It is only accessible via the Material 3 components page. -->
-    {% if section.name != "Material 2 Components" %}
+    {% if section.name != "Material 2 components" %}
         <div class="card">
             <div class="card-body">
                 <a href="{{page.url}}{{section.id}}"><header class="card-title">{{section.name}}</header></a>
