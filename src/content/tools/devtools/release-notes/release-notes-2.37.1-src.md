@@ -31,7 +31,7 @@ rendering performance of their Flutter apps. - [#7981](https://github.com/flutte
 * Added showing all DevTools tools in the sidebar by default, even when there are no
 debug sessions available. - [#7947](https://github.com/flutter/devtools/pull/7947)
 
-![DevTools tools in the sidebar](/tools/devtools/release-notes/images-2.37.1 "DevTools tools in the sidebar")
+![DevTools tools in the sidebar](/tools/devtools/release-notes/images-2.37.1/devtools_in_sidebar.png)
 
 ## Full commit history
 
