@@ -7,11 +7,11 @@ To learn more about DevTools, check out the
 
 ## General updates
 
-* Improve messaging when a screen is unavailable for the platform of the
+* Improved messaging when a screen is unavailable for the platform of the
 connected app. - [#7958](https://github.com/flutter/devtools/pull/7958)
-* Fix a bug where an infinite spinner was shown upon app
+* Fixed a bug where an infinite spinner was shown upon app
 disconnect. - [#7992](https://github.com/flutter/devtools/pull/7992)
-* Fix a bug where trying to reuse a disconnected DevTools instance would
+* Fixed a bug where trying to reuse a disconnected DevTools instance would
 fail. - [#8009](https://github.com/flutter/devtools/pull/8009)
 
 ## Performance updates
@@ -24,11 +24,11 @@ rendering performance of their Flutter apps. - [#7981](https://github.com/flutte
 
 ## Network profiler updates
 
-* Display query parameters for requests. - [#7825](https://github.com/flutter/devtools/pull/7825)
+* Added displaying query parameters for requests. - [#7825](https://github.com/flutter/devtools/pull/7825)
 
 ## VS Code Sidebar updates
 
-* Show all DevTools tools in the sidebar by default, even when there are no
+* Added showing all DevTools tools in the sidebar by default, even when there are no
 debug sessions available. - [#7947](https://github.com/flutter/devtools/pull/7947)
 
 ![DevTools tools in the sidebar](/tools/devtools/release-notes/images-2.37.1 "DevTools tools in the sidebar")
