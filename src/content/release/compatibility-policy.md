@@ -43,9 +43,9 @@ break them overnight. This is independent of our compatibility policy
 which is exclusively based on whether submitted tests fail, as
 described above.
 
-Deprecated APIs are not removed on a scheduled basis. If any are removed,
-we follow the same procedures listed above for making breaking changes
-in removing the deprecated API.
+The Flutter team doesn't remove deprecated APIs on a scheduled basis.
+If the team removes a deprecated API,
+it follows the same procedures as those for breaking changes.
 
 
 ## Dart and other libraries used by Flutter
