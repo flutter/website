@@ -79,12 +79,12 @@ widgets in [What is State?][]
 <div class="card-deck card-deck--responsive">
     <div class="video-card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.yt.embed}}/xWV71C2kp38" title="Create your first Flutter app" {{site.yt.set}}></iframe>
+            {% ytEmbed 'xWV71C2kp38', 'Create your first Flutter app', true, true %}
         </div>
     </div>
     <div class="video-card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.yt.embed}}/QlwiL_yLh6E" title="What is state?" {{site.yt.set}}></iframe>
+            {% ytEmbed 'QlwiL_yLh6E', 'What is state?', true, true %}
         </div>
     </div>
 </div>
@@ -92,11 +92,9 @@ widgets in [What is State?][]
 [first-app]: {{site.yt.watch}}?v=xWV71C2kp38
 [What is State?]: {{site.yt.watch}}?v=QlwiL_yLh6E
 
-**Only have 60 seconds? Learn how to build and deploy a Flutter App!** {:.text-center}
-
-<div style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
-  <iframe style="max-width: 100%" width="560" height="315" src="{{site.yt.embed}}/ZnufaryH43s" title="Learn how to build and deploy a Flutter app in 60 seconds" {{site.yt.set}}></iframe>
-</div>
+{% videoWrapper 'Only have 60 seconds? Learn how to build and deploy a Flutter App!' %}
+{% ytEmbed 'ZnufaryH43s', 'How to build and deploy a Flutter app in 60 seconds!', true %}
+{% endvideoWrapper %}
 
 ## Want to skill up?
 
@@ -108,12 +106,12 @@ using helper methods][standalone-widgets] or
 <div class="card-deck card-deck--responsive">
     <div class="video-card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.yt.embed}}/IOyq-eTRhvo" title="Learn the difference between Widgets and Helper Methods" {{site.yt.set}}></iframe>
+            {% ytEmbed 'IOyq-eTRhvo', 'Widgets vs helper methods | Decoding Flutter', true, true %}
         </div>
     </div>
     <div class="video-card">
         <div class="card-body">
-            <iframe style="max-width: 100%; width: 100%; height: 230px;" src="{{site.yt.embed}}/rIaaH87z1-g" title="Learn how to demystify BuildContext" {{site.yt.set}}></iframe>
+            {% ytEmbed 'rIaaH87z1-g', 'BuildContext?! | Decoding Flutter', true, true %}
         </div>
     </div>
 </div>

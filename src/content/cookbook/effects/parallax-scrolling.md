@@ -215,9 +215,9 @@ to reposition your child widgets however you want.
 
 :::note
 To learn more, check out this short
-Widget of the Week video on the Flow widget:
+Widget of the Week video on the `Flow` widget:
 
-<iframe class="full-width" src="{{site.yt.embed}}/NG6pvXpnIso" title="Learn about the Flow Flutter Widget" {{site.yt.set}}></iframe>
+{% ytEmbed 'NG6pvXpnIso', 'Flow | Flutter widget of the week' %}
 :::
 
 :::note

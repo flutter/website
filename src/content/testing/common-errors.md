@@ -505,7 +505,7 @@ For more information and to learn how to fix,
 check out the following video on
 [`PrimaryScrollController`][controller-video]:
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/33_0ABjFJUU" title="Learn about the PrimaryScrollController Flutter Widget" {{site.yt.set}}></iframe>
+{% ytEmbed '33_0ABjFJUU', 'PrimaryScrollController | Decoding Flutter', true %}
 
 [controller-video]: {{site.api}}/flutter/widgets/PrimaryScrollController-class.html
 

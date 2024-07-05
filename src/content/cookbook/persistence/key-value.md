@@ -25,7 +25,7 @@ This recipe uses the following steps:
 To learn more, watch this short Package of the Week video
 on the `shared_preferences` package:
 
-<iframe class="full-width" src="{{site.yt.embed}}/sa_U0jffQII" title="Learn about the shared_preferences Flutter package" {{site.yt.set}}></iframe>
+{% ytEmbed 'sa_U0jffQII', 'shared_preferences | Flutter package of the week' %}
 :::
 
 ## 1. Add the dependency

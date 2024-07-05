@@ -18,9 +18,9 @@ child when necessary. Other useful widgets include
 You can check out more of these widgets on the
 [scrolling page][] of the Widget catalog.
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/DbkIQSvwnZc" title="Learn how to use the Scrollbar Flutter Widget" {{site.yt.set}}></iframe>
+{% ytEmbed 'DbkIQSvwnZc', 'Scrollbar | Flutter widget of the week' %}
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/KJpkjHGiI5A" title="Learn how to use the ListView Flutter Widget" {{site.yt.set}}></iframe>
+{% ytEmbed 'KJpkjHGiI5A', 'ListView | Flutter widget of the week' %}
 
 ### Infinite scrolling
 
@@ -42,11 +42,11 @@ specific scrolling behavior.
 
 A video on using [`DraggableScrollableSheet`][]:
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/Hgw819mL_78" title="Learn how to use the DraggableScrollableSheet Flutter Widget" {{site.yt.set}}></iframe>
+{% ytEmbed 'Hgw819mL_78', 'DraggableScrollableSheet | Flutter widget of the week' %}
 
 Turn the scrollable area into a wheel with [`ListWheelScrollView`][]!
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/dUhmWAz4C7Y" title="Learn how to use the ListWheelScrollView Flutter Widget" {{site.yt.set}}></iframe>
+{% ytEmbed 'dUhmWAz4C7Y', 'ListWheelScrollView | Flutter widget of the week' %}
 
 [`DraggableScrollableSheet`]: {{site.api}}/flutter/widgets/DraggableScrollableSheet-class.html
 [`GridView`]: {{site.api}}/flutter/widgets/GridView-class.html
@@ -93,4 +93,4 @@ or do you use a sliver?
 
 Check out the "ShrinkWrap vs Slivers" video:
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/LUqDNnv_dh0" title="Learn how to nest scrolling widgets in Flutter" {{site.yt.set}}></iframe>
+{% ytEmbed 'LUqDNnv_dh0', 'ShrinkWrap vs Slivers | Decoding Flutter' %}

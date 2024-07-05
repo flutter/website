@@ -45,4 +45,4 @@ You might prefer to take
 If you prefer an instructor-led version of this codelab,
 check out the following workshop:
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/8sAyPDLorek" title="Learn how to build your first Flutter app" {{site.yt.set}}></iframe>
+{% ytEmbed '8sAyPDLorek', 'Building your first Flutter app - with a Codelab!' %}

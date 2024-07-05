@@ -20,7 +20,7 @@ To help you decide, check out the video,
 [How to choose which Flutter Animation Widget is right for you?][]
 (Also published as a [_companion article_][article1].)
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/GXIJJkq_H8g" title="Learn how to choose the Flutter Animation Widget for your use case" {{site.yt.set}}></iframe>
+{% ytEmbed 'GXIJJkq_H8g', 'How to choose which Flutter animation widget is right for your use case' %}
 
 (To dive deeper into the decision process,
 watch the [Animations in Flutter done right][] video,
@@ -38,17 +38,13 @@ to implement) suits your needs, watch
 [Animation basics with implicit animations][].
 (Also published as a [_companion article_][article2].)
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/IVTjpW3W33s" title="Learn about basic Flutter animation with implicit animations" {{site.yt.set}}></iframe>
-
-[Learn about Animation Basics with Implicit Animations]({{site.yt.watch}}/IVTjpW3W33s)
+{% ytEmbed 'IVTjpW3W33s', 'Flutter implicit animation basics' %}
 
 To create a custom implicit animation, watch
 [Creating your own custom implicit animations with TweenAnimationBuilder][].
 (Also published as a [_companion article_][article3].)
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/6KiPEqzJIKQ" title="Learn about building Custom Implicit Animations with TweenAnimationBuilder" {{site.yt.set}}></iframe>
-
-[Learn about building Custom Implicit Animations with TweenAnimationBuilder]({{site.yt.watch}}/6KiPEqzJIKQ)
+{% ytEmbed '6KiPEqzJIKQ', 'Create custom implicit animations with TweenAnimationBuilder' %}
 
 To create an explicit animation (where you control the animation,
 rather than letting the framework control it), perhaps
@@ -58,20 +54,20 @@ For more information, watch
 built-in explicit animations][].
 (Also published as a [_companion article_][article4].)
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/CunyH6unILQ" title="Learn about the built-in explicit animations in Flutter" {{site.yt.set}}></iframe>
+{% ytEmbed 'CunyH6unILQ', 'Making your first directional animations with built-in explicit animations', true %}
 
 If you need to build an explicit animation from scratch, watch
 [Creating custom explicit animations with
 AnimatedBuilder and AnimatedWidget][].
 (Also published as a [_companion article_][article5].)
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/fneC7t4R_B0" title="Learn about building Custom Explicit Animations with the AnimatedBuilder and AnimatedWidget Flutter Widgets" {{site.yt.set}}></iframe>
+{% ytEmbed 'fneC7t4R_B0', 'Creating custom explicit animations with AnimatedBuilder and AnimatedWidget', true %}
 
 For a deeper understanding of just how animations work in Flutter, watch
 [Animation deep dive][].
 (Also published as a [_companion article_][article6].)
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/PbcILiN8rbo" title="Take a deep dive into Flutter animation" {{site.yt.set}}></iframe>
+{% ytEmbed 'PbcILiN8rbo', 'Take a deep dive into Flutter animation', true %}
 
 ## Codelabs, tutorials, and articles
 

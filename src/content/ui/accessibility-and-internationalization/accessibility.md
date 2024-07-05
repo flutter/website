@@ -109,7 +109,7 @@ navigate around your app.
 To learn how to find and customize Android's
 accessibility features, view the following video.
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/FQyj_XTl01w" title="Learn about the accessibility features on the Google Pixel" {{site.yt.set}}></iframe>
+{% ytEmbed 'FQyj_XTl01w', 'Customize Pixel and Android accessibility features' %}
 
 {% endtab %}
 {% tab "VoiceOver on iPhone" %}
@@ -120,7 +120,7 @@ accessibility features, view the following video.
 To learn how to find and customize iOS
 accessibility features, view the following video.
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/qDm7GiKra28" title="Learn how to navigate your iPhone or iPad with VoiceOver" {{site.yt.set}}></iframe>
+{% ytEmbed 'ROIe49kXOc8', 'How to navigate your iPhone or iPad with VoiceOver' %}
 
 {% endtab %}
 {% tab "Browsers" %}
@@ -166,7 +166,7 @@ Windows apps, check out
 On a Mac, you can use the desktop version of VoiceOver,
 which is included in macOS.
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/5R-6WvAihms" title="Learn about the macOS VoiceOver screen reader" {{site.yt.set}}></iframe>
+{% ytEmbed '5R-6WvAihms', 'Screen reader basics: VoiceOver' %}
 
 On Linux, a popular screen reader is called Orca.
 It comes pre-installed with some distributions
@@ -222,7 +222,7 @@ In the video below, two of our engineers take a mobile app from a dire
 accessibility state to one that takes advantage of Flutter's built-in
 widgets to offer a dramatically more accessible experience.
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/bWbBgbmAdQs" title="Learn about building Flutter apps with Accessibility in mind" {{site.yt.set}}></iframe>
+{% ytEmbed 'bWbBgbmAdQs', 'Building Flutter apps with accessibility in mind' %}
 
 ## Testing accessibility on mobile
 

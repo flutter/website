@@ -57,10 +57,7 @@ wonderous: https://wonderous.app/
 youtube-site: https://youtube.com
 
 yt:
-  set: 'frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"'
-  set-short: 'frameborder="0" allowfullscreen loading="lazy"'
   watch: 'https://www.youtube.com/watch'
-  embed: 'https://www.youtube.com/embed'
   playlist: 'https://www.youtube.com/playlist?list='
 
 ## Software minimum versions

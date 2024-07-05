@@ -64,7 +64,7 @@ documentation.
 
 [concurrency page]: {{site.dart-site}}/language/concurrency
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/vl_AaCgudcY" title="Learn about Isolates and Loop Events in Flutter" {{site.yt.set}}></iframe>
+{% ytEmbed 'vl_AaCgudcY', 'Isolates and the event loop | Flutter in Focus' %}
 
 ## Common use cases for isolates
 

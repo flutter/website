@@ -45,7 +45,7 @@ Jump around and find questions that address your most relevant needs.
 As an introduction, watch the following video.
 It outlines how Flutter works on iOS and how to use Flutter to build iOS apps.
 
-<iframe class="full-width" src="{{site.yt.embed}}/ceMsPBbcEGg" title="Learn how to develop with Flutter as an iOS developer" {{site.yt.set}}></iframe>
+{% ytEmbed 'ceMsPBbcEGg', 'Flutter for iOS developers', false, true %}
 
 ### Views vs. Widgets
 
