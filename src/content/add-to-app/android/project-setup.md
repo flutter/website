@@ -22,17 +22,38 @@ Plugin API to limit the supported architectures in your APK.
 Doing this avoids a missing `libflutter.so` runtime crash,
 for example:
 
-```groovy title="MyApp/app/build.gradle"
+{% tabs "android-build-language" %}
+{% tab "Kotlin" %}
+
+```kotlin title="MyApp/app/build.gradle.kts"
 android {
-  //...
-  defaultConfig {
-    ndk {
-      // Filter for architectures supported by Flutter.
-      abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86_64'
+    //...
+    defaultConfig {
+        ndk {
+            // Filter for architectures supported by Flutter
+            abiFilters += listOf("armeabi-v7a", "arm64-v8a", "x86_64")
+        }
     }
-  }
 }
 ```
+
+{% endtab %}
+{% tab "Groovy" %}
+
+```groovy title="MyApp/app/build.gradle"
+android {
+    // ...
+    defaultConfig {
+        ndk {
+            // Filter for architectures supported by Flutter
+            abiFilters "armeabi-v7a", "arm64-v8a", "x86_64"
+        }
+    }
+}
+```
+
+{% endtab %}
+{% endtabs %}
 
 The Flutter engine also has an `x86_64` version.
 When using an emulator in debug Just-In-Time (JIT) mode,
