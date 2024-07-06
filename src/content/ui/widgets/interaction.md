@@ -5,4 +5,4 @@ description: >
   A catalog of Flutter's widgets supporting user interaction and navigation.
 ---
 
-{% include docs/catalogpage.html category="Interaction Models" %}
+{% include docs/catalogpage.html category="Interaction models" %}

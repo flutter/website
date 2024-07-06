@@ -7,8 +7,9 @@ show_breadcrumbs: false
 
 {% assign sorted = catalog.widgets | sort:'name' -%}
 
-This is an alphabetical list of nearly every widget that is bundled with
-Flutter. You can also [browse widgets by category][catalog].
+This is an alphabetical list of many of the widgets that
+are bundled with Flutter.
+You can also [browse widgets by category][catalog].
 
 You might also want to check out our Widget of the Week video series
 on the [Flutter YouTube channel]({{site.social.youtube}}). Each short
@@ -24,7 +25,13 @@ our [videos](/resources/videos) page.
     <div class="card">
         <a href="{{comp.link}}">
             <div class="card-image-holder">
-                {{comp.image}}
+                {% if comp.vector -%}
+                    {{comp.vector}}
+                {% elsif comp.image -%}
+                    <img alt="Rendered image or visualization of the {{comp.name}} widget." src="{{comp.image.src}}">
+                {% else -%}
+                    <img alt="Flutter logo for widget missing visualization image." src="/assets/images/docs/catalog-widget-placeholder.png" aria-hidden="true">
+                {% endif -%}
             </div>
         </a>
         <div class="card-body">
