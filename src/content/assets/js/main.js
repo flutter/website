@@ -191,10 +191,15 @@ function initCookieNotice() {
 }
 
 function setupInlineToc() {
-  // Collapsible inline TOC expand/collapse
-  $(".site-toc--inline__toggle").on('click', function () {
-    const root = $("#site-toc--inline");
-    root.toggleClass('toc-collapsed');
+  // Set up the inline TOC's ability to expand and collapse.
+  const toggle = document.querySelectorAll('.site-toc--inline__toggle');
+  toggle.forEach(function (toggle) {
+    toggle.addEventListener('click', (_) => {
+      const inlineToc = document.getElementById('site-toc--inline');
+      if (inlineToc) {
+        inlineToc.classList.toggle('toc-collapsed');
+      }
+    });
   });
 }
 
