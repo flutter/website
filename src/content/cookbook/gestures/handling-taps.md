@@ -14,9 +14,10 @@ Use the [`GestureDetector`][] widget to respond
 to fundamental actions, such as tapping and dragging.
 
 :::note
-To learn more, watch this short Widget of the Week video on the GestureDetector widget:
+To learn more, watch this short Widget of the Week video on
+the `GestureDetector` widget:
 
-<iframe class="full-width" src="{{site.yt.embed}}/WhVXkCFPmK4" title="Learn about the GestureDetector Flutter Widget" {{site.yt.set}}></iframe>
+{% ytEmbed 'WhVXkCFPmK4', 'GestureDetector | Flutter widget of the week' %}
 :::
 
 This recipe shows how to make a custom button that shows

@@ -24,7 +24,7 @@ apps, but they fall into three major categories:
 * [Input](#input)
 * [Idioms and norms](#idioms-and-norms)
 
-<iframe style="max-width: 100%" width="560" height="315" src="{{site.yt.embed}}/RCdeSKVt7LI" title="Learn how to build platform-adaptive Flutter apps" {{site.yt.set}}></iframe>
+{% ytEmbed 'RCdeSKVt7LI', 'Building platform adaptive apps', true %}
 
 This page covers all three categories in detail
 using code snippets to illustrate the concepts.

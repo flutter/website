@@ -38,13 +38,9 @@ that every Flutter dev needs to know from top to bottom.
 The following videos cover topics
 that are relevant to implicit animations.
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/IVTjpW3W33s" title="Learn about basic Flutter animation with implicit animations" {{site.yt.set}}></iframe>
+{% ytEmbed 'IVTjpW3W33s', 'Flutter implicit animation basics' %}
 
-[Learn about Animation Basics with Implicit Animations]({{site.yt.watch}}/IVTjpW3W33s)
-
-<iframe width="560" height="315" src="{{site.yt.embed}}/6KiPEqzJIKQ" title="Learn about building Custom Implicit Animations with TweenAnimationBuilder" {{site.yt.set}}></iframe>
-
-[Learn about building Custom Implicit Animations with TweenAnimationBuilder]({{site.yt.watch}}/6KiPEqzJIKQ)
+{% ytEmbed '6KiPEqzJIKQ', 'Create custom implicit animations with TweenAnimationBuilder' %}
 
 ## The Boring Show
 
@@ -52,9 +48,7 @@ Watch the Boring Show to follow Google Engineers build apps
 from scratch in Flutter. The following episode covers
 using implicit animations in a news aggregator app.
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/8ehlWchLVlQ" title="about implicitly animating the Hacker News app" {{site.yt.set}}></iframe>
-
-[Learn about implicitly animating the Hacker News app]({{site.yt.watch}}/8ehlWchLVlQ)
+{% ytEmbed '8ehlWchLVlQ', 'Adding implicit animations to a news application' %}
 
 ## Widget of the Week videos
 
@@ -69,11 +63,10 @@ implicitly animated widgets:
 {% assign animated-urls = 'QZAvjqOqiLY, PY2m0fhGNz4, hC3s2YdtWt8, 2W7POjFb88g' | split: ", " %}
 
 {% for widget in animated-widgets %}
-{% assign video-url = animated-urls[forloop.index0] %}
+{% assign videoUrl = animated-urls[forloop.index0] %}
+{% assign videoDescription = 'Learn about the ' | append: widget | append: ' Flutter Widget' %}
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/{{video-url}}" title="Learn about the {{widget}} Flutter Widget" {{site.yt.set}}></iframe>
-
-[Learn about the {{widget}} Flutter Widget]({{site.yt.watch}}/{{video-url}})
+{% ytEmbed videoUrl, videoDescription %}
 
 {% endfor -%}
 

@@ -33,7 +33,7 @@ which is generally shortened to _plugin_.
   For example, a plugin might provide Flutter apps
   with the ability to use a device's camera.
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/Y9WifT8aN6o?start=1" title="Learn the difference between a package and a plugin" {{site.yt.set}}></iframe>
+{% ytEmbed 'Y9WifT8aN6o', 'Packages versus plugins | Decoding Flutter' %}
 :::
 
 Existing packages enable many use cases—for example,

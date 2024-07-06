@@ -22,9 +22,7 @@ some in different languages.
 Even if you couldn't make it to Nairobi for the in-person
 event, you can enjoy the content created for Flutter Forward!
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/zKQYGKAe5W8?start=2778" title="Watch the livestream from Flutter Forward in Nairobi Kenya from 2023" {{site.yt.set}}></iframe>
-
-**Flutter Forward livestream**
+{% ytEmbed 'zKQYGKAe5W8?start=2778', 'Flutter Forward 2023 Livestream' %}
 
 [Flutter Forward playlist][]
 
@@ -32,13 +30,13 @@ event, you can enjoy the content created for Flutter Forward!
 
 ### Get ready for Flutter Forward
 
-Flutter Forward is happening on Jan 25th, in Nairobi, Kenya.
+Flutter Forward occurred on Jan 25th, 2023 in Nairobi, Kenya.
 Before the event, the Flutter team provided 17 days of Flutter
 featuring new content and activities leading up to the event.
 This playlist contains these and other pre-event videos relating to
 Flutter Forward.
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/hpgkrUPRBjc?start=6" title="Watch the videos to prepare you for Flutter Forward 2023" {{site.yt.set}}></iframe>
+{% ytEmbed 'hpgkrUPRBjc?start=6', 'Prepare for Flutter Forward 2023 - 17 days of Flutter' %}
 
 **17 Days of Flutter!**
 
@@ -63,9 +61,7 @@ learn alongside her as she asks important questions like:
 "What is the best way to build out a theme? How to approach using fonts?"
 And more!
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/CkcvVZZEsJE" title="Learn how to build your first Flutter app" {{site.yt.set}}></iframe>
-
-**Building my first Flutter app | Learning to Fly**
+{% ytEmbed 'CkcvVZZEsJE', 'Building my first Flutter app | Learning to Fly' %}
 
 [Learning to Fly playlist][]
 
@@ -86,9 +82,7 @@ and general advice on getting the most out of Flutter.
 In the comments section for this series,
 you can submit suggestions future episodes.
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/QIW35-vcA2o" title="Watch this series on best practices for Flutter: Decoding Flutter" {{site.yt.set}}></iframe>
-
-**Introducing Decoding Flutter**
+{% ytEmbed 'QIW35-vcA2o', 'Introducing Decoding Flutter - Flutter best practices' %}
 
 [Decoding Flutter playlist][]
 
@@ -99,9 +93,7 @@ you can submit suggestions future episodes.
 Do you have 60 seconds?
 Each one-minute video highlights a Flutter widget.
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/b_sQ9bMltGU" title="Watch this series on different Flutter Widgets: Widget of the Week" {{site.yt.set}}></iframe>
-
-**Introducing widget of the week**
+{% ytEmbed 'b_sQ9bMltGU', 'Introducing Flutter widget of the week' %}
 
 [Flutter widget of the week playlist][]
 
@@ -112,9 +104,7 @@ Each one-minute video highlights a Flutter widget.
 If you have another minute (or two),
 each of these videos highlights a Flutter package.
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/QFcFEpFmNJ8" title="Watch this series on different Flutter Packages: Package of the Week" {{site.yt.set}}></iframe>
-
-**`flutter_slidable` package**
+{% ytEmbed 'QFcFEpFmNJ8', 'Introducing Flutter package of the week' %}
 
 [Flutter package of the week playlist][]
 
@@ -126,9 +116,7 @@ This series features Flutter programmers coding,
 unscripted and in real time. Mistakes, solutions
 (some of them correct), and snazzy intro music included.
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/vqPG1tU6-c0" title="Watch this live Flutter coding series: The Boring Show" {{site.yt.set}}></iframe>
-
-**Introducing the Boring Flutter show**
+{% ytEmbed 'vqPG1tU6-c0', 'Introducing The Boring Show - Flutter live coding' %}
 
 [The Boring Flutter show playlist][]
 
@@ -139,7 +127,7 @@ unscripted and in real time. Mistakes, solutions
 Google I/O 2022 is over, but you can still catch
 the great Flutter content!
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/w_ezWG1yKQQ" title="Watch highlights about Flutter from Google I/O 2022" {{site.yt.set}}></iframe>
+{% ytEmbed 'w_ezWG1yKQQ', 'What\'s new in Flutter at Google I/O 2022' %}
 
 [Flutter at Google I/O playlist][]
 
@@ -154,19 +142,17 @@ officially launched Flutter 2.
 
 Check out the Flutter Engage 2021 highlights reel.
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/IdrCyS7EF8M" title="Watch highlights about Flutter from Flutter Engage 2021" {{site.yt.set}}></iframe>
+{% ytEmbed 'IdrCyS7EF8M', 'Top 10 highlights from Flutter Engage 2021' %}
 
 Watch recordings of the sessions on the Flutter YouTube channel.
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/zSbsIiluixw" title="Watch the Flutter sessions from Flutter Engage 2021" {{site.yt.set}}></iframe>
-
-**Flutter Engage Keynote**
+{% ytEmbed 'zSbsIiluixw', 'Flutter Engage 2021 keynote' %}
 
 [Flutter Engage 2021 playlist][]
 
 Watch recordings of the sessions offered by the Flutter community.
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/-_de6IfY2RU" title="Watch the Flutter community sessions from Flutter Engage 2021" {{site.yt.set}}></iframe>
+{% ytEmbed '-_de6IfY2RU', 'Choreographing transitions with Flutter\'s animation framework' %}
 
 [Flutter Engage community talks playlist][]
 
@@ -177,9 +163,7 @@ Watch recordings of the sessions offered by the Flutter community.
 
 Five-to-ten minute tutorials (more or less) on using Flutter.
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/wgTBLj7rMPM" title="Watch this series on Flutter tutorials: Flutter in Focus" {{site.yt.set}}></iframe>
-
-**Introducing Flutter in focus**
+{% ytEmbed 'wgTBLj7rMPM', 'Introducing Flutter in Focus - Flutter tutorials' %}
 
 [Flutter in focus playlist][]
 
@@ -189,7 +173,7 @@ Five-to-ten minute tutorials (more or less) on using Flutter.
 
 Here are a some Flutter talks given at various conferences.
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/d_m5csmrf7I" title="Watch this series on Flutter talks given at other conferences" {{site.yt.set}}></iframe>
+{% ytEmbed 'd_m5csmrf7I', 'Pragmatic state management in Flutter' %}
 
 [Conference talks playlist][]
 
@@ -201,7 +185,7 @@ Videos showing how various customers, such as Abbey Road Studio, Hamilton,
 and Alibaba, have used Flutter to create beautiful compelling apps with
 millions of downloads.
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/_ACWeGGBP4E" title="Watch this series on Flutter developer stories" {{site.yt.set}}></iframe>
+{% ytEmbed '_ACWeGGBP4E', 'Flutter developer stories' %}
 
 [Flutter developer stories playlist][]
 

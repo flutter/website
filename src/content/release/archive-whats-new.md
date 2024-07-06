@@ -615,7 +615,7 @@ For more information, see
 and [What's new in Flutter 2.10][],
 free articles on Medium.
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/g-0B_Vfc9qM" title="Learn how Flutter can develop Windows native apps" {{site.yt.set}}></iframe>
+{% ytEmbed 'g-0B_Vfc9qM', 'Flutter Update: Windows' %}
 
 [Announcing Flutter for Windows]: {{site.flutter-medium}}/announcing-flutter-for-windows-6979d0d01fed
 [What's new in Flutter 2.10]: {{site.flutter-medium}}/whats-new-in-flutter-2-10-5aafb0314b12

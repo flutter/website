@@ -51,10 +51,10 @@ rather than the app-centric services that a UI framework like Flutter
 can deliver. However, you _can_ use Flutter to embed interactive
 experiences into these websites.
 
-For a glimpse into how to migrate your mobile app to web, see
-the following video:
+For a glimpse into how to migrate your mobile app to web,
+check out the following video:
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/HAstl_NkXl0" title="Learn how to move from a Mobile App to a Web App using Flutter" {{site.yt.set}}></iframe>
+{% ytEmbed 'HAstl_NkXl0', 'Add web support to your mobile app built with Flutter' %}
 
 <a id="web"></a>
 
@@ -79,8 +79,6 @@ The following resources can help you get started:
 * [File an issue][] on the main Flutter repo.
 * You can chat and ask web-related questions on the
   **#help** channel on [Discord][].
-
----
 
 [Building a web application with Flutter]: /platform-integration/web/building
 [Creating responsive apps]: /ui/adaptive-responsive

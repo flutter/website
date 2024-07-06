@@ -2,6 +2,33 @@ import {slugify} from './utils/slugify.js';
 
 export function registerShortcodes(eleventyConfig) {
   _setupTabs(eleventyConfig);
+  _setupMedia(eleventyConfig);
+}
+
+function _setupMedia(eleventyConfig) {
+  eleventyConfig.addShortcode('ytEmbed', function (id, title, skipAlternativeLink = false, fullWidth = false) {
+    let embedMarkup = `<iframe ${fullWidth ? 'class="full-width"' : 'width="560" height="315"'} 
+        src="https://www.youtube.com/embed/${id}" title="${title}" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen loading="lazy"></iframe><br>`;
+
+    if (!skipAlternativeLink) {
+      embedMarkup += `<p><a href="https://www.youtube.com/watch/${id}" target="_blank" rel="noopener" title="Open '${title}' video in new tab">${title}</a></p>`;
+    }
+
+    return embedMarkup;
+  });
+
+  eleventyConfig.addPairedShortcode('videoWrapper', function (content, intro = '') {
+    let wrapperMarkup = '<div class="video-wrapper">';
+    if (intro && intro !== '') {
+      wrapperMarkup += `<span class="video-intro">${intro}</span>`;
+    }
+
+    wrapperMarkup += content;
+    wrapperMarkup += '</div>';
+    return wrapperMarkup;
+  });
 }
 
 function _setupTabs(eleventyConfig) {

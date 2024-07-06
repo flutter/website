@@ -120,7 +120,7 @@ consult [Debugging your add-to-app module][].
 {% tabs %}
 {% tab "Use CocoaPods" %}
 
-{% render docs/add-to-app/ios-project/embed-cocoapods.md, yt-embed: site.yt.embed, yt-set: site.yt.set, yt-watch: site.yt.watch  %}
+{% render docs/add-to-app/ios-project/embed-cocoapods.md %}
 
 {% endtab %}
 {% tab "Use frameworks" %}

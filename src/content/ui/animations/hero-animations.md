@@ -23,7 +23,7 @@ motion is sometimes referred to as a _shared element transition_.
 
 You might want to watch this one-minute video introducing the Hero widget:
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/Be9UH1kXFDw" title="Learn about the Hero Flutter Widget" {{site.yt.set}}></iframe>
+{% ytEmbed 'Be9UH1kXFDw', 'Hero | Flutter widget of the week' %}
 
 This guide demonstrates how to build standard hero animations, and hero
 animations that transform the image from a circular shape to a square shape
@@ -67,9 +67,9 @@ Tapping the flippers in the blue route (or using the device's
 back-to-previous-route gesture) flies the flippers back to
 the original route.
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/CEcFnqRDfgw" title="Watch this example of a standard hero animation in Flutter" {{site.yt.set-short}}></iframe>
+{% ytEmbed 'CEcFnqRDfgw', 'Standard hero animation in Flutter' %}
 
-<br>**Radial hero animations**<br>
+**Radial hero animations**<br>
 
 In _radial hero animation_, as the hero flies between routes
 its shape appears to change from circular to rectangular.
@@ -82,8 +82,7 @@ that displays it with a square shape.
 Tapping the square image flies the hero back to
 the original route, displayed with a circular shape.
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/LWKENpwDKiM" title="Watch this example of a radial hero animation in Flutter" {{site.yt.set-short}}></iframe>
-<br>
+{% ytEmbed 'LWKENpwDKiM', 'Radial hero animation in Flutter' %}
 
 Before moving to the sections specific to
 [standard](#standard-hero-animations)

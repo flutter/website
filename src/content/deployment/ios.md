@@ -25,9 +25,7 @@ You can read more about the various membership options in Apple's
 For those who prefer video over text,
 the following video covers the same material as this guide.
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/iE2bpP56QKc?si=tHqWYKNTN1H8H9mC" title="Release an iOS app with Flutter in 7 steps" {{site.yt.set}}></iframe>
-
-[Release an iOS app with Flutter in 7 steps]({{site.yt.watch}}?v=iE2bpP56QKc)
+{% ytEmbed 'iE2bpP56QKc', 'Release an iOS app built with Flutter in 7 steps' %}
 
 ## Register your app on App Store Connect
 

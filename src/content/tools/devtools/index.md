@@ -15,9 +15,7 @@ same set of tools.
 For a video introduction to DevTools, check out
 the following deep dive and use-case walkthrough:
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/_EYk-E29edo" title="Dive in to Flutter DevTools" {{site.yt.set}}></iframe>
-
-[Dive in to DevTools]({{site.yt.watch}}?v=_EYk-E29edo)
+{% ytEmbed '_EYk-E29edo', 'Dive in to Flutter and Dart DevTools' %}
 
 ## What can I do with DevTools?
 

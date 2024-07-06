@@ -84,8 +84,7 @@ manufacturers who returned the prototypes some weeks later.
 
 ![The first Dash prototypes](/assets/images/dash/dash-prototypes.jpg){:width="35%"} ![The first Dash prototypes](/assets/images/dash/dash-prototypes2.jpg){:width="35%"}<br>
 
-Introducing Dash at the January 2018 Dart Conference.
-<iframe width="541" height="350" src="{{site.yt.embed}}/R5vIUjRZaZA" title="Introducing Dash at the January 2018 Dart Conference" {{site.yt.set}}></iframe>
+{% ytEmbed 'R5vIUjRZaZA', 'Introducing Dash at the January 2018 Dart Conference' %}
 
 While the manufacturing process was proceeding,
 Shams chose a name for the plushy: Dash,
@@ -133,8 +132,8 @@ Dash 2.0 and 2.1
   Mega-Dash made her
   first appearance at the [Flutter Interact][] event
   in Brooklyn, New York, on December 11, 2019.
-  
-  <iframe width="560" height="315" src="{{site.yt.embed}}/EgBMGDtHZhE" title="Watch the Flutter Interact 2019 highlights" {{site.yt.set}}></iframe>
+
+  {% ytEmbed 'EgBMGDtHZhE', 'Flutter Interact 2019 highlights' %}
   
 * We also have a Dash puppet that Shams made from
   one of the first plushies.
@@ -144,11 +143,12 @@ Dash 2.0 and 2.1
   A number of our YouTube videos feature the Dash puppet,
   voiced by Emily Fortuna, one of the early (and much loved)
   Flutter Developer Advocates.
-  
-  <iframe width="560" height="315" src="{{site.yt.embed}}/oyy_1CjNdBU" title="Building DashCast, a Flutter-based podcast app" {{site.yt.set}}></iframe>
-  <iframe width="560" height="315" src="{{site.yt.embed}}/dsiLVNDJ3t0" title="Revisiting DashCast, a Flutter-based podcast app" {{site.yt.set}}></iframe>
 
-   ![Born to Hot Reload jacket](/assets/images/dash/ShamsDashJacket.png){:width="35%"}
+  {% ytEmbed 'oyy_1CjNdBU', 'Building DashCast, a Flutter-based podcast app' %}
+
+  {% ytEmbed 'dsiLVNDJ3t0', 'Revisiting DashCast, a Flutter-based podcast app' %}
+
+  ![Born to Hot Reload jacket](/assets/images/dash/ShamsDashJacket.png){:width="35%"}
 
 [Flutter Interact]: {{site.yt.playlist}}PLjxrf2q8roU0o0wKRJTjyN0pSUA6TI8lg
 [Instagram account]: https://www.instagram.com/dash_the_dartlang_plushy/

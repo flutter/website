@@ -101,7 +101,7 @@ Flutter layouts.
 For an overview of what you can do with this tool, see
 the Flutter Explorer video:
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/Jakrc3Tn_y4" title="Learn about the Layout Explorer in Flutter DevTools" {{site.yt.set}}></iframe>
+{% ytEmbed 'Jakrc3Tn_y4', 'DevTools Layout Explorer' %}
 
 You might also find the following step-by-step article useful:
 

@@ -94,7 +94,7 @@ Choose the typeface or font family that meets the design needs of your app.
 To learn how to get direct access to over 1,000 open-sourced font families,
 check out the [google_fonts][] package.
 
-<iframe class="full-width" src="{{site.yt.embed}}/8Vzv2CdbEY0" title="Learn about the google_fonts Flutter Package" {{site.yt.set}}></iframe>
+{% ytEmbed '8Vzv2CdbEY0', 'google_fonts | Flutter package of the week' %}
 
 To learn about another approach to using custom fonts that allows you to
 re-use one font over multiple projects,

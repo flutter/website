@@ -70,7 +70,5 @@ responsive design:
 You might also check out the Google I/O 2024 talk about
 this subject.
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/LeKLGzpsz9I?si=9RIdY3g80eUl_YHj" title="Watch the adaptive/responsive video from Google I/O 2024" {{site.yt.set}}></iframe>
-
-How to build Adaptive UI with Flutter
+{% ytEmbed 'LeKLGzpsz9I', 'How to build adaptive UI with Flutter' %}
 :::

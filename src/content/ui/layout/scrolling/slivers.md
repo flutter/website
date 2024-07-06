@@ -12,7 +12,7 @@ such as elastic scrolling.
 For a free, instructor-led video workshop that uses DartPad,
 check out the following video about using slivers.
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/YY-_yrZdjGc" title="Learn how to build beautiful scrolling examples in Flutter" {{site.yt.set}}></iframe>
+{% ytEmbed 'YY-_yrZdjGc', 'Building scrolling experiences in Flutter' %}
 
 ## Resources
 
@@ -27,20 +27,23 @@ in Flutter, see the following resources:
 **[SliverAppBar][sliver-app-bar-video]**
 : A one-minute Widget-of-the-week
   video that gives an overview of the
-  `SliverAppBar` widget.<br>
-  <iframe width="560" height="315" src="{{site.yt.embed}}/R9C5KMJKluE" title="Learn about the SliverAppBar Widget" {{site.yt.set}}></iframe>
+  `SliverAppBar` widget.
+
+  {% ytEmbed 'R9C5KMJKluE', 'SliverAppBar | Flutter widget of the week', true %}
 
 **[SliverList and SliverGrid][]**
 : A one-minute Widget-of-the-week
   video that gives an overview of the `SliverList`
-  and `SliverGrid` widgets.<br>
-  <iframe width="560" height="315" src="{{site.yt.embed}}/ORiTTaVY6mM" title="Learn about the SliverList and SliverBar Widget" {{site.yt.set}}></iframe>
+  and `SliverGrid` widgets.
+
+  {% ytEmbed 'ORiTTaVY6mM', 'SliverList & SliverGrid | Flutter widget of the week', true %}
 
 **[Slivers explained - Making dynamic layouts][]**
 : A 50-minute episode of [The Boring Show][]
   where Ian Hickson, Flutter's Tech Lead, and Filip Hracek
-  discuss the power of slivers.<br>
-  <iframe width="560" height="315" src="{{site.yt.embed}}/Mz3kHQxBjGg" title="Watch the Boring Show to learn about slivers" {{site.yt.set}}></iframe>
+  discuss the power of slivers.
+
+  {% ytEmbed 'Mz3kHQxBjGg', 'Slivers explained - Making dynamic layouts', true %}
 
 ## API docs
 

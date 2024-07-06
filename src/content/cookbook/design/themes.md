@@ -183,7 +183,7 @@ Theme(
 
 To learn more, watch this short Widget of the Week video on the `Theme` widget:
 
-<iframe class="full-width" src="{{site.yt.embed}}/oTvQDJOBXmM" title="Learn about the Theme Flutter Widget" {{site.yt.set}}></iframe>
+{% ytEmbed 'oTvQDJOBXmM', 'Theme | Flutter widget of the week' %}
 
 ## Try an interactive example
 

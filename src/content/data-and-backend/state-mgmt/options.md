@@ -77,7 +77,7 @@ use under the hood.
 The following instructor-led video workshop covers how to
 use `InheritedWidget`:
 
-<iframe width="560" height="315" src="{{site.yt.embed}}/LFcGPS6cGrY" title="How to manage application states using inherited widgets" {{site.yt.set}}></iframe>
+{% ytEmbed 'LFcGPS6cGrY', 'How to manage application state using inherited widgets' %}
 
 Other useful docs include:
 
@@ -189,7 +189,7 @@ doesn't need a `BuildContext`.
 :::note
 To learn more, watch this short Package of the Week video on the GetIt package:
 
-<iframe class="full-width" src="{{site.yt.embed}}/f9XQD5mf6FY" title="Learn about the GetIt Flutter Package" {{site.yt.set}}></iframe>
+{% ytEmbed 'f9XQD5mf6FY', 'get_it | Flutter package of the week', true %}
 :::
 
 [Flutter state management for minimalists]: {{site.medium}}/flutter-community/flutter-state-management-for-minimalists-4c71a2f2f0c1?sk=6f9cedfb550ca9cc7f88317e2e7055a0

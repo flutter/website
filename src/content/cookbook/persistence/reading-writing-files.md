@@ -22,7 +22,7 @@ This recipe uses the following steps:
 To learn more, watch this Package of the Week video
 on the `path_provider` package:
 
-<iframe class="full-width" src="{{site.yt.embed}}/Ci4t-NkOY3I" title="Learn about the path_provider Flutter Package" {{site.yt.set}}></iframe>
+{% ytEmbed 'Ci4t-NkOY3I', 'path_provider | Flutter package of the week' %}
 
 :::note
 This recipe doesn't work with web apps at this time.
