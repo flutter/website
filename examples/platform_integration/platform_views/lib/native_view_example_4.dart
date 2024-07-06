@@ -6,25 +6,25 @@ import 'package:flutter/services.dart';
 // #enddocregion import
 import 'package:flutter/widgets.dart';
 
-class IOSCompositionWidget extends StatelessWidget {
-  const IOSCompositionWidget({super.key});
+class MacOSCompositionWidget extends StatelessWidget {
+  const MacOSCompositionWidget({super.key});
 
   @override
-  // #docregion ios-composition
+  // #docregion macos-composition
   Widget build(BuildContext context) {
     // This is used in the platform side to register the view.
     const String viewType = '<platform-view-type>';
     // Pass parameters to the platform side.
     final Map<String, dynamic> creationParams = <String, dynamic>{};
 
-    return UiKitView(
+    return AppKitView(
       viewType: viewType,
       layoutDirection: TextDirection.ltr,
       creationParams: creationParams,
       creationParamsCodec: const StandardMessageCodec(),
     );
   }
-  // #enddocregion ios-composition
+  // #enddocregion macos-composition
 }
 
 class TogetherWidget extends StatelessWidget {
