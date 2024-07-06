@@ -22,6 +22,7 @@ export function registerFilters(eleventyConfig) {
 
   eleventyConfig.addFilter('regex_replace', regexReplace);
   eleventyConfig.addFilter('toISOString', toISOString);
+  eleventyConfig.addFilter('toSimpleDate', toSimpleDate);
   eleventyConfig.addFilter('active_nav_for_page', activeNavForPage);
   eleventyConfig.addFilter('array_to_sentence_string', arrayToSentenceString);
   eleventyConfig.addFilter('generate_toc', generateToc);
@@ -56,6 +57,17 @@ function toISOString(input) {
     // If it's not a Date object, assume it's already in string format.
     return input;
   }
+}
+
+function toSimpleDate(input) {
+  let dateString;
+  if (input instanceof Date) {
+    dateString = input.toISOString();
+  } else {
+    // If it's not a Date object, assume it's already in string format.
+    dateString = input;
+  }
+  return dateString.split('T')[0];
 }
 
 function activeNavForPage(pageUrlPath, activeNav) {

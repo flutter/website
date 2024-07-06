@@ -1,21 +1,12 @@
-{% comment %}
-This include file requires the material symbols font.
-Style the button pair using the `#page-github-links` selector.
-{% endcomment -%}
-
 {% assign repo = repo | default: site.repo.this -%}
-{% capture path -%} {{repo}}/tree/{{site.branch}}/{{page.inputPath | replace: './', ''}} {%- endcapture -%}
+{% capture pageSource -%} {{repo}}/tree/{{site.branch}}/{{page.inputPath | replace: './', ''}} {%- endcapture -%}
 {% assign siteTitle = title | default: page.url | escape -%}
 {% assign url = site.url | append: page.url -%}
-
 {% capture issueTitle -%} title=[PAGE ISSUE]: '{{siteTitle}}' {%- endcapture -%}
 
-<div id="page-github-links" class="btn-group" aria-label="Page GitHub links" role="group">
-  <a href="{{path}}" class="btn" title="View page source" target="_blank" rel="noopener">
-    <i class="material-symbols">description</i>
-  </a>
-  <a href="{{repo}}/issues/new?template=1_page_issue.yml&{{issueTitle}}&page-url={{url}}&page-source={{path}}" class="btn" title="Report an issue with this page"
-    target="_blank" rel="noopener">
-    <i class="material-symbols">bug_report</i>
-  </a>
-</div>
+<p id="page-github-links">
+  <span>Unless stated otherwise, the documentation on this site reflects the latest stable version of Flutter. Page last updated on {{page.date | toSimpleDate}}.</span>
+  <a href="{{pageSource}}" target="_blank" rel="noopener">View source</a>
+  <span> or </span>
+  <a href="{{repo}}/issues/new?template=1_page_issue.yml&{{issueTitle}}&page-url={{url}}&page-source={{pageSource}}" title="Report an issue with this page" target="_blank" rel="noopener">report an issue</a>.
+</p>
