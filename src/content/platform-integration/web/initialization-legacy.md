@@ -99,8 +99,6 @@ learn how to customize each stage of your app's initialization.
 
 The `loadEntrypoint` method accepts these parameters:
 
-<div class="table-wrapper">
-
 | Name | Description | JS&nbsp;Type |
 |-|-|-|
 |`entrypointUrl`| The URL of your Flutter app's entrypoint. Defaults to `"main.dart.js"`. |`String`|
@@ -109,11 +107,7 @@ The `loadEntrypoint` method accepts these parameters:
 
 {:.table}
 
-</div>
-
 The `serviceWorker` JavaScript object accepts the following properties:
-
-<div class="table-wrapper">
 
 | Name | Description | JS&nbsp;Type |
 |-|-|-|
@@ -123,8 +117,6 @@ The `serviceWorker` JavaScript object accepts the following properties:
 
 {:.table}
 
-</div>
-
 ### Initializing the engine
 
 As of _Flutter 3.7.0_, you can use the `initializeEngine` method to
@@ -132,8 +124,6 @@ configure several run-time options of the Flutter web engine through a
 plain JavaScript object.
 
 You can add any of the following optional parameters:
-
-<div class="table-wrapper">
 
 | Name | Description | Dart&nbsp;Type |
 |-|-|-|
@@ -147,8 +137,6 @@ You can add any of the following optional parameters:
 |`renderer`| Specifies the [web renderer][web-renderers] for the current Flutter application, either `"canvaskit"` or `"html"`. |`String`|
 
 {:.table}
-
-</div>
 
 [jsflutterconfig-source]: {{site.repo.engine}}/blob/main/lib/web_ui/lib/src/engine/configuration.dart#L247-L259
 [web-renderers]: /platform-integration/web/renderers

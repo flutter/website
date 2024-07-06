@@ -143,8 +143,6 @@ The following screenshot and table explain the purpose of each tool.
 
 ![VS Code with the Flutter plugin UI additions](/assets/images/docs/testing/debugging/vscode-ui/screens/debugger-parts.png)
 
-<div class="table-wrapper">
-
 | Highlight Color in Screenshot | Bar, Panel, or Tab  | Contents                                                                          |
 |-------------------------------|---------------------|-----------------------------------------------------------------------------------|
 | **Yellow**                    | Variables           | List of current values of variables in the Flutter app                            |
@@ -162,8 +160,6 @@ The following screenshot and table explain the purpose of each tool.
 
 {:.table .table-striped}
 
-</div>
-
 To change where the panel (in **orange**) appears in VS Code,
 go to **View** > **Appearance** > **Panel Position**.
 
@@ -173,8 +169,6 @@ The toolbar allows you to debug using any debugger.
 You can step in, out, and over Dart statements, hot reload, or resume the app.
 
 ![Flutter debugger toolbar in VS Code](/assets/images/docs/testing/debugging/vscode-ui/screens/debug-toolbar.png)
-
-<div class="table-wrapper">
 
 | Icon                                                | Action                | Default keyboard shortcut                             |
 |-----------------------------------------------------|-----------------------|-------------------------------------------------------|
@@ -189,8 +183,6 @@ You can step in, out, and over Dart statements, hot reload, or resume the app.
 | {% render docs/vscode-flutter-bar/inspector.md %}   | Open Widget Inspector |                                                       |
 
 {:.table .table-striped}
-
-</div>
 
 ## Update test Flutter app
 

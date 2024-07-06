@@ -20,8 +20,6 @@ and software requirements.
 Your {{include.os}} Flutter development environment must meet the following
 minimal hardware requirements.
 
-<div class="table-wrapper">
-
 |     Requirement              |                                    Minimum                               |    Recommended      |
 |:-----------------------------|:------------------------------------------------------------------------:|:-------------------:|
 | CPU Cores                    | 4                                                                        | 8                   |
@@ -30,8 +28,6 @@ minimal hardware requirements.
 | Free disk space in GB        | {% include docs/install/reqs/macos/storage.md target=include.target %}
 
 {:.table .table-striped}
-
-</div>
 
 ### Software requirements
 

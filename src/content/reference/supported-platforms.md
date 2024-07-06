@@ -20,8 +20,6 @@ Based on these tiers, Flutter supports deploying to the following platforms.
 
 {% assign opsys = platforms %}
 
-<div class="table-wrapper">
-
 | Target Platform | Hardware architectures | Supported versions | Best effort versions | Unsupported versions |
 |---|:---:|:---:|:---:|:---:|
 {%- for platform in opsys %}
@@ -29,5 +27,3 @@ Based on these tiers, Flutter supports deploying to the following platforms.
 {%- endfor %}
 
 {:.table .table-striped}
-
-</div>

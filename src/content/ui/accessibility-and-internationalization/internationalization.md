@@ -573,8 +573,6 @@ numbers based on the locale and the desired format.
 The `int`, `double`, and `number` types can use any of the
 following `NumberFormat` constructors:
 
-<div class="table-wrapper">
-
 | Message "format" value   | Output for 1200000 |
 |--------------------------|--------------------|
 | `compact`                | "1.2M"             |
@@ -590,8 +588,6 @@ following `NumberFormat` constructors:
 | `simpleCurrency`*        | "$1,200,000"       |
 
 {:.table .table-striped}
-
-</div>
 
 The starred `NumberFormat` constructors in the table
 offer optional, named parameters.
@@ -827,8 +823,6 @@ to specify the following:
 For a full list of options, either run `flutter gen-l10n --help`
 at the command line or refer to the following table:
 
-<div class="table-wrapper">
-
 | Option                              | Description |
 | ------------------------------------| ------------------ |
 | `arb-dir`                           | The directory where the template and translated arb files are located. The default is `lib/l10n`. |
@@ -851,8 +845,6 @@ at the command line or refer to the following table:
 | `[no-]suppress-warnings`            | When specified, all warnings are suppressed. |
 
 {:.table .table-striped}
-
-</div>
 
 
 ## How internationalization in Flutter works
