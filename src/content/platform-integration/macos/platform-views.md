@@ -24,6 +24,11 @@ see [Hosting native iOS views][].
 [Hosting native Android views]: /platform-integration/android/platform-views
 [Hosting native iOS views]: /platform-integration/ios/platform-views
 
+:::note Version note
+Platform view support on macOS isn't fully functional as of the current release.
+For example, gesture support isn't yet available on macOS.
+Stay tuned for a future stable release.
+:::
 macOS uses Hybrid composition, which means that the native `NSView` is appended
 to the view hierarchy.
 
