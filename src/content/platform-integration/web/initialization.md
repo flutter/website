@@ -77,8 +77,6 @@ the `flutter_bootstrap.js` file to the output directory.
 The following table lists the tokens that the build step will
 substitute in either the `flutter_bootstrap.js` or `index.html` files:
 
-<div class="table-wrapper">
-
 | Token | Replaced with |
 |---|---|
 | `{% raw %}{{flutter_js}}{% endraw %}` | The JavaScript code that makes the `FlutterLoader` object available in the `_flutter.loader` global variable. (See the `_flutter.loader.load() API` section below for more details.) |
@@ -87,8 +85,6 @@ substitute in either the `flutter_bootstrap.js` or `index.html` files:
 | `{% raw %}{{flutter_bootstrap_js}}{% endraw %}` | As mentioned above, this inlines the contents of the `flutter_bootstrap.js` file directly into the `index.html` file. Note that this token can only be used in the `index.html` and not the `flutter_bootstrap.js` file itself. |
 
 {:.table}
-
-</div>
 
 <a id="write-a-custom-flutter_bootstrap-js" aria-hidden="true"></a>
 
@@ -118,8 +114,6 @@ _flutter.loader.load();
 The `_flutter.loader.load()` JavaScript API can be invoked with optional
 arguments to customize initialization behavior:
 
-<div class="table-wrapper">
-
 | Name                    | Description                                                                                                                   | JS&nbsp;type |
 |-------------------------|-------------------------------------------------------------------------------------------------------------------------------|--------------|
 | `config`                | The Flutter configuration of your app.                                                                                        | `Object`     |
@@ -128,11 +122,7 @@ arguments to customize initialization behavior:
 
 {:.table}
 
-</div>
-
 The `config` argument is an object that can have the following optional fields:
-
-<div class="table-wrapper">
 
 | Name | Description | Dart&nbsp;type |
 |---|---|---|
@@ -147,13 +137,9 @@ The `config` argument is an object that can have the following optional fields:
 
 {:.table}
 
-</div>
-
 [web-renderers]: /platform-integration/web/renderers
 
 The `serviceWorkerSettings` argument has the following optional fields.
-
-<div class="table-wrapper">
 
 | Name                   | Description                                                                                                                             | JS&nbsp;type |
 |------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|--------------|
@@ -162,8 +148,6 @@ The `serviceWorkerSettings` argument has the following optional fields.
 | `timeoutMillis`        | The timeout value for the service worker load. Defaults to `4000`.                                                                      | `Number`     |
 
 {:.table}
-
-</div>
 
 ## Example: Customizing Flutter configuration based on URL query parameters
 

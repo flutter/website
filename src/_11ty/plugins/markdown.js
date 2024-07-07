@@ -1,6 +1,5 @@
 import markdownIt from 'markdown-it';
 import markdownItContainer from 'markdown-it-container';
-import { markdownItTable } from 'markdown-it-table';
 import markdownItDefinitionList from 'markdown-it-deflist';
 import markdownItAttrs from 'markdown-it-attrs';
 import markdownItAnchor from 'markdown-it-anchor';
@@ -9,7 +8,6 @@ import { slugify } from '../utils/slugify.js';
 /** @type {import('markdown-it/lib').MarkdownIt} */
 export const markdown = (() => {
   const markdown = markdownIt({ html: true })
-    .use(markdownItTable)
     .use(markdownItDefinitionList)
     .use(markdownItAttrs, {
       leftDelimiter: '{:',
@@ -30,9 +28,27 @@ export const markdown = (() => {
     });
 
   _registerAsides(markdown);
+  _setUpTables(markdown);
 
   return markdown;
 })();
+
+/**
+ * Wrap all tables in a div with `table-wrapper` class.
+ *
+ * @param markdown {import('markdown-it/lib').MarkdownIt} markdown
+ */
+function _setUpTables(markdown) {
+  markdown.renderer.rules = {
+    ...markdown.renderer.rules,
+    table_open: function (tokens, idx, options, env, self) {
+      const token = tokens[idx];
+      // Render added attributes from `{:.table .table-striped}` syntax.
+      return `<div class="table-wrapper">\n<table ${self.renderAttrs(token)}>\n`;
+    },
+    table_close: () => '</table>\n</div>',
+  };
+}
 
 /**
  * Register a custom aside/admonition.

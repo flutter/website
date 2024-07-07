@@ -27,8 +27,6 @@ to cover all the important use cases. This advice is based on
 the fact that there are trade-offs between different kinds of testing,
 seen below.
 
-<div class="table-wrapper">
-
 | Tradeoff             | Unit   | Widget | Integration |
 |----------------------|--------|--------|-------------|
 | **Confidence**       | Low    | Higher | Highest     |
@@ -37,8 +35,6 @@ seen below.
 | **Execution speed**  | Quick  | Quick  | Slow        |
 
 {:.table .table-striped}
-
-</div>
 
 ## Unit tests
 

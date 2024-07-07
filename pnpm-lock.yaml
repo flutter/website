@@ -51,9 +51,6 @@ importers:
       markdown-it-deflist:
         specifier: ^3.0.0
         version: 3.0.0
-      markdown-it-table:
-        specifier: ^4.1.1
-        version: 4.1.1
       sass:
         specifier: ^1.77.6
         version: 1.77.6
@@ -1698,10 +1695,6 @@ packages:
 
   markdown-it-deflist@3.0.0:
     resolution: {integrity: sha512-OxPmQ/keJZwbubjiQWOvKLHwpV2wZ5I3Smc81OjhwbfJsjdRrvD5aLTQxmZzzePeO0kbGzAo3Krk4QLgA8PWLg==}
-
-  markdown-it-table@4.1.1:
-    resolution: {integrity: sha512-dzFHRwCe97sXD071Gw/LSIwgAcO2vNsT0BcPCmnrKhNW/W57Bnknl8EaC+j4hM3bAqus1CiVPcTQAvLkUfHLhw==}
-    engines: {node: '>12.6'}
 
   markdown-it@14.1.0:
     resolution: {integrity: sha512-a54IwgWPaeBCAAsv13YgmALOF1elABB08FxO9i+r4VFk5Vl4pKokRPeX8u5TCgSsPi6ec1otfLjdOpVcgbpshg==}
@@ -4781,8 +4774,6 @@ snapshots:
   markdown-it-container@4.0.0: {}
 
   markdown-it-deflist@3.0.0: {}
-
-  markdown-it-table@4.1.1: {}
 
   markdown-it@14.1.0:
     dependencies:

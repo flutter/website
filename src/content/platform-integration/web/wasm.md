@@ -113,16 +113,12 @@ Flutter web applications won't run with WebAssembly unless the server is
 configured to send specific HTTP headers.
 :::
 
-<div class="table-wrapper">
-
 | Name | Value |
 |-|-|
 | `Cross-Origin-Embedder-Policy` | `credentialless` <br> or <br> `require-corp` |
 | `Cross-Origin-Opener-Policy` | `same-origin` |
 
 {:.table}
-
-</div>
 
 To learn more about these headers, check out
 [Load cross-origin resources without CORP headers using COEP: credentialless][coep].

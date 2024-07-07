@@ -69,8 +69,6 @@ it will continue to work until you opt in to this behavior by adding
 The behavior varies slightly based on the platform and whether the app is
 launched and running.
 
-<div class="table-wrapper">
-
 | Platform / Scenario      | Using Navigator                                                     | Using Router                                                                                                                                                                                               |
 |--------------------------|---------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | iOS (not launched)       | App gets initialRoute ("/") and a short time after gets a pushRoute | App gets initialRoute ("/") and a short time after uses the RouteInformationParser to parse the route and call RouterDelegate.setNewRoutePath, which configures the Navigator with the corresponding Page. |
@@ -79,8 +77,6 @@ launched and running.
 | Android (launched)       | pushRoute is called                                                 | Path is parsed, and the Navigator is configured with a new set of Pages.                                                                                                                                   |
 
 {:.table .table-striped}
-
-</div>
 
 When using the [`Router`][Router] widget,
 your app has the ability to replace the

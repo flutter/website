@@ -35,8 +35,6 @@ labyrinth that evolving the existing classes in-place would entail,
 the new names sync Flutter back up with the Material Design spec,
 which uses the new names for the button components.
 
-<div class="table-wrapper">
-
 | Old Widget      | Old Theme     | New Widget       | New Theme             |
 |-----------------|---------------|------------------|-----------------------|
 | `FlatButton`    | `ButtonTheme` | `TextButton`     | `TextButtonTheme`     |
@@ -44,8 +42,6 @@ which uses the new names for the button components.
 | `OutlineButton` | `ButtonTheme` | `OutlinedButton` | `OutlinedButtonTheme` |
 
 {:.table .table-striped .nowrap}
-
-</div>
 
 The new themes follow the "normalized" pattern that Flutter adopted
 for new Material widgets about a year ago. Theme properties and widget
