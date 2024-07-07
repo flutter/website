@@ -20,8 +20,8 @@ our [videos](/resources/videos) page.
 
 [Widget of the Week playlist]({{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 
-<div class="card-deck card-deck--responsive">
-{% for comp in sorted %}
+<div class="card-grid">
+{% for comp in sorted -%}
     <div class="card">
         <a href="{{comp.link}}">
             <div class="card-image-holder">

@@ -77,17 +77,17 @@ a Flutter module for UI.
 To get started, see our project integration guide for
 Android and iOS:
 
-<div class="card-deck mb-8">
+<div class="card-grid">
   <a class="card" href="/add-to-app/android/project-setup">
     <div class="card-body">
-      <header class="card-title text-center m-0">
+      <header class="card-title text-center">
         Android
       </header>
     </div>
   </a>
   <a class="card" href="/add-to-app/ios/project-setup">
     <div class="card-body">
-      <header class="card-title text-center m-0">
+      <header class="card-title text-center">
         iOS
       </header>
     </div>
@@ -99,17 +99,17 @@ Android and iOS:
 After Flutter is integrated into your project,
 see our API usage guides at the following links:
 
-<div class="card-deck mb-8">
+<div class="card-grid">
   <a class="card" href="/add-to-app/android/add-flutter-screen">
     <div class="card-body">
-      <header class="card-title text-center m-0">
+      <header class="card-title text-center">
         Android
       </header>
     </div>
   </a>
   <a class="card" href="/add-to-app/ios/add-flutter-screen">
     <div class="card-body">
-      <header class="card-title text-center m-0">
+      <header class="card-title text-center">
         iOS
       </header>
     </div>

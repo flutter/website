@@ -4,22 +4,16 @@ short-title: Docs
 description: Get started with Flutter. Widgets, examples, updates, and API docs to help you write your first Flutter app.
 ---
 
+<div class="card-grid">
 {% for card in docs_cards -%}
-  {% capture index0Modulo3 -%}{{ forloop.index0 | modulo:3 }}{% endcapture -%}
-  {% capture indexModulo3 -%}{{ forloop.index | modulo:3 }}{% endcapture -%}
-  {% if index0Modulo3 == '0' -%}
-  <div class="card-deck mb-4">
-  {% endif -%}
     <a class="card" href="{{card.url}}">
       <div class="card-body">
         <header class="card-title">{{card.name}}</header>
         <p class="card-text">{{card.description}}</p>
       </div>
     </a>
-  {% if indexModulo3 == '0' -%}
-  </div>
-  {% endif -%}
 {% endfor %}
+</div>
 
 **To see changes to the site since our last release,
 see [What's new][].**
@@ -76,13 +70,13 @@ In Flutter, "everything is a widget"!
 Learn more about `Stateless` and `Stateful`
 widgets in [What is State?][]
 
-<div class="card-deck card-deck--responsive">
-    <div class="video-card">
+<div class="card-grid">
+    <div class="card">
         <div class="card-body">
             {% ytEmbed 'xWV71C2kp38', 'Create your first Flutter app', true, true %}
         </div>
     </div>
-    <div class="video-card">
+    <div class="card">
         <div class="card-body">
             {% ytEmbed 'QlwiL_yLh6E', 'What is state?', true, true %}
         </div>
@@ -103,13 +97,13 @@ Learn [why you write standalone widgets instead of
 using helper methods][standalone-widgets] or
 [what is "BuildContext" and how is it used][buildcontext]?
 
-<div class="card-deck card-deck--responsive">
-    <div class="video-card">
+<div class="card-grid">
+    <div class="card">
         <div class="card-body">
             {% ytEmbed 'IOyq-eTRhvo', 'Widgets vs helper methods | Decoding Flutter', true, true %}
         </div>
     </div>
-    <div class="video-card">
+    <div class="card">
         <div class="card-body">
             {% ytEmbed 'rIaaH87z1-g', 'BuildContext?! | Decoding Flutter', true, true %}
         </div>
