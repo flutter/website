@@ -8,8 +8,6 @@ diff2html: true
 js:
   - defer: true
     url: /assets/js/inject_dartpad.js
-  - defer: true
-    url: /assets/js/codelabs/animations_examples.js
 ---
 
 <?code-excerpt path-base="animation/implicit"?>
@@ -414,8 +412,7 @@ of the `AnimatedContainer` widget, watch how
 the rates of change for `margin`, `borderRadius`, and `color`
 follow the curve that constant defined.
 
-<div id="animation_1_play_button_"></div>
-<video id="animation_1" style="width:464px; height:192px;" loop="">
+<video style="width:464px; height:192px;" loop="" autoplay disablepictureinpicture playsinline controls controlslist="nodownload noremoteplayback">
   <source src="{{site.flutter-assets}}/animation/curve_ease_in_out_back.mp4" type="video/mp4">
 </video>
 
