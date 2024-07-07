@@ -261,7 +261,7 @@ const List<Item> _items = [
     totalPriceCents: 1299,
     uid: '1',
     imageProvider: NetworkImage('https://docs.flutter.dev'
-        'cookbook/img-files/effects/split-check/Food1.jpg'),
+        '/cookbook/img-files/effects/split-check/Food1.jpg'),
   ),
   Item(
     name: 'Veggie Delight',
