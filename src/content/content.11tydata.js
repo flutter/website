@@ -1,3 +1,3 @@
-export default process.env.PRODUCTION === 'true' ? {
-  date: "git Last Modified"
-} : {};
+export default {
+  date: process.env.PRODUCTION === 'true' ? 'git Last Modified' : 'Last Modified',
+};
