@@ -36,47 +36,57 @@ picture {
   max-height: 100%;
 }
 
-.card-deck {
-  &.card-deck--responsive {
-    .card {
-      flex: 0 0 calc((100% / 3) - #{bootstrap.bs-spacer(4)});
-      margin-bottom: bootstrap.bs-spacer(4);
-      overflow: hidden;
-    }
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+
+  .card {
+    overflow: hidden;
   }
 
   .card-body img {
     width: 72px;
     height: 72px;
   }
+
+  .card-image-holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12rem;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      z-index: 1;
+    }
+
+    svg {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &.wide {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+
+  &.narrow {
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  }
 }
 
 .card-footer.card-footer--transparent {
   border: none;
   background-color: transparent;
-
 }
 
 .card-footer.card-footer--links {
   > *:not(:last-child) {
     margin-right: bootstrap.bs-spacer(4);
-  }
-}
-
-.card-image-holder {
-  align-items: center;
-  display: flex;
-  height: 200px;
-  justify-content: center;
-
-  img {
-    max-height: 100%;
-    width: auto;
-  }
-
-  svg {
-    height: 100%;
-    width: 100%;
   }
 }
 
@@ -114,9 +124,8 @@ picture {
   z-index: -1;
 
   img {
-    max-width: 100%;
+    width: 100%;
     max-height: 100%;
-    width: auto;
     z-index: -1;
   }
 }

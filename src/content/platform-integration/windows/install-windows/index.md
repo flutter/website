@@ -9,12 +9,12 @@ To set up your development environment for targeting Windows,
 choose the guide that corresponds to the [Getting Started path][] you followed,
 or the platform you already have set up.
 
-<div class="card-deck mb-8">
+<div class="card-grid">
 {% for target in target-list %}
 {% assign targetLink = '/platform-integration/windows/install-windows/install-windows-from-' | append: target | downcase %}
   <a class="card card-app-type card-windows" id="install-{{target | downcase}}" href="{{targetLink}}">
     <div class="card-body">
-      <header class="card-title text-center m-0">
+      <header class="card-title text-center">
         <span class="d-block h1">
           {% assign icon = target | downcase -%}
           {% case icon %}
