@@ -64,7 +64,12 @@ This raises your app's minimum OS version requirement.
 image:"development/packages-and-plugins/swift-package-manager/minimum-deployments.png",
 caption:"The target's **Minimum Deployments** setting" %}
 
-## How to add Swift Package Manager integration to a custom target
+## How to add Swift Package Manager integration to a custom Xcode target
+
+Your Flutter Xcode project can have custom [Xcode targets][] to build additional
+products, like frameworks or unit tests.
+You can add Swift Package Manager integration to these custom Xcode targets
+as well.
 
 Follow the steps in
 [How to add Swift Package Manager integration to a project manually][manualIntegration].
@@ -75,6 +80,7 @@ of the `Flutter` target.
 In [Step 2][manualIntegrationStep2], list item 6 use your custom target instead
 of the `Flutter` target.
 
+[Xcode targets]: https://developer.apple.com/documentation/xcode/configuring-a-new-target-in-your-project
 [manualIntegration]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-add-swift-package-manager-integration-to-a-project-manually
 [manualIntegrationStep1]: /packages-and-plugins/swift-package-manager/for-app-developers/#step-1-add-fluttergeneratedpluginswiftpackage-package-dependency
 [manualIntegrationStep2]: /packages-and-plugins/swift-package-manager/for-app-developers/#step-2-add-run-prepare-flutter-framework-script-pre-action

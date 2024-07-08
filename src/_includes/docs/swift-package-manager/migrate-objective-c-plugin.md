@@ -86,7 +86,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    version of the plugin name.
    :::
 
-5. If your plugin has a `PrivacyInfo.xcprivacy` file, move it to
+5. If your plugin has a [`PrivacyInfo.xcprivacy` file][], move it to
    `Sources/plugin_name_ios/PrivacyInfo.xcprivacy` and uncomment the resource in
    the `Package.swift` file.
 
@@ -360,6 +360,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
   * Follow instructions for [testing plugins][].
 
 [enableSPM]: /packages-and-plugins/swift-package-manager/for-plugin-authors#how-to-enable-swift-package-manager
+[`PrivacyInfo.xcprivacy` file]: https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
 [`public_header_files`]: https://guides.cocoapods.org/syntax/podspec.html#public_header_files
 [Swift Package Manager's documentation]: {{site.github}}/apple/swift-package-manager/blob/main/Documentation/Usage.md#creating-c-language-targets
 [Pigeon]: https://pub.dev/packages/pigeon
