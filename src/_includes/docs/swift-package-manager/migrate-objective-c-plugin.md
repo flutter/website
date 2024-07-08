@@ -173,7 +173,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 11. If your header files are no longer in the same directory as your
     implementation files, you will need to update your import statements.
 
-    For example, if you moved the following files:
+    For example, imagine the following migration:
 
     * Before:
 
