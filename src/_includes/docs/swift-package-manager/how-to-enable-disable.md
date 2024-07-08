@@ -55,6 +55,8 @@ flutter:
   disable-swift-package-manager: true
 ```
 
+This disables Swift Package Manager for all contributors to this project.
+
 ### Disable globally for all projects
 
 Run the following command:
@@ -62,6 +64,11 @@ Run the following command:
 ```sh
 flutter config --no-enable-swift-package-manager
 ```
+
+This disables Swift Package Manager for the current user.
+
+If a project is incompatible with Swift Package Manager, all contributors
+will need to run this command. 
 
 [removeSPM]: /packages-and-plugins/swift-package-manager/for-app-developers#how-to-remove-swift-package-manager-integration
 [open an issue]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml
