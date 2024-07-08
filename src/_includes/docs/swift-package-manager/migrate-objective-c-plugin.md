@@ -173,20 +173,27 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 11. If your header files are no longer in the same directory as your
     implementation files, you will need to update your import statements.
 
-    For example, if the following changes were made:
+    For example, if you moved the following files:
 
-    <div class="table-wrapper">
+    * Before:
 
-    | Before | After |
-    | -----  | ----- |
-    | `ios/Classes/PublicHeaderFile.h` | `ios/plugin_name_ios/Sources/plugin_name_ios/include/plugin_name_ios/PublicHeaderFile.h` |
-    | `ios/Classes/ImplementationFile.m` | `ios/plugin_name_ios/Sources/plugin_name_ios/ImplementationFile.m` |
+      <pre>
+      ios/Classes/
+      ├── PublicHeaderFile.h
+      └── ImplementationFile.m
+      </pre>
 
-    {:.table .table-striped}
+    * After:
 
-    </div>
+      <pre>
+      ios/plugin_name_ios/Sources/plugin_name_ios/
+      └── <b>include/plugin_name_ios/</b>
+         └── PublicHeaderFile.h
+      └── ImplementationFile.m
+      </pre>
 
-    In `ImplementationFile.m`, the import would change:
+    In this example, the import statements in `ImplementationFile.m`
+    should be updated:
 
     ```diff2html
     --- a/Sources/plugin_name_ios/ImplementationFile.m
@@ -244,9 +251,9 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
         * If Xcode isn't updating after you make a change, try clicking
           **File > Packages > Reset Package Caches**.
 
-    1. [Add dependencies][].
+    2. [Add dependencies][].
 
-    2. If your package must be linked explicitly `static` or `dynamic`
+    3. If your package must be linked explicitly `static` or `dynamic`
        ([not recommended by Apple][]), update the [Product][] to define the
        type:
 
@@ -256,7 +263,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
        ],
        ```
 
-    3. Make any other customizations. For more information on how to write a
+    4. Make any other customizations. For more information on how to write a
        `Package.swift` file, see
        [https://developer.apple.com/documentation/packagedescription](https://developer.apple.com/documentation/packagedescription).
 
@@ -267,7 +274,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
        this can cause issues for developers that use your plugin.
        :::
 
-1.  Update your `plugin_name_ios.podspec` to point to new paths.
+14. Update your `plugin_name_ios.podspec` to point to new paths.
 
     ```diff2html
     --- a/plugin_name_ios.podspec
@@ -283,7 +290,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     + s.resource_bundles = {'plugin_name_ios_privacy' => ['plugin_name_ios/Sources/plugin_name_ios/PrivacyInfo.xcprivacy']}
     ```
 
-2.  Update loading of resources from bundle to use `SWIFTPM_MODULE_BUNDLE`:
+15. Update loading of resources from bundle to use `SWIFTPM_MODULE_BUNDLE`:
 
     ```objc
     #if SWIFT_PACKAGE
@@ -301,7 +308,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     Otherwise, it will fail.
     :::
 
-3.  If your `plugin_name_ios/Sources/plugin_name_ios/include` directory only
+16. If your `plugin_name_ios/Sources/plugin_name_ios/include` directory only
     contains a `.gitkeep`, you'll want update your `.gitignore` to include the
     following:
 
@@ -312,7 +319,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     Run `flutter pub publish --dry-run` to ensure the `include` directory
     is published.
 
-4.  Verify the plugin still works with CocoaPods.
+17. Verify the plugin still works with CocoaPods.
 
     1. Disable Swift Package Manager:
 
@@ -332,7 +339,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     pod lib lint ios/plugin_name_ios.podspec  --configuration=Debug --skip-tests --use-modular-headers
     ```
 
-5.  Verify the plugin works with Swift Package Manager.
+18. Verify the plugin works with Swift Package Manager.
 
     1. Enable Swift Package Manager:
 
@@ -345,7 +352,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     3. Open the example app in Xcode and ensure **Package Dependencies** show
        in the left **Project Navigator**.
 
-6.  Verify tests pass.
+19. Verify tests pass.
 
   * **If your plugin has Native unit tests (XCTest), make sure you also complete
     [Updating unit tests in plugin example app][] below.**
