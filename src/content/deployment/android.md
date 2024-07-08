@@ -71,7 +71,7 @@ For example:
 ```groovy
 dependencies {
     // ...
-    implementation 'com.google.android.material:material:<version>'
+    implementation("com.google.android.material:material:<version>")
     // ...
 }
 ```
