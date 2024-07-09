@@ -178,17 +178,44 @@ Setting up flavors in Android can be done in your project's
    * If you specify a **applicationIdSuffix** instead of a **applicationId**,
      it is appended to the "base" application id.
 
-```groovy
-flavorDimensions "default"
+{% tabs "android-build-language" %}
+{% tab "Kotlin" %}
 
-productFlavors {
-    free {
-        dimension "default"
-        resValue "string", "app_name", "free flavor example"
-        applicationIdSuffix ".free"
+```kotlin title="build.gradle.kts"
+android {
+    // ...
+    flavorDimensions += "default"
+
+    productFlavors {
+        create("free") {
+            dimension = "default"
+            resValue(type = "string", name = "app_name", value = "free flavor example")
+            applicationIdSuffix = ".free"
+        }
     }
 }
 ```
+
+{% endtab %}
+{% tab "Groovy" %}
+
+```groovy title="build.gradle"
+android {
+    // ...
+    flavorDimensions "default"
+
+    productFlavors {
+        free {
+            dimension "default"
+            resValue "string", "app_name", "free flavor example"
+            applicationIdSuffix ".free"
+        }
+    }
+}
+```
+
+{% endtab %}
+{% endtabs %}
 
 [`flavorDimension`]: {{site.android-dev}}/studio/build/build-variants#flavor-dimensions
 

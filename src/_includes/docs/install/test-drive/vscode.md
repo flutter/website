@@ -2,9 +2,11 @@
 
 ### Create a sample Flutter app {:#create-app-vs-code}
 
-1. To use the DevTools from VS Code, you need the [Dart extension](https://marketplace.visualstudio.com/items?itemName=Dart-Code.dart-code).
-   To easily debug your application you should also install
-   the [Flutter extension](https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter).
+1. To use Flutter DevTools from VS Code, install the
+    [Flutter extension](https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter).
+   This also automatically installs the
+   [Dart extension](https://marketplace.visualstudio.com/items?itemName=Dart-Code.dart-code).
+   With these extensions, you can debug you application.
 
 2. Open the Command Palette.
 
@@ -65,8 +67,8 @@ hot reload at this time.
    You can watch the launch progress in the **Debug Console** view.
 
 {% capture save_changes -%}
-  : invoke **Save All**, or click **Hot Reload**
-  {% include docs/install/test-drive/hot-reload-icon.md %}.
+: invoke **Save All**, or click **Hot Reload**
+{% include docs/install/test-drive/hot-reload-icon.md %}.
 {% endcapture %}
 
 {% include docs/install/test-drive/try-hot-reload.md save_changes=save_changes ide="VS Code" %}
