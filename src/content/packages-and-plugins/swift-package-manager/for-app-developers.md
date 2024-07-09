@@ -3,11 +3,13 @@ title: Swift Package Manager for app developers
 description: How to use Swift Package Manager for native iOS or macOS dependencies
 ---
 
+:::warning
 Flutter is migrating to [Swift Package Manager][] to manage iOS and macOS native
 dependencies.
 This is an experimental feature that might change in the future.
 It is currently only available on the [`main` channel][].
 Flutter will continue to support CocoaPods until further notice.
+:::
 
 :::tip
 If you find a bug in Flutter's Swift Package Manager support,
