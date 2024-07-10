@@ -8,19 +8,19 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    Name this new directory the name of the platform package.
 
    <pre>
-   plugin_name/plugin_name_ios/ios/
+   plugin_name/ios/
    ├── ...
-   └── <b>plugin_name_ios/</b>
+   └── <b>plugin_name/</b>
    </pre>
 
 3. Within this new directory, create the following files/directories:
 
     - `Package.swift` (file)
     - `Sources` (directory)
-    - `Sources/plugin_name_ios` (directory)
-    - `Sources/plugin_name_ios/include` (directory)
-    - `Sources/plugin_name_ios/include/plugin_name_ios` (directory)
-    - `Sources/plugin_name_ios/include/plugin_name_ios/.gitkeep` (file)
+    - `Sources/plugin_name` (directory)
+    - `Sources/plugin_name/include` (directory)
+    - `Sources/plugin_name/include/plugin_name` (directory)
+    - `Sources/plugin_name/include/plugin_name/.gitkeep` (file)
       - This file ensures the directory is committed.
         You can remove the `.gitkeep` file if other files are added to the
         directory.
@@ -28,11 +28,11 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    Your plugin should look like:
 
    <pre>
-   plugin_name/plugin_name_ios/ios/
+   plugin_name/ios/
    ├── ...
-   └── plugin_name_ios/
+   └── plugin_name/
       ├── <b>Package.swift</b>
-      └── <b>Sources/plugin_name_ios/include/plugin_name_ios/</b>
+      └── <b>Sources/plugin_name/include/plugin_name/</b>
          └── <b>.gitkeep</b>
    </pre>
 
@@ -45,7 +45,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    import PackageDescription
    
    let package = Package(
-       name: "plugin_name_ios",
+       name: "plugin_name",
        platforms: [
            // The platforms your plugin supports.
            // If your plugin only supports iOS, remove `.macOS(...)`.
@@ -55,12 +55,12 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
        ],
        products: [
            // If the plugin name contains "_", replace with "-" for the library name
-           .library(name: "plugin-name-ios", targets: ["plugin_name_ios"])
+           .library(name: "plugin-name", targets: ["plugin_name"])
        ],
        dependencies: [],
        targets: [
            .target(
-               name: "plugin_name_ios",
+               name: "plugin_name",
                dependencies: [],
                resources: [
                    // If your plugin requires a privacy manifest, for example if it uses any required
@@ -74,7 +74,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
                    // https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package
                ],
                cSettings: [
-                   .headerSearchPath("include/plugin_name_ios")
+                   .headerSearchPath("include/plugin_name")
                ]
            )
        ]
@@ -87,7 +87,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    :::
 
 5. If your plugin has a [`PrivacyInfo.xcprivacy` file][], move it to
-   `Sources/plugin_name_ios/PrivacyInfo.xcprivacy` and uncomment the resource in
+   `ios/Sources/plugin_name/PrivacyInfo.xcprivacy` and uncomment the resource in
    the `Package.swift` file.
 
 
@@ -105,14 +105,14 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
                ],
    ```
 
-6. Move any resource files from `ios/Assets` to `Sources/plugin_name_ios`
+6. Move any resource files from `ios/Assets` to `ios/Sources/plugin_name`
    (or a subdirectory).
    Add the resource files to your `Package.swift` file if applicable.
    For more instructions, see
    [https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package](https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package).
 
 7. Move any public headers from `ios/Classes` to
-   `Sources/plugin_name_ios/include/plugin_name_ios`.
+   `ios/Sources/plugin_name/include/plugin_name`.
 
     * If you're unsure which headers are public, check your `podspec` file's
       [`public_header_files`][] attribute.
@@ -136,16 +136,16 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    `Package.swift` file.
   
    The example below assumes the `modulemap` and umbrella header are located
-   in the `Sources/plugin_name_ios/include` directory.
+   in the `ios/Sources/plugin_name/include` directory.
 
     ```diff2html
     --- a/Package.swift
     +++ b/Package.swift
     @@ -1,3 +1,4 @@ 
             .target(
-                name: "plugin_name_ios",
+                name: "plugin_name",
                 dependencies: [],
-    +           exclude: ["include/cocoapods_plugin_name_ios.modulemap", "include/plugin_name_ios-umbrella.h"],
+    +           exclude: ["include/cocoapods_plugin_name.modulemap", "include/plugin_name-umbrella.h"],
     ```
 
     If you want to keep your unit tests compatible with both CocoaPods and
@@ -155,17 +155,17 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     --- a/Tests/TestFile.m
     +++ b/Tests/TestFile.m
     @@ -1,2 +1,4 @@
-    @import plugin_name_ios;
-    - @import plugin_name_ios.Test;
-    + #if __has_include(<plugin_name_ios/plugin_name_ios-umbrella.h>)
-    +   @import plugin_name_ios.Test;
+    @import plugin_name;
+    - @import plugin_name.Test;
+    + #if __has_include(<plugin_name/plugin_name-umbrella.h>)
+    +   @import plugin_name.Test;
     + #endif
     ```
 
     If you would like to use a custom `modulemap` with your Swift package,
     please refer to [Swift Package Manager's documentation][].
 
-9. Move all remaining files from `ios/Classes` to `Sources/plugin_name_ios`.
+9. Move all remaining files from `ios/Classes` to `ios/Sources/plugin_name`.
 
 10. The `ios/Assets`, `ios/Resources`, and `ios/Classes` directories should now
     be empty and can be deleted.
@@ -240,7 +240,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
 13. Update your `Package.swift` file with any customizations you might need.
 
-    1. Open `/plugin_name/plugin_name_ios/ios/plugin_name_ios/` in Xcode.
+    1. Open the `ios/plugin_name/` directory in Xcode.
 
         * If package does not show any files in Xcode, quit Xcode (**Xcode >
           Quit Xcode**) and reopen.
@@ -259,7 +259,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
        ```swift title="Package.swift"
        products: [
-           .library(name: "plugin-name-ios", type: .static, targets: ["plugin_name_ios"])
+           .library(name: "plugin-name", type: .static, targets: ["plugin_name"])
        ],
        ```
 
@@ -274,20 +274,20 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
        this can cause issues for developers that use your plugin.
        :::
 
-14. Update your `plugin_name_ios.podspec` to point to new paths.
+14. Update your `ios/plugin_name.podspec` to point to new paths.
 
     ```diff2html
-    --- a/plugin_name_ios.podspec
-    +++ b/plugin_name_ios.podspec
+    --- a/ios/plugin_name.podspec
+    +++ b/ios/plugin_name.podspec
     @@ -21,4 +21,4 @@ 
     - s.source_files = 'Classes/**/*.{h,m}'
     - s.public_header_files = 'Classes/**/*.h'
-    - s.module_map = 'Classes/cocoapods_plugin_name_ios.modulemap'
-    - s.resource_bundles = {'plugin_name_ios_privacy' => ['Resources/PrivacyInfo.xcprivacy']}
-    + s.source_files = 'plugin_name_ios/Sources/plugin_name_ios/**/*.{h,m}'
-    + s.public_header_files = 'plugin_name_ios/Sources/plugin_name_ios/include/**/*.h'
-    + s.module_map = 'plugin_name_ios/Sources/plugin_name_ios/include/cocoapods_plugin_name_ios.modulemap'
-    + s.resource_bundles = {'plugin_name_ios_privacy' => ['plugin_name_ios/Sources/plugin_name_ios/PrivacyInfo.xcprivacy']}
+    - s.module_map = 'Classes/cocoapods_plugin_name.modulemap'
+    - s.resource_bundles = {'plugin_name_privacy' => ['Resources/PrivacyInfo.xcprivacy']}
+    + s.source_files = 'plugin_name/Sources/plugin_name/**/*.{h,m}'
+    + s.public_header_files = 'plugin_name/Sources/plugin_name/include/**/*.h'
+    + s.module_map = 'plugin_name/Sources/plugin_name/include/cocoapods_plugin_name.modulemap'
+    + s.resource_bundles = {'plugin_name_privacy' => ['plugin_name/Sources/plugin_name/PrivacyInfo.xcprivacy']}
     ```
 
 15. Update loading of resources from bundle to use `SWIFTPM_MODULE_BUNDLE`:
@@ -308,9 +308,8 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     Otherwise, it will fail.
     :::
 
-16. If your `plugin_name_ios/Sources/plugin_name_ios/include` directory only
-    contains a `.gitkeep`, you'll want update your `.gitignore` to include the
-    following:
+16. If your `ios/Sources/plugin_name/include` directory only contains a
+    `.gitkeep`, you'll want update your `.gitignore` to include the following:
 
     ```text title=".gitignore"
     !.gitkeep
@@ -332,11 +331,11 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     3. Run CocoaPods validation lints:
 
     ```sh
-    pod lib lint ios/plugin_name_ios.podspec  --configuration=Debug --skip-tests --use-modular-headers --use-libraries
+    pod lib lint ios/plugin_name.podspec  --configuration=Debug --skip-tests --use-modular-headers --use-libraries
     ```
 
     ```sh
-    pod lib lint ios/plugin_name_ios.podspec  --configuration=Debug --skip-tests --use-modular-headers
+    pod lib lint ios/plugin_name.podspec  --configuration=Debug --skip-tests --use-modular-headers
     ```
 
 18. Verify the plugin works with Swift Package Manager.
