@@ -1,5 +1,5 @@
 ---
-title: Android Predictive Back
+title: Android predictive back
 description: >-
   The ability to control back navigation at the time that a back gesture is
   received has been replaced with an ahead-of-time navigation API in order to
@@ -8,9 +8,9 @@ description: >-
 
 ## Summary
 
-To support Android 14's Predictive Back feature, a set of ahead-of-time APIs
-have replaced just-in-time navigation APIs, like `WillPopScope` and
-`Navigator.willPop`.
+To support Android 14's Predictive Back feature,
+a set of ahead-of-time APIs have replaced just-in-time navigation APIs,
+like `WillPopScope` and `Navigator.willPop`.
 
 :::note
 The Flutter 3.22 release includes some updates
