@@ -48,7 +48,7 @@ To develop Flutter on {{include.os}}:
       If your Ubuntu distribution can't find the following packages,
       you might need to enable multi-architecture support:
          
-      ```
+      ```console
       sudo dpkg -add-architecture i386
       sudo apt update
       ```
