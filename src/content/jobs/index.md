@@ -5,7 +5,7 @@ description: Open job listings for the Flutter and Dart teams.
 
 ## Current openings
 
-* [DRE based in mainland China]/(jobs/dre-china)
+* [DRE based in mainland China](/jobs/dre-china)
 
 {% comment %}
 The Flutter and Dart SWE teams aren't currently hiring.

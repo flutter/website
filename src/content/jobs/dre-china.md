@@ -1,5 +1,8 @@
 ---
 title: Flutter Developer Relations Engineer - China (Contractor)
+description: >-
+  Learn about and apply to the DRE contracting position in
+  Mainland China on the Flutter team.
 toc: false
 ---
 
@@ -19,11 +22,11 @@ Mainland China
 
 Managing relationships with large Chinese customers
 
-*  Actively manage relationships with existing P1
-   Chinese customers to understand their needs,
-   provide technical support, escalate top issues
-   to the Flutter eng team, deliver technical presentations,
-   and enhance Flutter usage within these companies.
+* Actively manage relationships with existing P1
+  Chinese customers to understand their needs,
+  provide technical support, escalate top issues
+  to the Flutter eng team, deliver technical presentations,
+  and enhance Flutter usage within these companies.
 * Develop new Chinese Flutter customers who hold
   strategic importance to Google.
 
@@ -77,7 +80,7 @@ Language requirements:
 * Experience working in a support or consulting
   relationship with customers.
 * Experience delivering public speeches,
-  writing blog postss and articles,
+  writing blog posts and articles,
   and interacting with developer communities.
 
 ## To apply
