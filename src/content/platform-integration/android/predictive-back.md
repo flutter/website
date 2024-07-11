@@ -37,7 +37,7 @@ MaterialApp(
   theme: ThemeData(
     pageTransitionsTheme: const PageTransitionsTheme(
       builders: <TargetPlatform, PageTransitionsBuilder>{
-        // Here is where I've set the predictive back transitions for Android.
+        // Set the predictive back transitions for Android.
         TargetPlatform.android: PredictiveBackPageTransitionsBuilder(),
       },
     ),
