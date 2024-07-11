@@ -236,7 +236,7 @@ You might also check out [Introducing Dart 3][].
 * Added guide on [fonts and typography][].
 * Added guide on restoring state on [Android][] and [iOS][] Flutter apps.
 * Added a section about [sharing iOS and macOS plugin implementations][].
-* Added a guide on adapting the Material [alert dialog][],
+* Added a guide on adapting the Material 
   [top app bar and navigation bar][], and [bottom navigation bar][] widgets
   to the current platform as a start of UI component platform adaptation
   guidelines.

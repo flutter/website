@@ -300,11 +300,11 @@
       permalink: /cookbook/navigation/returning-data
     - title: Add a drawer to a screen
       permalink: /cookbook/design/drawer
-    - title: Setup deep linking
+    - title: Set up deep linking
       permalink: /ui/navigation/deep-linking
-    - title: Setup app links for Android
+    - title: Set up app links for Android
       permalink: /cookbook/navigation/set-up-app-links
-    - title: Setup universal links for iOS
+    - title: Set up universal links for iOS
       permalink: /cookbook/navigation/set-up-universal-links
     - title: Configure web URL strategies
       permalink: /ui/navigation/url-strategies
@@ -425,6 +425,8 @@
           permalink: /platform-integration/android/install-android
         - title: Add a splash screen
           permalink: /platform-integration/android/splash-screen
+        - title: Add predictive back
+          permalink: /platform-integration/android/predictive-back
         - title: Bind to native code
           permalink: /platform-integration/android/c-interop
         - title: Host a native Android view

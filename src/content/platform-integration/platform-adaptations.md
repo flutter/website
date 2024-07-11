@@ -596,14 +596,16 @@ users have been trained to recognize and respond to them.
 Therefore, we recommend that you follow platform conventions. 
 
 
-| Material Widget | Cupertino Widget | Adaptive Constructor |
-|---|---|---|---|---|
+| Material widget | Cupertino widget | Adaptive constructor |
+|---|---|---|
 |<img width=160 src="/assets/images/docs/platform-adaptations/m3-switch.png" class="figure-img img-fluid rounded" alt="Switch in Material 3" /><br/>`Switch`|<img src="/assets/images/docs/platform-adaptations/hig-switch.png" class="figure-img img-fluid rounded" alt="Switch in HIG" /><br/>`CupertinoSwitch`|[`Switch.adaptive()`][]|
 |<img src="/assets/images/docs/platform-adaptations/m3-slider.png" width =160 class="figure-img img-fluid rounded" alt="Slider in Material 3" /><br/>`Slider`|<img src="/assets/images/docs/platform-adaptations/hig-slider.png"  width =160  class="figure-img img-fluid rounded" alt="Slider in HIG" /><br/>`CupertinoSlider`|[`Slider.adaptive()`][]|
 |<img src="/assets/images/docs/platform-adaptations/m3-progress.png" width = 100 class="figure-img img-fluid rounded" alt="Circular progress indicator in Material 3" /><br/>`CircularProgressIndicator`|<img src="/assets/images/docs/platform-adaptations/hig-progress.png" class="figure-img img-fluid rounded" alt="Activity indicator in HIG" /><br/>`CupertinoActivityIndicator`|[`CircularProgressIndicator.adaptive()`][]|
 | <img src="/assets/images/docs/platform-adaptations/m3-checkbox.png" class="figure-img img-fluid rounded" alt=" Checkbox in Material 3" /> <br/>`Checkbox`| <img src="/assets/images/docs/platform-adaptations/hig-checkbox.png" class="figure-img img-fluid rounded" alt="Checkbox in HIG" /> <br/> `CupertinoCheckbox`|[`Checkbox.adaptive()`][]|
 |<img src="/assets/images/docs/platform-adaptations/m3-radio.png" class="figure-img img-fluid rounded" alt="Radio in Material 3" /> <br/>`Radio`|<img src="/assets/images/docs/platform-adaptations/hig-radio.png" class="figure-img img-fluid rounded" alt="Radio in HIG" /><br/>`CupertinoRadio`|[`Radio.adaptive()`][]|
+|<img src="/assets/images/docs/platform-adaptations/m3-alert.png" class="figure-img img-fluid rounded" alt="AlertDialog in Material 3" /> <br/>`AlertDialog`|<img src="/assets/images/docs/platform-adaptations/cupertino-alert.png" class="figure-img img-fluid rounded" alt="AlertDialog in HIG" /><br/>`CupertinoAlertDialog`|[`AlertDialog.adaptive()`][]|
 
+[`AlertDialog.adaptive()`]: {{site.api}}/flutter/material/AlertDialog/AlertDialog.adaptive.html
 [`Checkbox.adaptive()`]: {{site.api}}/flutter/material/Checkbox/Checkbox.adaptive.html
 [`Radio.adaptive()`]: {{site.api}}/flutter/material/Radio/Radio.adaptive.html
 [`Switch.adaptive()`]: {{site.api}}/flutter/material/Switch/Switch.adaptive.html
@@ -840,81 +842,3 @@ You can leave feedback or ask questions in the discussion.
 [text-field-post]: {{site.repo.uxr}}/discussions/95
 [m3-text-field]: {{site.material}}/components/text-fields/overview
 [hig-text-field]: {{site.apple-dev}}/design/human-interface-guidelines/text-fields
-
-### Alert dialog
-
-Since Android 12, the default UI of alert dialogs 
-(also known as a "basic dialog") follows the design guidelines 
-defined in [Material 3][m3-dialog] (M3). 
-On iOS, an equivalent component called "alert" is defined in Apple's 
-[Human Interface Guidelines][hig-alert] (HIG).
-
-<div class="container">
-  <div class="row">
-    <div class="col-sm text-center">
-      <figure class="figure">
-        <img src="/assets/images/docs/platform-adaptations/m3-alert.png" 
-        class="figure-img img-fluid rounded" alt="Basic Dialog in Material 3" />
-        <figcaption class="figure-caption">
-          Basic Dialog in M3
-        </figcaption>
-      </figure>
-    </div>
-    <div class="col-sm">
-      <figure class="figure text-center">
-        <img src="/assets/images/docs/platform-adaptations/cupertino-alert.png" 
-        class="figure-img img-fluid rounded" alt="Alert in Human Interface Guidelines" />
-        <figcaption class="figure-caption">
-          Alert in HIG
-        </figcaption>
-      </figure>
-    </div>
-  </div>
-</div>
-
-Since alert dialogs are often tightly integrated with the operating system, 
-their design generally needs to follow the platform conventions. 
-This is especially important when a dialog is used to request user input 
-about security, privacy, and destructive operations (e.g., deleting files 
-permanently). As an exception, a branded alert dialog design can be used on 
-non-critical user flows to highlight specific information or messages.
-
-To implement platform-specific alert dialogs, 
-you can use Flutter's `AlertDialog` widget on Android 
-and the `CupertinoAlertDialog` widget on iOS. Below is a code snippet you can 
-adapt to show a platform-specific alert dialog.
-
-```dart
-void _showAdaptiveDialog(
-  context, {
-  required Text title,
-  required Text content,
-  required List<Widget> actions,
-}) {
-  Platform.isIOS || Platform.isMacOS
-      ? showCupertinoDialog<String>(
-          context: context,
-          builder: (BuildContext context) => CupertinoAlertDialog(
-            title: title,
-            content: content,
-            actions: actions,
-          ),
-        )
-      : showDialog(
-          context: context,
-          builder: (BuildContext context) => AlertDialog(
-            title: title,
-            content: content,
-            actions: actions,
-          ),
-        );
-}
-```
-
-To learn more about adapting alert dialogs, check out 
-[the GitHub discussion on dialog adaptations][alert-post].
-You can leave feedback or ask questions in the discussion.
-
-[hig-alert]: {{site.apple-dev}}/design/human-interface-guidelines/components/presentation/alerts/
-[alert-post]: {{site.repo.uxr}}/discussions/92
-[m3-dialog]: {{site.material}}/components/dialogs/overview
