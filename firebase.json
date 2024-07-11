@@ -64,7 +64,6 @@
       { "source": "/intellij-ide", "destination": "/tools/android-studio", "type": 301 },
       { "source": "/intellij-setup", "destination": "/get-started/editor", "type": 301 },
       { "source": "/ios-release", "destination": "/deployment/ios", "type": 301 },
-      { "source": "/jobs/**", "destination": "/jobs", "type": 301 },
       { "source": "/json", "destination": "/data-and-backend/serialization/json", "type": 301 },
       { "source": "/ui/media", "destination": "/ui/assets", "type": 301 },
       { "source": "/ui/media/:rest*", "destination": "/ui/assets/:rest*", "type": 301 },
