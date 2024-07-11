@@ -1062,6 +1062,9 @@ list of [easy starter issues][].
 Finally, you can connect with helpful Flutter communities.
 For more information, see the [Community][] page.
 
+You can also engage with other developers on the Flutter
+[Discord][].
+
 [Contributing guide]: {{site.repo.flutter}}/blob/master/CONTRIBUTING.md
 [easy starter issues]: {{site.repo.flutter}}/issues?q=is%3Aopen+is%3Aissue+label%3A%22easy+fix%22
 
