@@ -164,7 +164,7 @@ for tips on how to use the plugins.
 [Project IDX][], currently in beta,
 is an AI-assisted workspace for full-stack,
 multiplatform app development in the cloud.
-IDX also supports Flutter. For more informations,
+IDX also supports Flutter. For more information,
 check out the [Project IDX Getting Started][] guide.
 
 [Project IDX]: https://idx.dev/
@@ -1040,7 +1040,7 @@ For more information, see our [Community][] page.
 
 
 [Community]: {{site.main-url}}/community
-[Discord]: https://discord.gg/N7Yshp4
+[Discord]: https://discord.com/invite/rflutterdev
 [issue tracker]: {{site.repo.flutter}}/issues
 [{{site.email}}]: mailto:{{site.email}}
 [Stack Overflow]: {{site.so}}/tags/flutter
