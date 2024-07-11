@@ -1,5 +1,6 @@
 ---
 title: Flutter Developer Relations Engineer - China (Contractor)
+short-title: DRE - China
 description: >-
   Learn about and apply to the DRE contracting position in
   Mainland China on the Flutter team.
