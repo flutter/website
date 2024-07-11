@@ -63,9 +63,10 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
                name: "plugin_name",
                dependencies: [],
                resources: [
-                   // If your plugin requires a privacy manifest, for example if it uses any required
-                   // reason APIs, update the PrivacyInfo.xcprivacy file to describe your plugin's
-                   // privacy impact, and then uncomment these lines. For more information, see
+                   // If your plugin requires a privacy manifest, for example if it uses
+                   // any required reason APIs, update the PrivacyInfo.xcprivacy file to
+                   // describe your plugin's privacy impact, and then uncomment these lines.
+                   // For more information, see:
                    // https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
                    // .process("PrivacyInfo.xcprivacy"),
    
@@ -107,7 +108,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
 6. Move any resource files from `ios/Assets` to `ios/Sources/plugin_name`
    (or a subdirectory).
-   Add the resource files to your `Package.swift` file if applicable.
+   Add the resource files to your `Package.swift` file, if applicable.
    For more instructions, see
    [https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package](https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package).
 
@@ -117,8 +118,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     * If you're unsure which headers are public, check your `podspec` file's
       [`public_header_files`][] attribute.
       If this attribute  is not specified, all of your headers were public.
-      You should consider whether or not you want all of your headers to be
-      public.
+      You should consider whether you want all of your headers to be public.
 
     * The `pluginClass` defined in your `pubspec.yaml` file must be public and
       within this directory.
@@ -129,7 +129,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
    If you're using a `modulemap` for CocoaPods to create a Test submodule,
    consider removing it for Swift Package Manager.
-   Note that this will make all public headers available via the module.
+   Note that this makes all public headers available through the module.
 
    To remove the `modulemap` for Swift Package Manager but keep it for
    CocoaPods, exclude the `modulemap` and umbrella header in the plugin's
@@ -352,8 +352,8 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
     2. Run `flutter run` with the example app and ensure it builds and runs.
 
-    3. Open the example app in Xcode and ensure **Package Dependencies** show
-       in the left **Project Navigator**.
+    3. Open the example app in Xcode and ensure that **Package Dependencies**
+       shows in the left **Project Navigator**.
 
 19. Verify tests pass.
 
