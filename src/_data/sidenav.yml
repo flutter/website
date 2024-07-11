@@ -425,6 +425,8 @@
           permalink: /platform-integration/android/install-android
         - title: Add a splash screen
           permalink: /platform-integration/android/splash-screen
+        - title: Add predictive back
+          permalink: /platform-integration/android/predictive-back
         - title: Bind to native code
           permalink: /platform-integration/android/c-interop
         - title: Host a native Android view
