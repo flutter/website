@@ -125,6 +125,9 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
     1. Open the `ios/plugin_name/` directory in Xcode.
 
+    2. In Xcode, open your `Package.swift` file.
+       Verify Xcode does not produce any warnings or errors for this file.
+
        :::tip
        If Xcode does not show any files, quit Xcode (**Xcode > Quit Xcode**) and
        reopen.
@@ -132,9 +135,6 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
        If Xcode isn't updating after you make a change, try clicking
        **File > Packages > Reset Package Caches**.
        :::
-
-    2. In Xcode, open your `Package.swift` file.
-       Verify Xcode does not produce any warnings or errors for this file.
 
     3. If your `ios/plugin_name.podspec` file has [CocoaPods `dependency`][]s,
        add the corresponding [Swift Package Manager dependencies][] to your
