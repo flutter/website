@@ -22,32 +22,60 @@ Flutter's most common layout errors,
 the dreaded "unbounded constraints" error.
 
 ## Understanding layout in Flutter
-The core of Flutter's layout mechanism is widgets. In Flutter, almost everything is a widget — even layout models are widgets. The images, icons, and text that you see in a Flutter app are all widgets. But things you don't see are also widgets, such as the rows, columns, and grids that arrange, constrain, and align the visible widgets.
+The core of Flutter's layout mechanism is widgets. 
+In Flutter, almost everything is a widget — even 
+layout models are widgets. 
+The images, icons, and text that you see in a 
+Flutter app are all widgets. 
+Things you don't see are also widgets, 
+such as the rows, columns, and grids that arrange,
+constrain, and align the visible widgets.
 
-You create a layout by composing widgets to build more complex widgets. For example, the diagram below shows 3 icons with a label under each one, and the corresponding widget tree:
+You create a layout by composing widgets to 
+build more complex widgets. For example, 
+the diagram below shows 3 icons with a label under
+each one, and the corresponding widget tree:
 
 <img src='/assets/images/docs/fwe/simple_row_column_widget_tree.png' width="100%" alt="A diagram that shows widget composition with a series of lines and nodes.">
 
-In this example, there's a row of 3 columns where each column contains an icon and a label. All layouts, no matter how complex, are created by composing these layout widgets.
+In this example, there's a row of 3 columns where 
+each column contains an icon and a label. 
+All layouts, no matter how complex, 
+are created by composing these layout widgets.
 
 ### Constraints
 
-Understanding "constraints" in Flutter is  an
+Understanding constraints in Flutter is  an
 important part of understanding
 how layout works in Flutter.
 
-'Layout', in a general sense, refers to the size of the widgets and their positions on the screen. The size and position
-of any given widget is constrained by its parent; it can't have any size it wants, and it doesn't decide its own place
-on the screen. Instead, size and position are determined by a conversation between a widget and its parent.
+Layout, in a general sense, refers to the size of 
+the widgets and their positions on the screen. 
+The size and position of any given widget is 
+constrained by its parent; 
+it can't have any size it wants, 
+and it doesn't decide its own place on the screen.
+Instead, size and position are determined by 
+a conversation between a widget and its parent.
 
-In the simplest example, the layout conversation looks like this:
-A widget receives its constraints from its parent. A constraint is just a set of 4 doubles: a minimum and maximum width,
-and a minimum and maximum height. The widget determines what size it should be within those constraints, and passes it's
-width and height back to the parent. The parent looks at the size it wants to be and how it should be aligned, and sets
-the widget's position accordingly. Alignment can be set explicitly, using a variety of widgets like `Center`, and the
-alignment properties on `Row` and `Column`.
+In the simplest example, 
+the layout conversation looks like this:
+1. A widget receives its constraints from its parent. 
+2. A constraint is just a set of 4 doubles: 
+   a minimum and maximum width, and a minimum and maximum height. 
+3. The widget determines what size it should be
+   within those constraints, and passes its
+   width and height back to the parent. 
+4. The parent looks at the size it wants to be and
+   how it should be aligned, 
+   and sets the widget's position accordingly. 
+   Alignment can be set explicitly, 
+   using a variety of widgets like `Center`, 
+   and the alignment properties on `Row` and `Column`.
 
-In Flutter, this layout conversation is often expressed with the simplified phrase, "Constraints go down. Sizes go up.
+In Flutter, this layout conversation is often 
+expressed with the simplified phrase, 
+"Constraints go down. Sizes go up. 
 Parent sets the position."
 
 ### Box types
@@ -56,8 +84,10 @@ In Flutter, widgets are rendered by their underlying [RenderBox][] objects. Thes
 constraints they're passed.
 
 Generally, there are three kinds of boxes:
-Those that try to be as big as possible. For example, the boxes used by [Center][] and [ListView][]. Those that try to be the
-same size as their children. For example, the boxes used by [Transform][] and [Opacity][]. Those that try to be a particular
+* Those that try to be as big as possible. For example, the boxes used by [Center][] and [ListView][]. 
+* Those that try to be the
+same size as their children. For example, the boxes used by [Transform][] and [Opacity][]
+* Those that try to be a particular
 size. For example, the boxes used by [Image][] and [Text][].
 
 Some widgets, for example [Container][], vary from type to type based on their constructor arguments. The Container
@@ -132,10 +162,7 @@ which used both.
 
 This is the most basic example of using a `Row` widget.
 
-<img src='/assets/images/docs/fwe/row.png' width="100%" alt="A diagram that shows widget composition with a series of lines and nodes.">
-
-This is the code needed to create this widget:
-
+{% render docs/code-and-image.md, code:"
 ```dart
 Widget build(BuildContext context) {
   return Row(
@@ -147,6 +174,11 @@ Widget build(BuildContext context) {
   );
 }
 ```
+", 
+image:"fwe/row_xl.png"
+caption: "This figure shows a row width with three children."
+
+%}
 
 Each child of `Row` or `Column` can be rows and columns themselves, combining to make a complex layout. For example, you
 could add labels to each of the images in the example above using Columns.
@@ -438,6 +470,24 @@ Widget build(BuildContext context) {
 }
 ```
 
+ <?code-excerpt "layout/sizing/lib/main.dart (expanded-images)" replace="/Expanded/[!$&!]/g"?>
+  ```dart
+  Row(
+crossAxisAlignment: CrossAxisAlignment.center,
+children: [
+[!Expanded!](
+child: Image.asset('images/pic1.jpg'),
+),
+[!Expanded!](
+child: Image.asset('images/pic2.jpg'),
+),
+[!Expanded!](
+child: Image.asset('images/pic3.jpg'),
+),
+],
+);
+
+
 This example code is using the index that's passed into the builder to grab the correct todo from the list of items, and
 then displaying that todo's data in the widget that is returned from the builder.
 
@@ -555,6 +605,9 @@ The following resources explain individual APIs.
 [LayoutBuilder]: {{site.api}}/flutter/widgets/LayoutBuilder-class.html
 [`LayoutBuilder`]: {{site.api}}/flutter/widgets/LayoutBuilder-class.html
 [FutureBuilder]: {{site.api}}/flutter/widgets/FutureBuilder-class.html
+[Container]:{{site.api}}/flutter/widgets/Container-class.html
+[Column]:{{site.api}}/flutter/widgets/Column-class.html
+[Row]:{{site.api}}/flutter/widgets/Row-class.html
 
 ## Feedback
 

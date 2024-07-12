@@ -200,6 +200,16 @@ pre {
   }
 }
 
+.code-block-full-height {
+  .code-block-wrapper {
+    height: 100%;
+
+    .code-block-body {
+      height: 100%;
+    }
+  }
+}
+
 // Border and resizability for dartpad
 iframe[src^="https://dartpad"] {
   border: 1px solid #ccc;
