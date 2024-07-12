@@ -42,9 +42,8 @@ Where you create a `FlutterEngine` depends on your host app.
 {% tabs "darwin-framework" %}
 {% tab "SwiftUI" %}
 
-In this example, we create a `FlutterEngine` object inside a SwiftUI `ObservableObject`. 
-We then pass this `FlutterEngine` into a `ContentView` using the 
- `environmentObject()` property. 
+In this example, we create a `FlutterEngine` object inside a SwiftUI [Observable](https://developer.apple.com/documentation/observation/observable) object called `FlutterDependencies`. 
+We pre-warm the engine by calling `run()`, and then inject this object into a `ContentView` using the `environment()` view modifier. 
 
  ```swift title="MyApp.swift"
 import SwiftUI
@@ -52,7 +51,8 @@ import Flutter
 // The following library connects plugins with iOS platform code to this app.
 import FlutterPluginRegistrant
 
-class FlutterDependencies: ObservableObject {
+@Observable
+class FlutterDependencies {
   let flutterEngine = FlutterEngine(name: "my flutter engine")
   init() {
     // Runs the default Dart entrypoint with a default Flutter route.
@@ -64,11 +64,12 @@ class FlutterDependencies: ObservableObject {
 
 @main
 struct MyApp: App {
-    // flutterDependencies will be injected using EnvironmentObject.
-    @StateObject var flutterDependencies = FlutterDependencies()
+    // flutterDependencies will be injected via environment.
+    @State var flutterDependencies = FlutterDependencies()
     var body: some Scene {
       WindowGroup {
-        ContentView().environmentObject(flutterDependencies)
+        ContentView()
+          .environment(flutterDependencies)
       }
     }
 }
@@ -104,10 +105,7 @@ class AppDelegate: FlutterAppDelegate { // More on the FlutterAppDelegate.
 {% endtab %}
 {% tab "UIKit-ObjC" %}
 
-In this example, we create a `FlutterEngine` 
-object inside a SwiftUI `ObservableObject`. 
-We then pass this `FlutterEngine` into a 
-`ContentView` using the `environmentObject()` property.
+As an example, we demonstrate creating a FlutterEngine, exposed as a property, on app startup in the app delegate.
 
 ```objc title="AppDelegate.h"
 @import UIKit;
@@ -147,45 +145,36 @@ We then pass this `FlutterEngine` into a
 {% tabs "darwin-framework" %}
 {% tab "SwiftUI" %}
 
-The following example shows a generic `ContentView` with a
-`Button` hooked to present a [`FlutterViewController`][].
-The `FlutterViewController` constructor takes the pre-warmed 
-`FlutterEngine` as an argument. `FlutterEngine` is passed in 
-as an `EnvironmentObject` via `flutterDependencies`.
+The following example shows a generic `ContentView` with a `NavigationLink` hooked to a flutter screen. 
+We firstly create a `FlutterViewControllerRepresentable` to represent the `FlutterViewController`. 
+The `FlutterViewController` constructor takes the pre-warmed `FlutterEngine` as an argument, which is injected via environment. 
 
 ```swift title="ContentView.swift"
 import SwiftUI
 import Flutter
 
-struct ContentView: View {
-  // Flutter dependencies are passed in an EnvironmentObject.
-  @EnvironmentObject var flutterDependencies: FlutterDependencies
-
-  // Button is created to call the showFlutter function when pressed.
-  var body: some View {
-    Button("Show Flutter!") {
-      showFlutter()
-    }
-  }
-
-func showFlutter() {
-    // Get the RootViewController.
-    guard
-      let windowScene = UIApplication.shared.connectedScenes
-        .first(where: { $0.activationState == .foregroundActive && $0 is UIWindowScene }) as? UIWindowScene,
-      let window = windowScene.windows.first(where: \.isKeyWindow),
-      let rootViewController = window.rootViewController
-    else { return }
-
-    // Create the FlutterViewController.
-    let flutterViewController = FlutterViewController(
+struct FlutterViewControllerRepresentable: UIViewControllerRepresentable {
+  // Flutter dependencies are passed in via environment.
+  @Environment(FlutterDependencies.self) var flutterDependencies
+  
+  func makeUIViewController(context: Context) -> some UIViewController {
+    return FlutterViewController(
       engine: flutterDependencies.flutterEngine,
       nibName: nil,
       bundle: nil)
-    flutterViewController.modalPresentationStyle = .overCurrentContext
-    flutterViewController.isViewOpaque = false
+  }
+  
+  func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
+}
 
-    rootViewController.present(flutterViewController, animated: true)
+struct ContentView: View {
+
+  var body: some View {
+    NavigationStack {
+      NavigationLink("My Flutter Feature") {
+        FlutterViewControllerRepresentable()
+      }
+    }
   }
 }
 ```
@@ -295,35 +284,28 @@ To let the `FlutterViewController` present without an existing
 {% tabs "darwin-framework" %}
 {% tab "SwiftUI" %}
 
-```swift
+```swift title="ContentView.swift"
 import SwiftUI
 import Flutter
 
-struct ContentView: View {
-  var body: some View {
-    Button("Show Flutter!") {
-      openFlutterApp()
-    }
-  }
-
-func openFlutterApp() {
-    // Get the RootViewController.
-    guard
-      let windowScene = UIApplication.shared.connectedScenes
-        .first(where: { $0.activationState == .foregroundActive && $0 is UIWindowScene }) as? UIWindowScene,
-      let window = windowScene.windows.first(where: \.isKeyWindow),
-      let rootViewController = window.rootViewController
-    else { return }
-
-    // Create the FlutterViewController without an existing FlutterEngine.
-    let flutterViewController = FlutterViewController(
+struct FlutterViewControllerRepresentable: UIViewControllerRepresentable {
+  func makeUIViewController(context: Context) -> some UIViewController {
+    return FlutterViewController(
       project: nil,
       nibName: nil,
       bundle: nil)
-    flutterViewController.modalPresentationStyle = .overCurrentContext
-    flutterViewController.isViewOpaque = false
+  }
+  
+  func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
+}
 
-    rootViewController.present(flutterViewController, animated: true)
+struct ContentView: View {
+  var body: some View {
+    NavigationStack {
+      NavigationLink("My Flutter Feature") {
+        FlutterViewControllerRepresentable()
+      }
+    }
   }
 }
 ```
@@ -374,14 +356,15 @@ The `FlutterAppDelegate` performs functions such as:
 Creating a subclass of the `FlutterAppDelegate` in UIKit apps was shown 
 in the [Start a FlutterEngine and FlutterViewController section][]. 
 In a SwiftUI app, you can create a subclass of the 
-`FlutterAppDelegate` that conforms to the `ObservableObject` protocol as follows:
+`FlutterAppDelegate` and annotate it with the [`Observable()`](https://developer.apple.com/documentation/observation/observable()) macro as follows:
 
 ```swift
 import SwiftUI
 import Flutter
 import FlutterPluginRegistrant
 
-class AppDelegate: FlutterAppDelegate, ObservableObject {
+@Observable
+class AppDelegate: FlutterAppDelegate {
   let flutterEngine = FlutterEngine(name: "my flutter engine")
 
   override func application(
@@ -409,44 +392,36 @@ struct MyApp: App {
 }
 ```
 
-Then, in your view, the `AppDelegate` is accessible as an `EnvironmentObject`.
+Then, in your view, the `AppDelegate` is accessible via environment.
 
-```swift
+```swift title="ContentView.swift"
 import SwiftUI
 import Flutter
 
-struct ContentView: View {
-  // Access the AppDelegate using an EnvironmentObject.
-  @EnvironmentObject var appDelegate: AppDelegate
-
-  var body: some View {
-    Button("Show Flutter!") {
-      openFlutterApp()
-    }
-  }
-
-func openFlutterApp() {
-    // Get the RootViewController.
-    guard
-      let windowScene = UIApplication.shared.connectedScenes
-        .first(where: { $0.activationState == .foregroundActive && $0 is UIWindowScene }) as? UIWindowScene,
-      let window = windowScene.windows.first(where: \.isKeyWindow),
-      let rootViewController = window.rootViewController
-    else { return }
-
-    // Create the FlutterViewController.
-    let flutterViewController = FlutterViewController(
-      // Access the Flutter Engine via AppDelegate.
+struct FlutterViewControllerRepresentable: UIViewControllerRepresentable {
+  // Access the AppDelegate via environment.
+  @Environment(AppDelegate.self) var appDelegate
+  
+  func makeUIViewController(context: Context) -> some UIViewController {
+    return FlutterViewController(
       engine: appDelegate.flutterEngine,
       nibName: nil,
       bundle: nil)
-    flutterViewController.modalPresentationStyle = .overCurrentContext
-    flutterViewController.isViewOpaque = false
-
-    rootViewController.present(flutterViewController, animated: true)
   }
+  
+  func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
 }
 
+struct ContentView: View {
+
+  var body: some View {
+    NavigationStack {
+      NavigationLink("My Flutter Feature") {
+        FlutterViewControllerRepresentable()
+      }
+    }
+  }
+}
 ```
 
 ### If you can't directly make FlutterAppDelegate a subclass
@@ -465,11 +440,12 @@ For instance:
 import Foundation
 import Flutter
 
-class AppDelegate: UIResponder, UIApplicationDelegate, FlutterAppLifeCycleProvider, ObservableObject {
+@Observable
+class AppDelegate: UIResponder, UIApplicationDelegate, FlutterAppLifeCycleProvider {
 
   private let lifecycleDelegate = FlutterPluginAppLifeCycleDelegate()
 
-  let flutterEngine = FlutterEngine(name: "flutter_nps_engine")
+  let flutterEngine = FlutterEngine(name: "my flutter engine")
 
   override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
