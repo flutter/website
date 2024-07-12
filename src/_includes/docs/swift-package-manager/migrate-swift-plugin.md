@@ -194,9 +194,9 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
     1. Disable Swift Package Manager.
 
-    ```sh
-    flutter config --no-enable-swift-package-manager
-    ```
+       ```sh
+       flutter config --no-enable-swift-package-manager
+       ```
 
     2. Run `flutter run` with the example app and ensure it builds and runs.
 

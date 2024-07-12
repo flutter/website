@@ -327,29 +327,29 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
     1. Disable Swift Package Manager:
 
-      ```sh
-      flutter config --no-enable-swift-package-manager
-      ```
+       ```sh
+       flutter config --no-enable-swift-package-manager
+       ```
 
     2. Run `flutter run` with the example app and ensure it builds and runs.
 
     3. Run CocoaPods validation lints:
 
-    ```sh
-    pod lib lint ios/plugin_name.podspec  --configuration=Debug --skip-tests --use-modular-headers --use-libraries
-    ```
+       ```sh
+       pod lib lint ios/plugin_name.podspec  --configuration=Debug --skip-tests --use-modular-headers --use-libraries
+       ```
 
-    ```sh
-    pod lib lint ios/plugin_name.podspec  --configuration=Debug --skip-tests --use-modular-headers
-    ```
+       ```sh
+       pod lib lint ios/plugin_name.podspec  --configuration=Debug --skip-tests --use-modular-headers
+       ```
 
 18. Verify the plugin works with Swift Package Manager.
 
     1. Enable Swift Package Manager:
 
-      ```sh
-      flutter config --enable-swift-package-manager
-      ```
+       ```sh
+       flutter config --enable-swift-package-manager
+       ```
 
     2. Run `flutter run` with the example app and ensure it builds and runs.
 
