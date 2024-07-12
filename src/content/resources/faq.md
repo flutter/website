@@ -161,6 +161,15 @@ See [editor configuration][] for setup details,
 and [VS Code][] and [Android Studio/IntelliJ][]
 for tips on how to use the plugins.
 
+[Project IDX][], currently in beta,
+is an AI-assisted workspace for full-stack,
+multiplatform app development in the cloud.
+IDX supports Dart and Flutter. For more information,
+check out the [Project IDX Getting Started][] guide.
+
+[Project IDX]: https://idx.dev/
+[Project IDX Getting Started]: https://developers.google.com/idx/guides/get-started
+
 Alternatively, you can use the `flutter` command
 from a terminal, along with one
 of the many editors that support [editing Dart][].
@@ -1031,7 +1040,7 @@ For more information, see our [Community][] page.
 
 
 [Community]: {{site.main-url}}/community
-[Discord]: https://discord.gg/N7Yshp4
+[Discord]: https://discord.com/invite/rflutterdev
 [issue tracker]: {{site.repo.flutter}}/issues
 [{{site.email}}]: mailto:{{site.email}}
 [Stack Overflow]: {{site.so}}/tags/flutter
@@ -1052,6 +1061,9 @@ list of [easy starter issues][].
 
 Finally, you can connect with helpful Flutter communities.
 For more information, see the [Community][] page.
+
+You can also engage with other developers on the Flutter
+[Discord][].
 
 [Contributing guide]: {{site.repo.flutter}}/blob/master/CONTRIBUTING.md
 [easy starter issues]: {{site.repo.flutter}}/issues?q=is%3Aopen+is%3Aissue+label%3A%22easy+fix%22
