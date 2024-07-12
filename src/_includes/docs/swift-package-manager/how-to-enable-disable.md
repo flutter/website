@@ -7,10 +7,15 @@ To enable it:
 
    ```sh
    flutter channel main
+   ```
+
+2. Make sure you have the latest Flutter SDK:
+
+   ```sh
    flutter upgrade
    ```
 
-2. Enable the Swift Package Manager feature:
+3. Enable the Swift Package Manager feature:
 
    ```sh
    flutter config --enable-swift-package-manager
