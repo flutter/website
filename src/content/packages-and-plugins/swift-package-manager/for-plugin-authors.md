@@ -109,14 +109,15 @@ To update your unit tests:
    version.
    :::
 
-5. Ensure the dependency is added to the `RunnerTests` Target and click the
-   **Add Package** button.
+5. Ensure the dependency is added to the `RunnerTests` Target.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/choose-package-products-test.png",
    caption:"Ensure the dependency is added to the `RunnerTests` target" %}
 
-6. If you've explicitly set your plugin's library type to `.dynamic` in its
+6. Click the **Add Package** button.
+
+7. If you've explicitly set your plugin's library type to `.dynamic` in its
    `Package.swift` file
    ([not recommended by Apple][library type recommendations]),
    you'll also need to add it as a dependency to the `RunnerTests` target.
@@ -148,6 +149,6 @@ To update your unit tests:
    6. Ensure that it's added to the `RunnerTests` target and click the
       **Add Package** button.
 
-7. Ensure tests pass **Product > Test**.
+8. Ensure tests pass **Product > Test**.
 
 [library type recommendations]: https://developer.apple.com/documentation/packagedescription/product/library(name:type:targets:)

@@ -273,10 +273,8 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
        [https://developer.apple.com/documentation/packagedescription](https://developer.apple.com/documentation/packagedescription).
 
        :::tip
-       If you add additional targets to your `Package.swift` file,
-       try to name them uniquely.
-       If your target name conflicts with another target from another package,
-       this can cause issues for developers that use your plugin.
+       If you add targets to your `Package.swift` file, use unique names.
+       This avoids conflicts with targets from other packages.
        :::
 
 14. Update your `ios/plugin_name.podspec` to point to new paths.
@@ -353,7 +351,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
     2. Run `flutter run` with the example app and ensure it builds and runs.
 
-    3. Open the example app in Xcode and ensure that **Package Dependencies**
+    3. Open the example app in Xcode. Ensure that **Package Dependencies**
        shows in the left **Project Navigator**.
 
 19. Verify tests pass.
