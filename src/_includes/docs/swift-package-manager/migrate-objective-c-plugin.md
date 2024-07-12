@@ -1,7 +1,7 @@
 Replace `plugin_name` throughout this guide with the name of your plugin.
 The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
-1. [Enable the Swift Package Manager feature][enableSPM].
+1. [Turn on the Swift Package Manager feature][enableSPM].
 
 2. Start by creating a directory under the `ios`, `macos`, and/or `darwin`
    directories.
@@ -323,7 +323,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
 17. Verify the plugin still works with CocoaPods.
 
-    1. Disable Swift Package Manager:
+    1. Turn off Swift Package Manager:
 
        ```sh
        flutter config --no-enable-swift-package-manager
@@ -343,7 +343,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
 18. Verify the plugin works with Swift Package Manager.
 
-    1. Enable Swift Package Manager:
+    1. Turn on Swift Package Manager:
 
        ```sh
        flutter config --enable-swift-package-manager
@@ -361,7 +361,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
   * Follow instructions for [testing plugins][].
 
-[enableSPM]: /packages-and-plugins/swift-package-manager/for-plugin-authors#how-to-enable-swift-package-manager
+[enableSPM]: /packages-and-plugins/swift-package-manager/for-plugin-authors#how-to-turn-on-swift-package-manager
 [`PrivacyInfo.xcprivacy` file]: https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
 [`public_header_files`]: https://guides.cocoapods.org/syntax/podspec.html#public_header_files
 [Swift Package Manager's documentation]: {{site.github}}/apple/swift-package-manager/blob/main/Documentation/Usage.md#creating-c-language-targets

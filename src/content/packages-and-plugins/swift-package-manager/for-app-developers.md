@@ -103,8 +103,7 @@ depend on.
 
 To undo this migration:
 
-1. Disable Swift Package Manager (see [Disable Swift Package Manager][]
-   instructions above).
+1. [Turn off Swift Package Manager][].
 
 2. Open your app (`ios/Runner.xcworkspace` or `ios/Runner.xcworkspace`) in
    Xcode.
@@ -142,4 +141,4 @@ To undo this migration:
     image:"development/packages-and-plugins/swift-package-manager/remove-flutter-pre-action.png",
     caption:"The build pre-action to remove" %}
 
-[Disable Swift Package Manager]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-disable-swift-package-manager
+[Turn off Swift Package Manager]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-turn-off-swift-package-manager
