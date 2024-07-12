@@ -1,4 +1,4 @@
-Once you [enable Swift Package Manager][] support, the Flutter CLI tries to
+Once you [turn on Swift Package Manager][] support, the Flutter CLI tries to
 migrate your project to add Swift Package Manager integration.
 This makes your project download the Swift packages that your Flutter
 plugins depend on.
@@ -80,5 +80,5 @@ the following files in your issue:
 
 3. Ensure that the app runs on the command line with `flutter run`.
 
-[enable Swift Package Manager]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-enable-swift-package-manager
+[turn on Swift Package Manager]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-turn-on-swift-package-manager
 [file an issue]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml
