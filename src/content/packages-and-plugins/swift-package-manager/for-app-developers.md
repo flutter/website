@@ -11,13 +11,21 @@ It is currently only available on the [`main` channel][].
 Flutter will continue to support CocoaPods until further notice.
 :::
 
-:::tip
+Flutter's Swift Package Manager integration has several benefits:
+
+1. **Access to the Swift package ecosystem**.
+   Flutter plugins can use the growing ecosystem of [Swift packages][]! 
+2. **Simplifies Flutter installation**.
+   Swift Package Manager is bundled with Xcode.
+   In the future, you won’t need to install Ruby and CocoaPods to target iOS or
+   macOS.
+
 If you find a bug in Flutter's Swift Package Manager support,
 please [open an issue][].
-:::
 
 [Swift Package Manager]: https://www.swift.org/documentation/package-manager/
 [`main` channel]: /release/upgrade#switching-flutter-channels
+[Swift packages]: https://swiftpackageindex.com/
 [open an issue]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml
 
 {% include docs/swift-package-manager/how-to-enable-disable.md %}

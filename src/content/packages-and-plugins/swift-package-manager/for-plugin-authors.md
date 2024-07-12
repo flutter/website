@@ -12,6 +12,31 @@ It is currently only available on the [`main` channel][].
 Flutter will continue to support CocoaPods until further notice.
 :::
 
+Flutter's Swift Package Manager integration has several benefits:
+
+1. **Access to the Swift package ecosystem**.
+   Flutter plugins can use the growing ecosystem of [Swift packages][]! 
+2. **Simplifies Flutter installation**.
+   Swift Package Manager is bundled with Xcode.
+   In the future, you won’t need to install Ruby and CocoaPods to target iOS or
+   macOS.
+
+If you find a bug in Flutter's Swift Package Manager support,
+please [open an issue][].
+
+[Swift Package Manager]: https://www.swift.org/documentation/package-manager/
+[`main` channel]: /release/upgrade#switching-flutter-channels
+[Swift packages]: https://swiftpackageindex.com/
+[open an issue]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml
+
+{% include docs/swift-package-manager/how-to-enable-disable.md %}
+
+## How to add Swift Package Manager support to an existing Flutter plugin
+
+This guide shows how to add Swift Package Manager support to a plugin that
+already supports CocoaPods.
+This ensures the plugin is usable by all Flutter projects.
+
 Flutter plugins should _both_ Swift Package Manager and CocoaPods until further
 notice.
 
@@ -21,22 +46,6 @@ migrated to Swift Package Manager yet.
 Plugins that don't support Swift Package Manager can cause problems for projects
 that have migrated.
 
-This guide shows how to add Swift Package Manager support to a plugin that
-already supports CocoaPods.
-This ensures the plugin is usable by all Flutter projects.
-
-:::tip
-If you find a bug in Flutter's Swift Package Manager support,
-please [open an issue][].
-:::
-
-[Swift Package Manager]: https://www.swift.org/documentation/package-manager/
-[`main` channel]: /release/upgrade#switching-flutter-channels
-[open an issue]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml
-
-{% include docs/swift-package-manager/how-to-enable-disable.md %}
-
-## How to add Swift Package Manager support to an existing Flutter plugin
 
 {% tabs %}
 {% tab "Swift plugin" %}

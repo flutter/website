@@ -26,10 +26,8 @@ integration.
 This makes your project download the Swift packages that
 your Flutter plugins depend on.
 
-:::note
 Flutter falls back to CocoaPods for dependencies that do not support Swift
 Package Manager yet.
-:::
 
 ## How to disable Swift Package Manager
 
