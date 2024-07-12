@@ -168,7 +168,7 @@ IDX also supports Flutter. For more information,
 check out the [Project IDX Getting Started][] guide.
 
 [Project IDX]: https://idx.dev/
-[Project IDK Getting Started]: https://developers.google.com/idx/guides/get-started
+[Project IDX Getting Started]: https://developers.google.com/idx/guides/get-started
 
 Alternatively, you can use the `flutter` command
 from a terminal, along with one
