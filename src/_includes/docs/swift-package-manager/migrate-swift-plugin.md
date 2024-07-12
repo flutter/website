@@ -187,7 +187,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     `Bundle.module` only works if there are resources
     [defined in the `Package.swift` file][Bundling resources] or
     [automatically included by Xcode][Xcode resource detection]).
-    Otherwise, it will fail.
+    Otherwise, using `Bundle.module` results in an error.
     :::
 
 13. Verify the plugin still works with CocoaPods.

@@ -172,7 +172,7 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     be empty and can be deleted.
 
 11. If your header files are no longer in the same directory as your
-    implementation files, you will need to update your import statements.
+    implementation files, you should update your import statements.
 
     For example, imagine the following migration:
 
@@ -307,10 +307,10 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     ```
 
     :::note
-    `SWIFTPM_MODULE_BUNDLE` will only work if there are actual resources
+    `SWIFTPM_MODULE_BUNDLE` only works if there are actual resources
     (either [defined in the `Package.swift` file][Bundling resources] or
     [automatically included by Xcode][Xcode resource detection]).
-    Otherwise, it will fail.
+    Otherwise, using `SWIFTPM_MODULE_BUNDLE` results in an error.
     :::
 
 16. If your `ios/Sources/plugin_name/include` directory only contains a

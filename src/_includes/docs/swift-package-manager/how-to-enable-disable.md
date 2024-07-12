@@ -22,7 +22,7 @@ This makes your project download the Swift packages that
 your Flutter plugins depend on.
 
 :::note
-Flutter will fallback to CocoaPods for dependencies that do not support Swift
+Flutter falls back to CocoaPods for dependencies that do not support Swift
 Package Manager yet.
 :::
 
@@ -39,7 +39,7 @@ please [open an issue][].
 
 Disabling Swift Package Manager causes Flutter to use CocoaPods for all
 dependencies.
-However, Swift Package Manager will remain integrated with your project.
+However, Swift Package Manager remains integrated with your project.
 To remove this integration,
 follow the [How to remove Swift Package Manager integration][removeSPM]
 instructions.
@@ -68,7 +68,7 @@ flutter config --no-enable-swift-package-manager
 This disables Swift Package Manager for the current user.
 
 If a project is incompatible with Swift Package Manager, all contributors
-will need to run this command. 
+need to run this command. 
 
 [removeSPM]: /packages-and-plugins/swift-package-manager/for-app-developers#how-to-remove-swift-package-manager-integration
 [open an issue]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml
