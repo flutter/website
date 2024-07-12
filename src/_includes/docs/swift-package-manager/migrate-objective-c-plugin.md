@@ -118,7 +118,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
     * If you're unsure which headers are public, check your `podspec` file's
       [`public_header_files`][] attribute.
-      If this attribute  is not specified, all of your headers were public.
+      If this attribute isn't specified, all of your headers were public.
       You should consider whether you want all of your headers to be public.
 
     * The `pluginClass` defined in your `pubspec.yaml` file must be public and
@@ -244,13 +244,13 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     1. Open the `ios/plugin_name/` directory in Xcode.
 
     2. In Xcode, open your `Package.swift` file.
-       Verify Xcode does not produce any warnings or errors for this file.
+       Verify Xcode doesn't produce any warnings or errors for this file.
 
        :::tip
-       If Xcode does not show any files, quit Xcode (**Xcode > Quit Xcode**) and
+       If Xcode doesn't show any files, quit Xcode (**Xcode > Quit Xcode**) and
        reopen.
 
-       If Xcode isn't updating after you make a change, try clicking
+       If Xcode doesn't update after you make a change, try clicking
        **File > Packages > Reset Package Caches**.
        :::
 

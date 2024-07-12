@@ -128,7 +128,7 @@ To update your unit tests:
       image:"development/packages-and-plugins/swift-package-manager/runner-tests-link-binary-with-libraries.png",
       caption:"The `Link Binary With Libraries` Build Phase in the `RunnerTests` target" %}
 
-      If the build phase does not already exist, create one.
+      If the build phase doesn't exist already, create one.
       Select the **+** button and select
       **New Link Binary With Libraries Phase**.
 

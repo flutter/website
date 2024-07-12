@@ -32,7 +32,7 @@ please [open an issue][].
 
 ## How to add Flutter to an existing app (add-to-app)
 
-Flutter's Swift Package Manager support does not work with add-to-app scenarios
+Flutter's Swift Package Manager support doesn't work with add-to-app scenarios
 yet.
 
 For status updates, see [flutter#146957].

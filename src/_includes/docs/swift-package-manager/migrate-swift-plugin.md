@@ -126,13 +126,13 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     1. Open the `ios/plugin_name/` directory in Xcode.
 
     2. In Xcode, open your `Package.swift` file.
-       Verify Xcode does not produce any warnings or errors for this file.
+       Verify Xcode doesn't produce any warnings or errors for this file.
 
        :::tip
-       If Xcode does not show any files, quit Xcode (**Xcode > Quit Xcode**) and
+       If Xcode doen't show any files, quit Xcode (**Xcode > Quit Xcode**) and
        reopen.
 
-       If Xcode isn't updating after you make a change, try clicking
+       If Xcode doesn't update after you make a change, try clicking
        **File > Packages > Reset Package Caches**.
        :::
 
