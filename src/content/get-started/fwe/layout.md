@@ -80,30 +80,48 @@ Parent sets the position."
 
 ### Box types
 
-In Flutter, widgets are rendered by their underlying [RenderBox][] objects. These objects determine how to handle the
+In Flutter, widgets are rendered by their 
+underlying [RenderBox][] objects. 
+These objects determine how to handle the
 constraints they're passed.
 
 Generally, there are three kinds of boxes:
-* Those that try to be as big as possible. For example, the boxes used by [Center][] and [ListView][]. 
-* Those that try to be the
-same size as their children. For example, the boxes used by [Transform][] and [Opacity][]
-* Those that try to be a particular
-size. For example, the boxes used by [Image][] and [Text][].
+* Those that try to be as big as possible. 
+For example, the boxes used by 
+[Center][] and [ListView][]. 
+* Those that try to be the same size as their
+children. For example, the boxes used by 
+[Transform][] and [Opacity][]
+* Those that try to be a particular size.
+For example, the boxes used by 
+[Image][] and [Text][].
 
-Some widgets, for example [Container][], vary from type to type based on their constructor arguments. The Container
-constructor defaults to trying to be as big as possible, but if you give it a width, for instance, it tries to honor
-that and be that particular size.
+Some widgets, for example [Container][], 
+vary from type to type based on their 
+constructor arguments. 
+The Container constructor defaults to trying to
+be as big as possible, but if you give it a width,
+for instance, it tries to honor that and 
+be that particular size.
 
-Others, for example [Row][] and [Column][] (flex boxes) vary based on the constraints they are given. Read more about flex boxes and constraints in the [Understanding Constraints article][].
+Others, for example [Row][] and [Column][] (flex boxes) 
+vary based on the constraints they are given. 
+Read more about flex boxes and constraints in
+the [Understanding Constraints article][].
 
 ## Lay out a single widget
 
-To lay out a single widget in Flutter, wrap a visible widget, such as `Text` or `Image` with a widget that can change
-its position on a screen, such as a `Center` widget.
+To lay out a single widget in Flutter, 
+wrap a visible widget, 
+such as `Text` or `Image` with a widget that 
+can change its position on a screen, 
+such as a `Center` widget.
 
-:::note The examples on the page use a widget called `BorderedImage`. This is a custom widget, and is used here to hide
-the code that isn't relevant to the topic. You can view this code in the examples directory of the website source code.
-TODO add link.
+:::note Note
+The examples on the page use a widget called 
+`BorderedImage`. This is a custom widget, 
+and is used here to hide
+the code that isn't relevant to this topic.
 :::
 
 ```dart
@@ -608,6 +626,7 @@ The following resources explain individual APIs.
 [Container]:{{site.api}}/flutter/widgets/Container-class.html
 [Column]:{{site.api}}/flutter/widgets/Column-class.html
 [Row]:{{site.api}}/flutter/widgets/Row-class.html
+[Expanded]: {{site.api}}/flutter/widgets/Expanded-class.html
 
 ## Feedback
 
