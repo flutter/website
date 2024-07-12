@@ -164,7 +164,7 @@ for tips on how to use the plugins.
 [Project IDX][], currently in beta,
 is an AI-assisted workspace for full-stack,
 multiplatform app development in the cloud.
-IDX also supports Flutter. For more information,
+IDX supports Dart and Flutter. For more information,
 check out the [Project IDX Getting Started][] guide.
 
 [Project IDX]: https://idx.dev/
