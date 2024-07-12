@@ -1,5 +1,5 @@
 Replace `plugin_name` throughout this guide with the name of your plugin.
-The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
+The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
 1. [Enable the Swift Package Manager feature][enableSPM].
 
