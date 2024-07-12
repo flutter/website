@@ -22,7 +22,7 @@ please [open an issue][].
 
 {% include docs/swift-package-manager/how-to-enable-disable.md %}
 
-## Add Flutter to an existing app (add-to-app)
+## How to add Flutter to an existing app (add-to-app)
 
 Flutter's Swift Package Manager support does not work with add-to-app scenarios
 yet.
@@ -128,10 +128,10 @@ To undo this migration:
 
 9. Select the **Run Prepare Flutter Framework Script**.
 
-10. Click the 🗑️ button.
+10. Click the **<span class="material-symbols">delete</span>** button.
 
-   {% render docs/captioned-image.liquid,
-   image:"development/packages-and-plugins/swift-package-manager/remove-flutter-pre-action.png",
-   caption:"The build pre-action to remove" %}
+    {% render docs/captioned-image.liquid,
+    image:"development/packages-and-plugins/swift-package-manager/remove-flutter-pre-action.png",
+    caption:"The build pre-action to remove" %}
 
 [Disable Swift Package Manager]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-disable-swift-package-manager

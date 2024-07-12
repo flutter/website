@@ -358,8 +358,8 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
 19. Verify tests pass.
 
-  * **If your plugin has Native unit tests (XCTest), make sure you also complete
-    [Updating unit tests in plugin example app][] below.**
+  * **If your plugin has native unit tests (XCTest), make sure you also
+    [update unit tests in the plugin's example app][].**
 
   * Follow instructions for [testing plugins][].
 
@@ -374,5 +374,5 @@ The below example uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 [Product]: https://developer.apple.com/documentation/packagedescription/product
 [Bundling resources]: https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package#Explicitly-declare-or-exclude-resources
 [Xcode resource detection]: https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package#:~:text=Xcode%20detects%20common%20resource%20types%20for%20Apple%20platforms%20and%20treats%20them%20as%20a%20resource%20automatically
-[Updating unit tests in plugin example app]: /packages-and-plugins/swift-package-manager/for-plugin-authors/#updating-unit-tests-in-plugin-example-app
+[update unit tests in the plugin's example app]: /packages-and-plugins/swift-package-manager/for-plugin-authors/#updating-unit-tests-in-plugin-example-app
 [testing plugins]: https://docs.flutter.dev/testing/testing-plugins

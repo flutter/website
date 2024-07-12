@@ -36,7 +36,7 @@ please [open an issue][].
 
 {% include docs/swift-package-manager/how-to-enable-disable.md %}
 
-## Adding Swift Package Manager support to an existing Flutter plugin
+## How to add Swift Package Manager support to an existing Flutter plugin
 
 {% tabs %}
 {% tab "Swift plugin" %}
@@ -51,7 +51,7 @@ please [open an issue][].
 {% endtab %}
 {% endtabs %}
 
-## Updating unit tests in plugin example app
+## How to update unit tests in a plugin's example app
 
 If your plugin has native XCTests, you might need to update them to work with
 Swift Package Manager if one of the following is true:
