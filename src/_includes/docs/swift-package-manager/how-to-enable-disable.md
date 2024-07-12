@@ -47,7 +47,7 @@ To remove this integration,
 follow the [How to remove Swift Package Manager integration][removeSPM]
 instructions.
 
-### Disable for a single project
+### Turn off for a single project
 
 In the project's `pubspec.yaml` file, under the `flutter` section,
 add `disable-swift-package-manager: true`.
@@ -58,9 +58,9 @@ flutter:
   disable-swift-package-manager: true
 ```
 
-This disables Swift Package Manager for all contributors to this project.
+This turns off Swift Package Manager for all contributors to this project.
 
-### Disable globally for all projects
+### Turn off globally for all projects
 
 Run the following command:
 
@@ -68,7 +68,7 @@ Run the following command:
 flutter config --no-enable-swift-package-manager
 ```
 
-This disables Swift Package Manager for the current user.
+This turns off Swift Package Manager for the current user.
 
 If a project is incompatible with Swift Package Manager, all contributors
 need to run this command. 
