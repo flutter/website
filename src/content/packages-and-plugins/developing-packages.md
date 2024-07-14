@@ -186,10 +186,16 @@ If you can't, for whatever reason, get your implementation
 added by the original plugin author, then your plugin
 is _not_ endorsed. A developer can still use your
 implementation, but must manually add the plugin
-to the app's pubspec file. So, the developer
-must include both the `foobar` dependency _and_
-the `foobar_windows` dependency in order to achieve
-full functionality.
+to the app's `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  foobar: ^1.0.0
+  foobar_windows: ^1.0.0 # Non-endorsed plugin implementation
+```
+
+This approach also works for overriding an already
+endorsed plugin implementation of `foobar`.
 
 For more information on federated plugins,
 why they are useful, and how they are
