@@ -36,7 +36,7 @@ build more complex widgets. For example,
 the diagram below shows 3 icons with a label under
 each one, and the corresponding widget tree:
 
-<img src='/assets/images/docs/fwe/simple_row_column_widget_tree.png' alt="A diagram that shows widget composition with a series of lines and nodes.">
+<img src='/assets/images/docs/fwe/layout/simple_row_column_widget_tree.png' alt="A diagram that shows widget composition with a series of lines and nodes.">
 
 In this example, there's a row of 3 columns where 
 each column contains an icon and a label. 
@@ -201,7 +201,7 @@ The first figure on this page used both.
 This is the most basic example of using a `Row` widget.
 
 {% render docs/code-and-image.md, 
-image:"fwe/row.png", 
+image:"fwe/layout/row.png", 
 caption: "This figure shows a row widget with three children."
 alt: "A screenshot of a row widget with three children"
 code:"
@@ -226,7 +226,7 @@ of the images in the example above using Columns.
 
 
 {% render docs/code-and-image.md,
-image:"fwe/nested_row_column.png",
+image:"fwe/layout/nested_row_column.png",
 caption: "This figure shows a row widget with three children, each of which is a column."
 alt: "A screenshot of a row of three widgets, each of which has a label underneath it."
 code:"
@@ -268,7 +268,7 @@ The widgets are consequently aligned to the left,
 one after the other, 
 with all the extra space on the right.
 
-<img src='/assets/images/docs/fwe/left_alignment.png' alt="A diagram that shows three widgets laid out in a row. Each child widget is labeled as 200px wide, and the blank space on the right is labeled as 100px wide.">
+<img src='/assets/images/docs/fwe/layout/left_alignment.png' alt="A diagram that shows three widgets laid out in a row. Each child widget is labeled as 200px wide, and the blank space on the right is labeled as 100px wide.">
 
 You control how a row or column aligns its
 children using the `mainAxisAlignment` and 
@@ -278,14 +278,14 @@ the cross axis runs vertically. For a column,
 the main axis runs
 vertically and the cross axis runs horizontally.
 
-<img src='/assets/images/docs/fwe/axes_diagram.png' alt="A diagram that shows the direction of the main axis and cross axis in both rows and columns">
+<img src='/assets/images/docs/fwe/layout/axes_diagram.png' alt="A diagram that shows the direction of the main axis and cross axis in both rows and columns">
 
 Setting the main axis alignment to `spaceEvenly` 
 divides the free horizontal space evenly between,
 before, and after each image.
 
 {% render docs/code-and-image.md,
-image:"fwe/space_evenly.png",
+image:"fwe/layout/space_evenly.png",
 caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
 alt: "A screenshot of three widgets, spaced evenly from each other."
 code:"
@@ -313,7 +313,7 @@ so setting the main axis alignment to `spaceEvenly`
 divides the free vertical space evenly between,
 above, and below each image.
 
-<img src='/assets/images/docs/fwe/col_space_evenly.png' alt="A screenshot of a three widgets laid out vertically, using a column widget.">
+<img src='/assets/images/docs/fwe/layout/col_space_evenly.png' alt="A screenshot of a three widgets laid out vertically, using a column widget.">
 
 The [MainAxisAlignment][] and [CrossAxisAlignment][] 
 enums offer a variety of constants for 
@@ -330,7 +330,7 @@ along the affected edge.
 In this example, the viewport is 400 pixels wide,
 and each child is 150 pixels wide.
 
-<img src='/assets/images/docs/fwe/overflowing_row.png' alt="A screenshot of a row of widgets that are wider than their viewport.">
+<img src='/assets/images/docs/fwe/layout/overflowing_row.png' alt="A screenshot of a row of widgets that are wider than their viewport.">
 
 Widgets can be sized to fit within a 
 row or column by using the Expanded widget. 
@@ -339,7 +339,7 @@ images is too wide for its render box,
 wrap each image with an [Expanded][] widget.
 
 {% render docs/code-and-image.md,
-image:"fwe/expanded_row.png",
+image:"fwe/layout/expanded_row.png",
 caption: "This figure shows a row widget with three children which are wrapped with Expanded widgets."
 alt: "A screenshot of three widgets, which take up exactly the amount of space available on the main axis. All three widgets are equal width."
 code:"
@@ -374,7 +374,7 @@ The following code sets the flex factor of the
 middle image to 2:
 
 {% render docs/code-and-image.md,
-image:"fwe/flex_2_row.png",
+image:"fwe/layout/flex_2_row.png",
 caption: "This figure shows a row widget with three children which are wrapped with Expanded widgets. The center child has it's flex property set to 2."
 alt: "A screenshot of three widgets, which take up exactly the amount of space available on the main axis. The widget in the center is twice as wide as the widgets on the left and right."
 code:"
@@ -469,7 +469,7 @@ all the available space on the cross axis,
 as shown in the example below. 
 
 {% render docs/code-and-image.md,
-image:"fwe/basic_listview.png",
+image:"fwe/layout/basic_listview.png",
 caption: "This figure shows a ListView widget with three children."
 alt: "A screenshot of three widgets laid out vertically. They have expanded to take up all available space on the cross axis."
 code:"
@@ -500,7 +500,7 @@ and therefore the number of todos is unknown.
 
 
 {% render docs/code-and-image.md,
-image:"fwe/listview_builder.png",
+image:"fwe/layout/listview_builder.png",
 caption: "This figure shows the ListView.builder constuctor to display an unknown number of children."
 alt: "A screenshot of several widgets laid out vertically. They have expanded to take up all available space on the cross axis."
 code:"
@@ -598,7 +598,7 @@ or greater than 600 pixels.
 
 
 {% render docs/code-and-image.md,
-image:"fwe/layout_builder.png",
+image:"fwe/layout/layout_builder.png",
 caption: "This figure shows a narrow layout, which lays out its children vertically, and a wider layout, which lays out its children in a grid."
 alt: "Two screenshots, in which one shows a narrow layout and the other shows a wide layout."
 code:"
@@ -666,9 +666,8 @@ the following example changes the
 background color of every other list item.
 
 {% render docs/code-and-image.md,
-image:"fwe/layout/alternating_list_items.png",
-caption: "This figure shows a ListView, in which its children have alternating background colors. The background colors were determined programmatically based on the child's index within the ListView."
-alt: "A listview who's children have alternating background colors."
+image:"fwe/layout/alternating_list_items.png"
+caption:"This figure shows a ListView, in which its children have alternating background colors. The background colors were determined programmatically based on the index of the child within the ListView."
 code:"
 ```dart
 final List<ToDo> items = Repository.fetchTodos();
