@@ -290,10 +290,9 @@ caption: "This figure shows a row widget with three children, which are aligned 
 alt: "A screenshot of three widgets, spaced evenly from each other."
 code:"
 ```dart
-TODO -- highlight rows
 Widget build(BuildContext context) {
   return Row(
-    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    [!mainAxisAlignment: MainAxisAlignment.spaceEvenly!],
     children: [
       BorderedImage(),
       BorderedImage(),
@@ -347,13 +346,13 @@ code:"
 Widget build(BuildContext context) {
   return const Row(
     children: [
-      Expanded(
+      [!Expanded!](
         child: BorderedImage(width: 150, height: 150),
       ),
-      Expanded(
+      [!Expanded!](
         child: BorderedImage(width: 150, height: 150),
       ),
-      Expanded(
+      [!Expanded!](
         child: BorderedImage(width: 150, height: 150),
       ),
     ],
@@ -386,7 +385,7 @@ Widget build(BuildContext context) {
         child: BorderedImage(width: 150, height: 150),
       ),
       Expanded(
-        flex: 2,
+        [!flex: 2!],
         child: BorderedImage(width: 150, height: 150),
       ),
       Expanded(
@@ -475,7 +474,7 @@ alt: "A screenshot of three widgets laid out vertically. They have expanded to t
 code:"
 ```dart
 Widget build(BuildContext context) {
-  return ListView(
+  return [!ListView!](
     children: const [
       BorderedImage(),
       BorderedImage(),
@@ -606,7 +605,7 @@ code:"
 Widget build(BuildContext context) {
   return LayoutBuilder(
     builder: (BuildContext context, BoxConstraints constraints) {
-      if (constraints.maxWidth <= 600) {
+      [!if (constraints.maxWidth <= 600)!] {
         return _MobileLayout();
       } else {
         return _DesktopLayout();
@@ -678,7 +677,7 @@ Widget build(BuildContext context) {
     itemBuilder: (context, idx) {
       var item = items[idx];
       return Container(
-        color: idx % 2 == 0 ? Colors.lightBlue : Colors.transparent,
+        [!color: idx % 2 == 0 ? Colors.lightBlue : Colors.transparent!],
         padding: const EdgeInsets.all(8.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -792,22 +791,3 @@ As this section of the website is evolving,
 we [welcome your feedback][]!
 
 [welcome your feedback]: https://google.qualtrics.com/jfe/form/SV_6A9KxXR7XmMrNsy?page="layout"
-
-
- <?code-excerpt "layout/sizing/lib/main.dart (expanded-images)" replace="/Expanded/[!$&!]/g"?>
-  ```dart
-  Row(
-crossAxisAlignment: CrossAxisAlignment.center,
-children: [
-[!Expanded!](
-child: Image.asset('images/pic1.jpg'),
-),
-[!Expanded!](
-child: Image.asset('images/pic2.jpg'),
-),
-[!Expanded!](
-child: Image.asset('images/pic3.jpg'),
-),
-],
-);
-```

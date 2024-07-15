@@ -14,7 +14,7 @@
 
 <figure class="{{class}}">
   <div class="row {{figure-class}}">
-      <div class="col-md-6 {{code-class}}" style="padding-right:12px"> 
+      <div class="col-md-7 {{code-class}}" style="padding-right:12px"> 
         {{code}}
       </div>
       <div class="col-md-5" style="padding-left:0">
