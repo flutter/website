@@ -36,7 +36,7 @@ build more complex widgets. For example,
 the diagram below shows 3 icons with a label under
 each one, and the corresponding widget tree:
 
-<img src='/assets/images/docs/fwe/simple_row_column_widget_tree.png' width="100%" alt="A diagram that shows widget composition with a series of lines and nodes.">
+<img src='/assets/images/docs/fwe/simple_row_column_widget_tree.png' alt="A diagram that shows widget composition with a series of lines and nodes.">
 
 In this example, there's a row of 3 columns where 
 each column contains an icon and a label. 
@@ -134,7 +134,7 @@ Widget build(BuildContext context) {
 
 The following figure shows a widget that isn't aligned on the left, and a widget that has been centered on the right.
 
-<img src='/assets/images/docs/fwe/center.png' width="100%" alt="A diagram that shows widget composition with a series of lines and nodes.">
+<img src='/assets/images/docs/fwe/center.png'  alt="A screenshot of a centered widget and a screenshot of a widget that hasn't been centered.">
 
 All layout widgets have either of the following:
 * A `child` property if they take a single child—for example, `Center`, `Container`,  or `Padding`.
@@ -150,14 +150,14 @@ that could be used here to the same effect. The following example uses a `Contai
 Widget build(BuildContext context) {
   return Container(
     padding: EdgeInsets.all(16.0),
-    child: Text('Hello, World!'),
+    child: BorderedImage(),
   );
 }
 ```
 
 The following figure shows a widget without padding on the left, and a widget with padding on the right.
 
-<img src='/assets/images/docs/fwe/padding.png' width="100%" alt="A diagram that shows widget composition with a series of lines and nodes.">
+<img src='/assets/images/docs/fwe/padding.png' alt="A screenshot of a widget with padding and a screenshot of a widget without padding.">
 
 To create more complex layouts in Flutter, you can compose many widgets. For example, you can combine `Container` and `Center`:
 
@@ -166,7 +166,7 @@ Widget build(BuildContext context) {
   return Center(
     Container(
       padding: EdgeInsets.all(16.0),
-      child: Text('Hello, World!'),
+      child: BorderedImage(),
     ),
   );
 }
@@ -180,7 +180,11 @@ which used both.
 
 This is the most basic example of using a `Row` widget.
 
-{% render docs/code-and-image.md, code:"
+{% render docs/code-and-image.md, 
+image:"fwe/row.png", 
+caption: "This figure shows a row widget with three children."
+alt: "A screenshot of a row widget with three children"
+code:"
 ```dart
 Widget build(BuildContext context) {
   return Row(
@@ -192,19 +196,17 @@ Widget build(BuildContext context) {
   );
 }
 ```
-", 
-image:"fwe/row_xl.png"
-caption: "This figure shows a row width with three children."
-
-%}
+" %}
 
 Each child of `Row` or `Column` can be rows and columns themselves, combining to make a complex layout. For example, you
 could add labels to each of the images in the example above using Columns.
 
-<img src='/assets/images/docs/fwe/nested_row_column.png' width="100%" alt="A diagram that shows widget composition with a series of lines and nodes.">
 
-This is the code needed to create this widget:
-
+{% render docs/code-and-image.md,
+image:"fwe/nested_row_column.png",
+caption: "This figure shows a row widget with three children, each of which is a column."
+alt: "A screenshot of a row of three widgets, each of which has a label underneath it."
+code:"
 ```dart
 Widget build(BuildContext context) {
   return Row(
@@ -231,23 +233,30 @@ Widget build(BuildContext context) {
   );
 }
 ```
+" %}
+
 
 ### Align widgets within rows and columns
 
 In the following example, the widgets are 200 pixels wide each, and the viewport is 700 pixels wide. The widgets are
 consequently aligned to the left, one after the other, with all the extra space on the right.
 
-<img src='/assets/images/docs/fwe/left_alignment.png' width="100%" alt="A diagram that shows widget composition with a series of lines and nodes.">
+<img src='/assets/images/docs/fwe/left_alignment.png' alt="A diagram that shows three widgets laid out in a row. Each child widget is labeled as 200px wide, and the blank space on the right is labeled as 100px wide.">
 
 You control how a row or column aligns its children using the `mainAxisAlignment` and `crossAxisAlignment` properties.
 For a row, the main axis runs horizontally and the cross axis runs vertically. For a column, the main axis runs
 vertically and the cross axis runs horizontally.
 
-<img src='/assets/images/docs/fwe/axes_diagram.png' width="100%" alt="A diagram that shows widget composition with a series of lines and nodes.">
+<img src='/assets/images/docs/fwe/axes_diagram.png' alt="A diagram that shows the direction of the main axis and cross axis in both rows and columns">
 
 Setting the main axis alignment to `spaceEvenly` divides the free horizontal space evenly between, before, and after
 each image.
 
+{% render docs/code-and-image.md,
+image:"fwe/space_evenly.png",
+caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
+alt: "A screenshot of three widgets, spaced evenly from each other."
+code:"
 ```dart
 TODO -- highlight rows
 Widget build(BuildContext context) {
@@ -261,13 +270,13 @@ Widget build(BuildContext context) {
   );
 }
 ```
-<img src='/assets/images/docs/fwe/space_evenly.png' width="100%" alt="A diagram that shows widget composition with a series of lines and nodes.">
+" %}
 
 Columns work the same way as rows. The following example shows a column of 3 images, each is 100 pixels high. The height
 of the render box (in this case, the entire screen) is more than 300 pixels, so setting the main axis alignment
 to `spaceEvenly` divides the free vertical space evenly between, above, and below each image.
 
-<img src='/assets/images/docs/fwe/col_space_evenly.png' width="100%" alt="A diagram that shows widget composition with a series of lines and nodes.">
+<img src='/assets/images/docs/fwe/col_space_evenly.png' alt="A screenshot of a three widgets laid out vertically, using a column widget.">
 
 The [MainAxisAlignment][] and [CrossAxisAlignment][] enums offer a variety of constants for controlling alignment.
 
@@ -278,11 +287,16 @@ Flutter includes other widgets that can be used for alignment, notably the Align
 When a layout is too large to fit a device, a yellow and black striped pattern appears along the affected edge. In this
 example, the viewport is 400 pixels wide, and each child is 150 pixels wide.
 
-<img src='/assets/images/docs/fwe/overflowing_row.png' width="100%" alt="A diagram that shows widget composition with a series of lines and nodes.">
+<img src='/assets/images/docs/fwe/overflowing_row.png' alt="A screenshot of a row of widgets that are wider than their viewport.">
 
 Widgets can be sized to fit within a row or column by using the Expanded widget. To fix the previous example where the
 row of images is too wide for its render box, wrap each image with an [Expanded][] widget.
 
+{% render docs/code-and-image.md,
+image:"fwe/expanded_row.png",
+caption: "This figure shows a row widget with three children which are wrapped with Expanded widgets."
+alt: "A screenshot of three widgets, which take up exactly the amount of space available on the main axis. All three widgets are equal width."
+code:"
 ```dart
 Widget build(BuildContext context) {
   return const Row(
@@ -300,15 +314,37 @@ Widget build(BuildContext context) {
   );
 }
 ```
-
-<img src='/assets/images/docs/fwe/expanded_row.png' width="100%" alt="A diagram that shows widget composition with a series of lines and nodes.">
+" %}
 
 The Expanded widget can also dictate how much space a widget should take up relative to its siblings. For example,
 perhaps you want a widget to occupy twice as much space as its siblings. For this, use the Expanded widget flex
 property, an integer that determines the flex factor for a widget. The default flex factor is 1. The following code sets
 the flex factor of the middle image to 2:
 
-<img src='/assets/images/docs/fwe/flex_2_example.png' width="100%" alt="A diagram that shows widget composition with a series of lines and nodes.">
+{% render docs/code-and-image.md,
+image:"fwe/flex_2_row.png",
+caption: "This figure shows a row widget with three children which are wrapped with Expanded widgets. The center child has it's flex property set to 2."
+alt: "A screenshot of three widgets, which take up exactly the amount of space available on the main axis. The widget in the center is twice as wide as the widgets on the left and right."
+code:"
+```dart
+Widget build(BuildContext context) {
+  return const Row(
+    children: [
+      Expanded(
+        child: BorderedImage(width: 150, height: 150),
+      ),
+      Expanded(
+        flex: 2,
+        child: BorderedImage(width: 150, height: 150),
+      ),
+      Expanded(
+        child: BorderedImage(width: 150, height: 150),
+      ),
+    ],
+  );
+}
+```
+" %}
 
 ## DevTools and debugging layout
 
@@ -354,8 +390,13 @@ as well as a widget for creating scrollable lists.
 ### ListView
 
 ListView is a column-like widget that automatically provides scrolling when its content is longer than its render box.
-The most basic way to use a ListView is very similar to using a Column or Row.
+The most basic way to use a ListView is very similar to using a Column or Row. Unlike a column or a row, a ListView requires its children to take up all the available space on the cross axis.
 
+{% render docs/code-and-image.md,
+image:"fwe/basic_listview.png",
+caption: "This figure shows a ListView widget with three children."
+alt: "A screenshot of three widgets laid out vertically. They have expanded to take up all available space on the cross axis."
+code:"
 ```dart
 Widget build(BuildContext context) {
   return ListView(
@@ -367,11 +408,7 @@ Widget build(BuildContext context) {
   );
 }
 ```
-
-Unlike a column or a row, a ListView requires its children to take up all the available space on the cross axis. The
-code above results in this UI:
-
-<img src='/assets/images/docs/fwe/basic_listview.png' width="100%" alt="A diagram that shows widget composition with a series of lines and nodes.">
+" %}
 
 ListViews are commonly used when you have an unknown or very large (or infinite) number of list items. When this is the
 case, it's best to use the `ListView.builder` constructor. The builder constructor only builds the children that are
@@ -380,6 +417,12 @@ currently visible on screen.
 In the following example, the ListView is displaying a list of to-do items. The todo items are being fetched from a
 repository, and therefore the number of todos is unknown.
 
+
+{% render docs/code-and-image.md,
+image:"fwe/listview_builder.png",
+caption: "This figure shows the ListView.builder constuctor to display an unknown number of children."
+alt: "A screenshot of several widgets laid out vertically. They have expanded to take up all available space on the cross axis."
+code:"
 ```dart
 final List<ToDo> items = Repository.fetchTodos();
 
@@ -402,7 +445,7 @@ Widget build(BuildContext context) {
   );
 }
 ```
-<img src='/assets/images/docs/fwe/listview_builder.png' width="100%" alt="A diagram that shows widget composition with a series of lines and nodes.">
+" %}
 
 ## Adaptive layouts
 
@@ -439,24 +482,30 @@ Builder functions always pass in at least one argument–the build context–and
 
 For example, the LayoutBuilder widget is used to create responsive layouts based on the size of the viewport.
 
+{% render docs/code-and-image.md,
+image:"fwe/layout_builder.png",
+caption: "This figure shows a narrow layout, which lays out its children vertically, and a wider layout, which lays out its children in a grid."
+alt: "Two screenshots, in which one shows a narrow layout and the other shows a wide layout."
+code:"
 ```dart
 Widget build(BuildContext context) {
   return LayoutBuilder(
     builder: (BuildContext context, BoxConstraints constraints) {
-      if (constraints.maxWidth <= 500) {
-        return _NarrowLayout();
+      if (constraints.maxWidth <= 600) {
+        return _MobileLayout();
       } else {
-        return _WideLayout();
+        return _DesktopLayout();
       }
     },
   );
 }
 ```
+" %}
 
-In this example, the widget returned by the `LayoutBuilder` changes based on whether the viewport is less than or equal
-500 pixels or greater than 500 pixels.
 
-* Video: [LayoutBuilder—Flutter Widget of the Week][]
+In this example, the widget returned by the `LayoutBuilder` changes based on whether the viewport is less than or equal 600 pixels or greater than 600 pixels.
+
+* Video: [LayoutBuilder—Flutter Widget of the Week][] TODO
 
 Meanwhile, the `itemBuilder` callback on the `ListView.builder` constructor is passed the build context and an `int`.
 This callback is called once for every item in the list, and the int argument represents the index of the list item. The
@@ -488,29 +537,18 @@ Widget build(BuildContext context) {
 }
 ```
 
- <?code-excerpt "layout/sizing/lib/main.dart (expanded-images)" replace="/Expanded/[!$&!]/g"?>
-  ```dart
-  Row(
-crossAxisAlignment: CrossAxisAlignment.center,
-children: [
-[!Expanded!](
-child: Image.asset('images/pic1.jpg'),
-),
-[!Expanded!](
-child: Image.asset('images/pic2.jpg'),
-),
-[!Expanded!](
-child: Image.asset('images/pic3.jpg'),
-),
-],
-);
 
 
 This example code is using the index that's passed into the builder to grab the correct todo from the list of items, and
-then displaying that todo's data in the widget that is returned from the builder.
+then displaying that todos data in the widget that is returned from the builder.
 
 To exemplify this, the following example changes the background color of every other list item.
 
+{% render docs/code-and-image.md,
+image:"fwe/alternating_list_items.png",
+caption: "This figure shows a ListView, in which its children have alternating background colors. The background colors were determined programmatically based on the child's index within the ListView."
+alt: "A listview who's children have alternating background colors."
+code:"
 ```dart
 final List<ToDo> items = Repository.fetchTodos();
 
@@ -534,30 +572,29 @@ Widget build(BuildContext context) {
   );
 }
 ```
-
-<img src='/assets/images/docs/fwe/alternating_list_items.png' width="100%" alt="A diagram that shows widget composition with a series of lines and nodes.">
+" %}
 
 ## Additional resources
 
 * Common layout widgets and concepts
-  ** Video: [OverlayPortal—Flutter Widget of the Week][]
-  ** Video: [Stack—Flutter Widget of the Week][]
-  ** Tutorial: [Layouts in Flutter][]
-  ** Documentation: [Stack documentation][]
+  * Video: [OverlayPortal—Flutter Widget of the Week][]
+  * Video: [Stack—Flutter Widget of the Week][]
+  * Tutorial: [Layouts in Flutter][]
+  * Documentation: [Stack documentation][]
 * Sizing and positioning widgets
-  ** Video: [Expanded—Flutter Widget of the Week][]
-  ** Video: [Flexible—Flutter Widget of the Week][]
-  ** Video: [Intrinsic widgets—Decoding Flutter][]
+  * Video: [Expanded—Flutter Widget of the Week][]
+  * Video: [Flexible—Flutter Widget of the Week][]
+  * Video: [Intrinsic widgets—Decoding Flutter][]
 * Scrollable widgets
-  ** Example code: [Work with long lists][]
-  ** Example code: [Create a horizontal list][]
-  ** Example code: [Create a grid list][]
-  ** Video: [ListView—Flutter Widget of the Week][]
+  * Example code: [Work with long lists][]
+  * Example code: [Create a horizontal list][]
+  * Example code: [Create a grid list][]
+  * Video: [ListView—Flutter Widget of the Week][]
 * Adaptive Apps
-  ** Tutorial: [Adaptive Apps codelab][]
-  ** Video: [MediaQuery—Flutter Widget of the Week][]
-  ** Video: [Building platform adaptive apps][]
-  ** Video: [Builder—Flutter Widget of the Week][]
+  * Tutorial: [Adaptive Apps codelab][]
+  * Video: [MediaQuery—Flutter Widget of the Week][]
+  * Video: [Building platform adaptive apps][]
+  * Video: [Builder—Flutter Widget of the Week][]
 
 ### API reference
 
@@ -634,3 +671,22 @@ As this section of the website is evolving,
 we [welcome your feedback][]!
 
 [welcome your feedback]: https://google.qualtrics.com/jfe/form/SV_6A9KxXR7XmMrNsy?page="layout"
+
+
+ <?code-excerpt "layout/sizing/lib/main.dart (expanded-images)" replace="/Expanded/[!$&!]/g"?>
+  ```dart
+  Row(
+crossAxisAlignment: CrossAxisAlignment.center,
+children: [
+[!Expanded!](
+child: Image.asset('images/pic1.jpg'),
+),
+[!Expanded!](
+child: Image.asset('images/pic2.jpg'),
+),
+[!Expanded!](
+child: Image.asset('images/pic3.jpg'),
+),
+],
+);
+```

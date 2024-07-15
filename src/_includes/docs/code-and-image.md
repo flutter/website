@@ -14,18 +14,18 @@
 
 <figure class="{{class}}">
   <div class="row {{figure-class}}">
-      <div class="col-md-6 code-block-full-height {{code-class}}" style="padding-right:12px"> 
+      <div class="col-md-6 {{code-class}}" style="padding-right:12px"> 
         {{code}}
       </div>
-      <div class="col-md-6" style="padding-left:0">
+      <div class="col-md-5" style="padding-left:0">
         <img src='/assets/images/docs/{{image}}' class='{{img-class}}' alt='{{alt}}' style='{{width}} {{height}}'>
+         {% if caption -%}
+           <figcaption class="figure-caption {{figcaption-class}}" style="margin-top: 6px">
+            {{caption}}
+           </figcaption>
+        {% endif -%}
       </div>
   </div>
-  {% if caption -%}
-    <figcaption class="figure-caption {{figcaption-class}}" style="margin-top: 12px">
-        {{caption}}
-    </figcaption>
-  {% endif -%}
 </figure>
 
 
