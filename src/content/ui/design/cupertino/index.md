@@ -13,7 +13,7 @@ They also include iOS interactions and animations.
 The following 15-minute video provides a high-level
 glimpse of the Cupertino package:
 
-{% ytEmbed '3PdUaidHc-E?si=xDp3bU50oSuljzye', 'Flutter's Cupertino Package' %}
+{% ytEmbed '3PdUaidHc-E?si=xDp3bU50oSuljzye', 'Flutter\'s Cupertino Package' %}
 
 ## More information {:.no_toc}
 
