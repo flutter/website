@@ -7,9 +7,10 @@ diff2html: true
 :::warning
 Flutter is migrating to [Swift Package Manager][] to manage iOS and macOS native
 dependencies.
-This is an experimental feature that might change in the future.
-It is currently only available on the [`main` channel][].
-Flutter will continue to support CocoaPods until further notice.
+Flutter's support of Swift Package Manager is under development.
+The implementation might change in the future.
+Swift Package Manager support is only available on the [`main` channel][].
+Flutter continues to support CocoaPods.
 :::
 
 Flutter's Swift Package Manager integration has several benefits:
@@ -22,7 +23,7 @@ Flutter's Swift Package Manager integration has several benefits:
    macOS.
 
 If you find a bug in Flutter's Swift Package Manager support,
-please [open an issue][].
+[open an issue][].
 
 [Swift Package Manager]: https://www.swift.org/documentation/package-manager/
 [`main` channel]: /release/upgrade#switching-flutter-channels
@@ -130,8 +131,8 @@ To update your unit tests:
       caption:"The `Link Binary With Libraries` Build Phase in the `RunnerTests` target" %}
 
       If the build phase doesn't exist already, create one.
-      Select the **+** button and select
-      **New Link Binary With Libraries Phase**.
+      Click the <span class="material-symbols-outlined">add</span> and
+      then click **New Link Binary With Libraries Phase**.
 
       {% render docs/captioned-image.liquid,
       image:"development/packages-and-plugins/swift-package-manager/add-runner-tests-link-binary-with-libraries.png",
@@ -139,7 +140,7 @@ To update your unit tests:
 
    2. Navigate to **Package Dependencies** for the project.
 
-   3. Click the **+** button.
+   3. Click <span class="material-symbols-outlined">add</span>.
 
    4. In the dialog that opens, click the **Add Local...** button.
 

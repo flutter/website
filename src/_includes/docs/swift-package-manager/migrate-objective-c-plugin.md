@@ -164,7 +164,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     ```
 
     If you would like to use a custom `modulemap` with your Swift package,
-    please refer to [Swift Package Manager's documentation][].
+    refer to [Swift Package Manager's documentation][].
 
 9. Move all remaining files from `ios/Classes` to `ios/Sources/plugin_name`.
 

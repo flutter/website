@@ -38,7 +38,7 @@ App developers do not need to disable Swift Package Manager support,
 unless they are running into issues.
 
 If you find a bug in Flutter's Swift Package Manager support,
-please [open an issue][].
+[open an issue][].
 :::
 
 Disabling Swift Package Manager causes Flutter to use CocoaPods for all

@@ -6,22 +6,23 @@ description: How to use Swift Package Manager for native iOS or macOS dependenci
 :::warning
 Flutter is migrating to [Swift Package Manager][] to manage iOS and macOS native
 dependencies.
-This is an experimental feature that might change in the future.
-It is currently only available on the [`main` channel][].
-Flutter will continue to support CocoaPods until further notice.
+Flutter's support of Swift Package Manager is under development.
+The implementation might change in the future.
+Swift Package Manager support is only available on the [`main` channel][].
+Flutter continues to support CocoaPods.
 :::
 
 Flutter's Swift Package Manager integration has several benefits:
 
-1. **Access to the Swift package ecosystem**.
-   Flutter plugins can use the growing ecosystem of [Swift packages][]! 
+1. **Provides access to the Swift package ecosystem**.
+   Flutter plugins can use the growing ecosystem of [Swift packages][]. 
 2. **Simplifies Flutter installation**.
-   Swift Package Manager is bundled with Xcode.
-   In the future, you won’t need to install Ruby and CocoaPods to target iOS or
-   macOS.
+   Xcode includes Swift Package Manager.
+   You don't need to install Ruby and CocoaPods if your project uses
+   Swift Package Manager.
 
 If you find a bug in Flutter's Swift Package Manager support,
-please [open an issue][].
+[open an issue][].
 
 [Swift Package Manager]: https://www.swift.org/documentation/package-manager/
 [`main` channel]: /release/upgrade#switching-flutter-channels
@@ -32,14 +33,13 @@ please [open an issue][].
 
 ## How to add Flutter to an existing app (add-to-app)
 
-Flutter's Swift Package Manager support doesn't work with add-to-app scenarios
-yet.
+Flutter's Swift Package Manager support doesn't work with add-to-app scenarios.
 
-For status updates, see [flutter#146957].
+To keep current on status updates, consult [flutter#146957][].
 
 [flutter#146957]: https://github.com/flutter/flutter/issues/146957
 
-## How to add Swift Package Manager integration to a project manually
+## How to add Swift Package Manager integration to a project
 
 {% tabs %}
 {% tab "iOS project" %}
@@ -63,12 +63,7 @@ the project, you might get an error like this:
 Target Integrity (Xcode): The package product 'plugin_name_ios' requires minimum platform version 14.0 for the iOS platform, but this target supports 12.0
 ```
 
-To use the plugin, you'll need to increase the **Minimum Deployments** of your
-app's target.
-
-:::warning
-This raises your app's minimum OS version requirement.
-:::
+To use the plugin, increase the **Minimum Deployments** of your app's target.
 
 {% render docs/captioned-image.liquid,
 image:"development/packages-and-plugins/swift-package-manager/minimum-deployments.png",
@@ -97,9 +92,8 @@ of the `Flutter` target.
 
 ## How to remove Swift Package Manager integration
 
-The Flutter CLI migrates your project to add Swift Package Manager integration.
-This makes your project download the Swift packages that your Flutter plugins
-depend on.
+To add Swift Package Manager integration, the Flutter CLI migrates your project.
+This migration updates your Xcode project to add Flutter plugin dependencies.
 
 To undo this migration:
 
@@ -110,32 +104,32 @@ To undo this migration:
 
 3. Navigate to **Package Dependencies** for the project.
 
-4. Click on the `FlutterGeneratedPluginSwiftPackage` package and then click the
-   **-** button.
+4. Click the `FlutterGeneratedPluginSwiftPackage` package, then click
+   <span class="material-symbols-outlined">remove</span>.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/remove-generated-package.png",
    caption:"The `FlutterGeneratedPluginSwiftPackage` to remove" %}
 
-4. Navigate to **Frameworks, Libraries, and Embedded Content** for the `Runner`
+5. Navigate to **Frameworks, Libraries, and Embedded Content** for the `Runner`
    target.
 
-5. Click on `FlutterGeneratedPluginSwiftPackage` and then click the **-**
-   button.
+6. Click `FlutterGeneratedPluginSwiftPackage`, then click the
+   <span class="material-symbols-outlined">remove</span>.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/remove-generated-framework.png",
    caption:"The `FlutterGeneratedPluginSwiftPackage` to remove" %}
 
-6. Select **Product > Scheme > Edit Scheme**.
+7. Go to **Product > Scheme > Edit Scheme**.
 
-7. Click the **>** next to **Build** in the left side bar.
+8. Expand the **Build** section in the left side bar.
 
-8. Select **Pre-actions**.
+9. Click **Pre-actions**.
 
-9. Select the **Run Prepare Flutter Framework Script**.
+10. Expand **Run Prepare Flutter Framework Script**.
 
-10. Click the **<span class="material-symbols">delete</span>** button.
+11. Click **<span class="material-symbols">delete</span>**.
 
     {% render docs/captioned-image.liquid,
     image:"development/packages-and-plugins/swift-package-manager/remove-flutter-pre-action.png",
