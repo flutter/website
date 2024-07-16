@@ -7,8 +7,6 @@
 {% assign v-target = include.target %}
 {% endcase %}
 
-{% render docs/install/admonitions/install-in-order.md %}
-
 ## Verify system requirements
 
 To install and run Flutter,
