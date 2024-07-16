@@ -27,11 +27,10 @@ the following files in your issue:
    caption:"The project's package dependencies" %}
 
 3. Click <span class="material-symbols-outlined">add</span>.
-4. In the dialog that opens, click the **Add Local...** button.
+4. In the dialog that opens, click the **Add Local...**.
 5. Navigate to `macos/Flutter/ephemeral/Packages/FlutterGeneratedPluginSwiftPackage`
-   and click the **Add Package** button.
-6. Ensure that it's added to the Runner Target and click the **Add Package**
-   button.
+   and click the **Add Package**.
+6. Ensure that it's added to the Runner Target and click **Add Package**.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/choose-package-products.png",
