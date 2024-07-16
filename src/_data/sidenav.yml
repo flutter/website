@@ -506,6 +506,13 @@
       permalink: /packages-and-plugins/using-packages
     - title: Develop packages & plugins
       permalink: /packages-and-plugins/developing-packages
+    - title: Swift Package Manager
+      permalink: /packages-and-plugins/swift-package-manager
+      children:
+        - title: For app developers
+          permalink: /packages-and-plugins/swift-package-manager/for-app-developers
+        - title: For plugin authors
+          permalink: /packages-and-plugins/swift-package-manager/for-plugin-authors
     - divider
     - title: Flutter Favorites
       permalink: /packages-and-plugins/favorites
