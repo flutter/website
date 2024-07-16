@@ -150,7 +150,7 @@ ElevatedButton(
 
 To validate the form, use the `_formKey` created in
 step 1. You can use the `_formKey.currentState`
-method to access the [`FormState`][],
+accessor to access the [`FormState`][],
 which is automatically created by Flutter when building a `Form`.
 
 The `FormState` class contains the `validate()` method.
