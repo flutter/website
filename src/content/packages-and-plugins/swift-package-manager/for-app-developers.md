@@ -73,8 +73,7 @@ caption:"The target's **Minimum Deployments** setting" %}
 
 Your Flutter Xcode project can have custom [Xcode targets][] to build additional
 products, like frameworks or unit tests.
-You can add Swift Package Manager integration to these custom Xcode targets
-as well.
+You can add Swift Package Manager integration to these custom Xcode targets.
 
 Follow the steps in
 [How to add Swift Package Manager integration to a project][manualIntegration].
