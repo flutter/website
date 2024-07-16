@@ -1,10 +1,9 @@
 Once you [turn on Swift Package Manager][], the Flutter CLI tries to migrate
-your project the next time you run your app using the CLI.
-This migration updates your Xcode project to use Swift Package Manager to
-add Flutter plugin dependencies.
+your project to use Swift Package Manager the next time you run your app
+using the CLI.
 
-However, the Flutter CLI might be unable to migrate your project if you've
-modified it significantly.
+However, the Flutter CLI tool might be unable to migrate your project
+automatically if there are unexpected modifications.
 
 If the automatic migration fails, use the steps below to add Swift Package
 Manager integration to a project manually.
