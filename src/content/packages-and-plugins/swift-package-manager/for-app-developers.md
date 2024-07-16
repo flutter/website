@@ -31,15 +31,24 @@ If you find a bug in Flutter's Swift Package Manager support,
 
 {% include docs/swift-package-manager/how-to-enable-disable.md %}
 
-## How to add Flutter to an existing app (add-to-app)
+## How to add Swift Package Manager integration
 
-Flutter's Swift Package Manager support doesn't work with add-to-app scenarios.
+### Add to a Flutter app
 
-To keep current on status updates, consult [flutter#146957][].
+{% tabs %}
+{% tab "iOS project" %}
 
-[flutter#146957]: https://github.com/flutter/flutter/issues/146957
+{% include docs/swift-package-manager/migrate-ios-project.md %}
 
-## How to add Swift Package Manager integration to a project
+{% endtab %}
+{% tab "macOS project" %}
+
+{% include docs/swift-package-manager/migrate-macos-project.md %}
+
+{% endtab %}
+{% endtabs %}
+
+### Add to a Flutter app _manually_
 
 {% tabs %}
 {% tab "iOS project" %}
@@ -54,29 +63,22 @@ To keep current on status updates, consult [flutter#146957][].
 {% endtab %}
 {% endtabs %}
 
-## How to use a Swift Package Manager Flutter plugin that requires a higher OS version
+### Add to an existing app (add-to-app)
 
-If a Swift Package Flutter Manager plugin requires a higher OS version than
-the project, you might get an error like this:
+Flutter's Swift Package Manager support doesn't work with add-to-app scenarios.
 
-```plaintext
-Target Integrity (Xcode): The package product 'plugin_name_ios' requires minimum platform version 14.0 for the iOS platform, but this target supports 12.0
-```
+To keep current on status updates, consult [flutter#146957][].
 
-To use the plugin, increase the **Minimum Deployments** of your app's target.
+[flutter#146957]: https://github.com/flutter/flutter/issues/146957
 
-{% render docs/captioned-image.liquid,
-image:"development/packages-and-plugins/swift-package-manager/minimum-deployments.png",
-caption:"The target's **Minimum Deployments** setting" %}
-
-## How to add Swift Package Manager integration to a custom Xcode target
+### Add to a custom Xcode target
 
 Your Flutter Xcode project can have custom [Xcode targets][] to build additional
 products, like frameworks or unit tests.
 You can add Swift Package Manager integration to these custom Xcode targets.
 
 Follow the steps in
-[How to add Swift Package Manager integration to a project][manualIntegration].
+[How to add Swift Package Manager integration to a project _manually_][manualIntegration].
 
 In [Step 1][manualIntegrationStep1], list item 6 use your custom target instead
 of the `Flutter` target.
@@ -85,7 +87,7 @@ In [Step 2][manualIntegrationStep2], list item 6 use your custom target instead
 of the `Flutter` target.
 
 [Xcode targets]: https://developer.apple.com/documentation/xcode/configuring-a-new-target-in-your-project
-[manualIntegration]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-add-swift-package-manager-integration-to-a-project
+[manualIntegration]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-add-swift-package-manager-integration-to-a-flutter-app-manually
 [manualIntegrationStep1]: /packages-and-plugins/swift-package-manager/for-app-developers/#step-1-add-fluttergeneratedpluginswiftpackage-package-dependency
 [manualIntegrationStep2]: /packages-and-plugins/swift-package-manager/for-app-developers/#step-2-add-run-prepare-flutter-framework-script-pre-action
 
@@ -135,3 +137,18 @@ To undo this migration:
     caption:"The build pre-action to remove" %}
 
 [Turn off Swift Package Manager]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-turn-off-swift-package-manager
+
+## How to use a Swift Package Manager Flutter plugin that requires a higher OS version
+
+If a Swift Package Flutter Manager plugin requires a higher OS version than
+the project, you might get an error like this:
+
+```plaintext
+Target Integrity (Xcode): The package product 'plugin_name_ios' requires minimum platform version 14.0 for the iOS platform, but this target supports 12.0
+```
+
+To use the plugin, increase the **Minimum Deployments** of your app's target.
+
+{% render docs/captioned-image.liquid,
+image:"development/packages-and-plugins/swift-package-manager/minimum-deployments.png",
+caption:"The target's **Minimum Deployments** setting" %}
