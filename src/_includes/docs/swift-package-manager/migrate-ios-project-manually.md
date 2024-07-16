@@ -50,7 +50,7 @@ the following files in your issue:
 **The following steps must be completed for each flavor.**
 
 1. Go to **Product > Scheme > Edit Scheme**.
-2. Click the **>** next to **Build** in the left side bar.
+2. Expand the **Build** section in the left side bar.
 3. Click **Pre-actions**.
 4. Click <span class="material-symbols-outlined">add</span> and
    select **New Run Script Action** from the menu.
