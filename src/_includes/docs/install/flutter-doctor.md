@@ -75,7 +75,14 @@ run `flutter doctor` _again_ to verify the installation.
 
 ## Start developing {{work-target}} apps with Flutter
 
-Congratulations!
-Now that you have installed all prerequisites and the Flutter SDK,
-you should be able to start developing Flutter apps for
-{{work-target}}.
+**Congratulations.**
+Having installed all prerequisites and the Flutter SDK,
+you can start developing Flutter apps for {{work-target}}.
+
+To continue on your learning journey, consult the following guides:
+
+- [Learn how to write your first Flutter app][codelab]
+- [First week experience of Flutter][fwe]
+
+[codelab]: /get-started/codelab/
+[fwe]: /get-started/fwe/
