@@ -70,7 +70,7 @@ Code after migration:
 class MyCustomScrollBehavior extends MaterialScrollBehavior {
   // Override behavior methods and getters like multitouchDragStrategy
   @override
-  MultitouchDragStrategy get multitouchDragStrategy => MultitouchDragStrategy.sumAllPointers;
+  MultitouchDragStrategy getMultitouchDragStrategy(BuildContext context) => MultitouchDragStrategy.sumAllPointers;
 }
 
 // Set ScrollBehavior for an entire application.
@@ -100,7 +100,7 @@ Code after migration:
 class MyCustomScrollBehavior extends MaterialScrollBehavior {
   // Override behavior methods and getters like multitouchDragStrategy
   @override
-  MultitouchDragStrategy get multitouchDragStrategy => MultitouchDragStrategy.sumAllPointers;
+  MultitouchDragStrategy getMultitouchDragStrategy(BuildContext context) => MultitouchDragStrategy.sumAllPointers;
 }
 
 // ScrollBehavior can be set for a specific widget.
