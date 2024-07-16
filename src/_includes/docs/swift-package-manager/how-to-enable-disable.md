@@ -21,7 +21,7 @@ To turn it on:
    flutter config --enable-swift-package-manager
    ```
 
-Using the Flutter CLI to run an app modifies the app to add Swift Package
+Using the Flutter CLI to run an app modifies the project to add Swift Package
 Manager integration.
 This makes your project download the Swift packages that
 your Flutter plugins depend on.
