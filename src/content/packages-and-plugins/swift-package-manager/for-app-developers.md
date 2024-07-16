@@ -77,7 +77,7 @@ You can add Swift Package Manager integration to these custom Xcode targets
 as well.
 
 Follow the steps in
-[How to add Swift Package Manager integration to a project manually][manualIntegration].
+[How to add Swift Package Manager integration to a project][manualIntegration].
 
 In [Step 1][manualIntegrationStep1], list item 6 use your custom target instead
 of the `Flutter` target.
@@ -86,7 +86,7 @@ In [Step 2][manualIntegrationStep2], list item 6 use your custom target instead
 of the `Flutter` target.
 
 [Xcode targets]: https://developer.apple.com/documentation/xcode/configuring-a-new-target-in-your-project
-[manualIntegration]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-add-swift-package-manager-integration-to-a-project-manually
+[manualIntegration]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-add-swift-package-manager-integration-to-a-project
 [manualIntegrationStep1]: /packages-and-plugins/swift-package-manager/for-app-developers/#step-1-add-fluttergeneratedpluginswiftpackage-package-dependency
 [manualIntegrationStep2]: /packages-and-plugins/swift-package-manager/for-app-developers/#step-2-add-run-prepare-flutter-framework-script-pre-action
 
