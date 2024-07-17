@@ -100,12 +100,12 @@ For example, the boxes used by
 Some widgets, for example [Container][], 
 vary from type to type based on their 
 constructor arguments. 
-The Container constructor defaults to trying to
+The `Container` constructor defaults to trying to
 be as big as possible, but if you give it a width,
 for instance, it tries to honor that and 
 be that particular size.
 
-Others, for example [Row][] and [Column][] (flex boxes) 
+Others, for example [`Row`][] and [`Column`][] (flex boxes) 
 vary based on the constraints they are given. 
 Read more about flex boxes and constraints in
 the [Understanding Constraints article][].
@@ -154,7 +154,7 @@ made up of several widgets responsible for layout,
 painting, positioning, and sizing. 
 In regard to layout, 
 it can be used to add padding and 
-margin to a widget. 
+margins to a widget. 
 There is also a `Padding` widget
 that could be used here to the same effect. 
 The following example uses a `Container`.
@@ -220,9 +220,9 @@ Widget build(BuildContext context) {
 
 Each child of `Row` or `Column` can be 
 rows and columns themselves, 
-combining to make a complex layout. F
-or example, you could add labels to each 
-of the images in the example above using Columns.
+combining to make a complex layout.
+For example, you could add labels to each 
+of the images in the example above using columns.
 
 
 {% render docs/code-and-image.md,
@@ -262,7 +262,7 @@ Widget build(BuildContext context) {
 ### Align widgets within rows and columns
 
 In the following example, 
-the widgets are 200 pixels wide each, 
+the widgets are each 200 pixels wide, 
 and the viewport is 700 pixels wide. 
 The widgets are consequently aligned to the left, 
 one after the other, 
@@ -314,12 +314,12 @@ above, and below each image.
 
 <img src='/assets/images/docs/fwe/layout/col_space_evenly.png' alt="A screenshot of a three widgets laid out vertically, using a column widget.">
 
-The [MainAxisAlignment][] and [CrossAxisAlignment][] 
+The [`MainAxisAlignment`][] and [`CrossAxisAlignment`][] 
 enums offer a variety of constants for 
 controlling alignment.
 
 Flutter includes other widgets that can be used 
-for alignment, notably the Align widget.
+for alignment, notably the `Align` widget.
 
 ### Sizing widgets within rows and columns
 
@@ -332,14 +332,14 @@ and each child is 150 pixels wide.
 <img src='/assets/images/docs/fwe/layout/overflowing_row.png' alt="A screenshot of a row of widgets that are wider than their viewport.">
 
 Widgets can be sized to fit within a 
-row or column by using the Expanded widget. 
+row or column by using the `Expanded` widget. 
 To fix the previous example where the row of 
 images is too wide for its render box, 
-wrap each image with an [Expanded][] widget.
+wrap each image with an [`Expanded`][] widget.
 
 {% render docs/code-and-image.md,
 image:"fwe/layout/expanded_row.png",
-caption: "This figure shows a row widget with three children which are wrapped with Expanded widgets."
+caption: "This figure shows a row widget with three children that are wrapped with `Expanded` widgets."
 alt: "A screenshot of three widgets, which take up exactly the amount of space available on the main axis. All three widgets are equal width."
 code:"
 ```dart
@@ -361,12 +361,12 @@ Widget build(BuildContext context) {
 ```
 " %}
 
-The Expanded widget can also dictate how much 
+The `Expanded` widget can also dictate how much 
 space a widget should take up relative
 to its siblings. For example,
 perhaps you want a widget to occupy twice 
 as much space as its siblings. 
-For this, use the Expanded widget flex property, 
+For this, use the `Expanded` widgets `flex` property, 
 an integer that determines the flex factor 
 for a widget. The default flex factor is 1. 
 The following code sets the flex factor of the
@@ -374,7 +374,7 @@ middle image to 2:
 
 {% render docs/code-and-image.md,
 image:"fwe/layout/flex_2_row.png",
-caption: "This figure shows a row widget with three children which are wrapped with Expanded widgets. The center child has it's flex property set to 2."
+caption: "This figure shows a row widget with three children which are wrapped with `Expanded` widgets. The center child has it's `flex` property set to 2."
 alt: "A screenshot of three widgets, which take up exactly the amount of space available on the main axis. The widget in the center is twice as wide as the widgets on the left and right."
 code:"
 ```dart
@@ -402,7 +402,7 @@ Widget build(BuildContext context) {
 In certain situations, 
 a box's constraint is unbounded, or infinite. 
 This means that either the maximum width or the
-maximum height is set to [double.infinity][]. 
+maximum height is set to [`double.infinity`][]. 
 A box that tries to be as big as possible won't
 function usefully when given an 
 unbounded constraint and, in debug mode, 
@@ -410,15 +410,15 @@ throws an exception.
 
 The most common case where a render box ends up
 with an unbounded constraint is within a 
-flex box ([Row][] or [Column][]), 
+flex box ([`Row`][] or [`Column`][]), 
 and within a scrollable region 
-(such as [ListView][] and other [ScrollView][] subclasses). 
-[ListView][], for example, tries to expand to
+(such as [`ListView`][] and other [`ScrollView`][] subclasses). 
+`ListView]`, for example, tries to expand to
 fit the space available in its cross-direction 
 (perhaps it's a vertically-scrolling
 block and tries to be as wide as its parent). 
-If you nest a vertically scrolling [ListView][] 
-inside a horizontally scrolling ListView, 
+If you nest a vertically scrolling `ListView`
+inside a horizontally scrolling `ListView`,
 the inner list tries to be as wide as possible, 
 which is infinitely wide, since the outer one is
 scrollable in that direction.
@@ -457,13 +457,13 @@ as well as a widget for creating scrollable lists.
 
 ### ListView
 
-ListView is a column-like widget that 
+`ListView` is a column-like widget that 
 automatically provides scrolling when its 
 content is longer than its render box.
-The most basic way to use a ListView is 
-very similar to using a Column or Row. 
+The most basic way to use a `ListView` is 
+very similar to using a `Column` or `Row`. 
 Unlike a column or row, 
-a ListView requires its children to take up 
+a `ListView` requires its children to take up 
 all the available space on the cross axis, 
 as shown in the example below. 
 
@@ -485,7 +485,7 @@ Widget build(BuildContext context) {
 ```
 " %}
 
-ListViews are commonly used when you have an 
+`ListView`s are commonly used when you have an 
 unknown or very large (or infinite) number of list items. 
 When this is the case, 
 it's best to use the `ListView.builder` constructor. 
@@ -493,7 +493,7 @@ The builder constructor only builds the
 children that are currently visible on screen.
 
 In the following example, 
-the ListView is displaying a list of to-do items. 
+the `ListView` is displaying a list of to-do items. 
 The todo items are being fetched from a repository, 
 and therefore the number of todos is unknown.
 
@@ -538,8 +538,8 @@ This is referred to as making an app
 _adaptive_ and _responsive_.
 
 One of the most useful widgets in making 
-adaptive layouts is the [LayoutBuilder][] widget. 
-LayoutBuilder is one of many widgets that uses
+adaptive layouts is the [`LayoutBuilder`][] widget. 
+`LayoutBuilder` is one of many widgets that uses
 the "builder" pattern in Flutter.
 
 ### The builder pattern
@@ -557,10 +557,10 @@ The following list is not exhaustive:
 
 These different "builders" are useful for solving 
 different problems. For example, 
-the ListView.builder constructor is primarily used
+the `ListView.builder` constructor is primarily used
 to lazily render items in a list, 
 while the `Builder` widget is useful for gaining 
-access to the BuildContext in deeply widget code.
+access to the `BuildContext` in deeply widget code.
 
 Despite their different use cases, 
 these builders are unified by how they work. 
@@ -579,10 +579,10 @@ Builder functions always pass in at least
 one argument–the build context–
 and generally at least one other argument.
 
-For example, the LayoutBuilder widget is used 
+For example, the `LayoutBuilder` widget is used 
 to create responsive layouts based 
 on the size of the viewport. The builder callback
-body is passed [BoxConstraints][] its given
+body is passed the [`BoxConstraints`][] that it receives
 from its parent, along with the widgets 'BuildContext'. 
 With these constraints, you can return a different
 widget based on the available space.
@@ -666,7 +666,7 @@ background color of every other list item.
 
 {% render docs/code-and-image.md,
 image:"fwe/layout/alternating_list_items.png"
-caption:"This figure shows a ListView, in which its children have alternating background colors. The background colors were determined programmatically based on the index of the child within the ListView."
+caption:"This figure shows a `ListView`, in which its children have alternating background colors. The background colors were determined programmatically based on the index of the child within the `ListView`."
 code:"
 ```dart
 final List<ToDo> items = Repository.fetchTodos();
