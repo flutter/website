@@ -82,22 +82,22 @@ Parent sets the position."
 ### Box types
 
 In Flutter, widgets are rendered by their 
-underlying [RenderBox][] objects. 
+underlying [`RenderBox`][] objects. 
 These objects determine how to handle the
 constraints they're passed.
 
 Generally, there are three kinds of boxes:
 * Those that try to be as big as possible. 
 For example, the boxes used by 
-[Center][] and [ListView][]. 
+[`Center`][] and [`ListView`][]. 
 * Those that try to be the same size as their
 children. For example, the boxes used by 
-[Transform][] and [Opacity][]
+[`Transform`][] and [`Opacity`][]
 * Those that try to be a particular size.
 For example, the boxes used by 
-[Image][] and [Text][].
+[`Image`][] and [`Text`][].
 
-Some widgets, for example [Container][], 
+Some widgets, for example [`Container`][], 
 vary from type to type based on their 
 constructor arguments. 
 The `Container` constructor defaults to trying to
