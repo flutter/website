@@ -732,7 +732,7 @@ The following resources explain individual APIs.
 
 [Layouts in Flutter]: /ui/layout
 [Understanding constraints article]: /ui/layout/constraints
-[RenderBox]: {{site.api}}/flutter/rendering/RenderBox-class.html
+[`RenderBox`]: {{site.api}}/flutter/rendering/RenderBox-class.html
 [Expanded—Flutter Widget of the Week]: {{site.youtube-site}}/watch?v=_rnZaagadyo
 [Flexible—Flutter Widget of the Week]: {{site.youtube-site}}/watch?v=CI7x0mAZiY0
 [Intrinsic widgets—Decoding Flutter]: {{site.youtube-site}}/watch?v=Si5XJ_IocEs
@@ -763,27 +763,27 @@ The following resources explain individual APIs.
 [`Stack`]: {{site.api}}/flutter/widgets/Stack-class.html
 [`Positioned`]: {{site.api}}/flutter/widgets/Positioned-class.html
 [`MediaQuery`]: {{site.api}}/flutter/widgets/MediaQuery-class.html
-[Transform]:{{site.api}}/flutter/widgets/Transform-class.html
-[Opacity]:{{site.api}}/flutter/widgets/Opacity-class.html
-[Center]:{{site.api}}/flutter/widgets/Center-class.html
-[ListView]:{{site.api}}/flutter/widgets/Listview-class.html
-[Image]:{{site.api}}/flutter/widgets/Image-class.html
-[Text]:{{site.api}}/flutter/widgets/Text-class.html
-[MainAxisAlignment]: {{site.api}}/flutter/rendering/MainAxisAlignment.html
-[CrossAxisAlignment]: {{site.api}}/flutter/rendering/CrossAxisAlignment.html
-[double.infinity]:{{site.api}}/flutter/dart-core/double/infinity-constant.html
-[ListView.builder]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
-[Gridview.builder]: {{site.api}}/flutter/widgets/GridView/Gridview.builder.html
-[Builder]: {{site.api}}/flutter/widgets/Builder-class.html
-[ScrollView]: {{site.api}}/flutter/widgets/Scrollview-class.html
-[LayoutBuilder]: {{site.api}}/flutter/widgets/LayoutBuilder-class.html
-[BoxConstraints]:{{site.api}}/flutter/rendering/BoxConstraints-class.html 
+[`Transform]:{{site.api}}/flutter/widgets/Transform-class.html
+[`Opacity`]:{{site.api}}/flutter/widgets/Opacity-class.html
+[`Center`]:{{site.api}}/flutter/widgets/Center-class.html
+[`ListView`]:{{site.api}}/flutter/widgets/Listview-class.html
+[`Image`]:{{site.api}}/flutter/widgets/Image-class.html
+[`Text`]:{{site.api}}/flutter/widgets/Text-class.html
+[`MainAxisAlignment`]: {{site.api}}/flutter/rendering/MainAxisAlignment.html
+[`CrossAxisAlignment`]: {{site.api}}/flutter/rendering/CrossAxisAlignment.html
+[`double.infinity`]:{{site.api}}/flutter/dart-core/double/infinity-constant.html
+[`ListView.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
+[`Gridview.builder`]: {{site.api}}/flutter/widgets/GridView/Gridview.builder.html
+[`Builder`]: {{site.api}}/flutter/widgets/Builder-class.html
+[`ScrollView`]: {{site.api}}/flutter/widgets/Scrollview-class.html
 [`LayoutBuilder`]: {{site.api}}/flutter/widgets/LayoutBuilder-class.html
-[FutureBuilder]: {{site.api}}/flutter/widgets/FutureBuilder-class.html
-[Container]:{{site.api}}/flutter/widgets/Container-class.html
-[Column]:{{site.api}}/flutter/widgets/Column-class.html
-[Row]:{{site.api}}/flutter/widgets/Row-class.html
-[Expanded]: {{site.api}}/flutter/widgets/Expanded-class.html
+[`BoxConstraints`]:{{site.api}}/flutter/rendering/BoxConstraints-class.html 
+[`LayoutBuilder`]: {{site.api}}/flutter/widgets/LayoutBuilder-class.html
+[`FutureBuilder`]: {{site.api}}/flutter/widgets/FutureBuilder-class.html
+[`Container`]:{{site.api}}/flutter/widgets/Container-class.html
+[`Column`]:{{site.api}}/flutter/widgets/Column-class.html
+[`Row`]:{{site.api}}/flutter/widgets/Row-class.html
+[`Expanded`]: {{site.api}}/flutter/widgets/Expanded-class.html
 
 ## Feedback
 
