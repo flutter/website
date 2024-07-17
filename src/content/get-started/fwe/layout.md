@@ -413,7 +413,7 @@ with an unbounded constraint is within a
 flex box ([`Row`][] or [`Column`][]), 
 and within a scrollable region 
 (such as [`ListView`][] and other [`ScrollView`][] subclasses). 
-`ListView]`, for example, tries to expand to
+`ListView`, for example, tries to expand to
 fit the space available in its cross-direction 
 (perhaps it's a vertically-scrolling
 block and tries to be as wide as its parent). 
