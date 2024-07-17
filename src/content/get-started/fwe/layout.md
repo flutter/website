@@ -763,7 +763,7 @@ The following resources explain individual APIs.
 [`Stack`]: {{site.api}}/flutter/widgets/Stack-class.html
 [`Positioned`]: {{site.api}}/flutter/widgets/Positioned-class.html
 [`MediaQuery`]: {{site.api}}/flutter/widgets/MediaQuery-class.html
-[`Transform]:{{site.api}}/flutter/widgets/Transform-class.html
+[`Transform`]:{{site.api}}/flutter/widgets/Transform-class.html
 [`Opacity`]:{{site.api}}/flutter/widgets/Opacity-class.html
 [`Center`]:{{site.api}}/flutter/widgets/Center-class.html
 [`ListView`]:{{site.api}}/flutter/widgets/Listview-class.html
