@@ -139,11 +139,17 @@ When a new Flutter app is created, a placeholder icon set is created.
 This step covers replacing these placeholder icons with your
 app's icons:
 
-1. Review the [iOS App Icon][appicon] guidelines.
+1. Review the [iOS App Icon][app-icon] guidelines and,
+   in particular, the [advice on creating light, dark,
+   and tinted][icon-modes] icons for your app.
+   (Note that _tinted_ icons are coming in iOS 18.)
 1. In the Xcode project navigator, select `Assets.xcassets` in the
    `Runner` folder. Update the placeholder icons with your own app icons.
 1. Verify the icon has been replaced by running your app using
    `flutter run`.
+
+[app-icon]: {{site.apple-dev}}/design/human-interface-guidelines/app-icons/
+[icon-modes]: {{site.apple-dev}}/design/human-interface-guidelines/app-icons#iOS-iPadOS
 
 ## Add a launch image
 
@@ -486,7 +492,6 @@ For more details, see
 The [Distribute your app][distributionguide] guide provides a
 detailed overview of the process of releasing an app to the App Store.
 
-[appicon]: {{site.apple-dev}}/design/human-interface-guidelines/app-icons/
 [appreview]: {{site.apple-dev}}/app-store/review/
 [appsigning]: https://help.apple.com/xcode/mac/current/#/dev154b28f09
 [appstore]: {{site.apple-dev}}/app-store/submissions/
