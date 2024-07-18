@@ -1,6 +1,8 @@
 ---
-title: Leveraging Apple's System APIs and Frameworks
-description: Learn about Flutter plugins that offer equivalent functionalities to Apple's frameworks
+title: Leveraging Apple's system APIs and frameworks
+description: >-
+  Learn about Flutter plugins that offer equivalent
+  functionalities to Apple's frameworks.
 ---
 
 When you come from iOS development, you might need to find
@@ -13,7 +15,8 @@ see [Flutter for SwiftUI developers][].
 
 ## Introducing Flutter plugins
 
-Dart calls libraries that contain platform-specific code _plugins_.
+Dart calls libraries that contain platform-specific code _plugins_,
+short for "plugin package".
 When developing an app with Flutter, you use _plugins_ to interact
 with system libraries.
 
@@ -25,10 +28,12 @@ platforms that the plugin supports.
 To learn more about plugins, see [Using packages][].
 Though this page links to some popular plugins,
 you can find thousands more, along with examples,
-on [pub.dev][]. The following table does not endorse any particular plugin.
-If you can't find a package that meets your need,
-you can create your own or use platform channels directly in your project.
-To learn more, see [Writing platform-specific code][].
+on [pub.dev][].
+The following table does not endorse any particular plugin.
+If you can't find a package that meets your needs,
+you can create your own or
+use platform channels directly in your project.
+To learn more, check out [Writing platform-specific code][].
 
 ## Adding a plugin to your project
 
