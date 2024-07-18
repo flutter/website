@@ -5,8 +5,8 @@ diff2html: true
 ---
 
 :::warning
-Flutter is migrating to [Swift Package Manager][] to manage iOS and macOS native
-dependencies.
+Flutter is migrating to [Swift Package Manager][]
+to manage iOS and macOS native dependencies.
 Flutter's support of Swift Package Manager is under development.
 The implementation might change in the future.
 Swift Package Manager support is only available on the [`main` channel][].
