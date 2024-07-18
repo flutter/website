@@ -466,6 +466,9 @@ Swift Package Manager support is only available on the [`main` channel][].
 Flutter continues to support CocoaPods.
 :::
 
+[Swift Package Manager]: https://www.swift.org/documentation/package-manager/
+[`main` channel]: /release/upgrade#switching-flutter-channels
+
 Use the following instructions to add `HelloPod` with the version `0.0.1`:
 
 1. Specify dependency at the end of `ios/hello.podspec`:
