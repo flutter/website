@@ -504,8 +504,8 @@ describe your plugin's privacy impact,
 and add the following to the bottom of your podspec file:
 
 ```ruby
-s.resource_bundles = {'shared_preferences_foundation_privacy' => ['shared_preferences_foundation/Sources/shared_preferences_foundation/Resources/PrivacyInfo.xcprivacy']}
-   ```
+s.resource_bundles = {'your_plugin_privacy' => ['your_plugin/Sources/your_plugin/Resources/PrivacyInfo.xcprivacy']}
+```
 
 For more information,
 check out [Privacy manifest files][] on the Apple developer site.
