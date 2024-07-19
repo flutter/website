@@ -457,6 +457,18 @@ You can run the example app by pressing the run (&#9654;) button.
 
 ##### Add CocoaPod dependencies
 
+:::warning
+Flutter is migrating to [Swift Package Manager][]
+to manage iOS and macOS native dependencies.
+Flutter's support of Swift Package Manager is under development.
+The implementation might change in the future.
+Swift Package Manager support is only available on the [`main` channel][].
+Flutter continues to support CocoaPods.
+:::
+
+[Swift Package Manager]: https://www.swift.org/documentation/package-manager/
+[`main` channel]: /release/upgrade#switching-flutter-channels
+
 Use the following instructions to add `HelloPod` with the version `0.0.1`:
 
 1. Specify dependency at the end of `ios/hello.podspec`:
@@ -484,6 +496,21 @@ Use the following instructions to add `HelloPod` with the version `0.0.1`:
    - In the project’s `ios/` directory, run `pod install`.
 
 The pod should appear in the installation summary.
+
+If your plugin requires a privacy manifest, for example,
+if it uses any **required reason APIs**,
+update the `PrivacyInfo.xcprivacy` file to
+describe your plugin's privacy impact,
+and add the following to the bottom of your podspec file:
+
+```ruby
+s.resource_bundles = {'your_plugin_privacy' => ['your_plugin/Sources/your_plugin/Resources/PrivacyInfo.xcprivacy']}
+```
+
+For more information,
+check out [Privacy manifest files][] on the Apple developer site.
+
+[Privacy manifest files]: {{site.apple-dev}}/documentation/bundleresources/privacy_manifest_files
 
 #### Step 2d: Add Linux platform code (.h+.cc)
 
