@@ -102,9 +102,9 @@ class NativeViewFactory: NSObject, FlutterPlatformViewFactory {
   }
 
   func create(
-    viewIdentifier viewId: Int64,
+    withViewIdentifier viewId: Int64,
     arguments args: Any?
-  ) -> FlutterPlatformView {
+  ) -> NSView {
     return NativeView(
       viewIdentifier: viewId,
       arguments: args,
@@ -118,29 +118,28 @@ class NativeViewFactory: NSObject, FlutterPlatformViewFactory {
 }
 
 class NativeView: NSView {
-  private var _view: NSView
 
   init(
-    frame: CGRect,
     viewIdentifier viewId: Int64,
     arguments args: Any?,
     binaryMessenger messenger: FlutterBinaryMessenger?
   ) {
-    _view = NSView()
-    super.init(frame: frame)
+    super.init(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+    wantsLayer = true
+    layer?.backgroundColor = NSColor.systemBlue.cgColor
     // macOS views can be created here
-    createNativeView(view: _view)
+    createNativeView(view: self)
   }
-
+    
+    required init?(coder nsCoder: NSCoder) {
+        super.init(coder: nsCoder)
+    }
+    
   func createNativeView(view _view: NSView) {
-    _view.wantsLayer = true
-    _view.layer?.backgroundColor = NSColor.systemBlue.cgColor
-    _view.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
-
     let nativeLabel = NSTextField()
     nativeLabel.frame = CGRect(x: 0, y: 0, width: 180, height: 48.0)
     nativeLabel.stringValue = "Native text from macOS"
-    nativeLabel.textColor = NSColor.white
+    nativeLabel.textColor = NSColor.black
     nativeLabel.font = NSFont.systemFont(ofSize: 14)
     nativeLabel.isBezeled = false
     nativeLabel.focusRingType = .none
@@ -149,6 +148,7 @@ class NativeView: NSView {
     _view.addSubview(nativeLabel)
   }
 }
+
 ```
 
 Finally, register the platform view. This can be done in an app or a plugin.
