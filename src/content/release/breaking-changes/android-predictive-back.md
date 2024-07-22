@@ -44,7 +44,7 @@ whether it was successful.
 
 ### PopScope
 
-The `PopScope` class directly replaces `WillPopScope` in order to enabled
+The `PopScope` class directly replaces `WillPopScope` in order to enable
 predictive back. Instead of deciding whether a pop is possible at the time it
 occurs, this is set ahead of time with the `canPop` boolean. You can still
 listen to pops by using `onPopInvoked`.
