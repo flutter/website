@@ -44,9 +44,10 @@ whether it was successful.
 
 ### PopScope
 
-The `PopScope` class directly replaces `WillPopScope`. Instead of deciding
-whether a pop is possible at the time it occurs, this is set ahead of time with
-the `canPop` boolean. You can still listen to pops by using `onPopInvoked`.
+The `PopScope` class directly replaces `WillPopScope` in order to enable
+predictive back. Instead of deciding whether a pop is possible at the time it
+occurs, this is set ahead of time with the `canPop` boolean. You can still
+listen to pops by using `onPopInvoked`.
 
 ```dart
 PopScope(
@@ -350,6 +351,9 @@ return PopScope(
      for migrating Android apps to support predictive back.
   1. Make sure you're using version `3.14.0-7.0.pre`
      of Flutter or greater.
+  1. Make sure your Flutter app doesn't use the
+     `WillPopScope` widget. Using it disables
+     predictive back. If needed, use `PopScope` instead.
   1. Run the app and perform a back gesture (swipe from the
      left side of the screen).
 
