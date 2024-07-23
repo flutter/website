@@ -30,8 +30,6 @@ If you find a bug in Flutter's Swift Package Manager support,
 [Swift packages]: https://swiftpackageindex.com/
 [open an issue]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml
 
-{% include docs/swift-package-manager/how-to-enable-disable.md %}
-
 ## How to add Swift Package Manager support to an existing Flutter plugin
 
 This guide shows how to add Swift Package Manager support to a plugin that
@@ -46,7 +44,6 @@ Plugins that don't support CocoaPods won't be usable by projects that haven't
 migrated to Swift Package Manager yet.
 Plugins that don't support Swift Package Manager can cause problems for projects
 that have migrated.
-
 
 {% tabs %}
 {% tab "Swift plugin" %}
@@ -153,3 +150,5 @@ To update your unit tests:
 8. Ensure tests pass **Product > Test**.
 
 [library type recommendations]: https://developer.apple.com/documentation/packagedescription/product/library(name:type:targets:)
+
+{% include docs/swift-package-manager/how-to-enable-disable.md %}

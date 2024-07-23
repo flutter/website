@@ -29,8 +29,6 @@ If you find a bug in Flutter's Swift Package Manager support,
 [Swift packages]: https://swiftpackageindex.com/
 [open an issue]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml
 
-{% include docs/swift-package-manager/how-to-enable-disable.md %}
-
 ## How to add Swift Package Manager integration
 
 ### Add to a Flutter app
@@ -137,6 +135,8 @@ To undo this migration:
     caption:"The build pre-action to remove" %}
 
 [Turn off Swift Package Manager]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-turn-off-swift-package-manager
+
+{% include docs/swift-package-manager/how-to-enable-disable.md %}
 
 ## How to use a Swift Package Manager Flutter plugin that requires a higher OS version
 
