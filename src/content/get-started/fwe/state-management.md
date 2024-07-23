@@ -9,8 +9,6 @@ next:
   path: /get-started/fwe/user-input  
 ---
 
-# State management
-
 The _state_ of a Flutter app refers to all the objects it uses
 to display its UI or manage system resources.
 State management is how we organize our app
@@ -333,7 +331,7 @@ Column(
 
 ### ValueNotifier
 
-A [`ValueNotifer`] is a simpler version of a `ChangeNotifier`,
+A [`ValueNotifier`] is a simpler version of a `ChangeNotifier`,
 that stores a single value.
 It implements the `ValueListenable` and `Listenable` interfaces,
 so it's compatible
@@ -557,6 +555,7 @@ If you would like to learn more, check out the following resources:
 [Provider shopper]: https://flutter.github.io/samples/provider_shopper.html
 [State management]: /data-and-backend/state-mgmt/intro
 [StatefulWidget]: /flutter/widgets/StatefulWidget-class.html
+[`StatefulWidget`]: /flutter/widgets/StatefulWidget-class.html
 [`ChangeNotifier`]: {{site.api}}/flutter/foundation/ChangeNotifier-class.html
 [`InheritedNotifier`]: {{site.api}}/flutter/widgets/InheritedNotifier-class.html
 [`ListenableBuilder`]: {{site.api}}/flutter/widgets/ListenableBuilder-class.html

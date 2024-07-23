@@ -32,7 +32,7 @@ The minimal Flutter app simply calls the [`runApp()`][]
 function with a widget:
 
 <?code-excerpt "lib/main.dart"?>
-```dartpad title="Flutter Hello World hands-on example in DartPad" run="true"
+y```dartpad title="Flutter Hello World hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 
 void main() {
