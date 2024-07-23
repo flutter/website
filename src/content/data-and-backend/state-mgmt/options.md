@@ -209,6 +209,20 @@ A popular library based on observables and reactions.
 [Getting started with MobX.dart]: https://mobx.netlify.com/getting-started
 [MobX.dart, Hassle free state-management for your Dart and Flutter apps]: {{site.github}}/mobxjs/mobx.dart
 
+## Dart Board
+
+A modular feature management framework for Flutter.
+Dart Board is designed to help encapsulate and isolate
+features, including examples/frameworks,
+small kernel, and many ready-to-use decoupled features
+such as debugging, logging, auth, redux, locator,
+particle system and more.
+
+* [Dart Board Homepage + Demos](https://dart-board.io/)
+* [Dart Board on pub.dev]({{site.pub-pkg}}/dart_board_core)
+* [dart_board on GitHub]({{site.github}}/ahammer/dart_board)
+* [Getting started with Dart Board]({{site.github}}/ahammer/dart_board/blob/master/GETTING_STARTED.md)
+
 ## Flutter Commands
 
 Reactive state management that uses the Command Pattern
