@@ -462,7 +462,8 @@ Flutter is migrating to [Swift Package Manager][]
 to manage iOS and macOS native dependencies.
 Flutter's support of Swift Package Manager is under development.
 The implementation might change in the future.
-Swift Package Manager support is only available on the [`main` channel][].
+Swift Package Manager support is only available
+on Flutter's [`main` channel][].
 Flutter continues to support CocoaPods.
 :::
 
@@ -471,13 +472,14 @@ Flutter continues to support CocoaPods.
 
 Use the following instructions to add `HelloPod` with the version `0.0.1`:
 
-1. Specify dependency at the end of `ios/hello.podspec`:
+1. Specify the dependency at the end of `ios/hello.podspec`:
 
    ```ruby
    s.dependency 'HelloPod', '0.0.1'
    ```
 
-   For private pods, refer to [Private CocoaPods](https://guides.cocoapods.org/making/private-cocoapods.html) to ensure repo access:
+   For private pods, refer to
+   [Private CocoaPods][] to ensure repo access:
 
    ```ruby
    s.source = {
@@ -488,6 +490,8 @@ Use the following instructions to add `HelloPod` with the version `0.0.1`:
        :tag => s.version.to_s
      }`
    ```
+
+[Private CocoaPods]: https://guides.cocoapods.org/making/private-cocoapods.html
 
 2. Installing the plugin
 
@@ -705,15 +709,13 @@ check out [Flutter in plugin tests][].
 If you want to develop a package that calls into native APIs using
 Dart's FFI, you need to develop an FFI plugin package.
 
-Both FFI plugin packages and (non-FFI) plugin packages support
-bundling native code, but FFI plugin packages do not support
-method channels and do include method channel registration code.
-If you want to implement a plugin that uses both method channels
-and FFI, use a (non-FFI) plugin. You can chose per platform to
-use an FFI or (non-FFI) plugin.
-
-FFI plugin packages were introduced in Flutter 3.0, if you're
-targeting older Flutter versions, you can use a (non-FFI) plugin.
+Both FFI plugin packages and non-FFI plugin packages support
+bundling native code. However, FFI plugin packages don't
+support method channels,
+but they _do_ support method channel registration code.
+To implement a plugin that uses both method channels
+_and_ FFI, use a non-FFI plugin.
+Each platform can use either an FFI or non-FFI platform.
 
 ### Step 1: Create the package
 
@@ -780,7 +782,7 @@ The native build systems that are invoked by FFI
 
 * For Android: Gradle, which invokes the Android NDK for native builds.
   * See the documentation in `android/build.gradle`.
-* For iOS and macOS: Xcode, via CocoaPods.
+* For iOS and macOS: Xcode, using CocoaPods.
   * See the documentation in `ios/hello.podspec`.
   * See the documentation in `macos/hello.podspec`.
 * For Linux and Windows: CMake.
@@ -1043,12 +1045,12 @@ access the `UrlLauncherPlugin` class in the source code
 at `hello/ios/Classes`.
 
 For additional details on `.podspec` files, see the
-[CocoaPods Documentation][] on them.
+[CocoaPods Documentation][].
 
 ### Web
 
 All web dependencies are handled by the `pubspec.yaml`
-file like any other Dart package.
+file, like any other Dart package.
 
 {% comment %}
 <!-- Remove until we have better text. -->
