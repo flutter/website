@@ -8,8 +8,8 @@ This page links to announcements and release notes for
 releases to the stable channel.
 
 :::note
-For information about bug-fix releases, check out
-[Hotfixes to the Stable Channel][] on the Flutter wiki.
+For information about bug-fix releases, check out our
+[CHANGELOG][].
 :::
 
 * 3.22.0
@@ -131,4 +131,4 @@ For information about bug-fix releases, check out
 [1.12.13 announcement]: {{site.flutter-medium}}/announcing-flutter-1-12-what-a-year-22c256ba525d
 [1.12.13 release notes and change log]: /release/release-notes/release-notes-1.12.13
 [Archived release notes]: /release/release-notes/release-notes-archive
-[Hotfixes to the Stable Channel]: {{site.repo.flutter}}/blob/main/CHANGELOG.md
+[CHANGELOG]: {{site.repo.flutter}}/blob/main/CHANGELOG.md
