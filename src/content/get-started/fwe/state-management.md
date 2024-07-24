@@ -410,7 +410,7 @@ class CounterData {
   final int count;
 }
 
-class CounterClient {
+class CounterModel {
   Future<CounterData> loadCountFromServer() async {
     final uri = Uri.parse('https://myfluttercounterapp.net/count');
     final response = await get(uri);
