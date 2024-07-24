@@ -11,12 +11,11 @@ you need to do the following:
 
 ##### Create your Apple ID and Apple Developer account
 
-To test deploying to a physical iOS device, you need an Apple ID.
+You can skip this step for now. You don't actually need
+an Apple Developer account until you are ready to distribute
+your app to the App Store.
 
-To distribute your app to the App Store,
-you must enroll in the Apple Developer Program.
-
-If you only need to test deploying your app,
+If you only need to _test_ deploying your app,
 complete the first step and move on to the next section.
 
 1. If you don't have an [Apple ID][], create one.
