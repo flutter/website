@@ -1091,6 +1091,19 @@
     stroke='#4dd0e1' fill='transparent'/><ellipse cx='20' cy='71' rx='15'
     ry='20' stroke-width='5' stroke='#4dd0e1' fill='transparent'
     transform='rotate(-25)'/></svg>
+- name: CarouselView
+  description: >-
+    A carousel that presents a scrollable list of items,
+    each of which can dynamically change size based on
+    the chosen layout.
+  categories:
+    - 'Scrolling'
+  subcategories:
+    - 'Multi-child layout widgets'
+  link: https://main-api.flutter.dev/flutter/material/CarouselView-class.html
+  image:
+    src: /assets/images/docs/widget-catalog/material-carousel.png
+    alt: TODO
 - name: CustomScrollView
   description: >-
     A ScrollView that creates custom scroll effects using slivers.
