@@ -77,14 +77,14 @@ A full example of using this new API can be found in [PR 6989][] for the
 
 ## Timeline
 
-Landed in version: 3.22.0-12.0.pre-56
+Landed in version: TBD
 
 :::note
 This feature landed in the _previous_ version of the SDK but was non-functional;
-plugins that migrate to this API should set `3.22` as a minimum version constraint.
+plugins that migrate to this API should set `3.24` as a minimum version constraint.
 :::
 
-In stable release: 3.22.0
+In stable release: 3.24
 
 ## References
 
