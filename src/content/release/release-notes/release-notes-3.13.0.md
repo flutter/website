@@ -5,9 +5,9 @@ description: Release notes for Flutter 3.13.0.
 ---
 This page has release notes for 3.13.0.
 For information about subsequent bug-fix releases,
-see [Hotfixes to the Stable Channel][].
+see our [CHANGELOG][].
 
-[Hotfixes to the Stable Channel]: {{site.repo.flutter}}/blob/master/docs/releases/Hotfixes-to-the-Stable-Channel.md
+[CHANGELOG]: {{site.repo.flutter}}/blob/master/CHANGELOG.md
 
 ## Framework
 
