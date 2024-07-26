@@ -203,7 +203,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    + #import "./include/plugin_name_ios/PublicHeaderFile.h"
    ```
 
-1.  If your plugin uses [Pigeon][], update your Pigeon input file.
+1. If your plugin uses [Pigeon][], update your Pigeon input file.
 
    ```diff2html
    --- a/pigeons/messages.dart
@@ -276,7 +276,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
       This avoids conflicts with targets from other packages.
       :::
 
-1.  Update your `ios/plugin_name.podspec` to point to new paths.
+1. Update your `ios/plugin_name.podspec` to point to new paths.
 
    ```diff2html
    --- a/ios/plugin_name.podspec
