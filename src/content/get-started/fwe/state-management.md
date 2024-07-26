@@ -6,7 +6,7 @@ prev:
   path: /get-started/fwe/layout
 next:
   title: Handling user input
-  path: /get-started/fwe/user-input  
+  path: /get-started/fwe/user-input
 ---
 
 The _state_ of a Flutter app refers to all the objects it uses
@@ -25,7 +25,7 @@ This page explores many aspects of state management, including:
 * Using Model-View-ViewModel (MVVM)
   for your application's architecture
 
-For other introductions to state management, check out these resources: 
+For other introductions to state management, check out these resources:
 
 * Video: [Managing state in Flutter][managing-state-video].
   This video shows how to use the [riverpod][] package.
@@ -77,8 +77,8 @@ class _MyCounterState extends State<MyCounter> {
 This code illustrates two important concepts
 when thinking about state management:
 
-* **Encapsulation** 
-: The widget that uses `MyCounter` has no visibility into 
+* **Encapsulation**
+: The widget that uses `MyCounter` has no visibility into
   the underlying `count` variable
   and no means to access or change it.
 * **Object lifecycle**
@@ -191,9 +191,9 @@ class MyState extends InheritedWidget {
   static MyState of(BuildContext context) {
     // This method looks for the nearest `MyState` widget ancestor.
     final result = context.dependOnInheritedWidgetOfExactType<MyState>();
-    
+
     assert(result != null, 'No MyState found in context');
-    
+
     return result!;
   }
 
@@ -410,11 +410,11 @@ class CounterData {
   final int count;
 }
 
-class CounterClient {
+class CounterModel {
   Future<CounterData> loadCountFromServer() async {
     final uri = Uri.parse('https://myfluttercounterapp.net/count');
     final response = await get(uri);
-    
+
     if (response.statusCode != 200) {
       throw ('Failed to update resource');
     }
@@ -574,6 +574,6 @@ If you would like to learn more, check out the following resources:
 ## Feedback
 
 As this section of the website is evolving,
-we [welcome your feedback][]! 
+we [welcome your feedback][]!
 
 [welcome your feedback]: https://google.qualtrics.com/jfe/form/SV_6A9KxXR7XmMrNsy?page="state-management"
