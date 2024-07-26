@@ -656,7 +656,7 @@ AppLocalizations.of(context).helloWorldOn(DateTime.utc(1959, 7, 9))
 <a id="ios-specifics"></a>
 ### Localizing for iOS: Updating the iOS app bundle
 
-Although the localizations are handled by flutter,
+Although the localizations are handled by Flutter,
 you need to add the supported languages in the Xcode project.
 This ensures your entry in the App Store correctly displays
 the supported languages.
