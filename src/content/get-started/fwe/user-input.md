@@ -62,7 +62,7 @@ Let a user prompt action in a UI by clicking or tapping.
 The following Material 3 button types are functionally similar,
 but are styled differently:
 
-[`ElevatedButton]`[]
+[`ElevatedButton`][]
 : A button with some depth.
   Use elevated buttons to add dimension
   to otherwise mostly flat layouts.
