@@ -9,13 +9,13 @@ To turn it on:
    flutter channel main
    ```
 
-2. Make sure you have the latest Flutter SDK:
+1. Make sure you have the latest Flutter SDK:
 
    ```sh
    flutter upgrade
    ```
 
-3. Turn on the Swift Package Manager feature:
+1. Turn on the Swift Package Manager feature:
 
    ```sh
    flutter config --enable-swift-package-manager
