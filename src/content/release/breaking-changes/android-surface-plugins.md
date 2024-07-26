@@ -11,8 +11,8 @@ description: >
 The Android embedder for Flutter introduces a new API, [`SurfaceProducer`][],
 which allows plugins to render to a `Surface` without needing to manage what
 the backing implementation is. Plugins using the older
-[`createSurfaceTexture`][] API will continue to work with [Impeller][], but are
-recommended to migrate to the new API.
+[`createSurfaceTexture`][] API will continue to work with [Impeller][] after the
+_next_ stable release, but are recommended to migrate to the new API.
 
 ## Background
 
