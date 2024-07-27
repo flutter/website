@@ -20,23 +20,23 @@ the following files in your issue:
 ### Step 1: Add FlutterGeneratedPluginSwiftPackage Package Dependency {:.no_toc}
 
 1. Open your app (`macos/Runner.xcworkspace`) in Xcode.
-2. Navigate to **Package Dependencies** for the project.
+1. Navigate to **Package Dependencies** for the project.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/package-dependencies.png",
    caption:"The project's package dependencies" %}
 
-3. Click <span class="material-symbols-outlined">add</span>.
-4. In the dialog that opens, click the **Add Local...**.
-5. Navigate to `macos/Flutter/ephemeral/Packages/FlutterGeneratedPluginSwiftPackage`
+1. Click <span class="material-symbols-outlined">add</span>.
+1. In the dialog that opens, click the **Add Local...**.
+1. Navigate to `macos/Flutter/ephemeral/Packages/FlutterGeneratedPluginSwiftPackage`
    and click the **Add Package**.
-6. Ensure that it's added to the Runner Target and click **Add Package**.
+1. Ensure that it's added to the Runner Target and click **Add Package**.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/choose-package-products.png",
    caption:"Ensure that the package is added to the `Runner` target" %}
 
-7. Ensure that `FlutterGeneratedPluginSwiftPackage` was added to **Frameworks,
+1. Ensure that `FlutterGeneratedPluginSwiftPackage` was added to **Frameworks,
    Libraries, and Embedded Content**.
 
    {% render docs/captioned-image.liquid,
@@ -48,18 +48,18 @@ the following files in your issue:
 **The following steps must be completed for each flavor.**
 
 1. Go to **Product > Scheme > Edit Scheme**.
-2. Expand the **Build** section in the left side bar.
-3. Click **Pre-actions**.
-4. Click the <span class="material-symbols-outlined">add</span> button
+1. Expand the **Build** section in the left side bar.
+1. Click **Pre-actions**.
+1. Click the <span class="material-symbols-outlined">add</span> button
    and select **New Run Script Action** from the menu.
-5. Click the **Run Script** title and change it to:
+1. Click the **Run Script** title and change it to:
 
    ```plaintext
    Run Prepare Flutter Framework Script
    ```
 
-6. Change the **Provide build settings from** to the `Runner` target.
-7. Input the following in the text box:
+1. Change the **Provide build settings from** to the `Runner` target.
+1. Input the following in the text box:
 
    ```sh
    "$FLUTTER_ROOT"/packages/flutter_tools/bin/macos_assemble.sh prepare
@@ -72,14 +72,14 @@ the following files in your issue:
 ### Step 3: Run app {:.no_toc}
 
 1. Run the app in Xcode.
-2. Ensure that  **Run Prepare Flutter Framework Script** runs as a pre-action
+1. Ensure that  **Run Prepare Flutter Framework Script** runs as a pre-action
    and that `FlutterGeneratedPluginSwiftPackage` is a target dependency.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/flutter-pre-action-build-log.png",
    caption:"Ensure `Run Prepare Flutter Framework Script` runs as a pre-action" %}
 
-3. Ensure that the app runs on the command line with `flutter run`.
+1. Ensure that the app runs on the command line with `flutter run`.
 
 [turn on Swift Package Manager]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-turn-on-swift-package-manager
 [file an issue]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml

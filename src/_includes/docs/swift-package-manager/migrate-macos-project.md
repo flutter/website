@@ -7,7 +7,7 @@ To migrate your project:
 
 1. [Turn on Swift Package Manager][].
 
-2. Run the macOS app using the Flutter CLI.
+1. Run the macOS app using the Flutter CLI.
 
    If your macOS project doesn't have Swift Package Manager integration yet, the
    Flutter CLI tries to migrate your project and outputs something like:
@@ -21,13 +21,13 @@ To migrate your project:
    `macos/Runner.xcodeproj/project.pbxproj` and
    `macos/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme` files.
 
-3. If the Flutter CLI's automatic migration fails, follow the steps in
+1. If the Flutter CLI's automatic migration fails, follow the steps in
    [add Swift Package Manager integration manually][manualIntegration].
 
 [Optional] To check if your project is migrated:
 
 1. Run the app in Xcode.
-2. Ensure that  **Run Prepare Flutter Framework Script** runs as a pre-action
+1. Ensure that  **Run Prepare Flutter Framework Script** runs as a pre-action
    and that `FlutterGeneratedPluginSwiftPackage` is a target dependency.
 
    {% render docs/captioned-image.liquid,

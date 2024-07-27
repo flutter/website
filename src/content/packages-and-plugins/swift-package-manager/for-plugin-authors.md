@@ -17,7 +17,7 @@ Flutter's Swift Package Manager integration has several benefits:
 
 1. **Access to the Swift package ecosystem**.
    Flutter plugins can use the growing ecosystem of [Swift packages][]! 
-2. **Simplifies Flutter installation**.
+1. **Simplifies Flutter installation**.
    Swift Package Manager is bundled with Xcode.
    In the future, you won’t need to install Ruby and CocoaPods to target iOS or
    macOS.
@@ -73,7 +73,7 @@ To update your unit tests:
 
 1. Open your `example/ios/Runner.xcworkspace` in Xcode.
 
-2. If you were using a CocoaPod dependency for tests, such as `OCMock`,
+1. If you were using a CocoaPod dependency for tests, such as `OCMock`,
    you'll want to remove it from your `Podfile` file.
 
    ```diff2html
@@ -91,13 +91,13 @@ To update your unit tests:
    Then in the terminal, run `pod install` in the `plugin_name_ios/example/ios`
    directory.
 
-3. Navigate to **Package Dependencies** for the project.
+1. Navigate to **Package Dependencies** for the project.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/package-dependencies.png",
    caption:"The project's package dependencies" %}
 
-4. Click the **+** button and add any test-only dependencies by searching for
+1. Click the **+** button and add any test-only dependencies by searching for
    them in the top right search bar.
 
    {% render docs/captioned-image.liquid,
@@ -110,15 +110,15 @@ To update your unit tests:
    version.
    :::
 
-5. Ensure the dependency is added to the `RunnerTests` Target.
+1. Ensure the dependency is added to the `RunnerTests` Target.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/choose-package-products-test.png",
    caption:"Ensure the dependency is added to the `RunnerTests` target" %}
 
-6. Click the **Add Package** button.
+1. Click the **Add Package** button.
 
-7. If you've explicitly set your plugin's library type to `.dynamic` in its
+1. If you've explicitly set your plugin's library type to `.dynamic` in its
    `Package.swift` file
    ([not recommended by Apple][library type recommendations]),
    you'll also need to add it as a dependency to the `RunnerTests` target.
@@ -138,18 +138,18 @@ To update your unit tests:
       image:"development/packages-and-plugins/swift-package-manager/add-runner-tests-link-binary-with-libraries.png",
       caption:"Add `Link Binary With Libraries` Build Phase" %}
 
-   2. Navigate to **Package Dependencies** for the project.
+   1. Navigate to **Package Dependencies** for the project.
 
-   3. Click <span class="material-symbols-outlined">add</span>.
+   1. Click <span class="material-symbols-outlined">add</span>.
 
-   4. In the dialog that opens, click the **Add Local...** button.
+   1. In the dialog that opens, click the **Add Local...** button.
 
-   5. Navigate to `plugin_name/plugin_name_ios/ios/plugin_name_ios` and click
+   1. Navigate to `plugin_name/plugin_name_ios/ios/plugin_name_ios` and click
       the **Add Package** button.
 
-   6. Ensure that it's added to the `RunnerTests` target and click the
+   1. Ensure that it's added to the `RunnerTests` target and click the
       **Add Package** button.
 
-8. Ensure tests pass **Product > Test**.
+1. Ensure tests pass **Product > Test**.
 
 [library type recommendations]: https://developer.apple.com/documentation/packagedescription/product/library(name:type:targets:)
