@@ -174,6 +174,12 @@ The hosted file should look similar to this:
 
 4. Verify that your browser can access this file.
 
+:::note
+If you have multiple flavors, you can have many sha256_cert_fingerprint 
+values in thesha256_cert_fingerprints field. 
+Just add it to the sha256_cert_fingerprints list
+:::
+
 ## Testing
 
 You can use a real device or the Emulator to test an app link,
