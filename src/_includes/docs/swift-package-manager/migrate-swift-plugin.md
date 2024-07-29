@@ -72,6 +72,61 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    )
    ```
 
+1. Update the [supported platforms][] in your `Package.swift` file.
+
+   ```swift title="Package.swift"
+       platforms: [
+           // The platforms your plugin supports.
+           // If your plugin only supports iOS, remove `.macOS(...)`.
+           // If your plugin only supports macOS, remove `.iOS(...)`.
+           [!.iOS("12.0"),!]
+           [!.macOS("10.14")!]
+       ],
+   ```
+
+   [supported platforms]: https://developer.apple.com/documentation/packagedescription/supportedplatform
+
+1. Update the package, library, and target names in your `Package.swift` file.
+
+   ```swift title="Package.swift"
+   let package = Package(
+       name: [!"plugin_name"!],
+       platforms: [
+           // The platforms your plugin supports.
+           // If your plugin only supports iOS, remove `.macOS(...)`.
+           // If your plugin only supports macOS, remove `.iOS(...)`.
+           .iOS("12.0"),
+           .macOS("10.14")
+       ],
+       products: [
+           // If the plugin name contains "_", replace with "-" for the library name
+           .library(name: [!"plugin-name"!], targets: [[!"plugin_name"!]])
+       ],
+       dependencies: [],
+       targets: [
+           .target(
+               name: [!"plugin_name"!],
+               dependencies: [],
+               resources: [
+                   // If your plugin requires a privacy manifest, for example if it uses
+                   // any required reason APIs, update the PrivacyInfo.xcprivacy file to
+                   // describe your plugin's privacy impact, and then uncomment these lines.
+                   // For more information, see:
+                   // https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
+                   // .process("PrivacyInfo.xcprivacy"),
+   
+                   // If you have other resources that need to be bundled with your plugin, refer to
+                   // the following instructions to add them:
+                   // https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package
+               ],
+               cSettings: [
+                   .headerSearchPath("include/[!plugin_name!]")
+               ]
+           )
+       ]
+   )
+   ```
+
    :::note
    If the plugin name contains `_`, the library name must be a `-` separated
    version of the plugin name.
@@ -196,7 +251,23 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
       flutter config --no-enable-swift-package-manager
       ```
 
-   1. Run `flutter run` with the example app and ensure it builds and runs.
+   1. Navigate to the plugin's example app.
+
+      ```sh
+      cd path/to/plugin/example/
+      ```
+
+   1. Ensure the plugin's example app builds and runs.
+
+      ```sh
+      flutter run
+      ```
+
+   1. Navigate to the plugin's top-level directory.
+
+      ```sh
+      cd path/to/plugin/
+      ```
 
    1. Run CocoaPods validation lints.
 
@@ -216,15 +287,26 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
        flutter config --enable-swift-package-manager
        ```
 
-   1. Run `flutter run` with the example app and ensure it builds and runs.
+   1. Navigate to the plugin's example app.
 
-   1. Open the example app in Xcode. Ensure that **Package Dependencies**
-      shows in the left **Project Navigator**.
+      ```sh
+      cd path/to/plugin/example/
+      ```
+
+   1. Ensure the plugin's example app builds and runs.
+
+      ```sh
+      flutter run
+      ```
+
+   1. Open the plugin's example app in Xcode.
+      Ensure that **Package Dependencies** shows in the left
+      **Project Navigator**.
 
 1. Verify tests pass.
 
    * **If your plugin has native unit tests (XCTest), make sure you also
-    [update unit tests in the plugin's example app][].**
+     [update unit tests in the plugin's example app][].**
 
    * Follow instructions for [testing plugins][].
 

@@ -6,10 +6,10 @@ To turn it on:
 1. Switch to Flutter's `main` channel:
 
    ```sh
-   flutter channel main
+   flutter channel main --no-cache-artifacts
    ```
 
-1. Make sure you have the latest Flutter SDK:
+1. Upgrade to the latest Flutter SDK and download artifacts:
 
    ```sh
    flutter upgrade
