@@ -3,12 +3,6 @@ title: Automatic platform adaptations
 description: Learn more about Flutter's platform adaptiveness.
 ---
 
-:::note
-As of the Flutter 3.16 release, Material 3
-replaces Material 2 as the default theme
-on all Flutter apps that use Material.
-:::
-
 ## Adaptation philosophy
 
 In general, two cases of platform adaptiveness exist:
@@ -254,7 +248,7 @@ On **iOS**, scrolling past the edge of a scrollable
 On **iOS**,
 repeated flings in the same direction stacks momentum
 and builds more speed with each successive fling.
-There is no equivalent behavior on *Android*.
+There is no equivalent behavior on Android.
 
 <div class="container">
   <div class="row">
@@ -274,7 +268,7 @@ There is no equivalent behavior on *Android*.
 On **iOS**,
 tapping the OS status bar scrolls the primary
 scroll controller to the top position.
-There is no equivalent behavior on **Android**.
+There is no equivalent behavior on Android.
 
 <div class="container">
   <div class="row">
@@ -384,6 +378,11 @@ Scrolling through picker items on iOS triggers a
 'light impact' knock and no feedback on Android.
 
 ## Text editing
+
+Both the Material and Cupertino Text Input fields
+support spellcheck and adapt to use the proper
+spellcheck configuration for the platform,
+and the proper spell check menu and highlight colors. 
 
 Flutter also makes the below adaptations while editing
 the content of text fields to match the current platform.
