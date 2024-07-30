@@ -168,6 +168,8 @@ create a release build.
 
 ## Embedding a Flutter app into an HTML page
 
+See [Embedding Flutter web][].
+
 ### `hostElement`
 
 _Added in Flutter 3.10_<br>
@@ -208,20 +210,8 @@ reference [Legacy web app initialization][web-init-legacy].
 :::
 
 [customizing-web-init]: /platform-integration/web/initialization
+[Embedding Flutter web]: /platform-integration/web/embedding-flutter-web
 [web-init-legacy]: /platform-integration/web/initialization-legacy
-
-### Iframe
-
-You can embed a Flutter web app,
-as you would embed other content,
-in an [`iframe`][] tag of an HTML file.
-In the following example, replace "URL"
-with the location of your HTML page:
-
-```html
-<iframe src="URL"></iframe>
-```
-
 
 ## PWA Support
 
@@ -242,6 +232,4 @@ so please [give us feedback][] if you see something that doesn't look right.
 [GitHub Pages]: https://pages.github.com/
 [give us feedback]: {{site.repo.flutter}}/issues/new?title=%5Bweb%5D:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
 [Google Cloud Hosting]: https://cloud.google.com/solutions/web-hosting
-[`iframe`]: https://html.com/tags/iframe/
 [Web renderers]: /platform-integration/web/renderers
-
