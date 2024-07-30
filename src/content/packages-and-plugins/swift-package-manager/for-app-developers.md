@@ -100,7 +100,13 @@ To undo this migration:
 
 1. [Turn off Swift Package Manager][].
 
-1. Open your app (`ios/Runner.xcworkspace` or `ios/Runner.xcworkspace`) in
+1. Clean your project:
+
+   ```sh
+   flutter clean
+   ```
+
+1. Open your app (`ios/Runner.xcworkspace` or `macos/Runner.xcworkspace`) in
    Xcode.
 
 1. Navigate to **Package Dependencies** for the project.
