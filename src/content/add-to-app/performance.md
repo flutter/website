@@ -28,6 +28,14 @@ This happens when you construct a `FlutterEngine` for the
 first time on both **[Android][android-engine]**
 and **[iOS][ios-engine]** APIs.
 
+:::note
+Some packages allow you to share images and fonts
+from the native application to your Flutter screen.
+For example:
+* [native_font]({{site.pub-pkg}}/native_font)
+* [ios_platform_images]({{site.pub-pkg}}/ios_platform_images)
+:::
+
 ### Loading the Flutter library
 
 After it's found, the engine's shared libraries are memory loaded
