@@ -170,48 +170,7 @@ create a release build.
 
 See [Embedding Flutter web][].
 
-### `hostElement`
-
-_Added in Flutter 3.10_<br>
-You can embed a Flutter web app into
-any HTML element of your web page.
-
-To tell Flutter web in which element to render,
-pass an object with a `config` field to the `_flutter.loader.load` function
-that specifies a `HTMLElement` as the `hostElement`.
-
-```html highlightLines=11-13
-<html>
-  <body>
-    <!-- Ensure your flutter target is present on the page... -->
-    <div id="flutter_host">Loading...</div>
-
-    <script>
-      {% raw %}{{flutter_js}}{% endraw %}
-      {% raw %}{{flutter_build_config}}{% endraw %}
-
-      _flutter.loader.load({
-        config: {
-          hostElement: document.getElementById('flutter_host'),
-        }
-      });
-    </script>
-  </body>
-</html>
-```
-
-To learn more about other configuration options,
-check out [Customizing web app initialization][customizing-web-init].
-
-:::version-note
-This method of specifying the `hostElement` was changed in Flutter 3.22.
-To learn how to configure the `hostElement` in earlier Flutter versions,
-reference [Legacy web app initialization][web-init-legacy].
-:::
-
-[customizing-web-init]: /platform-integration/web/initialization
 [Embedding Flutter web]: /platform-integration/web/embedding-flutter-web
-[web-init-legacy]: /platform-integration/web/initialization-legacy
 
 ## PWA Support
 
