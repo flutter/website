@@ -311,8 +311,8 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
       Otherwise, the plugin's example app won't build if the
       Swift Package Manager feature is turned off.
 
-      If you accidentally commit the migration's changes to your version control
-      system, follow the steps to
+      If you accidentally commit the migration's changes to the plugin's example
+      app, follow the steps to
       [undo the Swift Package Manager migration][removeSPM].
       :::
 
