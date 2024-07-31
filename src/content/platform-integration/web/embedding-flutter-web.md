@@ -1,5 +1,5 @@
 ---
-title: Embedding Flutter on the Web
+title: Embedding Flutter on the web
 short-title: Embedding Flutter web
 description: Learn the different ways to embed Flutter views into web content.
 ---
@@ -30,8 +30,8 @@ default embedding mode for Flutter, and no additional configuration is needed.
 When Flutter web is bootstrapped without referencing `multiViewEnabled` or a 
 `hostElement`, it uses full-screen mode.
 
-See [Customize app initialization][] to learn more about the
-`flutter_bootstrap.js` file.
+To learn more about the `flutter_bootstrap.js` file,
+check out [Customize app initialization][].
 
 [Customize app initialization]: {{site.docs}}/platform-integration/web/initialization/
 
@@ -45,10 +45,10 @@ and Flutter will fill it completely.
 <iframe src="https://url-to-your-flutter/index.html"></iframe>
 ```
 
-Check [`<iframe>`: The Inline Frame element][] in MDN to learn more about the
-pros and cons of `iframe`s.
+To learn more about the pros and cons of an `iframe`,
+check out the [Inline Frame element][] docs on MDN.
 
-[`<iframe>`: The Inline Frame element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
+[Inline Frame element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 
 ## Embedded mode
 
@@ -60,10 +60,10 @@ In this mode:
 
 * A Flutter web application can launch, but doesn't render until the first
 "view" is added, with `addView`.
-* The host application may add or remove views from the embedded Flutter web
-application.
-* The Flutter application gets notified of when views are added or removed, so
-it can adjust its widgets accordingly.
+* The host application can add or remove views from the embedded Flutter web
+   application.
+* The Flutter application is notified when views are added or removed,
+  so it can adjust its widgets accordingly.
 
 ### Enable multi-view mode
 
@@ -113,9 +113,9 @@ To render content into each `FlutterView`, your Flutter app needs to create a
 [`View` widget][]. `View` widgets can be grouped together under a
 [`ViewCollection` widget][].
 
-The following is an example from the _Multi View Playground_ that encapsulates
+The following example, from the _Multi View Playground_, encapsulates
 the above in a `MultiViewApp` widget that can be used as the root widget for
-your app. A [`WidgetBuilder` function][] will run for each `FlutterView`:
+your app. A [`WidgetBuilder` function][] runs for each `FlutterView`:
 
 ```dart highlightLines=25,39,46-49,56-61,72
 // multi_view_app.dart
@@ -207,11 +207,11 @@ the [Multi View Playground repo][] that was used during development.
 
 ### Identifying views
 
-Each `FlutterView` has an identifier that is assigned by Flutter when it is
+Each `FlutterView` has an identifier assigned by Flutter when
 attached. This `viewId` can be used to uniquely identify each view, retrieve
 its initial configuration, or decide what to render in it.
 
-The `viewId` of the `FlutterView` that is being rendered can be retrieved from
+The `viewId` of the rendered `FlutterView` can be retrieved from
 its `BuildContext` like this:
 
 ```dart highlightLines=4-5
@@ -246,7 +246,7 @@ let viewId = app.addView({
 
 In Dart, the `initialData` is available as a `JSAny` object, accessible through
 the top-level `views` property in the `dart:ui_web` library. The data is
-accessed through the `viewId` of the current view, like so: 
+accessed through the `viewId` of the current view,  as shown:
 
 ```dart
 final initialData = ui_web.views.getInitialData(viewId) as YourJsInteropType;
@@ -261,11 +261,11 @@ object passed from JS so it's type-safe in your Dart program, check out:
 ### View constraints
 
 By default, an embedded Flutter web view considers the size of its `hostElement`
-as an immutable property, and will tightly constrain its layout to the available
+as an immutable property, and tightly constrains its layout to the available
 space.
 
 On the web, it's common for the intrinsic size of an element to affect the
-layout of the page (like an `img` tag or `p` tags that can reflow content around
+layout of the page (like `img` or `p` tags that can reflow content around
 them).
 
 When adding a view to Flutter web, you may configure it with constraints that
@@ -288,8 +288,8 @@ of the `hostElement` where Flutter is being embedded. For example, Flutter
 won’t try to "fix" contradictory constants like passing  `max-height: 100px`
 in CSS, but `maxHeight: Infinity` to Flutter.
 
-Learn more about the [`ViewConstraints` class][], and
-[Understanding constraints][].
+To learn more, check out the [`ViewConstraints` class][],
+and [Understanding constraints][].
 
 [`ViewConstraints` class]: {{site.api}}/flutter/dart-ui/ViewConstraints-class.html
 [Understanding constraints]: {{site.docs}}/ui/layout/constraints
@@ -317,7 +317,7 @@ check out [Customizing web app initialization][].
 
 :::version-note
 This method of specifying the `hostElement` is superseded by the
-**Embedded mode** described above, please consider migrating to it.
+**Embedded mode** described above, **please consider migrating to it**.
 To learn how to configure the `hostElement` in earlier Flutter versions,
 reference [Legacy web app initialization][].
 :::

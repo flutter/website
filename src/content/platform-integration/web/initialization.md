@@ -201,11 +201,11 @@ The initialization process is split into the following stages:
   that resolves with an **app runner** object. The app runner has a
   single method, `runApp()`, that runs the Flutter app.
 
-**Adding or removing views to an app**
-: The object returned by `runApp()` is a **flutter app** object. In
-  multi-view mode, the flutter app has two methods: `addView` and `removeView`
-  that can be used to manage app views from the host app.
-  See [Embedded mode][embedded-mode].
+**Adding views to (or removing views from) an app**
+: The `runApp()` method returns a **flutter app** object.
+  In multi-view mode, the `addView` and `removeView`
+  methods can be used to manage app views from the host app.
+  To learn more, check out [Embedded mode][embedded-mode].
 
 [embedded-mode]: {{site.docs}}/platform-integration/web/embedding-flutter-web/#embedded-mode
 [js-promise]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
