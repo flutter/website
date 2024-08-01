@@ -192,14 +192,22 @@ The initialization process is split into the following stages:
 **Initializing the Flutter engine**
 : The `onEntrypointLoaded` callback receives an
   **engine initializer** object as its only parameter.
-  Use the engine initializer to set the run-time configuration, and
-  start the Flutter web engine.
+  Use the engine initializer `initializeEngine()` function to
+  set the run-time configuration, like `multiViewEnabled: true`,
+  and start the Flutter web engine.
 
 **Running the app**
 : The `initializeEngine()` function returns a [`Promise`][js-promise]
   that resolves with an **app runner** object. The app runner has a
   single method, `runApp()`, that runs the Flutter app.
 
+**Adding views to (or removing views from) an app**
+: The `runApp()` method returns a **flutter app** object.
+  In multi-view mode, the `addView` and `removeView`
+  methods can be used to manage app views from the host app.
+  To learn more, check out [Embedded mode][embedded-mode].
+
+[embedded-mode]: {{site.docs}}/platform-integration/web/embedding-flutter-web/#embedded-mode
 [js-promise]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 
 ## Example: Display a progress indicator

@@ -483,14 +483,18 @@
           permalink: /platform-integration/web/building
         - title: WebAssembly
           permalink: /platform-integration/web/wasm
-        - title: Web FAQ
-          permalink: /platform-integration/web/faq
-        - title: Web renderers
-          permalink: /platform-integration/web/renderers
         - title: Customize app initialization
           permalink: /platform-integration/web/initialization
+        - title: Embedding Flutter web
+          permalink: /platform-integration/web/embedding-flutter-web
+        - title: Web content in Flutter
+          permalink: /platform-integration/web/web-content-in-flutter
+        - title: Web renderers
+          permalink: /platform-integration/web/renderers
         - title: Display images on the web
           permalink: /platform-integration/web/web-images
+        - title: Web FAQ
+          permalink: /platform-integration/web/faq
     - title: Windows
       permalink: /platform-integration/windows
       children:
@@ -655,6 +659,8 @@
           permalink: /add-to-app/ios/project-setup
         - title: Add a single Flutter screen
           permalink: /add-to-app/ios/add-flutter-screen
+    - title: Add to a web app
+      permalink: /platform-integration/web/embedding-flutter-web
     - title: Debug embedded Flutter module
       permalink: /add-to-app/debugging
     - title: Add multiple Flutter instances
