@@ -33,12 +33,14 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Remove invalid parameters for `InputDecoration.collapsed`][]
 * [Navigator's page APIs breaking change][]
 * [Generic types in `PopScope`][]
 * [Stop generating `AssetManifest.json`][]
 * [Deprecate `TextField.canRequestFocus`][]
 * [Deprecate `ButtonBar` in favor of `OverflowBar`][]
 
+[Remove invalid parameters for `InputDecoration.collapsed`]: /release/breaking-changes/input-decoration-collapsed
 [Navigator's page APIs breaking change]: /release/breaking-changes/navigator-and-page-api
 [Generic types in `PopScope`]: /release/breaking-changes/popscope-with-result
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
