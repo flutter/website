@@ -18,9 +18,6 @@ builds, paints, and layouts. - [#8084](https://github.com/flutter/devtools/pull/
 ## Network profiler updates
 
 * Added support to export network requests as a HAR file (thanks to @hrajwade96!). - [#7970](https://github.com/flutter/devtools/pull/7970)
-* Fixed issue where socket statistics were being reported as web sockets. - [#8061](https://github.com/flutter/devtools/pull/8061)
-
-    ![Network profiler correctly displaying socket statistics](/tools/devtools/release-notes/images-2.38.0 "Network profiler correctly displaying socket statistics")
 
 ## DevTools Extension updates
 
