@@ -285,7 +285,7 @@ The animation runs forward, then backward.
 
 class _StaggerDemoState extends State<StaggerDemo>
     with TickerProviderStateMixin {
-  late AnimationController_controller;
+  late AnimationController _controller;
 
   @override
   void initState() {
