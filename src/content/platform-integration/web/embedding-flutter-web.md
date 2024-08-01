@@ -268,7 +268,7 @@ On the web, it's common for the intrinsic size of an element to affect the
 layout of the page (like `img` or `p` tags that can reflow content around
 them).
 
-When adding a view to Flutter web, you may configure it with constraints that
+When adding a view to Flutter web, you might configure it with constraints that
 inform Flutter of how the view needs to be laid out:
 
 ```js highlightLines=4-8
@@ -300,7 +300,7 @@ _Between Flutter 3.10 and 3.24_<br />
 You can embed a single-view Flutter web app into any HTML element of your web
 page.
 
-To tell Flutter web in which element to render, pass an object with a `config`
+To tell Flutter web which element to render into, pass an object with a `config`
 field to the `_flutter.loader.load` function that specifies a `HTMLElement` as
 the `hostElement`.
 
