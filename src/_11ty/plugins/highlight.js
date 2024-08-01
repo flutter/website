@@ -1,4 +1,4 @@
-import { getSingletonHighlighter } from 'shiki';
+import {getSingletonHighlighter} from 'shiki';
 import dashLightTheme from '../syntax/dash-light.js';
 
 import diff2html from "diff2html";
