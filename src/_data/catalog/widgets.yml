@@ -503,7 +503,7 @@
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoActionSheet-class.html
   image:
-    src: /assets/images/docs/widget-catalog/CupertinoActionSheetAction.png
+    src: /assets/images/docs/widget-catalog/cupertino-action-sheet.png
     alt: TODO
 - name: CupertinoActionSheetAction
   description: >-
@@ -513,7 +513,7 @@
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoActionSheetAction-class.html
   image:
-    src: /assets/images/docs/widget-catalog/CupertinoActionSheetAction.png
+    src: /assets/images/docs/widget-catalog/cupertino-action-sheet.png
     alt: TODO
 - name: CupertinoActivityIndicator
   description: >-
