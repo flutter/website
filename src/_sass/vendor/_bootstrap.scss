@@ -225,6 +225,7 @@ a.card {
 
     &.active, &:active {
       border-color: $site-color-primary;
+      background-color: unset;
     }
   }
 }
