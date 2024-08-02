@@ -142,7 +142,7 @@ A state container approach familiar to many web developers.
 [Redux and epics for better-organized code in Flutter apps]: {{site.medium}}/upday-devs/reduce-duplication-achieve-flexibility-means-success-for-the-flutter-app-e5e432839e61
 [Redux Saga Middleware Dart and Flutter]: {{site.pub-pkg}}/redux_saga
 [Flutter_Redux_Gen - VS Code Plugin to generate boiler plate code]: https://marketplace.visualstudio.com/items?itemName=BalaDhruv.flutter-redux-gen
-  
+
 ## Fish-Redux
 
 Fish Redux is an assembled flutter application framework
@@ -206,7 +206,7 @@ A popular library based on observables and reactions.
 * [Flutter: State Management with Mobx][], a video by Paul Halliday
 
 [Flutter: State Management with Mobx]: {{site.yt.watch}}?v=p-MUBLOEkCs
-[Getting started with MobX.dart]: https://mobx.netlify.com/getting-started
+[Getting started with MobX.dart]: https://mobx.netlify.app/getting-started
 [MobX.dart, Hassle free state-management for your Dart and Flutter apps]: {{site.github}}/mobxjs/mobx.dart
 
 ## Dart Board
