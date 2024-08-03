@@ -36,7 +36,7 @@ install the following packages.
 
 #### Operating system
 
-Flutter supports macOS {{site.devmin.macos}} or later.
+Flutter supports developing on macOS {{site.devmin.macos}} or later.
 This guide presumes your Mac runs the `zsh` as your default shell.
 
 {% include docs/install/reqs/macos/zsh-config.md target=include.target %}
