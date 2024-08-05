@@ -12,7 +12,7 @@
     {% if category.subcategories and category.subcategories.size != 0 -%}
     <ul>
         {% for sub in category.subcategories -%}
-            <li><a href="#{{sub.name}}">{{sub.name}}</a></li>
+            <li><a href="#{{sub.name | slugify}}">{{sub.name}}</a></li>
         {% endfor -%}
     </ul>
     {% endif -%}
