@@ -76,7 +76,7 @@ This website release includes several important updates!
 [`CarouselView`]: {{site.api}}/flutter/material/CarouselView-class.html
 [Cupertino catalog]: /ui/widgets/cupertino
 [DevTools 2.35.0]: /tools/devtools/release-notes/release-notes-2.35.0
-[DevTools 2.36.0]: /tools/devtools/release-notes/release-notes-2-36.0
+[DevTools 2.36.0]: /tools/devtools/release-notes/release-notes-2.36.0
 [DevTools 2.37.2]: /tools/devtools/release-notes/release-notes-2.37.2
 [Embedding Flutter on the web]: /platform-integration/web/embedding-flutter-web
 [Embedding web content into a Flutter app]: /platform-integration/web/web-content-in-flutter
