@@ -73,7 +73,7 @@ This website release includes several important updates!
 * DevTools also has updates. Check out the release notes for
   [DevTools 2.35.0][], [DevTools 2.36.0][], and [DevTools 2.37.2][].
 
-[`CarouselView`]: https://main-api.flutter.dev/flutter/material/CarouselView-class.html
+[`CarouselView`]: {{site.api}}/flutter/flutter/material/CarouselView-class.html
 [Cupertino catalog]: /ui/widgets/cupertino
 [DevTools 2.35.0]: /tools/devtools/release-notes/release-notes-2.35.0
 [DevTools 2.36.0]: /tools/devtools/release-notes/release-notes-2-36.0
