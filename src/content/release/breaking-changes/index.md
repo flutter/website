@@ -67,7 +67,8 @@ release, and listed in alphabetical order:
 [Deprecated API removed after v3.19]: /release/breaking-changes/3-19-deprecations
 [Rename `MaterialState` to `WidgetState`]: /release/breaking-changes/material-state
 [Introduce new `ColorScheme` roles]: /release/breaking-changes/new-color-scheme-roles
-[Dropping support for Android KitKat]: /release/breaking-changes/android-kitkat-deprecation[Nullable `PageView.controller`]: /release/breaking-changes/pageview-controller
+[Dropping support for Android KitKat]: /release/breaking-changes/android-kitkat-deprecation
+[Nullable `PageView.controller`]: /release/breaking-changes/pageview-controller
 [Rename `MemoryAllocations` to `FlutterMemoryAllocations`]: /release/breaking-changes/flutter-memory-allocations
 
 <a id="released-in-flutter-319" aria-hidden="true"></a>

@@ -30,6 +30,8 @@ The veto mechanism is now managed with the
 `Page.canPop` and `Page.onPopInvoked` properties.
 These function similar to how you use the `PopScope` widget.
 
+[`pages`]: {{site.api}}/flutter/widgets/Navigator/pages.html
+
 ## Migration guide
 
 Code before migration:
