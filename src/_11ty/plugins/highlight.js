@@ -1,4 +1,4 @@
-import {getHighlighter} from 'shiki';
+import {getSingletonHighlighter} from 'shiki';
 import dashLightTheme from '../syntax/dash-light.js';
 
 import diff2html from "diff2html";
@@ -23,7 +23,7 @@ const _terminalLanguages = {
  *   configure syntax highlighting for.
  */
 export async function configureHighlighting(markdown) {
-  const highlighter = await getHighlighter({
+  const highlighter = await getSingletonHighlighter({
     langs: [
       'dart',
       'yaml',
@@ -51,9 +51,8 @@ export async function configureHighlighting(markdown) {
       'csharp',
       'cmake',
     ],
+    themes: [dashLightTheme],
   });
-
-  await highlighter.loadTheme(dashLightTheme);
 
   markdown.renderer.rules.fence = function (tokens, index) {
     const token = tokens[index];

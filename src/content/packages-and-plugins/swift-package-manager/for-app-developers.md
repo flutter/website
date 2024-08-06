@@ -16,7 +16,7 @@ Flutter's Swift Package Manager integration has several benefits:
 
 1. **Provides access to the Swift package ecosystem**.
    Flutter plugins can use the growing ecosystem of [Swift packages][]. 
-2. **Simplifies Flutter installation**.
+1. **Simplifies Flutter installation**.
    Xcode includes Swift Package Manager.
    You don't need to install Ruby and CocoaPods if your project uses
    Swift Package Manager.
@@ -100,41 +100,47 @@ To undo this migration:
 
 1. [Turn off Swift Package Manager][].
 
-2. Open your app (`ios/Runner.xcworkspace` or `ios/Runner.xcworkspace`) in
+1. Clean your project:
+
+   ```sh
+   flutter clean
+   ```
+
+1. Open your app (`ios/Runner.xcworkspace` or `macos/Runner.xcworkspace`) in
    Xcode.
 
-3. Navigate to **Package Dependencies** for the project.
+1. Navigate to **Package Dependencies** for the project.
 
-4. Click the `FlutterGeneratedPluginSwiftPackage` package, then click
+1. Click the `FlutterGeneratedPluginSwiftPackage` package, then click
    <span class="material-symbols-outlined">remove</span>.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/remove-generated-package.png",
    caption:"The `FlutterGeneratedPluginSwiftPackage` to remove" %}
 
-5. Navigate to **Frameworks, Libraries, and Embedded Content** for the `Runner`
+1. Navigate to **Frameworks, Libraries, and Embedded Content** for the `Runner`
    target.
 
-6. Click `FlutterGeneratedPluginSwiftPackage`, then click the
+1. Click `FlutterGeneratedPluginSwiftPackage`, then click the
    <span class="material-symbols-outlined">remove</span>.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/remove-generated-framework.png",
    caption:"The `FlutterGeneratedPluginSwiftPackage` to remove" %}
 
-7. Go to **Product > Scheme > Edit Scheme**.
+1. Go to **Product > Scheme > Edit Scheme**.
 
-8. Expand the **Build** section in the left side bar.
+1. Expand the **Build** section in the left side bar.
 
-9. Click **Pre-actions**.
+1. Click **Pre-actions**.
 
-10. Expand **Run Prepare Flutter Framework Script**.
+1. Expand **Run Prepare Flutter Framework Script**.
 
-11. Click **<span class="material-symbols">delete</span>**.
+1. Click **<span class="material-symbols">delete</span>**.
 
-    {% render docs/captioned-image.liquid,
-    image:"development/packages-and-plugins/swift-package-manager/remove-flutter-pre-action.png",
-    caption:"The build pre-action to remove" %}
+   {% render docs/captioned-image.liquid,
+   image:"development/packages-and-plugins/swift-package-manager/remove-flutter-pre-action.png",
+   caption:"The build pre-action to remove" %}
 
 [Turn off Swift Package Manager]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-turn-off-swift-package-manager
 

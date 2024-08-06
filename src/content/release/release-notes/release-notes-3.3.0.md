@@ -3,11 +3,12 @@ title: Flutter 3.3.0 release notes
 short-title: 3.3.0 release notes
 description: Release notes for Flutter 3.3.0.
 ---
+
 This page has release notes for 3.3.0.
 For information about subsequent bug-fix releases,
-see [Hotfixes to the Stable Channel][].
+see our [CHANGELOG][].
 
-[Hotfixes to the Stable Channel]: {{site.repo.flutter}}/blob/master/docs/releases/Hotfixes-to-the-Stable-Channel.md
+[CHANGELOG]: {{site.repo.flutter}}/blob/master/CHANGELOG.md
 
 ## What's changed
 

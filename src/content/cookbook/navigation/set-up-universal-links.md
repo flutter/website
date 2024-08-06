@@ -272,6 +272,11 @@ this file should resemble the following content:
 
 1. Verify that your browser can access this file.
 
+:::note
+If you have more than one scheme/flavor, you can add more than one appID 
+into appIDs fields
+:::
+
 ## Test the universal link
 
 Test a universal link using a physical iOS device or the Simulator.

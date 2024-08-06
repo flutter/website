@@ -16,7 +16,7 @@ To develop Flutter apps for {{include.target}}, install Xcode to compile to nati
 1. Click **Install**.
 
    The Xcode installer takes up 6+ GB of storage.
-   The download make take some time.
+   The download might take some time.
 
 1. To configure the command-line tools to use the installed version of Xcode,
    use the following commands.

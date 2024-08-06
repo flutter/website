@@ -656,29 +656,30 @@ AppLocalizations.of(context).helloWorldOn(DateTime.utc(1959, 7, 9))
 <a id="ios-specifics"></a>
 ### Localizing for iOS: Updating the iOS app bundle
 
-Typically, iOS applications define key application metadata,
-including supported locales, in an `Info.plist` file
-that is built into the application bundle.
+Although the localizations are handled by Flutter,
+you need to add the supported languages in the Xcode project.
+This ensures your entry in the App Store correctly displays
+the supported languages.
+
 To configure the locales supported by your app,
 use the following instructions:
 
-1. Open your project's `ios/Runner.xcworkspace` Xcode file.
+1. Open your project's `ios/Runner.xcodeproj` Xcode file.
 
-2. In the **Project Navigator**, open the `Info.plist` file
-   under the `Runner` project's `Runner` folder.
+2. In the **Project Navigator**, select the `Runner` project
+   file under **Projects**.
 
-3. Select the **Information Property List** item.
-   Then select **Add Item** from the **Editor** menu,
-   and select **Localizations** from the pop-up menu.
+4. Select the `Info` tab in the project editor.
 
-4. Select and expand the newly-created `Localizations` item.
-   For each locale your application supports,
-   add a new item and select the locale you wish to add
-   from the pop-up menu in the **Value** field.
-   This list should be consistent with the languages listed
-   in the [`supportedLocales`][] parameter.
+5. In the **Localizations** section, click the `Add` button
+   (`+`) to add the supported lanaguages and regions to your
+   project. When asked to choose files and reference language,
+   simply select `Finish`.
 
-5. Once all supported locales have been added, save the file.
+7. Xcode automatically creates empty `.strings` files and
+   updates the `ios/Runner.xcodeproj/project.pbxproj` file.
+   These files are used by the App Store to determine which
+   languages and regions your app supports.
 
 <a id="advanced-customization"></a>
 ## Advanced topics for further customization

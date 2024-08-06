@@ -5,10 +5,9 @@ description: Release notes for Flutter 1.22.0.
 ---
 
 This page has release notes for 1.22.0.
-For information about subsequent bug-fix releases, see
-[Hotfixes to the Stable Channel][].
+For information about subsequent bug-fix releases, see our [CHANGELOG][]
 
-[Hotfixes to the Stable Channel]: https://github.com/flutter/flutter/blob/master/docs/releases/Hotfixes-to-the-Stable-Channel.md
+[CHANGELOG]: https://github.com/flutter/flutter/blob/master/CHANGELOG.md
 
 ## Merged PRs by labels for `flutter/flutter` 
 

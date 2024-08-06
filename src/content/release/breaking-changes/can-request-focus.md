@@ -36,7 +36,7 @@ Code before migration:
 class _MyWidgetState extends State<MyWidget> {
   @override
   Widget build(BuildContext context) {
-    TextField(
+    return TextField(
       canRequestFocus: false,
     );
   }

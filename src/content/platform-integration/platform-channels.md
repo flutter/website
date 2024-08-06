@@ -500,7 +500,7 @@ public class MainActivity extends FlutterActivity {
 
   @Override
   public void configureFlutterEngine(@NonNull FlutterEngine flutterEngine) {
-  super.configureFlutterEngine(flutterEngine);
+    super.configureFlutterEngine(flutterEngine);
     new MethodChannel(flutterEngine.getDartExecutor().getBinaryMessenger(), CHANNEL)
         .setMethodCallHandler(
           (call, result) -> {
@@ -559,15 +559,20 @@ If an unknown method is called, report that instead.
 Remove the following code:
 
 ```java title="MainActivity.java"
+      new MethodChannel(flutterEngine.getDartExecutor().getBinaryMessenger(), CHANNEL)
+        .setMethodCallHandler(
           (call, result) -> {
             // This method is invoked on the main thread.
             // TODO
           }
+      );
 ```
 
 And replace with the following:
 
 ```java title="MainActivity.java"
+      new MethodChannel(flutterEngine.getDartExecutor().getBinaryMessenger(), CHANNEL)
+        .setMethodCallHandler(
           (call, result) -> {
             // This method is invoked on the main thread.
             if (call.method.equals("getBatteryLevel")) {
@@ -582,6 +587,7 @@ And replace with the following:
               result.notImplemented();
             }
           }
+      );
 ```
 
 {% endtab %}
