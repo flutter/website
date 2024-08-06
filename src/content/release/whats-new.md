@@ -57,8 +57,7 @@ This website release includes several important updates!
   Android 14, you can now support Android's
   [predictive back gesture][].
 * Updates for iOS 18:
-  The iOS 18 release is in beta, and is expected to
-  occur before the next Flutter stable release.
+  The iOS 18 release is in beta at the time of this release.
   These iOS 18 features are already enabled in Flutter
   and are now mentioned in the docs:
   * Use an [iOS app extension][] in your Flutter app
