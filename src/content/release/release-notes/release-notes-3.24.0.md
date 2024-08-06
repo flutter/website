@@ -6,13 +6,14 @@ description: Release notes for Flutter 3.24.0.
 
 This page has release notes for 3.24.0.
 For information about subsequent bug-fix releases,
-see our [CHANGELOG][].
+check out the Flutter [CHANGELOG][].
 
 [CHANGELOG]: {{site.repo.flutter}}/blob/master/CHANGELOG.md
 
-## Flutter Framework
+## Flutter framework
 
 ### Framework
+
 * `RenderFlex` baseline intrinsics by @LongCatIsLooong in [145483](https://github.com/flutter/flutter/pull/145483)
 * Upgrade leak_tracker. by @polina-c in [145940](https://github.com/flutter/flutter/pull/145940)
 * Upgrade leak_tracker. by @polina-c in [145997](https://github.com/flutter/flutter/pull/145997)
@@ -335,7 +336,9 @@ see our [CHANGELOG][].
 * docImports for flutter_test by @goderbauer in [151189](https://github.com/flutter/flutter/pull/151189)
 * Fix result propagation in RenderSliverEdgeInsetsPadding.hitTestChildren by @knopp in [149825](https://github.com/flutter/flutter/pull/149825)
 * Fix scheduler event loop being stuck due to task with Priority.idle by @lauweijie in [151168](https://github.com/flutter/flutter/pull/151168)
+
 ### Material
+
 * Update tokens to v2.3.5 by @QuncCccccc in [145356](https://github.com/flutter/flutter/pull/145356)
 * InputDecorator M3 tests migration - Step7 - container by @bleroux in [145583](https://github.com/flutter/flutter/pull/145583)
 * Add `DataColumn.headingRowAlignment ` for `DataTable` by @TahaTesser in [144006](https://github.com/flutter/flutter/pull/144006)
@@ -534,7 +537,9 @@ see our [CHANGELOG][].
 * Fix teardown of a FocusScopeNode in material/app_test by @jason-simmons in [151115](https://github.com/flutter/flutter/pull/151115)
 * Fix missing `[` in docs by @Pante in [151091](https://github.com/flutter/flutter/pull/151091)
 * Implementing a few switch statements by @nate-thegrate in [150946](https://github.com/flutter/flutter/pull/150946)
+
 ### iOS
+
 * Implementing switch expressions in `flutter_tools/` by @nate-thegrate in [145632](https://github.com/flutter/flutter/pull/145632)
 * Remove dead `compareIosVersions` function by @jmagman in [146298](https://github.com/flutter/flutter/pull/146298)
 * Support mdns when attaching to proxied devices. by @chingjun in [146021](https://github.com/flutter/flutter/pull/146021)
@@ -542,9 +547,13 @@ see our [CHANGELOG][].
 * Control flow collections: `flutter_tools/` by @nate-thegrate in [147450](https://github.com/flutter/flutter/pull/147450)
 * Switch to more reliable flutter.dev link destinations in the tool by @parlough in [150587](https://github.com/flutter/flutter/pull/150587)
 * [tool] when writing to openssl as a part of macOS/iOS code-signing, flush the stdin stream before closing it by @andrewkolos in [150120](https://github.com/flutter/flutter/pull/150120)
+
 ### Android
+
 * [wiki migration] Android team pages by @Piinks in [148585](https://github.com/flutter/flutter/pull/148585)
+
 ### Tooling
+
 * Point kotlin message in `gradle_errors.dart` towards new place where templates define the kotlin version by @gmackall in [145936](https://github.com/flutter/flutter/pull/145936)
 * Remove trailing commas in android dependency version checking gradle plugin by @gmackall in [145718](https://github.com/flutter/flutter/pull/145718)
 * Flutter Gradle Plugin: add versionName and versionCode to FlutterExtension by @bartekpacia in [146044](https://github.com/flutter/flutter/pull/146044)
@@ -669,7 +678,9 @@ see our [CHANGELOG][].
 * Use `ErrorHandlingFileSystem.deleteIfExists` when deleting .plugin_symlinks by @andrewkolos in [151073](https://github.com/flutter/flutter/pull/151073)
 * [tool] Fix `stdin.flush` calls on processes started by `FakeProcessManager` by @andrewkolos in [151183](https://github.com/flutter/flutter/pull/151183)
 * [flutter_tools] Update the mapping for the Dart SDK internal URI by @DanTup in [151170](https://github.com/flutter/flutter/pull/151170)
-### Other Changes
+
+### Other changes
+
 * Use reporter extended consistently. by @godofredoc in [145617](https://github.com/flutter/flutter/pull/145617)
 * Refactor flutter_plugins by @sealesj in [145870](https://github.com/flutter/flutter/pull/145870)
 * Generate test metrics consistently. by @godofredoc in [145943](https://github.com/flutter/flutter/pull/145943)
@@ -818,7 +829,8 @@ see our [CHANGELOG][].
 * Bump dartdoc to 8.0.10 by @goderbauer in [151107](https://github.com/flutter/flutter/pull/151107)
 * Roll pub packages by @flutter-pub-roller-bot in [151129](https://github.com/flutter/flutter/pull/151129)
 
-## New Contributors
+## New contributors
+
 * @Dimilkalathiya made their first contribution in [146072](https://github.com/flutter/flutter/pull/146072)
 * @leoafarias made their first contribution in [145666](https://github.com/flutter/flutter/pull/145666)
 * @philipfranchi made their first contribution in [145846](https://github.com/flutter/flutter/pull/145846)
@@ -864,9 +876,10 @@ see our [CHANGELOG][].
 
 **Full Changelog**: https://github.com/flutter/flutter/compare/3.22.0...3.24.0-0.0.pre
 
-## Flutter Engine
+## Flutter engine
 
 ### Impeller
+
 * [Impeller] Optimize away intersect clips that cover the entire pass target. by @bdero in [51736](https://github.com/flutter/engine/pull/51736)
 * Reland: [Impeller] adds a plus advanced blend for f16 pixel formats by @gaaclarke in [51756](https://github.com/flutter/engine/pull/51756)
 * [Impeller] dont clamp mipmap level to 0 with Vulkan textures. by @jonahwilliams in [51761](https://github.com/flutter/engine/pull/51761)
@@ -1078,7 +1091,9 @@ see our [CHANGELOG][].
 * [Impeller] fixed units for memory measurement by @gaaclarke in [53687](https://github.com/flutter/engine/pull/53687)
 * [Impeller] fix typo in setup for fast elliptical rrect blurs by @flar in [53673](https://github.com/flutter/engine/pull/53673)
 * Revert "Reland [DisplayList] Add support for clipOval to leverage Impeller optimization" by @jiahaog in [53705](https://github.com/flutter/engine/pull/53705)
+
 ### Android
+
 * Use the stripped Vulkan validation library in Android engine builds by default by @jason-simmons in [51628](https://github.com/flutter/engine/pull/51628)
 * Add an engine switch that controls whether the platform isolate API is available. by @jason-simmons in [51784](https://github.com/flutter/engine/pull/51784)
 * Bump Robolectric to 4.12.1 by @utzcoz in [51800](https://github.com/flutter/engine/pull/51800)
@@ -1121,7 +1136,9 @@ see our [CHANGELOG][].
 * Return a null image from ImageExternalTextureGL::CreateEGLImage if an EGL display is not available by @jason-simmons in [53594](https://github.com/flutter/engine/pull/53594)
 * Fix AccessibilityFeatures.disableAnimations flag on Android 12+ by @hakonber in [53428](https://github.com/flutter/engine/pull/53428)
 * Re-re-re-land "Upgrade all[most] androidx dependencies to latest" by @gmackall in [53592](https://github.com/flutter/engine/pull/53592)
+
 ### iOS
+
 * Remove _dartobservatory._tcp legacy DNS registration type by @jmagman in [51635](https://github.com/flutter/engine/pull/51635)
 * [Impeller] Enable logging a warning when the user opts out of using Impeller. by @chinmaygarde in [51849](https://github.com/flutter/engine/pull/51849)
 * Remove #if SHELL_ENABLE_METAL checks in iOS code by @jmagman in [51636](https://github.com/flutter/engine/pull/51636)
@@ -1161,7 +1178,9 @@ see our [CHANGELOG][].
 * Reland "[ios][platform_view] Use CAShapeLayer as the mask to avoid software rendering #53072" by @hellohuanlin in [53256](https://github.com/flutter/engine/pull/53256)
 * Remove FlutterUndoManagerPlugin handlers from undo manager on dealloc by @jmagman in [53553](https://github.com/flutter/engine/pull/53553)
 * [deep link][ios] Update openURL method to reflect the result from framework  by @hangyujin in [52643](https://github.com/flutter/engine/pull/52643)
+
 ### Web
+
 * [skwasm] Fix `toString` methods on Paint and ImageFilter/ColorFilter by @eyebrowsoffire in [51766](https://github.com/flutter/engine/pull/51766)
 * [web] Use viewId for text editing by @mdebbar in [51099](https://github.com/flutter/engine/pull/51099)
 * Turn struct half leading in canvaskit kitchensink test back on by @LongCatIsLooong in [50707](https://github.com/flutter/engine/pull/50707)
@@ -1234,7 +1253,9 @@ see our [CHANGELOG][].
 * Revert "[web] switch from .didGain/LoseAccessibilityFocus to .focus" by @jiahaog in [53679](https://github.com/flutter/engine/pull/53679)
 * Reland "Output .js files as ES6 modules. (#52023)" by @eyebrowsoffire in [53688](https://github.com/flutter/engine/pull/53688)
 * Reverts "Reland "Output .js files as ES6 modules. (#52023)" (#53688)" by @auto-submit in [53709](https://github.com/flutter/engine/pull/53709)
+
 ### Desktop
+
 * [macOS] Group per-view information in `FlutterCompositor` into a class by @dkwingsmt in [51738](https://github.com/flutter/engine/pull/51738)
 * [Windows] Don't always stop engine on view destruction by @loic-sharma in [51681](https://github.com/flutter/engine/pull/51681)
 * [Windows] Move keyboard initialization by @loic-sharma in [51758](https://github.com/flutter/engine/pull/51758)
@@ -1259,7 +1280,9 @@ see our [CHANGELOG][].
 * macOS fluttertextinputplugin drops selector called if no client by @chunhtai in [52495](https://github.com/flutter/engine/pull/52495)
 * Replace several NSAssert with FML_CHECK/DCHECK to unblock the build by @bc-lee in [53048](https://github.com/flutter/engine/pull/53048)
 * [macOS] Fix FlutterView cursor hit testing by @bufffun in [53171](https://github.com/flutter/engine/pull/53171)
-### Other Changes
+
+### Other changes
+
 * Remove Android API v33 tests from CI. by @matanlurey in [51751](https://github.com/flutter/engine/pull/51751)
 * Remove `--verbose` from clang_tidy execution on CI. by @matanlurey in [51760](https://github.com/flutter/engine/pull/51760)
 * Test that `clangd --check` works at HEAD. by @matanlurey in [50901](https://github.com/flutter/engine/pull/50901)
@@ -1465,7 +1488,8 @@ see our [CHANGELOG][].
 * Restore creation of engine before Linux widget is realized. by @robert-ancell in [53604](https://github.com/flutter/engine/pull/53604)
 * [skia] Use more GNI file lists by @kjlubick in [53685](https://github.com/flutter/engine/pull/53685)
 
-## New Contributors
+## New contributors
+
 * @brianquinlan made their first contribution in [52239](https://github.com/flutter/engine/pull/52239)
 * @PurplePolyhedron made their first contribution in [52156](https://github.com/flutter/engine/pull/52156)
 * @bc-lee made their first contribution in [52326](https://github.com/flutter/engine/pull/52326)
