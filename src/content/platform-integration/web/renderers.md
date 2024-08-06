@@ -21,11 +21,11 @@ your needs. The two renderers are:
 The `--web-renderer` command line option takes one of three values:
 `canvaskit`, `html`, or `auto`.
 
-* `canvaskit` (soon to be default) - always use the CanvasKit renderer
-* `auto` (default) - automatically chooses which renderer to use. This option
+* `canvaskit` (default) - always use the CanvasKit renderer
+* `html` - always use the HTML renderer
+* `auto` - automatically chooses which renderer to use. This option
     chooses the HTML renderer when the app is running in a mobile browser, and
     CanvasKit renderer when the app is running in a desktop browser.
-* `html` - always use the HTML renderer
 
 This flag can be used with the `run` or `build` subcommands. For example:
 
@@ -98,22 +98,22 @@ mobile browsers and optimizing for performance on desktop browsers.
 
 ## Examples
 
-Run in Chrome using the default renderer option (`auto`):
+Run in Chrome using the default renderer option (`canvaskit`):
 
 ```console
 flutter run -d chrome
 ```
 
-Build your app in release mode, using the default (`auto`) option:
+Build your app in release mode, using the default (`canvaskit`) option:
 
 ```console
 flutter build web --release
 ```
 
-Build your app in release mode, using just the CanvasKit renderer:
+Build your app in release mode, using the `auto` renderer option:
 
 ```console
-flutter build web --web-renderer canvaskit --release
+flutter build web --web-renderer auto --release
 ```
 
 Run your app in profile mode using the HTML renderer:
