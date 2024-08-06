@@ -1,9 +1,9 @@
 ---
 title: New APIs for Android plugins that render to a Surface
-description: >
-  Adds a new API, `SurfaceProducer`, to the Android embedding API, which
-  opaquely handles the creation and management of a `Surface` for plugins. For
-  [Impeller][], use of this API is recommended.
+description: >-
+  Adds a new API, SurfaceProducer, to the Android embedding API, which
+  opaquely handles the creation and management of a `Surface` for plugins.
+  For Impeller, use of this API is recommended.
 ---
 
 ## Summary
@@ -77,7 +77,7 @@ A full example of using this new API can be found in [PR 6989][] for the
 
 ## Timeline
 
-Landed in version: TBD
+Landed in version: 3.22
 
 :::note
 This feature landed in the _previous_ version of the SDK but was non-functional;

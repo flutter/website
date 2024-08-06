@@ -34,18 +34,25 @@ release, and listed in alphabetical order:
 ### Not yet released to stable
 
 * [Remove invalid parameters for `InputDecoration.collapsed`][]
-* [Navigator's page APIs breaking change][]
-* [Generic types in `PopScope`][]
 * [Stop generating `AssetManifest.json`][]
 * [Deprecate `TextField.canRequestFocus`][]
-* [Deprecate `ButtonBar` in favor of `OverflowBar`][]
 
 [Remove invalid parameters for `InputDecoration.collapsed`]: /release/breaking-changes/input-decoration-collapsed
-[Navigator's page APIs breaking change]: /release/breaking-changes/navigator-and-page-api
-[Generic types in `PopScope`]: /release/breaking-changes/popscope-with-result
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
+
+<a id="released-in-flutter-324" aria-hidden="true"></a>
+### Released in Flutter 3.24
+
+* [Navigator's page APIs breaking change][]
+* [Generic types in `PopScope`][]
+* [Deprecate `ButtonBar` in favor of `OverflowBar`][]
+* [New APIs for Android plugins that render to a `Surface`][]
+
+[Navigator's page APIs breaking change]: /release/breaking-changes/navigator-and-page-api
+[Generic types in `PopScope`]: /release/breaking-changes/popscope-with-result
 [Deprecate `ButtonBar` in favor of `OverflowBar`]: /release/breaking-changes/deprecate-buttonbar
+[New APIs for Android plugins that render to a `Surface`]: /release/breaking-changes/android-surface-plugins
 
 <a id="released-in-flutter-322" aria-hidden="true"></a>
 ### Released in Flutter 3.22
@@ -54,7 +61,6 @@ release, and listed in alphabetical order:
 * [Rename `MaterialState` to `WidgetState`][]
 * [Introduce new `ColorScheme` roles][]
 * [Dropping support for Android KitKat][]
-* [New APIs for Android plugins that render to a `Surface`][]
 * [Nullable `PageView.controller`][]
 * [Rename `MemoryAllocations` to `FlutterMemoryAllocations`][]
 
@@ -62,7 +68,6 @@ release, and listed in alphabetical order:
 [Rename `MaterialState` to `WidgetState`]: /release/breaking-changes/material-state
 [Introduce new `ColorScheme` roles]: /release/breaking-changes/new-color-scheme-roles
 [Dropping support for Android KitKat]: /release/breaking-changes/android-kitkat-deprecation
-[New APIs for Android plugins that render to a `Surface`]: /release/breaking-changes/android-surface-plugins
 [Nullable `PageView.controller`]: /release/breaking-changes/pageview-controller
 [Rename `MemoryAllocations` to `FlutterMemoryAllocations`]: /release/breaking-changes/flutter-memory-allocations
 
