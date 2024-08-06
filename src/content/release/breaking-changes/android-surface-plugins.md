@@ -86,7 +86,7 @@ In order to correct the rotation, you will need to rotate the preview with
 respect to the camera sensor orientation and the device orientation according
 to the equation:
 
-```
+```plaintext
 rotation = (sensorOrientationDegrees - deviceOrientationDegrees * sign + 360) % 360
 ```
 
