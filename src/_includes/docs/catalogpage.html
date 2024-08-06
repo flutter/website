@@ -12,7 +12,7 @@
     {% if category.subcategories and category.subcategories.size != 0 -%}
     <ul>
         {% for sub in category.subcategories -%}
-            <li><a href="#{{sub.name}}">{{sub.name}}</a></li>
+            <li><a href="#{{sub.name | slugify}}">{{sub.name}}</a></li>
         {% endfor -%}
     </ul>
     {% endif -%}
@@ -47,7 +47,7 @@
     {% for sub in category.subcategories -%}
         {% assign components = catalog.widgets | widget_filter: "subcategories", sub.name %}
         {% if components.size != 0 -%}
-        <h2 id="{{sub.name}}">{{sub.name}}</h2>
+        <h2 id="{{sub.name | slugify}}">{{sub.name}}</h2>
         <div class="card-grid">
             {% for comp in components -%}
                 <div class="card">
