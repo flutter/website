@@ -90,11 +90,11 @@ targetmin:
 ## Software current versions
 
 appnow:
-  flutter: '3.25.0'
+  flutter: '3.24.0'
   vscode: '1.92'
   android_studio: '2024.1'
   android_sdk: '35.0.1'
-  intellij: '2024.2'
+  intellij: '2024.1'
   powershell: 5.1
   xcode: '15'
   ios: '17'
