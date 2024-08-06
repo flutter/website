@@ -77,9 +77,14 @@ A full example of using this new API can be found in [PR 6989][] for the
 
 ## Note on camera previews
 
-If your plugin implements a camera preview, your migration may also require fixing the rotation of that preview. This is because `Surface`s produced by the `SurfaceProducer` may not contain the transformation information that Android libraries need to correctly rotate the preview.
+If your plugin implements a camera preview, your migration may also require
+fixing the rotation of that preview. This is because `Surface`s produced by the
+`SurfaceProducer` may not contain the transformation information that Android
+libraries need to correctly rotate the preview automatically.
 
-In order to correct the rotation, you will need to manually correct the preview by rotating it with respect to the camera sensor orientation and the device orientation according to the equation:
+In order to correct the rotation, you will need to rotate the preview with
+respect to the camera sensor orientation and the device orientation according
+to the equation:
 
 ```
 rotation = (sensorOrientationDegrees - deviceOrientationDegrees * sign + 360) % 360
@@ -87,7 +92,9 @@ rotation = (sensorOrientationDegrees - deviceOrientationDegrees * sign + 360) % 
 
 where `sign` is 1 for front-facing cameras and -1 for back-facing cameras.
 
-For more information on this calculation see the [Android orientation calculation documentation][]. For an example of making this fix, see [the PR we used to fix `camera_android_camerax`][].
+For more information on this calculation see the
+[Android orientation calculation documentation][]. For an example of making
+this fix, see [the PR we used to fix `camera_android_camerax`][].
 
 ## Timeline
 
