@@ -1,5 +1,5 @@
 ---
-title: What's new
+title: What's new in the docs
 description: >-
   A list of what's new on docs.flutter.dev and related documentation sites.
 ---
@@ -31,13 +31,12 @@ and the [Flutter 3.24 technical blog post][3.24-tech].
 You might also check out the [Dart 3.5 release][] blog post.
 
 [3.24-tech]: {{site.flutter-medium}}/whats-new-in-flutter-3-24-6c040f87d1e4
-[3.24-umbrella]: {{site.flutter-medium}}/xxx
-[Dart 3.5 release]: {{site.medium}}/dartlang/xxx
+[3.24-umbrella]: {{site.flutter-medium}}/flutter-3-24-dart-3-5-204b7d20c45d
+[Dart 3.5 release]: {{site.medium}}/dartlang/dart-3-5-6ca36259fa2f
 
 **Docs updated or added since the 3.22 release**
 
-This website release includes quite a few
-important updates!
+This website release includes several important updates!
 
 * An updated widget catalog:
   * Added 37 missing widgets to the [Cupertino catalog][],
@@ -47,36 +46,38 @@ important updates!
     also have updated behaviors.
 * New guides on adding support for Swift Package Manager
   to [iOS plugins][] and [iOS apps][]. (Note that,
-  until all of your dependencies are migrated, Flutter
-  will continue to use CocoaPods.)
+  until all of your app's dependencies are migrated,
+  Flutter will continue to use CocoaPods.)
 * Updated web docs:
   * [Embedding Flutter on the web][], including how to
     enable multi-view mode
   * [Embedding web content into a Flutter app][]
 * Update for Android 14:
-  If you are using an Android device that uses
+  If you are using an Android device that runs on
   Android 14, you can now support Android's
   [predictive back gesture][].
 * Updates for iOS 18:
   The iOS 18 release is in beta, and is expected to
   occur before the next Flutter stable release.
-  These iOS 18 features are already enabled in Flutter:
+  These iOS 18 features are already enabled in Flutter
+  and are now mentioned in the docs:
   * Use an [iOS app extension][] in your Flutter app
     to create a custom toggle. Your users can then
     add your app's toggle when customizing their
     Control Center.
   * [Tinted app icons][] are supported
-  * 
 * Two of the [First week experience][] pages are updated:
   * [Flutter fundamentals][]
   * [Layout][]
-* Also check out the release notes for the
-  [DevTools 2.37.2][] and [DevTools 2.38.0][] releases.
+  We hope these pages are helpful for new Flutter developers.
+* DevTools also has updates. Check out the release notes for
+  [DevTools 2.35.0][], [DevTools 2.36.0][], and [DevTools 2.37.2][].
 
 [`CarouselView`]: https://main-api.flutter.dev/flutter/material/CarouselView-class.html
 [Cupertino catalog]: /ui/widgets/cupertino
+[DevTools 2.35.0]: /tools/devtools/release-notes/release-notes-2.35.0
+[DevTools 2.36.0]: /tools/devtools/release-notes/release-notes-2-36.0
 [DevTools 2.37.2]: /tools/devtools/release-notes/release-notes-2.37.2
-[DevTools 2.38.0]: /tools/devtools/release-notes/release-notes-2.38.0
 [Embedding Flutter on the web]: /platform-integration/web/embedding-flutter-web
 [Embedding web content into a Flutter app]: /platform-integration/web/web-content-in-flutter
 [First week experience]: /get-started/fwe
@@ -87,6 +88,15 @@ important updates!
 [Layout]: /get-started/fwe/layout
 [predictive back gesture]: /platform-integration/android/predictive-back
 [Tinted app icons]: /deployment/ios#add-an-app-icon
+
+## Other
+* If you are interested in the new, experimental
+  Flutter GPU API, check out the [Flutter GPU blog post][].
+* The Flutter wiki has been divided up and moved into the
+  relevant GitHub repos, making it easier to keep that
+  info up to date.
+
+[Flutter GPU blog post]: {{site.flutter-medium}}/getting-started-with-flutter-gpu-f33d497b7c11
 
 ## 14 May 2024: Google I/O 3.22 release
 
