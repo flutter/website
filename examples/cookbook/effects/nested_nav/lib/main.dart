@@ -133,7 +133,7 @@ class SetupFlowState extends State<SetupFlow> {
   Widget build(BuildContext context) {
     return PopScope(
       canPop: false,
-      onPopInvoked: (didPop) async {
+      onPopInvokedWithResult: (didPop, _) async {
         if (didPop) return;
 
         if (await _isExitDesired() && context.mounted) {
@@ -151,30 +151,26 @@ class SetupFlowState extends State<SetupFlow> {
     );
   }
 
-  Route _onGenerateRoute(RouteSettings settings) {
-    late Widget page;
-    switch (settings.name) {
-      case routeDeviceSetupStartPage:
-        page = WaitingPage(
+  Route<Widget> _onGenerateRoute(RouteSettings settings) {
+    final page = switch (settings.name) {
+      routeDeviceSetupStartPage => WaitingPage(
           message: 'Searching for nearby bulb...',
           onWaitComplete: _onDiscoveryComplete,
-        );
-      case routeDeviceSetupSelectDevicePage:
-        page = SelectDevicePage(
+        ),
+      routeDeviceSetupSelectDevicePage => SelectDevicePage(
           onDeviceSelected: _onDeviceSelected,
-        );
-      case routeDeviceSetupConnectingPage:
-        page = WaitingPage(
+        ),
+      routeDeviceSetupConnectingPage => WaitingPage(
           message: 'Connecting...',
           onWaitComplete: _onConnectionEstablished,
-        );
-      case routeDeviceSetupFinishedPage:
-        page = FinishedPage(
+        ),
+      routeDeviceSetupFinishedPage => FinishedPage(
           onFinishPressed: _exitSetup,
-        );
-    }
+        ),
+      _ => throw StateError('Unexpected route name: ${settings.name}!')
+    };
 
-    return MaterialPageRoute<dynamic>(
+    return MaterialPageRoute(
       builder: (context) {
         return page;
       },
