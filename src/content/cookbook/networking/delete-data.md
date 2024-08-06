@@ -42,7 +42,7 @@ use something you already know, for example `id = 1`.
 ```dart
 Future<http.Response> deleteAlbum(String id) async {
   final http.Response response = await http.delete(
-    Uri.parse('https://jsonplaceholder.typicode.com/albums/$id'),
+    Uri.https('jsonplaceholder.typicode.com', 'albums/$id'),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },
@@ -104,7 +104,7 @@ method to notify our screen that the data has been deleted.
 ```dart
 Future<Album> deleteAlbum(String id) async {
   final http.Response response = await http.delete(
-    Uri.parse('https://jsonplaceholder.typicode.com/albums/$id'),
+    Uri.https('jsonplaceholder.typicode.com', 'albums/$id'),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },
@@ -147,7 +147,7 @@ import 'package:http/http.dart' as http;
 
 Future<Album> fetchAlbum() async {
   final response = await http.get(
-    Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
+    Uri.https('jsonplaceholder.typicode.com', 'albums/1'),
   );
 
   if (response.statusCode == 200) {
@@ -161,7 +161,7 @@ Future<Album> fetchAlbum() async {
 
 Future<Album> deleteAlbum(String id) async {
   final http.Response response = await http.delete(
-    Uri.parse('https://jsonplaceholder.typicode.com/albums/$id'),
+    Uri.https('jsonplaceholder.typicode.com', 'albums/$id'),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },

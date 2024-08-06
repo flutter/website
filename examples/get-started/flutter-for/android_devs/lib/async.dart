@@ -61,7 +61,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   // #docregion load-data
   Future<void> loadData() async {
-    var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
+    var dataURL = Uri.https('jsonplaceholder.typicode.com', 'posts');
     http.Response response = await http.get(dataURL);
     setState(() {
       widgets = jsonDecode(response.body);

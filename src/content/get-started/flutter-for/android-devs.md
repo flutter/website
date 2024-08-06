@@ -776,7 +776,7 @@ using `async`/`await` and letting Dart do the heavy lifting:
 <?code-excerpt "lib/async.dart (load-data)"?>
 ```dart
 Future<void> loadData() async {
-  var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
+  var dataURL = Uri.https('jsonplaceholder.typicode.com', 'posts');
   http.Response response = await http.get(dataURL);
   setState(() {
     widgets = jsonDecode(response.body);
@@ -853,7 +853,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   }
 
   Future<void> loadData() async {
-    var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
+    var dataURL = Uri.https('jsonplaceholder.typicode.com', 'posts');
     http.Response response = await http.get(dataURL);
     setState(() {
       widgets = jsonDecode(response.body);
@@ -887,7 +887,7 @@ and `await` on long-running tasks inside the function:
 <?code-excerpt "lib/async.dart (load-data)"?>
 ```dart
 Future<void> loadData() async {
-  var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
+  var dataURL = Uri.https('jsonplaceholder.typicode.com', 'posts');
   http.Response response = await http.get(dataURL);
   setState(() {
     widgets = jsonDecode(response.body);
@@ -1120,7 +1120,7 @@ import 'dart:developer' as developer;
 import 'package:http/http.dart' as http;
 
 Future<void> loadData() async {
-  var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
+  var dataURL = Uri.https('jsonplaceholder.typicode.com', 'posts');
   http.Response response = await http.get(dataURL);
   developer.log(response.body);
 }
@@ -1223,7 +1223,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   }
 
   Future<void> loadData() async {
-    var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
+    var dataURL = Uri.https('jsonplaceholder.typicode.com', 'posts');
     http.Response response = await http.get(dataURL);
     setState(() {
       widgets = jsonDecode(response.body);
@@ -1595,7 +1595,7 @@ In Flutter there are two ways of adding touch listeners:
   ```dart
   class SampleTapApp extends StatelessWidget {
     const SampleTapApp({super.key});
-  
+
     @override
     Widget build(BuildContext context) {
       return Scaffold(

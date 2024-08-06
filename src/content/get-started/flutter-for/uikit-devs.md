@@ -1179,7 +1179,7 @@ In Flutter, there are two ways of adding touch listeners:
    ```dart
   class SampleTapApp extends StatelessWidget {
     const SampleTapApp({super.key});
-  
+
     @override
     Widget build(BuildContext context) {
       return Scaffold(
@@ -1704,7 +1704,7 @@ the heavy lifting:
 <?code-excerpt "lib/async.dart (load-data)"?>
 ```dart
 Future<void> loadData() async {
-  final Uri dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
+  final Uri dataURL = Uri.https('jsonplaceholder.typicode.com', 'posts');
   final http.Response response = await http.get(dataURL);
   setState(() {
     data = jsonDecode(response.body);
@@ -1760,7 +1760,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   }
 
   Future<void> loadData() async {
-    final Uri dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
+    final Uri dataURL = Uri.https('jsonplaceholder.typicode.com', 'posts');
     final http.Response response = await http.get(dataURL);
     setState(() {
       data = jsonDecode(response.body);
@@ -1812,7 +1812,7 @@ and `await` on long-running tasks inside the function:
 <?code-excerpt "lib/async.dart (load-data)"?>
 ```dart
 Future<void> loadData() async {
-  final Uri dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
+  final Uri dataURL = Uri.https('jsonplaceholder.typicode.com', 'posts');
   final http.Response response = await http.get(dataURL);
   setState(() {
     data = jsonDecode(response.body);
@@ -2039,7 +2039,7 @@ call `await` on the `async` function `http.get()`:
 <?code-excerpt "lib/progress.dart (load-data)"?>
 ```dart
 Future<void> loadData() async {
-  final Uri dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
+  final Uri dataURL = Uri.https('jsonplaceholder.typicode.com', 'posts');
   final http.Response response = await http.get(dataURL);
   setState(() {
     data = jsonDecode(response.body);
@@ -2105,7 +2105,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   bool get showLoadingDialog => data.isEmpty;
 
   Future<void> loadData() async {
-    final Uri dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
+    final Uri dataURL = Uri.https('jsonplaceholder.typicode.com', 'posts');
     final http.Response response = await http.get(dataURL);
     setState(() {
       data = jsonDecode(response.body);

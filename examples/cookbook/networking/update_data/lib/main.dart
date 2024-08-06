@@ -9,7 +9,7 @@ import 'package:http/http.dart' as http;
 // #docregion fetchAlbum
 Future<Album> fetchAlbum() async {
   final response = await http.get(
-    Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
+    Uri.https('jsonplaceholder.typicode.com', 'albums/1'),
   );
 
   if (response.statusCode == 200) {
@@ -27,7 +27,7 @@ Future<Album> fetchAlbum() async {
 // #docregion updateAlbum
 Future<Album> updateAlbum(String title) async {
   final response = await http.put(
-    Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
+    Uri.https('jsonplaceholder.typicode.com', 'albums/1'),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },

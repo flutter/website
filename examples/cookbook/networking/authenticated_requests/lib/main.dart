@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 Future<Album> fetchAlbum() async {
   // #docregion get
   final response = await http.get(
-    Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
+    Uri.https('jsonplaceholder.typicode.com', 'albums/1'),
     // Send authorization headers to the backend.
     headers: {
       HttpHeaders.authorizationHeader: 'Basic your_api_token_here',

@@ -42,7 +42,7 @@ Import the http package.
 import 'package:http/http.dart' as http;
 ```
 
-If you are deploying to Android, edit your `AndroidManifest.xml` file to 
+If you are deploying to Android, edit your `AndroidManifest.xml` file to
 add the Internet permission.
 
 ```xml
@@ -50,7 +50,7 @@ add the Internet permission.
 <uses-permission android:name="android.permission.INTERNET" />
 ```
 
-Likewise, if you are deploying to macOS, edit your 
+Likewise, if you are deploying to macOS, edit your
 `macos/Runner/DebugProfile.entitlements` and `macos/Runner/Release.entitlements`
 files to include the network client entitlement.
 
@@ -68,7 +68,7 @@ This recipe covers how to fetch a sample album from the
 <?code-excerpt "lib/main_step1.dart (fetchAlbum)"?>
 ```dart
 Future<http.Response> fetchAlbum() {
-  return http.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
+  return http.get(Uri.https('jsonplaceholder.typicode.com', 'albums/1'));
 }
 ```
 
@@ -149,7 +149,7 @@ function to return a `Future<Album>`:
 ```dart
 Future<Album> fetchAlbum() async {
   final response = await http
-      .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
+      .get(Uri.https('jsonplaceholder.typicode.com', 'albums/1'));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
@@ -246,7 +246,7 @@ it's not recommended to put an API call in a `build()` method.
 Flutter calls the `build()` method every time it needs
 to change anything in the view,
 and this happens surprisingly often.
-The `fetchAlbum()` method, if placed inside `build()`, is repeatedly 
+The `fetchAlbum()` method, if placed inside `build()`, is repeatedly
 called on each rebuild causing the app to slow down.
 
 Storing the `fetchAlbum()` result in a state variable ensures that
@@ -273,7 +273,7 @@ import 'package:http/http.dart' as http;
 
 Future<Album> fetchAlbum() async {
   final response = await http
-      .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
+      .get(Uri.https('jsonplaceholder.typicode.com', 'albums/1'));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
