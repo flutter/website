@@ -3,7 +3,7 @@ description: Some code to demonstrate null safety.
 version: 1.0.0
 
 environment:
-  sdk: ^3.4.0
+  sdk: ^3.5.0
 
 dependencies:
   flutter:
