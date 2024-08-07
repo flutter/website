@@ -38,16 +38,16 @@ class HomePage extends StatelessWidget {
       ),
       child: Center(
         child:
-          // #docregion styling-text
-          Text(
-            'Hello, world!',
-            style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-              color: CupertinoColors.systemYellow,
-            ),
+        // #docregion styling-text
+        Text(
+          'Hello, world!',
+          style: TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+            color: CupertinoColors.systemYellow,
           ),
-          // #enddocregion styling-text
+        ),
+        // #enddocregion styling-text
       ),
     );
   }
