@@ -963,7 +963,7 @@ call your navigation routes using their names.
 
     <?code-excerpt "lib/navigation.dart (list-view)"?>
     ```dart
-        ListView.builder(
+    ListView.builder(
       itemCount: mockPersons.length,
       itemBuilder: (context, index) {
         final person = mockPersons.elementAt(index);
@@ -1098,7 +1098,7 @@ In **Flutter**, use the [`url_launcher`][] plugin.
 
 <?code-excerpt "lib/openapp.dart (open-app-example)"?>
 ```dart
-    CupertinoButton(
+CupertinoButton(
   onPressed: () async {
     await launchUrl(
       Uri.parse('https://google.com'),
@@ -1139,7 +1139,7 @@ of the `App` class:
 
 <?code-excerpt "lib/cupertino_themes.dart (theme)"?>
 ```dart
-    CupertinoApp(
+CupertinoApp(
   theme: CupertinoThemeData(
     brightness: Brightness.dark,
   ),
@@ -1175,7 +1175,7 @@ of the `style` parameter of the `Text` widget.
 
 <?code-excerpt "lib/cupertino_themes.dart (styling-text)"?>
 ```dart
-    Text(
+Text(
   'Hello, world!',
   style: TextStyle(
     fontSize: 30,
@@ -1284,7 +1284,7 @@ following example:
 
 <?code-excerpt "lib/stylingbutton.dart (custom-font)"?>
 ```dart
-        Text(
+Text(
   'Cupertino',
   style: TextStyle(
     fontSize: 40,
