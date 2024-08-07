@@ -84,7 +84,7 @@ class HomePage extends StatelessWidget {
       // #docregion scroll-example
       SingleChildScrollView(
         child: Column(
-            children: mockPersons
+          children: mockPersons
               .map(
                 (person) => PersonView(
                   person: person,
