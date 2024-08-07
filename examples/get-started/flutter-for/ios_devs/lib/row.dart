@@ -24,15 +24,15 @@ class HomePage extends StatelessWidget {
     return const Scaffold(
       body: Center(
         child:
-        // #docregion row
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(CupertinoIcons.globe),
-            Text('Hello, world!'),
-          ],
-        ),
-        // #enddocregion row
+          // #docregion row
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(CupertinoIcons.globe),
+              Text('Hello, world!'),
+            ],
+          ),
+          // #enddocregion row
       ),
     );
   }
