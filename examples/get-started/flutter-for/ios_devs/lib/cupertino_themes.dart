@@ -41,7 +41,7 @@ class HomePage extends StatelessWidget {
           // #docregion styling-text
           Text(
             'Hello, world!',
-              style: TextStyle(
+            style: TextStyle(
               fontSize: 30,
               fontWeight: FontWeight.bold,
               color: CupertinoColors.systemYellow,
