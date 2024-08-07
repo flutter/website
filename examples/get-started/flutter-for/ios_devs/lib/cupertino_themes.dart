@@ -14,14 +14,14 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const
-        // #docregion theme
-        CupertinoApp(
-      theme: CupertinoThemeData(
-        brightness: Brightness.dark,
-      ),
-      home: HomePage(),
-    );
-    // #enddocregion theme
+      // #docregion theme
+      CupertinoApp(
+        theme: CupertinoThemeData(
+          brightness: Brightness.dark,
+        ),
+        home: HomePage(),
+      );
+      // #enddocregion theme
   }
 }
 
