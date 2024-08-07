@@ -55,7 +55,6 @@ void main() {
           }
           if (route.didPop) {
             pages.remove(route.settings);
-            pages = pages.toList();
             return true;
           }
           return false;
@@ -83,7 +82,6 @@ void main() {
         pages: pages,
         onDidRemovePage: (Page<Object?> page) {
           pages.remove(page);
-          pages = pages.toList();
         },
       ),
     ),
