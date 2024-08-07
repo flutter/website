@@ -31,12 +31,12 @@ class SignatureState extends State<Signature> {
       },
       onPanEnd: (details) => _points.add(null),
       child:
-        // #docregion custom-paint
-        CustomPaint(
-          painter: SignaturePainter(_points),
-          size: Size.infinite,
-        ),
-        // #enddocregion custom-paint
+      // #docregion custom-paint
+      CustomPaint(
+        painter: SignaturePainter(_points),
+        size: Size.infinite,
+      ),
+      // #enddocregion custom-paint
     );
   }
 }
