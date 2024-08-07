@@ -34,12 +34,12 @@ class _MyHomePageState extends State<MyHomePage> {
           turns: turns,
           curve: Curves.easeIn,
           child: TextButton(
-            onPressed: () {
-              setState(() {
-                turns += .125;
-              });
-            },
-            child: const Text('Tap me!')),
+              onPressed: () {
+                setState(() {
+                  turns += .125;
+                });
+              },
+              child: const Text('Tap me!')),
         ),
         // #enddocregion animated-button
       ),
