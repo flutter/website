@@ -33,11 +33,11 @@ class HomePage extends StatelessWidget {
           middle:
           // #docregion custom-font
           Text(
-            'Cupertino',
-            style: TextStyle(
-              fontSize: 40,
-              fontFamily: 'BungeeSpice',
-            ),
+              'Cupertino',
+              style: TextStyle(
+               fontSize: 40,
+               fontFamily: 'BungeeSpice',
+              ),
           )
           // #enddocregion custom-font
           ),
