@@ -28,20 +28,20 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: Center(
         child:
-        // #docregion animated-button
-        AnimatedRotation(
-          duration: const Duration(seconds: 1),
-          turns: turns,
-          curve: Curves.easeIn,
-          child: TextButton(
+          // #docregion animated-button
+          AnimatedRotation(
+            duration: const Duration(seconds: 1),
+            turns: turns,
+            curve: Curves.easeIn,
+            child: TextButton(
               onPressed: () {
                 setState(() {
                   turns += .125;
                 });
               },
               child: const Text('Tap me!')),
-        ),
-        // #enddocregion animated-button
+          ),
+          // #enddocregion animated-button
       ),
     );
   }
