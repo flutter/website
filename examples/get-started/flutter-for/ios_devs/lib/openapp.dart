@@ -31,18 +31,18 @@ class HomePage extends StatelessWidget {
       child: SafeArea(
         child: Center(
           child:
-            // #docregion open-app-example
-            CupertinoButton(
-              onPressed: () async {
-                await launchUrl(
-                  Uri.parse('https://google.com'),
-                );
-              },
-              child: const Text(
-                'Open website',
-              ),
+          // #docregion open-app-example
+          CupertinoButton(
+            onPressed: () async {
+              await launchUrl(
+                Uri.parse('https://google.com'),
+              );
+            },
+            child: const Text(
+              'Open website',
             ),
-            // #enddocregion open-app-example
+          ),
+          // #enddocregion open-app-example
         ),
       ),
     );
