@@ -81,8 +81,8 @@ class HomePage extends StatelessWidget {
       // inside a scroll view of type
       // SingleChildScrollView (equivalent of a ScrollView in SwiftUI).
       body:
-          // #docregion scroll-example
-          SingleChildScrollView(
+      // #docregion scroll-example
+      SingleChildScrollView(
         child: Column(
           children: mockPersons
               .map(
