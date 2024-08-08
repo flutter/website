@@ -39,9 +39,9 @@ Code before migration:
 ```dart
 import 'package:flutter/material.dart';
 
-const MaterialPage<void> page1 = MaterialPage<void>(child: PlaceHolder());
-const MaterialPage<void> page2 = MaterialPage<void>(child: PlaceHolder());
-const MaterialPage<void> page3 = MaterialPage<void>(child: PlaceHolder());
+final MaterialPage<void> page1 = MaterialPage<void>(child: Placeholder());
+final MaterialPage<void> page2 = MaterialPage<void>(child: Placeholder());
+final MaterialPage<void> page3 = MaterialPage<void>(child: Placeholder());
 
 void main() {
   final List<Page<void>> pages = <Page<void>>[page1, page2, page3];
@@ -70,9 +70,9 @@ Code after migration:
 ```dart
 import 'package:flutter/material.dart';
 
-const MaterialPage<void> page1 = MaterialPage<void>(child: PlaceHolder());
-const MaterialPage<void> page2 = MaterialPage<void>(canPop: false, child: PlaceHolder());
-const MaterialPage<void> page3 = MaterialPage<void>(child: PlaceHolder());
+final MaterialPage<void> page1 = MaterialPage<void>(child: Placeholder());
+final MaterialPage<void> page2 = MaterialPage<void>(canPop: false, child: Placeholder());
+final MaterialPage<void> page3 = MaterialPage<void>(child: Placeholder());
 
 void main() {
   final List<Page<void>> pages = <Page<void>>[page1, page2, page3];
