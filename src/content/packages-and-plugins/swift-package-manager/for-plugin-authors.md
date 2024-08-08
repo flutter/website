@@ -38,8 +38,8 @@ This guide shows how to add Swift Package Manager support to a plugin that
 already supports CocoaPods.
 This ensures the plugin is usable by all Flutter projects.
 
-Flutter plugins should _both_ Swift Package Manager and CocoaPods until further
-notice.
+Flutter plugins should support _both_ Swift Package Manager and CocoaPods until
+further notice.
 
 Swift Package Manager adoption will be gradual.
 Plugins that don't support CocoaPods won't be usable by projects that haven't
