@@ -249,6 +249,8 @@ To disable R8, pass the `--no-shrink` flag to
 :::note
 Obfuscation and minification can considerably extend compile time
 of the Android application.
+
+`--[no-]shrink` flag has no effect. Code shrinking is always enabled in release builds. To learn more, see: [Shrink, obfuscate, and optimize your app](https://developer.android.com/studio/build/shrink-code)
 :::
 
 ## Enable multidex support
