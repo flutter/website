@@ -186,7 +186,7 @@ You can use the [`Display`][] API, introduced in
 Flutter 3.13, which contains the size,
 pixel ratio, and the refresh rate of the physical device. 
 
-[`Display`]: https://main-api.flutter.dev/flutter/dart-ui/Display-class.html
+[`Display`]: {{site.api}}/flutter/dart-ui/Display-class.html
 
 The following sample code retrieves a `Display` object:
 

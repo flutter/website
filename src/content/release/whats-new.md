@@ -1,5 +1,5 @@
 ---
-title: What's new
+title: What's new in the docs
 description: >-
   A list of what's new on docs.flutter.dev and related documentation sites.
 ---
@@ -10,9 +10,6 @@ Find past what's new information on the
 [what's new archive][] page.
 You might also check out the
 Flutter SDK [release notes][].
-Also, check out the [What's new in Flutter][]
-and [Flutter at Google I/O 2024 in 5 minutes][]
-videos from Google I/O!
 
 To stay on top of Flutter announcements including
 breaking changes,
@@ -24,9 +21,81 @@ and review the [Dart changelog][].
 [Dart Announce]: {{site.groups}}/a/dartlang.org/g/announce
 [Dart changelog]: {{site.github}}/dart-lang/sdk/blob/main/CHANGELOG.md
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
-[Flutter at Google I/O 2024 in 5 minutes]: {{site.youtube-site}}/watch?v=x2WOHonEwqM
 [release notes]: /release/release-notes
-[What's new in Flutter]: {{site.youtube-site}}/watch?v=lpnKWK-KEYs
+
+## 07 August 2024: I/O Connect Beijing 3.24 release
+
+Flutter 3.24 is live! For more information,
+check out the [Flutter 3.24 umbrella blog post][3.24-umbrella]
+and the [Flutter 3.24 technical blog post][3.24-tech].
+You might also check out the [Dart 3.5 release][] blog post.
+
+[3.24-tech]: {{site.flutter-medium}}/whats-new-in-flutter-3-24-6c040f87d1e4
+[3.24-umbrella]: {{site.flutter-medium}}/flutter-3-24-dart-3-5-204b7d20c45d
+[Dart 3.5 release]: {{site.medium}}/dartlang/dart-3-5-6ca36259fa2f
+
+**Docs updated or added since the 3.22 release**
+
+This website release includes several important updates!
+
+* An updated widget catalog:
+  * Added 37 missing widgets to the [Cupertino catalog][],
+    and a new screenshot for the updated `CupertinoActionSheet` widget.
+  * Added the new [`CarouselView`][] widget.
+  * `CupertinoButton` and `CupertinoTextField`
+    also have updated behaviors.
+* New guides on adding support for Swift Package Manager
+  to [iOS plugins][] and [iOS apps][]. (Note that,
+  until all of your app's dependencies are migrated,
+  Flutter will continue to use CocoaPods.)
+* Updated web docs:
+  * [Embedding Flutter on the web][], including how to
+    enable multi-view mode
+  * [Embedding web content into a Flutter app][]
+* Update for Android 14:
+  If you are using an Android device that runs on
+  Android 14, you can now support Android's
+  [predictive back gesture][].
+* Updates for iOS 18:
+  The iOS 18 release is in beta at the time of this release.
+  These iOS 18 features are already enabled in Flutter
+  and are now mentioned in the docs:
+  * Use an [iOS app extension][] in your Flutter app
+    to create a custom toggle. Your users can then
+    add your app's toggle when customizing their
+    Control Center.
+  * [Tinted app icons][] are supported
+* Two of the [First week experience][] pages are updated:
+  * [Flutter fundamentals][]
+  * [Layout][]
+  We hope these pages are helpful for new Flutter developers.
+* DevTools also has updates. Check out the release notes for
+  [DevTools 2.35.0][], [DevTools 2.36.0][], and [DevTools 2.37.2][].
+
+[`CarouselView`]: {{site.api}}/flutter/material/CarouselView-class.html
+[Cupertino catalog]: /ui/widgets/cupertino
+[DevTools 2.35.0]: /tools/devtools/release-notes/release-notes-2.35.0
+[DevTools 2.36.0]: /tools/devtools/release-notes/release-notes-2.36.0
+[DevTools 2.37.2]: /tools/devtools/release-notes/release-notes-2.37.2
+[Embedding Flutter on the web]: /platform-integration/web/embedding-flutter-web
+[Embedding web content into a Flutter app]: /platform-integration/web/web-content-in-flutter
+[First week experience]: /get-started/fwe
+[Flutter fundamentals]: /get-started/fwe/fundamentals
+[iOS app extension]: /platform-integration/ios/app-extensions
+[iOS plugins]: /packages-and-plugins/swift-package-manager/for-plugin-authors
+[iOS apps]: /packages-and-plugins/swift-package-manager/for-app-developers
+[Layout]: /get-started/fwe/layout
+[predictive back gesture]: /platform-integration/android/predictive-back
+[Tinted app icons]: /deployment/ios#add-an-app-icon
+
+## Other
+* If you are interested in the new, experimental
+  Flutter GPU API, check out the [Flutter GPU blog post][].
+* The Flutter wiki has been divided up and moved into the
+  relevant GitHub repos, making it easier to keep that
+  info up to date.
+
+[Flutter GPU blog post]: {{site.flutter-medium}}/getting-started-with-flutter-gpu-f33d497b7c11
 
 ## 14 May 2024: Google I/O 3.22 release
 
@@ -95,52 +164,6 @@ To learn more, check out [dart.dev/go/macros][].
 [Support for WebAssembly (Wasm)]: /platform-integration/web/wasm
 [Transforming assets at build time]: /ui/assets/asset-transformation
 [Validate deep links]: /tools/devtools/deep-links
-
-**Articles**
-
-The following articles were published on the [Flutter Medium][]
-publication since Flutter 3.19:
-
-[Flutter Medium]: {{site.flutter-medium}}
-
-## 15 February 2024: Valentine's-Day-adjacent 3.19 release
-
-Flutter 3.19 is live! For more information,
-check out the [Flutter 3.19 umbrella blog post][3.19-umbrella]
-and the [Flutter 3.19 technical blog post][3.19-tech].
-
-You might also check out the [Dart 3.3 release][] blog post.
-
-[3.19-tech]: {{site.flutter-medium}}/whats-new-in-flutter-3-19-58b1aae242d2
-[3.19-umbrella]: {{site.flutter-medium}}/starting-2024-strong-with-flutter-and-dart-cae9845264fe
-[Dart 3.3 release]: {{site.medium}}/dartlang/new-in-dart-3-3-extension-types-javascript-interop-and-more-325bf2bf6c13
-
-**Docs updated or added since the 3.16 release**
-
-* A new page on [migrating from Material 2 to Material 3][]
-  is added. Thanks to [@TahaTesser][] for writing this guide.
-* Material 3 uses theming in new and different ways than
-  Material 2. The [Use themes to share colors and font styles][]
-  cookbook recipe is updated to reflect these changes.
-* The [Flutter install][] pages have been updated. Please
-  [let us know][] if you have any feedback.
-* The [Concurrency and isolates][] page has been reworked.
-
-[@TahaTesser]: {{site.github}}/TahaTesser
-[Concurrency and isolates]: /perf/isolates
-[Flutter install]: /get-started/install
-[let us know]: {{site.github}}/flutter/website/issues/new/choose
-[migrating from Material 2 to Material 3]: /release/breaking-changes/material-3-migration
-[Use themes to share colors and font styles]: /cookbook/design/themes
-
-**Other updates**
-
-* Check out the just-published
-  [Flutter and Dart 2024 Roadmap][].
-* Check out [Harness the Gemini API in your Dart and Flutter apps][].
-
-[Flutter and Dart 2024 Roadmap]: {{site.github}}/flutter/flutter/blob/master/docs/roadmap/Roadmap.md
-[Harness the Gemini API in your Dart and Flutter apps]: {{site.flutter-medium}}/harness-the-gemini-api-in-your-dart-and-flutter-apps-00573e560381
 
 ---
 

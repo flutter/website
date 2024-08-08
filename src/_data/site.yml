@@ -66,16 +66,15 @@ appmin:
   git_win: 2.27
   git_mac: 2.27
   vscode: 1.77
-  android_studio: '2023.2.1 (Iguana)'
-  intellij_idea: '2023.2'
+  android_studio: '2023.3.1 (Jellyfish)'
+  intellij_idea: '2023.3'
   android_sdk: 21
   powershell: 5.0
   xcode: '14'
-  ios: '17'
   cocoapods: '1.10'
 devmin:
   windows: '64-bit version of Microsoft Windows 10'
-  macos: '10.15 (Catalina)'
+  macos: '11 (Big Sur)'
   linux:
     debian: 11
     ubuntu: '20.04 LTS'
@@ -91,10 +90,10 @@ targetmin:
 ## Software current versions
 
 appnow:
-  flutter: '3.22.1'
-  vscode: '1.89'
-  android_studio: '2023.3'
-  android_sdk: '34.0.5'
+  flutter: '3.24.0'
+  vscode: '1.92'
+  android_studio: '2024.1'
+  android_sdk: '35.0.1'
   intellij: '2024.1'
   powershell: 5.1
   xcode: '15'
