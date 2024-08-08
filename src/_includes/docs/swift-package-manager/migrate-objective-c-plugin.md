@@ -225,7 +225,8 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     If you would like to use a custom `modulemap` with your Swift package,
     refer to [Swift Package Manager's documentation][].
 
-1. Move all remaining files from `ios/Classes` to `ios/Sources/plugin_name`.
+1. Move all remaining files from `ios/Classes` to
+   `ios/plugin_name/Sources/plugin_name`.
 
 1. The `ios/Assets`, `ios/Resources`, and `ios/Classes` directories should now
    be empty and can be deleted.
