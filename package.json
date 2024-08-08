@@ -12,7 +12,7 @@
     "node": ">=20.12.0",
     "pnpm": ">=9.1.0"
   },
-  "packageManager": "pnpm@9.6.0",
+  "packageManager": "pnpm@9.7.0",
   "scripts": {
     "serve": "PRODUCTION=false eleventy --serve",
     "build-site-for-staging": "PRODUCTION=false eleventy",
