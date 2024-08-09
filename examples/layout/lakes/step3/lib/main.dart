@@ -94,7 +94,7 @@ class ButtonSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Color color = Theme.of(context).primaryColor;
-// #enddocregion button-start
+    // #enddocregion button-start
     return SizedBox(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -117,7 +117,7 @@ class ButtonSection extends StatelessWidget {
         ],
       ),
     );
-// #docregion button-start
+    // #docregion button-start
   }
 // #docregion button-with-text
 }

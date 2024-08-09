@@ -1,7 +1,6 @@
 ---
 title: Implement swipe to dismiss
 description: How to implement swiping to dismiss or delete.
-diff2html: true
 js:
   - defer: true
     url: /assets/js/inject_dartpad.js
@@ -110,18 +109,15 @@ To add the indicator,
 provide a `background` parameter to the `Dismissible`.
 
 
-```diff2html
---- lib/step2.dart (Dismissible)
-+++ lib/main.dart (Dismissible)
-@@ -16,6 +16,8 @@
-       ScaffoldMessenger.of(context)
-           .showSnackBar(SnackBar(content: Text('$item dismissed')));
-     },
-+    // Show a red background as the item is swiped away.
-+    background: Container(color: Colors.red),
-     child: ListTile(
-       title: Text(item),
-     ),
+```dart diff
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text('$item dismissed')));
+  },
++ // Show a red background as the item is swiped away.
++ background: Container(color: Colors.red),
+  child: ListTile(
+    title: Text(item),
+  ),
 ```
 
 ## Interactive example
