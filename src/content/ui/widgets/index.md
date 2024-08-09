@@ -40,7 +40,7 @@ like input, layout, and text.
 <div class="card-grid">
 {% assign categories = catalog.index | sort: 'name' -%}
 {% for section in categories %}
-    {%- if section.name != "Cupertino" or section.name != "Material components" or section.name != "Material 2 components" -%}
+    {%- if section.name != "Cupertino" and section.name != "Material components" and section.name != "Material 2 components" -%}
         <div class="card">
             <div class="card-body">
                 <a href="{{page.url}}{{section.id}}"><header class="card-title">{{section.name}}</header></a>
