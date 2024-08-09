@@ -44,7 +44,7 @@ well-balanced life—both in and outside of work.
 
 ## Job location
 
-Viby, Denmark
+Aarhus, Denmark
 
 ## Job responsibilities
 
