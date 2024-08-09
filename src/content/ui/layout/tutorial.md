@@ -2,7 +2,6 @@
 title: Build a Flutter layout
 short-title: Layout tutorial
 description: Learn how to build a layout in Flutter.
-diff2html: true
 ---
 
 {% assign examples = site.repo.this | append: "/tree/" | append: site.branch | append: "/examples" -%}
@@ -246,15 +245,12 @@ In the `body` property, replace the `Center` widget with a
 Within the [`SingleChildScrollView`][] widget, replace the `Text` widget with a
 `Column` widget.
 
-```diff2html
---- ../base/lib/main.dart
-+++ step2/lib/main.dart
-@@ -21,2 +17,3 @@
--        body: const Center(
--          child: Text('Hello World'),
-+        body: const SingleChildScrollView(
-+          child: Column(
-+            children: [
+```dart diff
+- body: const Center(
+-   child: Text('Hello World'),
++ body: const SingleChildScrollView(
++   child: Column(
++     children: [
 ```
 
 These code updates change the app in the following ways.
@@ -275,16 +271,13 @@ Add the `TitleSection` widget as the first element in the `children` list.
 This places it at the top of the screen.
 Pass the provided name and location to the `TitleSection` constructor.
 
-```diff2html
---- ../base/lib/main.dart
-+++ step2/lib/main.dart
-@@ -23 +19,6 @@
-+            children: [
-+              TitleSection(
-+                name: 'Oeschinen Lake Campground',
-+                location: 'Kandersteg, Switzerland',
-+              ),
-+            ],
+```dart diff
++ children: [
++   TitleSection(
++     name: 'Oeschinen Lake Campground',
++     location: 'Kandersteg, Switzerland',
++   ),
++ ],
 ```
 
 :::tip
@@ -325,7 +318,7 @@ class ButtonSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Color color = Theme.of(context).primaryColor;
-// ···
+    // ···
   }
 }
 ```
@@ -457,17 +450,13 @@ Add the button section to the `children` list.
 
 <?code-excerpt path-base="layout/lakes"?>
 
-```diff2html
---- step2/lib/main.dart (add-widget)
-+++ step3/lib/main.dart (add-widget)
-@@ -5,6 +5,7 @@
-         name: 'Oeschinen Lake Campground',
-         location: 'Kandersteg, Switzerland',
-       ),
-+      ButtonSection(),
-     ],
-   ),
- ),
+```dart diff
+    TitleSection(
+      name: 'Oeschinen Lake Campground',
+      location: 'Kandersteg, Switzerland',
+    ),
++   ButtonSection(),
+  ],
 ```
 
 ## Add the Text section
@@ -516,26 +505,21 @@ Add a new `TextSection` widget as a child after the `ButtonSection`.
 When adding the `TextSection` widget, set its `description` property to
 the text of the location description.
 
-```diff2html
---- step3/lib/main.dart (add-widget)
-+++ step4/lib/main.dart (add-widget)
-@@ -6,6 +6,16 @@
-         location: 'Kandersteg, Switzerland',
-       ),
-       ButtonSection(),
-+      TextSection(
-+        description:
-+            'Lake Oeschinen lies at the foot of the Blüemlisalp in the '
-+            'Bernese Alps. Situated 1,578 meters above sea level, it '
-+            'is one of the larger Alpine Lakes. A gondola ride from '
-+            'Kandersteg, followed by a half-hour walk through pastures '
-+            'and pine forest, leads you to the lake, which warms to 20 '
-+            'degrees Celsius in the summer. Activities enjoyed here '
-+            'include rowing, and riding the summer toboggan run.',
-+      ),
-     ],
-   ),
- ),
+```dart diff
+      location: 'Kandersteg, Switzerland',
+    ),
+    ButtonSection(),
++   TextSection(
++     description:
++         'Lake Oeschinen lies at the foot of the Blüemlisalp in the '
++         'Bernese Alps. Situated 1,578 meters above sea level, it '
++         'is one of the larger Alpine Lakes. A gondola ride from '
++         'Kandersteg, followed by a half-hour walk through pastures '
++         'and pine forest, leads you to the lake, which warms to 20 '
++         'degrees Celsius in the summer. Activities enjoyed here '
++         'include rowing, and riding the summer toboggan run.',
++   ),
+  ], 
 ```
 
 ## Add the Image section
@@ -561,11 +545,7 @@ To configure your app to reference images, modify its `pubspec.yaml` file.
    When you add `assets`, it serves as the set of pointers to the images
    available to your code.
 
-   ```diff2html
-   --- step4/pubspec.yaml
-   +++ step5/pubspec.yaml
-   @@ -19,3 +19,5 @@
-
+   ```yaml title="pubspec.yaml" diff
     flutter:
       uses-material-design: true
    +  assets:
@@ -615,19 +595,14 @@ Add an `ImageSection` widget as the first child in the `children` list.
 Set the `image` property to the path of the image you added in
 [Configure your app to use supplied images](#configure-your-app-to-use-supplied-images).
 
-```diff2html
---- step4/lib/main.dart (add-widget)
-+++ step5/lib/main.dart (add-widget)
-@@ -1,6 +1,9 @@
- body: const SingleChildScrollView(
-   child: Column(
-     children: [
-+      ImageSection(
-+        image: 'images/lake.jpg',
-+      ),
-       TitleSection(
-         name: 'Oeschinen Lake Campground',
-         location: 'Kandersteg, Switzerland',
+```dart diff
+  children: [
++   ImageSection(
++     image: 'images/lake.jpg',
++   ),
+    TitleSection(
+      name: 'Oeschinen Lake Campground',
+      location: 'Kandersteg, Switzerland',
 ```
 
 ## Congratulations

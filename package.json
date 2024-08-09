@@ -23,7 +23,6 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "3.0.0-beta.1",
-    "diff2html": "^3.4.48",
     "firebase-tools": "^13.15.0",
     "hast-util-from-html": "^2.0.1",
     "hast-util-select": "^6.0.2",

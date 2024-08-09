@@ -2,7 +2,6 @@
 title: Animations tutorial
 short-title: Tutorial
 description: A tutorial showing how to build explicit animations in Flutter.
-diff2html: true
 ---
 
 {% assign api = site.api | append: '/flutter' -%}
@@ -385,20 +384,20 @@ dots in `..addListener()`. This syntax means that the `addListener()`
 method is called with the return value from `animate()`.
 Consider the following example:
 
-<?code-excerpt "animate1/lib/main.dart (addListener)" replace="/animation.*|\.\.addListener/[!$&!]/g"?>
-```dart
-[!animation = Tween<double>(begin: 0, end: 300).animate(controller)!]
-  [!..addListener!](() {
+<?code-excerpt "animate1/lib/main.dart (addListener)"?>
+```dart highlightLines=1-2
+animation = Tween<double>(begin: 0, end: 300).animate(controller)
+  ..addListener(() {
     // ···
   });
 ```
 
 This code is equivalent to:
 
-<?code-excerpt "animate1/lib/main.dart (addListener)" replace="/animation.*/$&;/g; /  \./animation/g; /animation.*/[!$&!]/g"?>
-```dart
-[!animation = Tween<double>(begin: 0, end: 300).animate(controller);!]
-[!animation.addListener(() {!]
+<?code-excerpt "animate1/lib/main.dart (addListener)"?>
+```dart highlightLines=1-2
+animation = Tween<double>(begin: 0, end: 300).animate(controller);
+animation.addListener(() {
     // ···
   });
 ```
@@ -550,8 +549,8 @@ The following code modifies the previous example so that
 it listens for a state change and prints an update.
 The highlighted line shows the change:
 
-<?code-excerpt "animate3/lib/main.dart (print-state)" plaster="none" replace="/\/\/ (\.\..*)/$1;/g; /\.\..*/[!$&!]/g; /\n  }/$&\n  \/\/ .../g"?>
-```dart
+<?code-excerpt "animate3/lib/main.dart (print-state)" plaster="none" replace="/\/\/ (\.\..*)/$1;/g; /\n  }/$&\n  \/\/ .../g"?>
+```dart highlightLines=11
 class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   late Animation<double> animation;
   late AnimationController controller;
@@ -562,7 +561,7 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
     controller =
         AnimationController(duration: const Duration(seconds: 2), vsync: this);
     animation = Tween<double>(begin: 0, end: 300).animate(controller)
-      [!..addStatusListener((status) => print('$status'));!]
+      ..addStatusListener((status) => print('$status'));
     controller.forward();
   }
   // ...
@@ -579,26 +578,23 @@ AnimationStatus.completed
 Next, use `addStatusListener()` to reverse the animation
 at the beginning or the end. This creates a "breathing" effect:
 
-```diff2html
---- animate2/lib/main.dart
-+++ animate3/lib/main.dart
-@@ -35,7 +35,15 @@
-   void initState() {
-     super.initState();
-     controller =
-         AnimationController(duration: const Duration(seconds: 2), vsync: this);
--    animation = Tween<double>(begin: 0, end: 300).animate(controller);
-+    animation = Tween<double>(begin: 0, end: 300).animate(controller)
-+      ..addStatusListener((status) {
-+        if (status == AnimationStatus.completed) {
-+          controller.reverse();
-+        } else if (status == AnimationStatus.dismissed) {
-+          controller.forward();
-+        }
-+      })
-+      ..addStatusListener((status) => print('$status'));
-     controller.forward();
-   }
+```dart diff
+  void initState() {
+    super.initState();
+    controller =
+        AnimationController(duration: const Duration(seconds: 2), vsync: this);
+-   animation = Tween<double>(begin: 0, end: 300).animate(controller);
++   animation = Tween<double>(begin: 0, end: 300).animate(controller)
++     ..addStatusListener((status) {
++       if (status == AnimationStatus.completed) {
++         controller.reverse();
++       } else if (status == AnimationStatus.dismissed) {
++         controller.forward();
++       }
++     })
++     ..addStatusListener((status) => print('$status'));
+    controller.forward();
+  }
 ```
 
 **App source:** [animate3][]
