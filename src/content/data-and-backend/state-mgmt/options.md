@@ -323,7 +323,9 @@ If the value of the `ValueNotifier` changes, `Widget` rebuilds.
 
 ## Elementary
 
-Elementary is a simple and reliable way to build applications with MVVM in Flutter. It offers a pure Flutter experience with clear code separation by responsibilities, efficient rebuilds, easy testability, and enhancing team productivity.
+Elementary is a simple and reliable way to build applications with MVVM in Flutter.
+It offers a pure Flutter experience with clear code separation by responsibilities,
+efficient rebuilds, easy testability, and enhancing team productivity.
 
 * [Elementary Documentation][]
 * [Elementary Repository][]
