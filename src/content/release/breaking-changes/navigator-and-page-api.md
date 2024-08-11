@@ -1,39 +1,47 @@
 ---
 title: Navigator's page APIs breaking change
-description: >
-  Replace Navigator's `onPopPage` property with `onDidRemovePage` property.
+description: >-
+  Replace Navigator's 'onPopPage' property with the 'onDidRemovePage' property.
 ---
 
 ## Summary
 
-The [`Navigator`]'s page APIs are refactored so that they can integrate
-into Flutter's other pop mechanisms.
+The [`Navigator`][] page APIs are refactored so that
+they can integrate with Flutter's other pop mechanisms.
 
 ## Context
 
-The `onPopPage` was added for cleaning up pages after a page is about to be popped.
-To veto pop, return `false` in the callback. This does not work well with other popping
-mechanisms in the framework, such as [`PopScope`] and iOS back gestures.
+The `onPopPage` property was added for cleaning up pages after
+a page is about to be popped.
+To veto pop, you'd return `false` in the callback.
+This did not work well with other popping mechanisms in the framework,
+such as [`PopScope`][] and iOS back gestures.
 
-To integrate the other pop mechanisms together, the page APIs need to be refactored.
+To integrate the framework's pop mechanisms together,
+the page APIs needed to be refactored.
 
 ## Description of change
 
-The `onDidRemovePage` property replaces the `onPopPage` property. You can no longer veto a pop in
-the `onDidRemovePage` property. Instead, you are only responsible for updating the [`pages`].
+The `onDidRemovePage` property replaces the `onPopPage` property.
+You can no longer veto a pop in the `onDidRemovePage` property.
+Instead, you are only responsible for updating the [`pages`][].
 
-The veto mechanism moves to the `Page.canPop` and `Page.onPopInvoked`.
-These function similar to how one uses the `PopScope` widget.
+The veto mechanism is now managed with the
+`Page.canPop` and `Page.onPopInvoked` properties.
+These function similar to how you use the `PopScope` widget.
+
+[`pages`]: {{site.api}}/flutter/widgets/Navigator/pages.html
 
 ## Migration guide
 
-Code before migration
+Code before migration:
 
 ```dart
 import 'package:flutter/material.dart';
-const MaterialPage<void> page1 = MaterialPage<void>(child: PlaceHolder());
-const MaterialPage<void> page2 = MaterialPage<void>(child: PlaceHolder());
-const MaterialPage<void> page3 = MaterialPage<void>(child: PlaceHolder());
+
+final MaterialPage<void> page1 = MaterialPage<void>(child: Placeholder());
+final MaterialPage<void> page2 = MaterialPage<void>(child: Placeholder());
+final MaterialPage<void> page3 = MaterialPage<void>(child: Placeholder());
 
 void main() {
   final List<Page<void>> pages = <Page<void>>[page1, page2, page3];
@@ -47,25 +55,24 @@ void main() {
           }
           if (route.didPop) {
             pages.remove(route.settings);
-            pages = pages.toList();
             return true;
           }
           return false;
-        }
-          
+        },
       ),
     ),
   );
 }
 ```
 
-Code after migration
+Code after migration:
 
 ```dart
 import 'package:flutter/material.dart';
-const MaterialPage<void> page1 = MaterialPage<void>(child: PlaceHolder());
-const MaterialPage<void> page2 = MaterialPage<void>(canPop: false, child: PlaceHolder());
-const MaterialPage<void> page3 = MaterialPage<void>(child: PlaceHolder());
+
+final MaterialPage<void> page1 = MaterialPage<void>(child: Placeholder());
+final MaterialPage<void> page2 = MaterialPage<void>(canPop: false, child: Placeholder());
+final MaterialPage<void> page3 = MaterialPage<void>(child: Placeholder());
 
 void main() {
   final List<Page<void>> pages = <Page<void>>[page1, page2, page3];
@@ -75,9 +82,7 @@ void main() {
         pages: pages,
         onDidRemovePage: (Page<Object?> page) {
           pages.remove(page);
-          pages = pages.toList();
-        }
-          
+        },
       ),
     ),
   );
@@ -86,8 +91,8 @@ void main() {
 
 ## Timeline
 
-Landed in version: TBD<br>
-In stable release: TBD
+Landed in version: 3.22.0-32.0.pre<br>
+In stable release: 3.24.0
 
 ## References
 

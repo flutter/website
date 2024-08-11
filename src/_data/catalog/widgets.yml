@@ -499,7 +499,7 @@
   description: >-
     An iOS-style modal bottom action sheet to choose an option among many.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoActionSheet-class.html
   image:
@@ -509,7 +509,7 @@
   description: >-
     A button typically used in a CupertinoActionSheet.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoActionSheetAction-class.html
   image:
@@ -519,7 +519,7 @@
   description: >-
     An iOS-style activity indicator. Displays a circular 'spinner'.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoActivityIndicator-class.html
   image:
@@ -530,7 +530,7 @@
     The default Cupertino context menu for text selection for the current
     platform with the given children.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoAdaptiveTextSelectionToolbar-class.html
   image:
@@ -540,7 +540,7 @@
   description: >-
     An iOS-style alert dialog.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoAlertDialog-class.html
   image:
@@ -550,7 +550,7 @@
   description: >-
     An application that uses Cupertino design.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoApp-class.html
   image:
@@ -560,7 +560,7 @@
   description: >-
     An iOS-style button.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoButton-class.html
   image:
@@ -570,7 +570,7 @@
   description: >-
     A macOS-style checkbox.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoCheckbox-class.html
   image:
@@ -581,7 +581,7 @@
     A palette of Color constants that describe colors commonly used when
     matching the iOS platform aesthetics.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoColors-class.html
   image:
@@ -592,7 +592,7 @@
     An iOS-style full-screen modal route that opens when the child is
     long-pressed. Used to display relevant actions for your content.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoContextMenu-class.html
   image:
@@ -602,7 +602,7 @@
   description: >-
     A button in a ContextMenuSheet.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoContextMenuAction-class.html
   image:
@@ -612,7 +612,7 @@
   description: >-
     An iOS-style date or date and time picker.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoDatePicker-class.html
   image:
@@ -621,14 +621,14 @@
 - name: CupertinoDesktopTextSelectionControls
   description: Desktop Cupertino styled text selection controls.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoDesktopTextSelectionControls-class.html
 - name: CupertinoDesktopTextSelectionToolbar
   description: >-
     A macOS-style text selection toolbar.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoDesktopTextSelectionToolbar-class.html
   image:
@@ -638,7 +638,7 @@
   description: >-
     A button in the style of the macOS context menu buttons.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoDesktopTextSelectionToolbarButton-class.html
   image:
@@ -648,7 +648,7 @@
   description: >-
     A button typically used in a CupertinoAlertDialog.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoDialogAction-class.html
   image:
@@ -658,7 +658,7 @@
   description: >-
     A dialog route that shows an iOS-style dialog.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoDialogRoute-class.html
 - name: CupertinoDynamicColor
@@ -666,14 +666,14 @@
     A Color subclass that represents a family of colors, and the correct
     effective color in the color family.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoDynamicColor-class.html
 - name: CupertinoFormRow
   description: >-
     An iOS-style form row.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoFormRow-class.html
   image:
@@ -682,7 +682,7 @@
   description: >-
     An iOS-style form section.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoFormSection-class.html
   image:
@@ -692,7 +692,7 @@
   description: >-
     An iOS-style transition used for summoning fullscreen dialogs.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoFullscreenDialogTransition-class.html
   image:
@@ -701,13 +701,13 @@
 - name: CupertinoThemeData
   description: Styling specifications for a CupertinoTheme.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoThemeData-class.html
 - name: CupertinoListSection
   description: Container that uses the iOS style to display a scrollable view.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoListSection-class.html
   image:
@@ -717,7 +717,7 @@
   description: >-
     A block that uses the iOS style to create a row in a list.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoListTile-class.html
   image:
@@ -728,7 +728,7 @@
     A typical iOS trailing widget used to denote that a CupertinoListTile is a
     button with an action.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoListTileChevron-class.html
   image:
@@ -736,7 +736,7 @@
 - name: CupertinoLocalizations
   description: Defines the localized resource values used by the Cupertino widgets.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoLocalizations-class.html
 - name: CupertinoMagnifier
@@ -744,7 +744,7 @@
     A RawMagnifier used for magnifying text in cases where a user's finger may
     be blocking the point of interest, like a selection handle.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoMagnifier-class.html
 - name: CupertinoModalPopupRoute
@@ -752,7 +752,7 @@
     A route that shows a modal iOS-style popup that
     slides up from the bottom of the screen.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: >-
     https://api.flutter.dev/flutter/cupertino/CupertinoModalPopupRoute-class.html
@@ -761,7 +761,7 @@
     Container at the top of a screen that uses the iOS style.
     Many developers use this with `CupertinoPageScaffold`.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoNavigationBar-class.html
   image:
@@ -771,7 +771,7 @@
   description: >-
     A nav bar back button typically used in CupertinoNavigationBar.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoNavigationBarBackButton-class.html
   image:
@@ -781,14 +781,14 @@
   description: >-
     A page that creates a cupertino style PageRoute.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoPage-class.html
 - name: CupertinoPageRoute
   description: >-
     A modal route that replaces the entire screen with an iOS transition.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoPageRoute-class.html
 - name: CupertinoPageScaffold
@@ -796,13 +796,13 @@
     Basic iOS style page layout structure.
     Positions a navigation bar and content on a background.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoPageScaffold-class.html
 - name: CupertinoPageTransition
   description: Provides an iOS-style page transition animation.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoPageTransition-class.html
   image:
@@ -812,7 +812,7 @@
   description: >-
     An iOS-style picker control. Used to select an item in a short list.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoPicker-class.html
   image:
@@ -822,7 +822,7 @@
   description: >-
     A default selection overlay for CupertinoPickers.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoPickerDefaultSelectionOverlay-class.html
 - name: CupertinoPopupSurface
@@ -830,14 +830,14 @@
     Rounded rectangle surface that looks like an iOS popup surface, such as an
     alert dialog or action sheet.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoPopupSurface-class.html
 - name: CupertinoRadio
   description: >-
     A macOS-style radio button.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoRadio-class.html
   image:
@@ -848,7 +848,7 @@
     An iOS-style scrollbar that indicates which portion of a scrollable widget
     is currently visible.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoScrollbar-class.html
   image:
@@ -857,14 +857,14 @@
 - name: CupertinoScrollBehavior
   description: Describes how Scrollable widgets behave for CupertinoApps.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoScrollBehavior-class.html
 - name: CupertinoSearchTextField
   description: >-
     An iOS-style search field.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoSearchTextField-class.html
   image:
@@ -875,7 +875,7 @@
     An iOS-style segmented control. Used to select mutually exclusive options in
     a horizontal list.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoSegmentedControl-class.html
   image:
@@ -884,7 +884,7 @@
 - name: CupertinoSlider
   description: Used to select from a range of values.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoSlider-class.html
   image:
@@ -895,7 +895,7 @@
     An iOS-13-style segmented control. Used to select mutually exclusive options
     in a horizontal list.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoSlidingSegmentedControl-class.html
   image:
@@ -905,7 +905,7 @@
   description: >-
     A navigation bar with iOS-11-style large titles using slivers.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories:
     - 'Sliver widgets'
   link: https://api.flutter.dev/flutter/cupertino/CupertinoSliverNavigationBar-class.html
@@ -916,14 +916,14 @@
   description: >-
     A sliver widget implementing the iOS-style pull to refresh content control.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories:
     - 'Sliver widgets'
   link: https://api.flutter.dev/flutter/cupertino/CupertinoSliverRefreshControl-class.html
 - name: CupertinoSpellCheckSuggestionsToolbar
   description: The default spell check suggestions toolbar for iOS.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoSpellCheckSuggestionsToolbar-class.html
   image:
@@ -933,7 +933,7 @@
   description: >-
     An iOS-style switch. Used to toggle the on/off state of a single setting.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoSwitch-class.html
   image:
@@ -943,7 +943,7 @@
   description: >-
     An iOS-style bottom tab bar. Typically used with CupertinoTabScaffold.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoTabBar-class.html
   image:
@@ -954,13 +954,13 @@
     Coordinates tab selection between a CupertinoTabBar and
     a CupertinoTabScaffold.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoTabController-class.html
 - name: CupertinoTabScaffold
   description: Tabbed iOS app structure. Positions a tab bar on top of tabs of content.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoTabScaffold-class.html
   image:
@@ -971,7 +971,7 @@
     Root content of a tab that supports parallel navigation between tabs.
     Typically used with CupertinoTabScaffold.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoTabView-class.html
   image:
@@ -981,7 +981,7 @@
   description: >-
     An iOS-style text field.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoTextField-class.html
   image:
@@ -992,7 +992,7 @@
     Creates a CupertinoFormRow containing a FormField that wraps a
     CupertinoTextField.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoTextFormFieldRow-class.html
   image:
@@ -1003,7 +1003,7 @@
     A CupertinoMagnifier used for magnifying text in cases where a user's finger
     may be blocking the point of interest, like a selection handle.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoTextMagnifier-class.html
   image:
@@ -1012,14 +1012,14 @@
 - name: CupertinoTextSelectionControls
   description: iOS-style text selection controls.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoTextSelectionControls-class.html
 - name: CupertinoTextSelectionToolbar
   description: >-
     An iOS-style text selection toolbar.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoTextSelectionToolbar-class.html
   image:
@@ -1029,7 +1029,7 @@
   description: >-
     A button in the style of the iOS text selection toolbar buttons.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoTextSelectionToolbarButton-class.html
   image:
@@ -1038,33 +1038,33 @@
 - name: CupertinoTextThemeData
   description: Cupertino typography theme in a CupertinoThemeData.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoTextThemeData-class.html
 - name: CupertinoTheme
   description: >-
     Applies a visual styling theme to descendant Cupertino widgets.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoTheme-class.html
 - name: CupertinoThemeData
   description: Styling specifications for a CupertinoTheme.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoThemeData-class.html
 - name: CupertinoThumbPainter
   description: Paints an iOS-style slider thumb or switch thumb.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoThumbPainter-class.html
 - name: CupertinoTimerPicker
   description: >-
     An iOS-style countdown timer picker.
   categories:
-    - 'Cupertino (iOS-style widgets)'
+    - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoTimerPicker-class.html
   image:
