@@ -13,7 +13,7 @@ Now that you know how to manage state in your
 Flutter app, how can you let users interact
 with your app and change its state? 
 
-## Introduction to user input
+## Introduction to handling user input
 
 As a multi-platform UI framework,
 there are many different ways for users
@@ -25,7 +25,7 @@ for enabling user interaction within your app.
 Some user input mechanisms, like [scrolling][],
 have already been covered in [Layouts][]. 
 
-This page focuses on Flutter's included Material widgets, prebuilt components that are stylized baased on the Material design langauge. 
+This page focuses on Flutter's included Material widgets, prebuilt components that are stylized based on the Material design langauge. 
 However, you're by not limited to Material Design. Flutter supports a variety of design languages such as 
 - Material
 - [Cupertino][] for iOS-styled widgets
@@ -40,8 +40,6 @@ However, you're by not limited to Material Design. Flutter supports a variety of
 > state in response to user interactions?
 > Complete the following tutorial that
 > teaches you how to build a "favorite" button: [Add interactivity to your Flutter app][]
-
-## Get user input
 
 In this section, we'll cover a few of the widgets that cover the most common input usecases for your Flutter app. 
 
@@ -90,7 +88,7 @@ but are styled differently.
 [`OutlinedButton`]: {{site.api}}/flutter/material/OutlinedButton-class.html
 [`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
 
-### Text
+### Retrieving Text
 
 Several widgets support text input. 
 
@@ -152,7 +150,7 @@ Several widgets support text input.
 [SelectableText (Widget of the Week)]: https://www.youtube.com/watch?v=ZSU3ZXOs6hc
 [`TextField`]: {{site.api}}/flutter/material/TextField-class.html
 
-### Select a value from a group of options
+### Selecting a value from a group of options
 
 [`SegmentedButton`][]
 : Allow users to select from limited set of options.
@@ -175,7 +173,7 @@ Several widgets support text input.
 [`Slider`]: {{site.api}}/flutter/material/Slider-class.html
 [Slider, RangeSlider, CupertinoSlider (Widget of the Week)]: https://www.youtube.com/watch?v=ufb4gIPDmEss
 
-### Toggle values
+### Toggling between values
 
 [`Checkbox`][]
 : Select one or more items from a list,
@@ -205,7 +203,7 @@ Several widgets support text input.
 : Chips are compact elements that represent an attribute,
   text, entity, or action.
 
-### Select a date or time
+### Selecting a date, time, or both!
 
 [`showDatePicker`][]
 : Shows a dialog containing a
@@ -239,11 +237,10 @@ Several widgets support text input.
 > to see examples of additional user input widgets
 > available in the Material 3 component library. 
 
-## Add interactivity with GestureDetector 
+## Adding interactivity with GestureDetector 
 
-If none of Flutter's widgets fit the functionality
-for what you're looking for,
-you can add interactivity to your own widget
+If you can't find a widget that fits the functionality
+that you're looking for, you can build your own widget and add interactivity
 using `GestureDetector`. 
 
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
@@ -255,23 +252,20 @@ using `GestureDetector`.
 > <i class="material-symbols" aria-hidden="true">bookmark</i> **Tutorial**: 
 > [Handle taps][]
 
-Don't forget about accessibility!
-If you're building your own custom widget,
-you can annotate its meaning with the `Semantics` widget.
-It lets you provide descriptions, metadata,
-and more to screen readers and other semantic
+> <i class="material-symbols" aria-hidden="true">slideshow</i> **Bonus Video**: 
+> Curious how Flutter's
+`GestureArena` turns raw user interaction data into
+human recognizable concepts like taps, drags, and pinches?
+Check out the this video: [GestureArena (Decoding Flutter)][]
+
+### Don't forget about accessibility!
+
+If you're building custom widgets, annotate its meaning with the `Semantics` widget.
+It provides descriptions, metadata,and more to screen readers and other semantic
 analysis-based tools. 
 
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [Semantics (Flutter Widget of the Week)][]
-
-### Bonus
-
-> <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
-> Curious how Flutter's
-`GestureArena` turns raw user interaction data into
-human recognizable concepts like taps, drags, and pinches
-check out the following video: [GestureArena (Decoding Flutter)][]
 
 ## Testing
 
