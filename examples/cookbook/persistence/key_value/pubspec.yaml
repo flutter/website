@@ -5,7 +5,7 @@ description: >-
   shows how to use the shared_preferences package.
 
 environment:
-  sdk: ^3.4.0
+  sdk: ^3.5.0
 
 dependencies:
   flutter:

@@ -176,7 +176,7 @@ import UIKit
     ) -> Bool {
         GeneratedPluginRegistrant.register(with: self)
 
-        guard let pluginRegisterar = self.registrar(forPlugin: "plugin-name") else { return false }
+        guard let pluginRegistrar = self.registrar(forPlugin: "plugin-name") else { return false }
 
         let factory = FLNativeViewFactory(messenger: pluginRegistrar.messenger())
         pluginRegistrar.register(

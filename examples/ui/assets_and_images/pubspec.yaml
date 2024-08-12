@@ -3,20 +3,20 @@ description: An example project showing how to declare and load assets.
 publish_to: none
 
 environment:
-  sdk: ^3.4.0
+  sdk: ^3.5.0
 
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.6
-  vector_graphics: 1.1.10+1
+  cupertino_icons: ^1.0.8
+  vector_graphics: 1.1.11+1
 
 dev_dependencies:
   example_utils:
     path: ../../example_utils
   flutter_test:
     sdk: flutter
-  vector_graphics_compiler: 1.1.10+1
+  vector_graphics_compiler: 1.1.11+1
     
 flutter:
   uses-material-design: true
