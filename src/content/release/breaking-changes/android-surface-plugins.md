@@ -95,10 +95,8 @@ where `sign` is 1 for front-facing cameras and -1 for back-facing cameras.
 To calculate this rotation,
 - Retrieve the sensor orientation degrees by retrieving the value of
 [`CameraCharacteristics.SENSOR_ORIENTATION`][].
-- Calculate the device orientation degrees with
-[this logic in our camera plugin][] that is dependent on the default capture
-rotation and orientation of the device screen (how to retrieve these is also
-shown).
+- Retrieve the device orientation degrees in one of the ways that the
+[Android orientation calculation documentation][] details.
 
 To apply this rotation, you may use a [`RotatedBox`][] widget.
 
