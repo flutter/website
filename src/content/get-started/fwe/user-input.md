@@ -20,47 +20,37 @@ there are many different ways for users
 to interact with a Flutter app.
 The resources in this section introduce
 you to some of the common widgets used
-for enabling user interaction. 
+for enabling user interaction within your app. 
 
-Some user input types, like [scrolling][],
+Some user input mechanisms, like [scrolling][],
 have already been covered in [Layouts][]. 
 
-For an introduction to how you can change app
-state in response to user interactions,
-check out the following tutorial that
-teaches you how to build a "favorite" button:
-
-<i class="material-symbols" aria-hidden="true">flutter_dash</i> Tutorial: [Add interactivity to your Flutter app][]
+This page focuses on Flutter's included Material widgets, prebuilt components that are stylized baased on the Material design langauge. 
+However, you're by not limited to Material Design. Flutter supports a variety of design languages such as 
+- Material
+- [Cupertino][] for iOS-styled widgets
+- A variety of other design language widgets on pub.dev
+- Build your own custom design widget library.
 
 [Layouts]: /get-started/fwe/layout
-
-## Material 3 demo 
-
-Next, check out the [Material 3 Demo][],
-which samples some of the user input widgets
-available in the Material 3 component library. 
-
-:::note
-This page focuses on Material 3 widgets because
-it's the library that many developers start with
-when learning Flutter. However,
-Flutter also supports [Cupertino][] for iOS-styled widgets,
-or you can build your own widget library.
-:::
-
 [Cupertino]: {{site.api}}/flutter/cupertino/cupertino-library.html
+
+> <i class="material-symbols" aria-hidden="true">bookmark</i> **Tutorial**: 
+> Curious how you can change your app
+> state in response to user interactions?
+> Complete the following tutorial that
+> teaches you how to build a "favorite" button: [Add interactivity to your Flutter app][]
 
 ## Get user input
 
-This section covers widgets that help you build
-the most common user input methods into your Flutter app. 
+In this section, we'll cover a few of the widgets that cover the most common input usecases for your Flutter app. 
 
-### Click or tap (Buttons)
+### Buttons
 
-Let a user prompt action in a UI by clicking or tapping. 
+#### Let a user prompt action in a UI by clicking or tapping. 
 
-The following Material 3 button types are functionally similar,
-but are styled differently:
+The Material 3 library provides button a variety of button types are functionally similar,
+but are styled differently. 
 
 [`ElevatedButton`][]
 : A button with some depth.
@@ -89,7 +79,8 @@ but are styled differently:
 : A circular icon button that hovers over
   content to promote a primary action.
 
-* Video: [FloatingActionButton (Widget of the Week)][]
+> <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
+> [FloatingActionButton (Widget of the Week)][]
 
 [`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
 [`FilledButton`]: {{site.api}}/flutter/material/FilledButton-class.html
@@ -103,38 +94,47 @@ but are styled differently:
 
 Several widgets support text input. 
 
-[`TextField`][]
+#### [`TextField`][]
 : Let users enter text, either with hardware
   keyboard or with an onscreen keyboard.
 
-The following series of cookbook articles walk
-you through every step on how to build a text field,
-retrieve its value, and handle state changes:
+> <i class="material-symbols" aria-hidden="true">bookmark</i> **Tutorial**: 
+> This 4-part cookbook series of recipes walk
+> you through each step on how to build a text field,
+> retrieve its value, and handle state changes:
+> 1. [Create and style a text field][]
+> 1. [Retrieve the value of a text field][]
+> 1. [Handle changes to a text field][]
+> 1. [Focus and text fields][].
 
-1. Article: [Create and style a text field][]
-1. Article: [Retrieve the value of a text field][]
-1. Article: [Handle changes to a text field][]
-1. Article: [Focus and text fields][]
+#### `RichText`
+ [`RichText`][] lets you take text input and dispay them with inline styles.
 
-[`RichText`][]
-: Display text that uses multiple styles.
+> <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
+> [Rich Text (Widget of the Week)][]
 
-* Video: [Rich Text (Widget of the Week)][]
-* Demo: [Rich Text Editor][]
-* Sample code: [Rich Text Editor code][]
+> <i class="material-symbols" aria-hidden="true">flutter</i> **Demo**: 
+> [Rich Text Editor][]
+
+> <i class="material-symbols" aria-hidden="true">code</i> **Code**: 
+> [Rich Text Editor code][]
 
 [`SelectableText`][]
 : Display a string of user-selectable text with a single style.
-
-* Video: [SelectableText (Widget of the Week)][]
+> <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
+> [SelectableText (Widget of the Week)][]
 
 [`Form`][]
 : An optional container for grouping together
   multiple form field widgets. 
 
 * Article: [Build a form with validation][]
-* Demo: [Form app][]
-* Sample code: [Form app code][]
+
+> <i class="material-symbols" aria-hidden="true">flutter</i> **Demo**: 
+> [Form app][]
+
+> <i class="material-symbols" aria-hidden="true">code</i> **Code**: 
+> [Form app code][]
 
 [Build a form with validation]: /cookbook/forms/validation
 [Create and style a text field]: /cookbook/forms/text-input
@@ -161,12 +161,13 @@ retrieve its value, and handle state changes:
 : Let users select a choice from a menu and place the
   selected item into the text input field.
 
-* Video: [DropdownMenu (Widget of the Week)][]
+> <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
+> [DropdownMenu (Widget of the Week)][]
 
 [`Slider`][]
 : Select from a range of values.
-
-* Video: [Slider, RangeSlider, CupertinoSlider (Widget of the Week)][]
+> <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
+> [Slider, RangeSlider, CupertinoSlider (Widget of the Week)][]
 
 [`DropdownMenu`]: {{site.api}}/flutter/material/DropdownMenu-class.html
 [DropdownMenu (Widget of the Week)]: https://youtu.be/giV9AbM2gd8?si=E23hjg72cjMTe_mz
@@ -183,7 +184,8 @@ retrieve its value, and handle state changes:
 [`CheckboxListTile`][]
 : A checkbox with a label.
 
-* Video: [CheckboxListTile (Widget of the Week)][]
+> <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
+> [CheckboxListTile (Widget of the Week)][]
 
 [`Switch`][]
 : Toggle the on/off state of a single setting.
@@ -191,7 +193,8 @@ retrieve its value, and handle state changes:
 [`SwitchListTile`][]
 : A switch with a label. 
 
-* Video [SwitchListTile (Widget of the Week)][]
+> <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
+> [SwitchListTile (Widget of the Week)][]
 
 [`Radio`][]
 : Select between a number of mutually exclusive values.
@@ -217,14 +220,24 @@ retrieve its value, and handle state changes:
 [`Dismissible`][]
 : Clear list items by swiping left or right.
 
-* Video: [Dismissible (Widget of the Week)][]
-* Article: [Implement swipe to dismiss][]
+> <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
+> [Dismissible (Widget of the Week)][]
+
+> <i class="material-symbols" aria-hidden="true">bookmark</i> **Tutorial**: 
+> Learn how to [Implement swipe to dismiss][] using the dismissable widget.
 
 [pkg:`flutter_slidable`][]
 : A list item with directional slide actions
   that can be dismissed.
 
-* Video: [flutter_slidable (Package of the Week)][]
+> <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
+> [flutter_slidable (Package of the Week)][]
+
+
+> <i class="material-symbols" aria-hidden="true">flutter</i> **Demo**: 
+> Check out the [Material 3 Demo][],
+> to see examples of additional user input widgets
+> available in the Material 3 component library. 
 
 ## Add interactivity with GestureDetector 
 
@@ -233,9 +246,14 @@ for what you're looking for,
 you can add interactivity to your own widget
 using `GestureDetector`. 
 
-* Video: [GestureDetector (Widget of the Week)][]
-* Documentation: [Taps, drags, and other gestures][]
-* Article: [Handle taps][]
+> <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
+> [GestureDetector (Widget of the Week)][]
+
+> <i class="material-symbols" aria-hidden="true">menu_book</i> **Reference**: 
+> [Taps, drags, and other gestures][]
+
+> <i class="material-symbols" aria-hidden="true">bookmark</i> **Tutorial**: 
+> [Handle taps][]
 
 Don't forget about accessibility!
 If you're building your own custom widget,
@@ -244,14 +262,16 @@ It lets you provide descriptions, metadata,
 and more to screen readers and other semantic
 analysis-based tools. 
 
-* Video: [Semantics (Flutter Widget of the Week)][]
+> <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
+> [Semantics (Flutter Widget of the Week)][]
 
-Bonus: For a deeper understanding on how Flutter's
+### Bonus
+
+> <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
+> Curious how Flutter's
 `GestureArena` turns raw user interaction data into
 human recognizable concepts like taps, drags, and pinches
-check out the following video:
-
-* Video: [GestureArena (Decoding Flutter)][]
+check out the following video: [GestureArena (Decoding Flutter)][]
 
 ## Testing
 
@@ -259,8 +279,11 @@ Once you have finished building user interactions
 into your app, don't forget to write tests to
 ensure that everything works as expected!
 
-* Article: [Tap, drag, and enter text][]
-* Article: [Handle scrolling][]
+> <i class="material-symbols" aria-hidden="true">bookmark</i> **Tutorial**: 
+> [Tap, drag, and enter text][]
+
+> <i class="material-symbols" aria-hidden="true">bookmark</i> **Tutorial**: 
+> [Handle scrolling][]
 
 [GestureArena (Decoding Flutter)]: https://www.youtube.com/watch?v=Q85LBtBdi0U
 [GestureDetector (Widget of the Week)]: https://www.youtube.com/watch?v=WhVXkCFPmK4
