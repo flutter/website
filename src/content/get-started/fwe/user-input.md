@@ -45,40 +45,46 @@ In this section, we'll cover a few of the widgets that cover the most common inp
 
 ### Buttons
 
-#### Let a user prompt action in a UI by clicking or tapping. 
+Buttons let a user prompt action in the UI by clicking or tapping. The Material 3 library provides button a variety
+of button types are functionally similar, but styled differently for various usecases. 
 
-The Material 3 library provides button a variety of button types are functionally similar,
-but are styled differently. 
+TODO: Photo of M3 demo of all the buttons
 
-[`ElevatedButton`][]
-: A button with some depth.
+#### `ElevatedButton`
+A button with some depth.
   Use elevated buttons to add dimension
   to otherwise mostly flat layouts.
 
-[`FilledButton`][]
-: A filled button that should be used for important,
+#### `FilledButton`
+A filled button that should be used for important,
   final actions that complete a flow,
-  like **Save**, **Join now**, or **Confirm**.
+  like **Save**, **Join now**, or **Confirm**. 
 
-[`OutlinedButton`][]
-: A button with text and a visible border.
+#### `OutlinedButton`
+A button with text and a visible border.
   These buttons contain actions that are important,
   but aren't the primary action in an app.
 
-[`TextButton`][]
-: Clickable text, without a border.
+#### `TextButton`
+Clickable text, without a border.
   Since text buttons don't have visible borders
   and they must therefore rely on their position
   relative to other content for context.
 
-[`IconButton`][]: A button with an icon. 
+#### `IconButton`
+A button with an icon.
 
-[`FloatingActionButton`][]
-: A circular icon button that hovers over
+#### `FloatingActionButton`
+An icon button that hovers over
   content to promote a primary action.
 
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [FloatingActionButton (Widget of the Week)][]
+
+<br>
+
+> <i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**:  
+> [`ElevatedButton`][] | [`FilledButton`][] | [`OutlinedButton`][] | [`TextButton`][] | [`IconButton`][] | [`FloatingActionButton`][]
 
 [`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
 [`FilledButton`]: {{site.api}}/flutter/material/FilledButton-class.html
@@ -88,25 +94,25 @@ but are styled differently.
 [`OutlinedButton`]: {{site.api}}/flutter/material/OutlinedButton-class.html
 [`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
 
-### Retrieving Text
+### Handling Text Input
 
-Several widgets support text input. 
+Your Flutter can accept text as input, where the use types out their input using a keyboard. 
 
-#### [`TextField`][]
-: Let users enter text, either with hardware
+#### `TextField`
+Let users enter text, either with hardware
   keyboard or with an onscreen keyboard.
 
 > <i class="material-symbols" aria-hidden="true">bookmark</i> **Tutorial**: 
-> This 4-part cookbook series of recipes walk
-> you through each step on how to build a text field,
-> retrieve its value, and handle state changes:
+> This 4-part cookbook series walks
+> you through how to create a text field,
+> retrieve its value, and update your app state:
 > 1. [Create and style a text field][]
 > 1. [Retrieve the value of a text field][]
 > 1. [Handle changes to a text field][]
 > 1. [Focus and text fields][].
 
 #### `RichText`
- [`RichText`][] lets you take text input and dispay them with inline styles.
+`RichText` lets you take text input and dispay them with inline styles.
 
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [Rich Text (Widget of the Week)][]
@@ -117,22 +123,29 @@ Several widgets support text input.
 > <i class="material-symbols" aria-hidden="true">code</i> **Code**: 
 > [Rich Text Editor code][]
 
-[`SelectableText`][]
-: Display a string of user-selectable text with a single style.
+#### `SelectableText`
+Display a string of user-selectable text with a single style.
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [SelectableText (Widget of the Week)][]
 
-[`Form`][]
-: An optional container for grouping together
+#### `Form`
+
+An optional container for grouping together
   multiple form field widgets. 
 
-* Article: [Build a form with validation][]
+> <i class="material-symbols" aria-hidden="true">bookmark</i> **Tutorial**: 
+> [Build a form with validation][]
 
 > <i class="material-symbols" aria-hidden="true">flutter</i> **Demo**: 
 > [Form app][]
 
 > <i class="material-symbols" aria-hidden="true">code</i> **Code**: 
 > [Form app code][]
+
+<br>
+
+> <i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**:  
+> [`TextField`][] | [`RichText`][] | [`SelectableText`][] | [`Form`][]
 
 [Build a form with validation]: /cookbook/forms/validation
 [Create and style a text field]: /cookbook/forms/text-input
@@ -152,18 +165,18 @@ Several widgets support text input.
 
 ### Selecting a value from a group of options
 
-[`SegmentedButton`][]
-: Allow users to select from limited set of options.
+#### `SegmentedButton`
+Allow users to select from limited set of options.
 
-[`DropdownMenu`][]
-: Let users select a choice from a menu and place the
+#### `DropdownMenu`
+Let users select a choice from a menu and place the
   selected item into the text input field.
 
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [DropdownMenu (Widget of the Week)][]
 
-[`Slider`][]
-: Select from a range of values.
+#### `Slider`
+Select from a range of values.
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [Slider, RangeSlider, CupertinoSlider (Widget of the Week)][]
 
@@ -173,45 +186,61 @@ Several widgets support text input.
 [`Slider`]: {{site.api}}/flutter/material/Slider-class.html
 [Slider, RangeSlider, CupertinoSlider (Widget of the Week)]: https://www.youtube.com/watch?v=ufb4gIPDmEss
 
+<br>
+
+> <i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**:  
+> [`SegmentedButton`][] | [`DropdownMenu`][] | [`Slider`][]
+
 ### Toggling between values
 
-[`Checkbox`][]
-: Select one or more items from a list,
+#### `Checkbox`
+Select one or more items from a list,
   or toggle an item.
 
-[`CheckboxListTile`][]
-: A checkbox with a label.
+#### `CheckboxListTile`
+A checkbox with a label.
 
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [CheckboxListTile (Widget of the Week)][]
 
-[`Switch`][]
-: Toggle the on/off state of a single setting.
+#### `Switch`
+Toggle the on/off state of a single setting.
 
-[`SwitchListTile`][]
-: A switch with a label. 
+#### `SwitchListTile`
+A switch with a label. 
 
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [SwitchListTile (Widget of the Week)][]
 
-[`Radio`][]
-: Select between a number of mutually exclusive values.
+#### `Radio`
+Select between a number of mutually exclusive values.
   When one radio button in a group is selected,
   the other radio buttons in the group cease to be selected.
 
-[`Chip`][]
-: Chips are compact elements that represent an attribute,
+#### `Chip`
+Chips are compact elements that represent an attribute,
   text, entity, or action.
+
+<br>
+
+> <i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**:  
+> [`Checkbox`][] | [`CheckboxListTile`][] | [`Switch`][] | [`SwitchListTile`][] | [`Radio`][] | [`Chip`][]
+
 
 ### Selecting a date, time, or both!
 
-[`showDatePicker`][]
-: Shows a dialog containing a
-  [Material Design date picker][].
+#### `showDatePicker`
+Shows a dialog containing a
+  Material Design date picker
 
-[`showTimePicker`][]
-: Shows a dialog containing a
+#### `showTimePicker`
+Shows a dialog containing a
   [Material Design time picker][].
+
+<br>
+
+> <i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**:  
+> [`showDatePicker`][] | [`showTimePicker`][]
 
 ### Swipe and slide
 
@@ -231,6 +260,12 @@ Several widgets support text input.
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [flutter_slidable (Package of the Week)][]
 
+<br>
+
+> <i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**:  
+> [`Dismissible`][] | [pkg:`flutter_slidable`][]
+
+## Want a full sample of Material 3's User Input Components?
 
 > <i class="material-symbols" aria-hidden="true">flutter</i> **Demo**: 
 > Check out the [Material 3 Demo][],
@@ -267,6 +302,12 @@ analysis-based tools.
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [Semantics (Flutter Widget of the Week)][]
 
+
+<br>
+
+> <i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**:  
+> [`GestureDetector`][] | [`Semantics`][]
+
 ## Testing
 
 Once you have finished building user interactions
@@ -285,7 +326,6 @@ ensure that everything works as expected!
 [Semantics (Flutter Widget of the Week)]: https://youtu.be/NvtMt_DtFrQ?si=o79BqAg9NAl8EE8_
 [Tap, drag, and enter text]: /cookbook/testing/widget/tap-drag
 [Taps, drags, and other gestures]: /ui/interactivity/gestures#gestures
-
 
 ## Next: Networking
 
@@ -323,6 +363,10 @@ and other networking features.
 [Implement swipe to dismiss]: /cookbook/gestures/dismissible
 [pkg:`flutter_slidable`]: https://pub.dev/packages/flutter_slidable
 [flutter_slidable (Package of the Week)]: https://www.youtube.com/watch?v=QFcFEpFmNJ8
+
+
+[`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
+[`Semantics`]: {{site.api}}/flutter/widgets/Semantics-class.html
 
 [Handle scrolling]: /cookbook/testing/widget/scrolling
 
