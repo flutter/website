@@ -90,7 +90,8 @@ to the equation:
 rotation = (sensorOrientationDegrees - deviceOrientationDegrees * sign + 360) % 360
 ```
 
-where `sign` is 1 for front-facing cameras and -1 for back-facing cameras. 
+where `deviceOrientationDegrees` is counterclockwise degrees and `sign` is 1 for
+front-facing cameras and -1 for back-facing cameras. 
 
 To calculate this rotation,
 - Retrieve the sensor orientation degrees by retrieving the value of
