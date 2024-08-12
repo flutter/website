@@ -90,10 +90,20 @@ to the equation:
 rotation = (sensorOrientationDegrees - deviceOrientationDegrees * sign + 360) % 360
 ```
 
-where `sign` is 1 for front-facing cameras and -1 for back-facing cameras.
+where `sign` is 1 for front-facing cameras and -1 for back-facing cameras. 
+
+To calculate this rotation,
+- Retrieve the sensor orientation degrees by retrieving the value of
+[`CameraCharacteristics.SENSOR_ORIENTATION`][].
+- Calculate the device orientation degrees with
+[this logic in our camera plugin][] that is dependent on the default capture
+rotation and orientation of the device screen (how to retrieve these is also
+shown).
+
+To apply this rotation, you may use a [`RotatedBox`][] widget.
 
 For more information on this calculation see the
-[Android orientation calculation documentation][]. For an example of making
+[Android orientation calculation documentation][]. For a full example of making
 this fix, see [the PR we used to fix `camera_android_camerax`][].
 
 ## Timeline
@@ -138,8 +148,11 @@ Relevant PRs:
 [`createSurfaceTexture`]: {{site.api}}/javadoc/io/flutter/view/TextureRegistry.html#createSurfaceTexture()
 [`getSurface()`]: {{site.api}}/javadoc/io/flutter/view/TextureRegistry.SurfaceProducer.html#getSurface()
 [`setCallback`]: https://main-api.flutter.dev/javadoc/io/flutter/view/TextureRegistry.SurfaceProducer.html#setCallback(io.flutter.view.TextureRegistry.SurfaceProducer.Callback)
+[`CameraCharacteristics.SENSOR_ORIENTATION`]: https://developer.android.com/reference/android/hardware/camera2/CameraCharacteristics#SENSOR_ORIENTATION
+[this logic in our camera plugin]: https://github.com/flutter/packages/blob/d9a6de802e1fa74b377721929bfa6de5716ce6d9/packages/camera/camera_android_camerax/android/src/main/java/io/flutter/plugins/camerax/DeviceOrientationManager.java#L127
+[`RotatedBox`]: https://api.flutter.dev/flutter/widgets/RotatedBox-class.html
 [Android orientation calculation documentation]: https://developer.android.com/media/camera/camera2/camera-preview#orientation_calculation
-[the PR we used to fix `camera_android_camerax`]: https://github.com/flutter/packages/pull/6856
+[the PR we used to fix `camera_android_camerax`]: https://github.com/flutter/packages/pull/7044
 [Issue 139702]: {{site.repo.flutter}}/issues/139702
 [Issue 145930]: {{site.repo.flutter}}/issues/145930
 [PR 51061]: {{site.repo.engine}}/pull/51061
