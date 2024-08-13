@@ -25,15 +25,20 @@ for enabling user interaction within your app.
 Some user input mechanisms, like [scrolling][],
 have already been covered in [Layouts][]. 
 
-This page focuses on Flutter's included Material widgets, prebuilt components that are stylized based on the Material design langauge. 
-However, you're by not limited to Material Design. Flutter supports a variety of design languages such as 
-- Material
-- [Cupertino][] for iOS-styled widgets
-- A variety of other design language widgets on pub.dev
-- Build your own custom design widget library.
+Flutter ships with two design systems as part of the SDK, [Material][] and [Cupertino][]. For educational purposes, this page focuses on  Material widgets, prebuilt components that are stylized according to the Material design langauge specifications. 
 
+> <i class="material-symbols" aria-hidden="true">menu_book</i> **Reference**: 
+> The [widget catalog][] has an inventory of commonly used widgets in the [Material][] and [Cupertino][] libraries.
+
+The Flutter community also creates and supports additional designs systems on [pub.dev][], the package repository for Dart and Flutter. If the existing design system components don't quite fit what you need, Flutter lets you build your own custom designed widget library.
+
+[pub.dev]: https://pub.dev
 [Layouts]: /get-started/fwe/layout
-[Cupertino]: {{site.api}}/flutter/cupertino/cupertino-library.html
+[Material]: /ui/widgets/material
+[Cupertino]: /ui/widgets/cupertino
+[widget catalog]: /ui/widgets#design-systems
+
+In this section, we'll cover a few of the widgets that cover some common usecases for handling user input your Flutter app. 
 
 > <i class="material-symbols" aria-hidden="true">bookmark</i> **Tutorial**: 
 > Curious how you can change your app
@@ -41,20 +46,50 @@ However, you're by not limited to Material Design. Flutter supports a variety of
 > Complete the following tutorial that
 > teaches you how to build a "favorite" button: [Add interactivity to your Flutter app][]
 
-In this section, we'll cover a few of the widgets that cover the most common input usecases for your Flutter app. 
-
 ### Buttons
 
-Buttons let a user prompt action in the UI by clicking or tapping. The Material 3 library provides button a variety
-of button types are functionally similar, but styled differently for various usecases. 
+Buttons let a user prompt action in the UI by clicking or tapping. The Material 3 library provides button a variety of button types are functionally similar, but styled differently for various usecases. 
 
-TODO: Photo of M3 demo of all the buttons
+There are generally 3 parts to constructing a button: style, callback, and its child. 
+
+A button's style controls its appearance: color, border, etc. 
+
+<!--- TODO: WidgetStateProperty and styling in the the design section of FWE Of course, a button's appearance can be dependent on its state. You can style a button based on its state using WidgetStateProperty. -->
+
+Its callback determines what happens when the button is clicked. If a `null` callback is provided, the button is disabled and nothing happens when the button is pressed. 
+
+The button's child is what's displayed within the content area of the button, this is usually some text or icon that describes the button's purpose. 
+
+<img src='/assets/images/docs/fwe/user-input/material-buttons.png' alt="A collection of Material 3 Buttons.">
 
 #### `ElevatedButton`
-A button with some depth.
-  Use elevated buttons to add dimension
-  to otherwise mostly flat layouts.
+A button with some depth. Use elevated buttons to add dimension to otherwise mostly flat layouts.
 
+```dart
+Widget build(BuildContext context) {
+  final ButtonStyle style =
+      ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
+
+  return Center(
+    child: Column(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        ElevatedButton(
+          style: style,
+          onPressed: null,
+          child: const Text('Disabled'),
+        ),
+        const SizedBox(height: 30),
+        ElevatedButton(
+          style: style,
+          onPressed: () {},
+          child: const Text('Enabled'),
+        ),
+      ],
+    ),
+  );
+}
+```
 #### `FilledButton`
 A filled button that should be used for important,
   final actions that complete a flow,
@@ -81,6 +116,7 @@ An icon button that hovers over
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [FloatingActionButton (Widget of the Week)][]
 
+
 <br>
 
 > <i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**:  
@@ -96,11 +132,13 @@ An icon button that hovers over
 
 ### Handling Text Input
 
-Your Flutter can accept text as input, where the use types out their input using a keyboard. 
+Flutter apps also accept text as input.  
 
 #### `TextField`
-Let users enter text, either with hardware
-  keyboard or with an onscreen keyboard.
+Let users enter text with a hardware or onscreen keyboard. 
+
+Decoration
+Controller
 
 > <i class="material-symbols" aria-hidden="true">bookmark</i> **Tutorial**: 
 > This 4-part cookbook series walks
@@ -110,6 +148,23 @@ Let users enter text, either with hardware
 > 1. [Retrieve the value of a text field][]
 > 1. [Handle changes to a text field][]
 > 1. [Focus and text fields][].
+
+
+```dart
+@override
+Widget build(BuildContext context) {
+  return const SizedBox(
+    width: 250,
+    child: TextField(
+      obscureText: true,
+      decoration: InputDecoration(
+        border: OutlineInputBorder(),
+        labelText: 'Password',
+      ),
+    ),
+  );
+}
+```
 
 #### `RichText`
 `RichText` lets you take text input and dispay them with inline styles.
@@ -168,6 +223,10 @@ An optional container for grouping together
 #### `SegmentedButton`
 Allow users to select from limited set of options.
 
+Example Code:
+<iframe class="snippet-dartpad" src="https://dartpad.dev/embed-flutter.html?split=60&amp;run=true&amp;sample_id=material.SegmentedButton.1&amp;channel=stable">
+    </iframe>
+
 #### `DropdownMenu`
 Let users select a choice from a menu and place the
   selected item into the text input field.
@@ -175,10 +234,18 @@ Let users select a choice from a menu and place the
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [DropdownMenu (Widget of the Week)][]
 
+Example Code:
+<iframe class="snippet-dartpad" src="https://dartpad.dev/embed-flutter.html?split=60&amp;run=true&amp;sample_id=material.DropdownMenu.1&amp;channel=stable">
+    </iframe>
+
 #### `Slider`
 Select from a range of values.
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [Slider, RangeSlider, CupertinoSlider (Widget of the Week)][]
+
+Example Code:
+<iframe class="snippet-dartpad" src="https://dartpad.dev/embed-flutter.html?split=60&amp;run=true&amp;sample_id=material.Slider.1&amp;channel=stable" data-gtm-yt-inspected-9257802_51="true" data-gtm-yt-inspected-9257802_75="true" data-gtm-yt-inspected-9257802_114="true">
+    </iframe>
 
 [`DropdownMenu`]: {{site.api}}/flutter/material/DropdownMenu-class.html
 [DropdownMenu (Widget of the Week)]: https://youtu.be/giV9AbM2gd8?si=E23hjg72cjMTe_mz
@@ -197,25 +264,43 @@ Select from a range of values.
 Select one or more items from a list,
   or toggle an item.
 
-#### `CheckboxListTile`
-A checkbox with a label.
+Example Code:
+<iframe class="snippet-dartpad" src="https://dartpad.dev/embed-flutter.html?split=60&amp;run=true&amp;sample_id=material.Checkbox.1&amp;channel=stable">
+    </iframe>
 
-> <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
-> [CheckboxListTile (Widget of the Week)][]
+
 
 #### `Switch`
 Toggle the on/off state of a single setting.
 
-#### `SwitchListTile`
-A switch with a label. 
+Example Code:
+<iframe class="snippet-dartpad" src="https://dartpad.dev/embed-flutter.html?split=60&amp;run=true&amp;sample_id=material.Switch.1&amp;channel=stable">
+    </iframe>
+
+#### `CheckboxListTile` & `SwitchListTile`
+A checkbox or switch widget, with a label. 
+
+> <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
+> [CheckboxListTile (Widget of the Week)][]
 
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [SwitchListTile (Widget of the Week)][]
+
+Example Code:
+<iframe class="snippet-dartpad" src="https://dartpad.dev/embed-flutter.html?split=60&amp;run=true&amp;sample_id=material.CheckboxListTile.2&amp;channel=stable" data-gtm-yt-inspected-9257802_51="true" data-gtm-yt-inspected-9257802_75="true" data-gtm-yt-inspected-9257802_114="true">
+    </iframe>
+
+<iframe class="snippet-dartpad" src="https://dartpad.dev/embed-flutter.html?split=60&amp;run=true&amp;sample_id=material.SwitchListTile.2&amp;channel=stable" data-gtm-yt-inspected-9257802_51="true" data-gtm-yt-inspected-9257802_75="true" data-gtm-yt-inspected-9257802_114="true">
+    </iframe>
 
 #### `Radio`
 Select between a number of mutually exclusive values.
   When one radio button in a group is selected,
   the other radio buttons in the group cease to be selected.
+
+Example Code:
+<iframe class="snippet-dartpad" src="https://dartpad.dev/embed-flutter.html?split=60&amp;run=true&amp;sample_id=material.Radio.1&amp;channel=stable">
+    </iframe>
 
 #### `Chip`
 Chips are compact elements that represent an attribute,
@@ -229,23 +314,29 @@ Chips are compact elements that represent an attribute,
 
 ### Selecting a date, time, or both!
 
-#### `showDatePicker`
-Shows a dialog containing a
-  Material Design date picker
+#### `DatePickerDialog`
+A Material design date picker dialog, display it using `showDatePicker`.
 
-#### `showTimePicker`
-Shows a dialog containing a
-  [Material Design time picker][].
+Example Code:
+<iframe class="snippet-dartpad" src="https://dartpad.dev/embed-flutter.html?split=60&amp;run=true&amp;sample_id=material.showDatePicker.1&amp;channel=stable">
+    </iframe>
+
+#### `TimePickerDialog`
+A Material Design time picker dialog, display it using `showTimePicker`.
+
+Example Code: 
+<iframe class="snippet-dartpad" src="https://dartpad.dev/embed-flutter.html?split=60&amp;run=true&amp;sample_id=material.showTimePicker.4&amp;channel=stable">
+    </iframe>
 
 <br>
 
 > <i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**:  
 > [`showDatePicker`][] | [`showTimePicker`][]
 
-### Swipe and slide
+### Swipe & slide
 
 [`Dismissible`][]
-: Clear list items by swiping left or right.
+Clear list items by swiping left or right.
 
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [Dismissible (Widget of the Week)][]
@@ -253,9 +344,12 @@ Shows a dialog containing a
 > <i class="material-symbols" aria-hidden="true">bookmark</i> **Tutorial**: 
 > Learn how to [Implement swipe to dismiss][] using the dismissable widget.
 
+Example Code:
+<iframe class="snippet-dartpad" src="https://dartpad.dev/embed-flutter.html?split=60&amp;run=true&amp;sample_id=widgets.Dismissible.1&amp;channel=stable" data-gtm-yt-inspected-9257802_51="true" data-gtm-yt-inspected-9257802_75="true" data-gtm-yt-inspected-9257802_114="true">
+    </iframe>
+
 [pkg:`flutter_slidable`][]
-: A list item with directional slide actions
-  that can be dismissed.
+A list item with directional slide actions that can be dismissed.
 
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [flutter_slidable (Package of the Week)][]
