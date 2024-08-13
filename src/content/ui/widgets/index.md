@@ -9,10 +9,38 @@ Create beautiful apps faster with Flutter's collection of visual, structural,
 platform, and interactive widgets. In addition to browsing widgets by category,
 you can also see all the widgets in the [widget index][].
 
+## Design systems
+
+Flutter ships with two design systems as part of the SDK.
+You can find many more designs systems created by the Flutter community
+on [pub.dev]({{site.pub}}), the package repository for Dart and Flutter.
+
 <div class="card-grid">
 {% assign categories = catalog.index | sort: 'name' -%}
 {% for section in categories %}
-    {%- if section.name != "Material 2 components" -%}
+    {%- if section.name == "Cupertino" or section.name == "Material components" -%}
+        <div class="card">
+            <div class="card-body">
+                <a href="{{page.url}}{{section.id}}"><header class="card-title">{{section.name}}</header></a>
+                <p class="card-text">{{section.description}}</p>
+            </div>
+            <div class="card-footer card-footer--transparent">
+                <a href="{{page.url}}{{section.id}}" aria-label="Navigate to the {{section.name}} widgets catalog">Visit</a>
+            </div>
+        </div>
+    {% endif -%}
+{% endfor %}
+</div>
+
+## Base widgets
+
+Base widgets support a range of common rendering options
+like input, layout, and text.
+
+<div class="card-grid">
+{% assign categories = catalog.index | sort: 'name' -%}
+{% for section in categories %}
+    {%- if section.name != "Cupertino" and section.name != "Material components" and section.name != "Material 2 components" -%}
         <div class="card">
             <div class="card-body">
                 <a href="{{page.url}}{{section.id}}"><header class="card-title">{{section.name}}</header></a>
