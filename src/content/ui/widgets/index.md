@@ -11,9 +11,9 @@ you can also see all the widgets in the [widget index][].
 
 ## Design systems
 
-Flutter ships with two design systems as part of the SDK. 
-You can find many more designs systems shared by the ecosystem,
-on the [pub.dev package repository]({{site.pub}}).
+Flutter ships with two design systems as part of the SDK.
+You can find many more designs systems created by the Flutter community
+on [pub.dev]({{site.pub}}), the package repository for Dart and Flutter.
 
 <div class="card-grid">
 {% assign categories = catalog.index | sort: 'name' -%}
@@ -34,7 +34,7 @@ on the [pub.dev package repository]({{site.pub}}).
 
 ## Base widgets
 
-Base widgets support a range of base rendering options
+Base widgets support a range of common rendering options
 like input, layout, and text.
 
 <div class="card-grid">
