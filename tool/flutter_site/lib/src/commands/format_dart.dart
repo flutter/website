@@ -65,7 +65,7 @@ int formatDart({bool justCheck = false}) {
   }
 
   // If just checking formatting, exit with error code if any files changed.
-  if (justCheck && !normalOutput.contains('0 changed')) {
+  if (justCheck && !normalOutput.contains('(0 changed)')) {
     stderr.writeln('Error: Some files needed to be formatted!');
     return 1;
   }
