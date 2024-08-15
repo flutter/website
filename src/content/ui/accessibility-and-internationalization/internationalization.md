@@ -844,6 +844,8 @@ at the command line or refer to the following table:
 | `[no-]format`                       | When specified, the `dart format` command is run after generating the localization files. |
 | `use-escaping`                      | Specifies whether to enable the use of single quotes as escaping syntax. |
 | `[no-]suppress-warnings`            | When specified, all warnings are suppressed. |
+| `[no-]relax-syntax`                 | When specified, the syntax will be relaxed so that the special character "{" is treated as a string if it is not followed by a valid placeholder and "}" is treated as a string if it does not close any previous "{" that is treated as a special character. |
+| `[no-]use-named-parameters`         | Whether or not to use named parameters for the generated localization methods. |
 
 {:.table .table-striped}
 
