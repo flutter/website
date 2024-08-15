@@ -152,16 +152,16 @@ The `serviceWorkerSettings` argument has the following optional fields.
 ## Example: Customizing Flutter configuration based on URL query parameters
 
 The following example shows a custom `flutter_bootstrap.js` that allows
-the user to force the app to use the `CanvasKit` renderer by providing
-a query parameter called `?force_canvaskit=true` in the URL of their website:
+the user to select a renderer by providing a `renderer` query parameter,
+e.g. `?renderer=skwasm`, in the URL of their website:
 
 ```js
 {% raw %}{{flutter_js}}{% endraw %}
 {% raw %}{{flutter_build_config}}{% endraw %}
 
 const searchParams = new URLSearchParams(window.location.search);
-const forceCanvaskit = searchParams.get('force_canvaskit') === 'true';
-const userConfig = forceCanvaskit ? {'renderer': 'canvaskit'} : {};
+const renderer = searchParams.get('renderer');
+const userConfig = renderer ? {'renderer': renderer} : {};
 _flutter.loader.load({
   config: userConfig,
   serviceWorkerSettings: {
@@ -171,7 +171,7 @@ _flutter.loader.load({
 ```
 
 This script evaluates the `URLSearchParams` of the page to determine whether
-the user passed `force_canvaskit=true` and then
+the user passed a `renderer` query parameter and then
 changes the user configuration of the Flutter app.
 It also passes the service worker settings to use the flutter service worker,
 along with the service worker version.
