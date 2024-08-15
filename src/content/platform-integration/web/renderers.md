@@ -122,7 +122,7 @@ by all app code, and all plugins and packages used by the app:
 
 - The code must only use the new JS interop library `dart:js_interop`. Old-style
   `dart:js`, `dart:js_util`, and `package:js` are no longer supported.
-- All Web API must use the new `package:web` instead of `dart:html`.
+- Code using Web APIs must use the new `package:web` instead of `dart:html`.
 - WebAssembly implements Dart's numeric types `int` and `double` exactly the
   same as the Dart VM. In JavaScript these types are emulated using the JS
   `Number` type. It is possible that your code accidentally or purposefully
