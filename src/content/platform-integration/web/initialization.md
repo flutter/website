@@ -95,7 +95,7 @@ order to successfully start your Flutter app:
 
 * A `{% raw %}{{flutter_js}}{% endraw %}` token,
   to make `_flutter.loader` available.
-* A `{% raw %}{{flutter_build_config}}{% endraw %}` token, 
+* A `{% raw %}{{flutter_build_config}}{% endraw %}` token,
   which provides information about the build to the
   `FlutterLoader` needed to start your app.
 * A call to `_flutter.loader.load()`, which actually starts the app.
@@ -133,7 +133,7 @@ The `config` argument is an object that can have the following optional fields:
 |`canvasKitMaximumSurfaces`| The maximum number of overlay surfaces that the CanvasKit renderer can use. |`double`|
 |`debugShowSemanticNodes`| If `true`, Flutter visibly renders the semantics tree onscreen (for debugging).  |`bool`|
 |`hostElement`| HTML Element into which Flutter renders the app. When not set, Flutter web takes over the whole page. |`HtmlElement`|
-|`renderer`| Specifies the [web renderer][web-renderers] for the current Flutter application, either `"canvaskit"` or `"html"`. |`String`|
+|`renderer`| Specifies the [web renderer][web-renderers] for the current Flutter application, either `"canvaskit"` or `"skwasm"`. |`String`|
 
 {:.table}
 
