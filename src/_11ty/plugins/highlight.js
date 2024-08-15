@@ -95,10 +95,6 @@ function _highlight(
   language,
   attributeString,
 ) {
-  if (language.includes('diff2html')) {
-    return '';
-  }
-
   const attributes = _parseAttributes(attributeString);
 
   // Specially handle DartPad snippets so that inject_embed can convert them.
