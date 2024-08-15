@@ -385,7 +385,7 @@ method is called with the return value from `animate()`.
 Consider the following example:
 
 <?code-excerpt "animate1/lib/main.dart (addListener)"?>
-```dart highlightLines=1-2
+```dart highlightLines=2
 animation = Tween<double>(begin: 0, end: 300).animate(controller)
   ..addListener(() {
     // ···
@@ -394,8 +394,8 @@ animation = Tween<double>(begin: 0, end: 300).animate(controller)
 
 This code is equivalent to:
 
-<?code-excerpt "animate1/lib/main.dart (addListener)"?>
-```dart highlightLines=1-2
+<?code-excerpt "animate1/lib/main.dart (addListener)" replace="/animation.*/$&;/g; /  \./animation/g;"?>
+```dart highlightLines=2
 animation = Tween<double>(begin: 0, end: 300).animate(controller);
 animation.addListener(() {
     // ···
