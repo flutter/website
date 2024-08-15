@@ -133,8 +133,8 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    :::
 
 1. If your plugin has a [`PrivacyInfo.xcprivacy` file][], move it to
-   `ios/Sources/plugin_name/PrivacyInfo.xcprivacy` and uncomment the resource in
-   the `Package.swift` file.
+   `ios/plugin_name/Sources/plugin_name/PrivacyInfo.xcprivacy` and uncomment
+   the resource in the `Package.swift` file.
 
    ```swift title="Package.swift"
                resources: [
@@ -151,8 +151,8 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
                ],
    ```
 
-1. Move any resource files from `ios/Assets` to `ios/Sources/plugin_name`
-   (or a subdirectory).
+1. Move any resource files from `ios/Assets` to
+   `ios/plugin_name/Sources/plugin_name` (or a subdirectory).
    Add the resource files to your `Package.swift` file, if applicable.
    For more instructions, see
    [https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package](https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package).

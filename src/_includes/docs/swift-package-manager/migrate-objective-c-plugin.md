@@ -148,8 +148,8 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    :::
 
 1. If your plugin has a [`PrivacyInfo.xcprivacy` file][], move it to
-   `ios/Sources/plugin_name/PrivacyInfo.xcprivacy` and uncomment the resource in
-   the `Package.swift` file.
+   `ios/plugin_name/Sources/plugin_name/PrivacyInfo.xcprivacy` and uncomment
+   the resource in the `Package.swift` file.
 
    ```swift title="Package.swift"
                resources: [
@@ -166,14 +166,14 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
                ],
    ```
 
-1. Move any resource files from `ios/Assets` to `ios/Sources/plugin_name`
-   (or a subdirectory).
+1. Move any resource files from `ios/Assets` to
+   `ios/plugin_name/Sources/plugin_name` (or a subdirectory).
    Add the resource files to your `Package.swift` file, if applicable.
    For more instructions, see
    [https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package](https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package).
 
 1. Move any public headers from `ios/Classes` to
-   `ios/Sources/plugin_name/include/plugin_name`.
+   `ios/plugin_name/Sources/plugin_name/include/plugin_name`.
 
    * If you're unsure which headers are public, check your `podspec` file's
      [`public_header_files`][] attribute.
@@ -196,7 +196,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    `Package.swift` file.
   
    The example below assumes the `modulemap` and umbrella header are located
-   in the `ios/Sources/plugin_name/include` directory.
+   in the `ios/plugin_name/Sources/plugin_name/include` directory.
 
     ```diff2html
     --- a/Package.swift
@@ -247,8 +247,8 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    * After:
 
      <pre>
-     ios/plugin_name_ios/Sources/plugin_name_ios/
-     └── <b>include/plugin_name_ios/</b>
+     ios/plugin_name/Sources/plugin_name/
+     └── <b>include/plugin_name/</b>
         └── PublicHeaderFile.h
      └── ImplementationFile.m
      </pre>
@@ -257,11 +257,11 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    should be updated:
 
    ```diff2html
-   --- a/Sources/plugin_name_ios/ImplementationFile.m
-   +++ b/Sources/plugin_name_ios/ImplementationFile.m
+   --- a/Sources/plugin_name/ImplementationFile.m
+   +++ b/Sources/plugin_name/ImplementationFile.m
    @@ -1,1 +1,1 @@
    - #import "PublicHeaderFile.h"
-   + #import "./include/plugin_name_ios/PublicHeaderFile.h"
+   + #import "./include/plugin_name/PublicHeaderFile.h"
    ```
 
 1. If your plugin uses [Pigeon][], update your Pigeon input file.
@@ -273,8 +273,8 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
       javaOptions: JavaOptions(),
    -  objcHeaderOut: 'ios/Classes/messages.g.h',
    -  objcSourceOut: 'ios/Classes/messages.g.m',
-   +  objcHeaderOut: 'ios/plugin_name_ios/Sources/plugin_name_ios/messages.g.h',
-   +  objcSourceOut: 'ios/plugin_name_ios/Sources/plugin_name_ios/messages.g.m',
+   +  objcHeaderOut: 'ios/plugin_name/Sources/plugin_name/messages.g.h',
+   +  objcSourceOut: 'ios/plugin_name/Sources/plugin_name/messages.g.m',
       copyrightHeader: 'pigeons/copyright.txt',
    ```
 
@@ -289,10 +289,10 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
       javaOptions: JavaOptions(),
    -  objcHeaderOut: 'ios/Classes/messages.g.h',
    -  objcSourceOut: 'ios/Classes/messages.g.m',
-   +  objcHeaderOut: 'ios/plugin_name_ios/Sources/plugin_name_ios/include/plugin_name_ios/messages.g.h',
-   +  objcSourceOut: 'ios/plugin_name_ios/Sources/plugin_name_ios/messages.g.m',
+   +  objcHeaderOut: 'ios/plugin_name/Sources/plugin_name/include/plugin_name/messages.g.h',
+   +  objcSourceOut: 'ios/plugin_name/Sources/plugin_name/messages.g.m',
    +  objcOptions: ObjcOptions(
-   +    headerIncludePath: './include/plugin_name_ios/messages.g.h',
+   +    headerIncludePath: './include/plugin_name/messages.g.h',
    +  ),
       copyrightHeader: 'pigeons/copyright.txt',
    ```
@@ -371,8 +371,9 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    Otherwise, using `SWIFTPM_MODULE_BUNDLE` results in an error.
    :::
 
-1. If your `ios/Sources/plugin_name/include` directory only contains a
-   `.gitkeep`, you'll want update your `.gitignore` to include the following:
+1. If your `ios/plugin_name/Sources/plugin_name/include` directory only
+   contains a `.gitkeep`, you'll want update your `.gitignore` to include the
+   following:
 
     ```text title=".gitignore"
     !.gitkeep
