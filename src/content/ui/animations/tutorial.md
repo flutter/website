@@ -384,7 +384,7 @@ dots in `..addListener()`. This syntax means that the `addListener()`
 method is called with the return value from `animate()`.
 Consider the following example:
 
-<?code-excerpt "animate1/lib/main.dart (addListener)"?>
+<?code-excerpt "animate1/lib/main.dart (add-listener)"?>
 ```dart highlightLines=2
 animation = Tween<double>(begin: 0, end: 300).animate(controller)
   ..addListener(() {
@@ -394,7 +394,7 @@ animation = Tween<double>(begin: 0, end: 300).animate(controller)
 
 This code is equivalent to:
 
-<?code-excerpt "animate1/lib/main.dart (addListener)" replace="/animation.*/$&;/g; /  \./animation/g;"?>
+<?code-excerpt "animate1/lib/main.dart (add-listener)" replace="/animation.*/$&;/g; /  \./animation/g;"?>
 ```dart highlightLines=2
 animation = Tween<double>(begin: 0, end: 300).animate(controller);
 animation.addListener(() {
