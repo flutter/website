@@ -157,7 +157,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    For more instructions, see
    [https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package](https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package).
 
-1. Move all files from `ios/Classes` to `ios/Sources/plugin_name`.
+1. Move all files from `ios/Classes` to `ios/plugin_name/Sources/plugin_name`.
 
 1. The `ios/Assets`, `ios/Resources`, and `ios/Classes` directories should now
    be empty and can be deleted.

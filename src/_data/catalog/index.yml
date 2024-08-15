@@ -31,9 +31,10 @@
     - name: 'Information displays'
     - name: 'Layout'
   id: material2
-- name: Cupertino (iOS-style widgets)
+- name: Cupertino
   description: >-
-    Beautiful and high-fidelity widgets for the current iOS design language.
+    Beautiful and high-fidelity widgets that align with
+    Apple's Human Interface Guidelines for iOS and macOS.
   id: cupertino
 - name: Layout
   description: >-

@@ -116,6 +116,8 @@
             permalink: https://codelabs.developers.google.com/codelabs/admob-inline-ads-in-flutter
           - title: Google AdMob mediation
             permalink: https://developers.google.com/admob/flutter/mediation
+          - title: Interactive Media Ads SDK
+            permalink: https://pub.dev/packages/interactive_media_ads
         - title: In-app purchases
           children:
           - title: In-app purchases overview

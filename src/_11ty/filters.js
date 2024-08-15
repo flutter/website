@@ -1,4 +1,5 @@
 import { getPageInfo } from './utils/get-page-info.js';
+import { slugify } from "./utils/slugify.js";
 import { fromHtml } from 'hast-util-from-html';
 import { selectAll } from 'hast-util-select';
 import { toText } from 'hast-util-to-text';
@@ -27,6 +28,7 @@ export function registerFilters(eleventyConfig) {
   eleventyConfig.addFilter('array_to_sentence_string', arrayToSentenceString);
   eleventyConfig.addFilter('generate_toc', generateToc);
   eleventyConfig.addFilter('breadcrumbsForPage', breadcrumbsForPage);
+  eleventyConfig.addFilter('slugify', slugify);
 }
 
 /**
