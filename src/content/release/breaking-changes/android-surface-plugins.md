@@ -38,7 +38,7 @@ platform and API level.
 
 1. Instead of creating a `SurfaceTextureEntry`, create a `SurfaceProducer`:
 
-   ```diff
+   ```java diff
    - TextureRegistry.SurfaceTextureEntry entry = textureRegistry.createSurfaceTexture();
    + TextureRegistry.SurfaceProducer producer = textureRegistry.createSurfaceProducer();
    ```
@@ -46,7 +46,7 @@ platform and API level.
 1. Instead of creating a `new Surface(...)`, call [`getSurface()`][] on the
    `SurfaceProducer`:
 
-   ```diff
+   ```java diff
    - Surface surface = new Surface(entry.surfaceTexture());
    + Surface surface = producer.getSurface();
    ```

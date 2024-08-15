@@ -116,18 +116,18 @@ other code may be placed before these blocks.
 
 Remove the whole `buildscript` block from `<app-src/android/build.gradle`:
 
-```diff
--buildscript {
--    ext.kotlin_version = '{kotlinVersion}'
--    repositories {
--        google()
--        mavenCentral()
--    }
+```groovy diff
+- buildscript {
+-     ext.kotlin_version = '{kotlinVersion}'
+-     repositories {
+-         google()
+-         mavenCentral()
+-     }
 -
--    dependencies {
--        classpath "org.jetbrains.kotlin:gradle-plugin:$kotlin_version"
--    }
--}
+-     dependencies {
+-         classpath "org.jetbrains.kotlin:gradle-plugin:$kotlin_version"
+-     }
+- }
 ```
 
 Here's how that file will likely end up:
@@ -158,17 +158,17 @@ tasks.register("clean", Delete) {
 Most changes have to be made in the `<app-src>/android/app/build.gradle`. First,
 remove these 2 chunks of code that use the legacy imperative apply method:
 
-```diff
--def flutterRoot = localProperties.getProperty('flutter.sdk')
--if (flutterRoot == null) {
--    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
--}
+```groovy diff
+- def flutterRoot = localProperties.getProperty('flutter.sdk')
+- if (flutterRoot == null) {
+-     throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+- }
 ```
 
-```diff
--apply plugin: 'com.android.application'
--apply plugin: 'com.jetbrains.kotlin.android'
--apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+```groovy diff
+- apply plugin: 'com.android.application'
+- apply plugin: 'com.jetbrains.kotlin.android'
+- apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 ```
 
 Now apply the plugins again, but this time using the Plugin DSL syntax. At the
@@ -184,10 +184,10 @@ plugins {
 
 Finally, if your `dependencies` block contains a dependency on `"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"`, 
 then remove that dependency.
-```diff
-dependencies {
--    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-}
+```groovy diff
+  dependencies {
+-     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+  }
 ```
 If it was the only dependency in the `dependencies` block, then 
 alternatively you may remove the block entirely.
@@ -204,23 +204,23 @@ Android device or emulator.
 If your app was using Google Mobile Services and Crashlytics, remove the
 following lines from `<app-src>/android/build.gradle`:
 
-```diff
- buildscript {
-     // ...
+```groovy diff
+  buildscript {
+      // ...
 
-     dependencies {
-         // ...
--        classpath "com.google.gms:google-services:4.4.0"
--        classpath "com.google.firebase:firebase-crashlytics-gradle:2.9.9"
-     }
- }
+      dependencies {
+          // ...
+-         classpath "com.google.gms:google-services:4.4.0"
+-         classpath "com.google.firebase:firebase-crashlytics-gradle:2.9.9"
+      }
+  }
 ```
 
 and remove these 2 lines from `<app-src>/android/app/build.gradle`:
 
-```diff
--apply plugin: 'com.google.gms.google-services'
--apply plugin: 'com.google.firebase.crashlytics'
+```groovy diff
+- apply plugin: 'com.google.gms.google-services'
+- apply plugin: 'com.google.firebase.crashlytics'
 ```
 
 To migrate to the new, declarative-apply syntax for
@@ -230,26 +230,26 @@ The additions should look similar to the following,
 but with your desired plugin versions, likely matching
 the ones you removed from the `<app-src>/android/build.gradle` file.
 
-```diff
- plugins {
-     id "dev.flutter.flutter-plugin-loader" version "1.0.0"
-     id "com.android.application" version "{agpVersion}" apply false
-     id "org.jetbrains.kotlin.android" version "{kotlinVersion}" apply false
-+    id "com.google.gms.google-services" version "4.4.0" apply false
-+    id "com.google.firebase.crashlytics" version "2.9.9" apply false
- }
+```groovy diff
+  plugins {
+      id "dev.flutter.flutter-plugin-loader" version "1.0.0"
+      id "com.android.application" version "{agpVersion}" apply false
+      id "org.jetbrains.kotlin.android" version "{kotlinVersion}" apply false
++     id "com.google.gms.google-services" version "4.4.0" apply false
++     id "com.google.firebase.crashlytics" version "2.9.9" apply false
+  }
 ```
 
 and the following lines to `<app-src>/android/app/build.gradle`:
 
-```diff
- plugins {
-     id "com.android.application"
-     id "dev.flutter.flutter-gradle-plugin"
-     id "org.jetbrains.kotlin.android"
-+    id "com.google.gms.google-services"
-+    id "com.google.firebase.crashlytics"
- }
+```groovy diff
+  plugins {
+      id "com.android.application"
+      id "dev.flutter.flutter-gradle-plugin"
+      id "org.jetbrains.kotlin.android"
++     id "com.google.gms.google-services"
++     id "com.google.firebase.crashlytics"
+  }
 ```
 
 ## Timeline

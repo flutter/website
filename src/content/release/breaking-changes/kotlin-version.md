@@ -39,7 +39,7 @@ A Flutter app compiled for Android now includes the Gradle dependency
 
 Open `<app-src>/android/build.gradle`, and change `ext.kotlin_version`:
 
-```diff
+```groovy diff
   buildscript {
 -     ext.kotlin_version = '1.3.50'
 +     ext.kotlin_version = '1.5.31'
