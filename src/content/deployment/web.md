@@ -16,7 +16,7 @@ of your app and covers the following topics:
 * [Deploying to the web](#deploying-to-the-web)
 * [Deploying to Firebase Hosting](#deploying-to-firebase-hosting)
 * [Handling images on the web](#handling-images-on-the-web)
-* [Choosing a web renderer](#choosing-a-web-renderer)
+* [Choosing a build mode and a renderer](#choosing-a-build-mode-and-a-renderer)
 * [Minification](#minification)
 
 ## Building the app for release

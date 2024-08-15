@@ -6,11 +6,12 @@ description: Choosing build modes and renderers for a Flutter web app.
 Flutter web offers two _build modes_, and two _renderers_. A build mode
 is chosen when building the app and it determines which of the two renderers are
 available in the app, and how a renderer is chosen. A renderer is chosen at
-runtime when the app is being launched.
+runtime when the app is being launched, and it determines the set of web
+technologies used to render the UI.
 
 The two build modes are: default mode, and WebAssembly mode.
 
-The two rendering modes are: `canvaskit` and `skwasm`.
+The two renderers are: `canvaskit` and `skwasm`.
 
 ## Renderers
 
@@ -47,8 +48,8 @@ about 1.1MB in download size.
 ### Default build mode
 
 The default mode is used when `flutter run` and `flutter build web` commands are
-used without any extra arguments. This build mode only uses the `canvaskit`
-renderer.
+used without passing `--wasm` or by passing `--no-wasm`. This build mode only
+uses the `canvaskit` renderer.
 
 ### WebAssembly build mode
 
