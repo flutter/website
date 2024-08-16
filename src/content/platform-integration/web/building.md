@@ -140,9 +140,8 @@ This populates a `build/web` directory
 with built files, including an `assets` directory,
 which need to be served together.
 
-You can also include `--web-renderer html`  or `--web-renderer canvaskit` to
-select between the HTML or CanvasKit renderers, respectively. For more
-information, see [Web renderers][].
+Flutter web offers multiple build modes and renderers. For more information,
+see [Web renderers][].
 
 To learn more, see
 [Build and release a web app][].
