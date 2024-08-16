@@ -183,8 +183,8 @@ Web limitations:
 * Multi-engine mode is not supported.
 * There's no way to completely "shutdown" the Flutter engine. The app can remove
   all the [FlutterView][] objects and make sure all data is garbage collected
-  using normal Dart concepts. However, the engine will be remain warmed up, even
-  if it's not rendering anything.
+  using normal Dart concepts. However, the engine will remain warmed up, even if
+  it's not rendering anything.
 
 [get started]: /get-started/codelab
 [add-to-app GitHub Samples repository]: {{site.repo.samples}}/tree/main/add_to_app
