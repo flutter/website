@@ -67,13 +67,13 @@ While this is not expected to be a common case, you can
 disable dithering temporarily by setting the `enableDithering` property in
 your `main()` method (either in an app or test):
 
-```diff
-void main() {
-+ // TODO: Remove this after XYZ.
-+ Paint.enableDithering = false;
+```dart diff
+  void main() {
++   // TODO: Remove this after XYZ.
++   Paint.enableDithering = false;
 
-  runApp(MyApp());
-}
+    runApp(MyApp());
+  }
 ```
 
 As the plan is to _permanently_ remove the `enableDithering` property, please

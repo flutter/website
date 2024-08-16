@@ -43,6 +43,38 @@ pre {
       border-left-color: $site-color-primary;
     }
 
+    &.added-line, &.removed-line {
+      padding-left: 0.25rem;
+
+      &::before {
+        display: inline-block;
+        user-select: none;
+        width: 0.75rem;
+        margin-right: 0.25rem;
+        text-align: right;
+      }
+    }
+
+    &.added-line {
+      background: color.change($flutter-color-teal, $alpha: 0.03);
+      border-left-color: $flutter-color-teal;
+
+      &::before {
+        content: '+';
+        color: color.mix($site-color-sub-grey, $flutter-color-teal);
+      }
+    }
+
+    &.removed-line {
+      background: color.change($alert-danger-fg, $alpha: 0.03);
+      border-left-color: $alert-danger-fg;
+
+      &::before {
+        content: '-';
+        color: color.mix($site-color-sub-grey, $alert-danger-fg);
+      }
+    }
+
     .terminal-command::before {
       color: $site-color-sub-grey;
       content: "$";
@@ -191,6 +223,7 @@ pre {
 
     code {
       display: block;
+      min-width: fit-content;
       width: 100%;
     }
 
