@@ -40,87 +40,62 @@ The Flutter community also creates and supports additional designs systems on [p
 
 In this section, we'll cover a few of the widgets that cover some common usecases for handling user input your Flutter app. 
 
-> <i class="material-symbols" aria-hidden="true">bookmark</i> **Tutorial**: 
-> Curious how you can change your app
-> state in response to user interactions?
-> Complete the following tutorial that
-> teaches you how to build a "favorite" button: [Add interactivity to your Flutter app][]
 
 ### Buttons
-
-Buttons let a user prompt action in the UI by clicking or tapping. The Material 3 library provides button a variety of button types are functionally similar, but styled differently for various usecases. 
-
-There are generally 3 parts to constructing a button: style, callback, and its child. 
-
-A button's style controls its appearance: color, border, etc. 
-
-<!--- TODO: WidgetStateProperty and styling in the the design section of FWE Of course, a button's appearance can be dependent on its state. You can style a button based on its state using WidgetStateProperty. -->
-
-Its callback determines what happens when the button is clicked. If a `null` callback is provided, the button is disabled and nothing happens when the button is pressed. 
-
-The button's child is what's displayed within the content area of the button, this is usually some text or icon that describes the button's purpose. 
-
 <img src='/assets/images/docs/fwe/user-input/material-buttons.png' alt="A collection of Material 3 Buttons.">
 
-#### `ElevatedButton`
-A button with some depth. Use elevated buttons to add dimension to otherwise mostly flat layouts.
-
-```dart
-Widget build(BuildContext context) {
-  final ButtonStyle style =
-      ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
-
-  return Center(
-    child: Column(
-      mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-        ElevatedButton(
-          style: style,
-          onPressed: null,
-          child: const Text('Disabled'),
-        ),
-        const SizedBox(height: 30),
-        ElevatedButton(
-          style: style,
-          onPressed: () {},
-          child: const Text('Enabled'),
-        ),
-      ],
-    ),
-  );
-}
-```
-#### `FilledButton`
-A filled button that should be used for important,
-  final actions that complete a flow,
-  like **Save**, **Join now**, or **Confirm**. 
-
-#### `OutlinedButton`
-A button with text and a visible border.
+Buttons let a user prompt action in the UI by clicking or tapping. The Material library provides a variety of button types that are functionally similar, but styled differently for various usecases,  including:
+- `ElevatedButton`: A button with some depth. Use elevated buttons to add dimension to otherwise mostly flat layouts.
+- `FilledButton`: A filled button that should be used for important, final actions that complete a flow, like **Save**, **Join now**, or **Confirm**. 
+- `Tonal Button`
+- `OutlinedButton`: A button with text and a visible border.
   These buttons contain actions that are important,
   but aren't the primary action in an app.
-
-#### `TextButton`
-Clickable text, without a border.
+- `TextButton`: Clickable text, without a border.
   Since text buttons don't have visible borders
   and they must therefore rely on their position
   relative to other content for context.
-
-#### `IconButton`
-A button with an icon.
-
-#### `FloatingActionButton`
-An icon button that hovers over
+- `IconButton`: A button with an icon.
+- and `FloatingActionButton`: An icon button that hovers over
   content to promote a primary action.
 
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [FloatingActionButton (Widget of the Week)][]
 
+There are usually 3 main parts to constructing a button: style, callback, and its child, as seen in the `ElevatedButton` sample code below: 
+
+<!--- TODO: WidgetStateProperty and styling in the the design section of FWE Of course, a button's appearance can be dependent on its state. You can style a button based on its state using WidgetStateProperty. -->
+
+- Its callback function, `onPressed` determines what happens when the button is clicked, this function is where you update your app state. If a `null` callback is provided, the button is disabled and nothing happens when a user presses the button. 
+
+- The button's `child`, which is what's displayed within the button's content area, that's usually text or an icon that indicates the button's purpose. 
+
+- Finally, a button's `style` controls its appearance: color, border, etc.
+code:"
+```dart
+Widget build(BuildContext context) {
+  return ElevatedButton(
+    style: ElevatedButton.styleFrom(
+      textStyle: const TextStyle(fontSize: 20),
+    ),
+    onPressed: () {
+      setState({
+        count += 1;
+      })
+    },
+    child: const Text('Enabled'),
+  );
+}
+```
+<br>
+
+> <i class="material-symbols" aria-hidden="true">star</i> **Checkpoint**: 
+> Complete this tutorial that
+> teaches you how to build a "favorite" button: [Add interactivity to your Flutter app][]
 
 <br>
 
-> <i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**:  
-> [`ElevatedButton`][] | [`FilledButton`][] | [`OutlinedButton`][] | [`TextButton`][] | [`IconButton`][] | [`FloatingActionButton`][]
+<i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**: [`ElevatedButton`][] | [`FilledButton`][] | [`OutlinedButton`][] | [`TextButton`][] | [`IconButton`][] | [`FloatingActionButton`][]
 
 [`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
 [`FilledButton`]: {{site.api}}/flutter/material/FilledButton-class.html
@@ -130,25 +105,25 @@ An icon button that hovers over
 [`OutlinedButton`]: {{site.api}}/flutter/material/OutlinedButton-class.html
 [`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
 
-### Handling Text Input
+### Text
 
-Flutter apps also accept text as input.  
+#### `SelectableText`
+
+Flutter's `Text` widget displays text on the screen, but app users aren't able to highlight it, copy, etc. `SelectableText` will display a string of _user-selectable_ text with a single style.
+<!-- GIF of SelectableText -->
+
+> <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
+> [SelectableText (Widget of the Week)][]
+
 
 #### `TextField`
-Let users enter text with a hardware or onscreen keyboard. 
+A TextField lets users enter text in text box using a hardware or onscreen keyboard. 
 
-Decoration
-Controller
+`InputDecoration`
+`TextEditingController`
+`onSubmitted` 
 
-> <i class="material-symbols" aria-hidden="true">bookmark</i> **Tutorial**: 
-> This 4-part cookbook series walks
-> you through how to create a text field,
-> retrieve its value, and update your app state:
-> 1. [Create and style a text field][]
-> 1. [Retrieve the value of a text field][]
-> 1. [Handle changes to a text field][]
-> 1. [Focus and text fields][].
-
+`TextField`s have additional parameters configration such as `obscureText` which turns the inputted letters displays each character as a circle.
 
 ```dart
 @override
@@ -166,6 +141,15 @@ Widget build(BuildContext context) {
 }
 ```
 
+> <i class="material-symbols" aria-hidden="true">star</i> **Checkpoint**: 
+> Complete this 4-part cookbook series that walks
+> you through how to create a text field,
+> retrieve its value, and update your app state:
+> 1. [Create and style a text field][]
+> 1. [Retrieve the value of a text field][]
+> 1. [Handle changes to a text field][]
+> 1. [Focus and text fields][].
+
 #### `RichText`
 `RichText` lets you take text input and dispay them with inline styles.
 
@@ -178,18 +162,13 @@ Widget build(BuildContext context) {
 > <i class="material-symbols" aria-hidden="true">code</i> **Code**: 
 > [Rich Text Editor code][]
 
-#### `SelectableText`
-Display a string of user-selectable text with a single style.
-> <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
-> [SelectableText (Widget of the Week)][]
-
 #### `Form`
 
 An optional container for grouping together
   multiple form field widgets. 
 
-> <i class="material-symbols" aria-hidden="true">bookmark</i> **Tutorial**: 
-> [Build a form with validation][]
+> <i class="material-symbols" aria-hidden="true">bookmark</i> **Tutorial**: This tutorial teaches you how to 
+> [build a form with validation][].
 
 > <i class="material-symbols" aria-hidden="true">flutter</i> **Demo**: 
 > [Form app][]
@@ -199,8 +178,7 @@ An optional container for grouping together
 
 <br>
 
-> <i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**:  
-> [`TextField`][] | [`RichText`][] | [`SelectableText`][] | [`Form`][]
+<i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**: [`TextField`][] | [`RichText`][] | [`SelectableText`][] | [`Form`][]
 
 [Build a form with validation]: /cookbook/forms/validation
 [Create and style a text field]: /cookbook/forms/text-input
@@ -267,8 +245,6 @@ Select one or more items from a list,
 Example Code:
 <iframe class="snippet-dartpad" src="https://dartpad.dev/embed-flutter.html?split=60&amp;run=true&amp;sample_id=material.Checkbox.1&amp;channel=stable">
     </iframe>
-
-
 
 #### `Switch`
 Toggle the on/off state of a single setting.
@@ -348,7 +324,7 @@ Example Code:
 <iframe class="snippet-dartpad" src="https://dartpad.dev/embed-flutter.html?split=60&amp;run=true&amp;sample_id=widgets.Dismissible.1&amp;channel=stable" data-gtm-yt-inspected-9257802_51="true" data-gtm-yt-inspected-9257802_75="true" data-gtm-yt-inspected-9257802_114="true">
     </iframe>
 
-[pkg:`flutter_slidable`][]
+[pkg: `flutter_slidable`][]
 A list item with directional slide actions that can be dismissed.
 
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
@@ -356,15 +332,12 @@ A list item with directional slide actions that can be dismissed.
 
 <br>
 
-> <i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**:  
-> [`Dismissible`][] | [pkg:`flutter_slidable`][]
-
-## Want a full sample of Material 3's User Input Components?
-
 > <i class="material-symbols" aria-hidden="true">flutter</i> **Demo**: 
-> Check out the [Material 3 Demo][],
-> to see examples of additional user input widgets
-> available in the Material 3 component library. 
+> Check out Flutter's [Material 3 Demo][] for an assortment of user input widgets available in the Material library. 
+
+<br>
+
+<i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**: [`Dismissible`][] | [pkg: `flutter_slidable`][]
 
 ## Adding interactivity with GestureDetector 
 
@@ -408,6 +381,8 @@ Once you have finished building user interactions
 into your app, don't forget to write tests to
 ensure that everything works as expected!
 
+These tutorials will walk you through writing tests that simulate user interactions in your app:
+
 > <i class="material-symbols" aria-hidden="true">bookmark</i> **Tutorial**: 
 > [Tap, drag, and enter text][]
 
@@ -424,7 +399,7 @@ ensure that everything works as expected!
 ## Next: Networking
 
 This page was an introduction to handling user input.
-Now that you know how to accept input from app's users,
+Now that you know how to get input from app's users,
 you can make your app even more interesting by adding
 external data. In the next section,
 you'll learn now to fetch data for your app over a network,
@@ -455,7 +430,7 @@ and other networking features.
 [`Dismissible`]: {{site.api}}/flutter/widgets/Dismissible-class.html
 [Dismissible (Widget of the Week)]: https://youtu.be/iEMgjrfuc58?si=f0S7IdaA9PIWIYvl
 [Implement swipe to dismiss]: /cookbook/gestures/dismissible
-[pkg:`flutter_slidable`]: https://pub.dev/packages/flutter_slidable
+[pkg: `flutter_slidable`]: https://pub.dev/packages/flutter_slidable
 [flutter_slidable (Package of the Week)]: https://www.youtube.com/watch?v=QFcFEpFmNJ8
 
 
