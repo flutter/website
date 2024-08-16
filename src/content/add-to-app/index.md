@@ -103,9 +103,9 @@ To add Flutter to an existing app, build it normally, then follow the
 [React]: https://react.dev/
 [Angular]: https://angular.dev/
 [Vue.js]: https://vuejs.org/
-[Django][]: https://www.djangoproject.com/
-[Ruby on Rails][]: https://rubyonrails.org/
-[Apache Struts][]: https://struts.apache.org/
+[Django]: https://www.djangoproject.com/
+[Ruby on Rails]: https://rubyonrails.org/
+[Apache Struts]: https://struts.apache.org/
 [VanillaJS]: http://vanilla-js.com/
 [embedding instructions]: {{site.docs}}/platform-integration/web/embedding-flutter-web#embedded-mode
 
