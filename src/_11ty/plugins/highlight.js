@@ -149,6 +149,7 @@ function _highlight(
     content = lines.join('\n');
   }
 
+  const dartpadGistId = attributes['dartpad'];
   const noHighlight = 'noHighlight' in attributes;
 
   // Find the spans enclosed in `[!` and `!]` that we should mark
@@ -175,6 +176,10 @@ function _highlight(
 
           if (showLineNumbers) {
             preElement.properties['class'] += ' show-line-numbers';
+          }
+
+          if (dartpadGistId && dartpadGistId.length > 5) {
+            preElement.properties['data-dartpad-id'] = dartpadGistId;
           }
 
           const bodyChildren = [preElement];
