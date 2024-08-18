@@ -78,10 +78,10 @@ You can also consider using local assets for placeholders.
 First, add the asset to the project's `pubspec.yaml` file
 (for more details, see [Adding assets and images][]):
 
-```diff
- flutter:
-   assets:
-+    - assets/loading.gif
+```yaml diff
+  flutter:
+    assets:
++     - assets/loading.gif
 ```
 
 Then, use the [`FadeInImage.assetNetwork()`][] constructor:

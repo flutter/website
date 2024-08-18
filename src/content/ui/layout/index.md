@@ -2,7 +2,6 @@
 title: Layouts in Flutter
 short-title: Layout
 description: Learn how Flutter's layout mechanism works and how to build a layout.
-diff2html: true
 ---
 
 {% assign api = site.api | append: '/flutter' -%}

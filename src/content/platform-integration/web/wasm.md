@@ -21,12 +21,12 @@ applications for the web.
 : Migrate your packages to [`package:web`][] and [`dart:js_interop`][]
   to make them compatible with Wasm. Read the
   [Requires JS-interop](#js-interop-wasm)
-  section to learn more. 
+  section to learn more.
 :::
 
 [`stable`]: {{site.github}}/flutter/flutter/blob/master/docs/releases/Flutter-build-release-channels.md#stable
 [`package:web`]: {{site.pub-pkg}}/web
-[`dart:js_interop`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-js_interop 
+[`dart:js_interop`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-js_interop
 
 ## Background
 
@@ -36,7 +36,7 @@ you need a browser that supports [WasmGC][].
 [Chromium and V8][] released stable support for WasmGC in Chromium 119.
 Note that Chrome on iOS uses WebKit, which doesn't yet [support WasmGC][].
 Firefox announced stable support for WasmGC in Firefox 120,
-but currently doesn't work due to a [known limitation](#known-limitations). 
+but currently doesn't work due to a [known limitation](#known-limitations).
 
 [WasmGC]: {{site.github}}/WebAssembly/gc/tree/main/proposals/gc
 [Chromium and V8]: https://chromestatus.com/feature/6062715726462976
@@ -147,7 +147,7 @@ Server started on port 8080
 
 As of {{last-update}},
 [only **Chromium-based browsers**](#chrome-119-or-later)
-(Version 119 or later) are able to run Flutter/Wasm content. 
+(Version 119 or later) are able to run Flutter/Wasm content.
 
 If your configured browser meets the requirements, open
 [`localhost:8080`](http://localhost:8080) in the browser to view the app.
@@ -164,8 +164,8 @@ The following list covers some common issues.
 
 ### Chrome 119 or later
 
-As mentioned in [Load it in a browser](#load-it-in-a-browser), 
-to run Flutter web apps compiled to Wasm, 
+As mentioned in [Load it in a browser](#load-it-in-a-browser),
+to run Flutter web apps compiled to Wasm,
 use _Chrome 119 or later_.
 
 Some earlier versions supported WasmGC with specific flags enabled,
@@ -176,7 +176,7 @@ and the latest version of Chrome.
 - **Why not Firefox?**
   Firefox versions 120 and later were previously able to run Flutter/Wasm,
   but they're [currently experiencing a bug][] that is
-  blocking compatibility with Wasm.
+  blocking compatibility with Flutter's Wasm renderer.
 - **Why not Safari?**
   Safari does not support WasmGC yet; [this bug][] tracks their
   implementation efforts.
@@ -206,7 +206,7 @@ static JS interop:
 The Dart and Flutter teams have migrated most packages
 to support Wasm in Flutter,
 such as [`package:url_launcher`][].
-To find Wasm-compatible packages, 
+To find Wasm-compatible packages,
 use the [`wasm-ready`][] filter on [pub.dev][].
 
 
