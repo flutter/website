@@ -2,12 +2,12 @@
 * @flutter/website-reviewers @sfshaza2 @parlough
 
 # Covers iOS documentation content
-**/add-to-app/ios/ @flutter/website-reviewers             @flutter/website-reviewers @jmagman @sfshaza2 @parlough
-**/deployment/ios.md @flutter/website-reviewers           @flutter/website-reviewers @jmagman @sfshaza2 @parlough
-**/flavors.md @flutter/website-reviewers                  @flutter/website-reviewers @jmagman @sfshaza2 @parlough
-**/flavors/ @flutter/website-reviewers                    @flutter/website-reviewers @jmagman @sfshaza2 @parlough
-**/platform-integration/ios/ @flutter/website-reviewers   @flutter/website-reviewers @jmagman @sfshaza2 @parlough
+**/add-to-app/ios/                @flutter/website-reviewers @sfshaza2 @parlough @jmagman
+**/deployment/ios.md              @flutter/website-reviewers @sfshaza2 @parlough @jmagman
+**/flavors.md                     @flutter/website-reviewers @sfshaza2 @parlough @jmagman
+**/flavors/                       @flutter/website-reviewers @sfshaza2 @parlough @jmagman
+**/platform-integration/ios/      @flutter/website-reviewers @sfshaza2 @parlough @jmagman
 
 # Covers macOS documentation content
-**/deployment/macos.md @flutter/website-reviewers         @flutter/website-reviewers @jmagman @sfshaza2 @parlough
-**/platform-integration/macos/ @flutter/website-reviewers @flutter/website-reviewers @jmagman @sfshaza2 @parlough
+**/deployment/macos.md            @flutter/website-reviewers @sfshaza2 @parlough @jmagman
+**/platform-integration/macos/    @flutter/website-reviewers @sfshaza2 @parlough @jmagman
