@@ -1,28 +1,13 @@
-# Default Codeowners
-*  @atsansone @parlough @sfshaza2 @domesticmouse @MaryaBelanger
-
-# Covers staging and deploying with Cloud Build
-/cloud_build/ @parlough @khanhnwin @sfshaza2 @atsansone
-
-# Covers all web content
-/src/       @sfshaza2 @atsansone @parlough @domesticmouse @MaryaBelanger
-
-# Covers website tooling
-/tool/      @sfshaza2 @atsansone @parlough @khanhnwin @domesticmouse @MaryaBelanger
-
-# Covers examples in files
-/examples/  @sfshaza2 @domesticmouse @johnpryan @khanhnwin @parlough @MaryaBelanger @atsansone
-
-# Covers all configuration files for the website
-/*          @sfshaza2 @atsansone @parlough @khanhnwin @domesticmouse @MaryaBelanger
+# Default code owners
+* @flutter/website-reviewers @sfshaza2 @parlough
 
 # Covers iOS documentation content
-**/add-to-app/ios/ @jmagman @atsansone @parlough @sfshaza2 @domesticmouse @MaryaBelanger
-**/deployment/ios.md @jmagman @atsansone @parlough @sfshaza2 @domesticmouse @MaryaBelanger
-**/flavors.md @jmagman @atsansone @parlough @sfshaza2 @domesticmouse @MaryaBelanger
-**/flavors/ @jmagman @atsansone @parlough @sfshaza2 @domesticmouse @MaryaBelanger
-**/platform-integration/ios/ @jmagman @atsansone @parlough @sfshaza2 @domesticmouse @MaryaBelanger
+**/add-to-app/ios/                @flutter/website-reviewers @sfshaza2 @parlough @jmagman
+**/deployment/ios.md              @flutter/website-reviewers @sfshaza2 @parlough @jmagman
+**/flavors.md                     @flutter/website-reviewers @sfshaza2 @parlough @jmagman
+**/flavors/                       @flutter/website-reviewers @sfshaza2 @parlough @jmagman
+**/platform-integration/ios/      @flutter/website-reviewers @sfshaza2 @parlough @jmagman
 
 # Covers macOS documentation content
-**/deployment/macos.md @jmagman @atsansone @parlough @sfshaza2 @domesticmouse @MaryaBelanger
-**/platform-integration/macos/ @jmagman @atsansone @parlough @sfshaza2 @domesticmouse @MaryaBelanger
+**/deployment/macos.md            @flutter/website-reviewers @sfshaza2 @parlough @jmagman
+**/platform-integration/macos/    @flutter/website-reviewers @sfshaza2 @parlough @jmagman
