@@ -204,16 +204,16 @@ To configure gradle, edit the `<project>/android/app/build.gradle` file.
 1. Add the signing configuration before the `buildTypes` property block
    inside the `android` property block.
 
-   ```groovy diff title="[project]/android/app/build.gradle"
+   ```kotlin diff title="[project]/android/app/build.gradle"
      android {
          // ...
 
    +     signingConfigs {
    +         release {
-   +             keyAlias keystoreProperties['keyAlias']
-   +             keyPassword keystoreProperties['keyPassword']
-   +             storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
-   +             storePassword keystoreProperties['storePassword']
+   +             keyAlias = keystoreProperties['keyAlias']
+   +             keyPassword = keystoreProperties['keyPassword']
+   +             storeFile = keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+   +             storePassword = keystoreProperties['storePassword']
    +         }
    +     }
          buildTypes {
@@ -221,8 +221,8 @@ To configure gradle, edit the `<project>/android/app/build.gradle` file.
                  // TODO: Add your own signing config for the release build.
                  // Signing with the debug keys for now,
                  // so `flutter run --release` works.
-   -             signingConfig signingConfigs.debug
-   +             signingConfig signingConfigs.release
+   -             signingConfig = signingConfigs.debug
+   +             signingConfig = signingConfigs.release
              }
          }
      ...
@@ -333,7 +333,7 @@ review the `android` block in the default
 The default Gradle build script is found at `[project]/android/app/build.gradle`.
 You can change the values of any of these properties.
 
-```groovy title="[project]/android/app/build.gradle"
+```kotlin title="[project]/android/app/build.gradle"
 android {
     namespace = "com.example.[project]"
     // Any value starting with "flutter." gets its value from
