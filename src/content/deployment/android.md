@@ -68,7 +68,7 @@ For example:
 
 1. Add the dependency on Android's Material in `<my-app>/android/app/build.gradle`:
 
-```groovy
+```kotlin
 dependencies {
     // ...
     implementation("com.google.android.material:material:<version>")
@@ -189,7 +189,7 @@ To configure gradle, edit the `<project>/android/app/build.gradle` file.
 
 1. Set the `keystoreProperties` object to load the `key.properties` file.
 
-   ```groovy diff title="[project]/android/app/build.gradle"
+   ```kotlin diff title="[project]/android/app/build.gradle"
    + def keystoreProperties = new Properties()
    + def keystorePropertiesFile = rootProject.file('key.properties')
    + if (keystorePropertiesFile.exists()) {
