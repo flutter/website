@@ -727,7 +727,7 @@ time:
   choose how to use that space. For example, they might just center what they
   want to render within the dictated constraints.)
 - A parent can dictate the child's width but give the child flexibility over
-  height (or dictate height but offer flexible over width). A real-world example
+  height (or dictate height but offer flexibility over width). A real-world example
   is flow text, which might have to fit a horizontal constraint but vary
   vertically depending on the quantity of text.
 

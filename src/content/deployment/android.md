@@ -80,16 +80,16 @@ To find out the latest version, visit [Google Maven][].
 
 1. Set the light theme in `<my-app>/android/app/src/main/res/values/styles.xml`:
 
-```diff
--<style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar">
-+<style name="NormalTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+```xml diff
+- <style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar">
++ <style name="NormalTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
 ```
 
 1. Set the dark theme in `<my-app>/android/app/src/main/res/values-night/styles.xml`
 
-```diff
--<style name="NormalTheme" parent="@android:style/Theme.Black.NoTitleBar">
-+<style name="NormalTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+```xml diff
+- <style name="NormalTheme" parent="@android:style/Theme.Black.NoTitleBar">
++ <style name="NormalTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 ```
 
 <a id="signing-the-app"></a>
@@ -189,44 +189,44 @@ To configure gradle, edit the `<project>/android/app/build.gradle` file.
 
 1. Set the `keystoreProperties` object to load the `key.properties` file.
 
-   ```diff title="[project]/android/app/build.gradle"
-   +   def keystoreProperties = new Properties()
-   +   def keystorePropertiesFile = rootProject.file('key.properties')
-   +   if (keystorePropertiesFile.exists()) {
-   +       keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
-   +   }
+   ```groovy diff title="[project]/android/app/build.gradle"
+   + def keystoreProperties = new Properties()
+   + def keystorePropertiesFile = rootProject.file('key.properties')
+   + if (keystorePropertiesFile.exists()) {
+   +     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+   + }
    +
-      android {
-         ...
-      }
+     android {
+        ...
+     }
    ```
 
 1. Add the signing configuration before the `buildTypes` property block
    inside the `android` property block.
 
-   ```diff title="[project]/android/app/build.gradle"
-       android {
-           ...
+   ```groovy diff title="[project]/android/app/build.gradle"
+     android {
+         // ...
 
-   +       signingConfigs {
-   +           release {
-   +               keyAlias keystoreProperties['keyAlias']
-   +               keyPassword keystoreProperties['keyPassword']
-   +               storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
-   +               storePassword keystoreProperties['storePassword']
-   +           }
-   +       }
-           buildTypes {
-              release {
+   +     signingConfigs {
+   +         release {
+   +             keyAlias keystoreProperties['keyAlias']
+   +             keyPassword keystoreProperties['keyPassword']
+   +             storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+   +             storePassword keystoreProperties['storePassword']
+   +         }
+   +     }
+         buildTypes {
+             release {
                  // TODO: Add your own signing config for the release build.
                  // Signing with the debug keys for now,
                  // so `flutter run --release` works.
-   -                signingConfig signingConfigs.debug
-   +                signingConfig signingConfigs.release
-              }
-           }
-       ...
-       }
+   -             signingConfig signingConfigs.debug
+   +             signingConfig signingConfigs.release
+             }
+         }
+     ...
+     }
    ```
 
 Flutter now signs all release builds.
