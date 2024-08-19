@@ -40,7 +40,7 @@ In this section, we'll cover a few of the Material widgets that cover common use
 > <i class="material-symbols" aria-hidden="true">menu_book</i> **Reference**: 
 > The [widget catalog][] has an inventory of commonly used widgets in the [Material][] and [Cupertino][] libraries.
 
-### Buttons
+## Buttons
 <img src='/assets/images/docs/fwe/user-input/material-buttons.png' alt="A collection of Material 3 Buttons.">
 
 Buttons let a user prompt action in the UI by clicking or tapping. The Material library provides a variety of button types that are functionally similar, but styled differently for various usecases,  including:
@@ -104,17 +104,17 @@ Widget build(BuildContext context) {
 [`OutlinedButton`]: {{site.api}}/flutter/material/OutlinedButton-class.html
 [`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
 
-### Text
+## Text
 
-#### `SelectableText`
+### `SelectableText`
 
-Flutter's `Text` widget displays text on the screen, but app users aren't able to highlight it, copy, etc. `SelectableText` will display a string of _user-selectable_ text with a single style.
+Flutter's `Text` widget displays text on the screen, but app users aren't able to highlight, copy, etc. `SelectableText` will display a string of _user-selectable_ text with a single style.
 <!-- GIF of SelectableText -->
 
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [SelectableText (Widget of the Week)][]
 
-#### `RichText`
+### `RichText`
 Like `Text`, `RichText` lets you display strings of text in your app, but with the ability to display parts of text with different text styles.
 
 <!-- IMAGE of RichText -->
@@ -129,7 +129,7 @@ Like `Text`, `RichText` lets you display strings of text in your app, but with t
 > [Rich Text Editor code][]
 
 
-#### `TextField`
+### `TextField`
 A `TextField` lets users enter text in text box using a hardware or onscreen keyboard. 
 
 `TextField`s have many different properties and configurations, so here are a few of the highlights:
@@ -165,7 +165,7 @@ Widget build(BuildContext context) {
 > 1. [Handle changes to a text field][]
 > 1. [Focus and text fields][].
 
-#### `Form`
+### `Form`
 
 `Form` is an optional container for grouping together multiple form field widgets, such as `TextField`. 
 
@@ -246,16 +246,87 @@ class _FormExampleState extends State<FormExample> {
 [SelectableText (Widget of the Week)]: https://www.youtube.com/watch?v=ZSU3ZXOs6hc
 [`TextField`]: {{site.api}}/flutter/material/TextField-class.html
 
-### Selecting a value from a group of options
+## Select a value from a group of options
 
-#### `SegmentedButton`
-Allow users to select from limited set of options.
+### `SegmentedButton`
+`SegmentedButton` can be used to give users the option to select simple choices between a minimal group of 2-5 items. 
 
-Example Code:
-<iframe class="snippet-dartpad" src="https://dartpad.dev/embed-flutter.html?split=60&amp;run=true&amp;sample_id=material.SegmentedButton.1&amp;channel=stable">
-    </iframe>
+It has data type of `<T>` for the value(s) that the user can choose. `<T>` can be a built-in type such as an `int`, `String`, `bool` or an enum. There are a few relevant components to a `SegmentedButton`:
 
-#### `DropdownMenu`
+- `segments` is a list of `ButtonSegment`, each representing "segment" or option that the user can select. Visually, each `ButtonSegment` can have an icon, label text, or both. 
+
+- `multiSelectionEnabled` indicates whether the user is allowed to select multiple options, defaults to false.
+
+- `selected` identifies the currently selected value(s). **Note:** `selected` is of type of `Set<T>` so if you're only allowing users to select one value, the value must be provided as a `Set` with a single element. 
+
+- `onSelectionChanged` callback is called when a user selects and segments. It provides a list of the selected segments to update your app state.  
+
+- There are additional styling parameters to modify the button's appearance including `style` which takes a `ButtonStyle` and the option to configure a `selectedIcon`.
+
+```dart
+enum Calendar { day, week, month, year }
+
+class SingleChoice extends StatefulWidget {
+  const SingleChoice({super.key});
+
+  @override
+  State<SingleChoice> createState() => _SingleChoiceState();
+}
+
+class _SingleChoiceState extends State<SingleChoice> {
+  Calendar calendarView = Calendar.day;
+
+  @override
+  Widget build(BuildContext context) {
+    return SegmentedButton<Calendar>(
+      segments: const <ButtonSegment<Calendar>>[
+        ButtonSegment<Calendar>(
+            value: Calendar.day,
+            label: Text('Day'),
+            icon: Icon(Icons.calendar_view_day)),
+        ButtonSegment<Calendar>(
+            value: Calendar.week,
+            label: Text('Week'),
+            icon: Icon(Icons.calendar_view_week)),
+        ButtonSegment<Calendar>(
+            value: Calendar.month,
+            label: Text('Month'),
+            icon: Icon(Icons.calendar_view_month)),
+        ButtonSegment<Calendar>(
+            value: Calendar.year,
+            label: Text('Year'),
+            icon: Icon(Icons.calendar_today)),
+      ],
+      selected: <Calendar>{calendarView},
+      onSelectionChanged: (Set<Calendar> newSelection) {
+        setState(() {
+          // By default there is only a single segment that can be
+          // selected at one time, so its value is always the first
+          // item in the selected set.
+          calendarView = newSelection.first;
+        });
+      },
+    );
+  }
+}
+```
+
+### `Chip`
+Chips are similar to buttons and represent an attribute, text, entity, or action for a specific context. There's a variet
+
+Supplying a non-null onDeleted callback will cause the chip to include a button for deleting the chip.
+
+```dart 
+Chip(
+  avatar: CircleAvatar(
+    backgroundColor: Colors.grey.shade800,
+    child: const Text('AH'),
+  ),
+  label: const Text('Alexander Hamilton'),
+)
+```
+
+### `DropdownMenu`
 Let users select a choice from a menu and place the
   selected item into the text input field.
 
@@ -266,7 +337,7 @@ Example Code:
 <iframe class="snippet-dartpad" src="https://dartpad.dev/embed-flutter.html?split=60&amp;run=true&amp;sample_id=material.DropdownMenu.1&amp;channel=stable">
     </iframe>
 
-#### `Slider`
+### `Slider`
 Select from a range of values.
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [Slider, RangeSlider, CupertinoSlider (Widget of the Week)][]
@@ -283,71 +354,178 @@ Example Code:
 
 <br>
 
-> <i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**:  
-> [`SegmentedButton`][] • [`DropdownMenu`][] • [`Slider`][]
+<i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs:** [`SegmentedButton`][] • [`DropdownMenu`][] • [`Slider`][] • [`Chip`][]
 
-### Toggling between values
+## Toggle between values
 
-#### `Checkbox`
-Select one or more items from a list,
-  or toggle an item.
+### `Checkbox`, `Switch`, and `Radio`
+Give the user the option to toggle a single value on/off. The functional logic behind these widgets are the same (all 3 are built on top of `ToggleableStateMixin`) with different presentation to cater to different user experiences. 
 
-Example Code:
-<iframe class="snippet-dartpad" src="https://dartpad.dev/embed-flutter.html?split=60&amp;run=true&amp;sample_id=material.Checkbox.1&amp;channel=stable">
-    </iframe>
+```dart
+class CheckboxExample extends StatefulWidget {
+  const CheckboxExample({super.key});
 
-#### `Switch`
-Toggle the on/off state of a single setting.
+  @override
+  State<CheckboxExample> createState() => _CheckboxExampleState();
+}
 
-Example Code:
-<iframe class="snippet-dartpad" src="https://dartpad.dev/embed-flutter.html?split=60&amp;run=true&amp;sample_id=material.Switch.1&amp;channel=stable">
-    </iframe>
+class _CheckboxExampleState extends State<CheckboxExample> {
+  bool isChecked = false;
 
-#### `CheckboxListTile` & `SwitchListTile`
-A checkbox or switch widget, with a label. 
+  @override
+  Widget build(BuildContext context) {
+    return Checkbox(
+      checkColor: Colors.white,
+      value: isChecked,
+      onChanged: (bool? value) {
+        setState(() {
+          isChecked = value!;
+        });
+      },
+    );
+  }
+}
+```
+
+```dart
+class SwitchExample extends StatefulWidget {
+  const SwitchExample({super.key});
+
+  @override
+  State<SwitchExample> createState() => _SwitchExampleState();
+}
+
+class _SwitchExampleState extends State<SwitchExample> {
+  bool light = true;
+
+  @override
+  Widget build(BuildContext context) {
+    return Switch(
+      // This bool value toggles the switch.
+      value: light,
+      activeColor: Colors.red,
+      onChanged: (bool value) {
+        // This is called when the user toggles the switch.
+        setState(() {
+          light = value;
+        });
+      },
+    );
+  }
+}
+
+```
+
+A group of `Radio` buttons let the user select between a mutually exclusive values. 
+When one radio button in a group is selected, the other radio buttons in the group is unselected.
+
+```dart
+enum SingingCharacter { lafayette, jefferson }
+
+class RadioExample extends StatefulWidget {
+  const RadioExample({super.key});
+
+  @override
+  State<RadioExample> createState() => _RadioExampleState();
+}
+
+class _RadioExampleState extends State<RadioExample> {
+  SingingCharacter? _character = SingingCharacter.lafayette;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        ListTile(
+          title: const Text('Lafayette'),
+          leading: Radio<SingingCharacter>(
+            value: SingingCharacter.lafayette,
+            groupValue: _character,
+            onChanged: (SingingCharacter? value) {
+              setState(() {
+                _character = value;
+              });
+            },
+          ),
+        ),
+        ListTile(
+          title: const Text('Thomas Jefferson'),
+          leading: Radio<SingingCharacter>(
+            value: SingingCharacter.jefferson,
+            groupValue: _character,
+            onChanged: (SingingCharacter? value) {
+              setState(() {
+                _character = value;
+              });
+            },
+          ),
+        ),
+      ],
+    );
+  }
+}
+```
+
+#### Bonus: `CheckboxListTile` & `SwitchListTile`
+
+It's the same checkbox and switch widgets, just with a label. It's convenience widgets for a ListTile with a leading `Switch` and `Checkbox`, similar to the `Radio` example from above.
+
+##### `CheckboxListTile`
+```dart
+CheckboxListTile(
+  title: const Text('Animate Slowly'),
+  value: timeDilation != 1.0,
+  onChanged: (bool? value) {
+    setState(() {
+      timeDilation = value! ? 10.0 : 1.0;
+    });
+  },
+  secondary: const Icon(Icons.hourglass_empty),
+)
+```
 
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [CheckboxListTile (Widget of the Week)][]
 
+
+##### `SwitchListTile`
+```dart
+class _SwitchListTileExampleState extends State<SwitchListTileExample> {
+  bool _lights = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return SwitchListTile(
+      title: const Text('Lights'),
+      value: _lights,
+      onChanged: (bool value) {
+        setState(() {
+          _lights = value;
+        });
+      },
+      secondary: const Icon(Icons.lightbulb_outline),
+    );
+  }
+}
+```
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [SwitchListTile (Widget of the Week)][]
 
-Example Code:
-<iframe class="snippet-dartpad" src="https://dartpad.dev/embed-flutter.html?split=60&amp;run=true&amp;sample_id=material.CheckboxListTile.2&amp;channel=stable" data-gtm-yt-inspected-9257802_51="true" data-gtm-yt-inspected-9257802_75="true" data-gtm-yt-inspected-9257802_114="true">
-    </iframe>
-
-<iframe class="snippet-dartpad" src="https://dartpad.dev/embed-flutter.html?split=60&amp;run=true&amp;sample_id=material.SwitchListTile.2&amp;channel=stable" data-gtm-yt-inspected-9257802_51="true" data-gtm-yt-inspected-9257802_75="true" data-gtm-yt-inspected-9257802_114="true">
-    </iframe>
-
-#### `Radio`
-Select between a number of mutually exclusive values.
-  When one radio button in a group is selected,
-  the other radio buttons in the group cease to be selected.
-
-Example Code:
-<iframe class="snippet-dartpad" src="https://dartpad.dev/embed-flutter.html?split=60&amp;run=true&amp;sample_id=material.Radio.1&amp;channel=stable">
-    </iframe>
-
-#### `Chip`
-Chips are compact elements that represent an attribute,
-  text, entity, or action.
-
 <br>
 
-> <i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**:  
-> [`Checkbox`][] • [`CheckboxListTile`][] • [`Switch`][] • [`SwitchListTile`][] • [`Radio`][] • [`Chip`][]
+<i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**: [`Checkbox`][] • [`CheckboxListTile`][] • [`Switch`][] • [`SwitchListTile`][] • [`Radio`][]
 
 
-### Selecting a date, time, or both!
+## Select a date or time
 
-#### `DatePickerDialog`
-A Material design date picker dialog, display it using `showDatePicker`.
+### `DatePickerDialog`
+A dialog box that let's the user select a date or a range of dates. It can be displayed to the user by calling `showDatePicker`.
 
 Example Code:
 <iframe class="snippet-dartpad" src="https://dartpad.dev/embed-flutter.html?split=60&amp;run=true&amp;sample_id=material.showDatePicker.1&amp;channel=stable">
     </iframe>
 
-#### `TimePickerDialog`
+### `TimePickerDialog`
 A Material Design time picker dialog, display it using `showTimePicker`.
 
 Example Code: 
@@ -356,25 +534,25 @@ Example Code:
 
 <br>
 
-> <i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**:  
-> [`showDatePicker`][] • [`showTimePicker`][]
+<i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs:** [`showDatePicker`][] • [`showTimePicker`][]
 
-### Swipe & slide
+## Swipe & slide
 
-[`Dismissible`][]
+### [`Dismissible`][]
 Clear list items by swiping left or right.
 
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [Dismissible (Widget of the Week)][]
 
-> <i class="material-symbols" aria-hidden="true">bookmark</i> **Tutorial**: 
-> Learn how to [Implement swipe to dismiss][] using the dismissable widget.
-
-Example Code:
 <iframe class="snippet-dartpad" src="https://dartpad.dev/embed-flutter.html?split=60&amp;run=true&amp;sample_id=widgets.Dismissible.1&amp;channel=stable" data-gtm-yt-inspected-9257802_51="true" data-gtm-yt-inspected-9257802_75="true" data-gtm-yt-inspected-9257802_114="true">
     </iframe>
 
-[pkg: `flutter_slidable`][]
+
+
+> <i class="material-symbols" aria-hidden="true">star</i> **Checkpoint**: 
+> Complete this tutorial on how to [implement swipe to dismiss][] using the dismissable widget.
+
+### [pkg: `flutter_slidable`][]
 A list item with directional slide actions that can be dismissed.
 
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
@@ -382,12 +560,12 @@ A list item with directional slide actions that can be dismissed.
 
 <br>
 
-> <i class="material-symbols" aria-hidden="true">flutter</i> **Demo**: 
-> Check out Flutter's [Material 3 Demo][] for an assortment of user input widgets available in the Material library. 
+<i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs:** [`Dismissible`][] • [pkg: `flutter_slidable`][]
 
 <br>
 
-<i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**: [`Dismissible`][] • [pkg: `flutter_slidable`][]
+> <i class="material-symbols" aria-hidden="true">flutter</i> **Demo**: 
+> Check out Flutter's [Material 3 Demo][] for an assortment of user input widgets available in the Material library. 
 
 ## Adding interactivity with GestureDetector 
 
