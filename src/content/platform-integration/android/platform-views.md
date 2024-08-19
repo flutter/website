@@ -410,11 +410,11 @@ For more information, see the API docs for:
 Finally, modify your `build.gradle` file
 to require one of the minimal Android SDK versions:
 
-```groovy
+```kotlin
 android {
     defaultConfig {
-        minSdkVersion 19 // if using hybrid composition
-        minSdkVersion 20 // if using virtual display.
+        minSdk = 19 // if using hybrid composition
+        minSdk = 20 // if using virtual display.
     }
 }
 ```
