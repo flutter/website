@@ -8,7 +8,7 @@ description: Adding Flutter as a library to an existing Android or iOS app.
 
 If you are writing a new application from scratch, it is easy to [get started][]
 using Flutter. But what if you already have an app that's not written in
-Flutter, and it's not practical to start from scratch?
+Flutter, and it's impractical to start from scratch?
 
 For those situations, Flutter can be integrated into your existing application
 piecemeal, as a module. This feature is known as "add-to-app". The module can be
@@ -32,10 +32,17 @@ Flutter supports two flavors of add-to-app:
   In this mode there's only one Dart program and all views and widgets can share
   objects.
 
-Add-to-app supports integrating multiple instances of any screen size.
-This can help scenarios such as a hybrid navigation stack with mixed
-native and Flutter screens, or a page with multiple partial-screen Flutter
-views.
+Add-to-app supports integrating multiple Flutter views of any size, supporting
+various use-cases. Two of the most common use-cases are:
+
+* **Hybrid navigation stacks**: an app is made of multiple screens, some of
+  which are rendered by Flutter, and others by another framework. The user can
+  navigate from one screen to another freely, no matter which framework is used
+  to render the screen.
+* **Partial-screen views**: a screen in the app renders multiple widgets, some
+  of which are rendered by Flutter, and others by another framework. The user
+  can scroll and interact with any widget freely, no matter which framework is
+  used to render the widget.
 
 ## Supported features
 
@@ -171,6 +178,7 @@ see our API usage guides at the following links:
 
 Mobile limitations:
 
+* Multi-view mode is not supported (multi-engine only).
 * Packing multiple Flutter libraries into an
   application isn't supported.
 * Plugins that don't support `FlutterPlugin` might have unexpected
@@ -180,7 +188,7 @@ Mobile limitations:
 
 Web limitations:
 
-* Multi-engine mode is not supported.
+* Multi-engine mode is not supported (multi-view only).
 * There's no way to completely "shutdown" the Flutter engine. The app can remove
   all the [FlutterView][] objects and make sure all data is garbage collected
   using normal Dart concepts. However, the engine will remain warmed up, even if
