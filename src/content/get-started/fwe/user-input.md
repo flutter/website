@@ -71,6 +71,12 @@ There are usually 3 main parts to constructing a button: style, callback, and it
 
 - Finally, a button's `style` controls its appearance: color, border, etc.
 
+
+{% render docs/code-and-image.md,
+image:"fwe/layout/space_evenly.png",
+caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
+alt: "A screenshot of three widgets, spaced evenly from each other."
+code:"
 ```dart
 Widget build(BuildContext context) {
   return ElevatedButton(
@@ -86,6 +92,9 @@ Widget build(BuildContext context) {
   );
 }
 ```
+" %}
+
+
 <br>
 
 > <i class="material-symbols" aria-hidden="true">star</i> **Checkpoint**: 
@@ -115,9 +124,29 @@ Flutter's `Text` widget displays text on the screen, but app users aren't able t
 > [SelectableText (Widget of the Week)][]
 
 ### `RichText`
-Like `Text`, `RichText` lets you display strings of text in your app, but with the ability to display parts of text with different text styles.
+Like `Text`, `RichText` lets you display strings of text in your app, but with the ability to display parts of text with different text styles using `TextSpan`. TextSpan
 
-<!-- IMAGE of RichText -->
+{% render docs/code-and-image.md,
+image:"fwe/user-input/rich_text.png",
+caption: "This figure shows a string of text formatted with different text styles."
+alt: 'A screenshot of the text "Hello bold world!" with the word "bold" in bold font.'
+code:"
+```dart
+@override
+Widget build(BuildContext context) {
+  return RichText(
+    text: TextSpan(
+      text: 'Hello ',
+      style: DefaultTextStyle.of(context).style,
+      children: const <TextSpan>[
+        TextSpan(text: 'bold', style: TextStyle(fontWeight: FontWeight.bold)),
+        TextSpan(text: ' world!'),
+      ],
+    ),
+  );
+}
+```
+" %}
 
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [Rich Text (Widget of the Week)][]
@@ -140,6 +169,11 @@ A `TextField` lets users enter text in text box using a hardware or onscreen key
 
 There are many other confiugrable properties on a `TextField` such as `obscureText` which turns the inputted letters displays each character as a circle and `readOnly` which determines whether the text can be changed.
 
+{% render docs/code-and-image.md,
+image:"fwe/layout/space_evenly.png",
+caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
+alt: "A screenshot of three widgets, spaced evenly from each other."
+code:"
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -155,6 +189,9 @@ Widget build(BuildContext context) {
   );
 }
 ```
+" %}
+
+
 
 > <i class="material-symbols" aria-hidden="true">star</i> **Checkpoint**: 
 > Complete this 4-part cookbook series that walks
@@ -174,44 +211,42 @@ Each individual form field should be wrapped in a `FormField` widget with the `F
 Using a `Form` gives the benefit of having access to a `FormState` which lets you save, reset, and validate each `FormField` that is a descendant of this `Form`. A `GlobalKey` can also be provided to identify a specific form, as seen in this example code:
 
 ```dart
-class _FormExampleState extends State<FormExample> {
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  @override
-  Widget build(BuildContext context) {
-    return Form(
-      key: _formKey,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          TextFormField(
-            decoration: const InputDecoration(
-              hintText: 'Enter your email',
-            ),
-            validator: (String? value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter some text';
+@override
+Widget build(BuildContext context) {
+  return Form(
+    key: _formKey,
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        TextFormField(
+          decoration: const InputDecoration(
+            hintText: 'Enter your email',
+          ),
+          validator: (String? value) {
+            if (value == null || value.isEmpty) {
+              return 'Please enter some text';
+            }
+            return null;
+          },
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 16.0),
+          child: ElevatedButton(
+            onPressed: () {
+              // Validate will return true if the form is valid, or false if
+              // the form is invalid.
+              if (_formKey.currentState!.validate()) {
+                // Process data.
               }
-              return null;
             },
+            child: const Text('Submit'),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
-            child: ElevatedButton(
-              onPressed: () {
-                // Validate will return true if the form is valid, or false if
-                // the form is invalid.
-                if (_formKey.currentState!.validate()) {
-                  // Process data.
-                }
-              },
-              child: const Text('Submit'),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+        ),
+      ],
+    ),
+  );
 }
 ```
 
@@ -266,48 +301,40 @@ It has data type of `<T>` for the value(s) that the user can choose. `<T>` can b
 ```dart
 enum Calendar { day, week, month, year }
 
-class SingleChoice extends StatefulWidget {
-  const SingleChoice({super.key});
+// StatefulWidget...
+Calendar calendarView = Calendar.day;
 
-  @override
-  State<SingleChoice> createState() => _SingleChoiceState();
-}
-
-class _SingleChoiceState extends State<SingleChoice> {
-  Calendar calendarView = Calendar.day;
-
-  @override
-  Widget build(BuildContext context) {
-    return SegmentedButton<Calendar>(
-      segments: const <ButtonSegment<Calendar>>[
-        ButtonSegment<Calendar>(
-            value: Calendar.day,
-            label: Text('Day'),
-            icon: Icon(Icons.calendar_view_day)),
-        ButtonSegment<Calendar>(
-            value: Calendar.week,
-            label: Text('Week'),
-            icon: Icon(Icons.calendar_view_week)),
-        ButtonSegment<Calendar>(
-            value: Calendar.month,
-            label: Text('Month'),
-            icon: Icon(Icons.calendar_view_month)),
-        ButtonSegment<Calendar>(
-            value: Calendar.year,
-            label: Text('Year'),
-            icon: Icon(Icons.calendar_today)),
-      ],
-      selected: <Calendar>{calendarView},
-      onSelectionChanged: (Set<Calendar> newSelection) {
-        setState(() {
-          // By default there is only a single segment that can be
-          // selected at one time, so its value is always the first
-          // item in the selected set.
-          calendarView = newSelection.first;
-        });
-      },
-    );
-  }
+@override
+Widget build(BuildContext context) {
+  return SegmentedButton<Calendar>(
+    segments: const <ButtonSegment<Calendar>>[
+      ButtonSegment<Calendar>(
+          value: Calendar.day,
+          label: Text('Day'),
+          icon: Icon(Icons.calendar_view_day)),
+      ButtonSegment<Calendar>(
+          value: Calendar.week,
+          label: Text('Week'),
+          icon: Icon(Icons.calendar_view_week)),
+      ButtonSegment<Calendar>(
+          value: Calendar.month,
+          label: Text('Month'),
+          icon: Icon(Icons.calendar_view_month)),
+      ButtonSegment<Calendar>(
+          value: Calendar.year,
+          label: Text('Year'),
+          icon: Icon(Icons.calendar_today)),
+    ],
+    selected: <Calendar>{calendarView},
+    onSelectionChanged: (Set<Calendar> newSelection) {
+      setState(() {
+        // By default there is only a single segment that can be
+        // selected at one time, so its value is always the first
+        // item in the selected set.
+        calendarView = newSelection.first;
+      });
+    },
+  );
 }
 ```
 
@@ -316,6 +343,11 @@ Chips are similar to buttons and represent an attribute, text, entity, or action
 
 Supplying a non-null onDeleted callback will cause the chip to include a button for deleting the chip.
 
+{% render docs/code-and-image.md,
+image:"fwe/layout/space_evenly.png",
+caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
+alt: "A screenshot of three widgets, spaced evenly from each other."
+code:"
 ```dart 
 Chip(
   avatar: CircleAvatar(
@@ -325,6 +357,7 @@ Chip(
   label: const Text('Alexander Hamilton'),
 )
 ```
+" %}
 
 ### `DropdownMenu`
 Let users select a choice from a menu and place the
@@ -362,56 +395,38 @@ Example Code:
 Give the user the option to toggle a single value on/off. The functional logic behind these widgets are the same (all 3 are built on top of `ToggleableStateMixin`) with different presentation to cater to different user experiences. 
 
 ```dart
-class CheckboxExample extends StatefulWidget {
-  const CheckboxExample({super.key});
+bool isChecked = false;
 
-  @override
-  State<CheckboxExample> createState() => _CheckboxExampleState();
-}
-
-class _CheckboxExampleState extends State<CheckboxExample> {
-  bool isChecked = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return Checkbox(
-      checkColor: Colors.white,
-      value: isChecked,
-      onChanged: (bool? value) {
-        setState(() {
-          isChecked = value!;
-        });
-      },
-    );
-  }
+@override
+Widget build(BuildContext context) {
+  return Checkbox(
+    checkColor: Colors.white,
+    value: isChecked,
+    onChanged: (bool? value) {
+      setState(() {
+        isChecked = value!;
+      });
+    },
+  );
 }
 ```
 
 ```dart
-class SwitchExample extends StatefulWidget {
-  const SwitchExample({super.key});
+bool light = true;
 
-  @override
-  State<SwitchExample> createState() => _SwitchExampleState();
-}
-
-class _SwitchExampleState extends State<SwitchExample> {
-  bool light = true;
-
-  @override
-  Widget build(BuildContext context) {
-    return Switch(
-      // This bool value toggles the switch.
-      value: light,
-      activeColor: Colors.red,
-      onChanged: (bool value) {
-        // This is called when the user toggles the switch.
-        setState(() {
-          light = value;
-        });
-      },
-    );
-  }
+@override
+Widget build(BuildContext context) {
+  return Switch(
+    // This bool value toggles the switch.
+    value: light,
+    activeColor: Colors.red,
+    onChanged: (bool value) {
+      // This is called when the user toggles the switch.
+      setState(() {
+        light = value;
+      });
+    },
+  );
 }
 
 ```
@@ -419,6 +434,11 @@ class _SwitchExampleState extends State<SwitchExample> {
 A group of `Radio` buttons let the user select between a mutually exclusive values. 
 When one radio button in a group is selected, the other radio buttons in the group is unselected.
 
+{% render docs/code-and-image.md,
+image:"fwe/layout/space_evenly.png",
+caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
+alt: "A screenshot of three widgets, spaced evenly from each other."
+code:"
 ```dart
 enum SingingCharacter { lafayette, jefferson }
 
@@ -465,12 +485,18 @@ class _RadioExampleState extends State<RadioExample> {
   }
 }
 ```
+" %}
 
 #### Bonus: `CheckboxListTile` & `SwitchListTile`
 
 It's the same checkbox and switch widgets, just with a label. It's convenience widgets for a ListTile with a leading `Switch` and `Checkbox`, similar to the `Radio` example from above.
 
 ##### `CheckboxListTile`
+{% render docs/code-and-image.md,
+image:"fwe/layout/space_evenly.png",
+caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
+alt: "A screenshot of three widgets, spaced evenly from each other."
+code:"
 ```dart
 CheckboxListTile(
   title: const Text('Animate Slowly'),
@@ -483,12 +509,14 @@ CheckboxListTile(
   secondary: const Icon(Icons.hourglass_empty),
 )
 ```
-
-> <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
-> [CheckboxListTile (Widget of the Week)][]
-
+" %}
 
 ##### `SwitchListTile`
+{% render docs/code-and-image.md,
+image:"fwe/layout/space_evenly.png",
+caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
+alt: "A screenshot of three widgets, spaced evenly from each other."
+code:"
 ```dart
 class _SwitchListTileExampleState extends State<SwitchListTileExample> {
   bool _lights = false;
@@ -508,6 +536,11 @@ class _SwitchListTileExampleState extends State<SwitchListTileExample> {
   }
 }
 ```
+" %}
+
+> <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
+> [CheckboxListTile (Widget of the Week)][]
+
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [SwitchListTile (Widget of the Week)][]
 
@@ -547,8 +580,6 @@ Clear list items by swiping left or right.
 <iframe class="snippet-dartpad" src="https://dartpad.dev/embed-flutter.html?split=60&amp;run=true&amp;sample_id=widgets.Dismissible.1&amp;channel=stable" data-gtm-yt-inspected-9257802_51="true" data-gtm-yt-inspected-9257802_75="true" data-gtm-yt-inspected-9257802_114="true">
     </iframe>
 
-
-
 > <i class="material-symbols" aria-hidden="true">star</i> **Checkpoint**: 
 > Complete this tutorial on how to [implement swipe to dismiss][] using the dismissable widget.
 
@@ -569,18 +600,16 @@ A list item with directional slide actions that can be dismissed.
 
 ## Adding interactivity with GestureDetector 
 
-If you can't find a widget that fits the functionality
-that you're looking for, you can build your own widget and add interactivity
-using `GestureDetector`. 
+Can't find a widget that fits the user interaction that you're looking for? You can build your own custom widget and add interactivity using `GestureDetector`. 
+
+> <i class="material-symbols" aria-hidden="true">star</i> **Checkpoint**: 
+> Use this recipe as a starting point to create your own _custom_ button widget that can [handle taps][].
 
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [GestureDetector (Widget of the Week)][]
 
 > <i class="material-symbols" aria-hidden="true">menu_book</i> **Reference**: 
-> [Taps, drags, and other gestures][]
-
-> <i class="material-symbols" aria-hidden="true">bookmark</i> **Tutorial**: 
-> [Handle taps][]
+> Check out the [taps, drags, and other gestures][] which explains how to listen for, and respond to, gestures in Flutter.
 
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Bonus Video**: 
 > Curious how Flutter's
@@ -591,7 +620,7 @@ Check out the this video: [GestureArena (Decoding Flutter)][]
 ### Don't forget about accessibility!
 
 If you're building custom widgets, annotate its meaning with the `Semantics` widget.
-It provides descriptions, metadata,and more to screen readers and other semantic
+It provides descriptions and metadata to screen readers and other semantic
 analysis-based tools. 
 
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
@@ -600,8 +629,7 @@ analysis-based tools.
 
 <br>
 
-> <i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**:  
-> [`GestureDetector`][] • [`Semantics`][]
+<i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**: [`GestureDetector`][] • [`Semantics`][]
 
 ## Testing
 
@@ -611,11 +639,11 @@ ensure that everything works as expected!
 
 These tutorials will walk you through writing tests that simulate user interactions in your app:
 
-> <i class="material-symbols" aria-hidden="true">bookmark</i> **Tutorial**: 
-> [Tap, drag, and enter text][]
+> <i class="material-symbols" aria-hidden="true">star</i> **Checkpoint**: 
+> Follow this [tap, drag, and enter text][] cookbook article and learn how to use `WidgetTester` to simulate and test user interactions in your app. 
 
-> <i class="material-symbols" aria-hidden="true">bookmark</i> **Tutorial**: 
-> [Handle scrolling][]
+> <i class="material-symbols" aria-hidden="true">bookmark</i> **Bonus Tutorial**: 
+> This [handle scrolling][] cookbook article shows you how to verify that lists of widgets contain the expected content by scrolling through the lists using widget tests.
 
 [GestureArena (Decoding Flutter)]: https://www.youtube.com/watch?v=Q85LBtBdi0U
 [GestureDetector (Widget of the Week)]: https://www.youtube.com/watch?v=WhVXkCFPmK4
