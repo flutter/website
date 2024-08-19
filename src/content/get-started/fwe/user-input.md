@@ -344,9 +344,15 @@ Widget build(BuildContext context) {
 ```
 
 ### `Chip`
-Chips are similar to buttons and represent an attribute, text, entity, or action for a specific context. There's a variet
+`Chip` is similar to buttons, but they're a compact way of representing an attribute, text, entity, or action for a specific context. For certain usecases, there are specialized `Chip` widgets that you can use:
+- [InputChip][], a chip that represents a complex piece of information, such as an entity (person, place, or thing) or conversational text, in a compact form.
+- [ChoiceChip][], allows a single selection from a set of options. Choice chips contain related descriptive text or categories.
+- [FilterChip][], uses tags or descriptive words as a way to filter content.
+- [ActionChip][], represents an action related to primary content.
 
-Supplying a non-null onDeleted callback will cause the chip to include a button for deleting the chip.
+Every `Chip` widget requires a `label`. It can optionally have an `avatar` (such as an icon or a user's profile picture) and `onDeleted` callback, which shows a delete icon that when triggered, deletes the chip. A `Chip`'s appreance can also be customized by setting a number of optional parameters such as `shape`, `color`, `iconTheme`, etc.
+
+You will typically use `Wrap`, a widget that displays its children in multiple horizontal or vertical runs, to make sure your chips wrap around and doesn't get cut off at the edge of your app.
 
 {% render docs/code-and-image.md,
 image:"fwe/layout/space_evenly.png",
@@ -363,6 +369,11 @@ Chip(
 )
 ```
 " %}
+
+[InputChip]: {{site.api}}/flutter/material/InputChip-class.html
+[ChoiceChip]: {{site.api}}/flutter/material/ChoiceChip-class.html
+[FilterChip]: {{site.api}}/flutter/material/FilterChip-class.html
+[ActionChip]: {{site.api}}/flutter/material/ActionChip-class.html
 
 ### `DropdownMenu`
 Let users select a choice from a menu and place the
@@ -399,6 +410,12 @@ Example Code:
 ### `Checkbox`, `Switch`, and `Radio`
 Give the user the option to toggle a single value on/off. The functional logic behind these widgets are the same (all 3 are built on top of `ToggleableStateMixin`) with different presentation to cater to different user experiences. 
 
+### `Checkbox`
+{% render docs/code-and-image.md,
+image:"fwe/user-input/checkbox.gif",
+caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
+alt: "A screenshot of three widgets, spaced evenly from each other."
+code:"
 ```dart
 bool isChecked = false;
 
@@ -415,7 +432,14 @@ Widget build(BuildContext context) {
   );
 }
 ```
+" %}
 
+### `Switch`
+{% render docs/code-and-image.md,
+image:"fwe/layout/space_evenly.png",
+caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
+alt: "A screenshot of three widgets, spaced evenly from each other."
+code:"
 ```dart
 bool light = true;
 
@@ -433,9 +457,10 @@ Widget build(BuildContext context) {
     },
   );
 }
-
 ```
+" %}
 
+### `Radio`
 A group of `Radio` buttons let the user select between a mutually exclusive values. 
 When one radio button in a group is selected, the other radio buttons in the group is unselected.
 
@@ -579,11 +604,44 @@ Example Code:
 ### [`Dismissible`][]
 Clear list items by swiping left or right.
 
+{% render docs/code-and-image.md,
+image:"fwe/layout/space_evenly.png",
+caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
+alt: "A screenshot of three widgets, spaced evenly from each other."
+code:"
+```dart
+List<int> items = List<int>.generate(100, (int index) => index);
+
+@override
+Widget build(BuildContext context) {
+  return ListView.builder(
+    itemCount: items.length,
+    padding: const EdgeInsets.symmetric(vertical: 16),
+    itemBuilder: (BuildContext context, int index) {
+      return Dismissible(
+        background: Container(
+          color: Colors.green,
+        ),
+        key: ValueKey<int>(items[index]),
+        onDismissed: (DismissDirection direction) {
+          setState(() {
+            items.removeAt(index);
+          });
+        },
+        child: ListTile(
+          title: Text(
+            'Item ${items[index]}',
+          ),
+        ),
+      );
+    },
+  );
+}
+```
+" %}
+
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [Dismissible (Widget of the Week)][]
-
-<iframe class="snippet-dartpad" src="https://dartpad.dev/embed-flutter.html?split=60&amp;run=true&amp;sample_id=widgets.Dismissible.1&amp;channel=stable" data-gtm-yt-inspected-9257802_51="true" data-gtm-yt-inspected-9257802_75="true" data-gtm-yt-inspected-9257802_114="true">
-    </iframe>
 
 > <i class="material-symbols" aria-hidden="true">star</i> **Checkpoint**: 
 > Complete this tutorial on how to [implement swipe to dismiss][] using the dismissable widget.
@@ -598,10 +656,15 @@ A list item with directional slide actions that can be dismissed.
 
 <i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs:** [`Dismissible`][] • [pkg: `flutter_slidable`][]
 
-<br>
+## More Material Widgets
+
+These were just a select few of the most common Material widgets that can be used for handling user input in your Flutter app. See the [Material Widget Library] or [Material Library API docs][] to see all of the other widgets.
 
 > <i class="material-symbols" aria-hidden="true">flutter</i> **Demo**: 
-> Check out Flutter's [Material 3 Demo][] for an assortment of user input widgets available in the Material library. 
+> Check out Flutter's [Material 3 Demo][] for a curated sample of user input widgets available in the Material library. 
+
+[Material Widget Library]: /ui/widgets/material
+[Material Library API docs]: {{site.api}}/flutter/material/material-library.html
 
 ## Adding interactivity with GestureDetector 
 
