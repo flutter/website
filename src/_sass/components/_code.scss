@@ -43,6 +43,38 @@ pre {
       border-left-color: $site-color-primary;
     }
 
+    &.added-line, &.removed-line {
+      padding-left: 0.25rem;
+
+      &::before {
+        display: inline-block;
+        user-select: none;
+        width: 0.75rem;
+        margin-right: 0.25rem;
+        text-align: right;
+      }
+    }
+
+    &.added-line {
+      background: color.change($flutter-color-teal, $alpha: 0.03);
+      border-left-color: $flutter-color-teal;
+
+      &::before {
+        content: '+';
+        color: color.mix($site-color-sub-grey, $flutter-color-teal);
+      }
+    }
+
+    &.removed-line {
+      background: color.change($alert-danger-fg, $alpha: 0.03);
+      border-left-color: $alert-danger-fg;
+
+      &::before {
+        content: '-';
+        color: color.mix($site-color-sub-grey, $alert-danger-fg);
+      }
+    }
+
     .terminal-command::before {
       color: $site-color-sub-grey;
       content: "$";
@@ -67,32 +99,33 @@ pre {
   }
 }
 
-.code-copy-button {
+.code-inner-buttons {
   position: absolute;
   top: 6px;
   right: 6px;
   z-index: 10;
 
-  width: 2rem;
-  height: 2rem;
-  padding: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 0.2rem;
 
-  font: $site-font-icon;
+  button {
+    padding: 0.2rem;
+    appearance: none;
+    border: none;
+    color: $site-color-nav-links;
+    background: none;
+    opacity: 0;
+    transition: opacity 0.4s;
 
-  appearance: none;
-  border: none;
-  color: $site-color-nav-links;
-  background: none;
-  opacity: 0;
-  transition: opacity 0.4s;
+    &:hover, &:focus {
+      color: $site-color-primary;
+      opacity: 1;
+    }
 
-  &:hover, &:focus {
-    color: $site-color-primary;
-    opacity: 1;
-  }
-
-  &:active {
-    color: $flutter-color-blue;
+    &:active {
+      color: $flutter-color-blue;
+    }
   }
 }
 
@@ -166,7 +199,7 @@ pre {
         opacity: 0;
       }
 
-      .code-copy-button {
+      .code-inner-buttons button {
         opacity: 1;
       }
     }
@@ -191,6 +224,7 @@ pre {
 
     code {
       display: block;
+      min-width: fit-content;
       width: 100%;
     }
 
