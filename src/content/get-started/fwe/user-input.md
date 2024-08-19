@@ -25,20 +25,25 @@ for enabling user interaction within your app.
 Some user input mechanisms, like [scrolling][],
 have already been covered in [Layouts][]. 
 
-Flutter ships with two design systems as part of the SDK, [Material][] and [Cupertino][]. For educational purposes, this page focuses on Material widgets, prebuilt components that are stylized according to the Material design langauge specifications. 
+### A note about design systems
 
-The Flutter community also creates and supports additional designs systems on [pub.dev][], the package repository for Dart and Flutter. If the existing design system components don't quite fit what you need, Flutter lets you build your own custom designed widget library.
+Flutter ships with prebuilt components for two design systems as part of the SDK, [Material][] and [Cupertino][]. For educational purposes, this page focuses on Material widgets, components that are stylized according to the [Material 3 design language][] specifications. 
+
+The Flutter community on [pub.dev][], the package repository for Dart and Flutter, create and support additional design languages such as [Fluent UI][], [macOS UI], and more. If the existing design system components don't quite fit what you need, Flutter lets you build your own custom widgets, which you will read about at the end of this section.
+
+> <i class="material-symbols" aria-hidden="true">menu_book</i> **Reference**: 
+> The [widget catalog][] has an inventory of commonly used widgets in the [Material][] and [Cupertino][] libraries.
+
+Next, we'll cover a few of the Material widgets that cover common usecases for handling user input in your Flutter app. 
 
 [pub.dev]: https://pub.dev
 [Layouts]: /get-started/fwe/layout
 [Material]: /ui/widgets/material
+[Material 3 design language]: https://m3.material.io/
 [Cupertino]: /ui/widgets/cupertino
 [widget catalog]: /ui/widgets#design-systems
-
-In this section, we'll cover a few of the Material widgets that cover common usecases for handling user input your Flutter app. 
-
-> <i class="material-symbols" aria-hidden="true">menu_book</i> **Reference**: 
-> The [widget catalog][] has an inventory of commonly used widgets in the [Material][] and [Cupertino][] libraries.
+[Fluent UI]: https://pub.dev/packages/fluent_ui
+[macOS UI]: https://pub.dev/packages/macos_ui
 
 ## Buttons
 <img src='/assets/images/docs/fwe/user-input/material-buttons.png' alt="A collection of Material 3 Buttons.">
