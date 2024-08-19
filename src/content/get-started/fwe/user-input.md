@@ -25,10 +25,7 @@ for enabling user interaction within your app.
 Some user input mechanisms, like [scrolling][],
 have already been covered in [Layouts][]. 
 
-Flutter ships with two design systems as part of the SDK, [Material][] and [Cupertino][]. For educational purposes, this page focuses on  Material widgets, prebuilt components that are stylized according to the Material design langauge specifications. 
-
-> <i class="material-symbols" aria-hidden="true">menu_book</i> **Reference**: 
-> The [widget catalog][] has an inventory of commonly used widgets in the [Material][] and [Cupertino][] libraries.
+Flutter ships with two design systems as part of the SDK, [Material][] and [Cupertino][]. For educational purposes, this page focuses on Material widgets, prebuilt components that are stylized according to the Material design langauge specifications. 
 
 The Flutter community also creates and supports additional designs systems on [pub.dev][], the package repository for Dart and Flutter. If the existing design system components don't quite fit what you need, Flutter lets you build your own custom designed widget library.
 
@@ -38,8 +35,10 @@ The Flutter community also creates and supports additional designs systems on [p
 [Cupertino]: /ui/widgets/cupertino
 [widget catalog]: /ui/widgets#design-systems
 
-In this section, we'll cover a few of the widgets that cover some common usecases for handling user input your Flutter app. 
+In this section, we'll cover a few of the Material widgets that cover common usecases for handling user input your Flutter app. 
 
+> <i class="material-symbols" aria-hidden="true">menu_book</i> **Reference**: 
+> The [widget catalog][] has an inventory of commonly used widgets in the [Material][] and [Cupertino][] libraries.
 
 ### Buttons
 <img src='/assets/images/docs/fwe/user-input/material-buttons.png' alt="A collection of Material 3 Buttons.">
@@ -71,7 +70,7 @@ There are usually 3 main parts to constructing a button: style, callback, and it
 - The button's `child`, which is what's displayed within the button's content area, that's usually text or an icon that indicates the button's purpose. 
 
 - Finally, a button's `style` controls its appearance: color, border, etc.
-code:"
+
 ```dart
 Widget build(BuildContext context) {
   return ElevatedButton(
@@ -95,7 +94,7 @@ Widget build(BuildContext context) {
 
 <br>
 
-<i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**: [`ElevatedButton`][] | [`FilledButton`][] | [`OutlinedButton`][] | [`TextButton`][] | [`IconButton`][] | [`FloatingActionButton`][]
+<i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**: [`ElevatedButton`][] • [`FilledButton`][] • [`OutlinedButton`][] • [`TextButton`][] • [`IconButton`][] • [`FloatingActionButton`][]
 
 [`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
 [`FilledButton`]: {{site.api}}/flutter/material/FilledButton-class.html
@@ -115,15 +114,31 @@ Flutter's `Text` widget displays text on the screen, but app users aren't able t
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [SelectableText (Widget of the Week)][]
 
+#### `RichText`
+Like `Text`, `RichText` lets you display strings of text in your app, but with the ability to display parts of text with different text styles.
+
+<!-- IMAGE of RichText -->
+
+> <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
+> [Rich Text (Widget of the Week)][]
+
+> <i class="material-symbols" aria-hidden="true">flutter</i> **Demo**: 
+> [Rich Text Editor][]
+
+> <i class="material-symbols" aria-hidden="true">code</i> **Code**: 
+> [Rich Text Editor code][]
+
 
 #### `TextField`
-A TextField lets users enter text in text box using a hardware or onscreen keyboard. 
+A `TextField` lets users enter text in text box using a hardware or onscreen keyboard. 
 
-`InputDecoration`
-`TextEditingController`
-`onSubmitted` 
+`TextField`s have many different properties and configurations, so here are a few of the highlights:
+- `InputDecoration` determines the text field's appearance, such as color, border, etc.
+- `controller`: A `TextEditingController` controls the text being edited. Why would you need a controller? By default your app's users will be able to type into the text field, but if you want to programmatically control the `TextField` and do something like clearing its value, you'll need a `TextEditingController`.
+- `onChanged`: The callback function that is triggered when the user changes the  text field's value, such as inserting or removing text.
+- `onSubmitted`:  This callback is triggered when the user indicates that they are done editing the text in the field, for example tapping the "enter" key. 
 
-`TextField`s have additional parameters configration such as `obscureText` which turns the inputted letters displays each character as a circle.
+There are many other confiugrable properties on a `TextField` such as `obscureText` which turns the inputted letters displays each character as a circle and `readOnly` which determines whether the text can be changed.
 
 ```dart
 @override
@@ -150,25 +165,58 @@ Widget build(BuildContext context) {
 > 1. [Handle changes to a text field][]
 > 1. [Focus and text fields][].
 
-#### `RichText`
-`RichText` lets you take text input and dispay them with inline styles.
-
-> <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
-> [Rich Text (Widget of the Week)][]
-
-> <i class="material-symbols" aria-hidden="true">flutter</i> **Demo**: 
-> [Rich Text Editor][]
-
-> <i class="material-symbols" aria-hidden="true">code</i> **Code**: 
-> [Rich Text Editor code][]
-
 #### `Form`
 
-An optional container for grouping together
-  multiple form field widgets. 
+`Form` is an optional container for grouping together multiple form field widgets, such as `TextField`. 
 
-> <i class="material-symbols" aria-hidden="true">bookmark</i> **Tutorial**: This tutorial teaches you how to 
-> [build a form with validation][].
+Each individual form field should be wrapped in a `FormField` widget with the `Form` widget as a common ancestor. There are convenience widgets that pre-wrap form field widgets in `FormField` for you. For example, the `Form` widget version of `TextField` is `TextFormField`. 
+
+Using a `Form` gives the benefit of having access to a `FormState` which lets you save, reset, and validate each `FormField` that is a descendant of this `Form`. A `GlobalKey` can also be provided to identify a specific form, as seen in this example code:
+
+```dart
+class _FormExampleState extends State<FormExample> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      key: _formKey,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          TextFormField(
+            decoration: const InputDecoration(
+              hintText: 'Enter your email',
+            ),
+            validator: (String? value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter some text';
+              }
+              return null;
+            },
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            child: ElevatedButton(
+              onPressed: () {
+                // Validate will return true if the form is valid, or false if
+                // the form is invalid.
+                if (_formKey.currentState!.validate()) {
+                  // Process data.
+                }
+              },
+              child: const Text('Submit'),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+```
+
+> <i class="material-symbols" aria-hidden="true">star</i> **Checkpoint**:
+> Complete this tutorial which teaches you how to [build a form with validation][].
 
 > <i class="material-symbols" aria-hidden="true">flutter</i> **Demo**: 
 > [Form app][]
@@ -176,9 +224,11 @@ An optional container for grouping together
 > <i class="material-symbols" aria-hidden="true">code</i> **Code**: 
 > [Form app code][]
 
+
+
 <br>
 
-<i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**: [`TextField`][] | [`RichText`][] | [`SelectableText`][] | [`Form`][]
+<i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**: [`TextField`][] • [`RichText`][] • [`SelectableText`][] • [`Form`][]
 
 [Build a form with validation]: /cookbook/forms/validation
 [Create and style a text field]: /cookbook/forms/text-input
@@ -234,7 +284,7 @@ Example Code:
 <br>
 
 > <i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**:  
-> [`SegmentedButton`][] | [`DropdownMenu`][] | [`Slider`][]
+> [`SegmentedButton`][] • [`DropdownMenu`][] • [`Slider`][]
 
 ### Toggling between values
 
@@ -285,7 +335,7 @@ Chips are compact elements that represent an attribute,
 <br>
 
 > <i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**:  
-> [`Checkbox`][] | [`CheckboxListTile`][] | [`Switch`][] | [`SwitchListTile`][] | [`Radio`][] | [`Chip`][]
+> [`Checkbox`][] • [`CheckboxListTile`][] • [`Switch`][] • [`SwitchListTile`][] • [`Radio`][] • [`Chip`][]
 
 
 ### Selecting a date, time, or both!
@@ -307,7 +357,7 @@ Example Code:
 <br>
 
 > <i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**:  
-> [`showDatePicker`][] | [`showTimePicker`][]
+> [`showDatePicker`][] • [`showTimePicker`][]
 
 ### Swipe & slide
 
@@ -337,7 +387,7 @@ A list item with directional slide actions that can be dismissed.
 
 <br>
 
-<i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**: [`Dismissible`][] | [pkg: `flutter_slidable`][]
+<i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**: [`Dismissible`][] • [pkg: `flutter_slidable`][]
 
 ## Adding interactivity with GestureDetector 
 
@@ -373,7 +423,7 @@ analysis-based tools.
 <br>
 
 > <i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs**:  
-> [`GestureDetector`][] | [`Semantics`][]
+> [`GestureDetector`][] • [`Semantics`][]
 
 ## Testing
 
