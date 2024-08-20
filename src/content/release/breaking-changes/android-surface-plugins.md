@@ -147,7 +147,7 @@ Relevant PRs:
 [`createSurfaceTexture`]: {{site.api}}/javadoc/io/flutter/view/TextureRegistry.html#createSurfaceTexture()
 [`getSurface()`]: {{site.api}}/javadoc/io/flutter/view/TextureRegistry.SurfaceProducer.html#getSurface()
 [`setCallback`]: {{site.api}}/javadoc/io/flutter/view/TextureRegistry.SurfaceProducer.html#setCallback(io.flutter.view.TextureRegistry.SurfaceProducer.Callback)
-[`CameraCharacteristics.SENSOR_ORIENTATION`]: https://developer.android.com/reference/android/hardware/camera2/CameraCharacteristics#SENSOR_ORIENTATION
+[`CameraCharacteristics.SENSOR_ORIENTATION`]: {{site.android-dev}}/reference/android/hardware/camera2/CameraCharacteristics#SENSOR_ORIENTATION
 [this logic in our camera plugin]: https://github.com/flutter/packages/blob/d9a6de802e1fa74b377721929bfa6de5716ce6d9/packages/camera/camera_android_camerax/android/src/main/java/io/flutter/plugins/camerax/DeviceOrientationManager.java#L127
 [`RotatedBox`]: {{site.api}}/flutter/widgets/RotatedBox-class.html
 [Android orientation calculation documentation]: {{site.android-dev}}/media/camera/camera2/camera-preview#orientation_calculation
