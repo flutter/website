@@ -99,7 +99,7 @@ To calculate this rotation,
 - Retrieve the device orientation degrees in one of the ways that the
 [Android orientation calculation documentation][] details.
 
-To apply this rotation, you may use a [`RotatedBox`][] widget.
+To apply this rotation, you can use a [`RotatedBox`][] widget.
 
 For more information on this calculation see the
 [Android orientation calculation documentation][]. For a full example of making
