@@ -101,7 +101,7 @@ To calculate this rotation,
 
 To apply this rotation, you can use a [`RotatedBox`][] widget.
 
-For more information on this calculation see the
+For more information on this calculation, check out the
 [Android orientation calculation documentation][]. For a full example of making
 this fix, see [the PR we used to fix `camera_android_camerax`][].
 
