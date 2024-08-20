@@ -151,7 +151,7 @@ Relevant PRs:
 [this logic in our camera plugin]: https://github.com/flutter/packages/blob/d9a6de802e1fa74b377721929bfa6de5716ce6d9/packages/camera/camera_android_camerax/android/src/main/java/io/flutter/plugins/camerax/DeviceOrientationManager.java#L127
 [`RotatedBox`]: {{site.api}}/flutter/widgets/RotatedBox-class.html
 [Android orientation calculation documentation]: https://developer.android.com/media/camera/camera2/camera-preview#orientation_calculation
-[the PR we used to fix `camera_android_camerax`]: https://github.com/flutter/packages/pull/7044
+[this`camera_android_camerax` PR]: {{site.repo.flutter}}/packages/pull/7044
 [Issue 139702]: {{site.repo.flutter}}/issues/139702
 [Issue 145930]: {{site.repo.flutter}}/issues/145930
 [PR 51061]: {{site.repo.engine}}/pull/51061
