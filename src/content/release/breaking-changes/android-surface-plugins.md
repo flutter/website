@@ -79,7 +79,7 @@ A full example of using this new API can be found in [PR 6989][] for the
 
 If your plugin implements a camera preview, your migration might also require
 fixing the rotation of that preview. This is because `Surface`s produced by the
-`SurfaceProducer` may not contain the transformation information that Android
+`SurfaceProducer` might not contain the transformation information that Android
 libraries need to correctly rotate the preview automatically.
 
 In order to correct the rotation, you need to rotate the preview with
