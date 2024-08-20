@@ -82,7 +82,7 @@ fixing the rotation of that preview. This is because `Surface`s produced by the
 `SurfaceProducer` may not contain the transformation information that Android
 libraries need to correctly rotate the preview automatically.
 
-In order to correct the rotation, you will need to rotate the preview with
+In order to correct the rotation, you need to rotate the preview with
 respect to the camera sensor orientation and the device orientation according
 to the equation:
 
