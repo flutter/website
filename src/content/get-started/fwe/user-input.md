@@ -592,7 +592,7 @@ caption: "This figure shows a row widget with three children, which are aligned 
 alt: "A screenshot of three widgets, spaced evenly from each other."
 code:"
 ```dart
-enum SingingCharacter { lafayette, jefferson }
+enum Character { musician, chef, firefighter, artist }
 
 class RadioExample extends StatefulWidget {
   const RadioExample({super.key});
@@ -604,6 +604,12 @@ class RadioExample extends StatefulWidget {
 class _RadioExampleState extends State<RadioExample> {
   Character? _character = Character.musician;
 
+  void setCharacter(Character? value) {
+    setState(() {
+      _character = value;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -613,11 +619,7 @@ class _RadioExampleState extends State<RadioExample> {
           leading: Radio<Character>(
             value: Character.musician,
             groupValue: _character,
-            onChanged: (Character? value) {
-              setState(() {
-                _character = value;
-              });
-            },
+            onChanged: setCharacter,
           ),
         ),
         ListTile(
@@ -625,11 +627,7 @@ class _RadioExampleState extends State<RadioExample> {
           leading: Radio<Character>(
             value: Character.chef,
             groupValue: _character,
-            onChanged: (Character? value) {
-              setState(() {
-                _character = value;
-              });
-            },
+            onChanged: setCharacter,
           ),
         ),
         ListTile(
@@ -637,11 +635,7 @@ class _RadioExampleState extends State<RadioExample> {
           leading: Radio<Character>(
             value: Character.firefighter,
             groupValue: _character,
-            onChanged: (Character? value) {
-              setState(() {
-                _character = value;
-              });
-            },
+            onChanged: setCharacter,
           ),
         ),
         ListTile(
@@ -649,11 +643,7 @@ class _RadioExampleState extends State<RadioExample> {
           leading: Radio<Character>(
             value: Character.artist,
             groupValue: _character,
-            onChanged: (Character? value) {
-              setState(() {
-                _character = value;
-              });
-            },
+            onChanged: setCharacter,
           ),
         ),
       ],
