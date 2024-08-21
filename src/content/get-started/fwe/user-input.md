@@ -125,7 +125,7 @@ Widget build(BuildContext context) {
 
 ### `SelectableText`
 
-Flutter's `Text` widget displays text on the screen, but app users aren't able to highlight, copy, etc. `SelectableText` will display a string of _user-selectable_ text with a single style.
+Flutter's `Text` widget displays text on the screen, but app users aren't able to highlight, copy, etc. `SelectableText` will display a string of _user-selectable_ text.
 {% render docs/code-and-image.md,
 image:"fwe/user-input/SelectableText.gif",
 caption: "This figure shows a string of text formatted with different text styles."
@@ -148,7 +148,7 @@ From forth the fatal loins of these two foes''');
 > [SelectableText (Widget of the Week)][]
 
 ### `RichText`
-Like `Text`, `RichText` lets you display strings of text in your app, but with the ability to display parts of text with different text styles using `TextSpan`. It's not for handling user input per se, but it's useful if you're letting users edit and format text. 
+`RichText` lets you display strings of text in your app, like `Text`, but with the ability to display parts of text with different text styles using `TextSpan`. It's not for handling user input per se, but it's useful if you're letting users edit and format text. 
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/RichText.png",
@@ -189,9 +189,9 @@ A `TextField` lets users enter text in text box using a hardware or onscreen key
 - `InputDecoration` determines the text field's appearance, such as color, border, etc.
 - `controller`: A `TextEditingController` controls the text being edited. Why would you need a controller? By default your app's users will be able to type into the text field, but if you want to programmatically control the `TextField` and do something like clearing its value, you'll need a `TextEditingController`.
 - `onChanged`: The callback function that is triggered when the user changes the  text field's value, such as inserting or removing text.
-- `onSubmitted`:  This callback is triggered when the user indicates that they are done editing the text in the field, for example tapping the "enter" key. 
+- `onSubmitted`:  This callback is triggered when the user indicates that they are done editing the text in the field, for example tapping the "enter" key when the text field is in focus. 
 
-There are many other confiugrable properties on a `TextField` such as `obscureText` which turns the inputted letters displays each character as a circle and `readOnly` which determines whether the text can be changed.
+There more confiugrable properties such as `obscureText` which turns the inputted letters displays each character as a circle and `readOnly` which prevents the user from changing the text.
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/TextField.gif",
@@ -429,7 +429,14 @@ code:"
 
 
 ### `DropdownMenu`
-A `DropdownMenu` lets users select a choice from a menu of options and places the selected text into a `TextField`.
+A `DropdownMenu` lets users select a choice from a dropdown menu of options and puts the selected text into a `TextField`. It also gives users the added benefit of filtering the menu items based on the text input. 
+
+Configuration parameters include:
+- `dropdownMenuEntries`: a list of `DropdownMenuEntry`s that describe each of the menu items, it may contain information such as a text label, leading icon or trailing icon. (This is also the only required parameter.)
+- `TextEditingController` to programmatically control the `TextField`. 
+- `onSelected` callback that gets triggered when the user selects an option
+- `initialSelection` for configuring the default value.
+- Additional paramaters are  available for customizing the widget look and appearance too.
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/dropdownmenu.gif",
@@ -530,7 +537,7 @@ Widget build(BuildContext context) {
 ## Toggle between values
 
 ### `Checkbox`, `Switch`, and `Radio`
-Give the user the option to toggle a single value on/off. The functional logic behind these widgets are the same (all 3 are built on top of `ToggleableStateMixin`) with different presentation to cater to different user experiences. 
+Give the user the option to toggle a single value on/off. The functional logic behind these widgets are the same (all 3 are built on top of `ToggleableStateMixin`) with some presentation differences that provide different user experiences. 
 
 ### `Checkbox`
 {% render docs/code-and-image.md,
@@ -584,7 +591,7 @@ Widget build(BuildContext context) {
 
 ### `Radio`
 A group of `Radio` buttons let the user select between a mutually exclusive values. 
-When one radio button in a group is selected, the other radio buttons in the group is unselected.
+When one radio button in a group is selected, the other radio buttons in the group are unselected.
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/Radio.gif",
@@ -710,7 +717,7 @@ Widget build(BuildContext context) {
 ## Select a date or time
 
 ### `DatePickerDialog`
-A dialog box that let's the user select a date or a range of dates. It can be displayed to the user by calling `showDatePicker`.
+A dialog box that let's the user select a date or a range of dates.  It can be activated by calling the `showDatePicker` function, which returns a `Future<DateTime>`, so don't forget to await the function call!
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/DatePicker.gif",
@@ -753,7 +760,7 @@ Widget build(BuildContext context) {
 " %}
 
 ### `TimePickerDialog`
-`TimePickerDialog` is a dialog that presents a time picker. You can display it by calling the `showTimePicker()` function. 
+`TimePickerDialog` is a dialog that presents a time picker. It can be activated by calling the `showTimePicker()` function. A slight difference from `showDatePicker()`, `showTimePicker` instead returns a `Future<TimeOfDay>`. Once again, don't forget to await the function call!
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/TimePicker.gif",
@@ -791,9 +798,13 @@ Widget build(BuildContext context) {
 ```
 " %}
 
-Calling `showDatePicker()` or `showTimePicker()` is the same as calling  `showDialog()` with `DatePickerDialog()` or `TimePickerDialog()`. Internally, both functions use the `showDialog()` function with their respective `Dialog` widgets. 
+:::tip
+Calling `showDatePicker()` and `showTimePicker()` is equivalent to calling  `showDialog()` with `DatePickerDialog()` and  
+`TimePickerDialog()`. Internally, both functions use the `showDialog()` function with their respective `Dialog` widgets. 
 
-f you want to enable state restoration, you can also directly push  `DatePickerDialog()` or `TimePickerDialog()` widgets onto the `Navigator` stack. 
+
+To enable state restoration, you can also push `DatePickerDialog()` and `TimePickerDialog()` directly onto the `Navigator` stack. 
+:::
 
 <br>
 
@@ -802,7 +813,7 @@ f you want to enable state restoration, you can also directly push  `DatePickerD
 ## Swipe & slide
 
 ### [`Dismissible`][]
-Clear list items by swiping left or right.
+A `Dismissible` is a list item that users can delete by swiping left or right.
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/Dismissible.gif",
@@ -819,10 +830,10 @@ Widget build(BuildContext context) {
     padding: const EdgeInsets.symmetric(vertical: 16),
     itemBuilder: (BuildContext context, int index) {
       return Dismissible(
+        key: ValueKey<int>(items[index]),
         background: Container(
           color: Colors.green,
         ),
-        key: ValueKey<int>(items[index]),
         onDismissed: (DismissDirection direction) {
           setState(() {
             items.removeAt(index);
