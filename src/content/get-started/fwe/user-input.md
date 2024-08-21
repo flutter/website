@@ -78,20 +78,23 @@ There are usually 3 main parts to constructing a button: style, callback, and it
 
 
 {% render docs/code-and-image.md,
-image:"fwe/layout/space_evenly.png",
+image:"fwe/user-input/ElevatedButton.gif",
 caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
 alt: "A screenshot of three widgets, spaced evenly from each other."
 code:"
 ```dart
+int count = 0;
+
+@override
 Widget build(BuildContext context) {
   return ElevatedButton(
     style: ElevatedButton.styleFrom(
       textStyle: const TextStyle(fontSize: 20),
     ),
     onPressed: () {
-      setState({
+      setState(() {
         count += 1;
-      })
+      });
     },
     child: const Text('Enabled'),
   );
@@ -123,13 +126,29 @@ Widget build(BuildContext context) {
 ### `SelectableText`
 
 Flutter's `Text` widget displays text on the screen, but app users aren't able to highlight, copy, etc. `SelectableText` will display a string of _user-selectable_ text with a single style.
-<!-- GIF of SelectableText -->
+{% render docs/code-and-image.md,
+image:"fwe/user-input/SelectableText.gif",
+caption: "This figure shows a string of text formatted with different text styles."
+alt: 'A screenshot of the text "Hello bold world!" with the word "bold" in bold font.'
+code:"
+```dart
+@override
+  Widget build(BuildContext context) {
+    return const SelectableText('''
+Two households, both alike in dignity,
+In fair Verona, where we lay our scene,
+From ancient grudge break to new mutiny,
+Where civil blood makes civil hands unclean.
+From forth the fatal loins of these two foes''');
+}
+```
+" %}
 
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [SelectableText (Widget of the Week)][]
 
 ### `RichText`
-Like `Text`, `RichText` lets you display strings of text in your app, but with the ability to display parts of text with different text styles using `TextSpan`. TextSpan
+Like `Text`, `RichText` lets you display strings of text in your app, but with the ability to display parts of text with different text styles using `TextSpan`. It's not for handling user input per se, but it's useful if you're letting users edit and format text. 
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/rich_text.png",
@@ -175,28 +194,25 @@ A `TextField` lets users enter text in text box using a hardware or onscreen key
 There are many other confiugrable properties on a `TextField` such as `obscureText` which turns the inputted letters displays each character as a circle and `readOnly` which determines whether the text can be changed.
 
 {% render docs/code-and-image.md,
-image:"fwe/layout/space_evenly.png",
+image:"fwe/user-input/TextField.gif",
 caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
 alt: "A screenshot of three widgets, spaced evenly from each other."
 code:"
 ```dart
+final TextEditingController _controller = TextEditingController();
+
 @override
 Widget build(BuildContext context) {
-  return const SizedBox(
-    width: 250,
-    child: TextField(
-      obscureText: true,
-      decoration: InputDecoration(
-        border: OutlineInputBorder(),
-        labelText: 'Password',
-      ),
+  return TextField(
+    controller: _controller,
+    decoration: const InputDecoration(
+      border: OutlineInputBorder(),
+      labelText: 'Mascot Name',
     ),
   );
 }
 ```
 " %}
-
-
 
 > <i class="material-symbols" aria-hidden="true">star</i> **Checkpoint**: 
 > Complete this 4-part cookbook series that walks
@@ -289,6 +305,7 @@ Widget build(BuildContext context) {
 ## Select a value from a group of options
 
 ### `SegmentedButton`
+
 `SegmentedButton` can be used to give users the option to select simple choices between a minimal group of 2-5 items. 
 
 It has data type of `<T>` for the value(s) that the user can choose. `<T>` can be a built-in type such as an `int`, `String`, `bool` or an enum. There are a few relevant components to a `SegmentedButton`:
@@ -302,6 +319,12 @@ It has data type of `<T>` for the value(s) that the user can choose. `<T>` can b
 - `onSelectionChanged` callback is called when a user selects and segments. It provides a list of the selected segments to update your app state.  
 
 - There are additional styling parameters to modify the button's appearance including `style` which takes a `ButtonStyle` and the option to configure a `selectedIcon`.
+
+{% render docs/code-and-image.md,
+image:"fwe/user-input/segmented-button.gif",
+caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
+alt: "A screenshot of three widgets, spaced evenly from each other."
+code:"
 
 ```dart
 enum Calendar { day, week, month, year }
@@ -342,9 +365,11 @@ Widget build(BuildContext context) {
   );
 }
 ```
+" %}
+
 
 ### `Chip`
-`Chip` is similar to buttons, but they're a compact way of representing an attribute, text, entity, or action for a specific context. For certain usecases, there are specialized `Chip` widgets that you can use:
+`Chip` is a compact way of representing an attribute, text, entity, or action for a specific context. For certain usecases, there are specialized `Chip` widgets that you can use:
 - [InputChip][], a chip that represents a complex piece of information, such as an entity (person, place, or thing) or conversational text, in a compact form.
 - [ChoiceChip][], allows a single selection from a set of options. Choice chips contain related descriptive text or categories.
 - [FilterChip][], uses tags or descriptive words as a way to filter content.
@@ -355,18 +380,45 @@ Every `Chip` widget requires a `label`. It can optionally have an `avatar` (such
 You will typically use `Wrap`, a widget that displays its children in multiple horizontal or vertical runs, to make sure your chips wrap around and doesn't get cut off at the edge of your app.
 
 {% render docs/code-and-image.md,
-image:"fwe/layout/space_evenly.png",
+image:"fwe/user-input/chip.png",
 caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
 alt: "A screenshot of three widgets, spaced evenly from each other."
 code:"
 ```dart 
-Chip(
-  avatar: CircleAvatar(
-    backgroundColor: Colors.grey.shade800,
-    child: const Text('AH'),
-  ),
-  label: const Text('Alexander Hamilton'),
-)
+@override
+  Widget build(BuildContext context) {
+    return const SizedBox(
+      width: 500,
+      child: Wrap(
+        alignment: WrapAlignment.center,
+        spacing: 8,
+        runSpacing: 4,
+        children: [
+          Chip(
+            avatar: CircleAvatar(
+                backgroundImage: AssetImage('assets/images/dash_chef.png')),
+            label: Text('Chef Dash'),
+          ),
+          Chip(
+            avatar: CircleAvatar(
+                backgroundImage:
+                    AssetImage('assets/images/dash_firefighter.png')),
+            label: Text('Firefighter Dash'),
+          ),
+          Chip(
+            avatar: CircleAvatar(
+                backgroundImage: AssetImage('assets/images/dash_musician.png')),
+            label: Text('Musician Dash'),
+          ),
+          Chip(
+            avatar: CircleAvatar(
+                backgroundImage: AssetImage('assets/images/dash_artist.png')),
+            label: Text('Artist Dash'),
+          ),
+        ],
+      ),
+    );
+  }
 ```
 " %}
 
@@ -375,16 +427,64 @@ Chip(
 [FilterChip]: {{site.api}}/flutter/material/FilterChip-class.html
 [ActionChip]: {{site.api}}/flutter/material/ActionChip-class.html
 
+
 ### `DropdownMenu`
-Let users select a choice from a menu and place the
-  selected item into the text input field.
+A `DropdownMenu` lets users select a choice from a menu of options and places the selected text into a `TextField`.
+
+{% render docs/code-and-image.md,
+image:"fwe/user-input/dropdownmenu.gif",
+caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
+alt: "A screenshot of three widgets, spaced evenly from each other."
+code:"
+```dart
+enum ColorLabel {
+  blue('Blue', Colors.blue),
+  pink('Pink', Colors.pink),
+  green('Green', Colors.green),
+  yellow('Orange', Colors.orange),
+  grey('Grey', Colors.grey);
+
+  const ColorLabel(this.label, this.color);
+  final String label;
+  final Color color;
+}
+
+// StatefulWidget...
+@override
+Widget build(BuildContext context) {
+  return DropdownMenu<ColorLabel>(
+    initialSelection: ColorLabel.green,
+    controller: colorController,
+    // requestFocusOnTap is enabled/disabled by platforms when it is null.
+    // On mobile platforms, this is false by default. Setting this to true will
+    // trigger focus request on the text field and virtual keyboard will appear
+    // afterward. On desktop platforms however, this defaults to true.
+    requestFocusOnTap: true,
+    label: const Text('Color'),
+    onSelected: (ColorLabel? color) {
+      setState(() {
+        selectedColor = color;
+      });
+    },
+    dropdownMenuEntries: ColorLabel.values
+      .map<DropdownMenuEntry<ColorLabel>>(
+          (ColorLabel color) {
+            return DropdownMenuEntry<ColorLabel>(
+              value: color,
+              label: color.label,
+              enabled: color.label != 'Grey',
+              style: MenuItemButton.styleFrom(
+                foregroundColor: color.color,
+              ),
+            );
+      }).toList(),
+  );
+}
+```
+" %}
 
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [DropdownMenu (Widget of the Week)][]
-
-Example Code:
-<iframe class="snippet-dartpad" src="https://dartpad.dev/embed-flutter.html?split=60&amp;run=true&amp;sample_id=material.DropdownMenu.1&amp;channel=stable">
-    </iframe>
 
 ### `Slider`
 Select from a range of values.
@@ -436,7 +536,7 @@ Widget build(BuildContext context) {
 
 ### `Switch`
 {% render docs/code-and-image.md,
-image:"fwe/layout/space_evenly.png",
+image:"fwe/user-input/Switch.gif",
 caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
 alt: "A screenshot of three widgets, spaced evenly from each other."
 code:"
@@ -465,7 +565,7 @@ A group of `Radio` buttons let the user select between a mutually exclusive valu
 When one radio button in a group is selected, the other radio buttons in the group is unselected.
 
 {% render docs/code-and-image.md,
-image:"fwe/layout/space_evenly.png",
+image:"fwe/user-input/Radio.gif",
 caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
 alt: "A screenshot of three widgets, spaced evenly from each other."
 code:"
@@ -480,18 +580,18 @@ class RadioExample extends StatefulWidget {
 }
 
 class _RadioExampleState extends State<RadioExample> {
-  SingingCharacter? _character = SingingCharacter.lafayette;
+  Character? _character = Character.musician;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
         ListTile(
-          title: const Text('Lafayette'),
-          leading: Radio<SingingCharacter>(
-            value: SingingCharacter.lafayette,
+          title: const Text('Musician'),
+          leading: Radio<Character>(
+            value: Character.musician,
             groupValue: _character,
-            onChanged: (SingingCharacter? value) {
+            onChanged: (Character? value) {
               setState(() {
                 _character = value;
               });
@@ -499,11 +599,35 @@ class _RadioExampleState extends State<RadioExample> {
           ),
         ),
         ListTile(
-          title: const Text('Thomas Jefferson'),
-          leading: Radio<SingingCharacter>(
-            value: SingingCharacter.jefferson,
+          title: const Text('Chef'),
+          leading: Radio<Character>(
+            value: Character.chef,
             groupValue: _character,
-            onChanged: (SingingCharacter? value) {
+            onChanged: (Character? value) {
+              setState(() {
+                _character = value;
+              });
+            },
+          ),
+        ),
+        ListTile(
+          title: const Text('Firefighter'),
+          leading: Radio<Character>(
+            value: Character.firefighter,
+            groupValue: _character,
+            onChanged: (Character? value) {
+              setState(() {
+                _character = value;
+              });
+            },
+          ),
+        ),
+        ListTile(
+          title: const Text('Artist'),
+          leading: Radio<Character>(
+            value: Character.artist,
+            groupValue: _character,
+            onChanged: (Character? value) {
               setState(() {
                 _character = value;
               });
@@ -521,49 +645,41 @@ class _RadioExampleState extends State<RadioExample> {
 
 It's the same checkbox and switch widgets, just with a label. It's convenience widgets for a ListTile with a leading `Switch` and `Checkbox`, similar to the `Radio` example from above.
 
-##### `CheckboxListTile`
 {% render docs/code-and-image.md,
-image:"fwe/layout/space_evenly.png",
+image:"fwe/user-input/SpecialListTiles.gif",
 caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
 alt: "A screenshot of three widgets, spaced evenly from each other."
 code:"
 ```dart
-CheckboxListTile(
-  title: const Text('Animate Slowly'),
-  value: timeDilation != 1.0,
-  onChanged: (bool? value) {
-    setState(() {
-      timeDilation = value! ? 10.0 : 1.0;
-    });
-  },
-  secondary: const Icon(Icons.hourglass_empty),
-)
-```
-" %}
+double timeDilation = 1.0;
+bool _lights = false;
 
-##### `SwitchListTile`
-{% render docs/code-and-image.md,
-image:"fwe/layout/space_evenly.png",
-caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
-alt: "A screenshot of three widgets, spaced evenly from each other."
-code:"
-```dart
-class _SwitchListTileExampleState extends State<SwitchListTileExample> {
-  bool _lights = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return SwitchListTile(
-      title: const Text('Lights'),
-      value: _lights,
-      onChanged: (bool value) {
-        setState(() {
-          _lights = value;
-        });
-      },
-      secondary: const Icon(Icons.lightbulb_outline),
-    );
-  }
+@override
+Widget build(BuildContext context) {
+  return Column(
+    children: [
+      CheckboxListTile(
+        title: const Text('Animate Slowly'),
+        value: timeDilation != 1.0,
+        onChanged: (bool? value) {
+          setState(() {
+            timeDilation = value! ? 10.0 : 1.0;
+          });
+        },
+        secondary: const Icon(Icons.hourglass_empty),
+      ),
+      SwitchListTile(
+        title: const Text('Lights'),
+        value: _lights,
+        onChanged: (bool value) {
+          setState(() {
+            _lights = value;
+          });
+        },
+        secondary: const Icon(Icons.lightbulb_outline),
+      ),
+    ],
+  );
 }
 ```
 " %}
@@ -605,7 +721,7 @@ Example Code:
 Clear list items by swiping left or right.
 
 {% render docs/code-and-image.md,
-image:"fwe/layout/space_evenly.png",
+image:"fwe/user-input/Dismissible.gif",
 caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
 alt: "A screenshot of three widgets, spaced evenly from each other."
 code:"
