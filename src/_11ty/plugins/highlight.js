@@ -1,8 +1,6 @@
 import {getSingletonHighlighter} from 'shiki';
 import dashLightTheme from '../syntax/dash-light.js';
 
-import diff2html from "diff2html";
-
 const _terminalLanguages = {
   'console': '$',
 };
@@ -97,10 +95,6 @@ function _highlight(
   language,
   attributeString,
 ) {
-  if (language.includes('diff2html')) {
-    return diff2html.html(content, {drawFileList: false});
-  }
-
   const attributes = _parseAttributes(attributeString);
 
   // Specially handle DartPad snippets so that inject_embed can convert them.
@@ -126,8 +120,36 @@ function _highlight(
   const highlightLines = attributes['highlightLines'];
   const linesToHighlight = highlightLines
     ? _parseNumbersAndRanges(highlightLines)
-    : null;
+    : new Set();
 
+  const isDiff = 'diff' in attributes;
+  const addedLines = new Set();
+  const removedLines = new Set();
+  if (isDiff) {
+    if (showLineNumbers) {
+      throw new Error('showLineNumbers and diff are not supported on the same code block yet.');
+    }
+
+    const lines = content.split('\n');
+    for (let lineIndex = 0; lineIndex < lines.length; lineIndex += 1) {
+      const line = lines[lineIndex];
+
+      switch (line.charAt(0)) {
+        case '+':
+          addedLines.add(lineIndex + 1);
+          break;
+        case '-':
+          removedLines.add(lineIndex + 1);
+          break;
+      }
+
+      lines[lineIndex] = line.substring(2);
+    }
+
+    content = lines.join('\n');
+  }
+
+  const dartpadGistId = attributes['dartpad'];
   const noHighlight = 'noHighlight' in attributes;
 
   // Find the spans enclosed in `[!` and `!]` that we should mark
@@ -154,6 +176,10 @@ function _highlight(
 
           if (showLineNumbers) {
             preElement.properties['class'] += ' show-line-numbers';
+          }
+
+          if (dartpadGistId && dartpadGistId.length > 5) {
+            preElement.properties['data-dartpad-id'] = dartpadGistId;
           }
 
           const bodyChildren = [preElement];
@@ -236,8 +262,12 @@ function _highlight(
             lineElement.properties['data-line'] = startingLineNumber + line - 1;
           }
 
-          if (linesToHighlight?.has(line)) {
+          if (linesToHighlight.has(line)) {
             lineElement.properties['class'] += ' highlighted-line';
+          } else if (addedLines.has(line)) {
+            lineElement.properties['class'] += ' added-line';
+          } else if (removedLines.has(line)) {
+            lineElement.properties['class'] += ' removed-line';
           }
 
           if (lineElement.children.length < 1) return;

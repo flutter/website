@@ -28,6 +28,8 @@ final class BuildSiteCommand extends Command<int> {
 
   @override
   Future<int> run() async {
+    print('Building site. This might take awhile...');
+
     final productionRelease = argResults.get<bool>(_releaseFlag, false);
 
     final process = await Process.start(

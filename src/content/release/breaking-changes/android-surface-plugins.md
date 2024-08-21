@@ -38,7 +38,7 @@ platform and API level.
 
 1. Instead of creating a `SurfaceTextureEntry`, create a `SurfaceProducer`:
 
-   ```diff
+   ```java diff
    - TextureRegistry.SurfaceTextureEntry entry = textureRegistry.createSurfaceTexture();
    + TextureRegistry.SurfaceProducer producer = textureRegistry.createSurfaceProducer();
    ```
@@ -46,7 +46,7 @@ platform and API level.
 1. Instead of creating a `new Surface(...)`, call [`getSurface()`][] on the
    `SurfaceProducer`:
 
-   ```diff
+   ```java diff
    - Surface surface = new Surface(entry.surfaceTexture());
    + Surface surface = producer.getSurface();
    ```
@@ -74,6 +74,36 @@ surfaceProducer.setCallback(
 
 A full example of using this new API can be found in [PR 6989][] for the
 `video_player_android` plugin.
+
+## Note on camera previews
+
+If your plugin implements a camera preview, your migration might also require
+fixing the rotation of that preview. This is because `Surface`s produced by the
+`SurfaceProducer` might not contain the transformation information that Android
+libraries need to correctly rotate the preview automatically.
+
+In order to correct the rotation, you need to rotate the preview with
+respect to the camera sensor orientation and the device orientation according
+to the equation:
+
+```plaintext
+rotation = (sensorOrientationDegrees - deviceOrientationDegrees * sign + 360) % 360
+```
+
+where `deviceOrientationDegrees` is counterclockwise degrees and `sign` is 1 for
+front-facing cameras and -1 for back-facing cameras. 
+
+To calculate this rotation,
+- Retrieve the sensor orientation degrees by retrieving the value of
+[`CameraCharacteristics.SENSOR_ORIENTATION`][].
+- Retrieve the device orientation degrees in one of the ways that the
+[Android orientation calculation documentation][] details.
+
+To apply this rotation, you can use a [`RotatedBox`][] widget.
+
+For more information on this calculation, check out the
+[Android orientation calculation documentation][]. For a full example of making
+this fix, check out [this `camera_android_camerax` PR][].
 
 ## Timeline
 
@@ -116,7 +146,11 @@ Relevant PRs:
 [`createSurfaceProducer`]: {{site.api}}/javadoc/io/flutter/view/TextureRegistry.html#createSurfaceProducer()
 [`createSurfaceTexture`]: {{site.api}}/javadoc/io/flutter/view/TextureRegistry.html#createSurfaceTexture()
 [`getSurface()`]: {{site.api}}/javadoc/io/flutter/view/TextureRegistry.SurfaceProducer.html#getSurface()
-[`setCallback`]: https://main-api.flutter.dev/javadoc/io/flutter/view/TextureRegistry.SurfaceProducer.html#setCallback(io.flutter.view.TextureRegistry.SurfaceProducer.Callback)
+[`setCallback`]: {{site.api}}/javadoc/io/flutter/view/TextureRegistry.SurfaceProducer.html#setCallback(io.flutter.view.TextureRegistry.SurfaceProducer.Callback)
+[`CameraCharacteristics.SENSOR_ORIENTATION`]: {{site.android-dev}}/reference/android/hardware/camera2/CameraCharacteristics#SENSOR_ORIENTATION
+[`RotatedBox`]: {{site.api}}/flutter/widgets/RotatedBox-class.html
+[Android orientation calculation documentation]: {{site.android-dev}}/media/camera/camera2/camera-preview#orientation_calculation
+[this`camera_android_camerax` PR]: {{site.repo.flutter}}/packages/pull/7044
 [Issue 139702]: {{site.repo.flutter}}/issues/139702
 [Issue 145930]: {{site.repo.flutter}}/issues/145930
 [PR 51061]: {{site.repo.engine}}/pull/51061

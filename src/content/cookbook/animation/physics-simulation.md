@@ -1,7 +1,6 @@
 ---
 title: Animate a widget using a physics simulation
 description: How to implement a physics animation.
-diff2html: true
 js:
   - defer: true
     url: /assets/js/inject_dartpad.js
@@ -94,30 +93,24 @@ Extending `SingleTickerProviderStateMixin` allows the state object to be a
 documentation for [TickerProvider][].
 :::
 
-```diff2html
---- lib/starter.dart
-+++ lib/step1.dart
-@@ -29,14 +29,20 @@
-   State<DraggableCard> createState() => _DraggableCardState();
- }
-
--class _DraggableCardState extends State<DraggableCard> {
-+class _DraggableCardState extends State<DraggableCard>
-+    with SingleTickerProviderStateMixin {
-+  late AnimationController _controller;
+```dart diff
+- class _DraggableCardState extends State<DraggableCard> {
++ class _DraggableCardState extends State<DraggableCard>
++     with SingleTickerProviderStateMixin {
++   late AnimationController _controller;
 +
-   @override
-   void initState() {
-     super.initState();
-+    _controller =
-+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
-   }
+    @override
+    void initState() {
+      super.initState();
++     _controller =
++         AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    }
 
-   @override
-   void dispose() {
-+    _controller.dispose();
-     super.dispose();
-   }
+    @override
+    void dispose() {
++     _controller.dispose();
+      super.dispose();
+    }
 ```
 
 ## Step 2: Move the widget using gestures
@@ -125,14 +118,11 @@ documentation for [TickerProvider][].
 Make the widget move when it's dragged, and add an [Alignment][] field to the
 `_DraggableCardState` class:
 
-```diff2html
---- lib/step1.dart (alignment)
-+++ lib/step2.dart (alignment)
-@@ -1,3 +1,4 @@
- class _DraggableCardState extends State<DraggableCard>
-     with SingleTickerProviderStateMixin {
-   late AnimationController _controller;
-+  Alignment _dragAlignment = Alignment.center;
+```dart diff
+  class _DraggableCardState extends State<DraggableCard>
+      with SingleTickerProviderStateMixin {
+    late AnimationController _controller;
++   Alignment _dragAlignment = Alignment.center;
 ```
 
 Add a [GestureDetector][] that handles the `onPanDown`, `onPanUpdate`, and
@@ -141,35 +131,32 @@ size of the widget, and divide by 2. (This converts units of "pixels dragged" to
 coordinates that [Align][] uses.) Then, set the `Align` widget's `alignment` to
 `_dragAlignment`:
 
-```diff2html
---- lib/step1.dart (build)
-+++ lib/step2.dart (build)
-@@ -1,8 +1,22 @@
- @override
- Widget build(BuildContext context) {
--  return Align(
--    child: Card(
--      child: widget.child,
-+  var size = MediaQuery.of(context).size;
-+  return GestureDetector(
-+    onPanDown: (details) {},
-+    onPanUpdate: (details) {
-+      setState(() {
-+        _dragAlignment += Alignment(
-+          details.delta.dx / (size.width / 2),
-+          details.delta.dy / (size.height / 2),
-+        );
-+      });
-+    },
-+    onPanEnd: (details) {},
-+    child: Align(
-+      alignment: _dragAlignment,
-+      child: Card(
-+        child: widget.child,
-+      ),
-     ),
-   );
- }
+```dart diff
+  @override
+  Widget build(BuildContext context) {
+-   return Align(
+-     child: Card(
+-       child: widget.child,
++   var size = MediaQuery.of(context).size;
++   return GestureDetector(
++     onPanDown: (details) {},
++     onPanUpdate: (details) {
++       setState(() {
++         _dragAlignment += Alignment(
++           details.delta.dx / (size.width / 2),
++           details.delta.dy / (size.height / 2),
++         );
++       });
++     },
++     onPanEnd: (details) {},
++     child: Align(
++       alignment: _dragAlignment,
++       child: Card(
++         child: widget.child,
++       ),
+      ),
+    );
+  }
 ```
 
 ## Step 3: Animate the widget
@@ -180,15 +167,12 @@ Add an `Animation<Alignment>` field and an `_runAnimation` method. This
 method defines a `Tween` that interpolates between the point the widget was
 dragged to, to the point in the center.
 
-```diff2html
---- lib/step2.dart (animation)
-+++ lib/step3.dart (animation)
-@@ -1,4 +1,5 @@
- class _DraggableCardState extends State<DraggableCard>
-     with SingleTickerProviderStateMixin {
-   late AnimationController _controller;
-+  late Animation<Alignment> _animation;
-   Alignment _dragAlignment = Alignment.center;
+```dart diff
+  class _DraggableCardState extends State<DraggableCard>
+      with SingleTickerProviderStateMixin {
+    late AnimationController _controller;
++   late Animation<Alignment> _animation;
+    Alignment _dragAlignment = Alignment.center;
 ```
 
 <?code-excerpt "lib/step3.dart (runAnimation)"?>
@@ -208,19 +192,18 @@ void _runAnimation() {
 Next, update `_dragAlignment` when the `AnimationController` produces a
 value:
 
-```diff2html
---- lib/step2.dart (init-state)
-+++ lib/step3.dart (init-state)
-@@ -3,4 +3,9 @@
-   super.initState();
-   _controller =
-       AnimationController(vsync: this, duration: const Duration(seconds: 1));
-+  _controller.addListener(() {
-+    setState(() {
-+      _dragAlignment = _animation.value;
-+    });
-+  });
- }
+```dart diff
+  @override
+  void initState() {
+    super.initState();
+    _controller =
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
++   _controller.addListener(() {
++     setState(() {
++       _dragAlignment = _animation.value;
++     });
++   });
+  }
 ```
 
 Next, make the `Align` widget use the `_dragAlignment` field:
@@ -237,29 +220,20 @@ child: Align(
 
 Finally, update the `GestureDetector` to manage the animation controller:
 
-```diff2html
---- lib/step2.dart (gesture)
-+++ lib/step3.dart (gesture)
-@@ -1,5 +1,7 @@
- return GestureDetector(
--  onPanDown: (details) {},
-+  onPanDown: (details) {
-+    _controller.stop();
-+  },
-   onPanUpdate: (details) {
-     setState(() {
-       _dragAlignment += Alignment(
-@@ -8,7 +10,9 @@
-       );
-     });
-   },
--  onPanEnd: (details) {},
-+  onPanEnd: (details) {
-+    _runAnimation();
-+  },
-   child: Align(
-     alignment: _dragAlignment,
-     child: Card(
+```dart diff
+  return GestureDetector(
+-   onPanDown: (details) {},
++   onPanDown: (details) {
++     _controller.stop();
++   },
+    onPanUpdate: (details) {
+      // ...
+    },
+-   onPanEnd: (details) {},
++   onPanEnd: (details) {
++     _runAnimation();
++   },
+    child: Align(
 ```
 
 ## Step 4: Calculate the velocity to simulate a springing motion

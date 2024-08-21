@@ -45,7 +45,7 @@ export default {
     {
       scope: 'constant',
       settings: {
-        foreground: '#11796D',
+        foreground: '#0c7064',
       },
     },
     {
@@ -56,7 +56,7 @@ export default {
         'variable.language',
       ],
       settings: {
-        foreground: '#D43324',
+        foreground: '#bd2314',
       },
     },
     {
@@ -72,7 +72,7 @@ export default {
     {
       scope: ['string', 'string.interpolated', 'punctuation.definition.string'],
       settings: {
-        foreground: '#11796D',
+        foreground: '#0c7064',
       },
     },
     {

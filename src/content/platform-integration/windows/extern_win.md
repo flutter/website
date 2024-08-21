@@ -27,14 +27,14 @@ must invoke `FlutterEngine::ProcessExternalWindowMessage`.
 
 To achieve this, add the following code to a window message handler function:
 
-```diff
-LRESULT Window::Messagehandler(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam) {
-+    std::optional<LRESULT> result = flutter_controller_->engine()->ProcessExternalWindowMessage(hwnd, msg, wparam, lparam);
-+    if (result.has_value()) {
-+        return *result;
-+    }
-    // Original contents of WndProc...
-}
+```cpp diff
+  LRESULT Window::Messagehandler(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam) {
++     std::optional<LRESULT> result = flutter_controller_->engine()->ProcessExternalWindowMessage(hwnd, msg, wparam, lparam);
++     if (result.has_value()) {
++         return *result;
++     }
+      // Original contents of WndProc...
+  }
 ```
 
 [documentation of this breaking change.]: /release/breaking-changes/win_lifecycle_process_function

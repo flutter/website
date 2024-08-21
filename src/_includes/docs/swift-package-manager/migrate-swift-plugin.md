@@ -133,8 +133,8 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    :::
 
 1. If your plugin has a [`PrivacyInfo.xcprivacy` file][], move it to
-   `ios/Sources/plugin_name/PrivacyInfo.xcprivacy` and uncomment the resource in
-   the `Package.swift` file.
+   `ios/plugin_name/Sources/plugin_name/PrivacyInfo.xcprivacy` and uncomment
+   the resource in the `Package.swift` file.
 
    ```swift title="Package.swift"
                resources: [
@@ -151,8 +151,8 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
                ],
    ```
 
-1. Move any resource files from `ios/Assets` to `ios/Sources/plugin_name`
-   (or a subdirectory).
+1. Move any resource files from `ios/Assets` to
+   `ios/plugin_name/Sources/plugin_name` (or a subdirectory).
    Add the resource files to your `Package.swift` file, if applicable.
    For more instructions, see
    [https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package](https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package).
@@ -164,16 +164,13 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
 1. If your plugin uses [Pigeon][], update your Pigeon input file.
 
-   ```diff2html
-   --- a/pigeons/messages.dart
-   +++ b/pigeons/messages.dart
-   @@ -16,7 +16,7 @@ import 'package:pigeon/pigeon.dart';
-      kotlinOptions: KotlinOptions(),
-      javaOut: 'android/app/src/main/java/io/flutter/plugins/Messages.java',
-      javaOptions: JavaOptions(),
-   -  swiftOut: 'ios/Classes/messages.g.swift',
-   +  swiftOut: 'ios/plugin_name/Sources/plugin_name/messages.g.swift',
-      swiftOptions: SwiftOptions(),
+   ```dart title="pigeons/messages.dart" diff
+     kotlinOptions: KotlinOptions(),
+     javaOut: 'android/app/src/main/java/io/flutter/plugins/Messages.java',
+     javaOptions: JavaOptions(),
+   - swiftOut: 'ios/Classes/messages.g.swift',
+   + swiftOut: 'ios/plugin_name/Sources/plugin_name/messages.g.swift',
+     swiftOptions: SwiftOptions(),
    ```
 
 1. Update your `Package.swift` file with any customizations you might need.
@@ -216,10 +213,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
 1. Update your `ios/plugin_name.podspec` to point to new paths.
 
-   ```diff2html
-   --- a/ios/plugin_name.podspec
-   +++ b/ios/plugin_name.podspec
-   @@ -1,2 +1,2 @@
+   ```ruby title="ios/plugin_name.podspec" diff
    - s.source_files = 'Classes/**/*.swift'
    - s.resource_bundles = {'plugin_name_privacy' => ['Resources/PrivacyInfo.xcprivacy']}
    + s.source_files = 'plugin_name/Sources/plugin_name/**/*.swift'
