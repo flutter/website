@@ -151,7 +151,7 @@ From forth the fatal loins of these two foes''');
 Like `Text`, `RichText` lets you display strings of text in your app, but with the ability to display parts of text with different text styles using `TextSpan`. It's not for handling user input per se, but it's useful if you're letting users edit and format text. 
 
 {% render docs/code-and-image.md,
-image:"fwe/user-input/rich_text.png",
+image:"fwe/user-input/RichText.png",
 caption: "This figure shows a string of text formatted with different text styles."
 alt: 'A screenshot of the text "Hello bold world!" with the word "bold" in bold font.'
 code:"
@@ -712,16 +712,88 @@ Widget build(BuildContext context) {
 ### `DatePickerDialog`
 A dialog box that let's the user select a date or a range of dates. It can be displayed to the user by calling `showDatePicker`.
 
-Example Code:
-<iframe class="snippet-dartpad" src="https://dartpad.dev/embed-flutter.html?split=60&amp;run=true&amp;sample_id=material.showDatePicker.1&amp;channel=stable">
-    </iframe>
+{% render docs/code-and-image.md,
+image:"fwe/user-input/DatePicker.gif",
+caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
+alt: "A screenshot of three widgets, spaced evenly from each other."
+code:"
+```dart
+DateTime? selectedDate;
+
+@override
+Widget build(BuildContext context) {
+  var date = selectedDate;
+
+  return Column(children: [
+    Text(
+      date == null
+          ? \"You haven\'t picked a date yet.\"
+          : DateFormat('MM-dd-yyyy').format(date),
+    ),
+    ElevatedButton.icon(
+      icon: const Icon(Icons.calendar_today),
+      onPressed: () async {
+        var pickedDate = await showDatePicker(
+          context: context,
+          initialEntryMode: DatePickerEntryMode.calendarOnly,
+          initialDate: DateTime.now(),
+          firstDate: DateTime(2019),
+          lastDate: DateTime(2050),
+        );
+
+        setState(() {
+          selectedDate = pickedDate;
+        });
+      },
+      label: const Text('Pick a date'),
+    )
+  ]);
+}
+```
+" %}
 
 ### `TimePickerDialog`
-A Material Design time picker dialog, display it using `showTimePicker`.
+`TimePickerDialog` is a dialog that presents a time picker. You can display it by calling the `showTimePicker()` function. 
 
-Example Code: 
-<iframe class="snippet-dartpad" src="https://dartpad.dev/embed-flutter.html?split=60&amp;run=true&amp;sample_id=material.showTimePicker.4&amp;channel=stable">
-    </iframe>
+{% render docs/code-and-image.md,
+image:"fwe/user-input/TimePicker.gif",
+caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
+alt: "A screenshot of three widgets, spaced evenly from each other."
+code:"
+```dart
+TimeOfDay? selectedTime;
+
+@override
+Widget build(BuildContext context) {
+  var time = selectedTime;
+
+  return Column(children: [
+    Text(
+      time == null ? \"You haven't picked a time yet.\" : time.format(context),
+    ),
+    ElevatedButton.icon(
+      icon: const Icon(Icons.calendar_today),
+      onPressed: () async {
+        var pickedTime = await showTimePicker(
+          context: context,
+          initialEntryMode: TimePickerEntryMode.dial,
+          initialTime: TimeOfDay.now(),
+        );
+
+        setState(() {
+          selectedTime = pickedTime;
+        });
+      },
+      label: const Text('Pick a date'),
+    )
+  ]);
+}
+```
+" %}
+
+Calling `showDatePicker()` or `showTimePicker()` is the same as calling  `showDialog()` with `DatePickerDialog()` or `TimePickerDialog()`. Internally, both functions use the `showDialog()` function with their respective `Dialog` widgets. 
+
+f you want to enable state restoration, you can also directly push  `DatePickerDialog()` or `TimePickerDialog()` widgets onto the `Navigator` stack. 
 
 <br>
 
@@ -793,7 +865,7 @@ If the Material and Cupertino Libraries don't have a widget that does what you n
 [Material Widget Library]: /ui/widgets/material
 [Material Library API docs]: {{site.api}}/flutter/material/material-library.html
 
-## Adding interactivity with GestureDetector 
+## Build interactive widgets with GestureDetector 
 
 Scoured the widget libraries, pub.dev, and still can't find a widget that fits the user interaction that you're looking for? You can build your own custom widget and add interactivity using `GestureDetector`. 
 
