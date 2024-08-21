@@ -25,9 +25,11 @@ Using the Flutter CLI to run an app [migrates the project][addSPM] to add
 Swift Package Manager integration.
 This makes your project download the Swift packages that
 your Flutter plugins depend on.
-If you disable the Swift Package Manager feature,
-you will need to [remove Swift Package Manager integration][removeSPM] from apps
-that are migrated.
+An app with Swift Package Manager integration requires Flutter version 3.24 or
+higher.
+To use an older Flutter version,
+you will need to [remove Swift Package Manager integration][removeSPM]
+from the app.
 
 Flutter falls back to CocoaPods for dependencies that do not support Swift
 Package Manager yet.
