@@ -487,13 +487,35 @@ Widget build(BuildContext context) {
 > [DropdownMenu (Widget of the Week)][]
 
 ### `Slider`
-Select from a range of values.
+The `Slider` widget lets a user select from a number from a range of values, such as a a volume bar or video scrubber.
+
+{% render docs/code-and-image.md,
+image:"fwe/user-input/slider.gif",
+caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
+alt: "A screenshot of three widgets, spaced evenly from each other."
+code:"
+```dart
+double _currentVolume = 1;
+
+@override
+Widget build(BuildContext context) {
+  return Slider(
+    value: _currentVolume,
+    max: 5,
+    divisions: 5,
+    label: _currentVolume.toString(),
+    onChanged: (double value) {
+      setState(() {
+        _currentVolume = value;
+      });
+    },
+  );
+}
+```
+" %}
+
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [Slider, RangeSlider, CupertinoSlider (Widget of the Week)][]
-
-Example Code:
-<iframe class="snippet-dartpad" src="https://dartpad.dev/embed-flutter.html?split=60&amp;run=true&amp;sample_id=material.Slider.1&amp;channel=stable" data-gtm-yt-inspected-9257802_51="true" data-gtm-yt-inspected-9257802_75="true" data-gtm-yt-inspected-9257802_114="true">
-    </iframe>
 
 [`DropdownMenu`]: {{site.api}}/flutter/material/DropdownMenu-class.html
 [DropdownMenu (Widget of the Week)]: https://youtu.be/giV9AbM2gd8?si=E23hjg72cjMTe_mz
@@ -762,29 +784,28 @@ Widget build(BuildContext context) {
 > <i class="material-symbols" aria-hidden="true">star</i> **Checkpoint**: 
 > Complete this tutorial on how to [implement swipe to dismiss][] using the dismissable widget.
 
-### [pkg: `flutter_slidable`][]
-A list item with directional slide actions that can be dismissed.
-
-> <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
-> [flutter_slidable (Package of the Week)][]
-
 <br>
 
 <i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs:** [`Dismissible`][] • [pkg: `flutter_slidable`][]
 
-## More Material Widgets
+## Looking for more widgets?
 
-These were just a select few of the most common Material widgets that can be used for handling user input in your Flutter app. See the [Material Widget Library] or [Material Library API docs][] to see all of the other widgets.
+This page features just a select few of the  common Material widgets that can be used for handling user input in your Flutter app. See the [Material Widget Library] and [Material Library API docs][] for all of the other widgets.
 
 > <i class="material-symbols" aria-hidden="true">flutter</i> **Demo**: 
-> Check out Flutter's [Material 3 Demo][] for a curated sample of user input widgets available in the Material library. 
+> See Flutter's [Material 3 Demo][] for a curated sample of user input widgets available in the Material library. 
+
+If the Material and Cupertino Libraries don't have a widget that does what you need, check out pub.dev for a collection of Flutter & Dart community owned and maintained packages. For example, [pkg: `flutter_slidable`][] provides a `Slidable` widget that is a fancier `Dismissible` widget that you read about in the previous section.
+
+> <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
+> [flutter_slidable (Package of the Week)][] 
 
 [Material Widget Library]: /ui/widgets/material
 [Material Library API docs]: {{site.api}}/flutter/material/material-library.html
 
 ## Adding interactivity with GestureDetector 
 
-Can't find a widget that fits the user interaction that you're looking for? You can build your own custom widget and add interactivity using `GestureDetector`. 
+Scoured the widget libraries, pub.dev, and still can't find a widget that fits the user interaction that you're looking for? You can build your own custom widget and add interactivity using `GestureDetector`. 
 
 > <i class="material-symbols" aria-hidden="true">star</i> **Checkpoint**: 
 > Use this recipe as a starting point to create your own _custom_ button widget that can [handle taps][].
