@@ -17,7 +17,7 @@ Android is enforcing [edge-to-edge mode][2] by default for all apps targeting
 Android 15 and above; see the [Android release notes][3] for more details on
 this change. As a result, all Flutter apps running on Android that target
 Android 15 and above will be opted into edge-to-edge mode by default, impacting
-devices running on Android SDK 15+ just like any other Android app.
+devices running on Android SDK 15+/API 35+ just like any other Android app.
 
 At the time of publishing this guide, Flutter apps target Android 14 by
 default and will not be opted into edge-to-edge mode automatically, but
@@ -27,9 +27,9 @@ target Android 15 starting with Flutter version 3.26, automatically opting your
 app into edge-to-edge as a result; see the [timeline](#timeline) below for
 details. If your app explicitly sets `SystemUiMode.edgeToEdge` for it to run in
 edge-to-edge mode via a call to [`SystemChrome.setEnabledSystemUIMode`][4],
-your app is already migrated. Apps needing more time to migrate to edge-to-edge
-mode will need to follow the steps below to opt out on devices running
-Android SDK 15+.
+then your app is already migrated. Apps needing more time to migrate to
+edge-to-edge mode will need to follow the steps below to opt out on
+devices running Android SDK 15+.
 
 Please note that 
 
@@ -39,7 +39,7 @@ support edge-to-edge by default within the year, so **please migrate to**
 **edge-to-edge before the operating system removes the ability to opt out**.
 
 ## Migration Guide
-To opt out of edge-to-edge by default on API 35, a new style attribute
+To opt out of edge-to-edge by default on SDK 15, a new style attribute
 specification is required in each activity that needs an opt out. If
 you have a parent style that all other styles that need an opt out inherit
 from, then you can modify the parent only. In the example below, you will
@@ -64,6 +64,7 @@ that you need to migrate:
     </application>
 </manifest>
 ```
+
 To migrate this style, find where it is defined in
 `your_app/android/app/src/main/res/values/styles.xml`. There, add the
 following attribute to the style:
@@ -81,7 +82,7 @@ following attribute to the style:
 ```
 
 This modified style will opt your app out of edge-to-edge by default for
-apps targeting Android 35+, so now you are done!
+apps targeting Android SDK 15+, so now you are done!
 
 ## Timeline
 Flutter apps will target Android 15 in the next stable version (3.26), so if
