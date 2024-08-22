@@ -429,8 +429,8 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
       **Do not commit the migration's changes to your version control system.**
 
-      Otherwise, the plugin's example app won't build if the
-      Swift Package Manager feature is turned off.
+      Otherwise, the plugin's example app won't build unless Flutter version
+      3.24 or higher is installed.
 
       If you accidentally commit the migration's changes to the plugin's example
       app, follow the steps to
