@@ -59,7 +59,7 @@ This section presumes you called your Swift app `MyApp`.
    If the `pod init` command errors, consider re-creating your Xcode project
    using Xcode 15 or older.
 
-   For more information, see
+   To learn more about the CocoaPods issue, check out
    [CocoaPods#12456](https://github.com/CocoaPods/CocoaPods/issues/12456).
    :::
 
