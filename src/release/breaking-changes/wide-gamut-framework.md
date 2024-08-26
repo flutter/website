@@ -11,9 +11,13 @@ colors.
 
 ## Context
 
-Wide gamut color support was [added to the renderer][] previously. That support
-is now being plumbed up [to the Flutter Framework][] so those colors can be used
-by UIs.
+The Flutter engine [already supports wide gamut color][] with [Impeller][], and the support is now being added [to the framework][].
+
+The iOS devices Flutter targets support rendering a larger array of colors,
+specifically the [DisplayP3][] color space. After this change, the Flutter
+framework will be able to render all of those colors on iOS Impeller and `Color`
+will be better prepared for the future addition of color spaces or changes to
+color component bit depth.
 
 ## Description of change
 
@@ -37,6 +41,13 @@ support. If one wants to take advantage of Display P3 colors they will have to
 use the new `Color.from` constructor that takes normalized floating-point
 color components.
 
+```dart
+// Before
+final magenta = Color.fromARGB(0xff, 0xff, 0x0, 0xff);
+// After
+final magenta = Color.from(alpha: 1.0, red: 1.0, green: 0.0, blue: 1.0)
+```
+
 ### Implementors of `Color`
 
 There are new methods being added to `Color` so any class that `implements`
@@ -55,6 +66,11 @@ class Foo implements Color {
   double get r => _red * 255.0;
 }
 ```
+
+{{site.alert.note}}
+  The hope is to eventually make Color `sealed`. Now might be a good opportunity
+  to stop implementing `Color`. Instead of inheritance, switch to composition.
+{{site.alert.end}}
 
 ### Color space support
 
@@ -110,8 +126,10 @@ Relevant PRs:
 * [issue 127855][]: Implement wide gamut color support in the Framework
 
 [`Color`]: {{site.api}}/flutter/dart-ui/Color-class.html
-[added to the renderer]: {{site.repo.flutter}}/issues/55092
-[to the Flutter Framework]: {{site.repo.flutter}}/issues/127855
+[already supports wide gamut color]: {{site.repo.flutter}}/issues/55092
+[to the framework]: {{site.repo.flutter}}/issues/127855
 [issue 127855]: {{site.repo.flutter}}/issues/127855
 [`ColorSpace`]: {{site.api}}/flutter/dart-ui/ColorSpace.html
 [PR 54737]: {{site.repo.engine}}/pull/54737
+[DisplayP3]: https://en.wikipedia.org/wiki/DCI-P3
+[Impeller]: {{site.api}}/perf/impeller
