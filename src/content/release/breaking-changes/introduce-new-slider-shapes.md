@@ -7,25 +7,21 @@ description: >-
 
 ## Summary
 
-The `Slider` widget now supports the new Material 3 visual style. This changes
-the default `Slider` shapes such as the track shape, thumb shape, and value
-indicator shape.
+The `Slider` widget now supports the updated Material 3 visual style. This affects
+the default `Slider` shapes, such as the track, thumb, and value indicator shapes.
 
 ## Background
 
-The Material 3 specification introduces new `Slider` shapes. The new track
+The Material 3 specification introduces updated `Slider` shapes. The new track
 shape includes an updated height, a gap between the active and inactive tracks,
-and stop indicators to show the end value of the inactive track. When the thumb
-is pressed, the thumb adjusts it's width and the track adjusts its shape. The
+and stop indicators to show the end value of the inactive track.
+Pressing the thumb adjusts its width and the track adjusts its shape. The
 new value indicator shape is a rounded rectangle. New color mappings are also
 introduced for some of the `Slider` shapes.
 
 ## Migration guide
 
-The `Slider` widget now supports the new Material 3 visual style. This changes
-the default `Slider` shapes such as the track shape, thumb shape, and value
-indicator shape.
-
+You automatically get the new `Slider` shapes and color mappings.
 To use the previous `Slider` shapes and color mappings, set the following
 properties in the `SliderThemeData`:
 
