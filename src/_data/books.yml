@@ -129,7 +129,7 @@
   cover: flutter-engineering.jpg
   link: "https://www.flutterengineering.io"
   desc: "Craft Awesome Flutter Apps with Confidence"
-  - title: 'Flutter Foundation - A Comprehensive Guide for Technical Interviews and Beyond'
+- title: 'Flutter Foundation - A Comprehensive Guide for Technical Interviews and Beyond'
   authors:
     - Chetankumar Akarte
   publisher: Self Published
