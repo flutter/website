@@ -6,8 +6,8 @@ description: >-
 
 ## Summary
 
-The API for the [`Color`][] class in `dart:ui` is changing to support wide gamut
-colors.
+The API for the [`Color`][] class in `dart:ui` is changing to support [wide
+gamut color spaces][].
 
 ## Context
 
@@ -133,3 +133,4 @@ Relevant PRs:
 [PR 54737]: {{site.repo.engine}}/pull/54737
 [DisplayP3]: https://en.wikipedia.org/wiki/DCI-P3
 [Impeller]: {{site.api}}/perf/impeller
+[wide gamut color spaces]: https://en.wikipedia.org/wiki/RGB_color_spaces
