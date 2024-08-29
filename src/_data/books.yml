@@ -129,3 +129,10 @@
   cover: flutter-engineering.jpg
   link: "https://www.flutterengineering.io"
   desc: "Craft Awesome Flutter Apps with Confidence"
+- title: 'Flutter Foundation - A Comprehensive Guide for Technical Interviews and Beyond'
+  authors:
+    - Chetankumar Akarte
+  publisher: Self Published
+  cover: the-flutter-foundation-a-comprehensive-guide-for-technical-interviews-and-beyond.png
+  link: "https://chetanakarte.gumroad.com/l/the_flutter_foundation"
+  desc: "Welcome to The Flutter Foundation: A Comprehensive Guide for Technical Interviews and Beyond! Whether you are a seasoned developer looking to delve into the world of Flutter or a newcomer eager to master the latest in cross-platform app development, this book is your ultimate companion."
