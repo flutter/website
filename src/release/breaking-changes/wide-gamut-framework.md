@@ -1,7 +1,7 @@
 ---
 title: Migration guide for wide gamut Color
-description: Description on Color changes for wide gamut support and migration
-             instructions.
+description: >-
+  Changes to support wide gamut color and migration instructions.
 ---
 
 ## Summary
@@ -13,31 +13,31 @@ colors.
 
 The Flutter engine [already supports wide gamut color][] with [Impeller][], and the support is now being added [to the framework][].
 
-The iOS devices Flutter targets support rendering a larger array of colors,
-specifically the [DisplayP3][] color space. After this change, the Flutter
-framework will be able to render all of those colors on iOS Impeller and `Color`
-will be better prepared for the future addition of color spaces or changes to
+The iOS devices that Flutter supports render to a larger array of colors,
+specifically in the [DisplayP3][] color space. After this change, the Flutter
+framework can render all of those colors on iOS Impeller, and the `Color` class
+will be better prepared for future color spaces or changes to
 color component bit depth.
 
 ## Description of change
 
 Changes to [`Color`][]:
 
- 1. Adds a enum field which will specify its [`ColorSpace`][].
+ 1. Adds an enum field that specifies its [`ColorSpace`][].
  1. Adds API to use normalized floating-point color components.
  1. Removes API that uses 8-bit unsigned integer color components that can lead
     to data loss.
 
 Changes to [`ColorSpace`][]:
 
- 1. `displayP3` will be added.
+ 1. Add a `displayP3` property.
 
 ## Migration guide
 
 ### 8-bit unsigned integer constructors
 
-Constructors like `Color.fromARGB` will remain unchanged and have continued
-support. If one wants to take advantage of Display P3 colors they will have to
+Constructors like `Color.fromARGB` remain unchanged and have continued
+support. To take advantage of Display P3 colors, you must
 use the new `Color.from` constructor that takes normalized floating-point
 color components.
 
@@ -75,9 +75,9 @@ class Foo implements Color {
 ### Color space support
 
 Clients that use `Color` and perform any sort of calculation on the color
-components should now be checking the color space component before doing any
-such calculation. `Color` has a new method `Color.withValues` that can be used
-to perform color space conversions to help with that.
+components should now first check the color space component before performing calculations. 
+To help with that, you can use the new `Color.withValues` method
+to perform color space conversions.
 
 For example:
 
@@ -93,7 +93,7 @@ double redRatio(Color x, Color y) {
 }
 ```
 
-### Color component accessors
+### Access color components
 
 For users of `Color`, if the components are ever accessed the code should be
 migrated to take advantage of the floating-point components. In the short term
