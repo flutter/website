@@ -36,12 +36,10 @@ release, and listed in alphabetical order:
 * [Remove invalid parameters for `InputDecoration.collapsed`][]
 * [Stop generating `AssetManifest.json`][]
 * [Deprecate `TextField.canRequestFocus`][]
-* [Introduce new Material 3 `Slider` shapes][]
 
 [Remove invalid parameters for `InputDecoration.collapsed`]: /release/breaking-changes/input-decoration-collapsed
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
-[Introduce new Material 3 `Slider` shapes]: /release/breaking-changes/introduce-new-slider-shapes
 
 <a id="released-in-flutter-324" aria-hidden="true"></a>
 ### Released in Flutter 3.24
