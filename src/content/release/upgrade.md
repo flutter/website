@@ -34,6 +34,7 @@ We send announcements regarding these changes to the
 To avoid being broken by future versions of Flutter,
 consider submitting your tests to our [test registry][].
 
+
 ## Switching Flutter channels
 
 Flutter has two release channels:
@@ -99,6 +100,7 @@ For example:
 $ flutter channel beta
 $ flutter upgrade
 ```
+
 
 ## Switching to a specific Flutter version
 
