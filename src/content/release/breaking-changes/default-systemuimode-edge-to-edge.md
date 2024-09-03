@@ -95,7 +95,7 @@ required to maintain an unset or non-edge-to-edge `SystemUiMode`.
 * [The Android 15 edge-to-edge behavior changes guide][3]
 
 
-[1]: https://api.flutter.dev/flutter/services/SystemUiMode.html
-[2]: https://developer.android.com/develop/ui/views/layout/edge-to-edge 
-[3]: https://developer.android.com/about/versions/15/behavior-changes-15#edge-to-edge 
-[4]: https://api.flutter.dev/flutter/services/SystemChrome/setEnabledSystemUIMode.html
+[1]: {{site.api}}/flutter/services/SystemUiMode.html
+[2]: {{site.android-dev}}/develop/ui/views/layout/edge-to-edge 
+[3]: {{site.android-dev}}/about/versions/15/behavior-changes-15#edge-to-edge 
+[4]: {{site.api}}/flutter/services/SystemChrome/setEnabledSystemUIMode.html
