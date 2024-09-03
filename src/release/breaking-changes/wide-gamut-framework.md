@@ -11,7 +11,8 @@ gamut color spaces][].
 
 ## Context
 
-The Flutter engine [already supports wide gamut color][] with [Impeller][], and the support is now being added [to the framework][].
+The Flutter engine [already supports wide gamut color][] with [Impeller][], and
+the support is now being added [to the framework][].
 
 The iOS devices that Flutter supports render to a larger array of colors,
 specifically in the [DisplayP3][] color space. After this change, the Flutter
@@ -75,11 +76,11 @@ class Foo implements Color {
 ### Color space support
 
 Clients that use `Color` and perform any sort of calculation on the color
-components should now first check the color space component before performing calculations. 
-To help with that, you can use the new `Color.withValues` method
+components should now first check the color space component before performing
+calculations. To help with that, you can use the new `Color.withValues` method
 to perform color space conversions.
 
-For example:
+Example migration:
 
 ```dart
 // Before
@@ -92,6 +93,11 @@ double redRatio(Color x, Color y) {
   return xPrime.r / yPrime.r;
 }
 ```
+
+Performing calculations with color components without aligning color spaces can
+lead to subtle unexpected results. In the example above the `redRatio` would
+have the difference of 0.09 when calculated with differing color spaces versus
+aligned color spaces.
 
 ### Access color components
 
@@ -106,6 +112,32 @@ extension IntColorComponents on Color {
   int get intGreen => this.g ~/ 255;
   int get intBlue => this.b ~/ 255;
 }
+```
+
+### Opacity
+
+Previously, Color had the concept of "opacity" which showed up in the methods
+`opacity` and `withOpacity()`. Opacity was introduced as a way to communicate
+with `Color` about its alpha channel with floating point values. Now that alpha
+is a floating-point value, opacity is redundant and `opacity` and `withOpacity`
+are deprecated and slated to be removed.
+
+#### `opacity` migration
+
+```dart
+// Before
+final x = color.opacity;
+// After
+final x = color.a;
+```
+
+#### `withOpacity` migration
+
+```dart
+// Before
+final x = color.withOpacity(0.0);
+// After
+final x = color.withValues(alpha: 0.0);
 ```
 
 ## Timeline
