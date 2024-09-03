@@ -14,11 +14,9 @@ To maintain non-edge-to-edge app behavior
 use the info in the [migration guide](#migration-guide).
 
 ## Context
-Android is enforcing [edge-to-edge mode][2] by default for all apps targeting
-Android 15 and above; see the [Android release notes][3] for more details on
-this change. As a result, all Flutter apps running on Android that target
-Android 15 and above will be opted into edge-to-edge mode by default, impacting
-devices running on Android SDK 15+/API 35+ just like any other Android app.
+By default, Android enforces [edge-to-edge mode][2] for all apps targeting
+Android 15 and later. For more details, check out the [Android release notes][3].
+This impacts devices running on Android SDK 15+ or API 35+.
 
 At the time of publishing this guide, Flutter apps target Android 14 by
 default and will not be opted into edge-to-edge mode automatically, but
