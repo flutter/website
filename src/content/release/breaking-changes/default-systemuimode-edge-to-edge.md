@@ -45,11 +45,10 @@ you have a parent style that all other styles that need an opt out inherit
 from, then you can modify the parent only. In the example below, you will
 update the style generated from `flutter create`.
 
-By default, the styles used in a Flutter app are set in the manifest
+By default, the styles used in a Flutter app are set in the manifest file
 (`your_app/android/app/src/main/AndroidManifest.xml`). Generally,
-styles used in your app are denoted by `@style` and help theme your app.
-Find these styles in your manifest. By default, you will find a normal theme
-that you need to migrate:
+styles are denoted by `@style` and help theme your app.
+Modify these default styles in your manifest:
 
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
