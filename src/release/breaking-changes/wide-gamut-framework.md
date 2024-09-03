@@ -68,10 +68,11 @@ class Foo implements Color {
 }
 ```
 
-{{site.alert.note}}
-  The hope is to eventually make Color `sealed`. Now might be a good opportunity
-  to stop implementing `Color`. Instead of inheritance, switch to composition.
-{{site.alert.end}}
+:::note
+We plan to eventually lock the `Color` class down and make it `sealed`. Now
+might be a good opportunity to switch from [inheritance to composition][] and
+stop reimplementing `Color`.
+:::
 
 ### Color space support
 
@@ -166,3 +167,4 @@ Relevant PRs:
 [DisplayP3]: https://en.wikipedia.org/wiki/DCI-P3
 [Impeller]: {{site.api}}/perf/impeller
 [wide gamut color spaces]: https://en.wikipedia.org/wiki/RGB_color_spaces
+[inheritance to composition]: https://en.wikipedia.org/wiki/Composition_over_inheritance
