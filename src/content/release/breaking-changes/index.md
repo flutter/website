@@ -36,7 +36,7 @@ release, and listed in alphabetical order:
 * [Remove invalid parameters for `InputDecoration.collapsed`][]
 * [Stop generating `AssetManifest.json`][]
 * [Deprecate `TextField.canRequestFocus`][]
-* [Default `SystemUiMode` set to Edge-to-Edge][]
+* [Set default for SystemUiMode to Edge-to-Edge][]
 
 [Remove invalid parameters for `InputDecoration.collapsed`]: /release/breaking-changes/input-decoration-collapsed
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
