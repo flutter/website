@@ -38,12 +38,12 @@ Be aware of the following:
     so please **migrate to edge-to-edge mode before the operating system
     removes the ability to opt out**.
 
-## Migration Guide
-To opt out of edge-to-edge by default on SDK 15, a new style attribute
-specification is required in each activity that needs an opt out. If
-you have a parent style that all other styles that need an opt out inherit
-from, then you can modify the parent only. In the example below, you will
-update the style generated from `flutter create`.
+## Migration guide
+
+To opt out of edge-to-edge on SDK 15, specify the new style attribute
+in each activity that requires it. If you have a parent style that child styles
+need to opt out of, you can modify the parent only.
+In the following example, update the style generated from `flutter create`.
 
 By default, the styles used in a Flutter app are set in the manifest file
 (`your_app/android/app/src/main/AndroidManifest.xml`). Generally,
