@@ -30,7 +30,7 @@ then your app is already migrated. Apps needing more time to migrate to
 edge-to-edge mode will need to follow the steps below to opt out on
 devices running Android SDK 15+.
 
-Please note that 
+Be aware of the following:
 
 1. Android plans for the workaround detailed below to be temporary.
 2. Flutter plans to align with Android (and iOS) to
