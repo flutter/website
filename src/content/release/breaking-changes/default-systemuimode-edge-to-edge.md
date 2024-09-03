@@ -6,11 +6,12 @@ description: >
 ---
 
 ## Summary
-If your Flutter app runs on Android and targets SDK version 15 or above,
-your app will automatically be displayed in [edge-to-edge mode][1] on
-devices running Android SDK 15+. In order to maintain your current
-non-edge-to-edge app layout (including an unset `SystemUiMode`),
-follow the [migration guide](#migration-guide) below.
+If your Flutter app targets Android SDK version 15 or later,
+your app will automatically display in edge-to-edge mode,
+as shown in the [`SystemUiMode`][1] API page.
+To maintain non-edge-to-edge app behavior
+(including an unset `SystemUiMode`),
+use the info in the [migration guide](#migration-guide).
 
 ## Context
 Android is enforcing [edge-to-edge mode][2] by default for all apps targeting
