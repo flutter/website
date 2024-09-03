@@ -1,8 +1,8 @@
 ---
-title: Default `SystemUiMode` set to Edge-to-Edge
+title: Set default for SystemUiMode to Edge-to-Edge
 description: >
-    Apps targeting Android SDK 15+ will be opted
-    into edge-to-edge by default.
+    By default, apps targeting Android SDK 15+ will opt
+    into edge-to-edge mode.
 ---
 
 ## Summary
