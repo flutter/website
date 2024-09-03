@@ -18,16 +18,16 @@ By default, Android enforces [edge-to-edge mode][2] for all apps targeting
 Android 15 and later. For more details, check out the [Android release notes][3].
 This impacts devices running on Android SDK 15+ or API 35+.
 
-At the time of publishing this guide, Flutter apps target Android 14 by
-default and will not be opted into edge-to-edge mode automatically, but
-your app will be impacted when you choose to target Android 15. If your app
-targets `flutter.targetSdkVersion` (as it does by default), then your app will
-target Android 15 starting with Flutter version 3.26, automatically opting your
-app into edge-to-edge as a result; see the [timeline](#timeline) below for
-details. If your app explicitly sets `SystemUiMode.edgeToEdge` for it to run in
-edge-to-edge mode via a call to [`SystemChrome.setEnabledSystemUIMode`][4],
+Prior to the Q4 2024 release, Flutter apps target Android 14 by
+default and won't opt into edge-to-edge mode automatically, but
+your app _will_ be impacted when you choose to target Android 15.
+If your app targets `flutter.targetSdkVersion` (as it does by default),
+then it will target Android 15 starting with Flutter version 3.26, automatically opting your
+app into edge-to-edge. Visit the [timeline](#timeline) for details.
+If your app explicitly sets `SystemUiMode.edgeToEdge` to run in
+edge-to-edge mode by calling [`SystemChrome.setEnabledSystemUIMode`][4],
 then your app is already migrated. Apps needing more time to migrate to
-edge-to-edge mode will need to follow the steps below to opt out on
+edge-to-edge mode must use the following steps to opt out on
 devices running Android SDK 15+.
 
 Be aware of the following:
