@@ -32,10 +32,11 @@ devices running Android SDK 15+.
 
 Be aware of the following:
 
-1. Android plans for the workaround detailed below to be temporary.
+1. Android plans for the workaround detailed here to be temporary.
 2. Flutter plans to align with Android (and iOS) to
-support edge-to-edge by default within the year, so **please migrate to**
-**edge-to-edge before the operating system removes the ability to opt out**.
+    support edge-to-edge by default within the year,
+    so please **migrate to edge-to-edge mode before the operating system
+    removes the ability to opt out**.
 
 ## Migration Guide
 To opt out of edge-to-edge by default on SDK 15, a new style attribute
