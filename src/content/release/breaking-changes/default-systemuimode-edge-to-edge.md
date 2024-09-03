@@ -64,9 +64,9 @@ that you need to migrate:
 </manifest>
 ```
 
-To migrate this style, find where it is defined in
-`your_app/android/app/src/main/res/values/styles.xml`. There, add the
-following attribute to the style:
+Find where this style is defined in
+`your_app/android/app/src/main/res/values/styles.xml`.
+There, add the following attribute to the style:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
