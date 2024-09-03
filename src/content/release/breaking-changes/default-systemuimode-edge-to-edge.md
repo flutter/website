@@ -80,8 +80,8 @@ following attribute to the style:
 </resources>
 ```
 
-This modified style will opt your app out of edge-to-edge by default for
-apps targeting Android SDK 15+, so now you are done!
+This modified style opts your app out of edge-to-edge for
+apps targeting Android SDK 15+. So now you are done!
 
 ## Timeline
 Flutter apps will target Android 15 in the next stable version (3.26), so if
