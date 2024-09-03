@@ -102,9 +102,9 @@ aligned color spaces.
 
 ### Access color components
 
-For users of `Color`, if the components are ever accessed the code should be
-migrated to take advantage of the floating-point components. In the short term
-one can easily scale the components themselves.
+If your app ever accesses a `Color` component, consider taking advantage of the
+floating-point components. In the short term, you can easily scale the
+components themselves.
 
 ```dart
 extension IntColorComponents on Color {
