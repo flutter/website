@@ -30,7 +30,7 @@ Changes to [`Color`][]:
 
 Changes to [`ColorSpace`][]:
 
- 1. Add a `displayP3` property.
+ 1. Adds a `displayP3` property.
 
 ## Migration guide
 
