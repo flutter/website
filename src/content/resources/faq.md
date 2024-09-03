@@ -334,7 +334,6 @@ and a single set of libraries for all of your code
 (regardless if your UI is different for each platform or not),
 we also aim to help lower app development and maintenance costs.
 
-
 [catalog of Flutter's widgets]: /ui/widgets
 [gesture system]: /ui/interactivity/gestures
 
@@ -356,6 +355,16 @@ Flutter's interop and plugin system is designed to allow
 developers to access new mobile OS features and capabilities
 immediately. Developers don't have to wait for the Flutter team
 to expose the new mobile OS capability.
+
+### Does Flutter support code push?
+
+Code push, or the ability to push app updates directly to a user's device,
+isn't directly supported by Flutter. However, there is a third
+party solution, called [Shorebird][]. For more information,
+check out the [shorebird_code_push][] package on pub.dev.
+
+[Shorebird]: https://shorebird.dev/
+[shorebird_code_push]: {{site.pub-pkg}}/shorebird_code_push
 
 ### What operating systems can I use to build a Flutter app?
 
