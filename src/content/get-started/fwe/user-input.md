@@ -942,7 +942,7 @@ These tutorials walk you through writing tests that simulate user interactions i
 ## Next: Networking
 
 This page was an introduction to handling user input.
-Now that you know how to get input from app's users,
+Now that you know how to handle input from app users,
 you can make your app even more interesting by adding
 external data. In the next section,
 you'll learn now to fetch data for your app over a network,
