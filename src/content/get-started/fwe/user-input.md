@@ -128,7 +128,7 @@ Widget build(BuildContext context) {
 [`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
 [`FilledButton`]: {{site.api}}/flutter/material/FilledButton-class.html
 [`FloatingActionButton`]: {{site.api}}/flutter/material/FloatingActionButton-class.html
-[FloatingActionButton (Widget of the Week)]: https://youtu.be/2uaoEDOgk_I?si=MQZcSp24oRaS_kiY
+[FloatingActionButton (Widget of the Week)]: {{site.youtube-site}}/2uaoEDOgk_I?si=MQZcSp24oRaS_kiY
 [`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
 [`OutlinedButton`]: {{site.api}}/flutter/material/OutlinedButton-class.html
 [`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
@@ -303,15 +303,15 @@ Widget build(BuildContext context) {
 [Focus and text fields]: /cookbook/forms/focus
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [Form app]: https://flutter.github.io/samples/web/form_app/
-[Form app code]: https://github.com/flutter/samples/tree/main/form_app
+[Form app code]: {{site.github}}/flutter/samples/tree/main/form_app
 [Handle changes to a text field]: /cookbook/forms/text-field-changes
 [Retrieve the value of a text field]: /cookbook/forms/retrieve-input
 [`RichText`]: {{site.api}}/flutter/widgets/RichText-class.html
-[Rich Text (Widget of the Week)]: https://www.youtube.com/watch?v=rykDVh-QFfw
+[Rich Text (Widget of the Week)]: {{site.youtube-site}}/watch?v=rykDVh-QFfw
 [Rich Text Editor]: https://flutter.github.io/samples/rich_text_editor.html
-[Rich Text Editor code]: https://github.com/flutter/samples/tree/main/simplistic_editor
+[Rich Text Editor code]: {{site.github}}/flutter/samples/tree/main/simplistic_editor
 [`SelectableText`]: {{site.api}}/flutter/material/SelectableText-class.html
-[SelectableText (Widget of the Week)]: https://www.youtube.com/watch?v=ZSU3ZXOs6hc
+[SelectableText (Widget of the Week)]: {{site.youtube-site}}/watch?v=ZSU3ZXOs6hc
 [`TextField`]: {{site.api}}/flutter/material/TextField-class.html
 
 ## Select a value from a group of options
@@ -557,10 +557,10 @@ Widget build(BuildContext context) {
 > [Slider, RangeSlider, CupertinoSlider (Widget of the Week)][]
 
 [`DropdownMenu`]: {{site.api}}/flutter/material/DropdownMenu-class.html
-[DropdownMenu (Widget of the Week)]: https://youtu.be/giV9AbM2gd8?si=E23hjg72cjMTe_mz
+[DropdownMenu (Widget of the Week)]: {{site.youtube-site}}/giV9AbM2gd8?si=E23hjg72cjMTe_mz
 [`SegmentedButton`]: {{site.api}}/flutter/material/SegmentedButton-class.html
 [`Slider`]: {{site.api}}/flutter/material/Slider-class.html
-[Slider, RangeSlider, CupertinoSlider (Widget of the Week)]: https://www.youtube.com/watch?v=ufb4gIPDmEss
+[Slider, RangeSlider, CupertinoSlider (Widget of the Week)]: {{site.youtube-site}}/watch?v=ufb4gIPDmEss
 
 <br>
 
@@ -973,10 +973,10 @@ These tutorials walk you through writing tests that simulate user interactions i
 > <i class="material-symbols" aria-hidden="true">bookmark</i> **Bonus Tutorial**: 
 > This [handle scrolling][] cookbook article shows you how to verify that lists of widgets contain the expected content by scrolling through the lists using widget tests.
 
-[GestureArena (Decoding Flutter)]: https://www.youtube.com/watch?v=Q85LBtBdi0U
-[GestureDetector (Widget of the Week)]: https://www.youtube.com/watch?v=WhVXkCFPmK4
+[GestureArena (Decoding Flutter)]: {{site.youtube-site}}/watch?v=Q85LBtBdi0U
+[GestureDetector (Widget of the Week)]: {{site.youtube-site}}/watch?v=WhVXkCFPmK4
 [Handle taps]: /cookbook/gestures/handling-taps
-[Semantics (Flutter Widget of the Week)]: https://youtu.be/NvtMt_DtFrQ?si=o79BqAg9NAl8EE8_
+[Semantics (Flutter Widget of the Week)]: {{site.youtube-site}}/NvtMt_DtFrQ?si=o79BqAg9NAl8EE8_
 [Tap, drag, and enter text]: /cookbook/testing/widget/tap-drag
 [Taps, drags, and other gestures]: /ui/interactivity/gestures#gestures
 
@@ -999,10 +999,10 @@ and other networking features.
 
 [`Checkbox`]: {{site.api}}/flutter/material/Checkbox-class.html
 [`CheckboxListTile`]: {{site.api}}/flutter/material/CheckboxListTile-class.html
-[CheckboxListTile (Widget of the Week)]: https://www.youtube.com/watch?v=RkSqPAn9szs
+[CheckboxListTile (Widget of the Week)]: {{site.youtube-site}}/watch?v=RkSqPAn9szs
 [`Switch`]: {{site.api}}/flutter/material/Switch-class.html
 [`SwitchListTile`]: {{site.api}}/flutter/material/SwitchListTile-class.html
-[SwitchListTile (Widget of the Week)]: https://www.youtube.com/watch?v=0igIjvtEWNU
+[SwitchListTile (Widget of the Week)]: {{site.youtube-site}}/watch?v=0igIjvtEWNU
 [`Radio`]: {{site.api}}/flutter/material/Radio-class.html
 [`Chip`]: {{site.api}}/flutter/material/Chip-class.html
 
@@ -1012,10 +1012,10 @@ and other networking features.
 [`showTimePicker`]: {{site.api}}/flutter/material/showTimePicker.html
 
 [`Dismissible`]: {{site.api}}/flutter/widgets/Dismissible-class.html
-[Dismissible (Widget of the Week)]: https://youtu.be/iEMgjrfuc58?si=f0S7IdaA9PIWIYvl
+[Dismissible (Widget of the Week)]: {{site.youtube-site}}/iEMgjrfuc58?si=f0S7IdaA9PIWIYvl
 [Implement swipe to dismiss]: /cookbook/gestures/dismissible
 [pkg: `flutter_slidable`]: {{site.pub}}/packages/flutter_slidable
-[flutter_slidable (Package of the Week)]: https://www.youtube.com/watch?v=QFcFEpFmNJ8
+[flutter_slidable (Package of the Week)]: {{site.youtube-site}}/watch?v=QFcFEpFmNJ8
 
 
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
