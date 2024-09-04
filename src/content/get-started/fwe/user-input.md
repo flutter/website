@@ -91,8 +91,8 @@ There are usually 3 main parts to constructing a button: style, callback, and it
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/ElevatedButton.gif",
-caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
-alt: "A screenshot of three widgets, spaced evenly from each other."
+caption: "This figure shows an ElevatedButton with the text \"Enabled\" being clicked."
+alt: "A GIF of an elevated button with the text \"Enabled\""
 code:"
 ```dart
 int count = 0;
@@ -140,8 +140,8 @@ Widget build(BuildContext context) {
 Flutter's `Text` widget displays text on the screen, but app users aren't able to highlight, copy, etc. `SelectableText` will display a string of _user-selectable_ text.
 {% render docs/code-and-image.md,
 image:"fwe/user-input/SelectableText.gif",
-caption: "This figure shows a string of text formatted with different text styles."
-alt: 'A screenshot of the text "Hello bold world!" with the word "bold" in bold font.'
+caption: "This figure shows a cursor highlighting a portion of a string of text."
+alt: 'A GIF of a cursor hihglighting two lines of text from a paragraph.'
 code:"
 ```dart
 @override
@@ -207,8 +207,8 @@ There more confiugrable properties such as `obscureText` which turns the inputte
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/TextField.gif",
-caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
-alt: "A screenshot of three widgets, spaced evenly from each other."
+caption: "This figure shows text being typed into a TextField with a selected border and label."
+alt: "A GIF of a text field with the label \"Mascot Name\", purple focus border and the phrase \"Dash the hummingbird\" being typed in."
 code:"
 ```dart
 final TextEditingController _controller = TextEditingController();
@@ -337,8 +337,8 @@ It has data type of `<T>` for the value(s) that the user can choose. `<T>` can b
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/segmented-button.gif",
-caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
-alt: "A screenshot of three widgets, spaced evenly from each other."
+caption: "This figure shows a SegmentedButton, each segment with an icon and text representing its value."
+alt: "A GIF of a SegmentedButton with 4 segments: Day, Week, Month, and Year. Each has a calendar icon to represent its value and a text label. Day is first selected, then week and month, then year."
 code:"
 
 ```dart
@@ -403,8 +403,8 @@ don't get cut off at the edge of your app.
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/chip.png",
-caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
-alt: "A screenshot of three widgets, spaced evenly from each other."
+caption: "This figure shows two rows of Chip widgets, each containing a circular leading profile image and content text."
+alt: "A screenshot of 4 Chips split over two rows with a leading circular profile image with content text."
 code:"
 ```dart 
 @override
@@ -465,8 +465,8 @@ Configuration parameters include the following:
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/dropdownmenu.gif",
-caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
-alt: "A screenshot of three widgets, spaced evenly from each other."
+caption: "This figure shows a DropdownMenu widget with 5 value options. Each option's text color is styled to represent the color value."
+alt: "A GIF the DropdownMenu widget that is selected, it displays 5 options: Blue, Pink, Green, Orange, and Grey. The option text is displayed in the color of its value."
 code:"
 ```dart
 enum ColorLabel {
@@ -523,8 +523,8 @@ The `Slider` widget lets a user select from a number from a range of values, suc
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/slider.gif",
-caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
-alt: "A screenshot of three widgets, spaced evenly from each other."
+caption: "This figure shows a slider widget with a value ranging from 0.0 to 5.0 broken up into 5 divisions. It shows the current value as a label as the dial gets dragged."
+alt: "A GIF of a slider that has the dial dragged left to right in increments of 1, from 0.0 to 5.0"
 code:"
 ```dart
 double _currentVolume = 1;
@@ -567,8 +567,8 @@ Give the user the option to toggle a single value on/off. The functional logic b
 ### `Checkbox`
 {% render docs/code-and-image.md,
 image:"fwe/user-input/checkbox.gif",
-caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
-alt: "A screenshot of three widgets, spaced evenly from each other."
+caption: "This figure shows a checkbox being checked and unchecked."
+alt: "A GIF that shows a pointer clicking a checkbox and then clicking again to uncheck it."
 code:"
 ```dart
 bool isChecked = false;
@@ -591,8 +591,8 @@ Widget build(BuildContext context) {
 ### `Switch`
 {% render docs/code-and-image.md,
 image:"fwe/user-input/Switch.gif",
-caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
-alt: "A screenshot of three widgets, spaced evenly from each other."
+caption: "This figure shows a Switch widget that is toggled on and off."
+alt: "A GIF of a Switch widget that is toggled on and off. In its off state, it is gray with dark gray borders. In its on state, it is red with a light red border."
 code:"
 ```dart
 bool light = true;
@@ -620,8 +620,8 @@ When one radio button in a group is selected, the other radio buttons in the gro
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/Radio.gif",
-caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
-alt: "A screenshot of three widgets, spaced evenly from each other."
+caption: "This figure shows a column of ListTiles containing a radio button and label, where only one radio button can be selected at a time."
+alt: "A GIF of 4 ListTiles in a column, each containing a leading Radio button and title text. The Radio buttons are selected in order from top to bottom. "
 code:"
 ```dart
 enum Character { musician, chef, firefighter, artist }
@@ -691,8 +691,8 @@ It's the same checkbox and switch widgets, just with a label. It's convenience w
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/SpecialListTiles.gif",
-caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
-alt: "A screenshot of three widgets, spaced evenly from each other."
+caption: "This figure shows a column containing a CheckboxListTile and a SwitchListTile being toggled."
+alt: "A ListTile with a leading icon, title text, and a trailing checkbox being checked and unchecked. It also shows a ListTile with a leading icon, title text and a switch being toggled on and off."
 code:"
 ```dart
 double timeDilation = 1.0;
@@ -746,8 +746,8 @@ A dialog box that let's the user select a date or a range of dates.  It can be a
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/DatePicker.gif",
-caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
-alt: "A screenshot of three widgets, spaced evenly from each other."
+caption: "This figure shows a DatePicker that is displayed when the \"Pick a date\" button is clicked."
+alt: "A GIF of a pointer clicking a button that says \"Pick a date\", then shows a date picker. The date Friday, August 30 is selected and the \"OK\" button is clicked."
 code:"
 ```dart
 DateTime? selectedDate;
@@ -789,8 +789,8 @@ Widget build(BuildContext context) {
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/TimePicker.gif",
-caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
-alt: "A screenshot of three widgets, spaced evenly from each other."
+caption: "This figure shows a TimePicker that is displayed when the \"Pick a time\" button is clicked."
+alt: "A GIF of a pointer clicking a button that says \"Pick a time\", then shows a time picker. The time picker shows a circular clock as the cursor moves the hour hand, then minute hand, selects PM, then the \"OK\" button is clicked."
 code:"
 ```dart
 TimeOfDay? selectedTime;
@@ -838,11 +838,15 @@ To enable state restoration, you can also push `DatePickerDialog()` and `TimePic
 ## Swipe & slide
 
 ### [`Dismissible`][]
-A `Dismissible` is aClear list items by swiping left or right.
+A `Dismissible` is a widget that enables users to dismiss it by swiping. It has a a number of configuration parameters, including:
+- A `child` widget
+- An `onDismissed` callback that is triggered when the user swipes
+- Styling parameters such as `background`
+- It's important to include a `key` object as well so that they can be uniquely identified from sibling `Dismissible` widgets in the widget tree.
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/Dismissible.gif",
-caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
+caption: "This figure shows a list of Dismissible widgets that each contain a ListTile. Swiping across the ListTile reveals a green background makes the tile disappear."
 alt: "A screenshot of three widgets, spaced evenly from each other."
 code:"
 ```dart
