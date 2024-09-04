@@ -29,7 +29,11 @@ have already been covered in [Layouts][].
 
 Flutter ships with prebuilt components for two design systems as part of the SDK, [Material][] and [Cupertino][]. For educational purposes, this page focuses on Material widgets, components that are stylized according to the [Material 3 design language][] specifications. 
 
-The Flutter community on [pub.dev][], the package repository for Dart and Flutter, create and support additional design languages such as [Fluent UI][], [macOS UI], and more. If the existing design system components don't quite fit what you need, Flutter lets you build your own custom widgets, which you will read about at the end of this section.
+The Flutter community on [pub.dev][], the package repository for Dart and Flutter,
+create and support additional design languages such as [Fluent UI][], [macOS UI][],
+and more. If the existing design system components don't quite fit what you need,
+Flutter lets you build your own custom widgets,
+which you will read about at the end of this section.
 
 > <i class="material-symbols" aria-hidden="true">menu_book</i> **Reference**: 
 > The [widget catalog][] has an inventory of commonly used widgets in the [Material][] and [Cupertino][] libraries.
