@@ -41,7 +41,7 @@ which you will read about at the end of this section.
 Next, we'll cover a few of the Material widgets that support common
 use cases for user input in your Flutter app. 
 
-[pub.dev]: https://pub.dev
+[pub.dev]: {{site.yml.pub}}
 [Layouts]: /get-started/fwe/layout
 [Material]: /ui/widgets/material
 [Material 3 design language]: https://m3.material.io/
