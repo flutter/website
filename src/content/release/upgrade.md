@@ -101,10 +101,28 @@ $ flutter channel beta
 $ flutter upgrade
 ```
 
-:::note
-If you need a specific version of the Flutter SDK,
-you can download it from the [Flutter SDK archive][].
-:::
+
+## Switching to a specific Flutter version
+
+To switch to a specific Flutter version:
+
+1. Find your desired **Flutter version** on the [Flutter SDK archive][].
+
+1. Navigate to the Flutter SDK:
+
+   ```console
+   $ cd /path/to/flutter
+   ```
+
+   :::tip
+   You can find the Flutter SDK's path using `flutter doctor --verbose`.
+   :::
+
+1. Use `git checkout` to switch to your desired **Flutter version**:
+
+   ```console
+   $ git checkout <Flutter version>
+   ```
 
 
 ## Upgrading packages

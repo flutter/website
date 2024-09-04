@@ -642,6 +642,7 @@
       { "source": "/go/windows-x86-arm64-support", "destination": "https://docs.google.com/document/d/1gAGqtTAjO0GntR8bPonIO1aZJnTghPCI_PHJPdNzEmo/edit?resourcekey=0-l1tL7iai47yw3bMl9IcpHw", "type": 301 },
       { "source": "/go/wrap-layout", "destination": "https://docs.google.com/document/d/1auZtWT1T5CkUKOUTUld8rF91iN7PvQoOF0IlBNXiDSo/edit?usp=sharing", "type": 301 },
       { "source": "/go/wrap-popupmenu-with-safearea", "destination": "https://docs.google.com/document/d/15uBmyEKiOeYGYt1PuBVf4SFK5YhH07EP9ylWP-H9mVE/edit?usp=sharing", "type": 301 },
+      { "source": "/go/zero-rebuilds", "destination": "https://docs.google.com/document/d/1MfU6gkgIgXCxa5E25sPYuAP5Bmgehyl3Hk7yDH24zl0/edit?usp=sharing", "type": 301 },
 
       { "source": "/to/actions-shortcuts", "destination": "/ui/interactivity/actions-and-shortcuts", "type": 301 },
       { "source": "/to/add-desktop-support", "destination": "/platform-integration/desktop#add-desktop-support-to-an-existing-flutter-app", "type": 301 },
@@ -712,6 +713,7 @@
       { "source": "/to/review-gradle-config", "destination": "/deployment/android#review-the-gradle-build-configuration", "type": 301 },
       { "source": "/to/save-layer-perf", "destination": "/perf/best-practices#use-savelayer-thoughtfully", "type": 301 },
       { "source": "/to/state-management-sample", "destination": "/data-and-backend/state-mgmt/simple", "type": 301 },
+      { "source": "/to/switch-flutter-version", "destination": "/release/upgrade/#switching-to-a-specific-flutter-version", "type": 301 },
       { "source": "/to/track-widget-creation", "destination": "/tools/devtools/inspector#track-widget-creation", "type": 301 },
       { "source": "/to/troubleshoot-devices", "destination": "/get-started/install", "type": 301 },
       { "source": "/to/unbounded-constraints", "destination": "/ui/layout/constraints#unbounded", "type": 301 },
