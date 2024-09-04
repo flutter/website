@@ -880,7 +880,7 @@ If the Material and Cupertino Libraries don't have a widget that does what you n
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [flutter_slidable (Package of the Week)][] 
 
-[Material Widget Library]: /ui/widgets/material
+[Material Widget library]: /ui/widgets/material
 [Material Library API docs]: {{site.api}}/flutter/material/material-library.html
 
 ## Build interactive widgets with GestureDetector 
