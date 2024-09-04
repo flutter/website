@@ -924,7 +924,7 @@ Once you have finished building user interactions
 into your app, don't forget to write tests to
 ensure that everything works as expected!
 
-These tutorials will walk you through writing tests that simulate user interactions in your app:
+These tutorials walk you through writing tests that simulate user interactions in your app:
 
 > <i class="material-symbols" aria-hidden="true">star</i> **Checkpoint**: 
 > Follow this [tap, drag, and enter text][] cookbook article and learn how to use `WidgetTester` to simulate and test user interactions in your app. 
