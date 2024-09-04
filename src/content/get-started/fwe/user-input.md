@@ -519,7 +519,14 @@ Widget build(BuildContext context) {
 > [DropdownMenu (Widget of the Week)][]
 
 ### Slider
-The `Slider` widget lets a user select from a number from a range of values, such as a a volume bar or video scrubber.
+The `Slider` widget lets a user select from a number from a range of values, such as a a volume bar or video scrubber. 
+
+Configuration parameters for the `Slider` widget:
+- `value` represents the slider's current value
+- `onChanged` is the callback that gets triggered when the handle is moved
+- `min` and `max` establish minimum and maximum values allowed by the slider
+- `divisions` establishes a discrete interval with which the user can move the handle along the track.
+
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/slider.gif",
