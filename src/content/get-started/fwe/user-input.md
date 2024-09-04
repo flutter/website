@@ -906,7 +906,7 @@ Check out the this video: [GestureArena (Decoding Flutter)][]
 
 ### Don't forget about accessibility!
 
-If you're building custom widgets, annotate its meaning with the `Semantics` widget.
+If you're building a custom widget, annotate its meaning with the `Semantics` widget.
 It provides descriptions and metadata to screen readers and other semantic
 analysis-based tools. 
 
