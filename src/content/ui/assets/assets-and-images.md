@@ -46,7 +46,10 @@ To add files located in subdirectories, create an entry per directory.
 :::
 
 :::note
-A common mistake is incorrectly indenting your `assets` entry
+Indentation matters in YAML. If you see an error like
+`Error: unable to find directory entry in pubspec.yaml`
+then you _might_ have indented incorrectly in your
+pubspec file. Consider the following [broken] example:
 ```yaml
 flutter:
 assets:
