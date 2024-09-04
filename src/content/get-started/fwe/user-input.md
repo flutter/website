@@ -756,8 +756,13 @@ Widget build(BuildContext context) {
 
 ## Select a date or time
 
+There is a set of Dialogs that enable users to select a date or time, as you'll see next. With the exception of differing date types - `DateTime` for dates vs `TimeOfDay` for time -  these dialogs function similarly, you can configure them by [rpvodmg]:
+
+- a default `initialDate` or `initialTime`
+- or an `initialEntryMode` that determines the  picker UI that's displayed.
+
 ### `DatePickerDialog`
-A dialog box that let's the user select a date or a range of dates.  It can be activated by calling the `showDatePicker` function, which returns a `Future<DateTime>`, so don't forget to await the function call!
+A dialog box that let's the user select a date or a range of dates.  It can be activated by calling the `showDatePicke()` function, which returns a `Future<DateTime>`, so don't forget to await the function call!
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/DatePicker.gif",
@@ -800,7 +805,7 @@ Widget build(BuildContext context) {
 " %}
 
 ### `TimePickerDialog`
-`TimePickerDialog` is a dialog that presents a time picker. It can be activated by calling the `showTimePicker()` function. A slight difference from `showDatePicker()`, `showTimePicker` instead returns a `Future<TimeOfDay>`. Once again, don't forget to await the function call!
+`TimePickerDialog` is a dialog that presents a time picker. It can be activated by calling the `showTimePicker()` function. Instead of returning a `Future<DateTime>`, `showTimePicker` instead returns a `Future<TimeOfDay>`. Once again, don't forget to await the function call!
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/TimePicker.gif",
@@ -839,8 +844,7 @@ Widget build(BuildContext context) {
 " %}
 
 :::tip
-Calling `showDatePicker()` and `showTimePicker()` is equivalent to calling  `showDialog()` with `DatePickerDialog()` and  
-`TimePickerDialog()`. Internally, both functions use the `showDialog()` function with their respective `Dialog` widgets. 
+Calling `showDatePicker()` and `showTimePicker()` is equivalent to calling  `showDialog()` with `DatePickerDialog()` and  `TimePickerDialog()`. Internally, both functions use the `showDialog()` function with their respective `Dialog` widgets. 
 
 
 To enable state restoration, you can also push `DatePickerDialog()` and `TimePickerDialog()` directly onto the `Navigator` stack. 
