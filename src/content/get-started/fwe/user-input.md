@@ -36,14 +36,14 @@ The Flutter community on [pub.dev][], the package repository for Dart and Flutte
 
 Next, we'll cover a few of the Material widgets that cover common usecases for handling user input in your Flutter app. 
 
-[pub.dev]: https://pub.dev
+[pub.dev]: {{site.pub}}
 [Layouts]: /get-started/fwe/layout
 [Material]: /ui/widgets/material
 [Material 3 design language]: https://m3.material.io/
 [Cupertino]: /ui/widgets/cupertino
 [widget catalog]: /ui/widgets#design-systems
-[Fluent UI]: https://pub.dev/packages/fluent_ui
-[macOS UI]: https://pub.dev/packages/macos_ui
+[Fluent UI]: {{site.pub}}/packages/fluent_ui
+[macOS UI]: {{site.pub}}/packages/macos_ui
 
 ## Buttons
 <img src='/assets/images/docs/fwe/user-input/material-buttons.png' alt="A collection of Material 3 Buttons.">
@@ -964,7 +964,7 @@ and other networking features.
 [`Dismissible`]: {{site.api}}/flutter/widgets/Dismissible-class.html
 [Dismissible (Widget of the Week)]: https://youtu.be/iEMgjrfuc58?si=f0S7IdaA9PIWIYvl
 [Implement swipe to dismiss]: /cookbook/gestures/dismissible
-[pkg: `flutter_slidable`]: https://pub.dev/packages/flutter_slidable
+[pkg: `flutter_slidable`]: {{site.pub}}/packages/flutter_slidable
 [flutter_slidable (Package of the Week)]: https://www.youtube.com/watch?v=QFcFEpFmNJ8
 
 
