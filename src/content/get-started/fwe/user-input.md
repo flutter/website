@@ -29,12 +29,17 @@ have already been covered in [Layouts][].
 
 Flutter ships with prebuilt components for two design systems as part of the SDK, [Material][] and [Cupertino][]. For educational purposes, this page focuses on Material widgets, components that are stylized according to the [Material 3 design language][] specifications. 
 
-The Flutter community on [pub.dev][], the package repository for Dart and Flutter, create and support additional design languages such as [Fluent UI][], [macOS UI], and more. If the existing design system components don't quite fit what you need, Flutter lets you build your own custom widgets, which you will read about at the end of this section.
+The Flutter community on [pub.dev][], the package repository for Dart and Flutter,
+create and support additional design languages such as [Fluent UI][], [macOS UI][],
+and more. If the existing design system components don't quite fit what you need,
+Flutter lets you build your own custom widgets,
+which you will read about at the end of this section.
 
 > <i class="material-symbols" aria-hidden="true">menu_book</i> **Reference**: 
 > The [widget catalog][] has an inventory of commonly used widgets in the [Material][] and [Cupertino][] libraries.
 
-Next, we'll cover a few of the Material widgets that cover common usecases for handling user input in your Flutter app. 
+Next, we'll cover a few of the Material widgets that support common
+use cases for user input in your Flutter app. 
 
 [pub.dev]: {{site.pub}}
 [Layouts]: /get-started/fwe/layout
@@ -48,7 +53,9 @@ Next, we'll cover a few of the Material widgets that cover common usecases for h
 ## Buttons
 <img src='/assets/images/docs/fwe/user-input/material-buttons.png' alt="A collection of Material 3 Buttons.">
 
-Buttons let a user prompt action in the UI by clicking or tapping. The Material library provides a variety of button types that are functionally similar, but styled differently for various usecases,  including:
+Buttons allow a user to initiate an action in the UI by clicking or tapping.
+The Material library provides a variety of button types that are functionally similar,
+but styled differently for various use cases,  including:
 - `ElevatedButton`: A button with some depth. Use elevated buttons to add dimension to otherwise mostly flat layouts.
 - `FilledButton`: A filled button that should be used for important, final actions that complete a flow, like **Save**, **Join now**, or **Confirm**. 
 - `Tonal Button`
@@ -310,7 +317,9 @@ Widget build(BuildContext context) {
 
 It has data type of `<T>` for the value(s) that the user can choose. `<T>` can be a built-in type such as an `int`, `String`, `bool` or an enum. There are a few relevant components to a `SegmentedButton`:
 
-- `segments` is a list of `ButtonSegment`, each representing "segment" or option that the user can select. Visually, each `ButtonSegment` can have an icon, label text, or both. 
+- `segments`, a list of `ButtonSegment`s, where each represents a "segment"
+   or option that the user can select.
+   Visually, each `ButtonSegment` can have an icon, text label, or both. 
 
 - `multiSelectionEnabled` indicates whether the user is allowed to select multiple options, defaults to false.
 
@@ -318,7 +327,8 @@ It has data type of `<T>` for the value(s) that the user can choose. `<T>` can b
 
 - `onSelectionChanged` callback is called when a user selects and segments. It provides a list of the selected segments to update your app state.  
 
-- There are additional styling parameters to modify the button's appearance including `style` which takes a `ButtonStyle` and the option to configure a `selectedIcon`.
+- Additional styling parameters allow you to modify the button's appearance. 
+  For example, `style` takes a `ButtonStyle` providing a way to configure a `selectedIcon`.
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/segmented-button.gif",
@@ -356,7 +366,7 @@ Widget build(BuildContext context) {
     selected: <Calendar>{calendarView},
     onSelectionChanged: (Set<Calendar> newSelection) {
       setState(() {
-        // By default there is only a single segment that can be
+        // By default, only a single segment can be
         // selected at one time, so its value is always the first
         // item in the selected set.
         calendarView = newSelection.first;
@@ -368,16 +378,23 @@ Widget build(BuildContext context) {
 " %}
 
 
-### `Chip`
-`Chip` is a compact way of representing an attribute, text, entity, or action for a specific context. For certain usecases, there are specialized `Chip` widgets that you can use:
-- [InputChip][], a chip that represents a complex piece of information, such as an entity (person, place, or thing) or conversational text, in a compact form.
-- [ChoiceChip][], allows a single selection from a set of options. Choice chips contain related descriptive text or categories.
-- [FilterChip][], uses tags or descriptive words as a way to filter content.
-- [ActionChip][], represents an action related to primary content.
+### Chip
+
+`Chip` is a compact way of representing an attribute, text, entity, or action
+for a specific context. Specialized `Chip` widgets exist for specific use cases:
+
+- [`InputChip`][] represents a complex piece of information,
+  such as an entity (person, place, or thing), or conversational text, in a compact form.
+- [`ChoiceChip`][] allows a single selection from a set of options.
+   Choice chips contain related descriptive text or categories.
+- [`FilterChip`][] uses tags or descriptive words to filter content.
+- [`ActionChip`][] represents an action related to primary content.
 
 Every `Chip` widget requires a `label`. It can optionally have an `avatar` (such as an icon or a user's profile picture) and `onDeleted` callback, which shows a delete icon that when triggered, deletes the chip. A `Chip`'s appreance can also be customized by setting a number of optional parameters such as `shape`, `color`, `iconTheme`, etc.
 
-You will typically use `Wrap`, a widget that displays its children in multiple horizontal or vertical runs, to make sure your chips wrap around and doesn't get cut off at the edge of your app.
+You will typically use `Wrap`, a widget that displays its children in
+multiple horizontal or vertical runs, to make sure your chips wrap and
+don't get cut off at the edge of your app.
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/chip.png",
@@ -431,12 +448,15 @@ code:"
 ### `DropdownMenu`
 A `DropdownMenu` lets users select a choice from a dropdown menu of options and puts the selected text into a `TextField`. It also gives users the added benefit of filtering the menu items based on the text input. 
 
-Configuration parameters include:
-- `dropdownMenuEntries`: a list of `DropdownMenuEntry`s that describe each of the menu items, it may contain information such as a text label, leading icon or trailing icon. (This is also the only required parameter.)
-- `TextEditingController` to programmatically control the `TextField`. 
-- `onSelected` callback that gets triggered when the user selects an option
-- `initialSelection` for configuring the default value.
-- Additional paramaters are  available for customizing the widget look and appearance too.
+Configuration parameters include the following:
+- `dropdownMenuEntries` provides a list of `DropdownMenuEntry`s that
+   describes each menu item.
+    Tne menu might contain information such as a text label, and a leading or trailing icon.
+    (This is also the only required parameter.)
+- `TextEditingController` allows programmatically controlling the `TextField`. 
+- Tne `onSelected` callback triggers when the user selects an option.
+- `initialSelection` allows you to configure the default value.
+- Additional parameters are also  available for customizing the widget's look and behavior.
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/dropdownmenu.gif",
@@ -493,7 +513,7 @@ Widget build(BuildContext context) {
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [DropdownMenu (Widget of the Week)][]
 
-### `Slider`
+### Slider
 The `Slider` widget lets a user select from a number from a range of values, such as a a volume bar or video scrubber.
 
 {% render docs/code-and-image.md,
@@ -813,7 +833,7 @@ To enable state restoration, you can also push `DatePickerDialog()` and `TimePic
 ## Swipe & slide
 
 ### [`Dismissible`][]
-A `Dismissible` is a list item that users can delete by swiping left or right.
+A `Dismissible` is aClear list items by swiping left or right.
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/Dismissible.gif",
@@ -830,10 +850,10 @@ Widget build(BuildContext context) {
     padding: const EdgeInsets.symmetric(vertical: 16),
     itemBuilder: (BuildContext context, int index) {
       return Dismissible(
-        key: ValueKey<int>(items[index]),
         background: Container(
           color: Colors.green,
         ),
+        key: ValueKey<int>(items[index]),
         onDismissed: (DismissDirection direction) {
           setState(() {
             items.removeAt(index);
@@ -878,7 +898,9 @@ If the Material and Cupertino Libraries don't have a widget that does what you n
 
 ## Build interactive widgets with GestureDetector 
 
-Scoured the widget libraries, pub.dev, and still can't find a widget that fits the user interaction that you're looking for? You can build your own custom widget and add interactivity using `GestureDetector`. 
+If you've scoured the widget libraries, pub.dev, asked your coding friends,
+and still can't find a widget that fits the user interaction that you're looking for?
+You can build your own custom widget and make it interactive using `GestureDetector`. 
 
 > <i class="material-symbols" aria-hidden="true">star</i> **Checkpoint**: 
 > Use this recipe as a starting point to create your own _custom_ button widget that can [handle taps][].
@@ -897,7 +919,7 @@ Check out the this video: [GestureArena (Decoding Flutter)][]
 
 ### Don't forget about accessibility!
 
-If you're building custom widgets, annotate its meaning with the `Semantics` widget.
+If you're building a custom widget, annotate its meaning with the `Semantics` widget.
 It provides descriptions and metadata to screen readers and other semantic
 analysis-based tools. 
 
@@ -915,7 +937,7 @@ Once you have finished building user interactions
 into your app, don't forget to write tests to
 ensure that everything works as expected!
 
-These tutorials will walk you through writing tests that simulate user interactions in your app:
+These tutorials walk you through writing tests that simulate user interactions in your app:
 
 > <i class="material-symbols" aria-hidden="true">star</i> **Checkpoint**: 
 > Follow this [tap, drag, and enter text][] cookbook article and learn how to use `WidgetTester` to simulate and test user interactions in your app. 
@@ -933,7 +955,7 @@ These tutorials will walk you through writing tests that simulate user interacti
 ## Next: Networking
 
 This page was an introduction to handling user input.
-Now that you know how to get input from app's users,
+Now that you know how to handle input from app users,
 you can make your app even more interesting by adding
 external data. In the next section,
 you'll learn now to fetch data for your app over a network,

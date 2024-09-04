@@ -54,6 +54,15 @@ This section presumes you called your Swift app `MyApp`.
    navigate to the root of your app directory.
    Use the `pod init` command to create the `Podfile` file.
 
+   :::warning
+   CocoaPods (as of version 1.15.2) does not support Xcode 16.
+   If the `pod init` command errors, consider re-creating your Xcode project
+   using Xcode 15 or older.
+
+   To learn more about the CocoaPods issue, check out
+   [CocoaPods#12456](https://github.com/CocoaPods/CocoaPods/issues/12456).
+   :::
+
 1. Update your `Podfile` config file.
 
    1. Add the following lines after the `platform` declaration.
