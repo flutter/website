@@ -34,6 +34,11 @@ create and support additional design languages such as [Fluent UI][], [macOS UI]
 and more. If the existing design system components don't quite fit what you need,
 Flutter lets you build your own custom widgets,
 which you will read about at the end of this section.
+The Flutter community on [pub.dev][], the package repository for Dart and Flutter,
+create and support additional design languages such as [Fluent UI][], [macOS UI][],
+and more. If the existing design system components don't quite fit what you need,
+Flutter lets you build your own custom widgets,
+which you will read about at the end of this section.
 
 > <i class="material-symbols" aria-hidden="true">menu_book</i> **Reference**: 
 > The [widget catalog][] has an inventory of commonly used widgets in the [Material][] and [Cupertino][] libraries.
@@ -893,7 +898,7 @@ If the Material and Cupertino Libraries don't have a widget that does what you n
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [flutter_slidable (Package of the Week)][] 
 
-[Material Widget Library]: /ui/widgets/material
+[Material Widget library]: /ui/widgets/material
 [Material Library API docs]: {{site.api}}/flutter/material/material-library.html
 
 ## Build interactive widgets with GestureDetector 
