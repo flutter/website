@@ -38,7 +38,8 @@ which you will read about at the end of this section.
 > <i class="material-symbols" aria-hidden="true">menu_book</i> **Reference**: 
 > The [widget catalog][] has an inventory of commonly used widgets in the [Material][] and [Cupertino][] libraries.
 
-Next, we'll cover a few of the Material widgets that cover common usecases for handling user input in your Flutter app. 
+Next, we'll cover a few of the Material widgets that support common
+use cases for user input in your Flutter app. 
 
 [pub.dev]: https://pub.dev
 [Layouts]: /get-started/fwe/layout
