@@ -388,12 +388,12 @@ Widget build(BuildContext context) {
 `Chip` is a compact way of representing an attribute, text, entity, or action
 for a specific context. Specialized `Chip` widgets exist for specific use cases:
 
-- [`InputChip`][] represents a complex piece of information,
+- [InputChip][] represents a complex piece of information,
   such as an entity (person, place, or thing), or conversational text, in a compact form.
-- [`ChoiceChip`][] allows a single selection from a set of options.
+- [ChoiceChip][] allows a single selection from a set of options.
    Choice chips contain related descriptive text or categories.
-- [`FilterChip`][] uses tags or descriptive words to filter content.
-- [`ActionChip`][] represents an action related to primary content.
+- [FilterChip][] uses tags or descriptive words to filter content.
+- [ActionChip][] represents an action related to primary content.
 
 Every `Chip` widget requires a `label`. It can optionally have an `avatar` (such as an icon or a user's profile picture) and `onDeleted` callback, which shows a delete icon that when triggered, deletes the chip. A `Chip`'s appreance can also be customized by setting a number of optional parameters such as `shape`, `color`, `iconTheme`, etc.
 
