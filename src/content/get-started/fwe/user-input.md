@@ -53,7 +53,9 @@ use cases for user input in your Flutter app.
 ## Buttons
 <img src='/assets/images/docs/fwe/user-input/material-buttons.png' alt="A collection of Material 3 Buttons.">
 
-Buttons let a user prompt action in the UI by clicking or tapping. The Material library provides a variety of button types that are functionally similar, but styled differently for various usecases,  including:
+Buttons allow a user to initiate an action in the UI by clicking or tapping.
+The Material library provides a variety of button types that are functionally similar,
+but styled differently for various use cases,  including:
 - `ElevatedButton`: A button with some depth. Use elevated buttons to add dimension to otherwise mostly flat layouts.
 - `FilledButton`: A filled button that should be used for important, final actions that complete a flow, like **Save**, **Join now**, or **Confirm**. 
 - `Tonal Button`
