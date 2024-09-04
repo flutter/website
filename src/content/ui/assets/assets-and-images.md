@@ -45,6 +45,21 @@ Only files located directly in the directory are included.
 To add files located in subdirectories, create an entry per directory.
 :::
 
+:::note
+A common mistake is incorrectly indenting your `assets` entry
+```yaml
+flutter:
+assets:
+  - directory/
+```
+when it should be a key _of_ the `flutter` entry.
+```yaml
+flutter:
+  assets:
+    - directory/
+```
+:::
+
 ### Asset bundling
 
 The `assets` subsection of the `flutter` section
