@@ -885,7 +885,9 @@ If the Material and Cupertino Libraries don't have a widget that does what you n
 
 ## Build interactive widgets with GestureDetector 
 
-Scoured the widget libraries, pub.dev, and still can't find a widget that fits the user interaction that you're looking for? You can build your own custom widget and add interactivity using `GestureDetector`. 
+If you've scoured the widget libraries, pub.dev, asked your coding friends,
+and still can't find a widget that fits the user interaction that you're looking for?
+You can build your own custom widget and make it interactive using `GestureDetector`. 
 
 > <i class="material-symbols" aria-hidden="true">star</i> **Checkpoint**: 
 > Use this recipe as a starting point to create your own _custom_ button widget that can [handle taps][].
