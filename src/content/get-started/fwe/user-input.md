@@ -571,6 +571,10 @@ Widget build(BuildContext context) {
 ### `Checkbox`, `Switch`, and `Radio`
 Give the user the option to toggle a single value on/off. The functional logic behind these widgets are the same (all 3 are built on top of `ToggleableStateMixin`) with some presentation differences that provide different user experiences. 
 
+The  configuration for `Checkbox` and `Switch` contain:
+- a `value` that is `true` or `false`
+- and an `onChanged` callback which is triggered when the user toggles the widget.
+
 ### `Checkbox`
 {% render docs/code-and-image.md,
 image:"fwe/user-input/checkbox.gif",
@@ -623,7 +627,11 @@ Widget build(BuildContext context) {
 
 ### `Radio`
 A group of `Radio` buttons let the user select between a mutually exclusive values. 
-When one radio button in a group is selected, the other radio buttons in the group are unselected.
+When one radio button in a group is selected, the other radio buttons in the group are unselected. 
+
+- A particular `Radio` button's `value` represent that button's value,
+- The selected value for a group of radio buttons is identified by the `groupValue` parameter.
+- `Radio` also has an `onChanged` callback that gets triggered when users click it, like `Switch` and `Checkbox`
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/Radio.gif",
