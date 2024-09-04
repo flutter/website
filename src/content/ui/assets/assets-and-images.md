@@ -55,7 +55,8 @@ flutter:
 assets:
   - directory/
 ```
-when it should be a key _of_ the `flutter` entry.
+The `assets:` line should be indented by exactly
+two spaces below the `flutter:` line:
 ```yaml
 flutter:
   assets:
