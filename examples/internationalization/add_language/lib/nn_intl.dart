@@ -11,13 +11,13 @@ import 'package:intl/intl.dart' as intl;
 ///
 /// These are not accurate and are just a clone of the date patterns for the
 /// `no` locale to demonstrate how one would write and use custom date patterns.
-// #docregion Date
+// #docregion date-patterns
 const nnLocaleDatePatterns = {
   'd': 'd.',
   'E': 'ccc',
   'EEEE': 'cccc',
   'LLL': 'LLL',
-// #enddocregion Date
+// #enddocregion date-patterns
   'LLLL': 'LLLL',
   'M': 'L.',
   'Md': 'd.M.',
@@ -64,14 +64,14 @@ const nnLocaleDatePatterns = {
 ///
 /// These are not accurate and are just a clone of the date symbols for the
 /// `no` locale to demonstrate how one would write and use custom date symbols.
-// #docregion Date2
+// #docregion date-symbols
 const nnDateSymbols = {
   'NAME': 'nn',
   'ERAS': <dynamic>[
     'f.Kr.',
     'e.Kr.',
   ],
-// #enddocregion Date2
+// #enddocregion date-symbols
   'ERANAMES': <dynamic>[
     'før Kristus',
     'etter Kristus',
@@ -257,7 +257,7 @@ const nnDateSymbols = {
   ],
 };
 
-// #docregion Delegate
+// #docregion delegate
 class _NnMaterialLocalizationsDelegate
     extends LocalizationsDelegate<MaterialLocalizations> {
   const _NnMaterialLocalizationsDelegate();
@@ -281,7 +281,7 @@ class _NnMaterialLocalizationsDelegate
       NnMaterialLocalizations(
         localeName: localeName,
         // The `intl` library's NumberFormat class is generated from CLDR data
-        // (see https://github.com/dart-lang/intl/blob/master/lib/number_symbols_data.dart).
+        // (see https://github.com/dart-lang/i18n/blob/main/pkgs/intl/lib/number_symbols_data.dart).
         // Unfortunately, there is no way to use a locale that isn't defined in
         // this map and the only way to work around this is to use a listed
         // locale's NumberFormat symbols. So, here we use the number formats
@@ -306,7 +306,7 @@ class _NnMaterialLocalizationsDelegate
   @override
   bool shouldReload(_NnMaterialLocalizationsDelegate old) => false;
 }
-// #enddocregion Delegate
+// #enddocregion delegate
 
 /// A custom set of localizations for the 'nn' locale. In this example, only
 /// the value for openAppDrawerTooltip was modified to use a custom message as
@@ -326,7 +326,7 @@ class NnMaterialLocalizations extends GlobalMaterialLocalizations {
     required super.twoDigitZeroPaddedFormat,
   });
 
-// #docregion Getters
+  // #docregion getters
   @override
   String get moreButtonTooltip => r'More';
 
@@ -335,8 +335,7 @@ class NnMaterialLocalizations extends GlobalMaterialLocalizations {
 
   @override
   String get alertDialogLabel => r'Alert';
-
-// #enddocregion Getters
+  // #enddocregion getters
 
   @override
   String get anteMeridiemAbbreviation => r'AM';
@@ -405,14 +404,14 @@ class NnMaterialLocalizations extends GlobalMaterialLocalizations {
   // A custom drawer tooltip message.
   String get openAppDrawerTooltip => r'Custom Navigation Menu Tooltip';
 
-// #docregion Raw
+  // #docregion raw
   @override
   String get pageRowsInfoTitleRaw => r'$firstRow–$lastRow of $rowCount';
 
   @override
   String get pageRowsInfoTitleApproximateRaw =>
       r'$firstRow–$lastRow of about $rowCount';
-// #enddocregion Raw
+  // #enddocregion raw
 
   @override
   String get pasteButtonLabel => r'PASTE';
@@ -615,142 +614,194 @@ class NnMaterialLocalizations extends GlobalMaterialLocalizations {
   String get unspecifiedDateRange => 'Date Range';
 
   @override
-  String get keyboardKeyAlt => throw UnimplementedError();
+  String get keyboardKeyAlt => 'Alt';
 
   @override
-  String get keyboardKeyAltGraph => throw UnimplementedError();
+  String get keyboardKeyAltGraph => 'AltGr';
 
   @override
-  String get keyboardKeyBackspace => throw UnimplementedError();
+  String get keyboardKeyBackspace => 'Backspace';
 
   @override
-  String get keyboardKeyCapsLock => throw UnimplementedError();
+  String get keyboardKeyCapsLock => 'Caps Lock';
 
   @override
-  String get keyboardKeyChannelDown => throw UnimplementedError();
+  String get keyboardKeyChannelDown => 'Channel Down';
 
   @override
-  String get keyboardKeyChannelUp => throw UnimplementedError();
+  String get keyboardKeyChannelUp => 'Channel Up';
 
   @override
-  String get keyboardKeyControl => throw UnimplementedError();
+  String get keyboardKeyControl => 'Ctrl';
 
   @override
-  String get keyboardKeyDelete => throw UnimplementedError();
-
-  String get keyboardKeyEisu => throw UnimplementedError();
+  String get keyboardKeyDelete => 'Del';
 
   @override
-  String get keyboardKeyEject => throw UnimplementedError();
+  String get keyboardKeyEject => 'Eject';
 
   @override
-  String get keyboardKeyEnd => throw UnimplementedError();
+  String get keyboardKeyEnd => 'End';
 
   @override
-  String get keyboardKeyEscape => throw UnimplementedError();
+  String get keyboardKeyEscape => 'Esc';
 
   @override
-  String get keyboardKeyFn => throw UnimplementedError();
+  String get keyboardKeyFn => 'Fn';
 
   @override
-  String get keyboardKeyHome => throw UnimplementedError();
+  String get keyboardKeyHome => 'Home';
 
   @override
-  String get keyboardKeyInsert => throw UnimplementedError();
+  String get keyboardKeyInsert => 'Insert';
 
   @override
-  String get keyboardKeyMeta => throw UnimplementedError();
+  String get keyboardKeyMeta => 'Meta';
 
   @override
-  String get keyboardKeyMetaMacOs => throw UnimplementedError();
+  String get keyboardKeyMetaMacOs => 'Command';
 
   @override
-  String get keyboardKeyMetaWindows => throw UnimplementedError();
+  String get keyboardKeyMetaWindows => 'Win';
 
   @override
-  String get keyboardKeyNumLock => throw UnimplementedError();
+  String get keyboardKeyNumLock => 'Num Lock';
 
   @override
-  String get keyboardKeyNumpad0 => throw UnimplementedError();
+  String get keyboardKeyNumpad0 => 'Num 0';
 
   @override
-  String get keyboardKeyNumpad1 => throw UnimplementedError();
+  String get keyboardKeyNumpad1 => 'Num 1';
 
   @override
-  String get keyboardKeyNumpad2 => throw UnimplementedError();
+  String get keyboardKeyNumpad2 => 'Num 2';
 
   @override
-  String get keyboardKeyNumpad3 => throw UnimplementedError();
+  String get keyboardKeyNumpad3 => 'Num 3';
 
   @override
-  String get keyboardKeyNumpad4 => throw UnimplementedError();
+  String get keyboardKeyNumpad4 => 'Num 4';
 
   @override
-  String get keyboardKeyNumpad5 => throw UnimplementedError();
+  String get keyboardKeyNumpad5 => 'Num 5';
 
   @override
-  String get keyboardKeyNumpad6 => throw UnimplementedError();
+  String get keyboardKeyNumpad6 => 'Num 6';
 
   @override
-  String get keyboardKeyNumpad7 => throw UnimplementedError();
+  String get keyboardKeyNumpad7 => 'Num 7';
 
   @override
-  String get keyboardKeyNumpad8 => throw UnimplementedError();
+  String get keyboardKeyNumpad8 => 'Num 8';
 
   @override
-  String get keyboardKeyNumpad9 => throw UnimplementedError();
+  String get keyboardKeyNumpad9 => 'Num 9';
 
   @override
-  String get keyboardKeyNumpadAdd => throw UnimplementedError();
+  String get keyboardKeyNumpadAdd => 'Num  +';
 
   @override
-  String get keyboardKeyNumpadComma => throw UnimplementedError();
+  String get keyboardKeyNumpadComma => 'Num ,';
 
   @override
-  String get keyboardKeyNumpadDecimal => throw UnimplementedError();
+  String get keyboardKeyNumpadDecimal => 'Num .';
 
   @override
-  String get keyboardKeyNumpadDivide => throw UnimplementedError();
+  String get keyboardKeyNumpadDivide => 'Num /';
 
   @override
-  String get keyboardKeyNumpadEnter => throw UnimplementedError();
+  String get keyboardKeyNumpadEnter => 'Num Enter';
 
   @override
-  String get keyboardKeyNumpadEqual => throw UnimplementedError();
+  String get keyboardKeyNumpadEqual => 'Num =';
 
   @override
-  String get keyboardKeyNumpadMultiply => throw UnimplementedError();
+  String get keyboardKeyNumpadMultiply => 'Num *';
 
   @override
-  String get keyboardKeyNumpadParenLeft => throw UnimplementedError();
+  String get keyboardKeyNumpadParenLeft => 'Num (';
 
   @override
-  String get keyboardKeyNumpadParenRight => throw UnimplementedError();
+  String get keyboardKeyNumpadParenRight => 'Num )';
 
   @override
-  String get keyboardKeyNumpadSubtract => throw UnimplementedError();
+  String get keyboardKeyNumpadSubtract => 'Num -';
 
   @override
-  String get keyboardKeyPageDown => throw UnimplementedError();
+  String get keyboardKeyPageDown => 'PgDown';
 
   @override
-  String get keyboardKeyPageUp => throw UnimplementedError();
+  String get keyboardKeyPageUp => 'PgUp';
 
   @override
-  String get keyboardKeyPower => throw UnimplementedError();
+  String get keyboardKeyPower => 'Power';
 
   @override
-  String get keyboardKeyPowerOff => throw UnimplementedError();
+  String get keyboardKeyPowerOff => 'Power Off';
 
   @override
-  String get keyboardKeyPrintScreen => throw UnimplementedError();
+  String get keyboardKeyPrintScreen => 'Print Screen';
 
   @override
-  String get keyboardKeyScrollLock => throw UnimplementedError();
+  String get keyboardKeyScrollLock => 'Scroll Lock';
 
   @override
-  String get keyboardKeySelect => throw UnimplementedError();
+  String get keyboardKeySelect => 'Select';
 
   @override
-  String get keyboardKeySpace => throw UnimplementedError();
+  String get keyboardKeyShift => 'Shift';
+
+  @override
+  String get keyboardKeySpace => 'Space';
+
+  @override
+  String get scrimOnTapHintRaw => r'Close $modalRouteContentName';
+
+  @override
+  String get bottomSheetLabel => 'Bottom Sheet';
+
+  @override
+  String get currentDateLabel => 'Today';
+
+  @override
+  String get scrimLabel => 'Scrim';
+
+  @override
+  String get collapsedHint => 'Expanded';
+
+  @override
+  String get expandedHint => 'Collapsed';
+
+  @override
+  String get expansionTileCollapsedHint => 'double tap to expand';
+
+  @override
+  String get expansionTileCollapsedTapHint => 'Expand for more details';
+
+  @override
+  String get expansionTileExpandedHint => 'double tap to collapse';
+
+  @override
+  String get expansionTileExpandedTapHint => 'Collapse';
+
+  @override
+  String get scanTextButtonLabel => 'Scan text';
+
+  @override
+  String get lookUpButtonLabel => 'Look Up';
+
+  @override
+  String get menuDismissLabel => 'Dismiss menu';
+
+  @override
+  String get searchWebButtonLabel => 'Search web';
+
+  @override
+  String get shareButtonLabel => 'Share...';
+
+  @override
+  String get clearButtonTooltip => 'Clear text';
+
+  @override
+  String get selectedDateLabel => 'Selected';
 }

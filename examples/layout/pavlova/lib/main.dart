@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
 
 void main() {
-  debugPaintSizeEnabled = false; // Set to true for visual layout
+  debugPaintSizeEnabled = false; // Set to true for visual layout.
   runApp(const MyApp());
 }
 
@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
     );
 
     // #docregion ratings, stars
-    var stars = Row(
+    final stars = Row(
       mainAxisSize: MainAxisSize.min,
       children: [
         Icon(Icons.star, color: Colors.green[500]),
@@ -75,7 +75,7 @@ class MyApp extends StatelessWidget {
     );
     // #enddocregion ratings
 
-    // #docregion iconList
+    // #docregion icon-list
     const descTextStyle = TextStyle(
       color: Colors.black,
       fontWeight: FontWeight.w800,
@@ -119,9 +119,9 @@ class MyApp extends StatelessWidget {
         ),
       ),
     );
-    // #enddocregion iconList
+    // #enddocregion icon-list
 
-    // #docregion leftColumn
+    // #docregion left-column
     final leftColumn = Container(
       padding: const EdgeInsets.fromLTRB(20, 30, 20, 20),
       child: Column(
@@ -133,7 +133,7 @@ class MyApp extends StatelessWidget {
         ],
       ),
     );
-    // #enddocregion leftColumn
+    // #enddocregion left-column
 
     final mainImage = Image.asset(
       'images/pavlova.jpg',

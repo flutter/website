@@ -1,6 +1,4 @@
-//
-// Subnav styles (from site-www)
-//
+@use '../vendor/bootstrap';
 
 .site-nextprev-nav, // Nav with both links
 .site-nextprev-nav__single // Nav with single link
@@ -8,7 +6,7 @@
   clear: both;
 
   ul {
-    $spacer-base: bs-spacer(3);
+    $spacer-base: bootstrap.bs-spacer(3);
 
     list-style-type: none;
     margin: 0;
@@ -25,9 +23,9 @@
       }
 
       &.prev:before {
-        color: $primary;
+        color: bootstrap.$primary;
         content: "\2329"; // &lang;
-        padding-right: $spacer-base / 2;
+        padding-right: $spacer-base * 0.5;
       }
 
       &.next {
@@ -36,9 +34,9 @@
       }
 
       &.next:after {
-        color: $primary;
+        color: bootstrap.$primary;
         content: "\232A"; // &rang;
-        padding-left: $spacer-base / 2;
+        padding-left: $spacer-base * 0.5;
       }
     }
   }

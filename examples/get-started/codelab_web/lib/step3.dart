@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen();
+  const WelcomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('Welcome!', style: Theme.of(context).textTheme.headline2),
+        child: Text(
+          'Welcome!',
+          style: Theme.of(context).textTheme.displayMedium,
+        ),
       ),
     );
   }
@@ -16,7 +19,7 @@ class WelcomeScreen extends StatelessWidget {
 void main() => runApp(const SignUpApp());
 
 class SignUpApp extends StatelessWidget {
-  const SignUpApp();
+  const SignUpApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +33,7 @@ class SignUpApp extends StatelessWidget {
 }
 
 class SignUpScreen extends StatelessWidget {
-  const SignUpScreen();
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -49,10 +52,10 @@ class SignUpScreen extends StatelessWidget {
 }
 
 class SignUpForm extends StatefulWidget {
-  const SignUpForm();
+  const SignUpForm({super.key});
 
   @override
-  _SignUpFormState createState() => _SignUpFormState();
+  State<SignUpForm> createState() => _SignUpFormState();
 }
 
 class _SignUpFormState extends State<SignUpForm> {
@@ -89,29 +92,29 @@ class _SignUpFormState extends State<SignUpForm> {
   Widget build(BuildContext context) {
     return Form(
       onChanged: _updateFormProgress,
-      // #docregion UseAnimatedProgressIndicator
+      // #docregion use-animated-progress-indicator
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           AnimatedProgressIndicator(value: _formProgress), // NEW
-          Text('Sign up', style: Theme.of(context).textTheme.headline4),
+          Text('Sign up', style: Theme.of(context).textTheme.headlineMedium),
           Padding(
-            // #enddocregion UseAnimatedProgressIndicator
-            padding: const EdgeInsets.all(8.0),
+            // #enddocregion use-animated-progress-indicator
+            padding: const EdgeInsets.all(8),
             child: TextFormField(
               controller: _firstNameTextController,
               decoration: const InputDecoration(hintText: 'First name'),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8),
             child: TextFormField(
               controller: _lastNameTextController,
               decoration: const InputDecoration(hintText: 'Last name'),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8),
             child: TextFormField(
               controller: _usernameTextController,
               decoration: const InputDecoration(hintText: 'Username'),
@@ -119,15 +122,13 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           TextButton(
             style: ButtonStyle(
-              foregroundColor: MaterialStateProperty.resolveWith(
-                  (Set<MaterialState> states) {
-                return states.contains(MaterialState.disabled)
+              foregroundColor: WidgetStateProperty.resolveWith((states) {
+                return states.contains(WidgetState.disabled)
                     ? null
                     : Colors.white;
               }),
-              backgroundColor: MaterialStateProperty.resolveWith(
-                  (Set<MaterialState> states) {
-                return states.contains(MaterialState.disabled)
+              backgroundColor: WidgetStateProperty.resolveWith((states) {
+                return states.contains(WidgetState.disabled)
                     ? null
                     : Colors.blue;
               }),
@@ -142,16 +143,17 @@ class _SignUpFormState extends State<SignUpForm> {
   }
 }
 
-// #docregion AnimatedProgressIndicator
+// #docregion animated-progress-indicator
 class AnimatedProgressIndicator extends StatefulWidget {
   final double value;
 
   const AnimatedProgressIndicator({
+    super.key,
     required this.value,
   });
 
   @override
-  State<StatefulWidget> createState() {
+  State<AnimatedProgressIndicator> createState() {
     return _AnimatedProgressIndicatorState();
   }
 }
@@ -166,7 +168,9 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
   void initState() {
     super.initState();
     _controller = AnimationController(
-        duration: Duration(milliseconds: 1200), vsync: this);
+      duration: const Duration(milliseconds: 1200),
+      vsync: this,
+    );
 
     final colorTween = TweenSequence([
       TweenSequenceItem(
@@ -205,4 +209,4 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
     );
   }
 }
-// #enddocregion AnimatedProgressIndicator
+// #enddocregion animated-progress-indicator

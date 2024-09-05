@@ -11,7 +11,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
   final List<Interval> _itemSlideIntervals = [];
   late Interval _buttonInterval;
 
-  // #docregion initState
+  // #docregion init-state
   @override
   void initState() {
     super.initState();
@@ -23,7 +23,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
       duration: _animationDuration,
     )..forward();
   }
-  // #enddocregion initState
+  // #enddocregion init-state
 
   void _createAnimationIntervals() {
     for (var i = 0; i < _menuTitles.length; ++i) {
@@ -82,7 +82,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
     'Great community',
   ];
 
-  // #docregion buildListItems
+  // #docregion build-list-items
   List<Widget> _buildListItems() {
     final listItems = <Widget>[];
     for (var i = 0; i < _menuTitles.length; ++i) {
@@ -105,7 +105,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
             );
           },
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 36.0, vertical: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 36, vertical: 16),
             child: Text(
               _menuTitles[i],
               textAlign: TextAlign.left,
@@ -120,14 +120,14 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
     }
     return listItems;
   }
-  // #enddocregion buildListItems
+  // #enddocregion build-list-items
 
-  // #docregion buildGetStartedButton
+  // #docregion build-get-started
   Widget _buildGetStartedButton() {
     return SizedBox(
       width: double.infinity,
       child: Padding(
-        padding: const EdgeInsets.all(24.0),
+        padding: const EdgeInsets.all(24),
         child: AnimatedBuilder(
           animation: _staggeredController,
           builder: (context, child) {
@@ -163,5 +163,5 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
       ),
     );
   }
-  // #enddocregion buildGetStartedButton
+  // #enddocregion build-get-started
 }

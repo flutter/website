@@ -1,1 +1,0 @@
-../../site-shared/src/_plugins/code_diff_core.rb

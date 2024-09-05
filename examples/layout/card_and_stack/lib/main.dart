@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
     );
   }
 
-  // #docregion Card
+  // #docregion card
   Widget _buildCard() {
     return SizedBox(
       height: 210,
@@ -65,9 +65,9 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
-  // #enddocregion Card
+  // #enddocregion card
 
-  // #docregion Stack
+  // #docregion stack
   Widget _buildStack() {
     return Stack(
       alignment: const Alignment(0.6, 0.6),
@@ -92,5 +92,5 @@ class MyApp extends StatelessWidget {
       ],
     );
   }
-// #enddocregion Stack
+// #enddocregion stack
 }

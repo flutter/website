@@ -30,14 +30,18 @@ class SignatureState extends State<Signature> {
         });
       },
       onPanEnd: (details) => _points.add(null),
-      child: CustomPaint(
+      child:
+          // #docregion custom-paint
+          CustomPaint(
         painter: SignaturePainter(_points),
         size: Size.infinite,
       ),
+      // #enddocregion custom-paint
     );
   }
 }
 
+// #docregion custom-painter
 class SignaturePainter extends CustomPainter {
   SignaturePainter(this.points);
 
@@ -48,7 +52,7 @@ class SignaturePainter extends CustomPainter {
     final Paint paint = Paint()
       ..color = Colors.black
       ..strokeCap = StrokeCap.round
-      ..strokeWidth = 5.0;
+      ..strokeWidth = 5;
     for (int i = 0; i < points.length - 1; i++) {
       if (points[i] != null && points[i + 1] != null) {
         canvas.drawLine(points[i]!, points[i + 1]!, paint);
@@ -60,3 +64,4 @@ class SignaturePainter extends CustomPainter {
   bool shouldRepaint(SignaturePainter oldDelegate) =>
       oldDelegate.points != points;
 }
+// #enddocregion custom-painter

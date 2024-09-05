@@ -26,7 +26,7 @@ import 'package:flutter/foundation.dart' show SynchronousFuture;
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-// #docregion Demo
+// #docregion demo
 class DemoLocalizations {
   DemoLocalizations(this.locale);
 
@@ -45,22 +45,22 @@ class DemoLocalizations {
     },
   };
 
-  static List<String> languages ()=> _localizedValues.keys.toList();
+  static List<String> languages() => _localizedValues.keys.toList();
 
   String get title {
     return _localizedValues[locale.languageCode]!['title']!;
   }
 }
-// #enddocregion Demo
+// #enddocregion demo
 
-// #docregion Delegate
+// #docregion delegate
 class DemoLocalizationsDelegate
     extends LocalizationsDelegate<DemoLocalizations> {
   const DemoLocalizationsDelegate();
 
   @override
-  bool isSupported(Locale locale) => DemoLocalizations.languages().contains(locale.languageCode);
-
+  bool isSupported(Locale locale) =>
+      DemoLocalizations.languages().contains(locale.languageCode);
 
   @override
   Future<DemoLocalizations> load(Locale locale) {
@@ -72,7 +72,7 @@ class DemoLocalizationsDelegate
   @override
   bool shouldReload(DemoLocalizationsDelegate old) => false;
 }
-// #enddocregion Delegate
+// #enddocregion delegate
 
 class DemoApp extends StatelessWidget {
   const DemoApp({super.key});
@@ -96,8 +96,7 @@ class Demo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      onGenerateTitle: (context) =>
-          DemoLocalizations.of(context).title,
+      onGenerateTitle: (context) => DemoLocalizations.of(context).title,
       localizationsDelegates: const [
         DemoLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,

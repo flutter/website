@@ -8,11 +8,11 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
 
-// #docregion MyApp
+// #docregion my-app
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  final int anInt = 3; // Cannot be null.
+  final int anInt = 3; // Can't be null.
   final int? aNullableInt = null; // Can be null.
 
   @override
@@ -35,4 +35,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-// #enddocregion MyApp
+// #enddocregion my-app

@@ -45,9 +45,9 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
       buttonStartTime.inMilliseconds / _animationDuration.inMilliseconds,
       buttonEndTime.inMilliseconds / _animationDuration.inMilliseconds,
     );
-  } //code-excerpt-close-bracket
+  }
+  // #enddocregion step3
 
-// #enddocregion step3
   @override
   Widget build(BuildContext context) {
     return Container();
@@ -71,4 +71,6 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
     'Native performance',
     'Great community',
   ];
+  // #docregion step3
 }
+// #enddocregion step3

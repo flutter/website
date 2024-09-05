@@ -1,0 +1,19 @@
+steps:
+  - name: gcr.io/cloud-builders/git
+    args: ['submodule', 'update', '--init', '--recursive']
+  - name: gcr.io/cloud-builders/git
+    args: ['fetch', '--unshallow']
+  - name: gcr.io/flutter-dev-230821/firebase-ghcli
+    # Set up, build, then deploy site to production
+    entrypoint: '/bin/bash'
+    args:
+      - '-c'
+      - |-
+        set -e
+        
+        npm install
+        npm run build-site-for-production
+        
+        firebase deploy --project=flutter-docs-prod --only=hosting
+options:
+  logging: CLOUD_LOGGING_ONLY

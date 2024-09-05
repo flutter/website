@@ -1,85 +1,244 @@
+@use 'sass:color';
 
-// TODO moving this to shared, which allows better clarity and 
-// transparency of imports. Nesting is sneaky. 
-// @mixin pre-defaults {
-//   background-color: $site-color-codeblock-bg;
-//   padding: bs-spacer(3) bs-spacer(4);
-// }
-
-// @import '_code_shared';
-
-code {
-  color: #008f83;
-}
+@use '../base/variables' as *;
+@use '../vendor/bootstrap';
 
 pre {
-  @include pre-defaults;
-}
+  margin-bottom: 1rem;
+  font-size: 0.9375rem;
+  font-weight: bootstrap.$font-weight-normal;
+  padding: 1.25rem;
 
-// Give code blocks the same margin-bottom as regular paragraphs.
-div.highlighter-rouge {
-  margin-bottom: bs-spacer(4);
-}
+  a {
+    font-family: inherit;
+    font-weight: inherit;
+  }
 
-pre > span.strike { text-decoration: line-through; }
+  .highlight {
+    background: $flutter-color-yellow-300;
+    padding: 0.1em;
+  }
 
-.numbered-code-notes {
-  list-style-type: none;
-  padding-left: 0;
-  display: table;
-  li {
-    counter-increment: code-note-counter;
-    display: table-row;
-    padding-left: 8px;
-    &:before {
-      font-family: $font-family-monospace;
-      content: '/*' counter(code-note-counter) '*/' ;
-      display: table-cell;
-      text-align: right;
-      color: $teal;
-      padding-right: $font-size-base / 2;
-      // background-color: lightyellow;
+  .highlight-diagnostics & {
+    .highlight {
+      border-bottom: 2px $flutter-color-fuchsia dashed;
+      background: inherit;
+      padding: 0;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  span.line {
+    display: inline-block;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    min-width: 100%;
+    border-left: 2px solid transparent;
+
+    &.highlighted-line {
+      background: color.change($site-color-primary, $alpha: 0.05);
+      border-left-color: $site-color-primary;
+    }
+
+    &.added-line, &.removed-line {
+      padding-left: 0.25rem;
+
+      &::before {
+        display: inline-block;
+        user-select: none;
+        width: 0.75rem;
+        margin-right: 0.25rem;
+        text-align: right;
+      }
+    }
+
+    &.added-line {
+      background: color.change($flutter-color-teal, $alpha: 0.03);
+      border-left-color: $flutter-color-teal;
+
+      &::before {
+        content: '+';
+        color: color.mix($site-color-sub-grey, $flutter-color-teal);
+      }
+    }
+
+    &.removed-line {
+      background: color.change($alert-danger-fg, $alpha: 0.03);
+      border-left-color: $alert-danger-fg;
+
+      &::before {
+        content: '-';
+        color: color.mix($site-color-sub-grey, $alert-danger-fg);
+      }
+    }
+
+    .terminal-command::before {
+      color: $site-color-sub-grey;
+      content: "$";
+      content: "$" / "";
+      padding-right: 0.5rem;
+    }
+  }
+
+  &.show-line-numbers code {
+    span.line {
+      padding-left: 0.5rem;
+
+      &[data-line]::before {
+        display: inline-block;
+        content: attr(data-line) "";
+        width: 2em;
+        margin-right: 0.5rem;
+        text-align: right;
+        color: $site-color-sub-grey;
+      }
     }
   }
 }
 
-@mixin code-excerpt-border($side: '') {
-  border#{$side}: $border-width solid $border-color;
-}
+.code-inner-buttons {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 10;
 
-.code-excerpt {
-  &__code {
-    @include code-excerpt-border;
-    margin-bottom: bs-spacer(4);
-    position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 0.2rem;
 
-    pre {
-      background-color: $gray-100;
-      margin-bottom: 0;
-    }
-  }
-
-  &__copy-btn {
-    background: transparent;
+  button {
+    padding: 0.2rem;
+    appearance: none;
     border: none;
-    cursor: pointer;
-    color: lighten($site-color-body, 20%); // Offers better contrast on dark bg
-    margin-top: bs-spacer(2);
-    outline: none !important;
-    position: absolute;
-    right: 0;
+    color: $site-color-nav-links;
+    background: none;
+    opacity: 0;
+    transition: opacity 0.4s;
+
+    &:hover, &:focus {
+      color: $site-color-primary;
+      opacity: 1;
+    }
+
+    &:active {
+      color: $flutter-color-blue;
+    }
+  }
+}
+
+.code-block-language {
+  font-family: $site-font-family-monospace;
+  user-select: none;
+  font-size: 0.8125rem;
+  color: $site-color-nav-links;
+  opacity: 1;
+  transition: opacity 0.25s;
+
+  position: absolute;
+  top: 3px;
+  right: 6px;
+  z-index: 5;
+
+  .highlight-languages .language-dart & {
+    color: $site-color-primary;
   }
 
-  &__header {
-    background-color: $gray-200;
-    @include code-excerpt-border('-top');
-    @include code-excerpt-border('-left');
-    @include code-excerpt-border('-right');
-    font-size: $site-spacer * .875;
-    font-weight: $font-weight-bold;
-    padding-top: bs-spacer(3);
-    padding-left: bs-spacer(4);
-    padding-right: bs-spacer(2);
-    padding-bottom: 0.67rem;
+  .highlight-languages .language-js & {
+    color: #f1a85a;
   }
+
+  .highlight-languages .language-swift & {
+    color: #f05137;
+  }
+
+  .highlight-languages :not(.has-tag) & {
+    font-size: 0.875rem;
+    left: 6px;
+    right: unset;
+  }
+}
+
+.code-block-tag {
+  font-family: $site-font-family-monospace;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  position: absolute;
+  top: 3px;
+  left: 6px;
+
+  .tag-good &, .tag-passes-sa &, .tag-runtime-success & {
+    color: $alert-success-fg;
+  }
+
+  .tag-bad &, .tag-fails-sa &, .tag-runtime-fail & {
+    color: $alert-danger-fg;
+  }
+}
+
+.code-block-wrapper {
+  margin-bottom: 1rem;
+  border: 1px solid $flutter-color-grey-500;
+
+  .code-block-header {
+    background-color: #e9ecef;
+    border-bottom: 1px solid $flutter-color-grey-500;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    padding: 0.75rem 0.5rem 0.67rem 1rem;
+  }
+
+  .code-block-body {
+    position: relative;
+    background-color: $site-color-codeblock-bg;
+
+    &:hover, &:focus-within {
+      .code-block-language {
+        opacity: 0;
+      }
+
+      .code-inner-buttons button {
+        opacity: 1;
+      }
+    }
+
+    &.tag-good, &.tag-passes-sa, &.tag-runtime-success {
+      background-color: $alert-success-bg;
+    }
+
+    &.tag-bad, &.tag-fails-sa, &.tag-runtime-fail {
+      background-color: $alert-danger-bg;
+    }
+  }
+
+  &:has(:focus-visible) {
+    border-color: #1389FD;
+  }
+
+  pre {
+    margin-bottom: 0;
+    padding-right: 0;
+    padding-left: 0;
+
+    code {
+      display: block;
+      min-width: fit-content;
+      width: 100%;
+    }
+
+    &:not([lang="console"]) {
+      line-height: 1.8;
+    }
+  }
+}
+
+// Border and resizability for dartpad
+iframe[src^="https://dartpad"] {
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+  min-height: 400px;
+  resize: vertical;
+  width: 100%;
 }

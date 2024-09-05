@@ -111,13 +111,13 @@ class MyCatalogItem extends StatelessWidget {
     );
   }
 
-  // #docregion myTapHandler
+  // #docregion my-tap-handler
   // GOOD
   void myTapHandler(BuildContext context) {
     var cartModel = somehowGetMyCartModel(context);
     cartModel.add(item);
   }
-  // #enddocregion myTapHandler
+  // #enddocregion my-tap-handler
 }
 
 class MyHomepage extends StatelessWidget {
@@ -127,8 +127,8 @@ class MyHomepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Column(
-        children: const [
+      body: const Column(
+        children: [
           MyCatalog(),
           MyCartUsingWidget(),
           MyCartTotalWidget(),

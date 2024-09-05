@@ -1,4 +1,5 @@
-// Basic Flutter widget test. Learn more at https://flutter.io/docs/testing.
+// Basic Flutter widget test.
+// Learn more at https://docs.flutter.dev/testing/overview#widget-tests.
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:layout/main.dart';
@@ -8,7 +9,6 @@ void main() {
     await tester.pumpWidget(const MyApp());
     expect(find.text('Oeschinen Lake Campground'), findsOneWidget);
     expect(find.text('ROUTE'), findsOneWidget);
-    // FIXME: the following fails
-    // expect(find.text('Oeschinen'), findsOneWidget);
+    expect(find.textContaining('Blüemlisalp'), findsOneWidget);
   });
 }

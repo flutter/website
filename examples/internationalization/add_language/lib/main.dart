@@ -5,7 +5,7 @@ import 'nn_intl.dart';
 
 void main() {
   runApp(
-    // #docregion MaterialApp
+    // #docregion material-app
     const MaterialApp(
       localizationsDelegates: [
         GlobalWidgetsLocalizations.delegate,
@@ -18,7 +18,7 @@ void main() {
       ],
       home: Home(),
     ),
-    // #enddocregion MaterialApp
+    // #enddocregion material-app
   );
 }
 
@@ -43,7 +43,7 @@ class Home extends StatelessWidget {
         ),
         body: const Center(
           child: Padding(
-            padding: EdgeInsets.all(50.0),
+            padding: EdgeInsets.all(50),
             child: Text(
                 'Long press hamburger icon in the app bar (aka the drawer menu)'
                 'to see a localized tooltip for the `nn` locale. '),

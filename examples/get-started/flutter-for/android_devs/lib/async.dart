@@ -14,7 +14,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const SampleAppPage(),
     );
@@ -54,12 +54,12 @@ class _SampleAppPageState extends State<SampleAppPage> {
 
   Widget getRow(int i) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10),
       child: Text("Row ${widgets[i]["title"]}"),
     );
   }
 
-  // #docregion loadData
+  // #docregion load-data
   Future<void> loadData() async {
     var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
     http.Response response = await http.get(dataURL);
@@ -67,5 +67,5 @@ class _SampleAppPageState extends State<SampleAppPage> {
       widgets = jsonDecode(response.body);
     });
   }
-  // #enddocregion loadData
+  // #enddocregion load-data
 }

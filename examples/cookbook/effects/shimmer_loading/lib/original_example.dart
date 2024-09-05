@@ -1,6 +1,3 @@
-// This example was from the flutter codelabs repo.
-// https://github.com/flutter/codelabs/blob/7638c086a53d8434b23f102ec6694f6ece178a18/cookbook/lib/examples/ui_loading_animation.dart
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -128,7 +125,7 @@ class Shimmer extends StatefulWidget {
   ShimmerState createState() => ShimmerState();
 }
 
-// #docregion ShimmerStateAnimation
+// #docregion shimmer-state-animation
 class ShimmerState extends State<Shimmer> with SingleTickerProviderStateMixin {
   late AnimationController _shimmerController;
 
@@ -146,9 +143,9 @@ class ShimmerState extends State<Shimmer> with SingleTickerProviderStateMixin {
     super.dispose();
   }
 // code-excerpt-closing-bracket
-// #enddocregion ShimmerStateAnimation
+// #enddocregion shimmer-state-animation
 
-  // #docregion LinearGradient
+  // #docregion linear-gradient
   LinearGradient get gradient => LinearGradient(
         colors: widget.linearGradient.colors,
         stops: widget.linearGradient.stops,
@@ -157,9 +154,10 @@ class ShimmerState extends State<Shimmer> with SingleTickerProviderStateMixin {
         transform:
             _SlidingGradientTransform(slidePercent: _shimmerController.value),
       );
-  // #enddocregion LinearGradient
+  // #enddocregion linear-gradient
 
-  bool get isSized => (context.findRenderObject() as RenderBox).hasSize;
+  bool get isSized =>
+      (context.findRenderObject() as RenderBox?)?.hasSize ?? false;
 
   Size get size => (context.findRenderObject() as RenderBox).size;
 
@@ -167,13 +165,13 @@ class ShimmerState extends State<Shimmer> with SingleTickerProviderStateMixin {
     required RenderBox descendant,
     Offset offset = Offset.zero,
   }) {
-    final shimmerBox = context.findRenderObject() as RenderBox;
+    final shimmerBox = context.findRenderObject() as RenderBox?;
     return descendant.localToGlobal(offset, ancestor: shimmerBox);
   }
 
-  // #docregion shimmerChanges
+  // #docregion shimmer-changes
   Listenable get shimmerChanges => _shimmerController;
-  // #enddocregion shimmerChanges
+  // #enddocregion shimmer-changes
 
   @override
   Widget build(BuildContext context) {
@@ -181,7 +179,7 @@ class ShimmerState extends State<Shimmer> with SingleTickerProviderStateMixin {
   }
 }
 
-// #docregion SlidingGradientTransform
+// #docregion sliding-gradient-transform
 class _SlidingGradientTransform extends GradientTransform {
   const _SlidingGradientTransform({
     required this.slidePercent,
@@ -194,7 +192,7 @@ class _SlidingGradientTransform extends GradientTransform {
     return Matrix4.translationValues(bounds.width * slidePercent, 0.0, 0.0);
   }
 }
-// #enddocregion SlidingGradientTransform
+// #enddocregion sliding-gradient-transform
 
 class ShimmerLoading extends StatefulWidget {
   const ShimmerLoading({
@@ -210,7 +208,7 @@ class ShimmerLoading extends StatefulWidget {
   State<ShimmerLoading> createState() => _ShimmerLoadingState();
 }
 
-// #docregion ShimmerLoadingState
+// #docregion shimmer-loading-state
 class _ShimmerLoadingState extends State<ShimmerLoading> {
   Listenable? _shimmerChanges;
 
@@ -235,12 +233,12 @@ class _ShimmerLoadingState extends State<ShimmerLoading> {
   void _onShimmerChange() {
     if (widget.isLoading) {
       setState(() {
-        // update the shimmer painting.
+        // Update the shimmer painting.
       });
     }
   }
 // code-excerpt-closing-bracket
-// #enddocregion ShimmerLoadingState
+// #enddocregion shimmer-loading-state
 
   @override
   Widget build(BuildContext context) {
@@ -294,8 +292,8 @@ class CircleListItem extends StatelessWidget {
         ),
         child: ClipOval(
           child: Image.network(
-            'https://flutter'
-            '.dev/docs/cookbook/img-files/effects/split-check/Avatar1.jpg',
+            'https://docs.flutter.dev/cookbook'
+            '/img-files/effects/split-check/Avatar1.jpg',
             fit: BoxFit.cover,
           ),
         ),
@@ -339,8 +337,8 @@ class CardListItem extends StatelessWidget {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(16),
           child: Image.network(
-            'https://flutter'
-            '.dev/docs/cookbook/img-files/effects/split-check/Food1.jpg',
+            'https://docs.flutter.dev/cookbook'
+            '/img-files/effects/split-check/Food1.jpg',
             fit: BoxFit.cover,
           ),
         ),
@@ -374,7 +372,7 @@ class CardListItem extends StatelessWidget {
       );
     } else {
       return const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 8.0),
+        padding: EdgeInsets.symmetric(horizontal: 8),
         child: Text(
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do '
           'eiusmod tempor incididunt ut labore et dolore magna aliqua.',

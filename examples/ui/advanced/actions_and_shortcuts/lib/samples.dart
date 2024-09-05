@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class ShortcutsExample extends StatelessWidget {
-// #docregion ShortcutsExample
+  const ShortcutsExample({super.key});
+
+  // #docregion shortcuts
   @override
   Widget build(BuildContext context) {
     return Shortcuts(
       shortcuts: <LogicalKeySet, Intent>{
         LogicalKeySet(LogicalKeyboardKey.control, LogicalKeyboardKey.keyA):
-            SelectAllIntent(),
+            const SelectAllIntent(),
       },
       child: Actions(
         dispatcher: LoggingActionDispatcher(),
@@ -17,23 +19,23 @@ class ShortcutsExample extends StatelessWidget {
         },
         child: Builder(
           builder: (context) => TextButton(
-            child: const Text('SELECT ALL'),
             onPressed: Actions.handler<SelectAllIntent>(
               context,
-              SelectAllIntent(),
+              const SelectAllIntent(),
             ),
+            child: const Text('SELECT ALL'),
           ),
         ),
       ),
     );
   }
-// #enddocregion ShortcutsExample
+  // #enddocregion shortcuts
 }
 
-// #docregion LoggingShortcutManager
+// #docregion logging-shortcut-manager
 class LoggingShortcutManager extends ShortcutManager {
   @override
-  KeyEventResult handleKeypress(BuildContext context, RawKeyEvent event) {
+  KeyEventResult handleKeypress(BuildContext context, KeyEvent event) {
     final KeyEventResult result = super.handleKeypress(context, event);
     if (result == KeyEventResult.handled) {
       print('Handled shortcut $event in $context');
@@ -41,7 +43,7 @@ class LoggingShortcutManager extends ShortcutManager {
     return result;
   }
 }
-// #enddocregion LoggingShortcutManager
+// #enddocregion logging-shortcut-manager
 
 class SelectAllIntent extends Intent {
   const SelectAllIntent({this.controller});
@@ -55,7 +57,7 @@ class Model {
 
 Model model = Model();
 
-// #docregion SelectAllAction
+// #docregion select-all-action
 class SelectAllAction extends Action<SelectAllIntent> {
   SelectAllAction(this.model);
 
@@ -64,20 +66,20 @@ class SelectAllAction extends Action<SelectAllIntent> {
   @override
   void invoke(covariant SelectAllIntent intent) => model.selectAll();
 }
-// #enddocregion SelectAllAction
+// #enddocregion select-all-action
 
 void callbackActionSample() {
-// #docregion CallbackAction
+// #docregion callback-action
   CallbackAction(onInvoke: (intent) => model.selectAll());
-// #enddocregion CallbackAction
+// #enddocregion callback-action
 }
 
 class SelectAllExample extends StatelessWidget {
-  SelectAllExample({required this.child});
+  const SelectAllExample({super.key, required this.child});
 
   final Widget child;
 
-// #docregion SelectAllExample
+  // #docregion select-all-usage
   @override
   Widget build(BuildContext context) {
     return Actions(
@@ -87,39 +89,40 @@ class SelectAllExample extends StatelessWidget {
       child: child,
     );
   }
-// #enddocregion SelectAllExample
+  // #enddocregion select-all-usage
 }
 
 late BuildContext context;
 
 void findAndInvokeExample() {
-// #docregion MaybeFindExample
+  // #docregion maybe-find
   Action<SelectAllIntent>? selectAll =
       Actions.maybeFind<SelectAllIntent>(context);
-// #enddocregion MaybeFindExample
-// #docregion InvokeActionExample
+  // #enddocregion maybe-find
+  // #docregion invoke-action
   Object? result;
   if (selectAll != null) {
-    result = Actions.of(context).invokeAction(selectAll, SelectAllIntent());
+    result =
+        Actions.of(context).invokeAction(selectAll, const SelectAllIntent());
   }
-// #enddocregion InvokeActionExample
+  // #enddocregion invoke-action
   print('$result');
 }
 
 void maybeInvokeExample() {
-// #docregion MaybeInvokeExample
+  // #docregion maybe-invoke
   Object? result =
-      Actions.maybeInvoke<SelectAllIntent>(context, SelectAllIntent());
-// #enddocregion MaybeInvokeExample
+      Actions.maybeInvoke<SelectAllIntent>(context, const SelectAllIntent());
+  // #enddocregion maybe-invoke
   print('$result');
 }
 
 class HandlerExample extends StatelessWidget {
-  HandlerExample(this.controller);
+  const HandlerExample(this.controller, {super.key});
 
   final TextEditingController controller;
 
-// #docregion HandlerExample
+  // #docregion handler
   @override
   Widget build(BuildContext context) {
     return Actions(
@@ -128,19 +131,19 @@ class HandlerExample extends StatelessWidget {
       },
       child: Builder(
         builder: (context) => TextButton(
-          child: const Text('SELECT ALL'),
           onPressed: Actions.handler<SelectAllIntent>(
             context,
             SelectAllIntent(controller: controller),
           ),
+          child: const Text('SELECT ALL'),
         ),
       ),
     );
   }
-// #enddocregion HandlerExample
+  // #enddocregion handler
 }
 
-// #docregion LoggingActionDispatcher
+// #docregion logging-action-dispatcher
 class LoggingActionDispatcher extends ActionDispatcher {
   @override
   Object? invokeAction(
@@ -153,11 +156,23 @@ class LoggingActionDispatcher extends ActionDispatcher {
 
     return null;
   }
+
+  @override
+  (bool, Object?) invokeActionIfEnabled(
+    covariant Action<Intent> action,
+    covariant Intent intent, [
+    BuildContext? context,
+  ]) {
+    print('Action invoked: $action($intent) from $context');
+    return super.invokeActionIfEnabled(action, intent, context);
+  }
 }
-// #enddocregion LoggingActionDispatcher
+// #enddocregion logging-action-dispatcher
 
 class LoggingActionDispatcherExample extends StatelessWidget {
-// #docregion LoggingActionDispatcherExample
+  const LoggingActionDispatcherExample({super.key});
+
+  // #docregion logging-action-dispatcher-usage
   @override
   Widget build(BuildContext context) {
     return Actions(
@@ -167,45 +182,52 @@ class LoggingActionDispatcherExample extends StatelessWidget {
       },
       child: Builder(
         builder: (context) => TextButton(
-          child: const Text('SELECT ALL'),
           onPressed: Actions.handler<SelectAllIntent>(
             context,
-            SelectAllIntent(),
+            const SelectAllIntent(),
           ),
+          child: const Text('SELECT ALL'),
         ),
       ),
     );
   }
-// #enddocregion LoggingActionDispatcherExample
+  // #enddocregion logging-action-dispatcher-usage
 }
 
-// #docregion CallbackShortcuts
-class CallbackShortcuts extends StatelessWidget {
-  const CallbackShortcuts({
-    super.key,
-    required this.bindings,
-    required this.child,
-  });
-
-  final Map<ShortcutActivator, VoidCallback> bindings;
-  final Widget child;
+class CallbackShortcutsExample extends StatefulWidget {
+  const CallbackShortcutsExample({super.key});
 
   @override
+  State<CallbackShortcutsExample> createState() =>
+      _CallbackShortcutsExampleState();
+}
+
+class _CallbackShortcutsExampleState extends State<CallbackShortcutsExample> {
+  int count = 0;
+
+  // #docregion callback-shortcuts
+  @override
   Widget build(BuildContext context) {
-    return Focus(
-      onKey: (node, event) {
-        KeyEventResult result = KeyEventResult.ignored;
-        // Activates all key bindings that match, returns handled if any handle it.
-        for (final ShortcutActivator activator in bindings.keys) {
-          if (activator.accepts(event, RawKeyboard.instance)) {
-            bindings[activator]!.call();
-            result = KeyEventResult.handled;
-          }
-        }
-        return result;
+    return CallbackShortcuts(
+      bindings: <ShortcutActivator, VoidCallback>{
+        const SingleActivator(LogicalKeyboardKey.arrowUp): () {
+          setState(() => count = count + 1);
+        },
+        const SingleActivator(LogicalKeyboardKey.arrowDown): () {
+          setState(() => count = count - 1);
+        },
       },
-      child: child,
+      child: Focus(
+        autofocus: true,
+        child: Column(
+          children: <Widget>[
+            const Text('Press the up arrow key to add to the counter'),
+            const Text('Press the down arrow key to subtract from the counter'),
+            Text('count: $count'),
+          ],
+        ),
+      ),
     );
   }
+  // #enddocregion callback-shortcuts
 }
-// #enddocregion CallbackShortcuts

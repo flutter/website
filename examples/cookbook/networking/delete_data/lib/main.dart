@@ -13,7 +13,7 @@ Future<Album> fetchAlbum() async {
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response, then parse the JSON.
-    return Album.fromJson(jsonDecode(response.body));
+    return Album.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   } else {
     // If the server did not return a 200 OK response, then throw an exception.
     throw Exception('Failed to load album');
@@ -31,11 +31,11 @@ Future<Album> deleteAlbum(String id) async {
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
-    // then parse the JSON. After deleting,
+    // then return an empty Album. After deleting,
     // you'll get an empty JSON `{}` response.
     // Don't return `null`, otherwise `snapshot.hasData`
     // will always return false on `FutureBuilder`.
-    return Album.fromJson(jsonDecode(response.body));
+    return Album.empty();
   } else {
     // If the server did not return a "200 OK response",
     // then throw an exception.
@@ -45,16 +45,25 @@ Future<Album> deleteAlbum(String id) async {
 // #enddocregion deleteAlbum
 
 class Album {
-  final int? id;
-  final String? title;
+  int? id;
+  String? title;
 
-  const Album({this.id, this.title});
+  Album({this.id, this.title});
+
+  Album.empty();
 
   factory Album.fromJson(Map<String, dynamic> json) {
-    return Album(
-      id: json['id'],
-      title: json['title'],
-    );
+    return switch (json) {
+      {
+        'id': int id,
+        'title': String title,
+      } =>
+        Album(
+          id: id,
+          title: title,
+        ),
+      _ => throw const FormatException('Failed to load album.'),
+    };
   }
 }
 
@@ -85,7 +94,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Delete Data Example',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: Scaffold(
         appBar: AppBar(

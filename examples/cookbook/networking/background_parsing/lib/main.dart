@@ -17,7 +17,8 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
 
 // A function that converts a response body into a List<Photo>.
 List<Photo> parsePhotos(String responseBody) {
-  final parsed = jsonDecode(responseBody).cast<Map<String, dynamic>>();
+  final parsed =
+      (jsonDecode(responseBody) as List).cast<Map<String, dynamic>>();
 
   return parsed.map<Photo>((json) => Photo.fromJson(json)).toList();
 }
@@ -64,19 +65,32 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
   final String title;
 
   @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  late Future<List<Photo>> futurePhotos;
+
+  @override
+  void initState() {
+    super.initState();
+    futurePhotos = fetchPhotos(http.Client());
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(widget.title),
       ),
       body: FutureBuilder<List<Photo>>(
-        future: fetchPhotos(http.Client()),
+        future: futurePhotos,
         builder: (context, snapshot) {
           if (snapshot.hasError) {
             return const Center(

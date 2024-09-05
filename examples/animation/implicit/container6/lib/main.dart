@@ -6,8 +6,6 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-const _duration = Duration(milliseconds: 400);
-
 double randomBorderRadius() {
   return Random().nextDouble() * 64;
 }
@@ -33,7 +31,7 @@ class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
   late double margin;
 
   @override
-  initState() {
+  void initState() {
     super.initState();
     color = randomColor();
     borderRadius = randomBorderRadius();
@@ -63,12 +61,12 @@ class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
                   color: color,
                   borderRadius: BorderRadius.circular(borderRadius),
                 ),
-                duration: _duration,
+                duration: const Duration(milliseconds: 400),
                 curve: Curves.easeInOutBack,
               ),
             ),
             ElevatedButton(
-              child: const Text('change'),
+              child: const Text('Change'),
               onPressed: () => change(),
             ),
           ],

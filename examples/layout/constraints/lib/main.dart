@@ -130,8 +130,7 @@ class _FlutterLayoutArticleState extends State<FlutterLayoutArticle> {
                           for (int i = 0; i < widget.examples.length; i++)
                             Container(
                               width: 58,
-                              padding:
-                                  const EdgeInsets.only(left: 4.0, right: 4.0),
+                              padding: const EdgeInsets.only(left: 4, right: 4),
                               child: button(i + 1),
                             ),
                         ],
@@ -145,7 +144,7 @@ class _FlutterLayoutArticleState extends State<FlutterLayoutArticle> {
                       child: SingleChildScrollView(
                         key: ValueKey(count),
                         child: Padding(
-                          padding: const EdgeInsets.all(10.0),
+                          padding: const EdgeInsets.all(10),
                           child: Column(
                             children: [
                               Center(child: Text(code)),
@@ -431,7 +430,7 @@ class Example8 extends Example {
   @override
   final code = 'Center(\n'
       '   child: Container(color: red\n'
-      '      padding: const EdgeInsets.all(20.0),\n'
+      '      padding: const EdgeInsets.all(20),\n'
       '      child: Container(color: green, width: 30, height: 30)))';
   @override
   final String explanation =
@@ -444,7 +443,7 @@ class Example8 extends Example {
     // #docregion Example8
     return Center(
       child: Container(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20),
         color: red,
         child: Container(color: green, width: 30, height: 30),
       ),
@@ -657,8 +656,8 @@ class Example15 extends Example {
 
   @override
   final code = 'OverflowBox(\n'
-      '   minWidth: 0.0,'
-      '   minHeight: 0.0,'
+      '   minWidth: 0,'
+      '   minHeight: 0,'
       '   maxWidth: double.infinity,'
       '   maxHeight: double.infinity,'
       '   child: Container(color: red, width: 4000, height: 50));';
@@ -676,8 +675,8 @@ class Example15 extends Example {
   Widget build(BuildContext context) {
     // #docregion Example15
     return OverflowBox(
-      minWidth: 0.0,
-      minHeight: 0.0,
+      minWidth: 0,
+      minHeight: 0,
       maxWidth: double.infinity,
       maxHeight: double.infinity,
       child: Container(color: red, width: 4000, height: 50),
@@ -870,7 +869,7 @@ class Example22 extends Example {
   @override
   final code = 'FittedBox(\n'
       '   child: Container(\n'
-      '      height: 20.0, width: double.infinity));';
+      '      height: 20, width: double.infinity));';
   @override
   final String explanation =
       'FittedBox can only scale a widget that is BOUNDED (has non-infinite width and height).'
@@ -881,7 +880,7 @@ class Example22 extends Example {
     // #docregion Example22
     return FittedBox(
       child: Container(
-        height: 20.0,
+        height: 20,
         width: double.infinity,
         color: Colors.red,
       ),
@@ -1013,7 +1012,7 @@ class Example26 extends Example {
       'If all of Row\'s children are wrapped in Expanded widgets, each Expanded has a size proportional to its flex parameter, '
       'and only then each Expanded widget forces its child to have the Expanded\'s width.'
       '\n\n'
-      'In other words, Expanded ignores the preffered width of its children.';
+      'In other words, Expanded ignores the preferred width of its children.';
 
   @override
   Widget build(BuildContext context) {
@@ -1124,8 +1123,8 @@ class Example28 extends Example {
     return Scaffold(
       body: Container(
         color: blue,
-        child: Column(
-          children: const [
+        child: const Column(
+          children: [
             Text('Hello!'),
             Text('Goodbye!'),
           ],
@@ -1165,8 +1164,8 @@ class Example29 extends Example {
       body: SizedBox.expand(
         child: Container(
           color: blue,
-          child: Column(
-            children: const [
+          child: const Column(
+            children: [
               Text('Hello!'),
               Text('Goodbye!'),
             ],

@@ -1,7 +1,7 @@
 // ignore_for_file: directives_ordering
 
 import './error_handler.dart';
-// #docregion Main
+// #docregion all-errors
 import 'package:flutter/material.dart';
 import 'dart:ui';
 
@@ -31,9 +31,9 @@ class MyApp extends StatelessWidget {
         }
         ErrorWidget.builder = (errorDetails) => error;
         if (widget != null) return widget;
-        throw ('widget is null');
+        throw StateError('widget is null');
       },
     );
   }
 }
-// #enddocregion Main
+// #enddocregion all-errors

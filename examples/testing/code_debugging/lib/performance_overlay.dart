@@ -1,4 +1,4 @@
-// #docregion PerfOverlay
+// #docregion show-overlay
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -10,13 +10,13 @@ class MyApp extends StatelessWidget {
       showPerformanceOverlay: true,
       title: 'My Awesome App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const MyHomePage(title: 'My Awesome App'),
     );
   }
 }
-// #enddocregion PerfOverlay
+// #enddocregion show-overlay
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key, required this.title});

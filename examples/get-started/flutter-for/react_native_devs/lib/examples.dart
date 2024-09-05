@@ -1,32 +1,32 @@
 // ignore_for_file: avoid_print
 
 import 'dart:convert';
-// #docregion ImportDartIO
+// #docregion import-dart-io
 import 'dart:io';
-// #enddocregion ImportDartIO
+// #enddocregion import-dart-io
 
-// #docregion PackageImport
+// #docregion package-import
 import 'package:flutter/material.dart';
-// #enddocregion PackageImport
-// #docregion SharedPrefs
+// #enddocregion package-import
+// #docregion shared-prefs
 import 'package:shared_preferences/shared_preferences.dart';
-// #enddocregion SharedPrefs
+// #enddocregion shared-prefs
 
-// #docregion Main
+// #docregion main
 // Dart
 void main() {
   print('Hello, this is the main function.');
 }
-// #enddocregion Main
+// #enddocregion main
 
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // #docregion ImageAsset
+    // #docregion image-asset
     return Image.asset('assets/background.png');
-    // #enddocregion ImageAsset
+    // #enddocregion image-asset
   }
 }
 
@@ -35,9 +35,9 @@ class NetworkImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // #docregion ImageNetwork
+    // #docregion image-network
     return Image.network('https://docs.flutter.dev/assets/images/docs/owl.jpg');
-    // #enddocregion ImageNetwork
+    // #enddocregion image-network
   }
 }
 
@@ -46,7 +46,7 @@ class ListViewExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // #docregion ListView
+    // #docregion list-view
     var data = [
       'Hello',
       'World',
@@ -57,22 +57,22 @@ class ListViewExample extends StatelessWidget {
         return Text(data[index]);
       },
     );
-    // #enddocregion ListView
+    // #enddocregion list-view
   }
 }
 
-// #docregion CustomPaint
+// #docregion custom-paint
 class MyCanvasPainter extends CustomPainter {
   const MyCanvasPainter();
 
   @override
   void paint(Canvas canvas, Size size) {
     final Paint paint = Paint()..color = Colors.amber;
-    canvas.drawCircle(const Offset(100.0, 200.0), 40.0, paint);
+    canvas.drawCircle(const Offset(100, 200), 40, paint);
     final Paint paintRect = Paint()..color = Colors.lightBlue;
     final Rect rect = Rect.fromPoints(
-      const Offset(150.0, 300.0),
-      const Offset(300.0, 400.0),
+      const Offset(150, 300),
+      const Offset(300, 400),
     );
     canvas.drawRect(rect, paintRect);
   }
@@ -91,36 +91,36 @@ class MyCanvasWidget extends StatelessWidget {
     );
   }
 }
-// #enddocregion CustomPaint
+// #enddocregion custom-paint
 
 class TextStyleExample extends StatelessWidget {
   const TextStyleExample({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // #docregion TextStyle
+    // #docregion text-style
     const TextStyle textStyle = TextStyle(
       color: Colors.cyan,
-      fontSize: 32.0,
+      fontSize: 32,
       fontWeight: FontWeight.w600,
     );
 
-    return Center(
+    return const Center(
       child: Column(
-        children: const <Widget>[
+        children: <Widget>[
           Text('Sample text', style: textStyle),
           Padding(
-            padding: EdgeInsets.all(20.0),
+            padding: EdgeInsets.all(20),
             child: Icon(
               Icons.lightbulb_outline,
-              size: 48.0,
+              size: 48,
               color: Colors.redAccent,
             ),
           ),
         ],
       ),
     );
-    // #enddocregion TextStyle
+    // #enddocregion text-style
   }
 }
 
@@ -129,13 +129,13 @@ class IconExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // #docregion Icon
+    // #docregion icon
     return const Icon(Icons.lightbulb_outline, color: Colors.redAccent);
-    // #enddocregion Icon
+    // #enddocregion icon
   }
 }
 
-// #docregion Swatch
+// #docregion swatch
 class SampleApp extends StatelessWidget {
   const SampleApp({super.key});
 
@@ -144,19 +144,19 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-          primarySwatch: Colors.blue,
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           textSelectionTheme:
               const TextSelectionThemeData(selectionColor: Colors.red)),
       home: const SampleAppPage(),
     );
   }
 }
-// #enddocregion Swatch
+// #enddocregion swatch
 
 class ThemeExample extends StatelessWidget {
   const ThemeExample({super.key});
 
-  // #docregion Theme
+  // #docregion theme
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -167,7 +167,7 @@ class ThemeExample extends StatelessWidget {
       home: const StylingPage(),
     );
   }
-  // #enddocregion Theme
+  // #enddocregion theme
 }
 
 class StylingPage extends StatelessWidget {
@@ -193,7 +193,7 @@ class ThemeDataExample extends StatelessWidget {
 
   final Brightness brightness;
 
-  // #docregion ThemeData
+  // #docregion theme-data
   @override
   Widget build(BuildContext context) {
     return Theme(
@@ -207,7 +207,7 @@ class ThemeDataExample extends StatelessWidget {
       ),
     );
   }
-  // #enddocregion ThemeData
+  // #enddocregion theme-data
 }
 
 class SharedPrefsExample extends StatefulWidget {
@@ -220,7 +220,7 @@ class SharedPrefsExample extends StatefulWidget {
 class _SharedPrefsExampleState extends State<SharedPrefsExample> {
   int? _counter;
 
-  // #docregion SharedPrefsUpdate
+  // #docregion shared-prefs-update
   Future<void> updateCounter() async {
     final prefs = await SharedPreferences.getInstance();
     int? counter = prefs.getInt('counter');
@@ -231,7 +231,7 @@ class _SharedPrefsExampleState extends State<SharedPrefsExample> {
       _counter = counter;
     });
   }
-  // #enddocregion SharedPrefsUpdate
+  // #enddocregion shared-prefs-update
 
   @override
   Widget build(BuildContext context) {
@@ -242,11 +242,11 @@ class _SharedPrefsExampleState extends State<SharedPrefsExample> {
 class DrawerExample extends StatelessWidget {
   const DrawerExample({super.key});
 
-  // #docregion Drawer
+  // #docregion drawer
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      elevation: 20.0,
+      elevation: 20,
       child: ListTile(
         leading: const Icon(Icons.change_history),
         title: const Text('Screen2'),
@@ -256,18 +256,18 @@ class DrawerExample extends StatelessWidget {
       ),
     );
   }
-  // #enddocregion Drawer
+  // #enddocregion drawer
 }
 
 class ScaffoldExample extends StatelessWidget {
   const ScaffoldExample({super.key});
 
-  // #docregion Scaffold
+  // #docregion scaffold
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Drawer(
-        elevation: 20.0,
+        elevation: 20,
         child: ListTile(
           leading: const Icon(Icons.change_history),
           title: const Text('Screen2'),
@@ -280,22 +280,22 @@ class ScaffoldExample extends StatelessWidget {
       body: Container(),
     );
   }
-  // #enddocregion Scaffold
+  // #enddocregion scaffold
 }
 
 class GestureDetectorExample extends StatelessWidget {
   const GestureDetectorExample({super.key});
 
-  // #docregion GestureDetector
+  // #docregion gesture-detector
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Scaffold(
         appBar: AppBar(title: const Text('Gestures')),
-        body: Center(
+        body: const Center(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
+          children: <Widget>[
             Text('Tap, Long Press, Swipe Horizontally or Vertically'),
           ],
         )),
@@ -314,7 +314,7 @@ class GestureDetectorExample extends StatelessWidget {
       },
     );
   }
-  // #enddocregion GestureDetector
+  // #enddocregion gesture-detector
 }
 
 class HttpExample extends StatefulWidget {
@@ -326,7 +326,7 @@ class HttpExample extends StatefulWidget {
 
 class _HttpExampleState extends State<HttpExample> {
   String _ipAddress = '';
-  // #docregion HTTP
+  // #docregion http
   final url = Uri.parse('https://httpbin.org/ip');
   final httpClient = HttpClient();
 
@@ -334,12 +334,12 @@ class _HttpExampleState extends State<HttpExample> {
     final request = await httpClient.getUrl(url);
     final response = await request.close();
     final responseBody = await response.transform(utf8.decoder).join();
-    final String ip = jsonDecode(responseBody)['origin'];
+    final ip = jsonDecode(responseBody)['origin'] as String;
     setState(() {
       _ipAddress = ip;
     });
   }
-  // #enddocregion HTTP
+  // #enddocregion http
 
   @override
   Widget build(BuildContext context) {
@@ -355,7 +355,7 @@ class TextEditingExample extends StatefulWidget {
 }
 
 class _TextEditingExampleState extends State<TextEditingExample> {
-  // #docregion TextEditingController
+  // #docregion text-editing-controller
   final TextEditingController _controller = TextEditingController();
 
   @override
@@ -383,7 +383,7 @@ class _TextEditingExampleState extends State<TextEditingExample> {
       ),
     ]);
   }
-  // #enddocregion TextEditingController
+  // #enddocregion text-editing-controller
 }
 
 class FormExample extends StatefulWidget {
@@ -398,7 +398,7 @@ class _FormExampleState extends State<FormExample> {
   String? _email = '';
   final String _password = '';
 
-  // #docregion FormSubmit
+  // #docregion form-submit
   void _submit() {
     final form = formKey.currentState;
     if (form != null && form.validate()) {
@@ -413,9 +413,9 @@ class _FormExampleState extends State<FormExample> {
       );
     }
   }
-  // #enddocregion FormSubmit
+  // #enddocregion form-submit
 
-  // #docregion FormState
+  // #docregion form-state
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -445,14 +445,14 @@ class _FormExampleState extends State<FormExample> {
       ),
     );
   }
-  // #enddocregion FormState
+  // #enddocregion form-state
 }
 
 class PlatformExample extends StatelessWidget {
   const PlatformExample({super.key});
 
   String whichPlatform(BuildContext context) {
-    // #docregion Platform
+    // #docregion platform
     final platform = Theme.of(context).platform;
     if (platform == TargetPlatform.iOS) {
       return 'iOS';
@@ -464,7 +464,7 @@ class PlatformExample extends StatelessWidget {
       return 'fuchsia';
     }
     return 'not recognized ';
-    // #enddocregion Platform
+    // #enddocregion platform
   }
 
   @override
@@ -473,14 +473,14 @@ class PlatformExample extends StatelessWidget {
   }
 }
 
-class DismissableWidgets extends StatefulWidget {
-  const DismissableWidgets({super.key});
+class DismissibleWidgets extends StatefulWidget {
+  const DismissibleWidgets({super.key});
 
   @override
-  State<DismissableWidgets> createState() => _DismissableWidgetsState();
+  State<DismissibleWidgets> createState() => _DismissibleWidgetsState();
 }
 
-class _DismissableWidgetsState extends State<DismissableWidgets> {
+class _DismissibleWidgetsState extends State<DismissibleWidgets> {
   final List<Card> cards = [
     const Card(
       child: Text('Hello!'),
@@ -492,7 +492,7 @@ class _DismissableWidgetsState extends State<DismissableWidgets> {
 
   @override
   Widget build(BuildContext context) {
-    // #docregion Dismissable
+    // #docregion dismissible
     return Dismissible(
       key: Key(widget.key.toString()),
       onDismissed: (dismissDirection) {
@@ -502,6 +502,6 @@ class _DismissableWidgetsState extends State<DismissableWidgets> {
           //...
           ),
     );
-    // #enddocregion Dismissable
+    // #enddocregion dismissible
   }
 }

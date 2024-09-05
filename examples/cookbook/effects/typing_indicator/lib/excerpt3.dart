@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 import './excerpt1.dart';
 
-// #docregion Bubbles
+// #docregion bubbles
 class _TypingIndicatorState extends State<TypingIndicator>
     with TickerProviderStateMixin {
   late AnimationController _appearanceController;
@@ -225,4 +225,4 @@ class StatusBubble extends StatelessWidget {
     );
   }
 }
-// #enddocregion Bubbles
+// #enddocregion bubbles

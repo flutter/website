@@ -28,7 +28,7 @@ class ButtonShapeWidget extends StatelessWidget {
     if (isDownloading || isFetching) {
       shape = ShapeDecoration(
         shape: const CircleBorder(),
-        color: Colors.white.withOpacity(0.0),
+        color: Colors.white.withOpacity(0),
       );
     }
 
@@ -46,7 +46,7 @@ class ButtonShapeWidget extends StatelessWidget {
           child: Text(
             isDownloaded ? 'OPEN' : 'GET',
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.button?.copyWith(
+            style: Theme.of(context).textTheme.labelLarge?.copyWith(
                   fontWeight: FontWeight.bold,
                   color: CupertinoColors.activeBlue,
                 ),
@@ -107,7 +107,7 @@ class DownloadButton extends StatelessWidget {
   const DownloadButton({
     super.key,
     required this.status,
-    this.downloadProgress = 0.0,
+    this.downloadProgress = 0,
     required this.onDownload,
     required this.onCancel,
     required this.onOpen,
@@ -131,16 +131,13 @@ class DownloadButton extends StatelessWidget {
     switch (status) {
       case DownloadStatus.notDownloaded:
         onDownload();
-        break;
       case DownloadStatus.fetchingDownload:
         // do nothing.
         break;
       case DownloadStatus.downloading:
         onCancel();
-        break;
       case DownloadStatus.downloaded:
         onOpen();
-        break;
     }
   }
 
@@ -148,7 +145,7 @@ class DownloadButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: _onPressed,
-      child: Stack(
+      child: const Stack(
         children: [
           /* ButtonShapeWidget and progress indicator */
         ],

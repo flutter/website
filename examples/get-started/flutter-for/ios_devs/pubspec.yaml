@@ -1,25 +1,27 @@
 name: ios_devs
 description: A new Flutter project.
 
-publish_to: 'none' 
+publish_to: none
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.17.3 <3.0.0"
+  sdk: ^3.5.0
 
 dependencies:
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  cupertino_icons: ^1.0.2
-  http: ^0.13.4
-  shared_preferences: ^2.0.15
+  cupertino_icons: ^1.0.8
+  http: ^1.2.0
+  shared_preferences: ^2.3.0
+  url_launcher: ^6.3.0
 
 dev_dependencies:
+  example_utils:
+    path: ../../../example_utils
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
 
 
 flutter:

@@ -1,8 +1,5 @@
 // ignore_for_file: unused_element
 
-// Original example from flutter/codelabs
-// https://github.com/flutter/codelabs/blob/7638c086a53d8434b23f102ec6694f6ece178a18/cookbook/lib/examples/instagram_filter.dart
-
 import 'package:flutter/material.dart';
 
 @immutable
@@ -56,10 +53,10 @@ class _ExampleInstagramFilterSelectionState
   Widget _buildPhotoWithFilter() {
     return ValueListenableBuilder(
       valueListenable: _filterColor,
-      builder: (context, value, child) {
-        final color = value as Color;
+      builder: (context, color, child) {
         return Image.network(
-          'https://flutter.dev/docs/cookbook/img-files/effects/instagram-buttons/millenial-dude.jpg',
+          'https://docs.flutter.dev/cookbook/img-files'
+          '/effects/instagram-buttons/millennial-dude.jpg',
           color: color.withOpacity(0.5),
           colorBlendMode: BlendMode.color,
           fit: BoxFit.cover,
@@ -75,7 +72,7 @@ class FilterSelector extends StatefulWidget {
     super.key,
     required this.filters,
     required this.onFilterChanged,
-    this.padding = const EdgeInsets.symmetric(vertical: 24.0),
+    this.padding = const EdgeInsets.symmetric(vertical: 24),
   });
 
   final List<Color> filters;
@@ -159,7 +156,7 @@ class _FilterSelectorState extends State<FilterSelector> {
     );
   }
 
-  // #docregion FinalBuildCarousel
+  // #docregion final-build-carousel
   Widget _buildCarousel(double itemSize) {
     return Container(
       height: itemSize,
@@ -174,7 +171,7 @@ class _FilterSelectorState extends State<FilterSelector> {
               builder: (context, child) {
                 if (!_controller.hasClients ||
                     !_controller.position.hasContentDimensions) {
-                  // The PageViewController isn’t connected to the
+                  // The PageViewController isn't connected to the
                   // PageView widget yet. Return an empty box.
                   return const SizedBox();
                 }
@@ -225,7 +222,7 @@ class _FilterSelectorState extends State<FilterSelector> {
       ),
     );
   }
-  // #enddocregion FinalBuildCarousel
+  // #enddocregion final-build-carousel
 
   Widget _buildSelectionRing(double itemSize) {
     return IgnorePointer(
@@ -238,7 +235,7 @@ class _FilterSelectorState extends State<FilterSelector> {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: Border.fromBorderSide(
-                BorderSide(width: 6.0, color: Colors.white),
+                BorderSide(width: 6, color: Colors.white),
               ),
             ),
           ),
@@ -248,7 +245,7 @@ class _FilterSelectorState extends State<FilterSelector> {
   }
 }
 
-// #docregion FilterItem
+// #docregion filter-item
 @immutable
 class FilterItem extends StatelessWidget {
   const FilterItem({
@@ -267,11 +264,11 @@ class FilterItem extends StatelessWidget {
       child: AspectRatio(
         aspectRatio: 1.0,
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8),
           child: ClipOval(
             child: Image.network(
               'https://docs.flutter.dev/cookbook/img-files'
-              '/effects/instagram-buttons/millenial-texture.jpg',
+              '/effects/instagram-buttons/millennial-texture.jpg',
               color: color.withOpacity(0.5),
               colorBlendMode: BlendMode.hardLight,
             ),
@@ -281,4 +278,4 @@ class FilterItem extends StatelessWidget {
     );
   }
 }
-// #enddocregion FilterItem
+// #enddocregion filter-item

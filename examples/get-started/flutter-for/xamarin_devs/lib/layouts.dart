@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 class RowExample extends StatelessWidget {
   const RowExample({super.key});
 
-  // #docregion Row
+  // #docregion row
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: const <Widget>[
+      children: <Widget>[
         Text('Row One'),
         Text('Row Two'),
         Text('Row Three'),
@@ -16,32 +16,32 @@ class RowExample extends StatelessWidget {
       ],
     );
   }
-  // #enddocregion Row
+  // #enddocregion row
 }
 
 class ColumnExample extends StatelessWidget {
   const ColumnExample({super.key});
 
-  // #docregion Column
+  // #docregion column
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: const <Widget>[
+      children: <Widget>[
         Text('Column One'),
         Text('Column Two'),
         Text('Column Three'),
         Text('Column Four'),
       ],
     );
-    // #enddocregion Column
+    // #enddocregion column
   }
 }
 
 class GridExample extends StatelessWidget {
   const GridExample({super.key});
 
-  // #docregion Grid
+  // #docregion grid
   @override
   Widget build(BuildContext context) {
     return GridView.count(
@@ -62,53 +62,53 @@ class GridExample extends StatelessWidget {
       ),
     );
   }
-  // #enddocregion Grid
+  // #enddocregion grid
 }
 
 class StackExample extends StatelessWidget {
   const StackExample({super.key});
 
-  // #docregion Stack
+  // #docregion stack
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: const <Widget>[
+    return const Stack(
+      children: <Widget>[
         Icon(
           Icons.add_box,
-          size: 24.0,
+          size: 24,
           color: Colors.black,
         ),
         Positioned(
-          left: 10.0,
+          left: 10,
           child: Icon(
             Icons.add_circle,
-            size: 24.0,
+            size: 24,
             color: Colors.black,
           ),
         ),
       ],
     );
   }
-  // #enddocregion Stack
+  // #enddocregion stack
 }
 
 class ScrollViewExample extends StatelessWidget {
   const ScrollViewExample({super.key});
 
-  // #docregion ScrollView
+  // #docregion scroll-view
   @override
   Widget build(BuildContext context) {
     return const SingleChildScrollView(
       child: Text('Long Content'),
     );
   }
-  // #enddocregion ScrollView
+  // #enddocregion scroll-view
 }
 
 class ListViewExample extends StatelessWidget {
   const ListViewExample({super.key});
 
-  // #docregion ListView
+  // #docregion list-view
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -120,5 +120,5 @@ class ListViewExample extends StatelessWidget {
       ],
     );
   }
-  // #enddocregion ListView
+  // #enddocregion list-view
 }

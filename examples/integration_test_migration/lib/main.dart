@@ -23,7 +23,7 @@ class PlantsApp extends StatelessWidget {
     return MaterialApp(
       title: 'Plants by common name',
       theme: ThemeData(
-        primarySwatch: Colors.lightGreen,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightGreen),
       ),
       home: const HomePage(title: 'Plants by common name'),
     );
@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
         .then((data) {
       setState(() {
         final jsonResult = jsonDecode(data);
-        final birdsJson = jsonResult['plants'];
+        final birdsJson = jsonResult['plants'] as List<dynamic>;
         for (final birdJson in birdsJson) {
           final name = birdJson['name'] as String;
           final species = birdJson['species'] as String;
@@ -166,7 +166,7 @@ class DetailPlant extends StatelessWidget {
       fontSize: 20,
     );
     return Padding(
-      padding: const EdgeInsets.all(32.0),
+      padding: const EdgeInsets.all(32),
       child: Column(
         children: [
           Row(

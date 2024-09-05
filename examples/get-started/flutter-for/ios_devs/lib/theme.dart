@@ -1,4 +1,4 @@
-// #docregion Theme
+// #docregion theme
 import 'package:flutter/material.dart';
 
 class SampleApp extends StatelessWidget {
@@ -9,14 +9,14 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         dividerColor: Colors.grey,
       ),
       home: const SampleAppPage(),
     );
   }
 }
-// #enddocregion Theme
+// #enddocregion theme
 
 class SampleAppPage extends StatelessWidget {
   const SampleAppPage({super.key});

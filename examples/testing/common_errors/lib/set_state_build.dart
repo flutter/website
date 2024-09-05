@@ -4,7 +4,7 @@ class ProblemWidget extends StatelessWidget {
   const ProblemWidget({super.key});
 
   @override
-  // #docregion Problem
+  // #docregion problem
   Widget build(BuildContext context) {
     // Don't do this.
     showDialog(
@@ -15,18 +15,18 @@ class ProblemWidget extends StatelessWidget {
           );
         });
 
-    return Center(
+    return const Center(
       child: Column(
-        children: const <Widget>[
+        children: <Widget>[
           Text('Show Material Dialog'),
         ],
       ),
     );
   }
-  // #enddocregion Problem
+  // #enddocregion problem
 }
 
-// #docregion Fix
+// #docregion solution
 class FirstScreen extends StatelessWidget {
   const FirstScreen({super.key});
 
@@ -57,7 +57,7 @@ class FirstScreen extends StatelessWidget {
     );
   }
 }
-// #enddocregion Fix
+// #enddocregion solution
 
 class MyDialog extends StatelessWidget {
   const MyDialog({super.key});

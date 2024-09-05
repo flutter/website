@@ -2,14 +2,15 @@ name: form
 description: Use Form widget to perform form validation.
 
 environment:
-  sdk: '>=2.17.0-0 <3.0.0'
+  sdk: ^3.5.0
 
 dependencies:
   flutter:
     sdk: flutter
 
 dev_dependencies:
-  flutter_lints: ^2.0.1
+  example_utils:
+    path: ../../../example_utils
 
 flutter:
   uses-material-design: true

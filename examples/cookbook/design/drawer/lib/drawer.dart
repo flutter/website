@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 void drawerStart() {
   // #docregion DrawerStart
   Scaffold(
+    appBar: AppBar(
+      title: const Text('AppBar without hamburger button'),
+    ),
     drawer: null, // Add a Drawer here in the next step.
   );
   // #enddocregion DrawerStart
@@ -11,6 +14,9 @@ void drawerStart() {
 void drawerEmpty() {
   // #docregion DrawerEmpty
   Scaffold(
+    appBar: AppBar(
+      title: const Text('AppBar with hamburger button'),
+    ),
     drawer: Drawer(
       child: null, // Populate the Drawer in the next step.
     ),
@@ -52,4 +58,51 @@ void drawerListview() {
     ),
   );
   // #enddocregion DrawerListView
+}
+
+void drawerOpen() {
+  // #docregion DrawerOpen
+  Scaffold(
+    appBar: AppBar(
+      title: const Text('AppBar with hamburger button'),
+      leading: Builder(
+        builder: (context) {
+          return IconButton(
+            icon: const Icon(Icons.menu),
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          );
+        },
+      ),
+    ),
+    drawer: Drawer(
+      child: null, // Populate the Drawer in the last step.
+    ),
+  );
+  // #enddocregion DrawerOpen
+}
+
+void drawerClose() {
+  Builder(
+    builder: (context) {
+      return Drawer(
+        child: ListView(
+          children: [
+            // #docregion CloseDrawer
+            ListTile(
+              title: const Text('Item 1'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+            // #enddocregion CloseDrawer
+          ],
+        ),
+      );
+    },
+  );
 }

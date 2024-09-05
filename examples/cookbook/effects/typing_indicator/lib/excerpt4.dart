@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import './excerpt1.dart';
 import './excerpt3.dart';
 
-// #docregion AnimationController
+// #docregion animation-controller
 class _TypingIndicatorState extends State<TypingIndicator>
     with TickerProviderStateMixin {
   late AnimationController _appearanceController;
@@ -208,4 +208,4 @@ class FlashingCircle extends StatelessWidget {
     );
   }
 }
-// #enddocregion AnimationController
+// #enddocregion animation-controller

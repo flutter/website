@@ -1,4 +1,4 @@
-// #docregion ToggleWidget
+// #docregion toggle-widget
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +14,7 @@ class SampleApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sample App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const SampleAppPage(),
     );
@@ -65,12 +65,12 @@ class _SampleAppPageState extends State<SampleAppPage> {
     );
   }
 }
-// #enddocregion ToggleWidget
+// #enddocregion toggle-widget
 
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
 
-  // #docregion SimpleWidget
+  // #docregion simple-widget
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,7 +80,7 @@ class MyWidget extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.only(left: 20.0, right: 30.0),
+            padding: const EdgeInsets.only(left: 20, right: 30),
           ),
           onPressed: () {},
           child: const Text('Hello'),
@@ -88,18 +88,18 @@ class MyWidget extends StatelessWidget {
       ),
     );
   }
-  // #enddocregion SimpleWidget
+  // #enddocregion simple-widget
 }
 
 class RowExample extends StatelessWidget {
   const RowExample({super.key});
 
-  // #docregion Row
+  // #docregion row
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: const <Widget>[
+      children: <Widget>[
         Text('Row One'),
         Text('Row Two'),
         Text('Row Three'),
@@ -107,18 +107,18 @@ class RowExample extends StatelessWidget {
       ],
     );
   }
-  // #enddocregion Row
+  // #enddocregion row
 }
 
 class ColumnExample extends StatelessWidget {
   const ColumnExample({super.key});
 
-  // #docregion Column
+  // #docregion column
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: const <Widget>[
+      children: <Widget>[
         Text('Column One'),
         Text('Column Two'),
         Text('Column Three'),
@@ -126,13 +126,13 @@ class ColumnExample extends StatelessWidget {
       ],
     );
   }
-  // #enddocregion Column
+  // #enddocregion column
 }
 
 class ListViewExample extends StatelessWidget {
   const ListViewExample({super.key});
 
-  // #docregion ListView
+  // #docregion list-view
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -144,5 +144,5 @@ class ListViewExample extends StatelessWidget {
       ],
     );
   }
-  // #enddocregion ListView
+  // #enddocregion list-view
 }

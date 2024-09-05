@@ -35,9 +35,11 @@ class LocationListItem extends StatelessWidget {
   }
 
   Widget _buildParallaxBackground(BuildContext context) {
-    return Image.network(
-      imageUrl,
-      fit: BoxFit.cover,
+    return Positioned.fill(
+      child: Image.network(
+        imageUrl,
+        fit: BoxFit.cover,
+      ),
     );
   }
 

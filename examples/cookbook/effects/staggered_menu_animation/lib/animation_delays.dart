@@ -20,8 +20,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
       (_staggerTime * _menuTitles.length) +
       _buttonDelayTime +
       _buttonTime;
-
-// #enddocregion delays
+  // #enddocregion delays
 
   static const _menuTitles = [
     'Declarative Style',
@@ -35,4 +34,6 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Container();
   }
+  // #docregion delays
 }
+// #enddocregion delays

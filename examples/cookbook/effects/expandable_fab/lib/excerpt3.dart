@@ -32,14 +32,14 @@ class ExampleExpandableFab extends StatelessWidget {
         title: const Text('Expandable Fab'),
       ),
       body: ListView.builder(
-        padding: const EdgeInsets.symmetric(vertical: 8.0),
+        padding: const EdgeInsets.symmetric(vertical: 8),
         itemCount: 25,
         itemBuilder: (context, index) {
           return FakeItem(isBig: index.isOdd);
         },
       ),
       floatingActionButton: ExpandableFab(
-        distance: 112.0,
+        distance: 112,
         children: [
           ActionButton(
             onPressed: () => _showAction(context, 0),
@@ -135,17 +135,17 @@ class _ExpandableFabState extends State<ExpandableFab>
 
   Widget _buildTapToCloseFab() {
     return SizedBox(
-      width: 56.0,
-      height: 56.0,
+      width: 56,
+      height: 56,
       child: Center(
         child: Material(
           shape: const CircleBorder(),
           clipBehavior: Clip.antiAlias,
-          elevation: 4.0,
+          elevation: 4,
           child: InkWell(
             onTap: _toggle,
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8),
               child: Icon(
                 Icons.close,
                 color: Theme.of(context).primaryColor,
@@ -286,10 +286,10 @@ class FakeItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 24.0),
-      height: isBig ? 128.0 : 36.0,
+      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 24),
+      height: isBig ? 128 : 36,
       decoration: BoxDecoration(
-        borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+        borderRadius: const BorderRadius.all(Radius.circular(8)),
         color: Colors.grey.shade300,
       ),
     );

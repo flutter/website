@@ -1,10 +1,9 @@
-/* {$ begin main.dart $} */
 import 'package:flutter/material.dart';
 
 void main() => runApp(const SignUpApp());
 
 class SignUpApp extends StatelessWidget {
-  const SignUpApp();
+  const SignUpApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +16,7 @@ class SignUpApp extends StatelessWidget {
 }
 
 class SignUpScreen extends StatelessWidget {
-  const SignUpScreen();
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,10 +35,10 @@ class SignUpScreen extends StatelessWidget {
 }
 
 class SignUpForm extends StatefulWidget {
-  const SignUpForm();
+  const SignUpForm({super.key});
 
   @override
-  _SignUpFormState createState() => _SignUpFormState();
+  State<SignUpForm> createState() => _SignUpFormState();
 }
 
 class _SignUpFormState extends State<SignUpForm> {
@@ -56,23 +55,23 @@ class _SignUpFormState extends State<SignUpForm> {
         mainAxisSize: MainAxisSize.min,
         children: [
           LinearProgressIndicator(value: _formProgress),
-          Text('Sign up', style: Theme.of(context).textTheme.headline4),
+          Text('Sign up', style: Theme.of(context).textTheme.headlineMedium),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8),
             child: TextFormField(
               controller: _firstNameTextController,
               decoration: const InputDecoration(hintText: 'First name'),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8),
             child: TextFormField(
               controller: _lastNameTextController,
               decoration: const InputDecoration(hintText: 'Last name'),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8),
             child: TextFormField(
               controller: _usernameTextController,
               decoration: const InputDecoration(hintText: 'Username'),
@@ -80,15 +79,13 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           TextButton(
             style: ButtonStyle(
-              foregroundColor: MaterialStateProperty.resolveWith(
-                  (Set<MaterialState> states) {
-                return states.contains(MaterialState.disabled)
+              foregroundColor: WidgetStateProperty.resolveWith((states) {
+                return states.contains(WidgetState.disabled)
                     ? null
                     : Colors.white;
               }),
-              backgroundColor: MaterialStateProperty.resolveWith(
-                  (Set<MaterialState> states) {
-                return states.contains(MaterialState.disabled)
+              backgroundColor: WidgetStateProperty.resolveWith((states) {
+                return states.contains(WidgetState.disabled)
                     ? null
                     : Colors.blue;
               }),
@@ -101,10 +98,3 @@ class _SignUpFormState extends State<SignUpForm> {
     );
   }
 }
-/* {$ end main.dart $} */
-/* {$ begin test.dart $} */
-// Avoid warning on "double _formProgress = 0;"
-//_ignore_for_file: prefer_final_fields
-/* {$ end test.dart $} */
-
-

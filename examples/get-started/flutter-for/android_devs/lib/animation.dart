@@ -12,7 +12,7 @@ class FadeAppTest extends StatelessWidget {
     return MaterialApp(
       title: 'Fade Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const MyFadeTest(title: 'Fade Demo'),
     );
@@ -54,7 +54,7 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
         child: FadeTransition(
           opacity: curve,
           child: const FlutterLogo(
-            size: 100.0,
+            size: 100,
           ),
         ),
       ),

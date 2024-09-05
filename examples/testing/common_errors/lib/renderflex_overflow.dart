@@ -4,7 +4,7 @@ class ProblemWidget extends StatelessWidget {
   const ProblemWidget({super.key});
 
   @override
-  // #docregion Problem
+  // #docregion problem
   Widget build(BuildContext context) {
     return Row(
       children: [
@@ -13,19 +13,20 @@ class ProblemWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Title', style: Theme.of(context).textTheme.headline4),
+            Text('Title', style: Theme.of(context).textTheme.headlineMedium),
             const Text(
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed'
-                ' do eiusmod tempor incididunt ut labore et dolore magna '
-                'aliqua. Ut enim ad minim veniam, quis nostrud '
-                'exercitation ullamco laboris nisi ut aliquip ex ea '
-                'commodo consequat.'),
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed '
+              'do eiusmod tempor incididunt ut labore et dolore magna '
+              'aliqua. Ut enim ad minim veniam, quis nostrud '
+              'exercitation ullamco laboris nisi ut aliquip ex ea '
+              'commodo consequat.',
+            ),
           ],
         ),
       ],
     );
   }
-  // #enddocregion Problem
+  // #enddocregion problem
 }
 
 class SolutionWidget extends StatelessWidget {
@@ -33,10 +34,10 @@ class SolutionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // #docregion Fix
-    return Row(
+    // #docregion solution
+    return const Row(
       children: [
-        const Icon(Icons.message),
+        Icon(Icons.message),
         Expanded(
           child: Column(
               // code omitted
@@ -44,6 +45,6 @@ class SolutionWidget extends StatelessWidget {
         ),
       ],
     );
-    // #enddocregion Fix
+    // #enddocregion solution
   }
 }

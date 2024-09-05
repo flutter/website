@@ -1,21 +1,9 @@
-// Header clearance of top nav
-@mixin _header-clearance {
-  $clearance: 100px;
-
-  margin-top: -$clearance;
-  padding-top: $clearance;
-}
-
-@mixin header-clearance {
-  @include _header-clearance;
-
-  content: "";
-  display: block;
-}
+@use '../base/variables' as *;
+@use '../vendor/bootstrap';
 
 // Material design icons
 @mixin md-icon-content($icon-name, $width: '', $bottom: true) {
-  font-family: 'Material Icons';
+  font-family: $site-font-family-icon;
   content: $icon-name;
   @if $width != '' {
     max-width: $width; // Improves UX by minimizing flicker due to delay in font rendering
@@ -35,22 +23,23 @@
 
   .container {
     max-width: $site-content-max-width;
+
+    img {
+      object-fit: contain;
+    }
+
+    > img, > p > img {
+      margin-bottom: 1rem;
+    }
   }
 
-  @include media-breakpoint-up(md) {
+  @include bootstrap.media-breakpoint-up(md) {
     border-left: 1px solid $site-color-light-grey;
     min-height: calc(100vh - #{$site-header-height} - #{$site-footer-md-default-height});
   }
 
   &__title {
-    margin-bottom: bs-spacer(12);
-
-    @at-root {
-      #page-github-links {
-        float: right;
-        .btn { padding: 0 ($btn-padding-x / 2); }
-      }
-    }
+    margin-bottom: bootstrap.bs-spacer(8);
 
     h1 {
       margin-bottom: 0;
@@ -58,48 +47,109 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    // Invisible pre-element to avoid modifying styles on headings.
-    &[id]:not(.no_toc)::before { @include header-clearance; }
+    text-wrap: balance;
+    scroll-margin-top: 5rem;
+  }
 
-    // This case is for jekyll-toc entries that use the computed header id, rather than
-    // the Kramdown id override specified using the {#foo} markdown-extension syntax.
-    > a[id]::before { @include header-clearance; }
+  .header-wrapper {
+    display: flex;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    align-items: center;
 
-    $icon-size: 1.5rem;
-    $anchor-padding: 0.25rem;
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
 
-    > a.anchor {
-      float: left;
-      margin-left: -($icon-size + $anchor-padding);
-      padding-right: $anchor-padding;
+    .heading-link {
+      margin-left: 0.4rem;
+      font-size: 1.3rem;
+      line-height: 1;
+      transition: all 0.15s ease-in-out;
       overflow: hidden;
+      color: #4a4a4a;
+      opacity: 0;
       text-decoration: none;
 
-      .octicon-link {
-        transition: all 0.2s ease-in-out;
-
-        @include md-icon-before("tag", false);
-        font-size: $icon-size;
-        color: $site-color-body;
-        opacity: 0;
-
-        &:hover {
-          color: lighten($site-color-primary, 20%);
-        }
+      &:hover {
+        color: $site-color-primary;
       }
 
-      &:focus .octicon-link {
+      &:focus {
         opacity: 1
+      }
+
+      &:active {
+        color: $flutter-color-dark-blue;
       }
     }
 
-    &:hover > .anchor > .octicon-link { opacity: 1 }
+    &:hover {
+      .heading-link {
+        opacity: 1
+      }
+    }
   }
 
   // Embedded DartPad
   iframe {
     border: 1px solid #ccc;
+    max-width: 100%;
   }
+}
+
+nav.breadcrumbs {
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+ol.breadcrumb-list {
+  border-radius: 0.375rem;
+  padding: 0.375rem 0;
+
+  align-items: center;
+  list-style: none;
+
+  font-family: $site-font-family-alt;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  li.breadcrumb-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+
+    & a {
+      padding: 0.125rem;
+      border-radius: 0.125rem;
+    }
+
+    &.active a {
+      color: $site-color-nav-links;
+      cursor: default;
+      text-decoration: none;
+    }
+
+    &:before {
+      display: none;
+    }
+  }
+
+  .child-icon {
+    user-select: none;
+  }
+}
+
+#page-github-links {
+  font-style: italic;
+  font-size: 0.75rem;
+  padding-top: 0.25rem;
+
+  border-top: 0.05rem solid $site-color-light-grey;
 }
 
 .video-card {

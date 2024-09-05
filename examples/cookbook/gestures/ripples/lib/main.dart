@@ -49,7 +49,7 @@ class MyButton extends StatelessWidget {
         ));
       },
       child: const Padding(
-        padding: EdgeInsets.all(12.0),
+        padding: EdgeInsets.all(12),
         child: Text('Flat Button'),
       ),
     );

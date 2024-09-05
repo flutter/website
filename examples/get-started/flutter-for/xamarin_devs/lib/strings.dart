@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// #docregion Localization
+// #docregion localization
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 class MyWidget extends StatelessWidget {
@@ -21,29 +21,29 @@ class MyWidget extends StatelessWidget {
     );
   }
 }
-// #enddocregion Localization
+// #enddocregion localization
 
 class TextWidget extends StatelessWidget {
   const TextWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // #docregion AccessString
+    // #docregion access-string
     return const Text(Strings.welcomeMessage);
-    // #enddocregion AccessString
+    // #enddocregion access-string
   }
 }
 
-// #docregion StringsClass
+// #docregion strings-class
 class Strings {
   static const String welcomeMessage = 'Welcome To Flutter';
 }
-// #enddocregion StringsClass
+// #enddocregion strings-class
 
 class CustomFontExample extends StatelessWidget {
   const CustomFontExample({super.key});
 
-  // #docregion CustomFont
+  // #docregion custom-font
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,5 +56,5 @@ class CustomFontExample extends StatelessWidget {
       ),
     );
   }
-  // #enddocregion CustomFont
+  // #enddocregion custom-font
 }

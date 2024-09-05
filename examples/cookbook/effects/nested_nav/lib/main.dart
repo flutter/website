@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// #docregion Routes
+// #docregion routes
 const routeHome = '/';
 const routeSettings = '/settings';
 const routePrefixDeviceSetup = '/setup/';
@@ -9,7 +9,7 @@ const routeDeviceSetupStartPage = 'find_devices';
 const routeDeviceSetupSelectDevicePage = 'select_device';
 const routeDeviceSetupConnectingPage = 'connecting';
 const routeDeviceSetupFinishedPage = 'finished';
-// #enddocregion Routes
+// #enddocregion routes
 
 void main() {
   runApp(
@@ -131,8 +131,15 @@ class SetupFlowState extends State<SetupFlow> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: _isExitDesired,
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, _) async {
+        if (didPop) return;
+
+        if (await _isExitDesired() && context.mounted) {
+          _exitSetup();
+        }
+      },
       child: Scaffold(
         appBar: _buildFlowAppBar(),
         body: Navigator(
@@ -144,34 +151,26 @@ class SetupFlowState extends State<SetupFlow> {
     );
   }
 
-  Route _onGenerateRoute(RouteSettings settings) {
-    late Widget page;
-    switch (settings.name) {
-      case routeDeviceSetupStartPage:
-        page = WaitingPage(
+  Route<Widget> _onGenerateRoute(RouteSettings settings) {
+    final page = switch (settings.name) {
+      routeDeviceSetupStartPage => WaitingPage(
           message: 'Searching for nearby bulb...',
           onWaitComplete: _onDiscoveryComplete,
-        );
-        break;
-      case routeDeviceSetupSelectDevicePage:
-        page = SelectDevicePage(
+        ),
+      routeDeviceSetupSelectDevicePage => SelectDevicePage(
           onDeviceSelected: _onDeviceSelected,
-        );
-        break;
-      case routeDeviceSetupConnectingPage:
-        page = WaitingPage(
+        ),
+      routeDeviceSetupConnectingPage => WaitingPage(
           message: 'Connecting...',
           onWaitComplete: _onConnectionEstablished,
-        );
-        break;
-      case routeDeviceSetupFinishedPage:
-        page = FinishedPage(
+        ),
+      routeDeviceSetupFinishedPage => FinishedPage(
           onFinishPressed: _exitSetup,
-        );
-        break;
-    }
+        ),
+      _ => throw StateError('Unexpected route name: ${settings.name}!')
+    };
 
-    return MaterialPageRoute<dynamic>(
+    return MaterialPageRoute(
       builder: (context) {
         return page;
       },
@@ -203,13 +202,13 @@ class SelectDevicePage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
                 'Select a nearby device:',
-                style: Theme.of(context).textTheme.headline6,
+                style: Theme.of(context).textTheme.titleLarge,
               ),
               const SizedBox(height: 24),
               SizedBox(
@@ -217,7 +216,7 @@ class SelectDevicePage extends StatelessWidget {
                 height: 54,
                 child: ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateColor.resolveWith((states) {
+                    backgroundColor: WidgetStateColor.resolveWith((states) {
                       return const Color(0xFF222222);
                     }),
                   ),
@@ -274,7 +273,7 @@ class _WaitingPageState extends State<WaitingPage> {
     return Scaffold(
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -302,7 +301,7 @@ class FinishedPage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -333,14 +332,14 @@ class FinishedPage extends StatelessWidget {
               const SizedBox(height: 32),
               ElevatedButton(
                 style: ButtonStyle(
-                  padding: MaterialStateProperty.resolveWith((states) {
+                  padding: WidgetStateProperty.resolveWith((states) {
                     return const EdgeInsets.symmetric(
                         horizontal: 24, vertical: 12);
                   }),
-                  backgroundColor: MaterialStateColor.resolveWith((states) {
+                  backgroundColor: WidgetStateColor.resolveWith((states) {
                     return const Color(0xFF222222);
                   }),
-                  shape: MaterialStateProperty.resolveWith((states) {
+                  shape: WidgetStateProperty.resolveWith((states) {
                     return const StadiumBorder();
                   }),
                 ),
@@ -372,7 +371,7 @@ class HomeScreen extends StatelessWidget {
       appBar: _buildAppBar(context),
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [

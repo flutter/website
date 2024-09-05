@@ -1,4 +1,0 @@
----
-title: Web
-layout: toc
----

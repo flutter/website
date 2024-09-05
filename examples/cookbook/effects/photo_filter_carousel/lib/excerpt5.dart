@@ -6,7 +6,7 @@ class FilterSelector extends StatefulWidget {
     super.key,
     required this.filters,
     required this.onFilterChanged,
-    this.padding = const EdgeInsets.symmetric(vertical: 24.0),
+    this.padding = const EdgeInsets.symmetric(vertical: 24),
   });
 
   final List<Color> filters;
@@ -17,7 +17,7 @@ class FilterSelector extends StatefulWidget {
   State<FilterSelector> createState() => _FilterSelectorState();
 }
 
-// #docregion PageViewController
+// #docregion page-view-controller
 class _FilterSelectorState extends State<FilterSelector> {
   static const _filtersPerScreen = 5;
   static const _viewportFractionPerItem = 1.0 / _filtersPerScreen;
@@ -63,15 +63,17 @@ class _FilterSelectorState extends State<FilterSelector> {
         },
       ),
     );
-  } //code-excerpt-close-bracket
+  }
+  // #enddocregion page-view-controller
 
-// #enddocregion PageViewController
   @override
   Widget build(BuildContext context) {
     _buildCarousel(5); // Makes sure _buildCarousel is used
     return Container();
   }
+  // #docregion page-view-controller
 }
+// #enddocregion page-view-controller
 
 @immutable
 class FilterItem extends StatelessWidget {
@@ -91,11 +93,11 @@ class FilterItem extends StatelessWidget {
       child: AspectRatio(
         aspectRatio: 1.0,
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8),
           child: ClipOval(
             child: Image.network(
               'https://docs.flutter.dev/cookbook/img-files'
-              '/effects/instagram-buttons/millenial-texture.jpg',
+              '/effects/instagram-buttons/millennial-texture.jpg',
               color: color.withOpacity(0.5),
               colorBlendMode: BlendMode.hardLight,
             ),

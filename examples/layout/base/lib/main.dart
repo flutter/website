@@ -2,21 +2,23 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+// #docregion all
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
 
-// #docregion MyApp
+// #docregion my-app
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
+    const String appTitle = 'Flutter layout demo';
     return MaterialApp(
-      title: 'Flutter layout demo',
+      title: appTitle,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Flutter layout demo'),
+          title: const Text(appTitle),
         ),
         // #docregion centered-text
         body: const Center(
@@ -29,3 +31,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+// #enddocregion my-app, all

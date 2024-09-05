@@ -4,29 +4,29 @@ class ProblemWidget extends StatelessWidget {
   const ProblemWidget({super.key});
 
   @override
-  // #docregion Problem
+  // #docregion problem
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Unbounded Width of the TextField'),
         ),
-        body: Row(
-          children: const [
+        body: const Row(
+          children: [
             TextField(),
           ],
         ),
       ),
     );
   }
-  // #enddocregion Problem
+  // #enddocregion problem
 }
 
 class SolutionWidget extends StatelessWidget {
   const SolutionWidget({super.key});
 
   @override
-  // #docregion Fix
+  // #docregion solution
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
@@ -41,5 +41,5 @@ class SolutionWidget extends StatelessWidget {
       ),
     );
   }
-  // #enddocregion Fix
+  // #enddocregion solution
 }

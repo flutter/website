@@ -56,7 +56,7 @@ class _SelectionButtonState extends State<SelectionButton> {
 
     // When a BuildContext is used from a StatefulWidget, the mounted property
     // must be checked after an asynchronous gap.
-    if (!mounted) return;
+    if (!context.mounted) return;
 
     // After the Selection Screen returns a result, hide any previous snackbars
     // and show the new result.
@@ -81,7 +81,7 @@ class SelectionScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8),
               // #docregion Yep
               child: ElevatedButton(
                 onPressed: () {
@@ -93,7 +93,7 @@ class SelectionScreen extends StatelessWidget {
               // #enddocregion Yep
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8),
               // #docregion Nope
               child: ElevatedButton(
                 onPressed: () {

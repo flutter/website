@@ -2,12 +2,10 @@
 // Use of this source code is governed by a BSD-style license
 // that can be found in the LICENSE file.
 
-// ignore_for_file: missing_required_argument
-
 import 'package:flutter/material.dart';
 
 const owlUrl =
-    'https://raw.githubusercontent.com/flutter/website/master/src/images/owl.jpg';
+    'https://raw.githubusercontent.com/flutter/website/main/src/content/assets/images/docs/owl.jpg';
 
 class FadeInDemo extends StatefulWidget {
   const FadeInDemo({super.key});
@@ -19,17 +17,18 @@ class FadeInDemo extends StatefulWidget {
 class _FadeInDemoState extends State<FadeInDemo> {
   @override
   Widget build(BuildContext context) {
-    return Column(children: <Widget>[
+    return ListView(children: <Widget>[
       Image.network(owlUrl),
       TextButton(
-          child: const Text(
-            'Show Details',
-            style: TextStyle(color: Colors.blueAccent),
-          ),
-          onPressed: () => {}),
+        child: const Text(
+          'Show Details',
+          style: TextStyle(color: Colors.blueAccent),
+        ),
+        onPressed: () => {},
+      ),
       AnimatedOpacity(
-        child: Column(
-          children: const [
+        child: const Column(
+          children: [
             Text('Type: Owl'),
             Text('Age: 39'),
             Text('Employment: None'),

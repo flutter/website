@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen();
+  const WelcomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('Welcome!', style: Theme.of(context).textTheme.headline2),
+        child: Text(
+          'Welcome!',
+          style: Theme.of(context).textTheme.displayMedium,
+        ),
       ),
     );
   }
@@ -16,7 +19,7 @@ class WelcomeScreen extends StatelessWidget {
 void main() => runApp(const SignUpApp());
 
 class SignUpApp extends StatelessWidget {
-  const SignUpApp();
+  const SignUpApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +33,7 @@ class SignUpApp extends StatelessWidget {
 }
 
 class SignUpScreen extends StatelessWidget {
-  const SignUpScreen();
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -49,10 +52,10 @@ class SignUpScreen extends StatelessWidget {
 }
 
 class SignUpForm extends StatefulWidget {
-  const SignUpForm();
+  const SignUpForm({super.key});
 
   @override
-  _SignUpFormState createState() => _SignUpFormState();
+  State<SignUpForm> createState() => _SignUpFormState();
 }
 
 class _SignUpFormState extends State<SignUpForm> {
@@ -66,7 +69,7 @@ class _SignUpFormState extends State<SignUpForm> {
     Navigator.of(context).pushNamed('/welcome');
   }
 
-  // #docregion updateFormProgress
+  // #docregion update-form-progress
   void _updateFormProgress() {
     var progress = 0.0;
     final controllers = [
@@ -75,64 +78,62 @@ class _SignUpFormState extends State<SignUpForm> {
       _usernameTextController
     ];
 
-    // #docregion forLoop
+    // #docregion for-loop
     for (final controller in controllers) {
       if (controller.value.text.isNotEmpty) {
         progress += 1 / controllers.length;
       }
     }
-    // #enddocregion forLoop
+    // #enddocregion for-loop
 
     setState(() {
       _formProgress = progress;
     });
   }
-  // #enddocregion updateFormProgress
+  // #enddocregion update-form-progress
 
   @override
   Widget build(BuildContext context) {
-    // #docregion onChanged
+    // #docregion on-changed
     return Form(
       onChanged: _updateFormProgress, // NEW
       child: Column(
-        // #enddocregion onChanged
+        // #enddocregion on-changed
         mainAxisSize: MainAxisSize.min,
         children: [
           LinearProgressIndicator(value: _formProgress),
-          Text('Sign up', style: Theme.of(context).textTheme.headline4),
+          Text('Sign up', style: Theme.of(context).textTheme.headlineMedium),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8),
             child: TextFormField(
               controller: _firstNameTextController,
               decoration: const InputDecoration(hintText: 'First name'),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8),
             child: TextFormField(
               controller: _lastNameTextController,
               decoration: const InputDecoration(hintText: 'Last name'),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8),
             child: TextFormField(
               controller: _usernameTextController,
               decoration: const InputDecoration(hintText: 'Username'),
             ),
           ),
-          // #docregion onPressed
+          // #docregion on-pressed
           TextButton(
             style: ButtonStyle(
-              foregroundColor: MaterialStateProperty.resolveWith(
-                  (Set<MaterialState> states) {
-                return states.contains(MaterialState.disabled)
+              foregroundColor: WidgetStateProperty.resolveWith((states) {
+                return states.contains(WidgetState.disabled)
                     ? null
                     : Colors.white;
               }),
-              backgroundColor: MaterialStateProperty.resolveWith(
-                  (Set<MaterialState> states) {
-                return states.contains(MaterialState.disabled)
+              backgroundColor: WidgetStateProperty.resolveWith((states) {
+                return states.contains(WidgetState.disabled)
                     ? null
                     : Colors.blue;
               }),
@@ -143,7 +144,7 @@ class _SignUpFormState extends State<SignUpForm> {
             // #enddocregion ternary
             child: const Text('Sign up'),
           ),
-          // #enddocregion onPressed
+          // #enddocregion on-pressed
         ],
       ),
     );

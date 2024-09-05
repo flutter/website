@@ -1,4 +1,3 @@
-
 If you would like to contribute to the Flutter project,
 we’re happy to have your help! Anyone can contribute, whether you’re new to
 the project or you’ve been around a long time, and whether you self-identify
@@ -11,7 +10,7 @@ but two of the primary repos are the
 [Flutter SDK](https://github.com/flutter/flutter), and this repo, the
 [Flutter website](https://github.com/flutter/website).
 To contribute a fix to a repo, submit a [pull request
-(PR)](https://services.github.com/on-demand/github-cli/open-pull-request-github).
+(PR)](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
 
 For information on contributing code or API docs to the Flutter SDK, see
 [Contributing to
@@ -19,7 +18,7 @@ Flutter](https://github.com/flutter/flutter/blob/main/CONTRIBUTING.md)
 in the [Flutter SDK](https://github.com/flutter/flutter) repo.
 
 We are also happy to accept your PRs to the
-[Flutter website](https://github.com/flutter/website/) repo,
+[Flutter documentation website](https://github.com/flutter/website/) repo,
 even if it's just to fix a typo.
 
 For ways to get involved in the Flutter community or to learn about us,
@@ -31,19 +30,19 @@ We encourage you to reach out and join the conversation.
 
 An easy way to send feedback is to "thumbs up" issues important to you
 in either the issue tracker for the [Flutter SDK and API docs][issues],
-or the [flutter.dev website][doc-issues].
+or the [docs.flutter.dev website][doc-issues].
 
 Other ways you can contribute:
 
 * [Ask HOW-TO questions that can be answered with specific solutions][so]
-* [Live chat with Flutter engineers and users][gitter]
+* [Live chat with Flutter engineers and users][chat]
 * [Discuss Flutter, best practices, app design, and more on our
    mailing list][mailinglist]
 * [Report bugs and request features][issues]
 * [Report API docs bugs][issues]
 * [Submit PRs to the Flutter SDK][PRs]
-* [Request docs for flutter.dev][doc-issues]
-* [Submit PRs to flutter.dev][doc-PRs]
+* [Request docs for docs.flutter.dev][doc-issues]
+* [Submit PRs to docs.flutter.dev][doc-PRs]
 * [Follow us on Twitter: @flutterdev](https://twitter.com/flutterdev/)
 * [Read the Flutter Publication on Medium](https://medium.com/flutter)
 * [Sign up to Future UX Studies on Flutter](https://flutter.dev/research-signup)
@@ -61,5 +60,5 @@ Happy Fluttering!
 [doc-PRs]: https://github.com/flutter/website/pulls
 [so]: https://stackoverflow.com/tags/flutter
 [mailinglist]: https://groups.google.com/d/forum/flutter-dev
-[gitter]: https://gitter.im/flutter/flutter
+[chat]: https://github.com/flutter/flutter/blob/master/docs/contributing/Chat.md
 [reddit]: https://www.reddit.com/r/FlutterDev

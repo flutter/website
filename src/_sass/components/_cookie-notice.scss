@@ -1,3 +1,5 @@
+@use '../vendor/bootstrap';
+
 #cookie-notice {
   background-color: white;
   padding: 2.5rem 0;
@@ -8,7 +10,7 @@
   box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.3);
   opacity: 0;
   display: none;
-  z-index: 999;
+  z-index: bootstrap.$zindex-popover;
 
   @keyframes fadein {
       0% { opacity: 0; }
@@ -18,6 +20,10 @@
   a.btn {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  button {
+    text-wrap: nowrap;
   }
 
   &.show {
@@ -39,7 +45,7 @@
     p {
       font-size: 1rem;
       line-height: 1.6;
-      margin-right: 2rem;
+      margin-right: 1.5rem;
       margin-bottom: 0;
     }
   }
