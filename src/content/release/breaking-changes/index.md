@@ -33,11 +33,13 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [`Color` wide gamut support][]
 * [Remove invalid parameters for `InputDecoration.collapsed`][]
 * [Stop generating `AssetManifest.json`][]
 * [Deprecate `TextField.canRequestFocus`][]
 * [Set default for SystemUiMode to Edge-to-Edge][]
 
+[`Color` wide gamut support]: {{site.url}}/release/breaking-changes/wide-gamut-framework
 [Remove invalid parameters for `InputDecoration.collapsed`]: /release/breaking-changes/input-decoration-collapsed
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
