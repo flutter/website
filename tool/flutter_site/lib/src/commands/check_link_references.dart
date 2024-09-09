@@ -136,7 +136,7 @@ final _pullRequestTitlePattern = RegExp(
 /// by @craiglabenz in https://github.com/flutter/flutter/pull/100316</li>
 /// ```
 final _pullRequestTitleInListItemPattern = RegExp(
-  r'<li>.*? in.*?https://github.com/.*?/pull/.*?</li>',
+  r'<li>(?:(?!<li>).)*?in\s+(?:<a[^>]*?href="https://github\.com/[^/]+/[^/]+/pull/\d+">[\d]+</a>|https://github\.com/[^/]+/[^/]+/pull/\d+)(?:(?!<li>).)*?</li>',
   dotAll: true,
 );
 
