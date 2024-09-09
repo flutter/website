@@ -81,7 +81,9 @@ final actions that complete a flow, like **Save**, **Join now**, or **Confirm**.
 There are usually 3 main parts to constructing a button: style, callback,
 and its child, as seen in the `ElevatedButton` sample code below: 
 
-<!--- TODO: WidgetStateProperty and styling in the the design section of FWE Of course, a button's appearance can be dependent on its state. You can style a button based on its state using WidgetStateProperty. -->
+<!--- TODO: WidgetStateProperty and styling in the the design section of
+FWE. Of course, a button's appearance can be dependent on its state.
+You can style a button based on its state using `WidgetStateProperty`. -->
 
 - Its callback function, `onPressed` determines what happens when the button
 is clicked, this function is where you update your app state. 
