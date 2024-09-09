@@ -63,7 +63,9 @@ but styled differently for various use cases,  including:
 dimension to otherwise mostly flat layouts.
 - `FilledButton`: A filled button that should be used for important, 
 final actions that complete a flow, like **Save**, **Join now**, or **Confirm**. 
-- `Tonal Button`
+- `Tonal Button`:  A middle ground button between FilledButton and OutlinedButton.
+They’re useful in contexts where a lower-priority button requires more emphasis 
+than an outline, like **Next**.
 - `OutlinedButton`: A button with text and a visible border.
   These buttons contain actions that are important,
   but aren't the primary action in an app.
