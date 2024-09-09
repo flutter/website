@@ -636,7 +636,14 @@ There are several ways that your UI can allow toggling between values.
 Give the user the option to toggle a single value on/off. The functional logic
 behind these widgets are the same (all 3 are built on top of 
 `ToggleableStateMixin`) with some presentation differences that provide different
-user experiences. 
+user experiences.:
+
+- `Checkbox` is a container that is empty when false or filled with a checkmark
+when true.
+- `Switch` has a handle that is on the left when false and slides to the right
+when true. 
+- `Radio` is similar to a `Checkbox` in that it's a container that is empty when
+false, but filled in when true. 
 
 The  configuration for `Checkbox` and `Switch` contain:
 - a `value` that is `true` or `false`
