@@ -142,6 +142,8 @@ Widget build(BuildContext context) {
 
 ## Text
 
+Several widgets support text input. 
+
 ### `SelectableText`
 
 Flutter's `Text` widget displays text on the screen, 
