@@ -628,6 +628,8 @@ Widget build(BuildContext context) {
 
 ## Toggle between values
 
+There are several ways that your UI can allow toggling between values.
+
 ### Checkbox, Switch, and Radio
 Give the user the option to toggle a single value on/off. The functional logic
 behind these widgets are the same (all 3 are built on top of 
