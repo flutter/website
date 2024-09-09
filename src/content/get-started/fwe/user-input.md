@@ -93,7 +93,7 @@ a user presses the button.
 - The button's `child`, which is what's displayed within the button's content area,
 that's usually text or an icon that indicates the button's purpose. 
 
-- Finally, a button's `style` controls its appearance: color, border, etc.
+- Finally, a button's `style` controls its appearance: color, border, and so on.
 
 
 {% render docs/code-and-image.md,
