@@ -31,8 +31,8 @@ class HomePage extends StatelessWidget {
     return CupertinoPageScaffold(
       navigationBar: const CupertinoNavigationBar(
           middle:
-          // #docregion custom-font
-          Text(
+              // #docregion custom-font
+              Text(
         'Cupertino',
         style: TextStyle(
           fontSize: 40,

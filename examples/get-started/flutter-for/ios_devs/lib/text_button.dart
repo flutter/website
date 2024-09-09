@@ -24,8 +24,8 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: Center(
           child:
-      // #docregion text-button
-      CupertinoButton(
+              // #docregion text-button
+              CupertinoButton(
         onPressed: () {
           // This closure is called when your button is tapped.
         },

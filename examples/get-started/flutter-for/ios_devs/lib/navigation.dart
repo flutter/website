@@ -67,8 +67,8 @@ class HomePage extends StatelessWidget {
       ),
       child: Material(
         child:
-        // #docregion list-view
-        ListView.builder(
+            // #docregion list-view
+            ListView.builder(
           itemCount: mockPersons.length,
           itemBuilder: (context, index) {
             final person = mockPersons.elementAt(index);

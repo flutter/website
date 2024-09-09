@@ -24,8 +24,8 @@ class HomePage extends StatelessWidget {
     return const Scaffold(
       body: Center(
         child:
-        // #docregion row
-        Row(
+            // #docregion row
+            Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(CupertinoIcons.globe),

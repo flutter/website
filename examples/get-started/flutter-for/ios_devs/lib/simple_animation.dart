@@ -28,8 +28,8 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: Center(
         child:
-        // #docregion animated-button
-        AnimatedRotation(
+            // #docregion animated-button
+            AnimatedRotation(
           duration: const Duration(seconds: 1),
           turns: turns,
           curve: Curves.easeIn,
