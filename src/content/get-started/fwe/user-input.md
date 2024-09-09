@@ -346,7 +346,9 @@ Widget build(BuildContext context) {
 
 ## Select a value from a group of options
 
-### `SegmentedButton`
+Provide a way to users to select from several options.
+
+### SegmentedButton
 
 `SegmentedButton` can be used to give users the option to select simple choices
 between a minimal group of 2-5 items. 
