@@ -832,7 +832,7 @@ There is a set of Dialogs that enable users to select a date or time, as you'll 
 - a default `initialDate` or `initialTime`
 - or an `initialEntryMode` that determines the  picker UI that's displayed.
 
-### `DatePickerDialog`
+### DatePickerDialog
 A dialog box that let's the user select a date or a range of dates.  It can be activated by calling the `showDatePicke()` function, which returns a `Future<DateTime>`, so don't forget to await the function call!
 
 {% render docs/code-and-image.md,
