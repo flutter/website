@@ -301,8 +301,7 @@ Widget build(BuildContext context) {
           padding: const EdgeInsets.symmetric(vertical: 16.0),
           child: ElevatedButton(
             onPressed: () {
-              // Validate will return true if the form is valid, or false if
-              // the form is invalid.
+              // Validate returns true if the form is valid, or false otherwise.
               if (_formKey.currentState!.validate()) {
                 // Process data.
               }
