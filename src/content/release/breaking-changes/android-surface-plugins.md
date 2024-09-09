@@ -150,7 +150,7 @@ Relevant PRs:
 [`CameraCharacteristics.SENSOR_ORIENTATION`]: {{site.android-dev}}/reference/android/hardware/camera2/CameraCharacteristics#SENSOR_ORIENTATION
 [`RotatedBox`]: {{site.api}}/flutter/widgets/RotatedBox-class.html
 [Android orientation calculation documentation]: {{site.android-dev}}/media/camera/camera2/camera-preview#orientation_calculation
-[this`camera_android_camerax` PR]: {{site.repo.flutter}}/packages/pull/7044
+[this `camera_android_camerax` PR]: {{site.repo.flutter}}/packages/pull/7044
 [Issue 139702]: {{site.repo.flutter}}/issues/139702
 [Issue 145930]: {{site.repo.flutter}}/issues/145930
 [PR 51061]: {{site.repo.engine}}/pull/51061
