@@ -271,14 +271,14 @@ Button("Do something") {
 To achieve the same result in **Flutter**,
 use the `CupertinoButton` class:
 
-<?code-excerpt "lib/text_button.dart (text-button)"?>
+<?code-excerpt "lib/text_button.dart (text-button)" replace="/child: //g;"?>
 ```dart dartpad="3c9b9a4de431b86725197a7fc2c84158"
-        CupertinoButton(
+CupertinoButton(
   onPressed: () {
     // This closure is called when your button is tapped.
   },
-  child: const Text('Do something'),
-)
+  const Text('Do something'),
+),
 ```
 
 **Flutter** gives you access to a variety of buttons with predefined styles.
@@ -306,9 +306,9 @@ HStack {
 
 **Flutter** uses [`Row`][] rather than `HStack`:
 
-<?code-excerpt "lib/row.dart (row)"?>
+<?code-excerpt "lib/row.dart (row)" replace="/child: //g;"?>
 ```dart dartpad="0365338f938427b01d72e37cea554f75"
-    Row(
+Row(
   mainAxisAlignment: MainAxisAlignment.center,
   children: [
     Icon(CupertinoIcons.globe),
@@ -340,9 +340,9 @@ VStack {
 **Flutter** uses the same Dart code from the previous example,
 except it swaps [`Column`][] for `Row`:
 
-<?code-excerpt "lib/column.dart (column)"?>
+<?code-excerpt "lib/column.dart (column)" replace="/child: //g;"?>
 ```dart dartpad="d9a288be0c2a353296fc8825680b84b8"
-    Column(
+Column(
   mainAxisAlignment: MainAxisAlignment.center,
   children: [
     Icon(CupertinoIcons.globe),
@@ -519,9 +519,9 @@ To create a scrolling view, **Flutter** uses [`SingleChildScrollView`][].
 In the following example, the function `mockPerson` mocks instances
 of the `Person` class to create the custom `PersonView` widget.
 
-<?code-excerpt "lib/scroll.dart (scroll-example)"?>
+<?code-excerpt "lib/scroll.dart (scroll-example)" replace="/body: //g;"?>
 ```dart dartpad="a75740320989ed04020d95502a0de34e"
-    SingleChildScrollView(
+SingleChildScrollView(
   child: Column(
     children: mockPersons
         .map(
@@ -650,19 +650,19 @@ Flutter names these widgets with the following format: `AnimatedFoo`.
 For example: To rotate a button, use the [`AnimatedRotation`][] class.
 This animates the `Transform.rotate` widget.
 
-<?code-excerpt "lib/simple_animation.dart (animated-button)"?>
+<?code-excerpt "lib/simple_animation.dart (animated-button)" replace="/child: //g;"?>
 ```dart dartpad="0ad0572cbf98ead2e5d31a2a94430f19"
-    AnimatedRotation(
+AnimatedRotation(
   duration: const Duration(seconds: 1),
   turns: turns,
   curve: Curves.easeIn,
-  child: TextButton(
+  TextButton(
       onPressed: () {
         setState(() {
           turns += .125;
         });
       },
-      child: const Text('Tap me!')),
+      const Text('Tap me!')),
 ),
 ```
 
@@ -692,9 +692,9 @@ with two classes that help you draw:
 
 1. [`CustomPaint`][] that requires a painter:
 
-    <?code-excerpt "lib/canvas.dart (custom-paint)"?>
+    <?code-excerpt "lib/canvas.dart (custom-paint)" replace="/child: //g;"?>
     ```dart dartpad="978d64ee66d54177fb639f8a9f801039"
-        CustomPaint(
+    CustomPaint(
       painter: SignaturePainter(_points),
       size: Size.infinite,
     ),
@@ -797,9 +797,9 @@ call your navigation routes using their names.
    `mockPersons()`. Tapping a person pushes the person's detail page
    to the `Navigator` using `pushNamed()`.
 
-    <?code-excerpt "lib/navigation.dart (list-view)"?>
+    <?code-excerpt "lib/navigation.dart (list-view)" replace="/child: //g;"?>
     ```dart dartpad="d8b22d4dcbefdc8a2e21f1382cf7dc2a"
-        ListView.builder(
+    ListView.builder(
       itemCount: mockPersons.length,
       itemBuilder: (context, index) {
         final person = mockPersons.elementAt(index);
@@ -902,15 +902,15 @@ URL to another application.
 
 In **Flutter**, use the [`url_launcher`][] plugin.
 
-<?code-excerpt "lib/openapp.dart (open-app-example)"?>
+<?code-excerpt "lib/openapp.dart (open-app-example)" replace="/child: //g;"?>
 ```dart dartpad="695beba25fa8120d89c9960cb222e276"
-    CupertinoButton(
+CupertinoButton(
   onPressed: () async {
     await launchUrl(
       Uri.parse('https://google.com'),
     );
   },
-  child: const Text(
+  const Text(
     'Open website',
   ),
 ),
@@ -932,9 +932,9 @@ In **Flutter**, you can control light and dark mode at the app-level.
 To control the brightness mode, use the `theme` property
 of the `App` class:
 
-<?code-excerpt "lib/cupertino_themes.dart (theme)"?>
+<?code-excerpt "lib/cupertino_themes.dart (theme)" replace="/return //g;"?>
 ```dart dartpad="18790cfaa8441085994373a4bc4f46b0"
-    CupertinoApp(
+const CupertinoApp(
   theme: CupertinoThemeData(
     brightness: Brightness.dark,
   ),
@@ -957,9 +957,9 @@ Text("Hello, world!")
 To style text in **Flutter**, add a `TextStyle` widget as the value
 of the `style` parameter of the `Text` widget.
 
-<?code-excerpt "lib/cupertino_themes.dart (styling-text)"?>
+<?code-excerpt "lib/cupertino_themes.dart (styling-text)" replace="/child: //g;"?>
 ```dart dartpad="18790cfaa8441085994373a4bc4f46b0"
-    Text(
+Text(
   'Hello, world!',
   style: TextStyle(
     fontSize: 30,
@@ -1047,15 +1047,15 @@ To add a custom font to your project, follow these steps:
 After you add the font to your project, you can use it as in the
 following example:
 
-<?code-excerpt "lib/stylingbutton.dart (custom-font)"?>
+<?code-excerpt "lib/stylingbutton.dart (custom-font)" replace="/middle: //g;"?>
 ```dart
-        Text(
+Text(
   'Cupertino',
   style: TextStyle(
     fontSize: 40,
     fontFamily: 'BungeeSpice',
   ),
-)
+),
 ```
 
 :::note

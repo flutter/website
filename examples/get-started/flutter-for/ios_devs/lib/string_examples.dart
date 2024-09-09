@@ -11,9 +11,8 @@ class MyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-        // #docregion access-string
-        const Text(Strings.welcomeMessage);
+    // #docregion access-string
+    return const Text(Strings.welcomeMessage);
     // #enddocregion access-string
   }
 }
