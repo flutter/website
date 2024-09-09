@@ -316,7 +316,7 @@ Widget build(BuildContext context) {
 ```
 
 > <i class="material-symbols" aria-hidden="true">star</i> **Checkpoint**:
-> Complete this tutorial which teaches you how to [build a form with validation][].
+> Complete this tutorial to learn how to [build a form with validation][].
 
 > <i class="material-symbols" aria-hidden="true">flutter</i> **Demo**: 
 > [Form app][]
@@ -638,7 +638,7 @@ The  configuration for `Checkbox` and `Switch` contain:
 - a `value` that is `true` or `false`
 - and an `onChanged` callback which is triggered when the user toggles the widget.
 
-### `Checkbox`
+### Checkbox
 {% render docs/code-and-image.md,
 image:"fwe/user-input/checkbox.gif",
 caption: "This figure shows a checkbox being checked and unchecked."
@@ -663,7 +663,7 @@ Widget build(BuildContext context) {
 ```
 " %}
 
-### `Switch`
+### Switch
 {% render docs/code-and-image.md,
 image:"fwe/user-input/Switch.gif",
 caption: "This figure shows a Switch widget that is toggled on and off."
@@ -691,7 +691,7 @@ Widget build(BuildContext context) {
 ```
 " %}
 
-### `Radio`
+### Radio
 A group of `Radio` buttons let the user select between a mutually exclusive
 values. When one radio button in a group is selected, the other radio buttons in
 the group are unselected. 
@@ -771,9 +771,10 @@ class _RadioExampleState extends State<RadioExample> {
 ```
 " %}
 
-#### Bonus: `CheckboxListTile` & `SwitchListTile`
+#### Bonus: CheckboxListTile & SwitchListTile
 
-It's the same checkbox and switch widgets, just with a label. It's convenience widgets for a ListTile with a leading `Switch` and `Checkbox`, similar to the `Radio` example from above.
+These convenience widgets are the same checkbox and switch widgets,
+but support a label (as a `ListTile`).
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/SpecialListTiles.gif",
@@ -832,6 +833,7 @@ Widget build(BuildContext context) {
 
 ## Select a date or time
 
+Widgets are provided so the user can select a date and time.
 There is a set of Dialogs that enable users to select a date or time, as you'll see next. With the exception of differing date types - `DateTime` for dates vs `TimeOfDay` for time -  these dialogs function similarly, you can configure them by [rpvodmg]:
 
 - a default `initialDate` or `initialTime`
@@ -883,7 +885,7 @@ Widget build(BuildContext context) {
 ```
 " %}
 
-### `TimePickerDialog`
+### TimePickerDialog
 `TimePickerDialog` is a dialog that presents a time picker. It can be activated 
 by calling the `showTimePicker()` function. Instead of returning a 
 `Future<DateTime>`, `showTimePicker` instead returns a `Future<TimeOfDay>`. 
