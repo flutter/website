@@ -125,8 +125,8 @@ Widget build(BuildContext context) {
 <br>
 
 > <i class="material-symbols" aria-hidden="true">star</i> **Checkpoint**: 
-> Complete this tutorial that
-> teaches you how to build a "favorite" button: [Add interactivity to your Flutter app][]
+> Complete this tutorial that teaches you how to build a
+> "favorite" button: [Add interactivity to your Flutter app][]
 
 <br>
 
