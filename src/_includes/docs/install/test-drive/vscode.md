@@ -68,7 +68,7 @@ hot reload at this time.
 
 {% capture save_changes -%}
 : invoke **Save All**, or click **Hot Reload**
-{% include docs/install/test-drive/hot-reload-icon.md %}.
+{% render docs/install/test-drive/hot-reload-icon.md %}.
 {% endcapture %}
 
 {% include docs/install/test-drive/try-hot-reload.md save_changes=save_changes ide="VS Code" %}

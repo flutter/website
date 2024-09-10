@@ -65,7 +65,7 @@ uses [Material Components][].
 
 {% capture save_changes -%}
   : invoke **Save All**, or click **Hot Reload**
-  {% include docs/install/test-drive/hot-reload-icon.md %}.
+  {% render docs/install/test-drive/hot-reload-icon.md %}.
 {% endcapture %}
 
 {% capture ide_profile -%}
