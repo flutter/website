@@ -391,8 +391,8 @@ framework then stitches together the renderable objects into a renderable object
 tree.
 
 A widget's build function should be free of side effects. Whenever the function
-is asked to build, the widget should return a new tree of widgets<sup><a
-href="#a1">1</a></sup>, regardless of what the widget previously returned. The
+is asked to build, the widget should return a new tree of widgets[^1],
+regardless of what the widget previously returned. The
 framework does the heavy lifting work to determine which build methods need to
 be called based on the render object tree (described in more detail later). More
 information about this process can be found in the [Inside Flutter
@@ -626,7 +626,7 @@ if (color != null)
 Correspondingly, the `Image` and `Text` widgets might insert child widgets such
 as `RawImage` and `RichText` during the build process. The eventual widget
 hierarchy might therefore be deeper than what the code represents,
-as in this case<sup><a href="#a2">2</a></sup>:
+as in this case[^2]:
 
 ![Render pipeline sequencing
 diagram](/assets/images/docs/arch-overview/widgets.png){:width="35%"}
@@ -938,7 +938,7 @@ Flutter solves this by introducing platform view widgets
 ([`AndroidView`]({{site.api}}/flutter/widgets/AndroidView-class.html)
 and [`UiKitView`]({{site.api}}/flutter/widgets/UiKitView-class.html))
 that let you embed this kind of content on each platform. Platform views can be
-integrated with other Flutter content<sup><a href="#a3">3</a></sup>. Each of
+integrated with other Flutter content[^3]. Each of
 these widgets acts as an intermediary to the underlying operating system. For
 example, on Android, `AndroidView` serves three primary functions:
 
@@ -1042,7 +1042,7 @@ While HTML mode offers the best code size characteristics,
 `CanvasKit` provides the fastest path to the
 browser's graphics stack,
 and offers somewhat higher graphical fidelity with the
-native mobile targets<sup><a href="#a4">4</a></sup>.
+native mobile targets[^4].
 
 The web version of the architectural layer diagram is as follows:
 
@@ -1074,21 +1074,15 @@ For those interested in more information about the internals of Flutter, the
 [Inside Flutter](/resources/inside-flutter) whitepaper
 provides a useful guide to the framework's design philosophy.
 
----
-
-**Footnotes:**
-
-<sup><a id="a1">1</a></sup> While the `build` function returns a fresh tree,
-you only need to return something _different_ if there's some new
-configuration to incorporate. If the configuration is in fact the same, you can
-just return the same widget.
-
-<sup><a id="a2">2</a></sup> This is a slight simplification for ease of
-reading. In practice, the tree might be more complex.
-
-<sup><a id="a3">3</a></sup> There are some limitations with this approach, for
-example, transparency doesn't composite the same way for a platform view as it
-would for other Flutter widgets.
-
-<sup><a id="a4">4</a></sup> One example is shadows, which have to be
-approximated with DOM-equivalent primitives at the cost of some fidelity.
+[^1]: While the `build` function returns a fresh tree,
+  you only need to return something _different_ if
+  there's some new configuration to incorporate.
+  If the configuration is in fact the same,
+  you can just return the same widget.
+[^2]: This is a slight simplification for ease of reading.
+  In practice, the tree might be more complex.
+[^3]: There are some limitations with this approach, for example,
+  transparency doesn't composite the same way for a platform view as
+  it would for other Flutter widgets.
+[^4]: One example is shadows, which have to be approximated with
+  DOM-equivalent primitives at the cost of some fidelity.
