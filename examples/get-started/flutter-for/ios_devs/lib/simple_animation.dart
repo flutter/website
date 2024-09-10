@@ -27,9 +27,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child:
-            // #docregion animated-button
-            AnimatedRotation(
+        // #docregion animated-button
+        child: AnimatedRotation(
           duration: const Duration(seconds: 1),
           turns: turns,
           curve: Curves.easeIn,

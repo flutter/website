@@ -170,7 +170,7 @@ Relevant PRs:
 * Deprecated in [#109817][]
 * Removed in [#139255][]
 
-[`TextButton`]: {{site.api}}/flutter/material/TextTheme-class.html
+[`TextTheme`]: {{site.api}}/flutter/material/TextTheme-class.html
 
 [#109817]: {{site.repo.flutter}}/pull/109817
 [#139255]: {{site.repo.flutter}}/pull/139255
