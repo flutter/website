@@ -37,6 +37,7 @@ create and support additional design languages such as [Fluent UI][], [macOS UI]
 and more. If the existing design system components don't quite fit what you need,
 Flutter lets you build your own custom widgets,
 which you will read about at the end of this section.
+No matter which design system you choose, the principals on this page apply."
 
 > <i class="material-symbols" aria-hidden="true">menu_book</i> **Reference**: 
 > The [widget catalog][] has an inventory of commonly used widgets in the [Material][] and [Cupertino][] libraries.
@@ -158,8 +159,8 @@ alt: 'A GIF of a cursor hihglighting two lines of text from a paragraph.'
 code:"
 ```dart
 @override
-  Widget build(BuildContext context) {
-    return const SelectableText('''
+Widget build(BuildContext context) {
+  return const SelectableText('''
 Two households, both alike in dignity,
 In fair Verona, where we lay our scene,
 From ancient grudge break to new mutiny,
@@ -845,6 +846,7 @@ Widget build(BuildContext context) {
 ## Select a date or time
 
 Widgets are provided so the user can select a date and time.
+
 There is a set of Dialogs that enable users to select a date or time, as you'll see next. With the exception of differing date types - `DateTime` for dates vs `TimeOfDay` for time -  these dialogs function similarly, you can configure them by [rpvodmg]:
 
 - a default `initialDate` or `initialTime`
