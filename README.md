@@ -7,9 +7,6 @@
 The [documentation site][Flutter] for the [Flutter framework][],
 built with [Eleventy][] and hosted on [Firebase][].
 
-[![Build Status][]][Repo on GitHub Actions]
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/flutter/website/badge)](https://deps.dev/project/github/flutter%2Fwebsite)
-
 [Flutter framework]: https://flutter.dev
 [Eleventy]: https://11ty.dev/
 [Firebase]: https://firebase.google.com/
