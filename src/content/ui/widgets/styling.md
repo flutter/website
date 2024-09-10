@@ -4,4 +4,4 @@ short-title: Styling
 description: A catalog of Flutter's theming and responsiveness widgets.
 ---
 
-{% include docs/catalogpage.html category="Styling" %}
+{% render docs/catalog-page.md, categoryName:"Styling", catalog:catalog %}

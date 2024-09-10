@@ -4,4 +4,4 @@ short-title: Async
 description: A catalog of Flutter widgets for handling asynchronous code.
 ---
 
-{% include docs/catalogpage.html category="Async" %}
+{% render docs/catalog-page.md, categoryName:"Async", catalog:catalog %}

@@ -25,4 +25,4 @@ Also check out the [Material 3 widget catalog][].
 [Migrate to Material 3]: /release/breaking-changes/material-3-migration
 [Material 3 widget catalog]: /ui/widgets/material
 
-{% include docs/catalogpage.html category="Material 2 components" %}
+{% render docs/catalog-page.md, categoryName:"Material 2 components", catalog:catalog %}

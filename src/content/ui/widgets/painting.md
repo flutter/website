@@ -5,4 +5,4 @@ description: >
   A catalog of Flutter's widgets that provide effects and custom painting.
 ---
 
-{% include docs/catalogpage.html category="Painting and effects" %}
+{% render docs/catalog-page.md, categoryName:"Painting and effects", catalog:catalog %}

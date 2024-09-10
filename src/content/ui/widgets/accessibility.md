@@ -4,4 +4,4 @@ short-title: Accessibility
 description: A catalog of Flutter's accessibility widgets.
 ---
 
-{% include docs/catalogpage.html category="Accessibility" %}
+{% render docs/catalog-page.md, categoryName:"Accessibility", catalog:catalog %}
