@@ -28,7 +28,7 @@
       object-fit: contain;
     }
 
-    > img, > p > img {
+    > img, > p > img:not(.text-icon) {
       margin-bottom: 1rem;
     }
   }
