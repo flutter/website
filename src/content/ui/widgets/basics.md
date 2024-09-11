@@ -4,4 +4,4 @@ short-title: Basics
 description: A catalog of Flutter's basic widgets.
 ---
 
-{% include docs/catalogpage.html category="Basics" %}
+{% render docs/catalog-page.md, categoryName:"Basics", catalog:catalog %}

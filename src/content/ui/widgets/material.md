@@ -27,7 +27,7 @@ check out the [Material 3 demo][] web app.
 [Migrate to Material 3]: /release/breaking-changes/material-3-migration
 [Material 3 demo]: https://flutter.github.io/samples/web/material_3_demo/
 
-{% include docs/catalogpage-material.html category="Material components" %}
+{% render docs/catalog-page-material.md, categoryName:"Material components", catalog:catalog %}
 
 Find more widgets in the [Material 2 widget catalog][]
 and other categories of the [widget catalog][].

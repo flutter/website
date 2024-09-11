@@ -40,11 +40,13 @@ picture {
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  grid-auto-rows: 1fr;
   gap: 1rem;
   margin-bottom: 1rem;
 
   .card {
     overflow: hidden;
+    max-width: 50vw;
   }
 
   .card-body img {
