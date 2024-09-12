@@ -31,7 +31,8 @@ or chats in these channels.
 ## I want professional services support with Flutter
 
 Check out the
-[Flutter consultants]({{site.main-repo}}/consultants).
+[Flutter consultants]({{site.main-repo}}/consultants)
+directory.
 
 ## I want support from a Flutter expert
 
