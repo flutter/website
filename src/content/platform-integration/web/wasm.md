@@ -52,7 +52,7 @@ To experiment with Wasm in your own apps, use the following steps.
 
 :::tip Version note
 Flutter 3.24 or newer supports running a web app with Wasm using
-`flutter run web --wasm`.
+`flutter run --wasm`.
 :::
 
 To ensure you are running the latest version, run `flutter upgrade`.
