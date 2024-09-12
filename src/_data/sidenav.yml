@@ -9,6 +9,8 @@
     - title: Learn more
       permalink: /get-started/learn-more
     - divider
+    - title: Where to get Flutter support
+      permalink: /resources/support
     - title: From another platform?
       permalink: /get-started/flutter-for
       children:
