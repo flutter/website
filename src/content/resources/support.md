@@ -24,11 +24,14 @@ Note that filing bugs is _not_ an efficient way to get tech support.
 Your best bet is to consult
 [Stack Overflow](https://stackoverflow.com/questions/tagged/flutter),
 or [Discord](https://discord.com/invite/rflutterdev).
+While the community is active in these channels,
+there is no official SLA on responding to new posts
+or chats in these channels.
 
 ### I want professional services support with Flutter
 
-Check out some
-[Flutter consultants]({{site.main-repo}}/consultants)
+Check out the
+[Flutter consultants]({{site.main-repo}}/consultants).
 
 ### I want support from a Flutter expert
 
@@ -47,8 +50,6 @@ they are a great resource.
 As an open source project,
 we're not set up to offer paid support.
 We recommend checking out the
-Flutter experts](https://developers.google.com/community/experts/directory?specialization=dart%2Cflutter)
-and the
 [consultancy program]({{site.main-repo}}/consultants).
 
 {% comment %}
