@@ -51,7 +51,7 @@ they are a great resource.
 As an open source project,
 we're not set up to offer paid support.
 We recommend checking out the
-[consultancy program]({{site.main-repo}}/consultants).
+[consultancy program]({{site.main-url}}/consultants).
 
 {% comment %}
 Add this when Crag's page is done...
