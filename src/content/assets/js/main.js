@@ -176,10 +176,12 @@ function initCookieNotice() {
   const existingDateString = window.localStorage.getItem(cookieKey);
   if (existingDateString) {
     const existingDate = parseInt(existingDateString);
-    const halfYearMs = 1000 * 60 * 60 * 24 * 180;
-    // If the last consent is less than 180 days old, don't show the notice.
-    if (currentDate - existingDate < halfYearMs) {
-      return;
+    if (Number.isInteger(existingDate)) {
+      const halfYearMs = 1000 * 60 * 60 * 24 * 180;
+      // If the last consent is less than 180 days old, don't show the notice.
+      if (currentDate - existingDate < halfYearMs) {
+        return;
+      }
     }
   }
 
