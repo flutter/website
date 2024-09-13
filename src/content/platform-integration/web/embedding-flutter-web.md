@@ -7,14 +7,15 @@ description: Learn the different ways to embed Flutter views into web content.
 Flutter views and web content can be composed to produce a web application
 in different ways. Choose one of the following depending on your use-case:
 
-* A Flutter view controls the full page (full-screen mode)
+* A Flutter view controls the full page (full page mode)
 * Adding Flutter views to an existing web application (embedded mode)
 
-## Full-screen mode
+## Full page mode
 
-In full screen mode, the Flutter web application takes control of the whole
+In full page mode, the Flutter web application takes control of the whole
 browser window and covers its viewport completely when rendering. This is the
-default embedding mode for Flutter, and no additional configuration is needed.
+default embedding mode for new Flutter web projects, and no additional
+configuration is needed.
 
 ```html highlightLines=6
 <!DOCTYPE html>
@@ -28,7 +29,7 @@ default embedding mode for Flutter, and no additional configuration is needed.
 ```
 
 When Flutter web is bootstrapped without referencing `multiViewEnabled` or a 
-`hostElement`, it uses full-screen mode.
+`hostElement`, it uses full page mode.
 
 To learn more about the `flutter_bootstrap.js` file,
 check out [Customize app initialization][].
@@ -37,7 +38,7 @@ check out [Customize app initialization][].
 
 ### `iframe` embedding
 
-Full-screen mode is recommended when embedding a Flutter web application in an
+Full page mode is recommended when embedding a Flutter web application through an
 `iframe`. The page that embeds the `iframe` can size and position it as needed,
 and Flutter will fill it completely.
 
