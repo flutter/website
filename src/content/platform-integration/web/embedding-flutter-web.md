@@ -213,14 +213,14 @@ the [Multi View Playground repo][] that was used during development.
 
 Flutter's [`runApp` function][] assumes that there's at least one view available
 to render into (the `implicitView`), however in Flutter web's multi-view mode,
-this is no longer true, and it'll start failing with `Unexpected null value`
-errors.
+the `implicitView` doesn't exist anymore, so `runApp` will start failing with
+`Unexpected null value` errors.
 
-In multi-view mode, your Dart main must call the [`runWidget` function] instead,
-which doesn't require an `implicitView`, and will only render into the views
-that have been explicitly added into your app.
+In multi-view mode, your `main.dart` must call the [`runWidget` function][]
+instead. It doesn't require an `implicitView`, and will only render into the
+views that have been explicitly added into your app.
 
-The following example uses the `MultiViewApp` described right above to render
+The following example uses the `MultiViewApp` described above to render
 copies of the `MyApp()` widget on every `FlutterView` available:
 
 ```dart highlightLines=3
@@ -235,7 +235,7 @@ void main() {
 ```
 
 [`runApp` function]: {{site.api}}/flutter/widgets/runApp.html
-[`runWidget` function] {{site.api}}/flutter/widgets/runWidget.html
+[`runWidget` function]: {{site.api}}/flutter/widgets/runWidget.html
 
 ### Identifying views
 
@@ -253,6 +253,19 @@ class SomeWidget extends StatelessWidget {
     // Retrieve the `viewId` where this Widget is being built:
     final int viewId = View.of(context).viewId;
     // ...
+```
+
+Similarly, from the `viewBuilder` method of the `MultiViewApp`, the `viewId`
+can be retrieved like this:
+
+```dart highlightLines=4
+MultiViewApp(
+  viewBuilder: (BuildContext context) {
+    // Retrieve the `viewId` where this Widget is being built:
+    final int viewId = View.of(context).viewId;
+    // Decide what to render based on `viewId`...
+  },
+)
 ```
 
 Read more about the [`View.of` constructor][].
