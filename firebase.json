@@ -713,6 +713,7 @@
       { "source": "/to/resolution-aware-images", "destination": "/ui/assets/assets-and-images#resolution-aware", "type": 301 },
       { "source": "/to/review-gradle-config", "destination": "/deployment/android#review-the-gradle-build-configuration", "type": 301 },
       { "source": "/to/save-layer-perf", "destination": "/perf/best-practices#use-savelayer-thoughtfully", "type": 301 },
+      { "source": "/to/spm", "destination": "/packages-and-plugins/swift-package-manager", "type": 301 },
       { "source": "/to/state-management-sample", "destination": "/data-and-backend/state-mgmt/simple", "type": 301 },
       { "source": "/to/switch-flutter-version", "destination": "/release/upgrade/#switching-to-a-specific-flutter-version", "type": 301 },
       { "source": "/to/track-widget-creation", "destination": "/tools/devtools/inspector#track-widget-creation", "type": 301 },
