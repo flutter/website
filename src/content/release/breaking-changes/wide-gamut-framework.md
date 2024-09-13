@@ -141,6 +141,21 @@ final x = color.withOpacity(0.0);
 final x = color.withValues(alpha: 0.0);
 ```
 
+### Equality
+
+Once `Color` stores its color components as floating-point numbers,
+equality works slightly differently.
+When calculating colors there might be tiny
+difference in values that could be considered equal.
+To accommodate this use the [`closeTo`][] matcher or the [`isColorSameAs`][] matcher.
+
+```dart
+// Before
+expect(calculateColor(), const Color(0xffff00ff));
+// After
+expect(calculateColor(), isSameColorAs(const Color(0xffff00ff)));
+```
+
 ## Timeline
 
 ### Phase 1 - New API introduction, old API deprecation
@@ -168,3 +183,5 @@ Relevant PRs:
 [Impeller]: {{site.api}}/perf/impeller
 [wide gamut color spaces]: https://en.wikipedia.org/wiki/RGB_color_spaces
 [inheritance to composition]: https://en.wikipedia.org/wiki/Composition_over_inheritance
+[`closeTo`]: {{site.api}}/documentation/matcher/latest/matcher/closeTo.html
+[`isColorSameAs`]: {{site.api}}/flutter/flutter_test/isSameColorAs.html
