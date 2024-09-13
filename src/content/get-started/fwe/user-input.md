@@ -359,9 +359,10 @@ Widget build(BuildContext context) {
 
 <span class="material-symbols" aria-hidden="true">menu_book</span> **API Docs**: [`TextField`][] • [`RichText`][] • [`SelectableText`][] • [`Form`][]
 
-[Build a form with validation]: /cookbook/forms/validation[`Form`]: {{site.api}}/flutter/widgets/Form-class.html
+[Build a form with validation]: /cookbook/forms/validation
 [Form app]: https://flutter.github.io/samples/web/form_app/
 [Form app code]: {{site.github}}/flutter/samples/tree/main/form_app
+[`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [`TextField`]: {{site.api}}/flutter/material/TextField-class.html
 [`RichText`]: {{site.api}}/flutter/widgets/RichText-class.html
 [`SelectableText`]: {{site.api}}/flutter/material/SelectableText-class.html
