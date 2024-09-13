@@ -84,6 +84,7 @@
       { "source": "/sdk-archive", "destination": "/release/archive", "type": 301 },
       { "source": "/setup-:os*", "destination": "/get-started/install/:os*", "type": 301 },
       { "source": "/setup", "destination": "/get-started/install", "type": 301 },
+      { "source": "/spm", "destination": "/packages-and-plugins/swift-package-manager", "type": 301 },
       { "source": "/technical-overview", "destination": "/resources/architectural-overview", "type": 301 },
       { "source": "/text-input", "destination": "/cookbook/forms/text-input", "type": 301 },
       { "source": "/ui/widgets-intro", "destination": "/ui", "type": 301 },
