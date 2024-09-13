@@ -24,8 +24,7 @@ for enabling user interaction within your app.
 
 Some user input mechanisms, like [scrolling][],
 have already been covered in [Layouts][]. 
-
-### A note about design systems
+:::secondary About design system support
 
 Flutter ships with prebuilt components for two design systems as part of the SDK, 
 [Material][] and [Cupertino][].
@@ -37,7 +36,9 @@ create and support additional design languages such as [Fluent UI][], [macOS UI]
 and more. If the existing design system components don't quite fit what you need,
 Flutter lets you build your own custom widgets,
 which is covered at the end of this section.
-No matter which design system you choose, the principals on this page apply."
+No matter which design system you choose, the principals on this page apply.
+
+:::
 
 > <i class="material-symbols" aria-hidden="true">menu_book</i> **Reference**: 
 > The [widget catalog][] has an inventory of commonly used widgets in the [Material][] and [Cupertino][] libraries.
@@ -93,7 +94,7 @@ You can style a button based on its state using `WidgetStateProperty`. -->
 If the callback is  `null`,
 the button is disabled and nothing happens when a user presses the button.
 
-- The button's `child` is displayed within the button's content area,
+- The button's `child`, which is displayed within the button's content area,
 is usually text or an icon that indicates the button's purpose. 
 that's usually text or an icon that indicates the button's purpose. 
 
@@ -139,7 +140,7 @@ Widget build(BuildContext context) {
 [`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
 [`FilledButton`]: {{site.api}}/flutter/material/FilledButton-class.html
 [`FloatingActionButton`]: {{site.api}}/flutter/material/FloatingActionButton-class.html
-[FloatingActionButton (Widget of the Week)]: {{site.youtube-site}}/2uaoEDOgk_I?si=MQZcSp24oRaS_kiY
+[FloatingActionButton (Widget of the Week)]: {{site.youtube-site}}/watch/2uaoEDOgk_I?si=MQZcSp24oRaS_kiY
 [`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
 [`OutlinedButton`]: {{site.api}}/flutter/material/OutlinedButton-class.html
 [`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
@@ -222,19 +223,19 @@ few of the highlights:
 - `InputDecoration` determines the text field's appearance,
   such as color and border.
 - `controller`: A `TextEditingController` controls the text being edited.
-  Why would you need a controller? By default,
-  your app's users can type into the text field,
-  but if you want to programmatically control the `TextField`
-  and do something like clearing its value, you'll need a `TextEditingController`.
-- `onChanged`: This callback function is triggered when the  user changes the
-  text field's value, such as when inserting or removing text.
+  Why might you need a controller? 
+  By default, your app's users can type
+  into the text field, but if you want to programmatically control the `TextField`
+  and clear its value, for example, you'll need a `TextEditingController`.
+- `onChanged`: This callback function triggers when the user changes the
+text field's value, such as when inserting or removing text.
 - `onSubmitted`:  This callback is triggered when the user indicates that
-  they are done editing the text in the field. 
-  For example, by tapping the "enter" key when the text field is in focus. 
+  they are done editing the text in the field;
+  for example, by tapping the "enter" key when the text field is in focus. 
 
-Other configurable, properties such as `obscureText`,
-convert each displayed character into a circle and
-tags them as `readOnly` to prevent the user from changing the text.
+The class supports other configurable properties, such as `obscureText` that
+turns each letter into a `readOnly` circle as its entered and `readOnly` which
+prevents the user from changing the text.
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/TextField.gif",
@@ -578,7 +579,8 @@ Widget build(BuildContext context) {
 > [DropdownMenu (Widget of the Week)][]
 
 ### Slider
-The `Slider` widget lets a user select from a number from a range of values, such as a a volume bar or video scrubber. 
+The `Slider` widget lets a user adjust a value by moving an indicator,
+such as a volume bar. 
 
 Configuration parameters for the `Slider` widget:
 - `value` represents the slider's current value
@@ -620,7 +622,7 @@ Widget build(BuildContext context) {
 > [Slider, RangeSlider, CupertinoSlider (Widget of the Week)][]
 
 [`DropdownMenu`]: {{site.api}}/flutter/material/DropdownMenu-class.html
-[DropdownMenu (Widget of the Week)]: {{site.youtube-site}}/giV9AbM2gd8?si=E23hjg72cjMTe_mz
+[DropdownMenu (Widget of the Week)]: {{site.youtube-site}}/watch?v=giV9AbM2gd8?si=E23hjg72cjMTe_mz
 [`SegmentedButton`]: {{site.api}}/flutter/material/SegmentedButton-class.html
 [`Slider`]: {{site.api}}/flutter/material/Slider-class.html
 [Slider, RangeSlider, CupertinoSlider (Widget of the Week)]: {{site.youtube-site}}/watch?v=ufb4gIPDmEss
@@ -1019,7 +1021,7 @@ Widget build(BuildContext context) {
 <br>
 
 <i class="material-symbols" aria-hidden="true">menu_book</i> **API Docs:**
-[`Dismissible`][] • [pkg: `flutter_slidable`][]
+[`Dismissible`][]
 
 ## Looking for more widgets?
 
@@ -1034,8 +1036,8 @@ Check out the [Material Widget library][] and
 
 If the Material and Cupertino libraries don't have a widget that does what you need,
 check out [pub.dev][] to find Flutter & Dart community-owned and maintained packages.
-For example, [pkg: `flutter_slidable`][] provides a `Slidable` widget that is a fancier
-than the `Dismissible` widget described in the previous section.
+For example, [pkg: `flutter_slidable`][] provides a `Slidable` widget that is more
+customizable than the `Dismissible` widget described in the previous section.
 
 > <i class="material-symbols" aria-hidden="true">slideshow</i> **Video**: 
 > [flutter_slidable (Package of the Week)][] 
@@ -1099,7 +1101,7 @@ These tutorials walk you through writing tests that simulate user interactions i
 [GestureArena (Decoding Flutter)]: {{site.youtube-site}}/watch?v=Q85LBtBdi0U
 [GestureDetector (Widget of the Week)]: {{site.youtube-site}}/watch?v=WhVXkCFPmK4
 [Handle taps]: /cookbook/gestures/handling-taps
-[Semantics (Flutter Widget of the Week)]: {{site.youtube-site}}/NvtMt_DtFrQ?si=o79BqAg9NAl8EE8_
+[Semantics (Flutter Widget of the Week)]: {{site.youtube-site}}/watch?v=NvtMt_DtFrQ?si=o79BqAg9NAl8EE8_
 [Tap, drag, and enter text]: /cookbook/testing/widget/tap-drag
 [Taps, drags, and other gestures]: /ui/interactivity/gestures#gestures
 
@@ -1135,7 +1137,7 @@ and other networking features.
 [`showTimePicker`]: {{site.api}}/flutter/material/showTimePicker.html
 
 [`Dismissible`]: {{site.api}}/flutter/widgets/Dismissible-class.html
-[Dismissible (Widget of the Week)]: {{site.youtube-site}}/iEMgjrfuc58?si=f0S7IdaA9PIWIYvl
+[Dismissible (Widget of the Week)]: {{site.youtube-site}}/watch?v=iEMgjrfuc58?si=f0S7IdaA9PIWIYvl
 [Implement swipe to dismiss]: /cookbook/gestures/dismissible
 [pkg: `flutter_slidable`]: {{site.pub}}/packages/flutter_slidable
 [flutter_slidable (Package of the Week)]: {{site.youtube-site}}/watch?v=QFcFEpFmNJ8
