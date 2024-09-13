@@ -36,14 +36,14 @@ The Flutter community on [pub.dev][], the package repository for Dart and Flutte
 create and support additional design languages such as [Fluent UI][], [macOS UI][],
 and more. If the existing design system components don't quite fit what you need,
 Flutter lets you build your own custom widgets,
-which you will read about at the end of this section.
+which is covered at the end of this section.
 No matter which design system you choose, the principals on this page apply."
 
 > <i class="material-symbols" aria-hidden="true">menu_book</i> **Reference**: 
 > The [widget catalog][] has an inventory of commonly used widgets in the [Material][] and [Cupertino][] libraries.
 
 Next, we'll cover a few of the Material widgets that support common
-use cases for user input in your Flutter app. 
+use cases for handling user input in your Flutter app. 
 
 [pub.dev]: {{site.pub}}
 [Layouts]: /get-started/fwe/layout
