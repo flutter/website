@@ -7,8 +7,11 @@ description: Learn the different ways to embed Flutter views into web content.
 Flutter views and web content can be composed to produce a web application
 in different ways. Choose one of the following depending on your use-case:
 
-* A Flutter view controls the full page (full page mode)
-* Adding Flutter views to an existing web application (embedded mode)
+* A Flutter view controls the full page ([full page mode][])
+* Adding Flutter views to an existing web application ([embedded mode][])
+
+[full page mode]: #full-page-mode
+[embedded mode]: #embedded-mode
 
 ## Full page mode
 
