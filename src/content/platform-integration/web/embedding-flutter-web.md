@@ -209,6 +209,34 @@ the [Multi View Playground repo][] that was used during development.
 [`WidgetsBinding` mixin]: {{site.api}}/flutter/widgets/WidgetsBinding-mixin.html
 [`WidgetBuilder` function]: {{site.api}}/flutter/widgets/WidgetBuilder.html
 
+### Replace `runApp` by `runWidget` in Dart
+
+Flutter's [`runApp` function][] assumes that there's at least one view available
+to render into (the `implicitView`), however in Flutter web's multi-view mode,
+this is no longer true, and it'll start failing with `Unexpected null value`
+errors.
+
+In multi-view mode, your Dart main must call the [`runWidget` function] instead,
+which doesn't require an `implicitView`, and will only render into the views
+that have been explicitly added into your app.
+
+The following example uses the `MultiViewApp` described right above to render
+copies of the `MyApp()` widget on every `FlutterView` available:
+
+```dart highlightLines=3
+// main.dart
+void main() {
+  runWidget(
+    MultiViewApp(
+      viewBuilder: (BuildContext context) => const MyApp(),
+    ),
+  );
+}
+```
+
+[`runApp` function]: {{site.api}}/flutter/widgets/runApp.html
+[`runWidget` function] {{site.api}}/flutter/widgets/runWidget.html
+
 ### Identifying views
 
 Each `FlutterView` has an identifier assigned by Flutter when
