@@ -95,8 +95,7 @@ If the callback is  `null`,
 the button is disabled and nothing happens when a user presses the button.
 
 - The button's `child`, which is displayed within the button's content area,
-is usually text or an icon that indicates the button's purpose. 
-that's usually text or an icon that indicates the button's purpose. 
+is usually text or an icon that indicates the button's purpose.
 
 - Finally, a button's `style` controls its appearance: color, border, and so on.
 
