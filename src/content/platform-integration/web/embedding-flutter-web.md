@@ -1,20 +1,25 @@
 ---
-title: Embedding Flutter on the web
-short-title: Embedding Flutter web
+title: Adding Flutter to any web application
+short-title: Add Flutter to any web app
 description: Learn the different ways to embed Flutter views into web content.
 ---
 
 Flutter views and web content can be composed to produce a web application
 in different ways. Choose one of the following depending on your use-case:
 
-* A Flutter view controls the full page (full-screen mode)
-* Adding Flutter views to an existing web application (embedded mode)
+* A Flutter view controls the full page ([full page mode][])
+* Adding Flutter views to an existing web application ([embedded mode][])
 
-## Full-screen mode
+[full page mode]: #full-page-mode
+[embedded mode]: #embedded-mode
 
-In full screen mode, the Flutter web application takes control of the whole
-browser window and covers its viewport completely when rendering. This is the
-default embedding mode for Flutter, and no additional configuration is needed.
+## Full page mode
+
+In full page mode, the Flutter web application takes control of the whole
+browser window and covers its viewport completely when rendering.
+
+This is the default embedding mode for new Flutter web projects, and no
+additional configuration is needed.
 
 ```html highlightLines=6
 <!DOCTYPE html>
@@ -27,8 +32,8 @@ default embedding mode for Flutter, and no additional configuration is needed.
 </html>
 ```
 
-When Flutter web is bootstrapped without referencing `multiViewEnabled` or a 
-`hostElement`, it uses full-screen mode.
+When Flutter web is launched without referencing `multiViewEnabled` or a
+`hostElement`, it uses full page mode.
 
 To learn more about the `flutter_bootstrap.js` file,
 check out [Customize app initialization][].
@@ -37,7 +42,7 @@ check out [Customize app initialization][].
 
 ### `iframe` embedding
 
-Full-screen mode is recommended when embedding a Flutter web application in an
+Full page mode is recommended when embedding a Flutter web application through an
 `iframe`. The page that embeds the `iframe` can size and position it as needed,
 and Flutter will fill it completely.
 
@@ -59,9 +64,9 @@ mode" (or "multi-view").
 In this mode:
 
 * A Flutter web application can launch, but doesn't render until the first
-"view" is added, with `addView`.
+  "view" is added, with `addView`.
 * The host application can add or remove views from the embedded Flutter web
-   application.
+  application.
 * The Flutter application is notified when views are added or removed,
   so it can adjust its widgets accordingly.
 
@@ -97,7 +102,7 @@ let viewId = app.addView({
 });
 
 // Removing viewId...
-let viewConfig = flutterApp.removeView(viewId);
+let viewConfig = app.removeView(viewId);
 ```
 
 ### Handling view changes from Dart
@@ -205,6 +210,34 @@ the [Multi View Playground repo][] that was used during development.
 [`WidgetsBinding` mixin]: {{site.api}}/flutter/widgets/WidgetsBinding-mixin.html
 [`WidgetBuilder` function]: {{site.api}}/flutter/widgets/WidgetBuilder.html
 
+### Replace `runApp` by `runWidget` in Dart
+
+Flutter's [`runApp` function][] assumes that there's at least one view available
+to render into (the `implicitView`), however in Flutter web's multi-view mode,
+the `implicitView` doesn't exist anymore, so `runApp` will start failing with
+`Unexpected null value` errors.
+
+In multi-view mode, your `main.dart` must call the [`runWidget` function][]
+instead. It doesn't require an `implicitView`, and will only render into the
+views that have been explicitly added into your app.
+
+The following example uses the `MultiViewApp` described above to render
+copies of the `MyApp()` widget on every `FlutterView` available:
+
+```dart highlightLines=3
+// main.dart
+void main() {
+  runWidget(
+    MultiViewApp(
+      viewBuilder: (BuildContext context) => const MyApp(),
+    ),
+  );
+}
+```
+
+[`runApp` function]: {{site.api}}/flutter/widgets/runApp.html
+[`runWidget` function]: {{site.api}}/flutter/widgets/runWidget.html
+
 ### Identifying views
 
 Each `FlutterView` has an identifier assigned by Flutter when
@@ -221,6 +254,19 @@ class SomeWidget extends StatelessWidget {
     // Retrieve the `viewId` where this Widget is being built:
     final int viewId = View.of(context).viewId;
     // ...
+```
+
+Similarly, from the `viewBuilder` method of the `MultiViewApp`, the `viewId`
+can be retrieved like this:
+
+```dart highlightLines=4
+MultiViewApp(
+  viewBuilder: (BuildContext context) {
+    // Retrieve the `viewId` where this Widget is being built:
+    final int viewId = View.of(context).viewId;
+    // Decide what to render based on `viewId`...
+  },
+)
 ```
 
 Read more about the [`View.of` constructor][].
