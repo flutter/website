@@ -11,7 +11,7 @@ next:
 
 Now that you know how to manage state in your
 Flutter app, how can you let users interact
-with your app and change its state? 
+with your app and change its state?
 
 ## Introduction to handling user input
 
@@ -20,16 +20,16 @@ there are many different ways for users
 to interact with a Flutter app.
 The resources in this section introduce
 you to some of the common widgets used
-for enabling user interaction within your app. 
+for enabling user interaction within your app.
 
 Some user input mechanisms, like [scrolling][],
 have already been covered in [Layouts][].
 
 :::secondary About design system support
-Flutter ships with prebuilt components for two design systems as part of the SDK, 
+Flutter ships with prebuilt components for two design systems as part of the SDK,
 [Material][] and [Cupertino][].
-For educational purposes, this page focuses on Material widgets, components that 
-are stylized according to the [Material 3 design language][] specifications. 
+For educational purposes, this page focuses on Material widgets, components that
+are stylized according to the [Material 3 design language][] specifications.
 
 The Flutter community on [pub.dev][], the package repository for Dart and Flutter,
 create and support additional design languages such as [Fluent UI][], [macOS UI][],
@@ -43,7 +43,7 @@ No matter which design system you choose, the principals on this page apply.
 > The [widget catalog][] has an inventory of commonly used widgets in the [Material][] and [Cupertino][] libraries.
 
 Next, we'll cover a few of the Material widgets that support common
-use cases for handling user input in your Flutter app. 
+use cases for handling user input in your Flutter app.
 
 [scrolling]: /get-started/fwe/layout#scrolling-widgets
 [pub.dev]: {{site.pub}}
@@ -67,8 +67,8 @@ but styled differently for various use cases, including:
   dimension to otherwise mostly flat layouts.
 - `FilledButton`: A filled button that should be used for
   important, final actions that complete a flow,
-  like **Save**, **Join now**, or **Confirm**. 
-- `Tonal Button`:  A middle ground button between
+  like **Save**, **Join now**, or **Confirm**.
+- `Tonal Button`: A middle ground button between
   `FilledButton` and `OutlinedButton`.
   They’re useful in contexts where a lower-priority button requires more
   emphasis than an outline, like **Next**.
@@ -157,11 +157,11 @@ Widget build(BuildContext context) {
 
 ## Text
 
-Several widgets support text input. 
+Several widgets support text input.
 
 ### `SelectableText`
 
-Flutter's `Text` widget displays text on the screen, 
+Flutter's `Text` widget displays text on the screen,
 but doesn't allow users to highlight or copy the text.
 `SelectableText` displays a string of _user-selectable_ text.
 
@@ -193,7 +193,7 @@ From forth the fatal loins of these two foes''');
 `RichText` lets you display strings of rich text in your app.
 `TextSpan`, similar to `RichText`, allows you to display parts of text with
 different text styles. It's not for handling user input,
-but is useful if you're allowing users edit and format text. 
+but is useful if you're allowing users edit and format text.
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/RichText.png",
@@ -232,8 +232,8 @@ Widget build(BuildContext context) {
 
 ### `TextField`
 
-A `TextField` lets users enter text in text box using a hardware or onscreen
-keyboard. 
+A `TextField` lets users enter text in text box using a hardware or
+onscreen keyboard.
 
 `TextField`s have many different properties and configurations.
 A few of the highlights:
@@ -241,7 +241,7 @@ A few of the highlights:
 - `InputDecoration` determines the text field's appearance,
   such as color and border.
 - `controller`: A `TextEditingController` controls the text being edited.
-  Why might you need a controller? 
+  Why might you need a controller?
   By default, your app's users can type
   into the text field, but if you want to programmatically control the `TextField`
   and clear its value, for example, you'll need a `TextEditingController`.
@@ -249,7 +249,7 @@ A few of the highlights:
   the text field's value, such as when inserting or removing text.
 - `onSubmitted`: This callback is triggered when the user indicates that
   they are done editing the text in the field;
-  for example, by tapping the "enter" key when the text field is in focus. 
+  for example, by tapping the "enter" key when the text field is in focus.
 
 The class supports other configurable properties, such as
 `obscureText` that turns each letter into a `readOnly` circle as its entered and
@@ -293,15 +293,15 @@ Widget build(BuildContext context) {
 ### Form
 
 `Form` is an optional container for grouping together multiple
-form field widgets, such as `TextField`. 
+form field widgets, such as `TextField`.
 
 Each individual form field should be wrapped in a `FormField`
 widget with the `Form` widget as a common ancestor.
 Convenience widgets exist that pre-wrap form field widgets in a
 `FormField` for you.
-For example, the `Form` widget version of `TextField` is `TextFormField`. 
+For example, the `Form` widget version of `TextField` is `TextFormField`.
 
-Using a `Form` provides access to a `FormState`, 
+Using a `Form` provides access to a `FormState`,
 which lets you save, reset, and validate each `FormField`
 that descends from this `Form`.
 You can also provide a `GlobalKey` to identify a specific form,
@@ -373,7 +373,7 @@ Provide a way to users to select from several options.
 ### SegmentedButton
 
 `SegmentedButton` allows users to select from a
-minimal group of 2-5 items. 
+minimal group of 2-5 items.
 
 The data type, `<T>`, can be a built-in type such as
 `int`, `String`, `bool` or an enum.
@@ -381,7 +381,7 @@ A `SegmentedButton` has a few relevant properties:
 
 - `segments`, a list of `ButtonSegment`s, where each represents a "segment"
    or option that the user can select.
-   Visually, each `ButtonSegment` can have an icon, text label, or both. 
+   Visually, each `ButtonSegment` can have an icon, text label, or both.
 
 - `multiSelectionEnabled` indicates whether the user is allowed
    to select multiple options. This property defaults to false.
@@ -400,10 +400,10 @@ A `SegmentedButton` has a few relevant properties:
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/segmented-button.gif",
-caption: "This figure shows a SegmentedButton, each segment with an icon and 
+caption: "This figure shows a SegmentedButton, each segment with an icon and
 text representing its value."
-alt: "A GIF of a SegmentedButton with 4 segments: Day, Week, Month, and Year. 
-Each has a calendar icon to represent its value and a text label. 
+alt: "A GIF of a SegmentedButton with 4 segments: Day, Week, Month, and Year.
+Each has a calendar icon to represent its value and a text label.
 Day is first selected, then week and month, then year."
 code:"
 
@@ -483,7 +483,7 @@ leading profile image and content text."
 alt: "A screenshot of 4 Chips split over two rows with a leading circular
 profile image with content text."
 code:"
-```dart 
+```dart
 @override
 Widget build(BuildContext context) {
   return const SizedBox(
@@ -531,7 +531,7 @@ Widget build(BuildContext context) {
 
 A `DropdownMenu` allows users to select a choice from a menu
 of options and places the selected text into a `TextField`.
-It also allows users to filter the menu items based on the text input. 
+It also allows users to filter the menu items based on the text input.
 
 Configuration parameters include the following:
 
@@ -540,7 +540,7 @@ Configuration parameters include the following:
   The menu might contain information such as a text label, and
   a leading or trailing icon.
   (This is also the only required parameter.)
-- `TextEditingController` allows programmatically controlling the `TextField`. 
+- `TextEditingController` allows programmatically controlling the `TextField`.
 - The `onSelected` callback triggers when the user selects an option.
 - `initialSelection` allows you to configure the default value.
 - Additional parameters are also available for
@@ -548,10 +548,10 @@ Configuration parameters include the following:
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/dropdownmenu.gif",
-caption: "This figure shows a DropdownMenu widget with 5 value options. Each 
+caption: "This figure shows a DropdownMenu widget with 5 value options. Each
 option's text color is styled to represent the color value."
-alt: "A GIF the DropdownMenu widget that is selected, it displays 5 options: 
-Blue, Pink, Green, Orange, and Grey. The option text is displayed in the color 
+alt: "A GIF the DropdownMenu widget that is selected, it displays 5 options:
+Blue, Pink, Green, Orange, and Grey. The option text is displayed in the color
 of its value."
 code:"
 ```dart
@@ -609,7 +609,7 @@ Widget build(BuildContext context) {
 ### Slider
 
 The `Slider` widget lets a user adjust a value by moving an indicator,
-such as a volume bar. 
+such as a volume bar.
 
 Configuration parameters for the `Slider` widget:
 
@@ -675,9 +675,9 @@ each provides slight presentation differences.:
 - `Checkbox` is a container that is empty when false or
   filled with a checkmark when true.
 - `Switch` has a handle that is on the left when false and
-  slides to the right when true. 
+  slides to the right when true.
 - `Radio` is similar to a `Checkbox` in that it's a container that is
-  empty when false, but filled in when true. 
+  empty when false, but filled in when true.
 
 The configuration for `Checkbox` and `Switch` contain:
 
@@ -897,7 +897,7 @@ Widgets are provided so the user can select a date and time.
 There is a set of dialogs that enable users to select a date or time,
 as you'll see in the following sections.
 With the exception of differing date types -
-`DateTime` for dates vs `TimeOfDay` for time - 
+`DateTime` for dates vs `TimeOfDay` for time -
 these dialogs function similarly, you can configure them by providing:
 
 - a default `initialDate` or `initialTime`
@@ -905,7 +905,7 @@ these dialogs function similarly, you can configure them by providing:
 
 ### DatePickerDialog
 
-This dialog allows the user to select a date or a range of dates. 
+This dialog allows the user to select a date or a range of dates.
 Activate by calling the `showDatePicker` function,
 which returns a `Future<DateTime>`,
 so don't forget to await the asynchronous function call!
@@ -958,7 +958,7 @@ Widget build(BuildContext context) {
 `TimePickerDialog` is a dialog that presents a time picker.
 It can be activated by calling the `showTimePicker()` function.
 Instead of returning a `Future<DateTime>`,
-`showTimePicker` instead returns a `Future<TimeOfDay>`. 
+`showTimePicker` instead returns a `Future<TimeOfDay>`.
 Once again, don't forget to await the function call!
 
 {% render docs/code-and-image.md,
@@ -1002,13 +1002,13 @@ Widget build(BuildContext context) {
 
 :::tip
 Calling `showDatePicker()` and `showTimePicker()`
-is equivalent to calling `showDialog()` with `DatePickerDialog()` and  
+is equivalent to calling `showDialog()` with `DatePickerDialog()` and 
 `TimePickerDialog()`, respectively.
 Internally, both functions use the `showDialog()` function with
-their respective `Dialog` widgets. 
+their respective `Dialog` widgets.
 To enable state restoration, you can also push
 `DatePickerDialog()` and `TimePickerDialog()` directly
-on to the `Navigator` stack. 
+on to the `Navigator` stack.
 :::
 
 <br>
@@ -1023,13 +1023,13 @@ on to the `Navigator` stack.
 
 ### [`Dismissible`][]
 
-A `Dismissible` is a widget that enables users to dismiss it by swiping. 
+A `Dismissible` is a widget that enables users to dismiss it by swiping.
 It has a number of configuration parameters, including:
 
 - A `child` widget
 - An `onDismissed` callback that is triggered when the user swipes
 - Styling parameters such as `background`
-- It's important to include a `key` object as well so that they can be uniquely 
+- It's important to include a `key` object as well so that they can be uniquely
   identified from sibling `Dismissible` widgets in the widget tree.
 
 {% render docs/code-and-image.md,
@@ -1095,7 +1095,7 @@ Check out the [Material Widget library][] and
 
 > <span class="material-symbols" aria-hidden="true">flutter</span> **Demo**: 
 > See Flutter's [Material 3 Demo][] for a curated sample of user input widgets
-> available in the Material library. 
+> available in the Material library.
 
 If the Material and Cupertino libraries don't have a widget that
 does what you need, check out [pub.dev][] to find
@@ -1105,7 +1105,7 @@ a `Slidable` widget that is more customizable than
 the `Dismissible` widget described in the previous section.
 
 > <span class="material-symbols" aria-hidden="true">slideshow</span> **Video**: 
-> [flutter_slidable (Package of the Week)][] 
+> [flutter_slidable (Package of the Week)][]
 
 [Material Widget Library]: /ui/widgets/material
 [Material Library API docs]: {{site.api}}/flutter/material/material-library.html
@@ -1114,13 +1114,13 @@ the `Dismissible` widget described in the previous section.
 [`flutter_slidable`]: {{site.pub}}/packages/flutter_slidable
 [flutter_slidable (Package of the Week)]: {{site.youtube-site}}/watch?v=QFcFEpFmNJ8
 
-## Build interactive widgets with GestureDetector 
+## Build interactive widgets with GestureDetector
 
 Have you scoured the widget libraries, pub.dev, asked your coding friends,
 and still can't find a widget that
 fits the user interaction that you're looking for?
 You can build your own custom widget and
-make it interactive using `GestureDetector`. 
+make it interactive using `GestureDetector`.
 
 > <span class="material-symbols" aria-hidden="true">star</span> **Checkpoint**: 
 > Use this recipe as a starting point to create your own _custom_ button widget
@@ -1148,7 +1148,7 @@ make it interactive using `GestureDetector`.
 If you're building a custom widget,
 annotate its meaning with the `Semantics` widget.
 It provides descriptions and metadata to screen readers and
-other semantic analysis-based tools. 
+other semantic analysis-based tools.
 
 > <span class="material-symbols" aria-hidden="true">slideshow</span> **Video**: 
 > [Semantics (Flutter Widget of the Week)][]
@@ -1173,7 +1173,7 @@ simulate user interactions in your app:
 
 > <span class="material-symbols" aria-hidden="true">star</span> **Checkpoint**: 
 > Follow this [tap, drag, and enter text][] cookbook article and learn how to
-> use `WidgetTester` to simulate and test user interactions in your app. 
+> use `WidgetTester` to simulate and test user interactions in your app.
 
 > <span class="material-symbols" aria-hidden="true">bookmark</span> **Bonus Tutorial**: 
 > The [handle scrolling][] cookbook recipe shows you how to verify that
@@ -1196,7 +1196,7 @@ and other networking features.
 
 ## Feedback
 
-As this section of the website is evolving, 
+As this section of the website is evolving,
 we [welcome your feedback][]!
 
 [welcome your feedback]: https://google.qualtrics.com/jfe/form/SV_6A9KxXR7XmMrNsy?page="user-input"
