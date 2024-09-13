@@ -143,10 +143,11 @@ final x = color.withValues(alpha: 0.0);
 
 ### Equality
 
-Now that Color will be storing its color components as floating-point numbers
-equality will work slightly different. When calculating colors there may be tiny
-difference in numbers which could be considered equal. To accommodate this use
-the [`closeTo`][] matcher or the [`isColorSameAs`][] matcher.
+Once `Color` stores its color components as floating-point numbers,
+equality works slightly differently.
+When calculating colors there might be tiny
+difference in values that could be considered equal.
+To accommodate this use the [`closeTo`][] matcher or the [`isColorSameAs`][] matcher.
 
 ```dart
 // Before
