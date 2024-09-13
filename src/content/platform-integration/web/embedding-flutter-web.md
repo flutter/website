@@ -1,6 +1,6 @@
 ---
-title: Embedding Flutter on the web
-short-title: Embedding Flutter web
+title: Adding Flutter to any web application
+short-title: Add Flutter to any web app
 description: Learn the different ways to embed Flutter views into web content.
 ---
 
@@ -16,9 +16,10 @@ in different ways. Choose one of the following depending on your use-case:
 ## Full page mode
 
 In full page mode, the Flutter web application takes control of the whole
-browser window and covers its viewport completely when rendering. This is the
-default embedding mode for new Flutter web projects, and no additional
-configuration is needed.
+browser window and covers its viewport completely when rendering.
+
+This is the default embedding mode for new Flutter web projects, and no
+additional configuration is needed.
 
 ```html highlightLines=6
 <!DOCTYPE html>
@@ -31,7 +32,7 @@ configuration is needed.
 </html>
 ```
 
-When Flutter web is bootstrapped without referencing `multiViewEnabled` or a 
+When Flutter web is launched without referencing `multiViewEnabled` or a
 `hostElement`, it uses full page mode.
 
 To learn more about the `flutter_bootstrap.js` file,
@@ -63,9 +64,9 @@ mode" (or "multi-view").
 In this mode:
 
 * A Flutter web application can launch, but doesn't render until the first
-"view" is added, with `addView`.
+  "view" is added, with `addView`.
 * The host application can add or remove views from the embedded Flutter web
-   application.
+  application.
 * The Flutter application is notified when views are added or removed,
   so it can adjust its widgets accordingly.
 
