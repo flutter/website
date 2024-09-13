@@ -101,7 +101,7 @@ let viewId = app.addView({
 });
 
 // Removing viewId...
-let viewConfig = flutterApp.removeView(viewId);
+let viewConfig = app.removeView(viewId);
 ```
 
 ### Handling view changes from Dart
