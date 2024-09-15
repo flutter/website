@@ -88,7 +88,8 @@ This website release includes several important updates!
 [predictive back gesture]: /platform-integration/android/predictive-back
 [Tinted app icons]: /deployment/ios#add-an-app-icon
 
-## Other
+### Other
+
 * If you are interested in the new, experimental
   Flutter GPU API, check out the [Flutter GPU blog post][].
 * The Flutter wiki has been divided up and moved into the
