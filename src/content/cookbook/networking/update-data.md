@@ -33,23 +33,7 @@ Import the `http` package.
 import 'package:http/http.dart' as http;
 ```
 
-If you are deploying to Android, edit your `AndroidManifest.xml` file to 
-add the Internet permission.
-
-```xml
-<!-- Required to fetch data from the internet. -->
-<uses-permission android:name="android.permission.INTERNET" />
-```
-
-Likewise, if you are deploying to macOS, edit your 
-`macos/Runner/DebugProfile.entitlements` and `macos/Runner/Release.entitlements`
-files to include the network client entitlement.
-
-```xml
-<!-- Required to fetch data from the internet. -->
-<key>com.apple.security.network.client</key>
-<true/>
-```
+{% render docs/cookbook/networking/internet-permission.md %}
 
 ## 2. Updating data over the internet using the `http` package
 
