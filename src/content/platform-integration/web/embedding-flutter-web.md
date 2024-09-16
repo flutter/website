@@ -75,8 +75,7 @@ In this mode:
 Enable multi-view mode setting `multiViewEnabled: true` in the
 `initializeEngine` method as shown:
 
-```js highlightLines=8
-// flutter_bootstrap.js
+```js highlightLines=8 title="flutter_bootstrap.js"
 {% raw %}{{flutter_js}}{% endraw %}
 {% raw %}{{flutter_build_config}}{% endraw %}
 
@@ -122,13 +121,7 @@ The following example, from the _Multi View Playground_, encapsulates
 the above in a `MultiViewApp` widget that can be used as the root widget for
 your app. A [`WidgetBuilder` function][] runs for each `FlutterView`:
 
-```dart highlightLines=25,39,46-49,56-61,72
-// multi_view_app.dart
-
-// Copyright 2014 The Flutter Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
+```dart highlightLines=25,39,46-49,56-61,72 title="multi_view_app.dart"
 import 'dart:ui' show FlutterView;
 import 'package:flutter/widgets.dart';
 
@@ -224,8 +217,7 @@ views that have been explicitly added into your app.
 The following example uses the `MultiViewApp` described above to render
 copies of the `MyApp()` widget on every `FlutterView` available:
 
-```dart highlightLines=3
-// main.dart
+```dart highlightLines=3 title="main.dart"
 void main() {
   runWidget(
     MultiViewApp(
