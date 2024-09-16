@@ -42,7 +42,7 @@ Import the http package.
 import 'package:http/http.dart' as http;
 ```
 
-{% include docs/cookbook/networking/internet-permission.md %}
+{% render docs/cookbook/networking/internet-permission.md %}
 
 ## 2. Make a network request
 
