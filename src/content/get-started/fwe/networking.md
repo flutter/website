@@ -21,7 +21,7 @@ and then send data out again.
 
 At it's simplest, assuming you utilize the [`http`][]
 package to adapt to the differences between network access
-from Dart VM based platforms and Web Browser based environments,
+from Dart VM based platforms and web browser-based environments,
 making a HTTP `GET` request can be as simple as the following:
 
 ```dart
