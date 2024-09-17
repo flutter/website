@@ -19,7 +19,7 @@ and then send data out again.
 
 ## Introduction to retrieving data over the network
 
-At it's simplest, assuming you utilise the [`http`][]
+At it's simplest, assuming you utilize the [`http`][]
 package to adapt to the differences between network access
 from Dart VM based platforms and Web Browser based environments,
 making a HTTP `GET` request can be as simple as the following:
