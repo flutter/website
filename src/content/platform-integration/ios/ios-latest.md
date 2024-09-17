@@ -24,7 +24,7 @@ please [file an issue][].
 | iOS formatting menu                            | On Flutter roadmap. Not yet available.                                                                        |
 |**Translate** support for the context edit menu | On Flutter roadmap. Not yet available.                                                                        |
 | Target and build for iOS 18                    | Tested. Should just work.                                                                                     |
-| Cupertino widget A and B                       | New! (Tested?)                                                                                                |
+| Cupertino widget A and B                       | New!                                                                                                          |
 | iOS-style zoom page transition                 | Not available yet.                                                                                            |
 | iPad-style tap bar                             | Not available yet.                                                                                            |
 | New writing tools (AI) in text input           | On Flutter roadmap, not available yet.                                                                        |
