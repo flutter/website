@@ -140,9 +140,8 @@ This step covers replacing these placeholder icons with your
 app's icons:
 
 1. Review the [iOS App Icon][app-icon] guidelines and,
-   in particular, the [advice on creating light, dark,
-   and tinted][icon-modes] icons for your app.
-   (Note that _tinted_ icons are coming in iOS 18.)
+   in particular, the advice on
+   [creating light, dark, and tinted][icon-modes] icons for your app.
 1. In the Xcode project navigator, select `Assets.xcassets` in the
    `Runner` folder. Update the placeholder icons with your own app icons.
 1. Verify the icon has been replaced by running your app using
