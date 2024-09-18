@@ -427,6 +427,7 @@
       { "source": "/go/golden-workflow", "destination": "https://docs.google.com/document/d/1MuIUz9pyE_bBZPbtMCj3pYgkdgG4s4Egh6FMknTngKw", "type": 301 },
       { "source": "/go/google-apis", "destination": "/data-and-backend/google-apis?utm_source=go-link&utm_medium=referral&utm_campaign=go-google-apis", "type": 301 },
       { "source": "/go/google-testing-v2", "destination": "https://docs.google.com/document/d/1Sg_CsGa3VxMNOXFKvoXEPNneD6OUuXIUsmFEjhluhDw", "type": 301 },
+      { "source": "/go/google-maps-advanced-markers", "destination": "https://docs.google.com/document/d/1HRyq_aFcYeSKDDyYetce_1Z9Q-GR9ONX_46JioAScQk/edit?usp=sharing", "type": 301 },
       { "source": "/go/handling-synchronous-keyboard-events", "destination": "https://docs.google.com/document/d/1rWXSjkb2ZKv-cpg26lVK0aZi4cVeXJ8j7YmSJdq2TOM/edit", "type": 301 },
       { "source": "/go/hermetic-xcode-installation", "destination": "https://docs.google.com/document/d/1EcXm4Woq48GR_ky07mEJka6NfV1vFBN2OHDEeGfPk34/edit?resourcekey=0-0Gjtt1I66mGJ8AwiCTlFNw", "type": 301 },
       { "source": "/go/hero-refactor", "destination": "https://docs.google.com/document/d/1JZVqykFjhDXcJyj_Ep5gfTmF-Eu4pQXXNRcLCN04tls/edit?usp=sharing", "type": 301 },
