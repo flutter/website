@@ -491,7 +491,7 @@
           permalink: /platform-integration/web/wasm
         - title: Customize app initialization
           permalink: /platform-integration/web/initialization
-        - title: Embedding Flutter web
+        - title: Add Flutter to any web app
           permalink: /platform-integration/web/embedding-flutter-web
         - title: Web content in Flutter
           permalink: /platform-integration/web/web-content-in-flutter

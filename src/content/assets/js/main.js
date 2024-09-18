@@ -171,23 +171,31 @@ function initFixedColumns() {
  * Activate the cookie notice footer.
  */
 function initCookieNotice() {
-  const notice = document.getElementById('cookie-notice');
-  const agreeBtn = document.getElementById('cookie-consent');
   const cookieKey = 'cookie-consent';
-  const cookieConsentValue = 'true'
-  const activeClass = 'show';
-
-  if (Cookies.get(cookieKey) === cookieConsentValue) {
-    return;
+  const currentDate = Date.now();
+  const existingDateString = window.localStorage.getItem(cookieKey);
+  if (existingDateString) {
+    const existingDate = parseInt(existingDateString);
+    if (Number.isInteger(existingDate)) {
+      const halfYearMs = 1000 * 60 * 60 * 24 * 180;
+      // If the last consent is less than 180 days old, don't show the notice.
+      if (currentDate - existingDate < halfYearMs) {
+        return;
+      }
+    }
   }
 
-  notice.classList.add(activeClass);
+  const notice = document.getElementById('cookie-notice');
+  const agreeBtn = document.getElementById('cookie-consent');
+  const activeClass = 'show';
 
   agreeBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    Cookies.set(cookieKey, cookieConsentValue, { sameSite: 'strict', expires: 90 });
+    window.localStorage.setItem(cookieKey, currentDate.toString());
     notice.classList.remove(activeClass);
   });
+
+  notice.classList.add(activeClass);
 }
 
 function setupInlineToc() {

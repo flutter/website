@@ -1585,7 +1585,7 @@
   categories: []
   subcategories:
     - 'Selection'
-  link: https://api.flutter.dev/flutter/material/PopupMenuButton-class.html
+  link: https://api.flutter.dev/flutter/material/MenuAnchor-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-menu.png
     alt: TODO

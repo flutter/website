@@ -874,7 +874,7 @@ check out the Flutter [CHANGELOG][].
 * @ricardoboss made their first contribution in [149777](https://github.com/flutter/flutter/pull/149777)
 * @DRSchlaubi made their first contribution in [150958](https://github.com/flutter/flutter/pull/150958)
 
-**Full Changelog**: https://github.com/flutter/flutter/compare/3.22.0...3.24.0-0.0.pre
+**Full Changelog**: https://github.com/flutter/flutter/compare/3.22.0...3.24.0
 
 ## Flutter engine
 
@@ -1503,4 +1503,4 @@ check out the Flutter [CHANGELOG][].
 * @Moncader made their first contribution in [53246](https://github.com/flutter/engine/pull/53246)
 * @hakonber made their first contribution in [53428](https://github.com/flutter/engine/pull/53428)
 
-**Full Changelog**: https://github.com/flutter/engine/compare/3.22.0...3.24.0-0.0.pre
+**Full Changelog**: https://github.com/flutter/engine/compare/3.22.0...3.24.0

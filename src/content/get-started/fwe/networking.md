@@ -19,9 +19,24 @@ and then send data out again.
 
 ## Introduction to retrieving data over the network
 
-The following two tutorials introduce you to the
-[`http`][] package, which enables your app to make
-[HTTP][] requests with ease,
+At it's simplest, assuming you utilize the [`http`][]
+package to adapt to the differences between network access
+from Dart VM based platforms and web browser-based environments,
+making a HTTP `GET` request can be as simple as the following:
+
+```dart
+import 'package:http/http.dart' as http;
+
+void main() async {
+  var response = await http.get(
+    Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
+  );
+  print(response.body);
+}
+```
+
+The following two tutorials show you all of the details
+involved in adding the [`http`][] package to your app,
 whether you are running on Android,
 iOS, inside a web browser, or natively on Windows,
 macOS, or Linux. 
