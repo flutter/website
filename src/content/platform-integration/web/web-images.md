@@ -4,9 +4,9 @@ short-title: Web images
 description: Learn how to load and display images on the web.
 ---
 
-The web supports the standard [`Image`][] widget - and the more 
-advanced [`dart:ui/Image`][] class, where more fine-grained control 
-is needed - to display images.
+The web supports the standard [`Image`][] widget and the more 
+advanced [`dart:ui/Image`][] class (where more fine-grained control 
+is needed to display images.
 However, because web browsers are built to run untrusted code safely,
 there are certain limitations in what you can do with images compared
 to mobile and desktop platforms. This page explains these limitations
