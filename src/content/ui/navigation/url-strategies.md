@@ -57,7 +57,7 @@ Relative `base href` tags are supported for release builds but they must take
 into account the full URL where the page was served from.
 This means a relative `base href` for a request to `/flutter_app/`,
 `/flutter_app/nested/route`, and `/flutter_app/nested/route/` will be different
-(for example `"."`, `".."`, and `"../.."` accordingly).
+(for example `"."`, `".."`, and `"../.."` respectively).
 
 [hash fragment]: https://en.wikipedia.org/wiki/Uniform_Resource_Locator#Syntax
 [`HashUrlStrategy`]: {{site.api}}/flutter/flutter_web_plugins/HashUrlStrategy-class.html
