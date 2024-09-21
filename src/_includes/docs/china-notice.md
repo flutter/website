@@ -1,11 +1,12 @@
 :::important
 If you want to use Flutter in China,
-check out [using Flutter in China][in china].
+check out [using Flutter in China][].
 If you're not developing in China, ignore this notice
 and follow the other instructions on this page.
 
 如果你正在中国的网络环境下配置 Flutter，
-请参考 [在中国网络环境下使用 Flutter][in china] 文档.
+请参考 [在中国网络环境下使用 Flutter][] 文档.
 :::
 
-[in china]: https://docs.flutter.cn/community/china/
+[using Flutter in China]: /community/china
+[在中国网络环境下使用 Flutter]: https://docs.flutter.cn/community/china/
