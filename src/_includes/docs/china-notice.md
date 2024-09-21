@@ -1,4 +1,4 @@
-:::important
+:::note Developing in China
 If you want to use Flutter in China,
 check out [using Flutter in China][].
 If you're not developing in China, ignore this notice
