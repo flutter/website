@@ -442,6 +442,8 @@
     - title: iOS
       permalink: /platform-integration/ios
       children:
+        - title: Flutter on iOS
+          permalink: /platform-integration/ios/ios-latest
         - title: Add iOS as build target
           permalink: /platform-integration/ios/install-ios
         - title: Leverage Apple's system libraries

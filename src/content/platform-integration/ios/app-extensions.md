@@ -22,11 +22,10 @@ For more information, check out
 [Issue #9690]:   {{site.github}}/flutter/website/issues/9690
 [Issue #135056]: {{site.github}}/flutter/flutter/issues/135056
 
-The iOS 18 release, coming in September 2024 and currently in beta,
-adds new functionality for customizing a device's
-the Control Center, including creating multiple pages.
+iOS 18 added support for customizing a device's
+Control Center, including creating multiple pages.
 You can also create new toggles for the Control Center
-using the [`ControlCenter`] API, to feature your app.
+using the [`ControlCenter`][] API, to feature your app.
 
 [`ControlCenter`]: {{site.apple-dev}}/documentation/widgetkit/controlcenter
 
