@@ -1,4 +1,4 @@
-#site-content {
+main {
   background-color: var(--site-surface);
   overflow-x: hidden;
   width: 100%;
@@ -11,7 +11,7 @@
   }
 
   li, dd {
-    > p {
+    > p, img, aside, .code-block-wrapper, figure {
       margin-bottom: 0.5rem;
     }
   }

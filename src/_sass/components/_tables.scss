@@ -1,8 +1,9 @@
 table.table {
   border-spacing: 0;
+  width: 100%;
 
   thead {
-    background-color: var(--site-surface-container-high);
+    background-color: var(--site-surface-container-highest);
     border-top-right-radius: 0.375rem;
   }
 

@@ -15,8 +15,7 @@ ul.nav-tabs {
 
   padding: 0.5rem;
   border-radius: 0.375rem;
-  background-color: var(--site-surface-container-high);
-  color: var(--site-on-surface);
+  background-color: var(--site-surface-container);
   gap: 0.5rem;
 
   a {
@@ -27,7 +26,6 @@ ul.nav-tabs {
     border-radius: 0.375rem;
 
     &:hover {
-      // TODO(parlough): Improve
       background-color: var(--site-surface-container-highest);
     }
 
@@ -36,8 +34,7 @@ ul.nav-tabs {
       color: var(--site-on-secondary-container);
 
       &:hover {
-        // TODO(parlough): Darken??
-        // background-color: var(--md-sys-color-on-primary);
+        background-image: linear-gradient(rgb(0 0 0/4%) 0 0);
       }
     }
 
