@@ -26,7 +26,7 @@ Once you've gone through [Get started][],
 including [Write your first Flutter app][],
 here are some next steps.
 
-[Write your first Flutter app]: /src/content/get-started/codelab.md
+[Write your first Flutter app]: /src/content/get-started/codelab
 
 ### Docs
 
