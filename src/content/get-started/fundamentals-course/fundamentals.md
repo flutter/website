@@ -7,6 +7,7 @@ prev:
 next:
   title: Layouts
   path: /get-started/fundamentals-course/layout
+toc: false
 ---
 
 
