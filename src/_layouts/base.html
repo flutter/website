@@ -72,33 +72,107 @@
     {% endif -%}
   </head>
   <body{% if body_class %} class="{{ body_class }}"{% endif %}>
-  <a href="#site-content-title" id="skip">
-    Skip to main content
-  </a>
+    {%- if isProduction == true -%}
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id={{ site.google_tag_manager_id }}"
+        height="0" width="0" style="display:none;visibility:hidden">
+      </iframe>
+    </noscript>
+    {% endif -%}
+
+    <a href="#document-title" id="skip-to-main" class="btn">
+      Skip to main content
+    </a>
 
     {% render cookie-notice.html %}
 
-    {%- if isProduction == true -%}
-      <noscript>
-        <iframe
-          src="https://www.googletagmanager.com/ns.html?id={{ site.google_tag_manager_id }}"
-          height="0" width="0" style="display:none;visibility:hidden">
-        </iframe>
-      </noscript>
-    {% endif -%}
+    <header id="site-header">
+      <div id="header-leading">
+        <div id="menu-button">
+          <button class="header-button" title="Toggle menu" aria-label="Toggle menu">
+            <span class="material-symbols" aria-hidden="true">menu</span>
+            <span class="material-symbols" aria-hidden="true">menu_open</span>
+          </button>
+        </div>
+        <a class="flutter-logo" href="https://flutter.dev">
+          <img src="/assets/images/branding/flutter/logo/default.svg" alt="Flutter logo" width="32" height="40">
+          <span>Flutter</span>
+        </a>
+        <a id="docs-button" href="/">Docs</a>
+      </div>
+      <div id="header-center">
+        <search id="header-search">
+          <button class="header-button" aria-label="Submit the entered search query">
+            <span class="material-symbols" aria-hidden="true">search</span>
+          </button>
+          <input type="search" placeholder="Search Flutter docs...">
+        </search>
+      </div>
+      <div id="header-trailing">
+        <a id="open-search" class="header-button" href="/search" title="Navigate to search page" aria-label="Navigate to search page">
+          <span class="material-symbols" aria-hidden="true">search</span>
+        </a>
+        <button id="theme-switcher" class="header-button" title="Toggle theme" aria-label="Toggle theme">
+          <span class="material-symbols light-mode-visible" aria-hidden="true">dark_mode</span>
+          <span class="material-symbols dark-mode-visible" aria-hidden="true">light_mode</span>
+        </button>
+      </div>
+    </header>
 
-    <div id="overlay-under-drawer"></div>
-
-    {% include header.html %}
-
-    {% render banner.html %}
-
-    {{ content }}
-
-    {% render footer.html %}
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js" integrity="sha512-7rusk8kGPFynZWu26OKbTeI+QPoYchtxsmPeBqkHIEXJxeun4yJ4ISYe7C6sz9wdxeE1Gk3VxsIWgCZTc+vX3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <div id="site-below-header">
+      <div id="site-main-row">
+        <nav id="sidenav">
+          {% render sidenav-level-1.html, url:page.url, nav:sidenav, base_id:"side", active_nav:activeNav %}
+        </nav>
+        <div id="content-and-toc">
+          <div id="site-primary">
+            {{ content }}
+          </div>
+          {% if toc != false -%}
+            {% assign tocContents = content | generate_toc %}
+            {% unless tocContents == null or tocContents == '' or tocContents.count < 2 -%}
+            <aside id="side-menu">
+              {% render side-toc.html, tocContents: tocContents %}
+            </aside>
+            {% endunless %}
+          {% endif -%}
+        </div>
+        <div class="invisible-flex-item" aria-hidden="true"></div>
+      </div>
+      <footer id="site-footer">
+        <div class="footer-main">
+          <a class="flutter-logo" href="https://flutter.dev">
+            <img src="/assets/images/branding/flutter/logo/default.svg" alt="Flutter logo">
+            <span>Flutter</span>
+          </a>
+          <div class="footer-social-links">
+            <a href="https://medium.com/flutter" target="_blank" rel="noopener" title="Medium blog">
+              <svg><use href="/assets/images/social/medium.svg#medium"></use></svg>
+            </a>
+            <a href="https://youtube.com/@flutterdev" target="_blank" rel="noopener" title="YouTube">
+              <svg><use href="/assets/images/social/youtube.svg#youtube"></use></svg>
+            </a>
+            <a href="https://github.com/flutter" target="_blank" rel="noopener" title="GitHub">
+              <svg><use href="/assets/images/social/github.svg#github"></use></svg>
+            </a>
+            <a href="https://twitter.com/FlutterDev" target="_blank" rel="noopener" title="X (Twitter)">
+              <svg><use href="/assets/images/social/x.svg#x"></use></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-tray">
+          <div class="footer-licenses">Except as otherwise noted, this site is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>, and code samples are licensed under the <a href="https://opensource.org/licenses/BSD-3-Clause">3-Clause BSD License</a>.</div>
+          <div class="footer-utility-links">
+            <ul>
+              <li><a href="/tos" title="Terms of use">Terms</a></li>
+              <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener" title="Privacy policy">Privacy</a></li>
+              <li><a href="/security" title="Security philosophy and practices">Security</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
 
     <script src="{{ '/assets/js/tabs.js' | append: cache_bust }}"></script>
     <script src="{{ '/assets/js/archive.js' | append: cache_bust }}"></script>

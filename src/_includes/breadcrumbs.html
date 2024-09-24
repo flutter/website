@@ -12,19 +12,17 @@ Embeds breadcrumb RDFa, follows ARIA guidelines. References:
 {% assign breadcrumbs = page | breadcrumbsForPage -%}
 {% if breadcrumbs -%}
 <nav class="breadcrumbs" aria-label="breadcrumb">
-  <ol class="breadcrumb-list" vocab="https://schema.org/" typeof="BreadcrumbList">
+  <ol vocab="https://schema.org/" typeof="BreadcrumbList">
     {% for crumb in breadcrumbs -%}
     <li class="breadcrumb-item {%- if forloop.last %} active {%- endif %}"
         property="itemListElement" typeof="ListItem"
         {%- if forloop.last %} aria-current="page"{% endif %}>
-      {%- comment %}Avoid spaces here, it messes up formatting{% endcomment -%}
-      <a href="{{ crumb.url | regex_replace: '/index$|/index.html$|/$' }}" property="item" typeof="WebPage">
-        {%- comment %}Avoid spaces here, it messes up formatting{% endcomment -%}
+      <a href="{{ crumb.url | regex_replace: '/index$|/index.html$|/$' }}" property="item" typeof="WebPage" {%- if forloop.last %} aria-disabled="true" {%- endif %}>
         <span property="name">{{crumb.title}}</span>
       </a>
       <meta property="position" content="{{forloop.index0}}" />
       {%- if not forloop.last %}
-      <span class="material-symbols-outlined child-icon" aria-hidden="true">chevron_right</span>
+      <span class="material-symbols child-icon" aria-hidden="true">chevron_right</span>
       {% endif %}
     </li>
     {% endfor %}

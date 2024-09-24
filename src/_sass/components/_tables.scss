@@ -1,0 +1,43 @@
+table.table {
+  border-spacing: 0;
+
+  thead {
+    background-color: var(--site-surface-container-high);
+    border-top-right-radius: 0.375rem;
+  }
+
+  th:first-of-type {
+    border-top-left-radius: 0.375rem;
+  }
+
+  th:last-of-type {
+    border-top-right-radius: 0.375rem;
+  }
+
+  td, th {
+    padding: 0.75rem;
+  }
+
+  td {
+    border-top: 1px solid var(--site-outline-variant);
+  }
+
+  &.table-striped tbody tr:nth-of-type(odd) {
+    background-color: var(--site-surface-container);
+  }
+}
+
+.table-wrapper, .scrollable-table {
+  border-radius: 0.375rem;
+  border: 1px solid var(--site-outline-variant);
+  overflow-x: auto;
+}
+
+.scrollable-table {
+  overflow-y: scroll;
+  max-height: 20rem;
+
+  table {
+    width: 100%;
+  }
+}

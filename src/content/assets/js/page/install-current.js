@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function(_) {
 
   const header = osButton.querySelector('.card-title');
   if (!header) return;
-  const currentSubtitle = document.createElement('div');
+  const currentSubtitle = document.createElement('span');
   currentSubtitle.textContent = 'Current device';
   currentSubtitle.classList.add('card-subtitle');
   header.appendChild(currentSubtitle);

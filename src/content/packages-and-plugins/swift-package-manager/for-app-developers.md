@@ -112,7 +112,7 @@ To undo this migration:
 1. Navigate to **Package Dependencies** for the project.
 
 1. Click the `FlutterGeneratedPluginSwiftPackage` package, then click
-   <span class="material-symbols-outlined">remove</span>.
+   <span class="material-symbols">remove</span>.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/remove-generated-package.png",
@@ -122,7 +122,7 @@ To undo this migration:
    target.
 
 1. Click `FlutterGeneratedPluginSwiftPackage`, then click the
-   <span class="material-symbols-outlined">remove</span>.
+   <span class="material-symbols">remove</span>.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/remove-generated-framework.png",

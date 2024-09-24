@@ -22,8 +22,8 @@ js: [{url: '/assets/js/temp/windows-install-redirector.js'}]
   {% endcase %}
   <a class="card card-app-type card-windows" id="install-{{os | downcase}}" href="/get-started/install/{{os | downcase}}/{{targetlink}}">
     <div class="card-body">
-      <header class="card-title text-center">
-        <span class="d-block h1">
+      <header class="card-title card-center">
+        <span>
           {% assign icon = target | downcase -%}
           {% case icon %}
           {% when 'desktop' -%}
@@ -34,7 +34,7 @@ js: [{url: '/assets/js/temp/windows-install-redirector.js'}]
             <span class="material-symbols">web</span>
           {% endcase -%}
         </span>
-        <span class="text-muted text-nowrap">{{target}}</span>
+        <span class="card-muted">{{target}}</span>
         {% if icon == 'android' -%}
           <div class="card-subtitle">Recommended</div>
         {% endif -%}

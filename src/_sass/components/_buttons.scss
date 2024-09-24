@@ -1,0 +1,64 @@
+a {
+  color: var(--site-primary);
+  border-radius: 0.25rem;
+
+  &:hover {
+    color: var(--site-primary);
+    text-decoration: underline;
+  }
+
+  &:has(code):focus-visible {
+    outline: none;
+
+    code {
+      outline: 2px solid #027DFD; // TODO(parlough): Use a color from the theme.
+    }
+  }
+}
+
+a, button {
+  text-decoration: none;
+
+  // TODO(parlough): Rename to something better.
+  &.btn {
+    font-weight: 500;
+    padding: 0.5rem;
+    background-color: var(--site-primary-container);
+    color: var(--site-on-primary-container);
+    text-decoration: none;
+    border-radius: 0.375rem;
+
+    &:hover {
+      background-image: linear-gradient(rgb(0 0 0/10%) 0 0);
+    }
+
+    &:active {
+      background-image: linear-gradient(rgb(0 0 0/20%) 0 0);
+    }
+  }
+
+  // TODO(parlough): Rename to icon-button.
+  &.header-button {
+    border-radius: 0.375rem;
+    color: var(--site-on-surface);
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    background: none;
+
+    > span {
+      font-size: 1.75rem;
+    }
+
+    &:hover {
+      color: #0468d7;
+    }
+
+    &:active {
+      color: #03448c;
+    }
+  }
+}

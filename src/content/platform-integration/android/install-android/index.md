@@ -25,8 +25,8 @@ or the platform you already have set up.
 
   <a class="card card-app-type {{bug}}" id="install-{{target | downcase}}" href="{{targetLink}}">
     <div class="card-body">
-      <header class="card-title text-center">
-        <span class="d-block h1">
+      <header class="card-title card-center">
+        <span>
           {% assign icon = target | downcase | replace: " ", "-" -%}
           {% case icon %}
           {% when 'macos' -%}
@@ -41,7 +41,7 @@ or the platform you already have set up.
           <span class="material-symbols">add</span>
           <span class="material-symbols">phone_android</span>
         </span>
-        <span class="text-muted d-block">
+        <span class="card-muted">
         Make Android and
         {% if target contains "iOS" -%}
         {{target}} apps on macOS

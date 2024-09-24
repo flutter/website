@@ -1,5 +1,3 @@
-<div class="tab-pane" id="androidstudio" role="tabpanel" aria-labelledby="androidstudio-tab">
-
 ### Create a sample Flutter app {:#create-app-android-studio}
 
 1. Launch the IDE.
@@ -76,5 +74,3 @@ uses [Material Components][].
 
 [Main IntelliJ toolbar]: /assets/images/docs/tools/android-studio/main-toolbar.png
 [Material Components]: {{site.material}}/components
-
-</div>

@@ -4,7 +4,7 @@
 <ul class="nav flex-column">
   {%- for entry in nav -%}
     {% if entry == 'divider' -%}
-      <li aria-hidden="true"><div class="sidebar-primary-divider"></div></li>
+      <li aria-hidden="true"><div class="sidenav-divider"></div></li>
     {% elsif entry.header -%}
       <li class="nav-header">{{entry.header}}</li>
     {% else -%}
@@ -26,7 +26,10 @@
           {% assign show = '' -%}
         {% endif -%}
         <li class="nav-item">
-          <a class="nav-link {{class}} collapsible" data-toggle="collapse" href="#{{id}}" role="button" aria-expanded="{{expanded}}" aria-controls="{{id}}">{{entry.title}}</a>
+          <a class="nav-link {{class}} collapsible" data-toggle="collapse" href="#{{id}}" role="button" aria-expanded="{{expanded}}" aria-controls="{{id}}">
+            <span>{{entry.title}}</span>
+            <span class="material-symbols expander" aria-hidden="true">expand_more</span>
+          </a>
           <ul class="nav flex-column flex-nowrap collapse {{show}}" id="{{id}}">
             {% if isActive -%}
             {%- render sidenav-level-2.html, parent_id:id, children:entry.children, active_entries:active_entries -%}
@@ -44,7 +47,10 @@
         <li class="nav-item">
           <a class="nav-link {{class}}" href="{{entry.permalink}}"
              {%- if isExternal %} target="_blank" rel="noopener" {%- endif -%}>
-            {{entry.title}}
+            <div>
+              <span>{{entry.title}}</span>
+              {%- if isExternal %}<span class="material-symbols" aria-hidden="true">open_in_new</span>{%- endif -%}
+            </div>
           </a>
         </li>
       {% endif -%}

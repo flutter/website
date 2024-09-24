@@ -26,7 +26,7 @@ the following files in your issue:
    image:"development/packages-and-plugins/swift-package-manager/package-dependencies.png",
    caption:"The project's package dependencies" %}
 
-1. Click <span class="material-symbols-outlined">add</span>.
+1. Click <span class="material-symbols">add</span>.
 1. In the dialog that opens, click the **Add Local...**.
 1. Navigate to `macos/Flutter/ephemeral/Packages/FlutterGeneratedPluginSwiftPackage`
    and click the **Add Package**.
@@ -50,7 +50,7 @@ the following files in your issue:
 1. Go to **Product > Scheme > Edit Scheme**.
 1. Expand the **Build** section in the left side bar.
 1. Click **Pre-actions**.
-1. Click the <span class="material-symbols-outlined">add</span> button
+1. Click the <span class="material-symbols">add</span> button
    and select **New Run Script Action** from the menu.
 1. Click the **Run Script** title and change it to:
 

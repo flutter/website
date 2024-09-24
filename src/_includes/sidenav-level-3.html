@@ -9,7 +9,7 @@
 {% endif -%}
 
 {% if entry == 'divider' -%}
-  <div class="dropdown-divider"></div>
+  <div class="sidenav-divider"></div>
 {%- elsif entry.children -%}
   {% assign class = class | append: ' collapsible' -%}
 
@@ -31,7 +31,10 @@
   <li class="nav-item">
     <a class="{{class}}" data-toggle="collapse" data-target="#{{id}}"
       href="{{href}}" role="button"
-      aria-expanded="{{expanded}}" aria-controls="{{id}}">{{entry.title}}</a>
+      aria-expanded="{{expanded}}" aria-controls="{{id}}">
+      <span>{{entry.title}}</span>
+      <span class="material-symbols expander" aria-hidden="true">expand_more</span>
+    </a>
     <ul class="nav flex-column flex-nowrap collapse {{show}}" id="{{id}}">
       {% if isActive -%}
         {% render sidenav-level-4.html, parent_id:id, children:entry.children, active_entries:active_entries -%}
@@ -50,7 +53,10 @@
   <li class="nav-item">
     <a class="{{class}}" href="{{entry.permalink}}"
        {%- if isExternal %} target="_blank" rel="noopener" {%- endif -%}>
-      {{entry.title}}
+      <div>
+        <span>{{entry.title}}</span>
+        {%- if isExternal %}<span class="material-symbols" aria-hidden="true">open_in_new</span>{%- endif -%}
+      </div>
     </a>
   </li>
 
