@@ -14,14 +14,14 @@ in order:
    If you have experience with other
    object-oriented languages, like Java, C++, or 
    Swift, Dart should feel familiar to you, 
-   and you may be comfortable skipping this.
+   and you might be comfortable skipping this section.
 2. [Write your first Flutter app][] 
-:  This Codelab introduces the basics of Flutter 
+:  This codelab introduces the basics of Flutter 
    by creating an app that works on mobile, 
    desktop, and web.
 3. [Fundamentals course][] 
 :  This is an opinionated set of documentation for
-   the new Flutter developer. It will guide you 
+   the new Flutter developer. It guides you 
    through some of the most important pieces of 
    building Flutter applications.
 
