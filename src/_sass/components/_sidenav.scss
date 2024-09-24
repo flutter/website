@@ -40,7 +40,7 @@
     user-select: none;
 
     a.nav-link {
-      text-wrap: pretty; // TODO(parlough): Measure perf impact.
+      text-wrap: pretty;
       padding: 0.25rem;
       margin-top: 0.25rem;
       margin-bottom: 0.25rem;
@@ -79,7 +79,7 @@
       }
 
       &:hover {
-        background-color: var(--site-surface-container-low);
+        background-color: var(--site-surface-container-highest);
       }
 
       &:not(.collapsed) {
@@ -102,12 +102,11 @@
         }
 
         &:not(.collapsible) {
-          background-color: var(--site-secondary-container); // TODO(parlough): Use secondary fixed
+          background-color: var(--site-secondary-container);
           color: var(--site-on-secondary-container);
 
           &:hover {
-            background-color: var(--md-sys-color-secondary-fixed-dim); // TODO(parlough): Use secondary fixed dim
-            color: var(--md-sys-color-on-secondary-fixed);
+            background-image: linear-gradient(rgb(0 0 0/4%) 0 0);
           }
         }
       }
