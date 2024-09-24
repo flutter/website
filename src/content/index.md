@@ -26,7 +26,7 @@ Once you've gone through [Get started][],
 including [Write your first Flutter app][],
 here are some next steps.
 
-[Write your first Flutter app]: /src/content/get-started/codelab
+[Write your first Flutter app]: /get-started/codelab
 
 ### Docs
 
@@ -43,7 +43,7 @@ Coming from another platform? Check out Flutter for:
   flow down. Sizes flow up. Parents set
   positions", then you are well on your
   way to understanding Flutter's layout model.
-
+ 
 [Adding interactivity to your Flutter app][interactivity]
 : Learn how to add a stateful widget to your app.
 
