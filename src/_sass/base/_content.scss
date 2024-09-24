@@ -10,26 +10,23 @@ main {
     border-radius: 0;
   }
 
-  li, dd {
-    > p, img, aside, .code-block-wrapper, figure {
-      margin-bottom: 0.5rem;
-    }
-  }
-
-  ol, ul {
-    margin-bottom: 1rem;
-    padding-left: 2rem;
-  }
-
   > * {
     margin-left: 1rem;
     margin-right: 1rem;
   }
 
-  > {
-    p, pre, aside, iframe, img, figure, .card-grid, .table-wrapper {
-      margin-bottom: 1rem;
+  ol, ul, p, pre, aside, iframe, img, figure, .card-grid, .table-wrapper {
+    margin-bottom: 1rem;
+  }
+
+  li, dd {
+    > p, img, aside, .code-block-wrapper, figure, ul, ol {
+      margin-bottom: 0.5rem;
     }
+  }
+
+  ol, ul {
+    padding-left: 2rem;
   }
 
   dl {
