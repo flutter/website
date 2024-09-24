@@ -11,7 +11,7 @@
   height: fit-content;
   min-width: 12rem;
   max-width: 12rem;
-  overflow-y: scroll;
+  overflow-y: auto;
   font-family: var(--site-ui-font-family), sans-serif;
 
   @media(max-width: 960px) {

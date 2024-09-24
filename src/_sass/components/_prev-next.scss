@@ -48,7 +48,11 @@
     }
 
     &:hover {
-      background-color: rgba(var(--site-on-surface), 0.08);
+      background-image: linear-gradient(rgb(0 0 0/3%) 0 0);
+    }
+
+    &:active {
+      background-image: linear-gradient(rgb(0 0 0/5%) 0 0);
     }
   }
 }
