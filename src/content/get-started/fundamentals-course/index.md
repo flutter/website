@@ -1,6 +1,6 @@
 ---
-title: First week experience of Flutter
-short-title: First week
+title: Flutter fundamentals course 
+short-title: Fundamentals
 description: >
   You've gotten a taste of using the Flutter framework;
   now go beyond to learn the basics of Flutter.
@@ -18,7 +18,7 @@ you how to _program_, it's about teaching you
 how Flutter works.
 
 :::note
-This first week experience is still a work
+This fundamentals course is still a work
 in progress and we welcome your feedback!
 Please consider filling out the survey
 listed at the bottom of this page and on the
@@ -73,12 +73,12 @@ following subjects in the listed order.
 : Learn about different techniques for caching
   local data.
 
-[Widget fundamentals]: /get-started/fwe/fundamentals
-[Layout]: /get-started/fwe/layout
-[State management]: /get-started/fwe/state-management
-[Handling user input]: /get-started/fwe/user-input
-[Networking and data]: /get-started/fwe/networking
-[Local data and caching]: /get-started/fwe/local-caching
+[Widget fundamentals]: /get-started/fundamentals-course/fundamentals
+[Layout]: /get-started/fundamentals-course/layout
+[State management]: /get-started/fundamentals-course/state-management
+[Handling user input]: /get-started/fundamentals-course/user-input
+[Networking and data]: /get-started/fundamentals-course/networking
+[Local data and caching]: /get-started/fundamentals-course/local-caching
 
 ## Feedback
 

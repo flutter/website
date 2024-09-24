@@ -3,7 +3,7 @@ title: Local caching
 description: Learn how to persist data locally.
 prev:
   title: Networking and data
-  path: /get-started/fwe/networking
+  path: /get-started/fundamentals-course/networking
 next:
   title: Learn more
   path: /get-started/learn-more

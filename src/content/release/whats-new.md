@@ -65,7 +65,7 @@ This website release includes several important updates!
     add your app's toggle when customizing their
     Control Center.
   * [Tinted app icons][] are supported
-* Two of the [First week experience][] pages are updated:
+* Two of the [Flutter fundamentals course][] pages are updated:
   * [Flutter fundamentals][]
   * [Layout][]
   We hope these pages are helpful for new Flutter developers.
@@ -79,12 +79,12 @@ This website release includes several important updates!
 [DevTools 2.37.2]: /tools/devtools/release-notes/release-notes-2.37.2
 [Embedding Flutter on the web]: /platform-integration/web/embedding-flutter-web
 [Embedding web content into a Flutter app]: /platform-integration/web/web-content-in-flutter
-[First week experience]: /get-started/fwe
-[Flutter fundamentals]: /get-started/fwe/fundamentals
+[Flutter fundamentals course]: /get-started/fundamentals-course
+[Flutter fundamentals]: /get-started/fundamentals-course/fundamentals
 [iOS app extension]: /platform-integration/ios/app-extensions
 [iOS plugins]: /packages-and-plugins/swift-package-manager/for-plugin-authors
 [iOS apps]: /packages-and-plugins/swift-package-manager/for-app-developers
-[Layout]: /get-started/fwe/layout
+[Layout]: /get-started/fundamentals-course/layout
 [predictive back gesture]: /platform-integration/android/predictive-back
 [Tinted app icons]: /deployment/ios#add-an-app-icon
 
@@ -125,7 +125,7 @@ To learn more, check out [dart.dev/go/macros][].
   the first Flutter codelab, we've added some "what's next"
   advice on how to move beyond that initial step.
   Check out the docs for the
-  [First week experience of Flutter][], also called **FWE**.
+  [Flutter fundamentals course][].
 * Our [Flutter install][] docs have been revamped.
 * We have three new codelabs and a new guide for the Games Toolkit.
   To see the list of additions,
@@ -158,7 +158,7 @@ To learn more, check out [dart.dev/go/macros][].
 [Adaptive and Responsive design]: /ui/adaptive-responsive
 [Casual Games Toolkit]: /resources/games-toolkit
 [Conditionally bundling assets based on flavor]: /deployment/flavors#conditionally-bundling-assets-based-on-flavor
-[First week experience of Flutter]: /get-started/fwe
+[Flutter fundamentals course]: /get-started/fundamentals-course
 [Flutter install]: /get-started/install
 [Flutter web app initialization]: /platform-integration/web/initialization
 [website README]: {{site.github}}/flutter/website/?tab=readme-ov-file#flutter-documentation-website

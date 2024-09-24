@@ -2,11 +2,11 @@
 title: Flutter fundamentals
 description: Learn the basic building blocks of Flutter.
 prev:
-  title: First week experience
-  path: /get-started/fwe
+  title: Fundamentals course
+  path: /get-started/fundamentals-course
 next:
   title: Layouts
-  path: /get-started/fwe/layout
+  path: /get-started/fundamentals-course/layout
 ---
 
 
@@ -401,14 +401,14 @@ you can read [Building user interfaces with Flutter][].
 [type safe]: {{site.dart-site}}/language/type-system
 [sound null safety]: {{site.dart-site}}/null-safety
 [Why did Flutter choose to use Dart?]: /resources/faq#why-did-flutter-choose-to-use-dart
-[next page]: /get-started/fwe/layout
+[next page]: /get-started/fundamentals-course/layout
 [`build`]: {{site.api}}/flutter/widgets/StatelessWidget/build.html
 [Flutter architectural overview]: /resources/architectural-overview
 [`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
 [`State`]: {{site.api}}/flutter/widgets/State-class.html
 [`setState`]: {{site.api}}/flutter/widgets/State/setState.html
-[state management lesson]: /get-started/fwe/state-management
+[state management lesson]: /get-started/fundamentals-course/state-management
 [`AppBar`]: {{site.api}}/flutter/material/AppBar-class.html
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
 [`Container`]: {{site.api}}/flutter/widgets/Container-class.html

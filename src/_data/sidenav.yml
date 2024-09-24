@@ -1,38 +1,65 @@
-- title: Get started
+- header: Get started
+- title: Installation
   children:
     - title: Install Flutter
       permalink: /get-started/install
     - title: Test drive
       permalink: /get-started/test-drive
+
+
+- title: Learn Flutter
+  children:
+    - title: Introduction
+      permalink: /get-started/learn-flutter
+    - title: Dart language overview
+      permalink: https://dart.dev/overview
     - title: Write your first app
       permalink: /get-started/codelab
-    - title: Learn more
-      permalink: /get-started/learn-more
-    - divider
-    - title: Where to get Flutter support
-      permalink: /resources/support
-    - title: From another platform?
-      permalink: /get-started/flutter-for
+    - title: Fundamentals course
       children:
-        - title: Flutter for Android devs
-          permalink: /get-started/flutter-for/android-devs
-        - title: Flutter for SwiftUI devs
-          permalink: /get-started/flutter-for/swiftui-devs
-        - title: Flutter for UIKit devs
-          permalink: /get-started/flutter-for/uikit-devs
-        - title: Flutter for React Native devs
-          permalink: /get-started/flutter-for/react-native-devs
-        - title: Flutter for web devs
-          permalink: /get-started/flutter-for/web-devs
-        - title: Flutter for Xamarin.Forms devs
-          permalink: /get-started/flutter-for/xamarin-forms-devs
-        - divider
-        - title: Introduction to declarative UI
-          permalink: /get-started/flutter-for/declarative
-        - title: Flutter versus Swift concurrency
-          permalink: /get-started/flutter-for/dart-swift-concurrency
-    - title: "Dart language overview"
-      permalink: https://dart.dev/overview
+        - title: Introduction
+          permalink: /get-started/fundamentals-course
+        - title: Flutter fundamentals
+          permalink: /get-started/fundamentals-course/fundamentals
+        - title: Layouts in Flutter
+          permalink: /get-started/fundamentals-course/layout
+        - title: State management
+          permalink: /get-started/fundamentals-course/state-management
+        - title: Handling user input
+          permalink: /get-started/fundamentals-course/user-input
+        - title: Networking and data
+          permalink: /get-started/fundamentals-course/networking
+        - title: Local data and caching
+          permalink: /get-started/fundamentals-course/local-caching
+
+    - title: Codelabs & samples
+      children:
+        - title: Codelabs
+          permalink: /codelabs
+        - title: Cookbook
+          permalink: /cookbook
+        - title: Samples and demos
+          permalink: https://flutter.github.io/samples/
+
+- title: From another platform?
+  permalink: /get-started/flutter-for
+  children:
+    - title: Flutter for Android devs
+      permalink: /get-started/flutter-for/android-devs
+    - title: Flutter for SwiftUI devs
+      permalink: /get-started/flutter-for/swiftui-devs
+    - title: Flutter for UIKit devs
+      permalink: /get-started/flutter-for/uikit-devs
+    - title: Flutter for React Native devs
+      permalink: /get-started/flutter-for/react-native-devs
+    - title: Flutter for web devs
+      permalink: /get-started/flutter-for/web-devs
+    - title: Flutter for Xamarin.Forms devs
+      permalink: /get-started/flutter-for/xamarin-forms-devs
+    - title: Introduction to declarative UI
+      permalink: /get-started/flutter-for/declarative
+    - title: Flutter versus Swift concurrency
+      permalink: /get-started/flutter-for/dart-swift-concurrency
 
 - title: Stay up to date
   permalink: /release
@@ -50,15 +77,6 @@
       permalink: /release/breaking-changes
     - title: Compatibility policy
       permalink: /release/compatibility-policy
-
-- title: Codelabs & samples
-  children:
-    - title: Codelabs
-      permalink: /codelabs
-    - title: Cookbook
-      permalink: /cookbook
-    - title: Samples and demos
-      permalink: https://flutter.github.io/samples/
 
 - title: App solutions
   children:
@@ -754,6 +772,8 @@
       permalink: /resources/courses
     - title: Learn Dart
       permalink: /resources/bootstrap-into-dart
+    - title: Support
+      permalink: /resources/support
     - header: Contributing
     - title: Create useful bug reports
       permalink: /resources/bug-reports
