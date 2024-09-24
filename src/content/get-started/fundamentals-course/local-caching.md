@@ -6,7 +6,7 @@ prev:
   path: /get-started/fundamentals-course/networking
 next:
   title: Learn more
-  path: /get-started/learn-more
+  path: /get-started/learn-flutter
 ---
 
 Now that you've learned about how to load data from servers
