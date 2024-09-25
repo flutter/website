@@ -1,12 +1,10 @@
 ---
 title: Support for WebAssembly (Wasm)
 description: >-
-  Current status of Flutter's experimental support for WebAssembly (Wasm).
+  Current status of Flutter's support for WebAssembly (Wasm).
 short-title: Wasm
-last-update: May 14, 2024
+last-update: September 12, 2024
 ---
-
-**_Last updated {{last-update}}_**
 
 The Flutter and Dart teams are excited to add
 [WebAssembly](https://webassembly.org/)
@@ -52,6 +50,11 @@ To experiment with Wasm in your own apps, use the following steps.
 
 ### Switch to the Flutter 3.22 stable or newer
 
+:::tip Version note
+Flutter 3.24 or newer supports running a web app with Wasm using
+`flutter run --wasm`.
+:::
+
 To ensure you are running the latest version, run `flutter upgrade`.
 
 To verify that your Flutter install supports Wasm,
@@ -60,7 +63,7 @@ run `flutter build web --help`.
 At the bottom of the output, you should find experimental Wasm options like:
 
 ```console
-Experimental options
+WebAssembly compilation options
     --wasm                       Compile to WebAssembly (with fallback to JavaScript).
                                  See https://flutter.dev/wasm for more information.
     --[no-]strip-wasm            Whether to strip the resulting wasm file of static symbol names.
@@ -83,7 +86,7 @@ Make sure your app's `web/index.html` is updated to the latest
 
 [Flutter web app initialization]: /platform-integration/web/initialization
 
-### Run `flutter build web --wasm`
+### Build or run the app `flutter build web --wasm`
 
 To build a web application with Wasm, add the `--wasm` flag to
 the existing `flutter build web` command.
@@ -95,14 +98,18 @@ flutter build web --wasm
 The command produces output into the `build/web` directory relative to the
 package root, just like `flutter build web`.
 
+Wasm is also supported by the `flutter run` command on Flutter 3.24 or newer.
+If running the app this way, Flutter serves the app locally as it would
+normally, and the next step is not required.
+
 :::note
-Even with the `--wasm` flag, `flutter build web` will still compile the
-application to JavaScript. If WasmGC support is not detected at runtime,
-the JavaScript output is used so the application will continue to work across
+Even with the `--wasm` flag, Flutter will still compile the application to
+JavaScript. If WasmGC support is not detected at runtime, the JavaScript output
+is used so the application will continue to work across
 browsers.
 :::
 
-### Serve the output with an HTTP server
+### Serve the built output with an HTTP server
 
 Flutter web WebAssembly uses multiple threads to render your application
 faster, with less jank. To do this, advanced browser features are used that
@@ -123,25 +130,16 @@ configured to send specific HTTP headers.
 To learn more about these headers, check out
 [Load cross-origin resources without CORP headers using COEP: credentialless][coep].
 
+:::tip Serving locally with `dhttpd`
+To view the built output locally, you can use the
+[`dhttpd` package]({{site.pub-pkg}}/dhttpd).
+
+After installation, run it from the 'build/web' directory, and use the following
+command to add the necessary headers:  
+`dhttpd '--headers=Cross-Origin-Embedder-Policy=credentialless;Cross-Origin-Opener-Policy=same-origin'`
+:::
+
 [coep]: https://developer.chrome.com/blog/coep-credentialless-origin-trial
-
-### Serving Wasm locally
-
-If you don't have a local HTTP server installed, you can use
-the [`dhttpd` package]({{site.pub-pkg}}/dhttpd):
-
-```console
-flutter pub global activate dhttpd
-```
-
-Then change to the `build/web` directory
-and run the server with special headers:
-
-```console
-$ cd build/web
-$ dhttpd '--headers=Cross-Origin-Embedder-Policy=credentialless;Cross-Origin-Opener-Policy=same-origin'
-Server started on port 8080
-```
 
 ### Load it in a browser
 
@@ -149,13 +147,16 @@ As of {{last-update}},
 [only **Chromium-based browsers**](#chrome-119-or-later)
 (Version 119 or later) are able to run Flutter/Wasm content.
 
-If your configured browser meets the requirements, open
-[`localhost:8080`](http://localhost:8080) in the browser to view the app.
+You can verify whether the app is actually running with Wasm in two ways:
 
-If the application doesn't load:
+```dart
+// Using the environment variable set by compliation (preferred)
+const isRunningWithWasm = bool.fromEnvironment('dart.tool.dart2wasm');
 
-1. Check the developer console for errors.
-1. Validate a successful build with the typical JavaScript output.
+// Using differences in number representation to test whether native (Wasm)
+// number representation is used
+final isRunningWithWasm = identical(double.nan, double.nan);
+```
 
 ## Known limitations
 
@@ -234,9 +235,3 @@ Context: The unavailable library 'dart:html' is imported through these packages:
 [JS interop]: {{site.dart-site}}/interop/js-interop
 [`wasm-ready`]: {{site.pub-pkg}}?q=is%3Awasm-ready
 [pub.dev]: {{site.pub}}
-
-### Only build support
-
-Neither `flutter run` nor [DevTools](/tools/devtools) support
-Wasm in Flutter 3.22. This feature has been
-implemented, though, and will be available in the next stable release.
