@@ -11,7 +11,7 @@ a {
     outline: none;
 
     code {
-      outline: 2px solid #027DFD; // TODO(parlough): Use a color from the theme.
+      outline: 2px solid var(--site-primary-container);
     }
   }
 }
@@ -19,8 +19,7 @@ a {
 a, button {
   text-decoration: none;
 
-  // TODO(parlough): Rename to something better.
-  &.btn {
+  &.filled-button {
     font-weight: 500;
     padding: 0.5rem;
     background-color: var(--site-primary-container);
@@ -38,8 +37,7 @@ a, button {
     }
   }
 
-  // TODO(parlough): Rename to icon-button.
-  &.header-button {
+  &.icon-button {
     border-radius: 0.375rem;
     color: var(--site-on-surface-variant);
     text-decoration: none;

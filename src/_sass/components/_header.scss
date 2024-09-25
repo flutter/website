@@ -61,7 +61,7 @@
   max-width: 36rem;
   width: 100%;
 
-  .header-button > span {
+  .icon-button > span {
     font-size: 1.5rem;
   }
 
@@ -79,12 +79,12 @@
     background-color: var(--site-surface-container-high);
 
     &:focus-within {
-      outline: 2px solid #027DFD;
+      outline: 2px solid var(--site-primary-container);
     }
 
     input {
       border-radius: 0.375rem;
-      caret-color: #027DFD;
+      caret-color: var(--site-primary-container);
       padding: 0.5rem;
       background: none;
       text-overflow: ellipsis;

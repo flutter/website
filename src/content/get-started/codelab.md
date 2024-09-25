@@ -25,7 +25,7 @@ that works on mobile, desktop, and web.
     Unicode character.
     The non-breaking space after it makes the button look nicer.
   {% endcomment -%}
-  <a class="btn btn-primary"
+  <a class="filled-button"
      target="_blank"
      href="https://codelabs.developers.google.com/codelabs/flutter-codelab-first">
     &#9654;&nbsp; Start codelab

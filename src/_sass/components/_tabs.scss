@@ -39,7 +39,7 @@ ul.nav-tabs {
     }
 
     &:focus-visible {
-      outline: 2px solid #027DFD;
+      outline: 2px solid var(--site-primary-container);
 
       a {
         outline: none;

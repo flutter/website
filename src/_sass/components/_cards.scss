@@ -19,14 +19,13 @@
     align-items: center;
     height: 12rem;
     background-color: var(--bg-color);
-    z-index: 1;
 
     img {
+      position: relative;
       max-width: 100%;
       max-height: 100%;
       width: auto;
       margin-bottom: 0;
-      z-index: 3;
     }
 
     svg {
@@ -39,14 +38,12 @@
     position: absolute;
     top: 0;
     left: 0;
-    transition: .25s ease-in-out;
+    transition: .3s ease-in-out;
     opacity: 0;
     width: 100%;
-    z-index: 2;
 
     img {
       width: 100%;
-      z-index: 2;
     }
   }
 
@@ -73,7 +70,6 @@
       flex-direction: column;
       gap: 0.5rem;
       padding: 0.75rem;
-      z-index: 10;
       background-color: inherit;
 
       img {

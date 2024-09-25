@@ -44,7 +44,7 @@
 // A big button centered on top of an image.
 //
 // The container is typically a <div> element. The div has only 2 children:
-// an <img> element (the background) and a <a class="btn"> button.
+// an <img> element (the background) and a <a class="filled-button"> button.
 //
 // The image should be very bright and slightly blurred so that the button
 // stands out.
@@ -58,7 +58,7 @@
     margin-bottom: 0;
   }
 
-  .btn {
+  .filled-button {
     position: absolute;
     top: 50%;
     left: 50%;

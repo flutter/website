@@ -25,7 +25,7 @@ export const markdown = (() => {
         assistiveText: title => `Link to '${title}' section`,
         symbol: '#',
         class: 'heading-link',
-        wrapper: ['<div class="header-wrapper">', '</div>']
+        wrapper: ['<div class="heading-wrapper">', '</div>']
       }),
     });
 

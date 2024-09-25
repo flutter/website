@@ -17,10 +17,10 @@
   <div class="card">
     <a href="{{comp.link}}">
       <div class="card-image-holder" style="--bg-color: {{sub.color}}; height: 8rem;">
-        <img alt="Rendered example of the {{comp.name}} Material widget." src="{{comp.image.src}}">
         <div class="card-image-hover">
           <img alt="Decorated background for material widget visualizations." src="{{comp.hoverBackground.src}}" aria-hidden="true">
         </div>
+        <img alt="Rendered example of the {{comp.name}} Material widget." src="{{comp.image.src}}">
       </div>
     </a>
     <div class="card-body">
