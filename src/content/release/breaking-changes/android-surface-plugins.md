@@ -60,7 +60,7 @@ use the provided [`setCallback`][] method to listen to surface lifecycle events:
 surfaceProducer.setCallback(
    new TextureRegistry.SurfaceProducer.Callback() {
       @Override
-      public void onSurfaceCreated() {
+      public void onSurfaceAvailable() {
          // Do surface initialization here, and draw the current frame.
       }
 
@@ -74,6 +74,12 @@ surfaceProducer.setCallback(
 
 A full example of using this new API can be found in [PR 6989][] for the
 `video_player_android` plugin.
+
+:::note
+In early versions of this API, the callback was named `onSurfaceCreated`, and
+was invoked even if the original surface was not destroyed. This has been fixed
+in the latest (pending 3.27) version of the API.
+:::
 
 ## Note on camera previews
 
@@ -91,13 +97,16 @@ rotation = (sensorOrientationDegrees - deviceOrientationDegrees * sign + 360) % 
 ```
 
 where `deviceOrientationDegrees` is counterclockwise degrees and `sign` is 1 for
-front-facing cameras and -1 for back-facing cameras. 
+front-facing cameras and -1 for back-facing cameras.
 
 To calculate this rotation,
+
+- Use [`SurfaceProducer.handlesCropAndRotation`][] to check if the underlying
+  `Surface` handles rotation (if `false`, you may need to handle the rotation).
 - Retrieve the sensor orientation degrees by retrieving the value of
-[`CameraCharacteristics.SENSOR_ORIENTATION`][].
+  [`CameraCharacteristics.SENSOR_ORIENTATION`][].
 - Retrieve the device orientation degrees in one of the ways that the
-[Android orientation calculation documentation][] details.
+  [Android orientation calculation documentation][] details.
 
 To apply this rotation, you can use a [`RotatedBox`][] widget.
 
@@ -115,6 +124,9 @@ plugins that migrate to this API should set `3.24` as a minimum version constrai
 :::
 
 In stable release: 3.24
+
+In the upcoming stable release, 3.27, `onSurfaceCreated` is deprecated, and
+`onSurfaceAvailable` and `handlesCropAndRotation` are added.
 
 ## References
 
@@ -142,6 +154,7 @@ Relevant PRs:
 [`HardwareBuffer`]: https://developer.android.com/reference/android/hardware/HardwareBuffer
 [`Surface`]: https://developer.android.com/reference/android/view/Surface
 [`SurfaceProducer`]: {{site.api}}/javadoc/io/flutter/view/TextureRegistry.SurfaceProducer.html
+[`SurfaceProducer.handlesCropAndRotation`]: {{site.api}}/javadoc/io/flutter/view/TextureRegistry.SurfaceProducer.html#handlesCropAndRotation()
 [`SurfaceTexture`]: https://source.android.com/docs/core/graphics/arch-st
 [`createSurfaceProducer`]: {{site.api}}/javadoc/io/flutter/view/TextureRegistry.html#createSurfaceProducer()
 [`createSurfaceTexture`]: {{site.api}}/javadoc/io/flutter/view/TextureRegistry.html#createSurfaceTexture()
