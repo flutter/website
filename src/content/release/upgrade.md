@@ -71,7 +71,7 @@ it is updated to the latest **beta** release.
 
 ### Other channels
 
-We currently have one other channel, **master**.
+We currently have one other channel, **main** (previously known as **master**).
 People who [contribute to Flutter][] use this channel.
 
 This channel is not as thoroughly tested as
@@ -80,7 +80,7 @@ the **beta** and **stable** channels.
 We do not recommend using this channel as
 it is more likely to contain serious regressions.
 
-The latest documentation for the **master** branch
+The latest documentation for the **main** branch
 is at: <https://main-api.flutter.dev>
 
 ### Changing channels
