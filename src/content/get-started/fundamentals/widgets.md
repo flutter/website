@@ -259,6 +259,7 @@ information you learned on this page,
 you can read [Building user interfaces with Flutter][].
 
 [Building user interfaces with Flutter]: /ui
+[`build`]: {{site.api}}/flutter/widgets/StatelessWidget/build.html
 [next page]: /get-started/fundamentals/layout
 [Flutter architectural overview]: /resources/architectural-overview
 [`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
