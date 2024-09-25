@@ -55,6 +55,8 @@ curl [provenance URL] | jq -r .payload | base64 -d | jq
 {% endtab %}
 {% endtabs %}
 
+<a id="master-channel" aria-hidden="true"></a>
+
 ## Main channel
 
 Installation bundles are not available for the `main` channel
