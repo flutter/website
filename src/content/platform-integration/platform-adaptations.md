@@ -28,8 +28,8 @@ architecture structures on Android and iOS but sharing
 the same content code, see the [platform_design code samples][].
 
 :::secondary
-Preliminary guides addressing case 2 
-are being added to the UI components section. 
+Preliminary guides addressing case 2
+are being added to the UI components section.
 You can request additional guides by commenting on [issue #8427][8427].
 :::
 

@@ -190,7 +190,7 @@ pre {
   }
 
   &:has(:focus-visible) {
-    border-color: #1389FD;
+    border-color: var(--site-primary-container);
   }
 
   pre {

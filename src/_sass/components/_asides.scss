@@ -10,6 +10,7 @@ aside.alert {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    margin-bottom: 0.5rem;
     font-family: var(--site-ui-font-family), sans-serif;
     font-size: 1.125rem;
     font-weight: 500;
@@ -22,8 +23,6 @@ aside.alert {
   }
 
   .alert-content {
-    margin-top: 0.5rem;
-
     > *:last-child {
       margin-bottom: 0;
     }
