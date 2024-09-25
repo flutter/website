@@ -3,10 +3,10 @@ title: Local caching
 description: Learn how to persist data locally.
 prev:
   title: Networking and data
-  path: /get-started/fwe/networking
+  path: /get-started/fundamentals/networking
 next:
   title: Learn more
-  path: /get-started/learn-more
+  path: /get-started/learn-flutter
 ---
 
 Now that you've learned about how to load data from servers
