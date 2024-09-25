@@ -2,11 +2,11 @@
 title: Layouts
 description: Learn how to create layouts in Flutter.
 prev:
-  title: Flutter fundamentals
-  path: /get-started/fwe/fundamentals
+  title: Widgets
+  path: /get-started/fundamentals/widgets
 next:
     title: State management
-    path: /get-started/fwe/state-management
+    path: /get-started/fundamentals/state-management
 ---
 
 Given that Flutter is a UI toolkit,

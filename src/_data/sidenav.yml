@@ -1,16 +1,45 @@
-- title: Get started
+- header: Get started
+- title: Set up Flutter
+  permalink: /get-started/install
+
+- title: Learn Flutter
   children:
-    - title: Install Flutter
-      permalink: /get-started/install
-    - title: Test drive
-      permalink: /get-started/test-drive
+    - title: Introduction
+      permalink: /get-started/learn-flutter
     - title: Write your first app
       permalink: /get-started/codelab
-    - title: Learn more
-      permalink: /get-started/learn-more
-    - divider
-    - title: Where to get Flutter support
-      permalink: /resources/support
+    - title: Learn the fundamentals
+      expanded: true
+      children:
+        - title: Introduction
+          permalink: /get-started/fundamentals
+        - title: Intro to Dart
+          permalink: /get-started/fundamentals/dart
+        - title: Widgets
+          permalink: /get-started/fundamentals/widgets
+        - title: Layouts
+          permalink: /get-started/fundamentals/layout
+        - title: State management
+          permalink: /get-started/fundamentals/state-management
+        - title: Handling user input
+          permalink: /get-started/fundamentals/user-input
+        - title: Networking and data
+          permalink: /get-started/fundamentals/networking
+        - title: Local data and caching
+          permalink: /get-started/fundamentals/local-caching
+
+    - title: Dart language
+      permalink: /resources/bootstrap-into-dart
+
+    - title: Codelabs & samples
+      children:
+        - title: Codelabs
+          permalink: /codelabs
+        - title: Cookbook
+          permalink: /cookbook
+        - title: Samples and demos
+          permalink: https://flutter.github.io/samples/
+
     - title: From another platform?
       permalink: /get-started/flutter-for
       children:
@@ -26,13 +55,10 @@
           permalink: /get-started/flutter-for/web-devs
         - title: Flutter for Xamarin.Forms devs
           permalink: /get-started/flutter-for/xamarin-forms-devs
-        - divider
         - title: Introduction to declarative UI
           permalink: /get-started/flutter-for/declarative
         - title: Flutter versus Swift concurrency
           permalink: /get-started/flutter-for/dart-swift-concurrency
-    - title: "Dart language overview"
-      permalink: https://dart.dev/overview
 
 - title: Stay up to date
   permalink: /release
@@ -50,15 +76,6 @@
       permalink: /release/breaking-changes
     - title: Compatibility policy
       permalink: /release/compatibility-policy
-
-- title: Codelabs & samples
-  children:
-    - title: Codelabs
-      permalink: /codelabs
-    - title: Cookbook
-      permalink: /cookbook
-    - title: Samples and demos
-      permalink: https://flutter.github.io/samples/
 
 - title: App solutions
   children:
@@ -754,6 +771,8 @@
       permalink: /resources/courses
     - title: Learn Dart
       permalink: /resources/bootstrap-into-dart
+    - title: Get support
+      permalink: /resources/support
     - header: Contributing
     - title: Create useful bug reports
       permalink: /resources/bug-reports

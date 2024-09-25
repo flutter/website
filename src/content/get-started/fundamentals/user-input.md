@@ -3,10 +3,10 @@ title: Handling user input
 description: Learn how to handle user input in Flutter.
 prev:
   title: State management
-  path: /get-started/fwe/state-management
+  path: /get-started/fundamentals/state-management
 next:
   title: Networking and data
-  path: /get-started/fwe/networking
+  path: /get-started/fundamentals/networking
 ---
 
 Now that you know how to manage state in your
@@ -45,9 +45,9 @@ No matter which design system you choose, the principals on this page apply.
 Next, we'll cover a few of the Material widgets that support common
 use cases for handling user input in your Flutter app.
 
-[scrolling]: /get-started/fwe/layout#scrolling-widgets
+[scrolling]: /get-started/fundamentals/layout#scrolling-widgets
 [pub.dev]: {{site.pub}}
-[Layouts]: /get-started/fwe/layout
+[Layouts]: /get-started/fundamentals/layout
 [Material]: /ui/widgets/material
 [Material 3 design language]: https://m3.material.io/
 [Cupertino]: /ui/widgets/cupertino

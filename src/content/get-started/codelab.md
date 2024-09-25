@@ -7,7 +7,7 @@ prev:
   path: /get-started/test-drive
 next:
   title: Learn more
-  path: /get-started/learn-more
+  path: /get-started/learn-flutter
 toc: false
 ---
 

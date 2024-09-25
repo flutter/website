@@ -48,7 +48,7 @@ You might also check out the [Dart 3.3 release][] blog post.
   [Flutter and Dart 2024 Roadmap][].
 * Check out [Harness the Gemini API in your Dart and Flutter apps][].
 
-[Flutter and Dart 2024 Roadmap]: {{site.github}}/flutter/flutter/blob/master/docs/roadmap/Roadmap.md
+[Flutter and Dart 2024 Roadmap]: {{site.github}}/flutter/flutter/blob/main/docs/roadmap/Roadmap.md
 [Harness the Gemini API in your Dart and Flutter apps]: {{site.flutter-medium}}/harness-the-gemini-api-in-your-dart-and-flutter-apps-00573e560381
 
 ## 15 November 2023: 3.16 release
@@ -1206,7 +1206,7 @@ Docs added and updated since the last announcement include:
 * A new [implicit animations][] codelab is available
   featuring DartPad.
   (To run it, you don't need to download any software!)
-* Alpha support for MacOS (desktop) is now available in
+* Alpha support for macOS (desktop) is now available in
   release 1.13 on the master and dev channels.
   For more information, see [Desktop support for Flutter][].
 * The iOS section of the [app size][] page is updated to reflect
