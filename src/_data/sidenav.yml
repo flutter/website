@@ -8,7 +8,7 @@
       permalink: /get-started/learn-flutter
     - title: Write your first app
       permalink: /get-started/codelab
-    - title: Fundamentals course
+    - title: Learn the fundamentals
       expanded: true
       children:
         - title: Introduction
@@ -771,7 +771,7 @@
       permalink: /resources/courses
     - title: Learn Dart
       permalink: /resources/bootstrap-into-dart
-    - title: Support
+    - title: Get support
       permalink: /resources/support
     - header: Contributing
     - title: Create useful bug reports

@@ -149,10 +149,11 @@ widget change (such as state that is passed into the widget).
 This method can potentially be called in every frame
 and should not have any side effects beyond
 building a widget.
-For more information on how Flutter renders widgets,
-read [Flutter architectural overview][].
+To learn more about how Flutter renders widgets,
+check out the [Flutter architectural overview][].
 
 ### Widget state
+
 The framework introduces two major classes of widget:
 stateful and stateless widgets.
 
@@ -188,7 +189,7 @@ class CounterWidget extends StatefulWidget {
 }
 
 class _CounterWidgetState extends State<CounterWidget> {
-    int _counter = 0;
+  int _counter = 0;
 
   void _incrementCounter() {
     setState(() {

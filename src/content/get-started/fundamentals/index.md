@@ -29,7 +29,7 @@ new subject pages in this section.
 We suggest that you work through the
 following subjects in the listed order.
 
-1. [Intro to Dart][] (Optional)
+1. [Intro to Dart][] _(Optional)_
 : As you might know, Flutter uses the [Dart language][].
    If you have experience with other object-oriented
    languages, like Java, C++, or Swift,
@@ -39,7 +39,7 @@ following subjects in the listed order.
    in part, thanks to Flutter.
 2. [Widget fundamentals][]
 : Learn about one of the primary building blocks
-  of a Flutter application, `Widgets`. 
+  of a Flutter application, widgets.
 3. [Layout][]
 : Flutter is different from other UI frameworks
   in that you create the layout programmatically.

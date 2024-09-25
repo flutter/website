@@ -44,8 +44,9 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class Package {
-  final String name, latestVersion; 
-  String? description;
+  final String name;
+  final String latestVersion; 
+  final String? description;
 
   Package(this.name, this.latestVersion, this.description);
 
@@ -103,7 +104,7 @@ positional arguments and one optional, named argument.
 
 Next in the example is the `main` function. 
 All Dart programs, including Flutter apps, 
-start with a `main`function. 
+start with a `main` function. 
 The function showcases several basic Dart language features, 
 including using libraries, marking functions as async, 
 making function calls, using `if` statement control-flow,
@@ -115,11 +116,10 @@ Flutter app is in `lib/main.dart`.
 The default `main` method looks
 like the following:
 
-```dart
+```dart title="lib/main.dart"
 void main() {
   runApp(const MyApp());
 }       
-
 ```
 
 Perform any _quick_ initialization (less than a frame or two)
