@@ -7,7 +7,7 @@
   margin-left: 0.05rem;
   margin-right: 0.05rem;
   background-color: var(--site-surface-container-low);
-  background-color: color-mix(in srgb, var(--site-surface-container-low) 80%, transparent);
+  background-color: color-mix(in srgb, var(--site-surface-container) 80%, transparent);
 
   border: 1px solid var(--site-outline-variant);
   border-radius: 0.25rem;
@@ -159,7 +159,7 @@ pre {
   border: 1px solid var(--site-outline-variant);
 
   .code-block-header {
-    background-color: var(--site-surface-container-low);
+    background-color: var(--site-surface-container-highest);
     border-bottom: 1px solid var(--site-outline-variant);
     font-size: 0.9125rem;
     font-weight: 500;
@@ -168,7 +168,7 @@ pre {
 
   .code-block-body {
     position: relative;
-    background-color: var(--site-surface-container-low);
+    background-color: var(--site-surface-container);
 
     &:hover, &:focus-within {
       .code-block-language {

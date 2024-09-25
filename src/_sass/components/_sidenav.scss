@@ -80,7 +80,7 @@
       }
 
       &:hover {
-        background-color: var(--site-surface-container-highest);
+        background-image: linear-gradient(rgb(var(--site-interaction-base-values) / 8%) 0 0);
       }
 
       &:not(.collapsed) {
@@ -94,21 +94,12 @@
       }
 
       &.active {
-        background-color: var(--site-surface-container);
+        background-color: var(--site-surface-container-highest);
         color: var(--site-on-surface);
-
-        &:hover {
-          background-color: var(--site-surface-container-highest);
-          color: var(--site-on-surface);
-        }
 
         &:not(.collapsible) {
           background-color: var(--site-secondary-container);
           color: var(--site-on-secondary-container);
-
-          &:hover {
-            background-image: linear-gradient(rgb(var(--site-interaction-base-values) / 5%) 0 0);
-          }
         }
       }
     }
