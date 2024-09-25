@@ -19,6 +19,7 @@
     align-items: center;
     height: 12rem;
     background-color: var(--bg-color);
+    overflow: hidden;
 
     img {
       position: relative;
@@ -70,7 +71,6 @@
       flex-direction: column;
       gap: 0.5rem;
       padding: 0.75rem;
-      background-color: inherit;
 
       img {
         width: 4.5rem;
