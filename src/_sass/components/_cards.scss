@@ -44,12 +44,12 @@
 
   a.card {
     &:hover {
-      background-image: linear-gradient(rgb(0 0 0/3%) 0 0);
+      background-image: linear-gradient(rgb(var(--site-interaction-base-values) / 3%) 0 0);
       text-decoration: none;
     }
 
     &:active {
-      background-image: linear-gradient(rgb(0 0 0/6%) 0 0);
+      background-image: linear-gradient(rgb(var(--site-interaction-base-values) / 6%) 0 0);
     }
   }
 

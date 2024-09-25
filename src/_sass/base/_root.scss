@@ -5,7 +5,7 @@ body {
 
   --site-surface: rgb(249 249 255);
   --site-on-surface: rgb(25 28 34);
-  --site-surface-variant: rgb(222 226 242); // Divider
+  --site-surface-variant: rgb(222 226 242);
   --site-on-surface-variant: rgb(66 71 83);
 
   --site-primary: rgb(0 69 148);
@@ -27,12 +27,13 @@ body {
   --site-outline: rgb(114 119 133); // Button border
   --site-outline-variant: rgb(194 198 214);
 
+  --site-interaction-base-values: 0 0 0;
 
   --code-highlight-bg-color: #FFF59C;
   --alert-info: #cbebf9;
   --alert-tip: #b0eda6;
   --alert-important: #e2dbff;
-  --alert-warning: #efd997;
+  --alert-warning: #fbe5a5;
   --alert-error: #fde9ee;
 
   &:not(.dark-mode) .dark-mode-visible {
@@ -63,6 +64,8 @@ body {
 
     --site-outline: rgb(140 144 159); // Button border
     --site-outline-variant: rgb(66 71 83);
+
+    --site-interaction-base-values: 255 255 255;
 
     --code-highlight-bg-color: rgba(161, 155, 55, 0.3);
     --alert-info: #043875;

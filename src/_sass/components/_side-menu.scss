@@ -28,7 +28,7 @@
       gap: 0.25rem;
 
       span.material-symbols {
-        color: var(--site-primary-container);
+        color: var(--site-primary);
         user-select: none;
       }
     }
@@ -57,7 +57,7 @@
           display: block;
           margin-left: 12px;
           border-radius: 0;
-          border-inline-start: 2px solid lightgray;
+          border-inline-start: 2px solid var(--site-outline-variant);
           padding: 0.125rem 0.125rem 0.125rem calc(0.75rem + var(--toc-indent) * 0.5rem);
           margin-right: 0.25rem;
 

@@ -38,23 +38,31 @@ h1 {
   margin-bottom: 1rem;
   align-items: center;
 
+  &:hover .heading-link {
+    opacity: 0.75;
+  }
+
   .heading-link {
     margin-left: .4rem;
     line-height: 1;
     transition: all .15s ease-in-out;
     overflow: hidden;
-    color: #4a4a4a;
+    color: var(--site-on-surface-variant);
     opacity: 0;
     text-decoration: none;
     user-select: none;
 
     &:focus-visible {
+      opacity: 0.75;
+    }
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    &:active {
       opacity: 1;
     }
-  }
-
-  &:hover .heading-link {
-    opacity: 1;
   }
 
   h2 {

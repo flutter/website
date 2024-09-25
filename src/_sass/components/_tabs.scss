@@ -34,7 +34,7 @@ ul.nav-tabs {
       color: var(--site-on-secondary-container);
 
       &:hover {
-        background-image: linear-gradient(rgb(0 0 0/4%) 0 0);
+        background-image: linear-gradient(rgb(var(--site-interaction-base-values) / 5%) 0 0);
       }
     }
 

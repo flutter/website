@@ -30,18 +30,18 @@ a, button {
     cursor: pointer;
 
     &:hover {
-      background-image: linear-gradient(rgb(0 0 0/10%) 0 0);
+      background-image: linear-gradient(rgb(var(--site-interaction-base-values) / 8%) 0 0);
     }
 
     &:active {
-      background-image: linear-gradient(rgb(0 0 0/20%) 0 0);
+      background-image: linear-gradient(rgb(var(--site-interaction-base-values) / 16%) 0 0);
     }
   }
 
   // TODO(parlough): Rename to icon-button.
   &.header-button {
     border-radius: 0.375rem;
-    color: var(--site-on-surface);
+    color: var(--site-on-surface-variant);
     text-decoration: none;
 
     display: flex;

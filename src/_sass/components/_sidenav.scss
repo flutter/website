@@ -71,6 +71,7 @@
       }
 
       .expander {
+        color: var(--site-on-surface-variant);
         transition: transform cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
       }
 
@@ -106,7 +107,7 @@
           color: var(--site-on-secondary-container);
 
           &:hover {
-            background-image: linear-gradient(rgb(0 0 0/4%) 0 0);
+            background-image: linear-gradient(rgb(var(--site-interaction-base-values) / 5%) 0 0);
           }
         }
       }
