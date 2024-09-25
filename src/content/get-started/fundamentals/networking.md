@@ -3,10 +3,10 @@ title: Networking and data
 description: Learn how to network your Flutter app.
 prev:
   title: Handling user input
-  path: /get-started/fundamentals-course/user-input
+  path: /get-started/fundamentals/user-input
 next:
   title: Local data and caching
-  path: /get-started/fundamentals-course/local-caching
+  path: /get-started/fundamentals/local-caching
 ---
 
 While it's said that "no man is an island",
@@ -107,7 +107,7 @@ If you've already worked through this codelab
 on the [layout][] page, feel free to skip this step.
 :::
 
-[layout]: /get-started/fundamentals-course/layout
+[layout]: /get-started/fundamentals/layout
 
 Next, a long-form YouTube video where
 Flutter DevRel alumnus, Fitz,

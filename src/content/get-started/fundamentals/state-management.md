@@ -3,10 +3,10 @@ title: State management
 description: Learn how to manage state in Flutter.
 prev:
   title: Layouts
-  path: /get-started/fundamentals-course/layout
+  path: /get-started/fundamentals/layout
 next:
   title: Handling user input
-  path: /get-started/fundamentals-course/user-input
+  path: /get-started/fundamentals/user-input
 ---
 
 The _state_ of a Flutter app refers to all the objects it uses

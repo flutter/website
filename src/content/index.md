@@ -22,9 +22,13 @@ see [What's new][].**
 
 ## New to Flutter?
 
-Once you've gone through [Get started][],
-including [Write your first Flutter app][],
-here are some next steps.
+Once you've [Set up Flutter][],
+you should read the 
+[Write your first Flutter app][] codelab 
+and read [Flutter fundamentals documentation]. 
+These resources are opinionated documentation 
+that guide you through the most important
+parts of building a Flutter app.
 
 [Write your first Flutter app]: /get-started/codelab
 
@@ -43,7 +47,7 @@ Coming from another platform? Check out Flutter for:
   flow down. Sizes flow up. Parents set
   positions", then you are well on your
   way to understanding Flutter's layout model.
- 
+
 [Adding interactivity to your Flutter app][interactivity]
 : Learn how to add a stateful widget to your app.
 
@@ -53,7 +57,7 @@ Coming from another platform? Check out Flutter for:
 [Android]: /get-started/flutter-for/android-devs
 [Building layouts]: /ui/layout
 [FAQ]: /resources/faq
-[Get started]: /get-started/install
+[Set up Flutter]: /get-started/install
 [interactivity]: /ui/interactivity
 [SwiftUI]: /get-started/flutter-for/swiftui-devs
 [UIKit]: /get-started/flutter-for/uikit-devs

@@ -20,7 +20,7 @@ in order:
 :  This codelab introduces the basics of Flutter 
    by creating an app that works on mobile, 
    desktop, and web.
-3. [Fundamentals course][] 
+3. [Learn the fundamentals][] 
 :  This is an opinionated set of documentation for
    the new Flutter developer. It guides you 
    through some of the most important pieces of 
@@ -56,6 +56,6 @@ Happy Fluttering!
 [Flutter samples]: https://flutter.github.io/samples
 [Flutter for web developers]: /get-started/flutter-for/web-devs
 [Flutter for Xamarin.Forms developers]: /get-started/flutter-for/xamarin-forms-devs
-[Fundamentals course]: /get-started/fundamentals-course
+[Learn the fundamentals]: /get-started/fundamentals
 [mailing list]: mailto:{{site.email}}
 [Write your first Flutter app]: /get-started/codelab

@@ -65,8 +65,8 @@ This website release includes several important updates!
     add your app's toggle when customizing their
     Control Center.
   * [Tinted app icons][] are supported
-* Two of the [Flutter fundamentals course][] pages are updated:
-  * [Flutter fundamentals][]
+* Two pages of the [Flutter fundamentals docs][] are updated:
+  * [Widgets][]
   * [Layout][]
   We hope these pages are helpful for new Flutter developers.
 * DevTools also has updates. Check out the release notes for
@@ -79,12 +79,12 @@ This website release includes several important updates!
 [DevTools 2.37.2]: /tools/devtools/release-notes/release-notes-2.37.2
 [Embedding Flutter on the web]: /platform-integration/web/embedding-flutter-web
 [Embedding web content into a Flutter app]: /platform-integration/web/web-content-in-flutter
-[Flutter fundamentals course]: /get-started/fundamentals-course
-[Flutter fundamentals]: /get-started/fundamentals-course/fundamentals
+[Flutter fundamentals docs]: /get-started/fundamentals
+[Widgets]: /get-started/fundamentals/widgets
 [iOS app extension]: /platform-integration/ios/app-extensions
 [iOS plugins]: /packages-and-plugins/swift-package-manager/for-plugin-authors
 [iOS apps]: /packages-and-plugins/swift-package-manager/for-app-developers
-[Layout]: /get-started/fundamentals-course/layout
+[Layout]: /get-started/fundamentals/layout
 [predictive back gesture]: /platform-integration/android/predictive-back
 [Tinted app icons]: /deployment/ios#add-an-app-icon
 
@@ -124,8 +124,7 @@ To learn more, check out [dart.dev/go/macros][].
 * For new-ish Flutter developer who has worked through
   the first Flutter codelab, we've added some "what's next"
   advice on how to move beyond that initial step.
-  Check out the docs for the
-  [Flutter fundamentals course][].
+  Check out the [Flutter fundamentals docs][].
 * Our [Flutter install][] docs have been revamped.
 * We have three new codelabs and a new guide for the Games Toolkit.
   To see the list of additions,
@@ -158,7 +157,7 @@ To learn more, check out [dart.dev/go/macros][].
 [Adaptive and Responsive design]: /ui/adaptive-responsive
 [Casual Games Toolkit]: /resources/games-toolkit
 [Conditionally bundling assets based on flavor]: /deployment/flavors#conditionally-bundling-assets-based-on-flavor
-[Flutter fundamentals course]: /get-started/fundamentals-course
+[Flutter fundamentals docs]: /get-started/fundamentals
 [Flutter install]: /get-started/install
 [Flutter web app initialization]: /platform-integration/web/initialization
 [website README]: {{site.github}}/flutter/website/?tab=readme-ov-file#flutter-documentation-website

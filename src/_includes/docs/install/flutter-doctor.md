@@ -82,7 +82,7 @@ you can start developing Flutter apps for {{work-target}}.
 To continue on your learning journey, consult the following guides:
 
 - [Learn how to write your first Flutter app][codelab]
-- [Flutter fundamentals course][fundamentals-course]
+- [Flutter fundamentals docs][fundamentals]
 
 [codelab]: /get-started/codelab/
-[fundamentals-course]: /get-started/fundamentals-course/
+[fundamentals]: /get-started/fundamentals/
