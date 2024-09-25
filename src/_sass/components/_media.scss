@@ -42,6 +42,7 @@ iframe {
 
 figure {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 
   img {
@@ -60,10 +61,10 @@ figure {
   }
 
   &.code-and-image {
-    display: flex;
-    flex-wrap: wrap;
     gap: 0.25rem;
     justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
 
     > div {
       width: 100%;
