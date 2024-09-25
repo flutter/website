@@ -90,6 +90,10 @@
       font-family: var(--site-ui-font-family), sans-serif;
       font-size: 1.25rem;
       color: var(--site-primary);
+
+      img {
+        margin-top: 0.5rem;
+      }
     }
 
     .card-muted {
