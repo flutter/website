@@ -161,7 +161,6 @@ In the next section, you'll learn about the
 building block of Flutter apps: widgets.
 
 [Asynchronous programming]: {{site.dart-site}}/libraries/async/async-await
-[Bootstrap into Dart]: resources/bootstrap-into-dart
 [Dart]: {{site.dart-site}}
 [Deferred components]: /perf/deferred-components
 [`main`]: {{site.dart-site}}/language#hello-world
@@ -169,7 +168,8 @@ building block of Flutter apps: widgets.
 [`FutureBuilder`]: {{site.api}}/flutter/widgets/FutureBuilder-class
 [type safe]: {{site.dart-site}}/language/type-system
 [sound null safety]: {{site.dart-site}}/null-safety
-[Working with long lists]: /cookbook/lists/long-list
+[Working with long lists]: /cookbook/lists/long-lists
+[Bootstrap into Dart]: /resources/bootstrap-into-dart
 
 ## Feedback
 
