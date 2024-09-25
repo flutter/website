@@ -35,7 +35,7 @@ The following example is a small program that
 fetches data from dart.dev, 
 decodes the returned json, 
 and prints it to the console. 
-If you’re confident in your ability to 
+If you're confident in your ability to 
 understand this program, 
 feel free to skip to the page.
 
@@ -74,7 +74,7 @@ the `Package` class declaration, and the business logic,
 which is contained in the [`main`][] function.
 
 The `Package` class contains many of the most common
-features you’ll use when working with [classes in Dart][].
+features you'll use when working with [classes in Dart][].
 This class has three members, 
 and defines a constructor and a method.
 
@@ -97,9 +97,9 @@ The `?` at the end of `String?` means that
 this property can be null. 
 The other two members cannot be null, 
 and the program will not compile if 
-you tried to set them to null. 
+you tried to set them to `null`. 
 You can see this demonstrated in the constructor for 
-the ‘Package class’. It takes two required,
+the `Package` class. It takes two required,
 positional arguments and one optional, named argument.
 
 Next in the example is the `main` function. 
@@ -145,7 +145,7 @@ call `initState` or `main` again.
 Hot restart calls both.
 :::
 
-If these features aren’t familiar to you, 
+If these features aren't familiar to you, 
 you can find resources to learn Dart on the 
 [Bootstrap into Dart][] page.
 

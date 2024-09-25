@@ -70,7 +70,7 @@ but styled differently for various use cases, including:
   like **Save**, **Join now**, or **Confirm**.
 - `Tonal Button`: A middle ground button between
   `FilledButton` and `OutlinedButton`.
-  They’re useful in contexts where a lower-priority button requires more
+  They're useful in contexts where a lower-priority button requires more
   emphasis than an outline, like **Next**.
 - `OutlinedButton`: A button with text and a visible border.
   These buttons contain actions that are important,
