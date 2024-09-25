@@ -4,14 +4,14 @@
 export default {
   name: 'dash-dark',
   colors: {
-    'editor.background': '#282c34',  // Dark grey background
-    'editor.foreground': '#abb2bf',  // Light grey foreground
+    'editor.background': '#1D2026',
+    'editor.foreground': '#C2C6D6',
   },
   tokenColors: [
     {
       settings: {
-        background: '#282c34',
-        foreground: '#abb2bf',
+        background: '#1D2026',
+        foreground: '#C2C6D6',
       },
     },
     {
@@ -33,19 +33,19 @@ export default {
         'storage.modifier.package.java',
       ],
       settings: {
-        foreground: '#abb2bf',
+        foreground: '#C2C6D6',
       },
     },
     {
       scope: ['comment', 'punctuation.definition.comment'],
       settings: {
-        foreground: '#5c6370',  // Slightly lighter shade of grey for comments
+        foreground: '#8b95a7',
       },
     },
     {
       scope: 'constant',
       settings: {
-        foreground: '#98c379',  // Green for constants
+        foreground: '#1CDAC5',
       },
     },
     {
@@ -56,7 +56,7 @@ export default {
         'variable.language',
       ],
       settings: {
-        foreground: '#c678dd',  // Purple for keywords
+        foreground: '#E5C07B',
       },
     },
     {
@@ -66,13 +66,13 @@ export default {
         'constant.character.escape',
       ],
       settings: {
-        foreground: '#abb2bf',
+        foreground: '#E1E2EC',
       },
     },
     {
       scope: ['string', 'string.interpolated', 'punctuation.definition.string'],
       settings: {
-        foreground: '#98c379',
+        foreground: '#1CDAC5',
       },
     },
     {
@@ -82,7 +82,7 @@ export default {
         'entity.other.attribute-name',
       ],
       settings: {
-        foreground: '#61afef',  // Cyan for functions
+        foreground: '#C678DD',
       },
     },
     {
@@ -97,13 +97,13 @@ export default {
         'entity.name.tag',
       ],
       settings: {
-        foreground: '#e5c07b',  // Yellow for classes
+        foreground: '#61AFEF',
       },
     },
     {
       scope: ['variable', 'variable.other'],
       settings: {
-        foreground: '#abb2bf',
+        foreground: '#E1E2EC',
       },
     },
     {

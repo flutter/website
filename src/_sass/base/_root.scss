@@ -29,7 +29,7 @@ body {
 
   --site-interaction-base-values: 0 0 0;
 
-  --code-highlight-bg-color: #FFF59C;
+  --code-highlight-bg-color: rgba(255, 245, 156, 0.8);
   --alert-info: #cbebf9;
   --alert-tip: #b0eda6;
   --alert-important: #e2dbff;
@@ -67,7 +67,7 @@ body {
 
     --site-interaction-base-values: 255 255 255;
 
-    --code-highlight-bg-color: rgba(161, 155, 55, 0.3);
+    --code-highlight-bg-color: rgba(185, 174, 0, 0.2);
     --alert-info: #043875;
     --alert-tip: #065517;
     --alert-important: #4a00b4;
