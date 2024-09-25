@@ -25,7 +25,6 @@ function fetchFlutterReleases(os, callback, errorCallback) {
 
 function updateTable(releases, os) {
   const releaseData = releases.releases;
-
   for (const channel in releases.current_release) {
     const table = document.getElementById(`downloads-${os}-${channel}`);
 
@@ -34,8 +33,10 @@ function updateTable(releases, os) {
       continue;
     }
 
+    const tableBody = table.querySelector('tbody');
+
     table.classList.add('collapsed');
-    const loadingElements = table.querySelectorAll('.loading');
+    const loadingElements = tableBody.querySelectorAll('.loading');
     loadingElements.forEach(function (element) {
       element.remove();
     });
@@ -61,14 +62,13 @@ function updateTable(releases, os) {
         cell.colSpan = 6;
         cell.appendChild(showAll);
         row.appendChild(cell);
-        table.appendChild(row);
+        tableBody.appendChild(row);
       }
 
       const row = document.createElement('tr');
       if (index >= releasesToShow) {
         row.classList.add('overflow');
       }
-      table.appendChild(row);
 
       const hashLabel = document.createElement('span');
       hashLabel.textContent = release.hash.substr(0, 7);
@@ -89,7 +89,6 @@ function updateTable(releases, os) {
 
       const provenance = getProvenanceLink(os, release, date, channel);
 
-
       const cells = [
         createTableCell(downloadLink),
         createTableCell(dartSdkArch),
@@ -102,6 +101,8 @@ function updateTable(releases, os) {
       cells.forEach(function (cell) {
         row.appendChild(cell);
       });
+
+      tableBody.appendChild(row);
     });
   }
 }

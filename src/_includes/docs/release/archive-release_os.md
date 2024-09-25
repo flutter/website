@@ -10,7 +10,7 @@ Select from the following scrollable list:
 <div class="scrollable-table">
   <table id="downloads-{{id}}-{{channel}}" class="table table-striped">
   <thead><tr><th>Flutter version</th><th>Architecture</th><th>Ref</th><th class="date">Release Date</th><th>Dart version</th><th>Provenance</th></tr></thead>
-  <tr class="loading"><td colspan="6">Loading...</td></tr>
+  <tbody><tr class="loading"><td colspan="6">Loading...</td></tr></tbody>
   </table>
 </div>
 

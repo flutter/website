@@ -32,6 +32,10 @@ table.table {
   border-radius: 0.375rem;
   border: 1px solid var(--site-outline-variant);
   overflow-x: auto;
+
+  img {
+    margin-bottom: 0.5rem; 
+  }
 }
 
 .scrollable-table {
