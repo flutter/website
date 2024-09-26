@@ -58,6 +58,34 @@ Open your project in Xcode.
 </li>
 <li>
 
+Navigate to the **Build Settings** of the target(s)
+and follow these instructions:
+
+</li>
+
+If `DART_DEFINES` doesn't exist yet:
+
+* Click the **+** button in the top left.
+* Select **Add User-Defined**.
+* Enter `DART_DEFINES` as the name.
+* Enter the **base64 encoded version**
+  of `FLUTTER_APP_FLAVOR=<value>` as the value,
+  where `value` is the name of the flavor
+  that is expected to be the `appFlavor` in Dart.
+
+:::note Important
+You must encode the entire string as `base64`.
+:::
+
+If DART_DEFINES exists, separate the values with a comma.
+
+If `DART_DEFINES` is already defined in `Generated.xcconfig`,
+delete that file and enter the `DART_DEFINES` setting in Xcode
+before trying again.
+
+</li>
+<li>
+
 Select **Product** > **Scheme** > **New Scheme** from the menu
 to add a new `Scheme`.
 
