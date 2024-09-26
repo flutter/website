@@ -10,21 +10,25 @@ the letters, and other visual aspects of the text.
 
 All fonts are _not_ created the same. 
 
-A font style is defined by, at minimum, a typeface, representing the set of common character rules describing fonts 
-in the same type family, such as **Roboto** or **Noto**, a font weight (for example, Regular, Bold, or a numeric value), 
-and a style (like Regular, _Italic_, etc). All of these and additional pre-set attributes come together to make up 
+A font style is defined by, at minimum, a typeface, representing the set of 
+common character rules describing fonts in the same type family, such as 
+**Roboto** or **Noto**, a font weight (for example, Regular, Bold, or a 
+numeric value), and a style (like Regular, _Italic_, etc). All of these 
+and additional pre-set attributes come together to make up 
 what we would call a static font.
 
-Variable fonts allow some of these attributes to be modified at runtime and store what would normally be multiple 
-static fonts in a single file.
+Variable fonts allow some of these attributes to be modified at runtime and 
+store what would normally be multiple static fonts in a single file.
 
 [_Typography_]: https://en.wikipedia.org/wiki/Typography
 
 ## Typographic Scale
 
-A typographical scale is a set of related text styles to provide balance, cohesion, and visual variety in your apps.
+A typographical scale is a set of related text styles to provide balance, 
+cohesion, and visual variety in your apps.
 
-The common type scale in Flutter, provided by [`TextTheme`][], includes five categories of text indicating the function:
+The common type scale in Flutter, provided by [`TextTheme`][], includes five 
+categories of text indicating the function:
 
 * Display
 * Headline
@@ -38,13 +42,15 @@ There are also three size variations for each:
 * Medium 
 * Large
 
-Each of these fifteen combinations of a category and text size are represented by a single [`TextStyle`][]. 
+Each of these fifteen combinations of a category and text size are represented 
+by a single [`TextStyle`][]. 
 
 <img src='/assets/images/docs/development/ui/typography/typographical-scale.png' 
 class="mw-100" alt="Listing of typographical scale for Material TextTheme">
 
-All the platform specific typographical scales that Flutter exposes are contained in the [`Typography`][] class. Usually,
-you will not need to reference this class directly as the `TextTheme` will be localized to your target platform.
+All the platform specific typographical scales that Flutter exposes are 
+contained in the [`Typography`][] class. Usually, you will not need to 
+reference this class directly as the `TextTheme` will be localized to your target platform.
 
 [`TextTheme`]: https://api.flutter.dev/flutter/material/TextTheme-class.html
 [`TextStyle`]: https://api.flutter.dev/flutter/painting/TextStyle-class.html
@@ -63,9 +69,12 @@ when specifying the type.
 
 ### Using the Google Fonts type tester
 
+A growing number of fonts on Google Fonts offer some variable font capabilities. 
+You can see the range of options by using the Type Tester and see how you 
+might vary a single font.
 
-<img src='/assets/images/docs/development/ui/typography/roboto-serif-font-axes.png'
-class="mw-100" alt="Listing of available font axes for Roboto Serif">
+<img src='/assets/images/docs/development/ui/typography/google-fonts-type-tester.png'
+class="mw-100" alt="Demonstration of varying aspects for Noto Sans with Lorem ipsum text">
 
 In real time, move the slider on any of the axes to
 see how it affects the font. When programming a variable font,
@@ -126,10 +135,6 @@ to support the feature):
 A `FontFeature` corresponds to an [OpenType feature tag][]
 and can be thought of as a boolean flag to enable or disable
 a feature of a given font.
-The following example is for CSS, but illustrates the concept:
-
-<img src='/assets/images/docs/development/ui/typography/feature-tag-example.png'
-class="mw-100" alt="Example feature tags in CSS">
 
 [`FontFeature`]: {{site.api}}/flutter/dart-ui/FontFeature-class.html
 [`FontStyle`]: {{site.api}}/flutter/dart-ui/FontStyle.html
