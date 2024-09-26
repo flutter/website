@@ -382,16 +382,6 @@ Widget build(BuildContext context) {
 
 Platform views in Flutter come with performance trade-offs.
 
-For example, in a typical Flutter app, the Flutter UI is 
-composed on a dedicated raster thread. 
-This allows Flutter apps to be fast, 
-as the main platform thread is rarely blocked.
-
-When a platform view is rendered with hybrid composition, 
-the Flutter UI is composed from the platform thread. 
-The platform thread competes with other tasks 
-like handling OS or plugin messages.
-
 For complex cases, there are some techniques that can be used 
 to mitigate performance issues.
 
