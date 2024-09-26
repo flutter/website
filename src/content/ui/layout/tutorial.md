@@ -6,8 +6,6 @@ description: Learn how to build a layout in Flutter.
 
 {% assign examples = site.repo.this | append: "/tree/" | append: site.branch | append: "/examples" -%}
 
-<style>dl, dd { margin-bottom: 0; }</style>
-
 :::secondary What you'll learn
 * How to lay out widgets next to each other.
 * How to add space between widgets.
@@ -339,7 +337,7 @@ Add the following code after the `ButtonSection` class.
 ```dart
 class ButtonSection extends StatelessWidget {
   const ButtonSection({super.key});
-// ···
+  // ···
 }
 
 class ButtonWithText extends StatelessWidget {
@@ -438,7 +436,7 @@ class ButtonWithText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-// ···
+      // ···
     );
   }
 }
@@ -546,10 +544,10 @@ To configure your app to reference images, modify its `pubspec.yaml` file.
    available to your code.
 
    ```yaml title="pubspec.yaml" diff
-    flutter:
-      uses-material-design: true
-   +  assets:
-   +    - images/lake.jpg
+     flutter:
+       uses-material-design: true
+   +   assets:
+   +     - images/lake.jpg
    ```
 
 :::tip
@@ -626,7 +624,7 @@ You can access the resources used in this tutorial from these locations:
 ## Next Steps
 
 To add interactivity to this layout, follow the
-[interactivity tutorial][Adding Interactivity to Your Flutter App].
+[interactivity tutorial][].
 
-[Adding Interactivity to Your Flutter App]: /ui/interactivity
+[interactivity tutorial]: /ui/interactivity
 [Unsplash]: https://unsplash.com
