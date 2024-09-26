@@ -78,7 +78,7 @@ follow Microsoft's instructions for the relevant platform:
 
 1. Type `doctor`.
 
-1. Select the **Flutter: Run Flutter Doctor**.
+1. Select **Flutter: Run Flutter Doctor**.
 
    Once you select this command, VS Code does the following.
 
