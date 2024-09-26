@@ -1103,7 +1103,7 @@ is called, report that instead.
   
 Add the following code after the `get_battery_level` function:
 
-```cpp title="flutter_window.cpp"
+```cpp title="my_application.cpp"
 static void battery_method_call_handler(FlMethodChannel* channel,
                                         FlMethodCall* method_call,
                                         gpointer user_data) {
