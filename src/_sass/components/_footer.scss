@@ -23,6 +23,10 @@
     @media(max-width: 768px) {
       flex-direction: column;
       text-align: center;
+
+      ul {
+        text-align: center;
+      }
     }
   }
 
@@ -85,10 +89,11 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
+    text-align: right;
 
     li {
       display: inline;
-      margin-left: 1rem;
+      margin-left: .75rem;
     }
 
     @media(max-width: 768px) {
