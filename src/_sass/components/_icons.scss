@@ -30,14 +30,14 @@
   cursor: pointer;
 
   font-variant-ligatures: none;
-  color: var(--site-on-surface-variant);
-  font-size: 2.25rem;
+  color: var(--flutter-wordmark-color);
+  font-size: 1.75rem;
   line-height: 2.5rem;
   font-family: var(--site-ui-font-family), sans-serif;
 
   > img {
-    height: 2.5rem;
-    margin-right: 0.75rem;
+    height: 2.25rem;
+    margin-right: 0.5rem;
   }
 }
 
