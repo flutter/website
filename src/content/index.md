@@ -23,14 +23,15 @@ see [What's new][].**
 ## New to Flutter?
 
 Once you've [Set up Flutter][],
-you should read the 
+you should follow the 
 [Write your first Flutter app][] codelab 
-and read [Flutter fundamentals documentation]. 
+and read [Flutter fundamentals][]. 
 These resources are opinionated documentation 
 that guide you through the most important
 parts of building a Flutter app.
 
 [Write your first Flutter app]: /get-started/codelab
+[Flutter fundamentals]: /get-started/fundamentals
 
 ### Docs
 
