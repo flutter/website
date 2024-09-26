@@ -159,8 +159,8 @@ tasks.register("clean", Delete) {
 
 ### android/app/build.gradle
 
-Most changes have to be made in the `<app-src>/android/app/build.gradle`.
-First, remove these 2 chunks of code that use the
+Most changes have to be made in `<app-src>/android/app/settings.gradle`.
+First, remove the following 2 chunks of code that use the
 legacy imperative apply method:
 
 ```groovy diff
