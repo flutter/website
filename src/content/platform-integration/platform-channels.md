@@ -1083,7 +1083,7 @@ static FlMethodResponse* get_battery_level() {
         "UNAVAILABLE", "Device does not have a battery.", nullptr));
   }
 
-  UpDevice* device = (UpDevice*)(g_ptr_array_index(devices, 0));
+  UpDevice* device = UP_DEVICE(g_ptr_array_index(devices, 0));
   double percentage = 0;
   g_object_get(device, "percentage", &percentage, nullptr);
 
