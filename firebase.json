@@ -733,6 +733,7 @@
       { "source": "/to/wasm", "destination": "/platform-integration/web/wasm", "type": 301 },
       { "source": "/to/web-bootstrapping", "destination": "/platform-integration/web/initialization", "type": 301 },
       { "source": "/to/web-images", "destination": "/platform-integration/web/web-images", "type": 301 },
+      { "source": "/to/web-multiview-runwidget", "destination": "/platform-integration/web/embedding-flutter-web#replace-runapp-by-runwidget-in-dart", "type": 301 },
       { "source": "/to/web-renderers", "destination": "/platform-integration/web/renderers", "type": 301 },
       { "source": "/to/widget-testing", "destination": "/cookbook/testing/widget/introduction", "type": 301 },
       { "source": "/to/windows-android-setup", "destination": "/get-started/install/windows/mobile", "type": 301 },
