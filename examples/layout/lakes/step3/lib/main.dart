@@ -89,7 +89,7 @@ class TitleSection extends StatelessWidget {
 // #docregion button-with-text
 class ButtonSection extends StatelessWidget {
   const ButtonSection({super.key});
-// #enddocregion button-with-text
+  // #enddocregion button-with-text
 
   @override
   Widget build(BuildContext context) {
@@ -119,7 +119,7 @@ class ButtonSection extends StatelessWidget {
     );
     // #docregion button-start
   }
-// #docregion button-with-text
+  // #docregion button-with-text
 }
 // #enddocregion button-start
 
@@ -138,7 +138,7 @@ class ButtonWithText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-// #enddocregion button-section
+      // #enddocregion button-section
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -155,9 +155,9 @@ class ButtonWithText extends StatelessWidget {
           ),
         ),
       ],
-// #docregion button-section
+      // #docregion button-section
     );
   }
-// #enddocregion button-with-text
+  // #enddocregion button-with-text
 }
 // #enddocregion button-section

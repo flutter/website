@@ -337,6 +337,7 @@
       { "source": "/go/developing-plugins", "destination": "/packages-and-plugins/developing-packages#plugin", "type": 301 },
       { "source": "/go/devintel-q1-2024", "destination": "https://docs.google.com/document/d/15W9wsqzFcidXR12DiPH5r5ZDcZw_wDa7Zi9CAAe34Y4/edit?usp=sharing&resourcekey=0-XH0RYaDhNkqa_WCjbH0otA", "type": 301 },
       { "source": "/go/devintel-q2-2024", "destination": "https://docs.google.com/document/d/17BdqRJLLuFeG-3YEumpOGKUJW-kVDoQFLuchCZgyM7c/edit?usp=sharing", "type": 301 },
+      { "source": "/go/devintel-q3-2024", "destination": "https://docs.google.com/document/d/1Gpb9Nuu79s8EZL40N6JXZGIu12TiP4570RBZT1O4zLg/edit?usp=sharing", "type": 301 },
       { "source": "/go/devintel-q3-2023", "destination": "https://docs.google.com/document/d/1VGux5IxePO8lN_7kUuzYJtcJ76fkldr_TJv4R0tciYk", "type": 301 },
       { "source": "/go/devtools-discoverability-in-vs-code", "destination": "https://docs.google.com/document/d/1iRx1_QpBOS88rS5shylzv_i5BisFDskavBuAeYGOUOs/edit?usp=sharing", "type": 301 },
       { "source": "/go/dirty-region-management", "destination": "https://docs.google.com/document/d/19WDvGJql1bmnECTdEzJFeH9Ixw4AP2R7JlgujBSbDbk/edit?usp=sharing", "type": 301 },

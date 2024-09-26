@@ -10,21 +10,21 @@ If you're brand new to Flutter,
 we suggest you complete the following resources 
 in order:
 
-1. [Dart language overview][]
-:  Flutter uses the Dart language. 
-   If you have experience with other
-   object-oriented languages, like Java, C++, or 
-   Swift, Dart should feel familiar to you, 
-   and you might be comfortable skipping this section.
-2. [Write your first Flutter app][] 
-:  This codelab introduces the basics of Flutter 
-   by creating an app that works on mobile, 
-   desktop, and web.
-3. [Learn the fundamentals][] 
-:  This is an opinionated set of documentation for
-   the new Flutter developer. It guides you 
-   through some of the most important pieces of 
-   building Flutter applications.
+ 1. [Dart language overview][]
+    Flutter uses the Dart language. 
+    If you have experience with other
+    object-oriented languages, like Java, C++, or 
+    Swift, Dart should feel familiar to you, 
+    and you might be comfortable skipping this section.
+ 2. [Write your first Flutter app][] 
+    This codelab introduces the basics of Flutter 
+    by creating an app that works on mobile, 
+    desktop, and web.
+ 3. [Learn the fundamentals][] 
+    This is an opinionated set of documentation for
+    the new Flutter developer. It guides you 
+    through some of the most important pieces of 
+    building Flutter applications.
 
 ## Apply your existing knowledge
 
