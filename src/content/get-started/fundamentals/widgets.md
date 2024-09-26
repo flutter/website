@@ -13,7 +13,7 @@ To get started with Flutter,
 you need to have some familiarity with the Dart programming language, which Flutter
 applications are written in, and widgets,
 which are the building blocks of Flutter UI.
-Both will be introduced on this page, but you’ll continue
+Both will be introduced on this page, but you'll continue
 learning about each throughout this series.
 Additional resources are listed throughout this page,
 but you do not need to be an expert in either
@@ -109,7 +109,7 @@ widgets like `Icon` and `Image`.
 If you run the code from the preceding example,
 Flutter paints a button with the text
 "Hello, World!" centered on the screen, laid out vertically.
-To position these elements, there’s a`Center` widget,
+To position these elements, there's a `Center` widget,
 which positions its children in the center
 of the available space, and a `Column` widget,
 which lays out its children vertically one after another.
@@ -163,7 +163,7 @@ that change over time) subclass [`StatelessWidget`][].
 Many built-in widgets are stateless,
 such as `Padding`, `Text`, and `Icon`.
 When you create your own widgets,
-you’ll create `Stateless` widgets most of the time.
+you'll create `Stateless` widgets most of the time.
 
 On the other hand,
 if the unique characteristics of a widget need to change
@@ -222,7 +222,7 @@ the child's persistent state.
 The framework does all the work of finding and
 reusing existing state objects when appropriate.
 
-There’s more information about
+There's more information about
 [`StatefulWidget`][] objects later in this
 series, in the [state management lesson][].
 
@@ -255,7 +255,7 @@ this is a deep-dive on specific topics.
 In the next section, you'll start building more
 interesting UIs by creating more complex layouts in Flutter.
 
-If you’d like practice with the
+If you'd like practice with the
 information you learned on this page,
 you can read [Building user interfaces with Flutter][].
 
