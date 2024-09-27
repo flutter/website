@@ -11,6 +11,10 @@ body {
   --site-primary: rgb(0 69 148);
   --site-surface-tint: rgb(0 91 191);
   --site-on-primary: rgb(255 255 255);
+
+  --site-inverse-primary: rgb(172 199 255);
+  --site-on-inverse-primary: rgb(0 47 104);
+
   --site-primary-container: rgb(4 104 215);
   --site-on-primary-container: rgb(255 255 255);
   --site-secondary: rgb(72 94 137);
@@ -51,6 +55,10 @@ body {
     --site-primary: rgb(172 199 255);
     --site-surface-tint: rgb(172 199 255);
     --site-on-primary: rgb(0 47 104);
+
+    --site-inverse-primary: rgb(0 91 191);
+    --site-on-inverse-primary: rgb(255 255 255);
+
     --site-primary-container: rgb(0 95 198);
     --site-on-primary-container: rgb(255 255 255);
     --site-secondary: rgb(176 199 248);

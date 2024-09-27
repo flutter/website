@@ -38,7 +38,17 @@
 
   > img {
     height: 2.25rem;
-    margin-right: 0.5rem;
+    margin-right: 0.25rem;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: var(--flutter-wordmark-color);
+    background-image: linear-gradient(rgb(var(--site-interaction-base-values) / 4%) 0 0);
+  }
+
+  &:active {
+    background-image: linear-gradient(rgb(var(--site-interaction-base-values) / 6%) 0 0);
   }
 }
 

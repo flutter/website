@@ -68,6 +68,7 @@
     {% for cssFile in css -%}
       {% assign asset_path = '/assets/css/{{cssFile}}' -%}
       <link rel="stylesheet" href="{{ asset_path | append: cache_bust }}">
+    <link rel="stylesheet" href="../../../../../../Downloads/css/light.css">
     {% endfor -%}
     {% endif -%}
   </head>
@@ -95,11 +96,11 @@
             <span class="material-symbols" aria-hidden="true">menu_open</span>
           </button>
         </div>
-        <a class="flutter-logo" href="https://flutter.dev">
+        <a class="flutter-logo" href="https://flutter.dev" title="Navigate to the Flutter homepage">
           <img src="/assets/images/branding/flutter/logo/default.svg" alt="Flutter logo" width="32" height="40">
           <span>Flutter</span>
         </a>
-        <a id="docs-button" href="/">Docs</a>
+        <a id="docs-button" href="/" title="Navigate to the docs homepage">Docs</a>
       </div>
       <div id="header-center">
         <search id="header-search">
@@ -116,6 +117,9 @@
         <button id="theme-switcher" class="icon-button" title="Toggle theme" aria-label="Toggle theme">
           <span class="material-symbols light-mode-visible" aria-hidden="true">dark_mode</span>
           <span class="material-symbols dark-mode-visible" aria-hidden="true">light_mode</span>
+        </button>
+        <button id="more-links" class="icon-button" title="View more links" aria-label="View more links">
+          <span class="material-symbols" aria-hidden="true">more_vert</span>
         </button>
       </div>
     </header>
