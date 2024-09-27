@@ -39,6 +39,7 @@ a, button {
 
   &.icon-button {
     border-radius: 0.375rem;
+    padding: 0.25rem;
     color: var(--site-on-surface-variant);
     text-decoration: none;
 
@@ -46,6 +47,7 @@ a, button {
     align-items: center;
     cursor: pointer;
     user-select: none;
+    -webkit-user-select: none;
     background: none;
 
     > span {

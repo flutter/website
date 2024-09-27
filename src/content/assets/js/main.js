@@ -1,23 +1,39 @@
+const _prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
+
 function setupTheme() {
-  const storedTheme = window.localStorage.getItem('theme');
-  if (storedTheme === 'dark-mode' || storedTheme === 'light-mode') {
-    document.body.classList.add(storedTheme);
+  const storedTheme = window.localStorage.getItem('theme') ?? 'light-mode';
+  document.body.classList.add(storedTheme);
+  _switchToPreferenceIfAuto();
+
+  const themeMenu = document.getElementById('theme-menu');
+  if (themeMenu) {
+    const themeButtons = themeMenu.querySelectorAll('button');
+    themeButtons.forEach((button) => {
+      button.addEventListener('click', (event) => {
+        document.body.classList.remove('auto-mode');
+        document.body.classList.remove('dark-mode');
+        document.body.classList.remove('light-mode');
+        const newMode = `${button.dataset.theme}-mode`;
+        document.body.classList.add(newMode);
+        window.localStorage.setItem('theme', newMode);
+        _switchToPreferenceIfAuto();
+        themeMenu.hidePopover();
+      });  
+    });
   }
 
-  const themeSwitcher = document.getElementById('theme-switcher');
+  _prefersDarkMode.addEventListener('change', _switchToPreferenceIfAuto);
+}
 
-  if (themeSwitcher) {
-    themeSwitcher.addEventListener('click', (_) => {
-      if (document.body.classList.contains('dark-mode')) {
-        document.body.classList.remove('dark-mode');
-        document.body.classList.add('light-mode');
-        window.localStorage.setItem('theme', 'light-mode');
-      } else {
-        document.body.classList.remove('light-mode');
-        document.body.classList.add('dark-mode');
-        window.localStorage.setItem('theme', 'dark-mode');
-      }
-    });
+function _switchToPreferenceIfAuto() {
+  if (document.body.classList.contains('auto-mode')) {
+    if (_prefersDarkMode.matches) {
+      document.body.classList.remove('light-mode');
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+      document.body.classList.add('light-mode');
+    }
   }
 }
 
