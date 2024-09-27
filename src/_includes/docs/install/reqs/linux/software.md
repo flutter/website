@@ -6,18 +6,6 @@ To develop Flutter on {{include.os}}:
 
 {% endif %}
 
-1. Verify that you have the following tools installed:
-   `bash`, `file`, `mkdir`, `rm`, `which`
-
-   ```console
-   $ which bash file mkdir rm which
-   /bin/bash
-   /usr/bin/file
-   /bin/mkdir
-   /bin/rm
-   which: shell built-in command
-   ```
-
 1. Install the following packages:
    [`curl`][curl], [`git`][git], [`unzip`][unzip], [`xz-utils`][xz], [`zip`][zip], `libglu1-mesa`
 
