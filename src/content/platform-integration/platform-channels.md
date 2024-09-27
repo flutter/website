@@ -1017,7 +1017,7 @@ of your choice. The instructions below are for Visual Studio Code with the
 1. Open the file `my_application.cc`.
   
 First, add the necessary includes to the top of the file, just
-after `#include <flutter_linux/flutter_linux.h`:
+after `#include <flutter_linux/flutter_linux.h>`:
 
 ```c title="my_application.cc"
 #include <math.h>

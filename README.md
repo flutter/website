@@ -114,7 +114,7 @@ If you prefer, you can use a version manager such as [nvm][],
 and run `nvm install` from the repository's root directory.
 
 If you already have Node installed, verify it's available on your path
-and already the latest stable version _(currently `20.12` or later)_:
+and already the latest stable version _(currently `20.17` or later)_:
 
 ```console
 node --version
@@ -217,7 +217,7 @@ following the instructions in [Get the prerequisites](#get-the-prerequisites).
    To install [`pnpm`][] without using `corepack`, you
    can use your preferred [installation method][pnpm-install].
 
-5. (optional) Once you have `pnpm` installed and setup,
+5. _(optional)_ Once you have `pnpm` installed and setup,
    fetch the site's npm dependencies using `pnpm install`.
    We highly recommend you use `pnpm`, but you can also use `npm`.
 

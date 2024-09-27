@@ -79,6 +79,10 @@ if command -v pnpm &> /dev/null; then
     echo "pnpm version $pnpm_version is too low. Version $REQUIRED_PNPM_VERSION or later is required."
     exit 1
   fi
+
+  # If using pnpm, update the dependencies silently as it is quick.
+  echo "Verifying npm dependencies are up to date..."
+  pnpm install --silent
 fi
 
 # Verify that Node packages have been installed.
