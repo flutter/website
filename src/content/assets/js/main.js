@@ -117,6 +117,31 @@ function setupSearch() {
       submitSearch(e);
     }
   });
+
+  document.addEventListener('keydown', handleSearchShortcut);
+}
+
+function handleSearchShortcut(event) {
+  const activeElement = document.activeElement;
+  if (activeElement instanceof HTMLInputElement ||
+      activeElement instanceof HTMLTextAreaElement ||
+      event.code !== 'Slash'
+  ) {
+    return;
+  }
+
+  // If the page has a search field in the body, focus that.
+  const bodySearch = document.querySelector('input.gsc-input');
+  // Otherwise, focus the search field in the navbar.
+  const searchElement = bodySearch ? bodySearch : document
+      .querySelector('#header-search input');
+
+  // If we successfully found a search field, focus that.
+  if (searchElement) {
+    searchElement.focus();
+    // Prevent the initial slash from showing up in the search field.
+    event.preventDefault();
+  }
 }
 
 document.addEventListener("DOMContentLoaded", function(_) {
