@@ -23,6 +23,7 @@
 #header-leading {
   display: flex;
   flex-direction: row;
+  gap: 0.25rem;
   justify-self: start;
   align-items: center;
   user-select: none;
@@ -61,10 +62,6 @@
   max-width: 36rem;
   width: 100%;
 
-  .icon-button > span {
-    font-size: 1.5rem;
-  }
-
   search {
     display: flex;
     flex-direction: row;
@@ -77,6 +74,18 @@
 
     font-family: var(--site-ui-font-family), sans-serif;
     background-color: var(--site-surface-container-high);
+
+    .icon-button {
+      background-image: none;
+
+      &:hover {
+        color: var(--site-primary);
+      }
+
+      > span {
+        font-size: 1.5rem;
+      }
+    }
 
     &:hover {
       background-image: linear-gradient(rgb(var(--site-interaction-base-values) / 2%) 0 0);
@@ -109,18 +118,17 @@
 #docs-button {
   padding: 0 0.25rem;
   border-radius: var(--site-square-radius);
-  margin-left: 0.25rem;
 
   background-color: var(--site-secondary-container);
   color: var(--site-on-surface);
 
   &:hover {
     text-decoration: none;
-    background-image: linear-gradient(rgb(var(--site-interaction-base-values) / 3%) 0 0);
+    background-image: linear-gradient(rgb(var(--site-interaction-base-values) / 4%) 0 0);
   }
 
   &:active {
-    background-image: linear-gradient(rgb(var(--site-interaction-base-values) / 6%) 0 0);
+    background-image: linear-gradient(rgb(var(--site-interaction-base-values) / 8%) 0 0);
   }
 }
 
