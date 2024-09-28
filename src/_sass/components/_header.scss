@@ -87,7 +87,7 @@
     }
 
     input {
-      border-radius: 0.375rem;
+      border-radius: var(--site-square-radius);
       caret-color: var(--site-primary-container);
       padding: 0.5rem;
       background: none;
@@ -108,7 +108,7 @@
 
 #docs-button {
   padding: 0 0.25rem;
-  border-radius: 0.375rem;
+  border-radius: var(--site-square-radius);
   margin-left: 0.25rem;
 
   background-color: var(--site-secondary-container);

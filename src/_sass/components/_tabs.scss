@@ -14,7 +14,7 @@ ul.nav-tabs {
   align-items: center;
 
   padding: 0.5rem;
-  border-radius: 0.375rem;
+  border-radius: var(--site-square-radius);
   background-color: var(--site-surface-container-high);
   gap: 0.5rem;
 
@@ -23,7 +23,7 @@ ul.nav-tabs {
     color: inherit;
     display: block;
     padding: 0.375rem;
-    border-radius: 0.375rem;
+    border-radius: var(--site-square-radius);
 
     &:hover {
       background-color: var(--site-surface-container-highest);

@@ -3,7 +3,7 @@
   inset: unset;
   right: calc(0.7rem + (var(--from-right) * 2rem));
   top: 3.5rem;
-  border-radius: 0.375rem;
+  border-radius: var(--site-square-radius);
   padding: 0;
   background-color: var(--site-surface-container-low);
   box-shadow: 0 0px 2px 0 rgb(0 0 0 / 0.2), 0 1px 2px -1px rgb(0 0 0 / 0.2);
@@ -29,7 +29,7 @@
       padding-right: 2rem;
       text-decoration: none;
       align-items: center;
-      border-radius: 0.375rem;
+      border-radius: var(--site-square-radius);
       color: var(--site-on-surface);
       font-size: 0.875rem;
       background: none;

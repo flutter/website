@@ -62,7 +62,7 @@
   .card {
     background-color: var(--site-surface-container);
     color: var(--site-on-surface);
-    border-radius: 0.375rem;
+    border-radius: var(--site-square-radius);
     overflow: hidden;
 
     .card-body {

@@ -92,7 +92,7 @@ pre {
     opacity: 0;
     transition: opacity 0.4s;
     cursor: pointer;
-    border-radius: 0.375rem;
+    border-radius: var(--site-square-radius);
 
     &:hover, &:focus-visible {
       color: #0468D7;

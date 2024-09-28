@@ -24,7 +24,7 @@
 
 .flutter-logo {
   padding: 0.25rem;
-  border-radius: 0.375rem;
+  border-radius: var(--site-square-radius);
   align-items: center;
   display: flex;
   flex-direction: row;

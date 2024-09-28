@@ -25,7 +25,7 @@ a, button {
     background-color: var(--site-primary-container);
     color: var(--site-on-primary-container);
     text-decoration: none;
-    border-radius: 0.375rem;
+    border-radius: var(--site-square-radius);
     cursor: pointer;
 
     &:hover {
@@ -38,7 +38,7 @@ a, button {
   }
 
   &.icon-button {
-    border-radius: 0.375rem;
+    border-radius: var(--site-square-radius);
     padding: 0.25rem;
     color: var(--site-on-surface-variant);
     text-decoration: none;
