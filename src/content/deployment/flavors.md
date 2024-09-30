@@ -77,7 +77,7 @@ If `DART_DEFINES` doesn't exist yet:
 You must encode the entire string as `base64`.
 :::
 
-If DART_DEFINES exists, separate the values with a comma.
+If `DART_DEFINES` exists, separate the values with a comma.
 
 If `DART_DEFINES` is already defined in `Generated.xcconfig`,
 delete that file and enter the `DART_DEFINES` setting in Xcode
