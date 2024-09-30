@@ -646,6 +646,14 @@ not be [tree-shaken][] away when compiling:
 @pragma('vm:entry-point')
 void myOtherEntrypoint() { ... };
 ```
+
+Additionally, If your entrypoint functions are not in `lib/main.dart` file,
+you need to import them in `lib/main.dart`.
+
+```dart
+// ignore: unused_import
+import 'package:your_package_name/other_file.dart';
+```
 :::
 
 ### Dart library
@@ -660,14 +668,14 @@ in `lib/other_file.dart` instead of `main()` in `lib/main.dart`:
 {% tab "Swift" %}
 
 ```swift
-flutterEngine.run(withEntrypoint: "myOtherEntrypoint", libraryURI: "other_file.dart")
+flutterEngine.run(withEntrypoint: "myOtherEntrypoint", libraryURI: "package:your_package_name/other_file.dart")
 ```
 
 {% endtab %}
 {% tab "Objective-C" %}
 
 ```objc
-[flutterEngine runWithEntrypoint:@"myOtherEntrypoint" libraryURI:@"other_file.dart"];
+[flutterEngine runWithEntrypoint:@"myOtherEntrypoint" libraryURI:@"package:your_package_name/other_file.dart"];
 ```
 
 {% endtab %}
