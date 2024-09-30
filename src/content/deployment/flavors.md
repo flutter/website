@@ -77,7 +77,11 @@ If `DART_DEFINES` doesn't exist yet:
 You must encode the entire string as `base64`.
 
 For example, for flavor `foo` set `DART_DEFINES` to `RkxVVFRFUl9BUFBfRkxBVk9SPWZvbw==` (base64 encoding of `FLUTTER_APP_FLAVOR=foo`).
+
+You can use this [base64 encoding DartPad][] to convert the string.
 :::
+
+[base64 encoding DartPad]: https://dartpad.dev/?id=bb19ede18efd0eb98c10e642aeedd9c7
 
 If `DART_DEFINES` exists, separate the values with a comma.
 
