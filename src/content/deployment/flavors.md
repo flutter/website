@@ -75,6 +75,8 @@ If `DART_DEFINES` doesn't exist yet:
 
 :::note Important
 You must encode the entire string as `base64`.
+
+For example, for flavor `foo` set `DART_DEFINES` to `RkxVVFRFUl9BUFBfRkxBVk9SPWZvbw==` (base64 encoding of `FLUTTER_APP_FLAVOR=foo`).
 :::
 
 If `DART_DEFINES` exists, separate the values with a comma.
