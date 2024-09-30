@@ -5,14 +5,10 @@ main {
 
   border-radius: var(--site-square-radius);
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  padding: 1rem;
 
   @media(max-width: 576px) {
     border-radius: 0;
-  }
-
-  > * {
-    margin-left: 1rem;
-    margin-right: 1rem;
   }
 
   ol, ul, p, pre, aside, iframe, img, figure, .card-grid, .table-wrapper {
