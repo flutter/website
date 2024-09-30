@@ -1,3 +1,5 @@
+@use '../base/utils';
+
 #sidenav {
   margin: 0;
   overflow-y: auto;
@@ -80,7 +82,7 @@
       }
 
       &:hover {
-        background-image: linear-gradient(rgb(var(--site-interaction-base-values) / 8%) 0 0);
+        @include utils.interaction-style(8%);
       }
 
       &:not(.collapsed) {

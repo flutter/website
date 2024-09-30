@@ -1,3 +1,5 @@
+@use '../base/utils';
+
 a {
   color: var(--site-primary);
   border-radius: 0.25rem;
@@ -29,11 +31,11 @@ a, button {
     cursor: pointer;
 
     &:hover {
-      background-image: linear-gradient(rgb(var(--site-interaction-base-values) / 8%) 0 0);
+      @include utils.interaction-style(8%);
     }
 
     &:active {
-      background-image: linear-gradient(rgb(var(--site-interaction-base-values) / 16%) 0 0);
+      @include utils.interaction-style(16%);
     }
   }
 
@@ -55,11 +57,11 @@ a, button {
     }
 
     &:hover {
-      background-image: linear-gradient(rgb(var(--site-interaction-base-values) / 4%) 0 0);
+      @include utils.interaction-style(4%);
     }
 
     &:active {
-      background-image: linear-gradient(rgb(var(--site-interaction-base-values) / 8%) 0 0);
+      @include utils.interaction-style(8%);
     }
   }
 }

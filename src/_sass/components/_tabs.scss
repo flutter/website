@@ -1,3 +1,5 @@
+@use '../base/utils';
+
 .tab-pane {
   display: none;
 
@@ -34,7 +36,7 @@ ul.nav-tabs {
       color: var(--site-on-secondary-container);
 
       &:hover {
-        background-image: linear-gradient(rgb(var(--site-interaction-base-values) / 5%) 0 0);
+        @include utils.interaction-style(5%);
       }
     }
 

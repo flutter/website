@@ -1,3 +1,5 @@
+@use '../base/utils';
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
@@ -50,12 +52,12 @@
 
   a.card {
     &:hover {
-      background-image: linear-gradient(rgb(var(--site-interaction-base-values) / 3%) 0 0);
+      @include utils.interaction-style(3%);
       text-decoration: none;
     }
 
     &:active {
-      background-image: linear-gradient(rgb(var(--site-interaction-base-values) / 6%) 0 0);
+      @include utils.interaction-style(6%);
     }
   }
 

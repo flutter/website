@@ -1,3 +1,5 @@
+@use '../base/utils';
+
 #site-footer {
   position: relative;
   background-color: var(--site-surface);
@@ -74,11 +76,11 @@
 
       &:hover {
         text-decoration: none;
-        background-image: linear-gradient(rgb(var(--site-interaction-base-values) / 3%) 0 0);
+        @include utils.interaction-style(3%);
       }
 
       &:active {
-        background-image: linear-gradient(rgb(var(--site-interaction-base-values) / 6%) 0 0);
+        @include utils.interaction-style(6%);
       }
     }
 

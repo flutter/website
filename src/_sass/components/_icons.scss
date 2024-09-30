@@ -1,3 +1,5 @@
+@use '../base/utils';
+
 .material-symbols {
   //noinspection CssNoGenericFontName
   font-family: 'Material Symbols Outlined';
@@ -44,11 +46,12 @@
   &:hover {
     text-decoration: none;
     color: var(--flutter-wordmark-color);
-    background-image: linear-gradient(rgb(var(--site-interaction-base-values) / 4%) 0 0);
+
+    @include utils.interaction-style(4%);
   }
 
   &:active {
-    background-image: linear-gradient(rgb(var(--site-interaction-base-values) / 6%) 0 0);
+    @include utils.interaction-style(7%);
   }
 }
 

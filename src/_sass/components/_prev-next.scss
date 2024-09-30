@@ -1,3 +1,5 @@
+@use '../base/utils';
+
 #site-prev-next {
   display: flex;
   flex-direction: row;
@@ -48,11 +50,11 @@
     }
 
     &:hover {
-      background-image: linear-gradient(rgb(var(--site-interaction-base-values) / 3%) 0 0);
+      @include utils.interaction-style(3%);
     }
 
     &:active {
-      background-image: linear-gradient(rgb(var(--site-interaction-base-values) / 5%) 0 0);
+      @include utils.interaction-style(5%);
     }
   }
 }
