@@ -71,7 +71,7 @@ If `DART_DEFINES` doesn't exist yet:
 * Enter the **base64 encoded version**
   of `FLUTTER_APP_FLAVOR=<value>` as the value,
   where `value` is the name of the flavor
-  that is expected to be the `appFlavor` in Dart.
+  that is expected to be the [`appFlavor`][] in Dart.
 
 :::note Important
 You must encode the entire string as `base64`.
