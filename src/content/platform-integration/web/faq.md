@@ -36,9 +36,7 @@ your landing page, marketing content, and help content—created using
 search-engine optimized HTML.
 
 That said, as mentioned in the [roadmap][], the Flutter team plans to
-investigate search engine indexability of Flutter web. To that end, we built a
-small website containing [Hawaii-themed space stories][space_hawaii], hoping
-that search engines find and index this site.
+investigate search engine indexability of Flutter web.
 
 ### How do I create an app that also runs on the web?
 
@@ -161,7 +159,6 @@ Not currently.
 [roadmap]: {{site.github}}/flutter/flutter/blob/master/docs/roadmap/Roadmap.md#web-platform
 [run your web apps in any supported browser]: /platform-integration/web/building#create-and-run
 [Running Flutter inspector]: /tools/devtools/inspector
-[space_hawaii]: https://alien-hawaii-2024.web.app/
 [Web content in Flutter]: /platform-integration/web/web-content-in-flutter
 [Web support for Flutter]: /platform-integration/web
 [web workers]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
