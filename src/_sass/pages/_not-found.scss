@@ -4,11 +4,15 @@
   align-items: center;
   min-height: calc(100vh - 6rem);
   text-align: center;
-  padding: 0.5rem;
+  padding: 1rem;
+
+  img {
+    max-width: 40rem;
+  }
 
   p {
     font-size: 1.25rem;
-    margin: 0 1rem 2rem;
+    margin: 0 1rem 1rem;
     max-width: 30rem;
   }
 
@@ -22,6 +26,7 @@
     text-align: left;
     white-space: nowrap;
     padding: 0.5rem;
+    margin-bottom: 0;
 
     @media(max-width: 576px) {
       grid-template-columns: repeat(2, 1fr);
