@@ -886,8 +886,8 @@ to native code using the `dart:ffi` library. The foreign function interface
 serialization is required to pass data. Instead, the Dart runtime provides the
 ability to allocate memory on the heap that is backed by a Dart object and make
 calls to statically or dynamically linked libraries. FFI is available for all
-platforms other than web, where the [js package]({{site.pub}}/packages/js)
-serves an equivalent purpose.
+platforms other than web, where the [JS interop libraries][] and
+[`package:web`][] serve a similar purpose.
 
 To use FFI, you create a `typedef` for each of the Dart and unmanaged method
 signatures, and instruct the Dart VM to map between them. As an example,
@@ -925,6 +925,9 @@ void exampleFfi() {
   );
 }
 ```
+
+[JS interop libraries]: {{site.dart-site}}/interop/js-interop
+[`package:web`]: {{site.pub-pkg}}/web
 
 ### Rendering native controls in a Flutter app
 
