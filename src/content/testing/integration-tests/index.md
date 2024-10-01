@@ -146,7 +146,9 @@ To add `integration_test` and `flutter_test` packages as
 ```console
 $ flutter pub add 'dev:integration_test:{"sdk":"flutter"}'
 ```
-Output
+
+Output:
+
 ```console
 Building flutter tool...
 Resolving dependencies... 
@@ -165,15 +167,15 @@ Changed 8 dependencies!
 Try `flutter pub outdated` for more information.
 ```
 
-Updated `pubspec.yaml` file
+Updated `pubspec.yaml` file:
 
 ```yaml title="pubspec.yaml"
 # ...
 dev_dependencies:
-  # ... added depencies
+  # ... added dependencies
   flutter_test:
     sdk: flutter
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
   [!integration_test:!]
     [!sdk: flutter!]
 # ...

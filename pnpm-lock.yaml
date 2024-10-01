@@ -9,11 +9,11 @@ importers:
   .:
     devDependencies:
       '@11ty/eleventy':
-        specifier: 3.0.0-alpha.20
-        version: 3.0.0-alpha.20
+        specifier: 3.0.0-beta.2
+        version: 3.0.0-beta.2
       firebase-tools:
-        specifier: ^13.20.0
-        version: 13.20.0(encoding@0.1.13)
+        specifier: ^13.20.2
+        version: 13.20.2(encoding@0.1.13)
       hast-util-from-html:
         specifier: ^2.0.3
         version: 2.0.3
@@ -48,11 +48,11 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0
       sass:
-        specifier: ^1.79.3
-        version: 1.79.3
+        specifier: ^1.79.4
+        version: 1.79.4
       shiki:
-        specifier: ^1.20.0
-        version: 1.20.0
+        specifier: ^1.21.0
+        version: 1.21.0
 
 packages:
 
@@ -67,16 +67,16 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  '@11ty/eleventy-plugin-bundle@2.0.2':
-    resolution: {integrity: sha512-zGyPp1g6bi+VC2I5ylwj4w29nivDmx4Uki5gWY6v3MT/1muK0JTtnc1KOMC7yUurv6YwtwdiLYyFK2eFyKv2wg==}
+  '@11ty/eleventy-plugin-bundle@3.0.0':
+    resolution: {integrity: sha512-JSnqehT+sWSPi6e44jTXUW+KiV9284YF9fzPQvfGB4cXlk/m/SJk17CavHCleIvKXDN+jrUw9TZkwAwr85ONWQ==}
     engines: {node: '>=18'}
 
   '@11ty/eleventy-utils@1.0.3':
     resolution: {integrity: sha512-nULO91om7vQw4Y/UBjM8i7nJ1xl+/nyK4rImZ41lFxiY2d+XUz7ChAj1CDYFjrLZeu0utAYJTZ45LlcHTkUG4g==}
     engines: {node: '>=12'}
 
-  '@11ty/eleventy@3.0.0-alpha.20':
-    resolution: {integrity: sha512-9X3Bu153VccE/y9y9IMXpuwDRi2T+WaCslZmetUYtBzyeATbmcknYfhCbB/WxkzPHnrL9euJH7ytv872Ki+XLQ==}
+  '@11ty/eleventy@3.0.0-beta.2':
+    resolution: {integrity: sha512-N3sKp79gj1D8JjFK1CMHl9JehaM886sLAB8xc75Lv9daXgTqYHTvoeMGwZ5jrlRvatYD54tpWZESiyDyLzM1mw==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -108,8 +108,8 @@ packages:
   '@electric-sql/pglite@0.2.9':
     resolution: {integrity: sha512-KPItmBmPVZJGOv+qkCXmWyIPUPLQIyN+BVtV/zD+083aWSR/2ReaCUN+HJv6Jw4z9zJ00UCPQkeUXvOLuTlumg==}
 
-  '@google-cloud/cloud-sql-connector@1.3.4':
-    resolution: {integrity: sha512-Lw05ME/W9mDzJuQwGwzHl9dqJtN1zBpyK6A3NbjhBi/V1WZpsIk1RgqR6+5LIbMurcNRia9ITOlCjsgJY+H92A==}
+  '@google-cloud/cloud-sql-connector@1.4.0':
+    resolution: {integrity: sha512-OUXs2f91u3afbFjufCJom9lF+GgS9if4F/eKxrLvdkbwkYAQrQUOY6Jw4YfVXUxF3oNDioTgZ4fpwt1MQXwfKg==}
     engines: {node: '>=14'}
 
   '@google-cloud/paginator@5.0.2':
@@ -132,8 +132,8 @@ packages:
     resolution: {integrity: sha512-N9Cziu5d7sju4gtHsbbjOXDMCewNwGaPZ/o+sBbWl9sBR7S+kHkD4BVg6hCi9SvH1sst0AGan8UAQAxbac8cRg==}
     engines: {node: '>=14.0.0'}
 
-  '@googleapis/sqladmin@19.0.0':
-    resolution: {integrity: sha512-65zgEpQLhpTZqUic+pm4BbdDByN9NsHkphfCIwzpx3fccHPc6OuKsW0XexYCq9oTUtTC4QRjFisBDLV9fChRtg==}
+  '@googleapis/sqladmin@24.0.0':
+    resolution: {integrity: sha512-Sj2MerYrr4Z6ksK81Scj0gIdFjC3bC0vcqdM+TSfnOskg6d9iIALWdFDc3xgNHQWO58rUb6HjBzr1XbuNjYlPg==}
     engines: {node: '>=12.0.0'}
 
   '@grpc/grpc-js@1.11.3':
@@ -250,17 +250,17 @@ packages:
   '@protobufjs/utf8@1.1.0':
     resolution: {integrity: sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==}
 
-  '@shikijs/core@1.20.0':
-    resolution: {integrity: sha512-KlO3iE0THzSdYkzDFugt8SHe6FR3qNYTkmpbdW1d6xo8juQkMjybxAw/cBi2npL2eb2F4PbbnSs5Z9tDusfvyg==}
+  '@shikijs/core@1.21.0':
+    resolution: {integrity: sha512-zAPMJdiGuqXpZQ+pWNezQAk5xhzRXBNiECFPcJLtUdsFM3f//G95Z15EHTnHchYycU8kIIysqGgxp8OVSj1SPQ==}
 
-  '@shikijs/engine-javascript@1.20.0':
-    resolution: {integrity: sha512-ZUMo758uduM0Tfgzi/kd+0IKMbNdumCxxWjY36uf1DIs2Qyg9HIq3vA1Wfa/vc6HE7tHWFpANRi3mv7UzJ68MQ==}
+  '@shikijs/engine-javascript@1.21.0':
+    resolution: {integrity: sha512-jxQHNtVP17edFW4/0vICqAVLDAxmyV31MQJL4U/Kg+heQALeKYVOWo0sMmEZ18FqBt+9UCdyqGKYE7bLRtk9mg==}
 
-  '@shikijs/engine-oniguruma@1.20.0':
-    resolution: {integrity: sha512-MQ40WkVTZk7by33ces4PGK6XNFSo6PYvKTSAr2kTWdRNhFmOcnaX+1XzvFwB26eySXR7U74t91czZ1qJkEgxTA==}
+  '@shikijs/engine-oniguruma@1.21.0':
+    resolution: {integrity: sha512-AIZ76XocENCrtYzVU7S4GY/HL+tgHGbVU+qhiDyNw1qgCA5OSi4B4+HY4BtAoJSMGuD/L5hfTzoRVbzEm2WTvg==}
 
-  '@shikijs/types@1.20.0':
-    resolution: {integrity: sha512-y+EaDvU2K6/GaXOKXxJaGnr1XtmZMF7MfS0pSEDdxEq66gCtKsLwQvVwoQFdp7R7dLlNAro3ijEE19sMZ0pzqg==}
+  '@shikijs/types@1.21.0':
+    resolution: {integrity: sha512-tzndANDhi5DUndBtpojEq/42+dpUF2wS7wdCDQaFtIXm3Rd1QkrcVgSSRLOvEwexekihOXfbYJINW37g96tJRw==}
 
   '@shikijs/vscode-textmate@9.2.2':
     resolution: {integrity: sha512-TMp15K+GGYrWlZM8+Lnj9EaHEFmOen0WJBrfa17hF7taDOYthuPPV0GWzfd/9iMij0akS/8Yw2ikquH7uVi/fg==}
@@ -484,8 +484,8 @@ packages:
   base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
 
-  basic-auth-connect@1.0.0:
-    resolution: {integrity: sha512-kiV+/DTgVro4aZifY/hwRwALBISViL5NP4aReaR2EVJEObpbUBHIkdJh/YpcoEiYt7nBodZ6U2ajZeZvSxUCCg==}
+  basic-auth-connect@1.1.0:
+    resolution: {integrity: sha512-rKcWjfiRZ3p5WS9e5q6msXa07s6DaFAMXoyowV+mb2xQG+oYdw2QEUyKi0Xp95JvXzShlM+oGy5QuqSK6TfC1Q==}
 
   basic-auth@2.0.1:
     resolution: {integrity: sha512-NF+epuEdnUYVlGuhaxbbq+dvJttwLnGY+YixlXlME5KpQ5W3CnXA5cVTneY3SPbPDRkcjMbifrwmFYcClgOZeg==}
@@ -1141,8 +1141,8 @@ packages:
     resolution: {integrity: sha512-6BN9trH7bp3qvnrRyzsBz+g3lZxTNZTbVO2EV1CS0WIcDbawYVdYvGflME/9QP0h0pYlCDBCTjYa9nZzMDpyxQ==}
     engines: {node: '>= 0.8'}
 
-  firebase-tools@13.20.0:
-    resolution: {integrity: sha512-MzNGYdJxoo2qeI19jB1ByZGRnGHyjM3555MwnqcVTA/nyhFZTqKJu5zMGGM/YjIIJp9k/ESbq75HQ+IuJQc+QQ==}
+  firebase-tools@13.20.2:
+    resolution: {integrity: sha512-lhJ8C/hNtNyG57IIWZ+j+0JaiB3A/wo7c/LFouRigE+/IRo13le2uotBAFI7XjTOgxelxs8wGA6u/4fgQAz8Zw==}
     engines: {node: '>=18.0.0 || >=20.0.0'}
     hasBin: true
 
@@ -2418,8 +2418,8 @@ packages:
   safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
 
-  sass@1.79.3:
-    resolution: {integrity: sha512-m7dZxh0W9EZ3cw50Me5GOuYm/tVAJAn91SUnohLRo9cXBixGUOdvmryN+dXpwR831bhoY3Zv7rEFt85PUwTmzA==}
+  sass@1.79.4:
+    resolution: {integrity: sha512-K0QDSNPXgyqO4GZq2HO5Q70TLxTH6cIT59RdoCHMivrC8rqzaTw5ab9prjz9KUN1El4FLXrBXJhik61JR4HcGg==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -2478,8 +2478,8 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
 
-  shiki@1.20.0:
-    resolution: {integrity: sha512-MZJJ1PCFsQB1Piq+25wiz0a75yUv8Q3/fzy7SzRx5ONdjdtGdyiKwYn8vb/FnK5kjS0voWGnPpjG16POauUR+g==}
+  shiki@1.21.0:
+    resolution: {integrity: sha512-apCH5BoWTrmHDPGgg3RF8+HAAbEL/CdbYr8rMw7eIrdhCkZHdVGat5mMNlRtd1erNG01VPMIKHNQ0Pj2HMAiog==}
 
   side-channel@1.0.6:
     resolution: {integrity: sha512-fDW/EZ6Q9RiO8eFG8Hj+7u/oW+XrPTIChwCOM2+th2A6OblDtYYIpve9m+KvI9Z4C9qSEXlaGR6bTEYHReuglA==}
@@ -2647,8 +2647,8 @@ packages:
     resolution: {integrity: sha512-resvxdc6Mgb7YEThw6G6bExlXKkv6+YbuzGg9xuXxSgxJF7Ozs+o8Y9+2R3sArdWdW8nOokoQb1yrpFB0pQK2g==}
     engines: {node: '>=14'}
 
-  terser@5.34.0:
-    resolution: {integrity: sha512-y5NUX+U9HhVsK/zihZwoq4r9dICLyV2jXGOriDAVOeKhq3LKVjgJbGO90FisozXLlJfvjHqgckGmJFBb9KYoWQ==}
+  terser@5.34.1:
+    resolution: {integrity: sha512-FsJZ7iZLd/BXkz+4xrRTGJ26o/6VTjQytUk8b8OxkwcD2I+79VPJlz7qss1+zE7h8GNIScFqXcDyJ/KqBYZFVA==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -2702,6 +2702,10 @@ packages:
 
   tslib@2.7.0:
     resolution: {integrity: sha512-gLXCKdN1/j47AiHiOkJN69hJmcbGTHI0ImLmbYLHykhgeN0jVGola9yVjFgzCUklsZQMW55o+dW7IXv3RCXDzA==}
+
+  tsscmp@1.0.6:
+    resolution: {integrity: sha512-LxhtAkPDTkVCMQjt2h6eBVY28KCjikZqZfMcC15YBeNjkgUpdCfBu5HoiOTDu86v6smE8yOjyEktJ8hlbANHQA==}
+    engines: {node: '>=0.6.x'}
 
   type-fest@0.20.2:
     resolution: {integrity: sha512-Ne+eE4r0/iWnpAxD852z3A+N0Bt5RN//NjJwRd2VFHEmrywxf5vsZlh4R6lixl6B+wz/8d+maTSAkN1FIkI3LQ==}
@@ -2850,8 +2854,8 @@ packages:
     resolution: {integrity: sha512-NsmoXalsWVDMGupxZ5R08ka9flZjjiLvHVAWYOKtiKM8ujtZWr9cRffak+uSE48+Ob8ObalXpwyeUiyDD6QFgg==}
     engines: {node: '>=8'}
 
-  winston-transport@4.7.1:
-    resolution: {integrity: sha512-wQCXXVgfv/wUPOfb2x0ruxzwkcZfxcktz6JIMUaPLmcNhO4bZTwA/WtDWK74xV3F2dKu8YadrFv0qhwYjVEwhA==}
+  winston-transport@4.8.0:
+    resolution: {integrity: sha512-qxSTKswC6llEMZKgCQdaWgDuMJQnhuvF5f2Nk3SNXc4byfQ+voo2mX1Px9dkNOuR8p0KAjfPG29PuYUSIb+vSA==}
     engines: {node: '>= 12.0.0'}
 
   winston@3.14.2:
@@ -2980,22 +2984,24 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@11ty/eleventy-plugin-bundle@2.0.2':
+  '@11ty/eleventy-plugin-bundle@3.0.0(posthtml@0.16.6)':
     dependencies:
       debug: 4.3.7
+      posthtml-match-helper: 2.0.2(posthtml@0.16.6)
     transitivePeerDependencies:
+      - posthtml
       - supports-color
 
   '@11ty/eleventy-utils@1.0.3':
     dependencies:
       normalize-path: 3.0.0
 
-  '@11ty/eleventy@3.0.0-alpha.20':
+  '@11ty/eleventy@3.0.0-beta.2':
     dependencies:
       '@11ty/dependency-tree': 3.0.1
       '@11ty/dependency-tree-esm': 1.0.0
       '@11ty/eleventy-dev-server': 2.0.4
-      '@11ty/eleventy-plugin-bundle': 2.0.2
+      '@11ty/eleventy-plugin-bundle': 3.0.0(posthtml@0.16.6)
       '@11ty/eleventy-utils': 1.0.3
       '@11ty/lodash-custom': 4.17.21
       '@11ty/posthtml-urls': 1.0.0
@@ -3077,9 +3083,9 @@ snapshots:
 
   '@electric-sql/pglite@0.2.9': {}
 
-  '@google-cloud/cloud-sql-connector@1.3.4(encoding@0.1.13)':
+  '@google-cloud/cloud-sql-connector@1.4.0(encoding@0.1.13)':
     dependencies:
-      '@googleapis/sqladmin': 19.0.0(encoding@0.1.13)
+      '@googleapis/sqladmin': 24.0.0(encoding@0.1.13)
       gaxios: 6.7.1(encoding@0.1.13)
       google-auth-library: 9.14.1(encoding@0.1.13)
       p-throttle: 5.1.0
@@ -3118,7 +3124,7 @@ snapshots:
       - encoding
       - supports-color
 
-  '@googleapis/sqladmin@19.0.0(encoding@0.1.13)':
+  '@googleapis/sqladmin@24.0.0(encoding@0.1.13)':
     dependencies:
       googleapis-common: 7.2.0(encoding@0.1.13)
     transitivePeerDependencies:
@@ -3242,27 +3248,27 @@ snapshots:
 
   '@protobufjs/utf8@1.1.0': {}
 
-  '@shikijs/core@1.20.0':
+  '@shikijs/core@1.21.0':
     dependencies:
-      '@shikijs/engine-javascript': 1.20.0
-      '@shikijs/engine-oniguruma': 1.20.0
-      '@shikijs/types': 1.20.0
+      '@shikijs/engine-javascript': 1.21.0
+      '@shikijs/engine-oniguruma': 1.21.0
+      '@shikijs/types': 1.21.0
       '@shikijs/vscode-textmate': 9.2.2
       '@types/hast': 3.0.4
       hast-util-to-html: 9.0.3
 
-  '@shikijs/engine-javascript@1.20.0':
+  '@shikijs/engine-javascript@1.21.0':
     dependencies:
-      '@shikijs/types': 1.20.0
+      '@shikijs/types': 1.21.0
       '@shikijs/vscode-textmate': 9.2.2
       oniguruma-to-js: 0.4.3
 
-  '@shikijs/engine-oniguruma@1.20.0':
+  '@shikijs/engine-oniguruma@1.21.0':
     dependencies:
-      '@shikijs/types': 1.20.0
+      '@shikijs/types': 1.21.0
       '@shikijs/vscode-textmate': 9.2.2
 
-  '@shikijs/types@1.20.0':
+  '@shikijs/types@1.21.0':
     dependencies:
       '@shikijs/vscode-textmate': 9.2.2
       '@types/hast': 3.0.4
@@ -3480,7 +3486,9 @@ snapshots:
 
   base64-js@1.5.1: {}
 
-  basic-auth-connect@1.0.0: {}
+  basic-auth-connect@1.1.0:
+    dependencies:
+      tsscmp: 1.0.6
 
   basic-auth@2.0.1:
     dependencies:
@@ -4187,10 +4195,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  firebase-tools@13.20.0(encoding@0.1.13):
+  firebase-tools@13.20.2(encoding@0.1.13):
     dependencies:
       '@electric-sql/pglite': 0.2.9
-      '@google-cloud/cloud-sql-connector': 1.3.4(encoding@0.1.13)
+      '@google-cloud/cloud-sql-connector': 1.4.0(encoding@0.1.13)
       '@google-cloud/pubsub': 4.7.2(encoding@0.1.13)
       abort-controller: 3.0.0
       ajv: 6.12.6
@@ -4254,7 +4262,7 @@ snapshots:
       update-notifier-cjs: 5.1.6(encoding@0.1.13)
       uuid: 8.3.2
       winston: 3.14.2
-      winston-transport: 4.7.1
+      winston-transport: 4.8.0
       ws: 7.5.10
       yaml: 2.5.1
     transitivePeerDependencies:
@@ -4561,7 +4569,7 @@ snapshots:
       entities: 4.5.0
       param-case: 3.0.4
       relateurl: 0.2.7
-      terser: 5.34.0
+      terser: 5.34.1
 
   html-void-elements@3.0.0: {}
 
@@ -5689,7 +5697,7 @@ snapshots:
 
   safer-buffer@2.1.2: {}
 
-  sass@1.79.3:
+  sass@1.79.4:
     dependencies:
       chokidar: 4.0.1
       immutable: 4.3.7
@@ -5762,12 +5770,12 @@ snapshots:
 
   shebang-regex@3.0.0: {}
 
-  shiki@1.20.0:
+  shiki@1.21.0:
     dependencies:
-      '@shikijs/core': 1.20.0
-      '@shikijs/engine-javascript': 1.20.0
-      '@shikijs/engine-oniguruma': 1.20.0
-      '@shikijs/types': 1.20.0
+      '@shikijs/core': 1.21.0
+      '@shikijs/engine-javascript': 1.21.0
+      '@shikijs/engine-oniguruma': 1.21.0
+      '@shikijs/types': 1.21.0
       '@shikijs/vscode-textmate': 9.2.2
       '@types/hast': 3.0.4
 
@@ -5912,7 +5920,7 @@ snapshots:
 
   superstatic@9.0.3(encoding@0.1.13):
     dependencies:
-      basic-auth-connect: 1.0.0
+      basic-auth-connect: 1.1.0
       commander: 10.0.1
       compression: 1.7.4
       connect: 3.7.0
@@ -5978,7 +5986,7 @@ snapshots:
       - encoding
       - supports-color
 
-  terser@5.34.0:
+  terser@5.34.1:
     dependencies:
       '@jridgewell/source-map': 0.3.6
       acorn: 8.12.1
@@ -6029,6 +6037,8 @@ snapshots:
   triple-beam@1.4.1: {}
 
   tslib@2.7.0: {}
+
+  tsscmp@1.0.6: {}
 
   type-fest@0.20.2: {}
 
@@ -6192,10 +6202,10 @@ snapshots:
     dependencies:
       string-width: 4.2.3
 
-  winston-transport@4.7.1:
+  winston-transport@4.8.0:
     dependencies:
       logform: 2.6.1
-      readable-stream: 3.6.2
+      readable-stream: 4.5.2
       triple-beam: 1.4.1
 
   winston@3.14.2:
@@ -6210,7 +6220,7 @@ snapshots:
       safe-stable-stringify: 2.5.0
       stack-trace: 0.0.10
       triple-beam: 1.4.1
-      winston-transport: 4.7.1
+      winston-transport: 4.8.0
 
   wrap-ansi@6.2.0:
     dependencies:
