@@ -187,7 +187,7 @@ The third file requiring modifications is
 
 The fourth and final code requiring modifications is
 `android/app/src/main/kotlin/com/example/flutter_android_activity/MainActivity.kt`.
-This is where you will begin writing Kotlin code for the Android functionality
+Here you'll write Kotlin code for your desired Android functionality.
 you wish to invoke.
 
 1. Modify the generated `MainActivity` class by adding a `CHANNEL` field and
