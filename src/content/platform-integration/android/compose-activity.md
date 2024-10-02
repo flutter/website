@@ -223,7 +223,7 @@ class MainActivity: FlutterActivity() {
 }
 ```
 
-2. Add a second Activity to the bottom of the file, which you referenced in
+2. Add a second `Activity` to the bottom of the file, which you referenced in
 the previous changes to `AndroidManifest.xml`:
 
 ```kotlin
