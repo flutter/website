@@ -251,7 +251,7 @@ class SecondActivity : ComponentActivity() {
 3. Add the necessary imports at the top of the file:
 
 :::note
-Your imports may vary if library versions have changed, or when you write your
+Your imports might vary if library versions have changed, or when you write your
 own Kotlin code. Follow your IDE's hints for the correct imports you require.
 :::
 
