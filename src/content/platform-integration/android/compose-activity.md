@@ -121,7 +121,7 @@ Visit the
 [developer.android.com](https://developer.android.com/jetpack/androidx/releases/compose-kotlin)
 link in the code snippet and adjust your `kotlinCompilerExtensionVersion`
 as necessary. You should only need to do this if you receive errors during
-flutter run, and those errors will tell you which versions are installed on
+`flutter run`, and those errors tell you which versions are installed on
 your machine.
 
 2. Next, add the following block at the bottom of the file, at the root level:
