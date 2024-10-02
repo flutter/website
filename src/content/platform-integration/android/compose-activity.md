@@ -8,7 +8,7 @@ description: Learn how to launch native Android activities in your Flutter app.
 
 Native Android activities allow you to launch fullscreen UIs that are entirely
 run by and on the Android platform. You will only write Kotlin code in those
-views (though they may pass and receive messages to and from your Dart code) and
+views (though they might pass and receive messages to and from your Dart code) and
 you will have access to the full breadth of native Android functionality.
 
 :::note
