@@ -8,8 +8,17 @@ description: Learn how to launch native Android activities in your Flutter app.
 
 Native Android activities allow you to launch fullscreen UIs that are entirely
 run by and on the Android platform. You will only write Kotlin code in those
-views (though they might pass and receive messages to and from your Dart code) and
-you will have access to the full breadth of native Android functionality.
+views (though they might pass messages to and receive messages from your Dart
+code) and you will have access to the full breadth of native Android functionality.
+
+Adding this functionality requires making several different types of changes to your
+Flutter app and its internal, generated Android app. On the Flutter side, you will
+need to create a new platform method channel and call its `invokeMethod` method.
+On the Android side, you will need to register a matching native `MethodChannel`
+to receive the signal from Dart and then launch a new activity. Recall that all
+Flutter apps (when running on Android) exist within an Android activity that is
+completely consumed by the Flutter app. Thus, as you will see in the code sample,
+the job of the native `MethodChannel` callback is to launch a second activity.
 
 :::note
 This page discusses how to launch native Android activities
@@ -20,8 +29,8 @@ see [Hosting native Android views][].
 
 [Hosting native Android views]: /platform-integration/android/platform-views
 
-Not all Android activities use Jetpack Compose, but this tutorial assumes you want to use Compose.
-Compose activities require Android API XYZ+.
+Not all Android activities use Jetpack Compose, but this tutorial assumes you
+want to use Compose. Compose activities require Android API 21 or higher.
 
 ## On the Dart side
 
@@ -121,7 +130,7 @@ Visit the
 [developer.android.com]({{site.android-dev}}/jetpack/androidx/releases/compose-kotlin)
 link in the code snippet and adjust `kotlinCompilerExtensionVersion`,
 as necessary. You should only need to do this if you receive errors during
-`flutter run`, and those errors tell you which versions are installed on
+`flutter run` and those errors tell you which versions are installed on
 your machine.
 
 2. Next, add the following block at the bottom of the file, at the root level:
@@ -189,7 +198,37 @@ The fourth and final code requiring modifications is
 `android/app/src/main/kotlin/com/example/flutter_android_activity/MainActivity.kt`.
 Here you'll write Kotlin code for your desired Android functionality.
 
-1. Modify the generated `MainActivity` class by adding a `CHANNEL` field and
+1. Add the necessary imports at the top of the file:
+
+:::note
+Your imports might vary if library versions have changed or if you introduce
+different Compose classes when you write your own Kotlin code. Follow your IDE's
+hints for the correct imports you require.
+:::
+
+```kotlin
+package com.example.flutter_android_activity
+
+import android.content.Intent
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.ui.Modifier
+import androidx.core.app.ActivityCompat
+import io.flutter.embedding.android.FlutterActivity
+import io.flutter.embedding.engine.FlutterEngine
+import io.flutter.plugin.common.MethodCall
+import io.flutter.plugin.common.MethodChannel
+import io.flutter.plugins.GeneratedPluginRegistrant
+```
+
+2. Modify the generated `MainActivity` class by adding a `CHANNEL` field and a
 `configureFlutterEngine` method:
 
 ```kotlin
@@ -222,7 +261,7 @@ class MainActivity: FlutterActivity() {
 }
 ```
 
-2. Add a second `Activity` to the bottom of the file, which you referenced in
+3. Add a second `Activity` to the bottom of the file, which you referenced in
 the previous changes to `AndroidManifest.xml`:
 
 ```kotlin
@@ -232,48 +271,19 @@ class SecondActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-                    Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-                        Column {
-                            Text(text = "Second Activity")
-                            // Note: This must match the shape of the data passed from your Dart code.
-                            Text("" + getIntent()?.getExtras()?.getString("message"))
-                            Button(onClick = {  finish() }) {
-                                Text("Exit")
-                            }
-                        }
+            Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+                Column {
+                    Text(text = "Second Activity")
+                    // Note: This must match the shape of the data passed from your Dart code.
+                    Text("" + getIntent()?.getExtras()?.getString("message"))
+                    Button(onClick = {  finish() }) {
+                        Text("Exit")
                     }
+                }
+            }
         }
     }
 }
-```
-
-3. Add the necessary imports at the top of the file:
-
-:::note
-Your imports might vary if library versions have changed, or when you write your
-own Kotlin code. Follow your IDE's hints for the correct imports you require.
-:::
-
-```kotlin
-package com.example.flutter_android_activity
-
-import android.content.Intent
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Button
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.ui.Modifier
-import androidx.core.app.ActivityCompat
-import io.flutter.embedding.android.FlutterActivity
-import io.flutter.embedding.engine.FlutterEngine
-import io.flutter.plugin.common.MethodCall
-import io.flutter.plugin.common.MethodChannel
-import io.flutter.plugins.GeneratedPluginRegistrant
 ```
 
 These steps show how to launch a native Android activity from a Flutter app,
