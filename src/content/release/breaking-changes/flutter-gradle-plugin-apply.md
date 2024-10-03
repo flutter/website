@@ -159,7 +159,7 @@ tasks.register("clean", Delete) {
 
 ### android/app/build.gradle
 
-Most changes have to be made in `<app-src>/android/app/settings.gradle`.
+The following changes to code that is found by default in `<app-src>/android/app/settings.gradle` need to be made.
 First, remove the following 2 chunks of code that use the
 legacy imperative apply method:
 
