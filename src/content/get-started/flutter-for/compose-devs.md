@@ -159,7 +159,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 To start your **Flutter** app, pass in an instance of your app to
 the `runApp` function.
 
-<?code-excerpt "lib/get_started.dart (main)"?>
+<?code-excerpt "../ios_devs/lib/get_started.dart (main)"?>
 ```dart dartpad="42cf3026e1460ef618257684ee5af6a2"
 void main() {
   runApp(const MyApp());
@@ -171,7 +171,7 @@ user interface it represents.
 It's common to begin your app with a [`WidgetApp`][] class,
 like [`MaterialApp`][].
 
-<?code-excerpt "lib/get_started.dart (myapp)"?>
+<?code-excerpt "../ios_devs/lib/get_started.dart (myapp)"?>
 ```dart
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -190,7 +190,7 @@ class MyApp extends StatelessWidget {
 The widget used in `HomePage` might begin with the `Scaffold` class.
 `Scaffold` implements a basic layout structure for an app.
 
-<?code-excerpt "lib/get_started.dart (homepage)"?>
+<?code-excerpt "../ios_devs/lib/get_started.dart (homepage)"?>
 ```dart dartpad="42cf3026e1460ef618257684ee5af6a2"
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -235,7 +235,7 @@ Button(onClick = {}) {
 To achieve the same result in **Flutter**,
 use the `FilledButton` class:
 
-<?code-excerpt "lib/text_button.dart (text-button)" replace="/child: //g;"?>
+<?code-excerpt "../ios_devs/lib/text_button.dart (text-button)" replace="/child: //g;"?>
 ```dart dartpad="3c9b9a4de431b86725197a7fc2c84158"
 FilledButton(
   onPressed: () {
@@ -265,7 +265,7 @@ Row(horizontalArrangement = Arrangement.Center) {
 **Flutter** uses [`Row`][] as well but the means of specifying
 constraints and supplying child nodes differ somewhat:
 
-<?code-excerpt "lib/row.dart (row)" replace="/child: //g;"?>
+<?code-excerpt "../ios_devs/lib/row.dart (row)" replace="/child: //g;"?>
 ```dart
 Row(
   mainAxisAlignment: MainAxisAlignment.center,
@@ -297,7 +297,7 @@ Column(verticalArrangement = Arrangement.Center) {
 }
 ```
 
-<?code-excerpt "lib/column.dart (column)" replace="/child: //g;"?>
+<?code-excerpt "../ios_devs/lib/column.dart (column)" replace="/child: //g;"?>
 ```dart dartpad="d9a288be0c2a353296fc8825680b84b8"
 Column(
   mainAxisAlignment: MainAxisAlignment.center,
@@ -360,7 +360,7 @@ fun ListDemo2(people: List<Person>) {
 `ListView` in **Flutter** closely resembles LazyList
 This resembles how **Flutter** prefers to build its list widgets.
 
-<?code-excerpt "lib/list.dart (simple-list)"?>
+<?code-excerpt "../ios_devs/lib/list.dart (simple-list)"?>
 ```dart dartpad="67426fd4f9c38c0c1db96b1af65598f2"
 class Person {
   String name;
@@ -447,8 +447,8 @@ This widget has various constructors. Each constructor has
 a similar goal, but uses different input parameters.
 The following example uses the `.builder()` initializer:
 
-<?code-excerpt "lib/grid.dart (grid-example)"?>
-```dart dartpad="d6b9174f33db94164e457b3da80da933"
+<?code-excerpt "../ios_devs/lib/grid.dart (grid-example)"?>
+```dart 
 const widgets = [
   Text('Row 1'),
   Icon(CupertinoIcons.arrow_down_square),
@@ -496,7 +496,7 @@ To create a scrolling view, **Flutter** uses [`SingleChildScrollView`][].
 In the following example, the function `mockPerson` mocks instances
 of the `Person` class to create the custom `PersonView` widget.
 
-<?code-excerpt "lib/scroll.dart (scroll-example)" replace="/body: //g;"?>
+<?code-excerpt "../ios_devs/lib/scroll.dart (scroll-example)" replace="/body: //g;"?>
 ```dart dartpad="a75740320989ed04020d95502a0de34e"
 SingleChildScrollView(
   child: Column(
@@ -569,7 +569,7 @@ to tell the framework to redraw the widget.
 
 The following example shows a part of a counter app:
 
-<?code-excerpt "lib/state.dart (state)"?>
+<?code-excerpt "../ios_devs/lib/state.dart (state)"?>
 ```dart dartpad="34815ab7d6ee0c5a45c82597df444450"
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -615,7 +615,7 @@ with two classes that help you draw:
 
 1. [`CustomPaint`][] that requires a painter:
 
-    <?code-excerpt "lib/canvas.dart (custom-paint)" replace="/child: //g;"?>
+    <?code-excerpt "../ios_devs/lib/canvas.dart (custom-paint)" replace="/child: //g;"?>
     ```dart dartpad="978d64ee66d54177fb639f8a9f801039"
     CustomPaint(
       painter: SignaturePainter(_points),
@@ -625,7 +625,7 @@ with two classes that help you draw:
 
 2. [`CustomPainter`][] that implements your algorithm to draw to the canvas.
 
-    <?code-excerpt "lib/canvas.dart (custom-painter)"?>
+    <?code-excerpt "../ios_devs/lib/canvas.dart (custom-painter)"?>
     ```dart dartpad="978d64ee66d54177fb639f8a9f801039"
     class SignaturePainter extends CustomPainter {
       SignaturePainter(this.points);
@@ -668,7 +668,6 @@ In **Flutter**, you can control light and dark mode at the app-level.
 To control the brightness mode, use the `theme` property
 of the `App` class:
 
-<?code-excerpt "lib/cupertino_themes.dart (theme)" replace="/return //g;"?>
 ```dart
 const MaterialApp(
   theme: ThemeData(
