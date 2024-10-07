@@ -316,11 +316,3 @@ like iOS, Android, desktop, or the web.
 [home-screen]: {{site.codelabs}}/flutter-home-screen-widgets
 [provider]: {{site.pub-pkg}}/provider
 [Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-client
-
-:::note
-If you have trouble viewing any of the codelabs
-on [`codelabs.developers.google.com`]({{site.codelabs}}), try
-[this mirror of the Flutter codelabs][].
-:::
-
-[this mirror of the Flutter codelabs]: https://codelabs.flutter-io.cn/

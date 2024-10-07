@@ -348,7 +348,7 @@
       permalink: /ui/animations/hero-animations
     - title: Animate a page route transition
       permalink: /cookbook/animation/page-route-animation
-    - title: Animate using a physic simulation
+    - title: Animate using a physics simulation
       permalink: /cookbook/animation/physics-simulation
     - title: Staggered animations
       permalink: /ui/animations/staggered-animations
