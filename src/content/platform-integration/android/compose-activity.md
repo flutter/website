@@ -4,7 +4,7 @@ short-title: Native Android activities
 description: Learn how to launch native Android activities in your Flutter app.
 ---
 
-<?code-excerpt path-base="platform_integration/platform_views"?>
+<?code-excerpt path-base="platform_integration/compose_activities"?>
 
 Native Android activities allow you to launch fullscreen UIs that are entirely
 run by and on the Android platform. You will only write Kotlin code in those
