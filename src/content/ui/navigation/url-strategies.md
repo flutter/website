@@ -17,8 +17,15 @@ For example, `flutterexample.dev/#/path/to/screen`.
 ## Configuring the URL strategy
 
 To configure Flutter to use the path instead, use the
-[usePathUrlStrategy][] function provided by the [flutter_web_plugins][] library
-in the SDK:
+[usePathUrlStrategy][] function provided by the [flutter_web_plugins][] library,
+which is part of the Flutter SDK.
+
+You cannot directly add `flutter_web_plugins` via `pub add`,
+as it is only available through dependencies like `go_router`. 
+When you add the `go_router` package, it automatically includes
+`flutter_web_plugins`. 
+
+Here's an example of how to use it:
 
 ```dart
 import 'package:flutter_web_plugins/url_strategy.dart';
