@@ -154,7 +154,7 @@ Relevant PRs:
 * [Enhance ColorScheme.fromSeed with a new variant parameter][]
 
 [Support tone-based surface and surface container ColorScheme roles]: {{site.repo.flutter}}/issues/115912
-[Support fidelity variant for ColorScheme.fromSeed]: {{site.repo.flutter}}/issues/[144649]
-[Introduce tone-based surfaces and accent color add-ons - Part 1]: {{site.repo.flutter}}/pull/[142654]
-[Introduce tone-based surfaces and accent color add-ons - Part 2]: {{site.repo.flutter}}/pull/[144273]
-[Enhance ColorScheme.fromSeed with a new variant parameter]: {{site.repo.flutter}}/pull/[144805]
+[Support fidelity variant for ColorScheme.fromSeed]: {{site.repo.flutter}}/issues/144649
+[Introduce tone-based surfaces and accent color add-ons - Part 1]: {{site.repo.flutter}}/pull/142654
+[Introduce tone-based surfaces and accent color add-ons - Part 2]: {{site.repo.flutter}}/pull/144273
+[Enhance ColorScheme.fromSeed with a new variant parameter]: {{site.repo.flutter}}/pull/144805
