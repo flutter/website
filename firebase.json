@@ -673,6 +673,7 @@
       { "source": "/to/develop-plugins", "destination": "/packages-and-plugins/developing-packages#plugin", "type": 301 },
       { "source": "/to/edit-plugins", "destination": "/packages-and-plugins/developing-packages#edit-plugin-package", "type": 301 },
       { "source": "/to/editor-setup", "destination": "/get-started/editor", "type": 301 },
+      { "source": "/to/engine-rbe", "destination": "https://github.com/flutter/engine/blob/main/docs/rbe/rbe.md", "type": 301 },
       { "source": "/to/engine-tool-bug", "destination": "https://github.com/flutter/flutter/issues/new?labels=e:%20engine-tool", "type": 301 },
       { "source": "/to/endorsed-federated-plugin", "destination": "/packages-and-plugins/developing-packages#endorsed-federated-plugin", "type": 301 },
       { "source": "/to/federated-plugins", "destination": "/packages-and-plugins/developing-packages#federated-plugins", "type": 301 },
