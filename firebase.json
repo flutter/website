@@ -699,6 +699,7 @@
       { "source": "/to/ios-development-team", "destination": "/deployment/ios#review-xcode-project-settings", "type": 301 },
       { "source": "/to/ios-ffi", "destination": "/platform-integration/ios/c-interop", "type": 301 },
       { "source": "/to/ios-minimum-target", "destination": "/deployment/ios#review-xcode-project-settings", "type": 301 },
+      { "source": "/to/to/java-gradle-incompatibility", "destination": "/release/breaking-changes/android-java-gradle-migration-guide", "type": 301 },
       { "source": "/to/java-gradle-incompatibility", "destination": "/release/breaking-changes/android-java-gradle-migration-guide", "type": 301 },
       { "source": "/to/linux-android-setup", "destination": "/get-started/install/linux/android", "type": 301 },
       { "source": "/to/macos-android-setup", "destination": "/get-started/install/macos/mobile-android", "type": 301 },
