@@ -13,6 +13,7 @@ export function slugify(text) {
   return text
     .toLowerCase()
     .trim()
+    .replace(/\+/g, 'plus')
     .replace(/[:.]/g, '-')
     .replace(/[^\p{L}\p{N}\s:._-]/gu, '')
     .replace(/[\s-]+/g, '-')

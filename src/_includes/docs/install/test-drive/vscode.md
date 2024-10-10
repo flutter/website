@@ -6,7 +6,7 @@
     [Flutter extension](https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter).
    This also automatically installs the
    [Dart extension](https://marketplace.visualstudio.com/items?itemName=Dart-Code.dart-code).
-   With these extensions, you can debug you application.
+   With these extensions, you can debug your application.
 
 2. Open the Command Palette.
 
