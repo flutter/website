@@ -1,5 +1,3 @@
-<div class="tab-pane" id="terminal" role="tabpanel" aria-labelledby="terminal-tab">
-
 ### Create your sample Flutter app {:#create-app-terminal}
 
 To create a new Flutter app, run the following commands in your shell or Terminal.
@@ -43,5 +41,3 @@ To create a new Flutter app, run the following commands in your shell or Termina
 {% endcapture %}
 
 {% include docs/install/test-drive/try-hot-reload.md save_changes=save_changes  ide="VS Code" %}
-
-</div>

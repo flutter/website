@@ -1,25 +1,26 @@
 ---
 title: Page not found
 description: Page not found
-layout: landing
-body_class: not-found
+layout: base
+body_class: not-found menu-wide-toggled
 permalink: /404.html
 sitemap: false
 ---
 
-<div class="not-found__wrapper">
-  <p id="site-content-title">Sorry, we couldn't find that page…</p>
+<main id="site-not-found">
+  <header>
+    <h1 id="document-title">Sorry, we couldn't find that page...</h1>
+  </header>
   <img src='/assets/images/404/dash_404.png' class='not-found__image' alt="Dash pointing you in the right direction">
   <p>But Dash is here to help - maybe one of these will point you in the right direction?</p>
-  <ul class="not-found__link-list">
+  <ul>
     <li><a href="{{site.main-url}}/">Homepage</a></li>
     <li><a href="{{site.pub}}/">Package site</a></li>
     <li><a href="{{site.api}}/">API reference</a></li>
     <li><a href="/">Documentation</a></li>
-    <li><a href="https://flutter.github.io/samples">Samples</a></li>
     <li><a href="{{site.main-url}}/community">Community</a></li>
     <li><a href="{{site.medium}}/flutter">Medium</a></li>
     <li><a href="{{site.social.twitter}}/">X (Twitter)</a></li>
     <li><a href="/resources/faq">FAQ</a></li>
   </ul>
-</div>
+</main>

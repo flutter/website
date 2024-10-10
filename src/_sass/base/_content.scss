@@ -1,0 +1,95 @@
+main {
+  background-color: var(--site-surface);
+  overflow-x: hidden;
+  width: 100%;
+
+  border-radius: var(--site-square-radius);
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  padding: 1rem;
+
+  @media(max-width: 576px) {
+    border-radius: 0;
+  }
+
+  ol, ul, p, pre, aside, iframe, img, figure, .card-grid, .table-wrapper {
+    margin-bottom: 1rem;
+  }
+
+  li, dd {
+    > p, img, aside, .code-block-wrapper, figure, ul, ol {
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  ol, ul {
+    padding-left: 2rem;
+  }
+
+  dl {
+    dt {
+      font-weight: 500;
+    }
+
+    dd {
+      margin-bottom: 1rem;
+    }
+  }
+
+  details {
+    margin-bottom: 0.75rem;
+
+    > summary {
+      font-weight: 500;
+      user-select: none;
+      cursor: pointer;
+      margin-bottom: 1rem;
+
+      &:hover {
+        color: #0468d7;
+      }
+
+      &:active {
+        color: #03448c;
+      }
+    }
+
+    &[open] {
+      margin-bottom: unset;
+
+      > summary {
+        margin-bottom: 0.75rem;
+      }
+    }
+
+    > :not(:first-child) {
+      margin-left: 0.75rem;
+      margin-right: 0.75rem;
+    }
+  }
+
+  blockquote {
+    background-color: var(--site-surface-container-high);
+    padding: 1rem;
+    border-left: solid 0.25rem var(--site-outline-variant);
+    margin-bottom: 1rem;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 0.5rem;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .footnote-ref a, .footnote-item {
+    scroll-margin-top: 1.25rem;
+  }
+}

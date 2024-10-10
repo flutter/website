@@ -1,52 +1,30 @@
-@use '../base/variables' as *;
-@use '../vendor/bootstrap';
+#site-banner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-.site-banner {
-  background-color: $flutter-color-blue;
-  color: $site-color-white;
-  font-family: $site-font-family-alt;
-  font-size: bootstrap.$font-size-lg;
-  padding: bootstrap.bs-spacer(5);
-  position: relative;
+  gap: 0.5rem;
+  padding: 0.75rem;
   text-align: center;
-  z-index: bootstrap.$zindex-sticky;
+  background-color: var(--site-secondary-container);
+  color: var(--site-on-secondary-container);
 
   p {
-    margin-bottom: bootstrap.bs-spacer(3);
-
-    &:last-of-type {
-      margin-bottom: 0;
-    }
+    overflow-wrap: anywhere;
+    word-break: normal;
+    margin: 0;
+    flex-grow: 1;
   }
 
-  a {
-    color: $flutter-color-blue-on-dark;
+  border-radius: var(--site-square-radius);
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
 
-    &:hover {
-      color: $flutter-color-blue-on-dark;
-    }
+  @media(max-width: 576px) {
+    border-radius: 0;
   }
+}
 
-  // customizations per banner
-
-  &.site-banner--default {
-    &:before,
-    &:after {
-      background-image: url('/assets/images/flutter-chevron-bg.svg');
-      background-position: right center;
-      background-repeat: no-repeat;
-      background-size: auto 100%;
-      content: '';
-      height: 100%;
-      left: 0;
-      pointer-events: none;
-      position: absolute;
-      top: 0;
-      width: 100%;
-    }
-
-    &:before {
-      transform: scaleX(-1);
-    }
-  }
+#banner-close-button {
+  margin-left: auto;
 }

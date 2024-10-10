@@ -1,5 +1,3 @@
-<div class="tab-pane active" id="vscode" role="tabpanel" aria-labelledby="vscode-tab">
-
 ### Create a sample Flutter app {:#create-app-vs-code}
 
 1. To use Flutter DevTools from VS Code, install the
@@ -74,8 +72,6 @@ hot reload at this time.
 {% include docs/install/test-drive/try-hot-reload.md save_changes=save_changes ide="VS Code" %}
 
 [Material Components]: {{site.material}}/components
-
-</div>
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {

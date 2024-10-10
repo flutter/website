@@ -1,18 +1,188 @@
+const _prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
+
+function setupTheme() {
+  const storedTheme = window.localStorage.getItem('theme') ?? 'light-mode';
+  document.body.classList.add(storedTheme);
+  _switchToPreferenceIfAuto();
+
+  const themeMenu = document.getElementById('theme-menu');
+  if (themeMenu) {
+    const themeButtons = themeMenu.querySelectorAll('button');
+    themeButtons.forEach((button) => {
+      button.addEventListener('click', (event) => {
+        document.body.classList.remove('auto-mode');
+        document.body.classList.remove('dark-mode');
+        document.body.classList.remove('light-mode');
+        const newMode = `${button.dataset.theme}-mode`;
+        document.body.classList.add(newMode);
+        window.localStorage.setItem('theme', newMode);
+        _switchToPreferenceIfAuto();
+        themeMenu.hidePopover();
+      });  
+    });
+  }
+
+  _prefersDarkMode.addEventListener('change', _switchToPreferenceIfAuto);
+}
+
+function _switchToPreferenceIfAuto() {
+  if (document.body.classList.contains('auto-mode')) {
+    if (_prefersDarkMode.matches) {
+      document.body.classList.remove('light-mode');
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+      document.body.classList.add('light-mode');
+    }
+  }
+}
+
+function setupMenuToggle() {
+  const menuToggle = document.querySelector('#menu-button button');
+  if (!menuToggle) return;
+
+  const menuWideToggledClass = 'menu-wide-toggled';
+  const storedWideToggled = window.localStorage.getItem(menuWideToggledClass);
+  if (storedWideToggled === 'true') {
+    document.body.classList.add(menuWideToggledClass);
+  }
+
+  menuToggle.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    if (document.body.clientWidth > 768) {
+      if (document.body.classList.toggle(menuWideToggledClass)) {
+        window.localStorage.setItem(menuWideToggledClass, 'true');
+      } else {
+        window.localStorage.removeItem(menuWideToggledClass);
+      }
+    } else {
+      document.body.classList.toggle('menu-narrow-toggled');
+    }
+  });
+}
+
+function scrollSidenavIntoView() {
+  const sidenav = document.getElementById('sidenav');
+  if (!sidenav) {
+    return;
+  }
+
+  const activeEntries = sidenav.querySelectorAll('a.nav-link.active');
+  if (activeEntries.length > 0) {
+    const activeEntry = activeEntries[activeEntries.length - 1];
+
+    sidenav.scrollTo({
+      top: activeEntry.offsetTop - window.innerHeight / 3,
+    });
+  }
+}
+
+function setupBanner() {
+  const bannerClose = document.getElementById('banner-close-button');
+  const siteBanner = document.getElementById('site-banner');
+  if (!bannerClose || !siteBanner) return;
+  const bannerContents = siteBanner.querySelector('p')?.textContent;
+  const closedBannerContents = window.localStorage.getItem('banner-contents');
+  if (bannerContents == null || bannerContents === closedBannerContents) {
+    siteBanner.remove();
+    return;
+  }
+
+  bannerClose.addEventListener('click', (_) => {
+    window.localStorage.setItem('banner-contents', bannerContents);
+    document.getElementById('site-banner')?.remove();
+  });
+  siteBanner.hidden = false;
+}
+
+function setupSearch() {
+  const headerSearch = document.getElementById('header-search');
+  if (!headerSearch) return;
+  const submitButton = headerSearch.querySelector('button');
+  const input = headerSearch.querySelector('input');
+
+  function submitSearch(e) {
+    e.preventDefault();
+    const query = input.value;
+    const url = new URL(window.location);
+    url.pathname = '/search';
+    url.searchParams.set('q', query);
+    window.location = url.toString();
+  }
+
+  submitButton.addEventListener('click', submitSearch);
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      submitSearch(e);
+    }
+  });
+
+  document.addEventListener('keydown', handleSearchShortcut);
+}
+
+function handleSearchShortcut(event) {
+  const activeElement = document.activeElement;
+  if (activeElement instanceof HTMLInputElement ||
+      activeElement instanceof HTMLTextAreaElement ||
+      event.code !== 'Slash'
+  ) {
+    return;
+  }
+
+  // If the page has a search field in the body, focus that.
+  const bodySearch = document.querySelector('input.gsc-input');
+  // Otherwise, focus the search field in the navbar.
+  const searchElement = bodySearch ? bodySearch : document
+      .querySelector('#header-search input');
+
+  // If we successfully found a search field, focus that.
+  if (searchElement) {
+    searchElement.focus();
+    // Prevent the initial slash from showing up in the search field.
+    event.preventDefault();
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function(_) {
-  adjustToc();
-  setupInlineToc();
-  initFixedColumns();
-  scrollSidebarIntoView();
-  initCookieNotice();
+  setupTheme();
+  setupBanner();
+  scrollSidenavIntoView();
+  setupNav();
   setUpCodeBlockButtons();
 
   setupSearch();
   setupTabs();
+  setupInlineToc();
+  setupMenuToggle();
+  initCookieNotice();
 });
 
+function setupNav() {
+  const toggles = document.querySelectorAll('a.nav-link.collapsible');
+  toggles.forEach(function (toggle) {
+    toggle.addEventListener('click', (e) => {
+      toggle.classList.toggle('collapsed');
+      e.preventDefault();
+    });
+  });
+}
+
+function setupInlineToc() {
+  // Set up the inline TOC's ability to expand and collapse.
+  const toggles = document.querySelectorAll('.site-toc--inline__toggle');
+  toggles.forEach(function (toggle) {
+    toggle.addEventListener('click', (_) => {
+      const inlineToc = document.getElementById('site-toc--inline');
+      if (inlineToc) {
+        inlineToc.classList.toggle('toc-collapsed');
+      }
+    });
+  });
+}
+
 /**
- * Get the user's current operating system, or
- * `null` if not of one "macos", "windows", "linux", or "chromeos".
+ * Get the user's current operating system, or * `null` if not of one "macos", "windows", "linux", or "chromeos".
  *
  * @returns {'macos'|'linux'|'windows'|'chromeos'|null}
  */
@@ -43,133 +213,6 @@ function getOS() {
   return null;
 }
 
-function scrollSidebarIntoView() {
-  const fixedSidebar = document.querySelector('.site-sidebar--fixed');
-
-  if (!fixedSidebar) {
-    return;
-  }
-
-  const activeEntries = fixedSidebar.querySelectorAll('a.nav-link.active');
-
-  if (activeEntries.length > 0) {
-    const activeEntry = activeEntries[activeEntries.length - 1];
-
-    fixedSidebar.scrollTo({
-      top: activeEntry.offsetTop - window.innerHeight / 3,
-    });
-  }
-}
-
-/**
- * Adjusts the behavior of the table of contents (TOC) on the page.
- * 
- * This function enables a "scrollspy" feature on the TOC, 
- * where the active link in the TOC is updated
- * based on the currently visible section in the page.
- * 
- * Enables a "back to top" button in the TOC header.
- */
-function adjustToc() {
-  const tocId = '#site-toc--side';
-
-  const tocHeader = document.querySelector(tocId + ' header');
-
-  if (tocHeader) {
-    tocHeader.addEventListener('click', (_) => {
-      _scrollToTop();
-    });
-  }
-
-  // This will not be migrated for now until we migrate 
-  // the entire site to Bootstrap 5.
-  // see https://github.com/flutter/website/pull/9167#discussion_r1286457246
-  $('body').scrollspy({ offset: 100, target: tocId });
-
-  function _scrollToTop() {
-    const distanceBetweenTop = document.documentElement.scrollTop || document.body.scrollTop;
-    if (distanceBetweenTop > 0) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  }
-}
-
-function setupSearch() {
-  document.addEventListener('keydown', handleSearchShortcut);
-}
-
-function handleSearchShortcut(event) {
-  const activeElement = document.activeElement;
-  if (activeElement instanceof HTMLInputElement ||
-      activeElement instanceof HTMLTextAreaElement ||
-      event.code !== 'Slash'
-  ) {
-    return;
-  }
-
-  // If the page has a search field in the body, focus that.
-  const bodySearch = document.querySelector('input.gsc-input');
-  // Otherwise, focus the search field in the navbar.
-  const searchElement = bodySearch ? bodySearch : document
-      .querySelector('input.search-field');
-
-  // If we successfully found a search field, focus that.
-  if (searchElement) {
-    searchElement.focus();
-    // Prevent the initial slash from showing up in the search field.
-    event.preventDefault();
-  }
-}
-
-function initFixedColumns() {
-  const fixedColumnsSelector = '[data-fixed-column]';
-  const bannerSelector = '.site-banner';
-  const footerSelector = 'footer.site-footer';
-  const headerSelector = '.site-header';
-  const fixedColumns = $(fixedColumnsSelector);
-
-  function adjustFixedColumns() {
-    // only change values if the fixed col is visible
-    if ($(fixedColumnsSelector).css('display') == 'none') {
-      return;
-    }
-
-    const headerHeight = $(headerSelector).outerHeight();
-    let bannerVisibleHeight = 0;
-    // First, make sure the banner element even exists on the page.
-    const siteBanner = $(bannerSelector);
-    if (siteBanner.length > 0) {
-      const bannerHeight = siteBanner.outerHeight();
-      const bannerOffset = siteBanner.offset().top;
-      const bannerPosition = bannerOffset - $(window).scrollTop();
-      bannerVisibleHeight =
-        Math.max(bannerHeight - (headerHeight - bannerPosition), 0);
-    }
-    const topOffset = headerHeight + bannerVisibleHeight;
-
-    const footerOffset = $(footerSelector).offset().top;
-    const footerPosition = footerOffset - $(window).scrollTop();
-    const footerVisibleHeight = $(window).height() - footerPosition;
-
-    const fixedColumnsMaxHeight = $(window).height() - topOffset - footerVisibleHeight;
-
-    $(fixedColumnsSelector).css('max-height', fixedColumnsMaxHeight);
-    $(fixedColumnsSelector).css('top', topOffset);
-  }
-
-  if (fixedColumns.length) {
-    $(fixedColumnsSelector).css('position', 'fixed');
-
-    // listen for scroll and execute once
-    $(window).scroll(adjustFixedColumns);
-    $(window).resize(adjustFixedColumns);
-    adjustFixedColumns();
-  }
-}
-
-/**
- * Activate the cookie notice footer.
- */
 function initCookieNotice() {
   const cookieKey = 'cookie-consent';
   const currentDate = Date.now();
@@ -196,19 +239,6 @@ function initCookieNotice() {
   });
 
   notice.classList.add(activeClass);
-}
-
-function setupInlineToc() {
-  // Set up the inline TOC's ability to expand and collapse.
-  const toggle = document.querySelectorAll('.site-toc--inline__toggle');
-  toggle.forEach(function (toggle) {
-    toggle.addEventListener('click', (_) => {
-      const inlineToc = document.getElementById('site-toc--inline');
-      if (inlineToc) {
-        inlineToc.classList.toggle('toc-collapsed');
-      }
-    });
-  });
 }
 
 // A pattern to remove terminal command markers when copying code blocks.

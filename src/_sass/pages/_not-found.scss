@@ -1,43 +1,35 @@
-@use '../base/variables' as *;
-@use '../vendor/bootstrap';
+#site-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - 6rem);
+  text-align: center;
+  padding: 1rem;
 
-.not-found {
-  font-size: 20px;
-
-  h1 {
-    color: $flutter-color-dark-blue;
-    font-size: 80px;
-    margin-bottom: bootstrap.bs-spacer(3);
+  img {
+    max-width: 40rem;
   }
 
-  &__wrapper {
-    padding: bootstrap.bs-spacer(10) 0;
-    text-align: center;
+  p {
+    font-size: 1.25rem;
+    margin: 0 1rem 1rem;
+    max-width: 30rem;
   }
 
-  &__image {
-    margin-bottom: bootstrap.bs-spacer(4);
-    max-width: 600px;
-    width: 100%;
-  }
-
-  &__link-list {
-    list-style: none;
-    margin: bootstrap.bs-spacer(8) auto 0;
-    max-width: 680px;
-    padding: 0;
+  ul {
+    font-size: 1.25rem;
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+    row-gap: 0.5rem;
     text-align: left;
+    white-space: nowrap;
+    padding: 0.5rem;
+    margin-bottom: 0;
 
-    @include bootstrap.media-breakpoint-up(xs) {
-      column-count: 2;
-    }
-
-    @include bootstrap.media-breakpoint-up(sm) {
-      column-count: 3;
-    }
-
-    li {
-      margin-bottom: bootstrap.bs-spacer(2);
+    @media(max-width: 576px) {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 }
