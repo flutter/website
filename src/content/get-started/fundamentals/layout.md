@@ -287,7 +287,7 @@ before, and after each image.
 
 {% render docs/code-and-image.md,
 image:"fwe/layout/space_evenly.png",
-caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
+caption: "This figure shows a row widget with three children, which are aligned with the MainAxisAlignment.spaceEvenly constant."
 alt: "A screenshot of three widgets, spaced evenly from each other."
 code:"
 ```dart
