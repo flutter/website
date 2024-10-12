@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 // SECTION 1: START COPYING HERE
 const platformMethodChannel = MethodChannel(
   // Note: You can change this string value, but it must match
-  // the `CHANNEL` attribute in the next step
+  // the `CHANNEL` attribute in the next step.
   'com.example.flutter_android_activity',
 );
 // SECTION 1: END COPYING HERE
@@ -19,13 +19,13 @@ class MainApp extends StatelessWidget {
   // SECTION 2: START COPYING HERE
   void _launchAndroidActivity() {
     platformMethodChannel.invokeMethod(
-      // Note: You can change this value, but it must must match the
-      // `call.method` value in the next section
+      // Note: You can change this value, but it must match
+      // the `call.method` value in the next section.
       'launchActivity',
 
-      // Note: You can pass any primitive data types you like. To pass complex
-      // types, use pkg:pigeon to generate matching Dart and Kotlin classes
-      // which share serialization logic.
+      // Note: You can pass any primitive data types you like.
+      // To pass complex types, use package:pigeon to generate
+      // matching Dart and Kotlin classes that share serialization logic.
       {'message': 'Hello from Flutter'},
     );
   }
@@ -39,7 +39,7 @@ class MainApp extends StatelessWidget {
           child: Text('Hello World!'),
         ),
         floatingActionButton: FloatingActionButton(
-          // SECTION 3: Call `_launchAndroidActivity` somewhere
+          // SECTION 3: Call `_launchAndroidActivity` somewhere.
           onPressed: _launchAndroidActivity,
           // SECTION 3: End
 
