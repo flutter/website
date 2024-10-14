@@ -1,6 +1,7 @@
-name: null_safety_basics
-description: Some code to demonstrate null safety.
+name: your_accessible_app
+description: A Flutter project to contain accessibility-related code excerpts.
 version: 1.0.0
+publish_to: none
 
 environment:
   sdk: ^3.5.0
