@@ -50,6 +50,8 @@ Now, create the SelectionButton, which does the following:
 Launches the SelectionScreen when it's tapped.
 Waits for the SelectionScreen to return a result.
 <?code-excerpt "lib/main_step2.dart (SelectionButton)"?>
+```dart
+
 class SelectionButton extends StatefulWidget {
   const SelectionButton({super.key});
 
@@ -81,6 +83,9 @@ class _SelectionButtonState extends State<SelectionButton> {
       ..showSnackBar(SnackBar(content: Text('$result'))); // Customize Snackbar message if needed
   }
 }
+
+```dart
+
 3. Show the selection screen with two buttons
 Now, build a selection screen that contains two buttons. When a user taps a button, that app closes the selection screen and lets the home screen know which button was tapped.
 
@@ -122,6 +127,7 @@ class SelectionScreen extends StatelessWidget {
     );
   }
 }
+```dart
 4. When a button is tapped, close the selection screen
 Update the onPressed() callback for both buttons to return the desired results.
 
