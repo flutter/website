@@ -25,7 +25,7 @@ void main() {
       ),
       // #docregion OnGenerateRoute
       onGenerateRoute: (settings) {
-        late Widget page;
+        final Widget page;
         if (settings.name == routeHome) {
           page = const HomeScreen();
         } else if (settings.name == routeSettings) {
@@ -307,8 +307,8 @@ class FinishedPage extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Container(
-                  width: 250,
-                  height: 250,
+                  width: 200,
+                  height: 200,
                   decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     color: Color(0xFF222222),
@@ -316,7 +316,7 @@ class FinishedPage extends StatelessWidget {
                   child: const Center(
                     child: Icon(
                       Icons.lightbulb,
-                      size: 175,
+                      size: 140,
                       color: Colors.white,
                     ),
                   ),
@@ -378,8 +378,8 @@ class HomeScreen extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Container(
-                width: 250,
-                height: 250,
+                width: 200,
+                height: 200,
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   color: Color(0xFF222222),
@@ -387,7 +387,7 @@ class HomeScreen extends StatelessWidget {
                 child: Center(
                   child: Icon(
                     Icons.lightbulb,
-                    size: 175,
+                    size: 140,
                     color: Theme.of(context).scaffoldBackgroundColor,
                   ),
                 ),
