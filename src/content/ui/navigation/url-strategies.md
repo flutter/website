@@ -20,10 +20,16 @@ To configure Flutter to use the path instead, use the
 [usePathUrlStrategy][] function provided by the [flutter_web_plugins][] library,
 which is part of the Flutter SDK.
 
-You cannot directly add `flutter_web_plugins` via `pub add`,
-as it is only available through dependencies like `go_router`. 
-When you add the `go_router` package, it automatically includes
-`flutter_web_plugins`. 
+You cannot directly add `flutter_web_plugins` using `pub add`.
+Include it as a Flutter SDK dependency in your `pubspec.yaml` file:
+
+```dart
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
+```
 
 Here's an example of how to use it:
 
