@@ -10,7 +10,7 @@
   unsupported: '11 and earlier'
 - platform: 'macOS'
   chipsets: 'x64, Arm64'
-  supported: '10.4 to 15'
+  supported: '10.14 to 10.15'
   ci-tested: '12'
   unsupported: '10.13 and earlier'
 - platform: 'Windows'
