@@ -16,35 +16,35 @@
 - platform: 'Windows'
   chipsets: 'x64, Arm64'
   supported: '10'
-  ci-tested: '10'
+  ci-tested: 
   unsupported: '8 and earlier'
 - platform: 'Debian (Linux)'
   chipsets: 'x64, Arm64'
   supported: '11, 12'
-  ci-tested: '11, 12'
+  ci-tested: 
   unsupported: '9 and earlier'
 - platform: 'Ubuntu (Linux)'
   chipsets: 'x64, Arm64'
   supported: '20.04 LTS, 22.04 LTS'
-  ci-tested: '20.04 LTS, 22.04 LTS'
+  ci-tested: 
   unsupported: '23.10 and earlier non-LTS'
 - platform: 'Chrome (Web)'
   chipsets: 'N/A'
   supported: '[Latest 2](https://chromereleases.googleblog.com/search/label/Stable%20updates)'
-  ci-tested: '[Latest 2](https://chromereleases.googleblog.com/search/label/Stable%20updates)'
+  ci-tested:
   unsupported: '95 and earlier'
 - platform: 'Firefox (Web)'
   chipsets: 'N/A'
   supported: '[Latest 2](https://www.mozilla.org/en-US/firefox/releases/)'
-  ci-tested: '[Latest 2](https://www.mozilla.org/en-US/firefox/releases/)'
+  ci-tested:
   unsupported: '98 and earlier'
 - platform: 'Safari (Web)'
   chipsets: 'N/A'
   supported: '[Latest 2](https://developer.apple.com/documentation/safari-release-notes/)'
-  ci-tested: '[Latest 2](https://developer.apple.com/documentation/safari-release-notes/)'
+  ci-tested: 
   unsupported: '15.5 and earlier'
 - platform: 'Edge (Web)'
   chipsets: 'N/A'
   supported: '[Latest 2](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel)'
-  ci-tested: '[Latest 2](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel)'
+  ci-tested: 
   unsupported: '95 and earlier'

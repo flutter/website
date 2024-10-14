@@ -20,7 +20,7 @@ Flutter supports deploying to the following platforms.
 
 {% assign opsys = platforms %}
 
-| Target platform | Hardware architectures | Supported | CI tested versions |  Unsupported versions |
+| Target platform | Hardware architectures | Supported versions | CI tested versions |  Unsupported versions |
 |---|:---:|:---:|:---:|:---:|
 {%- for platform in opsys %}
   | {{platform.platform}} | {{platform.chipsets}} | {{platform.supported}} | {{platform.ci-tested}} | {{platform.unsupported}} |
