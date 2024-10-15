@@ -29,6 +29,7 @@ it launches the selection screen.
 
 <?code-excerpt "lib/main_step2.dart (HomeScreen)"?>
 ```dart
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -56,6 +57,7 @@ Now, create the SelectionButton, which does the following:
 
 <?code-excerpt "lib/main_step2.dart (SelectionButton)"?>
 ```dart
+
 class SelectionButton extends StatefulWidget {
   const SelectionButton({super.key});
 
@@ -84,7 +86,7 @@ class _SelectionButtonState extends State<SelectionButton> {
     );
   }
 }
-```
+```dart
 
 ## 3. Show the selection screen with two buttons
 
@@ -135,7 +137,7 @@ class SelectionScreen extends StatelessWidget {
     );
   }
 }
-```
+```dart
 
 ## 4. When a button is tapped, close the selection screen
 
@@ -313,7 +315,7 @@ class SelectionScreen extends StatelessWidget {
     );
   }
 }
-```
+```dart
 
 <noscript>
   <img src="/assets/images/docs/cookbook/returning-data.gif" alt="Returning data demo" class="site-mobile-screenshot" />
