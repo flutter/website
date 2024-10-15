@@ -5,6 +5,7 @@ js:
   - defer: true
     url: /assets/js/inject_dartpad.js
 ---
+```dart
 
 <?code-excerpt path-base="cookbook/navigation/returning_data/"?>
 
@@ -21,6 +22,8 @@ method using the following steps:
   3. Show the selection screen with two buttons
   4. When a button is tapped, close the selection screen
   5. Show a snackbar on the home screen with the selection
+
+```dart
 
 ## 1. Define the home screen
 
@@ -44,6 +47,8 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
+```dart
 2. Add a button that launches the selection screen
 Now, create the SelectionButton, which does the following:
 
