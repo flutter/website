@@ -107,7 +107,7 @@ class _GridItem extends StatelessWidget {
         onPressed: () => onPressed.call(index),
         child: Stack(children: [
           const Center(child: FlutterLogo(size: 64)),
-          Container(color: Colors.grey.withOpacity(isSelected ? .5 : .7)),
+          Container(color: Colors.grey.withValues(alpha: isSelected ? .5 : .7)),
           Align(
               alignment: Alignment.bottomCenter,
               child: Container(

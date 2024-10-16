@@ -114,7 +114,7 @@ class _BottomNavigationDemoState extends State<BottomNavigationDemo>
             });
           },
           selectedItemColor: colorScheme.onPrimary,
-          unselectedItemColor: colorScheme.onPrimary.withOpacity(0.38),
+          unselectedItemColor: colorScheme.onPrimary.withValues(alpha: 0.38),
           backgroundColor: colorScheme.primary,
         ),
       ),

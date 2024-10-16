@@ -22,7 +22,7 @@ class Photo extends StatelessWidget {
     return Material(
       // Slightly opaque color appears where the image has transparency.
       // Makes it possible to see the radial transformation's boundary.
-      color: Theme.of(context).primaryColor.withOpacity(0.25),
+      color: Theme.of(context).primaryColor.withValues(alpha: 0.25),
       child: InkWell(
         onTap: onTap,
         child: Image.asset(

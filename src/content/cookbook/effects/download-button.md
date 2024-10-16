@@ -176,15 +176,16 @@ class ButtonShapeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var shape = const ShapeDecoration(
-      shape: StadiumBorder(),
-      color: CupertinoColors.lightBackgroundGray,
-    );
-
+    final ShapeDecoration shape;
     if (isDownloading || isFetching) {
-      shape = ShapeDecoration(
-        shape: const CircleBorder(),
-        color: Colors.white.withOpacity(0),
+      shape = const ShapeDecoration(
+        shape: CircleBorder(),
+        color: Colors.transparent,
+      );
+    } else {
+      shape = const ShapeDecoration(
+        shape: StadiumBorder(),
+        color: CupertinoColors.lightBackgroundGray,
       );
     }
 
@@ -242,15 +243,16 @@ class ButtonShapeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var shape = const ShapeDecoration(
-      shape: StadiumBorder(),
-      color: CupertinoColors.lightBackgroundGray,
-    );
-
+    final ShapeDecoration shape;
     if (isDownloading || isFetching) {
-      shape = ShapeDecoration(
-        shape: const CircleBorder(),
-        color: Colors.white.withOpacity(0),
+      shape = const ShapeDecoration(
+        shape: CircleBorder(),
+        color: Colors.transparent,
+      );
+    } else {
+      shape = const ShapeDecoration(
+        shape: StadiumBorder(),
+        color: CupertinoColors.lightBackgroundGray,
       );
     }
 
@@ -803,15 +805,16 @@ class ButtonShapeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var shape = const ShapeDecoration(
-      shape: StadiumBorder(),
-      color: CupertinoColors.lightBackgroundGray,
-    );
-
+    final ShapeDecoration shape;
     if (isDownloading || isFetching) {
-      shape = ShapeDecoration(
-        shape: const CircleBorder(),
-        color: Colors.white.withOpacity(0),
+      shape = const ShapeDecoration(
+        shape: CircleBorder(),
+        color: Colors.transparent,
+      );
+    } else {
+      shape = const ShapeDecoration(
+        shape: StadiumBorder(),
+        color: CupertinoColors.lightBackgroundGray,
       );
     }
 
@@ -864,7 +867,7 @@ class ProgressIndicatorWidget extends StatelessWidget {
           return CircularProgressIndicator(
             backgroundColor: isDownloading
                 ? CupertinoColors.lightBackgroundGray
-                : Colors.white.withOpacity(0),
+                : Colors.transparent,
             valueColor: AlwaysStoppedAnimation(isFetching
                 ? CupertinoColors.lightBackgroundGray
                 : CupertinoColors.activeBlue),

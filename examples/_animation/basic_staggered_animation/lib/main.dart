@@ -187,9 +187,9 @@ class _StaggerDemoState extends State<StaggerDemo>
             width: 300,
             height: 300,
             decoration: BoxDecoration(
-              color: Colors.black.withOpacity(0.1),
+              color: Colors.black.withValues(alpha: 0.1),
               border: Border.all(
-                color: Colors.black.withOpacity(0.5),
+                color: Colors.black.withValues(alpha: 0.5),
               ),
             ),
             child: StaggerAnimation(controller: _controller.view),
