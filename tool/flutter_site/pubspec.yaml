@@ -2,6 +2,7 @@ name: flutter_site
 description: Dart-based tools for building docs.flutter.dev.
 publish_to: none
 
+resolution: workspace
 environment:
   sdk: ^3.5.0
 
