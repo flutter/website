@@ -2,7 +2,7 @@ name: games_services_example
 description: Games services
 
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.6.0-0
 
 dependencies:
   flutter:

@@ -2,7 +2,7 @@ name: sqlite
 description: Example of using sqflite plugin to access SQLite database.
 
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.6.0-0
 
 dependencies:
   flutter:

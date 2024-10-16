@@ -2,7 +2,7 @@ name: interactive
 description: Sample code for interactive.md
 
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.6.0-0
 
 dependencies:
   flutter:

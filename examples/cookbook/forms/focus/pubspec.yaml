@@ -2,7 +2,7 @@ name: focus
 description: Sample code for focus cookbook recipe.
 
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.6.0-0
 
 dependencies:
   flutter:

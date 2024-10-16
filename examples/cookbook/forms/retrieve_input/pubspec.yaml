@@ -2,7 +2,7 @@ name: retrieve_input
 description: Sample code for retrieve_input cookbook recipe.
 
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.6.0-0
 
 dependencies:
   flutter:

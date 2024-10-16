@@ -2,7 +2,7 @@ name: text_field_changes
 description: Sample code for text_field_changes
 
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.6.0-0
 
 dependencies:
   flutter:

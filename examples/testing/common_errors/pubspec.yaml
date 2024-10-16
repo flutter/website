@@ -3,7 +3,7 @@ description: Excerpts for common Flutter errors.
 publish_to: none
 
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.6.0-0
 
 dependencies:
   flutter:

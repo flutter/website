@@ -3,7 +3,7 @@ publish_to: none
 description: A more complex staggered animation example.
 
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.6.0-0
 
 dependencies:
   flutter:

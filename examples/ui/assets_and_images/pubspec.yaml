@@ -3,7 +3,7 @@ description: An example project showing how to declare and load assets.
 publish_to: none
 
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.6.0-0
 
 dependencies:
   flutter:

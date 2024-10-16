@@ -2,7 +2,7 @@ name: picture_using_camera
 description: A new Flutter project.
 
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.6.0-0
 
 dependencies:
   flutter:

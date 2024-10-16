@@ -3,7 +3,7 @@ description: example for ui/layout/constraints
 version: 1.0.0
 
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.6.0-0
 
 dependencies:
   flutter:
