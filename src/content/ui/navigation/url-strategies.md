@@ -21,9 +21,9 @@ To configure Flutter to use the path instead, use the
 which is part of the Flutter SDK.
 
 You can't directly add `flutter_web_plugins` using `pub add`.
-Include it as a Flutter SDK dependency in your `pubspec.yaml` file:
+Include it as a Flutter [SDK dependency][] in your `pubspec.yaml` file:
 
-```dart
+```yaml highlightLines=4-5
 dependencies:
   flutter:
     sdk: flutter
@@ -31,9 +31,9 @@ dependencies:
     sdk: flutter
 ```
 
-Here's an example of how to use it:
+Then call the `usePathUrlStrategy` function before `runApp`:
 
-```dart
+```dart highlightLines=4
 import 'package:flutter_web_plugins/url_strategy.dart';
 
 void main() {
@@ -41,6 +41,8 @@ void main() {
   runApp(ExampleApp());
 }
 ```
+
+[SDK dependency]: {{site.dart-site}}/tools/pub/dependencies#sdk
 
 ## Configuring your web server
 
