@@ -12,7 +12,7 @@ These combinations are called _platforms_.
 Flutter categorizes platforms as follows:
 
 * **Supported**: The platforms and versions that the Flutter team supports.
-* **CI tested**: The Flutter team tests these platforms on every commit.
+* **CI-tested**: The Flutter team tests these platforms on every commit.
 * **Unsupported**: The Flutter team doesn't test or support these platforms.
 
 Based on these categories,
@@ -20,7 +20,7 @@ Flutter supports deploying to the following platforms.
 
 {% assign opsys = platforms %}
 
-| Target platform | Hardware architectures | Supported versions | CI tested versions |  Unsupported versions |
+| Target platform | Hardware architectures | Supported versions | CI-tested versions |  Unsupported versions |
 |---|:---:|:---:|:---:|:---:|
 {%- for platform in opsys %}
   | {{platform.platform}} | {{platform.chipsets}} | {{platform.supported}} | {{platform.ci-tested}} | {{platform.unsupported}} |
