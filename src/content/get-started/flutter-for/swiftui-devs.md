@@ -393,7 +393,7 @@ class Person {
   Person(this.name);
 }
 
-var items = [
+final List<Person> items = [
   Person('Person 1'),
   Person('Person 2'),
   Person('Person 3'),
