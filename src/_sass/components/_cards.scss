@@ -1,0 +1,184 @@
+@use '../base/utils';
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 1rem;
+
+  &.wide {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));;
+  }
+
+  &.narrow {
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));;
+  }
+
+  .card-image-holder {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12rem;
+    background-color: var(--bg-color);
+    overflow: hidden;
+
+    img {
+      position: relative;
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      margin-bottom: 0;
+    }
+
+    svg {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .card-image-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: .3s ease-in-out;
+    opacity: 0;
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  a.card {
+    &:hover {
+      @include utils.interaction-style(3%);
+      text-decoration: none;
+    }
+
+    &:active {
+      @include utils.interaction-style(6%);
+    }
+  }
+
+  .card {
+    background-color: var(--site-surface-container);
+    color: var(--site-on-surface);
+    border-radius: var(--site-square-radius);
+    overflow: hidden;
+
+    .card-body {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0.75rem;
+
+      img {
+        width: 4.5rem;
+        height: 4.5rem;
+      }
+    }
+
+    .card-text {
+      color: var(--site-on-surface-variant);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .card-title {
+      font-family: var(--site-ui-font-family), sans-serif;
+      font-size: 1.25rem;
+      color: var(--site-primary);
+
+      img {
+        margin-top: 0.5rem;
+      }
+    }
+
+    .card-muted {
+      color: var(--site-on-surface-variant);
+    }
+
+    .card-subtitle {
+      font-size: 0.875rem;
+    }
+
+    .card-center {
+      text-align: center;
+      white-space: nowrap;
+
+      > span {
+        display: block;
+      }
+
+      img {
+        margin-bottom: 0;
+      }
+
+      .material-symbols {
+        font-size: 3rem;
+        line-height: unset;
+      }
+    }
+
+    &:hover {
+      .card-image-hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// TODO(parlough): Replace the following or share CSS.
+
+.card-os-bug {
+  position: relative;
+
+  ::before {
+    content: "";
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-position: center center;
+    background-size: contain;
+    background-color: transparent;
+    background-repeat: no-repeat;
+  }
+}
+
+.card-macos {
+  @extend .card-os-bug;
+
+  ::before {
+    background-image: url("/assets/images/docs/brand-svg/macos-bug.svg");
+  }
+}
+
+.card-windows {
+  @extend .card-os-bug;
+
+  ::before {
+    background-image: url("/assets/images/docs/brand-svg/windows-bug.svg");
+  }
+}
+
+.card-linux {
+  @extend .card-os-bug;
+
+  ::before {
+    background-image: url("/assets/images/docs/brand-svg/linux.svg");
+  }
+}
+
+.card-chromeos {
+  @extend .card-os-bug;
+
+  ::before {
+    background-image: url("/assets/images/docs/brand-svg/chromeos.svg");
+  }
+}

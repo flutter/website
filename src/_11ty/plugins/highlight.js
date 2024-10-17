@@ -1,4 +1,5 @@
 import {getSingletonHighlighter} from 'shiki';
+import dashDarkTheme from '../syntax/dash-dark.js';
 import dashLightTheme from '../syntax/dash-light.js';
 
 const _terminalLanguages = {
@@ -49,7 +50,7 @@ export async function configureHighlighting(markdown) {
       'csharp',
       'cmake',
     ],
-    themes: [dashLightTheme],
+    themes: [dashLightTheme, dashDarkTheme],
   });
 
   markdown.renderer.rules.fence = function (tokens, index) {
@@ -168,7 +169,10 @@ function _highlight(
 
   return highlighter.codeToHtml(content, {
     lang: language,
-    theme: 'dash-light',
+    themes: {
+      light: 'dash-light',
+      dark: 'dash-dark',
+    },
     transformers: [
       {
         pre(preElement) {

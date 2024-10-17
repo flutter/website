@@ -16,15 +16,15 @@
   {% for comp in components -%}
   <div class="card">
     <a href="{{comp.link}}">
-      <div class="card-image-holder-material-3" style="--bg-color: {{sub.color}}">
-        <img alt="Rendered example of the {{comp.name}} Material widget." src="{{comp.image.src}}">
-        <div class="card-image-material-3-hover">
+      <div class="card-image-holder" style="--bg-color: {{sub.color}}; height: 8rem;">
+        <div class="card-image-hover">
           <img alt="Decorated background for material widget visualizations." src="{{comp.hoverBackground.src}}" aria-hidden="true">
         </div>
+        <img alt="Rendered example of the {{comp.name}} Material widget." src="{{comp.image.src}}">
       </div>
     </a>
     <div class="card-body">
-      <a href="{{comp.link}}"><header class="card-title card-title-material-3">{{comp.name}}</header></a>
+      <a href="{{comp.link}}"><header class="card-title">{{comp.name}}</header></a>
       <p class="card-text">{{ comp.description | truncatewords: 25 }}</p>
     </div>
   </div>
