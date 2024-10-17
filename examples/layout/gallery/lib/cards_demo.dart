@@ -128,8 +128,10 @@ class TappableTravelDestinationItem extends StatelessWidget {
                 shape: shape,
                 child: InkWell(
                   onTap: () {},
-                  splashColor:
-                      Theme.of(context).colorScheme.onSurface.withOpacity(0.12),
+                  splashColor: Theme.of(context)
+                      .colorScheme
+                      .onSurface
+                      .withValues(alpha: 0.12),
                   highlightColor: Colors.transparent,
                   child: Semantics(
                     label: destination.title,
@@ -187,13 +189,13 @@ class SelectableTravelDestinationItem extends StatelessWidget {
                   onLongPress: () {
                     onSelected();
                   },
-                  splashColor: colorScheme.onSurface.withOpacity(0.12),
+                  splashColor: colorScheme.onSurface.withValues(alpha: 0.12),
                   highlightColor: Colors.transparent,
                   child: Stack(
                     children: [
                       Container(
                         color: isSelected
-                            ? colorScheme.primary.withOpacity(0.08)
+                            ? colorScheme.primary.withValues(alpha: 0.08)
                             : Colors.transparent,
                       ),
                       Semantics(

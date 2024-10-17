@@ -3,7 +3,7 @@ publish_to: none
 description: Examples of visual debugging.
 
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.6.0-0
 
 dependencies:
   flutter:
