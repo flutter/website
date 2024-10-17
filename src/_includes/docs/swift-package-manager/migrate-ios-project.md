@@ -7,7 +7,7 @@ To migrate your project:
 
 1. [Turn on Swift Package Manager][].
 
-1. Run the iOS app using the Flutter CLI.
+2. Run the iOS app using the Flutter CLI.
 
    If your iOS project doesn't have Swift Package Manager integration yet, the
    Flutter CLI tries to migrate your project and outputs something like:
@@ -21,13 +21,13 @@ To migrate your project:
    `ios/Runner.xcodeproj/project.pbxproj` and
    `ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme` files.
 
-1. If the Flutter CLI's automatic migration fails, follow the steps in
+3. If the Flutter CLI's automatic migration fails, follow the steps in
    [add Swift Package Manager integration manually][manualIntegration].
 
 [Optional] To check if your project is migrated:
 
 1. Run the app in Xcode.
-1. Ensure that  **Run Prepare Flutter Framework Script** runs as a pre-action
+2. Ensure that  **Run Prepare Flutter Framework Script** runs as a pre-action
    and that `FlutterGeneratedPluginSwiftPackage` is a target dependency.
 
    {% render docs/captioned-image.liquid,
