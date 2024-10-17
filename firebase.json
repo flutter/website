@@ -165,7 +165,7 @@
       { "source": "/tools/devtools/codeSize", "destination": "/tools/devtools/app-size", "type": 301 },
       { "source": "/tools/devtools/overview", "destination": "/tools/devtools", "type": 301 },
       { "source": "/tools/devtools/timeline", "destination": "/tools/devtools/performance", "type": 301 },
-      { "source": "/tools/ide", "destination": "/tools/android-studio", "type": 301 },
+      { "source": "/tools/ide", "destination": "/tools/vs-code", "type": 301 },
       { "source": "/tools/ide/android-studio", "destination": "/tools/android-studio", "type": 301 },
       { "source": "/tools/ide/vs-code", "destination": "/tools/vs-code", "type": 301 },
       { "source": "/tools/inspector", "destination": "/tools/devtools/inspector", "type": 301 },
