@@ -1,6 +1,5 @@
-name: ffi_examples
-description: >-
-  Examples showcasing how to use Dart's FFI support for platform integration.
+name: flutter_android_activity
+description: Examples showcasing Flutter's support for launching native Android activities.
 
 publish_to: none
 
@@ -14,10 +13,10 @@ dependencies:
     sdk: flutter
 
 dev_dependencies:
-  example_utils:
-    path: ../../example_utils
   flutter_test:
     sdk: flutter
+  example_utils:
+    path: ../../example_utils
 
 flutter:
   uses-material-design: true

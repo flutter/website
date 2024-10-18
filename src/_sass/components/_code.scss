@@ -163,6 +163,8 @@ pre {
     border-bottom: 1px solid var(--site-outline-variant);
     font-size: 0.9125rem;
     font-weight: 500;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
     padding: 0.75rem 0.5rem 0.67rem 1rem;
   }
 

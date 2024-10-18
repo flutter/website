@@ -452,6 +452,8 @@
           permalink: /platform-integration/android/c-interop
         - title: Host a native Android view
           permalink: /platform-integration/android/platform-views
+        - title: Launch a Jetpack Compose activity
+          permalink: /platform-integration/android/compose-activity
         - title: Restore state on Android
           permalink: /platform-integration/android/restore-state-android
         - title: Target ChromeOS with Android
