@@ -1,0 +1,67 @@
+@use '../base/utils';
+
+a {
+  color: var(--site-primary);
+  border-radius: 0.25rem;
+
+  &:hover {
+    color: var(--site-primary);
+    text-decoration: underline;
+  }
+
+  &:has(code):focus-visible {
+    outline: none;
+
+    code {
+      outline: 2px solid var(--site-primary-container);
+    }
+  }
+}
+
+a, button {
+  text-decoration: none;
+
+  &.filled-button {
+    font-weight: 500;
+    padding: 0.5rem;
+    background-color: var(--site-primary-container);
+    color: var(--site-on-primary-container);
+    text-decoration: none;
+    border-radius: var(--site-square-radius);
+    cursor: pointer;
+
+    &:hover {
+      @include utils.interaction-style(8%);
+    }
+
+    &:active {
+      @include utils.interaction-style(16%);
+    }
+  }
+
+  &.icon-button {
+    border-radius: var(--site-square-radius);
+    padding: 0.375rem;
+    color: var(--site-on-surface-variant);
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    background: none;
+
+    > span {
+      font-size: 1.75rem;
+    }
+
+    &:hover {
+      @include utils.interaction-style(4%);
+    }
+
+    &:active {
+      @include utils.interaction-style(8%);
+    }
+  }
+}

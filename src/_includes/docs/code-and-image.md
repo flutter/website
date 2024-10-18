@@ -12,19 +12,17 @@
 {% endif -%}
 
 
-<figure class="{{class}}">
-  <div class="row {{figure-class}}">
-      <div class="col-md-7 {{code-class}}" style="padding-right:12px"> 
-        {{code}}
-      </div>
-      <div class="col-md-5" style="padding-left:0">
-        <img src='/assets/images/docs/{{image}}' class='{{img-class}}' alt='{{alt}}' style='{{width}} {{height}}'>
-         {% if caption -%}
-           <figcaption class="figure-caption {{figcaption-class}}" style="margin-top: 6px">
-            {{caption}}
-           </figcaption>
-        {% endif -%}
-      </div>
+<figure class="code-and-image {{class}}">
+  <div class="{{code-class}}"> 
+    {{code}}
+  </div>
+  <div>
+    <img src='/assets/images/docs/{{image}}' class='{{img-class}}' alt='{{alt}}' style='{{width}} {{height}}'>
+     {% if caption -%}
+     <figcaption class="figure-caption {{figcaption-class}}">
+       {{caption}}
+     </figcaption>
+    {% endif -%}
   </div>
 </figure>
 

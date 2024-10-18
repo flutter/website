@@ -1,0 +1,63 @@
+@use '../base/utils';
+
+.material-symbols {
+  //noinspection CssNoGenericFontName
+  font-family: 'Material Symbols Outlined';
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga';
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+
+  &.ms-filled {
+    font-variation-settings: 'FILL' 1;
+  }
+}
+
+.flutter-logo {
+  padding: 0.25rem;
+  border-radius: var(--site-square-radius);
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+
+  font-variant-ligatures: none;
+  color: var(--flutter-wordmark-color);
+  font-size: 1.75rem;
+  line-height: 2.5rem;
+  font-family: var(--site-ui-font-family), sans-serif;
+
+  > img {
+    height: 2.25rem;
+    margin-right: 0.6rem;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: var(--flutter-wordmark-color);
+
+    @include utils.interaction-style(4%);
+  }
+
+  &:active {
+    @include utils.interaction-style(7%);
+  }
+}
+
+img.text-icon {
+  margin: 0;
+  height: 24px;
+  width: 24px;
+  vertical-align: text-bottom;
+}

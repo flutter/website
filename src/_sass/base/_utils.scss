@@ -1,0 +1,3 @@
+@mixin interaction-style($percentage: 4%) {
+  background-image: linear-gradient(rgb(var(--site-interaction-base-values) / $percentage) 0 0);
+}

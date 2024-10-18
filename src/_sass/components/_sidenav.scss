@@ -1,0 +1,155 @@
+@use '../base/utils';
+
+#sidenav {
+  margin: 0;
+  overflow-y: auto;
+  min-width: 16rem;
+  width: 16rem;
+  max-height: calc(100vh - 80px);
+  padding-right: 1rem;
+  padding-left: 0.5rem;
+  padding-bottom: 1rem;
+  font-family: var(--site-ui-font-family), sans-serif;
+  position: sticky;
+  top: 1rem;
+
+  .nav-header {
+    font-weight: 500;
+    padding: 0.25rem 0.25rem 0.125rem;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sidenav-divider {
+    background-color: var(--site-surface-variant);
+    border-radius: 0.5rem;
+    width: 100%;
+    height: 0.125rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    width: 100%;
+    user-select: none;
+
+    a.nav-link {
+      text-wrap: pretty;
+      padding: 0.25rem;
+      margin-top: 0.25rem;
+      margin-bottom: 0.25rem;
+
+      border-radius: var(--site-square-radius);
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      cursor: pointer;
+
+      color: var(--site-on-surface);
+      text-decoration: none;
+
+      > div {
+        display: inline-block;
+
+        .material-symbols {
+          font-size: 0.875rem;
+          margin-left: 0.125rem;
+        }
+      }
+
+      span {
+        vertical-align: middle;
+      }
+
+      .expander {
+        color: var(--site-on-surface-variant);
+        transition: transform cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+      }
+
+      + ul {
+        display: none;
+      }
+
+      &:hover {
+        @include utils.interaction-style(8%);
+      }
+
+      &:not(.collapsed) {
+        .expander {
+          transform: rotate(180deg);
+        }
+
+        + ul {
+          display: block;
+        }
+      }
+
+      &.active {
+        background-color: var(--site-surface-container-highest);
+        color: var(--site-on-surface);
+
+        &:not(.collapsible) {
+          background-color: var(--site-secondary-container);
+          color: var(--site-on-secondary-container);
+        }
+      }
+    }
+  }
+
+  > ul {
+    ul {
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+@media(max-width: 768px) {
+  #sidenav {
+    display: none;
+  }
+
+  #menu-button button > span {
+    &:first-child {
+      display: unset;
+    }
+
+    &:last-child {
+      display: none;
+    }
+  }
+
+  body.menu-narrow-toggled {
+    #sidenav {
+      display: unset;
+      width: 100%;
+      padding: 0 0.5rem 1rem;
+      max-height: unset;
+      margin-top: 0.5rem;
+    }
+
+    #content-and-toc, #site-footer {
+      display: none;
+    }
+
+    #menu-button button > span {
+      &:first-child {
+        display: none;
+      }
+
+      &:last-child {
+        display: unset;
+      }
+    }
+  }
+}

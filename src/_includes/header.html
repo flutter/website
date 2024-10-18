@@ -1,158 +1,93 @@
-{% assign route = page.url|regex_replace:'/index$|/index\.html$|\.html$|/$' %}
-
-<header class="site-header">
-  <nav class="navbar navbar-expand-md justify-content-start justify-content-md-between">
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation">
-      <i class="material-symbols">menu</i>
-    </button>
-
-    <a class="navbar-brand" href="/">
-      <img
-        src='/assets/images/branding/flutter/logo+text/horizontal/default.svg'
-        alt='Flutter logo'
-        height="37"
-        width="129"
-        class="align-middle">
+<header id="site-header">
+  <div id="header-leading">
+    <div id="menu-button">
+      <button class="icon-button" title="Toggle menu" aria-label="Toggle menu">
+        <span class="material-symbols" aria-hidden="true">menu</span>
+        <span class="material-symbols" aria-hidden="true">menu_open</span>
+      </button>
+    </div>
+    <a class="flutter-logo" href="https://flutter.dev" title="Navigate to the Flutter homepage">
+      <img src="/assets/images/branding/flutter/logo/default.svg" alt="Flutter logo" width="32" height="40">
+      <span>Flutter</span>
     </a>
-
-    <div
-      id="navbarSupportedContent"
-      class="collapse navbar-collapse flex-grow-0">
-      <div
-        class="site-header__sheet-bg"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation">
-      </div>
-      <div class="site-header__sheet">
-        <ul class="navbar-nav">
-          <div class="site-sidebar site-sidebar--header d-md-none">
-            {% render sidenav-level-1.html, url:page.url, nav:sidenav, base_id:"header", active_nav:activeNav %}
-          </div>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="platform-navbar-dropdown"
-               href="{{site.main-url}}/multi-platform"
-               role="button" data-toggle="dropdown"
-               aria-haspopup="true" aria-expanded="false">
-               Multi-Platform
-            </a>
-            <div class="dropdown-menu" aria-labelledby="platform-navbar-dropdown">
-              <a class="dropdown-item" href="{{site.main-url}}/multi-platform/mobile">Mobile</a>
-              <a class="dropdown-item" href="{{site.main-url}}/multi-platform/web">Web</a>
-              <a class="dropdown-item" href="{{site.main-url}}/multi-platform/desktop">Desktop</a>
-              <a class="dropdown-item" href="{{site.main-url}}/multi-platform/embedded">Embedded</a>
-            </div>
+    <a id="docs-button" href="/" title="Navigate to the docs homepage">Docs</a>
+  </div>
+  <div id="header-trailing">
+    <search id="header-search">
+      <button class="icon-button" aria-label="Submit the entered search query">
+        <span class="material-symbols" aria-hidden="true">search</span>
+      </button>
+      <input type="search" placeholder="Search Flutter docs...">
+    </search>
+    <a id="open-search" class="icon-button" href="/search" title="Navigate to search page" aria-label="Navigate to search page">
+      <span class="material-symbols" aria-hidden="true">search</span>
+    </a>
+    <div style="--from-right: 1">
+      <button id="theme-switcher" popovertarget="theme-menu" class="icon-button" title="Select a theme" aria-label="Select a theme">
+        <span class="material-symbols" aria-hidden="true">contrast</span>
+      </button>
+      <div class="dropdown-menu" id="theme-menu" popover>
+        <ul>
+          <li>
+            <button data-theme="light" title="Switch to light mode" aria-label="Switch to light mode">
+              <span class="material-symbols" aria-hidden="true">light_mode</span>
+              <span>Light</span>
+            </button>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="dev-navbar-dropdown"
-               href="{{site.main-url}}/"
-               role="button" data-toggle="dropdown"
-               aria-haspopup="true" aria-expanded="false">
-               Development
-            </a>
-            <div class="dropdown-menu" aria-labelledby="dev-navbar-dropdown">
-              <a class="dropdown-item" href="{{site.main-url}}/learn">Learn</a>
-              <a class="dropdown-item" href="https://pub.dev/flutter/favorites" target="_blank">Flutter Favorites</a>
-              <a class="dropdown-item" href="https://pub.dev/" target="_blank">Packages</a>
-              <a class="dropdown-item" href="{{site.main-url}}/monetization">Monetization</a>
-              <a class="dropdown-item" href="{{site.main-url}}/games">Games</a>
-              <a class="dropdown-item" href="{{site.main-url}}/news">News</a>
-            </div>
+          <li>
+            <button data-theme="dark" title="Switch to dark mode" aria-label="Switch to dark mode">
+              <span class="material-symbols" aria-hidden="true">dark_mode</span>
+              <span>Dark</span>
+            </button>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="ecosystem-navbar-dropdown"
-               href="{{site.main-url}}/ecosystem"
-               role="button" data-toggle="dropdown"
-               aria-haspopup="true" aria-expanded="false">
-               Ecosystem
-            </a>
-            <div class="dropdown-menu" aria-labelledby="ecosystem-navbar-dropdown">
-              <a class="dropdown-item" href="{{site.main-url}}/community">Community</a>
-              <a class="dropdown-item" href="{{site.main-url}}/events">Events</a>
-              <a class="dropdown-item" href="{{site.main-url}}/culture">Culture</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{site.main-url}}/showcase">Showcase</a>
-          </li>
-          <li class="nav-item dropdown docs-item">
-            <a class="nav-link dropdown-toggle{% if route == '/' %} active{% endif %}"
-               id="docs-navbar-dropdown"
-               href="/"
-               role="button" data-toggle="dropdown"
-               aria-haspopup="true" aria-expanded="false">
-               Docs
-            </a>
-            <div class="dropdown-menu" aria-labelledby="docs-navbar-dropdown">
-              <a class="dropdown-item {% if route == '/release/whats-new' %} active{% endif %}"
-                 href="/release/whats-new">What's new</a>
-              <a class="dropdown-item {% if route contains '/get-started/editor' %} active{% endif %}"
-                 href="/get-started/editor">Editor support</a>
-              <a class="dropdown-item {% if route contains '/tools/hot-reload' %} active{% endif %}"
-                 href="/tools/hot-reload">Hot reload</a>
-              <a class="dropdown-item {% if route contains '/perf/ui-performance' %} active{% endif %}"
-                 href="/perf/ui-performance">Profiling</a>
-              <a class="dropdown-item {% if route contains '/get-started/install' %} active{% endif %}"
-                 href="/get-started/install">Install Flutter</a>
-              <a class="dropdown-item {% if route contains '/tools/devtools' %} active{% endif %}"
-                 href="/tools/devtools">DevTools</a>
-              <a class="dropdown-item {% if route contains '/cookbook' %} active{% endif %}"
-                 href="/cookbook">Cookbook</a>
-              <a class="dropdown-item {% if route contains '/codelabs' %} active{% endif %}"
-                 href="/codelabs">Codelabs</a>
-            </div>
+          <li>
+            <button data-theme="auto" title="Follow the device theme" aria-label="Follow the device theme">
+              <span class="material-symbols" aria-hidden="true">night_sight_auto</span>
+              <span>Automatic</span>
+            </button>
           </li>
         </ul>
-        <form action="/search/" class="site-header__search form-inline">
-          <input
-            class="site-header__searchfield form-control search-field"
-            type="search" name="q" id="q" autocomplete="off"
-            placeholder="Search" aria-label="Search">
-        </form>
       </div>
     </div>
-    <div class="site-header__social navbar-nav flex-row">
-      <a
-        class="nav-item nav-link nav-icon"
-        href="{{site.social.twitter}}"
-        aria-label="Open Flutter's X (Twitter) in a new tab"
-        target="_blank" rel="noreferrer">
-        <svg><use href="/assets/images/social/x.svg#x"></use></svg>
-      </a>
-      <a
-        class="nav-item nav-link nav-icon"
-        href="{{site.social.youtube}}"
-        aria-label="Open Flutter's YouTube in a new tab"
-        target="_blank" rel="noreferrer">
-        <svg><use href="/assets/images/social/youtube.svg#youtube"></use></svg>
-      </a>
-      <a
-        class="nav-item nav-link nav-icon"
-        href="{{site.flutter-medium}}"
-        aria-label="Open Flutter's Medium blog in a new tab"
-        target="_blank" rel="noreferrer">
-        <svg><use href="/assets/images/social/medium.svg#medium"></use></svg>
-      </a>
-      <a
-        class="nav-item nav-link nav-icon"
-        href="{{site.repo.organization}}"
-        aria-label="Open Flutter's GitHub in a new tab"
-        target="_blank" rel="noreferrer">
-        <svg><use href="/assets/images/social/github.svg#github"></use></svg>
-      </a>
+    <div style="--from-right: 0">
+      <button id="more-links-button" popovertarget="more-links" class="icon-button" title="View more links" aria-label="View more links">
+        <span class="material-symbols" aria-hidden="true">more_vert</span>
+      </button>
+      <div class="dropdown-menu" id="more-links" popover>
+        <ul>
+          <li>
+            <a href="https://flutter.dev" target="_blank" rel="noopener">
+              <span class="material-symbols" aria-hidden="true">home</span>
+              <span>Homepage</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://flutter.dev/ecosystem" target="_blank" rel="noopener">
+              <span class="material-symbols" aria-hidden="true">diversity_3</span>
+              <span>Community</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://pub.dev" target="_blank" rel="noopener">
+              <span class="material-symbols" aria-hidden="true">package_2</span>
+              <span>Packages</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://api.flutter.dev" target="_blank" rel="noopener">
+              <span class="material-symbols" aria-hidden="true">description</span>
+              <span>API docs</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://docs.flutter.cn" target="_blank" rel="noopener">
+              <span class="material-symbols" aria-hidden="true">language</span>
+              <span>社区中文文档</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <a
-      class="site-header__cta btn btn-primary"
-      href="/get-started/install/">Get started
-    </a>
-  </nav>
+  </div>
 </header>
+  

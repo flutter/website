@@ -4,14 +4,14 @@
 export default {
   name: 'dash-light',
   colors: {
-    'editor.background': '#F8F9FA',
-    'editor.foreground': '#222222',
+    'editor.background': '#ECEDF7',
+    'editor.foreground': '#191C22',
   },
   tokenColors: [
     {
       settings: {
-        background: '#F8F9FA',
-        foreground: '#222222',
+        background: '#ECEDF7',
+        foreground: '#191C22',
       },
     },
     {
@@ -33,19 +33,19 @@ export default {
         'storage.modifier.package.java',
       ],
       settings: {
-        foreground: '#222222',
+        foreground: '#191C22',
       },
     },
     {
       scope: ['comment', 'punctuation.definition.comment'],
       settings: {
-        foreground: '#6E6E70',
+        foreground: '#59616E',
       },
     },
     {
       scope: 'constant',
       settings: {
-        foreground: '#0c7064',
+        foreground: '#0C7064',
       },
     },
     {
@@ -56,7 +56,7 @@ export default {
         'variable.language',
       ],
       settings: {
-        foreground: '#bd2314',
+        foreground: '#BD2314',
       },
     },
     {
@@ -66,13 +66,13 @@ export default {
         'constant.character.escape',
       ],
       settings: {
-        foreground: '#222222',
+        foreground: '#191C22',
       },
     },
     {
       scope: ['string', 'string.interpolated', 'punctuation.definition.string'],
       settings: {
-        foreground: '#0c7064',
+        foreground: '#0C7064',
       },
     },
     {
@@ -103,7 +103,7 @@ export default {
     {
       scope: ['variable', 'variable.other'],
       settings: {
-        foreground: '#222222',
+        foreground: '#191C22',
       },
     },
     {
