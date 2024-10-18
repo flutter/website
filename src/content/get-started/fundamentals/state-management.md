@@ -442,7 +442,9 @@ and data structures needed for your app.
 If you are interested in other ways to define the model,
 such as using immutable value types,
 check out packages like [freezed][]
-or [build_collection][] on pub.dev.
+or [build_collection][] on pub.dev or use vscode plugin [jsontodart][]
+to convert JSON to Dart class.
+
 
 ### Defining the ViewModel
 
@@ -570,6 +572,7 @@ If you would like to learn more, check out the following resources:
 [managing-state-video]: {{site.youtube-site}}/watch?v=vU9xDLdEZtU
 [provider]: {{site.pub-pkg}}/provider
 [riverpod]: {{site.pub-pkg}}/riverpod
+[jsontodart]: https://marketplace.visualstudio.com/items?itemName=BalaDhruv.j20
 
 ## Feedback
 

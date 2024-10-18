@@ -526,6 +526,7 @@ For more information, see the following resources:
 * The [`json_serializable` examples][] on GitHub
 * The [Dive into Dart's patterns and records][] codelab
 * This ultimate guide about [how to parse JSON in Dart/Flutter][]
+* [Json to Dart - VS Code Plugin to convert JSON to Dart class with customization(Freeezed)][], by ZESTYCO (BalaDhruv)
 
 [`built_value`]: {{site.pub}}/packages/built_value
 [code generation libraries]: #code-generation
@@ -545,3 +546,4 @@ For more information, see the following resources:
 [tree shaking]: https://en.wikipedia.org/wiki/Tree_shaking
 [Dive into Dart's patterns and records]: {{site.codelabs}}/codelabs/dart-patterns-records
 [how to parse JSON in Dart/Flutter]: https://codewithandrea.com/articles/parse-json-dart/
+[Json to Dart - VS Code Plugin to convert JSON to Dart class with customization(Freeezed)]: https://marketplace.visualstudio.com/items?itemName=BalaDhruv.j20

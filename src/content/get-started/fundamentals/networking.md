@@ -65,10 +65,13 @@ you'll see other options for handling this conversion.
 The first links to a YouTube video showing an overview
 of the [`freezed` package][]. 
 The second links to a codelab that covers patterns
-and records using a case study of parsing JSON. 
+and records using a case study of parsing JSON.
+The third links to a vscode plugin to convert 
+your JSON to Dart class.
 
 * YouTube video: [Freezed (Package of the Week)][]
 * Codelab: [Dive into Dart's patterns and records][]
+* VSCode Plugin: [Json to Dart - VS Code Plugin to convert JSON to Dart class][]
 
 ## Going both ways, getting data out again
 
@@ -136,6 +139,7 @@ Anna (Domashych) Leushchenko covering advanced networking in Flutter.
 [MDN's article on Authorization for websites]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization
 [Using the Network View]: /tools/devtools/network
 [Send data to the internet]: /cookbook/networking/send-data
+[Json to Dart - VS Code Plugin to convert JSON to Dart class]: https://marketplace.visualstudio.com/items?itemName=BalaDhruv.j20
 
 ## Feedback
 
