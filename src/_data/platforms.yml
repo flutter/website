@@ -41,7 +41,7 @@
 - platform: 'Safari (Web)'
   chipsets: 'N/A'
   supported: '[Latest 2](https://developer.apple.com/documentation/safari-release-notes/)'
-  ci-tested: 'If on latest MacOS 13, then Safari 18'
+  ci-tested: '18'
   unsupported: '15.5 and earlier'
 - platform: 'Edge (Web)'
   chipsets: 'N/A'
