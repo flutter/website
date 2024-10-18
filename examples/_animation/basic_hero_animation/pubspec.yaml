@@ -4,7 +4,7 @@ description: >-
   Shows how to create a simple or Hero animation using the Hero class directly.
 
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.6.0-0
 
 dependencies:
   flutter:

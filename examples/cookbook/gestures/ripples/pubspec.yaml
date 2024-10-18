@@ -2,7 +2,7 @@ name: ripples
 description: Example for ripples cookbook recipe
 
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.6.0-0
 
 dependencies:
   flutter:

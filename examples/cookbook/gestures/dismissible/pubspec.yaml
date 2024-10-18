@@ -2,7 +2,7 @@ name: dismissible
 description: Sample code for dismissible cookbook recipe.
 
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.6.0-0
 
 dependencies:
   flutter:

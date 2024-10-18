@@ -189,7 +189,7 @@ class FilterItem extends StatelessWidget {
             child: Image.network(
               'https://docs.flutter.dev/cookbook/img-files'
               '/effects/instagram-buttons/millennial-texture.jpg',
-              color: color.withOpacity(0.5),
+              color: color.withValues(alpha: 0.5),
               colorBlendMode: BlendMode.hardLight,
             ),
           ),
@@ -572,7 +572,7 @@ class _ExampleInstagramFilterSelectionState
         return Image.network(
           'https://docs.flutter.dev/cookbook/img-files'
           '/effects/instagram-buttons/millennial-dude.jpg',
-          color: color.withOpacity(0.5),
+          color: color.withValues(alpha: 0.5),
           colorBlendMode: BlendMode.color,
           fit: BoxFit.cover,
         );
@@ -829,7 +829,7 @@ class FilterItem extends StatelessWidget {
             child: Image.network(
               'https://docs.flutter.dev/cookbook/img-files'
               '/effects/instagram-buttons/millennial-texture.jpg',
-              color: color.withOpacity(0.5),
+              color: color.withValues(alpha: 0.5),
               colorBlendMode: BlendMode.hardLight,
             ),
           ),
