@@ -3,13 +3,7 @@
 Flutter's Swift Package Manager support is turned off by default.
 To turn it on:
 
-1. Switch to Flutter's `main` channel:
-
-   ```sh
-   flutter channel main --no-cache-artifacts
-   ```
-
-1. Upgrade to the latest Flutter SDK and download artifacts:
+1. Upgrade to the latest Flutter SDK:
 
    ```sh
    flutter upgrade
