@@ -181,7 +181,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
       Verify Xcode doesn't produce any warnings or errors for this file.
 
       :::tip
-      If Xcode doen't show any files, quit Xcode (**Xcode > Quit Xcode**) and
+      If Xcode doesn't show any files, quit Xcode (**Xcode > Quit Xcode**) and
       reopen.
 
       If Xcode doesn't update after you make a change, try clicking
