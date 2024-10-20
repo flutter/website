@@ -125,7 +125,7 @@ For more information, see the API docs for:
 [`PlatformViewLink`]: {{site.api}}/flutter/widgets/PlatformViewLink-class.html
 [`PlatformViewsService`]: {{site.api}}/flutter/services/PlatformViewsService-class.html
 
-### TextureLayerHybridCompisition
+### TextureLayerHybridComposition
 
 In your Dart file,
 for example `native_view_example.dart`,
