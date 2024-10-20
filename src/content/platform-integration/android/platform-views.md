@@ -40,7 +40,7 @@ SurfaceFlinger composes the Flutter content and the platform views.
 * `-` FPS of application will be lower.
 * `-` Certain transformations that can be applied to Flutter widgets will not work when applied to platform views.
 
-## [Texture Layer](#texturelayerhybridcompisition) (or Texture Layer Hybrid Composition)
+## [Texture Layer](#texturelayerhybridcomposition) (or Texture Layer Hybrid Composition)
 
 Platform Views are rendered into a texture.
 Flutter draws the platform views (via the texture).
