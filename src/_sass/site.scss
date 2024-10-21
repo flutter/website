@@ -1,30 +1,33 @@
-// -- Vars/config
-@use 'base/variables';
-@use 'base/material-colors';
+// Must be imported first to ensure that
+// the reset is applied before any other styles are applied.
+@use 'base/reset';
 
-// -- Vendor
-@use 'vendor/bootstrap';
+// Must be imported second to ensure that
+// the root variables exist before any other styles are applied.
+@use 'base/root';
 
-// -- Base
-@use 'base/base';
+@use 'base/content';
+@use 'base/layout';
+@use 'base/typography';
 
-// -- Components
-// (alpha ordered)
+@use 'components/asides';
 @use 'components/banner';
-@use 'components/books';
+@use 'components/breadcrumbs';
+@use 'components/buttons';
+@use 'components/cards';
 @use 'components/code';
-@use 'components/content';
 @use 'components/cookie-notice';
-@use 'components/d2h';
+@use 'components/dropdown';
 @use 'components/footer';
 @use 'components/header';
-@use 'components/juicy-button';
-@use 'components/next-prev-nav';
-@use 'components/sidebar';
-@use 'components/toc';
+@use 'components/icons';
+@use 'components/media';
+@use 'components/misc';
+@use 'components/prev-next';
+@use 'components/side-menu';
+@use 'components/sidenav';
+@use 'components/tables';
+@use 'components/tabs';
 
-// -- Pages (alpha ordered)
 @use 'pages/not-found';
-
-// -- Overrides
-@use 'base/print-overrides';
+@use 'pages/search';

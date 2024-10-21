@@ -24,8 +24,8 @@ or the platform you already have set up.
 
   <a class="card card-app-type {{bug}}" id="install-{{target | downcase}}" href="{{targetLink}}">
     <div class="card-body">
-      <header class="card-title text-center">
-        <span class="d-block h1">
+      <header class="card-title card-center">
+        <span>
           {% assign icon = target | downcase -%}
           {% case icon %}
           {% when 'macos-desktop' -%}
@@ -40,7 +40,7 @@ or the platform you already have set up.
           <span class="material-symbols">add</span>
           <span class="material-symbols">web</span>
         </span>
-        <span class="text-muted d-block">
+        <span class="card-muted">
         Make web and
         {{ target | replace: "-", " " | capitalize | replace: "Macos",
         "macOS" | replace: "macos", "macOS" | replace: "Ios", "iOS" |

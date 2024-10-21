@@ -14,8 +14,8 @@ or the platform you already have set up.
 {% assign targetLink = '/platform-integration/linux/install-linux/install-linux-from-' | append: target | downcase %}
   <a class="card card-app-type card-linux" id="install-{{target | downcase}}" href="{{targetLink}}">
     <div class="card-body">
-      <header class="card-title text-center">
-        <span class="d-block h1">
+      <header class="card-title card-center">
+        <span>
           {% assign icon = target | downcase -%}
           {% case icon %}
           {% when 'android' -%}
@@ -24,7 +24,7 @@ or the platform you already have set up.
             <span class="material-symbols">web</span>
           {% endcase -%}
         </span>
-        <span class="text-muted d-block">
+        <span class="card-muted">
         Make {{ target }} and Linux desktop apps
         </span>
       </header>

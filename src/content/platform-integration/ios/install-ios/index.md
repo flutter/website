@@ -14,8 +14,8 @@ or the platform you already have set up.
 {% assign targetLink = '/platform-integration/ios/install-ios/install-ios-from-' | append: target | downcase %}
   <a class="card card-app-type card-macos" id="install-{{target | downcase}}" href="{{targetLink}}">
     <div class="card-body">
-      <header class="card-title text-center">
-        <span class="d-block h1">
+      <header class="card-title card-center">
+        <span>
           {% assign icon = target | downcase -%}
           {% case icon %}
           {% when 'macos' -%}
@@ -28,7 +28,7 @@ or the platform you already have set up.
           <span class="material-symbols">add</span>
           <span class="material-symbols">phone_iphone</span>
         </span>
-        <span class="text-muted d-block">
+        <span class="card-muted">
         Make iOS and {{ target }}{% if target == 'macOS' %} desktop{% endif %} apps
         </span>
       </header>

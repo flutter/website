@@ -1,291 +1,153 @@
-@use '../base/variables' as *;
-@use '../vendor/bootstrap';
+@use '../base/utils';
 
-.site-header {
-  background-color: $site-color-white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
-  font-family: $site-font-family-alt;
-  position: sticky;
+#site-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--site-surface-container-low);
+  gap: 1rem;
+  align-items: center;
+  min-height: 4rem;
+  max-height: 5rem;
   top: 0;
-  z-index: bootstrap.$zindex-fixed;
+  position: sticky;
+  z-index: 10;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 
-  .navbar {
-    font-size: bootstrap.$font-size-lg;
-    min-height: $site-header-height;
-
-    @include bootstrap.media-breakpoint-up(md) {
-      font-size: bootstrap.$font-size-base;
-    }
-
-    .navbar-toggler {
-      color: $site-color-body;
-      margin-right: bootstrap.bs-spacer(4);
-      padding: 0;
-
-      .material-symbols {
-        font-size: 28px;
-      }
-    }
-
-    .navbar-brand {
-      margin-right: auto;
-
-      img {
-        width: 129px;
-        height: 37px;
-      }
-    }
-
-    .nav-link {
-      color: $site-color-body-light;
-      padding: bootstrap.bs-spacer(5) 0;
-      position: relative;
-
-      @include bootstrap.media-breakpoint-up(md) {
-        padding: 0 bootstrap.bs-spacer(4);
-      }
-
-      &.active {
-        color: $site-color-body;
-        font-weight: 500;
-
-        @include bootstrap.media-breakpoint-up(md) {
-          &:after {
-            $nav-active-marker-thickness: 3px;
-            background-color: $site-color-primary;
-            content: '';
-            display: block;
-            height: $nav-active-marker-thickness;
-            left: 0;
-            position: absolute;
-            top: calc(50% + (#{$site-header-height} / 2) - #{$nav-active-marker-thickness});
-            width: 100%;
-          }
-        }
-      }
-    }
+  @at-root body.dark-mode & {
+    box-shadow: none;
+    border-bottom: 1px solid var(--site-outline-variant);
   }
+}
 
-  .navbar-collapse {
-    bottom: 0;
-    height: auto !important; // override bootstrap's height calculation
-    left: 0;
-    position: fixed;
-    right: 0;
-    top: 0;
-    transition-duration: 0s;
-    z-index: bootstrap.$zindex-fixed;
+#header-leading {
+  display: flex;
+  flex-direction: row;
+  gap: 0.35rem;
+  justify-self: start;
+  align-items: center;
+  user-select: none;
 
-    @include bootstrap.media-breakpoint-down(sm) {
-      pointer-events: none;
+  font-variant-ligatures: none;
+  font-size: 1.75rem;
+  line-height: 2.5rem;
+  font-family: var(--site-ui-font-family), sans-serif;
 
-      &:not(.show) {
-        display: block;
-      }
-
-      &.show {
-        pointer-events: auto;
-        transition-duration: 0.35s;
-
-        .site-header__sheet {
-          transform: translateX(0);
-        }
-        .site-header__sheet-bg {
-          opacity: 1;
-        }
-      }
-
-      .navbar-nav {
-        margin-bottom: bootstrap.bs-spacer(5);
-        overflow-y: auto;
-        overscroll-behavior: contain;
-      }
-    }
-
-    @include bootstrap.media-breakpoint-up(md) {
-      position: static;
-    }
-  }
-
-  &__sheet {
-    display: flex;
-    z-index: bootstrap.$zindex-modal;
-
-    @include bootstrap.media-breakpoint-down(sm) {
-      background: $site-color-white;
-      bottom: 0;
-      flex-direction: column;
-      left: 0;
-      position: absolute;
-      right: 60px;
-      top: 0;
-      transform: translateX(-100%);
-      transition: transform 0.35s ease-in-out;
-
-      > * {
-        margin: 0 $site-nav-mobile-side-padding;
-      }
-    }
-
-    @include bootstrap.media-breakpoint-up(md) {
-      align-items: center;
-      flex-direction: row;
-    }
-  }
-
-  &__sheet-bg {
-    cursor: pointer; // needed for iOS to recognize the div as clickable
-    z-index: bootstrap.$zindex-modal-backdrop;
-
-    @include bootstrap.media-breakpoint-down(sm) {
-      background: rgba(0, 0, 0, .4);
-      bottom: 0;
-      left: 0;
-      opacity: 0;
-      position: absolute;
-      right: 0;
-      top: 0;
-      transition: opacity 0.35s ease-in-out;
-    }
-  }
-
-  &__cta {
-    margin-left: bootstrap.bs-spacer(2);
-    padding: bootstrap.bs-spacer(2) bootstrap.bs-spacer(4) !important;
-
-    @include bootstrap.media-breakpoint-down(sm) { display: none; }
-  }
-
-  &__search {
-    position: relative;
-
-    &::before {
-      content: 'search';
-      content: 'search' / '';
-      font: $site-font-icon;
-      pointer-events: none;
-      position: absolute;
-      left: bootstrap.bs-spacer(1);
-    }
-
-    @include bootstrap.media-breakpoint-down(sm) {
-      border-bottom: 1px solid $site-color-light-grey;
-      flex-shrink: 0;
-      margin: 0;
-      order: -1;
-      padding: 0 $site-nav-mobile-side-padding;
-
-      &::before {
-        left: $site-nav-mobile-side-padding;
-      }
-    }
-
-    @include bootstrap.media-breakpoint-up(md) {
-      margin-left: bootstrap.bs-spacer(4);
-    }
-  }
-
-  &__searchfield {
-    border: 0;
-    font-size: bootstrap.$font-size-sm;
-    padding-left: bootstrap.bs-spacer(8);
-
-    @include bootstrap.media-breakpoint-down(md) {
-      font-size: bootstrap.$font-size-lg;
-      height: 66px;
-      width: 100% !important;
-    }
-
-    @include bootstrap.media-breakpoint-up(md) {
-      transition: width .35s ease-in-out;
-      width: 24px !important;
-
-      &:focus {
-        width: 220px !important;
-      }
-    }
-  }
-
-  &__social {
-    .nav-item.nav-link {
-      padding: 0 bootstrap.bs-spacer(2);
-
-      @include bootstrap.media-breakpoint-down(sm) {
-        padding: 0 bootstrap.bs-spacer(1);
-        font-size: smaller;
-      }
-
-      &.nav-icon {
-        color: $site-color-nav-links;
-
-        &:hover {
-          color: $site-color-body-light;
-        }
-
-        svg {
-          height: 24px;
-          width: 24px;
-        }
-      }
+  .flutter-logo > span {
+    @media(max-width: 768px) {
+      display: none;
     }
   }
 }
 
+#header-trailing {
+  justify-self: end;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 0.5rem;
 
-header.site-header {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 
-  .dropdown-menu {
-    top: 32px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
-    border-radius: 4px;
-    padding: 0.75rem;
-    border: 1px solid #eee;
-  }
+  search {
+    display: flex;
+    flex-direction: row;
+    height: 2.5rem;
+    border-radius: var(--site-square-radius);
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    width: 15rem;
 
-  .dropdown-item {
-    padding: 0.55rem 1.2rem;
-    font-size: 14px;
-    color: #444;
-    border-radius: 4px;
+    font-family: var(--site-ui-font-family);
+    background-color: var(--site-surface-container-high);
+    transition: 0.4s width ease;
 
-    &:hover,
-    &.active {
-      color: #000;
-      background-color: #f6f6f6;
-      transition: background-color 300ms ease;
-    }
+    .icon-button {
+      background-image: none;
 
-    &.active {
-      font-weight: 500;
-    }
-  }
+      &:hover {
+        color: var(--site-primary);
+      }
 
-  .dropdown-toggle::after {
-    position: relative;
-    top: 1px;
-  }
-
-  @include bootstrap.media-breakpoint-down(sm) {
-    .navbar-collapse {
-      .navbar-nav {
-        margin-top: 1.5rem;
-        margin-bottom: 1.5rem;
+      > span {
+        font-size: 1.5rem;
       }
     }
 
-    .site-header__sheet > * {
-      margin: 0;
+    &:hover {
+      @include utils.interaction-style(2%);
     }
-  }
 
-  @include bootstrap.media-breakpoint-down(md) {
-    .site-header__sheet .navbar-nav > .nav-item {
+    &:focus-within {
+      outline: 2px solid var(--site-primary-container);
+      @media(min-width: 621px) {
+        width: 18rem;
+      }
+
+      @media(min-width: 769px) {
+        width: 22rem;
+      }
+
+      @media(min-width: 961px) {
+        width: 30rem;
+      }
+    }
+
+    input {
+      border-radius: var(--site-square-radius);
+      caret-color: var(--site-primary-container);
+      padding: 0.5rem;
+      background: none;
+      text-overflow: ellipsis;
+      width: 100%;
+      overscroll-behavior: contain;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    @media(max-width: 576px) {
       display: none;
     }
   }
 
-  @include bootstrap.media-breakpoint-down(lg) {
-    .site-header__sheet .navbar-nav .nav-item.docs-item {
+  #open-search {
+    @media(min-width: 577px) {
+      display: none;
+    }
+  }
+}
+
+#docs-button {
+  padding: 0 0.25rem;
+  border-radius: var(--site-square-radius);
+
+  background-color: var(--site-secondary-container);
+  color: var(--site-on-surface);
+
+  &:hover {
+    text-decoration: none;
+    @include utils.interaction-style(4%);
+  }
+
+  &:active {
+    @include utils.interaction-style(8%);
+  }
+}
+
+#menu-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+  margin-left: 0.5rem;
+
+  > button {
+    padding: 0.5rem;
+
+    > span:first-child {
       display: none;
     }
   }

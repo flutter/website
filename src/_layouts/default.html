@@ -2,52 +2,25 @@
 layout: base
 ---
 
-{% if toc != false -%}
-{% assign tocContents = content | generate_toc %}
-{% if tocContents == null or tocContents == '' -%}
-{% assign toc = false %}
-{% endif -%}
-{% endif -%}
-
-{% assign sidebar-col = 'col-12 col-md-3 col-xl-2' -%}
-{% if toc != false -%}
-{% assign main-col = 'col-12 col-md-9 offset-md-3 col-xl-8 offset-xl-2 col-xxl-8 offset-xxl-2' -%}
-{% comment %}Side toc is col-xl-2{% endcomment -%}
-{% else -%}
-{% assign main-col = 'col-12 col-md-9 offset-md-3 col-xl-10 offset-xl-2 col-xxl-8 offset-xxl-2' -%}
-{% endif -%}
-
-<div class="container-fluid position-relative">
-  <div class="row flex-xl-nowrap">
-    <div class="fixed-col site-sidebar site-sidebar--fixed {{sidebar-col}} d-none d-md-block" data-fixed-column>
-      {% assign route = page.url | regex_replace:'/index$|/index\.html$|\.html$|/$' %}
-      {% render sidenav-level-1.html, url:page.url, nav:sidenav, base_id:"fixed", active_nav:activeNav %}
-    </div>
-
-    <main class="site-content {{main-col}}">
-      {% if toc != false -%}
-      {% include side-toc.html tocContents=tocContents %}
-      {% endif -%}
-      <div class="container">
-
-        {% include next-prev-nav.html prev=prev next=next %}
-
-        <header class="site-content__title" id="site-content-title">
-          <h1>{{ title }}</h1>
-          {% if show_breadcrumbs != false -%}
-          {% include breadcrumbs.html %}
-          {% endif -%}
-        </header>
-
-        {% if toc != false -%}
-        {% include inline-toc.html tocContents=tocContents -%}
-        {% endif -%}
-        {{ content }}
-
-        {% include next-prev-nav.html prev=prev, next=next %}
-
-        {% include page-github-links.html %}
-      </div>
-    </main>
-  </div>
+{% if show_banner != false -%}
+<div id="site-banner" role="alert">
+  <p>{% render banner.html %}</p>
+  <button id="banner-close-button" class="icon-button" title="Close banner" aria-label="Close banner">
+    <span class="material-symbols" hidden="hidden">close</span>
+  </button>
 </div>
+{% endif -%}
+
+<main id="site-content">
+  <header>
+    <h1 id="document-title">{{title}}</h1>
+    {% if show_breadcrumbs != false -%}
+    {% include breadcrumbs.html %}
+    {% endif -%}
+  </header>
+  {{ content }}
+
+  {% render next-prev-nav.html, prev:prev, next:next %}
+
+  {% include page-github-links.html %}
+</main>

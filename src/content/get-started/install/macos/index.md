@@ -23,21 +23,19 @@ js: [{url: '/assets/js/temp/macos-install-redirector.js'}]
 
   <a class="card card-app-type card-macos" id="install-{{os | downcase}}" href="/get-started/install/{{os | downcase}}/{{targetlink}}">
     <div class="card-body">
-      <header class="card-title text-center">
-        <span class="d-block h1">
-          {% assign icon = target | downcase -%}
-          {% case icon %}
-          {% when 'desktop' -%}
-            <span class="material-symbols">laptop_mac</span>
-          {% when 'ios' -%}
-            <span class="material-symbols">phone_iphone</span>
-          {% when 'android' -%}
-            <span class="material-symbols">phone_android</span>
-          {% when 'web' -%}
-            <span class="material-symbols">web</span>
-          {% endcase -%}
-        </span>
-        <span class="text-muted">{{ target }}</span>
+      <header class="card-title card-center">
+        {% assign icon = target | downcase -%}
+        {% case icon %}
+        {% when 'desktop' -%}
+          <span class="material-symbols">laptop_mac</span>
+        {% when 'ios' -%}
+          <span class="material-symbols">phone_iphone</span>
+        {% when 'android' -%}
+          <span class="material-symbols">phone_android</span>
+        {% when 'web' -%}
+          <span class="material-symbols">web</span>
+        {% endcase -%}
+        <span class="card-muted">{{ target }}</span>
         {% if icon == 'ios' -%}
           <div class="card-subtitle">Recommended</div>
         {% endif -%}
