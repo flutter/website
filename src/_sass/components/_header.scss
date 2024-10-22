@@ -23,7 +23,7 @@
 #header-leading {
   display: flex;
   flex-direction: row;
-  gap: 0.35rem;
+  gap: 0.25rem;
   justify-self: start;
   align-items: center;
   user-select: none;
@@ -55,12 +55,12 @@
     height: 2.5rem;
     border-radius: var(--site-square-radius);
     padding: 0.5rem;
-    margin-right: 0.5rem;
+    margin-right: 0.75rem;
     width: 15rem;
 
     font-family: var(--site-ui-font-family);
     background-color: var(--site-surface-container-high);
-    transition: 0.4s width ease;
+    transition: 0.25s width ease-in-out;
 
     .icon-button {
       background-image: none;
