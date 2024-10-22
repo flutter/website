@@ -291,18 +291,14 @@ This layer is optional because not all applications or features within an
 application have these requirements. If you suspect your application would
 benefit from this additional layer, consider the pros and cons:
 
-<table>
-  <tr>
-    <td>✅ Avoid code duplication in ViewModels</td>
-    <td>✅ Improve testability by separating complex business logic from UI logic</td>
-    <td>✅ Improve code readability in ViewModels</td>
-  </tr>
-  <tr>
-    <td>❌ Increases complexity of your architecture, adding more classes and higher cognitive load</td>
-    <td>❌ Testing requires additional mocks</td>
-    <td>❌ Adds additional boilerplate to your code</td>
-  </tr>
-</table>
+
+| Pros                                                                     | Cons                                                                                       |
+|--------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
+| ✅ Avoid code duplication in ViewModels                                   | ❌ Increases complexity of your architecture, adding more classes and higher cognitive load |
+| ✅ Improve testability by separating complex business logic from UI logic | ❌ Testing requires additional mocks                                                        |
+| ✅ Improve code readability in ViewModels                                 | ❌ Adds additional boilerplate to your code                                                 |
+    
+{:.table .table-striped}
 
 ### Data access with use-cases
 
