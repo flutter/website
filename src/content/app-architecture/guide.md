@@ -1,12 +1,12 @@
 ---
 title: Guide to app architecture
-short-title: Architecture concepts
+short-title: Architecture guide
 description: >
   The recommended way to architect a Flutter app.
 prev:
     title: Common architecture concepts
     path: /app-architecture/architecture-concepts
-# TODO(ewindmill): add next
+# TODO(ewindmill): add next in PR with "case study" 
 ---
 
 The following pages demonstrate how to build an app using best practices. 
@@ -297,7 +297,6 @@ benefit from this additional layer, consider the pros and cons:
 | ✅ Avoid code duplication in ViewModels                                   | ❌ Increases complexity of your architecture, adding more classes and higher cognitive load |
 | ✅ Improve testability by separating complex business logic from UI logic | ❌ Testing requires additional mocks                                                        |
 | ✅ Improve code readability in ViewModels                                 | ❌ Adds additional boilerplate to your code                                                 |
-    
 {:.table .table-striped}
 
 ### Data access with use-cases

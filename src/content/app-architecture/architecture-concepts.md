@@ -82,7 +82,7 @@ a Dart class might use [getters][] to derive values from an SSOT field
 or a list of [records][] to group related values 
 (instead of parallel lists whose indices might get out of sync).
 
-### Unidirectional data flow
+## Unidirectional data flow
 
 [Unidirectional data flow][] (UDF) refers to a design pattern that helps
 decouple state from the UI that displays that state. In the simplest terms,
@@ -117,7 +117,7 @@ This makes your code easier to understand, less error prone, and
 prevents malformed or unexpected data from being created.
 
 
-### UI is a function of (immutable) state
+## UI is a function of (immutable) state
 
 Flutter is declarative,
 meaning that it builds its UI to reflect the current state of your app. 
@@ -135,7 +135,7 @@ and views should contain as little logic as possible.
 This minimizes the possibility of data being lost when an app is closed, 
 and makes your app more testable and resilient to bugs.
 
-### Extensibility
+## Extensibility
 
 Each piece of architecture should have a well defined list of inputs and outputs. 
 For example, a view model in the logic layer should only 
@@ -146,7 +146,7 @@ Using clean interfaces in this way allows you to swap out
 concrete implementations of your classes without needing to 
 change any of the code that consumes the interface.
 
-### Testability
+## Testability
 
 The principals that make software extensible also make software easier to test.
 For example, you can test the self-contained logic of a view model by mocking a
