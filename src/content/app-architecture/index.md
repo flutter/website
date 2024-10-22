@@ -2,7 +2,7 @@
 title: Architecting Flutter apps
 short-title: Architecture
 description: >
-  Learn how to architect Flutter apps 
+  Learn how to structure Flutter apps.
 toc: false
 next:
   title: Architecture concepts

@@ -40,7 +40,7 @@ software design pattern that organizes an application into distinct layers, each
 with specific roles and responsibilities. Typically, applications are separated
 into 2 to 3 layers, depending on complexity.
 
-<img src='assets/images/docs/app-architecture/common-architecture-concepts/horizontal-layers-with-icons.png' 
+<img src='/assets/images/docs/app-architecture/common-architecture-concepts/horizontal-layers-with-icons.png' 
 alt="The three common layers of app architecture, the UI layer, logic layer,
 and data layer.">
 
@@ -91,7 +91,7 @@ widgets in the UI layer.
 Events from user-interaction flow the opposite direction, 
 from the presentation layer back through the logic layer and to the data layer.
 
-<img src='assets/images/docs/app-architecture/common-architecture-concepts/horizontal-layers-with-UDF.png'
+<img src='/assets/images/docs/app-architecture/common-architecture-concepts/horizontal-layers-with-UDF.png'
 alt="The three common layers of app architecture, the UI layer, logic layer,
 and data layer, and the flow of state from the data layer to the UI layer.">
 
@@ -125,9 +125,9 @@ When state changes,
 your app should trigger a rebuild of the UI that depends on that state. 
 In Flutter, you’ll often hear this described as “UI is a function of state”.
 
-<img src='assets/images/docs/app-architecture/common-architecture-concepts/ui-f-state.png'
-alt="The three common layers of app architecture, the UI layer, logic layer,
-and data layer, and the flow of state from the data layer to the UI layer.">
+<img src='/assets/images/docs/app-architecture/common-architecture-concepts/ui-f-state.png'
+style="width:50%; margin:auto; display:block"
+alt="UI is a function of state.">
 
 It’s crucial that your data drive your UI, and not the other way around. 
 Data should be immutable and persistent, 
