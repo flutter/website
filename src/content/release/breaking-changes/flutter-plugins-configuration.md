@@ -65,7 +65,7 @@ must be updated to a newer build script.
 
 For example:
 
-```gradle
+```groovy
 include ':app'
 
 def flutterProjectRoot = rootProject.projectDir.parentFile.toPath()
