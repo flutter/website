@@ -788,7 +788,7 @@
           permalink: /dash
         - title: Widget index
           permalink: /reference/widgets
-        - title: API reference
-          permalink: https://api.flutter.dev
         - title: flutter CLI
           permalink: /reference/flutter-cli
+        - title: API docs
+          permalink: https://api.flutter.dev
