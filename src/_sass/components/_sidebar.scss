@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 @use '../base/variables' as *;
 @use '../vendor/bootstrap';
 
@@ -60,7 +62,7 @@
     font-weight: bootstrap.$font-weight-bolder;
     font-size: bootstrap.$font-size-base;
     user-select: none;
-    color: lighten($site-color-body-light, 20%);
+    color: color.scale($site-color-body-light, $lightness: 15%);
   }
 
   .nav-link {
@@ -102,6 +104,10 @@
   > .nav {
     > .nav-item, > .nav-header {
       padding: 0 $site-sidebar-side-padding;
+    }
+
+    > .nav-header:first-child {
+      padding-top: 0;
     }
 
     > .nav-item {
