@@ -176,7 +176,7 @@ location of your Java installation.
 Android sdkmanager tool was found, but failed to run
 (/Users/atsansone/Library/Android/sdk/cmdline-tools/latest/bin/sdkmanager): "exited code 1".
 Try re-installing or updating your Android SDK,
-visit https://flutter.dev/docs/get-started/install/macos#android-setup for detailed instructions.
+visit https://flutter.dev/to/macos-android-setup for detailed instructions.
 ```
 
 The `flutter doctor` command returns this error because of how the `JAVA_HOME`
