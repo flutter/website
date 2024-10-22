@@ -138,13 +138,14 @@ Not released + 1, `.flutter-plugins` support will be removed.
 
 Relevant Issues:
 
-- [PR 48918][], where `.flutter-plugins` was (in 2020) slated for deprecation.
+- [Issue 48918][], where `.flutter-plugins` was (in 2020) slated for deprecation.
 
 Relevant PRs:
 
 - [PR 45379][], where `.flutter-plugins-dependencies` was originally added.
 - [PR 157388][], where a warning was adding to the Flutter Android build scripts.
 
+[Issue 48918]: https://github.com/flutter/flutter/issues/48918
 [PR 45379]: https://github.com/flutter/flutter/pull/45379
 [PR 157388]: https://github.com/flutter/flutter/pull/157388
 [imperative-apply]: https://docs.flutter.dev/release/breaking-changes/flutter-gradle-plugin-apply
