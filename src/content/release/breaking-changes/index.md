@@ -40,7 +40,7 @@ release, and listed in alphabetical order:
 * [Deprecate `TextField.canRequestFocus`][]
 * [Set default for SystemUiMode to Edge-to-Edge][]
 
-[`.flutter-plugins-dependencies` replaces `.flutter-plugins`]: /release/breaking-changes/fluttert-plugins-configuration
+[`.flutter-plugins-dependencies` replaces `.flutter-plugins`]: /release/breaking-changes/flutter-plugins-configuration
 [`Color` wide gamut support]: /release/breaking-changes/wide-gamut-framework
 [Remove invalid parameters for `InputDecoration.collapsed`]: /release/breaking-changes/input-decoration-collapsed
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
