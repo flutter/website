@@ -40,7 +40,7 @@ This guide recommends you split your application into the following components:
 
 ### MVVM
 
-If you’ve encountered the [Model-View-ViewModel design pattern][] (MVVM),
+If you've encountered the [Model-View-ViewModel design pattern][] (MVVM),
 this will be familiar. MVVM is a design pattern that separates a feature of an
 application into three parts: 
 the `Model`, the `ViewModel` and the `View`. 
@@ -79,8 +79,8 @@ use-cases. The domain layer is covered later in this guide.
 
 ## UI layer
 
-An application’s UI layer is responsible for interacting with the user. 
-It displays an application’s data to the user and receives user input, 
+An application's UI layer is responsible for interacting with the user. 
+It displays an application's data to the user and receives user input, 
 such as tap events and form inputs.
 
 The UI reacts to data changes or user input. 
@@ -114,16 +114,16 @@ configuration changes (like screen rotations),
 and you can test the logic of your UI independently of Flutter widgets.
 
 :::note
-‘View’ is an abstract term, and one View does not equal one widget. 
+‘View' is an abstract term, and one View does not equal one widget. 
 Widgets are composable, and several can be combined to create one view. 
-Therefore, ViewModels don’t have a 1-to-1 relationship with widgets, 
+Therefore, ViewModels don't have a 1-to-1 relationship with widgets, 
 but rather a 1-to-1 relation with a *collection* of widgets.
 :::
 
 A feature of an application is user centric, 
 and therefore defined by the UI layer. 
 Every instance of a pair of View and ViewModel defines one feature in your app. 
-This is often a screen in your app, but it doesn’t have to be. 
+This is often a screen in your app, but it doesn't have to be. 
 For example, consider logging in and out. 
 Logging in is generally done on a specific screen whose
 only purpose is to provide the user with a way to log in. 
@@ -134,7 +134,7 @@ On the other hand,
 logging out of an app is generally not done on a dedicated screen. 
 The ability to log out is generally presented to the user as a button in a menu,
 a user account screen, or any number of different locations. 
-It’s often presented in multiple locations. 
+It's often presented in multiple locations. 
 In that scenario, you may have a `LogoutViewModel` and a `LogoutView` which 
 only contains a single button that can be dropped into other widgets.
 
@@ -142,7 +142,7 @@ only contains a single button that can be dropped into other widgets.
 
 In Flutter, Views are the widget classes of your application. 
 Views are the primary method of rendering UI, 
-and shouldn’t contain any business logic. 
+and shouldn't contain any business logic. 
 They should be passed all data they need to render from the ViewModel.
 
 <img src='/assets/images/docs/app-architecture/guide/feature-architecture-simplified-View-highlighted.png'
@@ -192,7 +192,7 @@ the [UI layer page]: /app-architecture/tutorial/ui-layer.
 {% endcomment %}
 
 For a gentle introduction to MVVM in Flutter, 
-read the [State Management page][] of Flutter’s Getting Started Guide.
+read the [State Management page][] of Flutter's Getting Started Guide.
 
 ## Data layer
 
@@ -209,7 +209,7 @@ Using MVVM language, services and repositories make up your *model layer*.
 ### Repositories
 
 [Repository][] classes are the source of truth for your model data. 
-They’re responsible for polling data from services, 
+They're responsible for polling data from services, 
 and transforming that raw data into **domain models**. 
 Domain models represent the data that the application needs, 
 formatted in a way that your ViewModel classes can consume. 
@@ -248,7 +248,7 @@ especially if your repository-to-ViewModel relationship is complex.
 Services are in the lowest layer of your application. 
 They wrap API endpoints and expose asynchronous response objects, 
 such as `Future` and `Stream` objects. 
-They’re only used to isolate data-loading, and they hold no state. 
+They're only used to isolate data-loading, and they hold no state. 
 Your app should have one service class per data source. 
 Examples of endpoints that services might wrap include:
 
@@ -303,7 +303,7 @@ benefit from this additional layer, consider the pros and cons:
 ### Data access with use-cases
 
 Another consideration when adding a Domain layer is whether ViewModels will
-continue to have access to repository data directly, or if you’ll enforce
+continue to have access to repository data directly, or if you'll enforce
 ViewModels to go through use-cases to get their data. Put another way, 
 will you add use-cases as you need them? 
 Perhaps when you notice repeated logic in your ViewModels? 

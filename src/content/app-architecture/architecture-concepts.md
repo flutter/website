@@ -12,7 +12,7 @@ next:
     path: /app-architecture/guide
 ---
 
-In this section, you’ll find tried and true principles that guide architectural
+In this section, you'll find tried and true principles that guide architectural
 decisions in the larger world of app development, 
 as well as information about how they fit into Flutter specifically. 
 It's a gentle introduction to vocabulary and concepts related to 
@@ -46,9 +46,9 @@ and data layer.">
 
 * **UI layer** - Displays data to the user that is exposed by the business logic
   layer, and handles user interaction. This is also commonly referred to as the
-  ‘presentation layer’.
+  ‘presentation layer'.
 * **Logic layer** - Implements core business logic, and facilitates interaction
-  between the data layer and UI layer. Commonly known as the ‘domain layer’. 
+  between the data layer and UI layer. Commonly known as the ‘domain layer'. 
   The logic layer is optional, and only needs to be implemented if your 
   application has complex business logic that happens on the client. 
   Many apps are only concerned with presenting data to a user and 
@@ -57,8 +57,8 @@ and data layer.">
 * **Data layer** - Manages interactions with data sources, such as databases or
   platform plugins. Exposes data and methods to the business logic layer.
 
-These are called ‘layers’ because each layer can only communicate with the
-layers directly below or above it. The UI layer shouldn’t know that the data
+These are called ‘layers' because each layer can only communicate with the
+layers directly below or above it. The UI layer shouldn't know that the data
 layer exists, and vice versa.
 
 ## Single source of truth
@@ -69,7 +69,7 @@ If the data can be modified in the app,
 the SSOT class should be the only class that can do so.
 
 This can dramatically reduce the number of bugs in your application, 
-and it can simply code because you’ll only ever have one copy of the same data.
+and it can simply code because you'll only ever have one copy of the same data.
 
 Generally, the source of truth for any given type of data in your application is
 held in a class called a **Repository**, which is part of the data layer. 
@@ -99,7 +99,7 @@ In UDF, the update loop from user interaction to re-rendering the UI looks like
 this:
 
 1. [UI layer] An event occurs due to user interaction, such as a button being
-   clicked. The widget’s event handler callback invokes a method exposed by a
+   clicked. The widget's event handler callback invokes a method exposed by a
    class in the logic layer.
 2. [Logic layer] The logic class calls methods exposed by a repository that
    know how to mutate the data.
@@ -123,13 +123,13 @@ Flutter is declarative,
 meaning that it builds its UI to reflect the current state of your app. 
 When state changes, 
 your app should trigger a rebuild of the UI that depends on that state. 
-In Flutter, you’ll often hear this described as “UI is a function of state”.
+In Flutter, you'll often hear this described as "UI is a function of state".
 
 <img src='/assets/images/docs/app-architecture/common-architecture-concepts/ui-f-state.png'
 style="width:50%; margin:auto; display:block"
 alt="UI is a function of state.">
 
-It’s crucial that your data drive your UI, and not the other way around. 
+It's crucial that your data drive your UI, and not the other way around. 
 Data should be immutable and persistent, 
 and views should contain as little logic as possible. 
 This minimizes the possibility of data being lost when an app is closed, 
@@ -151,7 +151,7 @@ change any of the code that consumes the interface.
 The principals that make software extensible also make software easier to test.
 For example, you can test the self-contained logic of a view model by mocking a
 repository. 
-The view model tests don’t require you to mock other parts of your application, 
+The view model tests don't require you to mock other parts of your application, 
 and you can test your UI logic separate from Flutter widgets themselves.
 
 Your app will also be more flexible. 
@@ -160,7 +160,7 @@ For example, adding a new view model cannot break any logic
 from the data or business logic layers.
 
 The next section explains the idea of inputs and outputs for any given component
-in your application’s architecture.
+in your application's architecture.
 
 [Separation-of-concerns]: https://en.wikipedia.org/wiki/Separation_of_concerns
 [single source of truth]: https://en.wikipedia.org/wiki/Single_source_of_truth
