@@ -11,6 +11,12 @@ If you understand the fundamentals of the Android framework then you
 can use this document as a jump start to Flutter development.
 
 :::note
+Android has two native user interface systems, Views (XML based) and Jetpack Compose.
+Some fundamentals are shared so this document will provide value no matter what. 
+Howeverm if you are coming from Jetpack Compose, 
+see [Flutter for Jetpack Compose devs][] for more information about Jetpack Compose
+and how samples match up to Flutter examples.
+
 To integrate Flutter code into your Android app, see
 [Add Flutter to existing app][].
 :::
@@ -2378,7 +2384,7 @@ In Flutter, access this functionality using the
 For more information on using the Firebase Cloud Messaging API,
 see the [`firebase_messaging`][] plugin documentation.
 
-
+[Flutter for Jetpack Compose devs]: /flutter-for/compose-devs
 [Add Flutter to existing app]: /add-to-app
 [Animation & Motion widgets]: /ui/widgets/animation
 [Animations tutorial]: /ui/animations/tutorial
