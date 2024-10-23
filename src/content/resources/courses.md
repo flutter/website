@@ -9,6 +9,7 @@ up-to-date information, such as null-safe Dart code.
 These courses are listed alphabetically.
 To include your course, [submit a PR][]:
 
+* [Flutter in Production][] by Andrea Bizzotto
 * [Flutter Foundations][] by Andrea Bizzotto
 * [Flutter & Firebase Masterclass][] by Andrea Bizzotto
 * [Flutter Animations Masterclass][] by Andrea Bizzotto
@@ -27,6 +28,7 @@ To include your course, [submit a PR][]:
 * [Sticky Grouped Headers in Flutter][] by Marco Napoli
 * [Flutter University - From Zero to Mastery][] by Fudeo (Italian)
 
+[Flutter in Production]: https://codewithandrea.com/courses/flutter-in-production/
 [Flutter Foundations]: https://codewithandrea.com/courses/flutter-foundations/
 [Flutter & Firebase Masterclass]: https://codewithandrea.com/courses/flutter-firebase-masterclass/
 [Flutter Animations Masterclass]: https://codewithandrea.com/courses/flutter-animations-masterclass/
