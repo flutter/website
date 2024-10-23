@@ -18,7 +18,7 @@ such as Gradle configurations (for Android apps) that rely on the presence of
 [In 2019][PR 45379] `.flutter-plugins-dependencies` was added as a newer file
 format that replaces `.flutter-plugins`.
 
-So a file that looks something like this:
+So a file that looked something like this:
 
 ```txt
 # This is .flutter-plugins
