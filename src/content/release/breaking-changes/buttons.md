@@ -103,10 +103,10 @@ TextButton(
     overlayColor: MaterialStateProperty.resolveWith<Color?>(
       (Set<MaterialState> states) {
         if (states.contains(MaterialState.hovered))
-          return Colors.blue.withOpacity(0.04);
+          return Colors.blue.withValues(alpha: 0.04);
         if (states.contains(MaterialState.focused) ||
             states.contains(MaterialState.pressed))
-          return Colors.blue.withOpacity(0.12);
+          return Colors.blue.withValues(alpha: 0.12);
         return null; // Defer to the widget's default.
       },
     ),
@@ -455,8 +455,8 @@ can just use the `styleFrom` method to override the disabled colors:
 
 ```dart
 RaisedButton(
-  disabledColor: Colors.red.withOpacity(0.12),
-  disabledTextColor: Colors.red.withOpacity(0.38),
+  disabledColor: Colors.red.withValues(alpha: 0.12),
+  disabledTextColor: Colors.red.withValues(alpha: 0.38),
   onPressed: null,
   child: Text('RaisedButton with custom disabled colors'),
 ),

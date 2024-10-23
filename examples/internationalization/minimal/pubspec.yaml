@@ -2,7 +2,7 @@ name: l10n_example
 description: A minimal example of a localized Flutter app
 
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.6.0-0
 
 dependencies:
   flutter:

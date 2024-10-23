@@ -27,10 +27,10 @@ jobs:
         include:
           - name: "Beta channel"
             branch: beta
-            experimental: true
+            experimental: false
           - name: "Stable channel"
             branch: stable
-            experimental: false
+            experimental: true
     continue-on-error: ${{ matrix.experimental }}
     steps:
       - uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871
@@ -62,7 +62,7 @@ jobs:
           submodules: recursive
       - uses: dart-lang/setup-dart@0a8a0fc875eb934c15d08629302413c671d3f672
         with:
-          sdk: stable
+          sdk: beta
       - name: Fetch Dart dependencies
         run: dart pub get
       - name: Check if excerpts are up to date
@@ -88,7 +88,7 @@ jobs:
         run: pnpm install --frozen-lockfile
       - uses: dart-lang/setup-dart@0a8a0fc875eb934c15d08629302413c671d3f672
         with:
-          sdk: stable
+          sdk: beta
       - name: Fetch Dart dependencies
         run: dart pub get
       - name: Build site
@@ -108,7 +108,7 @@ jobs:
           submodules: recursive
       - uses: dart-lang/setup-dart@0a8a0fc875eb934c15d08629302413c671d3f672
         with:
-          sdk: stable
+          sdk: beta
       - name: Fetch Dart dependencies
         run: dart pub get
       - name: Validate the firebase.json file

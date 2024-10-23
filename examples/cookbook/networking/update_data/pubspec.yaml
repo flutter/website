@@ -2,7 +2,7 @@ name: update_data
 description: Update Data
 
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.6.0-0
 
 dependencies:
   flutter:

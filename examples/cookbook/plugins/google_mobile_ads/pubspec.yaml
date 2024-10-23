@@ -2,7 +2,7 @@ name: google_mobile_ads_example
 description: Google mobile ads
 
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.6.0-0
 
 dependencies:
   flutter:
