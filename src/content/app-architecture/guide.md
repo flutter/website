@@ -297,6 +297,7 @@ benefit from this additional layer, consider the pros and cons:
 | ✅ Avoid code duplication in ViewModels                                   | ❌ Increases complexity of your architecture, adding more classes and higher cognitive load |
 | ✅ Improve testability by separating complex business logic from UI logic | ❌ Testing requires additional mocks                                                        |
 | ✅ Improve code readability in ViewModels                                 | ❌ Adds additional boilerplate to your code                                                 |
+
 {:.table .table-striped}
 
 ### Data access with use-cases
