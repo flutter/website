@@ -14,9 +14,9 @@
   top: 1rem;
 
   .nav-header {
-    font-weight: 500;
+    font-weight: bolder;
     padding: 0.25rem 0.4rem 0;
-    color: var(--site-outline);
+    color: var(--site-on-surface-variant);
   }
 
   ul {
@@ -87,6 +87,10 @@
       }
 
       &:hover {
+        @include utils.interaction-style(6%);
+      }
+
+      &:active {
         @include utils.interaction-style(8%);
       }
 
