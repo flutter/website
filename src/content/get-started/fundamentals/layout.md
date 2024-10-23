@@ -5,8 +5,8 @@ prev:
   title: Widgets
   path: /get-started/fundamentals/widgets
 next:
-    title: State management
-    path: /get-started/fundamentals/state-management
+  title: State management
+  path: /get-started/fundamentals/state-management
 ---
 
 Given that Flutter is a UI toolkit,
@@ -22,6 +22,7 @@ Flutter's most common layout errors,
 the dreaded "unbounded constraints" error.
 
 ## Understanding layout in Flutter
+
 The core of Flutter's layout mechanism is widgets. 
 In Flutter, almost everything is a widget — even 
 layout models are widgets. 
