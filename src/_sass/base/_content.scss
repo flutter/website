@@ -18,6 +18,10 @@ main {
   li, dd {
     > p, img, aside, .code-block-wrapper, figure, ul, ol {
       margin-bottom: 0.75rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 

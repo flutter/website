@@ -8,14 +8,15 @@
   max-height: calc(100vh - 80px);
   padding-right: 1rem;
   padding-left: 0.5rem;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
   font-family: var(--site-ui-font-family), sans-serif;
   position: sticky;
   top: 1rem;
 
   .nav-header {
     font-weight: 500;
-    padding: 0.25rem 0.25rem 0.125rem;
+    padding: 0.25rem 0.4rem 0;
+    color: var(--site-outline);
   }
 
   ul {
@@ -41,9 +42,13 @@
     width: 100%;
     user-select: none;
 
+    .nav-header:not(:first-child) {
+      margin-top: 0.5rem;
+    }
+
     a.nav-link {
       text-wrap: pretty;
-      padding: 0.25rem;
+      padding: 0.25rem 0.4rem;
       margin-top: 0.25rem;
       margin-bottom: 0.25rem;
 
