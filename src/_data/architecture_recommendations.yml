@@ -1,7 +1,10 @@
 - category: Separation of concerns
-  description: Using layers is nice.
+  description: |
+    [Separation-of-concerns][] is a core principle in app development that promotes modularity and maintainability by dividing an application's
+    functionality into distinct, self-contained units. From a high-level,
+    this means separating your UI logic from your business logic. Within those layers, 
+    you should further separate logic by responsibility.
   recommendations:
-
     - recommendation: Use clearly defined data and UI layers.
       description: |
         Separation of concerns is the most important architectural principle. 
@@ -49,8 +52,10 @@
         Use in apps with complex logic requirements.
 
 - category: Handling data
+  description: |
+    Handling data with care makes your code easier to understand, less error prone, and
+    prevents malformed or unexpected data from being created.
   recommendations:
-
     - recommendation: Use unidirectional data flow.
       description: |
         Data updates should only flow from the data layer to the UI layer. 
@@ -82,6 +87,8 @@
       confidence-description: Use in large apps.
 
 - category: App structure
+  description: |
+    Well organized code benefits both the health of the app itself, and the team working on the code.
   recommendations:
 
     - recommendation: Use dependency injection.
@@ -121,6 +128,9 @@
       confidence: strong
 
 - category: Testing
+  description: |
+    Good testing practices makes your app flexible. 
+    It also makes it straightforward and low risk to add new logic and new UI.
   recommendations:
 
     - recommendation: Test architectural components separately, and together.
