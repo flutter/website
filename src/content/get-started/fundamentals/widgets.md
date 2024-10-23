@@ -5,7 +5,7 @@ prev:
   title: Intro to Dart
   path: /get-started/fundamentals/dart
 next:
-  title: Layouts
+  title: Layout
   path: /get-started/fundamentals/layout
 ---
 
