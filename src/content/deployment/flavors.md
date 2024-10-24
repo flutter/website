@@ -307,7 +307,7 @@ the following resources:
 
 * [Build flavors in Flutter (Android and iOS) with different Firebase projects per flavor Flutter Ready to Go][]
 * [Flavoring Flutter Applications (Android & iOS)][]
-* [How to Setup Flutter & Firebase with Multiple Flavors using the FlutterFire CLI][]
+* [How to Setup Flutter & Firebase with Multiple Flavors using the FlutterFire CLI][flutterfireCLI]
 
 ### Packages
 
