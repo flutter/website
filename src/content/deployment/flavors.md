@@ -326,6 +326,6 @@ For packages that support creating flavors, check out the following:
 [Adding assets and images]: /ui/assets/assets-and-images
 [Build flavors in Flutter (Android and iOS) with different Firebase projects per flavor Flutter Ready to Go]: {{site.medium}}/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b
 [Flavoring Flutter Applications (Android & iOS)]: {{site.medium}}/flutter-community/flavoring-flutter-applications-android-ios-ea39d3155346
-[How to Setup Flutter & Firebase with Multiple Flavors using the FlutterFire CLI]: https://codewithandrea.com/articles/flutter-firebase-multiple-flavors-flutterfire-cli/
+[flutterfireCLI]: https://codewithandrea.com/articles/flutter-firebase-multiple-flavors-flutterfire-cli/
 [`flutter_flavor`]: {{site.pub}}/packages/flutter_flavor
 [`flutter_flavorizr`]: {{site.pub}}/packages/flutter_flavorizr
