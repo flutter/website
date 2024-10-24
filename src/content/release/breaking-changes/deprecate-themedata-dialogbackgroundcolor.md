@@ -22,7 +22,7 @@ override the default dialog background color, which was made redundant by
 ## Description of change
 
 The [`ThemeData.dialogBackgroundColor`][] is deprecated in favor of
-component-specific theme. Use [`DialogThemeData`][] to override the default
+a component-specific theme. Use [`DialogThemeData`][] to override the default
 background color.
 
 ## Migration guide
