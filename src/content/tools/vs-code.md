@@ -295,6 +295,25 @@ The Flutter extension includes the following snippets:
   and its associated State subclass including a field initialized
   with an `AnimationController`.
 
+The Dart extension includes the following snippets:
+
+| Prefix | Description | Code Example |
+|---|---|---|
+| `main` | Insert a main function, used as an entry point. | `void main(List<String> args) {  }` |
+| `try` | Insert a try/catch block. | `try {  } catch (e) {  }` |
+| `if` | Insert an if statement. | `if (condition) {  }` |
+| `ife` | Insert an if statement with an else block. | `if (condition) {  } else {  }` |
+| `switch` | Insert a switch statement. | `switch (variable) { case value1:  break; case value2:  break; default:  }` |
+| `for` | Insert a for loop. | `for (var i = 0; i < 10; i++) {  }` |
+| `fori` | Insert a for-in loop. | `for (var item in list) {  }` |
+| `while` | Insert a while loop. | `while (condition) {  }` |
+| `do` | Insert a do-while loop. | `do {  } while (condition);` |
+| `fun` | Insert a function definition. | `void myFunction(String name) {  }` |
+| `class` | Insert a class definition. | `class MyClass {  }` |
+| `typedef` | Insert a typedef. | `typedef MyFunction = void Function(String);` |
+| `test` | Insert a test block. | `test('My test description', () {  });` |
+| `group` | Insert a test group block. | `group('My test group', () {  });` |
+
 You can also define custom snippets by executing
 **Configure User Snippets** from the [Command Palette][].
 
