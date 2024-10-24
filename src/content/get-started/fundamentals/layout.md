@@ -5,8 +5,8 @@ prev:
   title: Widgets
   path: /get-started/fundamentals/widgets
 next:
-    title: State management
-    path: /get-started/fundamentals/state-management
+  title: State management
+  path: /get-started/fundamentals/state-management
 ---
 
 Given that Flutter is a UI toolkit,
@@ -22,6 +22,7 @@ Flutter's most common layout errors,
 the dreaded "unbounded constraints" error.
 
 ## Understanding layout in Flutter
+
 The core of Flutter's layout mechanism is widgets. 
 In Flutter, almost everything is a widget — even 
 layout models are widgets. 
@@ -501,7 +502,7 @@ and therefore the number of todos is unknown.
 
 {% render docs/code-and-image.md,
 image:"fwe/layout/listview_builder.png",
-caption: "This figure shows the ListView.builder constuctor to display an unknown number of children."
+caption: "This figure shows the ListView.builder constructor to display an unknown number of children."
 alt: "A screenshot of several widgets laid out vertically. They have expanded to take up all available space on the cross axis."
 code:"
 ```dart

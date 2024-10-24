@@ -24,7 +24,7 @@ First, identify the widgets that you plan to
 make dynamic. Analyze the constructors for those
 widgets and abstract out the data that you can share.
 
-Common widgets that require adaptibility are:
+Common widgets that require adaptability are:
 
 * Dialogs, both fullscreen and modal
 * Navigation UI, both rail and bottom bar
