@@ -245,7 +245,7 @@ class HomePage extends StatelessWidget {
 For the complete example, check out the
 [async_weather][] file on GitHub.
 
-[async_weather]: {{site.repo.this}}/examples/resources/lib/async_weather.dart
+[async_weather]: {{site.repo.this}}/examples/resources/dart_swift_concurrency/lib/async_weather.dart
 
 ### Leveraging a background thread/isolate
 
