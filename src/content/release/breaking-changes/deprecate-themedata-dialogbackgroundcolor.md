@@ -14,7 +14,7 @@ the [`DialogThemeData.backgroundColor`][] parameter.
 ## Context
 
 The defaults for the [`Dialog`][] and [`AlertDialog`][] widgets can be
-overridden with component-specific theme like [`DialogThemeData`][].
+overridden with a component-specific theme like [`DialogThemeData`][].
 Previously, the `ThemeData.dialogBackgroundColor` parameter was used to
 override the default dialog background color, which was made redundant by
 [`DialogThemeData`][].
