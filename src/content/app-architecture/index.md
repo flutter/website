@@ -7,20 +7,34 @@ toc: false
 next:
   title: Architecture concepts
   path: /app-architecture/architecture-concepts
+
 ---
 
-Architecture is an important part of building a 
-maintainable, resilient, and scalable Flutter app. 
-In this guide, you'll learn app architecture principles and 
-best practices for building Flutter apps.
+<div class="row">
+<div class="col-md-5">
 
-'Architecture' is a word that's hard to define. 
-It's a broad term and can refer to any number 
-of topics depending on the context. In this guide, 
-'architecture' refers to how to structure, organize, and design 
+Architecture is an important part of building a
+maintainable, resilient, and scalable Flutter app.
+In this guide, you'll learn app architecture principles and
+best practices for building Flutter apps.
+<br />
+
+'Architecture' is a word that's hard to define.
+It's a broad term and can refer to any number
+of topics depending on the context. In this guide,
+'architecture' refers to how to structure, organize, and design
 your Flutter app in order to scale as your project requirements and team grow.
 
-You can expect learn about:
+</div>
+<div class="col-md-7">
+
+<img src='/assets/images/docs/app-architecture/hero-image.png' style="width:100%; margin:auto; display:block" alt="Hero image">
+
+</div>
+</div>
+
+
+## What you'll learn
 
 * Benefits of intentional architecture
 * Common architectural principles
@@ -28,6 +42,10 @@ You can expect learn about:
 * MVVM and state management
 * Dependency injection
 * Common design patterns for writing robust Flutter applications
+
+{% comment %}
+TODO @ewindmill complete this list, add links.
+{% endcomment %}
 
 ## Benefits of intentional architecture
 
@@ -49,20 +67,20 @@ their end users.
 ## How to use this guide
 
 This is a guide for building scalable Flutter applications and was written for
-teams that have multiple developers contributing to the same code base, 
-who are building a feature-rich application. 
-If you are writing a Flutter app that has a *growing team and codebase*, 
+teams that have multiple developers contributing to the same code base,
+who are building a feature-rich application.
+If you are writing a Flutter app that has a *growing team and codebase*,
 this guidance is for you.
 
 Along with general architectural advice, this guide gives concrete examples of
-best practices and includes specific recommendations. 
-Some libraries can be swapped out, and very large teams with unique complexity 
-might find that some parts don't apply.  In either case, the ideas remain 
+best practices and includes specific recommendations.
+Some libraries can be swapped out, and very large teams with unique complexity
+might find that some parts don't apply.  In either case, the ideas remain
 sound. This is the recommended way to build a Flutter app.
 
 In the first part of this guide, you'll learn about common architectural
-principles from a high level. In the second part, 
-the guide walks through specific and 
-concrete recommendations of architecting Flutter apps. 
-Finally, at the end of the guide, you'll find a list of design patterns and 
+principles from a high level. In the second part,
+the guide walks through specific and
+concrete recommendations of architecting Flutter apps.
+Finally, at the end of the guide, you'll find a list of design patterns and
 sample code that shows the recommendations in action.
