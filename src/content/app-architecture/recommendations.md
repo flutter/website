@@ -68,7 +68,7 @@ which reflects how strongly the Flutter team recommends it.
 
 [Separation-of-concerns]: https://en.wikipedia.org/wiki/Separation_of_concerns
 [architecture case study]: /app-architecture/guide
-[our ChangeNotifier recommendation]: get-started/fwe/state-management
+[our ChangeNotifier recommendation]: /get-started/fwe/state-management
 [other popular options]: https://docs.flutter.dev/data-and-backend/state-mgmt/options
 [freezed]: https://pub.dev/packages/freezed
 [built_value]: https://pub.dev/packages/built_value
@@ -78,7 +78,7 @@ which reflects how strongly the Flutter team recommends it.
 [Flutter skeleton]: https://github.com/flutter/flutter/blob/master/packages/flutter_tools/templates/skeleton/README.md.tmpl
 [very_good_cli]: https://cli.vgv.dev/
 [Very Good Engineering architecture documentation]: https://engineering.verygood.ventures/architecture/
-[State Management with ChangeNotifier walkthrough]: get-started/fwe/state-management
+[State Management with ChangeNotifier walkthrough]: /get-started/fwe/state-management
 [Flutter developer tools]: /tools/devtools
 [flutter_lints]: https://pub.dev/packages/flutter_lints
 
