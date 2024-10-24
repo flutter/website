@@ -33,12 +33,14 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [`.flutter-plugins-dependencies` replaces `.flutter-plugins`][] <!-- Branch cut starts here, below will be in next stable -->
 * [`Color` wide gamut support][]
 * [Remove invalid parameters for `InputDecoration.collapsed`][]
 * [Stop generating `AssetManifest.json`][]
 * [Deprecate `TextField.canRequestFocus`][]
 * [Set default for SystemUiMode to Edge-to-Edge][]
 
+[`.flutter-plugins-dependencies` replaces `.flutter-plugins`]: /release/breaking-changes/flutter-plugins-configuration
 [`Color` wide gamut support]: /release/breaking-changes/wide-gamut-framework
 [Remove invalid parameters for `InputDecoration.collapsed`]: /release/breaking-changes/input-decoration-collapsed
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
