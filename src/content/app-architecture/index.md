@@ -7,20 +7,34 @@ toc: false
 next:
   title: Architecture concepts
   path: /app-architecture/architecture-concepts
+
 ---
+
+<div class="row">
+<div class="col-md-5">
 
 Architecture is an important part of building a 
 maintainable, resilient, and scalable Flutter app. 
 In this guide, you'll learn app architecture principles and 
 best practices for building Flutter apps.
+<br />
 
-'Architecture' is a word that's hard to define. 
-It's a broad term and can refer to any number 
-of topics depending on the context. In this guide, 
-'architecture' refers to how to structure, organize, and design 
+'Architecture' is a word that's hard to define.
+It's a broad term and can refer to any number
+of topics depending on the context. In this guide,
+'architecture' refers to how to structure, organize, and design
 your Flutter app in order to scale as your project requirements and team grow.
+    
+</div>
+<div class="col-md-7">
 
-You can expect learn about:
+<img src='/assets/images/docs/app-architecture/hero-image.png' style="width:100%; margin:auto; display:block" alt="Hero image">
+
+</div>
+</div>
+
+
+## What you'll learn
 
 * Benefits of intentional architecture
 * Common architectural principles
@@ -28,6 +42,10 @@ You can expect learn about:
 * MVVM and state management
 * Dependency injection
 * Common design patterns for writing robust Flutter applications
+
+{% comment %}
+TODO @ewindmill complete this list, add links.
+{% endcomment %}
 
 ## Benefits of intentional architecture
 

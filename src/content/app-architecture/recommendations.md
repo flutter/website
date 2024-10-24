@@ -52,6 +52,13 @@ which reflects how strongly the Flutter team recommends it.
 <br />
 {% endfor %}
 
+## Recommended resources
+
+{% comment %}
+TODO @ewindmill add resources
+{% endcomment %}
+
+
 [Separation-of-concerns]: https://en.wikipedia.org/wiki/Separation_of_concerns
 [architecture case study]: /app-architecture/guide
 [our ChangeNotifier recommendation]: https://docs.flutter.dev/get-started/fwe/state-management

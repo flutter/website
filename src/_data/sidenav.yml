@@ -425,6 +425,15 @@
     - title: Google APIs
       permalink: /data-and-backend/google-apis
 
+- title: App architecture
+  permalink: /app-architecture
+  children:
+    - title: Introduction
+      permalink: /app-architecture
+    - title: Architecture concepts
+      permalink: /app-architecture/architecture-concepts
+
+
 - title: Platform integration
   permalink: /platform-integration
   children:
