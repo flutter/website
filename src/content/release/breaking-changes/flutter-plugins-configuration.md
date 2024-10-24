@@ -53,8 +53,8 @@ shared_preferences=shared_preferences
 }
 ```
 
-Having both files output is a source of technical debt that complicates adding
-and supporting the `flutter` CLI.
+Having both files output is a source of technical debt that complicates new
+feature sets like not bundling `dev_dependency` plugins in a release app.
 
 ## Migration guide
 
