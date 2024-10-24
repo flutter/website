@@ -19,6 +19,7 @@
     color: $alert-success-fg;
   }
 
+  // Blue
   &.info {
     background: darken($alert-info-bg, 10%);
     color: darken($alert-info-bg, 60%);
