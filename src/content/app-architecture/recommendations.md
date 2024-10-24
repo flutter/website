@@ -6,16 +6,16 @@ description: >
 # TODO(ewindmill): add prev in PR with "case study" 
 ---
 
-This page presents architecture best practices, why the matter, 
+This page presents architecture best practices, why they matter, 
 and whether we recommend them for your Flutter application. 
 You should treat these recommendations as recommendations, 
-and not steadfast rules, and you should adapt them to your unique requirements.
+and not steadfast rules, and you should adapt them to your app's unique requirements.
 
 The best practices on this page have a priority, 
 which reflects how strongly the Flutter team recommends it.
 
 * **Strongly recommend:** You should always implement this recommendation if
-  you're beginning to build a new application. You should strong consider
+  you're starting to build a new application. You should strongly consider
   refactoring an existing app to implement this practice unless doing so would
   fundamentally clash with your current approach.
 * **Recommend**: This practice will likely improve your app.
