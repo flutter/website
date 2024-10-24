@@ -672,7 +672,7 @@ use the following instructions:
 4. Select the `Info` tab in the project editor.
 
 5. In the **Localizations** section, click the `Add` button
-   (`+`) to add the supported lanaguages and regions to your
+   (`+`) to add the supported languages and regions to your
    project. When asked to choose files and reference language,
    simply select `Finish`.
 

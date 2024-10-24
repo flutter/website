@@ -315,7 +315,7 @@ The [`saveLayer`][] method is one of the most expensive methods in
 the Flutter framework. It's useful when applying post-processing
 to the scene, but it can slow your app and should be avoided if
 you don't need it.  Even if you don't call `saveLayer` explicitly,
-implicit calls might happen on your behalf, for example when specyifying
+implicit calls might happen on your behalf, for example when specifying
 [`Clip.antiAliasWithSaveLayer`][] (typically as a `clipBehavior`).
 
 For example,
