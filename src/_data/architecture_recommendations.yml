@@ -1,9 +1,6 @@
 - category: Separation of concerns
   description: |
-    [Separation-of-concerns][] is a core principle in app development that promotes modularity and maintainability by dividing an application's
-    functionality into distinct, self-contained units. From a high-level,
-    this means separating your UI logic from your business logic. Within those layers, 
-    you should further separate logic by responsibility.
+    You should separate your app into a UI layer and a data layer. Within those layers, you should further separate logic into classes by responsibility.
   recommendations:
     - recommendation: Use clearly defined data and UI layers.
       description: |
