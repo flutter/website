@@ -20,35 +20,36 @@ which reflects how strongly the Flutter team recommends it.
   fundamentally clash with your current approach.
 * **Recommend**: This practice will likely improve your app.
 * **Conditional**: This practice can improve your app in certain circumstances.
+<br /><br />
 
 {% for section in architecture_recommendations %}
-    <h2>{{section.category}}</h2>
-    <p>{{section.description}}</p>
-    <table class="table table-striped" style="border-bottom:1px #DADCE0 solid">
-        <tr class="tr-main-head">
-          <th style="width: 30%">Recommendation</th>
-          <th style="width: 70%">Description</th>
-        </tr>
+<h2>{{section.category}}</h2>
+<p>{{section.description}}</p>
+<table class="table table-striped" style="border-bottom:1px #DADCE0 solid">
+    <tr class="tr-main-head">
+      <th style="width: 30%">Recommendation</th>
+      <th style="width: 70%">Description</th>
+    </tr>
     {% for rec in section.recommendations %}
-        <tr>
-          <td>
-            <p>{{rec.recommendation}}</p>
-            {% if rec.confidence == "strong" %}
-                <div class="rrec-pill success">Strongly recommend</div>
-            {% elsif rec.confidence == "recommend" %}
-                <div class="rrec-pill info">Recommend</div>
-            {% else %}
-                <div class="rrec-pill">Conditional</div>
-            {% endif %}
-          </td>
-          <td>
-            {{rec.description}}
-            <br>
-            {{rec.confidence-description}}</td>
-        </tr> 
-        {% endfor %}
-    </table>
-    <br>
+    <tr>
+      <td>
+        <p>{{rec.recommendation}}</p>
+        {% if rec.confidence == "strong" %}
+            <div class="rrec-pill success">Strongly recommend</div>
+        {% elsif rec.confidence == "recommend" %}
+            <div class="rrec-pill info">Recommend</div>
+        {% else %}
+            <div class="rrec-pill">Conditional</div>
+        {% endif %}
+      </td>
+      <td>
+        {{rec.description}}
+        <br />
+        {{rec.confidence-description}}</td>
+    </tr> 
+    {% endfor %}
+</table>
+<br />
 {% endfor %}
 
 [Separation-of-concerns]: https://en.wikipedia.org/wiki/Separation_of_concerns
