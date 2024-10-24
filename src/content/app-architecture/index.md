@@ -6,7 +6,7 @@ description: >
 toc: false
 next:
   title: Architecture concepts
-  path: /app-architecture/architecture-concepts
+  path: /app-architecture/concepts
 
 ---
 
@@ -37,14 +37,14 @@ your Flutter app in order to scale as your project requirements and team grow.
 ## What you'll learn
 
 * Benefits of intentional architecture
-* Common architectural principles
-* The Flutter team's recommended architecture for Flutter apps
-* MVVM and state management
+* [Common architectural principles][]
+* The Flutter team's [recommended app architecture][]
+* [MVVM][] and state management
 * Dependency injection
 * Common design patterns for writing robust Flutter applications
 
 {% comment %}
-TODO @ewindmill complete this list, add links.
+TODO @ewindmill complete this list as pages land, add links.
 {% endcomment %}
 
 ## Benefits of intentional architecture
@@ -84,3 +84,7 @@ the guide walks through specific and
 concrete recommendations of architecting Flutter apps.
 Finally, at the end of the guide, you'll find a list of design patterns and
 sample code that shows the recommendations in action.
+
+[Common architectural principles]: /app-architecture/concepts
+[recommended app architecture]: /app-architecture/guide
+[MVVM]: /app-architecture/guide/#mvvm

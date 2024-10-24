@@ -5,7 +5,7 @@ description: >
   The recommended way to architect a Flutter app.
 prev:
     title: Common architecture concepts
-    path: /app-architecture/architecture-concepts
+    path: /app-architecture/concepts
 # TODO(ewindmill): add next in PR with "case study" 
 ---
 
