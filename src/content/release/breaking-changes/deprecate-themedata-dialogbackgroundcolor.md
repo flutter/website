@@ -9,7 +9,7 @@ description: >-
 ## Summary
 
 The [`ThemeData.dialogBackgroundColor`][] parameter was deprecated in favor of
-[`DialogThemeData.backgroundColor`][] parameter.
+the [`DialogThemeData.backgroundColor`][] parameter.
 
 ## Context
 
