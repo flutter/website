@@ -6,8 +6,8 @@ target: web
 config: WindowsWeb
 devos: Windows
 next:
-  title: Create a test app
-  path: /get-started/test-drive
+  title: Write your first app
+  path: /get-started/codelab
 ---
 
 {% include docs/install/reqs/windows/base.md os=devos target=target %}

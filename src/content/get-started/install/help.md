@@ -1,6 +1,7 @@
 ---
 title: Install help
-description: This page describes some common installation issues new Flutter users have run into and offers suggestions to resolve them.
+description: >-
+  Get help with common installation issues Flutter users have run into.
 ---
 
 This page describes some common installation issues new Flutter users have 
@@ -123,8 +124,7 @@ To do this, use the following instructions:
    Android SDK Command-line Tools, and Android SDK Build-Tools. 
 3. Click **Apply** to install the selected artifacts.
 
-![Android Studio SDK
-Manager](/assets/images/docs/get-started/install_android_tools.png)
+![Android Studio SDK Manager](/assets/images/docs/get-started/install_android_tools.png)
 
 If you're not using Android Studio,
 you can download the tools using the
@@ -195,7 +195,7 @@ search the archive for a similar issue before posting a new one.
 [community support channels]: #community-support
 [java binary path]: {{site.repo.flutter}}/issues/106416#issuecomment-1522198064
 [so java version]: {{site.so}}/questions/75328050/
-[set up VS Code]: /get-started/editor
+[set up VS Code]: /tools/vs-code
 [config path]: https://dartcode.org/docs/configuring-path-and-environment-variables/
 [sdkmanager]: {{site.android-dev}}/studio/command-line/sdkmanager
 [windows path]: https://www.wikihow.com/Change-the-PATH-Environment-Variable-on-Windows

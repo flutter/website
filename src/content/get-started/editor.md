@@ -1,12 +1,6 @@
 ---
 title: Set up an editor
 description: Configuring an IDE for Flutter.
-prev:
-  title: Install
-  path: /get-started/install
-next:
-  title: Test drive
-  path: /get-started/test-drive
 toc: false
 ---
 
@@ -29,11 +23,8 @@ Android Studio and the listed editions of IntelliJ IDEA.
 [Flutter plugin]: https://plugins.jetbrains.com/plugin/9212-flutter
 [Dart plugin]: https://plugins.jetbrains.com/plugin/6351-dart
 
-Follow these procedures to add the Flutter plugin to VS Code,
-Android Studio, or IntelliJ.
-
-If you choose another IDE, skip ahead
-to the [next step: Test drive](/get-started/test-drive).
+Follow these procedures to add the Flutter plugin to
+VS Code, Android Studio, or IntelliJ.
 
 {% tabs %}
 {% tab "Visual Studio Code" %}

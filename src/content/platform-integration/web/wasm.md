@@ -72,12 +72,10 @@ WebAssembly compilation options
 
 ### Choose a (simple) Flutter web application
 
-Try the default template [sample app][],
+Try the default template app (`flutter create my_app`),
 or choose any Flutter application
 that has been migrated to be
 [compatible with Wasm](#js-interop-wasm).
-
-[sample app]: /get-started/test-drive
 
 ### Modify `index.html`
 

@@ -38,9 +38,11 @@ The guide offers completed example files at the end.
 This guide makes the following presumptions:
 
 1. You've [set up your Flutter environment][].
-1. You've [created a new Flutter app][new-flutter-app] named `custom_fonts`.
-   If you haven't completed these steps yet, do so before continuing
-   with this guide.
+1. You've created a new Flutter app named `custom_fonts`:
+
+   ```console
+   $ flutter create custom_fonts
+   ```
 1. You're performing the provided commands in a macOS or Linux shell
    and using `vi`. You can substitute any text editor for `vi`.
    Windows users should use the appropriate commands and paths when
@@ -49,7 +51,6 @@ This guide makes the following presumptions:
 :::
 
 [set up your Flutter environment]: /get-started/install
-[new-flutter-app]: /get-started/test-drive
 
 ## Choose a font
 

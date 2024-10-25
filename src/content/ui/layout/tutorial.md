@@ -121,7 +121,11 @@ In this section, shell out the basic Flutter app code to start your app.
 
 1. [Set up your Flutter environment][].
 
-1. [Create a new Flutter app][new-flutter-app].
+1. Create a new Flutter app:
+
+   ```console
+   $ flutter create my_app
+   ```
 
 1. Replace the contents of `lib/main.dart` with the following code.
    This app uses a parameter for the app title and the title shown
@@ -155,7 +159,6 @@ In this section, shell out the basic Flutter app code to start your app.
    ```
 
 [Set up your Flutter environment]: /get-started/install
-[new-flutter-app]: /get-started/test-drive
 
 ## Add the Title section
 
@@ -373,6 +376,7 @@ class ButtonWithText extends StatelessWidget {
       ],
     );
   }
+}
 ```
 
 ### Position the buttons with a `Row` widget

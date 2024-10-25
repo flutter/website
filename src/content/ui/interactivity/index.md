@@ -109,7 +109,7 @@ If you've already built the app in the
 skip to the next section.
 
  1. Make sure you've [set up][] your environment.
- 1. [Create a new Flutter app][new-flutter-app].
+ 1. Create a new Flutter app.
  1. Replace the `lib/main.dart` file with [`main.dart`][].
  1. Replace the `pubspec.yaml` file with [`pubspec.yaml`][].
  1. Create an `images` directory in your project, and add
@@ -785,7 +785,6 @@ Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
 [Gestures]: /cookbook/gestures
 [Gestures in Flutter]: /ui/interactivity/gestures
 [Handling gestures]: /ui#handling-gestures
-[new-flutter-app]: /get-started/test-drive
 [`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
 [`Icon`]: {{site.api}}/flutter/widgets/Icon-class.html
 [`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html

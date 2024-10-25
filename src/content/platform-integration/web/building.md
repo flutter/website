@@ -76,7 +76,7 @@ In your IDE, you should see **Chrome (web)** in the device pulldown.
 ### Create and run
 
 Creating a new project with web support is no different
-than [creating a new Flutter project][] for other platforms.
+from creating a new Flutter project for other platforms.
 
 #### IDE
 
@@ -164,7 +164,6 @@ $ flutter config --enable-web
 ```
 
 [Build and release a web app]: /deployment/web
-[creating a new Flutter project]: /get-started/test-drive
 [dart2js]: {{site.dart-site}}/tools/dart2js
 [desktop]: /platform-integration/desktop
 [development compiler]: {{site.dart-site}}/tools/dartdevc

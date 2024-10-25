@@ -158,6 +158,5 @@ class ButtonWithText extends StatelessWidget {
       // #docregion button-section
     );
   }
-  // #enddocregion button-with-text
 }
-// #enddocregion button-section
+// #enddocregion button-section, button-with-text
