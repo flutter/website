@@ -25,7 +25,7 @@ export const markdown = (() => {
         assistiveText: title => `Link to '${title}' section`,
         symbol: '#',
         class: 'heading-link',
-        wrapper: ['<div class="header-wrapper">', '</div>']
+        wrapper: ['<div class="heading-wrapper">', '</div>']
       }),
     });
 
@@ -67,15 +67,19 @@ function _registerAside(markdown, id, defaultTitle, icon, style) {
     render: function (tokens, index) {
       if (tokens[index].nesting === 1) {
         const parsedArgs = /\s+(.*)/.exec(tokens[index].info);
-
         const title = parsedArgs?.[1] ?? defaultTitle;
-        return `<aside class="alert ${style}">
-<div class="alert-header">
-${icon !== null ? `<i class="material-symbols" aria-hidden="true">${icon}</i>` : ''}
-<span>${title ?? ''}</span>
-</div>
-<div class="alert-content">
-`;
+
+        let aside = `<aside class="alert ${style}">`;
+        if (title !== null) {
+          aside += `<div class="alert-header">
+            ${icon !== null ? `<i class="material-symbols" aria-hidden="true">${icon}</i>` : ''}
+            <span>${title}</span>
+          </div>`;
+        }
+
+        aside += `<div class="alert-content">`;
+
+        return aside;
       } else {
         return '</div></aside>\n';
       }

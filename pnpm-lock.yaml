@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      bootstrap-scss:
-        specifier: ^4.6.2
-        version: 4.6.2
     devDependencies:
       '@11ty/eleventy':
         specifier: ^3.0.0
@@ -600,9 +596,6 @@ packages:
 
   boolbase@1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
-
-  bootstrap-scss@4.6.2:
-    resolution: {integrity: sha512-emVpCI/S9aeFV1/qqKrztPZLiyow4XfRWLxOAu2SR/67Vau0y6IHNRukQrTx8+OUQ+aVPDhql40eDHSxGoAceA==}
 
   boxen@5.1.2:
     resolution: {integrity: sha512-9gYgQKXx+1nP8mP7CzFyaUARhg7D3n1dF/FnErWmu9l6JvGpNUN278h0aSb+QjoiKSWG+iZ3uHrcqk0qrY9RQQ==}
@@ -3685,8 +3678,6 @@ snapshots:
       - supports-color
 
   boolbase@1.0.0: {}
-
-  bootstrap-scss@4.6.2: {}
 
   boxen@5.1.2:
     dependencies:

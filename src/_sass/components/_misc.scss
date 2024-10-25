@@ -1,0 +1,82 @@
+.install-help {
+  text-align: right;
+  margin-top: -2.5rem;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .material-symbols {
+    font-size: 20px;
+    margin-right: 0.125rem;
+  }
+}
+
+#skip-to-main {
+  position: absolute;
+  top: 1rem;
+  left: -24rem;
+  opacity: 0;
+  width: 0;
+  z-index: 100;
+
+  &:focus {
+    width: auto;
+    opacity: 1;
+    transform: translateX(25rem);
+  }
+}
+
+#page-github-links {
+  font-style: italic;
+  font-size: 0.75rem;
+  padding-top: 0.25rem;
+  margin-bottom: 0;
+
+  border-top: 0.05rem solid var(--site-outline-variant);
+}
+
+// A big button centered on top of an image.
+//
+// The container is typically a <div> element. The div has only 2 children:
+// an <img> element (the background) and a <a class="filled-button"> button.
+//
+// The image should be very bright and slightly blurred so that the button
+// stands out.
+.juicy-button-container {
+  position: relative;
+  padding: 2em 0;
+
+  img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0;
+  }
+
+  .filled-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+
+    // Add a white "glow" that separates the button from the background.
+    box-shadow: 0 0 10px 10px white;
+
+    // Make the button extra large.
+    @media (min-width: 600px) {
+      font-size: 150%;
+      padding: 0.7rem;
+    }
+
+    @media (min-width: 900px) {
+      font-size: 200%;
+      padding: 1rem;
+    }
+  }
+}

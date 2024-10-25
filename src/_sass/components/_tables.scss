@@ -1,0 +1,48 @@
+table.table {
+  border-spacing: 0;
+  width: 100%;
+
+  thead {
+    background-color: var(--site-surface-container-highest);
+    border-top-right-radius: var(--site-square-radius);
+  }
+
+  th:first-of-type {
+    border-top-left-radius: var(--site-square-radius);
+  }
+
+  th:last-of-type {
+    border-top-right-radius: var(--site-square-radius);
+  }
+
+  td, th {
+    padding: 0.75rem;
+  }
+
+  td {
+    border-top: 1px solid var(--site-outline-variant);
+  }
+
+  &.table-striped tbody tr:nth-of-type(odd) {
+    background-color: var(--site-surface-container);
+  }
+}
+
+.table-wrapper, .scrollable-table {
+  border-radius: var(--site-square-radius);
+  border: 1px solid var(--site-outline-variant);
+  overflow-x: auto;
+
+  img {
+    margin-bottom: 0.5rem; 
+  }
+}
+
+.scrollable-table {
+  overflow-y: scroll;
+  max-height: 20rem;
+
+  table {
+    width: 100%;
+  }
+}

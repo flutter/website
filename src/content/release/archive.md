@@ -5,13 +5,6 @@ description: "All current Flutter SDK releases: stable, beta, and main."
 toc: false
 ---
 
-<style>
-.scrollable-table {
-  overflow-y: scroll;
-  max-height: 20rem;
-}
-</style>
-
 The {{site.sdk.channel | capitalize }} channel contains the
 most stable Flutter builds.
 To learn more, check out [Flutter's channels][].

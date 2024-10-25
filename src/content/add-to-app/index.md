@@ -124,21 +124,21 @@ Android and iOS:
 <div class="card-grid">
   <a class="card" href="/add-to-app/android/project-setup">
     <div class="card-body">
-      <header class="card-title text-center">
+      <header class="card-title card-center">
         Android
       </header>
     </div>
   </a>
   <a class="card" href="/add-to-app/ios/project-setup">
     <div class="card-body">
-      <header class="card-title text-center">
+      <header class="card-title card-center">
         iOS
       </header>
     </div>
   </a>
   <a class="card" href="/platform-integration/web/embedding-flutter-web#embedded-mode">
     <div class="card-body">
-      <header class="card-title text-center">
+      <header class="card-title card-center">
         Web
       </header>
     </div>
@@ -153,21 +153,21 @@ see our API usage guides at the following links:
 <div class="card-grid">
   <a class="card" href="/add-to-app/android/add-flutter-screen">
     <div class="card-body">
-      <header class="card-title text-center">
+      <header class="card-title card-center">
         Android
       </header>
     </div>
   </a>
   <a class="card" href="/add-to-app/ios/add-flutter-screen">
     <div class="card-body">
-      <header class="card-title text-center">
+      <header class="card-title card-center">
         iOS
       </header>
     </div>
   </a>
   <a class="card" href="/platform-integration/web/embedding-flutter-web#manage-flutter-views-from-js">
     <div class="card-body">
-      <header class="card-title text-center">
+      <header class="card-title card-center">
         Web
       </header>
     </div>

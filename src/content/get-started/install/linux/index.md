@@ -16,8 +16,8 @@ js: [{url: '/assets/js/temp/linux-install-redirector.js'}]
 {% for target in target-list %}
   <a class="card card-app-type card-linux" id="install-{{os | remove: ' ' | downcase}}" href="/get-started/install/{{os | remove: ' ' | downcase}}/{{target | downcase}}">
     <div class="card-body">
-      <header class="card-title text-center">
-        <span class="d-block h1">
+      <header class="card-title card-center">
+        <span>
           {% assign icon = target | downcase -%}
           {% if icon == 'desktop' -%}
             <span class="material-symbols">desktop_windows</span>
@@ -27,7 +27,7 @@ js: [{url: '/assets/js/temp/linux-install-redirector.js'}]
             <span class="material-symbols">web</span>
           {% endif -%}
         </span>
-        <span class="text-muted text-nowrap">{{target}}</span>
+        <span class="card-muted">{{target}}</span>
         {% if icon == 'android' -%}
           <div class="card-subtitle">Recommended</div>
         {% endif -%}

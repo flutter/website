@@ -10,12 +10,12 @@ js: [{url: '/assets/js/page/install-current.js'}]
 {% for os in os-list %}
   <a class="card" id="install-{{os | remove: ' ' | downcase}}" href="/get-started/install/{{os | remove: ' ' | downcase}}">
     <div class="card-body">
-      <header class="card-title text-center">
-        <span class="d-block h1">
+      <header class="card-title card-center">
+        <span>
           {% assign icon = os | downcase -%}
-            <img src="/assets/images/docs/brand-svg/{{icon}}.svg" width="72" height="72" aria-hidden="true" alt="{{os}} logo"> 
+          <img src="/assets/images/docs/brand-svg/{{icon}}.svg" width="72" height="72" aria-hidden="true" alt="{{os}} logo"> 
         </span>
-        <span class="text-muted text-nowrap">{{os}}</span>
+        <span class="card-muted">{{os}}</span>
       </header>
     </div>
   </a>
