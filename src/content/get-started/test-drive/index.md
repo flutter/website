@@ -2,7 +2,7 @@
 title: Test drive
 description: How to create a templated Flutter app and use hot reload.
 prev:
-  title: Install Flutter
+  title: Set up Flutter
   path: /get-started/install
 next:
   title: Write your first Flutter app
