@@ -55,16 +55,23 @@ In stable release: Not yet
 
 API documentation:
 
-* [`ImageFilter`][https://api.flutter.dev/flutter/dart-ui/ImageFilter-class.html]
-* [`TileMode`][https://api.flutter.dev/flutter/dart-ui/TileMode.html]
+* [`ImageFilter`][]
+* [`TileMode`][]
 
 Relevant issues:
 
-* [Issue #154935][https://github.com/flutter/flutter/issues/154935]
-* [Issue #110318][https://github.com/flutter/flutter/issues/110318]
-* [Issue #157693][https://github.com/flutter/flutter/issues/157693]
+* [Issue #154935][]
+* [Issue #110318][]
+* [Issue #157693][]
 
 Relevant PRs:
 
-* [Change default TileMode for blur ImageFilter objects to null][https://github.com/flutter/engine/pull/55552]
+* [Change default TileMode for blur ImageFilter objects to null][]
 
+
+[`ImageFilter`][https://api.flutter.dev/flutter/dart-ui/ImageFilter-class.html]
+[`TileMode`][https://api.flutter.dev/flutter/dart-ui/TileMode.html]
+[Issue #154935][https://github.com/flutter/flutter/issues/154935]
+[Issue #110318][https://github.com/flutter/flutter/issues/110318]
+[Issue #157693][https://github.com/flutter/flutter/issues/157693]
+[Change default TileMode for blur ImageFilter objects to null][https://github.com/flutter/engine/pull/55552]
