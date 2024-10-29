@@ -9,13 +9,13 @@ description: >-
 
   The `ui.ImageFilter.blur`'s default tile mode is now automatically selected
   by the backend. Previously `TileMode.clamp` was used unless a different tile
-  mode was specified. Passing a value of `null` to the filter's constructor
-  specifies automatic selection.
+  mode was specified. Now, the default is `null` and specifies automatic
+  selection unless a specific tile mode is specified.
 
 ## Background
 
-  `ImageFilter`'s _tile mode_ specifies what happens to edge pixels for the
-  applied filter. There are four options, `TileMode.clamp` (the previous
+  `ImageFilter.blur`'s _tile mode_ specifies what happens to edge pixels for
+  the applied filter. There are four options, `TileMode.clamp` (the previous
   default), `Tilemode.repeated`, `TileMode.mirror`, and `TileMode.decal`.
   Previously, `ImageFilter` defaulted to `clamp` mode if the
   behavior wasn't specified, which sometimes surprised developers
@@ -24,13 +24,14 @@ description: >-
   As of this change, the filter automatically selects the following tile modes
   based on context:
 
-  * `decal` with save layers and when applied to individual draws.
+  * `decal` with save layers and when applied to individual shape draws
+            (drawRect, drawPath, ...)
   * `mirror` with backdrop filters.
   * `clamp` for drawImage.
 
 ## Migration guide
 
-  Only image filters that don't specify an explicit tile mode are
+  Only blur image filters that don't specify an explicit tile mode are
   impacted by this change. In these cases, you can specify an explicit tile
   mode to retain the prior behavior. However, we believe the automatic
   selection of behavior will be a superior choice in most cases.
