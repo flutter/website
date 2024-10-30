@@ -98,4 +98,4 @@ appnow:
   powershell: 5.1
   xcode: '15'
   ios: '17'
-  cocoapods: '1.15'
+  cocoapods: '1.16'
