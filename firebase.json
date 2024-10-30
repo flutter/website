@@ -681,6 +681,7 @@
       { "source": "/to/endorsed-federated-plugin", "destination": "/packages-and-plugins/developing-packages#endorsed-federated-plugin", "type": 301 },
       { "source": "/to/federated-plugins", "destination": "/packages-and-plugins/developing-packages#federated-plugins", "type": 301 },
       { "source": "/to/ffi-package", "destination": "/packages-and-plugins/developing-packages#plugin-ffi", "type": 301 },
+      { "source": "/to/flutter-gen-deprecation", "destination": "/release/breaking-changes/flutter-generate-i10n-source", "type": 301 },
       { "source": "/to/flutter-plugins-configuration", "destination": "/release/breaking-changes/flutter-plugins-configuration", "type": 301 },
       { "source": "/to/flutter-fix", "destination": "/tools/flutter-fix", "type": 301 },
       { "source": "/to/flutter-gradle-plugin-apply", "destination": "/release/breaking-changes/flutter-gradle-plugin-apply", "type": 301 },
