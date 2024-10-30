@@ -32,7 +32,7 @@ flutter:
 ```
 
 A synthetic package (`package:flutter_gen`) is created and referenced by the
-application;
+application:
 
 ```dart
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
