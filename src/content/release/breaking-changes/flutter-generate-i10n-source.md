@@ -1,7 +1,7 @@
 ---
 title: Localized messages are generated into source, not a synthetic package.
 description: >-
-  When use `package:flutter_localizations`, the default generated location
+  When using `package:flutter_localizations`, the default generated location
   (and eventually, only possible location) is within your source (`lib/`)
   directory, and not the synthetic package `package:flutter_gen`.
 ---
