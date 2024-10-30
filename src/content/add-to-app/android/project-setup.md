@@ -436,11 +436,9 @@ If you are using Groovy, apply the following changes:
 ```groovy title="MyApp/settings.gradle"
 // Include the host app project.
 include(":app")                                   // assumed existing content
-setBinding(new Binding([gradle: this]))                                // new
-evaluate(new File(                                                     // new
-    settingsDir.parentFile,                                            // new
-    'flutter_module/.android/include_flutter.groovy'                   // new
-))                                                                     // new
+setBinding(new Binding([gradle: this]))           // new
+def filePath = settingsDir.parentFile.toString() + "/flutter_module/.android/include_flutter.groovy" // new
+apply from: filePath                              // new
 ```
 
 The binding and script evaluation allows the Flutter
