@@ -119,10 +119,10 @@ See [Deprecated imperative apply of Flutter's Gradle plugins][imperative-apply]
 for details of switching to the newer plugin DSL.
 
 To smoke test whether your build relies on a `.flutter-plugins` file, you
-can use the flag `--no-emit-legacy-flutter-plugins`:
+can use the flag `--no-implicit-pubspec-resolution`:
 
 ```sh
-flutter build apk --no-emit-legacy-flutter-plugins
+flutter build apk --no-implicit-pubspec-resolution
 ```
 
 Any build tools or scripts that might rely on that file being output will now
