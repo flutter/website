@@ -32,26 +32,25 @@ description: >-
 ## Migration guide
 
   Only blur image filters that don't specify an explicit tile mode are
-  impacted by this change. In these cases, you can specify an explicit tile
-  mode to retain the prior behavior. However, we believe the automatic
-  selection of behavior will be a superior choice in most cases.
+  impacted by this change. We believe that the new defaults are generally
+  better and would recommend removing any specified blur tile modes.
+
 
 Code before migration:
 
 ```dart
-var filter = ui.ImageFilter.blur(sigmaX: 4, sigmaY: 4);
+var filter = ui.ImageFilter.blur(sigmaX: 4, sigmaY: 4, tileMode: TileMode.decal);
 ```
 
 Code after migration:
 
 ```dart
-// Set tile mode to old default.
-var filter = ui.ImageFilter.blur(sigmaX: 4, sigmaY: 4, tileMode: TileMode.clamp);
+var filter = ui.ImageFilter.blur(sigmaX: 4, sigmaY: 4);
 ```
 
 ## Timeline
 
-Landed in version: xxx<br>
+Landed in version: 3.27.0-1.0.pre.30
 In stable release: Not yet
 
 ## References

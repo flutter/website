@@ -33,6 +33,7 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [`ImageFilter.blur` default tile mode automatic selection][]
 * [`.flutter-plugins-dependencies` replaces `.flutter-plugins`][] <!-- Branch cut starts here, below will be in next stable -->
 * [`Color` wide gamut support][]
 * [Remove invalid parameters for `InputDecoration.collapsed`][]
@@ -41,6 +42,7 @@ release, and listed in alphabetical order:
 * [Set default for SystemUiMode to Edge-to-Edge][]
 * [Deprecate `ThemeData.dialogBackgroundColor` in favor of `DialogThemeData.backgroundColor`][]
 
+[`ImageFilter.blur` default tile mode automatic selection]: /release/breaking-changes/image-filter-blur-tilemode
 [`.flutter-plugins-dependencies` replaces `.flutter-plugins`]: /release/breaking-changes/flutter-plugins-configuration
 [`Color` wide gamut support]: /release/breaking-changes/wide-gamut-framework
 [Remove invalid parameters for `InputDecoration.collapsed`]: /release/breaking-changes/input-decoration-collapsed
