@@ -33,6 +33,7 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Localized messages are generated into source, not a synthetic package][]
 * [`.flutter-plugins-dependencies` replaces `.flutter-plugins`][] <!-- Branch cut starts here, below will be in next stable -->
 * [`Color` wide gamut support][]
 * [Remove invalid parameters for `InputDecoration.collapsed`][]
@@ -41,6 +42,7 @@ release, and listed in alphabetical order:
 * [Set default for SystemUiMode to Edge-to-Edge][]
 * [Deprecate `ThemeData.dialogBackgroundColor` in favor of `DialogThemeData.backgroundColor`][]
 
+[Localized messages are generated into source, not a synthetic package]: /release/breaking-changes/flutter-generate-i10n-source
 [`.flutter-plugins-dependencies` replaces `.flutter-plugins`]: /release/breaking-changes/flutter-plugins-configuration
 [`Color` wide gamut support]: /release/breaking-changes/wide-gamut-framework
 [Remove invalid parameters for `InputDecoration.collapsed`]: /release/breaking-changes/input-decoration-collapsed
