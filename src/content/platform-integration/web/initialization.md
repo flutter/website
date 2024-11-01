@@ -116,7 +116,6 @@ arguments to customize initialization behavior:
 
 | Name                    | Description                                                                                                                   | JS&nbsp;type |
 |-------------------------|-------------------------------------------------------------------------------------------------------------------------------|--------------|
-|`assetBase`              | The base URL of the `assets` directory of the app. Add this when Flutter loads from a different domain or subdirectory than the actual web app. You might need this when you embed Flutter web into another app, or when you deploy its assets to a CDN. |`string`|
 | `config`                | The Flutter configuration of your app.                                                                                        | `Object`     |
 | `onEntrypointLoaded`    | The function called when the engine is ready to be initialized. Receives an `engineInitializer` object as its only parameter. | `Function`   |
 | `serviceWorkerSettings` | The configuration for the `flutter_service_worker.js` loader. (If not set, the service worker isn't used.)                    | `Object`     |
@@ -194,8 +193,9 @@ The initialization process is split into the following stages:
 : The `onEntrypointLoaded` callback receives an
   **engine initializer** object as its only parameter.
   Use the engine initializer `initializeEngine()` function to
-  set the run-time configuration, like `multiViewEnabled: true`,
-  and start the Flutter web engine.
+  set run-time configuration options like `multiViewEnabled: true`
+  and `assetBase` (useful when Flutter loads from a different domain
+  or subdirectory than the actual web app).
 
 **Running the app**
 : The `initializeEngine()` function returns a [`Promise`][js-promise]
