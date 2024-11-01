@@ -6,8 +6,8 @@ target: Web
 config: LinuxWeb
 devos: Linux
 next:
-  title: Create a test app
-  path: /get-started/test-drive
+  title: Create your first app
+  path: /get-started/codelab
 ---
 
 {% include docs/install/reqs/linux/base.md os=devos target=target %}
