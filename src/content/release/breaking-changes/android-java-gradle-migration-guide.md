@@ -54,7 +54,11 @@ Running Gradle task 'assembleDebug'...                           1,641ms
 Error: Gradle task assembleDebug failed with exit code 1
 ```
 
-This error occurs because Android Studio updates its bundled Java SDK to a newer version. Flutter uses the version of Java bundled with Android Studio to build Android apps. Gradle versions prior to 8.5 can't run when using Java 21.
+This error occurs because Android Studio
+updates its bundled Java SDK to a newer version.
+Flutter uses the version of Java bundled with
+Android Studio to build Android apps.
+Gradle versions prior to 8.5 can't run when using Java 21.
 
 1. **Check the JDK Version**:
    - Before upgrading your Gradle version, ensure that your JDK version is up to date. You can check your current JDK version using the following commands:
