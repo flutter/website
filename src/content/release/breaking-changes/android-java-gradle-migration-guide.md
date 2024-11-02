@@ -68,7 +68,8 @@ Gradle versions prior to 8.5 can't run when using Java 21.
      ```
 
 2. **Update the Gradle Version**:
-   - The latest Gradle version compatible with Java 21 is Gradle 8.5. As an example, it is recommended to use Gradle 8.5 to ensure compatibility with Java 21.
+   - The latest Gradle version compatible with Java 21 is Gradle 8.5.
+      As an example, we recommended using Gradle 8.5 to ensure compatibility with Java 21.
 
 ## Solution #1: Guided fix using Android Studio
 
