@@ -7,7 +7,9 @@ description: >
 
 ## Summary
 
-If you've recently upgraded Android Studio and have either run or built an existing Android app, you might have run into an error similar to the following:
+If you've recently upgraded Android Studio and have either
+run or built an existing Android app,
+you might have run into an error similar to the following:
 
 ![Error dialog in Android Studio: MultipleCompilationErrorsException](/assets/images/docs/releaseguide/android-studio-error.png)
 
