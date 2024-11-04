@@ -23,7 +23,7 @@ To integrate Flutter code into an **existing** Android app,
 check out [Add Flutter to existing app][].
 :::
 
-This document can be used as a cookbook by jumping around
+This document can be used as a reference by jumping around
 and finding questions that are most relevant to your needs.
 This guide embeds sample code.
 By using the "Open in DartPad" button that appears on hover or focus,
