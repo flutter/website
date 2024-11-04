@@ -932,10 +932,10 @@ Future<void> loadData() async {
   // The 'echo' isolate sends its SendPort as the first message.
   SendPort sendPort = await receivePort.first;
 
-  List msg = await sendReceive(
+  final msg = await sendReceive(
     sendPort,
     'https://jsonplaceholder.typicode.com/posts',
-  );
+  ) as List<Object?>;
 
   setState(() {
     widgets = msg;
@@ -961,7 +961,7 @@ static Future<void> dataLoader(SendPort sendPort) async {
   }
 }
 
-Future sendReceive(SendPort port, msg) {
+Future<Object?> sendReceive(SendPort port, Object? msg) {
   ReceivePort response = ReceivePort();
   port.send([msg, response.sendPort]);
   return response.first;
@@ -1066,10 +1066,10 @@ class _SampleAppPageState extends State<SampleAppPage> {
     // The 'echo' isolate sends its SendPort as the first message.
     SendPort sendPort = await receivePort.first;
 
-    List msg = await sendReceive(
+    final msg = await sendReceive(
       sendPort,
       'https://jsonplaceholder.typicode.com/posts',
-    );
+    ) as List<Object?>;
 
     setState(() {
       widgets = msg;
@@ -1095,7 +1095,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     }
   }
 
-  Future sendReceive(SendPort port, msg) {
+  Future<Object?> sendReceive(SendPort port, Object? msg) {
     ReceivePort response = ReceivePort();
     port.send([msg, response.sendPort]);
     return response.first;

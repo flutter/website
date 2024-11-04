@@ -31,1001 +31,159 @@ updates:
       - "auto.submodules"
   - package-ecosystem: "pub"
     versioning-strategy: "increase-if-necessary"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/example"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/animation/animate0"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/animation/animate1"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/animation/animate2"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/animation/animate3"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/animation/animate4"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/animation/animate5"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/_animation/basic_hero_animation"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/_animation/basic_radial_hero_animation"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/_animation/basic_staggered_animation"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/animation/explicit"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/_animation/hero_animation"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/animation/implicit"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/_animation/radial_hero_animation"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/_animation/radial_hero_animation_animate_rectclip"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/_animation/staggered_pic_selection"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/basics"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/animation/animated_container"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/animation/opacity_animation"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/animation/page_route_animation"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/animation/physics_simulation"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/design/drawer"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/design/fonts"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/design/orientation"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/design/package_fonts"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/design/snackbars"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/design/tabs"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/design/themes"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/effects/download_button"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/effects/drag_a_widget"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/effects/expandable_fab"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/effects/gradient_bubbles"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/effects/nested_nav"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/effects/parallax_scrolling"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/effects/photo_filter_carousel"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/effects/shimmer_loading"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/effects/staggered_menu_animation"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/effects/typing_indicator"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/forms/focus"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/forms/retrieve_input"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/forms/text_field_changes"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/forms/text_input"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/forms/validation"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/gestures/dismissible"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/gestures/handling_taps"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/gestures/ripples"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/images/cached_images"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/images/fading_in_images"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/images/network_image"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/lists/basic_list"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/lists/floating_app_bar"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/lists/grid_lists"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/lists/horizontal_list"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/lists/long_lists"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/lists/mixed_list"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/maintenance/error_reporting"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/navigation/hero_animations"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/navigation/named_routes"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/navigation/navigate_with_arguments"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/navigation/navigation_basics"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/navigation/passing_data"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/navigation/returning_data"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/networking/authenticated_requests"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/networking/background_parsing"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/networking/delete_data"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/networking/fetch_data"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/networking/send_data"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/networking/update_data"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/networking/web_sockets"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/persistence/key_value"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/persistence/reading_writing_files"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/persistence/sqlite"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/plugins/picture_using_camera"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/plugins/play_video"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/testing/integration/introduction"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/testing/integration/profiling"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/testing/unit/counter_app"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/testing/unit/mocking"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/testing/widget/finders"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/testing/widget/introduction"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/testing/widget/scrolling"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/cookbook/testing/widget/tap_drag"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/deployment/obfuscate"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/data-and-backend/json"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/platform_integration"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/platform_integration/plugin_api_migration"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/tools"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/ui/interactive"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/example_utils"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/googleapis"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/integration_test"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/integration_test_migration"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/internationalization/add_language"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/internationalization/gen_l10n_example"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/internationalization/intl_example"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/internationalization/minimal"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/layout/base"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/layout/card_and_stack"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/layout/constraints"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/layout/container"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/layout/grid_and_list"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/layout/lakes/interactive"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/layout/lakes/step2"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/layout/lakes/step3"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/layout/lakes/step4"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/layout/lakes/step5"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/layout/lakes/step6"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/layout/non_material"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/layout/pavlova"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/layout/row_column"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/layout/sizing"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/resources/architectural_overview"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/resources/dart_swift_concurrency"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart" 
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/state_mgmt/simple"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/testing/code_debugging"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/testing/common_errors"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/testing/errors"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/testing/integration_tests/how_to"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/ui/advanced/actions_and_shortcuts"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/ui/advanced/focus"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/ui/assets_and_images"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/ui/layout/adaptive_app_demos"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/ui/widgets_intro"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
-  - package-ecosystem: "pub"
-    versioning-strategy: "increase-if-necessary"
-    directory: "/examples/visual_debugging"
-    schedule:
-      interval: "daily"
-    labels:
-      - "auto.code-examples"
-      - "lang.dart"
+    directories:
+      - "/"
+      - "/tool/flutter_site"
+    schedule:
+      interval: "daily"
+    labels:
+      - "auto.dependencies"
+      - "lang.dart"
+  - package-ecosystem: "pub"
+    versioning-strategy: "increase-if-necessary"
+    schedule:
+      interval: "daily"
+    labels:
+      - "auto.code-examples"
+      - "lang.dart"
+    directories:
+      - "/examples/_animation/basic_hero_animation"
+      - "/examples/_animation/basic_radial_hero_animation"
+      - "/examples/_animation/basic_staggered_animation"
+      - "/examples/_animation/hero_animation"
+      - "/examples/_animation/radial_hero_animation"
+      - "/examples/_animation/radial_hero_animation_animate_rectclip"
+      - "/examples/_animation/staggered_pic_selection"
+      - "/examples/animation/animate0"
+      - "/examples/animation/animate1"
+      - "/examples/animation/animate2"
+      - "/examples/animation/animate3"
+      - "/examples/animation/animate4"
+      - "/examples/animation/animate5"
+      - "/examples/animation/implicit"
+      - "/examples/cookbook/animation/animated_container"
+      - "/examples/cookbook/animation/opacity_animation"
+      - "/examples/cookbook/animation/page_route_animation"
+      - "/examples/cookbook/animation/physics_simulation"
+      - "/examples/cookbook/design/drawer"
+      - "/examples/cookbook/design/fonts"
+      - "/examples/cookbook/design/orientation"
+      - "/examples/cookbook/design/package_fonts"
+      - "/examples/cookbook/design/snackbars"
+      - "/examples/cookbook/design/tabs"
+      - "/examples/cookbook/design/themes"
+      - "/examples/cookbook/effects/download_button"
+      - "/examples/cookbook/effects/drag_a_widget"
+      - "/examples/cookbook/effects/expandable_fab"
+      - "/examples/cookbook/effects/gradient_bubbles"
+      - "/examples/cookbook/effects/nested_nav"
+      - "/examples/cookbook/effects/parallax_scrolling"
+      - "/examples/cookbook/effects/photo_filter_carousel"
+      - "/examples/cookbook/effects/shimmer_loading"
+      - "/examples/cookbook/effects/staggered_menu_animation"
+      - "/examples/cookbook/effects/typing_indicator"
+      - "/examples/cookbook/forms/focus"
+      - "/examples/cookbook/forms/retrieve_input"
+      - "/examples/cookbook/forms/text_field_changes"
+      - "/examples/cookbook/forms/text_input"
+      - "/examples/cookbook/forms/validation"
+      - "/examples/cookbook/games/achievements_leaderboards"
+      - "/examples/cookbook/games/firestore_multiplayer"
+      - "/examples/cookbook/gestures/dismissible"
+      - "/examples/cookbook/gestures/handling_taps"
+      - "/examples/cookbook/gestures/ripples"
+      - "/examples/cookbook/images/cached_images"
+      - "/examples/cookbook/images/fading_in_images"
+      - "/examples/cookbook/images/network_image"
+      - "/examples/cookbook/lists/basic_list"
+      - "/examples/cookbook/lists/floating_app_bar"
+      - "/examples/cookbook/lists/grid_lists"
+      - "/examples/cookbook/lists/horizontal_list"
+      - "/examples/cookbook/lists/long_lists"
+      - "/examples/cookbook/lists/mixed_list"
+      - "/examples/cookbook/lists/spaced_items"
+      - "/examples/cookbook/maintenance/error_reporting"
+      - "/examples/cookbook/navigation/hero_animations"
+      - "/examples/cookbook/navigation/named_routes"
+      - "/examples/cookbook/navigation/navigate_with_arguments"
+      - "/examples/cookbook/navigation/navigation_basics"
+      - "/examples/cookbook/navigation/passing_data"
+      - "/examples/cookbook/navigation/returning_data"
+      - "/examples/cookbook/networking/authenticated_requests"
+      - "/examples/cookbook/networking/background_parsing"
+      - "/examples/cookbook/networking/delete_data"
+      - "/examples/cookbook/networking/fetch_data"
+      - "/examples/cookbook/networking/send_data"
+      - "/examples/cookbook/networking/update_data"
+      - "/examples/cookbook/networking/web_sockets"
+      - "/examples/cookbook/persistence/key_value"
+      - "/examples/cookbook/persistence/reading_writing_files"
+      - "/examples/cookbook/persistence/sqlite"
+      - "/examples/cookbook/plugins/google_mobile_ads"
+      - "/examples/cookbook/plugins/picture_using_camera"
+      - "/examples/cookbook/plugins/play_video"
+      - "/examples/cookbook/testing/integration/introduction"
+      - "/examples/cookbook/testing/integration/profiling"
+      - "/examples/cookbook/testing/unit/counter_app"
+      - "/examples/cookbook/testing/unit/mocking"
+      - "/examples/cookbook/testing/widget/finders"
+      - "/examples/cookbook/testing/widget/introduction"
+      - "/examples/cookbook/testing/widget/scrolling"
+      - "/examples/cookbook/testing/widget/tap_drag"
+      - "/examples/data-and-backend/json"
+      - "/examples/deployment/obfuscate"
+      - "/examples/example_utils"
+      - "/examples/get-started/codelab_web"
+      - "/examples/get-started/flutter-for/android_devs"
+      - "/examples/get-started/flutter-for/declarative"
+      - "/examples/get-started/flutter-for/ios_devs"
+      - "/examples/get-started/flutter-for/react_native_devs"
+      - "/examples/get-started/flutter-for/react_native_devs/my_widgets"
+      - "/examples/get-started/flutter-for/web_devs"
+      - "/examples/get-started/flutter-for/xamarin_devs"
+      - "/examples/googleapis"
+      - "/examples/integration_test"
+      - "/examples/integration_test_migration"
+      - "/examples/internationalization/add_language"
+      - "/examples/internationalization/gen_l10n_example"
+      - "/examples/internationalization/intl_example"
+      - "/examples/internationalization/minimal"
+      - "/examples/layout/base"
+      - "/examples/layout/card_and_stack"
+      - "/examples/layout/constraints"
+      - "/examples/layout/container"
+      - "/examples/layout/gallery"
+      - "/examples/layout/grid_and_list"
+      - "/examples/layout/lakes/interactive"
+      - "/examples/layout/lakes/step2"
+      - "/examples/layout/lakes/step3"
+      - "/examples/layout/lakes/step4"
+      - "/examples/layout/lakes/step5"
+      - "/examples/layout/lakes/step6"
+      - "/examples/layout/non_material"
+      - "/examples/layout/pavlova"
+      - "/examples/layout/row_column"
+      - "/examples/layout/sizing"
+      - "/examples/perf/concurrency/isolates"
+      - "/examples/perf/deferred_components"
+      - "/examples/platform_integration/compose_activities"
+      - "/examples/platform_integration/pigeon"
+      - "/examples/platform_integration/platform_channels"
+      - "/examples/platform_integration/platform_views"
+      - "/examples/platform_integration/plugin_api_migration"
+      - "/examples/resources/architectural_overview"
+      - "/examples/resources/dart_swift_concurrency"
+      - "/examples/state_mgmt/simple"
+      - "/examples/testing/code_debugging"
+      - "/examples/testing/common_errors"
+      - "/examples/testing/errors"
+      - "/examples/testing/integration_tests/how_to"
+      - "/examples/testing/native_debugging"
+      - "/examples/tools"
+      - "/examples/ui/adaptive_app_demos"
+      - "/examples/ui/advanced/actions_and_shortcuts"
+      - "/examples/ui/advanced/focus"
+      - "/examples/ui/assets_and_images"
+      - "/examples/ui/interactive"
+      - "/examples/ui/widgets_intro"
+      - "/examples/visual_debugging"
