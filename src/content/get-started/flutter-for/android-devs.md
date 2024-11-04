@@ -13,7 +13,7 @@ can use this document as a jump start to Flutter development.
 :::note
 Android has two native user interface systems, Views (XML based) and Jetpack Compose.
 Some fundamentals are shared so this document will provide value no matter what. 
-Howeverm if you are coming from Jetpack Compose, 
+However, if you are coming from Jetpack Compose, 
 see [Flutter for Jetpack Compose devs][] for more information about Jetpack Compose
 and how samples match up to Flutter examples.
 
