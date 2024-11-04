@@ -8,8 +8,8 @@ description: Learn how to apply Jetpack Compose developer knowledge when buildin
 {% assign sample_path = "blob/main/examples/get-started/flutter-for/compose_devs" %}
 
 :::note
-If you instead have experience building apps for Android with Views (XML),
-see [Flutter for Android developers][].
+If you have experience building Android apps with Views (XML),
+check out [Flutter for Android developers][].
 :::
 
 Flutter is a framework for building cross-platform applications
