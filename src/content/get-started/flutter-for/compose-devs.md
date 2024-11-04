@@ -680,7 +680,7 @@ const MaterialApp(
 ### Styling text
 
 In **Compose**, you use the properties on `Text` for one or two
-attributes or construct `TextStyle` object to set many at once.
+attributes or construct a `TextStyle` object to set many at once.
 
 ```kotlin
 Text("Hello, world!", color = Color.Green,
