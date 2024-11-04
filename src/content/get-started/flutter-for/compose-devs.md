@@ -714,7 +714,7 @@ Text(
 ### Styling buttons
 
 In **Compose**, you modify the colors of a button using 
-the `colors` property. If left unmodified, they will
+the `colors` property. If left unmodified, they
 use the defaults from the current theme.
 
 ```kotlin
