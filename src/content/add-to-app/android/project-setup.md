@@ -287,7 +287,24 @@ to find these files.
 To do that, edit `settings.gradle` in your host app
 so that it includes the local repository and the dependency:
 
-```groovy
+{% tabs "settings.gradle.kts" %}
+{% tab "Kotlin" %}
+
+```kotlin title="settings.gradle.kts"
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        google()
+        mavenCentral()
+        maven("https://storage.googleapis.com/download.flutter.io")
+    }
+}
+```
+
+{% endtab %}
+{% tab "Groovy" %}
+
+```groovy title="settings.gradle"
 dependencyResolutionManagement {
     repositoriesMode = RepositoriesMode.PREFER_SETTINGS
     repositories {
@@ -308,6 +325,9 @@ dependencyResolutionManagement {
     }
 }
 ```
+
+{% endtab %}
+{% endtabs %}
 
 <br>
 
@@ -394,24 +414,45 @@ To change the name of this project, set
 Include this project in the host app's `settings.gradle` file.
 :::
 
+#### Updating `settings.gradle`
+
 Include the Flutter module as a subproject in the host app's
 `settings.gradle`. This example assumes `flutter_module` and `MyApp`
 exist in the same directory
 
+If you are using Kotlin, apply the following changes:
+
+```kotlin title="MyApp/settings.gradle.kts"
+// Include the host app project. Assumed existing content.
+include(":app")            
+// Replace "flutter_module" with whatever package_name you supplied when you ran:
+// `$ flutter create -t module [package_name]
+val filePath = settingsDir.parentFile.toString() + "/flutter_module/.android/include_flutter.groovy"
+apply(from = File(filePath))
+```
+
+:::note
+The ability to invoke `include_flutter.groovy` from Kotlin code requires Flutter 3.27.
+To determine your current Flutter version, run `flutter --version`. If it is not
+at least version 3.27, consider changing to either the `master` or `beta` channels.
+:::
+
+If you are using Groovy, apply the following changes:
+
 ```groovy title="MyApp/settings.gradle"
 // Include the host app project.
 include(":app")                                   // assumed existing content
-setBinding(new Binding([gradle: this]))                                // new
-evaluate(new File(                                                     // new
-    settingsDir.parentFile,                                            // new
-    'flutter_module/.android/include_flutter.groovy'                   // new
-))                                                                     // new
+setBinding(new Binding([gradle: this]))           // new
+def filePath = settingsDir.parentFile.toString() + "/flutter_module/.android/include_flutter.groovy" // new
+apply from: filePath                              // new
 ```
 
 The binding and script evaluation allows the Flutter
 module to `include` itself (as `:flutter`) and any
 Flutter plugins used by the module (such as `:package_info` and `:video_player`)
 in the evaluation context of your `settings.gradle`.
+
+#### Updating `app/build.gradle`
 
 Introduce an `implementation` dependency on the Flutter
 module from your app:
@@ -421,6 +462,10 @@ dependencies {
     implementation(project(":flutter"))
 }
 ```
+
+:::note
+This code is identical between Groovy and Kotlin.
+:::
 
 {% endtab %}
 {% endtabs %}
