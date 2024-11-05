@@ -112,25 +112,6 @@ See [Embedding Flutter web][].
 
 See [Web content in Flutter][].
 
-### How do I debug a web app?
-
-Use [Flutter DevTools][] for the following tasks:
-
-* [Debugging][]
-* [Logging][]
-* [Running Flutter inspector][]
-
-Use [Chrome DevTools][] for the following tasks:
-
-* [Generating event timeline][]
-* [Analyzing performance][]&mdash;make sure to use a
-  profile build
-
-### How do I test a web app?
-
-Use [widget tests][] or integration tests. To learn more about
-running integration tests in a browser, see the [Integration testing][] page.
-
 ### How do I deploy a web app?
 
 See [Preparing a web app for release][].
@@ -139,27 +120,18 @@ See [Preparing a web app for release][].
 
 Not currently.
 
-[Analyzing performance]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance
 [building a web app with Flutter]: /platform-integration/web/building
-[Chrome DevTools]: {{site.developers}}/web/tools/chrome-devtools
 [Creating responsive apps]: /ui/adaptive-responsive
-[Debugging]: /tools/devtools/debugger
 [documentation for conditional imports]: {{site.dart-site}}/guides/libraries/create-library-packages#conditionally-importing-and-exporting-library-files
 [Embedding Flutter web]: /platform-integration/web/embedding-flutter-web
 [file an issue]: {{site.repo.flutter}}/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
-[Flutter DevTools]: /tools/devtools
-[Generating event timeline]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [`http`]: {{site.pub}}/packages/http
 [`iframe`]: https://html.com/tags/iframe/
-[Integration testing]: /testing/integration-tests#test-in-a-web-browser
 [isolates]: {{site.dart-site}}/guides/language/concurrency
 [Issue 32248]: {{site.repo.flutter}}/issues/32248
-[Logging]: /tools/devtools/logging
 [Preparing a web app for release]: /deployment/web
 [roadmap]: {{site.github}}/flutter/flutter/blob/master/docs/roadmap/Roadmap.md#web-platform
 [run your web apps in any supported browser]: /platform-integration/web/building#create-and-run
-[Running Flutter inspector]: /tools/devtools/inspector
 [Web content in Flutter]: /platform-integration/web/web-content-in-flutter
 [Web support for Flutter]: /platform-integration/web
 [web workers]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
-[widget tests]: /testing/overview#widget-tests
