@@ -495,7 +495,7 @@ framework for every frame, for example, during an animation.
 **How to fix it?**
 
 One way to avoid this error is instruct flutter to finish rendering the page
-before implementing the showDialog. This can be done by using
+before calling `showDialog()`. This can be done by using
 addPostFrameCallback() method. The following code illustrates this on the broken example just given:
 
 <?code-excerpt "lib/set_state_build.dart (solution)"?>
