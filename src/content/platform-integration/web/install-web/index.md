@@ -10,7 +10,7 @@ short-title: Set up web development
 
 ## Check your development environment
 Run the `flutter doctor` command
-to validate your SDK and web browserinstallation:
+to validate your SDK and web browser installation:
 
 ```bash
 $ flutter doctor
