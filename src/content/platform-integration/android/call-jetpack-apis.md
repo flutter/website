@@ -79,7 +79,7 @@ glue code.
 way Flutter apps can invoke arbitrary native code.
 Unlike the FFI solution outlined in the previous step,
 MethodChannels are always asychronous, which
-may or may not matter to you, depending on your use case. Like
+might or might not matter to you, depending on your use case. Like
 with FFI and direct calls to native code, using MethodChannels
 requires a modicum of glue code to translate your Dart objects
 into native objects, and then back again. In most cases, 
