@@ -54,7 +54,7 @@ options.
 ### Call native code directly via FFI
 
 The most direct and efficient way to invoke native APIs is by
-calling it dirrectly, via FFI. This links your Dart executable
+calling it directly, via FFI. This links your Dart executable
 to any specified native code at compile-time, allowing you to 
 call it directly from the UI thread through a modicum of glue
 code. In most cases, [ffigen][ffigen] or [jnigen][jnigen] are
