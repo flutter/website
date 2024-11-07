@@ -6,7 +6,7 @@ description: "Utilize the latest Android APIs from your Dart code"
 <?code-excerpt path-base="platform_integration"?>
 
 Flutter apps running on Android can always make use of the
-latest APIs, the first day they are released on Android, no
+latest APIs on the first day they are released on Android, no
 matter what. This page outlines available ways to invoke
 Android-specific APIs.
 
