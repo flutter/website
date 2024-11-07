@@ -1,6 +1,6 @@
 ---
 title: "Calling JetPack APIs"
-description: "Utilize the latest Android APIs from your Dart code"
+description: "Use the latest Android APIs from your Dart code"
 ---
 
 <?code-excerpt path-base="platform_integration"?>
