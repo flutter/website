@@ -12,11 +12,9 @@ Android-specific APIs.
 
 ## Use an existing solution
 
-In most scenarios, you can [use a plugin][use-a-plugin] to
-invoke native APIs without writing any custom boilerplate or
+In most scenarios, you can use a plugin (as shown in the next section)
+to invoke native APIs without writing any custom boilerplate or
 glue code yourself.
-
-[use-a-plugin]: /platform-integration/android/call-jetpack-apis#use-a-plugin
 
 ### Use a plugin
 
