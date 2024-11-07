@@ -75,7 +75,7 @@ glue code.
 
 ### Add a MethodChannel
 
-[MethodChannel][methodchannels-api-docs]s are an alternate
+[`MethodChannel`][methodchannels-api-docs]s are an alternate
 way Flutter apps can invoke arbitrary native code.
 Unlike the FFI solution outlined in the previous step,
 MethodChannels are always asychronous, which
