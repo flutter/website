@@ -31,8 +31,8 @@ see the [Using packages documentation][packages].
 [packages]: /packages-and-plugins/using-packages
 [pub]: {{site.pub}}
 
-Not all native featurers are supported by plugins, especially
-new features immediately after release. In any scenario where
+Not all native features are supported by plugins, especially
+immediately after their release. In any scenario where
 your desired native feature is not covered by a package on
 [pub.dev][pub], continue on to the following sections.
 
@@ -75,7 +75,7 @@ glue code.
 
 [`MethodChannel`][methodchannels-api-docs]s are an alternate
 way Flutter apps can invoke arbitrary native code.
-Unlike the FFI solution outlined in the previous step,
+Unlike the FFI solution described in the previous step,
 MethodChannels are always asychronous, which
 might or might not matter to you, depending on your use case. As
 with FFI and direct calls to native code, using a `MethodChannel`
