@@ -24,7 +24,7 @@ consult the following resources.
 {%- endcase %}
 {%- case next-step.add-chrome %}
 {%- when 'Y' %}
-* [Add Web as a build target](/platform-integration/web/install-web/
+* [Add web as a build target](/platform-integration/web/install-web/
 {%- endcase %}
 {%- case next-step.add-simulator %}
 {%- when 'Y' %}
