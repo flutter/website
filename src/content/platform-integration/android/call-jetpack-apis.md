@@ -42,13 +42,13 @@ your desired native feature is not covered by a package on
 
 Not all scenarios and APIs will be supported by
 existing solutions; but luckily, you can always add whatever
-support you need. The ensuing sections describe two different
+support you need. The next sections describe two different
 ways to call native code from Dart.
 
 :::note
 Neither solution below is inherently better or worse than 
-existing plugins, because all plugins use one of the ensuing
-options.
+existing plugins, because all plugins use one of the following
+two options.
 :::
 
 ### Call native code directly via FFI
@@ -56,7 +56,7 @@ options.
 The most direct and efficient way to invoke native APIs is by
 calling it directly, via FFI. This links your Dart executable
 to any specified native code at compile-time, allowing you to 
-call it directly from the UI thread through a modicum of glue
+call it directly from the UI thread through a small amount of glue
 code. In most cases, [ffigen][ffigen] or [jnigen][jnigen] are
 helpful in writing this glue code.
 
@@ -81,7 +81,7 @@ Unlike the FFI solution outlined in the previous step,
 MethodChannels are always asychronous, which
 might or might not matter to you, depending on your use case. Like
 with FFI and direct calls to native code, using MethodChannels
-requires a modicum of glue code to translate your Dart objects
+requires a small amount of glue code to translate your Dart objects
 into native objects, and then back again. In most cases, 
 [`pkg:pigeon`][pigeon] is helpful in writing this glue code.
 
