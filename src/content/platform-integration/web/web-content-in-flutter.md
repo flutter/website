@@ -74,10 +74,6 @@ the Flutter team offers a plugin to do so:
 
 * [`package:webview_flutter`][]
 
-The **not endorsed** web implementation of the plugin,
-[`package:webview_flutter_web`][], is implemented with the same primitives
-described above, and Dart's [JS Interoperability][] APIs.
-
 [JS Interoperability]: {{site.dart-site}}/interop/js-interop
 [`package:webview_flutter`]: {{site.pub}}/packages/webview_flutter
 [`package:webview_flutter_web`]: {{site.pub}}/packages/webview_flutter_web
