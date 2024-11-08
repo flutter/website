@@ -1,4 +1,5 @@
 - header: Get started
+
 - title: Set up Flutter
   permalink: /get-started/install
 
@@ -17,7 +18,7 @@
           permalink: /get-started/fundamentals/dart
         - title: Widgets
           permalink: /get-started/fundamentals/widgets
-        - title: Layouts
+        - title: Layout
           permalink: /get-started/fundamentals/layout
         - title: State management
           permalink: /get-started/fundamentals/state-management
@@ -27,18 +28,6 @@
           permalink: /get-started/fundamentals/networking
         - title: Local data and caching
           permalink: /get-started/fundamentals/local-caching
-
-    - title: Dart language
-      permalink: /resources/bootstrap-into-dart
-
-    - title: Codelabs & samples
-      children:
-        - title: Codelabs
-          permalink: /codelabs
-        - title: Cookbook
-          permalink: /cookbook
-        - title: Samples and demos
-          permalink: https://flutter.github.io/samples/
 
     - title: From another platform?
       permalink: /get-started/flutter-for
@@ -59,6 +48,14 @@
           permalink: /get-started/flutter-for/declarative
         - title: Flutter versus Swift concurrency
           permalink: /get-started/flutter-for/dart-swift-concurrency
+
+    - divider
+    - title: Codelabs
+      permalink: /codelabs
+    - title: Cookbook
+      permalink: /cookbook
+    - title: Demos and samples
+      permalink: https://flutter.github.io/samples/
 
 - title: Stay up to date
   permalink: /release
@@ -151,10 +148,10 @@
             permalink: https://pub.dev/packages/pay
     - title: Maps
       children:
-        - title: Add maps to your app
-          permalink: https://developers.google.com/maps/flutter-package
         - title: Add Google maps to a Flutter app
           permalink: https://codelabs.developers.google.com/codelabs/google-maps-in-flutter
+        - title: Google Maps package
+          permalink: https://developers.google.com/maps/flutter-package
     - title: News
       children:
         - title: Build a news app
@@ -165,7 +162,7 @@
 - title: Introduction
   permalink: /ui
 - title: Widget catalog
-  permalink: /ui/widgets      
+  permalink: /ui/widgets
 - title: Layout
   permalink: /ui/layout
   children:
@@ -248,7 +245,7 @@
       children:
         - title: Use custom fragment shaders
           permalink: /ui/design/graphics/fragment-shaders
-      
+
 - title: Interactivity
   permalink: /ui/interactivity
   children:
@@ -302,7 +299,7 @@
       permalink: /cookbook/images/fading-in-images
     - title: Play and pause a video
       permalink: /cookbook/plugins/play-video
-    - title: Transforming assets at build time
+    - title: Transform assets at build time
       permalink: /ui/assets/asset-transformation
 
 - title: Navigation & routing
@@ -329,7 +326,7 @@
       permalink: /cookbook/navigation/set-up-universal-links
     - title: Configure web URL strategies
       permalink: /ui/navigation/url-strategies
-      
+
 - title: Animations & transitions
   permalink: /ui/animations
   children:
@@ -356,7 +353,7 @@
       permalink: /cookbook/effects/staggered-menu-animation
     - title: API overview
       permalink: /ui/animations/overview
-      
+
 - title: Accessibility & internationalization
   permalink: /ui/accessibility-and-internationalization
   children:
@@ -411,7 +408,7 @@
           permalink: /cookbook/networking/background-parsing
     - title: Persistence
       permalink: /data-and-backend/persistence
-      children: 
+      children:
         - title: Store key-value data on disk
           permalink: /cookbook/persistence/key-value
         - title: Read and write files
@@ -424,7 +421,7 @@
         - title: Overview
           permalink: /data-and-backend/firebase
         - title: Add Firebase to your Flutter app
-          permalink: https://firebase.google.com/docs/flutter/setup?platform=ios
+          permalink: https://firebase.google.com/docs/flutter/setup
     - title: Google APIs
       permalink: /data-and-backend/google-apis
 
@@ -452,6 +449,8 @@
           permalink: /platform-integration/android/c-interop
         - title: Host a native Android view
           permalink: /platform-integration/android/platform-views
+        - title: Launch a Jetpack Compose activity
+          permalink: /platform-integration/android/compose-activity
         - title: Restore state on Android
           permalink: /platform-integration/android/restore-state-android
         - title: Target ChromeOS with Android
@@ -504,7 +503,7 @@
           permalink: /platform-integration/web/install-web
         - title: Build a web app
           permalink: /platform-integration/web/building
-        - title: WebAssembly
+        - title: Compile to WebAssembly
           permalink: /platform-integration/web/wasm
         - title: Customize app initialization
           permalink: /platform-integration/web/initialization
@@ -760,7 +759,7 @@
 - title: Resources
   permalink: /resources
   children:
-    - header: Learning
+#    - header: Learn
     - title: FAQ
       permalink: /resources/faq
     - title: Books
@@ -773,23 +772,23 @@
       permalink: /resources/bootstrap-into-dart
     - title: Get support
       permalink: /resources/support
-    - header: Contributing
-    - title: Create useful bug reports
-      permalink: /resources/bug-reports
-    - title: Contribute to Flutter
-      permalink: https://github.com/flutter/flutter/blob/main/CONTRIBUTING.md
-    - title: Design documents
-      permalink: /resources/design-docs
-
-- title: Reference
-  permalink: /reference
-  expanded: true
-  children:
-    - title: Who is Dash?
-      permalink: /dash
-    - title: Widget index
-      permalink: /reference/widgets
-    - title: API reference
-      permalink: https://api.flutter.dev
-    - title: flutter CLI reference
-      permalink: /reference/flutter-cli
+    - divider
+    - title: Contribute
+      children:
+      - title: Create useful bug reports
+        permalink: /resources/bug-reports
+      - title: Contribute to Flutter
+        permalink: https://github.com/flutter/flutter/blob/main/CONTRIBUTING.md
+      - title: Discover proposed features
+        permalink: /resources/design-docs
+    - title: Reference
+      permalink: /reference
+      children:
+        - title: Who is Dash?
+          permalink: /dash
+        - title: Widget index
+          permalink: /reference/widgets
+        - title: flutter CLI
+          permalink: /reference/flutter-cli
+        - title: API docs
+          permalink: https://api.flutter.dev

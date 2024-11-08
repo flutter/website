@@ -150,7 +150,7 @@ As of {{last-update}},
 You can verify whether the app is actually running with Wasm in two ways:
 
 ```dart
-// Using the environment variable set by compliation (preferred)
+// Using the environment variable set by compilation (preferred)
 const isRunningWithWasm = bool.fromEnvironment('dart.tool.dart2wasm');
 
 // Using differences in number representation to test whether native (Wasm)

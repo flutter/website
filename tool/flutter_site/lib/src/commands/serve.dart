@@ -32,7 +32,12 @@ final class ServeSiteCommand extends Command<int> {
     final verbose = argResults.get<bool>(_verboseFlag, false);
     final process = await Process.start(
       'npx',
-      const ['eleventy', '--serve', '--incremental'],
+      [
+        'eleventy',
+        '--serve',
+        '--incremental',
+        '--port=${Platform.environment['PORT'] ?? 4000}'
+      ],
       environment: {
         'PRODUCTION': 'false',
         if (verbose) 'DEBUG': 'Eleventy*',

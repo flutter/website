@@ -241,7 +241,7 @@ import 'package:your_accessible_app/main.dart';
 void main() {
   testWidgets('Follows a11y guidelines', (tester) async {
     final SemanticsHandle handle = tester.ensureSemantics();
-    await tester.pumpWidget(AccessibleApp());
+    await tester.pumpWidget(const AccessibleApp());
 
     // Checks that tappable nodes have a minimum size of 48 by 48 pixels
     // for Android.

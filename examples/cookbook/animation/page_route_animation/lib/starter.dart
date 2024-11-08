@@ -87,10 +87,12 @@ Route step2() {
   );
 }
 
-// #docregion step3
-var curve = Curves.ease;
-var curveTween = CurveTween(curve: curve);
-// #enddocregion step3
+void createCurves() {
+  // #docregion step3
+  var curve = Curves.ease;
+  var curveTween = CurveTween(curve: curve);
+  // #enddocregion step3
+}
 
 Route step4() {
   return PageRouteBuilder(

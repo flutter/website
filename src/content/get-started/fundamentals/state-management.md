@@ -2,7 +2,7 @@
 title: State management
 description: Learn how to manage state in Flutter.
 prev:
-  title: Layouts
+  title: Layout
   path: /get-started/fundamentals/layout
 next:
   title: Handling user input
