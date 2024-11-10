@@ -443,46 +443,27 @@ attempting to trigger a `Dialog` from within the
 immediately show information to the user,
 but `setState` should never be called from a `build` method.
 
-The following code illustrates a common culprit of this error:
+The following snippet seems to be a common culprit of this error:
 
 <?code-excerpt "lib/set_state_build.dart (problem)"?>
 ```dart
-import 'package:flutter/material.dart';
-
-void main() => runApp(const ShowDialogExampleApp());
-
-class ShowDialogExampleApp extends StatelessWidget {
-  const ShowDialogExampleApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: DialogExample(),
-    );
-  }
-}
-
-class DialogExample extends StatelessWidget {
-  const DialogExample({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    // Don't do this:    
-    showDialog(
+Widget build(BuildContext context) {
+  // Don't do this.
+  showDialog(
       context: context,
-      builder: (BuildContext context) {
+      builder: (context) {
         return const AlertDialog(
           title: Text('Alert Dialog'),
         );
-      },
-    );
-    return Scaffold(
-      appBar: AppBar(title: const Text('This does not work')),
-      body: const Center(
-        child: Text('Does not Work'),
-      ),
-    );
-  }
+      });
+
+  return const Center(
+    child: Column(
+      children: <Widget>[
+        Text('Show Material Dialog'),
+      ],
+    ),
+  );
 }
 ```
 
@@ -496,7 +477,8 @@ framework for every frame, for example, during an animation.
 
 One way to avoid this error is instruct flutter to finish rendering the page
 before calling `showDialog()`. This can be done by using
-addPostFrameCallback() method. The following code illustrates this on the broken example just given:
+addPostFrameCallback() method. 
+The following code illustrates this on the broken example just given:
 
 <?code-excerpt "lib/set_state_build.dart (solution)"?>
 ```dart
