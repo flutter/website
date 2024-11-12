@@ -40,6 +40,14 @@ and open the /build/web directory. Navigate to
 (given the python SimpleHTTPServer example)
 to view the release version of your app.
 
+## Additional build flags
+You may need to deploy a profile or debug build for testing.
+To do this, pass the `--profile` flag or `--debug` flag
+to the `flutter build web` command.
+Profile builds are specialized for performance profiling using Chrome DevTools,
+and debug builds can be used to configure dart2js
+to respect assertions and change the optimization level (using the `-O` flag.)
+
 ## Choosing a build mode and a renderer
 
 Flutter web provides two build modes (default and WebAssembly) and two renderers
