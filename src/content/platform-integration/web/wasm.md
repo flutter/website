@@ -73,7 +73,7 @@ package root, just like `flutter build web`.
 ### Open the app in a compatible web browser
 Even with the `--wasm` flag, Flutter will still compile the application to
 JavaScript. If WasmGC support is not detected at runtime, the JavaScript output
-is used so the application will continue to work across
+is used so the application will continue to work in all major browsers.
 
 You can verify whether the app is actually running with Wasm by checking for 
 the `dart2wasm` environment variable, set during compilation (preferred).
@@ -93,10 +93,10 @@ final isRunningWithWasm = identical(double.nan, double.nan);
 To run a Flutter app that has been compiled to Wasm,
 you need a browser that supports [WasmGC][].
 
-[Chromium and V8][] released stable support for WasmGC in Chromium 119.
-Note that Chrome on iOS uses WebKit, which doesn't yet [support WasmGC][].
+[Chromium and V8][] support WasmGC since version 119.
+Chrome on iOS uses WebKit, which doesn't yet [support WasmGC][].
 Firefox announced stable support for WasmGC in Firefox 120,
-but currently doesn't work due to a [known limitation](#known-limitations).
+but currently doesn't work due to a known limitation (see details below).
 
 [WasmGC]: {{site.github}}/WebAssembly/gc/tree/main/proposals/gc
 [Chromium and V8]: https://chromestatus.com/feature/6062715726462976
