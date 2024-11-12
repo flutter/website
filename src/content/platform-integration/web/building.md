@@ -4,7 +4,7 @@ description: Instructions for creating a Flutter app for the web.
 short-title: Web development
 ---
 
-This page provides an overview of how to configure, run and build a web
+This page provides an overview of how to configure, run, and build a web
 application using Flutter.
 
 ## Requirements
@@ -35,7 +35,7 @@ If you already have a project, run the `flutter create` command in your project 
 $ flutter create . --platforms web
 ```
 
-This will create a `web/` directory containing the web assets used to bootstrap
+This creates a `web/` directory containing the web assets used to bootstrap
 and run your Flutter app. 
 
 ## Run your app
@@ -48,7 +48,7 @@ $ flutter run -d chrome
 
 You can also choose Chrome as a target device in your IDE.
 
-You can also use the `edge` device type on Windows, or use `web-server` to
+If you prefer, you can use the `edge` device type on Windows, or use `web-server` to
 navigate to a local URL in the browser of your choice.
 
 :::warning
