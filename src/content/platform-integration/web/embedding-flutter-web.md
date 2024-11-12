@@ -353,12 +353,4 @@ _flutter.loader.load({
 To learn more about other configuration options,
 check out [Customizing web app initialization][].
 
-:::version-note
-This method of specifying the `hostElement` is superseded by the
-**Embedded mode** described above, **please consider migrating to it**.
-To learn how to configure the `hostElement` in earlier Flutter versions,
-reference [Legacy web app initialization][].
-:::
-
 [Customizing web app initialization]: {{site.docs}}/platform-integration/web/initialization
-[Legacy web app initialization]: {{site.docs}}/platform-integration/web/initialization-legacy
