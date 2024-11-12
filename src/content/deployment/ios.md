@@ -461,8 +461,8 @@ covers releasing your build on TestFlight.
    page of App Store Connect,
    available from the dropdown menu at the top of the page.
 
-For more details, see [Distribute an app using TestFlight]
-[distributionguide_testflight].
+For more details, see
+[Distribute an app using TestFlight][distributionguide_testflight].
 
 ## Release your app to the App Store
 

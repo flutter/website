@@ -579,6 +579,7 @@
       { "source": "/go/slider-v2", "destination": "https://docs.google.com/document/d/1NCuRe-TUp8u6-Yzx_wrXZcqAwv5NP8hEJwUYSxVECwU/edit", "type": 301 },
       { "source": "/go/sliver-flex-and-friends", "destination": "https://docs.google.com/document/d/1W4_5oD5z7JHhUjuQYwS_NJRAv27Ih7IazcMm739O5JU/edit", "type": 301 },
       { "source": "/go/sliver-workshop", "destination": "https://dartpad.dev/workshops.html?webserver=https://dartpad-workshops-io2021.web.app/getting_started_with_slivers", "type": 301 },
+      { "source": "/go/smoothing-discrete-scroll-inputs", "destination": "https://docs.google.com/document/d/136wxl8He3PF2UMOT51lPfeqKE2TWGQuQ1u1b-ZDgErM/edit?usp=sharing", "type": 301 },
       { "source": "/go/state-restoration-design", "destination": "https://docs.google.com/document/d/1KIiq5CdqnSXxQXbZIDy2Ukc-JHFyLak1JR8e2cm3eO4/edit", "type": 301 },
       { "source": "/go/stateful-macro", "destination": "https://docs.google.com/document/d/1TMVFn2jXw705px7bUggk8vTvpLrUjxEG9mzb-cSqZuo/edit?usp=sharing&resourcekey=0-0s5mvWGH3OcW8GN-Rmr36A", "type": 301 },
       { "source": "/go/static-tooling-in-devtools", "destination": "https://docs.google.com/document/d/1i6ISzzSKKDiiVftTnkCCvdgXEjK2eqYlPjCOKTjnvx8/edit?resourcekey=0-uyAiZEjFplyibsAkDAqKJw#", "type": 301 },
