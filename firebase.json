@@ -139,6 +139,7 @@
       { "source": "/platform-integration/ios/splash-screen", "destination": "/platform-integration/ios/launch-screen", "type": 301 },
       { "source": "/platform-integration/platform-views", "destination": "/platform-integration/android/platform-views", "type": 301 },
       { "source": "/platform-integration/web-images", "destination": "/platform-integration/web/web-images", "type": 301 },
+      { "source": "/platform-integration/web/initialization-legacy", "destination": "/platform-integration/web/initialization", "type": 301 },
       { "source": "/platform-integration/web/bootstrapping", "destination": "/platform-integration/web/initialization", "type": 301 },
       { "source": "/platform-integration/windows/run-loop-migration", "destination": "/release/breaking-changes/windows-run-loop", "type": 301 },
       { "source": "/platform-integration/windows/version-migration", "destination": "/release/breaking-changes/windows-version-information", "type": 301 },
