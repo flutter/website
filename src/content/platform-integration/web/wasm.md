@@ -54,7 +54,7 @@ $ flutter create . --platforms web
 ### Run or build your app
 
 To run the app with Wasm for development or testing,
-use the `--wasm` flag with the `flutter run command.
+use the `--wasm` flag with the `flutter run` command.
 
 ```console
 $ flutter run -d chrome --wasm
