@@ -21,48 +21,31 @@ of your app and covers the following topics:
 
 ## Building the app for release
 
-Build the app for deployment using the `flutter build web` command. This
+Build the app for deployment using the `flutter build web` command. 
+
+```console
+flutter build web
+```
+
+This
 generates the app, including the assets, and places the files into the
 `/build/web` directory of the project.
 
-The release build of a simple app has the following structure:
-
-```plaintext
-/build/web
-  assets
-    AssetManifest.json
-    FontManifest.json
-    NOTICES
-    fonts
-      MaterialIcons-Regular.ttf
-      <other font files>
-    <image files>
-    packages
-      cupertino_icons
-        assets
-          CupertinoIcons.ttf
-    shaders
-      ink_sparkle.frag
-  canvaskit
-    canvaskit.js
-    canvaskit.wasm
-    <other files>
-  favicon.png
-  flutter.js
-  flutter_service_worker.js
-  index.html
-  main.dart.js
-  manifest.json
-  version.json
-```
-
-Launch a web server (for example,
+To validate the release build of your app,
+launch a web server (for example,
 `python -m http.server 8000`,
 or by using the [dhttpd][] package),
 and open the /build/web directory. Navigate to
 `localhost:8000` in your browser
 (given the python SimpleHTTPServer example)
 to view the release version of your app.
+
+## Choosing a build mode and a renderer
+
+Flutter web provides two build modes (default and WebAssembly) and two renderers
+(`canvaskit` and `skwasm`).
+
+For more information, see [Web renderers][].
 
 ## Deploying to the web
 
@@ -135,13 +118,6 @@ This limits what you can do with images compared to mobile and desktop platforms
 
 For more information, see [Displaying images on the web][].
 
-## Choosing a build mode and a renderer
-
-Flutter web provides two build modes (default and WebAssembly) and two renderers
-(`canvaskit` and `skwasm`).
-
-For more information, see [Web renderers][].
-
 ## Minification
 
 To improve app start-up the compiler reduces the size of the compiled code by
@@ -160,17 +136,6 @@ shorter strings (e.g. by renaming `AlignmentGeometryTween` to something like
 See [Embedding Flutter web][].
 
 [Embedding Flutter web]: /platform-integration/web/embedding-flutter-web
-
-## PWA Support
-
-As of release 1.20, the Flutter template for web apps includes support
-for the core features needed for an installable, offline-capable PWA app.
-Flutter-based PWAs can be installed in the same way as any other web-based
-PWA; the settings signaling that your Flutter app is a PWA are provided by
-`manifest.json`, which is produced by `flutter create` in the `web` directory.
-
-PWA support remains a work in progress. Please [give us feedback][] if you see
-something that doesn't work as expected.
 
 [dhttpd]: {{site.pub}}/packages/dhttpd
 [Displaying images on the web]: /platform-integration/web/web-images
