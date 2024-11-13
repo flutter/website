@@ -894,9 +894,11 @@ And replace with the following:
 You should now be able to run the application on Windows.
 If your device doesn't have a battery,
 it displays 'Battery level not available'.
-Note: To ensure the changes take effect, the project should be recompiled 
-with Visual Studio.Otherwise, you may encounter an error saying: Failed to get 
-battery level: Memory leak .
+:::note
+To ensure that the changes take effect, recompile the project.
+Otherwise, you might encounter the following error: **Failed to get 
+battery level: Memory leak.**
+:::
 ### Step 6: Add a macOS platform-specific implementation
 
 Start by opening the macOS host portion of your Flutter app in Xcode:
