@@ -26,7 +26,7 @@ This technique is known as Optimistic State, Optimistic UI or
 Optimistic User Experience. 
 In this recipe, 
 you will implement an application feature using Optimistic State and 
-following the Flutter architecture guidelines.
+following the [Flutter architecture guidelines][].
 
 ## Example feature: a subscribe button
 
@@ -596,4 +596,5 @@ class SubscriptionRepository {
 }
 ```
 
-[Command pattern]:app-architecture/cookbook/command
+[Flutter Architecture guidelines]:/app-architecture
+[Command pattern]:/app-architecture/cookbook/command
