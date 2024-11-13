@@ -440,6 +440,8 @@ while also displaying a Snackbar with an error message.
 
 <?code-excerpt "lib/main.dart"?>
 ```dartpad title="Flutter Optimistic State example in DartPad" run="true"
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 
 void main() {
