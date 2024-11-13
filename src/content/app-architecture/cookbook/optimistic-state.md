@@ -6,6 +6,8 @@ js:
     url: /assets/js/inject_dartpad.js
 ---
 
+<?code-excerpt path-base="app-architecture/optimistic-state"?>
+
 When building user experiences, 
 the perception of performance is sometimes just as important as 
 the actual performance of the code. 
@@ -66,6 +68,7 @@ create these Dart classes in a Flutter project:
 - A class named `SubscribeButtonViewModel` extending `ChangeNotifier`
 - A class named `SubscriptionRepository`
 
+<?code-excerpt "lib/starter.dart (Starter)"?>
 ```dart
 class SubscribeButton extends StatefulWidget {
   const SubscribeButton({
@@ -79,7 +82,7 @@ class SubscribeButton extends StatefulWidget {
 class _SubscribeButtonState extends State<SubscribeButton> {
   @override
   Widget build(BuildContext context) {
-    return Placeholder();
+    return const Placeholder();
   }
 }
 
@@ -92,7 +95,7 @@ class SubscriptionRepository {
 }
 ```
 
-The `SubscribeButto`n widget and the `SubscribeButtonViewModel` represent 
+The `SubscribeButton` widget and the `SubscribeButtonViewModel` represent 
 the presentation layer of this solution. 
 The widget is going to display a button 
 that will show the text “Subscribe” or “Subscribed” 
@@ -108,6 +111,7 @@ The view model will call this method when performing the subscription action.
 Next, connect them together by adding the `SubscriptionRepository` 
 to the `SubscribeButtonViewModel`:
 
+<?code-excerpt "lib/main.dart (ViewModelStart)" replace="/y;$/y;\n}/g"?>
 ```dart
 class SubscribeButtonViewModel extends ChangeNotifier {
   SubscribeButtonViewModel({

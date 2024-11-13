@@ -98,12 +98,14 @@ class SubscribeButtonStyle {
 
 /// Subscribe button View Model.
 /// Handles the subscribe action and exposes the state to the subscription.
+// #docregion ViewModelStart
 class SubscribeButtonViewModel extends ChangeNotifier {
   SubscribeButtonViewModel({
     required this.subscriptionRepository,
   });
 
   final SubscriptionRepository subscriptionRepository;
+// #enddocregion ViewModelStart
 
   // Whether the user is subscribed
   bool subscribed = false;
