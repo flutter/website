@@ -88,13 +88,9 @@ class _SubscribeButtonState extends State<SubscribeButton> {
   }
 }
 
-class SubscribeButtonViewModel extends ChangeNotifier {
+class SubscribeButtonViewModel extends ChangeNotifier {}
 
-}
-
-class SubscriptionRepository {
-
-}
+class SubscriptionRepository {}
 ```
 
 The `SubscribeButton` widget and the `SubscribeButtonViewModel` represent 
