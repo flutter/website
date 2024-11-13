@@ -13,11 +13,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: Center(
+// #docregion SubscribeButton
           child: SubscribeButton(
             viewModel: SubscribeButtonViewModel(
               subscriptionRepository: SubscriptionRepository(),
             ),
           ),
+// #enddocregion SubscribeButton
         ),
       ),
     );
@@ -26,6 +28,7 @@ class MyApp extends StatelessWidget {
 
 /// A button that simulates a subscription action.
 /// For example, subscribing to a newsletter or a streaming channel.
+// #docregion Widget
 class SubscribeButton extends StatefulWidget {
   const SubscribeButton({
     super.key,
@@ -38,8 +41,10 @@ class SubscribeButton extends StatefulWidget {
   @override
   State<SubscribeButton> createState() => _SubscribeButtonState();
 }
+// #enddocregion Widget
 
 class _SubscribeButtonState extends State<SubscribeButton> {
+// #docregion listener1
   @override
   void initState() {
     super.initState();
@@ -51,7 +56,9 @@ class _SubscribeButtonState extends State<SubscribeButton> {
     widget.viewModel.removeListener(_onViewModelChange);
     super.dispose();
   }
+// #enddocregion listener1
 
+// #docregion build
   @override
   Widget build(BuildContext context) {
     return ListenableBuilder(
@@ -69,7 +76,9 @@ class _SubscribeButtonState extends State<SubscribeButton> {
       },
     );
   }
+// #enddocregion build
 
+// #docregion listener2
   /// Listen to ViewModel changes.
   void _onViewModelChange() {
     // If the subscription action has failed
@@ -84,8 +93,10 @@ class _SubscribeButtonState extends State<SubscribeButton> {
       );
     }
   }
+// #enddocregion listener2
 }
 
+// #docregion style
 class SubscribeButtonStyle {
   static const unsubscribed = ButtonStyle(
     backgroundColor: WidgetStatePropertyAll(Colors.red),
@@ -95,7 +106,9 @@ class SubscribeButtonStyle {
     backgroundColor: WidgetStatePropertyAll(Colors.green),
   );
 }
+// #enddocregion style
 
+// #docregion ViewModelFull
 /// Subscribe button View Model.
 /// Handles the subscribe action and exposes the state to the subscription.
 // #docregion ViewModelStart
@@ -107,12 +120,15 @@ class SubscribeButtonViewModel extends ChangeNotifier {
   final SubscriptionRepository subscriptionRepository;
 // #enddocregion ViewModelStart
 
+// #docregion States
   // Whether the user is subscribed
   bool subscribed = false;
 
   // Whether the subscription action has failed
   bool error = false;
+// #enddocregion States
 
+// #docregion subscribe
   // Subscription action
   Future<void> subscribe() async {
     // Ignore taps when subscribed
@@ -138,9 +154,12 @@ class SubscribeButtonViewModel extends ChangeNotifier {
       notifyListeners();
     }
   }
+// #enddocregion subscribe
 }
+// #enddocregion ViewModelFull
 
 /// Repository of subscriptions.
+// #docregion SubscriptionRepository
 class SubscriptionRepository {
   /// Simulates a network request and then fails.
   Future<void> subscribe() async {
@@ -150,3 +169,4 @@ class SubscriptionRepository {
     throw Exception('Failed to subscribe');
   }
 }
+// #enddocregion SubscriptionRepository
