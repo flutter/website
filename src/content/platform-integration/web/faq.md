@@ -134,8 +134,9 @@ After you deploy your app, users may see a
 cached version of your app (cached by the browser or CDN)
 for the duration defined by your cache headers.
 This can lead to users using a version of your app that
-are incompatible with changes that have been deployed backend services.
+are incompatible with changes that have been deployed to backend services.
 
+### How do I bust the web cache after each deployment?
 If you wish to defeat these cache headers after each deployment, a common
 technique is to append a build ID of some sort to the links of your static
 resources, or update the filenames themselves.
@@ -152,11 +153,9 @@ resources, or update the filenames themselves.
 Flutter does not currently support appending build IDs to resources
 automatically.
 
-If your service worker is not refreshing,
-configure your CDN and browser cache by setting
-Cache-Control header to a small value such as 0 or 60 seconds.
+### How do I configure my cache headers?
 
-For example, if you are using Firebase Hosting,
+If you are using Firebase Hosting,
 The shared cache (CDN) is invalidated when you deploy a new version of your
 app. But you may choose to configure your cache headers as follows,
 so that the browser cache doesn't cache application scripts,
@@ -204,6 +203,10 @@ flutter build web --pwa-strategy=none
 If you would like to continue to use a service worker, you can
 [build your own][using-service-workers] or try third-party tools
 such as [Workbox][workbox].
+
+If your service worker is not refreshing,
+configure your CDN and browser cache by setting
+Cache-Control header to a small value such as 0 or 60 seconds.
 
 [building a web app with Flutter]: /platform-integration/web/building
 [Creating responsive apps]: /ui/adaptive-responsive
