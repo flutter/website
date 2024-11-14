@@ -58,10 +58,10 @@ There are two ways to migrate away from importing `package:flutter_gen`:
     output-dir: lib/src/generated/i18n
     ```
 
-2. Pass `--no-implicit-pubspec-resolution` to invocations of the `flutter` tool:
+2. Enable the `explicit-package-dependencies` feature flag:
 
     ```sh
-    flutter run --no-implicit-pubspec-resolution
+    flutter config explicit-package-dependencies
     ```
 
 ## Timeline
