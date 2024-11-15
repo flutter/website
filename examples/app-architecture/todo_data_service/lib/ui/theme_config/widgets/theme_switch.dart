@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../viewmodel/theme_switch_viewmodel.dart';
 
+// #docregion ThemeSwitch
 class ThemeSwitch extends StatelessWidget {
   const ThemeSwitch({
     super.key,
@@ -32,3 +33,4 @@ class ThemeSwitch extends StatelessWidget {
     );
   }
 }
+// #enddocregion ThemeSwitch

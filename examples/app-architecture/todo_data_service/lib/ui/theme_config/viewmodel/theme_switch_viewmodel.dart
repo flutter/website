@@ -6,6 +6,7 @@ import '../../../data/repositories/theme_repository.dart';
 import '../../../utils/command.dart';
 import '../../../utils/result.dart';
 
+// #docregion ThemeSwitchViewModel
 class ThemeSwitchViewModel extends ChangeNotifier {
   ThemeSwitchViewModel(this._themeRepository) {
     load = Command0(_load)..execute();
@@ -50,3 +51,4 @@ class ThemeSwitchViewModel extends ChangeNotifier {
     }
   }
 }
+// #enddocregion ThemeSwitchViewModel

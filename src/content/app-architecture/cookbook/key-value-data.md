@@ -6,7 +6,7 @@ js:
     url: /assets/js/inject_dartpad.js
 ---
 
-<?code-excerpt path-base="app-architecture/key-value-data"?>
+<?code-excerpt path-base="app-architecture/todo_data_service"?>
 
 Most Flutter applications, no matter how small or big they are,
 require storing data on the user’s device at some point, such as API keys, 
@@ -57,7 +57,7 @@ This functionality follows the recommended Flutter architecture design pattern, 
 
 The ThemeSwitch is a StatelessWidget that contains a Switch widget. The state of the switch is represented by the public field isDarkMode in the ThemeSwitchViewModel. When the user taps the switch, the code executes the Command toggle in the view model.
 
-<?code-excerpt "lib/main.dart (ThemeSwitch)"?>
+<?code-excerpt "lib/ui/theme_config/widgets/theme_switch.dart (ThemeSwitch)"?>
 ```dart
 class ThemeSwitch extends StatelessWidget {
   const ThemeSwitch({
@@ -97,8 +97,7 @@ The _load method implements the load Command. This method calls ThemeRepository.
 
 The _toggle method implements the toggle Command. This method calls ThemeRepository.setDarkMode to store the new dark mode setting. As well, it changes the local state of _isDarkMode then calls notifyListeners to update the UI.
 
-
-<?code-excerpt "lib/main.dart (ThemeSwitchViewModel)"?>
+<?code-excerpt "lib/ui/theme_config/viewmodel/theme_switch_viewmodel.dart (ThemeSwitchViewModel)"?>
 ```dart
 class ThemeSwitchViewModel extends ChangeNotifier {
   ThemeSwitchViewModel(this._themeRepository) {
