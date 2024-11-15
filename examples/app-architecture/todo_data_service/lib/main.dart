@@ -14,6 +14,7 @@ import 'ui/theme_config/widgets/theme_switch.dart';
 import 'ui/todo_list/viewmodel/todo_list_viewmodel.dart';
 import 'ui/todo_list/widgets/todo_list_screen.dart';
 
+// #docregion Main
 void main() {
   late DatabaseService databaseService;
   if (kIsWeb) {
@@ -42,6 +43,7 @@ void main() {
     ),
   );
 }
+// #enddocregion Main
 
 class MainApp extends StatefulWidget {
   const MainApp({

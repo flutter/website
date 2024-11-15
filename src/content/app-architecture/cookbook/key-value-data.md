@@ -26,10 +26,6 @@ you’ll likely want to use SQL.
 In that case, take a look at the cookbook recipe 
 that follows this one called [Persistent storage architecture: SQL][]. 
 
-[Flutter architecture design]: /app-architecture
-[Store key-value data on disk]: /cookbook/persistence/key-value
-[Persistent Storage Architecture: SQL]: /app-architecture/cookbook/sql
-
 ## Example application: App with theme selection
 
 The example application consists of a single screen with an app bar at the top,
@@ -44,6 +40,11 @@ using a key-value data storage service.
 The setting is restored when the user starts the application again.
 
 <picture>
+
+:::note
+The full, runnable source-code for this example is
+available in [`/examples/app-architecture/todo_data_service/`][].
+:::
 
 ## Storing theme selection key-value data
 
@@ -304,3 +305,9 @@ ListenableBuilder(
   child: //...
 )
 ```
+
+
+[Flutter architecture design]: /app-architecture
+[Store key-value data on disk]: /cookbook/persistence/key-value
+[Persistent Storage Architecture: SQL]: /app-architecture/cookbook/sql
+[`/examples/app-architecture/todo_data_service/`]: {{site.repo.flutter}}/tree/main/examples/app-architecture/todo_data_service/
