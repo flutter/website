@@ -48,14 +48,21 @@ available in [`/examples/app-architecture/todo_data_service/`][].
 
 ## Storing theme selection key-value data
 
-This functionality follows the recommended Flutter architecture design pattern, with a presentation and a data layer.
+This functionality follows the recommended Flutter architecture design pattern, 
+with a presentation and a data layer.
 
-- The presentation layer contains the ThemeSwitch widget and the ThemeSwitchViewModel.
-- The data layer contains the ThemeRepository and the SharedPreferencesService.
+- The presentation layer contains the `ThemeSwitch` widget 
+and the `ThemeSwitchViewModel`.
+- The data layer contains the `ThemeRepository` 
+and the `SharedPreferencesService`.
 
 ### Theme selection presentation layer
 
-The ThemeSwitch is a StatelessWidget that contains a Switch widget. The state of the switch is represented by the public field isDarkMode in the ThemeSwitchViewModel. When the user taps the switch, the code executes the Command toggle in the view model.
+The `ThemeSwitch` is a `StatelessWidget` that contains a `Switch` widget. 
+The state of the switch is represented 
+by the public field `isDarkMode` in the `ThemeSwitchViewModel`. 
+When the user taps the switch, 
+the code executes the `Command` `toggle` in the view model.
 
 <?code-excerpt "lib/ui/theme_config/widgets/theme_switch.dart (ThemeSwitch)"?>
 ```dart
@@ -87,7 +94,7 @@ class ThemeSwitch extends StatelessWidget {
 }
 ```
 
-The ThemeSwitchViewModel implements a view model as described in the MVVM pattern. This view model contains the state of the ThemeSwitch widget, represented by the boolean variable _isDarkMode.
+The `ThemeSwitchViewModel` implements a view model as described in the MVVM pattern. This view model contains the state of the ThemeSwitch widget, represented by the boolean variable _isDarkMode.
 
 The view model uses the ThemeRepository to store and load the dark mode setting.
 
