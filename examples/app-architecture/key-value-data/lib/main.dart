@@ -31,17 +31,17 @@ class MainApp extends StatefulWidget {
 }
 
 class _MainAppState extends State<MainApp> {
-  late MainAppViewModel _viewModel;
+  late MainAppViewModel _mainAppViewModel;
 
   @override
   void initState() {
     super.initState();
-    _viewModel = MainAppViewModel(widget.themeRepository);
+    _mainAppViewModel = MainAppViewModel(widget.themeRepository);
   }
 
   @override
   void dispose() {
-    _viewModel.dispose();
+    _mainAppViewModel.dispose();
     super.dispose();
   }
 
@@ -49,11 +49,10 @@ class _MainAppState extends State<MainApp> {
   Widget build(BuildContext context) {
     // #docregion ListenableBuilder
     return ListenableBuilder(
-      listenable: _viewModel,
+      listenable: _mainAppViewModel,
       builder: (context, child) {
         return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: _viewModel.isDarkMode ? ThemeData.dark() : ThemeData.light(),
+          theme: _mainAppViewModel.isDarkMode ? ThemeData.dark() : ThemeData.light(),
           home: child,
         );
       },

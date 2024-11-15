@@ -275,11 +275,10 @@ class MainAppViewModel extends ChangeNotifier {
 <?code-excerpt "lib/main.dart (ListenableBuilder)" replace="/^return //g;/},$/},\n  child: \/\/...\n)/g"?>
 ```dart
 ListenableBuilder(
-  listenable: _viewModel,
+  listenable: _mainAppViewModel,
   builder: (context, child) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: _viewModel.isDarkMode ? ThemeData.dark() : ThemeData.light(),
+      theme: _mainAppViewModel.isDarkMode ? ThemeData.dark() : ThemeData.light(),
       home: child,
     );
   },
