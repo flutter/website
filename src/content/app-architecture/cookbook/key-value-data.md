@@ -1,5 +1,5 @@
 ---
-title: Persistent storage architecture: Key-value data
+title: "Persistent storage architecture: Key-value data"
 description: Create a service to store key-value data
 js:
   - defer: true
@@ -8,23 +8,42 @@ js:
 
 <?code-excerpt path-base="app-architecture/key-value-data"?>
 
-Most Flutter applications, no matter how small or big they are, require storing data on the user’s device at some point, such as API keys, user preferences or data that should be available offline.
+Most Flutter applications, no matter how small or big they are,
+require storing data on the user’s device at some point, such as API keys, 
+user preferences or data that should be available offline.
 
-In this recipe, you will learn how to integrate persistent storage for key-value data in a Flutter application that uses the recommended Flutter architecture design. If you aren’t familiar with storing data to disk at all, you can read the Store key-value data on disk recipe. 
+In this recipe, you will learn how to integrate persistent storage 
+for key-value data in a Flutter application 
+that uses the recommended [Flutter architecture design][]. 
+If you aren’t familiar with storing data to disk at all, 
+you can read the [Store key-value data on disk][] recipe. 
 
-Key-value stores are often used for saving simple data, such as app configuration, and in this recipe you’ll use it to save Dark Mode preferences.  If you want to learn how to store complex data on device, you’ll likely want to use SQL. In that case, take a look at the cookbook recipe that follows this one called Persistent Storage Architecture: SQL. 
+Key-value stores are often used for saving simple data, 
+such as app configuration, 
+and in this recipe you’ll use it to save Dark Mode preferences. 
+If you want to learn how to store complex data on device, 
+you’ll likely want to use SQL. 
+In that case, take a look at the cookbook recipe 
+that follows this one called [Persistent storage architecture: SQL][]. 
+
+[Flutter architecture design]: /app-architecture
+[Store key-value data on disk]: /cookbook/persistence/key-value
+[Persistent Storage Architecture: SQL]: /app-architecture/cookbook/sql
 
 ## Example application: App with theme selection
 
-The example application consists of a single screen with an app bar at the top, a list of items, and a text field input at the bottom.
+The example application consists of a single screen with an app bar at the top,
+a list of items, and a text field input at the bottom.
 
 <picture>
 
-In the AppBar, a Switch allows users to change between dark and light theme modes. This setting is applied immediately and it’s stored in the device using a Key-value data storage service. The setting is restored when the user starts the application again.
+In the `AppBar`, 
+a `Switch` allows users to change between dark and light theme modes. 
+This setting is applied immediately and it’s stored in the device 
+using a key-value data storage service. 
+The setting is restored when the user starts the application again.
 
 <picture>
-
-The TodoListScreen widget and the rest of the application code is not used for this tutorial. You will learn about it in the Persistent Storage Architecture: SQL cookbook recipe.
 
 ## Storing theme selection key-value data
 
