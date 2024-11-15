@@ -6,6 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'command.dart';
 import 'result.dart';
 
+// #docregion Main
 void main() {
   runApp(
     MainApp(
@@ -15,6 +16,7 @@ void main() {
     ),
   );
 }
+// #enddocregion Main
 
 class MainApp extends StatefulWidget {
   const MainApp({
@@ -45,6 +47,7 @@ class _MainAppState extends State<MainApp> {
 
   @override
   Widget build(BuildContext context) {
+    // #docregion ListenableBuilder
     return ListenableBuilder(
       listenable: _viewModel,
       builder: (context, child) {
@@ -54,14 +57,17 @@ class _MainAppState extends State<MainApp> {
           home: child,
         );
       },
+      // #enddocregion ListenableBuilder
       child: Scaffold(
         appBar: AppBar(
           actions: [
+            // #docregion AddThemeSwitch
             ThemeSwitch(
               viewmodel: ThemeSwitchViewModel(
                 widget.themeRepository,
               ),
             )
+            // #enddocregion AddThemeSwitch
           ],
           title: const Text('ToDo List'),
         ),
@@ -71,6 +77,7 @@ class _MainAppState extends State<MainApp> {
   }
 }
 
+// #docregion ThemeSwitch
 class ThemeSwitch extends StatelessWidget {
   const ThemeSwitch({
     super.key,
@@ -97,7 +104,9 @@ class ThemeSwitch extends StatelessWidget {
     );
   }
 }
+// #enddocregion ThemeSwitch
 
+// #docregion ThemeSwitchViewModel
 class ThemeSwitchViewModel extends ChangeNotifier {
   ThemeSwitchViewModel(this._themeRepository) {
     load = Command0(_load)..execute();
@@ -142,7 +151,9 @@ class ThemeSwitchViewModel extends ChangeNotifier {
     }
   }
 }
+// #enddocregion ThemeSwitchViewModel
 
+// #docregion ThemeRepository
 class ThemeRepository {
   ThemeRepository(
     this._service,
@@ -177,7 +188,9 @@ class ThemeRepository {
   /// ViewModels should call [isDarkMode] to get the current theme setting.
   Stream<bool> observeDarkMode() => _darkModeController.stream;
 }
+// #enddocregion ThemeRepository
 
+// #docregion SharedPreferencesService
 class SharedPreferencesService {
   static const String _kDartMode = 'darkMode';
 
@@ -191,7 +204,9 @@ class SharedPreferencesService {
     return prefs.getBool(_kDartMode) ?? false;
   }
 }
+// #enddocregion SharedPreferencesService
 
+// #docregion MainAppViewModel
 /// Exposes the current theme setting and listens for changes.
 class MainAppViewModel extends ChangeNotifier {
   MainAppViewModel(
@@ -230,4 +245,4 @@ class MainAppViewModel extends ChangeNotifier {
     super.dispose();
   }
 }
-
+// #enddocregion MainAppViewModel
