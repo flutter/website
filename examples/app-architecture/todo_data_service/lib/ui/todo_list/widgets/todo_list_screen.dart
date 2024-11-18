@@ -45,10 +45,12 @@ class _TodoListScreenState extends State<TodoListScreen> {
                   final todo = widget.viewModel.todos[index];
                   return ListTile(
                     title: Text(todo.task),
+                    // #docregion Delete
                     trailing: IconButton(
                       icon: const Icon(Icons.delete),
                       onPressed: () => widget.viewModel.delete.execute(todo.id),
                     ),
+                    // #enddocregion Delete
                   );
                 },
               );
@@ -70,12 +72,14 @@ class _TodoListScreenState extends State<TodoListScreen> {
                     ),
                   ),
                 ),
+                // #docregion FilledButton
                 FilledButton.icon(
                   onPressed: () =>
                       widget.viewModel.add.execute(_controller.text),
                   label: const Text('Add'),
                   icon: const Icon(Icons.add),
                 ),
+                // #enddocregion FilledButton
               ],
             ),
           ),
@@ -84,6 +88,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
     );
   }
 
+// #docregion Add
   void _onAdd() {
     // Clear the text field when the add command completes.
     if (widget.viewModel.add.completed) {
@@ -91,4 +96,5 @@ class _TodoListScreenState extends State<TodoListScreen> {
       _controller.clear();
     }
   }
+// #enddocregion Add
 }

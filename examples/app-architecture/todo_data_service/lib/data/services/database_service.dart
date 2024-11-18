@@ -11,14 +11,17 @@ class DatabaseService {
 
   final DatabaseFactory databaseFactory;
 
+// #docregion Table
   static const _kTableTodo = 'todo';
   static const _kColumnId = '_id';
   static const _kColumnTask = 'task';
+// #enddocregion Table
 
   Database? _database;
 
   bool isOpen() => _database != null;
 
+// #docregion Open
   Future<void> open() async {
     _database = await databaseFactory.openDatabase(
       join(await databaseFactory.getDatabasesPath(), 'app_database.db'),
@@ -32,7 +35,9 @@ class DatabaseService {
       ),
     );
   }
+// #enddocregion Open
 
+// #docregion Insert
   Future<Result<Todo>> insert(String task) async {
     try {
       final id = await _database!.insert(_kTableTodo, {
@@ -43,7 +48,9 @@ class DatabaseService {
       return Result.error(e);
     }
   }
+// #enddocregion Insert
 
+// #docregion GetAll
   Future<Result<List<Todo>>> getAll() async {
     try {
       final entries = await _database!.query(
@@ -63,7 +70,9 @@ class DatabaseService {
       return Result.error(e);
     }
   }
+// #enddocregion GetAll
 
+// #docregion Delete
   Future<Result<void>> delete(int id) async {
     try {
       final rowsDeleted = await _database!
@@ -76,6 +85,7 @@ class DatabaseService {
       return Result.error(e);
     }
   }
+// #enddocregion Delete
 
   Future close() async {
     await _database?.close();

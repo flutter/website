@@ -15,6 +15,7 @@ import 'ui/todo_list/viewmodel/todo_list_viewmodel.dart';
 import 'ui/todo_list/widgets/todo_list_screen.dart';
 
 // #docregion MainTheme
+// #docregion MainTodo
 void main() {
   // #enddocregion MainTheme
   late DatabaseService databaseService;
@@ -36,10 +37,12 @@ void main() {
 // #docregion MainTheme
   runApp(
     MainApp(
+// #enddocregion MainTodo
       themeRepository: ThemeRepository(
         SharedPreferencesService(),
       ),
 // #enddocregion MainTheme
+// #docregion MainTodo
       todoRepository: TodoRepository(
         database: databaseService,
       ),
@@ -47,6 +50,7 @@ void main() {
     ),
   );
 }
+// #enddocregion MainTodo
 // #enddocregion MainTheme
 
 class MainApp extends StatefulWidget {
@@ -103,11 +107,13 @@ class _MainAppState extends State<MainApp> {
           ],
           title: const Text('ToDo List'),
         ),
+// #docregion TodoListScreen
         body: TodoListScreen(
           viewModel: TodoListViewModel(
             todoRepository: widget.todoRepository,
           ),
         ),
+// #enddocregion TodoListScreen
       ),
     );
   }

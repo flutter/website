@@ -2,6 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'todo.freezed.dart';
 
+// #docregion Todo
 @freezed
 class Todo with _$Todo {
   const factory Todo({
@@ -12,3 +13,4 @@ class Todo with _$Todo {
     required String task,
   }) = _Todo;
 }
+// #enddocregion Todo
