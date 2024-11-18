@@ -832,7 +832,7 @@ to all packages:
 When you publish a package,
 API documentation is automatically generated and
 published to pub.dev/documentation.
-For example, see the docs for [`device_info`][].
+For example, see the docs for [`device_info_plus`][].
 
 If you wish to generate API documentation locally on
 your development machine, use the following commands:
@@ -1061,7 +1061,7 @@ PENDING
 
 [CocoaPods Documentation]: https://guides.cocoapods.org/syntax/podspec.html
 [Dart library package]: {{site.dart-site}}/guides/libraries/create-library-packages
-[`device_info`]: {{site.pub-api}}/device_info/latest
+[`device_info_plus`]: {{site.pub-api}}/device_info_plus
 [Effective Dart Documentation]: {{site.dart-site}}/guides/language/effective-dart/documentation
 [federated plugins]: #federated-plugins
 [ffigen docs]: {{site.pub-pkg}}/ffigen/install
