@@ -1048,12 +1048,6 @@
     - 'Cupertino'
   subcategories: []
   link: https://api.flutter.dev/flutter/cupertino/CupertinoTheme-class.html
-- name: CupertinoThemeData
-  description: Styling specifications for a CupertinoTheme.
-  categories:
-    - 'Cupertino'
-  subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoThemeData-class.html
 - name: CupertinoThumbPainter
   description: Paints an iOS-style slider thumb or switch thumb.
   categories:
