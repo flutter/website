@@ -105,15 +105,8 @@ The web renderer can't be changed after calling the `load` method. Therefore,
 any decisions about which renderer to use, must be made prior to calling
 `_flutter.loader.load`.
 
-:::version-note
-The method of specifying the web renderer was changed in Flutter 3.22.
-To learn how to configure the renderer in earlier Flutter versions,
-check out [Legacy web app initialization][web-init-legacy].
-:::
-
 [custom-bootstrap]: /platform-integration/web/initialization#custom-bootstrap-js
 [customizing-web-init]: /platform-integration/web/initialization
-[web-init-legacy]: /platform-integration/web/initialization-legacy
 
 ## Choosing which build mode to use
 

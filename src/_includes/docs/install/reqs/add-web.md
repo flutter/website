@@ -1,10 +1,8 @@
+Download and install [Google Chrome][] to run and debug Flutter web apps.
 
-1. Allocate a minimum of 1 GB of storage for Google Chrome.
-   Consider allocating 2 GB of storage for an optimal configuration.
-
-1. Download and install the {{include.devos}} version of [Google Chrome][]
-   to debug JavaScript code for web apps.
-
-{% if include.devos == 'Linux' %}{% render docs/install/accordions/install-chrome-from-cli.md %}{% endif %}
+Alternatively, you can install [Microsoft Edge][] on Windows, or use a different
+web browser by using the `flutter run -d web-server` command and navigating to
+the specified URL; however, debugging is in this mode might be limited.
 
 [Google Chrome]: https://www.google.com/chrome/dr/download/
+[Microsoft Edge]: https://www.microsoft.com/en-us/edge
