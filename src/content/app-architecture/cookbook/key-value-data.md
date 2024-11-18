@@ -94,15 +94,28 @@ class ThemeSwitch extends StatelessWidget {
 }
 ```
 
-The `ThemeSwitchViewModel` implements a view model as described in the MVVM pattern. This view model contains the state of the ThemeSwitch widget, represented by the boolean variable _isDarkMode.
+The `ThemeSwitchViewModel` implements a view model
+as described in the MVVM pattern. 
+This view model contains the state of the `ThemeSwitch` widget,
+represented by the boolean variable `_isDarkMode`.
 
-The view model uses the ThemeRepository to store and load the dark mode setting.
+The view model uses the `ThemeRepository`
+to store and load the dark mode setting.
 
-It contains two different Command actions: load, which loads the dark mode setting from the repository, and toggle, which switches the state between dark mode and light mode. It exposes the state through the isDarkMode getter.
+It contains two different Command actions: 
+`load`, which loads the dark mode setting from the repository,
+and `toggle`, which switches the state between dark mode and light mode. 
+It exposes the state through the `isDarkMode` getter.
 
-The _load method implements the load Command. This method calls ThemeRepository.isDarkMode to obtain the stored setting and calls notifyListeners to refresh the UI.
+The `_load` method implements the `load` Command. 
+This method calls `ThemeRepository.isDarkMode` 
+to obtain the stored setting and calls `notifyListeners()` to refresh the UI.
 
-The _toggle method implements the toggle Command. This method calls ThemeRepository.setDarkMode to store the new dark mode setting. As well, it changes the local state of _isDarkMode then calls notifyListeners to update the UI.
+The `_toggle` method implements the `toggle` Command. 
+This method calls `ThemeRepository.setDarkMode` 
+to store the new dark mode setting. 
+As well, it changes the local state of `_isDarkMode`
+then calls `notifyListeners()` to update the UI.
 
 <?code-excerpt "lib/ui/theme_config/viewmodel/theme_switch_viewmodel.dart (ThemeSwitchViewModel)"?>
 ```dart
@@ -154,15 +167,27 @@ class ThemeSwitchViewModel extends ChangeNotifier {
 
 ### Theme selection data layer
 
-Following the architecture guidelines, the data layer is split into two parts: the ThemeRepository and the SharedPreferencesService.
+Following the architecture guidelines, 
+the data layer is split into two parts: 
+the `ThemeRepository` and the `SharedPreferencesService`.
 
-The ThemeRepository is the single source of truth for all the theming configuration settings, and will handle any possible errors coming from the service layer.
+The `ThemeRepository` is the single source of truth 
+for all the theming configuration settings, 
+and will handle any possible errors coming from the service layer.
 
-In this example, the ThemeRepository also exposes the dark mode setting through an observable Stream. This allows other parts of the application to subscribe to changes in the dark mode setting.
+In this example, 
+the `ThemeRepository` also exposes the dark mode setting 
+through an observable Stream. 
+This allows other parts of the application 
+to subscribe to changes in the dark mode setting.
 
-The ThemeRepository depends on the SharedPreferencesService. The repository will obtain the stored value from the service, and will store it when it changes.
+The `ThemeRepository` depends on the `SharedPreferencesService`.
+The repository will obtain the stored value from the service, 
+and will store it when it changes.
 
-The setDarkMode method  passes the new value to the StreamController, so that any component listening to the observeDarkMode stream will receive updates.
+The `setDarkMode()` method passes the new value to the `StreamController`,
+so that any component listening to the `observeDarkMode` stream 
+will receive updates.
 
 
 <?code-excerpt "lib/main.dart (ThemeRepository)"?>
@@ -203,10 +228,16 @@ class ThemeRepository {
 }
 ```
 
-The SharedPreferencesService wraps the SharedPreferences plugin functionality, and calls to the setBool and getBool methods to store the dark mode setting, hiding this third-party dependency from the rest of the application
+The `SharedPreferencesService` wraps 
+the `SharedPreferences` plugin functionality, 
+and calls to the `setBool()` and `getBool()` methods 
+to store the dark mode setting, 
+hiding this third-party dependency from the rest of the application
 
-Note: A third-party dependency is a way to refer to packages and plugins developed by other developers outside your organization.
-
+:::note
+A third-party dependency is a way to refer to packages and plugins 
+eveloped by other developers outside your organization.
+:::
 
 <?code-excerpt "lib/main.dart (SharedPreferencesService)"?>
 ```dart
@@ -227,8 +258,10 @@ class SharedPreferencesService {
 
 ## Putting it all together
 
-In this example, the ThemeRepository and SharedPreferencesService are created in the main method and passed to the MainApp as constructor argument dependency.
-
+In this example, 
+the `ThemeRepository` and `SharedPreferencesService` are created 
+in the `main()` method 
+and passed to the `MainApp` as constructor argument dependency.
 
 <?code-excerpt "lib/main.dart (Main)"?>
 ```dart
@@ -243,7 +276,9 @@ void main() {
 }
 ```
 
-Then, when the ThemeSwitch is created, create as well the ThemeSwitchViewModel and pass the ThemeRepository as dependency.
+Then, when the `ThemeSwitch` is created, 
+create as well the `ThemeSwitchViewModel` 
+and pass the `ThemeRepository` as dependency.
 
 <?code-excerpt "lib/main.dart (AddThemeSwitch)"?>
 ```dart
@@ -254,7 +289,9 @@ ThemeSwitch(
 )
 ```
 
-The example application also includes the MainAppViewModel class, which listens to changes in the ThemeRepository and exposes the dark mode setting to the MaterialApp widget.
+The example application also includes the `MainAppViewModel` class, 
+which listens to changes in the `ThemeRepository` 
+and exposes the dark mode setting to the `MaterialApp` widget.
 
 <?code-excerpt "lib/main.dart (MainAppViewModel)"?>
 ```dart
@@ -311,7 +348,6 @@ ListenableBuilder(
   child: //...
 )
 ```
-
 
 [Flutter architecture design]: /app-architecture
 [Store key-value data on disk]: /cookbook/persistence/key-value
