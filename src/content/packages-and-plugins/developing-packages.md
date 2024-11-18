@@ -346,8 +346,10 @@ using reverse domain name notation. This value is used
 in various package and bundle identifiers in the
 generated plugin code.
 
-Use the `-a` option to specify the language for android
-or the `-i` option to specify the language for ios.
+By default, the plugin project uses Swift for iOS code and
+Kotlin for Android code. If you prefer Objective-C or Java,
+you can specify the iOS language using `-i` and the
+Android language using `-a`.
 Please choose **one** of the following:
 
 ```console
@@ -380,18 +382,6 @@ with the following specialized content:
 **`example/`**
 : A Flutter app that depends on the plugin,
   and illustrates how to use it.
-
-By default, the plugin project uses Swift for iOS code and
-Kotlin for Android code. If you prefer Objective-C or Java,
-you can specify the iOS language using `-i` and the
-Android language using `-a`. For example:
-
-```console
-$ flutter create --template=plugin --platforms=android,ios -i objc hello
-```
-```console
-$ flutter create --template=plugin --platforms=android,ios -a java hello
-```
 
 ### Step 2: Implement the package {:#edit-plugin-package}
 
