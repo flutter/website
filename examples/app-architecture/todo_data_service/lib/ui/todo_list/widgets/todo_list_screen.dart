@@ -35,6 +35,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
     return Column(
       children: [
         Expanded(
+          // #docregion ListenableBuilder
           child: ListenableBuilder(
             listenable: widget.viewModel,
             builder: (context, child) {
@@ -53,6 +54,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
               );
             },
           ),
+          // #enddocregion ListenableBuilder
         ),
         Material(
           elevation: 8,

@@ -78,16 +78,21 @@ class ThemeSwitch extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
-      child: ListenableBuilder(
-        listenable: viewmodel,
-        builder: (context, _) {
-          return Switch(
-            value: viewmodel.isDarkMode,
-            onChanged: (_) {
-              viewmodel.toggle.execute();
+      child: Row(
+        children: [
+          const Text('Dark Mode'),
+          ListenableBuilder(
+            listenable: viewmodel,
+            builder: (context, _) {
+              return Switch(
+                value: viewmodel.isDarkMode,
+                onChanged: (_) {
+                  viewmodel.toggle.execute();
+                },
+              );
             },
-          );
-        },
+          ),
+        ],
       ),
     );
   }
@@ -190,7 +195,7 @@ so that any component listening to the `observeDarkMode` stream
 will receive updates.
 
 
-<?code-excerpt "lib/main.dart (ThemeRepository)"?>
+<?code-excerpt "lib/data/repositories/theme_repository.dart (ThemeRepository)"?>
 ```dart
 class ThemeRepository {
   ThemeRepository(
@@ -239,7 +244,7 @@ A third-party dependency is a way to refer to packages and plugins
 eveloped by other developers outside your organization.
 :::
 
-<?code-excerpt "lib/main.dart (SharedPreferencesService)"?>
+<?code-excerpt "lib/data/services/shared_preferences_service.dart (SharedPreferencesService)"?>
 ```dart
 class SharedPreferencesService {
   static const String _kDartMode = 'darkMode';
@@ -263,14 +268,16 @@ the `ThemeRepository` and `SharedPreferencesService` are created
 in the `main()` method 
 and passed to the `MainApp` as constructor argument dependency.
 
-<?code-excerpt "lib/main.dart (Main)"?>
+<?code-excerpt "lib/main.dart (MainTheme)"?>
 ```dart
 void main() {
+// ···
   runApp(
     MainApp(
       themeRepository: ThemeRepository(
         SharedPreferencesService(),
       ),
+// ···
     ),
   );
 }
@@ -293,9 +300,8 @@ The example application also includes the `MainAppViewModel` class,
 which listens to changes in the `ThemeRepository` 
 and exposes the dark mode setting to the `MaterialApp` widget.
 
-<?code-excerpt "lib/main.dart (MainAppViewModel)"?>
+<?code-excerpt "lib/main_app_viewmodel.dart (MainAppViewModel)"?>
 ```dart
-/// Exposes the current theme setting and listens for changes.
 class MainAppViewModel extends ChangeNotifier {
   MainAppViewModel(
     this._themeRepository,
@@ -338,10 +344,10 @@ class MainAppViewModel extends ChangeNotifier {
 <?code-excerpt "lib/main.dart (ListenableBuilder)" replace="/^return //g;/},$/},\n  child: \/\/...\n)/g"?>
 ```dart
 ListenableBuilder(
-  listenable: _mainAppViewModel,
+  listenable: _viewModel,
   builder: (context, child) {
     return MaterialApp(
-      theme: _mainAppViewModel.isDarkMode ? ThemeData.dark() : ThemeData.light(),
+      theme: _viewModel.isDarkMode ? ThemeData.dark() : ThemeData.light(),
       home: child,
     );
   },

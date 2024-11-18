@@ -14,8 +14,9 @@ import 'ui/theme_config/widgets/theme_switch.dart';
 import 'ui/todo_list/viewmodel/todo_list_viewmodel.dart';
 import 'ui/todo_list/widgets/todo_list_screen.dart';
 
-// #docregion Main
+// #docregion MainTheme
 void main() {
+  // #enddocregion MainTheme
   late DatabaseService databaseService;
   if (kIsWeb) {
     throw UnsupportedError('Platform not supported');
@@ -32,18 +33,21 @@ void main() {
     );
   }
 
+// #docregion MainTheme
   runApp(
     MainApp(
       themeRepository: ThemeRepository(
         SharedPreferencesService(),
       ),
+// #enddocregion MainTheme
       todoRepository: TodoRepository(
         database: databaseService,
       ),
+// #docregion MainTheme
     ),
   );
 }
-// #enddocregion Main
+// #enddocregion MainTheme
 
 class MainApp extends StatefulWidget {
   const MainApp({
@@ -76,23 +80,26 @@ class _MainAppState extends State<MainApp> {
 
   @override
   Widget build(BuildContext context) {
+    // #docregion ListenableBuilder
     return ListenableBuilder(
       listenable: _viewModel,
       builder: (context, child) {
         return MaterialApp(
-          debugShowCheckedModeBanner: false,
           theme: _viewModel.isDarkMode ? ThemeData.dark() : ThemeData.light(),
           home: child,
         );
       },
+      // #enddocregion ListenableBuilder
       child: Scaffold(
         appBar: AppBar(
           actions: [
+            // #docregion AddThemeSwitch
             ThemeSwitch(
               viewmodel: ThemeSwitchViewModel(
                 widget.themeRepository,
               ),
             )
+            // #enddocregion AddThemeSwitch
           ],
           title: const Text('ToDo List'),
         ),

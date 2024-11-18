@@ -6,6 +6,7 @@ import 'data/repositories/theme_repository.dart';
 import 'utils/result.dart';
 
 /// Exposes the current theme setting and listens for changes.
+// #docregion MainAppViewModel
 class MainAppViewModel extends ChangeNotifier {
   MainAppViewModel(
     this._themeRepository,
@@ -43,3 +44,4 @@ class MainAppViewModel extends ChangeNotifier {
     super.dispose();
   }
 }
+// #enddocregion MainAppViewModel

@@ -1,5 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
+// #docregion SharedPreferencesService
 class SharedPreferencesService {
   static const String _kDartMode = 'darkMode';
 
@@ -13,3 +14,4 @@ class SharedPreferencesService {
     return prefs.getBool(_kDartMode) ?? false;
   }
 }
+// #enddocregion SharedPreferencesService
