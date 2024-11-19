@@ -473,13 +473,14 @@ TodoListScreen(
 )
 ```
 
-[Persistent storage architecture: Key-value data]:/app-architecture/cookbook/key-value-data
-[Persist data with SQLite]:/cookbook/persistence/sqlite
-[`sqflite`]:https://pub.dev/packages/sqflite
-[`sqflite_common_ffi`]:https://pub.dev/packages/sqflite_common_ffi
-[`sqflite_common_ffi_web`]:https://pub.dev/packages/sqflite_common_ffi_web
-[Flutter Architecture design]:/app-architecture
-[MVVM pattern]:/get-started/fundamentals/state-management#using-mvvm-for-your-applications-architecture
 [Commands]:/app-architecture/cookbook/command
-[Result]:/app-architecture/cookbook/result
+[Flutter Architecture design]:/app-architecture
 [Flutter architecture recommendations]:/app-architecture
+[MVVM pattern]:/get-started/fundamentals/state-management#using-mvvm-for-your-applications-architecture
+[Persist data with SQLite]:/cookbook/persistence/sqlite
+[Persistent storage architecture: Key-value data]:/app-architecture/cookbook/key-value-data
+[Result]:/app-architecture/cookbook/result
+[`/examples/app-architecture/todo_data_service/`]: {{site.repo.flutter}}/tree/main/examples/app-architecture/todo_data_service/
+[`sqflite_common_ffi_web`]:https://pub.dev/packages/sqflite_common_ffi_web
+[`sqflite_common_ffi`]:https://pub.dev/packages/sqflite_common_ffi
+[`sqflite`]:https://pub.dev/packages/sqflite
