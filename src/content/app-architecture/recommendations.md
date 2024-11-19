@@ -54,16 +54,31 @@ which reflects how strongly the Flutter team recommends it.
 
 ## Recommended resources
 
-{% comment %}
-TODO @ewindmill add resources
-{% endcomment %}
+* Code and templates
+  * [Compass app source code][] - Source code of a full-featured, robust Flutter application that implements many of these recommendations.
+  * [Flutter skeleton][] - A Flutter application template that includes many of these recommendations.
+  * [very_good_cli][] - A Flutter application template made by the Flutter experts Very Good Ventures. This template generates a similar app structure.
+* Documentation
+  * [Very Good Engineering architecture documentation][] - Very Good Engineering is a documentation site by VGV that has technical articles, demos, and open sourced projects. It includes documentation on architecting Flutter applications.
+  * [State Management with ChangeNotifier walkthrough][] - A gentle introduction into using the primitives in the Flutter SDK for your state management.
+* Tooling
+  * [Flutter developer tools][] - DevTools is a suite of performance and debugging tools for Dart and Flutter.
+  * [flutter_lints][] - A package that contains the lints for Flutter apps recommended by the Flutter team. Use this package to encourage good coding practices across a team.
 
 
 [Separation-of-concerns]: https://en.wikipedia.org/wiki/Separation_of_concerns
 [architecture case study]: /app-architecture/guide
-[our ChangeNotifier recommendation]: https://docs.flutter.dev/get-started/fwe/state-management
+[our ChangeNotifier recommendation]: /get-started/fwe/state-management
 [other popular options]: https://docs.flutter.dev/data-and-backend/state-mgmt/options
 [freezed]: https://pub.dev/packages/freezed
 [built_value]: https://pub.dev/packages/built_value
 [Flutter Navigator API]: https://docs.flutter.dev/ui/navigation
 [pub.dev]: https://pub.dev
+[Compass app source code]: https://github.com/flutter/samples/tree/main/compass_app
+[Flutter skeleton]: https://github.com/flutter/flutter/blob/master/packages/flutter_tools/templates/skeleton/README.md.tmpl
+[very_good_cli]: https://cli.vgv.dev/
+[Very Good Engineering architecture documentation]: https://engineering.verygood.ventures/architecture/
+[State Management with ChangeNotifier walkthrough]: /get-started/fwe/state-management
+[Flutter developer tools]: /tools/devtools
+[flutter_lints]: https://pub.dev/packages/flutter_lints
+

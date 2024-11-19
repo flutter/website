@@ -22,6 +22,7 @@ Note that filing bugs is _not_ an efficient way to get tech support.
 ## I want to ask questions about how to use Flutter
 
 Your best bet is to consult
+[Flutter Forum](https://forum.itsallwidgets.com/),
 [Stack Overflow](https://stackoverflow.com/questions/tagged/flutter),
 or [Discord](https://discord.com/invite/rflutterdev).
 While the community is active in these channels,

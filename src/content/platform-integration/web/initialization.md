@@ -3,20 +3,12 @@ title: Flutter web app initialization
 description: Customize how Flutter apps are initialized on the web.
 ---
 
-:::note
-This page describes APIs that are available in Flutter 3.22 and later.
-To customize web app initialization in Flutter 3.21 or earlier,
-check out the previous [Customizing web app initialization][] documentation.
-:::
+This page details the initialization process for Flutter web apps and
+how it can be customized.
 
-[Customizing web app initialization]: /platform-integration/web/initialization-legacy
+## Bootstrapping
 
-This page details the initialization process for Flutter web apps, and
-how this process can be customized.
-
-## `flutter_bootstrap.js`
-
-When building your flutter app, the `flutter build web` command produces
+The `flutter build web` command produces
 a script called `flutter_bootstrap.js` in
 the build output directory (`build/web`).
 This file contains the JavaScript code needed to initialize and
@@ -88,7 +80,7 @@ substitute in either the `flutter_bootstrap.js` or `index.html` files:
 
 <a id="write-a-custom-flutter_bootstrap-js" aria-hidden="true"></a>
 
-## Write a custom `flutter_bootstrap.js` {:#custom-bootstrap-js}
+## Write a custom bootstrap script {:#custom-bootstrap-js}
 
 Any custom `flutter_bootstrap.js` script needs to have three components in
 order to successfully start your Flutter app:
@@ -109,7 +101,7 @@ The most basic `flutter_bootstrap.js` file would look something like this:
 _flutter.loader.load();
 ```
 
-## The `_flutter.loader.load()` API
+## Customize the Flutter Loader
 
 The `_flutter.loader.load()` JavaScript API can be invoked with optional
 arguments to customize initialization behavior:
@@ -118,7 +110,6 @@ arguments to customize initialization behavior:
 |-------------------------|-------------------------------------------------------------------------------------------------------------------------------|--------------|
 | `config`                | The Flutter configuration of your app.                                                                                        | `Object`     |
 | `onEntrypointLoaded`    | The function called when the engine is ready to be initialized. Receives an `engineInitializer` object as its only parameter. | `Function`   |
-| `serviceWorkerSettings` | The configuration for the `flutter_service_worker.js` loader. (If not set, the service worker isn't used.)                    | `Object`     |
 
 {:.table}
 
@@ -140,16 +131,6 @@ The `config` argument is an object that can have the following optional fields:
 
 [web-renderers]: /platform-integration/web/renderers
 
-The `serviceWorkerSettings` argument has the following optional fields.
-
-| Name                   | Description                                                                                                                             | JS&nbsp;type |
-|------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|--------------|
-| `serviceWorkerUrl`     | The URL of the Service Worker JS file. The `serviceWorkerVersion` is appended to the URL. Defaults to `"flutter_service_worker.js?v="`. | `String`     |
-| `serviceWorkerVersion` | Pass *the `serviceWorkerVersion` variable* set by the build process in your **`index.html`** file.                                      | `String`     |
-| `timeoutMillis`        | The timeout value for the service worker load. Defaults to `4000`.                                                                      | `Number`     |
-
-{:.table}
-
 ## Example: Customizing Flutter configuration based on URL query parameters
 
 The following example shows a custom `flutter_bootstrap.js` that allows
@@ -165,9 +146,6 @@ const renderer = searchParams.get('renderer');
 const userConfig = renderer ? {'renderer': renderer} : {};
 _flutter.loader.load({
   config: userConfig,
-  serviceWorkerSettings: {
-    serviceWorkerVersion: {% raw %}{{flutter_service_worker_version}}{% endraw %},
-  },
 });
 ```
 
@@ -177,7 +155,7 @@ changes the user configuration of the Flutter app.
 It also passes the service worker settings to use the flutter service worker,
 along with the service worker version.
 
-## The `onEntrypointLoaded` callback
+## The onEntrypointLoaded callback
 
 You can also pass an `onEntrypointLoaded` callback into the `load` API in order
 to perform custom logic at different parts of the initialization process.
@@ -233,18 +211,4 @@ _flutter.loader.load({
     await appRunner.runApp();
   }
 });
-```
-
-## Upgrade an older project
-
-If your project was created in Flutter 3.21 or earlier, you can create a new
-`index.html` file with the latest initialization template by running
-`flutter create` as follows.
-
-First, remove the files from your `/web` directory.
-
-Then, from your project directory, run the following:
-
-```console
-$ flutter create . --platforms=web
 ```

@@ -431,8 +431,11 @@
     - title: Introduction
       permalink: /app-architecture
     - title: Architecture concepts
-      permalink: /app-architecture/architecture-concepts
-
+      permalink: /app-architecture/concepts
+    - title: Guide to app architecture
+      permalink: /app-architecture/guide
+    - title: Recommendations
+      permalink: /app-architecture/recommendations
 
 - title: Platform integration
   permalink: /platform-integration

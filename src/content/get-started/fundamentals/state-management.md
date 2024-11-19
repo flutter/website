@@ -17,10 +17,10 @@ and share them between different widgets.
 
 This page explores many aspects of state management, including:
 
-* Using a [`StatefulWidget`]
+* Using a [`StatefulWidget`][]
 * Sharing state between widgets using constructors,
-  [`InheritedWidget`]s, and callbacks
-* Using [`Listenable`]s to notify other widgets
+  [`InheritedWidget`][]s, and callbacks
+* Using [`Listenable`][]s to notify other widgets
   when something changes
 * Using Model-View-ViewModel (MVVM)
   for your application's architecture
@@ -331,7 +331,7 @@ Column(
 
 ### ValueNotifier
 
-A [`ValueNotifier`] is a simpler version of a `ChangeNotifier`,
+A [`ValueNotifier`][] is a simpler version of a `ChangeNotifier`,
 that stores a single value.
 It implements the `ValueListenable` and `Listenable` interfaces,
 so it's compatible
@@ -554,15 +554,15 @@ If you would like to learn more, check out the following resources:
 [Provider counter]: https://github.com/flutter/samples/tree/main/provider_counter
 [Provider shopper]: https://flutter.github.io/samples/provider_shopper.html
 [State management]: /data-and-backend/state-mgmt/intro
-[StatefulWidget]: /flutter/widgets/StatefulWidget-class.html
-[`StatefulWidget`]: /flutter/widgets/StatefulWidget-class.html
+[StatefulWidget]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
+[`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
 [`ChangeNotifier`]: {{site.api}}/flutter/foundation/ChangeNotifier-class.html
 [`InheritedNotifier`]: {{site.api}}/flutter/widgets/InheritedNotifier-class.html
 [`ListenableBuilder`]: {{site.api}}/flutter/widgets/ListenableBuilder-class.html
 [`Listenable`]: {{site.api}}/flutter/foundation/Listenable-class.html
 [`ValueListenableBuilder`]: {{site.api}}/flutter/widgets/ValueListenableBuilder-class.html
 [`ValueListenable`]: {{site.api}}/flutter/foundation/ValueListenable-class.html
-[`ValueNotifier`]: {{site.api}}/flutter/foundation/ValueNotifer-class.html
+[`ValueNotifier`]: {{site.api}}/flutter/foundation/ValueNotifier-class.html
 [architecture-state]: /resources/architectural-overview#state-management
 [ephemeral-state]: /data-and-backend/state-mgmt/ephemeral-vs-app
 [freezed]: {{site.pub-pkg}}/freezed

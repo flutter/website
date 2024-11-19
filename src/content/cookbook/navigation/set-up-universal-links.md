@@ -112,7 +112,7 @@ It provides a simple API to handle complex routing scenarios.
    :::note
    The `FlutterDeepLinkingEnabled` property enables
    Flutter's default deeplink handler.
-   If you use a third-party plugin, such as [uni_links][],
+   If you use a third-party plugin, such as [app_links][],
    setting this property breaks the third-party plugin.
    Skip this step if you prefer to use a third-party plugin.
    :::
@@ -331,4 +331,4 @@ recipe in the GitHub repo.
 [Firebase Hosting]: {{site.firebase}}/docs/hosting
 [go_router]: {{site.pub-pkg}}/go_router
 [GitHub Pages]: https://pages.github.com
-[uni_links]: {{site.pub-pkg}}/uni_links
+[app_links]: {{site.pub-pkg}}/app_links
