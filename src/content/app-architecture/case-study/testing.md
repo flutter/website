@@ -4,7 +4,7 @@ short-title: Testing
 description: >
   How to test an app that follows the recommended architecture.
 prev: 
-  title: Data layer
+  title: Dependency injection
   path: /app-architecture/case-study/dependency-injection
 ---
 
@@ -238,3 +238,4 @@ read [Flutter's testing documentation][].
 [Mocktail pub.dev page]: https://pub.dev/packages/mocktail
 [Flutter's testing documentation]: https://docs.flutter.dev/testing/overview
 [Compass App `testing` directory]: https://github.com/flutter/samples/tree/main/compass_app/app/testing
+

@@ -62,8 +62,11 @@ In this case study, you'll learn the following:
 This case-study was written to be read in order. 
 Any given page may reference the previous pages.
 
-The code examples in this case-study include all the details needed to understand the architecture, but they're not complete, runnable snippets. If you prefer to follow 
-along with the full app, you can find it on [Github][].
+The code examples in this case-study include all the details needed to 
+understand the architecture, but they're not complete, 
+runnable snippets. If you prefer to follow along with the full app, 
+you can find it on [Github][].
+
 ## Package structure
 
 Well-organized code is easier for multiple engineers to work on with 
@@ -192,3 +195,4 @@ And if you squint, aren't all architectures MVVM anyway?
 [Riverpod]: https://pub.dev/packages/riverpod 
 [flutter_bloc]: https://pub.dev/packages/flutter_bloc 
 [Signals]: https://pub.dev/packages/signals
+[package structure]: /app-architecture/case-study#package-structure

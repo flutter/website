@@ -668,9 +668,12 @@ the Command pattern. [Read about it on Github][].
 [state-management documentation]: /get-started/fundamentals/state-management.md
 [`Scaffold`]: {{site.api}}/flutter/widgets/Scaffold-class.html
 [`Dismissable`]: {{site.api}}flutter/widgets/Dismissible-class.html
-[`util` directory]: https://github.com/flutter/samples/blob/main/compass_app/app/lib/utils/command.dart
+[`utils` directory]: https://github.com/flutter/samples/blob/main/compass_app/app/lib/utils/command.dart
 [flutter_command]: https://pub.dev/packages/flutter_command
 [`Streams`]: https://api.flutter.dev/flutter/dart-async/Stream-class.html
 [`StreamBuilders`]: https://api.flutter.dev/flutter/widgets/StreamBuilder-class.html
 [`AsyncSnapshot`]: https://api.flutter.dev/flutter/widgets/AsyncSnapshot-class.html
 [Read about it on Github]: https://github.com/flutter/samples/pull/2449#pullrequestreview-2328333146
+[Riverpod]: https://pub.dev/packages/riverpod
+[flutter_bloc]: https://pub.dev/packages/flutter_bloc
+[Signals]: https://pub.dev/packages/signals
