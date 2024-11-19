@@ -187,7 +187,7 @@ struct ContentView: View {
 Now, you have a Flutter screen embedded in your iOS app.
 
 :::note
-In this example, your Dart main() entrypoint function runs 
+In this example, your Dart `main()` entrypoint function runs 
 when the `FlutterDependencies` observable is initialized. 
 :::
 
