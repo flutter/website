@@ -62,6 +62,8 @@ In this case study, you'll learn the following:
 This case-study was written to be read in order. 
 Any given page may reference the previous pages.
 
+The code examples in this case-study include all the details needed to understand the architecture, but they're not complete, runnable snippets. If you prefer to follow 
+along with the full app, you can find it on [Github][].
 ## Package structure
 
 Well-organized code is easier for multiple engineers to work on with 
@@ -128,11 +130,11 @@ testing
 |____models
 ```
 
-The important designations are within the `data` and `ui` folders. The data
-folder organizes code by type, because repositories and services can be used
-across different features and by multiple ViewModels. The ui folder organizes
-the code by feature, because each feature will have exactly one view and exactly
-one ViewModel.
+The important designations are within the `data` and `ui` folders. 
+The data folder organizes code by type, 
+because repositories and services can be used across different features and 
+by multiple ViewModels. The ui folder organizes the code by feature, 
+because each feature will have exactly one view and exactly one ViewModel.
 
 Other notable features of this folder structure:
 
@@ -175,7 +177,7 @@ the principles in this guide will help you write scalable Flutter apps.
 
 And if you squint, aren't all architectures MVVM anyway?
 
-[Compass sample application]: https://github.com/flutter/samples/compass-app
+[Compass sample application]: https://github.com/flutter/samples/tree/main/compass_app
 [MVVM design pattern]: https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel
 [recommended architecture]: /app-architecture/guide
 [data layer]: /app-architecture/case-study/data-layer
@@ -185,7 +187,8 @@ And if you squint, aren't all architectures MVVM anyway?
 [`Listenable`]: {{site.api}}/flutter/foundation/Listenable-class.html
 [Dependency Injection]: /app-architecture/case-study/dependency-injection
 [set up tests]: /app-architecture/case-study/testing
-[view it on Github]: https://github.com/flutter/samples
+[view it on Github]: https://github.com/flutter/samples/tree/main/compass_app
+[Github]: https://github.com/flutter/samples/tree/main/compass_app
 [Riverpod]: https://pub.dev/packages/riverpod 
 [flutter_bloc]: https://pub.dev/packages/flutter_bloc 
 [Signals]: https://pub.dev/packages/signals
