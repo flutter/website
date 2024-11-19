@@ -122,25 +122,25 @@ Not currently.
 
 ### Why doesn't my app update immediately after it's deployed?
 
-You may need to configure the Cache-Control header returned by your web server. 
+You might need to configure the `Cache-Control` header returned by your web server. 
 For example, if this header is set to 3600, then the browser
-and CDN will cache the asset for 1 hour, and your users may see an out-of-date
+and CDN will cache the asset for 1 hour, and your users might see an out-of-date
 version of your app up to 1 hour after you deploy a new version. For
 more information about caching on the web,
-see [this web.dev article][http-cache] on HTTP caching.
+check out [Prevent unnecessary network requests with the HTTP Cache][http-cache].
 
-It is a good idea to be aware of this behavior to avoid breaking users.
-After you deploy your app, users may see a 
+It is a good idea to be aware of this behavior to avoid an undesirable user experience.
+After you deploy your app, users might use a 
 cached version of your app (cached by the browser or CDN)
 for the duration defined by your cache headers.
 This can lead to users using a version of your app that
-are incompatible with changes that have been deployed to backend services.
+is incompatible with changes that have been deployed to backend services.
 
-### How do I bust the web cache after each deployment?
+### How do I "bust the web cache" after a deployment and force an app download?
 If you wish to defeat these cache headers after each deployment, a common
 technique is to append a build ID of some sort to the links of your static
 resources, or update the filenames themselves.
-(`logo.png` would become `logo.v123.png`.)
+For example, `logo.png` might become `logo.v123.png`.
 
 ```html
 <!-- Option 1, append build ID as a query parameter in your links -->
@@ -156,8 +156,8 @@ automatically.
 ### How do I configure my cache headers?
 
 If you are using Firebase Hosting,
-The shared cache (CDN) is invalidated when you deploy a new version of your
-app. But you may choose to configure your cache headers as follows,
+the shared cache (CDN) is invalidated when you deploy a new version of your
+app. But you might choose to configure your cache headers as follows,
 so that the browser cache doesn't cache application scripts,
 but the shared cache does.
 
@@ -206,7 +206,7 @@ such as [Workbox][workbox].
 
 If your service worker is not refreshing,
 configure your CDN and browser cache by setting
-Cache-Control header to a small value such as 0 or 60 seconds.
+the `Cache-Control` header to a small value such as 0 or 60 seconds.
 
 [building a web app with Flutter]: /platform-integration/web/building
 [Creating responsive apps]: /ui/adaptive-responsive
