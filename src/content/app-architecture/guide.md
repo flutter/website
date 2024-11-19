@@ -6,10 +6,9 @@ description: >
 prev:
     title: Common architecture concepts
     path: /app-architecture/concepts
-# TODO(ewindmill): update 'next' in future PR with "case study" 
 next:
-  title: Recommendations
-  path: /app-architecture/recommendations
+  title: Architecture case study
+  path: /app-architecture/case-study
 ---
 
 The following pages demonstrate how to build an app using best practices. 
