@@ -31,7 +31,8 @@ that follows this one called [Persistent storage architecture: SQL][].
 The example application consists of a single screen with an app bar at the top,
 a list of items, and a text field input at the bottom.
 
-<picture>
+<img src='/assets/images/docs/app-architecture/cookbook/todo_app_light.png'
+class="site-mobile-screenshot" alt="ToDo application in light mode" >
 
 In the `AppBar`, 
 a `Switch` allows users to change between dark and light theme modes. 
@@ -39,7 +40,8 @@ This setting is applied immediately and it’s stored in the device
 using a key-value data storage service. 
 The setting is restored when the user starts the application again.
 
-<picture>
+<img src='/assets/images/docs/app-architecture/cookbook/todo_app_dark.png'
+class="site-mobile-screenshot" alt="ToDo application in dark mode" >
 
 :::note
 The full, runnable source-code for this example is

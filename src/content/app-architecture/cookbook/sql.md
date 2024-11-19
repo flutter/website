@@ -37,7 +37,8 @@ Support for web is provided in the experimental plugin
 The example application consists of a single screen with an app bar at the top, 
 a list of items, and a text field input at the bottom.
 
-<picture>
+<img src='/assets/images/docs/app-architecture/cookbook/todo_app_light.png'
+class="site-mobile-screenshot" alt="ToDo application in light mode" >
 
 The body of the application contains the `TodoListScreen`. 
 This screen contains a `ListView` of `ListTile` items,
@@ -49,6 +50,11 @@ Users can tap on the delete `IconButton` to delete the ToDo item.
 
 The list of ToDo items is stored locally using a database service, 
 and restored when the user starts the application.
+
+:::note
+The full, runnable source-code for this example is
+available in [`/examples/app-architecture/todo_data_service/`][].
+:::
 
 ## Storing complex data with SQL
 
@@ -454,7 +460,9 @@ void main() {
 }
 ```
 
-Then, when the TodoListScreen is created, also create the TodoListViewModel and pass the TodoRepository to it as dependency.
+Then, when the `TodoListScreen` is created, 
+also create the `TodoListViewModel` 
+and pass the `TodoRepository` to it as dependency.
 
 <?code-excerpt "lib/main.dart (TodoListScreen)" replace="/body: //g;/^\),$/)/g"?>
 ```dart
@@ -464,3 +472,14 @@ TodoListScreen(
   ),
 )
 ```
+
+[Persistent storage architecture: Key-value data]:/app-architecture/cookbook/key-value-data
+[Persist data with SQLite]:/cookbook/persistence/sqlite
+[`sqflite`]:https://pub.dev/packages/sqflite
+[`sqflite_common_ffi`]:https://pub.dev/packages/sqflite_common_ffi
+[`sqflite_common_ffi_web`]:https://pub.dev/packages/sqflite_common_ffi_web
+[Flutter Architecture design]:/app-architecture
+[MVVM pattern]:/get-started/fundamentals/state-management#using-mvvm-for-your-applications-architecture
+[Commands]:/app-architecture/cookbook/command
+[Result]:/app-architecture/cookbook/result
+[Flutter architecture recommendations]:/app-architecture
