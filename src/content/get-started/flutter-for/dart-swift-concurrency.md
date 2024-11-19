@@ -84,7 +84,7 @@ enum Weather: String {
 }
 ```
 
-Next, define the view model and mark it as an `@Observable` 
+Next, define the view model and mark it as an [`@Observable`][] 
 that publishes the `result` of type `Weather?`. 
 Use GCD to create a background `DispatchQueue` to 
 send the work to the pool of threads, and then dispatch 
@@ -311,3 +311,4 @@ and more information on Flutter at
 [Learning Dart as a Swift developer]: {{site.dart-site}}/guides/language/coming-from/swift-to-dart
 [Flutter for SwiftUI developers]: /get-started/flutter-for/swiftui-devs
 [Flutter for UIKit developers]: /get-started/flutter-for/uikit-devs
+[`@Observable`]: https://developer.apple.com/documentation/observation/observable()
