@@ -11,8 +11,6 @@ next:
   path: /app-architecture/case-study/testing
 ---
 
-## Communicating between objects and layers
-
 Along with defining clear responsibilities for each component of architecture,
 it's important to consider how the components communicate. 
 This refers to both the rules that dictate communication, 
@@ -57,7 +55,7 @@ application is that instance of `MyService` being created so that it can be
 passed into `MyRepository`? **Dependency injection** is discussed in
 the next section.
 
-### Dependency Injection
+## Dependency Injection
 
 In the Compass app, dependency injection is handled using
 the [provider](https://pub.dev/packages/provider) package. 
