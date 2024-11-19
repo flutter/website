@@ -136,7 +136,7 @@ for the duration defined by your cache headers.
 This can lead to users using a version of your app that
 is incompatible with changes that have been deployed to backend services.
 
-### How do I "bust the web cache" after a deployment and force an app download?
+### How do I clear the web cache after a deployment and force an app download?
 If you wish to defeat these cache headers after each deployment, a common
 technique is to append a build ID of some sort to the links of your static
 resources, or update the filenames themselves.
