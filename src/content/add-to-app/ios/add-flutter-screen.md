@@ -49,29 +49,29 @@ into a `ContentView` using the `environment()` view modifier.
 
  ```swift title="MyApp.swift"
 import SwiftUI
-import Flutter
-// The following library connects plugins with iOS platform code to this app.
-import FlutterPluginRegistrant
++ import Flutter
++ // The following library connects plugins with iOS platform code to this app.
++ import FlutterPluginRegistrant
 
-@Observable
-class FlutterDependencies {
-  let flutterEngine = FlutterEngine(name: "my flutter engine")
-  init() {
-    // Runs the default Dart entrypoint with a default Flutter route.
-    flutterEngine.run()
-    // Connects plugins with iOS platform code to this app.
-    GeneratedPluginRegistrant.register(with: self.flutterEngine);
-  }
-}
++ @Observable
++ class FlutterDependencies {
++   let flutterEngine = FlutterEngine(name: "my flutter engine")
++   init() {
++     // Runs the default Dart entrypoint with a default Flutter route.
++     flutterEngine.run()
++     // Connects plugins with iOS platform code to this app.
++     GeneratedPluginRegistrant.register(with: self.flutterEngine);
++   }
++ }
 
 @main
 struct MyApp: App {
-    // flutterDependencies will be injected through the view environment.
-    @State var flutterDependencies = FlutterDependencies()
++     // flutterDependencies will be injected through the view environment.
++     @State var flutterDependencies = FlutterDependencies()
     var body: some Scene {
       WindowGroup {
         ContentView()
-          .environment(flutterDependencies)
++           .environment(flutterDependencies)
       }
     }
 }
@@ -157,33 +157,38 @@ the view environment.
 
 ```swift title="ContentView.swift"
 import SwiftUI
-import Flutter
++ import Flutter
 
-struct FlutterViewControllerRepresentable: UIViewControllerRepresentable {
-  // Flutter dependencies are passed in through the view environment.
-  @Environment(FlutterDependencies.self) var flutterDependencies
++ struct FlutterViewControllerRepresentable: UIViewControllerRepresentable {
++   // Flutter dependencies are passed in through the view environment.
++   @Environment(FlutterDependencies.self) var flutterDependencies
   
-  func makeUIViewController(context: Context) -> some UIViewController {
-    return FlutterViewController(
-      engine: flutterDependencies.flutterEngine,
-      nibName: nil,
-      bundle: nil)
-  }
-  
-  func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
-}
++   func makeUIViewController(context: Context) -> some UIViewController {
++     return FlutterViewController(
++       engine: flutterDependencies.flutterEngine,
++       nibName: nil,
++       bundle: nil)
++   }
++   
++   func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
++ }
 
 struct ContentView: View {
-
   var body: some View {
     NavigationStack {
-      NavigationLink("My Flutter Feature") {
-        FlutterViewControllerRepresentable()
-      }
++       NavigationLink("My Flutter Feature") {
++         FlutterViewControllerRepresentable()
++       }
     }
   }
 }
 ```
+Now, you have a Flutter screen embedded in your iOS app.
+
+:::note
+In this example, your Dart main() entrypoint function runs 
+when the `FlutterDependencies` observable is initialized. 
+:::
 
 {% endtab %}
 {% tab "UIKit-Swift" %}
@@ -218,6 +223,16 @@ class ViewController: UIViewController {
   }
 }
 ```
+
+Now, you have a Flutter screen embedded in your iOS app.
+
+:::note
+Using the previous example, the default `main()`
+entrypoint function of your default Dart library
+would run when calling `run` on the
+`FlutterEngine` created in the `AppDelegate`.
+:::
+
 
 {% endtab %}
 {% tab "UIKit-ObjC" %}
@@ -257,9 +272,6 @@ created in the `AppDelegate`.
 @end
 ```
 
-{% endtab %}
-{% endtabs %}
-
 Now, you have a Flutter screen embedded in your iOS app.
 
 :::note
@@ -268,6 +280,10 @@ entrypoint function of your default Dart library
 would run when calling `run` on the
 `FlutterEngine` created in the `AppDelegate`.
 :::
+
+
+{% endtab %}
+{% endtabs %}
 
 ### _Alternatively_ - Create a FlutterViewController with an implicit FlutterEngine
 
@@ -364,7 +380,7 @@ in the [Start a FlutterEngine and FlutterViewController section][].
 In a SwiftUI app, you can create a subclass of the 
 `FlutterAppDelegate` and annotate it with the [`Observable()`][] macro as follows:
 
-```swift
+```swift title="MyApp.swift"
 import SwiftUI
 import Flutter
 import FlutterPluginRegistrant
@@ -419,7 +435,6 @@ struct FlutterViewControllerRepresentable: UIViewControllerRepresentable {
 }
 
 struct ContentView: View {
-
   var body: some View {
     NavigationStack {
       NavigationLink("My Flutter Feature") {
