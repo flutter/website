@@ -210,7 +210,7 @@ see [multiple Flutters][].
 [auxiliary threads]: {{site.repo.flutter}}/blob/master/docs/about/The-Engine-architecture.md#threading
 [CAEAGLLayer]: {{site.apple-dev}}/documentation/quartzcore/caeagllayer
 [CAMetalLayer]: {{site.apple-dev}}/documentation/quartzcore/cametallayer
-[Dart `Isolate`]: {{site.dart.api}}/stable/dart-isolate/Isolate-class.html
+[Dart `Isolate`]: {{site.dart.api}}/dart-isolate/Isolate-class.html
 [Dart SDK]: {{site.dart-site}}/tools/sdk
 [`DartExecutor.executeDartEntrypoint()`]: {{site.api}}/javadoc/io/flutter/embedding/engine/dart/DartExecutor.html#executeDartEntrypoint-io.flutter.embedding.engine.dart.DartExecutor.DartEntrypoint-
 [`FlutterActivity.createDefaultIntent()`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html#createDefaultIntent-android.content.Context-

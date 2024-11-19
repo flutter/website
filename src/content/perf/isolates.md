@@ -114,8 +114,8 @@ for better performance.
 Because immutable objects can't be updated,
 this effectively retains the actor model behavior.
 
-[`Port` objects]: {{site.dart.api}}/stable/dart-isolate/ReceivePort-class.html
-[objects that aren't copied when passed]: {{site.dart.api}}/stable/dart-isolate/SendPort/send.html
+[`Port` objects]: {{site.dart.api}}/dart-isolate/ReceivePort-class.html
+[objects that aren't copied when passed]: {{site.dart.api}}/dart-isolate/SendPort/send.html
 
 An exception to this rule is
 when an isolate exits when it sends a message using the `Isolate.exit` method.
@@ -351,10 +351,10 @@ Flutter.
 [isolate_agents]: {{site.medium}}/@gaaclarke/isolate-agents-easy-isolates-for-flutter-6d75bf69a2e7
 [marshaling data]: https://en.wikipedia.org/wiki/Marshalling_(computer_science)
 [`compute()`]: {{site.api}}/flutter/foundation/compute.html
-[`Isolate.spawn()`]: {{site.dart.api}}/stable/dart-isolate/Isolate/spawn.html
-[`Isolate.exit()`]: {{site.dart.api}}/stable/dart-isolate/Isolate/exit.html
-[`ReceivePort`]: {{site.dart.api}}/stable/dart-isolate/ReceivePort-class.html
-[`SendPort`]: {{site.dart.api}}/stable/dart-isolate/SendPort-class.html
-[`send()`]: {{site.dart.api}}/stable/dart-isolate/SendPort/send.html
+[`Isolate.spawn()`]: {{site.dart.api}}/dart-isolate/Isolate/spawn.html
+[`Isolate.exit()`]: {{site.dart.api}}/dart-isolate/Isolate/exit.html
+[`ReceivePort`]: {{site.dart.api}}/dart-isolate/ReceivePort-class.html
+[`SendPort`]: {{site.dart.api}}/dart-isolate/SendPort-class.html
+[`send()`]: {{site.dart.api}}/dart-isolate/SendPort/send.html
 [`BackgroundIsolateBinaryMessenger`]: {{site.api}}/flutter/services/BackgroundIsolateBinaryMessenger-class.html
 [IsolateNameServer]: {{site.api}}/flutter/dart-ui/IsolateNameServer-class.html
