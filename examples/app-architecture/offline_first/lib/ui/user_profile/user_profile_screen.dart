@@ -15,7 +15,7 @@ class UserProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text('User Profile'),
+        title: const Text('User Profile'),
       ),
       body: ListenableBuilder(
         listenable: viewModel,

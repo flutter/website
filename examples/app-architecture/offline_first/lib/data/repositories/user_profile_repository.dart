@@ -10,15 +10,18 @@ class UserProfileRepository {
     required DatabaseService databaseService,
   })  : _apiClientService = apiClientService,
         _databaseService = databaseService {
+    // #docregion Timer
     Timer.periodic(
       const Duration(minutes: 5),
       (timer) => sync(),
     );
+    // #enddocregion Timer
   }
 
   final ApiClientService _apiClientService;
   final DatabaseService _databaseService;
 
+  // #docregion getUserProfile
   Stream<UserProfile> getUserProfile() async* {
     // Fetch the user profile from the database
     final userProfile = await _databaseService.fetchUserProfile();
@@ -38,7 +41,9 @@ class UserProfileRepository {
       // Handle the error
     }
   }
+  // #enddocregion getUserProfile
 
+  // #docregion getUserProfileFallback
   Future<UserProfile> getUserProfileFallback() async {
     try {
       // Fetch the user profile from the API
@@ -62,7 +67,35 @@ class UserProfileRepository {
       }
     }
   }
+  // #enddocregion getUserProfileFallback
 
+  // #docregion getUserProfileLocal
+  Future<UserProfile> getUserProfileLocal() async {
+    // Fetch the user profile from the database
+    final userProfile = await _databaseService.fetchUserProfile();
+
+    // Return the database result if it exists
+    if (userProfile == null) {
+      throw Exception('Data not found');
+    }
+
+    return userProfile;
+  }
+
+  Future<void> syncRead() async {
+    try {
+      // Fetch the user profile from the API
+      final userProfile = await _apiClientService.getUserProfile();
+
+      // Update the database with the API result
+      await _databaseService.updateUserProfile(userProfile);
+    } catch (e) {
+      // Try again later
+    }
+  }
+  // #enddocregion getUserProfileLocal
+
+  // #docregion updateUserProfileOnline
   Future<void> updateUserProfileOnline(UserProfile userProfile) async {
     try {
       // Update the API with the user profile
@@ -75,7 +108,9 @@ class UserProfileRepository {
       // Handle the error
     }
   }
+  // #enddocregion updateUserProfileOnline
 
+  // #docregion updateUserProfileOffline
   Future<void> updateUserProfileOffline(UserProfile userProfile) async {
     // Only if the API call was successful
     // update the database with the user profile
@@ -88,7 +123,9 @@ class UserProfileRepository {
       // Handle the error
     }
   }
+  // #enddocregion updateUserProfileOffline
 
+  // #docregion sync
   Future<void> sync() async {
     try {
       // Fetch the user profile from the database
@@ -109,4 +146,5 @@ class UserProfileRepository {
       // Try again later
     }
   }
+  // #enddocregion sync
 }

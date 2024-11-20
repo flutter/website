@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:offline_first/data/repositories/user_profile_repository.dart';
-import 'package:offline_first/data/services/api_client_service.dart';
-import 'package:offline_first/data/services/database_service.dart';
-import 'package:offline_first/ui/user_profile/user_profile_viewmodel.dart';
 
+import 'data/repositories/user_profile_repository.dart';
+import 'data/services/api_client_service.dart';
+import 'data/services/database_service.dart';
 import 'ui/user_profile/user_profile_screen.dart';
+import 'ui/user_profile/user_profile_viewmodel.dart';
 
 void main() {
   runApp(const MyApp());
