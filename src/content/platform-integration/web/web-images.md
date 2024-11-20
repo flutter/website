@@ -77,16 +77,6 @@ For more information about web renderers, see
 [Web renderers][].
 :::
 
-:::version-note
-The HTML web renderer has fewer CORS limitations, but does
-not support the full feature set as the WebGL renderers do.
-
-The HTML renderer will be deprecated and removed in a 
-future Flutter version. Therefore, the HTML method to render
-images using `<img>` & `<picture>` elements will no longer be
-applicable to Flutter (without a platform view).
-:::
-
 [CORS]: https://developer.mozilla.org/docs/Web/HTTP/CORS
 [XHR]: https://developer.mozilla.org/docs/Web/API/XMLHttpRequest
 [`fetch`]: https://developer.mozilla.org/docs/Web/API/Fetch_API/Using_Fetch
