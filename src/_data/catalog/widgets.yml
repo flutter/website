@@ -20,7 +20,6 @@
   link: https://api.flutter.dev/flutter/material/AlertDialog-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-dialog.png
-    alt: TODO
   hoverBackground:
     src: /assets/images/docs/widget-catalog/material-3-coral.png
 - name: Align
@@ -164,7 +163,6 @@
   link: https://api.flutter.dev/flutter/material/AppBar-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-top-app-bar.png
-    alt: TODO
   hoverBackground:
     src: /assets/images/docs/widget-catalog/material-3-bubbles.png
 - name: AspectRatio
@@ -222,7 +220,6 @@
   link: https://api.flutter.dev/flutter/material/Badge-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-badge.png
-    alt: TODO
   hoverBackground:
     src: /assets/images/docs/widget-catalog/material-3-coral.png
 - name: Baseline
@@ -254,7 +251,6 @@
   link: https://api.flutter.dev/flutter/material/BottomAppBar-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-bottom-app-bar.png
-    alt: TODO
   hoverBackground:
     src: /assets/images/docs/widget-catalog/material-3-bubbles.png
 - name: Bottom sheet
@@ -265,7 +261,6 @@
   link: https://api.flutter.dev/flutter/material/BottomSheet-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-bottom-sheet.png
-    alt: TODO
   hoverBackground:
     src: /assets/images/docs/widget-catalog/material-3-coral.png
 - name: BottomNavigationBar
@@ -278,7 +273,6 @@
   link: https://api.flutter.dev/flutter/material/BottomNavigationBar-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-bottom-navigation-bar.png
-    alt: TODO
 - name: BottomSheet
   description: >-
     Bottom sheets slide up from the bottom of the screen to reveal more content.
@@ -290,7 +284,6 @@
   link: https://api.flutter.dev/flutter/material/BottomSheet-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-bottom-sheets.png
-    alt: TODO
 - name: Card
   description: >-
     Container for short, related pieces of content displayed in a box with
@@ -302,7 +295,6 @@
   link: https://api.flutter.dev/flutter/material/Card-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-card.png
-    alt: TODO
   hoverBackground:
     src: /assets/images/docs/widget-catalog/material-3-coral.png
 - name: Center
@@ -337,7 +329,6 @@
   link: https://api.flutter.dev/flutter/material/Checkbox-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-checkbox.png
-    alt: TODO
   hoverBackground:
     src: /assets/images/docs/widget-catalog/material-3-leaves.png
 - name: Chip
@@ -351,7 +342,6 @@
   link: https://api.flutter.dev/flutter/material/Chip-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-chip.png
-    alt: TODO
   hoverBackground:
     src: /assets/images/docs/widget-catalog/material-3-leaves.png
 - name: CircularProgressIndicator
@@ -362,7 +352,6 @@
   link: https://api.flutter.dev/flutter/material/CircularProgressIndicator-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-circular-progress-indicator.png
-    alt: TODO
 - name: ClipOval
   description: >-
     A widget that clips its child using an oval.
@@ -421,7 +410,6 @@
   link: https://api.flutter.dev/flutter/material/ButtonStyle-class.html#material-3-button-types
   image:
     src: /assets/images/docs/widget-catalog/material-3-buttons.png
-    alt: TODO
   hoverBackground:
     src: /assets/images/docs/widget-catalog/material-3-leaves.png
 - name: ConstrainedBox
@@ -504,7 +492,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoActionSheet-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-action-sheet.png
-    alt: TODO
 - name: CupertinoActionSheetAction
   description: >-
     A button typically used in a CupertinoActionSheet.
@@ -514,7 +501,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoActionSheetAction-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-action-sheet.png
-    alt: TODO
 - name: CupertinoActivityIndicator
   description: >-
     An iOS-style activity indicator. Displays a circular 'spinner'.
@@ -524,7 +510,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoActivityIndicator-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-activity-indicator.png
-    alt: TODO
 - name: CupertinoAdaptiveTextSelectionToolbar
   description: >-
     The default Cupertino context menu for text selection for the current
@@ -535,7 +520,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoAdaptiveTextSelectionToolbar-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoAdaptiveTextSelectionToolbar.png
-    alt: TODO
 - name: CupertinoAlertDialog
   description: >-
     An iOS-style alert dialog.
@@ -545,7 +529,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoAlertDialog-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-alert-dialog.png
-    alt: TODO
 - name: CupertinoApp
   description: >-
     An application that uses Cupertino design.
@@ -555,7 +538,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoApp-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoApp.png
-    alt: TODO
 - name: CupertinoButton
   description: >-
     An iOS-style button.
@@ -565,7 +547,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoButton-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-button.png
-    alt: TODO
 - name: CupertinoCheckBox
   description: >-
     A macOS-style checkbox.
@@ -575,7 +556,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoCheckbox-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoCheckbox.png
-    alt: TODO
 - name: CupertinoColors
   description: >-
     A palette of Color constants that describe colors commonly used when
@@ -586,7 +566,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoColors-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoColors.png
-    alt: TODO
 - name: CupertinoContextMenu
   description: >-
     An iOS-style full-screen modal route that opens when the child is
@@ -597,7 +576,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoContextMenu-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-context-menu.png
-    alt: TODO
 - name: CupertinoContextMenuAction
   description: >-
     A button in a ContextMenuSheet.
@@ -607,7 +585,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoContextMenuAction-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoContextMenuAction.png
-    alt: TODO
 - name: CupertinoDatePicker
   description: >-
     An iOS-style date or date and time picker.
@@ -617,7 +594,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoDatePicker-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoDatePicker.png
-    alt: TODO
 - name: CupertinoDesktopTextSelectionControls
   description: Desktop Cupertino styled text selection controls.
   categories:
@@ -633,7 +609,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoDesktopTextSelectionToolbar-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoDesktopTextSelectionToolbar.png
-    alt: TODO
 - name: CupertinoDesktopTextSelectionToolbarButton
   description: >-
     A button in the style of the macOS context menu buttons.
@@ -643,7 +618,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoDesktopTextSelectionToolbarButton-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoDesktopTextSelectionToolbarButton.png
-    alt: TODO
 - name: CupertinoDialogAction
   description: >-
     A button typically used in a CupertinoAlertDialog.
@@ -653,7 +627,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoDialogAction-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-dialog-action.png
-    alt: TODO
 - name: CupertinoDialogRoute
   description: >-
     A dialog route that shows an iOS-style dialog.
@@ -687,7 +660,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoFormSection-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoFormSection.png
-    alt: TODO
 - name: CupertinoFullscreenDialogTransition
   description: >-
     An iOS-style transition used for summoning fullscreen dialogs.
@@ -697,7 +669,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoFullscreenDialogTransition-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-fullscreen-dialog-transition.png
-    alt: TODO
 - name: CupertinoThemeData
   description: Styling specifications for a CupertinoTheme.
   categories:
@@ -712,7 +683,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoListSection-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-list-section.png
-    alt: TODO
 - name: CupertinoListTile
   description: >-
     A block that uses the iOS style to create a row in a list.
@@ -722,7 +692,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoListTile-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-list-tile.png
-    alt: TODO
 - name: CupertinoListTileChevron
   description: >-
     A typical iOS trailing widget used to denote that a CupertinoListTile is a
@@ -766,7 +735,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoNavigationBar-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-nav-bar.png
-    alt: TODO
 - name: CupertinoNavigationBarBackButton
   description: >-
     A nav bar back button typically used in CupertinoNavigationBar.
@@ -776,7 +744,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoNavigationBarBackButton-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoNavigationBarBackButton.png
-    alt: TODO
 - name: CupertinoPage
   description: >-
     A page that creates a cupertino style PageRoute.
@@ -807,7 +774,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoPageTransition-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-page-transition.png
-    alt: TODO
 - name: CupertinoPicker
   description: >-
     An iOS-style picker control. Used to select an item in a short list.
@@ -817,7 +783,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoPicker-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoPicker.png
-    alt: TODO
 - name: CupertinoPickerDefaultSelectionOverlay
   description: >-
     A default selection overlay for CupertinoPickers.
@@ -842,7 +807,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoRadio-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoRadio.png
-    alt: TODO
 - name: CupertinoScrollbar
   description: >-
     An iOS-style scrollbar that indicates which portion of a scrollable widget
@@ -853,7 +817,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoScrollbar-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-scrollbar.png
-    alt: TODO
 - name: CupertinoScrollBehavior
   description: Describes how Scrollable widgets behave for CupertinoApps.
   categories:
@@ -869,7 +832,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoSearchTextField-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-search-field.png
-    alt: TODO
 - name: CupertinoSegmentedControl
   description: >-
     An iOS-style segmented control. Used to select mutually exclusive options in
@@ -880,7 +842,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoSegmentedControl-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-segmented-control.png
-    alt: TODO
 - name: CupertinoSlider
   description: Used to select from a range of values.
   categories:
@@ -889,7 +850,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoSlider-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-slider.png
-    alt: TODO
 - name: CupertinoSlidingSegmentedControl
   description: >-
     An iOS-13-style segmented control. Used to select mutually exclusive options
@@ -900,7 +860,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoSlidingSegmentedControl-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-sliding-segmented-control.png
-    alt: TODO
 - name: CupertinoSliverNavigationBar
   description: >-
     A navigation bar with iOS-11-style large titles using slivers.
@@ -911,7 +870,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoSliverNavigationBar-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-sliver-navigation-bar.png
-    alt: TODO
 - name: CupertinoSliverRefreshControl
   description: >-
     A sliver widget implementing the iOS-style pull to refresh content control.
@@ -928,7 +886,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoSpellCheckSuggestionsToolbar-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoSpellCheckSuggestionsToolbar.png
-    alt: TODO
 - name: CupertinoSwitch
   description: >-
     An iOS-style switch. Used to toggle the on/off state of a single setting.
@@ -938,7 +895,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoSwitch-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-switch.png
-    alt: TODO
 - name: CupertinoTabBar
   description: >-
     An iOS-style bottom tab bar. Typically used with CupertinoTabScaffold.
@@ -948,7 +904,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoTabBar-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-tab-bar.png
-    alt: TODO
 - name: CupertinoTabController
   description: >-
     Coordinates tab selection between a CupertinoTabBar and
@@ -965,7 +920,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoTabScaffold-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-tab-scaffold.png
-    alt: TODO
 - name: CupertinoTabView
   description: >-
     Root content of a tab that supports parallel navigation between tabs.
@@ -976,7 +930,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoTabView-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-tab-view.png
-    alt: TODO
 - name: CupertinoTextField
   description: >-
     An iOS-style text field.
@@ -986,7 +939,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoTextField-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-textfield.png
-    alt: TODO
 - name: CupertinoTextFormFieldRow
   description: >-
     Creates a CupertinoFormRow containing a FormField that wraps a
@@ -997,7 +949,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoTextFormFieldRow-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoTextFormFieldRow.png
-    alt: TODO
 - name: CupertinoTextMagnifier
   description: >-
     A CupertinoMagnifier used for magnifying text in cases where a user's finger
@@ -1008,7 +959,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoTextMagnifier-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoTextMagnifier.png
-    alt: TODO
 - name: CupertinoTextSelectionControls
   description: iOS-style text selection controls.
   categories:
@@ -1024,7 +974,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoTextSelectionToolbar-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoTextSelectionToolbar.png
-    alt: TODO
 - name: CupertinoTextSelectionToolbarButton
   description: >-
     A button in the style of the iOS text selection toolbar buttons.
@@ -1034,7 +983,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoTextSelectionToolbarButton-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoTextSelectionToolbarButton.png
-    alt: TODO
 - name: CupertinoTextThemeData
   description: Cupertino typography theme in a CupertinoThemeData.
   categories:
@@ -1063,7 +1011,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoTimerPicker-class.html
   image:
     src: /assets/images/docs/widget-catalog/CupertinoTimerPicker.png
-    alt: TODO
 - name: CustomMultiChildLayout
   description: >-
     A widget that uses a delegate to size and position multiple children.
@@ -1097,7 +1044,6 @@
   link: https://main-api.flutter.dev/flutter/material/CarouselView-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-carousel.png
-    alt: TODO
 - name: CustomScrollView
   description: >-
     A ScrollView that creates custom scroll effects using slivers.
@@ -1123,7 +1069,6 @@
   link: https://api.flutter.dev/flutter/material/DataTable-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-data-table.png
-    alt: TODO
 - name: DatePicker
   description: Calendar interface used to select a date or a range of dates.
   categories: []
@@ -1133,7 +1078,6 @@
   link: https://api.flutter.dev/flutter/material/showDatePicker.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-date-picker.png
-    alt: TODO
   hoverBackground:
     src: /assets/images/docs/widget-catalog/material-3-leaves.png
 - name: DecoratedBox
@@ -1188,7 +1132,6 @@
   link: https://api.flutter.dev/flutter/material/Divider-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-divider.png
-    alt: TODO
   hoverBackground:
     src: /assets/images/docs/widget-catalog/material-3-coral.png
 - name: DragTarget
@@ -1233,7 +1176,6 @@
   link: https://api.flutter.dev/flutter/material/Drawer-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-drawer.png
-    alt: TODO
 - name: DropdownButton
   description: >-
     Shows the currently selected item and an arrow that opens a menu for
@@ -1244,7 +1186,6 @@
   link: https://api.flutter.dev/flutter/material/DropdownButton-class.html
   image:
     src: https://storage.googleapis.com/material-design/publish/material_v_11/assets/0B7WCemMG6e0VakJ6a0F2MFJaaDQ/components_menus.png
-    alt: TODO
 - name: ElevatedButton
   description: >-
     A Material Design elevated button. A filled button whose material elevates
@@ -1256,7 +1197,6 @@
   link: https://api.flutter.dev/flutter/material/ElevatedButton-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-elevated-button.png
-    alt: TODO
 - name: ExcludeSemantics
   description: >-
     A widget that drops all the semantics of its descendants. This can be used
@@ -1284,7 +1224,6 @@
   link: https://api.flutter.dev/flutter/material/ExpansionPanel-class.html
   image:
     src: https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VOXF3eEJ3azZMSjg/components_expansion_panels.png
-    alt: TODO
 - name: FadeTransition
   description: >-
     Animates the opacity of a widget.
@@ -1307,7 +1246,6 @@
   link: https://api.flutter.dev/flutter/material/FloatingActionButton-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-floating-action-button.png
-    alt: TODO
   hoverBackground:
     src: /assets/images/docs/widget-catalog/material-3-leaves.png
 - name: Extended FloatingActionButton
@@ -1321,7 +1259,6 @@
   link: https://api.flutter.dev/flutter/material/FloatingActionButton/FloatingActionButton.extended.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-extended-fab.png
-    alt: TODO
   hoverBackground:
     src: /assets/images/docs/widget-catalog/material-3-leaves.png
 - name: Flow
@@ -1402,7 +1339,6 @@
   link: https://api.flutter.dev/flutter/widgets/GridView-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-grid-view.png
-    alt: TODO
 - name: Hero
   description: >-
     A widget that marks its child as being a candidate for hero animations.
@@ -1422,7 +1358,6 @@
   link: https://api.flutter.dev/flutter/widgets/Icon-class.html
   image:
     src: https://flutter.github.io/assets-for-api-docs/assets/widgets/icon.png
-    alt: TODO
 - name: IconButton
   description: Clickable icons to prompt app users to take supplementary actions.
   categories: []
@@ -1432,7 +1367,6 @@
   link: https://api.flutter.dev/flutter/material/IconButton-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-icon-button.png
-    alt: TODO
   hoverBackground:
     src: /assets/images/docs/widget-catalog/material-3-leaves.png
 - name: IgnorePointer
@@ -1512,7 +1446,6 @@
   link: https://api.flutter.dev/flutter/material/LinearProgressIndicator-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-progress-indicator.png
-    alt: TODO
   hoverBackground:
     src: /assets/images/docs/widget-catalog/material-3-coral.png
 - name: ListTile
@@ -1526,7 +1459,6 @@
   link: https://api.flutter.dev/flutter/material/ListTile-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-list.png
-    alt: TODO
   hoverBackground:
     src: /assets/images/docs/widget-catalog/material-3-coral.png
 - name: ListBody
@@ -1550,7 +1482,6 @@
   link: https://api.flutter.dev/flutter/widgets/ListView-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-list-tile.png
-    alt: TODO
 - name: LongPressDraggable
   description: Makes its child draggable starting from long press.
   categories: []
@@ -1567,7 +1498,6 @@
   link: https://api.flutter.dev/flutter/material/MaterialApp-class.html
   image:
     src: https://storage.googleapis.com/material-design/publish/material_v_11/assets/0Bx4BSt6jniD7Y1huOXVQdlFPMmM/materialdesign_introduction.png
-    alt: TODO
 - name: MediaQuery
   description: Establishes a subtree in which media queries resolve to the given data.
   categories:
@@ -1582,7 +1512,6 @@
   link: https://api.flutter.dev/flutter/material/MenuAnchor-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-menu.png
-    alt: TODO
   hoverBackground:
     src: /assets/images/docs/widget-catalog/material-3-leaves.png
 - name: MergeSemantics
@@ -1602,7 +1531,6 @@
   link: https://api.flutter.dev/flutter/material/NavigationBar-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-navigation-bar.png
-    alt: TODO
   hoverBackground:
     src: /assets/images/docs/widget-catalog/material-3-bubbles.png
 - name: NavigationDrawer
@@ -1615,7 +1543,6 @@
   link: https://api.flutter.dev/flutter/material/NavigationDrawer-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-navigation-drawer.png
-    alt: TODO
   hoverBackground:
     src: /assets/images/docs/widget-catalog/material-3-bubbles.png
 - name: Navigation rail
@@ -1628,7 +1555,6 @@
   link: https://api.flutter.dev/flutter/material/NavigationRail-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-navigation-rail.png
-    alt: TODO
   hoverBackground:
     src: /assets/images/docs/widget-catalog/material-3-bubbles.png
 - name: Navigator
@@ -1690,7 +1616,6 @@
   link: https://api.flutter.dev/flutter/material/OutlinedButton-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-outlined-button.png
-    alt: TODO
 - name: OverflowBox
   description: >-
     A widget that imposes different constraints on its child than it gets from
@@ -1748,7 +1673,6 @@
   link: https://api.flutter.dev/flutter/material/PopupMenuButton-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-popup-menu-button.png
-    alt: TODO
 - name: PositionedTransition
   description: >-
     Animated version of Positioned which takes a specific Animation to
@@ -1769,7 +1693,6 @@
   link: https://api.flutter.dev/flutter/material/Radio-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-radio-button.png
-    alt: TODO
   hoverBackground:
     src: /assets/images/docs/widget-catalog/material-3-leaves.png
 - name: RawImage
@@ -1796,7 +1719,6 @@
   link: https://api.flutter.dev/flutter/material/RefreshIndicator-class.html
   image:
     src: https://storage.googleapis.com/material-design/publish/material_v_12/assets/0B7WCemMG6e0VS2kzSmZwNnNKQVk/patterns-swipe-to-refresh.png
-    alt: TODO
 - name: ReorderableListView
   description: >-
     A list whose items the user can interactively reorder by dragging.
@@ -1853,7 +1775,6 @@
   link: https://api.flutter.dev/flutter/material/Scaffold-class.html
   image:
     src: https://storage.googleapis.com/material-design/publish/material_v_11/assets/0Bx4BSt6jniD7T0hfM01sSmRyTG8/layout_structure_regions_mobile.png
-    alt: TODO
 - name: ScaleTransition
   description: >-
     Animates the scale of transformed widget.
@@ -1895,7 +1816,6 @@
   link: https://api.flutter.dev/flutter/material/SegmentedButton-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-segmented-button.png
-    alt: TODO
   hoverBackground:
     src: /assets/images/docs/widget-catalog/material-3-leaves.png
 - name: Semantics
@@ -1918,7 +1838,6 @@
   link: https://api.flutter.dev/flutter/material/SimpleDialog-class.html
   image:
     src: https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VVGNnN3NvMGdoQTg/components_dialogs.png
-    alt: TODO
 - name: SingleChildScrollView
   description: >-
     A box in which a single widget can be scrolled. This widget is useful when
@@ -1982,7 +1901,6 @@
   link: https://api.flutter.dev/flutter/material/Slider-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-slider.png
-    alt: TODO
   hoverBackground:
     src: /assets/images/docs/widget-catalog/material-3-leaves.png
 - name: SliverAppBar
@@ -1995,7 +1913,6 @@
   link: https://api.flutter.dev/flutter/material/SliverAppBar-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-app-bar.png
-    alt: TODO
 - name: SliverChildBuilderDelegate
   description: >-
     A delegate that supplies children for slivers using a builder callback.
@@ -2065,7 +1982,6 @@
   link: https://api.flutter.dev/flutter/material/SnackBar-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-snackbar.png
-    alt: TODO
   hoverBackground:
     src: /assets/images/docs/widget-catalog/material-3-coral.png
 - name: Stack
@@ -2095,7 +2011,6 @@
   link: https://api.flutter.dev/flutter/material/Stepper-class.html
   image:
     src: https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VTndyUnNCR2tQREE/components_steppers.png
-    alt: TODO
 - name: StreamBuilder
   description: >-
     Widget that builds itself based on the latest snapshot of interaction with a
@@ -2113,7 +2028,6 @@
   link: https://api.flutter.dev/flutter/material/Switch-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-switch.png
-    alt: TODO
   hoverBackground:
     src: /assets/images/docs/widget-catalog/material-3-leaves.png
 - name: TabBar
@@ -2127,7 +2041,6 @@
   link: https://api.flutter.dev/flutter/material/TabBar-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-tab-bar.png
-    alt: TODO
   hoverBackground:
     src: /assets/images/docs/widget-catalog/material-3-bubbles.png
 - name: TabBarView
@@ -2140,7 +2053,6 @@
   link: https://api.flutter.dev/flutter/material/TabBarView-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-tab-bar.png
-    alt: TODO
 - name: TabController
   description: Coordinates tab selection between a TabBar and a TabBarView.
   categories: []
@@ -2149,7 +2061,6 @@
   link: https://api.flutter.dev/flutter/material/TabController-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-tab-bar.png
-    alt: TODO
 - name: TabPageSelector
   description: >-
     Displays a row of small circular indicators, one per tab. The selected tab's
@@ -2160,7 +2071,6 @@
   link: https://api.flutter.dev/flutter/material/TabPageSelector-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-tab-bar.png
-    alt: TODO
 - name: Table
   description: Displays child widgets in rows and columns.
   categories: []
@@ -2190,7 +2100,6 @@
   link: https://api.flutter.dev/flutter/material/TextButton-class.html
   image:
     src: https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VNDg3V3ZjU2hsNGc/components_buttons_usage3.png
-    alt: TODO
 - name: TextField
   description: >-
     Box into which app users can enter text. They appear in forms and dialogs.
@@ -2201,7 +2110,6 @@
   link: https://api.flutter.dev/flutter/material/TextField-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-text-field.png
-    alt: TODO
   hoverBackground:
     src: /assets/images/docs/widget-catalog/material-3-bubbles.png
 - name: Theme
@@ -2220,7 +2128,6 @@
   link: https://api.flutter.dev/flutter/material/showTimePicker.html
   image:
     src: /assets/images/docs/widget-catalog/material-3-time-picker.png
-    alt: TODO
   hoverBackground:
     src: /assets/images/docs/widget-catalog/material-3-leaves.png
 - name: Tooltip
@@ -2235,7 +2142,6 @@
   link: https://api.flutter.dev/flutter/material/Tooltip-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-tooltip.png
-    alt: TODO
 - name: Transform
   description: >-
     A widget that applies a transformation before painting its child.
@@ -2260,7 +2166,6 @@
   link: https://api.flutter.dev/flutter/widgets/WidgetsApp-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-widgets-app.png
-    alt: TODO
 - name: Wrap
   description: >-
     A widget that displays its children in multiple horizontal or vertical runs.
