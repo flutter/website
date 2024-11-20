@@ -49,7 +49,7 @@
             {% elsif comp.image -%}
               <img alt="Rendered image or visualization of the {{comp.name}} widget." src="{{comp.image.src}}">
             {% else -%}
-              <img alt="Flutter logo for widget missing visualization image." src="/assets/images/docs/catalog-widget-placeholder.png" aria-hidden="true">
+              <img alt="Placeholder Flutter logo in place of missing widget image or visualization." src="/assets/images/docs/catalog-widget-placeholder.png" aria-hidden="true">
             {% endif -%}
           </div>
         </a>

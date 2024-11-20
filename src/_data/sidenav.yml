@@ -425,6 +425,18 @@
     - title: Google APIs
       permalink: /data-and-backend/google-apis
 
+- title: App architecture
+  permalink: /app-architecture
+  children:
+    - title: Introduction
+      permalink: /app-architecture
+    - title: Architecture concepts
+      permalink: /app-architecture/concepts
+    - title: Guide to app architecture
+      permalink: /app-architecture/guide
+    - title: Recommendations
+      permalink: /app-architecture/recommendations
+
 - title: Platform integration
   permalink: /platform-integration
   children:
@@ -499,6 +511,8 @@
     - title: Web
       permalink: /platform-integration/web
       children:
+        - title: Web support in Flutter
+          permalink: /platform-integration/web/
         - title: Add web as build target
           permalink: /platform-integration/web/install-web
         - title: Build a web app
