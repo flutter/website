@@ -16,7 +16,7 @@ When adding a non-Flutter window to a Flutter Windows app, it will not be part
 of the logic for application lifecycle state updates by default. For example,
 this means that when the external window is shown or hidden, the app lifecycle
 state will not appropriately update to inactive or hidden. As a result, the app
-may receive incorrect lifecycle state changes through
+might receive incorrect lifecycle state changes through
 [WidgetsBindingObserver.didChangeAppLifecycle][].
 
 # What do I need to do?
