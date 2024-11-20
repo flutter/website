@@ -21,7 +21,7 @@ you can read the [Store key-value data on disk][] recipe.
 Key-value stores are often used for saving simple data, 
 such as app configuration, 
 and in this recipe you’ll use it to save Dark Mode preferences. 
-If you want to learn how to store complex data on device, 
+If you want to learn how to store complex data on a device, 
 you’ll likely want to use SQL. 
 In that case, take a look at the cookbook recipe 
 that follows this one called [Persistent storage architecture: SQL][]. 
@@ -180,21 +180,20 @@ the `ThemeRepository` and the `SharedPreferencesService`.
 
 The `ThemeRepository` is the single source of truth 
 for all the theming configuration settings, 
-and will handle any possible errors coming from the service layer.
+and handles any possible errors coming from the service layer.
 
 In this example, 
 the `ThemeRepository` also exposes the dark mode setting 
-through an observable Stream. 
+through an observable `Stream`. 
 This allows other parts of the application 
 to subscribe to changes in the dark mode setting.
 
-The `ThemeRepository` depends on the `SharedPreferencesService`.
-The repository will obtain the stored value from the service, 
-and will store it when it changes.
+The `ThemeRepository` depends on `SharedPreferencesService`.
+The repository obtains the stored value from the service, 
+and stores it when it changes.
 
 The `setDarkMode()` method passes the new value to the `StreamController`,
 so that any component listening to the `observeDarkMode` stream 
-will receive updates.
 
 
 <?code-excerpt "lib/data/repositories/theme_repository.dart (ThemeRepository)"?>
@@ -286,7 +285,7 @@ void main() {
 ```
 
 Then, when the `ThemeSwitch` is created, 
-create as well the `ThemeSwitchViewModel` 
+also create `ThemeSwitchViewModel` 
 and pass the `ThemeRepository` as dependency.
 
 <?code-excerpt "lib/main.dart (AddThemeSwitch)"?>

@@ -10,7 +10,7 @@ js:
 
 Most Flutter applications, 
 no matter how small or big they are, 
-may require storing data on the user’s device at some point. 
+might require storing data on the user’s device at some point. 
 For example, API keys, 
 user preferences or data that should be available offline.
 
@@ -28,9 +28,9 @@ If you need help, you can read the [Persist data with SQLite][] recipe
 before reading this one.
 
 This example uses [`sqflite`][] with the [`sqflite_common_ffi`][] plugin, 
-which combined support mobile and desktop. 
+which combined support for mobile and desktop. 
 Support for web is provided in the experimental plugin 
-[`sqflite_common_ffi_web`][] but it is not included in this example.
+[`sqflite_common_ffi_web`][] but it's not included in this example.
 
 ## Example application: ToDo list application
 
@@ -62,9 +62,9 @@ This functionality follows the recommended [Flutter Architecture design][],
 containing a UI layer and a data layer. 
 Additionally, in the domain layer you will find the data model used.
 
-- UI layer with `TodoListScreen` and `TodoListViewModel`.
-- Domain layer with `Todo` data class.
-- Data layer with `TodoRepository` and `DatabaseService`.
+- UI layer with `TodoListScreen` and `TodoListViewModel`
+- Domain layer with `Todo` data class
+- Data layer with `TodoRepository` and `DatabaseService`
 
 ### ToDo list presentation layer
 
@@ -135,9 +135,9 @@ Future<Result<void>> _load() async {
 }
 ```
 
-When the `FilledButton` is pressed, 
-it executes the `add` Command, 
-passing in the text controller value.
+Pressing the `FilledButton`,
+executes the `add` command
+and passes in the text controller value.
 
 <?code-excerpt "lib/ui/todo_list/widgets/todo_list_screen.dart (FilledButton)" replace="/^\),$/)/g"?>
 ```dart
@@ -193,7 +193,7 @@ void _onAdd() {
 }
 ```
 
-When a user taps on the IconButton in the ListTile, the delete Command is executed.
+When a user taps on the `IconButton` in the `ListTile`, the delete command is executed.
 
 <?code-excerpt "lib/ui/todo_list/widgets/todo_list_screen.dart (Delete)" replace="/trailing: //g;/^\),$/)/g"?>
 ```dart
@@ -205,9 +205,8 @@ IconButton(
 
 Then, the view model calls the `TodoRepository.deleteTodo()` method, 
 passing the unique ToDo item identifier. 
-If the result is correct, 
-the ToDo item is then removed from the view model, 
-and so removed from the screen.
+A correct result removes the ToDo item from the view
+model *and* the screen.
 
 <?code-excerpt "lib/ui/todo_list/viewmodel/todo_list_viewmodel.dart (Delete)"?>
 ```dart
@@ -234,7 +233,7 @@ Future<Result<void>> _delete(int id) async {
 The domain layer of this example application contains the ToDo item data model.
 
 Items are presented by an immutable data class. 
-In this case, the application uses the freezed package to generate the code.
+In this case, the application uses the `freezed` package to generate the code.
 
 The class has two properties, an id represented by an `int`, 
 and a task description, represented by a `String`.
@@ -264,7 +263,8 @@ and it should not expose any implementation details on how they are stored.
 
 Internally, the `TodoRepository` uses the `DatabaseService`, 
 which implements the access to the SQL database using the `sqflite` package.
-You can implement the same DatabaseService using other storage packages like sqlite3, drift or even cloud storage solutions like firebase_database.
+You can implement the same `DatabaseService` using other storage packages 
+like `sqlite3`, `drift` or even cloud storage solutions like `firebase_database`.
 
 The `TodoRepository` checks if the database is open 
 before every request and opens it if necessary.
@@ -336,9 +336,9 @@ Future<void> open() async {
 }
 ```
 
-Note that the column `id` is set as `primary key` and `autoincrement`, 
+Note that the column `id` is set as `primary key` and `autoincrement`;
 this means that each newly inserted item 
-will be assigned a new value for the `id` column.
+is assigned a new value for the `id` column.
 
 The `insert()` method creates a new ToDo item in the database, 
 and returns a newly created Todo instance. 
@@ -358,13 +358,13 @@ Future<Result<Todo>> insert(String task) async {
 }
 ```
 
-All the `DatabaseService` operations use the [Result][] class to return a value,
+All the `DatabaseService` operations use the [`Result`][] class to return a value,
 as recommended by the [Flutter architecture recommendations][]. 
 This facilitates handling errors in further steps in the application code.
 
 The `getAll()` method performs a database query, 
 obtaining all the values in the `id` and `task` columns.
-For each entry, it will create a `Todo` class instance.
+For each entry, it creates a `Todo` class instance.
 
 <?code-excerpt "lib/data/services/database_service.dart (GetAll)"?>
 ```dart
@@ -411,8 +411,8 @@ Future<Result<void>> delete(int id) async {
 }
 ```
 
-::note
-In some cases, you may want to close the database when you are done with it. 
+:::note
+In some cases, you might want to close the database when you are done with it. 
 For example, when the user leaves the screen, 
 or after a certain time has passed. 
 
@@ -420,7 +420,7 @@ This depends on the database implementation
 as well as your application requirements. 
 It’s recommended that you check with the database package authors 
 for recommendations.
-::
+:::
 
 ## Putting it all together
 
@@ -479,7 +479,7 @@ TodoListScreen(
 [MVVM pattern]:/get-started/fundamentals/state-management#using-mvvm-for-your-applications-architecture
 [Persist data with SQLite]:/cookbook/persistence/sqlite
 [Persistent storage architecture: Key-value data]:/app-architecture/cookbook/key-value-data
-[Result]:/app-architecture/cookbook/result
+[`Result`]:/app-architecture/cookbook/result
 [`/examples/app-architecture/todo_data_service/`]: {{site.repo.flutter}}/tree/main/examples/app-architecture/todo_data_service/
 [`sqflite_common_ffi_web`]:https://pub.dev/packages/sqflite_common_ffi_web
 [`sqflite_common_ffi`]:https://pub.dev/packages/sqflite_common_ffi
