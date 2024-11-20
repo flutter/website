@@ -38,10 +38,6 @@ search-engine optimized HTML.
 That said, as mentioned in the [roadmap][], the Flutter team plans to
 investigate search engine indexability of Flutter web.
 
-### How do I create an app that also runs on the web?
-
-See [building a web app with Flutter][].
-
 ### Does hot reload work with a web app?
 
 No, but you can use hot restart. Hot restart is a fast way of seeing your
@@ -49,12 +45,6 @@ changes without having to relaunch your web app and wait for it to compile and
 load. This works similarly to the hot reload feature for Flutter mobile
 development. The only difference is that hot reload remembers your state and hot
 restart doesn't.
-
-### How do I restart the app running in the browser?
-
-You can either use the browser's refresh button,
-or you can enter "R" in the console where
-"flutter run -d chrome" is running.
 
 ### Which web browsers are supported by Flutter?
 
@@ -103,14 +93,6 @@ is not currently supported in Flutter web.
 Flutter web apps can potentially work around this
 by using [web workers][],
 although no such support is built in.
-
-### How do I embed a Flutter web app in a web page?
-
-See [Embedding Flutter web][].
-
-### How do I embed web content in a Flutter web app?
-
-See [Web content in Flutter][].
 
 ### How do I deploy a web app?
 
