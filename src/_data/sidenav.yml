@@ -436,6 +436,11 @@
       permalink: /app-architecture/guide
     - title: Recommendations
       permalink: /app-architecture/recommendations
+    - title: Design patterns
+      permalink: /cookbook/architecture
+      children:
+        - title: Optimistic state
+          permalink: /cookbook/architecture/optimistic-state
 
 - title: Platform integration
   permalink: /platform-integration
