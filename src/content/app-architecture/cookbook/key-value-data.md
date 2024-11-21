@@ -64,7 +64,7 @@ The `ThemeSwitch` is a `StatelessWidget` that contains a `Switch` widget.
 The state of the switch is represented 
 by the public field `isDarkMode` in the `ThemeSwitchViewModel`. 
 When the user taps the switch, 
-the code executes the `Command` `toggle` in the view model.
+the code executes the command `toggle` in the view model.
 
 <?code-excerpt "lib/ui/theme_config/widgets/theme_switch.dart (ThemeSwitch)"?>
 ```dart
@@ -109,16 +109,16 @@ represented by the boolean variable `_isDarkMode`.
 The view model uses the `ThemeRepository`
 to store and load the dark mode setting.
 
-It contains two different Command actions: 
+It contains two different command actions: 
 `load`, which loads the dark mode setting from the repository,
 and `toggle`, which switches the state between dark mode and light mode. 
 It exposes the state through the `isDarkMode` getter.
 
-The `_load` method implements the `load` Command. 
+The `_load` method implements the `load` command. 
 This method calls `ThemeRepository.isDarkMode` 
 to obtain the stored setting and calls `notifyListeners()` to refresh the UI.
 
-The `_toggle` method implements the `toggle` Command. 
+The `_toggle` method implements the `toggle` command. 
 This method calls `ThemeRepository.setDarkMode` 
 to store the new dark mode setting. 
 As well, it changes the local state of `_isDarkMode`

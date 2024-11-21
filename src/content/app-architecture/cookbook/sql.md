@@ -73,7 +73,7 @@ and creating the ToDo items.
 It follows the [MVVM pattern][] 
 and is accompanied by the `TodoListViewModel`, 
 which contains the list of ToDo items 
-and three [Commands][] to load, add, and delete ToDo items.
+and three [commands][] to load, add, and delete ToDo items.
 
 This screen is divided into two parts, 
 one containing the list of ToDo items, 
@@ -108,7 +108,7 @@ ListenableBuilder(
 ```
 
 The list of ToDo items is defined in the `TodoListViewModel`, 
-and loaded by the `load` Command. 
+and loaded by the `load` command. 
 This method calls the `TodoRepository` and fetches the list of ToDo items.
 
 <?code-excerpt "lib/ui/todo_list/viewmodel/todo_list_viewmodel.dart (TodoListViewModel)"?>
@@ -149,7 +149,7 @@ FilledButton.icon(
 )
 ```
 
-The `add` Command then calls the `TodoRepository.createTodo()` method 
+The `add` command then calls the `TodoRepository.createTodo()` method 
 with the task description text and it creates a new ToDo item.
 
 The `createTodo()` method returns the newly created ToDo, 
@@ -179,7 +179,7 @@ Future<Result<void>> _add(String task) async {
 }
 ```
 
-Finally, the `TodoListScreen` also listens to the result in the `add` Command.
+Finally, the `TodoListScreen` also listens to the result in the `add` command.
 When the action completes, the `TextEditingController` is cleared.
 
 <?code-excerpt "lib/ui/todo_list/widgets/todo_list_screen.dart (Add)"?>
@@ -473,7 +473,7 @@ TodoListScreen(
 )
 ```
 
-[Commands]:/app-architecture/cookbook/command
+[commands]:/app-architecture/cookbook/command
 [Flutter Architecture design]:/app-architecture
 [Flutter architecture recommendations]:/app-architecture
 [MVVM pattern]:/get-started/fundamentals/state-management#using-mvvm-for-your-applications-architecture
