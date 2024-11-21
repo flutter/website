@@ -32,7 +32,7 @@ alt="A diagram that highlights the data layer components of an application.">
   user events or polling for data from services. Repositories are responsible
   for synchronizing the data when offline capabilities are supported, managing
   retry logic, and caching data.
-* **Services **are stateless Dart classes that interact with APIs, like HTTP
+* **Services** are stateless Dart classes that interact with APIs, like HTTP
   servers and platform plugins. Any data that your application needs that isn't
   created inside the application code itself should be fetched from within
   service classes.
