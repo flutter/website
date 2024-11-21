@@ -6,7 +6,7 @@ js:
     url: /assets/js/inject_dartpad.js
 ---
 
-<?code-excerpt path-base="app-architecture/offline_first"?>
+<?code-excerpt path-base="cookbook/architecture/offline_first"?>
 
 An offline-first application is an app capable of offering most 
 or all its functionality while being disconnected from the Internet. 
@@ -521,9 +521,9 @@ take into account the device status and your application needs,
 as different applications may have different requirements.
 
 [Flutter Architecture guidelines]:/app-architecture
-[Persistent Storage Architecture: SQL]:/app-architecture/cookbook/sql
+[Persistent Storage Architecture: SQL]:/cookbook/architecture/sql
 [`freezed`]:{{site.pub}}/packages/freezed
-[Optimistic State design pattern]:/app-architecture/cookbook/optimistic-state
+[Optimistic State design pattern]:/cookbook/architecture/optimistic-state
 [`workmanager`]:{{site.pub}}/packages/workmanager
 [`connectivity_plus`]:{{site.pub}}/packages/connectivity_plus
 [`battery_plus`]:{{site.pub}}/packages/battery_plus
