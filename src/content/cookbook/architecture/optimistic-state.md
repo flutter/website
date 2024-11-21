@@ -421,7 +421,7 @@ When the message is delivered, that icon would be removed.
 In the subscribe button example, 
 you could add another flag in the view model 
 indicating that the `subscribe()` method is still running, 
-or use the [Command pattern][] running state, 
+or use the Command pattern running state, 
 then modify the button style slightly to show that the operation is running.
 
 ## Interactive example
@@ -595,4 +595,3 @@ class SubscriptionRepository {
 ```
 
 [Flutter Architecture guidelines]:/app-architecture
-[Command pattern]:/cookbook/architecture/command
