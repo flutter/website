@@ -8,21 +8,47 @@ js:
 
 <?code-excerpt path-base="app-architecture/offline_first"?>
 
-An offline-first application is an app capable of offering most or all its functionality while being disconnected from the Internet. Offline-first applications usually rely on stored data to offer users a temporal access to data that would otherwise only be available online.
+An offline-first application is an app capable of offering most 
+or all its functionality while being disconnected from the Internet. 
+Offline-first applications usually rely on stored data 
+to offer users a temporal access to data 
+that would otherwise only be available online.
 
-Some offline-first applications will combine local and remote data seamlessly, while other applications will inform the user when the application is using cached data. In the same way, some applications will synchronize data in the background while others will require the user to explicitly synchronize it. It all depends on the application requirements and the functionality it offers, and it’s up to the developer to decide which implementation fits their needs.
+Some offline-first applications will combine local and remote data seamlessly, 
+while other applications will inform the user 
+when the application is using cached data. 
+In the same way, 
+some applications will synchronize data in the background 
+while others will require the user to explicitly synchronize it. 
+It all depends on the application requirements and the functionality it offers, 
+and it’s up to the developer to decide which implementation fits their needs.
 
-In this guide, you will learn how to implement different approaches to offline-first applications in Flutter, following the Flutter Architecture guidelines.
+In this guide, 
+you will learn how to implement different approaches 
+to offline-first applications in Flutter, 
+following the Flutter Architecture guidelines.
 
 ## Offline-first architecture
 
-As explained in the common architecture concepts guide, repositories act as the single source of truth. They are responsible for presenting local or remote data, and should be the only place where data can be modified. In offline-first applications, repositories combine different local and remote data sources to present data in a single access point, independently of the connectivity state of the device.
+As explained in the common architecture concepts guide, 
+repositories act as the single source of truth. 
+They are responsible for presenting local or remote data, 
+and should be the only place where data can be modified. 
+In offline-first applications, 
+repositories combine different local and remote data sources 
+to present data in a single access point, 
+independently of the connectivity state of the device.
 
-This example uses the UserProfileRepository, a repository that allows to obtain and store UserProfile objects with offline-first support.
+This example uses the UserProfileRepository, 
+a repository that allows to obtain and store UserProfile objects 
+with offline-first support.
 
-The UserProfileRepository uses two different data services: one works remote data, and the other works with a local database. 
+The UserProfileRepository uses two different data services: 
+one works remote data, 
+and the other works with a local database. 
 
-The  API client is named ApiClientService, and it connects to a remote service using HTTP REST calls.
+The  API client is named ApiClientService, 
+and it connects to a remote service using HTTP REST calls.
 
 <?code-excerpt "lib/data/services/api_client_service.dart (ApiClientService)"?>
 ```dart
@@ -39,7 +65,9 @@ class ApiClientService {
 }
 ```
 
-The  database service is named DatabaseService, and it stores data using SQL, similar to the one found in the Persistent Storage Architecture: SQL recipe.
+The  database service is named DatabaseService, 
+and it stores data using SQL, 
+similar to the one found in the Persistent Storage Architecture: SQL recipe.
 
 <?code-excerpt "lib/data/services/database_service.dart (DatabaseService)"?>
 ```dart
@@ -57,7 +85,8 @@ class DatabaseService {
 }
 ```
 
-As well, this example uses the UserProfile data class that has been created using the freezed package.
+As well, this example uses the UserProfile data class 
+that has been created using the freezed package.
 
 <?code-excerpt "lib/domain/model/user_profile.dart (UserProfile)" remove="@Default(false) bool synchronized,"?>
 ```dart
