@@ -4,24 +4,25 @@ description: Choosing build modes and renderers for a Flutter web app.
 ---
 
 Flutter web offers two _build modes_, and two _renderers_.
-The two build modes are the **default** or **WebAssembly**,
+The two build modes are the **default** and **WebAssembly**,
 and the two renderers are **canvaskit** and **skwasm**.
 
-The build mode is chosen when building the app,
+Flutter chooses the build mode when building the app,
 and determines which renderers are available at runtime.
 
-When the default build mode is used,
-the `canvaskit` renderer is used at runtime.
-Alternatively, when the WebAssembly build mode is used,
-Flutter will choose the `skwasm` renderer at runtime,
-and fall back to `canvaskit` if the browser doesn't support `skwasm`.
+For a default build,
+Flutter chooses the`canvaskit` renderer at runtime.
+For a WebAssembly build,
+Flutter chooses the `skwasm` renderer at runtime,
+and falls back to `canvaskit` if the browser doesn't support `skwasm`.
 
 ## Build modes
 
 ### Default build mode
 
-The default mode is used when `flutter run` and `flutter build web` commands are
-used without passing `--wasm` or by passing `--no-wasm`.
+Flutter chooses the default mode when the
+`flutter run` or `flutter build web` commands are
+used without passing `--wasm`, or when passing `--no-wasm`.
 
 This build mode only uses the `canvaskit` renderer.
 
@@ -44,8 +45,8 @@ This mode is enabled by passing `--wasm` to `flutter run` and
 
 This mode makes both `skwasm` and `canvaskit` available. `skwasm` requires
 [WasmGC][], which is not yet supported by all modern browsers.
-Therefore, at runtime Flutter will pick `skwasm` if garbage collection is
-supported, and fallback to `canvaskit` if not. This allows apps compiled in the
+Therefore, at runtime Flutter chooses `skwasm` if garbage collection is
+supported, and falls back to `canvaskit` if not. This allows apps compiled in the
 WebAssembly mode to still run in all modern browsers.
 
 The `--wasm` flag is not supported by non-web platforms.
@@ -88,7 +89,7 @@ which compiles the Dart code to WebAssembly.
 To take advantage of multiple threads,
 the web server must meet the [SharedArrayBuffer security requirements][].
 In this mode,
-Flutter will use a dedicated [web worker][] to offload part of the rendering
+Flutter uses a dedicated [web worker][] to offload part of the rendering
 workload to a separate thread,
 taking advantage of multiple CPU cores.
 If the browser does not meet these requirements,
