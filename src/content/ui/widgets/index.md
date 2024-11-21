@@ -66,7 +66,7 @@ help you quickly get started with Flutter widgets.
     </div>
     <div class="card">
         <div class="card-body">
-            {% ytEmbed 'VdkRy3yZiPo', 'LinearGradient - Flutter widget of the week', true, true %}
+            {% ytEmbed 'gYNTcgZVcWw', 'LinearGradient - Flutter widget of the week', true, true %}
         </div>
     </div>
     <div class="card">
