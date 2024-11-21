@@ -70,8 +70,6 @@ repositories should be private members on the ViewModel,
 otherwise Views would have direct access to 
 the data layer of the application.
 
-[repositories]: app-architecture/guide#repositories
-
 ### UI state
 
 The output of a ViewModel is data that a view needs to render, generally
