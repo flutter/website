@@ -26,7 +26,7 @@ and it’s up to the developer to decide which implementation fits their needs.
 In this guide, 
 you will learn how to implement different approaches 
 to offline-first applications in Flutter, 
-following the Flutter Architecture guidelines.
+following the [Flutter Architecture guidelines][].
 
 ## Offline-first architecture
 
@@ -39,15 +39,15 @@ repositories combine different local and remote data sources
 to present data in a single access point, 
 independently of the connectivity state of the device.
 
-This example uses the UserProfileRepository, 
-a repository that allows to obtain and store UserProfile objects 
+This example uses the `UserProfileRepository`, 
+a repository that allows to obtain and store `UserProfile` objects 
 with offline-first support.
 
-The UserProfileRepository uses two different data services: 
+The `UserProfileRepository` uses two different data services: 
 one works remote data, 
 and the other works with a local database. 
 
-The  API client is named ApiClientService, 
+The API client is named `ApiClientService`, 
 and it connects to a remote service using HTTP REST calls.
 
 <?code-excerpt "lib/data/services/api_client_service.dart (ApiClientService)"?>
@@ -65,9 +65,9 @@ class ApiClientService {
 }
 ```
 
-The  database service is named DatabaseService, 
+The database service is named `DatabaseService`, 
 and it stores data using SQL, 
-similar to the one found in the Persistent Storage Architecture: SQL recipe.
+similar to the one found in the [Persistent Storage Architecture: SQL][] recipe.
 
 <?code-excerpt "lib/data/services/database_service.dart (DatabaseService)"?>
 ```dart
@@ -85,8 +85,8 @@ class DatabaseService {
 }
 ```
 
-As well, this example uses the UserProfile data class 
-that has been created using the freezed package.
+As well, this example uses the `UserProfile` data class 
+that has been created using the [`freezed`][] package.
 
 <?code-excerpt "lib/domain/model/user_profile.dart (UserProfile)" remove="@Default(false) bool synchronized,"?>
 ```dart
@@ -104,15 +104,15 @@ for example when the remote data contains more fields than the needed by the UI,
 you may want to have a different data class for the API and database services,
 and one for the UI. 
 For example, 
-UserProfileLocal for the database entity, 
-UserProfileRemote for the API response object, 
-and then UserProfile for the UI data model class. 
-The UserProfileRepository would take care
+`UserProfileLocal` for the database entity, 
+`UserProfileRemote` for the API response object, 
+and then `UserProfile` for the UI data model class. 
+The `UserProfileRepository` would take care
 of converting from one to the other when necessary.
 
-This example also includes the UserProfileViewModel, 
-a view model that uses the UserProfileRepository 
-to display the UserProfile on a widget.
+This example also includes the `UserProfileViewModel`, 
+a view model that uses the `UserProfileRepository` 
+to display the `UserProfile` on a widget.
 
 <?code-excerpt "lib/ui/user_profile/user_profile_viewmodel.dart (UserProfileViewModel)"?>
 ```dart
@@ -144,12 +144,12 @@ In offline-first applications,
 you want to ensure that the access to this data is as fast as possible, 
 and that it doesn’t depend on the device being online 
 to provide data to the user, 
-similar to the Optimistic State design pattern.
+similar to the [Optimistic State design pattern][].
 
 In this section, 
 you will learn two different approaches, 
 one that uses the database as a fallback, 
-and one that combines local and remote data using a Stream.
+and one that combines local and remote data using a `Stream`.
 
 ### Using local data as fallback
 
@@ -157,10 +157,10 @@ As a first approach,
 you can implement offline support by having a fallback mechanism 
 for when the user is offline or a network call fails.
 
-In this case, the UserProfileRepository attempts to obtain the UserProfile 
-from the remote API server using the ApiClientService,
+In this case, the `UserProfileRepository` attempts to obtain the `UserProfile` 
+from the remote API server using the `ApiClientService`,
 and if this request fails, 
-then returns the locally stored UserProfile from the DatabaseService.
+then returns the locally stored `UserProfile` from the `DatabaseService`.
 
 <?code-excerpt "lib/data/repositories/user_profile_repository.dart (getUserProfileFallback)" replace="/Fallback//g"?>
 ```dart
@@ -191,11 +191,11 @@ Future<UserProfile> getUserProfile() async {
 
 ### Using a Stream
 
-A better alternative is to present the data using a Stream. 
+A better alternative is to present the data using a `Stream`. 
 In the best case scenario, 
-the Stream will emit two values, the locally stored data, and then the data from the server.
+the `Stream` will emit two values, the locally stored data, and then the data from the server.
 
-First, the stream will emit the locally stored data using the DatabaseService. 
+First, the stream will emit the locally stored data using the `DatabaseService`. 
 This call is generally faster and less error prone than a network call, 
 and by doing it first the view model can already display data to the user.
 
@@ -203,7 +203,7 @@ If the database does not contain any cached data,
 then the Stream will rely completely on the network call, 
 emitting only one value.
 
-Then, the method performs the network using the ApiClientService 
+Then, the method performs the network using the `ApiClientService`
 to obtain up-to-date data. 
 If the request was successful, 
 it updates the database with the newly obtained data. 
@@ -234,11 +234,11 @@ Stream<UserProfile> getUserProfile() async* {
 ```
 
 The view model needs to subscribe 
-to this Stream and wait until it has been completed. 
-For that, call to asFuture() with the Subscription object and await the result.
+to this `Stream` and wait until it has been completed. 
+For that, call `asFuture()` with the `Subscription` object and await the result.
 
 For each obtained value, 
-update the view model data and call notifyListeners() 
+update the view model data and call `notifyListeners()`
 so the UI shows the latest data.
 
 <?code-excerpt "lib/ui/user_profile/user_profile_viewmodel.dart (load)"?>
@@ -293,11 +293,12 @@ for example a weather application
 where the weather data is only updated once a day.
 
 Synchronization could be done manually by the user, 
-for example, a pull-to-refresh action that then calls to the sync method, 
-or done periodically by a Timer or a background process. 
-You can learn how to implement a synchronization task in the section about synchronizing state.
+for example, a pull-to-refresh action that then calls the `sync()` method, 
+or done periodically by a `Timer` or a background process. 
+You can learn how to implement a synchronization task 
+in the section about synchronizing state.
 
-##Writing data
+## Writing data
 
 Writing data in offline-first applications depends fundamentally 
 on the application use case.
@@ -392,8 +393,8 @@ to performing background synchronization in offline-first applications.
 There are different approaches for implementing 
 a background task performing synchronization.
 
-A simple solution is to create a Timer 
-in the UserProfileRepository that runs periodically, 
+A simple solution is to create a `Timer` 
+in the `UserProfileRepository` that runs periodically, 
 for example every five minutes.
 
 <?code-excerpt "lib/data/repositories/user_profile_repository.dart (Timer)"?>
@@ -404,7 +405,7 @@ Timer.periodic(
 );
 ```
 
-The sync method then fetches the UserProfile from the database, 
+The `sync()` method then fetches the `UserProfile` from the database, 
 and if it requires synchronization, it is then sent to the API service.
 
 <?code-excerpt "lib/data/repositories/user_profile_repository.dart (sync)"?>
@@ -432,7 +433,7 @@ Future<void> sync() async {
 ```
 
 Another more complex solution is using background processes 
-like using the workmanager plugin. 
+like using the [`workmanager`][] plugin. 
 This will allow your application to run the synchronization process 
 in the background also when the application is not running.
 
@@ -446,9 +447,9 @@ to the application requirements and one solution may not fit all cases.
 
 It’s also recommended to only perform the synchronization task 
 when the network is available, 
-for example, using the connectivity_plus plugin 
+for example, using the [`connectivity_plus`][] plugin 
 you can check if the device is connected to WiFi. 
-You can also use battery_plus to verify 
+You can also use [`battery_plus`][] to verify 
 that the device is not running low on battery.
 
 In the previous example, the synchronization task runs every 5 minutes. 
@@ -462,7 +463,7 @@ depends on your application needs and it’s something you will have to decide.
 To know if the data requires synchronization, 
 add a flag to the data class indicating if the changes need to be synchronized.
 
-For example, bool synchronized:
+For example, `bool synchronized`:
 
 <?code-excerpt "lib/domain/model/user_profile.dart (UserProfile)"?>
 ```dart
@@ -476,9 +477,10 @@ class UserProfile with _$UserProfile {
 }
 ```
 
-If the synchronized flag is false, 
-then your synchronization logic should attempt 
-to send it to the API service again.
+Your synchronization logic should attempt
+to send it to the API service 
+only when the `synchronized` flag is `false`.
+If the request is successful, then change it to `true`.
 
 ### Pushing data from server
 
@@ -487,7 +489,7 @@ is to use a push service to provide up-to-date data to the application.
 In this case, the server notifies the application when data has changed, 
 instead of being the application asking for updates.
 
-For example, using Firebase messaging, 
+For example, using [Firebase messaging][], 
 you can push small payloads of data to the device, 
 and as well, 
 you can trigger synchronization tasks remotely using background messages.
@@ -510,7 +512,7 @@ which depend on the requirements from the application you are developing.
 The key takeaways are:
 
 - When reading data, 
-a Stream can be used to combine locally stored data with remote data.
+you can use a `Stream` to combine locally stored data with remote data.
 - When writing data, 
 decide if you need to be online or offline, 
 and if you need synchronizing data later or not.
@@ -518,3 +520,11 @@ and if you need synchronizing data later or not.
 take into account the device status and your application needs, 
 as different applications may have different requirements.
 
+[Flutter Architecture guidelines]:/app-architecture
+[Persistent Storage Architecture: SQL]:/app-architecture/cookbook/sql
+[`freezed`]:{{site.pub}}/packages/freezed
+[Optimistic State design pattern]:/app-architecture/cookbook/optimistic-state
+[`workmanager`]:{{site.pub}}/packages/workmanager
+[`connectivity_plus`]:{{site.pub}}/packages/connectivity_plus
+[`battery_plus`]:{{site.pub}}/packages/battery_plus
+[Firebase messaging]:{{site.firebase}}/docs/cloud-messaging/flutter/client
