@@ -595,4 +595,4 @@ class SubscriptionRepository {
 ```
 
 [Flutter Architecture guidelines]:/app-architecture
-[Command pattern]:/app-architecture/cookbook/command
+[Command pattern]:/cookbook/architecture/command
