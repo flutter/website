@@ -37,7 +37,7 @@ Support for web is provided in the experimental plugin
 The example application consists of a single screen with an app bar at the top, 
 a list of items, and a text field input at the bottom.
 
-<img src='/assets/images/docs/app-architecture/cookbook/todo_app_light.png'
+<img src='/assets/images/docs/cookbook/architecture/todo_app_light.png'
 class="site-mobile-screenshot" alt="ToDo application in light mode" >
 
 The body of the application contains the `TodoListScreen`. 
