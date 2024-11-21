@@ -354,8 +354,7 @@ and then attempts to send it to the API service once it has been stored locally.
 <?code-excerpt "lib/data/repositories/user_profile_repository.dart (updateUserProfileOffline)" replace="/Offline//g"?>
 ```dart
 Future<void> updateUserProfile(UserProfile userProfile) async {
-  // Only if the API call was successful
-  // update the database with the user profile
+  // Update the database with the user profile
   await _databaseService.updateUserProfile(userProfile);
 
   try {

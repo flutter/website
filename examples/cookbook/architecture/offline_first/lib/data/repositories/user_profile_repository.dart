@@ -112,8 +112,7 @@ class UserProfileRepository {
 
   // #docregion updateUserProfileOffline
   Future<void> updateUserProfileOffline(UserProfile userProfile) async {
-    // Only if the API call was successful
-    // update the database with the user profile
+    // Update the database with the user profile
     await _databaseService.updateUserProfile(userProfile);
 
     try {
