@@ -88,4 +88,4 @@ sample code that shows the recommendations in action.
 
 [Common architectural principles]: /app-architecture/concepts
 [recommended app architecture]: /app-architecture/guide
-[MVVM]: /app-architecture/guide/#mvvm
+[MVVM]: /app-architecture/guide#mvvm

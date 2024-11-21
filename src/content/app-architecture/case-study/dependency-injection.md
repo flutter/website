@@ -177,5 +177,5 @@ the [Compass app repository](https://github.com/flutter/samples/) for a complete
 example of a robust Flutter application built using these principles.
 
 [provider]: https://pub.dev/packages/provider
-[`GoRouter`]: (https://pub.dev/packages/go_router)
+[`GoRouter`]: https://pub.dev/packages/go_router
 [Compass app repository]: https://github.com/flutter/samples/tree/main/compass_app
