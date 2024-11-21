@@ -174,7 +174,6 @@ struct FlutterViewControllerRepresentable: UIViewControllerRepresentable {
 }
 
 struct ContentView: View {
-
   var body: some View {
     NavigationStack {
       NavigationLink("My Flutter Feature") {
@@ -184,6 +183,13 @@ struct ContentView: View {
   }
 }
 ```
+
+Now, you have a Flutter screen embedded in your iOS app.
+
+:::note
+In this example, your Dart `main()` entrypoint function runs 
+when the `FlutterDependencies` observable is initialized. 
+:::
 
 {% endtab %}
 {% tab "UIKit-Swift" %}
@@ -218,6 +224,16 @@ class ViewController: UIViewController {
   }
 }
 ```
+
+Now, you have a Flutter screen embedded in your iOS app.
+
+:::note
+Using the previous example, the default `main()`
+entrypoint function of your default Dart library
+would run when calling `run` on the
+`FlutterEngine` created in the `AppDelegate`.
+:::
+
 
 {% endtab %}
 {% tab "UIKit-ObjC" %}
@@ -257,9 +273,6 @@ created in the `AppDelegate`.
 @end
 ```
 
-{% endtab %}
-{% endtabs %}
-
 Now, you have a Flutter screen embedded in your iOS app.
 
 :::note
@@ -268,6 +281,10 @@ entrypoint function of your default Dart library
 would run when calling `run` on the
 `FlutterEngine` created in the `AppDelegate`.
 :::
+
+
+{% endtab %}
+{% endtabs %}
 
 ### _Alternatively_ - Create a FlutterViewController with an implicit FlutterEngine
 
@@ -364,7 +381,7 @@ in the [Start a FlutterEngine and FlutterViewController section][].
 In a SwiftUI app, you can create a subclass of the 
 `FlutterAppDelegate` and annotate it with the [`Observable()`][] macro as follows:
 
-```swift
+```swift title="MyApp.swift"
 import SwiftUI
 import Flutter
 import FlutterPluginRegistrant
@@ -419,7 +436,6 @@ struct FlutterViewControllerRepresentable: UIViewControllerRepresentable {
 }
 
 struct ContentView: View {
-
   var body: some View {
     NavigationStack {
       NavigationLink("My Flutter Feature") {
