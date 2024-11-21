@@ -21,7 +21,7 @@ dev_dependencies:
   freezed: ^2.5.7
   json_serializable: ^6.8.0
   example_utils:
-    path: ../../example_utils
+    path: ../../../example_utils
 
 flutter:
   uses-material-design: true

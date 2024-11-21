@@ -6,7 +6,7 @@ js:
     url: /assets/js/inject_dartpad.js
 ---
 
-<?code-excerpt path-base="app-architecture/todo_data_service"?>
+<?code-excerpt path-base="cookbook/architecture/todo_data_service"?>
 
 Most Flutter applications, no matter how small or big they are,
 require storing data on the user’s device at some point, such as API keys, 
@@ -31,7 +31,7 @@ that follows this one called [Persistent storage architecture: SQL][].
 The example application consists of a single screen with an app bar at the top,
 a list of items, and a text field input at the bottom.
 
-<img src='/assets/images/docs/app-architecture/cookbook/todo_app_light.png'
+<img src='/assets/images/docs/cookbook/architecture/todo_app_light.png'
 class="site-mobile-screenshot" alt="ToDo application in light mode" >
 
 In the `AppBar`, 
@@ -40,12 +40,12 @@ This setting is applied immediately and it’s stored in the device
 using a key-value data storage service. 
 The setting is restored when the user starts the application again.
 
-<img src='/assets/images/docs/app-architecture/cookbook/todo_app_dark.png'
+<img src='/assets/images/docs/cookbook/architecture/todo_app_dark.png'
 class="site-mobile-screenshot" alt="ToDo application in dark mode" >
 
 :::note
 The full, runnable source-code for this example is
-available in [`/examples/app-architecture/todo_data_service/`][].
+available in [`/examples/cookbook/architecture/todo_data_service/`][].
 :::
 
 ## Storing theme selection key-value data
@@ -358,5 +358,5 @@ ListenableBuilder(
 
 [Flutter architecture design]: /app-architecture
 [Store key-value data on disk]: /cookbook/persistence/key-value
-[Persistent Storage Architecture: SQL]: /app-architecture/cookbook/sql
-[`/examples/app-architecture/todo_data_service/`]: {{site.repo.flutter}}/tree/main/examples/app-architecture/todo_data_service/
+[Persistent Storage Architecture: SQL]: /cookbook/architecture/sql
+[`/examples/cookbook/architecture/todo_data_service/`]: {{site.repo.flutter}}/tree/main/examples/cookbook/architecture/todo_data_service/

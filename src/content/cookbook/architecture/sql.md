@@ -6,7 +6,7 @@ js:
     url: /assets/js/inject_dartpad.js
 ---
 
-<?code-excerpt path-base="app-architecture/todo_data_service"?>
+<?code-excerpt path-base="cookbook/architecture/todo_data_service"?>
 
 Most Flutter applications, 
 no matter how small or big they are, 
@@ -53,7 +53,7 @@ and restored when the user starts the application.
 
 :::note
 The full, runnable source-code for this example is
-available in [`/examples/app-architecture/todo_data_service/`][].
+available in [`/examples/cookbook/architecture/todo_data_service/`][].
 :::
 
 ## Storing complex data with SQL
@@ -73,7 +73,7 @@ and creating the ToDo items.
 It follows the [MVVM pattern][] 
 and is accompanied by the `TodoListViewModel`, 
 which contains the list of ToDo items 
-and three [commands][] to load, add, and delete ToDo items.
+and three commands to load, add, and delete ToDo items.
 
 This screen is divided into two parts, 
 one containing the list of ToDo items, 
@@ -358,7 +358,7 @@ Future<Result<Todo>> insert(String task) async {
 }
 ```
 
-All the `DatabaseService` operations use the [`Result`][] class to return a value,
+All the `DatabaseService` operations use the `Result` class to return a value,
 as recommended by the [Flutter architecture recommendations][]. 
 This facilitates handling errors in further steps in the application code.
 
@@ -473,14 +473,12 @@ TodoListScreen(
 )
 ```
 
-[commands]:/app-architecture/cookbook/command
 [Flutter Architecture design]:/app-architecture
 [Flutter architecture recommendations]:/app-architecture
 [MVVM pattern]:/get-started/fundamentals/state-management#using-mvvm-for-your-applications-architecture
 [Persist data with SQLite]:/cookbook/persistence/sqlite
-[Persistent storage architecture: Key-value data]:/app-architecture/cookbook/key-value-data
-[`Result`]:/app-architecture/cookbook/result
-[`/examples/app-architecture/todo_data_service/`]: {{site.repo.flutter}}/tree/main/examples/app-architecture/todo_data_service/
-[`sqflite_common_ffi_web`]:https://pub.dev/packages/sqflite_common_ffi_web
-[`sqflite_common_ffi`]:https://pub.dev/packages/sqflite_common_ffi
-[`sqflite`]:https://pub.dev/packages/sqflite
+[Persistent storage architecture: Key-value data]:/cookbook/architecture/key-value-data
+[`/examples/cookbook/architecture/todo_data_service/`]: {{site.repo.flutter}}/tree/main/examples/cookbook/architecture/todo_data_service/
+[`sqflite_common_ffi_web`]:{{site.pub}}/packages/sqflite_common_ffi_web
+[`sqflite_common_ffi`]:{{site.pub}}/packages/sqflite_common_ffi
+[`sqflite`]:{{site.pub}}/packages/sqflite
