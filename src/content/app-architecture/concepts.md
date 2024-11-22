@@ -148,7 +148,7 @@ change any of the code that consumes the interface.
 
 ## Testability
 
-The principals that make software extensible also make software easier to test.
+The principles that make software extensible also make software easier to test.
 For example, you can test the self-contained logic of a view model by mocking a
 repository. 
 The view model tests don't require you to mock other parts of your application, 
