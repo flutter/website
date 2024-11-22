@@ -445,6 +445,8 @@
           permalink: /cookbook/architecture/key-value-data
         - title: "Persistent storage architecture: SQL"
           permalink: /cookbook/architecture/sql
+        - title: Offline-first
+          permalink: /cookbook/architecture/offline-first
 
 - title: Platform integration
   permalink: /platform-integration
