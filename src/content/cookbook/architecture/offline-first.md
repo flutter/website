@@ -1,5 +1,5 @@
 ---
-title: "Offline-first Support"
+title: "Offline-first support"
 description: Create an app with offline-first support.
 js:
   - defer: true
@@ -9,17 +9,17 @@ js:
 <?code-excerpt path-base="cookbook/architecture/offline_first"?>
 
 An offline-first application is an app capable of offering most 
-or all its functionality while being disconnected from the Internet. 
+or all of its functionality while being disconnected from the internet. 
 Offline-first applications usually rely on stored data 
-to offer users a temporal access to data 
+to offer users temporary access to data 
 that would otherwise only be available online.
 
-Some offline-first applications will combine local and remote data seamlessly, 
-while other applications will inform the user 
+Some offline-first applications combine local and remote data seamlessly, 
+while other applications inform the user 
 when the application is using cached data. 
 In the same way, 
-some applications will synchronize data in the background 
-while others will require the user to explicitly synchronize it. 
+some applications synchronize data in the background 
+while others require the user to explicitly synchronize it. 
 It all depends on the application requirements and the functionality it offers, 
 and it’s up to the developer to decide which implementation fits their needs.
 
@@ -40,15 +40,15 @@ to present data in a single access point,
 independently of the connectivity state of the device.
 
 This example uses the `UserProfileRepository`, 
-a repository that allows to obtain and store `UserProfile` objects 
+a repository that allows you to obtain and store `UserProfile` objects 
 with offline-first support.
 
 The `UserProfileRepository` uses two different data services: 
-one works remote data, 
+one works with remote data, 
 and the other works with a local database. 
 
-The API client is named `ApiClientService`, 
-and it connects to a remote service using HTTP REST calls.
+The API client,`ApiClientService`,
+connects to a remote service using HTTP REST calls.
 
 <?code-excerpt "lib/data/services/api_client_service.dart (ApiClientService)"?>
 ```dart
@@ -65,8 +65,7 @@ class ApiClientService {
 }
 ```
 
-The database service is named `DatabaseService`, 
-and it stores data using SQL, 
+The database service, `DatabaseService`, stores data using SQL, 
 similar to the one found in the [Persistent Storage Architecture: SQL][] recipe.
 
 <?code-excerpt "lib/data/services/database_service.dart (DatabaseService)"?>
@@ -85,7 +84,7 @@ class DatabaseService {
 }
 ```
 
-As well, this example uses the `UserProfile` data class 
+This example also uses the `UserProfile` data class 
 that has been created using the [`freezed`][] package.
 
 <?code-excerpt "lib/domain/model/user_profile.dart (UserProfile)" remove="@Default(false) bool synchronized,"?>
@@ -100,9 +99,9 @@ class UserProfile with _$UserProfile {
 ```
 
 In apps that have complex data, 
-for example when the remote data contains more fields than the needed by the UI,
-you may want to have a different data class for the API and database services,
-and one for the UI. 
+such as when the remote data contains more fields than the needed by the UI,
+you might want to have one data class for the API and database services,
+and another for the UI. 
 For example, 
 `UserProfileLocal` for the database entity, 
 `UserProfileRemote` for the API response object, 
@@ -143,23 +142,23 @@ that relies on remote API services.
 In offline-first applications, 
 you want to ensure that the access to this data is as fast as possible, 
 and that it doesn’t depend on the device being online 
-to provide data to the user, 
-similar to the [Optimistic State design pattern][].
+to provide data to the user. 
+This is similar to the [Optimistic State design pattern][].
 
 In this section, 
 you will learn two different approaches, 
 one that uses the database as a fallback, 
 and one that combines local and remote data using a `Stream`.
 
-### Using local data as fallback
+### Using local data as a fallback
 
 As a first approach, 
 you can implement offline support by having a fallback mechanism 
 for when the user is offline or a network call fails.
 
 In this case, the `UserProfileRepository` attempts to obtain the `UserProfile` 
-from the remote API server using the `ApiClientService`,
-and if this request fails, 
+from the remote API server using the `ApiClientService`.
+If this request fails, 
 then returns the locally stored `UserProfile` from the `DatabaseService`.
 
 <?code-excerpt "lib/data/repositories/user_profile_repository.dart (getUserProfileFallback)" replace="/Fallback//g"?>
@@ -191,23 +190,24 @@ Future<UserProfile> getUserProfile() async {
 
 ### Using a Stream
 
-A better alternative is to present the data using a `Stream`. 
+A better alternative presents the data using a `Stream`. 
 In the best case scenario, 
-the `Stream` will emit two values, the locally stored data, and then the data from the server.
+the `Stream` emits two values,
+the locally stored data, and the data from the server.
 
-First, the stream will emit the locally stored data using the `DatabaseService`. 
+First, the stream emits the locally stored data using the `DatabaseService`. 
 This call is generally faster and less error prone than a network call, 
 and by doing it first the view model can already display data to the user.
 
 If the database does not contain any cached data, 
-then the Stream will rely completely on the network call, 
+then the `Stream` relies completely on the network call, 
 emitting only one value.
 
-Then, the method performs the network using the `ApiClientService`
+Then, the method performs the network call using the `ApiClientService`
 to obtain up-to-date data. 
 If the request was successful, 
-it updates the database with the newly obtained data. 
-And then yields the value to the view model, 
+it updates the database with the newly obtained data, 
+and then yields the value to the view model, 
 so it can be displayed to the user.
 
 <?code-excerpt "lib/data/repositories/user_profile_repository.dart (getUserProfile)"?>
@@ -233,8 +233,8 @@ Stream<UserProfile> getUserProfile() async* {
 }
 ```
 
-The view model needs to subscribe 
-to this `Stream` and wait until it has been completed. 
+The view model must subscribe 
+to this `Stream` and wait until it has completed. 
 For that, call `asFuture()` with the `Subscription` object and await the result.
 
 For each obtained value, 
@@ -254,7 +254,7 @@ Future<void> load() async {
 ```
 ### Using only local data
 
-Another approach is to only use locally stored data for read operations. 
+Another possible approach uses locally stored data for read operations. 
 This approach requires that the data has been preloaded 
 at some point into the database, 
 and requires a synchronization mechanism that can keep the data up to date.
@@ -288,8 +288,8 @@ Future<void> sync() async {
 ```
 
 This approach can be useful for applications 
-that don’t require data to be in sync with the server at all times, 
-for example a weather application 
+that don’t require data to be in sync with the server at all times.
+For example, a weather application 
 where the weather data is only updated once a day.
 
 Synchronization could be done manually by the user, 
@@ -303,9 +303,9 @@ in the section about synchronizing state.
 Writing data in offline-first applications depends fundamentally 
 on the application use case.
 
-Some applications may require the user input data 
+Some applications might require the user input data 
 to be immediately available on the server side, 
-while other applications may be more flexible about this 
+while other applications might be more flexible
 and allow data to be out-of-sync temporarily.
 
 This section explains two different approaches 
@@ -314,14 +314,14 @@ for implementing writing data in offline-first applications.
 ### Online-only writing
 
 One approach for writing data in offline-first applications 
-is to enforce being online to perform writes. 
-While this may sound counterintuitive, 
+is to enforce being online to write data. 
+While this might sound counterintuitive, 
 this ensures that the data the user has modified 
 is fully synchronized with the server, 
 and the application doesn’t have a different state than the server.
 
-In this case, first attempt to send the data to the API service, 
-and if the request is successful, 
+In this case, you first attempt to send the data to the API service, 
+and if the request succeeds, 
 then store the data in the database.
 
 <?code-excerpt "lib/data/repositories/user_profile_repository.dart (updateUserProfileOnline)" replace="/Online//g"?>
@@ -379,18 +379,15 @@ between local and remote data.
 Keeping the local and remote data in sync 
 is an important part of offline-first applications, 
 as the changes that have been done locally 
-need to be copied to the remote service, 
-but also ensures that when the user goes back to the application, 
+need to be copied to the remote service.
+The app must also ensure that, when the user goes back to the application, 
 the locally stored data is the same as in the remote service.
 
-In this section, 
-you will learn about different approaches 
-to performing background synchronization in offline-first applications.
 
 ### Writing a synchronization task
 
 There are different approaches for implementing 
-a background task performing synchronization.
+synchronization in a background task.
 
 A simple solution is to create a `Timer` 
 in the `UserProfileRepository` that runs periodically, 
@@ -431,29 +428,29 @@ Future<void> sync() async {
 }
 ```
 
-Another more complex solution is using background processes 
-like using the [`workmanager`][] plugin. 
-This will allow your application to run the synchronization process 
-in the background also when the application is not running.
+A more complex solution uses background processes 
+like the [`workmanager`][] plugin. 
+This allows your application to run the synchronization process 
+in the background even when the application is not running.
 
 :::note
 Running background operations continuosly 
 can drain the device battery dramatically, 
 and some devices limit the background processing capabilities, 
 so this approach needs to be tuned 
-to the application requirements and one solution may not fit all cases.
+to the application requirements and one solution might not fit all cases.
 :::
 
 It’s also recommended to only perform the synchronization task 
-when the network is available, 
-for example, using the [`connectivity_plus`][] plugin 
-you can check if the device is connected to WiFi. 
+when the network is available.
+For example, you can use the [`connectivity_plus`][] plugin 
+to check if the device is connected to WiFi. 
 You can also use [`battery_plus`][] to verify 
 that the device is not running low on battery.
 
 In the previous example, the synchronization task runs every 5 minutes. 
-In some cases, that may be excessive, 
-while in others it may not be frequent enough. 
+In some cases, that might be excessive, 
+while in others it might not be frequent enough. 
 The actual synchronization period time for your application 
 depends on your application needs and it’s something you will have to decide.
 
@@ -488,14 +485,13 @@ is to use a push service to provide up-to-date data to the application.
 In this case, the server notifies the application when data has changed, 
 instead of being the application asking for updates.
 
-For example, using [Firebase messaging][], 
-you can push small payloads of data to the device, 
-and as well, 
-you can trigger synchronization tasks remotely using background messages.
+For example, you can use [Firebase messaging][], 
+to push small payloads of data to the device, 
+as well as trigger synchronization tasks remotely using background messages.
 
 Instead of having a synchronization task running in the background, 
-the server will notify the application 
-when the stored data needs to be updated via a push notification.
+the server notifies the application 
+when the stored data needs to be updated with a push notification.
 
 You can combine both approaches together, 
 having a background synchronization task and using background push messages, 
@@ -504,7 +500,7 @@ to keep the application database synchronized with the server.
 ## Putting it all together
 
 Writing an offline-first application 
-requires making different decisions regarding 
+requires making decisions regarding 
 the way read, write and sync operations are implemented, 
 which depend on the requirements from the application you are developing.
 
