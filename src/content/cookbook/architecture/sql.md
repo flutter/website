@@ -478,7 +478,7 @@ TodoListScreen(
 [MVVM pattern]:/get-started/fundamentals/state-management#using-mvvm-for-your-applications-architecture
 [Persist data with SQLite]:/cookbook/persistence/sqlite
 [Persistent storage architecture: Key-value data]:/cookbook/architecture/key-value-data
-[`/examples/cookbook/architecture/todo_data_service/`]: {{site.repo.flutter}}/tree/main/examples/cookbook/architecture/todo_data_service/
+[`/examples/cookbook/architecture/todo_data_service/`]: {{site.repo.this}}/tree/main/examples/cookbook/architecture/todo_data_service/
 [`sqflite_common_ffi_web`]:{{site.pub}}/packages/sqflite_common_ffi_web
 [`sqflite_common_ffi`]:{{site.pub}}/packages/sqflite_common_ffi
 [`sqflite`]:{{site.pub}}/packages/sqflite
