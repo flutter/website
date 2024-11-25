@@ -20,6 +20,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        // #docregion ListenableBuilder
         body: ListenableBuilder(
           listenable: viewModel.load,
           builder: (context, child) {
@@ -28,6 +29,7 @@ class MainApp extends StatelessWidget {
                 child: CircularProgressIndicator(),
               );
             }
+            // #enddocregion ListenableBuilder
 
             if (viewModel.load.error != null) {
               return Center(
@@ -57,7 +59,9 @@ class MainApp extends StatelessWidget {
               );
             },
           ),
+          // #docregion ListenableBuilder
         ),
+        // #enddocregion ListenableBuilder
       ),
     );
   }
@@ -107,6 +111,19 @@ class HomeViewModel2 extends ChangeNotifier {
   void load() {
     // load user
   }
+  // #enddocregion load1
+
+  // #docregion load2
+  void load2() {
+    if (running) {
+      return;
+    }
+
+    // load user
+  }
+  // #enddocregion load2
+
+  // #docregion load1
   // #docregion HomeViewModel2
   // #docregion getUser
 }
@@ -114,6 +131,28 @@ class HomeViewModel2 extends ChangeNotifier {
 // #enddocregion getUser
 // #enddocregion load1
 // #enddocregion UiState1
+
+// #docregion HomeViewModel3
+class HomeViewModel3 extends ChangeNotifier {
+  User? get user => null;
+
+  bool get runningLoad => false;
+
+  Exception? get errorLoad => null;
+
+  bool get runningEdit => false;
+
+  Exception? get errorEdit => null;
+
+  void load() {
+    // load user
+  }
+
+  void edit(String name) {
+    // edit user
+  }
+}
+// #enddocregion HomeViewModel3
 
 class Command extends ChangeNotifier {
   Command(this._action);
