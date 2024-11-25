@@ -21,7 +21,6 @@ class MainApp extends StatefulWidget {
 }
 
 class _MainAppState extends State<MainApp> {
-  // #docregion addListener
   @override
   void initState() {
     super.initState();
@@ -33,13 +32,11 @@ class _MainAppState extends State<MainApp> {
     widget.viewModel.removeListener(_onViewModelChanged);
     super.dispose();
   }
-  // #enddocregion addListener
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        // #docregion ListenableBuilder
         body: ListenableBuilder(
           listenable: widget.viewModel.load,
           builder: (context, child) {
@@ -48,7 +45,6 @@ class _MainAppState extends State<MainApp> {
                 child: CircularProgressIndicator(),
               );
             }
-            // #enddocregion ListenableBuilder
 
             if (widget.viewModel.load.error != null) {
               return Center(
@@ -78,20 +74,16 @@ class _MainAppState extends State<MainApp> {
               );
             },
           ),
-          // #docregion ListenableBuilder
         ),
-        // #enddocregion ListenableBuilder
       ),
     );
   }
 
-  // #docregion addListener
   void _onViewModelChanged() {
     if (widget.viewModel.load.error != null) {
       // Show Snackbar
     }
   }
-  // #enddocregion addListener
 }
 
 class User {
@@ -118,68 +110,6 @@ class HomeViewModel extends ChangeNotifier {
     notifyListeners();
   }
 }
-
-// #docregion HomeViewModel2
-// #docregion getUser
-// #docregion load1
-// #docregion UiState1
-class HomeViewModel2 extends ChangeNotifier {
-  // #enddocregion HomeViewModel2
-
-  User? get user => null;
-  // #enddocregion getUser
-  // #enddocregion load1
-
-  bool get running => false;
-
-  Exception? get error => null;
-
-  // #docregion load1
-  void load() {
-    // load user
-  }
-  // #enddocregion load1
-
-  // #docregion load2
-  void load2() {
-    if (running) {
-      return;
-    }
-
-    // load user
-  }
-  // #enddocregion load2
-
-  // #docregion load1
-  // #docregion HomeViewModel2
-  // #docregion getUser
-}
-// #enddocregion HomeViewModel2
-// #enddocregion getUser
-// #enddocregion load1
-// #enddocregion UiState1
-
-// #docregion HomeViewModel3
-class HomeViewModel3 extends ChangeNotifier {
-  User? get user => null;
-
-  bool get runningLoad => false;
-
-  Exception? get errorLoad => null;
-
-  bool get runningEdit => false;
-
-  Exception? get errorEdit => null;
-
-  void load() {
-    // load user
-  }
-
-  void edit(String name) {
-    // edit user
-  }
-}
-// #enddocregion HomeViewModel3
 
 class Command extends ChangeNotifier {
   Command(this._action);
