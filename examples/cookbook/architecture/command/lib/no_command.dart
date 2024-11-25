@@ -1,20 +1,12 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(
-    MainApp(
-      viewModel: HomeViewModel(),
-    ),
-  );
-}
-
 class MainApp extends StatefulWidget {
   const MainApp({
     super.key,
     required this.viewModel,
   });
 
-  final HomeViewModel viewModel;
+  final HomeViewModel2 viewModel;
 
   @override
   State<MainApp> createState() => _MainAppState();
@@ -41,57 +33,52 @@ class _MainAppState extends State<MainApp> {
       home: Scaffold(
         // #docregion ListenableBuilder
         body: ListenableBuilder(
-          listenable: widget.viewModel.load,
-          builder: (context, child) {
-            if (widget.viewModel.load.running) {
+          listenable: widget.viewModel,
+          builder: (context, _) {
+            if (widget.viewModel.running) {
               return const Center(
                 child: CircularProgressIndicator(),
               );
             }
             // #enddocregion ListenableBuilder
 
-            if (widget.viewModel.load.error != null) {
+            if (widget.viewModel.error != null) {
               return Center(
                 child: Text('Error: ${widget.viewModel.load.error}'),
               );
             }
 
-            return child!;
-          },
-          child: ListenableBuilder(
-            listenable: widget.viewModel,
-            builder: (context, _) {
-              if (widget.viewModel.user == null) {
-                return const Center(
-                  child: Text('No user'),
-                );
-              }
-
-              return Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('Name: ${widget.viewModel.user!.name}'),
-                    Text('Email: ${widget.viewModel.user!.email}'),
-                  ],
-                ),
+            if (widget.viewModel.user == null) {
+              return const Center(
+                child: Text('No user'),
               );
-            },
-          ),
-          // #docregion ListenableBuilder
+            }
+
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Name: ${widget.viewModel.user!.name}'),
+                  Text('Email: ${widget.viewModel.user!.email}'),
+                ],
+              ),
+            );
+            // #docregion ListenableBuilder
+          },
         ),
         // #enddocregion ListenableBuilder
       ),
     );
   }
 
-  // #docregion addListener
+  // #docregion _onViewModelChanged
   void _onViewModelChanged() {
-    if (widget.viewModel.load.error != null) {
+    if (widget.viewModel.error != null) {
+      widget.viewModel.clearError();
       // Show Snackbar
     }
   }
-  // #enddocregion addListener
+  // #enddocregion _onViewModelChanged
 }
 
 class User {
@@ -99,24 +86,6 @@ class User {
 
   final String name;
   final String email;
-}
-
-class HomeViewModel extends ChangeNotifier {
-  HomeViewModel() {
-    load = Command(_load)..execute();
-  }
-
-  User? _user;
-  User? get user => _user;
-
-  late final Command load;
-
-  Future<void> _load() async {
-    // load user
-    await Future.delayed(const Duration(seconds: 2));
-    _user = User(name: 'John Doe', email: 'john@example.com');
-    notifyListeners();
-  }
 }
 
 // #docregion HomeViewModel2
@@ -145,11 +114,11 @@ class HomeViewModel2 extends ChangeNotifier {
     if (running) {
       return;
     }
-
     // load user
   }
-  // #enddocregion load2
 
+  // #enddocregion load2
+  void clearError() {}
   // #docregion load1
   // #docregion HomeViewModel2
   // #docregion getUser
@@ -180,45 +149,3 @@ class HomeViewModel3 extends ChangeNotifier {
   }
 }
 // #enddocregion HomeViewModel3
-
-class Command extends ChangeNotifier {
-  Command(this._action);
-
-  bool _running = false;
-  bool get running => _running;
-
-  Exception? _error;
-  Exception? get error => _error;
-
-  bool _completed = false;
-  bool get completed => _completed;
-
-  final Future<void> Function() _action;
-
-  Future<void> execute() async {
-    if (_running) {
-      return;
-    }
-
-    _running = true;
-    _completed = false;
-    _error = null;
-    notifyListeners();
-
-    try {
-      await _action();
-      _completed = true;
-    } on Exception catch (error) {
-      _error = error;
-    } finally {
-      _running = false;
-      notifyListeners();
-    }
-  }
-
-  void clear() {
-    _running = false;
-    _error = null;
-    _completed = false;
-  }
-}

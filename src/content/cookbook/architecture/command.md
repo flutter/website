@@ -32,7 +32,7 @@ by extending the ChangeNotifier class.
 This allows ViewModels to call `notifyListeners()` to refresh Views
 when data is updated.
 
-<?code-excerpt "lib/main.dart (HomeViewModel2)" replace="/2//g"?>
+<?code-excerpt "lib/no_command.dart (HomeViewModel2)" replace="/2//g"?>
 ```dart
 class HomeViewModel extends ChangeNotifier {
   // ···
@@ -43,7 +43,7 @@ ViewModels contain a representation of the UI state,
 including the data being displayed. 
 For example, this `HomeViewModel` exposes the `User` instance to the View.
 
-<?code-excerpt "lib/main.dart (getUser)" replace="/null;/\/\/ .../g;/2//g"?>
+<?code-excerpt "lib/no_command.dart (getUser)" replace="/null;/\/\/ .../g;/2//g"?>
 ```dart
 class HomeViewModel extends ChangeNotifier {
 
@@ -55,7 +55,7 @@ class HomeViewModel extends ChangeNotifier {
 ViewModels also contain actions typically triggered by the View. 
 For example, a `load` action in charge of loading the `user`.
 
-<?code-excerpt "lib/main.dart (load1)" replace="/null;/\/\/ .../g;/2//g"?>
+<?code-excerpt "lib/no_command.dart (load1)" replace="/null;/\/\/ .../g;/2//g"?>
 ```dart
 class HomeViewModel extends ChangeNotifier {
 
@@ -76,7 +76,7 @@ This allows the View to show to the user
 if the action is still running 
 or if it was completed successfully.
 
-<?code-excerpt "lib/main.dart (UiState1)" replace="/(null|false);/\/\/ .../g;/2//g"?>
+<?code-excerpt "lib/no_command.dart (UiState1)" replace="/(null|false);/\/\/ .../g;/2//g"?>
 ```dart
 class HomeViewModel extends ChangeNotifier {
 
@@ -94,26 +94,27 @@ class HomeViewModel extends ChangeNotifier {
     if (running) {
       return;
     }
-
     // load user
   }
 
+  void clearError() {}
 }
 ```
 
 You can use the running state to display a progress indicator in the View:
 
-<?code-excerpt "lib/main.dart (ListenableBuilder)" replace="/\.load//g;/body: //g;/^\),$/)/g"?>
+<?code-excerpt "lib/no_command.dart (ListenableBuilder)" replace="/\.load//g;/body: //g;/^\),$/)/g"?>
 ```dart
 ListenableBuilder(
-  listenable: viewModel,
-  builder: (context, child) {
-    if (viewModel.running) {
+  listenable: widget.viewModel,
+  builder: (context, _) {
+    if (widget.viewModel.running) {
       return const Center(
         child: CircularProgressIndicator(),
       );
     }
-  // ···
+    // ···
+  },
 )
 ```
 
@@ -135,7 +136,7 @@ once the ViewModel contains multiple actions.
 For example, adding an `edit()` action to the `HomeViewModel` 
 can lead the following outcome:
 
-<?code-excerpt "lib/main.dart (HomeViewModel3)" replace="/(null|false);/\/\/ .../g;/3//g"?>
+<?code-excerpt "lib/no_command.dart (HomeViewModel3)" replace="/(null|false);/\/\/ .../g;/3//g"?>
 ```dart
 class HomeViewModel extends ChangeNotifier {
   User? get user => // ...
@@ -169,34 +170,62 @@ and the same problem with the `error` state.
 Another challenge with ViewModel classes 
 is executing UI actions 
 hen the ViewModel state changes. 
-For example, to show a SnackBar when an error occurs, 
+
+For example, to show a `SnackBar` when an error occurs, 
 or to navigate to a different screen when an action completes.
 
 To implement that, listen to the changes in the ViewModel, 
 and perform the action depending on the state. 
 
-For example, in the View:
+In the View:
 
-viewModel.addListener(() { 
-  if (viewModel.error != null) {
-    // Show SnackBar
+<?code-excerpt "lib/no_command.dart (addListener)"?>
+```dart
+@override
+void initState() {
+  super.initState();
+  widget.viewModel.addListener(_onViewModelChanged);
+}
+
+@override
+void dispose() {
+  widget.viewModel.removeListener(_onViewModelChanged);
+  super.dispose();
+}
+```
+
+<?code-excerpt "lib/no_command.dart (_onViewModelChanged)" remove="widget.viewModel.clearError();"?>
+```dart
+void _onViewModelChanged() {
+  if (widget.viewModel.error != null) {
+    // Show Snackbar
   }
-});
+}
+```
 
 You need to clear the error state each time you execute this action, 
 otherwise this action will happen each time `notifyListeners()` is called.
 
-viewModel.addListener(() { 
-  if (viewModel.error != null) {
-    viewModel.clearError();
-
-    // Show SnackBar
+<?code-excerpt "lib/no_command.dart (_onViewModelChanged)"?>
+```dart
+void _onViewModelChanged() {
+  if (widget.viewModel.error != null) {
+    widget.viewModel.clearError();
+    // Show Snackbar
   }
-});
-Command Pattern
-You might find yourself repeating the above code over and over, having to implement a different running state for each action in every ViewModel. At that point, it makes sense to extract this code into a reusable pattern: a Command.
+}
+```
 
-A Command is a class that encapsulates a ViewModel action, and exposes the different states that an action can have.
+## Command Pattern
+
+You might find yourself repeating the above code over and over, 
+having to implement a different running state 
+for each action in every ViewModel. 
+At that point, it makes sense to extract this code 
+into a reusable pattern: a command.
+
+A command is a class that encapsulates a ViewModel action, 
+and exposes the different states that an action can have.
 
 class Command extends ChangeNotifier {
   Command(this._action);
