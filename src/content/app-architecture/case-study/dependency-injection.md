@@ -171,7 +171,7 @@ calling methods on the repository directly.
 This concludes the code walkthrough of the Compass app. This page only walked
 through the architecture-related code, but it doesn't tell the whole story. Most
 utility code, widget code, and UI styling was ignored. Browse the code in
-the [Compass app repository](https://github.com/flutter/samples/) for a complete
+the [Compass app repository][] for a complete
 example of a robust Flutter application built using these principles.
 
 [provider]: https://pub.dev/packages/provider

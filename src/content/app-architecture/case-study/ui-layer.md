@@ -350,34 +350,39 @@ which is a subtype of the `Listenable` type.
 
 ```dart title=home_screen.dart
 @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      // Some code removed for brevity
+Widget build(BuildContext context) {
+  return Scaffold(
+    // Some code removed for brevity
       body: SafeArea(
-        [!child: ListenableBuilder(!]
-          [!listenable: viewModel,!]
+        child: ListenableBuilder(
+          listenable: viewModel,
           builder: (context, _) {
             return CustomScrollView(
               slivers: [
-                SliverToBoxAdapter(...),
+                SliverToBoxAdapter(),
                 SliverList.builder(
-                   itemCount: viewModel.bookings.length,
-                    itemBuilder: (_, index) => _Booking(
-                      key: ValueKey(viewModel.bookings[index].id),
-                      booking: viewModel.bookings[index],
-                      onTap: () => context.push(Routes.bookingWithId(
-                         viewModel.bookings[index].id)),
-                      onDismissed: (_) =>
-                         viewModel.deleteBooking.execute(
-                           viewModel.bookings[index].id,
+                  itemCount: viewModel.bookings.length,
+                  itemBuilder: (_, index) =>
+                      _Booking(
+                        key: ValueKey(viewModel.bookings[index].id),
+                        booking: viewModel.bookings[index],
+                        onTap: () =>
+                            context.push(Routes.bookingWithId(
+                                viewModel.bookings[index].id)
+                            ),
+                        onDismissed: (_) =>
+                            viewModel.deleteBooking.execute(
+                              viewModel.bookings[index].id,
+                            ),
                       ),
-                    ),
                 ),
               ],
             );
-          },
-        ),
-      ),
+          }
+        )
+      )
+  );
+}
 ```
 
 ### Handling user events

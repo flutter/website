@@ -27,7 +27,7 @@ the only setup you need to do.
 In this example test, a fake called `FakeBookingRepository` is used.
 
 ```dart title=home_screen_test.dart
-main() {
+void main() {
   group('HomeViewModel tests', () {
     test('Load bookings', () {
       // HomeViewModel._load is called in the constructor of HomeViewModel
@@ -73,7 +73,7 @@ The following example shows how the `HomeScreen` widget tests
 are set up using the `HomeViewModel` and needed repositories:
 
 ```dart title=home_screen_test.dart
-main() {
+void main() {
   group('HomeScreen tests', () {
     late HomeViewModel viewModel;
     late MockGoRouter goRouter;
@@ -112,7 +112,7 @@ the Widget tree that will be tested needs to be created.
 In the tests for the `HomeScreen`, a `loadWidget` method is defined.
 
 ```dart title=home_screen_test.dart highlightLines=11-23
-main() {
+void main() {
   group('HomeScreen tests', () {
     late HomeViewModel viewModel;
     late MockGoRouter goRouter;
@@ -146,7 +146,7 @@ a generalized method used for all widget tests in the compass app.
 It looks like this:
 
 ```dart title=testing/app.dart
-testApp(
+void testApp(
   WidgetTester tester,
   Widget body, {
   GoRouter? goRouter,
@@ -193,7 +193,7 @@ mock the services that it depends on.
 The following example shows a unit test for the `BookingRepository`.
 
 ```dart title=booking_repository_remote_test.dart
-main() {
+void main() {
   group('BookingRepositoryRemote tests', () {
     late BookingRepository bookingRepository;
     late FakeApiClient fakeApiClient;
