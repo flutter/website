@@ -11,7 +11,7 @@ next:
   path: /app-architecture/case-study/testing
 ---
 
-Along with defining clear responsibilities for each component of architecture,
+Along with defining clear responsibilities for each component of the architecture,
 it's important to consider how the components communicate. 
 This refers to both the rules that dictate communication, 
 and the technical implementation of how components communicate. 
@@ -29,18 +29,20 @@ Using this diagram as a guide, the rules of engagement are as follows:
 
 | Component  | Rules of engagement                                                                                                                                                                                                                                        |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| View       | <ol><li> A view is only aware of exactly one ViewModel, and will never be aware of any other layer or component. A ViewModel is passed into the view as an argument on creation, which exposes ViewModel data and command callbacks to the view. </li></ul> |
-| ViewModel  | <ol><li>A ViewModel belongs to exactly one view. Its data is exposed to the view, but it never needs to know that a view exists.</li><li>A ViewModel is aware of one or more repositories, which are passed into the ViewModel's constructor.</li></ul>    |
-| Repository | <ol><li>A repository can be aware of many services, which are passed as arguments into the repository constructor.</li><li>A repository can be used by many ViewModels, but it never needs to be aware of the ViewModels.</li></ol>                        |
+| View       | <ol><li> A view is only aware of exactly one `ViewModel`, and is never aware of any other layer or component. When created, Flutter passes the `ViewModel` to the
+view as an argument, exposing the `ViewModel`'s data and command callbacks
+to the view. </li></ul> |
+| ViewModel  | <ol><li>A ViewModel belongs to exactly one view, which can see its data, but the model never needs to know that a view exists.</li><li>A `ViewModel` is aware of one or more repositories, which are passed into the `ViewModel`'s constructor.</li></ul>    |
+| Repository | <ol><li>A repository can be aware of many services, which are passed as arguments into the repository constructor.</li><li>A repository can be used by many `ViewModel`s, but it never needs to be aware of them.</li></ol>                        |
 | Service    | <ol><li>A service can be used by many repositories, but it never needs to be aware of a repository (or any other object).</li></ol>                                                                                                                        |
 
 {:.table .table-striped}
 
-Throughout this guide there have been examples of how 
-these different components 'communicate' with each other via inputs and outputs. 
+This guide has shown how these different components communicate
+with each other by using inputs and outputs. 
 In every case, communication between two layers is facilitated by passing 
-a component into the constructor methods of the components that 
-consume its data, such as a Service into a Repository.
+a component into the constructor methods (of the components that 
+consume its data), such as a `Service` into a `Repository.`
 
 ```dart
 class MyRepository {
@@ -50,12 +52,12 @@ class MyRepository {
 }
 ```
 
-One thing that's been missing, however, is object creation. In what part of the
-application is that instance of `MyService` being created so that it can be
+One thing that's missing, however, is object creation. Where,
+in the application, is the `MyService` instance created so that it can be
 passed into `MyRepository`? **Dependency injection** is discussed in
 the next section.
 
-## Dependency Injection
+## Dependency injection
 
 In the Compass app, dependency injection is handled using
 the [provider](https://pub.dev/packages/provider) package. 

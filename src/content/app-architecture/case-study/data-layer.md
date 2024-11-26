@@ -76,7 +76,7 @@ class ApiClient {
 ```
 
 The service itself is a class, 
-nd each method wraps a different API endpoint and 
+where each method wraps a different API endpoint and 
 exposes asynchronous response objects. 
 Continuing the earlier example of deleting a saved booking, 
 the `deleteBooking` method returns a `Future<Result<void>>`.
@@ -86,7 +86,7 @@ Some methods return data classes that are
 specifically for raw data from the API, 
 such as the `BookingApiModel` class. 
 As you'll soon see, repositories extract data and 
-expose it to ViewModels in a different format.
+expose it to `ViewModel`s in a different format.
 :::
 
 ### Result objects
@@ -102,7 +102,7 @@ without having to write custom logic for every instance of the case.
 In the Compass app, 
 `Result` is a [sealed][] class with two subclasses, 
 called `Ok` and `Error`. 
-The following example shows the `Result class`.
+The following example shows the `Result` class.
 
 ```dart
 // app/lib/data/utils/result.dart
@@ -110,10 +110,10 @@ The following example shows the `Result class`.
 sealed class Result<T> {
   const Result();
 
-  /// Creates an instance of Result containing a value
+  /// Creates an instance of [Result] containing a value.
   factory Result.ok(T value) => Ok(value);
 
-  /// Create an instance of Result containing an error
+  /// Creates an instance of [Result] containing an error.
   factory Result.error(Exception error) => Error(error);
 
   /// Convenience method to cast to Ok
@@ -190,15 +190,15 @@ class ApiClient {
  
 This pattern is a recommendation, but not a requirement. 
 The architecture recommended in this guide can be implemented without it. 
-The value of using a pattern like this will be explained in
+The value of using a pattern like this is explained in
 the next section about repositories, which consume the results of API calls.
 
 ## Define a repository
 
 A repository's sole responsibility is to manage application data. 
 A repository is the source of truth for a single type of application data, 
-and it should be the only place that data type is mutated. 
-It's responsible for polling new data from external sources, 
+and it should be the only place where that data type is mutated. 
+The repo is responsible for polling new data from external sources, 
 handling retry logic, managing cached data, 
 and transforming raw data into domain models.
 
@@ -233,13 +233,13 @@ class BookingRepositoryRemote implements BookingRepository {
 ```
 
 :::note Development vs staging environments
-The class in the example above is `BookingRepositoryRemote`, 
+The class in the previous example is `BookingRepositoryRemote`, 
 which extends an abstract class called `BookingRepository`. 
 This base class is used to create repositories for different environments. 
 For example, the compass app also has a class called `BookingRepositoryLocal`, 
 which is used for local development.
 
-You can see the differences between the [`BookingRepository` classes on Github][].
+You can see the differences between the [`BookingRepository` classes on GitHub][].
 :::
 
 
@@ -248,12 +248,12 @@ which it uses to get and update the raw data from the server.
 It's important that the service is a private member, 
 so that the UI layer cannot bypass the repository and call a service directly.
 
-Via the `ApiClient` service, 
+With the `ApiClient` service, 
 the repository can poll for updates to a user's saved bookings that 
 might happen on the server, and make POST requests to delete saved bookings.
 
 The raw data that a repository transforms into application models can come from
-multiple sources via multiple services, 
+multiple sources and multiple services, 
 and therefore repositories and services have a many-to-many relationship. 
 A service can be used by any number of repositories, 
 and a repository can use more than one service.
@@ -267,11 +267,11 @@ The `BookingRepository` outputs `Booking` and `BookingSummary` objects,
 which are *domain models*. All repositories output corresponding domain models. 
 These data models differ from API models in that they only contain the data 
 needed by the rest of the app. 
-API models contain raw data that often needs to be filtered or 
-combined or removed to be useful to the app's ViewModels. 
-When the raw data has been refined, its output as domain models.
+API models contain raw data that often needs to be filtered, 
+combined, or deleted to be useful to the app's `ViewModel`s. 
+The repo refines the raw data and outputs it as domain models.
 
-In the example app, domain models are exposed via 
+In the example app, domain models are exposed through
 return values on methods like `BookingRepository.getBooking`. 
 The `getBooking` method is responsible for getting the raw data from 
 the `ApiClient` service, and transforming it into a `Booking` object. 
@@ -310,9 +310,9 @@ It does this by combining data from multiple service endpoints.
 ### Complete the event cycle
 
 Throughout this page, you've seen how a user can delete a saved booking,
-starting with an event--a user swiping on a `Dismissable` widget. 
-That event is handled in the ViewModel, 
-which delegates the actual data mutation to the `BookingRepository`. 
+starting with an event—a user swiping on a `Dismissable` widget. 
+The `ViewModel` handles that event by delegating
+the actual data mutation to the `BookingRepository`. 
 The following snippet shows the `BookingRepository.deleteBooking` method.
 
 ```dart
@@ -327,14 +327,14 @@ The following snippet shows the `BookingRepository.deleteBooking` method.
   }
 ```
 
-The repository sends a POST request to the API client via
+The repository sends a POST request to the API client with
 the `_apiClient.deleteBooking` method, 
-and returns a `Result`. This `Result`and the data it contains is consumed by
-the `HomeViewModel`, which will ultimately call `notifyListeners`, 
+and returns a `Result`. The `HomeViewModel` consumes the `Result,
+and the data it contains, and ultimately calls `notifyListeners`, 
 completing the cycle.
 
 [repositories]: /app-architecture/guide#repositories 
 [services]:  /app-architecture/guide#services
 [`APIClient`]: https://github.com/flutter/samples/blob/main/compass_app/app/lib/data/services/api/api_client.dart
 [sealed]: https://dart.dev/language/class-modifiers#sealed
-[`BookingRepository` classes on Github]: https://github.com/flutter/samples/tree/main/compass_app/app/lib/data/repositories/booking
+[`BookingRepository` classes on GitHub]: https://github.com/flutter/samples/tree/main/compass_app/app/lib/data/repositories/booking

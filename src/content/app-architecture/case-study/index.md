@@ -65,7 +65,7 @@ Any given page may reference the previous pages.
 The code examples in this case-study include all the details needed to 
 understand the architecture, but they're not complete, 
 runnable snippets. If you prefer to follow along with the full app, 
-you can find it on [Github][].
+you can find it on [GitHub][].
 
 ## Package structure
 
