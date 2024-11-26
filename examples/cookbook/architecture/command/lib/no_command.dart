@@ -44,7 +44,7 @@ class _MainAppState extends State<MainApp> {
 
             if (widget.viewModel.error != null) {
               return Center(
-                child: Text('Error: ${widget.viewModel.load.error}'),
+                child: Text('Error: ${widget.viewModel.error}'),
               );
             }
 

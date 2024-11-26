@@ -28,7 +28,7 @@ to improve your ViewModels.
 ## Challenges when implementing ViewModels
 
 ViewModel classes in Flutter are typically implemented 
-by extending the ChangeNotifier class. 
+by extending the `ChangeNotifier` class. 
 This allows ViewModels to call `notifyListeners()` to refresh Views
 when data is updated.
 
@@ -510,19 +510,19 @@ to improve the implementation of ViewModels
 when using the MVVM design pattern.
 
 Below, you can find the full `Command` class 
-as implemented in the Compass App example 
+as implemented in the [Compass App example][]
 for the Flutter Architecture guidelines. 
-It also uses the Result class, 
-which you can learn more about 
-in the Architecture Cookbook Recipe: Result Class.
+It also uses the [`Result` class][] 
+to determine if the action completed successfuly or with an error.
 
 This implementation also includes two types of command, 
 a `Command0`, for actions without parameters, 
 and a `Command1`, which takes one parameter.
 
 :::note
-Check pub.dev for different ready-to-use implementations of the command pattern,
-like the flutter_command package.
+Check [pub.dev][] for different ready-to-use 
+implementations of the command pattern,
+like the [flutter_command][] package.
 :::
 
 <?code-excerpt "lib/command.dart"?>
@@ -626,4 +626,7 @@ class Command1<T, A> extends Command<T> {
 }
 ```
 
-
+[Compass App example]:{{site.repo.samples}}/tree/main/compass_app
+[`Result` class]:/cookbook/architecture/result
+[pub.dev]:{{site.pub}}
+[flutter_command]:{{site.pub-pkg}}/flutter_command
