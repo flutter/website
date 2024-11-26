@@ -26,8 +26,7 @@ and writing `mocks` or `fakes` of the repository is
 the only setup you need to do. 
 In this example test, a fake called `FakeBookingRepository` is used.
 
-```dart
-// app/test/ui/home/widgets/home_screen_test.dart
+```dart title=home_screen_test.dart
 
 main() {
   group('HomeViewModel tests', () {
@@ -49,8 +48,7 @@ The [`FakeBookingRepository`][] class implements [`BookingRepository`][].
 In the [data layer section][] of this case-study, 
 the `BookingRepository` class is explained thoroughly.
 
-```dart
-// app/testing/fakes/repositories/fake_booking_repository.dart
+```dart title=fake_booking_repository.dart
 
 class FakeBookingRepository implements BookingRepository {
   List<Booking> bookings = List.empty(growable: true);
@@ -76,8 +74,7 @@ you've already created the fakes you need to write widget tests as well.
 The following example shows how the `HomeScreen` widget tests 
 are set up using the `HomeViewModel` and needed repositories:
 
-```dart
-// app/test/ui/home/widgets/home_screen_test.dart
+```dart title=home_screen_test.dart
 
 main() {
   group('HomeScreen tests', () {
@@ -117,8 +114,7 @@ After the ViewModel and its dependencies are defined,
 the Widget tree that will be tested needs to be created. 
 In the tests for the `HomeScreen`, a `loadWidget` method is defined.
 
-```dart
-// app/test/ui/home/widgets/home_screen_test.dart
+```dart title=home_screen_test.dart
 
 main() {
   group('HomeScreen tests', () {
@@ -153,8 +149,7 @@ This method turns around and calls `testApp`,
 a generalized method used for all widget tests in the compass app.
 It looks like this:
 
-```dart
-// app/testing/app.dart 
+```dart title=testing/app.dart 
 
 testApp(
   WidgetTester tester,
@@ -202,8 +197,7 @@ making both sides fake-able. To write unit tests for any given repository,
 mock the services that it depends on. 
 The following example shows a unit test for the `BookingRepository`.
 
-```dart
-// app/test/data/repositories/booking/booking_repository_remote_test.dart
+```dart title=booking_repository_remote_test.dart
 
 main() {
   group('BookingRepositoryRemote tests', () {

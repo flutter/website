@@ -21,21 +21,23 @@ In these ways and more, it simulates a real-world,
 feature-rich Flutter application.
 
 <div class="row" style="padding-bottom:30px;">
+
     <div class="col-sm" style="padding-right:5px">
-        <img src='/assets/images/docs/app-architecture/case-study/splash_screen.png'
-            alt="A screenshot of the splash screen of the compass app.">
+
+![A screenshot of the splash screen of the compass app.](/assets/images/docs/app-architecture/case-study/splash_screen.png)
     </div>
     <div class="col-sm" style="padding-left:0;padding-right:5px;">
-        <img src='/assets/images/docs/app-architecture/case-study/home_screen.png'
-            alt="A screenshot of the home screen of the compass app.">
+
+
+![A screenshot of the home screen of the compass app.](/assets/images/docs/app-architecture/case-study/home_screen.png)
     </div>
     <div class="col-sm" style="padding-left:0;padding-right:5px;">
-        <img src='/assets/images/docs/app-architecture/case-study/search_form_screen.png'
-            alt="A screenshot of the search form screen of the compass app.">
+
+![A screenshot of the search form screen of the compass app.](/assets/images/docs/app-architecture/case-study/search_form_screen.png)
     </div>
     <div class="col-sm" style="padding-left:0;">
-        <img src='/assets/images/docs/app-architecture/case-study/booking_screen.png'
-            alt="A screenshot of the booking screen of the compass app.">
+
+![A screenshot of the booking screen of the compass app.](/assets/images/docs/app-architecture/case-study/booking_screen.png)
     </div>
 </div>
 

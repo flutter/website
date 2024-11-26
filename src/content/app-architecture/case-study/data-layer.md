@@ -24,8 +24,7 @@ and sending update requests to those external APIs as needed.
 The data layer in this guide has two main components, 
 [repositories][] and [services][].
 
-<img src='/assets/images/docs/app-architecture/guide/feature-architecture-simplified-Data-highlighted.png'
-alt="A diagram that highlights the data layer components of an application.">
+![A diagram that highlights the data layer components of an application.](/assets/images/docs/app-architecture/guide/feature-architecture-simplified-Data-highlighted.png)
 
 * **Repositories** are the source of the truth for application data, and contain
   logic that relates to that data, like updating the data in response to new
@@ -45,14 +44,14 @@ Its only job is to wrap an external API.
 There is generally one service class per data source, 
 such as a client HTTP server or a platform plugin.
 
-<img src='/assets/images/docs/app-architecture/case-study/mvvm-case-study-services-architecture.png'
-alt="A diagram that shows the inputs and outputs of service objects.">
+
+
+![A diagram that shows the inputs and outputs of service objects.](/assets/images/docs/app-architecture/case-study/mvvm-case-study-services-architecture.png)
 
 In the Compass app, for example, there is an [`APIClient`][] service that 
 handles the CRUD calls to the client-facing server.
 
-```dart
-// app/lib/data/services/api/api_client.dart
+```dart title=api_client.dart
 
 class ApiClient {
   // ... some code omitted for demo purposes
@@ -104,8 +103,7 @@ In the Compass app,
 called `Ok` and `Error`. 
 The following example shows the `Result` class.
 
-```dart
-// app/lib/data/utils/result.dart
+```dart title=result.dart
 
 sealed class Result<T> {
   const Result();
@@ -129,8 +127,7 @@ handle different response types.
 The `Error` subclass has the property `Exception error`, 
 and the `Ok` subclass has the generic property `T value`.
 
-```dart
-// app/lib/data/utils/result.dart
+```dart title=result.dart
 
 /// Subclass of Result for values
 final class Ok<T> extends Result<T> {
@@ -160,8 +157,7 @@ wrap the responses from API calls in a result,
 like in the following example which shows how 
 `ApiClient.deleteBooking` is implemented:
 
-```dart
-// app/lib/data/services/api/api_client.dart
+```dart title=api_client.dart
 
 class ApiClient {
  // ...
@@ -202,8 +198,7 @@ The repo is responsible for polling new data from external sources,
 handling retry logic, managing cached data, 
 and transforming raw data into domain models.
 
-<img src='/assets/images/docs/app-architecture/guide/feature-architecture-simplified-Repository-highlighted.png'
-alt="A diagram that highlights the repository component of an application.">
+![A diagram that highlights the repository component of an application.](/assets/images/docs/app-architecture/guide/feature-architecture-simplified-Repository-highlighted.png)
 
 You should have a separate repository for each different type of 
 data in your application. For example, 
@@ -213,8 +208,7 @@ the Compass app has repositories called `UserRepository`,
 The following example is the `BookingRepository` from the Compass app, 
 and shows the basic structure of a repository.
 
-```dart
-// app/lib/data/repositories/booking/booking_repository_remote.dart
+```dart title=booking_repository_remote.dart
 
 class BookingRepositoryRemote implements BookingRepository {
   BookingRepositoryRemote({
@@ -258,8 +252,7 @@ and therefore repositories and services have a many-to-many relationship.
 A service can be used by any number of repositories, 
 and a repository can use more than one service.
 
-<img src='/assets/images/docs/app-architecture/guide/feature-architecture-simplified-Data-highlighted.png'
-alt="A diagram that highlights the data layer components of an application.">
+![A diagram that highlights the data layer components of an application.](/assets/images/docs/app-architecture/guide/feature-architecture-simplified-Data-highlighted.png)
 
 ### Domain models
 
@@ -277,8 +270,7 @@ The `getBooking` method is responsible for getting the raw data from
 the `ApiClient` service, and transforming it into a `Booking` object. 
 It does this by combining data from multiple service endpoints.
 
-```dart
-// app/lib/data/repositories/booking/booking_repository_remote.dart
+```dart title=booking_repository_remote.dart
 
 // method edited for brevity
  Future<Result<Booking>> getBooking(int id) async {
@@ -315,8 +307,7 @@ The `ViewModel` handles that event by delegating
 the actual data mutation to the `BookingRepository`. 
 The following snippet shows the `BookingRepository.deleteBooking` method.
 
-```dart
-// app/lib/data/repositories/booking/booking_repository_remote.dart
+```dart title=booking_repository_remote.dart
 
   Future<Result<void>> delete(int id) async {
     try {

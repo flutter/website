@@ -22,8 +22,7 @@ An app's architecture should answer the following questions:
 * What do these components expose as output to each other?
 * How is any given layer 'wired up' to another layer?
 
-<img src='/assets/images/docs/app-architecture/guide/feature-architecture-simplified.png'
-alt="A diagram showing the components of app architecture.">
+![A diagram showing the components of app architecture.](/assets/images/docs/app-architecture/guide/feature-architecture-simplified.png)
 
 Using this diagram as a guide, the rules of engagement are as follows:
 
@@ -67,8 +66,7 @@ teams at Google building Flutter apps.
 Services and repositories are exposed to the top level of the widget tree of
 the Flutter application as `Provider` objects.
 
-```dart
-// app/lib/config/dependencies.dart
+```dart title=dependencies.dart
 
 runApp(
     MultiProvider(
@@ -110,8 +108,7 @@ ViewModels that correspond to a full screen are created in
 the [`GoRouter`][] configuration, 
 where provider is again used to inject the necessary repositories.
 
-```dart
-// app/lib/routing/router.dart
+```dart title=router.dart
 
 // code modified for demo purposes
 GoRouter router(
@@ -151,8 +148,7 @@ GoRouter router(
 Within the ViewModel or repository, the injected component should be private.
 For example, the `HomeViewModel` class looks like this:
 
-```dart
-// app/lib/ui/home/view_models/home_viewmodel.dart
+```dart title=home_viewmodel.dart
 
 class HomeViewModel extends ChangeNotifier {
   HomeViewModel({

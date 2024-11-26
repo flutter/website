@@ -15,8 +15,7 @@ The [UI layer][] of each feature in your Flutter application should be
 made up of two components: a **[View][]** and
 a **[ViewModel][].**
 
-<img src='/assets/images/docs/app-architecture/case-study/mvvm-case-study-ui-layer-highlighted.png'
-alt="A screenshot of the booking screen of the compass app.">
+![A screenshot of the booking screen of the compass app.](/assets/images/docs/app-architecture/case-study/mvvm-case-study-ui-layer-highlighted.png)
 
 In the most general sense, ViewModels manage UI state, 
 and views display UI state. Views and ViewModels have a one-to-one relationship; 
@@ -42,8 +41,7 @@ In this case,
 the ViewModel is dependent on the 
 `BookingRepository`and `UserRepository` as arguments.
 
-```dart 
-// app/lib/ui/home/view_models/home_viewmodel.dart
+```dart title=home_viewmodel.dart
 
 class HomeViewModel {
   HomeViewModel({
@@ -76,8 +74,7 @@ The output of a ViewModel is data that a view needs to render, generally
 referred to as **UI State**, or just state. UI state is an immutable snapshot of
 data that is required to fully render a view.
 
-<img src='/assets/images/docs/app-architecture/case-study/mvvm-case-study-ui-state-highlighted.png'
-alt="A screenshot of the booking screen of the compass app.">
+![A screenshot of the booking screen of the compass app.](/assets/images/docs/app-architecture/case-study/mvvm-case-study-ui-state-highlighted.png)
 
 The ViewModel exposes state as public members. 
 On the ViewModel in the following code example,
@@ -85,8 +82,7 @@ the exposed data is a `User` object,
 as well as the user's saved itineraries which 
 are exposed as an object of type `List<TripSummary>`.
 
-```dart
-// app/lib/ui/home/view_models/home_viewmodel.dart
+```dart title=home_viewmodel.dart
 
 class HomeViewModel {
   HomeViewModel({
@@ -118,8 +114,7 @@ the following code shows the `User` class definition.
 and generates the code for useful methods like 
 `[copyWith](freezed.copywoith)`and `[toJson](jsonseralizable.toJson)`.
 
-```dart
-// app/lib/domain/models/user/user.dart
+```dart title=user.dart
 
 @freezed
 class User with _$User {
@@ -155,8 +150,7 @@ ViewModels need to tell Flutter to re-render views when
 the data layer provides a new state. 
 In the Compass app, ViewModels extend [`ChangeNotifier`][] to achieve this.
 
-```dart
-// app/lib/ui/home/view_models/home_viewmodel.dart
+```dart title=home_viewmodel.dart
 
 class HomeViewModel [!extends ChangeNotifier!] {
   HomeViewModel({
@@ -182,8 +176,9 @@ When new data flows from the data layer and
 new state needs to be emitted, [`notifyListeners`][] is called.
 
 <figure>
-<img src='/assets/images/docs/app-architecture/case-study/mvvm-case-study-update-ui-steps.png'
-alt="A screenshot of the booking screen of the compass app.">
+
+![A screenshot of the booking screen of the compass app.](/assets/images/docs/app-architecture/case-study/mvvm-case-study-update-ui-steps.png)
+
     <figcaption style="font-style: italic">
 This figure shows from a high-level how new data in the repository
 propagates up to the UI layer and triggers a re-build of your Flutter widgets.
@@ -201,8 +196,7 @@ is empty, the view displays a loading indicator. When the `_load` method
 completes, if it is successful, there is new data in the ViewModel, and it must
 notify the view that new data is available.
 
-```dart
-// app/lib/ui/home/view_models/home_viewmodel.dart
+```dart title=home_viewmodel.dart
 
 class HomeViewModel extends ChangeNotifier {
   // ...
@@ -269,14 +263,13 @@ The widgets within a view have three responsibilities:
 * Listen for updates from the ViewModel and re-render when new data is available
 * Attach callbacks from the ViewModel to event handlers, if applicable.
 
-<img src='/assets/images/docs/app-architecture/guide/feature-architecture-simplified-View-highlighted.png'
-alt="A diagram showing a View's relationship to a ViewModel.">
+![A diagram showing a View's relationship to a ViewModel.](/assets/images/docs/app-architecture/guide/feature-architecture-simplified-View-highlighted.png)
+
 
 Continuing the Home feature example, 
 the following code shows the definition of the ‘HomeScreen' view.
 
-```dart
-// app/lib/ui/home/widgets/home_screen.dart
+```dart title=home_screen.dart
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key, required this.viewModel});
@@ -302,8 +295,7 @@ A view depends on a ViewModel for its state. In the Compass app,
 the ViewModel is passed in as an argument in the view's constructor. 
 The following example code snippet is from the `HomeScreen` widget.
 
-```dart
-// app/lib/ui/home/widgets/home_screen.dart
+```dart title=home_screen.dart
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key, [!required this.viewModel!]});
@@ -321,8 +313,7 @@ Within the widget, you can access the passed-in bookings from the `viewModel`.
 In the following code, 
 the `booking` property is being provided to a sub-widget.
 
-```dart
-// app/lib/ui/home/widgets/home_screen.dart
+```dart title=home_screen.dart
  
 @override
   Widget build(BuildContext context) {
@@ -365,8 +356,7 @@ the provided `Listenable` is the ViewModel.
 Recall that the ViewModel is of type [`ChangeNotifier`][] 
 which is a subtype of the `Listenable` type.
 
-```dart
-// app/lib/ui/home/widgets/home_screen.dart
+```dart title=home_screen.dart
  
 @override
   Widget build(BuildContext context) {
@@ -406,8 +396,7 @@ so the ViewModel can handle those events.
 This is achieved by exposing a callback method on the ViewModel class which 
 encapsulates all the logic.
 
-<img src='/assets/images/docs/app-architecture/guide/feature-architecture-simplified-UI-highlighted.png'
-alt="A diagram showing a View's relationship to a ViewModel.">
+![A diagram showing a View's relationship to a ViewModel.](/assets/images/docs/app-architecture/guide/feature-architecture-simplified-UI-highlighted.png)
 
 On the `HomeScreen`, users can delete previously booked events by swiping
 a [`Dismissable`][] widget.
@@ -417,8 +406,7 @@ Recall this code from the previous snippet:
 <div class="row">
     <div class="col-md-8">
 
-```dart
-// app/lib/ui/home/widgets/home_screen.dart
+```dart title=home_screen.dart
 
 SliverList.builder(
   itemCount: widget.viewModel.bookings.length,
@@ -454,8 +442,7 @@ So, the `HomeViewModel.deleteBooking` method turns around and
 calls a method exposed by a repository in the data layer, 
 as shown in the following code snippet.
 
-```dart
-// app/lib/ui/home/view_models/home_viewmodel.dart
+```dart title=home_viewmodel.dart
 
 Future<Result<void>> _deleteBooking(int id) async {
     try {
@@ -497,8 +484,7 @@ like loading indicators when `Command.running` is true.
 The following is code from the `Command` class. 
 Some code has been omitted for demo purposes.
 
-```dart
-// /app/lib/utils/command.dart
+```dart title=command.dart
 
 abstract class Command<T> extends ChangeNotifier {
   Command();
@@ -555,8 +541,7 @@ which is a robust library that implements classes like these.
 
 In ViewModel classes, commands are created in the constructor.
 
-```dart
-// app/lib/ui/home/view_models/home_viewmodel.dart
+```dart title=home_viewmodel.dart
 
 class HomeViewModel extends ChangeNotifier {
   HomeViewModel({
@@ -600,8 +585,7 @@ the view wants to render. This gets at *why* the Compass app uses `Commands`.
 In the view's `Widget.build` method, 
 the command is used to conditionally render different widgets.
 
-```dart
-// app/lib/ui/home/view_models/home_viewmodel.dart
+```dart title=home_viewmodel.dart
 
 // ...
 child: ListenableBuilder(
