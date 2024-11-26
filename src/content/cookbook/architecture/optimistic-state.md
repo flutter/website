@@ -33,7 +33,7 @@ following the [Flutter architecture guidelines][].
 This example implements a subscribe button similar to 
 the one you could find in a video streaming application or a newsletter.
 
-<img src='/assets/images/docs/app-architecture/cookbook/optimistic-state.png'
+<img src='/assets/images/docs/cookbook/architecture/optimistic-state.png'
 class="site-mobile-screenshot" alt="Application with subscribe button" >
 
 When the button is tapped, the application then calls an external API, 
@@ -57,7 +57,7 @@ Following the Optimistic State idea,
 the button should instantly change to “Subscribed” once it is tapped, 
 and only change back to “Subscribe” if the request failed.
 
-<img src='/assets/images/docs/app-architecture/cookbook/optimistic-state.gif'
+<img src='/assets/images/docs/cookbook/architecture/optimistic-state.gif'
 class="site-mobile-screenshot" alt="Animation of application with subscribe button" >
 
 ## Feature architecture
