@@ -21,6 +21,7 @@ class MainApp extends StatefulWidget {
 }
 
 class _MainAppState extends State<MainApp> {
+  // #docregion addListener
   @override
   void initState() {
     super.initState();
@@ -32,11 +33,14 @@ class _MainAppState extends State<MainApp> {
     widget.viewModel.removeListener(_onViewModelChanged);
     super.dispose();
   }
+  // #enddocregion addListener
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        // #docregion CommandListenable
+        // #docregion ListenableBuilder
         body: ListenableBuilder(
           listenable: widget.viewModel.load,
           builder: (context, child) {
@@ -45,6 +49,7 @@ class _MainAppState extends State<MainApp> {
                 child: CircularProgressIndicator(),
               );
             }
+            // #enddocregion CommandListenable
 
             if (widget.viewModel.load.error != null) {
               return Center(
@@ -57,6 +62,7 @@ class _MainAppState extends State<MainApp> {
           child: ListenableBuilder(
             listenable: widget.viewModel,
             builder: (context, _) {
+              // #enddocregion ListenableBuilder
               if (widget.viewModel.user == null) {
                 return const Center(
                   child: Text('No user'),
@@ -72,18 +78,25 @@ class _MainAppState extends State<MainApp> {
                   ],
                 ),
               );
+              // #docregion ListenableBuilder
             },
           ),
+          // #docregion CommandListenable
         ),
+        // #enddocregion ListenableBuilder
+        // #enddocregion CommandListenable
       ),
     );
   }
 
+  // #docregion _onViewModelChanged
   void _onViewModelChanged() {
     if (widget.viewModel.load.error != null) {
+      widget.viewModel.load.clear();
       // Show Snackbar
     }
   }
+  // #enddocregion _onViewModelChanged
 }
 
 class User {
@@ -93,24 +106,48 @@ class User {
   final String email;
 }
 
+// #docregion HomeViewModel
 class HomeViewModel extends ChangeNotifier {
+  // #docregion ViewModelInit
   HomeViewModel() {
     load = Command(_load)..execute();
   }
+  // #enddocregion ViewModelInit
 
-  User? _user;
-  User? get user => _user;
+  User? get user => null;
 
   late final Command load;
 
   Future<void> _load() async {
     // load user
-    await Future.delayed(const Duration(seconds: 2));
-    _user = User(name: 'John Doe', email: 'john@example.com');
-    notifyListeners();
   }
 }
+// #enddocregion HomeViewModel
 
+// #docregion HomeViewModel2
+class HomeViewModel2 extends ChangeNotifier {
+  HomeViewModel2() {
+    load = Command(_load)..execute();
+    delete = Command(_delete);
+  }
+
+  User? get user => null;
+
+  late final Command load;
+
+  late final Command delete;
+
+  Future<void> _load() async {
+    // load user
+  }
+
+  Future<void> _delete() async {
+    // delete user
+  }
+}
+// #enddocregion HomeViewModel2
+
+// #docregion Command
 class Command extends ChangeNotifier {
   Command(this._action);
 
@@ -152,3 +189,4 @@ class Command extends ChangeNotifier {
     _completed = false;
   }
 }
+// #enddocregion Command
