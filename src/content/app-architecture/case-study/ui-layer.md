@@ -42,7 +42,6 @@ the ViewModel is dependent on the
 `BookingRepository`and `UserRepository` as arguments.
 
 ```dart title=home_viewmodel.dart
-
 class HomeViewModel {
   HomeViewModel({
     required BookingRepository bookingRepository, 
@@ -83,7 +82,6 @@ as well as the user's saved itineraries which
 are exposed as an object of type `List<TripSummary>`.
 
 ```dart title=home_viewmodel.dart
-
 class HomeViewModel {
   HomeViewModel({
    required BookingRepository bookingRepository, 
@@ -115,7 +113,6 @@ and generates the code for useful methods like
 `[copyWith](freezed.copywoith)`and `[toJson](jsonseralizable.toJson)`.
 
 ```dart title=user.dart
-
 @freezed
 class User with _$User {
   const factory User({
@@ -151,7 +148,6 @@ the data layer provides a new state.
 In the Compass app, ViewModels extend [`ChangeNotifier`][] to achieve this.
 
 ```dart title=home_viewmodel.dart
-
 class HomeViewModel [!extends ChangeNotifier!] {
   HomeViewModel({
    required BookingRepository bookingRepository, 
@@ -196,8 +192,7 @@ is empty, the view displays a loading indicator. When the `_load` method
 completes, if it is successful, there is new data in the ViewModel, and it must
 notify the view that new data is available.
 
-```dart title=home_viewmodel.dart
-
+```dart title=home_viewmodel.dart highlightLines=19
 class HomeViewModel extends ChangeNotifier {
   // ...
 
@@ -216,7 +211,7 @@ class HomeViewModel extends ChangeNotifier {
 
       return userResult;
     } finally {
-      [!notifyListeners();!]
+      notifyListeners();
     }
   }
 }
@@ -270,7 +265,6 @@ Continuing the Home feature example,
 the following code shows the definition of the ‘HomeScreen' view.
 
 ```dart title=home_screen.dart
-
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key, required this.viewModel});
 
@@ -296,7 +290,6 @@ the ViewModel is passed in as an argument in the view's constructor.
 The following example code snippet is from the `HomeScreen` widget.
 
 ```dart title=home_screen.dart
-
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key, [!required this.viewModel!]});
 
@@ -314,7 +307,6 @@ In the following code,
 the `booking` property is being provided to a sub-widget.
 
 ```dart title=home_screen.dart
- 
 @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -357,7 +349,6 @@ Recall that the ViewModel is of type [`ChangeNotifier`][]
 which is a subtype of the `Listenable` type.
 
 ```dart title=home_screen.dart
- 
 @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -406,8 +397,7 @@ Recall this code from the previous snippet:
 <div class="row">
     <div class="col-md-8">
 
-```dart title=home_screen.dart
-
+```dart title=home_screen.dart highlightLines=9-10
 SliverList.builder(
   itemCount: widget.viewModel.bookings.length,
   itemBuilder: (_, index) => _Booking(
@@ -416,8 +406,8 @@ SliverList.builder(
     onTap: () => context.push(
       Routes.bookingWithId(viewModel.bookings[index].id)
     ),
-    [!onDismissed: (_) =>!] 
-      [!viewModel.deleteBooking.execute(widget.viewModel.bookings[index].id),!]
+    onDismissed: (_) =>
+      viewModel.deleteBooking.execute(widget.viewModel.bookings[index].id),
   ),
 ),
 
@@ -442,11 +432,10 @@ So, the `HomeViewModel.deleteBooking` method turns around and
 calls a method exposed by a repository in the data layer, 
 as shown in the following code snippet.
 
-```dart title=home_viewmodel.dart
-
+```dart title=home_viewmodel.dart highlightLines=3
 Future<Result<void>> _deleteBooking(int id) async {
     try {
-      [!final resultDelete = await _bookingRepository.delete(id);!]
+      final resultDelete = await _bookingRepository.delete(id);
       switch (resultDelete) {
         case Ok<void>():
           _log.fine('Deleted booking $id');
@@ -485,7 +474,6 @@ The following is code from the `Command` class.
 Some code has been omitted for demo purposes.
 
 ```dart title=command.dart
-
 abstract class Command<T> extends ChangeNotifier {
   Command();
   bool running = false;
@@ -541,8 +529,7 @@ which is a robust library that implements classes like these.
 
 In ViewModel classes, commands are created in the constructor.
 
-```dart title=home_viewmodel.dart
-
+```dart title=home_viewmodel.dart highlightLines=8-9,15-16,24-30
 class HomeViewModel extends ChangeNotifier {
   HomeViewModel({
    required BookingRepository bookingRepository, 
@@ -550,15 +537,15 @@ class HomeViewModel extends ChangeNotifier {
   }) : _bookingRepository = bookingRepository,
       _userRepository = userRepository {
     // Load required data when this screen is built
-    [!load = Command0(_load)..execute()!];
-    [!deleteBooking = Command1(_deleteBooking)!];
+    load = Command0(_load)..execute();
+    deleteBooking = Command1(_deleteBooking);
   }
 
   final BookingRepository _bookingRepository;
   final UserRepository _userRepository;
 
-  [!late Command0 load!];
-  [!late Command1<void, int> deleteBooking!];
+  late Command0 load;
+  late Command1<void, int> deleteBooking;
 
   User? _user;
   User? get user => _user;
@@ -566,11 +553,11 @@ class HomeViewModel extends ChangeNotifier {
   List<BookingSummary> _bookings = [];
   List<BookingSummary> get bookings => _bookings;
 
-  [!Future<Result> _load() async {!]
+  Future<Result> _load() async {
     ...
   }
 
-  [!Future<Result<void>> _deleteBooking(int id) async {!]
+  Future<Result<void>> _deleteBooking(int id) async {
     ...
   }
   
@@ -586,7 +573,6 @@ In the view's `Widget.build` method,
 the command is used to conditionally render different widgets.
 
 ```dart title=home_viewmodel.dart
-
 // ...
 child: ListenableBuilder(
   listenable: [!viewModel.load!],

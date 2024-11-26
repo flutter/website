@@ -52,7 +52,6 @@ In the Compass app, for example, there is an [`APIClient`][] service that
 handles the CRUD calls to the client-facing server.
 
 ```dart title=api_client.dart
-
 class ApiClient {
   // ... some code omitted for demo purposes
 
@@ -91,7 +90,7 @@ expose it to `ViewModel`s in a different format.
 ### Result objects
 
 In this app, methods on service classes return `Result` objects.
-`Result` is a utility class that adds type safety to API calls, 
+`Result` is a utility class that wraps asynchronous calls,  
 making it easier to handle errors. 
 Encoding asynchronous responses in this way makes it easy to
 write helper functions for a number of different cases, 
@@ -99,12 +98,11 @@ such as API retry logic,
 without having to write custom logic for every instance of the case.
 
 In the Compass app, 
-`Result` is a [sealed][] class with two subclasses, 
+`Result` is a [`sealed`][] class with two subclasses, 
 called `Ok` and `Error`. 
 The following example shows the `Result` class.
 
 ```dart title=result.dart
-
 sealed class Result<T> {
   const Result();
 
@@ -113,11 +111,9 @@ sealed class Result<T> {
 
   /// Creates an instance of [Result] containing an error.
   factory Result.error(Exception error) => Error(error);
-
-  /// Convenience method to cast to Ok
+  
   Ok<T> get asOk => this as Ok<T>;
-
-  /// Convenience method to cast to Error
+  
   Error get asError => this as Error<T>;
 }
 ```
@@ -128,7 +124,6 @@ The `Error` subclass has the property `Exception error`,
 and the `Ok` subclass has the generic property `T value`.
 
 ```dart title=result.dart
-
 /// Subclass of Result for values
 final class Ok<T> extends Result<T> {
   const Ok(this.value);
@@ -157,8 +152,7 @@ wrap the responses from API calls in a result,
 like in the following example which shows how 
 `ApiClient.deleteBooking` is implemented:
 
-```dart title=api_client.dart
-
+```dart title=api_client.dart highlightLines=12,14,17
 class ApiClient {
  // ...
 
@@ -170,12 +164,12 @@ class ApiClient {
       final response = await request.close();
       // Response 204 "No Content", delete was successful
       if (response.statusCode == 204) {
-        [!return Result.ok(null);!]
+        return Result.ok(null);
       } else {
-        [!return Result.error(const HttpException("Invalid response"));!]
+        return Result.error(const HttpException("Invalid response"));
       }
     } on Exception catch (error) {
-      [!return Result.error(error);!]
+      return Result.error(error);
     } finally {
       client.close();
     }
@@ -209,7 +203,6 @@ The following example is the `BookingRepository` from the Compass app,
 and shows the basic structure of a repository.
 
 ```dart title=booking_repository_remote.dart
-
 class BookingRepositoryRemote implements BookingRepository {
   BookingRepositoryRemote({
     required ApiClient apiClient,
@@ -270,8 +263,7 @@ The `getBooking` method is responsible for getting the raw data from
 the `ApiClient` service, and transforming it into a `Booking` object. 
 It does this by combining data from multiple service endpoints.
 
-```dart title=booking_repository_remote.dart
-
+```dart title=booking_repository_remote.dart highlightLines=14-21
 // method edited for brevity
  Future<Result<Booking>> getBooking(int id) async {
     try {
@@ -285,14 +277,14 @@ It does this by combining data from multiple service endpoints.
       final destination = _apiClient.getDestination(booking.destinationRef);
       final activities = _apiClient.getActivitiesForBooking(booking.activitiesRef);
 
-      [!return Result.ok(!]
-      [!  Booking(!]
-      [!    startDate: booking.startDate,!]
-      [!    endDate: booking.endDate,!]
-      [!    destination: destination,!]
-      [!    activity: activities,!]
-      [!  ),!]
-      [!);!]
+      return Result.ok(
+        Booking(
+          startDate: booking.startDate,
+          endDate: booking.endDate,
+          destination: destination,
+          activity: activities,
+        ),
+      );
     } on Exception catch (e) {
       return Result.error(e);
     }
@@ -308,7 +300,6 @@ the actual data mutation to the `BookingRepository`.
 The following snippet shows the `BookingRepository.deleteBooking` method.
 
 ```dart title=booking_repository_remote.dart
-
   Future<Result<void>> delete(int id) async {
     try {
       return _apiClient.deleteBooking(id);
@@ -327,5 +318,5 @@ completing the cycle.
 [repositories]: /app-architecture/guide#repositories 
 [services]:  /app-architecture/guide#services
 [`APIClient`]: https://github.com/flutter/samples/blob/main/compass_app/app/lib/data/services/api/api_client.dart
-[sealed]: https://dart.dev/language/class-modifiers#sealed
+[`sealed`]: https://dart.dev/language/class-modifiers#sealed
 [`BookingRepository` classes on GitHub]: https://github.com/flutter/samples/tree/main/compass_app/app/lib/data/repositories/booking

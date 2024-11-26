@@ -27,7 +27,6 @@ the only setup you need to do.
 In this example test, a fake called `FakeBookingRepository` is used.
 
 ```dart title=home_screen_test.dart
-
 main() {
   group('HomeViewModel tests', () {
     test('Load bookings', () {
@@ -49,7 +48,6 @@ In the [data layer section][] of this case-study,
 the `BookingRepository` class is explained thoroughly.
 
 ```dart title=fake_booking_repository.dart
-
 class FakeBookingRepository implements BookingRepository {
   List<Booking> bookings = List.empty(growable: true);
 
@@ -75,7 +73,6 @@ The following example shows how the `HomeScreen` widget tests
 are set up using the `HomeViewModel` and needed repositories:
 
 ```dart title=home_screen_test.dart
-
 main() {
   group('HomeScreen tests', () {
     late HomeViewModel viewModel;
@@ -114,8 +111,7 @@ After the ViewModel and its dependencies are defined,
 the Widget tree that will be tested needs to be created. 
 In the tests for the `HomeScreen`, a `loadWidget` method is defined.
 
-```dart title=home_screen_test.dart
-
+```dart title=home_screen_test.dart highlightLines=11-23
 main() {
   group('HomeScreen tests', () {
     late HomeViewModel viewModel;
@@ -126,19 +122,19 @@ main() {
       //...
     );
 
-    [!loadWidget(WidgetTester tester) async {!]
-    [!  await testApp(!]
-    [!    tester,!]
-    [!    ChangeNotifierProvider.value(!]
-    [!      value: FakeAuthRepository() as AuthRepository,!]
-    [!      child: Provider.value(!]
-    [!        value: FakeItineraryConfigRepository() as ItineraryConfigRepository,!]
-    [!        child: HomeScreen(viewModel: viewModel),!]
-    [!      ),!]
-    [!    ),!]
-    [!    goRouter: goRouter,!]
-    [!  );!]
-    [!}!]
+    loadWidget(WidgetTester tester) async {
+      await testApp(
+        tester,
+        ChangeNotifierProvider.value(
+          value: FakeAuthRepository() as AuthRepository,
+          child: Provider.value(
+            value: FakeItineraryConfigRepository() as ItineraryConfigRepository,
+            child: HomeScreen(viewModel: viewModel),
+          ),
+        ),
+        goRouter: goRouter,
+      );
+    }
 
     // ... tests that call loadWidget
   });
@@ -149,8 +145,7 @@ This method turns around and calls `testApp`,
 a generalized method used for all widget tests in the compass app.
 It looks like this:
 
-```dart title=testing/app.dart 
-
+```dart title=testing/app.dart
 testApp(
   WidgetTester tester,
   Widget body, {
@@ -198,7 +193,6 @@ mock the services that it depends on.
 The following example shows a unit test for the `BookingRepository`.
 
 ```dart title=booking_repository_remote_test.dart
-
 main() {
   group('BookingRepositoryRemote tests', () {
     late BookingRepository bookingRepository;
