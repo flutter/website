@@ -12,7 +12,7 @@ Model-View-ViewModel (MVVM) is a design pattern
 that separates a feature of an application into three parts: 
 the `Model`, the `ViewModel` and the `View`. 
 Views and ViewModels make up the UI layer of an application. 
-Repositories and services represent the data of an application, 
+Repositories and services represent the data layer of an application, 
 or the Model layer of MVVM.
 
 ViewModels can become very complex 
@@ -74,7 +74,7 @@ Besides data, ViewModels also contain other types of UI state.
 For example, a `running` state or an `error` state. 
 This allows the View to show to the user 
 if the action is still running 
-or if it was completed successfully.
+or if it completed successfully.
 
 <?code-excerpt "lib/no_command.dart (UiState1)" replace="/(null|false);/\/\/ .../g;/2//g"?>
 ```dart
@@ -124,7 +124,7 @@ void load() {
 ```
 
 Managing the state of an action can get complicated 
-once the ViewModel contains multiple actions. 
+if the ViewModel contains multiple actions. 
 For example, adding an `edit()` action to the `HomeViewModel` 
 can lead the following outcome:
 
@@ -155,18 +155,16 @@ Sharing the running state
 between the `load()` and `edit()` actions might not always work, 
 because you might want to show a different UI component 
 when the `load()` action runs than when the `edit()` action runs,
-and the same problem with the `error` state.
+and you'll have the same problem with the `error` state.
 
 ### Triggering UI actions from ViewModels
 
 Another challenge with ViewModel classes 
 is executing UI actions 
-hen the ViewModel state changes. 
+when the ViewModel state changes. 
 
-For example, to show a `SnackBar` when an error occurs, 
-or to navigate to a different screen when an action completes.
-
-To implement that, listen to the changes in the ViewModel, 
+For example, you might want to show a `SnackBar` when an error occurs, 
+or navigate to a different screen when an action completes. To implement this, listen for changes in the ViewModel, 
 and perform the action depending on the state. 
 
 In the View:
@@ -211,7 +209,7 @@ void _onViewModelChanged() {
 ## Command pattern
 
 You might find yourself repeating the above code over and over, 
-having to implement a different running state 
+implementing a different running state 
 for each action in every ViewModel. 
 At that point, it makes sense to extract this code 
 into a reusable pattern: a command.
@@ -289,14 +287,12 @@ When the action finishes,
 the `running` state changes to `false` 
 and the `completed` state to `true`.
 
-When the `running` state is `true`, 
-it prevents the command from being launched multiple times before completing. 
-This prevents users from attempting to tap multiple times on a button 
-while an action is executing.
+If the `running` state is `true`, the command cannot begin executing again. 
+This prevents users from triggering a command multiple times by pressing a button rapidly.
 
-The command’s `execute()` method could also capture any thrown Exceptions`
+The command’s `execute()` method also captures any thrown `Exceptions`
  by the action implementation automatically 
- and expose them in the `error` state.
+ and exposes them in the `error` state.
 
 The following is what a command class might look like.
 It’s been simplified for demo purposes.
@@ -353,7 +349,7 @@ The `Command` class extends from `ChangeNotifier`,
 allowing Views to listen to its states.
 
 In the `ListenableBuilder`, 
-instead of passing the ViewModel as listenable, 
+instead of passing the ViewModel to `ListenableBuilder.listenable`, 
 pass the command:
 
 
@@ -371,7 +367,7 @@ ListenableBuilder(
 )
 ```
 
-As well listen to changes in the command state in order to run UI actions:
+And listen to changes in the command state in order to run UI actions:
 
 <?code-excerpt "lib/main.dart (addListener)"?>
 ```dart
@@ -400,11 +396,7 @@ void _onViewModelChanged() {
 
 ### Combining command and ViewModel
 
-When combined with the ViewModel, 
-use the child argument to stack multiple `ListenableBuilder`. 
-For example, 
-listen to the `running` and `error` states  of the command 
-before showing the ViewModel data.
+You can stack multiple `ListenableBuilder` widgets to listen to `running` and `error` states before showing the ViewModel data. 
 
 <?code-excerpt "lib/main.dart (ListenableBuilder)"?>
 ```dart
@@ -464,9 +456,8 @@ class HomeViewModel2 extends ChangeNotifier {
 
 ### Extending the command pattern
 
-The command pattern can be extended in multiple ways, 
-for example,
-to support a different number of arguments.
+The command pattern can be extended in multiple ways. 
+For example, to support a different number of arguments.
 
 <?code-excerpt "lib/extended_command.dart (HomeViewModel)" replace="/null;/\/\/ .../g"?>
 ```dart
@@ -497,19 +488,19 @@ class HomeViewModel extends ChangeNotifier {
 ## Putting it all together
 
 In this guide, 
-you have learned how to use the command design pattern 
+you learned how to use the command design pattern 
 to improve the implementation of ViewModels 
 when using the MVVM design pattern.
 
 Below, you can find the full `Command` class 
 as implemented in the [Compass App example][]
-for the Flutter Architecture guidelines. 
+for the Flutter architecture guidelines. 
 It also uses the [`Result` class][] 
 to determine if the action completed successfuly or with an error.
 
 This implementation also includes two types of command, 
 a `Command0`, for actions without parameters, 
-and a `Command1`, which takes one parameter.
+and a `Command1`, for actions that take one parameter.
 
 :::note
 Check [pub.dev][] for different ready-to-use 
