@@ -89,15 +89,7 @@ class HomeViewModel extends ChangeNotifier {
   void load() {
     // load user
   }
-
-  void load() {
-    if (running) {
-      return;
-    }
-    // load user
-  }
-
-  void clearError() {}
+  // ···
 }
 ```
 

@@ -1,13 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(
-    MainApp(
-      viewModel: HomeViewModel(),
-    ),
-  );
-}
-
 class MainApp extends StatefulWidget {
   const MainApp({
     super.key,

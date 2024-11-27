@@ -108,6 +108,7 @@ class HomeViewModel2 extends ChangeNotifier {
     // load user
   }
   // #enddocregion load1
+  // #enddocregion UiState1
 
   // #docregion load2
   void load2() {
@@ -119,6 +120,7 @@ class HomeViewModel2 extends ChangeNotifier {
 
   // #enddocregion load2
   void clearError() {}
+  // #docregion UiState1
   // #docregion load1
   // #docregion HomeViewModel2
   // #docregion getUser
