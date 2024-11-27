@@ -341,6 +341,6 @@ but it requires greater diligence to maintain order.
 [Separation-of-concerns]: https://en.wikipedia.org/wiki/Separation_of_concerns
 [Model-View-ViewModel design pattern]: https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel
 [Command Pattern]: https://en.wikipedia.org/wiki/Command_pattern
-[State Management page]: http://docs.flutter.dev/get-started/fwe/state-management
+[State Management page]: /get-started/fwe/state-management
 [Repository]: https://martinfowler.com/eaaCatalog/repository.html
 [UI layer page]: /app-architecture/case-study/ui-layer

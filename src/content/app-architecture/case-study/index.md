@@ -43,11 +43,11 @@ feature-rich Flutter application.
 
 The Compass app's architecture most resembles the [MVVM design pattern][], 
 as described on the [recommended architecture][] page. 
-This architecture case-study demonstrates how to 
+This architecture case study demonstrates how to 
 implement the "Home" feature of the compass app. 
 This screen displays user account information and 
 a list of the user's saved trips. 
-From this screen you can logout, open detailed trip pages, 
+From this screen you can log out, open detailed trip pages, 
 delete saved trips, and navigate to the first page of the core app flow, 
 which allows the user to build a new itinerary.
 
@@ -58,11 +58,11 @@ In this case study, you'll learn the following:
 * How to use the [Command pattern][] to safely render UI as data changes
 * How to use [`ChangeNotifier`][] and [`Listenable`][] objects to manage state
 * About [Dependency Injection][] in a Flutter application
-* How to [set up tests][] when using the recommended architecture
+* How to [set up tests][] when following the recommended architecture
 * Effective [package structure][] for large Flutter apps
 
 This case-study was written to be read in order. 
-Any given page may reference the previous pages.
+Any given page might reference the previous pages.
 
 The code examples in this case-study include all the details needed to 
 understand the architecture, but they're not complete, 
@@ -80,11 +80,11 @@ There are two popular means of organizing code:
 
 1. By feature - The classes needed for each feature are grouped together. For
    example, you might have an `auth` directory, which would contain files
-   like `auth_viewmodel.dart`, `login_usecase.dart`, `logout_usecase.dart, `
-   login_screen.dart`, `logout_button.dart`, etc.
-2. By type - Each "type" of architecture is grouped together. For example, you
-   would have directories
-   called `repositories`, `models`, `services`, `viewmodels`, etc.
+   like `auth_viewmodel.dart`, `login_usecase.dart`, `logout_usecase.dart,
+   `login_screen.dart`, `logout_button.dart`, etc.
+2. By type - Each "type" of architecture is grouped together.
+   For example, you might have directories such as
+   `repositories`, `models`, `services`, and `viewmodels`.
 
 The architecture recommended in this guide lends itself to 
 a combination of the two. 
@@ -92,7 +92,7 @@ Data layer objects (repositories and services) aren't tied to a single feature,
 while UI layer objects (views and ViewModels) are. 
 The following is how the code is organized within the Compass application.
 
-```text
+```plaintext
 lib
 |____ui
 | |____core
@@ -143,21 +143,21 @@ because each feature will have exactly one view and exactly one ViewModel.
 
 Other notable features of this folder structure:
 
-* The UI folder also contains a subdirectory called "core". Core contains
+* The UI folder also contains a subdirectory named "core". Core contains
   widgets and theme logic that is shared by multiple views, such as buttons with
   your brand styling.
 * The domain folder contains the application data types, because they're used by
   the data and ui layers.
 * The app contains three "main" files, which act as different entry points to
   the application for development, staging and production.
-* There are two test-related directories at the same level as lib: `test/` has
+* There are two test-related directories at the same level as `lib`: `test/` has
   the test code, and it's own structure matches `lib/`. `testing/` is a
-  subpackage that contains mocks and other testing utilities which may be used
+  subpackage that contains mocks and other testing utilities which can be used
   in other packages' test code. The `testing/` folder could be described as a
   version of your app that you don't ship. It is the content that is tested.
 
 There's additional code in the compass app that doesn't pertain to architecture.
-For the full package structure, [view it on Github][].
+For the full package structure, [view it on GitHub][].
 
 ## Other architecture options
 
@@ -165,17 +165,17 @@ The example in this case-study demonstrates how one application abides by our
 recommended architectural rules, but there are many other example apps that
 could've been written. The UI of this app leans heavily on `ViewModels`
 and `ChangeNotifier`, but it could've easily been written
-with streams, [Riverpod][], [flutter_bloc][], [Signals][],
-or many other libraries. The communication between layers of this app handled
+with streams, or with other libraries like provided by the [`riverpod`][], [`flutter_bloc`][], and [`signals`][] packages.
+The communication between layers of this app handled
 everything with method calls, including polling for new data. It could've
-instead used `Streams` to expose data from a repository to a ViewModel and still
-abides by the rules covered in this guide.
+instead used streams to expose data from a repository to a ViewModel and still
+abided by the rules covered in this guide.
 
 Even if you do follow this guide exactly, 
 and choose not to introduce additional libraries, you have decisions to make: 
 Will you have a domain layer? 
 If so, how will you manage data access? 
-The answer depends so much on an individual team's need that
+The answer depends so much on an individual team's needs that
 there isn't a single right answer. 
 Regardless of how you answer these questions, 
 the principles in this guide will help you write scalable Flutter apps.

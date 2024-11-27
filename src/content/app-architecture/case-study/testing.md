@@ -56,7 +56,7 @@ class FakeBookingRepository implements BookingRepository {
     bookings.add(booking);
     return Result.ok(null);
   }
- // ...
+  // ...
 }
 ```
 
@@ -109,7 +109,7 @@ and general widget testing in [Flutter's testing documentation][].
 
 After the ViewModel and its dependencies are defined, 
 the Widget tree that will be tested needs to be created. 
-In the tests for the `HomeScreen`, a `loadWidget` method is defined.
+In the tests for `HomeScreen`, a `loadWidget` method is defined.
 
 ```dart title=home_screen_test.dart highlightLines=11-23
 void main() {
@@ -119,10 +119,10 @@ void main() {
     late FakeBookingRepository bookingRepository;
 
     setUp(
-      //...
+      // ...
     );
 
-    loadWidget(WidgetTester tester) async {
+    void loadWidget(WidgetTester tester) async {
       await testApp(
         tester,
         ChangeNotifierProvider.value(
@@ -174,17 +174,17 @@ void testApp(
 }
 ```
 
-This method's only job is to create a widget tree that can be tested.
+This function's only job is to create a widget tree that can be tested.
 
 The `loadWidget` method passes in the unique parts of a widget tree for testing.
 In this case, that includes the `HomeScreen` and its ViewModel, 
 as well as some additional faked repositories that 
 are higher in the widget tree.
 
-The most important thing to take-away is that view and ViewModel tests 
+The most important thing to take away is that view and ViewModel tests 
 only require mocking repositories if your architecture is sound.
 
-## Testing the Data Layer
+## Testing the data layer
 
 Similar to the UI layer, 
 the components of the data layer have well-defined inputs and outputs, 
@@ -224,6 +224,6 @@ read [Flutter's testing documentation][].
 [`BookingRepository`]: https://github.com/flutter/samples/tree/main/compass_app/app/lib/data/repositories/booking
 [data layer section]: /app-architecture/case-study/data-layer
 [Mocktail pub.dev page]: https://pub.dev/packages/mocktail
-[Flutter's testing documentation]: https://docs.flutter.dev/testing/overview
+[Flutter's testing documentation]: /testing/overview
 [Compass App `testing` directory]: https://github.com/flutter/samples/tree/main/compass_app/app/testing
 

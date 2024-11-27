@@ -47,7 +47,7 @@ class HomeViewModel {
     required BookingRepository bookingRepository, 
     required UserRepository userRepository,
   }) : 
-    // Repositories are manually assigned because they're private members
+    // Repositories are manually assigned because they're private members.
     _bookingRepository = bookingRepository, 
     _userRepository = userRepository;
 
@@ -62,7 +62,7 @@ which are provided as arguments to the ViewModel's constructor.
 ViewModels and repositories have a many-to-many relationship, 
 and most ViewModels will depend on multiple repositories.
 
-As in the example code above, 
+As in the earlier `HomeViewModel` example declaration,
 repositories should be private members on the ViewModel, 
 otherwise Views would have direct access to 
 the data layer of the application.
@@ -98,7 +98,7 @@ class HomeViewModel {
   List<BookingSummary> _bookings = [];
   UnmodifiableListView<BookingSummary> get bookings => UnmodifiableListView(_bookings);
 
-// ... 
+  // ... 
 }
 ```
 
@@ -109,8 +109,8 @@ The compass app uses the [freezed][] package to
 enforce immutability on data classes. For example, 
 the following code shows the `User` class definition. 
 `freezed` provides deep immutability, 
-and generates the code for useful methods like 
-`[copyWith](freezed.copywoith)`and `[toJson](jsonseralizable.toJson)`.
+and generates the implementation for useful methods like
+[`copyWith`][freezed.copywith] and [`toJson`](jsonseralizable.toJson).
 
 ```dart title=user.dart
 @freezed
@@ -132,11 +132,11 @@ class User with _$User {
 In the ViewModel example, 
 two objects are needed to render the view. 
 As the UI state for any given model grows in complexity, 
-a ViewModel may have many more pieces of data from 
+a ViewModel might have many more pieces of data from 
 many more repositories exposed to the view. 
 In some cases, 
-you may want to create objects that specifically represent the UI state. 
-For example, I could create a class called `HomeUiState`.
+you might want to create objects that specifically represent the UI state. 
+For example, you could create a class named `HomeUiState`.
 :::
 
 
@@ -181,9 +181,9 @@ propagates up to the UI layer and triggers a re-build of your Flutter widgets.
     </figcaption>
 </figure>
 
-1. New state is provided to the ViewModel from a Repository
-2. The ViewModel updates its UI state to reflect the new data
-3. ViewModel.notifyListeners is called, alerting the View of new UI State
+1. New state is provided to the ViewModel from a Repository.
+2. The ViewModel updates its UI state to reflect the new data.
+3. ViewModel.notifyListeners is called, alerting the View of new UI State.
 4. The View (widget) re-renders.
 
 For example, when the user navigates to the Home screen and the ViewModel is
@@ -262,7 +262,7 @@ The widgets within a view have three responsibilities:
 
 
 Continuing the Home feature example, 
-the following code shows the definition of the ‘HomeScreen' view.
+the following code shows the definition of the `HomeScreen` view.
 
 ```dart title=home_screen.dart
 class HomeScreen extends StatelessWidget {
@@ -523,7 +523,7 @@ the number of arguments that the underlying method expects.
 You can see examples of these implementation classes in 
 the Compass app's [`utils` directory][].
 
-:::note Package recommendation
+:::tip Package recommendation
 Instead of writing your own `Command` class, 
 consider using the [flutter_command][] package, 
 which is a robust library that implements classes like these.
@@ -568,7 +568,6 @@ class HomeViewModel extends ChangeNotifier {
   
   // ... 
 }
-
 ```
 
 The `Command.execute` method is asynchronous, 
@@ -601,7 +600,6 @@ child: ListenableBuilder(
 ),
 
 // ...
-
 ```
 
 Because the `load` command is a property that exists on 
@@ -619,7 +617,7 @@ Whether you want to use it is highly dependent on
 other architectural choices you make. 
 Many libraries that help you manage state have 
 their own tools to solve these problems. For example, 
-if you were to use [`Streams`][] and [`StreamBuilders`][] in your app,
+if you were to use [streams][] and [`StreamBuilders`][] in your app,
 the [`AsyncSnapshot`][] classes provided by Flutter have 
 this functionality built in.
 

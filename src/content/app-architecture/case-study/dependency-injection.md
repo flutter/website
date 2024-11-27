@@ -67,7 +67,6 @@ Services and repositories are exposed to the top level of the widget tree of
 the Flutter application as `Provider` objects.
 
 ```dart title=dependencies.dart
-
 runApp(
     MultiProvider(
       providers: [
@@ -91,7 +90,7 @@ runApp(
             apiClient: context.read(),
           ) as ContinentRepository,
         ),
-        // additional providers
+        // Additional service and repository providers...
       ],
   ),
   child: const MainApp(),
@@ -109,7 +108,6 @@ the [`GoRouter`][] configuration,
 where provider is again used to inject the necessary repositories.
 
 ```dart title=router.dart
-
 // code modified for demo purposes
 GoRouter router(
   AuthRepository authRepository,
@@ -138,7 +136,9 @@ GoRouter router(
             );
             return HomeScreen(viewModel: viewModel);
           },
-          routes: [...],
+          routes: [
+            // ...
+          ],
         ),
       ],
     );
@@ -149,7 +149,6 @@ Within the ViewModel or repository, the injected component should be private.
 For example, the `HomeViewModel` class looks like this:
 
 ```dart title=home_viewmodel.dart
-
 class HomeViewModel extends ChangeNotifier {
   HomeViewModel({
     required BookingRepository bookingRepository,
@@ -162,7 +161,6 @@ class HomeViewModel extends ChangeNotifier {
 
   // ... rest of class
 }
-
 ```
 
 Private methods prevent the view, which has access to the ViewModel, from
@@ -172,7 +170,7 @@ This concludes the code walkthrough of the Compass app. This page only walked
 through the architecture-related code, but it doesn't tell the whole story. Most
 utility code, widget code, and UI styling was ignored. Browse the code in
 the [Compass app repository][] for a complete
-example of a robust Flutter application built using these principles.
+example of a robust Flutter application built following these principles.
 
 [provider]: https://pub.dev/packages/provider
 [`GoRouter`]: https://pub.dev/packages/go_router

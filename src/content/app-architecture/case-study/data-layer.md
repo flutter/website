@@ -45,7 +45,6 @@ There is generally one service class per data source,
 such as a client HTTP server or a platform plugin.
 
 
-
 ![A diagram that shows the inputs and outputs of service objects.](/assets/images/docs/app-architecture/case-study/mvvm-case-study-services-architecture.png)
 
 In the Compass app, for example, there is an [`APIClient`][] service that 
@@ -175,7 +174,6 @@ class ApiClient {
     }
   }
 }
-
 ```
  
 This pattern is a recommendation, but not a requirement. 
@@ -216,7 +214,6 @@ class BookingRepositoryRemote implements BookingRepository {
   Future<Result<List<BookingSummary>>> getBookingsList() async {...}
   Future<Result<void>> delete(int id) async {...}
 }
-
 ```
 
 :::note Development vs staging environments
@@ -233,11 +230,11 @@ You can see the differences between the [`BookingRepository` classes on GitHub][
 The `BookingRepository` takes the `ApiClient` service as an input, 
 which it uses to get and update the raw data from the server. 
 It's important that the service is a private member, 
-so that the UI layer cannot bypass the repository and call a service directly.
+so that the UI layer can't bypass the repository and call a service directly.
 
 With the `ApiClient` service, 
 the repository can poll for updates to a user's saved bookings that 
-might happen on the server, and make POST requests to delete saved bookings.
+might happen on the server, and make `POST` requests to delete saved bookings.
 
 The raw data that a repository transforms into application models can come from
 multiple sources and multiple services, 
@@ -300,16 +297,16 @@ the actual data mutation to the `BookingRepository`.
 The following snippet shows the `BookingRepository.deleteBooking` method.
 
 ```dart title=booking_repository_remote.dart
-  Future<Result<void>> delete(int id) async {
-    try {
-      return _apiClient.deleteBooking(id);
-    } on Exception catch (e) {
-      return Result.error(e);
-    }
+Future<Result<void>> delete(int id) async {
+  try {
+    return _apiClient.deleteBooking(id);
+  } on Exception catch (e) {
+    return Result.error(e);
   }
+}
 ```
 
-The repository sends a POST request to the API client with
+The repository sends a `POST` request to the API client with
 the `_apiClient.deleteBooking` method, 
 and returns a `Result`. The `HomeViewModel` consumes the `Result,
 and the data it contains, and ultimately calls `notifyListeners`, 
@@ -318,5 +315,5 @@ completing the cycle.
 [repositories]: /app-architecture/guide#repositories 
 [services]:  /app-architecture/guide#services
 [`APIClient`]: https://github.com/flutter/samples/blob/main/compass_app/app/lib/data/services/api/api_client.dart
-[`sealed`]: https://dart.dev/language/class-modifiers#sealed
+[`sealed`]: {{site.dart-site}}/language/class-modifiers#sealed
 [`BookingRepository` classes on GitHub]: https://github.com/flutter/samples/tree/main/compass_app/app/lib/data/repositories/booking

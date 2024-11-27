@@ -439,13 +439,14 @@
       children:
         - title: Overview
           permalink: /app-architecture/case-study
-        - title: UI Layer
+          match-page-url-exactly: true
+        - title: UI layer
           permalink: /app-architecture/case-study/ui-layer
-        - title: Data Layer
+        - title: Data layer
           permalink: /app-architecture/case-study/data-layer
         - title: Dependency injection
           permalink: /app-architecture/case-study/dependency-injection
-        - title: Testing
+        - title: Testing each layer
           permalink: /app-architecture/case-study/testing
 
     - title: Recommendations
