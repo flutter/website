@@ -40,7 +40,10 @@ class UserProfile {
 // #docregion UserProfileViewModel
 class UserProfileViewModel extends ChangeNotifier {
   // #enddocregion UserProfileViewModel
-  final UserProfileRepository userProfileRepository = UserProfileRepository();
+  final UserProfileRepository userProfileRepository = UserProfileRepository(
+    ApiClientService(),
+    DatabaseService(),
+  );
   // #docregion UserProfileViewModel
 
   UserProfile? userProfile;
