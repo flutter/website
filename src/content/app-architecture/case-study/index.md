@@ -2,7 +2,7 @@
 title: Architecture case study
 short-title: Architecture case study
 description: >
-  A walk-through of an app that implements the recommended Flutter app architecture.
+  A walk-through of a Flutter app that implements the MVVM design pattern.
 prev: 
   title: Guide to app architecture
   path: /app-architecture/guide

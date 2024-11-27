@@ -2,7 +2,7 @@
 title: Testing each layer
 short-title: Testing
 description: >
-  How to test an app that follows the recommended architecture.
+  How to test an app that implements MVVM architecture.
 prev: 
   title: Dependency injection
   path: /app-architecture/case-study/dependency-injection
@@ -30,7 +30,7 @@ In this example test, a fake called `FakeBookingRepository` is used.
 void main() {
   group('HomeViewModel tests', () {
     test('Load bookings', () {
-      // HomeViewModel._load is called in the constructor of HomeViewModel
+      // HomeViewModel._load is called in the constructor of HomeViewModel.
       final viewModel = HomeViewModel(
         bookingRepository: FakeBookingRepository()
           ..createBooking(kBooking),
@@ -90,7 +90,7 @@ void main() {
       when(() => goRouter.push(any())).thenAnswer((_) => Future.value(null));
     });
 
-    // ... tests that call loadWidget
+    // ...
   });
 }
 ```
@@ -136,7 +136,7 @@ void main() {
       );
     }
 
-    // ... tests that call loadWidget
+    // ...
   });
 }
 ```

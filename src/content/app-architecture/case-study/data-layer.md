@@ -1,8 +1,8 @@
 ---
-title: Data layer case study
+title: Data layer
 short-title: Data layer
 description: >
-  A walk-through of the data layer of an app that implements the Flutter architecture.
+  A walk-through of the data layer of an app that implements MVVM architecture.
 prev: 
   title: UI layer
   path: /app-architecture/case-study/ui-layer
@@ -52,7 +52,7 @@ handles the CRUD calls to the client-facing server.
 
 ```dart title=api_client.dart
 class ApiClient {
-  // ... some code omitted for demo purposes
+  // Some code was omitted for demo purposes.
 
   Future<Result<List<ContinentApiModel>>> getContinents() async {...}
 
@@ -86,100 +86,6 @@ As you'll soon see, repositories extract data and
 expose it to `ViewModel`s in a different format.
 :::
 
-### Result objects
-
-In this app, methods on service classes return `Result` objects.
-`Result` is a utility class that wraps asynchronous calls,  
-making it easier to handle errors. 
-Encoding asynchronous responses in this way makes it easy to
-write helper functions for a number of different cases, 
-such as API retry logic, 
-without having to write custom logic for every instance of the case.
-
-In the Compass app, 
-`Result` is a [`sealed`][] class with two subclasses, 
-called `Ok` and `Error`. 
-The following example shows the `Result` class.
-
-```dart title=result.dart
-sealed class Result<T> {
-  const Result();
-
-  /// Creates an instance of [Result] containing a value.
-  factory Result.ok(T value) => Ok(value);
-
-  /// Creates an instance of [Result] containing an error.
-  factory Result.error(Exception error) => Error(error);
-  
-  Ok<T> get asOk => this as Ok<T>;
-  
-  Error get asError => this as Error<T>;
-}
-```
-
-The `Ok` and `Error` subclasses add additional properties to 
-handle different response types. 
-The `Error` subclass has the property `Exception error`, 
-and the `Ok` subclass has the generic property `T value`.
-
-```dart title=result.dart
-/// Subclass of Result for values
-final class Ok<T> extends Result<T> {
-  const Ok(this.value);
-
-  /// Returned value in result
-  final T value;
-
-  @override
-  String toString() => 'Result<$T>.ok($value)';
-}
-
-/// Subclass of Result for errors
-final class Error<T> extends Result<T> {
-  const Error(this.error);
-
-  /// Returned error in result
-  final Exception error;
-
-  @override
-  String toString() => 'Result<$T>.error($error)';
-}
-```
-
-To use the `Result` class, 
-wrap the responses from API calls in a result, 
-like in the following example which shows how 
-`ApiClient.deleteBooking` is implemented:
-
-```dart title=api_client.dart highlightLines=12,14,17
-class ApiClient {
- // ...
-
- Future<Result<void>> deleteBooking(int id) async {
-    final client = _clientFactory();
-    try {
-      final request = await client.delete(_host, _port, '/booking/$id');
-      await _authHeader(request.headers);
-      final response = await request.close();
-      // Response 204 "No Content", delete was successful
-      if (response.statusCode == 204) {
-        return Result.ok(null);
-      } else {
-        return Result.error(const HttpException("Invalid response"));
-      }
-    } on Exception catch (error) {
-      return Result.error(error);
-    } finally {
-      client.close();
-    }
-  }
-}
-```
- 
-This pattern is a recommendation, but not a requirement. 
-The architecture recommended in this guide can be implemented without it. 
-The value of using a pattern like this is explained in
-the next section about repositories, which consume the results of API calls.
 
 ## Define a repository
 
@@ -261,10 +167,10 @@ the `ApiClient` service, and transforming it into a `Booking` object.
 It does this by combining data from multiple service endpoints.
 
 ```dart title=booking_repository_remote.dart highlightLines=14-21
-// method edited for brevity
+// This method was edited for brevity.
  Future<Result<Booking>> getBooking(int id) async {
     try {
-      // Get booking by ID from server
+      // Get the booking by ID from server.
       final resultBooking = await _apiClient.getBooking(id);
       if (resultBooking is Error<BookingApiModel>) {
         return Result.error(resultBooking.error);
@@ -287,6 +193,18 @@ It does this by combining data from multiple service endpoints.
     }
   }
 ```
+
+:::note
+In the Compass app, service classes return `Result` objects.
+`Result` is a utility class that wraps asynchronous calls and
+makes it easier to handle errors and manage UI state that relies
+on asynchronous calls.
+
+This pattern is a recommendation, but not a requirement.
+The architecture recommended in this guide can be implemented without it.
+
+You can learn about this class in the [Result cookbook recipe][].
+:::
 
 ### Complete the event cycle
 
@@ -317,3 +235,6 @@ completing the cycle.
 [`APIClient`]: https://github.com/flutter/samples/blob/main/compass_app/app/lib/data/services/api/api_client.dart
 [`sealed`]: {{site.dart-site}}/language/class-modifiers#sealed
 [`BookingRepository` classes on GitHub]: https://github.com/flutter/samples/tree/main/compass_app/app/lib/data/repositories/booking
+[Result cookbook recipe]: /cookbook/architecture
+
+[//]: # (todo ewindmill@ - update Result link after #11444 lands)

@@ -2,7 +2,7 @@
 title: Communicating between layers
 short-title: Dependency injection
 description: >
-  How to implement dependency injection.
+  How to implement dependency injection to communicate between MVVM layers.
 prev: 
   title: Data layer
   path: /app-architecture/case-study/data-layer
@@ -90,7 +90,7 @@ runApp(
             apiClient: context.read(),
           ) as ContinentRepository,
         ),
-        // Additional service and repository providers...
+        // In the Compass app, additional service and repository providers live here.
       ],
   ),
   child: const MainApp(),
@@ -108,7 +108,7 @@ the [`GoRouter`][] configuration,
 where provider is again used to inject the necessary repositories.
 
 ```dart title=router.dart
-// code modified for demo purposes
+// This code was modified for demo purposes.
 GoRouter router(
   AuthRepository authRepository,
 ) =>
@@ -159,7 +159,7 @@ class HomeViewModel extends ChangeNotifier {
   final BookingRepository _bookingRepository;
   final UserRepository _userRepository;
 
-  // ... rest of class
+  // ...
 }
 ```
 

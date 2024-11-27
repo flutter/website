@@ -2,7 +2,7 @@
 title: UI layer case study
 short-title: UI layer
 description: >
-  A walk-through of the UI layer of an app that implements the Flutter architecture.
+  A walk-through of the UI layer of an app that implements MVVM architecture.
 prev: 
   title: Case study overview
   path: /app-architecture/case-study
@@ -207,7 +207,7 @@ class HomeViewModel extends ChangeNotifier {
           _log.warning('Failed to load user', userResult.error);
       }
 
-      // Load saved trips (omitted for brevity)
+      // ...
 
       return userResult;
     } finally {
@@ -310,7 +310,7 @@ the `booking` property is being provided to a sub-widget.
 @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Some code removed for brevity
+      // Some code was removed for brevity.
       body: SafeArea(
         child: ListenableBuilder(
           listenable: viewModel,
@@ -352,7 +352,7 @@ which is a subtype of the `Listenable` type.
 @override
 Widget build(BuildContext context) {
   return Scaffold(
-    // Some code removed for brevity
+    // Some code was removed for brevity.
       body: SafeArea(
         child: ListenableBuilder(
           listenable: viewModel,
@@ -448,9 +448,9 @@ Future<Result<void>> _deleteBooking(int id) async {
           _log.warning('Failed to delete booking $id', resultDelete.error);
           return resultDelete;
       }
-
-	// load new booking data from repository, omitted for brevity
-       // final  resultLoadBookings = ...;
+      
+      // Some code was omitted for brevity.
+      // final  resultLoadBookings = ...;
 
       return resultLoadBookings;
     } finally {
@@ -541,7 +541,7 @@ class HomeViewModel extends ChangeNotifier {
    required UserRepository userRepository,
   }) : _bookingRepository = bookingRepository,
       _userRepository = userRepository {
-    // Load required data when this screen is built
+    // Load required data when this screen is built.
     load = Command0(_load)..execute();
     deleteBooking = Command1(_deleteBooking);
   }
@@ -593,8 +593,8 @@ child: ListenableBuilder(
         );
      }
 
-    // The command has completed without error
-    // return the main view widget
+    // The command has completed without error.
+    // Return the main view widget.
     return child!;
   },
 ),
