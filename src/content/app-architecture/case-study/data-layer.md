@@ -92,7 +92,7 @@ expose it to `ViewModel`s in a different format.
 A repository's sole responsibility is to manage application data. 
 A repository is the source of truth for a single type of application data, 
 and it should be the only place where that data type is mutated. 
-The repo is responsible for polling new data from external sources, 
+The repository is responsible for polling new data from external sources, 
 handling retry logic, managing cached data, 
 and transforming raw data into domain models.
 
@@ -168,30 +168,31 @@ It does this by combining data from multiple service endpoints.
 
 ```dart title=booking_repository_remote.dart highlightLines=14-21
 // This method was edited for brevity.
- Future<Result<Booking>> getBooking(int id) async {
-    try {
-      // Get the booking by ID from server.
-      final resultBooking = await _apiClient.getBooking(id);
-      if (resultBooking is Error<BookingApiModel>) {
-        return Result.error(resultBooking.error);
-      }
-      final booking = resultBooking.asOk.value;
-
-      final destination = _apiClient.getDestination(booking.destinationRef);
-      final activities = _apiClient.getActivitiesForBooking(booking.activitiesRef);
-
-      return Result.ok(
-        Booking(
-          startDate: booking.startDate,
-          endDate: booking.endDate,
-          destination: destination,
-          activity: activities,
-        ),
-      );
-    } on Exception catch (e) {
-      return Result.error(e);
+Future<Result<Booking>> getBooking(int id) async {
+  try {
+    // Get the booking by ID from server.
+    final resultBooking = await _apiClient.getBooking(id);
+    if (resultBooking is Error<BookingApiModel>) {
+      return Result.error(resultBooking.error);
     }
+    final booking = resultBooking.asOk.value;
+
+    final destination = _apiClient.getDestination(booking.destinationRef);
+    final activities = _apiClient.getActivitiesForBooking(
+            booking.activitiesRef);
+
+    return Result.ok(
+      Booking(
+        startDate: booking.startDate,
+        endDate: booking.endDate,
+        destination: destination,
+        activity: activities,
+      ),
+    );
+  } on Exception catch (e) {
+    return Result.error(e);
   }
+}
 ```
 
 :::note
