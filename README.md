@@ -129,7 +129,7 @@ If you prefer, you can use a version manager such as [nvm][],
 and run `nvm install` from the repository's root directory.
 
 If you already have Node installed, verify it's available on your path
-and already the latest stable version _(currently `20.17` or later)_:
+and already the latest stable version _(currently `22.11` or later)_:
 
 ```console
 node --version
@@ -360,7 +360,7 @@ you can build a full version and upload it to Firebase.
    ./dash_site build
    ```
 
-   This will build the site and copy it to your local `_site` directory.
+   This builds the site and copy it to your local `_site` directory.
    If that directory previously existed, it will be replaced.
 
 3. Deploy to your activated Firebase project's default hosting site:
