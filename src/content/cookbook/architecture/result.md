@@ -152,7 +152,7 @@ the `Result` contains the returned value.
 However, if the function did not complete successfully,
 the `Result` object will contain the error.
 
-A `Result` is a `sealed` class 
+A `Result` is a [`sealed`][] class 
 that can either be of the subclass `Ok` or the subclass `Error`. 
 Return the successful value with the subclass `Ok`,
 and the captured error with the subclass `Error`.
@@ -451,9 +451,10 @@ final class Error<T> extends Result<T> {
 ```
 
 [Error handling documentation]:{{site.dart-site}}/language/error-handling
-[Flutter Architecture guidelines]:/app-architecture
+[Flutter architecture guidelines]:/app-architecture
 [Compass App example]:{{site.repo.samples}}/tree/main/compass_app
 [pub.dev]:{{site.pub}}
 [result_dart]:{{site.pub-pkg}}/result_dart
 [result_type]:{{site.pub-pkg}}/result_type
 [multiple_result]:{{site.pub-pkg}}/multiple_result
+[`sealed`]:{{site.dart-site}}/language/class-modifiers#sealed
