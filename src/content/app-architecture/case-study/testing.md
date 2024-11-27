@@ -101,10 +101,9 @@ This class does not need to be faked.
 
 :::note
 The code also defines a `MockGoRouter`. 
-The router mocked using the `Mocktail` library, 
-and is outside the scope of this case-study. 
-You can read more about the mocktail library on the [Mocktail pub.dev page][], 
-and general widget testing in [Flutter's testing documentation][].
+The router is mocked using [`package:mocktail`][], 
+and is outside the scope of this case-study.  
+You can find general testing guidance in [Flutter's testing documentation][].
 :::
 
 After the view model and its dependencies are defined, 
@@ -214,16 +213,15 @@ void main() {
 }
 ```
 
-Writing mocks and fakes is outside the scope of this guide, but if you're
-interested in learning more, you can see examples in
-the [Compass App `testing` directory][] or 
+To learn more about writing mocks and fakes, 
+check out examples in the [Compass App `testing` directory][] or 
 read [Flutter's testing documentation][].
 
 [use-cases]: /app-architecture/guide#optional-domain-layer
 [`FakeBookingRepository`]: https://github.com/flutter/samples/blob/main/compass_app/app/testing/fakes/repositories/fake_booking_repository.dart
 [`BookingRepository`]: https://github.com/flutter/samples/tree/main/compass_app/app/lib/data/repositories/booking
 [data layer section]: /app-architecture/case-study/data-layer
-[Mocktail pub.dev page]: https://pub.dev/packages/mocktail
+[`package:mocktail`]: https://pub.dev/packages/mocktail
 [Flutter's testing documentation]: /testing/overview
 [Compass App `testing` directory]: https://github.com/flutter/samples/tree/main/compass_app/app/testing
 

@@ -138,7 +138,8 @@ testing
 |____models
 ```
 
-The important designations are within the `data` and `ui` folders. 
+Most of your application code will live in the 
+`data`, `domain`, and `ui` folders. 
 The data folder organizes code by type, 
 because repositories and services can be used across different features and 
 by multiple view models. The ui folder organizes the code by feature, 

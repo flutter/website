@@ -39,7 +39,6 @@ your Flutter app in order to scale as your project requirements and team grow.
 * Benefits of intentional architecture
 * Common architectural principles
 * The Flutter team's recommended app architecture
-* The Flutter team's recommended architecture for Flutter apps
 * MVVM and state management
 * Dependency injection
 * Common design patterns for writing robust Flutter applications

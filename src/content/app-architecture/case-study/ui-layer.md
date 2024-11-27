@@ -12,33 +12,33 @@ next:
 ---
 
 The [UI layer][] of each feature in your Flutter application should be
-made up of two components: a **[View][]** and
-a **[ViewModel][].**
+made up of two components: a **[`View`][]** and
+a **[`ViewModel`][].**
 
 ![A screenshot of the booking screen of the compass app.](/assets/images/docs/app-architecture/case-study/mvvm-case-study-ui-layer-highlighted.png)
 
-In the most general sense, ViewModels manage UI state, 
-and views display UI state. Views and ViewModels have a one-to-one relationship; 
-for each view there is exactly one corresponding ViewModel that 
-manages that View's state. Each pair of View and ViewModel make up 
+In the most general sense, view models manage UI state, 
+and views display UI state. Views and view models have a one-to-one relationship; 
+for each view there is exactly one corresponding view model that 
+manages that view's state. Each pair of view and view model make up 
 the UI for a single feature. For example, 
 an app might have classes called `LogOutView` and a `LogOutViewModel`.
 
-## Define a ViewModel
+## Define a view model
 
-A ViewModel is a Dart class responsible for handling UI logic. 
-ViewModels take domain data models as input and expose that data as 
+A view model is a Dart class responsible for handling UI logic. 
+View models take domain data models as input and expose that data as 
 UI state to their corresponding views. 
-They encapsulate logic that the View can attach to event handlers, 
+They encapsulate logic that the view can attach to event handlers, 
 like button presses, 
 and manage sending these events to the data layer of the app, 
 where data changes happen.
 
 The following code snippet is a class declaration for 
-a ViewModel class called the `HomeViewModel`. 
+a view model class called the `HomeViewModel`. 
 Its inputs are the [repositories][] that provide its data. 
 In this case, 
-the ViewModel is dependent on the 
+the view model is dependent on the 
 `BookingRepository`and `UserRepository` as arguments.
 
 ```dart title=home_viewmodel.dart
@@ -57,14 +57,14 @@ class HomeViewModel {
 }
 ```
 
-ViewModels are always dependent on data repositories, 
+View models are always dependent on data repositories, 
 which are provided as arguments to the view model's constructor. 
 view models and repositories have a many-to-many relationship, 
 and most view models will depend on multiple repositories.
 
 As in the earlier `HomeViewModel` example declaration,
 repositories should be private members on the view model, 
-otherwise Views would have direct access to 
+otherwise views would have direct access to 
 the data layer of the application.
 
 ### UI state
@@ -96,6 +96,11 @@ class HomeViewModel {
   User? get user => _user;
 
   List<BookingSummary> _bookings = [];
+  
+  /// Items in an [UnmodifiableListView] can't be directly modified, 
+  /// but changes in the source list can be modified. Since _bookings
+  /// is private and bookings is not, the view has no way to modify the
+  /// list directly.
   UnmodifiableListView<BookingSummary> get bookings => UnmodifiableListView(_bookings);
 
   // ... 
@@ -105,7 +110,7 @@ class HomeViewModel {
 As mentioned, the UI state should be immutable.
 This is a crucial part of bug-free software.
 
-The compass app uses the [freezed][] package to 
+The compass app uses the [package:freezed][] to 
 enforce immutability on data classes. For example, 
 the following code shows the `User` class definition. 
 `freezed` provides deep immutability, 
@@ -184,7 +189,7 @@ propagates up to the UI layer and triggers a re-build of your Flutter widgets.
 1. New state is provided to the view model from a Repository.
 2. The view model updates its UI state to reflect the new data.
 3. `ViewModel.notifyListeners` is called, alerting the View of new UI State.
-4. The View (widget) re-renders.
+4. The view (widget) re-renders.
 
 For example, when the user navigates to the Home screen and the view mo is
 created, the `_load` method is called. Until this method completes, the UI state
@@ -223,15 +228,15 @@ class HomeViewModel extends ChangeNotifier {
 part of the Flutter SDK, 
 and provide a good solution for updating the UI when state changes. 
 You can also use a robust third-party state management solution, 
-such as [Riverpod][], [flutter_bloc][], or [Signals][]. 
+such as [package:riverpod][], [package:flutter_bloc][], or [package:signals][]. 
 These libraries offer different tools for handling UI updates. 
 Read more about using `ChangeNotifier` in 
 our [state-management documentation][].
 :::
 
-## Define a View
+## Define a view
 
-A [View][] is a widget within your app. 
+A view is a widget within your app. 
 Often, a view represents one screen in your app that 
 has its own route and includes a [`Scaffold`][] at the top of the
 widget subtree, such as the `HomeScreen`, but this isn't always the case. 
@@ -246,7 +251,7 @@ And on larger screens, there might be multiple views on screen that
 would take up the full screen on mobile.
 
 :::note
-"View" is an abstract term, and one View does not equal one widget. 
+"View" is an abstract term, and one view does not equal one widget. 
 Widgets are composable, and several can be combined to create one view. 
 Therefore, view models don't have a 1-to-1 relationship with widgets, 
 but rather a 1-to-1 relation with a *collection* of widgets.
@@ -254,11 +259,11 @@ but rather a 1-to-1 relation with a *collection* of widgets.
 
 The widgets within a view have three responsibilities:
 
-* Display the data properties from the view model
-* Listen for updates from the view model and re-render when new data is available
-* Attach callbacks from the view model to event handlers, if applicable.
+* They display the data properties from the view model.
+* They listen for updates from the view model and re-render when new data is available.
+* They attach callbacks from the view model to event handlers, if applicable.
 
-![A diagram showing a View's relationship to a view model.](/assets/images/docs/app-architecture/guide/feature-architecture-simplified-View-highlighted.png)
+![A diagram showing a view's relationship to a view model.](/assets/images/docs/app-architecture/guide/feature-architecture-simplified-View-highlighted.png)
 
 
 Continuing the Home feature example, 
@@ -283,7 +288,7 @@ Most of the time, a view's only inputs should be a `key`,
 which all Flutter widgets take as an optional argument, 
 and the view's corresponding view model.
 
-### Display UI data in a View
+### Display UI data in a view
 
 A view depends on a view model for its state. In the Compass app, 
 the view model is passed in as an argument in the view's constructor. 
@@ -392,7 +397,7 @@ so the view model can handle those events.
 This is achieved by exposing a callback method on the view model class which 
 encapsulates all the logic.
 
-![A diagram showing a View's relationship to a view model.](/assets/images/docs/app-architecture/guide/feature-architecture-simplified-UI-highlighted.png)
+![A diagram showing a view's relationship to a view model.](/assets/images/docs/app-architecture/guide/feature-architecture-simplified-UI-highlighted.png)
 
 On the `HomeScreen`, users can delete previously booked events by swiping
 a [`Dismissable`][] widget.
@@ -627,11 +632,11 @@ the Command pattern. [Read about it on Github][].
 :::
 
 [UI layer]: /app-architecture/guide#ui-layer
-[View]: /app-architecture/guide#views
-[ViewModel]: /app-architecture/guide#viewmodels
+[`View`]: /app-architecture/guide#views
+[`ViewModel`]: /app-architecture/guide#viewmodels
 [repositories]: /app-architecture/guide#repositories
 [commands]: /app-architecture/guide#command-objects
-[freezed]: https://pub.dev/packages/freezed
+[package:freezed]: https://pub.dev/packages/freezed
 [`ChangeNotifier`]: {{site.api}}/flutter/foundation/ChangeNotifier-class.html
 [`Listenable`]: {{site.api}}/flutter/foundation/Listenable-class.html
 [`ListenableBuilder`]: {{site.api}}/flutter/widgets/ListenableBuilder-class.html
@@ -645,6 +650,6 @@ the Command pattern. [Read about it on Github][].
 [`StreamBuilders`]: https://api.flutter.dev/flutter/widgets/StreamBuilder-class.html
 [`AsyncSnapshot`]: https://api.flutter.dev/flutter/widgets/AsyncSnapshot-class.html
 [Read about it on Github]: https://github.com/flutter/samples/pull/2449#pullrequestreview-2328333146
-[Riverpod]: https://pub.dev/packages/riverpod
-[flutter_bloc]: https://pub.dev/packages/flutter_bloc
-[Signals]: https://pub.dev/packages/signals
+[package:riverpod]: https://pub.dev/packages/riverpod
+[package:flutter_bloc]: https://pub.dev/packages/flutter_bloc
+[package:signals]: https://pub.dev/packages/signals
