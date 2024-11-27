@@ -28,14 +28,14 @@ Using this diagram as a guide, the rules of engagement are as follows:
 
 | Component  | Rules of engagement                                                                                                                                                                                                                                        |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| View       | <ol><li> A view is only aware of exactly one `ViewModel`, and is never aware of any other layer or component. When created, Flutter passes the `ViewModel` to the
-view as an argument, exposing the `ViewModel`'s data and command callbacks
-to the view. </li></ul> |
+| View       | <ol><li> A view is only aware of exactly one `ViewModel`, and is never aware of any other layer or component. When created, Flutter passes the `ViewModel` to the view as an argument, exposing the `ViewModel`'s data and command callbacksto the view. </li></ul> |
 | ViewModel  | <ol><li>A ViewModel belongs to exactly one view, which can see its data, but the model never needs to know that a view exists.</li><li>A `ViewModel` is aware of one or more repositories, which are passed into the `ViewModel`'s constructor.</li></ul>    |
 | Repository | <ol><li>A repository can be aware of many services, which are passed as arguments into the repository constructor.</li><li>A repository can be used by many `ViewModel`s, but it never needs to be aware of them.</li></ol>                        |
 | Service    | <ol><li>A service can be used by many repositories, but it never needs to be aware of a repository (or any other object).</li></ol>                                                                                                                        |
 
 {:.table .table-striped}
+
+## Dependency injection
 
 This guide has shown how these different components communicate
 with each other by using inputs and outputs. 
@@ -45,53 +45,53 @@ consume its data), such as a `Service` into a `Repository.`
 
 ```dart
 class MyRepository {
-  MyRepository({required this.myService});
+  MyRepository({required MyService myService}) 
+          : _myService = myService;
 
-  final MyService myService;
+  late final MyService _myService;
 }
 ```
 
 One thing that's missing, however, is object creation. Where,
-in the application, is the `MyService` instance created so that it can be
-passed into `MyRepository`? **Dependency injection** is discussed in
-the next section.
+in an application, is the `MyService` instance created so that it can be
+passed into `MyRepository`? 
+This answer to this question involves a 
+pattern known as [dependency injection][].
 
-## Dependency injection
-
-In the Compass app, dependency injection is handled using
-the [provider](https://pub.dev/packages/provider) package. 
-This is the recommended library for dependency injection by 
-teams at Google building Flutter apps.
+In the Compass app, *dependency injection* is handled using
+[`package:provider`][]. Based on their experience building Flutter apps, 
+teams at Google recommend using `package:provider` to implement
+dependency injection.
 
 Services and repositories are exposed to the top level of the widget tree of
 the Flutter application as `Provider` objects.
 
 ```dart title=dependencies.dart
 runApp(
-    MultiProvider(
-      providers: [
-        Provider(create: (context) => AuthApiClient()),
-        Provider(create: (context) => ApiClient()),
-        Provider(create: (context) => SharedPreferencesService()),
-        ChangeNotifierProvider(
-          create: (context) => AuthRepositoryRemote(
-            authApiClient: context.read(),
-            apiClient: context.read(),
-            sharedPreferencesService: context.read(),
-          ) as AuthRepository,
-        ),
-        Provider(create: (context) => 
-          DestinationRepositoryRemote(
-            apiClient: context.read(),
-          ) as DestinationRepository,
-        ),
-        Provider(create: (context) => 
-          ContinentRepositoryRemote(
-            apiClient: context.read(),
-          ) as ContinentRepository,
-        ),
-        // In the Compass app, additional service and repository providers live here.
-      ],
+  MultiProvider(
+    providers: [
+      Provider(create: (context) => AuthApiClient()),
+      Provider(create: (context) => ApiClient()),
+      Provider(create: (context) => SharedPreferencesService()),
+      ChangeNotifierProvider(
+        create: (context) => AuthRepositoryRemote(
+          authApiClient: context.read(),
+          apiClient: context.read(),
+          sharedPreferencesService: context.read(),
+        ) as AuthRepository,
+      ),
+      Provider(create: (context) => 
+        DestinationRepositoryRemote(
+          apiClient: context.read(),
+        ) as DestinationRepository,
+      ),
+      Provider(create: (context) => 
+        ContinentRepositoryRemote(
+          apiClient: context.read(),
+        ) as ContinentRepository,
+      ),
+      // In the Compass app, additional service and repository providers live here.
+    ],
   ),
   child: const MainApp(),
 );
@@ -172,6 +172,7 @@ utility code, widget code, and UI styling was ignored. Browse the code in
 the [Compass app repository][] for a complete
 example of a robust Flutter application built following these principles.
 
-[provider]: https://pub.dev/packages/provider
+[`package:provider`]: https://pub.dev/packages/provider
 [`GoRouter`]: https://pub.dev/packages/go_router
 [Compass app repository]: https://github.com/flutter/samples/tree/main/compass_app
+[dependency injection]: https://en.wikipedia.org/wiki/Dependency_injection
