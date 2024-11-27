@@ -28,7 +28,7 @@ to improve your ViewModels.
 ## Challenges when implementing ViewModels
 
 ViewModel classes in Flutter are typically implemented 
-by extending the `ChangeNotifier` class. 
+by extending the [`ChangeNotifier`][] class.
 This allows ViewModels to call `notifyListeners()` to refresh Views
 when data is updated.
 
@@ -613,3 +613,4 @@ class Command1<T, A> extends Command<T> {
 [`Result` class]:/cookbook/architecture/result
 [pub.dev]:{{site.pub}}
 [flutter_command]:{{site.pub-pkg}}/flutter_command
+[`ChangeNotifier`]:/get-started/fundamentals/state-management
