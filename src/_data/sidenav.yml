@@ -476,6 +476,8 @@
           permalink: /platform-integration/android/c-interop
         - title: Host a native Android view
           permalink: /platform-integration/android/platform-views
+        - title: Calling JetPack APIs
+          permalink: /platform-integration/android/call-jetpack-apis
         - title: Launch a Jetpack Compose activity
           permalink: /platform-integration/android/compose-activity
         - title: Restore state on Android
