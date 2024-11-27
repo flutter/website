@@ -29,13 +29,13 @@ and how to mitigate it using the result class pattern.
 
 ## Error flow in Flutter applications
 
-Applications following the [Flutter Architecture guidelines][]
+Applications following the [Flutter architecture guidelines][]
 are usually composed of ViewModels, 
 Repositories, and Services, among other parts. 
 When a function in one of these components fails, 
-it will have to communicate the error to the calling component.
+it should communicate the error to the calling component.
 
-Typically, that would be done using exceptions. 
+Typically, that's done with exceptions. 
 For example, 
 an API client Service failing to communicate with the remote server
 might throw an HTTP Error Exception. 
@@ -54,7 +54,7 @@ that uses the `ApiClientService` to provide the `UserProfile`.
 that uses the `UserProfileRepository`.
 
 The `ApiClientService` contains a method named `getUserProfile`
- hat can throw exceptions in different situations:
+ that can throw exceptions in different situations:
 
 - The method throws an `HttpException` if the response code isn’t 200.
 - The JSON parsing method might throw an exception 
@@ -121,9 +121,8 @@ class UserProfileViewModel extends ChangeNotifier {
   }
 }
 ```
-However, as multiple developers can work on the same codebase, 
-it is not unusual that a developer might forget to properly capture exceptions. 
-The following code will compile and run, 
+
+In reality, a developer might forget to properly capture exceptions and end up with the following code. It would compile and run, 
 but will crash if one of the exceptions mentioned previously occurs:
 
 <?code-excerpt "lib/no_result.dart (UserProfileViewModelNoTryCatch)" replace="/NoTryCatch//g"?>
@@ -139,28 +138,28 @@ class UserProfileViewModel extends ChangeNotifier {
 ```
 
 You can attempt to solve this by documenting the `ApiClientService`, 
-warning about the possible exceptions it may throw. 
+warning about the possible exceptions it might throw. 
 However, since the ViewModel doesn’t use the service directly, 
-this information may be missed by other developers working in the codebase.
+other developers  working in the codebase might miss this information.
 
 ## Using the result pattern
 
 An alternative to throwing exceptions 
-is to wrap the function output into a `Result`.
+is to wrap the function output into a `Result` object.
 
 When the function runs successfully, 
 the `Result` contains the returned value. 
 However, if the function did not complete successfully,
 the `Result` object will contain the error.
 
-A `Result` is a `sealed class` 
+A `Result` is a `sealed` class 
 that can either be of the subclass `Ok` or the subclass `Error`. 
 Return the successful value with the subclass `Ok`,
 and the captured error with the subclass `Error`.
 
 The following is what a `Result` class might look like.
 It’s been simplified for demo purposes. 
-You can see a full implementation at the end of this page.
+A full implementation is at the end of this page.
 
 <?code-excerpt "lib/simple_result.dart"?>
 ```dart
@@ -193,8 +192,7 @@ final class Error<T> extends Result<T> {
 
 In this example,
 the `Result` class uses a generic type `T` to represent any return value, 
-which can be as simple as a `String` or an `int` 
-but also can be used for custom data classes like the `UserProfile`.
+which can be a primitive Dart type like `String` or an `int` or a custom class like `UserProfile`.
 
 ### Creating a `Result` object
 
@@ -221,7 +219,7 @@ it returns a `Result` object containing a `UserProfile`.
 To facilitate using the `Result` class, 
 it contains two named constructors, `Result.ok` and `Result.error`. 
 Use them to construct the `Result` depending on desired output. 
-As well, capture any thrown exceptions by the code 
+As well, capture any exceptions thrown by the code 
 and wrap them into the `Result` object.
 
 For example, here the `getUserProfile()` method 
@@ -251,13 +249,13 @@ class ApiClientService {
 }
 ```
 
-The original return statement has been replaced 
-with returning the value using `Result.ok`. 
+The original return statement was replaced 
+with a statement that returns the value using `Result.ok`. 
 The `throw HttpException()` 
-has been replaced with returning `Result.error(HttpException())` 
+was replaced with a statement that returns `Result.error(HttpException())`,
 wrapping the error into a `Result`. 
-As well, the method is wrapped with a try-catch 
-to capture any thrown exception by the Http Client 
+As well, the method is wrapped with a `try-catch` block
+to capture any exceptions thrown by the Http client 
 or the JSON parser into a `Result.error`.
 
 The repository class also needs to be modified, 
@@ -302,23 +300,21 @@ class UserProfileViewModel extends ChangeNotifier {
 }
 ```
 
-The `Result` class is implemented using a `sealed class`, 
+The `Result` class is implemented using a `sealed` class, 
 meaning it can only either be an `Ok` or an `Error`, 
 so this operation can be done using a switch case.
 
 In the `Ok<UserProfile>` case, 
 obtain the value using the `value` property. 
 
-In the Error<UserProfile> case,
+In the `Error<UserProfile>` case,
 obtain the error object using the `error` property.
 
 ## Improving control flow
 
-Wrapping code with a try-catch 
-is a quick way to ensure that any exception thrown 
-is captured by the calling method. 
-Catching stops the exception from propagating to other methods, h
-owever it also disrupts the normal code flow.
+Wrapping code in a `try-catch` block
+is a quick way to ensure that  the calling method captures any thrown exception.
+Catching stops the exception from propagating to other methods, and it disrupts the normal code flow.
 
 Consider the following code.
 
@@ -343,9 +339,8 @@ class UserProfileRepository {
 
 In this method, the `UserProfileRepository` 
 attempts to obtain the `UserProfile` 
-using the `ApiClientService`, 
-and if it fails, 
-then tries to create a temporary user in a `DatabaseService`.
+using the `ApiClientService`.
+If it fails, it tries to create a temporary user in a `DatabaseService`.
 
 Because either Service methods can fail, 
 the code must catch the exceptions in both cases.
