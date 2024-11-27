@@ -23,7 +23,7 @@ To learn more about DevTools, check out the
 
 * Added a filter text field to the top-level Network profiler controls. -
 [#8469](https://github.com/flutter/devtools/pull/8469)
-    ![Network filter field](/tools/devtools/release-notes/images-2.41.0 "Network filter field")
+    ![Network filter field](/tools/devtools/release-notes/images-2.41.0/network_filter.png "Network filter field")
 
 ## Logging updates
 
