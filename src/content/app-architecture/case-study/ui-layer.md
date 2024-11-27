@@ -58,25 +58,25 @@ class HomeViewModel {
 ```
 
 ViewModels are always dependent on data repositories, 
-which are provided as arguments to the ViewModel's constructor. 
-ViewModels and repositories have a many-to-many relationship, 
-and most ViewModels will depend on multiple repositories.
+which are provided as arguments to the view model's constructor. 
+view models and repositories have a many-to-many relationship, 
+and most view models will depend on multiple repositories.
 
 As in the earlier `HomeViewModel` example declaration,
-repositories should be private members on the ViewModel, 
+repositories should be private members on the view model, 
 otherwise Views would have direct access to 
 the data layer of the application.
 
 ### UI state
 
-The output of a ViewModel is data that a view needs to render, generally
+The output of a view model is data that a view needs to render, generally
 referred to as **UI State**, or just state. UI state is an immutable snapshot of
 data that is required to fully render a view.
 
 ![A screenshot of the booking screen of the compass app.](/assets/images/docs/app-architecture/case-study/mvvm-case-study-ui-state-highlighted.png)
 
-The ViewModel exposes state as public members. 
-On the ViewModel in the following code example,
+The view model exposes state as public members. 
+On the view model in the following code example,
 the exposed data is a `User` object, 
 as well as the user's saved itineraries which 
 are exposed as an object of type `List<TripSummary>`.
@@ -129,10 +129,10 @@ class User with _$User {
 ```
 
 :::note
-In the ViewModel example, 
+In the view model example, 
 two objects are needed to render the view. 
 As the UI state for any given model grows in complexity, 
-a ViewModel might have many more pieces of data from 
+a view model might have many more pieces of data from 
 many more repositories exposed to the view. 
 In some cases, 
 you might want to create objects that specifically represent the UI state. 
@@ -143,9 +143,9 @@ For example, you could create a class named `HomeUiState`.
 ### Updating UI state
 
 In addition to storing state, 
-ViewModels need to tell Flutter to re-render views when 
+view models need to tell Flutter to re-render views when 
 the data layer provides a new state. 
-In the Compass app, ViewModels extend [`ChangeNotifier`][] to achieve this.
+In the Compass app, view models extend [`ChangeNotifier`][] to achieve this.
 
 ```dart title=home_viewmodel.dart
 class HomeViewModel [!extends ChangeNotifier!] {
@@ -181,15 +181,15 @@ propagates up to the UI layer and triggers a re-build of your Flutter widgets.
     </figcaption>
 </figure>
 
-1. New state is provided to the ViewModel from a Repository.
-2. The ViewModel updates its UI state to reflect the new data.
-3. ViewModel.notifyListeners is called, alerting the View of new UI State.
+1. New state is provided to the view model from a Repository.
+2. The view model updates its UI state to reflect the new data.
+3. `ViewModel.notifyListeners` is called, alerting the View of new UI State.
 4. The View (widget) re-renders.
 
-For example, when the user navigates to the Home screen and the ViewModel is
+For example, when the user navigates to the Home screen and the view mo is
 created, the `_load` method is called. Until this method completes, the UI state
 is empty, the view displays a loading indicator. When the `_load` method
-completes, if it is successful, there is new data in the ViewModel, and it must
+completes, if it is successful, there is new data in the view model, and it must
 notify the view that new data is available.
 
 ```dart title=home_viewmodel.dart highlightLines=19
@@ -241,24 +241,24 @@ encapsulates functionality that needs to be re-used throughout the app.
 For example, the Compass app has a view called `LogoutButton`, 
 which can be dropped anywhere in the widget tree that a user might 
 expect to find a logout button.
-The `LogoutButton` view has its own ViewModel called `LogoutViewModel`. 
+The `LogoutButton` view has its own view model called `LogoutViewModel`. 
 And on larger screens, there might be multiple views on screen that 
 would take up the full screen on mobile.
 
 :::note
 "View" is an abstract term, and one View does not equal one widget. 
 Widgets are composable, and several can be combined to create one view. 
-Therefore, ViewModels don't have a 1-to-1 relationship with widgets, 
+Therefore, view models don't have a 1-to-1 relationship with widgets, 
 but rather a 1-to-1 relation with a *collection* of widgets.
 :::
 
 The widgets within a view have three responsibilities:
 
-* Display the data properties from the ViewModel
-* Listen for updates from the ViewModel and re-render when new data is available
-* Attach callbacks from the ViewModel to event handlers, if applicable.
+* Display the data properties from the view model
+* Listen for updates from the view model and re-render when new data is available
+* Attach callbacks from the view model to event handlers, if applicable.
 
-![A diagram showing a View's relationship to a ViewModel.](/assets/images/docs/app-architecture/guide/feature-architecture-simplified-View-highlighted.png)
+![A diagram showing a View's relationship to a view model.](/assets/images/docs/app-architecture/guide/feature-architecture-simplified-View-highlighted.png)
 
 
 Continuing the Home feature example, 
@@ -281,12 +281,12 @@ class HomeScreen extends StatelessWidget {
 
 Most of the time, a view's only inputs should be a `key`, 
 which all Flutter widgets take as an optional argument, 
-and the view's corresponding ViewModel.
+and the view's corresponding view model.
 
 ### Display UI data in a View
 
-A view depends on a ViewModel for its state. In the Compass app, 
-the ViewModel is passed in as an argument in the view's constructor. 
+A view depends on a view model for its state. In the Compass app, 
+the view model is passed in as an argument in the view's constructor. 
 The following example code snippet is from the `HomeScreen` widget.
 
 ```dart title=home_screen.dart
@@ -339,13 +339,13 @@ the `booking` property is being provided to a sub-widget.
 
 ### Update the UI 
 
-The `HomeScreen` widget listens for updates from the ViewModel with
+The `HomeScreen` widget listens for updates from the view model with
 the [`ListenableBuilder`][] widget. 
 Everything in the widget subtree under the 
 `ListenableBuilder` widget re-renders when the
 provided [`Listenable`][] changes. In this case, 
-the provided `Listenable` is the ViewModel. 
-Recall that the ViewModel is of type [`ChangeNotifier`][] 
+the provided `Listenable` is the view model. 
+Recall that the view model is of type [`ChangeNotifier`][] 
 which is a subtype of the `Listenable` type.
 
 ```dart title=home_screen.dart
@@ -388,11 +388,11 @@ Widget build(BuildContext context) {
 ### Handling user events
 
 Finally, a view needs to listen for *events* from users, 
-so the ViewModel can handle those events. 
-This is achieved by exposing a callback method on the ViewModel class which 
+so the view model can handle those events. 
+This is achieved by exposing a callback method on the view model class which 
 encapsulates all the logic.
 
-![A diagram showing a View's relationship to a ViewModel.](/assets/images/docs/app-architecture/guide/feature-architecture-simplified-UI-highlighted.png)
+![A diagram showing a View's relationship to a view model.](/assets/images/docs/app-architecture/guide/feature-architecture-simplified-UI-highlighted.png)
 
 On the `HomeScreen`, users can delete previously booked events by swiping
 a [`Dismissable`][] widget.
@@ -532,7 +532,7 @@ which is a robust library that implements classes like these.
 
 ### Ensuring views can render before data exists
 
-In ViewModel classes, commands are created in the constructor.
+In view model classes, commands are created in the constructor.
 
 ```dart title=home_viewmodel.dart highlightLines=8-9,15-16,24-30
 class HomeViewModel extends ChangeNotifier {
@@ -603,7 +603,7 @@ child: ListenableBuilder(
 ```
 
 Because the `load` command is a property that exists on 
-the ViewModel rather than something ephemeral, 
+the view model rather than something ephemeral, 
 it doesn't matter when the `load` method is called or when it resolves. 
 For example, if the load command resolves before 
 the `HomeScreen` widget was even created, 

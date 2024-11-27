@@ -83,7 +83,7 @@ Some methods return data classes that are
 specifically for raw data from the API, 
 such as the `BookingApiModel` class. 
 As you'll soon see, repositories extract data and 
-expose it to `ViewModel`s in a different format.
+expose it to s in a different format.
 :::
 
 
@@ -157,7 +157,7 @@ which are *domain models*. All repositories output corresponding domain models.
 These data models differ from API models in that they only contain the data 
 needed by the rest of the app. 
 API models contain raw data that often needs to be filtered, 
-combined, or deleted to be useful to the app's `ViewModel`s. 
+combined, or deleted to be useful to the app's s. 
 The repo refines the raw data and outputs it as domain models.
 
 In the example app, domain models are exposed through
@@ -211,7 +211,7 @@ You can learn about this class in the [Result cookbook recipe][].
 
 Throughout this page, you've seen how a user can delete a saved booking,
 starting with an event—a user swiping on a `Dismissable` widget. 
-The `ViewModel` handles that event by delegating
+The  handles that event by delegating
 the actual data mutation to the `BookingRepository`. 
 The following snippet shows the `BookingRepository.deleteBooking` method.
 

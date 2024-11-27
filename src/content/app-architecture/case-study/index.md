@@ -41,11 +41,14 @@ feature-rich Flutter application.
     </div>
 </div>
 
-The Compass app's architecture most resembles the [MVVM design pattern][], 
-as described on the [recommended architecture][] page. 
+The Compass app's architecture most resembles the [MVVM design pattern][]
+as described in Flutter's [app architecture guidelines][]. 
 This architecture case study demonstrates how to 
-implement the "Home" feature of the compass app. 
-This screen displays user account information and 
+implement those guidelines by walking through 
+the "Home" feature of the compass app. 
+If you aren't familiar with MVVM, you should read those guidelines first.
+
+The Home screen of the Compass app displays user account information and
 a list of the user's saved trips. 
 From this screen you can log out, open detailed trip pages, 
 delete saved trips, and navigate to the first page of the core app flow, 
@@ -57,7 +60,7 @@ In this case study, you'll learn the following:
   services in the [data layer][] and the MVVM design pattern in the [UI layer][]
 * How to use the [Command pattern][] to safely render UI as data changes
 * How to use [`ChangeNotifier`][] and [`Listenable`][] objects to manage state
-* About [Dependency Injection][] in a Flutter application
+* How to implement [Dependency Injection][] using `package:provider`
 * How to [set up tests][] when following the recommended architecture
 * Effective [package structure][] for large Flutter apps
 
@@ -89,7 +92,7 @@ There are two popular means of organizing code:
 The architecture recommended in this guide lends itself to 
 a combination of the two. 
 Data layer objects (repositories and services) aren't tied to a single feature, 
-while UI layer objects (views and ViewModels) are. 
+while UI layer objects (views and view models) are. 
 The following is how the code is organized within the Compass application.
 
 ```plaintext
@@ -138,8 +141,8 @@ testing
 The important designations are within the `data` and `ui` folders. 
 The data folder organizes code by type, 
 because repositories and services can be used across different features and 
-by multiple ViewModels. The ui folder organizes the code by feature, 
-because each feature will have exactly one view and exactly one ViewModel.
+by multiple view models. The ui folder organizes the code by feature, 
+because each feature will have exactly one view and exactly one view model.
 
 Other notable features of this folder structure:
 
@@ -163,12 +166,12 @@ For the full package structure, [view it on GitHub][].
 
 The example in this case-study demonstrates how one application abides by our
 recommended architectural rules, but there are many other example apps that
-could've been written. The UI of this app leans heavily on `ViewModels`
+could've been written. The UI of this app leans heavily on view models
 and `ChangeNotifier`, but it could've easily been written
 with streams, or with other libraries like provided by the [`riverpod`][], [`flutter_bloc`][], and [`signals`][] packages.
 The communication between layers of this app handled
 everything with method calls, including polling for new data. It could've
-instead used streams to expose data from a repository to a ViewModel and still
+instead used streams to expose data from a repository to a view model and still
 abided by the rules covered in this guide.
 
 Even if you do follow this guide exactly, 
@@ -184,7 +187,7 @@ And if you squint, aren't all architectures MVVM anyway?
 
 [Compass sample application]: https://github.com/flutter/samples/tree/main/compass_app
 [MVVM design pattern]: https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel
-[recommended architecture]: /app-architecture/guide
+[app architecture guidelines]: /app-architecture/guide
 [data layer]: /app-architecture/case-study/data-layer
 [UI layer]: /app-architecture/case-study/ui-layer
 [Command pattern]: /app-architecture/case-study/ui-layer#command-objects
