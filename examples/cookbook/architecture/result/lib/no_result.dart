@@ -53,6 +53,27 @@ class UserProfileRepository {
 }
 // #enddocregion UserProfileRepository
 
+// #docregion UserProfileRepository2
+class UserProfileRepository2 {
+  // #enddocregion UserProfileRepository2
+  final ApiClientService _apiClientService = ApiClientService();
+  final DatabaseService _databaseService = DatabaseService();
+  // #docregion UserProfileRepository2
+
+  Future<UserProfile> getUserProfile() async {
+    try {
+      return await _apiClientService.getUserProfile();
+    } catch (e) {
+      try {
+        return await _databaseService.createTemporaryUser();
+      } catch (e) {
+        throw Exception('Failed to get user profile');
+      }
+    }
+  }
+}
+// #enddocregion UserProfileRepository2
+
 // #docregion UserProfileViewModel
 class UserProfileViewModel extends ChangeNotifier {
   // #enddocregion UserProfileViewModel
@@ -84,3 +105,10 @@ class UserProfileViewModelNoTryCatch extends ChangeNotifier {
   }
 }
 // #enddocregion UserProfileViewModelNoTryCatch
+
+class DatabaseService {
+  Future<UserProfile> createTemporaryUser() async {
+    await Future.delayed(const Duration(seconds: 2));
+    return UserProfile('John Doe', 'john@example.com');
+  }
+}
