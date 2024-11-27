@@ -525,7 +525,8 @@
       permalink: /platform-integration/web
       children:
         - title: Web support in Flutter
-          permalink: /platform-integration/web/
+          permalink: /platform-integration/web
+          match-page-url-exactly: true
         - title: Add web as build target
           permalink: /platform-integration/web/install-web
         - title: Build a web app
