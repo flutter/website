@@ -356,7 +356,7 @@ Future<Result<UserProfile>> getUserProfile() async {
     return apiResult;
   }
 
-  final databaseResult = await _databaseService.createTemporalUser();
+  final databaseResult = await _databaseService.createTemporaryUser();
   if (databaseResult is Ok) {
     return databaseResult;
   }

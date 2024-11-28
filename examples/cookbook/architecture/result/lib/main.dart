@@ -66,7 +66,7 @@ class UserProfileRepository {
       return apiResult;
     }
 
-    final databaseResult = await _databaseService.createTemporalUser();
+    final databaseResult = await _databaseService.createTemporaryUser();
     if (databaseResult is Ok) {
       return databaseResult;
     }
@@ -110,7 +110,7 @@ class ApiClientService {
 // #enddocregion ApiClientService2
 
 class DatabaseService {
-  Future<Result<UserProfile>> createTemporalUser() async {
+  Future<Result<UserProfile>> createTemporaryUser() async {
     await Future.delayed(const Duration(seconds: 2));
     return Result.ok(UserProfile('John Doe', 'john@example.com'));
   }
