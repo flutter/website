@@ -110,7 +110,7 @@ class HomeViewModel {
 As mentioned, the UI state should be immutable.
 This is a crucial part of bug-free software.
 
-The compass app uses the [package:freezed][] to 
+The compass app uses the [`package:freezed`][] to 
 enforce immutability on data classes. For example, 
 the following code shows the `User` class definition. 
 `freezed` provides deep immutability, 
@@ -528,7 +528,7 @@ the Compass app's [`utils` directory][].
 
 :::tip Package recommendation
 Instead of writing your own `Command` class, 
-consider using the [flutter_command][] package, 
+consider using the [`flutter_command`][] package, 
 which is a robust library that implements classes like these.
 :::
 
@@ -634,7 +634,7 @@ the Command pattern. [Read about it on Github][].
 [`ViewModel`]: /app-architecture/guide#viewmodels
 [repositories]: /app-architecture/guide#repositories
 [commands]: /app-architecture/guide#command-objects
-[package:freezed]: {{site.pub-pkg}}/freezed
+[`package:freezed`]: {{site.pub-pkg}}/freezed
 [`ChangeNotifier`]: {{site.api}}/flutter/foundation/ChangeNotifier-class.html
 [`Listenable`]: {{site.api}}/flutter/foundation/Listenable-class.html
 [`ListenableBuilder`]: {{site.api}}/flutter/widgets/ListenableBuilder-class.html
@@ -643,7 +643,7 @@ the Command pattern. [Read about it on Github][].
 [`Scaffold`]: {{site.api}}/flutter/widgets/Scaffold-class.html
 [`Dismissable`]: {{site.api}}/flutter/widgets/Dismissible-class.html
 [`utils` directory]: https://github.com/flutter/samples/blob/main/compass_app/app/lib/utils/command.dart
-[flutter_command]: {{site.pub-pkg}}/flutter_command
+[`flutter_command`]: {{site.pub-pkg}}/flutter_command
 [streams]: {{site.api}}/flutter/dart-async/Stream-class.html
 [`StreamBuilders`]: {{site.api}}/flutter/widgets/StreamBuilder-class.html
 [`AsyncSnapshot`]: {{site.api}}/flutter/widgets/AsyncSnapshot-class.html

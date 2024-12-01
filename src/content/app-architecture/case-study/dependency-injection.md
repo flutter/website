@@ -104,7 +104,7 @@ can be injected into view models as needed.
 
 Slightly lower in the widget tree, 
 view models that correspond to a full screen are created in 
-the [`GoRouter`][] configuration, 
+the [`package:go_router`][] configuration, 
 where provider is again used to inject the necessary repositories.
 
 ```dart title=router.dart
@@ -173,6 +173,6 @@ the [Compass app repository][] for a complete
 example of a robust Flutter application built following these principles.
 
 [`package:provider`]: {{site.pub-pkg}}/provider
-[`GoRouter`]: {{site.pub-pkg}}/go_router
+[`package:go_router`]: {{site.pub-pkg}}/go_router
 [Compass app repository]: https://github.com/flutter/samples/tree/main/compass_app
 [dependency injection]: https://en.wikipedia.org/wiki/Dependency_injection
