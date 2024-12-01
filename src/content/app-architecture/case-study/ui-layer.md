@@ -115,7 +115,7 @@ enforce immutability on data classes. For example,
 the following code shows the `User` class definition. 
 `freezed` provides deep immutability, 
 and generates the implementation for useful methods like
-[`copyWith`][freezed.copywith] and [`toJson`](jsonseralizable.toJson).
+`copyWith` and `toJson`.
 
 ```dart title=user.dart
 @freezed
@@ -130,7 +130,6 @@ class User with _$User {
 
   factory User.fromJson(Map<String, Object?> json) => _$UserFromJson(json);
 }
-
 ```
 
 :::note
@@ -143,7 +142,6 @@ In some cases,
 you might want to create objects that specifically represent the UI state. 
 For example, you could create a class named `HomeUiState`.
 :::
-
 
 ### Updating UI state
 
@@ -646,7 +644,7 @@ the Command pattern. [Read about it on Github][].
 [`Dismissable`]: {{site.api}}flutter/widgets/Dismissible-class.html
 [`utils` directory]: https://github.com/flutter/samples/blob/main/compass_app/app/lib/utils/command.dart
 [flutter_command]: https://pub.dev/packages/flutter_command
-[`Streams`]: https://api.flutter.dev/flutter/dart-async/Stream-class.html
+[streams]: https://api.flutter.dev/flutter/dart-async/Stream-class.html
 [`StreamBuilders`]: https://api.flutter.dev/flutter/widgets/StreamBuilder-class.html
 [`AsyncSnapshot`]: https://api.flutter.dev/flutter/widgets/AsyncSnapshot-class.html
 [Read about it on Github]: https://github.com/flutter/samples/pull/2449#pullrequestreview-2328333146

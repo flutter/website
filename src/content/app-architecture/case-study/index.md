@@ -56,8 +56,9 @@ which allows the user to build a new itinerary.
 
 In this case study, you'll learn the following:
 
-* How to implement the [recommended architecture][] using repositories and
-  services in the [data layer][] and the MVVM design pattern in the [UI layer][]
+* How to implement Flutter's [app architecture guidelines][]
+  using repositories and services in the [data layer][] and
+  the MVVM design pattern in the [UI layer][]
 * How to use the [Command pattern][] to safely render UI as data changes
 * How to use [`ChangeNotifier`][] and [`Listenable`][] objects to manage state
 * How to implement [Dependency Injection][] using `package:provider`
@@ -169,7 +170,8 @@ The example in this case-study demonstrates how one application abides by our
 recommended architectural rules, but there are many other example apps that
 could've been written. The UI of this app leans heavily on view models
 and `ChangeNotifier`, but it could've easily been written
-with streams, or with other libraries like provided by the [`riverpod`][], [`flutter_bloc`][], and [`signals`][] packages.
+with streams, or with other libraries like provided by the [`riverpod`][],
+[`flutter_bloc`][], and [`signals`][] packages.
 The communication between layers of this app handled
 everything with method calls, including polling for new data. It could've
 instead used streams to expose data from a repository to a view model and still
@@ -198,7 +200,7 @@ And if you squint, aren't all architectures MVVM anyway?
 [set up tests]: /app-architecture/case-study/testing
 [view it on Github]: https://github.com/flutter/samples/tree/main/compass_app
 [Github]: https://github.com/flutter/samples/tree/main/compass_app
-[Riverpod]: https://pub.dev/packages/riverpod 
-[flutter_bloc]: https://pub.dev/packages/flutter_bloc 
-[Signals]: https://pub.dev/packages/signals
+[`riverpod`]: https://pub.dev/packages/riverpod 
+[`flutter_bloc`]: https://pub.dev/packages/flutter_bloc 
+[`signals`]: https://pub.dev/packages/signals
 [package structure]: /app-architecture/case-study#package-structure
