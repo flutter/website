@@ -129,7 +129,8 @@ This base class is used to create repositories for different environments.
 For example, the compass app also has a class called `BookingRepositoryLocal`, 
 which is used for local development.
 
-You can see the differences between the [`BookingRepository` classes on GitHub][].
+You can see the differences between the
+[`BookingRepository` classes on GitHub][].
 :::
 
 

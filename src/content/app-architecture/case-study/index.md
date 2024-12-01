@@ -198,8 +198,8 @@ And if you squint, aren't all architectures MVVM anyway?
 [`Listenable`]: {{site.api}}/flutter/foundation/Listenable-class.html
 [Dependency Injection]: /app-architecture/case-study/dependency-injection
 [set up tests]: /app-architecture/case-study/testing
-[view it on Github]: https://github.com/flutter/samples/tree/main/compass_app
-[Github]: https://github.com/flutter/samples/tree/main/compass_app
+[view it on GitHub]: https://github.com/flutter/samples/tree/main/compass_app
+[GitHub]: https://github.com/flutter/samples/tree/main/compass_app
 [`riverpod`]: {{site.pub-pkg}}/riverpod 
 [`flutter_bloc`]: {{site.pub-pkg}}/flutter_bloc 
 [`signals`]: {{site.pub-pkg}}/signals

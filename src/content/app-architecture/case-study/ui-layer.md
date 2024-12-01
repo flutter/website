@@ -626,7 +626,7 @@ this functionality built in.
 
 :::note Real world example
 While building the Compass app, we found a bug that was solved by using
-the Command pattern. [Read about it on Github][].
+the Command pattern. [Read about it on GitHub][].
 :::
 
 [UI layer]: /app-architecture/guide#ui-layer
@@ -647,7 +647,7 @@ the Command pattern. [Read about it on Github][].
 [streams]: {{site.api}}/flutter/dart-async/Stream-class.html
 [`StreamBuilders`]: {{site.api}}/flutter/widgets/StreamBuilder-class.html
 [`AsyncSnapshot`]: {{site.api}}/flutter/widgets/AsyncSnapshot-class.html
-[Read about it on Github]: https://github.com/flutter/samples/pull/2449#pullrequestreview-2328333146
+[Read about it on GitHub]: https://github.com/flutter/samples/pull/2449#pullrequestreview-2328333146
 [package:riverpod]: {{site.pub-pkg}}/riverpod
 [package:flutter_bloc]: {{site.pub-pkg}}/flutter_bloc
 [package:signals]: {{site.pub-pkg}}/signals
