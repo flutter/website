@@ -404,7 +404,7 @@ important that build methods should return quickly, and heavy computational work
 should be done in some asynchronous manner and then stored as part of the state
 to be used by a build method.
 
-While relatively naïve in approach, this automated comparison is quite
+While relatively naive in approach, this automated comparison is quite
 effective, enabling high-performance, interactive apps. And, the design of the
 build function simplifies your code by focusing on declaring what a widget is
 made of, rather than the complexities of updating the user interface from one
