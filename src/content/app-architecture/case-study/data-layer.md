@@ -211,7 +211,7 @@ You can learn about this class in the [Result cookbook recipe][].
 ### Complete the event cycle
 
 Throughout this page, you've seen how a user can delete a saved booking,
-starting with an event—a user swiping on a `Dismissable` widget. 
+starting with an event—a user swiping on a `Dismissible` widget. 
 The view model handles that event by delegating
 the actual data mutation to the `BookingRepository`. 
 The following snippet shows the `BookingRepository.deleteBooking` method.

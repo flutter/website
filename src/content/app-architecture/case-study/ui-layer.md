@@ -397,7 +397,7 @@ encapsulates all the logic.
 ![A diagram showing a view's relationship to a view model.](/assets/images/docs/app-architecture/guide/feature-architecture-simplified-UI-highlighted.png)
 
 On the `HomeScreen`, users can delete previously booked events by swiping
-a [`Dismissable`][] widget.
+a [`Dismissible`][] widget.
 
 Recall this code from the previous snippet:
 
@@ -421,9 +421,9 @@ SliverList.builder(
 
     </div>
     <div class="col-md-4">
-<img src='/assets/images/docs/app-architecture/case-study/dismissable.gif'
+<img src='/assets/images/docs/app-architecture/case-study/dismissible.gif'
 style="border-radius:8px; border: black 2px solid"
-alt="A gif that demonstrates the 'dismissable' functionality of the Compass app.">
+alt="A clip that demonstrates the 'dismissible' functionality of the Compass app.">
 
     </div>
 </div>
@@ -639,7 +639,7 @@ the Command pattern. [Read about it on GitHub][].
 [`notifyListeners`]: {{site.api}}/flutter/foundation/ChangeNotifier/notifyListeners.html
 [state-management documentation]: /get-started/fundamentals/state-management
 [`Scaffold`]: {{site.api}}/flutter/widgets/Scaffold-class.html
-[`Dismissable`]: {{site.api}}/flutter/widgets/Dismissible-class.html
+[`Dismissible`]: {{site.api}}/flutter/widgets/Dismissible-class.html
 [`utils` directory]: https://github.com/flutter/samples/blob/main/compass_app/app/lib/utils/command.dart
 [`flutter_command`]: {{site.pub-pkg}}/flutter_command
 [streams]: {{site.api}}/flutter/dart-async/Stream-class.html
