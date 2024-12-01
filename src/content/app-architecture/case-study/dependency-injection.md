@@ -1,7 +1,7 @@
 ---
 title: Communicating between layers
 short-title: Dependency injection
-description: >
+description: >-
   How to implement dependency injection to communicate between MVVM layers.
 prev: 
   title: Data layer
@@ -26,12 +26,12 @@ An app's architecture should answer the following questions:
 
 Using this diagram as a guide, the rules of engagement are as follows:
 
-| Component  | Rules of engagement                                                                                                                                                                                                                                        |
-|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| View       | <ol><li> A view is only aware of exactly one view model, and is never aware of any other layer or component. When created, Flutter passes the view model to the view as an argument, exposing the view model's data and command callbacksto the view. </li></ul> |
-| ViewModel  | <ol><li>A ViewModel belongs to exactly one view, which can see its data, but the model never needs to know that a view exists.</li><li>A view model is aware of one or more repositories, which are passed into the view model's constructor.</li></ul>    |
-| Repository | <ol><li>A repository can be aware of many services, which are passed as arguments into the repository constructor.</li><li>A repository can be used by many view models, but it never needs to be aware of them.</li></ol>                        |
-| Service    | <ol><li>A service can be used by many repositories, but it never needs to be aware of a repository (or any other object).</li></ol>                                                                                                                        |
+| Component  | Rules of engagement                                                                                                                                                                                                                                               |
+|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| View       | <ol><li> A view is only aware of exactly one view model, and is never aware of any other layer or component. When created, Flutter passes the view model to the view as an argument, exposing the view model's data and command callbacks to the view. </li></ul> |
+| ViewModel  | <ol><li>A ViewModel belongs to exactly one view, which can see its data, but the model never needs to know that a view exists.</li><li>A view model is aware of one or more repositories, which are passed into the view model's constructor.</li></ul>           |
+| Repository | <ol><li>A repository can be aware of many services, which are passed as arguments into the repository constructor.</li><li>A repository can be used by many view models, but it never needs to be aware of them.</li></ol>                                        |
+| Service    | <ol><li>A service can be used by many repositories, but it never needs to be aware of a repository (or any other object).</li></ol>                                                                                                                               |
 
 {:.table .table-striped}
 
@@ -99,10 +99,11 @@ runApp(
 
 Services are exposed only so they can immediately be 
 injected into Repositories via the `BuildContext.read` method from `provider`, 
-as shown above. Repositories are then exposed so that they 
-can be injected into view models as needed.
+as shown in the preceding snippet.
+Repositories are then exposed so that they can be
+injected into view models as needed.
 
-Slightly lower in the widget tree, 
+Slightly lower in the widget tree,
 view models that correspond to a full screen are created in 
 the [`package:go_router`][] configuration, 
 where provider is again used to inject the necessary repositories.
@@ -142,7 +143,6 @@ GoRouter router(
         ),
       ],
     );
-
 ```
 
 Within the view model or repository, the injected component should be private.

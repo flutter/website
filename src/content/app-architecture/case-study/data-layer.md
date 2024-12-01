@@ -1,7 +1,7 @@
 ---
 title: Data layer
 short-title: Data layer
-description: >
+description: >-
   A walk-through of the data layer of an app that implements MVVM architecture.
 prev: 
   title: UI layer
@@ -14,7 +14,7 @@ next:
 
 The data layer of an application, known as the *model* in MVVM terminology, 
 is the source of truth for all application data. As the source of truth, 
-it is the only place that application data should be updated.
+it's the only place that application data should be updated.
 
 It's responsible for consuming data from various external APIs, 
 exposing that data to the UI, 
@@ -36,23 +36,23 @@ The data layer in this guide has two main components,
   created inside the application code itself should be fetched from within
   service classes.
 
-## Define a Service
+## Define a service
 
 A service class is the least ambiguous of all the architecture components. 
 It's stateless, and its functions don't have side effects. 
 Its only job is to wrap an external API. 
-There is generally one service class per data source, 
+There's generally one service class per data source, 
 such as a client HTTP server or a platform plugin.
 
 
 ![A diagram that shows the inputs and outputs of service objects.](/assets/images/docs/app-architecture/case-study/mvvm-case-study-services-architecture.png)
 
-In the Compass app, for example, there is an [`APIClient`][] service that 
+In the Compass app, for example, there's an [`APIClient`][] service that 
 handles the CRUD calls to the client-facing server.
 
 ```dart title=api_client.dart
 class ApiClient {
-  // Some code was omitted for demo purposes.
+  // Some code omitted for demo purposes.
 
   Future<Result<List<ContinentApiModel>>> getContinents() async {...}
 
@@ -122,7 +122,7 @@ class BookingRepositoryRemote implements BookingRepository {
 }
 ```
 
-:::note Development vs staging environments
+:::note Development versus staging environments
 The class in the previous example is `BookingRepositoryRemote`, 
 which extends an abstract class called `BookingRepository`. 
 This base class is used to create repositories for different environments. 
@@ -212,7 +212,7 @@ You can learn about this class in the [Result cookbook recipe][].
 
 Throughout this page, you've seen how a user can delete a saved booking,
 starting with an event—a user swiping on a `Dismissable` widget. 
-The  handles that event by delegating
+The view model handles that event by delegating
 the actual data mutation to the `BookingRepository`. 
 The following snippet shows the `BookingRepository.deleteBooking` method.
 

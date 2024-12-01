@@ -1,7 +1,7 @@
 ---
 title: Testing each layer
 short-title: Testing
-description: >
+description: >-
   How to test an app that implements MVVM architecture.
 prev: 
   title: Dependency injection
@@ -17,8 +17,8 @@ their dependencies can easily be mocked or faked, and unit tests are easily writ
 
 ### ViewModel unit tests
 
-To test UI logic of the view model, you should write unit tests that don't rely
-on Flutter libraries or testing frameworks.
+To test the UI logic of the view model, you should write unit tests that
+don't rely on Flutter libraries or testing frameworks.
 
 Repositories are a view model's only dependencies 
 (unless you're implementing [use-cases][]), 
@@ -97,7 +97,7 @@ void main() {
 
 This setup creates the two fake repositories needed, 
 and passes them into a `HomeViewModel` object. 
-This class does not need to be faked.
+This class doesn't need to be faked.
 
 :::note
 The code also defines a `MockGoRouter`. 

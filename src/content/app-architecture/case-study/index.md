@@ -1,7 +1,7 @@
 ---
 title: Architecture case study
 short-title: Architecture case study
-description: >
+description: >-
   A walk-through of a Flutter app that implements the MVVM design pattern.
 prev: 
   title: Guide to app architecture
@@ -78,7 +78,7 @@ you can find it on [GitHub][].
 Well-organized code is easier for multiple engineers to work on with 
 minimal code conflicts and is easier for new engineers to 
 navigate and understand. 
-Code organization both benefits and benefits from well defined architecture.
+Code organization both benefits and benefits from well-defined architecture.
 
 There are two popular means of organizing code:
 
@@ -154,12 +154,12 @@ Other notable features of this folder structure:
 * The domain folder contains the application data types, because they're used by
   the data and ui layers.
 * The app contains three "main" files, which act as different entry points to
-  the application for development, staging and production.
+  the application for development, staging, and production.
 * There are two test-related directories at the same level as `lib`: `test/` has
-  the test code, and it's own structure matches `lib/`. `testing/` is a
+  the test code, and its own structure matches `lib/`. `testing/` is a
   subpackage that contains mocks and other testing utilities which can be used
   in other packages' test code. The `testing/` folder could be described as a
-  version of your app that you don't ship. It is the content that is tested.
+  version of your app that you don't ship. It's the content that is tested.
 
 There's additional code in the compass app that doesn't pertain to architecture.
 For the full package structure, [view it on GitHub][].
@@ -178,7 +178,7 @@ instead used streams to expose data from a repository to a view model and still
 abided by the rules covered in this guide.
 
 Even if you do follow this guide exactly, 
-and choose not to introduce additional libraries, you have decisions to make: 
+and choose not to introduce additional libraries, you have decisions to make:
 Will you have a domain layer? 
 If so, how will you manage data access? 
 The answer depends so much on an individual team's needs that

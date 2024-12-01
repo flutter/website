@@ -1,7 +1,7 @@
 ---
 title: UI layer case study
 short-title: UI layer
-description: >
+description: >-
   A walk-through of the UI layer of an app that implements MVVM architecture.
 prev: 
   title: Case study overview
@@ -19,7 +19,7 @@ a **[`ViewModel`][].**
 
 In the most general sense, view models manage UI state, 
 and views display UI state. Views and view models have a one-to-one relationship; 
-for each view there is exactly one corresponding view model that 
+for each view there's exactly one corresponding view model that 
 manages that view's state. Each pair of view and view model make up 
 the UI for a single feature. For example, 
 an app might have classes called `LogOutView` and a `LogOutViewModel`.
@@ -192,7 +192,7 @@ propagates up to the UI layer and triggers a re-build of your Flutter widgets.
 For example, when the user navigates to the Home screen and the view mo is
 created, the `_load` method is called. Until this method completes, the UI state
 is empty, the view displays a loading indicator. When the `_load` method
-completes, if it is successful, there is new data in the view model, and it must
+completes, if it's successful, there's new data in the view model, and it must
 notify the view that new data is available.
 
 ```dart title=home_viewmodel.dart highlightLines=19
@@ -218,7 +218,6 @@ class HomeViewModel extends ChangeNotifier {
     }
   }
 }
-
 ```
 
 :::note
@@ -245,11 +244,11 @@ For example, the Compass app has a view called `LogoutButton`,
 which can be dropped anywhere in the widget tree that a user might 
 expect to find a logout button.
 The `LogoutButton` view has its own view model called `LogoutViewModel`. 
-And on larger screens, there might be multiple views on screen that 
+And on larger screens, there might be multiple views on screen that
 would take up the full screen on mobile.
 
 :::note
-"View" is an abstract term, and one view does not equal one widget. 
+"View" is an abstract term, and one view doesn't equal one widget. 
 Widgets are composable, and several can be combined to create one view. 
 Therefore, view models don't have a 1-to-1 relationship with widgets, 
 but rather a 1-to-1 relation with a *collection* of widgets.
@@ -418,8 +417,8 @@ SliverList.builder(
       viewModel.deleteBooking.execute(widget.viewModel.bookings[index].id),
   ),
 ),
-
 ```
+
     </div>
     <div class="col-md-4">
 <img src='/assets/images/docs/app-architecture/case-study/dismissable.gif'
@@ -510,7 +509,6 @@ abstract class Command<T> extends ChangeNotifier {
     }
   }
 }
-
 ```
 
 The `Command` class itself extends `ChangeNotifier`, 
@@ -557,18 +555,18 @@ class HomeViewModel extends ChangeNotifier {
 
   User? _user;
   User? get user => _user;
-  
+
   List<BookingSummary> _bookings = [];
   List<BookingSummary> get bookings => _bookings;
 
   Future<Result> _load() async {
-    ...
+    // ...
   }
 
   Future<Result<void>> _deleteBooking(int id) async {
-    ...
+    // ...
   }
-  
+
   // ... 
 }
 ```
