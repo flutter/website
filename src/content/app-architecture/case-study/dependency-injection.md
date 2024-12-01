@@ -172,7 +172,7 @@ utility code, widget code, and UI styling was ignored. Browse the code in
 the [Compass app repository][] for a complete
 example of a robust Flutter application built following these principles.
 
-[`package:provider`]: https://pub.dev/packages/provider
-[`GoRouter`]: https://pub.dev/packages/go_router
+[`package:provider`]: {{site.pub-pkg}}/provider
+[`GoRouter`]: {{site.pub-pkg}}/go_router
 [Compass app repository]: https://github.com/flutter/samples/tree/main/compass_app
 [dependency injection]: https://en.wikipedia.org/wiki/Dependency_injection

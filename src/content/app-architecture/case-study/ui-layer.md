@@ -634,20 +634,20 @@ the Command pattern. [Read about it on Github][].
 [`ViewModel`]: /app-architecture/guide#viewmodels
 [repositories]: /app-architecture/guide#repositories
 [commands]: /app-architecture/guide#command-objects
-[package:freezed]: https://pub.dev/packages/freezed
+[package:freezed]: {{site.pub-pkg}}/freezed
 [`ChangeNotifier`]: {{site.api}}/flutter/foundation/ChangeNotifier-class.html
 [`Listenable`]: {{site.api}}/flutter/foundation/Listenable-class.html
 [`ListenableBuilder`]: {{site.api}}/flutter/widgets/ListenableBuilder-class.html
 [`notifyListeners`]: {{site.api}}/flutter/foundation/ChangeNotifier/notifyListeners.html
 [state-management documentation]: /get-started/fundamentals/state-management
 [`Scaffold`]: {{site.api}}/flutter/widgets/Scaffold-class.html
-[`Dismissable`]: {{site.api}}flutter/widgets/Dismissible-class.html
+[`Dismissable`]: {{site.api}}/flutter/widgets/Dismissible-class.html
 [`utils` directory]: https://github.com/flutter/samples/blob/main/compass_app/app/lib/utils/command.dart
-[flutter_command]: https://pub.dev/packages/flutter_command
-[streams]: https://api.flutter.dev/flutter/dart-async/Stream-class.html
-[`StreamBuilders`]: https://api.flutter.dev/flutter/widgets/StreamBuilder-class.html
-[`AsyncSnapshot`]: https://api.flutter.dev/flutter/widgets/AsyncSnapshot-class.html
+[flutter_command]: {{site.pub-pkg}}/flutter_command
+[streams]: {{site.api}}/flutter/dart-async/Stream-class.html
+[`StreamBuilders`]: {{site.api}}/flutter/widgets/StreamBuilder-class.html
+[`AsyncSnapshot`]: {{site.api}}/flutter/widgets/AsyncSnapshot-class.html
 [Read about it on Github]: https://github.com/flutter/samples/pull/2449#pullrequestreview-2328333146
-[package:riverpod]: https://pub.dev/packages/riverpod
-[package:flutter_bloc]: https://pub.dev/packages/flutter_bloc
-[package:signals]: https://pub.dev/packages/signals
+[package:riverpod]: {{site.pub-pkg}}/riverpod
+[package:flutter_bloc]: {{site.pub-pkg}}/flutter_bloc
+[package:signals]: {{site.pub-pkg}}/signals

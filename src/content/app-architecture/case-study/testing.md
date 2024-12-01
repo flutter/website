@@ -221,7 +221,6 @@ read [Flutter's testing documentation][].
 [`FakeBookingRepository`]: https://github.com/flutter/samples/blob/main/compass_app/app/testing/fakes/repositories/fake_booking_repository.dart
 [`BookingRepository`]: https://github.com/flutter/samples/tree/main/compass_app/app/lib/data/repositories/booking
 [data layer section]: /app-architecture/case-study/data-layer
-[`package:mocktail`]: https://pub.dev/packages/mocktail
+[`package:mocktail`]: {{site.pub-pkg}}/mocktail
 [Flutter's testing documentation]: /testing/overview
 [Compass App `testing` directory]: https://github.com/flutter/samples/tree/main/compass_app/app/testing
-

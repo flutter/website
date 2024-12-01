@@ -200,7 +200,7 @@ And if you squint, aren't all architectures MVVM anyway?
 [set up tests]: /app-architecture/case-study/testing
 [view it on Github]: https://github.com/flutter/samples/tree/main/compass_app
 [Github]: https://github.com/flutter/samples/tree/main/compass_app
-[`riverpod`]: https://pub.dev/packages/riverpod 
-[`flutter_bloc`]: https://pub.dev/packages/flutter_bloc 
-[`signals`]: https://pub.dev/packages/signals
+[`riverpod`]: {{site.pub-pkg}}/riverpod 
+[`flutter_bloc`]: {{site.pub-pkg}}/flutter_bloc 
+[`signals`]: {{site.pub-pkg}}/signals
 [package structure]: /app-architecture/case-study#package-structure
