@@ -52,8 +52,8 @@ class HomeViewModel extends ChangeNotifier {
 }
 ```
 
-ViewModels also contain actions typically triggered by the View. 
-For example, a `load` action in charge of loading the `user`.
+ViewModels also contain actions typically triggered by the View;
+for example, a `load` action in charge of loading the `user`.
 
 <?code-excerpt "lib/no_command.dart (load1)" replace="/null;/\/\/ .../g;/2//g"?>
 ```dart
@@ -70,11 +70,9 @@ class HomeViewModel extends ChangeNotifier {
 
 ### UI state in ViewModels
 
-Besides data, ViewModels also contain other types of UI state. 
-For example, a `running` state or an `error` state. 
-This allows the View to show to the user 
-if the action is still running 
-or if it completed successfully.
+A view model also contains UI state besides data, such as
+whether the view is running or has experienced an error.
+This allows the app to tell the user if the action has completed successfully.
 
 <?code-excerpt "lib/no_command.dart (UiState1)" replace="/(null|false);/\/\/ .../g;/2//g"?>
 ```dart
@@ -159,12 +157,12 @@ and you'll have the same problem with the `error` state.
 
 ### Triggering UI actions from ViewModels
 
-Another challenge with ViewModel classes 
-is executing UI actions 
-when the ViewModel state changes. 
+View model classes can run into problems when
+executing UI actions and the view model's state changes. 
 
 For example, you might want to show a `SnackBar` when an error occurs, 
-or navigate to a different screen when an action completes. To implement this, listen for changes in the ViewModel, 
+or navigate to a different screen when an action completes.
+To implement this, listen for changes in the view model, 
 and perform the action depending on the state. 
 
 In the View:
@@ -272,7 +270,8 @@ Instead of calling `viewModel.load()` to run the load action,
 now you call `viewModel.load.execute()`.
 
 The `execute()` method can also be called from within the ViewModel. 
-For example, to run the `load` command when the ViewModel is created:
+The following line of code runs the `load` command when the
+view model is created.
 
 <?code-excerpt "lib/main.dart (ViewModelInit)"?>
 ```dart
@@ -290,12 +289,11 @@ and the `completed` state to `true`.
 If the `running` state is `true`, the command cannot begin executing again. 
 This prevents users from triggering a command multiple times by pressing a button rapidly.
 
-The command’s `execute()` method also captures any thrown `Exceptions`
- by the action implementation automatically 
- and exposes them in the `error` state.
+The command’s `execute()` method captures any thrown `Exceptions`
+automatically and exposes them in the `error` state.
 
-The following is what a command class might look like.
-It’s been simplified for demo purposes.
+The following code shows a sample `Command` class that
+has been simplified for demo purposes.
 You can see a full implementation at the end of this page.
 
 <?code-excerpt "lib/main.dart (Command)"?>
@@ -426,8 +424,8 @@ body: ListenableBuilder(
 ),
 ```
 
-You can have multiple commands in a single ViewModel, 
-simplifying the implementation of ViewModels 
+You can define multiple commands classes in a single view model, 
+simplifying its implementation
 and minimizing the amount of repeated code.
 
 <?code-excerpt "lib/main.dart (HomeViewModel2)" replace="/null;/\/\/ .../g"?>
@@ -498,12 +496,12 @@ for the Flutter architecture guidelines.
 It also uses the [`Result` class][] 
 to determine if the action completed successfuly or with an error.
 
-This implementation also includes two types of command, 
+This implementation also includes two types of commands,
 a `Command0`, for actions without parameters, 
 and a `Command1`, for actions that take one parameter.
 
 :::note
-Check [pub.dev][] for different ready-to-use 
+Check [pub.dev][] for other ready-to-use
 implementations of the command pattern,
 like the [flutter_command][] package.
 :::
