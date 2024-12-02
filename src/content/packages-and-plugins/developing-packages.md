@@ -781,15 +781,13 @@ The native build systems that are invoked by FFI
 
 ### Step 3: Binding to native code
 
-To use the native code, bindings in Dart are needed.
+To use native code, you need Dart bindings. Instead of writing these bindings
+manually, generate them from the header file `src/hello.h` using the
+[`ffigen` package][]. To install `ffigen` and it's dependencies, see the 
+[`ffigen` documentation][].
 
-To avoid writing these by hand,
-they are generated from the header file
-(`src/hello.h`) by [`package:ffigen`][].
-Reference the [ffigen docs][] for information
-on how to install this package.
 
-Regenerate the bindings by running the following:
+To regenerate the bindings, running the following command:
 
 ```console
 $  dart run ffigen --config ffigen.yaml
@@ -1054,7 +1052,7 @@ PENDING
 [`device_info_plus`]: {{site.pub-api}}/device_info_plus
 [Effective Dart Documentation]: {{site.dart-site}}/guides/language/effective-dart/documentation
 [federated plugins]: #federated-plugins
-[ffigen docs]: {{site.pub-pkg}}/ffigen/install
+[`ffigen` documentation]: {{site.pub-pkg}}/ffigen/install
 [Android]: /platform-integration/android/c-interop
 [iOS]: /platform-integration/ios/c-interop
 [macOS]: /platform-integration/macos/c-interop
@@ -1069,7 +1067,7 @@ PENDING
 [issue #33302]: {{site.repo.flutter}}/issues/33302
 [`LICENSE`]: #adding-licenses-to-the-license-file
 [`path`]: {{site.pub}}/packages/path
-[`package:ffigen`]: {{site.pub}}/packages/ffigen
+[`ffigen` package]: {{site.pub}}/packages/ffigen
 [platform channel]: /platform-integration/platform-channels
 [pub.dev]: {{site.pub}}
 [publishing docs]: {{site.dart-site}}/tools/pub/publishing
