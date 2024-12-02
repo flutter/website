@@ -29,7 +29,6 @@ reference to help you build up an application.
 ## Effects
 - [Create a download button](/cookbook/effects/download-button)
 - [Create a nested navigation flow](/cookbook/effects/nested-nav)
-- [Create a photo filter carousel](/cookbook/effects/photo-filter-carousel)
 - [Create a scrolling parallax effect](/cookbook/effects/parallax-scrolling)
 - [Create a shimmer loading effect](/cookbook/effects/shimmer-loading)
 - [Create a staggered menu animation](/cookbook/effects/staggered-menu-animation)
