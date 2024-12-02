@@ -9,12 +9,12 @@ js:
 <?code-excerpt path-base="cookbook/architecture/result"?>
 
 Dart provides a built-in error handling mechanism 
-through the ability to throw and catch exceptions.
+with the ability to throw and catch exceptions.
 
 As mentioned in the [Error handling documentation][], 
-Dart’s exceptions are unhandled exceptions, 
-meaning that methods that throw don’t need to declare them, 
-and calling methods are not required to catch them either.
+Dart’s exceptions are unhandled exceptions.
+This means that methods that throw exceptions don’t need to declare them, 
+and calling methods aren't required to catch them either.
 
 This can lead to situations where exceptions are not handled properly. 
 In large projects, 
@@ -25,7 +25,7 @@ This can lead to errors and crashes.
 
 In this guide, 
 you will learn about this limitation 
-and how to mitigate it using the result class pattern.
+and how to mitigate it using the _result_ pattern.
 
 ## Error flow in Flutter applications
 
@@ -46,22 +46,20 @@ or ignore it and let the calling ViewModel handle it.
 
 This can be observed in the following example. Consider these classes:
 
-- A service named `ApiClientService` 
-that performs API calls to a remote service.
-- A repository named `UserProfileRepository` 
-that uses the `ApiClientService` to provide the `UserProfile`.
-- A ViewModel named `UserProfileViewModel` 
-that uses the `UserProfileRepository`.
+- A service,`ApiClientService`, performs API calls to a remote service.
+- A repository, `UserProfileRepository`,
+  provides the `UserProfile` provided by the `ApiClientService`.
+- A view model, `UserProfileViewModel`, uses the `UserProfileRepository`.
 
-The `ApiClientService` contains a method named `getUserProfile`
- that can throw exceptions in different situations:
+The `ApiClientService` contains a method, `getUserProfile`,
+that throws exceptions in certain situations:
 
 - The method throws an `HttpException` if the response code isn’t 200.
-- The JSON parsing method might throw an exception 
-if the response is not formatted correctly.
-- The Http Client might throw an exception due to networking issues.
+- The JSON parsing method throws an exception 
+  if the response isn't formatted correctly.
+- The Http client might throw an exception due to networking issues.
 
-For example:
+The following code tests for a variety of possible exceptions:
 
 <?code-excerpt "lib/no_result.dart (ApiClientService)"?>
 ```dart
@@ -122,7 +120,8 @@ class UserProfileViewModel extends ChangeNotifier {
 }
 ```
 
-In reality, a developer might forget to properly capture exceptions and end up with the following code. It would compile and run, 
+In reality, a developer might forget to properly capture exceptions
+and end up with the following code. It would compile and run, 
 but will crash if one of the exceptions mentioned previously occurs:
 
 <?code-excerpt "lib/no_result.dart (UserProfileViewModelNoTryCatch)" replace="/NoTryCatch//g"?>
@@ -153,12 +152,12 @@ However, if the function did not complete successfully,
 the `Result` object will contain the error.
 
 A `Result` is a [`sealed`][] class 
-that can either be of the subclass `Ok` or the subclass `Error`. 
+that can either subclass `Ok` or the `Error` class.
 Return the successful value with the subclass `Ok`,
 and the captured error with the subclass `Error`.
 
-The following is what a `Result` class might look like.
-It’s been simplified for demo purposes. 
+The following code shows a sample `Result` class that
+has been simplified for demo purposes.
 A full implementation is at the end of this page.
 
 <?code-excerpt "lib/simple_result.dart"?>
@@ -274,7 +273,7 @@ Future<Result<UserProfile>> getUserProfile() async {
 Now the ViewModel doesn't receive the `UserProfile` directly, 
 but instead it receives a `Result` containing a `UserProfile`.
 
-This enforces the developer implementing the ViewModel 
+This forces the developer implementing the view model 
 to unwrap the `Result` to obtain the `UserProfile`, 
 and avoids having uncaught exceptions.
 
@@ -301,8 +300,9 @@ class UserProfileViewModel extends ChangeNotifier {
 ```
 
 The `Result` class is implemented using a `sealed` class, 
-meaning it can only either be an `Ok` or an `Error`, 
-so this operation can be done using a switch case.
+meaning it can only be of type `Ok` or `Error`. 
+This allows the code to evaluate the result with a simple
+switch statement.
 
 In the `Ok<UserProfile>` case, 
 obtain the value using the `value` property. 
@@ -312,9 +312,8 @@ obtain the error object using the `error` property.
 
 ## Improving control flow
 
-Wrapping code in a `try-catch` block
-is a quick way to ensure that  the calling method captures any thrown exception.
-Catching stops the exception from propagating to other methods, and it disrupts the normal code flow.
+Wrapping code in a `try-catch` block ensures that
+thrown exceptions are caught and not propagated to other parts of the code.
 
 Consider the following code.
 
@@ -342,7 +341,7 @@ attempts to obtain the `UserProfile`
 using the `ApiClientService`.
 If it fails, it tries to create a temporary user in a `DatabaseService`.
 
-Because either Service methods can fail, 
+Because either Service method can fail, 
 the code must catch the exceptions in both cases.
 
 This can be improved using the `Result` pattern:
@@ -365,9 +364,9 @@ Future<Result<UserProfile>> getUserProfile() async {
 }
 ```
 
-In this case, if the `Result` object is an `Ok`, 
-then the function returns that object, 
-otherwise at the end of the function returns a `Result.Error` if none worked.
+In this code, if the `Result` object is an `Ok` instance, 
+then the function returns that object; 
+otherwise, it returns `Result.Error`.
 
 ## Putting it all together
 
@@ -376,11 +375,11 @@ how to use a `Result` class to return result values.
 
 The key takeaways are:
 
-- `Result` classes enforce calling methods to check for errors, 
-reducing the amount of bugs caused by uncaught exceptions.
+- `Result` classes force the calling method to check for errors, 
+  reducing the amount of bugs caused by uncaught exceptions.
 - `Result` classes help improve control flow compared to try-catch blocks.
-- `Result` classes are `sealed classes` that can only be `Ok` or `Error`, 
-allowing you to use switch statements to unwrap them.
+- `Result` classes are `sealed` and can only return `Ok` or `Error` instances, 
+  allowing the code to unwrap them with a switch statement.
 
 Below you can find the full `Result` class 
 as implemented in the [Compass App example][] 
