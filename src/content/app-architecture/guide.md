@@ -6,10 +6,9 @@ description: >
 prev:
     title: Common architecture concepts
     path: /app-architecture/concepts
-# TODO(ewindmill): update 'next' in future PR with "case study" 
 next:
-  title: Recommendations
-  path: /app-architecture/recommendations
+  title: Architecture case study
+  path: /app-architecture/case-study
 ---
 
 The following pages demonstrate how to build an app using best practices. 
@@ -188,11 +187,8 @@ execute complex logic without knowledge of its implementation.
 Commands are written as members of the ViewModel class to
 be called by the gesture handlers in the View class.
 
-{% comment %}
-# TODO(ewindmill) - This page doesn't exist yet. Uncomment and fix link when it lands.
 You can find examples of Views, ViewModels and Commands on
-the [UI layer page]: /app-architecture/tutorial/ui-layer.
-{% endcomment %}
+the [UI layer page][].
 
 For a gentle introduction to MVVM in Flutter, 
 read the [State Management page][] of Flutter's Getting Started Guide.
@@ -345,5 +341,6 @@ but it requires greater diligence to maintain order.
 [Separation-of-concerns]: https://en.wikipedia.org/wiki/Separation_of_concerns
 [Model-View-ViewModel design pattern]: https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel
 [Command Pattern]: https://en.wikipedia.org/wiki/Command_pattern
-[State Management page]: http://docs.flutter.dev/get-started/fwe/state-management
+[State Management page]: /get-started/fwe/state-management
 [Repository]: https://martinfowler.com/eaaCatalog/repository.html
+[UI layer page]: /app-architecture/case-study/ui-layer

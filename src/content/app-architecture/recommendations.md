@@ -3,7 +3,9 @@ title: Architecture recommendations and resources
 short-title: Architecture recommendations
 description: >
   Recommendations for building scalable Flutter applications.
-# TODO(ewindmill): add prev in PR with "case study" 
+prev:
+  title: Architecture case study
+  path: /app-architecture/case-study
 ---
 
 This page presents architecture best practices, why they matter, 

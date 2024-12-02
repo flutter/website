@@ -434,6 +434,21 @@
       permalink: /app-architecture/concepts
     - title: Guide to app architecture
       permalink: /app-architecture/guide
+    - title: Architecture case study
+      permalink: /app-architecture/case-study
+      children:
+        - title: Overview
+          permalink: /app-architecture/case-study
+          match-page-url-exactly: true
+        - title: UI layer
+          permalink: /app-architecture/case-study/ui-layer
+        - title: Data layer
+          permalink: /app-architecture/case-study/data-layer
+        - title: Dependency injection
+          permalink: /app-architecture/case-study/dependency-injection
+        - title: Testing each layer
+          permalink: /app-architecture/case-study/testing
+
     - title: Recommendations
       permalink: /app-architecture/recommendations
     - title: Design patterns
