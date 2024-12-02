@@ -88,3 +88,11 @@ sample code that shows the recommendations in action.
 [Common architectural principles]: /app-architecture/concepts
 [recommended app architecture]: /app-architecture/guide
 [MVVM]: /app-architecture/guide#mvvm
+
+
+## Feedback
+
+As this section of the website is evolving,
+we [welcome your feedback][]!
+
+[welcome your feedback]: https://google.qualtrics.com/jfe/form/SV_4T0XuR9Ts29acw6?page="index"

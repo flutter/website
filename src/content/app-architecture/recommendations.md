@@ -84,3 +84,9 @@ which reflects how strongly the Flutter team recommends it.
 [Flutter developer tools]: /tools/devtools
 [flutter_lints]: https://pub.dev/packages/flutter_lints
 
+## Feedback
+
+As this section of the website is evolving,
+we [welcome your feedback][]!
+
+[welcome your feedback]: https://google.qualtrics.com/jfe/form/SV_4T0XuR9Ts29acw6?page="recommendations"

@@ -204,3 +204,10 @@ And if you squint, aren't all architectures MVVM anyway?
 [`flutter_bloc`]: {{site.pub-pkg}}/flutter_bloc 
 [`signals`]: {{site.pub-pkg}}/signals
 [package structure]: /app-architecture/case-study#package-structure
+
+## Feedback
+
+As this section of the website is evolving,
+we [welcome your feedback][]!
+
+[welcome your feedback]: https://google.qualtrics.com/jfe/form/SV_4T0XuR9Ts29acw6?page="case-study/index"

@@ -344,3 +344,10 @@ but it requires greater diligence to maintain order.
 [State Management page]: /get-started/fwe/state-management
 [Repository]: https://martinfowler.com/eaaCatalog/repository.html
 [UI layer page]: /app-architecture/case-study/ui-layer
+
+## Feedback
+
+As this section of the website is evolving,
+we [welcome your feedback][]!
+
+[welcome your feedback]: https://google.qualtrics.com/jfe/form/SV_4T0XuR9Ts29acw6?page="guide"
