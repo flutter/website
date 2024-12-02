@@ -783,7 +783,7 @@ The native build systems that are invoked by FFI
 
 To use native code, you need Dart bindings. Instead of writing these bindings
 manually, generate them from the header file `src/hello.h` using the
-[`ffigen` package][]. To install `ffigen` and it's dependencies, see the 
+[`ffigen` package][]. To install `ffigen` and its dependencies, see the 
 [`ffigen` documentation][].
 
 
