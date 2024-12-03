@@ -30,8 +30,8 @@ and how to mitigate it using the _result_ pattern.
 ## Error flow in Flutter applications
 
 Applications following the [Flutter architecture guidelines][]
-are usually composed of ViewModels, 
-Repositories, and Services, among other parts. 
+are usually composed of view models, 
+repositories, and services, among other parts. 
 When a function in one of these components fails, 
 it should communicate the error to the calling component.
 
@@ -42,7 +42,7 @@ might throw an HTTP Error Exception.
 The calling component, 
 for example a Repository, 
 would have to either capture this exception 
-or ignore it and let the calling ViewModel handle it.
+or ignore it and let the calling view model handle it.
 
 This can be observed in the following example. Consider these classes:
 
@@ -138,7 +138,7 @@ class UserProfileViewModel extends ChangeNotifier {
 
 You can attempt to solve this by documenting the `ApiClientService`, 
 warning about the possible exceptions it might throw. 
-However, since the ViewModel doesn’t use the service directly, 
+However, since the view model doesn’t use the service directly, 
 other developers  working in the codebase might miss this information.
 
 ## Using the result pattern
@@ -270,7 +270,7 @@ Future<Result<UserProfile>> getUserProfile() async {
 
 ### Unwrapping the Result object
 
-Now the ViewModel doesn't receive the `UserProfile` directly, 
+Now the view model doesn't receive the `UserProfile` directly, 
 but instead it receives a `Result` containing a `UserProfile`.
 
 This forces the developer implementing the view model 
