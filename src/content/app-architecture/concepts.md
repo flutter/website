@@ -106,7 +106,7 @@ this:
 3. [Data layer] The repository updates data (if necessary) and then provides the
    new data to the logic class.
 4. [Logic layer] The logic class saves its new state, which it sends to the UI.
-5. [UI layer] The UI displays the new state of the ViewModel.
+5. [UI layer] The UI displays the new state of the view model.
 
 New data can also start at the data layer. 
 For example, a repository might poll an HTTP server for new data. 

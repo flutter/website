@@ -430,6 +430,7 @@
   children:
     - title: Introduction
       permalink: /app-architecture
+      match-page-url-exactly: true
     - title: Architecture concepts
       permalink: /app-architecture/concepts
     - title: Guide to app architecture
