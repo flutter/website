@@ -102,7 +102,7 @@ It provides a simple API to handle complex routing scenarios.
     The metadata tag `flutter_deeplinking_enabled` opts
     into Flutter's default deeplink handler.
     If you are using the third-party plugins,
-    such as [uni_links][], setting this metadata tag will
+    such as [app_links][], setting this metadata tag will
     break these plugins. Omit this metadata tag
     if you prefer to use third-party plugins.
     :::
@@ -217,5 +217,5 @@ Source code: [deeplink_cookbook][]
 [Firebase Hosting]: {{site.firebase}}/docs/hosting
 [go_router]: {{site.pub}}/packages/go_router
 [GitHub Pages]: https://pages.github.com
-[uni_links]: {{site.pub}}/packages/uni_links
+[app_links]: {{site.pub}}/packages/app_links
 [Signing the app]: /deployment/android#signing-the-app

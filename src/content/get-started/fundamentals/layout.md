@@ -46,7 +46,7 @@ are created by composing these layout widgets.
 
 ### Constraints
 
-Understanding constraints in Flutter is  an
+Understanding constraints in Flutter is an
 important part of understanding
 how layout works in Flutter.
 
@@ -502,7 +502,7 @@ and therefore the number of todos is unknown.
 
 {% render docs/code-and-image.md,
 image:"fwe/layout/listview_builder.png",
-caption: "This figure shows the ListView.builder constuctor to display an unknown number of children."
+caption: "This figure shows the ListView.builder constructor to display an unknown number of children."
 alt: "A screenshot of several widgets laid out vertically. They have expanded to take up all available space on the cross axis."
 code:"
 ```dart
@@ -549,10 +549,10 @@ the "builder" pattern in Flutter.
 In Flutter, you'll find several widgets that use 
 the word "builder" in their names or 
 in their constructors. 
-The following list is not exhaustive:
+The following list isn't exhaustive:
 
 * [`ListView.builder`][]
-* [`Gridview.builder`][]
+* [`GridView.builder`][]
 * [`Builder`][]
 * [`LayoutBuilder`][]
 * [`FutureBuilder`][]
@@ -775,7 +775,7 @@ The following resources explain individual APIs.
 [`CrossAxisAlignment`]: {{site.api}}/flutter/rendering/CrossAxisAlignment.html
 [`double.infinity`]:{{site.api}}/flutter/dart-core/double/infinity-constant.html
 [`ListView.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
-[`Gridview.builder`]: {{site.api}}/flutter/widgets/GridView/Gridview.builder.html
+[`GridView.builder`]: {{site.api}}/flutter/widgets/GridView/GridView.builder.html
 [`Builder`]: {{site.api}}/flutter/widgets/Builder-class.html
 [`ScrollView`]: {{site.api}}/flutter/widgets/Scrollview-class.html
 [`LayoutBuilder`]: {{site.api}}/flutter/widgets/LayoutBuilder-class.html

@@ -425,6 +425,44 @@
     - title: Google APIs
       permalink: /data-and-backend/google-apis
 
+- title: App architecture
+  permalink: /app-architecture
+  children:
+    - title: Introduction
+      permalink: /app-architecture
+    - title: Architecture concepts
+      permalink: /app-architecture/concepts
+    - title: Guide to app architecture
+      permalink: /app-architecture/guide
+    - title: Architecture case study
+      permalink: /app-architecture/case-study
+      children:
+        - title: Overview
+          permalink: /app-architecture/case-study
+          match-page-url-exactly: true
+        - title: UI layer
+          permalink: /app-architecture/case-study/ui-layer
+        - title: Data layer
+          permalink: /app-architecture/case-study/data-layer
+        - title: Dependency injection
+          permalink: /app-architecture/case-study/dependency-injection
+        - title: Testing each layer
+          permalink: /app-architecture/case-study/testing
+
+    - title: Recommendations
+      permalink: /app-architecture/recommendations
+    - title: Design patterns
+      permalink: /cookbook/architecture
+      children:
+        - title: Optimistic state
+          permalink: /cookbook/architecture/optimistic-state
+        - title: "Persistent storage architecture: Key-value data"
+          permalink: /cookbook/architecture/key-value-data
+        - title: "Persistent storage architecture: SQL"
+          permalink: /cookbook/architecture/sql
+        - title: Offline-first
+          permalink: /cookbook/architecture/offline-first
+
 - title: Platform integration
   permalink: /platform-integration
   children:
@@ -449,6 +487,8 @@
           permalink: /platform-integration/android/c-interop
         - title: Host a native Android view
           permalink: /platform-integration/android/platform-views
+        - title: Calling JetPack APIs
+          permalink: /platform-integration/android/call-jetpack-apis
         - title: Launch a Jetpack Compose activity
           permalink: /platform-integration/android/compose-activity
         - title: Restore state on Android
@@ -499,6 +539,9 @@
     - title: Web
       permalink: /platform-integration/web
       children:
+        - title: Web support in Flutter
+          permalink: /platform-integration/web
+          match-page-url-exactly: true
         - title: Add web as build target
           permalink: /platform-integration/web/install-web
         - title: Build a web app

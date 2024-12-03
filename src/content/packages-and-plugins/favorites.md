@@ -53,11 +53,11 @@ are as follows:
 
 * Pooja Bhaumik
 * Hillel Coren
+* Ander Dobo
 * Simon Lightfoot
 * Lara Martín
 * John Ryan
 * Diego Velasquez
-* Ander Dobo
 
 If you'd like to nominate a package or plugin as a
 potential future Flutter Favorite, or would like
