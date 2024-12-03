@@ -88,7 +88,6 @@ It provides a simple API to handle complex routing scenarios.
     Replace `example.com` with your own web domain.
 
     ```xml
-    <meta-data android:name="flutter_deeplinking_enabled" android:value="true" />
     <intent-filter android:autoVerify="true">
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT" />
@@ -99,11 +98,14 @@ It provides a simple API to handle complex routing scenarios.
     ```
    
     :::note
-    The metadata tag `flutter_deeplinking_enabled` opts
-    into Flutter's default deeplink handler.
-    If you are using the third-party plugins,
-    such as [app_links][], setting this metadata tag will
-    break these plugins. Omit this metadata tag
+    If you uses the third-party plugins to handle deep links,
+    such as [app_links][], 
+    Flutter's default deeplink handler will
+    break these plugins. 
+    
+    Add this metadata tag 
+    ```<meta-data android:name="flutter_deeplinking_enabled" android:value="false" />```
+    to opt out of Flutter's default deeplink handler 
     if you prefer to use third-party plugins.
     :::
 
