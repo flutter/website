@@ -88,7 +88,7 @@ It provides a simple API to handle complex routing scenarios.
   Flutter's default deeplink handler will
   break these plugins. 
 
-  Add A Key and Value pair `FlutterDeepLinkingEnabled` `NO` to info.Plist 
+  Add A Key and Value pair `FlutterDeepLinkingEnabled` and `NO` to info.Plist 
   if you prefer to use third-party plugins.
   :::
 
