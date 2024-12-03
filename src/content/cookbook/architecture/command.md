@@ -21,7 +21,7 @@ such as running, complete, and error.
 
 View models can use commands to handle interaction and run actions.
 As well, they can be used to display different UI states,
-like loading indicators when an action is running is,
+like loading indicators when an action is running,
 or an error dialog when an action failed.
 
 View models can become very complex 
