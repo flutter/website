@@ -629,7 +629,7 @@ the Command pattern. [Read about it on GitHub][].
 
 [UI layer]: /app-architecture/guide#ui-layer
 [`View`]: /app-architecture/guide#views
-[`ViewModel`]: /app-architecture/guide#viewmodels
+[`ViewModel`]: /app-architecture/guide#view-models
 [repositories]: /app-architecture/guide#repositories
 [commands]: /app-architecture/guide#command-objects
 [`package:freezed`]: {{site.pub-pkg}}/freezed
