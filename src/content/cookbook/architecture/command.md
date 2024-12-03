@@ -10,26 +10,26 @@ js:
 
 Model-View-ViewModel (MVVM) is a design pattern 
 that separates a feature of an application into three parts: 
-the `Model`, the `ViewModel` and the `View`. 
-Views and ViewModels make up the UI layer of an application. 
+the model, the view model and the view.
+Views and view models make up the UI layer of an application.
 Repositories and services represent the data layer of an application, 
-or the Model layer of MVVM.
+or the model layer of MVVM.
 
-ViewModels can become very complex 
+View models can become very complex 
 as an application grows 
 and features become bigger.
-The command pattern helps to streamline running actions in ViewModels 
+The command pattern helps to streamline running actions in view models 
 by encapsulating some of its complexity and avoiding code repetition.
 
 In this guide, you will learn 
 how to use the command pattern 
-to improve your ViewModels.
+to improve your view models.
 
-## Challenges when implementing ViewModels
+## Challenges when implementing view models
 
-ViewModel classes in Flutter are typically implemented 
+View model classes in Flutter are typically implemented 
 by extending the [`ChangeNotifier`][] class.
-This allows ViewModels to call `notifyListeners()` to refresh Views
+This allows view models to call `notifyListeners()` to refresh views
 when data is updated.
 
 <?code-excerpt "lib/no_command.dart (HomeViewModel2)" replace="/2//g"?>
@@ -39,9 +39,9 @@ class HomeViewModel extends ChangeNotifier {
 }
 ```
 
-ViewModels contain a representation of the UI state, 
+View models contain a representation of the UI state, 
 including the data being displayed. 
-For example, this `HomeViewModel` exposes the `User` instance to the View.
+For example, this `HomeViewModel` exposes the `User` instance to the view.
 
 <?code-excerpt "lib/no_command.dart (getUser)" replace="/null;/\/\/ .../g;/2//g"?>
 ```dart
@@ -52,7 +52,7 @@ class HomeViewModel extends ChangeNotifier {
 }
 ```
 
-ViewModels also contain actions typically triggered by the View;
+View models also contain actions typically triggered by the view;
 for example, a `load` action in charge of loading the `user`.
 
 <?code-excerpt "lib/no_command.dart (load1)" replace="/null;/\/\/ .../g;/2//g"?>
@@ -68,7 +68,7 @@ class HomeViewModel extends ChangeNotifier {
 }
 ```
 
-### UI state in ViewModels
+### UI state in view models
 
 A view model also contains UI state besides data, such as
 whether the view is running or has experienced an error.
@@ -91,7 +91,7 @@ class HomeViewModel extends ChangeNotifier {
 }
 ```
 
-You can use the running state to display a progress indicator in the View:
+You can use the running state to display a progress indicator in the view:
 
 <?code-excerpt "lib/no_command.dart (ListenableBuilder)" replace="/\.load//g;/body: //g;/^\),$/)/g"?>
 ```dart
@@ -122,7 +122,7 @@ void load() {
 ```
 
 Managing the state of an action can get complicated 
-if the ViewModel contains multiple actions. 
+if the view model contains multiple actions. 
 For example, adding an `edit()` action to the `HomeViewModel` 
 can lead the following outcome:
 
@@ -155,7 +155,7 @@ because you might want to show a different UI component
 when the `load()` action runs than when the `edit()` action runs,
 and you'll have the same problem with the `error` state.
 
-### Triggering UI actions from ViewModels
+### Triggering UI actions from view models
 
 View model classes can run into problems when
 executing UI actions and the view model's state changes. 
@@ -165,7 +165,7 @@ or navigate to a different screen when an action completes.
 To implement this, listen for changes in the view model, 
 and perform the action depending on the state. 
 
-In the View:
+In the view:
 
 <?code-excerpt "lib/no_command.dart (addListener)"?>
 ```dart
@@ -208,11 +208,11 @@ void _onViewModelChanged() {
 
 You might find yourself repeating the above code over and over, 
 implementing a different running state 
-for each action in every ViewModel. 
+for each action in every view model. 
 At that point, it makes sense to extract this code 
 into a reusable pattern: a command.
 
-A command is a class that encapsulates a ViewModel action, 
+A command is a class that encapsulates a view model action, 
 and exposes the different states that an action can have.
 
 <?code-excerpt "lib/simple_command.dart (Command)" replace="/(null|false);/\/\/ .../g;"?>
@@ -238,7 +238,7 @@ class Command extends ChangeNotifier {
 }
 ```
 
-In the ViewModel, 
+In the view model, 
 instead of defining an action directly with a method, 
 you create a command object:
 
@@ -269,7 +269,7 @@ as they are now part of the command.
 Instead of calling `viewModel.load()` to run the load action, 
 now you call `viewModel.load.execute()`.
 
-The `execute()` method can also be called from within the ViewModel. 
+The `execute()` method can also be called from within the view model. 
 The following line of code runs the `load` command when the
 view model is created.
 
@@ -347,7 +347,7 @@ The `Command` class extends from `ChangeNotifier`,
 allowing Views to listen to its states.
 
 In the `ListenableBuilder`, 
-instead of passing the ViewModel to `ListenableBuilder.listenable`, 
+instead of passing the view model to `ListenableBuilder.listenable`, 
 pass the command:
 
 
@@ -394,7 +394,8 @@ void _onViewModelChanged() {
 
 ### Combining command and ViewModel
 
-You can stack multiple `ListenableBuilder` widgets to listen to `running` and `error` states before showing the ViewModel data. 
+You can stack multiple `ListenableBuilder` widgets to listen to `running`
+and `error` states before showing the view model data.
 
 <?code-excerpt "lib/main.dart (ListenableBuilder)"?>
 ```dart
@@ -487,7 +488,7 @@ class HomeViewModel extends ChangeNotifier {
 
 In this guide, 
 you learned how to use the command design pattern 
-to improve the implementation of ViewModels 
+to improve the implementation of view models 
 when using the MVVM design pattern.
 
 Below, you can find the full `Command` class 
