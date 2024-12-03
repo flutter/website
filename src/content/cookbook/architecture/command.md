@@ -15,11 +15,20 @@ Views and view models make up the UI layer of an application.
 Repositories and services represent the data layer of an application, 
 or the model layer of MVVM.
 
+A command is a class that wraps a method
+and helps to handle the different states of that method,
+such as running, complete, and error.
+
+View models can use commands to handle interaction and run actions.
+As well, they can be used to display different UI states,
+like loading indicators when an action is running is,
+or an error dialog when an action failed.
+
 View models can become very complex 
 as an application grows 
 and features become bigger.
-The command pattern helps to streamline running actions in view models 
-by encapsulating some of its complexity and avoiding code repetition.
+Commands can help to simplify view models
+and reuse code.
 
 In this guide, you will learn 
 how to use the command pattern 
