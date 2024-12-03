@@ -224,3 +224,10 @@ read [Flutter's testing documentation][].
 [`package:mocktail`]: {{site.pub-pkg}}/mocktail
 [Flutter's testing documentation]: /testing/overview
 [Compass App `testing` directory]: https://github.com/flutter/samples/tree/main/compass_app/app/testing
+
+## Feedback
+
+As this section of the website is evolving,
+we [welcome your feedback][]!
+
+[welcome your feedback]: https://google.qualtrics.com/jfe/form/SV_4T0XuR9Ts29acw6?page="case-study/testing"

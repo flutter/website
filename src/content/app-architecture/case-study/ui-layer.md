@@ -649,3 +649,10 @@ the Command pattern. [Read about it on GitHub][].
 [package:riverpod]: {{site.pub-pkg}}/riverpod
 [package:flutter_bloc]: {{site.pub-pkg}}/flutter_bloc
 [package:signals]: {{site.pub-pkg}}/signals
+
+## Feedback
+
+As this section of the website is evolving,
+we [welcome your feedback][]!
+
+[welcome your feedback]: https://google.qualtrics.com/jfe/form/SV_4T0XuR9Ts29acw6?page="case-study/ui-layer"

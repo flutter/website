@@ -240,3 +240,10 @@ completing the cycle.
 [Result cookbook recipe]: /cookbook/architecture
 
 [//]: # (todo ewindmill@ - update Result link after #11444 lands)
+
+## Feedback
+
+As this section of the website is evolving,
+we [welcome your feedback][]!
+
+[welcome your feedback]: https://google.qualtrics.com/jfe/form/SV_4T0XuR9Ts29acw6?page="case-study/data-layer"
