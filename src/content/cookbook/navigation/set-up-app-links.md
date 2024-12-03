@@ -98,15 +98,15 @@ It provides a simple API to handle complex routing scenarios.
     ```
    
     :::note
-    If you uses the third-party plugins to handle deep links,
+    If you use a third-party plugin to handle deep links,
     such as [app_links][], 
     Flutter's default deeplink handler will
     break these plugins. 
     
-    Add this metadata tag 
+    To opt out of using Flutter's default deep link handler,
+     add the following metadata tag:
     ```<meta-data android:name="flutter_deeplinking_enabled" android:value="false" />```
     to opt out of Flutter's default deeplink handler 
-    if you prefer to use third-party plugins.
     :::
 
 ## 3. Hosting assetlinks.json file

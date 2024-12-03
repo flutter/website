@@ -83,13 +83,13 @@ It provides a simple API to handle complex routing scenarios.
    Flutter project's `ios` folder.
 
   :::note
-  If you are using the third-party plugins to handle deep links, 
+  If you are use a third-party plugins to handle deep links, 
   such as [app_links][],
   Flutter's default deeplink handler will
   break these plugins. 
 
-  Add A Key and Value pair `FlutterDeepLinkingEnabled` and `NO` to info.Plist 
-  if you prefer to use third-party plugins.
+  If you use a third-party plugin,
+  add the key and value pair `FlutterDeepLinkingEnabled` and `NO` to info.Plist.
   :::
 
 ### Add associated domains
