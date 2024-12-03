@@ -32,7 +32,7 @@
     "markdown-it-container": "^4.0.0",
     "markdown-it-deflist": "^3.0.0",
     "markdown-it-footnote": "^4.0.0",
-    "sass": "^1.81.0",
+    "sass": "^1.81.1",
     "shiki": "^1.24.0"
   }
 }
