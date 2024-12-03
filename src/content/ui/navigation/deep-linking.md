@@ -60,7 +60,7 @@ To get started, see our cookbooks for Android and iOS:
 If you have written a plugin to handle deep links, as described in
 [Deep Links and Flutter applications][plugin-linking]
 (a free article on Medium),
-You should opt out the default flutter deep links handler by adding 
+You should opt out the default flutter deep links handler by adding
 `FlutterDeepLinkingEnabled` to false in `Info.plist` or
 `flutter_deeplinking_enabled` to false in `AndroidManifest.xml`, respectively.
 
