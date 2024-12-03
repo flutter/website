@@ -1,17 +1,17 @@
-{% if tocContents.count > 1 -%}
-<div id="site-toc--side" class="site-toc fixed-col col-xl-2 order-3" data-fixed-column>
-  <header class="site-toc__title">
-    Contents
+<nav id="toc-side">
+  <header>
+    <span class="material-symbols" aria-hidden="true">list</span>
+    <span>On this page</span>
   </header>
-  <ul class="section-nav">
+  <ul>
     {% for topLevel in tocContents.toc %}
-    <li class="toc-entry nav-item toc-h2">
-      <a class="nav-link" href="{{topLevel.id}}">{{topLevel.text}}</a>
+    <li>
+      <span class="sidenav-item"><a href="{{topLevel.id}}">{{topLevel.text}}</a></span>
       {% if topLevel.children and topLevel.children.size > 0 %}
-      <ul class="nav">
+      <ul>
         {% for child in topLevel.children %}
-        <li class="toc-entry nav-item toc-h3">
-          <a class="nav-link" href="{{child.id}}">{{child.text}}</a>
+        <li>
+          <span class="sidenav-item"><a href="{{child.id}}">{{child.text}}</a></span>
         </li>
         {% endfor -%}
       </ul>
@@ -19,5 +19,4 @@
     </li>
     {% endfor -%}
   </ul>
-</div>
-{% endif -%}
+</nav>

@@ -19,12 +19,12 @@ on [pub.dev]({{site.pub}}), the package repository for Dart and Flutter.
 {% assign categories = catalog.index | sort: 'name' -%}
 {% for section in categories %}
     {%- if section.name == "Cupertino" or section.name == "Material components" -%}
-        <div class="card">
+        <a class="card" href="{{page.url}}{{section.id}}">
             <div class="card-body">
-                <a href="{{page.url}}{{section.id}}"><header class="card-title">{{section.name}}</header></a>
+                <header class="card-title">{{section.name}}</header>
                 <p class="card-text">{{section.description}}</p>
             </div>
-        </div>
+        </a>
     {% endif -%}
 {% endfor %}
 </div>
@@ -38,12 +38,12 @@ like input, layout, and text.
 {% assign categories = catalog.index | sort: 'name' -%}
 {% for section in categories %}
     {%- if section.name != "Cupertino" and section.name != "Material components" and section.name != "Material 2 components" -%}
-        <div class="card">
+        <a class="card" href="{{page.url}}{{section.id}}">
             <div class="card-body">
-                <a href="{{page.url}}{{section.id}}"><header class="card-title">{{section.name}}</header></a>
+                <header class="card-title">{{section.name}}</header>
                 <p class="card-text">{{section.description}}</p>
             </div>
-        </div>
+        </a>
     {% endif -%}
 {% endfor %}
 </div>
@@ -86,6 +86,6 @@ help you quickly get started with Flutter widgets.
     </div>
 </div>
 
-<a class="btn btn-primary full-width" target="_blank" href="{{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG">Watch more widget of the week videos</a>
+<a class="filled-button full-width" target="_blank" href="{{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG">Watch more widget of the week videos</a>
 
 [widget index]: /reference/widgets

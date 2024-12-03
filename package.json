@@ -18,9 +18,6 @@
     "build-site-for-staging": "PRODUCTION=false eleventy",
     "build-site-for-production": "PRODUCTION=true OPTIMIZE=true eleventy"
   },
-  "dependencies": {
-    "bootstrap-scss": "^4.6.2"
-  },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
     "firebase-tools": "^13.27.0",
@@ -35,7 +32,7 @@
     "markdown-it-container": "^4.0.0",
     "markdown-it-deflist": "^3.0.0",
     "markdown-it-footnote": "^4.0.0",
-    "sass": "^1.81.0",
+    "sass": "^1.81.1",
     "shiki": "^1.24.0"
   }
 }

@@ -1,0 +1,26 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  border-width: 0;
+  margin: 0;
+}
+
+html, body {
+  padding: 0;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--site-primary-container);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-feature-settings: inherit;
+  font-variation-settings: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
