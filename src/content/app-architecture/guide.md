@@ -329,7 +329,7 @@ This method of adding use-cases is defined by the following rules:
 
 * Use-cases depend on repositories
 * Use-cases and repositories have a many-to-many relationship
-* view models depend on one or more use-cases *and* one or more repositories
+* View models depend on one or more use-cases *and* one or more repositories
 
 This method of using use-cases ends up looking less like a layered lasagna, 
 and more like a plated dinner with two mains (UI and data layers) and 
