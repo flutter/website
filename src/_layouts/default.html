@@ -33,7 +33,7 @@ layout: base
         {% include next-prev-nav.html prev=prev next=next %}
 
         <header class="site-content__title" id="site-content-title">
-          <h1>{{ title }}</h1>
+          <h1 id="document-title">{{ title }}</h1>
           {% if show_breadcrumbs != false -%}
           {% include breadcrumbs.html %}
           {% endif -%}
