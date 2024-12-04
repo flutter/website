@@ -3,7 +3,7 @@ title: UI layer case study
 short-title: UI layer
 description: >-
   A walk-through of the UI layer of an app that implements MVVM architecture.
-prev: 
+prev:
   title: Case study overview
   path: /app-architecture/case-study
 next:
@@ -17,54 +17,56 @@ a **[`ViewModel`][].**
 
 ![A screenshot of the booking screen of the compass app.](/assets/images/docs/app-architecture/case-study/mvvm-case-study-ui-layer-highlighted.png)
 
-In the most general sense, view models manage UI state, 
-and views display UI state. Views and view models have a one-to-one relationship; 
-for each view there's exactly one corresponding view model that 
-manages that view's state. Each pair of view and view model make up 
-the UI for a single feature. For example, 
-an app might have classes called `LogOutView` and a `LogOutViewModel`.
+In the most general sense, view models manage UI state,
+and views display UI state.
+Views and view models have a one-to-one relationship;
+for each view, there's exactly one corresponding view model that
+manages that view's state.
+Each pair of view and view model make up the UI for a single feature.
+For example, an app might have classes called
+`LogOutView` and a `LogOutViewModel`.
 
 ## Define a view model
 
-A view model is a Dart class responsible for handling UI logic. 
-View models take domain data models as input and expose that data as 
-UI state to their corresponding views. 
-They encapsulate logic that the view can attach to event handlers, 
-like button presses, 
-and manage sending these events to the data layer of the app, 
+A view model is a Dart class responsible for handling UI logic.
+View models take domain data models as input and expose that data as
+UI state to their corresponding views.
+They encapsulate logic that the view can attach to
+event handlers, like button presses, and
+manage sending these events to the data layer of the app,
 where data changes happen.
 
-The following code snippet is a class declaration for 
-a view model class called the `HomeViewModel`. 
-Its inputs are the [repositories][] that provide its data. 
-In this case, 
-the view model is dependent on the 
+The following code snippet is a class declaration for
+a view model class called the `HomeViewModel`.
+Its inputs are the [repositories][] that provide its data.
+In this case,
+the view model is dependent on the
 `BookingRepository`and `UserRepository` as arguments.
 
 ```dart title=home_viewmodel.dart
 class HomeViewModel {
   HomeViewModel({
-    required BookingRepository bookingRepository, 
+    required BookingRepository bookingRepository,
     required UserRepository userRepository,
-  }) : 
+  }) :
     // Repositories are manually assigned because they're private members.
-    _bookingRepository = bookingRepository, 
+    _bookingRepository = bookingRepository,
     _userRepository = userRepository;
 
   final BookingRepository _bookingRepository;
   final UserRepository _userRepository;
-  // ... 
+  // ...
 }
 ```
 
-View models are always dependent on data repositories, 
-which are provided as arguments to the view model's constructor. 
-view models and repositories have a many-to-many relationship, 
+View models are always dependent on data repositories,
+which are provided as arguments to the view model's constructor.
+view models and repositories have a many-to-many relationship,
 and most view models will depend on multiple repositories.
 
 As in the earlier `HomeViewModel` example declaration,
-repositories should be private members on the view model, 
-otherwise views would have direct access to 
+repositories should be private members on the view model,
+otherwise views would have direct access to
 the data layer of the application.
 
 ### UI state
@@ -75,20 +77,20 @@ data that is required to fully render a view.
 
 ![A screenshot of the booking screen of the compass app.](/assets/images/docs/app-architecture/case-study/mvvm-case-study-ui-state-highlighted.png)
 
-The view model exposes state as public members. 
+The view model exposes state as public members.
 On the view model in the following code example,
-the exposed data is a `User` object, 
-as well as the user's saved itineraries which 
+the exposed data is a `User` object,
+as well as the user's saved itineraries which
 are exposed as an object of type `List<TripSummary>`.
 
 ```dart title=home_viewmodel.dart
 class HomeViewModel {
   HomeViewModel({
-   required BookingRepository bookingRepository, 
+   required BookingRepository bookingRepository,
    required UserRepository userRepository,
   }) : _bookingRepository = bookingRepository,
       _userRepository = userRepository;
-  
+ 
   final BookingRepository _bookingRepository;
   final UserRepository _userRepository;
 
@@ -96,24 +98,24 @@ class HomeViewModel {
   User? get user => _user;
 
   List<BookingSummary> _bookings = [];
-  
-  /// Items in an [UnmodifiableListView] can't be directly modified, 
+ 
+  /// Items in an [UnmodifiableListView] can't be directly modified,
   /// but changes in the source list can be modified. Since _bookings
   /// is private and bookings is not, the view has no way to modify the
   /// list directly.
   UnmodifiableListView<BookingSummary> get bookings => UnmodifiableListView(_bookings);
 
-  // ... 
+  // ...
 }
 ```
 
 As mentioned, the UI state should be immutable.
 This is a crucial part of bug-free software.
 
-The compass app uses the [`package:freezed`][] to 
-enforce immutability on data classes. For example, 
-the following code shows the `User` class definition. 
-`freezed` provides deep immutability, 
+The compass app uses the [`package:freezed`][] to
+enforce immutability on data classes. For example,
+the following code shows the `User` class definition.
+`freezed` provides deep immutability,
 and generates the implementation for useful methods like
 `copyWith` and `toJson`.
 
@@ -133,27 +135,27 @@ class User with _$User {
 ```
 
 :::note
-In the view model example, 
-two objects are needed to render the view. 
-As the UI state for any given model grows in complexity, 
-a view model might have many more pieces of data from 
-many more repositories exposed to the view. 
-In some cases, 
-you might want to create objects that specifically represent the UI state. 
+In the view model example,
+two objects are needed to render the view.
+As the UI state for any given model grows in complexity,
+a view model might have many more pieces of data from
+many more repositories exposed to the view.
+In some cases,
+you might want to create objects that specifically represent the UI state.
 For example, you could create a class named `HomeUiState`.
 :::
 
 ### Updating UI state
 
-In addition to storing state, 
-view models need to tell Flutter to re-render views when 
-the data layer provides a new state. 
+In addition to storing state,
+view models need to tell Flutter to re-render views when
+the data layer provides a new state.
 In the Compass app, view models extend [`ChangeNotifier`][] to achieve this.
 
 ```dart title=home_viewmodel.dart
 class HomeViewModel [!extends ChangeNotifier!] {
   HomeViewModel({
-   required BookingRepository bookingRepository, 
+   required BookingRepository bookingRepository,
    required UserRepository userRepository,
   }) : _bookingRepository = bookingRepository,
       _userRepository = userRepository;
@@ -166,12 +168,12 @@ class HomeViewModel [!extends ChangeNotifier!] {
   List<BookingSummary> _bookings = [];
   List<BookingSummary> get bookings => _bookings;
 
-  // ... 
+  // ...
 }
 ```
 
-`HomeViewModel.user` is a public member that the view depends on. 
-When new data flows from the data layer and 
+`HomeViewModel.user` is a public member that the view depends on.
+When new data flows from the data layer and
 new state needs to be emitted, [`notifyListeners`][] is called.
 
 <figure>
@@ -190,9 +192,11 @@ propagates up to the UI layer and triggers a re-build of your Flutter widgets.
 4. The view (widget) re-renders.
 
 For example, when the user navigates to the Home screen and the view mo is
-created, the `_load` method is called. Until this method completes, the UI state
-is empty, the view displays a loading indicator. When the `_load` method
-completes, if it's successful, there's new data in the view model, and it must
+created, the `_load` method is called.
+Until this method completes, the UI state is empty,
+the view displays a loading indicator.
+When the `_load` method completes, if it's successful,
+there's new data in the view model, and it must
 notify the view that new data is available.
 
 ```dart title=home_viewmodel.dart highlightLines=19
@@ -221,36 +225,36 @@ class HomeViewModel extends ChangeNotifier {
 ```
 
 :::note
-`ChangeNotifier` and [`ListenableBuilder`][] (discussed later on this page) are 
-part of the Flutter SDK, 
-and provide a good solution for updating the UI when state changes. 
-You can also use a robust third-party state management solution, 
-such as [package:riverpod][], [package:flutter_bloc][], or [package:signals][]. 
-These libraries offer different tools for handling UI updates. 
-Read more about using `ChangeNotifier` in 
+`ChangeNotifier` and [`ListenableBuilder`][] (discussed later on this page) are
+part of the Flutter SDK,
+and provide a good solution for updating the UI when state changes.
+You can also use a robust third-party state management solution,
+such as [package:riverpod][], [package:flutter_bloc][], or [package:signals][].
+These libraries offer different tools for handling UI updates.
+Read more about using `ChangeNotifier` in
 our [state-management documentation][].
 :::
 
 ## Define a view
 
-A view is a widget within your app. 
-Often, a view represents one screen in your app that 
+A view is a widget within your app.
+Often, a view represents one screen in your app that
 has its own route and includes a [`Scaffold`][] at the top of the
-widget subtree, such as the `HomeScreen`, but this isn't always the case. 
+widget subtree, such as the `HomeScreen`, but this isn't always the case.
 
 Sometimes a view is a single UI element that
-encapsulates functionality that needs to be re-used throughout the app. 
-For example, the Compass app has a view called `LogoutButton`, 
-which can be dropped anywhere in the widget tree that a user might 
+encapsulates functionality that needs to be re-used throughout the app.
+For example, the Compass app has a view called `LogoutButton`,
+which can be dropped anywhere in the widget tree that a user might
 expect to find a logout button.
-The `LogoutButton` view has its own view model called `LogoutViewModel`. 
+The `LogoutButton` view has its own view model called `LogoutViewModel`.
 And on larger screens, there might be multiple views on screen that
 would take up the full screen on mobile.
 
 :::note
-"View" is an abstract term, and one view doesn't equal one widget. 
-Widgets are composable, and several can be combined to create one view. 
-Therefore, view models don't have a 1-to-1 relationship with widgets, 
+"View" is an abstract term, and one view doesn't equal one widget.
+Widgets are composable, and several can be combined to create one view.
+Therefore, view models don't have a 1-to-1 relationship with widgets,
 but rather a 1-to-1 relation with a *collection* of widgets.
 :::
 
@@ -263,7 +267,7 @@ The widgets within a view have three responsibilities:
 ![A diagram showing a view's relationship to a view model.](/assets/images/docs/app-architecture/guide/feature-architecture-simplified-View-highlighted.png)
 
 
-Continuing the Home feature example, 
+Continuing the Home feature example,
 the following code shows the definition of the `HomeScreen` view.
 
 ```dart title=home_screen.dart
@@ -281,14 +285,14 @@ class HomeScreen extends StatelessWidget {
 }
 ```
 
-Most of the time, a view's only inputs should be a `key`, 
-which all Flutter widgets take as an optional argument, 
+Most of the time, a view's only inputs should be a `key`,
+which all Flutter widgets take as an optional argument,
 and the view's corresponding view model.
 
 ### Display UI data in a view
 
-A view depends on a view model for its state. In the Compass app, 
-the view model is passed in as an argument in the view's constructor. 
+A view depends on a view model for its state. In the Compass app,
+the view model is passed in as an argument in the view's constructor.
 The following example code snippet is from the `HomeScreen` widget.
 
 ```dart title=home_screen.dart
@@ -304,8 +308,8 @@ class HomeScreen extends StatelessWidget {
 }
 ```
 
-Within the widget, you can access the passed-in bookings from the `viewModel`. 
-In the following code, 
+Within the widget, you can access the passed-in bookings from the `viewModel`.
+In the following code,
 the `booking` property is being provided to a sub-widget.
 
 ```dart title=home_screen.dart
@@ -339,15 +343,14 @@ the `booking` property is being provided to a sub-widget.
       ),
 ```
 
-### Update the UI 
+### Update the UI
 
 The `HomeScreen` widget listens for updates from the view model with
-the [`ListenableBuilder`][] widget. 
-Everything in the widget subtree under the 
-`ListenableBuilder` widget re-renders when the
-provided [`Listenable`][] changes. In this case, 
-the provided `Listenable` is the view model. 
-Recall that the view model is of type [`ChangeNotifier`][] 
+the [`ListenableBuilder`][] widget.
+Everything in the widget subtree under the `ListenableBuilder` widget
+re-renders when the provided [`Listenable`][] changes.
+In this case, the provided `Listenable` is the view model.
+Recall that the view model is of type [`ChangeNotifier`][]
 which is a subtype of the `Listenable` type.
 
 ```dart title=home_screen.dart
@@ -389,9 +392,9 @@ Widget build(BuildContext context) {
 
 ### Handling user events
 
-Finally, a view needs to listen for *events* from users, 
-so the view model can handle those events. 
-This is achieved by exposing a callback method on the view model class which 
+Finally, a view needs to listen for *events* from users,
+so the view model can handle those events.
+This is achieved by exposing a callback method on the view model class which
 encapsulates all the logic.
 
 ![A diagram showing a view's relationship to a view model.](/assets/images/docs/app-architecture/guide/feature-architecture-simplified-UI-highlighted.png)
@@ -421,47 +424,45 @@ SliverList.builder(
 
     </div>
     <div class="col-md-4">
-<img src='/assets/images/docs/app-architecture/case-study/dismissible.gif'
-style="border-radius:8px; border: black 2px solid"
-alt="A clip that demonstrates the 'dismissible' functionality of the Compass app.">
+<img src='/assets/images/docs/app-architecture/case-study/dismissible.gif' style="border-radius:8px; border: black 2px solid" alt="A clip that demonstrates the 'dismissible' functionality of the Compass app.">
 
     </div>
 </div>
 
-On the `HomeScreen`, a user's saved trip is represented by 
-the `_Booking` widget. When a `_Booking` is dismissed, 
+On the `HomeScreen`, a user's saved trip is represented by
+the `_Booking` widget. When a `_Booking` is dismissed,
 the `viewModel.deleteBooking` method is executed.
 
-A saved booking is application state that persists beyond 
-a session or the lifetime of a view, 
+A saved booking is application state that persists beyond
+a session or the lifetime of a view,
 and only repositories should modify such application state.
-So, the `HomeViewModel.deleteBooking` method turns around and 
-calls a method exposed by a repository in the data layer, 
+So, the `HomeViewModel.deleteBooking` method turns around and
+calls a method exposed by a repository in the data layer,
 as shown in the following code snippet.
 
 ```dart title=home_viewmodel.dart highlightLines=3
 Future<Result<void>> _deleteBooking(int id) async {
-    try {
-      final resultDelete = await _bookingRepository.delete(id);
-      switch (resultDelete) {
-        case Ok<void>():
-          _log.fine('Deleted booking $id');
-        case Error<void>():
-          _log.warning('Failed to delete booking $id', resultDelete.error);
-          return resultDelete;
-      }
-      
-      // Some code was omitted for brevity.
-      // final  resultLoadBookings = ...;
-
-      return resultLoadBookings;
-    } finally {
-      notifyListeners();
+  try {
+    final resultDelete = await _bookingRepository.delete(id);
+    switch (resultDelete) {
+      case Ok<void>():
+        _log.fine('Deleted booking $id');
+      case Error<void>():
+        _log.warning('Failed to delete booking $id', resultDelete.error);
+        return resultDelete;
     }
+
+    // Some code was omitted for brevity.
+    // final  resultLoadBookings = ...;
+
+    return resultLoadBookings;
+  } finally {
+    notifyListeners();
   }
+}
 ```
 
-In the Compass app, 
+In the Compass app,
 these methods that handle user events are called **commands**.
 
 ### Command objects
@@ -471,13 +472,13 @@ flows back to the data layer. In this app specifically,
 a `Command` is also a type that helps update the UI safely,
 regardless of the response time or contents.
 
-The `Command` class wraps a method and 
-helps handle the different states of that method, 
-such as `running`, `complete`, and `error`. 
-These states make it easy to display different UI, 
+The `Command` class wraps a method and
+helps handle the different states of that method,
+such as `running`, `complete`, and `error`.
+These states make it easy to display different UI,
 like loading indicators when `Command.running` is true.
 
-The following is code from the `Command` class. 
+The following is code from the `Command` class.
 Some code has been omitted for demo purposes.
 
 ```dart title=command.dart
@@ -511,22 +512,22 @@ abstract class Command<T> extends ChangeNotifier {
 }
 ```
 
-The `Command` class itself extends `ChangeNotifier`, 
-and within the method `Command.execute`, 
-`notifyListeners` is called multiple times. 
-This allows the view to handle different states with very little logic, 
+The `Command` class itself extends `ChangeNotifier`,
+and within the method `Command.execute`,
+`notifyListeners` is called multiple times.
+This allows the view to handle different states with very little logic,
 which you'll see an example of later on this page.
 
-You may have also noticed that `Command` is an abstract class. 
-It's implemented by concrete classes such as `Command0` `Command1`. 
-The integer in the class name refers to 
-the number of arguments that the underlying method expects. 
-You can see examples of these implementation classes in 
+You may have also noticed that `Command` is an abstract class.
+It's implemented by concrete classes such as `Command0` `Command1`.
+The integer in the class name refers to
+the number of arguments that the underlying method expects.
+You can see examples of these implementation classes in
 the Compass app's [`utils` directory][].
 
 :::tip Package recommendation
-Instead of writing your own `Command` class, 
-consider using the [`flutter_command`][] package, 
+Instead of writing your own `Command` class,
+consider using the [`flutter_command`][] package,
 which is a robust library that implements classes like these.
 :::
 
@@ -538,7 +539,7 @@ In view model classes, commands are created in the constructor.
 ```dart title=home_viewmodel.dart highlightLines=8-9,15-16,24-30
 class HomeViewModel extends ChangeNotifier {
   HomeViewModel({
-   required BookingRepository bookingRepository, 
+   required BookingRepository bookingRepository,
    required UserRepository userRepository,
   }) : _bookingRepository = bookingRepository,
       _userRepository = userRepository {
@@ -567,14 +568,14 @@ class HomeViewModel extends ChangeNotifier {
     // ...
   }
 
-  // ... 
+  // ...
 }
 ```
 
-The `Command.execute` method is asynchronous, 
-so it can't guarantee that the data will be available when 
-the view wants to render. This gets at *why* the Compass app uses `Commands`. 
-In the view's `Widget.build` method, 
+The `Command.execute` method is asynchronous,
+so it can't guarantee that the data will be available when
+the view wants to render. This gets at *why* the Compass app uses `Commands`.
+In the view's `Widget.build` method,
 the command is used to conditionally render different widgets.
 
 ```dart title=home_viewmodel.dart
@@ -603,23 +604,24 @@ child: ListenableBuilder(
 // ...
 ```
 
-Because the `load` command is a property that exists on 
-the view model rather than something ephemeral, 
-it doesn't matter when the `load` method is called or when it resolves. 
-For example, if the load command resolves before 
-the `HomeScreen` widget was even created, 
-it isn't a problem because the `Command` object still exists, 
+Because the `load` command is a property that exists on
+the view model rather than something ephemeral,
+it doesn't matter when the `load` method is called or when it resolves.
+For example, if the load command resolves before
+the `HomeScreen` widget was even created,
+it isn't a problem because the `Command` object still exists,
 and exposes the correct state.
 
-This pattern standardizes how common UI problems are solved in the app, 
-making your codebase less error-prone and more scalable, 
-but it's not a pattern that every app will want to implement. 
-Whether you want to use it is highly dependent on 
-other architectural choices you make. 
-Many libraries that help you manage state have 
-their own tools to solve these problems. For example, 
-if you were to use [streams][] and [`StreamBuilders`][] in your app,
-the [`AsyncSnapshot`][] classes provided by Flutter have 
+This pattern standardizes how common UI problems are solved in the app,
+making your codebase less error-prone and more scalable,
+but it's not a pattern that every app will want to implement.
+Whether you want to use it is highly dependent on
+other architectural choices you make.
+Many libraries that help you manage state have
+their own tools to solve these problems.
+For example, if you were to use
+[streams][] and [`StreamBuilders`][] in your app,
+the [`AsyncSnapshot`][] classes provided by Flutter have
 this functionality built in.
 
 :::note Real world example
