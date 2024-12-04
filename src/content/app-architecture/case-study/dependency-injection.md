@@ -3,7 +3,7 @@ title: Communicating between layers
 short-title: Dependency injection
 description: >-
   How to implement dependency injection to communicate between MVVM layers.
-prev: 
+prev:
   title: Data layer
   path: /app-architecture/case-study/data-layer
 next:
@@ -12,9 +12,9 @@ next:
 ---
 
 Along with defining clear responsibilities for each component of the architecture,
-it's important to consider how the components communicate. 
-This refers to both the rules that dictate communication, 
-and the technical implementation of how components communicate. 
+it's important to consider how the components communicate.
+This refers to both the rules that dictate communication,
+and the technical implementation of how components communicate.
 An app's architecture should answer the following questions:
 
 * Which components are allowed to communicate with which other components
@@ -38,14 +38,14 @@ Using this diagram as a guide, the rules of engagement are as follows:
 ## Dependency injection
 
 This guide has shown how these different components communicate
-with each other by using inputs and outputs. 
-In every case, communication between two layers is facilitated by passing 
-a component into the constructor methods (of the components that 
+with each other by using inputs and outputs.
+In every case, communication between two layers is facilitated by passing
+a component into the constructor methods (of the components that
 consume its data), such as a `Service` into a `Repository.`
 
 ```dart
 class MyRepository {
-  MyRepository({required MyService myService}) 
+  MyRepository({required MyService myService})
           : _myService = myService;
 
   late final MyService _myService;
@@ -54,12 +54,12 @@ class MyRepository {
 
 One thing that's missing, however, is object creation. Where,
 in an application, is the `MyService` instance created so that it can be
-passed into `MyRepository`? 
-This answer to this question involves a 
+passed into `MyRepository`?
+This answer to this question involves a
 pattern known as [dependency injection][].
 
 In the Compass app, *dependency injection* is handled using
-[`package:provider`][]. Based on their experience building Flutter apps, 
+[`package:provider`][]. Based on their experience building Flutter apps,
 teams at Google recommend using `package:provider` to implement
 dependency injection.
 
@@ -80,12 +80,12 @@ runApp(
           sharedPreferencesService: context.read(),
         ) as AuthRepository,
       ),
-      Provider(create: (context) => 
+      Provider(create: (context) =>
         DestinationRepositoryRemote(
           apiClient: context.read(),
         ) as DestinationRepository,
       ),
-      Provider(create: (context) => 
+      Provider(create: (context) =>
         ContinentRepositoryRemote(
           apiClient: context.read(),
         ) as ContinentRepository,
@@ -97,15 +97,14 @@ runApp(
 );
 ```
 
-Services are exposed only so they can immediately be 
-injected into Repositories via the `BuildContext.read` method from `provider`, 
+Services are exposed only so they can immediately be
+injected into repositories via the `BuildContext.read` method from `provider`,
 as shown in the preceding snippet.
 Repositories are then exposed so that they can be
 injected into view models as needed.
 
-Slightly lower in the widget tree,
-view models that correspond to a full screen are created in 
-the [`package:go_router`][] configuration, 
+Slightly lower in the widget tree, view models that correspond to
+a full screen are created in the [`package:go_router`][] configuration,
 where provider is again used to inject the necessary repositories.
 
 ```dart title=router.dart
