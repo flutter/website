@@ -91,7 +91,9 @@
 
     {% include header.html %}
 
+    {% if site.show_banner != false and show_banner != false -%}
     {% render banner.html %}
+    {% endif -%}
 
     {{ content }}
 
