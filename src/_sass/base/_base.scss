@@ -191,10 +191,6 @@ picture {
   max-height: 60vh;
   max-width: 100%;
 
-  &.site-figure {
-    max-height: none;
-  }
-
   @include bootstrap.media-breakpoint-up(md) {
     float: right;
     margin: 0 0 bootstrap.bs-spacer(10) bootstrap.bs-spacer(10);
@@ -203,24 +199,17 @@ picture {
   }
 }
 
-.site-figure {
+main figure {
   display: flex;
   justify-content: center;
+
+  &.site-image-right {
+    max-height: none;
+  }
 
   .site-figure-container {
     flex: 0 1 auto;
     max-width: 100%;
-
-    img { width: 100%; }
-
-    figcaption {
-      margin-top: bootstrap.bs-spacer(4);
-      text-align: center;
-    }
-  }
-  .site-figure-container-lg {
-    flex: 0 1 auto;
-    width: 100%;
 
     img { width: 100%; }
 
@@ -260,14 +249,14 @@ picture {
 }
 
 .btn.btn-cta {
-    font-size: 18px;
-    font-weight: 500;
-    padding: bootstrap.bs-spacer(4) bootstrap.bs-spacer(6);
+  font-size: 18px;
+  font-weight: 500;
+  padding: bootstrap.bs-spacer(4) bootstrap.bs-spacer(6);
 
-    @include bootstrap.media-breakpoint-up(sm) {
-      min-width: 250px;
-    }
+  @include bootstrap.media-breakpoint-up(sm) {
+    min-width: 250px;
   }
+}
 
 .embedded-video-wrapper {
   width: 100%;
@@ -281,8 +270,17 @@ picture {
   }
 }
 
-.table-wrapper {
+.table-wrapper, .scrollable-table {
   overflow-x: auto;
+}
+
+.scrollable-table {
+  overflow-y: scroll;
+  max-height: 20rem;
+
+  table {
+    width: 100%;
+  }
 }
 
 // If table head has empty children, just hide it
@@ -438,7 +436,7 @@ aside {
   }
 }
 
-#skip {
+#skip-to-main {
   top: 10px;
   left: 10px;
   position: absolute;
@@ -448,11 +446,11 @@ aside {
   color: $site-color-white;
   border-radius: 0.5rem;
   transform: translateY(-5rem);
-}
 
-#skip:focus {
-  opacity: 1;
-  transform: translateY(0);
+  &:focus {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 #site-content-title {
