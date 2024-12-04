@@ -20,13 +20,14 @@ function _visitPermalinks(results, navTree, path) {
   navTree.forEach((entry, i) => {
     const permalink = entry['permalink'];
     const newPath = [...path, i + 1];
+    const children = entry['children'];
+    const hasChildren = Array.isArray(children);
 
     if (typeof permalink === 'string' || permalink instanceof String) {
-      _addLink(results, permalink, newPath, entry['match-page-url-exactly'] === true);
+      _addLink(results, permalink, newPath, hasChildren);
     }
 
-    const children = entry['children'];
-    if (Array.isArray(children)) {
+    if (hasChildren) {
       _visitPermalinks(results, children, newPath);
     }
   });
@@ -37,10 +38,10 @@ function _visitPermalinks(results, navTree, path) {
  * @param results {object}
  * @param permalink {string}
  * @param path {number[]}
- * @param matchPathExactly {boolean}
+ * @param hasChildren {boolean}
  * @private
  */
-function _addLink(results, permalink, path, matchPathExactly = false) {
+function _addLink(results, permalink, path, hasChildren) {
   // Skip external links.
   if (permalink.startsWith('http')) {
     return;
@@ -55,7 +56,7 @@ function _addLink(results, permalink, path, matchPathExactly = false) {
   const parts = permalink.split('/');
 
   // Add active nav data for the specified permalink.
-  _addPart(results, path, parts, 1, matchPathExactly);
+  _addPart(results, path, parts, 1, hasChildren);
 }
 
 /**
@@ -64,10 +65,10 @@ function _addLink(results, permalink, path, matchPathExactly = false) {
  * @param path {number[]}
  * @param parts {string[]}
  * @param index {number}
- * @param matchPathExactly {boolean}
+ * @param hasChildren {boolean}
  * @private
  */
-function _addPart(result, path, parts, index, matchPathExactly = false) {
+function _addPart(result, path, parts, index, hasChildren = false) {
   const isLast = index === parts.length - 1;
   let current = result[parts[index]];
 
@@ -81,13 +82,17 @@ function _addPart(result, path, parts, index, matchPathExactly = false) {
   // store the active nav data.
   if (isLast) {
     const active = current['active'];
-    // Only override active nav data if
-    // it doesn't already exist for this part.
-    if (!active || matchPathExactly) {
+    // Override active nav data if
+    // it doesn't already exist for this part,
+    // or the current active data was from an entry with children.
+    if (!active) {
       current['active'] = path;
-      if (matchPathExactly) {
-        current['allow-children'] = false;
+      if (hasChildren) {
+        current['has-children'] = true;
       }
+    } else if (!hasChildren && current['has-children'] === true) {
+      current['active'] = path;
+      current['has-children'] = false;
     }
   } else {
     if (!current['paths']) {
@@ -95,6 +100,6 @@ function _addPart(result, path, parts, index, matchPathExactly = false) {
     }
 
     // Continue to the next part.
-    _addPart(current['paths'], path, parts, index + 1, matchPathExactly);
+    _addPart(current['paths'], path, parts, index + 1, hasChildren);
   }
 }
