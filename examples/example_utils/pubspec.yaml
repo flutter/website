@@ -3,7 +3,7 @@ description: Utils for examples and code snippets on docs.flutter.dev.
 publish_to: none
 
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.6.0-0
 
 dependencies:
   flutter_lints: ^5.0.0

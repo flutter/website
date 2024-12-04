@@ -2,7 +2,7 @@ name: add_language
 description: An i18n app example that adds a supported language
 
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.6.0-0
 
 dependencies:
   flutter:
