@@ -1,0 +1,20 @@
+- title: "Persistent storage architecture: Key-value data"
+  description: Create a service to store key-value data.
+  tags: "Data | Something | Something"
+  path: /cookbook/architecture/key-value-data
+  img: /assets/images/docs/brand-svg/chromeos.svg
+- title: "Offline-first support"
+  description: Create an app with offline-first support.
+  tags: "Data | Something | Something"
+  path: /cookbook/architecture/offline-first
+  img: /assets/images/docs/brand-svg/chromeos.svg
+- title: Optimistic State
+  description: Improve the perception of responsiveness of views with a state.
+  tags: "Data | Something | Something"
+  path: /cookbook/architecture/optimistic-state
+  img: /assets/images/docs/brand-svg/chromeos.svg
+- title: "Persistent storage architecture: SQL"
+  tags: "Data | Something | Something"
+  description: Create a service to store complex data with SQL
+  path: /cookbook/architecture/sql
+  img: /assets/images/docs/brand-svg/chromeos.svg

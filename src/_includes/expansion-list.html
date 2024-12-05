@@ -1,0 +1,38 @@
+<div class="expansion-panel-list">
+    {% for item in list -%}
+    {% assign id = base_id | append: '-expansion-' | append: forloop.index -%}
+    {% if item.expanded -%}
+        {% assign expanded = 'true' -%}
+        {% assign show = 'show' -%}
+        {% assign rotated = 'rotated' -%}
+    {% else -%}
+        {% assign class = 'collapsed' -%}
+        {% assign expanded = 'false' -%}
+        {% assign show = '' -%}
+        {% assign rotated = '' -%}
+    {% endif -%}
+    <div class="expansion-panel">
+        <a class="{{class}} collapsible"
+           data-toggle="collapse"
+           href="#{{id}}"
+           role="button"
+           aria-expanded="{{expanded}}"
+           aria-controls="{{id}}">
+            <div class="expansion-panel-title">
+                <div class="expansion-panel-title-leading">
+                    <img src="{{item.img}}" alt="Alt text" />
+                </div>
+                <div class="expansion-panel-title-content">
+                    <h3 class="content-title">{{item.title}}</h3>
+                    <p class="content-description">{{item.description}}</p>
+                    <p class="content-tags">{{item.tags}}</p>
+                </div>
+            </div>
+        </a>
+        <div class="expansion-panel-body collapse {{show}}" id="{{id}}">
+            <p>{{item.description}} {{item.description}} {{item.description}} {{item.description}} {{item.description}}</p>
+            <a href="{{item.path}}">Read article...</a>
+        </div>
+    </div>
+    {% endfor -%}
+</div>
