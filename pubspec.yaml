@@ -7,3 +7,5 @@ environment:
 dev_dependencies:
   flutter_site:
     path: tool/flutter_site
+dependencies:
+  go_router: ^14.6.2
