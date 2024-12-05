@@ -11,7 +11,7 @@ import 'result.dart';
 typedef CommandAction0<T> = Future<Result<T>> Function();
 typedef CommandAction1<T, A> = Future<Result<T>> Function(A);
 
-/// Facilitates interaction with a ViewModel.
+/// Facilitates interaction with a view model.
 ///
 /// Encapsulates an action,
 /// exposes its running and error states,
@@ -29,27 +29,30 @@ abstract class Command<T> extends ChangeNotifier {
 
   bool _running = false;
 
-  /// True when the action is running.
+  /// Whether the action is running.
   bool get running => _running;
 
   Result<T>? _result;
 
-  /// true if action completed with error
+  /// Whether the action completed with an error.
   bool get error => _result is Error;
 
-  /// true if action completed successfully
+  /// Whether the action completed successfully.
   bool get completed => _result is Ok;
 
-  /// Get last action result
+  /// The result of the most recent action.
+  /// 
+  /// Returns `null` if the action is running or completed with an error.
   Result? get result => _result;
 
-  /// Clear last action result
+  /// Clears the most recent action's result.
   void clearResult() {
     _result = null;
     notifyListeners();
   }
 
-  /// Internal execute implementation
+  /// Execute the provided [action], notifying listeners and
+  /// setting the running and result states as necessary.
   Future<void> _execute(CommandAction0<T> action) async {
     // Ensure the action can't launch multiple times.
     // e.g. avoid multiple taps on button
@@ -70,8 +73,7 @@ abstract class Command<T> extends ChangeNotifier {
   }
 }
 
-/// [Command] without arguments.
-/// Takes a [CommandAction0] as action.
+/// A [Command] that accepts no arguments.
 class Command0<T> extends Command<T> {
   Command0(this._action);
 
@@ -83,14 +85,13 @@ class Command0<T> extends Command<T> {
   }
 }
 
-/// [Command] with one argument.
-/// Takes a [CommandAction1] as action.
+/// A [Command] that accepts one argument.
 class Command1<T, A> extends Command<T> {
   Command1(this._action);
 
   final CommandAction1<T, A> _action;
 
-  /// Executes the action with the argument.
+  /// Executes the action with the specified [argument].
   Future<void> execute(A argument) async {
     await _execute(() => _action(argument));
   }
