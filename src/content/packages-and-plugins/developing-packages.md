@@ -789,7 +789,7 @@ they are generated from the header file
 Reference the [ffigen docs][] for information
 on how to install this package.
 
-Regenerate the bindings by running the following:
+To regenerate the bindings, run the following command:
 
 ```console
 $  dart run ffigen --config ffigen.yaml
