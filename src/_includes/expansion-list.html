@@ -4,12 +4,10 @@
     {% if item.expanded -%}
         {% assign expanded = 'true' -%}
         {% assign show = 'show' -%}
-        {% assign rotated = 'rotated' -%}
     {% else -%}
         {% assign class = 'collapsed' -%}
         {% assign expanded = 'false' -%}
         {% assign show = '' -%}
-        {% assign rotated = '' -%}
     {% endif -%}
     <div class="expansion-panel">
         <a class="{{class}} collapsible"
