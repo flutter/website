@@ -528,7 +528,13 @@ import 'package:flutter/foundation.dart';
 
 import 'result.dart';
 
+/// Defines a command action that returns a [Result] of type [T].
+/// Used by [Command0] for actions without arguments.
 typedef CommandAction0<T> = Future<Result<T>> Function();
+
+/// Defines a command action that returns a [Result] of type [T].
+/// Takes an argument of type [A].
+/// Used by [Command1] for actions with one argument.
 typedef CommandAction1<T, A> = Future<Result<T>> Function(A);
 
 /// Facilitates interaction with a view model.
@@ -540,13 +546,11 @@ typedef CommandAction1<T, A> = Future<Result<T>> Function(A);
 /// Use [Command0] for actions without arguments.
 /// Use [Command1] for actions with one argument.
 ///
-/// Actions must return a [Result].
+/// Actions must return a [Result] of type [T].
 ///
 /// Consume the action result by listening to changes,
 /// then call to [clearResult] when the state is consumed.
 abstract class Command<T> extends ChangeNotifier {
-  Command();
-
   bool _running = false;
 
   /// Whether the action is running.
@@ -594,7 +598,8 @@ abstract class Command<T> extends ChangeNotifier {
 }
 
 /// A [Command] that accepts no arguments.
-class Command0<T> extends Command<T> {
+final class Command0<T> extends Command<T> {
+  /// Creates a [Command0] with the provided [CommandAction0].
   Command0(this._action);
 
   final CommandAction0<T> _action;
@@ -606,7 +611,8 @@ class Command0<T> extends Command<T> {
 }
 
 /// A [Command] that accepts one argument.
-class Command1<T, A> extends Command<T> {
+final class Command1<T, A> extends Command<T> {
+  /// Creates a [Command1] with the provided [CommandAction1].
   Command1(this._action);
 
   final CommandAction1<T, A> _action;
