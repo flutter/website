@@ -1,6 +1,9 @@
 ---
 title: Navigation and routing
 description: Overview of Flutter's navigation and routing features
+js:
+  - defer: true
+    url: /assets/js/inject_dartpad.js
 ---
 
 Flutter provides a complete system for navigating between screens and handling
@@ -20,17 +23,68 @@ animations for the target platform. To navigate to a new screen, access the
 `Navigator` through the route's `BuildContext` and call imperative methods such
 as `push()` `or pop()`:
 
-```dart
-onPressed: () {
-  Navigator.of(context).push(
-    MaterialPageRoute(
-      builder: (context) => const SongScreen(song: song),
-    ),
+<?code-excerpt "lib/main.dart"?>
+```dartpad title="Flutter navigation hands-on example in DartPad" run="true"
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      title: 'Navigation Basics',
+      home: FirstScreen(),
+    )
   );
-},
-child: Text(song.name),
+}
+
+class FirstScreen extends StatelessWidget {
+  const FirstScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('First Screen'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: const Text('Open second screen'),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const SecondScreen()),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class SecondScreen extends StatelessWidget {
+  const SecondScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Second Screen'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: const Text('Pop current screen'),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
+    );
+  }
+}
 ```
 
+<noscript>
+  <img src="/assets/images/docs/cookbook/navigation-basics.gif" alt="Navigation Basics Demo" class="site-mobile-screenshot" />
+</noscript>
 
 Because `Navigator` keeps a stack of `Route` objects (representing the history
 stack), The `push()` method also takes a `Route` object. The `MaterialPageRoute`
@@ -42,39 +96,93 @@ documentation][`Navigator`].
 ## Using named routes
 
 :::note
-We don't recommend using named routes for most applications.
-For more information, see the Limitations section below.
+Named routes are not recommended for most applications.
+For more information, see [Limitations](#limitations).
 :::
 
-Applications with simple navigation and deep linking requirements can use the
-`Navigator` for navigation and the [`MaterialApp.routes`][] parameter for deep
-links:
+If an application requires deep links, _named routes_ are an option. To add
+named routes (`routes`), use the [`MaterialApp.routes`][] parameter with the
+`Navigator` widget as follows:
 
-```dart
-@override
-Widget build(BuildContext context) {
-  return MaterialApp(
-    routes: {
-      '/': (context) => HomeScreen(),
-      '/details': (context) => DetailScreen(),
-    },
+<?code-excerpt "lib/main.dart"?>
+```dartpad title="Flutter navigation hands-on example in DartPad" run="true"
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      title: 'Navigation Basics',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const FirstScreen(),
+        '/second': (context) => const SecondScreen(),
+      },
+    )
   );
+}
+
+class FirstScreen extends StatelessWidget {
+  const FirstScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('First Screen'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: const Text('Open second screen'),
+          onPressed: () {
+            Navigator.pushNamed(context, '/second');
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class SecondScreen extends StatelessWidget {
+  const SecondScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Second Screen'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: const Text('Pop current screen'),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
+    );
+  }
 }
 ```
 
-Routes specified here are called _named routes_. For a complete example, follow
-the [Navigate with named routes][] recipe from the Flutter Cookbook.
+<noscript>
+  <img src="/assets/images/docs/cookbook/navigation-basics.gif" alt="Navigation Basics Demo" class="site-mobile-screenshot" />
+</noscript>
 
+For a complete example, follow the [Navigate with named routes][] recipe from
+the Flutter Cookbook.
 
-### Limitations
+#### Limitations
 
-Although named routes can handle deep links, the behavior is always the same and
-can't be customized. When a new deep link is received by the platform, Flutter
-pushes a new `Route` onto the Navigator regardless of where the user currently is.
+For the following reasons, named routes are not recommended in most
+applications:
 
-Flutter also doesn't support the browser forward button for applications using
-named routes. For these reasons, we don't recommend using named routes in most
-applications.
+* Although named routes can handle deep links, the behavior is always the same
+  and can't be customized. When a new deep link is received by the platform,
+  Flutter pushes a new `Route` onto the Navigator regardless of where the user
+  currently is.
+
+* Flutter doesn't support the browser forward button for applications using
+  named routes.
 
 ## Using the Router
 
@@ -89,12 +197,71 @@ To use the Router, switch to the `router` constructor on `MaterialApp` or
 such as [go_router][], typically provide a
 configuration for you. For example:
 
-```dart
-MaterialApp.router(
-  routerConfig: GoRouter(
-    // …
-  )
+<?code-excerpt "lib/main.dart"?>
+```dartpad title="Flutter navigation hands-on example in DartPad" run="true"
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+void main() {
+  runApp(
+    MaterialApp.router(
+      title: 'Navigation Basics',
+      routerConfig: _router,
+    )
+  );
+}
+
+// Declare routing information
+final _router = GoRouter(
+  routes: [
+    GoRoute(
+      path: '/',
+      builder: (context, state) => const FirstScreen(),
+    ),
+    GoRoute(
+      path: '/second',
+      builder: (context, state) => const SecondScreen(),
+    ),
+  ],
 );
+
+class FirstScreen extends StatelessWidget {
+  const FirstScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('First Screen'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: const Text('Open second screen'),
+          onPressed: () => context.go('/second'),
+        ),
+      ),
+    );
+  }
+}
+
+class SecondScreen extends StatelessWidget {
+  const SecondScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Second Screen'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: const Text('Go to first screen'),
+          onPressed: () => context.go('/'),
+        ),
+      ),
+    );
+  }
+}
 ```
 
 Because packages like go_router are _declarative_, they will always display the
