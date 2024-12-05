@@ -5,7 +5,7 @@
 /// Utility class that simplifies handling errors.
 ///
 /// Return a [Result] from a function to indicate success or failure.
-/// 
+///
 /// A [Result] is either an [Ok] with a value of type [T]
 /// or an [Error] with an [Exception].
 ///
