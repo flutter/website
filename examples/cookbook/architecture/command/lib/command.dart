@@ -8,7 +8,13 @@ import 'package:flutter/foundation.dart';
 
 import 'result.dart';
 
+/// Defines a command action that returns a [Result] of type [T].
+/// Used by [Command0] for actions without arguments.
 typedef CommandAction0<T> = Future<Result<T>> Function();
+
+/// Defines a command action that returns a [Result] of type [T].
+/// Takes an argument of type [A].
+/// Used by [Command1] for actions with one arguments.
 typedef CommandAction1<T, A> = Future<Result<T>> Function(A);
 
 /// Facilitates interaction with a view model.
