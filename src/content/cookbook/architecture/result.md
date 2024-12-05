@@ -237,7 +237,7 @@ class ApiClientService {
         final stringData = await response.transform(utf8.decoder).join();
         return Result.ok(UserProfile.fromJson(jsonDecode(stringData)));
       } else {
-        return Result.error(const HttpException('Invalid response'));
+        return const Result.error(HttpException('Invalid response'));
       }
     } on Exception catch (exception) {
       return Result.error(exception);
@@ -397,7 +397,15 @@ like the [result_dart][], [result_type][] or [multiple_result][] packages.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-/// Utility class to wrap result data
+/// Utility class that simplifies handling errors.
+///
+/// Return a [Result] from a function to indicate success or failure.
+///
+/// A [Result] is either an [Ok] with a value of type [T]
+/// or an [Error] with an [Exception].
+///
+/// Use [Result.ok] to create a successful result with a value of type [T].
+/// Use [Result.error] to create an error result with an [Exception].
 ///
 /// Evaluate the result using a switch statement:
 /// ```dart
@@ -413,35 +421,29 @@ like the [result_dart][], [result_type][] or [multiple_result][] packages.
 sealed class Result<T> {
   const Result();
 
-  /// Creates an instance of Result containing a value
-  factory Result.ok(T value) => Ok(value);
+  /// Creates a successful [Result], completed with the specified [value].
+  const factory Result.ok(T value) = Ok._;
 
-  /// Create an instance of Result containing an error
-  factory Result.error(Exception error) => Error(error);
-
-  /// Convenience method to cast to Ok
-  Ok<T> get asOk => this as Ok<T>;
-
-  /// Convenience method to cast to Error
-  Error get asError => this as Error<T>;
+  /// Creates an error [Result], completed with the specified [error].
+  const factory Result.error(Exception error) = Error._;
 }
 
-/// Subclass of Result for values
+/// A successful [Result] with a returned [value].
 final class Ok<T> extends Result<T> {
-  const Ok(this.value);
+  const Ok._(this.value);
 
-  /// Returned value in result
+  /// The returned value of this result.
   final T value;
 
   @override
   String toString() => 'Result<$T>.ok($value)';
 }
 
-/// Subclass of Result for errors
+/// An error [Result] with a resulting [error].
 final class Error<T> extends Result<T> {
-  const Error(this.error);
+  const Error._(this.error);
 
-  /// Returned error in result
+  /// The resulting error of this result.
   final Exception error;
 
   @override

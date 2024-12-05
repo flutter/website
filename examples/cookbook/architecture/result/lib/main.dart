@@ -96,7 +96,7 @@ class ApiClientService {
         final stringData = await response.transform(utf8.decoder).join();
         return Result.ok(UserProfile.fromJson(jsonDecode(stringData)));
       } else {
-        return Result.error(const HttpException('Invalid response'));
+        return const Result.error(HttpException('Invalid response'));
       }
     } on Exception catch (exception) {
       return Result.error(exception);
