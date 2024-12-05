@@ -168,7 +168,6 @@
   children:
     - title: Introduction
       permalink: /ui/layout
-      match-page-url-exactly: true
     - title: Build a layout
       permalink: /ui/layout/tutorial
     - title: Lists & grids
@@ -191,7 +190,6 @@
       children:
         - title: Overview
           permalink: /ui/layout/scrolling
-          match-page-url-exactly: true
         - title: Use slivers to achieve fancy scrolling
           permalink: /ui/layout/scrolling/slivers
         - title: Place a floating app bar above a list
@@ -203,7 +201,6 @@
   children:
     - title: Overview
       permalink: /ui/adaptive-responsive
-      match-page-url-exactly: true
     - title: General approach
       permalink: /ui/adaptive-responsive/general
     - title: SafeArea & MediaQuery
@@ -251,13 +248,11 @@
   children:
     - title: Add interactivity to your app
       permalink: /ui/interactivity
-      match-page-url-exactly: true
     - title: Gestures
       permalink: /ui/interactivity/gestures
       children:
         - title: Introduction
           permalink: /ui/interactivity/gestures
-          match-page-url-exactly: true
         - title: Handle taps
           permalink: /cookbook/gestures/handling-taps
         - title: Drag an object outside an app
@@ -307,7 +302,6 @@
   children:
     - title: Overview
       permalink: /ui/navigation
-      match-page-url-exactly: true
     - title: Add tabs to your app
       permalink: /cookbook/design/tabs
     - title: Navigate to a new screen and back
@@ -332,7 +326,6 @@
   children:
     - title: Introduction
       permalink: /ui/animations
-      match-page-url-exactly: true
     - title: Tutorial
       permalink: /ui/animations/tutorial
     - title: Implicit animations
@@ -386,7 +379,6 @@
       children:
         - title: Overview
           permalink: /data-and-backend/networking
-          match-page-url-exactly: true
         - title: Fetch data from the internet
           permalink: /cookbook/networking/fetch-data
         - title: Make authenticated requests
@@ -434,6 +426,20 @@
       permalink: /app-architecture/concepts
     - title: Guide to app architecture
       permalink: /app-architecture/guide
+    - title: Architecture case study
+      permalink: /app-architecture/case-study
+      children:
+        - title: Overview
+          permalink: /app-architecture/case-study
+        - title: UI layer
+          permalink: /app-architecture/case-study/ui-layer
+        - title: Data layer
+          permalink: /app-architecture/case-study/data-layer
+        - title: Dependency injection
+          permalink: /app-architecture/case-study/dependency-injection
+        - title: Testing each layer
+          permalink: /app-architecture/case-study/testing
+
     - title: Recommendations
       permalink: /app-architecture/recommendations
     - title: Design patterns
@@ -529,7 +535,7 @@
       permalink: /platform-integration/web
       children:
         - title: Web support in Flutter
-          permalink: /platform-integration/web/
+          permalink: /platform-integration/web
         - title: Add web as build target
           permalink: /platform-integration/web/install-web
         - title: Build a web app
@@ -582,7 +588,6 @@
     - header: Testing
     - title: Overview
       permalink: /testing/overview
-      match-page-url-exactly: true
     - title: Unit testing
       children:
         - title: Introduction
@@ -603,7 +608,6 @@
       children:
         - title: Introduction
           permalink: /cookbook/testing/integration/introduction
-          match-page-url-exactly: true
         - title: Write and run an integration test
           permalink: /testing/integration-tests
         - title: Profile an integration test
@@ -619,13 +623,10 @@
       permalink: /testing/code-debugging
     - title: Use a native language debugger
       permalink: /testing/native-debugging
-    - title: Flutter's build modes
-      permalink: /testing/build-modes
     - title: Common Flutter errors
       permalink: /testing/common-errors
     - title: Handle errors
       permalink: /testing/errors
-      match-page-url-exactly: true
     - title: Report errors to a service
       permalink: /cookbook/maintenance/error-reporting
 
@@ -634,7 +635,6 @@
   children:
     - title: Overview
       permalink: /perf
-      match-page-url-exactly: true
     - title: Impeller
       permalink: /perf/impeller
     - title: Performance best practices
@@ -691,7 +691,6 @@
   children:
     - title: Introduction
       permalink: /add-to-app
-      match-page-url-exactly: true
     - title: Add to an Android app
       permalink: /add-to-app/android
       children:

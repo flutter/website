@@ -1,5 +1,5 @@
 ---
-title: Learn the Fundamentals
+title: Learn the fundamentals
 short-title: Fundamentals
 description: >
   You've gotten a taste of using the Flutter framework;
