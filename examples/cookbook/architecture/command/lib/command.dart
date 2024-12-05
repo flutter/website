@@ -41,7 +41,7 @@ abstract class Command<T> extends ChangeNotifier {
   bool get completed => _result is Ok;
 
   /// The result of the most recent action.
-  /// 
+  ///
   /// Returns `null` if the action is running or completed with an error.
   Result? get result => _result;
 
