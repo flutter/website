@@ -2,11 +2,15 @@
 @use '../vendor/bootstrap';
 
 .expansion-panel-list {
-  padding-left: 0;
   background: $site-color-panel-background;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 12px;
   margin-bottom: 2rem;
+
+  // Add padding on small screens, because images aren't displayed.
+  @include bootstrap.media-breakpoint-down(md) {
+    padding-left: 1rem;
+  }
 
   @mixin collapsible() {
     display: flex;
@@ -32,7 +36,7 @@
 
   .expansion-panel {
     > a {
-      // flex and space-between
+      // Adds display:flex, align:center, and justify:space-between.
       @include collapsible();
     }
 
@@ -48,25 +52,34 @@
     align-items: center;
 
     .expansion-panel-title-leading {
-      display: flex;
-      justify-content: center;
-      align-content: center;
       height: 8rem;
       width: 8rem;
+      margin: .5rem;
+      padding: 1rem;
+
+      // hide on small screens
+      display: none;
+      @include bootstrap.media-breakpoint-up(md) {
+        display: flex;
+        flex: 1 0 auto;
+      }
 
       img {
         margin: auto;
-        z-index: 1;
       }
     }
 
     .expansion-panel-title-content {
-      text-decoration: none;
-
       .content-title {
         color: $site-color-black;
-      }
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: .25rem;
 
+        @include bootstrap.media-breakpoint-up(md) {
+          font-size: 1.25rem;
+        }
+      }
 
       .content-description {
         color: $site-color-body;
@@ -77,7 +90,7 @@
         color: $site-color-body-caption;
         font-size: .8rem;
         line-height: 1;
-        font-style: italic;
+        margin-bottom: .75rem;
       }
     }
   }
