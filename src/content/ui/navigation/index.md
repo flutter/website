@@ -23,63 +23,14 @@ animations for the target platform. To navigate to a new screen, access the
 `Navigator` through the route's `BuildContext` and call imperative methods such
 as `push()` `or pop()`:
 
-<?code-excerpt "lib/main.dart"?>
-```dartpad title="Flutter navigation hands-on example in DartPad" run="true"
-import 'package:flutter/material.dart';
-
-void main() {
-  runApp(
-    MaterialApp(
-      title: 'Navigation Basics',
-      home: FirstScreen(),
-    )
+<?code-excerpt "ui/navigation/lib/navigator.dart (push-route)"?>
+```dart
+child: const Text('Open second screen'),
+onPressed: () {
+  Navigator.of(context).push(
+    MaterialPageRoute(builder: (context) => const SecondScreen()),
   );
-}
-
-class FirstScreen extends StatelessWidget {
-  const FirstScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('First Screen'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          child: const Text('Open second screen'),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const SecondScreen()),
-            );
-          },
-        ),
-      ),
-    );
-  }
-}
-
-class SecondScreen extends StatelessWidget {
-  const SecondScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Second Screen'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          child: const Text('Pop current screen'),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-      ),
-    );
-  }
-}
+},
 ```
 
 <noscript>
@@ -104,7 +55,6 @@ If an application requires deep links, _named routes_ are an option. To add
 named routes (`routes`), use the [`MaterialApp.routes`][] parameter with the
 `Navigator` widget as follows:
 
-<?code-excerpt "lib/main.dart"?>
 ```dartpad title="Flutter navigation hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 
@@ -197,7 +147,6 @@ To use the Router, switch to the `router` constructor on `MaterialApp` or
 such as [go_router][], typically provide a
 configuration for you. For example:
 
-<?code-excerpt "lib/main.dart"?>
 ```dartpad title="Flutter navigation hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
