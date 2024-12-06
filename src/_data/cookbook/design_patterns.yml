@@ -20,7 +20,7 @@
     - SQL
   description: Save complex application data to a user's device with SQL.
   path: /cookbook/architecture/sql
-  img: /assets/images/docs/app-architecture/design-patterns/kv-store-icon.svg
+  img: /assets/images/docs/app-architecture/design-patterns/sql-icon.svg
   body: |
     Most Flutter applications, no matter how small or big they are, 
     might require storing data on the user’s device at some point. 
@@ -36,7 +36,7 @@
     - user experience
     - repository pattern
   path: /cookbook/architecture/offline-first
-  img: /assets/images/docs/app-architecture/design-patterns/kv-store-icon.svg
+  img: /assets/images/docs/app-architecture/design-patterns/offline-first-icon.svg
   body: |
     An offline-first application is an app capable of offering most or all of its 
     functionality while being disconnected from the internet. 
@@ -57,7 +57,7 @@
     - user experience
     - asynchronous dart
   path: /cookbook/architecture/optimistic-state
-  img: /assets/images/docs/app-architecture/design-patterns/kv-store-icon.svg
+  img: /assets/images/docs/app-architecture/design-patterns/optimistic-state-icon.svg
   body: |
     When building user experiences, the perception of performance is sometimes just as 
     important as the actual performance of the code. In general, users don’t like 
