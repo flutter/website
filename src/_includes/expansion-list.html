@@ -30,6 +30,8 @@
         <div class="expansion-panel-body collapse {{show}}" id="{{id}}">
             <p>{{item.description}} {{item.description}} {{item.description}} {{item.description}} {{item.description}}</p>
             <a href="{{item.path}}">Read article...</a>
+            <!-- Required to add "margin" that doesn't cause expansion jank -->
+            <div class="separator"></div>
         </div>
     </div>
     {% endfor -%}

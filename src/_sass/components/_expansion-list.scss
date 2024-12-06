@@ -12,6 +12,7 @@
     padding-left: 1rem;
   }
 
+  // Rotates chevron
   @mixin collapsible() {
     display: flex;
     align-items: center;
@@ -24,6 +25,10 @@
       content: 'keyboard_arrow_down' / '';
       font: $site-font-icon;
       transition: transform .25s ease-in-out;
+    }
+
+    .collapsing {
+      transition-duration: 0.15s;
     }
 
     &:not(.collapsed) {
@@ -100,15 +105,19 @@
     width: 90%;
     border-top: .05rem solid rgba(0, 0, 0, 0.125);
 
-    padding-top: 1rem;
-    padding-bottom: 3rem;
-
     p {
       color: $site-color-body;
+      margin-top: 2rem;
+    }
+
+    .separator {
+      margin-bottom: 3rem;
     }
   }
 
-  :last-child .expansion-panel-body {
-    border-bottom: none;
+  :last-child {
+    .expansion-panel-body {
+      border-bottom: none;
+     }
   }
 }
