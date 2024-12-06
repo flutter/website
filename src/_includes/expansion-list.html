@@ -1,3 +1,15 @@
+{%- comment -%}
+This component expects a list of article or page objects.
+Each article should have the following attributes:
+- title: String - name of the article
+- description: String  - 1-2 sentence description of the article
+- tags: List<String> - A short list of items that describe what the reader can expect from the content or format.
+    i.e. data, user-experience OR tutorial, 10 minute read
+- body: String - This is the text body of the expandable portion of expansion panel.
+- img: String - the path to an image that is shown in next to the title
+- path: String - Path to the article or page
+{%- endcomment -%}
+
 <div class="expansion-panel-list">
     {% for item in list -%}
     {% assign id = base_id | append: '-expansion-' | append: forloop.index -%}
@@ -22,14 +34,18 @@
                 </div>
                 <div class="expansion-panel-title-content">
                     <p class="content-title">{{item.title}}</p>
-                    <p class="content-tags">{{item.tags}}</p>
+                    <ul class="content-tags">
+                    {% for tag in item.tags -%}
+                        <li class="tag">{{tag}}</li>
+                    {% endfor -%}
+                    </ul>
                     <p class="content-description">{{item.description}}</p>
                 </div>
             </div>
         </a>
         <div class="expansion-panel-body collapse {{show}}" id="{{id}}">
-            <p>{{item.description}} {{item.description}} {{item.description}} {{item.description}} {{item.description}}</p>
-            <a href="{{item.path}}">Read article...</a>
+            <p>{{item.body}}</p>
+            <a href="{{item.path}}">Read full article</a>
             <!-- Required to add "margin" that doesn't cause expansion jank -->
             <div class="separator"></div>
         </div>

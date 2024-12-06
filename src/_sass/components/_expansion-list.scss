@@ -92,10 +92,29 @@
       }
 
       .content-tags {
-        color: $site-color-body-caption;
-        font-size: .8rem;
-        line-height: 1;
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        padding-left: 0;
         margin-bottom: .75rem;
+
+        .tag {
+          color: $site-color-body-caption;
+          font-size: .8rem;
+          line-height: 1;
+          margin-bottom: 0;
+
+          &::after {
+            // Duplicated since Firefox doesn't support content alt text.
+            content: ' |\00a0';
+            content: ' |\00a0';
+          }
+        }
+
+        :last-child::after {
+          content: '';
+          content: '';
+        }
       }
     }
   }
@@ -109,6 +128,7 @@
       color: $site-color-body;
       margin-top: 2rem;
     }
+
 
     .separator {
       margin-bottom: 3rem;
