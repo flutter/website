@@ -792,7 +792,7 @@ on how to install this package.
 To regenerate the bindings, run the following command:
 
 ```console
-$  dart run ffigen --config ffigen.yaml
+$ dart run ffigen --config ffigen.yaml
 ```
 
 ### Step 4: Invoking native code
