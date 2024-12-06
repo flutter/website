@@ -29,7 +29,7 @@
     In this recipe, you will learn how to integrate persistent storage 
     for complex data using SQL by implementing a todo-list app that 
     follows our recommended Flutter app architecture.
-- title: "Offline-first support"
+- title: Offline-first support
   description: Implement offline-first support for one feature in an application.
   tags:
     - data
@@ -51,7 +51,7 @@
 
     In this guide, you will learn how to implement different approaches to offline-first 
     in Flutter applications that follow our recommended architecture guidelines.
-- title: Optimistic State
+- title: Optimistic state
   description: Improve the perception of responsiveness of an application by implementing optimistic state.
   tags:
     - user experience
@@ -72,3 +72,49 @@
     This technique is known as Optimistic State, Optimistic UI or Optimistic User Experience. 
     In this recipe, you will implement optimistic state for a feature in an application that follows our
     recommended architecture guidelines.
+- title: The command pattern
+  description: Simplify view model logic by implementing a Command class.
+  tags:
+    - mvvm
+    - asynchronous dart
+    - state
+  path: /cookbook/architecture/command
+  img: /assets/images/docs/app-architecture/design-patterns/command-icon.svg
+  body: |
+    A command is a class that wraps a method and helps to handle the different 
+    states of that method, such as `running`, `complete`, and `error`.
+
+    View models can use commands to handle interaction and run actions.
+    They can also be used to display different UI states,
+    like loading indicators when an action is running,
+    or an error dialog when an action failed.
+
+    View models can become very complex as an application grows 
+    and features become bigger. 
+    Commands can help to simplify view models and reuse code.
+
+    In this guide, you will learn how to use the command pattern 
+    to improve your view models.
+- title:  Better error handling
+  description: Improve error handling across classes with Result objects.
+  tags:
+    - error handling
+    - services
+  path: /cookbook/architecture/result
+  img: /assets/images/docs/app-architecture/design-patterns/result-icon.svg
+  body: |
+    Dart provides a built-in error handling mechanism 
+    with the ability to throw and catch exceptions.
+    
+    Dart’s exceptions are unhandled exceptions.
+    This means that methods that throw exceptions don’t need to declare them,
+    and calling methods aren't required to catch them either.
+    
+    This can lead to situations where exceptions are not handled properly.
+    In large projects, developers might forget to catch exceptions,
+    and the different application layers and components
+    could throw exceptions that aren’t documented. 
+    This can lead to errors and crashes.
+    
+    In this guide, you will learn about this limitation
+    and how to mitigate it using the result pattern.
