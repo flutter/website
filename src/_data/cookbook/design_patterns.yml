@@ -82,7 +82,7 @@
   img: /assets/images/docs/app-architecture/design-patterns/command-icon.svg
   body: |
     A command is a class that wraps a method and helps to handle the different 
-    states of that method, such as `running`, `complete`, and `error`.
+    states of that method, such as running, complete, and error.
 
     View models can use commands to handle interaction and run actions.
     They can also be used to display different UI states,
