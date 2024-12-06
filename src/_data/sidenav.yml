@@ -439,22 +439,10 @@
           permalink: /app-architecture/case-study/dependency-injection
         - title: Testing each layer
           permalink: /app-architecture/case-study/testing
-
     - title: Recommendations
       permalink: /app-architecture/recommendations
     - title: Design patterns
       permalink: /app-architecture/design-patterns
-#    - title: Design patterns
-#      permalink: /cookbook/architecture
-#      children:
-#        - title: Optimistic state
-#          permalink: /cookbook/architecture/optimistic-state
-#        - title: "Persistent storage architecture: Key-value data"
-#          permalink: /cookbook/architecture/key-value-data
-#        - title: "Persistent storage architecture: SQL"
-#          permalink: /cookbook/architecture/sql
-#        - title: Offline-first
-#          permalink: /cookbook/architecture/offline-first
 
 - title: Platform integration
   permalink: /platform-integration
