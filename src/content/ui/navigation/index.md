@@ -96,7 +96,7 @@ documentation][`Navigator`].
 ## Using named routes
 
 :::note
-Named routes are not recommended for most applications.
+Named routes aren't recommended for most applications.
 For more information, see [Limitations](#limitations).
 :::
 
