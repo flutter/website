@@ -22,4 +22,4 @@ previous pages in the code examples.
 {% assign recipes = cookbook.design_patterns | sort: 'name' -%}
 {% render expansion-list.html, list: recipes, base_id: 'design-patterns' %}
 
-[architecture guide]: ./guide.md
+[architecture guide]: /app-architecture/guide
