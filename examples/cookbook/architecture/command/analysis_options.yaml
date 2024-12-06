@@ -1,0 +1,5 @@
+# Take our settings from the example_utils analysis_options.yaml file.
+# If necessary for a particular example, this file can also include
+# overrides for individual lints.
+
+include: package:example_utils/analysis.yaml
