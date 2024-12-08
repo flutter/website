@@ -48,7 +48,7 @@ class Package {
   final String latestVersion; 
   final String? description;
 
-  Package(this.name, this.latestVersion, this.description);
+  Package(this.name, this.latestVersion, {this.description});
 
   @override
   String toString() {
@@ -64,7 +64,11 @@ void main() async {
     return;
   }
   final json = jsonDecode(httpPackageResponse.body);
-  final package = Package(json['name'], json['latestVersion'], json['description']);
+  final package = Package(
+    json['name'],
+    json['latestVersion'],
+    description: json['description'],
+  );
   print(package);
 }
 ```
