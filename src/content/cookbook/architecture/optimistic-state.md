@@ -1,5 +1,5 @@
 ---
-title: Optimistic State
+title: Optimistic state
 description: "Improve the perception of responsiveness of an application by implementing optimistic state."
 content-tags:
   - user experience

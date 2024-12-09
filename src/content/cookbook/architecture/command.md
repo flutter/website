@@ -1,5 +1,5 @@
 ---
-title: Command pattern
+title: The command pattern
 description: "Simplify view model logic by implementing a Command class."
 icon-path: /assets/images/docs/app-architecture/design-patterns/command-icon.svg
 content-tags:
