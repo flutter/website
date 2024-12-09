@@ -8,9 +8,9 @@ description: >-
 ## Summary
 
 The Material Design tokens updated the mapping of 4 color roles (only in Light
-mode) to be more visually appealing while retaining accessible contrast. We did
-not identify any breakages in our testing of this change, which applied to the
-following color properties:
+mode) to be more visually appealing while retaining accessible contrast. There
+are not any breakages identified in Flutter testing of this change, which
+applied to the following color properties:
 
 * On-primary-container (Primary10 to Primary30)
 * On-secondary-container (Secondary10 to Secondary30)
