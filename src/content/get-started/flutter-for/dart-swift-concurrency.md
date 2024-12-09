@@ -88,7 +88,7 @@ Next, define the view model and mark it as an [`@Observable`][]
 that publishes the `result` of type `Weather?`. 
 Use GCD to create a background `DispatchQueue` to 
 send the work to the pool of threads, and then dispatch 
-back to the main threaad to update the `result`. 
+back to the main thread to update the `result`. 
 
 ```swift
 @Observable class ContentViewModel {

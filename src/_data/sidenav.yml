@@ -439,6 +439,7 @@
           permalink: /app-architecture/case-study/dependency-injection
         - title: Testing each layer
           permalink: /app-architecture/case-study/testing
+
     - title: Recommendations
       permalink: /app-architecture/recommendations
     - title: Design patterns
