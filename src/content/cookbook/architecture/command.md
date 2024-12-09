@@ -9,7 +9,7 @@ js:
 
 <?code-excerpt path-base="cookbook/architecture/command"?>
 
-Model-View-ViewModel (MVVM) is a design pattern 
+[Model-View-ViewModel (MVVM)][] is a design pattern 
 that separates a feature of an application into three parts: 
 the model, the view model and the view.
 Views and view models make up the UI layer of an application.
@@ -20,7 +20,7 @@ A command is a class that wraps a method
 and helps to handle the different states of that method,
 such as running, complete, and error.
 
-View models can use commands to handle interaction and run actions.
+[View models][] can use commands to handle interaction and run actions.
 As well, they can be used to display different UI states,
 like loading indicators when an action is running,
 or an error dialog when an action failed.
@@ -628,5 +628,7 @@ final class Command1<T, A> extends Command<T> {
 [Compass App example]: {{site.repo.samples}}/tree/main/compass_app
 [`Result` class]: /cookbook/architecture/result
 [pub.dev]: {{site.pub}}
-[flutter_command]: {{site.pub-pkg}}/flutter_command
+[`flutter_command`]: {{site.pub-pkg}}/flutter_command
 [`ChangeNotifier`]: /get-started/fundamentals/state-management
+[Model-View-ViewModel (MVVM)]: /app-architecture/guide#view-models
+[View models]: /app-architecture/guide#view-models
