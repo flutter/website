@@ -1,6 +1,10 @@
 ---
 title: "Persistent storage architecture: SQL"
-description: Create a service to store complex data with SQL
+description: Save complex application data to a user's device with SQL.
+content-tags:
+  - data
+  - SQL
+icon-path: /assets/images/docs/app-architecture/design-patterns/sql-icon.svg
 js:
   - defer: true
     url: /assets/js/inject_dartpad.js
