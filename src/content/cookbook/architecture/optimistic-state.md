@@ -1,6 +1,10 @@
 ---
 title: Optimistic State
-description: Improve the perception of responsivenes of views with a state.
+description: "Improve the perception of responsiveness of an application by implementing optimistic state."
+content-tags:
+  - user experience
+  - asynchronous dart
+icon-path: /assets/images/docs/app-architecture/design-patterns/optimistic-state-icon.svg
 js:
   - defer: true
     url: /assets/js/inject_dartpad.js

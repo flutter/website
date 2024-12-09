@@ -1,7 +1,10 @@
 ---
-title: Result class
-description: >-
-  Learn to handle errors and return values with a result class.
+title: Error handling with Result objects
+description: "Improve error handling across classes with Result objects."
+content-tags:
+  - error handling
+  - services
+icon-path: /assets/images/docs/app-architecture/design-patterns/result-icon.svg
 js:
   - defer: true
     url: /assets/js/inject_dartpad.js
