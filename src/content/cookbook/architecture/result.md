@@ -164,6 +164,15 @@ A full implementation is at the end of this page.
 
 <?code-excerpt "lib/simple_result.dart"?>
 ```dart
+/// Utility class that simplifies handling errors.
+///
+/// Return a [Result] from a function to indicate success or failure.
+///
+/// A [Result] is either an [Ok] with a value of type [T]
+/// or an [Error] with an [Exception].
+///
+/// Use [Result.ok] to create a successful result with a value of type [T].
+/// Use [Result.error] to create an error result with an [Exception].
 sealed class Result<T> {
   const Result();
 
@@ -304,8 +313,8 @@ class UserProfileViewModel extends ChangeNotifier {
 
 The `Result` class is implemented using a `sealed` class, 
 meaning it can only be of type `Ok` or `Error`. 
-This allows the code to evaluate the result with a simple
-switch statement.
+This allows the code to evaluate the result with a  
+[switch result or expression][]. 
 
 In the `Ok<UserProfile>` case, 
 obtain the value using the `value` property. 
@@ -379,7 +388,7 @@ how to use a `Result` class to return result values.
 The key takeaways are:
 
 - `Result` classes force the calling method to check for errors, 
-  reducing the amount of bugs caused by uncaught exceptions.
+  reducing the amount of bugs caused by uncaught exceptions[switch result or expression.
 - `Result` classes help improve control flow compared to try-catch blocks.
 - `Result` classes are `sealed` and can only return `Ok` or `Error` instances, 
   allowing the code to unwrap them with a switch statement.
@@ -394,12 +403,8 @@ implementations of the `Result` class,
 such as the [`result_dart`][], [`result_type`][], and [`multiple_result`][] packages.
 :::
 
-<?code-excerpt "lib/result.dart"?>
+<?code-excerpt "lib/result.dart (Result)"?>
 ```dart
-// Copyright 2024 The Flutter team. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
 /// Utility class that simplifies handling errors.
 ///
 /// Return a [Result] from a function to indicate success or failure.
@@ -458,7 +463,8 @@ final class Error<T> extends Result<T> {
 [Flutter architecture guidelines]: /app-architecture
 [Compass App example]: {{site.repo.samples}}/tree/main/compass_app
 [pub.dev]: {{site.pub}}
-[result_dart]: {{site.pub-pkg}}/result_dart
-[result_type]: {{site.pub-pkg}}/result_type
-[multiple_result]: {{site.pub-pkg}}/multiple_result
+[`result_dart`]: {{site.pub-pkg}}/result_dart
+[`result_type`]: {{site.pub-pkg}}/result_type
+[`multiple_result`]: {{site.pub-pkg}}/multiple_result
 [`sealed`]: {{site.dart-site}}/language/class-modifiers#sealed
+[switch result or expression]: {{site.dart-site}}/language/branches#switch-statements
