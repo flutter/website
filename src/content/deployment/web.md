@@ -16,65 +16,44 @@ of your app and covers the following topics:
 * [Deploying to the web](#deploying-to-the-web)
 * [Deploying to Firebase Hosting](#deploying-to-firebase-hosting)
 * [Handling images on the web](#handling-images-on-the-web)
-* [Choosing a web renderer](#choosing-a-web-renderer)
+* [Choosing a build mode and a renderer](#choosing-a-build-mode-and-a-renderer)
 * [Minification](#minification)
 
 ## Building the app for release
 
-Build the app for deployment using the
-`flutter build web` command.
-You can also choose which renderer to use
-by using the `--web-renderer` option (See [Web renderers][]).
-This generates the app, including the assets,
-and places the files into the `/build/web`
-directory of the project.
+Build the app for deployment using the `flutter build web` command. 
 
-The release build of a simple app has the
-following structure:
-
-```plaintext
-/build/web
-  assets
-    AssetManifest.json
-    FontManifest.json
-    NOTICES
-    fonts
-      MaterialIcons-Regular.ttf
-      <other font files>
-    <image files>
-    packages
-      cupertino_icons
-        assets
-          CupertinoIcons.ttf
-    shaders
-      ink_sparkle.frag
-  canvaskit
-    canvaskit.js
-    canvaskit.wasm
-    profiling
-      canvaskit.js
-      canvaskit.wasm
-  favicon.png
-  flutter.js
-  flutter_service_worker.js
-  index.html
-  main.dart.js
-  manifest.json
-  version.json
+```console
+flutter build web
 ```
 
-:::note
-The `canvaskit` directory and its contents are only present when the
-CanvasKit renderer is selected—not when the HTML renderer is selected.
-:::
+This
+generates the app, including the assets, and places the files into the
+`/build/web` directory of the project.
 
-Launch a web server (for example,
+To validate the release build of your app,
+launch a web server (for example,
 `python -m http.server 8000`,
 or by using the [dhttpd][] package),
 and open the /build/web directory. Navigate to
 `localhost:8000` in your browser
 (given the python SimpleHTTPServer example)
 to view the release version of your app.
+
+## Additional build flags
+You might need to deploy a profile or debug build for testing.
+To do this, pass the `--profile` or `--debug` flag
+to the `flutter build web` command.
+Profile builds are specialized for performance profiling using Chrome DevTools,
+and debug builds can be used to configure dart2js
+to respect assertions and change the optimization level (using the `-O` flag.)
+
+## Choosing a build mode and a renderer
+
+Flutter web provides two build modes (default and WebAssembly) and two renderers
+(`canvaskit` and `skwasm`).
+
+For more information, see [Web renderers][].
 
 ## Deploying to the web
 
@@ -89,10 +68,12 @@ many others:
 * [Google Cloud Hosting][]
 
 ## Deploying to Firebase Hosting
+
 You can use the Firebase CLI to build and release your Flutter app with Firebase
 Hosting.
 
 ### Before you begin
+
 To get started, [install or update][install-firebase-cli] the Firebase CLI:
 
 ```console
@@ -145,20 +126,12 @@ This limits what you can do with images compared to mobile and desktop platforms
 
 For more information, see [Displaying images on the web][].
 
-## Choosing a web renderer
-
-By default, the `flutter build` and `flutter run` commands
-use the `auto` choice for the web renderer. This means that
-your app runs with the HTML renderer on mobile browsers and
-CanvasKit on desktop browsers. We recommend this combination
-to optimize for the characteristics of each platform.
-
-For more information, see [Web renderers][].
-
 ## Minification
 
-Minification is handled for you when you
-create a release build.
+To improve app start-up the compiler reduces the size of the compiled code by
+removing unused code (known as _tree shaking_), and by renaming code symbols to
+shorter strings (e.g. by renaming `AlignmentGeometryTween` to something like
+`ab`). Which of these two optimizations are applied depends on the build mode:
 
 | Type of web app build | Code minified? | Tree shaking performed? |
 |-----------------------|----------------|-------------------------|
@@ -171,17 +144,6 @@ create a release build.
 See [Embedding Flutter web][].
 
 [Embedding Flutter web]: /platform-integration/web/embedding-flutter-web
-
-## PWA Support
-
-As of release 1.20, the Flutter template for web apps includes support
-for the core features needed for an installable, offline-capable PWA app.
-Flutter-based PWAs can be installed in the same way as any other web-based
-PWA; the settings signaling that your Flutter app is a PWA are provided by
-`manifest.json`, which is produced by `flutter create` in the `web` directory.
-
-PWA support remains a work in progress,
-so please [give us feedback][] if you see something that doesn't look right.
 
 [dhttpd]: {{site.pub}}/packages/dhttpd
 [Displaying images on the web]: /platform-integration/web/web-images

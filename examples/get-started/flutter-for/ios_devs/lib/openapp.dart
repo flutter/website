@@ -30,9 +30,8 @@ class HomePage extends StatelessWidget {
     return CupertinoPageScaffold(
       child: SafeArea(
         child: Center(
-          child:
-              // #docregion open-app-example
-              CupertinoButton(
+          // #docregion open-app-example
+          child: CupertinoButton(
             onPressed: () async {
               await launchUrl(
                 Uri.parse('https://google.com'),

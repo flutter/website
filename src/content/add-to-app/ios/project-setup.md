@@ -30,7 +30,8 @@ For an example using SwiftUI, consult the iOS directory in [News Feed App][].
 
 Your development environment must meet the
 [macOS system requirements for Flutter][] with [Xcode installed][].
-Flutter supports Xcode {{site.appmin.xcode}} or later and [CocoaPods][] {{site.appmin.cocoapods}} or later.
+Flutter supports Xcode {{site.appmin.xcode}} or later and
+[CocoaPods][] {{site.appmin.cocoapods}} or later.
 
 ## Create a Flutter module
 
@@ -55,7 +56,7 @@ like `flutter run` or `flutter build ios`.
 You can also run the module in [VS Code][] or
 [Android Studio/IntelliJ][] with the Flutter and Dart plugins.
 This project contains a single-view example version of your module
-before embeddeding it in your existing iOS app.
+before embedding it in your existing iOS app.
 This helps when testing the Flutter-only parts of your code.
 
 ## Organize your module

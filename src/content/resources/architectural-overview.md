@@ -391,8 +391,8 @@ framework then stitches together the renderable objects into a renderable object
 tree.
 
 A widget's build function should be free of side effects. Whenever the function
-is asked to build, the widget should return a new tree of widgets<sup><a
-href="#a1">1</a></sup>, regardless of what the widget previously returned. The
+is asked to build, the widget should return a new tree of widgets[^1],
+regardless of what the widget previously returned. The
 framework does the heavy lifting work to determine which build methods need to
 be called based on the render object tree (described in more detail later). More
 information about this process can be found in the [Inside Flutter
@@ -404,7 +404,7 @@ important that build methods should return quickly, and heavy computational work
 should be done in some asynchronous manner and then stored as part of the state
 to be used by a build method.
 
-While relatively naïve in approach, this automated comparison is quite
+While relatively naive in approach, this automated comparison is quite
 effective, enabling high-performance, interactive apps. And, the design of the
 build function simplifies your code by focusing on declaring what a widget is
 made of, rather than the complexities of updating the user interface from one
@@ -626,7 +626,7 @@ if (color != null)
 Correspondingly, the `Image` and `Text` widgets might insert child widgets such
 as `RawImage` and `RichText` during the build process. The eventual widget
 hierarchy might therefore be deeper than what the code represents,
-as in this case<sup><a href="#a2">2</a></sup>:
+as in this case[^2]:
 
 ![Render pipeline sequencing
 diagram](/assets/images/docs/arch-overview/widgets.png){:width="35%"}
@@ -727,7 +727,7 @@ time:
   choose how to use that space. For example, they might just center what they
   want to render within the dictated constraints.)
 - A parent can dictate the child's width but give the child flexibility over
-  height (or dictate height but offer flexible over width). A real-world example
+  height (or dictate height but offer flexibility over width). A real-world example
   is flow text, which might have to fit a horizontal constraint but vary
   vertically depending on the quantity of text.
 
@@ -886,8 +886,8 @@ to native code using the `dart:ffi` library. The foreign function interface
 serialization is required to pass data. Instead, the Dart runtime provides the
 ability to allocate memory on the heap that is backed by a Dart object and make
 calls to statically or dynamically linked libraries. FFI is available for all
-platforms other than web, where the [js package]({{site.pub}}/packages/js)
-serves an equivalent purpose.
+platforms other than web, where the [JS interop libraries][] and
+[`package:web`][] serve a similar purpose.
 
 To use FFI, you create a `typedef` for each of the Dart and unmanaged method
 signatures, and instruct the Dart VM to map between them. As an example,
@@ -926,6 +926,9 @@ void exampleFfi() {
 }
 ```
 
+[JS interop libraries]: {{site.dart-site}}/interop/js-interop
+[`package:web`]: {{site.pub-pkg}}/web
+
 ### Rendering native controls in a Flutter app
 
 Because Flutter content is drawn to a texture and its widget tree is entirely
@@ -938,7 +941,7 @@ Flutter solves this by introducing platform view widgets
 ([`AndroidView`]({{site.api}}/flutter/widgets/AndroidView-class.html)
 and [`UiKitView`]({{site.api}}/flutter/widgets/UiKitView-class.html))
 that let you embed this kind of content on each platform. Platform views can be
-integrated with other Flutter content<sup><a href="#a3">3</a></sup>. Each of
+integrated with other Flutter content[^3]. Each of
 these widgets acts as an intermediary to the underlying operating system. For
 example, on Android, `AndroidView` serves three primary functions:
 
@@ -1042,7 +1045,7 @@ While HTML mode offers the best code size characteristics,
 `CanvasKit` provides the fastest path to the
 browser's graphics stack,
 and offers somewhat higher graphical fidelity with the
-native mobile targets<sup><a href="#a4">4</a></sup>.
+native mobile targets[^4].
 
 The web version of the architectural layer diagram is as follows:
 
@@ -1074,21 +1077,15 @@ For those interested in more information about the internals of Flutter, the
 [Inside Flutter](/resources/inside-flutter) whitepaper
 provides a useful guide to the framework's design philosophy.
 
----
-
-**Footnotes:**
-
-<sup><a id="a1">1</a></sup> While the `build` function returns a fresh tree,
-you only need to return something _different_ if there's some new
-configuration to incorporate. If the configuration is in fact the same, you can
-just return the same widget.
-
-<sup><a id="a2">2</a></sup> This is a slight simplification for ease of
-reading. In practice, the tree might be more complex.
-
-<sup><a id="a3">3</a></sup> There are some limitations with this approach, for
-example, transparency doesn't composite the same way for a platform view as it
-would for other Flutter widgets.
-
-<sup><a id="a4">4</a></sup> One example is shadows, which have to be
-approximated with DOM-equivalent primitives at the cost of some fidelity.
+[^1]: While the `build` function returns a fresh tree,
+  you only need to return something _different_ if
+  there's some new configuration to incorporate.
+  If the configuration is in fact the same,
+  you can just return the same widget.
+[^2]: This is a slight simplification for ease of reading.
+  In practice, the tree might be more complex.
+[^3]: There are some limitations with this approach, for example,
+  transparency doesn't composite the same way for a platform view as
+  it would for other Flutter widgets.
+[^4]: One example is shadows, which have to be approximated with
+  DOM-equivalent primitives at the cost of some fidelity.

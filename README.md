@@ -7,9 +7,6 @@
 The [documentation site][Flutter] for the [Flutter framework][],
 built with [Eleventy][] and hosted on [Firebase][].
 
-[![Build Status][]][Repo on GitHub Actions]
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/flutter/website/badge)](https://deps.dev/project/github/flutter%2Fwebsite)
-
 [Flutter framework]: https://flutter.dev
 [Eleventy]: https://11ty.dev/
 [Firebase]: https://firebase.google.com/
@@ -17,6 +14,21 @@ built with [Eleventy][] and hosted on [Firebase][].
 [Build Status]: https://github.com/flutter/website/workflows/build/badge.svg
 [Flutter]: https://docs.flutter.dev/
 [Repo on GitHub Actions]: https://github.com/flutter/website/actions?query=workflow%3Abuild+branch%3Amain
+
+<a href="https://idx.google.com/import?url=https%3A%2F%2Fgithub.com%2Fflutter%2Fwebsite">
+  <picture>
+    <source
+      media="(prefers-color-scheme: dark)"
+      srcset="https://cdn.idx.dev/btn/open_dark_32.svg">
+    <source
+      media="(prefers-color-scheme: light)"
+      srcset="https://cdn.idx.dev/btn/open_light_32.svg">
+    <img
+      height="32"
+      alt="Open in IDX"
+      src="https://cdn.idx.dev/btn/open_purple_32.svg">
+  </picture>
+</a>
 
 ## Issues, bugs, and requests
 
@@ -117,7 +129,7 @@ If you prefer, you can use a version manager such as [nvm][],
 and run `nvm install` from the repository's root directory.
 
 If you already have Node installed, verify it's available on your path
-and already the latest stable version _(currently `20.12` or later)_:
+and already the latest stable version _(currently `22.11` or later)_:
 
 ```console
 node --version
@@ -220,7 +232,7 @@ following the instructions in [Get the prerequisites](#get-the-prerequisites).
    To install [`pnpm`][] without using `corepack`, you
    can use your preferred [installation method][pnpm-install].
 
-5. (optional) Once you have `pnpm` installed and setup,
+5. _(optional)_ Once you have `pnpm` installed and setup,
    fetch the site's npm dependencies using `pnpm install`.
    We highly recommend you use `pnpm`, but you can also use `npm`.
 
@@ -348,7 +360,7 @@ you can build a full version and upload it to Firebase.
    ./dash_site build
    ```
 
-   This will build the site and copy it to your local `_site` directory.
+   This builds the site and copy it to your local `_site` directory.
    If that directory previously existed, it will be replaced.
 
 3. Deploy to your activated Firebase project's default hosting site:

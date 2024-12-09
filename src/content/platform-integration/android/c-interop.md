@@ -22,7 +22,7 @@ This feature is not yet supported for web plugins.
 
 
 [ios-ffi]: /platform-integration/ios/c-interop
-[dart:ffi]: {{site.dart.api}}/dev/dart-ffi/dart-ffi-library.html
+[dart:ffi]: {{site.dart.api}}/dart-ffi/dart-ffi-library.html
 [macos-ffi]: /platform-integration/macos/c-interop
 [FFI]: https://en.wikipedia.org/wiki/Foreign_function_interface
 
@@ -59,7 +59,7 @@ files, one for each architecture.
 A dynamically linked library can be loaded into
 Dart via [`DynamicLibrary.open`][].
 
-API documentation is available from the Dart dev channel:
+API documentation is available from the
 [Dart API reference documentation][].
 
 On Android, only dynamic libraries are supported
@@ -67,10 +67,10 @@ On Android, only dynamic libraries are supported
 which we don't link to statically).
 
 
-[Dart API reference documentation]: {{site.dart.api}}/dev/
-[`DynamicLibrary.executable`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.executable.html
-[`DynamicLibrary.open`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.open.html
-[`DynamicLibrary.process`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.process.html
+[Dart API reference documentation]: {{site.dart.api}}
+[`DynamicLibrary.executable`]: {{site.dart.api}}/dart-ffi/DynamicLibrary/DynamicLibrary.executable.html
+[`DynamicLibrary.open`]: {{site.dart.api}}/dart-ffi/DynamicLibrary/DynamicLibrary.open.html
+[`DynamicLibrary.process`]: {{site.dart.api}}/dart-ffi/DynamicLibrary/DynamicLibrary.process.html
 
 ## Create an FFI plugin
 
@@ -184,25 +184,24 @@ To re-enable compression, override the setting in
 `your_app_name/android/app/src/main/AndroidManifest.xml`
 in the following way.
 
-```diff
-@@ -1,5 +1,6 @@
- <manifest xmlns:android="http://schemas.android.com/apk/res/android"
--    package="com.example.your_app_name">
-+    xmlns:tools="http://schemas.android.com/tools"
-+    package="com.example.your_app_name" >
-     <!-- io.flutter.app.FlutterApplication is an android.app.Application that
-          calls FlutterMain.startInitialization(this); in its onCreate method.
-          In most cases you can leave this as-is, but you if you want to provide
-          additional functionality it is fine to subclass or reimplement
-          FlutterApplication and put your custom class here. -->
-@@ -8,7 +9,9 @@
-     <application
-         android:name="io.flutter.app.FlutterApplication"
-         android:label="your_app_name"
--        android:icon="@mipmap/ic_launcher">
-+        android:icon="@mipmap/ic_launcher"
-+        android:extractNativeLibs="true"
-+        tools:replace="android:extractNativeLibs">
+```xml diff
+  <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+-     package="com.example.your_app_name">
++     xmlns:tools="http://schemas.android.com/tools"
++     package="com.example.your_app_name" >
+      <!-- io.flutter.app.FlutterApplication is an android.app.Application that
+           calls FlutterMain.startInitialization(this); in its onCreate method.
+           In most cases you can leave this as-is, but you if you want to provide
+           additional functionality it is fine to subclass or reimplement
+           FlutterApplication and put your custom class here. -->
+
+      <application
+          android:name="io.flutter.app.FlutterApplication"
+          android:label="your_app_name"
+-         android:icon="@mipmap/ic_launcher">
++         android:icon="@mipmap/ic_launcher"
++         android:extractNativeLibs="true"
++         tools:replace="android:extractNativeLibs">
 ```
 
 [Android guidelines]: {{site.android-dev}}/topic/performance/reduce-apk-size#extract-false

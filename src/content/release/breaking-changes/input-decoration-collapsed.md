@@ -1,9 +1,9 @@
 ---
 title: Remove invalid parameters for `InputDecoration.collapsed`
 description: >
-  `InputDecoration.collapsed` constructor parameters `floatingLabelBehavior`
-  and`floatingLabelAlignment` are deprecated without replacement because they
-  have no effect.
+  'InputDecoration.collapsed' constructor parameters
+  'floatingLabelBehavior' and 'floatingLabelAlignment' are deprecated without
+  replacement because they have no effect.
 ---
 
 ## Summary

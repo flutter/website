@@ -45,6 +45,25 @@ Only files located directly in the directory are included.
 To add files located in subdirectories, create an entry per directory.
 :::
 
+:::note
+Indentation matters in YAML. If you see an error like
+`Error: unable to find directory entry in pubspec.yaml`
+then you _might_ have indented incorrectly in your
+pubspec file. Consider the following [broken] example:
+```yaml
+flutter:
+assets:
+  - directory/
+```
+The `assets:` line should be indented by exactly
+two spaces below the `flutter:` line:
+```yaml
+flutter:
+  assets:
+    - directory/
+```
+:::
+
 ### Asset bundling
 
 The `assets` subsection of the `flutter` section

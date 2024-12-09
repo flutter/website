@@ -4,7 +4,6 @@ description: >
   Learn how to use Flutter's implicitly animated widgets
   through interactive examples and exercises.
 toc: true
-diff2html: true
 js:
   - defer: true
     url: /assets/js/inject_dartpad.js
@@ -83,30 +82,36 @@ To create a fade-in effect, you can animate the
 `opacity` property using the`AnimatedOpacity` widget. 
 Wrap the `Column` widget in an `AnimatedOpacity` widget:
 
-```diff2html
---- opacity1/lib/main.dart
-+++ opacity2/lib/main.dart
-@@ -26,12 +26,14 @@
-         ),
-         onPressed: () => {},
-       ),
--      const Column(
--        children: [
--          Text('Type: Owl'),
--          Text('Age: 39'),
--          Text('Employment: None'),
--        ],
-+      AnimatedOpacity(
-+        child: const Column(
-+          children: [
-+            Text('Type: Owl'),
-+            Text('Age: 39'),
-+            Text('Employment: None'),
-+          ],
-+        ),
-       )
-     ]);
-   }
+```dart diff
+  @override
+  Widget build(BuildContext context) {
+    return ListView(children: <Widget>[
+      Image.network(owlUrl),
+      TextButton(
+        child: const Text(
+          'Show Details',
+          style: TextStyle(color: Colors.blueAccent),
+        ),
+        onPressed: () => {},
+      ),
+-     const Column(
+-       children: [
+-         Text('Type: Owl'),
+-         Text('Age: 39'),
+-         Text('Employment: None'),
+-       ],
+-     ),
++     AnimatedOpacity(
++       child: const Column(
++         children: [
++           Text('Type: Owl'),
++           Text('Age: 39'),
++           Text('Employment: None'),
++         ],
++       ),
++     ),
+    ]);
+  }
 ```
 
 :::note
@@ -119,26 +124,17 @@ to make these changes in the [fade-in starter code][].
 To hide the text before the user clicks **Show details**, set
 the starting value for `opacity` to zero:
 
-```diff2html
---- opacity2/lib/main.dart
-+++ opacity3/lib/main.dart
-@@ -15,6 +15,8 @@
- }
-
- class _FadeInDemoState extends State<FadeInDemo> {
-+  double opacity = 0;
-+
-   @override
-   Widget build(BuildContext context) {
-     return ListView(children: <Widget>[
-@@ -27,6 +29,7 @@
-         onPressed: () => {},
-       ),
-       AnimatedOpacity(
-+        opacity: opacity,
-         child: const Column(
-           children: [
-             Text('Type: Owl'),
+```dart diff
+  class _FadeInDemoState extends State<FadeInDemo> {
++   double opacity = 0;
++ 
+    @override
+    Widget build(BuildContext context) {
+      return ListView(children: <Widget>[
+        // ...
+        AnimatedOpacity(
++         opacity: opacity,
+          child: const Column(
 ```
 
 #### 3. Set the duration of the animation
@@ -147,17 +143,11 @@ In addition to an `opacity` parameter, `AnimatedOpacity` requires a
 [duration][] to use for its animation. For this example,
 you can start with 2 seconds:
 
-```diff2html
---- opacity3/lib/main.dart
-+++ opacity4/lib/main.dart
-@@ -29,6 +29,7 @@
-         onPressed: () => {},
-       ),
-       AnimatedOpacity(
-+        duration: const Duration(seconds: 2),
-         opacity: opacity,
-         child: const Column(
-           children: [
+```dart diff
+  AnimatedOpacity(
++   duration: const Duration(seconds: 2),
+    opacity: opacity,
+    child: const Column(
 ```
 
 #### 4. Set up a trigger for animation and choose an end value
@@ -168,20 +158,17 @@ To do this, change `opacity` state using the `onPressed()` handler for
 the user clicks **Show details**, use the `onPressed()` handler
 to set `opacity` to 1:
 
-```diff2html
---- opacity4/lib/main.dart
-+++ opacity5/lib/main.dart
-@@ -26,7 +26,9 @@
-           'Show Details',
-           style: TextStyle(color: Colors.blueAccent),
-         ),
--        onPressed: () => {},
-+        onPressed: () => setState(() {
-+          opacity = 1;
-+        }),
-       ),
-       AnimatedOpacity(
-         duration: const Duration(seconds: 2),
+```dart diff
+  TextButton(
+    child: const Text(
+      'Show Details',
+      style: TextStyle(color: Colors.blueAccent),
+    ),
+-   onPressed: () => {},
++   onPressed: () => setState(() {
++     opacity = 1;
++   }),
+  ),
 ```
 
 :::note
@@ -267,18 +254,19 @@ The following steps use the `AnimatedContainer` widget to:
 
 Change the `Container` widget to an `AnimatedContainer` widget:
 
-```diff2html
---- container1/lib/main.dart
-+++ container2/lib/main.dart
-@@ -47,7 +47,7 @@
-             SizedBox(
-               width: 128,
-               height: 128,
--              child: Container(
-+              child: AnimatedContainer(
-                 margin: EdgeInsets.all(margin),
-                 decoration: BoxDecoration(
-                   color: color,
+```dart diff
+  SizedBox(
+    width: 128,
+    height: 128,
+-   child: Container(
++   child: AnimatedContainer(
+      margin: EdgeInsets.all(margin),
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(borderRadius),
+      ),
+    ),
+  ),
 ```
 
 :::note
@@ -295,24 +283,18 @@ create a `change()` method.
 The `change()` method can use the `setState()` method to set new values
 for the `color`, `borderRadius`, and `margin` state variables:
 
-```diff2html
---- container2/lib/main.dart
-+++ container3/lib/main.dart
-@@ -38,6 +38,14 @@
-     margin = randomMargin();
-   }
-
-+  void change() {
-+    setState(() {
-+      color = randomColor();
-+      borderRadius = randomBorderRadius();
-+      margin = randomMargin();
-+    });
-+  }
+```dart diff
++ void change() {
++   setState(() {
++     color = randomColor();
++     borderRadius = randomBorderRadius();
++     margin = randomMargin();
++   });
++ }
 +
-   @override
-   Widget build(BuildContext context) {
-     return Scaffold(
+  @override
+  Widget build(BuildContext context) {
+    // ...
 ```
 
 #### 3. Set up a trigger for the animation
@@ -320,18 +302,12 @@ for the `color`, `borderRadius`, and `margin` state variables:
 To set the animation to trigger whenever the user presses **Change**,
 invoke the `change()` method in the `onPressed()` handler:
 
-```diff2html
---- container3/lib/main.dart
-+++ container4/lib/main.dart
-@@ -65,7 +65,7 @@
-             ),
-             ElevatedButton(
-               child: const Text('Change'),
--              onPressed: () => {},
-+              onPressed: () => change(),
-             ),
-           ],
-         ),
+```dart diff
+  ElevatedButton(
+    child: const Text('Change'),
+-   onPressed: () => {},
++   onPressed: () => change(),
+  ),
 ```
 
 #### 4. Set duration
@@ -339,26 +315,19 @@ invoke the `change()` method in the `onPressed()` handler:
 Set the `duration` of the animation that powers the transition
 between the old and new values:
 
-```diff2html
---- container4/lib/main.dart
-+++ container5/lib/main.dart
-@@ -6,6 +6,8 @@
-
- import 'package:flutter/material.dart';
-
-+const _duration = Duration(milliseconds: 400);
-+
- double randomBorderRadius() {
-   return Random().nextDouble() * 64;
- }
-@@ -61,6 +63,7 @@
-                   color: color,
-                   borderRadius: BorderRadius.circular(borderRadius),
-                 ),
-+                duration: _duration,
-               ),
-             ),
-             ElevatedButton(
+```dart diff
+  SizedBox(
+    width: 128,
+    height: 128,
+    child: AnimatedContainer(
+      margin: EdgeInsets.all(margin),
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(borderRadius),
+      ),
++     duration: const Duration(milliseconds: 400),
+    ),
+  ),
 ```
 
 ### Shape-shifting (complete)
@@ -394,17 +363,20 @@ the [complete shape-shifting example][].
 The animation changes when you pass the
 [`easeInOutBack`][] constant for `curve`,
 
-```diff2html
---- container5/lib/main.dart
-+++ container6/lib/main.dart
-@@ -64,6 +64,7 @@
-                   borderRadius: BorderRadius.circular(borderRadius),
-                 ),
-                 duration: _duration,
-+                curve: Curves.easeInOutBack,
-               ),
-             ),
-             ElevatedButton(
+```dart diff
+  SizedBox(
+    width: 128,
+    height: 128,
+    child: AnimatedContainer(
+      margin: EdgeInsets.all(margin),
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(borderRadius),
+      ),
+      duration: _duration,
++     curve: Curves.easeInOutBack,
+    ),
+  ),
 ```
 
 When you pass the `Curves.easeInOutBack` constant to the `curve` property

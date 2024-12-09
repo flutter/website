@@ -42,9 +42,7 @@ int formatDart({bool justCheck = false}) {
         .listSync()
         .whereType<Directory>()
         .map((e) => e.path)
-        .where((e) =>
-            path.basename(e) != 'codelabs' &&
-            !path.basename(e).startsWith('.')),
+        .where((e) => !path.basename(e).startsWith('.')),
   ];
 
   final dartFormatOutput = Process.runSync(Platform.resolvedExecutable, [
@@ -65,7 +63,7 @@ int formatDart({bool justCheck = false}) {
   }
 
   // If just checking formatting, exit with error code if any files changed.
-  if (justCheck && !normalOutput.contains('0 changed')) {
+  if (justCheck && !normalOutput.contains('(0 changed)')) {
     stderr.writeln('Error: Some files needed to be formatted!');
     return 1;
   }

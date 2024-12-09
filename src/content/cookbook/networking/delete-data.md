@@ -30,6 +30,8 @@ Import the `http` package.
 import 'package:http/http.dart' as http;
 ```
 
+{% render docs/cookbook/networking/internet-permission.md %}
+
 ## 2. Delete data on the server
 
 This recipe covers how to delete an album from the

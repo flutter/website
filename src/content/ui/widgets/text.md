@@ -4,4 +4,4 @@ short-title: Text
 description: A catalog of Flutter's widgets for displaying and styling text.
 ---
 
-{% include docs/catalogpage.html category="Text" %}
+{% render docs/catalog-page.md, categoryName:"Text", catalog:catalog %}

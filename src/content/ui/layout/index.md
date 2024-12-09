@@ -2,7 +2,6 @@
 title: Layouts in Flutter
 short-title: Layout
 description: Learn how Flutter's layout mechanism works and how to build a layout.
-diff2html: true
 ---
 
 {% assign api = site.api | append: '/flutter' -%}
@@ -253,7 +252,7 @@ or you can build your own set of custom widgets.
 
 #### Non-Material apps
 
-For a non-Material app, you can add the `Center` widget to the app's
+For a non-Material app, you can add the `Container` widget to the app's
 `build()` method:
 
 <?code-excerpt path-base="layout/non_material"?>

@@ -23,9 +23,8 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child:
-            // #docregion row
-            Row(
+        // #docregion row
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(CupertinoIcons.globe),

@@ -8,7 +8,7 @@ description: >-
 When you come from iOS development, you might need to find
 Flutter plugins that offer the same abilities as Apple's system
 libraries. This might include accessing device hardware or interacting
-with specific frameworks like `HealthKit` or `MapKit`.
+with specific frameworks like `HealthKit`.
 
 For an overview of how the SwiftUI framework compares to Flutter,
 see [Flutter for SwiftUI developers][].
@@ -62,7 +62,6 @@ should provide details.
 | Send push notifications                        | `UserNotifications`                                                                   | [`firebase_messaging`][][^3] |
 | Access GPS coordinates                         | `CoreLocation`                                                                        | [`geolocator`][]             |
 | Access sensor data[^4]                         | `CoreMotion`                                                                          | [`sensors_plus`][]           |
-| Embed maps                                     | `MapKit`                                                                              | [`google_maps_flutter`][]    |
 | Make network requests                          | `URLSession`                                                                          | [`http`][]                   |
 | Store key-values                               | `@AppStorage` property wrapper and `NSUserDefaults`                                   | [`shared_preferences`][]     |
 | Persist to a database                          | `CoreData` or SQLite                                                                  | [`sqflite`][]                |
@@ -99,7 +98,6 @@ should provide details.
 [`in_app_purchase`]: {{site.pub-pkg}}/in_app_purchase
 [`pay`]: {{site.pub-pkg}}/pay
 [`firebase_messaging`]: {{site.pub-pkg}}/firebase_messaging
-[`google_maps_flutter`]: {{site.pub-pkg}}/google_maps_flutter
 [`google_ml_kit`]: {{site.pub-pkg}}/google_ml_kit
 [Use a custom TensorFlow Lite model with Flutter]: {{site.firebase}}/docs/ml/flutter/use-custom-models
 [`speech_to_text`]: {{site.pub-pkg}}/speech_to_text

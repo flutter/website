@@ -1,15 +1,15 @@
 ---
-title: TextField.canRequestFocus Deprecated
-description: >
-  `TextField`'s `canRequestFocus` parameter is deprecated and replaced by the
-  `canRequestFocus` parameter of its `FocusNode`.
+title: Deprecated TextField.canRequestFocus
+description: >-
+  The TextField canRequestFocus parameter is deprecated and replaced by the
+  canRequestFocus parameter of its FocusNode.
 ---
 
 ## Summary
 
-`TextField.canRequestFocus` is deprecated. The same functionality can be
-achieved by setting the `canRequestFocus` parameter of the `TextField`'s
-`FocusNode`.
+`TextField.canRequestFocus` is deprecated.
+The same functionality can be achieved by setting the
+`canRequestFocus` parameter of the `TextField`'s `FocusNode`.
 
 ## Background
 

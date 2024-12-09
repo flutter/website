@@ -42,16 +42,16 @@ no longer tracks all annotations on the screen.
 The `MouseTracker` class has removed three methods related
 to attaching annotations:
 
-```diff
- class MouseTracker extends ChangeNotifier {
-   // ...
--  void attachAnnotation(MouseTrackerAnnotation annotation) {/* ... */}
+```dart diff
+  class MouseTracker extends ChangeNotifier {
+    // ...
+-   void attachAnnotation(MouseTrackerAnnotation annotation) {/* ... */}
 
--  void detachAnnotation(MouseTrackerAnnotation annotation) {/* ... */}
+-   void detachAnnotation(MouseTrackerAnnotation annotation) {/* ... */}
 
--  @visibleForTesting
--  bool isAnnotationAttached(MouseTrackerAnnotation annotation) {/* ... */}
- }
+-   @visibleForTesting
+-   bool isAnnotationAttached(MouseTrackerAnnotation annotation) {/* ... */}
+  }
 ```
 
 `RenderMouseRegion` and `MouseTrackerAnnotation` no longer perform the

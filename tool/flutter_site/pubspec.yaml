@@ -3,16 +3,16 @@ description: Dart-based tools for building docs.flutter.dev.
 publish_to: none
 
 environment:
-  sdk: ^3.4.0
+  sdk: ^3.5.0
 
 dependencies:
   args: ^2.4.2
   excerpter:
-    path: ../../site-shared/packages/excerpter
+    path: ../../site-shared/pkgs/excerpter
   io: ^1.0.4
   linkcheck: ^3.0.0
   path: ^1.9.0
 
 dev_dependencies:
   analysis_defaults:
-    path: ../../site-shared/packages/analysis_defaults
+    path: ../../site-shared/pkgs/analysis_defaults

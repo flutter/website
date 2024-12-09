@@ -1,16 +1,15 @@
-<div class="tab-pane" id="androidstudio" role="tabpanel" aria-labelledby="androidstudio-tab">
-
 ### Create a sample Flutter app {:#create-app-android-studio}
 
 1. Launch the IDE.
 
-2. To be able to create flutter projects on Android Studio you will need to install the
-   [Flutter Plugin](https://plugins.jetbrains.com/plugin/9212-flutter) and for smart Dart 
-   coding assistance that includes code completion, formatting, navigation, intentions, 
-   refactorings, and more install the [Dart Plugin](https://plugins.jetbrains.com/plugin/6351-dart/).
+2. To be able to create flutter projects on Android Studio, install the
+   [Flutter Plugin](https://plugins.jetbrains.com/plugin/9212-flutter) and
+   for smart Dart coding assistance that includes code completion, formatting,
+   navigation, intentions, refactorings, and more,
+   install the [Dart Plugin](https://plugins.jetbrains.com/plugin/6351-dart/).
 
-3. Head back to your IDE start page and Click **New Flutter Project** at the top of the
-   **Welcome to Android Studio** dialog.
+3. Head back to your IDE start page and Click **New Flutter Project** at the
+   top of the **Welcome to Android Studio** dialog.
 
 4. Under **Generators**, click **Flutter**.
 
@@ -20,7 +19,8 @@
 6. Click **Next**.
 
 7. Enter `test_drive` into the **Project name** field.
-   Your project name should be written in [snake case](https://developer.mozilla.org/en-US/docs/Glossary/Snake_case) and in lowercase. This follows the Flutter best practices for naming projects.
+   Your project name should be written in [snake case](https://developer.mozilla.org/en-US/docs/Glossary/Snake_case) and in lowercase.
+   This follows the Flutter best practices for naming projects.
 
 8. Set the directory in the **Project location** field to
    `C:\dev\test_drive` on Microsoft Windows or
@@ -65,7 +65,7 @@ uses [Material Components][].
 
 {% capture save_changes -%}
   : invoke **Save All**, or click **Hot Reload**
-  {% include docs/install/test-drive/hot-reload-icon.md %}.
+  {% render docs/install/test-drive/hot-reload-icon.md %}.
 {% endcapture %}
 
 {% capture ide_profile -%}
@@ -76,5 +76,3 @@ uses [Material Components][].
 
 [Main IntelliJ toolbar]: /assets/images/docs/tools/android-studio/main-toolbar.png
 [Material Components]: {{site.material}}/components
-
-</div>

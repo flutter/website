@@ -340,7 +340,7 @@ return PopScope(
 
 ### Supporting predictive back
 
-  1. Run Android 33 or above.
+  1. Run Android 14 (API level 34) or above.
   1. Enable the feature flag for predictive back on
      the device under "Developer options".
      This will be unnecessary on future versions of Android.

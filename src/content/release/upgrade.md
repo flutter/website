@@ -71,7 +71,7 @@ it is updated to the latest **beta** release.
 
 ### Other channels
 
-We currently have one other channel, **master**.
+We currently have one other channel, **main** (previously known as **master**).
 People who [contribute to Flutter][] use this channel.
 
 This channel is not as thoroughly tested as
@@ -80,7 +80,7 @@ the **beta** and **stable** channels.
 We do not recommend using this channel as
 it is more likely to contain serious regressions.
 
-The latest documentation for the **master** branch
+The latest documentation for the **main** branch
 is at: <https://main-api.flutter.dev>
 
 ### Changing channels
@@ -101,10 +101,28 @@ $ flutter channel beta
 $ flutter upgrade
 ```
 
-:::note
-If you need a specific version of the Flutter SDK,
-you can download it from the [Flutter SDK archive][].
-:::
+
+## Switching to a specific Flutter version
+
+To switch to a specific Flutter version:
+
+1. Find your desired **Flutter version** on the [Flutter SDK archive][].
+
+1. Navigate to the Flutter SDK:
+
+   ```console
+   $ cd /path/to/flutter
+   ```
+
+   :::tip
+   You can find the Flutter SDK's path using `flutter doctor --verbose`.
+   :::
+
+1. Use `git checkout` to switch to your desired **Flutter version**:
+
+   ```console
+   $ git checkout <Flutter version>
+   ```
 
 
 ## Upgrading packages

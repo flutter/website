@@ -3,11 +3,11 @@ title: Write your first Flutter app
 description: How to write an app in Flutter.
 short-title: Write your first app
 prev:
-  title: Test drive
-  path: /get-started/test-drive
+  title: Set up Flutter
+  path: /get-started/install
 next:
   title: Learn more
-  path: /get-started/learn-more
+  path: /get-started/learn-flutter
 toc: false
 ---
 

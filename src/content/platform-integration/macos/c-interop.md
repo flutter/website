@@ -24,7 +24,7 @@ This feature is not yet supported for web plugins.
 
 [android-ffi]: /platform-integration/android/c-interop
 [ios-ffi]: /platform-integration/ios/c-interop
-[dart:ffi]: {{site.dart.api}}/dev/dart-ffi/dart-ffi-library.html
+[dart:ffi]: {{site.dart.api}}/dart-ffi/dart-ffi-library.html
 [FFI]: https://en.wikipedia.org/wiki/Foreign_function_interface
 
 Before your library or program can use the FFI library
@@ -59,11 +59,11 @@ library is distributed as a `.framework` folder.
 A dynamically linked library can be loaded into
 Dart using `DynamicLibrary.open`.
 
-API documentation is available from the Dart dev channel:
+API documentation is available from the
 [Dart API reference documentation][].
 
 
-[Dart API reference documentation]: {{site.dart.api}}/dev/
+[Dart API reference documentation]: {{site.dart.api}}
 
 ## Create an FFI plugin
 
@@ -119,9 +119,9 @@ can be resolved using [`DynamicLibrary.executable`][] or
 [`DynamicLibrary.process`][].
 
 
-[`DynamicLibrary.executable`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.executable.html
-[`DynamicLibrary.open`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.open.html
-[`DynamicLibrary.process`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.process.html
+[`DynamicLibrary.executable`]: {{site.dart.api}}/dart-ffi/DynamicLibrary/DynamicLibrary.executable.html
+[`DynamicLibrary.open`]: {{site.dart.api}}/dart-ffi/DynamicLibrary/DynamicLibrary.open.html
+[`DynamicLibrary.process`]: {{site.dart.api}}/dart-ffi/DynamicLibrary/DynamicLibrary.process.html
 
 #### Platform library
 

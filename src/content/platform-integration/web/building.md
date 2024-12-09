@@ -4,120 +4,71 @@ description: Instructions for creating a Flutter app for the web.
 short-title: Web development
 ---
 
-This page covers the following steps for getting started with web support:
-
-* Configure the `flutter` tool for web support.
-* Create a new project with web support.
-* Run a new project with web support.
-* Build an app with web support.
-* Add web support to an existing project.
+This page provides an overview of how to configure, run, and build a web
+application using Flutter.
 
 ## Requirements
 
-To create a Flutter app with web support,
-you need the following software:
+Before you can build a web application with Flutter,
+make sure that you have the [Flutter SDK][] and a web browser installed.
+See the [Set up web development for Flutter][Setup-web] instructions
+for details.
 
-* Flutter SDK. See the
-  [Flutter SDK][] installation instructions.
-* [Chrome][]; debugging a web app requires
-  the Chrome browser.
-* Optional: An IDE that supports Flutter.
-  You can install [Visual Studio Code][],
-  [Android Studio][], [IntelliJ IDEA][].
-  Also [install the Flutter and Dart plugins][]
-  to enable language support and tools for refactoring,
-  running, debugging, and reloading your web app
-  within an editor. See [setting up an editor][]
-  for more details.
+## Set up a Flutter project
 
-[Android Studio]: {{site.android-dev}}/studio
-[IntelliJ IDEA]: https://www.jetbrains.com/idea/
-[Visual Studio Code]: https://code.visualstudio.com/
+To set up your project, you can create a new Flutter project or add web support
+to an existing project.
 
+### Create a new project
 
-For more information, see the [web FAQ][].
-
-## Create a new project with web support
-
-You can use the following steps
-to create a new project with web support.
-
-### Set up
-
-Run the following commands to use the latest version of the Flutter SDK:
+To create a new app that includes web support, run the following command:
 
 ```console
-$ flutter channel stable
-$ flutter upgrade
+$ flutter create my_app 
 ```
 
-:::warning
-Running `flutter channel stable` replaces your current version of Flutter
-with the stable version and can take time if your connection is slow.
-After this, running `flutter upgrade` upgrades your install to the latest
-`stable`.  Returning to another channel (beta or master) requires calling
-`flutter channel <channel>` explicitly.
-:::
+### Add web support to an existing project
 
-If Chrome is installed,
-the `flutter devices` command outputs a `Chrome` device
-that opens the Chrome browser with your app running,
-and a `Web Server` that provides the URL serving the app.
+If you already have a project, run the `flutter create` command in your project directory:
 
 ```console
-$ flutter devices
-1 connected device:
-
-Chrome (web) • chrome • web-javascript • Google Chrome 88.0.4324.150
+$ flutter create . --platforms web
 ```
 
-In your IDE, you should see **Chrome (web)** in the device pulldown.
+This creates a `web/` directory containing the web assets used to bootstrap
+and run your Flutter app. 
 
-### Create and run
+## Run your app
 
-Creating a new project with web support is no different
-than [creating a new Flutter project][] for other platforms.
-
-#### IDE
-
-Create a new app in your IDE and it automatically
-creates iOS, Android, [desktop][], and web versions of your app.
-From the device pulldown, select **Chrome (web)**
-and run your app to see it launch in Chrome.
-
-#### Command line
-
-To create a new app that includes web support
-(in addition to mobile support), run the following commands,
-substituting `my_app` with the name of your project:
-
-```console
-$ flutter create my_app
-$ cd my_app
-```
-
-To serve your app from `localhost` in Chrome,
-enter the following from the top of the package:
+Select [Chrome][] as your app's target device to run and debug a Flutter web app:
 
 ```console
 $ flutter run -d chrome
 ```
 
-:::note
-If there aren't any other connected devices,
-the `-d chrome` is optional.
-:::
+You can also choose Chrome as a target device in your IDE.
 
-The `flutter run` command launches the application using the
-[development compiler] in a Chrome browser.
+If you prefer, you can use the `edge` device type on Windows, or use `web-server` to
+navigate to a local URL in the browser of your choice.
 
 :::warning
-**Hot reload is not supported in a web browser**
-Currently, Flutter supports **hot restart**,
-but not **hot reload** in a web browser.
+**Hot reload is not supported in a web browser**.
+Currently, Flutter only supports **hot restart**, which restarts your app
+without refreshing the web page.
 :::
 
-### Build
+### Run your app using WebAssembly
+
+You can pass the `--wasm` flag to run your app using WebAssembly:
+
+```console
+$ flutter run -d chrome --wasm
+```
+
+Flutter web offers multiple build modes and renderers. For more information,
+see [Web renderers][].
+
+## Build your app
 
 Run the following command to generate a release build:
 
@@ -125,54 +76,53 @@ Run the following command to generate a release build:
 $ flutter build web
 ```
 
-If you receive a `not supported` error, run the following command:
+### Build your app using WebAssembly
+You can also pass the `--wasm` flag to build your app using WebAssembly:
 
 ```console
-$ flutter config --enable-web
+$ flutter build web --wasm
 ```
 
-A release build uses [dart2js][]
-(instead of the [development compiler][])
-to produce a single JavaScript file `main.dart.js`.
-You can create a release build using release mode
-(`flutter run --release`) or by using `flutter build web`.
 This populates a `build/web` directory
 with built files, including an `assets` directory,
 which need to be served together.
 
-You can also include `--web-renderer html`  or `--web-renderer canvaskit` to
-select between the HTML or CanvasKit renderers, respectively. For more
-information, see [Web renderers][].
-
-To learn more, see
+To learn more about how to deploy these assets to the web, see
 [Build and release a web app][].
+For answers to other common questions, see the [Web FAQ][].
 
-## Add web support to an existing app
+## Debugging
 
-To add web support to an existing project
-created using a previous version of Flutter,
-run the following command
-from your project's top-level directory:
+Use [Flutter DevTools][] for the following tasks:
 
-```console
-$ flutter create --platforms web .
-```
+* [Debugging][]
+* [Logging][]
+* [Running Flutter inspector][]
 
-If you receive a `not supported` error, run the following command:
+Use [Chrome DevTools][] for the following tasks:
 
-```console
-$ flutter config --enable-web
-```
+* [Generating event timeline][]
+* [Analyzing performance][]&mdash;make sure to use a
+  profile build
 
+## Testing
+
+Use [widget tests][Widget tests] or integration tests. To learn more about
+running integration tests in a browser, see the [Integration testing][] page.
+
+[Analyzing performance]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance
 [Build and release a web app]: /deployment/web
-[creating a new Flutter project]: /get-started/test-drive
-[dart2js]: {{site.dart-site}}/tools/dart2js
-[desktop]: /platform-integration/desktop
-[development compiler]: {{site.dart-site}}/tools/dartdevc
-[file an issue]: {{site.repo.flutter}}/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
-[install the Flutter and Dart plugins]: /get-started/editor
-[setting up an editor]: /get-started/editor
-[web FAQ]: /platform-integration/web/faq
+[Chrome DevTools]: {{site.developers}}/web/tools/chrome-devtools
 [Chrome]: https://www.google.com/chrome/
+[Debugging]: /tools/devtools/debugger
+[Flutter DevTools]: /tools/devtools
 [Flutter SDK]: /get-started/install
+[Generating event timeline]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
+[Integration testing]: /testing/integration-tests#test-in-a-web-browser
+[Logging]: /tools/devtools/logging
+[Running Flutter inspector]: /tools/devtools/inspector
+[Setup-web]: {{site.url}}/platform-integration/web/install-web
+[Web FAQ]: /platform-integration/web/faq
 [Web renderers]: /platform-integration/web/renderers
+[Widget tests]: /testing/overview#widget-tests
+

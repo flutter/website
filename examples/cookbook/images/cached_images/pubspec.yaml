@@ -6,13 +6,13 @@ publish_to: none
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.4.0
+  sdk: ^3.5.0
 
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.6
-  cached_network_image: ^3.3.1
+  cupertino_icons: ^1.0.8
+  cached_network_image: ^3.4.0
 
 dev_dependencies:
   example_utils:

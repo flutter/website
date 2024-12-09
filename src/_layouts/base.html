@@ -59,10 +59,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
     {% endunless -%}
 
-    {% if diff2html -%}
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.47/bundles/css/diff2html.min.css" integrity="sha256-IMBK4VNZp0ivwefSn51bswdsrhk0HoMTLc2GqFHFBXg=" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    {% endif -%}
-
     <script>
       window.__CALLBACKS = [];
     </script>
@@ -76,7 +72,7 @@
     {% endif -%}
   </head>
   <body{% if body_class %} class="{{ body_class }}"{% endif %}>
-  <a href="#site-content-title" id="skip">
+  <a href="#document-title" id="skip-to-main">
     Skip to main content
   </a>
 
@@ -95,7 +91,9 @@
 
     {% include header.html %}
 
+    {% if site.show_banner != false and show_banner != false -%}
     {% render banner.html %}
+    {% endif -%}
 
     {{ content }}
 
@@ -103,7 +101,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js" integrity="sha512-7rusk8kGPFynZWu26OKbTeI+QPoYchtxsmPeBqkHIEXJxeun4yJ4ISYe7C6sz9wdxeE1Gk3VxsIWgCZTc+vX3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.5/js.cookie.min.js" integrity="sha512-nlp9/l96/EpjYBx7EP7pGASVXNe80hGhYAUrjeXnu/fyF5Py0/RXav4BBNs7n5Hx1WFhOEOWSAVjGeC3oKxDVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="{{ '/assets/js/tabs.js' | append: cache_bust }}"></script>
     <script src="{{ '/assets/js/archive.js' | append: cache_bust }}"></script>

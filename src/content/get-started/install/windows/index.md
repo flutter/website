@@ -2,7 +2,7 @@
 title: Choose your first type of app
 description: Configure your system to develop Flutter on Windows.
 short-title: Windows
-target-list: [Desktop, Android, Web]
+target-list: [Android, Web, Desktop]
 js: [{url: '/assets/js/temp/windows-install-redirector.js'}]
 ---
 

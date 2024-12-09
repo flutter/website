@@ -4,4 +4,4 @@ short-title: Input
 description: A catalog of Flutter's input widgets.
 ---
 
-{% include docs/catalogpage.html category="Input" %}
+{% render docs/catalog-page.md, categoryName:"Input", catalog:catalog %}

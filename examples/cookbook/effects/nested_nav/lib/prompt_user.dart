@@ -67,7 +67,7 @@ class SetupFlowState extends State<SetupFlow> {
   Widget build(BuildContext context) {
     return PopScope(
       canPop: false,
-      onPopInvoked: (didPop) async {
+      onPopInvokedWithResult: (didPop, _) async {
         if (didPop) return;
 
         if (await _isExitDesired() && context.mounted) {

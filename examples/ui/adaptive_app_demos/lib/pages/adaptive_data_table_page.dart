@@ -29,7 +29,7 @@ class AdaptiveDataTablePage extends StatelessWidget {
               child: Column(
                 children: items.map((i) {
                   return Container(
-                    color: i % 2 == 0 ? Colors.grey.shade300 : null,
+                    color: i.isEven ? Colors.grey.shade300 : null,
                     child: Row(
                       children: [
                         _TableRowItem('Item $i, Column 1'),

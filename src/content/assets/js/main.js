@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function(_) {
   initFixedColumns();
   scrollSidebarIntoView();
   initCookieNotice();
-  setupCopyButtons();
+  setUpCodeBlockButtons();
 
   setupSearch();
   setupTabs();
@@ -171,23 +171,31 @@ function initFixedColumns() {
  * Activate the cookie notice footer.
  */
 function initCookieNotice() {
-  const notice = document.getElementById('cookie-notice');
-  const agreeBtn = document.getElementById('cookie-consent');
   const cookieKey = 'cookie-consent';
-  const cookieConsentValue = 'true'
-  const activeClass = 'show';
-
-  if (Cookies.get(cookieKey) === cookieConsentValue) {
-    return;
+  const currentDate = Date.now();
+  const existingDateString = window.localStorage.getItem(cookieKey);
+  if (existingDateString) {
+    const existingDate = parseInt(existingDateString);
+    if (Number.isInteger(existingDate)) {
+      const halfYearMs = 1000 * 60 * 60 * 24 * 180;
+      // If the last consent is less than 180 days old, don't show the notice.
+      if (currentDate - existingDate < halfYearMs) {
+        return;
+      }
+    }
   }
 
-  notice.classList.add(activeClass);
+  const notice = document.getElementById('cookie-notice');
+  const agreeBtn = document.getElementById('cookie-consent');
+  const activeClass = 'show';
 
   agreeBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    Cookies.set(cookieKey, cookieConsentValue, { sameSite: 'strict', expires: 90 });
+    window.localStorage.setItem(cookieKey, currentDate.toString());
     notice.classList.remove(activeClass);
   });
+
+  notice.classList.add(activeClass);
 }
 
 function setupInlineToc() {
@@ -206,20 +214,50 @@ function setupInlineToc() {
 // A pattern to remove terminal command markers when copying code blocks.
 const terminalReplacementPattern = /^(\s*\$\s*)|(C:\\(.*)>\s*)/gm;
 
-function setupCopyButtons() {
-  if (!navigator.clipboard) {
-    return;
-  }
-
+function setUpCodeBlockButtons() {
   const codeBlocks =
       document.querySelectorAll('.code-block-body');
 
+  const canUseClipboard = !!navigator.clipboard;
+
   codeBlocks.forEach(codeBlock => {
-    if (codeBlock.querySelector('pre')) {
+    const preElement = codeBlock.querySelector('pre');
+    if (!preElement) {
+      return;
+    }
+
+    const buttonWrapper = document.createElement('div');
+    buttonWrapper.classList.add('code-inner-buttons');
+
+    const dartPadGistId = preElement.getAttribute('data-dartpad-id');
+    if (dartPadGistId && dartPadGistId.length > 5) {
+      const dartPadButton = document.createElement('button');
+      const innerIcon = document.createElement('span');
+
+      dartPadButton.title = 'Open in DartPad';
+
+      innerIcon.textContent = 'open_in_new';
+      innerIcon.ariaHidden = 'true';
+      innerIcon.classList.add('material-symbols');
+
+      dartPadButton.addEventListener('click',  (e) => {
+        const codeBlockBody = e.currentTarget.parentElement;
+        if (codeBlockBody) {
+          const codePre = codeBlock.querySelector('pre');
+          if (codePre) {
+            window.open(`https://dartpad.dev?id=${dartPadGistId}&run=true`);
+          }
+        }
+      });
+
+      dartPadButton.appendChild(innerIcon);
+      buttonWrapper.appendChild(dartPadButton);
+    }
+
+    if (canUseClipboard) {
       const copyButton = document.createElement('button');
       const innerIcon = document.createElement('span');
 
-      copyButton.classList.add('code-copy-button');
       copyButton.title = 'Copy to clipboard';
 
       innerIcon.textContent = 'content_copy';
@@ -242,7 +280,9 @@ function setupCopyButtons() {
       });
 
       copyButton.appendChild(innerIcon);
-      codeBlock.appendChild(copyButton);
+      buttonWrapper.appendChild(copyButton);
     }
+
+    codeBlock.appendChild(buttonWrapper);
   });
 }

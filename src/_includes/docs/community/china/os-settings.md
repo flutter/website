@@ -11,12 +11,12 @@
    {% capture envvarset -%}{{prompt}} {{comtoset}}{% endcapture -%}
    {% capture setpath -%}{{envvarset}}PATH = $pwd.PATH + "/flutter/bin",$env:PATH -join ";"{% endcapture -%}
    {% capture newdir -%}{{prompt}} New-Item -Path '{{installdirsuggestion}}' -ItemType Directory{% endcapture -%}
-   {% capture unzip -%} {{prompt}} Extract-Archive:{% endcapture -%}
+   {% capture unzip -%} {{prompt}} Expand-Archive .\{% endcapture -%}
    {% capture permaddexample -%}
-$newPath = $pwd.PATH + "/flutter/bin",$env:PATH -join ";"
-[System.Environment]::SetEnvironmentVariable('Path',$newPath,User)
-[System.Environment]::SetEnvironmentVariable('PUB_HOSTED_URL','https://pub.flutter-io.cn',User)
-[System.Environment]::SetEnvironmentVariable('FLUTTER_STORAGE_BASE_URL','https://storage.flutter-io.cn',User)
+$newPath = "$pwd\flutter\bin;$env:PATH"
+[System.Environment]::SetEnvironmentVariable('Path', $newPath, 'User')
+[System.Environment]::SetEnvironmentVariable('PUB_HOSTED_URL', 'https://pub.flutter-io.cn', 'User')
+[System.Environment]::SetEnvironmentVariable('FLUTTER_STORAGE_BASE_URL', 'https://storage.flutter-io.cn', 'User')
    {% endcapture -%}
 {% else -%}
    {% assign shell = 'your terminal' -%}
@@ -27,9 +27,9 @@ $newPath = $pwd.PATH + "/flutter/bin",$env:PATH -join ";"
    {% capture setpath -%}{{envvarset}}PATH="$PWD/flutter/bin:$PATH"{% endcapture -%}
    {% capture newdir -%}{{prompt}} mkdir ~/dev{% endcapture -%}
    {% if id == 'macos' %}
-      {% capture unzip -%} {{prompt}} unzip{% endcapture -%}
+      {% capture unzip -%} {{prompt}} unzip {% endcapture -%}
    {% else %}
-      {% capture unzip -%} {{prompt}} tar -xf{% endcapture -%}
+      {% capture unzip -%} {{prompt}} tar -xf {% endcapture -%}
    {% endif %}
    {% capture permaddexample -%}
 cat <<EOT >> ~/.zprofile
@@ -81,7 +81,7 @@ This procedure requires using {{shell}}.
    This example assumes you downloaded the {{os}} version of the Flutter SDK.
 
    ```console
-   {{unzip}} {{sdk | replace: "opsys", download-os}}{{file-format}}
+   {{unzip}}{{sdk | replace: "opsys", download-os}}{{file-format}}
    ```
 
 1. Add Flutter to your `PATH` environment variable.

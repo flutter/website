@@ -4,4 +4,4 @@ short-title: Assets
 description: A catalog of Flutter's asset widgets.
 ---
 
-{% include docs/catalogpage.html category="Assets, images, and icons" %}
+{% render docs/catalog-page.md, categoryName:"Assets, images, and icons", catalog:catalog %}

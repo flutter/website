@@ -6,11 +6,10 @@ class MyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Image(
-        image:
-            // #docregion asset-image
-            AssetImage('images/a_dot_burr.jpeg')
-        // #enddocregion asset-image
-        );
+      // #docregion asset-image
+      image: AssetImage('images/a_dot_burr.jpeg'),
+      // #enddocregion asset-image
+    );
   }
 }
 

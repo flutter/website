@@ -64,7 +64,7 @@ publish_to: none
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.4.0
+  sdk: ^3.5.0
 
 dependencies:
   [!flutter:!]       # Required for every Flutter project
@@ -72,13 +72,13 @@ dependencies:
   [!flutter_localizations:!] # Required to enable localization
     [!sdk: flutter!]         # Required to enable localization
 
-  [!cupertino_icons: ^1.0.6!] # Only required if you use Cupertino (iOS style) icons
+  [!cupertino_icons: ^1.0.8!] # Only required if you use Cupertino (iOS style) icons
 
 dev_dependencies:
   [!flutter_test:!]
     [!sdk: flutter!] # Required for a Flutter project that includes tests
 
-  [!flutter_lints: ^4.0.0!] # Contains a set of recommended lints for Flutter code
+  [!flutter_lints: ^5.0.0!] # Contains a set of recommended lints for Flutter code
 
 [!flutter:!]
 

@@ -53,12 +53,11 @@ objects calling the layout method on each of their children.
 The children recursively perform their own layout and then return
 _geometry_ up the tree by returning from their layout method. Importantly,
 once a render object has returned from its layout method, that render
-object will not be visited again<sup><a href="#a1">1</a></sup>
+object will not be visited again[^1]
 until the layout for the next frame. This approach combines what might
 otherwise be separate measure and layout passes into a single pass and,
-as a result, each render object is visited _at most
-twice_<sup><a href="#a2">2</a></sup> during layout: once on the way
-down the tree, and once on the way up the tree.
+as a result, each render object is visited _at most twice_[^2] during layout:
+once on the way down the tree, and once on the way up the tree.
 
 Flutter has several specializations of this general protocol.
 The most common specialization is `RenderBox`, which operates in
@@ -66,7 +65,7 @@ two-dimensional, cartesian coordinates. In box layout, the constraints
 are a min and max width and a min and max height. During layout,
 the child determines its geometry by choosing a size within these bounds.
 After the child returns from layout, the parent decides the child's
-position in the parent's coordinate system<sup><a href="#a3">3</a></sup>.
+position in the parent's coordinate system[^3].
 Note that the child's layout cannot depend on its position,
 as the position is not determined until after the child
 returns from the layout. As a result, the parent is free to reposition
@@ -128,8 +127,7 @@ to them during the _build_ phase, skipping over clean elements. During
 the build phase, information flows _unidirectionally_ down the element
 tree, which means each element is visited at most once during the build
 phase.  Once cleaned, an element cannot become dirty again because,
-by induction, all its ancestor elements are also
-clean<sup><a href="#a4">4</a></sup>.
+by induction, all its ancestor elements are also clean[^4].
 
 Because widgets are _immutable_, if an element has not marked itself as
 dirty, the element can return immediately from build, cutting off the walk,
@@ -162,8 +160,8 @@ following cases:
 * The two lists are identical.
 * There is an insertion or removal of one or more widgets in exactly
   one place in the list.
-* If each list contains a widget with the same
-  key<sup><a href="#a5">5</a></sup>, the two widgets are matched.
+* If each list contains a widget with the same key[^5],
+  the two widgets are matched.
 
 The general approach is to match up the beginning and end of both child
 lists by comparing the runtime type and key of each widget,
@@ -324,7 +322,7 @@ For example, a single viewport can have a collapsible header followed
 by a linear list and then a grid. All three slivers will cooperate through
 the sliver layout protocol to produce only those children that are actually
 visible through the viewport, regardless of whether those children belong
-to the header, the list, or the grid<sup><a href="#a6">6</a></sup>.
+to the header, the list, or the grid[^6].
 
 ### Building widgets on demand
 
@@ -523,8 +521,7 @@ that direct interaction with the rendering layer is awkward at best
 and bug-prone at worst.
 
 Flutter's widget layer introduces a composition mechanism using the
-reactive paradigm<sup><a href="#a7">7</a></sup> to manipulate the
-underlying rendering tree.
+reactive paradigm[^7] to manipulate the underlying rendering tree.
 This API abstracts out the tree manipulation by combining the tree
 creation and tree mutation steps into a single tree description (build)
 step, where, after each change to the system state, the new configuration
@@ -556,8 +553,7 @@ appropriate settings (color, stroke width, etc) and knows how to paint
 itself. When it is time to draw the intermediate steps during the animation,
 the start and end values are passed to the appropriate `lerp` function
 along with a _t_ value representing the point along the animation,
-where 0.0 represents the `start` and 1.0 represents the
-`end`<sup><a href="#a8">8</a></sup>,
+where 0.0 represents the `start` and 1.0 represents the `end`[^8],
 and the function returns a third immutable object representing the
 intermediate stage.
 
@@ -624,11 +620,11 @@ widgets on demand when they become visible.
 ---
 **Footnotes:**
 
-<sup><a id="a1">1</a></sup> For layout, at least. It might be revisited
+[^1]: For layout, at least. It might be revisited
   for painting, for building the accessibility tree if necessary,
   and for hit testing if necessary.
 
-<sup><a id="a2">2</a></sup> Reality, of course, is a bit more
+[^2]: Reality, of course, is a bit more
   complicated. Some layouts involve intrinsic dimensions or baseline
   measurements, which do involve an additional walk of the relevant subtree
   (aggressive caching is used to mitigate the potential for quadratic
@@ -636,7 +632,7 @@ widgets on demand when they become visible.
   rare. In particular, intrinsic dimensions are not required for the
   common case of shrink-wrapping.
 
-<sup><a id="a3">3</a></sup> Technically, the child's position is not
+[^3]: Technically, the child's position is not
   part of its RenderBox geometry and therefore need not actually be
   calculated during layout. Many render objects implicitly position
   their single child at 0,0 relative to their own origin, which
@@ -645,7 +641,7 @@ widgets on demand when they become visible.
   possible moment (for example, during the paint phase), to avoid
   the computation entirely if they are not subsequently painted.
 
-<sup><a id="a4">4</a></sup>  There exists one exception to this rule.
+[^4]: There exists one exception to this rule.
   As discussed in the [Building widgets on demand](#building-widgets-on-demand)
   section, some widgets can be rebuilt as a result of a change in layout
   constraints. If a widget marked itself dirty for unrelated reasons in
@@ -653,19 +649,19 @@ widgets on demand when they become visible.
   it will be updated twice. This redundant build is limited to the
   widget itself and does not impact its descendants.
 
-<sup><a id="a5">5</a></sup> A key is an opaque object optionally
+[^5]: A key is an opaque object optionally
   associated with a widget whose equality operator is used to influence
   the reconciliation algorithm.
 
-<sup><a id="a6">6</a></sup>  For accessibility, and to give applications
+[^6]: For accessibility, and to give applications
   a few extra milliseconds between when a widget is built and when it
   appears on the screen, the viewport creates (but does not paint)
   widgets for a few hundred pixels before and after the visible widgets.
 
-<sup><a id="a7">7</a></sup>  This approach was first made popular by
+[^7]: This approach was first made popular by
   Facebook's React library.
 
-<sup><a id="a8">8</a></sup>  In practice, the _t_ value is allowed
+[^8]: In practice, the _t_ value is allowed
   to extend past the 0.0-1.0 range, and does so for some curves. For
   example, the "elastic" curves overshoot briefly in order to represent
   a bouncing effect. The interpolation logic typically can extrapolate

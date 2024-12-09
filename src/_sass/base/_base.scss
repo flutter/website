@@ -26,6 +26,7 @@ dd {
 
 img {
   max-width: 100%;
+  max-height: 75vh;
 
   &[width][height] {
     height: auto;
@@ -39,11 +40,13 @@ picture {
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  grid-auto-rows: 1fr;
   gap: 1rem;
   margin-bottom: 1rem;
 
   .card {
     overflow: hidden;
+    max-width: 50vw;
   }
 
   .card-body img {
@@ -188,10 +191,6 @@ picture {
   max-height: 60vh;
   max-width: 100%;
 
-  &.site-figure {
-    max-height: none;
-  }
-
   @include bootstrap.media-breakpoint-up(md) {
     float: right;
     margin: 0 0 bootstrap.bs-spacer(10) bootstrap.bs-spacer(10);
@@ -200,24 +199,17 @@ picture {
   }
 }
 
-.site-figure {
+main figure {
   display: flex;
   justify-content: center;
+
+  &.site-image-right {
+    max-height: none;
+  }
 
   .site-figure-container {
     flex: 0 1 auto;
     max-width: 100%;
-
-    img { width: 100%; }
-
-    figcaption {
-      margin-top: bootstrap.bs-spacer(4);
-      text-align: center;
-    }
-  }
-  .site-figure-container-lg {
-    flex: 0 1 auto;
-    width: 100%;
 
     img { width: 100%; }
 
@@ -234,9 +226,10 @@ picture {
 }
 
 .text-icon {
-  margin: 0 0.25rem;
-  width: 20px;
-  height: 20px;
+  margin: 0 0.125rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: text-bottom;
 }
 
 .site-illustration {
@@ -256,14 +249,14 @@ picture {
 }
 
 .btn.btn-cta {
-    font-size: 18px;
-    font-weight: 500;
-    padding: bootstrap.bs-spacer(4) bootstrap.bs-spacer(6);
+  font-size: 18px;
+  font-weight: 500;
+  padding: bootstrap.bs-spacer(4) bootstrap.bs-spacer(6);
 
-    @include bootstrap.media-breakpoint-up(sm) {
-      min-width: 250px;
-    }
+  @include bootstrap.media-breakpoint-up(sm) {
+    min-width: 250px;
   }
+}
 
 .embedded-video-wrapper {
   width: 100%;
@@ -277,8 +270,17 @@ picture {
   }
 }
 
-.table-wrapper {
+.table-wrapper, .scrollable-table {
   overflow-x: auto;
+}
+
+.scrollable-table {
+  overflow-y: scroll;
+  max-height: 20rem;
+
+  table {
+    width: 100%;
+  }
 }
 
 // If table head has empty children, just hide it
@@ -434,7 +436,7 @@ aside {
   }
 }
 
-#skip {
+#skip-to-main {
   top: 10px;
   left: 10px;
   position: absolute;
@@ -444,11 +446,11 @@ aside {
   color: $site-color-white;
   border-radius: 0.5rem;
   transform: translateY(-5rem);
-}
 
-#skip:focus {
-  opacity: 1;
-  transform: translateY(0);
+  &:focus {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 #site-content-title {
@@ -468,3 +470,10 @@ aside {
   }
 }
 
+.footnote-ref a {
+  scroll-margin-top: 6rem;
+}
+
+.footnote-item {
+  scroll-margin-top: 5rem;
+}

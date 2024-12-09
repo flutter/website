@@ -2,7 +2,6 @@
 title: Add interactivity to your Flutter app
 description: How to implement a stateful widget that responds to taps.
 short-title: Interactivity
-diff2html: true
 ---
 
 {% assign examples = site.repo.this | append: "/tree/" | append: site.branch | append: "/examples" -%}
@@ -270,22 +269,18 @@ In the same location, create the stateful widget:
 
 <?code-excerpt path-base=""?>
 
-```diff2html
---- layout/lakes/step6/lib/main.dart
-+++ layout/lakes/interactive/lib/main.dart
-@@ -83,11 +83,7 @@
-               ],
-             ),
-           ),
--          Icon(
--            Icons.star,
--            color: Colors.red[500],
--          ),
--          const Text('41'),
-+          const FavoriteWidget(),
-         ],
-       ),
-     );
+```dart diff
+  child: Row(
+    children: [
+      // ...
+-     Icon(
+-       Icons.star,
+-       color: Colors.red[500],
+-     ),
+-     const Text('41'),
++     const FavoriteWidget(),
+    ],
+  ),
 ```
 
 That's it! When you hot reload the app,

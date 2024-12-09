@@ -22,11 +22,10 @@ For more information, check out
 [Issue #9690]:   {{site.github}}/flutter/website/issues/9690
 [Issue #135056]: {{site.github}}/flutter/flutter/issues/135056
 
-The iOS 18 release, coming in September 2024 and currently in beta,
-adds new functionality for customizing a device's
-the Control Center, including creating multiple pages.
+iOS 18 added support for customizing a device's
+Control Center, including creating multiple pages.
 You can also create new toggles for the Control Center
-using the [`ControlCenter`] API, to feature your app.
+using the [`ControlCenter`][] API, to feature your app.
 
 [`ControlCenter`]: {{site.apple-dev}}/documentation/widgetkit/controlcenter
 
@@ -40,10 +39,10 @@ add the extension point *target* to your Xcode project.
    Flutter project directory.
 1. In Xcode, select **File -> New -> Target** from the menu bar. 
 
-    <figure class="site-figure">
-    <div class="site-figure-container">
+    <figure>
+      <div class="site-figure-container">
         <img src='/assets/images/docs/development/platform-integration/app-extensions/xcode-new-target.png' alt='Opening the File -> New menu, then selecting Target in Xcode.' height='300'>
-    </div>
+      </div>
     </figure>
 1. Select the app extension you intend to add.
    This selection generates extension-specific code 
@@ -142,10 +141,10 @@ share content with other apps,
 such as sharing a picture to create
 a new post on a social media app.
 
-<figure class="site-figure">
-    <div class="site-figure-container">
-        <img src='/assets/images/docs/development/platform-integration/app-extensions/share-extension.png' alt='An example of an entry added to the share menu by a Flutter app' height='300'>
-    </div>
+<figure>
+  <div class="site-figure-container">
+    <img src='/assets/images/docs/development/platform-integration/app-extensions/share-extension.png' alt='An example of an entry added to the share menu by a Flutter app' height='300'>
+  </div>
 </figure>
 
 As of the 3.16 release, you can build
@@ -180,10 +179,10 @@ use an iOS simulator to test your extension in debug mode.
    share extension's frameworks and libraries list.
    Make sure the embed column says "Embed & Sign".
 
-   <figure class="site-figure">
-       <div class="site-figure-container">
-           <img src='/assets/images/docs/development/platform-integration/app-extensions/embed-framework.png' alt='The Flutter.xcframework file being marked as Embed & Sign in Xcode.' height='300'>
-       </div>
+   <figure>
+     <div class="site-figure-container">
+       <img src='/assets/images/docs/development/platform-integration/app-extensions/embed-framework.png' alt='The Flutter.xcframework file being marked as Embed & Sign in Xcode.' height='300'>
+     </div>
    </figure>
 
 1. Open the Flutter app project settings in Xcode
@@ -197,10 +196,10 @@ use an iOS simulator to test your extension in debug mode.
       **Based on configuration file** drop-down menu for your
       extension matches the one selected for the normal app target.
 
-    <figure class="site-figure">
-        <div class="site-figure-container">
-            <img src='/assets/images/docs/development/platform-integration/app-extensions/xcode-configurations.png' alt='An example Xcode Runner configuration with each property set to: Based on configuration file.' height='300'>
-        </div>
+    <figure>
+      <div class="site-figure-container">
+        <img src='/assets/images/docs/development/platform-integration/app-extensions/xcode-configurations.png' alt='An example Xcode Runner configuration with each property set to: Based on configuration file.' height='300'>
+      </div>
     </figure>
 
 1. (Optional) Replace any storyboard files with an extension class, if needed.
@@ -216,10 +215,10 @@ use an iOS simulator to test your extension in debug mode.
        you should omit the `<YourShareExtensionTargetName>.`
        portion.<br>
 
-    <figure class="site-figure">
-        <div class="site-figure-container">
-            <img src='/assets/images/docs/development/platform-integration/app-extensions/share-extension-info.png' alt='Setting the NSExtensionPrincipalClass property in the Info.plist file within Xcode.' height='300'>
-        </div>
+    <figure>
+      <div class="site-figure-container">
+        <img src='/assets/images/docs/development/platform-integration/app-extensions/share-extension-info.png' alt='Setting the NSExtensionPrincipalClass property in the Info.plist file within Xcode.' height='300'>
+      </div>
     </figure>
 
 1. Embed the `FlutterViewController` as described in

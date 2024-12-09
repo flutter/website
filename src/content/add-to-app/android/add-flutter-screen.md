@@ -56,6 +56,24 @@ import io.flutter.embedding.android.FlutterActivity;
 :::
 
 {% tabs "android-language" %}
+{% tab "Jetpack Compose" %}
+
+```kotlin title="ExistingActivity.kt"
+MyButton(onClick = {
+    startActivity(
+        FlutterActivity.createDefaultIntent(this)
+    )
+})
+
+@Composable
+fun MyButton(onClick: () -> Unit) {
+    Button(onClick = onClick) {
+        Text("Launch Flutter!")
+    }
+}
+```
+
+{% endtab %}
 {% tab "Kotlin" %}
 
 ```kotlin title="ExistingActivity.kt"
@@ -92,6 +110,27 @@ The following example demonstrates how to launch a
 route in Flutter.
 
 {% tabs "android-language" %}
+{% tab "Jetpack Compose" %}
+
+```kotlin title="ExistingActivity.kt"
+MyButton(onClick = {
+  startActivity(
+    FlutterActivity
+      .withNewEngine()
+      .initialRoute("/my_route")
+      .build(this)
+  )
+})
+
+@Composable
+fun MyButton(onClick: () -> Unit) {
+    Button(onClick = onClick) {
+        Text("Launch Flutter!")
+    }
+}
+```
+
+{% endtab %}
 {% tab "Kotlin" %}
 
 ```kotlin title="ExistingActivity.kt"

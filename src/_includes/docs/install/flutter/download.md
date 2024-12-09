@@ -34,11 +34,11 @@
           -d {{path}}
    {%- endcapture %}
 {% else -%}
-   {% assign diroptions='`/usr/bin/`' %}
-   {% assign dirinstall='`/usr/bin/`' %}
+   {% assign diroptions='`~/development/`' %}
+   {% assign dirinstall='`~/development/`' %}
    {% assign unzip='tar' %}
-   {% assign path='/usr/bin/' %}
-   {% assign flutter-path='/usr/bin/flutter' %}
+   {% assign path='~/development/' %}
+   {% assign flutter-path='~/development/flutter' %}
    {% assign terminal='a shell' %}
    {% assign prompt='\$' %}
    {% assign dirdl='~/Downloads/' %}

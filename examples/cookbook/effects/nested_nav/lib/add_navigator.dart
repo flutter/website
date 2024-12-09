@@ -25,7 +25,7 @@ void main() {
       ),
       // #docregion OnGenerateRoute
       onGenerateRoute: (settings) {
-        late Widget page;
+        final Widget page;
         if (settings.name == routeHome) {
           page = const HomeScreen();
         } else if (settings.name == routeSettings) {
@@ -71,7 +71,7 @@ class SetupFlow extends StatefulWidget {
 }
 
 class SetupFlowState extends State<SetupFlow> {
-// #docregion AddNavigator
+  // #docregion AddNavigator
   final _navigatorKey = GlobalKey<NavigatorState>();
 
   void _onDiscoveryComplete() {
@@ -90,7 +90,7 @@ class SetupFlowState extends State<SetupFlow> {
   Widget build(BuildContext context) {
     return PopScope(
       canPop: false,
-      onPopInvoked: (didPop) async {
+      onPopInvokedWithResult: (didPop, _) async {
         if (didPop) return;
 
         if (await _isExitDesired() && context.mounted) {
@@ -108,37 +108,33 @@ class SetupFlowState extends State<SetupFlow> {
     );
   }
 
-  Route _onGenerateRoute(RouteSettings settings) {
-    late Widget page;
-    switch (settings.name) {
-      case routeDeviceSetupStartPage:
-        page = WaitingPage(
+  Route<Widget> _onGenerateRoute(RouteSettings settings) {
+    final page = switch (settings.name) {
+      routeDeviceSetupStartPage => WaitingPage(
           message: 'Searching for nearby bulb...',
           onWaitComplete: _onDiscoveryComplete,
-        );
-      case routeDeviceSetupSelectDevicePage:
-        page = SelectDevicePage(
+        ),
+      routeDeviceSetupSelectDevicePage => SelectDevicePage(
           onDeviceSelected: _onDeviceSelected,
-        );
-      case routeDeviceSetupConnectingPage:
-        page = WaitingPage(
+        ),
+      routeDeviceSetupConnectingPage => WaitingPage(
           message: 'Connecting...',
           onWaitComplete: _onConnectionEstablished,
-        );
-      case routeDeviceSetupFinishedPage:
-        page = FinishedPage(
+        ),
+      routeDeviceSetupFinishedPage => FinishedPage(
           onFinishPressed: _exitSetup,
-        );
-    }
+        ),
+      _ => throw StateError('Unexpected route name: ${settings.name}!')
+    };
 
-    return MaterialPageRoute<dynamic>(
+    return MaterialPageRoute(
       builder: (context) {
         return page;
       },
       settings: settings,
     );
   }
-// #enddocregion AddNavigator
+  // #enddocregion AddNavigator
 
   @override
   void initState() {
@@ -308,56 +304,58 @@ class FinishedPage extends StatelessWidget {
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Container(
-                width: 250,
-                height: 250,
-                decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Color(0xFF222222),
-                ),
-                child: const Center(
-                  child: Icon(
-                    Icons.lightbulb,
-                    size: 175,
-                    color: Colors.white,
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  width: 200,
+                  height: 200,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Color(0xFF222222),
+                  ),
+                  child: const Center(
+                    child: Icon(
+                      Icons.lightbulb,
+                      size: 140,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(height: 32),
-              const Text(
-                'Bulb added!',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 32),
-              ElevatedButton(
-                style: ButtonStyle(
-                  padding: WidgetStateProperty.resolveWith((states) {
-                    return const EdgeInsets.symmetric(
-                        horizontal: 24, vertical: 12);
-                  }),
-                  backgroundColor: WidgetStateColor.resolveWith((states) {
-                    return const Color(0xFF222222);
-                  }),
-                  shape: WidgetStateProperty.resolveWith((states) {
-                    return const StadiumBorder();
-                  }),
-                ),
-                onPressed: onFinishPressed,
-                child: const Text(
-                  'Finish',
+                const SizedBox(height: 32),
+                const Text(
+                  'Bulb added!',
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 24,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-              ),
-            ],
+                const SizedBox(height: 32),
+                ElevatedButton(
+                  style: ButtonStyle(
+                    padding: WidgetStateProperty.resolveWith((states) {
+                      return const EdgeInsets.symmetric(
+                          horizontal: 24, vertical: 12);
+                    }),
+                    backgroundColor: WidgetStateColor.resolveWith((states) {
+                      return const Color(0xFF222222);
+                    }),
+                    shape: WidgetStateProperty.resolveWith((states) {
+                      return const StadiumBorder();
+                    }),
+                  ),
+                  onPressed: onFinishPressed,
+                  child: const Text(
+                    'Finish',
+                    style: TextStyle(
+                      fontSize: 24,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -382,8 +380,8 @@ class HomeScreen extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Container(
-                width: 250,
-                height: 250,
+                width: 200,
+                height: 200,
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   color: Color(0xFF222222),
@@ -391,7 +389,7 @@ class HomeScreen extends StatelessWidget {
                 child: Center(
                   child: Icon(
                     Icons.lightbulb,
-                    size: 175,
+                    size: 140,
                     color: Theme.of(context).scaffoldBackgroundColor,
                   ),
                 ),

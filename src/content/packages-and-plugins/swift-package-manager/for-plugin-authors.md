@@ -1,7 +1,6 @@
 ---
 title: Swift Package Manager for plugin authors
 description: How to add Swift Package Manager compatibility to iOS and macOS plugins
-diff2html: true
 ---
 
 :::warning
@@ -38,8 +37,8 @@ This guide shows how to add Swift Package Manager support to a plugin that
 already supports CocoaPods.
 This ensures the plugin is usable by all Flutter projects.
 
-Flutter plugins should _both_ Swift Package Manager and CocoaPods until further
-notice.
+Flutter plugins should support _both_ Swift Package Manager and CocoaPods until
+further notice.
 
 Swift Package Manager adoption will be gradual.
 Plugins that don't support CocoaPods won't be usable by projects that haven't
@@ -76,16 +75,12 @@ To update your unit tests:
 1. If you were using a CocoaPod dependency for tests, such as `OCMock`,
    you'll want to remove it from your `Podfile` file.
 
-   ```diff2html
-   --- a/ios/Podfile
-   +++ b/ios/Podfile
-   @@ -33,7 +33,6 @@ target 'Runner' do
-      target 'RunnerTests' do
-        inherit! :search_paths
+   ```ruby title="ios/Podfile" diff
+     target 'RunnerTests' do
+       inherit! :search_paths
    
-   -    pod 'OCMock', '3.5'
-      end
-    end
+   -   pod 'OCMock', '3.5'
+     end
    ```
 
    Then in the terminal, run `pod install` in the `plugin_name_ios/example/ios`
@@ -131,7 +126,7 @@ To update your unit tests:
       caption:"The `Link Binary With Libraries` Build Phase in the `RunnerTests` target" %}
 
       If the build phase doesn't exist already, create one.
-      Click the <span class="material-symbols-outlined">add</span> and
+      Click the <span class="material-symbols">add</span> and
       then click **New Link Binary With Libraries Phase**.
 
       {% render docs/captioned-image.liquid,
@@ -140,7 +135,7 @@ To update your unit tests:
 
    1. Navigate to **Package Dependencies** for the project.
 
-   1. Click <span class="material-symbols-outlined">add</span>.
+   1. Click <span class="material-symbols">add</span>.
 
    1. In the dialog that opens, click the **Add Local...** button.
 

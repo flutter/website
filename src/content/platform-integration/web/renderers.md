@@ -1,57 +1,120 @@
 ---
 title: Web renderers
-description: How to choose a web renderer for running and building a web app.
+description: Choosing build modes and renderers for a Flutter web app.
 ---
 
-When running and building apps for the web, you can choose between two different
-renderers. This page describes both renderers and how to choose the best one for
-your needs. The two renderers are:
+Flutter web offers two _build modes_, and two _renderers_.
+The two build modes are the **default** and **WebAssembly**,
+and the two renderers are **canvaskit** and **skwasm**.
 
-**CanvasKit renderer**
-: This renderer is fully consistent with Flutter mobile and desktop, has faster
-  performance with higher widget density, but adds about 1.5MB in download size.
-  [CanvasKit][canvaskit] uses WebGL to render Skia paint commands.
+Flutter chooses the build mode when building the app,
+and determines which renderers are available at runtime.
 
-**HTML renderer**
-: This renderer, which has a smaller download size than the CanvasKit renderer,
-  uses a combination of HTML elements, CSS, Canvas elements, and SVG elements.
+For a default build,
+Flutter chooses the`canvaskit` renderer at runtime.
+For a WebAssembly build,
+Flutter chooses the `skwasm` renderer at runtime,
+and falls back to `canvaskit` if the browser doesn't support `skwasm`.
 
-## Command line options
+## Build modes
 
-The `--web-renderer` command line option takes one of three values:
-`canvaskit`, `html`, or `auto`.
+### Default build mode
 
-* `canvaskit` (default) - always use the CanvasKit renderer
-* `html` - always use the HTML renderer
-* `auto` - automatically chooses which renderer to use. This option
-    chooses the HTML renderer when the app is running in a mobile browser, and
-    CanvasKit renderer when the app is running in a desktop browser.
+Flutter chooses the default mode when the
+`flutter run` or `flutter build web` commands are
+used without passing `--wasm`, or when passing `--no-wasm`.
 
-This flag can be used with the `run` or `build` subcommands. For example:
+This build mode only uses the `canvaskit` renderer.
 
-```console
-flutter run -d chrome --web-renderer html
-```
+To run in a Chrome using the default build mode:
 
 ```console
-flutter build web --web-renderer canvaskit
+flutter run -d chrome
 ```
 
-This flag is ignored when a non-browser (mobile or desktop) device
-target is selected.
+To build your app for release using the default build mode:
 
-## Runtime configuration
+```console
+flutter build web
+```
 
-To override the web renderer at runtime:
+### WebAssembly build mode
 
- 1. Build the app with the `auto` option.
- 1. Set up custom web app initialization
-    as described in [Write a custom `flutter_bootstrap.js`][custom-bootstrap].
+This mode is enabled by passing `--wasm` to `flutter run` and
+`flutter build web` commands.
+
+This mode makes both `skwasm` and `canvaskit` available. `skwasm` requires
+[WasmGC][], which is not yet supported by all modern browsers.
+Therefore, at runtime Flutter chooses `skwasm` if garbage collection is
+supported, and falls back to `canvaskit` if not. This allows apps compiled in the
+WebAssembly mode to still run in all modern browsers.
+
+The `--wasm` flag is not supported by non-web platforms.
+
+To run in Chrome using the WebAssembly mode:
+
+```console
+flutter run -d chrome --wasm
+```
+
+To build your app for release using the WebAssembly mode:
+
+```console
+flutter build web --wasm
+```
+
+## Renderers
+
+Flutter has two renderers (`canvaskit` and `skwasm`)
+that re-implement the Flutter engine to run the browser. 
+The renderer converts UI primitives (stored as `Scene` objects) into
+pixels.
+
+### canvaskit
+
+The `canvaskit` renderer is compatible with all modern browsers, and is the 
+renderer that is used in the _default_ build mode.
+
+It includes a copy of Skia compiled to WebAssembly, which adds
+about 1.5MB in download size.
+
+### skwasm
+
+The `skwasm` renderer is a more compact version of Skia
+that is compiled to WebAssembly and supports rendering on a separate thread.
+
+This renderer must be used with the _WebAssembly_ build mode,
+which compiles the Dart code to WebAssembly.
+
+To take advantage of multiple threads,
+the web server must meet the [SharedArrayBuffer security requirements][].
+In this mode,
+Flutter uses a dedicated [web worker][] to offload part of the rendering
+workload to a separate thread,
+taking advantage of multiple CPU cores.
+If the browser does not meet these requirements,
+the `skwasm` renderer runs in a single-threaded configuration.
+
+This renderer includes a more compact version of Skia compiled to WebAssembly,
+adding about 1.1MB in download size.
+
+## Choosing a renderer at runtime
+
+By default, when building in WebAssembly mode, Flutter will decide when to
+use `skwasm`, and when to fallback to `canvaskit`. This can be overridden by
+passing a configuration object to the loader, as follows:
+
+ 1. Build the app with the `--wasm` flag to make both `skwasm` and `canvaskit`
+    renderers available to the app.
+ 1. Set up custom web app initialization as described in
+    [Write a custom `flutter_bootstrap.js`][custom-bootstrap].
  1. Prepare a configuration object with the `renderer` property set to
-    `"canvaskit"` or `"html"`.
+    `"canvaskit"` or `"skwasm"`.
  1. Pass your prepared config object as the `config` property of
     a new object to the `_flutter.loader.load` method that is
     provided by the earlier injected code.
+
+Example:
 
 ```html highlightLines=9-14
 <body>
@@ -59,11 +122,11 @@ To override the web renderer at runtime:
     {% raw %}{{flutter_js}}{% endraw %}
     {% raw %}{{flutter_build_config}}{% endraw %}
 
-    // TODO: Replace this with your own code to determine which renderer to use.  
-    const useHtml = true;
-  
+    // TODO: Replace this with your own code to determine which renderer to use.
+    const useCanvasKit = true;
+
     const config = {
-      renderer: useHtml ? "html" : "canvaskit",
+      renderer: useCanvasKit ? "canvaskit" : "skwasm",
     };
     _flutter.loader.load({
       config: config,
@@ -72,55 +135,44 @@ To override the web renderer at runtime:
 </body>
 ```
 
-The web renderer can't be changed after the Flutter engine startup process
-begins in `main.dart.js`.
-
-:::version-note
-The method of specifying the web renderer was changed in Flutter 3.22.
-To learn how to configure the renderer in earlier Flutter versions,
-check out [Legacy web app initialization][web-init-legacy].
-:::
+The web renderer can't be changed after calling the `load` method. Therefore,
+any decisions about which renderer to use, must be made prior to calling
+`_flutter.loader.load`.
 
 [custom-bootstrap]: /platform-integration/web/initialization#custom-bootstrap-js
 [customizing-web-init]: /platform-integration/web/initialization
-[web-init-legacy]: /platform-integration/web/initialization-legacy
 
-## Choosing which option to use
+## Choosing which build mode to use
 
-Choose the `canvaskit` option (default) if you are prioritizing performance and
-pixel-perfect consistency on both desktop and mobile browsers.
+To compile Dart to WebAssembly,
+your app and its plugins / packages must meet the following requirements:
 
-Choose the `html` option if you are optimizing download size over performance on
-both desktop and mobile browsers.
+- **Use new JS Interop** - 
+  The code must only use the new JS interop library `dart:js_interop`. Old-style
+  `dart:js`, `dart:js_util`, and `package:js` are no longer supported.
+- **Use new Web APIs** -
+  Code using Web APIs must use the new `package:web` instead of `dart:html`.
+- **Number compatibility** -
+  WebAssembly implements Dart's numeric types `int` and `double` exactly the
+  same as the Dart VM. In JavaScript these types are emulated using the JS
+  `Number` type. It is possible that your code accidentally or purposefully
+  relies on the JS behavior for numbers. If so, such code needs to be updated to
+  behave correctly with the Dart VM behavior.
 
-Choose the `auto` option if you are optimizing for download size on
-mobile browsers and optimizing for performance on desktop browsers.
+Use these tips to decide which mode to use:
 
-## Examples
-
-Run in Chrome using the default renderer option (`canvaskit`):
-
-```console
-flutter run -d chrome
-```
-
-Build your app in release mode, using the default (`canvaskit`) option:
-
-```console
-flutter build web --release
-```
-
-Build your app in release mode, using the `auto` renderer option:
-
-```console
-flutter build web --web-renderer auto --release
-```
-
-Run your app in profile mode using the HTML renderer:
-
-```console
-flutter run -d chrome --web-renderer html --profile
-```
+* **Package support** - Choose the default mode if your app relies on plugins and packages that do
+  not yet support WebAssembly.
+* **Performance** -
+  Choose the WebAssembly mode if your app's code and packages are compatible
+  with WebAssembly and app performance is important. `skwasm` has noticeably
+  better app start-up time and frame performance compared to `canvaskit`.
+  `skwasm` is particularly effective in multi-threaded mode, so consider
+  configuring the server such that it meets the
+  [SharedArrayBuffer security requirements][].
 
 [canvaskit]: https://skia.org/docs/user/modules/canvaskit/
 [file an issue]: {{site.repo.flutter}}/issues/new?title=[web]:+%3Cdescribe+issue+here%3E&labels=%E2%98%B8+platform-web&body=Describe+your+issue+and+include+the+command+you%27re+running,+flutter_web%20version,+browser+version
+[web worker]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API
+[WasmGC]: https://developer.chrome.com/blog/wasmgc
+[SharedArrayBuffer security requirements]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer#security_requirements

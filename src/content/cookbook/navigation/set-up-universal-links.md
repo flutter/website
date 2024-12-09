@@ -1,12 +1,9 @@
 ---
 title: Set up universal links for iOS
-description: How set up universal links for an iOS application built with Flutter
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
+description: >-
+   Learn how to set up universal links for an
+   iOS application built with Flutter.
 ---
-
-<?code-excerpt path-base="codelabs/deeplink_cookbook"?>
 
 Deep linking allows an app user to launch an app with a URI.
 This URI contains scheme, host, and path,
@@ -38,7 +35,7 @@ It provides a simple API to handle complex routing scenarios.
 
 1. To create a new application, type `flutter create <app-name>`.
 
-    ```shell
+    ```console
     $ flutter create deeplink_cookbook
     ```
 
@@ -51,8 +48,7 @@ It provides a simple API to handle complex routing scenarios.
 
 3. To handle the routing, create a `GoRouter` object in the `main.dart` file:
 
-    <?code-excerpt "lib/main.dart"?>
-    ```dartpad title="Flutter GoRouter hands-on example in DartPad" run="true"
+    ```dart title="main.dart"
     import 'package:flutter/material.dart';
     import 'package:go_router/go_router.dart';
     
@@ -86,41 +82,15 @@ It provides a simple API to handle complex routing scenarios.
 1. Open the `ios/Runner.xcworkspace` file inside the
    Flutter project's `ios` folder.
 
-### Add the FlutterDeepLinkingEnabled key value pair
+  :::note
+  If you are use a third-party plugins to handle deep links, 
+  such as [app_links][],
+  Flutter's default deeplink handler will
+  break these plugins. 
 
-1. In the Xcode Navigator, expand **Runner** then click **Info**.
-
-   <img
-       src="/assets/images/docs/cookbook/set-up-universal-links-info-plist.png"
-       alt="Xcode info.Plist screenshot"
-       width="100%" />
-
-1. In the Editor, <kbd>Ctrl</kbd> + click and
-   select **Raw Keys and Values** from the context menu.
-
-1. In the Editor, <kbd>Ctrl</kbd> + click and
-   select **Add Row** from the context menu.
-
-   A new **Key** should display.
-
-1. Change the new key properties to meet the following:
-
-   * Change the **Key** to `FlutterDeepLinkingEnabled`
-   * Change the **Type** to `Boolean`
-   * Change the **Value** to `YES`.
-
-   <img
-      src="/assets/images/docs/cookbook/set-up-universal-links-flutterdeeplinkingenabled.png"
-      alt="flutter deeplinking enabled screenshot"
-      width="100%" />
-
-   :::note
-   The `FlutterDeepLinkingEnabled` property enables
-   Flutter's default deeplink handler.
-   If you use a third-party plugin, such as [uni_links][],
-   setting this property breaks the third-party plugin.
-   Skip this step if you prefer to use a third-party plugin.
-   :::
+  If you use a third-party plugin,
+  add the key and value pair `FlutterDeepLinkingEnabled` and `NO` to info.Plist.
+  :::
 
 ### Add associated domains
 
@@ -162,7 +132,7 @@ capability. To add associated domains, choose the IDE tab.
 {% endtab %}
 {% tab "Other editors" %}
 
-1. Open the `ios/Runner/Runner.entitlements` XML file in your preferred IDE.
+1. Open the `ios/Runner/Runner.entitlements` XML file in your preferred editor.
 
 1. Add an associated domain inside the `<dict>` tag.
 
@@ -181,8 +151,8 @@ capability. To add associated domains, choose the IDE tab.
 
 1. Save the `ios/Runner/Runner.entitlements` file.
 
-To check that the associated domains you created are available, perform
-the following steps.
+To check that the associated domains you created are available,
+perform the following steps:
 
 1. Launch Xcode if necessary.
 
@@ -207,8 +177,10 @@ You have finished configuring the application for deep linking.
 ## Associate your app with your web domain
 
 You need to host an `apple-app-site-association` file in the web domain.
-This file tells the mobile browser which iOS application to open instead of the browser.
-To create the file, find the `appID` of the Flutter app you created in the previous section.
+This file tells the mobile browser which
+iOS application to open instead of the browser.
+To create the file, find the `appID` of the Flutter app you
+created in the previous section.
 
 ### Locate components of the `appID`
 
@@ -273,8 +245,8 @@ this file should resemble the following content:
 1. Verify that your browser can access this file.
 
 :::note
-If you have more than one scheme/flavor, you can add more than one appID 
-into appIDs fields
+If you have more than one scheme/flavor, you can
+add more than one `appID` into the `appIDs` field.
 :::
 
 ## Test the universal link
@@ -282,8 +254,7 @@ into appIDs fields
 Test a universal link using a physical iOS device or the Simulator.
 
 :::note
-It might take up to 24 hours before Apple's
-[Content Delivery Network](https://en.wikipedia.org/wiki/Content_delivery_network) (CDN)
+It might take up to 24 hours before Apple's [Content Delivery Network][] (CDN)
 requests the `apple-app-site-association` (AASA) file from your web domain.
 Until the CDN requests the file, the universal link won't work.
 To bypass Apple's CDN, check out the [alternate mode section][].
@@ -321,6 +292,8 @@ To bypass Apple's CDN, check out the [alternate mode section][].
       alt="Deeplinked Simulator screenshot"
       width="50%" />
 
+[Content Delivery Network]: https://en.wikipedia.org/wiki/Content_delivery_network
+
 ## Find the source code
 
 You can find the source code for the [deeplink_cookbook][]
@@ -333,4 +306,4 @@ recipe in the GitHub repo.
 [Firebase Hosting]: {{site.firebase}}/docs/hosting
 [go_router]: {{site.pub-pkg}}/go_router
 [GitHub Pages]: https://pages.github.com
-[uni_links]: {{site.pub-pkg}}/uni_links
+[app_links]: {{site.pub-pkg}}/app_links

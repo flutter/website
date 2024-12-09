@@ -170,7 +170,7 @@ Relevant PRs:
 * Deprecated in [#109817][]
 * Removed in [#139255][]
 
-[`TextButton`]: {{site.api}}/flutter/material/TextTheme-class.html
+[`TextTheme`]: {{site.api}}/flutter/material/TextTheme-class.html
 
 [#109817]: {{site.repo.flutter}}/pull/109817
 [#139255]: {{site.repo.flutter}}/pull/139255
@@ -716,7 +716,7 @@ Relevant PRs:
 Supported by Flutter Fix: no
 
 As of Flutter 3.0 platform views require api 23 or higher. In Flutter 3.19 we now throw UnsupportedOperationException 
-when using platform views on android devices runing api level 22 and below. 
+when using platform views on android devices running api level 22 and below. 
 
 **Migration guide**
 

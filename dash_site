@@ -1,8 +1,8 @@
 #!/bin/bash
 
-REQUIRED_DART_VERSION="3.4"
-REQUIRED_NODE_VERSION="20.12"
-REQUIRED_PNPM_VERSION="9.0"
+REQUIRED_DART_VERSION="3.5"
+REQUIRED_NODE_VERSION="20.14"
+REQUIRED_PNPM_VERSION="9.4"
 
 # Check that the 'dart' command is available on the user's path.
 if ! command -v dart &> /dev/null; then
@@ -79,6 +79,10 @@ if command -v pnpm &> /dev/null; then
     echo "pnpm version $pnpm_version is too low. Version $REQUIRED_PNPM_VERSION or later is required."
     exit 1
   fi
+
+  # If using pnpm, update the dependencies silently as it is quick.
+  echo "Verifying npm dependencies are up to date..."
+  pnpm install --silent
 fi
 
 # Verify that Node packages have been installed.

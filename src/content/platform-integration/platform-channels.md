@@ -633,7 +633,7 @@ a `FlutterMethodChannel` tied to the channel name
     let batteryChannel = FlutterMethodChannel(name: "samples.flutter.dev/battery",
                                               binaryMessenger: controller.binaryMessenger)
     batteryChannel.setMethodCallHandler({
-      (call: FlutterMethodCall, result: @escaping FlutterResult) -> Void in
+      [weak self] (call: FlutterMethodCall, result: FlutterResult) -> Void in
       // This method is invoked on the UI thread.
       // Handle battery messages.
     })
@@ -1017,7 +1017,7 @@ of your choice. The instructions below are for Visual Studio Code with the
 1. Open the file `my_application.cc`.
   
 First, add the necessary includes to the top of the file, just
-after `#include <flutter_linux/flutter_linux.h`:
+after `#include <flutter_linux/flutter_linux.h>`:
 
 ```c title="my_application.cc"
 #include <math.h>
@@ -1083,7 +1083,7 @@ static FlMethodResponse* get_battery_level() {
         "UNAVAILABLE", "Device does not have a battery.", nullptr));
   }
 
-  UpDevice* device = (UpDevice*)(g_ptr_array_index(devices, 0));
+  UpDevice* device = UP_DEVICE(g_ptr_array_index(devices, 0));
   double percentage = 0;
   g_object_get(device, "percentage", &percentage, nullptr);
 
@@ -1103,7 +1103,7 @@ is called, report that instead.
   
 Add the following code after the `get_battery_level` function:
 
-```cpp title="flutter_window.cpp"
+```cpp title="my_application.cpp"
 static void battery_method_call_handler(FlMethodChannel* channel,
                                         FlMethodCall* method_call,
                                         gpointer user_data) {

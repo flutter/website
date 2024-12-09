@@ -6,8 +6,8 @@ target: desktop
 config: macOSDesktop
 devos: macOS
 next:
-  title: Create a test app
-  path: /get-started/test-drive
+  title: Create your first app
+  path: /get-started/codelab
 ---
 
 {% include docs/install/reqs/macos/base.md os=devos target=target %}

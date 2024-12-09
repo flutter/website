@@ -1,8 +1,8 @@
 ---
 title: Deprecate `ButtonBar` in favor of `OverflowBar`
 description: >-
-  The `ButtonBar` widget has been replaced by a more efficient
-  widget, `OverflowBar`.
+  The ButtonBar widget has been replaced by
+  a more efficient widget, OverflowBar.
 ---
 
 ## Summary
@@ -130,7 +130,7 @@ OverflowBar(
 ## Timeline
 
 Landed in version: 3.22.0-2.0.pre<br>
-In stable release: Not yet
+In stable release: 3.24.0
 
 ## References
 
@@ -145,9 +145,9 @@ Relevant issues:
 
 Relevant PRs:
 
-- [`Deprecate `ButtonBar`, `ButtonBarThemeData`, and `ThemeData.buttonBarTheme`][]
+- [Deprecate `ButtonBar`, `ButtonBarThemeData`, and `ThemeData.buttonBarTheme`][]
 
 [`OverflowBar`]: {{site.api}}/flutter/widgets/OverflowBar-class.html
 [`ButtonBar`]: {{site.api}}/flutter/material/ButtonBar-class.html
 [Issue #127955]: {{site.repo.flutter}}/issues/127955
-[`Deprecate `ButtonBar`, `ButtonBarThemeData`, and `ThemeData.buttonBarTheme`]: {{site.repo.flutter}}/pull/145523
+[Deprecate `ButtonBar`, `ButtonBarThemeData`, and `ThemeData.buttonBarTheme`]: {{site.repo.flutter}}/pull/145523

@@ -6,5 +6,4 @@ description: >
   Apple's Human Interface Guidelines for iOS and macOS.
 ---
 
-
-{% include docs/catalogpage.html category="Cupertino" %}
+{% render docs/catalog-page.md, categoryName:"Cupertino", catalog:catalog %}

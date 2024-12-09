@@ -17,10 +17,23 @@ For example, `flutterexample.dev/#/path/to/screen`.
 ## Configuring the URL strategy
 
 To configure Flutter to use the path instead, use the
-[usePathUrlStrategy][] function provided by the [flutter_web_plugins][] library
-in the SDK:
+[usePathUrlStrategy][] function provided by the [flutter_web_plugins][] library,
+which is part of the Flutter SDK.
 
-```dart
+You can't directly add `flutter_web_plugins` using `pub add`.
+Include it as a Flutter [SDK dependency][] in your `pubspec.yaml` file:
+
+```yaml highlightLines=4-5
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
+```
+
+Then call the `usePathUrlStrategy` function before `runApp`:
+
+```dart highlightLines=4
 import 'package:flutter_web_plugins/url_strategy.dart';
 
 void main() {
@@ -29,13 +42,15 @@ void main() {
 }
 ```
 
+[SDK dependency]: {{site.dart-site}}/tools/pub/dependencies#sdk
+
 ## Configuring your web server
 
 PathUrlStrategy uses the [History API][], which requires additional
 configuration for web servers.
 
 To configure your web server to support PathUrlStrategy, check your web server's
-documentation to rewrite requests to `index.html`.Check your web server's
+documentation to rewrite requests to `index.html`. Check your web server's
 documentation for details on how to configure single-page apps.
 
 If you are using Firebase Hosting, choose the "Configure as a single-page app"
@@ -53,6 +68,11 @@ For example, to host your Flutter app at
 `my_app.dev/flutter_app`, change
 this tag to `<base href="/flutter_app/">`.
 
+Relative `base href` tags are supported for release builds but they must take
+into account the full URL where the page was served from.
+This means a relative `base href` for a request to `/flutter_app/`,
+`/flutter_app/nested/route`, and `/flutter_app/nested/route/` will be different
+(for example `"."`, `".."`, and `"../.."` respectively).
 
 [hash fragment]: https://en.wikipedia.org/wiki/Uniform_Resource_Locator#Syntax
 [`HashUrlStrategy`]: {{site.api}}/flutter/flutter_web_plugins/HashUrlStrategy-class.html

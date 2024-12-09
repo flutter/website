@@ -12,6 +12,10 @@ For information about bug-fix releases, check out our
 [CHANGELOG][].
 :::
 
+* 3.24.0
+  * [3.24.0 announcement][]
+  * [3.24.0 release notes & change log][]
+  * [3.24.0 breaking changes & migrations][]
 * 3.22.0
   * [3.22.0 announcement][]
   * [3.22.0 release notes & change log][]
@@ -81,6 +85,9 @@ For information about bug-fix releases, check out our
 * Earlier
   * [Archived release notes][]
 
+[3.24.0 announcement]: {{site.flutter-medium}}/whats-new-in-flutter-3-24-6c040f87d1e4
+[3.24.0 release notes & change log]: /release/release-notes/release-notes-3.24.0
+[3.24.0 breaking changes & migrations]: /release/breaking-changes#released-in-flutter-3-24
 [3.22.0 announcement]: {{site.flutter-medium}}/whats-new-in-flutter-3-22-fbde6c164fe3
 [3.22.0 release notes & change log]: /release/release-notes/release-notes-3.22.0
 [3.22.0 breaking changes & migrations]: /release/breaking-changes#released-in-flutter-3-22
@@ -131,4 +138,4 @@ For information about bug-fix releases, check out our
 [1.12.13 announcement]: {{site.flutter-medium}}/announcing-flutter-1-12-what-a-year-22c256ba525d
 [1.12.13 release notes and change log]: /release/release-notes/release-notes-1.12.13
 [Archived release notes]: /release/release-notes/release-notes-archive
-[CHANGELOG]: {{site.repo.flutter}}/blob/main/CHANGELOG.md
+[CHANGELOG]: {{site.repo.flutter}}/blob/stable/CHANGELOG.md

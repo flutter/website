@@ -80,9 +80,8 @@ class HomePage extends StatelessWidget {
       // Finally, display the list of people on the screen,
       // inside a scroll view of type
       // SingleChildScrollView (equivalent of a ScrollView in SwiftUI).
-      body:
-          // #docregion scroll-example
-          SingleChildScrollView(
+      // #docregion scroll-example
+      body: SingleChildScrollView(
         child: Column(
           children: mockPersons
               .map(

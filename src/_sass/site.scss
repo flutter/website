@@ -20,11 +20,13 @@
 @use 'components/header';
 @use 'components/juicy-button';
 @use 'components/next-prev-nav';
+@use 'components/pill';
 @use 'components/sidebar';
 @use 'components/toc';
 
 // -- Pages (alpha ordered)
 @use 'pages/not-found';
+@use 'pages/search';
 
 // -- Overrides
 @use 'base/print-overrides';

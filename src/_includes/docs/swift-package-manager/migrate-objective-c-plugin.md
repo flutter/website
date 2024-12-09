@@ -148,8 +148,8 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    :::
 
 1. If your plugin has a [`PrivacyInfo.xcprivacy` file][], move it to
-   `ios/Sources/plugin_name/PrivacyInfo.xcprivacy` and uncomment the resource in
-   the `Package.swift` file.
+   `ios/plugin_name/Sources/plugin_name/PrivacyInfo.xcprivacy` and uncomment
+   the resource in the `Package.swift` file.
 
    ```swift title="Package.swift"
                resources: [
@@ -166,14 +166,14 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
                ],
    ```
 
-1. Move any resource files from `ios/Assets` to `ios/Sources/plugin_name`
-   (or a subdirectory).
+1. Move any resource files from `ios/Assets` to
+   `ios/plugin_name/Sources/plugin_name` (or a subdirectory).
    Add the resource files to your `Package.swift` file, if applicable.
    For more instructions, see
    [https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package](https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package).
 
 1. Move any public headers from `ios/Classes` to
-   `ios/Sources/plugin_name/include/plugin_name`.
+   `ios/plugin_name/Sources/plugin_name/include/plugin_name`.
 
    * If you're unsure which headers are public, check your `podspec` file's
      [`public_header_files`][] attribute.
@@ -196,26 +196,20 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    `Package.swift` file.
   
    The example below assumes the `modulemap` and umbrella header are located
-   in the `ios/Sources/plugin_name/include` directory.
+   in the `ios/plugin_name/Sources/plugin_name/include` directory.
 
-    ```diff2html
-    --- a/Package.swift
-    +++ b/Package.swift
-    @@ -1,3 +1,4 @@ 
-            .target(
-                name: "plugin_name",
-                dependencies: [],
-    +           exclude: ["include/cocoapods_plugin_name.modulemap", "include/plugin_name-umbrella.h"],
+    ```swift title="Package.swift" diff
+      .target(
+          name: "plugin_name",
+          dependencies: [],
+    +     exclude: ["include/cocoapods_plugin_name.modulemap", "include/plugin_name-umbrella.h"],
     ```
 
     If you want to keep your unit tests compatible with both CocoaPods and
     Swift Package Manager, you can try the following:
 
-    ```diff2html
-    --- a/Tests/TestFile.m
-    +++ b/Tests/TestFile.m
-    @@ -1,2 +1,4 @@
-    @import plugin_name;
+    ```objc title="Tests/TestFile.m" diff
+      @import plugin_name;
     - @import plugin_name.Test;
     + #if __has_include(<plugin_name/plugin_name-umbrella.h>)
     +   @import plugin_name.Test;
@@ -225,7 +219,8 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
     If you would like to use a custom `modulemap` with your Swift package,
     refer to [Swift Package Manager's documentation][].
 
-1. Move all remaining files from `ios/Classes` to `ios/Sources/plugin_name`.
+1. Move all remaining files from `ios/Classes` to
+   `ios/plugin_name/Sources/plugin_name`.
 
 1. The `ios/Assets`, `ios/Resources`, and `ios/Classes` directories should now
    be empty and can be deleted.
@@ -246,8 +241,8 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    * After:
 
      <pre>
-     ios/plugin_name_ios/Sources/plugin_name_ios/
-     └── <b>include/plugin_name_ios/</b>
+     ios/plugin_name/Sources/plugin_name/
+     └── <b>include/plugin_name/</b>
         └── PublicHeaderFile.h
      └── ImplementationFile.m
      </pre>
@@ -255,45 +250,36 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    In this example, the import statements in `ImplementationFile.m`
    should be updated:
 
-   ```diff2html
-   --- a/Sources/plugin_name_ios/ImplementationFile.m
-   +++ b/Sources/plugin_name_ios/ImplementationFile.m
-   @@ -1,1 +1,1 @@
+   ```objc title="Sources/plugin_name/ImplementationFile.m" diff
    - #import "PublicHeaderFile.h"
-   + #import "./include/plugin_name_ios/PublicHeaderFile.h"
+   + #import "./include/plugin_name/PublicHeaderFile.h"
    ```
 
 1. If your plugin uses [Pigeon][], update your Pigeon input file.
 
-   ```diff2html
-   --- a/pigeons/messages.dart
-   +++ b/pigeons/messages.dart
-   @@ -18,8 +18,8 @@ import 'package:pigeon/pigeon.dart';
-      javaOptions: JavaOptions(),
-   -  objcHeaderOut: 'ios/Classes/messages.g.h',
-   -  objcSourceOut: 'ios/Classes/messages.g.m',
-   +  objcHeaderOut: 'ios/plugin_name_ios/Sources/plugin_name_ios/messages.g.h',
-   +  objcSourceOut: 'ios/plugin_name_ios/Sources/plugin_name_ios/messages.g.m',
-      copyrightHeader: 'pigeons/copyright.txt',
+   ```dart title="pigeons/messages.dart" diff
+     javaOptions: JavaOptions(),
+   - objcHeaderOut: 'ios/Classes/messages.g.h',
+   - objcSourceOut: 'ios/Classes/messages.g.m',
+   + objcHeaderOut: 'ios/plugin_name/Sources/plugin_name/messages.g.h',
+   + objcSourceOut: 'ios/plugin_name/Sources/plugin_name/messages.g.m',
+     copyrightHeader: 'pigeons/copyright.txt',
    ```
 
    If your `objcHeaderOut` file is no longer within the same directory as the
    `objcSourceOut`, you can change the `#import` using
    `ObjcOptions.headerIncludePath`:
 
-   ```diff2html
-   --- a/pigeons/messages.dart
-   +++ b/pigeons/messages.dart
-   @@ -18,8 +18,8 @@ import 'package:pigeon/pigeon.dart';
-      javaOptions: JavaOptions(),
-   -  objcHeaderOut: 'ios/Classes/messages.g.h',
-   -  objcSourceOut: 'ios/Classes/messages.g.m',
-   +  objcHeaderOut: 'ios/plugin_name_ios/Sources/plugin_name_ios/include/plugin_name_ios/messages.g.h',
-   +  objcSourceOut: 'ios/plugin_name_ios/Sources/plugin_name_ios/messages.g.m',
-   +  objcOptions: ObjcOptions(
-   +    headerIncludePath: './include/plugin_name_ios/messages.g.h',
-   +  ),
-      copyrightHeader: 'pigeons/copyright.txt',
+   ```dart title="pigeons/messages.dart" diff
+     javaOptions: JavaOptions(),
+   - objcHeaderOut: 'ios/Classes/messages.g.h',
+   - objcSourceOut: 'ios/Classes/messages.g.m',
+   + objcHeaderOut: 'ios/plugin_name/Sources/plugin_name/include/plugin_name/messages.g.h',
+   + objcSourceOut: 'ios/plugin_name/Sources/plugin_name/messages.g.m',
+   + objcOptions: ObjcOptions(
+   +   headerIncludePath: './include/plugin_name/messages.g.h',
+   + ),
+     copyrightHeader: 'pigeons/copyright.txt',
    ```
 
    Run Pigeon to re-generate its code with the latest configuration.
@@ -338,10 +324,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
 1. Update your `ios/plugin_name.podspec` to point to new paths.
 
-   ```diff2html
-   --- a/ios/plugin_name.podspec
-   +++ b/ios/plugin_name.podspec
-   @@ -21,4 +21,4 @@
+   ```ruby title="ios/plugin_name.podspec" diff
    - s.source_files = 'Classes/**/*.{h,m}'
    - s.public_header_files = 'Classes/**/*.h'
    - s.module_map = 'Classes/cocoapods_plugin_name.modulemap'
@@ -370,8 +353,9 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    Otherwise, using `SWIFTPM_MODULE_BUNDLE` results in an error.
    :::
 
-1. If your `ios/Sources/plugin_name/include` directory only contains a
-   `.gitkeep`, you'll want update your `.gitignore` to include the following:
+1. If your `ios/plugin_name/Sources/plugin_name/include` directory only
+   contains a `.gitkeep`, you'll want update your `.gitignore` to include the
+   following:
 
     ```text title=".gitignore"
     !.gitkeep
@@ -438,18 +422,17 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
       flutter run
       ```
 
-      :::warning
+      :::note
       Using the Flutter CLI to run the plugin's example app with the
       Swift Package Manager feature turned on migrates the project to add
       Swift Package Manager integration.
 
-      **Do not commit the migration's changes to your version control system.**
+      This raises the example app's Flutter SDK requirement to version 3.24 or
+      higher.
 
-      Otherwise, the plugin's example app won't build if the
-      Swift Package Manager feature is turned off.
-
-      If you accidentally commit the migration's changes to the plugin's example
-      app, follow the steps to
+      If you'd like to run the example app using an older Flutter SDK version,
+      do not commit the migration's changes to your version control system.
+      If needed, you can always
       [undo the Swift Package Manager migration][removeSPM].
       :::
 

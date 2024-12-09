@@ -54,6 +54,11 @@ This section presumes you called your Swift app `MyApp`.
    navigate to the root of your app directory.
    Use the `pod init` command to create the `Podfile` file.
 
+   :::tip
+   If the `pod init` command errors,
+   check that you're on the latest version of CocoaPods.
+   :::
+
 1. Update your `Podfile` config file.
 
    1. Add the following lines after the `platform` declaration.
