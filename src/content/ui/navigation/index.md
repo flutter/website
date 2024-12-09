@@ -20,7 +20,7 @@ animations for the target platform. To navigate to a new screen, access the
 `Navigator` through the route's `BuildContext` and call imperative methods such
 as `push()` `or pop()`:
 
-<?code-excerpt "examples/ui/navigation/lib/navigator_basic.dart (push-route)"?>
+<?code-excerpt "ui/navigation/lib/navigator_basic.dart (push-route)"?>
 ```dart
 child: const Text('Open second screen'),
 onPressed: () {
@@ -48,7 +48,7 @@ Applications with simple navigation and deep linking requirements can use the
 `Navigator` for navigation and the [`MaterialApp.routes`][] parameter for deep
 links:
 
-<?code-excerpt "examples/ui/navigation/lib/navigator_named_routes.dart (push-route)"?>
+<?code-excerpt "ui/navigation/lib/navigator_named_routes.dart (push-route)"?>
 ```dart
 child: const Text('Open second screen'),
 onPressed: () {
@@ -83,7 +83,7 @@ To use the Router, switch to the `router` constructor on `MaterialApp` or
 such as [go_router][], typically provide a
 configuration for you. For example:
 
-<?code-excerpt "examples/ui/navigation/lib/navigator_router.dart (push-route)"?>
+<?code-excerpt "ui/navigation/lib/navigator_router.dart (push-route)"?>
 ```dart
 child: const Text('Open second screen'),
 onPressed: () => context.go('/second'),
