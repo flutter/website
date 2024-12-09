@@ -92,7 +92,7 @@ final isRunningWithWasm = identical(double.nan, double.nan);
 ### Serve the built output with an HTTP server
 
 Flutter web WebAssembly uses multiple threads to render your application
-faster, with less jank. To do this, advanced browser features are used that
+faster, with less jank. To do this, Flutter uses advanced browser features that
 require specific HTTP response headers.
 
 :::warning
