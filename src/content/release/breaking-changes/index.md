@@ -35,6 +35,7 @@ release, and listed in alphabetical order:
 
 * [`ImageFilter.blur` default tile mode automatic selection][]
 * [Localized messages are generated into source, not a synthetic package][]
+* [Material 3 Tokens Update in Flutter][]
 * [`.flutter-plugins-dependencies` replaces `.flutter-plugins`][] <!-- Branch cut starts here, below will be in next stable -->
 * [`Color` wide gamut support][]
 * [Remove invalid parameters for `InputDecoration.collapsed`][]
@@ -47,6 +48,7 @@ release, and listed in alphabetical order:
 
 [`ImageFilter.blur` default tile mode automatic selection]: /release/breaking-changes/image-filter-blur-tilemode
 [Localized messages are generated into source, not a synthetic package]: /release/breaking-changes/flutter-generate-i10n-source
+[Material 3 Tokens Update in Flutter]: /release/breaking-changes/material-design-3-token-update
 [`.flutter-plugins-dependencies` replaces `.flutter-plugins`]: /release/breaking-changes/flutter-plugins-configuration
 [`Color` wide gamut support]: /release/breaking-changes/wide-gamut-framework
 [Remove invalid parameters for `InputDecoration.collapsed`]: /release/breaking-changes/input-decoration-collapsed
