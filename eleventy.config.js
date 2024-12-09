@@ -76,10 +76,6 @@ export default function (eleventyConfig) {
     },
   });
 
-  eleventyConfig.addCollection("design-patterns", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("./src/content/cookbook/architecture/*.md");
-  });
-
   eleventyConfig.addPassthroughCopy('src/content/assets/js');
   eleventyConfig.addPassthroughCopy({'site-shared/pkgs/inject_dartpad/lib/inject_dartpad.js': 'assets/js/inject_dartpad.js'});
   eleventyConfig.addPassthroughCopy('src/content/assets/images', { expand: true });
