@@ -110,6 +110,8 @@ configured to send specific HTTP headers.
 To learn more about these headers, check out
 [Load cross-origin resources without CORP headers using COEP: credentialless][coep].
 
+[coep]: https://developer.chrome.com/blog/coep-credentialless-origin-trial
+
 ## Learn more about browser compatibility
 To run a Flutter app that has been compiled to Wasm,
 you need a browser that supports [WasmGC][].
