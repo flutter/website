@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
-      title: 'Navigation with named routes',
-      initialRoute: '/',
-      routes: {
-        '/': (context) => const FirstScreen(),
-        '/second': (context) => const SecondScreen(),
-      },
-    )
-  );
+  runApp(MaterialApp(
+    title: 'Navigation with named routes',
+    initialRoute: '/',
+    routes: {
+      '/': (context) => const FirstScreen(),
+      '/second': (context) => const SecondScreen(),
+    },
+  ));
 }
 
 class FirstScreen extends StatelessWidget {

@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 void main() {
-  runApp(
-    MaterialApp.router(
-      title: 'Navigation with a router',
-      routerConfig: _router,
-    )
-  );
+  runApp(MaterialApp.router(
+    title: 'Navigation with a router',
+    routerConfig: _router,
+  ));
 }
 
 // Declare routing information
