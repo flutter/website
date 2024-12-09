@@ -388,7 +388,7 @@ how to use a `Result` class to return result values.
 The key takeaways are:
 
 - `Result` classes force the calling method to check for errors, 
-  reducing the amount of bugs caused by uncaught exceptions[switch result or expression.
+  reducing the amount of bugs caused by uncaught exceptions.
 - `Result` classes help improve control flow compared to try-catch blocks.
 - `Result` classes are `sealed` and can only return `Ok` or `Error` instances, 
   allowing the code to unwrap them with a switch statement.
