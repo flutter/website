@@ -89,6 +89,27 @@ to test whether the native (Wasm) number representaton is used.
 final isRunningWithWasm = identical(double.nan, double.nan);
 ```
 
+### Serve the built output with an HTTP server
+
+Flutter web WebAssembly uses multiple threads to render your application
+faster, with less jank. To do this, advanced browser features are used that
+require specific HTTP response headers.
+
+:::warning
+Flutter web applications won't run with WebAssembly unless the server is
+configured to send specific HTTP headers.
+:::
+
+| Name | Value |
+|-|-|
+| `Cross-Origin-Embedder-Policy` | `credentialless` <br> or <br> `require-corp` |
+| `Cross-Origin-Opener-Policy` | `same-origin` |
+
+{:.table}
+
+To learn more about these headers, check out
+[Load cross-origin resources without CORP headers using COEP: credentialless][coep].
+
 ## Learn more about browser compatibility
 To run a Flutter app that has been compiled to Wasm,
 you need a browser that supports [WasmGC][].
