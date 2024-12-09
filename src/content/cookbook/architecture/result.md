@@ -1,6 +1,7 @@
 ---
 title: Result class
-description: Handle errors and return values with the result class
+description: >-
+  Learn to handle errors and return values with a result class.
 js:
   - defer: true
     url: /assets/js/inject_dartpad.js
@@ -12,7 +13,7 @@ Dart provides a built-in error handling mechanism
 with the ability to throw and catch exceptions.
 
 As mentioned in the [Error handling documentation][], 
-Dart’s exceptions are unhandled exceptions.
+Dart's exceptions are unhandled exceptions.
 This means that methods that throw exceptions don’t need to declare them, 
 and calling methods aren't required to catch them either.
 
@@ -37,7 +38,7 @@ it should communicate the error to the calling component.
 
 Typically, that's done with exceptions. 
 For example, 
-an API client Service failing to communicate with the remote server
+an API client service failing to communicate with the remote server
 might throw an HTTP Error Exception. 
 The calling component, 
 for example a Repository, 
@@ -57,7 +58,7 @@ that throws exceptions in certain situations:
 - The method throws an `HttpException` if the response code isn’t 200.
 - The JSON parsing method throws an exception 
   if the response isn't formatted correctly.
-- The Http client might throw an exception due to networking issues.
+- The HTTP client might throw an exception due to networking issues.
 
 The following code tests for a variety of possible exceptions:
 
@@ -120,9 +121,10 @@ class UserProfileViewModel extends ChangeNotifier {
 }
 ```
 
-In reality, a developer might forget to properly capture exceptions
-and end up with the following code. It would compile and run, 
-but will crash if one of the exceptions mentioned previously occurs:
+In reality, a developer might forget to properly capture exceptions and
+end up with the following code.
+It compiles and runs, but crashes if
+one of the exceptions mentioned previously occurs:
 
 <?code-excerpt "lib/no_result.dart (UserProfileViewModelNoTryCatch)" replace="/NoTryCatch//g"?>
 ```dart
@@ -139,17 +141,17 @@ class UserProfileViewModel extends ChangeNotifier {
 You can attempt to solve this by documenting the `ApiClientService`, 
 warning about the possible exceptions it might throw. 
 However, since the view model doesn’t use the service directly, 
-other developers  working in the codebase might miss this information.
+other developers working in the codebase might miss this information.
 
 ## Using the result pattern
 
 An alternative to throwing exceptions 
-is to wrap the function output into a `Result` object.
+is to wrap the function output in a `Result` object.
 
 When the function runs successfully, 
 the `Result` contains the returned value. 
-However, if the function did not complete successfully,
-the `Result` object will contain the error.
+However, if the function does not complete successfully,
+the `Result` object contains the error.
 
 A `Result` is a [`sealed`][] class 
 that can either subclass `Ok` or the `Error` class.
@@ -212,6 +214,7 @@ class ApiClientService {
   }
 }
 ```
+
 Instead of returning the `UserProfile` directly, 
 it returns a `Result` object containing a `UserProfile`.
 
@@ -341,7 +344,7 @@ attempts to obtain the `UserProfile`
 using the `ApiClientService`.
 If it fails, it tries to create a temporary user in a `DatabaseService`.
 
-Because either Service method can fail, 
+Because either service method can fail, 
 the code must catch the exceptions in both cases.
 
 This can be improved using the `Result` pattern:
@@ -383,12 +386,12 @@ The key takeaways are:
 
 Below you can find the full `Result` class 
 as implemented in the [Compass App example][] 
-for the [Flutter Architecture guidelines][].
+for the [Flutter architecture guidelines][].
 
 :::note
 Check [pub.dev][] for different ready-to-use 
 implementations of the `Result` class,
-like the [result_dart][], [result_type][] or [multiple_result][] packages.
+such as the [`result_dart`][], [`result_type`][], and [`multiple_result`][] packages.
 :::
 
 <?code-excerpt "lib/result.dart"?>
@@ -451,11 +454,11 @@ final class Error<T> extends Result<T> {
 }
 ```
 
-[Error handling documentation]:{{site.dart-site}}/language/error-handling
-[Flutter architecture guidelines]:/app-architecture
-[Compass App example]:{{site.repo.samples}}/tree/main/compass_app
-[pub.dev]:{{site.pub}}
-[result_dart]:{{site.pub-pkg}}/result_dart
-[result_type]:{{site.pub-pkg}}/result_type
-[multiple_result]:{{site.pub-pkg}}/multiple_result
-[`sealed`]:{{site.dart-site}}/language/class-modifiers#sealed
+[Error handling documentation]: {{site.dart-site}}/language/error-handling
+[Flutter architecture guidelines]: /app-architecture
+[Compass App example]: {{site.repo.samples}}/tree/main/compass_app
+[pub.dev]: {{site.pub}}
+[result_dart]: {{site.pub-pkg}}/result_dart
+[result_type]: {{site.pub-pkg}}/result_type
+[multiple_result]: {{site.pub-pkg}}/multiple_result
+[`sealed`]: {{site.dart-site}}/language/class-modifiers#sealed

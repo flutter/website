@@ -1,6 +1,7 @@
 ---
 title: Command pattern
-description: Improve ViewModels with Commands
+description: >-
+  Learn how to improve your view models with commands.
 js:
   - defer: true
     url: /assets/js/inject_dartpad.js
@@ -513,7 +514,7 @@ and a `Command1`, for actions that take one parameter.
 :::note
 Check [pub.dev][] for other ready-to-use
 implementations of the command pattern,
-like the [flutter_command][] package.
+such as the [`flutter_command`][] package.
 :::
 
 <?code-excerpt "lib/command.dart"?>
@@ -624,8 +625,8 @@ final class Command1<T, A> extends Command<T> {
 }
 ```
 
-[Compass App example]:{{site.repo.samples}}/tree/main/compass_app
-[`Result` class]:/cookbook/architecture/result
-[pub.dev]:{{site.pub}}
-[flutter_command]:{{site.pub-pkg}}/flutter_command
-[`ChangeNotifier`]:/get-started/fundamentals/state-management
+[Compass App example]: {{site.repo.samples}}/tree/main/compass_app
+[`Result` class]: /cookbook/architecture/result
+[pub.dev]: {{site.pub}}
+[flutter_command]: {{site.pub-pkg}}/flutter_command
+[`ChangeNotifier`]: /get-started/fundamentals/state-management
