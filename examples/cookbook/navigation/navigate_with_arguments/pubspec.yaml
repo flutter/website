@@ -2,7 +2,7 @@ name: navigate_with_arguments
 description: Use Form widget to perform form validation.
 
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.6.0-0
 
 dependencies:
   flutter:

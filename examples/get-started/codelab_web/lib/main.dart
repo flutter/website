@@ -200,7 +200,7 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
       builder: (context, child) => LinearProgressIndicator(
         value: _curveAnimation.value,
         valueColor: _colorAnimation,
-        backgroundColor: _colorAnimation.value?.withOpacity(0.4),
+        backgroundColor: _colorAnimation.value?.withValues(alpha: 0.4),
       ),
     );
   }

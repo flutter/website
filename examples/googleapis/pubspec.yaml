@@ -2,7 +2,7 @@ name: google_sign_in_example
 publish_to: none
 
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.6.0-0
 
 dependencies:
   collection: any # Pull the version of collection from Flutter.
