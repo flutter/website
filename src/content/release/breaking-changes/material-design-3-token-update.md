@@ -8,9 +8,9 @@ description: >-
 ## Summary
 
 The Material Design tokens updated the mapping of 4 color roles (only in Light
-mode) to be more visually appealing while retaining accessible contrast. There
-are not any breakages identified in Flutter testing of this change, which
-applied to the following color properties:
+mode) to be more visually appealing while retaining accessible contrast. Testing
+identified this change as [non-breaking] in Flutter, but some customers might
+notice this small change. The update affected the following color properties:
 
 * On-primary-container (Primary10 to Primary30)
 * On-secondary-container (Secondary10 to Secondary30)
@@ -20,7 +20,7 @@ applied to the following color properties:
 Widgets that have been using these roles with their default value might look
 different.
 
-Additionally, the Material 3 tokens also updated the border color of Chips from
+Additionally, the Material 3 tokens updated the border color of Chips from
 `ColorScheme.outline` to `ColorScheme.outlineVariant` to improve visual
 hierarchy between chips and buttons. Chips (`Chip`, `ActionChip`, `ChoiceChip`,
 `FilterChip`, and `InputChip`) that have been using the chip border tokens may
@@ -28,7 +28,7 @@ look different.
 
 ## Migration guide
 
-The differences in the mappings of the color roles are small. Using
+The differences in the mappings of the color roles are small. Use
 `ColorScheme.copyWith` to revert to the original default colors:
 
 Code before migration:
@@ -99,3 +99,4 @@ Relevant PRs:
 [`Chip`]: {{site.api}}/flutter/material/Chip-class.html
 [Update tokens to v5.0.0]: {{site.repo.flutter}}/pull/153385
 [Update tokens to v6.1.0]: {{site.repo.flutter}}/pull/153722
+[non-breaking]: {{site.repo.flutter}}/flutter/blob/master/docs/contributing/Tree-hygiene.md#1-determine-if-your-change-is-a-breaking-change
