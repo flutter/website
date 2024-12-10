@@ -87,7 +87,6 @@ Relevant PRs:
 
 * [Update tokens to v5.0.0][]
 * [Update tokens to v6.1.0][]
-* [Enhance ColorScheme.fromSeed with a new variant parameter][]
 
 [Update tokens to v5.0.0]: {{site.repo.flutter}}/pull/[153385]
 [Update tokens to v6.1.0]: {{site.repo.flutter}}/pull/[153722]
