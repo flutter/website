@@ -22,6 +22,4 @@ previous pages in the code examples.
 {% assign recipes = collections.design-patterns | sort: "data.order" -%}
 {% render expansion-list.html, list: recipes, base_id: 'design-patterns' %}
 
-
-
 [architecture guide]: /app-architecture/guide
