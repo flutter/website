@@ -81,11 +81,10 @@ function activeNavForPage(pageUrlPath, activeNav) {
   let lastAllowedBackupActive = [];
 
   parts.forEach(part => {
-    // If the current entry allows children and has active data,
-    // allow its active data to be a backup if a later path is not found.
+    // If the current entry has active data,
+    // allow its active data to be a backup if a later path isn't found.
     const currentEntryActiveData = currentPathPairs['active'];
-    if (currentEntryActiveData &&
-        currentPathPairs['allow-children'] === true) {
+    if (currentEntryActiveData) {
       lastAllowedBackupActive = currentEntryActiveData;
     }
 

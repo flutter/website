@@ -82,40 +82,15 @@ It provides a simple API to handle complex routing scenarios.
 1. Open the `ios/Runner.xcworkspace` file inside the
    Flutter project's `ios` folder.
 
-### Add the FlutterDeepLinkingEnabled key value pair
+  :::note
+  If you are use a third-party plugins to handle deep links, 
+  such as [app_links][],
+  Flutter's default deeplink handler will
+  break these plugins. 
 
-1. In the Xcode Navigator, expand **Runner** then click **Info**.
-
-   <img src="/assets/images/docs/cookbook/set-up-universal-links-info-plist.png"
-       alt="Xcode info.Plist screenshot"
-       width="100%" />
-
-1. In the Editor, <kbd>Ctrl</kbd> + click and
-   select **Raw Keys and Values** from the context menu.
-
-1. In the Editor, <kbd>Ctrl</kbd> + click and
-   select **Add Row** from the context menu.
-
-   A new **Key** should display.
-
-1. Change the new key properties to meet the following:
-
-   * Change the **Key** to `FlutterDeepLinkingEnabled`
-   * Change the **Type** to `Boolean`
-   * Change the **Value** to `YES`.
-
-   <img
-      src="/assets/images/docs/cookbook/set-up-universal-links-flutterdeeplinkingenabled.png"
-      alt="Screenshot of FlutterDeepLinkingEnabled value set to YES."
-      width="100%" />
-
-   :::note
-   The `FlutterDeepLinkingEnabled` property enables
-   Flutter's default deeplink handler.
-   If you use a third-party plugin, such as [uni_links][],
-   setting this property breaks the third-party plugin.
-   Skip this step if you prefer to use a third-party plugin.
-   :::
+  If you use a third-party plugin,
+  add the key and value pair `FlutterDeepLinkingEnabled` and `NO` to info.Plist.
+  :::
 
 ### Add associated domains
 
@@ -331,4 +306,4 @@ recipe in the GitHub repo.
 [Firebase Hosting]: {{site.firebase}}/docs/hosting
 [go_router]: {{site.pub-pkg}}/go_router
 [GitHub Pages]: https://pages.github.com
-[uni_links]: {{site.pub-pkg}}/uni_links
+[app_links]: {{site.pub-pkg}}/app_links

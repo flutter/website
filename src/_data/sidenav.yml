@@ -1,4 +1,5 @@
 - header: Get started
+
 - title: Set up Flutter
   permalink: /get-started/install
 
@@ -17,7 +18,7 @@
           permalink: /get-started/fundamentals/dart
         - title: Widgets
           permalink: /get-started/fundamentals/widgets
-        - title: Layouts
+        - title: Layout
           permalink: /get-started/fundamentals/layout
         - title: State management
           permalink: /get-started/fundamentals/state-management
@@ -27,18 +28,6 @@
           permalink: /get-started/fundamentals/networking
         - title: Local data and caching
           permalink: /get-started/fundamentals/local-caching
-
-    - title: Dart language
-      permalink: /resources/bootstrap-into-dart
-
-    - title: Codelabs & samples
-      children:
-        - title: Codelabs
-          permalink: /codelabs
-        - title: Cookbook
-          permalink: /cookbook
-        - title: Samples and demos
-          permalink: https://flutter.github.io/samples/
 
     - title: From another platform?
       permalink: /get-started/flutter-for
@@ -59,6 +48,14 @@
           permalink: /get-started/flutter-for/declarative
         - title: Flutter versus Swift concurrency
           permalink: /get-started/flutter-for/dart-swift-concurrency
+
+    - divider
+    - title: Codelabs
+      permalink: /codelabs
+    - title: Cookbook
+      permalink: /cookbook
+    - title: Demos and samples
+      permalink: https://flutter.github.io/samples/
 
 - title: Stay up to date
   permalink: /release
@@ -151,10 +148,10 @@
             permalink: https://pub.dev/packages/pay
     - title: Maps
       children:
-        - title: Add maps to your app
-          permalink: https://developers.google.com/maps/flutter-package
         - title: Add Google maps to a Flutter app
           permalink: https://codelabs.developers.google.com/codelabs/google-maps-in-flutter
+        - title: Google Maps package
+          permalink: https://developers.google.com/maps/flutter-package
     - title: News
       children:
         - title: Build a news app
@@ -165,13 +162,12 @@
 - title: Introduction
   permalink: /ui
 - title: Widget catalog
-  permalink: /ui/widgets      
+  permalink: /ui/widgets
 - title: Layout
   permalink: /ui/layout
   children:
     - title: Introduction
       permalink: /ui/layout
-      match-page-url-exactly: true
     - title: Build a layout
       permalink: /ui/layout/tutorial
     - title: Lists & grids
@@ -194,7 +190,6 @@
       children:
         - title: Overview
           permalink: /ui/layout/scrolling
-          match-page-url-exactly: true
         - title: Use slivers to achieve fancy scrolling
           permalink: /ui/layout/scrolling/slivers
         - title: Place a floating app bar above a list
@@ -206,7 +201,6 @@
   children:
     - title: Overview
       permalink: /ui/adaptive-responsive
-      match-page-url-exactly: true
     - title: General approach
       permalink: /ui/adaptive-responsive/general
     - title: SafeArea & MediaQuery
@@ -248,19 +242,17 @@
       children:
         - title: Use custom fragment shaders
           permalink: /ui/design/graphics/fragment-shaders
-      
+
 - title: Interactivity
   permalink: /ui/interactivity
   children:
     - title: Add interactivity to your app
       permalink: /ui/interactivity
-      match-page-url-exactly: true
     - title: Gestures
       permalink: /ui/interactivity/gestures
       children:
         - title: Introduction
           permalink: /ui/interactivity/gestures
-          match-page-url-exactly: true
         - title: Handle taps
           permalink: /cookbook/gestures/handling-taps
         - title: Drag an object outside an app
@@ -302,7 +294,7 @@
       permalink: /cookbook/images/fading-in-images
     - title: Play and pause a video
       permalink: /cookbook/plugins/play-video
-    - title: Transforming assets at build time
+    - title: Transform assets at build time
       permalink: /ui/assets/asset-transformation
 
 - title: Navigation & routing
@@ -310,7 +302,6 @@
   children:
     - title: Overview
       permalink: /ui/navigation
-      match-page-url-exactly: true
     - title: Add tabs to your app
       permalink: /cookbook/design/tabs
     - title: Navigate to a new screen and back
@@ -329,13 +320,12 @@
       permalink: /cookbook/navigation/set-up-universal-links
     - title: Configure web URL strategies
       permalink: /ui/navigation/url-strategies
-      
+
 - title: Animations & transitions
   permalink: /ui/animations
   children:
     - title: Introduction
       permalink: /ui/animations
-      match-page-url-exactly: true
     - title: Tutorial
       permalink: /ui/animations/tutorial
     - title: Implicit animations
@@ -356,7 +346,7 @@
       permalink: /cookbook/effects/staggered-menu-animation
     - title: API overview
       permalink: /ui/animations/overview
-      
+
 - title: Accessibility & internationalization
   permalink: /ui/accessibility-and-internationalization
   children:
@@ -389,7 +379,6 @@
       children:
         - title: Overview
           permalink: /data-and-backend/networking
-          match-page-url-exactly: true
         - title: Fetch data from the internet
           permalink: /cookbook/networking/fetch-data
         - title: Make authenticated requests
@@ -411,7 +400,7 @@
           permalink: /cookbook/networking/background-parsing
     - title: Persistence
       permalink: /data-and-backend/persistence
-      children: 
+      children:
         - title: Store key-value data on disk
           permalink: /cookbook/persistence/key-value
         - title: Read and write files
@@ -424,9 +413,50 @@
         - title: Overview
           permalink: /data-and-backend/firebase
         - title: Add Firebase to your Flutter app
-          permalink: https://firebase.google.com/docs/flutter/setup?platform=ios
+          permalink: https://firebase.google.com/docs/flutter/setup
     - title: Google APIs
       permalink: /data-and-backend/google-apis
+
+- title: App architecture
+  permalink: /app-architecture
+  children:
+    - title: Introduction
+      permalink: /app-architecture
+    - title: Architecture concepts
+      permalink: /app-architecture/concepts
+    - title: Guide to app architecture
+      permalink: /app-architecture/guide
+    - title: Architecture case study
+      permalink: /app-architecture/case-study
+      children:
+        - title: Overview
+          permalink: /app-architecture/case-study
+        - title: UI layer
+          permalink: /app-architecture/case-study/ui-layer
+        - title: Data layer
+          permalink: /app-architecture/case-study/data-layer
+        - title: Dependency injection
+          permalink: /app-architecture/case-study/dependency-injection
+        - title: Testing each layer
+          permalink: /app-architecture/case-study/testing
+
+    - title: Recommendations
+      permalink: /app-architecture/recommendations
+    - title: Design patterns
+      permalink: /cookbook/architecture
+      children:
+        - title: Optimistic state
+          permalink: /cookbook/architecture/optimistic-state
+        - title: Command
+          permalink: /cookbook/architecture/command
+        - title: Result
+          permalink: /cookbook/architecture/result
+        - title: "Persistent storage architecture: Key-value data"
+          permalink: /cookbook/architecture/key-value-data
+        - title: "Persistent storage architecture: SQL"
+          permalink: /cookbook/architecture/sql
+        - title: Offline-first
+          permalink: /cookbook/architecture/offline-first
 
 - title: Platform integration
   permalink: /platform-integration
@@ -452,6 +482,10 @@
           permalink: /platform-integration/android/c-interop
         - title: Host a native Android view
           permalink: /platform-integration/android/platform-views
+        - title: Calling JetPack APIs
+          permalink: /platform-integration/android/call-jetpack-apis
+        - title: Launch a Jetpack Compose activity
+          permalink: /platform-integration/android/compose-activity
         - title: Restore state on Android
           permalink: /platform-integration/android/restore-state-android
         - title: Target ChromeOS with Android
@@ -500,11 +534,13 @@
     - title: Web
       permalink: /platform-integration/web
       children:
+        - title: Web support in Flutter
+          permalink: /platform-integration/web
         - title: Add web as build target
           permalink: /platform-integration/web/install-web
         - title: Build a web app
           permalink: /platform-integration/web/building
-        - title: WebAssembly
+        - title: Compile to WebAssembly
           permalink: /platform-integration/web/wasm
         - title: Customize app initialization
           permalink: /platform-integration/web/initialization
@@ -552,7 +588,6 @@
     - header: Testing
     - title: Overview
       permalink: /testing/overview
-      match-page-url-exactly: true
     - title: Unit testing
       children:
         - title: Introduction
@@ -573,7 +608,6 @@
       children:
         - title: Introduction
           permalink: /cookbook/testing/integration/introduction
-          match-page-url-exactly: true
         - title: Write and run an integration test
           permalink: /testing/integration-tests
         - title: Profile an integration test
@@ -589,13 +623,10 @@
       permalink: /testing/code-debugging
     - title: Use a native language debugger
       permalink: /testing/native-debugging
-    - title: Flutter's build modes
-      permalink: /testing/build-modes
     - title: Common Flutter errors
       permalink: /testing/common-errors
     - title: Handle errors
       permalink: /testing/errors
-      match-page-url-exactly: true
     - title: Report errors to a service
       permalink: /cookbook/maintenance/error-reporting
 
@@ -604,7 +635,6 @@
   children:
     - title: Overview
       permalink: /perf
-      match-page-url-exactly: true
     - title: Impeller
       permalink: /perf/impeller
     - title: Performance best practices
@@ -661,7 +691,6 @@
   children:
     - title: Introduction
       permalink: /add-to-app
-      match-page-url-exactly: true
     - title: Add to an Android app
       permalink: /add-to-app/android
       children:
@@ -760,7 +789,7 @@
 - title: Resources
   permalink: /resources
   children:
-    - header: Learning
+#    - header: Learn
     - title: FAQ
       permalink: /resources/faq
     - title: Books
@@ -773,23 +802,23 @@
       permalink: /resources/bootstrap-into-dart
     - title: Get support
       permalink: /resources/support
-    - header: Contributing
-    - title: Create useful bug reports
-      permalink: /resources/bug-reports
-    - title: Contribute to Flutter
-      permalink: https://github.com/flutter/flutter/blob/main/CONTRIBUTING.md
-    - title: Design documents
-      permalink: /resources/design-docs
-
-- title: Reference
-  permalink: /reference
-  expanded: true
-  children:
-    - title: Who is Dash?
-      permalink: /dash
-    - title: Widget index
-      permalink: /reference/widgets
-    - title: API reference
-      permalink: https://api.flutter.dev
-    - title: flutter CLI reference
-      permalink: /reference/flutter-cli
+    - divider
+    - title: Contribute
+      children:
+      - title: Create useful bug reports
+        permalink: /resources/bug-reports
+      - title: Contribute to Flutter
+        permalink: https://github.com/flutter/flutter/blob/main/CONTRIBUTING.md
+      - title: Discover proposed features
+        permalink: /resources/design-docs
+    - title: Reference
+      permalink: /reference
+      children:
+        - title: Who is Dash?
+          permalink: /dash
+        - title: Widget index
+          permalink: /reference/widgets
+        - title: flutter CLI
+          permalink: /reference/flutter-cli
+        - title: API docs
+          permalink: https://api.flutter.dev

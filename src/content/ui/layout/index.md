@@ -252,7 +252,7 @@ or you can build your own set of custom widgets.
 
 #### Non-Material apps
 
-For a non-Material app, you can add the `Center` widget to the app's
+For a non-Material app, you can add the `Container` widget to the app's
 `build()` method:
 
 <?code-excerpt path-base="layout/non_material"?>

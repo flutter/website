@@ -346,8 +346,10 @@ using reverse domain name notation. This value is used
 in various package and bundle identifiers in the
 generated plugin code.
 
-Use the `-a` option to specify the language for android
-or the `-i` option to specify the language for ios.
+By default, the plugin project uses Swift for iOS code and
+Kotlin for Android code. If you prefer Objective-C or Java,
+you can specify the iOS language using `-i` and the
+Android language using `-a`.
 Please choose **one** of the following:
 
 ```console
@@ -380,18 +382,6 @@ with the following specialized content:
 **`example/`**
 : A Flutter app that depends on the plugin,
   and illustrates how to use it.
-
-By default, the plugin project uses Swift for iOS code and
-Kotlin for Android code. If you prefer Objective-C or Java,
-you can specify the iOS language using `-i` and the
-Android language using `-a`. For example:
-
-```console
-$ flutter create --template=plugin --platforms=android,ios -i objc hello
-```
-```console
-$ flutter create --template=plugin --platforms=android,ios -a java hello
-```
 
 ### Step 2: Implement the package {:#edit-plugin-package}
 
@@ -799,10 +789,10 @@ they are generated from the header file
 Reference the [ffigen docs][] for information
 on how to install this package.
 
-Regenerate the bindings by running the following:
+To regenerate the bindings, run the following command:
 
 ```console
-$  dart run ffigen --config ffigen.yaml
+$ dart run ffigen --config ffigen.yaml
 ```
 
 ### Step 4: Invoking native code
@@ -832,7 +822,7 @@ to all packages:
 When you publish a package,
 API documentation is automatically generated and
 published to pub.dev/documentation.
-For example, see the docs for [`device_info`][].
+For example, see the docs for [`device_info_plus`][].
 
 If you wish to generate API documentation locally on
 your development machine, use the following commands:
@@ -1061,7 +1051,7 @@ PENDING
 
 [CocoaPods Documentation]: https://guides.cocoapods.org/syntax/podspec.html
 [Dart library package]: {{site.dart-site}}/guides/libraries/create-library-packages
-[`device_info`]: {{site.pub-api}}/device_info/latest
+[`device_info_plus`]: {{site.pub-api}}/device_info_plus
 [Effective Dart Documentation]: {{site.dart-site}}/guides/language/effective-dart/documentation
 [federated plugins]: #federated-plugins
 [ffigen docs]: {{site.pub-pkg}}/ffigen/install

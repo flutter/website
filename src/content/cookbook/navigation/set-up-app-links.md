@@ -88,7 +88,6 @@ It provides a simple API to handle complex routing scenarios.
     Replace `example.com` with your own web domain.
 
     ```xml
-    <meta-data android:name="flutter_deeplinking_enabled" android:value="true" />
     <intent-filter android:autoVerify="true">
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT" />
@@ -99,12 +98,15 @@ It provides a simple API to handle complex routing scenarios.
     ```
    
     :::note
-    The metadata tag `flutter_deeplinking_enabled` opts
-    into Flutter's default deeplink handler.
-    If you are using the third-party plugins,
-    such as [uni_links][], setting this metadata tag will
-    break these plugins. Omit this metadata tag
-    if you prefer to use third-party plugins.
+    If you use a third-party plugin to handle deep links,
+    such as [app_links][], 
+    Flutter's default deeplink handler will
+    break these plugins. 
+    
+    To opt out of using Flutter's default deep link handler,
+     add the following metadata tag:
+    ```<meta-data android:name="flutter_deeplinking_enabled" android:value="false" />```
+    to opt out of Flutter's default deeplink handler 
     :::
 
 ## 3. Hosting assetlinks.json file
@@ -217,5 +219,5 @@ Source code: [deeplink_cookbook][]
 [Firebase Hosting]: {{site.firebase}}/docs/hosting
 [go_router]: {{site.pub}}/packages/go_router
 [GitHub Pages]: https://pages.github.com
-[uni_links]: {{site.pub}}/packages/uni_links
+[app_links]: {{site.pub}}/packages/app_links
 [Signing the app]: /deployment/android#signing-the-app

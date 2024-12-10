@@ -716,7 +716,7 @@ Relevant PRs:
 Supported by Flutter Fix: no
 
 As of Flutter 3.0 platform views require api 23 or higher. In Flutter 3.19 we now throw UnsupportedOperationException 
-when using platform views on android devices runing api level 22 and below. 
+when using platform views on android devices running api level 22 and below. 
 
 **Migration guide**
 

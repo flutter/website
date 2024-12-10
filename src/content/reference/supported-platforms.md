@@ -5,25 +5,25 @@ description: The platforms that Flutter supports by platform version.
 ---
 
 As of Flutter {{site.appnow.flutter}},
-Flutter supports deploying apps the following combinations of
+Flutter supports deploying apps on the following combinations of
 hardware architectures and operating system versions.
 These combinations are called _platforms_.
 
-Flutter supports platforms in three tiers:
+Flutter categorizes platforms as follows:
 
-* **Supported**: The Flutter team tests these platforms on every commit.
-* **Best effort**: The Flutter team intends to support these platforms
-  through coding practices. The team tests these platforms on an ad-hoc basis.
+* **Supported**: The platforms and versions that the Flutter team supports.
+* **CI-tested**: The Flutter team tests these platforms on every commit.
 * **Unsupported**: The Flutter team doesn't test or support these platforms.
 
-Based on these tiers, Flutter supports deploying to the following platforms.
+Based on these categories,
+Flutter supports deploying to the following platforms.
 
 {% assign opsys = platforms %}
 
-| Target Platform | Hardware architectures | Supported versions | Best effort versions | Unsupported versions |
+| Target platform | Target architectures | Supported versions | CI-tested versions |  Unsupported versions |
 |---|:---:|:---:|:---:|:---:|
 {%- for platform in opsys %}
-  | {{platform.platform}} | {{platform.chipsets}} | {{platform.supported}} | {{platform.besteffort}} | {{platform.unsupported}} |
+  | {{platform.platform}} | {{platform.target-arch}} | {{platform.supported}} | {{platform.ci-tested}} | {{platform.unsupported}} |
 {%- endfor %}
 
 {:.table .table-striped}

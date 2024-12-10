@@ -72,7 +72,7 @@
     {% endif -%}
   </head>
   <body{% if body_class %} class="{{ body_class }}"{% endif %}>
-  <a href="#site-content-title" id="skip">
+  <a href="#document-title" id="skip-to-main">
     Skip to main content
   </a>
 
@@ -91,7 +91,9 @@
 
     {% include header.html %}
 
+    {% if site.show_banner != false and show_banner != false -%}
     {% render banner.html %}
+    {% endif -%}
 
     {{ content }}
 
