@@ -6,6 +6,7 @@ content-tags:
   - user experience
   - repository pattern
 icon-path: /assets/images/docs/app-architecture/design-patterns/offline-first-icon.svg
+order: 3
 js:
   - defer: true
     url: /assets/js/inject_dartpad.js

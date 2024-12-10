@@ -5,6 +5,7 @@ content-tags:
   - data
   - SQL
 icon-path: /assets/images/docs/app-architecture/design-patterns/sql-icon.svg
+order: 2
 js:
   - defer: true
     url: /assets/js/inject_dartpad.js

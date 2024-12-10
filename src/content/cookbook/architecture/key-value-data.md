@@ -6,6 +6,7 @@ content-tags:
   - shared-preferences
   - dark mode
 icon-path: /assets/images/docs/app-architecture/design-patterns/kv-store-icon.svg
+order: 1
 js:
   - defer: true
     url: /assets/js/inject_dartpad.js

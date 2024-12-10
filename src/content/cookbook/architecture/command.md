@@ -6,6 +6,7 @@ content-tags:
   - asynchronous dart
   - state
 icon-path: /assets/images/docs/app-architecture/design-patterns/command-icon.svg
+order: 4
 js:
   - defer: true
     url: /assets/js/inject_dartpad.js
