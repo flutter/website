@@ -1,11 +1,11 @@
 ---
 title: "Persistent storage architecture: Key-value data"
 description: Save application data to a user's on-device key-value store.
-content-tags:
+contentTags:
   - data
   - shared-preferences
   - dark mode
-icon-path: /assets/images/docs/app-architecture/design-patterns/kv-store-icon.svg
+iconPath: /assets/images/docs/app-architecture/design-patterns/kv-store-icon.svg
 order: 1
 js:
   - defer: true

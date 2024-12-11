@@ -1,10 +1,10 @@
 ---
 title: "Persistent storage architecture: SQL"
 description: Save complex application data to a user's device with SQL.
-content-tags:
+contentTags:
   - data
   - SQL
-icon-path: /assets/images/docs/app-architecture/design-patterns/sql-icon.svg
+iconPath: /assets/images/docs/app-architecture/design-patterns/sql-icon.svg
 order: 2
 js:
   - defer: true

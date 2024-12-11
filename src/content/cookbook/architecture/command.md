@@ -1,11 +1,11 @@
 ---
 title: The command pattern
 description: "Simplify view model logic by implementing a Command class."
-content-tags:
+contentTags:
   - mvvm
   - asynchronous dart
   - state
-icon-path: /assets/images/docs/app-architecture/design-patterns/command-icon.svg
+iconPath: /assets/images/docs/app-architecture/design-patterns/command-icon.svg
 order: 4
 js:
   - defer: true

@@ -1,11 +1,11 @@
 ---
 title: "Offline-first support"
 description: Implement offline-first support for one feature in an application.
-content-tags:
+contentTags:
   - data
   - user experience
   - repository pattern
-icon-path: /assets/images/docs/app-architecture/design-patterns/offline-first-icon.svg
+iconPath: /assets/images/docs/app-architecture/design-patterns/offline-first-icon.svg
 order: 3
 js:
   - defer: true

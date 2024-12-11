@@ -1,10 +1,10 @@
 ---
 title: Error handling with Result objects
 description: "Improve error handling across classes with Result objects."
-content-tags:
+contentTags:
   - error handling
   - services
-icon-path: /assets/images/docs/app-architecture/design-patterns/result-icon.svg
+iconPath: /assets/images/docs/app-architecture/design-patterns/result-icon.svg
 order: 5
 js:
   - defer: true
