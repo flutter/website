@@ -10,49 +10,49 @@ The frontmatter of each article should have the following attributes:
 {%- endcomment -%}
 
 <div class="expansion-panel-list">
-    {% for item in list -%}
-    {% assign id = base_id | append: '-expansion-' | append: forloop.index -%}
-    {% if item.expanded -%}
-        {% assign expanded = 'true' -%}
-        {% assign show = 'show' -%}
-    {% else -%}
-        {% assign class = 'collapsed' -%}
-        {% assign expanded = 'false' -%}
-        {% assign show = '' -%}
-    {% endif -%}
-    <div class="expansion-panel">
-        <a class="{{class}} collapsible"
-           data-toggle="collapse"
-           href="#{{id}}"
-           role="button"
-           aria-expanded="{{expanded}}"
-           aria-controls="{{id}}">
-            <div class="expansion-panel-title">
-                <div class="expansion-panel-title-leading">
-                    {%- if item.data.icon-path %}
-                        <img src="{{item.data.icon-path}}" alt="An icon showing a generic application." />
-                    {%- else %}
-                        <img src="/assets/images/docs/app-architecture/design-patterns/kv-store-icon.svg" alt="A ivon showing a generic application." />
-                    {%- endif %}
+  {% for item in list -%}
+  {% assign id = base_id | append: '-expansion-' | append: forloop.index -%}
+  {% if item.expanded -%}
+    {% assign expanded = 'true' -%}
+    {% assign show = 'show' -%}
+  {% else -%}
+    {% assign class = 'collapsed' -%}
+    {% assign expanded = 'false' -%}
+    {% assign show = '' -%}
+  {% endif -%}
+  <div class="expansion-panel">
+    <a class="{{class}} collapsible"
+       data-toggle="collapse"
+       href="#{{id}}"
+       role="button"
+       aria-expanded="{{expanded}}"
+       aria-controls="{{id}}">
+      <div class="expansion-panel-title">
+        <div class="expansion-panel-title-leading">
+          {%- if item.data.icon-path %}
+            <img src="{{item.data.icon-path}}" alt="An icon showing a generic application." />
+          {%- else %}
+            <img src="/assets/images/docs/app-architecture/design-patterns/kv-store-icon.svg" alt="A ivon showing a generic application." />
+          {%- endif %}
 
-                </div>
-                <div class="expansion-panel-title-content">
-                    <p class="content-title">{{item.data.title}}</p>
-                    <ul class="content-tags">
-                    {% for content-tag in item.data.content-tags -%}
-                        <li class="tag">{{content-tag}}</li>
-                    {% endfor -%}
-                    </ul>
-                    <p class="content-description">{{item.data.description}}</p>
-                </div>
-            </div>
-        </a>
-        <div class="expansion-panel-body collapse {{show}}" id="{{id}}">
-            <p>{{item.content | truncatewords: 100}}  <a href="{{item.url}}">Read full article</a></p>
-
-            <!-- Required to add "margin" that doesn't cause expansion jank -->
-            <div class="separator"></div>
         </div>
+        <div class="expansion-panel-title-content">
+          <p class="content-title">{{item.data.title}}</p>
+          <ul class="content-tags">
+            {% for content-tag in item.data.content-tags -%}
+              <li class="tag">{{content-tag}}</li>
+            {% endfor -%}
+          </ul>
+          <p class="content-description">{{item.data.description}}</p>
+        </div>
+      </div>
+    </a>
+    <div class="expansion-panel-body collapse {{show}}" id="{{id}}">
+      <p>{{item.content | truncatewords: 100}}  <a href="{{item.url}}">Read full article</a></p>
+
+      <!-- Required to add "margin" that doesn't cause expansion jank -->
+      <div class="separator"></div>
     </div>
-    {% endfor -%}
+  </div>
+  {% endfor -%}
 </div>
