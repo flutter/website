@@ -6,6 +6,9 @@ description: >
 prev:
   title: Architecture case study
   path: /app-architecture/case-study
+next:
+  title: Design patterns
+  path: /app-architecture/design-patterns
 ---
 
 This page presents architecture best practices, why they matter, and
