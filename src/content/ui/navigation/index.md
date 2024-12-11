@@ -56,8 +56,9 @@ onPressed: () {
 },
 ```
 
-Routes specified here are called _named routes_. For a complete example, follow
-the [Navigate with named routes][] recipe from the Flutter Cookbook.
+`/second` represents a _named route_ that was declared in the
+`MaterialApp.routes` list. For a complete example, follow the
+[Navigate with named routes][] recipe from the Flutter Cookbook.
 
 
 ### Limitations
