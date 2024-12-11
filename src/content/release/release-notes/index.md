@@ -89,7 +89,7 @@ For information about bug-fix releases, check out our
 * Earlier
   * [Archived release notes][]
 
-[3.27.0 announcement]: ...
+[3.27.0 announcement]: {{site.flutter-medium}}/whats-new-in-flutter-3-27-28341129570c
 [3.27.0 release notes & change log]: /release/release-notes/release-notes-3.27.0
 [3.27.0 breaking changes & migrations]: /release/breaking-changes#released-in-flutter-3-27
 [3.24.0 announcement]: {{site.flutter-medium}}/whats-new-in-flutter-3-24-6c040f87d1e4
