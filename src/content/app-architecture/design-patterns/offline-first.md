@@ -522,9 +522,9 @@ take into account the device status and your application needs,
 as different applications may have different requirements.
 
 [Flutter Architecture guidelines]:/app-architecture
-[Persistent Storage Architecture: SQL]:/cookbook/architecture/sql
+[Persistent Storage Architecture: SQL]:/app-architecture/design-patterns/sql
 [`freezed`]:{{site.pub}}/packages/freezed
-[Optimistic State design pattern]:/cookbook/architecture/optimistic-state
+[Optimistic State design pattern]:/app-architecture/design-patterns/optimistic-state
 [`workmanager`]:{{site.pub}}/packages/workmanager
 [`connectivity_plus`]:{{site.pub}}/packages/connectivity_plus
 [`battery_plus`]:{{site.pub}}/packages/battery_plus

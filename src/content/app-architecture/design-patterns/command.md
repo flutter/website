@@ -631,7 +631,7 @@ final class Command1<T, A> extends Command<T> {
 ```
 
 [Compass App example]: {{site.repo.samples}}/tree/main/compass_app
-[`Result` class]: /cookbook/architecture/result
+[`Result` class]: /app-architecture/design-patterns/result
 [pub.dev]: {{site.pub}}
 [`flutter_command`]: {{site.pub-pkg}}/flutter_command
 [`ChangeNotifier`]: /get-started/fundamentals/state-management
