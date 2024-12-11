@@ -447,6 +447,10 @@
       children:
         - title: Optimistic state
           permalink: /cookbook/architecture/optimistic-state
+        - title: Command
+          permalink: /cookbook/architecture/command
+        - title: Result
+          permalink: /cookbook/architecture/result
         - title: "Persistent storage architecture: Key-value data"
           permalink: /cookbook/architecture/key-value-data
         - title: "Persistent storage architecture: SQL"
