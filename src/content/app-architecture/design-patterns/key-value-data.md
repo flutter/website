@@ -363,6 +363,6 @@ ListenableBuilder(
 ```
 
 [Flutter architecture design]: /app-architecture
-[Store key-value data on disk]: /app-architecture/design-patterns/key-value
+[Store key-value data on disk]: /cookbook/persistence/key-value
 [Persistent Storage Architecture: SQL]: /app-architecture/design-patterns/sql
 [`/examples/cookbook/architecture/todo_data_service/`]: {{site.repo.this}}/tree/main/examples/cookbook/architecture/todo_data_service/
