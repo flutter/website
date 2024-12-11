@@ -8,11 +8,12 @@ This page has release notes for 3.27.0.
 For information about subsequent bug-fix releases,
 check out the Flutter [CHANGELOG][].
 
-[CHANGELOG]: {{site.repo.flutter}}/blob/master/CHANGELOG.md
+[CHANGELOG]: {{site.repo.flutter}}/blob/main/CHANGELOG.md
 
 ## Flutter framework
 
 ### Framework
+
 * Add example of goldenFileComparator usage in widget tests by @alestiago in [150422](https://github.com/flutter/flutter/pull/150422)
 * content dimensions are not established get controller value error by @hello-coder-xu in [148938](https://github.com/flutter/flutter/pull/148938)
 * Fix link in tree hygene doc by @derdilla in [151235](https://github.com/flutter/flutter/pull/151235)
@@ -260,7 +261,9 @@ check out the Flutter [CHANGELOG][].
 * Update MenuAnchor API examples by @bleroux in [156404](https://github.com/flutter/flutter/pull/156404)
 * Roll pub packages by @flutter-pub-roller-bot in [156440](https://github.com/flutter/flutter/pull/156440)
 * Reverts "Roll pub packages (#156440)" by @auto-submit in [156473](https://github.com/flutter/flutter/pull/156473)
+
 ### Material
+
 * Add tests for material_state_border_side.0_test.dart by @ValentinVignal in [151089](https://github.com/flutter/flutter/pull/151089)
 * [Reland] - Enable `explicitChildNodes` for the `AlertDialog` content by @TahaTesser in [149597](https://github.com/flutter/flutter/pull/149597)
 * Re-enable `SemanticsAction.focus` matchers by @gspencergoog in [150990](https://github.com/flutter/flutter/pull/150990)
@@ -410,7 +413,9 @@ check out the Flutter [CHANGELOG][].
 * Update `flexible_space_bar_test.dart` tests for Material 3 by @TahaTesser in [156226](https://github.com/flutter/flutter/pull/156226)
 * Update `DropdownMenu` tests to remove some dependence on platforms by @PurplePolyhedron in [156131](https://github.com/flutter/flutter/pull/156131)
 * Normalize `ThemeData.tabBarTheme` by @QuncCccccc in [156253](https://github.com/flutter/flutter/pull/156253)
+
 ### iOS
+
 * Launch DDS from Dart SDK and prepare to serve DevTools from DDS by @bkonyi in [146593](https://github.com/flutter/flutter/pull/146593)
 * Reverts "Launch DDS from Dart SDK and prepare to serve DevTools from DDS (#146593)" by @auto-submit in [151781](https://github.com/flutter/flutter/pull/151781)
 * Use Xcode build setting PRODUCT_NAME to find app and archive paths by @jmagman in [140242](https://github.com/flutter/flutter/pull/140242)
@@ -421,7 +426,9 @@ check out the Flutter [CHANGELOG][].
 * Remove -sdk for watchOS simulator in tool by @jmagman in [152992](https://github.com/flutter/flutter/pull/152992)
 * Fix `flutter run` on Mac x64 hosts if Swift Package Manager is enabled by @loic-sharma in [154645](https://github.com/flutter/flutter/pull/154645)
 * [tool] Update description of where to install platforms in XCode by @kevmoo in [156432](https://github.com/flutter/flutter/pull/156432)
+
 ### Tooling
+
 * Handle a SocketException thrown when sending the browser close command to Chrome by @jason-simmons in [151197](https://github.com/flutter/flutter/pull/151197)
 * Fix project name fallback by @navaronbracke in [150614](https://github.com/flutter/flutter/pull/150614)
 * Remove warning when KGP version not detected by @gmackall in [151254](https://github.com/flutter/flutter/pull/151254)
@@ -558,9 +565,13 @@ check out the Flutter [CHANGELOG][].
 * [tool] Emit a deprecation warning for some values of --web-renderer. by @ditman in [156376](https://github.com/flutter/flutter/pull/156376)
 * Migrator for android 35/16kb page size cmake flags for plugin_ffi  by @dcharkes in [156221](https://github.com/flutter/flutter/pull/156221)
 * Beta test alternate correct macOS framework xcprivacy manifest location by @jmagman in [157136](https://github.com/flutter/flutter/pull/157136)
+
 ### Documentation
+
 * Fix crash in Linux platform channel example. by @robert-ancell in [155735](https://github.com/flutter/flutter/pull/155735)
-### Other Changes
+
+### Other changes
+
 * Force regeneration of platform-specific manifests before running performance tests by @jason-simmons in [151003](https://github.com/flutter/flutter/pull/151003)
 * Roll pub packages by @flutter-pub-roller-bot in [151203](https://github.com/flutter/flutter/pull/151203)
 * de-duplicate code in analyze.dart by @christopherfujino in [151279](https://github.com/flutter/flutter/pull/151279)
@@ -755,7 +766,8 @@ check out the Flutter [CHANGELOG][].
 * Started handling duplicate validation layer messages by @gaaclarke in [156375](https://github.com/flutter/flutter/pull/156375)
 * [flutter_releases] Flutter beta 3.27.0-0.1.pre Framework Cherrypicks by @reidbaker in [157268](https://github.com/flutter/flutter/pull/157268)
 
-## New Contributors
+## New contributors
+
 * @xiaoxianBoy made their first contribution in [150402](https://github.com/flutter/flutter/pull/150402)
 * @veloce made their first contribution in [149102](https://github.com/flutter/flutter/pull/149102)
 * @Dispersia made their first contribution in [150999](https://github.com/flutter/flutter/pull/150999)
@@ -804,9 +816,10 @@ check out the Flutter [CHANGELOG][].
 
 **Full Changelog**: https://github.com/flutter/flutter/compare/3.24.0...3.27.0-0.1.pre
 
-## Flutter Engine
+## Flutter engine
 
 ### Impeller
+
 * [Impeller] Document how to debug/profile OpenGL ES on macOS. by @chinmaygarde in [53671](https://github.com/flutter/engine/pull/53671)
 * [Impeller] Make storage sizes typed. by @chinmaygarde in [53700](https://github.com/flutter/engine/pull/53700)
 * [Impeller] Re-enable fast blur path for elliptical rrects by @flar in [53704](https://github.com/flutter/engine/pull/53704)
@@ -977,7 +990,9 @@ check out the Flutter [CHANGELOG][].
 * [Flutter GPU] Get the GLES backend/Windows working. by @bdero in [55694](https://github.com/flutter/engine/pull/55694)
 * [Impeller] libImpeller: Allow fetching OpenGL texture handle. by @chinmaygarde in [55753](https://github.com/flutter/engine/pull/55753)
 * Rename `GetTargetRenderPassDescriptor` to `GetRenderTarget`. by @matanlurey in [55765](https://github.com/flutter/engine/pull/55765)
+
 ### Android
+
 * Move `//third_party/android_embedding_dependencies` to `//flutter/third_party`. by @matanlurey in [53587](https://github.com/flutter/engine/pull/53587)
 * [engine] support combined UI/Platform thread for iOS/Android. by @jonahwilliams in [53656](https://github.com/flutter/engine/pull/53656)
 * Move `//third_party/java` to `//flutter/third_party/java` by @matanlurey in [53590](https://github.com/flutter/engine/pull/53590)
@@ -1017,7 +1032,9 @@ check out the Flutter [CHANGELOG][].
 * Reverts "Add `SurfaceProducer#onSurfaceAvailable`, deprecate `onSurfaceCreated`. (#55418)" by @auto-submit in [55450](https://github.com/flutter/engine/pull/55450)
 * Reverts "Reverts "Add `SurfaceProducer#onSurfaceAvailable`, deprecate `onSurfaceCreated`. (#55418)" (#55450)" by @auto-submit in [55463](https://github.com/flutter/engine/pull/55463)
 * Release`onTrimMemoryListener` after `ImageReaderSurfaceProducer` released. by @matanlurey in [55760](https://github.com/flutter/engine/pull/55760)
+
 ### iOS
+
 * [Impeller] mark the end of a frame boundary for system compositor interop. by @jonahwilliams in [53722](https://github.com/flutter/engine/pull/53722)
 * [iOS] Mark EmbeddedViewCount const by @cbracken in [54062](https://github.com/flutter/engine/pull/54062)
 * [iOS] Flush layer pool after platform view dispose by @cbracken in [54056](https://github.com/flutter/engine/pull/54056)
@@ -1052,7 +1069,9 @@ check out the Flutter [CHANGELOG][].
 * [Impeller] ensure one AiksContext per app. by @jonahwilliams in [55629](https://github.com/flutter/engine/pull/55629)
 * iOS: Migrate FlutterEngine to ARC by @cbracken in [55590](https://github.com/flutter/engine/pull/55590)
 * Revert "iOS: Migrate FlutterEngine to ARC (#55590)" by @cbracken in [55699](https://github.com/flutter/engine/pull/55699)
+
 ### Web
+
 * fix: mask disappeared when having nested mask filter on Flutter web HTML by @Kingtous in [45166](https://github.com/flutter/engine/pull/45166)
 * [Flutter Web(HTML)] fix: shader mask is painted incorrectly on shared offscreen canvas by @Kingtous in [44998](https://github.com/flutter/engine/pull/44998)
 * Add Semantics Property `linkUrl` by @mdebbar in [53507](https://github.com/flutter/engine/pull/53507)
@@ -1133,7 +1152,9 @@ check out the Flutter [CHANGELOG][].
 * Revert "Reland [skwasm] Scene builder optimizations for platform view placement (#55468)" by @eyebrowsoffire in [55715](https://github.com/flutter/engine/pull/55715)
 * [web] Warn users when picking a deprecated renderer. by @ditman in [55709](https://github.com/flutter/engine/pull/55709)
 * [canvaskit] Fix incorrect clipping with Opacity scene layer by @harryterkelsen in [55751](https://github.com/flutter/engine/pull/55751)
+
 ### Desktop
+
 * [macOS] Multiview compositor by @dkwingsmt in [52253](https://github.com/flutter/engine/pull/52253)
 * macOS: Update platform node when AXNodeData role changes by @knopp in [54364](https://github.com/flutter/engine/pull/54364)
 * [Windows] Improve texture format logic by @loic-sharma in [54329](https://github.com/flutter/engine/pull/54329)
@@ -1147,7 +1168,9 @@ check out the Flutter [CHANGELOG][].
 * [Impeller] finish wiring up external textures for macOS embedder. by @jonahwilliams in [55347](https://github.com/flutter/engine/pull/55347)
 * [Impeller] fix Impeller on windows. by @jonahwilliams in [55323](https://github.com/flutter/engine/pull/55323)
 * Beta fix macos xcprivacy manifest copy location by @christopherfujino in [55938](https://github.com/flutter/engine/pull/55938)
-### Other Changes
+
+### Other changes
+
 * Convert `run_ios_tests.sh` to `run_ios_tests.dart`. by @matanlurey in [53645](https://github.com/flutter/engine/pull/53645)
 * [Embedder] Document incorrectly named field in FlutterOpenGLFramebuffer. by @chinmaygarde in [53720](https://github.com/flutter/engine/pull/53720)
 * Add a host_debug_unopt local engine config for Windows. by @chinmaygarde in [53734](https://github.com/flutter/engine/pull/53734)
@@ -1414,7 +1437,8 @@ check out the Flutter [CHANGELOG][].
 * Refactor multi-file build parsing into a single `BuildPlan` class. by @matanlurey in [55720](https://github.com/flutter/engine/pull/55720)
 * Update Dart to 3.6.0-334.3.beta by @zanderso in [55826](https://github.com/flutter/engine/pull/55826)
 
-## New Contributors
+## New contributors
+
 * @darkwater made their first contribution in [54053](https://github.com/flutter/engine/pull/54053)
 * @charafau made their first contribution in [54173](https://github.com/flutter/engine/pull/54173)
 * @smart7even made their first contribution in [54544](https://github.com/flutter/engine/pull/54544)
