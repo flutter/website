@@ -11,7 +11,7 @@ js:
     url: /assets/js/inject_dartpad.js
 ---
 
-<?code-excerpt path-base="cookbook/architecture/result"?>
+<?code-excerpt path-base="app-architecture/result"?>
 
 Dart provides a built-in error handling mechanism 
 with the ability to throw and catch exceptions.

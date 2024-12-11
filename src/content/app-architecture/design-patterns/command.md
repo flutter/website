@@ -12,7 +12,7 @@ js:
     url: /assets/js/inject_dartpad.js
 ---
 
-<?code-excerpt path-base="cookbook/architecture/command"?>
+<?code-excerpt path-base="app-architecture/command"?>
 
 [Model-View-ViewModel (MVVM)][] is a design pattern 
 that separates a feature of an application into three parts: 

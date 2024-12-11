@@ -12,7 +12,7 @@ js:
     url: /assets/js/inject_dartpad.js
 ---
 
-<?code-excerpt path-base="cookbook/architecture/offline_first"?>
+<?code-excerpt path-base="app-architecture/offline_first"?>
 
 An offline-first application is an app capable of offering most 
 or all of its functionality while being disconnected from the internet. 

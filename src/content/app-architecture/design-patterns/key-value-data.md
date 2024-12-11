@@ -12,7 +12,7 @@ js:
     url: /assets/js/inject_dartpad.js
 ---
 
-<?code-excerpt path-base="cookbook/architecture/todo_data_service"?>
+<?code-excerpt path-base="app-architecture/todo_data_service"?>
 
 Most Flutter applications, no matter how small or big they are,
 require storing data on the user’s device at some point, such as API keys, 
