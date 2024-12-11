@@ -1,6 +1,12 @@
 ---
 title: "Offline-first support"
-description: Create an app with offline-first support.
+description: Implement offline-first support for one feature in an application.
+contentTags:
+  - data
+  - user experience
+  - repository pattern
+iconPath: /assets/images/docs/app-architecture/design-patterns/offline-first-icon.svg
+order: 3
 js:
   - defer: true
     url: /assets/js/inject_dartpad.js

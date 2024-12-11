@@ -1,7 +1,12 @@
 ---
-title: Command pattern
-description: >-
-  Learn how to improve your view models with commands.
+title: The command pattern
+description: "Simplify view model logic by implementing a Command class."
+contentTags:
+  - mvvm
+  - asynchronous dart
+  - state
+iconPath: /assets/images/docs/app-architecture/design-patterns/command-icon.svg
+order: 4
 js:
   - defer: true
     url: /assets/js/inject_dartpad.js

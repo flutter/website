@@ -1,0 +1,149 @@
+@use '../base/variables' as *;
+@use '../vendor/bootstrap';
+
+.expansion-panel-list {
+  background: $site-color-panel-background;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 12px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  // Rotates chevron
+  @mixin collapsible() {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 1rem;
+
+    // Border radius to match entire list, so focus outline matches.
+    border-radius: 12px;
+
+    // Add padding on small screens, because images aren't displayed.
+    @include bootstrap.media-breakpoint-down(sm) {
+      padding-left: 1rem;
+
+      &:first-child {
+        // Add extra space above first expansion panel.
+        padding-top: 0.5rem;
+      }
+    }
+
+    &::after {
+      // Duplicated since Firefox doesn't support content alt text.
+      content: 'keyboard_arrow_down';
+      content: 'keyboard_arrow_down' / '';
+      font: $site-font-icon;
+      transition: transform .25s ease-in-out;
+    }
+
+    .collapsing {
+      transition-duration: .2s;
+    }
+
+    &:not(.collapsed) {
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .expansion-panel {
+    > a {
+      // Adds display:flex, align:center, and justify:space-between.
+      @include collapsible();
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+  }
+
+  .expansion-panel-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .expansion-panel-title-leading {
+      height: 8rem;
+      width: 8rem;
+      margin: .5rem;
+      padding: 1rem;
+
+      // Hide leading image on small screens.
+      display: none;
+
+      @include bootstrap.media-breakpoint-up(md) {
+        display: flex;
+        flex: 1 0 auto;
+      }
+
+      img {
+        margin: auto;
+      }
+    }
+
+    .expansion-panel-title-content {
+      .content-title {
+        color: $site-color-black;
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: .25rem;
+
+        @include bootstrap.media-breakpoint-up(md) {
+          font-size: 1.25rem;
+        }
+      }
+
+      .content-description {
+        color: $site-color-body;
+        margin-bottom: $site-spacer / 2;
+      }
+
+      .content-tags {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: .75rem;
+
+        .tag {
+          color: $site-color-body-caption;
+          font-size: .8rem;
+          line-height: 1;
+          margin-bottom: 0;
+
+          &::after {
+            // Duplicated since Firefox doesn't support content alt text.
+            content: ' |\00a0';
+            content: ' |\00a0' / '';
+          }
+
+          &:last-child::after {
+            content: '';
+          }
+        }
+      }
+    }
+  }
+
+  .expansion-panel-body {
+    margin: auto;
+    width: 90%;
+    border-top: .05rem solid rgba(0, 0, 0, 0.125);
+
+    p {
+      color: $site-color-body;
+      margin-top: 1.5rem;
+    }
+
+    .separator {
+      margin-bottom: 3rem;
+    }
+  }
+
+  :last-child {
+    .expansion-panel-body {
+      border-bottom: none;
+     }
+  }
+}
