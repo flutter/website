@@ -67,7 +67,7 @@ The following resources can help you get started:
 * To add web support to an existing app, or to create a
   new app that includes web support, see
   [Building a web application with Flutter][].
-* To learn about Flutter's different web renderers (HTML and CanvasKit), see
+* To learn about Flutter's different web renderers (CanvasKit and Skwasm), see
   [Web renderers][]
 * To learn how to create a responsive Flutter
   app, see [Creating responsive apps][].
