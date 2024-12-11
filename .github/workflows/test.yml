@@ -27,10 +27,10 @@ jobs:
         include:
           - name: "Beta channel"
             branch: beta
-            experimental: false
+            experimental: true
           - name: "Stable channel"
             branch: stable
-            experimental: true
+            experimental: false
     continue-on-error: ${{ matrix.experimental }}
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
