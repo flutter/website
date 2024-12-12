@@ -6,7 +6,7 @@ description: "How to restore the state of your iOS app after it's been killed by
 When a user runs a mobile app and then selects another
 app to run, the first app is moved to the background,
 or _backgrounded_. The operating system (both iOS and Android)
-often kill the backgrounded app to release memory or
+often kills the backgrounded app to release memory or
 improve performance for the app running in the foreground.
 
 You can use the [`RestorationManager`][] (and related)
