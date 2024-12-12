@@ -1,12 +1,18 @@
 ---
 title: "Persistent storage architecture: Key-value data"
-description: Create a service to store key-value data
+description: Save application data to a user's on-device key-value store.
+contentTags:
+  - data
+  - shared-preferences
+  - dark mode
+iconPath: /assets/images/docs/app-architecture/design-patterns/kv-store-icon.svg
+order: 1
 js:
   - defer: true
     url: /assets/js/inject_dartpad.js
 ---
 
-<?code-excerpt path-base="cookbook/architecture/todo_data_service"?>
+<?code-excerpt path-base="app-architecture/todo_data_service"?>
 
 Most Flutter applications, no matter how small or big they are,
 require storing data on the user’s device at some point, such as API keys, 
@@ -358,5 +364,5 @@ ListenableBuilder(
 
 [Flutter architecture design]: /app-architecture
 [Store key-value data on disk]: /cookbook/persistence/key-value
-[Persistent Storage Architecture: SQL]: /cookbook/architecture/sql
+[Persistent Storage Architecture: SQL]: /app-architecture/design-patterns/sql
 [`/examples/cookbook/architecture/todo_data_service/`]: {{site.repo.this}}/tree/main/examples/cookbook/architecture/todo_data_service/

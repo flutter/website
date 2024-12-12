@@ -1,13 +1,18 @@
 ---
-title: Command pattern
-description: >-
-  Learn how to improve your view models with commands.
+title: The command pattern
+description: "Simplify view model logic by implementing a Command class."
+contentTags:
+  - mvvm
+  - asynchronous dart
+  - state
+iconPath: /assets/images/docs/app-architecture/design-patterns/command-icon.svg
+order: 4
 js:
   - defer: true
     url: /assets/js/inject_dartpad.js
 ---
 
-<?code-excerpt path-base="cookbook/architecture/command"?>
+<?code-excerpt path-base="app-architecture/command"?>
 
 [Model-View-ViewModel (MVVM)][] is a design pattern 
 that separates a feature of an application into three parts: 
@@ -626,7 +631,7 @@ final class Command1<T, A> extends Command<T> {
 ```
 
 [Compass App example]: {{site.repo.samples}}/tree/main/compass_app
-[`Result` class]: /cookbook/architecture/result
+[`Result` class]: /app-architecture/design-patterns/result
 [pub.dev]: {{site.pub}}
 [`flutter_command`]: {{site.pub-pkg}}/flutter_command
 [`ChangeNotifier`]: /get-started/fundamentals/state-management

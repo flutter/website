@@ -1,5 +1,5 @@
-name: optimistic_state
-description: Example for optimistic_state cookbook recipe
+name: command
+description: Example for command cookbook recipe
 
 environment:
   sdk: ^3.5.0
@@ -10,7 +10,7 @@ dependencies:
 
 dev_dependencies:
   example_utils:
-    path: ../../../example_utils
+    path: ../../example_utils
 
 flutter:
   uses-material-design: true

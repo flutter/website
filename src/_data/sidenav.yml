@@ -211,6 +211,8 @@
       permalink: /ui/adaptive-responsive/input
     - title: Capabilities & policies
       permalink: /ui/adaptive-responsive/capabilities
+    - title: Automatic platform adaptations
+      permalink: /ui/adaptive-responsive/platform-adaptations
     - title: Best practices
       permalink: /ui/adaptive-responsive/best-practices
     - title: Additional resources
@@ -443,20 +445,7 @@
     - title: Recommendations
       permalink: /app-architecture/recommendations
     - title: Design patterns
-      permalink: /cookbook/architecture
-      children:
-        - title: Optimistic state
-          permalink: /cookbook/architecture/optimistic-state
-        - title: Command
-          permalink: /cookbook/architecture/command
-        - title: Result
-          permalink: /cookbook/architecture/result
-        - title: "Persistent storage architecture: Key-value data"
-          permalink: /cookbook/architecture/key-value-data
-        - title: "Persistent storage architecture: SQL"
-          permalink: /cookbook/architecture/sql
-        - title: Offline-first
-          permalink: /cookbook/architecture/offline-first
+      permalink: /app-architecture/design-patterns
 
 - title: Platform integration
   permalink: /platform-integration
@@ -467,8 +456,6 @@
       permalink: /platform-integration/desktop
     - title: Write platform-specific code
       permalink: /platform-integration/platform-channels
-    - title: Automatic platform adaptations
-      permalink: /platform-integration/platform-adaptations
     - title: Android
       permalink: /platform-integration/android
       children:

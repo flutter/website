@@ -1,12 +1,17 @@
 ---
 title: "Persistent storage architecture: SQL"
-description: Create a service to store complex data with SQL
+description: Save complex application data to a user's device with SQL.
+contentTags:
+  - data
+  - SQL
+iconPath: /assets/images/docs/app-architecture/design-patterns/sql-icon.svg
+order: 2
 js:
   - defer: true
     url: /assets/js/inject_dartpad.js
 ---
 
-<?code-excerpt path-base="cookbook/architecture/todo_data_service"?>
+<?code-excerpt path-base="app-architecture/todo_data_service"?>
 
 Most Flutter applications, 
 no matter how small or big they are, 
@@ -477,7 +482,7 @@ TodoListScreen(
 [Flutter architecture recommendations]:/app-architecture
 [MVVM pattern]:/get-started/fundamentals/state-management#using-mvvm-for-your-applications-architecture
 [Persist data with SQLite]:/cookbook/persistence/sqlite
-[Persistent storage architecture: Key-value data]:/cookbook/architecture/key-value-data
+[Persistent storage architecture: Key-value data]:/app-architecture/design-patterns/key-value-data
 [`/examples/cookbook/architecture/todo_data_service/`]: {{site.repo.this}}/tree/main/examples/cookbook/architecture/todo_data_service/
 [`sqflite_common_ffi_web`]:{{site.pub}}/packages/sqflite_common_ffi_web
 [`sqflite_common_ffi`]:{{site.pub}}/packages/sqflite_common_ffi

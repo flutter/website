@@ -1,13 +1,17 @@
 ---
-title: Result class
-description: >-
-  Learn to handle errors and return values with a result class.
+title: Error handling with Result objects
+description: "Improve error handling across classes with Result objects."
+contentTags:
+  - error handling
+  - services
+iconPath: /assets/images/docs/app-architecture/design-patterns/result-icon.svg
+order: 5
 js:
   - defer: true
     url: /assets/js/inject_dartpad.js
 ---
 
-<?code-excerpt path-base="cookbook/architecture/result"?>
+<?code-excerpt path-base="app-architecture/result"?>
 
 Dart provides a built-in error handling mechanism 
 with the ability to throw and catch exceptions.
