@@ -239,7 +239,7 @@ completing the cycle.
 [`APIClient`]: https://github.com/flutter/samples/blob/main/compass_app/app/lib/data/services/api/api_client.dart
 [`sealed`]: {{site.dart-site}}/language/class-modifiers#sealed
 [`BookingRepository` classes on GitHub]: https://github.com/flutter/samples/tree/main/compass_app/app/lib/data/repositories/booking
-[Result cookbook recipe]: /cookbook/architecture
+[Result cookbook recipe]: /app-architecture/design-patterns/result
 
 [//]: # (todo ewindmill@ - update Result link after #11444 lands)
 

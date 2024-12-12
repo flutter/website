@@ -145,9 +145,6 @@ class _ColorItem extends StatelessWidget {
   final Color color;
   final String prefix;
 
-  String get _colorString =>
-      "#${color.value.toRadixString(16).padLeft(8, '0').toUpperCase()}";
-
   @override
   Widget build(BuildContext context) {
     return Semantics(
@@ -161,11 +158,24 @@ class _ColorItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text('$prefix$index'),
-            Flexible(child: Text(_colorString)),
+            Flexible(child: Text(_argbColorString)),
           ],
         ),
       ),
     );
+  }
+
+  static String _srgbComponentToHexString(double x) {
+    final value = (x * 255.0).round() & 0xff;
+    return value.toRadixString(16).toUpperCase();
+  }
+
+  String get _argbColorString {
+    final a = _srgbComponentToHexString(color.a);
+    final r = _srgbComponentToHexString(color.r);
+    final g = _srgbComponentToHexString(color.g);
+    final b = _srgbComponentToHexString(color.b);
+    return '#$a$r$g$b';
   }
 }
 
@@ -173,7 +183,8 @@ class _PaletteTabView extends StatelessWidget {
   const _PaletteTabView({required this.colors});
 
   final _Palette colors;
-  static const primaryKeys = <int>[
+
+  static const List<int> primaryKeys = [
     50,
     100,
     200,
@@ -185,7 +196,7 @@ class _PaletteTabView extends StatelessWidget {
     800,
     900
   ];
-  static const accentKeys = <int>[100, 200, 400, 700];
+  static const List<int> accentKeys = [100, 200, 400, 700];
 
   @override
   Widget build(BuildContext context) {

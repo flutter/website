@@ -443,16 +443,7 @@
     - title: Recommendations
       permalink: /app-architecture/recommendations
     - title: Design patterns
-      permalink: /cookbook/architecture
-      children:
-        - title: Optimistic state
-          permalink: /cookbook/architecture/optimistic-state
-        - title: "Persistent storage architecture: Key-value data"
-          permalink: /cookbook/architecture/key-value-data
-        - title: "Persistent storage architecture: SQL"
-          permalink: /cookbook/architecture/sql
-        - title: Offline-first
-          permalink: /cookbook/architecture/offline-first
+      permalink: /app-architecture/design-patterns
 
 - title: Platform integration
   permalink: /platform-integration
