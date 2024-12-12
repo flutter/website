@@ -81,8 +81,8 @@ new deep link.
 
 To use the Router, switch to the `router` constructor on `MaterialApp` or
 `CupertinoApp` and provide it with a `Router` configuration. Routing packages,
-such as [go_router][], typically provide a
-configuration for you. For example:
+such as [go_router][], typically provide route configuration and routes
+can be used as follows:
 
 <?code-excerpt "ui/navigation/lib/navigator_router.dart (push-route)"?>
 ```dart
