@@ -56,7 +56,7 @@ release, and listed in alphabetical order:
 * [Deprecate `TextField.canRequestFocus`][]
 * [Set default for SystemUiMode to Edge-to-Edge][]
 * [Material 3 Tokens Update in Flutter][]
-* [Component Theme Normalization][]
+* [Component theme normalization][]
 
 [`Color` wide gamut support]: /release/breaking-changes/wide-gamut-framework
 [Remove invalid parameters for `InputDecoration.collapsed`]: /release/breaking-changes/input-decoration-collapsed
