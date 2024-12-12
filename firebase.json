@@ -479,6 +479,7 @@
       { "source": "/go/issue-triage-changes", "destination": "https://docs.google.com/document/d/1KJVPMxzfFaL_gIB6Z3oNRTBKA-NP25YpM8xi3xUKbBY", "type": 301 },
       { "source": "/go/job", "destination": "https://forms.gle/omPUhztq27KnH1LG8", "type": 301 },
       { "source": "/go/key-based-mouse-tracker-annotation", "destination": "https://docs.google.com/document/d/18DCRSX4-KjJIrnru_Cv9cJjzQmUWM95r8n6uvbS45-E/edit", "type": 301 },
+      { "source": "/go/known-values-annotation", "destination": "https://docs.google.com/document/d/1WMxm3_E3w58339Wvjt-j5WaqTALNSwSePQs3p0fxW64/edit", "type": 301 },
       { "source": "/go/layered-material-widgets", "destination": "https://docs.google.com/document/d/132QrLvsSI3KenJZfCHufXpiRvPeqt3cUMk5DjJa6HRs/edit?usp=sharing&resourcekey=0-LrvJWEP4mqc_P3wJJt2ttw", "type": 301 },
       { "source": "/go/layout-builder-optimization", "destination": "https://docs.google.com/document/d/1H8Z48vZAemV0Kw0It65JMoGhqVlDLQErkKZN8-r9pdU", "type": 301 },
       { "source": "/go/leak-tracker-make-bots-blocking", "destination": "https://docs.google.com/document/d/1O1ojL-E0DsinDvrmR2NIGh9FUo4YeCx7H6rmmJRY_Sc/edit", "type": 301 },
