@@ -64,6 +64,7 @@ release, and listed in alphabetical order:
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
 [Set default for SystemUiMode to Edge-to-Edge]: /release/breaking-changes/default-systemuimode-edge-to-edge
+[Material 3 Tokens Update in Flutter]: /release/breaking-changes/material-design-3-token-update
 [Component theme normalization]: /release/breaking-changes/component-theme-normalization
 [Deprecate `ThemeData.dialogBackgroundColor` in favor of `DialogThemeData.backgroundColor`]: /release/breaking-changes/deprecate-themedata-dialogbackgroundcolor
 [Updated Material 3 `Slider`]: /release/breaking-changes/updated-material-3-slider
