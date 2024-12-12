@@ -1,18 +1,18 @@
 ---
 title: Component Theme Normalization
 description: >-
-  `CardTheme`, `DialogTheme`, and `TabBarTheme` has been normalized to follow
-  the Flutter's convention for component themes in the Material library.
+  `CardTheme`, `DialogTheme`, and `TabBarTheme` have been normalized to follow
+  Flutter's convention for component themes in the Material library.
 ---
 
 ## Summary
 
-`CardTheme`, `DialogTheme` and `TabBarTheme` have been refactored to make them
+`CardTheme`, `DialogTheme` and `TabBarTheme` were refactored to 
 conform to Flutter's conventions for component themes. `CardThemeData`, 
 `DialogThemeData` and `TabBarThemeData` were added to define overrides for the
 defaults of the component visual properties. Future releases will continue to
-normalize component themes like these for more consistent theming experience in
-the material library.
+normalize component themes like these for a more consistent theming experience
+in the material library.
 
 ## Migration guide
 
