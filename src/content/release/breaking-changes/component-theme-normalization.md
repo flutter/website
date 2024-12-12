@@ -2,7 +2,7 @@
 title: Component Theme Normalization
 description: >-
   `CardTheme`, `DialogTheme`, and `TabBarTheme` has been normalized to follow
-  the Flutter's convention for component themes.
+  the Flutter's convention for component themes in the Material library.
 ---
 
 ## Summary
