@@ -260,6 +260,7 @@
       { "source": "/go/android-splash-migration", "destination": "/platform-integration/android/splash-screen-migration", "type": 301 },
       { "source": "/go/android-startup-tracing", "destination": "https://docs.google.com/document/d/1I7jvRg3UmG7P84hdis-9A00fEr2Ntj-K7f_FbGLubGE/edit?usp=sharing", "type": 301 },
       { "source": "/go/androidx-transition", "destination": "https://docs.google.com/document/d/1JnMxQinUeouuV5kcenoq03TsvLyn_xaHXIT_6c5b7nQ", "type": 301 },
+      { "source": "/go/animated-widget", "destination": "https://docs.google.com/document/d/1St9DhxNTuELg7CNBIL9D_gQfBUByXaoWBwq8_riby7g", "type": 301 },      
       { "source": "/go/annotator-tree", "destination": "https://docs.google.com/document/d/1YtkdZSx1687Ipbff06qp3XglmJym3Wc9boY4I-bYs4A/edit", "type": 301 },
       { "source": "/go/api-for-transform-performance", "destination": "https://docs.google.com/document/d/1Fxdlf7JsA-yAwc_RNuboMG-vhIhchRBZGvDSwg5qR0A/edit?usp=sharing", "type": 301 },
       { "source": "/go/app-extensions", "destination": "https://docs.google.com/document/d/1WloBrAYpqNKOhEHytTqJEHshcXxHflLUGKvULKRHbuU/edit?usp=sharing", "type": 301 },
