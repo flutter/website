@@ -134,7 +134,7 @@ but currently doesn't work due to a known limitation (see details below).
   Safari does not support WasmGC yet. Follow [this bug][safari-bug] for details.
 
 [firefox-bug]: https://bugzilla.mozilla.org/show_bug.cgi?id=1788206
-[safari-bug]: https://bugs.webkit.org/show_bug.cgi?id=247394
+[safari-bug]: https://bugs.webkit.org/show_bug.cgi?id=267291
 
 :::warning
 Flutter compiled to Wasm can't run on the iOS version of any browser.
