@@ -93,7 +93,6 @@ onPressed: () => context.go('/second'),
 Because packages like go_router are _declarative_, they will always display the
 same screen(s) when a deep link is received.
 
-
 :::note Note for advanced developers
 If you prefer not to use a routing package
 and would like full control over navigation and routing in your app, override
