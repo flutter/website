@@ -38,6 +38,7 @@ release, and listed in alphabetical order:
 * [`.flutter-plugins-dependencies` replaces `.flutter-plugins`][]
 * [Updated Material 3 `Slider`][]
 * [Updated Material 3 Progress Indicators][]
+* [Deprecate `ThemeData.indicatorColor` in favor of `TabBarThemeData.indicatorColor`][]
 * [Deprecate `ThemeData.dialogBackgroundColor` in favor of `DialogThemeData.backgroundColor`][]
 
 [`ImageFilter.blur` default tile mode automatic selection]: /release/breaking-changes/image-filter-blur-tilemode
@@ -64,7 +65,11 @@ release, and listed in alphabetical order:
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
 [Set default for SystemUiMode to Edge-to-Edge]: /release/breaking-changes/default-systemuimode-edge-to-edge
 [Material 3 Tokens Update in Flutter]: /release/breaking-changes/material-design-3-token-update
-[Component Theme Normalization]: /release/breaking-changes/component-theme-normalization
+[Component theme normalization]: /release/breaking-changes/component-theme-normalization
+[Deprecate `ThemeData.dialogBackgroundColor` in favor of `DialogThemeData.backgroundColor`]: /release/breaking-changes/deprecate-themedata-dialogbackgroundcolor
+[Updated Material 3 `Slider`]: /release/breaking-changes/updated-material-3-slider
+[Updated Material 3 Progress Indicators]: /release/breaking-changes/updated-material-3-progress-indicators
+[Deprecate `ThemeData.indicatorColor` in favor of `TabBarThemeData.indicatorColor`]: /release/breaking-changes/deprecate-themedata-indicatorcolor
 
 <a id="released-in-flutter-324" aria-hidden="true"></a>
 ### Released in Flutter 3.24
