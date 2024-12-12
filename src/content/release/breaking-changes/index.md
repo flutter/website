@@ -35,7 +35,6 @@ release, and listed in alphabetical order:
 
 * [`ImageFilter.blur` default tile mode automatic selection][]
 * [Localized messages are generated into source, not a synthetic package][]
-* [Material 3 Tokens Update in Flutter][]
 * [`.flutter-plugins-dependencies` replaces `.flutter-plugins`][]
 * [Updated Material 3 `Slider`][]
 * [Updated Material 3 Progress Indicators][]
@@ -43,7 +42,6 @@ release, and listed in alphabetical order:
 
 [`ImageFilter.blur` default tile mode automatic selection]: /release/breaking-changes/image-filter-blur-tilemode
 [Localized messages are generated into source, not a synthetic package]: /release/breaking-changes/flutter-generate-i10n-source
-[Material 3 Tokens Update in Flutter]: /release/breaking-changes/material-design-3-token-update
 [`.flutter-plugins-dependencies` replaces `.flutter-plugins`]: /release/breaking-changes/flutter-plugins-configuration
 [Updated Material 3 `Slider`]: /release/breaking-changes/updated-material-3-slider
 [Updated Material 3 Progress Indicators]: /release/breaking-changes/updated-material-3-progress-indicators
@@ -57,12 +55,16 @@ release, and listed in alphabetical order:
 * [Stop generating `AssetManifest.json`][]
 * [Deprecate `TextField.canRequestFocus`][]
 * [Set default for SystemUiMode to Edge-to-Edge][]
+* [Material 3 Tokens Update in Flutter][]
+* [Component Theme Normalization][]
 
 [`Color` wide gamut support]: /release/breaking-changes/wide-gamut-framework
 [Remove invalid parameters for `InputDecoration.collapsed`]: /release/breaking-changes/input-decoration-collapsed
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
 [Set default for SystemUiMode to Edge-to-Edge]: /release/breaking-changes/default-systemuimode-edge-to-edge
+[Material 3 Tokens Update in Flutter]: /release/breaking-changes/material-design-3-token-update
+[Component Theme Normalization]: /release/breaking-changes/component-theme-normalization
 
 <a id="released-in-flutter-324" aria-hidden="true"></a>
 ### Released in Flutter 3.24
