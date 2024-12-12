@@ -64,6 +64,7 @@ release, and listed in alphabetical order:
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
 [Set default for SystemUiMode to Edge-to-Edge]: /release/breaking-changes/default-systemuimode-edge-to-edge
+[Component theme normalization]: /release/breaking-changes/component-theme-normalization
 [Deprecate `ThemeData.dialogBackgroundColor` in favor of `DialogThemeData.backgroundColor`]: /release/breaking-changes/deprecate-themedata-dialogbackgroundcolor
 [Updated Material 3 `Slider`]: /release/breaking-changes/updated-material-3-slider
 [Updated Material 3 Progress Indicators]: /release/breaking-changes/updated-material-3-progress-indicators
