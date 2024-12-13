@@ -5,7 +5,11 @@ title: Deep links flag change
 
 ## Summary
 
-The default value for Flutter’s deep linking flag has changed from false to true, meaning deep linking is now opt-in by default.  
+<b>This (potential) breaking change only affects mobile apps and only if you
+use a third party deep linking plugin package.</b>
+
+The default value for Flutter’s deep linking flag has changed from `false` to `true`,
+meaning that deep linking is now opt-in by default.  
 
 ## Migration guide
 
