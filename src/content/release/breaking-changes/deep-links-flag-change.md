@@ -62,5 +62,5 @@ flutter.dev/go/deep-link-flag-migration.
 
 Relevant PR:
 
-* [Set deep linking flag to true by defaulte][https://github.com/flutter/engine/pull/52350]
+* [Set deep linking flag to true by defaulte]({{site.github}}/flutter/engine/pull/52350)
 
