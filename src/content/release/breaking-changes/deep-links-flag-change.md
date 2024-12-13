@@ -10,7 +10,7 @@ The default value for Flutter’s deep linking flag has changed from false to tr
 ## Migration guide
 
 
-If you’re using Flutter’s default deep linking setup, there’s no need to manually set the flag to true anymore.
+If you’re using Flutter’s default deep linking setup, this is not a breaking change for you. 
 
 However, if you’re using third-party plugins for deep links, such as:
 
