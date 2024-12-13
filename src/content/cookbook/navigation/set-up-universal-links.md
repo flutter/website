@@ -83,7 +83,7 @@ It provides a simple API to handle complex routing scenarios.
    Flutter project's `ios` folder.
 
   :::note
-  If you are use a third-party plugins to handle deep links, 
+  If you are using third-party plugins to handle deep links, 
   such as [app_links][],
   Flutter's default deeplink handler will
   break these plugins. 
@@ -191,7 +191,7 @@ Apple formats the `appID` as `<team id>.<bundle id>`.
 
 **For example:** Given a team ID of `S8QB4VV633`
 and a bundle ID of `com.example.deeplinkCookbook`,
-You would enter an `appID` entry of
+you would enter an `appID` entry of
 `S8QB4VV633.com.example.deeplinkCookbook`.
 
 ### Create and host `apple-app-site-association` JSON file
