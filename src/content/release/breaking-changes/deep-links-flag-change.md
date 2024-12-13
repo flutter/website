@@ -35,7 +35,7 @@ Manually disable the deep linking flag if you use a third-party plugin:
 
 * Android Manifest file
 
-```dart
+```yaml
 <manifest>
    <application
        <activity>
@@ -47,7 +47,7 @@ Manually disable the deep linking flag if you use a third-party plugin:
 
 * iOS info.plist file
 
-```
+```yaml
    <key>FlutterDeepLinkingEnabled</key>
    <false/>
 ```
