@@ -21,7 +21,8 @@ However, if you’re using third-party plugins for deep links, such as:
 [firebase dynamic links][https://firebase.google.com/docs/dynamic-links]
 [uni_link][https://pub.dev/packages/uni_links]
 [app_links][https://pub.dev/packages/app_links]
-This update will introduce a breaking change. In this case, you’ll need to manually reset the Flutter deep linking flag to false.
+
+In this case, you must manually reset the Flutter deep linking flag to `false`.
 
 Before: non-op
 
