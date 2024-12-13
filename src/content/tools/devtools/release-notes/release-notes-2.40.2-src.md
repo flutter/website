@@ -36,6 +36,8 @@ on the Network and Logging screens. - [#8407](https://github.com/flutter/devtool
 * Fixed a bug that was causing the navigator to lose state when opening the VM
 Flags dialog. - [#8413](https://github.com/flutter/devtools/pull/8413)
 
+* Tables match IDE theme when embedded in an IDE. - [#8498](https://github.com/flutter/devtools/pull/8498)
+
 ## Inspector updates
 
 - Added a setting to the Flutter Inspector controls that
