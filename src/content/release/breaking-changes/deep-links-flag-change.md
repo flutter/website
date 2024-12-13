@@ -16,7 +16,8 @@ meaning that deep linking is now opt-in by default.
 
 If you’re using Flutter’s default deep linking setup, this is not a breaking change for you. 
 
-However, if you’re using third-party plugins for deep links, such as:
+However, if you’re using a third-party plugin for deep links,
+such as the following, this update introduces a breaking change:
 
 [firebase dynamic links][https://firebase.google.com/docs/dynamic-links]
 [uni_link][https://pub.dev/packages/uni_links]
