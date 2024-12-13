@@ -29,7 +29,7 @@ Before: non-op
 
 After:
 
-Manually disable the deep linking flag if you're using third-party plugins:
+Manually disable the deep linking flag if you use a third-party plugin:
 
 * Android Manifest file
 
