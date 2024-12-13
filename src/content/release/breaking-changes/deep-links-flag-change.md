@@ -1,6 +1,8 @@
 ---
 title: Deep links flag change
-
+description: >
+  If you use a third party deep linking plugin package for mobile apps,
+  set Flutter's deep linking flag to false.
 ---
 
 ## Summary
