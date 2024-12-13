@@ -1,6 +1,6 @@
-# DevTools 2.40.1 release notes
+# DevTools 2.40.2 release notes
 
-The 2.40.1 release of the Dart and Flutter DevTools
+The 2.40.2 release of the Dart and Flutter DevTools
 includes the following changes among other general improvements.
 To learn more about DevTools, check out the
 [DevTools overview](/tools/devtools/overview).
@@ -10,7 +10,7 @@ To learn more about DevTools, check out the
 * Add a setting that allows users to opt in to loading DevTools
   with WebAssembly. - [#8270](https://github.com/flutter/devtools/pull/8270)
 
-  ![Wasm opt-in setting](/tools/devtools/release-notes/images-2.40.1/wasm_setting.png "DevTools setting to opt into wasm.")
+  ![Wasm opt-in setting](/tools/devtools/release-notes/images-2.40.2/wasm_setting.png "DevTools setting to opt into wasm.")
 
 * Removed the legacy Provider screen from DevTools.
   The `package:provider` tool is now distributed as a
@@ -41,7 +41,7 @@ Flags dialog. - [#8413](https://github.com/flutter/devtools/pull/8413)
 - Added a setting to the Flutter Inspector controls that
   allows users to opt in to the newly redesigned Flutter Inspector. - [#8342](https://github.com/flutter/devtools/pull/8342)
 
-  ![New inspector opt-in setting](/tools/devtools/release-notes/images-2.40.1/new_inspector.png "DevTools setting to opt into the new Flutter Inspector.")
+  ![New inspector opt-in setting](/tools/devtools/release-notes/images-2.40.2/new_inspector.png "DevTools setting to opt into the new Flutter Inspector.")
 
 ## Performance updates
 
@@ -57,9 +57,9 @@ Flags dialog. - [#8413](https://github.com/flutter/devtools/pull/8413)
 
 - Added support for validating iOS deep link settings. - [#8394](https://github.com/flutter/devtools/pull/8394)
 
-  ![Deep link validator for iOS](/tools/devtools/release-notes/images-2.40.1/deep_link_ios.png "DevTools Deep link validator Page")
+  ![Deep link validator for iOS](/tools/devtools/release-notes/images-2.40.2/deep_link_ios.png "DevTools Deep link validator Page")
 
 ## Full commit history
 
 To find a complete list of changes in this release, check out the
-[DevTools git log](https://github.com/flutter/devtools/tree/v2.40.1).
+[DevTools git log](https://github.com/flutter/devtools/tree/v2.40.2).
