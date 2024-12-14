@@ -237,7 +237,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    Otherwise, using `Bundle.module` results in an error.
    :::
 
-1. If your `.gitignore` does not contain a `.build/` and `.swiftpm/` directories,
+1. If your `.gitignore` doesn't include `.build/` and `.swiftpm/` directories,
    you'll want to update your `.gitignore` to include:
 
     ```text title=".gitignore"
