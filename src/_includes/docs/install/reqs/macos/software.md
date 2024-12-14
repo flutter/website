@@ -1,6 +1,6 @@
 
 {% assign xcode = '[Xcode][] ' | append: site.appnow.xcode | append: ' to debug and compile native Swift or ObjectiveC code.' %}
-{% assign cocoapods = '[CocoaPods][] ' | append: site.appnow.cocoapods | append: ' to compile enable Flutter plugins in your native apps.' %}
+{% assign cocoapods = '[CocoaPods][] ' | append: site.appnow.cocoapods | append: ' to compile and enable Flutter plugins in your native apps.' %}
 {% capture android -%}
 [Android Studio][] {{site.appmin.android_studio}} or later to
 debug and compile Java or Kotlin code for Android.
