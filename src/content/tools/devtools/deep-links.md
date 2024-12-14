@@ -4,10 +4,8 @@ description: Learn how to validate deep links in your app.
 ---
 
 :::note
-The deep link validator was added to DevTools
-in Flutter SDK 3.19. It currently works only for
-Android, but will be expanded to cover iOS
-in a future release.
+As of release 3.27, the deep link validator tool
+works for _both_ Android and iOS.
 
 To see a demo of the deep link validator,
 check out the Google I/O 2024 video,
@@ -26,8 +24,8 @@ and import a Flutter project that contains deep links.
 ![Screenshot of the Deep Link Validator](/assets/images/docs/tools/devtools/deep-link-validator.png){:width="100%"}
 
 This tool helps you identify and troubleshoot any errors
-in your Android deep link setup,
-from website configuration to Android manifest files.
+in your mobile deep link setup,
+from website configuration to manifest files.
 DevTools provides instructions on how to fix any issues,
 making the implementation process easier. 
 
