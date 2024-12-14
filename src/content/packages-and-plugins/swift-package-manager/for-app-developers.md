@@ -6,14 +6,12 @@ description: How to use Swift Package Manager for native iOS or macOS dependenci
 :::warning
 Flutter is migrating to [Swift Package Manager][] to manage iOS and macOS native
 dependencies.
-Flutter's support of Swift Package Manager is under development.
 If you find a bug in Flutter's Swift Package Manager support,
 [open an issue][].
-Swift Package Manager support is [off by default][].
 Flutter continues to support CocoaPods.
 :::
 
-Flutter's Swift Package Manager integration has several benefits:
+Flutter's Swift Package Manager feature has several benefits:
 
 1. **Provides access to the Swift package ecosystem**.
    Flutter plugins can use the growing ecosystem of [Swift packages][]. 
@@ -23,11 +21,23 @@ Flutter's Swift Package Manager integration has several benefits:
    Swift Package Manager.
 
 [Swift Package Manager]: https://www.swift.org/documentation/package-manager/
-[off by default]: #how-to-turn-on-swift-package-manager
 [Swift packages]: https://swiftpackageindex.com/
 [open an issue]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml
 
-{% include docs/swift-package-manager/how-to-enable-disable.md %}
+## How to check if your app supports Swift Package Manager
+
+{% tabs %}
+{% tab "iOS project" %}
+
+{% include docs/swift-package-manager/check-ios-project.md %}
+
+{% endtab %}
+{% tab "macOS project" %}
+
+{% include docs/swift-package-manager/check-ios-project.md %}
+
+{% endtab %}
+{% endtabs %}
 
 ## How to add Swift Package Manager integration
 
@@ -91,7 +101,7 @@ of the `Flutter` target.
 
 ## How to remove Swift Package Manager integration
 
-To add Swift Package Manager integration, the Flutter CLI migrates your project.
+The Flutter CLI migrates your project to add Swift Package Manager integration.
 This migration updates your Xcode project to add Flutter plugin dependencies.
 
 To undo this migration:
@@ -141,6 +151,8 @@ To undo this migration:
    caption:"The build pre-action to remove" %}
 
 [Turn off Swift Package Manager]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-turn-off-swift-package-manager
+
+{% include docs/swift-package-manager/how-to-enable-disable.md %}
 
 ## How to use a Swift Package Manager Flutter plugin that requires a higher OS version
 

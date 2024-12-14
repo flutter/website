@@ -1,7 +1,11 @@
 Replace `plugin_name` throughout this guide with the name of your plugin.
 The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
-1. [Turn on the Swift Package Manager feature][enableSPM].
+1. Turn on the Swift Package Manager feature:
+
+   ```sh
+   flutter config --enable-swift-package-manager
+   ```
 
 1. Start by creating a directory under the `ios`, `macos`, and/or `darwin`
    directories.
@@ -289,17 +293,9 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
       cd path/to/plugin/example/
       ```
 
-   1. Ensure the plugin's example app builds and runs.
-
-      ```sh
-      flutter run
-      ```
+   1. [Add Swift Package Manager integration to the plugin's example app][].
 
       :::note
-      Using the Flutter CLI to run the plugin's example app with the
-      Swift Package Manager feature turned on migrates the project to add
-      Swift Package Manager integration.
-
       This raises the example app's Flutter SDK requirement to version 3.24 or
       higher.
 
@@ -308,6 +304,12 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
       If needed, you can always
       [undo the Swift Package Manager migration][removeSPM].
       :::
+
+   1. Ensure the plugin's example app builds and runs.
+
+      ```sh
+      flutter run
+      ```
 
    1. Open the plugin's example app in Xcode.
       Ensure that **Package Dependencies** shows in the left
@@ -320,7 +322,6 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
    * Follow instructions for [testing plugins][].
 
-[enableSPM]: /packages-and-plugins/swift-package-manager/for-plugin-authors#how-to-turn-on-swift-package-manager
 [`PrivacyInfo.xcprivacy` file]: https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
 [Pigeon]: https://pub.dev/packages/pigeon
 [CocoaPods `dependency`]: https://guides.cocoapods.org/syntax/podspec.html#dependency
@@ -330,6 +331,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 [`Bundle.module`]: https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package#Access-a-resource-in-code
 [Bundling resources]: https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package#Explicitly-declare-or-exclude-resources
 [Xcode resource detection]: https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package#:~:text=Xcode%20detects%20common%20resource%20types%20for%20Apple%20platforms%20and%20treats%20them%20as%20a%20resource%20automatically
+[Add Swift Package Manager integration to the plugin's example app]: /packages-and-plugins/swift-package-manager/for-app-developers/#add-to-a-flutter-app
 [removeSPM]: /packages-and-plugins/swift-package-manager/for-app-developers#how-to-remove-swift-package-manager-integration
 [update unit tests in the plugin's example app]: /packages-and-plugins/swift-package-manager/for-plugin-authors/#how-to-update-unit-tests-in-a-plugins-example-app
 [testing plugins]: https://docs.flutter.dev/testing/testing-plugins
