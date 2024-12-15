@@ -4,6 +4,7 @@ publish_to: none
 
 version: 1.0.0+1
 
+resolution: workspace
 environment:
   sdk: ^3.6.0
 
@@ -11,7 +12,5 @@ dependencies:
   json_annotation: ^4.8.1
 
 dev_dependencies:
-  example_utils:
-    path: ../../example_utils
   build_runner: ^2.4.9
   json_serializable: ^6.7.1

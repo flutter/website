@@ -2,6 +2,7 @@ name: visual_debugging_example
 publish_to: none
 description: Examples of visual debugging.
 
+resolution: workspace
 environment:
   sdk: ^3.6.0
 
@@ -10,7 +11,5 @@ dependencies:
     sdk: flutter
 
 dev_dependencies:
-  example_utils:
-    path: ../example_utils
   flutter_test:
     sdk: flutter

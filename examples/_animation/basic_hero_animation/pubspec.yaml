@@ -3,6 +3,7 @@ publish_to: none
 description: >-
   Shows how to create a simple or Hero animation using the Hero class directly.
 
+resolution: workspace
 environment:
   sdk: ^3.6.0
 
@@ -11,8 +12,6 @@ dependencies:
     sdk: flutter
 
 dev_dependencies:
-  example_utils:
-    path: ../../example_utils
   flutter_test:
     sdk: flutter
 

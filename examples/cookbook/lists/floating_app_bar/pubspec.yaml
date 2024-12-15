@@ -1,17 +1,13 @@
 name: floating_app_bar
 description: Example for floating_app_bar cookbook recipe
 
+resolution: workspace
 environment:
   sdk: ^3.6.0
 
 dependencies:
   flutter:
     sdk: flutter
-
-dev_dependencies:
-  example_utils:
-    path: ../../../example_utils
-
 
 flutter:
   uses-material-design: true

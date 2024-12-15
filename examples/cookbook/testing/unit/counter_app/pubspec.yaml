@@ -4,6 +4,7 @@ description: Flutter project for unit testing introduction.
 publish_to: none
 version: 1.0.0+1
 
+resolution: workspace
 environment:
   sdk: ^3.6.0
 
@@ -12,10 +13,6 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.8
   test: ^1.24.9
-
-dev_dependencies:
-  example_utils:
-    path: ../../../../example_utils
 
 flutter:
   uses-material-design: true

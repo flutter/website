@@ -2,6 +2,7 @@ name: navigation_samples
 description: Sample navigation code.
 publish_to: none
 
+resolution: workspace
 environment:
   sdk: ^3.6.0
 
@@ -10,10 +11,6 @@ dependencies:
     sdk: flutter
 
   go_router: ^14.6.2
-
-dev_dependencies:
-  example_utils:
-    path: ../../example_utils
 
 flutter:
   uses-material-design: true

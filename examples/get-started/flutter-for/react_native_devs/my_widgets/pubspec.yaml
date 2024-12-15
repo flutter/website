@@ -2,10 +2,6 @@ name: my_widgets
 description: A library for `react_native_devs` to import.
 version: 1.0.0
 
+resolution: workspace
 environment:
   sdk: ^3.6.0
-
-dev_dependencies:
-  example_utils:
-    path: ../../../../example_utils
-      

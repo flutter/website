@@ -40,7 +40,7 @@ class _MyBannerAdWidgetState extends State<MyBannerAdWidget> {
         height: widget.adSize.height.toDouble(),
         child: _bannerAd == null
             // Nothing to render yet.
-            ? SizedBox()
+            ? const SizedBox()
             // The actual ad.
             : AdWidget(ad: _bannerAd!),
       ),

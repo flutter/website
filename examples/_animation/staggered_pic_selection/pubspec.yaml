@@ -2,6 +2,7 @@ name: staggered_pic_selection
 publish_to: none
 description: A more complex staggered animation example.
 
+resolution: workspace
 environment:
   sdk: ^3.6.0
 
@@ -10,8 +11,6 @@ dependencies:
     sdk: flutter
 
 dev_dependencies:
-  example_utils:
-    path: ../../example_utils
   flutter_test:
     sdk: flutter
 

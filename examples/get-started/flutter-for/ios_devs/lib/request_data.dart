@@ -46,7 +46,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     var sharedData = await platform.invokeMethod('getSharedText');
     if (sharedData != null) {
       setState(() {
-        dataShared = sharedData;
+        dataShared = sharedData as String;
       });
     }
   }

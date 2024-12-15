@@ -4,6 +4,7 @@ description: >-
   Shows how to apply a radial transformation to the Hero
   as it animates to the new route.
 
+resolution: workspace
 environment:
   sdk: ^3.6.0
 
@@ -12,8 +13,6 @@ dependencies:
     sdk: flutter
 
 dev_dependencies:
-  example_utils:
-    path: ../../example_utils
   flutter_test:
     sdk: flutter
 

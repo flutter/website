@@ -1,6 +1,7 @@
 name: reading_writing_files
 description: Reading and Writing Files
 
+resolution: workspace
 environment:
   sdk: ^3.6.0
 
@@ -10,8 +11,6 @@ dependencies:
   path_provider: ^2.1.2
 
 dev_dependencies:
-  example_utils:
-    path: ../../../example_utils
   flutter_test:
     sdk: flutter
 
