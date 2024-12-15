@@ -1,6 +1,7 @@
 name: google_mobile_ads_example
 description: Google mobile ads
 
+resolution: workspace
 environment:
   sdk: ^3.6.0
 
@@ -9,10 +10,6 @@ dependencies:
     sdk: flutter
 
   google_mobile_ads: ^4.0.0
-
-dev_dependencies:
-  example_utils:
-    path: ../../../example_utils
 
 flutter:
   uses-material-design: true

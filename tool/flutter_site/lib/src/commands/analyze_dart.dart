@@ -5,7 +5,6 @@
 import 'dart:io';
 
 import 'package:args/command_runner.dart';
-import 'package:path/path.dart' as path;
 
 import '../utils.dart';
 
@@ -35,38 +34,26 @@ final class AnalyzeDartCommand extends Command<int> {
 int analyzeDart({
   bool verboseLogging = false,
 }) {
-  final directoriesToAnalyze = [
-    path.join('tool', 'flutter_site'),
-    ...exampleProjectDirectories,
-  ];
-
   if (!verboseLogging) {
     print('Analyzing code...');
   }
 
-  for (final directory in directoriesToAnalyze) {
+  final flutterAnalyzeOutput = Process.runSync(
+    'flutter',
+    const ['analyze', '.'],
+  );
+
+  if (flutterAnalyzeOutput.exitCode != 0) {
+    final normalOutput = flutterAnalyzeOutput.stdout.toString();
+    final errorOutput = flutterAnalyzeOutput.stderr.toString();
+
+    stderr.write(normalOutput);
+    stderr.write(errorOutput);
+    stderr.writeln('Error: Analysis failed.');
+    return 1;
+  } else {
     if (verboseLogging) {
-      print("Analyzing code in '$directory' directory...");
-    }
-
-    final flutterAnalyzeOutput = Process.runSync(
-      'flutter',
-      const ['analyze', '.'],
-      workingDirectory: directory,
-    );
-
-    if (flutterAnalyzeOutput.exitCode != 0) {
-      final normalOutput = flutterAnalyzeOutput.stdout.toString();
-      final errorOutput = flutterAnalyzeOutput.stderr.toString();
-
-      stderr.write(normalOutput);
-      stderr.write(errorOutput);
-      stderr.writeln("Error: Analysis on '$directory' directory failed.");
-      return 1;
-    } else {
-      if (verboseLogging) {
-        print("Successfully analyzed code in '$directory' directory!");
-      }
+      print('Successfully analyzed Dart code!');
     }
   }
 

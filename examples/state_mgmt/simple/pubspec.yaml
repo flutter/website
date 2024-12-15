@@ -2,6 +2,7 @@ name: state_mgmt
 description: Sample state management code.
 publish_to: none
 
+resolution: workspace
 environment:
   sdk: ^3.6.0
 
@@ -12,8 +13,6 @@ dependencies:
   provider: ^6.1.1
 
 dev_dependencies:
-  example_utils:
-    path: ../../example_utils
   flutter_test:
     sdk: flutter
   test: ^1.24.9

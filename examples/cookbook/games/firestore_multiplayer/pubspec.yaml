@@ -1,6 +1,7 @@
 name: firestore_multiplayer
 description: Firestore multiplayer
 
+resolution: workspace
 environment:
   sdk: ^3.6.0
 
@@ -13,10 +14,6 @@ dependencies:
   firebase_core: ^2.25.4
   logging: ^1.2.0
   provider: ^6.1.1
-
-dev_dependencies:
-  example_utils:
-    path: ../../../example_utils
 
 flutter:
   uses-material-design: true

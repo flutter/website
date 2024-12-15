@@ -1,6 +1,7 @@
 name: delete_data
 description: Delete Data
 
+resolution: workspace
 environment:
   sdk: ^3.6.0
 
@@ -8,10 +9,6 @@ dependencies:
   flutter:
     sdk: flutter
   http: ^1.2.0
-
-dev_dependencies:
-  example_utils:
-    path: ../../../example_utils
 
 flutter:
   uses-material-design: true

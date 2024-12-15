@@ -28,7 +28,7 @@ class SampleAppPage extends StatefulWidget {
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List<Map<String, dynamic>> data = <Map<String, dynamic>>[];
+  List<Map<String, Object?>> data = [];
 
   @override
   void initState() {
@@ -44,7 +44,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     );
     final http.Response response = await http.get(dataURL);
     setState(() {
-      data = jsonDecode(response.body);
+      data = (jsonDecode(response.body) as List).cast<Map<String, Object?>>();
     });
   }
 

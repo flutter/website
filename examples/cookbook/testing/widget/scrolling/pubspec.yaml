@@ -1,6 +1,7 @@
 name: scrolling
-description: A new Flutter project.
+description: Scrollable widget testing.
 
+resolution: workspace
 environment:
   sdk: ^3.6.0
 
@@ -11,10 +12,6 @@ dependencies:
   path: ^1.9.0
   flutter_test:
     sdk: flutter
-
-dev_dependencies:
-  example_utils:
-    path: ../../../../example_utils
 
 flutter:
   uses-material-design: true

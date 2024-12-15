@@ -4,6 +4,10 @@ publish_to: none
 environment:
   sdk: ^3.6.0
 
+workspace:
+  - examples
+  - tool/flutter_site
+
 dev_dependencies:
   flutter_site:
     path: tool/flutter_site

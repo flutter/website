@@ -1,10 +1,9 @@
-// #docregion ScrollWidgetTest
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:integration_profiling/main.dart';
 import 'package:integration_test/integration_test.dart';
 
-import 'package:scrolling/main.dart';
-
+// #docregion ScrollWidgetTest
 void main() {
   final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 

@@ -2,16 +2,13 @@ name: widgets_intro
 description: Sample state management code.
 publish_to: none
 
+resolution: workspace
 environment:
   sdk: ^3.6.0
 
 dependencies:
   flutter:
     sdk: flutter
-
-dev_dependencies:
-  example_utils:
-    path: ../../example_utils
 
 flutter:
   uses-material-design: true

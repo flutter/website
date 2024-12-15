@@ -2,6 +2,7 @@ name: assets_and_images
 description: An example project showing how to declare and load assets.
 publish_to: none
 
+resolution: workspace
 environment:
   sdk: ^3.6.0
 
@@ -12,15 +13,13 @@ dependencies:
   vector_graphics: 1.1.11+1
 
 dev_dependencies:
-  example_utils:
-    path: ../../example_utils
   flutter_test:
     sdk: flutter
   vector_graphics_compiler: 1.1.11+1
-    
+
 flutter:
   uses-material-design: true
-  
+
   assets:
     - assets/my_icon.png
     - assets/background.png

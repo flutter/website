@@ -1,16 +1,13 @@
 name: result
 description: Example for result cookbook recipe
 
+resolution: workspace
 environment:
   sdk: ^3.5.0
 
 dependencies:
   flutter:
     sdk: flutter
-
-dev_dependencies:
-  example_utils:
-    path: ../../example_utils
 
 flutter:
   uses-material-design: true

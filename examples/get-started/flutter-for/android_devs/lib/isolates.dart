@@ -85,7 +85,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     await Isolate.spawn(dataLoader, receivePort.sendPort);
 
     // The 'echo' isolate sends its SendPort as the first message.
-    SendPort sendPort = await receivePort.first;
+    SendPort sendPort = await receivePort.first as SendPort;
 
     final msg = await sendReceive(
       sendPort,
@@ -106,8 +106,8 @@ class _SampleAppPageState extends State<SampleAppPage> {
     sendPort.send(port.sendPort);
 
     await for (var msg in port) {
-      String data = msg[0];
-      SendPort replyTo = msg[1];
+      String data = msg[0] as String;
+      SendPort replyTo = msg[1] as SendPort;
 
       String dataURL = data;
       http.Response response = await http.get(Uri.parse(dataURL));

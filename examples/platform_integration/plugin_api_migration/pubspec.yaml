@@ -5,6 +5,7 @@ publish_to: none
 
 version: 1.0.0+1
 
+resolution: workspace
 environment:
   sdk: ^3.6.0
 
@@ -19,10 +20,6 @@ dependencies:
   path: ^1.9.0
   integration_test:
     sdk: flutter
-
-dev_dependencies:
-  example_utils:
-    path: ../../example_utils
 
 flutter:
   uses-material-design: true

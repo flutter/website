@@ -2,6 +2,7 @@ name: basic_staggered
 publish_to: none
 description: An introductory example to staggered animations.
 
+resolution: workspace
 environment:
   sdk: ^3.6.0
 
@@ -10,8 +11,6 @@ dependencies:
     sdk: flutter
 
 dev_dependencies:
-  example_utils:
-    path: ../../example_utils
   flutter_test:
     sdk: flutter
 

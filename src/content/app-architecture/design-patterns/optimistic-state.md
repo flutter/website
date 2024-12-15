@@ -11,7 +11,7 @@ js:
     url: /assets/js/inject_dartpad.js
 ---
 
-<?code-excerpt path-base="app-architecture/optimistic-state"?>
+<?code-excerpt path-base="app-architecture/optimistic_state"?>
 
 When building user experiences, 
 the perception of performance is sometimes just as important as 

@@ -1,16 +1,13 @@
-name: focus
+name: text_field_focus
 description: Sample code for focus cookbook recipe.
 
+resolution: workspace
 environment:
   sdk: ^3.6.0
 
 dependencies:
   flutter:
     sdk: flutter
-
-dev_dependencies:
-  example_utils:
-    path: ../../../example_utils
 
 flutter:
   uses-material-design: true

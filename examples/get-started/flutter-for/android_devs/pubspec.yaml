@@ -5,6 +5,7 @@ publish_to: none # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
 
+resolution: workspace
 environment:
   sdk: ^3.6.0
 
@@ -13,15 +14,13 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-    
+
   cupertino_icons: ^1.0.8
   http: ^1.2.0
   shared_preferences: ^2.3.1
   intl: any
 
 dev_dependencies:
-  example_utils:
-    path: ../../../example_utils
   flutter_test:
     sdk: flutter
 
