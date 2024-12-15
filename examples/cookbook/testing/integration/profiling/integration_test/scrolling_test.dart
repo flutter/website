@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:integration_profiling/main.dart';
 import 'package:integration_test/integration_test.dart';
+import 'package:your_integration_test/main.dart';
 
 // #docregion ScrollWidgetTest
 void main() {

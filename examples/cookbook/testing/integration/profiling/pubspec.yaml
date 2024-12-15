@@ -1,4 +1,4 @@
-name: integration_profiling
+name: your_integration_test
 description: Integration test profiling examples.
 
 resolution: workspace

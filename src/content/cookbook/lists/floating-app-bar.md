@@ -86,7 +86,7 @@ To create this effect:
 CustomScrollView(
   slivers: [
     // Add the app bar to the CustomScrollView.
-    const SliverAppBar(
+    SliverAppBar(
       // Provide a standard title.
       title: Text(title),
       // Allows the user to reveal the app bar if they begin scrolling
