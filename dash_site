@@ -101,7 +101,7 @@ fi
 
 # Verify that Dart dependencies have been retrieved.
 if [[ ! -d ".dart_tool" ]]; then
-  flutter pub get
+  dart pub get
 fi
 
 # Run the Flutter site tool and pass through all arguments.
