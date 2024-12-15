@@ -1,7 +1,6 @@
 name: flutter_docs_examples
 publish_to: none
 
-resolution: workspace
 environment:
   sdk: ^3.6.0
 
