@@ -51,7 +51,7 @@ BottomNavigationBarItem(
 
 ## Timeline
 
-Landed in version: 1.22.0
+Landed in version: 1.22.0<br>
 In stable release: 2.0.0
 
 ## References
