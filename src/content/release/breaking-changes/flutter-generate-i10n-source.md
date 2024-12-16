@@ -9,30 +9,33 @@ description: >-
 ## Summary
 
 The `flutter` tool will no longer generate a synthetic `package:flutter_gen`
-or modify the `package_config.json` of the application. Applications or tools
-that previously referenced `package:flutter_gen` will instead reference source
-files generated into the application directly.
+or modify the `package_config.json` of the app.
+
+Applications or tools that referenced `package:flutter_gen` should instead
+reference source files generated into the app's source directory directly.
 
 ## Background
 
-`flutter_gen` is a virtual (synthetic) package that is created by the `flutter`
-command-line tool to allow developers to import that package to access generated
-symbols and functionality, such as for
-[internationalization][Internationalizing Flutter apps]. As the package is not
-listed in an app's `pubspec.yaml`, and is created via re-writing the (generated)
-`package_config.json`, numerous problems have been created.
+`flutter_gen` is a virtual (synthetic) package that is
+created by the `flutter` command-line tool to allow developers to
+import that package to access generated symbols and functionality,
+such as for [internationalization][].
+As the package isn't listed in an app's `pubspec.yaml`, and
+is created via re-writing the generated `package_config.json` file,
+many problems have been created.
 
 ## Migration Guide
 
-This change only effects users that have the following in their `pubspec.yaml`:
+This change only affects apps that have the
+following entry in their `pubspec.yaml`:
 
 ```yaml
 flutter:
   generate: true
 ```
 
-A synthetic package (`package:flutter_gen`) is created and referenced by the
-application:
+A synthetic package (`package:flutter_gen`) is
+created and referenced by the app:
 
 ```dart
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -46,9 +49,9 @@ const MaterialApp(
 
 There are two ways to migrate away from importing `package:flutter_gen`:
 
-1. Specify `synthetic-package: false` in the accompanying [l10n.yaml][] file:
+ 1. Specify `synthetic-package: false` in the accompanying [`l10n.yaml`][] file:
 
-    ```yaml
+    ```yaml title="l10n.yaml"
     synthetic-package: false
 
     # The files are generated into the path specified by `arb-dir`
@@ -58,7 +61,7 @@ There are two ways to migrate away from importing `package:flutter_gen`:
     output-dir: lib/src/generated/i18n
     ```
 
-2. Enable the `explicit-package-dependencies` feature flag:
+ 2. Enable the `explicit-package-dependencies` feature flag:
 
     ```sh
     flutter config explicit-package-dependencies
@@ -66,9 +69,11 @@ There are two ways to migrate away from importing `package:flutter_gen`:
 
 ## Timeline
 
-Not released
+Landed in version: Not yet<br>
+Stable release: Not yet
 
-Not released + 1, `package:flutter_gen` support will be removed.
+One stable release after this change lands,
+`package:flutter_gen` support will be removed.
 
 ## References
 
@@ -80,11 +85,11 @@ Relevant Issues:
 
 Relevant Articles:
 
-- [Internationalizing Flutter apps][], the canonical documentation for the
-  feature.
+- [Internationalizing Flutter apps][internationalization],
+  the canonical documentation for the feature.
 
-[l10n.yaml]: https://docs.flutter.dev/ui/accessibility-and-internationalization/internationalization#configuring-the-l10n-yaml-file
-[Issue 73870]: https://github.com/flutter/flutter/issues/73870
-[Issue 102983]: https://github.com/flutter/flutter/issues/102983
-[Issue 157819]: https://github.com/flutter/flutter/issues/157819
-[Internationalizing Flutter apps]: https://docs.flutter.dev/ui/accessibility-and-internationalization/internationalization#adding-your-own-localized-messages
+[`l10n.yaml`]: /ui/accessibility-and-internationalization/internationalization#configuring-the-l10n-yaml-file
+[Issue 73870]: {{site.repo.flutter}}/issues/73870
+[Issue 102983]: {{site.repo.flutter}}/issues/102983
+[Issue 157819]: {{site.repo.flutter}}/issues/157819
+[internationalization]: /ui/accessibility-and-internationalization/internationalization#adding-your-own-localized-messages

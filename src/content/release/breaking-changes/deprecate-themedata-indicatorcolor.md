@@ -14,22 +14,22 @@ the [`TabBarThemeData.indicatorColor`][] parameter.
 ## Context
 
 The defaults for the [`TabBar`][] widget can be overridden with a
-component-specific theme like [`TabBarThemeData`][]. Previously, the
-`ThemeData.indicatorColor` parameter was used to override the default tab bar
-indicator color in Material Design 2, which was made redundant by
-[`TabBarThemeData`][].
+component-specific theme like [`TabBarThemeData`][].
+Previously, the `ThemeData.indicatorColor` parameter was used to
+override the default tab bar indicator color in Material Design 2,
+which was made redundant by [`TabBarThemeData`][].
 
 ## Description of change
 
-The [`ThemeData.indicatorColor`][] is deprecated in favor of a
-component-specific theme. Use [`TabBarThemeData`][] to override the default
-indicator color.
+The [`ThemeData.indicatorColor`][] is deprecated in
+favor of a component-specific theme.
+Use [`TabBarThemeData`][] to override the default indicator color.
 
 ## Migration guide
 
 Replace [`ThemeData.indicatorColor`][] with
-[`TabBarThemeData.indicatorColor`][] to override the default tab bar indicator
-color when [`ThemeData.useMaterial3`][] flag is set to `false`.
+[`TabBarThemeData.indicatorColor`][] to override the default tab bar
+indicator color when [`ThemeData.useMaterial3`][] flag is set to `false`.
 
 Code before migration:
 
@@ -51,8 +51,8 @@ theme: ThemeData(
 
 ## Timeline
 
-Landed in version: v3.27.0-0.2.pre.<br>
-In stable release: TBD
+Landed in version: Not yet<br>
+In stable release: Not yet
 
 ## References
 
