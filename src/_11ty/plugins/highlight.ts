@@ -54,7 +54,7 @@ export async function configureHighlighting(markdown: MarkdownIt): Promise<void>
   });
 
   markdown.renderer.rules.fence = function (tokens, index) {
-    const token = tokens[index] as MarkdownIt.Token;
+    const token = tokens[index]!;
 
     const splitTokenInfo = token.info.match(/(\S+)\s?(.*?)$/m);
 

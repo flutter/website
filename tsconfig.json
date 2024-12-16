@@ -1,9 +1,8 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
+    "module": "NodeNext",
     "target": "ESNext",
     "types": ["node", "markdown-it", "hast"],
-    "moduleResolution": "Node",
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true
   },

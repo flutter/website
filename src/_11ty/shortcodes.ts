@@ -1,5 +1,5 @@
 import { UserConfig } from '@11ty/eleventy';
-import { slugify } from './utils/slugify';
+import { slugify } from './utils/slugify.js';
 
 export function registerShortcodes(eleventyConfig: UserConfig): void {
   _setupTabs(eleventyConfig);
