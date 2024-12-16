@@ -1,5 +1,7 @@
-import {getSingletonHighlighter} from 'shiki';
+import { getSingletonHighlighter, Highlighter } from 'shiki';
 import dashLightTheme from '../syntax/dash-light.js';
+import MarkdownIt from 'markdown-it';
+import * as hast from 'hast';
 
 const _terminalLanguages = {
   'console': '$',
@@ -17,10 +19,9 @@ const _terminalLanguages = {
  *   using the shiki package that uses TextMate grammars
  *   and Code -OSS themes.
  *
- * @param {import('markdown-it/lib').MarkdownIt} markdown The markdown-it instance to
- *   configure syntax highlighting for.
+ * @param markdown The markdown-it instance to configure syntax highlighting for.
  */
-export async function configureHighlighting(markdown) {
+export async function configureHighlighting(markdown: MarkdownIt): Promise<void> {
   const highlighter = await getSingletonHighlighter({
     langs: [
       'dart',
@@ -53,7 +54,7 @@ export async function configureHighlighting(markdown) {
   });
 
   markdown.renderer.rules.fence = function (tokens, index) {
-    const token = tokens[index];
+    const token = tokens[index]!;
 
     const splitTokenInfo = token.info.match(/(\S+)\s?(.*?)$/m);
 
@@ -61,8 +62,8 @@ export async function configureHighlighting(markdown) {
       throw new Error('Code block missing language specifier.');
     }
 
-    const language = splitTokenInfo.length > 1 ? splitTokenInfo[1] : '';
-    const attributes = splitTokenInfo.length > 2 ? splitTokenInfo[2] : '';
+    const language = splitTokenInfo.length > 1 ? splitTokenInfo[1]! : '';
+    const attributes = splitTokenInfo.length > 2 ? splitTokenInfo[2]! : '';
 
     return _highlight(
       markdown,
@@ -79,22 +80,21 @@ export async function configureHighlighting(markdown) {
  * and makes modifications to the output structure based on the
  * passed in {@link attributeString}.
  *
- * @param {import('markdown-it/lib').MarkdownIt} markdown The markdown-it instance.
- * @param {import('shiki').Highlighter} highlighter The shiki highlighter
- *   configured with the correct theme(s) and languages.
- * @param {string} content The content to syntax highlight.
- * @param {string} language The language of the content.
- * @param {string} attributeString The string containing configuration.
- * @returns {string} The processed/highlighted content rendered as HTML.
- * @private
+ * @param markdown The markdown-it instance.
+ * @param highlighter The shiki highlighter configured with
+ *   the correct themes and languages.
+ * @param content The content to syntax highlight.
+ * @param language The language of the content.
+ * @param attributeString The string containing configuration.
+ * @returns The processed/highlighted content rendered as HTML.
  */
 function _highlight(
-  markdown,
-  highlighter,
-  content,
-  language,
-  attributeString,
-) {
+  markdown: MarkdownIt,
+  highlighter: Highlighter,
+  content: string,
+  language: string,
+  attributeString: string,
+): string {
   const attributes = _parseAttributes(attributeString);
 
   // Specially handle DartPad snippets so that inject_embed can convert them.
@@ -121,11 +121,11 @@ function _highlight(
   const highlightLines = attributes['highlightLines'];
   const linesToHighlight = highlightLines
     ? _parseNumbersAndRanges(highlightLines)
-    : new Set();
+    : new Set<number>();
 
   const isDiff = 'diff' in attributes;
-  const addedLines = new Set();
-  const removedLines = new Set();
+  const addedLines = new Set<number>();
+  const removedLines = new Set<number>();
   if (isDiff) {
     if (showLineNumbers) {
       throw new Error('showLineNumbers and diff are not supported on the same code block yet.');
@@ -193,8 +193,8 @@ function _highlight(
             bodyChildren.unshift(languageText);
           }
 
-          // Create a div container to wrap the pre element.
-          const blockBody = {
+          // Create a div container to wrap the `pre` element.
+          const blockBody: hast.Element = {
             type: 'element',
             tagName: 'div',
             children: bodyChildren,
@@ -226,12 +226,12 @@ function _highlight(
             bodyChildren.unshift(extraTagContent);
           }
 
-          const wrapperChildren = [];
+          const wrapperChildren: hast.Element[] = [];
 
           // Add a title if specified, often used for filenames.
           const title = attributes['title'];
           if (title && title !== '') {
-            const titleElement = {
+            const titleElement: hast.Element = {
               type: 'element',
               tagName: 'div',
               children: [{ type: 'text', value: title }],
@@ -246,7 +246,7 @@ function _highlight(
           wrapperChildren.push(blockBody);
 
           // Create a div to wrap everything including the title/filename bar.
-          const wrapper = {
+          const wrapper: hast.Element = {
             type: 'element',
             tagName: 'div',
             children: wrapperChildren,
@@ -255,7 +255,7 @@ function _highlight(
             },
           };
 
-          // Replace the pre element with our own wrapper.
+          // Replace the `pre` element with our own wrapper.
           return wrapper;
         },
         line(lineElement, line) {
@@ -275,10 +275,10 @@ function _highlight(
 
           if (language in _terminalLanguages) {
             // Remove terminal command marker if present.
-            const firstSpan = lineElement.children[0];
-            const firstText = firstSpan.children[0];
+            const firstSpan = lineElement.children[0] as hast.Element;
+            const firstText = firstSpan.children[0] as hast.Text;
             if (firstText?.value.startsWith('$ ')) {
-              // If terminal marker is present on the first span,
+              // If a terminal marker is present on the first span,
               // remove it and add a class to use CSS to display it.
               firstText.value = firstText.value.substring(2);
               firstSpan.properties['class'] += ' terminal-command';
@@ -306,17 +306,16 @@ const _attributesPattern = /([^\s=]+)(?:="([^"]*)"|=(\S+))?/g;
  * Parse a space-separated attribute string, where spaces in a string literal
  * are ignored.
  *
- * @param {string} attributeString The string containing configuration.
- * @return {Object.<string, ?string>} The parsed attributes.
- * @private
+ * @param attributeString The string containing configuration.
+ * @return The parsed attributes.
  */
-function _parseAttributes(attributeString) {
-  const attributes = {};
+function _parseAttributes(attributeString: string): {[index: string]: string | null} {
+  const attributes: {[index: string]: string | null} = {};
   if (attributeString === '') return attributes;
 
-  let match;
+  let match: RegExpExecArray | null;
   while ((match = _attributesPattern.exec(attributeString))) {
-    const key = match[1];
+    const key = match[1]!;
     attributes[key] = match[2] ?? match[3] ?? null;
   }
 
@@ -326,25 +325,23 @@ function _parseAttributes(attributeString) {
 /**
  * Parses a comma-separated list of numbers and ranges into a set of numbers.
  *
- * @param {string} input A comma-separated list of numbers and ranges.
- * @returns {Set<number>} All unique numbers specified in the input.
- * @private
+ * @param input A comma-separated list of numbers and ranges.
+ * @returns All unique numbers specified in the input.
  */
-function _parseNumbersAndRanges(input) {
+function _parseNumbersAndRanges(input: string): Set<number> {
   const elements = input.split(',');
-  /** @type {Set<number>} */
-  const combinedNumbers = new Set();
+  const combinedNumbers = new Set<number>();
 
   for (const element of elements) {
     const rangeParts = element.split('-');
 
-    // If it includes a dash, it is (hopefully) a range between two numbers.
+    // If it includes a dash, it's (hopefully) a range between two numbers.
     if (rangeParts.length > 1) {
       // Split by the dash, and turn each string into a number.
       // Assume the user only included one dash.
       const start = Number.parseInt(rangeParts[0]);
       const end = Number.parseInt(rangeParts[1]);
-      if (!Number.isNaN(start) && !Number.isNaN(end)) {
+      if (start && end && !Number.isNaN(start) && !Number.isNaN(end)) {
         for (let i = start; i <= end; i++) {
           combinedNumbers.add(i);
         }
@@ -352,7 +349,7 @@ function _parseNumbersAndRanges(input) {
     } else {
       // It's (hopefully) just a single number.
       const number = Number.parseInt(element);
-      if (!Number.isNaN(number)) {
+      if (number && !Number.isNaN(number)) {
         combinedNumbers.add(number);
       }
     }
@@ -368,41 +365,41 @@ function _parseNumbersAndRanges(input) {
  * The spans and ranges should be
  * ordered corresponding to the source line of text.
  *
- * @param {{children: [{type: string, value: string}], type: 'element', tagName: 'span', properties: Object.<string, string>}[]} spans
- *   The list of spans to wrap the text of.
- * @param {{startIndex: number, endIndex: number}[]} ranges
- *   The ranges in the text to mark.
- * @returns {{children: [{type: string, value: string}], type: 'element', tagName: 'span', properties: Object.<string, string>}[]}
- *   A new list of spans with <mark> tags added around the specified ranges.
+ * @param spans The list of spans to wrap the text of.
+ * @param ranges The ranges in the text to mark.
+ * @returns A new list of spans with <mark> tags added
+ *   around the specified ranges.
  */
-function _wrapMarkedText(spans, ranges) {
+function _wrapMarkedText(
+  spans: hast.ElementContent[],
+  ranges: {startIndex: number, endIndex: number}[],
+): hast.Element[] {
   /**
    * The current index in the text across all spans.
-   * @type {number}
    */
   let currentIndexInLine = 0;
 
   /**
    * The index of the current range being marked.
-   * @type {number}
    */
   let currentRangeIndex = 0;
 
   /**
    * The new collection of spans to replace the original.
-   * @type {{children: [{type: string, value: string}], type: 'element', tagName: 'span', properties: Object.<string, string>}[]}
-   * */
-  const updatedSpans = [];
+   */
+  const updatedSpans: hast.Element[] = [];
 
   /**
-   * The mark that will wrap the current range.
-   * @type {{children: {type: string, value}[], type: string, tagName: string, properties: Object<string, string>}}
+   * The mark to wrap the current range with.
    */
   let markElement = _createEmptyMarkElement();
 
   for (const span of spans) {
+    if (span.type === 'text' || span.type === 'comment') {
+      throw new Error(`Expected only spans when wrapping, but found: ${span.type}.`);
+    }
     const [child, ...otherChildren] = span.children;
-    if (otherChildren.length > 0 || child.type !== 'text') {
+    if (!child || otherChildren.length > 0 || child.type !== 'text') {
       throw new Error('Each span should have exactly one text child.');
     }
 
@@ -411,13 +408,11 @@ function _wrapMarkedText(spans, ranges) {
 
     /**
      * The properties that all potentially created children should have too.
-     * @type {Object.<string, string>}
      */
-    const spanProperties = span.properties ?? {};
+    const spanProperties: hast.Properties = span.properties ?? {};
 
     /**
      * The current index within the current span.
-     * @type {number}
      */
     let indexInCurrentSpan = 0;
 
@@ -431,13 +426,12 @@ function _wrapMarkedText(spans, ranges) {
       indexInCurrentSpan < text.length
     ) {
       const { startIndex: rangeStartIndex, endIndex: rangeEndIndex } =
-        ranges[currentRangeIndex];
+        ranges[currentRangeIndex]!;
 
       /**
        * The index in relation to the start of the current span
        * where the current range starts or the index in the current span if
        * the range starts before the current index.
-       * @type {number}
        */
       const relativeRangeStartIndex = Math.max(
         rangeStartIndex - currentIndexInLine,
@@ -448,7 +442,6 @@ function _wrapMarkedText(spans, ranges) {
        * The index in relation to the start of the current span
        * where the current range ends or the ending index of the current span if
        * the range ends after the current index.
-       * @type {number}
        */
       const relativeEndIndex = Math.min(
         rangeEndIndex - currentIndexInLine,
@@ -456,7 +449,7 @@ function _wrapMarkedText(spans, ranges) {
       );
 
       // If `indexInCurrentSpan` is less than `relativeRangeStartIndex`,
-      // all text between the two should not be marked.
+      // all text between the two shouldn't be marked.
       if (indexInCurrentSpan < relativeRangeStartIndex) {
         updatedSpans.push(
           _createSpanWithText(
@@ -481,7 +474,6 @@ function _wrapMarkedText(spans, ranges) {
        * The index in the whole line of the end of the current range if
        * it has all been marked, otherwise the index in the whole line
        * of the end of the current span.
-       * @type {number}
        */
       const rangeOrSpanEndIndexInLine = currentIndexInLine + relativeEndIndex;
 
@@ -520,11 +512,9 @@ function _wrapMarkedText(spans, ranges) {
 /**
  * Creates a new mark element with the `highlight` class and no children.
  *
- * @returns {{children: [{type: string, value}], type: string, tagName: string, properties: Object.<string, string>}}
- *  The created hast HTML element.
- * @private
+ * @returns The created hast HTML element.
  */
-function _createEmptyMarkElement() {
+function _createEmptyMarkElement(): hast.Element {
   return {
     type: 'element',
     tagName: 'mark',
@@ -539,14 +529,12 @@ function _createEmptyMarkElement() {
  * Creates a new hast span element with the specified
  * inline {@link text}, and {@link properties}.
  *
- * @param {string} text The text to include in the HTML element.
- * @param {Object.<string, string>} [properties = {}] The properties to specify
- *   for the HTML element, such as class.
- * @returns {{children: [{type: string, value}], type: string, tagName: string, properties: Object.<string, string>}}
- *  The created hast HTML element.
- * @private
+ * @param text The text to include in the HTML element.
+ * @param properties The properties to specify for the HTML element,
+ *   such as classes to add.
+ * @returns The created hast HTML element.
  */
-function _createSpanWithText(text, properties = {}) {
+function _createSpanWithText(text: string, properties: hast.Properties = {}): hast.Element {
   return {
     type: 'element',
     tagName: 'span',
@@ -561,34 +549,31 @@ function _createSpanWithText(text, properties = {}) {
  * Returns the start and end indices of each instance of marked text,
  * as well as the updated text with all the open and close markers removed.
  *
- * @param {string} text The text to search through and potentially update.
- * @returns {{updatedText: string, linesToMarkedRanges: Object.<number, {startIndex: number, endIndex: number}[]>}}
- *   The updated text and the indices of marked text in each line.
- * @private
+ * @param text The text to search through and potentially update.
+ * @returns The updated text and the indices of marked text in each line.
  */
-function _findMarkedTextAndUpdate(text) {
+function _findMarkedTextAndUpdate(text: string): {
+  updatedText: string,
+  linesToMarkedRanges: { [p: number]: { startIndex: number; endIndex: number }[] };
+} {
   const lines = text.split('\n');
 
-  /** @type {Object.<number,{startIndex: number, endIndex: number}[]>} */
-  const linesToMarkedRanges = {};
-  /** @type string[] */
-  const textWithMarksRemoved = [];
+  const linesToMarkedRanges: {[index: number]: {startIndex: number, endIndex: number}[]} = {};
+  const textWithMarksRemoved: string[] = [];
 
   for (let lineIndex = 0; lineIndex < lines.length; lineIndex++) {
-    const line = lines[lineIndex];
+    const line = lines[lineIndex]!;
     let currentIndexInLine = 0;
 
     /**
      * The updated line with the marks (`[!` and `!]`) removed.
-     * @type {string}
      */
     let updatedLine = '';
 
     /**
      * The ranges of marked text in the current line.
-     * @type {{startIndex: number, endIndex: number}[]}
      */
-    let markedRanges = [];
+    let markedRanges: {startIndex: number, endIndex: number}[] = [];
 
     while (currentIndexInLine < line.length) {
       const startIndex = line.indexOf('[!', currentIndexInLine);

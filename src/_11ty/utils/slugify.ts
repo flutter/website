@@ -2,10 +2,10 @@
  * Converts the specified text, usually header,
  * into a valid slug for URL fragments.
  *
- * @param text {string} The text to convert
- * @returns {string} The converted text
+ * @param text The text to convert
+ * @returns The converted text
  */
-export function slugify(text) {
+export function slugify(text: string): string {
   if (!text || text.length === 0) {
     return text;
   }
