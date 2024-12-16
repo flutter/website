@@ -31,7 +31,7 @@ then it targets Android 15 starting with Flutter version 3.27,
 automatically opting your app in to edge-to-edge.
 
 If your app explicitly sets `SystemUiMode.edgeToEdge` to run in
-edge-to-edge mode by calling [`SystemChrome.setEnabledSystemUIMode`][4],
+edge-to-edge mode by calling [`SystemChrome.setEnabledSystemUIMode`][],
 then your app is already migrated. Apps needing more time to migrate to
 edge-to-edge mode must use the following steps to opt out on
 devices running Android SDK 15+.
