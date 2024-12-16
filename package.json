@@ -9,10 +9,10 @@
     "url": "https://github.com/flutter/website.git"
   },
   "engines": {
-    "node": ">=20.14.0",
-    "pnpm": ">=9.4.0"
+    "node": ">=22.11.0",
+    "pnpm": ">=9.12.3"
   },
-  "packageManager": "pnpm@9.14.2",
+  "packageManager": "pnpm@9.15.0",
   "scripts": {
     "serve": "PRODUCTION=false eleventy --serve",
     "build-site-for-staging": "PRODUCTION=false eleventy",
@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
-    "firebase-tools": "^13.27.0",
+    "firebase-tools": "^13.29.1",
     "hast-util-from-html": "^2.0.3",
     "hast-util-select": "^6.0.3",
     "hast-util-to-text": "^4.0.2",
@@ -35,7 +35,7 @@
     "markdown-it-container": "^4.0.0",
     "markdown-it-deflist": "^3.0.0",
     "markdown-it-footnote": "^4.0.0",
-    "sass": "^1.81.0",
-    "shiki": "^1.24.0"
+    "sass": "^1.83.0",
+    "shiki": "^1.24.2"
   }
 }

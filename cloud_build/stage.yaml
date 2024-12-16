@@ -8,10 +8,10 @@ steps:
       - '-c'
       - |-
         set -e
-        
+
         npm install
         npm run build-site-for-staging
-        
+
         cloud_build/scripts/stage_site_and_comment_on_github.sh
     secretEnv: ['GH_PAT_TOKEN']
     env:
