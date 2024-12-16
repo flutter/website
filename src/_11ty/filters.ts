@@ -4,18 +4,19 @@ import { fromHtml } from 'hast-util-from-html';
 import { selectAll } from 'hast-util-select';
 import { toText } from 'hast-util-to-text';
 import { escapeHtml } from 'markdown-it/lib/common/utils.mjs';
+import { UserConfig } from '@11ty/eleventy';
 
-export function registerFilters(eleventyConfig) {
-  eleventyConfig.addFilter('children_pages', function (pages, pageUrl) {
+export function registerFilters(eleventyConfig: UserConfig): void {
+  eleventyConfig.addFilter('children_pages', function (pages: any, pageUrl: string) {
     return pages.filter((page) => page.url.includes(pageUrl) && page.url !== pageUrl);
   });
 
   // TODO(parlough): Make this more generic.
-  eleventyConfig.addFilter('widget_filter', function (widgets, field, subName) {
+  eleventyConfig.addFilter('widget_filter', function (widgets: any, field: string, subName: string) {
     return widgets.filter((comp) => comp[field]?.includes(subName) ?? false);
   });
 
-  eleventyConfig.addFilter('throw_error', function (error) {
+  eleventyConfig.addFilter('throw_error', function (error: string | null): never {
     // TODO(parlough): See if more context can be added to this error
     //   or if there's a better built-in solution.
     throw new Error(error);
@@ -35,12 +36,12 @@ export function registerFilters(eleventyConfig) {
  * Replace text in {@link input} that matches the specified {@link regex}
  * with the specified {@link replacement}.
  *
- * @param {string} input
- * @param {RegExp} regex
- * @param {string} replacement
- * @return {string} The resulting string with the replacement made.
+ * @param input
+ * @param regex
+ * @param replacement
+ * @return The resulting string with the replacement made.
  */
-function regexReplace(input, regex, replacement = '') {
+function regexReplace(input: string, regex: RegExp, replacement = ''): string {
   return input.toString().replace(new RegExp(regex), replacement);
 }
 
@@ -49,10 +50,10 @@ function regexReplace(input, regex, replacement = '') {
  *
  * Used to add date information to the sitemap.
  *
- * @param {string|Date} input The date to convert
- * @return {string} The ISO string
+ * @param input The date to convert
+ * @return The ISO string
  */
-function toISOString(input) {
+function toISOString(input: string | Date): string {
   if (input instanceof Date) {
     return input.toISOString();
   } else {
@@ -61,8 +62,8 @@ function toISOString(input) {
   }
 }
 
-function toSimpleDate(input) {
-  let dateString;
+function toSimpleDate(input: string | Date): string {
+  let dateString: string;
   if (input instanceof Date) {
     dateString = input.toISOString();
   } else {
@@ -72,7 +73,7 @@ function toSimpleDate(input) {
   return dateString.split('T')[0];
 }
 
-function activeNavForPage(pageUrlPath, activeNav) {
+function activeNavForPage(pageUrlPath: string, activeNav: any) {
   // Split the path for this page, dropping everything before the path:
   // Example: docs.flutter.dev/cookbook/networking/update-data ->
   // [cookbook, networking, update-data]
@@ -98,7 +99,7 @@ function activeNavForPage(pageUrlPath, activeNav) {
     // Get the data for the next part.
     const nextPair = currentPathPairs[part];
 
-    // If the next part of the path does not have data,
+    // If the next part of the path doesn't have data,
     // use the active data for the current backup.
     if (nextPair === undefined || nextPair === null) {
       return lastAllowedBackupActive;
@@ -108,7 +109,7 @@ function activeNavForPage(pageUrlPath, activeNav) {
   });
 
   // If the last path part has active data, use that,
-  // otherwise fallback to the backup active data.
+  // otherwise fall back to the backup active data.
   let activeEntries = currentPathPairs['active'];
   if (activeEntries === undefined || activeEntries === null) {
     activeEntries = lastAllowedBackupActive;
@@ -117,7 +118,7 @@ function activeNavForPage(pageUrlPath, activeNav) {
   return activeEntries;
 }
 
-function arrayToSentenceString(list, joiner = 'and') {
+function arrayToSentenceString(list: string[], joiner = 'and'): string {
   if (!list || list.length === 0) {
     return '';
   }
@@ -140,28 +141,28 @@ function arrayToSentenceString(list, joiner = 'and') {
   return result;
 }
 
-function generateToc(contents) {
+function generateToc(contents: string) {
   // TODO(parlough): Speed this up.
   //   Perhaps do the processing before HTML rendering?
   //   Maybe shouldn't be a filter.
   const dom = fromHtml(contents);
   const headers = selectAll('h2, h3', dom);
-  if (headers < 1) {
-    // If there is only one header, there is no point of a TOC.
+  if (headers.length < 1) {
+    // If there's only one header, there's no point of a TOC.
     return null;
   }
-  let currentH2 = null;
+  let currentH2: {text: string, id: string, children: {text: string, id: string}[]} | null = null;
   const builtToc = [];
   let count = 0;
   for (const header of headers) {
     const id = header.properties['id'];
     // Header can't be linked to without an ID.
-    if (!id || id === '') {
+    if (!id || typeof id !== 'string' || id === '') {
       continue;
     }
 
     // Don't include if no_toc is specified as a class on the header.
-    if (header.properties['className']?.includes('no_toc')) {
+    if ((header.properties['className'] as string | null)?.includes('no_toc')) {
       continue;
     }
 
@@ -191,14 +192,14 @@ function generateToc(contents) {
   };
 }
 
-function breadcrumbsForPage(page) {
+function breadcrumbsForPage(page: any): {title: string, url: string}[] {
   const breadcrumbs = [];
 
   // Retrieve the liquid data for this page.
   let data = this.context.environments;
 
   while (page) {
-    const urlSegments = page.url
+    const urlSegments = (page.url as string)
         .split('/')
         .filter((segment) => segment.length > 0);
 
@@ -208,7 +209,7 @@ function breadcrumbsForPage(page) {
     });
 
     if (urlSegments.length <= 1) {
-      // If this only has one segment, it is the root page
+      // If this only has one segment, it's the root page
       // and has no more parents, so don't continue on.
       break;
     } else {

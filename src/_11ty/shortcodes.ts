@@ -1,12 +1,13 @@
-import {slugify} from './utils/slugify.js';
+import { UserConfig } from '@11ty/eleventy';
+import { slugify } from './utils/slugify';
 
-export function registerShortcodes(eleventyConfig) {
+export function registerShortcodes(eleventyConfig: UserConfig): void {
   _setupTabs(eleventyConfig);
   _setupMedia(eleventyConfig);
 }
 
-function _setupMedia(eleventyConfig) {
-  eleventyConfig.addShortcode('ytEmbed', function (id, title, skipAlternativeLink = false, fullWidth = false) {
+function _setupMedia(eleventyConfig: UserConfig): void {
+  eleventyConfig.addShortcode('ytEmbed', function (id: string, title: string, skipAlternativeLink = false, fullWidth = false) {
     let embedMarkup = `<iframe ${fullWidth ? 'class="full-width"' : 'width="560" height="315"'} 
         src="https://www.youtube.com/embed/${id}" title="${title}" frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -19,7 +20,7 @@ function _setupMedia(eleventyConfig) {
     return embedMarkup;
   });
 
-  eleventyConfig.addPairedShortcode('videoWrapper', function (content, intro = '') {
+  eleventyConfig.addPairedShortcode('videoWrapper', function (content: string, intro = '') {
     let wrapperMarkup = '<div class="video-wrapper">';
     if (intro && intro !== '') {
       wrapperMarkup += `<span class="video-intro">${intro}</span>`;
@@ -31,7 +32,7 @@ function _setupMedia(eleventyConfig) {
   });
 }
 
-function _setupTabs(eleventyConfig) {
+function _setupTabs(eleventyConfig: UserConfig) {
   // Variable shared between all tabs to ensure each has a unique ID.
   let currentTabId = 0;
 
@@ -40,7 +41,7 @@ function _setupTabs(eleventyConfig) {
   let tabs = [];
   let markTabAsActive = true;
 
-  eleventyConfig.addPairedShortcode('tabs', function (content, saveKey) {
+  eleventyConfig.addPairedShortcode('tabs', function (content: string, saveKey: string) {
     let tabMarkup = `<div class="tabs-wrapper" ${saveKey ? `data-tab-save-key="${slugify(saveKey)}"` : ''}><ul class="nav nav-tabs" role="tablist">`;
     let activeTab = true;
 
@@ -66,7 +67,7 @@ function _setupTabs(eleventyConfig) {
     return tabMarkup;
   });
 
-  eleventyConfig.addPairedShortcode('tab', function (content, tabName) {
+  eleventyConfig.addPairedShortcode('tab', function (content: string, tabName: string) {
     const tabIdNumber = currentTabId++;
     tabs.push({name: tabName, id: tabIdNumber});
     const tabId = `${tabIdNumber}-tab`;

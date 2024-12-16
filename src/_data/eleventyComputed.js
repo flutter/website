@@ -47,7 +47,7 @@ function _addLink(results, permalink, path, hasChildren) {
     return;
   }
 
-  // Throw an error if a permalink does not start with a `/`.
+  // Throw an error if a permalink doesn't start with a `/`.
   if (!permalink.startsWith('/')) {
     throw new Error(`${permalink} does not begin with a '/'`);
   }

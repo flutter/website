@@ -1,6 +1,6 @@
 // This is the light mode version of the
 // syntax highlighting theme for code blocks on the website.
-// It's imported and used by `src/_11ty/plugins/highlight.js`.
+// It's imported and used by `src/_11ty/plugins/highlight.ts`.
 export default {
   name: 'dash-light',
   colors: {
