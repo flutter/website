@@ -103,10 +103,10 @@ TextButton(
     overlayColor: MaterialStateProperty.resolveWith<Color?>(
       (Set<MaterialState> states) {
         if (states.contains(MaterialState.hovered))
-          return Colors.blue.withValues(alpha: 0.04);
+          return Colors.blue.withOpacity(0.04);
         if (states.contains(MaterialState.focused) ||
             states.contains(MaterialState.pressed))
-          return Colors.blue.withValues(alpha: 0.12);
+          return Colors.blue.withOpacity(0.12);
         return null; // Defer to the widget's default.
       },
     ),
@@ -154,7 +154,7 @@ opacities from the Material Design spec.
 ```dart
 TextButton(
   style: TextButton.styleFrom(
-    primary: Colors.blue,
+    foregroundColor: Colors.blue,
   ),
   onPressed: () { },
   child: Text('TextButton'),
@@ -162,14 +162,14 @@ TextButton(
 ```
 
 The `TextButton` documentation indicates that the foreground color when
-the button is disabled is based on the color scheme's `onSurface`
+the button is disabled is based on the color scheme's `disabledForegroundColor`
 color. To override that as well, using styleFrom():
 
 ```dart
 TextButton(
   style: TextButton.styleFrom(
-    primary: Colors.blue,
-    onSurface: Colors.red,
+    foregroundColor: Colors.blue,
+    disabledForegroundColor: Colors.red,
   ),
   onPressed: null,
   child: Text('TextButton'),
@@ -228,7 +228,7 @@ like a default `FlatButton`:
 
 ```dart
 final ButtonStyle flatButtonStyle = TextButton.styleFrom(
-  primary: Colors.black87,
+  foregroundColor Colors.black87,
   minimumSize: Size(88, 36),
   padding: EdgeInsets.symmetric(horizontal: 16),
   shape: const RoundedRectangleBorder(
@@ -247,8 +247,8 @@ Similarly, to make an `ElevatedButton` look like a default `RaisedButton`:
 
 ```dart
 final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
-  onPrimary: Colors.black87,
-  primary: Colors.grey[300],
+  foregroundColor: Colors.black87,
+  backgroundColor Colors.grey[300],
   minimumSize: Size(88, 36),
   padding: EdgeInsets.symmetric(horizontal: 16),
   shape: const RoundedRectangleBorder(
@@ -357,7 +357,7 @@ FlatButton(
 
 TextButton(
   style: TextButton.styleFrom(
-    primary: Colors.red, // foreground
+    foregroundColor Colors.red,
   ),
   onPressed: () { },
   child: Text('TextButton with custom foreground'),
@@ -381,8 +381,8 @@ RaisedButton(
 
 ElevatedButton(
   style: ElevatedButton.styleFrom(
-    primary: Colors.red, // background
-    onPrimary: Colors.white, // foreground
+    backgroundColor Colors.red,
+    foregroundColor: Colors.white,
   ),
   onPressed: () { },
   child: Text('ElevatedButton with custom foreground/background'),
@@ -447,22 +447,22 @@ This is a relatively rare customization.  The `FlatButton`,
 `disabledColor` parameters that define the background and foreground
 colors when the button's `onPressed` callback is null.
 
-By default, all of the buttons use the color scheme's `onSurface` color,
-with opacity 0.38 for the disabled foreground color. Only
+By default, all of the buttons use the color scheme's `disabledForegroundColor`
+color, with opacity 0.38 for the disabled foreground color. Only
 `ElevatedButton` has a non-transparent background color and its default
-value is the `onSurface` color with opacity 0.12. So in many cases one
-can just use the `styleFrom` method to override the disabled colors:
+value is the `disabledForegroundColor` color with opacity 0.12. So in many cases
+one can just use the `styleFrom` method to override the disabled colors:
 
 ```dart
 RaisedButton(
-  disabledColor: Colors.red.withValues(alpha: 0.12),
-  disabledTextColor: Colors.red.withValues(alpha: 0.38),
+  disabledColor: Colors.red.withOpacity(0.12),
+  disabledTextColor: Colors.red.withOpacity(0.38),
   onPressed: null,
   child: Text('RaisedButton with custom disabled colors'),
 ),
 
 ElevatedButton(
-  style: ElevatedButton.styleFrom(onSurface: Colors.red),
+  style: ElevatedButton.styleFrom(disabledForegroundColor: Colors.red),
   onPressed: null,
   child: Text('ElevatedButton with custom disabled colors'),
 )
