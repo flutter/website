@@ -74,10 +74,15 @@ An asset transformer is a Dart [command-line app][] that is invoked with
 the file to transform and `--output`, which is the location where the
 transformer code must write its output to.
 
-If the transformer applications finishes with a non-zero exit code, the build
+If the transformer finishes with a non-zero exit code, the application build
 fails with error message explaining that transformation of the asset failed.
 Anything written to the [`stderr`] stream of the process by the transformer is
 included in the error message.
+
+During the invocation of the transformer, the `FLUTTER_BUILD_MODE`
+environment variable will be set to the CLI name of the build mode being used.
+For example, if you run your app with `flutter run -d macos --release`, then
+`FLUTTER_BUILD_MODE` will be set to `release`.
 
 ## Sample
 
