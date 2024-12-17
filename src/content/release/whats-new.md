@@ -39,8 +39,8 @@ You might also check out the [Dart 3.6 release][] blog post.
 This website release includes several important updates!
 
 * The Flutter AI Toolkit is launched! You'll find the docs
-  on the website under **App solutions > AI** in the sidenav
-  and at [Flutter AI Toolkit][].
+  on the website in the side navigation menu under
+  **App solutions > AI** and at [Flutter AI Toolkit][].
 
 * For a long time now, we have been asked to create more
   guidance for developers who write large-scale, complex
@@ -51,6 +51,13 @@ This website release includes several important updates!
   that has six recipes for common design patterns
   that you might find useful.
 
+* We've added more information about
+  [Support for WebAssembly (Wasm)][].
+
+* We've also reworked the [Web renderers][] page
+  to cover the two build modes for web and its
+  two renderers.
+
 * Impeller is now the default rendering engine for
   iOS and Android. We've also added a link from
   the Impeller page to the detailed [Can I use Impeller?][]
@@ -58,13 +65,18 @@ This website release includes several important updates!
 
 * For developers interested in monetization, we have
   introduced a new [Interactive Media Ads][] package.
-  You can find it through **App solutions > 
-  Monetization > Advertising** in the website's side nav.
+  You can find it through the website in the side
+  navigation menu under
+  **App solutions > Monetization > Advertising**.
   Also, check out the [Video & web app support in Flutter][ad-bp]
   blog post.
 
+* We have new docs for using Flutter with Android, specifically, 
+  [Launching a Jetpack Compose activity from your Flutter application][jc]
+  and [Calling JetPack APIs][jetpack-api].
+
 * Work continues on the [Learn the fundamentals][fwe] pages
-  (former called the First Week Experience).
+  (formerly called the First Week Experience).
   Besides updates to several pages, check out the new
   [Intro to Dart][] page.
 
@@ -93,8 +105,12 @@ This website release includes several important updates!
 [Flutter AI Toolkit]: /ai-toolkit
 [fwe]: /get-started/fundamentals
 [Interactive Media Ads]: {site.pub-pkg}}/interactive_media_ads
+[jc]: /platform-integration/android/compose-activity
+[jetpack-api]: /platform-integration/android/call-jetpack-apis
 [Intro to Dart]: /get-started/fundamentals/dart
 [plugin-authors]: /packages-and-plugins/swift-package-manager/for-plugin-authors
+[Support for WebAssembly (Wasm)]: /platform-integration/web/wasm
+[web renderers]: /platform-integration/web/renderers
 
 ---
 
