@@ -506,8 +506,8 @@ in addition to the [custom styles example][custom-ex],
 check out the [dark mode example][] and the [demo app][].
 
 [custom-ex]: {{site.github}}/flutter/ai/blob/main/example/lib/custom_styles/custom_styles.dart
-[dart mode example]: 
-[demo app]: 
+[dart mode example]: {{site.github}}/flutter/ai/blob/main/example/lib/dark_mode/dark_mode.dart
+[demo app]: {{site.github}}/flutter/ai#online-demo
 [reference documentation]: {{site.pub-api}}/flutter_ai_toolkit/latest/flutter_ai_toolkit/LlmChatViewStyle-class.html
 
 ## Chat without UI

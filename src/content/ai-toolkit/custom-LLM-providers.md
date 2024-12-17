@@ -36,7 +36,7 @@ that is required to plug the provider into the following:
 * The [Gemini provider][],
   which wraps the the `google_generative_ai` package
 * The [Vertex provider][],
-  which wraps the the `firebase_vertexai` package
+  which wraps the `firebase_vertexai` package
 * The [Echo provider][],
   which is useful as a minimal provider example
 
@@ -275,10 +275,11 @@ class GeminiProvider extends LlmProvider with ChangeNotifier {
 
 ## Examples
 
-The [Gemini provider][] and [Verter provider][]
+The [Gemini provider][] and [Vertex provider][]
 implementations are nearly identical and provide
 a good starting point for your own custom provider.
-If you’d like to see an example provider implementation with all of the calls to the underlying LLM stripped away,
+If you’d like to see an example provider implementation with
+all of the calls to the underlying LLM stripped away,
 check out the [Echo example app][], which simply formats
 the user’s prompt and attachments as Markdown
 to send back to the user as its response.
