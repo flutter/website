@@ -113,10 +113,14 @@ In the short term, you can scale the components themselves.
 
 ```dart
 extension IntColorComponents on Color {
-  int get intAlpha => this.a ~/ 255;
-  int get intRed => this.r ~/ 255;
-  int get intGreen => this.g ~/ 255;
-  int get intBlue => this.b ~/ 255;
+  int get intAlpha => _floatToInt8(this.a);
+  int get intRed => _floatToInt8(this.r);
+  int get intGreen => _floatToInt8(this.g);
+  int get intBlue => _floatToInt8(this.b);
+
+  int _floatToInt8(double x) {
+    return (x * 255.0).round() & 0xff;
+  }
 }
 ```
 
