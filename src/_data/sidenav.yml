@@ -79,6 +79,7 @@
     - title: AI
       children:
       - title: AI Toolkit guide
+        permalink: /ai-toolkit
         children:
         - title: Overview
           permalink: /ai-toolkit
@@ -87,7 +88,7 @@
         - title: Feature integration
           permalink: /ai-toolkit/feature-integration
         - title: Custom LLM providers
-          permalink: /ai-toolkit/custom-LLM-providers
+          permalink: /ai-toolkit/custom-llm-providers
         - title: Chat client sample
           permalink: /ai-toolkit/chat-client-sample
       - title: Build with Google AI Dart SDK (video)

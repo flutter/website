@@ -7,7 +7,7 @@ prev:
   path: /ai-toolkit/user-experience
 next:
   title: Custom LLM providers
-  path: /ai-toolkit/custom-LLM-providers
+  path: /ai-toolkit/custom-llm-providers
 ---
 
 In addition to the features that are provided
