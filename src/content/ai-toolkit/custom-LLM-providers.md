@@ -142,11 +142,11 @@ class GeminiProvider extends LlmProvider with ChangeNotifier {
 }
 ```
 
-You’ll notice several things in this code:
+You'll notice several things in this code:
 * The use of `ChangeNotifier` to implement the `Listenable`
   method requirements from the `LlmProvider` interface
 * The ability to pass initial history in as a constructor parameter
-* Notifying listeners when there’s a new user
+* Notifying listeners when there's a new user
   prompt/LLM response pair
 * Notifying listeners when the history is changed manually
 * Creating a new chat when the history changes, using the new history
@@ -278,10 +278,10 @@ class GeminiProvider extends LlmProvider with ChangeNotifier {
 The [Gemini provider][] and [Vertex provider][]
 implementations are nearly identical and provide
 a good starting point for your own custom provider.
-If you’d like to see an example provider implementation with
+If you'd like to see an example provider implementation with
 all of the calls to the underlying LLM stripped away,
 check out the [Echo example app][], which simply formats
-the user’s prompt and attachments as Markdown
+the user's prompt and attachments as Markdown
 to send back to the user as its response.
 
 [Echo example app]: {{site.github}}/flutter/ai/blob/main/lib/src/providers/implementations/echo_provider.dart

@@ -13,7 +13,7 @@ next:
 The [`LlmChatView`][] widget is the entry point for the
 interactive chat experience that AI Toolkit provides.
 Hosting an instance of the `LlmChatView` enables a
-number of user experience features that don’t require
+number of user experience features that don't require
 any additional code to use:
 
 * **Multi-line text input**: Allows users to paste long text
@@ -35,7 +35,7 @@ any additional code to use:
 ## Multi-line text input
 
 The user has  options when it comes to submitting
-their prompt once they’ve finished composing it,
+their prompt once they've finished composing it,
 which again differs depending on their platform:
 
 * **Mobile**: Tap the **Submit** button
@@ -47,10 +47,10 @@ with embedded newlines in them. If the user has existing
 text with newlines, they can paste them into the
 prompt text field as normal.
 
-If they’d like to embed newlines into their prompt
+If they'd like to embed newlines into their prompt
 manually as they enter it, they can do so.
 The gesture for that activity differs based on the
-platform they’re using:
+platform they're using:
 
 * **Mobile**: Tap Return key on the virtual keyboard
 * **Web**: Unsupported
@@ -76,7 +76,7 @@ Tapping the **Mic** button starts the recording:
 
 ![Screenshot of entering text](/assets/images/docs/ai-toolkit/enter-textfield.png)
 
-Pressing the **Stop** button translates the user’s voice input into text:
+Pressing the **Stop** button translates the user's voice input into text:
 
 This text can then be edited, augmented and submitted as normal.
 
@@ -93,12 +93,12 @@ and **Attach File** icons:
 
 ![Screenshot of the 4 icons](/assets/images/docs/ai-toolkit/multi-media-icons.png)
 
-The **Take Photo** button allows the user to use their device’s camera to take a photo:
+The **Take Photo** button allows the user to use their device's camera to take a photo:
 
 ![Selfie image](/assets/images/docs/ai-toolkit/selfie.png)
 
 Pressing the **Image Gallery** button lets the user upload
-from their device’s image gallery:
+from their device's image gallery:
 
 ![Download image from gallery](/assets/images/docs/ai-toolkit/download-from-gallery.png)
 
@@ -157,7 +157,7 @@ to the **Edit** option on their most recent prompt:
 ![How to access edit menu](/assets/images/docs/ai-toolkit/accessing-edit-menu.png)
 
 Once the user taps the **Edit** button, they enter Editing mode,
-which removes both the user’s last prompt and the LLM’s
+which removes both the user's last prompt and the LLM's
 last response from the chat history,
 puts the text of the prompt into the text field, and
 provides an Editing indicator:
@@ -174,15 +174,15 @@ their previous LLM response.
 
 When the `LlmChatView` widget is hosted in a [Material app][],
 it uses facilities provided by the Material design language,
-such as Material’s [`TextField`][].
+such as Material's [`TextField`][].
 Likewise, when hosted in a [Cupertino app][],
 it uses those facilities, such as [`CupertinoTextField`][].
 
 ![Cupertino example app](/assets/images/docs/ai-toolkit/cupertino-chat-app.png)
 
 However, while the chat view supports both the Material and
-Cupertino app types, it doesn’t automatically adopt the associated themes.
-Instead, that’s set by the `style` property of the `LlmChatView`
+Cupertino app types, it doesn't automatically adopt the associated themes.
+Instead, that's set by the `style` property of the `LlmChatView`
 as described in the [Custom styling][] documentation.
 
 [Cupertino app]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html

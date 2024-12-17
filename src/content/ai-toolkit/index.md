@@ -28,7 +28,7 @@ integrations: Google Gemini AI and Firebase Vertex AI.
 * **Multimedia attachments**: Enables sending and
   receiving various media types.
 * **Custom styling**: Offers extensive customization to
-  match your app’s design.
+  match your app's design.
 * **Chat serialization/deserialization**: Store and retrieve conversations
   between app sessions.
 * **Custom response widgets**: Introduce specialized UI components
@@ -76,7 +76,7 @@ repository to prevent unauthorized access.
 
 [obtain an API key]: https://aistudio.google.com/app/apikey
 
-You’ll also need to choose a specific Gemini model name
+You'll also need to choose a specific Gemini model name
 to use in creating an instance of the Gemini model.
 The following example uses gemini-1.5-flash,
 but you can choose from an [ever-expanding set of models][models].
@@ -133,7 +133,7 @@ follow the steps described in the
 
 [vertex]: https://firebase.google.com/docs/vertex-ai/get-started?platform=flutter
 
-Once that’s complete, integrate the new Firebase project
+Once that's complete, integrate the new Firebase project
 into your Flutter app using the `flutterfire CLI` tool,
 as described in the [Add Firebase to your Flutter app][firebase] docs.
 
@@ -206,11 +206,11 @@ like voice input and media attachments,
 ensure that your app has the necessary permissions:
 
 * **Microphone access**: Configure according to the
-  [record package’s permission setup instructions][record].
-* **File selection**: Follow the [file_selector plugin’s instructions][file].
+  [record package's permission setup instructions][record].
+* **File selection**: Follow the [file_selector plugin's instructions][file].
 * **Image selection**: To take a picture on _or_ select a picture from their
   device, refer to the
-  [image_picker plugin’s installation instructions][image_picker].
+  [image_picker plugin's installation instructions][image_picker].
 * **Web photo**: To take a picture on the web, configure the app
   according to the [camera plugin's setup instructions][camera].
 

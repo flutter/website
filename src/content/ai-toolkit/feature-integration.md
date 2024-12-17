@@ -29,7 +29,7 @@ additional functionality:
 * **Custom styling**: Define unique visual styles to match the chat
   appearance to the overall app.
 * **Chat w/o UI**: Interact directly with the LLM providers without
-  affecting the user’s current chat session.
+  affecting the user's current chat session.
 * **Custom LLM providers**: Build your own LLM provider for integration of chat
   with your own model backend.
 * **Rerouting prompts**: Debug, log, or reroute messages meant for the provider
@@ -81,7 +81,7 @@ the user some idea of what the chat session has been optimized for:
 
 The suggestions are only shown when there is no existing
 chat history. Clicking one copies the text into the
-user’s prompt editing area. To set the list of suggestions,
+user's prompt editing area. To set the list of suggestions,
 construct the `LlmChatView` with the `suggestions` parameter:
 
 ```dart
@@ -115,12 +115,12 @@ take a look at the [suggestions example][].
 
 ## LLM instructions
 
-To optimize an LLM’s responses based on the needs
-of your app, you’ll want to give it instructions.
+To optimize an LLM's responses based on the needs
+of your app, you'll want to give it instructions.
 For example, the [recipes example app][] uses the
 `systemInstructions` parameter of the `GenerativeModel`
 class to tailor the LLM to focus on delivering recipes
-based on the user’s instructions:
+based on the user's instructions:
 
 ```dart
 class _HomePageState extends State<HomePage> {
@@ -151,7 +151,7 @@ Setting system instructions is unique to each provider;
 both the `GeminiProvider` and the `VertexProvider`
 allow you to provide them through the `systemInstruction` parameter.
 
-Notice that, in this case, we’re bringing in user preferences
+Notice that, in this case, we're bringing in user preferences
 as part of the creation of the LLM provider passed to the
 `LlmChatView` constructor. We set the instructions as part
 of the creation process each time the user changes their preferences.
@@ -208,10 +208,10 @@ or use it to construct an instance of the `ListenableBuilder` class.
 The `generateStream` method calls into the underlying LLM
 without affecting the history. Calling the `sendMessageStream`
 method changes the history by adding two new messages to the
-provider’s history—one for the user message and one for the LLM
+provider's history—one for the user message and one for the LLM
 response—when the response is completed. The chat view uses
-`sendMessageStream` when it processes a user’s chat prompt and
-`generateStream` when it’s processing the user’s voice input.
+`sendMessageStream` when it processes a user's chat prompt and
+`generateStream` when it's processing the user's voice input.
 
 To see or set the history, you can access the `history` property:
 
@@ -219,7 +219,7 @@ To see or set the history, you can access the `history` property:
 void _clearHistory() => _provider.history = [];
 ```
 
-The ability to access a provider’s history is also useful
+The ability to access a provider's history is also useful
 when it comes to recreating a provider while maintaining the history:
 
 ```dart
@@ -331,7 +331,7 @@ you want to create a custom widget to show the
 LLM response that's specific to and integrated with your app.
 For example, when the user requests a recipe in the
 [recipes example app][], the LLM response is used
-to create a widget that’s specific to showing recipes
+to create a widget that's specific to showing recipes
 just like the rest of the app does and to provide for an
 **Add** button in case the user would like to add
 the recipe to their database:
@@ -352,7 +352,7 @@ LlmChatView(
 ```
 
 In this particular example, the `RecipeReponseView`
-widget is constructed with the LLM provider’s response text
+widget is constructed with the LLM provider's response text
 and uses that to implement its `build` method:
 
 ```dart
@@ -418,10 +418,10 @@ This code parses the text to extract introductory text
 and the recipe from the LLM, bundling them together
 with an **Add Recipe** button to show in place of the Markdown.
 
-Notice that we’re parsing the LLM response as JSON.
-It’s common to set the provider into JSON mode and
+Notice that we're parsing the LLM response as JSON.
+It's common to set the provider into JSON mode and
 to provide a schema to restrict the format of its responses
-to ensure that we’ve got something we can parse.
+to ensure that we've got something we can parse.
 Each provider exposes this functionality in its own way,
 but both the `GeminiProvider` and `VertexProvider` classes
 enable this with a `GenerationConfig` object that the
@@ -472,10 +472,10 @@ This code initializes the `GenerationConfig` object
 by setting the `responseMimeType` parameter to `'application/json'`
 and the `responseSchema` parameter to an instance of the
 `Schema` class that defines the structure of the JSON
-that you’re prepared to parse. In addition,
-it’s good practice to also ask for JSON and to provide
+that you're prepared to parse. In addition,
+it's good practice to also ask for JSON and to provide
 a description of that JSON schema in the system instructions,
-which we’ve done here.
+which we've done here.
 
 To see this in action, check out the [recipes example app][].
 
@@ -512,7 +512,7 @@ check out the [dark mode example][] and the [demo app][].
 
 ## Chat without UI
 
-You don’t have to use the chat view to access the
+You don't have to use the chat view to access the
 functionality of the underlying provider.
 In addition to being able to simply call it with
 whatever proprietary interface it provides,
@@ -524,13 +524,13 @@ As an example, the recipes example app provides a
 Magic button on the page for editing recipes.
 The purpose of that button is to update an existing recipe
 in your database with your current food preferences.
-Pressing the button allows you to preview the recommended changes and decide whether you’d like to apply them or not:
+Pressing the button allows you to preview the recommended changes and decide whether you'd like to apply them or not:
 
 ![User decides whether to update recipe in database](/assets/images/docs/ai-toolkit/apply-changes-decision.png)
 
 Instead of using the same provider that the chat portion
 of the app uses, which would insert spurious user messages
-and LLM responses into the user’s chat history,
+and LLM responses into the user's chat history,
 the Edit Recipe page instead creates its own provider
 and uses it directly:
 
@@ -586,8 +586,8 @@ class _EditRecipePageState extends State<EditRecipePage> {
 ```
 
 The call to `sendMessageStream` creates entries in the
-provider’s history, but since it’s not associated with a chat view,
-they won’t be shown. If it’s convenient,
+provider's history, but since it's not associated with a chat view,
+they won't be shown. If it's convenient,
 you can also accomplish the same thing by calling `generateStream`,
 which allows you to reuse an existing provider without affecting
 the chat history.
@@ -599,7 +599,7 @@ check out the [Edit Recipe page][] of the recipes example.
 
 ## Rerouting prompts
 
-If you’d like to debug, log, or manipulate the connection
+If you'd like to debug, log, or manipulate the connection
 between the chat view and the underlying provider,
 you can do so with an implementation of an [`LlmStreamGenerator`][] function.
 You then pass that function to the `LlmChatView` in the
@@ -647,8 +647,8 @@ class ChatPage extends StatelessWidget {
 
 This example logs the user prompts and LLM responses
 as they go back and forth. When providing a function
-as a `messageSender`, it’s your responsibility to call
-the underlying provider. If you don’t, it won’t get the message.
+as a `messageSender`, it's your responsibility to call
+the underlying provider. If you don't, it won't get the message.
 This capability allows you to do advanced things like routing to
 a provider dynamically or Retrieval Augmented Generation (RAG).
 
