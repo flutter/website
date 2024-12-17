@@ -35,7 +35,7 @@ additional functionality:
 * **Rerouting prompts**: Debug, log, or reroute messages meant for the provider
   to track down issues or route prompts dynamically.
 
-[`LlmChatView`]: {{site.pub-api/flutter_ai_toolkit/latest/flutter_ai_toolkit/LlmChatView-class.html
+[`LlmChatView`]: {{site.pub-api}}/flutter_ai_toolkit/latest/flutter_ai_toolkit/LlmChatView-class.html
 
 ## Welcome messages
 
