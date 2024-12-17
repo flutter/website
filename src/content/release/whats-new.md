@@ -51,7 +51,10 @@ This website release includes several important updates!
   that has six recipes for common design patterns
   that you might find useful.
 
-* Impeller
+* Impeller is now the default rendering engine for
+  iOS and Android. We've also added a link from
+  the Impeller page to the detailed [Can I use Impeller?][]
+  page.
 
 * For developers interested in monetization, we have
   introduced a new [Interactive Media Ads][] package.
@@ -84,6 +87,7 @@ This website release includes several important updates!
 [app-authors]: /packages-and-plugins/swift-package-manager/for-app-developers
 [Architecting Flutter apps]: /app-architecture
 [bc-3.27]: /breaking-changes/#released-in-flutter-3-27
+[Can I use Impeller?]: https://docs.google.com/spreadsheets/d/11Jr0YTUzL8R1ZLHOAqiHiQzdmcUp2Ag5j69Kd3RSUoA/edit?gid=0#gid=0
 [deep-linking-tool]: /tools/devtools/deep-links
 [design patterns]: /app-architecture/design-patterns
 [Flutter AI Toolkit]: /ai-toolkit
