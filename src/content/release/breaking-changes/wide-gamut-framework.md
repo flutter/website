@@ -6,8 +6,8 @@ description: >-
 
 ## Summary
 
-The API for the [`Color`][] class in `dart:ui` is changing to support [wide
-gamut color spaces][].
+The API for the [`Color`][] class in `dart:ui` is changing to
+support [wide gamut color spaces][].
 
 ## Context
 
@@ -15,10 +15,11 @@ The Flutter engine [already supports wide gamut color][] with [Impeller][], and
 the support is now being added [to the framework][].
 
 The iOS devices that Flutter supports render to a larger array of colors,
-specifically in the [DisplayP3][] color space. After this change, the Flutter
-framework can render all of those colors on iOS Impeller, and the `Color` class
-will be better prepared for future color spaces or changes to
-color component bit depth.
+specifically in the [DisplayP3][] color space.
+After this change, the Flutter framework can
+render all of those colors on iOS Impeller, and
+the `Color` class is better prepared for future color spaces or
+changes to color component bit depth.
 
 ## Description of change
 
@@ -26,8 +27,8 @@ Changes to [`Color`][]:
 
  1. Adds an enum field that specifies its [`ColorSpace`][].
  1. Adds API to use normalized floating-point color components.
- 1. Removes API that uses 8-bit unsigned integer color components that can lead
-    to data loss.
+ 1. Removes API that uses 8-bit unsigned integer color components that can
+    lead to data loss.
 
 Changes to [`ColorSpace`][]:
 
@@ -37,24 +38,26 @@ Changes to [`ColorSpace`][]:
 
 ### 8-bit unsigned integer constructors
 
-Constructors like `Color.fromARGB` remain unchanged and have continued
-support. To take advantage of Display P3 colors, you must
-use the new `Color.from` constructor that takes normalized floating-point
-color components.
+Constructors like `Color.fromARGB` remain unchanged and have continued support.
+To take advantage of Display P3 colors, you must use the new
+`Color.from` constructor that takes normalized floating-point color components.
 
 ```dart
-// Before
+// Before: Constructing an sRGB color from the lower 8 bits of four integers.
 final magenta = Color.fromARGB(0xff, 0xff, 0x0, 0xff);
-// After
-final magenta = Color.from(alpha: 1.0, red: 1.0, green: 0.0, blue: 1.0)
+
+// After: Constructing a color with normalized floating-point components.
+final magenta = Color.from(alpha: 1.0, red: 1.0, green: 0.0, blue: 1.0);
 ```
 
 ### Implementors of `Color`
 
-There are new methods being added to `Color` so any class that `implements`
-Color will break and have to implement the new methods like `Color.a`, and
-`Color.b`. Ultimately implementors should be migrated to take advantage of the
-new API. In the short-term, these methods can easily be implemented without
+There are new methods being added to `Color` so
+any class that `implements Color` will break and have to
+implement the new methods, such as `Color.a` and `Color.b`.
+
+Ultimately, implementors should migrate to take advantage of the new API.
+In the short-term, these methods can easily be implemented without
 changing the underlying structure of your class.
 
 For example:
@@ -69,17 +72,19 @@ class Foo implements Color {
 ```
 
 :::note
-We plan to eventually lock the `Color` class down and make it `sealed`. Now
-might be a good opportunity to switch from [inheritance to composition][] and
-stop reimplementing `Color`.
+Flutter plans to eventually lock the `Color` class down and make it `sealed`.
+
+Now might be a good opportunity to switch from [inheritance to composition][]
+and stop reimplementing `Color`.
 :::
 
 ### Color space support
 
-Clients that use `Color` and perform any sort of calculation on the color
-components should now first check the color space component before performing
-calculations. To help with that, you can use the new `Color.withValues` method
-to perform color space conversions.
+Clients that use `Color` and perform any sort of calculation on
+the color components should now first check the
+color space component before performing calculations.
+To help with that, you can use the new `Color.withValues` method to
+perform color space conversions.
 
 Example migration:
 
@@ -95,49 +100,59 @@ double redRatio(Color x, Color y) {
 }
 ```
 
-Performing calculations with color components without aligning color spaces can
-lead to subtle unexpected results. In the example above the `redRatio` would
-have the difference of 0.09 when calculated with differing color spaces versus
-aligned color spaces.
+Performing calculations with color components without
+aligning color spaces can lead to subtle unexpected results.
+In the preceding example, the `redRatio` would have the difference of `0.09`
+when calculated with differing color spaces versus aligned color spaces.
 
 ### Access color components
 
-If your app ever accesses a `Color` component, consider taking advantage of the
-floating-point components. In the short term, you can easily scale the
-components themselves.
+If your app ever accesses a `Color` component, consider
+taking advantage of the floating-point components.
+In the short term, you can scale the components themselves.
 
 ```dart
 extension IntColorComponents on Color {
-  int get intAlpha => this.a ~/ 255;
-  int get intRed => this.r ~/ 255;
-  int get intGreen => this.g ~/ 255;
-  int get intBlue => this.b ~/ 255;
+  int get intAlpha => _floatToInt8(this.a);
+  int get intRed => _floatToInt8(this.r);
+  int get intGreen => _floatToInt8(this.g);
+  int get intBlue => _floatToInt8(this.b);
+
+  int _floatToInt8(double x) {
+    return (x * 255.0).round() & 0xff;
+  }
 }
 ```
 
 ### Opacity
 
-Previously, Color had the concept of "opacity" which showed up in the methods
-`opacity` and `withOpacity()`. Opacity was introduced as a way to communicate
-with `Color` about its alpha channel with floating point values. Now that alpha
-is a floating-point value, opacity is redundant and `opacity` and `withOpacity`
-are deprecated and slated to be removed.
+Previously, Color had the concept of "opacity" which
+showed up in the methods `opacity` and `withOpacity()`.
+Opacity was introduced as a way to communicate with `Color` about
+its alpha channel with floating point values.
+Now that alpha is a floating-point value, opacity is redundant
+and `opacity` and `withOpacity` are deprecated and slated to be removed.
 
-#### `opacity` migration
+<a id="opacity-migration" aria-hidden="true"></a>
+#### Migrate `opacity`
 
 ```dart
-// Before
+// Before: Access the alpha channel as a (converted) floating-point value.
 final x = color.opacity;
-// After
+
+// After: Access the alpha channel directly.
 final x = color.a;
 ```
 
-#### `withOpacity` migration
+<a id="withopacity-migration" aria-hidden="true"></a>
+#### Migrate `withOpacity`
 
 ```dart
-// Before
+// Before: Create a new color with the specified opacity.
 final x = color.withOpacity(0.0);
-// After
+
+// After: Create a new color with the specified alpha channel value,
+// accounting for the current or specified color space.
 final x = color.withValues(alpha: 0.0);
 ```
 
@@ -145,14 +160,15 @@ final x = color.withValues(alpha: 0.0);
 
 Once `Color` stores its color components as floating-point numbers,
 equality works slightly differently.
-When calculating colors there might be tiny
-difference in values that could be considered equal.
-To accommodate this use the [`closeTo`][] matcher or the [`isColorSameAs`][] matcher.
+When calculating colors, there might be a
+tiny difference in values that could be considered equal.
+To accommodate this use the [`closeTo`][] or [`isColorSameAs`][] matchers.
 
 ```dart
-// Before
+// Before: Check exact equality of int-based color.
 expect(calculateColor(), const Color(0xffff00ff));
-// After
+
+// After: Check rough equality of floating-point-based color.
 expect(calculateColor(), isSameColorAs(const Color(0xffff00ff)));
 ```
 
@@ -160,18 +176,23 @@ expect(calculateColor(), isSameColorAs(const Color(0xffff00ff)));
 
 ### Phase 1 - New API introduction, old API deprecation
 
-**Release to stable:** TBD
-**PR:**: [PR 54737][]
+Landed in version: 3.26.0-0.1.pre<br>
+In stable release: 3.27.0
 
 ### Phase 2 - Old API removal
 
-**Release to stable:** TBD
+Landed in version: Not yet<br>
+In stable release: Not yet
 
 ## References
 
-Relevant PRs:
+Relevant issue:
 
 * [issue 127855][]: Implement wide gamut color support in the Framework
+
+Relevant PRs:
+
+* [PR 54737][]: Framework wide color
 
 [`Color`]: {{site.api}}/flutter/dart-ui/Color-class.html
 [already supports wide gamut color]: {{site.repo.flutter}}/issues/55092

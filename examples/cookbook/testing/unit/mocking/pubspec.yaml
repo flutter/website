@@ -1,6 +1,7 @@
 name: mocking
 description: Use the Mockito package to mimic the behavior of services for testing.
 
+resolution: workspace
 environment:
   sdk: ^3.6.0
 
@@ -12,8 +13,6 @@ dependencies:
   http: ^1.2.0
 
 dev_dependencies:
-  example_utils:
-    path: ../../../../example_utils
   flutter_test:
     sdk: flutter
   mockito: ^5.4.4

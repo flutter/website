@@ -129,7 +129,7 @@ If you prefer, you can use a version manager such as [nvm][],
 and run `nvm install` from the repository's root directory.
 
 If you already have Node installed, verify it's available on your path
-and already the latest stable version _(currently `22.11` or later)_:
+and already the latest stable version _(currently `22.12` or later)_:
 
 ```console
 node --version

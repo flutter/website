@@ -1,6 +1,7 @@
 name: games_services_example
 description: Games services
 
+resolution: workspace
 environment:
   sdk: ^3.6.0
 
@@ -10,10 +11,6 @@ dependencies:
 
   games_services: ^4.0.0
   logging: ^1.2.0
-
-dev_dependencies:
-  example_utils:
-    path: ../../../example_utils
 
 flutter:
   uses-material-design: true

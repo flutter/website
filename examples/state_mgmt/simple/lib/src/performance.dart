@@ -30,8 +30,8 @@ class ChildUsingDescendant extends StatelessWidget {
   }
 }
 
-class DescendantInLeafNode_Good extends StatelessWidget {
-  const DescendantInLeafNode_Good({super.key});
+class DescendantInLeafNodeGood extends StatelessWidget {
+  const DescendantInLeafNodeGood({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -52,8 +52,8 @@ class DescendantInLeafNode_Good extends StatelessWidget {
   }
 }
 
-class DescendantNotInLeafNode_Bad extends StatelessWidget {
-  const DescendantNotInLeafNode_Bad({super.key});
+class DescendantNotInLeafNodeBad extends StatelessWidget {
+  const DescendantNotInLeafNodeBad({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -91,17 +91,17 @@ class MyHomepage extends StatelessWidget {
       body: const Column(
         children: [
           ChildUsingDescendant(),
-          DescendantNotInLeafNode_Bad(),
-          DescendantInLeafNode_Good(),
-          NonRebuilding_Good(),
+          DescendantNotInLeafNodeBad(),
+          DescendantInLeafNodeGood(),
+          NonRebuildingGood(),
         ],
       ),
     );
   }
 }
 
-class NonRebuilding_Good extends StatelessWidget {
-  const NonRebuilding_Good({super.key});
+class NonRebuildingGood extends StatelessWidget {
+  const NonRebuildingGood({super.key});
 
   @override
   Widget build(BuildContext context) {

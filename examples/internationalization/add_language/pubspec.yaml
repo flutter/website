@@ -1,6 +1,7 @@
 name: add_language
 description: An i18n app example that adds a supported language
 
+resolution: workspace
 environment:
   sdk: ^3.6.0
 
@@ -12,8 +13,6 @@ dependencies:
   intl: any # Use the pinned version from flutter_localizations
 
 dev_dependencies:
-  example_utils:
-    path: ../../example_utils
   flutter_test:
     sdk: flutter
 

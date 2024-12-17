@@ -8,21 +8,25 @@ description: >-
 ## Summary
 
 `CardTheme`, `DialogTheme` and `TabBarTheme` were refactored to 
-conform to Flutter's conventions for component themes. `CardThemeData`, 
-`DialogThemeData` and `TabBarThemeData` were added to define overrides for the
-defaults of the component visual properties. Future releases will continue to
-normalize component themes like these for a more consistent theming experience
-in the material library.
+conform to Flutter's conventions for component themes.
+`CardThemeData`, `DialogThemeData`, and `TabBarThemeData` were added to
+define overrides for the defaults of the component visual properties.
+Releases of Flutter continue to normalize component themes like these for
+a more consistent theming experience in the material library.
 
 ## Migration guide
 
-In `ThemeData`, the type of `cardTheme` property has been changed from
-`CardTheme` to `CardThemeData`; the type of `dialogTheme` property has been
-changed from `DialogTheme` to `DialogThemeData`; the type of `tabBarTheme`
-property has been changed from `TabBarTheme` to `TabBarThemeData`.
+In `ThemeData`:
 
-The return type of the compoenent theme `xTheme.of()` method and
-`Theme.of().xTheme` now has also changed to `xThemeData` accordingly.
+- The type of the `cardTheme` property has been
+  changed from `CardTheme` to `CardThemeData`.
+- The type of the `dialogTheme` property has been
+  changed from the `DialogTheme` to `DialogThemeData`.
+- The type of `tabBarTheme` property has been
+  changed from `TabBarTheme` to `TabBarThemeData`.
+
+The return type of the component theme `xTheme.of()` methods and
+`Theme.of().xTheme` have also changed to `xThemeData` accordingly.
 
 Code before migration:
 

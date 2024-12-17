@@ -6,7 +6,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // #docregion CustomScrollView
-    return Scaffold(
+    return const Scaffold(
       // No appBar property provided, only the body.
       body: CustomScrollView(
           // Add the app bar and list of items as slivers in the next steps.

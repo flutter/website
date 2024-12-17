@@ -4,6 +4,7 @@ description: A new Flutter project.
 publish_to: none
 version: 1.0.0+1
 
+resolution: workspace
 environment:
   sdk: ^3.6.0
 
@@ -18,8 +19,6 @@ dependencies:
   url_launcher: ^6.3.0
 
 dev_dependencies:
-  example_utils:
-    path: ../../../example_utils
   flutter_test:
     sdk: flutter
 

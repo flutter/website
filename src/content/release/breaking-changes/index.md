@@ -1,7 +1,8 @@
 ---
 title: Breaking changes and migration guides
 short-title: Breaking changes
-description: A list of migration guides for breaking changes in Flutter.
+description: >-
+   A collection of notices and migration guides for breaking changes in Flutter.
 ---
 
 As described in the [breaking change policy][],
@@ -18,12 +19,12 @@ Not every breaking change is supported in this way,
 but many are.
 
 To avoid being broken by future versions of Flutter,
-consider submitting your tests to our [test registry].
+consider submitting your tests to the framework's [test registry][].
 
 ## Breaking changes by release
 
-The following guides are available. They are sorted by
-release, and listed in alphabetical order:
+The following guides are available.
+They're sorted by release and listed in alphabetical order:
 
 [breaking change policy]: /release/compatibility-policy
 [Flutter announce]: {{site.groups}}/forum/#!forum/flutter-announce
@@ -33,45 +34,42 @@ release, and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Deprecate `TextField.canRequestFocus`][]
+* [Deprecate `ThemeData.dialogBackgroundColor` in favor of `DialogThemeData.backgroundColor`][]
+* [Deprecate `ThemeData.indicatorColor` in favor of `TabBarThemeData.indicatorColor`][]
 * [`ImageFilter.blur` default tile mode automatic selection][]
 * [Localized messages are generated into source, not a synthetic package][]
-* [`.flutter-plugins-dependencies` replaces `.flutter-plugins`][]
+* [Stop generating `AssetManifest.json`][]
 * [Updated Material 3 `Slider`][]
-* [Updated Material 3 Progress Indicators][]
-* [Deprecate `ThemeData.indicatorColor` in favor of `TabBarThemeData.indicatorColor`][]
-* [Deprecate `ThemeData.dialogBackgroundColor` in favor of `DialogThemeData.backgroundColor`][]
+* [Updated Material 3 progress indicators][]
+* [`.flutter-plugins-dependencies` replaces `.flutter-plugins`][]
 
+[Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
+[Deprecate `ThemeData.dialogBackgroundColor` in favor of `DialogThemeData.backgroundColor`]: /release/breaking-changes/deprecate-themedata-dialogbackgroundcolor
+[Deprecate `ThemeData.indicatorColor` in favor of `TabBarThemeData.indicatorColor`]: /release/breaking-changes/deprecate-themedata-indicatorcolor
 [`ImageFilter.blur` default tile mode automatic selection]: /release/breaking-changes/image-filter-blur-tilemode
 [Localized messages are generated into source, not a synthetic package]: /release/breaking-changes/flutter-generate-i10n-source
-[`.flutter-plugins-dependencies` replaces `.flutter-plugins`]: /release/breaking-changes/flutter-plugins-configuration
+[Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
 [Updated Material 3 `Slider`]: /release/breaking-changes/updated-material-3-slider
-[Updated Material 3 Progress Indicators]: /release/breaking-changes/updated-material-3-progress-indicators
-[Deprecate `ThemeData.dialogBackgroundColor` in favor of `DialogThemeData.backgroundColor`]: /release/breaking-changes/deprecate-themedata-dialogbackgroundcolor
+[Updated Material 3 progress indicators]: /release/breaking-changes/updated-material-3-progress-indicators
+[`.flutter-plugins-dependencies` replaces `.flutter-plugins`]: /release/breaking-changes/flutter-plugins-configuration
 
 <a id="released-in-flutter-327" aria-hidden="true"></a>
 ### Released in Flutter 3.27
 
 * [`Color` wide gamut support][]
-* [Remove invalid parameters for `InputDecoration.collapsed`][]
-* [Stop generating `AssetManifest.json`][]
-* [Deep links flag change][]
-* [Deprecate `TextField.canRequestFocus`][]
-* [Set default for SystemUiMode to Edge-to-Edge][]
-* [Material 3 Tokens Update in Flutter][]
 * [Component theme normalization][]
+* [Deep links flag change][]
+* [Material 3 Tokens Update in Flutter][]
+* [Remove invalid parameters for `InputDecoration.collapsed`][]
+* [Set default for SystemUiMode to Edge-to-Edge][]
 
 [`Color` wide gamut support]: /release/breaking-changes/wide-gamut-framework
-[Remove invalid parameters for `InputDecoration.collapsed`]: /release/breaking-changes/input-decoration-collapsed
-[Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
-[Deep links flag change]: /release/breaking-changes/deep-links-flag-change
-[Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
-[Set default for SystemUiMode to Edge-to-Edge]: /release/breaking-changes/default-systemuimode-edge-to-edge
-[Material 3 Tokens Update in Flutter]: /release/breaking-changes/material-design-3-token-update
 [Component theme normalization]: /release/breaking-changes/component-theme-normalization
-[Deprecate `ThemeData.dialogBackgroundColor` in favor of `DialogThemeData.backgroundColor`]: /release/breaking-changes/deprecate-themedata-dialogbackgroundcolor
-[Updated Material 3 `Slider`]: /release/breaking-changes/updated-material-3-slider
-[Updated Material 3 Progress Indicators]: /release/breaking-changes/updated-material-3-progress-indicators
-[Deprecate `ThemeData.indicatorColor` in favor of `TabBarThemeData.indicatorColor`]: /release/breaking-changes/deprecate-themedata-indicatorcolor
+[Deep links flag change]: /release/breaking-changes/deep-links-flag-change
+[Material 3 Tokens Update in Flutter]: /release/breaking-changes/material-design-3-token-update
+[Remove invalid parameters for `InputDecoration.collapsed`]: /release/breaking-changes/input-decoration-collapsed
+[Set default for SystemUiMode to Edge-to-Edge]: /release/breaking-changes/default-systemuimode-edge-to-edge
 
 <a id="released-in-flutter-324" aria-hidden="true"></a>
 ### Released in Flutter 3.24

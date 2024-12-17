@@ -128,7 +128,7 @@ of the Flutter DevTools tooling.
 
 The starting app is displayed in the following DartPad.
 
-<?code-excerpt "lib/starter.dart"?>
+<?code-excerpt "lib/starter.dart" remove="prefer_final_fields"?>
 ```dartpad title="Flutter beginning getting started hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 

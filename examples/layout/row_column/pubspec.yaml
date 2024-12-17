@@ -1,8 +1,9 @@
-name: layout
+name: row_column
 description: >-
   Sample app from "Building Layouts", https://docs.flutter.dev/ui/layout.
 version: 1.0.0
 
+resolution: workspace
 environment:
   sdk: ^3.6.0
 
@@ -12,8 +13,6 @@ dependencies:
   cupertino_icons: ^1.0.8
 
 dev_dependencies:
-  example_utils:
-    path: ../../example_utils
   flutter_test:
     sdk: flutter
 

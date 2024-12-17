@@ -1,35 +1,37 @@
 ---
-title: Material 3 Tokens Update in Flutter
+title: Material 3 tokens update in Flutter
 description: >-
-  The latest Material Design 3 tokens(v6.1) have been applied to the Flutter
-  Material library.
+  The latest Material Design 3 tokens (v6.1) have been applied to
+  the Flutter Material library.
 ---
 
 ## Summary
 
-The Material Design tokens updated the mapping of 4 color roles (only in Light
-mode) to be more visually appealing while retaining accessible contrast. Testing
-identified this change as [non-breaking] in Flutter, but some customers might
-notice this small change. The update affected the following color properties:
+The Material Design tokens updated the mapping of
+4 color roles in light mode to be more
+visually appealing while retaining accessible contrast.
+Testing identified this change as [non-breaking][] in Flutter, but
+some customers might notice this small change.
+The update affected the following color properties:
 
-* On-primary-container (Primary10 to Primary30)
-* On-secondary-container (Secondary10 to Secondary30)
-* On-tertiary-container (Tertiary10 to Tertiary30)
-* On-error-container (Error10 to Error30)
+* `onPrimaryContainer` (Primary10 to Primary30)
+* `onSecondaryContainer` (Secondary10 to Secondary30)
+* `onTertiaryContainer` (Tertiary10 to Tertiary30)
+* `onErrorContainer` (Error10 to Error30)
 
-Widgets that have been using these roles with their default value might look
-different.
+Widgets that have been using these roles as their
+default values might look different.
 
-Additionally, the Material 3 tokens updated the border color of Chips from
-`ColorScheme.outline` to `ColorScheme.outlineVariant` to improve visual
-hierarchy between chips and buttons. Chips (`Chip`, `ActionChip`, `ChoiceChip`,
-`FilterChip`, and `InputChip`) that have been using the chip border tokens may
-look different.
+Additionally, the Material 3 tokens updated the border color of
+chip widgets from `ColorScheme.outline` to `ColorScheme.outlineVariant` to
+improve visual hierarchy between chips and buttons.
+Chips (`Chip`, `ActionChip`, `ChoiceChip`, `FilterChip`, and `InputChip`) that
+have been using the chip border tokens may look different.
 
 ## Migration guide
 
-The differences in the mappings of the color roles are small. Use
-`ColorScheme.copyWith` to revert to the original default colors:
+The differences in the mappings of the color roles are small.
+Use `ColorScheme.copyWith` to revert to the original default colors:
 
 Code before migration:
 
@@ -48,13 +50,14 @@ final ColorScheme colors = ThemeData().colorScheme.copyWith(
 );
 ```
 
-After applying the token update, the default border color of M3 chips looks
-lighter. Take `ActionChip` as an example:
+After applying the token update,
+the default border color of M3 chips looks lighter.
+Take `ActionChip` as an example:
 
 Code before migration:
 
 ```dart
-final Widget chip = ActionChip(
+final chip = ActionChip(
   label: const Text('action chip'),
   onPressed: () {},
 );
@@ -63,7 +66,7 @@ final Widget chip = ActionChip(
 Code after migration:
 
 ```dart
-final Widget chip = ChipTheme(
+final chip = ChipTheme(
   data: ChipThemeData(
     side: BorderSide(
       color: Theme.of(context).colorScheme.outline
@@ -79,7 +82,7 @@ final Widget chip = ChipTheme(
 ## Timeline
 
 Landed in version: 3.26.0-0.0.pre<br>
-In stable release: not yet
+In stable release: 3.27
 
 ## References
 

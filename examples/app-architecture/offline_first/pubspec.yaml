@@ -1,6 +1,7 @@
 name: offline_first
 description: Example for offline_first cookbook recipe
 
+resolution: workspace
 environment:
   sdk: ^3.5.0
 
@@ -14,8 +15,6 @@ dev_dependencies:
     sdk: flutter
   build_runner: ^2.4.13
   freezed: ^2.5.7
-  example_utils:
-    path: ../../example_utils
 
 flutter:
   uses-material-design: true

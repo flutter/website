@@ -46,6 +46,7 @@ class _SignUpFormState extends State<SignUpForm> {
   final _lastNameTextController = TextEditingController();
   final _usernameTextController = TextEditingController();
 
+  // ignore: prefer_final_fields
   double _formProgress = 0;
 
   @override

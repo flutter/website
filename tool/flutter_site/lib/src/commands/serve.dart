@@ -33,7 +33,9 @@ final class ServeSiteCommand extends Command<int> {
     final process = await Process.start(
       'npx',
       [
-        'eleventy',
+        'tsx',
+        'node_modules/@11ty/eleventy/cmd.cjs',
+        '--config=eleventy.config.ts',
         '--serve',
         '--incremental',
         '--port=${Platform.environment['PORT'] ?? 4000}'

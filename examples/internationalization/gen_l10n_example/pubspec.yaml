@@ -3,6 +3,7 @@ publish_to: none
 description: >-
   Example of an internationalized Flutter app that uses `flutter gen-l10n`.
 
+resolution: workspace
 environment:
   sdk: ^3.6.0
 
@@ -14,10 +15,6 @@ dependencies:
     sdk: flutter
   intl: any
 # #enddocregion flutter-localizations
-
-dev_dependencies:
-  example_utils:
-    path: ../../example_utils
 
 # #docregion generate
 # The following section is specific to Flutter.
