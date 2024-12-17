@@ -8,7 +8,7 @@ google_site_verification: HFqxhSbf9YA_0rBglNLzDiWnrHiK_w4cqDh2YD2GEY4
 google_tag_manager_id: GTM-ND4LWWZ
 default_share_image: /assets/images/flutter-logo-sharing.png
 
-show_banner: false
+show_banner: true
 
 github_username: flutter
 branch: main
