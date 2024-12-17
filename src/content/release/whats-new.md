@@ -30,7 +30,7 @@ check out the [Flutter 3.27 umbrella blog post][3.27-umbrella]
 and the [Flutter 3.27 technical blog post][3.27-tech].
 You might also check out the [Dart 3.6 release][] blog post.
 
-[3.27-umbrella]: {{site.medium}}/flutter/todo
+[3.27-umbrella]: {{site.medium}}/flutter/flutter-in-production-f9418261d8e1
 [3.27-tech]: {{site.medium}}/flutter/whats-new-in-flutter-3-27-28341129570c
 [Dart 3.6 release]: {{site.medium}}/dartlang/announcing-dart-3-6-778dd7a80983
 
