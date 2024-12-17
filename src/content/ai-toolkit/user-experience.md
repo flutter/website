@@ -187,6 +187,6 @@ as described in the [Custom styling][] documentation.
 
 [Cupertino app]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
 [`CupertinoTextField`]: {{site.api}}/flutter/cupertino/CupertinoTextField-class.html
-[Custom styling]: /ai/feature-integration#custom-styling
+[Custom styling]: /ai-toolkit/feature-integration#custom-styling
 [Material app]: {{site.api}}/flutter/material/MaterialApp-class.html
 [`TextField`]: {{site.api}}/flutter/material/TextField-class.html
