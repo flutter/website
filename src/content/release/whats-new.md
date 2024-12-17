@@ -30,7 +30,7 @@ check out the [Flutter 3.27 umbrella blog post][3.27-umbrella]
 and the [Flutter 3.27 technical blog post][3.27-tech].
 You might also check out the [Dart 3.6 release][] blog post.
 
-[3.27-umbrella]: xxx
+[3.27-umbrella]: {{site.medium}}/flutter/todo
 [3.27-tech]: {{site.medium}}/flutter/whats-new-in-flutter-3-27-28341129570c
 [Dart 3.6 release]: {{site.medium}}/dartlang/announcing-dart-3-6-778dd7a80983
 
@@ -98,13 +98,13 @@ This website release includes several important updates!
 [ad-bp]: {{site.medium}}/flutter/video-web-ad-support-in-flutter-f50e5a3480a8
 [app-authors]: /packages-and-plugins/swift-package-manager/for-app-developers
 [Architecting Flutter apps]: /app-architecture
-[bc-3.27]: /breaking-changes/#released-in-flutter-3-27
+[bc-3.27]: /release/breaking-changes#released-in-flutter-3-27
 [Can I use Impeller?]: https://docs.google.com/spreadsheets/d/11Jr0YTUzL8R1ZLHOAqiHiQzdmcUp2Ag5j69Kd3RSUoA/edit?gid=0#gid=0
 [deep-linking-tool]: /tools/devtools/deep-links
 [design patterns]: /app-architecture/design-patterns
 [Flutter AI Toolkit]: /ai-toolkit
 [fwe]: /get-started/fundamentals
-[Interactive Media Ads]: {site.pub-pkg}}/interactive_media_ads
+[Interactive Media Ads]: {{site.pub-pkg}}/interactive_media_ads
 [jc]: /platform-integration/android/compose-activity
 [jetpack-api]: /platform-integration/android/call-jetpack-apis
 [Intro to Dart]: /get-started/fundamentals/dart
