@@ -34,7 +34,7 @@ all of which implement the `LlmProvider` interface
 that is required to plug the provider into the following:
 
 * The [Gemini provider][],
-  which wraps the the `google_generative_ai` package
+  which wraps the `google_generative_ai` package
 * The [Vertex provider][],
   which wraps the `firebase_vertexai` package
 * The [Echo provider][],

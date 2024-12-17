@@ -74,7 +74,7 @@ check out the [welcome example][].
 
 ## Suggested prompts
 
-You can provide a set up suggested prompts to give
+You can provide a set of suggested prompts to give
 the user some idea of what the chat session has been optimized for:
 
 ![Example suggested prompts](/assets/images/docs/ai-toolkit/example-of-suggested-prompts.png)
@@ -524,7 +524,8 @@ As an example, the recipes example app provides a
 Magic button on the page for editing recipes.
 The purpose of that button is to update an existing recipe
 in your database with your current food preferences.
-Pressing the button allows you to preview the recommended changes and decide whether you'd like to apply them or not:
+Pressing the button allows you to preview the recommended changes and
+decide whether you'd like to apply them or not:
 
 ![User decides whether to update recipe in database](/assets/images/docs/ai-toolkit/apply-changes-decision.png)
 

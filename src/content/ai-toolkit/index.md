@@ -52,8 +52,8 @@ The [source code for this demo][src-code] is available in the repo on GitHub.
 
 ## Get started
 
-<ol markdown="1">
-<li markdown="1"><b>Installation</b>
+<ol>
+<li><b>Installation</b>
 
 Add the following dependencies to your `pubspec.yaml` file:
 
@@ -65,7 +65,7 @@ dependencies:
 ```
 </li>
 
-<li markdown="1"><b>Gemini AI configuration</b>
+<li><b>Gemini AI configuration</b>
 
 The toolkit supports both Google Gemini AI and
 Firebase Vertex AI as LLM providers.
@@ -115,12 +115,12 @@ the `GeminiProvider`, which plugs Gemini AI into the
 `LlmChatView`, the top-level widget that provides an
 LLM-based chat conversation with your users.
 
-For a complete example, check out [gemini.dart][] on GitHub.
+For a complete example, check out [`gemini.dart`][] on GitHub.
 
-[gemini.dart]: {{site.github}}/flutter/ai/blob/main/example/lib/gemini/gemini.dart
+[`gemini.dart`]: {{site.github}}/flutter/ai/blob/main/example/lib/gemini/gemini.dart
 </li>
 
-<li markdown="1"><b>Vertex AI configuration</b>
+<li><b>Vertex AI configuration</b>
 
 While Gemini AI is useful for quick prototyping,
 the recommended solution for production apps is
@@ -199,7 +199,7 @@ For a complete example, check out [vertex.dart][] on GitHub.
 [vertex.dart]: {{site.github}}/flutter/ai/blob/main/example/lib/vertex/vertex.dart
 </li>
 
-<li markdown="1"><b>Set up device permissions</b>
+<li><b>Set up device permissions</b>
 
 To enable your users to take advantage of features
 like voice input and media attachments,
