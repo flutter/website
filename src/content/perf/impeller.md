@@ -75,6 +75,9 @@ Flutter **enables Impeller by default** on iOS.
 ### Android
 
 Flutter **enables Impeller by default** on Android.
+On devices that don't support Vulkan,
+Impeller will fallback to the the legacy OpenGL renderer.
+No action on your part is necessary for this fallback behavior.
 
 * To _disable_ Impeller when debugging,
   pass `--no-enable-impeller` to the `flutter run` command.
