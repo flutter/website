@@ -1,6 +1,5 @@
-Once you [turn on Swift Package Manager][], the Flutter CLI tries to migrate
-your project to use Swift Package Manager the next time you run your app
-using the CLI.
+The Flutter CLI has an [automatic migration][] that tries to add Swift Package
+Manager integration to your app when you run it using the CLI.
 
 However, the Flutter CLI tool might be unable to migrate your project
 automatically if there are unexpected modifications.
@@ -81,5 +80,5 @@ the following files in your issue:
 
 1. Ensure that the app runs on the command line with `flutter run`.
 
-[turn on Swift Package Manager]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-turn-on-swift-package-manager
+[automatic migration]: /packages-and-plugins/swift-package-manager/for-app-developers/#add-to-a-flutter-app
 [file an issue]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml
