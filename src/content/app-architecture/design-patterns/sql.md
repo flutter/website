@@ -58,7 +58,7 @@ and restored when the user starts the application.
 
 :::note
 The full, runnable source-code for this example is
-available in [`/examples/cookbook/architecture/todo_data_service/`][].
+available in [`/examples/app-architecture/todo_data_service/`][].
 :::
 
 ## Storing complex data with SQL
