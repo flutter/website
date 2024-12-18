@@ -97,11 +97,11 @@ or any combination thereof.
 
 ### Adding a package dependency to an app
 
-To add the package, `css_colors`, to an app:
+To add the package `css_colors` to an app:
 
 1. Depend on it
    * Open the `pubspec.yaml` file located inside the app folder,
-     and add `css_colors:` under `dependencies`.
+     and add `css_colors: ^1.0.0` under `dependencies`.
 
 1. Install it
    * From the terminal: Run `flutter pub get`.<br/>
@@ -124,10 +124,10 @@ To add the package, `css_colors`, to an app:
 
 ### Adding a package dependency to an app using `flutter pub add`
 
-To add the package, `css_colors`, to an app:
+To add the package `css_colors` to an app:
 
 1. Issue the command while being inside the project directory
-   * `flutter pub add css_colors`
+   * `flutter pub add css_colors:'^1.0.0'`
 
 1. Import it
    * Add a corresponding `import` statement in the Dart code.
@@ -145,7 +145,7 @@ To add the package, `css_colors`, to an app:
 To remove the package, `css_colors`, to an app:
 
 1. Issue the command while being inside the project directory
-   * `flutter pub remove css_colors`
+   * `flutter pub remove css_colors:'^1.0.0'`
 
 The [Installing tab][],
 available on any package page on pub.dev,
