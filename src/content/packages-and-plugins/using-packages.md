@@ -95,6 +95,26 @@ or any combination thereof.
 [web]: {{site.pub-pkg}}?q=sdk%3Aflutter+platform%3Aweb
 [Windows]: {{site.pub-pkg}}?q=sdk%3Aflutter+platform%3Awindows
 
+### Adding a package dependency to an app using `flutter pub add`
+
+To add the package `css_colors` to an app:
+
+1. Use the [`pub add`][] command from inside the project directory
+   * `flutter pub add css_colors`
+
+1. Import it
+   * Add a corresponding `import` statement in the Dart code.
+
+1. Stop and restart the app, if necessary
+   * If the package brings platform-specific code
+     (Kotlin/Java for Android, Swift/Objective-C for iOS),
+     that code must be built into your app.
+     Hot reload and hot restart only update the Dart code,
+     so a full restart of the app might be required to avoid
+     errors like `MissingPluginException` when using the package.
+
+[`pub add`]: {{site.dart-site}}/tools/pub/cmd/pub-add
+
 ### Adding a package dependency to an app
 
 To add the package `css_colors` to an app:
@@ -122,30 +142,12 @@ To add the package `css_colors` to an app:
      so a full restart of the app might be required to avoid
      errors like `MissingPluginException` when using the package.
 
-### Adding a package dependency to an app using `flutter pub add`
-
-To add the package `css_colors` to an app:
-
-1. Issue the command while being inside the project directory
-   * `flutter pub add css_colors:'^1.0.0'`
-
-1. Import it
-   * Add a corresponding `import` statement in the Dart code.
-
-1. Stop and restart the app, if necessary
-   * If the package brings platform-specific code
-     (Kotlin/Java for Android, Swift/Objective-C for iOS),
-     that code must be built into your app.
-     Hot reload and hot restart only update the Dart code,
-     so a full restart of the app might be required to avoid
-     errors like `MissingPluginException` when using the package.
-
 ### Removing a package dependency to an app using `flutter pub remove`
 
-To remove the package, `css_colors`, to an app:
+To remove the package `css_colors` from an app:
 
-1. Issue the command while being inside the project directory
-   * `flutter pub remove css_colors:'^1.0.0'`
+1. Use the [`pub remove`][] command from inside the project directory
+   * `flutter pub remove css_colors`
 
 The [Installing tab][],
 available on any package page on pub.dev,
@@ -156,6 +158,7 @@ see the [css_colors example][] below.
 
 [css_colors example]: #css-example
 [Installing tab]: {{site.pub-pkg}}/css_colors/install
+[`pub remove`]: {{site.dart-site}}/tools/pub/cmd/pub-remove
 
 ### Conflict resolution
 
