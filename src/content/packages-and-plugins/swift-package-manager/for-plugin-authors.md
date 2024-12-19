@@ -4,12 +4,10 @@ description: How to add Swift Package Manager compatibility to iOS and macOS plu
 ---
 
 :::warning
-Flutter is migrating to [Swift Package Manager][]
-to manage iOS and macOS native dependencies.
-Flutter's support of Swift Package Manager is under development.
+Flutter is migrating to [Swift Package Manager][] to manage iOS and macOS
+native dependencies.
 If you find a bug in Flutter's Swift Package Manager support,
 [open an issue][].
-Swift Package Manager support is [off by default][].
 Flutter continues to support CocoaPods.
 :::
 
@@ -22,13 +20,17 @@ Flutter's Swift Package Manager integration has several benefits:
    In the future, you won’t need to install Ruby and CocoaPods to target iOS or
    macOS.
 
+Plugin authors are encouraged to add support for Swift Package Manager to their
+plugins.
+Many popular plugins — including [Firebase], [plus plugins][], and [more][] —
+have already migrated to Swift Package Manager!
 
 [Swift Package Manager]: https://www.swift.org/documentation/package-manager/
-[off by default]: #how-to-turn-on-swift-package-manager
 [Swift packages]: https://swiftpackageindex.com/
 [open an issue]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml
-
-{% include docs/swift-package-manager/how-to-enable-disable.md %}
+[Firebase]: https://github.com/firebase/flutterfire/issues/13205
+[plus plugins]: https://github.com/fluttercommunity/plus_plugins/issues/3152
+[more]: https://pub.dev/packages?q=is%3Aswiftpm-plugin
 
 ## How to add Swift Package Manager support to an existing Flutter plugin
 
@@ -119,7 +121,7 @@ To update your unit tests:
 
    1. Ensure `RunnerTests` **Build Phases** has a **Link Binary With Libraries**
       build phase:
-   
+
       {% render docs/captioned-image.liquid,
       image:"development/packages-and-plugins/swift-package-manager/runner-tests-link-binary-with-libraries.png",
       caption:"The `Link Binary With Libraries` Build Phase in the `RunnerTests` target" %}
@@ -147,3 +149,5 @@ To update your unit tests:
 1. Ensure tests pass **Product > Test**.
 
 [library type recommendations]: https://developer.apple.com/documentation/packagedescription/product/library(name:type:targets:)
+
+{% include docs/swift-package-manager/how-to-enable-disable.md %}
