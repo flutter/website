@@ -45,6 +45,7 @@
       { "source": "/desktop/macos", "destination": "/platform-integration/macos/building", "type": 301 },
       { "source": "/desktop/linux", "destination": "/platform-integration/linux/building", "type": 301 },
       { "source": "/perf/rendering/*", "destination": "/perf", "type": 301 },
+      { "source": "/perf/shader", "destination": "/perf/rendering-performance", "type": 301 },
       { "source": "/developing-packages", "destination": "/packages-and-plugins/developing-packages", "type": 301 },
       { "source": "/development", "destination": "/", "type": 301 },
       { "source": "/development/:rest*", "destination": "/:rest*", "type": 301 },
