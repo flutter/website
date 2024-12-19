@@ -92,8 +92,8 @@ No action on your part is necessary for this fallback behavior.
 
 ```xml
 <meta-data
-    android:name="io.flutter.embedding.android.DisableImpeller"
-    android:value="true" />
+    android:name="io.flutter.embedding.android.EnableImpeller"
+    android:value="false" />
 ```
 
 ### macOS
