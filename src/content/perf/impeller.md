@@ -10,7 +10,7 @@ To see _detailed_ info on where Impeller is currently supported,
 check out the [Can I use Impeller?][] page.
 :::
 
-[Can I use Impeller?]: https://docs.google.com/spreadsheets/d/11Jr0YTUzL8R1ZLHOAqiHiQzdmcUp2Ag5j69Kd3RSUoA/edit?gid=0#gid=0
+[Can I use Impeller?]: {{site.main-url}}/go/can-i-use-impeller
 
 ## What is Impeller?
 

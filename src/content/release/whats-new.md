@@ -99,7 +99,7 @@ This website release includes several important updates!
 [app-authors]: /packages-and-plugins/swift-package-manager/for-app-developers
 [Architecting Flutter apps]: /app-architecture
 [bc-3.27]: /release/breaking-changes#released-in-flutter-3-27
-[Can I use Impeller?]: https://docs.google.com/spreadsheets/d/11Jr0YTUzL8R1ZLHOAqiHiQzdmcUp2Ag5j69Kd3RSUoA/edit?gid=0#gid=0
+[Can I use Impeller?]: {{site.main-url}}/go/can-i-use-impeller
 [deep-linking-tool]: /tools/devtools/deep-links
 [design patterns]: /app-architecture/design-patterns
 [Flutter AI Toolkit]: /ai-toolkit
