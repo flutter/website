@@ -67,7 +67,7 @@ class Foo implements Color {
   int _red;
 
   @override
-  double get r => _red * 255.0;
+  double get r => _red / 255.0;
 }
 ```
 
