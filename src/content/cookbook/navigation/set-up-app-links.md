@@ -88,6 +88,7 @@ It provides a simple API to handle complex routing scenarios.
     Replace `example.com` with your own web domain.
 
     ```xml
+    <meta-data android:name="flutter_deeplinking_enabled" android:value="true" />
     <intent-filter android:autoVerify="true">
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT" />
