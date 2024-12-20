@@ -7,19 +7,28 @@ description: A high-level overview of the architecture of Flutter, including the
 
 This article is intended to provide a high-level overview of the architecture of
 Flutter, including the core principles and concepts that form its design.
+If you are intereted in how to architect a Flutter app,
+check out [Architecting Flutter apps][].
+
+[Architecting Flutter apps]: /app-architecture
 
 Flutter is a cross-platform UI toolkit that is designed to allow code reuse
-across operating systems such as iOS and Android, while also allowing
-applications to interface directly with underlying platform services. The goal
-is to enable developers to deliver high-performance apps that feel natural on
-different platforms, embracing differences where they exist while sharing as
+across operating systems such as iOS Android, web, and desktop,
+while also allowing
+applications to interface directly with underlying platform services.
+The goal is to enable developers to deliver high-performance apps
+that feel natural on different platforms,
+embracing differences where they exist while sharing as
 much code as possible.
 
-During development, Flutter apps run in a VM that offers stateful hot reload of
-changes without needing a full recompile. For release, Flutter apps are compiled
-directly to machine code, whether Intel x64 or ARM instructions, or to
-JavaScript if targeting the web. The framework is open source, with a permissive
-BSD license, and has a thriving ecosystem of third-party packages that
+During development, Flutter apps run in a VM that offers
+stateful hot reload of changes without needing a full recompile.
+(On web, Flutter supports hot restart.)
+For release, Flutter apps are compiled directly to machine code,
+whether Intel x64 or ARM instructions,
+or to JavaScript if targeting the web.
+The framework is open source, with a permissive BSD license,
+and has a thriving ecosystem of third-party packages that
 supplement the core library functionality.
 
 This overview is divided into a number of sections:
@@ -27,13 +36,13 @@ This overview is divided into a number of sections:
 1. The **layer model**: The pieces from which Flutter is constructed.
 1. **Reactive user interfaces**: A core concept for Flutter user interface
    development.
-1. An introduction to **widgets**: The fundamental building blocks of Flutter user
-   interfaces.
+1. An introduction to **widgets**: The fundamental building blocks
+   of Flutter user interfaces.
 1. The **rendering process**: How Flutter turns UI code into pixels.
 1. An overview of the **platform embedders**: The code that lets mobile and
    desktop OSes execute Flutter apps.
-1. **Integrating Flutter with other code**: Information about different techniques
-   available to Flutter apps.
+1. **Integrating Flutter with other code**: Information about
+   different techniques available to Flutter apps.
 1. **Support for the web**: Concluding remarks about the characteristics of
    Flutter in a browser environment.
 
@@ -67,10 +76,12 @@ same way as any other native application. A platform-specific embedder provides
 an entrypoint; coordinates with the underlying operating system for access to
 services like rendering surfaces, accessibility, and input; and manages the
 message event loop. The embedder is written in a language that is appropriate
-for the platform: currently Java and C++ for Android, Objective-C/Objective-C++
-for iOS and macOS, and C++ for Windows and Linux. Using the embedder, Flutter
-code can be integrated into an existing application as a module, or the code might
-be the entire content of the application. Flutter includes a number of embedders
+for the platform: currently Java and C++ for Android, Swift and
+Objective-C/Objective-C++ for iOS and macOS,
+and C++ for Windows and Linux. Using the embedder, Flutter
+code can be integrated into an existing application as a module,
+or the code might be the entire content of the application.
+Flutter includes a number of embedders
 for common target platforms, but [other embedders also
 exist](https://hover.build/blog/one-year-in/).
 
@@ -80,12 +91,20 @@ the primitives necessary to support all Flutter applications.
 The engine is responsible for rasterizing composited scenes
 whenever a new frame needs to be painted.
 It provides the low-level implementation of Flutter's core API,
-including graphics (through [Impeller][] on iOS and coming to Android and macOS,
-and [Skia][] on other platforms) text layout,
+including graphics (through [Impeller][]
+on iOS, Android, and desktop (behind a flag),
+and [Skia][] on other platforms), text layout,
 file and network I/O, accessibility support,
 plugin architecture, and a Dart runtime
 and compile toolchain.
 
+:::note
+If you have a question about which devices support
+Impeller, check out [Can I use Impeller?][]
+for detailed information.
+:::
+
+[Can I use Impeller?]: {{site.main-url}}/go/can-i-use-impeller
 [Skia]: https://skia.org
 [Impeller]: /perf/impeller
 
@@ -100,23 +119,23 @@ which provides a modern, reactive framework written in the Dart language. It
 includes a rich set of platform, layout, and foundational libraries, composed of
 a series of layers. Working from the bottom to the top, we have:
 
-- Basic **[foundational]({{site.api}}/flutter/foundation/foundation-library.html)**
+* Basic **[foundational]({{site.api}}/flutter/foundation/foundation-library.html)**
   classes, and building block services such as
   **[animation]({{site.api}}/flutter/animation/animation-library.html),
   [painting]({{site.api}}/flutter/painting/painting-library.html), and
   [gestures]({{site.api}}/flutter/gestures/gestures-library.html)** that offer
   commonly used abstractions over the underlying foundation.
-- The **[rendering
+* The **[rendering
   layer]({{site.api}}/flutter/rendering/rendering-library.html)** provides an
   abstraction for dealing with layout. With this layer, you can build a tree of
   renderable objects. You can manipulate these objects dynamically, with the
   tree automatically updating the layout to reflect your changes.
-- The **[widgets layer]({{site.api}}/flutter/widgets/widgets-library.html)** is
+* The **[widgets layer]({{site.api}}/flutter/widgets/widgets-library.html)** is
   a composition abstraction. Each render object in the rendering layer has a
   corresponding class in the widgets layer. In addition, the widgets layer
   allows you to define combinations of classes that you can reuse. This is the
   layer at which the reactive programming model is introduced.
-- The
+* The
   **[Material]({{site.api}}/flutter/material/material-library.html)**
   and
   **[Cupertino]({{site.api}}/flutter/cupertino/cupertino-library.html)**
@@ -214,7 +233,7 @@ pieces of code.
 
 One solution to this is an approach like MVC, where you push data changes to the
 model via the controller, and then the model pushes the new state to the view
-via the controller. However, this also is problematic, since creating and
+through the controller. However, this also is problematic, since creating and
 updating UI elements are two separate steps that can easily get out of sync.
 
 Flutter, along with other reactive frameworks, takes an alternative approach to
@@ -308,21 +327,21 @@ efficiently updates the user interface.
 
 Flutter has its own implementations of each UI control, rather than deferring to
 those provided by the system: for example, there is a pure [Dart
-implementation]({{site.api}}/flutter/cupertino/CupertinoSwitch-class.html) of both the
-[iOS Toggle
+implementation]({{site.api}}/flutter/cupertino/CupertinoSwitch-class.html)
+of both the [iOS Toggle
 control]({{site.apple-dev}}/design/human-interface-guidelines/toggles)
 and the [one for]({{site.api}}/flutter/material/Switch-class.html) the
 [Android equivalent]({{site.material}}/components/switch).
 
 This approach provides several benefits:
 
-- Provides for unlimited extensibility. A developer who wants a variant of the
+* Provides for unlimited extensibility. A developer who wants a variant of the
   Switch control can create one in any arbitrary way, and is not limited to the
   extension points provided by the OS.
-- Avoids a significant performance bottleneck by allowing Flutter to composite
+* Avoids a significant performance bottleneck by allowing Flutter to composite
   the entire scene at once, without transitioning back and forth between Flutter
   code and platform code.
-- Decouples the application behavior from any operating system dependencies. The
+* Decouples the application behavior from any operating system dependencies. The
   application looks and feels the same on all versions of the OS, even if the OS
   changed the implementations of its controls.
 
@@ -359,7 +378,7 @@ includes utility widgets that take advantage of this compositional approach.
 
 For example, [`Container`]({{site.api}}/flutter/widgets/Container-class.html), a
 commonly used widget, is made up of several widgets responsible for layout,
-painting, positioning, and sizing. Specifically, Container is made up of the
+painting, positioning, and sizing. Specifically, `Container` is made up of the
 [`LimitedBox`]({{site.api}}/flutter/widgets/LimitedBox-class.html),
 [`ConstrainedBox`]({{site.api}}/flutter/widgets/ConstrainedBox-class.html),
 [`Align`]({{site.api}}/flutter/widgets/Align-class.html),
@@ -419,7 +438,7 @@ Many widgets have no mutable state: they don't have any properties that change
 over time (for example, an icon or a label). These widgets subclass
 [`StatelessWidget`]({{site.api}}/flutter/widgets/StatelessWidget-class.html).
 
-However, if the unique characteristics of a widget need to change based on user
+However, if the unique characteristics of a widget needs to change based on user
 interaction or other factors, that widget is _stateful_. For example, if a
 widget has a counter that increments whenever the user taps a button, then the
 value of the counter is the state for that widget. When that value changes, the
@@ -560,8 +579,8 @@ By contrast, Flutter minimizes those abstractions,
 bypassing the system UI widget libraries in favor
 of its own widget set. The Dart code that paints
 Flutter's visuals is compiled into native code,
-which uses Skia (or, in the future, Impeller) for rendering.
-Flutter also embeds its own copy of Skia as part of the engine,
+which uses Impeller  for rendering.
+Flutter also embeds its own copy of Impeller as part of the engine,
 allowing the developer to upgrade their app to stay
 updated with the latest performance improvements
 even if the phone hasn't been updated with a new Android version.
@@ -569,11 +588,13 @@ The same is true for Flutter on other native platforms,
 such as Windows or macOS.
 
 :::note
-Flutter 3.10 set Impeller as the default
-rendering engine on iOS. You can preview
-Impeller on Android behind the `enable-impeller` flag.
-For more information, check out [Impeller rendering engine][Impeller].
+If you want to know which devices Impeller supports,
+check out [Can I use Impeller?][].
+For more information on Impeller, 
+check out [Impeller rendering engine][]
 :::
+
+[Impeller rendering engine]: /perf/impeller
 
 ### From user input to the GPU
 
@@ -1033,21 +1054,21 @@ However, the Flutter engine, written in C++,
 is designed to interface with the
 underlying operating system rather than a web browser.
 A different approach is therefore required.
-On the web, Flutter provides a reimplementation of the
-engine on top of standard browser APIs.
-We currently have two options for
-rendering Flutter content on the web: HTML and WebGL.
-In HTML mode, Flutter uses HTML, CSS, Canvas, and SVG.
-To render to WebGL, Flutter uses a version of Skia
-compiled to WebAssembly called
-[CanvasKit](https://skia.org/docs/user/modules/canvaskit/).
-While HTML mode offers the best code size characteristics,
-`CanvasKit` provides the fastest path to the
-browser's graphics stack,
-and offers somewhat higher graphical fidelity with the
-native mobile targets[^4].
 
-The web version of the architectural layer diagram is as follows:
+On the web, Flutter offers two build mode and two renderers.
+The two build modes are the **default** and **WebAssembly**.
+The two renderers are **canvaskit** and **skwasm**.
+
+Flutter chooses the build mode when building the app,
+and determines which renderers are available at runtime.
+For a default build, Flutter chooses the `canvaskit`
+renderer at runtime. For a WebAssembly build,
+Flutter chooses the `skwasm` renderer at runtime,
+and falls back to canvaskit if the browser doesn't support skwasm.
+
+NOTE: I think the following diagram needs updating. Can you help with
+that, @kevmoo? Btw, this same diagram is used on
+https://docs.flutter.dev/platform-integration/web
 
 ![Flutter web
 architecture](/assets/images/docs/arch-overview/web-arch.png){:width="100%"}
@@ -1069,12 +1090,17 @@ core and framework along with your application into a minified source file that
 can be deployed to any web server. Code can be offered in a single file or split
 into multiple files through [deferred imports][].
 
+For more information on Flutter web, check out
+[Web support for Flutter][] and [Web renderers][].
+
 [deferred imports]: {{site.dart-site}}/language/libraries#lazily-loading-a-library
+[Web renderers]: /platform-integration/web/renderers
+[Web support for Flutter]: /platform-integration/web
 
 ## Further information
 
-For those interested in more information about the internals of Flutter, the
-[Inside Flutter](/resources/inside-flutter) whitepaper
+For those interested in more information about the internals of Flutter,
+the [Inside Flutter](/resources/inside-flutter) whitepaper
 provides a useful guide to the framework's design philosophy.
 
 [^1]: While the `build` function returns a fresh tree,
