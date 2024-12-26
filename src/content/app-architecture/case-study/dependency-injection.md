@@ -92,8 +92,8 @@ runApp(
       ),
       // In the Compass app, additional service and repository providers live here.
     ],
+    child: const MainApp(),
   ),
-  child: const MainApp(),
 );
 ```
 
