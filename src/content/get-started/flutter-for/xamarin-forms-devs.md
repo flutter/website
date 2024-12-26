@@ -1318,7 +1318,7 @@ Next, you'll need to declare these images in your `pubspec.yaml` file:
 
 ```yaml
 assets:
- - images/my_icon.jpeg
+ - images/my_icon.png
 ```
 
 You can directly access your images in an `Image.asset` widget:

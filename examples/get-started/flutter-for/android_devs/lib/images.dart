@@ -8,7 +8,7 @@ class MyWidget extends StatelessWidget {
     return const Image(
         image:
             // #docregion asset-image
-            AssetImage('images/my_icon.jpeg')
+            AssetImage('images/my_icon.png')
         // #enddocregion asset-image
         );
   }
