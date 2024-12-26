@@ -87,8 +87,8 @@ dev_dependencies:
   [!generate: true!] # Enables generation of localized strings from arb files
 
   [!assets:!]  # Lists assets, such as image files
-    [!- images/a_dot_burr.jpeg!]
-    [!- images/a_dot_ham.jpeg!]
+    [!- images/a_dot_burr.png!]
+    [!- images/a_dot_ham.png!]
 
   [!fonts:!]              # Required if your app uses custom fonts
     [!- family: Schyler!]

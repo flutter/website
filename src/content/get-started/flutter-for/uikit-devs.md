@@ -1497,7 +1497,7 @@ You can now access your images using `AssetImage`:
 
 <?code-excerpt "lib/images.dart (asset-image)"?>
 ```dart
-image: AssetImage('images/a_dot_burr.jpeg'),
+image: AssetImage('images/a_dot_burr.png'),
 ```
 
 or directly in an `Image` widget:
