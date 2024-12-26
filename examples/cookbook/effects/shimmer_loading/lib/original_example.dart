@@ -247,8 +247,8 @@ class _ShimmerLoadingState extends State<ShimmerLoading> {
     }
 
     // Collect ancestor shimmer info.
-    final shimmer = Shimmer.of(context)!;
-    if (!shimmer.isSized) {
+    final shimmer = Shimmer.of(context);
+    if (shimmer == null || !shimmer.isSized) {
       // The ancestor Shimmer widget has not laid
       // itself out yet. Return an empty box.
       return const SizedBox();
