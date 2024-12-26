@@ -1277,30 +1277,30 @@ val flutterAssetStream = assetManager.open("flutter_assets/assets/my_flutter_ass
 
 Flutter can't access native resources or assets.
 
-To add a new image asset called `my_icon.jpeg` to our Flutter project,
+To add a new image asset called `my_icon.png` to our Flutter project,
 for example, and deciding that it should live in a folder we
 arbitrarily called `images`, you would put the base image (1.0x)
 in the `images` folder, and all the other variants in sub-folders
 called with the appropriate ratio multiplier:
 
 ```plaintext
-images/my_icon.jpeg       // Base: 1.0x image
-images/2.0x/my_icon.jpeg  // 2.0x image
-images/3.0x/my_icon.jpeg  // 3.0x image
+images/my_icon.png       // Base: 1.0x image
+images/2.0x/my_icon.png  // 2.0x image
+images/3.0x/my_icon.png  // 3.0x image
 ```
 
 Next, you'll need to declare these images in your `pubspec.yaml` file:
 
 ```yaml
 assets:
- - images/my_icon.jpeg
+ - images/my_icon.png
 ```
 
 You can then access your images using `AssetImage`:
 
 <?code-excerpt "lib/images.dart (asset-image)"?>
 ```dart
-AssetImage('images/my_icon.jpeg')
+AssetImage('images/my_icon.png')
 ```
 
 or directly in an `Image` widget:
