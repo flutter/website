@@ -1,9 +1,4 @@
-{% for section in catalog.index %}
-  {% if section.name == categoryName %}
-    {% assign category = section %}
-    {% break %}
-  {% endif %}
-{% endfor %}
+{% assign category = catalog.index | find: "name", categoryName %}
 
 {{category.description}}
 
