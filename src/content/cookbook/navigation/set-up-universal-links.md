@@ -83,6 +83,11 @@ It provides a simple API to handle complex routing scenarios.
    Flutter project's `ios` folder.
 
   :::note
+  If you use a flutter version earlier than 3.27,
+  you need to manually opt in to flutter deep link by 
+  adding the key and value pair `FlutterDeepLinkingEnabled` and `YES` to info.Plist.
+  :::
+  :::note
   If you are using third-party plugins to handle deep links, 
   such as [app_links][],
   Flutter's default deeplink handler will

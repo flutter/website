@@ -96,7 +96,13 @@ It provides a simple API to handle complex routing scenarios.
         <data android:scheme="https" />
     </intent-filter>
     ```
-   
+    :::note
+      If you use a flutter version earlier than 3.27,
+      you need to manually opt in to flutter deep link by  
+      adding the following metadata tag to `<activity>`: 
+    ```<meta-data android:name="flutter_deeplinking_enabled" android:value="true" />```
+    :::
+
     :::note
     If you use a third-party plugin to handle deep links,
     such as [app_links][], 
@@ -104,9 +110,8 @@ It provides a simple API to handle complex routing scenarios.
     break these plugins. 
     
     To opt out of using Flutter's default deep link handler,
-     add the following metadata tag:
+     add the following metadata tag to `<activity>`:
     ```<meta-data android:name="flutter_deeplinking_enabled" android:value="false" />```
-    to opt out of Flutter's default deeplink handler 
     :::
 
 ## 3. Hosting assetlinks.json file
