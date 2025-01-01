@@ -37,7 +37,7 @@ decodes the returned json,
 and prints it to the console. 
 If you're confident in your ability to 
 understand this program, 
-feel free to skip to the page.
+feel free to skip to the next page.
 
 ```dart
 import 'dart:convert';
