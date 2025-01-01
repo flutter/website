@@ -131,7 +131,7 @@
   .expansion-panel-body {
     margin: auto;
     width: 90%;
-    border-top: .05rem solid rgba(0, 0, 0, 0.125);
+    border-top: 0.05rem solid var(--site-outline-variant);
 
     p {
       margin-top: 1.5rem;

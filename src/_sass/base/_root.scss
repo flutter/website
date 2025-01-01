@@ -10,7 +10,7 @@ body {
   --site-surface-variant: rgb(222 226 242);
   --site-on-surface-variant: rgb(66 71 83);
 
-  --site-primary: rgb(0 69 148);
+  --site-primary: #146bcd;
   --site-surface-tint: rgb(0 91 191);
   --site-on-primary: rgb(255 255 255);
 
@@ -21,17 +21,17 @@ body {
   --site-on-primary-container: rgb(255 255 255);
   --site-secondary: rgb(72 94 137);
   --site-on-secondary: rgb(255 255 255);
-  --site-secondary-container: rgb(192 211 255);
-  --site-on-secondary-container: rgb(39 62 103);
+  --site-secondary-container: rgb(194 229 255);
+  --site-on-secondary-container: rgb(10 10 10);
 
   --site-surface-container-lowest: rgb(255 255 255);
-  --site-surface-container-low: rgb(242 243 253); // Outside content
-  --site-surface-container: rgb(236 237 247); // Card background
-  --site-surface-container-high: rgb(230 232 241); // Search, button, modal
-  --site-surface-container-highest: rgb(225 226 236); // (bright) button
+  --site-surface-container-low: rgb(242, 246, 252); // Outside content
+  --site-surface-container: rgb(237, 241, 247); // Card background
+  --site-surface-container-high: rgb(230, 234, 242); // Search, button, modal
+  --site-surface-container-highest: rgb(225, 229, 237); // (bright) button
 
-  --site-outline: rgb(114 119 133); // Button border
-  --site-outline-variant: rgb(194 198 214);
+  --site-outline: rgb(114, 120, 133); // Button border
+  --site-outline-variant: rgb(195, 201, 214);
 
   --site-interaction-base-values: 0 0 0;
 
@@ -54,7 +54,7 @@ body {
     --site-surface-variant: rgb(66 71 83); // Divider
     --site-on-surface-variant: rgb(194 198 214);
 
-    --site-primary: rgb(172 199 255);
+    --site-primary: #1a86ff;
     --site-surface-tint: rgb(172 199 255);
     --site-on-primary: rgb(0 47 104);
 
@@ -65,17 +65,17 @@ body {
     --site-on-primary-container: rgb(255 255 255);
     --site-secondary: rgb(176 199 248);
     --site-on-secondary: rgb(24 48 88);
-    --site-secondary-container: rgb(38 61 102);
-    --site-on-secondary-container: rgb(188 209 255);
+    --site-secondary-container: rgb(22 83 153);
+    --site-on-secondary-container: rgb(225 226 236);
 
-    --site-surface-container-lowest: rgb(11 14 21);
+    --site-surface-container-lowest: rgb(11, 14, 20);
     --site-surface-container-low: rgb(25 28 34); // Outside content
     --site-surface-container: rgb(29 32 38); // Card background
-    --site-surface-container-high: rgb(39 42 49); // Search, button, modal
-    --site-surface-container-highest: rgb(50 53 60); // (bright) button
+    --site-surface-container-high: rgb(39, 42, 48); // Search, button, modal
+    --site-surface-container-highest: rgb(51, 54, 61); // (bright) button
 
-    --site-outline: rgb(140 144 159); // Button border
-    --site-outline-variant: rgb(66 71 83);
+    --site-outline: rgb(139, 145, 158); // Button border
+    --site-outline-variant: rgb(67, 73, 84);
 
     --site-interaction-base-values: 255 255 255;
 

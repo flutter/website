@@ -97,7 +97,7 @@ export default {
         'entity.name.tag',
       ],
       settings: {
-        foreground: '#0468D7',
+        foreground: '#146BCD',
       },
     },
     {

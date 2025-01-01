@@ -95,12 +95,12 @@ pre {
     border-radius: var(--site-square-radius);
 
     &:hover, &:focus-visible {
-      color: #0468D7;
+      color: var(--site-primary);
       opacity: 1;
     }
 
     &:active {
-      color: #043875;
+      color: color-mix(in srgb, var(--site-primary), #000 16%);
     }
   }
 }

@@ -47,21 +47,21 @@
         &:not(.auto-mode):not(.dark-mode) {
           #theme-menu button[data-theme='light'] {
             background-color: var(--site-secondary-container);
-            color: var(--site-on-secondary-container);   
+            color: var(--site-on-secondary-container);
           }
         }
 
         &.dark-mode:not(.auto-mode) {
           #theme-menu button[data-theme='dark'] {
             background-color: var(--site-secondary-container);
-            color: var(--site-on-secondary-container);  
+            color: var(--site-on-secondary-container);
           }
         }
-        
+
         &.auto-mode {
           #theme-menu button[data-theme='auto'] {
             background-color: var(--site-secondary-container);
-            color: var(--site-on-secondary-container);  
+            color: var(--site-on-secondary-container);
           }
         }
       }

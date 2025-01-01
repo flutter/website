@@ -39,7 +39,7 @@ export default {
     {
       scope: ['comment', 'punctuation.definition.comment'],
       settings: {
-        foreground: '#8b95a7',
+        foreground: '#8B95A7',
       },
     },
     {
@@ -56,7 +56,7 @@ export default {
         'variable.language',
       ],
       settings: {
-        foreground: '#E5C07B',
+        foreground: '#FF897E',
       },
     },
     {
@@ -82,7 +82,7 @@ export default {
         'entity.other.attribute-name',
       ],
       settings: {
-        foreground: '#C678DD',
+        foreground: '#B581FF',
       },
     },
     {
@@ -97,7 +97,7 @@ export default {
         'entity.name.tag',
       ],
       settings: {
-        foreground: '#61AFEF',
+        foreground: '#1A86FF',
       },
     },
     {

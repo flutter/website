@@ -75,11 +75,11 @@
           padding: 0.2rem;
 
           &:hover {
-            color: #0468d7;
+            color: var(--site-primary);
           }
 
           &:active {
-            color: #03448c;
+            color: color-mix(in srgb, var(--site-primary), #000 16%);
           }
         }
       }
