@@ -1,5 +1,8 @@
 aside.alert {
   padding: 0.75rem;
+  border-left: solid 0.25rem var(--site-outline-variant);
+  background-color: var(--site-surface-container-low);
+  --alert-title-color: var(--site-on-surface);
 
   .alert-header {
     display: flex;
@@ -10,6 +13,7 @@ aside.alert {
     font-size: 1.125rem;
     font-weight: 500;
     -webkit-font-smoothing: antialiased;
+    color: var(--alert-title-color);
 
     .material-symbols {
       font-size: 1.25em;
@@ -28,18 +32,32 @@ aside.alert {
   }
 
   &.alert-success {
-    background-color: var(--alert-tip);
+    border-color: var(--alert-tip-color);
+    --alert-title-color: var(--alert-tip-color);
+  }
+
+  &.alert-important {
+    border-color: var(--alert-important-color);
+    --alert-title-color: var(--alert-important-color);
   }
 
   &.alert-warning {
-    background-color: var(--alert-warning);
+    border-color: var(--alert-warning-color);
+    --alert-title-color: var(--alert-warning-color);
   }
 
   &.alert-info {
-    background-color: var(--alert-info);
+    border-color: var(--alert-info-color);
+    --alert-title-color: var(--alert-info-color);
   }
 
   &.alert-secondary {
-    background-color: var(--site-surface-container-high);
+    border-color: var(--site-surface-container-highest);
+    --alert-title-color: var(--site-on-surface);
+  }
+
+  &.alert-error {
+    border-color: var(--alert-error-color);
+    --alert-title-color: var(--alert-error-color);
   }
 }

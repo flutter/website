@@ -38,11 +38,11 @@ body {
   --flutter-wordmark-color: rgb(74 74 74);
 
   --code-highlight-bg-color: rgba(255, 245, 156, 0.8);
-  --alert-info: #cbebf9;
-  --alert-tip: #b0eda6;
-  --alert-important: #e2dbff;
-  --alert-warning: #fbe5a5;
-  --alert-error: #fde9ee;
+  --alert-info-color: #2058b7;
+  --alert-tip-color: #0c7927;
+  --alert-important-color: #7e5ac2;
+  --alert-warning-color: #886a14;
+  --alert-error-color: #cd3434;
 
   &:not(.dark-mode) .dark-mode-visible {
     display: none;
@@ -82,11 +82,11 @@ body {
     --flutter-wordmark-color: rgb(255 255 255);
 
     --code-highlight-bg-color: rgba(170, 165, 88, 0.2);
-    --alert-info: #043875;
-    --alert-tip: #065517;
-    --alert-important: #4a00b4;
-    --alert-warning: #663f09;
-    --alert-error: #7a0c17;
+    --alert-info-color: #308bf5;
+    --alert-tip-color: #25c04b;
+    --alert-important-color: #a676ff;
+    --alert-warning-color: #cea11f;
+    --alert-error-color: #ff4141;
 
     .light-mode-visible {
       display: none;

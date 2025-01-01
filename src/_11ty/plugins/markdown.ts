@@ -100,7 +100,7 @@ function _registerAsides(markdown: MarkdownIt): void {
   );
   _registerAside(markdown, 'tip', 'Tip', 'lightbulb', 'alert-success');
   _registerAside(markdown, 'recommend', 'Recommended', 'bolt', 'alert-success');
-  _registerAside(markdown, 'important', 'Important', 'error', 'alert-warning');
+  _registerAside(markdown, 'important', 'Important', 'error', 'alert-important');
   _registerAside(
     markdown,
     'warning',
