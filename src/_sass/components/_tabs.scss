@@ -15,10 +15,16 @@ ul.nav-tabs {
   flex-direction: row;
   align-items: center;
 
-  padding: 0.5rem;
+  padding: 0.375rem;
   border-radius: var(--site-square-radius);
   background-color: var(--site-surface-container-high);
   gap: 0.5rem;
+  overflow-x: scroll;
+  scrollbar-width: thin;
+
+  li {
+    margin: 0;
+  }
 
   a {
     text-decoration: none;
@@ -26,6 +32,7 @@ ul.nav-tabs {
     display: block;
     padding: 0.375rem;
     border-radius: var(--site-square-radius);
+    white-space: nowrap;
 
     &:hover {
       background-color: var(--site-surface-container-highest);

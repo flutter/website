@@ -114,8 +114,9 @@ from the main IDE window, or press <kbd>F5</kbd>.
 When a Flutter project is open in VS Code,
 you should see a set of Flutter specific entries in the status bar,
 including a Flutter SDK version and a
-device name (or the message **No Devices**):<br>
-![VS Code status bar][]{:.mw-100 .pt-1}
+device name (or the message **No Devices**):
+
+![VS Code status bar][]
 
 :::note
 - If you do not see a Flutter version number or device info,
@@ -222,16 +223,16 @@ several additional debugging commands are added to the
 When space is limited, the icon is used as the visual
 version of the label.
 
-**Toggle Baseline Painting** ![Baseline painting icon](/assets/images/docs/tools/devtools/paint-baselines-icon.png){:width="20px"}
+**Toggle Baseline Painting** ![Baseline painting icon](/assets/images/docs/tools/devtools/paint-baselines-icon.png){:.text-icon}
 : Causes each RenderBox to paint a line at each of its baselines.
 
-**Toggle Repaint Rainbow** ![Repaint rainbow icon](/assets/images/docs/tools/devtools/repaint-rainbow-icon.png){:width="20px"}
+**Toggle Repaint Rainbow** ![Repaint rainbow icon](/assets/images/docs/tools/devtools/repaint-rainbow-icon.png){:.text-icon}
 : Shows rotating colors on layers when repainting.
 
-**Toggle Slow Animations** ![Slow animations icon](/assets/images/docs/tools/devtools/slow-animations-icon.png){:width="20px"}
+**Toggle Slow Animations** ![Slow animations icon](/assets/images/docs/tools/devtools/slow-animations-icon.png){:.text-icon}
 : Slows down animations to enable visual inspection.
 
-**Toggle Debug Mode Banner** ![Debug mode banner icon](/assets/images/docs/tools/devtools/debug-mode-banner-icon.png){:width="20px"}
+**Toggle Debug Mode Banner** ![Debug mode banner icon](/assets/images/docs/tools/devtools/debug-mode-banner-icon.png){:.text-icon}
 : Hides the debug mode banner even when running a debug build.
 
 ### Debugging external libraries
@@ -284,7 +285,8 @@ can assist in correcting it.
 Snippets can be used to speed up entering typical code structures.
 They are invoked by typing their prefix,
 and then selecting from the code completion window:
-![Snippets](/assets/images/docs/tools/vs-code/snippets.png){:width="100%"}
+
+![Snippets](/assets/images/docs/tools/vs-code/snippets.png)
 
 The Flutter extension includes the following snippets:
 
@@ -297,7 +299,7 @@ The Flutter extension includes the following snippets:
 
 The Dart extension includes the following snippets:
 
-| Prefix | Description | Code Example |
+| Prefix | Description | Code example |
 |---|---|---|
 | `main` | Insert a main function, used as an entry point. | `void main(List<String> args) {  }` |
 | `try` | Insert a try/catch block. | `try {  } catch (e) {  }` |
@@ -313,6 +315,8 @@ The Dart extension includes the following snippets:
 | `typedef` | Insert a typedef. | `typedef MyFunction = void Function(String);` |
 | `test` | Insert a test block. | `test('My test description', () {  });` |
 | `group` | Insert a test group block. | `group('My test group', () {  });` |
+
+{:.table .table-striped}
 
 You can also define custom snippets by executing
 **Configure User Snippets** from the [Command Palette][].

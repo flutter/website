@@ -100,7 +100,7 @@ function setupBanner() {
     window.localStorage.setItem('banner-contents', bannerContents);
     document.getElementById('site-banner')?.remove();
   });
-  siteBanner.hidden = false;
+  siteBanner.classList.remove('hidden');
 }
 
 function setupSearch() {

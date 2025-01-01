@@ -78,6 +78,10 @@
         width: 4.5rem;
         height: 4.5rem;
       }
+
+      iframe {
+        aspect-ratio: 16 / 9;
+      }
     }
 
     .card-text {
