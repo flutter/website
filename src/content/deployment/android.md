@@ -15,7 +15,7 @@ This guide explains how to perform the following tasks:
 
 * [Add a launcher icon](#add-a-launcher-icon)
 * [Enable Material Components](#enable-material-components)
-* [Signing the app](#signing-the-app)
+* [Sign the app](#signing-the-app)
 * [Shrink your code with R8](#shrink-your-code-with-r8)
 * [Enable multidex support](#enable-multidex-support)
 * [Review the app manifest](#review-the-app-manifest)
@@ -555,13 +555,13 @@ In Android Studio, open the existing `android/`
 folder under your app's folder. Then,
 select **build.gradle (Module: app)** in the project panel:
 
-<img src='/assets/images/docs/deployment/android/gradle-script-menu.png' width="100%" alt='The Gradle build script menu in Android Studio.'>
+<img src='/assets/images/docs/deployment/android/gradle-script-menu.png' alt='The Gradle build script menu in Android Studio.' style="max-height: 20rem">
 
 Next, select the build variant. Click **Build > Select Build Variant**
 in the main menu. Select any of the variants in the **Build Variants**
 panel (debug is the default):
 
-<img src='/assets/images/docs/deployment/android/build-variant-menu.png' width="100%" alt='The build variant menu in Android Studio with Release selected.'>
+<img src='/assets/images/docs/deployment/android/build-variant-menu.png' alt='The build variant menu in Android Studio with Release selected.' style="max-height: 20rem">
 
 The resulting app bundle or APK files are located in
 `build/app/outputs` within your app's folder.

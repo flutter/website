@@ -2,6 +2,10 @@ table.table {
   border-spacing: 0;
   width: 100%;
 
+  a {
+    white-space: nowrap;
+  }
+
   thead {
     background-color: var(--site-surface-container-highest);
     border-top-right-radius: var(--site-square-radius);

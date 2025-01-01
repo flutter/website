@@ -169,7 +169,10 @@ function _highlight(
 
   return highlighter.codeToHtml(content, {
     lang: language,
-    theme: 'dash-light',
+    themes: {
+      light: 'dash-light',
+      dark: 'dash-dark',
+    },
     transformers: [
       {
         pre(preElement) {
