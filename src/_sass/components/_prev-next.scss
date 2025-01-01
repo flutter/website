@@ -1,0 +1,60 @@
+@use '../base/utils';
+
+#site-prev-next {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+
+  .prev {
+    text-align: left;
+    justify-content: flex-start;
+  }
+
+  .next {
+    text-align: right;
+    justify-content: flex-end;
+    margin-left: auto;
+  }
+
+  .prev:only-child, .next:only-child {
+    max-width: 50%;
+  }
+
+  a {
+    overflow-x: hidden;
+    flex-basis: 100%;
+
+    text-decoration: none;
+    background-color: var(--site-surface);
+    color: var(--site-on-surface);
+    border: 1px solid var(--site-outline-variant);
+    border-radius: var(--site-square-radius);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5rem;
+    min-height: 100%;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      padding: 0.5rem;
+
+      :first-child {
+        font-size: 0.75rem;
+        line-height: 0.75rem;
+      }
+    }
+
+    &:hover {
+      @include utils.interaction-style(3%);
+    }
+
+    &:active {
+      @include utils.interaction-style(5%);
+    }
+  }
+}

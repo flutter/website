@@ -18,9 +18,6 @@
     "build-site-for-staging": "PRODUCTION=false OPTIMIZE=true tsx node_modules/@11ty/eleventy/cmd.cjs --config=eleventy.config.ts",
     "build-site-for-production": "PRODUCTION=true OPTIMIZE=true tsx node_modules/@11ty/eleventy/cmd.cjs --config=eleventy.config.ts"
   },
-  "dependencies": {
-    "bootstrap-scss": "^4.6.2"
-  },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
     "@types/hast": "^3.0.4",

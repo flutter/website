@@ -1,9 +1,9 @@
-@use '../base/variables' as *;
-@use '../vendor/bootstrap';
+@use '../base/utils';
 
 .expansion-panel-list {
-  background: $site-color-panel-background;
-  border: 1px solid rgba(0, 0, 0, 0.125);
+  background: var(--site-surface-container);
+  color: var(--site-on-surface);
+  border: 1px solid var(--site-outline-variant);
   border-radius: 12px;
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -19,7 +19,7 @@
     border-radius: 12px;
 
     // Add padding on small screens, because images aren't displayed.
-    @include bootstrap.media-breakpoint-down(sm) {
+    @media(max-width: 576px) {
       padding-left: 1rem;
 
       &:first-child {
@@ -32,7 +32,11 @@
       // Duplicated since Firefox doesn't support content alt text.
       content: 'keyboard_arrow_down';
       content: 'keyboard_arrow_down' / '';
-      font: $site-font-icon;
+      font-family: 'Material Symbols Outlined';
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
       transition: transform .25s ease-in-out;
     }
 
@@ -62,6 +66,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    color: var(--site-on-surface);
 
     .expansion-panel-title-leading {
       height: 8rem;
@@ -72,7 +77,7 @@
       // Hide leading image on small screens.
       display: none;
 
-      @include bootstrap.media-breakpoint-up(md) {
+      @media(min-width: 577px) {
         display: flex;
         flex: 1 0 auto;
       }
@@ -84,19 +89,17 @@
 
     .expansion-panel-title-content {
       .content-title {
-        color: $site-color-black;
         font-size: 1rem;
         font-weight: 500;
         margin-bottom: .25rem;
 
-        @include bootstrap.media-breakpoint-up(md) {
+        @media(min-width: 577px) {
           font-size: 1.25rem;
         }
       }
 
       .content-description {
-        color: $site-color-body;
-        margin-bottom: $site-spacer / 2;
+        margin-bottom: .5rem;
       }
 
       .content-tags {
@@ -107,7 +110,6 @@
         margin-bottom: .75rem;
 
         .tag {
-          color: $site-color-body-caption;
           font-size: .8rem;
           line-height: 1;
           margin-bottom: 0;
@@ -129,10 +131,9 @@
   .expansion-panel-body {
     margin: auto;
     width: 90%;
-    border-top: .05rem solid rgba(0, 0, 0, 0.125);
+    border-top: 0.05rem solid var(--site-outline-variant);
 
     p {
-      color: $site-color-body;
       margin-top: 1.5rem;
     }
 

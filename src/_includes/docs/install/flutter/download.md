@@ -57,13 +57,13 @@ then extract the SDK.
 
    {% if include.os=='macOS' %}
 
-   | Intel Processor                                                     | Apple Silicon                                                                             |
-   |---------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
-   | [(loading...)](#){:.download-latest-link-{{osl}} .btn .btn-primary} | [(loading...)](#){:.download-latest-link-{{osl}}-arm64 .apple-silicon .btn .btn-primary}  |
+   | Intel Processor                                                  | Apple Silicon                                                                         |
+   |------------------------------------------------------------------|---------------------------------------------------------------------------------------|
+   | [(loading...)](#){:.download-latest-link-{{osl}} .filled-button} | [(loading...)](#){:.download-latest-link-{{osl}}-arm64 .apple-silicon .filled-button} |
 
    {% else %}
 
-   [(loading...)](#){:.download-latest-link-{{osl}} .btn .btn-primary}
+   [(loading...)](#){:.download-latest-link-{{osl}} .filled-button}
 
    {% endif -%}
 

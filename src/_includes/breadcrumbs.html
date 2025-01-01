@@ -17,7 +17,7 @@ Embeds breadcrumb RDFa, follows ARIA guidelines. References:
     <li class="breadcrumb-item {%- if forloop.last %} active {%- endif %}"
         property="itemListElement" typeof="ListItem"
         {%- if forloop.last %} aria-current="page"{% endif %}>
-      <a href="{{ crumb.url | regex_replace: '/index$|/index.html$|/$' }}" property="item" typeof="WebPage">
+      <a href="{{ crumb.url | regex_replace: '/index$|/index.html$|/$' }}" property="item" typeof="WebPage" {%- if forloop.last %} aria-disabled="true" {%- endif %}>
         <span property="name">{{crumb.title}}</span>
       </a>
       <meta property="position" content="{{forloop.index0}}" />
