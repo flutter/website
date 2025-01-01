@@ -68,7 +68,6 @@
     {% for cssFile in css -%}
       {% assign asset_path = '/assets/css/{{cssFile}}' -%}
       <link rel="stylesheet" href="{{ asset_path | append: cache_bust }}">
-    <link rel="stylesheet" href="../../../../../../Downloads/css/light.css">
     {% endfor -%}
     {% endif -%}
   </head>

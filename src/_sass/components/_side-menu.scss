@@ -12,6 +12,7 @@
   min-width: 13rem;
   max-width: 13rem;
   overflow-y: auto;
+  scrollbar-width: thin;
   font-family: var(--site-ui-font-family), sans-serif;
 
   @media(max-width: 1216px) {
