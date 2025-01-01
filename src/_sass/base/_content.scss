@@ -11,7 +11,7 @@ main {
     border-radius: 0;
   }
 
-  ol, ul, li, p, pre, aside, iframe, img, figure, .card-grid, .table-wrapper {
+  ol, ul, li, p, pre, aside, img, figure, .card-grid, .table-wrapper {
     margin-bottom: 1rem;
 
     &:only-child {
@@ -90,6 +90,10 @@ main {
     p {
       margin-bottom: 0;
     }
+  }
+
+  iframe {
+    margin-bottom: 1rem;
   }
 
   .row {

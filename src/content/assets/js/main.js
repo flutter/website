@@ -9,7 +9,7 @@ function setupTheme() {
   if (themeMenu) {
     const themeButtons = themeMenu.querySelectorAll('button');
     themeButtons.forEach((button) => {
-      button.addEventListener('click', (event) => {
+      button.addEventListener('click', (_) => {
         document.body.classList.remove('auto-mode');
         document.body.classList.remove('dark-mode');
         document.body.classList.remove('light-mode');
@@ -18,7 +18,7 @@ function setupTheme() {
         window.localStorage.setItem('theme', newMode);
         _switchToPreferenceIfAuto();
         themeMenu.hidePopover();
-      });  
+      });
     });
   }
 
@@ -132,18 +132,17 @@ function handleSearchShortcut(event) {
   const activeElement = document.activeElement;
   if (activeElement instanceof HTMLInputElement ||
       activeElement instanceof HTMLTextAreaElement ||
-      event.code !== 'Slash'
-  ) {
+      event.code !== 'Slash') {
     return;
   }
 
-  // If the page has a search field in the body, focus that.
+  // If the page has a search field in the body, focus it.
   const bodySearch = document.querySelector('input.gsc-input');
   // Otherwise, focus the search field in the navbar.
   const searchElement = bodySearch ? bodySearch : document
       .querySelector('#header-search input');
 
-  // If we successfully found a search field, focus that.
+  // If we successfully found a search field, focus it.
   if (searchElement) {
     searchElement.focus();
     // Prevent the initial slash from showing up in the search field.
@@ -151,39 +150,12 @@ function handleSearchShortcut(event) {
   }
 }
 
-document.addEventListener("DOMContentLoaded", function(_) {
-  setupTheme();
-  setupBanner();
-  scrollSidenavIntoView();
-  setupNav();
-  setUpCodeBlockButtons();
-
-  setupSearch();
-  setupTabs();
-  setupInlineToc();
-  setupMenuToggle();
-  initCookieNotice();
-});
-
 function setupNav() {
   const toggles = document.querySelectorAll('a.nav-link.collapsible');
   toggles.forEach(function (toggle) {
     toggle.addEventListener('click', (e) => {
       toggle.classList.toggle('collapsed');
       e.preventDefault();
-    });
-  });
-}
-
-function setupInlineToc() {
-  // Set up the inline TOC's ability to expand and collapse.
-  const toggles = document.querySelectorAll('.site-toc--inline__toggle');
-  toggles.forEach(function (toggle) {
-    toggle.addEventListener('click', (_) => {
-      const inlineToc = document.getElementById('site-toc--inline');
-      if (inlineToc) {
-        inlineToc.classList.toggle('toc-collapsed');
-      }
     });
   });
 }
@@ -205,8 +177,7 @@ function getOS() {
     return 'windows';
   }
 
-  if ((userAgent.indexOf('Linux') !== -1 || userAgent.indexOf("X11") !== -1)
-    && userAgent.indexOf('Android') === -1) {
+  if ((userAgent.indexOf('Linux') !== -1 || userAgent.indexOf('X11') !== -1) && userAgent.indexOf('Android') === -1) {
     // Linux, but not Android
     return 'linux';
   }
@@ -252,8 +223,7 @@ function initCookieNotice() {
 const terminalReplacementPattern = /^(\s*\$\s*)|(C:\\(.*)>\s*)/gm;
 
 function setUpCodeBlockButtons() {
-  const codeBlocks =
-      document.querySelectorAll('.code-block-body');
+  const codeBlocks = document.querySelectorAll('.code-block-body');
 
   const canUseClipboard = !!navigator.clipboard;
 
@@ -277,7 +247,7 @@ function setUpCodeBlockButtons() {
       innerIcon.ariaHidden = 'true';
       innerIcon.classList.add('material-symbols');
 
-      dartPadButton.addEventListener('click',  (e) => {
+      dartPadButton.addEventListener('click', (e) => {
         const codeBlockBody = e.currentTarget.parentElement;
         if (codeBlockBody) {
           const codePre = codeBlock.querySelector('pre');
@@ -322,4 +292,23 @@ function setUpCodeBlockButtons() {
 
     codeBlock.appendChild(buttonWrapper);
   });
+}
+
+function _setupSite() {
+  setupTheme();
+  scrollSidenavIntoView();
+  setupBanner();
+  setupNav();
+  setUpCodeBlockButtons();
+  setupSearch();
+  setupTabs();
+  setupMenuToggle();
+  initCookieNotice();
+}
+
+// Run setup if DOM is loaded, otherwise do it after it has loaded.
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', _setupSite);
+} else {
+  _setupSite();
 }
