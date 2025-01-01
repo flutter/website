@@ -56,24 +56,25 @@ body {
   }
 }
 
-@media(min-width: 769px) {
-  body.menu-wide-toggled {
-    #site-main-row {
-      justify-content: center;
-    }
-
-    #sidenav {
-      display: none;
-    }
-
-    #menu-button button > span {
-      &:first-child {
-        display: unset;
-      }
-
-      &:last-child {
-        display: none;
-      }
-    }
-  }
-}
+// TODO(parlough): Bring back hiding menu in wide layouts.
+//@media(min-width: 769px) {
+//  body.menu-wide-toggled {
+//    #site-main-row {
+//      justify-content: center;
+//    }
+//
+//    #sidenav {
+//      display: none;
+//    }
+//
+//    #menu-button button > span {
+//      &:first-child {
+//        display: unset;
+//      }
+//
+//      &:last-child {
+//        display: none;
+//      }
+//    }
+//  }
+//}

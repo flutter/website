@@ -4,6 +4,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 0 0.5rem;
+
   background-color: var(--site-surface-container-low);
   gap: 1rem;
   align-items: center;
@@ -47,7 +49,6 @@
   gap: 0.5rem;
 
   margin-left: 0.5rem;
-  margin-right: 0.5rem;
 
   search {
     display: flex;
@@ -137,16 +138,13 @@
 }
 
 #menu-button {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
 
   height: 100%;
-  margin-left: 0.5rem;
 
   > button {
-    padding: 0.5rem;
-
     > span:first-child {
       display: none;
     }

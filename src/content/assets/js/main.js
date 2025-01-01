@@ -41,25 +41,32 @@ function setupMenuToggle() {
   const menuToggle = document.querySelector('#menu-button button');
   if (!menuToggle) return;
 
-  const menuWideToggledClass = 'menu-wide-toggled';
-  const storedWideToggled = window.localStorage.getItem(menuWideToggledClass);
-  if (storedWideToggled === 'true') {
-    document.body.classList.add(menuWideToggledClass);
-  }
-
   menuToggle.addEventListener('click', (e) => {
     e.preventDefault();
 
-    if (document.body.clientWidth > 768) {
-      if (document.body.classList.toggle(menuWideToggledClass)) {
-        window.localStorage.setItem(menuWideToggledClass, 'true');
-      } else {
-        window.localStorage.removeItem(menuWideToggledClass);
-      }
-    } else {
-      document.body.classList.toggle('menu-narrow-toggled');
-    }
+    document.body.classList.toggle('menu-narrow-toggled');
   });
+
+  // TODO(parlough): Bring back collapsing menu in wide layout.
+  // const menuWideToggledClass = 'menu-wide-toggled';
+  // const storedWideToggled = window.localStorage.getItem(menuWideToggledClass);
+  // if (storedWideToggled === 'true') {
+  //   document.body.classList.add(menuWideToggledClass);
+  // }
+  //
+  // menuToggle.addEventListener('click', (e) => {
+  //   e.preventDefault();
+  //
+  //   if (document.body.clientWidth > 768) {
+  //     if (document.body.classList.toggle(menuWideToggledClass)) {
+  //       window.localStorage.setItem(menuWideToggledClass, 'true');
+  //     } else {
+  //       window.localStorage.removeItem(menuWideToggledClass);
+  //     }
+  //   } else {
+  //     document.body.classList.toggle('menu-narrow-toggled');
+  //   }
+  // });
 }
 
 function scrollSidenavIntoView() {
