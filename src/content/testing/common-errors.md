@@ -475,43 +475,50 @@ framework for every frame, for example, during an animation.
 
 **How to fix it?**
 
-One way to avoid this error is to use the `Navigator` API
-to trigger the dialog as a route. In the following example,
-there are two pages. The second page has a
-dialog to be displayed upon entry.
-When the user requests the second page by
-clicking a button on the first page,
-the `Navigator` pushes two routes–one
-for the second page and another for the dialog.
+One way to avoid this error is instruct flutter to finish rendering the page
+before calling `showDialog()`. This can be done by using
+addPostFrameCallback() method. 
+The following code illustrates this on the broken example just given:
 
 <?code-excerpt "lib/set_state_build.dart (solution)"?>
 ```dart
-class FirstScreen extends StatelessWidget {
-  const FirstScreen({super.key});
+import 'package:flutter/material.dart';
+
+void main() => runApp(const ShowDialogExampleApp());
+
+class ShowDialogExampleApp extends StatelessWidget {
+  const ShowDialogExampleApp({super.key});
 
   @override
   Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(
+          colorSchemeSeed: const Color(0xff6750a4), useMaterial3: true),
+      home: const DialogExample(),
+    );
+  }
+}
+
+class DialogExample extends StatelessWidget {
+  const DialogExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    //You can do this:
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      showDialog<void>(
+        context: context,
+        builder: (BuildContext context) {
+          return const AlertDialog(
+            title: Text('Alert Dialog'),
+          );
+        },
+      );
+    });
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('First Screen'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          child: const Text('Launch screen'),
-          onPressed: () {
-            // Navigate to the second screen using a named route.
-            Navigator.pushNamed(context, '/second');
-            // Immediately show a dialog upon loading the second screen.
-            Navigator.push(
-              context,
-              PageRouteBuilder(
-                barrierDismissible: true,
-                opaque: false,
-                pageBuilder: (_, anim1, anim2) => const MyDialog(),
-              ),
-            );
-          },
-        ),
+      appBar: AppBar(title: const Text('This works')),
+      body: const Center(
+        child: Text('It Works'),
       ),
     );
   }
