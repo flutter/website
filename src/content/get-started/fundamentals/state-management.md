@@ -354,7 +354,7 @@ Column(
   children: [
     ValueListenableBuilder(
       valueListenable: counterNotifier,
-      builder: (context, child, value) {
+      builder: (context, value, child) {
         return Text('counter: $value');
       },
     ),

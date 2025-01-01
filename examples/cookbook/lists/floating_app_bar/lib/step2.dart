@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     const title = 'Floating App Bar';
 
-    return MaterialApp(
+    return const MaterialApp(
       title: title,
       home: Scaffold(
         // No appbar provided to the Scaffold, only a body with a
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         body: CustomScrollView(
           slivers: [
             // Add the app bar to the CustomScrollView.
-            const SliverAppBar(
+            SliverAppBar(
               // Provide a standard title.
               title: Text(title),
               // Allows the user to reveal the app bar if they begin scrolling

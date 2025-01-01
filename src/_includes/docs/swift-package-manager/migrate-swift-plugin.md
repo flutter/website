@@ -237,7 +237,15 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    Otherwise, using `Bundle.module` results in an error.
    :::
 
-1. Commit your plugin's changes to your version control system.
+1. If your `.gitignore` doesn't include `.build/` and `.swiftpm/` directories,
+   you'll want to update your `.gitignore` to include:
+
+    ```text title=".gitignore"
+    .build/
+    .swiftpm/
+    ```
+
+    Commit your plugin's changes to your version control system.
 
 1. Verify the plugin still works with CocoaPods.
 

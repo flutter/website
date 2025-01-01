@@ -12,8 +12,6 @@ you can also see all the widgets in the [widget index][].
 ## Design systems
 
 Flutter ships with two design systems as part of the SDK.
-You can find many more designs systems created by the Flutter community
-on [pub.dev]({{site.pub}}), the package repository for Dart and Flutter.
 
 <div class="card-grid">
 {% assign categories = catalog.index | sort: 'name' -%}
@@ -28,6 +26,12 @@ on [pub.dev]({{site.pub}}), the package repository for Dart and Flutter.
     {% endif -%}
 {% endfor %}
 </div>
+
+You can find many more designs systems created by the Flutter community
+on [pub.dev]({{site.pub}}), the package repository for Dart and Flutter,
+like for example the Windows-inspired [fluent_ui]({{site.pub-pkg}}/fluent_ui),
+macOS-inspired [macos_ui]({{site.pub-pkg}}/macos_ui),
+and the Ubuntu-inspired [yaru]({{site.pub-pkg}}/yaru) widgets.
 
 ## Base widgets
 

@@ -34,7 +34,11 @@ final class BuildSiteCommand extends Command<int> {
 
     final process = await Process.start(
       'npx',
-      const ['eleventy'],
+      const [
+        'tsx',
+        'node_modules/@11ty/eleventy/cmd.cjs',
+        '--config=eleventy.config.ts',
+      ],
       environment: {
         'PRODUCTION': '$productionRelease',
         'OPTIMIZE': '$productionRelease',

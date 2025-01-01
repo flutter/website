@@ -89,6 +89,29 @@ to test whether the native (Wasm) number representaton is used.
 final isRunningWithWasm = identical(double.nan, double.nan);
 ```
 
+### Serve the built output with an HTTP server
+
+Flutter web WebAssembly uses multiple threads to render your application
+faster, with less jank. To do this, Flutter uses advanced browser features that
+require specific HTTP response headers.
+
+:::warning
+Flutter web applications won't run with WebAssembly unless the server is
+configured to send specific HTTP headers.
+:::
+
+| Name | Value |
+|-|-|
+| `Cross-Origin-Embedder-Policy` | `credentialless` <br> or <br> `require-corp` |
+| `Cross-Origin-Opener-Policy` | `same-origin` |
+
+{:.table}
+
+To learn more about these headers, check out
+[Load cross-origin resources without CORP headers using COEP: credentialless][coep].
+
+[coep]: https://developer.chrome.com/blog/coep-credentialless-origin-trial
+
 ## Learn more about browser compatibility
 To run a Flutter app that has been compiled to Wasm,
 you need a browser that supports [WasmGC][].
@@ -108,10 +131,12 @@ but currently doesn't work due to a known limitation (see details below).
   they're experiencing a bug that is blocking compatibility with Flutter's Wasm
   renderer. Follow [this bug][firefox-bug] for details.
 - **Why not Safari?**
-  Safari does not support WasmGC yet. Follow [this bug][safari-bug] for details.
+  Safari now supports WasmGC, but is experiencing a similar bug that is
+  blocking compatibility with Flutter's Wasm renderer.
+  Follow [this bug][safari-bug] for details.
 
 [firefox-bug]: https://bugzilla.mozilla.org/show_bug.cgi?id=1788206
-[safari-bug]: https://bugs.webkit.org/show_bug.cgi?id=247394
+[safari-bug]: https://bugs.webkit.org/show_bug.cgi?id=267291
 
 :::warning
 Flutter compiled to Wasm can't run on the iOS version of any browser.

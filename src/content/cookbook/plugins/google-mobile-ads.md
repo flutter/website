@@ -150,7 +150,7 @@ You need to initialize the Mobile Ads SDK before loading ads.
       WidgetsFlutterBinding.ensureInitialized();
       unawaited(MobileAds.instance.initialize());
     
-      runApp(MyApp());
+      runApp(const MyApp());
     }
     ```
 
@@ -235,7 +235,7 @@ Widget build(BuildContext context) {
       height: widget.adSize.height.toDouble(),
       child: _bannerAd == null
           // Nothing to render yet.
-          ? SizedBox()
+          ? const SizedBox()
           // The actual ad.
           : AdWidget(ad: _bannerAd!),
     ),
@@ -362,7 +362,7 @@ class _MyBannerAdWidgetState extends State<MyBannerAdWidget> {
         height: widget.adSize.height.toDouble(),
         child: _bannerAd == null
             // Nothing to render yet.
-            ? SizedBox()
+            ? const SizedBox()
             // The actual ad.
             : AdWidget(ad: _bannerAd!),
       ),

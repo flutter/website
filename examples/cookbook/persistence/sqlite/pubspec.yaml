@@ -1,8 +1,9 @@
 name: sqlite
 description: Example of using sqflite plugin to access SQLite database.
 
+resolution: workspace
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.6.0
 
 dependencies:
   flutter:
@@ -11,8 +12,6 @@ dependencies:
   path: ^1.9.0
 
 dev_dependencies:
-  example_utils:
-    path: ../../../example_utils
   flutter_test:
     sdk: flutter
 

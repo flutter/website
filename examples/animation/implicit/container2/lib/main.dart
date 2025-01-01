@@ -2,6 +2,9 @@
 // Use of this source code is governed by a BSD-style license
 // that can be found in the LICENSE file.
 
+// This is an intermediate step, so not all parameters are specified yet.
+// ignore_for_file: missing_required_argument
+
 import 'dart:math';
 
 import 'package:flutter/material.dart';

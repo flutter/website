@@ -1,10 +1,10 @@
 ### Create a sample Flutter app {:#create-app-vs-code}
 
 1. To use Flutter DevTools from VS Code, install the
-    [Flutter extension](https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter).
+   [Flutter extension](https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter).
    This also automatically installs the
    [Dart extension](https://marketplace.visualstudio.com/items?itemName=Dart-Code.dart-code).
-   With these extensions, you can debug your application.
+   With these extensions, you can debug your Flutter app.
 
 2. Open the Command Palette.
 
@@ -13,7 +13,7 @@
 
 3. Type `flutter`.
 
-4. Select the **Flutter: New Project**.
+4. Select **Flutter: New Project**.
 
 5. When prompted for **Which Flutter Project**, select **Application**.
 
@@ -34,8 +34,8 @@ contains a simple demo app that uses [Material Components][].
 
 ### Run your sample Flutter app
 
-Run your example application on your desktop platform, in the Chrome web browser, in an iOS simulator, or
-Android emulator.
+Run your example application on your desktop platform,
+in the Chrome web browser, in an iOS simulator, or Android emulator.
 
 :::note
 Though you can deploy your app to the web,
@@ -50,7 +50,7 @@ hot reload at this time.
 
 1. Type `flutter`.
 
-1. Select the **Flutter: Select Device**.
+1. Select **Flutter: Select Device**.
 
    If no devices are running, this command prompts you to enable a device.
 

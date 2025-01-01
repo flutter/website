@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
             onPressed: () {
               getPhotos();
             },
-            child: Text('Fetch photos'),
+            child: const Text('Fetch photos'),
           ),
         ),
       ),
