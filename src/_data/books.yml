@@ -136,3 +136,12 @@
   cover: the-flutter-foundation-a-comprehensive-guide-for-technical-interviews-and-beyond.png
   link: "https://chetanakarte.gumroad.com/l/the_flutter_foundation"
   desc: "Welcome to The Flutter Foundation: A Comprehensive Guide for Technical Interviews and Beyond! Whether you are a seasoned developer looking to delve into the world of Flutter or a newcomer eager to master the latest in cross-platform app development, this book is your ultimate companion."
+- title: 'Flutter Design Patterns and Best Practices: Build scalable, maintainable, and production-ready apps using effective architectural principles'
+  authors:
+    - Daria Orlova
+    - Esra Kadah
+    - Jaime Blasco
+  publisher: Packt Publishing
+  cover: flutter-design-patterns-and-best-practices.jpg
+  link: "https://www.amazon.com/Flutter-Design-Patterns-Best-Practices/dp/1801072647/"
+  desc: "Elevate your mobile app development skills using reusable software development methodologies and code design principles, leveraging proven strategies from industry experts who have fostered thriving developer communities."
