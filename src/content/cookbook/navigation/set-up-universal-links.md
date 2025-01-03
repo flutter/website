@@ -82,15 +82,21 @@ It provides a simple API to handle complex routing scenarios.
 1. Open the `ios/Runner.xcworkspace` file inside the
    Flutter project's `ios` folder.
 
-  :::note
-  If you are using third-party plugins to handle deep links, 
-  such as [app_links][],
-  Flutter's default deeplink handler will
-  break these plugins. 
+   :::version-note
+   If you use a Flutter version earlier than 3.27,
+   you need to manually opt in to deep linking by adding the
+   key and value pair `FlutterDeepLinkingEnabled` and `YES` to `info.Plist`.
+   :::
 
-  If you use a third-party plugin,
-  add the key and value pair `FlutterDeepLinkingEnabled` and `NO` to info.Plist.
-  :::
+   :::note
+   If you're using third-party plugins to handle deep links, 
+   such as [app_links][],
+   Flutter's default deeplink handler will
+   break these plugins.
+
+   If you use a third-party plugin, add the
+   key and value pair `FlutterDeepLinkingEnabled` and `NO` to `info.Plist`.
+   :::
 
 ### Add associated domains
 
