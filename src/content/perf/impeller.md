@@ -96,7 +96,8 @@ No action on your part is necessary for this fallback behavior.
     android:value="false" />
 ```
 
-* To _enable_ or _disable_ Impeller on runtime, use `getFlutterShellArgs()` method in `FlutterActivity` or `FlutterFragment`:
+* To _enable_ or _disable_ Impeller on runtime, use  `getFlutterShellArgs()`
+  method in `FlutterActivity` or `FlutterFragment`:
 
 ```kotlin
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
