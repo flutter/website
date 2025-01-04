@@ -83,7 +83,7 @@ There are two popular means of organizing code:
 
 1. By feature - The classes needed for each feature are grouped together. For
    example, you might have an `auth` directory, which would contain files
-   like `auth_viewmodel.dart`, `login_usecase.dart`, `logout_usecase.dart,
+   like `auth_viewmodel.dart`, `login_usecase.dart`, `logout_usecase.dart`,
    `login_screen.dart`, `logout_button.dart`, etc.
 2. By type - Each "type" of architecture is grouped together.
    For example, you might have directories such as
