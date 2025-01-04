@@ -96,6 +96,40 @@ No action on your part is necessary for this fallback behavior.
     android:value="false" />
 ```
 
+* To _enable_ or _disable_ Impeller on runtime, use `getFlutterShellArgs()` method in `FlutterActivity` or `FlutterFragment`:
+
+```kotlin
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig
+import io.flutter.embedding.android.FlutterActivity
+import io.flutter.embedding.engine.FlutterShellArgs
+
+class MainActivity : FlutterActivity() {
+
+    // Initialize Firebase Remote Config in your Activity
+    private lateinit var remoteConfig: FirebaseRemoteConfig
+
+    // Override getFlutterShellArgs() method to disable Impeller based
+    // on Firebase Remote Config. Useful for problematic Devices/SOCs
+    override fun getFlutterShellArgs(): FlutterShellArgs {
+        // For debug builds, use Flutter's default behavior
+        if (BuildConfig.DEBUG) {
+            return super.getFlutterShellArgs()
+        }
+        val args = mutableListOf<String>()
+        val disableImpeller = try {
+            // Example of getting a boolean value from Firebase Remote Config
+            remoteConfig.getBoolean("AndroidDisableImpeller")
+        } catch (e: Exception) {
+            false
+        }
+        if (disableImpeller) {
+            args.add(FlutterShellArgs.ARG_DISABLE_IMPELLER)
+        }
+        return FlutterShellArgs(args)
+    }
+}
+```
+
 ### macOS
 
 You can try out Impeller for macOS behind a flag.
