@@ -578,7 +578,7 @@ the view wants to render. This gets at *why* the Compass app uses `Commands`.
 In the view's `Widget.build` method,
 the command is used to conditionally render different widgets.
 
-```dart title=home_viewmodel.dart
+```dart title=home_screen.dart
 // ...
 child: ListenableBuilder(
   listenable: [!viewModel.load!],
