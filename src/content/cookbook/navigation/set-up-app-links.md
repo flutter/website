@@ -201,9 +201,9 @@ the devices. This ensures that the Flutter application is installed.
 To test **only** the app setup, use the adb command:
 
 ```console
-adb shell 'am start -a android.intent.action.VIEW \
+adb shell am start -a android.intent.action.VIEW \
     -c android.intent.category.BROWSABLE \
-    -d "http://<web-domain>/details"' \
+    -d "http://<web-domain>/details" \
     <package name>
 ```
 
