@@ -1,39 +1,17 @@
 ---
-title: Use the Flutter inspector
-description: Learn how to use the Flutter inspector to explore a Flutter app's widget tree.
+title: Use the legacy Flutter inspector
+description: Learn how to use the legacy Flutter inspector to explore a Flutter app's widget tree.
 ---
 
 <?code-excerpt path-base="visual_debugging/"?>
 
 :::note
-The inspector works with all Flutter applications.
+Please note that the legacy inspector will be removed in a future release. Let us know if there are issues preventing you from using the [new inspector]() by [filing a bug]().
 :::
 
-For information on how to locate DevTools screens in different IDEs,
-check out the [DevTools overview](/tools/devtools).
+## The legacy Flutter inspector
 
-## What is it?
-
-The Flutter widget inspector is a powerful tool for visualizing and
-exploring Flutter widget trees. The Flutter framework uses widgets
-as the core building block for anything from controls
-(such as text, buttons, and toggles),
-to layout (such as centering, padding, rows, and columns).
-The inspector helps you visualize and explore Flutter widget
-trees, and can be used for the following:
-
-* understanding existing layouts
-* diagnosing layout issues
-
-![Screenshot of the Flutter inspector window](/assets/images/docs/tools/devtools/inspector_screenshot.png){:width="100%"}
-
-## The new Flutter inspector {:#new}
-
-As part of the Flutter 3.29, the new Flutter inspector is enabled by default. However, it can be disabled from the [Flutter inspector settings](link).
-
-:::note
-Please note that the [legacy inspector](link) will be removed in a future release. Let us know if there are issues preventing you from using the new inspector by [filing a bug]().
-:::
+![Screenshot of the legacy Flutter inspector window](/assets/images/docs/tools/devtools/inspector_legacy_screenshot.png){:width="100%"}
 
 ### Debugging layout issues visually
 
@@ -45,8 +23,6 @@ used as the visual version of the label.
 : Enable this button in order to select
   a widget on the device to inspect it. To learn more,
   check out [Inspecting a widget](#inspecting-a-widget).
-
-TODO: Add Show Implementation Widgets
 
 ![Refresh tree icon](/assets/images/docs/tools/devtools/refresh-tree-icon.png){:width="20px"} **Refresh tree**
 : Reload the current widget info.
@@ -93,40 +69,35 @@ When debugging layout issues, the key fields to look at are the
 and the sizes flow back up. For more information on how this works,
 see [Understanding constraints][].
 
-## Flutter Widget Tree
+## Flutter Layout Explorer
 
-The Flutter Widget Tree allows you to visualize, undertand and navigate your app's Widget tree. 
+The Flutter Layout Explorer helps you to better understand
+Flutter layouts.
 
-### Use the Widget Tree
+For an overview of what you can do with this tool, see
+the Flutter Explorer video:
 
-TODO
+{% ytEmbed 'Jakrc3Tn_y4', 'DevTools Layout Explorer' %}
 
-## Flutter Widget Explorer
+You might also find the following step-by-step article useful:
 
-The Flutter Widget Explorer helps you to better understand
-the inspected widget.
+* [How to debug layout issues with the Flutter Inspector][debug-article]
 
-### Use the Widget Explorer
+[debug-article]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
 
-From the Flutter inspector, select a widget. The Widget Explorer will be shown on the right side of the window.
+### Use the Layout Explorer
 
-Depending on the selected widget, the Widget Explorer will include one or more of the following:
+From the Flutter Inspector, select a widget. The Layout Explorer
+supports both [flex layouts][] and fixed size layouts, and has
+specific tooling for both kinds.
 
-* Widget properties tab
-* Flex explorer tab
-* Render object tab
-
-#### Widget properties tab
-
-TODO
-
-#### Flex explorer tab
+#### Flex layouts
 
 When you select a flex widget (for example, [`Row`][], [`Column`][], [`Flex`][])
-or a direct child of a flex widget, the flex explorer tool will
-appear in the Widget Explorer.
+or a direct child of a flex widget, the flex layout tool will
+appear in the Layout Explorer.
 
-The flex explorer tool visualizes how [`Flex`][] widgets and their
+The Layout Explorer visualizes how [`Flex`][] widgets and their
 children are laid out. The explorer identifies the main axis
 and cross axis, as well as the current alignment for each
 (for example, start, end, and spaceBetween).
@@ -136,13 +107,13 @@ constraints.
 Additionally, the explorer shows layout constraint violations
 and render overflow errors. Violated layout constraints
 are colored red, and overflow errors are presented in the
-standard "yellow-tape" pattern, as you might see on a running
+standard  "yellow-tape" pattern, as you might see on a running
 device. These visualizations aim to improve understanding of
 why overflow errors occur as well as how to fix them.
 
-![The flex explorer showing errors and device inspector](/assets/images/docs/tools/devtools/layout_explorer_errors_and_device.gif){:width="100%"}
+![The Layout Explorer showing errors and device inspector](/assets/images/docs/tools/devtools/layout_explorer_errors_and_device.gif){:width="100%"}
 
-Clicking a widget in the flex explorer mirrors
+Clicking a widget in the layout explorer mirrors
 the selection on the on-device inspector. **Select Widget Mode**
 needs to be enabled for this. To enable it,
 click on the **Select Widget Mode** button in the inspector.
@@ -152,7 +123,7 @@ click on the **Select Widget Mode** button in the inspector.
 For some properties, like flex factor, flex fit, and alignment,
 you can modify the value via dropdown lists in the explorer.
 When modifying a widget property, you see the new value reflected
-not only in the flex explorer, but also on the
+not only in the Layout Explorer, but also on the
 device running your Flutter app. The explorer animates
 on property changes so that the effect of the change is clear.
 Widget property changes made from the layout explorer don't
@@ -160,7 +131,7 @@ modify your source code and are reverted on hot reload.
 
 ##### Interactive Properties
 
-The flex explorer supports modifying [`mainAxisAlignment`][],
+Layout Explorer supports modifying [`mainAxisAlignment`][],
 [`crossAxisAlignment`][], and [`FlexParentData.flex`][].
 In the future, we may add support for additional properties
 such as [`mainAxisSize`][], [`textDirection`][], and
@@ -168,46 +139,52 @@ such as [`mainAxisSize`][], [`textDirection`][], and
 
 ###### mainAxisAlignment
 
-![The flex explorer changing main axis alignment](/assets/images/docs/tools/devtools/layout_explorer_main_axis_alignment.gif){:width="100%"}
+![The Layout Explorer changing main axis alignment](/assets/images/docs/tools/devtools/layout_explorer_main_axis_alignment.gif){:width="100%"}
 
 Supported values:
 
-- `MainAxisAlignment.start`
-- `MainAxisAlignment.end`
-- `MainAxisAlignment.center`
-- `MainAxisAlignment.spaceBetween`
-- `MainAxisAlignment.spaceAround`
-- `MainAxisAlignment.spaceEvenly`
+* `MainAxisAlignment.start`
+* `MainAxisAlignment.end`
+* `MainAxisAlignment.center`
+* `MainAxisAlignment.spaceBetween`
+* `MainAxisAlignment.spaceAround`
+* `MainAxisAlignment.spaceEvenly`
 
 ###### crossAxisAlignment
 
-![The flex explorer changing cross axis alignment](/assets/images/docs/tools/devtools/layout_explorer_cross_axis_alignment.gif){:width="100%"}
+![The Layout Explorer changing cross axis alignment](/assets/images/docs/tools/devtools/layout_explorer_cross_axis_alignment.gif){:width="100%"}
 
 Supported values:
 
-- `CrossAxisAlignment.start`
-- `CrossAxisAlignment.center`
-- `CrossAxisAlignment.end`
-- `CrossAxisAlignment.stretch`
+* `CrossAxisAlignment.start`
+* `CrossAxisAlignment.center`
+* `CrossAxisAlignment.end`
+* `CrossAxisAlignment.stretch`
 
 ###### FlexParentData.flex
 
-![The flex explorer changing flex factor](/assets/images/docs/tools/devtools/layout_explorer_flex.gif){:width="100%"}
+![The Layout Explorer changing flex factor](/assets/images/docs/tools/devtools/layout_explorer_flex.gif){:width="100%"}
 
-The flex explorer supports 7 flex options in the UI
+Layout Explorer supports 7 flex options in the UI
 (null, 0, 1, 2, 3, 4, 5), but technically the flex
 factor of a flex widget's child can be any int.
 
 ###### Flexible.fit
 
-![The flex explorer changing fit](/assets/images/docs/tools/devtools/layout_explorer_fit.gif){:width="100%"}
+![The Layout Explorer changing fit](/assets/images/docs/tools/devtools/layout_explorer_fit.gif){:width="100%"}
 
-The flex explorer supports the two different types of
+Layout Explorer supports the two different types of
 [`FlexFit`][]: `loose` and `tight`.
 
-#### Render object tab
+#### Fixed size layouts
 
-TODO
+When you select a fixed size widget that is not a child
+of a flex widget, fixed size layout information will appear
+in the Layout Explorer. You can see size, constraint, and padding
+information for both the selected widget and its nearest upstream
+RenderObject.
+
+![The Layout Explorer fixed size tool](/assets/images/docs/tools/devtools/layout_explorer_fixed_layout.png){:width="100%"}
 
 ## Visual debugging
 
@@ -356,7 +333,6 @@ the repainting to just the animation.
 Here the progress indicator causes its container to repaint:
 
 <?code-excerpt "lib/highlight_repaints.dart (everything-repaints)"?>
-
 ```dart
 class EverythingRepaintsPage extends StatelessWidget {
   const EverythingRepaintsPage({super.key});
@@ -379,7 +355,6 @@ Wrapping the progress indicator in a `RepaintBoundary` causes
 only that section of the screen to repaint:
 
 <?code-excerpt "lib/highlight_repaints.dart (area-repaints)"?>
-
 ```dart
 class AreaRepaintsPage extends StatelessWidget {
   const AreaRepaintsPage({super.key});
@@ -407,7 +382,6 @@ which uses additional memory.
 You can also enable this option in code:
 
 <?code-excerpt "lib/highlight_repaints.dart (toggle)"?>
-
 ```dart
 import 'package:flutter/rendering.dart';
 
@@ -446,7 +420,6 @@ If this isn't possible, you can use the `cacheHeight` and `cacheWidth`
 parameters on the `Image` constructor:
 
 <?code-excerpt "lib/oversized_images.dart (resized-image)"?>
-
 ```dart
 class ResizedImage extends StatelessWidget {
   const ResizedImage({super.key});
@@ -471,7 +444,6 @@ regardless of these parameters.
 This property can also be set in code:
 
 <?code-excerpt "lib/oversized_images.dart (toggle)"?>
-
 ```dart
 void showOversizedImages() {
   debugInvertOversizedImages = true;
@@ -482,9 +454,17 @@ void showOversizedImages() {
 
 You can learn more at the following link:
 
-- [Flutter documentation: debugInvertOversizedImages]({{site.api}}/flutter/painting/debugInvertOversizedImages.html)
+* [Flutter documentation: debugInvertOversizedImages]({{site.api}}/flutter/painting/debugInvertOversizedImages.html)
 
 [render box]: {{site.api}}/flutter/rendering/RenderBox-class.html
+
+## Details Tree
+
+Select the **Widget Details Tree** tab to display the details tree for the
+selected widget. From here, you can gather useful information about a
+widget's properties, render object, and children.
+
+![The Details Tree view](/assets/images/docs/tools/devtools/inspector_details_tree.png){:width="100%"}
 
 ## Track widget creation
 
