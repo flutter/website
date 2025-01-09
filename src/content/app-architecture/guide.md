@@ -92,7 +92,7 @@ The UI layer is made up of two architectural components,
 based on the MVVM design pattern:
 
 * **Views** describe how to present application data to the user.
-  Specifically, it refers to a *composition of widgets *that make a feature.
+  Specifically, it refers to a *composition of widgets* that make a feature.
   For instance, a view is often (but not always) a screen that
   has a `Scaffold` widget, along with
   all of the widgets below it in the widget tree.
