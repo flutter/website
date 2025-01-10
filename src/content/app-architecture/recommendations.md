@@ -63,8 +63,6 @@ which reflects how strongly the Flutter team recommends it.
   * [Compass app source code][] -
     Source code of a full-featured, robust Flutter application that
     implements many of these recommendations.
-  * [Flutter skeleton][] -
-    A Flutter application template that includes many of these recommendations.
   * [very_good_cli][] -
     A Flutter application template made by
     the Flutter experts Very Good Ventures.
@@ -95,7 +93,6 @@ which reflects how strongly the Flutter team recommends it.
 [Flutter Navigator API]: https://docs.flutter.dev/ui/navigation
 [pub.dev]: https://pub.dev
 [Compass app source code]: https://github.com/flutter/samples/tree/main/compass_app
-[Flutter skeleton]: https://github.com/flutter/flutter/blob/master/packages/flutter_tools/templates/skeleton/README.md.tmpl
 [very_good_cli]: https://cli.vgv.dev/
 [Very Good Engineering architecture documentation]: https://engineering.verygood.ventures/architecture/
 [State Management with ChangeNotifier walkthrough]: /get-started/fwe/state-management
