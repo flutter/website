@@ -1,7 +1,7 @@
 - name: bash
   set-path: echo 'export PATH="~/development/flutter/bin:$PATH"' >> ~/.bash_profile
 - name: zsh
-  set-path: echo 'export PATH="~/development/flutter/bin:$PATH"' >> ~/.zshenv
+  set-path: echo 'export PATH="$HOME/development/flutter/bin:$PATH"' >> ~/.zshenv
 - name: fish
   set-path: fish_add_path -g -p ~/development/flutter/bin
 - name: csh
