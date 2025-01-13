@@ -42,6 +42,13 @@
     x2='68' y2='65' stroke='#f50057' stroke-width='2'
     marker-end='url(#arrow-align)'/><line x1='40' y1='20' x2='40' y2='47'
     stroke='#f50057' stroke-width='2' marker-end='url(#arrow-align)'/></svg>
+- name: AlignTransition
+  description: >-
+    Animated version of an Align that animates its Align.alignment property.
+  categories:
+    - 'Animation and motion'
+  subcategories: []
+  link: https://api.flutter.dev/flutter/widgets/AlignTransition-class.html
 - name: AnimatedAlign
   description: >-
     Animated transition that moves the child's position over a given duration
