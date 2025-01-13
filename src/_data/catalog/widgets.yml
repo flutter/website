@@ -1512,6 +1512,13 @@
   link: https://api.flutter.dev/flutter/material/MaterialApp-class.html
   image:
     src: https://storage.googleapis.com/material-design/publish/material_v_11/assets/0Bx4BSt6jniD7Y1huOXVQdlFPMmM/materialdesign_introduction.png
+- name: MatrixTransition
+  description: >-
+    Animates the Matrix4 of a transformed widget.
+  categories:
+    - 'Animation and motion'
+  subcategories: []
+  link: https://api.flutter.dev/flutter/widgets/MatrixTransition-class.html
 - name: MediaQuery
   description: Establishes a subtree in which media queries resolve to the given data.
   categories:
