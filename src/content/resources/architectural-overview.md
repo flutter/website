@@ -1,6 +1,8 @@
 ---
 title: Flutter architectural overview
-description: A high-level overview of the architecture of Flutter, including the core principles and concepts that form its design.
+description: >
+  A high-level overview of the architecture of Flutter,
+  including the core principles and concepts that form its design.
 ---
 
 <?code-excerpt path-base="resources/architectural_overview/"?>
@@ -57,6 +59,7 @@ designed to be optional and replaceable.
 The PNG diagrams in this document were created using draw.io. The draw.io
 metadata is embedded in the PNG file itself, so you can open the PNG directly
 from draw.io to edit the individual components.
+(sz: Not true, at least not for the web arch png.)
 
 The following settings were used:
 
@@ -580,7 +583,7 @@ bypassing the system UI widget libraries in favor
 of its own widget set. The Dart code that paints
 Flutter's visuals is compiled into native code,
 which uses Impeller  for rendering.
-Flutter also embeds its own copy of Impeller as part of the engine,
+Impeller is shipped along with the application,
 allowing the developer to upgrade their app to stay
 updated with the latest performance improvements
 even if the phone hasn't been updated with a new Android version.
@@ -591,7 +594,7 @@ such as Windows or macOS.
 If you want to know which devices Impeller supports,
 check out [Can I use Impeller?][].
 For more information on Impeller, 
-check out [Impeller rendering engine][]
+visit [Impeller rendering engine][]
 :::
 
 [Impeller rendering engine]: /perf/impeller
@@ -898,7 +901,7 @@ already available]({{site.pub}}/flutter) for Flutter that cover many common
 scenarios, ranging from Firebase to ads to device hardware like camera and
 Bluetooth.
 
-### Foreign Function Interface
+### Foreign Function Interface (FFI)
 
 For C-based APIs, including those that can be generated for code written in
 modern languages like Rust or Go, Dart provides a direct mechanism for binding
@@ -1044,11 +1047,11 @@ supports, there are some unique characteristics of Flutter's web support that
 are worthy of comment.
 
 Dart has been compiling to JavaScript for as long as the language has existed,
-with a toolchain optimized for both development and production purposes. Many
-important apps compile from Dart to JavaScript and run in production today,
+with a toolchain optimized for both development and production purposes.
+Many important apps compile from Dart to JavaScript and run in production today,
 including the [advertiser tooling for Google Ads](https://ads.google.com/home/).
-Because the Flutter framework is written in Dart, compiling it to JavaScript was
-relatively straightforward.
+Because the Flutter framework is written in Dart, compiling it to JavaScript
+was relatively straightforward.
 
 However, the Flutter engine, written in C++,
 is designed to interface with the
@@ -1056,8 +1059,8 @@ underlying operating system rather than a web browser.
 A different approach is therefore required.
 
 On the web, Flutter offers two build mode and two renderers.
-The two build modes are the **default** and **WebAssembly**.
-The two renderers are **canvaskit** and **skwasm**.
+Flutter has a canvas-based renderer with two compile modes:
+JS and Wasm.
 
 Flutter chooses the build mode when building the app,
 and determines which renderers are available at runtime.
@@ -1066,12 +1069,8 @@ renderer at runtime. For a WebAssembly build,
 Flutter chooses the `skwasm` renderer at runtime,
 and falls back to canvaskit if the browser doesn't support skwasm.
 
-NOTE: I think the following diagram needs updating. Can you help with
-that, @kevmoo? Btw, this same diagram is used on
-https://docs.flutter.dev/platform-integration/web
-
 ![Flutter web
-architecture](/assets/images/docs/arch-overview/web-arch.png){:width="100%"}
+architecture](/assets/images/docs/arch-overview/web-framework-diagram.drawio.png){:width="100%"}
 
 Perhaps the most notable difference compared to other platforms on which Flutter
 runs is that there is no need for Flutter to provide a Dart runtime. Instead,
