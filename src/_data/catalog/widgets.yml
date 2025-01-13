@@ -42,6 +42,13 @@
     x2='68' y2='65' stroke='#f50057' stroke-width='2'
     marker-end='url(#arrow-align)'/><line x1='40' y1='20' x2='40' y2='47'
     stroke='#f50057' stroke-width='2' marker-end='url(#arrow-align)'/></svg>
+- name: AlignTransition
+  description: >-
+    Animated version of an Align that animates its Align.alignment property.
+  categories:
+    - 'Animation and motion'
+  subcategories: []
+  link: https://api.flutter.dev/flutter/widgets/AlignTransition-class.html
 - name: AnimatedAlign
   description: >-
     Animated transition that moves the child's position over a given duration
@@ -1112,6 +1119,13 @@
     - 'Text'
   subcategories: []
   link: https://api.flutter.dev/flutter/widgets/DefaultTextStyle-class.html
+- name: DefaultTextStyleTransition
+  description: >-
+    Animated version of a DefaultTextStyle that animates the different properties of its TextStyle.
+  categories:
+    - 'Animation and motion'
+  subcategories: []
+  link: https://api.flutter.dev/flutter/widgets/DefaultTextStyleTransition-class.html
 - name: Dismissible
   description: >-
     A widget that can be dismissed by dragging in the indicated direction.
@@ -1498,6 +1512,13 @@
   link: https://api.flutter.dev/flutter/material/MaterialApp-class.html
   image:
     src: https://storage.googleapis.com/material-design/publish/material_v_11/assets/0Bx4BSt6jniD7Y1huOXVQdlFPMmM/materialdesign_introduction.png
+- name: MatrixTransition
+  description: >-
+    Animates the Matrix4 of a transformed widget.
+  categories:
+    - 'Animation and motion'
+  subcategories: []
+  link: https://api.flutter.dev/flutter/widgets/MatrixTransition-class.html
 - name: MediaQuery
   description: Establishes a subtree in which media queries resolve to the given data.
   categories:
@@ -1719,6 +1740,13 @@
   link: https://api.flutter.dev/flutter/material/RefreshIndicator-class.html
   image:
     src: https://storage.googleapis.com/material-design/publish/material_v_12/assets/0B7WCemMG6e0VS2kzSmZwNnNKQVk/patterns-swipe-to-refresh.png
+- name: RelativePositionedTransition
+  description: >-
+    Animated version of Positioned which transitions the child's position based on the value of rect relative to a bounding box with the specified size.
+  categories:
+    - 'Animation and motion'
+  subcategories: []
+  link: https://api.flutter.dev/flutter/widgets/RelativePositionedTransition-class.html
 - name: ReorderableListView
   description: >-
     A list whose items the user can interactively reorder by dragging.
@@ -1927,6 +1955,13 @@
   subcategories:
     - 'Sliver widgets'
   link: https://api.flutter.dev/flutter/widgets/SliverChildListDelegate-class.html
+- name: SliverFadeTransition
+  description: >-
+    Animates the opacity of a sliver widget.
+  categories:
+    - 'Animation and motion'
+  subcategories: []
+  link: https://api.flutter.dev/flutter/widgets/SliverFadeTransition-class.html
 - name: SliverFixedExtentList
   description: >-
     A sliver that places multiple box children with the same main axis extent in
