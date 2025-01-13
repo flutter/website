@@ -1,5 +1,5 @@
 # Default code owners
-* @flutter/website-reviewers @sfshaza2 @parlough
+* @flutter/website-reviewers @sfshaza2 @antfitch @parlough
 
 # Covers iOS documentation content
 **/add-to-app/ios/                @flutter/website-reviewers @sfshaza2 @parlough @jmagman
