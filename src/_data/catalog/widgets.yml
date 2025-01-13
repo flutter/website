@@ -1740,6 +1740,13 @@
   link: https://api.flutter.dev/flutter/material/RefreshIndicator-class.html
   image:
     src: https://storage.googleapis.com/material-design/publish/material_v_12/assets/0B7WCemMG6e0VS2kzSmZwNnNKQVk/patterns-swipe-to-refresh.png
+- name: RelativePositionedTransition
+  description: >-
+    Animated version of Positioned which transitions the child's position based on the value of rect relative to a bounding box with the specified size.
+  categories:
+    - 'Animation and motion'
+  subcategories: []
+  link: https://api.flutter.dev/flutter/widgets/RelativePositionedTransition-class.html
 - name: ReorderableListView
   description: >-
     A list whose items the user can interactively reorder by dragging.
