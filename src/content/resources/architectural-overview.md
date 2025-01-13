@@ -1069,24 +1069,36 @@ renderer at runtime. For a WebAssembly build,
 Flutter chooses the `skwasm` renderer at runtime,
 and falls back to canvaskit if the browser doesn't support skwasm.
 
+{% comment %}
+The draw.io source for the following image is in /diagrams/resources
+{% endcomment %}
+
 ![Flutter web
 architecture](/assets/images/docs/arch-overview/web-framework-diagram.drawio.png){:width="100%"}
 
-Perhaps the most notable difference compared to other platforms on which Flutter
-runs is that there is no need for Flutter to provide a Dart runtime. Instead,
-the Flutter framework (along with any code you write) is compiled to JavaScript.
-It's also worthy to note that Dart has very few language semantic differences
-across all its modes (JIT versus AOT, native versus web compilation), and most
-developers will never write a line of code that runs into such a difference.
+Perhaps the most notable difference compared to other
+platforms on which Flutter runs is that there is no need
+for Flutter to provide a Dart runtime.
+Instead, the Flutter framework (along with any code you write)
+is compiled to JavaScript.
+It's also worthy to note that Dart has very few language
+semantic differences across all its modes
+(JIT versus AOT, native versus web compilation),
+and most developers will never write a line of code that
+runs into such a difference.
 
 During development time, Flutter web uses
-[`dartdevc`]({{site.dart-site}}/tools/dartdevc), a compiler that supports
-incremental compilation and therefore allows hot restart (although not currently
-hot reload) for apps. Conversely, when you are ready to create a production app
-for the web, [`dart2js`]({{site.dart-site}}/tools/dart2js), Dart's
-highly-optimized production JavaScript compiler is used, packaging the Flutter
-core and framework along with your application into a minified source file that
-can be deployed to any web server. Code can be offered in a single file or split
+[`dartdevc`]({{site.dart-site}}/tools/dartdevc),
+a compiler that supports incremental compilation
+and therefore allows hot restart
+(although not currently hot reload) for apps.
+Conversely, when you are ready to create a production app
+for the web, [`dart2js`]({{site.dart-site}}/tools/dart2js),
+Dart's highly-optimized production JavaScript compiler is used,
+packaging the Flutter core and framework along with your
+application into a minified source file that
+can be deployed to any web server.
+Code can be offered in a single file or split
 into multiple files through [deferred imports][].
 
 For more information on Flutter web, check out
