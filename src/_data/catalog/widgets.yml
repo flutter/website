@@ -1119,6 +1119,13 @@
     - 'Text'
   subcategories: []
   link: https://api.flutter.dev/flutter/widgets/DefaultTextStyle-class.html
+- name: DefaultTextStyleTransition
+  description: >-
+    Animated version of a DefaultTextStyle that animates the different properties of its TextStyle.
+  categories:
+    - 'Animation and motion'
+  subcategories: []
+  link: https://api.flutter.dev/flutter/widgets/DefaultTextStyleTransition-class.html
 - name: Dismissible
   description: >-
     A widget that can be dismissed by dragging in the indicated direction.
