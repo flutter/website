@@ -51,7 +51,7 @@ or ignore it and let the calling view model handle it.
 
 This can be observed in the following example. Consider these classes:
 
-- A service,`ApiClientService`, performs API calls to a remote service.
+- A service, `ApiClientService`, performs API calls to a remote service.
 - A repository, `UserProfileRepository`,
   provides the `UserProfile` provided by the `ApiClientService`.
 - A view model, `UserProfileViewModel`, uses the `UserProfileRepository`.
