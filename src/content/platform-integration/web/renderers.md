@@ -11,7 +11,7 @@ Flutter chooses the build mode when building the app,
 and determines which renderers are available at runtime.
 
 For a default build,
-Flutter chooses the`canvaskit` renderer at runtime.
+Flutter chooses the `canvaskit` renderer at runtime.
 For a WebAssembly build,
 Flutter chooses the `skwasm` renderer at runtime,
 and falls back to `canvaskit` if the browser doesn't support `skwasm`.

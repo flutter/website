@@ -37,7 +37,7 @@ decodes the returned json,
 and prints it to the console. 
 If you're confident in your ability to 
 understand this program, 
-feel free to skip to the page.
+feel free to skip to the next page.
 
 ```dart
 import 'dart:convert';
@@ -169,7 +169,7 @@ building block of Flutter apps: widgets.
 [Deferred components]: /perf/deferred-components
 [`main`]: {{site.dart-site}}/language#hello-world
 [classes in Dart]: {{site.dart-site}}/language/classes
-[`FutureBuilder`]: {{site.api}}/flutter/widgets/FutureBuilder-class
+[`FutureBuilder`]: {{site.api}}/flutter/widgets/FutureBuilder-class.html
 [type safe]: {{site.dart-site}}/language/type-system
 [sound null safety]: {{site.dart-site}}/null-safety
 [Working with long lists]: /cookbook/lists/long-lists

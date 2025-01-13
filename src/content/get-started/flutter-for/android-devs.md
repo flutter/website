@@ -1293,14 +1293,14 @@ Next, you'll need to declare these images in your `pubspec.yaml` file:
 
 ```yaml
 assets:
- - images/my_icon.jpeg
+ - images/my_icon.png
 ```
 
 You can then access your images using `AssetImage`:
 
 <?code-excerpt "lib/images.dart (asset-image)"?>
 ```dart
-AssetImage('images/my_icon.jpeg')
+AssetImage('images/my_icon.png')
 ```
 
 or directly in an `Image` widget:

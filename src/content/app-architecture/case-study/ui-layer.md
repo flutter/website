@@ -191,7 +191,7 @@ propagates up to the UI layer and triggers a re-build of your Flutter widgets.
 3. `ViewModel.notifyListeners` is called, alerting the View of new UI State.
 4. The view (widget) re-renders.
 
-For example, when the user navigates to the Home screen and the view mo is
+For example, when the user navigates to the Home screen and the view model is
 created, the `_load` method is called.
 Until this method completes, the UI state is empty,
 the view displays a loading indicator.
@@ -578,7 +578,7 @@ the view wants to render. This gets at *why* the Compass app uses `Commands`.
 In the view's `Widget.build` method,
 the command is used to conditionally render different widgets.
 
-```dart title=home_viewmodel.dart
+```dart title=home_screen.dart
 // ...
 child: ListenableBuilder(
   listenable: [!viewModel.load!],
