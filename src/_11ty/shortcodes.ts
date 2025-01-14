@@ -11,7 +11,7 @@ function _setupMedia(eleventyConfig: UserConfig): void {
     let embedMarkup = `<iframe ${fullWidth ? 'class="full-width"' : 'width="560" height="315"'} 
         src="https://www.youtube.com/embed/${id}" title="${title}" frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        allowfullscreen loading="lazy"></iframe><br>`;
+        allowfullscreen loading="lazy"></iframe>`;
 
     if (!skipAlternativeLink) {
       embedMarkup += `<p><a href="https://www.youtube.com/watch/${id}" target="_blank" rel="noopener" title="Open '${title}' video in new tab">${title}</a></p>`;

@@ -41,14 +41,14 @@ To get started, see our cookbooks for Android and iOS:
 <div class="card-grid">
   <a class="card" href="/cookbook/navigation/set-up-app-links">
     <div class="card-body">
-      <header class="card-title text-center">
+      <header class="card-title card-center">
         Android
       </header>
     </div>
   </a>
   <a class="card" href="/cookbook/navigation/set-up-universal-links">
     <div class="card-body">
-      <header class="card-title text-center">
+      <header class="card-title card-center">
         iOS
       </header>
     </div>

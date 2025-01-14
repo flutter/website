@@ -1,0 +1,105 @@
+body {
+  --site-ui-font-family: 'Google Sans', 'Roboto', ui-sans, sans-serif;
+  --site-body-font-family: 'Google Sans Text', 'Roboto', ui-sans, sans-serif;
+  --site-code-font-family: 'Google Sans Mono', 'Roboto Mono', ui-monospace, monospace;
+
+  --site-square-radius: 0.4rem;
+
+  --site-surface: rgb(251 251 255);
+  --site-on-surface: rgb(25 28 34);
+  --site-surface-variant: rgb(222 226 242);
+  --site-on-surface-variant: rgb(66 71 83);
+
+  --site-primary: #146bcd;
+  --site-surface-tint: rgb(0 91 191);
+  --site-on-primary: rgb(255 255 255);
+
+  --site-inverse-primary: rgb(172 199 255);
+  --site-on-inverse-primary: rgb(0 47 104);
+
+  --site-primary-container: rgb(4 104 215);
+  --site-on-primary-container: rgb(255 255 255);
+  --site-secondary: rgb(72 94 137);
+  --site-on-secondary: rgb(255 255 255);
+  --site-secondary-container: rgb(194 229 255);
+  --site-on-secondary-container: rgb(10 10 10);
+
+  --site-surface-container-lowest: rgb(255 255 255);
+  --site-surface-container-low: rgb(242, 246, 252); // Outside content
+  --site-surface-container: rgb(237, 241, 247); // Card background
+  --site-surface-container-high: rgb(230, 234, 242); // Search, button, modal
+  --site-surface-container-highest: rgb(225, 229, 237); // (bright) button
+
+  --site-outline: rgb(114, 120, 133); // Button border
+  --site-outline-variant: rgb(195, 201, 214);
+
+  --site-interaction-base-values: 0 0 0;
+
+  --flutter-wordmark-color: rgb(74 74 74);
+
+  --code-highlight-bg-color: rgba(255, 245, 156, 0.8);
+  --alert-info-color: #2058b7;
+  --alert-tip-color: #0c7927;
+  --alert-important-color: #7e5ac2;
+  --alert-warning-color: #886a14;
+  --alert-error-color: #cd3434;
+
+  &:not(.dark-mode) .dark-mode-visible {
+    display: none;
+  }
+
+  &.dark-mode {
+    --site-surface: rgb(16 19 26);
+    --site-on-surface: rgb(225 226 236);
+    --site-surface-variant: rgb(66 71 83); // Divider
+    --site-on-surface-variant: rgb(194 198 214);
+
+    --site-primary: #1a86ff;
+    --site-surface-tint: rgb(172 199 255);
+    --site-on-primary: rgb(0 47 104);
+
+    --site-inverse-primary: rgb(0 91 191);
+    --site-on-inverse-primary: rgb(255 255 255);
+
+    --site-primary-container: rgb(0 95 198);
+    --site-on-primary-container: rgb(255 255 255);
+    --site-secondary: rgb(176 199 248);
+    --site-on-secondary: rgb(24 48 88);
+    --site-secondary-container: rgb(22 83 153);
+    --site-on-secondary-container: rgb(225 226 236);
+
+    --site-surface-container-lowest: rgb(11, 14, 20);
+    --site-surface-container-low: rgb(25 28 34); // Outside content
+    --site-surface-container: rgb(29 32 38); // Card background
+    --site-surface-container-high: rgb(39, 42, 48); // Search, button, modal
+    --site-surface-container-highest: rgb(51, 54, 61); // (bright) button
+
+    --site-outline: rgb(139, 145, 158); // Button border
+    --site-outline-variant: rgb(67, 73, 84);
+
+    --site-interaction-base-values: 255 255 255;
+
+    --flutter-wordmark-color: rgb(255 255 255);
+
+    --code-highlight-bg-color: rgba(170, 165, 88, 0.2);
+    --alert-info-color: #308bf5;
+    --alert-tip-color: #25c04b;
+    --alert-important-color: #a676ff;
+    --alert-warning-color: #cea11f;
+    --alert-error-color: #ff4141;
+
+    .light-mode-visible {
+      display: none;
+    }
+
+    .shiki, .shiki span {
+      color: var(--shiki-dark) !important;
+      font-style: var(--shiki-dark-font-style) !important;
+      font-weight: var(--shiki-dark-font-weight) !important;
+      text-decoration: var(--shiki-dark-text-decoration) !important;
+    }
+  }
+
+  background-color: var(--site-surface-container);
+  color: var(--site-on-surface);
+}

@@ -1,0 +1,99 @@
+img, iframe, svg, figure {
+  max-width: 100%;
+  object-fit: contain;
+}
+
+svg {
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+iframe {
+  max-width: 100%;
+
+  &[src*="youtube.com"] {
+    aspect-ratio: auto;
+    border-radius: var(--site-square-radius);;
+    margin-bottom: 0.25rem;
+  }
+
+  &[src*="dartpad.dev"], &[src*="dartpad.cn"] {
+    width: 100%;
+    min-height: 20rem;
+    border: 1px solid var(--site-outline-variant);
+    border-radius: var(--site-square-radius);
+    resize: vertical;
+    overflow-y: auto;
+  }
+}
+
+.video-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+
+  .video-intro {
+    font-weight: 500;
+    padding: 0 0.75rem;
+    text-wrap: pretty;
+  }
+}
+
+figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  img {
+    margin-bottom: 0.5rem;
+    max-width: 25rem;
+  }
+
+  figcaption {
+    font-size: 0.875em;
+    font-style: italic;
+    text-align: center;
+  }
+
+  .site-figure-container {
+    text-align: center;
+  }
+
+  &.code-and-image {
+    gap: 0.25rem;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    > div {
+      width: 100%;
+
+      &:last-child {
+        text-align: center;
+      }
+    }
+
+    @media(min-width: 769px) {
+      > div {
+        &:first-child {
+          flex: 0 0 50%;
+          max-width: 50%;
+        }
+
+        &:last-child {
+          flex: 0 0 47%;
+          max-width: 47%;
+        }
+      }
+
+      figcaption {
+        text-align: left;
+      }
+
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}
