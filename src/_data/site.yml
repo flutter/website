@@ -8,6 +8,7 @@ google_site_verification: HFqxhSbf9YA_0rBglNLzDiWnrHiK_w4cqDh2YD2GEY4
 google_tag_manager_id: GTM-ND4LWWZ
 default_share_image: /assets/images/flutter-logo-sharing.png
 
+show_banner: true
 
 github_username: flutter
 branch: main
@@ -70,7 +71,7 @@ appmin:
   intellij_idea: '2023.3'
   android_sdk: 21
   powershell: 5.0
-  xcode: '14'
+  xcode: '15'
   cocoapods: '1.16'
 devmin:
   windows: '64-bit version of Microsoft Windows 10'
@@ -90,12 +91,12 @@ targetmin:
 ## Software current versions
 
 appnow:
-  flutter: '3.24.3'
-  vscode: '1.93'
-  android_studio: '2024.1'
+  flutter: '3.27.0'
+  vscode: '1.95'
+  android_studio: '2024.2'
   android_sdk: '35.0.1'
-  intellij: '2024.1'
+  intellij: '2024.2'
   powershell: 5.1
-  xcode: '15'
+  xcode: '16'
   ios: '17'
   cocoapods: '1.16'

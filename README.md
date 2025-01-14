@@ -15,6 +15,21 @@ built with [Eleventy][] and hosted on [Firebase][].
 [Flutter]: https://docs.flutter.dev/
 [Repo on GitHub Actions]: https://github.com/flutter/website/actions?query=workflow%3Abuild+branch%3Amain
 
+<a href="https://idx.google.com/import?url=https%3A%2F%2Fgithub.com%2Fflutter%2Fwebsite">
+  <picture>
+    <source
+      media="(prefers-color-scheme: dark)"
+      srcset="https://cdn.idx.dev/btn/open_dark_32.svg">
+    <source
+      media="(prefers-color-scheme: light)"
+      srcset="https://cdn.idx.dev/btn/open_light_32.svg">
+    <img
+      height="32"
+      alt="Open in IDX"
+      src="https://cdn.idx.dev/btn/open_purple_32.svg">
+  </picture>
+</a>
+
 ## Issues, bugs, and requests
 
 We welcome contributions and feedback on our website. 
@@ -27,8 +42,8 @@ it's easiest to make changes using the GitHub UI.
 If you have an issue with the 
 API docs on [api.flutter.dev](https://api.flutter.dev), 
 please file those issues on 
-the [flutter/flutter](https://github.com/flutter/flutter/issues) repo, 
-not on this (flutter/website) repo. 
+the [`flutter/flutter`](https://github.com/flutter/flutter/issues) repo, 
+not on this (`flutter/website`) repo. 
 The API docs are embedded in Flutter's source code, 
 so the engineering team handles those.
 
@@ -114,7 +129,7 @@ If you prefer, you can use a version manager such as [nvm][],
 and run `nvm install` from the repository's root directory.
 
 If you already have Node installed, verify it's available on your path
-and already the latest stable version _(currently `20.17` or later)_:
+and already the latest stable version _(currently `22.12` or later)_:
 
 ```console
 node --version
@@ -185,7 +200,7 @@ following the instructions in [Get the prerequisites](#get-the-prerequisites).
    dart pub get
    ```
 
-3. (optional - We highly recommend you use `pnpm`, but you can also use `npm`.)
+3. _Optional:_ We recommend you use `pnpm`, but you can also use `npm`.
    Install `pnpm`, an alternative, efficient package manager for
    npm packages. If you already have `pnpm`, verify you have the
    latest stable version.
@@ -194,7 +209,7 @@ following the instructions in [Get the prerequisites](#get-the-prerequisites).
    node --version
    ```
 
-   If you do not already have `pnpm` installed, we recommend
+   If you don't already have `pnpm` installed, we recommend
    using [`corepack`][] to install and manage `pnpm` versions,
    since `corepack` is bundled with most installations of
    Node. If you installed `node` using Homebrew, you'll need
@@ -312,7 +327,7 @@ run `./dash_site refresh-excerpts`.
 To learn more about creating, editing, and using code excerpts,
 check out the [excerpt updater package documentation][].
 
-[excerpt updater package documentation]: https://github.com/dart-lang/site-shared/tree/main/packages/excerpter#readme
+[excerpt updater package documentation]: https://github.com/dart-lang/site-shared/tree/main/pkgs/excerpter#readme
 
 ## [Optional] Deploy to a staging site
 
@@ -345,7 +360,7 @@ you can build a full version and upload it to Firebase.
    ./dash_site build
    ```
 
-   This will build the site and copy it to your local `_site` directory.
+   This builds the site and copies it to your local `_site` directory.
    If that directory previously existed, it will be replaced.
 
 3. Deploy to your activated Firebase project's default hosting site:

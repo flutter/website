@@ -37,7 +37,7 @@ int analyzeDart({
 }) {
   final directoriesToAnalyze = [
     path.join('tool', 'flutter_site'),
-    ...exampleProjectDirectories,
+    path.join('examples'),
   ];
 
   if (!verboseLogging) {
@@ -47,6 +47,11 @@ int analyzeDart({
   for (final directory in directoriesToAnalyze) {
     if (verboseLogging) {
       print("Analyzing code in '$directory' directory...");
+    }
+
+    if (runPubGetIfNecessary(directory) case final pubGetResult
+        when pubGetResult != 0) {
+      return pubGetResult;
     }
 
     final flutterAnalyzeOutput = Process.runSync(

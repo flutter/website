@@ -39,11 +39,11 @@ see the following docs:
 
 ## Mobile-only advice
 
-Do you see noticeable jank on your mobile app, but only on
-the first run of an animation? If so, see
-[Reduce shader animation jank on mobile][].
+Do you see noticeable jank on your mobile app, but only on the first run of an
+animation? To avoid this, make sure you're using Flutter's default
+graphic renderer, [Impeller][].
 
-[Reduce shader animation jank on mobile]: /perf/shader
+[Impeller]: /perf/impeller
 
 ## Web-only advice
 

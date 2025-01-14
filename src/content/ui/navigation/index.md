@@ -20,17 +20,15 @@ animations for the target platform. To navigate to a new screen, access the
 `Navigator` through the route's `BuildContext` and call imperative methods such
 as `push()` `or pop()`:
 
+<?code-excerpt "ui/navigation/lib/navigator_basic.dart (push-route)"?>
 ```dart
+child: const Text('Open second screen'),
 onPressed: () {
   Navigator.of(context).push(
-    MaterialPageRoute(
-      builder: (context) => const SongScreen(song: song),
-    ),
+    MaterialPageRoute(builder: (context) => const SecondScreen()),
   );
 },
-child: Text(song.name),
 ```
-
 
 Because `Navigator` keeps a stack of `Route` objects (representing the history
 stack), The `push()` method also takes a `Route` object. The `MaterialPageRoute`
@@ -50,20 +48,17 @@ Applications with simple navigation and deep linking requirements can use the
 `Navigator` for navigation and the [`MaterialApp.routes`][] parameter for deep
 links:
 
+<?code-excerpt "ui/navigation/lib/navigator_named_routes.dart (push-route)"?>
 ```dart
-@override
-Widget build(BuildContext context) {
-  return MaterialApp(
-    routes: {
-      '/': (context) => HomeScreen(),
-      '/details': (context) => DetailScreen(),
-    },
-  );
-}
+child: const Text('Open second screen'),
+onPressed: () {
+  Navigator.pushNamed(context, '/second');
+},
 ```
 
-Routes specified here are called _named routes_. For a complete example, follow
-the [Navigate with named routes][] recipe from the Flutter Cookbook.
+`/second` represents a _named route_ that was declared in the
+`MaterialApp.routes` list. For a complete example, follow the
+[Navigate with named routes][] recipe from the Flutter Cookbook.
 
 
 ### Limitations
@@ -86,20 +81,17 @@ new deep link.
 
 To use the Router, switch to the `router` constructor on `MaterialApp` or
 `CupertinoApp` and provide it with a `Router` configuration. Routing packages,
-such as [go_router][], typically provide a
-configuration for you. For example:
+such as [go_router][], typically provide route configuration and routes
+can be used as follows:
 
+<?code-excerpt "ui/navigation/lib/navigator_router.dart (push-route)"?>
 ```dart
-MaterialApp.router(
-  routerConfig: GoRouter(
-    // …
-  )
-);
+child: const Text('Open second screen'),
+onPressed: () => context.go('/second'),
 ```
 
 Because packages like go_router are _declarative_, they will always display the
 same screen(s) when a deep link is received.
-
 
 :::note Note for advanced developers
 If you prefer not to use a routing package

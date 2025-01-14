@@ -53,7 +53,7 @@ In stable release: 3.16
 
 Design document:
 
-*  [flutter.dev/go/windows-arm64][]
+* [flutter.dev/go/windows-arm64][]
 
 Relevant pull requests:
 

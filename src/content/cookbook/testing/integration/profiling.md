@@ -198,13 +198,12 @@ the project contains two files:
 
 **integration_test/scrolling_test.dart**
 
-<?code-excerpt "integration_test/scrolling_test.dart"?>
+<?code-excerpt "integration_test/scrolling_test.dart" replace="/your_integration_test/your_package/g;"?>
 ```dart
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
-
-import 'package:scrolling/main.dart';
+import 'package:your_package/main.dart';
 
 void main() {
   final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized();

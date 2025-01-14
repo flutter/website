@@ -252,7 +252,7 @@ or you can build your own set of custom widgets.
 
 #### Non-Material apps
 
-For a non-Material app, you can add the `Center` widget to the app's
+For a non-Material app, you can add the `Container` widget to the app's
 `build()` method:
 
 <?code-excerpt path-base="layout/non_material"?>
@@ -930,8 +930,8 @@ Widget _buildGrid() => [!GridView!].extent(
 // The images are saved with names pic0.jpg, pic1.jpg...pic29.jpg.
 // The List.generate() constructor allows an easy way to create
 // a list when objects have a predictable naming pattern.
-List<Container> _buildGridTileList(int count) => List.generate(
-    count, (i) => Container(child: Image.asset('images/pic$i.jpg')));
+List<Widget> _buildGridTileList(int count) =>
+    List.generate(count, (i) => Image.asset('images/pic$i.jpg'));
 ```
 
 <hr>

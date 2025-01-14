@@ -2,8 +2,9 @@ name: errors
 description: An error handling example.
 publish_to: none
 
+resolution: workspace
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.6.0
 
 dependencies:
   flutter:
@@ -11,8 +12,6 @@ dependencies:
   firebase_core: ^2.25.4
 
 dev_dependencies:
-  example_utils:
-    path: ../../example_utils
   integration_test:
     sdk: flutter
   flutter_test:

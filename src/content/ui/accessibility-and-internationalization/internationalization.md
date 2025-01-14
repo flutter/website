@@ -570,7 +570,7 @@ The localizations generation tool in
 class in the `intl` package to format
 numbers based on the locale and the desired format.
 
-The `int`, `double`, and `number` types can use any of the
+The `int`, `double`, and `num` types can use any of the
 following `NumberFormat` constructors:
 
 | Message "format" value   | Output for 1200000 |

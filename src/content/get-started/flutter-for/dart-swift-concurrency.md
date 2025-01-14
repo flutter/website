@@ -79,28 +79,24 @@ you might do something like the following.
 First, define the `Weather` `enum`:
 
 ```swift
-// 1 second delay is used in mocked API call. 
-extension UInt64 {
-  static let oneSecond = UInt64(1_000_000_000)
-} 
-
 enum Weather: String {
     case rainy, sunny
 }
 ```
 
-Next, define the view model and mark it as an `ObservableObject` 
-so that it can return a value of type `Weather?`. 
-Use GCD create to a `DispatchQueue` to 
-send the work to the pool of threads
+Next, define the view model and mark it as an [`@Observable`][] 
+that publishes the `result` of type `Weather?`. 
+Use GCD to create a background `DispatchQueue` to 
+send the work to the pool of threads, and then dispatch 
+back to the main thread to update the `result`. 
 
 ```swift
-class ContentViewModel: ObservableObject {
-    @Published private(set) var result: Weather?
+@Observable class ContentViewModel {
+    private(set) var result: Weather?
 
     private let queue = DispatchQueue(label: "weather_io_queue")
     func load() {
-        // Mimic 1 sec delay.
+        // Mimic 1 second network delay.
         queue.asyncAfter(deadline: .now() + 1) { [weak self] in
             DispatchQueue.main.async {
                 self?.result = .sunny
@@ -114,9 +110,9 @@ Finally, display the results:
 
 ```swift
 struct ContentView: View {
-    @StateObject var viewModel = ContentViewModel()
+    @State var viewModel = ContentViewModel()
     var body: some View {
-        Text(viewModel.result?.rawValue ?? "Loading")
+        Text(viewModel.result?.rawValue ?? "Loading...")
             .onAppear {
                 viewModel.load()
         }
@@ -132,22 +128,23 @@ with a `load()` function that internally calls an
 asynchronous function using `Task`.   
 
 ```swift
-@MainActor class ContentViewModel: ObservableObject {
-  @Published private(set) var result: Weather?
+@MainActor @Observable class ContentViewModel {
+  private(set) var result: Weather?
   
   func load() async {
-    try? await Task.sleep(nanoseconds: .oneSecond)
+    // Mimic 1 second network delay.
+    try? await Task.sleep(nanoseconds: 1_000_000_000)
     self.result = .sunny
   }
 }
 ```
 
-Next, define the view model as a state object using `@StateObject`, 
+Next, define the view model as a state using `@State`, 
 with a `load()` function that can be called by the view model:
 
 ```swift
 struct ContentView: View {
-  @StateObject var viewModel = ContentViewModel()
+  @State var viewModel = ContentViewModel()
   var body: some View {
     Text(viewModel.result?.rawValue ?? "Loading...")
       .task {
@@ -172,7 +169,7 @@ enum Weather {
 
 Then, define a simple view model (similar to what was created in SwiftUI), 
 to fetch the weather. In Dart, a `Future` object represents a value to be
-provided in the future. A `Future` is similar to Swift's `ObservableObject`. 
+provided in the future. A `Future` is similar to Swift's `@Observable`. 
 In this example, a function within the view model
 returns a `Future<Weather>` object:
 
@@ -314,3 +311,4 @@ and more information on Flutter at
 [Learning Dart as a Swift developer]: {{site.dart-site}}/guides/language/coming-from/swift-to-dart
 [Flutter for SwiftUI developers]: /get-started/flutter-for/swiftui-devs
 [Flutter for UIKit developers]: /get-started/flutter-for/uikit-devs
+[`@Observable`]: https://developer.apple.com/documentation/observation/observable()
