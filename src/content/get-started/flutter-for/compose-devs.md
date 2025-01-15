@@ -54,7 +54,7 @@ Text("Hello, World!",
 
 **Flutter** represents UI components as _widgets_.
 
-Both composables and widgets only exist until they need to be changed.
+Both composables and widgets only exist until they need to change.
 These languages call this property _immutability_.
 Jetpack Compose modifies UI component properties using an optional
 _modifier_ property backed by a Modifier object.
