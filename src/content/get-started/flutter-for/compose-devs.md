@@ -100,7 +100,7 @@ A constraint becomes tight when its constraint's minimum size value
 equals its maximum size value.
 
 To learn how constraints work in Flutter,
-see [Understanding constraints][].
+visit [Understanding constraints][].
 
 ### Design system
 
