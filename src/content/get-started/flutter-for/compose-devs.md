@@ -481,8 +481,8 @@ This includes `crossAxisCount` that dictates the number of items
 displayed on each row.
 
 Jetpack Compose's `Lazy___Grid` and Flutter's `GridView` are somewhat 
-similar. `GridView` uses a delegate to decide how the grid  how the
-grid should lay out its components. The `rows`, `columns`, and other
+similar. `GridView` uses a delegate to decide how the grid
+should lay out its components. The `rows`, `columns`, and other
 associated properties on `Lazy___Grid` serve the same purpose.
 
 ### Creating a scroll view
