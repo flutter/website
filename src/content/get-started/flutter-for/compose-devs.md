@@ -276,7 +276,7 @@ Row(
 ```
 
 The `Row` widget requires a `List<Widget>` in the `children` parameter.
-The `mainAxisAlignment` property tells Flutter how to position children
+The `mainAxisAlignment` property tells Flutter how to position its children
 with extra space. `MainAxisAlignment.center` positions children in the
 center of the main axis. For `Row`, the main axis is the horizontal
 axis.
