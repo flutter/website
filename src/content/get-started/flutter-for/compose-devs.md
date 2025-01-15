@@ -57,7 +57,7 @@ Text("Hello, World!",
 Both composables and widgets only exist until they need to change.
 These languages call this property _immutability_.
 Jetpack Compose modifies UI component properties using an optional
-_modifier_ property backed by a Modifier object.
+_modifier_ property backed by a `Modifier` object.
 By contrast, Flutter uses widgets for both UI components and
 their properties.
 
