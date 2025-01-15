@@ -356,8 +356,7 @@ fun ListDemo2(people: List<Person>) {
 }
 ```
 
-`ListView` in **Flutter** closely resembles LazyList
-This resembles how **Flutter** prefers to build its list widgets.
+To lazily build a list in Flutter, ....
 
 <?code-excerpt "../ios_devs/lib/list.dart (simple-list)"?>
 ```dart dartpad="67426fd4f9c38c0c1db96b1af65598f2"
