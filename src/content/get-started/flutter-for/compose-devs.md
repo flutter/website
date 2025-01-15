@@ -70,7 +70,7 @@ Padding(                         // <-- This is a Widget
 
 To compose layouts, both Jetpack Compose and Flutter nest UI components
 within one another.
-Jetpack Compose nests Composables while Flutter nests Widgets.
+Jetpack Compose nests `Composables` while Flutter nests `Widgets`.
 
 ### Layout process
 
