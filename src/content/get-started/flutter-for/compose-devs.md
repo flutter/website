@@ -411,7 +411,7 @@ almost any widget that represents your data.
 Constructing a grid in **Compose** is similar to a 
 LazyList (`LazyColumn` or `LazyRow`). You can use the
 same `items` closure. There are properties on each 
-grid type to specify how the items will be arranged,
+grid type to specify how to arrange the items,
 whether or not to use adaptive or fixed layout, 
 amongst others.
 
