@@ -390,7 +390,7 @@ class HomePage extends StatelessWidget {
 }
 ```
 
-Flutter has some caveats for lists:
+Flutter has some conventions for lists:
 
 - The [`ListView`] widget has a builder method.
   This works like the `item` closure inside a Compose `LazyList`.
