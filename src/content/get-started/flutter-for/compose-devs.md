@@ -106,7 +106,7 @@ visit [Understanding constraints][].
 
 Because Flutter targets multiple platforms, your app doesn't need
 to conform to any design system.
-Though this guide features [Material][] widgets,
+While this guide features [Material][] widgets,
 your Flutter app can use many different design systems:
 
 - Custom Material widgets
