@@ -156,7 +156,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 }
 ```
 
-To start your **Flutter** app, pass in an instance of your app to
+To start your **Flutter** app, pass an instance of your app to
 the `runApp` function.
 
 <?code-excerpt "../ios_devs/lib/get_started.dart (main)"?>
