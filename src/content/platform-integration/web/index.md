@@ -35,7 +35,7 @@ Flutter core and framework along with your application
 into a single, minified source file that can be deployed to
 any web server.
 
-<img src="/assets/images/docs/arch-overview/web-arch.png"
+<img src="/assets/images/docs/arch-overview/web-framework-diagram.drawio.png"
 alt="Flutter architecture for web"
 width="100%">
 
