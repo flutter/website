@@ -1098,7 +1098,7 @@ The framework is entirely self-contained and requires
 In addition, any Dart packages you use might have their
 own license requirements.
 
-[license file]: https://raw.githubusercontent.com/flutter/engine/master/sky/packages/sky_engine/LICENSE
+[license file]: https://github.com/flutter/flutter/blob/master/engine/src/flutter/sky/packages/sky_engine/LICENSE
 [only one license]: {{site.repo.flutter}}/blob/master/LICENSE
 
 ### How can I determine the licenses my Flutter application needs to show?
