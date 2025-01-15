@@ -431,10 +431,12 @@ val filePath = settingsDir.parentFile.toString() + "/flutter_module/.android/inc
 apply(from = File(filePath))
 ```
 
-:::note
-The ability to invoke `include_flutter.groovy` from Kotlin code requires Flutter 3.27.
-To determine your current Flutter version, run `flutter --version`. If it is not
-at least version 3.27, consider changing to either the `master` or `beta` channels.
+:::warning
+The ability to invoke `include_flutter.groovy` from Kotlin code
+requires Flutter 3.27.
+To determine your current Flutter version,
+run `flutter --version`. If it isn't at least version 3.27,
+consider changing to either the `main` or `beta` channels.
 :::
 
 If you are using Groovy, apply the following changes:
