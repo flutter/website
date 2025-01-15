@@ -75,7 +75,7 @@ Jetpack Compose nests `Composables` while Flutter nests `Widgets`.
 ### Layout process
 
 Jetpack Compose and Flutter handle layout in similar ways. Both of them
-layout in a single pass and parent elements pass layout constraints 
+lay out the UI in a single pass and parent elements provide layout constraints 
 down to their children. More specifically,
 
 1. The parent measures itself and its children recursively providing 
