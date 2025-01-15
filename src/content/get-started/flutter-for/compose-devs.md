@@ -187,7 +187,7 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-The widget used in `HomePage` might begin with the `Scaffold` class.
+The widget used in the `HomePage` might begin with the `Scaffold` class.
 `Scaffold` implements a basic layout structure for an app.
 
 <?code-excerpt "../ios_devs/lib/get_started.dart (homepage)"?>
