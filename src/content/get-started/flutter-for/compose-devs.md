@@ -221,7 +221,7 @@ the [Widget catalog][].
 
 ### Adding Buttons
 
-In **Compose**, you use the `Button` composable or one of variants
+In **Compose**, you use the `Button` composable or one of its variants
 to create a button. Button is an alias for FilledTonalButton
 when using a Material theme.
 
