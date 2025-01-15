@@ -1,5 +1,5 @@
 ---
-title: Flutter for Jetpack Compose Developers
+title: Flutter for Jetpack Compose developers
 description: Learn how to apply Jetpack Compose developer knowledge when building Flutter apps.
 ---
 
