@@ -83,7 +83,7 @@ down to their children. More specifically,
 2. The children try to size themselves using the above methods and 
 provide their own children both their constraints and any that
 might apply from their ancestor nodes.
-3. Upon reacting a leaf node (a node with no children), the size
+3. Upon encountering a leaf node (a node with no children), the size
 and properties are determined based on the provided constraints 
 and the element is placed in the UI.
 4. With all the children sized and placed, the root nodes can 
