@@ -166,7 +166,7 @@ void main() {
 }
 ```
 
-`App` is a widget. The build method describes the part of the
+`App` is a widget. It's `build` method describes the part of the
 user interface it represents.
 It's common to begin your app with a [`WidgetApp`][] class,
 like [`MaterialApp`][].
