@@ -212,8 +212,7 @@ Note how Flutter uses the [`Center`][] widget.
 
 Compose has a number of defaults from its ancestor Android Views.
 Unless otherwise specified, most components "wrap" their size to
-content meaning they only tak up as much space as needed to be 
-drawn.
+content meaning they only take up as much space as needed when rendered.
 That's not always the case with Flutter.
 
 To center the text, wrap it in a `Center` widget.
