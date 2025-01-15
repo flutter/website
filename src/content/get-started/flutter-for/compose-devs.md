@@ -82,7 +82,7 @@ down to their children. More specifically,
    any constraints from the parent to the child.
 2. The children try to size themselves using the above methods and 
 provide their own children both their constraints and any that
-may apply from their ancestor nodes.
+might apply from their ancestor nodes.
 3. Upon reacting a leaf node (a node with no children), the size
 and properties are determined based on the provided constraints 
 and the element is placed in the UI.
