@@ -22,7 +22,7 @@ This feature is not yet supported for web plugins.
 
 
 [ios-ffi]: /platform-integration/ios/c-interop
-[dart:ffi]: {{site.dart.api}}/dev/dart-ffi/dart-ffi-library.html
+[dart:ffi]: {{site.dart.api}}/dart-ffi/dart-ffi-library.html
 [macos-ffi]: /platform-integration/macos/c-interop
 [FFI]: https://en.wikipedia.org/wiki/Foreign_function_interface
 
@@ -59,7 +59,7 @@ files, one for each architecture.
 A dynamically linked library can be loaded into
 Dart via [`DynamicLibrary.open`][].
 
-API documentation is available from the Dart dev channel:
+API documentation is available from the
 [Dart API reference documentation][].
 
 On Android, only dynamic libraries are supported
@@ -67,10 +67,10 @@ On Android, only dynamic libraries are supported
 which we don't link to statically).
 
 
-[Dart API reference documentation]: {{site.dart.api}}/dev/
-[`DynamicLibrary.executable`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.executable.html
-[`DynamicLibrary.open`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.open.html
-[`DynamicLibrary.process`]: {{site.dart.api}}/dev/dart-ffi/DynamicLibrary/DynamicLibrary.process.html
+[Dart API reference documentation]: {{site.dart.api}}
+[`DynamicLibrary.executable`]: {{site.dart.api}}/dart-ffi/DynamicLibrary/DynamicLibrary.executable.html
+[`DynamicLibrary.open`]: {{site.dart.api}}/dart-ffi/DynamicLibrary/DynamicLibrary.open.html
+[`DynamicLibrary.process`]: {{site.dart.api}}/dart-ffi/DynamicLibrary/DynamicLibrary.process.html
 
 ## Create an FFI plugin
 

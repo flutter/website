@@ -3,7 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:interactive/main.dart';
+import 'package:lakes_interactive/main.dart';
 
 void main() {
   testWidgets('Example app smoke test', (tester) async {

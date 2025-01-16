@@ -49,7 +49,7 @@ For this example, create a `CustomScrollView` that contains a
 `SliverAppBar` and a `SliverList`. In addition, remove any app bars
 that you provide to the `Scaffold` widget.
 
-<?code-excerpt "lib/starter.dart (CustomScrollView)" replace="/^return //g"?>
+<?code-excerpt "lib/starter.dart (CustomScrollView)" replace="/^return const //g"?>
 ```dart
 Scaffold(
   // No appBar property provided, only the body.
@@ -86,7 +86,7 @@ To create this effect:
 CustomScrollView(
   slivers: [
     // Add the app bar to the CustomScrollView.
-    const SliverAppBar(
+    SliverAppBar(
       // Provide a standard title.
       title: Text(title),
       // Allows the user to reveal the app bar if they begin scrolling

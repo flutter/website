@@ -3,7 +3,7 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:layout/main.dart';
+import 'package:pavlova_layout/main.dart';
 
 void main() {
   testWidgets('Example app smoke test', (tester) async {

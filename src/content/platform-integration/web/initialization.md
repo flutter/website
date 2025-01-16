@@ -152,8 +152,6 @@ _flutter.loader.load({
 This script evaluates the `URLSearchParams` of the page to determine whether
 the user passed a `renderer` query parameter and then
 changes the user configuration of the Flutter app.
-It also passes the service worker settings to use the flutter service worker,
-along with the service worker version.
 
 ## The onEntrypointLoaded callback
 

@@ -15,7 +15,13 @@ Integrate features like advanced text generation,
 summarization, chat, and more to your Dart or Flutter
 apps with minimal setup, and deploy across multiple platforms.
 
-The following resources can help you get started:
+The **NEW** [Flutter AI Toolkit][] shows you how to integrate
+an AI generated chatbot into your Flutter app.
+**Check it out!**
+
+[Flutter AI Toolkit]: /ai-toolkit
+
+Other resources include:
 
 * [Get started with the Gemini API in Dart or Flutter apps][tutorial]
 * [Google Generative AI SDK for Dart and Flutter][pkg]

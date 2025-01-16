@@ -5,8 +5,9 @@ publish_to: none
 
 version: 1.0.0+1
 
+resolution: workspace
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.6.0
 
 dependencies:
   flutter:
@@ -14,8 +15,6 @@ dependencies:
   pigeon: ^18.0.0
 
 dev_dependencies:
-  example_utils:
-    path: ../../example_utils
   flutter_test:
     sdk: flutter
 

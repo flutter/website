@@ -237,7 +237,15 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    Otherwise, using `Bundle.module` results in an error.
    :::
 
-1. Commit your plugin's changes to your version control system.
+1. If your `.gitignore` doesn't include `.build/` and `.swiftpm/` directories,
+   you'll want to update your `.gitignore` to include:
+
+    ```text title=".gitignore"
+    .build/
+    .swiftpm/
+    ```
+
+    Commit your plugin's changes to your version control system.
 
 1. Verify the plugin still works with CocoaPods.
 
@@ -295,18 +303,17 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
       flutter run
       ```
 
-      :::warning
+      :::note
       Using the Flutter CLI to run the plugin's example app with the
       Swift Package Manager feature turned on migrates the project to add
       Swift Package Manager integration.
 
-      **Do not commit the migration's changes to your version control system.**
+      This raises the example app's Flutter SDK requirement to version 3.24 or
+      higher.
 
-      Otherwise, the plugin's example app won't build if the
-      Swift Package Manager feature is turned off.
-
-      If you accidentally commit the migration's changes to the plugin's example
-      app, follow the steps to
+      If you'd like to run the example app using an older Flutter SDK version,
+      do not commit the migration's changes to your version control system.
+      If needed, you can always
       [undo the Swift Package Manager migration][removeSPM].
       :::
 
