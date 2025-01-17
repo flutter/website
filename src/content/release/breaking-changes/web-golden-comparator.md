@@ -3,7 +3,7 @@ title: Web-specific golden comparisons are no longer supported
 description: >-
   The `WebGoldenComparator` class and `webGoldenComparator` top-level instance
   are deprecated, pending removal, and the web rendering backends (including
-  both CanvasKit and SkWasm) now use `GoldenFileComparator` and
+  both CanvasKit and skWasm) now use `GoldenFileComparator` and
   `goldenFileComparator` directly.
 ---
 
