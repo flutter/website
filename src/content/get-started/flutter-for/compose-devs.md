@@ -159,8 +159,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 To start your **Flutter** app, pass an instance of your app to
 the `runApp` function.
 
-<?code-excerpt "../ios_devs/lib/get_started.dart (main)"?>
-```dart dartpad="42cf3026e1460ef618257684ee5af6a2"
+```dart
 void main() {
   runApp(const MyApp());
 }
@@ -171,7 +170,6 @@ user interface it represents.
 It's common to begin your app with a [`WidgetApp`][] class,
 like [`MaterialApp`][].
 
-<?code-excerpt "../ios_devs/lib/get_started.dart (myapp)"?>
 ```dart
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -430,15 +428,14 @@ This widget has various constructors. Each constructor has
 a similar goal, but uses different input parameters.
 The following example uses the `.builder()` initializer:
 
-<?code-excerpt "../ios_devs/lib/grid.dart (grid-example)"?>
 ```dart 
 const widgets = [
   Text('Row 1'),
-  Icon(CupertinoIcons.arrow_down_square),
-  Icon(CupertinoIcons.arrow_up_square),
+  Icon(Icons.arrow_downward),
+  Icon(Icons.arrow_upward),
   Text('Row 2'),
-  Icon(CupertinoIcons.arrow_down_square),
-  Icon(CupertinoIcons.arrow_up_square),
+  Icon(Icons.arrow_downward),
+  Icon(Icons.arrow_upward),
 ];
 
 class HomePage extends StatelessWidget {
@@ -682,14 +679,13 @@ Text("Hello, world!",
 To style text in **Flutter**, add a `TextStyle` widget as the value
 of the `style` parameter of the `Text` widget.
 
-<?code-excerpt "lib/cupertino_themes.dart (styling-text)" replace="/child: //g;"?>
-```dart dartpad="18790cfaa8441085994373a4bc4f46b0"
+```dart
 Text(
   'Hello, world!',
   style: TextStyle(
     fontSize: 30,
     fontWeight: FontWeight.bold,
-    color: CupertinoColors.systemYellow,
+    color: Colors.blue,
   ),
 ),
 ```
@@ -866,7 +862,7 @@ To review a complete example, check out the [`Image`][] docs.
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
 [State management]:  /data-and-backend/state-mgmt
-[Wonderous]: https://flutter.gskinner.com/wonderous/?utm_source=flutterdocs&utm_medium=docs&utm_campaign=iosdevs
+[Wonderous]: https://flutter.gskinner.com/wonderous/?utm_source=flutterdocs&utm_medium=docs
 [video_player]: {{site.pub-pkg}}/video_player
 [video_player example]: {{site.pub-pkg}}/video_player/example
 [Creating responsive and adaptive apps]: /ui/adaptive-responsive
