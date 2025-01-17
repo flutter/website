@@ -38,10 +38,10 @@ resources.
 
 [community]: {{site.main-url}}/community
 [Discord]: https://discord.com/invite/N7Yshp4
-[Custom Flutter Engine Embedders]: {{site.repo.engine}}/blob/main/docs/Custom-Flutter-Engine-Embedders.md
+[Custom Flutter Engine Embedders]: {{site.repo.flutter}}/blob/main/engine/src/flutter/docs/Custom-Flutter-Engine-Embedders.md
 [Flutter architectural overview]: /resources/architectural-overview
-[Flutter engine `embedder.h` file]: {{site.repo.engine}}/blob/main/shell/platform/embedder/embedder.h
-[Flutter Embedder Engine GLFW example]: {{site.repo.engine}}/tree/main/examples/glfw#flutter-embedder-engine-glfw-example
+[Flutter engine `embedder.h` file]: {{site.repo.flutter}}/blob/main/engine/src/flutter/shell/platform/embedder/embedder.h
+[Flutter Embedder Engine GLFW example]: {{site.repo.flutter}}/tree/main/engine/src/flutter/examples/glfw#flutter-embedder-engine-glfw-example
 [embedding Flutter in a terminal]: https://github.com/jiahaog/flt
 [Issue 31043]: {{site.repo.flutter}}/issues/31043
 

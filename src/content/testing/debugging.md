@@ -27,7 +27,7 @@ Flutter applications. Here are some of the available tools:
   check out [`flutter_gdb`][].
 
 
-[`flutter_gdb`]: {{site.repo.engine}}/blob/main/sky/tools/flutter_gdb
+[`flutter_gdb`]: {{site.repo.flutter}}/blob/main/engine/src/flutter/sky/tools/flutter_gdb
 
 ## Other resources
 
