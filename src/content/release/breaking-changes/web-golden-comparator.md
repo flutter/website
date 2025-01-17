@@ -89,8 +89,8 @@ Relevant PRs:
 
 - [PR 161196][], where `WebGoldenComparator` was deprecated and the `flutter` CLI started using `goldenFileComparator`.
 
-[Issue 145954]: https://github.com/flutter/flutter/issues/145954
-[Issue 160261]: https://github.com/flutter/flutter/issues/160261
+[Issue 145954]: {{site.github}}/flutter/flutter/issues/145954
+[Issue 160261]: {{site.github}}/flutter/flutter/issues/160261
 [PR 161196]: https://github.com/flutter/flutter/pull/161196
 [class-WebGoldenComparator]: {{site.api}}/flutter/flutter_test/WebGoldenComparator-class.html
 [`webGoldenComparator`]: {{site.api}}/flutter/flutter_test/webGoldenComparator.html
