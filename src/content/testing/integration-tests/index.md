@@ -584,7 +584,7 @@ consult the [iOS Device Testing][] section in the README.
 [flutter_test]: {{site.api}}/flutter/flutter_test/flutter_test-library.html
 [Integration testing]: /testing/integration-tests
 [iOS Device Testing]: {{site.repo.flutter}}/tree/main/packages/integration_test#ios-device-testing
-[Running Flutter driver tests with web]: {{site.repo.flutter}}/blob/master/docs/contributing/testing/Running-Flutter-Driver-tests-with-Web.md
+[Running Flutter driver tests with web]: {{site.repo.flutter}}/blob/main/docs/contributing/testing/Running-Flutter-Driver-tests-with-Web.md
 [widget tests]: /testing/overview#widget-tests
 
 [flutter_driver]: {{site.api}}/flutter/flutter_driver/flutter_driver-library.html

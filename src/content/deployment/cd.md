@@ -310,7 +310,6 @@ information.
 [Bitrise]: https://devcenter.bitrise.io/en/getting-started/quick-start-guides/getting-started-with-flutter-apps
 [CI Options and Examples]: #reference-and-examples
 [Cirrus]: https://cirrus-ci.org
-[Cirrus script]: {{site.repo.flutter}}/blob/master/.cirrus.yml
 [Codemagic]: https://blog.codemagic.io/getting-started-with-codemagic/
 [fastlane]: https://docs.fastlane.tools
 [fastlane Android beta deployment guide]: https://docs.fastlane.tools/getting-started/android/beta-deployment/
