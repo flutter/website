@@ -42,9 +42,7 @@ int formatDart({bool justCheck = false}) {
         .listSync()
         .whereType<Directory>()
         .map((e) => e.path)
-        .where((e) =>
-            path.basename(e) != 'codelabs' &&
-            !path.basename(e).startsWith('.')),
+        .where((e) => !path.basename(e).startsWith('.')),
   ];
 
   final dartFormatOutput = Process.runSync(Platform.resolvedExecutable, [

@@ -42,7 +42,7 @@
   publisher: Editions ENI
   cover: flutter-ENI.jpg
   link: "https://www.editions-eni.fr/livre/flutter-developpez-vos-applications-mobiles-multiplateformes-avec-dart-9782409025273"
-  desc: "Ce livre sur Flutter s'adresse aux développeurs, initiés comme plus aguerris, qui souhaitent disposer des connaissances nécessaires pour créer de A à Z des applications mobiles multiplateformes avec le framework de Google" 
+  desc: "Ce livre sur Flutter s'adresse aux développeurs, initiés comme plus aguerris, qui souhaitent disposer des connaissances nécessaires pour créer de A à Z des applications mobiles multiplateformes avec le framework de Google"
 - title: 'Flutter for Beginners'
   authors:
     - Thomas Bailey
@@ -59,7 +59,7 @@
   link: "https://www.amazon.com/Flutter-Action-Eric-Windmill/dp/1617296147"
   desc: "Flutter in Action teaches you to build professional-quality mobile applications using the Flutter SDK and the Dart programming language."
 - title: 'Flutter Libraries We Love'
-  authors: 
+  authors:
     - Codemagic
   publisher: Codemagic
   cover: flutter_libraries_we_love.png
@@ -107,7 +107,7 @@
   publisher: CRC Press
   cover: pragmatic-flutter.jpg
   link: "https://www.perlego.com/book/2554817/pragmatic-flutter-building-crossplatform-mobile-apps-for-android-ios-web-desktop-pdf"
-  desc: "Building Cross-Platform Mobile Apps for Android, iOS, Web & Desktop"  
+  desc: "Building Cross-Platform Mobile Apps for Android, iOS, Web & Desktop"
 - title: 'Programming Flutter'
   authors:
     - Carmine Zaccagnino
@@ -136,3 +136,12 @@
   cover: the-flutter-foundation-a-comprehensive-guide-for-technical-interviews-and-beyond.png
   link: "https://chetanakarte.gumroad.com/l/the_flutter_foundation"
   desc: "Welcome to The Flutter Foundation: A Comprehensive Guide for Technical Interviews and Beyond! Whether you are a seasoned developer looking to delve into the world of Flutter or a newcomer eager to master the latest in cross-platform app development, this book is your ultimate companion."
+- title: 'Flutter Design Patterns and Best Practices: Build scalable, maintainable, and production-ready apps using effective architectural principles'
+  authors:
+    - Daria Orlova
+    - Esra Kadah
+    - Jaime Blasco
+  publisher: Packt Publishing
+  cover: flutter-design-patterns-and-best-practices.jpg
+  link: "https://www.amazon.com/Flutter-Design-Patterns-Best-Practices/dp/1801072647"
+  desc: "Elevate your mobile app development skills using reusable software development methodologies and code design principles, leveraging proven strategies from industry experts who have fostered thriving developer communities."

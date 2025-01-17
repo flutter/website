@@ -104,7 +104,7 @@ A few notes to be aware of:
     shell script's `JAVA_HOME` environment variable.
   * If `JAVA_HOME` isn't defined, Flutter looks
     for any `java` executable in your path.
-    Once [issue 122609][] lands, the `flutter doctor`
+    Once [issue 122609][] lands, the `flutter doctor -v`
     command reports which version of Java is used.
 * If you upgrade Gradle to a release _newer_ than 7.6.1,
   you might (though it's unlikely) encounter issues

@@ -1,0 +1,58 @@
+{%- comment -%}
+This component expects a list of article or page objects.
+The frontmatter of each article should have the following attributes:
+- title: String - name of the article
+- description: String - 1-2 sentence description of the article
+- contentTags: List<String> - A short list of items that describe what the reader
+    can expect from the content or describe meta information about the article.
+    i.e. data, user-experience OR tutorial, 10 minute read
+- iconPath: String - the path to an image that is shown in next to the title
+{%- endcomment -%}
+
+<div class="expansion-panel-list">
+  {% for item in list -%}
+  {% assign id = baseId | append: '-expansion-' | append: forloop.index -%}
+  {% if item.expanded -%}
+    {% assign expanded = 'true' -%}
+    {% assign show = 'show' -%}
+  {% else -%}
+    {% assign class = 'collapsed' -%}
+    {% assign expanded = 'false' -%}
+    {% assign show = '' -%}
+  {% endif -%}
+  <div class="expansion-panel">
+    <a class="{{class}} collapsible"
+       data-toggle="collapse"
+       href="#{{id}}"
+       role="button"
+       aria-expanded="{{expanded}}"
+       aria-controls="{{id}}">
+      <div class="expansion-panel-title">
+        <div class="expansion-panel-title-leading">
+          {%- if item.data.iconPath %}
+            <img src="{{item.data.iconPath}}" alt="An icon showing a generic application." />
+          {%- else %}
+            <img src="/assets/images/docs/app-architecture/design-patterns/kv-store-icon.svg" alt="A ivon showing a generic application." />
+          {%- endif %}
+
+        </div>
+        <div class="expansion-panel-title-content">
+          <p class="content-title">{{item.data.title}}</p>
+          <ul class="content-tags">
+            {% for contentTag in item.data.contentTags -%}
+              <li class="tag">{{contentTag}}</li>
+            {% endfor -%}
+          </ul>
+          <p class="content-description">{{item.data.description}}</p>
+        </div>
+      </div>
+    </a>
+    <div class="expansion-panel-body collapse {{show}}" id="{{id}}">
+      <p>{{item.content | truncatewords: 100}}  <a href="{{item.url}}">Read full article</a></p>
+
+      <!-- Required to add "margin" that doesn't cause expansion jank -->
+      <div class="separator"></div>
+    </div>
+  </div>
+  {% endfor -%}
+</div>

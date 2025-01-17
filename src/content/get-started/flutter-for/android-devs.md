@@ -13,8 +13,8 @@ can use this document as a jump start to Flutter development.
 :::note
 Android has two native user interface systems, Views (XML based) and Jetpack Compose.
 Some fundamentals are shared so this document will provide value no matter what. 
-Howeverm if you are coming from Jetpack Compose, 
-see [Flutter for Jetpack Compose devs][] for more information about Jetpack Compose
+However, if you are coming from Jetpack Compose, 
+check out [Flutter for Jetpack Compose devs][] for detailed information about Jetpack Compose
 and how samples match up to Flutter examples.
 
 To integrate Flutter code into your Android app, see
@@ -728,7 +728,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     var sharedData = await platform.invokeMethod('getSharedText');
     if (sharedData != null) {
       setState(() {
-        dataShared = sharedData;
+        dataShared = sharedData as String;
       });
     }
   }
@@ -782,10 +782,11 @@ using `async`/`await` and letting Dart do the heavy lifting:
 <?code-excerpt "lib/async.dart (load-data)"?>
 ```dart
 Future<void> loadData() async {
-  var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
-  http.Response response = await http.get(dataURL);
+  final dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
+  final response = await http.get(dataURL);
   setState(() {
-    widgets = jsonDecode(response.body);
+    widgets =
+        (jsonDecode(response.body) as List).cast<Map<String, Object?>>();
   });
 }
 ```
@@ -828,7 +829,7 @@ class SampleAppPage extends StatefulWidget {
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List widgets = [];
+  List<Map<String, Object?>> widgets = [];
 
   @override
   void initState() {
@@ -859,10 +860,11 @@ class _SampleAppPageState extends State<SampleAppPage> {
   }
 
   Future<void> loadData() async {
-    var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
-    http.Response response = await http.get(dataURL);
+    final dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
+    final response = await http.get(dataURL);
     setState(() {
-      widgets = jsonDecode(response.body);
+      widgets =
+          (jsonDecode(response.body) as List).cast<Map<String, Object?>>();
     });
   }
 }
@@ -893,10 +895,11 @@ and `await` on long-running tasks inside the function:
 <?code-excerpt "lib/async.dart (load-data)"?>
 ```dart
 Future<void> loadData() async {
-  var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
-  http.Response response = await http.get(dataURL);
+  final dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
+  final response = await http.get(dataURL);
   setState(() {
-    widgets = jsonDecode(response.body);
+    widgets =
+        (jsonDecode(response.body) as List).cast<Map<String, Object?>>();
   });
 }
 ```
@@ -930,12 +933,12 @@ Future<void> loadData() async {
   await Isolate.spawn(dataLoader, receivePort.sendPort);
 
   // The 'echo' isolate sends its SendPort as the first message.
-  SendPort sendPort = await receivePort.first;
+  SendPort sendPort = await receivePort.first as SendPort;
 
-  List msg = await sendReceive(
+  final msg = await sendReceive(
     sendPort,
     'https://jsonplaceholder.typicode.com/posts',
-  );
+  ) as List<Object?>;
 
   setState(() {
     widgets = msg;
@@ -951,8 +954,8 @@ static Future<void> dataLoader(SendPort sendPort) async {
   sendPort.send(port.sendPort);
 
   await for (var msg in port) {
-    String data = msg[0];
-    SendPort replyTo = msg[1];
+    String data = msg[0] as String;
+    SendPort replyTo = msg[1] as SendPort;
 
     String dataURL = data;
     http.Response response = await http.get(Uri.parse(dataURL));
@@ -961,7 +964,7 @@ static Future<void> dataLoader(SendPort sendPort) async {
   }
 }
 
-Future sendReceive(SendPort port, msg) {
+Future<Object?> sendReceive(SendPort port, Object? msg) {
   ReceivePort response = ReceivePort();
   port.send([msg, response.sendPort]);
   return response.first;
@@ -1064,12 +1067,12 @@ class _SampleAppPageState extends State<SampleAppPage> {
     await Isolate.spawn(dataLoader, receivePort.sendPort);
 
     // The 'echo' isolate sends its SendPort as the first message.
-    SendPort sendPort = await receivePort.first;
+    SendPort sendPort = await receivePort.first as SendPort;
 
-    List msg = await sendReceive(
+    final msg = await sendReceive(
       sendPort,
       'https://jsonplaceholder.typicode.com/posts',
-    );
+    ) as List<Object?>;
 
     setState(() {
       widgets = msg;
@@ -1085,8 +1088,8 @@ class _SampleAppPageState extends State<SampleAppPage> {
     sendPort.send(port.sendPort);
 
     await for (var msg in port) {
-      String data = msg[0];
-      SendPort replyTo = msg[1];
+      String data = msg[0] as String;
+      SendPort replyTo = msg[1] as SendPort;
 
       String dataURL = data;
       http.Response response = await http.get(Uri.parse(dataURL));
@@ -1095,7 +1098,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     }
   }
 
-  Future sendReceive(SendPort port, msg) {
+  Future<Object?> sendReceive(SendPort port, Object? msg) {
     ReceivePort response = ReceivePort();
     port.send([msg, response.sendPort]);
     return response.first;
@@ -1181,7 +1184,7 @@ class SampleAppPage extends StatefulWidget {
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List widgets = [];
+  List<Map<String, Object?>> widgets = [];
 
   @override
   void initState() {
@@ -1229,10 +1232,11 @@ class _SampleAppPageState extends State<SampleAppPage> {
   }
 
   Future<void> loadData() async {
-    var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
-    http.Response response = await http.get(dataURL);
+    final dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
+    final response = await http.get(dataURL);
     setState(() {
-      widgets = jsonDecode(response.body);
+      widgets =
+          (jsonDecode(response.body) as List).cast<Map<String, Object?>>();
     });
   }
 }
@@ -1295,14 +1299,14 @@ Next, you'll need to declare these images in your `pubspec.yaml` file:
 
 ```yaml
 assets:
- - images/my_icon.jpeg
+ - images/my_icon.png
 ```
 
 You can then access your images using `AssetImage`:
 
 <?code-excerpt "lib/images.dart (asset-image)"?>
 ```dart
-AssetImage('images/my_icon.jpeg')
+AssetImage('images/my_icon.png')
 ```
 
 or directly in an `Image` widget:

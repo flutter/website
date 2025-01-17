@@ -16,15 +16,18 @@
 @use 'components/content';
 @use 'components/cookie-notice';
 @use 'components/d2h';
+@use 'components/expansion-list';
 @use 'components/footer';
 @use 'components/header';
 @use 'components/juicy-button';
 @use 'components/next-prev-nav';
+@use 'components/pill';
 @use 'components/sidebar';
 @use 'components/toc';
 
 // -- Pages (alpha ordered)
 @use 'pages/not-found';
+@use 'pages/search';
 
 // -- Overrides
 @use 'base/print-overrides';

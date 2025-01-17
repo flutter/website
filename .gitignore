@@ -21,3 +21,6 @@ node_modules
 package-lock.json
 pubspec.lock
 tmp/
+
+# Temporary as codelabs used to be a submodule
+examples/codelabs

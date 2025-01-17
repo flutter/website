@@ -1,0 +1,19 @@
+name: your_accessible_app
+description: A Flutter project to contain accessibility-related code excerpts.
+version: 1.0.0
+publish_to: none
+
+resolution: workspace
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

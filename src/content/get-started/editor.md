@@ -2,11 +2,11 @@
 title: Set up an editor
 description: Configuring an IDE for Flutter.
 prev:
-  title: Install
+  title: Set up Flutter
   path: /get-started/install
 next:
-  title: Test drive
-  path: /get-started/test-drive
+  title: Create your first app
+  path: /get-started/codelab
 toc: false
 ---
 
@@ -33,7 +33,9 @@ Follow these procedures to add the Flutter plugin to VS Code,
 Android Studio, or IntelliJ.
 
 If you choose another IDE, skip ahead
-to the [next step: Test drive](/get-started/test-drive).
+to [Write your first Flutter app][].
+
+[Write your first Flutter app]: /get-started/codelab
 
 {% tabs %}
 {% tab "Visual Studio Code" %}

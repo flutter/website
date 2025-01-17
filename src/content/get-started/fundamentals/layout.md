@@ -5,8 +5,8 @@ prev:
   title: Widgets
   path: /get-started/fundamentals/widgets
 next:
-    title: State management
-    path: /get-started/fundamentals/state-management
+  title: State management
+  path: /get-started/fundamentals/state-management
 ---
 
 Given that Flutter is a UI toolkit,
@@ -22,6 +22,7 @@ Flutter's most common layout errors,
 the dreaded "unbounded constraints" error.
 
 ## Understanding layout in Flutter
+
 The core of Flutter's layout mechanism is widgets. 
 In Flutter, almost everything is a widget — even 
 layout models are widgets. 
@@ -45,7 +46,7 @@ are created by composing these layout widgets.
 
 ### Constraints
 
-Understanding constraints in Flutter is  an
+Understanding constraints in Flutter is an
 important part of understanding
 how layout works in Flutter.
 
@@ -287,7 +288,7 @@ before, and after each image.
 
 {% render docs/code-and-image.md,
 image:"fwe/layout/space_evenly.png",
-caption: "This figure shows a row widget with three children, which are aligned with the crossAxisAlignment.spaceEvenly constant."
+caption: "This figure shows a row widget with three children, which are aligned with the MainAxisAlignment.spaceEvenly constant."
 alt: "A screenshot of three widgets, spaced evenly from each other."
 code:"
 ```dart
@@ -501,7 +502,7 @@ and therefore the number of todos is unknown.
 
 {% render docs/code-and-image.md,
 image:"fwe/layout/listview_builder.png",
-caption: "This figure shows the ListView.builder constuctor to display an unknown number of children."
+caption: "This figure shows the ListView.builder constructor to display an unknown number of children."
 alt: "A screenshot of several widgets laid out vertically. They have expanded to take up all available space on the cross axis."
 code:"
 ```dart
@@ -548,10 +549,10 @@ the "builder" pattern in Flutter.
 In Flutter, you'll find several widgets that use 
 the word "builder" in their names or 
 in their constructors. 
-The following list is not exhaustive:
+The following list isn't exhaustive:
 
 * [`ListView.builder`][]
-* [`Gridview.builder`][]
+* [`GridView.builder`][]
 * [`Builder`][]
 * [`LayoutBuilder`][]
 * [`FutureBuilder`][]
@@ -774,7 +775,7 @@ The following resources explain individual APIs.
 [`CrossAxisAlignment`]: {{site.api}}/flutter/rendering/CrossAxisAlignment.html
 [`double.infinity`]:{{site.api}}/flutter/dart-core/double/infinity-constant.html
 [`ListView.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
-[`Gridview.builder`]: {{site.api}}/flutter/widgets/GridView/Gridview.builder.html
+[`GridView.builder`]: {{site.api}}/flutter/widgets/GridView/GridView.builder.html
 [`Builder`]: {{site.api}}/flutter/widgets/Builder-class.html
 [`ScrollView`]: {{site.api}}/flutter/widgets/Scrollview-class.html
 [`LayoutBuilder`]: {{site.api}}/flutter/widgets/LayoutBuilder-class.html

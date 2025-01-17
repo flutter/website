@@ -24,16 +24,14 @@ To develop Flutter on {{include.os}}:
 1. To develop {{include.target}} apps:
 
    {:type="a"}
-   1. Install the following prerequisite packages for Android Studio.
+   1. Install the following prerequisite packages for Android Studio:
 
       ```console
-      $ sudo apt-get install \
-          libc6:amd64 libstdc++6:amd64 \
-          libbz2-1.0:amd64 libncurses5:amd64
+      $ sudo apt-get install libc6:amd64 libstdc++6:amd64 lib32z1 libbz2-1.0:amd64
       ```
 
-   1. Install [Android Studio][] {{site.appmin.android_studio}} or later to debug and compile
-      Java or Kotlin code for Android.
+   1. Install [Android Studio][] {{site.appmin.android_studio}} or later to
+      debug and compile Java or Kotlin code for Android.
       Flutter requires the full version of Android Studio.
 
 {% when 'Web' -%}

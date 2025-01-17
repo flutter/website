@@ -33,10 +33,10 @@ jobs:
             experimental: false
     continue-on-error: ${{ matrix.experimental }}
     steps:
-      - uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           submodules: recursive
-      - uses: subosito/flutter-action@44ac965b96f18d999802d4b807e3256d5a3f9fa1
+      - uses: subosito/flutter-action@f2c4f6686ca8e8d6e6d0f28410eeef506ed66aff
         with:
           channel: ${{ matrix.branch }}
       - name: Fetch Dart dependencies
@@ -57,10 +57,10 @@ jobs:
     runs-on: ubuntu-latest
     if: github.repository == 'flutter/website'
     steps:
-      - uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           submodules: recursive
-      - uses: dart-lang/setup-dart@0a8a0fc875eb934c15d08629302413c671d3f672
+      - uses: dart-lang/setup-dart@e630b99d28a3b71860378cafdc2a067c71107f94
         with:
           sdk: stable
       - name: Fetch Dart dependencies
@@ -73,12 +73,12 @@ jobs:
     name: Build site and check links
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           submodules: recursive
       - name: Enable Corepack
         run: corepack enable
-      - uses: actions/setup-node@0a44ba7841725637a19e28fa30b79a866c81b0a6
+      - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'pnpm'
@@ -86,7 +86,7 @@ jobs:
         run: corepack install
       - name: Install node dependencies
         run: pnpm install --frozen-lockfile
-      - uses: dart-lang/setup-dart@0a8a0fc875eb934c15d08629302413c671d3f672
+      - uses: dart-lang/setup-dart@e630b99d28a3b71860378cafdc2a067c71107f94
         with:
           sdk: stable
       - name: Fetch Dart dependencies
@@ -103,10 +103,10 @@ jobs:
     runs-on: ubuntu-latest
     if: github.repository == 'flutter/website'
     steps:
-      - uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           submodules: recursive
-      - uses: dart-lang/setup-dart@0a8a0fc875eb934c15d08629302413c671d3f672
+      - uses: dart-lang/setup-dart@e630b99d28a3b71860378cafdc2a067c71107f94
         with:
           sdk: stable
       - name: Fetch Dart dependencies

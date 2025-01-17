@@ -13,17 +13,17 @@ description: >
 
 ## Background
 
-`InputDecoration.collapsed` constructor is used to create a minimal decoration
-without label.
+`InputDecoration.collapsed` constructor is used to
+create a minimal decoration without a label.
 
 The parameters `floatingLabelAlignment` and `floatingLabelBehavior` have
-no effect because an input decoration created using `InputDecoration.collapsed`
-has no label.
+no effect because an input decoration created using
+`InputDecoration.collapsed` has no label.
 
 ## Migration guide
 
 To migrate, remove usage of `floatingLabelBehavior` and `floatingLabelAlignment`
-parameters when calling `InputDecoration.collapsed` constructor.
+parameters when calling the `InputDecoration.collapsed` constructor.
 Those parameters had no effect.
 
 Code before migration:
@@ -46,8 +46,8 @@ InputDecoration.collapsed(
 
 ## Timeline
 
-Landed in version: v3.24.0-0.1.pre<br>
-In stable release: Not yet
+Landed in version: 3.24.0-0.1.pre<br>
+In stable release: 3.27.0
 
 ## References
 

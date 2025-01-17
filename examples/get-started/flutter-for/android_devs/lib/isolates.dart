@@ -85,12 +85,12 @@ class _SampleAppPageState extends State<SampleAppPage> {
     await Isolate.spawn(dataLoader, receivePort.sendPort);
 
     // The 'echo' isolate sends its SendPort as the first message.
-    SendPort sendPort = await receivePort.first;
+    SendPort sendPort = await receivePort.first as SendPort;
 
-    List msg = await sendReceive(
+    final msg = await sendReceive(
       sendPort,
       'https://jsonplaceholder.typicode.com/posts',
-    );
+    ) as List<Object?>;
 
     setState(() {
       widgets = msg;
@@ -106,8 +106,8 @@ class _SampleAppPageState extends State<SampleAppPage> {
     sendPort.send(port.sendPort);
 
     await for (var msg in port) {
-      String data = msg[0];
-      SendPort replyTo = msg[1];
+      String data = msg[0] as String;
+      SendPort replyTo = msg[1] as SendPort;
 
       String dataURL = data;
       http.Response response = await http.get(Uri.parse(dataURL));
@@ -116,7 +116,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     }
   }
 
-  Future sendReceive(SendPort port, msg) {
+  Future<Object?> sendReceive(SendPort port, Object? msg) {
     ReceivePort response = ReceivePort();
     port.send([msg, response.sendPort]);
     return response.first;

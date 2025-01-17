@@ -745,7 +745,7 @@ with [`BoxShape` enum][] for this purpose.
 }
 ```
 
-```dart highlightLines=10,13-14,18
+```dart highlightLines=11,14-15,19
 final container = Container(
   // grey box
   width: 320,

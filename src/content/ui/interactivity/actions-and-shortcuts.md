@@ -79,7 +79,7 @@ bindings, and the implementation of those bindings, are in different places.
 If all you need are callbacks without the flexibility of `Actions` and
 `Shortcuts`, you can use the [`CallbackShortcuts`][] widget:
 
-<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (callback-shortcuts)"?>
+<?code-excerpt "ui/actions_and_shortcuts/lib/samples.dart (callback-shortcuts)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -121,7 +121,7 @@ define a `SelectAllIntent`, and bind it to your own `SelectAllAction` or to your
 either one, depending on which part of your application has focus. Let's see how
 the key binding part works:
 
-<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (shortcuts)"?>
+<?code-excerpt "ui/actions_and_shortcuts/lib/samples.dart (shortcuts)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -181,7 +181,7 @@ its functionality.
 For example, if you wanted to log each key that a `Shortcuts` widget handled,
 you could make a `LoggingShortcutManager`:
 
-<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (logging-shortcut-manager)"?>
+<?code-excerpt "ui/actions_and_shortcuts/lib/samples.dart (logging-shortcut-manager)"?>
 ```dart
 class LoggingShortcutManager extends ShortcutManager {
   @override
@@ -211,7 +211,7 @@ Actions, in their simplest form, are just subclasses of `Action<Intent>` with an
 `invoke()` method. Here's a simple action that simply invokes a function on the
 provided model:
 
-<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (select-all-action)"?>
+<?code-excerpt "ui/actions_and_shortcuts/lib/samples.dart (select-all-action)"?>
 ```dart
 class SelectAllAction extends Action<SelectAllIntent> {
   SelectAllAction(this.model);
@@ -225,7 +225,7 @@ class SelectAllAction extends Action<SelectAllIntent> {
 
 Or, if it's too much of a bother to create a new class, use a `CallbackAction`:
 
-<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (callback-action)"?>
+<?code-excerpt "ui/actions_and_shortcuts/lib/samples.dart (callback-action)"?>
 ```dart
 CallbackAction(onInvoke: (intent) => model.selectAll());
 ```
@@ -233,7 +233,7 @@ CallbackAction(onInvoke: (intent) => model.selectAll());
 Once you have an action, you add it to your application using the [`Actions`][]
 widget, which takes a map of `Intent` types to `Action`s:
 
-<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (select-all-usage)"?>
+<?code-excerpt "ui/actions_and_shortcuts/lib/samples.dart (select-all-usage)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -261,7 +261,7 @@ action. It's possible to invoke actions that are not bound to keys.
 
 For instance, to find an action associated with an intent, you can use:
 
-<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (maybe-find)"?>
+<?code-excerpt "ui/actions_and_shortcuts/lib/samples.dart (maybe-find)"?>
 ```dart
 Action<SelectAllIntent>? selectAll =
     Actions.maybeFind<SelectAllIntent>(context);
@@ -275,7 +275,7 @@ type.
 
 To invoke the action (if it exists), call:
 
-<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (invoke-action)"?>
+<?code-excerpt "ui/actions_and_shortcuts/lib/samples.dart (invoke-action)"?>
 ```dart
 Object? result;
 if (selectAll != null) {
@@ -286,7 +286,7 @@ if (selectAll != null) {
 
 Combine that into one call with the following:
 
-<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (maybe-invoke)"?>
+<?code-excerpt "ui/actions_and_shortcuts/lib/samples.dart (maybe-invoke)"?>
 ```dart
 Object? result =
     Actions.maybeInvoke<SelectAllIntent>(context, const SelectAllIntent());
@@ -301,7 +301,7 @@ However, if it doesn't have a mapping, it returns `null`.
 This allows the button to be disabled if
 there is no enabled action that matches in the context.
 
-<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (handler)"?>
+<?code-excerpt "ui/actions_and_shortcuts/lib/samples.dart (handler)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -364,7 +364,7 @@ it creates a default `ActionDispatcher` that simply invokes the action.
 If you want a log of all the actions invoked, however, you can create your own
 `LoggingActionDispatcher` to do the job:
 
-<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (logging-action-dispatcher)"?>
+<?code-excerpt "ui/actions_and_shortcuts/lib/samples.dart (logging-action-dispatcher)"?>
 ```dart
 class LoggingActionDispatcher extends ActionDispatcher {
   @override
@@ -393,7 +393,7 @@ class LoggingActionDispatcher extends ActionDispatcher {
 
 Then you pass that to your top-level `Actions` widget:
 
-<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (logging-action-dispatcher-usage)"?>
+<?code-excerpt "ui/actions_and_shortcuts/lib/samples.dart (logging-action-dispatcher-usage)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -430,7 +430,7 @@ also has "select all" and "copy to clipboard" buttons next to it. The buttons
 invoke actions to accomplish their work. All the invoked actions and
 shortcuts are logged.
 
-<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/copyable_text.dart"?>
+<?code-excerpt "ui/actions_and_shortcuts/lib/copyable_text.dart"?>
 ```dartpad title="Copyable text DartPad hands-on example" run="true"
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

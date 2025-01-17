@@ -2,6 +2,3 @@
 	path = site-shared
 	url = https://github.com/dart-lang/site-shared
 	branch = main
-[submodule "examples/codelabs"]
-	path = examples/codelabs
-	url = https://github.com/flutter/codelabs

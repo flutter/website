@@ -1,5 +1,5 @@
 ---
-title: Flutter for Jetpack Compose Developers
+title: Flutter for Jetpack Compose developers
 description: Learn how to apply Jetpack Compose developer knowledge when building Flutter apps.
 ---
 
@@ -8,8 +8,8 @@ description: Learn how to apply Jetpack Compose developer knowledge when buildin
 {% assign sample_path = "blob/main/examples/get-started/flutter-for/compose_devs" %}
 
 :::note
-If you instead have experience building apps for Android with Views (XML),
-see [Flutter for Android developers][].
+If you have experience building Android apps with Views (XML),
+check out [Flutter for Android developers][].
 :::
 
 Flutter is a framework for building cross-platform applications
@@ -23,7 +23,7 @@ To integrate Flutter code into an **existing** Android app,
 check out [Add Flutter to existing app][].
 :::
 
-This document can be used as a cookbook by jumping around
+This document can be used as a reference by jumping around
 and finding questions that are most relevant to your needs.
 This guide embeds sample code.
 By using the "Open in DartPad" button that appears on hover or focus,
@@ -54,10 +54,10 @@ Text("Hello, World!",
 
 **Flutter** represents UI components as _widgets_.
 
-Both composables and widgets only exist until they need to be changed.
+Both composables and widgets only exist until they need to change.
 These languages call this property _immutability_.
 Jetpack Compose modifies UI component properties using an optional
-_modifier_ property backed by a Modifier object.
+_modifier_ property backed by a `Modifier` object.
 By contrast, Flutter uses widgets for both UI components and
 their properties.
 
@@ -70,20 +70,20 @@ Padding(                         // <-- This is a Widget
 
 To compose layouts, both Jetpack Compose and Flutter nest UI components
 within one another.
-Jetpack Compose nests Composables while Flutter nests Widgets.
+Jetpack Compose nests `Composables` while Flutter nests `Widgets`.
 
 ### Layout process
 
 Jetpack Compose and Flutter handle layout in similar ways. Both of them
-layout in a single pass and parent elements pass layout constraints 
+lay out the UI in a single pass and parent elements provide layout constraints 
 down to their children. More specifically,
 
 1. The parent measures itself and its children recursively providing 
    any constraints from the parent to the child.
 2. The children try to size themselves using the above methods and 
 provide their own children both their constraints and any that
-may apply from their ancestor nodes.
-3. Upon reacting a leaf node (a node with no children), the size
+might apply from their ancestor nodes.
+3. Upon encountering a leaf node (a node with no children), the size
 and properties are determined based on the provided constraints 
 and the element is placed in the UI.
 4. With all the children sized and placed, the root nodes can 
@@ -100,13 +100,13 @@ A constraint becomes tight when its constraint's minimum size value
 equals its maximum size value.
 
 To learn how constraints work in Flutter,
-see [Understanding constraints][].
+visit [Understanding constraints][].
 
 ### Design system
 
 Because Flutter targets multiple platforms, your app doesn't need
 to conform to any design system.
-Though this guide features [Material][] widgets,
+While this guide features [Material][] widgets,
 your Flutter app can use many different design systems:
 
 - Custom Material widgets
@@ -156,7 +156,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 }
 ```
 
-To start your **Flutter** app, pass in an instance of your app to
+To start your **Flutter** app, pass an instance of your app to
 the `runApp` function.
 
 <?code-excerpt "../ios_devs/lib/get_started.dart (main)"?>
@@ -166,7 +166,7 @@ void main() {
 }
 ```
 
-`App` is a widget. The build method describes the part of the
+`App` is a widget. It's `build` method describes the part of the
 user interface it represents.
 It's common to begin your app with a [`WidgetApp`][] class,
 like [`MaterialApp`][].
@@ -185,7 +185,7 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-The widget used in `HomePage` might begin with the `Scaffold` class.
+The widget used in the `HomePage` might begin with the `Scaffold` class.
 `Scaffold` implements a basic layout structure for an app.
 
 <?code-excerpt "../ios_devs/lib/get_started.dart (homepage)"?>
@@ -210,8 +210,7 @@ Note how Flutter uses the [`Center`][] widget.
 
 Compose has a number of defaults from its ancestor Android Views.
 Unless otherwise specified, most components "wrap" their size to
-content meaning they only tak up as much space as needed to be 
-drawn.
+content meaning they only take up as much space as needed when rendered.
 That's not always the case with Flutter.
 
 To center the text, wrap it in a `Center` widget.
@@ -220,8 +219,8 @@ the [Widget catalog][].
 
 ### Adding Buttons
 
-In **Compose**, you use the `Button` composable or one of variants
-to create a button. Button is an alias for FilledTonalButton
+In **Compose**, you use the `Button` composable or one of its variants
+to create a button. `Button` is an alias for `FilledTonalButton`
 when using a Material theme.
 
 ```kotlin
@@ -342,8 +341,7 @@ fun ListDemo2(people: List<Person>) {
 }
 ```
 
-`ListView` in **Flutter** closely resembles LazyList
-This resembles how **Flutter** prefers to build its list widgets.
+To lazily build a list in Flutter, ....
 
 <?code-excerpt "../ios_devs/lib/list.dart (simple-list)"?>
 ```dart dartpad="67426fd4f9c38c0c1db96b1af65598f2"
@@ -377,7 +375,7 @@ class HomePage extends StatelessWidget {
 }
 ```
 
-Flutter has some caveats for lists:
+Flutter has some conventions for lists:
 
 - The [`ListView`] widget has a builder method.
   This works like the `item` closure inside a Compose `LazyList`.
@@ -396,9 +394,9 @@ almost any widget that represents your data.
 ### Displaying a grid
 
 Constructing a grid in **Compose** is similar to a 
-LazyList (`LazyColumn` or `LazyRow`). You may use the
+LazyList (`LazyColumn` or `LazyRow`). You can use the
 same `items` closure. There are properties on each 
-grid type to specify how the items will be arranged,
+grid type to specify how to arrange the items,
 whether or not to use adaptive or fixed layout, 
 amongst others.
 
@@ -467,10 +465,10 @@ various parameters that the grid uses to lay out its components.
 This includes `crossAxisCount` that dictates the number of items
 displayed on each row.
 
-Jetpack Compose's `Lazy___Grid` and Flutter's `GridView` are somewhat 
-similar. `GridView` uses a delegate to decide how the grid  how the
-grid should lay out its components. The `rows`, `columns`, and other
-associated properties on `Lazy___Grid` serve the same purpose.
+Jetpack Compose's `LazyHorizontalGrid`, `LazyVerticalGrid`, and Flutter's `GridView` are somewhat 
+similar. `GridView` uses a delegate to decide how the grid
+should lay out its components. The `rows`, `columns`, and other
+associated properties on `LazyHorizontalGrid` \ `LazyVerticalGrid` serve the same purpose.
 
 ### Creating a scroll view
 
@@ -665,7 +663,7 @@ const MaterialApp(
 ### Styling text
 
 In **Compose**, you use the properties on `Text` for one or two
-attributes or construct `TextStyle` object to set many at once.
+attributes or construct a `TextStyle` object to set many at once.
 
 ```kotlin
 Text("Hello, world!", color = Color.Green,
@@ -699,7 +697,7 @@ Text(
 ### Styling buttons
 
 In **Compose**, you modify the colors of a button using 
-the `colors` property. If left unmodified, they will
+the `colors` property. If left unmodified, they
 use the defaults from the current theme.
 
 ```kotlin

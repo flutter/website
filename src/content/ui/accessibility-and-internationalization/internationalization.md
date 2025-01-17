@@ -570,7 +570,7 @@ The localizations generation tool in
 class in the `intl` package to format
 numbers based on the locale and the desired format.
 
-The `int`, `double`, and `number` types can use any of the
+The `int`, `double`, and `num` types can use any of the
 following `NumberFormat` constructors:
 
 | Message "format" value   | Output for 1200000 |
@@ -672,7 +672,7 @@ use the following instructions:
 4. Select the `Info` tab in the project editor.
 
 5. In the **Localizations** section, click the `Add` button
-   (`+`) to add the supported lanaguages and regions to your
+   (`+`) to add the supported languages and regions to your
    project. When asked to choose files and reference language,
    simply select `Finish`.
 

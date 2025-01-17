@@ -151,7 +151,7 @@ Future<Album> updateAlbum(String title) async {
 Hooray!
 Now you've got a function that updates the title of an album.
 
-### 4. Get the data from the internet
+### Get the data from the internet
 
 Get the data from internet before you can update it.
 For a complete example, see the [Fetch data][] recipe.
@@ -179,7 +179,7 @@ Ideally, you will use this method to set
 `_futureAlbum` during `initState` to fetch
 the data from the internet.
 
-## 5. Update the existing title from user input
+## 4. Update the existing title from user input
 
 Create a `TextField` to enter a title and a `ElevatedButton`
 to update the data on server.

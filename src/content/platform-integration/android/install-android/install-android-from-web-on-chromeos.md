@@ -11,14 +11,10 @@ To add Android as a Flutter app target for ChromeOS, follow this procedure.
 1. Allocate a minimum of 7.5 GB of storage for Android Studio.
    Consider allocating 10 GB of storage for an optimal configuration.
 
-1. Install the following prequisite packages for Android Studio:
-    `libc6:i386`, `libncurses5:i386`, `libstdc++6:i386`, `lib32z1`, `libbz2-1.0:i386`
+1. Install the following prerequisite packages for Android Studio:
 
     ```console
-    $ sudo apt-get install \
-        libc6:i386 libncurses5:i386 \
-        libstdc++6:i386 lib32z1 \
-        libbz2-1.0:i386
+    $ sudo apt-get install libc6:amd64 libstdc++6:amd64 lib32z1 libbz2-1.0:amd64
     ```
 
 1. Install [Android Studio][] {{site.appmin.android_studio}} or later

@@ -1,5 +1,5 @@
 ---
-title: Learn the Fundamentals
+title: Learn the fundamentals
 short-title: Fundamentals
 description: >
   You've gotten a taste of using the Flutter framework;
@@ -7,7 +7,12 @@ description: >
 toc: false
 ---
 
-## Welcome to the next level of Flutter!
+
+
+<div class="row">
+<div class="col-md-6">
+
+## Find your way with Flutter!
 
 If you are new to Flutter, and have already worked
 through [your first Flutter codelab][],
@@ -17,6 +22,14 @@ The goal here is to guide you through some next
 steps of learning Flutter. It's not about teaching
 you how to _program_, it's about teaching you
 how Flutter works.
+
+
+</div>
+<div class="col-md-6">
+  {% render docs/app-figure.md, img-class:"w-75", image:"fwe/dash-search.png", alt:"Dash with magnifying glass" %}
+</div>
+</div>
+
 
 :::note
 These fundamentals docs are still a work

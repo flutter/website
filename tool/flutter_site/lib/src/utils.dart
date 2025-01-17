@@ -51,10 +51,9 @@ extension ArgResultExtensions on ArgResults? {
 
 /// A collection of the paths of all Dart projects with
 /// a pubspec.yaml file in the `/examples` directory,
-/// excluding ones in hidden directories or codelabs.
+/// excluding ones in hidden directories.
 final List<String> exampleProjectDirectories = findNestedDirectoriesWithPubspec(
   Directory('examples'),
-  skipPaths: {path.join('examples', 'codelabs')},
   skipHidden: true,
 )..sort();
 

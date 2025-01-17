@@ -1014,19 +1014,19 @@ of your choice. The instructions below are for Visual Studio Code with the
 1. Choose **Yes** in the prompt asking: `Would you like to configure project "linux"?`.
    This enables C++ autocomplete.
 
-1. Open the file `my_application.cc`.
+1. Open the file `runner/my_application.cc`.
   
 First, add the necessary includes to the top of the file, just
 after `#include <flutter_linux/flutter_linux.h>`:
 
-```c title="my_application.cc"
+```c title="runner/my_application.cc"
 #include <math.h>
 #include <upower.h>
 ```
 
 Add an `FlMethodChannel` to the `_MyApplication` struct:
 
-```c title="my_application.cc"
+```c title="runnner/my_application.cc"
 struct _MyApplication {
   GtkApplication parent_instance;
   char** dart_entrypoint_arguments;
@@ -1036,7 +1036,7 @@ struct _MyApplication {
 
 Make sure to clean it up in `my_application_dispose`:
 
-```c title="my_application.cc"
+```c title="runner/my_application.cc"
 static void my_application_dispose(GObject* object) {
   MyApplication* self = MY_APPLICATION(object);
   g_clear_pointer(&self->dart_entrypoint_arguments, g_strfreev);
@@ -1050,7 +1050,7 @@ Edit the `my_application_activate` method and initialize
 `samples.flutter.dev/battery`, just after the call to
 `fl_register_plugins`:
 
-```c title="my_application.cc"
+```c title="runner/my_application.cc"
 static void my_application_activate(GApplication* application) {
   // ...
   fl_register_plugins(FL_PLUGIN_REGISTRY(self->view));
@@ -1073,7 +1073,7 @@ you would write in a native Linux application.
 Add the following as a new function at the top of
 `my_application.cc` just after the `G_DEFINE_TYPE` line:
 
-```c title="my_application.cc"
+```c title="runner/my_application.cc"
 static FlMethodResponse* get_battery_level() {
   // Find the first available battery and report that.
   g_autoptr(UpClient) up_client = up_client_new();
@@ -1103,7 +1103,7 @@ is called, report that instead.
   
 Add the following code after the `get_battery_level` function:
 
-```cpp title="my_application.cpp"
+```cpp title="runner/my_application.cpp"
 static void battery_method_call_handler(FlMethodChannel* channel,
                                         FlMethodCall* method_call,
                                         gpointer user_data) {

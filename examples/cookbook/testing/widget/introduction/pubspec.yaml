@@ -1,16 +1,15 @@
-name: introduction
-description: A new Flutter project.
+name: widget_testing_introduction
+description: Widget testing example snippets.
 
+resolution: workspace
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.6.0
 
 dependencies:
   flutter:
     sdk: flutter
 
 dev_dependencies:
-  example_utils:
-    path: ../../../../example_utils
   flutter_test:
     sdk: flutter
 

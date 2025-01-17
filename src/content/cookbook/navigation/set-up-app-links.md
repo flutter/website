@@ -1,12 +1,9 @@
 ---
 title: Set up app links for Android
-description: How set up universal links for an iOS application built with Flutter
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
+description: >-
+  Learn how to set up app links for an
+  Android application built with Flutter.
 ---
-
-<?code-excerpt path-base="codelabs/deeplink_cookbook"?>
 
 Deep linking is a mechanism for launching an app with a URI.
 This URI contains scheme, host, and path,
@@ -21,7 +18,7 @@ Learn more and see a demo at [Validate deep links][].
 
 [Validate deep links]: /tools/devtools/deep-links
 
-A _app link_ is a type of deep link that uses
+An _app link_ is a type of deep link that uses
 `http` or `https` and is exclusive to Android devices.
 
 Setting up app links requires one to own a web domain.
@@ -35,14 +32,14 @@ This example uses the [go_router][] package to handle the routing.
 The Flutter team maintains the `go_router` package.
 It provides a simple API to handle complex routing scenarios.
 
-1. To create a new application, type `flutter create <app-name>`:
+ 1. To create a new application, type `flutter create <app-name>`:
 
-    ```shell
+    ```console
     $ flutter create deeplink_cookbook
     ```
 
-2. To include `go_router` package in your app,
-   add a dependency for `go_router` to the project:
+ 2. To include `go_router` package in your app,
+    add a dependency for `go_router` to the project:
 
     To add the `go_router` package as a dependency,
     run `flutter pub add`:
@@ -51,11 +48,10 @@ It provides a simple API to handle complex routing scenarios.
     $ flutter pub add go_router
     ```
 
-3. To handle the routing,
-   create a `GoRouter` object in the `main.dart` file:
+ 3. To handle the routing,
+    create a `GoRouter` object in the `main.dart` file:
 
-    <?code-excerpt "lib/main.dart"?>
-    ```dartpad title="Flutter GoRouter hands-on example in DartPad" run="true"
+    ```dart title="main.dart"
     import 'package:flutter/material.dart';
     import 'package:go_router/go_router.dart';
     
@@ -84,15 +80,14 @@ It provides a simple API to handle complex routing scenarios.
 
 ## 2. Modify AndroidManifest.xml
 
-1. Open the Flutter project with VS Code or Android Studio. 
-2. Navigate to `android/app/src/main/AndroidManifest.xml` file.
-3. Add the following metadata tag and intent filter inside the
+ 1. Open the Flutter project with VS Code or Android Studio. 
+ 2. Navigate to `android/app/src/main/AndroidManifest.xml` file.
+ 3. Add the following metadata tag and intent filter inside the
    `<activity>` tag with `.MainActivity`.
 
     Replace `example.com` with your own web domain.
 
     ```xml
-    <meta-data android:name="flutter_deeplinking_enabled" android:value="true" />
     <intent-filter android:autoVerify="true">
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT" />
@@ -101,15 +96,30 @@ It provides a simple API to handle complex routing scenarios.
         <data android:scheme="https" />
     </intent-filter>
     ```
-   
-   :::note
-   The metadata tag flutter_deeplinking_enabled opts
-   into Flutter's default deeplink handler.
-   If you are using the third-party plugins,
-   such as [uni_links][], setting this metadata tag will
-   break these plugins. Omit this metadata tag
-   if you prefer to use third-party plugins.
-   :::
+
+    :::version-note
+    If you use a Flutter version earlier than 3.27,
+    you need to manually opt in to deep linking by
+    adding the following metadata tag to `<activity>`:
+
+    ```xml
+    <meta-data android:name="flutter_deeplinking_enabled" android:value="true" />
+    ```
+    :::
+
+    :::note
+    If you use a third-party plugin to handle deep links,
+    such as [app_links][],
+    Flutter's default deeplink handler will
+    break these plugins.
+
+    To opt out of using Flutter's default deep link handler,
+    add the following metadata tag to `<activity>`:
+
+    ```xml
+    <meta-data android:name="flutter_deeplinking_enabled" android:value="false" />
+    ```
+    :::
 
 ## 3. Hosting assetlinks.json file
 
@@ -164,15 +174,15 @@ The hosted file should look similar to this:
 }]
 ```
 
-1. Set the `package_name` value to your Android application ID.
+ 1. Set the `package_name` value to your Android application ID.
 
-2. Set sha256_cert_fingerprints to the value you got
-   from the previous step.
+ 2. Set sha256_cert_fingerprints to the value you got
+    from the previous step.
 
-3. Host the file at a URL that resembles the following:
-   `<webdomain>/.well-known/assetlinks.json`
+ 3.  Host the file at a URL that resembles the following:
+    `<webdomain>/.well-known/assetlinks.json`
 
-4. Verify that your browser can access this file.
+ 4. Verify that your browser can access this file.
 
 :::note
 If you have multiple flavors, you can have many sha256_cert_fingerprint 
@@ -221,5 +231,5 @@ Source code: [deeplink_cookbook][]
 [Firebase Hosting]: {{site.firebase}}/docs/hosting
 [go_router]: {{site.pub}}/packages/go_router
 [GitHub Pages]: https://pages.github.com
-[uni_links]: {{site.pub}}/packages/uni_links
+[app_links]: {{site.pub}}/packages/app_links
 [Signing the app]: /deployment/android#signing-the-app

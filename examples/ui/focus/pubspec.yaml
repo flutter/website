@@ -1,0 +1,14 @@
+name: focus
+description: Sample focus system code.
+publish_to: none
+
+resolution: workspace
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

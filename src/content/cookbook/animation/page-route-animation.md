@@ -108,7 +108,7 @@ full height of the page.
 
 The `transitionsBuilder` callback has an `animation` parameter. It's an
 `Animation<double>` that produces values between 0 and 1. Convert the
-Animation<double> into an Animation<Offset> using a Tween:
+`Animation<double>` into an `Animation<Offset>` using a Tween:
 
 <?code-excerpt "lib/starter.dart (step1)"?>
 ```dart

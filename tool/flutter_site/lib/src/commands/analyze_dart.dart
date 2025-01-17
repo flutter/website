@@ -37,14 +37,21 @@ int analyzeDart({
 }) {
   final directoriesToAnalyze = [
     path.join('tool', 'flutter_site'),
-    ...exampleProjectDirectories,
+    path.join('examples'),
   ];
 
-  print('Analyzing code...');
+  if (!verboseLogging) {
+    print('Analyzing code...');
+  }
 
   for (final directory in directoriesToAnalyze) {
     if (verboseLogging) {
-      print('Analyzing code in $directory...');
+      print("Analyzing code in '$directory' directory...");
+    }
+
+    if (runPubGetIfNecessary(directory) case final pubGetResult
+        when pubGetResult != 0) {
+      return pubGetResult;
     }
 
     final flutterAnalyzeOutput = Process.runSync(
@@ -59,11 +66,11 @@ int analyzeDart({
 
       stderr.write(normalOutput);
       stderr.write(errorOutput);
-      stderr.writeln('Error: Analysis on $directory failed.');
+      stderr.writeln("Error: Analysis on '$directory' directory failed.");
       return 1;
     } else {
       if (verboseLogging) {
-        print('Successfully analyzed code in $directory!');
+        print("Successfully analyzed code in '$directory' directory!");
       }
     }
   }
