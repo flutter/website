@@ -1,5 +1,5 @@
 ---
-title: Web-specific golden comparisons are no longer supported.
+title: Web-specific golden comparisons are no longer supported
 description: >-
   The `WebGoldenComparator` class and `webGoldenComparator` top-level instance
   are deprecated, pending removal, and the web rendering backends (including
