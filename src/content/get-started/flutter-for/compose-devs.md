@@ -178,8 +178,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Returns a CupertinoApp that, by default,
-    // has the look and feel of an iOS app.
     return const MaterialApp(
       home: HomePage(),
     );
@@ -245,27 +243,31 @@ FilledButton(
 ),
 ```
 
-**Flutter** gives you access to a variety of buttons with predefined styles.
+**Flutter** gives you access to a variety of buttons with pre-defined styles.
 
 
-### Aligning components horizontally
+### Aligning components horizontally or vertically
 Jetpack Compose and Flutter handle horizontal and vertical collections of
 items similarly.
 
 The following Compose snippet adds a globe image and
-text to a horizontal stack view:
+text in both `Row` and `Column` containers with centering of the items:
 
 ```kotlin
 Row(horizontalArrangement = Arrangement.Center) {
    Image(Icons.Default.Public, contentDescription = "")
    Text("Hello, world!")
 }
+
+Column(verticalArrangement = Arrangement.Center) {
+   Image(Icons.Default.Public, contentDescription = "")
+   Text("Hello, world!")
+}
 ```
 
-**Flutter** uses [`Row`][] as well but the means of specifying
-constraints and supplying child nodes differ somewhat:
+**Flutter** uses [`Row`][] and [`Column`][] as well but there are some slight differences for specifying child 
+widgets and alignment. The following is equivalent to the Compose example.
 
-<?code-excerpt "../ios_devs/lib/row.dart (row)" replace="/child: //g;"?>
 ```dart
 Row(
   mainAxisAlignment: MainAxisAlignment.center,
@@ -274,39 +276,22 @@ Row(
     Text('Hello, world!'),
   ],
 ),
-```
 
-The `Row` widget requires a `List<Widget>` in the `children` parameter.
-The `mainAxisAlignment` property tells Flutter how to position children
-with extra space. `MainAxisAlignment.center` positions children in the
-center of the main axis. For `Row`, the main axis is the horizontal
-axis.
-
-### Aligning components vertically
-
-The following examples build on those in the previous section.
-
-Likewise to both using [`Row`][] for horizontal arrangement,
-Jetpack Compose and Flutter use [`Column`][] for vertical 
-arrangement of components.
-
-```kotlin
-Column(verticalArrangement = Arrangement.Center) {
-   Image(Icons.Default.Public, contentDescription = "")
-   Text("Hello, world!")
-}
-```
-
-<?code-excerpt "../ios_devs/lib/column.dart (column)" replace="/child: //g;"?>
-```dart dartpad="d9a288be0c2a353296fc8825680b84b8"
 Column(
   mainAxisAlignment: MainAxisAlignment.center,
   children: [
     Icon(MaterialIcons.globe),
     Text('Hello, world!'),
   ],
-),
+)
+
 ```
+
+`Row` and `Column` require a `List<Widget>` in the `children` parameter.
+The `mainAxisAlignment` property tells Flutter how to position children
+with extra space. `MainAxisAlignment.center` positions children in the
+center of the main axis. For `Row`, the main axis is the horizontal
+axis, inversely for `Column`, the main axis is the vertical axis.
 
 ::: note
 Whereas Flutter's `Row` and `Column` have `MainAxisAlignment` 
@@ -744,117 +729,120 @@ FilledButton(
   )
 )
 ```
+## Bundling assets for use in Flutter
 
-### Using custom fonts
+There is commonly a need to bundle resources for use in your application.
+They can be animations, vector graphics, images, fonts, or other general files.
+
+Unlike native Android apps that expect a set directory structure under `/res/<qualifier>/` 
+where the qualifier could be indicating the type of file, a specific orientation,
+or android version, Flutter doesn't require a specific location as long 
+as the referenced files are listed in the `pubspec.yaml` file. Below is an excerpt
+from a `pubspec.yaml` referencing several images and a font file.
+
+```yaml
+flutter:
+  assets:
+    - assets/my_icon.png
+    - assets/background.png
+  fonts:
+    - family: FiraSans
+      fonts:
+        - asset: fonts/FiraSans-Regular.ttf
+```
+
+### Using fonts
 
 In **Compose**, you have two options for using fonts in your app.
-You can use the downloadable fonts API to retrieve them at runtime 
-from a service like Google Fonts. Alternatively, you can bundle 
-them in you app by including them in the _res/fonts_
-directory and creating an object to reference them in code.
+You can use a runtime service I to retrieve them [Google Fonts][].
+Alternatively, they may be bundled in resource files.
 
-You can then modify properties on composables that have related
-properties or accept a `TextStyle`.
+**Flutter** has similar methods to use fonts, let's discuss them both inline.
+
+### Using bundled fonts
+
+The following are roughly equivalent Compose and Flutter code for using a font file in the `/res/` or `fonts` directory
+as listed above.
 
 ```kotlin
 // Font files bunded with app
 val firaSansFamily = FontFamily(
-   Font(R.font.firasans_light, FontWeight.Light),
    Font(R.font.firasans_regular, FontWeight.Normal),
-   Font(R.font.firasans_italic, FontWeight.Normal, FontStyle.Italic),
-   Font(R.font.firasans_medium, FontWeight.Medium),
-   Font(R.font.firasans_bold, FontWeight.Bold)
+   // ...
 )
 
-// Using Google Fonts
+// Usage
+Text(text = "Compose", fontFamily = firaSansFamily, fontWeight = FontWeight.Normal)
+```
+
+```dart
+Text(
+  'Flutter',
+  style: TextStyle(
+    fontSize: 40,
+    fontFamily: 'FiraSans',
+  ),
+),
+```
+
+### Using a font provider (Google Fonts)
+
+One point of difference is using fonts from a font provider like Google Fonts. In **Compose**, 
+the instantiation is done inline with the same approximate code to reference a local file.
+
+After instantiating a provider that references the special strings for the font service,
+you would use the same `FontFamily` declaration.
+
+```kotlin
+// Font files bunded with app
 val provider = GoogleFont.Provider(
     providerAuthority = "com.google.android.gms.fonts",
     providerPackage = "com.google.android.gms",
     certificates = R.array.com_google_android_gms_fonts_certs
 )
 
-val bodyFontFamily = FontFamily(
+val firaSansFamily = FontFamily(
     Font(
-        googleFont = GoogleFont("Acme"),
-        fontProvider = provider,
-    )
-)
-
-val displayFontFamily = FontFamily(
-    Font(
-        googleFont = GoogleFont("Aboreto"),
+        googleFont = GoogleFont("FiraSans"),
         fontProvider = provider,
     )
 )
 
 // Usage
-Text(text = "text", fontFamily = firaSansFamily, fontWeight = FontWeight.Light)
-Text(text = "text", fontFamily = bodyFontFamily, fontWeight = FontWeight.Medium)
+Text(text = "Compose", fontFamily = firaSansFamily, fontWeight = FontWeight.Light)
 ```
 
-In **Flutter**, you control your resources with a file
-named `pubspec.yaml`. This file is platform agnostic.
-To add a custom font to your project, follow these steps:
+For Flutter, this is provided by the [google_fonts][] plugin using the name of
+the font.
 
-1. Create a folder called `fonts` in the project's root directory.
-   This optional step helps to organize your fonts.
-1. Add your `.ttf`, `.otf`, or `.ttc` font file into the `fonts` folder.
-1. Open the `pubspec.yaml` file within the project.
-1. Find the `flutter` section.
-1. Add your custom font(s) under the `fonts` section.
-
-    ```yaml
-    flutter:
-      fonts:
-        - family: BungeeSpice
-          fonts:
-            - asset: fonts/BungeeSpice-Regular.ttf
-    ```
-
-After you add the font to your project, you can use it as in the
-following example:
-
-<?code-excerpt "lib/stylingbutton.dart (custom-font)" replace="/middle: //g;"?>
 ```dart
+import 'package:google_fonts/google_fonts.dart';
+//...
 Text(
   'Flutter',
-  style: TextStyle(
-    fontSize: 40,
-    fontFamily: 'BungeeSpice',
-  ),
+  style: GoogleFonts.firaSans(),
+  // or 
+  //style: GoogleFonts.getFont('FiraSans')
 ),
 ```
 
-:::note
-To download custom fonts to use in your apps,
-check out [Google Fonts](https://fonts.google.com).
-:::
+### Using images
 
-### Bundling images in apps
-
-In **Compose**, you first add the image files to the drawable directory
-in resources `/res/drawable`, then use the `Image` composable to display
+In **Compose**, typically image files to the drawable directory
+in resources `/res/drawable` and one uses `Image` composable to display
 the images. Assets are referenced by using the resource locator
 in the style of `R.drawable.<file name>` without the file extension.
 
-To add images in **Flutter**, follow a method similar to how you added
-custom fonts.
+In **Flutter**, the resource location is a listed in `pubspec.yaml` as shown in the snippet below.
 
-1. Add an `images` folder to the root directory.
-1. Add this asset to the `pubspec.yaml` file.
-
-    ```yaml
+```yaml
     flutter:
       assets:
         - images/Blueberries.jpg
-    ```
+   ```
 
-After adding your image, display it using the `Image` widget's
+After adding your image, you can display it using the `Image` widget's
 `.asset()` constructor. This constructor:
-
-1. Instantiates the given image using the provided path.
-1. Reads the image from the assets bundled with your app.
-1. Displays the image on the screen.
 
 To review a complete example, check out the [`Image`][] docs.
 
@@ -889,3 +877,5 @@ To review a complete example, check out the [`Image`][] docs.
 [`CustomPainter`]: {{site.api}}/flutter/rendering/CustomPainter-class.html
 [`Image`]: {{site.api}}/flutter/widgets/Image-class.html
 [go_router]: {{site.pub-pkg}}/go_router
+[Google Fonts]: https://fonts.google.com/
+[google_fonts]: https://pub.dev/packages/google_fonts
