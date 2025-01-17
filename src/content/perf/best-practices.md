@@ -98,7 +98,7 @@ For more information, check out:
 [`flutter_lints`]: {{site.pub-pkg}}/flutter_lints
 [`flutter_lints` migration guide]: /release/breaking-changes/flutter-lints-package#migration-guide
 [Performance considerations]: {{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations
-[source code for `SlideTransition`]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/transitions.dart#L168
+[source code for `SlideTransition`]: {{site.repo.flutter}}/blob/main/packages/flutter/lib/src/widgets/transitions.dart#L168
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
 [`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
 [`TransitionBuilder`]: {{site.api}}/flutter/widgets/TransitionBuilder.html

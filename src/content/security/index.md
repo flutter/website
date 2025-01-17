@@ -55,7 +55,7 @@ in public that could put users at risk,
 For more details on how we handle security vulnerabilities,
 see our [security policy][].
 
-[Discord chat channels]: {{site.repo.flutter}}/blob/master/docs/contributing/Chat.md
+[Discord chat channels]: {{site.repo.flutter}}/blob/main/docs/contributing/Chat.md
 [known false positives]: /reference/security-false-positives
 [security policy]: {{site.repo.flutter}}/security/policy
 

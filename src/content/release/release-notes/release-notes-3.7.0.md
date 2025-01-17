@@ -7,7 +7,7 @@ This page has release notes for 3.7.0.
 For information about subsequent bug-fix releases,
 see our [CHANGELOG][].
 
-[CHANGELOG]: {{site.repo.flutter}}/blob/master/CHANGELOG.md
+[CHANGELOG]: {{site.repo.flutter}}/blob/main/CHANGELOG.md
 
 ## What's changed
 

@@ -19,8 +19,8 @@ about evaluating and debugging Flutter's performance.
   * [How to write a render speed test for Flutter][speed-test]
   * [How to write a memory test for Flutter][memory-test]
 
-[memory-test]: {{site.repo.flutter}}/blob/master/docs/contributing/testing/How-to-write-a-memory-test-for-Flutter.md
-[speed-test]: {{site.repo.flutter}}/blob/master/docs/contributing/testing/How-to-write-a-render-speed-test-for-Flutter.md
+[memory-test]: {{site.repo.flutter}}/blob/main/docs/contributing/testing/How-to-write-a-memory-test-for-Flutter.md
+[speed-test]: {{site.repo.flutter}}/blob/main/docs/contributing/testing/How-to-write-a-render-speed-test-for-Flutter.md
 
 * What are some tools for capturing and analyzing performance
   metrics?
@@ -69,8 +69,8 @@ about evaluating and debugging Flutter's performance.
     and your IDE displays which the widgets rebuild.
 
 [`debugProfileBuildsEnabled`]: {{site.api}}/flutter/widgets/debugProfileBuildsEnabled.html
-[debug.dart]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/debug.dart
-[framework.dart]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/framework.dart
+[debug.dart]: {{site.repo.flutter}}/blob/main/packages/flutter/lib/src/widgets/debug.dart
+[framework.dart]: {{site.repo.flutter}}/blob/main/packages/flutter/lib/src/widgets/framework.dart
 
 * How do I query the target frames per second (of the display)?
   * [Get the display refresh rate][]

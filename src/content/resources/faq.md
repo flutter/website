@@ -736,7 +736,7 @@ communicate by sending and receiving asynchronous messages.
 
 Check out an [example of using isolates with Flutter][].
 
-[example of using isolates with Flutter]: {{site.repo.flutter}}/blob/master/examples/layers/services/isolate.dart
+[example of using isolates with Flutter]: {{site.repo.flutter}}/blob/main/examples/layers/services/isolate.dart
 
 ### Can I run Dart code in the background of a Flutter app?
 
@@ -1074,7 +1074,7 @@ For more information, see the [Community][] page.
 You can also engage with other developers on the Flutter
 [Discord][].
 
-[Contributing guide]: {{site.repo.flutter}}/blob/master/CONTRIBUTING.md
+[Contributing guide]: {{site.repo.flutter}}/blob/main/CONTRIBUTING.md
 [easy starter issues]: {{site.repo.flutter}}/issues?q=is%3Aopen+is%3Aissue+label%3A%22easy+fix%22
 
 ### Is Flutter open source?
