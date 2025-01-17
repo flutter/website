@@ -93,5 +93,5 @@ Relevant PRs:
 [Issue 160261]: https://github.com/flutter/flutter/issues/160261
 [PR 161196]: https://github.com/flutter/flutter/pull/161196
 [class-WebGoldenComparator]: {{site.api}}/flutter/flutter_test/WebGoldenComparator-class.html
-[`webGoldenComparator`]: https://api.flutter.dev/flutter/flutter_test/webGoldenComparator.html
-[`goldenFileComparator`]: https://api.flutter.dev/flutter/flutter_test/goldenFileComparator.html
+[`webGoldenComparator`]: {{site.api}}/flutter/flutter_test/webGoldenComparator.html
+[`goldenFileComparator`]: {{site.api}}/flutter/flutter_test/goldenFileComparator.html
