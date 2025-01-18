@@ -381,7 +381,7 @@ RaisedButton(
 
 ElevatedButton(
   style: ElevatedButton.styleFrom(
-    backgroundColor Colors.red,
+    backgroundColor: Colors.red,
     foregroundColor: Colors.white,
   ),
   onPressed: () { },
