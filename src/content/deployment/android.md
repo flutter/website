@@ -272,7 +272,7 @@ To learn more, check out [Shrink, obfuscate, and optimize your app][].
 :::
 
 [R8]: {{site.android-dev}}/studio/build/shrink-code
-[Shrink, obfuscate, and optimize your app]: {site.android-dev}}/studio/build/shrink-code
+[Shrink, obfuscate, and optimize your app]: {{site.android-dev}}/studio/build/shrink-code
 
 ## Enable multidex support
 
