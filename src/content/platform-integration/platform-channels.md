@@ -1318,10 +1318,10 @@ for iOS.
 
 ```swift
 public static func register(with registrar: FlutterPluginRegistrar) {
-  let taskQueue = registrar.messenger.makeBackgroundTaskQueue()
+  let taskQueue = registrar.messenger().makeBackgroundTaskQueue?()
   let channel = FlutterMethodChannel(name: "com.example.foo",
                                      binaryMessenger: registrar.messenger(),
-                                     codec: FlutterStandardMethodCodec.sharedInstance,
+                                     codec: FlutterStandardMethodCodec.sharedInstance(),
                                      taskQueue: taskQueue)
   let instance = MyPlugin()
   registrar.addMethodCallDelegate(instance, channel: channel)
