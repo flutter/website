@@ -36,7 +36,7 @@ context menu widgets.
 Here's an example that shows how to add a **Send email** button to the default
 context menus whenever an email address is selected. The full code can be found
 in the samples repository in
-[email_button_page.dart]({{site.repo.samples}}/blob/main/experimental/context_menus/lib/email_button_page.dart)
+[email_button_page.dart]({{site.repo.samples}}/blob/main/context_menus/lib/email_button_page.dart)
 on GitHub.
 
 ```dart
@@ -65,7 +65,7 @@ TextField(
 ```
 
 A large number of examples of different custom context menus are available
-[in the samples repo]({{site.repo.samples}}/tree/main/experimental/context_menus)
+[in the samples repo]({{site.repo.samples}}/tree/main/context_menus)
 on GitHub.
 
 All related deprecated features were flagged with the deprecation warning "Use
@@ -219,7 +219,7 @@ TextField(
 
 A full example of modifying a built-in context menu action can be found in the
 samples repository in
-[modified_action_page.dart]({{site.repo.samples}}/blob/main/experimental/context_menus/lib/modified_action_page.dart)
+[modified_action_page.dart]({{site.repo.samples}}/blob/main/context_menus/lib/modified_action_page.dart)
 on GitHub.
 
 ### [`buildToolbar`]({{site.api}}/flutter/widgets/TextSelectionControls/buildToolbar.html)
@@ -312,7 +312,7 @@ class _MyTextField extends StatelessWidget {
 
 A full example of building a custom context menu can be found in the samples
 repository in
-[`custom_menu_page.dart`]({{site.repo.samples}}/blob/main/experimental/context_menus/lib/custom_menu_page.dart)
+[`custom_menu_page.dart`]({{site.repo.samples}}/blob/main/context_menus/lib/custom_menu_page.dart)
 on GitHub.
 
 ## Timeline
