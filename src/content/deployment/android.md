@@ -15,7 +15,7 @@ This guide explains how to perform the following tasks:
 
 * [Add a launcher icon](#add-a-launcher-icon)
 * [Enable Material Components](#enable-material-components)
-* [Signing the app](#signing-the-app)
+* [Sign the app](#sign-the-app)
 * [Shrink your code with R8](#shrink-your-code-with-r8)
 * [Enable multidex support](#enable-multidex-support)
 * [Review the app manifest](#review-the-app-manifest)
@@ -32,6 +32,8 @@ these instructions, substitute `[project]` with
 your app's directory.
 :::
 
+[play]: {{site.android-dev}}/distribute
+
 ## Add a launcher icon
 
 When a new Flutter app is created, it has a default launcher icon.
@@ -40,8 +42,8 @@ To customize this icon, you might want to check out the
 
 Alternatively, you can do it manually using the following steps:
 
-1. Review the [Material Design product
-   icons][launchericons] guidelines for icon design.
+1. Review the
+   [Material Design product icons][launchericons] guidelines for icon design.
 
 1. In the `[project]/android/app/src/main/res/` directory,
    place your icon files in folders named using
@@ -58,9 +60,14 @@ Alternatively, you can do it manually using the following steps:
 1. To verify that the icon has been replaced,
    run your app and inspect the app icon in the Launcher.
 
+[flutter_launcher_icons]: {{site.pub}}/packages/flutter_launcher_icons
+[launchericons]: {{site.material}}/styles/icons
+[configuration qualifiers]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
+[applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
+
 ## Enable Material Components
 
-If your app uses [Platform Views][], you might want to enable
+If your app uses [platform views][], you might want to enable
 Material Components by following the steps described in the
 [Getting Started guide for Android][].
 
@@ -68,29 +75,33 @@ For example:
 
 1. Add the dependency on Android's Material in `<my-app>/android/app/build.gradle`:
 
-```kotlin
-dependencies {
-    // ...
-    implementation("com.google.android.material:material:<version>")
-    // ...
-}
-```
+   ```groovy
+   dependencies {
+       // ...
+       implementation("com.google.android.material:material:<version>")
+       // ...
+   }
+   ```
 
-To find out the latest version, visit [Google Maven][].
+   To find out the latest version, visit [Google Maven][maven-material].
 
 1. Set the light theme in `<my-app>/android/app/src/main/res/values/styles.xml`:
 
-```xml diff
-- <style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar">
-+ <style name="NormalTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-```
+   ```xml diff
+   - <style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar">
+   + <style name="NormalTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+   ```
 
-1. Set the dark theme in `<my-app>/android/app/src/main/res/values-night/styles.xml`
+1. Set the dark theme in `<my-app>/android/app/src/main/res/values-night/styles.xml`:
 
-```xml diff
-- <style name="NormalTheme" parent="@android:style/Theme.Black.NoTitleBar">
-+ <style name="NormalTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-```
+   ```xml diff
+   - <style name="NormalTheme" parent="@android:style/Theme.Black.NoTitleBar">
+   + <style name="NormalTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+   ```
+
+[platform views]: /platform-integration/android/platform-views
+[Getting Started guide for Android]: {{site.material}}/develop/android/mdc-android
+[maven-material]: https://maven.google.com/web/index.html#com.google.android.material:material
 
 <a id="signing-the-app"></a>
 ## Sign the app
@@ -109,12 +120,14 @@ as described in the [official Play Store documentation][].
 
 To sign your app, use the following instructions.
 
+[official Play Store documentation]: https://support.google.com/googleplay/android-developer/answer/7384423?hl=en
+
 ### Create an upload keystore
 
 If you have an existing keystore, skip to the next step.
 If not, create one using one of the following methods:
 
-1. Follow the [Android Studio key generation steps]({{site.android-dev}}/studio/publish/app-signing#generate-key)
+1. Follow the [Android Studio key generation steps][].
 1. Run the following command at the command line:
 
    On macOS or Linux, use the following command:
@@ -140,21 +153,22 @@ If not, create one using one of the following methods:
 
    :::note
    * The `keytool` command might not be in your path&mdash;it's
-     part of Java, which is installed as part of
-     Android Studio.  For the concrete path,
-     run `flutter doctor -v` and locate the path printed after
-     'Java binary at:'. Then use that fully qualified path
+     part of Java, which is installed as part of Android Studio.
+     For the concrete path, run `flutter doctor -v` and
+     locate the path printed after 'Java binary at:'.
+     Then use that fully qualified path
      replacing `java` (at the end) with `keytool`.
-     If your path includes space-separated names,
-     such as `Program Files`, use platform-appropriate
-     notation for the names. For example, on Mac/Linux
-     use `Program\ Files`, and on Windows use
-     `"Program Files"`.
+     If your path includes space-separated names, such as `Program Files`,
+     use platform-appropriate notation for the names.
+     For example, on macOS and Linux use `Program\ Files`, and
+     on Windows use `"Program Files"`.
 
    * The `-storetype JKS` tag is only required for Java 9
      or newer. As of the Java 9 release,
      the keystore type defaults to PKS12.
    :::
+
+[Android Studio key generation steps]: {{site.android-dev}}/studio/publish/app-signing#generate-key
 
 ### Reference the keystore from the app
 
@@ -179,17 +193,17 @@ Keep the `key.properties` file private;
 don't check it into public source control.
 :::
 
-### Configure signing in gradle
+### Configure signing in Gradle
 
-When building your app in release mode, configure gradle to use your upload key.
-To configure gradle, edit the `<project>/android/app/build.gradle` file.
+When building your app in release mode, configure Gradle to use your upload key.
+To configure Gradle, edit the `<project>/android/app/build.gradle` file.
 
 1. Define and load the keystore properties file before the `android`
    property block.
 
 1. Set the `keystoreProperties` object to load the `key.properties` file.
 
-   ```kotlin diff title="[project]/android/app/build.gradle"
+   ```groovy diff title="[project]/android/app/build.gradle"
    + def keystoreProperties = new Properties()
    + def keystorePropertiesFile = rootProject.file('key.properties')
    + if (keystorePropertiesFile.exists()) {
@@ -204,7 +218,7 @@ To configure gradle, edit the `<project>/android/app/build.gradle` file.
 1. Add the signing configuration before the `buildTypes` property block
    inside the `android` property block.
 
-   ```kotlin diff title="[project]/android/app/build.gradle"
+   ```groovy diff title="[project]/android/app/build.gradle"
      android {
          // ...
 
@@ -232,12 +246,14 @@ To configure gradle, edit the `<project>/android/app/build.gradle` file.
 Flutter now signs all release builds.
 
 :::note
-You might need to run `flutter clean` after changing the gradle file.
+You might need to run `flutter clean` after changing the Gradle file.
 This prevents cached builds from affecting the signing process.
 :::
 
 To learn more about signing your app, check out
-[Sign your app][] on developer.android.com.
+[Sign your app][] on the Android developer docs.
+
+[Sign your app]: {{site.android-dev}}/studio/publish/app-signing.html#generate-key
 
 ## Shrink your code with R8
 
@@ -247,13 +263,16 @@ To disable R8, pass the `--no-shrink` flag to
 `flutter build apk` or `flutter build appbundle`.
 
 :::note
-Obfuscation and minification can considerably extend compile time
-of the Android application.
+Obfuscation and minification can considerably extend
+the compile time of an Android application.
 
-The `--[no-]shrink` flag has no effect. Code shrinking is always enabled in release builds.
-To learn more, check out
-[Shrink, obfuscate, and optimize your app]({{site.android-dev}}/studio/build/shrink-code).
+The `--[no-]shrink` flag has no effect.
+Code shrinking is always enabled in release builds.
+To learn more, check out [Shrink, obfuscate, and optimize your app][].
 :::
+
+[R8]: {{site.android-dev}}/studio/build/shrink-code
+[Shrink, obfuscate, and optimize your app]: {{site.android-dev}}/studio/build/shrink-code
 
 ## Enable multidex support
 
@@ -261,11 +280,12 @@ When writing large apps or making use of large plugins,
 you might encounter Android's dex limit of 64k methods
 when targeting a minimum API of 20 or below.
 This might also be encountered when running debug versions of your app
-using `flutter run` that does not have shrinking enabled.
+using `flutter run` that doesn't have shrinking enabled.
 
-Flutter tool supports easily enabling multidex. The simplest way is to
-opt into multidex support when prompted. The tool detects multidex build errors
-and asks before making changes to your Android project.
+Flutter tool supports easily enabling multidex.
+The simplest way is to opt into multidex support when prompted.
+The tool detects multidex build errors and
+asks before making changes to your Android project.
 Opting in allows Flutter to automatically depend on
 `androidx.multidex:multidex` and use a generated
 `FlutterMultiDexApplication` as the project's application.
@@ -276,7 +296,7 @@ options in your IDE, your build might fail with the following message:
 <img src='/assets/images/docs/deployment/android/ide-build-failure-multidex.png' width="100%" alt='Build failure because Multidex support is required'>
 
 To enable multidex from the command line,
-run `flutter run --debug` and select an Android device:
+run `flutter run --debug` and select an Android-powered device:
 
 <img src='/assets/images/docs/deployment/android/cli-select-device.png' width="100%" alt='Selecting an Android device with the flutter CLI.'>
 
@@ -287,9 +307,7 @@ The Flutter tool enables multidex support and retries the build:
 
 :::note
 Multidex support is natively included when targeting
-Android SDK 21 or later. However, we don't recommend
-targeting API 21+ purely to resolve the multidex issue
-as this might inadvertently exclude users running older devices.
+Android SDK 21 or later.
 :::
 
 You might also choose to manually support multidex by following Android's guides
@@ -304,6 +322,9 @@ io/flutter/util/PathUtils.class
 Also, include any other classes used in app startup.
 For more detailed guidance on adding multidex support manually,
 check out the official [Android documentation][multidex-docs].
+
+[multidex-keep]: {{site.android-dev}}/studio/build/multidex#keep
+[multidex-docs]: {{site.android-dev}}/studio/build/multidex
 
 ## Review the app manifest
 
@@ -329,6 +350,10 @@ Verify the following values:
 
 {:.table .table-striped}
 
+[manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
+[applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
+[permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
+
 ## Review or change the Gradle build configuration {:#review-the-gradle-build-configuration}
 
 To verify the Android build configuration,
@@ -337,7 +362,7 @@ review the `android` block in the default
 The default Gradle build script is found at `[project]/android/app/build.gradle`.
 You can change the values of any of these properties.
 
-```kotlin title="[project]/android/app/build.gradle"
+```groovy title="[project]/android/app/build.gradle"
 android {
     namespace = "com.example.[project]"
     // Any value starting with "flutter." gets its value from
@@ -367,6 +392,8 @@ android {
 }
 ```
 
+[gradlebuild]: {{site.android-dev}}/studio/build/#module-level
+
 ### Properties to adjust in build.gradle
 
 | Property             | Purpose                                                                                                                                                                                                                                                     | Default Value              |
@@ -386,14 +413,22 @@ To learn more about Gradle, check out the module-level build
 section in the [Gradle build file][gradlebuild].
 
 :::note
-If you use a recent version of the Android SDK, you might get deprecation warnings about `compileSdkVersion`, `minSdkVersion` or `targetSdkVersion`.
-You can rename these properties to `compileSdk`, `minSdk` and `targetSdk` respectively.
+If you use a recent version of the Android SDK,
+you might get deprecation warnings about
+`compileSdkVersion`, `minSdkVersion`, or `targetSdkVersion`.
+You can rename these properties to
+`compileSdk`, `minSdk`, and `targetSdk` respectively.
 :::
-  
+
+[application ID]: {{site.android-dev}}/studio/build/application-id
+[minimum Android API level]: {{site.android-dev}}/studio/publish/versioning#minsdk
+[internal version number]: {{site.android-dev}}/studio/publish/versioning
+[gradlebuild]: {{site.android-dev}}/studio/build/#module-level
+
 ## Build the app for release
 
-You have two possible release formats when publishing to
-the Play Store.
+You have two possible release formats when
+publishing to the Play Store.
 
 * App bundle (preferred)
 * APK
@@ -403,15 +438,17 @@ The Google Play Store prefers the app bundle format.
 To learn more, check out [About Android App Bundles][bundle].
 :::
 
+[bundle]: {{site.android-dev}}/guide/app-bundle
+
 ### Build an app bundle
 
 This section describes how to build a release app bundle.
 If you completed the signing steps,
 the app bundle will be signed.
 At this point, you might consider [obfuscating your Dart code][]
-to make it more difficult to reverse engineer. Obfuscating
-your code involves adding a couple flags to your build command,
-and maintaining additional files to de-obfuscate stack traces.
+to make it more difficult to reverse engineer.
+Obfuscating your code involves adding flags to your build command and
+maintaining additional files to de-obfuscate stack traces.
 
 From the command line:
 
@@ -426,6 +463,11 @@ By default, the app bundle contains your Dart code and the Flutter
 runtime compiled for [armeabi-v7a][] (ARM 32-bit), [arm64-v8a][]
 (ARM 64-bit), and [x86-64][] (x86 64-bit).
 
+[obfuscating your Dart code]: /deployment/obfuscate
+[arm64-v8a]: {{site.android-dev}}/ndk/guides/abis#arm64-v8a
+[armeabi-v7a]: {{site.android-dev}}/ndk/guides/abis#v7a
+[x86-64]: {{site.android-dev}}/ndk/guides/abis#86-64
+
 ### Test the app bundle
 
 An app bundle can be tested in multiple ways.
@@ -433,10 +475,14 @@ This section describes two.
 
 #### Offline using the bundle tool
 
-1. If you haven't done so already, download `bundletool` from the
-   [GitHub repository][].
+1. If you haven't done so already, download `bundletool` from
+   its [GitHub repository][bundletool-github].
 1. [Generate a set of APKs][apk-set] from your app bundle.
 1. [Deploy the APKs][apk-deploy] to connected devices.
+
+[bundletool-github]: {{site.github}}/google/bundletool/releases/latest
+[apk-set]: {{site.android-dev}}/studio/command-line/bundletool#generate_apks
+[apk-deploy]: {{site.android-dev}}/studio/command-line/bundletool#deploy_with_bundletool
 
 #### Online using Google Play
 
@@ -444,19 +490,22 @@ This section describes two.
    You can use the internal test track,
    or the alpha or beta channels to test the bundle before
    releasing it in production.
-2. Follow [these steps to upload your bundle][upload-bundle]
+2. Follow the steps to [upload your bundle][upload-bundle]
    to the Play Store.
+
+[upload-bundle]: {{site.android-dev}}/studio/publish/upload-bundle
 
 ### Build an APK
 
-Although app bundles are preferred over APKs, there are stores
-that don't yet support app bundles. In this case, build a release
-APK for each target ABI (Application Binary Interface).
+Although app bundles are preferred over APKs,
+there are stores that don't yet support app bundles.
+In this case, build a release APK for
+each target ABI (Application Binary Interface).
 
 If you completed the signing steps, the APK will be signed.
 At this point, you might consider [obfuscating your Dart code][]
-to make it more difficult to reverse engineer. Obfuscating
-your code involves adding a couple flags to your build command.
+to make it more difficult to reverse engineer.
+Obfuscating your code involves adding flags to your build command.
 
 From the command line:
 
@@ -472,17 +521,20 @@ This command results in three APK files:
 * `[project]/build/app/outputs/apk/release/app-x86_64-release.apk`
 
 Removing the `--split-per-abi` flag results in a fat APK that contains
-your code compiled for _all_ the target ABIs. Such APKs are larger in
-size than their split counterparts, causing the user to download
-native binaries that are not applicable to their device's architecture.
+your code compiled for _all_ the target ABIs.
+Such APKs are larger in size than their split counterparts,
+causing the user to download native binaries that
+aren't applicable to their device's architecture.
+
+[obfuscating your Dart code]: /deployment/obfuscate
 
 ### Install an APK on a device
 
-Follow these steps to install the APK on a connected Android device.
+Follow these steps to install the APK on a connected Android-powered device.
 
 From the command line:
 
-1. Connect your Android device to your computer with a USB cable.
+1. Connect your Android-powered device to your computer with a USB cable.
 1. Enter `cd [project]`.
 1. Run `flutter install`.
 
@@ -497,22 +549,27 @@ The default version number of the app is `1.0.0`.
 To update it, navigate to the `pubspec.yaml` file
 and update the following line:
 
-`version: 1.0.0+1`
+```yaml
+version: 1.0.0+1
+```
 
 The version number is three numbers separated by dots,
-such as `1.0.0` in the example above, followed by an optional
-build number such as `1` in the example above, separated by a `+`.
+such as `1.0.0` in the preceding example,
+followed by an optional build number,
+such as `1` in the preceding example, separated by a `+`.
 
-Both the version and the build number can be overridden in Flutter's
-build by specifying `--build-name` and `--build-number`, respectively.
+Both the version and the build number can be overridden in
+Flutter's build by specifying `--build-name` and `--build-number`, respectively.
 
 In Android, `build-name` is used as `versionName` while
 `build-number` used as `versionCode`. For more information,
 check out [Version your app][] in the Android documentation.
 
-When you rebuild the app for Android, any updates in the version number
-from the pubspec file will update the `versionName` and `versionCode` 
-in the `local.properties` file.
+When you rebuild the app for Android, any updates in
+the version number from the pubspec file will
+update the `versionName` and `versionCode`in the `local.properties` file.
+
+[Version your app]: {{site.android-dev}}/studio/publish/versioning
 
 ## Android release FAQ
 
@@ -539,6 +596,8 @@ it is strongly recommended to build split APKs,
 as described in [build an APK](#build-an-apk) using the
 `--split-per-abi` flag.
 
+[fat APK]: https://en.wikipedia.org/wiki/Fat_binary
+
 ### What are the supported target architectures?
 
 When building your application in release mode,
@@ -547,7 +606,7 @@ Flutter apps can be compiled for [armeabi-v7a][] (ARM 32-bit),
 
 ### How do I sign the app bundle created by `flutter build appbundle`?
 
-See [Signing the app](#signing-the-app).
+Check out [Sign the app](#sign-the-app).
 
 ### How do I build a release from within Android Studio?
 
@@ -555,13 +614,13 @@ In Android Studio, open the existing `android/`
 folder under your app's folder. Then,
 select **build.gradle (Module: app)** in the project panel:
 
-<img src='/assets/images/docs/deployment/android/gradle-script-menu.png' width="100%" alt='The Gradle build script menu in Android Studio.'>
+<img src='/assets/images/docs/deployment/android/gradle-script-menu.png' alt='The Gradle build script menu in Android Studio.' style="max-height: 20rem">
 
 Next, select the build variant. Click **Build > Select Build Variant**
 in the main menu. Select any of the variants in the **Build Variants**
 panel (debug is the default):
 
-<img src='/assets/images/docs/deployment/android/build-variant-menu.png' width="100%" alt='The build variant menu in Android Studio with Release selected.'>
+<img src='/assets/images/docs/deployment/android/build-variant-menu.png' alt='The build variant menu in Android Studio with Release selected.' style="max-height: 20rem">
 
 The resulting app bundle or APK files are located in
 `build/app/outputs` within your app's folder.
@@ -569,34 +628,3 @@ The resulting app bundle or APK files are located in
 {% comment %}
 ### Are there any special considerations with add-to-app?
 {% endcomment %}
-
-[apk-deploy]: {{site.android-dev}}/studio/command-line/bundletool#deploy_with_bundletool
-[apk-set]: {{site.android-dev}}/studio/command-line/bundletool#generate_apks
-[application ID]: {{site.android-dev}}/studio/build/application-id
-[applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
-[arm64-v8a]: {{site.android-dev}}/ndk/guides/abis#arm64-v8a
-[armeabi-v7a]: {{site.android-dev}}/ndk/guides/abis#v7a
-[bundle]: {{site.android-dev}}/guide/app-bundle
-[configuration qualifiers]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
-[fat APK]: https://en.wikipedia.org/wiki/Fat_binary
-[flutter_launcher_icons]: {{site.pub}}/packages/flutter_launcher_icons
-[Getting Started guide for Android]: {{site.material}}/develop/android/mdc-android
-[GitHub repository]: {{site.github}}/google/bundletool/releases/latest
-[Google Maven]: https://maven.google.com/web/index.html#com.google.android.material:material
-[gradlebuild]: {{site.android-dev}}/studio/build/#module-level
-[internal version number]: {{site.android-dev}}/studio/publish/versioning
-[launchericons]: {{site.material}}/styles/icons
-[manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
-[minimum Android API level]: {{site.android-dev}}/studio/publish/versioning#minsdk
-[multidex-docs]: {{site.android-dev}}/studio/build/multidex
-[multidex-keep]: {{site.android-dev}}/studio/build/multidex#keep
-[obfuscating your Dart code]: /deployment/obfuscate
-[official Play Store documentation]: https://support.google.com/googleplay/android-developer/answer/7384423?hl=en
-[permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
-[Platform Views]: /platform-integration/android/platform-views
-[play]: {{site.android-dev}}/distribute
-[R8]: {{site.android-dev}}/studio/build/shrink-code
-[Sign your app]: {{site.android-dev}}/studio/publish/app-signing.html#generate-key
-[upload-bundle]: {{site.android-dev}}/studio/publish/upload-bundle
-[Version your app]: {{site.android-dev}}/studio/publish/versioning
-[x86-64]: {{site.android-dev}}/ndk/guides/abis#86-64
