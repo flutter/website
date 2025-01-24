@@ -153,7 +153,10 @@ Target Integrity (Xcode): The package product 'plugin_name_ios' requires minimum
 
 To use the plugin:
 
-1. Increase the **Minimum Deployments** of your app's target.
+1. Open your app (`ios/Runner.xcworkspace` or `macos/Runner.xcworkspace`) in
+   Xcode.
+
+1. Increase your app's target **Minimum Deployments**.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/minimum-deployments.png",
