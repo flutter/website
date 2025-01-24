@@ -15,7 +15,7 @@ check out [Architecting Flutter apps][].
 [Architecting Flutter apps]: /app-architecture
 
 Flutter is a cross-platform UI toolkit that is designed to allow code reuse
-across operating systems such as iOS Android, web, and desktop,
+across operating systems such as iOS, Android, web, and desktop,
 while also allowing
 applications to interface directly with underlying platform services.
 The goal is to enable developers to deliver high-performance apps
