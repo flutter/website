@@ -59,7 +59,6 @@ designed to be optional and replaceable.
 The PNG diagrams in this document were created using draw.io. The draw.io
 metadata is embedded in the PNG file itself, so you can open the PNG directly
 from draw.io to edit the individual components.
-(sz: Not true, at least not for the web arch png.)
 
 The following settings were used:
 
