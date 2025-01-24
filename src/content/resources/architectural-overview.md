@@ -67,7 +67,6 @@ The following settings were used:
  - Enable _Transparent Background_
  - Enable _Selection Only_, _Crop_
  - Enable _Include a copy of my diagram_
-
 {% endcomment %}
 
 ![Architectural
@@ -234,7 +233,7 @@ one part of the user interface can cause ripple effects to seemingly unrelated
 pieces of code.
 
 One solution to this is an approach like MVC, where you push data changes to the
-model via the controller, and then the model pushes the new state to the view
+model through the controller, and then the model pushes the new state to the view
 through the controller. However, this also is problematic, since creating and
 updating UI elements are two separate steps that can easily get out of sync.
 
@@ -1057,7 +1056,7 @@ is designed to interface with the
 underlying operating system rather than a web browser.
 A different approach is therefore required.
 
-On the web, Flutter offers two build mode and two renderers.
+On the web, Flutter offers two build modes and two renderers.
 Flutter has a canvas-based renderer with two compile modes:
 JS and Wasm.
 
@@ -1081,7 +1080,7 @@ for Flutter to provide a Dart runtime.
 Instead, the Flutter framework (along with any code you write)
 is compiled to JavaScript.
 It's also worthy to note that Dart has very few language
-semantic differences across all its modes
+semantic differences across all of its modes
 (JIT versus AOT, native versus web compilation),
 and most developers will never write a line of code that
 runs into such a difference.
