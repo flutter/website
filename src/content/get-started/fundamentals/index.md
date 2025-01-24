@@ -62,7 +62,7 @@ following subjects in the listed order.
     It also facilitates designing a UI to
     optimize any screen where your app might be used.
  4. [State management][]
-    Learn how share state between widgets and notify other parts of your app
+    Learn how to share state between widgets and notify other parts of your app
     when the state changes.
     See how to implement MVVM in Flutter to manage state effectively
     for small to medium-sized apps.
