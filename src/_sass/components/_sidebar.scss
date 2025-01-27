@@ -1,7 +1,6 @@
 @use 'sass:color';
 
 @use '../base/variables' as *;
-@use '../vendor/bootstrap';
 
 .site-sidebar {
   font-family: $site-font-family-alt;
@@ -12,17 +11,17 @@
     padding: 0;
 
     > .nav > .nav-item {
-      font-size: bootstrap.$font-size-base;
+      font-size: 1rem;
     }
 
     > .nav > .nav-item,
     > .nav > .nav-item .nav .nav-item {
       .nav-link {
-        padding-top: bootstrap.bs-spacer(2);
-        padding-bottom: bootstrap.bs-spacer(1);
+        padding-top: 0.5rem;
+        padding-bottom: 0.25rem;
 
         &.collapsible {
-          padding-bottom: bootstrap.bs-spacer(2);
+          padding-bottom: 0.5rem;
         }
       }
     }
@@ -30,15 +29,15 @@
 
   .sidebar-primary-divider {
     height: 0;
-    margin-top: bootstrap.bs-spacer(1);
-    margin-bottom: bootstrap.bs-spacer(1);
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
     overflow: hidden;
     border-top: 1px solid $site-color-light-grey;
   }
 
   @mixin nav-link-active-style {
     &.active {
-      font-weight: bootstrap.$font-weight-bold;
+      font-weight: 500;
 
       &:not(.collapsible) {
         color: $site-color-primary;
@@ -59,8 +58,8 @@
   }
 
   .nav-header {
-    font-weight: bootstrap.$font-weight-bolder;
-    font-size: bootstrap.$font-size-base;
+    font-weight: 700;
+    font-size: 1rem;
     user-select: none;
     color: color.scale($site-color-body-light, $lightness: 15%);
   }
@@ -70,7 +69,7 @@
     position: relative;
     align-items: center;
 
-    padding: bootstrap.bs-spacer(1) 0;
+    padding: 0.25rem 0;
     color: inherit;
     &.disabled { opacity: 0.5; }
 
@@ -115,7 +114,7 @@
         @include nav-link-active-style;
 
         &.collapsible {
-          padding: bootstrap.bs-spacer(2) 0;
+          padding: 0.5rem 0;
 
           @include collapsible();
 
@@ -123,7 +122,7 @@
         }
 
         &:not(.collapsible) {
-          padding: bootstrap.bs-spacer(1) 0;
+          padding: 0.25rem 0;
         }
       }
 
@@ -135,13 +134,13 @@
     }
 
     > .nav-header {
-      padding-top: bootstrap.bs-spacer(1);
+      padding-top: 0.25rem;
 
       & + .nav-item {
         // The first item after a top-level header should have
         // consistent padding, no matter if it's a link or collapsible.
         .nav-link {
-          padding-top: bootstrap.bs-spacer(2);
+          padding-top: 0.5rem;
         }
       }
     }
@@ -149,19 +148,19 @@
 
   // Sub navs
   > .nav .nav {
-    padding-left: bootstrap.bs-spacer(4);
-    margin-bottom: bootstrap.bs-spacer(1);
+    padding-left: 1rem;
+    margin-bottom: 0.25rem;
 
     .nav-header {
-      font-size: bootstrap.$font-size-sm;
+      font-size: .875rem;
 
       &:not(:first-child) {
-        margin-top: bootstrap.bs-spacer(2);
+        margin-top: 0.5rem;
       }
     }
 
     .nav-item {
-      font-size: bootstrap.$font-size-sm;
+      font-size: .875rem;
 
       > .nav-link {
         color: $site-color-body-light;

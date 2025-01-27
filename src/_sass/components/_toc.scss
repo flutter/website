@@ -12,12 +12,12 @@
   &__title {
     font-family: $site-font-family-alt;
     font-size: 18px;
-    margin-bottom: bootstrap.bs-spacer(2);
+    margin-bottom: 0.5rem;
   }
 }
 
 #site-toc--side {
-  padding: $site-content-top-padding 20px bootstrap.bs-spacer(2) 28px;
+  padding: $site-content-top-padding 20px 0.5rem 28px;
 
   display: none;
   position: fixed;
@@ -34,8 +34,8 @@
   }
 
   .toc-entry {
-    padding-bottom: bootstrap.bs-spacer(2);
-    font-size: bootstrap.$font-size-sm;
+    padding-bottom: 0.5rem;
+    font-size: .875rem;
 
     .nav {
       padding-top: 0.5rem;
@@ -46,7 +46,7 @@
 
   .nav-link {
     color: $site-color-body-light;
-    font-size: bootstrap.$font-size-sm;;
+    font-size: .875rem;
     line-height: normal;
     padding: 1px 0;
 

@@ -1,12 +1,11 @@
 @use 'sass:color';
 
 @use '../base/variables' as *;
-@use '../vendor/bootstrap';
 
 pre {
   margin-bottom: 1rem;
   font-size: 0.9375rem;
-  font-weight: bootstrap.$font-weight-normal;
+  font-weight: 400;
   padding: 1.25rem;
 
   a {

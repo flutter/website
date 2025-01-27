@@ -1,4 +1,4 @@
-@use '../vendor/bootstrap';
+@use '../base/variables' as *;
 
 .site-nextprev-nav, // Nav with both links
 .site-nextprev-nav__single // Nav with single link
@@ -6,7 +6,7 @@
   clear: both;
 
   ul {
-    $spacer-base: bootstrap.bs-spacer(3);
+    $spacer-base: 0.75rem;
 
     list-style-type: none;
     margin: 0;
@@ -23,7 +23,7 @@
       }
 
       &.prev:before {
-        color: bootstrap.$primary;
+        color: $site-color-primary;
         content: "\2329"; // &lang;
         padding-right: $spacer-base * 0.5;
       }
@@ -34,7 +34,7 @@
       }
 
       &.next:after {
-        color: bootstrap.$primary;
+        color: $site-color-primary;
         content: "\232A"; // &rang;
         padding-left: $spacer-base * 0.5;
       }
