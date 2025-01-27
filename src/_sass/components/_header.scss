@@ -190,9 +190,12 @@
     font-size: bootstrap.$font-size-sm;
     padding-left: bootstrap.bs-spacer(8);
 
+    @include bootstrap.media-breakpoint-down(sm) {
+      height: 66px;
+    }
+
     @include bootstrap.media-breakpoint-down(md) {
       font-size: bootstrap.$font-size-lg;
-      height: 66px;
       width: 100% !important;
     }
 
@@ -202,30 +205,6 @@
 
       &:focus {
         width: 220px !important;
-      }
-    }
-  }
-
-  &__social {
-    .nav-item.nav-link {
-      padding: 0 bootstrap.bs-spacer(2);
-
-      @include bootstrap.media-breakpoint-down(sm) {
-        padding: 0 bootstrap.bs-spacer(1);
-        font-size: smaller;
-      }
-
-      &.nav-icon {
-        color: $site-color-nav-links;
-
-        &:hover {
-          color: $site-color-body-light;
-        }
-
-        svg {
-          height: 24px;
-          width: 24px;
-        }
       }
     }
   }
