@@ -635,7 +635,7 @@ and more. This section covers how to style your apps.
 
 In **Compose**, you can control light and dark at any 
 arbitrary level by wrapping a component with 
-a Theme composable.
+a `Theme` composable.
 
 In **Flutter**, you can control light and dark mode at the app-level.
 To control the brightness mode, use the `theme` property
