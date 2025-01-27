@@ -341,8 +341,7 @@ fun ListDemo2(people: List<Person>) {
 
 To lazily build a list in Flutter, ....
 
-<?code-excerpt "../ios_devs/lib/list.dart (simple-list)"?>
-```dart dartpad="67426fd4f9c38c0c1db96b1af65598f2"
+```dart
 class Person {
   String name;
   Person(this.name);
@@ -476,8 +475,7 @@ To create a scrolling view, **Flutter** uses [`SingleChildScrollView`][].
 In the following example, the function `mockPerson` mocks instances
 of the `Person` class to create the custom `PersonView` widget.
 
-<?code-excerpt "../ios_devs/lib/scroll.dart (scroll-example)" replace="/body: //g;"?>
-```dart dartpad="a75740320989ed04020d95502a0de34e"
+```dart
 SingleChildScrollView(
   child: Column(
     children: mockPersons
@@ -549,8 +547,7 @@ to tell the framework to redraw the widget.
 
 The following example shows a part of a counter app:
 
-<?code-excerpt "../ios_devs/lib/state.dart (state)"?>
-```dart dartpad="34815ab7d6ee0c5a45c82597df444450"
+```dart
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
   @override
@@ -595,8 +592,7 @@ with two classes that help you draw:
 
 1. [`CustomPaint`][] that requires a painter:
 
-    <?code-excerpt "../ios_devs/lib/canvas.dart (custom-paint)" replace="/child: //g;"?>
-    ```dart dartpad="978d64ee66d54177fb639f8a9f801039"
+    ```dart 
     CustomPaint(
       painter: SignaturePainter(_points),
       size: Size.infinite,
@@ -605,8 +601,7 @@ with two classes that help you draw:
 
 2. [`CustomPainter`][] that implements your algorithm to draw to the canvas.
 
-    <?code-excerpt "../ios_devs/lib/canvas.dart (custom-painter)"?>
-    ```dart dartpad="978d64ee66d54177fb639f8a9f801039"
+    ```dart
     class SignaturePainter extends CustomPainter {
       SignaturePainter(this.points);
     
@@ -708,7 +703,6 @@ Button(onClick = {},
 To style button widgets in **Flutter**, you similarly 
 set the style of its child, or modify properties on the button itself.
 
-<?code-excerpt "lib/stylingbutton.dart (styling-button)"?>
 ```dart
 FilledButton(
   onPressed: (){},
@@ -873,3 +867,4 @@ To review a complete example, check out the [`Image`][] docs.
 [go_router]: {{site.pub-pkg}}/go_router
 [Google Fonts]: https://fonts.google.com/
 [google_fonts]: https://pub.dev/packages/google_fonts
+[`MaterialApp`]: https://api.flutter.dev/flutter/material/MaterialApp-class.html
