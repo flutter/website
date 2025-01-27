@@ -44,17 +44,11 @@ SDK archive:
     used for that release.
 *   **Release Date**: The date when that particular Flutter version was
     officially released.
-*   **Dart version**: The corresponding version of the Dart programming language
-    included in that Flutter SDK release.
+*   **Dart version**: The corresponding version of the Dart SDK included in the
+    Flutter SDK release.
 *   **Provenance**: Provides details about the build process and origin of the
     SDK, potentially including information about security attestations or
-    build systems used. To view this information in a readable format, run the
-    following command. Replace `[provenance URL]` with the provenance URL and
-    make sure you have [jq](https://stedolan.github.io/jq/) installed.
-
-    ```console
-    curl [provenance URL] | jq -r .payload | base64 -d | jq
-    ```
+    build systems used. Results are returned as JSON.
 
 ## Stable channel
 
