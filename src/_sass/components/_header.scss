@@ -190,9 +190,12 @@
     font-size: .875rem;
     padding-left: 2rem;
 
+    @include bootstrap.media-breakpoint-down(sm) {
+      height: 66px;
+    }
+
     @include bootstrap.media-breakpoint-down(md) {
       font-size: 1.25rem;
-      height: 66px;
       width: 100% !important;
     }
 
@@ -205,35 +208,10 @@
       }
     }
   }
-
-  &__social {
-    .nav-item.nav-link {
-      padding: 0 0.5rem;
-
-      @include bootstrap.media-breakpoint-down(sm) {
-        padding: 0 0.25rem;
-        font-size: smaller;
-      }
-
-      &.nav-icon {
-        color: $site-color-nav-links;
-
-        &:hover {
-          color: $site-color-body-light;
-        }
-
-        svg {
-          height: 24px;
-          width: 24px;
-        }
-      }
-    }
-  }
 }
 
 
 header.site-header {
-
   .dropdown-menu {
     top: 32px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
