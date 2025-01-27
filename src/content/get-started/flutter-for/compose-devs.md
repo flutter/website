@@ -116,7 +116,7 @@ your Flutter app can use many different design systems:
 If you're looking for a great reference app that features a
 custom design system, check out [Wonderous][].
 
-## UI Basics
+## UI basics
 
 This section covers the basics of UI development in
 Flutter and how it compares to Jetpack Compose.
