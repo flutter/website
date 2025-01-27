@@ -306,7 +306,7 @@ and we'll try our best to help you.
 You can also chat with us on the `#hackers-devrel` channel
 on the [Flutter contributors Discord][]!
 
-[Flutter contributors Discord]: https://github.com/flutter/flutter/blob/master/docs/contributing/Chat.md
+[Flutter contributors Discord]: https://github.com/flutter/flutter/blob/main/docs/contributing/Chat.md
 
 ### Refresh code excerpts
 

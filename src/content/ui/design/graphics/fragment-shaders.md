@@ -275,7 +275,7 @@ this is more efficient than creating a new
 For a more detailed guide on writing performant shaders,
 check out [Writing efficient shaders][] on GitHub.
 
-[Writing efficient shaders]: {{site.repo.engine}}/blob/main/impeller/docs/shader_optimization.md
+[Writing efficient shaders]: {{site.repo.flutter}}/blob/main/engine/src/flutter/impeller/docs/shader_optimization.md
 
 ### Other resources
 

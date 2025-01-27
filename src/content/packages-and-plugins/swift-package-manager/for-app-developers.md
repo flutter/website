@@ -151,8 +151,27 @@ the project, you might get an error like this:
 Target Integrity (Xcode): The package product 'plugin_name_ios' requires minimum platform version 14.0 for the iOS platform, but this target supports 12.0
 ```
 
-To use the plugin, increase the **Minimum Deployments** of your app's target.
+To use the plugin:
 
-{% render docs/captioned-image.liquid,
-image:"development/packages-and-plugins/swift-package-manager/minimum-deployments.png",
-caption:"The target's **Minimum Deployments** setting" %}
+1. Open your app (`ios/Runner.xcworkspace` or `macos/Runner.xcworkspace`) in
+   Xcode.
+
+1. Increase your app's target **Minimum Deployments**.
+
+   {% render docs/captioned-image.liquid,
+   image:"development/packages-and-plugins/swift-package-manager/minimum-deployments.png",
+   caption:"The target's **Minimum Deployments** setting" %}
+
+1. If you updated your iOS app's **Minimum Deployments**,
+   regenerate the iOS project's configuration files:
+
+   ```sh
+   flutter build ios --config-only
+   ```
+
+1. If you updated your macOS app's **Minimum Deployments**,
+   regenerate the macOS project's configuration files:
+
+   ```sh
+   flutter build macos --config-only
+   ```

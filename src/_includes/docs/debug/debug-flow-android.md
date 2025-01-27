@@ -5,7 +5,7 @@ check out [`flutter_gdb`][].
 :::
 
 [GNU Project Debugger]: https://www.sourceware.org/gdb/
-[`flutter_gdb`]: {{site.repo.engine}}/blob/main/sky/tools/flutter_gdb
+[`flutter_gdb`]: {{site.repo.flutter}}/blob/main/engine/src/flutter/sky/tools/flutter_gdb
 
 #### Build the Android version of the Flutter app in the Terminal
 

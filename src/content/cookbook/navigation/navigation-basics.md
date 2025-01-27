@@ -19,8 +19,8 @@ In Flutter, _screens_ and _pages_ are called _routes_.
 The remainder of this recipe refers to routes.
 :::
 
-In Android, a route is equivalent to an Activity.
-In iOS, a route is equivalent to a ViewController.
+In Android, a route is equivalent to an `Activity`.
+In iOS, a route is equivalent to a `ViewController`.
 In Flutter, a route is just a widget.
 
 This recipe uses the [`Navigator`][] to navigate to a new route.
@@ -278,6 +278,26 @@ class SecondRoute extends StatelessWidget {
   <img src="/assets/images/docs/cookbook/navigation-basics-cupertino.gif" alt="Navigation Basics Cupertino Demo" class="site-mobile-screenshot" />
 </noscript>
 
+## Additional navigation methods
+
+The recipe in this topic shows you one way to navigate to a new screen and
+back to the previous scene, using the [`push`] and [`pop`] methods in the
+[`Navigator`] class, but there are several other `Navigator` static methods that
+you can use. Here are a few of them:
+
+*   [`pushAndRemoveUntil`]: Adds a navigation route to the stack and then removes
+    the most recent routes from the stack until a condition is met.
+*   [`pushReplacement`]: Replaces the current route on the top of the
+    stack with a new one.
+*   [`replace`]: Replace a route on the stack with another route.
+*   [`replaceRouteBelow`]: Replace the route below a specific route on the stack.
+*   [`popUntil`]: Removes the most recent routes that were added to the stack of
+    navigation routes until a condition is met.
+*   [`removeRoute`]: Remove a specific route from the stack.
+*   [`removeRouteBelow`]: Remove the route below a specific route on the
+    stack.
+*   [`restorablePush`]: Restore a route that was removed from the stack.
+
 [Cupertino]: {{site.docs}}/ui/widgets/cupertino
 [Material Components]: {{site.docs}}/ui/widgets/material
 [`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
@@ -290,4 +310,14 @@ class SecondRoute extends StatelessWidget {
 [`Navigator.pop()`]: {{site.api}}/flutter/widgets/Navigator/pop.html
 [`Navigator.push()`]: {{site.api}}/flutter/widgets/Navigator/push.html
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
+[`pop`]: {{site.api}}/flutter/widgets/Navigator/pop.html
+[`popUntil`]: {{site.api}}/flutter/widgets/Navigator/popUntil.html
+[`push`]: {{site.api}}/flutter/widgets/Navigator/push.html
+[`pushAndRemoveUntil`]: {{site.api}}/flutter/widgets/Navigator/pushAndRemoveUntil.html
+[`pushReplacement`]: {{site.api}}/flutter/widgets/Navigator/pushReplacement.html 
+[`removeRoute`]: {{site.api}}/flutter/widgets/Navigator/removeRoute.html
+[`removeRouteBelow`]: {{site.api}}/flutter/widgets/Navigator/removeRouteBelow.html
+[`replace`]: {{site.api}}/flutter/widgets/Navigator/replace.html
+[`replaceRouteBelow`]: {{site.api}}/flutter/widgets/Navigator/replaceRouteBelow.html
+[`restorablePush`]: {{site.api}}/flutter/widgets/Navigator/restorablePush.html
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html

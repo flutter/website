@@ -34,6 +34,7 @@ They're sorted by release and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Deprecate `WebGoldenComparator`][]
 * [Deprecate `TextField.canRequestFocus`][]
 * [Deprecate `ThemeData.dialogBackgroundColor` in favor of `DialogThemeData.backgroundColor`][]
 * [Deprecate `ThemeData.indicatorColor` in favor of `TabBarThemeData.indicatorColor`][]
@@ -44,6 +45,7 @@ They're sorted by release and listed in alphabetical order:
 * [Updated Material 3 progress indicators][]
 * [`.flutter-plugins-dependencies` replaces `.flutter-plugins`][]
 
+[Deprecate `WebGoldenComparator`]: /release/breaking-changes/web-golden-comparator
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
 [Deprecate `ThemeData.dialogBackgroundColor` in favor of `DialogThemeData.backgroundColor`]: /release/breaking-changes/deprecate-themedata-dialogbackgroundcolor
 [Deprecate `ThemeData.indicatorColor` in favor of `TabBarThemeData.indicatorColor`]: /release/breaking-changes/deprecate-themedata-indicatorcolor

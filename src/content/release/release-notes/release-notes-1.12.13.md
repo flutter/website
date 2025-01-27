@@ -3010,7 +3010,7 @@ In addition to the PRs listed below, please also check out the following release
  See the [full list](/release/release-notes/changelogs/changelog-1.12.13) of merged PRs for the 1.12 release.
 
 
-[breaking change policy on the Flutter wiki]: {{site.repo.flutter}}/blob/master/docs/contributing/Tree-hygiene.md#handling-breaking-changes
+[breaking change policy on the Flutter wiki]: {{site.repo.flutter}}/blob/main/docs/contributing/Tree-hygiene.md#handling-breaking-changes
 [flutter-announce]: https://groups.google.com/g/flutter-announce
 [GitHub Octoverse report]: https://octoverse.github.com/
 [this post from Ian Hickson]: https://groups.google.com/g/flutter-announce/c/Z09a317E21o

@@ -236,9 +236,9 @@ see [The Framework architecture][] in the
 [Flutter wiki][], and the community article,
 [The Layer Cake][].
 
-[Flutter wiki]: {{site.repo.flutter}}/tree/master/docs
+[Flutter wiki]: {{site.repo.flutter}}/tree/main/docs
 [MainThread]: {{site.android-dev}}/reference/android/support/annotation/MainThread
-[The Framework architecture]: {{site.repo.flutter}}/blob/master/docs/about/The-Framework-architecture.md
+[The Framework architecture]: {{site.repo.flutter}}/blob/main/docs/about/The-Framework-architecture.md
 [The Layer Cake]: {{site.medium}}/flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401
 [UIKit]: {{site.apple-dev}}/documentation/uikit
 

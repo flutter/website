@@ -19,8 +19,8 @@ about evaluating and debugging Flutter's performance.
   * [How to write a render speed test for Flutter][speed-test]
   * [How to write a memory test for Flutter][memory-test]
 
-[memory-test]: {{site.repo.flutter}}/blob/master/docs/contributing/testing/How-to-write-a-memory-test-for-Flutter.md
-[speed-test]: {{site.repo.flutter}}/blob/master/docs/contributing/testing/How-to-write-a-render-speed-test-for-Flutter.md
+[memory-test]: {{site.repo.flutter}}/blob/main/docs/contributing/testing/How-to-write-a-memory-test-for-Flutter.md
+[speed-test]: {{site.repo.flutter}}/blob/main/docs/contributing/testing/How-to-write-a-render-speed-test-for-Flutter.md
 
 * What are some tools for capturing and analyzing performance
   metrics?
@@ -69,13 +69,13 @@ about evaluating and debugging Flutter's performance.
     and your IDE displays which the widgets rebuild.
 
 [`debugProfileBuildsEnabled`]: {{site.api}}/flutter/widgets/debugProfileBuildsEnabled.html
-[debug.dart]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/debug.dart
-[framework.dart]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/framework.dart
+[debug.dart]: {{site.repo.flutter}}/blob/main/packages/flutter/lib/src/widgets/debug.dart
+[framework.dart]: {{site.repo.flutter}}/blob/main/packages/flutter/lib/src/widgets/framework.dart
 
 * How do I query the target frames per second (of the display)?
   * [Get the display refresh rate][]
 
-[Get the display refresh rate]: {{site.repo.engine}}/blob/main/docs/Engine-specific-Service-Protocol-extensions.md#get-the-display-refresh-rate-_fluttergetdisplayrefreshrate
+[Get the display refresh rate]: {{site.repo.flutter}}/blob/main/engine/src/flutter/docs/Engine-specific-Service-Protocol-extensions.md#get-the-display-refresh-rate-_fluttergetdisplayrefreshrate
 
 * How to solve my app's poor animations caused by an expensive
   Dart async function call that is blocking the UI thread?
@@ -94,10 +94,10 @@ about evaluating and debugging Flutter's performance.
 * How do I see the breakdown of the Flutter engine size?
   * Visit the [binary size dashboard][], and replace the git
     hash in the URL with a recent commit hash from
-    [GitHub engine repository commits][].
+    [Flutter's GitHub commits][].
 
 [binary size dashboard]: https://storage.googleapis.com/flutter_infra_release/flutter/241c87ad800beeab545ab867354d4683d5bfb6ce/android-arm-release/sizes/index.html
-[GitHub engine repository commits]: {{site.repo.engine}}/commits
+[Flutter's GitHub commits]: {{site.repo.flutter}}/commits/main
 
 * How can I take a screenshot of an app that is running and export it
   as a SKP file?

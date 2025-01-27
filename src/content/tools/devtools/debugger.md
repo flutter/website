@@ -20,7 +20,7 @@ Flutter engine running within an Android app process,
 check out [`flutter_gdb`][].
 :::
 
-[`flutter_gdb`]: {{site.repo.engine}}/blob/main/sky/tools/flutter_gdb
+[`flutter_gdb`]: {{site.repo.flutter}}/blob/main/engine/src/flutter/sky/tools/flutter_gdb
 
 When you open the debugger tab, you should see the source for the main
 entry-point for your app loaded in the debugger.
