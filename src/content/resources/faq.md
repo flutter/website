@@ -461,7 +461,7 @@ transitively import `dart:mirrors` or `dart:html`.
 
 ### Can Flutter compile Dart to JavaScript?
 
-Flutter can compile Dart to JavaScript with the
+Flutter compiles Dart to JavaScript with the
 [`js.dart`][] package.
 
 [`js.dart`]: {{site.dart-site}}/tools/dart-compile#js
@@ -528,18 +528,21 @@ between physical pixels and logical CSS pixels.
 
 ### What kind of app performance can I expect?
 
-In general, you can expect excellent performance. Flutter is
-designed to help developers easily achieve a constant 60fps.
-Flutter apps run using natively compiled code&mdash;no
-interpreters are involved.
-This means that Flutter apps start quickly.
+In general, you can expect excellent performance. Flutter is designed to help
+developers easily achieve a constant 60fps. Flutter apps run using natively
+compiled code, so no interpreters are involved. This means that Flutter apps
+start quickly.
 
-Flutter's performance when using native code depends on your app's
-architecture. For optimal performance, familiarize yourself with Flutter's
+Flutter's performance when using native code depends on your
+[app's architecture][]. For optimal performance, familiarize yourself with Flutter's
 [platform channels][]. These channels provide an asynchronous message-passing
 system for communicating with native code.
 
+To learn more about performance and Flutter, see the [Performance FAQ][].
+
 [platform channels]: /platform-integration/platform-channels
+[app's architecture]: /app-architecture
+[Performance FAQ]: /perf/faq
 
 ### What kind of developer cycles can I expect? How long between edit and refresh? {:#hot-reload}
 
@@ -729,13 +732,13 @@ if Dart can identify the code path at compile time.
 To date, we've found other approaches for specific needs
 that offer a better trade-off, such as code generation.
 
-### Is internationalization and localization supported?
+### Are internationalization and localization supported?
 
-Flutter supports internationalization (i18n) and localization (l10n) so that
-your apps are adaptable to different languages and cultures. You can
+Yes, Flutte`r supports internationalization (i18n) and localization (l10n) so
+that your apps are adaptable to different languages and cultures. You can
 learn more in the [internationalization documentation][].
 
-[internationalization tutorial]: /ui/accessibility-and-internationalization/internationalization
+[internationalization documentation]: /ui/accessibility-and-internationalization/internationalization
 
 ### What accessibility is supported?
 
@@ -820,7 +823,10 @@ goal for Flutter or Dart.
 ### How does Flutter handle scrolling?
 
 A custom scrolling implementation is used for each app platform so that
-scrolling matches that platform's native scrolling look and feel.
+scrolling matches that platform's native scrolling look and feel. To learn
+more about scrolling with Flutter, see the [scrolling][] documentation.
+
+[scrolling]: /ui/layout/scrolling
 
 ## Framework
 
