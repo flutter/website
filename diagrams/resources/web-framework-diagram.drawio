@@ -19,7 +19,7 @@
             <mxPoint x="165" y="640" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="eU0kjX7wS5xwUF7xRdHj-7" value="&lt;font style=&quot;font-size: 22px;&quot;&gt;&lt;b&gt;Browser&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;JavaScript / C++&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+        <mxCell id="eU0kjX7wS5xwUF7xRdHj-7" value="&lt;font style=&quot;font-size: 22px;&quot;&gt;&lt;b&gt;Browser&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;JavaScript/Wasm&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="30" y="489" width="150" height="30" as="geometry" />
         </mxCell>
         <mxCell id="eU0kjX7wS5xwUF7xRdHj-10" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.patternFillRect;fillStyle=diag;step=5;fillStrokeWidth=0.2;fillStrokeColor=#dddddd;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;" parent="1" vertex="1">
@@ -70,29 +70,17 @@
         <mxCell id="eU0kjX7wS5xwUF7xRdHj-27" value="&lt;span style=&quot;font-size: 22px;&quot;&gt;Painting&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=28;fontColor=light-dark(#ffffff, #ededed);" parent="1" vertex="1">
           <mxGeometry x="480" y="275" width="80" height="35" as="geometry" />
         </mxCell>
-        <mxCell id="eU0kjX7wS5xwUF7xRdHj-28" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.patternFillRect;fillStyle=diag;step=5;fillStrokeWidth=0.2;fillStrokeColor=#dddddd;fillColor=#f0a30a;fontColor=#000000;strokeColor=#BD7000;" parent="1" vertex="1">
-          <mxGeometry x="180" y="481.5" width="160" height="45" as="geometry" />
-        </mxCell>
         <mxCell id="eU0kjX7wS5xwUF7xRdHj-29" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.patternFillRect;fillStyle=diag;step=5;fillStrokeWidth=0.2;fillStrokeColor=#dddddd;fillColor=#f0a30a;fontColor=#000000;strokeColor=#BD7000;" parent="1" vertex="1">
-          <mxGeometry x="348" y="481.5" width="152" height="45" as="geometry" />
+          <mxGeometry x="180" y="481.5" width="320" height="45" as="geometry" />
         </mxCell>
         <mxCell id="eU0kjX7wS5xwUF7xRdHj-30" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.patternFillRect;fillStyle=diag;step=5;fillStrokeWidth=0.2;fillStrokeColor=#dddddd;fillColor=#f0a30a;fontColor=#000000;strokeColor=#BD7000;" parent="1" vertex="1">
-          <mxGeometry x="510" y="481.5" width="170" height="45" as="geometry" />
-        </mxCell>
-        <mxCell id="eU0kjX7wS5xwUF7xRdHj-31" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.patternFillRect;fillStyle=diag;step=5;fillStrokeWidth=0.2;fillStrokeColor=#dddddd;fillColor=#f0a30a;fontColor=#000000;strokeColor=#BD7000;" parent="1" vertex="1">
-          <mxGeometry x="690" y="481.5" width="170" height="45" as="geometry" />
-        </mxCell>
-        <mxCell id="eU0kjX7wS5xwUF7xRdHj-33" value="&lt;font style=&quot;font-size: 22px; color: rgb(255, 255, 255);&quot;&gt;HTML/CSS&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="230" y="489" width="60" height="30" as="geometry" />
+          <mxGeometry x="510" y="481.5" width="350" height="45" as="geometry" />
         </mxCell>
         <mxCell id="eU0kjX7wS5xwUF7xRdHj-34" value="&lt;font style=&quot;font-size: 22px; color: rgb(255, 255, 255);&quot;&gt;Canvas&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="394" y="489" width="60" height="30" as="geometry" />
+          <mxGeometry x="310" y="489" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="eU0kjX7wS5xwUF7xRdHj-35" value="&lt;font style=&quot;font-size: 22px; color: rgb(255, 255, 255);&quot;&gt;WebGL&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="565" y="489" width="60" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="eU0kjX7wS5xwUF7xRdHj-36" value="&lt;font style=&quot;font-size: 22px; color: rgb(255, 255, 255);&quot;&gt;WebAssembly&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="745" y="489" width="60" height="30" as="geometry" />
+          <mxGeometry x="655" y="489" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="7qe8jE41nwvI0GSgo9u9-1" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.patternFillRect;fillStyle=diag;step=5;fillStrokeWidth=0.2;fillStrokeColor=#dddddd;fillColor=#dae8fc;strokeColor=#6c8ebf;labelBackgroundColor=default;textShadow=1;" parent="1" vertex="1">
           <mxGeometry x="20" y="400" width="850" height="60" as="geometry" />
@@ -112,7 +100,7 @@
         <mxCell id="7qe8jE41nwvI0GSgo9u9-6" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.patternFillRect;fillStyle=diag;step=5;fillStrokeWidth=0.2;fillStrokeColor=#dddddd;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" parent="1" vertex="1">
           <mxGeometry x="690" y="407.5" width="170" height="45" as="geometry" />
         </mxCell>
-        <mxCell id="7qe8jE41nwvI0GSgo9u9-7" value="&lt;font style=&quot;font-size: 22px; color: rgb(255, 255, 255);&quot;&gt;Rendering&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+        <mxCell id="7qe8jE41nwvI0GSgo9u9-7" value="&lt;font style=&quot;font-size: 22px; color: rgb(255, 255, 255);&quot;&gt;Compositor&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="230" y="415" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="7qe8jE41nwvI0GSgo9u9-8" value="&lt;font style=&quot;font-size: 22px; color: rgb(255, 255, 255);&quot;&gt;Embedding&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
