@@ -79,10 +79,6 @@
 
 @use '../../../node_modules/bootstrap-scss/bootstrap';
 
-@function bs-spacer($key: 3) {
-  @return map-get(bootstrap.$spacers, $key);
-}
-
 // Bootstrap adjustments
 
 .alert {
@@ -150,7 +146,7 @@ a.card {
   .card-title { color: $site-color-primary; }
 
   .card-subtitle {
-    font-size: bootstrap.$font-size-sm;
+    font-size: 0.875rem;
   }
 
   &.card-highlight {
@@ -171,28 +167,14 @@ a.card {
 
 .card-title {
   font-family: $site-font-family-alt;
-  font-size: bootstrap.$font-size-lg;
-  margin-bottom: bs-spacer(2);
-}
-
-// The nav bar for viewing code samples on GitHub / DartPad
-.navbar-code {
-  flex-direction: row;
-}
-
-// The nav bar for viewing code samples on GitHub / DartPad
-.btn-navbar-code {
-  font-size: bootstrap.$font-size-sm;
-  color: $site-color-primary;
-  background-color: $site-color-white;
-  font-weight: bold;
-  margin-left: bs-spacer(1);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .btn {
   font-family: $site-font-family-alt;
   font-weight: 500;
-  padding: bs-spacer(2);
+  padding: 0.5rem;
   white-space: normal;
 }
 
@@ -208,12 +190,12 @@ a.card {
 
   .nav-item {
     &:not(:last-child) {
-      margin-right: bs-spacer(8);
+      margin-right: 2rem;
     }
 
     a {
       color: $site-color-nav-links;
-      padding: bs-spacer(4) 0;
+      padding: 1rem 0;
     }
   }
 
@@ -227,16 +209,5 @@ a.card {
       border-color: $site-color-primary;
       background-color: unset;
     }
-  }
-}
-
-@mixin reset-carousel-animation {
-  .carousel-item-next,
-  .carousel-item-prev {
-    display: none;
-  }
-  .carousel-item-left,
-  .carousel-item-right {
-    transform: none;
   }
 }
