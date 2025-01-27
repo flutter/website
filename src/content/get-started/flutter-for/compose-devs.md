@@ -186,8 +186,7 @@ class MyApp extends StatelessWidget {
 The widget used in the `HomePage` might begin with the `Scaffold` class.
 `Scaffold` implements a basic layout structure for an app.
 
-<?code-excerpt "../ios_devs/lib/get_started.dart (homepage)"?>
-```dart dartpad="42cf3026e1460ef618257684ee5af6a2"
+```dart
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -230,8 +229,7 @@ Button(onClick = {}) {
 To achieve the same result in **Flutter**,
 use the `FilledButton` class:
 
-<?code-excerpt "../ios_devs/lib/text_button.dart (text-button)" replace="/child: //g;"?>
-```dart dartpad="3c9b9a4de431b86725197a7fc2c84158"
+```dart
 FilledButton(
   onPressed: () {
     // This closure is called when your button is tapped.
