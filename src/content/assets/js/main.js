@@ -124,7 +124,7 @@ function handleSearchShortcut(event) {
 function initFixedColumns() {
   const fixedColumnsSelector = '[data-fixed-column]';
   const bannerSelector = '.site-banner';
-  const footerSelector = 'footer.site-footer';
+  const footerSelector = '#site-footer';
   const headerSelector = '.site-header';
   const fixedColumns = $(fixedColumnsSelector);
 
