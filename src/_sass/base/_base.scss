@@ -14,7 +14,7 @@ body {
 }
 
 h1 {
-  margin-bottom: bootstrap.bs-spacer(12);
+  margin-bottom: 2.5rem;
 }
 
 h2 {
@@ -91,7 +91,7 @@ picture {
 
 .card-footer.card-footer--links {
   > *:not(:last-child) {
-    margin-right: bootstrap.bs-spacer(4);
+    margin-right: 1rem;
   }
 }
 
@@ -195,9 +195,9 @@ picture {
 
   @include bootstrap.media-breakpoint-up(md) {
     float: right;
-    margin: 0 0 bootstrap.bs-spacer(10) bootstrap.bs-spacer(10);
+    margin: 0 0 2.5rem 2.5rem;
     max-height: none;
-    max-width: calc((100%/2.5) - #{bootstrap.bs-spacer(10)});
+    max-width: calc((100%/2.5) - 2.5rem);
   }
 }
 
@@ -216,7 +216,7 @@ main figure {
     img { width: 100%; }
 
     figcaption {
-      margin-top: bootstrap.bs-spacer(4);
+      margin-top: 1rem;
       text-align: center;
     }
   }
@@ -246,14 +246,14 @@ main figure {
   justify-content: center;
 
   .material-symbols {
-    margin-right: bootstrap.bs-spacer(2);
+    margin-right: 0.5rem;
   }
 }
 
 .btn.btn-cta {
   font-size: 18px;
   font-weight: 500;
-  padding: bootstrap.bs-spacer(4) bootstrap.bs-spacer(6);
+  padding: 1rem 1.5rem;
 
   @include bootstrap.media-breakpoint-up(sm) {
     min-width: 250px;
@@ -319,9 +319,9 @@ thead:has(th:empty) {
 
 blockquote {
   background-color: $site-color-codeblock-bg;
-  padding: bootstrap.bs-spacer(3) bootstrap.bs-spacer(4);
-  border-left: solid 5px bootstrap.$border-color;
-  margin-bottom: bootstrap.bs-spacer(4);
+  padding: 0.75rem 1rem;
+  border-left: solid 5px $site-color-light-grey;
+  margin-bottom: 1rem;
 
   p {
     margin-bottom: 0;
@@ -379,7 +379,7 @@ td ol, td ul, td dl, td p {
 }
 
 .figure-caption {
-  font-size: bootstrap.$font-size-sm;
+  font-size: .875rem;
   font-style: italic;
   color: #041E3C;
 }
@@ -389,7 +389,7 @@ aside {
     h2, h3, h4, h5, h6 {
       margin: 0.5rem 0;
       font-size: 1.5rem;
-    }  
+    }
   }
 }
 
