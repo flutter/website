@@ -679,7 +679,7 @@ physics simulations and `fling()` methods.
 [`AnimatedBuilder`]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html
 [Introduction to animations]: /ui/animations
 [`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
-[`AnimationController` section]: #animationcontroller
+[`AnimationController` section]: /ui/animations/index#animationcontroller
 [`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
 [`CurvedAnimation`]: {{site.api}}/flutter/animation/CurvedAnimation-class.html
 [Cascade notation]: {{site.dart-site}}/language/operators#cascade-notation

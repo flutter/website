@@ -4,6 +4,8 @@ short-title: Animations
 description: How to perform animations in Flutter.
 ---
 
+{% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
+
 Well-designed animations make a UI feel more intuitive,
 contribute to the slick look and feel of a polished app,
 and improve the user experience.
@@ -230,7 +232,7 @@ Browse the [`Curves`] documentation for a complete listing
 (with visual previews) of the `Curves` constants that ship with Flutter.
 :::
 
-`CurvedAnimation` and `AnimationController` (described in the next section)
+`CurvedAnimation` and `AnimationController` (described in the next sections)
 are both of type `Animation<double>`, so you can pass them interchangeably.
 The `CurvedAnimation` wraps the object it's modifying&mdash;you
 don't subclass `AnimationController` to implement a curve.
@@ -367,9 +369,6 @@ A `Listener` is called whenever the value of the animation changes.
 The most common behavior of a `Listener` is to call `setState()`
 to cause a rebuild. A `StatusListener` is called when an animation begins,
 ends, moves forward, or moves reverse, as defined by `AnimationStatus`.
-The next section has an example of the `addListener()` method,
-and [Monitoring the progress of the animation][] shows an
-example of `addStatusListener()`.
 
 ## Codelabs, tutorials, and articles
 
@@ -459,7 +458,6 @@ Learn more about Flutter animations at the following links:
 [Implicit animations codelab]: /codelabs/implicit-animations
 [Making your first directional animations with built-in explicit animations]: {{site.yt.watch}}?v=CunyH6unILQ&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=3
 [Material widgets]: /ui/widgets/material
-[Monitoring the progress of the animation]: #monitoring
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`PageRoute`]: {{site.api}}/flutter/widgets/PageRoute-class.html
 [part 2]: {{site.medium}}/dartlang/zero-to-one-with-flutter-part-two-5aa2f06655cb
