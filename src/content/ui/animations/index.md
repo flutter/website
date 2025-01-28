@@ -190,7 +190,7 @@ One of the more commonly used animation types is `Animation<double>`.
 An `Animation` object sequentially generates
 interpolated numbers between two values over a certain duration.
 The output of an `Animation` object might be linear,
-a curve, a step function, or any other mapping you can devise.
+a curve, a step function, or any other mapping you can create.
 Depending on how the `Animation` object is controlled,
 it could run in reverse, or even switch directions in the
 middle.
@@ -204,7 +204,7 @@ always available in the `.value` member.
 An `Animation` object knows nothing about rendering or
 `build()` functions.
 
-### Curved&shy;Animation
+### CurvedAnimation
 
 A [`CurvedAnimation`][] defines the animation's progress
 as a non-linear curve.
@@ -237,7 +237,7 @@ are both of type `Animation<double>`, so you can pass them interchangeably.
 The `CurvedAnimation` wraps the object it's modifying&mdash;you
 don't subclass `AnimationController` to implement a curve.
 
-### Animation&shy;Controller
+### AnimationController
 
 [`AnimationController`][] is a special `Animation`
 object that generates a new value whenever the hardware
@@ -277,13 +277,13 @@ starts again (without stopping the clock, so it's as if it had
 been ticking the whole time, but without using the CPU.)
 To use your custom State object as the `vsync`, include the
 `TickerProviderStateMixin` when defining the custom State class.
-{% endcomment -%}
+{% endcomment %}
 
 :::note
 In some cases, a position might exceed the `AnimationController`'s
 0.0-1.0 range. For example, the `fling()` function
 allows you to provide velocity, force, and position
-(via the Force object). The position can be anything and
+(using the Force object). The position can be anything and
 so can be outside of the 0.0 to 1.0 range.
 
 A `CurvedAnimation` can also exceed the 0.0 to 1.0 range,
@@ -395,6 +395,10 @@ shows how to write animation code.
   that uses animation to show the user's progress
   as they fill in the fields.
 
+* [Casual games toolkit][]<br>
+  A toolkit with game templates that contain examples of how to use Flutter
+  animations.
+
 ## Other resources
 
 Learn more about Flutter animations at the following links:
@@ -446,6 +450,7 @@ Learn more about Flutter animations at the following links:
 [article4]: {{site.flutter-medium}}/directional-animations-with-built-in-explicit-animations-3e7c5e6fbbd7
 [article5]: {{site.flutter-medium}}/when-should-i-useanimatedbuilder-or-animatedwidget-57ecae0959e8
 [article6]: {{site.flutter-medium}}/animation-deep-dive-39d3ffea111f
+[Casual games toolkit]: /resources/games-toolkit/
 [Creating your own custom implicit animations with TweenAnimationBuilder]: {{site.yt.watch}}?v=6KiPEqzJIKQ&feature=youtu.be
 [Creating custom explicit animations with AnimatedBuilder and AnimatedWidget]: {{site.yt.watch}}?v=fneC7t4R_B0&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=4
 [`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
