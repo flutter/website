@@ -1,43 +1,20 @@
 ---
-title: Use the Flutter inspector
-description: Learn how to use the Flutter inspector to explore a Flutter app's widget tree.
+title: Use the legacy Flutter inspector
+description: Learn how to use the legacy Flutter inspector to explore a Flutter app's widget tree.
 ---
 
 <?code-excerpt path-base="visual_debugging/"?>
 
 :::note
-The inspector works with all Flutter applications.
+Please note that the legacy inspector will be removed in a future release. Let us know if there are issues preventing you from using the [new inspector][] by [filing a bug][].
 :::
 
-For information on how to locate DevTools screens in different IDEs,
-check out the [DevTools overview](/tools/devtools).
-
-## What is it?
-
-The Flutter widget inspector is a powerful tool for visualizing and
-exploring Flutter widget trees. The Flutter framework uses widgets
-as the core building block for anything from controls
-(such as text, buttons, and toggles),
-to layout (such as centering, padding, rows, and columns).
-The inspector helps you visualize and explore Flutter widget
-trees, and can be used for the following:
-
-* understanding existing layouts
-* diagnosing layout issues
-
-![Screenshot of the Flutter inspector window](/assets/images/docs/tools/devtools/inspector_screenshot.png){:width="100%"}
-
-## The new Flutter inspector {:#new}
-
-As part of Flutter 3.29, the new Flutter inspector is enabled by default. However, it can be disabled from the [inspector settings dialog][].
-
-:::note
-Please note that the [legacy inspector][] will be removed in a future release. Let us know if there are issues preventing you from using the new inspector by [filing a bug][].
-:::
-
-[inspector settings dialog]: #inspector-settings
-[legacy inspector]: /tools/devtools/legacy-inspector
+[new inspector]: /tools/devtools/inspector
 [filing a bug]: https://github.com/flutter/devtools/issues/new 
+
+## The legacy Flutter inspector
+
+![Screenshot of the legacy Flutter inspector window](/assets/images/docs/tools/devtools/inspector_legacy_screenshot.png){:width="100%"}
 
 ### Debugging layout issues visually
 
@@ -45,16 +22,10 @@ The following is a guide to the features available in the
 inspector's toolbar. When space is limited, the icon is
 used as the visual version of the label.
 
-![Select widget mode button](/assets/images/docs/tools/devtools/select-widget-mode-button.png){:width="20px"}
-**Select widget mode**
+![Select widget mode icon](/assets/images/docs/tools/devtools/select-widget-mode-icon.png){:width="20px"} **Select widget mode**
 : Enable this button in order to select
   a widget on the device to inspect it. To learn more,
   check out [Inspecting a widget](#inspecting-a-widget).
-
-![Show implementation widgets button](/assets/images/docs/tools/devtools/show-implementation-widgets-button.png){:width="20px"}
-**Show implementation widgets**
-: Enable this button in to show implementation widgets in the widget tree. To learn more,
-  check out [Use the Widget Tree](#use-the-widget-tree).
 
 ![Refresh tree icon](/assets/images/docs/tools/devtools/refresh-tree-icon.png){:width="20px"} **Refresh tree**
 : Reload the current widget info.
@@ -101,91 +72,35 @@ When debugging layout issues, the key fields to look at are the
 and the sizes flow back up. For more information on how this works,
 see [Understanding constraints][].
 
-## Flutter Widget Tree
+## Flutter Layout Explorer
 
-The Flutter Widget Tree allows you to visualize, understand and navigate your app's Widget tree. 
+The Flutter Layout Explorer helps you to better understand
+Flutter layouts.
 
-![Image of Flutter inspector with Widget Tree highlighted](/assets/images/docs/tools/devtools/inspector-widget-tree.png){:width="100%"}
+For an overview of what you can do with this tool, see
+the Flutter Explorer video:
 
-### Use the Widget Tree
+{% ytEmbed 'Jakrc3Tn_y4', 'DevTools Layout Explorer' %}
 
-#### Viewing widgets created in your project
+You might also find the following step-by-step article useful:
 
-By default, the Flutter Widget Tree includes all the widgets created in your root
-project's directory.
+* [How to debug layout issues with the Flutter Inspector][debug-article]
 
-The parent-children relationships of the widgets are represented by a single vertical line (if the parent widget only has a single child) or through 
-indentation (if the parent widget has multiple children.)
+[debug-article]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
 
-For example, for the following section of a widget tree:
+### Use the Layout Explorer
 
-![Image of widget tree section](/assets/images/docs/tools/devtools/widget-tree.png){:width="100%"}
+From the Flutter Inspector, select a widget. The Layout Explorer
+supports both [flex layouts][] and fixed size layouts, and has
+specific tooling for both kinds.
 
-* `Padding` has a single child `Row`
-* `Row` has three children: `Icon`, `SizedBox`, and `Flexible`
-* `Flexible` has a single child `Column`
-* `Column` has four children: `Text`, `Text`, `SizedBox`, and `Divider`
-
-#### Viewing all widgets
-
-To instead view all the widgets in your widget tree, including
-those that were created outside of your project, toggle on "Show implementation widgets". 
-
-The implementation widgets are shown in a lighter font than the widgets created in your project,
-thereby visually distinguishing them. They are also hidden behind collapsible groups
-which can be expanded via the inline expand buttons.
-
-For example, here is the same section of a widget tree as above with implementation widgets shown:
-
-![Image of widget tree section showing implementation widgets](/assets/images/docs/tools/devtools/widget-tree-with-implementation-widgets.png){:width="100%"}
-
-* `Icon` has five implementation widgets collapsed beneath it
-* Both `Text` widgets have `RichText` implementation widget children
-* `Divider` has nine implementation widgets collapsed beneath it
-
-## Flutter Widget Explorer
-
-The Flutter Widget Explorer helps you to better understand
-the inspected widget.
-
-![Image of Flutter inspector with Widget Explorer highlighted](/assets/images/docs/tools/devtools/inspector-widget-explorer.png){:width="100%"}
-
-### Use the Widget Explorer
-
-From the Flutter inspector, select a widget. The Widget Explorer will be shown on the right side of the window.
-
-Depending on the selected widget, the Widget Explorer will include one or more of the following:
-
-* Widget properties tab
-* Flex explorer tab
-* Render object tab
-
-#### Widget properties tab
-
-![Image of widget properties tab](/assets/images/docs/tools/devtools/widget-properties-tab.png){:width="100%"}
-
-The properties tab shows you mini-view of your widget layout, including
-width, height, and padding, along with a list of properties on that widget.
-
-These properties include whether or not the value matches the default value
-for the property argument.
-
-#### Render object tab
-
-![Image of render object tab](/assets/images/docs/tools/devtools/render-object-tab.png){:width="100%"}
-
-The render object tab displays all the properties set on the render object of the
-selected Flutter widget.
-
-#### Flex explorer tab
-
-![Image of flex explorer tab](/assets/images/docs/tools/devtools/flex-explorer-tab.png){:width="100%"}
+#### Flex layouts
 
 When you select a flex widget (for example, [`Row`][], [`Column`][], [`Flex`][])
-or a direct child of a flex widget, the flex explorer tool will
-appear in the Widget Explorer.
+or a direct child of a flex widget, the flex layout tool will
+appear in the Layout Explorer.
 
-The flex explorer tool visualizes how [`Flex`][] widgets and their
+The Layout Explorer visualizes how [`Flex`][] widgets and their
 children are laid out. The explorer identifies the main axis
 and cross axis, as well as the current alignment for each
 (for example, start, end, and spaceBetween).
@@ -195,13 +110,13 @@ constraints.
 Additionally, the explorer shows layout constraint violations
 and render overflow errors. Violated layout constraints
 are colored red, and overflow errors are presented in the
-standard "yellow-tape" pattern, as you might see on a running
+standard  "yellow-tape" pattern, as you might see on a running
 device. These visualizations aim to improve understanding of
 why overflow errors occur as well as how to fix them.
 
-![The flex explorer showing errors and device inspector](/assets/images/docs/tools/devtools/layout_explorer_errors_and_device.gif){:width="100%"}
+![The Layout Explorer showing errors and device inspector](/assets/images/docs/tools/devtools/layout_explorer_errors_and_device.gif){:width="100%"}
 
-Clicking a widget in the flex explorer mirrors
+Clicking a widget in the layout explorer mirrors
 the selection on the on-device inspector. **Select Widget Mode**
 needs to be enabled for this. To enable it,
 click on the **Select Widget Mode** button in the inspector.
@@ -211,7 +126,7 @@ click on the **Select Widget Mode** button in the inspector.
 For some properties, like flex factor, flex fit, and alignment,
 you can modify the value via dropdown lists in the explorer.
 When modifying a widget property, you see the new value reflected
-not only in the flex explorer, but also on the
+not only in the Layout Explorer, but also on the
 device running your Flutter app. The explorer animates
 on property changes so that the effect of the change is clear.
 Widget property changes made from the layout explorer don't
@@ -219,7 +134,7 @@ modify your source code and are reverted on hot reload.
 
 ##### Interactive Properties
 
-The flex explorer supports modifying [`mainAxisAlignment`][],
+Layout Explorer supports modifying [`mainAxisAlignment`][],
 [`crossAxisAlignment`][], and [`FlexParentData.flex`][].
 In the future, we may add support for additional properties
 such as [`mainAxisSize`][], [`textDirection`][], and
@@ -227,42 +142,52 @@ such as [`mainAxisSize`][], [`textDirection`][], and
 
 ###### mainAxisAlignment
 
-![The flex explorer changing main axis alignment](/assets/images/docs/tools/devtools/layout_explorer_main_axis_alignment.gif){:width="100%"}
+![The Layout Explorer changing main axis alignment](/assets/images/docs/tools/devtools/layout_explorer_main_axis_alignment.gif){:width="100%"}
 
 Supported values:
 
-- `MainAxisAlignment.start`
-- `MainAxisAlignment.end`
-- `MainAxisAlignment.center`
-- `MainAxisAlignment.spaceBetween`
-- `MainAxisAlignment.spaceAround`
-- `MainAxisAlignment.spaceEvenly`
+* `MainAxisAlignment.start`
+* `MainAxisAlignment.end`
+* `MainAxisAlignment.center`
+* `MainAxisAlignment.spaceBetween`
+* `MainAxisAlignment.spaceAround`
+* `MainAxisAlignment.spaceEvenly`
 
 ###### crossAxisAlignment
 
-![The flex explorer changing cross axis alignment](/assets/images/docs/tools/devtools/layout_explorer_cross_axis_alignment.gif){:width="100%"}
+![The Layout Explorer changing cross axis alignment](/assets/images/docs/tools/devtools/layout_explorer_cross_axis_alignment.gif){:width="100%"}
 
 Supported values:
 
-- `CrossAxisAlignment.start`
-- `CrossAxisAlignment.center`
-- `CrossAxisAlignment.end`
-- `CrossAxisAlignment.stretch`
+* `CrossAxisAlignment.start`
+* `CrossAxisAlignment.center`
+* `CrossAxisAlignment.end`
+* `CrossAxisAlignment.stretch`
 
 ###### FlexParentData.flex
 
-![The flex explorer changing flex factor](/assets/images/docs/tools/devtools/layout_explorer_flex.gif){:width="100%"}
+![The Layout Explorer changing flex factor](/assets/images/docs/tools/devtools/layout_explorer_flex.gif){:width="100%"}
 
-The flex explorer supports 7 flex options in the UI
+Layout Explorer supports 7 flex options in the UI
 (null, 0, 1, 2, 3, 4, 5), but technically the flex
 factor of a flex widget's child can be any int.
 
 ###### Flexible.fit
 
-![The flex explorer changing fit](/assets/images/docs/tools/devtools/layout_explorer_fit.gif){:width="100%"}
+![The Layout Explorer changing fit](/assets/images/docs/tools/devtools/layout_explorer_fit.gif){:width="100%"}
 
-The flex explorer supports the two different types of
+Layout Explorer supports the two different types of
 [`FlexFit`][]: `loose` and `tight`.
+
+#### Fixed size layouts
+
+When you select a fixed size widget that is not a child
+of a flex widget, fixed size layout information will appear
+in the Layout Explorer. You can see size, constraint, and padding
+information for both the selected widget and its nearest upstream
+RenderObject.
+
+![The Layout Explorer fixed size tool](/assets/images/docs/tools/devtools/layout_explorer_fixed_layout.png){:width="100%"}
 
 ## Visual debugging
 
@@ -532,9 +457,17 @@ void showOversizedImages() {
 
 You can learn more at the following link:
 
-- [Flutter documentation: debugInvertOversizedImages]({{site.api}}/flutter/painting/debugInvertOversizedImages.html)
+* [Flutter documentation: debugInvertOversizedImages]({{site.api}}/flutter/painting/debugInvertOversizedImages.html)
 
 [render box]: {{site.api}}/flutter/rendering/RenderBox-class.html
+
+## Details Tree
+
+Select the **Widget Details Tree** tab to display the details tree for the
+selected widget. From here, you can gather useful information about a
+widget's properties, render object, and children.
+
+![The Details Tree view](/assets/images/docs/tools/devtools/inspector_details_tree.png){:width="100%"}
 
 ## Track widget creation
 
@@ -578,11 +511,16 @@ Toggling this value enables or disables the hover inspection functionality.
 
 ### Package directories
 
-By default, DevTools limits the widgets displayed in the widget tree to those created 
-in the project's root directory. To see all widgets, including those created outside
-of a the project's root directory, toggle on [Show implementation widgets][]
+By default, DevTools limits the widgets displayed in the widget tree
+to those from the project's root directory, and those from Flutter. This
+filtering only applies to the widgets in the Inspector Widget Tree (left side
+of the Inspector)—not the Widget Details Tree (right side of the Inspector
+in the same tab view as the Layout Explorer).
+In the Widget Details Tree,
+you can see all widgets in the tree from all packages.
 
-In order to include other widgets in the default widget tree, a parent directory of theirs must
+In order to show other widgets,
+a parent directory of theirs must
 be added to the Package Directories.
 
 For example, consider the following directory structure:
@@ -606,8 +544,6 @@ add `project_foo` to the package directories.
 
 Changes to your package directories persist the next time the
 widget inspector is opened for the app.
-
-[Show implementation widgets]: #debugging-layout-issues-visually
 
 ## Other resources
 
