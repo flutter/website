@@ -207,7 +207,7 @@ An `Animation` object knows nothing about rendering or
 A [`CurvedAnimation`][] defines the animation's progress
 as a non-linear curve.
 
-<?code-excerpt "animate5/lib/main.dart (CurvedAnimation)"?>
+<?code-excerpt "animation/animate5/lib/main.dart (CurvedAnimation)"?>
 ```dart
 animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
 ```
@@ -216,7 +216,7 @@ animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
 The [`Curves`][] class defines many commonly used curves,
 or you can create your own. For example:
 
-<?code-excerpt "animate5/lib/main.dart (ShakeCurve)" plaster="none"?>
+<?code-excerpt "animation/animate5/lib/main.dart (ShakeCurve)" plaster="none"?>
 ```dart
 import 'dart:math';
 
@@ -245,7 +245,7 @@ from 0.0 to 1.0 during a given duration.
 For example, this code creates an `Animation` object,
 but does not start it running:
 
-<?code-excerpt "animate5/lib/main.dart (animation-controller)"?>
+<?code-excerpt "animation/animate5/lib/main.dart (animation-controller)"?>
 ```dart
 controller =
     AnimationController(duration: const Duration(seconds: 2), vsync: this);
@@ -300,7 +300,7 @@ If you need a different range or a different data type, you can use a
 different range or data type. For example, the
 following `Tween` goes from -200.0 to 0.0:
 
-<?code-excerpt "animate5/lib/main.dart (tween)"?>
+<?code-excerpt "animation/animate5/lib/main.dart (tween)"?>
 ```dart
 tween = Tween<double>(begin: -200, end: 0);
 ```
@@ -314,7 +314,7 @@ A `Tween` inherits from `Animatable<T>`, not from `Animation<T>`.
 An `Animatable`, like `Animation`, doesn't have to output double.
 For example, `ColorTween` specifies a progression between two colors.
 
-<?code-excerpt "animate5/lib/main.dart (colorTween)"?>
+<?code-excerpt "animation/animate5/lib/main.dart (colorTween)"?>
 ```dart
 colorTween = ColorTween(begin: Colors.transparent, end: Colors.black54);
 ```
@@ -336,7 +336,7 @@ passing in the controller object. For example,
 the following code generates the
 integer values from 0 to 255 over the course of 500 ms.
 
-<?code-excerpt "animate5/lib/main.dart (IntTween)"?>
+<?code-excerpt "animation/animate5/lib/main.dart (IntTween)"?>
 ```dart
 AnimationController controller = AnimationController(
     duration: const Duration(milliseconds: 500), vsync: this);
@@ -350,7 +350,7 @@ not an [`Animatable`][].
 
 The following example shows a controller, a curve, and a `Tween`:
 
-<?code-excerpt "animate5/lib/main.dart (IntTween-curve)"?>
+<?code-excerpt "animation/animate5/lib/main.dart (IntTween-curve)"?>
 ```dart
 AnimationController controller = AnimationController(
     duration: const Duration(milliseconds: 500), vsync: this);
@@ -423,6 +423,7 @@ Learn more about Flutter animations at the following links:
   The animation API for the Flutter framework. This link
   takes you to a technical overview page for the library.
 
+[animate1]: {{examples}}/animation/animate1
 [Animate a widget using a physics simulation]: /cookbook/animation/physics-simulation
 [`Animatable`]: {{site.api}}/flutter/animation/Animatable-class.html
 [`AnimatedList` example]: https://flutter.github.io/samples/animations.html
