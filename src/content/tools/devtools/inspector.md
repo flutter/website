@@ -29,11 +29,15 @@ trees, and can be used for the following:
 
 ## The new Flutter inspector {:#new}
 
-As part of the Flutter 3.29, the new Flutter inspector is enabled by default. However, it can be disabled from the [Flutter inspector settings](link).
+As part of Flutter 3.29, the new Flutter inspector is enabled by default. However, it can be disabled from the [inspector settings dialog][].
 
 :::note
-Please note that the [legacy inspector](link) will be removed in a future release. Let us know if there are issues preventing you from using the new inspector by [filing a bug]().
+Please note that the [legacy inspector][] will be removed in a future release. Let us know if there are issues preventing you from using the new inspector by [filing a bug][].
 :::
+
+[inspector settings dialog]: #inspector-settings
+[legacy inspector]: /tools/devtools/legacy-inspector
+[filing a bug]: https://github.com/flutter/devtools/issues/new 
 
 ### Debugging layout issues visually
 
@@ -41,12 +45,14 @@ The following is a guide to the features available in the
 inspector's toolbar. When space is limited, the icon is
 used as the visual version of the label.
 
-![Select widget mode icon](/assets/images/docs/tools/devtools/select-widget-mode-icon.png){:width="20px"} **Select widget mode**
+![Select widget mode button](/assets/images/docs/tools/devtools/select-widget-mode-button.png){:width="20px"} **Select widget mode**
 : Enable this button in order to select
   a widget on the device to inspect it. To learn more,
   check out [Inspecting a widget](#inspecting-a-widget).
 
-TODO: Add Show Implementation Widgets
+![Show implementation widgets button](/assets/images/docs/tools/devtools/show-implementation-widgets-button.png){:width="20px"} **Show implementation widgets**
+: Enable this button in to show implementation widgets in the widget tree. To learn more,
+  check out [Use the Widget Tree](#use-the-widget-tree).
 
 ![Refresh tree icon](/assets/images/docs/tools/devtools/refresh-tree-icon.png){:width="20px"} **Refresh tree**
 : Reload the current widget info.
@@ -95,11 +101,43 @@ see [Understanding constraints][].
 
 ## Flutter Widget Tree
 
-The Flutter Widget Tree allows you to visualize, undertand and navigate your app's Widget tree. 
+The Flutter Widget Tree allows you to visualize, understand and navigate your app's Widget tree. 
 
 ### Use the Widget Tree
 
-TODO
+#### Viewing widgets created in your project
+
+By default, the Flutter Widget Tree includes all the widgets created in your root
+project's directory.
+
+These widgets parent-children relationships are represented by a single vertical line (if the parent widget only has a single child) or through 
+indentation (if the parent widget has multiple children.)
+
+For example, for the following section of a widget tree:
+
+![Image of widget tree section](/assets/images/docs/tools/devtools/widget-tree.png){:width="100%"}
+
+* `Padding` has a single child `Row`
+* `Row` has three children: `Icon`, `SizedBox`, and `Flexible`
+* `Flexible` has a single child `Column`
+* `Column` has four children: `Text`, `Text`, `SizedBox`, and `Divider`
+
+#### Viewing all widgets
+
+To instead view all the widgets in your widget tree, including
+those that were created outside of your project, toggle on "Show implementation widgets". 
+
+The implementation widgets are shown in a lighter font than the widgets created in your project,
+thereby visually distinguishing them. They are also hidden behind collapsible groups
+which can be expanded via the inline expand buttons.
+
+For example, for the same section of a widget tree as above, except this time with implementationw widgets shown:
+
+![Image of widget tree section showing implementation widgets](/assets/images/docs/tools/devtools/widget-tree-with-implementation-widgets.png){:width="100%"}
+
+* `Icon` has five implementation widgets collapsed beneath it
+* Both `Text` widgets have `RichText` implementation widget children
+* `Divider` has nine implementation widgets collapsed beneath it
 
 ## Flutter Widget Explorer
 
@@ -118,9 +156,24 @@ Depending on the selected widget, the Widget Explorer will include one or more o
 
 #### Widget properties tab
 
-TODO
+![Image of widget properties tab](/assets/images/docs/tools/devtools/widget-properties-tab.png){:width="100%"}
+
+The properties tab shows you mini-view of your widget layout, including
+width, height, and padding, along with a list of properties on that widget.
+
+These properties include whether or not the value matches the default value
+for the property argument.
+
+#### Render object tab
+
+![Image of render object tab](/assets/images/docs/tools/devtools/render-object-tab.png){:width="100%"}
+
+The render object tab displays all the properties set on the render object of the
+selected Flutter widget.
 
 #### Flex explorer tab
+
+![Image of flex explorer tab](/assets/images/docs/tools/devtools/flex-explorer-tab.png){:width="100%"}
 
 When you select a flex widget (for example, [`Row`][], [`Column`][], [`Flex`][])
 or a direct child of a flex widget, the flex explorer tool will
@@ -147,7 +200,7 @@ the selection on the on-device inspector. **Select Widget Mode**
 needs to be enabled for this. To enable it,
 click on the **Select Widget Mode** button in the inspector.
 
-![The Select Widget Mode button in the inspector](/assets/images/docs/tools/devtools/select_widget_mode_button.png)
+![The Select Widget Mode button in the inspector](/assets/images/docs/tools/devtools/select-widget-mode-button.png)
 
 For some properties, like flex factor, flex fit, and alignment,
 you can modify the value via dropdown lists in the explorer.
@@ -204,10 +257,6 @@ factor of a flex widget's child can be any int.
 
 The flex explorer supports the two different types of
 [`FlexFit`][]: `loose` and `tight`.
-
-#### Render object tab
-
-TODO
 
 ## Visual debugging
 
@@ -518,7 +567,7 @@ the discussion on [common problems when debugging][].
 
 ## Inspector settings
 
-![The Flutter Inspector Settings dialog](/assets/images/docs/tools/devtools/flutter_inspector_settings.png){:width="100%"}
+![The Flutter Inspector Settings dialog](/assets/images/docs/tools/devtools/flutter-inspector-settings.png){:width="100%"}
 
 ### Enable hover inspection
 
@@ -528,16 +577,11 @@ Toggling this value enables or disables the hover inspection functionality.
 
 ### Package directories
 
-By default, DevTools limits the widgets displayed in the widget tree
-to those from the project's root directory, and those from Flutter. This
-filtering only applies to the widgets in the Inspector Widget Tree (left side
-of the Inspector)—not the Widget Details Tree (right side of the Inspector
-in the same tab view as the Layout Explorer).
-In the Widget Details Tree,
-you can see all widgets in the tree from all packages.
+By default, DevTools limits the widgets displayed in the widget tree to those created 
+in the project's root directory. To see all widgets, including those created outside
+of a the project's root directory, toggle on [Show implementation widgets][]
 
-In order to show other widgets,
-a parent directory of theirs must
+In order to include other widgets in the default widget tree, a parent directory of theirs must
 be added to the Package Directories.
 
 For example, consider the following directory structure:
@@ -561,6 +605,8 @@ add `project_foo` to the package directories.
 
 Changes to your package directories persist the next time the
 widget inspector is opened for the app.
+
+[Show implementation widgets]: #debugging-layout-issues-visually
 
 ## Other resources
 

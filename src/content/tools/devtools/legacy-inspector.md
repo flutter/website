@@ -118,7 +118,7 @@ the selection on the on-device inspector. **Select Widget Mode**
 needs to be enabled for this. To enable it,
 click on the **Select Widget Mode** button in the inspector.
 
-![The Select Widget Mode button in the inspector](/assets/images/docs/tools/devtools/select_widget_mode_button.png)
+![The Select Widget Mode button in the inspector](/assets/images/docs/tools/devtools/select-widget-mode-button.png)
 
 For some properties, like flex factor, flex fit, and alignment,
 you can modify the value via dropdown lists in the explorer.
@@ -498,7 +498,7 @@ the discussion on [common problems when debugging][].
 
 ## Inspector settings
 
-![The Flutter Inspector Settings dialog](/assets/images/docs/tools/devtools/flutter_inspector_settings.png){:width="100%"}
+![The Flutter Inspector Settings dialog](/assets/images/docs/tools/devtools/flutter-inspector-settings.png){:width="100%"}
 
 ### Enable hover inspection
 
