@@ -16,18 +16,26 @@
   }
 }
 
+//noinspection CssReplaceWithShorthandSafely
 #site-toc--side {
-  padding: $site-content-top-padding 20px 0.5rem 28px;
+  padding: $site-content-top-padding;
+  padding-left: $site-content-top-padding / 2;
 
   display: none;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 246px;
-  overflow-x: hidden;
+  position: sticky;
+  top: calc($site-header-height + $site-content-top-padding);
+  order: 2;
+  width: 15rem;
+  min-width: 15rem;
+  height: fit-content;
+  max-height: calc(100vh - 3.25rem);
   overflow-y: auto;
   overflow-wrap: break-word;
   z-index: 5;
+
+  @media (min-width: 1200px) {
+    display: block;
+  }
 
   @include bootstrap.media-breakpoint-up(xl) {
     display: block;

@@ -1,16 +1,32 @@
 @use 'variables' as *;
 @use '../vendor/bootstrap';
 
+:root {
+  --site-interaction-base-values: 0 0 0;
+  --focus-outline-color: #1967D2;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-
-  --site-interaction-base-values: 0 0 0;
+  overflow: visible;
 }
 
 .container main {
   overflow-x: hidden;
+}
+
+#site-below-header {
+  display: flex;
+  flex-direction: column;
+}
+
+#site-main-row {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 h1 {
