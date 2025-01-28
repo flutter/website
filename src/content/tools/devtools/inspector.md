@@ -103,6 +103,8 @@ see [Understanding constraints][].
 
 The Flutter Widget Tree allows you to visualize, understand and navigate your app's Widget tree. 
 
+![Image of Flutter inspector with Widget Tree highlighted](/assets/images/docs/tools/devtools/inspector-widget-tree.png){:width="100%"}
+
 ### Use the Widget Tree
 
 #### Viewing widgets created in your project
@@ -110,7 +112,7 @@ The Flutter Widget Tree allows you to visualize, understand and navigate your ap
 By default, the Flutter Widget Tree includes all the widgets created in your root
 project's directory.
 
-These widgets parent-children relationships are represented by a single vertical line (if the parent widget only has a single child) or through 
+The parent-children relationships of the widgets are represented by a single vertical line (if the parent widget only has a single child) or through 
 indentation (if the parent widget has multiple children.)
 
 For example, for the following section of a widget tree:
@@ -131,7 +133,7 @@ The implementation widgets are shown in a lighter font than the widgets created 
 thereby visually distinguishing them. They are also hidden behind collapsible groups
 which can be expanded via the inline expand buttons.
 
-For example, for the same section of a widget tree as above, except this time with implementationw widgets shown:
+For example, here is the same section of a widget tree as above with implementation widgets shown:
 
 ![Image of widget tree section showing implementation widgets](/assets/images/docs/tools/devtools/widget-tree-with-implementation-widgets.png){:width="100%"}
 
@@ -143,6 +145,8 @@ For example, for the same section of a widget tree as above, except this time wi
 
 The Flutter Widget Explorer helps you to better understand
 the inspected widget.
+
+![Image of Flutter inspector with Widget Explorer highlighted](/assets/images/docs/tools/devtools/inspector-widget-explorer.png){:width="100%"}
 
 ### Use the Widget Explorer
 

@@ -6,8 +6,11 @@ description: Learn how to use the legacy Flutter inspector to explore a Flutter 
 <?code-excerpt path-base="visual_debugging/"?>
 
 :::note
-Please note that the legacy inspector will be removed in a future release. Let us know if there are issues preventing you from using the [new inspector]() by [filing a bug]().
+Please note that the legacy inspector will be removed in a future release. Let us know if there are issues preventing you from using the [new inspector][] by [filing a bug][].
 :::
+
+[new inspector]: /tools/devtools/inspector
+[filing a bug]: https://github.com/flutter/devtools/issues/new 
 
 ## The legacy Flutter inspector
 
