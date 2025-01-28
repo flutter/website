@@ -45,12 +45,14 @@ The following is a guide to the features available in the
 inspector's toolbar. When space is limited, the icon is
 used as the visual version of the label.
 
-![Select widget mode button](/assets/images/docs/tools/devtools/select-widget-mode-button.png){:width="20px"} **Select widget mode**
+![Select widget mode button](/assets/images/docs/tools/devtools/select-widget-mode-button.png){:width="20px"}
+**Select widget mode**
 : Enable this button in order to select
   a widget on the device to inspect it. To learn more,
   check out [Inspecting a widget](#inspecting-a-widget).
 
-![Show implementation widgets button](/assets/images/docs/tools/devtools/show-implementation-widgets-button.png){:width="20px"} **Show implementation widgets**
+![Show implementation widgets button](/assets/images/docs/tools/devtools/show-implementation-widgets-button.png){:width="20px"}
+**Show implementation widgets**
 : Enable this button in to show implementation widgets in the widget tree. To learn more,
   check out [Use the Widget Tree](#use-the-widget-tree).
 
@@ -409,7 +411,6 @@ the repainting to just the animation.
 Here the progress indicator causes its container to repaint:
 
 <?code-excerpt "lib/highlight_repaints.dart (everything-repaints)"?>
-
 ```dart
 class EverythingRepaintsPage extends StatelessWidget {
   const EverythingRepaintsPage({super.key});
@@ -432,7 +433,6 @@ Wrapping the progress indicator in a `RepaintBoundary` causes
 only that section of the screen to repaint:
 
 <?code-excerpt "lib/highlight_repaints.dart (area-repaints)"?>
-
 ```dart
 class AreaRepaintsPage extends StatelessWidget {
   const AreaRepaintsPage({super.key});
@@ -460,7 +460,6 @@ which uses additional memory.
 You can also enable this option in code:
 
 <?code-excerpt "lib/highlight_repaints.dart (toggle)"?>
-
 ```dart
 import 'package:flutter/rendering.dart';
 
@@ -499,7 +498,6 @@ If this isn't possible, you can use the `cacheHeight` and `cacheWidth`
 parameters on the `Image` constructor:
 
 <?code-excerpt "lib/oversized_images.dart (resized-image)"?>
-
 ```dart
 class ResizedImage extends StatelessWidget {
   const ResizedImage({super.key});
@@ -524,7 +522,6 @@ regardless of these parameters.
 This property can also be set in code:
 
 <?code-excerpt "lib/oversized_images.dart (toggle)"?>
-
 ```dart
 void showOversizedImages() {
   debugInvertOversizedImages = true;
