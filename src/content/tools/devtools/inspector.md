@@ -577,7 +577,6 @@ Toggling this value enables or disables the hover inspection functionality.
 When enabled, the widget tree automatically refreshes after
 a hot-reload or a navigation event. 
 
-Toggling this value enables or disables the auto-refreshing functionality. 
 
 ### Use legacy inspector
 
