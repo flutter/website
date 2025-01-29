@@ -583,7 +583,8 @@ a hot-reload or a navigation event.
 When enabled, use the [legacy inspector][] instead of the new inspector. 
 
 :::note
-Please note that the [legacy inspector][] will be removed in a future release. Let us know if there are issues preventing you from using the new inspector by [filing a bug][].
+The [legacy inspector][] will be removed in a future release.
+Let us know if there are issues preventing you from using the new inspector by [filing a bug][].
 :::
 
 [legacy inspector]: /tools/devtools/legacy-inspector
