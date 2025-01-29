@@ -55,9 +55,6 @@
 
   // Component config
 
-  $alert-padding-y: $site-spacer * 1.5,
-  $alert-padding-x: $site-spacer * 1.5,
-
   $border-radius: 0,
   $border-radius-lg: 0,
   $border-radius-sm: 0,
@@ -80,65 +77,6 @@
 @use '../../../node_modules/bootstrap-scss/bootstrap';
 
 // Bootstrap adjustments
-
-.alert {
-  border: none;
-  border-radius: 0;
-  color: $site-color-body;
-  margin-top: 1rem;
-  padding: 1.25rem;
-
-  .alert-header {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-family: $site-font-family-alt;
-    font-size: 1.125rem;
-    font-weight: 500;
-  }
-
-  .alert-content {
-    margin-top: 0.5rem;
-  }
-
-  i.material-symbols {
-    font-size: 1.25em;
-    user-select: none;
-  }
-
-  code {
-    background-color: transparent;
-  }
-
-  p:last-child {
-    margin-bottom: 0;
-  }
-
-  &.alert-success {
-    width: auto;
-    background-color: $alert-success-bg;
-  }
-
-  &.alert-info {
-    width: auto;
-    background-color: $alert-info-bg;
-  }
-
-  &.alert-secondary {
-    width: auto;
-    background-color: $flutter-color-grey-500;
-  }
-
-  &.alert-warning {
-    width: auto;
-    background-color: $alert-warning-bg;
-  }
-
-  &.alert-danger {
-    width: auto;
-    background-color: $alert-danger-bg;
-  }
-}
 
 a.card {
   color: inherit;
