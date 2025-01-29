@@ -17,7 +17,7 @@ $sidenav-divider-color: #e7e8ed;
   z-index: 1010;
 
   @at-root body.open_menu {
-    overflow: hidden;
+    overflow-y: hidden;
 
     #sidenav {
       display: block;
