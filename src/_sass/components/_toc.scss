@@ -1,5 +1,4 @@
 @use '../base/variables' as *;
-@use '../vendor/bootstrap';
 
 .site-toc {
   ul {
@@ -34,10 +33,6 @@
   z-index: 5;
 
   @media (min-width: 1200px) {
-    display: block;
-  }
-
-  @include bootstrap.media-breakpoint-up(xl) {
     display: block;
   }
 
@@ -81,7 +76,7 @@
   padding: 1rem 1.5rem;
   margin-bottom: 1rem;
 
-  @include bootstrap.media-breakpoint-up(xl) {
+  @media (min-width: 1200px) {
     display: none;
   }
 

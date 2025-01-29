@@ -1,17 +1,30 @@
-@use '../vendor/bootstrap';
-
 .book-img-with-details {
-  margin-bottom: 1.5rem;
+  margin-block-start: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  column-gap: 2rem;
 
-  img {
-    @include bootstrap.media-breakpoint-down(sm) { max-width: 200px; }
-    width: 100%;
+  @media (min-width: 576px) {
+    flex-direction: row;
+    margin-block-start: 1.5rem;
   }
 
-  .details {
-    .title {
-      @include bootstrap.media-breakpoint-up(sm) { margin-top: 0; }
-      margin-bottom: 0;
+  img {
+    min-width: 0;
+    width: 160px;
+    max-width: 240px;
+
+    @media (min-width: 768px) {
+      width: 200px;
     }
+  }
+
+  .authors {
+    margin-block-start: -0.5rem;
+  }
+
+  h3.title {
+    font-size: 1.5rem;
   }
 }
