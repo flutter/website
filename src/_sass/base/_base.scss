@@ -1,5 +1,4 @@
 @use 'variables' as *;
-@use '../vendor/bootstrap';
 
 :root {
   --site-interaction-base-values: 0 0 0;
@@ -187,8 +186,9 @@ picture {
   margin: 0 auto;
   max-height: none;
   max-width: 100%;
-  @include bootstrap.media-breakpoint-up(xs) {
-    max-width: bootstrap.breakpoint-min(xxs);
+
+  @media (min-width: 480px) {
+    max-width: 320px;
   }
 
   &--border { border: 1px solid $site-color-light-grey; }
@@ -200,7 +200,7 @@ picture {
   max-height: 60vh;
   max-width: 100%;
 
-  @include bootstrap.media-breakpoint-up(md) {
+  @media (min-width: 768px) {
     float: right;
     margin: 0 0 2.5rem 2.5rem;
     max-height: none;
@@ -245,38 +245,6 @@ main figure {
   // Illustrations should be visible in their entirety without the need
   // for scrolling up and down.
   max-height: 60vh;
-}
-
-.btn.btn-icon {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-
-  .material-symbols {
-    margin-right: 0.5rem;
-  }
-}
-
-.btn.btn-cta {
-  font-size: 18px;
-  font-weight: 500;
-  padding: 1rem 1.5rem;
-
-  @include bootstrap.media-breakpoint-up(sm) {
-    min-width: 250px;
-  }
-}
-
-.embedded-video-wrapper {
-  width: 100%;
-  padding-bottom: 56.25%; // 16:9 aspect ratio
-  position: relative;
-
-  &__frame {
-    height: 100%;
-    position: absolute;
-    width: 100%;
-  }
 }
 
 .table-wrapper, .scrollable-table {
