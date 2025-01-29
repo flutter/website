@@ -3,10 +3,10 @@ title: Start thinking declaratively
 description: How to think about declarative programming.
 prev:
   title: Intro
-  path: /development/data-and-backend/state-mgmt
+  path: /data-and-backend/state-mgmt
 next:
   title: Ephemeral versus app state
-  path: /development/data-and-backend/state-mgmt/ephemeral-vs-app
+  path: /data-and-backend/state-mgmt/ephemeral-vs-app
 ---
 
 If you're coming to Flutter from an imperative framework

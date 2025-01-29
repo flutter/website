@@ -3,7 +3,7 @@ title: List of state management approaches
 description: A list of different approaches to managing state.
 prev:
   title: Simple app state management
-  path: /development/data-and-backend/state-mgmt/simple
+  path: /data-and-backend/state-mgmt/simple
 ---
 
 State management is a complex topic.
