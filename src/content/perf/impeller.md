@@ -103,7 +103,7 @@ two build modes. For more information, visit
 [Flutter web support][] in the Flutter
 architectural guide.
 
-[Flutter web support]: /resources/arch-overview#flutter-web-support
+[Flutter web support]: /resources/architectural-overview#flutter-web-support
 
 ### macOS
 
