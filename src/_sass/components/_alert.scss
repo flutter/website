@@ -28,7 +28,7 @@ aside.alert {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-block-end: 0.5rem;
     font-family: $site-font-family-alt;
     font-size: 1.125rem;
     font-weight: 500;
@@ -44,7 +44,7 @@ aside.alert {
   .alert-content {
     color: $site-color-body;
 
-    > *:last-child {
+    > :last-child {
       margin-bottom: 0;
     }
   }
@@ -74,8 +74,8 @@ aside.alert {
   }
 
   &.alert-secondary {
-    border-color: var(--site-surface-container-highest);
-    --alert-title-color: var(--site-on-surface);
+    border-color: $site-color-light-grey;
+    --alert-title-color: $site-color-body;
   }
 
   &.alert-error {
