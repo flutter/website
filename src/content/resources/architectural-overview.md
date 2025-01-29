@@ -1056,16 +1056,64 @@ is designed to interface with the
 underlying operating system rather than a web browser.
 A different approach is therefore required.
 
-On the web, Flutter offers two build modes and two renderers.
-Flutter has a canvas-based renderer with two compile modes:
-JS and Wasm.
+On the web, Flutter offers two renderers:
 
-Flutter chooses the build mode when building the app,
-and determines which renderers are available at runtime.
-For a default build, Flutter chooses the `canvaskit`
-renderer at runtime. For a WebAssembly build,
-Flutter chooses the Web/Assembly renderer at runtime,
-and falls back to canvaskit if the browser doesn't support WebAssembly.
+<table class="table table-striped">
+<tr>
+<th>Engine</th>
+<th>Renderer</th>
+<th>Compilation target</th>
+</tr>
+
+<tr>
+<td>Engine 1</td>
+<td> 
+CanvasKit
+</td>
+<td>
+JavaScript
+</td>
+</tr>
+
+<tr>
+<td>Engine 2</td>
+<td> 
+Skwasm
+</td>
+<td>
+WebAssembly
+</td>
+</tr>
+</table>
+
+_Build modes_ are command-line options that dictate
+which runtimes are available when you run the app.
+
+Flutter offers two _build_ modes:
+
+<table class="table table-striped">
+<tr>
+<th>Build mode</th>
+<th>Available renderer(s)</th>
+</tr>
+
+<tr>
+<td>default</td>
+<td>CanvasKit</td>
+</tr>
+
+<tr>
+<td>`--wasm`</td>
+<td>Skwasm (preferred), CanvasKit (fallback)</td>
+</tr>
+
+
+The default mode makes only "engine 1" available.
+The `--wasm` option makes both "engine 1" and
+"engine 2" available, and chooses the engine
+based on browser capabilities:
+preferring "engine 2" if the browser is capable of running it,
+and falls back to "engine 1" otherwise.
 
 {% comment %}
 The draw.io source for the following image is in /diagrams/resources
