@@ -23,7 +23,7 @@
 
   display: none;
   position: sticky;
-  top: calc($site-header-height + $site-content-top-padding);
+  top: $site-header-height;
   order: 2;
   width: 15rem;
   min-width: 15rem;

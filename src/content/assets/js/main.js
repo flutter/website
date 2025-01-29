@@ -3,16 +3,29 @@ document.addEventListener("DOMContentLoaded", function(_) {
   setupInlineToc();
   scrollSidenavIntoView();
   initCookieNotice();
+
+  setupMenuToggle();
   setUpCodeBlockButtons();
 
   setupSearch();
   setupTabs();
+});
 
+function setupMenuToggle() {
   document.getElementById('menu-toggle')?.addEventListener('click', function (e) {
     e.stopPropagation();
     document.body.classList.toggle('open_menu');
   });
-});
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      const activeElement = document.activeElement;
+      if (activeElement && (activeElement.id === 'menu-toggle' || activeElement.closest('#sidenav'))) {
+        document.body.classList.remove('open_menu');
+      }
+    }
+  });
+}
 
 /**
  * Get the user's current operating system, or

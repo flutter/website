@@ -39,13 +39,9 @@
     }
 
     .navbar-contents {
-      display: none;
+      display: flex;
       flex-direction: row;
       align-items: center;
-
-      @media (min-width: 768px) {
-        display: flex;
-      }
     }
 
     .navbar-nav {
@@ -68,7 +64,7 @@
 
   &__cta {
     margin-left: 0.5rem;
-    padding: 0.4rem 0.8rem !important;
+    padding: 0.5rem 1rem !important;
     display: none;
 
     @media (min-width: 768px) {
@@ -77,7 +73,10 @@
   }
 
   &__search {
+    display: flex;
     position: relative;
+    align-items: center;
+    vertical-align: middle;
 
     &::before {
       content: 'search';
@@ -95,19 +94,13 @@
   &__searchfield {
     border: 0;
     padding-left: 2rem;
-    font-size: 1.25rem;
-    height: 3rem;
-    width: 100%;
+    font-size: 1rem;
+    height: unset;
+    transition: width .35s ease-in-out;
+    width: 24px;
 
-    @media (min-width: 768px) {
-      font-size: 0.875rem;
-      height: unset;
-      transition: width .35s ease-in-out;
-      width: 24px !important;
-
-      &:focus {
-        width: 220px !important;
-      }
+    &:focus {
+      width: 220px;
     }
   }
 }

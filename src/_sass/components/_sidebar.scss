@@ -5,25 +5,34 @@ $sidenav-divider-color: #e7e8ed;
 
 #sidenav {
   margin: 0;
-  overflow-y: auto;
-  width: 16rem;
   min-width: 16rem;
   height: calc(100vh - $site-header-height);
-  padding: 0.75rem 0.75rem 2.25rem;
-  position: sticky;
-  top: calc($site-header-height + 0.75rem);
+  padding: 1.15rem 1rem 4rem;
   scrollbar-width: thin;
-
-  border-right: 0.1rem solid $sidenav-divider-color;
-
+  position: fixed;
+  overscroll-behavior: contain;
+  overflow-y: auto;
   display: none;
+  width: 100%;
+  z-index: 1010;
 
-  @at-root body.open_menu & {
-    display: block;
+  @at-root body.open_menu {
+    overflow: hidden;
+
+    #sidenav {
+      display: block;
+      background-color: $site-color-white;
+    }
   }
 
   @media (min-width: 1024px) {
     display: block;
+    border-right: 0.1rem solid $sidenav-divider-color;
+    padding: 0.75rem 0.75rem 2.25rem;
+    position: sticky;
+    top: calc($site-header-height);
+    overscroll-behavior: auto;
+    width: 16rem;
   }
 
   .nav-header {
