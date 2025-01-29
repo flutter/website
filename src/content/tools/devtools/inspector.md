@@ -31,10 +31,6 @@ trees, and can be used for the following:
 
 As part of Flutter 3.29, the new Flutter inspector is enabled by default. However, it can be disabled from the [inspector settings dialog][].
 
-:::note
-Please note that the [legacy inspector][] will be removed in a future release. Let us know if there are issues preventing you from using the new inspector by [filing a bug][].
-:::
-
 [inspector settings dialog]: #inspector-settings
 [legacy inspector]: /tools/devtools/legacy-inspector
 [filing a bug]: https://github.com/flutter/devtools/issues/new 
@@ -575,6 +571,24 @@ the discussion on [common problems when debugging][].
 Hovering over any widget displays its properties and values.
 
 Toggling this value enables or disables the hover inspection functionality.
+
+### Enable widget tree auto-refreshing
+
+The widget tree will automatically refresh after a hot-reload or a navigation event. 
+
+Toggling this value enables or disables the auto-refreshing functionality. 
+
+### Use legacy inspector
+
+The [legacy inspector][] will be used instead of the new inspector. 
+
+Toggling this value enables or disables the legacy inspector.
+
+:::note
+Please note that the [legacy inspector][] will be removed in a future release. Let us know if there are issues preventing you from using the new inspector by [filing a bug][].
+:::
+
+[legacy inspector]: /tools/devtools/legacy-inspector
 
 ### Package directories
 
