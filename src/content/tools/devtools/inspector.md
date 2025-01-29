@@ -580,9 +580,7 @@ a hot-reload or a navigation event.
 
 ### Use legacy inspector
 
-The [legacy inspector][] will be used instead of the new inspector. 
-
-Toggling this value enables or disables the legacy inspector.
+When enabled, use the [legacy inspector][] instead of the new inspector. 
 
 :::note
 Please note that the [legacy inspector][] will be removed in a future release. Let us know if there are issues preventing you from using the new inspector by [filing a bug][].
