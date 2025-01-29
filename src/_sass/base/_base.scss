@@ -159,15 +159,6 @@ picture {
   border-color: $site-color-nav-links;
 }
 
-.fixed-col {
-  @include bootstrap.media-breakpoint-up(md) {
-    bottom: 0;
-    overflow-y: auto;
-    position: absolute; // position will be fixed once js has initialized
-    top: 0;
-  }
-}
-
 .material-symbols {
   font-family: $site-font-family-icon;
   font-variation-settings:
