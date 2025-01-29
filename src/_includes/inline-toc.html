@@ -19,12 +19,12 @@
   </header>
   <ul class="section-nav">
     {% for topLevel in tocContents.toc %}
-    <li class="toc-entry toc-h2">
+    <li class="toc-entry">
       <a href="{{topLevel.id}}">{{topLevel.text}}</a>
       {% if topLevel.children and topLevel.children.size > 0 %}
       <ul>
         {% for child in topLevel.children %}
-        <li class="toc-entry toc-h3">
+        <li class="toc-entry">
           <a href="{{child.id}}">{{child.text}}</a>
         </li>
         {% endfor -%}

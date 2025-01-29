@@ -1,28 +1,19 @@
 @use '../base/variables' as *;
 @use '../vendor/bootstrap';
 
-// Material design icons
-@mixin md-icon-content($icon-name, $width: '', $bottom: true) {
-  font-family: $site-font-family-icon;
-  content: $icon-name;
-  @if $width != '' {
-    max-width: $width; // Improves UX by minimizing flicker due to delay in font rendering
-  }
-  @if $bottom {
-    vertical-align: bottom;
-  }
-}
-
-@mixin md-icon-before($icon-name, $bottom: true) {
-  &:before { @include md-icon-content($icon-name, '', $bottom); }
-}
-
 .site-content {
-  padding-bottom: $site-content-top-padding;
-  padding-top: $site-content-top-padding;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  min-width: 0;
+  width: 100%;
 
-  .container {
+  min-height: calc(100vh - $site-header-height);
+
+  article {
+    min-width: 8rem;
     max-width: $site-content-max-width;
+    padding: 2rem;
 
     img {
       object-fit: contain;
@@ -31,11 +22,6 @@
     > img, > p > img:not(.text-icon) {
       margin-bottom: 1rem;
     }
-  }
-
-  @include bootstrap.media-breakpoint-up(md) {
-    border-left: 1px solid $site-color-light-grey;
-    min-height: calc(100vh - #{$site-header-height} - #{$site-footer-md-default-height});
   }
 
   &__title {

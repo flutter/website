@@ -1,6 +1,6 @@
 {% for entry in children -%}
 
-{% if active_entries and forloop.index == active_entries[2] -%}
+{% if activeEntries and forloop.index == activeEntries[2] -%}
   {% assign isActive = true -%}
   {% assign class = 'nav-link active' -%}
 {% else -%}
@@ -9,7 +9,7 @@
 {% endif -%}
 
 {% if entry == 'divider' -%}
-  <div class="dropdown-divider"></div>
+  <div class="sidenav-divider"></div>
 {%- elsif entry.children -%}
   {% assign class = class | append: ' collapsible' -%}
 
@@ -22,21 +22,23 @@
     {% assign show = '' -%}
   {% endif -%}
 
-  {% assign id = parent_id | append: '-' | append: forloop.index -%}
+  {% assign id = parentId | append: '-' | append: forloop.index -%}
   {% assign href = entry.permalink -%}
   {% unless href -%}
     {% assign href = '#' | append: id -%}
   {% endunless -%}
 
   <li class="nav-item">
-    <a class="{{class}}" data-toggle="collapse" data-target="#{{id}}"
-      href="{{href}}" role="button"
-      aria-expanded="{{expanded}}" aria-controls="{{id}}">{{entry.title}}</a>
-    <ul class="nav flex-column flex-nowrap collapse {{show}}" id="{{id}}">
+    <button class="{{class}}" data-toggle="collapse" data-target="#{{id}}"
+      role="button"  aria-expanded="{{expanded}}" aria-controls="{{id}}">
+      <span>{{entry.title}}</span>
+      <span class="material-symbols expander" aria-hidden="true">expand_more</span>
+    </button>
+    <ul class="nav collapse {{show}}" id="{{id}}">
       {% if isActive -%}
-        {% render sidenav-level-4.html, parent_id:id, children:entry.children, active_entries:active_entries -%}
+        {% render sidenav-level-4.html, parentId:id, children:entry.children, activeEntries:activeEntries -%}
       {% else -%}
-        {% render sidenav-level-4.html, parent_id:id, children:entry.children -%}
+        {% render sidenav-level-4.html, parentId:id, children:entry.children -%}
       {% endif -%}
     </ul>
   </li>
@@ -50,7 +52,10 @@
   <li class="nav-item">
     <a class="{{class}}" href="{{entry.permalink}}"
        {%- if isExternal %} target="_blank" rel="noopener" {%- endif -%}>
-      {{entry.title}}
+      <div>
+        <span>{{entry.title}}</span>
+        {%- if isExternal %}<span class="material-symbols" aria-hidden="true">open_in_new</span>{%- endif -%}
+      </div>
     </a>
   </li>
 

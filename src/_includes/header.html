@@ -1,16 +1,14 @@
 {% assign route = page.url|regex_replace:'/index$|/index\.html$|\.html$|/$' %}
 
 <header class="site-header">
-  <nav class="navbar navbar-expand-md justify-content-start justify-content-md-between">
+  <nav class="navbar">
     <button
-      class="navbar-toggler"
+      id="menu-toggle"
       type="button"
-      data-toggle="collapse"
-      data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation">
-      <i class="material-symbols">menu</i>
+      aria-controls="sidenav"
+      aria-label="Toggle navigation"
+      title="Toggle navigation">
+      <span class="material-symbols" aria-hidden="true">menu</span>
     </button>
 
     <a class="navbar-brand" href="/">
@@ -22,108 +20,93 @@
         class="align-middle">
     </a>
 
-    <div
-      id="navbarSupportedContent"
-      class="collapse navbar-collapse flex-grow-0">
-      <div
-        class="site-header__sheet-bg"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation">
-      </div>
-      <div class="site-header__sheet">
-        <ul class="navbar-nav">
-          <div class="site-sidebar site-sidebar--header d-md-none">
-            {% render sidenav-level-1.html, url:page.url, nav:sidenav, base_id:"header", active_nav:activeNav %}
+    <div class="navbar-contents">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="platform-navbar-dropdown"
+             href="{{site.main-url}}/multi-platform"
+             role="button" data-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false">
+             Multi-Platform
+          </a>
+          <div class="dropdown-menu" aria-labelledby="platform-navbar-dropdown">
+            <a class="dropdown-item" href="{{site.main-url}}/multi-platform/mobile">Mobile</a>
+            <a class="dropdown-item" href="{{site.main-url}}/multi-platform/web">Web</a>
+            <a class="dropdown-item" href="{{site.main-url}}/multi-platform/desktop">Desktop</a>
+            <a class="dropdown-item" href="{{site.main-url}}/multi-platform/embedded">Embedded</a>
           </div>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="platform-navbar-dropdown"
-               href="{{site.main-url}}/multi-platform"
-               role="button" data-toggle="dropdown"
-               aria-haspopup="true" aria-expanded="false">
-               Multi-Platform
-            </a>
-            <div class="dropdown-menu" aria-labelledby="platform-navbar-dropdown">
-              <a class="dropdown-item" href="{{site.main-url}}/multi-platform/mobile">Mobile</a>
-              <a class="dropdown-item" href="{{site.main-url}}/multi-platform/web">Web</a>
-              <a class="dropdown-item" href="{{site.main-url}}/multi-platform/desktop">Desktop</a>
-              <a class="dropdown-item" href="{{site.main-url}}/multi-platform/embedded">Embedded</a>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="dev-navbar-dropdown"
-               href="{{site.main-url}}/"
-               role="button" data-toggle="dropdown"
-               aria-haspopup="true" aria-expanded="false">
-               Development
-            </a>
-            <div class="dropdown-menu" aria-labelledby="dev-navbar-dropdown">
-              <a class="dropdown-item" href="{{site.main-url}}/learn">Learn</a>
-              <a class="dropdown-item" href="https://pub.dev/flutter/favorites" target="_blank">Flutter Favorites</a>
-              <a class="dropdown-item" href="https://pub.dev/" target="_blank">Packages</a>
-              <a class="dropdown-item" href="{{site.main-url}}/ai" target="_blank">AI</a>
-              <a class="dropdown-item" href="{{site.main-url}}/monetization">Monetization</a>
-              <a class="dropdown-item" href="{{site.main-url}}/games">Games</a>
-              <a class="dropdown-item" href="{{site.main-url}}/news">News</a>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="ecosystem-navbar-dropdown"
-               href="{{site.main-url}}/ecosystem"
-               role="button" data-toggle="dropdown"
-               aria-haspopup="true" aria-expanded="false">
-               Ecosystem
-            </a>
-            <div class="dropdown-menu" aria-labelledby="ecosystem-navbar-dropdown">
-              <a class="dropdown-item" href="{{site.main-url}}/community">Community</a>
-              <a class="dropdown-item" href="{{site.main-url}}/events">Events</a>
-              <a class="dropdown-item" href="{{site.main-url}}/culture">Culture</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{site.main-url}}/showcase">Showcase</a>
-          </li>
-          <li class="nav-item dropdown docs-item">
-            <a class="nav-link dropdown-toggle{% if route == '/' %} active{% endif %}"
-               id="docs-navbar-dropdown"
-               href="/"
-               role="button" data-toggle="dropdown"
-               aria-haspopup="true" aria-expanded="false">
-               Docs
-            </a>
-            <div class="dropdown-menu" aria-labelledby="docs-navbar-dropdown">
-              <a class="dropdown-item {% if route == '/release/whats-new' %} active{% endif %}"
-                 href="/release/whats-new">What's new</a>
-              <a class="dropdown-item {% if route contains '/get-started/editor' %} active{% endif %}"
-                 href="/get-started/editor">Editor support</a>
-              <a class="dropdown-item {% if route contains '/tools/hot-reload' %} active{% endif %}"
-                 href="/tools/hot-reload">Hot reload</a>
-              <a class="dropdown-item {% if route contains '/perf/ui-performance' %} active{% endif %}"
-                 href="/perf/ui-performance">Profiling</a>
-              <a class="dropdown-item {% if route contains '/get-started/install' %} active{% endif %}"
-                 href="/get-started/install">Install Flutter</a>
-              <a class="dropdown-item {% if route contains '/tools/devtools' %} active{% endif %}"
-                 href="/tools/devtools">DevTools</a>
-              <a class="dropdown-item {% if route contains '/cookbook' %} active{% endif %}"
-                 href="/cookbook">Cookbook</a>
-              <a class="dropdown-item {% if route contains '/codelabs' %} active{% endif %}"
-                 href="/codelabs">Codelabs</a>
-            </div>
-          </li>
-        </ul>
-        <form action="/search/" class="site-header__search form-inline">
-          <input
-            class="site-header__searchfield form-control search-field"
-            type="search" name="q" id="q" autocomplete="off"
-            placeholder="Search" aria-label="Search">
-        </form>
-      </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="dev-navbar-dropdown"
+             href="{{site.main-url}}/"
+             role="button" data-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false">
+             Development
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dev-navbar-dropdown">
+            <a class="dropdown-item" href="{{site.main-url}}/learn">Learn</a>
+            <a class="dropdown-item" href="https://pub.dev/flutter/favorites" target="_blank">Flutter Favorites</a>
+            <a class="dropdown-item" href="https://pub.dev/" target="_blank">Packages</a>
+            <a class="dropdown-item" href="{{site.main-url}}/ai" target="_blank">AI</a>
+            <a class="dropdown-item" href="{{site.main-url}}/monetization">Monetization</a>
+            <a class="dropdown-item" href="{{site.main-url}}/games">Games</a>
+            <a class="dropdown-item" href="{{site.main-url}}/news">News</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="ecosystem-navbar-dropdown"
+             href="{{site.main-url}}/ecosystem"
+             role="button" data-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false">
+             Ecosystem
+          </a>
+          <div class="dropdown-menu" aria-labelledby="ecosystem-navbar-dropdown">
+            <a class="dropdown-item" href="{{site.main-url}}/community">Community</a>
+            <a class="dropdown-item" href="{{site.main-url}}/events">Events</a>
+            <a class="dropdown-item" href="{{site.main-url}}/culture">Culture</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{site.main-url}}/showcase">Showcase</a>
+        </li>
+        <li class="nav-item dropdown docs-item">
+          <a class="nav-link dropdown-toggle{% if route == '/' %} active{% endif %}"
+             id="docs-navbar-dropdown"
+             href="/"
+             role="button" data-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false">
+             Docs
+          </a>
+          <div class="dropdown-menu" aria-labelledby="docs-navbar-dropdown">
+            <a class="dropdown-item {% if route == '/release/whats-new' %} active{% endif %}"
+               href="/release/whats-new">What's new</a>
+            <a class="dropdown-item {% if route contains '/get-started/editor' %} active{% endif %}"
+               href="/get-started/editor">Editor support</a>
+            <a class="dropdown-item {% if route contains '/tools/hot-reload' %} active{% endif %}"
+               href="/tools/hot-reload">Hot reload</a>
+            <a class="dropdown-item {% if route contains '/perf/ui-performance' %} active{% endif %}"
+               href="/perf/ui-performance">Profiling</a>
+            <a class="dropdown-item {% if route contains '/get-started/install' %} active{% endif %}"
+               href="/get-started/install">Install Flutter</a>
+            <a class="dropdown-item {% if route contains '/tools/devtools' %} active{% endif %}"
+               href="/tools/devtools">DevTools</a>
+            <a class="dropdown-item {% if route contains '/cookbook' %} active{% endif %}"
+               href="/cookbook">Cookbook</a>
+            <a class="dropdown-item {% if route contains '/codelabs' %} active{% endif %}"
+               href="/codelabs">Codelabs</a>
+          </div>
+        </li>
+      </ul>
+      <form action="/search/" class="site-header__search">
+        <input
+          class="site-header__searchfield form-control search-field"
+          type="search" name="q" id="q" autocomplete="off"
+          placeholder="Search" aria-label="Search">
+      </form>
+      <a
+          class="site-header__cta btn btn-primary"
+          href="/get-started/install/">Get started
+      </a>
     </div>
-    <a
-      class="site-header__cta btn btn-primary"
-      href="/get-started/install/">Get started
-    </a>
   </nav>
 </header>

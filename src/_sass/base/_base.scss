@@ -1,16 +1,32 @@
 @use 'variables' as *;
 @use '../vendor/bootstrap';
 
+:root {
+  --site-interaction-base-values: 0 0 0;
+  --focus-outline-color: #1967D2;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-
-  --site-interaction-base-values: 0 0 0;
 }
 
 .container main {
   overflow-x: hidden;
+}
+
+#site-below-header {
+  display: flex;
+  flex-direction: column;
+}
+
+#site-main-row {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 h1 {
@@ -141,15 +157,6 @@ picture {
 
 .card-app-type {
   border-color: $site-color-nav-links;
-}
-
-.fixed-col {
-  @include bootstrap.media-breakpoint-up(md) {
-    bottom: 0;
-    overflow-y: auto;
-    position: absolute; // position will be fixed once js has initialized
-    top: 0;
-  }
 }
 
 .material-symbols {
