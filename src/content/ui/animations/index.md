@@ -215,9 +215,13 @@ as a non-linear curve.
 animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
 ```
 
-:::note
-The [`Curves`][] class defines many commonly used curves,
-or you can create your own. For example:
+`CurvedAnimation` and `AnimationController` (described in the next sections)
+are both of type `Animation<double>`, so you can pass them interchangeably.
+The `CurvedAnimation` wraps the object it's modifying&mdash;you
+don't subclass `AnimationController` to implement a curve.
+
+You can use [`Curves`][] with `CurvedAnimation`. The `Curves` class defines
+many commonly used curves, or you can create your own. For example:
 
 <?code-excerpt "animation/animate5/lib/main.dart (ShakeCurve)" plaster="none"?>
 ```dart
@@ -229,17 +233,8 @@ class ShakeCurve extends Curve {
 }
 ```
 
-Browse the [`Curves`][] documentation for a complete listing
-(with visual previews) of the `Curves` constants that ship with Flutter.
-
-Additionally, if you want to apply an animation curve to a `Tween`, consider
-using [`CurveTween`][].
-:::
-
-`CurvedAnimation` and `AnimationController` (described in the next sections)
-are both of type `Animation<double>`, so you can pass them interchangeably.
-The `CurvedAnimation` wraps the object it's modifying&mdash;you
-don't subclass `AnimationController` to implement a curve.
+If you want to apply an animation curve to a `Tween`, consider using
+[`CurveTween`][].
 
 ### AnimationController
 
