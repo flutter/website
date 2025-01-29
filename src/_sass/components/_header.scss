@@ -16,12 +16,16 @@
       appearance: none;
       border: none;
       background: none;
-      color: $site-color-body;
+      color: $site-color-nav-links;
       margin-right: 1rem;
       padding: 0;
 
       .material-symbols {
         font-size: 28px;
+      }
+
+      &:hover {
+        color: $site-color-body;
       }
 
       @media (min-width: 1024px) {
@@ -59,6 +63,10 @@
       padding: 0.25rem .5rem;
       position: relative;
       text-decoration: none;
+
+      &:hover {
+        color: $site-color-body;
+      }
     }
   }
 
@@ -80,10 +88,15 @@
 
     &::before {
       content: 'search';
+      color: $site-color-nav-links;
       font: $site-font-icon;
       pointer-events: none;
       position: absolute;
       left: 0.25rem;
+    }
+
+    &:hover::before {
+      color: $site-color-body;
     }
 
     @media (min-width: 768px) {
@@ -98,9 +111,11 @@
     height: unset;
     transition: width .35s ease-in-out;
     width: 24px;
+    cursor: pointer;
 
     &:focus {
       width: 220px;
+      cursor: auto;
     }
   }
 }
