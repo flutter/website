@@ -2,7 +2,7 @@
 
 .install-help {
   text-align: right;
-  margin-top: -2.5rem;
+  margin-block-start: -2.5rem;
 
   a {
     display: inline-flex;
@@ -16,6 +16,7 @@
   .material-symbols {
     font-size: 20px;
     margin-right: 0.125rem;
+    user-select: none;
   }
 }
 

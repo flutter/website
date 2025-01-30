@@ -142,6 +142,12 @@ main figure {
   max-height: 60vh;
 }
 
+table {
+  td, th {
+    padding: .25rem;
+  }
+}
+
 .table {
   width: 100%;
   border-spacing: 0;
@@ -209,9 +215,11 @@ details {
   > summary {
     font-weight: 500;
     user-select: none;
+    border-radius: 0.125rem;
 
     &:hover {
       color: $site-color-primary;
+      cursor: pointer;
     }
   }
 
@@ -227,10 +235,6 @@ details {
     margin-left: 0.75rem;
     margin-right: 0.75rem;
   }
-}
-
-summary {
-  margin-bottom: 1rem;
 }
 
 main {

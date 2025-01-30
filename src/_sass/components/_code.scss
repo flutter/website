@@ -8,16 +8,22 @@ pre, code, kbd, samp {
 
 // Inline code spans found within the primary contents of the page.
 // Targets all <code> elements, but <pre><code> shouldn't have many of these.
-main code {
+main code, main kbd {
   font-size: 0.9em;
   line-height: 1.25em;
   padding: 0.1rem 0.25rem;
   background-color: $site-color-light-grey;
   background-color: color-mix(in srgb, $site-color-light-grey 35%, transparent);
   border: 1px solid rgb(195, 201, 214);
-  border-radius: 0.25rem;
+  border-radius: 0.2rem;
   word-wrap: break-word;
   white-space: nowrap;
+}
+
+main kbd {
+  background-color: $site-color-body;
+  border: none;
+  color: $site-color-light-grey;
 }
 
 pre {
