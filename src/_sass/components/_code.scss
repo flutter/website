@@ -2,11 +2,40 @@
 
 @use '../base/variables' as *;
 
+pre, code, kbd, samp {
+  font-family: $site-font-family-monospace;
+}
+
+// Inline code spans found within the primary contents of the page.
+// Targets all <code> elements, but <pre><code> shouldn't have many of these.
+main code {
+  font-size: 0.9em;
+  line-height: 1.25em;
+  padding: 0.1rem 0.25rem;
+  background-color: $site-color-light-grey;
+  background-color: color-mix(in srgb, $site-color-light-grey 35%, transparent);
+  border: 1px solid rgb(195, 201, 214);
+  border-radius: 0.25rem;
+  word-wrap: break-word;
+  white-space: nowrap;
+}
+
 pre {
   margin-bottom: 1rem;
-  font-size: 0.9375rem;
-  font-weight: 400;
   padding: 1.25rem;
+  overflow: auto;
+
+  > code {
+    // Undo the core `code` styles.
+    font-size: 0.9125rem;
+    line-height: 1.75em;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: unset;
+    word-break: normal;
+    white-space: pre;
+  }
 
   a {
     font-family: inherit;
@@ -219,7 +248,7 @@ pre {
   }
 
   pre {
-    margin-bottom: 0;
+    margin: 0;
     padding-right: 0;
     padding-left: 0;
 
@@ -227,10 +256,6 @@ pre {
       display: block;
       min-width: fit-content;
       width: 100%;
-    }
-
-    &:not([lang="console"]) {
-      line-height: 1.8;
     }
   }
 }

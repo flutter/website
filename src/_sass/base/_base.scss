@@ -8,7 +8,10 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: $site-font-family-base;
   overflow-x: hidden;
+  line-height: 1.5;
+  color: $site-color-body;
 }
 
 .container main {
@@ -26,10 +29,6 @@ body {
   flex-grow: 1;
   align-items: flex-start;
   justify-content: space-between;
-}
-
-h1 {
-  margin-bottom: 2.5rem;
 }
 
 h2 {
@@ -54,104 +53,8 @@ picture {
   max-height: 100%;
 }
 
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-  grid-auto-rows: 1fr;
-  gap: 1rem;
-  margin-bottom: 1rem;
-
-  .card {
-    overflow: hidden;
-    max-width: 50vw;
-  }
-
-  .card-body img {
-    width: 72px;
-    height: 72px;
-  }
-
-  .card-image-holder {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 12rem;
-
-    img {
-      max-width: 100%;
-      max-height: 100%;
-      width: auto;
-      z-index: 1;
-    }
-
-    svg {
-      height: 100%;
-      width: 100%;
-    }
-  }
-
-  &.wide {
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  }
-
-  &.narrow {
-    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
-  }
-}
-
-.card-footer.card-footer--transparent {
-  border: none;
-  background-color: transparent;
-}
-
-.card-footer.card-footer--links {
-  > *:not(:last-child) {
-    margin-right: 1rem;
-  }
-}
-
-.card-title-material-3 {
-  color: $site-color-body;
-}
-
 .d-block.h1 > .material-symbols {
   font-size: 3rem;
-}
-
-.card-image-holder-material-3 {
-  align-items: center;
-  z-index: -1;
-  background-size: 0;
-  opacity: .999;
-  background-color: var(--bg-color, white);
-
-  img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    z-index: 1;
-  }
-}
-
-.card-image-material-3-hover {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  opacity: 0;
-  transition: .25s ease;
-  z-index: -1;
-
-  img {
-    width: 100%;
-    max-height: 100%;
-    z-index: -1;
-  }
-}
-
-.card-image-holder-material-3:hover .card-image-material-3-hover {
-  opacity: 1;
 }
 
 .card-app-type {
@@ -177,8 +80,13 @@ picture {
   white-space: nowrap;
   word-wrap: normal;
   direction: ltr;
+  font-feature-settings: 'liga';
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
+
+  &.ms-filled {
+    font-variation-settings: 'FILL' 1;
+  }
 }
 
 .site-mobile-screenshot {
@@ -229,11 +137,6 @@ main figure {
   }
 }
 
-.list-image {
-  width: 48px;
-  margin: 0.25rem;
-}
-
 .text-icon {
   margin: 0 0.125rem;
   width: 1.5rem;
@@ -247,8 +150,45 @@ main figure {
   max-height: 60vh;
 }
 
+.table {
+  width: 100%;
+  border-spacing: 0;
+
+  thead {
+    vertical-align: bottom;
+
+    th {
+      border-bottom: 1px solid $site-color-light-grey;
+      text-align: start;
+    }
+  }
+
+  tbody {
+    tr {
+      vertical-align: top;
+
+      &:nth-of-type(odd) {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+    }
+  }
+
+  td, th {
+    border-top: 1px solid $site-color-light-grey;
+    padding: .75rem;
+  }
+}
+
+// If table head has empty children, just hide it
+// since markdown-it's tables don't support headless tables.
+thead:has(th:empty) {
+  display: none;
+}
+
 .table-wrapper, .scrollable-table {
   overflow-x: auto;
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
 }
 
 .scrollable-table {
@@ -257,38 +197,6 @@ main figure {
 
   table {
     width: 100%;
-  }
-}
-
-// If table head has empty children, just hide it
-// since markdown-it-table doesn't support headless tables.
-thead:has(th:empty) {
-  display: none;
-}
-
-.searchbar {
-  > * {
-    max-width: 640px;
-    width:100%
-  }
-}
-
-.install-help {
-  text-align: right;
-  margin-top: -2.5rem;
-
-  a {
-    display: inline-flex;
-    align-items: center;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
-  .material-symbols {
-    font-size: 20px;
-    margin-right: 0.125rem;
   }
 }
 
@@ -345,8 +253,8 @@ td ol, td ul, td dl, td p {
 }
 
 p + ul, p + ol, p + dl {
-  margin-top: .5rem;
-  margin-bottom: .5rem;
+  margin-block-start: 0.75rem;
+  margin-block-end: 0.75rem;
 }
 
 td ol, td ul, td dl, td p {
@@ -364,9 +272,9 @@ td ol, td ul, td dl, td p {
   ::before {
     content: "";
     position: absolute;
-    top: 0.5rem; 
-    left: 0.5rem; 
-    width: 24px; 
+    top: 0.5rem;
+    left: 0.5rem;
+    width: 24px;
     height: 24px;
     background-position: center center;
     background-size: contain;
@@ -402,27 +310,6 @@ td ol, td ul, td dl, td p {
   ::before {
     background-image: url("/assets/images/docs/brand-svg/chromeos.svg");
   }
-}
-
-#skip-to-main {
-  top: 10px;
-  left: 10px;
-  position: absolute;
-  z-index: 2000;
-  padding: 1rem;
-  background-color: $site-color-primary;
-  color: $site-color-white;
-  border-radius: 0.5rem;
-  transform: translateY(-5rem);
-
-  &:focus {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-#site-content-title {
-  scroll-margin-top: 5rem;
 }
 
 .video-wrapper {

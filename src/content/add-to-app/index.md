@@ -15,7 +15,7 @@ piecemeal, as a module. This feature is known as "add-to-app". The module can be
 imported into your existing app to render part of your app using Flutter, while
 the rest can be rendered using existing technology. This method can also be used
 to run shared non-UI logic by taking advantage of Dart's portability and
-interopability with other languages.
+interoperability with other languages.
 
 Add-to-app is currently supported on Android, iOS, and web.
 
@@ -122,25 +122,19 @@ To get started, see our project integration guide for
 Android and iOS:
 
 <div class="card-grid">
-  <a class="card" href="/add-to-app/android/project-setup">
-    <div class="card-body">
-      <header class="card-title text-center">
-        Android
-      </header>
+  <a class="card outlined-card" href="/add-to-app/android/project-setup">
+    <div class="card-header text-center">
+      <header class="card-title">Android</header>
     </div>
   </a>
-  <a class="card" href="/add-to-app/ios/project-setup">
-    <div class="card-body">
-      <header class="card-title text-center">
-        iOS
-      </header>
+  <a class="card outlined-card" href="/add-to-app/ios/project-setup">
+    <div class="card-header text-center">
+      <header class="card-title">iOS</header>
     </div>
   </a>
-  <a class="card" href="/platform-integration/web/embedding-flutter-web#embedded-mode">
-    <div class="card-body">
-      <header class="card-title text-center">
-        Web
-      </header>
+  <a class="card outlined-card" href="/platform-integration/web/embedding-flutter-web#embedded-mode">
+    <div class="card-header text-center">
+      <header class="card-title">Web</header>
     </div>
   </a>
 </div>
@@ -151,25 +145,19 @@ After Flutter is integrated into your project,
 see our API usage guides at the following links:
 
 <div class="card-grid">
-  <a class="card" href="/add-to-app/android/add-flutter-screen">
-    <div class="card-body">
-      <header class="card-title text-center">
-        Android
-      </header>
+  <a class="card outlined-card" href="/add-to-app/android/add-flutter-screen">
+    <div class="card-header text-center">
+      <header class="card-title">Android</header>
     </div>
   </a>
-  <a class="card" href="/add-to-app/ios/add-flutter-screen">
-    <div class="card-body">
-      <header class="card-title text-center">
-        iOS
-      </header>
+  <a class="card outlined-card" href="/add-to-app/ios/add-flutter-screen">
+    <div class="card-header text-center">
+      <header class="card-title">iOS</header>
     </div>
   </a>
-  <a class="card" href="/platform-integration/web/embedding-flutter-web#manage-flutter-views-from-js">
-    <div class="card-body">
-      <header class="card-title text-center">
-        Web
-      </header>
+  <a class="card outlined-card" href="/platform-integration/web/embedding-flutter-web#manage-flutter-views-from-js">
+    <div class="card-header text-center">
+      <header class="card-title">Web</header>
     </div>
   </a>
 </div>

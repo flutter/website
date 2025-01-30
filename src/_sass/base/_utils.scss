@@ -1,3 +1,20 @@
-@mixin interaction-style($percentage: 4%) {
-  background-image: linear-gradient(rgb(var(--site-interaction-base-values) / $percentage) 0 0);
+.side-by-side {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+  column-gap: 2rem;
+  row-gap: 0;
+  justify-content: center;
+}
+
+.centered-rows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
 }
