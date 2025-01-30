@@ -53,14 +53,6 @@ picture {
   max-height: 100%;
 }
 
-.d-block.h1 > .material-symbols {
-  font-size: 3rem;
-}
-
-.card-app-type {
-  border-color: $site-color-nav-links;
-}
-
 .material-symbols {
   font-family: $site-font-family-icon;
   font-variation-settings:
@@ -269,7 +261,7 @@ td ol, td ul, td dl, td p {
 
 .card-os-bug {
   position: relative;
-  ::before {
+  &::before {
     content: "";
     position: absolute;
     top: 0.5rem;
@@ -286,28 +278,28 @@ td ol, td ul, td dl, td p {
 
 .card-macos {
   @extend .card-os-bug;
-  ::before {
+  &::before {
     background-image: url("/assets/images/docs/brand-svg/macos-bug.svg");
   }
 }
 
 .card-windows {
   @extend .card-os-bug;
-  ::before {
+  &::before {
     background-image: url("/assets/images/docs/brand-svg/windows-bug.svg");
   }
 }
 
 .card-linux {
   @extend .card-os-bug;
-  ::before {
+  &::before {
     background-image: url("/assets/images/docs/brand-svg/linux.svg");
   }
 }
 
 .card-chromeos {
   @extend .card-os-bug;
-  ::before {
+  &::before {
     background-image: url("/assets/images/docs/brand-svg/chromeos.svg");
   }
 }
