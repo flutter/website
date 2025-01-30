@@ -89,7 +89,7 @@ The code analysis can:
   - You can also press <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +
     <kbd>Shift</kbd> + <kbd>M</kbd>.
   - The Problems pane displays any analysis issues:<br>
-    ![Problems pane](/assets/images/docs/tools/vs-code/problems.png){:.mw-100 .pt-1}
+    ![Problems pane](/assets/images/docs/tools/vs-code/problems.png)
 
 ## Running and debugging
 
@@ -115,7 +115,7 @@ When a Flutter project is open in VS Code,
 you should see a set of Flutter specific entries in the status bar,
 including a Flutter SDK version and a
 device name (or the message **No Devices**):<br>
-![VS Code status bar][]{:.mw-100 .pt-1}
+![VS Code status bar][]
 
 :::note
 - If you do not see a Flutter version number or device info,
@@ -155,7 +155,7 @@ You can also press <kbd>Ctrl</kbd> + <kbd>F5</kbd>.
 1. Click **Run** <span aria-label="and then">></span> **Start Debugging**.
    You can also press <kbd>F5</kbd>.
    The status bar turns orange to show you are in a debug session.<br>
-   ![Debug console](/assets/images/docs/tools/vs-code/debug_console.png){:.mw-100 .pt-1}
+   ![Debug console](/assets/images/docs/tools/vs-code/debug_console.png)
 
    - The left **Debug Sidebar** shows stack frames and variables.
    - The bottom **Debug Console** pane shows detailed logging output.

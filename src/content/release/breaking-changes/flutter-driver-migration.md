@@ -30,7 +30,7 @@ functionality:
 * The list of plants is loaded from a local JSON file located in the
   `/assets` folder.
 
-<img src='/assets/images/docs/integration-test/migration-1.png' class="mw-100" alt="Starter project screenshot">
+<img src='/assets/images/docs/integration-test/migration-1.png' alt="Starter project screenshot">
 
 You can find the full code example in the [Example Project][] folder.
 
