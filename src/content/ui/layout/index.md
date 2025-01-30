@@ -29,10 +29,12 @@ You create a layout by composing widgets to build more complex widgets.
 For example, the first screenshot below shows 3 icons with a label
 under each one:
 
-<div class="row mb-4">
-  <div class="col-12 text-center">
-    <img src='/assets/images/docs/ui/layout/lakes-icons.png' class="border mt-1 mb-1" alt="Sample layout">
-    <img src='/assets/images/docs/ui/layout/lakes-icons-visual.png' class="border mt-1 mb-1" alt="Sample layout with visual debugging">
+<div class="side-by-side">
+  <div class="centered-rows">
+    <img src='/assets/images/docs/ui/layout/lakes-icons.png' alt="Sample layout">
+  </div>
+  <div class="centered-rows">
+    <img src='/assets/images/docs/ui/layout/lakes-icons-visual.png' alt="Sample layout with visual debugging">
   </div>
 </div>
 
@@ -363,11 +365,13 @@ For a row, the main axis runs horizontally and the cross axis runs
 vertically. For a column, the main axis runs vertically and the cross
 axis runs horizontally.
 
-<div class="mb-2 text-center">
-  <img src='/assets/images/docs/ui/layout/row-diagram.png' class="mb-2"
-      alt="Diagram showing the main axis and cross axis for a row">
-  <img src='/assets/images/docs/ui/layout/column-diagram.png' class="mb-2 mr-2 ml-2"
-      alt="Diagram showing the main axis and cross axis for a column">
+<div class="side-by-side">
+  <div class="centered-rows">
+    <img src='/assets/images/docs/ui/layout/row-diagram.png' alt="Diagram showing the main axis and cross axis for a row">
+  </div>
+  <div class="centered-rows">
+    <img src='/assets/images/docs/ui/layout/column-diagram.png' alt="Diagram showing the main axis and cross axis for a column">
+  </div>
 </div>
 
 The [`MainAxisAlignment`][] and [`CrossAxisAlignment`][]
