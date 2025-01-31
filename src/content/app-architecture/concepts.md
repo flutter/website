@@ -67,7 +67,7 @@ If the data can be modified in the app,
 the SSOT class should be the only class that can do so.
 
 This can dramatically reduce the number of bugs in your application,
-and it can simply code because you'll only ever have one copy of the same data.
+and it can simplify code because you'll only ever have one copy of the same data.
 
 Generally, the source of truth for any given type of data in your application is
 held in a class called a **Repository**, which is part of the data layer.
