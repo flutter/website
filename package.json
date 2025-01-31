@@ -12,7 +12,7 @@
     "node": ">=22.11.0",
     "pnpm": ">=9.12.3"
   },
-  "packageManager": "pnpm@9.15.0",
+  "packageManager": "pnpm@9.15.4",
   "scripts": {
     "serve": "PRODUCTION=false tsx node_modules/@11ty/eleventy/cmd.cjs --serve --config=eleventy.config.ts",
     "build-site-for-staging": "PRODUCTION=false OPTIMIZE=true tsx node_modules/@11ty/eleventy/cmd.cjs --config=eleventy.config.ts",
@@ -22,8 +22,8 @@
     "@11ty/eleventy": "^3.0.0",
     "@types/hast": "^3.0.4",
     "@types/markdown-it": "^14.1.2",
-    "@types/node": "^22.10.2",
-    "firebase-tools": "^13.29.1",
+    "@types/node": "^22.12.0",
+    "firebase-tools": "^13.29.3",
     "hast-util-from-html": "^2.0.3",
     "hast-util-select": "^6.0.3",
     "hast-util-to-text": "^4.0.2",
@@ -31,12 +31,12 @@
     "js-yaml": "^4.1.0",
     "markdown-it": "^14.1.0",
     "markdown-it-anchor": "^9.2.0",
-    "markdown-it-attrs": "^4.3.0",
+    "markdown-it-attrs": "^4.3.1",
     "markdown-it-container": "^4.0.0",
     "markdown-it-deflist": "^3.0.0",
     "markdown-it-footnote": "^4.0.0",
-    "sass": "^1.83.0",
-    "shiki": "^1.24.2",
+    "sass": "^1.83.4",
+    "shiki": "^2.2.0",
     "tsx": "^4.19.2"
   }
 }
