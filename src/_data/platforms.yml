@@ -46,5 +46,5 @@
 - platform: 'Edge (Web)'
   target-arch: 'JavaScript, WebAssembly'
   supported: '[Latest 2](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel)'
-  ci-tested: 119, 125
+  ci-tested: '119, 125'
   unsupported: '95 and earlier'
