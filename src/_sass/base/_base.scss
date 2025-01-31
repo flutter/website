@@ -111,6 +111,8 @@ picture {
 main figure {
   display: flex;
   justify-content: center;
+  margin: 0;
+  margin-block-end: 1rem;
 
   &.site-image-right {
     max-height: none;
@@ -118,6 +120,7 @@ main figure {
 
   .site-figure-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     flex: 0 1 auto;
     max-width: 100%;
@@ -128,9 +131,8 @@ main figure {
       width: 100%;
     }
 
-    // TODO(parlough): Is this necessary?
     figcaption {
-      margin-top: 1rem;
+      margin-top: 0.5rem;
     }
   }
 
@@ -141,8 +143,6 @@ main figure {
   }
 
   &.code-and-image {
-    margin: 0;
-    margin-block-end: 1rem;
     gap: 0.25rem;
     justify-content: space-between;
     flex-direction: row;
