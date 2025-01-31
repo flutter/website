@@ -1,16 +1,3 @@
-document.addEventListener("DOMContentLoaded", function(_) {
-  adjustToc();
-  setupInlineToc();
-  scrollSidenavIntoView();
-  initCookieNotice();
-
-  setupSidenavInteractivity();
-  setUpCodeBlockButtons();
-
-  setupSearch();
-  setupTabs();
-});
-
 function setupSidenavInteractivity() {
   document.getElementById('menu-toggle')?.addEventListener('click', function (e) {
     e.stopPropagation();
@@ -259,3 +246,16 @@ function setUpCodeBlockButtons() {
     codeBlock.appendChild(buttonWrapper);
   });
 }
+
+document.addEventListener("DOMContentLoaded", function(_) {
+  adjustToc();
+  setupInlineToc();
+  scrollSidenavIntoView();
+  initCookieNotice();
+
+  setupSidenavInteractivity();
+  setUpCodeBlockButtons();
+
+  setupSearch();
+  setupTabs();
+});
