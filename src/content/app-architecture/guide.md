@@ -42,7 +42,7 @@ This guide recommends you split your application into the following components:
 
 ### MVVM
 
-If you've encountered the [Model-View-ViewModel architectural pattern][] (MVVM),
+If you've encountered the [Model-View-ViewModel architectural pattern](https://en.wikipedia.org/wiki/Model–view–viewmodel) (MVVM),
 this will be familiar. MVVM is a architectural pattern that separates a feature of an
 application into three parts:
 the `Model`, the `ViewModel` and the `View`.
