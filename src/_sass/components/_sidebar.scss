@@ -1,193 +1,171 @@
-@use 'sass:color';
-
 @use '../base/variables' as *;
-@use '../vendor/bootstrap';
+@use '../base/utils';
 
-.site-sidebar {
-  font-family: $site-font-family-alt;
-  padding: $site-sidebar-top-padding 0 ($site-sidebar-top-padding * 2);
+$sidenav-divider-color: #e7e8ed;
 
-  // Customization for sidebar in mobile nav
-  &.site-sidebar--header {
-    padding: 0;
+#sidenav {
+  margin: 0;
+  min-width: 16rem;
+  height: calc(100vh - $site-header-height);
+  padding: 1.15rem 1rem 4rem;
+  scrollbar-width: thin;
+  position: fixed;
+  overscroll-behavior: contain;
+  overflow-y: auto;
+  display: none;
+  width: 100%;
+  z-index: 1010;
 
-    > .nav > .nav-item {
-      font-size: bootstrap.$font-size-base;
-    }
+  @at-root body.open_menu {
+    overflow-y: hidden;
 
-    > .nav > .nav-item,
-    > .nav > .nav-item .nav .nav-item {
-      .nav-link {
-        padding-top: bootstrap.bs-spacer(2);
-        padding-bottom: bootstrap.bs-spacer(1);
-
-        &.collapsible {
-          padding-bottom: bootstrap.bs-spacer(2);
-        }
-      }
-    }
-  }
-
-  .sidebar-primary-divider {
-    height: 0;
-    margin-top: bootstrap.bs-spacer(1);
-    margin-bottom: bootstrap.bs-spacer(1);
-    overflow: hidden;
-    border-top: 1px solid $site-color-light-grey;
-  }
-
-  @mixin nav-link-active-style {
-    &.active {
-      font-weight: bootstrap.$font-weight-bold;
-
-      &:not(.collapsible) {
-        color: $site-color-primary;
-
-        &:hover {
-          color: $flutter-color-dark-blue;
-        }
-      }
+    #sidenav {
+      display: block;
+      background-color: $site-color-white;
     }
   }
 
-  @mixin nav-link-not-active-hover {
-    &:not(.disabled) {
-      &:hover {
-        color: $site-color-primary;
-      }
-    }
+  @media (min-width: 1024px) {
+    display: block;
+    border-right: 0.1rem solid $sidenav-divider-color;
+    padding: 0.75rem 0.75rem 2.25rem;
+    position: sticky;
+    top: calc($site-header-height);
+    overscroll-behavior: auto;
+    width: 16rem;
   }
 
   .nav-header {
-    font-weight: bootstrap.$font-weight-bolder;
-    font-size: bootstrap.$font-size-base;
+    font-weight: bolder;
+    padding: 0.25rem 0.4rem 0;
+    color: $site-color-body-light;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    transition: none;
+  }
+
+  .sidenav-divider {
+    background-color: $sidenav-divider-color;
+    border-radius: 0.5rem;
+    width: 100%;
+    height: 0.125rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+    font-size: 0.925rem;
+    line-height: 1.25rem;
+    width: 100%;
     user-select: none;
-    color: color.scale($site-color-body-light, $lightness: 15%);
-  }
 
-  .nav-link {
-    display: flex;
-    position: relative;
-    align-items: center;
-
-    padding: bootstrap.bs-spacer(1) 0;
-    color: inherit;
-    &.disabled { opacity: 0.5; }
-
-    @include nav-link-active-style;
-
-    @include nav-link-not-active-hover;
-  }
-
-  @mixin collapsible() {
-    align-items: flex-end;
-    display: flex;
-    justify-content: space-between;
-
-    &::after {
-      // Duplicated since Firefox doesn't support content alt text.
-      content: 'keyboard_arrow_down';
-      content: 'keyboard_arrow_down' / '';
-      font: $site-font-icon;
-      transition: transform .25s ease-in-out;
+    .nav-header:not(:first-child) {
+      margin-top: 0.5rem;
     }
 
-    &:not(.collapsed) {
-      &::after {
-        content: 'keyboard_arrow_down' / '';
-        transform: rotate(180deg);
+    a.nav-link, button.nav-link {
+      background: none;
+      border: none;
+      text-wrap: pretty;
+      text-align: left;
+      padding: 0.25rem 0.4rem;
+      margin-top: 0.25rem;
+      margin-bottom: 0.25rem;
+
+      border-radius: 0.25rem;
+
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+
+      cursor: pointer;
+
+      color: $site-color-body;
+      font-family: $site-font-family-alt, sans-serif;
+      text-decoration: none;
+
+      &:focus-visible {
+        outline: 2px solid var(--focus-outline-color);
       }
-    }
-  }
 
-  // Top-level nav item
-  > .nav {
-    > .nav-item, > .nav-header {
-      padding: 0 $site-sidebar-side-padding;
-    }
+      > div {
+        display: inline-block;
 
-    > .nav-header:first-child {
-      padding-top: 0;
-    }
-
-    > .nav-item {
-      > .nav-link {
-        @include nav-link-active-style;
-
-        &.collapsible {
-          padding: bootstrap.bs-spacer(2) 0;
-
-          @include collapsible();
-
-          @include nav-link-not-active-hover;
+        .material-symbols {
+          font-size: 0.825rem;
+          margin-left: 0.125rem;
+          color: $site-color-nav-links;
         }
+      }
+
+      span {
+        vertical-align: middle;
+      }
+
+      .expander {
+        color: $site-color-body-light;
+        transition: transform .3s ease-in-out;
+      }
+
+      + ul {
+        display: none;
+      }
+
+      &:hover {
+        @include utils.interaction-style(3%);
+      }
+
+      &:active {
+        @include utils.interaction-style(5%);
+      }
+
+      &:not(.collapsed) {
+        .expander {
+          transform: rotate(180deg);
+        }
+
+        + ul {
+          display: block;
+        }
+      }
+
+      &.active {
+        background-color: rgb(245, 245, 246);
 
         &:not(.collapsible) {
-          padding: bootstrap.bs-spacer(1) 0;
-        }
-      }
-
-      &:first-child {
-        > .nav-link {
-          padding-top: 0;
-        }
-      }
-    }
-
-    > .nav-header {
-      padding-top: bootstrap.bs-spacer(1);
-
-      & + .nav-item {
-        // The first item after a top-level header should have
-        // consistent padding, no matter if it's a link or collapsible.
-        .nav-link {
-          padding-top: bootstrap.bs-spacer(2);
+          color: $site-color-primary;
         }
       }
     }
   }
 
-  // Sub navs
-  > .nav .nav {
-    padding-left: bootstrap.bs-spacer(4);
-    margin-bottom: bootstrap.bs-spacer(1);
-
-    .nav-header {
-      font-size: bootstrap.$font-size-sm;
-
-      &:not(:first-child) {
-        margin-top: bootstrap.bs-spacer(2);
-      }
+  > nav ul {
+    // Only apply styles to top-level entries.
+    > li {
+      font-size: 1rem;
     }
 
-    .nav-item {
-      font-size: bootstrap.$font-size-sm;
+    ul {
+      margin-left: 0.675rem;
+    }
+  }
 
-      > .nav-link {
-        color: $site-color-body-light;
+  .navbar-nav {
+    display: none;
 
-        @include nav-link-not-active-hover;
-        @include nav-link-active-style;
-
-        &.collapsible {
-          &::before {
-            // Duplicated since Firefox doesn't support content alt text.
-            content: 'arrow_drop_down';
-            content: 'arrow_drop_down' / '';
-            font: $site-font-icon;
-            left: -24px;
-            position: absolute;
-            transition: transform .25s ease-in-out;
-          }
-
-          &.collapsed {
-            &::before {
-              content: 'arrow_drop_down' / '';
-              transform: rotate(-90deg);
-            }
-          }
-        }
-      }
+    a.nav-link {
+      font-size: 1.125rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      padding: 0.375rem 0.6rem;
     }
   }
 }

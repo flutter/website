@@ -1,5 +1,9 @@
 @use 'variables' as *;
-@use '../vendor/bootstrap';
+
+:root {
+  --site-interaction-base-values: 0 0 0;
+  --focus-outline-color: #1967D2;
+}
 
 body {
   -webkit-font-smoothing: antialiased;
@@ -11,8 +15,21 @@ body {
   overflow-x: hidden;
 }
 
+#site-below-header {
+  display: flex;
+  flex-direction: column;
+}
+
+#site-main-row {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
 h1 {
-  margin-bottom: bootstrap.bs-spacer(12);
+  margin-bottom: 2.5rem;
 }
 
 h2 {
@@ -89,7 +106,7 @@ picture {
 
 .card-footer.card-footer--links {
   > *:not(:last-child) {
-    margin-right: bootstrap.bs-spacer(4);
+    margin-right: 1rem;
   }
 }
 
@@ -141,15 +158,6 @@ picture {
   border-color: $site-color-nav-links;
 }
 
-.fixed-col {
-  @include bootstrap.media-breakpoint-up(md) {
-    bottom: 0;
-    overflow-y: auto;
-    position: absolute; // position will be fixed once js has initialized
-    top: 0;
-  }
-}
-
 .material-symbols {
   font-family: $site-font-family-icon;
   font-variation-settings:
@@ -178,8 +186,9 @@ picture {
   margin: 0 auto;
   max-height: none;
   max-width: 100%;
-  @include bootstrap.media-breakpoint-up(xs) {
-    max-width: bootstrap.breakpoint-min(xxs);
+
+  @media (min-width: 480px) {
+    max-width: 320px;
   }
 
   &--border { border: 1px solid $site-color-light-grey; }
@@ -191,11 +200,11 @@ picture {
   max-height: 60vh;
   max-width: 100%;
 
-  @include bootstrap.media-breakpoint-up(md) {
+  @media (min-width: 768px) {
     float: right;
-    margin: 0 0 bootstrap.bs-spacer(10) bootstrap.bs-spacer(10);
+    margin: 0 0 2.5rem 2.5rem;
     max-height: none;
-    max-width: calc((100%/2.5) - #{bootstrap.bs-spacer(10)});
+    max-width: calc((100%/2.5) - 2.5rem);
   }
 }
 
@@ -214,7 +223,7 @@ main figure {
     img { width: 100%; }
 
     figcaption {
-      margin-top: bootstrap.bs-spacer(4);
+      margin-top: 1rem;
       text-align: center;
     }
   }
@@ -236,38 +245,6 @@ main figure {
   // Illustrations should be visible in their entirety without the need
   // for scrolling up and down.
   max-height: 60vh;
-}
-
-.btn.btn-icon {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-
-  .material-symbols {
-    margin-right: bootstrap.bs-spacer(2);
-  }
-}
-
-.btn.btn-cta {
-  font-size: 18px;
-  font-weight: 500;
-  padding: bootstrap.bs-spacer(4) bootstrap.bs-spacer(6);
-
-  @include bootstrap.media-breakpoint-up(sm) {
-    min-width: 250px;
-  }
-}
-
-.embedded-video-wrapper {
-  width: 100%;
-  padding-bottom: 56.25%; // 16:9 aspect ratio
-  position: relative;
-
-  &__frame {
-    height: 100%;
-    position: absolute;
-    width: 100%;
-  }
 }
 
 .table-wrapper, .scrollable-table {
@@ -317,9 +294,9 @@ thead:has(th:empty) {
 
 blockquote {
   background-color: $site-color-codeblock-bg;
-  padding: bootstrap.bs-spacer(3) bootstrap.bs-spacer(4);
-  border-left: solid 5px bootstrap.$border-color;
-  margin-bottom: bootstrap.bs-spacer(4);
+  padding: 0.75rem 1rem;
+  border-left: solid 5px $site-color-light-grey;
+  margin-bottom: 1rem;
 
   p {
     margin-bottom: 0;
@@ -377,18 +354,9 @@ td ol, td ul, td dl, td p {
 }
 
 .figure-caption {
-  font-size: bootstrap.$font-size-sm;
+  font-size: .875rem;
   font-style: italic;
   color: #041E3C;
-}
-
-aside {
-  .alert {
-    h2, h3, h4, h5, h6 {
-      margin: 0.5rem 0;
-      font-size: 1.5rem;
-    }  
-  }
 }
 
 .card-os-bug {

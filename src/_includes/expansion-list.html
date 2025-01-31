@@ -50,9 +50,10 @@ The frontmatter of each article should have the following attributes:
     <div class="expansion-panel-body collapse {{show}}" id="{{id}}">
       <p>{{item.content | truncatewords: 100}}  <a href="{{item.url}}">Read full article</a></p>
 
-      <!-- Required to add "margin" that doesn't cause expansion jank -->
-      <div class="separator"></div>
-    </div>
-  </div>
-  {% endfor -%}
+      {%- comment %}
+      Required to add "margin" that doesn't cause expansion jank
+      {% endcomment -%}
+      <div class="separator" aria-hidden="true"></div>
+    </div></div>
+  {%- endfor -%}
 </div>

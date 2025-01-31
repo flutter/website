@@ -1,14 +1,31 @@
 document.addEventListener("DOMContentLoaded", function(_) {
   adjustToc();
   setupInlineToc();
-  initFixedColumns();
-  scrollSidebarIntoView();
+  scrollSidenavIntoView();
   initCookieNotice();
+
+  setupMenuToggle();
   setUpCodeBlockButtons();
 
   setupSearch();
   setupTabs();
 });
+
+function setupMenuToggle() {
+  document.getElementById('menu-toggle')?.addEventListener('click', function (e) {
+    e.stopPropagation();
+    document.body.classList.toggle('open_menu');
+  });
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      const activeElement = document.activeElement;
+      if (activeElement && (activeElement.id === 'menu-toggle' || activeElement.closest('#sidenav'))) {
+        document.body.classList.remove('open_menu');
+      }
+    }
+  });
+}
 
 /**
  * Get the user's current operating system, or
@@ -43,19 +60,17 @@ function getOS() {
   return null;
 }
 
-function scrollSidebarIntoView() {
-  const fixedSidebar = document.querySelector('.site-sidebar--fixed');
-
-  if (!fixedSidebar) {
+function scrollSidenavIntoView() {
+  const sidenav = document.getElementById('sidenav');
+  if (!sidenav) {
     return;
   }
 
-  const activeEntries = fixedSidebar.querySelectorAll('a.nav-link.active');
-
+  const activeEntries = sidenav.querySelectorAll('.nav-link.active');
   if (activeEntries.length > 0) {
     const activeEntry = activeEntries[activeEntries.length - 1];
 
-    fixedSidebar.scrollTo({
+    sidenav.scrollTo({
       top: activeEntry.offsetTop - window.innerHeight / 3,
     });
   }
@@ -118,52 +133,6 @@ function handleSearchShortcut(event) {
     searchElement.focus();
     // Prevent the initial slash from showing up in the search field.
     event.preventDefault();
-  }
-}
-
-function initFixedColumns() {
-  const fixedColumnsSelector = '[data-fixed-column]';
-  const bannerSelector = '.site-banner';
-  const footerSelector = 'footer.site-footer';
-  const headerSelector = '.site-header';
-  const fixedColumns = $(fixedColumnsSelector);
-
-  function adjustFixedColumns() {
-    // only change values if the fixed col is visible
-    if ($(fixedColumnsSelector).css('display') == 'none') {
-      return;
-    }
-
-    const headerHeight = $(headerSelector).outerHeight();
-    let bannerVisibleHeight = 0;
-    // First, make sure the banner element even exists on the page.
-    const siteBanner = $(bannerSelector);
-    if (siteBanner.length > 0) {
-      const bannerHeight = siteBanner.outerHeight();
-      const bannerOffset = siteBanner.offset().top;
-      const bannerPosition = bannerOffset - $(window).scrollTop();
-      bannerVisibleHeight =
-        Math.max(bannerHeight - (headerHeight - bannerPosition), 0);
-    }
-    const topOffset = headerHeight + bannerVisibleHeight;
-
-    const footerOffset = $(footerSelector).offset().top;
-    const footerPosition = footerOffset - $(window).scrollTop();
-    const footerVisibleHeight = $(window).height() - footerPosition;
-
-    const fixedColumnsMaxHeight = $(window).height() - topOffset - footerVisibleHeight;
-
-    $(fixedColumnsSelector).css('max-height', fixedColumnsMaxHeight);
-    $(fixedColumnsSelector).css('top', topOffset);
-  }
-
-  if (fixedColumns.length) {
-    $(fixedColumnsSelector).css('position', 'fixed');
-
-    // listen for scroll and execute once
-    $(window).scroll(adjustFixedColumns);
-    $(window).resize(adjustFixedColumns);
-    adjustFixedColumns();
   }
 }
 

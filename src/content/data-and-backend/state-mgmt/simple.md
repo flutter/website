@@ -3,10 +3,10 @@ title: Simple app state management
 description: A simple form of state management.
 prev:
   title: Ephemeral versus app state
-  path: /development/data-and-backend/state-mgmt/ephemeral-vs-app
+  path: /data-and-backend/state-mgmt/ephemeral-vs-app
 next:
   title: List of approaches
-  path: /development/data-and-backend/state-mgmt/options
+  path: /data-and-backend/state-mgmt/options
 ---
 
 <?code-excerpt path-base="state_mgmt/simple/"?>
