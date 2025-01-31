@@ -7,17 +7,15 @@ toc: false
 next:
   title: Architecture concepts
   path: /app-architecture/concepts
-
 ---
 
-<div class="row">
-<div class="col-md-5">
+<div class="side-by-side">
+<div>
 
 Architecture is an important part of building a
 maintainable, resilient, and scalable Flutter app.
 In this guide, you'll learn app architecture principles and
 best practices for building Flutter apps.
-<br />
 
 'Architecture' is a word that's hard to define.
 It's a broad term and can refer to any number
@@ -26,10 +24,8 @@ of topics depending on the context. In this guide,
 your Flutter app in order to scale as your project requirements and team grow.
 
 </div>
-<div class="col-md-7">
-
-<img src='/assets/images/docs/app-architecture/hero-image.png' style="width:100%; margin:auto; display:block" alt="Hero image">
-
+<div class="centered-rows">
+<img src='/assets/images/docs/app-architecture/hero-image.png' style="max-height: 480px;" alt="Hero image">
 </div>
 </div>
 

@@ -17,8 +17,8 @@
     {{code}}
   </div>
   <div>
-    <img src="/assets/images/docs/{{image}}" class="{{img-class}}" alt="{{alt | escape}}" style="{{width}} {{height}}">
-     {% if caption -%}
+    <img src="/assets/images/docs/{{image}}" class="{{img-class}}" alt="{{alt | escape}}" style="{{img-style}} {{width}} {{height}}">
+     {% if caption and caption != '' -%}
      <figcaption class="figure-caption {{figcaption-class}}">
        {{caption}}
      </figcaption>

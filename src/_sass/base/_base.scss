@@ -149,7 +149,7 @@ main figure {
     flex-wrap: wrap;
 
     > div {
-      width: 100%;
+     width: 100%;
 
       &:last-child {
         text-align: center;
@@ -159,13 +159,13 @@ main figure {
     @media(min-width: 769px) {
       > div {
         &:first-child {
-          flex: 0 0 49%;
-          max-width: 49%;
+          flex: 0 0 58%;
+          max-width: 58%;
         }
 
         &:last-child {
-          flex: 0 0 48%;
-          max-width: 48%;
+          flex: 0 0 40%;
+          max-width: 40%;
         }
       }
 

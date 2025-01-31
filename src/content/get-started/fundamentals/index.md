@@ -26,7 +26,7 @@ how Flutter works.
 
 </div>
 <div class="centered-rows">
-  {% render docs/app-figure.md, image:"fwe/dash-search.png", alt:"Dash with magnifying glass", width: "75%"%}
+  {% render docs/app-figure.md, image:"fwe/dash-search.png", alt:"Dash with magnifying glass", img-style: "max-height: 320px;"%}
 </div>
 </div>
 
