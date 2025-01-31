@@ -128,4 +128,5 @@ reference to help you build up an application.
 - [An introduction to widget testing](/cookbook/testing/widget/introduction)
 - [Find widgets](/cookbook/testing/widget/finders)
 - [Handle scrolling](/cookbook/testing/widget/scrolling)
+- [Test the orientation of an app](/cookbook/testing/widget/orientation)
 - [Tap, drag, and enter text](/cookbook/testing/widget/tap-drag)
