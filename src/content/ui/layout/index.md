@@ -9,8 +9,6 @@ description: Learn how Flutter's layout mechanism works and how to build a layou
 
 <?code-excerpt path-base=""?>
 
-<style>dl, dd { margin-bottom: 0; }</style>
-
 :::secondary What's the point?
 * Widgets are classes used to build UIs.
 * Widgets are used for both layout and UI elements.
@@ -287,22 +285,19 @@ or background color. If you want these features in a non-Material app,
 you have to build them yourself. This app changes the background
 color to white and the text to dark grey to mimic a Material app.
 
-<div class="row">
-<div class="col-md-6">
+<div class="side-by-side">
+<div>
 
-  That's it! When you run the app, you should see _Hello World_.
+That's it! When you run the app, you should see _Hello World_.
 
-  App source code:
+App source code:
 
-  * [Material app]({{examples}}/layout/base)
-  * [Non-Material app]({{examples}}/layout/non_material)
+* [Material app]({{examples}}/layout/base)
+* [Non-Material app]({{examples}}/layout/non_material)
 
 </div>
-<div class="col-md-6">
-  {% render docs/app-figure.md, img-class:"site-mobile-screenshot border w-75", image:"ui/layout/hello-world.png", alt:"Hello World" %}
+{% render docs/app-figure.md, image:"ui/layout/hello-world.png", alt:"Screenshot of app displaying Hello World", img-class:"simple-border", img-style:"max-height: 400px;"  %}
 </div>
-</div>
-
 <hr>
 
 ## Lay out multiple widgets vertically and horizontally
@@ -393,10 +388,10 @@ is more than 300 pixels wide, so setting the main axis
 alignment to `spaceEvenly` divides the free horizontal
 space evenly between, before, and after each image.
 
-<div class="row">
-<div class="col-lg-8">
+<div class="code-and-content">
+<div>
 
-  <?code-excerpt "layout/row_column/lib/main.dart (row)" replace="/Row/[!$&!]/g"?>
+<?code-excerpt "layout/row_column/lib/main.dart (row)" replace="/Row/[!$&!]/g"?>
   ```dart
   [!Row!](
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -409,7 +404,7 @@ space evenly between, before, and after each image.
   ```
 
 </div>
-<div class="col-lg-4">
+<div>
   <img src='/assets/images/docs/ui/layout/row-spaceevenly-visual.png' alt="Row with 3 evenly spaced images">
 
   **App source:** [row_column]({{examples}}/layout/row_column)
@@ -422,8 +417,8 @@ of 3 images, each is 100 pixels high. The height of the render box
 setting the main axis alignment to `spaceEvenly` divides the free vertical
 space evenly between, above, and below each image.
 
-<div class="row">
-<div class="col-lg-8">
+<div class="code-and-content">
+<div>
 
   <?code-excerpt "layout/row_column/lib/main.dart (column)" replace="/Column/[!$&!]/g"?>
   ```dart
@@ -437,12 +432,11 @@ space evenly between, above, and below each image.
   );
   ```
 
-  **App source:** [row_column]({{examples}}/layout/row_column)
-
 </div>
-<div class="col-lg-4 text-center">
-  <img src='/assets/images/docs/ui/layout/column-visual.png' class="mb-4" height="250px"
-      alt="Column showing 3 images spaced evenly">
+<div class="text-center">
+  <img src='/assets/images/docs/ui/layout/column-visual.png' height="250px" alt="Column showing 3 images spaced evenly">
+
+  **App source:** [row_column]({{examples}}/layout/row_column)
 </div>
 </div>
 
@@ -459,8 +453,8 @@ Widgets can be sized to fit within a row or column by using the
 row of images is too wide for its render box,
 wrap each image with an `Expanded` widget.
 
-<div class="row">
-<div class="col-lg-8">
+<div class="code-and-content">
+<div>
 
   <?code-excerpt "layout/sizing/lib/main.dart (expanded-images)" replace="/Expanded/[!$&!]/g"?>
   ```dart
@@ -481,7 +475,7 @@ wrap each image with an `Expanded` widget.
   ```
 
 </div>
-<div class="col-lg-4">
+<div>
   <img src='/assets/images/docs/ui/layout/row-expanded-2-visual.png' alt="Row of 3 images that are too wide, but each is constrained to take only 1/3 of the space">
 
   **App source:** [sizing]({{examples}}/layout/sizing)
@@ -494,8 +488,8 @@ an integer that determines the flex factor for a widget.
 The default flex factor is 1. The following code sets
 the flex factor of the middle image to 2:
 
-<div class="row">
-<div class="col-lg-8">
+<div class="code-and-content">
+<div>
 
   <?code-excerpt "layout/sizing/lib/main.dart (expanded-images-with-flex)" replace="/flex.*/[!$&!]/g"?>
   ```dart
@@ -517,7 +511,7 @@ the flex factor of the middle image to 2:
   ```
 
 </div>
-<div class="col-lg-4">
+<div>
   <img src='/assets/images/docs/ui/layout/row-expanded-visual.png' alt="Row of 3 images with the middle image twice as wide as the others">
 
   **App source:** [sizing]({{examples}}/layout/sizing)
@@ -533,8 +527,8 @@ as possible, but if you want to pack the children closely together,
 set its `mainAxisSize` to `MainAxisSize.min`. The following example
 uses this property to pack the star icons together.
 
-<div class="row">
-<div class="col-lg-8">
+<div class="code-and-content">
+<div>
 
   <?code-excerpt "layout/pavlova/lib/main.dart (stars)" replace="/mainAxisSize.*/[!$&!]/g; /\w+ \w+ = //g; /;//g"?>
   ```dart
@@ -551,8 +545,8 @@ uses this property to pack the star icons together.
   ```
 
 </div>
-<div class="col-lg-4">
-  <img src='/assets/images/docs/ui/layout/packed.png' class="border" alt="Row of 5 stars, packed together in the middle of the row">
+<div>
+  <img src='/assets/images/docs/ui/layout/packed.png' class="simple-border" alt="Row of 5 stars, packed together in the middle of the row">
 
   **App source:** [pavlova]({{examples}}/layout/pavlova)
 </div>
@@ -781,18 +775,19 @@ You can change the device's background by placing the
 entire layout into a `Container` and changing its background
 color or image.
 
-<div class="row">
-<div class="col-lg-6">
-  <h4>Summary (Container)</h4>
+<div class="side-by-side">
+<div>
+
+#### Summary (Container)
 
 * Add padding, margins, borders
 * Change background color or image
-* Contains a single child widget, but that child can be a Row,
-    Column, or even the root of a widget tree
+* Contains a single child widget, but that child can be a `Row`,
+  `Column`, or even the root of a widget tree
 
 </div>
-<div class="col-lg-6 text-center">
-  <img src='/assets/images/docs/ui/layout/margin-padding-border.png' width="230px" alt="Diagram showing: margin, border, padding, and content">
+<div class="text-center">
+  <img src='/assets/images/docs/ui/layout/margin-padding-border.png' alt="Diagram showing: margin, border, padding, and content">
 </div>
 </div>
 
@@ -802,8 +797,8 @@ This layout consists of a column with two rows, each containing
 2 images. A [`Container`][] is used to change the background color
 of the column to a lighter grey.
 
-<div class="row">
-<div class="col-lg-7">
+<div class="code-and-content">
+<div>
 
   <?code-excerpt "layout/container/lib/main.dart (column)" replace="/\bContainer/[!$&!]/g;"?>
   ```dart
@@ -823,7 +818,7 @@ of the column to a lighter grey.
   ```
 
 </div>
-<div class="col-lg-5 text-center">
+<div class="text-center">
   <img src='/assets/images/docs/ui/layout/container.png' class="mb-4" width="230px" alt="Screenshot showing 2 rows, each containing 2 images">
 </div>
 </div>
@@ -890,24 +885,24 @@ it's the entry in the "calorie" column for the "avocado" row), use
 
 #### Examples (GridView)
 
-<div class="row">
-<div class="col-lg-6">
-  <img src='/assets/images/docs/ui/layout/gridview-extent.png' class="text-center" alt="A 3-column grid of photos">
+<div class="side-by-side">
+<div>
+  <img src='/assets/images/docs/ui/layout/gridview-extent.png' class="text-center" alt="A 3-column grid of photos" height="440px">
 
   Uses `GridView.extent` to create a grid with tiles a maximum
   150 pixels wide.
 
   **App source:** [grid_and_list]({{examples}}/layout/grid_and_list)
 </div>
-<div class="col-lg-6">
-  <img src='/assets/images/docs/ui/layout/gridview-count-flutter-gallery.png' class="text-center" alt="A 2 column grid with footers">
+<div>
+  <img src='/assets/images/docs/ui/layout/gridview-count-flutter-gallery.png' class="text-center" alt="A 2 column grid with footers" height="440px">
 
   Uses `GridView.count` to create a grid that's 2 tiles
   wide in portrait mode, and 3 tiles wide in landscape mode.
   The titles are created by setting the `footer` property for
   each [`GridTile`][].
 
-  **Dart code:** 
+  **Dart code:**
   [`grid_list_demo.dart`]({{examples}}/layout/gallery/lib/grid_list_demo.dart)
 </div>
 </div>
@@ -946,10 +941,9 @@ its render box.
 
 #### Examples (ListView)
 
-<div class="row">
-<div class="col-lg-6">
-  <img src='/assets/images/docs/ui/layout/listview.png' class="border text-center"
-      alt="ListView containing movie theaters and restaurants">
+<div class="side-by-side">
+<div>
+  <img src='/assets/images/docs/ui/layout/listview.png' height="400px" class="simple-border text-center" alt="ListView containing movie theaters and restaurants">
 
   Uses `ListView` to display a list of businesses using
   `ListTile`s. A `Divider` separates the theaters from
@@ -957,9 +951,8 @@ its render box.
 
   **App source:** [grid_and_list]({{examples}}/layout/grid_and_list)
 </div>
-<div class="col-lg-6">
-  <img src='/assets/images/docs/ui/layout/listview-color-gallery.png' class="border text-center"
-      alt="ListView containing shades of blue">
+<div>
+  <img src='/assets/images/docs/ui/layout/listview-color-gallery.png' height="400px" class="simple-border text-center" alt="ListView containing shades of blue">
 
   Uses `ListView` to display the [`Colors`][] from
   the [Material 2 Design palette][]
@@ -1025,9 +1018,9 @@ or partially overlap the base widget.
 
 #### Examples (Stack)
 
-<div class="row">
-<div class="col-lg-7">
-  <img src='/assets/images/docs/ui/layout/stack.png' class="text-center" width="200px" alt="Circular avatar image with a label">
+<div class="side-by-side">
+<div>
+  <img src='/assets/images/docs/ui/layout/stack.png' class="text-center" height="200px" alt="Circular avatar image with a label">
 
   Uses `Stack` to overlay a `Container`
   (that displays its `Text` on a translucent
@@ -1037,8 +1030,8 @@ or partially overlap the base widget.
 
   **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
 </div>
-<div class="col-lg-5">
-  <img src='/assets/images/docs/ui/layout/stack-flutter-gallery.png' class="text-center" alt="An image with a icon overlaid on top">
+<div>
+  <img src='/assets/images/docs/ui/layout/stack-flutter-gallery.png' class="text-center" height="200px" alt="An image with a icon overlaid on top">
 
   Uses `Stack` to overlay an icon on top of an image.
 
@@ -1110,9 +1103,9 @@ Specifying an unsupported value disables the drop shadow entirely.
 
 #### Examples (Card)
 
-<div class="row">
-<div class="col-lg-6">
-  <img src='/assets/images/docs/ui/layout/card.png' class="text-center" alt="Card containing 3 ListTiles">
+<div class="side-by-side">
+<div>
+  <img src='/assets/images/docs/ui/layout/card.png' height="200px" class="text-center" alt="Card containing 3 ListTiles">
 
   A `Card` containing 3 ListTiles and sized by wrapping
   it with a `SizedBox`. A `Divider` separates the first
@@ -1120,8 +1113,8 @@ Specifying an unsupported value disables the drop shadow entirely.
 
   **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
 </div>
-<div class="col-lg-6">
-  <img src='/assets/images/docs/ui/layout/card-flutter-gallery.png' class="text-center" alt="Tappable card containing an image and multiple forms of text">
+<div>
+  <img src='/assets/images/docs/ui/layout/card-flutter-gallery.png' height="200px" class="text-center" alt="Tappable card containing an image and multiple forms of text">
 
   A `Card` containing an image and text.
 
@@ -1193,17 +1186,16 @@ and trailing icons. `ListTile` is most commonly used in
 
 #### Examples (ListTile)
 
-<div class="row">
-<div class="col-lg-6">
+<div class="side-by-side">
+<div>
   <img src='/assets/images/docs/ui/layout/card.png' class="text-center" alt="Card containing 3 ListTiles">
 
   A `Card` containing 3 `ListTile`s.
 
   **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
 </div>
-<div class="col-lg-6">
-  <img src='/assets/images/docs/ui/layout/listtile-flutter-gallery.png' class="border text-center" height="200px"
-      alt="4 ListTiles, each containing a leading avatar">
+<div>
+  <img src='/assets/images/docs/ui/layout/listtile-flutter-gallery.png' height="200px" class="simple-border text-center" alt="4 ListTiles, each containing a leading avatar">
 
   Uses `ListTile` with leading widgets.
 
