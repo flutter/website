@@ -4,14 +4,14 @@ document.addEventListener("DOMContentLoaded", function(_) {
   scrollSidenavIntoView();
   initCookieNotice();
 
-  setupMenuToggle();
+  setupSidenavInteractivity();
   setUpCodeBlockButtons();
 
   setupSearch();
   setupTabs();
 });
 
-function setupMenuToggle() {
+function setupSidenavInteractivity() {
   document.getElementById('menu-toggle')?.addEventListener('click', function (e) {
     e.stopPropagation();
     document.body.classList.toggle('open_menu');
@@ -24,6 +24,15 @@ function setupMenuToggle() {
         document.body.classList.remove('open_menu');
       }
     }
+  });
+
+  // Set up collapse and expand for sidenav buttons.
+  const toggles = document.querySelectorAll('.nav-link.collapsible');
+  toggles.forEach(function (toggle) {
+    toggle.addEventListener('click', (e) => {
+      toggle.classList.toggle('collapsed');
+      e.preventDefault();
+    });
   });
 }
 
@@ -95,11 +104,6 @@ function adjustToc() {
       _scrollToTop();
     });
   }
-
-  // This will not be migrated for now until we migrate 
-  // the entire site to Bootstrap 5.
-  // see https://github.com/flutter/website/pull/9167#discussion_r1286457246
-  $('body').scrollspy({ offset: 100, target: tocId });
 
   function _scrollToTop() {
     const distanceBetweenTop = document.documentElement.scrollTop || document.body.scrollTop;

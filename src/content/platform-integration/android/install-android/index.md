@@ -23,25 +23,24 @@ or the platform you already have set up.
     {% assign bug = 'card-chromeos' %}
   {% endif %}
 
-  <a class="card card-app-type {{bug}}" id="install-{{target | downcase}}" href="{{targetLink}}">
-    <div class="card-body">
-      <header class="card-title text-center">
-        <span class="d-block h1">
-          {% assign icon = target | downcase | replace: " ", "-" -%}
-          {% case icon %}
-          {% when 'macos' -%}
-            <span class="material-symbols">laptop_mac</span>
-          {% when 'windows','linux' -%}
-            <span class="material-symbols">desktop_windows</span>
-          {% when 'ios' -%}
-            <span class="material-symbols">phone_iphone</span>
-          {% else -%}
-            <span class="material-symbols">web</span>
-          {% endcase -%}
-          <span class="material-symbols">add</span>
-          <span class="material-symbols">phone_android</span>
-        </span>
-        <span class="text-muted d-block">
+  <a class="card outlined-card install-card {{bug}}" id="install-{{target | downcase}}" href="{{targetLink}}">
+    {% assign icon = target | downcase | replace: " ", "-" -%}
+    <div class="card-leading">
+      {% case icon %}
+      {% when 'macos' -%}
+        <span class="material-symbols" aria-hidden="true">laptop_mac</span>
+      {% when 'windows','linux' -%}
+        <span class="material-symbols" aria-hidden="true">desktop_windows</span>
+      {% when 'ios' -%}
+        <span class="material-symbols" aria-hidden="true">phone_iphone</span>
+      {% else -%}
+        <span class="material-symbols" aria-hidden="true">web</span>
+      {% endcase -%}
+      <span class="material-symbols" aria-hidden="true">add</span>
+      <span class="material-symbols" aria-hidden="true">phone_android</span>
+    </div>
+    <div class="card-header text-center">
+      <header class="card-title">
         Make Android and
         {% if target contains "iOS" -%}
         {{target}} apps on macOS
@@ -50,7 +49,6 @@ or the platform you already have set up.
         {%- else -%}
         {{target}} desktop apps
         {%- endif -%}
-        </span>
       </header>
     </div>
   </a>

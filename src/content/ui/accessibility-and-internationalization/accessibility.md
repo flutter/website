@@ -78,13 +78,9 @@ The following two screenshots show the standard Flutter app
 template rendered with the default iOS font setting,
 and with the largest font setting selected in iOS accessibility settings.
 
-<div class="row">
-  <div class="col-md-6">
-    {% render docs/app-figure.md, image:"a18n/app-regular-fonts.png", caption:"Default font setting", img-class:"border" %}
-  </div>
-  <div class="col-md-6">
-    {% render docs/app-figure.md, image:"a18n/app-large-fonts.png", caption:"Largest accessibility font setting", img-class:"border" %}
-  </div>
+<div class="wrapping-row">
+  {% render docs/app-figure.md, image:"a18n/app-regular-fonts.png", caption:"Default font setting", img-class:"simple-border", img-style:"max-height: 480px;" %}
+  {% render docs/app-figure.md, image:"a18n/app-large-fonts.png", caption:"Largest accessibility font setting", img-class:"simple-border", img-style:"max-height: 480px;" %}
 </div>
 
 ## Screen readers

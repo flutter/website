@@ -8,7 +8,7 @@
 
   color: $site-color-light-grey;
   font-weight: 400;
-  font-family: $site-font-family-alt;
+  font-family: $site-font-family-ui;
   font-size: 14px;
 
   .brand {
@@ -97,7 +97,7 @@
 
   a {
     color: $site-color-light-grey;
-    font-family: $site-font-family-alt;
+    font-family: $site-font-family-ui;
 
     &:hover, &:focus, &:active {
       color: $site-color-white;

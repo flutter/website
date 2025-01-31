@@ -32,8 +32,7 @@ As shown in the video, the following
 decision tree helps you decide what approach
 to use when implementing a Flutter animation:
 
-<img src='/assets/images/docs/ui/animations/animation-decision-tree.png'
-    alt="The animation decision tree" class="mw-100">
+<img src='/assets/images/docs/ui/animations/animation-decision-tree.png' alt="The animation decision tree">
 
 ## Animation deep dive
 

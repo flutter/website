@@ -391,8 +391,7 @@ dirty as necessary, so you don't need to call `addListener()`.
 The widget tree for the [animate4][]
 example looks like this:
 
-<img src="/assets/images/docs/ui/AnimatedBuilder-WidgetTree.png"
-    alt="AnimatedBuilder widget tree" class="d-block mx-auto" width="160px">
+{% render docs/app-figure.md, image:"ui/AnimatedBuilder-WidgetTree.png", alt:"AnimatedBuilder widget tree" %}
 
 Starting from the bottom of the widget tree, the code for rendering
 the logo is straightforward:

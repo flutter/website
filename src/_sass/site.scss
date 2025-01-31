@@ -1,34 +1,33 @@
-// -- Vars/config
-@use 'base/variables';
-@use 'base/material-colors';
+// Must be imported first to ensure that
+// the reset is applied before any other styles are applied.
+@use 'base/reset';
 
-// -- Vendor
-@use 'vendor/bootstrap';
-
-// -- Base
+// Base site styles.
 @use 'base/base';
+@use 'base/utils';
 
-// -- Components
-// (alpha ordered)
+// Styles for individual components or content types, alphabetically ordered.
 @use 'components/alert';
-@use 'components/banner';
 @use 'components/books';
+@use 'components/button';
+@use 'components/card';
 @use 'components/code';
 @use 'components/content';
 @use 'components/cookie-notice';
-@use 'components/d2h';
 @use 'components/expansion-list';
 @use 'components/footer';
 @use 'components/header';
-@use 'components/juicy-button';
+@use 'components/misc';
 @use 'components/next-prev-nav';
 @use 'components/pill';
 @use 'components/sidebar';
+@use 'components/tabs';
 @use 'components/toc';
 
-// -- Pages (alpha ordered)
+// Styles for specific pages, alphabetically ordered.
 @use 'pages/not-found';
 @use 'pages/search';
 
-// -- Overrides
+// Must be imported last to ensure that
+// the print overrides take priority over earlier defined styles.
 @use 'base/print-overrides';

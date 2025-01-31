@@ -38,7 +38,7 @@ Configure your physical iOS device to connect to Xcode.
 
 1. Click **Trust**.
 
-   ![Trust Mac][]{:.mw-100}
+   ![Trust Mac][]
 
 1. When prompted, unlock your iOS device.
 
@@ -119,7 +119,7 @@ To provision your project, follow the Xcode signing flow.
 
    The **Team** dropdown displays that option as **Your Name (Personal Team)**.
 
-   ![Xcode account add][]{:.mw-100}
+   ![Xcode account add][]
 
    After you select a team, Xcode performs the following tasks:
 
@@ -132,7 +132,7 @@ If automatic signing fails in Xcode, verify that the project's
 **Identity** <span aria-label="and then">></span>
 **Bundle Identifier** value is unique.
 
-![Check the app's Bundle ID][]{:.mw-100}
+![Check the app's Bundle ID][]
 
 ##### Enable trust of your Mac and iOS device {:#trust}
 
