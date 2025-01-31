@@ -1,57 +1,106 @@
 @use '../base/variables' as *;
-@use '../vendor/bootstrap';
 
-.site-footer {
-  background-color: $site-color-footer;
-  color: $site-color-white;
-  padding: bootstrap.bs-spacer(5) 0;
+#site-footer {
   position: relative;
-  z-index: bootstrap.$zindex-sticky;
+  z-index: 1000;
+  background-color: $site-color-footer;
+  padding: 32px;
 
-  &__logo {
-    height: 100px;
-    width: 81px;
+  color: $site-color-light-grey;
+  font-weight: 400;
+  font-family: $site-font-family-alt;
+  font-size: 14px;
+
+  .brand {
+    width: 176px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.125rem;
   }
 
-  &__wrapper {
-    align-items: center;
+  .footer-section {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    text-align: left;
 
-    @include bootstrap.media-breakpoint-up(sm) {
-      flex-direction: row;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      text-align: center;
     }
   }
 
-  &__content {
-    font-size: bootstrap.$font-size-sm;
-    margin: bootstrap.bs-spacer(5) 0;
+  .footer-main {
+    margin-bottom: 24px;
+    align-items: center;
+  }
+
+  .footer-tray {
+    border-top: 1px solid #82878c;
+    padding-top: 24px;
+
+    .footer-licenses {
+      width: 70%;
+      max-width: 720px;
+
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+    }
+  }
+
+  .footer-social-links {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
 
     a {
-      color: $site-color-white;
+      display: inline-flex;
+      text-align: center;
+      padding: 0.25rem;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      user-select: none;
+
+      svg {
+        height: 2rem;
+        width: 2rem;
+      }
     }
 
-    .licenses {
-      font-size: 10px;
-    }
-
-    @include bootstrap.media-breakpoint-up(sm) {
-      margin: 0 bootstrap.bs-spacer(5);
-      flex-grow: 1;
+    @media (max-width: 768px) {
+      margin-top: 24px;
     }
   }
 
-  &__link-list {
-    list-style: none;
+  ul {
+    list-style-type: none;
+    margin: 0;
     padding: 0;
 
     li {
-      &:not(:last-child):after {
-        content: '\2022'; // &bull;
-        padding-left: bootstrap.bs-spacer(1);
-      }
       display: inline;
-      padding-right: bootstrap.bs-spacer(1);
+      margin-left: 16px;
+    }
+
+    @media (max-width: 768px) {
+      margin-top: 12px;
+
+      li:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  a {
+    color: $site-color-light-grey;
+    font-family: $site-font-family-alt;
+
+    &:hover, &:focus, &:active {
+      color: $site-color-white;
     }
   }
 }

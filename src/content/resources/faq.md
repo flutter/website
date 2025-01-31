@@ -459,6 +459,13 @@ _Fast allocation_
 Flutter can run Dart code that doesn't directly or
 transitively import `dart:mirrors` or `dart:html`.
 
+### Can Flutter compile Dart to JavaScript?
+
+Flutter compiles Dart to JavaScript with the
+[`js.dart`][] package.
+
+[`js.dart`]: {{site.dart-site}}/tools/dart-compile#js
+
 ### How big is the Flutter engine?
 
 In March 2021, we measured the download size of a
@@ -521,11 +528,21 @@ between physical pixels and logical CSS pixels.
 
 ### What kind of app performance can I expect?
 
-You can expect excellent performance. Flutter is
-designed to help developers easily achieve a constant 60fps.
-Flutter apps run using natively compiled code&mdash;no
-interpreters are involved.
-This means that Flutter apps start quickly.
+In general, you can expect excellent performance. Flutter is designed to help
+developers easily achieve a constant 60fps. Flutter apps run using natively
+compiled code, so no interpreters are involved. This means that Flutter apps
+start quickly.
+
+Flutter's performance when using native code depends on your
+[app's architecture][]. For optimal performance, familiarize yourself with Flutter's
+[platform channels][]. These channels provide an asynchronous message-passing
+system for communicating with native code.
+
+To learn more about performance and Flutter, see the [Performance FAQ][].
+
+[platform channels]: /platform-integration/platform-channels
+[app's architecture]: /app-architecture
+[Performance FAQ]: /perf/faq
 
 ### What kind of developer cycles can I expect? How long between edit and refresh? {:#hot-reload}
 
@@ -715,17 +732,21 @@ if Dart can identify the code path at compile time.
 To date, we've found other approaches for specific needs
 that offer a better trade-off, such as code generation.
 
-### How do I do international&shy;ization (i18n), localization (l10n), and accessibility (a11y) in Flutter?
+### Are internationalization and localization supported?
 
-Learn more about i18n and l10n in the
-[internationalization tutorial][].
+Yes, Flutte`r supports internationalization (i18n) and localization (l10n) so
+that your apps are adaptable to different languages and cultures. You can
+learn more in the [internationalization documentation][].
 
-Learn more about a11y in the
-[accessibility documentation][].
+[internationalization documentation]: /ui/accessibility-and-internationalization/internationalization
 
+### What accessibility is supported?
+
+Flutter supports strict accessibility requirements (a11y). For example,
+screen readers, large text, color contrast, and hardware switch control are
+all supported. To learn more, see the [accessibility documentation][].
 
 [accessibility documentation]: /ui/accessibility-and-internationalization/accessibility
-[internationalization tutorial]: /ui/accessibility-and-internationalization/internationalization
 
 ### How do I write parallel and/or concurrent apps for Flutter?
 
@@ -746,7 +767,7 @@ iOS and Android. For more information, see the free Medium article
 
 [backgnd]: {{site.flutter-medium}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
 
-### Can I use JSON/XML/<wbr>protobuffers (and so on) with Flutter?
+### Can I use JSON/XML/<wbr>Protobufs (and so on) with Flutter?
 
 Absolutely. There are libraries on
 [pub.dev][] for JSON, XML, protobufs,
@@ -798,6 +819,14 @@ Chromebooks][].
 Flutter and Dart don't offer application binary interface (ABI)
 compatibility. Offering ABI compatibility is not a current
 goal for Flutter or Dart.
+
+### How does Flutter handle scrolling?
+
+A custom scrolling implementation is used for each app platform so that
+scrolling matches that platform's native scrolling look and feel. To learn
+more about scrolling with Flutter, see the [scrolling][] documentation.
+
+[scrolling]: /ui/layout/scrolling
 
 ## Framework
 

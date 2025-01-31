@@ -734,6 +734,8 @@
           permalink: /tools/devtools/cli
         - title: Flutter inspector
           permalink: /tools/devtools/inspector
+        - title: Legacy Flutter inspector
+          permalink: /tools/devtools/legacy-inspector
         - title: Performance view
           permalink: /tools/devtools/performance
         - title: CPU Profiler view
