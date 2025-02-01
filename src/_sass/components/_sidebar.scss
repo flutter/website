@@ -15,13 +15,17 @@ $sidenav-divider-color: #e7e8ed;
   display: none;
   width: 100%;
   z-index: 1010;
+  background-color: $site-color-white;
 
   @at-root body.open_menu {
     overflow-y: hidden;
 
+    @media (min-width: 1024px) {
+      overflow-y: auto;
+    }
+
     #sidenav {
       display: block;
-      background-color: $site-color-white;
     }
   }
 
@@ -33,6 +37,7 @@ $sidenav-divider-color: #e7e8ed;
     top: calc($site-header-height);
     overscroll-behavior: auto;
     width: 16rem;
+    background: none;
   }
 
   .nav-header {
