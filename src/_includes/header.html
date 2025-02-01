@@ -5,23 +5,47 @@
     Skip to main content
   </a>
   <nav class="navbar">
-    <button
-      id="menu-toggle"
-      class="icon-button"
-      type="button"
-      aria-controls="sidenav"
-      aria-label="Toggle navigation"
-      title="Toggle navigation">
-      <span class="material-symbols" aria-hidden="true">menu</span>
-    </button>
-
-    <a class="navbar-brand" href="/">
-      <img
-        src='/assets/images/branding/flutter/logo+text/horizontal/default.svg'
-        alt='Flutter logo'
-        height="37"
-        width="129">
-    </a>
+    <div id="site-switcher" class="dropdown">
+      <button class="dropdown-button site-wordmark">
+        <img src="/assets/images/branding/flutter/logo/default.svg" alt="Flutter logo" width="28">
+        <span>Flutter</span>
+        <span class="subtype">Docs</span>
+        <span class="material-symbols" aria-hidden="true">unfold_more</span>
+      </button>
+      <div class="dropdown-content">
+        <nav class="dropdown-menu">
+          <ul>
+            <li><a href="https://flutter.dev" class="site-wordmark" title="Flutter homepage">
+              <img src="/assets/images/branding/flutter/logo/default.svg" alt="Flutter logo" width="28">
+              <span>Flutter</span>
+            </a></li>
+            <li><a href="https://docs.flutter.dev" class="site-wordmark current-site" title="Flutter docs homepage">
+              <img src="/assets/images/branding/flutter/logo/default.svg" alt="Flutter logo" width="28">
+              <span>Flutter</span>
+              <span class="subtype">Docs</span>
+            </a></li>
+            <li><a href="https://api.flutter.dev" class="site-wordmark" title="Flutter API reference">
+              <img src="/assets/images/branding/flutter/logo/default.svg" alt="Flutter logo" width="28">
+              <span>Flutter</span>
+              <span class="subtype">API</span>
+            </a></li>
+            <li aria-hidden="true" class="dropdown-divider"></li>
+            <li><a href="https://dart.dev" class="site-wordmark" title="Dart homepage">
+              <img src="/assets/images/branding/dart/logo.svg" alt="Dart logo" width="28" height="28">
+              <span>Dart</span>
+            </a></li>
+            <li><a href="https://dartpad.dev" class="site-wordmark" title="DartPad playground">
+              <img src="/assets/images/branding/dart/logo.svg" alt="Dart logo" width="28" height="28">
+              <span>DartPad</span>
+            </a></li>
+            <li><a href="https://pub.dev" class="site-wordmark" title="pub.dev homepage">
+              <img src="/assets/images/branding/dart/logo.svg" alt="Dart logo" width="28" height="28">
+              <span>pub.dev</span>
+            </a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
 
     <div class="navbar-contents">
       <ul class="navbar-nav">
@@ -48,6 +72,15 @@
         <span class="material-symbols" aria-hidden="true">search</span>
       </a>
       <a id="call-to-action" class="filled-button" href="/get-started/install/">Get started</a>
+      <button
+          id="menu-toggle"
+          class="icon-button"
+          type="button"
+          aria-controls="sidenav"
+          aria-label="Toggle navigation"
+          title="Toggle navigation">
+        <span class="material-symbols" aria-hidden="true">menu</span>
+      </button>
     </div>
   </nav>
 </header>
