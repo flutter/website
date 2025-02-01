@@ -274,12 +274,14 @@ function setupSiteSwitcher() {
     return;
   }
 
-  console.log('hiiii');
+  function _closeMenusAndToggle() {
+    siteSwitcherMenu.classList.remove('show');
+    siteSwitcherButton.ariaExpanded = 'false';
+  }
 
   siteSwitcherButton.addEventListener('click', (_) => {
     if (siteSwitcherMenu.classList.contains('show')) {
-      siteSwitcherMenu.classList.remove('show');
-      siteSwitcherButton.ariaExpanded = 'false';
+      _closeMenusAndToggle();
     } else {
       siteSwitcherMenu.classList.add('show');
       siteSwitcherButton.ariaExpanded = 'true';
@@ -289,17 +291,21 @@ function setupSiteSwitcher() {
   document.addEventListener('keydown', (event) => {
     // If pressing the `esc` key in the menu area, close the menu.
     if (event.key === 'Escape' && event.target.closest('#site-switcher')) {
-      siteSwitcherMenu.classList.remove('show');
-      siteSwitcherButton.ariaExpanded = 'false';
+      _closeMenusAndToggle();
     }
   });
 
   siteSwitcher.addEventListener('focusout', (e) => {
-    console.log('focus out!!!');
     // If focus leaves the site-switcher, hide the menu.
     if (e.relatedTarget && !e.relatedTarget.closest('#site-switcher')) {
-      siteSwitcherMenu.classList.remove('show');
-      siteSwitcherButton.ariaExpanded = 'false';
+      _closeMenusAndToggle();
+    }
+  });
+
+  document.addEventListener('click', (event) => {
+    // If not clicking inside the site switcher, close the menu.
+    if (!event.target.closest('#site-switcher')) {
+      _closeMenusAndToggle();
     }
   });
 }
