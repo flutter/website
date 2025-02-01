@@ -26,7 +26,7 @@ button.dropdown-button {
 }
 
 .dropdown-content {
-  display: block;
+  display: none;
   position: absolute;
   background-color: var(--site-switcher-bg, #ffffff);
   box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.2);

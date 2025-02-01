@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function(_) {
 
   setupSearch();
   setupTabs();
+  setupSiteSwitcher();
 });
 
 function setupSidenavInteractivity() {
@@ -257,5 +258,48 @@ function setUpCodeBlockButtons() {
     }
 
     codeBlock.appendChild(buttonWrapper);
+  });
+}
+
+function setupSiteSwitcher() {
+  const siteSwitcher = document.getElementById('site-switcher');
+
+  if (!siteSwitcher) {
+    return;
+  }
+
+  const siteSwitcherButton = siteSwitcher.querySelector('.dropdown-button');
+  const siteSwitcherMenu = siteSwitcher.querySelector('#site-switcher-menu');
+  if (!siteSwitcherButton || !siteSwitcherMenu) {
+    return;
+  }
+
+  console.log('hiiii');
+
+  siteSwitcherButton.addEventListener('click', (_) => {
+    if (siteSwitcherMenu.classList.contains('show')) {
+      siteSwitcherMenu.classList.remove('show');
+      siteSwitcherButton.ariaExpanded = 'false';
+    } else {
+      siteSwitcherMenu.classList.add('show');
+      siteSwitcherButton.ariaExpanded = 'true';
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    // If pressing the `esc` key in the menu area, close the menu.
+    if (event.key === 'Escape' && event.target.closest('#site-switcher')) {
+      siteSwitcherMenu.classList.remove('show');
+      siteSwitcherButton.ariaExpanded = 'false';
+    }
+  });
+
+  siteSwitcher.addEventListener('focusout', (e) => {
+    console.log('focus out!!!');
+    // If focus leaves the site-switcher, hide the menu.
+    if (e.relatedTarget && !e.relatedTarget.closest('#site-switcher')) {
+      siteSwitcherMenu.classList.remove('show');
+      siteSwitcherButton.ariaExpanded = 'false';
+    }
   });
 }
