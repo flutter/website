@@ -14,12 +14,12 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    padding: .5rem 1rem;
+    padding: 0.5rem 0.75rem;
 
     min-height: $site-header-height;
 
     #menu-toggle {
-      margin-right: 0.75rem;
+      margin-left: 0.25rem;
 
       @media (min-width: 1024px) {
         display: none;
@@ -72,7 +72,7 @@
     padding: 0.5rem 1rem !important;
     display: none;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       display: unset;
     }
   }
