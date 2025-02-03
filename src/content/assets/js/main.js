@@ -253,9 +253,56 @@ function setUpCodeBlockButtons() {
   });
 }
 
+function setupSiteSwitcher() {
+  const siteSwitcher = document.getElementById('site-switcher');
+
+  if (!siteSwitcher) {
+    return;
+  }
+
+  const siteSwitcherButton = siteSwitcher.querySelector('.dropdown-button');
+  const siteSwitcherMenu = siteSwitcher.querySelector('#site-switcher-menu');
+  if (!siteSwitcherButton || !siteSwitcherMenu) {
+    return;
+  }
+
+  function _closeMenusAndToggle() {
+    siteSwitcherMenu.classList.remove('show');
+    siteSwitcherButton.ariaExpanded = 'false';
+  }
+
+  siteSwitcherButton.addEventListener('click', (_) => {
+    if (siteSwitcherMenu.classList.contains('show')) {
+      _closeMenusAndToggle();
+    } else {
+      siteSwitcherMenu.classList.add('show');
+      siteSwitcherButton.ariaExpanded = 'true';
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    // If pressing the `esc` key in the menu area, close the menu.
+    if (event.key === 'Escape' && event.target.closest('#site-switcher')) {
+      _closeMenusAndToggle();
+    }
+  });
+
+  siteSwitcher.addEventListener('focusout', (e) => {
+    // If focus leaves the site-switcher, hide the menu.
+    if (e.relatedTarget && !e.relatedTarget.closest('#site-switcher')) {
+      _closeMenusAndToggle();
+    }
+  });
+
+  document.addEventListener('click', (event) => {
+    // If not clicking inside the site switcher, close the menu.
+    if (!event.target.closest('#site-switcher')) {
+      _closeMenusAndToggle();
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function(_) {
-  adjustToc();
-  setupInlineToc();
   scrollSidenavIntoView();
   initCookieNotice();
 
@@ -263,5 +310,9 @@ document.addEventListener("DOMContentLoaded", function(_) {
   setUpCodeBlockButtons();
 
   setupSearch();
+  setupSiteSwitcher();
   setupTabs();
+
+  adjustToc();
+  setupInlineToc();
 });
