@@ -47,5 +47,5 @@ To include your course, [submit a PR][]:
 [Dart & Flutter - Zero to Mastery 2023 - Keiko Corp. Food Reviews App]: https://academy.zerotomastery.io/courses/2092303/lectures/47623876
 [Sticky Grouped Headers in Flutter]: https://academy.droidcon.com/course/sticky-grouped-headers-in-flutter
 [Flutter University - From Zero to Mastery]: https://www.fudeo.it/?utm_source=flutter_dev
-[Tech Idara - Flutter from Basic to Advance]: https://www.youtube.com/playlist?list=PLX97VxArfzkmXeUqUxeKW7XS8oYraH7A5
+[Tech Idara - Flutter from Basic to Advanced]: https://www.youtube.com/playlist?list=PLX97VxArfzkmXeUqUxeKW7XS8oYraH7A5
 [submit a PR]: {{site.repo.this}}/pulls
