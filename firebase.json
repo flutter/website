@@ -799,14 +799,6 @@
           {
             "key": "X-Content-Type-Options",
             "value": "nosniff"
-          },
-          {
-            "key": "Content-Security-Policy-Report-Only",
-            "value": "default-src 'self' https:; font-src 'self' data: https://fonts.googleapis.com/ https://fonts.gstatic.com/; img-src 'self' https: data:; manifest-src 'none'; object-src 'none'; script-src 'self' 'unsafe-inline' 'sha256-TLFf6uphGKcmsQh139FXW+zI8+m+KYC/3ai/rTu4NO0=' 'sha256-BOF631Nskv2A6eetluVBrNcDbYRYd/+b3wU9NBtGKGQ=' 'sha256-ye5TuohbcxBNy6HcVWdwfRHAUaHjKdBTXjRsm92zCdo=' 'sha256-GdPtwIl3lB8GPexRo/QmApVAGQ/y1zRYuxJPZTpT6TQ=' 'sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==' 'sha512-ubuT8Z88WxezgSqf3RLuNi5lmjstiJcyezx34yIU2gAHonIi27Na7atqzUZCOoY4CExaoFumzOsFQ2Ch+I/HCw==' 'sha512-7rusk8kGPFynZWu26OKbTeI+QPoYchtxsmPeBqkHIEXJxeun4yJ4ISYe7C6sz9wdxeE1Gk3VxsIWgCZTc+vX3g==' 'sha512-7O5pXpc0oCRrxk8RUfDYFgn0nO1t+jLuIOQdOMRp4APB7uZ4vSjspzp5y6YDtDs4VzUSTbWzBFZ/LKJhnyFOKw==' 'sha512-nlp9/l96/EpjYBx7EP7pGASVXNe80hGhYAUrjeXnu/fyF5Py0/RXav4BBNs7n5Hx1WFhOEOWSAVjGeC3oKxDVQ=='; style-src 'self' https://unpkg.com/ https://pub.dartlang.org/static/ 'unsafe-inline' https://fonts.googleapis.com/ https://gstatic.com https://www.gstatic.com/ https://tagmanager.google.com https://accounts.google.com/gsi/style; frame-src 'self' https://youtube.com https://*.youtube.com https://dartpad.dev https://*.dartpad.dev; media-src 'self' https://youtube.com https://*.youtube.com; require-trusted-types-for 'script'"
-          },
-          {
-            "key": "X-Frame-Options",
-            "value": "'SAMEORIGIN' always;"
           }
         ]
       }
