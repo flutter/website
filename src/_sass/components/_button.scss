@@ -30,13 +30,12 @@ a, button {
     width: fit-content;
     white-space: nowrap;
     outline-offset: 2px;
-
+    border-radius: 24px;
     font-weight: 500;
     padding: 0.5rem 1rem;
     background-color: $site-color-primary;
     color: $site-color-white;
     text-decoration: none;
-    border-radius: 0;
     cursor: pointer;
     user-select: none;
 
