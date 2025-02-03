@@ -43,8 +43,9 @@ This guide recommends you split your application into the following components:
 ### MVVM
 
 If you've encountered the [Model-View-ViewModel architectural pattern][] (MVVM),
-this will be familiar. MVVM is a architectural pattern that separates a feature of an
-application into three parts:
+this will be familiar.
+MVVM is an architectural pattern that separates a
+feature of an application into three parts:
 the `Model`, the `ViewModel` and the `View`.
 Views and view models make up the UI layer of an application.
 Repositories and services represent the data of an application,
