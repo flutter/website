@@ -91,6 +91,7 @@ workspace:
   - cookbook/testing/unit/mocking
   - cookbook/testing/widget/finders
   - cookbook/testing/widget/introduction
+  - cookbook/testing/widget/orientation_tests
   - cookbook/testing/widget/scrolling
   - cookbook/testing/widget/tap_drag
   - data-and-backend/json

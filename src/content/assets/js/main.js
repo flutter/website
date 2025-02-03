@@ -1,21 +1,13 @@
-document.addEventListener("DOMContentLoaded", function(_) {
-  adjustToc();
-  setupInlineToc();
-  scrollSidenavIntoView();
-  initCookieNotice();
-
-  setupSidenavInteractivity();
-  setUpCodeBlockButtons();
-
-  setupSearch();
-  setupTabs();
-  setupSiteSwitcher();
-});
-
 function setupSidenavInteractivity() {
   document.getElementById('menu-toggle')?.addEventListener('click', function (e) {
     e.stopPropagation();
     document.body.classList.toggle('open_menu');
+  });
+
+  window.addEventListener('resize', function() {
+    if (window.innerWidth >= 1024) {
+      document.body.classList.remove('open_menu');
+    }
   });
 
   document.addEventListener('keydown', function(event) {
@@ -309,3 +301,18 @@ function setupSiteSwitcher() {
     }
   });
 }
+
+document.addEventListener("DOMContentLoaded", function(_) {
+  scrollSidenavIntoView();
+  initCookieNotice();
+
+  setupSidenavInteractivity();
+  setUpCodeBlockButtons();
+
+  setupSearch();
+  setupSiteSwitcher();
+  setupTabs();
+
+  adjustToc();
+  setupInlineToc();
+});

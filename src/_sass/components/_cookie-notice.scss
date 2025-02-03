@@ -1,14 +1,15 @@
 @use '../base/variables' as *;
 
 #cookie-notice {
+  display: none;
+  justify-content: center;
   background-color: $site-color-white;
-  padding: 2rem;
+  padding: 1.5rem;
   position: fixed;
   bottom: 0;
   width: 100%;
   box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.3);
   opacity: 0;
-  display: none;
   z-index: 1060;
 
   @keyframes fadein {
@@ -20,12 +21,8 @@
     }
   }
 
-  button.filled-button {
-    font-size: 1rem;
-  }
-
   &.show {
-    display: block;
+    display: flex;
     animation-duration: 500ms;
     animation-delay: 200ms;
     animation-name: fadein;
