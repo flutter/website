@@ -9,8 +9,8 @@ toc: false
 
 
 
-<div class="row">
-<div class="col-md-6">
+<div class="side-by-side">
+<div>
 
 ## Find your way with Flutter!
 
@@ -25,8 +25,8 @@ how Flutter works.
 
 
 </div>
-<div class="col-md-6">
-  {% render docs/app-figure.md, img-class:"w-75", image:"fwe/dash-search.png", alt:"Dash with magnifying glass" %}
+<div class="centered-rows">
+  {% render docs/app-figure.md, image:"fwe/dash-search.png", alt:"Dash with magnifying glass", img-style: "max-height: 320px;"%}
 </div>
 </div>
 

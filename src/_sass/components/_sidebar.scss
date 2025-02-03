@@ -1,5 +1,5 @@
 @use '../base/variables' as *;
-@use '../base/utils';
+@use '../base/mixins';
 
 $sidenav-divider-color: #e7e8ed;
 
@@ -15,13 +15,17 @@ $sidenav-divider-color: #e7e8ed;
   display: none;
   width: 100%;
   z-index: 1010;
+  background-color: $site-color-white;
 
   @at-root body.open_menu {
     overflow-y: hidden;
 
+    @media (min-width: 1024px) {
+      overflow-y: auto;
+    }
+
     #sidenav {
       display: block;
-      background-color: $site-color-white;
     }
   }
 
@@ -33,6 +37,7 @@ $sidenav-divider-color: #e7e8ed;
     top: calc($site-header-height);
     overscroll-behavior: auto;
     width: 16rem;
+    background: none;
   }
 
   .nav-header {
@@ -89,7 +94,7 @@ $sidenav-divider-color: #e7e8ed;
       cursor: pointer;
 
       color: $site-color-body;
-      font-family: $site-font-family-alt, sans-serif;
+      font-family: $site-font-family-ui;
       text-decoration: none;
 
       &:focus-visible {
@@ -120,11 +125,11 @@ $sidenav-divider-color: #e7e8ed;
       }
 
       &:hover {
-        @include utils.interaction-style(3%);
+        @include mixins.interaction-style(3%);
       }
 
       &:active {
-        @include utils.interaction-style(5%);
+        @include mixins.interaction-style(5%);
       }
 
       &:not(.collapsed) {
@@ -155,17 +160,6 @@ $sidenav-divider-color: #e7e8ed;
 
     ul {
       margin-left: 0.675rem;
-    }
-  }
-
-  .navbar-nav {
-    display: none;
-
-    a.nav-link {
-      font-size: 1.125rem;
-      margin-top: 0.5rem;
-      margin-bottom: 0.5rem;
-      padding: 0.375rem 0.6rem;
     }
   }
 }

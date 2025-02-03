@@ -45,8 +45,7 @@ There are also three size variations for each:
 Each of these fifteen combinations of a category and text size are represented 
 by a single [`TextStyle`][]. 
 
-<img src='/assets/images/docs/development/ui/typography/typographical-scale.png' 
-class="mw-100" alt="Listing of typographical scale for Material TextTheme">
+<img src='/assets/images/docs/development/ui/typography/typographical-scale.png' alt="Listing of typographical scale for Material TextTheme">
 
 All the platform specific typographical scales that Flutter exposes are 
 contained in the [`Typography`][] class. Usually, you will not need to 
@@ -73,8 +72,7 @@ A growing number of fonts on Google Fonts offer some variable font capabilities.
 You can see the range of options by using the Type Tester and see how you 
 might vary a single font.
 
-<img src='/assets/images/docs/development/ui/typography/google-fonts-type-tester.png'
-class="mw-100" alt="Demonstration of varying aspects for Noto Sans with Lorem ipsum text">
+<img src='/assets/images/docs/development/ui/typography/google-fonts-type-tester.png' alt="Demonstration of varying aspects for Noto Sans with Lorem ipsum text">
 
 In real time, move the slider on any of the axes to
 see how it affects the font. When programming a variable font,

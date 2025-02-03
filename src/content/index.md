@@ -6,13 +6,15 @@ description: Get started with Flutter. Widgets, examples, updates, and API docs 
 
 <div class="card-grid">
 {% for card in docs_cards -%}
-    <a class="card" href="{{card.url}}">
-      <div class="card-body">
-        <header class="card-title">{{card.name}}</header>
-        <p class="card-text">{{card.description}}</p>
-      </div>
-    </a>
-{% endfor %}
+  <a class="card outlined-card" href="{{card.url}}">
+    <div class="card-header">
+      <header class="card-title">{{card.name}}</header>
+    </div>
+    <div class="card-content">
+      <p>{{card.description}}</p>
+    </div>
+  </a>
+{% endfor -%}
 </div>
 
 **To see changes to the site since our last release,
@@ -76,16 +78,16 @@ Learn more about `Stateless` and `Stateful`
 widgets in [What is State?][]
 
 <div class="card-grid">
-    <div class="card">
-        <div class="card-body">
-            {% ytEmbed 'xWV71C2kp38', 'Create your first Flutter app', true, true %}
-        </div>
+  <div class="card wrapped-card">
+    <div class="card-content">
+      {% ytEmbed 'xWV71C2kp38', 'Create your first Flutter app', true, true %}
     </div>
-    <div class="card">
-        <div class="card-body">
-            {% ytEmbed 'QlwiL_yLh6E', 'What is state?', true, true %}
-        </div>
+  </div>
+  <div class="card wrapped-card">
+    <div class="card-content">
+      {% ytEmbed 'QlwiL_yLh6E', 'What is state?', true, true %}
     </div>
+  </div>
 </div>
 
 [first-app]: {{site.yt.watch}}?v=xWV71C2kp38
@@ -103,16 +105,16 @@ using helper methods][standalone-widgets] or
 [what is "BuildContext" and how is it used][buildcontext]?
 
 <div class="card-grid">
-    <div class="card">
-        <div class="card-body">
-            {% ytEmbed 'IOyq-eTRhvo', 'Widgets vs helper methods | Decoding Flutter', true, true %}
-        </div>
+  <div class="card wrapped-card">
+    <div class="card-content">
+      {% ytEmbed 'IOyq-eTRhvo', 'Widgets vs helper methods | Decoding Flutter', true, true %}
     </div>
-    <div class="card">
-        <div class="card-body">
-            {% ytEmbed 'rIaaH87z1-g', 'BuildContext?! | Decoding Flutter', true, true %}
-        </div>
+  </div>
+  <div class="card wrapped-card">
+    <div class="card-content">
+      {% ytEmbed 'rIaaH87z1-g', 'BuildContext?! | Decoding Flutter', true, true %}
     </div>
+  </div>
 </div>
 
 [standalone-widgets]: {{site.yt.watch}}?v=IOyq-eTRhvo
@@ -123,6 +125,6 @@ see our [videos][] page.
 
 We release new videos almost every week on the Flutter YouTube channel:
 
-<a class="btn btn-primary" target="_blank" href="https://www.youtube.com/@flutterdev">Explore more Flutter videos</a>
+<a class="filled-button" target="_blank" href="https://www.youtube.com/@flutterdev">Explore more Flutter videos</a>
 
 [videos]: /resources/videos

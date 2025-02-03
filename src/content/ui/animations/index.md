@@ -32,8 +32,7 @@ As shown in the video, the following
 decision tree helps you decide what approach
 to use when implementing a Flutter animation:
 
-<img src='/assets/images/docs/ui/animations/animation-decision-tree.png'
-    alt="The animation decision tree" class="mw-100">
+<img src='/assets/images/docs/ui/animations/animation-decision-tree.png' alt="The animation decision tree">
 
 ## Animation deep dive
 
@@ -97,9 +96,10 @@ that defines the timing and speed of the transition.
 The framework calculates how to transition from the beginning point
 to the end point.
 
-The documents listed above, such as the
-[Animations tutorial][], are not specifically
-about tweening, but they use tweens in their examples.
+* See the [Animations tutorial][], which uses tweens in the examples.
+
+* Also see the API documentation for [`Tween`][], [`CurveTween`][], and
+  [`TweenSequence`][].
 
 ### Physics-based animation
 
@@ -214,9 +214,13 @@ as a non-linear curve.
 animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
 ```
 
-:::note
-The [`Curves`][] class defines many commonly used curves,
-or you can create your own. For example:
+`CurvedAnimation` and `AnimationController` (described in the next sections)
+are both of type `Animation<double>`, so you can pass them interchangeably.
+The `CurvedAnimation` wraps the object it's modifying&mdash;you
+don't subclass `AnimationController` to implement a curve.
+
+You can use [`Curves`][] with `CurvedAnimation`. The `Curves` class defines
+many commonly used curves, or you can create your own. For example:
 
 <?code-excerpt "animation/animate5/lib/main.dart (ShakeCurve)" plaster="none"?>
 ```dart
@@ -228,14 +232,8 @@ class ShakeCurve extends Curve {
 }
 ```
 
-Browse the [`Curves`] documentation for a complete listing
-(with visual previews) of the `Curves` constants that ship with Flutter.
-:::
-
-`CurvedAnimation` and `AnimationController` (described in the next sections)
-are both of type `Animation<double>`, so you can pass them interchangeably.
-The `CurvedAnimation` wraps the object it's modifying&mdash;you
-don't subclass `AnimationController` to implement a curve.
+If you want to apply an animation curve to a `Tween`, consider using
+[`CurveTween`][].
 
 ### AnimationController
 
@@ -455,6 +453,7 @@ Learn more about Flutter animations at the following links:
 [Creating custom explicit animations with AnimatedBuilder and AnimatedWidget]: {{site.yt.watch}}?v=fneC7t4R_B0&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=4
 [`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
 [`CurvedAnimation`]: {{site.api}}/flutter/animation/CurvedAnimation-class.html
+[`CurveTween`]: {{site.api}}/flutter/animation/CurveTween-class.html
 [`evaluate(Animation<double> animation)`]: {{site.api}}/flutter/animation/Animation/value.html
 [Flutter API documentation]: {{site.api}}
 [`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html
@@ -471,5 +470,6 @@ Learn more about Flutter animations at the following links:
 [`SpringSimulation`]: {{site.api}}/flutter/physics/SpringSimulation-class.html
 [Staggered Animations]: /ui/animations/staggered-animations
 [`Tween`]: {{site.api}}/flutter/animation/Tween-class.html
+[`TweenSequence`]: {{site.api}}/flutter/animation/TweenSequence-class.html
 [Write your first Flutter app on the web]: /get-started/codelab-web
 [Zero to One with Flutter, part 1]: {{site.medium}}/dartlang/zero-to-one-with-flutter-43b13fd7b354
