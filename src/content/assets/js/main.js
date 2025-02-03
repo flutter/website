@@ -4,6 +4,12 @@ function setupSidenavInteractivity() {
     document.body.classList.toggle('open_menu');
   });
 
+  window.addEventListener('resize', function() {
+    if (window.innerWidth >= 1024) {
+      document.body.classList.remove('open_menu');
+    }
+  });
+
   document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
       const activeElement = document.activeElement;
