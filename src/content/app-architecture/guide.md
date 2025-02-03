@@ -42,16 +42,17 @@ This guide recommends you split your application into the following components:
 
 ### MVVM
 
-If you've encountered the [Model-View-ViewModel design pattern][] (MVVM),
-this will be familiar. MVVM is a design pattern that separates a feature of an
-application into three parts:
+If you've encountered the [Model-View-ViewModel architectural pattern][] (MVVM),
+this will be familiar.
+MVVM is an architectural pattern that separates a
+feature of an application into three parts:
 the `Model`, the `ViewModel` and the `View`.
 Views and view models make up the UI layer of an application.
 Repositories and services represent the data of an application,
 or the model layer of MVVM.
 Each of these components is defined in the next section.
 
-<img src='/assets/images/docs/app-architecture/guide/mvvm-intro-with-layers.png' alt="MVVM design pattern">
+<img src='/assets/images/docs/app-architecture/guide/mvvm-intro-with-layers.png' alt="MVVM architectural pattern">
 
 Every feature in an application will contain one view to describe the UI and
 one view model to handle logic,
@@ -75,6 +76,8 @@ UI layer and data layer. This logic layer is commonly called the *domain layer.*
 The domain layer contains additional components often called *interactors* or
 *use-cases*. The domain layer is covered later in this guide.
 :::
+
+[Model-View-ViewModel architectural pattern]: https://en.wikipedia.org/wiki/Model–view–viewmodel
 
 ## UI layer
 
@@ -338,7 +341,6 @@ This approach is flexible and extendable,
 but it requires greater diligence to maintain order.
 
 [Separation-of-concerns]: https://en.wikipedia.org/wiki/Separation_of_concerns
-[Model-View-ViewModel design pattern]: https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel
 [command pattern]: https://en.wikipedia.org/wiki/Command_pattern
 [Repository]: https://martinfowler.com/eaaCatalog/repository.html
 
