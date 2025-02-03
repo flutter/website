@@ -42,7 +42,7 @@ This guide recommends you split your application into the following components:
 
 ### MVVM
 
-If you've encountered the [Model-View-ViewModel architectural pattern](https://en.wikipedia.org/wiki/Model–view–viewmodel) (MVVM),
+If you've encountered the [Model-View-ViewModel architectural pattern][] (MVVM),
 this will be familiar. MVVM is a architectural pattern that separates a feature of an
 application into three parts:
 the `Model`, the `ViewModel` and the `View`.
@@ -75,6 +75,8 @@ UI layer and data layer. This logic layer is commonly called the *domain layer.*
 The domain layer contains additional components often called *interactors* or
 *use-cases*. The domain layer is covered later in this guide.
 :::
+
+[Model-View-ViewModel architectural pattern]: https://en.wikipedia.org/wiki/Model–view–viewmodel
 
 ## UI layer
 
@@ -338,7 +340,6 @@ This approach is flexible and extendable,
 but it requires greater diligence to maintain order.
 
 [Separation-of-concerns]: https://en.wikipedia.org/wiki/Separation_of_concerns
-[Model-View-ViewModel design pattern]: https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel
 [command pattern]: https://en.wikipedia.org/wiki/Command_pattern
 [Repository]: https://martinfowler.com/eaaCatalog/repository.html
 
