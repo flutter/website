@@ -5,32 +5,24 @@ description: Learn how to write integration tests
 
 <?code-excerpt path-base="testing/integration_tests/how_to"?>
 
-This recipe describes how to use the
-[`integration_test`][] package to run integration tests.
-The Flutter SDK includes the `integration_test` package.
-Integration tests using this package have the following
-properties.
+## Introduction
 
-* Use the `flutter drive` command to run tests
-  on a physical device or emulator.
-* Run on [Firebase Test Lab][],
-  to automate testing on a variety of devices.
-* Use [flutter_test][] APIs to enable tests to be written in a style similar to [widget tests][]
+This guide describes how to run integration tests with your Flutter app. With
+it, you'll learn how to do the following:
 
-In this recipe, learn how to test a counter app.
+* Set up integration tests.
+* Verify if an app displays specific text.
+* Tap specific widgets.
+* Run integration tests.
 
-* how to set up integration tests
-* how to verify if an app displays specific text
-* how to tap specific widgets
-* how to run integration tests
+The guide references the `counter_app` project that comes with
+Flutter and the Flutter [`integration_test`][] package. The
+`integration_test` package lets you:
 
-This recipe uses the following steps:
-
-  1. Create an app to test.
-  2. Add the `integration_test` dependency.
-  3. Create the test files.
-  4. Write the integration test.
-  5. Run the integration test.
+* Use the `flutter drive` command to run tests on a physical device or emulator.
+* Run on [Firebase Test Lab][], to automate testing on a variety of devices.
+* Use [flutter_test][] APIs to write tests in a style similar to
+  [widget tests][].
 
 ## Create a new app to test
 
@@ -337,12 +329,41 @@ Based on platform, the command result should resemble the following output.
 
 ---
 
-### Test on a mobile device
+### Test on an Android device
 
-To test on a real iOS or Android device,
+To test on a real Android device,
 complete the following tasks.
 
-1. Connect the device.
+1.  Connect the Android device.
+
+1.  Run the following command from the root of the project.
+
+    ```console
+    $ flutter test integration_test/app_test.dart
+    ```
+
+    The result should resemble the following output.
+
+    ```console
+    $ flutter test integration_test/app_test.dart
+    00:04 +0: loading /path/to/counter_app/integration_test/app_test.dart
+    00:15 +0: loading /path/to/counter_app/integration_test/app_test.dart
+    00:18 +0: loading /path/to/counter_app/integration_test/app_test.dart   2,387ms
+    Installing build/app/outputs/flutter-apk/app.apk...  612ms
+    00:21 +1: All tests passed!
+    ```
+
+1.  Verify that the test removed the Counter App when it finished.
+    If not, subsequent tests fail. If needed, press on the app and choose
+    **Remove App** from the context menu.
+
+---
+
+### Test on an iOS device
+
+To test on a real iOS device, complete the following tasks.
+
+1. Connect the iOS device.
 
 1. Run the following command from the root of the project.
 
@@ -350,7 +371,7 @@ complete the following tasks.
    $ flutter test integration_test/app_test.dart
    ```
 
-   The result should resemble the following output. This example uses iOS.
+   The result should resemble the following output.
 
    ```console
    $ flutter test integration_test/app_test.dart
@@ -479,15 +500,99 @@ To learn more, see the
 
 ---
 
-### Test using the Firebase Test Lab
+### Test in Firebase Test Lab (Android)
 
-To test both Android and iOS targets,
-you can use the Firebase Test Lab.
+You can use Firebase Test Lab to test Android targets.
 
 #### Android setup
 
 Follow the instructions in the [Android Device Testing][]
 section of the README.
+
+#### Test Lab project setup
+
+1. Launch your [Firebase Console][].
+
+1. Create a new Firebase project if necessary.
+
+1. Navigate to **Quality > Test Lab**.
+
+   <img src='/assets/images/docs/integration-test/test-lab-1.png' alt="Firebase Test Lab Console">
+
+#### Upload an Android APK
+
+Complete the following steps to upload an Android APK.
+
+1.  Create an APK using Gradle.
+
+    ```console
+    // Go to the Android directory which contains the gradlew script
+    $ pushd android
+
+    // Build the APK for Flutter with gradlew 
+    $ flutter build apk
+
+    // Build an Android test APK
+    $ ./gradlew app:assembleAndroidTest
+
+    // Build a debug APK by passing in an integration test
+    $ ./gradlew app:assembleDebug -Ptarget=integration_test/<name>_test.dart
+    ```
+
+    *  `<name>_test.dart`: The file created in the **Project Setup** section.
+
+  1.  If needed, pass parameters into the integration test as a comma-separated
+      list. Encode all parameters as `base64`.
+
+      ```console
+      $ ./gradlew project:task --defines="{base64 (key=value)}[, ...]"
+      ```
+
+      * `(key=value)}[, ...]`: Replace this with a comma-separated list of
+        key value pairs.
+
+  1.  Return to your previous directory.
+
+      ```console
+      $ popd
+      ```
+
+For additional instructions, see the
+[Firebase Test Lab section of the README][].
+
+#### Start Robo test
+
+To use Robo test to run integration tests, complete the following steps.
+
+1.  Drag the debug APK from
+    `<flutter_project_directory>/build/app/outputs/apk/debug`
+    into the **Android Robo Test** target on the web page. For example:
+
+    <img src='/assets/images/docs/integration-test/test-lab-2.png' alt="Firebase Test Lab upload">
+
+1.  Click **Run a test**.
+
+1.  Select the **Instrumentation** test type.
+
+1.  Add the App APK to the **App APK or AAB** box.
+
+    `<flutter_project_directory>/build/app/outputs/apk/debug/<file>.apk`
+
+1.  Add the Test APK to the **Test APK** box.
+
+    `<flutter_project_directory>/build/app/outputs/apk/androidTest/debug/<file>.apk`
+
+    <img src='/assets/images/docs/integration-test/test-lab-3.png' alt="Firebase Test Lab upload two APKs">
+
+1.  If a failure occurs, click the red icon to view the output:
+
+    <img src='/assets/images/docs/integration-test/test-lab-4.png' alt="Firebase Test Lab test results">
+
+---
+
+### Test in Firebase Test Lab (iOS)
+
+You can use Firebase Test Lab to test iOS targets.
 
 #### iOS setup
 
@@ -504,73 +609,15 @@ section of the README.
 
    <img src='/assets/images/docs/integration-test/test-lab-1.png' alt="Firebase Test Lab Console">
 
-#### Upload an Android APK
+#### Upload Xcode tests through the Firebase Console
 
-1. Create an APK using Gradle.
+To learn how to upload tests from a ZIP file, using the
+Firebase Test Lab Console, consult the [Firebase Test Lab iOS instructions][].
 
-   ```console
-   $ pushd android
-   # flutter build generates files in android/ for building the app
-   flutter build apk
-   ./gradlew app:assembleAndroidTest
-   ./gradlew app:assembleDebug -Ptarget=integration_test/<name>_test.dart
-   $ popd
-   ```
+#### Upload Xcode tests to Firebase Console with the command line
 
-   Where `<name>_test.dart` is the file created in the
-   **Project Setup** section.
-
-:::note
-To use `--dart-define` with `gradlew:
-
-1. Encode all parameters with `base64`.
-1. Pass the parameters to gradle in a comma-separated list.
-
-   ```console
-   ./gradlew project:task -Pdart-defines="{base64   (key=value)},[...]"
-   ```
-
-:::
-
-To start a Robo test and run other tests, drag the "debug" APK from
-`<flutter_project_directory>/build/app/outputs/apk/debug`
-into the **Android Robo Test** target on the web page.
-
-<img src='/assets/images/docs/integration-test/test-lab-2.png' alt="Firebase Test Lab upload">
-
-1. Click **Run a test**.
-
-1. Select the **Instrumentation** test type.
-
-1. Add the App APK to the **App APK or AAB** box.
-
-   `<flutter_project_directory>/build/app/outputs/apk/debug/<file>.apk`
-
-1. Add the Test APK to the **Test APK** box.
-
-   `<flutter_project_directory>/build/app/outputs/apk/androidTest/debug/<file>.apk`
-
-<img src='/assets/images/docs/integration-test/test-lab-3.png' alt="Firebase Test Lab upload two APKs">
-
-If a failure occurs, click the red icon to view the output:
-
-<img src='/assets/images/docs/integration-test/test-lab-4.png' alt="Firebase Test Lab test results">
-
-#### Upload an Android APK from the command line
-
-See the [Firebase Test Lab section of the README][]
-for instructions on uploading the APKs from the command line.
-
-#### Upload Xcode tests
-
-To learn how to upload the .zip file,
-consult the [Firebase TestLab iOS instructions][]
-on the Firebase TestLab section of the Firebase Console.
-
-#### Upload Xcode tests from the command line
-
-To learn how to upload the .zip file from the command line,
-consult the [iOS Device Testing][] section in the README.
+To learn how to upload tests from a ZIP file from the command line to the
+Firebase Test Lab Console, consult the [iOS Device Testing instructions][].
 
 [`integration_test`]: {{site.repo.flutter}}/tree/main/packages/integration_test#integration_test
 [Android Device Testing]: {{site.repo.flutter}}/tree/main/packages/integration_test#android-device-testing
@@ -580,13 +627,12 @@ consult the [iOS Device Testing][] section in the README.
 [Firebase Console]: http://console.firebase.google.com/
 [Firebase Test Lab section of the README]: {{site.repo.flutter}}/tree/main/packages/integration_test#firebase-test-lab
 [Firebase Test Lab]: {{site.firebase}}/docs/test-lab
-[Firebase TestLab iOS instructions]: {{site.firebase}}/docs/test-lab/ios/firebase-console
+[Firebase Test Lab iOS instructions]: {{site.firebase}}/docs/test-lab/ios/firebase-console
 [flutter_test]: {{site.api}}/flutter/flutter_test/flutter_test-library.html
 [Integration testing]: /testing/integration-tests
-[iOS Device Testing]: {{site.repo.flutter}}/tree/main/packages/integration_test#ios-device-testing
+[iOS Device Testing instructions]: {{site.repo.flutter}}/tree/main/packages/integration_test#ios-device-testing
 [Running Flutter driver tests with web]: {{site.repo.flutter}}/blob/main/docs/contributing/testing/Running-Flutter-Driver-tests-with-Web.md
 [widget tests]: /testing/overview#widget-tests
-
 [flutter_driver]: {{site.api}}/flutter/flutter_driver/flutter_driver-library.html
 [integration_test usage]: {{site.repo.flutter}}/tree/main/packages/integration_test#usage
 [samples]: {{site.repo.samples}}
