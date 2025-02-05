@@ -183,7 +183,7 @@ in [step 3.3][] once `gen_snapshot` produces the loading units.
 ### Step 2: Implementing deferred Dart libraries
 
 Next, implement deferred loaded Dart libraries in your
-app's Dart code. The implementation does not need
+app's Dart code. The implementation doesn't need
 to be feature complete yet. The example in the
 rest of this page adds a new simple deferred widget
 as a placeholder. You can also convert existing code
@@ -328,13 +328,13 @@ entry in `pubspec.yaml`.
 The `flutter build appbundle` command
 runs the validator and attempts to build the app with
 `gen_snapshot` instructed to produce split AOT shared libraries
-as separate `.so` files. On the first run, the validator will
+as separate SO files. On the first run, the validator will
 likely fail as it detects issues; the tool makes
 recommendations for how to set up the project and fix these issues.
 
 The validator is split into two sections: prebuild
 and post-gen_snapshot validation. This is because any
-validation referencing loading units cannot be performed
+validation referencing loading units can't be performed
 until `gen_snapshot` completes and produces a final set
 of loading units.
 
@@ -345,7 +345,7 @@ app without the validator by passing the
 This can result in unexpected and confusing
 instructions to resolve failures.
 This flag is meant to be used in
-custom implementations that do not rely on the default
+custom implementations that don't rely on the default
 Play-store-based implementation that the validator checks for.
 :::
 
@@ -385,8 +385,8 @@ For example:
 An Android dynamic feature module for
 each deferred component exists and contains a `build.gradle`
 and `src/main/AndroidManifest.xml` file.
-This only checks for existence and does not validate
-the contents of these files. If a file does not exist,
+This only checks for existence and doesn't validate
+the contents of these files. If a file doesn't exist,
 it generates a default recommended one.
 
 </li>
@@ -474,14 +474,14 @@ flutter:
 ```
 
 To assign a loading unit to a deferred component,
-add any Dart lib in the loading unit into the
+add any Dart library in the loading unit into the
 libraries section of the feature module.
 Keep the following guidelines in mind:
 
 <ul>
 <li>
 
-Loading units should not be included
+Loading units shouldn't be included
 in more than one component.
 
 </li>
@@ -538,7 +538,7 @@ Assets-only components can also be defined by omitting the
 libraries section. These assets-only components must be
 installed with the [`DeferredComponent`][] utility class in
 services rather than `loadLibrary()`.
-Since Dart libs are packaged together with assets,
+Since Dart libraries are packaged together with assets,
 if a Dart library is loaded with `loadLibrary()`,
 any assets in the component are loaded as well.
 However, installing by component name and the services utility
@@ -578,7 +578,7 @@ runs without further recommendations.
 When successful, this command outputs an `app-release.aab`
 file in `build/app/outputs/bundle/release`.
 
-A successful build does not always mean the app was
+A successful build doesn't always mean the app was
 built as intended. It is up to you to ensure that all loading
 units and Dart libraries are included in the way you intended.
 For example, a common mistake is accidentally importing a
@@ -586,7 +586,7 @@ Dart library without the `deferred` keyword,
 resulting in a deferred library being compiled as part of
 the base loading unit. In this case, the Dart library would
 load properly because it is always present in the base,
-and the library would not be split off. This can be checked
+and the library wouldn't be split off. This can be checked
 by examining the `deferred_components_loading_units.yaml`
 file to verify that the generated loading units are described
 as intended.
@@ -639,7 +639,7 @@ unless it detects a new version number.
 
 The built AAB file can be uploaded directly to
 the Play store as normal. When `loadLibrary()` is called,
-the needed Android module containing the Dart AOT lib and
+the needed Android module containing the Dart AOT library and
 assets is downloaded by the Flutter engine using the
 Play store's delivery feature.
 
