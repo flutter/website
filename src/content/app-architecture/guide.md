@@ -42,16 +42,17 @@ This guide recommends you split your application into the following components:
 
 ### MVVM
 
-If you've encountered the [Model-View-ViewModel design pattern][] (MVVM),
-this will be familiar. MVVM is a design pattern that separates a feature of an
-application into three parts:
+If you've encountered the [Model-View-ViewModel architectural pattern][] (MVVM),
+this will be familiar.
+MVVM is an architectural pattern that separates a
+feature of an application into three parts:
 the `Model`, the `ViewModel` and the `View`.
 Views and view models make up the UI layer of an application.
 Repositories and services represent the data of an application,
 or the model layer of MVVM.
 Each of these components is defined in the next section.
 
-<img src='/assets/images/docs/app-architecture/guide/mvvm-intro-with-layers.png' alt="MVVM design pattern">
+<img src='/assets/images/docs/app-architecture/guide/mvvm-intro-with-layers.png' alt="MVVM architectural pattern">
 
 Every feature in an application will contain one view to describe the UI and
 one view model to handle logic,
@@ -72,9 +73,11 @@ the following simplified version of that diagram will be used as an anchor.
 :::note
 Apps with complex logic might also have a logic layer that sits in between the
 UI layer and data layer. This logic layer is commonly called the *domain layer.*
-The domain layer contains additional components called often interactors or
-use-cases. The domain layer is covered later in this guide.
+The domain layer contains additional components often called *interactors* or
+*use-cases*. The domain layer is covered later in this guide.
 :::
+
+[Model-View-ViewModel architectural pattern]: https://en.wikipedia.org/wiki/Model–view–viewmodel
 
 ## UI layer
 
@@ -92,12 +95,12 @@ The UI layer is made up of two architectural components,
 based on the MVVM design pattern:
 
 * **Views** describe how to present application data to the user.
-  Specifically, it refers to a *composition of widgets* that make a feature.
+  Specifically, they refer to *compositions of widgets* that make a feature.
   For instance, a view is often (but not always) a screen that
   has a `Scaffold` widget, along with
   all of the widgets below it in the widget tree.
   Views are also responsible for passing events to
-  the view model in response to user interaction.
+  the view model in response to user interactions.
 * **View models** contain the logic that converts app data into *UI State*,
   because data from repositories is often formatted differently from
   the data that needs to be displayed.
@@ -118,12 +121,12 @@ and you can test the logic of your UI independently of Flutter widgets.
 'View' is an abstract term, and one view doesn't equal one widget.
 Widgets are composable, and several can be combined to create one view.
 Therefore, view models don't have a 1-to-1 relationship with widgets,
-but rather a 1-to-1 relation with a *collection* of widgets.
+but rather a 1-to-1 relationship with a *collection* of widgets.
 :::
 
 A feature of an application is user centric,
 and therefore defined by the UI layer.
-Every instance of a pair of view and view model defines one feature in your app.
+Every instance of a paired *view* and *view model* defines one feature in your app.
 This is often a screen in your app, but it doesn't have to be.
 For example, consider logging in and out.
 Logging in is generally done on a specific screen whose
@@ -136,7 +139,7 @@ logging out of an app is generally not done on a dedicated screen.
 The ability to log out is generally presented to the user as a button in
 a menu, a user account screen, or any number of different locations.
 It's often presented in multiple locations.
-In that scenario, you might have a `LogoutViewModel` and a `LogoutView` which
+In such scenarios, you might have a `LogoutViewModel` and a `LogoutView` which
 only contains a single button that can be dropped into other widgets.
 
 ### Views
@@ -180,7 +183,7 @@ A view model's main responsibilities include:
   attached to an event handler, like a button press or form submission.
 
 Commands are named for the [command pattern][],
-and are Dart functions that allow the views to
+and are Dart functions that allow views to
 execute complex logic without knowledge of its implementation.
 Commands are written as members of the view model class to
 be called by the gesture handlers in the view class.
@@ -199,7 +202,7 @@ check out the [state management fundamentals][].
 
 The data layer of an app handles your business data and logic.
 Two pieces of architecture make up the data layer: services and repositories.
-These pieces should have well defined inputs and outputs
+These pieces should have well-defined inputs and outputs
 to simplify their reusability and testability.
 
 <img src='/assets/images/docs/app-architecture/guide/feature-architecture-simplified-Data-highlighted.png' alt="A simplified diagram of the architecture described on this page with the Data layer highlighted.">
@@ -317,7 +320,7 @@ A good approach is to add use-cases only when needed.
 If you find that your view models are
 accessing data through use-cases most of the time,
 you can always refactor your code to utilize use-cases exclusively.
-The example app used later in this guide uses use-cases for some features,
+The example app used later in this guide has use-cases for some features,
 but also has view models that interact with repositories directly.
 A complex feature may ultimately end up looking like this:
 
@@ -338,7 +341,6 @@ This approach is flexible and extendable,
 but it requires greater diligence to maintain order.
 
 [Separation-of-concerns]: https://en.wikipedia.org/wiki/Separation_of_concerns
-[Model-View-ViewModel design pattern]: https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel
 [command pattern]: https://en.wikipedia.org/wiki/Command_pattern
 [Repository]: https://martinfowler.com/eaaCatalog/repository.html
 

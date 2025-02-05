@@ -2388,7 +2388,7 @@ In Flutter, access this functionality using the
 For more information on using the Firebase Cloud Messaging API,
 see the [`firebase_messaging`][] plugin documentation.
 
-[Flutter for Jetpack Compose devs]: /flutter-for/compose-devs
+[Flutter for Jetpack Compose devs]: /get-started/flutter-for/compose-devs
 [Add Flutter to existing app]: /add-to-app
 [Animation & Motion widgets]: /ui/widgets/animation
 [Animations tutorial]: /ui/animations/tutorial
