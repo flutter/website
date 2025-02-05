@@ -596,8 +596,7 @@ You can use Firebase Test Lab to test iOS targets.
 
 #### iOS setup
 
-Follow the instructions in the [iOS Device Testing][]
-section of the README.
+Follow the [iOS Device Testing instructions][].
 
 #### Test Lab project setup
 
