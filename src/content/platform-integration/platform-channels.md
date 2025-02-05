@@ -8,14 +8,17 @@ description: Learn how to write custom platform-specific code in your app.
 
 This guide describes how to write custom platform-specific code.
 Some platform-specific functionality is available
-through existing packages;
-see [using packages][].
+through existing packages. For more information,
+visit [using packages][].
 
 [using packages]: /packages-and-plugins/using-packages
 
 :::note
-The information in this page is valid for most platforms,
-but platform-specific code for the web generally uses
+Starting in 3.29, Flutter on Android and iOS execute Dart code
+on the application’s main thread,
+and there is no longer a separate UI thread. 
+
+Platform-specific code for the web generally uses
 [JS interoperability][] or the [`dart:html` library][] instead.
 :::
 
@@ -29,7 +32,7 @@ with those APIs:
 * Objective-C on macOS
 * C on Linux
 
-Flutter's builtin platform-specific API support
+Flutter's built-in platform-specific API support
 doesn't rely on code generation,
 but rather on a flexible message passing style.
 Alternatively, you can use the [Pigeon][pigeon]
@@ -1312,7 +1315,7 @@ public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
 In Swift:
 
 :::note
-In release 2.10, the Task Queue API is only available on the `master` channel
+In release 2.10, the Task Queue API is only available on the `main` channel
 for iOS.
 :::
 
@@ -1331,7 +1334,7 @@ public static func register(with registrar: FlutterPluginRegistrar) {
 In Objective-C:
 
 :::note
-In release 2.10, the Task Queue API is only available on the `master` channel
+In release 2.10, the Task Queue API is only available on the `main` channel
 for iOS.
 :::
 

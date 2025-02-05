@@ -38,6 +38,12 @@ steps to take, and tools that can help.
 
 ## Diagnosing performance problems
 
+:::note                              
+Starting in 3.29, Flutter on Android and iOS execute Dart code
+on the application’s main thread,
+and there is no longer a separate UI thread. 
+:::
+
 To diagnose an app with performance problems, you'll enable
 the performance overlay to look at the UI and raster threads.
 Before you begin, make sure that you're running in
