@@ -32,7 +32,7 @@ Here are some of the things you can do with DevTools:
   about a running Flutter or Dart
   command-line app.
 * Analyze code and app size.
-* Validate deep links in your Android app.
+* Validate deep links in your Android or iOS app.
 
 We expect you to use DevTools in conjunction with
 your existing IDE or command-line based development workflow.
@@ -42,8 +42,11 @@ your existing IDE or command-line based development workflow.
 
 ## How to launch DevTools {:#start}
 
-See the [VS Code][], [Android Studio/IntelliJ][], or
-[command line][] pages for instructions on how to launch DevTools.
+You can launch DevTools with the following tools:
+
+* [VS Code][]
+* [Android Studio/IntelliJ][]
+* [command line][]
 
 ## Troubleshooting some standard issues
 
