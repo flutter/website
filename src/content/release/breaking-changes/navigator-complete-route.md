@@ -30,8 +30,8 @@ logic in indirect scenarios (such as `removeUntil`).
 
 ## Migration guide
 
-For developers who implemented `RouteTransitionRecord` and used `markForRemove`,
-they need to use `markForComplete` instead. `markForRemove` is now deprecated.
+If you implemented `RouteTransitionRecord` and used `markForRemove`,
+you need to use `markForComplete` instead. `markForRemove` is now deprecated.
 
 For other developers, no changes are required. The navigator continues to work
 as expected with new capabilities.
