@@ -94,7 +94,7 @@
       font: $site-font-icon;
       pointer-events: none;
       position: absolute;
-      left: 0.25rem;
+      left: 0.75rem;
     }
 
     &:hover::before {
@@ -109,6 +109,8 @@
     transition: width .35s ease-in-out;
     width: 24px;
     cursor: pointer;
+    border-radius: 24px;
+    padding-left: 2.5rem;
 
     &:focus {
       width: 220px;
