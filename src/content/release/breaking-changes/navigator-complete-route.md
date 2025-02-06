@@ -24,7 +24,7 @@ parameter.
 
 All methods that directly use `complete` now accept an optional `result`
 parameter to return it to the associated future. Other methods that indirectly
-use `remove` currently return `null`. In the future, we may extend these
+use `remove` currently return `null`. In the future, we might extend these
 methods with an optional callback function to allow developers to handle pop
 logic in indirect scenarios (e.g., `removeUntil`).
 
