@@ -17,8 +17,8 @@ orientation.
 
 This recipe uses the following steps:
 
-  1.  Create an app that updates the layout of the content, based on the
-      orientation. 
+  1.  Create an app that updates the layout of the content,
+      based on the orientation.
   1.  Create an orientation test group.
   1.  Create a portrait orientation test.
   1.  Create a landscape orientation test.
@@ -35,8 +35,8 @@ app is in portrait or landscape mode:
     flutter create orientation_tests
     ```
 
-2.  Follow the steps in [Update the UI based on orientation][] to set up the
-    project.
+2.  Follow the steps in [Update the UI based on orientation][] to
+    set up the project.
 
 ## 2. Create an orientation test group
 
@@ -46,23 +46,24 @@ group your future orientation tests:
 1.  In your Flutter project, open `test/widget_test.dart`.
 1.  Replace the existing contents with the following:
 
+    <?code-excerpt "cookbook/testing/widget/orientation_tests/test/widget_test.dart (scaffolding)"?>
     ```dart title="widget_test.dart"
     import 'package:flutter/material.dart';
     import 'package:flutter_test/flutter_test.dart';
     import 'package:orientation_tests/main.dart';
-
+    
     void main() {
       group('Orientation', () {
-        ...
+        // ···
       });
     }
     ```
 
 ## 3. Create a portrait orientation test
 
-Add the portrait orientation test to the `Orientation` group. This test makes
-sure that the orientation is `portrait` and that only `2` columns of data
-appear in the app:
+Add the portrait orientation test to the `Orientation` group.
+This test makes sure that the orientation is `portrait` and that
+only `2` columns of data appear in the app:
 
 1.  In `test/widget_test.dart`, replace `...` inside of the `Orientation` group
     with the following test:
@@ -83,15 +84,15 @@ appear in the app:
       await tester.pump();
     
       // Verify initial orientation is portrait.
-      Orientation orientation =
+      final orientation =
           MediaQuery.of(tester.element(find.byType(OrientationList)))
               .orientation;
       expect(orientation, Orientation.portrait);
     
       // Verify there are only 2 columns in portrait mode.
       final gridViewFinder = find.byType(GridView);
-      GridView gridView = tester.widget<GridView>(gridViewFinder);
-      SliverGridDelegateWithFixedCrossAxisCount delegate =
+      final gridView = tester.widget<GridView>(gridViewFinder);
+      final delegate =
           gridView.gridDelegate as SliverGridDelegateWithFixedCrossAxisCount;
       expect(delegate.crossAxisCount, 2);
     });
@@ -99,9 +100,9 @@ appear in the app:
 
 ## 4. Create a landscape orientation test
 
-Add the landscape orientation test to the `Orientation` group. This test makes
-sure that the orientation is `landscape` and that only `3` columns of data
-appear in the app:
+Add the landscape orientation test to the `Orientation` group.
+This test makes sure that the orientation is `landscape` and that
+only `3` columns of data appear in the app:
 
 1.  In `test/widget_test.dart`, inside of the `Orientation` group,
     add the following test after the landscape test:
@@ -122,15 +123,15 @@ appear in the app:
       await tester.pump();
     
       // Verify initial orientation is landscape.
-      Orientation orientation =
+      final orientation =
           MediaQuery.of(tester.element(find.byType(OrientationList)))
               .orientation;
       expect(orientation, Orientation.landscape);
     
       // Verify there are only 3 columns in landscape mode.
       final gridViewFinder = find.byType(GridView);
-      GridView gridView = tester.widget<GridView>(gridViewFinder);
-      SliverGridDelegateWithFixedCrossAxisCount delegate =
+      final gridView = tester.widget<GridView>(gridViewFinder);
+      final delegate =
           gridView.gridDelegate as SliverGridDelegateWithFixedCrossAxisCount;
       expect(delegate.crossAxisCount, 3);
     });
@@ -148,7 +149,6 @@ flutter test test/widget_test.dart
 
 <?code-excerpt "cookbook/testing/widget/orientation_tests/test/widget_test.dart"?>
 ```dart title="widget_test.dart"
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:orientation_tests/main.dart';
@@ -169,15 +169,15 @@ void main() {
       await tester.pump();
 
       // Verify initial orientation is portrait.
-      Orientation orientation =
+      final orientation =
           MediaQuery.of(tester.element(find.byType(OrientationList)))
               .orientation;
       expect(orientation, Orientation.portrait);
 
       // Verify there are only 2 columns in portrait mode.
       final gridViewFinder = find.byType(GridView);
-      GridView gridView = tester.widget<GridView>(gridViewFinder);
-      SliverGridDelegateWithFixedCrossAxisCount delegate =
+      final gridView = tester.widget<GridView>(gridViewFinder);
+      final delegate =
           gridView.gridDelegate as SliverGridDelegateWithFixedCrossAxisCount;
       expect(delegate.crossAxisCount, 2);
     });
@@ -196,15 +196,15 @@ void main() {
       await tester.pump();
 
       // Verify initial orientation is landscape.
-      Orientation orientation =
+      final orientation =
           MediaQuery.of(tester.element(find.byType(OrientationList)))
               .orientation;
       expect(orientation, Orientation.landscape);
 
       // Verify there are only 3 columns in landscape mode.
       final gridViewFinder = find.byType(GridView);
-      GridView gridView = tester.widget<GridView>(gridViewFinder);
-      SliverGridDelegateWithFixedCrossAxisCount delegate =
+      final gridView = tester.widget<GridView>(gridViewFinder);
+      final delegate =
           gridView.gridDelegate as SliverGridDelegateWithFixedCrossAxisCount;
       expect(delegate.crossAxisCount, 3);
     });
@@ -248,15 +248,15 @@ class OrientationList extends StatelessWidget {
       body: OrientationBuilder(
         builder: (context, orientation) {
           return GridView.count(
-            // Create a grid with 2 columns in portrait mode, or 3 columns in
-            // landscape mode.
+            // Create a grid with 2 columns in portrait mode, or
+            // 3 columns in landscape mode.
             crossAxisCount: orientation == Orientation.portrait ? 2 : 3,
-            // Generate 100 widgets that display their index in the List.
+            // Generate 100 widgets that display their index in the list.
             children: List.generate(100, (index) {
               return Center(
                 child: Text(
                   'Item $index',
-                  style: Theme.of(context).textTheme.displayLarge,
+                  style: TextTheme.of(context).displayLarge,
                 ),
               );
             }),
