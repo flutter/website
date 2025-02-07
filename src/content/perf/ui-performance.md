@@ -18,7 +18,7 @@ Flutter offers several tools for performance analysis. Here are a few of them:
 
 * **The Performance View**: A web-based interface that connects to your app and
   displays detailed performance metrics. Part of the DevTools utility. To learn
-  more, see the [Use the Performance View][].
+  more, see [Use the Performance View][].
 
 * **Performance tracing within Dart**: Add tracing directly into your app's
   Dart code, using the `dart:developer package`, and then track your app's
@@ -43,6 +43,11 @@ significantly longer to render and are dropped, resulting in a visible stutter
 in animations. For example, if a frame occasionally takes 10 times longer than
 usual to render, it will likely be dropped, causing the animation to appear
 jerky.
+
+[Use the Performance View]: /tools/devtools/performance
+[Tracing Dart code]: /testing/code-debugging#trace-dart-code-performance
+[Show performance data]: /tools/android-studio#show-performance-data
+[Integration testing]: /testing/integration-tests
 
 ## Connect to a physical device
 
@@ -114,6 +119,9 @@ see [Flutter's build modes][].
 You'll begin by opening DevTools and viewing
 the performance overlay, as discussed in the next section.
 
+[Flutter's build modes]: /testing/build-modes
+[generate timeline events]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
+
 ## Launch DevTools
 
 DevTools provides features like profiling, examining the heap,
@@ -125,21 +133,28 @@ UI performance of your application on a frame-by-frame basis.
 Once your app is running in profile mode,
 [launch DevTools][].
 
+[Timeline view]: /tools/devtools/performance
+[launch DevTools]: /tools/devtools
+
 ## Display the performance overlay {:#displaying-the-performance-overlay}
 
-You can toggle display of the performance overlay as follows:
+You can toggle the display of the performance overlay as
+follows:
 
-* **Flutter inspector**: The easiest way to enable the PerformanceOverlay widget
-  is from the Flutter inspector, which is available in the [Inspector view][] in
-  [DevTools][]. Simply click the **Performance Overlay** button to toggle the
-  overlay on your running app.
+* **DevTools Performance view**: The easiest way to enable the
+  PerformanceOverlay widget is from the [Performance view][] in [DevTools][].
+  Simply click the **Performance Overlay** button to toggle the overlay on your
+  running app.
 
 * **command line**: Toggle the performance overlay using the **P** key from
-the command line.
+  the command line.
 
 * **programmatically**: To enable the overlay programmatically, see
-[Performance overlay][], a section in the
-[Debugging Flutter apps programmatically][] page.
+  [Performance overlay][], a section in the
+  [Debugging Flutter apps programmatically][] page.
+
+[Performance overlay]: /testing/code-debugging#add-performance-overlay
+[Debugging Flutter apps programmatically]: /testing/code-debugging
 
 <a id="the-performance-overlay" aria-hidden="true"></a>
 
@@ -239,6 +254,13 @@ see [The Framework architecture][] in the
 [Flutter wiki][], and the community article,
 [The Layer Cake][].
 
+[debug mode]: /testing/build-modes#debug
+[Flutter wiki]: {{site.repo.flutter}}/tree/main/docs
+[UIKit]: {{site.apple-dev}}/documentation/uikit
+[The Layer Cake]: {{site.medium}}/flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401
+[The Framework architecture]: {{site.repo.flutter}}/blob/main/docs/about/The-Framework-architecture.md
+[MainThread]: {{site.android-dev}}/reference/android/support/annotation/MainThread
+
 ## Identify problems
 
 ### Review the UI graph {:#identifying-problems-in-the-ui-graph}
@@ -272,6 +294,8 @@ instead of clipping to a rounded rectangle.
 If it's a static scene that's being faded, rotated, or otherwise
 manipulated, a [`RepaintBoundary`][] might help.
 
+[programmatically]: /testing/code-debugging#debug-animation-issues
+
 #### Checking for offscreen layers
 
 The [`saveLayer`][] method is one of the most expensive methods in
@@ -302,6 +326,8 @@ ask yourself these questions:
 * Can any of these calls be eliminated?
 * Can I apply the same effect to an individual element instead of a group?
 
+[`Clip.antiAliasWithSaveLayer`]: {{site.api}}/flutter/dart-ui/Clip.html
+
 #### Checking for non-cached images
 
 Caching an image with [`RepaintBoundary`][] is good,
@@ -328,6 +354,7 @@ The following resources provide more information on using
 Flutter's tools and debugging in Flutter:
 
 * [Debugging][]
+* [Performance view][]
 * [Flutter inspector][]
 * [Flutter inspector talk][], presented at DartConf 2018
 * [Why Flutter Uses Dart][], an article on Hackernoon
@@ -336,35 +363,16 @@ Flutter's tools and debugging in Flutter:
 * [Flutter API][] docs, particularly the [`PerformanceOverlay`][] class,
   and the [dart:developer][] package
 
-
-[`Clip.antiAliasWithSaveLayer`]: {{site.api}}/flutter/dart-ui/Clip.html
 [`PerformanceOverlay`]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
 [`RepaintBoundary`]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
 [`saveLayer`]: {{site.api}}/flutter/dart-ui/Canvas/saveLayer.html
 [dart:developer]: {{site.api}}/flutter/dart-developer/dart-developer-library.html
-[debug mode]: /testing/build-modes#debug
-[Debugging Flutter apps programmatically]: /testing/code-debugging
 [Debugging]: /testing/debugging
 [devtools]: /tools/devtools
 [Flutter API]: {{site.api}}
 [Flutter inspector talk]: {{site.yt.watch}}?v=JIcmJNT9DNI
 [Flutter inspector]: /tools/devtools/inspector
-[Flutter wiki]: {{site.repo.flutter}}/tree/main/docs
-[Flutter's build modes]: /testing/build-modes
-[generate timeline events]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
-[Inspector view]: /tools/devtools/inspector
-[Integration testing]: /testing/integration-tests
-[launch DevTools]: /tools/devtools
-[MainThread]: {{site.android-dev}}/reference/android/support/annotation/MainThread
-[Performance overlay]: /testing/code-debugging#add-performance-overlay
+[Performance view]: /tools/devtools/performance
 [profile mode]: /testing/build-modes#profile
-[programmatically]: /testing/code-debugging#debug-animation-issues
-[Show performance data]: /tools/android-studio#show-performance-data
-[The Framework architecture]: {{site.repo.flutter}}/blob/main/docs/about/The-Framework-architecture.md
-[The Layer Cake]: {{site.medium}}/flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401
-[Timeline view]: /tools/devtools/performance
-[Tracing Dart code]: /testing/code-debugging#trace-dart-code-performance
-[UIKit]: {{site.apple-dev}}/documentation/uikit
-[Use the Performance View]: /tools/devtools/performance
 [video]: {{site.yt.watch}}?v=5F-6n_2XWR8
 [Why Flutter Uses Dart]: https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf
