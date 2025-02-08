@@ -15,8 +15,11 @@ layout: base
   </div>
 
   <main class="site-content">
-    {% if toc != false -%}
-    {% include side-toc.html tocContents=tocContents %}
+    {% if toc != false and tocContents.count > 1 -%}
+    {% render top-toc.html, tocContents:tocContents, title:title %}
+    <aside id="side-menu">
+      {% render side-toc.html, tocContents:tocContents %}
+    </aside>
     {% endif -%}
     <article>
       <header class="site-content__title">
@@ -25,10 +28,6 @@ layout: base
         {% include breadcrumbs.html %}
         {% endif -%}
       </header>
-
-      {% if toc != false -%}
-      {% include inline-toc.html tocContents=tocContents -%}
-      {% endif -%}
       {{ content }}
 
       {% include next-prev-nav.html prev=prev, next=next %}

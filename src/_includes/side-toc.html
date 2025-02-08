@@ -1,23 +1,7 @@
-{% if tocContents.count > 1 -%}
-<div id="site-toc--side" class="site-toc">
-  <header class="site-toc__title">
-    Contents
+<nav id="toc-side">
+  <header>
+    <span class="material-symbols" aria-hidden="true">list</span>
+    <span>On this page</span>
   </header>
-  <ul class="section-nav">
-    {% for topLevel in tocContents.toc %}
-    <li class="toc-entry nav-item">
-      <a class="nav-link" href="{{topLevel.id}}">{{topLevel.text}}</a>
-      {% if topLevel.children and topLevel.children.size > 0 %}
-      <ul class="nav">
-        {% for child in topLevel.children %}
-        <li class="toc-entry nav-item">
-          <a class="nav-link" href="{{child.id}}">{{child.text}}</a>
-        </li>
-        {% endfor -%}
-      </ul>
-      {% endif -%}
-    </li>
-    {% endfor -%}
-  </ul>
-</div>
-{% endif -%}
+  {% render toc-contents.html, tocContents:tocContents %}
+</nav>
