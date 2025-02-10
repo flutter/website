@@ -466,7 +466,7 @@ Learn more about Flutter animations at the following links:
 [`PageRoute`]: {{site.api}}/flutter/widgets/PageRoute-class.html
 [part 2]: {{site.medium}}/dartlang/zero-to-one-with-flutter-part-two-5aa2f06655cb
 [`RepaintBoundary`]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
-[Sample app catalog]: https://github.com/flutter/samples
+[Sample app catalog]: {{site.github}}/flutter/samples
 [`SpringSimulation`]: {{site.api}}/flutter/physics/SpringSimulation-class.html
 [Staggered Animations]: /ui/animations/staggered-animations
 [`Tween`]: {{site.api}}/flutter/animation/Tween-class.html
