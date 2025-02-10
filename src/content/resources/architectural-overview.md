@@ -591,7 +591,7 @@ such as Windows or macOS.
 :::note
 If you want to know which devices Impeller supports,
 check out [Can I use Impeller?][].
-For more information on Impeller, 
+For more information, 
 visit [Impeller rendering engine][]
 :::
 
@@ -1060,28 +1060,21 @@ On the web, Flutter offers two renderers:
 
 <table class="table table-striped">
 <tr>
-<th>Engine</th>
 <th>Renderer</th>
 <th>Compilation target</th>
 </tr>
 
 <tr>
-<td>Engine 1</td>
-<td> 
-CanvasKit
+<td>CanvasKit
 </td>
-<td>
-JavaScript
+<td>JavaScript
 </td>
 </tr>
 
 <tr>
-<td>Engine 2</td>
-<td> 
-Skwasm
+<td>Skwasm
 </td>
-<td>
-WebAssembly
+<td>WebAssembly
 </td>
 </tr>
 </table>
@@ -1108,12 +1101,11 @@ Flutter offers two _build_ modes:
 </tr>
 
 
-The default mode makes only "engine 1" available.
-The `--wasm` option makes both "engine 1" and
-"engine 2" available, and chooses the engine
-based on browser capabilities:
-preferring "engine 2" if the browser is capable of running it,
-and falls back to "engine 1" otherwise.
+The default mode makes only CanvasKit renderer available.
+The `--wasm` option makes both renderers available,
+and chooses the engine based on browser capabilities:
+preferring Skwasm if the browser is capable of running it,
+and falls back to CanvasKit otherwise.
 
 {% comment %}
 The draw.io source for the following image is in /diagrams/resources

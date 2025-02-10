@@ -98,7 +98,7 @@ No action on your part is necessary for this fallback behavior.
 
 ### web
 
-Impeller on the web offers two renderers and
+Flutter on the web offers two renderers and
 two build modes. For more information, visit
 [Flutter web support][] in the Flutter
 architectural guide.
