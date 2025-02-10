@@ -552,7 +552,7 @@ If you would like to learn more, check out the following resources:
 [List of state management approaches]: /data-and-backend/state-mgmt/options
 [Pragmatic state management]: {{site.youtube-site}}/watch?v=d_m5csmrf7I
 [Provider counter]: https://github.com/flutter/samples/tree/main/provider_counter
-[Provider shopper]: https://flutter.github.io/samples/provider_shopper.html
+[Provider shopper]: https://github.com/flutter/samples/tree/main/provider_shopper
 [State management]: /data-and-backend/state-mgmt/intro
 [StatefulWidget]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
