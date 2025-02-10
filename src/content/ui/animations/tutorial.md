@@ -306,7 +306,7 @@ it listens for a state change and prints an update.
 The highlighted line shows the change:
 
 <?code-excerpt "animate3/lib/main.dart (print-state)" plaster="none" replace="/\/\/ (\.\..*)/$1;/g; /\n  }/$&\n  \/\/ .../g"?>
-```dart highlightLines=11
+```dart highlightLines=14
 class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   late Animation<double> animation;
   late AnimationController controller;
