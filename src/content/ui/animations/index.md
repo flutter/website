@@ -427,7 +427,7 @@ Learn more about Flutter animations at the following links:
 [animate1]: {{examples}}/animation/animate1
 [Animate a widget using a physics simulation]: /cookbook/animation/physics-simulation
 [`Animatable`]: {{site.api}}/flutter/animation/Animatable-class.html
-[`AnimatedList` example]: https://flutter.github.io/samples/animations.html
+[`AnimatedList` example]: https://github.com/flutter/samples/blob/main/animations
 [`Animation`]: {{site.api}}/flutter/animation/Animation-class.html
 [Animation and motion widgets]: /ui/widgets/animation
 [Animation basics with implicit animations]: {{site.yt.watch}}?v=IVTjpW3W33s&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=1
@@ -466,7 +466,7 @@ Learn more about Flutter animations at the following links:
 [`PageRoute`]: {{site.api}}/flutter/widgets/PageRoute-class.html
 [part 2]: {{site.medium}}/dartlang/zero-to-one-with-flutter-part-two-5aa2f06655cb
 [`RepaintBoundary`]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
-[Sample app catalog]: https://flutter.github.io/samples
+[Sample app catalog]: https://github.com/flutter/samples
 [`SpringSimulation`]: {{site.api}}/flutter/physics/SpringSimulation-class.html
 [Staggered Animations]: /ui/animations/staggered-animations
 [`Tween`]: {{site.api}}/flutter/animation/Tween-class.html

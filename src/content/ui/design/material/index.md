@@ -33,7 +33,7 @@ visiting the [Affected widgets][] page.
 
 [Affected widgets]: {{site.api}}/flutter/material/ThemeData/useMaterial3.html#affected-widgets
 [deprecation policy]: /release/compatibility-policy#deprecation-policy
-[demo]: https://flutter.github.io/samples/web/material_3_demo/#/
+[demo]: https://github.com/flutter/samples/blob/main/material_3_demo/
 [`NavigationBar`]: {{site.api}}/flutter/material/NavigationBar-class.html
 [`useMaterial3`]: {{site.api}}/flutter/material/ThemeData/useMaterial3.html
 
@@ -41,7 +41,7 @@ Explore the updated components, typography, color system,
 and elevation support with the
 [interactive Material 3 demo][demo]:
 
-<iframe src="https://flutter.github.io/samples/web/material_3_demo/#/" width="100%" height="600px" title="Material 3 Demo App"></iframe>
+<iframe src="https://github.com/flutter/samples/tree/main/material_3_demo" width="100%" height="600px" title="Material 3 Demo App"></iframe>
 
 ## More information {:.no_toc}
 
