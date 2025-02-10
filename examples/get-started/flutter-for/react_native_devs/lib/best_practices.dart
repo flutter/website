@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 
 // #docregion create-state
 class MyStatefulWidget extends StatefulWidget {
-  const MyStatefulWidget({
-    super.key,
-    required this.title,
-  });
+  const MyStatefulWidget({super.key, required this.title});
 
   final String title;
   @override
@@ -33,4 +30,5 @@ class MyStatelessWidget extends StatelessWidget {
     );
   }
 }
+
 // #enddocregion use-stateful-widget

@@ -58,9 +58,7 @@ class __TextListenerState extends State<_TextListener> {
       child: ConstrainedBox(
         constraints: const BoxConstraints(maxWidth: 400),
         child: const TextField(
-          decoration: InputDecoration(
-            border: OutlineInputBorder(),
-          ),
+          decoration: InputDecoration(border: OutlineInputBorder()),
         ),
       ),
     );
@@ -83,10 +81,12 @@ class _BasicActionDetectorState extends State<BasicActionDetector> {
     return FocusableActionDetector(
       onFocusChange: (value) => setState(() => _hasFocus = value),
       actions: <Type, Action<Intent>>{
-        ActivateIntent: CallbackAction<Intent>(onInvoke: (intent) {
-          print('Enter or Space was pressed!');
-          return null;
-        }),
+        ActivateIntent: CallbackAction<Intent>(
+          onInvoke: (intent) {
+            print('Enter or Space was pressed!');
+            return null;
+          },
+        ),
       },
       child: Stack(
         clipBehavior: Clip.none,
@@ -100,7 +100,7 @@ class _BasicActionDetectorState extends State<BasicActionDetector> {
               bottom: -4,
               right: -4,
               child: _roundedBorder(),
-            )
+            ),
         ],
       ),
     );
@@ -128,10 +128,12 @@ class _ClickableActionDetectorState extends State<ClickableActionDetector> {
       mouseCursor: SystemMouseCursors.click,
       onFocusChange: (value) => setState(() => _hasFocus = value),
       actions: <Type, Action<Intent>>{
-        ActivateIntent: CallbackAction<Intent>(onInvoke: (intent) {
-          _submit();
-          return null;
-        }),
+        ActivateIntent: CallbackAction<Intent>(
+          onInvoke: (intent) {
+            _submit();
+            return null;
+          },
+        ),
       },
       child: GestureDetector(
         onTap: () {
@@ -182,8 +184,10 @@ class ClickableControl extends StatelessWidget {
 
   KeyEventResult _handleKeyDown(FocusNode node, KeyEvent event) {
     if (event is KeyDownEvent &&
-        {LogicalKeyboardKey.enter, LogicalKeyboardKey.space}
-            .contains(event.logicalKey)) {
+        {
+          LogicalKeyboardKey.enter,
+          LogicalKeyboardKey.space,
+        }.contains(event.logicalKey)) {
       _submit();
       return KeyEventResult.handled;
     }
@@ -205,18 +209,23 @@ class Logo extends StatelessWidget {
         // Focus effect:
         if (showBorder)
           Positioned(
-              left: 0, top: -4, bottom: -4, right: -4, child: _roundedBorder())
+            left: 0,
+            top: -4,
+            bottom: -4,
+            right: -4,
+            child: _roundedBorder(),
+          ),
       ],
     );
   }
 }
 
 Widget _roundedBorder() => Container(
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.orange),
-        borderRadius: BorderRadius.circular(6),
-      ),
-    );
+  decoration: BoxDecoration(
+    border: Border.all(color: Colors.orange),
+    borderRadius: BorderRadius.circular(6),
+  ),
+);
 
 class MyFocusTraversalWidget extends StatelessWidget {
   const MyFocusTraversalWidget({super.key});
@@ -224,12 +233,12 @@ class MyFocusTraversalWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // #docregion focus-traversal-group
-    return Column(children: [
-      FocusTraversalGroup(
-        child: MyFormWithMultipleColumnsAndRows(),
-      ),
-      SubmitButton(),
-    ]);
+    return Column(
+      children: [
+        FocusTraversalGroup(child: MyFormWithMultipleColumnsAndRows()),
+        SubmitButton(),
+      ],
+    );
     // #enddocregion focus-traversal-group
   }
 }
@@ -240,9 +249,7 @@ class MyFormWithMultipleColumnsAndRows extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      child: Container(),
-    );
+    return Form(child: Container());
   }
 }
 

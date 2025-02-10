@@ -54,8 +54,9 @@ that you provide to the `Scaffold` widget.
 Scaffold(
   // No appBar property provided, only the body.
   body: CustomScrollView(
-      // Add the app bar and list of items as slivers in the next steps.
-      slivers: <Widget>[]),
+    // Add the app bar and list of items as slivers in the next steps.
+    slivers: <Widget>[],
+  ),
 );
 ```
 

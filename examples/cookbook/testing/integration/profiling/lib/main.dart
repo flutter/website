@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp(
-    items: List<String>.generate(10000, (i) => 'Item $i'),
-  ));
+  runApp(MyApp(items: List<String>.generate(10000, (i) => 'Item $i')));
 }
 
 class MyApp extends StatelessWidget {
@@ -18,9 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: title,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text(title),
-        ),
+        appBar: AppBar(title: const Text(title)),
         body: ListView.builder(
           // Add a key to the ListView. This makes it possible to
           // find the list and scroll through it in the tests.

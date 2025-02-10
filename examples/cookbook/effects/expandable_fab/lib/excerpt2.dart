@@ -39,10 +39,7 @@ class _ExpandableFabState extends State<ExpandableFab> {
       child: Stack(
         alignment: Alignment.bottomRight,
         clipBehavior: Clip.none,
-        children: [
-          _buildTapToCloseFab(),
-          _buildTapToOpenFab(),
-        ],
+        children: [_buildTapToCloseFab(), _buildTapToOpenFab()],
       ),
     );
   }
@@ -60,10 +57,7 @@ class _ExpandableFabState extends State<ExpandableFab> {
             onTap: _toggle,
             child: Padding(
               padding: const EdgeInsets.all(8),
-              child: Icon(
-                Icons.close,
-                color: Theme.of(context).primaryColor,
-              ),
+              child: Icon(Icons.close, color: Theme.of(context).primaryColor),
             ),
           ),
         ),
@@ -96,4 +90,5 @@ class _ExpandableFabState extends State<ExpandableFab> {
     );
   }
 }
+
 // #enddocregion ExpandableFabState

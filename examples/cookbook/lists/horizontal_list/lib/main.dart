@@ -12,9 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: title,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text(title),
-        ),
+        appBar: AppBar(title: const Text(title)),
         body: Container(
           margin: const EdgeInsets.symmetric(vertical: 20),
           height: 200,
@@ -23,26 +21,11 @@ class MyApp extends StatelessWidget {
             // This next line does the trick.
             scrollDirection: Axis.horizontal,
             children: <Widget>[
-              Container(
-                width: 160,
-                color: Colors.red,
-              ),
-              Container(
-                width: 160,
-                color: Colors.blue,
-              ),
-              Container(
-                width: 160,
-                color: Colors.green,
-              ),
-              Container(
-                width: 160,
-                color: Colors.yellow,
-              ),
-              Container(
-                width: 160,
-                color: Colors.orange,
-              ),
+              Container(width: 160, color: Colors.red),
+              Container(width: 160, color: Colors.blue),
+              Container(width: 160, color: Colors.green),
+              Container(width: 160, color: Colors.yellow),
+              Container(width: 160, color: Colors.orange),
             ],
           ),
           // #enddocregion ListView

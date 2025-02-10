@@ -12,9 +12,7 @@ class BasicHeroAnimation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Basic Hero Animation'),
-      ),
+      appBar: AppBar(title: const Text('Basic Hero Animation')),
       body: Center(
         child: InkWell(
           onTap: () {
@@ -22,9 +20,7 @@ class BasicHeroAnimation extends StatelessWidget {
               MaterialPageRoute<void>(
                 builder: (context) {
                   return Scaffold(
-                    appBar: AppBar(
-                      title: const Text('Flippers Page'),
-                    ),
+                    appBar: AppBar(title: const Text('Flippers Page')),
                     body: Container(
                       padding: const EdgeInsets.all(8),
                       alignment: Alignment.topLeft,
@@ -34,9 +30,7 @@ class BasicHeroAnimation extends StatelessWidget {
                         tag: 'flippers',
                         child: SizedBox(
                           width: 100,
-                          child: Image.asset(
-                            'images/flippers-alpha.png',
-                          ),
+                          child: Image.asset('images/flippers-alpha.png'),
                         ),
                       ),
                     ),
@@ -48,9 +42,7 @@ class BasicHeroAnimation extends StatelessWidget {
           // Main route
           child: Hero(
             tag: 'flippers',
-            child: Image.asset(
-              'images/flippers-alpha.png',
-            ),
+            child: Image.asset('images/flippers-alpha.png'),
           ),
         ),
       ),
@@ -59,9 +51,5 @@ class BasicHeroAnimation extends StatelessWidget {
 }
 
 void main() {
-  runApp(
-    const MaterialApp(
-      home: BasicHeroAnimation(),
-    ),
-  );
+  runApp(const MaterialApp(home: BasicHeroAnimation()));
 }

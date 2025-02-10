@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 
 // #docregion Starter
 class SubscribeButton extends StatefulWidget {
-  const SubscribeButton({
-    super.key,
-  });
+  const SubscribeButton({super.key});
 
   @override
   State<SubscribeButton> createState() => _SubscribeButtonState();
@@ -20,4 +18,5 @@ class _SubscribeButtonState extends State<SubscribeButton> {
 class SubscribeButtonViewModel extends ChangeNotifier {}
 
 class SubscriptionRepository {}
+
 // #enddocregion Starter

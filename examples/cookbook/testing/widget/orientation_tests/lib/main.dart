@@ -13,9 +13,7 @@ class MyApp extends StatelessWidget {
 
     return const MaterialApp(
       title: appTitle,
-      home: OrientationList(
-        title: appTitle,
-      ),
+      home: OrientationList(title: appTitle),
     );
   }
 }

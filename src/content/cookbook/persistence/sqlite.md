@@ -80,11 +80,7 @@ class Dog {
   final String name;
   final int age;
 
-  const Dog({
-    required this.id,
-    required this.name,
-    required this.age,
-  });
+  const Dog({required this.id, required this.name, required this.age});
 }
 ```
 
@@ -173,20 +169,12 @@ class Dog {
   final String name;
   final int age;
 
-  Dog({
-    required this.id,
-    required this.name,
-    required this.age,
-  });
+  Dog({required this.id, required this.name, required this.age});
 
   // Convert a Dog into a Map. The keys must correspond to the names of the
   // columns in the database.
   Map<String, Object?> toMap() {
-    return {
-      'id': id,
-      'name': name,
-      'age': age,
-    };
+    return {'id': id, 'name': name, 'age': age};
   }
 
   // Implement toString to make it easier to see information about
@@ -220,11 +208,7 @@ Future<void> insertDog(Dog dog) async {
 <?code-excerpt "lib/main.dart (fido)"?>
 ```dart
 // Create a Dog and add it to the dogs table
-var fido = Dog(
-  id: 0,
-  name: 'Fido',
-  age: 35,
-);
+var fido = Dog(id: 0, name: 'Fido', age: 35);
 
 await insertDog(fido);
 ```
@@ -249,11 +233,8 @@ Future<List<Dog>> dogs() async {
 
   // Convert the list of each dog's fields into a list of `Dog` objects.
   return [
-    for (final {
-          'id': id as int,
-          'name': name as String,
-          'age': age as int,
-        } in dogMaps)
+    for (final {'id': id as int, 'name': name as String, 'age': age as int}
+        in dogMaps)
       Dog(id: id, name: name, age: age),
   ];
 }
@@ -298,11 +279,7 @@ Future<void> updateDog(Dog dog) async {
 <?code-excerpt "lib/main.dart (update2)"?>
 ```dart
 // Update Fido's age and save it to the database.
-fido = Dog(
-  id: fido.id,
-  name: fido.name,
-  age: fido.age + 7,
-);
+fido = Dog(id: fido.id, name: fido.name, age: fido.age + 7);
 await updateDog(fido);
 
 // Print the updated results.
@@ -409,11 +386,8 @@ void main() async {
 
     // Convert the list of each dog's fields into a list of `Dog` objects.
     return [
-      for (final {
-            'id': id as int,
-            'name': name as String,
-            'age': age as int,
-          } in dogMaps)
+      for (final {'id': id as int, 'name': name as String, 'age': age as int}
+          in dogMaps)
         Dog(id: id, name: name, age: age),
     ];
   }
@@ -448,11 +422,7 @@ void main() async {
   }
 
   // Create a Dog and add it to the dogs table
-  var fido = Dog(
-    id: 0,
-    name: 'Fido',
-    age: 35,
-  );
+  var fido = Dog(id: 0, name: 'Fido', age: 35);
 
   await insertDog(fido);
 
@@ -460,11 +430,7 @@ void main() async {
   print(await dogs()); // Prints a list that include Fido.
 
   // Update Fido's age and save it to the database.
-  fido = Dog(
-    id: fido.id,
-    name: fido.name,
-    age: fido.age + 7,
-  );
+  fido = Dog(id: fido.id, name: fido.name, age: fido.age + 7);
   await updateDog(fido);
 
   // Print the updated results.
@@ -482,20 +448,12 @@ class Dog {
   final String name;
   final int age;
 
-  Dog({
-    required this.id,
-    required this.name,
-    required this.age,
-  });
+  Dog({required this.id, required this.name, required this.age});
 
   // Convert a Dog into a Map. The keys must correspond to the names of the
   // columns in the database.
   Map<String, Object?> toMap() {
-    return {
-      'id': id,
-      'name': name,
-      'age': age,
-    };
+    return {'id': id, 'name': name, 'age': age};
   }
 
   // Implement toString to make it easier to see information about

@@ -16,9 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter layout demo',
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter layout demo'),
-        ),
+        appBar: AppBar(title: const Text('Flutter layout demo')),
         body: Center(child: showCard ? _buildCard() : _buildStack()),
       ),
     );
@@ -37,10 +35,7 @@ class MyApp extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.w500),
               ),
               subtitle: const Text('My City, CA 99984'),
-              leading: Icon(
-                Icons.restaurant_menu,
-                color: Colors.blue[500],
-              ),
+              leading: Icon(Icons.restaurant_menu, color: Colors.blue[500]),
             ),
             const Divider(),
             ListTile(
@@ -48,17 +43,11 @@ class MyApp extends StatelessWidget {
                 '(408) 555-1212',
                 style: TextStyle(fontWeight: FontWeight.w500),
               ),
-              leading: Icon(
-                Icons.contact_phone,
-                color: Colors.blue[500],
-              ),
+              leading: Icon(Icons.contact_phone, color: Colors.blue[500]),
             ),
             ListTile(
               title: const Text('costa@example.com'),
-              leading: Icon(
-                Icons.contact_mail,
-                color: Colors.blue[500],
-              ),
+              leading: Icon(Icons.contact_mail, color: Colors.blue[500]),
             ),
           ],
         ),
@@ -77,9 +66,7 @@ class MyApp extends StatelessWidget {
           radius: 100,
         ),
         Container(
-          decoration: const BoxDecoration(
-            color: Colors.black45,
-          ),
+          decoration: const BoxDecoration(color: Colors.black45),
           child: const Text(
             'Mia B',
             style: TextStyle(
@@ -92,5 +79,6 @@ class MyApp extends StatelessWidget {
       ],
     );
   }
-// #enddocregion stack
+
+  // #enddocregion stack
 }

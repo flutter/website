@@ -53,9 +53,7 @@ class MyApp extends StatelessWidget {
           displaySmall: GoogleFonts.pacifico(),
         ),
       ),
-      home: const MyHomePage(
-        title: appName,
-      ),
+      home: const MyHomePage(title: appName),
     );
     // #enddocregion MaterialApp
   }
@@ -70,19 +68,18 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title,
-            style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                  color: Theme.of(context).colorScheme.onSecondary,
-                )),
+        title: Text(
+          title,
+          style: Theme.of(context).textTheme.titleLarge!.copyWith(
+            color: Theme.of(context).colorScheme.onSecondary,
+          ),
+        ),
         backgroundColor: Theme.of(context).colorScheme.secondary,
       ),
       body: Center(
         // #docregion Container
         child: Container(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 12,
-            vertical: 12,
-          ),
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
           color: Theme.of(context).colorScheme.primary,
           child: Text(
             'Text with a background color',
@@ -92,8 +89,8 @@ class MyHomePage extends StatelessWidget {
             //           to "displayLarge" or "displaySmall".
             // #docregion Container
             style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                  color: Theme.of(context).colorScheme.onPrimary,
-                ),
+              color: Theme.of(context).colorScheme.onPrimary,
+            ),
           ),
         ),
         // #enddocregion Container
@@ -121,15 +118,8 @@ void theme(BuildContext context) {
   // #docregion Theme
   Theme(
     // Create a unique theme with `ThemeData`.
-    data: ThemeData(
-      colorScheme: ColorScheme.fromSeed(
-        seedColor: Colors.pink,
-      ),
-    ),
-    child: FloatingActionButton(
-      onPressed: () {},
-      child: const Icon(Icons.add),
-    ),
+    data: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)),
+    child: FloatingActionButton(onPressed: () {}, child: const Icon(Icons.add)),
   );
   // #enddocregion Theme
 
@@ -137,15 +127,10 @@ void theme(BuildContext context) {
   Theme(
     // Find and extend the parent theme using `copyWith`.
     // To learn more, check out the section on `Theme.of`.
-    data: Theme.of(context).copyWith(
-      colorScheme: ColorScheme.fromSeed(
-        seedColor: Colors.pink,
-      ),
-    ),
-    child: const FloatingActionButton(
-      onPressed: null,
-      child: Icon(Icons.add),
-    ),
+    data: Theme.of(
+      context,
+    ).copyWith(colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)),
+    child: const FloatingActionButton(onPressed: null, child: Icon(Icons.add)),
   );
   // #enddocregion ThemeCopyWith
 }

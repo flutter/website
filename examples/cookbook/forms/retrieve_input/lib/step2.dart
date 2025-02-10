@@ -26,9 +26,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
   Widget build(BuildContext context) {
     // Fill this out in the next step.
     // #docregion TextFieldController
-    return TextField(
-      controller: myController,
-    );
+    return TextField(controller: myController);
     // #enddocregion TextFieldController
   }
 }

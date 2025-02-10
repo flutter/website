@@ -24,4 +24,5 @@ class DatabaseService {
     // #docregion DatabaseService
   }
 }
+
 // #enddocregion DatabaseService

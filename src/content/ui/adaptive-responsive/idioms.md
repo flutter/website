@@ -150,13 +150,15 @@ you can write something like this:
 static bool get isMultiSelectModifierDown {
   bool isDown = false;
   if (Platform.isMacOS) {
-    isDown = isKeyDown(
-      {LogicalKeyboardKey.metaLeft, LogicalKeyboardKey.metaRight},
-    );
+    isDown = isKeyDown({
+      LogicalKeyboardKey.metaLeft,
+      LogicalKeyboardKey.metaRight,
+    });
   } else {
-    isDown = isKeyDown(
-      {LogicalKeyboardKey.controlLeft, LogicalKeyboardKey.controlRight},
-    );
+    isDown = isKeyDown({
+      LogicalKeyboardKey.controlLeft,
+      LogicalKeyboardKey.controlRight,
+    });
   }
   return isDown;
 }

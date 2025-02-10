@@ -37,9 +37,7 @@ class ExampleExpandableFab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Expandable Fab'),
-      ),
+      appBar: AppBar(title: const Text('Expandable Fab')),
       body: ListView.builder(
         padding: const EdgeInsets.symmetric(vertical: 8),
         itemCount: 25,
@@ -154,10 +152,7 @@ class _ExpandableFabState extends State<ExpandableFab>
             onTap: _toggle,
             child: Padding(
               padding: const EdgeInsets.all(8),
-              child: Icon(
-                Icons.close,
-                color: Theme.of(context).primaryColor,
-              ),
+              child: Icon(Icons.close, color: Theme.of(context).primaryColor),
             ),
           ),
         ),
@@ -169,9 +164,11 @@ class _ExpandableFabState extends State<ExpandableFab>
     final children = <Widget>[];
     final count = widget.children.length;
     final step = 90.0 / (count - 1);
-    for (var i = 0, angleInDegrees = 0.0;
-        i < count;
-        i++, angleInDegrees += step) {
+    for (
+      var i = 0, angleInDegrees = 0.0;
+      i < count;
+      i++, angleInDegrees += step
+    ) {
       children.add(
         _ExpandingActionButton(
           directionInDegrees: angleInDegrees,
@@ -242,10 +239,7 @@ class _ExpandingActionButton extends StatelessWidget {
           ),
         );
       },
-      child: FadeTransition(
-        opacity: progress,
-        child: child,
-      ),
+      child: FadeTransition(opacity: progress, child: child),
     );
   }
 }
@@ -253,11 +247,7 @@ class _ExpandingActionButton extends StatelessWidget {
 // #docregion ActionButton
 @immutable
 class ActionButton extends StatelessWidget {
-  const ActionButton({
-    super.key,
-    this.onPressed,
-    required this.icon,
-  });
+  const ActionButton({super.key, this.onPressed, required this.icon});
 
   final VoidCallback? onPressed;
   final Widget icon;
@@ -282,10 +272,7 @@ class ActionButton extends StatelessWidget {
 
 @immutable
 class FakeItem extends StatelessWidget {
-  const FakeItem({
-    super.key,
-    required this.isBig,
-  });
+  const FakeItem({super.key, required this.isBig});
 
   final bool isBig;
 

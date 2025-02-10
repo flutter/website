@@ -29,8 +29,10 @@ class AppScaffold extends StatelessWidget {
           bool touchMode = context.select<AppModel, bool>((m) => m.touchMode);
           // #docregion visual-density
           double densityAmt = touchMode ? 0.0 : -1.0;
-          VisualDensity density =
-              VisualDensity(horizontal: densityAmt, vertical: densityAmt);
+          VisualDensity density = VisualDensity(
+            horizontal: densityAmt,
+            vertical: densityAmt,
+          );
           return MaterialApp(
             theme: ThemeData(visualDensity: density),
             home: MainAppScaffold(),

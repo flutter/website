@@ -7,10 +7,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Package Fonts',
-      home: MyHomePage(),
-    );
+    return const MaterialApp(title: 'Package Fonts', home: MyHomePage());
   }
 }
 
@@ -27,9 +24,7 @@ class MyHomePage extends StatelessWidget {
         // #docregion TextStyle
         child: Text(
           'Using the Raleway font from the awesome_package',
-          style: TextStyle(
-            fontFamily: 'Raleway',
-          ),
+          style: TextStyle(fontFamily: 'Raleway'),
         ),
         // #enddocregion TextStyle
       ),
