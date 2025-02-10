@@ -136,7 +136,7 @@ Now that alpha is a floating-point value, using `.a` and `.withValues()` will
 give the full expression of a floating-point value and won't be quantized. That
 means "alpha" expresses the intent of "opacity" more correctly. Opacity is
 different in a subtle way where it's usage can result in unexpected data loss,
-so it's been deprecated and the semantics has been maintained to avoid breaking
+so it's been deprecated and the semantics have been maintained to avoid breaking
 anyone.
 
 For example:
