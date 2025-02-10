@@ -7,7 +7,7 @@
  1. Download the following installation bundle to get the latest
     {{site.sdk.channel}} release of the Flutter SDK:
 
-    [(loading...)](#){:.download-latest-link-{{os}} .btn .btn-primary}
+    [(loading...)](#){:.download-latest-link-{{os}} .filled-button}
 
     For other release channels, and older builds,
     check out the [SDK archive][].

@@ -1,7 +1,7 @@
 {% for entry in children -%}
   {% if entry.permalink -%}
 
-  {% if active_entries and forloop.index == active_entries[3] -%}
+  {% if activeEntries and forloop.index == activeEntries[3] -%}
     {% assign isActive = true -%}
     {% assign class = 'nav-link active' -%}
   {% else -%}
@@ -18,7 +18,10 @@
   <li class="nav-item">
     <a class="{{class}}" href="{{entry.permalink}}"
        {%- if isExternal %} target="_blank" rel="noopener" {%- endif -%}>
-      {{entry.title}}
+      <div>
+        <span>{{entry.title}}</span>
+        {%- if isExternal %}<span class="material-symbols" aria-hidden="true">open_in_new</span>{%- endif -%}
+      </div>
     </a>
   </li>
   {% endif -%}

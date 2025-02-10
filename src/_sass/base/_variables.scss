@@ -18,7 +18,7 @@ $site-color-white: #FFF;
 $site-color-codeblock-bg: #F8F9FA;
 $site-color-light-grey: #DADCE0;
 $site-color-sub-grey: #8d9399;
-$site-color-nav-links: #6E7274;
+$site-color-nav-links: #6a6f71;
 $site-color-body: #212121; // Poor contrast with links
 $site-color-body-light: color.scale($site-color-body, $lightness: 20%);
 $site-color-body-caption: color.scale($site-color-body, $lightness: 30%);
@@ -30,20 +30,18 @@ $site-color-panel-background: color.scale($site-color-primary, $lightness: 95%);
 // Fonts
 $font-size-base-weight: 400;
 $site-font-family-base: 'Google Sans Text', 'Roboto', sans-serif;
-$site-font-family-alt: 'Google Sans', 'Google Sans Text', 'Roboto', sans-serif;
+$site-font-family-ui: 'Google Sans', 'Google Sans Text', 'Roboto', sans-serif;
 $site-font-family-icon: 'Material Symbols Outlined';
 $site-font-family-monospace: 'Google Sans Mono', 'Roboto Mono', monospace;
 $site-font-icon: 24px/1 $site-font-family-icon;
 
 // Layout
-$site-header-height: 66px;
-$site-footer-md-default-height: 140px;
-$site-content-top-padding: 40px;
+$site-header-height: 4rem;
+$site-content-top-padding: 2rem;
 $site-content-max-width: 960px;
-$site-sidebar-top-padding: 16px;
-$site-sidebar-side-padding: 16px;
-$site-nav-mobile-side-padding: 20px;
 $site-spacer: 1rem;
+
+$site-z-header: 1030;
 
 // Alerts
 $alert-success-bg:        #f1fbf9;

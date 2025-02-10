@@ -37,7 +37,7 @@ to [Write your first Flutter app][].
 
 [Write your first Flutter app]: /get-started/codelab
 
-{% tabs %}
+{% tabs "vs-code-vs-intellij" %}
 {% tab "Visual Studio Code" %}
 
 ## Install VS Code

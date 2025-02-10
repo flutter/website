@@ -35,7 +35,7 @@ If you aren't using `snapd`, follow these steps to install Flutter.
 1. Download the installation bundle for the latest
    {{site.sdk.channel}} release of the Flutter SDK:
 
-   [(loading...)](#){:.download-latest-link-{{os}} .btn .btn-primary}
+   [(loading...)](#){:.download-latest-link-{{os}} .filled-button}
 
    You can find older builds and other release channels in the [SDK archive][].
 

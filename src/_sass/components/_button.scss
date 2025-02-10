@@ -1,0 +1,72 @@
+@use '../base/mixins';
+@use '../base/variables' as *;
+
+a {
+  color: $site-color-primary;
+  border-radius: 0.25rem;
+
+  &:hover {
+    color: $site-color-primary;
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: $flutter-color-blue-600;
+  }
+
+  &:visited {
+    color: $site-color-primary;
+  }
+}
+
+a, button {
+  text-decoration: none;
+  background: none;
+  cursor: pointer;
+
+  &.filled-button {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    white-space: nowrap;
+    outline-offset: 2px;
+    border-radius: 24px;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    background-color: $site-color-primary;
+    color: $site-color-white;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+      @include mixins.interaction-style(8%);
+    }
+
+    &:active {
+      @include mixins.interaction-style(16%);
+    }
+  }
+
+  &.icon-button {
+    border-radius: 0.25rem;
+    padding: 0.25rem;
+    color: $site-color-nav-links;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    background: none;
+
+    > span {
+      font-size: 1.75rem;
+    }
+
+    &:hover {
+      color: $site-color-body;
+    }
+  }
+}

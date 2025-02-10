@@ -711,7 +711,7 @@
       { "source": "/to/integrate-android-archive", "destination": "/add-to-app/android/project-setup", "type": 301 },
       { "source": "/to/integration-test-on-web", "destination": "/testing/integration-tests#test-in-a-web-browser", "type": 301 },
       { "source": "/to/integration-testing", "destination": "/cookbook/testing/integration/introduction", "type": 301 },
-      { "source": "/to/intellij-setup", "destination": "/get-started/editor?tab=androidstudio", "type": 301 },
+      { "source": "/to/intellij-setup", "destination": "/get-started/editor/?tab-save-vs-code-vs-intellij=android-studio-and-intellij", "type": 301 },
       { "source": "/to/internationalization", "destination": "/ui/accessibility-and-internationalization/internationalization", "type": 301 },
       { "source": "/to/ios-app-signing", "destination": "/deployment/ios#review-xcode-project-settings", "type": 301 },
       { "source": "/to/ios-create-flutter-engine", "destination": "/add-to-app/ios/add-flutter-screen#create-a-flutterengine", "type": 301 },
@@ -751,9 +751,9 @@
       { "source": "/to/troubleshoot-devices", "destination": "/get-started/install", "type": 301 },
       { "source": "/to/unbounded-constraints", "destination": "/ui/layout/constraints#unbounded", "type": 301 },
       { "source": "/to/unit-testing", "destination": "/cookbook/testing/unit/introduction", "type": 301 },
-      { "source": "/to/update-linux-path", "destination": "/get-started/install/linux/android?tab=download#add-flutter-to-your-path", "type": 301 },
-      { "source": "/to/update-macos-path", "destination": "/get-started/install/macos/mobile-ios?tab=download#add-flutter-to-your-path", "type": 301 },
-      { "source": "/to/update-windows-path", "destination": "/get-started/install/windows/mobile?tab=download#update-your-windows-path-variable", "type": 301 },
+      { "source": "/to/update-linux-path", "destination": "/get-started/install/linux/android?tab-save-vs-code-or-download=download-and-install#add-flutter-to-your-path", "type": 301 },
+      { "source": "/to/update-macos-path", "destination": "/get-started/install/macos/mobile-ios?tab-save-vs-code-or-download=download-and-install#add-flutter-to-your-path", "type": 301 },
+      { "source": "/to/update-windows-path", "destination": "/get-started/install/windows/mobile?tab-save-vs-code-or-download=download-and-install#update-your-windows-path-variable", "type": 301 },
       { "source": "/to/use-mirror-site", "destination": "/community/china#configure-your-machine-to-use-a-mirror-site", "type": 301 },
       { "source": "/to/use-profile-mode", "destination": "/perf/ui-performance#run-in-profile-mode", "type": 301 },
       { "source": "/to/wasm", "destination": "/platform-integration/web/wasm", "type": 301 },
@@ -799,14 +799,6 @@
           {
             "key": "X-Content-Type-Options",
             "value": "nosniff"
-          },
-          {
-            "key": "Content-Security-Policy-Report-Only",
-            "value": "default-src 'self' https:; font-src 'self' data: https://fonts.googleapis.com/ https://fonts.gstatic.com/; img-src 'self' https: data:; manifest-src 'none'; object-src 'none'; script-src 'self' 'unsafe-inline' 'sha256-TLFf6uphGKcmsQh139FXW+zI8+m+KYC/3ai/rTu4NO0=' 'sha256-BOF631Nskv2A6eetluVBrNcDbYRYd/+b3wU9NBtGKGQ=' 'sha256-ye5TuohbcxBNy6HcVWdwfRHAUaHjKdBTXjRsm92zCdo=' 'sha256-GdPtwIl3lB8GPexRo/QmApVAGQ/y1zRYuxJPZTpT6TQ=' 'sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==' 'sha512-ubuT8Z88WxezgSqf3RLuNi5lmjstiJcyezx34yIU2gAHonIi27Na7atqzUZCOoY4CExaoFumzOsFQ2Ch+I/HCw==' 'sha512-7rusk8kGPFynZWu26OKbTeI+QPoYchtxsmPeBqkHIEXJxeun4yJ4ISYe7C6sz9wdxeE1Gk3VxsIWgCZTc+vX3g==' 'sha512-7O5pXpc0oCRrxk8RUfDYFgn0nO1t+jLuIOQdOMRp4APB7uZ4vSjspzp5y6YDtDs4VzUSTbWzBFZ/LKJhnyFOKw==' 'sha512-nlp9/l96/EpjYBx7EP7pGASVXNe80hGhYAUrjeXnu/fyF5Py0/RXav4BBNs7n5Hx1WFhOEOWSAVjGeC3oKxDVQ=='; style-src 'self' https://unpkg.com/ https://pub.dartlang.org/static/ 'unsafe-inline' https://fonts.googleapis.com/ https://gstatic.com https://www.gstatic.com/ https://tagmanager.google.com https://accounts.google.com/gsi/style; frame-src 'self' https://youtube.com https://*.youtube.com https://dartpad.dev https://*.dartpad.dev; media-src 'self' https://youtube.com https://*.youtube.com; require-trusted-types-for 'script'"
-          },
-          {
-            "key": "X-Frame-Options",
-            "value": "'SAMEORIGIN' always;"
           }
         ]
       }

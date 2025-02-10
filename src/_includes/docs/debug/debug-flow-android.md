@@ -1,12 +1,3 @@
-:::note
-If you want to use the [GNU Project Debugger][] to debug the
-Flutter engine running within an Android app process,
-check out [`flutter_gdb`][].
-:::
-
-[GNU Project Debugger]: https://www.sourceware.org/gdb/
-[`flutter_gdb`]: {{site.repo.flutter}}/blob/main/engine/src/flutter/sky/tools/flutter_gdb
-
 #### Build the Android version of the Flutter app in the Terminal
 
 To generate the needed Android platform dependencies,

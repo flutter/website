@@ -3,7 +3,7 @@ title: State management
 description: How to structure an app to manage the state of the data flowing through it.
 next:
   title: Start thinking declaratively
-  path: /development/data-and-backend/state-mgmt/declarative
+  path: /data-and-backend/state-mgmt/declarative
 ---
 
 :::note

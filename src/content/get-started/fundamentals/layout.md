@@ -202,8 +202,8 @@ The first figure on this page used both.
 
 This is the most basic example of using a `Row` widget.
 
-{% render docs/code-and-image.md, 
-image:"fwe/layout/row.png", 
+{% render docs/code-and-image.md,
+image:"fwe/layout/row.png",
 caption: "This figure shows a row widget with three children."
 alt: "A screenshot of a row widget with three children"
 code:"

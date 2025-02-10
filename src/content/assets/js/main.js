@@ -1,14 +1,33 @@
-document.addEventListener("DOMContentLoaded", function(_) {
-  adjustToc();
-  setupInlineToc();
-  initFixedColumns();
-  scrollSidebarIntoView();
-  initCookieNotice();
-  setUpCodeBlockButtons();
+function setupSidenavInteractivity() {
+  document.getElementById('menu-toggle')?.addEventListener('click', function (e) {
+    e.stopPropagation();
+    document.body.classList.toggle('open_menu');
+  });
 
-  setupSearch();
-  setupTabs();
-});
+  window.addEventListener('resize', function() {
+    if (window.innerWidth >= 1024) {
+      document.body.classList.remove('open_menu');
+    }
+  });
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      const activeElement = document.activeElement;
+      if (activeElement && (activeElement.id === 'menu-toggle' || activeElement.closest('#sidenav'))) {
+        document.body.classList.remove('open_menu');
+      }
+    }
+  });
+
+  // Set up collapse and expand for sidenav buttons.
+  const toggles = document.querySelectorAll('.nav-link.collapsible');
+  toggles.forEach(function (toggle) {
+    toggle.addEventListener('click', (e) => {
+      toggle.classList.toggle('collapsed');
+      e.preventDefault();
+    });
+  });
+}
 
 /**
  * Get the user's current operating system, or
@@ -43,19 +62,17 @@ function getOS() {
   return null;
 }
 
-function scrollSidebarIntoView() {
-  const fixedSidebar = document.querySelector('.site-sidebar--fixed');
-
-  if (!fixedSidebar) {
+function scrollSidenavIntoView() {
+  const sidenav = document.getElementById('sidenav');
+  if (!sidenav) {
     return;
   }
 
-  const activeEntries = fixedSidebar.querySelectorAll('a.nav-link.active');
-
+  const activeEntries = sidenav.querySelectorAll('.nav-link.active');
   if (activeEntries.length > 0) {
     const activeEntry = activeEntries[activeEntries.length - 1];
 
-    fixedSidebar.scrollTo({
+    sidenav.scrollTo({
       top: activeEntry.offsetTop - window.innerHeight / 3,
     });
   }
@@ -80,11 +97,6 @@ function adjustToc() {
       _scrollToTop();
     });
   }
-
-  // This will not be migrated for now until we migrate 
-  // the entire site to Bootstrap 5.
-  // see https://github.com/flutter/website/pull/9167#discussion_r1286457246
-  $('body').scrollspy({ offset: 100, target: tocId });
 
   function _scrollToTop() {
     const distanceBetweenTop = document.documentElement.scrollTop || document.body.scrollTop;
@@ -118,52 +130,6 @@ function handleSearchShortcut(event) {
     searchElement.focus();
     // Prevent the initial slash from showing up in the search field.
     event.preventDefault();
-  }
-}
-
-function initFixedColumns() {
-  const fixedColumnsSelector = '[data-fixed-column]';
-  const bannerSelector = '.site-banner';
-  const footerSelector = '#site-footer';
-  const headerSelector = '.site-header';
-  const fixedColumns = $(fixedColumnsSelector);
-
-  function adjustFixedColumns() {
-    // only change values if the fixed col is visible
-    if ($(fixedColumnsSelector).css('display') == 'none') {
-      return;
-    }
-
-    const headerHeight = $(headerSelector).outerHeight();
-    let bannerVisibleHeight = 0;
-    // First, make sure the banner element even exists on the page.
-    const siteBanner = $(bannerSelector);
-    if (siteBanner.length > 0) {
-      const bannerHeight = siteBanner.outerHeight();
-      const bannerOffset = siteBanner.offset().top;
-      const bannerPosition = bannerOffset - $(window).scrollTop();
-      bannerVisibleHeight =
-        Math.max(bannerHeight - (headerHeight - bannerPosition), 0);
-    }
-    const topOffset = headerHeight + bannerVisibleHeight;
-
-    const footerOffset = $(footerSelector).offset().top;
-    const footerPosition = footerOffset - $(window).scrollTop();
-    const footerVisibleHeight = $(window).height() - footerPosition;
-
-    const fixedColumnsMaxHeight = $(window).height() - topOffset - footerVisibleHeight;
-
-    $(fixedColumnsSelector).css('max-height', fixedColumnsMaxHeight);
-    $(fixedColumnsSelector).css('top', topOffset);
-  }
-
-  if (fixedColumns.length) {
-    $(fixedColumnsSelector).css('position', 'fixed');
-
-    // listen for scroll and execute once
-    $(window).scroll(adjustFixedColumns);
-    $(window).resize(adjustFixedColumns);
-    adjustFixedColumns();
   }
 }
 
@@ -286,3 +252,67 @@ function setUpCodeBlockButtons() {
     codeBlock.appendChild(buttonWrapper);
   });
 }
+
+function setupSiteSwitcher() {
+  const siteSwitcher = document.getElementById('site-switcher');
+
+  if (!siteSwitcher) {
+    return;
+  }
+
+  const siteSwitcherButton = siteSwitcher.querySelector('.dropdown-button');
+  const siteSwitcherMenu = siteSwitcher.querySelector('#site-switcher-menu');
+  if (!siteSwitcherButton || !siteSwitcherMenu) {
+    return;
+  }
+
+  function _closeMenusAndToggle() {
+    siteSwitcherMenu.classList.remove('show');
+    siteSwitcherButton.ariaExpanded = 'false';
+  }
+
+  siteSwitcherButton.addEventListener('click', (_) => {
+    if (siteSwitcherMenu.classList.contains('show')) {
+      _closeMenusAndToggle();
+    } else {
+      siteSwitcherMenu.classList.add('show');
+      siteSwitcherButton.ariaExpanded = 'true';
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    // If pressing the `esc` key in the menu area, close the menu.
+    if (event.key === 'Escape' && event.target.closest('#site-switcher')) {
+      _closeMenusAndToggle();
+    }
+  });
+
+  siteSwitcher.addEventListener('focusout', (e) => {
+    // If focus leaves the site-switcher, hide the menu.
+    if (e.relatedTarget && !e.relatedTarget.closest('#site-switcher')) {
+      _closeMenusAndToggle();
+    }
+  });
+
+  document.addEventListener('click', (event) => {
+    // If not clicking inside the site switcher, close the menu.
+    if (!event.target.closest('#site-switcher')) {
+      _closeMenusAndToggle();
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function(_) {
+  scrollSidenavIntoView();
+  initCookieNotice();
+
+  setupSidenavInteractivity();
+  setUpCodeBlockButtons();
+
+  setupSearch();
+  setupSiteSwitcher();
+  setupTabs();
+
+  adjustToc();
+  setupInlineToc();
+});

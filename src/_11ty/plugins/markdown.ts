@@ -64,12 +64,11 @@ function _registerAside(markdown: MarkdownIt, id: string, defaultTitle: string |
       if (tokens[index].nesting === 1) {
         const parsedArgs = /\s+(.*)/.exec(tokens[index].info);
 
-        const title = parsedArgs?.[1] ?? defaultTitle ?? '';
+        const title = parsedArgs?.[1] ?? defaultTitle;
         return `<aside class="alert ${style}">
-<div class="alert-header">
+${title !== null ? `<div class="alert-header">
 ${icon !== null ? `<i class="material-symbols" aria-hidden="true">${icon}</i>` : ''}
-<span>${title ?? ''}</span>
-</div>
+<span>${title}</span></div>` : ''}
 <div class="alert-content">
 `;
       } else {
@@ -100,7 +99,7 @@ function _registerAsides(markdown: MarkdownIt): void {
   );
   _registerAside(markdown, 'tip', 'Tip', 'lightbulb', 'alert-success');
   _registerAside(markdown, 'recommend', 'Recommended', 'bolt', 'alert-success');
-  _registerAside(markdown, 'important', 'Important', 'error', 'alert-warning');
+  _registerAside(markdown, 'important', 'Important', 'error', 'alert-important');
   _registerAside(
     markdown,
     'warning',

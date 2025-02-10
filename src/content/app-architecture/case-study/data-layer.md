@@ -229,10 +229,9 @@ Future<Result<void>> delete(int id) async {
 ```
 
 The repository sends a `POST` request to the API client with
-the `_apiClient.deleteBooking` method,
-and returns a `Result`. The `HomeViewModel` consumes the `Result,
-and the data it contains, and ultimately calls `notifyListeners`,
-completing the cycle.
+the `_apiClient.deleteBooking` method, and returns a `Result`.
+The `HomeViewModel` consumes the `Result` and the data it contains,
+then ultimately calls `notifyListeners`, completing the cycle.
 
 [repositories]: /app-architecture/guide#repositories
 [services]:  /app-architecture/guide#services
@@ -240,8 +239,6 @@ completing the cycle.
 [`sealed`]: {{site.dart-site}}/language/class-modifiers#sealed
 [`BookingRepository` classes on GitHub]: https://github.com/flutter/samples/tree/main/compass_app/app/lib/data/repositories/booking
 [Result cookbook recipe]: /app-architecture/design-patterns/result
-
-[//]: # (todo ewindmill@ - update Result link after #11444 lands)
 
 ## Feedback
 

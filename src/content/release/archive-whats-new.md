@@ -1297,7 +1297,7 @@ Happy Fluttering!
 [Flutter Favorite program]: /packages-and-plugins/favorites
 [Flutter 1.12.13]: /release/release-notes/release-notes-1.12.13
 [Flutter Gallery]: {{site.gallery-archive}}
-[Flutter Layout Explorer]: /tools/devtools/inspector#flutter-layout-explorer
+[Flutter Layout Explorer]: /tools/devtools/legacy-inspector#flutter-layout-explorer
 [Flutter Medium publication]: {{site.medium}}/flutter
 [Migrating your plugin to the new Android APIs]: /release/breaking-changes/plugin-api-migration
 [implicit animations]: /codelabs/implicit-animations

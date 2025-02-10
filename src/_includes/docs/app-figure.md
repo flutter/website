@@ -13,8 +13,8 @@
 
 <figure class="{{class}}">
   <div class="site-figure-container">
-    <img src='/assets/images/docs/{{image}}' class='{{img-class}}' alt='{{alt}}' style='{{width}} {{height}}'>
-    {% if caption -%}
+    <img src="/assets/images/docs/{{image}}" class="{{img-class}}" alt="{{alt | escape}}" style="{{width}} {{height}} {{img-style}}">
+    {% if caption and caption != '' -%}
       <figcaption class="figure-caption">{{caption}}</figcaption>
     {% endif -%}
   </div>

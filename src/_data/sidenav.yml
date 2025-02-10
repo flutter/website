@@ -55,7 +55,7 @@
     - title: Cookbook
       permalink: /cookbook
     - title: Demos and samples
-      permalink: https://flutter.github.io/samples/
+      permalink: https://github.com/flutter/samples
 
 - title: Stay up to date
   permalink: /release
@@ -734,6 +734,8 @@
           permalink: /tools/devtools/cli
         - title: Flutter inspector
           permalink: /tools/devtools/inspector
+        - title: Legacy Flutter inspector
+          permalink: /tools/devtools/legacy-inspector
         - title: Performance view
           permalink: /tools/devtools/performance
         - title: CPU Profiler view
