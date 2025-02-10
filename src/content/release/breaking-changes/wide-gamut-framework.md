@@ -126,12 +126,18 @@ extension IntColorComponents on Color {
 
 ### Opacity
 
-Previously, Color had the concept of "opacity" which
-showed up in the methods `opacity` and `withOpacity()`.
-Opacity was introduced as a way to communicate with `Color` about
-its alpha channel with floating point values.
-Now that alpha is a floating-point value, opacity is redundant
-and `opacity` and `withOpacity` are deprecated and slated to be removed.
+Previously, Color had the concept of "opacity" which showed up in the methods
+`opacity` and `withOpacity()`. Opacity was introduced as a way to communicate
+with `Color` about its alpha channel with floating-point values. Opacity methods
+were convenience methods for setting the 8-bit alpha value, but never offered
+the full expression of a floating-point number.
+
+Now that alpha is a floating-point value, using `.a` and `.withValues()` will
+give the full expression of a floating-point value and won't be quantized. That
+means "alpha" expresses the intent of "opacity" more correctly. Opacity is
+different in a subtle way where it's usage can result in unexpected data loss,
+so it's been deprecated and the semantics has been maintained to avoid breaking
+anyone.
 
 <a id="opacity-migration" aria-hidden="true"></a>
 #### Migrate `opacity`
