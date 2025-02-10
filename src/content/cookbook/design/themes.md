@@ -52,8 +52,6 @@ Flutter creates a default theme for you.
 MaterialApp(
   title: appName,
   theme: ThemeData(
-    useMaterial3: true,
-
     // Define the default brightness and colors.
     colorScheme: ColorScheme.fromSeed(
       seedColor: Colors.purple,
@@ -208,8 +206,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: appName,
       theme: ThemeData(
-        useMaterial3: true,
-
         // Define the default brightness and colors.
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.purple,
