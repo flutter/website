@@ -138,7 +138,7 @@ Since Flutter 3.27, alpha is stored as a floating-point value. Using `.a` and
 `.withValues()` will give the full expression of a floating-point value and
 won't be quantized (restricted to a limited range). That means "alpha" expresses
 the intent of "opacity" more correctly. Opacity is different in a subtle way
-where it's usage can result in unexpected data loss, so `.withOpacity()` and
+where its usage can result in unexpected data loss, so `.withOpacity()` and
 `.opacity` have been deprecated and their semantics have been maintained to
 avoid breaking anyone.
 
