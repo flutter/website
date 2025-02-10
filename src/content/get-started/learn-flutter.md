@@ -53,7 +53,7 @@ Happy Fluttering!
 [Flutter for SwiftUI developers]: /get-started/flutter-for/swiftui-devs
 [Flutter for UIKit developers]: /get-started/flutter-for/uikit-devs
 [Flutter for React Native developers]: /get-started/flutter-for/react-native-devs
-[Flutter samples]: https://flutter.github.io/samples
+[Flutter samples]: https://github.com/flutter/samples
 [Flutter for web developers]: /get-started/flutter-for/web-devs
 [Flutter for Xamarin.Forms developers]: /get-started/flutter-for/xamarin-forms-devs
 [Learn the fundamentals]: /get-started/fundamentals
