@@ -139,6 +139,15 @@ different in a subtle way where it's usage can result in unexpected data loss,
 so it's been deprecated and the semantics has been maintained to avoid breaking
 anyone.
 
+For example:
+
+```dart
+// Prints 0.5019607843137255.
+print(Colors.black.withOpacity(0.5).a);
+// Prints 0.5.
+print(Colors.black.withValues(alpha: 0.5).a);
+```
+
 <a id="opacity-migration" aria-hidden="true"></a>
 #### Migrate `opacity`
 
