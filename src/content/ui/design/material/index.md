@@ -33,7 +33,7 @@ visiting the [Affected widgets][] page.
 
 [Affected widgets]: {{site.api}}/flutter/material/ThemeData/useMaterial3.html#affected-widgets
 [deprecation policy]: /release/compatibility-policy#deprecation-policy
-[demo]: https://github.com/flutter/samples/blob/main/material_3_demo/
+[demo]: {{site.github}}/flutter/samples/blob/main/material_3_demo/
 [`NavigationBar`]: {{site.api}}/flutter/material/NavigationBar-class.html
 [`useMaterial3`]: {{site.api}}/flutter/material/ThemeData/useMaterial3.html
 
