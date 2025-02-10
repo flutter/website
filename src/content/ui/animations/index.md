@@ -427,7 +427,7 @@ Learn more about Flutter animations at the following links:
 [animate1]: {{examples}}/animation/animate1
 [Animate a widget using a physics simulation]: /cookbook/animation/physics-simulation
 [`Animatable`]: {{site.api}}/flutter/animation/Animatable-class.html
-[`AnimatedList` example]: https://github.com/flutter/samples/blob/main/animations
+[`AnimatedList` example]: {{site.github}}/flutter/samples/blob/main/animations
 [`Animation`]: {{site.api}}/flutter/animation/Animation-class.html
 [Animation and motion widgets]: /ui/widgets/animation
 [Animation basics with implicit animations]: {{site.yt.watch}}?v=IVTjpW3W33s&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=1
