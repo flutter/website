@@ -58,7 +58,7 @@
   position: sticky;
   top: $site-header-height;
   order: 2;
-  max-height: calc(100vh - 4rem);
+  max-height: calc(100vh - $site-header-height);
   padding: $site-content-top-padding 0.75rem;
 
   display: none;
