@@ -26,6 +26,7 @@ $site-color-footer: #303c42;
 $site-color-primary: $flutter-color-blue-500;
 $twitter-color: #60CAF6;
 $site-color-panel-background: color.scale($site-color-primary, $lightness: 95%);
+$sidenav-divider-color: #e7e8ed;
 
 // Fonts
 $font-size-base-weight: 400;
@@ -41,7 +42,10 @@ $site-content-top-padding: 2rem;
 $site-content-max-width: 960px;
 $site-spacer: 1rem;
 
+$site-z-sidenav: 1020;
+$site-z-subnav: 1015;
 $site-z-header: 1030;
+$site-z-dropdown: 1050;
 
 // Alerts
 $alert-success-bg:        #f1fbf9;
