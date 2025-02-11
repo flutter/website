@@ -96,7 +96,7 @@ No action on your part is necessary for this fallback behavior.
     android:value="false" />
 ```
 
-### web
+### Web
 
 Flutter on the web offers two renderers and
 two build modes. For more information, visit

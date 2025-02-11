@@ -1080,7 +1080,7 @@ On the web, Flutter offers two renderers:
 </table>
 
 _Build modes_ are command-line options that dictate
-which runtimes are available when you run the app.
+which renderers are available when you run the app.
 
 Flutter offers two _build_ modes:
 
