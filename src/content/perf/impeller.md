@@ -16,7 +16,7 @@ check out the [Can I use Impeller?][] page.
 
 Impeller provides a new rendering runtime for Flutter.
 Impeller precompiles a [smaller, simpler set of shaders][]
-at Engine-build time so they don't compile at runtime.
+at engine-build time so they don't compile at runtime.
 
 [smaller, simpler set of shaders]: {{site.repo.flutter}}/issues/77412
 
@@ -76,7 +76,7 @@ Flutter **enables Impeller by default** on iOS.
 
 Flutter **enables Impeller by default** on Android.
 On devices that don't support Vulkan,
-Impeller will fallback to the the legacy OpenGL renderer.
+Impeller falls back to the the legacy OpenGL renderer.
 No action on your part is necessary for this fallback behavior.
 
 * To _disable_ Impeller when debugging,
@@ -95,6 +95,15 @@ No action on your part is necessary for this fallback behavior.
     android:name="io.flutter.embedding.android.EnableImpeller"
     android:value="false" />
 ```
+
+### Web
+
+Flutter on the web offers two renderers and
+two build modes. For more information, visit
+[Flutter web support][] in the Flutter
+architectural guide.
+
+[Flutter web support]: /resources/architectural-overview#flutter-web-support
 
 ### macOS
 
