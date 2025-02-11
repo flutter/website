@@ -55,7 +55,7 @@
     - title: Cookbook
       permalink: /cookbook
     - title: Demos and samples
-      permalink: https://flutter.github.io/samples/
+      permalink: https://github.com/flutter/samples
 
 - title: Stay up to date
   permalink: /release

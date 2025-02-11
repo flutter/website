@@ -17,7 +17,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'URL Launcher',
       theme: ThemeData(
-        useMaterial3: true,
         colorSchemeSeed: Colors.purple,
       ),
       home: const MyHomePage(title: 'URL Launcher'),
