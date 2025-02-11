@@ -204,19 +204,6 @@ function initCookieNotice() {
   notice.classList.add(activeClass);
 }
 
-function setupInlineToc() {
-  // Set up the inline TOC's ability to expand and collapse.
-  const toggle = document.querySelectorAll('.site-toc--inline__toggle');
-  toggle.forEach(function (toggle) {
-    toggle.addEventListener('click', (_) => {
-      const inlineToc = document.getElementById('site-toc--inline');
-      if (inlineToc) {
-        inlineToc.classList.toggle('toc-collapsed');
-      }
-    });
-  });
-}
-
 // A pattern to remove terminal command markers when copying code blocks.
 const terminalReplacementPattern = /^(\s*\$\s*)|(C:\\(.*)>\s*)/gm;
 
@@ -354,5 +341,4 @@ document.addEventListener("DOMContentLoaded", function(_) {
   setupTabs();
 
   adjustToc();
-  setupInlineToc();
 });
