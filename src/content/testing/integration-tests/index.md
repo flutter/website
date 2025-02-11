@@ -542,7 +542,7 @@ Complete the following steps to upload an Android APK.
       list. Encode all parameters as `base64`.
 
       ```console
-      $ ./gradlew project:task --defines="{base64 (key=value)}[, ...]"
+      $ ./gradlew project:task -Pdart-defines="{base64 (key=value)}[, ...]"
       ```
 
       * `(key=value)}[, ...]`: Replace this with a comma-separated list of

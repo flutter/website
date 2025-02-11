@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'URL Launcher',
-      theme: ThemeData(useMaterial3: true, colorSchemeSeed: Colors.purple),
+      theme: ThemeData(colorSchemeSeed: Colors.purple),
       home: const MyHomePage(title: 'URL Launcher'),
     );
   }

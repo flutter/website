@@ -16,9 +16,7 @@ If this work takes more than 16 milliseconds,
 your users experience jank.
 
 To avoid jank, you need to perform expensive computations
-like this in the background.
-On Android, this means scheduling work on a different thread.
-In Flutter, you can use a separate [Isolate][].
+like this in the background, using a separate [Isolate][].
 This recipe uses the following steps:
 
   1. Add the `http` package.
