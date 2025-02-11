@@ -15,20 +15,21 @@ defaults of the component visual properties.
 
 During card theme normalization, the type of `ThemeData.cardTheme` is changed
 to `Object?` to accept both `CardTheme` and `CardThemeData`, in order to have
-a soft land for breaking changes. Similar for `dialogTheme` and `tabBarTheme`.
+a smooth transition for the breaking changes. The same approach was used for
+`dialogTheme` and `tabBarTheme`.
 
-To finish the last step and follow the convention of `ThemeData`, the type of
-`ThemeData.cardTheme` is changed to `CardThemeData?`; the type of
-`ThemeData.dialogTheme` is changed to `DialogThemeData?`; the type of
-`ThemeData.tabBarTheme` is changed to `TabBarThemeData?`.
+To complete the transition and fully conform to the `ThemeData` convention, the 
+type of `ThemeData.cardTheme` has been changed to `CardThemeData?`; the type of
+`ThemeData.dialogTheme` has been changed to `DialogThemeData?`; and the type of
+`ThemeData.tabBarTheme` has been changed to `TabBarThemeData?`.
 
 ## Migration guide
 
 Previously, the type of `ThemeData.cardTheme` was `Object?` to accpet both
-`CardTheme` and `CardThemeData`. Now the type has been changed to
-`CardThemeData`. Similarly, the type of `ThemeData.dialogTheme` and
-`ThemeData.tabBarTheme` should be migrated to `DialogThemeData` and
-`TabBarThemeData`.
+`CardTheme` and `CardThemeData`. Now that the type has been changed to
+`CardThemeData?`, a migration is required if `ThemeData.cardTheme` is used.
+Similarly, the types of `ThemeData.dialogTheme` and `ThemeData.tabBarTheme` 
+should be migrated to `DialogThemeData` and `TabBarThemeData`, respectively.
 
 Code before migration:
 
