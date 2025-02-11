@@ -101,7 +101,7 @@ always start with an existing project.
     * When finished, check to make sure that you
       have the following schemes:
 
-      ![Schemes for Flutter flavors](/assets/images/docs/flavors/flavor-ios-schemes.png){:width="100%"}
+      ![Schemes for Flutter flavors](/assets/images/docs/flavors/flavors-ios-schemes.png){:width="100%"}
 
     :::note
     Note: By default, the target for the scheme is `Runner`
@@ -139,7 +139,7 @@ always start with an existing project.
     * When finished, check to make sure that you
       have the following configurations:
 
-      ![Scheme configurations for Flutter flavors](/assets/images/docs/flavors/flavor-ios-scheme-configurations.png){:width="100%"}
+      ![Scheme configurations for Flutter flavors](/assets/images/docs/flavors/flavors-ios-scheme-configurations.png){:width="100%"}
 
     :::note
     The scheme name (example: `staging`) that is appended to
@@ -192,7 +192,7 @@ always start with an existing project.
       select the iOS device you want to test against. In
       the following example, the device is `iPhone 16 Pro`.
 
-      ![Run a Flutter flavor](/assets/images/docs/flavors/flavors-test-scheme.png){:width="100%"}
+      ![Run a Flutter flavor](/assets/images/docs/flavors/flavors-ios-test-scheme.png){:width="100%"}
 
     * Run the app scheme (**Product > Run**).
 
@@ -427,6 +427,37 @@ To learn about them, see
 [Customizing the build schemes for a project][].
 
 [Customizing the build schemes for a project]: https://developer.apple.com/documentation/xcode/customizing-the-build-schemes-for-a-project
+
+### Update Podfiles
+
+If you are creating new Xcode schemes for a Flutter iOS
+project and you have an iOS Podfile in an existing
+Flutter project, you must update the Flutter iOS Podfile to
+match the changes you made in Xcode.
+
+The following steps show how to update your iOS Podfile to
+include two new Xcode schemes called `staging` and
+`production` in a Flutter project called `flavors_example`.
+You can also use these steps to update a macOS
+project by replacing any reference to `iOS` with `macOS`.
+
+1. In your IDE, open the `ios/Podfile` file.
+1. Make the following updates and save your changes.
+
+    ```json title="flavors_example/ios/Podfile"
+    project 'Runner', {
+      ...
+      'Debug' => :debug,
+      'Debug-staging' => :debug,
+      'Debug-production' => :debug,
+      'Profile' => :release,
+      'Profile-staging' => :release,
+      'Profile-production' => :release,
+      'Release' => :release,
+      'Release-staging' => :release,
+      'Release-production' => :release,
+      ...
+    ```
 
 ## More information
 
