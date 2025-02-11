@@ -69,6 +69,7 @@ Relevant PRs:
 
 * [Change cardTheme, dialogTheme, and tabBarTheme type to xxxThemeData][]
 
+[Change cardTheme, dialogTheme, and tabBarTheme type to xxxThemeData]: {{site.github}}/flutter/flutter/pull/157292
 [`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html
 [`CardTheme`]: {{site.api}}/flutter/material/CardTheme-class.html
 [`DialogTheme`]: {{site.api}}/flutter/material/DialogTheme-class.html
