@@ -13,7 +13,6 @@ export const markdown = (() => {
     .use(markdownItAttrs, {
       leftDelimiter: '{:',
       rightDelimiter: '}',
-      allowedAttributes: ['id', 'class', /^data-.*$/],
     })
     .use(markdownItAnchor, {
       slugify: (s) => slugify(s),
