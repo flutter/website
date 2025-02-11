@@ -46,7 +46,7 @@ They're sorted by release and listed in alphabetical order:
 * [Updated Material 3 progress indicators][]
 * [`.flutter-plugins-dependencies` replaces `.flutter-plugins`][]
 
-[Deprecate `RouteTransitionRecord.markForRemove`]: /release/breaking-changes/navigator-complete-route
+[deprecate-moveForRemove]: /release/breaking-changes/navigator-complete-route
 [Deprecate `WebGoldenComparator`]: /release/breaking-changes/web-golden-comparator
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
 [Deprecate `ThemeData.dialogBackgroundColor` in favor of `DialogThemeData.backgroundColor`]: /release/breaking-changes/deprecate-themedata-dialogbackgroundcolor
