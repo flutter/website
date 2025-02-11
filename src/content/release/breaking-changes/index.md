@@ -34,7 +34,8 @@ They're sorted by release and listed in alphabetical order:
 
 ### Not yet released to stable
 
-* [Deprecate `RouteTransitionRecord.markForRemove` in favor of `RouteTransitionRecord.markForComplete`][]
+* [Deprecate `RouteTransitionRecord.markForRemove`][deprecate-markForRemove]
+   in favor of `RouteTransitionRecord.markForComplete`
 * [Deprecate `WebGoldenComparator`][]
 * [Deprecate `TextField.canRequestFocus`][]
 * [Deprecate `ThemeData.dialogBackgroundColor` in favor of `DialogThemeData.backgroundColor`][]
