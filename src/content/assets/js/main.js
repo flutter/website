@@ -126,14 +126,14 @@ function _setupTocActiveObserver() {
         }
       });
 
-      if (visibleAnchors.size > 0 ||
-          (visibleAnchors.size === 1 && visibleAnchors.has('document-title'))) {
+      if (visibleAnchors.size > 0) {
         document.querySelectorAll(`.site-toc .sidenav-item a`).forEach(tocLink => {
-          const linkFragment = tocLink.getAttribute('href');
-          if (!linkFragment) return;
-          const headingId = linkFragment.substring(1);
+          const headingId = tocLink.getAttribute('href')?.substring(1);
+          if (!headingId) return;
+
           const sidenavItem = tocLink.closest('.sidenav-item');
           if (!sidenavItem) return;
+
           if (visibleAnchors.has(headingId)) {
             sidenavItem.classList.add('active');
           } else {
