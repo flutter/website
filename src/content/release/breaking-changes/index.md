@@ -40,6 +40,7 @@ They're sorted by release and listed in alphabetical order:
 * [Deprecate `ThemeData.indicatorColor` in favor of `TabBarThemeData.indicatorColor`][]
 * [`ImageFilter.blur` default tile mode automatic selection][]
 * [Localized messages are generated into source, not a synthetic package][]
+* [Material Theme System Updates][]
 * [Stop generating `AssetManifest.json`][]
 * [Updated Material 3 `Slider`][]
 * [Updated Material 3 progress indicators][]
@@ -51,6 +52,7 @@ They're sorted by release and listed in alphabetical order:
 [Deprecate `ThemeData.indicatorColor` in favor of `TabBarThemeData.indicatorColor`]: /release/breaking-changes/deprecate-themedata-indicatorcolor
 [`ImageFilter.blur` default tile mode automatic selection]: /release/breaking-changes/image-filter-blur-tilemode
 [Localized messages are generated into source, not a synthetic package]: /release/breaking-changes/flutter-generate-i10n-source
+[Material Theme System Updates]: /release/breaking-changes/material-theme-system-updates
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
 [Updated Material 3 `Slider`]: /release/breaking-changes/updated-material-3-slider
 [Updated Material 3 progress indicators]: /release/breaking-changes/updated-material-3-progress-indicators
