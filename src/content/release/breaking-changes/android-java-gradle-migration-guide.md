@@ -91,7 +91,7 @@ surrounding AGP, java, and gradle.
 
 ### Solution 1: Use Android Studio 
 The easiest way to resolve this issue is to use Android Studio AGP upgrade assistant. 
-To use select your top level build.gradle file in Android Studio then select 
+To use select your top-level `build.gradle` file in Android Studio then select 
 Tools -> AGP Upgrade Assistant. 
 
 ### Solution 2: Command line
