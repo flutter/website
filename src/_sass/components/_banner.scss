@@ -29,11 +29,11 @@
     font-family: $site-font-family-ui;
 
     &:hover {
-      color: color.mix($site-color-white, $flutter-color-blue-on-dark);
+      color: color.mix($site-color-white, $flutter-color-blue-on-dark, 25%);
     }
 
     &:active {
-      color: color.mix($site-color-white, $flutter-color-blue-on-dark, 75%);
+      color: color.mix($site-color-white, $flutter-color-blue-on-dark, 50%);
     }
   }
 
