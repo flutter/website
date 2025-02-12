@@ -97,7 +97,8 @@ Tools -> AGP Upgrade Assistant.
 ### Solution 2: Command line
 Run `flutter analyze --suggestion` to see if your AGP, Java, and gradle versions are compatible. 
 If Gradle needs to be updated you can update it with `./gradlew wrapper --gradle-version=SOMEGRADLEVERSION`
-where SOMEGRADLEVERSION is the version suggested by flutter analyze or newer. 
+where SOMEGRADLEVERSION is the version (you can use a newer version)
+suggested by `flutter analyze`. 
 
 To find the java version being used run `flutter doctor`
 On a mac you can find the versions of java the OS knows about with `/usr/libexec/java_home -V` 
