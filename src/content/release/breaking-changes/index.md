@@ -32,6 +32,8 @@ They're sorted by release and listed in alphabetical order:
 [`dart fix`]: /tools/flutter-fix
 [test registry]: {{site.github}}/flutter/tests
 
+<a id="released-in-flutter-3-29" aria-hidden="true"></a>
+<a id="released-in-flutter-329" aria-hidden="true"></a>
 ### Not yet released to stable
 
 * [Deprecate `RouteTransitionRecord.markForRemove`][deprecate-markForRemove]
