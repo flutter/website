@@ -302,7 +302,7 @@ function setupSiteSwitcher() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", function(_) {
+function setupSite() {
   scrollSidenavIntoView();
   initCookieNotice();
 
@@ -315,4 +315,10 @@ document.addEventListener("DOMContentLoaded", function(_) {
 
   adjustToc();
   setupInlineToc();
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', setupSite);
+} else {
+  setupSite();
+}
