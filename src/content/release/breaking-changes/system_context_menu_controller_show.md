@@ -15,7 +15,7 @@ achieved by passing `SystemContextMenu.getDefaultItems` to
 
 The iOS-drawn `SystemContextMenu` feature was originally added without the
 ability to control which items are shown in the menu. The platform would decide
-which items to show based on the current input connection.
+which items to show based on the active [TextInputConnection].
 
 The problem with this approach is that an "Autofill" button is often shown, but
 Flutter does not have the ability to respond to this button. So in many cases,
@@ -107,6 +107,7 @@ Relevant PRs:
 * [Add requestFocusOnTap to DropdownMenu][]
 * [Replace TextField.canRequestFocus with TextField.focusNode.canRequestFocus][]
 
+[`TextInputConnection`]: {{site.api}}/flutter/services/TextInputConnection-class.html
 [`DropdownMenu`]: {{site.api}}/flutter/material/DropdownMenu-class.html
 [`FocusNode.canRequestFocus`]: {{site.api}}/flutter/widgets/FocusNode/canRequestFocus.html
 [`TextField.canRequestFocus`]: {{site.api}}/flutter/material/TextField/canRequestFocus.html
