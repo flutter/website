@@ -9,21 +9,9 @@ class ColumnExample extends StatelessWidget {
     return Center(
       child: Column(
         children: <Widget>[
-          Container(
-            color: Colors.red,
-            width: 100,
-            height: 100,
-          ),
-          Container(
-            color: Colors.blue,
-            width: 100,
-            height: 100,
-          ),
-          Container(
-            color: Colors.green,
-            width: 100,
-            height: 100,
-          ),
+          Container(color: Colors.red, width: 100, height: 100),
+          Container(color: Colors.blue, width: 100, height: 100),
+          Container(color: Colors.green, width: 100, height: 100),
         ],
       ),
     );
@@ -45,10 +33,7 @@ class StackExample extends StatelessWidget {
             'https://avatars3.githubusercontent.com/u/14101776?v=4',
           ),
         ),
-        Container(
-          color: Colors.black45,
-          child: const Text('Flutter'),
-        ),
+        Container(color: Colors.black45, child: const Text('Flutter')),
       ],
     );
     // #enddocregion stack

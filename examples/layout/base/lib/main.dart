@@ -17,9 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: appTitle,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text(appTitle),
-        ),
+        appBar: AppBar(title: const Text(appTitle)),
         // #docregion centered-text
         body: const Center(
           // #docregion text
@@ -31,4 +29,5 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 // #enddocregion my-app, all

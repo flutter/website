@@ -128,10 +128,7 @@ DragTarget<Item>(
     );
   },
   onAcceptWithDetails: (details) {
-    _itemDroppedOnCustomerCart(
-      item: details.data,
-      customer: customer,
-    );
+    _itemDroppedOnCustomerCart(item: details.data, customer: customer);
   },
 )
 ```
@@ -177,19 +174,18 @@ which maintains a cart of items and a price total.
 <?code-excerpt "lib/main.dart (CustomerClass)"?>
 ```dart
 class Customer {
-  Customer({
-    required this.name,
-    required this.imageProvider,
-    List<Item>? items,
-  }) : items = items ?? [];
+  Customer({required this.name, required this.imageProvider, List<Item>? items})
+    : items = items ?? [];
 
   final String name;
   final ImageProvider imageProvider;
   final List<Item> items;
 
   String get formattedTotalItemPrice {
-    final totalPriceCents =
-        items.fold<int>(0, (prev, item) => prev + item.totalPriceCents);
+    final totalPriceCents = items.fold<int>(
+      0,
+      (prev, item) => prev + item.totalPriceCents,
+    );
     return '\$${(totalPriceCents / 100.0).toStringAsFixed(2)}';
   }
 }
@@ -260,22 +256,28 @@ const List<Item> _items = [
     name: 'Spinach Pizza',
     totalPriceCents: 1299,
     uid: '1',
-    imageProvider: NetworkImage('https://docs.flutter.dev'
-        '/cookbook/img-files/effects/split-check/Food1.jpg'),
+    imageProvider: NetworkImage(
+      'https://docs.flutter.dev'
+      '/cookbook/img-files/effects/split-check/Food1.jpg',
+    ),
   ),
   Item(
     name: 'Veggie Delight',
     totalPriceCents: 799,
     uid: '2',
-    imageProvider: NetworkImage('https://docs.flutter.dev'
-        '/cookbook/img-files/effects/split-check/Food2.jpg'),
+    imageProvider: NetworkImage(
+      'https://docs.flutter.dev'
+      '/cookbook/img-files/effects/split-check/Food2.jpg',
+    ),
   ),
   Item(
     name: 'Chicken Parmesan',
     totalPriceCents: 1499,
     uid: '3',
-    imageProvider: NetworkImage('https://docs.flutter.dev'
-        '/cookbook/img-files/effects/split-check/Food3.jpg'),
+    imageProvider: NetworkImage(
+      'https://docs.flutter.dev'
+      '/cookbook/img-files/effects/split-check/Food3.jpg',
+    ),
   ),
 ];
 
@@ -292,18 +294,24 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
   final List<Customer> _people = [
     Customer(
       name: 'Makayla',
-      imageProvider: const NetworkImage('https://docs.flutter.dev'
-          '/cookbook/img-files/effects/split-check/Avatar1.jpg'),
+      imageProvider: const NetworkImage(
+        'https://docs.flutter.dev'
+        '/cookbook/img-files/effects/split-check/Avatar1.jpg',
+      ),
     ),
     Customer(
       name: 'Nathan',
-      imageProvider: const NetworkImage('https://docs.flutter.dev'
-          '/cookbook/img-files/effects/split-check/Avatar2.jpg'),
+      imageProvider: const NetworkImage(
+        'https://docs.flutter.dev'
+        '/cookbook/img-files/effects/split-check/Avatar2.jpg',
+      ),
     ),
     Customer(
       name: 'Emilio',
-      imageProvider: const NetworkImage('https://docs.flutter.dev'
-          '/cookbook/img-files/effects/split-check/Avatar3.jpg'),
+      imageProvider: const NetworkImage(
+        'https://docs.flutter.dev'
+        '/cookbook/img-files/effects/split-check/Avatar3.jpg',
+      ),
     ),
   ];
 
@@ -333,10 +341,10 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
       title: Text(
         'Order Food',
         style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-              fontSize: 36,
-              color: const Color(0xFFF64209),
-              fontWeight: FontWeight.bold,
-            ),
+          fontSize: 36,
+          color: const Color(0xFFF64209),
+          fontWeight: FontWeight.bold,
+        ),
       ),
       backgroundColor: const Color(0xFFF7F7F7),
       elevation: 0,
@@ -348,12 +356,7 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
       children: [
         SafeArea(
           child: Column(
-            children: [
-              Expanded(
-                child: _buildMenuList(),
-              ),
-              _buildPeopleRow(),
-            ],
+            children: [Expanded(child: _buildMenuList()), _buildPeopleRow()],
           ),
         ),
       ],
@@ -365,22 +368,16 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
       padding: const EdgeInsets.all(16),
       itemCount: _items.length,
       separatorBuilder: (context, index) {
-        return const SizedBox(
-          height: 12,
-        );
+        return const SizedBox(height: 12);
       },
       itemBuilder: (context, index) {
         final item = _items[index];
-        return _buildMenuItem(
-          item: item,
-        );
+        return _buildMenuItem(item: item);
       },
     );
   }
 
-  Widget _buildMenuItem({
-    required Item item,
-  }) {
+  Widget _buildMenuItem({required Item item}) {
     return LongPressDraggable<Item>(
       data: item,
       dragAnchorStrategy: pointerDragAnchorStrategy,
@@ -398,22 +395,15 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
 
   Widget _buildPeopleRow() {
     return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 8,
-        vertical: 20,
-      ),
-      child: Row(
-        children: _people.map(_buildPersonWithDropZone).toList(),
-      ),
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 20),
+      child: Row(children: _people.map(_buildPersonWithDropZone).toList()),
     );
   }
 
   Widget _buildPersonWithDropZone(Customer customer) {
     return Expanded(
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 6,
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: 6),
         child: DragTarget<Item>(
           builder: (context, candidateItems, rejectedItems) {
             return CustomerCart(
@@ -423,10 +413,7 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
             );
           },
           onAcceptWithDetails: (details) {
-            _itemDroppedOnCustomerCart(
-              item: details.data,
-              customer: customer,
-            );
+            _itemDroppedOnCustomerCart(item: details.data, customer: customer);
           },
         ),
       ),
@@ -457,10 +444,7 @@ class CustomerCart extends StatelessWidget {
         borderRadius: BorderRadius.circular(22),
         color: highlighted ? const Color(0xFFF64209) : Colors.white,
         child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 12,
-            vertical: 24,
-          ),
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 24),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -478,10 +462,9 @@ class CustomerCart extends StatelessWidget {
               Text(
                 customer.name,
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      color: textColor,
-                      fontWeight:
-                          hasItems ? FontWeight.normal : FontWeight.bold,
-                    ),
+                  color: textColor,
+                  fontWeight: hasItems ? FontWeight.normal : FontWeight.bold,
+                ),
               ),
               Visibility(
                 visible: hasItems,
@@ -494,22 +477,22 @@ class CustomerCart extends StatelessWidget {
                     Text(
                       customer.formattedTotalItemPrice,
                       style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                            color: textColor,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
+                        color: textColor,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     const SizedBox(height: 4),
                     Text(
                       '${customer.items.length} item${customer.items.length != 1 ? 's' : ''}',
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                            color: textColor,
-                            fontSize: 12,
-                          ),
+                        color: textColor,
+                        fontSize: 12,
+                      ),
                     ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),
@@ -553,10 +536,7 @@ class MenuListItem extends StatelessWidget {
                     curve: Curves.easeInOut,
                     height: isDepressed ? 115 : 120,
                     width: isDepressed ? 115 : 120,
-                    child: Image(
-                      image: photoProvider,
-                      fit: BoxFit.cover,
-                    ),
+                    child: Image(image: photoProvider, fit: BoxFit.cover),
                   ),
                 ),
               ),
@@ -568,17 +548,17 @@ class MenuListItem extends StatelessWidget {
                 children: [
                   Text(
                     name,
-                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          fontSize: 18,
-                        ),
+                    style: Theme.of(
+                      context,
+                    ).textTheme.titleMedium?.copyWith(fontSize: 18),
                   ),
                   const SizedBox(height: 10),
                   Text(
                     price,
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                        ),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
                   ),
                 ],
               ),
@@ -612,10 +592,7 @@ class DraggingListItem extends StatelessWidget {
           width: 150,
           child: Opacity(
             opacity: 0.85,
-            child: Image(
-              image: photoProvider,
-              fit: BoxFit.cover,
-            ),
+            child: Image(image: photoProvider, fit: BoxFit.cover),
           ),
         ),
       ),
@@ -640,19 +617,18 @@ class Item {
 }
 
 class Customer {
-  Customer({
-    required this.name,
-    required this.imageProvider,
-    List<Item>? items,
-  }) : items = items ?? [];
+  Customer({required this.name, required this.imageProvider, List<Item>? items})
+    : items = items ?? [];
 
   final String name;
   final ImageProvider imageProvider;
   final List<Item> items;
 
   String get formattedTotalItemPrice {
-    final totalPriceCents =
-        items.fold<int>(0, (prev, item) => prev + item.totalPriceCents);
+    final totalPriceCents = items.fold<int>(
+      0,
+      (prev, item) => prev + item.totalPriceCents,
+    );
     return '\$${(totalPriceCents / 100.0).toStringAsFixed(2)}';
   }
 }

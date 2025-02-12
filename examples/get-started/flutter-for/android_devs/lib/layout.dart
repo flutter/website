@@ -41,22 +41,15 @@ class _SampleAppPageState extends State<SampleAppPage> {
     if (toggle) {
       return const Text('Toggle One');
     } else {
-      return ElevatedButton(
-        onPressed: () {},
-        child: const Text('Toggle Two'),
-      );
+      return ElevatedButton(onPressed: () {}, child: const Text('Toggle Two'));
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
-      body: Center(
-        child: _getToggleChild(),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
+      body: Center(child: _getToggleChild()),
       floatingActionButton: FloatingActionButton(
         onPressed: _toggle,
         tooltip: 'Update Text',
@@ -74,9 +67,7 @@ class MyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: Center(
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
@@ -88,6 +79,7 @@ class MyWidget extends StatelessWidget {
       ),
     );
   }
+
   // #enddocregion simple-widget
 }
 
@@ -107,6 +99,7 @@ class RowExample extends StatelessWidget {
       ],
     );
   }
+
   // #enddocregion row
 }
 
@@ -126,6 +119,7 @@ class ColumnExample extends StatelessWidget {
       ],
     );
   }
+
   // #enddocregion column
 }
 
@@ -144,5 +138,6 @@ class ListViewExample extends StatelessWidget {
       ],
     );
   }
+
   // #enddocregion list-view
 }

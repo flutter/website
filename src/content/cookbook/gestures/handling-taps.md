@@ -72,10 +72,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     const title = 'Gesture Demo';
 
-    return const MaterialApp(
-      title: title,
-      home: MyHomePage(title: title),
-    );
+    return const MaterialApp(title: title, home: MyHomePage(title: title));
   }
 }
 
@@ -87,12 +84,8 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      body: const Center(
-        child: MyButton(),
-      ),
+      appBar: AppBar(title: Text(title)),
+      body: const Center(child: MyButton()),
     );
   }
 }

@@ -7,10 +7,7 @@ class HelperScaffoldWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: const MyHomepage(),
-    );
+    return Scaffold(appBar: AppBar(), body: const MyHomepage());
   }
 }
 
@@ -43,4 +40,5 @@ class _MyHomepageState extends State<MyHomepage> {
     );
   }
 }
+
 // #enddocregion ephemeral

@@ -14,4 +14,5 @@ class SharedPreferencesService {
     return prefs.getBool(_kDartMode) ?? false;
   }
 }
+
 // #enddocregion SharedPreferencesService

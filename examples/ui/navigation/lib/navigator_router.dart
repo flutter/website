@@ -2,23 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 void main() {
-  runApp(MaterialApp.router(
-    title: 'Navigation with a router',
-    routerConfig: _router,
-  ));
+  runApp(
+    MaterialApp.router(
+      title: 'Navigation with a router',
+      routerConfig: _router,
+    ),
+  );
 }
 
 // Declare routing information
 final _router = GoRouter(
   routes: [
-    GoRoute(
-      path: '/',
-      builder: (context, state) => const FirstScreen(),
-    ),
-    GoRoute(
-      path: '/second',
-      builder: (context, state) => const SecondScreen(),
-    ),
+    GoRoute(path: '/', builder: (context, state) => const FirstScreen()),
+    GoRoute(path: '/second', builder: (context, state) => const SecondScreen()),
   ],
 );
 
@@ -27,9 +23,7 @@ class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('First Screen'),
-      ),
+      appBar: AppBar(title: const Text('First Screen')),
       body: Center(
         child: ElevatedButton(
           // #docregion push-route
@@ -47,9 +41,7 @@ class SecondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Second Screen'),
-      ),
+      appBar: AppBar(title: const Text('Second Screen')),
       body: Center(
         child: ElevatedButton(
           child: const Text('Go to first screen'),

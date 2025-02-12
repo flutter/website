@@ -14,9 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter layout demo',
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter layout demo'),
-        ),
+        appBar: AppBar(title: const Text('Flutter layout demo')),
         body: Center(child: _buildImageColumn()),
       ),
     );
@@ -25,36 +23,29 @@ class MyApp extends StatelessWidget {
   // #docregion column
   Widget _buildImageColumn() {
     return Container(
-      decoration: const BoxDecoration(
-        color: Colors.black26,
-      ),
-      child: Column(
-        children: [
-          _buildImageRow(1),
-          _buildImageRow(3),
-        ],
-      ),
+      decoration: const BoxDecoration(color: Colors.black26),
+      child: Column(children: [_buildImageRow(1), _buildImageRow(3)]),
     );
   }
   // #enddocregion column
 
   // #docregion row
   Widget _buildDecoratedImage(int imageIndex) => Expanded(
-        child: Container(
-          decoration: BoxDecoration(
-            border: Border.all(width: 10, color: Colors.black38),
-            borderRadius: const BorderRadius.all(Radius.circular(8)),
-          ),
-          margin: const EdgeInsets.all(4),
-          child: Image.asset('images/pic$imageIndex.jpg'),
-        ),
-      );
+    child: Container(
+      decoration: BoxDecoration(
+        border: Border.all(width: 10, color: Colors.black38),
+        borderRadius: const BorderRadius.all(Radius.circular(8)),
+      ),
+      margin: const EdgeInsets.all(4),
+      child: Image.asset('images/pic$imageIndex.jpg'),
+    ),
+  );
 
   Widget _buildImageRow(int imageIndex) => Row(
-        children: [
-          _buildDecoratedImage(imageIndex),
-          _buildDecoratedImage(imageIndex + 1),
-        ],
-      );
+    children: [
+      _buildDecoratedImage(imageIndex),
+      _buildDecoratedImage(imageIndex + 1),
+    ],
+  );
   // #enddocregion row
 }

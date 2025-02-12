@@ -17,21 +17,18 @@ class TodosScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Todos'),
-      ),
+      appBar: AppBar(title: const Text('Todos')),
       //passing in the ListView.builder
       // #docregion ListViewBuilder
       body: ListView.builder(
         itemCount: todos.length,
         itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(todos[index].title),
-          );
+          return ListTile(title: Text(todos[index].title));
         },
       ),
       // #enddocregion ListViewBuilder
     );
   }
 }
+
 // #enddocregion TodosScreen

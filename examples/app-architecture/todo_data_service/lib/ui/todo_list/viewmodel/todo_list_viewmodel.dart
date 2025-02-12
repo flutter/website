@@ -6,9 +6,8 @@ import '../../../utils/command.dart';
 import '../../../utils/result.dart';
 
 class TodoListViewModel extends ChangeNotifier {
-  TodoListViewModel({
-    required TodoRepository todoRepository,
-  }) : _todoRepository = todoRepository {
+  TodoListViewModel({required TodoRepository todoRepository})
+    : _todoRepository = todoRepository {
     load = Command0<void>(_load)..execute();
     add = Command1<void, String>(_add);
     delete = Command1<void, int>(_delete);
@@ -25,7 +24,7 @@ class TodoListViewModel extends ChangeNotifier {
   /// Delete a Todo item by its id.
   late Command1<void, int> delete;
 
-// #docregion TodoListViewModel
+  // #docregion TodoListViewModel
   List<Todo> _todos = [];
 
   List<Todo> get todos => _todos;
@@ -46,9 +45,9 @@ class TodoListViewModel extends ChangeNotifier {
       notifyListeners();
     }
   }
-// #enddocregion TodoListViewModel
+  // #enddocregion TodoListViewModel
 
-// #docregion Add
+  // #docregion Add
   Future<Result<void>> _add(String task) async {
     try {
       final result = await _todoRepository.createTodo(task);
@@ -65,7 +64,7 @@ class TodoListViewModel extends ChangeNotifier {
       notifyListeners();
     }
   }
-// #enddocregion Add
+  // #enddocregion Add
 
   // #docregion Delete
   Future<Result<void>> _delete(int id) async {
@@ -84,5 +83,6 @@ class TodoListViewModel extends ChangeNotifier {
       notifyListeners();
     }
   }
+
   // #enddocregion Delete
 }

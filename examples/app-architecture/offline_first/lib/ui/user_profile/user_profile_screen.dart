@@ -3,10 +3,7 @@ import 'package:flutter/material.dart';
 import 'user_profile_viewmodel.dart';
 
 class UserProfileScreen extends StatelessWidget {
-  const UserProfileScreen({
-    super.key,
-    required this.viewModel,
-  });
+  const UserProfileScreen({super.key, required this.viewModel});
 
   final UserProfileViewModel viewModel;
 
@@ -20,9 +17,7 @@ class UserProfileScreen extends StatelessWidget {
       body: ListenableBuilder(
         listenable: viewModel,
         builder: (context, child) {
-          return Center(
-            child: Text(viewModel.userProfile?.name ?? 'Loading'),
-          );
+          return Center(child: Text(viewModel.userProfile?.name ?? 'Loading'));
         },
       ),
     );

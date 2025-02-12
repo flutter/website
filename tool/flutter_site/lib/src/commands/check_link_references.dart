@@ -9,7 +9,8 @@ import 'package:path/path.dart' as path;
 
 final class CheckLinkReferencesCommand extends Command<int> {
   @override
-  String get description => 'Verify there are no unlinked/broken '
+  String get description =>
+      'Verify there are no unlinked/broken '
       'Markdown link references in the generated site output.';
 
   @override

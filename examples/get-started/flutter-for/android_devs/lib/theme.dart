@@ -10,8 +10,9 @@ class SampleApp extends StatelessWidget {
       title: 'Sample App',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        textSelectionTheme:
-            const TextSelectionThemeData(selectionColor: Colors.red),
+        textSelectionTheme: const TextSelectionThemeData(
+          selectionColor: Colors.red,
+        ),
       ),
       home: const SampleAppPage(),
     );

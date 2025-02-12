@@ -56,11 +56,7 @@ class _OkCancelButtons extends StatelessWidget {
 }
 
 class DialogButton extends StatelessWidget {
-  const DialogButton({
-    super.key,
-    required this.onPressed,
-    required this.label,
-  });
+  const DialogButton({super.key, required this.onPressed, required this.label});
 
   final VoidCallback onPressed;
   final String label;

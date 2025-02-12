@@ -75,10 +75,7 @@ the code executes the command `toggle` in the view model.
 <?code-excerpt "lib/ui/theme_config/widgets/theme_switch.dart (ThemeSwitch)"?>
 ```dart
 class ThemeSwitch extends StatelessWidget {
-  const ThemeSwitch({
-    super.key,
-    required this.viewmodel,
-  });
+  const ThemeSwitch({super.key, required this.viewmodel});
 
   final ThemeSwitchViewModel viewmodel;
 
@@ -205,9 +202,7 @@ so that any component listening to the `observeDarkMode` stream
 <?code-excerpt "lib/data/repositories/theme_repository.dart (ThemeRepository)"?>
 ```dart
 class ThemeRepository {
-  ThemeRepository(
-    this._service,
-  );
+  ThemeRepository(this._service);
 
   final _darkModeController = StreamController<bool>.broadcast();
 
@@ -278,13 +273,11 @@ and passed to the `MainApp` as constructor argument dependency.
 <?code-excerpt "lib/main.dart (MainTheme)"?>
 ```dart
 void main() {
-// ···
+  // ···
   runApp(
     MainApp(
-      themeRepository: ThemeRepository(
-        SharedPreferencesService(),
-      ),
-// ···
+      themeRepository: ThemeRepository(SharedPreferencesService()),
+      // ···
     ),
   );
 }
@@ -297,10 +290,8 @@ and pass the `ThemeRepository` as dependency.
 <?code-excerpt "lib/main.dart (AddThemeSwitch)"?>
 ```dart
 ThemeSwitch(
-  viewmodel: ThemeSwitchViewModel(
-    widget.themeRepository,
-  ),
-)
+  viewmodel: ThemeSwitchViewModel(widget.themeRepository),
+),
 ```
 
 The example application also includes the `MainAppViewModel` class, 
@@ -310,9 +301,7 @@ and exposes the dark mode setting to the `MaterialApp` widget.
 <?code-excerpt "lib/main_app_viewmodel.dart (MainAppViewModel)"?>
 ```dart
 class MainAppViewModel extends ChangeNotifier {
-  MainAppViewModel(
-    this._themeRepository,
-  ) {
+  MainAppViewModel(this._themeRepository) {
     _subscription = _themeRepository.observeDarkMode().listen((isDarkMode) {
       _isDarkMode = isDarkMode;
       notifyListeners();

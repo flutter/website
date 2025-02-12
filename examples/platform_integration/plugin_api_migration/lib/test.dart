@@ -12,4 +12,5 @@ void main() {
     expect(batteryLevel, isNotNull);
   });
 }
+
 // #enddocregion test

@@ -140,11 +140,7 @@ call the [`debugDumpApp()`][] function.
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    const MaterialApp(
-      home: AppHome(),
-    ),
-  );
+  runApp(const MaterialApp(home: AppHome()));
 }
 
 class AppHome extends StatelessWidget {
@@ -224,11 +220,7 @@ To dump the render tree:
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    const MaterialApp(
-      home: AppHome(),
-    ),
-  );
+  runApp(const MaterialApp(home: AppHome()));
 }
 
 class AppHome extends StatelessWidget {
@@ -329,11 +321,7 @@ To debug a compositing issue, use [`debugDumpLayerTree()`][].
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    const MaterialApp(
-      home: AppHome(),
-    ),
-  );
+  runApp(const MaterialApp(home: AppHome()));
 }
 
 class AppHome extends StatelessWidget {
@@ -424,11 +412,7 @@ extensive logging when the focus changes.
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    const MaterialApp(
-      home: AppHome(),
-    ),
-  );
+  runApp(const MaterialApp(home: AppHome()));
 }
 
 class AppHome extends StatelessWidget {
@@ -477,11 +461,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 void main() {
-  runApp(
-    const MaterialApp(
-      home: AppHome(),
-    ),
-  );
+  runApp(const MaterialApp(home: AppHome()));
 }
 
 class AppHome extends StatelessWidget {
@@ -496,13 +476,14 @@ class AppHome extends StatelessWidget {
           enabled: true,
           label: 'Clickable text here!',
           child: GestureDetector(
-              onTap: () {
-                debugDumpSemanticsTree();
-                if (kDebugMode) {
-                  print('Clicked!');
-                }
-              },
-              child: const Text('Click Me!', style: TextStyle(fontSize: 56))),
+            onTap: () {
+              debugDumpSemanticsTree();
+              if (kDebugMode) {
+                print('Clicked!');
+              }
+            },
+            child: const Text('Click Me!', style: TextStyle(fontSize: 56)),
+          ),
         ),
       ),
     );

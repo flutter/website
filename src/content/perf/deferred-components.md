@@ -213,11 +213,7 @@ class DeferredBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 30,
-      width: 30,
-      color: Colors.blue,
-    );
+    return Container(height: 30, width: 30, color: Colors.blue);
   }
 }
 ```

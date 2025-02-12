@@ -31,9 +31,10 @@ class ListDemo extends StatelessWidget {
                     child: CircleAvatar(child: Text('$index')),
                   ),
                   title: Text('Item $index'),
-                  subtitle: type == ListDemoType.twoLine
-                      ? const Text('Secondary text')
-                      : null,
+                  subtitle:
+                      type == ListDemoType.twoLine
+                          ? const Text('Secondary text')
+                          : null,
                 ),
             ],
           ),
@@ -43,10 +44,7 @@ class ListDemo extends StatelessWidget {
   }
 }
 
-enum ListDemoType {
-  oneLine,
-  twoLine,
-}
+enum ListDemoType { oneLine, twoLine }
 
 void main() {
   runApp(const ListDemo(type: ListDemoType.twoLine));

@@ -9,88 +9,55 @@ import 'package:flutter/scheduler.dart' show timeDilation;
 
 class StaggerAnimation extends StatelessWidget {
   StaggerAnimation({super.key, required this.controller})
-      :
-
-        // Each animation defined here transforms its value during the subset
-        // of the controller's duration defined by the animation's interval.
-        // For example the opacity animation transforms its value during
-        // the first 10% of the controller's duration.
-
-        opacity = Tween<double>(
-          begin: 0.0,
-          end: 1.0,
-        ).animate(
-          CurvedAnimation(
-            parent: controller,
-            curve: const Interval(
-              0.0,
-              0.100,
-              curve: Curves.ease,
-            ),
-          ),
+    : // Each animation defined here transforms its value during the subset
+      // of the controller's duration defined by the animation's interval.
+      // For example the opacity animation transforms its value during
+      // the first 10% of the controller's duration.
+      opacity = Tween<double>(begin: 0.0, end: 1.0).animate(
+        CurvedAnimation(
+          parent: controller,
+          curve: const Interval(0.0, 0.100, curve: Curves.ease),
         ),
-        width = Tween<double>(
-          begin: 50.0,
-          end: 150.0,
-        ).animate(
-          CurvedAnimation(
-            parent: controller,
-            curve: const Interval(
-              0.125,
-              0.250,
-              curve: Curves.ease,
-            ),
-          ),
+      ),
+      width = Tween<double>(begin: 50.0, end: 150.0).animate(
+        CurvedAnimation(
+          parent: controller,
+          curve: const Interval(0.125, 0.250, curve: Curves.ease),
         ),
-        height = Tween<double>(begin: 50.0, end: 150.0).animate(
-          CurvedAnimation(
-            parent: controller,
-            curve: const Interval(
-              0.250,
-              0.375,
-              curve: Curves.ease,
-            ),
-          ),
+      ),
+      height = Tween<double>(begin: 50.0, end: 150.0).animate(
+        CurvedAnimation(
+          parent: controller,
+          curve: const Interval(0.250, 0.375, curve: Curves.ease),
         ),
-        padding = EdgeInsetsTween(
-          begin: const EdgeInsets.only(bottom: 16),
-          end: const EdgeInsets.only(bottom: 75),
-        ).animate(
-          CurvedAnimation(
-            parent: controller,
-            curve: const Interval(
-              0.250,
-              0.375,
-              curve: Curves.ease,
-            ),
-          ),
+      ),
+      padding = EdgeInsetsTween(
+        begin: const EdgeInsets.only(bottom: 16),
+        end: const EdgeInsets.only(bottom: 75),
+      ).animate(
+        CurvedAnimation(
+          parent: controller,
+          curve: const Interval(0.250, 0.375, curve: Curves.ease),
         ),
-        borderRadius = BorderRadiusTween(
-          begin: BorderRadius.circular(4),
-          end: BorderRadius.circular(75),
-        ).animate(
-          CurvedAnimation(
-            parent: controller,
-            curve: const Interval(
-              0.375,
-              0.500,
-              curve: Curves.ease,
-            ),
-          ),
+      ),
+      borderRadius = BorderRadiusTween(
+        begin: BorderRadius.circular(4),
+        end: BorderRadius.circular(75),
+      ).animate(
+        CurvedAnimation(
+          parent: controller,
+          curve: const Interval(0.375, 0.500, curve: Curves.ease),
         ),
-        color = ColorTween(
-          begin: Colors.indigo[100],
-          end: Colors.orange[400],
-        ).animate(
-          CurvedAnimation(
-            parent: controller,
-            curve: const Interval(
-              0.500,
-              0.750,
-              curve: Curves.ease,
-            ),
-          ),
-        );
+      ),
+      color = ColorTween(
+        begin: Colors.indigo[100],
+        end: Colors.orange[400],
+      ).animate(
+        CurvedAnimation(
+          parent: controller,
+          curve: const Interval(0.500, 0.750, curve: Curves.ease),
+        ),
+      );
 
   final Animation<double> controller;
   final Animation<double> opacity;
@@ -114,10 +81,7 @@ class StaggerAnimation extends StatelessWidget {
           height: height.value,
           decoration: BoxDecoration(
             color: color.value,
-            border: Border.all(
-              color: Colors.indigo[300]!,
-              width: 3,
-            ),
+            border: Border.all(color: Colors.indigo[300]!, width: 3),
             borderRadius: borderRadius.value,
           ),
         ),
@@ -127,10 +91,7 @@ class StaggerAnimation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedBuilder(
-      builder: _buildAnimation,
-      animation: controller,
-    );
+    return AnimatedBuilder(builder: _buildAnimation, animation: controller);
   }
 }
 
@@ -174,9 +135,7 @@ class _StaggerDemoState extends State<StaggerDemo>
   Widget build(BuildContext context) {
     timeDilation = 10.0; // 1.0 is normal animation speed.
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Staggered Animation'),
-      ),
+      appBar: AppBar(title: const Text('Staggered Animation')),
       body: GestureDetector(
         behavior: HitTestBehavior.opaque,
         onTap: () {
@@ -188,9 +147,7 @@ class _StaggerDemoState extends State<StaggerDemo>
             height: 300,
             decoration: BoxDecoration(
               color: Colors.black.withValues(alpha: 0.1),
-              border: Border.all(
-                color: Colors.black.withValues(alpha: 0.5),
-              ),
+              border: Border.all(color: Colors.black.withValues(alpha: 0.5)),
             ),
             child: StaggerAnimation(controller: _controller.view),
           ),
@@ -201,9 +158,5 @@ class _StaggerDemoState extends State<StaggerDemo>
 }
 
 void main() {
-  runApp(
-    const MaterialApp(
-      home: StaggerDemo(),
-    ),
-  );
+  runApp(const MaterialApp(home: StaggerDemo()));
 }

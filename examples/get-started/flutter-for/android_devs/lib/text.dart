@@ -7,9 +7,7 @@ class MyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: const Center(
         child: Text(
           'This is a custom font text',
@@ -18,5 +16,6 @@ class MyWidget extends StatelessWidget {
       ),
     );
   }
+
   // #enddocregion custom-font
 }

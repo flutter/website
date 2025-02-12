@@ -51,12 +51,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter Demo'),
-        ),
-        body: const Center(
-          child: TapboxA(),
-        ),
+        appBar: AppBar(title: const Text('Flutter Demo')),
+        body: const Center(child: TapboxA()),
       ),
     );
   }

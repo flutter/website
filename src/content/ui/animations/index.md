@@ -247,8 +247,10 @@ but does not start it running:
 
 <?code-excerpt "animation/animate5/lib/main.dart (animation-controller)"?>
 ```dart
-controller =
-    AnimationController(duration: const Duration(seconds: 2), vsync: this);
+controller = AnimationController(
+  duration: const Duration(seconds: 2),
+  vsync: this,
+);
 ```
 
 `AnimationController` derives from `Animation<double>`, so it can be used
@@ -339,7 +341,9 @@ integer values from 0 to 255 over the course of 500 ms.
 <?code-excerpt "animation/animate5/lib/main.dart (IntTween)"?>
 ```dart
 AnimationController controller = AnimationController(
-    duration: const Duration(milliseconds: 500), vsync: this);
+  duration: const Duration(milliseconds: 500),
+  vsync: this,
+);
 Animation<int> alpha = IntTween(begin: 0, end: 255).animate(controller);
 ```
 
@@ -353,9 +357,13 @@ The following example shows a controller, a curve, and a `Tween`:
 <?code-excerpt "animation/animate5/lib/main.dart (IntTween-curve)"?>
 ```dart
 AnimationController controller = AnimationController(
-    duration: const Duration(milliseconds: 500), vsync: this);
-final Animation<double> curve =
-    CurvedAnimation(parent: controller, curve: Curves.easeOut);
+  duration: const Duration(milliseconds: 500),
+  vsync: this,
+);
+final Animation<double> curve = CurvedAnimation(
+  parent: controller,
+  curve: Curves.easeOut,
+);
 Animation<int> alpha = IntTween(begin: 0, end: 255).animate(curve);
 ```
 

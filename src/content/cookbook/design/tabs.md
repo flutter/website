@@ -34,10 +34,7 @@ creates a `TabController` and makes it available to all descendant widgets.
 <?code-excerpt "lib/partials.dart (TabController)"?>
 ```dart
 return MaterialApp(
-  home: DefaultTabController(
-    length: 3,
-    child: Scaffold(),
-  ),
+  home: DefaultTabController(length: 3, child: Scaffold()),
 );
 ```
 

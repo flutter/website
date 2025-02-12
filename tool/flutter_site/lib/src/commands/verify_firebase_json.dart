@@ -9,7 +9,8 @@ import 'package:args/command_runner.dart';
 
 final class VerifyFirebaseJsonCommand extends Command<int> {
   @override
-  String get description => 'Verify the firebase.json file is valid and '
+  String get description =>
+      'Verify the firebase.json file is valid and '
       'meets the site standards.';
 
   @override
@@ -102,9 +103,7 @@ int _verifyFirebaseJson() {
       }
 
       if (sources.contains(source)) {
-        stderr.writeln(
-          "Error: Multiple redirects share the '$source' source.",
-        );
+        stderr.writeln("Error: Multiple redirects share the '$source' source.");
         duplicatesFound += 1;
       }
 

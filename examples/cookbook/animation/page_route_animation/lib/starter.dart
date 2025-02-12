@@ -3,11 +3,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    const MaterialApp(
-      home: Page1(),
-    ),
-  );
+  runApp(const MaterialApp(home: Page1()));
 }
 
 class Page1 extends StatelessWidget {
@@ -45,9 +41,7 @@ class Page2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: const Center(
-        child: Text('Page 2'),
-      ),
+      body: const Center(child: Text('Page 2')),
     );
   }
 }
@@ -78,10 +72,7 @@ Route step2() {
       final tween = Tween(begin: begin, end: end);
       final offsetAnimation = animation.drive(tween);
 
-      return SlideTransition(
-        position: offsetAnimation,
-        child: child,
-      );
+      return SlideTransition(position: offsetAnimation, child: child);
     },
     // #enddocregion step2
   );
@@ -104,10 +95,7 @@ Route step4() {
       const curve = Curves.ease;
 
       final tween = Tween(begin: begin, end: end);
-      final curvedAnimation = CurvedAnimation(
-        parent: animation,
-        curve: curve,
-      );
+      final curvedAnimation = CurvedAnimation(parent: animation, curve: curve);
 
       return SlideTransition(
         position: tween.animate(curvedAnimation),

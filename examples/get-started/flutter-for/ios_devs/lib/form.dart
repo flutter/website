@@ -7,9 +7,7 @@ class MyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     // #docregion input-hint
     return const Center(
-      child: TextField(
-        decoration: InputDecoration(hintText: 'This is a hint'),
-      ),
+      child: TextField(decoration: InputDecoration(hintText: 'This is a hint')),
     );
     // #enddocregion input-hint
   }
@@ -64,4 +62,5 @@ class _MyFormState extends State<MyForm> {
     );
   }
 }
+
 // #enddocregion my-form-state

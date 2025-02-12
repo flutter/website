@@ -29,9 +29,7 @@ displayed using the [`vector_graphics`][] package, like so:
 ```dart
 import 'package:vector_graphics/vector_graphics.dart';
 
-const Widget logo = VectorGraphic(
-  loader: AssetBytesLoader('assets/logo.svg'),
-);
+const Widget logo = VectorGraphic(loader: AssetBytesLoader('assets/logo.svg'));
 ```
 
 ### Passing arguments to asset transformers

@@ -59,9 +59,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Retrieve Text Input'),
-      ),
+      appBar: AppBar(title: const Text('Retrieve Text Input')),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -74,9 +72,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
             ),
             // #enddocregion TextField1
             // #docregion TextField2
-            TextField(
-              controller: myController,
-            ),
+            TextField(controller: myController),
             // #enddocregion TextField2
           ],
         ),
