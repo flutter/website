@@ -100,10 +100,10 @@ If Gradle needs to be updated you can update it with `./gradlew wrapper --gradle
 where SOMEGRADLEVERSION is the version (you can use a newer version)
 suggested by `flutter analyze`. 
 
-To find the java version being used run `flutter doctor`
-On a mac you can find the versions of java the OS knows about with `/usr/libexec/java_home -V` 
-To set the version of java that all flutter projects use run `flutter config --jdk-dir=SOMEJAVAPATH`
-where SOMEJAVAPATH is a path to a java version like `/opt/homebrew/Cellar/openjdk@17/17.0.13/libexec/openjdk.jdk/Contents/Home`
+To find the Java version being used run `flutter doctor`.
+On a mac, you can find the Java versions that the OS knows about with `/usr/libexec/java_home -V`.
+To set the version of Java that all flutter projects use run `flutter config --jdk-dir=SOMEJAVAPATH`
+where SOMEJAVAPATH is a path to a Java version like `/opt/homebrew/Cellar/openjdk@17/17.0.13/libexec/openjdk.jdk/Contents/Home`
 
 ## Notes
 
