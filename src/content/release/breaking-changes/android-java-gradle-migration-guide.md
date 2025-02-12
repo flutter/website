@@ -89,7 +89,7 @@ This is an indication that your java version is newer than the version of
 gradle you are running can handle. There is a non obvious set of dependencies
 surrounding AGP, java, and gradle. 
 
-### Solution 1: Use Android Studio 
+### Solution 1: Android Studio 
 The easiest way to resolve this issue is to use Android Studio AGP upgrade assistant. 
 To use select your top-level `build.gradle` file in Android Studio then select 
 Tools -> AGP Upgrade Assistant. 
