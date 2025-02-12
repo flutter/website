@@ -23,6 +23,39 @@ and review the [Dart changelog][].
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [release notes]: /release/release-notes
 
+## 12 February 2025: 3.29 release
+
+Flutter 3.29 is live! For more information,
+check out the [Flutter 3.29 technical blog post][3.29-tech].
+You might also check out the [Dart 3.7 release][] blog post.
+
+[3.29-tech]: {{site.medium}}/flutter/whats-new-in-flutter-3-29-f90c380c2317
+[Dart 3.7 release]: {{site.medium}}/dartlang/announcing-dart-3-7-bf864a1b195c
+
+**Docs updated or added since the 3.27 release**
+
+* As Flutter evolves, so do its internals. The
+  [Architectural overview page] is updated.
+
+* For those of you coming from Android development
+  who are familiar with Jetpack Compose, please visit
+  [Flutter for Jetpack Compose devs][].
+
+* A new cookbook recipe is added for testing a
+  widget's orientation, [Test orientation][].
+
+* Also, don't forget to check out the [breaking changes][bc-3.29]
+  page for this release. That's also where you'll find useful
+  migration info.
+
+[Architectural overview page]: /resources/architectural-overview
+[bc-3.29]: /release/breaking-changes#released-in-flutter-3-29
+[Dart 3.7 release]: {{site.medium}}/dartlang/announcing-dart-3-7-bf864a1b195c
+[Flutter for Jetpack Compose devs]: /get-started/flutter-for/compose-devs
+[Test orientation]: /cookbook/testing/widget/orientation
+
+---
+
 ## 11 December 2024: 3.27 release
 
 Flutter 3.27 is live! For more information,
