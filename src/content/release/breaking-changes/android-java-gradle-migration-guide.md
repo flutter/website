@@ -83,11 +83,11 @@ Do the following from the top of your Flutter project.
    $ ./gradlew wrapper --gradle-version=7.6.1
    ```
 
-## You didnt update android studio and still have a java error
+## You didn't update Android Studio and still have a Java error
 The error appears similar to `Unsupported class file major version 65`. 
-This is an indication that your java version is newer than the version of
+This is an indication that your Java version is newer than the version of
 gradle you are running can handle. There is a non obvious set of dependencies
-surrounding AGP, java, and gradle. 
+surrounding AGP, Java, and Gradle. 
 
 ### Solution 1: Android Studio 
 The easiest way to resolve this issue is to use Android Studio AGP upgrade assistant. 
@@ -95,7 +95,7 @@ To use select your top-level `build.gradle` file in Android Studio then select
 Tools -> AGP Upgrade Assistant. 
 
 ### Solution 2: Command line
-Run `flutter analyze --suggestion` to see if your AGP, Java, and gradle versions are compatible. 
+Run `flutter analyze --suggestion` to see if your AGP, Java, and Gradle versions are compatible. 
 If Gradle needs to be updated you can update it with `./gradlew wrapper --gradle-version=SOMEGRADLEVERSION`
 where SOMEGRADLEVERSION is the version (you can use a newer version)
 suggested by `flutter analyze`. 
