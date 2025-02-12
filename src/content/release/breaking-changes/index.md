@@ -42,6 +42,7 @@ They're sorted by release and listed in alphabetical order:
 * [Material Theme System Updates][]
 * [Stop generating `AssetManifest.json`][]
 * [`.flutter-plugins-dependencies` replaces `.flutter-plugins`][]
+* [Changing the default `goldenFileComparator` for `integration_test`s][]
 
 [deprecate-markForRemove]: /release/breaking-changes/navigator-complete-route
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
@@ -50,6 +51,7 @@ They're sorted by release and listed in alphabetical order:
 [Material Theme System Updates]: /release/breaking-changes/material-theme-system-updates
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
 [`.flutter-plugins-dependencies` replaces `.flutter-plugins`]: /release/breaking-changes/flutter-plugins-configuration
+[Changing the default `goldenFileComparator` for `integration_test`s]: /release/breaking-changes/integration-test-default-golden-comparator
 
 <a id="released-in-flutter-329" aria-hidden="true"></a>
 ### Released in Flutter 3.29
