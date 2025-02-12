@@ -35,7 +35,7 @@ You might also check out the [Dart 3.7 release][] blog post.
 **Docs updated or added since the 3.27 release**
 
 * As Flutter evolves, so do its internals. The
-  [Architectural overview page] is updated.
+  [Architectural overview page][] is updated.
 
 * For those of you coming from Android development
   who are familiar with Jetpack Compose, please visit
