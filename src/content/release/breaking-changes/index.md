@@ -32,36 +32,39 @@ They're sorted by release and listed in alphabetical order:
 [`dart fix`]: /tools/flutter-fix
 [test registry]: {{site.github}}/flutter/tests
 
-<a id="released-in-flutter-3-29" aria-hidden="true"></a>
-<a id="released-in-flutter-329" aria-hidden="true"></a>
 ### Not yet released to stable
 
 * [Deprecate `RouteTransitionRecord.markForRemove`][deprecate-markForRemove]
    in favor of `RouteTransitionRecord.markForComplete`
-* [Deprecate `WebGoldenComparator`][]
 * [Deprecate `TextField.canRequestFocus`][]
-* [Deprecate `ThemeData.dialogBackgroundColor` in favor of `DialogThemeData.backgroundColor`][]
 * [Deprecate `ThemeData.indicatorColor` in favor of `TabBarThemeData.indicatorColor`][]
-* [`ImageFilter.blur` default tile mode automatic selection][]
 * [Localized messages are generated into source, not a synthetic package][]
 * [Material Theme System Updates][]
 * [Stop generating `AssetManifest.json`][]
-* [Updated Material 3 `Slider`][]
-* [Updated Material 3 progress indicators][]
 * [`.flutter-plugins-dependencies` replaces `.flutter-plugins`][]
 
 [deprecate-markForRemove]: /release/breaking-changes/navigator-complete-route
-[Deprecate `WebGoldenComparator`]: /release/breaking-changes/web-golden-comparator
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
-[Deprecate `ThemeData.dialogBackgroundColor` in favor of `DialogThemeData.backgroundColor`]: /release/breaking-changes/deprecate-themedata-dialogbackgroundcolor
 [Deprecate `ThemeData.indicatorColor` in favor of `TabBarThemeData.indicatorColor`]: /release/breaking-changes/deprecate-themedata-indicatorcolor
-[`ImageFilter.blur` default tile mode automatic selection]: /release/breaking-changes/image-filter-blur-tilemode
 [Localized messages are generated into source, not a synthetic package]: /release/breaking-changes/flutter-generate-i10n-source
 [Material Theme System Updates]: /release/breaking-changes/material-theme-system-updates
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
-[Updated Material 3 `Slider`]: /release/breaking-changes/updated-material-3-slider
-[Updated Material 3 progress indicators]: /release/breaking-changes/updated-material-3-progress-indicators
 [`.flutter-plugins-dependencies` replaces `.flutter-plugins`]: /release/breaking-changes/flutter-plugins-configuration
+
+<a id="released-in-flutter-329" aria-hidden="true"></a>
+### Released in Flutter 3.29
+
+* [Deprecate `WebGoldenComparator`][]
+* [Deprecate `ThemeData.dialogBackgroundColor` in favor of `DialogThemeData.backgroundColor`][]
+* [`ImageFilter.blur` default tile mode automatic selection][]
+* [Updated Material 3 `Slider`][]
+* [Updated Material 3 progress indicators][]
+
+[Deprecate `WebGoldenComparator`]: /release/breaking-changes/web-golden-comparator
+[Deprecate `ThemeData.dialogBackgroundColor` in favor of `DialogThemeData.backgroundColor`]: /release/breaking-changes/deprecate-themedata-dialogbackgroundcolor
+[`ImageFilter.blur` default tile mode automatic selection]: /release/breaking-changes/image-filter-blur-tilemode
+[Updated Material 3 progress indicators]: /release/breaking-changes/updated-material-3-progress-indicators
+[Updated Material 3 `Slider`]: /release/breaking-changes/updated-material-3-slider
 
 <a id="released-in-flutter-327" aria-hidden="true"></a>
 ### Released in Flutter 3.27
