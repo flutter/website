@@ -8,14 +8,14 @@ description: >
 ## Summary
 
 `SystemContextMenuController.show` is deprecated. The same functionality can be
-achieved by passing `SystemContextMenu.getDefaultItems` to
+achieved by passing the result of calling `SystemContextMenu.getDefaultItems` to
 `SystemContextMenuController.showWithItems`.
 
 ## Background
 
 The iOS-drawn `SystemContextMenu` feature was originally added without the
 ability to control which items are shown in the menu. The platform would decide
-which items to show based on the active [TextInputConnection].
+which items to show based on the active `TextInputConnection`.
 
 The problem with this approach is that an "Autofill" button is often shown, but
 Flutter does not have the ability to respond to this button. So in many cases,
@@ -29,7 +29,7 @@ be passed.
 Developers that have no preference which items are shown can call the new method
 `SystemContextMenu.getDefaultItems` to get the default items based on the given
 `EditableTextState`. For example, if the `EditableTextState` indicates that
-there is nothing selected, then the "Copy" button will not be included, since it
+there is nothing selected, then the **Copy** button won't be included, since it
 requires a selection to copy.
 
 ## Migration guide
@@ -89,30 +89,31 @@ In stable release: not yet
 
 ## References
 
-// TODO(justinmc): Fill this out.
 API documentation:
 
-* [`DropdownMenu`][]
-* [`FocusNode.canRequestFocus`][]
-* [`TextField.canRequestFocus`][]
-* [`TextField.focusNode`][]
+* [`TextInputConnection`][]
+* [`SystemContextMenuController.show`][]
+* [`SystemContextMenuController.showWithItems`][]
+* [`SystemContextMenu`][]
 
 Relevant issues:
 
-* [Broken selection on TextField if canRequestFocus: false][]
-* [DropdownMenu Disable text input][]
+* [Flutter should support iOS 15's Secure Paste feature][]
 
 Relevant PRs:
 
-* [Add requestFocusOnTap to DropdownMenu][]
-* [Replace TextField.canRequestFocus with TextField.focusNode.canRequestFocus][]
+* [Secure paste milestone 2][]
+* [[ios][secure_paste]show menu item based on info sent from framework][]
+* [Native iOS context menu][]
+* [[ios_edit_menu]add native edit menu][]
 
 [`TextInputConnection`]: {{site.api}}/flutter/services/TextInputConnection-class.html
-[`DropdownMenu`]: {{site.api}}/flutter/material/DropdownMenu-class.html
-[`FocusNode.canRequestFocus`]: {{site.api}}/flutter/widgets/FocusNode/canRequestFocus.html
-[`TextField.canRequestFocus`]: {{site.api}}/flutter/material/TextField/canRequestFocus.html
-[`TextField.focusNode`]: {{site.api}}/flutter/material/TextField/focusNode.html
+[`SystemContextMenuController.show`]: {{site.api}}/flutter/services/SystemContextMenuController/show.html
+[`SystemContextMenuController.showWithItems`]: {{site.api}}/flutter/services/SystemContextMenuController/showWithItems.html
+[`SystemContextMenu`]: {{site.api}}/flutter/services/SystemContextMenu.html
 
-[Native ios context menu]: {{site.repo.flutter}}/pull/143002
 [Secure paste milestone 2]: {{site.repo.flutter}}/pull/159013
 [[ios][secure_paste]show menu item based on info sent from framework]: {{sites.repo.engine}}/pull/161103
+[Native iOS context menu]: {{site.repo.flutter}}/pull/143002
+[[ios_edit_menu]add native edit menu]: {{site.repo.flutter}}/pull/50095
+[Flutter should support iOS 15's Secure Paste feature]: {{site.repo.flutter}}/issues/103163
