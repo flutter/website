@@ -87,7 +87,7 @@ Relevant PRs:
 * [Updated `ThemeData.useMaterial3` API doc, default is true][]
 
 
-[Material 3 gallery]: https://flutter.github.io/samples/web/material_3_demo/
+[Material 3 gallery]: https://github.com/flutter/samples/tree/main/material_3_demo
 [Material 3 umbrella issue]: {{site.repo.flutter}}/issues/91605
 [Material Design for Flutter]: /ui/design/material
 [`ThemeData.useMaterial3`]: {{site.api}}/flutter/material/ThemeData/useMaterial3.html

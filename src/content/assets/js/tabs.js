@@ -1,7 +1,7 @@
-/**
- * Set up interactivity of tabs created with the `{% tabs %}` shortcode.
- */
+/** Set up interactivity of tabs created with the `{% tabs %}` shortcode. */
 function setupTabs() {
+  _applyFromQueryParameters();
+
   const tabsWrappers = document.querySelectorAll('.tabs-wrapper');
 
   tabsWrappers.forEach(function (tabWrapper) {
@@ -46,6 +46,23 @@ function setupTabs() {
       }
     }
   });
+}
+
+/** Apply force overrides from query parameters to saved tabs. */
+function _applyFromQueryParameters() {
+  const currentUrl = new URL(window.location.href);
+  const searchParams = currentUrl.searchParams;
+  const paramsToDelete = [];
+
+  searchParams.forEach((value, key) => {
+    if (key.startsWith('tab-save-')) {
+      localStorage.setItem(key, value);
+      paramsToDelete.push(key);
+    }
+  });
+
+  paramsToDelete.forEach(key => searchParams.delete(key));
+  window.history.replaceState({}, '', currentUrl.toString());
 }
 
 function _clearActiveTabs(tabs) {

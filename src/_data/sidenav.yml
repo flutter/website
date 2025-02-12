@@ -34,6 +34,8 @@
       children:
         - title: Flutter for Android devs
           permalink: /get-started/flutter-for/android-devs
+        - title: Flutter for Jetpack Compose devs
+          permalink: /get-started/flutter-for/compose-devs
         - title: Flutter for SwiftUI devs
           permalink: /get-started/flutter-for/swiftui-devs
         - title: Flutter for UIKit devs
@@ -55,7 +57,7 @@
     - title: Cookbook
       permalink: /cookbook
     - title: Demos and samples
-      permalink: https://flutter.github.io/samples/
+      permalink: https://github.com/flutter/samples
 
 - title: Stay up to date
   permalink: /release

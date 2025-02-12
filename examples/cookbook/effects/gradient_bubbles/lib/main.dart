@@ -18,7 +18,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Chat',
-      theme: ThemeData.dark(useMaterial3: true),
+      theme: ThemeData.dark(),
       home: home,
     );
   }
