@@ -103,9 +103,9 @@ Relevant issues:
 Relevant PRs:
 
 * [Secure paste milestone 2][]
-* [[ios][secure_paste]show menu item based on info sent from framework][]
-* [Native iOS context menu][]
-* [[ios_edit_menu]add native edit menu][]
+* [ios secure_paste show menu item based on info sent from framework][]
+* [Native ios context menu][]
+* [ios_edit_menu add native edit menu][]
 
 [`TextInputConnection`]: {{site.api}}/flutter/services/TextInputConnection-class.html
 [`SystemContextMenuController.show`]: {{site.api}}/flutter/services/SystemContextMenuController/show.html
@@ -113,7 +113,7 @@ Relevant PRs:
 [`SystemContextMenu`]: {{site.api}}/flutter/services/SystemContextMenu.html
 
 [Secure paste milestone 2]: {{site.repo.flutter}}/pull/159013
-[[ios][secure_paste]show menu item based on info sent from framework]: {{sites.repo.engine}}/pull/161103
-[Native iOS context menu]: {{site.repo.flutter}}/pull/143002
-[[ios_edit_menu]add native edit menu]: {{site.repo.flutter}}/pull/50095
+[ios secure_paste show menu item based on info sent from framework]: {{sites.repo.engine}}/pull/161103
+[Native ios context menu]: {{site.repo.flutter}}/pull/143002
+[ios_edit_menu add native edit menu]: {{site.repo.flutter}}/pull/50095
 [Flutter should support iOS 15's Secure Paste feature]: {{site.repo.flutter}}/issues/103163
