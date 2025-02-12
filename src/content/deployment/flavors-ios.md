@@ -104,7 +104,7 @@ always start with an existing project.
       ![Schemes for Flutter flavors](/assets/images/docs/flavors/flavors-ios-schemes.png){:width="100%"}
 
     :::note
-    Note: By default, the target for the scheme is `Runner`
+    By default, the target for the scheme is `Runner`
     and the scheme is shared. The scheme must be shared for
     Flutter flavors to work properly. To double-check that
     sharing is enabled, open the Manage Schemes window
@@ -338,8 +338,10 @@ an iOS project called `flavors_example`.
       icon in the sizes that you need. Save them in
       PNG format.
 
-      Note: You can use a tool like [App Icon Generator][]
+      :::note
+      You can use a tool like [App Icon Generator][]
       to generate the versions of your icons.
+      :::
 
 1.  Add the icons to your Xcode project:
 
@@ -402,12 +404,12 @@ to Xcode build configurations. For example, you might want
 to assign different API URLs to  `Debug-staging` and
 `Debug-production`. For example: 
 
-```console title="debug-staging-settings.xcconfig"
+```plaintext title="debug-staging-settings.xcconfig"
 # Debug-staging build settings
 API_BASE_URL = staging.flavors.com/api
 ```
 
-```console title="debug-production-settings.xcconfig"
+```plaintext title="debug-production-settings.xcconfig"
 # Debug-production build settings
 API_BASE_URL = flavors.com/api
 ```
@@ -444,7 +446,7 @@ project by replacing any reference to `iOS` with `macOS`.
 1. In your IDE, open the `ios/Podfile` file.
 1. Make the following updates and save your changes.
 
-    ```json title="flavors_example/ios/Podfile"
+    ```ruby title="flavors_example/ios/Podfile"
     project 'Runner', {
       ...
       'Debug' => :debug,
@@ -461,11 +463,13 @@ project by replacing any reference to `iOS` with `macOS`.
 
 ## More information
 
-For more information on creating and using flavors, check out
-the following resources:
+For more information on creating and using flavors, check
+out the following resources:
 
-* [How to Setup Flutter & Firebase with Multiple Flavors using the FlutterFire CLI][flutterfireCLI]
-* [Build flavors in Flutter (Android and iOS) with different Firebase projects per flavor Flutter Ready to Go][flavors-firebase]
+* [How to Setup Flutter & Firebase with Multiple Flavors
+  using the FlutterFire CLI][flutterfireCLI]
+* [Build flavors in Flutter (Android and iOS) with different
+  Firebase projects per flavor Flutter Ready to Go][flavors-firebase]
 
 [flutterfireCLI]: https://codewithandrea.com/articles/flutter-firebase-multiple-flavors-flutterfire-cli/
 [flavors-firebase]: {{site.medium}}/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b

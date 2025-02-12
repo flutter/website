@@ -8,15 +8,16 @@ description: >
 
 ## Overview
 
-A Flutter flavor is basically a collection of settings that
-define how a specific version of your app should be built
-and run. For example, a flavor could determine which icon,
-app name, API key, feature flag, and logging level is
-associated with a specific version of your app.
+A Flutter flavor when used with Android represents a unified
+term for various platform specific features. For example, a
+flavor could determine which icon, app name, API key,
+feature flag, and logging level is associated with a
+specific version of your app.
 
 If you want to create Flutter flavors for an Android app,
 you can do this in Flutter. In Android, the concept called
-"flavor" is referred to as a build variant.
+"flavor" is referred to as a _build variant_ or
+_product flavor_.
 
 ## Using flavors {: #using-flavors-in-android }
 
@@ -37,20 +38,20 @@ Setting up flavors in Android can be done in your project's
    * If you specify a **applicationIdSuffix** instead of a **applicationId**,
      it is appended to the "base" application id.
 
-    ```groovy title="android/app/build.gradle"
-    android {
-        // ...
-        flavorDimensions "default"
+      ```kotlin title="build.gradle.kts"
+      android {
+          // ...
+          flavorDimensions += "default"
 
-        productFlavors {
-            staging {
-                dimension "default"
-                resValue "string", "app_name", "Flavor example (staging)"
-                applicationIdSuffix ".staging"
-            }
-        }
-    }
-    ```
+          productFlavors {
+              create("staging") {
+                  dimension = "default"
+                  resValue(type = "string", name = "app_name", value = "Flavor example (staging)")
+                  applicationIdSuffix = ".staging"
+              }
+          }
+      }
+      ```
 
 [`flavorDimension`]: {{site.android-dev}}/studio/build/build-variants#flavor-dimensions
 
