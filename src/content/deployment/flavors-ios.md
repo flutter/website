@@ -212,7 +212,7 @@ Xcode, you can launch a specific scheme through Xcode or
 Flutter. You can also use these steps to launch a macOS
 project by replacing any reference to `iOS` with `macOS`.
 
-### Use the flavor command (Flutter CLI)
+### Use the flavor flag (Flutter CLI)
 
 You can launch an Xcode scheme in `Debug` mode with the
 Flutter CLI using the following steps:
