@@ -89,6 +89,7 @@ Relevant PRs:
 
 [`flutter_test`]: {{site.api}}/flutter/flutter_test
 [`goldenFileComparator`]: {{site.api}}/flutter/flutter_test/goldenFileComparator.html
+[`integration_test`]: {{site.api}}/flutter/package-integration_test_integration_test/
 [Issue 143299]: {{site.repo.flutter}}/issues/143299
 [Issue 160043]: {{site.repo.flutter}}/issues/160043
 [`matchesGoldenFile`]: {{site.api}}/flutter/flutter_test/MatchesGoldenFile-class.html
