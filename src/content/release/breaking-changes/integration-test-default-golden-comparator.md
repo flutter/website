@@ -91,5 +91,6 @@ Relevant PRs:
 [`goldenFileComparator`]: {{site.api}}/flutter/flutter_test/goldenFileComparator.html
 [Issue 143299]: {{site.repo.flutter}}/issues/143299
 [Issue 160043]: {{site.repo.flutter}}/issues/160043
+[`matchesGoldenFile`]: {{site.api}}/flutter/flutter_test/MatchesGoldenFile-class.html
 [PR 160215]: {{site.repo.flutter}}/pull/160215
 [PR 160484]: {{site.repo.flutter}}/pull/160484
