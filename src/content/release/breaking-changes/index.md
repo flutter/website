@@ -43,6 +43,7 @@ They're sorted by release and listed in alphabetical order:
 * [Stop generating `AssetManifest.json`][]
 * [`.flutter-plugins-dependencies` replaces `.flutter-plugins`][]
 
+[Deprecate `SystemContextMenuController.show`]: /release/breaking-changes/system_context_menu_controller_show
 [deprecate-markForRemove]: /release/breaking-changes/navigator-complete-route
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
 [Deprecate `ThemeData.indicatorColor` in favor of `TabBarThemeData.indicatorColor`]: /release/breaking-changes/deprecate-themedata-indicatorcolor
