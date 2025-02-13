@@ -24,6 +24,7 @@ such as the following, this update introduces a breaking change:
 - [Firebase dynamic links](https://firebase.google.com/docs/dynamic-links)
 - [`package:uni_link`]({{site.pub-pkg}}/uni_links)
 - [`package:app_links`]({{site.pub-pkg}}/app_links)
+- [`package:flutter_branch_sdk`]({{site.pub-pkg}}/flutter_branch_sdk)
 
 In this case, you must manually reset the
 Flutter deep linking option to `false`.
