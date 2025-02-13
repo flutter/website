@@ -64,7 +64,7 @@ There are two ways to migrate away from importing `package:flutter_gen`:
  2. Enable the `explicit-package-dependencies` feature flag:
 
     ```sh
-    flutter config explicit-package-dependencies
+    flutter config --explicit-package-dependencies
     ```
 
 ## Timeline
