@@ -663,8 +663,10 @@
   children:
     - title: Obfuscate Dart code
       permalink: /deployment/obfuscate
-    - title: Create flavors of an app
+    - title: Create app flavors for Android
       permalink: /deployment/flavors
+    - title: Create app flavors for iOS and macOS
+      permalink: /deployment/flavors-ios
     - title: Build and release an Android app
       permalink: /deployment/android
     - title: Build and release an iOS app
