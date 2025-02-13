@@ -9,7 +9,7 @@ description: >-
 ## Summary
 
 Unless a user-defined [`goldenFileComparator`][] is set, either manually in a
-test, or using a [`flutter_test_config.dart`][flutter_test] file, Android and iOS devices
+test, or using a `flutter_test_config.dart` file, Android and iOS devices
 and emulators/simulators have a new default that proxies to the local host
 filesystem, fixing a long-standing bug ([#143299][Issue 143299]).
 
