@@ -91,6 +91,8 @@ always start with an existing project.
     * Open the **New Scheme** window
       (**Product > Scheme > New Scheme**).
 
+    * In the **Target** field, select **Runner**.
+
     * In the **Name** box, enter `staging`.
 
     * Click **Okay** to add the new scheme.
@@ -104,12 +106,12 @@ always start with an existing project.
       ![Schemes for Flutter flavors](/assets/images/docs/flavors/flavors-ios-schemes.png){:width="100%"}
 
     :::note
-    By default, the target for the scheme is `Runner`
-    and the scheme is shared. The scheme must be shared for
-    Flutter flavors to work properly. To double-check that
-    sharing is enabled, open the Manage Schemes window
-    (**Product > Scheme > Manage Schemes**) and make
-    sure that the `Shared` checkbox to the right of your new
+    By default the new schemes are shared. The schemes must
+    be shared for Flutter flavors to work properly. To
+    double-check that sharing is enabled, open the
+    **Manage Schemes** window
+    (**Product > Scheme > Manage Schemes**) and make sure
+    that the **Shared** checkbox to the right of your new
     scheme is checked.
     :::   
 
