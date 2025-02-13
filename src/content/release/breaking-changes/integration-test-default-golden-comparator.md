@@ -15,7 +15,7 @@ filesystem, fixing a long-standing bug ([#143299][Issue 143299]).
 
 ## Background
 
-The package [`integration_test`][], and it's integration with [`flutter test`][]
+The package [`integration_test`][], and it's integration with [`flutter_test`][]
 has historically had a bug where using [`matchesGoldenFile`][] or similar APIs
 where a `FileSystemException` was thrown.
 
