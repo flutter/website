@@ -28,16 +28,12 @@ class MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text(title),
-        ),
+        appBar: AppBar(title: const Text(title)),
         // #docregion ListView
         body: ListView.builder(
           itemCount: items.length,
           itemBuilder: (context, index) {
-            return ListTile(
-              title: Text(items[index]),
-            );
+            return ListTile(title: Text(items[index]));
           },
         ),
         // #enddocregion ListView

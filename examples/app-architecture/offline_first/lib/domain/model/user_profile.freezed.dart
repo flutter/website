@@ -12,7 +12,8 @@ part of 'user_profile.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$UserProfile {
@@ -30,8 +31,9 @@ mixin _$UserProfile {
 /// @nodoc
 abstract class $UserProfileCopyWith<$Res> {
   factory $UserProfileCopyWith(
-          UserProfile value, $Res Function(UserProfile) then) =
-      _$UserProfileCopyWithImpl<$Res, UserProfile>;
+    UserProfile value,
+    $Res Function(UserProfile) then,
+  ) = _$UserProfileCopyWithImpl<$Res, UserProfile>;
   @useResult
   $Res call({String name, String photoUrl, bool synchronized});
 }
@@ -55,20 +57,26 @@ class _$UserProfileCopyWithImpl<$Res, $Val extends UserProfile>
     Object? photoUrl = null,
     Object? synchronized = null,
   }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      photoUrl: null == photoUrl
-          ? _value.photoUrl
-          : photoUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      synchronized: null == synchronized
-          ? _value.synchronized
-          : synchronized // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            name:
+                null == name
+                    ? _value.name
+                    : name // ignore: cast_nullable_to_non_nullable
+                        as String,
+            photoUrl:
+                null == photoUrl
+                    ? _value.photoUrl
+                    : photoUrl // ignore: cast_nullable_to_non_nullable
+                        as String,
+            synchronized:
+                null == synchronized
+                    ? _value.synchronized
+                    : synchronized // ignore: cast_nullable_to_non_nullable
+                        as bool,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -76,8 +84,9 @@ class _$UserProfileCopyWithImpl<$Res, $Val extends UserProfile>
 abstract class _$$UserProfileImplCopyWith<$Res>
     implements $UserProfileCopyWith<$Res> {
   factory _$$UserProfileImplCopyWith(
-          _$UserProfileImpl value, $Res Function(_$UserProfileImpl) then) =
-      __$$UserProfileImplCopyWithImpl<$Res>;
+    _$UserProfileImpl value,
+    $Res Function(_$UserProfileImpl) then,
+  ) = __$$UserProfileImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String name, String photoUrl, bool synchronized});
@@ -88,8 +97,9 @@ class __$$UserProfileImplCopyWithImpl<$Res>
     extends _$UserProfileCopyWithImpl<$Res, _$UserProfileImpl>
     implements _$$UserProfileImplCopyWith<$Res> {
   __$$UserProfileImplCopyWithImpl(
-      _$UserProfileImpl _value, $Res Function(_$UserProfileImpl) _then)
-      : super(_value, _then);
+    _$UserProfileImpl _value,
+    $Res Function(_$UserProfileImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of UserProfile
   /// with the given fields replaced by the non-null parameter values.
@@ -100,28 +110,36 @@ class __$$UserProfileImplCopyWithImpl<$Res>
     Object? photoUrl = null,
     Object? synchronized = null,
   }) {
-    return _then(_$UserProfileImpl(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      photoUrl: null == photoUrl
-          ? _value.photoUrl
-          : photoUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      synchronized: null == synchronized
-          ? _value.synchronized
-          : synchronized // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
+    return _then(
+      _$UserProfileImpl(
+        name:
+            null == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                    as String,
+        photoUrl:
+            null == photoUrl
+                ? _value.photoUrl
+                : photoUrl // ignore: cast_nullable_to_non_nullable
+                    as String,
+        synchronized:
+            null == synchronized
+                ? _value.synchronized
+                : synchronized // ignore: cast_nullable_to_non_nullable
+                    as bool,
+      ),
+    );
   }
 }
 
 /// @nodoc
 
 class _$UserProfileImpl implements _UserProfile {
-  const _$UserProfileImpl(
-      {required this.name, required this.photoUrl, this.synchronized = false});
+  const _$UserProfileImpl({
+    required this.name,
+    required this.photoUrl,
+    this.synchronized = false,
+  });
 
   @override
   final String name;
@@ -161,10 +179,11 @@ class _$UserProfileImpl implements _UserProfile {
 }
 
 abstract class _UserProfile implements UserProfile {
-  const factory _UserProfile(
-      {required final String name,
-      required final String photoUrl,
-      final bool synchronized}) = _$UserProfileImpl;
+  const factory _UserProfile({
+    required final String name,
+    required final String photoUrl,
+    final bool synchronized,
+  }) = _$UserProfileImpl;
 
   @override
   String get name;

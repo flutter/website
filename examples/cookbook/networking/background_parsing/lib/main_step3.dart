@@ -13,8 +13,9 @@ List<Photo> parsePhotos(String responseBody) {
 }
 
 Future<List<Photo>> fetchPhotos(http.Client client) async {
-  final response = await client
-      .get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
+  final response = await client.get(
+    Uri.parse('https://jsonplaceholder.typicode.com/photos'),
+  );
 
   // Synchronously run parsePhotos in the main isolate.
   return parsePhotos(response.body);
@@ -47,4 +48,5 @@ class Photo {
     );
   }
 }
+
 // #enddocregion Photo

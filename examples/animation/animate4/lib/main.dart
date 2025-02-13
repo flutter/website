@@ -62,8 +62,10 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    controller =
-        AnimationController(duration: const Duration(seconds: 2), vsync: this);
+    controller = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    );
     animation = Tween<double>(begin: 0, end: 300).animate(controller);
     controller.forward();
   }
@@ -71,10 +73,7 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return GrowTransition(
-      animation: animation,
-      child: const LogoWidget(),
-    );
+    return GrowTransition(animation: animation, child: const LogoWidget());
   }
 
   @override
@@ -82,6 +81,8 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
     controller.dispose();
     super.dispose();
   }
+
   // #docregion print-state
 }
+
 // #enddocregion print-state

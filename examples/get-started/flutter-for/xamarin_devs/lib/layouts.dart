@@ -16,6 +16,7 @@ class RowExample extends StatelessWidget {
       ],
     );
   }
+
   // #enddocregion row
 }
 
@@ -49,19 +50,17 @@ class GridExample extends StatelessWidget {
       // horizontal, this would produce 2 rows.
       crossAxisCount: 2,
       // Generate 100 widgets that display their index in the list.
-      children: List<Widget>.generate(
-        100,
-        (index) {
-          return Center(
-            child: Text(
-              'Item $index',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          );
-        },
-      ),
+      children: List<Widget>.generate(100, (index) {
+        return Center(
+          child: Text(
+            'Item $index',
+            style: Theme.of(context).textTheme.headlineMedium,
+          ),
+        );
+      }),
     );
   }
+
   // #enddocregion grid
 }
 
@@ -73,22 +72,15 @@ class StackExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Stack(
       children: <Widget>[
-        Icon(
-          Icons.add_box,
-          size: 24,
-          color: Colors.black,
-        ),
+        Icon(Icons.add_box, size: 24, color: Colors.black),
         Positioned(
           left: 10,
-          child: Icon(
-            Icons.add_circle,
-            size: 24,
-            color: Colors.black,
-          ),
+          child: Icon(Icons.add_circle, size: 24, color: Colors.black),
         ),
       ],
     );
   }
+
   // #enddocregion stack
 }
 
@@ -98,10 +90,9 @@ class ScrollViewExample extends StatelessWidget {
   // #docregion scroll-view
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      child: Text('Long Content'),
-    );
+    return const SingleChildScrollView(child: Text('Long Content'));
   }
+
   // #enddocregion scroll-view
 }
 
@@ -120,5 +111,6 @@ class ListViewExample extends StatelessWidget {
       ],
     );
   }
+
   // #enddocregion list-view
 }

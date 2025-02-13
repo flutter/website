@@ -4,7 +4,7 @@ void main() => runApp(const LogoApp());
 
 class AnimatedLogo extends AnimatedWidget {
   const AnimatedLogo({super.key, required Animation<double> animation})
-      : super(listenable: animation);
+    : super(listenable: animation);
 
   @override
   Widget build(BuildContext context) {
@@ -35,19 +35,22 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    controller =
-        AnimationController(duration: const Duration(seconds: 2), vsync: this);
-    animation = Tween<double>(begin: 0, end: 300).animate(controller)
-      // #enddocregion print-state
-      ..addStatusListener((status) {
-        if (status == AnimationStatus.completed) {
-          controller.reverse();
-        } else if (status == AnimationStatus.dismissed) {
-          controller.forward();
-        }
-      })
-      // #docregion print-state
-      ..addStatusListener((status) => print('$status'));
+    controller = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    );
+    animation =
+        Tween<double>(begin: 0, end: 300).animate(controller)
+          // #enddocregion print-state
+          ..addStatusListener((status) {
+            if (status == AnimationStatus.completed) {
+              controller.reverse();
+            } else if (status == AnimationStatus.dismissed) {
+              controller.forward();
+            }
+          })
+          // #docregion print-state
+          ..addStatusListener((status) => print('$status'));
     controller.forward();
   }
   // #enddocregion print-state
@@ -60,6 +63,8 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
     controller.dispose();
     super.dispose();
   }
+
   // #docregion print-state
 }
+
 // #enddocregion print-state

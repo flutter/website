@@ -15,13 +15,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: Center(
-// #docregion SubscribeButton
+          // #docregion SubscribeButton
           child: SubscribeButton(
             viewModel: SubscribeButtonViewModel(
               subscriptionRepository: SubscriptionRepository(),
             ),
           ),
-// #enddocregion SubscribeButton
+          // #enddocregion SubscribeButton
         ),
       ),
     );
@@ -32,10 +32,7 @@ class MyApp extends StatelessWidget {
 /// For example, subscribing to a newsletter or a streaming channel.
 // #docregion Widget
 class SubscribeButton extends StatefulWidget {
-  const SubscribeButton({
-    super.key,
-    required this.viewModel,
-  });
+  const SubscribeButton({super.key, required this.viewModel});
 
   /// Subscribe button view model.
   final SubscribeButtonViewModel viewModel;
@@ -46,7 +43,7 @@ class SubscribeButton extends StatefulWidget {
 // #enddocregion Widget
 
 class _SubscribeButtonState extends State<SubscribeButton> {
-// #docregion listener1
+  // #docregion listener1
   @override
   void initState() {
     super.initState();
@@ -58,9 +55,9 @@ class _SubscribeButtonState extends State<SubscribeButton> {
     widget.viewModel.removeListener(_onViewModelChange);
     super.dispose();
   }
-// #enddocregion listener1
+  // #enddocregion listener1
 
-// #docregion build
+  // #docregion build
   @override
   Widget build(BuildContext context) {
     return ListenableBuilder(
@@ -68,19 +65,21 @@ class _SubscribeButtonState extends State<SubscribeButton> {
       builder: (context, _) {
         return FilledButton(
           onPressed: widget.viewModel.subscribe,
-          style: widget.viewModel.subscribed
-              ? SubscribeButtonStyle.subscribed
-              : SubscribeButtonStyle.unsubscribed,
-          child: widget.viewModel.subscribed
-              ? const Text('Subscribed')
-              : const Text('Subscribe'),
+          style:
+              widget.viewModel.subscribed
+                  ? SubscribeButtonStyle.subscribed
+                  : SubscribeButtonStyle.unsubscribed,
+          child:
+              widget.viewModel.subscribed
+                  ? const Text('Subscribed')
+                  : const Text('Subscribe'),
         );
       },
     );
   }
-// #enddocregion build
+  // #enddocregion build
 
-// #docregion listener2
+  // #docregion listener2
   /// Listen to ViewModel changes.
   void _onViewModelChange() {
     // If the subscription action has failed
@@ -88,14 +87,13 @@ class _SubscribeButtonState extends State<SubscribeButton> {
       // Reset the error state
       widget.viewModel.error = false;
       // Show an error message
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Failed to subscribe'),
-        ),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text('Failed to subscribe')));
     }
   }
-// #enddocregion listener2
+
+  // #enddocregion listener2
 }
 
 // #docregion style
@@ -115,22 +113,20 @@ class SubscribeButtonStyle {
 /// Handles the subscribe action and exposes the state to the subscription.
 // #docregion ViewModelStart
 class SubscribeButtonViewModel extends ChangeNotifier {
-  SubscribeButtonViewModel({
-    required this.subscriptionRepository,
-  });
+  SubscribeButtonViewModel({required this.subscriptionRepository});
 
   final SubscriptionRepository subscriptionRepository;
-// #enddocregion ViewModelStart
+  // #enddocregion ViewModelStart
 
-// #docregion States
+  // #docregion States
   // Whether the user is subscribed
   bool subscribed = false;
 
   // Whether the subscription action has failed
   bool error = false;
-// #enddocregion States
+  // #enddocregion States
 
-// #docregion subscribe
+  // #docregion subscribe
   // Subscription action
   Future<void> subscribe() async {
     // Ignore taps when subscribed
@@ -156,7 +152,8 @@ class SubscribeButtonViewModel extends ChangeNotifier {
       notifyListeners();
     }
   }
-// #enddocregion subscribe
+
+  // #enddocregion subscribe
 }
 // #enddocregion ViewModelFull
 
@@ -171,4 +168,5 @@ class SubscriptionRepository {
     throw Exception('Failed to subscribe');
   }
 }
+
 // #enddocregion SubscriptionRepository

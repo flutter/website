@@ -10,10 +10,7 @@ class SampleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Sample App',
-      home: SampleAppPage(),
-    );
+    return const MaterialApp(title: 'Sample App', home: SampleAppPage());
   }
 }
 
@@ -23,10 +20,8 @@ class SampleAppPage extends StatelessWidget {
   List<Widget> _getListData() {
     return List<Widget>.generate(
       100,
-      (index) => Padding(
-        padding: const EdgeInsets.all(10),
-        child: Text('Row $index'),
-      ),
+      (index) =>
+          Padding(padding: const EdgeInsets.all(10), child: Text('Row $index')),
     );
   }
 

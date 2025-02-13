@@ -12,11 +12,8 @@ class ResizedImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset(
-      'dash.png',
-      cacheHeight: 213,
-      cacheWidth: 392,
-    );
+    return Image.asset('dash.png', cacheHeight: 213, cacheWidth: 392);
   }
 }
+
 // #enddocregion resized-image

@@ -18,11 +18,7 @@ class MyApp extends StatelessWidget {
 // #enddocregion build
 
 // #docregion enum
-enum Color {
-  red,
-  green,
-  blue,
-}
+enum Color { red, green, blue }
 // #enddocregion enum
 
 // #docregion class
@@ -35,30 +31,22 @@ class A<T> {
 final sampleTable = [
   Table(
     children: const [
-      TableRow(
-        children: [Text('T1')],
-      )
+      TableRow(children: [Text('T1')]),
     ],
   ),
   Table(
     children: const [
-      TableRow(
-        children: [Text('T2')],
-      )
+      TableRow(children: [Text('T2')]),
     ],
   ),
   Table(
     children: const [
-      TableRow(
-        children: [Text('T3')],
-      )
+      TableRow(children: [Text('T3')]),
     ],
   ),
   Table(
     children: const [
-      TableRow(
-        children: [Text('T4')],
-      )
+      TableRow(children: [Text('T4')]),
     ],
   ),
 ];
@@ -71,4 +59,5 @@ void onClick() {
   print(foo);
   print(bar);
 }
+
 // #enddocregion const

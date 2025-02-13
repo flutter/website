@@ -140,8 +140,8 @@ return const Row(
     Icon(Icons.message),
     Expanded(
       child: Column(
-          // code omitted
-          ),
+        // code omitted
+      ),
     ),
   ],
 );
@@ -240,14 +240,8 @@ Widget build(BuildContext context) {
         const Text('Header'),
         ListView(
           children: const <Widget>[
-            ListTile(
-              leading: Icon(Icons.map),
-              title: Text('Map'),
-            ),
-            ListTile(
-              leading: Icon(Icons.subway),
-              title: Text('Subway'),
-            ),
+            ListTile(leading: Icon(Icons.map), title: Text('Map')),
+            ListTile(leading: Icon(Icons.subway), title: Text('Subway')),
           ],
         ),
       ],
@@ -274,14 +268,8 @@ Widget build(BuildContext context) {
         Expanded(
           child: ListView(
             children: const <Widget>[
-              ListTile(
-                leading: Icon(Icons.map),
-                title: Text('Map'),
-              ),
-              ListTile(
-                leading: Icon(Icons.subway),
-                title: Text('Subway'),
-              ),
+              ListTile(leading: Icon(Icons.map), title: Text('Map')),
+              ListTile(leading: Icon(Icons.subway), title: Text('Subway')),
             ],
           ),
         ),
@@ -331,14 +319,8 @@ no width constraint.
 Widget build(BuildContext context) {
   return MaterialApp(
     home: Scaffold(
-      appBar: AppBar(
-        title: const Text('Unbounded Width of the TextField'),
-      ),
-      body: const Row(
-        children: [
-          TextField(),
-        ],
-      ),
+      appBar: AppBar(title: const Text('Unbounded Width of the TextField')),
+      body: const Row(children: [TextField()]),
     ),
   );
 }
@@ -356,14 +338,8 @@ The following example demonstrates using an `Expanded` widget:
 Widget build(BuildContext context) {
   return MaterialApp(
     home: Scaffold(
-      appBar: AppBar(
-        title: const Text('Unbounded Width of the TextField'),
-      ),
-      body: Row(
-        children: [
-          Expanded(child: TextFormField()),
-        ],
-      ),
+      appBar: AppBar(title: const Text('Unbounded Width of the TextField')),
+      body: Row(children: [Expanded(child: TextFormField())]),
     ),
   );
 }
@@ -450,19 +426,14 @@ The following snippet seems to be a common culprit of this error:
 Widget build(BuildContext context) {
   // Don't do this.
   showDialog(
-      context: context,
-      builder: (context) {
-        return const AlertDialog(
-          title: Text('Alert Dialog'),
-        );
-      });
+    context: context,
+    builder: (context) {
+      return const AlertDialog(title: Text('Alert Dialog'));
+    },
+  );
 
   return const Center(
-    child: Column(
-      children: <Widget>[
-        Text('Show Material Dialog'),
-      ],
-    ),
+    child: Column(children: <Widget>[Text('Show Material Dialog')]),
   );
 }
 ```
@@ -492,9 +463,7 @@ class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('First Screen'),
-      ),
+      appBar: AppBar(title: const Text('First Screen')),
       body: Center(
         child: ElevatedButton(
           child: const Text('Launch screen'),

@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    const MaterialApp(
-      home: AppHome(),
-    ),
-  );
+  runApp(const MaterialApp(home: AppHome()));
 }
 
 class AppHome extends StatelessWidget {

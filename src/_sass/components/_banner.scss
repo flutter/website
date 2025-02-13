@@ -1,0 +1,43 @@
+@use 'sass:color';
+
+@use '../base/variables' as *;
+
+#site-banner {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-family: $site-font-family-ui;
+  font-weight: 500;
+  font-size: 1rem;
+
+  gap: 0.5rem;
+  padding: 0.75rem;
+  text-align: center;
+  background: linear-gradient(139deg, $site-color-primary, #833ef2);
+  color: $site-color-white;
+
+  p {
+    overflow-wrap: anywhere;
+    word-break: normal;
+    margin: 0;
+    flex-grow: 1;
+  }
+
+  a, button {
+    color: $flutter-color-blue-on-dark;
+    font-family: $site-font-family-ui;
+
+    &:hover {
+      color: color.mix($site-color-white, $flutter-color-blue-on-dark, 25%);
+    }
+
+    &:active {
+      color: color.mix($site-color-white, $flutter-color-blue-on-dark, 50%);
+    }
+  }
+
+  *:focus-visible {
+    outline: 2px solid $flutter-color-blue-on-dark;
+  }
+}

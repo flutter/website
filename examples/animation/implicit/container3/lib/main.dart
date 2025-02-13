@@ -66,10 +66,7 @@ class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
                 ),
               ),
             ),
-            ElevatedButton(
-              child: const Text('Change'),
-              onPressed: () => {},
-            ),
+            ElevatedButton(child: const Text('Change'), onPressed: () => {}),
           ],
         ),
       ),
@@ -90,7 +87,5 @@ class MyApp extends StatelessWidget {
 }
 
 void main() {
-  runApp(
-    const MyApp(),
-  );
+  runApp(const MyApp());
 }

@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    const MaterialApp(
-      title: 'Flutter Tutorial',
-      home: TutorialHome(),
-    ),
-  );
+  runApp(const MaterialApp(title: 'Flutter Tutorial', home: TutorialHome()));
 }
 
 class TutorialHome extends StatelessWidget {
@@ -33,9 +28,7 @@ class TutorialHome extends StatelessWidget {
         ],
       ),
       // body is the majority of the screen.
-      body: const Center(
-        child: Text('Hello, world!'),
-      ),
+      body: const Center(child: Text('Hello, world!')),
       floatingActionButton: const FloatingActionButton(
         tooltip: 'Add', // used by assistive technologies
         onPressed: null,

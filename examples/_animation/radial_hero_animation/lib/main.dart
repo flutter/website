@@ -30,10 +30,7 @@ class Photo extends StatelessWidget {
         onTap: onTap,
         child: LayoutBuilder(
           builder: (context, size) {
-            return Image.asset(
-              photo,
-              fit: BoxFit.contain,
-            );
+            return Image.asset(photo, fit: BoxFit.contain);
           },
         ),
       ),
@@ -42,11 +39,8 @@ class Photo extends StatelessWidget {
 }
 
 class RadialExpansion extends StatelessWidget {
-  const RadialExpansion({
-    super.key,
-    required this.maxRadius,
-    this.child,
-  }) : clipRectSize = 2.0 * (maxRadius / math.sqrt2);
+  const RadialExpansion({super.key, required this.maxRadius, this.child})
+    : clipRectSize = 2.0 * (maxRadius / math.sqrt2);
 
   final double maxRadius;
   final double clipRectSize;
@@ -59,9 +53,7 @@ class RadialExpansion extends StatelessWidget {
         child: SizedBox(
           width: clipRectSize,
           height: clipRectSize,
-          child: ClipRect(
-            child: child,
-          ),
+          child: ClipRect(child: child),
         ),
       ),
     );
@@ -73,15 +65,21 @@ class RadialExpansionDemo extends StatelessWidget {
 
   static double kMinRadius = 32.0;
   static double kMaxRadius = 128.0;
-  static Interval opacityCurve =
-      const Interval(0.0, 0.75, curve: Curves.fastOutSlowIn);
+  static Interval opacityCurve = const Interval(
+    0.0,
+    0.75,
+    curve: Curves.fastOutSlowIn,
+  );
 
   static RectTween _createRectTween(Rect? begin, Rect? end) {
     return MaterialRectCenterArcTween(begin: begin, end: end);
   }
 
   static Widget _buildPage(
-      BuildContext context, String imageName, String description) {
+    BuildContext context,
+    String imageName,
+    String description,
+  ) {
     return Container(
       color: Theme.of(context).canvasColor,
       child: Center(
@@ -163,9 +161,7 @@ class RadialExpansionDemo extends StatelessWidget {
     timeDilation = 5.0; // 1.0 is normal animation speed.
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Radial Transition Demo'),
-      ),
+      appBar: AppBar(title: const Text('Radial Transition Demo')),
       body: Container(
         padding: const EdgeInsets.all(32),
         alignment: FractionalOffset.bottomLeft,
@@ -183,9 +179,5 @@ class RadialExpansionDemo extends StatelessWidget {
 }
 
 void main() {
-  runApp(
-    const MaterialApp(
-      home: RadialExpansionDemo(),
-    ),
-  );
+  runApp(const MaterialApp(home: RadialExpansionDemo()));
 }

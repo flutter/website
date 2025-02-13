@@ -76,7 +76,8 @@ class MyGenericGoldenComparator extends GoldenFileComparator {
 
 ## Timeline
 
-Not released
+Landed in version: 3.29.0-0.0.pre<br>
+In stable release: 3.29
 
 ## References
 

@@ -9,18 +9,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CupertinoApp(
-      home: HomePage(),
-    );
+    return const CupertinoApp(home: HomePage());
   }
 }
 
 // #docregion weather
-enum Weather {
-  rainy,
-  windy,
-  sunny,
-}
+enum Weather { rainy, windy, sunny }
 // #enddocregion weather
 
 // #docregion home-page-view-model
@@ -53,19 +47,14 @@ class HomePage extends StatelessWidget {
           // an error or if the data is null, you can decide what to
           // show to the user.
           if (snapshot.hasData) {
-            return Center(
-              child: Text(
-                snapshot.data.toString(),
-              ),
-            );
+            return Center(child: Text(snapshot.data.toString()));
           } else {
-            return const Center(
-              child: CupertinoActivityIndicator(),
-            );
+            return const Center(child: CupertinoActivityIndicator());
           }
         },
       ),
     );
   }
 }
+
 // #enddocregion home-page-widget

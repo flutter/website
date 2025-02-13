@@ -48,10 +48,7 @@ class UserProfileRepository {
   final ApiClientService _apiClientService;
   final DatabaseService _databaseService;
 
-  UserProfileRepository(
-    this._apiClientService,
-    this._databaseService,
-  );
+  UserProfileRepository(this._apiClientService, this._databaseService);
 
   // #docregion getUserProfile1
   Future<Result<UserProfile>> getUserProfile1() async {
@@ -73,6 +70,7 @@ class UserProfileRepository {
 
     return Result.error(Exception('Failed to get user profile'));
   }
+
   // #enddocregion getUserProfile
 }
 

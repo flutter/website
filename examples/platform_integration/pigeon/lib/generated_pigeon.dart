@@ -16,44 +16,32 @@ PlatformException _createConnectionError(String channelName) {
 }
 
 class SearchRequest {
-  SearchRequest({
-    required this.query,
-  });
+  SearchRequest({required this.query});
 
   String query;
 
   Object encode() {
-    return <Object?>[
-      query,
-    ];
+    return <Object?>[query];
   }
 
   static SearchRequest decode(Object result) {
     result as List<Object?>;
-    return SearchRequest(
-      query: result[0]! as String,
-    );
+    return SearchRequest(query: result[0]! as String);
   }
 }
 
 class SearchReply {
-  SearchReply({
-    required this.result,
-  });
+  SearchReply({required this.result});
 
   String result;
 
   Object encode() {
-    return <Object?>[
-      result,
-    ];
+    return <Object?>[result];
   }
 
   static SearchReply decode(Object result) {
     result as List<Object?>;
-    return SearchReply(
-      result: result[0]! as String,
-    );
+    return SearchReply(result: result[0]! as String);
   }
 }
 
@@ -90,9 +78,9 @@ class Api {
   /// available for dependency injection.  If it is left null, the default
   /// BinaryMessenger will be used which routes to the host platform.
   Api({BinaryMessenger? binaryMessenger, String messageChannelSuffix = ''})
-      : __pigeon_binaryMessenger = binaryMessenger,
-        __pigeon_messageChannelSuffix =
-            messageChannelSuffix.isNotEmpty ? '.$messageChannelSuffix' : '';
+    : __pigeon_binaryMessenger = binaryMessenger,
+      __pigeon_messageChannelSuffix =
+          messageChannelSuffix.isNotEmpty ? '.$messageChannelSuffix' : '';
   final BinaryMessenger? __pigeon_binaryMessenger;
 
   static const MessageCodec<Object?> pigeonChannelCodec = _ApiCodec();
@@ -104,10 +92,10 @@ class Api {
         'dev.flutter.pigeon.platform_integration.Api.search$__pigeon_messageChannelSuffix';
     final BasicMessageChannel<Object?> __pigeon_channel =
         BasicMessageChannel<Object?>(
-      __pigeon_channelName,
-      pigeonChannelCodec,
-      binaryMessenger: __pigeon_binaryMessenger,
-    );
+          __pigeon_channelName,
+          pigeonChannelCodec,
+          binaryMessenger: __pigeon_binaryMessenger,
+        );
     final List<Object?>? __pigeon_replyList =
         await __pigeon_channel.send(<Object?>[request]) as List<Object?>?;
     if (__pigeon_replyList == null) {

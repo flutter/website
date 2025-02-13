@@ -16,8 +16,10 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    controller =
-        AnimationController(duration: const Duration(seconds: 2), vsync: this);
+    controller = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    );
     // #docregion add-listener
     animation = Tween<double>(begin: 0, end: 300).animate(controller)
       ..addListener(() {

@@ -50,7 +50,7 @@ theme: ThemeData(
 ## Timeline
 
 Landed in version: 3.28.0-0.1.pre<br>
-In stable release: Not yet
+In stable release: 3.29
 
 ## References
 

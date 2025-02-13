@@ -19,5 +19,6 @@ class MyWidget extends StatelessWidget {
       ),
     );
   }
+
   // #enddocregion padding
 }

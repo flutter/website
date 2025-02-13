@@ -54,10 +54,7 @@ on StatefulWidgets in Flutter) and constructs a new Widget subtree.
 <?code-excerpt "lib/main.dart (declarative)"?>
 ```dart
 // Declarative style
-return ViewB(
-  color: red,
-  child: const ViewC(),
-);
+return ViewB(color: red, child: const ViewC());
 ```
 
 Here, rather than mutating an old instance `b` when the UI changes,

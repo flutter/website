@@ -47,13 +47,14 @@ class ButtonShapeWidget extends StatelessWidget {
             isDownloaded ? 'OPEN' : 'GET',
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: CupertinoColors.activeBlue,
-                ),
+              fontWeight: FontWeight.bold,
+              color: CupertinoColors.activeBlue,
+            ),
           ),
         ),
       ),
     );
   }
 }
+
 // #enddocregion DisplayText

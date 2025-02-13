@@ -8,9 +8,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CupertinoApp(
-      home: MyHomePage(),
-    );
+    return const CupertinoApp(home: MyHomePage());
   }
 }
 
@@ -33,9 +31,10 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             Text('$_counter'),
             TextButton(
-              onPressed: () => setState(() {
-                _counter++;
-              }),
+              onPressed:
+                  () => setState(() {
+                    _counter++;
+                  }),
               child: const Text('+'),
             ),
           ],
@@ -44,4 +43,5 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
 // #enddocregion state

@@ -47,11 +47,7 @@ a second route titled "Page 2".
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    const MaterialApp(
-      home: Page1(),
-    ),
-  );
+  runApp(const MaterialApp(home: Page1()));
 }
 
 class Page1 extends StatelessWidget {
@@ -89,9 +85,7 @@ class Page2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: const Center(
-        child: Text('Page 2'),
-      ),
+      body: const Center(child: Text('Page 2')),
     );
   }
 }
@@ -139,10 +133,7 @@ transitionsBuilder: (context, animation, secondaryAnimation, child) {
   final tween = Tween(begin: begin, end: end);
   final offsetAnimation = animation.drive(tween);
 
-  return SlideTransition(
-    position: offsetAnimation,
-    child: child,
-  );
+  return SlideTransition(position: offsetAnimation, child: child);
 },
 ```
 
@@ -186,10 +177,7 @@ Then use this tween by passing it to `animation.drive()`. This creates a new
 
 <?code-excerpt "lib/main.dart (SlideTransition)"?>
 ```dart
-return SlideTransition(
-  position: animation.drive(tween),
-  child: child,
-);
+return SlideTransition(position: animation.drive(tween), child: child);
 ```
 
 This new Tween (or Animatable) produces `Offset` values by first evaluating the
@@ -213,10 +201,7 @@ transitionsBuilder: (context, animation, secondaryAnimation, child) {
   const curve = Curves.ease;
 
   final tween = Tween(begin: begin, end: end);
-  final curvedAnimation = CurvedAnimation(
-    parent: animation,
-    curve: curve,
-  );
+  final curvedAnimation = CurvedAnimation(parent: animation, curve: curve);
 
   return SlideTransition(
     position: tween.animate(curvedAnimation),
@@ -232,11 +217,7 @@ transitionsBuilder: (context, animation, secondaryAnimation, child) {
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    const MaterialApp(
-      home: Page1(),
-    ),
-  );
+  runApp(const MaterialApp(home: Page1()));
 }
 
 class Page1 extends StatelessWidget {
@@ -268,10 +249,7 @@ Route _createRoute() {
 
       var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
 
-      return SlideTransition(
-        position: animation.drive(tween),
-        child: child,
-      );
+      return SlideTransition(position: animation.drive(tween), child: child);
     },
   );
 }
@@ -283,9 +261,7 @@ class Page2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: const Center(
-        child: Text('Page 2'),
-      ),
+      body: const Center(child: Text('Page 2')),
     );
   }
 }

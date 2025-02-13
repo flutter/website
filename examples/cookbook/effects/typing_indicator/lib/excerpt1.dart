@@ -27,4 +27,5 @@ class _TypingIndicatorState extends State<TypingIndicator> {
     return const SizedBox();
   }
 }
+
 // #enddocregion typing-indicator

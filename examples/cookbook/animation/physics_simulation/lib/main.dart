@@ -14,11 +14,7 @@ class PhysicsCardDragDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: const DraggableCard(
-        child: FlutterLogo(
-          size: 128,
-        ),
-      ),
+      body: const DraggableCard(child: FlutterLogo(size: 128)),
     );
   }
 }
@@ -51,10 +47,7 @@ class _DraggableCardState extends State<DraggableCard>
   /// Calculates and runs a [SpringSimulation].
   void _runAnimation(Offset pixelsPerSecond, Size size) {
     _animation = _controller.drive(
-      AlignmentTween(
-        begin: _dragAlignment,
-        end: Alignment.center,
-      ),
+      AlignmentTween(begin: _dragAlignment, end: Alignment.center),
     );
     // Calculate the velocity relative to the unit interval, [0,1],
     // used by the animation controller.
@@ -63,11 +56,7 @@ class _DraggableCardState extends State<DraggableCard>
     final unitsPerSecond = Offset(unitsPerSecondX, unitsPerSecondY);
     final unitVelocity = unitsPerSecond.distance;
 
-    const spring = SpringDescription(
-      mass: 30,
-      stiffness: 1,
-      damping: 1,
-    );
+    const spring = SpringDescription(mass: 30, stiffness: 1, damping: 1);
 
     final simulation = SpringSimulation(spring, 0, 1, -unitVelocity);
 
@@ -113,12 +102,7 @@ class _DraggableCardState extends State<DraggableCard>
         _runAnimation(details.velocity.pixelsPerSecond, size);
       },
       // #enddocregion onPanEnd
-      child: Align(
-        alignment: _dragAlignment,
-        child: Card(
-          child: widget.child,
-        ),
-      ),
+      child: Align(alignment: _dragAlignment, child: Card(child: widget.child)),
     );
   }
 }

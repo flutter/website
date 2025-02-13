@@ -48,10 +48,7 @@ class HeadingItem implements ListItem {
 
   @override
   Widget buildTitle(BuildContext context) {
-    return Text(
-      heading,
-      style: Theme.of(context).textTheme.headlineSmall,
-    );
+    return Text(heading, style: Theme.of(context).textTheme.headlineSmall);
   }
 
   @override
@@ -86,9 +83,10 @@ of 3 types: `ListItem`, `HeadingItem`, or `MessageItem`.
 ```dart
 final items = List<ListItem>.generate(
   1000,
-  (i) => i % 6 == 0
-      ? HeadingItem('Heading $i')
-      : MessageItem('Sender $i', 'Message body $i'),
+  (i) =>
+      i % 6 == 0
+          ? HeadingItem('Heading $i')
+          : MessageItem('Sender $i', 'Message body $i'),
 );
 ```
 
@@ -130,9 +128,10 @@ void main() {
     MyApp(
       items: List<ListItem>.generate(
         1000,
-        (i) => i % 6 == 0
-            ? HeadingItem('Heading $i')
-            : MessageItem('Sender $i', 'Message body $i'),
+        (i) =>
+            i % 6 == 0
+                ? HeadingItem('Heading $i')
+                : MessageItem('Sender $i', 'Message body $i'),
       ),
     ),
   );
@@ -150,9 +149,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: title,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text(title),
-        ),
+        appBar: AppBar(title: const Text(title)),
         body: ListView.builder(
           // Let the ListView know how many items it needs to build.
           itemCount: items.length,
@@ -189,10 +186,7 @@ class HeadingItem implements ListItem {
 
   @override
   Widget buildTitle(BuildContext context) {
-    return Text(
-      heading,
-      style: Theme.of(context).textTheme.headlineSmall,
-    );
+    return Text(heading, style: Theme.of(context).textTheme.headlineSmall);
   }
 
   @override

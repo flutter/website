@@ -50,8 +50,8 @@ as expected with new capabilities.
 
 ## Timeline
 
-Landed in version: 3.27.0-1.0.pre.39922  
-In stable release: X.X.X
+Landed in version: Not yet<br>
+In stable release: Not yet
 
 ## References
 
