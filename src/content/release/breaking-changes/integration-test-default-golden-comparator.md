@@ -2,7 +2,7 @@
 title: Integration test default golden-file comparators changed on Android and iOS.
 description: >-
   When using `package:integration_test` to run a test _on_ an Android device or
-  emualtor, or an iOS device or simulator, the default [`goldenFileComparator`][]
+  emualtor, or an iOS device or simulator, the default `goldenFileComparator`
   has changed, and correctly uses the host filesystem.
 ---
 
