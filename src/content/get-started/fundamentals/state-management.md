@@ -474,13 +474,12 @@ class CounterViewModel extends ChangeNotifier {
   }
 
   Future<void> increment() async {
-    var count = this.count;
     if (count == null) {
       throw('Not initialized');
     }
     try {
-      await model.updateCountOnServer(count + 1);
-      count++;
+      await model.updateCountOnServer(count! + 1);
+      count = count! + 1
     } catch(e) {
       errorMessage = 'Count not update count';
     }
