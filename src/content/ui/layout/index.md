@@ -98,9 +98,9 @@ Text('Hello World'),
 
 Create an [`Image`][] widget:
 
-<?code-excerpt "layout/lakes/step5/lib/main.dart (image-asset)" remove="/width|height/"?>
+<?code-excerpt "layout/lakes/step5/lib/main.dart (image-asset)" replace="/width.*240, //g;"?>
 ```dart
-
+return Image.asset(image, fit: BoxFit.cover);
 ```
 
 Create an [`Icon`][] widget:
