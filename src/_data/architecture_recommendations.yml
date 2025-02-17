@@ -67,7 +67,8 @@
 
     - recommendation: Use immutable data models.
       description: |
-        Immutable data ensures that changes to your data can only happen where they are intended, typically in your data or domain layer. This helps prevent accidental mutations in the UI or other parts of your code.
+        Immutable data ensures that changes to your data can only happen where they are intended, typically in your data or domain layer. 
+        This helps prevent accidental mutations in the UI or other parts of your code.
       confidence: strong
 
     - recommendation: Use freezed or built_value to generate immutable data models.
