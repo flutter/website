@@ -266,7 +266,7 @@ complete the following instructions:
 
 6. Now, run `flutter pub get` or `flutter run` and codegen takes place automatically.
    You should find generated files in
-   `${FLUTTER_PROJECT}/.dart_tool/flutter_gen/gen_l10n`.
+   `${FLUTTER_PROJECT}/lib/l10n`.
    Alternatively, you can also run `flutter gen-l10n` to
    generate the same files without running the app.
 
