@@ -184,7 +184,7 @@ Enabling certificates varies in different versions of iOS.
 
 1. Tap your Certificate.
 
-1. Tap **Trust "\<certificate\>"**.
+1. Tap **Trust "&lt;certificate&gt;"**.
 
 1. When the dialog displays, tap **Trust**.
 
