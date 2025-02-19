@@ -36,7 +36,8 @@ function _setupMedia(eleventyConfig: UserConfig): void {
 }
 
 function _setupTabs(eleventyConfig: UserConfig) {
-  // Counter shared between all tabs to ensure each has a unique ID.
+  // Counter shared between all tabs and wrappers to
+  // ensure each has a unique ID.
   let currentTabWrapperId = 0;
   let currentTabPaneId = 0;
 
@@ -44,15 +45,16 @@ function _setupTabs(eleventyConfig: UserConfig) {
     const tabWrapperId = currentTabWrapperId++;
     let tabMarkup = `<div id="${tabWrapperId}" class="tabs-wrapper" ${saveKey ? `data-tab-save-key="${slugify(saveKey)}"` : ''}><ul class="nav-tabs" role="tablist">`;
 
-    const contentsDom = fromHtml(content);
     // Only select child tab panes that don't already have a parent wrapper.
-    const tabPanes = selectAll('.tab-pane[data-tab-wrapper-id="undefined"]', contentsDom);
+    const tabPanes = selectAll('.tab-pane[data-tab-wrapper-id="undefined"]', fromHtml(content));
     if (tabPanes.length <= 1) {
       throw new Error(`Tabs with save key of ${saveKey} needs more than one tab!`);
     }
 
     let setTabToActive = true;
     for (const tabPane of tabPanes) {
+      // Keep track of the tab wrapper ID to avoid including
+      // a duplicate of this tab's contents in a parent wrapper.
       tabPane.properties.dataTabWrapperId = tabWrapperId;
 
       const tabId = tabPane.properties.dataTabId! as string;
@@ -60,6 +62,7 @@ function _setupTabs(eleventyConfig: UserConfig) {
       const tabName = tabPane.properties.dataTabName! as string;
       const tabIsActive = setTabToActive;
 
+      // Only set the first tab of a wrapper to active initially.
       if (tabIsActive) {
         tabPane.properties['className'] += ' active';
         setTabToActive = false;
