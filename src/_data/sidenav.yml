@@ -2,6 +2,44 @@
 
 - title: Set up Flutter
   permalink: /get-started/install
+  hiddenChildren: true
+  children:
+    - title: On Windows
+      permalink: /get-started/install/windows
+      children:
+        - title: Target Android
+          permalink: /get-started/install/windows/mobile
+        - title: Target web
+          permalink: /get-started/install/windows/web
+        - title: Target desktop
+          permalink: /get-started/install/windows/desktop
+    - title: On macOS
+      permalink: /get-started/install/macos
+      children:
+        - title: Target iOS
+          permalink: /get-started/install/macos/mobile-ios
+        - title: Target Android
+          permalink: /get-started/install/macos/mobile-android
+        - title: Target web
+          permalink: /get-started/install/macos/web
+        - title: Target desktop
+          permalink: /get-started/install/macos/desktop
+    - title: On Linux
+      permalink: /get-started/install/linux
+      children:
+        - title: Target Android
+          permalink: /get-started/install/linux/android
+        - title: Target web
+          permalink: /get-started/install/linux/web
+        - title: Target desktop
+          permalink: /get-started/install/linux/desktop
+    - title: On ChromeOS
+      permalink: /get-started/install/chromeos
+      children:
+        - title: Target Android
+          permalink: /get-started/install/chromeos/android
+        - title: Target web
+          permalink: /get-started/install/chromeos/web
 
 - title: Learn Flutter
   children:
