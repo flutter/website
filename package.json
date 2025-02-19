@@ -26,6 +26,7 @@
     "firebase-tools": "^13.29.3",
     "hast-util-from-html": "^2.0.3",
     "hast-util-select": "^6.0.3",
+    "hast-util-to-html": "^9.0.4",
     "hast-util-to-text": "^4.0.2",
     "html-minifier-terser": "^7.2.0",
     "js-yaml": "^4.1.0",
