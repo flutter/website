@@ -9,7 +9,7 @@ description: >
 
 This article is intended to provide a high-level overview of the architecture of
 Flutter, including the core principles and concepts that form its design.
-If you are intereted in how to architect a Flutter app,
+If you are interested in how to architect a Flutter app,
 check out [Architecting Flutter apps][].
 
 [Architecting Flutter apps]: /app-architecture
