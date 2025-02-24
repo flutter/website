@@ -6,15 +6,16 @@ description: >-
 ---
 
 :::warning
-Flutter's debug mode is broken on iOS 18.4 beta physical devices.
+An upcoming change to iOS has caused a temporary break in Flutter's
+debug mode on physical devices running iOS 18.4 (currently in beta).
 See [flutter#163984][] for details.
 
-Flutter recommends you do not upgrade your devices to iOS 18.4 beta.
+In the meantime, we recommend these temporary workarounds:
 
-To target iOS 18.4 beta physical devices, use
-[Flutter's release or profile build modes][].
-
-Alternatively, target an iOS simulator or iOS 18.3 or lower physical device.
+* When developing with a physical device, use one running iOS 18.3 or lower.
+* Use a simulator for development rather than a physical device.
+* If you must use a device updated to iOS 18.4,
+  use [Flutter's release or profile build modes][].
 :::
 
 You can develop Flutter on the iOS platform, even on
