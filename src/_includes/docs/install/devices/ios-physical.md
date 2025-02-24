@@ -3,7 +3,7 @@ An upcoming change to iOS has caused a temporary break in Flutter's debug mode
 on physical devices running iOS 18.4 (currently in beta).
 If your physical device is already on iOS 18.4, we recommend switching to the
 **Virtual device** tab and following the instructions for using a simulator.
-See [Flutter on latest iOS] for details.
+See [Flutter on latest iOS][] for details.
 :::
 
 [Flutter on latest iOS]: {{site.github}}/ios/ios-latest
