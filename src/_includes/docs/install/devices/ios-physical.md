@@ -1,3 +1,13 @@
+:::warning
+Flutter's debug mode is broken on iOS 18.4 beta physical devices.
+See [flutter#163984][] for details.
+
+If your physical device is on iOS 18.4 beta,
+switch to the **Virtual device** option.
+:::
+
+[flutter#163984]: {{site.github}}/flutter/flutter/issues/163984
+
 #### Set up your target physical iOS device
 
 To deploy your Flutter app to a physical iPhone or iPad,
