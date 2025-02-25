@@ -22,18 +22,23 @@ class _AdaptiveGridPageState extends State<AdaptiveGridPage> {
   @override
   Widget build(BuildContext context) {
     // Create a list of widgets to render, inject .isSelected into each item
-    Widget buildGridItem(int index) => _GridItem(index,
-        isSelected: _selectedItems.contains(index),
-        onPressed: _handleItemPressed);
+    Widget buildGridItem(int index) => _GridItem(
+      index,
+      isSelected: _selectedItems.contains(index),
+      onPressed: _handleItemPressed,
+    );
     List<Widget> listChildren = _listItems.map(buildGridItem).toList();
     return TargetedActionBinding(
       actions: {
-        SelectAllIntent:
-            CallbackAction(onInvoke: (intent) => _handleSelectAllPressed()),
-        SelectNoneIntent:
-            CallbackAction(onInvoke: (intent) => _handleSelectNonePressed()),
+        SelectAllIntent: CallbackAction(
+          onInvoke: (intent) => _handleSelectAllPressed(),
+        ),
+        SelectNoneIntent: CallbackAction(
+          onInvoke: (intent) => _handleSelectNonePressed(),
+        ),
         DeleteIntent: CallbackAction(
-            onInvoke: (intent) => _handleDeleteSelectedPressed()),
+          onInvoke: (intent) => _handleDeleteSelectedPressed(),
+        ),
       },
       child: Column(
         children: [
@@ -92,8 +97,11 @@ class _AdaptiveGridPageState extends State<AdaptiveGridPage> {
 }
 
 class _GridItem extends StatelessWidget {
-  const _GridItem(this.index,
-      {required this.isSelected, required this.onPressed});
+  const _GridItem(
+    this.index, {
+    required this.isSelected,
+    required this.onPressed,
+  });
   final int index;
   final bool isSelected;
   final void Function(int index) onPressed;
@@ -105,24 +113,36 @@ class _GridItem extends StatelessWidget {
       padding: const EdgeInsets.all(Insets.large),
       child: TextButton(
         onPressed: () => onPressed.call(index),
-        child: Stack(children: [
-          const Center(child: FlutterLogo(size: 64)),
-          Container(color: Colors.grey.withValues(alpha: isSelected ? .5 : .7)),
-          Align(
+        child: Stack(
+          children: [
+            const Center(child: FlutterLogo(size: 64)),
+            Container(
+              color: Colors.grey.withValues(alpha: isSelected ? .5 : .7),
+            ),
+            Align(
               alignment: Alignment.bottomCenter,
               child: Container(
-                  width: double.infinity,
-                  color: Colors.grey.shade600,
-                  height: 50,
-                  alignment: Alignment.center,
-                  child: Text('Grid Item $index',
-                      style: const TextStyle(color: Colors.white)))),
-          // Selected border
-          Container(
+                width: double.infinity,
+                color: Colors.grey.shade600,
+                height: 50,
+                alignment: Alignment.center,
+                child: Text(
+                  'Grid Item $index',
+                  style: const TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+            // Selected border
+            Container(
               decoration: BoxDecoration(
-                  border: Border.all(
-                      color: Colors.blue.shade200, width: borderWidth))),
-        ]),
+                border: Border.all(
+                  color: Colors.blue.shade200,
+                  width: borderWidth,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

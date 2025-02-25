@@ -96,16 +96,14 @@ class TargetedActionBinding extends StatefulWidget {
 }
 
 class _TargetedActionBindingState extends State<TargetedActionBinding> {
-  final GlobalKey _subtreeKey =
-      GlobalKey(debugLabel: 'Targeted Action Binding');
+  final GlobalKey _subtreeKey = GlobalKey(
+    debugLabel: 'Targeted Action Binding',
+  );
 
   @override
   Widget build(BuildContext context) {
     Provider.of<_TargetedActionRegistry>(context).addTarget(_subtreeKey);
-    Widget result = KeyedSubtree(
-      key: _subtreeKey,
-      child: widget.child,
-    );
+    Widget result = KeyedSubtree(key: _subtreeKey, child: widget.child);
     if (widget.actions != null) {
       result = Actions(actions: widget.actions!, child: result);
     }
@@ -114,9 +112,10 @@ class _TargetedActionBindingState extends State<TargetedActionBinding> {
 
   @override
   void deactivate() {
-    Provider.of<_TargetedActionRegistry>(context, listen: false)
-        .targetKeys
-        .remove(_subtreeKey);
+    Provider.of<_TargetedActionRegistry>(
+      context,
+      listen: false,
+    ).targetKeys.remove(_subtreeKey);
     super.deactivate();
   }
 }
@@ -142,8 +141,10 @@ class _TargetedActionRegistry {
     // tha support the action.
     for (GlobalKey key in targetKeys) {
       if (key.currentContext != null) {
-        Action? foundAction =
-            Actions.maybeFind<Intent>(key.currentContext!, intent: intent);
+        Action? foundAction = Actions.maybeFind<Intent>(
+          key.currentContext!,
+          intent: intent,
+        );
         if (foundAction != null && foundAction.isEnabled(intent)) {
           return true;
         }

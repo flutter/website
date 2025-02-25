@@ -12,7 +12,8 @@ part of 'todo.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 /// @nodoc
 mixin _$Todo {
@@ -50,28 +51,31 @@ class _$TodoCopyWithImpl<$Res, $Val extends Todo>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? id = null,
-    Object? task = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      task: null == task
-          ? _value.task
-          : task // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  $Res call({Object? id = null, Object? task = null}) {
+    return _then(
+      _value.copyWith(
+            id:
+                null == id
+                    ? _value.id
+                    : id // ignore: cast_nullable_to_non_nullable
+                        as int,
+            task:
+                null == task
+                    ? _value.task
+                    : task // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$TodoImplCopyWith<$Res> implements $TodoCopyWith<$Res> {
   factory _$$TodoImplCopyWith(
-          _$TodoImpl value, $Res Function(_$TodoImpl) then) =
-      __$$TodoImplCopyWithImpl<$Res>;
+    _$TodoImpl value,
+    $Res Function(_$TodoImpl) then,
+  ) = __$$TodoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int id, String task});
@@ -82,26 +86,27 @@ class __$$TodoImplCopyWithImpl<$Res>
     extends _$TodoCopyWithImpl<$Res, _$TodoImpl>
     implements _$$TodoImplCopyWith<$Res> {
   __$$TodoImplCopyWithImpl(_$TodoImpl _value, $Res Function(_$TodoImpl) _then)
-      : super(_value, _then);
+    : super(_value, _then);
 
   /// Create a copy of Todo
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? id = null,
-    Object? task = null,
-  }) {
-    return _then(_$TodoImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      task: null == task
-          ? _value.task
-          : task // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  $Res call({Object? id = null, Object? task = null}) {
+    return _then(
+      _$TodoImpl(
+        id:
+            null == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                    as int,
+        task:
+            null == task
+                ? _value.task
+                : task // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
   }
 }
 

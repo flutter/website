@@ -87,7 +87,7 @@ function scrollSidenavIntoView() {
  *
  * Enables a "back to top" button in the TOC header.
  */
-function adjustToc() {
+function setupToc() {
   const tocHeader = document.querySelector('#toc-side header');
 
   if (tocHeader) {
@@ -329,7 +329,7 @@ function setupSiteSwitcher() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", function(_) {
+function setupSite() {
   scrollSidenavIntoView();
   initCookieNotice();
 
@@ -340,5 +340,11 @@ document.addEventListener("DOMContentLoaded", function(_) {
   setupSiteSwitcher();
   setupTabs();
 
-  adjustToc();
-});
+  setupToc();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', setupSite);
+} else {
+  setupSite();
+}

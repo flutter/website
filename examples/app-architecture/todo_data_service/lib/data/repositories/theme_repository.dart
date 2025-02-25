@@ -7,9 +7,7 @@ import '../services/shared_preferences_service.dart';
 /// The repository is the source of truth for the theme settings.
 // #docregion ThemeRepository
 class ThemeRepository {
-  ThemeRepository(
-    this._service,
-  );
+  ThemeRepository(this._service);
 
   final _darkModeController = StreamController<bool>.broadcast();
 
@@ -40,4 +38,5 @@ class ThemeRepository {
   /// ViewModels should call [isDarkMode] to get the current theme setting.
   Stream<bool> observeDarkMode() => _darkModeController.stream;
 }
+
 // #enddocregion ThemeRepository

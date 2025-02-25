@@ -29,30 +29,24 @@ class A<T, V> {
 final sampleTable = [
   Table(
     children: const [
-      TableRow(
-        children: [Text('T1')],
-      )
+      TableRow(children: [Text('T1')]),
     ],
   ),
   Table(
     children: const [
-      TableRow(
-        children: [Text('T2')],
-      )
+      TableRow(children: [Text('T2')]),
     ],
   ),
   Table(
     children: const [
-      TableRow(
-        children: [Text('T3')],
-      )
+      TableRow(children: [Text('T3')]),
     ],
   ),
   Table(
     children: const [
       TableRow(
         children: [Text('T10')], // modified
-      )
+      ),
     ],
   ),
 ];
@@ -67,4 +61,5 @@ void onClick() {
   print(foo);
   print(bar);
 }
+
 // #enddocregion const

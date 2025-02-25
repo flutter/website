@@ -66,9 +66,7 @@ to a text field using the `controller` property:
 
 <?code-excerpt "lib/step2.dart (TextFieldController)"?>
 ```dart
-return TextField(
-  controller: myController,
-);
+return TextField(controller: myController);
 ```
 
 ## 3. Display the current value of the text field
@@ -148,14 +146,10 @@ class _MyCustomFormState extends State<MyCustomForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Retrieve Text Input'),
-      ),
+      appBar: AppBar(title: const Text('Retrieve Text Input')),
       body: Padding(
         padding: const EdgeInsets.all(16),
-        child: TextField(
-          controller: myController,
-        ),
+        child: TextField(controller: myController),
       ),
       floatingActionButton: FloatingActionButton(
         // When the user presses the button, show an alert dialog containing

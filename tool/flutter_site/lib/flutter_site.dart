@@ -20,10 +20,10 @@ import 'src/commands/verify_firebase_json.dart';
 /// run `dart run flutter_site --help`.
 final class FlutterSiteCommandRunner extends CommandRunner<int> {
   FlutterSiteCommandRunner()
-      : super(
-          'flutter_site',
-          'Infrastructure tooling for the Flutter documentation website.',
-        ) {
+    : super(
+        'flutter_site',
+        'Infrastructure tooling for the Flutter documentation website.',
+      ) {
     addCommand(AnalyzeDartCommand());
     addCommand(BuildSiteCommand());
     addCommand(CheckAllCommand());

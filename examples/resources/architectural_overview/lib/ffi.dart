@@ -1,24 +1,27 @@
 import 'dart:ffi';
 import 'package:ffi/ffi.dart'; // contains .toNativeUtf16() extension method
 
-typedef MessageBoxNative = Int32 Function(
-  IntPtr hWnd,
-  Pointer<Utf16> lpText,
-  Pointer<Utf16> lpCaption,
-  Int32 uType,
-);
+typedef MessageBoxNative =
+    Int32 Function(
+      IntPtr hWnd,
+      Pointer<Utf16> lpText,
+      Pointer<Utf16> lpCaption,
+      Int32 uType,
+    );
 
-typedef MessageBoxDart = int Function(
-  int hWnd,
-  Pointer<Utf16> lpText,
-  Pointer<Utf16> lpCaption,
-  int uType,
-);
+typedef MessageBoxDart =
+    int Function(
+      int hWnd,
+      Pointer<Utf16> lpText,
+      Pointer<Utf16> lpCaption,
+      int uType,
+    );
 
 void exampleFfi() {
   final user32 = DynamicLibrary.open('user32.dll');
-  final messageBox =
-      user32.lookupFunction<MessageBoxNative, MessageBoxDart>('MessageBoxW');
+  final messageBox = user32.lookupFunction<MessageBoxNative, MessageBoxDart>(
+    'MessageBoxW',
+  );
 
   // ignore: unused_local_variable
   final result = messageBox(

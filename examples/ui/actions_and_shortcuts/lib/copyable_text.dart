@@ -30,31 +30,35 @@ class _CopyableTextFieldState extends State<CopyableTextField> {
         CopyIntent: CopyAction(controller),
         SelectAllIntent: SelectAllAction(controller),
       },
-      child: Builder(builder: (context) {
-        return Scaffold(
-          body: Center(
-            child: Row(
-              children: <Widget>[
-                const Spacer(),
-                Expanded(
-                  child: TextField(controller: controller),
-                ),
-                IconButton(
-                  icon: const Icon(Icons.copy),
-                  onPressed:
-                      Actions.handler<CopyIntent>(context, const CopyIntent()),
-                ),
-                IconButton(
-                  icon: const Icon(Icons.select_all),
-                  onPressed: Actions.handler<SelectAllIntent>(
-                      context, const SelectAllIntent()),
-                ),
-                const Spacer(),
-              ],
+      child: Builder(
+        builder: (context) {
+          return Scaffold(
+            body: Center(
+              child: Row(
+                children: <Widget>[
+                  const Spacer(),
+                  Expanded(child: TextField(controller: controller)),
+                  IconButton(
+                    icon: const Icon(Icons.copy),
+                    onPressed: Actions.handler<CopyIntent>(
+                      context,
+                      const CopyIntent(),
+                    ),
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.select_all),
+                    onPressed: Actions.handler<SelectAllIntent>(
+                      context,
+                      const SelectAllIntent(),
+                    ),
+                  ),
+                  const Spacer(),
+                ],
+              ),
             ),
-          ),
-        );
-      }),
+          );
+        },
+      ),
     );
   }
 }

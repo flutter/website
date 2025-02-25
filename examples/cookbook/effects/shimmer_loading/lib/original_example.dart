@@ -10,25 +10,15 @@ void main() {
 }
 
 const _shimmerGradient = LinearGradient(
-  colors: [
-    Color(0xFFEBEBF4),
-    Color(0xFFF4F4F4),
-    Color(0xFFEBEBF4),
-  ],
-  stops: [
-    0.1,
-    0.3,
-    0.4,
-  ],
+  colors: [Color(0xFFEBEBF4), Color(0xFFF4F4F4), Color(0xFFEBEBF4)],
+  stops: [0.1, 0.3, 0.4],
   begin: Alignment(-1.0, -0.3),
   end: Alignment(1.0, 0.3),
   tileMode: TileMode.clamp,
 );
 
 class ExampleUiLoadingAnimation extends StatefulWidget {
-  const ExampleUiLoadingAnimation({
-    super.key,
-  });
+  const ExampleUiLoadingAnimation({super.key});
 
   @override
   State<ExampleUiLoadingAnimation> createState() =>
@@ -63,9 +53,7 @@ class _ExampleUiLoadingAnimationState extends State<ExampleUiLoadingAnimation> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _toggleLoading,
-        child: Icon(
-          _isLoading ? Icons.hourglass_full : Icons.hourglass_bottom,
-        ),
+        child: Icon(_isLoading ? Icons.hourglass_full : Icons.hourglass_bottom),
       ),
     );
   }
@@ -91,18 +79,13 @@ class _ExampleUiLoadingAnimationState extends State<ExampleUiLoadingAnimation> {
   }
 
   Widget _buildTopRowItem() {
-    return ShimmerLoading(
-      isLoading: _isLoading,
-      child: const CircleListItem(),
-    );
+    return ShimmerLoading(isLoading: _isLoading, child: const CircleListItem());
   }
 
   Widget _buildListItem() {
     return ShimmerLoading(
       isLoading: _isLoading,
-      child: CardListItem(
-        isLoading: _isLoading,
-      ),
+      child: CardListItem(isLoading: _isLoading),
     );
   }
 }
@@ -112,11 +95,7 @@ class Shimmer extends StatefulWidget {
     return context.findAncestorStateOfType<ShimmerState>();
   }
 
-  const Shimmer({
-    super.key,
-    required this.linearGradient,
-    this.child,
-  });
+  const Shimmer({super.key, required this.linearGradient, this.child});
 
   final LinearGradient linearGradient;
   final Widget? child;
@@ -142,18 +121,19 @@ class ShimmerState extends State<Shimmer> with SingleTickerProviderStateMixin {
     _shimmerController.dispose();
     super.dispose();
   }
-// code-excerpt-closing-bracket
-// #enddocregion shimmer-state-animation
+  // code-excerpt-closing-bracket
+  // #enddocregion shimmer-state-animation
 
   // #docregion linear-gradient
   LinearGradient get gradient => LinearGradient(
-        colors: widget.linearGradient.colors,
-        stops: widget.linearGradient.stops,
-        begin: widget.linearGradient.begin,
-        end: widget.linearGradient.end,
-        transform:
-            _SlidingGradientTransform(slidePercent: _shimmerController.value),
-      );
+    colors: widget.linearGradient.colors,
+    stops: widget.linearGradient.stops,
+    begin: widget.linearGradient.begin,
+    end: widget.linearGradient.end,
+    transform: _SlidingGradientTransform(
+      slidePercent: _shimmerController.value,
+    ),
+  );
   // #enddocregion linear-gradient
 
   bool get isSized =>
@@ -181,9 +161,7 @@ class ShimmerState extends State<Shimmer> with SingleTickerProviderStateMixin {
 
 // #docregion sliding-gradient-transform
 class _SlidingGradientTransform extends GradientTransform {
-  const _SlidingGradientTransform({
-    required this.slidePercent,
-  });
+  const _SlidingGradientTransform({required this.slidePercent});
 
   final double slidePercent;
 
@@ -237,8 +215,8 @@ class _ShimmerLoadingState extends State<ShimmerLoading> {
       });
     }
   }
-// code-excerpt-closing-bracket
-// #enddocregion shimmer-loading-state
+  // code-excerpt-closing-bracket
+  // #enddocregion shimmer-loading-state
 
   @override
   Widget build(BuildContext context) {
@@ -303,10 +281,7 @@ class CircleListItem extends StatelessWidget {
 }
 
 class CardListItem extends StatelessWidget {
-  const CardListItem({
-    super.key,
-    required this.isLoading,
-  });
+  const CardListItem({super.key, required this.isLoading});
 
   final bool isLoading;
 
@@ -316,11 +291,7 @@ class CardListItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _buildImage(),
-          const SizedBox(height: 16),
-          _buildText(),
-        ],
+        children: [_buildImage(), const SizedBox(height: 16), _buildText()],
       ),
     );
   }

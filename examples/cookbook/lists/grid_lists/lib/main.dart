@@ -14,9 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: title,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text(title),
-        ),
+        appBar: AppBar(title: const Text(title)),
         // #docregion GridView
         body: GridView.count(
           // Create a grid with 2 columns.

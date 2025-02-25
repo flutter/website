@@ -415,9 +415,7 @@ class EverythingRepaintsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Repaint Example')),
-      body: const Center(
-        child: CircularProgressIndicator(),
-      ),
+      body: const Center(child: CircularProgressIndicator()),
     );
   }
 }
@@ -438,9 +436,7 @@ class AreaRepaintsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Repaint Example')),
       body: const Center(
-        child: RepaintBoundary(
-          child: CircularProgressIndicator(),
-        ),
+        child: RepaintBoundary(child: CircularProgressIndicator()),
       ),
     );
   }
@@ -500,11 +496,7 @@ class ResizedImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset(
-      'dash.png',
-      cacheHeight: 213,
-      cacheWidth: 392,
-    );
+    return Image.asset('dash.png', cacheHeight: 213, cacheWidth: 392);
   }
 }
 ```

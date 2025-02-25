@@ -49,8 +49,10 @@ class _PlaySessionScreenState extends State<PlaySessionScreen> {
     // #docregion init-state
     final firestore = context.read<FirebaseFirestore?>();
     if (firestore == null) {
-      _log.warning("Firestore instance wasn't provided. "
-          'Running without _firestoreController.');
+      _log.warning(
+        "Firestore instance wasn't provided. "
+        'Running without _firestoreController.',
+      );
     } else {
       _firestoreController = FirestoreController(
         instance: firestore,

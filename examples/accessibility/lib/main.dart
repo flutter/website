@@ -9,11 +9,7 @@ class AccessibleApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Your accessible app',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Your accessible app'),
-        ),
-      ),
+      home: Scaffold(appBar: AppBar(title: const Text('Your accessible app'))),
     );
   }
 }

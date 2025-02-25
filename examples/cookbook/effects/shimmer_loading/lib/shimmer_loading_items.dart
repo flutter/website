@@ -30,10 +30,7 @@ class CircleListItem extends StatelessWidget {
 
 // #docregion CardListItem
 class CardListItem extends StatelessWidget {
-  const CardListItem({
-    super.key,
-    required this.isLoading,
-  });
+  const CardListItem({super.key, required this.isLoading});
 
   final bool isLoading;
 
@@ -43,11 +40,7 @@ class CardListItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _buildImage(),
-          const SizedBox(height: 16),
-          _buildText(),
-        ],
+        children: [_buildImage(), const SizedBox(height: 16), _buildText()],
       ),
     );
   }
@@ -112,16 +105,8 @@ class CardListItem extends StatelessWidget {
 
 // #docregion shimmerGradient
 const _shimmerGradient = LinearGradient(
-  colors: [
-    Color(0xFFEBEBF4),
-    Color(0xFFF4F4F4),
-    Color(0xFFEBEBF4),
-  ],
-  stops: [
-    0.1,
-    0.3,
-    0.4,
-  ],
+  colors: [Color(0xFFEBEBF4), Color(0xFFF4F4F4), Color(0xFFEBEBF4)],
+  stops: [0.1, 0.3, 0.4],
   begin: Alignment(-1.0, -0.3),
   end: Alignment(1.0, 0.3),
   tileMode: TileMode.clamp,
@@ -173,10 +158,7 @@ class _ShimmeringItemsState extends State<ShimmeringItems> {
 
   // #docregion buildTopRowItem
   Widget _buildTopRowItem() {
-    return ShimmerLoading(
-      isLoading: _isLoading,
-      child: const CircleListItem(),
-    );
+    return ShimmerLoading(isLoading: _isLoading, child: const CircleListItem());
   }
   // #enddocregion buildTopRowItem
 
@@ -184,20 +166,13 @@ class _ShimmeringItemsState extends State<ShimmeringItems> {
   Widget _buildListItem() {
     return ShimmerLoading(
       isLoading: _isLoading,
-      child: CardListItem(
-        isLoading: _isLoading,
-      ),
+      child: CardListItem(isLoading: _isLoading),
     );
   }
   // #enddocregion buildListItem
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        _buildTopRowItem(),
-        _buildListItem(),
-      ],
-    );
+    return Column(children: [_buildTopRowItem(), _buildListItem()]);
   }
 }

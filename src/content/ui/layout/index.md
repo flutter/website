@@ -98,22 +98,16 @@ Text('Hello World'),
 
 Create an [`Image`][] widget:
 
-<?code-excerpt "layout/lakes/step5/lib/main.dart (image-asset)" remove="/width|height/"?>
+<?code-excerpt "layout/lakes/step5/lib/main.dart (image-asset)" replace="/width.*240, //g;"?>
 ```dart
-return Image.asset(
-  image,
-  fit: BoxFit.cover,
-);
+return Image.asset(image, fit: BoxFit.cover);
 ```
 
 Create an [`Icon`][] widget:
 
 <?code-excerpt "layout/lakes/step5/lib/main.dart (icon)"?>
 ```dart
-Icon(
-  Icons.star,
-  color: Colors.red[500],
-),
+Icon(Icons.star, color: Colors.red[500]),
 ```
 
 ### 3. Add the visible widget to the layout widget
@@ -162,9 +156,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: appTitle,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text(appTitle),
-        ),
+        appBar: AppBar(title: const Text(appTitle)),
         body: const Center(
           child: Text('Hello World'),
         ),
@@ -225,9 +217,7 @@ class MyApp extends StatelessWidget {
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text('Hello World'),
-            ],
+            children: <Widget>[Text('Hello World')],
           ),
         ),
       ),
@@ -269,10 +259,7 @@ class MyApp extends StatelessWidget {
         child: Text(
           'Hello World',
           textDirection: TextDirection.ltr,
-          style: TextStyle(
-            fontSize: 32,
-            color: Colors.black87,
-          ),
+          style: TextStyle(fontSize: 32, color: Colors.black87),
         ),
       ),
     );
@@ -461,15 +448,9 @@ wrap each image with an `Expanded` widget.
   Row(
     crossAxisAlignment: CrossAxisAlignment.center,
     children: [
-      [!Expanded!](
-        child: Image.asset('images/pic1.jpg'),
-      ),
-      [!Expanded!](
-        child: Image.asset('images/pic2.jpg'),
-      ),
-      [!Expanded!](
-        child: Image.asset('images/pic3.jpg'),
-      ),
+      [!Expanded!](child: Image.asset('images/pic1.jpg')),
+      [!Expanded!](child: Image.asset('images/pic2.jpg')),
+      [!Expanded!](child: Image.asset('images/pic3.jpg')),
     ],
   );
   ```
@@ -496,16 +477,9 @@ the flex factor of the middle image to 2:
   Row(
     crossAxisAlignment: CrossAxisAlignment.center,
     children: [
-      Expanded(
-        child: Image.asset('images/pic1.jpg'),
-      ),
-      Expanded(
-        [!flex: 2,!]
-        child: Image.asset('images/pic2.jpg'),
-      ),
-      Expanded(
-        child: Image.asset('images/pic3.jpg'),
-      ),
+      Expanded(child: Image.asset('images/pic1.jpg')),
+      Expanded([!flex: 2, child: Image.asset('images/pic2.jpg')),!]
+      Expanded(child: Image.asset('images/pic3.jpg')),
     ],
   );
   ```
@@ -674,14 +648,7 @@ as well as the title and text that describes the Pavlova:
 ```dart
 final [!leftColumn!] = Container(
   padding: const EdgeInsets.fromLTRB(20, 30, 20, 20),
-  child: Column(
-    children: [
-      titleText,
-      subTitle,
-      ratings,
-      iconList,
-    ],
-  ),
+  child: Column(children: [titleText, subTitle, ratings, iconList]),
 );
 ```
 
@@ -704,13 +671,7 @@ body: Center(
     child: Card(
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            width: 440,
-            child: leftColumn,
-          ),
-          mainImage,
-        ],
+        children: [SizedBox(width: 440, child: leftColumn), mainImage],
       ),
     ),
   ),
@@ -804,15 +765,8 @@ of the column to a lighter grey.
   ```dart
   Widget _buildImageColumn() {
     return [!Container!](
-      decoration: const BoxDecoration(
-        color: Colors.black26,
-      ),
-      child: Column(
-        children: [
-          _buildImageRow(1),
-          _buildImageRow(3),
-        ],
-      ),
+      decoration: const BoxDecoration(color: Colors.black26),
+      child: Column(children: [_buildImageRow(1), _buildImageRow(3)]),
     );
   }
   ```
@@ -829,22 +783,22 @@ to each image:
 <?code-excerpt "layout/container/lib/main.dart (row)" replace="/\bContainer/[!$&!]/g;"?>
 ```dart
 Widget _buildDecoratedImage(int imageIndex) => Expanded(
-      child: [!Container!](
-        decoration: BoxDecoration(
-          border: Border.all(width: 10, color: Colors.black38),
-          borderRadius: const BorderRadius.all(Radius.circular(8)),
-        ),
-        margin: const EdgeInsets.all(4),
-        child: Image.asset('images/pic$imageIndex.jpg'),
-      ),
-    );
+  child: [!Container!](
+    decoration: BoxDecoration(
+      border: Border.all(width: 10, color: Colors.black38),
+      borderRadius: const BorderRadius.all(Radius.circular(8)),
+    ),
+    margin: const EdgeInsets.all(4),
+    child: Image.asset('images/pic$imageIndex.jpg'),
+  ),
+);
 
 Widget _buildImageRow(int imageIndex) => Row(
-      children: [
-        _buildDecoratedImage(imageIndex),
-        _buildDecoratedImage(imageIndex + 1),
-      ],
-    );
+  children: [
+    _buildDecoratedImage(imageIndex),
+    _buildDecoratedImage(imageIndex + 1),
+  ],
+);
 ```
 
 You can find more `Container` examples in the [tutorial][].
@@ -910,11 +864,12 @@ it's the entry in the "calorie" column for the "avocado" row), use
 <?code-excerpt "layout/grid_and_list/lib/main.dart (grid)" replace="/\GridView/[!$&!]/g;"?>
 ```dart
 Widget _buildGrid() => [!GridView!].extent(
-    maxCrossAxisExtent: 150,
-    padding: const EdgeInsets.all(4),
-    mainAxisSpacing: 4,
-    crossAxisSpacing: 4,
-    children: _buildGridTileList(30));
+  maxCrossAxisExtent: 150,
+  padding: const EdgeInsets.all(4),
+  mainAxisSpacing: 4,
+  crossAxisSpacing: 4,
+  children: _buildGridTileList(30),
+);
 
 // The images are saved with names pic0.jpg, pic1.jpg...pic29.jpg.
 // The List.generate() constructor allows an easy way to create
@@ -972,8 +927,11 @@ Widget _buildList() {
       _tile('The Castro Theater', '429 Castro St', Icons.theaters),
       _tile('Alamo Drafthouse Cinema', '2550 Mission St', Icons.theaters),
       _tile('Roxie Theater', '3117 16th St', Icons.theaters),
-      _tile('United Artists Stonestown Twin', '501 Buckingham Way',
-          Icons.theaters),
+      _tile(
+        'United Artists Stonestown Twin',
+        '501 Buckingham Way',
+        Icons.theaters,
+      ),
       _tile('AMC Metreon 16', '135 4th St #3000', Icons.theaters),
       const Divider(),
       _tile('K\'s Kitchen', '757 Monterey Blvd', Icons.restaurant),
@@ -986,16 +944,12 @@ Widget _buildList() {
 
 ListTile _tile(String title, String subtitle, IconData icon) {
   return ListTile(
-    title: Text(title,
-        style: const TextStyle(
-          fontWeight: FontWeight.w500,
-          fontSize: 20,
-        )),
-    subtitle: Text(subtitle),
-    leading: Icon(
-      icon,
-      color: Colors.blue[500],
+    title: Text(
+      title,
+      style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
     ),
+    subtitle: Text(subtitle),
+    leading: Icon(icon, color: Colors.blue[500]),
   );
 }
 ```
@@ -1051,9 +1005,7 @@ Widget _buildStack() {
         radius: 100,
       ),
       Container(
-        decoration: const BoxDecoration(
-          color: Colors.black45,
-        ),
+        decoration: const BoxDecoration(color: Colors.black45),
         child: const Text(
           'Mia B',
           style: TextStyle(
@@ -1137,10 +1089,7 @@ Widget _buildCard() {
               style: TextStyle(fontWeight: FontWeight.w500),
             ),
             subtitle: const Text('My City, CA 99984'),
-            leading: Icon(
-              Icons.restaurant_menu,
-              color: Colors.blue[500],
-            ),
+            leading: Icon(Icons.restaurant_menu, color: Colors.blue[500]),
           ),
           const Divider(),
           ListTile(
@@ -1148,17 +1097,11 @@ Widget _buildCard() {
               '(408) 555-1212',
               style: TextStyle(fontWeight: FontWeight.w500),
             ),
-            leading: Icon(
-              Icons.contact_phone,
-              color: Colors.blue[500],
-            ),
+            leading: Icon(Icons.contact_phone, color: Colors.blue[500]),
           ),
           ListTile(
             title: const Text('costa@example.com'),
-            leading: Icon(
-              Icons.contact_mail,
-              color: Colors.blue[500],
-            ),
+            leading: Icon(Icons.contact_mail, color: Colors.blue[500]),
           ),
         ],
       ),

@@ -29,6 +29,9 @@ importers:
       hast-util-select:
         specifier: ^6.0.3
         version: 6.0.3
+      hast-util-to-html:
+        specifier: ^9.0.4
+        version: 9.0.4
       hast-util-to-text:
         specifier: ^4.0.2
         version: 4.0.2

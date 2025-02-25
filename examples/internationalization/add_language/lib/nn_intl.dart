@@ -17,7 +17,7 @@ const nnLocaleDatePatterns = {
   'E': 'ccc',
   'EEEE': 'cccc',
   'LLL': 'LLL',
-// #enddocregion date-patterns
+  // #enddocregion date-patterns
   'LLLL': 'LLLL',
   'M': 'L.',
   'Md': 'd.M.',
@@ -67,15 +67,9 @@ const nnLocaleDatePatterns = {
 // #docregion date-symbols
 const nnDateSymbols = {
   'NAME': 'nn',
-  'ERAS': <dynamic>[
-    'f.Kr.',
-    'e.Kr.',
-  ],
-// #enddocregion date-symbols
-  'ERANAMES': <dynamic>[
-    'før Kristus',
-    'etter Kristus',
-  ],
+  'ERAS': <dynamic>['f.Kr.', 'e.Kr.'],
+  // #enddocregion date-symbols
+  'ERANAMES': <dynamic>['før Kristus', 'etter Kristus'],
   'NARROWMONTHS': <dynamic>[
     'J',
     'F',
@@ -196,58 +190,21 @@ const nnDateSymbols = {
     'fre.',
     'lør.',
   ],
-  'NARROWWEEKDAYS': <dynamic>[
-    'S',
-    'M',
-    'T',
-    'O',
-    'T',
-    'F',
-    'L',
-  ],
-  'STANDALONENARROWWEEKDAYS': <dynamic>[
-    'S',
-    'M',
-    'T',
-    'O',
-    'T',
-    'F',
-    'L',
-  ],
-  'SHORTQUARTERS': <dynamic>[
-    'K1',
-    'K2',
-    'K3',
-    'K4',
-  ],
-  'QUARTERS': <dynamic>[
-    '1. kvartal',
-    '2. kvartal',
-    '3. kvartal',
-    '4. kvartal',
-  ],
-  'AMPMS': <dynamic>[
-    'a.m.',
-    'p.m.',
-  ],
+  'NARROWWEEKDAYS': <dynamic>['S', 'M', 'T', 'O', 'T', 'F', 'L'],
+  'STANDALONENARROWWEEKDAYS': <dynamic>['S', 'M', 'T', 'O', 'T', 'F', 'L'],
+  'SHORTQUARTERS': <dynamic>['K1', 'K2', 'K3', 'K4'],
+  'QUARTERS': <dynamic>['1. kvartal', '2. kvartal', '3. kvartal', '4. kvartal'],
+  'AMPMS': <dynamic>['a.m.', 'p.m.'],
   'DATEFORMATS': <dynamic>[
     'EEEE d. MMMM y',
     'd. MMMM y',
     'd. MMM y',
     'dd.MM.y',
   ],
-  'TIMEFORMATS': <dynamic>[
-    'HH:mm:ss zzzz',
-    'HH:mm:ss z',
-    'HH:mm:ss',
-    'HH:mm',
-  ],
+  'TIMEFORMATS': <dynamic>['HH:mm:ss zzzz', 'HH:mm:ss z', 'HH:mm:ss', 'HH:mm'],
   'AVAILABLEFORMATS': null,
   'FIRSTDAYOFWEEK': 0,
-  'WEEKENDRANGE': <dynamic>[
-    5,
-    6,
-  ],
+  'WEEKENDRANGE': <dynamic>[5, 6],
   'FIRSTWEEKCUTOFFDAY': 3,
   'DATETIMEFORMATS': <dynamic>[
     '{1} {0}',
@@ -526,8 +483,15 @@ class NnMaterialLocalizations extends GlobalMaterialLocalizations {
   String get viewLicensesButtonLabel => r'VIEW LICENSES';
 
   @override
-  List<String> get narrowWeekdays =>
-      const <String>['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+  List<String> get narrowWeekdays => const <String>[
+    'S',
+    'M',
+    'T',
+    'W',
+    'T',
+    'F',
+    'S',
+  ];
 
   @override
   int get firstDayOfWeekIndex => 0;

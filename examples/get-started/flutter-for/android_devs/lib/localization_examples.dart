@@ -7,8 +7,8 @@ class MyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return
-        // #docregion access-string
-        Text(AppLocalizations.of(context)!.hello('John'));
+    // #docregion access-string
+    Text(AppLocalizations.of(context)!.hello('John'));
     // #enddocregion access-string
   }
 }

@@ -9,7 +9,7 @@ description: >
 
 This article is intended to provide a high-level overview of the architecture of
 Flutter, including the core principles and concepts that form its design.
-If you are intereted in how to architect a Flutter app,
+If you are interested in how to architect a Flutter app,
 check out [Architecting Flutter apps][].
 
 [Architecting Flutter apps]: /app-architecture
@@ -292,9 +292,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('My Home Page'),
-        ),
+        appBar: AppBar(title: const Text('My Home Page')),
         body: Center(
           child: Builder(
             builder: (context) {
@@ -591,7 +589,7 @@ such as Windows or macOS.
 :::note
 If you want to know which devices Impeller supports,
 check out [Can I use Impeller?][].
-For more information on Impeller, 
+For more information, 
 visit [Impeller rendering engine][]
 :::
 
@@ -920,24 +918,27 @@ here's a fragment of code to call the traditional Win32 `MessageBox()` API:
 import 'dart:ffi';
 import 'package:ffi/ffi.dart'; // contains .toNativeUtf16() extension method
 
-typedef MessageBoxNative = Int32 Function(
-  IntPtr hWnd,
-  Pointer<Utf16> lpText,
-  Pointer<Utf16> lpCaption,
-  Int32 uType,
-);
+typedef MessageBoxNative =
+    Int32 Function(
+      IntPtr hWnd,
+      Pointer<Utf16> lpText,
+      Pointer<Utf16> lpCaption,
+      Int32 uType,
+    );
 
-typedef MessageBoxDart = int Function(
-  int hWnd,
-  Pointer<Utf16> lpText,
-  Pointer<Utf16> lpCaption,
-  int uType,
-);
+typedef MessageBoxDart =
+    int Function(
+      int hWnd,
+      Pointer<Utf16> lpText,
+      Pointer<Utf16> lpCaption,
+      int uType,
+    );
 
 void exampleFfi() {
   final user32 = DynamicLibrary.open('user32.dll');
-  final messageBox =
-      user32.lookupFunction<MessageBoxNative, MessageBoxDart>('MessageBoxW');
+  final messageBox = user32.lookupFunction<MessageBoxNative, MessageBoxDart>(
+    'MessageBoxW',
+  );
 
   final result = messageBox(
     0, // No owner window
@@ -1056,16 +1057,56 @@ is designed to interface with the
 underlying operating system rather than a web browser.
 A different approach is therefore required.
 
-On the web, Flutter offers two build modes and two renderers.
-Flutter has a canvas-based renderer with two compile modes:
-JS and Wasm.
+On the web, Flutter offers two renderers:
 
-Flutter chooses the build mode when building the app,
-and determines which renderers are available at runtime.
-For a default build, Flutter chooses the `canvaskit`
-renderer at runtime. For a WebAssembly build,
-Flutter chooses the `skwasm` renderer at runtime,
-and falls back to canvaskit if the browser doesn't support skwasm.
+<table class="table table-striped">
+<tr>
+<th>Renderer</th>
+<th>Compilation target</th>
+</tr>
+
+<tr>
+<td>CanvasKit
+</td>
+<td>JavaScript
+</td>
+</tr>
+
+<tr>
+<td>Skwasm
+</td>
+<td>WebAssembly
+</td>
+</tr>
+</table>
+
+_Build modes_ are command-line options that dictate
+which renderers are available when you run the app.
+
+Flutter offers two _build_ modes:
+
+<table class="table table-striped">
+<tr>
+<th>Build mode</th>
+<th>Available renderer(s)</th>
+</tr>
+
+<tr>
+<td>default</td>
+<td>CanvasKit</td>
+</tr>
+
+<tr>
+<td>`--wasm`</td>
+<td>Skwasm (preferred), CanvasKit (fallback)</td>
+</tr>
+
+
+The default mode makes only CanvasKit renderer available.
+The `--wasm` option makes both renderers available,
+and chooses the engine based on browser capabilities:
+preferring Skwasm if the browser is capable of running it,
+and falls back to CanvasKit otherwise.
 
 {% comment %}
 The draw.io source for the following image is in /diagrams/resources

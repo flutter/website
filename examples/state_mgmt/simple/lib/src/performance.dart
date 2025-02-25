@@ -3,10 +3,7 @@ import 'package:provider/provider.dart';
 import 'provider.dart';
 
 class AnotherMonstrousWidget extends SomeExpensiveWidget {
-  const AnotherMonstrousWidget({
-    super.child,
-    super.key,
-  });
+  const AnotherMonstrousWidget({super.child, super.key});
 }
 
 class ChildUsingDescendant extends StatelessWidget {
@@ -16,13 +13,14 @@ class ChildUsingDescendant extends StatelessWidget {
   Widget build(BuildContext context) {
     // #docregion child
     return Consumer<CartModel>(
-      builder: (context, cart, child) => Stack(
-        children: [
-          // Use SomeExpensiveWidget here, without rebuilding every time.
-          if (child != null) child,
-          Text('Total price: ${cart.totalPrice}'),
-        ],
-      ),
+      builder:
+          (context, cart, child) => Stack(
+            children: [
+              // Use SomeExpensiveWidget here, without rebuilding every time.
+              if (child != null) child,
+              Text('Total price: ${cart.totalPrice}'),
+            ],
+          ),
       // Build the expensive widget here.
       child: const SomeExpensiveWidget(),
     );
@@ -75,10 +73,7 @@ class DescendantNotInLeafNodeBad extends StatelessWidget {
 }
 
 class HumongousWidget extends SomeExpensiveWidget {
-  const HumongousWidget({
-    super.child,
-    super.key,
-  });
+  const HumongousWidget({super.child, super.key});
 }
 
 class MyHomepage extends StatelessWidget {
@@ -127,9 +122,6 @@ class SomeExpensiveWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     // Imagine this is a huge build method. You don't want to rebuild it
     // every time that total price changes.
-    return Container(
-      color: Colors.yellow,
-      child: child,
-    );
+    return Container(color: Colors.yellow, child: child);
   }
 }

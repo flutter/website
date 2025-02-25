@@ -4,9 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 void main() {
   setUpAll(() {
     // #docregion setup
-    SharedPreferences.setMockInitialValues(<String, Object>{
-      'counter': 2,
-    });
+    SharedPreferences.setMockInitialValues(<String, Object>{'counter': 2});
     // #enddocregion setup
   });
 

@@ -17,7 +17,8 @@
         {% assign isActive = false -%}
         {% assign class = '' -%}
       {% endif -%}
-      {% if entry.children -%}
+      {% assign hidingChildren = entry.hiddenChildren == true and not pageUrlPath contains entry.permalink -%}
+      {% if entry.children and not hidingChildren -%}
         {% if isActive or entry.expanded -%}
           {% assign expanded = 'true' -%}
           {% assign show = 'show' -%}

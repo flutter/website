@@ -5,9 +5,8 @@ import '../../domain/model/user_profile.dart';
 // #docregion UserProfileViewModel
 class UserProfileViewModel extends ChangeNotifier {
   // #enddocregion UserProfileViewModel
-  UserProfileViewModel({
-    required UserProfileRepository userProfileRepository,
-  }) : _userProfileRepository = userProfileRepository {
+  UserProfileViewModel({required UserProfileRepository userProfileRepository})
+    : _userProfileRepository = userProfileRepository {
     load();
   }
 
@@ -25,12 +24,18 @@ class UserProfileViewModel extends ChangeNotifier {
   // #docregion load
   Future<void> load() async {
     // #enddocregion UserProfileViewModel
-    await _userProfileRepository.getUserProfile().listen((userProfile) {
-      _userProfile = userProfile;
-      notifyListeners();
-    }, onError: (error) {
-      // handle error
-    }).asFuture();
+    await _userProfileRepository
+        .getUserProfile()
+        .listen(
+          (userProfile) {
+            _userProfile = userProfile;
+            notifyListeners();
+          },
+          onError: (error) {
+            // handle error
+          },
+        )
+        .asFuture();
     // #docregion UserProfileViewModel
   }
   // #enddocregion load
@@ -51,4 +56,5 @@ class UserProfileViewModel extends ChangeNotifier {
     // #docregion UserProfileViewModel
   }
 }
+
 // #enddocregion UserProfileViewModel

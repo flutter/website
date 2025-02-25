@@ -92,9 +92,7 @@ class MyApp extends StatelessWidget {
 
     return const MaterialApp(
       title: appTitle,
-      home: OrientationList(
-        title: appTitle,
-      ),
+      home: OrientationList(title: appTitle),
     );
   }
 }
@@ -159,9 +157,7 @@ For a list of all the possible values, check out [`DeviceOrientation`].
 ```dart
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-  ]);
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(const MyApp());
 }
 ```

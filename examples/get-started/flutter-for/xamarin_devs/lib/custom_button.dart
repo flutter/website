@@ -8,10 +8,7 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {},
-      child: Text(label),
-    );
+    return ElevatedButton(onPressed: () {}, child: Text(label));
   }
 }
 // #enddocregion custom-button
@@ -22,9 +19,8 @@ class UseCustomButton extends StatelessWidget {
   // #docregion use-custom-button
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: CustomButton('Hello'),
-    );
+    return const Center(child: CustomButton('Hello'));
   }
+
   // #enddocregion use-custom-button
 }

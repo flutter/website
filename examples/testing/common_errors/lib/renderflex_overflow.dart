@@ -26,6 +26,7 @@ class ProblemWidget extends StatelessWidget {
       ],
     );
   }
+
   // #enddocregion problem
 }
 
@@ -40,8 +41,8 @@ class SolutionWidget extends StatelessWidget {
         Icon(Icons.message),
         Expanded(
           child: Column(
-              // code omitted
-              ),
+            // code omitted
+          ),
         ),
       ],
     );

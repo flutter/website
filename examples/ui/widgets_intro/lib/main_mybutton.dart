@@ -17,22 +17,12 @@ class MyButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(5),
           color: Colors.lightGreen[500],
         ),
-        child: const Center(
-          child: Text('Engage'),
-        ),
+        child: const Center(child: Text('Engage')),
       ),
     );
   }
 }
 
 void main() {
-  runApp(
-    const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: MyButton(),
-        ),
-      ),
-    ),
-  );
+  runApp(const MaterialApp(home: Scaffold(body: Center(child: MyButton()))));
 }

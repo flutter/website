@@ -9,7 +9,8 @@ import 'package:path/path.dart' as path;
 
 final class CheckLinkReferencesCommand extends Command<int> {
   @override
-  String get description => 'Verify there are no unlinked/broken '
+  String get description =>
+      'Verify there are no unlinked/broken '
       'Markdown link references in the generated site output.';
 
   @override
@@ -136,7 +137,7 @@ final _pullRequestTitlePattern = RegExp(
 /// by @craiglabenz in https://github.com/flutter/flutter/pull/100316</li>
 /// ```
 final _pullRequestTitleInListItemPattern = RegExp(
-  r'<li>(?:(?!<li>).)*?in\s+(?:<a[^>]*?href="https://github\.com/[^/]+/[^/]+/pull/\d+">[\d]+</a>|https://github\.com/[^/]+/[^/]+/pull/\d+)(?:(?!<li>).)*?</li>',
+  r'<li>(?:(?!<li>).)*?in\s+(?:(?!<li>).)*?</li>',
   dotAll: true,
 );
 

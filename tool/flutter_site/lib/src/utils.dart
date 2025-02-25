@@ -24,11 +24,10 @@ void groupEnd() {
 }
 
 int runPubGetIfNecessary(String directory) {
-  final pubGetOutput = Process.runSync(
-    'flutter',
-    const ['pub', 'get'],
-    workingDirectory: directory,
-  );
+  final pubGetOutput = Process.runSync('flutter', const [
+    'pub',
+    'get',
+  ], workingDirectory: directory);
 
   if (pubGetOutput.exitCode != 0) {
     final normalOutput = pubGetOutput.stdout.toString();
@@ -77,11 +76,13 @@ List<String> findNestedDirectoriesWithPubspec(
     if (entity is Directory) {
       // If this entity is a direct, recurse in to it
       // to find any pubspec files.
-      directoriesWithPubspec.addAll(findNestedDirectoriesWithPubspec(
-        entity,
-        skipPaths: skipPaths,
-        skipHidden: skipHidden,
-      ));
+      directoriesWithPubspec.addAll(
+        findNestedDirectoriesWithPubspec(
+          entity,
+          skipPaths: skipPaths,
+          skipHidden: skipHidden,
+        ),
+      );
     } else if (entity is File && path.basename(entity.path) == 'pubspec.yaml') {
       // If the directory has a pubspec.yaml file, this directory counts.
       directoriesWithPubspec.add(normalizedPath);

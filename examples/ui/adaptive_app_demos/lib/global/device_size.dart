@@ -58,9 +58,7 @@ class WidgetWithBreakPoints extends StatelessWidget {
 
     // #docregion widget-swap
     Widget foo = Row(
-      children: [
-        ...isHandset ? _getHandsetChildren() : _getNormalChildren(),
-      ],
+      children: [...isHandset ? _getHandsetChildren() : _getNormalChildren()],
     );
     // #enddocregion widget-swap
 

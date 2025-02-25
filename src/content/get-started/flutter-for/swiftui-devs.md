@@ -221,9 +221,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // Returns a CupertinoApp that, by default,
     // has the look and feel of an iOS app.
-    return const CupertinoApp(
-      home: HomePage(),
-    );
+    return const CupertinoApp(home: HomePage());
   }
 }
 ```
@@ -238,13 +236,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text(
-          'Hello, World!',
-        ),
-      ),
-    );
+    return const Scaffold(body: Center(child: Text('Hello, World!')));
   }
 }
 ```
@@ -310,10 +302,7 @@ HStack {
 ```dart dartpad="0365338f938427b01d72e37cea554f75"
 Row(
   mainAxisAlignment: MainAxisAlignment.center,
-  children: [
-    Icon(CupertinoIcons.globe),
-    Text('Hello, world!'),
-  ],
+  children: [Icon(CupertinoIcons.globe), Text('Hello, world!')],
 ),
 ```
 
@@ -344,10 +333,7 @@ except it swaps [`Column`][] for `Row`:
 ```dart dartpad="d9a288be0c2a353296fc8825680b84b8"
 Column(
   mainAxisAlignment: MainAxisAlignment.center,
-  children: [
-    Icon(CupertinoIcons.globe),
-    Text('Hello, world!'),
-  ],
+  children: [Icon(CupertinoIcons.globe), Text('Hello, world!')],
 ),
 ```
 
@@ -408,9 +394,7 @@ class HomePage extends StatelessWidget {
       body: ListView.builder(
         itemCount: items.length,
         itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(items[index].name),
-          );
+          return ListTile(title: Text(items[index].name));
         },
       ),
     );
@@ -523,13 +507,8 @@ of the `Person` class to create the custom `PersonView` widget.
 ```dart dartpad="a75740320989ed04020d95502a0de34e"
 SingleChildScrollView(
   child: Column(
-    children: mockPersons
-        .map(
-          (person) => PersonView(
-            person: person,
-          ),
-        )
-        .toList(),
+    children:
+        mockPersons.map((person) => PersonView(person: person)).toList(),
   ),
 ),
 ```
@@ -605,9 +584,10 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             Text('$_counter'),
             TextButton(
-              onPressed: () => setState(() {
-                _counter++;
-              }),
+              onPressed:
+                  () => setState(() {
+                    _counter++;
+                  }),
               child: const Text('+'),
             ),
           ],
@@ -657,12 +637,13 @@ AnimatedRotation(
   turns: turns,
   curve: Curves.easeIn,
   TextButton(
-      onPressed: () {
-        setState(() {
-          turns += .125;
-        });
-      },
-      const Text('Tap me!')),
+    onPressed: () {
+      setState(() {
+        turns += .125;
+      });
+    },
+    const Text('Tap me!'),
+  ),
 ),
 ```
 
@@ -711,10 +692,11 @@ with two classes that help you draw:
     
       @override
       void paint(Canvas canvas, Size size) {
-        final Paint paint = Paint()
-          ..color = Colors.black
-          ..strokeCap = StrokeCap.round
-          ..strokeWidth = 5;
+        final Paint paint =
+            Paint()
+              ..color = Colors.black
+              ..strokeCap = StrokeCap.round
+              ..strokeWidth = 5;
         for (int i = 0; i < points.length - 1; i++) {
           if (points[i] != null && points[i + 1] != null) {
             canvas.drawLine(points[i]!, points[i + 1]!, paint);
@@ -775,9 +757,7 @@ call your navigation routes using their names.
     const detailsPageRouteName = '/details';
     
     class App extends StatelessWidget {
-      const App({
-        super.key,
-      });
+      const App({super.key});
     
       @override
       Widget build(BuildContext context) {
@@ -785,9 +765,7 @@ call your navigation routes using their names.
           home: const HomePage(),
           // The [routes] property defines the available named routes
           // and the widgets to build when navigating to those routes.
-          routes: {
-            detailsPageRouteName: (context) => const DetailsPage(),
-          },
+          routes: {detailsPageRouteName: (context) => const DetailsPage()},
         );
       }
     }
@@ -807,18 +785,15 @@ call your navigation routes using their names.
         return ListTile(
           title: Text(person.name),
           subtitle: Text(age),
-          trailing: const Icon(
-            Icons.arrow_forward_ios,
-          ),
+          trailing: const Icon(Icons.arrow_forward_ios),
           onTap: () {
             // When a [ListTile] that represents a person is
             // tapped, push the detailsPageRouteName route
             // to the Navigator and pass the person's instance
             // to the route.
-            Navigator.of(context).pushNamed(
-              detailsPageRouteName,
-              arguments: person,
-            );
+            Navigator.of(
+              context,
+            ).pushNamed(detailsPageRouteName, arguments: person);
           },
         );
       },
@@ -838,9 +813,7 @@ call your navigation routes using their names.
       @override
       Widget build(BuildContext context) {
         // Read the person instance from the arguments.
-        final Person person = ModalRoute.of(
-          context,
-        )?.settings.arguments as Person;
+        final Person person = ModalRoute.of(context)?.settings.arguments as Person;
         // Extract the age.
         final age = '${person.age} years old';
         return Scaffold(
@@ -906,13 +879,9 @@ In **Flutter**, use the [`url_launcher`][] plugin.
 ```dart dartpad="695beba25fa8120d89c9960cb222e276"
 CupertinoButton(
   onPressed: () async {
-    await launchUrl(
-      Uri.parse('https://google.com'),
-    );
+    await launchUrl(Uri.parse('https://google.com'));
   },
-  const Text(
-    'Open website',
-  ),
+  const Text('Open website'),
 ),
 ```
 
@@ -935,9 +904,7 @@ of the `App` class:
 <?code-excerpt "lib/cupertino_themes.dart (theme)" replace="/return //g;"?>
 ```dart dartpad="18790cfaa8441085994373a4bc4f46b0"
 const CupertinoApp(
-  theme: CupertinoThemeData(
-    brightness: Brightness.dark,
-  ),
+  theme: CupertinoThemeData(brightness: Brightness.dark),
   home: HomePage(),
 );
 ```
@@ -1051,10 +1018,7 @@ following example:
 ```dart
 Text(
   'Cupertino',
-  style: TextStyle(
-    fontSize: 40,
-    fontFamily: 'BungeeSpice',
-  ),
+  style: TextStyle(fontSize: 40, fontFamily: 'BungeeSpice'),
 ),
 ```
 

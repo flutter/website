@@ -85,8 +85,9 @@ only `2` columns of data appear in the app:
     
       // Verify initial orientation is portrait.
       final orientation =
-          MediaQuery.of(tester.element(find.byType(OrientationList)))
-              .orientation;
+          MediaQuery.of(
+            tester.element(find.byType(OrientationList)),
+          ).orientation;
       expect(orientation, Orientation.portrait);
     
       // Verify there are only 2 columns in portrait mode.
@@ -124,8 +125,9 @@ only `3` columns of data appear in the app:
     
       // Verify initial orientation is landscape.
       final orientation =
-          MediaQuery.of(tester.element(find.byType(OrientationList)))
-              .orientation;
+          MediaQuery.of(
+            tester.element(find.byType(OrientationList)),
+          ).orientation;
       expect(orientation, Orientation.landscape);
     
       // Verify there are only 3 columns in landscape mode.
@@ -170,8 +172,9 @@ void main() {
 
       // Verify initial orientation is portrait.
       final orientation =
-          MediaQuery.of(tester.element(find.byType(OrientationList)))
-              .orientation;
+          MediaQuery.of(
+            tester.element(find.byType(OrientationList)),
+          ).orientation;
       expect(orientation, Orientation.portrait);
 
       // Verify there are only 2 columns in portrait mode.
@@ -197,8 +200,9 @@ void main() {
 
       // Verify initial orientation is landscape.
       final orientation =
-          MediaQuery.of(tester.element(find.byType(OrientationList)))
-              .orientation;
+          MediaQuery.of(
+            tester.element(find.byType(OrientationList)),
+          ).orientation;
       expect(orientation, Orientation.landscape);
 
       // Verify there are only 3 columns in landscape mode.
@@ -229,9 +233,7 @@ class MyApp extends StatelessWidget {
 
     return const MaterialApp(
       title: appTitle,
-      home: OrientationList(
-        title: appTitle,
-      ),
+      home: OrientationList(title: appTitle),
     );
   }
 }
