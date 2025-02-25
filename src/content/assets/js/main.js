@@ -108,10 +108,11 @@ function setupToc() {
 
 function _setupTocActiveObserver() {
   const headings = document.querySelectorAll('article > .header-wrapper, #site-header-wrapper');
+  const currentHeaderText = document.getElementById('current-header');
   const visibleAnchors = new Set();
 
   // No need to have toc scrollspy if there is only one non-title heading.
-  if (headings.length < 2) return;
+  if (headings.length < 2 || currentHeaderText === null) return;
 
   const observer = new IntersectionObserver(
     (entries) => {
@@ -127,6 +128,7 @@ function _setupTocActiveObserver() {
       });
 
       if (visibleAnchors.size > 0) {
+        let isFirst = true;
         document.querySelectorAll(`.site-toc .sidenav-item a`).forEach(tocLink => {
           const headingId = tocLink.getAttribute('href')?.substring(1);
           if (!headingId) return;
@@ -136,6 +138,11 @@ function _setupTocActiveObserver() {
 
           if (visibleAnchors.has(headingId)) {
             sidenavItem.classList.add('active');
+
+            if (isFirst) {
+              currentHeaderText.textContent = tocLink.textContent;
+              isFirst = false;
+            }
           } else {
             sidenavItem.classList.remove('active');
           }
