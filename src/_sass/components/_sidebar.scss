@@ -1,8 +1,6 @@
 @use '../base/variables' as *;
 @use '../base/mixins';
 
-$sidenav-divider-color: #e7e8ed;
-
 #sidenav {
   margin: 0;
   min-width: 16rem;
@@ -14,7 +12,7 @@ $sidenav-divider-color: #e7e8ed;
   overflow-y: auto;
   display: none;
   width: 100%;
-  z-index: 1010;
+  z-index: $site-z-sidenav;
   background-color: $site-color-white;
 
   @at-root body.open_menu {

@@ -84,13 +84,11 @@ function scrollSidenavIntoView() {
  * This function enables a "scrollspy" feature on the TOC, 
  * where the active link in the TOC is updated
  * based on the currently visible section in the page.
- * 
+ *
  * Enables a "back to top" button in the TOC header.
  */
-function adjustToc() {
-  const tocId = '#site-toc--side';
-
-  const tocHeader = document.querySelector(tocId + ' header');
+function setupToc() {
+  const tocHeader = document.querySelector('#toc-side header');
 
   if (tocHeader) {
     tocHeader.addEventListener('click', (_) => {
@@ -104,6 +102,55 @@ function adjustToc() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }
+
+  _setupTocActiveObserver();
+}
+
+function _setupTocActiveObserver() {
+  const headings = document.querySelectorAll('article > .header-wrapper, #site-header-wrapper');
+  const currentHeaderText = document.getElementById('current-header');
+  const visibleAnchors = new Set();
+
+  // No need to have toc scrollspy if there is only one non-title heading.
+  if (headings.length < 2 || currentHeaderText === null) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        const headingId = entry.target.querySelector('h1, h2, h3')?.id;
+        if (!headingId) return;
+
+        if (entry.isIntersecting) {
+          visibleAnchors.add(headingId);
+        } else {
+          visibleAnchors.delete(headingId);
+        }
+      });
+
+      if (visibleAnchors.size > 0) {
+        let isFirst = true;
+        document.querySelectorAll(`.site-toc .sidenav-item a`).forEach(tocLink => {
+          const headingId = tocLink.getAttribute('href')?.substring(1);
+          if (!headingId) return;
+
+          const sidenavItem = tocLink.closest('.sidenav-item');
+          if (!sidenavItem) return;
+
+          if (visibleAnchors.has(headingId)) {
+            sidenavItem.classList.add('active');
+
+            if (isFirst) {
+              currentHeaderText.textContent = tocLink.textContent;
+              isFirst = false;
+            }
+          } else {
+            sidenavItem.classList.remove('active');
+          }
+        });
+      }
+    },{ rootMargin: '-80px 0px -25% 0px' });
+
+  headings.forEach(heading => observer.observe(heading));
 }
 
 function setupSearch() {
@@ -162,19 +209,6 @@ function initCookieNotice() {
   });
 
   notice.classList.add(activeClass);
-}
-
-function setupInlineToc() {
-  // Set up the inline TOC's ability to expand and collapse.
-  const toggle = document.querySelectorAll('.site-toc--inline__toggle');
-  toggle.forEach(function (toggle) {
-    toggle.addEventListener('click', (_) => {
-      const inlineToc = document.getElementById('site-toc--inline');
-      if (inlineToc) {
-        inlineToc.classList.toggle('toc-collapsed');
-      }
-    });
-  });
 }
 
 // A pattern to remove terminal command markers when copying code blocks.
@@ -313,8 +347,7 @@ function setupSite() {
   setupSiteSwitcher();
   setupTabs();
 
-  adjustToc();
-  setupInlineToc();
+  setupToc();
 }
 
 if (document.readyState === 'loading') {
