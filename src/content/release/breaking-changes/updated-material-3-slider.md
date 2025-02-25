@@ -50,13 +50,13 @@ Slider(
 ),
 ```
 
-To opt into the updated design spec for the `Slider`, for the entire app, set
-the `SliderThemeData.year2023` flag to `false` in the `MaterialApp`:
+To update your entire app to use the updated `Slider` design, set the
+`SliderThemeData.year2023` property to `false` in your `MaterialApp`:
 
 ```dart highlightLines=2
 return MaterialApp(
   theme: ThemeData(sliderTheme: const SliderThemeData(year2023: false)),
-        /// ...
+        // ...
         Slider(
           value: _value,
           onChanged: (value) {
@@ -65,7 +65,7 @@ return MaterialApp(
             });
           },
         ),
-        /// ...
+        // ...
 ```
 
 ## Timeline
