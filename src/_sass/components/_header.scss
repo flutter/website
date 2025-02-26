@@ -124,3 +124,19 @@
     }
   }
 }
+
+  #menu-toggle span.material-symbols:first-child {
+  display: inline;
+  }
+
+  #menu-toggle span.material-symbols:last-child {
+  display: none;
+  }
+
+  #menu-toggle-checkbox:checked + #menu-toggle span.material-symbols:first-child {
+  display: none;
+  }
+
+  #menu-toggle-checkbox:checked + #menu-toggle span.material-symbols:last-child {
+  display: inline;
+  }
