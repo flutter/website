@@ -1,21 +1,25 @@
-<div id="toc-top" class="site-toc dropdown">
-  <button>
+<div id="toc-top" class="site-toc dropdown hidden">
+  <button class="dropdown-button"
+          title="Toggle the table of contents dropdown"
+          aria-expanded="false"
+          aria-controls="toc-dropdown"
+          aria-label="Toggle the table of contents dropdown">
     <span class="toc-intro">
       <span class="material-symbols" aria-hidden="true">list</span>
-      <span>On this page</span>
+      <span aria-label="On this page:">On this page</span>
     </span>
     <span class="toc-current">
       <span class="material-symbols" aria-hidden="true">chevron_right</span>
-      <span id="current-header">Aligning widgets</span>
+      <span id="current-header">{{title}}</span>
     </span>
   </button>
-  <div id="toc-dropdown" class="dropdown-content show">
+  <div id="toc-dropdown" class="dropdown-content">
     <a href="#document-title">
       <span class="material-symbols" aria-hidden="true">vertical_align_top</span>
       <span>{{title}}</span>
     </a>
     <div aria-hidden="true" class="dropdown-divider" role="separator"></div>
-    <nav class="" role="menu">
+    <nav role="menu">
       {% render toc-contents.html, tocContents:tocContents %}
     </nav>
   </div>

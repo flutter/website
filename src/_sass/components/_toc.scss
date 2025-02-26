@@ -24,13 +24,14 @@
   z-index: $site-z-subnav;
   padding: 2px;
 
-  > button {
+  > button.dropdown-button {
     display: flex;
     flex-direction: row;
     align-items: center;
     line-height: 1.25rem;
     padding: .35rem .7rem;
     width: 100%;
+    border-radius: 0;
 
     > span {
       display: flex;

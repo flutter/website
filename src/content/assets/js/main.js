@@ -104,6 +104,51 @@ function setupToc() {
   }
 
   _setupTocActiveObserver();
+  _setupInlineTocDropdown();
+}
+
+function _setupInlineTocDropdown() {
+  const inlineToc = document.getElementById('toc-top');
+  if (!inlineToc) return;
+
+  const dropdownButton = inlineToc.querySelector('.dropdown-button');
+  const dropdownMenu = inlineToc.querySelector('.dropdown-content');
+  if (!dropdownButton || !dropdownMenu) return;
+
+  function _closeMenu() {
+    dropdownMenu.classList.remove('show');
+    dropdownButton.ariaExpanded = 'false';
+  }
+
+  dropdownButton.addEventListener('click', (_) => {
+    if (dropdownMenu.classList.contains('show')) {
+      _closeMenu();
+    } else {
+      dropdownMenu.classList.add('show');
+      dropdownButton.ariaExpanded = 'true';
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      _closeMenu();
+    }
+  });
+
+  // Close the dropdown if any link in the TOC is navigated to.
+  inlineToc.querySelectorAll('a').forEach(tocLink => {
+    tocLink.addEventListener('click', (_) => {
+      _closeMenu();
+    });
+  });
+
+  // Close the dropdown if anywhere not in the inline TOC is clicked.
+  document.addEventListener('click', (event) => {
+    if (event.target.closest('#toc-top')) {
+      return;
+    }
+    _closeMenu();
+  });
 }
 
 function _setupTocActiveObserver() {
