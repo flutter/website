@@ -73,6 +73,6 @@ Relevant PRs:
 - [Fix TextField intrinsic width when hint is not visible][]
 
 [`InputDecoration.maintainHintHeight`]: {{site.api}}/flutter/material/InputDecoration/maintainHintHeight.html
-[`InputDecoration.maintainHintSize`]: {{site.api}}/flutter/material/InputDecoration/maintainHintSize.html
+[`InputDecoration.maintainHintSize`]: {{site.main-api}}/flutter/material/InputDecoration/maintainHintSize.html
 [Issue #93337]: {{site.repo.flutter}}/issues/93337
 [Fix TextField intrinsic width when hint is not visible]: {{site.repo.flutter}}/pull/161235
