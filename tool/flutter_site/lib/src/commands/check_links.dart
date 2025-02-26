@@ -71,7 +71,7 @@ Future<int> _checkLinks({bool checkExternal = false}) async {
 
   print('Connecting to the emulator...');
   // Give the emulator a few seconds to start up.
-  await Future<void>.delayed(const Duration(seconds: 6));
+  await Future<void>.delayed(const Duration(seconds: 8));
 
   try {
     // Check to see if the emulator is running.
