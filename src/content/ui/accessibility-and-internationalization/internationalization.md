@@ -265,8 +265,8 @@ complete the following instructions:
    ```
 
 6. Now, run `flutter pub get` or `flutter run` and codegen takes place automatically.
-   You should find generated files in
-   `${FLUTTER_PROJECT}/lib/l10n`.
+   You should find generated files in the `arb-dir` directory you specified
+   or `output-dir` if you configured that property as well.
    Alternatively, you can also run `flutter gen-l10n` to
    generate the same files without running the app.
 
