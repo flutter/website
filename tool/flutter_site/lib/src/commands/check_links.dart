@@ -99,9 +99,11 @@ Future<int> _checkLinks({bool checkExternal = false}) async {
     print('Shutting down Firebase hosting emulator...');
     // Try to gracefully terminate the process by sending two sigterm signals.
     emulatorProcess.kill(ProcessSignal.sigterm);
+    await Future<void>.delayed(const Duration(seconds: 1));
     emulatorProcess.kill(ProcessSignal.sigterm);
-    // Give the emulator a chance to shut down gracefully.
-    await Future<void>.delayed(const Duration(seconds: 4));
+    await Future<void>.delayed(const Duration(seconds: 3));
+
+    // If the emulator hasn't shut down by done, try to force terminate it.
     emulatorProcess.kill(ProcessSignal.sigkill);
     await Future<void>.delayed(const Duration(seconds: 1));
     print('Done!\n');
