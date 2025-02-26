@@ -526,8 +526,9 @@ Complete the following steps to upload an Android APK.
     // Go to the Android directory which contains the gradlew script
     $ pushd android
 
-    // Build the APK for Flutter with gradlew 
-    $ flutter build apk
+    // Build a debug APK for Flutter with gradlew
+    // Note that a standard --release build will not include package:integration_test
+    $ flutter build apk --debug
 
     // Build an Android test APK
     $ ./gradlew app:assembleAndroidTest
