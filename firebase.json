@@ -15,8 +15,8 @@
       { "regex": "^\/(flutter(\/.*)?)", "destination": "https://api.flutter.dev/:1", "type": 301 },
       { "regex": "^\/(objcdoc(\/.*)?)", "destination": "https://api.flutter.dev/:1", "type": 301 },
       { "regex": "^\/(javadoc(\/.*)?)", "destination": "https://api.flutter.dev/:1", "type": 301 },
-      { "regex": "(?P<basename>.*)\\.html$", "destination": ":basename", "type": 301 },
-      { "regex": "(?P<basename>.*)\\.$", "destination": ":basename", "type": 301 },
+      { "regex": "(.*)\\.html$", "destination": ":1", "type": 301 },
+      { "regex": "(.*)\\.$", "destination": ":1", "type": 301 },
 
       { "source": "/ads", "destination": "https://flutter.dev/monetization", "type": 301 },
       { "source": "/community", "destination": "https://flutter.dev/community", "type": 301 },
