@@ -50,6 +50,24 @@ Slider(
 ),
 ```
 
+To update your entire app to use the updated `Slider` design, set the
+`SliderThemeData.year2023` property to `false` in your `MaterialApp`:
+
+```dart highlightLines=2
+return MaterialApp(
+  theme: ThemeData(sliderTheme: const SliderThemeData(year2023: false)),
+        // ...
+        Slider(
+          value: _value,
+          onChanged: (value) {
+            setState(() {
+              _value = value;
+            });
+          },
+        ),
+        // ...
+```
+
 ## Timeline
 
 Landed in version: 3.28.0-0.1.pre<br>
