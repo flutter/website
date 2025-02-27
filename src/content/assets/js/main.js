@@ -154,10 +154,12 @@ function _setupInlineTocDropdown() {
 function _setupTocActiveObserver() {
   const headings = document.querySelectorAll('article > .header-wrapper, #site-header-wrapper');
   const currentHeaderText = document.getElementById('current-header');
-  const visibleAnchors = new Set();
 
   // No need to have toc scrollspy if there is only one non-title heading.
   if (headings.length < 2 || currentHeaderText === null) return;
+
+  const visibleAnchors = new Set();
+  const initialHeaderText = currentHeaderText.textContent;
 
   const observer = new IntersectionObserver(
     (entries) => {
@@ -174,6 +176,13 @@ function _setupTocActiveObserver() {
 
       if (visibleAnchors.size > 0) {
         let isFirst = true;
+
+        // If the page title is visible, set the current header to its contents.
+        if (visibleAnchors.has('document-title')) {
+          currentHeaderText.textContent = initialHeaderText;
+          isFirst = false;
+        }
+
         document.querySelectorAll(`.site-toc .sidenav-item a`).forEach(tocLink => {
           const headingId = tocLink.getAttribute('href')?.substring(1);
           if (!headingId) return;
