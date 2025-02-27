@@ -6,7 +6,8 @@ description: Deletion of the Android v1 embedding.
 ## Summary
 
 The v1 embedding has been removed in Flutter 3.29.0. 
-This follows the deprecation described in [Android v1 embedding app and plugin creation deprecation][].
+This follows the deprecation described in 
+[Android v1 embedding app and plugin creation deprecation][].
 The following is a full list of classes removed.
 ``` 
 io.flutter.app.FlutterActivity
@@ -25,7 +26,8 @@ io.flutter.view.FlutterNativeView
 io.flutter.view.FlutterView
 ```
 
-If your project references any of the above classes, consult the following list for instructions on migration.
+If your project references any of the above classes, consult the following 
+list for instructions on migration.
 
 * `io.flutter.app.FlutterActivity` was replaced with `io.flutter.embedding.android.FlutterActivity`.
 * `io.flutter.app.FlutterActivityDelegate` was replaced with `io.flutter.embedding.android.FlutterActivityAndFragmentDelegate`.
@@ -45,9 +47,10 @@ If your project references any of the above classes, consult the following list 
 
 ## Plugin authors
 
-Plugins which are still supporting v1 embedding Flutter apps through the inclusion of the method
-with the signature
+Plugins which are still supporting v1 embedding Flutter apps through the 
+inclusion of the method with the signature
 ```
 public static void registerWith(@NonNull io.flutter.plugin.common.PluginRegistry.Registrar registrar)
 ```
-in their implementation of the `FlutterPlugin` interface should remove this method.
+in their implementation of the `FlutterPlugin` interface should remove this 
+method.
