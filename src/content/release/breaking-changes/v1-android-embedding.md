@@ -1,5 +1,5 @@
 ---
-title: Android v1 embedding deletion
+title: Removal of v1 Android embedding Java APIs
 description: Deletion of the Android v1 embedding.
 ---
 
