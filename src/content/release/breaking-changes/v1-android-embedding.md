@@ -43,7 +43,7 @@ list for instructions on migration.
 * `io.flutter.view.FlutterView` was replaced by `io.flutter.embedding.android.FlutterView`.
 
 
-[Android v1 embedding app and plugin creation deprecation]: /releases/breaking-changes/android-v1-embedding-create-deprecation
+[Android v1 embedding app and plugin creation deprecation]: /release/breaking-changes/android-v1-embedding-create-deprecation
 
 ## Plugin authors
 
