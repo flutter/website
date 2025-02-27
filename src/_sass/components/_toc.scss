@@ -79,20 +79,21 @@
 
   .dropdown-content {
     position: absolute;
-    border-bottom: 0.1rem solid $sidenav-divider-color;
-    max-height: calc(75vh - $site-header-height);
     box-shadow: 0 2px 4px rgba(0, 0, 0, .05);
-    border-radius: unset;
+    border-bottom: 0.1rem solid $sidenav-divider-color;
+    border-radius: 0;
+
     top: $site-inline-toc-height;
+    left: 0;
+    max-height: calc(75vh - $site-header-height);
     min-width: 100%;
     max-width: 100%;
-    left: 0;
 
     overflow-y: scroll;
     scrollbar-width: thin;
+    overscroll-behavior: contain;
 
     padding: 0.2rem 0.4rem;
-    overscroll-behavior: contain;
 
     @media (min-width: 420px) {
       border: none;
