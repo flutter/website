@@ -53,5 +53,5 @@ interface implementation:
 public static void registerWith(@NonNull io.flutter.plugin.common.PluginRegistry.Registrar registrar);
 ```
 
-For an example, see the pull request to remove this method from the Flutter team owned
-plugins: https://github.com/flutter/packages/pull/6494.
+For an example, see the pull request to remove this method from the Flutter 
+team owned plugins: https://github.com/flutter/packages/pull/6494.
