@@ -5,7 +5,7 @@ description: Deletion of the Android v1 embedding.
 
 ## Summary
 
-The v1 embedding has been removed in Flutter 3.29.0. 
+Android's v1 embedding has been removed in Flutter 3.29.0. 
 This follows the deprecation described in 
 [Android v1 embedding app and plugin creation deprecation][].
 The following is a full list of classes removed.
@@ -47,10 +47,11 @@ list for instructions on migration.
 
 ## Plugin authors
 
-Plugins which are still supporting v1 embedding Flutter apps through the 
-inclusion of the method with the signature
+Plugins should remove the `registerWith` method from their `FlutterPlugin` 
+interface implementation:
 ```java
 public static void registerWith(@NonNull io.flutter.plugin.common.PluginRegistry.Registrar registrar);
 ```
-in their implementation of the `FlutterPlugin` interface should remove this 
-method.
+
+For an example, see the pull request to remove this method from the Flutter team owned
+plugins: https://github.com/flutter/packages/pull/6494.
