@@ -9,11 +9,11 @@ The v1 embedding has been removed in Flutter 3.29.0.
 This follows the deprecation described in 
 [Android v1 embedding app and plugin creation deprecation][].
 The following is a full list of classes removed.
-``` 
-io.flutter.app.FlutterActivity
-io.flutter.app.FlutterActivityDelegate
-io.flutter.app.FlutterActivityEvents
-io.flutter.app.FlutterApplication
+```text
+io.flutter.app.FlutterActivity;
+io.flutter.app.FlutterActivityDelegate;
+io.flutter.app.FlutterActivityEvents;
+io.flutter.app.FlutterApplication;
 io.flutter.app.FlutterFragmentActivity
 io.flutter.app.FlutterPlayStoreSplitApplication
 io.flutter.app.FlutterPluginRegistry
@@ -49,8 +49,8 @@ list for instructions on migration.
 
 Plugins which are still supporting v1 embedding Flutter apps through the 
 inclusion of the method with the signature
-```
-public static void registerWith(@NonNull io.flutter.plugin.common.PluginRegistry.Registrar registrar)
+```java
+public static void registerWith(@NonNull io.flutter.plugin.common.PluginRegistry.Registrar registrar);
 ```
 in their implementation of the `FlutterPlugin` interface should remove this 
 method.
