@@ -7,7 +7,7 @@ description: Deletion of the Android v1 embedding.
 
 The v1 embedding has been removed in Flutter 3.29.0. 
 This follows the deprecation described in [Android v1 embedding app and plugin creation deprecation][].
-The following is a full list of classes and packages removed.
+The following is a full list of classes removed.
 ``` 
 io.flutter.app.FlutterActivity
 io.flutter.app.FlutterActivityDelegate
