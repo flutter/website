@@ -16,7 +16,7 @@
   .navbar {
     position: relative;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 0.75rem;
@@ -124,6 +124,12 @@
   }
 
   #fallback-search-button {
+    display: none;
+
+    @media (min-width: 320px) {
+      display: unset;
+    }
+
     @media (min-width: 576px) {
       display: none;
     }

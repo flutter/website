@@ -3,11 +3,16 @@
 #toc-top {
   font-family: $site-font-family-ui;
 
-  display: flex;
+  display: none;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: flex-start;
+  align-content: center;
+  height: $site-inline-toc-height;
+
+  @media (min-width: 240px) {
+    display: flex;
+  }
 
   @media (min-width: 1200px) {
     display: none;
@@ -22,16 +27,16 @@
 
   font-size: 0.875rem;
   z-index: $site-z-subnav;
-  padding: 2px;
 
   > button.dropdown-button {
     display: flex;
     flex-direction: row;
     align-items: center;
     line-height: 1.25rem;
-    padding: .35rem .7rem;
+    padding: .45rem .7rem;
     width: 100%;
     border-radius: 0;
+    margin: 2px;
 
     > span {
       display: flex;
@@ -47,14 +52,19 @@
   }
 
   .toc-intro {
+    white-space: nowrap;
+
     .material-symbols {
       margin-right: 0.25rem;
     }
   }
 
   .toc-current {
-    display: none;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow: hidden;
 
+    display: none;
     @media (min-width: 320px) {
       display: flex;
     }
@@ -62,19 +72,39 @@
 
   #current-header {
     color: $site-color-nav-links;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .dropdown-content {
+    position: absolute;
+    border-bottom: 0.1rem solid $sidenav-divider-color;
+    max-height: calc(75vh - $site-header-height);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .05);
+    border-radius: unset;
+    top: $site-inline-toc-height;
+    min-width: 100%;
+    max-width: 100%;
+    left: 0;
+
     overflow-y: scroll;
     scrollbar-width: thin;
-    min-width: 18rem;
-    max-width: 24rem;
-    top: 2.8rem;
-    left: 0.7rem;
-    max-height: calc(100vh - 7.5rem);
 
     padding: 0.2rem 0.4rem;
     overscroll-behavior: contain;
+
+    @media (min-width: 420px) {
+      border: none;
+      border-radius: 0.4rem;
+      box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.2);
+
+      top: $site-inline-toc-height + .75rem;
+      left: 0.75rem;
+
+      min-width: 18rem;
+      max-width: 24rem;
+    }
 
     > a {
       margin: 0.4rem 0;
