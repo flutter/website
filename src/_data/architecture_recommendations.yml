@@ -67,7 +67,9 @@
 
     - recommendation: Use immutable data models.
       description: |
-        Immutable data is crucial in making sure that data only updates in the model.
+        Immutable data is crucial in ensuring that any necessary changes occur only in the proper place, usually the data or domain layer. 
+        Because immutable objects can't be modified after creation, you must create a new instance to reflect changes. 
+        This process prevents accidental updates in the UI layer and supports a clear, unidirectional data flow.
       confidence: strong
 
     - recommendation: Use freezed or built_value to generate immutable data models.

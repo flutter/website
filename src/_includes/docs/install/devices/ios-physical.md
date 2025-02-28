@@ -6,7 +6,7 @@ If your physical device is already on iOS 18.4, we recommend switching to the
 See [Flutter on latest iOS][] for details.
 :::
 
-[Flutter on latest iOS]: {{site.github}}/ios/ios-latest
+[Flutter on latest iOS]: /platform-integration/ios/ios-latest
 
 #### Set up your target physical iOS device
 

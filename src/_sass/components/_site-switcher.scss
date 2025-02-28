@@ -1,10 +1,16 @@
 @use '../base/mixins';
 @use '../base/variables' as *;
 
-.dropdown {
+#site-switcher {
   position: relative;
   display: inline-flex;
   justify-content: center;
+
+  .dropdown-content {
+    z-index: 1060;
+    transform: scale(0.9);
+    top: 2.25rem;
+  }
 }
 
 button.dropdown-button {
@@ -26,51 +32,7 @@ button.dropdown-button {
 }
 
 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: var(--site-switcher-bg, #ffffff);
-  box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.2);
-  z-index: 1060;
-  border-radius: 0.4rem;
-  width: max-content;
-  top: 2.25rem;
-  transform: scale(0.9);
 
-  &.show {
-    display: block;
-  }
-
-  .dropdown-menu {
-    padding: 0.4rem;
-
-    ul {
-      display: flex;
-      flex-direction: column;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-
-      li {
-        padding: 0.3rem;
-
-        a {
-          display: flex;
-          align-items: center;
-          flex-direction: row;
-
-          text-decoration: none;
-        }
-      }
-    }
-
-    .dropdown-divider {
-      background-color: #e7e8ed;
-      border-radius: 0.5rem;
-      height: 0.125rem;
-      margin: 0.25rem;
-      padding: 0;
-    }
-  }
 }
 
 .site-wordmark {
