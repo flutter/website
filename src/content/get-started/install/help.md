@@ -150,12 +150,14 @@ __Explanation and suggestions__
 
 This issue is related to macOS permissions.
 
-Upgrade your Flutter SDK to the latest version.
+To fix this:
 
-Open **System Settings** > **Privacy & Security** > **Local Network**.
-Toggle on the permission for all the code editors and terminals you use to
-launch Flutter apps.
-You might need to restart your code editor, terminal, and physical device.
+1. Upgrade your Flutter SDK to the latest version.
+
+2. Open **System Settings** > **Privacy & Security** > **Local Network**.
+   Toggle on the permission for all the code editors and terminals you use to
+   launch Flutter apps.
+   You might need to restart your code editor, terminal, and physical device.
 
 ## Other problems
 
