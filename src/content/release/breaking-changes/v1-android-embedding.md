@@ -69,7 +69,9 @@ public static void registerWith(@NonNull io.flutter.plugin.common.PluginRegistry
 
 For an example of this migration,
 check out the pull request to remove this method from the
-Flutter team-owned plugins: https://github.com/flutter/packages/pull/6494.
+Flutter team-owned plugins: [flutter/packages#6494][].
+
+[flutter/packages#6494]: {{site.github}}/flutter/packages/pull/6494
 
 ## Timeline
 
