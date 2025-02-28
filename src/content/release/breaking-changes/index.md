@@ -59,12 +59,14 @@ They're sorted by release and listed in alphabetical order:
 <a id="released-in-flutter-329" aria-hidden="true"></a>
 ### Released in Flutter 3.29
 
+* [Removal of v1 Android embedding Java APIs][]
 * [Deprecate `WebGoldenComparator`][]
 * [Deprecate `ThemeData.dialogBackgroundColor` in favor of `DialogThemeData.backgroundColor`][]
 * [`ImageFilter.blur` default tile mode automatic selection][]
 * [Updated Material 3 `Slider`][]
 * [Updated Material 3 progress indicators][]
 
+[Removal of v1 Android embedding Java APIs]: /release/breaking-changes/v1-android-embedding
 [Deprecate `WebGoldenComparator`]: /release/breaking-changes/web-golden-comparator
 [Deprecate `ThemeData.dialogBackgroundColor` in favor of `DialogThemeData.backgroundColor`]: /release/breaking-changes/deprecate-themedata-dialogbackgroundcolor
 [`ImageFilter.blur` default tile mode automatic selection]: /release/breaking-changes/image-filter-blur-tilemode
