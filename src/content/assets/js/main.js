@@ -1,6 +1,5 @@
 function setupSidenavInteractivity() {
   document.getElementById('menu-toggle')?.addEventListener('click', function (e) {
-    e.stopPropagation();
     document.body.classList.toggle('open_menu');
   });
 
