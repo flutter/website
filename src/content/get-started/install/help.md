@@ -130,6 +130,35 @@ If you're not using Android Studio,
 you can download the tools using the
 [sdkmanager][] command-line tool.
 
+## macOS setup
+
+### SocketException: Send failed, OS Error: No route to host, errno = 65
+
+__What does this issue look like?__
+
+On macOS, the `flutter run` command produces an error like:
+
+```plaintext
+$ flutter run
+Launching lib/main.dart in debug mode...
+...
+Installing and launching...
+Oops; flutter has exited unexpectedly: "SocketException: Send failed (OS Error: No route to host, errno = 65), address = 0.0.0.0, port = 5353".
+```
+
+__Explanation and suggestions__
+
+This issue is related to macOS permissions.
+
+To fix this:
+
+1. Upgrade your Flutter SDK to the latest version.
+
+2. Open **System Settings** > **Privacy & Security** > **Local Network**.
+   Toggle on the permission for all the code editors and terminals you use to
+   launch Flutter apps.
+   You might need to restart your code editor, terminal, and physical device.
+
 ## Other problems
 
 ### Exit code 69
