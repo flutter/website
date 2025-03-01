@@ -135,3 +135,23 @@
     }
   }
 }
+
+  body.open_menu #menu-toggle span.material-symbols {
+    &:first-child {
+    display: none;
+  }
+
+    &:last-child {
+    display: inline;
+  }
+}
+
+  #menu-toggle span.material-symbols {
+    &:first-child {
+    display: inline;
+  }
+
+    &:last-child {
+    display: none;
+  }
+}
