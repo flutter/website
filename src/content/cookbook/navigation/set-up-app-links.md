@@ -180,7 +180,7 @@ The hosted file should look similar to this:
 
 :::note
 If you have multiple flavors, you can have many sha256_cert_fingerprint 
-values in thesha256_cert_fingerprints field. 
+values in the sha256_cert_fingerprints field. 
 Just add it to the sha256_cert_fingerprints list
 :::
 
