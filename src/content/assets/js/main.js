@@ -389,6 +389,24 @@ function setupSiteSwitcher() {
   });
 }
 
+function setupFeedback() {
+  const feedbackContainer =
+      document.getElementById('page-feedback');
+  if (!feedbackContainer) return;
+
+  const feedbackUpButton = feedbackContainer.querySelector('#feedback-up-button');
+  const feedbackDownButton = feedbackContainer.querySelector('#feedback-down-button');
+  if (!feedbackUpButton || !feedbackDownButton) return;
+
+  feedbackUpButton.addEventListener('click', (_) => {
+    feedbackContainer.classList.add('feedback-up');
+  }, { once: true });
+
+  feedbackDownButton.addEventListener('click', (_) => {
+    feedbackContainer.classList.add('feedback-down');
+  }, { once: true });
+}
+
 function setupSite() {
   scrollSidenavIntoView();
   initCookieNotice();
@@ -401,6 +419,7 @@ function setupSite() {
   setupTabs();
 
   setupToc();
+  setupFeedback();
 }
 
 if (document.readyState === 'loading') {

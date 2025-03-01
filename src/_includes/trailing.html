@@ -1,0 +1,40 @@
+{% assign repo = repo | default: site.repo.this -%}
+{% capture pageSource -%} {{repo}}/tree/{{site.branch}}/{{page.inputPath | replace: './', ''}} {%- endcapture -%}
+{% assign url = site.url | append: page.url -%}
+
+<div id="trailing-content">
+  <div id="page-feedback">
+    <div class="feedback initial-feedback">
+      <div>Was this page's content helpful?</div>
+      <div class="feedback-buttons">
+        <button id="feedback-up-button" class="icon-button" aria-label="Yes, this page was helpful" title="Helpful">
+          <span class="material-symbols" aria-hidden="true">thumb_up</span>
+        </button>
+        <button id="feedback-down-button" class="icon-button" aria-label="No, this page was not helpful or had an issue" title="Not helpful or had issue">
+          <span class="material-symbols" aria-hidden="true">thumb_down</span>
+        </button>
+      </div>
+    </div>
+    <div class="feedback good-feedback">
+      <div>Thank you for your feedback!</div>
+      <a href="{{repo}}/issues/new" class="text-button" aria-label="Provide feedback">
+        <span class="material-symbols" aria-hidden="true">feedback</span>
+        <span>Provide details</span>
+      </a>
+    </div>
+    <div class="feedback bad-feedback">
+      <div>Thank you for your feedback! Please let us know what we can do to improve.</div>
+      <a href="{{repo}}/issues/new" class="text-button" aria-label="Provide feedback or report an issue">
+        <span class="material-symbols" aria-hidden="true">bug_report</span>
+        <span>Provide details</span>
+      </a>
+    </div>
+  </div>
+
+  <p id="page-github-links">
+    <span>Unless stated otherwise, the documentation on this site reflects the latest stable version of Flutter. Page last updated on {{page.date | toSimpleDate}}.</span>
+    <a href="{{pageSource}}" target="_blank" rel="noopener">View source</a>
+    <span> or </span>
+    <a href="{{repo}}/issues/new?template=1_page_issue.yml&&page-url={{url}}&page-source={{pageSource}}" title="Report an issue with this page" target="_blank" rel="noopener">report an issue</a>.
+  </p>
+</div>
