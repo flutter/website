@@ -23,12 +23,12 @@
     align-items: center;
     gap: 0.2rem;
 
-    span.material-symbols {
-      font-size: 20px;
-    }
-
     .text-button {
       padding: 0.25rem 0.5rem;
+
+      span.material-symbols {
+        font-size: 18px;
+      }
     }
   }
 
@@ -37,6 +37,10 @@
       display: flex;
       flex-direction: row;
       gap: 0.5rem;
+
+      span.material-symbols {
+        font-size: 20px;
+      }
     }
   }
 
