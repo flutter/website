@@ -24,7 +24,7 @@ To learn more about DevTools, check out the
 
 ## CPU profiler updates
 
-* Major improvements to the load time and memory usage of CPU profiles.
+* Improved the load time and memory usage of CPU profiles.
   * [#8892](https://github.com/flutter/devtools/pull/8892)
   * [#8878](https://github.com/flutter/devtools/pull/8878)
   * [#8839](https://github.com/flutter/devtools/pull/8839)
@@ -54,9 +54,9 @@ by default. - [#8899](https://github.com/flutter/devtools/pull/8899)
 * Added offline support for the network screen (thanks to @hrajwade96!) - 
 [#8332](https://github.com/flutter/devtools/pull/8332)
 
-  ![Network profiler controls](/tools/devtools/release-notes/images-2.44.0 "Network profiler controls")
+  ![Network profiler controls](/tools/devtools/release-notes/images-2.44.0/network_controls.png "Network profiler controls")
 
-  ![Network profiler open / save button](/tools/devtools/release-notes/images-2.44.0 "Network profiler open / save button")
+  ![Network profiler open / save button](/tools/devtools/release-notes/images-2.44.0/network_open_save_button.png "Network profiler open / save button")
 
 * Changed the context menu style to be consistent with other screens
   [#8859](https://github.com/flutter/devtools/pull/8859).
