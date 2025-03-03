@@ -244,8 +244,8 @@ names for two product flavors called `staging` and
       `Flavors s...`.
 
     * To see more information for `Flavors p...` or
-      `Flavors s...`, hold down the mouse over one of them
-      and and select App info.
+      `Flavors s...`, long-press the icon for one of them
+      and and select `App info`.
 
 [Launch a flavor]: #launching-your-app-flavors
 
