@@ -267,6 +267,7 @@
       { "source": "/go/api-for-transform-performance", "destination": "https://docs.google.com/document/d/1Fxdlf7JsA-yAwc_RNuboMG-vhIhchRBZGvDSwg5qR0A/edit?usp=sharing", "type": 301 },
       { "source": "/go/app-extensions", "destination": "https://docs.google.com/document/d/1WloBrAYpqNKOhEHytTqJEHshcXxHflLUGKvULKRHbuU/edit?usp=sharing", "type": 301 },
       { "source": "/go/apple-pencil-double-tap-support", "destination": "https://docs.google.com/document/d/1r4P5r-jGt2Sjqro3ldCU2axUiHTpu3yhIycnI94OKQw/edit?usp=sharing", "type": 301 },
+      { "source": "/go/apple-squircles", "destination": "https://docs.google.com/document/d/1CJXULKJGQt22FOFsrlm2TKVjKBtif1yU4U50cMfL6Kc/edit?usp=sharing", "type": 301 },
       { "source": "/go/application-lifecycle-events", "destination": "https://docs.google.com/document/d/1FL5Fgk7EzMNOpJL0GZJt-lfWtGt2igHuC2ZznItS2l8/edit?usp=sharing&resourcekey=0-IZNfpSVPkMbigQLLXoJcfw", "type": 301 },
       { "source": "/go/asset-lookup-in-plugin-binding", "destination": "https://docs.google.com/document/d/1iwGFWipC0v0FKvAgbjGl0kaV9IGox1YiD8jUP8Vvkjc/edit", "type": 301 },
       { "source": "/go/asset-transformation", "destination": "https://docs.google.com/document/d/1i_trjTF-gJ3Xj-GUtVmyLETa5CwStvabEjtD5z8ArC4/edit?usp=sharing", "type": 301},
