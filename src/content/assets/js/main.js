@@ -389,6 +389,28 @@ function setupSiteSwitcher() {
   });
 }
 
+function setupFeedback() {
+  const feedbackContainer =
+      document.getElementById('page-feedback');
+  if (!feedbackContainer) return;
+
+  const feedbackUpButton = feedbackContainer.querySelector('#feedback-up-button');
+  const feedbackDownButton = feedbackContainer.querySelector('#feedback-down-button');
+  if (!feedbackUpButton || !feedbackDownButton) return;
+
+  feedbackUpButton.addEventListener('click', (_) => {
+    window.dataLayer?.push({'event': 'inline_feedback', 'feedback_type': 'up'});
+
+    feedbackContainer.classList.add('feedback-up');
+  }, { once: true });
+
+  feedbackDownButton.addEventListener('click', (_) => {
+    window.dataLayer?.push({'event': 'inline_feedback', 'feedback_type': 'down'});
+
+    feedbackContainer.classList.add('feedback-down');
+  }, { once: true });
+}
+
 function setupSite() {
   scrollSidenavIntoView();
   initCookieNotice();
@@ -401,6 +423,7 @@ function setupSite() {
   setupTabs();
 
   setupToc();
+  setupFeedback();
 }
 
 if (document.readyState === 'loading') {
