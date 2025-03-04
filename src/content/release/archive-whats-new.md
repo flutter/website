@@ -43,8 +43,6 @@ To learn more, check out [dart.dev/go/macros][].
 * We have three new codelabs and a new guide for the Games Toolkit.
   To see the list of additions,
   check out the updated [Casual Games Toolkit][] page.
-* A new section, [Conditionally bundling assets based on flavor][],
-  in the Flavors page.
 * Flutter support for Web Assembly (Wasm) has now reached stable.
   To learn more, check out the updated
   [Support for WebAssembly (Wasm)][] page.
@@ -70,7 +68,6 @@ To learn more, check out [dart.dev/go/macros][].
 
 [Adaptive and Responsive design]: /ui/adaptive-responsive
 [Casual Games Toolkit]: /resources/games-toolkit
-[Conditionally bundling assets based on flavor]: /deployment/flavors#conditionally-bundling-assets-based-on-flavor
 [Flutter fundamentals docs]: /get-started/fundamentals
 [Flutter install]: /get-started/install
 [Flutter web app initialization]: /platform-integration/web/initialization

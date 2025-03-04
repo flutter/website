@@ -135,3 +135,24 @@
     }
   }
 }
+
+// Toggle between menu and close buttons if sidenav is open or not.
+#menu-toggle span.material-symbols {
+  &:first-child {
+    display: inline;
+  }
+
+  &:last-child {
+    display: none;
+  }
+}
+
+body.open_menu #menu-toggle span.material-symbols {
+  &:first-child {
+    display: none;
+  }
+
+  &:last-child {
+    display: inline;
+  }
+}
