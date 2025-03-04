@@ -30,7 +30,7 @@ layout: base
       </header>
       {{ content }}
 
-      {% include next-prev-nav.html prev=prev, next=next %}
+      {% render next-prev-nav.html, prev:prev, next:next %}
 
       {% include trailing.html %}
     </article>
