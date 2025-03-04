@@ -100,7 +100,7 @@ No action on your part is necessary for this fallback behavior.
 
 Flutter on the web offers [two renderers][] --
 `canvaskit` and `skwasm` -- which both currently use Skia.
-They may use Impeller in the future.
+They might use Impeller in the future.
 
 [two renderers]: /platform-integration/web/renderers#renderers
 
