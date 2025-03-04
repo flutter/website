@@ -7,20 +7,20 @@ To learn more about DevTools, check out the
 
 ## General updates
 
-* Fixed various memory leaks and lifecycle issues. - 
-[#8901](https://github.com/flutter/devtools/pull/8901),
-[#8902](https://github.com/flutter/devtools/pull/8902),
-[#8907](https://github.com/flutter/devtools/pull/8907),
-[#8917](https://github.com/flutter/devtools/pull/8917),
-[#8932](https://github.com/flutter/devtools/pull/8932),
-[#8933](https://github.com/flutter/devtools/pull/8933),
-[#8934](https://github.com/flutter/devtools/pull/8934),
-[#8935](https://github.com/flutter/devtools/pull/8935),
-[#8937](https://github.com/flutter/devtools/pull/8937),
-[#8953](https://github.com/flutter/devtools/pull/8953),
-[#8969](https://github.com/flutter/devtools/pull/8969),
-[#8970](https://github.com/flutter/devtools/pull/8970),
-[#8975](https://github.com/flutter/devtools/pull/8975)
+* Fixed various memory leaks and lifecycle issues.
+  * [#8901](https://github.com/flutter/devtools/pull/8901)
+  * [#8902](https://github.com/flutter/devtools/pull/8902)
+  * [#8907](https://github.com/flutter/devtools/pull/8907)
+  * [#8917](https://github.com/flutter/devtools/pull/8917)
+  * [#8932](https://github.com/flutter/devtools/pull/8932)
+  * [#8933](https://github.com/flutter/devtools/pull/8933)
+  * [#8934](https://github.com/flutter/devtools/pull/8934)
+  * [#8935](https://github.com/flutter/devtools/pull/8935)
+  * [#8937](https://github.com/flutter/devtools/pull/8937)
+  * [#8953](https://github.com/flutter/devtools/pull/8953)
+  * [#8969](https://github.com/flutter/devtools/pull/8969)
+  * [#8970](https://github.com/flutter/devtools/pull/8970)
+  * [#8975](https://github.com/flutter/devtools/pull/8975)
 
 ## CPU profiler updates
 
@@ -33,14 +33,15 @@ To learn more about DevTools, check out the
 
 ## Memory updates
 
-* Changed memory heap snapshot tool so that references are included in snapshots
-by default. - [#8899](https://github.com/flutter/devtools/pull/8899)
+* Changed the memory heap snapshot tool so that references are
+  included in snapshots by default. -
+  [#8899](https://github.com/flutter/devtools/pull/8899)
 
 ## Debugger updates
 
 * Added a tooltip to describe the exception mode drop-down. -
   [#8849](https://github.com/flutter/devtools/pull/8849)
-* Updated syntax highlighting with support for digit separators,
+* Updated syntax highlighting with support for digit separators
   and improved comment and string interpolation handling. -
   [#8861](https://github.com/flutter/devtools/pull/8861)
 * Updated `string_scanner` dependency to avoid some syntax highlighting issues
@@ -51,8 +52,8 @@ by default. - [#8899](https://github.com/flutter/devtools/pull/8899)
 
 ## Network profiler updates
 
-* Added offline support for the network screen (thanks to @hrajwade96!) - 
-[#8332](https://github.com/flutter/devtools/pull/8332)
+* Added offline support for the network screen (thanks to @hrajwade96!) -
+  [#8332](https://github.com/flutter/devtools/pull/8332)
 
   ![Network profiler controls](/tools/devtools/release-notes/images-2.44.0/network_controls.png "Network profiler controls")
 
@@ -60,7 +61,10 @@ by default. - [#8899](https://github.com/flutter/devtools/pull/8899)
 
 * Changed the context menu style to be consistent with other screens
   [#8859](https://github.com/flutter/devtools/pull/8859).
-* Fixed issue where the HTTP requests would sometimes not be displayed properly, particularly when DevTools is communicating with an application over a slow network connection. - [#8860](https://github.com/flutter/devtools/pull/8860)
+* Fixed an issue where HTTP requests would sometimes not be displayed properly,
+  particularly when DevTools is communicating with
+  an application over a slow network connection. -
+  [#8860](https://github.com/flutter/devtools/pull/8860)
 
 ## Full commit history
 
