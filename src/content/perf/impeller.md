@@ -98,12 +98,11 @@ No action on your part is necessary for this fallback behavior.
 
 ### Web
 
-Flutter on the web offers two renderers and
-two build modes. For more information, visit
-[Flutter web support][] in the Flutter
-architectural guide.
+Flutter on the web offers [two renderers][] --
+`canvaskit` and `skwasm` -- which both currently use Skia.
+They might use Impeller in the future.
 
-[Flutter web support]: /resources/architectural-overview#flutter-web-support
+[two renderers]: /platform-integration/web/renderers#renderers
 
 ### macOS
 
