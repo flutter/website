@@ -4,50 +4,52 @@ subtitle: Where to look when your Flutter app drops frames in the UI.
 description: Diagnosing UI performance issues in Flutter.
 ---
 
-{% render docs/performance.md %}
+## Overview
 
-:::secondary What you'll learn
-* Flutter aims to provide 60 frames per second (fps) performance,
-  or 120 fps performance on devices capable of 120Hz updates.
-* For 60fps, frames need to render approximately every 16ms.
-* Jank occurs when the UI doesn't render smoothly. For example,
-  every so often, a frame takes 10 times longer to render,
-  so it gets dropped, and the animation visibly jerks.
-:::
+App performance encompasses various aspects, from raw speed and I/O throughput
+to the smoothness of the user interface. While this page primarily focuses on UI
+smoothness (lack of stutter or jank), the tools described here can often be used
+to diagnose other performance issues as well.
 
-It's been said that "a _fast_ app is great,
-but a _smooth_ app is even better."
-If your app isn't rendering smoothly,
-how do you fix it? Where do you begin?
-This guide shows you where to start,
-steps to take, and tools that can help.
+Flutter offers several tools for performance analysis. Here are a few of them:
 
-:::note
-* An app's performance is determined by more than one measure.
-  Performance sometimes refers to raw speed, but also to the UI's
-  smoothness and lack of stutter. Other examples of performance
-  include I/O or network speed. This page primarily focuses on the
-  second type of performance (UI smoothness), but you can use most
-  of the same tools to diagnose other performance problems.
-* To perform tracing inside your Dart code, see [Tracing Dart code][]
-  in the [Debugging][] page.
-:::
+* **The Performance Overlay**: Displays a simplified set of metrics directly
+  within your running app. To learn more, see the sections in this topic.
 
-[Debugging]: /testing/debugging
+* **The Performance View**: A web-based interface that connects to your app and
+  displays detailed performance metrics. Part of the DevTools utility. To learn
+  more, see [Use the Performance View][].
+
+* **Performance tracing within Dart**: Add tracing directly into your app's
+  Dart code, using the `dart:developer package`, and then track your app's
+  performance in the DevTools utility. To learn more, see [Tracing Dart code][].
+
+* **Benchmarking**: You can measure and track your app's performance by writing
+  benchmark tests. The Flutter Driver library provides support
+  for benchmarking. Using this integration test framework,
+  you can generate metrics that track jank, download size, battery efficiency,
+  and startup time. For more information, check out [Integration testing][].
+
+* **Widget rebuild profiler (IntelliJ for Android Studio)**: Jank often arises
+  from unnecessary UI rebuilds. If you are using IntelliJ for Android Studio,
+  the Widget Rebuild Profiler helps pinpoint and fix these issues by showing
+  widget rebuild counts for the current screen and frame. For more information,
+  see [Show performance data][].
+
+Flutter aims to provide 60 frames per second (fps) performance,
+or 120 fps on devices that support it. To achieve the 60fps, each frame must
+render approximately every 16ms to avoid jank. Jank occurs when frames take
+significantly longer to render and are dropped, resulting in a visible stutter
+in animations. For example, if a frame occasionally takes 10 times longer than
+usual to render, it will likely be dropped, causing the animation to appear
+jerky.
+
+[Use the Performance View]: /tools/devtools/performance
 [Tracing Dart code]: /testing/code-debugging#trace-dart-code-performance
+[Show performance data]: /tools/android-studio#show-performance-data
+[Integration testing]: /testing/integration-tests
 
-## Diagnosing performance problems
-
-To diagnose an app with performance problems, you'll enable
-the performance overlay to look at the UI and raster threads.
-Before you begin, make sure that you're running in
-[profile mode][], and that you're not using an emulator.
-For best results, you might choose the slowest device that
-your users might use.
-
-[profile mode]: /testing/build-modes#profile
-
-### Connect to a physical device
+## Connect to a physical device
 
 Almost all performance debugging for Flutter applications
 should be conducted on a physical Android or iOS device,
@@ -72,7 +74,7 @@ on the slowest device that your users might reasonably use._
   compilation, which itself can cause jank.
 :::
 
-### Run in profile mode
+## Run in profile mode
 
 Flutter's profile mode compiles and launches your application
 almost identically to release mode, but with just enough additional
@@ -86,9 +88,6 @@ Flutter web app running in profile mode.
 Use Chrome DevTools to
 [generate timeline events][] for a web app.
 :::
-
-[generate timeline events]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
-
 
 Launch the app in profile mode as follows:
 
@@ -121,6 +120,7 @@ You'll begin by opening DevTools and viewing
 the performance overlay, as discussed in the next section.
 
 [Flutter's build modes]: /testing/build-modes
+[generate timeline events]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 
 ## Launch DevTools
 
@@ -133,12 +133,32 @@ UI performance of your application on a frame-by-frame basis.
 Once your app is running in profile mode,
 [launch DevTools][].
 
-[launch DevTools]: /tools/devtools
 [Timeline view]: /tools/devtools/performance
+[launch DevTools]: /tools/devtools
+
+## Display the performance overlay {:#displaying-the-performance-overlay}
+
+You can toggle the display of the performance overlay as
+follows:
+
+* **DevTools Performance view**: The easiest way to enable the
+  PerformanceOverlay widget is from the [Performance view][] in [DevTools][].
+  Simply click the **Performance Overlay** button to toggle the overlay on your
+  running app.
+
+* **command line**: Toggle the performance overlay using the **P** key from
+  the command line.
+
+* **programmatically**: To enable the overlay programmatically, see
+  [Performance overlay][], a section in the
+  [Debugging Flutter apps programmatically][] page.
+
+[Performance overlay]: /testing/code-debugging#add-performance-overlay
+[Debugging Flutter apps programmatically]: /testing/code-debugging
 
 <a id="the-performance-overlay" aria-hidden="true"></a>
 
-## The performance overlay {:#performance-overlay}
+## Observe the performance overlay {:#performance-overlay}
 
 The performance overlay displays statistics in two graphs
 that show where time is being spent in your app. If the UI
@@ -158,7 +178,7 @@ on the Flutter Gallery example:
 and UI thread (bottom).<br>The vertical green bars
 represent the current frame.
 
-## Interpreting the graphs
+### Review the graphs {:#interpreting-the-graphs}
 
 The top graph (marked "GPU") shows the time spent by 
 the raster thread, the bottom one graph shows the time 
@@ -188,9 +208,7 @@ the scene is too complicated to render quickly.
 expensive to both render and paint.<br>When both graphs
 display red, start by diagnosing the UI thread.
 
-[debug mode]: /testing/build-modes#debug
-
-## Flutter's threads
+### Review the threads {:#flutters-threads}
 
 Flutter uses several threads to do its work, though
 only two of the threads are shown in the overlay.
@@ -203,7 +221,7 @@ on other threads.
 : The platform's main thread. Plugin code runs here.
   For more information, see the [UIKit][] documentation for iOS,
   or the [MainThread][] documentation for Android.
-  This thread is not shown in the performance overlay.
+  _This thread is not shown in the performance overlay._
 
 **UI thread**
 : The UI thread executes Dart code in the Dart VM.
@@ -229,58 +247,29 @@ on other threads.
 **I/O thread**
 : Performs expensive tasks (mostly I/O) that would
   otherwise block either the UI or raster threads.
-  This thread is not shown in the performance overlay.
+  _This thread is not shown in the performance overlay._
     
 For links to more information and videos,
 see [The Framework architecture][] in the
 [Flutter wiki][], and the community article,
 [The Layer Cake][].
 
+[debug mode]: /testing/build-modes#debug
 [Flutter wiki]: {{site.repo.flutter}}/tree/main/docs
-[MainThread]: {{site.android-dev}}/reference/android/support/annotation/MainThread
-[The Framework architecture]: {{site.repo.flutter}}/blob/main/docs/about/The-Framework-architecture.md
-[The Layer Cake]: {{site.medium}}/flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401
 [UIKit]: {{site.apple-dev}}/documentation/uikit
+[The Layer Cake]: {{site.medium}}/flutter-community/the-layer-cake-widgets-elements-renderobjects-7644c3142401
+[The Framework architecture]: {{site.repo.flutter}}/blob/main/docs/about/The-Framework-architecture.md
+[MainThread]: {{site.android-dev}}/reference/android/support/annotation/MainThread
 
-### Displaying the performance overlay
+## Identify problems
 
-You can toggle display of the performance overlay as follows:
-
-* Using the Flutter inspector
-* From the command line
-* Programmatically
-
-#### Using the Flutter inspector
-
-The easiest way to enable the PerformanceOverlay widget is
-from the Flutter inspector, which is available in the
-[Inspector view][] in [DevTools][]. Simply click the
-**Performance Overlay** button to toggle the overlay
-on your running app.
-
-[Inspector view]: /tools/devtools/inspector
-
-#### From the command line
-
-Toggle the performance overlay using the **P** key from
-the command line.
-
-#### Programmatically
-
-To enable the overlay programmatically, see
-[Performance overlay][], a section in the
-[Debugging Flutter apps programmatically][] page.
-
-[Debugging Flutter apps programmatically]: /testing/code-debugging
-[Performance overlay]: /testing/code-debugging#add-performance-overlay
-
-## Identifying problems in the UI graph
+### Review the UI graph {:#identifying-problems-in-the-ui-graph}
 
 If the performance overlay shows red in the UI graph,
 start by profiling the Dart VM, even if the GPU graph
 also shows red.
 
-## Identifying problems in the GPU graph
+### Review the GPU graph {:#identifying-problems-in-the-gpu-graph}
 
 Sometimes a scene results in a layer tree that is easy to construct,
 but expensive to render on the raster thread. When this happens,
@@ -306,8 +295,6 @@ If it's a static scene that's being faded, rotated, or otherwise
 manipulated, a [`RepaintBoundary`][] might help.
 
 [programmatically]: /testing/code-debugging#debug-animation-issues
-[`RepaintBoundary`]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
-[`saveLayer`]: {{site.api}}/flutter/dart-ui/Canvas/saveLayer.html
 
 #### Checking for offscreen layers
 
@@ -361,46 +348,13 @@ _Because raster cache entries are expensive to
 construct and take up loads of GPU memory,
 cache images only where absolutely necessary._
 
-### Viewing the widget rebuild profiler
-
-The Flutter framework is designed to make it hard to create
-applications that are not 60fps and smooth. Often, if you have jank,
-it's because there is a simple bug causing more of the UI to be
-rebuilt each frame than required. The Widget rebuild profiler
-helps you debug and fix performance problems due to these sorts
-of bugs.
-
-You can view the widget rebuilt counts for the current screen and
-frame in the Flutter plugin for Android Studio and IntelliJ.
-For details on how to do this, see [Show performance data][]
-
-[Show performance data]: /tools/android-studio#show-performance-data
-
-## Benchmarking
-
-You can measure and track your app's performance by writing
-benchmark tests. The Flutter Driver library provides support
-for benchmarking. Using this integration test framework,
-you can generate metrics to track the following:
-
-* Jank
-* Download size
-* Battery efficiency
-* Startup time
-
-Tracking these benchmarks allows you to be informed when a
-regression is introduced that adversely affects performance.
-
-For more information, check out [Integration testing][].
-
-[Integration testing]: /testing/integration-tests
-
 ## Other resources
 
 The following resources provide more information on using
 Flutter's tools and debugging in Flutter:
 
 * [Debugging][]
+* [Performance view][]
 * [Flutter inspector][]
 * [Flutter inspector talk][], presented at DartConf 2018
 * [Why Flutter Uses Dart][], an article on Hackernoon
@@ -409,11 +363,16 @@ Flutter's tools and debugging in Flutter:
 * [Flutter API][] docs, particularly the [`PerformanceOverlay`][] class,
   and the [dart:developer][] package
 
+[`PerformanceOverlay`]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
+[`RepaintBoundary`]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
+[`saveLayer`]: {{site.api}}/flutter/dart-ui/Canvas/saveLayer.html
 [dart:developer]: {{site.api}}/flutter/dart-developer/dart-developer-library.html
+[Debugging]: /testing/debugging
 [devtools]: /tools/devtools
 [Flutter API]: {{site.api}}
-[Flutter inspector]: /tools/devtools/inspector
 [Flutter inspector talk]: {{site.yt.watch}}?v=JIcmJNT9DNI
-[`PerformanceOverlay`]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
+[Flutter inspector]: /tools/devtools/inspector
+[Performance view]: /tools/devtools/performance
+[profile mode]: /testing/build-modes#profile
 [video]: {{site.yt.watch}}?v=5F-6n_2XWR8
 [Why Flutter Uses Dart]: https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf

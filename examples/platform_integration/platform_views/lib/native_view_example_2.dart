@@ -21,5 +21,6 @@ class VirtualDisplayWidget extends StatelessWidget {
       creationParamsCodec: const StandardMessageCodec(),
     );
   }
+
   // #enddocregion virtual-display
 }

@@ -18,9 +18,7 @@ class LoginPage extends StatelessWidget {
       body: Flex(
         direction: useVerticalLayout ? Axis.vertical : Axis.horizontal,
         children: [
-          if (!hideDetailPanel) ...[
-            Flexible(child: _LoginDetailPanel()),
-          ],
+          if (!hideDetailPanel) ...[Flexible(child: _LoginDetailPanel())],
           Flexible(child: _LoginForm()),
         ],
       ),
@@ -31,14 +29,14 @@ class LoginPage extends StatelessWidget {
 class _LoginDetailPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Container(
-        alignment: Alignment.center,
-        color: Colors.grey.shade300,
-        child: const Text(
-          'LOGIN VIEW\nBRANDING',
-          style: TextStyle(fontSize: 64),
-          textAlign: TextAlign.center,
-        ),
-      );
+    alignment: Alignment.center,
+    color: Colors.grey.shade300,
+    child: const Text(
+      'LOGIN VIEW\nBRANDING',
+      style: TextStyle(fontSize: 64),
+      textAlign: TextAlign.center,
+    ),
+  );
 }
 
 class _LoginForm extends StatelessWidget {

@@ -11,9 +11,7 @@ class SnackBarDemo extends StatelessWidget {
     return MaterialApp(
       title: 'SnackBar Demo',
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('SnackBar Demo'),
-        ),
+        appBar: AppBar(title: const Text('SnackBar Demo')),
         body: const SnackBarPage(),
       ),
     );
@@ -30,9 +28,7 @@ class SnackBarPage extends StatelessWidget {
       child: ElevatedButton(
         onPressed: () {
           // #docregion DisplaySnackBar
-          const snackBar = SnackBar(
-            content: Text('Yay! A SnackBar!'),
-          );
+          const snackBar = SnackBar(content: Text('Yay! A SnackBar!'));
 
           // Find the ScaffoldMessenger in the widget tree
           // and use it to show a SnackBar.

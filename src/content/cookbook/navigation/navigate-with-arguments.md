@@ -84,12 +84,8 @@ class ExtractArgumentsScreen extends StatelessWidget {
     final args = ModalRoute.of(context)!.settings.arguments as ScreenArguments;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(args.title),
-      ),
-      body: Center(
-        child: Text(args.message),
-      ),
+      appBar: AppBar(title: Text(args.title)),
+      body: Center(child: Text(args.message)),
     );
   }
 }
@@ -107,8 +103,8 @@ RegEx removes the return statement and adds the closing parenthesis at the end
 ```dart
 MaterialApp(
   routes: {
-    ExtractArgumentsScreen.routeName: (context) =>
-        const ExtractArgumentsScreen(),
+    ExtractArgumentsScreen.routeName:
+        (context) => const ExtractArgumentsScreen(),
   },
 )
 ```
@@ -212,8 +208,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        ExtractArgumentsScreen.routeName: (context) =>
-            const ExtractArgumentsScreen(),
+        ExtractArgumentsScreen.routeName:
+            (context) => const ExtractArgumentsScreen(),
       },
       // Provide a function to handle named routes.
       // Use this function to identify the named
@@ -260,9 +256,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home Screen'),
-      ),
+      appBar: AppBar(title: const Text('Home Screen')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -329,12 +323,8 @@ class ExtractArgumentsScreen extends StatelessWidget {
     final args = ModalRoute.of(context)!.settings.arguments as ScreenArguments;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(args.title),
-      ),
-      body: Center(
-        child: Text(args.message),
-      ),
+      appBar: AppBar(title: Text(args.title)),
+      body: Center(child: Text(args.message)),
     );
   }
 }
@@ -362,12 +352,8 @@ class PassArgumentsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(message),
-      ),
+      appBar: AppBar(title: Text(title)),
+      body: Center(child: Text(message)),
     );
   }
 }

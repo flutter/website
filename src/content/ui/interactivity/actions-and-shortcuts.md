@@ -136,13 +136,14 @@ Widget build(BuildContext context) {
         SelectAllIntent: SelectAllAction(model),
       },
       child: Builder(
-        builder: (context) => TextButton(
-          onPressed: Actions.handler<SelectAllIntent>(
-            context,
-            const SelectAllIntent(),
-          ),
-          child: const Text('SELECT ALL'),
-        ),
+        builder:
+            (context) => TextButton(
+              onPressed: Actions.handler<SelectAllIntent>(
+                context,
+                const SelectAllIntent(),
+              ),
+              child: const Text('SELECT ALL'),
+            ),
       ),
     ),
   );
@@ -238,9 +239,7 @@ widget, which takes a map of `Intent` types to `Action`s:
 @override
 Widget build(BuildContext context) {
   return Actions(
-    actions: <Type, Action<Intent>>{
-      SelectAllIntent: SelectAllAction(model),
-    },
+    actions: <Type, Action<Intent>>{SelectAllIntent: SelectAllAction(model)},
     child: child,
   );
 }
@@ -263,8 +262,9 @@ For instance, to find an action associated with an intent, you can use:
 
 <?code-excerpt "ui/actions_and_shortcuts/lib/samples.dart (maybe-find)"?>
 ```dart
-Action<SelectAllIntent>? selectAll =
-    Actions.maybeFind<SelectAllIntent>(context);
+Action<SelectAllIntent>? selectAll = Actions.maybeFind<SelectAllIntent>(
+  context,
+);
 ```
 
 This returns an `Action` associated with the `SelectAllIntent` type if one is
@@ -279,8 +279,9 @@ To invoke the action (if it exists), call:
 ```dart
 Object? result;
 if (selectAll != null) {
-  result =
-      Actions.of(context).invokeAction(selectAll, const SelectAllIntent());
+  result = Actions.of(
+    context,
+  ).invokeAction(selectAll, const SelectAllIntent());
 }
 ```
 
@@ -288,8 +289,10 @@ Combine that into one call with the following:
 
 <?code-excerpt "ui/actions_and_shortcuts/lib/samples.dart (maybe-invoke)"?>
 ```dart
-Object? result =
-    Actions.maybeInvoke<SelectAllIntent>(context, const SelectAllIntent());
+Object? result = Actions.maybeInvoke<SelectAllIntent>(
+  context,
+  const SelectAllIntent(),
+);
 ```
 
 Sometimes you want to invoke an action as a
@@ -306,17 +309,16 @@ there is no enabled action that matches in the context.
 @override
 Widget build(BuildContext context) {
   return Actions(
-    actions: <Type, Action<Intent>>{
-      SelectAllIntent: SelectAllAction(model),
-    },
+    actions: <Type, Action<Intent>>{SelectAllIntent: SelectAllAction(model)},
     child: Builder(
-      builder: (context) => TextButton(
-        onPressed: Actions.handler<SelectAllIntent>(
-          context,
-          SelectAllIntent(controller: controller),
-        ),
-        child: const Text('SELECT ALL'),
-      ),
+      builder:
+          (context) => TextButton(
+            onPressed: Actions.handler<SelectAllIntent>(
+              context,
+              SelectAllIntent(controller: controller),
+            ),
+            child: const Text('SELECT ALL'),
+          ),
     ),
   );
 }
@@ -399,17 +401,16 @@ Then you pass that to your top-level `Actions` widget:
 Widget build(BuildContext context) {
   return Actions(
     dispatcher: LoggingActionDispatcher(),
-    actions: <Type, Action<Intent>>{
-      SelectAllIntent: SelectAllAction(model),
-    },
+    actions: <Type, Action<Intent>>{SelectAllIntent: SelectAllAction(model)},
     child: Builder(
-      builder: (context) => TextButton(
-        onPressed: Actions.handler<SelectAllIntent>(
-          context,
-          const SelectAllIntent(),
-        ),
-        child: const Text('SELECT ALL'),
-      ),
+      builder:
+          (context) => TextButton(
+            onPressed: Actions.handler<SelectAllIntent>(
+              context,
+              const SelectAllIntent(),
+            ),
+            child: const Text('SELECT ALL'),
+          ),
     ),
   );
 }
@@ -464,31 +465,35 @@ class _CopyableTextFieldState extends State<CopyableTextField> {
         CopyIntent: CopyAction(controller),
         SelectAllIntent: SelectAllAction(controller),
       },
-      child: Builder(builder: (context) {
-        return Scaffold(
-          body: Center(
-            child: Row(
-              children: <Widget>[
-                const Spacer(),
-                Expanded(
-                  child: TextField(controller: controller),
-                ),
-                IconButton(
-                  icon: const Icon(Icons.copy),
-                  onPressed:
-                      Actions.handler<CopyIntent>(context, const CopyIntent()),
-                ),
-                IconButton(
-                  icon: const Icon(Icons.select_all),
-                  onPressed: Actions.handler<SelectAllIntent>(
-                      context, const SelectAllIntent()),
-                ),
-                const Spacer(),
-              ],
+      child: Builder(
+        builder: (context) {
+          return Scaffold(
+            body: Center(
+              child: Row(
+                children: <Widget>[
+                  const Spacer(),
+                  Expanded(child: TextField(controller: controller)),
+                  IconButton(
+                    icon: const Icon(Icons.copy),
+                    onPressed: Actions.handler<CopyIntent>(
+                      context,
+                      const CopyIntent(),
+                    ),
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.select_all),
+                    onPressed: Actions.handler<SelectAllIntent>(
+                      context,
+                      const SelectAllIntent(),
+                    ),
+                  ),
+                  const Spacer(),
+                ],
+              ),
             ),
-          ),
-        );
-      }),
+          );
+        },
+      ),
     );
   }
 }

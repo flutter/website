@@ -24,24 +24,28 @@ $site-color-body-light: color.scale($site-color-body, $lightness: 20%);
 $site-color-body-caption: color.scale($site-color-body, $lightness: 30%);
 $site-color-footer: #303c42;
 $site-color-primary: $flutter-color-blue-500;
-$twitter-color: #60CAF6;
 $site-color-panel-background: color.scale($site-color-primary, $lightness: 95%);
+$sidenav-divider-color: #e7e8ed;
 
 // Fonts
 $font-size-base-weight: 400;
 $site-font-family-base: 'Google Sans Text', 'Roboto', sans-serif;
-$site-font-family-alt: 'Google Sans', 'Google Sans Text', 'Roboto', sans-serif;
+$site-font-family-ui: 'Google Sans', 'Google Sans Text', 'Roboto', sans-serif;
 $site-font-family-icon: 'Material Symbols Outlined';
 $site-font-family-monospace: 'Google Sans Mono', 'Roboto Mono', monospace;
 $site-font-icon: 24px/1 $site-font-family-icon;
 
 // Layout
 $site-header-height: 4rem;
+$site-inline-toc-height: 2.5rem;
 $site-content-top-padding: 2rem;
 $site-content-max-width: 960px;
 $site-spacer: 1rem;
 
+$site-z-sidenav: 1020;
+$site-z-subnav: 1015;
 $site-z-header: 1030;
+$site-z-dropdown: 1050;
 
 // Alerts
 $alert-success-bg:        #f1fbf9;

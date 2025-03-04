@@ -95,16 +95,8 @@ const List<_Palette> _allPalettes = [
     accent: Colors.limeAccent,
     threshold: 800,
   ),
-  _Palette(
-    name: 'Yellow',
-    primary: Colors.yellow,
-    accent: Colors.yellowAccent,
-  ),
-  _Palette(
-    name: 'Amber',
-    primary: Colors.amber,
-    accent: Colors.amberAccent,
-  ),
+  _Palette(name: 'Yellow', primary: Colors.yellow, accent: Colors.yellowAccent),
+  _Palette(name: 'Amber', primary: Colors.amber, accent: Colors.amberAccent),
   _Palette(
     name: 'Orange',
     primary: Colors.orange,
@@ -117,21 +109,9 @@ const List<_Palette> _allPalettes = [
     accent: Colors.deepOrangeAccent,
     threshold: 400,
   ),
-  _Palette(
-    name: 'Brown',
-    primary: Colors.brown,
-    threshold: 200,
-  ),
-  _Palette(
-    name: 'Grey',
-    primary: Colors.grey,
-    threshold: 500,
-  ),
-  _Palette(
-    name: 'Blue grey',
-    primary: Colors.blueGrey,
-    threshold: 500,
-  ),
+  _Palette(name: 'Brown', primary: Colors.brown, threshold: 200),
+  _Palette(name: 'Grey', primary: Colors.grey, threshold: 500),
+  _Palette(name: 'Blue grey', primary: Colors.blueGrey, threshold: 500),
 ];
 
 class _ColorItem extends StatelessWidget {
@@ -194,19 +174,15 @@ class _PaletteTabView extends StatelessWidget {
     600,
     700,
     800,
-    900
+    900,
   ];
   static const List<int> accentKeys = [100, 200, 400, 700];
 
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-    final whiteTextStyle = textTheme.bodyMedium!.copyWith(
-      color: Colors.white,
-    );
-    final blackTextStyle = textTheme.bodyMedium!.copyWith(
-      color: Colors.black,
-    );
+    final whiteTextStyle = textTheme.bodyMedium!.copyWith(color: Colors.white);
+    final blackTextStyle = textTheme.bodyMedium!.copyWith(color: Colors.black);
     return Scrollbar(
       child: ListView(
         itemExtent: _colorItemHeight,
@@ -247,9 +223,7 @@ class ColorsDemo extends StatelessWidget {
             title: const Text('Colors'),
             bottom: TabBar(
               isScrollable: true,
-              tabs: [
-                for (final palette in palettes) Tab(text: palette.name),
-              ],
+              tabs: [for (final palette in palettes) Tab(text: palette.name)],
             ),
           ),
           body: TabBarView(

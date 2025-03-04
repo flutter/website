@@ -49,10 +49,7 @@ class ShoppingListItem extends StatelessWidget {
         backgroundColor: _getColor(context),
         child: Text(product.name[0]),
       ),
-      title: Text(
-        product.name,
-        style: _getTextStyle(context),
-      ),
+      title: Text(product.name, style: _getTextStyle(context)),
     );
   }
 }
@@ -94,32 +91,33 @@ class _ShoppingListState extends State<ShoppingList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Shopping List'),
-      ),
+      appBar: AppBar(title: const Text('Shopping List')),
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 8),
-        children: widget.products.map((product) {
-          return ShoppingListItem(
-            product: product,
-            inCart: _shoppingCart.contains(product),
-            onCartChanged: _handleCartChanged,
-          );
-        }).toList(),
+        children:
+            widget.products.map((product) {
+              return ShoppingListItem(
+                product: product,
+                inCart: _shoppingCart.contains(product),
+                onCartChanged: _handleCartChanged,
+              );
+            }).toList(),
       ),
     );
   }
 }
 
 void main() {
-  runApp(const MaterialApp(
-    title: 'Shopping App',
-    home: ShoppingList(
-      products: [
-        Product(name: 'Eggs'),
-        Product(name: 'Flour'),
-        Product(name: 'Chocolate chips'),
-      ],
+  runApp(
+    const MaterialApp(
+      title: 'Shopping App',
+      home: ShoppingList(
+        products: [
+          Product(name: 'Eggs'),
+          Product(name: 'Flour'),
+          Product(name: 'Chocolate chips'),
+        ],
+      ),
     ),
-  ));
+  );
 }

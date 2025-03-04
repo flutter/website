@@ -25,21 +25,15 @@ class Photo extends StatelessWidget {
       color: Theme.of(context).primaryColor.withValues(alpha: 0.25),
       child: InkWell(
         onTap: onTap,
-        child: Image.asset(
-          photo,
-          fit: BoxFit.contain,
-        ),
+        child: Image.asset(photo, fit: BoxFit.contain),
       ),
     );
   }
 }
 
 class RadialExpansion extends StatelessWidget {
-  const RadialExpansion({
-    super.key,
-    required this.maxRadius,
-    this.child,
-  }) : clipRectExtent = 2.0 * (maxRadius / math.sqrt2);
+  const RadialExpansion({super.key, required this.maxRadius, this.child})
+    : clipRectExtent = 2.0 * (maxRadius / math.sqrt2);
 
   final double maxRadius;
   final double clipRectExtent;
@@ -55,9 +49,7 @@ class RadialExpansion extends StatelessWidget {
         child: SizedBox(
           width: clipRectExtent,
           height: clipRectExtent,
-          child: ClipRect(
-            child: child,
-          ),
+          child: ClipRect(child: child),
         ),
       ),
     );
@@ -69,15 +61,21 @@ class RadialExpansionDemo extends StatelessWidget {
 
   static double kMinRadius = 32;
   static double kMaxRadius = 128;
-  static Interval opacityCurve =
-      const Interval(0.0, 0.75, curve: Curves.fastOutSlowIn);
+  static Interval opacityCurve = const Interval(
+    0.0,
+    0.75,
+    curve: Curves.fastOutSlowIn,
+  );
 
   static RectTween _createRectTween(Rect? begin, Rect? end) {
     return MaterialRectCenterArcTween(begin: begin, end: end);
   }
 
   static Widget _buildPage(
-      BuildContext context, String imageName, String description) {
+    BuildContext context,
+    String imageName,
+    String description,
+  ) {
     return Container(
       color: Theme.of(context).canvasColor,
       alignment: FractionalOffset.center,
@@ -102,7 +100,10 @@ class RadialExpansionDemo extends StatelessWidget {
   }
 
   Widget _buildHero(
-      BuildContext context, String imageName, String description) {
+    BuildContext context,
+    String imageName,
+    String description,
+  ) {
     return SizedBox(
       width: kMinRadius * 2,
       height: kMinRadius * 2,
@@ -141,9 +142,7 @@ class RadialExpansionDemo extends StatelessWidget {
     timeDilation = 20.0; // 1.0 is normal animation speed.
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Basic Radial Hero Animation Demo'),
-      ),
+      appBar: AppBar(title: const Text('Basic Radial Hero Animation Demo')),
       body: Container(
         padding: const EdgeInsets.all(32),
         alignment: FractionalOffset.bottomLeft,
@@ -161,9 +160,5 @@ class RadialExpansionDemo extends StatelessWidget {
 }
 
 void main() {
-  runApp(
-    const MaterialApp(
-      home: RadialExpansionDemo(),
-    ),
-  );
+  runApp(const MaterialApp(home: RadialExpansionDemo()));
 }

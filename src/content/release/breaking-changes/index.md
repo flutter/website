@@ -34,27 +34,44 @@ They're sorted by release and listed in alphabetical order:
 
 ### Not yet released to stable
 
-* [Deprecate `WebGoldenComparator`][]
+* [Deprecate `RouteTransitionRecord.markForRemove`][deprecate-markForRemove]
+   in favor of `RouteTransitionRecord.markForComplete`
 * [Deprecate `TextField.canRequestFocus`][]
-* [Deprecate `ThemeData.dialogBackgroundColor` in favor of `DialogThemeData.backgroundColor`][]
 * [Deprecate `ThemeData.indicatorColor` in favor of `TabBarThemeData.indicatorColor`][]
-* [`ImageFilter.blur` default tile mode automatic selection][]
 * [Localized messages are generated into source, not a synthetic package][]
+* [Material Theme System Updates][]
 * [Stop generating `AssetManifest.json`][]
+* [`.flutter-plugins-dependencies` replaces `.flutter-plugins`][]
+* [Changing the default `goldenFileComparator` for `integration_test`s][]
+* [Deprecate `InputDecoration.maintainHintHeight` in favor of `InputDecoration.maintainHintSize`][]
+
+[Deprecate `SystemContextMenuController.show`]: /release/breaking-changes/system_context_menu_controller_show
+[deprecate-markForRemove]: /release/breaking-changes/navigator-complete-route
+[Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
+[Deprecate `ThemeData.indicatorColor` in favor of `TabBarThemeData.indicatorColor`]: /release/breaking-changes/deprecate-themedata-indicatorcolor
+[Localized messages are generated into source, not a synthetic package]: /release/breaking-changes/flutter-generate-i10n-source
+[Material Theme System Updates]: /release/breaking-changes/material-theme-system-updates
+[Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
+[`.flutter-plugins-dependencies` replaces `.flutter-plugins`]: /release/breaking-changes/flutter-plugins-configuration
+[Changing the default `goldenFileComparator` for `integration_test`s]: /release/breaking-changes/integration-test-default-golden-comparator
+[Deprecate `InputDecoration.maintainHintHeight` in favor of `InputDecoration.maintainHintSize`]: /release/breaking-changes/deprecate-inputdecoration-maintainhintheight
+
+<a id="released-in-flutter-329" aria-hidden="true"></a>
+### Released in Flutter 3.29
+
+* [Removal of v1 Android embedding Java APIs][]
+* [Deprecate `WebGoldenComparator`][]
+* [Deprecate `ThemeData.dialogBackgroundColor` in favor of `DialogThemeData.backgroundColor`][]
+* [`ImageFilter.blur` default tile mode automatic selection][]
 * [Updated Material 3 `Slider`][]
 * [Updated Material 3 progress indicators][]
-* [`.flutter-plugins-dependencies` replaces `.flutter-plugins`][]
 
+[Removal of v1 Android embedding Java APIs]: /release/breaking-changes/v1-android-embedding
 [Deprecate `WebGoldenComparator`]: /release/breaking-changes/web-golden-comparator
-[Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
 [Deprecate `ThemeData.dialogBackgroundColor` in favor of `DialogThemeData.backgroundColor`]: /release/breaking-changes/deprecate-themedata-dialogbackgroundcolor
-[Deprecate `ThemeData.indicatorColor` in favor of `TabBarThemeData.indicatorColor`]: /release/breaking-changes/deprecate-themedata-indicatorcolor
 [`ImageFilter.blur` default tile mode automatic selection]: /release/breaking-changes/image-filter-blur-tilemode
-[Localized messages are generated into source, not a synthetic package]: /release/breaking-changes/flutter-generate-i10n-source
-[Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
-[Updated Material 3 `Slider`]: /release/breaking-changes/updated-material-3-slider
 [Updated Material 3 progress indicators]: /release/breaking-changes/updated-material-3-progress-indicators
-[`.flutter-plugins-dependencies` replaces `.flutter-plugins`]: /release/breaking-changes/flutter-plugins-configuration
+[Updated Material 3 `Slider`]: /release/breaking-changes/updated-material-3-slider
 
 <a id="released-in-flutter-327" aria-hidden="true"></a>
 ### Released in Flutter 3.27

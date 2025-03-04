@@ -3,10 +3,7 @@ import '../viewmodel/theme_switch_viewmodel.dart';
 
 // #docregion ThemeSwitch
 class ThemeSwitch extends StatelessWidget {
-  const ThemeSwitch({
-    super.key,
-    required this.viewmodel,
-  });
+  const ThemeSwitch({super.key, required this.viewmodel});
 
   final ThemeSwitchViewModel viewmodel;
 
@@ -33,4 +30,5 @@ class ThemeSwitch extends StatelessWidget {
     );
   }
 }
+
 // #enddocregion ThemeSwitch

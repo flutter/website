@@ -6,10 +6,7 @@ class SetupFlow extends StatefulWidget {
     return context.findAncestorStateOfType<SetupFlowState>()!;
   }
 
-  const SetupFlow({
-    super.key,
-    required this.setupPageRoute,
-  });
+  const SetupFlow({super.key, required this.setupPageRoute});
 
   final String setupPageRoute;
 
@@ -34,28 +31,30 @@ class SetupFlowState extends State<SetupFlow> {
 
   Future<bool> _isExitDesired() async {
     return await showDialog<bool>(
-            context: context,
-            builder: (context) {
-              return AlertDialog(
-                title: const Text('Are you sure?'),
-                content: const Text(
-                    'If you exit device setup, your progress will be lost.'),
-                actions: [
-                  TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pop(true);
-                    },
-                    child: const Text('Leave'),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pop(false);
-                    },
-                    child: const Text('Stay'),
-                  ),
-                ],
-              );
-            }) ??
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              title: const Text('Are you sure?'),
+              content: const Text(
+                'If you exit device setup, your progress will be lost.',
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop(true);
+                  },
+                  child: const Text('Leave'),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop(false);
+                  },
+                  child: const Text('Stay'),
+                ),
+              ],
+            );
+          },
+        ) ??
         false;
   }
 
@@ -74,10 +73,7 @@ class SetupFlowState extends State<SetupFlow> {
           _exitSetup();
         }
       },
-      child: Scaffold(
-        appBar: _buildFlowAppBar(),
-        body: const SizedBox(),
-      ),
+      child: Scaffold(appBar: _buildFlowAppBar(), body: const SizedBox()),
     );
   }
 
@@ -90,5 +86,6 @@ class SetupFlowState extends State<SetupFlow> {
       title: const Text('Bulb Setup'),
     );
   }
+
   // #enddocregion PromptUser
 }

@@ -6,11 +6,8 @@ class ParallaxRecipe extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      child: Column(
-        children: [],
-      ),
-    );
+    return const SingleChildScrollView(child: Column(children: []));
   }
 }
+
 // #enddocregion ParallaxRecipe

@@ -15,8 +15,8 @@
       { "regex": "^\/(flutter(\/.*)?)", "destination": "https://api.flutter.dev/:1", "type": 301 },
       { "regex": "^\/(objcdoc(\/.*)?)", "destination": "https://api.flutter.dev/:1", "type": 301 },
       { "regex": "^\/(javadoc(\/.*)?)", "destination": "https://api.flutter.dev/:1", "type": 301 },
-      { "regex": "(?P<basename>.*)\\.html$", "destination": ":basename", "type": 301 },
-      { "regex": "(?P<basename>.*)\\.$", "destination": ":basename", "type": 301 },
+      { "regex": "(.*)\\.html$", "destination": ":1", "type": 301 },
+      { "regex": "(.*)\\.$", "destination": ":1", "type": 301 },
 
       { "source": "/ads", "destination": "https://flutter.dev/monetization", "type": 301 },
       { "source": "/community", "destination": "https://flutter.dev/community", "type": 301 },
@@ -267,6 +267,7 @@
       { "source": "/go/api-for-transform-performance", "destination": "https://docs.google.com/document/d/1Fxdlf7JsA-yAwc_RNuboMG-vhIhchRBZGvDSwg5qR0A/edit?usp=sharing", "type": 301 },
       { "source": "/go/app-extensions", "destination": "https://docs.google.com/document/d/1WloBrAYpqNKOhEHytTqJEHshcXxHflLUGKvULKRHbuU/edit?usp=sharing", "type": 301 },
       { "source": "/go/apple-pencil-double-tap-support", "destination": "https://docs.google.com/document/d/1r4P5r-jGt2Sjqro3ldCU2axUiHTpu3yhIycnI94OKQw/edit?usp=sharing", "type": 301 },
+      { "source": "/go/apple-squircles", "destination": "https://docs.google.com/document/d/1CJXULKJGQt22FOFsrlm2TKVjKBtif1yU4U50cMfL6Kc/edit?usp=sharing", "type": 301 },
       { "source": "/go/application-lifecycle-events", "destination": "https://docs.google.com/document/d/1FL5Fgk7EzMNOpJL0GZJt-lfWtGt2igHuC2ZznItS2l8/edit?usp=sharing&resourcekey=0-IZNfpSVPkMbigQLLXoJcfw", "type": 301 },
       { "source": "/go/asset-lookup-in-plugin-binding", "destination": "https://docs.google.com/document/d/1iwGFWipC0v0FKvAgbjGl0kaV9IGox1YiD8jUP8Vvkjc/edit", "type": 301 },
       { "source": "/go/asset-transformation", "destination": "https://docs.google.com/document/d/1i_trjTF-gJ3Xj-GUtVmyLETa5CwStvabEjtD5z8ArC4/edit?usp=sharing", "type": 301},
@@ -296,6 +297,7 @@
       { "source": "/go/ci-post-test-analysis", "destination": "https://docs.google.com/document/d/1V0W6q7gkk2hHFLYb3t7JFr84Km5uhKl9T3Ksb1IpkLQ/edit?usp=sharing", "type": 301 },
       { "source": "/go/clean-up-not-disposed-disposables-in-ff", "destination": "https://docs.google.com/document/d/1bXannXQ8rEtfwxEVd7LDo7xiVu5-QxRoall28MIIFss", "type": 301 },
       { "source": "/go/clip-behavior", "destination": "https://docs.google.com/document/d/1gC5Di4ykTCqupD77PWpy9D8xXo0Ide5CnrH0zzVIhKo/edit", "type": 301 },
+      { "source": "/go/codeshare-expansion-tile", "destination": "https://docs.google.com/document/d/1GTyEZjjTpx6fcrzOX-6kQ3phwu5UhUGLOWXJoy0yto0/edit?usp=sharing", "type": 301 },
       { "source": "/go/colorscheme-enhancements", "destination": "https://docs.google.com/document/d/1cIBW0jMRrtWVA5E0TB0qmwqSgLoVDIVPOysKYJOvH7U/edit?usp=sharing", "type": 301 },
       { "source": "/go/colorscheme-generation", "destination": "https://docs.google.com/document/d/1P7f-DGPWz6HCbwLoAruRuWtakPx4VY-e8nT_yuQ71sc/edit?usp=sharing&resourcekey=0-qxeub7yCKa_No0HlrzEk-g", "type": 301 },
       { "source": "/go/colorscheme-m3", "destination": "https://docs.google.com/document/d/1mY1ahBQEMAfsawGJMX5S34pXb7c8dHGatyotClReeas/edit#heading=h.cnnhzna3pz6d", "type": 301 },
@@ -369,6 +371,7 @@
       { "source": "/go/engine-v2-recipes", "destination": "https://docs.google.com/document/d/1vP26tMAJqqHlIF2QZUfcirFe5zmei7gZ1zQ6IVGQPU4", "type": 301 },
       { "source": "/go/error-handling", "destination": "https://docs.google.com/document/d/1HdGLKoVw_KWLrVzDNZ8Lk5nN-biHQzi_CS5mCkpiDwA/edit", "type": 301 },
       { "source": "/go/everything-builds-from-a-module", "destination": "https://docs.google.com/document/d/1fkUpos4hbJF0NYSwjNLWct2UGDg-AfhxzlR6p2g0w9M", "type": 301 },
+      { "source": "/go/expansible-state-mixin", "destination": "/go/codeshare-expansion-tile", "type": 301 },
       { "source": "/go/exposing-scroll-behaviors", "destination": "https://docs.google.com/document/d/1W5PSIO1cVj7v6_xayydyFN3abWFOJTmFHKGBA9VKbbg/edit?usp=sharing&resourcekey=0-AHb9dJP8Knv3GWwZLnzZWQ", "type": 301 },
       { "source": "/go/external-drag-and-drop", "destination": "https://docs.google.com/document/d/1toFc3Fjafv8jDToQ85S5AquC7NOoJ2ZO_Or484nsEuo/edit?usp=sharing", "type": 301 },
       { "source": "/go/fallback-image-decoding", "destination": "https://docs.google.com/document/d/1G-5s6uoP1H_7f_ByLrvCVcoFXYZ80CixkMbbHMsMCag/edit?usp=sharing", "type": 301 },
@@ -518,6 +521,7 @@
       { "source": "/go/multi-window-single-isolate", "destination": "https://docs.google.com/document/d/1Wdqs79TY3b1VkOZMDmt12psg5AhO-q9k5-Uv28Snr8M/edit?resourcekey=0-qvOf6jo8bR9W4ozLrbLMcQ", "type": 301 },
       { "source": "/go/multi-window-status", "destination": "https://docs.google.com/document/d/13E27tD8_9f6lDgwg3MpGNTV8XIRCZH3ByI-t9kI9IUM/edit?usp=sharing", "type": 301 },
       { "source": "/go/multi-window-api", "destination": "https://docs.google.com/document/d/1eQG-IS7r4_S9_h50MY_hSGwUVtgSTRSLzu7MLzPNd2Y/edit", "type": 301 },
+      { "source": "/go/multi-window-api-ffi", "destination": "https://docs.google.com/document/d/1UEaxd_aIlsPMzkfB6oyeYaKzwHadrWGyMzOS33oSbK4/edit", "type": 301 },      
       { "source": "/go/multiple-applications", "destination": "https://docs.google.com/document/d/1alrr7qimNDazmQx5D80BSHh62V2OINO4UQ5N3HcPnmo/edit?resourcekey=0-wPs1Go9AiKR-yG0-xStuKw", "type": 301 },
       { "source": "/go/multiple-engines", "destination": "https://docs.google.com/document/d/1NwiZPWHd1te46eP2GWwIezDV9CdMQkODAMuF5kWdtLw", "type": 301 },
       { "source": "/go/multiple-flutters", "destination": "https://docs.google.com/document/d/1fdKRufqUzQvERcqNIUSq-GdabXc4k8VIsClzRElJ6KY", "type": 301 },
@@ -599,6 +603,7 @@
       { "source": "/go/supporting-dart-callbacks", "destination": "https://docs.google.com/document/d/1k7OimxbxXzdv3U7-TfB88yG5hIScN3TH6Jcvdcl4izM/edit", "type": 301 },
       { "source": "/go/swift-package-manager-plugins", "destination": "https://docs.google.com/document/d/10S7anpgWdJ0wNCgsse8MvHY2PShrr9PeuufwYHi5v6U/edit", "type": 301 },
       { "source": "/go/swift-package-manager-plugins-v2", "destination": "https://docs.google.com/document/d/1oUvM5e2a3QrKAk9pTPExPp3my4FD4lYz9Z-EXsUGuHI/edit?usp=sharing&resourcekey=0-Vu8vKukw0Dqqv7pW5aIxKQ", "type": 301 },
+      { "source": "/go/swift-package-manager-plugins-v3", "destination": "https://docs.google.com/document/d/1aoa-t6zZBc6TosCa8N41w8aA8O4Z5yqdV4DvSRjWC54/edit?usp=sharing", "type": 301 },
       { "source": "/go/synchronized-widgettester", "destination": "https://docs.google.com/document/d/1VumsuG6dEFUVpPQLqqKJnhI0CoIS9fCAMN-NFHIPmo0/edit", "type": 301 },
       { "source": "/go/system-mouse-cursor", "destination": "https://docs.google.com/document/d/1bJLRy6flZ0wDCbpl2QA8SURUWXIvRJKMRRemxlOo1cA/edit", "type": 301 },
       { "source": "/go/table-development", "destination": "https://docs.google.com/document/d/1fCE-zQNql0nnqJXhycpg902lhL7jrOOz-6sT8s8tv5c/edit?usp=sharing", "type": 301 },
@@ -711,7 +716,7 @@
       { "source": "/to/integrate-android-archive", "destination": "/add-to-app/android/project-setup", "type": 301 },
       { "source": "/to/integration-test-on-web", "destination": "/testing/integration-tests#test-in-a-web-browser", "type": 301 },
       { "source": "/to/integration-testing", "destination": "/cookbook/testing/integration/introduction", "type": 301 },
-      { "source": "/to/intellij-setup", "destination": "/get-started/editor?tab=androidstudio", "type": 301 },
+      { "source": "/to/intellij-setup", "destination": "/get-started/editor/?tab-save-vs-code-vs-intellij=android-studio-and-intellij", "type": 301 },
       { "source": "/to/internationalization", "destination": "/ui/accessibility-and-internationalization/internationalization", "type": 301 },
       { "source": "/to/ios-app-signing", "destination": "/deployment/ios#review-xcode-project-settings", "type": 301 },
       { "source": "/to/ios-create-flutter-engine", "destination": "/add-to-app/ios/add-flutter-screen#create-a-flutterengine", "type": 301 },
@@ -751,9 +756,9 @@
       { "source": "/to/troubleshoot-devices", "destination": "/get-started/install", "type": 301 },
       { "source": "/to/unbounded-constraints", "destination": "/ui/layout/constraints#unbounded", "type": 301 },
       { "source": "/to/unit-testing", "destination": "/cookbook/testing/unit/introduction", "type": 301 },
-      { "source": "/to/update-linux-path", "destination": "/get-started/install/linux/android?tab=download#add-flutter-to-your-path", "type": 301 },
-      { "source": "/to/update-macos-path", "destination": "/get-started/install/macos/mobile-ios?tab=download#add-flutter-to-your-path", "type": 301 },
-      { "source": "/to/update-windows-path", "destination": "/get-started/install/windows/mobile?tab=download#update-your-windows-path-variable", "type": 301 },
+      { "source": "/to/update-linux-path", "destination": "/get-started/install/linux/android?tab-save-vs-code-or-download=download-and-install#add-flutter-to-your-path", "type": 301 },
+      { "source": "/to/update-macos-path", "destination": "/get-started/install/macos/mobile-ios?tab-save-vs-code-or-download=download-and-install#add-flutter-to-your-path", "type": 301 },
+      { "source": "/to/update-windows-path", "destination": "/get-started/install/windows/mobile?tab-save-vs-code-or-download=download-and-install#update-your-windows-path-variable", "type": 301 },
       { "source": "/to/use-mirror-site", "destination": "/community/china#configure-your-machine-to-use-a-mirror-site", "type": 301 },
       { "source": "/to/use-profile-mode", "destination": "/perf/ui-performance#run-in-profile-mode", "type": 301 },
       { "source": "/to/wasm", "destination": "/platform-integration/web/wasm", "type": 301 },
@@ -799,14 +804,6 @@
           {
             "key": "X-Content-Type-Options",
             "value": "nosniff"
-          },
-          {
-            "key": "Content-Security-Policy-Report-Only",
-            "value": "default-src 'self' https:; font-src 'self' data: https://fonts.googleapis.com/ https://fonts.gstatic.com/; img-src 'self' https: data:; manifest-src 'none'; object-src 'none'; script-src 'self' 'unsafe-inline' 'sha256-TLFf6uphGKcmsQh139FXW+zI8+m+KYC/3ai/rTu4NO0=' 'sha256-BOF631Nskv2A6eetluVBrNcDbYRYd/+b3wU9NBtGKGQ=' 'sha256-ye5TuohbcxBNy6HcVWdwfRHAUaHjKdBTXjRsm92zCdo=' 'sha256-GdPtwIl3lB8GPexRo/QmApVAGQ/y1zRYuxJPZTpT6TQ=' 'sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==' 'sha512-ubuT8Z88WxezgSqf3RLuNi5lmjstiJcyezx34yIU2gAHonIi27Na7atqzUZCOoY4CExaoFumzOsFQ2Ch+I/HCw==' 'sha512-7rusk8kGPFynZWu26OKbTeI+QPoYchtxsmPeBqkHIEXJxeun4yJ4ISYe7C6sz9wdxeE1Gk3VxsIWgCZTc+vX3g==' 'sha512-7O5pXpc0oCRrxk8RUfDYFgn0nO1t+jLuIOQdOMRp4APB7uZ4vSjspzp5y6YDtDs4VzUSTbWzBFZ/LKJhnyFOKw==' 'sha512-nlp9/l96/EpjYBx7EP7pGASVXNe80hGhYAUrjeXnu/fyF5Py0/RXav4BBNs7n5Hx1WFhOEOWSAVjGeC3oKxDVQ=='; style-src 'self' https://unpkg.com/ https://pub.dartlang.org/static/ 'unsafe-inline' https://fonts.googleapis.com/ https://gstatic.com https://www.gstatic.com/ https://tagmanager.google.com https://accounts.google.com/gsi/style; frame-src 'self' https://youtube.com https://*.youtube.com https://dartpad.dev https://*.dartpad.dev; media-src 'self' https://youtube.com https://*.youtube.com; require-trusted-types-for 'script'"
-          },
-          {
-            "key": "X-Frame-Options",
-            "value": "'SAMEORIGIN' always;"
           }
         ]
       }

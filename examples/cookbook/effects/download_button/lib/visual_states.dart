@@ -1,21 +1,14 @@
 import 'package:flutter/material.dart';
 
 // #docregion VisualStates
-enum DownloadStatus {
-  notDownloaded,
-  fetchingDownload,
-  downloading,
-  downloaded,
-}
+enum DownloadStatus { notDownloaded, fetchingDownload, downloading, downloaded }
 
 @immutable
 class DownloadButton extends StatelessWidget {
   const DownloadButton({
     super.key,
     required this.status,
-    this.transitionDuration = const Duration(
-      milliseconds: 500,
-    ),
+    this.transitionDuration = const Duration(milliseconds: 500),
   });
 
   final DownloadStatus status;
@@ -27,4 +20,5 @@ class DownloadButton extends StatelessWidget {
     return const SizedBox();
   }
 }
+
 // #enddocregion VisualStates

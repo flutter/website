@@ -14,18 +14,11 @@ void main() async {
   // #docregion initializeApp
   WidgetsFlutterBinding.ensureInitialized();
 
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   // #enddocregion initializeApp
 
   // #docregion runApp
-  runApp(
-    Provider.value(
-      value: FirebaseFirestore.instance,
-      child: MyApp(),
-    ),
-  );
+  runApp(Provider.value(value: FirebaseFirestore.instance, child: MyApp()));
   // #enddocregion runApp
 }
 

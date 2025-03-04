@@ -160,11 +160,7 @@ first, create the `Weather` `enum`:
 
 <?code-excerpt "lib/async_weather.dart (weather)"?>
 ```dart
-enum Weather {
-  rainy,
-  windy,
-  sunny,
-}
+enum Weather { rainy, windy, sunny }
 ```
 
 Then, define a simple view model (similar to what was created in SwiftUI), 
@@ -222,15 +218,9 @@ class HomePage extends StatelessWidget {
           // an error or if the data is null, you can decide what to
           // show to the user.
           if (snapshot.hasData) {
-            return Center(
-              child: Text(
-                snapshot.data.toString(),
-              ),
-            );
+            return Center(child: Text(snapshot.data.toString()));
           } else {
-            return const Center(
-              child: CupertinoActivityIndicator(),
-            );
+            return const Center(child: CupertinoActivityIndicator());
           }
         },
       ),

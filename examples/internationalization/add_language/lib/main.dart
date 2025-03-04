@@ -12,10 +12,7 @@ void main() {
         GlobalMaterialLocalizations.delegate,
         NnMaterialLocalizations.delegate, // Add the newly created delegate
       ],
-      supportedLocales: [
-        Locale('en', 'US'),
-        Locale('nn'),
-      ],
+      supportedLocales: [Locale('en', 'US'), Locale('nn')],
       home: Home(),
     ),
     // #enddocregion material-app
@@ -45,8 +42,9 @@ class Home extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.all(50),
             child: Text(
-                'Long press hamburger icon in the app bar (aka the drawer menu)'
-                'to see a localized tooltip for the `nn` locale. '),
+              'Long press hamburger icon in the app bar (aka the drawer menu)'
+              'to see a localized tooltip for the `nn` locale. ',
+            ),
           ),
         ),
       ),

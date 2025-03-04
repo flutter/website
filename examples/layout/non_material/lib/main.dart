@@ -19,13 +19,11 @@ class MyApp extends StatelessWidget {
         child: Text(
           'Hello World',
           textDirection: TextDirection.ltr,
-          style: TextStyle(
-            fontSize: 32,
-            color: Colors.black87,
-          ),
+          style: TextStyle(fontSize: 32, color: Colors.black87),
         ),
       ),
     );
   }
 }
+
 // #enddocregion my-app

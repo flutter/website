@@ -9,10 +9,7 @@ class TabBarDemo1 extends StatelessWidget {
   Widget build(BuildContext context) {
     // #docregion TabController
     return MaterialApp(
-      home: DefaultTabController(
-        length: 3,
-        child: Scaffold(),
-      ),
+      home: DefaultTabController(length: 3, child: Scaffold()),
     );
     // #enddocregion TabController
   }

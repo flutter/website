@@ -10,7 +10,7 @@ void main() => runApp(const LogoApp());
 // #docregion diff
 class AnimatedLogo extends AnimatedWidget {
   const AnimatedLogo({super.key, required Animation<double> animation})
-      : super(listenable: animation);
+    : super(listenable: animation);
 
   // Make the Tweens static because they don't change.
   static final _opacityTween = Tween<double>(begin: 0.1, end: 1);
@@ -48,8 +48,10 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   void initState() {
     super.initState();
     // #docregion animation-controller, tweens
-    controller =
-        AnimationController(duration: const Duration(seconds: 2), vsync: this);
+    controller = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    );
     // #enddocregion animation-controller, tweens
     animation = CurvedAnimation(parent: controller, curve: Curves.easeIn)
       ..addStatusListener((status) {
@@ -101,7 +103,9 @@ class UsedInTutorialTextOnly extends _LogoAppState {
   void usedInTutorialOnly1() {
     // #docregion IntTween
     AnimationController controller = AnimationController(
-        duration: const Duration(milliseconds: 500), vsync: this);
+      duration: const Duration(milliseconds: 500),
+      vsync: this,
+    );
     Animation<int> alpha = IntTween(begin: 0, end: 255).animate(controller);
     // #enddocregion IntTween
   }
@@ -109,9 +113,13 @@ class UsedInTutorialTextOnly extends _LogoAppState {
   void usedInTutorialOnly2() {
     // #docregion IntTween-curve
     AnimationController controller = AnimationController(
-        duration: const Duration(milliseconds: 500), vsync: this);
-    final Animation<double> curve =
-        CurvedAnimation(parent: controller, curve: Curves.easeOut);
+      duration: const Duration(milliseconds: 500),
+      vsync: this,
+    );
+    final Animation<double> curve = CurvedAnimation(
+      parent: controller,
+      curve: Curves.easeOut,
+    );
     Animation<int> alpha = IntTween(begin: 0, end: 255).animate(curve);
     // #enddocregion IntTween-curve
   }
@@ -122,4 +130,5 @@ class ShakeCurve extends Curve {
   @override
   double transform(double t) => sin(t * pi * 2);
 }
+
 // #enddocregion ShakeCurve

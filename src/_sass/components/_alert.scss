@@ -13,10 +13,6 @@ aside.alert {
   // --alert-warning-color: #cea11f;
   // --alert-error-color: #ff4141;
 
-  // TODO(parlough): Remove these resets once bootstrap is removed.
-  margin: 0;
-  border: none;
-
   padding: 0.75rem;
   margin-block-start: 1rem;
   margin-block-end: 1rem;
@@ -29,7 +25,7 @@ aside.alert {
     align-items: center;
     gap: 0.5rem;
     margin-block-end: 0.5rem;
-    font-family: $site-font-family-alt;
+    font-family: $site-font-family-ui;
     font-size: 1.125rem;
     font-weight: 500;
     -webkit-font-smoothing: antialiased;

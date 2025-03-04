@@ -1,4 +1,4 @@
-{% assign cache_bust = '?v=2' %}
+{% assign cache_bust = '?v=4' %}
 {% assign page_url = page.url | regex_replace: '/index$|/index.html$|\.html$|/$' -%}
 
 <!DOCTYPE html>
@@ -72,9 +72,6 @@
     {% endif -%}
   </head>
   <body{% if body_class %} class="{{ body_class }}"{% endif %}>
-  <a href="#document-title" id="skip-to-main">
-    Skip to main content
-  </a>
 
     {% render cookie-notice.html %}
 
@@ -87,6 +84,12 @@
       </noscript>
     {% endif -%}
 
+    {%- if site.showBanner and showBanner != false -%}
+    <div id="site-banner" role="alert">
+      <p>{% render banner.html %}</p>
+    </div>
+    {% endif -%}
+
     {% include header.html %}
 
     <div id="site-below-header">
@@ -96,9 +99,6 @@
     {% render footer.html %}
 
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js" integrity="sha512-7rusk8kGPFynZWu26OKbTeI+QPoYchtxsmPeBqkHIEXJxeun4yJ4ISYe7C6sz9wdxeE1Gk3VxsIWgCZTc+vX3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="{{ '/assets/js/tabs.js' | append: cache_bust }}"></script>
     <script src="{{ '/assets/js/archive.js' | append: cache_bust }}"></script>

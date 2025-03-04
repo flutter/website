@@ -39,18 +39,14 @@ If you are a visual learner, check out the following video:
 To get started, see our cookbooks for Android and iOS:
 
 <div class="card-grid">
-  <a class="card" href="/cookbook/navigation/set-up-app-links">
-    <div class="card-body">
-      <header class="card-title text-center">
-        Android
-      </header>
+  <a class="card outlined-card" href="/cookbook/navigation/set-up-app-links">
+    <div class="card-header text-center">
+      <header class="card-title">Android</header>
     </div>
   </a>
-  <a class="card" href="/cookbook/navigation/set-up-universal-links">
-    <div class="card-body">
-      <header class="card-title text-center">
-        iOS
-      </header>
+  <a class="card outlined-card" href="/cookbook/navigation/set-up-universal-links">
+    <div class="card-header text-center">
+      <header class="card-title">iOS</header>
     </div>
   </a>
 </div>

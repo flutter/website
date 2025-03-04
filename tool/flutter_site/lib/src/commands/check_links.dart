@@ -30,9 +30,8 @@ final class CheckLinksCommand extends Command<int> {
   String get name => 'check-links';
 
   @override
-  Future<int> run() async => _checkLinks(
-        checkExternal: argResults.get<bool>(_externalFlag, false),
-      );
+  Future<int> run() async =>
+      _checkLinks(checkExternal: argResults.get<bool>(_externalFlag, false));
 }
 
 /// The port that the firebase emulator runs on by default.
@@ -57,25 +56,22 @@ Future<int> _checkLinks({bool checkExternal = false}) async {
   }
 
   print('Starting the Firebase hosting emulator asynchronously...');
-  final emulatorProcess = await Process.start(
-    'npm',
-    const [
-      'exec',
-      '--',
-      'firebase',
-      'emulators:start',
-      '--only',
-      'hosting',
-      '--project',
-      'default',
-      '--log-verbosity',
-      'QUIET',
-    ],
-    mode: ProcessStartMode.inheritStdio,
-  );
+  final emulatorProcess = await Process.start('npm', const [
+    'exec',
+    '--',
+    'firebase',
+    'emulators:start',
+    '--only',
+    'hosting',
+    '--project',
+    'default',
+    '--log-verbosity',
+    'QUIET',
+  ], mode: ProcessStartMode.inheritStdio);
 
+  print('Connecting to the emulator...');
   // Give the emulator a few seconds to start up.
-  await Future<void>.delayed(const Duration(seconds: 5));
+  await Future<void>.delayed(const Duration(seconds: 8));
 
   try {
     // Check to see if the emulator is running.
@@ -85,15 +81,12 @@ Future<int> _checkLinks({bool checkExternal = false}) async {
     }
 
     try {
-      final result = await linkcheck.run(
-        [
-          ':$_emulatorPort',
-          '--skip-file',
-          _skipFilePath,
-          if (checkExternal) 'external'
-        ],
-        stdout,
-      );
+      final result = await linkcheck.run([
+        ':$_emulatorPort',
+        '--skip-file',
+        _skipFilePath,
+        if (checkExternal) 'external',
+      ], stdout);
       await Future<void>.delayed(const Duration(seconds: 1));
       return result;
     } catch (e, stackTrace) {
@@ -104,8 +97,15 @@ Future<int> _checkLinks({bool checkExternal = false}) async {
     }
   } finally {
     print('Shutting down Firebase hosting emulator...');
-    emulatorProcess.kill();
+    // Try to gracefully terminate the process by sending two sigterm signals.
+    emulatorProcess.kill(ProcessSignal.sigterm);
+    await Future<void>.delayed(const Duration(seconds: 1));
+    emulatorProcess.kill(ProcessSignal.sigterm);
+    await Future<void>.delayed(const Duration(seconds: 3));
+
+    // If the emulator hasn't shut down by done, try to force terminate it.
     emulatorProcess.kill(ProcessSignal.sigkill);
+    await Future<void>.delayed(const Duration(seconds: 1));
     print('Done!\n');
   }
 }
@@ -117,8 +117,7 @@ Future<bool> _isPortInUse(int port) async {
     final server = await ServerSocket.bind(
       InternetAddress.loopbackIPv4,
       port,
-      shared: false,
-    ).timeout(const Duration(seconds: 3)); // Ignore timeout.
+    ).timeout(const Duration(seconds: 5)); // Ignore timeout.
 
     // If we reach this line, the port was available,
     // and we know the Firebase hosting emulator is not running.

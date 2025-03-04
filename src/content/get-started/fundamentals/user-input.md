@@ -227,7 +227,7 @@ Widget build(BuildContext context) {
 > [Rich Text Editor code][]
 
 [Rich Text (Widget of the Week)]: {{site.youtube-site}}/watch?v=rykDVh-QFfw
-[Rich Text Editor]: https://flutter.github.io/samples/rich_text_editor.html
+[Rich Text Editor]: https://github.com/flutter/samples/tree/main/rich_text_editor
 [Rich Text Editor code]: {{site.github}}/flutter/samples/tree/main/simplistic_editor
 
 ### `TextField`
@@ -360,7 +360,7 @@ Widget build(BuildContext context) {
 <span class="material-symbols" aria-hidden="true">menu_book</span> **API Docs**: [`TextField`][] • [`RichText`][] • [`SelectableText`][] • [`Form`][]
 
 [Build a form with validation]: /cookbook/forms/validation
-[Form app]: https://flutter.github.io/samples/web/form_app/
+[Form app]: https://github.com/flutter/samples/tree/main/form_app/
 [Form app code]: {{site.github}}/flutter/samples/tree/main/form_app
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [`TextField`]: {{site.api}}/flutter/material/TextField-class.html
@@ -1110,7 +1110,7 @@ the `Dismissible` widget described in the previous section.
 
 [Material Widget Library]: /ui/widgets/material
 [Material Library API docs]: {{site.api}}/flutter/material/material-library.html
-[Material 3 Demo]: https://flutter.github.io/samples/web/material_3_demo/
+[Material 3 Demo]: https://github.com/flutter/samples/tree/main/material_3_demo
 
 [`flutter_slidable`]: {{site.pub}}/packages/flutter_slidable
 [flutter_slidable (Package of the Week)]: {{site.youtube-site}}/watch?v=QFcFEpFmNJ8

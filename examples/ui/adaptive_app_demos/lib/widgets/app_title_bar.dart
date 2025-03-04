@@ -57,8 +57,8 @@ class AppTitleBar extends StatelessWidget {
                 MaximizeWindowButton(colors: buttonColors),
                 CloseWindowButton(colors: closeButtonColors),
               ],
-            )
-          ]
+            ),
+          ],
         ],
       ),
     );

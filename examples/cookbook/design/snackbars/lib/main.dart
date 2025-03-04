@@ -11,9 +11,7 @@ class SnackBarDemo extends StatelessWidget {
       title: 'SnackBar Demo',
       // #docregion Scaffold
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('SnackBar Demo'),
-        ),
+        appBar: AppBar(title: const Text('SnackBar Demo')),
         body: const SnackBarPage(),
       ),
       // #enddocregion Scaffold

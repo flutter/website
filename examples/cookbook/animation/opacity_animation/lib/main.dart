@@ -18,10 +18,7 @@ class MyApp extends StatelessWidget {
 // The StatefulWidget's job is to take data and create a State class.
 // In this case, the widget takes a title, and creates a _MyHomePageState.
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({
-    super.key,
-    required this.title,
-  });
+  const MyHomePage({super.key, required this.title});
 
   final String title;
 
@@ -38,9 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      appBar: AppBar(title: Text(widget.title)),
       body: Center(
         // #docregion AnimatedOpacity
         child: AnimatedOpacity(
@@ -50,11 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
           duration: const Duration(milliseconds: 500),
           // The green box must be a child of the AnimatedOpacity widget.
           // #docregion Container
-          child: Container(
-            width: 200,
-            height: 200,
-            color: Colors.green,
-          ),
+          child: Container(width: 200, height: 200, color: Colors.green),
           // #enddocregion Container
         ),
         // #enddocregion AnimatedOpacity

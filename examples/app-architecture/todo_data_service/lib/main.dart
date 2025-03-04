@@ -24,29 +24,21 @@ void main() {
   } else if (Platform.isLinux || Platform.isWindows || Platform.isMacOS) {
     // Initialize FFI SQLite
     sqfliteFfiInit();
-    databaseService = DatabaseService(
-      databaseFactory: databaseFactoryFfi,
-    );
+    databaseService = DatabaseService(databaseFactory: databaseFactoryFfi);
   } else {
     // Use default native SQLite
-    databaseService = DatabaseService(
-      databaseFactory: databaseFactory,
-    );
+    databaseService = DatabaseService(databaseFactory: databaseFactory);
   }
 
-// #docregion MainTheme
+  // #docregion MainTheme
   runApp(
     MainApp(
-// #enddocregion MainTodo
-      themeRepository: ThemeRepository(
-        SharedPreferencesService(),
-      ),
-// #enddocregion MainTheme
-// #docregion MainTodo
-      todoRepository: TodoRepository(
-        database: databaseService,
-      ),
-// #docregion MainTheme
+      // #enddocregion MainTodo
+      themeRepository: ThemeRepository(SharedPreferencesService()),
+      // #enddocregion MainTheme
+      // #docregion MainTodo
+      todoRepository: TodoRepository(database: databaseService),
+      // #docregion MainTheme
     ),
   );
 }
@@ -99,21 +91,17 @@ class _MainAppState extends State<MainApp> {
           actions: [
             // #docregion AddThemeSwitch
             ThemeSwitch(
-              viewmodel: ThemeSwitchViewModel(
-                widget.themeRepository,
-              ),
-            )
+              viewmodel: ThemeSwitchViewModel(widget.themeRepository),
+            ),
             // #enddocregion AddThemeSwitch
           ],
           title: const Text('ToDo List'),
         ),
-// #docregion TodoListScreen
+        // #docregion TodoListScreen
         body: TodoListScreen(
-          viewModel: TodoListViewModel(
-            todoRepository: widget.todoRepository,
-          ),
+          viewModel: TodoListViewModel(todoRepository: widget.todoRepository),
         ),
-// #enddocregion TodoListScreen
+        // #enddocregion TodoListScreen
       ),
     );
   }

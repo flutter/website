@@ -147,8 +147,8 @@ and passes in the text controller value.
 <?code-excerpt "lib/ui/todo_list/widgets/todo_list_screen.dart (FilledButton)" replace="/^\),$/)/g"?>
 ```dart
 FilledButton.icon(
-  onPressed: () =>
-      widget.viewModel.add.execute(_controller.text),
+  onPressed:
+      () => widget.viewModel.add.execute(_controller.text),
   label: const Text('Add'),
   icon: const Icon(Icons.add),
 )
@@ -279,9 +279,7 @@ It implements the `fetchTodos()`, `createTodo()`, and `deleteTodo()` methods.
 <?code-excerpt "lib/data/repositories/todo_repository.dart (TodoRepository)"?>
 ```dart
 class TodoRepository {
-  TodoRepository({
-    required DatabaseService database,
-  }) : _database = database;
+  TodoRepository({required DatabaseService database}) : _database = database;
 
   final DatabaseService _database;
 
@@ -353,9 +351,7 @@ The `id` is generated as mentioned before.
 ```dart
 Future<Result<Todo>> insert(String task) async {
   try {
-    final id = await _database!.insert(_kTableTodo, {
-      _kColumnTask: task,
-    });
+    final id = await _database!.insert(_kTableTodo, {_kColumnTask: task});
     return Result.ok(Todo(id: id, task: task));
   } on Exception catch (e) {
     return Result.error(e);
@@ -379,14 +375,15 @@ Future<Result<List<Todo>>> getAll() async {
       _kTableTodo,
       columns: [_kColumnId, _kColumnTask],
     );
-    final list = entries
-        .map(
-          (element) => Todo(
-            id: element[_kColumnId] as int,
-            task: element[_kColumnTask] as String,
-          ),
-        )
-        .toList();
+    final list =
+        entries
+            .map(
+              (element) => Todo(
+                id: element[_kColumnId] as int,
+                task: element[_kColumnTask] as String,
+              ),
+            )
+            .toList();
     return Result.ok(list);
   } on Exception catch (e) {
     return Result.error(e);
@@ -404,8 +401,11 @@ indicating that something went wrong.
 ```dart
 Future<Result<void>> delete(int id) async {
   try {
-    final rowsDeleted = await _database!
-        .delete(_kTableTodo, where: '$_kColumnId = ?', whereArgs: [id]);
+    final rowsDeleted = await _database!.delete(
+      _kTableTodo,
+      where: '$_kColumnId = ?',
+      whereArgs: [id],
+    );
     if (rowsDeleted == 0) {
       return Result.error(Exception('No todo found with id $id'));
     }
@@ -444,22 +444,16 @@ void main() {
   } else if (Platform.isLinux || Platform.isWindows || Platform.isMacOS) {
     // Initialize FFI SQLite
     sqfliteFfiInit();
-    databaseService = DatabaseService(
-      databaseFactory: databaseFactoryFfi,
-    );
+    databaseService = DatabaseService(databaseFactory: databaseFactoryFfi);
   } else {
     // Use default native SQLite
-    databaseService = DatabaseService(
-      databaseFactory: databaseFactory,
-    );
+    databaseService = DatabaseService(databaseFactory: databaseFactory);
   }
 
   runApp(
     MainApp(
-// ···
-      todoRepository: TodoRepository(
-        database: databaseService,
-      ),
+      // ···
+      todoRepository: TodoRepository(database: databaseService),
     ),
   );
 }
@@ -472,9 +466,7 @@ and pass the `TodoRepository` to it as dependency.
 <?code-excerpt "lib/main.dart (TodoListScreen)" replace="/body: //g;/^\),$/)/g"?>
 ```dart
 TodoListScreen(
-  viewModel: TodoListViewModel(
-    todoRepository: widget.todoRepository,
-  ),
+  viewModel: TodoListViewModel(todoRepository: widget.todoRepository),
 )
 ```
 

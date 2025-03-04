@@ -21,27 +21,25 @@ js: [{url: '/assets/js/temp/macos-install-redirector.js'}]
   {% assign targetlink = target | downcase %}
   {% endcase %}
 
-  <a class="card card-app-type card-macos" id="install-{{os | downcase}}" href="/get-started/install/{{os | downcase}}/{{targetlink}}">
-    <div class="card-body">
-      <header class="card-title text-center">
-        <span class="d-block h1">
-          {% assign icon = target | downcase -%}
-          {% case icon %}
-          {% when 'desktop' -%}
-            <span class="material-symbols">laptop_mac</span>
-          {% when 'ios' -%}
-            <span class="material-symbols">phone_iphone</span>
-          {% when 'android' -%}
-            <span class="material-symbols">phone_android</span>
-          {% when 'web' -%}
-            <span class="material-symbols">web</span>
-          {% endcase -%}
-        </span>
-        <span class="text-muted">{{ target }}</span>
-        {% if icon == 'ios' -%}
-          <div class="card-subtitle">Recommended</div>
-        {% endif -%}
-      </header>
+  <a class="card outlined-card install-card card-macos" id="install-{{os | downcase}}" href="/get-started/install/{{os | downcase}}/{{targetlink}}">
+    {% assign icon = target | downcase -%}
+    <div class="card-leading">
+      {% case icon %}
+      {% when 'desktop' -%}
+        <span class="material-symbols" aria-hidden="true">laptop_mac</span>
+      {% when 'ios' -%}
+        <span class="material-symbols" aria-hidden="true">phone_iphone</span>
+      {% when 'android' -%}
+        <span class="material-symbols" aria-hidden="true">phone_android</span>
+      {% when 'web' -%}
+        <span class="material-symbols" aria-hidden="true">web</span>
+      {% endcase -%}
+    </div>
+    <div class="card-header text-center">
+      <header class="card-title">{{target}}</header>
+      {% if icon == 'ios' -%}
+        <span class="card-subtitle">Recommended</span>
+      {% endif -%}
     </div>
   </a>
 

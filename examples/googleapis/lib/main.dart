@@ -24,12 +24,7 @@ import 'package:googleapis/youtube/v3.dart';
 const _title = 'My YouTube Favorites';
 
 void main() {
-  runApp(
-    const MaterialApp(
-      title: _title,
-      home: _LikedVideosWidget(),
-    ),
-  );
+  runApp(const MaterialApp(title: _title, home: _LikedVideosWidget()));
 }
 
 class _LikedVideosWidget extends StatefulWidget {
@@ -66,9 +61,7 @@ class _LikedVideosWidgetState extends State<_LikedVideosWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(_title),
-      ),
+      appBar: AppBar(title: const Text(_title)),
       body: Center(
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 520),
@@ -88,23 +81,15 @@ class _LikedVideosWidgetState extends State<_LikedVideosWidget> {
           padding: EdgeInsets.all(8),
           child: Text('You are not currently signed in.'),
         ),
-        ElevatedButton(
-          onPressed: _onSignIn,
-          child: const Text('Sign in'),
-        ),
+        ElevatedButton(onPressed: _onSignIn, child: const Text('Sign in')),
       ],
       if (_currentUser != null) ...[
         ListTile(
-          leading: GoogleUserCircleAvatar(
-            identity: _currentUser!,
-          ),
+          leading: GoogleUserCircleAvatar(identity: _currentUser!),
           title: Text(_currentUser!.displayName ?? ''),
           subtitle: Text(_currentUser!.email),
         ),
-        ElevatedButton(
-          onPressed: _onSignOut,
-          child: const Text('Sign out'),
-        ),
+        ElevatedButton(onPressed: _onSignOut, child: const Text('Sign out')),
         if (_favoriteVideos != null)
           ListView.builder(
             shrinkWrap: true,
@@ -177,18 +162,18 @@ class _LikedVideosWidgetState extends State<_LikedVideosWidget> {
       }
     }
 
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-      content: Text(message),
-    ));
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text(message)));
   }
 
   static const _errorMessageMap = {
     'Not a valid origin for the client':
         'You must run your web app on a registered port. '
-            'Trying setting an explicit port with '
-            '`flutter run --web-port [PORT]`.',
+        'Trying setting an explicit port with '
+        '`flutter run --web-port [PORT]`.',
     'Failed to load network image':
         'Cannot display cross-domain images with CanvasKit renderer. '
-            'Try the Flutter Web HTML renderer.',
+        'Try the Flutter Web HTML renderer.',
   };
 }

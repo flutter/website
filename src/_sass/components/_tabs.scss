@@ -1,0 +1,61 @@
+@use '../base/mixins';
+@use '../base/variables' as *;
+
+.tab-pane {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+ul.nav-tabs {
+  list-style: none;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  padding: 0.375rem;
+  border-radius: 0.125rem;
+  background-color: $site-color-codeblock-bg;
+  gap: 0.5rem;
+  overflow-x: scroll;
+  scrollbar-width: thin;
+
+  li {
+    margin: 0;
+  }
+
+  a {
+    font-family: $site-font-family-ui;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.125rem;
+    white-space: nowrap;
+    user-select: none;
+
+    &:hover {
+      @include mixins.interaction-style(4%);
+    }
+
+    &.active {
+      background-color: $site-color-primary;
+      color: $site-color-white;
+    }
+
+    &:active {
+      @include mixins.interaction-style(8%);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--focus-outline-color);
+
+      a {
+        outline: none;
+      }
+    }
+  }
+}

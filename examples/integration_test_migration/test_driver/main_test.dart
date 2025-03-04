@@ -15,11 +15,13 @@ void main() {
     });
 
     // #docregion wait-for
-    test('do not select any item, verify please select text is displayed',
-        () async {
-      // Wait for 'please select' text is displayed
-      await driver.waitFor(find.text('Please select a plant from the list.'));
-    });
+    test(
+      'do not select any item, verify please select text is displayed',
+      () async {
+        // Wait for 'please select' text is displayed
+        await driver.waitFor(find.text('Please select a plant from the list.'));
+      },
+    );
     // #enddocregion wait-for
 
     // #docregion wait-for-absent
@@ -37,8 +39,9 @@ void main() {
       await driver.waitFor(find.text('Alnus'));
 
       // 'please select' text should not be displayed
-      await driver
-          .waitForAbsent(find.text('Please select a plant from the list.'));
+      await driver.waitForAbsent(
+        find.text('Please select a plant from the list.'),
+      );
     });
     // #enddocregion wait-for-absent
 
@@ -69,8 +72,9 @@ void main() {
       await driver.waitFor(find.text('Curcuma zedoaria'));
 
       // 'please select' text should not be displayed
-      await driver
-          .waitForAbsent(find.text('Please select a plant from the list.'));
+      await driver.waitForAbsent(
+        find.text('Please select a plant from the list.'),
+      );
     });
     // #enddocregion scroll
   });

@@ -1,124 +1,142 @@
 @use '../base/variables' as *;
 
-.site-toc {
-  ul {
-    padding-left: 0;
-    margin-left: 0;
-    list-style: none;
-    flex-direction: column;
-  }
-
-  &__title {
-    font-family: $site-font-family-alt;
-    font-size: 18px;
-    margin-bottom: 0.5rem;
-  }
-}
-
-//noinspection CssReplaceWithShorthandSafely
-#site-toc--side {
-  padding: $site-content-top-padding;
-  padding-left: $site-content-top-padding / 2;
+#toc-top {
+  font-family: $site-font-family-ui;
 
   display: none;
-  position: sticky;
-  top: $site-header-height;
-  order: 2;
-  width: 15rem;
-  min-width: 15rem;
-  height: fit-content;
-  max-height: calc(100vh - 3.25rem);
-  overflow-y: auto;
-  overflow-wrap: break-word;
-  z-index: 5;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+  height: $site-inline-toc-height;
+
+  @media (min-width: 240px) {
+    display: flex;
+  }
 
   @media (min-width: 1200px) {
-    display: block;
+    display: none;
   }
 
-  .toc-entry {
-    padding-bottom: 0.5rem;
-    font-size: .875rem;
+  position: sticky;
+  top: $site-header-height + 0.1rem;
 
-    .nav {
-      padding-top: 0.5rem;
-      padding-left: 1rem;
-      display: block;
+  background: $site-color-white;
+  border-bottom: 0.1rem solid $sidenav-divider-color;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .05);
+
+  font-size: 0.875rem;
+  z-index: $site-z-subnav;
+
+  > button.dropdown-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    line-height: 1.25rem;
+    padding: .45rem .7rem;
+    width: 100%;
+    border-radius: 0;
+    margin: 2px;
+
+    > span {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .material-symbols {
+      user-select: none;
+      color: $site-color-nav-links;
+      font-size: 20px;
     }
   }
 
-  .nav-link {
-    color: $site-color-body-light;
-    font-size: .875rem;
-    line-height: normal;
-    padding: 1px 0;
+  .toc-intro {
+    white-space: nowrap;
 
-    &:hover {
-      color: $site-color-primary;
+    .material-symbols {
+      margin-right: 0.25rem;
+    }
+  }
+
+  .toc-current {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow: hidden;
+
+    display: none;
+    @media (min-width: 320px) {
+      display: flex;
+    }
+  }
+
+  #current-header {
+    color: $site-color-nav-links;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .dropdown-content {
+    position: absolute;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .05);
+    border-bottom: 0.1rem solid $sidenav-divider-color;
+    border-radius: 0;
+
+    top: $site-inline-toc-height;
+    left: 0;
+    max-height: calc(75vh - $site-header-height);
+    min-width: 100%;
+    max-width: 100%;
+
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    overscroll-behavior: contain;
+
+    padding: 0.2rem 0.4rem;
+
+    @media (min-width: 420px) {
+      border: none;
+      border-radius: 0.4rem;
+      box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.2);
+
+      top: $site-inline-toc-height + .75rem;
+      left: 0.75rem;
+
+      min-width: 18rem;
+      max-width: 24rem;
     }
 
-    &.active {
-      color: $site-color-primary;
+    > a {
+      margin: 0.4rem 0;
+      padding: 0.1rem;
+      font-size: 1rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      color: $site-color-nav-links;
+      font-weight: 500;
+
+      .material-symbols {
+        font-size: 1.5rem;
+        user-select: none;
+      }
+
+      span:last-child {
+        margin-left: 3px;
+      }
 
       &:hover {
-        color: $flutter-color-dark-blue;
-      }
-    }
-  }
-
-  body.hide_toc & {
-    display: none;
-  }
-}
-
-#site-toc--inline {
-  background: #f5f5f7;
-  padding: 1rem 1.5rem;
-  margin-bottom: 1rem;
-
-  @media (min-width: 1200px) {
-    display: none;
-  }
-
-  .toc-entry ul {
-    padding-left: 1rem;
-  }
-
-  > .section-nav {
-    margin-bottom: 0.25rem;
-  }
-
-  &.toc-collapsible {
-    .site-toc--inline__toggle {
-      float: right;
-    }
-
-    .toc-toggle-down, .toc-toggle-more-items {
-      display: none;
-    }
-
-    .toc-toggle-more-items {
-      float: unset;
-    }
-
-    .toc-toggle-up, .toc-toggle-down, .toc-toggle-more-items {
-      user-select: none;
-      cursor: pointer;
-    }
-
-    &.toc-collapsed {
-      .section-nav {
-        max-height: 72px;
-        overflow: hidden;
+        color: $site-color-primary;
       }
 
-      .toc-toggle-up {
-        display: none;
+      &:active {
+        color: color-mix(in srgb, $site-color-primary, #000 16%);
       }
+    }
 
-      .toc-toggle-down, .toc-toggle-more-items {
-        display: inline-block;
-      }
+    > nav {
+      padding: 0.6rem 0 0.8rem;
     }
   }
 }

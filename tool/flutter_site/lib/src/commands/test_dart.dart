@@ -27,14 +27,11 @@ final class TestDartCommand extends Command<int> {
   String get name => 'test-dart';
 
   @override
-  Future<int> run() async => _testDart(
-        verboseLogging: argResults.get<bool>(_verboseFlag, false),
-      );
+  Future<int> run() async =>
+      _testDart(verboseLogging: argResults.get<bool>(_verboseFlag, false));
 }
 
-Future<int> _testDart({
-  bool verboseLogging = false,
-}) async {
+Future<int> _testDart({bool verboseLogging = false}) async {
   final directoriesToTest = [
     path.join('tool', 'flutter_site'),
     ...exampleProjectDirectories,
@@ -44,7 +41,7 @@ Future<int> _testDart({
 
   final failedTests = <String>[
     for (final directory in directoriesToTest)
-      if (!(await testsPassInDirectory(directory, verboseLogging))) directory
+      if (!(await testsPassInDirectory(directory, verboseLogging))) directory,
   ];
 
   if (failedTests.isNotEmpty) {
@@ -62,15 +59,11 @@ Future<bool> testsPassInDirectory(String directory, bool verboseLogging) async {
     print('Testing code in $directory...');
   }
 
-  final flutterTestOutput = await Process.run(
-    'flutter',
-    [
-      'test',
-      '--reporter',
-      'expanded', // Non-animated expanded output looks better in CI and logs.
-    ],
-    workingDirectory: directory,
-  );
+  final flutterTestOutput = await Process.run('flutter', [
+    'test',
+    '--reporter',
+    'expanded', // Non-animated expanded output looks better in CI and logs.
+  ], workingDirectory: directory);
 
   if (flutterTestOutput.exitCode != 0) {
     final normalOutput = flutterTestOutput.stdout.toString();

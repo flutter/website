@@ -14,6 +14,7 @@ class MyButton extends StatelessWidget {
       child: const Text('Button'),
     );
   }
+
   // #enddocregion on-pressed
 }
 
@@ -29,9 +30,7 @@ class SampleTapApp extends StatelessWidget {
           onTap: () {
             developer.log('tap');
           },
-          child: const FlutterLogo(
-            size: 200,
-          ),
+          child: const FlutterLogo(size: 200),
         ),
       ),
     );
@@ -59,10 +58,7 @@ class _SampleAppState extends State<SampleApp>
       vsync: this,
       duration: const Duration(milliseconds: 2000),
     );
-    curve = CurvedAnimation(
-      parent: controller,
-      curve: Curves.easeIn,
-    );
+    curve = CurvedAnimation(parent: controller, curve: Curves.easeIn);
   }
 
   @override
@@ -79,13 +75,12 @@ class _SampleAppState extends State<SampleApp>
           },
           child: RotationTransition(
             turns: curve,
-            child: const FlutterLogo(
-              size: 200,
-            ),
+            child: const FlutterLogo(size: 200),
           ),
         ),
       ),
     );
   }
 }
+
 // #enddocregion sample-app

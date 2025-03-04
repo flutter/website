@@ -114,9 +114,7 @@ ListenableBuilder(
   listenable: widget.viewModel,
   builder: (context, _) {
     if (widget.viewModel.running) {
-      return const Center(
-        child: CircularProgressIndicator(),
-      );
+      return const Center(child: CircularProgressIndicator());
     }
     // ···
   },
@@ -133,7 +131,6 @@ void load() {
   }
   // load user
 }
-
 ```
 
 Managing the state of an action can get complicated 
@@ -372,9 +369,7 @@ ListenableBuilder(
   listenable: widget.viewModel.load,
   builder: (context, child) {
     if (widget.viewModel.load.running) {
-      return const Center(
-        child: CircularProgressIndicator(),
-      );
+      return const Center(child: CircularProgressIndicator());
     }
   // ···
 )
@@ -418,9 +413,7 @@ body: ListenableBuilder(
   listenable: widget.viewModel.load,
   builder: (context, child) {
     if (widget.viewModel.load.running) {
-      return const Center(
-        child: CircularProgressIndicator(),
-      );
+      return const Center(child: CircularProgressIndicator());
     }
 
     if (widget.viewModel.load.error != null) {

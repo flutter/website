@@ -44,12 +44,7 @@ class SignUpScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       body: const Center(
-        child: SizedBox(
-          width: 400,
-          child: Card(
-            child: SignUpForm(),
-          ),
-        ),
+        child: SizedBox(width: 400, child: Card(child: SignUpForm())),
       ),
     );
   }

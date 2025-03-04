@@ -7,9 +7,7 @@ class SimpleImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // #docregion SimpleCachedImage
-    return CachedNetworkImage(
-      imageUrl: 'https://picsum.photos/250?image=9',
-    );
+    return CachedNetworkImage(imageUrl: 'https://picsum.photos/250?image=9');
     // #enddocregion SimpleCachedImage
   }
 }

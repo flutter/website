@@ -7,22 +7,22 @@
 
 ## {{sub.name}}
 
-<div class="card-grid">
+<div class="card-grid material-cards">
   {% for comp in components -%}
-  <div class="card">
-    <a href="{{comp.link}}">
-      <div class="card-image-holder-material-3" style="--bg-color: {{sub.color}}">
-        <img alt="Rendered example of the {{comp.name}} Material widget." src="{{comp.image.src}}">
-        <div class="card-image-material-3-hover">
-          <img alt="Decorated background for material widget visualizations." src="{{comp.hoverBackground.src}}" aria-hidden="true">
-        </div>
+  <a class="card outlined-card" href="{{comp.link}}">
+    <div class="card-image-holder-material-3" style="--bg-color: {{sub.color}}">
+      <img alt="Rendered example of the {{comp.name}} Material widget." src="{{comp.image.src}}">
+      <div class="card-image-material-3-hover">
+        <img alt="Decorated background for material widget visualizations." src="{{comp.hoverBackground.src}}" aria-hidden="true">
       </div>
-    </a>
-    <div class="card-body">
-      <a href="{{comp.link}}"><header class="card-title card-title-material-3">{{comp.name}}</header></a>
-      <p class="card-text">{{ comp.description | truncatewords: 25 }}</p>
     </div>
-  </div>
+    <div class="card-header">
+      <header class="card-title">{{comp.name}}</header>
+    </div>
+    <div class="card-content">
+      <p>{{ comp.description | truncatewords: 25 }}</p>
+    </div>
+  </a>
   {% endfor -%}
 </div>
 

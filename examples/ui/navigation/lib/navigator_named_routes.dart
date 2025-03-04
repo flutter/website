@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(
-    title: 'Navigation with named routes',
-    initialRoute: '/',
-    routes: {
-      '/': (context) => const FirstScreen(),
-      '/second': (context) => const SecondScreen(),
-    },
-  ));
+  runApp(
+    MaterialApp(
+      title: 'Navigation with named routes',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const FirstScreen(),
+        '/second': (context) => const SecondScreen(),
+      },
+    ),
+  );
 }
 
 class FirstScreen extends StatelessWidget {
@@ -16,9 +18,7 @@ class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('First Screen'),
-      ),
+      appBar: AppBar(title: const Text('First Screen')),
       body: Center(
         child: ElevatedButton(
           // #docregion push-route
@@ -38,9 +38,7 @@ class SecondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Second Screen'),
-      ),
+      appBar: AppBar(title: const Text('Second Screen')),
       body: Center(
         child: ElevatedButton(
           child: const Text('Pop current screen'),

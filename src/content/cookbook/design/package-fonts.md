@@ -85,9 +85,7 @@ which package the font belongs to.
 ```dart
 child: Text(
   'Using the Raleway font from the awesome_package',
-  style: TextStyle(
-    fontFamily: 'Raleway',
-  ),
+  style: TextStyle(fontFamily: 'Raleway'),
 ),
 ```
 
@@ -136,10 +134,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Package Fonts',
-      home: MyHomePage(),
-    );
+    return const MaterialApp(title: 'Package Fonts', home: MyHomePage());
   }
 }
 
@@ -155,9 +150,7 @@ class MyHomePage extends StatelessWidget {
         // This Text widget uses the Raleway font.
         child: Text(
           'Using the Raleway font from the awesome_package',
-          style: TextStyle(
-            fontFamily: 'Raleway',
-          ),
+          style: TextStyle(fontFamily: 'Raleway'),
         ),
       ),
     );

@@ -7,6 +7,6 @@ class PlayingCard {
   }
 
   Map<String, dynamic> toJson() => {
-        // Nothing
-      };
+    // Nothing
+  };
 }

@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", function(_) {
 
   osButton.classList.add('card-highlight');
 
-  const header = osButton.querySelector('.card-title');
+  const header = osButton.querySelector('.card-header');
   if (!header) return;
-  const currentSubtitle = document.createElement('div');
+  const currentSubtitle = document.createElement('span');
   currentSubtitle.textContent = 'Current device';
   currentSubtitle.classList.add('card-subtitle');
   header.appendChild(currentSubtitle);

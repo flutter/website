@@ -7,9 +7,7 @@ class MyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     // #docregion input-hint
     return const Center(
-      child: TextField(
-        decoration: InputDecoration(hintText: 'This is a hint'),
-      ),
+      child: TextField(decoration: InputDecoration(hintText: 'This is a hint')),
     );
     // #enddocregion input-hint
   }

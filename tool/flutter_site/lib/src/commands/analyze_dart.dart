@@ -27,14 +27,11 @@ final class AnalyzeDartCommand extends Command<int> {
   String get name => 'analyze-dart';
 
   @override
-  Future<int> run() async => analyzeDart(
-        verboseLogging: argResults.get<bool>(_verboseFlag, false),
-      );
+  Future<int> run() async =>
+      analyzeDart(verboseLogging: argResults.get<bool>(_verboseFlag, false));
 }
 
-int analyzeDart({
-  bool verboseLogging = false,
-}) {
+int analyzeDart({bool verboseLogging = false}) {
   final directoriesToAnalyze = [
     path.join('tool', 'flutter_site'),
     path.join('examples'),
@@ -54,11 +51,10 @@ int analyzeDart({
       return pubGetResult;
     }
 
-    final flutterAnalyzeOutput = Process.runSync(
-      'flutter',
-      const ['analyze', '.'],
-      workingDirectory: directory,
-    );
+    final flutterAnalyzeOutput = Process.runSync('flutter', const [
+      'analyze',
+      '.',
+    ], workingDirectory: directory);
 
     if (flutterAnalyzeOutput.exitCode != 0) {
       final normalOutput = flutterAnalyzeOutput.stdout.toString();

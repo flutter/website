@@ -92,9 +92,7 @@ class MyApp extends StatelessWidget {
 
     return const MaterialApp(
       title: appTitle,
-      home: OrientationList(
-        title: appTitle,
-      ),
+      home: OrientationList(title: appTitle),
     );
   }
 }
@@ -111,15 +109,15 @@ class OrientationList extends StatelessWidget {
       body: OrientationBuilder(
         builder: (context, orientation) {
           return GridView.count(
-            // Create a grid with 2 columns in portrait mode, or 3 columns in
-            // landscape mode.
+            // Create a grid with 2 columns in portrait mode, or
+            // 3 columns in landscape mode.
             crossAxisCount: orientation == Orientation.portrait ? 2 : 3,
-            // Generate 100 widgets that display their index in the List.
+            // Generate 100 widgets that display their index in the list.
             children: List.generate(100, (index) {
               return Center(
                 child: Text(
                   'Item $index',
-                  style: Theme.of(context).textTheme.displayLarge,
+                  style: TextTheme.of(context).displayLarge,
                 ),
               );
             }),
@@ -159,9 +157,7 @@ For a list of all the possible values, check out [`DeviceOrientation`].
 ```dart
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-  ]);
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(const MyApp());
 }
 ```

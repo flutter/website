@@ -35,14 +35,12 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: const Center(
-          child: Text('Hello World!'),
-        ),
+        body: const Center(child: Text('Hello World!')),
         floatingActionButton: FloatingActionButton(
           // SECTION 3: Call `_launchAndroidActivity` somewhere.
           onPressed: _launchAndroidActivity,
-          // SECTION 3: End
 
+          // SECTION 3: End
           tooltip: 'Launch Android activity',
           child: const Icon(Icons.launch),
         ),

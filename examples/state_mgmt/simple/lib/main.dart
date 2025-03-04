@@ -45,9 +45,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter State Management Code Excerpts',
       routes: _routes,
-      home: const Material(
-        child: _Menu(),
-      ),
+      home: const Material(child: _Menu()),
     );
   }
 }
@@ -60,16 +58,14 @@ class _Menu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Simple state management'),
-      ),
+      appBar: AppBar(title: const Text('Simple state management')),
       body: Wrap(
         children: [
           for (final name in _routes.keys)
             TextButton(
               onPressed: () => Navigator.pushNamed(context, name),
               child: Text(name),
-            )
+            ),
         ],
       ),
     );

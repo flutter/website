@@ -14,24 +14,22 @@ js: [{url: '/assets/js/temp/linux-install-redirector.js'}]
 
 <div class="card-grid narrow">
 {% for target in target-list %}
-  <a class="card card-app-type card-linux" id="install-{{os | remove: ' ' | downcase}}" href="/get-started/install/{{os | remove: ' ' | downcase}}/{{target | downcase}}">
-    <div class="card-body">
-      <header class="card-title text-center">
-        <span class="d-block h1">
-          {% assign icon = target | downcase -%}
-          {% if icon == 'desktop' -%}
-            <span class="material-symbols">desktop_windows</span>
-          {% elsif icon == 'android' -%}
-            <span class="material-symbols">phone_android</span>
-          {% else -%}
-            <span class="material-symbols">web</span>
-          {% endif -%}
-        </span>
-        <span class="text-muted text-nowrap">{{target}}</span>
-        {% if icon == 'android' -%}
-          <div class="card-subtitle">Recommended</div>
-        {% endif -%}
-      </header>
+  <a class="card outlined-card install-card card-linux" id="install-{{os | remove: ' ' | downcase}}" href="/get-started/install/{{os | remove: ' ' | downcase}}/{{target | downcase}}">
+    {% assign icon = target | downcase -%}
+    <div class="card-leading">
+      {% if icon == 'desktop' -%}
+        <span class="material-symbols" aria-hidden="true">desktop_windows</span>
+      {% elsif icon == 'android' -%}
+        <span class="material-symbols" aria-hidden="true">phone_android</span>
+      {% else -%}
+        <span class="material-symbols" aria-hidden="true">web</span>
+      {% endif -%}
+    </div>
+    <div class="card-header text-center">
+      <header class="card-title">{{target}}</header>
+      {% if icon == 'android' -%}
+        <span class="card-subtitle">Recommended</span>
+      {% endif -%}
     </div>
   </a>
 {% endfor %}

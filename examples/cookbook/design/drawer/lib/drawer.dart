@@ -5,9 +5,7 @@ import 'package:flutter/material.dart';
 void drawerStart() {
   // #docregion DrawerStart
   Scaffold(
-    appBar: AppBar(
-      title: const Text('AppBar without hamburger button'),
-    ),
+    appBar: AppBar(title: const Text('AppBar without hamburger button')),
     drawer: null, // Add a Drawer here in the next step.
   );
   // #enddocregion DrawerStart
@@ -16,9 +14,7 @@ void drawerStart() {
 void drawerEmpty() {
   // #docregion DrawerEmpty
   Scaffold(
-    appBar: AppBar(
-      title: const Text('AppBar with hamburger button'),
-    ),
+    appBar: AppBar(title: const Text('AppBar with hamburger button')),
     drawer: Drawer(
       child: null, // Populate the Drawer in the next step.
     ),
@@ -37,9 +33,7 @@ void drawerListview() {
       padding: EdgeInsets.zero,
       children: [
         const DrawerHeader(
-          decoration: BoxDecoration(
-            color: Colors.blue,
-          ),
+          decoration: BoxDecoration(color: Colors.blue),
           child: Text('Drawer Header'),
         ),
         ListTile(

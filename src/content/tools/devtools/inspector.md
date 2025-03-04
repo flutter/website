@@ -31,10 +31,6 @@ trees, and can be used for the following:
 
 As part of Flutter 3.29, the new Flutter inspector is enabled by default. However, it can be disabled from the [inspector settings dialog][].
 
-:::note
-Please note that the [legacy inspector][] will be removed in a future release. Let us know if there are issues preventing you from using the new inspector by [filing a bug][].
-:::
-
 [inspector settings dialog]: #inspector-settings
 [legacy inspector]: /tools/devtools/legacy-inspector
 [filing a bug]: https://github.com/flutter/devtools/issues/new 
@@ -419,9 +415,7 @@ class EverythingRepaintsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Repaint Example')),
-      body: const Center(
-        child: CircularProgressIndicator(),
-      ),
+      body: const Center(child: CircularProgressIndicator()),
     );
   }
 }
@@ -442,9 +436,7 @@ class AreaRepaintsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Repaint Example')),
       body: const Center(
-        child: RepaintBoundary(
-          child: CircularProgressIndicator(),
-        ),
+        child: RepaintBoundary(child: CircularProgressIndicator()),
       ),
     );
   }
@@ -504,11 +496,7 @@ class ResizedImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset(
-      'dash.png',
-      cacheHeight: 213,
-      cacheWidth: 392,
-    );
+    return Image.asset('dash.png', cacheHeight: 213, cacheWidth: 392);
   }
 }
 ```
@@ -575,6 +563,23 @@ the discussion on [common problems when debugging][].
 Hovering over any widget displays its properties and values.
 
 Toggling this value enables or disables the hover inspection functionality.
+
+### Enable widget tree auto-refreshing
+
+When enabled, the widget tree automatically refreshes after
+a hot-reload or a navigation event. 
+
+
+### Use legacy inspector
+
+When enabled, use the [legacy inspector][] instead of the new inspector. 
+
+:::note
+The [legacy inspector][] will be removed in a future release.
+Let us know if there are issues preventing you from using the new inspector by [filing a bug][].
+:::
+
+[legacy inspector]: /tools/devtools/legacy-inspector
 
 ### Package directories
 

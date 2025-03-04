@@ -49,7 +49,7 @@ uses [Material Components][].
 1. Locate the main Android Studio toolbar at the top of the
    Android Studio edit window.
 
-   ![Main IntelliJ toolbar][]{:.mw-100}
+   ![Main IntelliJ toolbar][]
 
 1. In the **target selector**, select an Android device for running the app.
    You created your Android target device in the **Install** section.
