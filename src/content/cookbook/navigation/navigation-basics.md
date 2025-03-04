@@ -322,14 +322,6 @@ class SecondRoute extends StatelessWidget {
 
 {% endtabs %}
 
-
-:::secondary
-You don't need to replace all Material widgets with Cupertino versions
-to use [`CupertinoPageRoute`][]
-since Flutter allows you to mix and match Material and Cupertino widgets
-depending on your needs.
-:::
-
 ## Additional navigation methods
 
 The recipe in this topic shows you one way to navigate to a new screen and
