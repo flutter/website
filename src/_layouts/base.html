@@ -18,6 +18,7 @@
 
     {%- if isProduction == true -%}
       <meta name="google-site-verification" content="{{ site.google_site_verification }}">
+    {% endif -%}
       <script>
         window.dataLayer = window.dataLayer || [];
       </script>
@@ -36,7 +37,6 @@
         ga('create', '{{ site.google_analytics_id }}', 'auto');
         ga('send', 'pageview');
       </script>
-    {% endif -%}
 
     {% assign desc = description | default: site.description | strip_html | strip_newlines | truncate: 160 -%}
     {% unless desc and desc != '' -%}
