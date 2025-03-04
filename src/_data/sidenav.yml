@@ -4,9 +4,13 @@
   permalink: /get-started/install
   hiddenChildren: true
   children:
+    - title: Choose a platform
+      permalink: /get-started/install
     - title: On Windows
       permalink: /get-started/install/windows
       children:
+        - title: Choose a target
+          permalink: /get-started/install/windows
         - title: Target Android
           permalink: /get-started/install/windows/mobile
         - title: Target web
@@ -16,6 +20,8 @@
     - title: On macOS
       permalink: /get-started/install/macos
       children:
+        - title: Choose a target
+          permalink: /get-started/install/macos
         - title: Target iOS
           permalink: /get-started/install/macos/mobile-ios
         - title: Target Android
@@ -27,6 +33,8 @@
     - title: On Linux
       permalink: /get-started/install/linux
       children:
+        - title: Choose a target
+          permalink: /get-started/install/linux
         - title: Target Android
           permalink: /get-started/install/linux/android
         - title: Target web
@@ -36,6 +44,8 @@
     - title: On ChromeOS
       permalink: /get-started/install/chromeos
       children:
+        - title: Choose a target
+          permalink: /get-started/install/chromeos
         - title: Target Android
           permalink: /get-started/install/chromeos/android
         - title: Target web
