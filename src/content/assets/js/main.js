@@ -399,10 +399,14 @@ function setupFeedback() {
   if (!feedbackUpButton || !feedbackDownButton) return;
 
   feedbackUpButton.addEventListener('click', (_) => {
+    window.dataLayer?.push({'event': 'feedback-up'});
+
     feedbackContainer.classList.add('feedback-up');
   }, { once: true });
 
   feedbackDownButton.addEventListener('click', (_) => {
+    window.dataLayer?.push({'event': 'feedback-down'});
+
     feedbackContainer.classList.add('feedback-down');
   }, { once: true });
 }
