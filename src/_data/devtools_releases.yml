@@ -3,7 +3,6 @@
 # This step might be eliminated in the future.
 releases:
   - '2.44.0'
-  - '2.42.0'
   - '2.42.3'
   - '2.41.0'
   - '2.40.2'
